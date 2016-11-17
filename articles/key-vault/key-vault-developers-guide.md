@@ -13,9 +13,9 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="identity"
-   ms.date="10/03/2016"
-   wacn.date="10/19/2016"
-   ms.author="bruceper" />  
+   ms.date="08/16/2016"
+   ms.author="bruceper" 
+   wacn.date="10/19/2016"/>  
 
 
 # Azure 密钥保管库开发人员指南

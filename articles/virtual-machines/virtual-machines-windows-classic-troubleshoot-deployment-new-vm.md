@@ -11,14 +11,9 @@
    tags="top-support-issue"/>
 
 <tags
-  ms.service="virtual-machines-windows"
-  ms.workload="na"
-  ms.tgt_pltfrm="vm-windows"
-  ms.devlang="na"
-  ms.topic="article"
-  ms.date="09/06/2016"
-  wacn.date="10/25/2016"
-  ms.author="cjiang"/>
+	ms.service="virtual-machines-windows"
+	ms.date="09/06/2016"
+	wacn.date="10/25/2016"/>
 
 # 排查在 Azure 中新建 Windows 虚拟机时遇到的经典部署问题
 

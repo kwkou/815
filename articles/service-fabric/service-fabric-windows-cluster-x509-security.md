@@ -9,13 +9,8 @@
 
 <tags
    ms.service="service-fabric"
-   ms.devlang="dotnet"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="na"
    ms.date="07/08/2016"
-   wacn.date="08/08/2016"
-   ms.author="dkshir"/>
+   wacn.date="08/08/2016"/>
 
 # 使用 X.509 证书在 Windows 上保护独立群集
 

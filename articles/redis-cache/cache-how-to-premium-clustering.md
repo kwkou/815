@@ -7,15 +7,10 @@
 	manager="douge" 
 	editor=""/>
 
-<tags 
-	ms.service="cache" 
-	ms.workload="tbd" 
-	ms.tgt_pltfrm="cache-redis" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="09/15/2016" 
-	wacn.date="10/25/2016" 
-	ms.author="sdanie"/>  
+<tags
+	ms.service="cache"
+	ms.date="09/09/2016"
+	wacn.date="10/25/2016"/>  
 
 
 # 如何为高级 Azure Redis 缓存配置 Redis 群集功能

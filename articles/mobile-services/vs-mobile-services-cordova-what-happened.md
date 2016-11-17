@@ -9,13 +9,8 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.workload="mobile" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="multiple" 
-	ms.topic="article" 
 	ms.date="07/21/2016" 
-	wacn.date="09/26/2016" 
-	ms.author="mlearned"/>
+	wacn.date="09/26/2016"/>
 
 # 使用 Visual Studio 连接服务添加 Azure 移动服务后，我的 Azure Cordova 项目发生了什么情况？
 

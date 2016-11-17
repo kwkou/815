@@ -10,13 +10,8 @@
 
 <tags
 	ms.service="virtual-machines-windows"
-	ms.workload="na"
-	ms.tgt_pltfrm="vm-windows"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="02/02/2016"
-	wacn.date="05/24/2016"
-	ms.author="cjiang"/>
+	wacn.date="05/24/2016"/>
 
 
 

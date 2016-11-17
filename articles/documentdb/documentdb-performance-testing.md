@@ -15,8 +15,8 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="07/21/2016" 
-	wacn.date="10/18/2016" 
-	ms.author="arramac"/>  
+	ms.author="arramac"
+   	wacn.date="10/18/2016"/>  
 
 
 # 使用 Azure DocumentDB 进行性能和规模测试

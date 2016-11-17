@@ -9,13 +9,8 @@
 	tags="azure-service-management" />
 <tags
 	ms.service="virtual-machines-windows"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="vm-windows-sql-server"
-	ms.workload="infrastructure-services"
 	ms.date="07/12/2016"
-	wacn.date="09/12/2016"
-	ms.author="MikeRayMSFT" />
+	wacn.date="09/12/2016"/>
 
 # 在 Azure 中配置 AlwaysOn 可用性组的外部侦听器
 

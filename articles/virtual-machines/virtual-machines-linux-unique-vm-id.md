@@ -8,14 +8,9 @@
    editor=""/>
 
 <tags
-   ms.service="virtual-machines-linux"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="vm-linux"
-   ms.workload="infrastructure"
-   ms.date="02/08/2016"
-   wacn.date="05/12/2016"
-   ms.author="kmouss"/>
+	ms.service="virtual-machines-linux"
+	ms.date="02/08/2016"
+	wacn.date="05/12/2016"/>
    
 # 访问和使用 Azure VM 唯一 ID
 

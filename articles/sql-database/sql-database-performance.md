@@ -9,13 +9,8 @@
 
 <tags
    ms.service="sql-database"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="data-management" 
-   ms.date="07/19/2016" 
-   wacn.date="09/26/2016"
-   ms.author="sstein"/>
+   ms.date="07/19/2016"
+   wacn.date="09/26/2016"/>
 
 # SQL 数据库性能见解
 

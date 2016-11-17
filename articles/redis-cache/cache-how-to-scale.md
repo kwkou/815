@@ -7,15 +7,10 @@
 	manager="douge" 
 	editor=""/>
 
-<tags 
-	ms.service="cache" 
-	ms.workload="tbd" 
-	ms.tgt_pltfrm="cache-redis" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="09/07/2016" 
-	wacn.date="11/14/2016" 
-	ms.author="sdanie"/>
+<tags
+	ms.service="cache"
+	ms.date="09/07/2016"
+	wacn.date="11/14/2016"/>
 
 # 如何缩放 Azure Redis 缓存
 

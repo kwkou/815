@@ -7,15 +7,10 @@
 	editor=""
 	services="mobile-services"/>
 
-<tags
-	ms.service="mobile-services"
-	ms.workload="mobile"
-	ms.tgt_pltfrm="mobile-windows-store"
-	ms.devlang="dotnet"
-	ms.topic="article"
+<tags 
+	ms.service="mobile-services" 
 	ms.date="07/21/2016"
-	wacn.date="09/26/2016"
-	ms.author="wesmc"/>
+	wacn.date="09/26/2016"/>
 
 # 使用 Active Directory 身份验证库单一登录对应用程序进行身份验证
 

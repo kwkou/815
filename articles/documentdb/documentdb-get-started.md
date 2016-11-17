@@ -15,8 +15,8 @@
 	ms.devlang="dotnet"
 	ms.topic="hero-article"
 	ms.date="08/29/2016"
-	wacn.date="10/18/2016"
-	ms.author="anhoh"/>
+	ms.author="anhoh"
+   	wacn.date="10/18/2016"/>
 
 # NoSQL 教程︰构建 DocumentDB C# 控制台应用程序
 

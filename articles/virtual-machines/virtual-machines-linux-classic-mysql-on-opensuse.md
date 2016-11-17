@@ -10,13 +10,8 @@
 
 <tags
 	ms.service="virtual-machines-linux"
-	ms.workload="infrastructure-services"
-	ms.tgt_pltfrm="vm-linux"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="07/19/2016"
-	wacn.date="09/30/2016"
-	ms.author="cynthn"/>
+	wacn.date="09/30/2016"/>
 
 # 在 Azure 中运行 OpenSUSE Linux 的虚拟机上安装 MySQL
 

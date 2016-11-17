@@ -7,15 +7,10 @@
 	manager="erikre"
 	editor="mollybos"/>
 
-<tags
-	ms.service="mobile-services"
-	ms.workload="mobile"
-	ms.tgt_pltfrm="multiple"
-	ms.devlang="multiple"
-	ms.topic="article"
-	ms.date="07/21/2016"
-	wacn.date="09/26/2016" 
-	ms.author="wesmc;ricksal"/>
+<tags 
+	ms.service="mobile-services" 
+	ms.date="07/21/2016" 
+	wacn.date="09/26/2016"/>
 
 # 移动服务 .NET 后端故障排除
 

@@ -13,8 +13,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
    ms.date="08/25/2016"
-   wacn.date="10/10/2016"
-   ms.author="sewhee" />
+   wacn.date="10/10/2016" />
 
 # 每个云服务的多个 VIP
 

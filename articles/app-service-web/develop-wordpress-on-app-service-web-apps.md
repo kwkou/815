@@ -8,15 +8,10 @@
 	manager="wpickett" 
 	editor=""/>
 
-<tags 
-	ms.service="app-service" 
-	ms.workload="na" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="02/26/2016" 
-	wacn.date="09/26/2016" 
-	ms.author="sunbuild"/>
+<tags
+	ms.service="app-service"
+	ms.date="02/26/2016"
+	wacn.date="09/26/2016"/>
 
 # 在 Azure App Service 上开发 WordPress
 

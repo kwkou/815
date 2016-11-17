@@ -15,8 +15,7 @@
 	ms.devlang="csharp"
 	ms.topic="article"
 	ms.date="08/16/2016"
-	wacn.date="11/08/2016"
-	ms.author="jotaub;sethm"/>  
+	wacn.date="11/08/2016"/>  
 
 
 # 事件中心入门

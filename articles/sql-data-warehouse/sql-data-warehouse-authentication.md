@@ -16,8 +16,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="data-management"
    ms.date="09/24/2016"
-   wacn.date="10/31/2016"
-   ms.author="rickbyh;barbkess;sonyama"/>  
+   wacn.date="10/31/2016"/>  
 
 
 # 对 Azure SQL 数据仓库进行身份验证

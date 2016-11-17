@@ -9,13 +9,8 @@
 
 <tags
 	ms.service="notification-hubs"
-	ms.workload="mobile"
-	ms.tgt_pltfrm="mobile-windows"
-	ms.devlang="dotnet"
-	ms.topic="article"
-	ms.date="06/29/2016"
-	wacn.date="07/12/2016" 
-	ms.author="wesmc"/>
+	ms.date="06/29/2016" 
+	wacn.date="07/12/2016"/>
 
 # 企业推送架构指南
 

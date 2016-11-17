@@ -8,15 +8,10 @@
 	manager="wpickett" 
 	editor=""/>
 
-<tags 
-	ms.service="app-service-web" 
-	ms.workload="web" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="python" 
-	ms.topic="article" 
-	ms.date="02/19/2016" 
-	wacn.date="09/26/2016"
-	ms.author="huvalo"/>
+<tags
+	ms.service="app-service-web"
+	ms.date="02/19/2016"
+	wacn.date="09/26/2016"/>
 
 
 # 在 Azure 中使用 Bottle 创建 Web 应用

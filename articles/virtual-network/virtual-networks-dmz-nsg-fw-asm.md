@@ -8,14 +8,9 @@
    editor=""/>
 
 <tags
-   ms.service="virtual-network"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
-   ms.date="02/01/2016"
-   wacn.date="03/17/2016"
-   ms.author="jonor;sivae"/>
+	ms.service="virtual-network"
+	ms.date="02/01/2016"
+	wacn.date="03/17/2016"/>
 
 # 示例 2 – 构建外围网络以通过防火墙和 NSG 保护应用程序
 

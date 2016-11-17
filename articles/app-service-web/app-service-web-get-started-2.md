@@ -8,16 +8,10 @@
 	editor="" 
 />
 
-<tags 
-	ms.service="app-service-web" 
-	ms.workload="web" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="hero-article"
+<tags
+	ms.service="app-service-web"
 	ms.date="05/12/2016"
-	wacn.date="09/26/2016" 
-	ms.author="cephalin"
-/>
+	wacn.date="09/26/2016"/>
 
 # 在第一个 Web 应用中添加功能
 

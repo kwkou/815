@@ -12,13 +12,8 @@
 
 <tags
 	ms.service="virtual-machines-windows"
-	ms.workload="infrastructure-services"
-	ms.tgt_pltfrm="vm-windows"
-	ms.devlang="na"
-	ms.topic="get-started-article"
 	ms.date="07/28/2016"
-	wacn.date="09/30/2016"
-	ms.author="cynthn"/>
+	wacn.date="09/30/2016"/>
 
 # 如何连接并登录到运行 Windows 的 Azure 虚拟机 
 

@@ -9,13 +9,8 @@
   
 <tags 
 	ms.service="active-directory" 
-	ms.workload="web" 
-	ms.tgt_pltfrm="vs-getting-started" 
-	ms.devlang="na" 
-	ms.topic="article" 
 	ms.date="08/15/2016" 
-	wacn.date="09/26/2016" 
-	ms.author="tarcher"/>
+	wacn.date="09/26/2016"/>
 
 # 开始使用 Azure Active Directory 和 Visual Studio 连接服务（MVC 项目）
 

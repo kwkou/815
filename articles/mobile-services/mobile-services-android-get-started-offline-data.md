@@ -9,13 +9,8 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.workload="mobile"
-	ms.tgt_pltfrm="mobile-android"
-	ms.devlang="java"
-	ms.topic="article"
 	ms.date="07/21/2016"
-	wacn.date="09/26/2016"
-	ms.author="ricksal"/>
+	wacn.date="09/26/2016"/>
 
 # 将脱机数据同步添加到 Android 移动服务应用
 

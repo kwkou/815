@@ -9,13 +9,8 @@
 
 <tags
    ms.service="Service-Fabric"
-   ms.devlang="dotnet"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="NA"
    ms.date="07/06/2016"
-   wacn.date="08/08/2016"
-   ms.author="vturecek"/>
+   wacn.date="08/08/2016"/>
 
 # Reliable Services 编程模型的高级用法
 Azure Service Fabric 可简化可靠的无状态服务和有状态服务的编写与管理。本指南讨论 Reliable Services 的高级用法，以便针对服务获得更多控制和灵活性。阅读本指南之前，你自己应熟悉 [Reliable Services 编程模型](/documentation/articles/service-fabric-reliable-services-introduction/)。

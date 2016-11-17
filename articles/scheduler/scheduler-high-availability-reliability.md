@@ -14,7 +14,7 @@
  ms.topic="article"
  ms.date="08/16/2016"
  wacn.date="10/10/2016"
- ms.author="deli"/>
+ ms.author="krisragh"/>
 
 
 # 计划程序高可用性和可靠性

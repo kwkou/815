@@ -7,14 +7,9 @@
    manager="carmonm"
    editor="tysonn" />
 <tags
-   ms.service="virtual-network"
-   ms.devlang="na"
-   ms.topic="get-started-article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
-   ms.date="03/15/2016"
-   wacn.date="04/25/2016"
-   ms.author="jdial" />
+	ms.service="virtual-network"
+	ms.date="03/15/2016"
+	wacn.date="04/25/2016"/>
 
 # 虚拟网络概述
 

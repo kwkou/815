@@ -15,8 +15,7 @@
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
    ms.date="10/08/2016"
-   wacn.date="10/31/2016"
-   ms.author="sonyama;barbkess"/>  
+   wacn.date="10/31/2016"/>  
 
 
 # 使用 DMV 监视工作负荷

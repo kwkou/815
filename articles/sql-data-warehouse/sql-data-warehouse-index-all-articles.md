@@ -14,9 +14,8 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/05/2016"
-	wacn.date="10/31/2016"
-	ms.author="barbkess"/>
+	ms.date="08/21/2016"
+	wacn.date="10/31/2016"/>
 
 
 # 有关 Azure SQL 数据仓库服务的所有主题

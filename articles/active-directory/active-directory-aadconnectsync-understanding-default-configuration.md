@@ -11,10 +11,10 @@
     ms.workload="identity"
     ms.tgt_pltfrm="na"
     ms.devlang="na"
-	ms.topic="article"
+    ms.topic="article"
     ms.date="09/01/2016"
-    wacn.date="10/11/2016"
-    ms.author="billmath"/>
+    ms.author="andkjell"
+    wacn.date="10/11/2016"/>
 
 # Azure AD Connect 同步：了解默认配置
 本文介绍现成的配置规则。其中说明这些规则及其对配置将有何影响。此外还将逐步介绍如何完成 Azure AD Connect 同步的默认配置。其目的是让读者了解配置模型（名为声明性预配）在实际示例中的运行情形。本文假设你已使用安装向导安装并配置了 Azure AD Connect 同步。

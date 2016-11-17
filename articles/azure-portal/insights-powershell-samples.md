@@ -8,14 +8,9 @@
 	documentationCenter="na"/>
 
 <tags
-	ms.service="monitoring-and-diagnostics"
-	ms.workload="na"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="08/30/2016"
-	wacn.date="10/17/2016"
-	ms.author="ashwink"/>
+	ms.service="azure-portal"
+	ms.date="03/30/2016"
+	wacn.date="10/17/2016"/>
 
 # Azure Insights PowerShell 快速入门示例
 

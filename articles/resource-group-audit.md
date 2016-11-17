@@ -15,8 +15,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="08/22/2016"
-	wacn.date="10/24/2016"
-	ms.author="tomfitz"/>
+	wacn.date="10/24/2016"/>
 
 
 # 使用资源管理器执行审核操作

@@ -10,13 +10,8 @@
 
 <tags
 	ms.service="virtual-machines-windows"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="vm-windows-sql-server"
-	ms.workload="infrastructure-services"
-	ms.date="09/26/2016"
-	wacn.date="08/15/2016"
-	ms.author="jroth"/>
+	ms.date="07/14/2016"
+	wacn.date="08/15/2016"/>
 
 # 适用于 SQL Server VM 的 SQL Server 代理扩展（经典）
 

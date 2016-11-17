@@ -10,7 +10,7 @@ manager="timlt"
 editor="" 
 tags="azure-resource-manager" 
 keywords=""/>
-<tags 
+<tags  
 ms.service="virtual-machines-windows" 
 ms.devlang="na" 
 ms.topic="article" 

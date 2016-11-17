@@ -9,13 +9,8 @@
 
 <tags
    ms.service="active-directory"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="identity"
    ms.date="08/04/2016"
-   wacn.date="08/29/2016"
-   ms.author="billmath"/>
+   wacn.date="08/29/2016"/>
 
 # Azure AD Connect 同步：计划程序
 本主题介绍 Azure AD Connect 同步（也称为同步引擎）中的内置计划程序。

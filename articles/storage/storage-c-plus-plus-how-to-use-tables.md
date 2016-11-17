@@ -14,8 +14,8 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-	ms.date="09/20/2016"
-	wacn.date="11/07/2016"
+    ms.date="09/20/2016"
+    wacn.date="11/07/2016"
     ms.author="dineshm;tamram"/>
 
 # 如何通过 C++ 使用表存储

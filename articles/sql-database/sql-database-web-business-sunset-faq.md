@@ -8,13 +8,8 @@
    editor="monicar" />
 <tags
    ms.service="sql-database"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="data-management"
    ms.date="08/08/2016"
-   wacn.date="11/16/2016"
-   ms.author="sstein" />
+   wacn.date="11/16/2016" />
 
 # Web 和 Business Edition 停用常见问题
 

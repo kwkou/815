@@ -16,8 +16,8 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="09/30/2016"
-	wacn.date="11/08/2016"
-	ms.author="dastrock"/>  
+	ms.author="dastrock"
+   	wacn.date="11/08/2016"/>  
 
 
 # v2.0 协议 - OpenID Connect

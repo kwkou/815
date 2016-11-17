@@ -14,8 +14,8 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="08/02/2016" 
-	wacn.date="10/18/2016" 
-	ms.author="hawong"/>  
+	ms.author="stbaro"
+   	wacn.date="10/18/2016"/>  
 
 
 # 使用 Azure Resource Manager 模板部署 DocumentDB 和 Azure App Service Web Apps

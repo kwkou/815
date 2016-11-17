@@ -9,13 +9,8 @@
 
 <tags
 	ms.service="app-service-mobile"
-	ms.workload="na"
-	ms.tgt_pltfrm="mobile-html"
-	ms.devlang="javascript"
-	ms.topic="article"
-	ms.date="10/01/2016"
-	wacn.date="11/10/2016"
-	ms.author="adrianha"/>
+	ms.date="08/11/2016"
+	wacn.date="11/10/2016"/>
 
 # 将身份验证添加到 Apache Cordova 应用
 

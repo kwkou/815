@@ -9,14 +9,9 @@
 	editor="cgronlun"/>
 
 <tags
-   ms.service="hdinsight"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="big-data"
-   ms.date="09/02/2016"
-   wacn.date="10/25/2016"
-   ms.author="jgao"/>
+	ms.service="hdinsight"
+	ms.date="09/02/2016"
+	wacn.date="10/25/2016"/>
 
 # 在 Azure 虚拟网络上设置 HBase 群集
 

@@ -8,14 +8,9 @@
    editor=""/>
 
 <tags
-   ms.service="backup"
-   ms.workload="storage-backup-recovery"
-	 ms.tgt_pltfrm="na"
-	 ms.devlang="na"
-	 ms.topic="article"
+	ms.service="backup"
 	 ms.date="08/02/2016"
-	 wacn.date="11/11/2016"
-	 ms.author="trinadhk; jimpark; markgal;"/>
+	 wacn.date="11/11/2016"/>
 	
 # 使用 Resource Manager 部署模型将文件还原到 Windows Server 或 Windows 客户端计算机
 

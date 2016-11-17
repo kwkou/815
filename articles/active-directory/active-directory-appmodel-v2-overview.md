@@ -15,8 +15,8 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="09/27/2016"
-	wacn.date="10/31/2016"
-	ms.author="dastrock"/>
+	ms.author="dastrock"
+	wacn.date="10/31/2016"/>
 
 # 在单个应用中登录 Microsoft 帐户和 Azure AD 用户
 

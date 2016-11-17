@@ -10,13 +10,8 @@
 
 <tags
 	ms.service="virtual-machines-windows"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="vm-windows"
-	ms.workload="infrastructure-services"
 	ms.date="08/23/2016"
-	wacn.date="10/25/2016"
-	ms.author="danlep"/>
+	wacn.date="10/25/2016"/>
 
 
 # 执行 VM 任务的常见资源管理器模型 Azure CLI 命令

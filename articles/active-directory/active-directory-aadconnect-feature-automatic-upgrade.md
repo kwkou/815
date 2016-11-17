@@ -14,8 +14,8 @@
    ms.tgt_pltfrm="na"
    ms.workload="identity"
    ms.date="08/24/2016"
-   wacn.date="10/11/2016"
-   ms.author="billmath"/>
+   ms.author="andkjell"
+   wacn.date="10/11/2016"/>
 
 # Azure AD Connect：自动升级
 此功能是随内部版本 1.1.105.0（于 2016 年 2 月发布）一起推出的。

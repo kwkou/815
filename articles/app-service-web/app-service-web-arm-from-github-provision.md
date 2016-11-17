@@ -7,15 +7,10 @@
 	manager="wpickett" 
 	editor=""/>
 
-<tags 
-	ms.service="app-service" 
-	ms.workload="na" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="04/27/2016" 
-	wacn.date="09/26/2016" 
-	ms.author="cephalin"/>
+<tags
+	ms.service="app-service"
+	ms.date="04/27/2016"
+	wacn.date="09/26/2016"/>
 
 # 部署链接到 GitHub 存储库的网站
 

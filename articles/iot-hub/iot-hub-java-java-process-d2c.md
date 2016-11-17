@@ -14,8 +14,8 @@
      ms.tgt_pltfrm="na"
      ms.workload="na"
      ms.date="09/01/2016"
-     wacn.date="10/10/2016"
-     ms.author="dobett"/>
+     ms.author="dobett"
+     wacn.date="10/10/2016"/>
 
 # 教程：如何使用 Java 处理 IoT 中心设备到云的消息
 

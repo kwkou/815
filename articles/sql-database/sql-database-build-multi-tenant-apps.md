@@ -10,13 +10,8 @@
 
 <tags
    ms.service="sql-database"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="data-management"
-   ms.date="10/13/2016"
-   wacn.date="09/19/2016"
-   ms.author="carlrab"/>
+   ms.date="07/19/2016"
+   wacn.date="09/19/2016"/>
 
 # 使用具有隔离和效率的 Azure SQL 数据库构建多租户应用
 

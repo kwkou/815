@@ -8,15 +8,10 @@
 	editor=""
 	tags="azure-service-management"/>
 
-<tags 
-	ms.service="virtual-machines-linux" 
-	ms.workload="infrastructure-services" 
-	ms.tgt_pltfrm="vm-linux" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="08/11/2016" 
-	wacn.date="09/30/2016" 
-	ms.author="hanuk;robmcm"/>
+<tags
+	ms.service="virtual-machines-linux"
+	ms.date="08/11/2016"
+	wacn.date="09/30/2016"/>
 
 # 在 Azure 上将 Cassandra 与 Linux 一起运行以及通过 Node.js 对其进行访问 
 

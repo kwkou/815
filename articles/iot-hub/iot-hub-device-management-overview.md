@@ -14,8 +14,8 @@
  ms.tgt_pltfrm="na"
  ms.workload="na"
  ms.date="10/03/2016"
- wacn.date="11/07/2016"
- ms.author="bzurcher"/>
+ ms.author="bzurcher"
+ wacn.date="11/07/2016"/>
 
 # IoT 中心设备管理概述（预览版）
 

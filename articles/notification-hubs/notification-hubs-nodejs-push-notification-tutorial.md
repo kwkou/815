@@ -10,13 +10,8 @@
 
 <tags
 	ms.service="notification-hubs"
-	ms.workload="mobile"
-	ms.tgt_pltfrm="na"
-	ms.devlang="javascript"
-	ms.topic="article"
 	ms.date="05/27/2016"
-	wacn.date="07/12/2016"
-	ms.author="wesmc"/>
+	wacn.date="07/12/2016"/>
 
 # 使用 Azure 通知中心和 Node.js 发送推送通知
 [AZURE.INCLUDE [notification-hubs-backend-how-to-selector](../../includes/notification-hubs-backend-how-to-selector.md)]

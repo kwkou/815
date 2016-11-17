@@ -9,13 +9,8 @@
 
 <tags
    ms.service="service-fabric"
-   ms.devlang="dotnet"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="na"
    ms.date="06/24/2016"
-   wacn.date="08/08/2016"
-   ms.author="mcoskun"/>
+   wacn.date="08/08/2016"/>
 
 # Reliable Services 通知
 

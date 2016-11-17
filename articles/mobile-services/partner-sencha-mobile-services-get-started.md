@@ -9,13 +9,8 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.workload="mobile"
-	ms.tgt_pltfrm="mobile-sencha"
-	ms.devlang="multiple"
-	ms.topic="get-started-article"
 	ms.date="07/21/2016"
-	wacn.date="09/26/2016"
-	ms.author="glenga"/>
+	wacn.date="09/26/2016"/>
 
 #  <a name="getting-started"></a>移动服务和 Sencha Touch 入门
 

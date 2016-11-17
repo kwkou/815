@@ -10,13 +10,8 @@
 
 <tags
 	ms.service="virtual-machines-windows"
-	ms.workload="infrastructure-services"
-	ms.tgt_pltfrm="vm-windows"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="09/27/2016"
-	wacn.date="07/28/2016"
-	ms.author="cynthn"/>
+	ms.date="06/16/2016"
+	wacn.date="07/28/2016"/>
 
 # 使用 D 盘作为 Windows VM 上的数据驱动器 
 

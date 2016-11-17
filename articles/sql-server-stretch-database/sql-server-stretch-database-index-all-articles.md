@@ -9,13 +9,8 @@
 
 <tags
 	ms.service="sql-server-stretch-database"
-	ms.workload="sql-server-stretch-database"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="10/05/2016"
-	wacn.date="09/05/2016"
-	ms.author="DouglasL"/>
+	ms.date="07/25/2016"
+	wacn.date="09/05/2016"/>
 
 
 # 有关 Azure SQL Server Stretch Database 服务的所有主题

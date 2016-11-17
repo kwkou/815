@@ -10,13 +10,8 @@
 
 <tags
 	ms.service="virtual-machines-linux"
-	ms.workload="infrastructure-services"
-	ms.tgt_pltfrm="vm-linux"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="07/28/2016"
-	wacn.date="09/30/2016"
-	ms.author="cynthn"/>
+	wacn.date="09/30/2016"/>
 
 	
 # 使用经典部署模型创建的 Azure Linux 虚拟机的常见问题

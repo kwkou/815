@@ -10,13 +10,8 @@
 
 <tags
 	ms.service="active-directory"
-	ms.workload="identity"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="08/01/2016"
-	wacn.date="08/29/2016"
-	ms.author="anandy"/>
+	wacn.date="08/29/2016"/>
 
 # 更改 Office 365 信赖方信任的签名哈希算法
 

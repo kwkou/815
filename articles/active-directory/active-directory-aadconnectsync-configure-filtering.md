@@ -14,8 +14,8 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="09/13/2016"
-	wacn.date="10/11/2016"
-	ms.author="andkjell;markvi"/>
+	ms.author="andkjell;markvi"
+	wacn.date="10/11/2016"/>
 
 
 # Azure AD Connect 同步：配置筛选

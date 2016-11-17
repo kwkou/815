@@ -16,8 +16,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="na"
    ms.date="08/15/2016"
-   wacn.date="10/24/2016"
-   ms.author="tomfitz"/>  
+   wacn.date="10/24/2016"/>  
 
 
 # 使用 Resource Manager 模板和 Azure PowerShell 部署资源

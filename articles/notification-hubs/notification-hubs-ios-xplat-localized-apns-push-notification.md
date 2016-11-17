@@ -9,13 +9,8 @@
 
 <tags
 	ms.service="notification-hubs"
-	ms.workload="mobile"
-	ms.tgt_pltfrm="ios"
-	ms.devlang="objective-c"
-	ms.topic="article"
-	ms.date="10/03/2016"
-	wacn.date="08/08/2016"
-	ms.author="wesmc"/>
+	ms.date="06/29/2016"
+	wacn.date="08/08/2016"/>
 
 # 使用通知中心将本地化的突发新闻发送到 iOS 设备
 

@@ -13,9 +13,9 @@
 	ms.tgt_pltfrm="html"
 	ms.devlang="javascript"
 	ms.topic="article"
-	ms.date="10/01/2016"
-	wacn.date="10/17/2016"
-	ms.author="adrianha"/>
+	ms.date="09/12/2016"
+	ms.author="adrianha;ricksal"
+	wacn.date="10/17/2016"/>
 
 # 如何使用适用于 Azure 移动应用的 JavaScript 客户端库
 

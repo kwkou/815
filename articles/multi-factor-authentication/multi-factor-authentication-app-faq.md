@@ -14,9 +14,9 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/13/2016"
-	wacn.date="11/16/2016"
-	ms.author="kgremban"/>
+	ms.date="08/16/2016"
+	ms.author="kgremban"
+   	wacn.date="11/16/2016"/>
 
 # Microsoft Authenticator 应用程序常见问题解答
 

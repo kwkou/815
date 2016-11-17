@@ -9,13 +9,8 @@
 
 <tags 
 	ms.service="multiple" 
-	ms.workload="na" 
-	ms.tgt_pltfrm="multiple" 
-	ms.devlang="Java" 
-	ms.topic="article" 
 	ms.date="08/11/2016" 
-	wacn.date="09/26/2016" 
-	ms.author="robmcm"/>
+	wacn.date="09/26/2016"/>
 
 # 下载 Azure SDK for Java
 

@@ -15,8 +15,8 @@
    ms.tgt_pltfrm="na"
    ms.workload="identity"
    ms.date="09/30/2016"
-   wacn.date="10/31/2016"
-   ms.author="skwan;bryanla"/>  
+   ms.author="skwan;bryanla"
+   wacn.date="10/31/2016"/>  
 
 
 

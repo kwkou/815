@@ -9,13 +9,8 @@
 
 <tags
 	ms.service="notification-hubs"
-	ms.workload="mobile"
-	ms.tgt_pltfrm="mobile-windows"
-	ms.devlang="multiple"
-	ms.topic="article"
-	ms.date="10/03/2016"
-	wacn.date="08/08/2016" 
-	ms.author="wesmc"/>
+	ms.date="06/29/2016" 
+	wacn.date="08/08/2016"/>
 
 # 使用通知中心向用户发送跨平台通知
 

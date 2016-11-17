@@ -14,8 +14,8 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="07/29/2016" 
-	wacn.date="10/18/2016" 
-	ms.author="mimig"/>  
+	ms.author="mimig"
+   	wacn.date="10/18/2016"/>  
 
 
 # DocumentDB 简介 - 一个 Azure NoSQL 数据库 

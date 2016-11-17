@@ -11,13 +11,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.devlang="na"
-	ms.topic="get-started-article"
-	ms.tgt_pltfrm="na"
-	ms.workload="big-data"
 	ms.date="08/10/2016"
-	wacn.date="09/19/2016"
-	ms.author="jgao"/>
+	wacn.date="09/19/2016"/>
 
 # 开始使用 HDInsight 的 Visual Studio Hadoop 工具来运行 Hive 查询
 

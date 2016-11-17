@@ -16,8 +16,8 @@
 	ms.devlang="na"
 	ms.topic="get-started-article"
 	ms.date="10/04/2016"
-	wacn.date="10/31/2016"
-	ms.author="billmath"/>  
+	ms.author="billmath"
+	wacn.date="10/31/2016"/>  
 
 
 # 将本地标识与 Azure Active Directory 集成

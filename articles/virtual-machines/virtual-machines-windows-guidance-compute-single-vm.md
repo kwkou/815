@@ -9,14 +9,9 @@
  tags="azure-resource-manager"/>
 
 <tags
-ms.service="virtual-machines-windows"
- ms.devlang="na"
- ms.topic="article"
- ms.tgt_pltfrm="vm-windows"
- ms.workload="infrastructure-services"
- ms.date="06/29/2016"
- wacn.date="08/08/2016"
- ms.author="mikewasson"/>
+	ms.service="virtual-machines-windows"
+	ms.date="06/29/2016"
+	wacn.date="08/08/2016"/>
  
 
 

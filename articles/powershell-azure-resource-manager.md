@@ -15,8 +15,7 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="08/18/2016" 
-	wacn.date="10/24/2016" 
-	ms.author="tomfitz"/>  
+	wacn.date="10/24/2016"/>  
 
 
 # 将 Azure PowerShell 与 Azure 资源管理器配合使用

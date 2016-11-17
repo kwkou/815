@@ -7,15 +7,10 @@
 	manager="dwrede"
 	editor=""/>
 
-<tags
-	ms.service="mobile-services"
-	ms.workload="mobile"
-	ms.tgt_pltfrm="mobile-html"
-	ms.devlang="javascript"
-	ms.topic="article"
+<tags 
+	ms.service="mobile-services" 
 	ms.date="07/21/2016"
-	wacn.date="09/26/2016"
-	ms.author="glenga"/>
+	wacn.date="09/26/2016"/>
 
 #  如何使用适用于 Azure 移动服务的 HTML/JavaScript 客户端
 

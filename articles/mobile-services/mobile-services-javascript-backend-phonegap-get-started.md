@@ -9,13 +9,8 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.workload="mobile"
-	ms.tgt_pltfrm="mobile-phonegap"
-	ms.devlang="multiple"
-	ms.topic="get-started-article" 
-	ms.date="07/21/2016" 
-	wacn.date="09/26/2016"
-	ms.author="ggailey777"/>
+	ms.date="07/21/2016"
+	wacn.date="09/26/2016"/>
 
 #  移动服务入门
 

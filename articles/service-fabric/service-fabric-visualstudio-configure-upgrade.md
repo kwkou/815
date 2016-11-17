@@ -8,13 +8,8 @@
    editor="tglee" />
 <tags
    ms.service="service-fabric"
-   ms.devlang="dotnet"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="multiple"
    ms.date="07/29/2016"
-   wacn.date="08/29/2016"
-   ms.author="cawa" />
+   wacn.date="08/29/2016"/>
 
 # 在 Visual Studio 中配置 Service Fabric 应用程序的升级
 

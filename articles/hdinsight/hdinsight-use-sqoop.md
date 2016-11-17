@@ -10,13 +10,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.workload="big-data"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="09/02/2016"
-	wacn.date="10/25/2016"
-	ms.author="jgao"/>
+	wacn.date="10/25/2016"/>
 
 #将 Sqoop 与 HDInsight 中的 Hadoop 配合使用
 

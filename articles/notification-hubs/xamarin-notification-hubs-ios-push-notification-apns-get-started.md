@@ -10,13 +10,8 @@
 
 <tags
 	ms.service="notification-hubs"
-	ms.workload="mobile"
-	ms.tgt_pltfrm="mobile-xamarin-ios"
-	ms.devlang="dotnet"
-	ms.topic="hero-article"
 	ms.date="06/29/2016"
-	wacn.date="11/11/2016"
-	ms.author="wesmc"/>
+	wacn.date="11/11/2016"/>
 
 # 使用通知中心针对 Xamarin 应用发送 iOS 推送通知
 

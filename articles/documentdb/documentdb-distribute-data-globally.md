@@ -9,13 +9,8 @@
 
 <tags
    ms.service="documentdb"
-   ms.devlang="multiple"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="na"
    ms.date="08/15/2016"
-   wacn.date="09/12/2016"
-   ms.author="kipandya"/>
+   wacn.date="09/12/2016"/>
    
    
 # 使用 DocumentDB 全局分发数据

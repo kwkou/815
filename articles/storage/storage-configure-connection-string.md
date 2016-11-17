@@ -15,7 +15,7 @@
 	ms.topic="article"
 	ms.date="09/07/2016"
 	wacn.date="10/10/2016"
-	ms.author="dineshm;tamram"/>
+	ms.author="tamram"/>
 
 # 配置 Azure 存储空间连接字符串
 

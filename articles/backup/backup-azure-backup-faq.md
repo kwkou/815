@@ -10,14 +10,14 @@
 
 
 <tags
-   ms.service="backup"
-   ms.workload="storage-backup-recovery"
-	 ms.tgt_pltfrm="na"
-	 ms.devlang="na"
-	 ms.topic="get-started-article"
-	 ms.date="08/29/2016"
-	 wacn.date="10/26/2016"
-	 ms.author="trinadhk; giridham; arunak; markgal; jimpark;"/>  
+	ms.service="backup"
+	ms.workload="storage-backup-recovery"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="get-started-article"
+	ms.date="08/29/2016"
+	ms.author="trinadhk; giridham; arunak; markgal; jimpark;"
+	wacn.date="10/26/2016"/>  
 
 
 # Azure 备份服务 - 常见问题

@@ -15,8 +15,7 @@
     ms.tgt_pltfrm="dotnet"
     ms.workload="na"
     ms.date="08/31/2016"
-    wacn.date="11/08/2016"
-    ms.author="sethm;shvija"/>  
+    wacn.date="11/08/2016"/>  
 
 
 # 使用 Azure Resource Manager 模板创建包含事件中心和使用者组的事件中心命名空间

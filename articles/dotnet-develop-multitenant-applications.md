@@ -9,13 +9,8 @@
 
 <tags
 	ms.service="active-directory"
-	ms.workload="identity"
-	ms.tgt_pltfrm="na"
-	ms.devlang="dotnet"
-	ms.topic="article"
 	ms.date="06/05/2015"
-	wacn.date="01/21/2016"
-	ms.author="wpickett"/>
+	wacn.date="01/21/2016"/>
 
 # Azure 中的多租户应用程序
 

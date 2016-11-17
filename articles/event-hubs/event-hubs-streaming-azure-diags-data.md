@@ -8,13 +8,8 @@
 	editor="" />
 <tags
 	ms.service="event-hubs"
-	ms.devlang="dotnet"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="na"
 	ms.date="07/14/2016"
-	wacn.date="08/15/2016"
-	ms.author="sethm" />
+	wacn.date="08/15/2016" />
 
 # 使用事件中心流式处理热路径中的 Azure 诊断数据
 

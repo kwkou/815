@@ -9,13 +9,8 @@
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.devlang="NA"
-   ms.topic="get-started-article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="data-services"
    ms.date="06/30/2016"
-   wacn.date="08/08/2016"
-   ms.author="cakarst;barbkess;sonyama"/>
+   wacn.date="08/08/2016"/>
 
 
 # 在 SQL 数据仓库中使用 PolyBase 加载数据

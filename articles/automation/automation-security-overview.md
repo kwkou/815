@@ -8,14 +8,9 @@
    editor="tysonn"
    keywords="自动化安全性, 安全的自动化" />
 <tags
-   ms.service="automation"
-   ms.devlang="na"
-   ms.topic="get-started-article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
-   ms.date="07/29/2016"
-   wacn.date="08/29/2016"
-   ms.author="magoedte" />
+	ms.service="automation"
+	ms.date="07/29/2016"
+	wacn.date="08/29/2016"/>
 
 # Azure 自动化安全性
 Azure 自动化可让你自动针对 Azure 和本地中的资源执行任务。为了使 Runbook 执行所需操作，Runbook 必须有权使用订阅中所需的最小权限来安全地访问资源。

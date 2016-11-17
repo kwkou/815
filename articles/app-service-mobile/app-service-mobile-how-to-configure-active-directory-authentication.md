@@ -9,13 +9,8 @@
 
 <tags
 	ms.service="app-service-mobile"
-	ms.workload="mobile"
-	ms.tgt_pltfrm="na"
-	ms.devlang="multiple"
-	ms.topic="article"
-	ms.date="10/01/2016"
-	wacn.date="10/17/2016"
-	ms.author="mahender"/>
+	ms.date="05/04/2016"
+	wacn.date="10/17/2016"/>
 
 # 如何将应用服务应用程序配置为使用 Azure Active Directory 登录
 

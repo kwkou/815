@@ -7,15 +7,10 @@
 	manager="wpickett"
 	editor=""/>
 
-<tags
-	ms.service="storage"
-	ms.workload="storage"
-	ms.tgt_pltfrm="na"
-	ms.devlang="Java"
-	ms.topic="article"
+<tags 
+	ms.service="storage" 
 	ms.date="08/11/2016"
-	wacn.date="11/16/2016"
-	ms.author="gusapost;robmcm"/>
+	wacn.date="11/16/2016"/>
 
 
 # 如何通过 Java 使用表存储

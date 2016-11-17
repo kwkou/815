@@ -9,13 +9,8 @@
 
 <tags
 	ms.service="active-directory"
-	ms.workload="web"
-	ms.tgt_pltfrm="vs-what-happened"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="08/15/2016"
-	wacn.date="09/26/2016"
-	ms.author="tarcher"/>
+	wacn.date="09/26/2016"/>
 
 # 我的 WebApi 项目（Visual Studio Azure Active Directory 连接服务）发生了什么情况
 

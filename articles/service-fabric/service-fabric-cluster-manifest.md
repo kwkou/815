@@ -9,13 +9,8 @@
 
 <tags
    ms.service="service-fabric"
-   ms.devlang="dotnet"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="na"
-   ms.date="10/07/2016"
-   wacn.date="08/08/2016"
-   ms.author="dkshir"/>
+   ms.date="06/23/2016"
+   wacn.date="08/08/2016"/>
 
 
 # Windows 独立群集的配置设置

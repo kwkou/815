@@ -12,12 +12,12 @@
 <tags
    ms.service="virtual-machines-windows"
    ms.devlang="NA"
-   ms.topic="article"
+   ms.topic="campaign-page"
    ms.tgt_pltfrm="vm-windows"
-   ms.workload="infrastructure-services"
-   ms.date="09/23/2016"
+   ms.workload="na"
+   ms.date="08/18/2016"
    wacn.date="10/17/2016"
-   ms.author="rclaus"/>  
+   ms.author="sedusch"/>  
 
 
 # 在 Windows 虚拟机 (VM) 上使用 SAP

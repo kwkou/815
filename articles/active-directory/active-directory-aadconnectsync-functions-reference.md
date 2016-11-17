@@ -14,8 +14,8 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="08/23/2016"
-	wacn.date="10/11/2016"
-	ms.author="andkjell;markvi"/>
+	ms.author="andkjell;markvi"
+	wacn.date="10/11/2016"/>
 
 
 # Azure AD Connect 同步：函数参考

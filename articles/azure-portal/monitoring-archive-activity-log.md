@@ -14,8 +14,8 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="08/23/2016"
-	wacn.date="10/17/2016"
-	ms.author="johnkem"/>  
+	ms.author="johnkem"
+	wacn.date="10/17/2016"/>  
 
 
 # 存档 Azure 活动日志

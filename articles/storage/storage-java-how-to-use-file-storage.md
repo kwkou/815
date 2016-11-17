@@ -9,13 +9,8 @@
 
 <tags
 	ms.service="storage"
-	ms.workload="storage"
-	ms.tgt_pltfrm="na"
-	ms.devlang="Java"
-	ms.topic="article"
 	ms.date="08/11/2016"
-	wacn.date="09/05/2016"
-	ms.author="minet;robmcm"/>
+	wacn.date="09/05/2016"/>
 
 # 如何通过 Java 使用文件存储
 

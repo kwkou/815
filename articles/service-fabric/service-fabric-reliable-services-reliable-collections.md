@@ -9,13 +9,8 @@
 
 <tags
    ms.service="service-fabric"
-   ms.devlang="dotnet"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="required"
    ms.date="07/28/2016"
-   wacn.date="08/29/2016"
-   ms.author="mcoskun"/>
+   wacn.date="08/29/2016"/>
 
 
 # Azure Service Fabric 有状态服务中的可靠集合简介

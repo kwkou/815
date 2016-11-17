@@ -7,15 +7,10 @@
 	manager="timlt"
 	editor=""/>
 
-<tags
-	ms.service="cloud-services"
-	ms.workload="tbd"
-	ms.tgt_pltfrm="na"
-	ms.devlang="dotnet"
-	ms.topic="article"
+<tags 
+	ms.service="cloud-services" 
 	ms.date="09/06/2016"
-	wacn.date="10/24/2016"
-	ms.author="adegeo"/>
+	wacn.date="10/24/2016"/>
 
 
 # 使用 PowerShell 在 Azure 云服务中启用诊断

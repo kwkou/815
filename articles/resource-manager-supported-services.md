@@ -10,13 +10,8 @@
 
 <tags
    ms.service="azure-resource-manager"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="na"
    ms.date="07/18/2016"
-   wacn.date="09/19/2016"
-   ms.author="magoedte;tomfitz"/>
+   wacn.date="09/19/2016"/>
 
 # 资源管理器提供程序、区域、 API 版本和架构
 

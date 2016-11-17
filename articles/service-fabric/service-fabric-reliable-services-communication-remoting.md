@@ -9,13 +9,8 @@
 
 <tags
    ms.service="service-fabric"
-   ms.devlang="dotnet"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="required"
    ms.date="07/06/2016"
-   wacn.date="08/08/2016"
-   ms.author="vturecek"/>
+   wacn.date="08/08/2016"/>
 
 # 通过 Reliable Services 进行服务远程处理
 对于不依赖于特定的通信协议或堆栈的服务，如 WebAPI、Windows Communication Foundation (WCF) 或其他服务，Reliable Services 框架提供一种远程处理机制，以便快速而轻松地为这些服务设置远程过程调用。

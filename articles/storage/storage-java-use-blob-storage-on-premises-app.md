@@ -9,13 +9,8 @@
 
 <tags
 	ms.service="storage"
-	ms.workload="storage"
-	ms.tgt_pltfrm="na"
-	ms.devlang="Java"
-	ms.topic="article"
 	ms.date="08/11/2016"
-	wacn.date="09/05/2016"
-	ms.author="jwillis;rmcmurray"/>
+	wacn.date="09/05/2016"/>
 
 # 使用 Blob 存储的本地应用程序
 

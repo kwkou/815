@@ -15,8 +15,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="na"
    ms.date="09/02/2016"
-   wacn.date="10/24/2016"
-   ms.author="tomfitz"/>
+   wacn.date="10/24/2016"/>
 
 # 将已链接的模版与 Azure 资源管理器配合使用
 

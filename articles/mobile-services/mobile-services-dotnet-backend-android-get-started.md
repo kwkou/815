@@ -8,15 +8,10 @@
 	manager="erikre"
 	editor=""/>
 
-<tags
-	ms.service="mobile-services"
-	ms.workload="mobile"
-	ms.tgt_pltfrm="mobile-android"
-	ms.devlang="java"
-	ms.topic="get-started-article"
+<tags 
+	ms.service="mobile-services" 
 	ms.date="07/21/2016"
-	wacn.date="09/26/2016"
-	ms.author="ricksal"/>
+	wacn.date="09/26/2016"/>
 
 
 # <a name="getting-started"></a>移动服务入门

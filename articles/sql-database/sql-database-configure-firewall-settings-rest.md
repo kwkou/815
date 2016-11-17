@@ -10,13 +10,8 @@
 
 <tags
 	ms.service="sql-database"
-	ms.workload="data-management"
-	ms.tgt_pltfrm="na"
-	ms.devlang="dotnet"
-	ms.topic="article" 
-	ms.date="08/09/2016" 
-	wacn.date="11/16/2016"
-	ms.author="sstein"/>
+	ms.date="08/09/2016"
+	wacn.date="11/16/2016"/>
 
 
 #  使用 REST API 配置 Azure SQL 数据库服务器级防火墙规则

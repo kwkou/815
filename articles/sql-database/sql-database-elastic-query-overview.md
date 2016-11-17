@@ -8,13 +8,8 @@
 
 <tags
     ms.service="sql-database"
-    ms.workload="sql-database"
-    ms.tgt_pltfrm="na"
-    ms.devlang="na"
-    ms.topic="article"
-    ms.date="04/27/2016"
-    wacn.date="06/14/2016"
-    ms.author="torsteng" />
+    ms.date="04/04/2016"
+    wacn.date="06/14/2016" />
 
 # Azure SQL 数据库弹性数据库查询概述（预览版）
 

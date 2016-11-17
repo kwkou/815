@@ -11,13 +11,8 @@
 
 <tags
 	ms.service="virtual-machines-linux"
-	ms.workload="infrastructure-services"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="08/08/2016"
-	wacn.date="09/12/2016"
-	ms.author="cynthn"/>
+	wacn.date="09/12/2016"/>
 
 	
 

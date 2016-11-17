@@ -10,13 +10,8 @@
 
 <tags
 	ms.service="virtual-machines-linux"
-	ms.workload="infrastructure-services"
-	ms.tgt_pltfrm="vm-linux"
-	ms.devlang="python"
-	ms.topic="article"
 	ms.date="11/10/2015"
-	wacn.date="05/24/2016"
-	ms.author="crwilcox"/>
+	wacn.date="05/24/2016"/>
 
 
 # Azure 上的 Jupyter Notebook

@@ -10,13 +10,8 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.workload="web"
-	ms.tgt_pltfrm="na"
-	ms.devlang="PHP"
-	ms.topic="article"
 	ms.date="06/03/2016"
-	wacn.date="11/14/2016" 
-	ms.author="cephalin"/>
+	wacn.date="11/14/2016"/>
 
 # 创建、配置 PHP Web 应用，并将其部署到 Azure
 

@@ -10,13 +10,8 @@
 
 <tags
 	ms.service="sql-database"
-	ms.devlang="NA"
 	ms.date="07/12/2016"
-	wacn.date="11/16/2016"
-	ms.author="CarlRabeler"
-	ms.workload="data-management"
-	ms.topic="article"
-	ms.tgt_pltfrm="NA"/>
+	wacn.date="11/16/2016"/>
 
 
 # 什么是 Azure 弹性数据库池？

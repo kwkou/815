@@ -12,13 +12,8 @@
 
 <tags
 	ms.service="virtual-machines-windows"
-	ms.workload="infrastructure-services"
-	ms.tgt_pltfrm="vm-windows"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="12/15/2015"
-	wacn.date="06/07/2016"
-	ms.author="saurabh"/>
+	wacn.date="06/07/2016"/>
 
 # 使用 Azure 资源管理器模板创建具有监视和诊断功能的 Windows 虚拟机
 

@@ -14,8 +14,8 @@
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
    ms.date="10/03/2016"
-   wacn.date="10/31/2016"
-   ms.author="charwen"/>
+   ms.author="charwen"
+   wacn.date="10/31/2016"/>
 
 
 # 使用经典部署模型和 PowerShell 为 ExpressRoute 配置虚拟网络网关

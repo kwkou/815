@@ -9,14 +9,9 @@
    editor="cgronlun"/>
 
 <tags
-   ms.service="hdinsight"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="big-data"
-   ms.date="07/25/2016"
-   wacn.date="09/30/2016"
-   ms.author="jgao"/>
+	ms.service="hdinsight"
+	ms.date="07/25/2016"
+	wacn.date="09/30/2016"/>
 
 # 使用 Microsoft Hive ODBC 驱动程序将 Excel 连接到 Hadoop
 

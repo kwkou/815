@@ -8,13 +8,8 @@
 	editor="tysonn" />
 <tags
 	ms.service="cache"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="cache-redis"
-	ms.workload="tbd"
 	ms.date="09/01/2016"
-	wacn.date="10/25/2016"
-	ms.author="sdanie" />
+	wacn.date="10/25/2016"/>
 
 # Azure Redis 缓存的 ASP.NET 会话状态提供程序
 

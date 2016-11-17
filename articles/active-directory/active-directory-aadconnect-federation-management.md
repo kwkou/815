@@ -10,13 +10,8 @@
 
 <tags
 	ms.service="active-directory"
-	ms.workload="identity"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="08/01/2016"
-	wacn.date="08/29/2016"
-	ms.author="anandy"/>
+	wacn.date="08/29/2016"/>
 
 # 使用 Azure AD Connect 进行 Active Directory 联合身份验证服务的管理和自定义
 

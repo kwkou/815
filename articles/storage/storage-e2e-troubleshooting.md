@@ -6,15 +6,10 @@
 	authors="robinsh"
 	manager="carmonm"/>  
 
-<tags
-	ms.service="storage"
-	ms.workload="storage"
-	ms.tgt_pltfrm="na"
-	ms.devlang="dotnet"
-	ms.topic="article"
+<tags 
+	ms.service="storage" 
 	ms.date="08/03/2016"
-	wacn.date="09/05/2016"
-	ms.author="jahogg;robinsh"/>
+	wacn.date="09/05/2016"/>
 
 # 使用 Azure 存储度量值和日志记录、AzCopy 及 Message Analyzer 进行点对点故障排除
 

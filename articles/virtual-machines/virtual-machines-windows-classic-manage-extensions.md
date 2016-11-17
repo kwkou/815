@@ -8,14 +8,9 @@
  editor=""
  tags="azure-service-management-windows"/>
 <tags
- ms.service="virtual-machines-windows"
- ms.devlang="na"
- ms.topic="article"
- ms.tgt_pltfrm="vm-windows"
- ms.workload="infrastructure-services"
- ms.date="08/29/2016"
- wacn.date="10/25/2016"
- ms.author="rasquill"/>
+	ms.service="virtual-machines-windows"
+	ms.date="08/29/2016"
+	wacn.date="10/25/2016"/>
 
 #管理虚拟机扩展
 

@@ -9,13 +9,8 @@
 
 <tags 
 	ms.service="storage" 
-	ms.workload="storage" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="dotnet" 
-	ms.topic="article" 
 	ms.date="08/03/2016" 
-	wacn.date="09/05/2016" 
-	ms.author="fryu;robinsh"/>
+	wacn.date="09/05/2016"/>
 
 # 启用存储度量值并查看度量值数据
 

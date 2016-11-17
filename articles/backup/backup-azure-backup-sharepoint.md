@@ -15,8 +15,8 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="09/29/2016"
-	wacn.date="11/15/2016"
-	ms.author="adigan;giridham;jimpark;trinadhk;markgal"/>  
+	ms.author="adigan;giridham;jimpark;trinadhk;markgal"
+	wacn.date="11/15/2016"/>  
 
 
 

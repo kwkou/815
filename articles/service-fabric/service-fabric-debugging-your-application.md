@@ -9,13 +9,8 @@
 
 <tags
    ms.service="service-fabric"
-   ms.devlang="dotnet"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="na"
    ms.date="06/21/2016"
-   wacn.date="08/08/2016"
-   ms.author="vturecek;mikhegn"/>
+   wacn.date="08/08/2016"/>
 
 # 使用 Visual Studio 调试 Service Fabric 应用程序
 

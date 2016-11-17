@@ -15,8 +15,8 @@
 	ms.tgt_pltfrm="vm-windows"
 	ms.workload="big-compute"
 	ms.date="08/25/2016"
-	wacn.date="10/26/2016"
-	ms.author="marsma" />  
+	ms.author="marsma" 
+   	wacn.date="10/26/2016"/>  
 
 
 # 使用 Azure Batch 应用程序包部署应用程序

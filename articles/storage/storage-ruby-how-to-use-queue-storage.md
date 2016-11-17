@@ -9,13 +9,8 @@
 
 <tags 
 	ms.service="storage" 
-	ms.workload="storage" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="ruby" 
-	ms.topic="article" 
 	ms.date="08/11/2016" 
-	wacn.date="09/12/2016" 
-	ms.author="cbrooks;robmcm"/>
+	wacn.date="09/12/2016"/>
 
 
 # 如何通过 Ruby 使用队列存储

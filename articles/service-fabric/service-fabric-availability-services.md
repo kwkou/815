@@ -9,13 +9,8 @@
 
 <tags
    ms.service="service-fabric"
-   ms.devlang="dotnet"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="NA"
    ms.date="08/10/2016"
-   wacn.date="08/29/2016"
-   ms.author="aprameyr"/>
+   wacn.date="08/29/2016"/>
 
 
 # Service Fabric 服务的可用性

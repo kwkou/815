@@ -13,9 +13,9 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="tbd" 
-   ms.date="04/19/2016" 
-   wacn.date="11/14/2016"
-   ms.author="raiye"/>
+   ms.date="04/19/2016"
+   ms.author="raiye"
+   wacn.date="11/14/2016"/>
 
 
 # Azure 来宾 OS 可支持性和停用策略

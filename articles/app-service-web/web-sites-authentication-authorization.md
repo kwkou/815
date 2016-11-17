@@ -14,8 +14,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.workload="web" 
 	ms.date="08/31/2016" 
-	wacn.date="10/25/2016" 
-	ms.author="cephalin"/>
+	wacn.date="10/25/2016"/>
 	ms.author="cephalin"/>
 
 # 在 Azure 应用中使用本地 Active Directory 进行身份验证 #

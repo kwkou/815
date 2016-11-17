@@ -7,15 +7,10 @@
 	manager="carmonm"
 	editor="tysonn"/>
 
-<tags
-	ms.service="storage"
-	ms.workload="storage"
-	ms.tgt_pltfrm="na"
-	ms.devlang="dotnet"
-	ms.topic="article"
+<tags 
+	ms.service="storage" 
 	ms.date="08/03/2016"
-	wacn.date="09/05/2016"
-	ms.author="fryu;robinsh"/>
+	wacn.date="09/05/2016"/>
 
 # 启用 Azure 存储空间度量值并查看度量值数据
 

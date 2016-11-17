@@ -7,15 +7,10 @@
 	editor=""
 	manager="jhubbard"
 	tags="azure-resource-manager" />
-<tags
+<tags 
 	ms.service="virtual-machines-windows"
-	ms.devlang="na"
-	ms.topic="hero-article"
-	ms.tgt_pltfrm="vm-windows-sql-server"
-	ms.workload="infrastructure-services"
-	ms.date="09/21/2016"
-	wacn.date="11/04/2016"
-	ms.author="jroth" />
+	ms.date="06/08/2016"
+	wacn.date="11/04/2016"/>
 
 # 在 Azure 门户预览中预配 SQL Server 虚拟机
 

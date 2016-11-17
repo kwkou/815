@@ -7,14 +7,9 @@
   manager="jwhit"
   editor="tysonn" />
 <tags
-	ms.service="cloud-services"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="na"
-	ms.date="08/01/2016"
-	wacn.date="09/19/2016"
-	ms.author="robb" />
+  ms.service="cloud-services"
+  ms.date="08/01/2016"
+  wacn.date="09/19/2016" />
 
 # 在 Azure 存储空间中存储和查看诊断数据
 

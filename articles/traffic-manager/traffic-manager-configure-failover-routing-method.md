@@ -6,15 +6,10 @@
    authors="joaoma"
    manager="adinah"
    editor="tysonn" />
-<tags 
-   ms.service="traffic-manager"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
+<tags
+	ms.service="traffic-manager"
    ms.date="06/10/2016"
-   wacn.date="07/28/2016"
-   ms.author="sewhee" />
+	wacn.date="07/28/2016"/>
 
 # 配置故障转移路由方法
 

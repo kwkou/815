@@ -8,13 +8,8 @@
 	tags="azure-resource-manager"/>
 <tags
 	ms.service="virtual-machines-windows"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="vm-windows-sql-server"
-	ms.workload="infrastructure-services"
 	ms.date="08/04/2016"
-	wacn.date="11/04/2016"
-	ms.author="ninarn" />
+	wacn.date="11/04/2016"/>
 
 # SQL Server VM 的存储配置
 

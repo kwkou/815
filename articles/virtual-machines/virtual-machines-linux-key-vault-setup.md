@@ -10,13 +10,8 @@
 
 <tags
 	ms.service="virtual-machines-linux"
-	ms.workload="infrastructure-services"
-	ms.tgt_pltfrm="vm-linux"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="05/31/2016"
-	wacn.date="07/11/2016"
-	ms.author="singhkay"/>
+	wacn.date="07/11/2016"/>
 
 # 在 Azure Resource Manager 中为虚拟机设置密钥保管库
 

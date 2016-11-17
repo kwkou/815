@@ -9,13 +9,8 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.workload="mobile"
-	ms.tgt_pltfrm="mobile-xamarin-ios"
-	ms.devlang="dotnet"
-	ms.topic="hero-article"
 	ms.date="07/21/2016"
-	wacn.date="09/26/2016"
-	ms.author="craig.dunn@xamarin.com"/>
+	wacn.date="09/26/2016"/>
 
 # <a name="getting-started"></a>移动服务入门
 [AZURE.INCLUDE [mobile-services-selector-get-started](../../includes/mobile-services-selector-get-started.md)]

@@ -9,13 +9,8 @@
 
 <tags
 	ms.service="app-service-api"
-	ms.workload="web"
-	ms.tgt_pltfrm="na"
-	ms.devlang="node"
-	ms.topic="get-started-article"
 	ms.date="05/26/2016"
-	wacn.date="09/26/2016"
-	ms.author="rachelap"/>
+	wacn.date="09/26/2016"/>
 
 # 构建 Node.js RESTful API 并将它部署到 Azure 中的 API 应用
 

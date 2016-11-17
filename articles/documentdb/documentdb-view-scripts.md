@@ -15,8 +15,8 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="08/30/2016"
-	wacn.date="10/18/2016"
-	ms.author="kirillg"/>  
+	ms.author="anhoh"
+   	wacn.date="10/18/2016"/>  
 
 
 # 使用 DocumentDB 脚本资源管理器创建并运行存储过程、触发器和用户定义的函数。

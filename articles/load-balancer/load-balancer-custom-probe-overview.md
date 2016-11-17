@@ -15,8 +15,7 @@
   ms.tgt_pltfrm="na"
   ms.workload="infrastructure-services"
   ms.date="08/25/2016"
-  wacn.date="11/08/2016"
-  ms.author="sewhee" />
+  wacn.date="11/08/2016" />
 
 # 负载均衡器探测
 

@@ -15,8 +15,8 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="09/16/2016"
-	wacn.date="10/25/2016"
-	ms.author="dastrock"/>  
+	ms.author="dastrock"
+   	wacn.date="10/25/2016"/>  
 
 
 # 如何使用 v2.0 终结点注册应用

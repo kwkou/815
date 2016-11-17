@@ -9,13 +9,8 @@
 
 <tags
 	ms.service="media-services"
-	ms.workload="media"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article" 
-	ms.date="09/19/2016" 
-	wacn.date="09/28/2016"
-	ms.author="juliako"/>
+	ms.date="07/27/2016"
+	wacn.date="09/28/2016"/>
 
 
 #使用 AES-128 动态加密和密钥传送服务

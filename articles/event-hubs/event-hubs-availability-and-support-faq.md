@@ -15,8 +15,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="na"
     ms.date="09/01/2016"
-    wacn.date="11/08/2016"
-    ms.author="sethm" />
+    wacn.date="11/08/2016" />
 
 # 事件中心常见问题
 

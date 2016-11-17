@@ -9,13 +9,8 @@
 
 <tags
 	ms.service="cloud-services"
-	ms.workload="tbd"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="08/10/2016"
-	wacn.date="09/19/2016"
-	ms.author="adegeo"/>
+	wacn.date="09/19/2016"/>
 
 # 为 Azure 云服务配置自定义域名
 

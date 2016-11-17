@@ -15,8 +15,8 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="08/23/2016" 
-	wacn.date="10/18/2016" 
-	ms.author="anhoh"/>  
+	ms.author="stbaro"
+   	wacn.date="10/18/2016"/>  
 
 
 # 如何连接到具有 MongoDB 协议支持的 DocumentDB 帐户

@@ -7,15 +7,10 @@
 	manager="stevenpo" 
 	editor="curtland"/>
 
-<tags
-	ms.service="multi-factor-authentication"
-	ms.workload="identity"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
+<tags 
+	ms.service="multi-factor-authentication" 
 	ms.date="08/04/2016"
-	wacn.date="09/28/2016"
-	ms.author="kgremban"/>
+	wacn.date="09/28/2016"/>
 
 #Azure 多重身份验证的工作原理
 

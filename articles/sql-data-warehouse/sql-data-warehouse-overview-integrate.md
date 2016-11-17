@@ -9,13 +9,8 @@
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="data-services"
    ms.date="05/31/2016"
-   wacn.date="08/15/2016"
-   ms.author="lodipalm;barbkess;sonyama"/>
+   wacn.date="08/15/2016"/>
 
 #在 SQL 数据仓库中利用其他服务
 除了本身的核心功能以外，SQL 数据仓库还允许用户利用 Azure 中的其他许多服务。具体而言，我们目前已采取多种措施深度集成了以下服务：

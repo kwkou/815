@@ -14,8 +14,8 @@
    ms.tgt_pltfrm="na"
    ms.workload="identity"
    ms.date="08/23/2016"
-   wacn.date="10/17/2016"
-   ms.author="curtand"/>
+   ms.author="curtand"
+   wacn.date="10/17/2016"/>
 
 
 # 在 Azure 中管理 Office 365 订阅的目录

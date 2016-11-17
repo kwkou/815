@@ -9,13 +9,8 @@
 
 <tags
    ms.service="Service-Fabric"
-   ms.devlang="dotnet"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="NA"
-   ms.date="09/20/2016"
-   wacn.date="08/08/2016"
-   ms.author="sumukhs"/>
+   ms.date="06/30/2016"
+   wacn.date="08/08/2016"/>
 # 配置有状态 Reliable Services
 
 有两组配置设置可供 Reliable Services 使用。一组适用于群集中的所有 Reliable Services，而另一组特定于特定的 Reliable Services。

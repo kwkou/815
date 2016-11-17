@@ -9,14 +9,9 @@
    tags="top-support-issue"
    keywords="自动化错误, 错误处理"/>
 <tags
-   ms.service="automation"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
-   ms.date="07/06/2016"
-   wacn.date="11/07/2016"
-   ms.author="sngun; v-reagie"/>
+	ms.service="automation"
+	ms.date="07/06/2016"
+	wacn.date="11/07/2016"/>
 
 # 常见 Azure 自动化错误的错误处理提示
 

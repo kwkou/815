@@ -15,7 +15,7 @@
 	ms.topic="article"
 	ms.date="09/02/2016"
 	wacn.date="11/16/2016"
-	ms.author="micurd;tamram"/>
+	ms.author="micurd"/>
 
 # 使用 AzCopy 命令行实用程序传输数据
 

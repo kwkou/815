@@ -7,15 +7,10 @@
 	manager="dwrede" 
 	editor=""/>
 
-<tags
-	ms.service="mobile-services"
-	ms.workload="mobile"
-	ms.tgt_pltfrm="na"
-	ms.devlang="multiple"
-	ms.topic="article"
+<tags 
+	ms.service="mobile-services" 
 	ms.date="07/21/2016"
-	wacn.date="09/26/2016"
-	ms.author="christopheranderson"/>
+	wacn.date="09/26/2016"/>
 
 # 在发生灾难时恢复移动服务
 

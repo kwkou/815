@@ -15,8 +15,7 @@
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
    ms.date="08/30/2016"
-   wacn.date="10/17/2016"
-   ms.author="barbkess;jrj;sonyama"/>  
+   wacn.date="10/17/2016"/>  
 
 
 # 将解决方案迁移到 SQL 数据仓库

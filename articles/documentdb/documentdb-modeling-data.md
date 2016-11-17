@@ -10,13 +10,8 @@
 
 <tags 
 	ms.service="documentdb" 
-	ms.workload="data-services" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
 	ms.date="08/05/2016" 
-	wacn.date="09/19/2016" 
-	ms.author="kipandya"/>
+	wacn.date="09/19/2016"/>
 
 #对 DocumentDB 中的数据进行建模#
 尽管无架构的数据库（如 Azure DocumentDB）能够非常容易地接受对数据模型的更改，但用户仍需花一些时间来研究数据。

@@ -14,8 +14,8 @@
    ms.tgt_pltfrm="na"
    ms.workload="identity"
    ms.date="09/16/2016"
-   wacn.date="10/11/2016"
-   ms.author="mbaldwin"/>
+   ms.author="mbaldwin"
+   wacn.date="10/11/2016"/>
 
 # Azure Active Directory 身份验证协议
 

@@ -10,13 +10,8 @@
 
 <tags
 	ms.service="multiple"
-	ms.workload="multiple"
-	ms.tgt_pltfrm="powershell"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="09/30/2016"
-	wacn.date="06/20/2016"
-	ms.author="coreyp"/>
+	ms.date="04/22/2016"
+	wacn.date="06/20/2016"/>
 
 # 如何安装和配置 Azure PowerShell#
 

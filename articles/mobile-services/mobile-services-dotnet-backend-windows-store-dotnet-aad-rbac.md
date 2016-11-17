@@ -7,15 +7,10 @@
 	editor=""
 	services="mobile-services"/>
 
-<tags
-	ms.service="mobile-services"
-	ms.workload="mobile"
-	ms.tgt_pltfrm="mobile-multiple"
-	ms.devlang="dotnet"
-	ms.topic="article"
+<tags 
+	ms.service="mobile-services" 
 	ms.date="07/21/2016"
-	wacn.date="09/26/2016"
-	ms.author="wesmc"/>
+	wacn.date="09/26/2016"/>
 
 # 使用 JavaScript 的移动服务和 Azure Active Directory 中基于角色的访问控制
 

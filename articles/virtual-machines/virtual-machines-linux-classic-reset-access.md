@@ -9,14 +9,9 @@
         tags="azure-service-management"/>
 
 <tags
-        ms.service="virtual-machines-linux"
-        ms.workload="infrastructure-services"
-        ms.tgt_pltfrm="vm-linux"
-        ms.devlang="na"
-        ms.topic="article"
-        ms.date="06/14/2016"
-        wacn.date="07/18/2016"
-        ms.author="cynthn"/>
+	ms.service="virtual-machines-linux"
+	ms.date="06/14/2016"
+	wacn.date="07/18/2016"/>
 
 # 如何使用 VMAccess 扩展重置 Linux VM 密码或 SSH 密钥、修复 SSH 配置，以及检查磁盘一致性
 

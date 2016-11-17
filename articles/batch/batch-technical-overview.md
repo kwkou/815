@@ -15,8 +15,8 @@
 	ms.devlang="na"
 	ms.topic="get-started-article"
 	ms.date="08/22/2016"
-	wacn.date="10/26/2016"
-	ms.author="marsma"/>
+	ms.author="marsma"
+   	wacn.date="10/26/2016"/>
 
 # Azure Batch 基础知识
 

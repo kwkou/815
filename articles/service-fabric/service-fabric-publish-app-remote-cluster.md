@@ -9,13 +9,8 @@
 
 <tags
     ms.service="multiple"
-    ms.devlang="dotnet"
-    ms.topic="article"
-    ms.tgt_pltfrm="na"
-    ms.workload="multiple"
     ms.date="07/29/2016"
-    wacn.date="08/29/2016"
-    ms.author="cawa" />
+    wacn.date="08/29/2016" />
 
 
 # 使用 Visual Studio 将应用程序发布到远程群集

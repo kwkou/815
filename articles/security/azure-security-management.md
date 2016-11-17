@@ -8,14 +8,9 @@
    editor="TomSh"/>
 
 <tags
-   ms.service="security"
-   ms.devlang="na"
-   ms.topic="get-started-article"
-   ms.tgt_pltfrm="na"
-   ms.workload="na"
-   ms.date="08/25/2016"
-   wacn.date="05/30/2016"
-   ms.author="terrylan"/>
+   ms.service="azure-security"
+   ms.date="04/26/2016"
+   wacn.date="05/30/2016"/>
 
 # Azure 中的安全管理
 

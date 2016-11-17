@@ -16,8 +16,8 @@
   ms.devlang="na"
   ms.topic="article"
   ms.date="08/22/2016"
-  wacn.date="10/26/2016"
-  ms.author="jimpark;trinadhk;pullabhk; markgal"/>  
+  ms.author="jimpark;trinadhk;pullabhk; markgal"
+  wacn.date="10/26/2016"/>  
 
 
 # 准备使用 Azure 备份服务器来备份工作负荷

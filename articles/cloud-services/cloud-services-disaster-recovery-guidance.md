@@ -9,13 +9,8 @@
 
 <tags
 	ms.service="cloud-services"
-	ms.workload="cloud-services"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="05/16/2016"
-	wacn.date="08/22/2016"
-	ms.author="kmouss;aglick"/>
+	wacn.date="08/22/2016"/>
 
 #发生影响 Azure 云服务的 Azure 服务中断时该怎么办
 

@@ -9,13 +9,8 @@
 
 <tags
 	ms.service="cloud-services"
-	ms.workload="infrastructure-services"
-	ms.tgt_pltfrm="vm-multiple"
-	ms.devlang="dotnet"
-	ms.topic="article"
 	ms.date="08/15/2016"
-	wacn.date="09/19/2016"
-	ms.author="tarcher"/>
+	wacn.date="09/19/2016"/>
 
 # 使用连续交付功能发布到 Azure 时如何启用远程调试
 

@@ -14,7 +14,7 @@
  ms.topic="hero-article"
  ms.date="08/18/2016"
  wacn.date="10/10/2016"
- ms.author="deli"/>  
+ ms.author="krisragh"/>  
 
 
 # 什么是 Azure 计划程序？

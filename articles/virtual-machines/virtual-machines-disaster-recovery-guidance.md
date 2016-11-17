@@ -8,14 +8,9 @@
 	editor=""/>
 
 <tags
-	ms.service="virtual-machines"
-	ms.workload="virtual-machines"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
+	ms.service="virtual-machines-linux"
 	ms.date="05/16/2016"
-	wacn.date="07/11/2016"
-	ms.author="kmouss;aglick"/>
+	wacn.date="07/11/2016"/>
 
 # 发生影响 Azure 虚拟机的 Azure 服务中断事件时该怎么办
 

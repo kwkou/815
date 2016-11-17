@@ -8,13 +8,8 @@
    editor="tysonn" />
 <tags 
    ms.service="load-balancer"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
    ms.date="03/17/2016"
-   wacn.date="08/29/2016"
-   ms.author="sewhee" />
+   wacn.date="08/29/2016" />
 
 # 为 SQL AlwaysOn 配置负载均衡器
 

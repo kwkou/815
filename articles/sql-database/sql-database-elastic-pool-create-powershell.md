@@ -9,13 +9,8 @@
 
 <tags
     ms.service="sql-database"
-    ms.devlang="NA"
-    ms.topic="get-started-article"
-    ms.tgt_pltfrm="powershell"
-    ms.workload="data-management"
     ms.date="05/27/2016"
-    wacn.date="08/24/2016"
-    ms.author="srinia"/>
+    wacn.date="08/24/2016"/>
 
 # 使用 PowerShell 创建新的弹性数据库池
 

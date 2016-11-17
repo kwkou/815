@@ -9,13 +9,8 @@
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="data-services"
    ms.date="06/14/2016"
-   wacn.date="08/01/2016"
-   ms.author="jrj;barbkess;sonyama"/>
+   wacn.date="08/01/2016"/>
 
 # SQL 数据仓库中的循环
 SQL 数据仓库支持对重复执行的语句块使用 [WHILE][] 循环。只要指定的条件都成立，或者在代码专门使用 `BREAK` 关键字终止循环之前，这些语句将不断继续。循环特别适合用于替换 SQL 代码中定义的游标。幸运的是，几乎所有以 SQL 代码编写的游标都是快进的只读变体。因此，如果你发现自己必须替换一个游标，[WHILE] 循环是绝佳的替代方案。

@@ -9,14 +9,9 @@
  tags="azure-service-management"/>
 
 <tags
- ms.service="virtual-machines-windows"
- ms.devlang="na"
- ms.topic="article"
- ms.tgt_pltfrm="vm-windows"
- ms.workload="infrastructure-services"
- ms.date="08/23/2016"
- wacn.date="10/25/2016"
- ms.author="rasquill"/>
+	ms.service="virtual-machines-windows"
+	ms.date="08/23/2016"
+	wacn.date="10/25/2016"/>
 
 #关于虚拟机代理和扩展
 

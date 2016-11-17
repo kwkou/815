@@ -10,13 +10,8 @@
 
 <tags
 	ms.service="virtual-machines-linux"
-	ms.workload="infrastructure-services"
-	ms.tgt_pltfrm="vm-linux"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="07/13/2016"
-	wacn.date="08/23/2016"
-	ms.author="cynthn"/>
+	wacn.date="08/23/2016"/>
 
 # 如何在经典 Azure Linux 虚拟机上设置终结点
 

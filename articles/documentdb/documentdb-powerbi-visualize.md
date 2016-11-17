@@ -10,13 +10,8 @@
 
 <tags
 	ms.service="documentdb"
-	ms.workload="data-services"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="09/22/2016"
-	wacn.date="07/04/2016"
-	ms.author="hawong"/>
+	ms.date="05/31/2016"
+	wacn.date="07/04/2016"/>
 
 # DocumentDB 的 Power BI 教程：使用 Power BI 连接器可视化数据
 [PowerBI.com](https://powerbi.microsoft.com/) 是一个在线服务，在此处你可以创建和共享包含对你和你的组织来说很重要的数据的仪表板和报表。Power BI Desktop 是一个专用的报表创作工具，使你能够从各种数据源检索数据、合并和转换数据、创建功能强大的报表和可视化效果以及将报表发布到 Power BI。使用最新版本的 Power BI Desktop，你现在可以通过 Power BI 的 DocumentDB 连接器连接到你的 DocumentDB 帐户。

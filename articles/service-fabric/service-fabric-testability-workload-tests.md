@@ -9,13 +9,8 @@
 
 <tags
    ms.service="service-fabric"
-   ms.devlang="dotnet"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="NA"
    ms.date="05/17/2016"
-   wacn.date="07/04/2016"
-   ms.author="anmola"/>
+   wacn.date="07/04/2016"/>
 
 # 在服务工作负荷期间模拟故障
 

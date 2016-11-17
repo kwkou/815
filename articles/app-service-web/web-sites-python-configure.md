@@ -8,15 +8,10 @@
 	manager="wpickett" 
 	editor=""/>
 
-<tags 
-	ms.service="app-service" 
-	ms.workload="na" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="python" 
-	ms.topic="article" 
-	ms.date="02/26/2016" 
-	wacn.date="09/26/2016" 
-	ms.author="huvalo"/>
+<tags
+	ms.service="app-service"
+	ms.date="02/26/2016"
+	wacn.date="09/26/2016"/>
 
 
 

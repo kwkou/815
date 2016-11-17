@@ -9,13 +9,8 @@
 
 <tags
 	ms.service="azure-resource-manager"
-	ms.workload="multiple"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="07/15/2016"
-	wacn.date="08/01/2016"
-	ms.author="tomfitz"/>
+	wacn.date="08/01/2016"/>
 
 # 创建 Azure Resource Manager 模板的最佳实践
 

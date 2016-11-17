@@ -9,13 +9,8 @@
 
 <tags
    ms.service="sql-data-warehouse"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="data-services"
    ms.date="06/14/2016"
-   wacn.date="08/01/2016"
-   ms.author="jrj;barbkess;sonyama"/>
+   wacn.date="08/01/2016"/>
 
 # 在 SQL 数据仓库中使用标签检测查询
 SQL 数据仓库支持称为查询标签的概念。在继续之前，让我们看一个示例：

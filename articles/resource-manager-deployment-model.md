@@ -10,13 +10,8 @@
 
 <tags
    ms.service="azure-resource-manager"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="na"
    ms.date="07/29/2016"
-   wacn.date="09/19/2016"
-   ms.author="tomfitz"/>
+   wacn.date="09/19/2016"/>
 
 # Azure Resource Manager 与经典部署：了解部署模型和资源状态
 

@@ -9,13 +9,8 @@
 
 <tags 
 	ms.service="mobile-services" 
-	ms.workload="mobile" 
-	ms.tgt_pltfrm="NA" 
-	ms.devlang="multiple" 
-	ms.topic="article" 
 	ms.date="07/21/2016" 
-	wacn.date="09/26/2016" 
-	ms.author="glenga"/>
+	wacn.date="09/26/2016"/>
 
 # 注册应用程序以使用 Microsoft 帐户进行身份验证
 

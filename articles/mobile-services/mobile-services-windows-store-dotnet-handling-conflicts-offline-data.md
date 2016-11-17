@@ -7,15 +7,10 @@
 	editor="" 
 	services="mobile-services"/>
 
-<tags
-	ms.service="mobile-services"
-	ms.workload="mobile"
-	ms.tgt_pltfrm="mobile-windows-store"
-	ms.devlang="dotnet"
-	ms.topic="article"
+<tags 
+	ms.service="mobile-services" 
 	ms.date="07/21/2016"
-	wacn.date="09/26/2016"
-	ms.author="glenga"/>
+	wacn.date="09/26/2016"/>
 
 
 # 在“移动服务”中处理与脱机数据同步的冲突

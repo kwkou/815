@@ -9,16 +9,10 @@
 />
 	
 
-<tags 
-	ms.service="virtual-machines-linux" 
-	ms.devlang="na" 
-	ms.topic="support-article" 
-	ms.tgt_pltfrm="vm-linux"
-	ms.workload="infrastructure" 
-	ms.date="09/19/2016" 
-	wacn.date="08/15/2016" 
-	ms.author="iainfou" 
-/>
+<tags
+	ms.service="virtual-machines-linux"
+	ms.date="06/28/2016"
+	wacn.date="08/15/2016"/>
 
 # 将虚拟机重新部署到新的 Azure 节点
 

@@ -9,14 +9,9 @@
  tags="azure-service-management,hpc-pack"/>  
 
 <tags
-ms.service="virtual-machines-windows"
- ms.devlang="na"
- ms.topic="article"
- ms.tgt_pltfrm="vm-multiple"
- ms.workload="big-compute"
- ms.date="07/22/2016"
- wacn.date="09/12/2016"
- ms.author="danlep"/>
+	ms.service="virtual-machines-windows"
+	ms.date="07/22/2016"
+	wacn.date="09/12/2016"/>
 
 # 在 Azure 中根据群集工作负荷自动扩展和收缩 HPC Pack 群集资源
 

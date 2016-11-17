@@ -8,13 +8,8 @@
 	editor="tysonn" />
 <tags
 	ms.service="automation"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="infrastructure-services"
 	ms.date="09/12/2016"
-	wacn.date="10/25/2016"
-	ms.author="magoedte;bwren" />
+	wacn.date="10/25/2016"/>
 
 # 在 Azure 自动化中创建或导入 Runbook
 

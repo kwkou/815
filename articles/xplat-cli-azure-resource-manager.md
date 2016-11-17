@@ -15,8 +15,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="08/22/2016"
-	wacn.date="10/10/2016"
-	ms.author="danlep"/>
+	wacn.date="10/10/2016" />
 
 # 使用 Azure CLI 管理 Azure 资源和资源组
 

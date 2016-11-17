@@ -9,13 +9,8 @@
 
 <tags 
 	ms.service="cloud-services" 
-	ms.workload="tbd" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="08/02/2016" 
-	wacn.date="09/19/2016"
-	ms.author="adegeo"/>
+	ms.date="08/02/2016"
+	wacn.date="09/19/2016"/>
 
 
 # 如何管理云服务

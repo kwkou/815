@@ -10,13 +10,8 @@
 
 <tags
 	ms.service="virtual-machines-windows"
-	ms.workload="infrastructure-services"
-	ms.tgt_pltfrm="vm-windows"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="07/28/2016"
-	wacn.date="09/30/2016"
-	ms.author="cynthn"/>
+	wacn.date="09/30/2016"/>
 
 	
 # 使用经典部署模型创建的 Azure Windows 虚拟机的常见问题

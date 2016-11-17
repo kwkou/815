@@ -9,13 +9,8 @@
 
 <tags
 	ms.service="sql-server-stretch-database"
-	ms.workload="data-management"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="08/05/2016"
-	wacn.date="09/05/2016"
-	ms.author="douglasl"/>
+	wacn.date="09/05/2016"/>
 
 # 为表启用延伸数据库
 

@@ -8,14 +8,9 @@
    editor=""/>
 
 <tags
-   ms.service="active-directory"  
-   ms.workload="identity"
-   ms.tgt_pltfrm="na"
-   ms.devlang="na"
-   ms.topic="article"
+   ms.service="active-directory" 
    ms.date="06/27/2016"
-   wacn.date="08/01/2016"
-   ms.author="billmath"/>
+   wacn.date="08/01/2016"/>
 
 # 有关预览版功能的详细信息
 本主题介绍如何使用预览版中当前提供的功能。

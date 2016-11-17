@@ -16,8 +16,8 @@
      ms.tgt_pltfrm="na"
      ms.workload="na"
      ms.date="08/25/2016"
-     wacn.date="10/10/2016"
-     ms.author="dobett"/>  
+     ms.author="dobett"
+     wacn.date="10/10/2016"/>  
 
 
 # 配合使用动态遥测和远程监视预配置解决方案

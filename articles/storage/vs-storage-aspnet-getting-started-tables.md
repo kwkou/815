@@ -7,15 +7,10 @@
 	manager="douge"
 	editor=""/>
 
-<tags
-	ms.service="storage"
-	ms.workload="web"
-	ms.tgt_pltfrm="vs-getting-started"
-	ms.devlang="na"
-	ms.topic="article"
+<tags 
+	ms.service="storage" 
 	ms.date="07/18/2016"
-	wacn.date="09/12/2016"
-	ms.author="tarcher"/>
+	wacn.date="09/12/2016"/>
 
 # 开始使用表存储和 Visual Studio 连接服务 (ASP.NET)
 

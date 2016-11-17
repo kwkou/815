@@ -9,14 +9,9 @@
    tags=""/>
 
 <tags
-   ms.service="vpn-gateway"
-   ms.devlang="na"
-   ms.topic="get-started-article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
-   ms.date="06/16/2016"
-   wacn.date="07/25/2016"
-   ms.author="yushwang"/>
+	ms.service="vpn-gateway"
+	ms.date="06/16/2016"
+	wacn.date="07/25/2016"/>
 
 # Azure VPN 网关的 BGP 概述
 

@@ -14,8 +14,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="na"
    ms.date="08/25/2016"
-   wacn.date="11/08/2016"
-   ms.author="spyros;sethm" />
+   wacn.date="11/08/2016" />
 
 # 通知用户已收到传感器或其他系统发出的数据
 

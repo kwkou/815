@@ -8,14 +8,9 @@
    editor="cgronlun"/>
 
 <tags
-   ms.service="hdinsight"
-   ms.devlang="dotnet"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="big-data"
-   ms.date="05/04/2016"
-   wacn.date="06/06/2016"
-   ms.author="larryfr"/>
+	ms.service="hdinsight"
+	ms.date="05/04/2016"
+	wacn.date="06/06/2016"/>
 
 #使用 HDInsight 中的 .NET SDK for Hadoop 运行 Pig 作业
 

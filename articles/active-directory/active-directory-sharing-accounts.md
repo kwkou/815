@@ -9,13 +9,8 @@
 
  <tags
 	ms.service="active-directory"
- 	ms.workload="identity"
- 	ms.tgt_pltfrm="na"
- 	ms.devlang="na"
- 	ms.topic="article"
- 	ms.date="02/09/2016"
- 	wacn.date="06/27/2016"  
- 	ms.author="stevenpo"/>
+	ms.date="02/09/2016"
+	wacn.date="06/27/2016"/>
 
 # 使用 Azure AD 共享帐户
 

@@ -10,14 +10,9 @@
 	tags="azure-resource-manager" />
 
 <tags
-	ms.service="virtual-machine-linux"
-	ms.workload="infrastructure-services"
-	ms.tgt_pltfrm="vm-linux"
-	ms.devlang="na"
-	ms.topic="article"
+	ms.service="virtual-machines-linux"
 	ms.date="03/24/2016"
-	wacn.date="11/03/2016"
-	ms.author="gatneil"/>
+	wacn.date="11/03/2016"/>
 
 # 什么是虚拟机规模集？
 

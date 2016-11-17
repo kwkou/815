@@ -10,13 +10,8 @@
 
 <tags
 	ms.service="virtual-machines-windows"
-	ms.workload="infrastructure-services"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="09/29/2016"
-	wacn.date="10/17/2016"
-	ms.author="danielsollondon"/>
+	ms.date="03/30/2016"
+	wacn.date="10/17/2016"/>
 
 # 使用 PowerShell cmdlet 创建虚拟机规模集
 

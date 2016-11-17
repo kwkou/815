@@ -8,13 +8,8 @@
 
 <tags
 	ms.service="sql-database"
-	ms.workload="sql-database"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="05/23/2016"
-	wacn.date="11/16/2016"
-	ms.author="torsteng" />
+	wacn.date="11/16/2016" />
 
 # 跨数据库查询（纵向分区）入门（预览）
 

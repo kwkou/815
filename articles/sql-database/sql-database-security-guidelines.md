@@ -10,13 +10,8 @@
 
 <tags
    ms.service="sql-database"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="data-management"
    ms.date="08/02/2016"
-   wacn.date="09/28/2016"
-   ms.author="rickbyh"/>
+   wacn.date="09/28/2016"/>
 
 # Azure SQL 数据库安全指导原则和限制
 

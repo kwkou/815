@@ -15,8 +15,8 @@
    ms.tgt_pltfrm="na"
    ms.workload="identity"
    ms.date="09/22/2016"
-   wacn.date="10/31/2016"
-   ms.author="skwan;bryanla"/>  
+   ms.author="skwan;bryanla"
+   wacn.date="10/31/2016"/>  
 
 
 #如何使 AppSource 通过 Azure Active Directory (AD) 的认证 

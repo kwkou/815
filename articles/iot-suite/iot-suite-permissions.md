@@ -11,13 +11,8 @@
 
 <tags
   ms.service="iot-suite"
-  ms.devlang="na"
-  ms.topic="article"
-  ms.tgt_pltfrm="na"
-  ms.workload="na"
   ms.date="08/10/2016"
-  wacn.date="09/05/2016"
-  ms.author="araguila"/>
+  wacn.date="09/05/2016"/>
   
 # azureiotsuite.cn 站点权限
 

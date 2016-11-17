@@ -9,13 +9,8 @@
 
 <tags
 	ms.service="app-service-mobile"
-	ms.workload="na"
-	ms.tgt_pltfrm="mobile-multiple"
-	ms.devlang="na"
-	ms.topic="hero-article"
-	ms.date="10/01/2016"
-	wacn.date="11/10/2016"
-	ms.author="adrianha"/>
+	ms.date="05/03/2016"
+	wacn.date="11/10/2016"/>
 
 # <a name="getting-started"></a>什么是移动应用？
 

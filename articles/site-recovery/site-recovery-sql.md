@@ -8,14 +8,9 @@
 	editor=""/>
 
 <tags 
-	ms.service="site-recovery" 
-	ms.workload="backup-recovery" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
+	ms.service="site-recovery"  
 	ms.date="08/04/2016" 
-	wacn.date="08/29/2016" 
-	ms.author="raynew"/>
+	wacn.date="08/29/2016"/>
 
 
 # 使用 SQL Server 灾难恢复和 Azure Site Recovery 来保护 SQL Server 

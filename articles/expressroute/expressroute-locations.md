@@ -13,8 +13,8 @@
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
    ms.date="10/17/2016"
-   wacn.date="10/31/2016"
-   ms.author="cherylmc" />
+   ms.author="cherylmc"
+   wacn.date="10/31/2016"/>
 
 
 # ExpressRoute 合作伙伴和对等位置

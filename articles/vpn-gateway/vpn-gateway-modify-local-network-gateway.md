@@ -9,14 +9,9 @@
    tags="azure-resource-manager"/>
 
 <tags
-   ms.service="vpn-gateway"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
-   ms.date="08/08/2016"
-   wacn.date="08/29/2016"
-   ms.author="cherylmc"/>
+	ms.service="vpn-gateway"
+	ms.date="08/08/2016"
+	wacn.date="08/29/2016"/>
 
 # 使用 PowerShell 修改本地网络网关设置
 

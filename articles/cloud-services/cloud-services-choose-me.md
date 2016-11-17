@@ -6,15 +6,15 @@
 	authors="Thraka" 
 	manager="timlt"/>
 
-<tags
+<tags 
 	ms.service="multiple"
 	ms.workload="multiple"
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="10/11/2016"
-	wacn.date="11/14/2016"
-	ms.author="adegeo"/>
+	ms.author="adegeo"
+	wacn.date="11/14/2016"/>
 
 
 # 是应选择云服务还是其他服务？

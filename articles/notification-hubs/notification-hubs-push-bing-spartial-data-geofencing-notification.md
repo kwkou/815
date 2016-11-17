@@ -10,13 +10,8 @@
 
 <tags
 	ms.service="notification-hubs"
-	ms.workload="mobile"
-	ms.tgt_pltfrm="mobile-windows-phone"
-	ms.devlang="dotnet"
-	ms.topic="hero-article"
 	ms.date="05/31/2016"
-	wacn.date="07/12/2016"
-	ms.author="dendeli"/>
+	wacn.date="07/12/2016"/>
     
 # 使用 Azure 通知中心和必应空间数据发送地域隔离的推送通知
  

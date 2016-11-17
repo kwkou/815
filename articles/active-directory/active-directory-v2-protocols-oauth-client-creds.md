@@ -16,8 +16,8 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="09/26/2016"
-	wacn.date="10/31/2016"
-	ms.author="dastrock"/>  
+	ms.author="dastrock"
+	wacn.date="10/31/2016"/>  
 
 
 # v2.0 协议 - OAuth 2.0 客户端凭据流

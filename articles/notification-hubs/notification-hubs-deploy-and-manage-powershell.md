@@ -9,13 +9,8 @@
 
 <tags 
 	ms.service="notification-hubs" 
-	ms.workload="mobile" 
-	ms.tgt_pltfrm="powershell" 
-	ms.devlang="na" 
-	ms.topic="article" 
 	ms.date="06/29/2016" 
-	wacn.date="08/08/2016" 
-	ms.author="wesmc"/>
+	wacn.date="08/08/2016"/>
 
 # 使用 PowerShell 部署和管理通知中心
 

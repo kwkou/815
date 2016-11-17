@@ -9,13 +9,8 @@
 
 <tags
    ms.service="service-fabric"
-   ms.devlang="dotnet"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="required"
    ms.date="07/06/2016"
-   wacn.date="08/08/2016"
-   ms.author="vturecek"/>
+   wacn.date="08/08/2016"/>
 
 # 如何使用 Reliable Services 通信 API
 

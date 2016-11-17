@@ -9,13 +9,8 @@
 
 <tags 
 	ms.service="documentdb" 
-	ms.workload="data-services" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
 	ms.date="07/07/2016" 
-	wacn.date="08/22/2016" 
-	ms.author="arramac"/>
+	wacn.date="08/22/2016"/>
 
 # 如何在 DocumentDB 中使用客户端支持对数据分区
 

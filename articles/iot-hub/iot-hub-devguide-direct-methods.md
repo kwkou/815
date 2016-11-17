@@ -14,9 +14,9 @@
  ms.topic="article"
  ms.tgt_pltfrm="na"
  ms.workload="na"
- ms.date="09/30/2016"
- wacn.date="11/07/2016" 
- ms.author="nberdy"/>  
+ ms.date="09/30/2016" 
+ ms.author="nberdy"
+ wacn.date="11/07/2016"/>  
 
 
 # 在设备上调用直接方法（预览版）

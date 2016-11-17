@@ -7,14 +7,9 @@ authors="sbtron"
 manager="timlt" 
 editor=""/>
 <tags 
-ms.service="cloud-services" 
-ms.workload="tbd" 
-ms.tgt_pltfrm="na" 
-ms.devlang="na" 
-ms.topic="article" 
-ms.date="02/17/2016" 
-wacn.date="11/12/2015" 
-ms.author="saurabh"/>
+ms.service="cloud-services"  
+ms.date="10/14/2015" 
+wacn.date="11/12/2015"/>
 
 # 为 Azure 云服务中的角色设置远程桌面连接
 

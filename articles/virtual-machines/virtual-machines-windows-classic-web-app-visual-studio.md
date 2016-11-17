@@ -10,13 +10,8 @@
 
 <tags
 	ms.service="virtual-machines-windows"
-	ms.workload="infrastructure-services"
-	ms.tgt_pltfrm="vm-windows"
-	ms.devlang="dotnet"
-	ms.topic="article"
 	ms.date="08/15/2016"
-	wacn.date="09/30/2016"
-	ms.author="tarcher"/>
+	wacn.date="09/30/2016"/>
 
 # 使用 Visual Studio 创建用于Web 应用程序的虚拟机
 

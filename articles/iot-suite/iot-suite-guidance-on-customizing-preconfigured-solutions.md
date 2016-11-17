@@ -16,8 +16,8 @@
      ms.tgt_pltfrm="na"
      ms.workload="na"
      ms.date="10/11/2016"
-     wacn.date="10/31/2016"
-     ms.author="aguilaaj"/>
+     ms.author="aguilaaj"
+     wacn.date="10/31/2016"/>
 
 
 

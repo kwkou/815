@@ -8,14 +8,9 @@
    editor=""/>
 
 <tags
-   ms.service="app-service"
-   ms.devlang="multiple"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="integration" 
-   ms.date="10/10/2016" 
-   wacn.date="09/26/2016"
-   ms.author="juliako"/>
+	ms.service="app-service"
+	ms.date="07/18/2016"
+	wacn.date="09/26/2016"/>
 
 
 # 用于 .NET 2.5.1 的 Azure SDK 发行说明

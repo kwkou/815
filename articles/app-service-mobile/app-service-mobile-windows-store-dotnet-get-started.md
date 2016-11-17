@@ -9,13 +9,8 @@
 
 <tags
 	ms.service="app-service-mobile"
-	ms.workload="mobile"
-	ms.tgt_pltfrm="mobile-windows"
-	ms.devlang="dotnet"
-	ms.topic="hero-article"
-	ms.date="10/01/2016"
-	wacn.date="09/26/2016"
-	ms.author="adrianha"/>
+	ms.date="08/11/2016"
+	wacn.date="09/26/2016"/>
 
 #创建 Windows 应用
 

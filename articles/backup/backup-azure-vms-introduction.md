@@ -10,13 +10,8 @@
 
 <tags
 	ms.service="backup"
-	ms.workload="storage-backup-recovery"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="07/14/2016"
-	wacn.date="09/26/2016"
-	ms.author="trinadhk; jimpark; markgal;"/>
+	wacn.date="09/26/2016"/>
 
 # 在 Azure 中计划 VM 备份基础结构
 本文介绍在 Azure 中规划备份虚拟机时需要注意的重要事项。如果你已[准备好环境](/documentation/articles/backup-azure-vms-prepare/)，则在开始[备份 VM](/documentation/articles/backup-azure-vms/) 之前，下一步就是执行此操作。如果你需要有关 Azure 虚拟机的详细信息，请参阅[虚拟机文档](/documentation/services/virtual-machines/)。

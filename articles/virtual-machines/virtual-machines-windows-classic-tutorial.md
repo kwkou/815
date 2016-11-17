@@ -10,13 +10,8 @@
 
 <tags
 	ms.service="virtual-machines-windows"
-	ms.workload="infrastructure-services"
-	ms.tgt_pltfrm="vm-windows"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="09/27/2016"
-	wacn.date="08/08/2016"
-	ms.author="cynthn"/>
+	ms.date="07/12/2016"
+	wacn.date="08/08/2016"/>
 
 # 在 Azure 经典管理门户中创建运行 Windows 的虚拟机
 

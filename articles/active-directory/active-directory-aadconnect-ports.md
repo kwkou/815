@@ -14,8 +14,8 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="08/25/2016"
-	wacn.date="10/11/2016"
-	ms.author="billmath"/>
+	ms.author="billmath"
+	wacn.date="10/11/2016"/>
 
 # 混合标识所需的端口和协议
 以下技术参考文档提供实现混合标识解决方案所需的端口和协议的信息。使用下图并参考相应的表格。

@@ -15,8 +15,7 @@
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
    ms.date="08/16/2016"
-   wacn.date="10/17/2016"
-   ms.author="lodipalm;barbkess;sonyama"/>  
+   wacn.date="10/17/2016"/>  
 
 
 #将示例数据载入 SQL 数据仓库

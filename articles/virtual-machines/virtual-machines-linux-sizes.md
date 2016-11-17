@@ -9,14 +9,9 @@
 	tags="azure-resource-manager,azure-service-management"/>
 
 <tags
-ms.service="virtual-machines-linux"
- ms.devlang="na"
- ms.topic="article"
- ms.tgt_pltfrm="vm-linux"
- ms.workload="infrastructure-services"
- ms.date="09/21/2016"
- wacn.date="10/25/2016"
- ms.author="cynthn"/>
+	ms.service="virtual-machines-linux"
+	ms.date="08/29/2016"
+	wacn.date="10/25/2016"/>
 
 # 虚拟机的大小
 

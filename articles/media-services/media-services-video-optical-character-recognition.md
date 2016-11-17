@@ -9,13 +9,8 @@
 
 <tags
 	ms.service="media-services"
-	ms.workload="media"
-	ms.tgt_pltfrm="na"
-	ms.devlang="dotnet"
-	ms.topic="article"
-	ms.date="09/26/2016"
-	wacn.date="08/15/2016"   
-	ms.author="juliako"/>
+	ms.date="06/27/2016"   
+	wacn.date="08/15/2016"/>
  
 #使用 Azure 媒体分析将视频文件中的文本内容转换为数字文本 
 

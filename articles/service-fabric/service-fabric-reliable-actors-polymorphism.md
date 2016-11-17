@@ -9,13 +9,8 @@
 
 <tags
    ms.service="service-fabric"
-   ms.devlang="dotnet"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="NA"
    ms.date="07/07/2016"
-   wacn.date="08/08/2016"
-   ms.author="seanmck"/>
+   wacn.date="08/08/2016"/>
 
 # Reliable Actors 框架中的多态性技术
 

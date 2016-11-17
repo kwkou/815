@@ -16,8 +16,8 @@
 	ms.devlang="na"
 	ms.topic="get-started-article"
 	ms.date="10/10/2016"
-	wacn.date="10/31/2016"
-	ms.author="markvi"/>  
+	ms.author="markvi"
+	wacn.date="10/31/2016"/>  
 
 
 # 管理 Azure AD 目录

@@ -9,13 +9,8 @@
 
 <tags
    ms.service="azure-resource-manager"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="na"
    ms.date="06/30/2016"
-   wacn.date="08/15/2016"
-   ms.author="tomfitz"/>
+   wacn.date="08/15/2016"/>
 
 # 在 Azure 资源管理器中创建多个资源实例
 

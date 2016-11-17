@@ -6,15 +6,10 @@
    authors="joaoma"
    manager="carmonm"
    editor="tysonn" />
-<tags 
-   ms.service="traffic-manager"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
+<tags
+	ms.service="traffic-manager"
    ms.date="03/17/2016"
-   wacn.date="11/14/2016"
-   ms.author="sewhee" />
+	wacn.date="11/14/2016"/>
 
 # 配置性能流量路由方法
 

@@ -13,9 +13,9 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/03/2016"
-	wacn.date="10/17/2016"
-	ms.author="johnkem"/>  
+	ms.date="08/17/2016"
+	ms.author="johnkem"
+	wacn.date="10/17/2016"/>  
 
 
 # 将 Azure 活动日志流式传输到事件中心

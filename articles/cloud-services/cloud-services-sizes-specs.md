@@ -8,13 +8,8 @@
  editor=""/>
 <tags
  ms.service="cloud-services"
- ms.devlang="na"
- ms.topic="article"
- ms.tgt_pltfrm="na"
- ms.workload="tbd"
- ms.date="08/10/2016"
- wacn.date="09/26/2016"
- ms.author="adegeo"/>
+ ms.date="05/25/2016"
+ wacn.date="09/26/2016"/>
 
 # 云服务的大小
 

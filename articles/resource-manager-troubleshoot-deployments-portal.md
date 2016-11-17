@@ -10,13 +10,8 @@
 
 <tags
    ms.service="azure-resource-manager"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="vm-multiple"
-   ms.workload="infrastructure"
    ms.date="06/15/2016"
-   wacn.date="07/18/2016"
-   ms.author="tomfitz"/>
+   wacn.date="07/18/2016"/>
 
 # 使用 Azure 门户查看部署操作
 

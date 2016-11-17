@@ -16,8 +16,8 @@
       ms.tgt_pltfrm="na"
       ms.workload="identity"
       ms.date="09/16/2016"
-      wacn.date="10/17/2016"
-      ms.author="v-jibran@microsoft.com"/>
+      ms.author="v-jibran@microsoft.com"
+      wacn.date="10/17/2016"/>
 
 
 # Azure AD 图形 API 快速入门

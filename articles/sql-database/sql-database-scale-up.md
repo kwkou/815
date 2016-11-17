@@ -9,13 +9,8 @@
 
 <tags
 	ms.service="sql-database"
-	ms.devlang="NA"
-	ms.date="10/12/2016"
-	wacn.date="09/26/2016"
-	ms.author="sstein"
-	ms.workload="data-management"
-	ms.topic="article"
-	ms.tgt_pltfrm="NA"/>
+	ms.date="07/19/2016"
+	wacn.date="09/26/2016" />
 
 
 # 更改 SQL 数据库的服务层和性能级别（定价层）

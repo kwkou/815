@@ -9,13 +9,8 @@
 
 <tags
 	ms.service="storage"
-	ms.workload="storage"
-	ms.tgt_pltfrm="na"
-	ms.devlang="java"
-	ms.topic="article"
 	ms.date="08/11/2016"
-	wacn.date="11/16/2016"
-	ms.author="jwillis;robmcm"/>
+	wacn.date="11/16/2016"/>
 
 # 如何通过 Java 使用 Blob 存储
 

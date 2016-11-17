@@ -10,13 +10,8 @@
 
 <tags
 	ms.service="virtual-machines-windows"
-	ms.workload="infrastructure-services"
-	ms.tgt_pltfrm="vm-windows"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="04/26/2016"
-	wacn.date="06/13/2016"
-	ms.author="drewm"/>
+	wacn.date="06/13/2016"/>
 
 # Azure 中虚拟机的计划内维护
 

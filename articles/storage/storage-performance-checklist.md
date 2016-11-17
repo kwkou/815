@@ -9,13 +9,8 @@
 
 <tags
 	ms.service="storage"
-	ms.workload="storage"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="08/03/2016"
-	wacn.date="11/16/2016"
-	ms.author="jahogg;robinsh"/>
+	wacn.date="11/16/2016"/>
 
 # Azure 存储性能和可伸缩性清单
 

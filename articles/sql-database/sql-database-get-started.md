@@ -16,7 +16,6 @@
 	ms.devlang="na"
 	ms.topic="hero-article"
 	ms.date="09/07/2016"
-	wacn.date="11/15/2016"
 	ms.author="carlrab"/>  
 
 

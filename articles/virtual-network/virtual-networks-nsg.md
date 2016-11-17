@@ -6,15 +6,10 @@
    authors="telmosampaio"
    manager="carmonm"
    editor="tysonn" />
-<tags 
-   ms.service="virtual-network"
-   ms.devlang="na"
-   ms.topic="get-started-article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
-   ms.date="02/11/2016"
-   wacn.date="03/17/2016"
-   ms.author="jdial" />
+<tags
+	ms.service="virtual-network"
+	ms.date="02/11/2016"
+	wacn.date="03/17/2016"/>
 
 # 什么是网络安全组 (NSG)？
 

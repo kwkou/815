@@ -8,15 +8,10 @@
 	editor="tysonn"
 	tag="azure-service-management,azure-resource-manager" />
 
-<tags 
-	ms.service="virtual-machines-linux" 
-	ms.workload="infrastructure-services" 
-	ms.tgt_pltfrm="vm-linux" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="08/24/2016" 
-	wacn.date="10/25/2016" 
-	ms.author="szark"/>
+<tags
+	ms.service="virtual-machines-linux"
+	ms.date="08/24/2016"
+	wacn.date="10/25/2016"/>
 
 
 # 在 Azure 中的 Linux VM 上配置 LVM

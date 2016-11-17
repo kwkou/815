@@ -10,13 +10,8 @@
 
 <tags 
 	ms.service="documentdb" 
-	ms.workload="data-services" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
 	ms.date="04/18/2016" 
-	wacn.date="08/22/2016" 
-	ms.author="moderakh"/>
+	wacn.date="08/22/2016"/>
 
 
 # DocumentDB Python SDK 示例

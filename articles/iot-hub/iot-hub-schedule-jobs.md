@@ -14,9 +14,9 @@
  ms.topic="article"
  ms.tgt_pltfrm="na"
  ms.workload="na"
- ms.date="09/30/2016"
- wacn.date="11/07/2016" 
- ms.author="juanpere"/>  
+ ms.date="09/30/2016" 
+ ms.author="juanpere"
+ wacn.date="11/07/2016"/>  
 
 
 # 教程：安排和广播作业（预览版）

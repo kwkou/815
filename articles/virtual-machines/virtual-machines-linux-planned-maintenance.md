@@ -10,13 +10,8 @@
 
 <tags
 	ms.service="virtual-machines-linux"
-	ms.workload="infrastructure-services"
-	ms.tgt_pltfrm="vm-linux"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="04/26/2016"
-	wacn.date="07/28/2016"
-	ms.author="drewm"/>
+	wacn.date="07/28/2016"/>
 
 
 # Azure 中 Linux 虚拟机的计划内维护

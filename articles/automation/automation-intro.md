@@ -9,13 +9,8 @@
 	keywords="什么是自动化, azure 自动化, azure 自动化示例"/>
 <tags
 	ms.service="automation"
-	ms.workload="tbd"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="get-started-article" 
-	ms.date="05/10/2016" 
-	wacn.date="08/11/2016"
-	ms.author="magoedte;bwren"/>
+	ms.date="05/10/2016"
+	wacn.date="08/11/2016"/>
 
 # Azure 自动化概述
 

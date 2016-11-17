@@ -11,13 +11,8 @@
 
 <tags
 	ms.service="sql-database"
-	ms.workload="drivers"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="07/12/2016"
-	wacn.date="08/15/2016"
-	ms.author="annemill"/>
+	wacn.date="08/15/2016"/>
 
 
 # SQL 数据库客户端应用程序的 SQL 错误代码：数据库连接错误和其他问题

@@ -9,13 +9,8 @@
 
 <tags
    ms.service="multiple"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="na"
    ms.date="02/07/2016"
-   wacn.date="06/21/2016"
-   ms.author="micflan"/>
+   wacn.date="06/21/2016"/>
 
 # Azure 门户预览快捷键
 

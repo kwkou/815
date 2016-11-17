@@ -10,13 +10,8 @@
 
 <tags
 	ms.service="virtual-machines-windows"
-	ms.workload="web"
-	ms.tgt_pltfrm="vm-windows"
-	ms.devlang="Java"
-	ms.topic="article"
 	ms.date="08/11/2016"
-	wacn.date="09/30/2016"
-	ms.author="robmcm"/>
+	wacn.date="09/30/2016"/>
 
 # 如何在使用经典部署模型创建的虚拟机上运行 Java 应用程序服务器
 

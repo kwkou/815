@@ -15,8 +15,8 @@
 	ms.devlang="dotnet"
 	ms.topic="article"
 	ms.date="09/16/2016"
-	wacn.date="10/25/2016"
-	ms.author="dastrock"/>  
+	ms.author="dastrock"
+   	wacn.date="10/25/2016"/>  
 
 
 # 从 .NET Web 应用调用 API

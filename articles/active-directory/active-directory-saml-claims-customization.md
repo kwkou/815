@@ -9,13 +9,8 @@
 
 <tags
 	ms.service="active-directory"
-	ms.workload="identity"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
 	ms.date="02/26/2016"
-	wacn.date="06/27/2016"
-	ms.author="asmalser"/>
+	wacn.date="06/27/2016"/>
 
 #在 Azure Active Directory 中为预先集成的应用自定义 SAML 令牌中颁发的声明
 

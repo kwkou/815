@@ -10,13 +10,8 @@
 
 <tags
 	ms.service="mobile-services"
-	ms.workload="mobile"
-	ms.tgt_pltfrm="mobile-ios"
-	ms.devlang="objective-c"
-	ms.topic="article"
 	ms.date="07/21/2016"
-	wacn.date="09/26/2016"
-	ms.author="krisragh"/>
+	wacn.date="09/26/2016"/>
 
 #  向经过身份验证的用户发送推送通知
 

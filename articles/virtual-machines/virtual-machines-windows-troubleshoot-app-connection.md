@@ -10,13 +10,8 @@
 
 <tags
 	ms.service="virtual-machines-windows"
-	ms.workload="infrastructure-services"
-	ms.tgt_pltfrm="vm-windows"
-	ms.devlang="na"
-	ms.topic="support-article"
-	ms.date="09/27/2016"
-	wacn.date="08/23/2016"
-	ms.author="iainfou"/>
+	ms.date="07/11/2016"
+	wacn.date="08/23/2016"/>
 
 # 对在 Azure 虚拟机上运行的应用程序的访问进行故障排除
 

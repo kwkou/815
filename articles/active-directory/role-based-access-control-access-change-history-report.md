@@ -9,13 +9,8 @@
 
 <tags
 	ms.service="active-directory"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="identity"
 	ms.date="08/03/2016"
-	wacn.date="09/05/2016"
-	ms.author="kgremban"/>
+	wacn.date="09/05/2016"/>
 
 # 创建访问权限更改历史记录报告
 

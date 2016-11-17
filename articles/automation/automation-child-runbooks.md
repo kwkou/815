@@ -6,15 +6,10 @@
    authors="mgoedtel"
    manager="jwhit"
    editor="tysonn" />
-<tags 
-   ms.service="automation"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
-   ms.date="08/17/2016"
-   wacn.date="10/25/2016"
-   ms.author="magoedte;bwren" />
+<tags
+	ms.service="automation"
+	ms.date="08/17/2016"
+	wacn.date="10/25/2016"/>
 
 # Azure 自动化中的子 Runbook
 
