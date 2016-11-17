@@ -7,10 +7,15 @@
 	manager="erikre" 
 	editor=""/>
 
-<tags
-	ms.service="media-services"
-	ms.date="08/07/2016"
-	wacn.date="09/28/2016"/>
+<tags 
+	ms.service="media-services" 
+	ms.workload="media" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="hero-article" 
+	ms.date="10/12/2016" 
+	wacn.date="09/28/2016"
+	ms.author="juliako;anilmur"/>
 
 
 #Azure 媒体服务概述和常见方案

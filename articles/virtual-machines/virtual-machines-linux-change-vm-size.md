@@ -11,9 +11,14 @@
    tags=""/>
 
 <tags
-	ms.service="virtual-machines-linux"
-	ms.date="05/16/2016"
-	wacn.date="06/27/2016"/>
+   ms.service="virtual-machines-linux"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="05/16/2016"
+   wacn.date="06/27/2016"
+   ms.author="mikewasson"/>
 
 
 # 如何调整 Linux VM 的大小

@@ -9,8 +9,13 @@
 
 <tags
 	ms.service="active-directory"
+	ms.workload="multiple"
+	ms.tgt_pltfrm="rest-api"
+	ms.devlang="na"
+	ms.topic="article"
 	ms.date="08/04/2016"
-	wacn.date="09/26/2016"/>
+	wacn.date="09/26/2016"
+	ms.author="kgremban"/>
 
 # Managing Role-Based Access Control with the REST API（使用 REST API 管理基于角色的访问控制）
 

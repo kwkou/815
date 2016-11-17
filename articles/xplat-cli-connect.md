@@ -11,8 +11,13 @@
 
 <tags
 	ms.service="multiple"
-	ms.date="07/13/2016"
-	wacn.date="08/22/2016"/>
+	ms.workload="multiple"
+	ms.tgt_pltfrm="vm-multiple"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="10/04/2016"
+	wacn.date="08/22/2016"
+	ms.author="danlep"/>
 
 
 # 从 Azure 命令行界面 (Azure CLI) 连接到 Azure 订阅

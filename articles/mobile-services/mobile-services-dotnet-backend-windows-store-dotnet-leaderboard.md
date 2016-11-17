@@ -7,10 +7,15 @@
 	editor=""
 	services="mobile-services"/>
 
-<tags 
-	ms.service="mobile-services" 
-	ms.date="07/21/2016"
-	wacn.date="11/10/2016"/>
+<tags
+	ms.service="mobile-services"
+	ms.workload="mobile"
+	ms.tgt_pltfrm="mobile-windows-store"
+	ms.devlang="dotnet"
+	ms.topic="article"
+	ms.date="09/20/2016"
+	wacn.date="11/10/2016"
+	ms.author="glenga"/>
 
 # 使用 Azure 移动服务 .NET 后端创建排行榜应用程序
 

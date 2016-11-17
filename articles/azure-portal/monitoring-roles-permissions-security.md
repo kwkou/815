@@ -15,8 +15,8 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="09/26/2016"
-	ms.author="johnkem"
-	wacn.date="11/14/2016"/>  
+	wacn.date="11/14/2016"
+	ms.author="johnkem"/>  
 
 
 # Azure 监视器中的角色、权限和安全性入门

@@ -10,8 +10,13 @@
 
 <tags
    ms.service="virtual-network"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
    ms.date="02/11/2016"
-   wacn.date="05/30/2016"/>
+   wacn.date="05/30/2016"
+   ms.author="telmos"/>
 
 # Azure 部署模型
 

@@ -7,10 +7,15 @@
 	manager="stevenp" 
 	editor="curtland"/>
 
-<tags 
-	ms.service="multi-factor-authentication" 
-	ms.date="08/04/2016" 
-	wacn.date="09/12/2016"/>
+<tags
+	ms.service="multi-factor-authentication"
+	ms.workload="identity"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/04/2016"
+	wacn.date="09/12/2016"
+	ms.author="kgremban"/>
 
 # 在 Office 365 门户中创建或删除 Azure 多重身份验证的应用密码
 

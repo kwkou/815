@@ -9,8 +9,13 @@
 
 <tags
 	ms.service="app-service-mobile"
-	ms.date="04/26/2016"
-	wacn.date="11/10/2016"/>
+	ms.workload="mobile"
+	ms.tgt_pltfrm="mobile"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="10/03/2016"
+	wacn.date="11/10/2016"
+	ms.author="adrianha"/>
 
 # <a name="article-top"></a>将现有的 Azure 移动服务迁移到 Azure 应用服务
 

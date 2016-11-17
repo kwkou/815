@@ -14,8 +14,8 @@
 	ms.devlang="objective-c"
 	ms.topic="article"
 	ms.date="07/21/2016"
-	ms.author="krisragh"
-	wacn.date="10/17/2016"/>  
+	wacn.date="10/17/2016"
+	ms.author="krisragh"/>  
 
 #  向 iOS 应用程序和 JavaScript 后端添加推送通知
 

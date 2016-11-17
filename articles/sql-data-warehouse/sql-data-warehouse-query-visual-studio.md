@@ -10,8 +10,13 @@
 
 <tags
    ms.service="sql-data-warehouse"
+   ms.devlang="NA"
+   ms.topic="get-started-article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="data-services"
    ms.date="06/16/2016"
-   wacn.date="07/18/2016"/>
+   wacn.date="07/18/2016"
+   ms.author="sonyama;barbkess"/>
 
 # 查询 Azure SQL 数据仓库 (Visual Studio)
 

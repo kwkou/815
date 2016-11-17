@@ -13,8 +13,8 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="ne" 
 	ms.topic="article" 
- 	ms.date="08/31/2016"  
-	wacn.date="10/10/2016"
+ 	ms.date="08/31/2016" 
+ 	wacn.date="10/10/2016"  
 	ms.author="cenkdin;juliako"/>
 
 #如何使用 .NET 通过本地编码器执行实时传送视频流

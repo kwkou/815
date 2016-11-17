@@ -10,8 +10,13 @@
 
 <tags
 	ms.service="virtual-machine-scale-sets"
+	ms.workload="na"
+	ms.tgt_pltfrm="windows"
+	ms.devlang="na"
+	ms.topic="article"
 	ms.date="03/28/2016"
-	wacn.date="08/29/2016"/>
+	wacn.date="08/29/2016"
+	ms.author="guybo"/>
     
 # 疑难解答使用虚拟机规模集的自动缩放问题
 

@@ -8,9 +8,14 @@
    editor="cgronlun"/>
 
 <tags
-	ms.service="hdinsight"
-	ms.date="07/11/2016"
-	wacn.date="08/23/2016"/>
+   ms.service="hdinsight"
+   ms.devlang="python"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="big-data"
+   ms.date="09/27/2016"
+   wacn.date="08/23/2016"
+   ms.author="larryfr"/>
 
 #在 HDInsight 上使用 Python 开发 Apache Storm 拓扑
 

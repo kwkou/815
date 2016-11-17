@@ -8,10 +8,15 @@
    editor="tysonn"
    tags="azure-service-management"
 />
-<tags
-	ms.service="virtual-network"
-	ms.date="02/02/2016"
-	wacn.date="03/28/2016"/>
+<tags 
+   ms.service="virtual-network"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="02/02/2016"
+   wacn.date="03/28/2016"
+   ms.author="jdial" />
 
 # 如何在 PowerShell 中设置静态专用 IP 地址（经典）
 

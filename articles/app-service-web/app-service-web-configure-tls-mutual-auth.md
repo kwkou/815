@@ -7,10 +7,15 @@
 	manager="wpickett" 
 	editor="jimbe"/>
 
-<tags
-	ms.service="app-service"
-	ms.date="08/08/2016"
-	wacn.date="09/26/2016"/>
+<tags 
+	ms.service="app-service" 
+	ms.workload="na" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="08/08/2016" 
+	wacn.date="09/26/2016" 
+	ms.author="naziml"/>
 
 # 如何为 Web 应用配置 TLS 相互身份验证
 

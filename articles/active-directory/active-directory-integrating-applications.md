@@ -14,8 +14,8 @@
    ms.tgt_pltfrm="na"
    ms.workload="identity"
    ms.date="10/11/2016"
-   ms.author="mbaldwin;bryanla" 
-   wacn.date="11/08/2016"/>  
+   wacn.date="11/08/2016"
+   ms.author="mbaldwin;bryanla" />  
 
 
 # 将应用程序与 Azure Active Directory 集成

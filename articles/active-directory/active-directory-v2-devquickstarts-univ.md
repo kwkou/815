@@ -9,8 +9,13 @@
 
 <tags
 	ms.service="active-directory"
+	ms.workload="identity"
+	ms.topic="article"
+  	ms.tgt_pltfrm="mobile-windows-store"
+	ms.devlang="dotnet"
 	ms.date="02/20/2016"
-	wacn.date="07/26/2016"/>
+	wacn.date="07/26/2016"
+	ms.author="dastrock"/>
 
 # 使用 v2.0 终结点将登录凭据添加到 Windows Universal 应用：
 

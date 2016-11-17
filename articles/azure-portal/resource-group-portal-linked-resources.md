@@ -9,8 +9,13 @@
 
 <tags 
 	ms.service="azure-portal" 
+	ms.workload="multiple" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
 	ms.date="07/16/2015" 
-	wacn.date="05/09/2016"/>
+	wacn.date="05/09/2016" 
+	ms.author="adamab"/>
 
 # 磁贴库中相关的资源与链接的资源
 

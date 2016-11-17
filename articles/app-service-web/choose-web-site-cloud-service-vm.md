@@ -9,8 +9,13 @@
 
 <tags
 	ms.service="app-service-web"
+	ms.workload="web"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
 	ms.date="07/07/2016"
-	wacn.date="11/14/2016"/>
+	wacn.date="11/14/2016"
+	ms.author="tdykstra"/>
 
 # Azure App Service、虚拟机、Service Fabric 和云服务的比较
 

@@ -14,8 +14,8 @@
    ms.tgt_pltfrm="na"
    ms.workload="storage-backup-recovery"
    ms.date="08/16/2016"
-   ms.author="markgal; jimpark; trinadhk"
-   wacn.date="10/26/2016"/>
+   wacn.date="10/26/2016"
+   ms.author="markgal; jimpark; trinadhk"/>
 
 # VM 备份期间处理加密的磁盘
 

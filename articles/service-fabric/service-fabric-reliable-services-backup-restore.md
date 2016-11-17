@@ -9,8 +9,13 @@
 
 <tags
    ms.service="service-fabric"
+   ms.devlang="dotnet"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="na"
    ms.date="06/19/2016"
-   wacn.date="08/08/2016"/>
+   wacn.date="08/08/2016"
+   ms.author="mcoskun"/>
 
 # 备份和还原 Reliable Services 及 Reliable Actors
 

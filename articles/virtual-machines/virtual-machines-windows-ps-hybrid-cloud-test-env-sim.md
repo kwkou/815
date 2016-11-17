@@ -8,10 +8,15 @@
 	editor=""
 	tags="azure-resource-manager"/>
 
-<tags
-	ms.service="virtual-machines-windows"
-	ms.date="08/08/2016"
-	wacn.date="09/12/2016"/>  
+<tags 
+	ms.service="virtual-machines-windows" 
+	ms.workload="infrastructure-services" 
+	ms.tgt_pltfrm="vm-windows" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="09/30/2016" 
+	wacn.date="09/12/2016" 
+	ms.author="josephd"/>  
 
 
 # 设置用于测试的模拟混合云环境

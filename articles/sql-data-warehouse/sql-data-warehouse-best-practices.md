@@ -16,7 +16,8 @@
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
    ms.date="09/04/2016"
-   wacn.date="10/17/2016"/>
+   wacn.date="10/17/2016"
+   ms.author="sonyama;barbkess"/>
 
 # Azure SQL 数据仓库最佳实践
 

@@ -9,8 +9,13 @@
 
 <tags
    ms.service="service-fabric"
+   ms.devlang="dotnet"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="NA"
    ms.date="07/05/2016"
-   wacn.date="08/08/2016"/>
+   wacn.date="08/08/2016"
+   ms.author="vturecek"/>
 # 在 Service Fabric 中与服务建立连接和通信
 在 Service Fabric 中，服务在 Service Fabric 群集（通常分布在多个 VM 间）中的某个位置运行。它可以从一个位置移动到另一个位置（由服务所有者移动或由 Service Fabric 自动移动）。服务不以静态方式绑定到特定计算机或地址。
  

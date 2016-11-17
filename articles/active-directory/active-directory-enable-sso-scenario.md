@@ -15,8 +15,8 @@
       ms.tgt_pltfrm="na"
       ms.workload="identity"
       ms.date="10/10/2016"
-      ms.author="markvi"
-      wacn.date="10/31/2016"/>  
+      wacn.date="10/31/2016"
+      ms.author="markvi"/>  
 
 
 # 使用 Azure Active Directory 管理应用程序

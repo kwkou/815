@@ -7,10 +7,15 @@
 	manager="Erikre" 
 	editor=""/>
 
-<tags
-	ms.service="cache"
-	ms.date="07/12/2016"
-	wacn.date="09/05/2016"/>
+<tags 
+	ms.service="cache" 
+	ms.workload="web" 
+	ms.tgt_pltfrm="cache-redis" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="09/27/2016" 
+	wacn.date="09/05/2016" 
+	ms.author="sdanie"/>
 
 # 使用模板创建 Redis 缓存
 

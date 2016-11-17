@@ -15,8 +15,8 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="07/29/2016" 
-	ms.author="mimig"
-   	wacn.date="10/18/2016"/>  
+	wacn.date="10/18/2016" 
+	ms.author="mimig"/>  
 
 
 # DocumentDB SQL 查询速查表 PDF

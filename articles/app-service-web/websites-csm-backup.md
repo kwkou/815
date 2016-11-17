@@ -9,8 +9,13 @@
 
 <tags
 	ms.service="app-service"
+	ms.workload="na"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
 	ms.date="08/10/2016"
-	wacn.date="09/26/2016"/>
+	wacn.date="09/26/2016"
+	ms.author="nicking"/>
 # 使用 REST 备份和还原 App Service 应用
 
 > [AZURE.SELECTOR]

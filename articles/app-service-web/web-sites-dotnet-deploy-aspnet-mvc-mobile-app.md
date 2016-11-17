@@ -7,10 +7,15 @@
 	manager="wpickett" 
 	editor="jimbe"/>
 
-<tags
-	ms.service="app-service"
-	ms.date="01/12/2016"
-	wacn.date="09/26/2016"/>
+<tags 
+	ms.service="app-service" 
+	ms.workload="na" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="dotnet" 
+	ms.topic="article" 
+	ms.date="01/12/2016" 
+	wacn.date="09/26/2016" 
+	ms.author="cephalin;riande"/>
 
 
 # 在 Azure App Service 上部署 ASP.NET MVC 5 移动 Web 应用

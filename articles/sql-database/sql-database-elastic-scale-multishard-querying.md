@@ -9,8 +9,13 @@
 
 <tags 
 	ms.service="sql-database" 
+	ms.workload="sql-database" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
 	ms.date="04/12/2016" 
-	wacn.date="05/16/2016"/>
+	wacn.date="05/16/2016" 
+	ms.author="torsteng"/>
 
 # 多分片查询
 

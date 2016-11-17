@@ -11,9 +11,14 @@
    tags="top-support-issue, azure-resource-manager"/>
 
 <tags
-	ms.service="virtual-machines-linux"
-	ms.date="09/09/2016"
-	wacn.date="10/25/2016"/>
+  ms.service="virtual-machines-linux"
+  ms.workload="na"
+  ms.tgt_pltfrm="vm-linux"
+  ms.devlang="na"
+  ms.topic="article"
+  ms.date="09/09/2016"
+  wacn.date="10/25/2016"
+  ms.author="cjiang"/>
 
 # 排查在 Azure 中新建 Linux 虚拟机时遇到的 Resource Manager 部署问题
 

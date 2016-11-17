@@ -14,8 +14,8 @@
    ms.tgt_pltfrm="na"
    ms.workload="storage-backup-recovery"
    ms.date="09/27/2016"
-   ms.author="jimpark;trinadhk;markgal" 
-   wacn.date="11/15/2016"/>  
+   wacn.date="11/15/2016"
+   ms.author="jimpark;trinadhk;markgal"/>  
 
 
 # 使用 Azure 备份来取代磁带基础结构

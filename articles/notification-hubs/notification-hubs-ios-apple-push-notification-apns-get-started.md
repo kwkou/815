@@ -10,8 +10,13 @@
 
 <tags
 	ms.service="notification-hubs"
-	ms.date="06/29/2016"
-	wacn.date="11/11/2016"/>
+	ms.workload="mobile"
+	ms.tgt_pltfrm="mobile-ios"
+	ms.devlang="objective-c"
+	ms.topic="hero-article"
+	ms.date="10/03/2016"
+	wacn.date="11/11/2016"
+	ms.author="wesmc"/>
 
 # 通过 Azure 通知中心向 iOS 发送推送通知
 

@@ -11,12 +11,12 @@
 <tags
 	ms.service="active-directory"
 	ms.workload="identity"
-  	ms.tgt_pltfrm="na"
+  ms.tgt_pltfrm="na"
 	ms.devlang="javascript"
 	ms.topic="article"
 	ms.date="08/15/2016"
-	ms.author="brandwe"
-	wacn.date="10/17/2016"/>
+	wacn.date="10/17/2016"
+	ms.author="brandwe"/>
 
 # 使用 Azure AD 执行 Web 应用登录和注销
 

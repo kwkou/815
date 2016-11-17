@@ -15,7 +15,8 @@
     ms.tgt_pltfrm="na"
     ms.workload="na"
     ms.date="08/16/2016"
-    wacn.date="11/08/2016" />
+    wacn.date="11/08/2016"
+    ms.author="sethm;clemensv" />
 
 # 事件中心身份验证和安全模型概述
 

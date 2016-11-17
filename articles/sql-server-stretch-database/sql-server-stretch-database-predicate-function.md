@@ -9,8 +9,13 @@
 
 <tags
 	ms.service="sql-server-stretch-database"
+	ms.workload="data-management"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
 	ms.date="06/28/2016"
-	wacn.date="08/08/2016"/>
+	wacn.date="08/08/2016"
+	ms.author="douglasl"/>
 
 # 使用筛选器函数来选择要迁移的行 (Stretch Database)
 

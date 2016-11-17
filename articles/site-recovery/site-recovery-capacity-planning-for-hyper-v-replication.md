@@ -8,8 +8,13 @@
 	editor="tysonn"/>
 <tags
 	ms.service="site-recovery"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="storage-backup-recovery"
 	ms.date="07/12/2016"
-	wacn.date="08/01/2016"/>
+	wacn.date="08/01/2016"
+	ms.author="raynew" />
 
 # 为站点恢复运行 Hyper-V Capacity Planner 工具
 

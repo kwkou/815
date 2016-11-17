@@ -9,8 +9,13 @@
 
 <tags
    ms.service="service-fabric"
-   ms.date="08/03/2016"
-   wacn.date="08/29/2016"/>
+   ms.devlang="dotnet"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="NA"
+   ms.date="09/22/2016"
+   wacn.date="08/29/2016"
+   ms.author="mfussell"/>
 
 # Service Fabric 概述
 Service Fabric 是一种分布式系统平台，可让你轻松打包、部署和管理可缩放、可靠的微服务。Service Fabric 还解决了开发和管理云应用程序中的重大难题。开发人员和管理员不仅可以避免解决复杂的基础结构问题，而且可以专注于实现可扩展、可靠且易于管理的所需的任务关键型工作负荷。Service Fabric 代表用于生成和管理这些企业级的一级云规模应用程序的下一代中间件平台。

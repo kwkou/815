@@ -9,8 +9,13 @@
 
 <tags
    ms.service="active-directory"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="identity"
    ms.date="06/23/2016"
-   wacn.date="08/22/2016"/>
+   wacn.date="08/22/2016"
+   ms.author="mbaldwin"/>
 
 
 # 适用于应用程序的品牌准则

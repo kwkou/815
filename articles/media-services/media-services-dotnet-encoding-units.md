@@ -13,8 +13,8 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
- 	ms.date="09/01/2016"
-	wacn.date="10/10/2016"
+ 	ms.date="09/01/2016" 
+ 	wacn.date="10/10/2016"
 	ms.author="juliako;milangada;gtrifonov"/>
 
 

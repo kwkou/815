@@ -7,10 +7,15 @@
 	manager="douge" 
 	editor=""/>
 
-<tags
-	ms.service="cache"
-	ms.date="08/25/2016"
-	wacn.date="10/25/2016"/>
+<tags 
+	ms.service="cache" 
+	ms.workload="tbd" 
+	ms.tgt_pltfrm="cache-redis" 
+	ms.devlang="dotnet" 
+	ms.topic="hero-article" 
+	ms.date="08/25/2016" 
+	wacn.date="10/25/2016" 
+	ms.author="sdanie"/>
 
 # 如何使用 Azure Redis Cache
 

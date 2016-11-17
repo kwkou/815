@@ -9,8 +9,13 @@
 
 <tags
    ms.service="sql-data-warehouse"
+   ms.devlang="NA"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="data-services"
    ms.date="08/04/2016"
-   wacn.date="09/05/2016"/>  
+   wacn.date="09/05/2016"
+   ms.author="sonyama;barbkess;jrj"/>  
 
 
 # 概述 SQL 数据仓库中的表

@@ -11,8 +11,13 @@
 
 <tags
 	ms.service="sql-database"
+	ms.workload="data-management"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="get-started-article"
 	ms.date="07/05/2016"
-	wacn.date="08/15/2016"/>
+	wacn.date="08/15/2016"
+	ms.author="joseidz"/>
 
 
 # SQL 数据库教程：将 Excel 连接到 Azure SQL 数据库并创建报表

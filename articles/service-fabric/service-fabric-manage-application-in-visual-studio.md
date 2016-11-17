@@ -9,8 +9,13 @@
 
 <tags
    ms.service="service-fabric"
-   ms.date="07/07/2016"
-   wacn.date="08/08/2016"/>
+   ms.devlang="dotnet"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="na"
+   ms.date="09/09/2016"
+   wacn.date="08/08/2016"
+   ms.author="seanmck;mikhegn"/>
 
 # 使用 Visual Studio 简化 Service Fabric 应用程序的编写和管理
 

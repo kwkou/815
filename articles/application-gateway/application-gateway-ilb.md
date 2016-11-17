@@ -8,8 +8,13 @@
    editor="tysonn"/>
 <tags 
    ms.service="application-gateway"
-   ms.date="08/19/2016"
-   wacn.date="10/25/2016"/>
+   ms.devlang="na"
+   ms.topic="article" 
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services" 
+   ms.date="08/19/2016" 
+   wacn.date="10/25/2016"
+   ms.author="gwallace"/>
 
 # 创建具有内部负载均衡器 (ILB) 的应用程序网关
 

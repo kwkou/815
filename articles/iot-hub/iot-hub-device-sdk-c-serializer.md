@@ -14,8 +14,8 @@
      ms.tgt_pltfrm="na"
      ms.workload="na"
      ms.date="09/06/2016"
-     ms.author="obloch"
-     wacn.date="11/07/2016"/>
+     wacn.date="11/07/2016"
+     ms.author="obloch"/>
 
 # 适用于 C 语言的 Azure IoT 设备 SDK – 有关序列化程序的详细信息
 

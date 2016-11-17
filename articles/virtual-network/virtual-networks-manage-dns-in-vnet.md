@@ -6,10 +6,15 @@
    authors="telmosampaio"
    manager="carmonm"
    editor="tysonn" />
-<tags
-	ms.service="virtual-network"
-	ms.date="03/15/2016"
-	wacn.date="04/26/2016"/>
+<tags 
+   ms.service="virtual-network"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="03/15/2016"
+   wacn.date="04/26/2016"
+   ms.author="jdial" />
 
 # 管理虚拟网络 (VNet) 使用的 DNS 服务器
 

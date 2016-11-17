@@ -16,8 +16,8 @@
    ms.tgt_pltfrm="na"
    ms.workload="na"
    ms.date="10/05/2016"
-   ms.author="dobett"
-   wacn.date="10/31/2016"/>
+   wacn.date="10/31/2016"
+   ms.author="dobett"/>
 
 
 # 将设备连接到远程监视预配置解决方案 (mbed)

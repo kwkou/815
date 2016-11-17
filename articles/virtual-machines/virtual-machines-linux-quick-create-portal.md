@@ -10,9 +10,15 @@
 />
 
 <tags
-	ms.service="virtual-machines-linux"
-	ms.date="08/18/2016"
-	wacn.date="10/25/2016"/>
+    ms.service="virtual-machines-linux"
+    ms.workload="infrastructure-services"
+    ms.tgt_pltfrm="vm-linux"
+    ms.devlang="na"
+    ms.topic="hero-article"
+    ms.date="08/18/2016"
+    wacn.date="10/25/2016"
+    ms.author="v-livech"
+/>
 
 # 使用门户预览在 Azure 上创建 Linux VM
 

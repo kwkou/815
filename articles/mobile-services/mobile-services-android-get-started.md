@@ -7,10 +7,15 @@
 	manager="reikre"
 	editor=""/>
 
-<tags 
-	ms.service="mobile-services" 
+<tags
+	ms.service="mobile-services"
+	ms.workload="mobile"
+	ms.tgt_pltfrm="mobile-android"
+	ms.devlang="java"
+	ms.topic="hero-article"
 	ms.date="07/21/2016"
-	wacn.date="09/26/2016"/>
+	wacn.date="09/26/2016"
+	ms.author="ricksal"/>
 
 # 适用于 Android 的移动服务入门（JavaScript 后端）
 

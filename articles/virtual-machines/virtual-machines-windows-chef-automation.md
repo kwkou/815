@@ -8,10 +8,13 @@
    tags="azure-service-management,azure-resource-manager"
    editor=""/>
 
-<tags 
-	ms.service="virtual-machines-windows" 
-	ms.date="05/19/2015" 
-	wacn.date="11/12/2015"/>
+<tags ms.service="virtual-machines-windows" ms.workload="infrastructure-services"
+ms.tgt_pltfrm="vm-multiple"
+ms.devlang="na"
+ms.topic="article"
+ms.date="05/19/2015"
+wacn.date="11/12/2015"
+ms.author="diviso"/>
 
 # 使用 Chef 自动执行 Azure 虚拟机部署
 

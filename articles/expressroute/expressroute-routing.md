@@ -13,8 +13,8 @@
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
    ms.date="10/14/2016"
-   ms.author="ganesr"
-   wacn.date="10/31/2016"/>  
+   wacn.date="10/31/2016"
+   ms.author="ganesr"/>  
 
 
 

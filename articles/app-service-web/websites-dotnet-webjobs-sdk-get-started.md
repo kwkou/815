@@ -9,8 +9,13 @@
 
 <tags
 	ms.service="app-service"
+	ms.workload="na"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
 	ms.date="06/01/2016"
-	wacn.date="11/14/2016"/>
+	wacn.date="11/14/2016"
+	ms.author="tdykstra"/>
 
 # 在 Azure App Service 中创建 .NET Web 作业
 

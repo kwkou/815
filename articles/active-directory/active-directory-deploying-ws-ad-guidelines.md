@@ -15,8 +15,8 @@
    ms.tgt_pltfrm="na"
    ms.workload="identity"
    ms.date="09/27/2016"
-   ms.author="femila"
-   wacn.date="10/31/2016"/>  
+   wacn.date="10/31/2016"
+   ms.author="femila"/>  
 
 
 # 有关在 Azure 虚拟机上部署 Windows Server Active Directory 的指导

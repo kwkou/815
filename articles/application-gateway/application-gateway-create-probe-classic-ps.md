@@ -8,10 +8,15 @@
    editor=""
    tags="azure-service-management"
 />
-<tags
-	ms.service="application-gateway"
-	ms.date="08/09/2016"
-	wacn.date="09/19/2016"/>
+<tags  
+   ms.service="application-gateway"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="08/09/2016"
+   wacn.date="09/19/2016"
+   ms.author="gwallace" />
 
 # 使用 PowerShell 创建 Azure 应用程序网关（经典）的自定义探测
 

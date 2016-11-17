@@ -11,8 +11,13 @@
 
 <tags 
 	ms.service="documentdb" 
-	ms.date="03/04/2016" 
-	wacn.date="07/01/2016"/>
+	ms.workload="data-services" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="09/28/2016" 
+	wacn.date="07/01/2016" 
+	ms.author="mimig"/>
 
 # 使用 Azure Resource Manager 模板和 Azure CLI 自动创建 DocumentDB 帐户
 

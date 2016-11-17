@@ -10,8 +10,13 @@
 
 <tags
 	ms.service="sql-server-stretch-database"
+	ms.workload="data-management"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="get-started-article"
 	ms.date="06/27/2016"
-	wacn.date="08/25/2016"/>
+	wacn.date="08/25/2016"
+	ms.author="douglasl"/>
 
 # SQL Server Stretch Database 概述
 

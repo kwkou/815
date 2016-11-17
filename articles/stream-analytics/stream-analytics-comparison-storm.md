@@ -16,7 +16,8 @@
 	ms.tgt_pltfrm="na"
 	ms.workload="big-data"
 	ms.date="09/26/2016"
-	wacn.date="11/14/2016"/>  
+	wacn.date="11/14/2016"
+	ms.author="jeffstok"/>  
 
 
 # 帮助你选择流分析平台：Apache Storm 与 Azure 流分析的比较

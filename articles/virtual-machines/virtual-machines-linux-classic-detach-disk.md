@@ -10,8 +10,13 @@
 
 <tags
 	ms.service="virtual-machines-linux"
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="vm-linux"
+	ms.devlang="na"
+	ms.topic="article"
 	ms.date="08/23/2016"
-	wacn.date="10/25/2016"/>
+	wacn.date="10/25/2016"
+	ms.author="iainfou"/>
 
 # 如何从 Linux 虚拟机分离磁盘
 

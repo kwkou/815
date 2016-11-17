@@ -9,10 +9,15 @@
 	manager="wpickett" 
 	editor=""/>
 
-<tags
-	ms.service="app-service"
-	ms.date="04/28/2016"
-	wacn.date="11/14/2016"/>  
+<tags 
+	ms.service="app-service" 
+	ms.workload="na" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="dotnet" 
+	ms.topic="article" 
+	ms.date="08/29/2016" 
+	wacn.date="11/14/2016" 
+	ms.author="rachelap"/>  
 
 
 # 使用 Visual Studio 对 Azure App Service 中的 Web 应用进行故障排除

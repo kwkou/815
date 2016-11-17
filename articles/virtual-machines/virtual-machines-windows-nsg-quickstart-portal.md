@@ -10,9 +10,14 @@
    editor=""/>
 
 <tags
-	ms.service="virtual-machines-windows"
-	ms.date="08/08/2016"
-	wacn.date="09/30/2016"/>
+   ms.service="virtual-machines-windows"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="vm-windows"
+   ms.workload="infrastructure-services"
+   ms.date="08/08/2016"
+   wacn.date="09/30/2016"
+   ms.author="iainfou"/>
 
 # 使用 Azure 门户预览对 VM 实现外部访问
 [AZURE.INCLUDE [virtual-machines-common-nsg-quickstart](../../includes/virtual-machines-common-nsg-quickstart.md)]

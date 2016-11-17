@@ -14,8 +14,8 @@
      ms.tgt_pltfrm="na"
      ms.workload="na"
      ms.date="08/16/2016"
-     ms.author="dobett"
-     wacn.date="11/07/2016"/>
+     wacn.date="11/07/2016"
+     ms.author="dobett"/>
 
 
 # 使用 C# 程序和 ARM 模板创建 IoT 中心

@@ -11,8 +11,13 @@
 />
 <tags 
    ms.service="load-balancer"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
    ms.date="04/05/2016"
-   wacn.date="08/29/2016" />
+   wacn.date="08/29/2016"
+   ms.author="sewhee" />
 
 # 用于 Azure Load Balancer 的 Log Analytics（预览版）
 可以在 Azure 中使用不同类型的日志对负载均衡器进行管理和故障排除。这些日志中有些可以通过门户访问，并且所有日志都可以从 Azure blob 存储中提取并在不同工具（如 Excel 和 PowerBI）中查看。你可以了解有关下面的列表中不同类型日志的详细信息。

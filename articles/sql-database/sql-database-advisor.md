@@ -9,8 +9,13 @@
 
 <tags
    ms.service="sql-database"
-   ms.date="06/23/2016"
-   wacn.date="08/15/2016"/>
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="data-management" 
+   ms.date="09/30/2016" 
+   wacn.date="08/15/2016"
+   ms.author="sstein"/>
 
 # SQL 数据库顾问
 

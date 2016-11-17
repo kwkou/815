@@ -14,9 +14,9 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="08/24/2016"
-	ms.author="anhoh"
-   	wacn.date="11/10/2016"/>
+	ms.date="10/14/2016"
+	wacn.date="11/10/2016"
+	ms.author="kirillg"/>
 
 # 如何管理 DocumentDB 帐户
 

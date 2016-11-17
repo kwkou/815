@@ -7,9 +7,14 @@
    manager="rossort"
    editor="amsriva"/>
 <tags
-	ms.service="application-gateway"
-	ms.date="07/07/2016"
-	wacn.date="09/12/2016"/>
+   ms.service="application-gateway"
+   ms.devlang="na"
+   ms.topic="hero-article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="10/04/2016"
+   wacn.date="09/12/2016"
+   ms.author="amsriva"/>
 
 # 应用程序网关的多站点托管功能
 

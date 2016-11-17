@@ -14,8 +14,8 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="08/22/2016"
-	ms.author="markvi;andkjell"
-	wacn.date="10/11/2016"/>
+	wacn.date="10/11/2016"
+	ms.author="markvi;andkjell"/>
 
 
 # Azure AD Connect 同步：有关更改默认配置的最佳实践

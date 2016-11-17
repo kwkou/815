@@ -7,10 +7,15 @@
 	manager="douge"
 	editor=""/>
 
-<tags 
+<tags
 	ms.service="storage"
+	ms.workload="web"
+	ms.tgt_pltfrm="vs-getting-started"
+	ms.devlang="na"
+	ms.topic="article"
 	ms.date="07/18/2016"
-	wacn.date="09/12/2016"/>
+	wacn.date="09/12/2016"
+	ms.author="tarcher"/>
 
 # Azure 存储入门（Azure WebJob 项目）
 

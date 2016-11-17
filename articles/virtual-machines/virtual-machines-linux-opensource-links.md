@@ -10,8 +10,13 @@
 
 <tags
 	ms.service="virtual-machines-linux"
+	ms.devlang="NA"
+	ms.topic="article"
+	ms.tgt_pltfrm="vm-linux"
+	ms.workload="infrastructure-services"
 	ms.date="06/27/2016"
-	wacn.date="11/07/2016"/>
+	wacn.date="11/07/2016"
+	ms.author="rasquill"/>
 
 
 

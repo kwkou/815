@@ -10,8 +10,13 @@
 
 <tags
 	ms.service="virtual-machines-windows"
-	ms.date="07/13/2016"
-	wacn.date="08/23/2016"/>
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="vm-windows"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="09/27/2016"
+	wacn.date="08/23/2016"
+	ms.author="cynthn"/>
 
 # 如何在经典 Azure 虚拟机上设置终结点
 

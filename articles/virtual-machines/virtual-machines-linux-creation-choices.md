@@ -10,8 +10,13 @@
 
 <tags
 	ms.service="virtual-machines-linux"
-	ms.date="07/06/2016"
-	wacn.date="08/15/2016"/>
+	ms.devlang="na"
+	ms.topic="get-started-article"
+	ms.tgt_pltfrm="vm-linux"
+	ms.workload="infrastructure-services"
+	ms.date="09/27/2016"
+	wacn.date="08/15/2016"
+	ms.author="iainfou"/>
 
 # 使用 Resource Manager 创建 Linux 虚拟机的不同方式
 

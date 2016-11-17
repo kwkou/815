@@ -15,8 +15,8 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="08/23/2016"
-	ms.author="curtand"
-   	wacn.date="10/17/2016"/>
+	wacn.date="10/17/2016"
+	ms.author="curtand"/>
 
 
 # 在 Azure Active Directory 中管理密码

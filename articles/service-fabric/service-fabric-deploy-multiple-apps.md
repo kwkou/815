@@ -9,8 +9,13 @@
 
 <tags
    ms.service="service-fabric"
+   ms.devlang="dotnet"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="NA"
    ms.date="06/20/2016"
-   wacn.date="07/04/2016"/>
+   wacn.date="07/04/2016"
+   ms.author="bscholl;mikhegn"/>
 
 
 # 部署多个来宾可执行文件

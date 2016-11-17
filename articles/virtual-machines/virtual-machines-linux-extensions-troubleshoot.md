@@ -12,8 +12,13 @@
 
 <tags
    ms.service="virtual-machines-linux"
+   ms.devlang="na"
+   ms.topic="support-article"
+   ms.tgt_pltfrm="vm-linux"
+   ms.workload="infrastructure-services"
    ms.date="03/29/2016"
-   wacn.date="06/29/2016"/>
+   wacn.date="06/29/2016"
+   ms.author="kundanap"/>
 
 # 对 Azure Linux VM 扩展故障进行故障排除。
 

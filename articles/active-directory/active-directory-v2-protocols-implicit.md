@@ -15,8 +15,8 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="09/16/2016"
-	ms.author="dastrock"
-   	wacn.date="10/25/2016"/>  
+	wacn.date="10/25/2016"
+	ms.author="dastrock"/>  
 
 
 # v2.0 协议 - 使用隐式流的 SPA

@@ -8,9 +8,14 @@
    editor=""/>
 
 <tags
-	ms.service="virtual-network"
-	ms.date="02/01/2016"
-	wacn.date="03/28/2016"/>
+   ms.service="virtual-network"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="02/01/2016"
+   wacn.date="03/28/2016"
+   ms.author="jonor;sivae"/>
 
 # 示例 1 – 使用 NSG 构建简单的外围网络
 

@@ -7,10 +7,15 @@
 	manager="stevenpo" 
 	editor="curtand"/>
 
-<tags 
-	ms.service="active-directory" 
+<tags
+	ms.service="active-directory"
+	ms.workload="identity"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
 	ms.date="08/08/2016"
-	wacn.date="08/29/2016"/>
+	wacn.date="08/29/2016"
+	ms.author="billmath"/>
 
 # Azure AD Connect 常见问题
 

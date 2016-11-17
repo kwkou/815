@@ -8,9 +8,14 @@
    editor=""/>
 
 <tags
-	ms.service="backup"
-	ms.date="08/03/2016"
-	wacn.date="09/05/2016"/>
+   ms.service="backup"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="storage-backup-recovery"
+   ms.date="08/03/2016"
+   wacn.date="09/05/2016"
+   ms.author="markgal; trinadhk"/>
 
 # 使用 PowerShell 部署和管理 Resource Manager 部署型 VM 的备份
 

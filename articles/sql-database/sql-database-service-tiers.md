@@ -10,8 +10,13 @@
 
 <tags
 	ms.service="sql-database"
+	ms.devlang="na"
+	ms.topic="get-started-article"
+	ms.tgt_pltfrm="na"
+	ms.workload="data-management"
 	ms.date="08/10/2016"
-	wacn.date="11/16/2016"/>
+	wacn.date="11/16/2016"
+	ms.author="carlrab"/>
 
 # SQL 数据库选项和性能：了解每个服务层提供的功能
 

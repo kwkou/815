@@ -10,9 +10,14 @@
    editor=""/>
 
 <tags
-	ms.service="virtual-machines-linux"
-	ms.date="02/08/2016"
-	wacn.date="06/07/2016"/>
+   ms.service="virtual-machines-linux"
+   ms.devlang="NA"
+   ms.topic="article"
+   ms.tgt_pltfrm="vm-linux"
+   ms.workload="infrastructure"
+   ms.date="02/08/2016"
+   wacn.date="06/07/2016"
+   ms.author="kmouss"/>
    
 # 启用或禁用 Azure VM 监视
 

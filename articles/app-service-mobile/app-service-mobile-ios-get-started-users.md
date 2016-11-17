@@ -9,8 +9,13 @@
 
 <tags
 	ms.service="app-service-mobile"
-	ms.date="06/28/2016"
-	wacn.date="09/26/2016"/>
+	ms.workload="mobile"
+	ms.tgt_pltfrm="mobile-ios"
+	ms.devlang="dotnet"
+	ms.topic="article"
+	ms.date="10/01/2016"
+	wacn.date="09/26/2016"
+	ms.author="yuaxu"/>
 
 # Add authentication to your iOS app（将身份验证添加到 iOS 应用）
 

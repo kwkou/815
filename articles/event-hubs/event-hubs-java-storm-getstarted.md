@@ -15,7 +15,8 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="09/06/2016"
-	wacn.date="10/10/2016"/>  
+	wacn.date="10/10/2016"
+	ms.author="sethm"/>  
 
 
 # 事件中心入门

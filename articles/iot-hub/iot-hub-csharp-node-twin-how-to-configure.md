@@ -15,8 +15,8 @@
      ms.tgt_pltfrm="na"
      ms.workload="na"
      ms.date="09/13/2016"
-     ms.author="elioda"
-     wacn.date="11/07/2016"/>  
+     wacn.date="11/07/2016"
+     ms.author="elioda"/>  
 
 
 # 教程：使用所需属性配置设备（预览版）

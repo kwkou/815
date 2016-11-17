@@ -11,9 +11,14 @@
    tags="azure-resource-manager"/>
 
 <tags
-	ms.service="virtual-machines-windows"
-	ms.date="06/21/2016"
-	wacn.date="08/23/2016"/>
+   ms.service="virtual-machines-windows"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="vm-windows"
+   ms.workload="infrastructure-services"
+   ms.date="06/21/2016"
+   wacn.date="08/23/2016"
+   ms.author="kirpas"/>
 
 # 如何扩展 Azure 资源组中虚拟机的 OS 驱动器
 

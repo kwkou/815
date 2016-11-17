@@ -14,8 +14,8 @@
 	ms.devlang="javascript"
 	ms.topic="article"
 	ms.date="09/16/2016"
-	ms.author="vittorib"
-	wacn.date="10/11/2016"/>  
+	wacn.date="10/11/2016"
+	ms.author="vittorib"/>  
 
 
 # 将 Azure AD Apache Cordova 应用程序集成

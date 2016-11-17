@@ -11,8 +11,13 @@
 
 <tags
    ms.service="virtual-machines-windows"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="vm-windows"
+   ms.workload="infrastructure"
    ms.date="08/23/2016"
-   wacn.date="10/25/2016"/>
+   wacn.date="10/25/2016"
+   ms.author="rasquill"/>
 
 # 使用 Windows PowerShell 和 Azure CLI 来浏览和选择 Windows 虚拟机映像
 

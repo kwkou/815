@@ -7,15 +7,15 @@
 	manager="stevenpo" 
 	editor="curtand"/>  
 
-<tags 
-	ms.service="multi-factor-authentication" 
-	ms.workload="identity" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="08/30/2016" 
-	ms.author="billmath"
-   	wacn.date="11/16/2016"/>
+<tags
+	ms.service="multi-factor-authentication"
+	ms.workload="identity"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="09/23/2016"
+	wacn.date="11/16/2016"
+	ms.author="kgremban"/>
 
 # 配置 Azure 多重身份验证
 

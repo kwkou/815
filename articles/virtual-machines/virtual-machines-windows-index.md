@@ -9,9 +9,14 @@
    editor=""/>
 
 <tags
-	ms.service="virtual-machines-windows"
-	ms.date="08/05/2016"
-	wacn.date="09/30/2016"/>
+   ms.service="virtual-machines-windows"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="vm-windows"
+   ms.workload="infrastructure-services"
+   ms.date="08/05/2016"
+   wacn.date="09/30/2016"
+   ms.author="cynthn"/>
 
 # 适用于经典部署模型中 Windows VM 的技术文章
 

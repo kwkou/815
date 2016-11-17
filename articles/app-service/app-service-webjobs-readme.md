@@ -9,8 +9,13 @@
 
 <tags
 	ms.service="app-service"
+	ms.workload="web"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
 	ms.date="12/10/2015"
-	wacn.date="09/26/2016"/>
+	wacn.date="09/26/2016"
+	ms.author="chrande"/>
 
 # 在 Azure 应用服务中使用 WebJobs
 

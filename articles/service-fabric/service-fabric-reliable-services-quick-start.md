@@ -9,8 +9,13 @@
 
 <tags
    ms.service="service-fabric"
-   ms.date="07/06/2016"
-   wacn.date="08/08/2016"/>
+   ms.devlang="dotnet"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="na"
+   ms.date="09/25/2016"
+   wacn.date="08/08/2016"
+   ms.author="vturecek"/>
 
 # Service Fabric Reliable Services 入门
 

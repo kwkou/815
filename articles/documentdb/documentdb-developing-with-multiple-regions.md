@@ -13,9 +13,9 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="07/25/2016"
-   ms.author="kipandya"
-   wacn.date="10/18/2016"/>  
+   ms.date="10/03/2016"
+   wacn.date="10/18/2016"
+   ms.author="kipandya"/>  
 
    
 # 使用多区域 DocumentDB 帐户进行开发

@@ -9,8 +9,13 @@
 
 <tags
    ms.service="service-fabric"
+   ms.devlang="dotnet"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="NA"
    ms.date="08/10/2016"
-   wacn.date="08/29/2016"/>
+   wacn.date="08/29/2016"
+   ms.author="aprameyr"/>
 
 # 缩放 Service Fabric 应用程序
 Azure Service Fabric 通过负载均衡服务、分区以及群集中所有节点上的副本，让可伸缩应用程序的生成更简单。这实现了资源利用率的最大化。

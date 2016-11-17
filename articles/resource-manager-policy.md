@@ -9,8 +9,13 @@
 
 <tags
 	ms.service="azure-resource-manager"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="na"
 	ms.date="07/12/2016"
-	wacn.date="08/15/2016"/>
+	wacn.date="08/15/2016"
+	ms.author="gauravbh;tomfitz"/>
 
 # 使用策略来管理资源和控制访问
 

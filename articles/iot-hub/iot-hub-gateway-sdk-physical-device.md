@@ -15,8 +15,8 @@
      ms.tgt_pltfrm="na"
      ms.workload="na"
      ms.date="08/29/2016"
-     ms.author="andbuc"
-     wacn.date="11/07/2016"/>
+     wacn.date="11/07/2016"
+     ms.author="andbuc"/>
 
 
 # IoT 网关 SDK（Beta 版）– 使用 Linux 通过实际设备发送设备至云消息

@@ -14,9 +14,9 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="tbd" 
-   ms.date="10/05/2016"
-   ms.author="raiye"
-   wacn.date="11/14/2016"/>
+   ms.date="10/05/2016" 
+   wacn.date="11/14/2016"
+   ms.author="raiye"/>
 
 # Azure 来宾 OS 版本和 SDK 兼容性对照表
 提供适用于云服务的最新 Azure 来宾 OS 版本的最新信息。此信息将帮助你在来宾 OS 停用之前规划升级路径。如果你根据 [Azure 来宾 OS 更新设置][]中所述将角色配置为使用自动进行来宾 OS 更新，则不一定要阅读本页面。

@@ -10,8 +10,13 @@
 
 <tags
 	ms.service="virtual-machines-linux"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="vm-linux"
+	ms.workload="infrastructure-services"
 	ms.date="02/01/2016"
-	wacn.date="03/28/2016"/>
+	wacn.date="03/28/2016"
+	ms.author="mingzhan"/>
 
 
 #在 Azure 上安装和配置 PostgreSQL

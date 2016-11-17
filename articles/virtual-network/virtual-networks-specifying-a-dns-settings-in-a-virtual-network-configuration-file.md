@@ -7,10 +7,15 @@
    manager="carmonm"
    editor="tysonn" 
    tags="azure-service-management" />
-<tags
-	ms.service="virtual-network"
-	ms.date="02/23/2016"
-	wacn.date="04/25/2016"/> 
+<tags 
+   ms.service="virtual-network"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="02/23/2016"
+   wacn.date="04/25/2016"
+   ms.author="jdial" /> 
 
 
 # 在虚拟网络配置文件中指定 DNS 设置

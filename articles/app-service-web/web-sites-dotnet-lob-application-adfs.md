@@ -14,7 +14,8 @@
 	ms.tgt_pltfrm="na" 
 	ms.workload="web" 
 	ms.date="08/31/2016" 
-	wacn.date="10/25/2016"/>
+	wacn.date="10/25/2016" 
+	ms.author="cephalin"/>
 	ms.author="cephalin"/>
 
 # 使用 AD FS 身份验证创建业务线 Azure 应用

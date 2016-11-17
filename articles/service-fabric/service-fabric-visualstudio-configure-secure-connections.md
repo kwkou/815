@@ -9,8 +9,13 @@
 
 <tags
    ms.service="multiple"
+   ms.devlang="dotnet"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="multiple"
    ms.date="10/08/2015"
-   wacn.date="07/07/2016"/>
+   wacn.date="07/07/2016"
+   ms.author="cawaMS" />
 
 # 从 Visual Studio 配置与 Service Fabric 群集的安全连接
 

@@ -9,8 +9,13 @@
 
 <tags
 	ms.service="active-directory"
+	ms.workload="identity"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
 	ms.date="06/23/2016"
-	wacn.date="08/22/2016"/>
+	wacn.date="08/22/2016"
+	ms.author="priyamo"/>
 
 
 # Azure Active Directory 如何使用 SAML 协议

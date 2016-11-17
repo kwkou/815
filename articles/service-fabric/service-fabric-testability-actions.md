@@ -9,8 +9,13 @@
 
 <tags
    ms.service="service-fabric"
-   ms.date="07/08/2016"
-   wacn.date="08/08/2016"/>
+   ms.devlang="dotnet"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="NA"
+   ms.date="10/03/2016"
+   wacn.date="08/08/2016"
+   ms.author="motanv;heeldin"/>
 
 # 可测试性操作
 为了模拟一个不可靠的基础结构，Azure Service Fabric 向你（即开发人员）提供众多方式来模拟各种现实世界故障和状态转换。这些方式被称为可测试操作。这些操作属于低级别 API，导致具体的故障注入、状态转换或验证。结合使用这些操作，你可以为你的服务编写全面的测试方案。

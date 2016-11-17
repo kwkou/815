@@ -13,9 +13,9 @@
   ms.topic="article"
   ms.tgt_pltfrm="na"
   ms.workload="data-services"
-  ms.date="09/12/2016"
-  ms.author="andrl"
-  wacn.date="10/18/2016"/>  
+  ms.date="09/26/2016"
+  wacn.date="10/18/2016"
+  ms.author="andrl"/>  
 
 
 # 社区门户

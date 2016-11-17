@@ -8,9 +8,14 @@
    editor="cgronlun"/>
 
 <tags
-	ms.service="hdinsight"
-	ms.date="06/28/2016"
-	wacn.date="08/23/2016"/>
+   ms.service="hdinsight"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="big-data" 
+   ms.date="06/28/2016" 
+   wacn.date="08/23/2016"
+   ms.author="jgao"/>
 
 # 在两个 Azure 虚拟网络之间配置 DNS
 

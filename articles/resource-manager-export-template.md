@@ -9,8 +9,13 @@
 
 <tags
 	ms.service="azure-resource-manager"
+	ms.workload="multiple"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="get-started-article"
 	ms.date="08/03/2016"
-	wacn.date="09/19/2016"/>
+	wacn.date="09/19/2016"
+	ms.author="tomfitz"/>
 
 # 从现有资源导出 Azure Resource Manager 模板
 

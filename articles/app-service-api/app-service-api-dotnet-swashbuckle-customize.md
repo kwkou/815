@@ -8,10 +8,15 @@
 	manager="wpickett" 
 	editor="jimbe"/>
 
-<tags
-	ms.service="app-service-api"
-	ms.date="02/22/2016"
-	wacn.date="09/26/2016"/>
+<tags 
+	ms.service="app-service-api" 
+	ms.workload="web" 
+	ms.tgt_pltfrm="dotnet" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="08/29/2016" 
+	wacn.date="09/26/2016" 
+	ms.author="rachelap"/>
 
 # 自定义 Swashbuckle 生成的 API 定义 
 

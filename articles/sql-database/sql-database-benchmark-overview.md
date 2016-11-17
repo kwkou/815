@@ -11,8 +11,13 @@
 
 <tags
 	ms.service="sql-database"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="data-management"
 	ms.date="06/21/2016"
-	wacn.date="11/16/2016" />
+	wacn.date="11/16/2016"
+	ms.author="carlrab" />
 
 
 # Azure SQL 数据库基准检验概述

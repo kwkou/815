@@ -15,7 +15,7 @@
 	ms.topic="article"
 	ms.date="09/08/2016"
 	wacn.date="11/16/2016"
-	ms.author="robinsh"/>
+	ms.author="cbrooks;robinsh"/>
 
 #Azure 存储空间安全指南
 
