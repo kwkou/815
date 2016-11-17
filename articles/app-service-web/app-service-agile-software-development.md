@@ -280,7 +280,7 @@
 -	[David Ebbo 的博客](http://blog.davidebbo.com/)
 -	[Azure PowerShell](/documentation/articles/powershell-install-configure/)
 -	[Azure 跨平台命令行工具](/documentation/articles/xplat-cli-install/)
--	[在 Azure AD 中创建或编辑用户](/documentation/articles/active-directory-create-users/#BKMK_1)
+-	[在 Azure AD 中创建或编辑用户](/documentation/articles/active-directory-create-users/)
 -	[项目 Kudu Wiki](https://github.com/projectkudu/kudu/wiki)
 
 <!---HONumber=Mooncake_0919_2016-->

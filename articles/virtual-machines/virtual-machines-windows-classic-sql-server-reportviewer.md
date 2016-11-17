@@ -82,7 +82,7 @@
 
 ## 配置身份验证和授权
 
-ReportViewer 需要使用正确的凭据向报表服务器进行身份验证，并且凭据必须经报表服务器授权才能访问所需的报表。有关身份验证的信息，请查看白皮书 [Reporting Services 报表查看器控件和基于 Azure 虚拟机的报表服务器](https://msdn.microsoft.com/zh-cn/library/azure/dn753698.aspx)。
+ReportViewer 需要使用正确的凭据向报表服务器进行身份验证，并且凭据必须经报表服务器授权才能访问所需的报表。
 
 ## 发布 ASP.NET Web 应用程序到 Azure
 
@@ -98,7 +98,5 @@ ReportViewer 需要使用正确的凭据向报表服务器进行身份验证，�
 [Azure 虚拟机中的 SQL Server Business Intelligence](/documentation/articles/virtual-machines-windows-classic-ps-sql-bi/)
 
 [使用 PowerShell 创建运行本机模式报表服务器的 Azure VM](/documentation/articles/virtual-machines-windows-classic-ps-sql-report/)
-
-[Reporting Services 报表查看器控件和基于 Azure 虚拟机的报表服务器](http://download.microsoft.com/download/2/2/0/220DE2F1-8AB3-474D-8F8B-C998F7C56B5D/Reporting%20Services%20report%20viewer%20control%20and%20Azure%20VM%20based%20report%20servers.docx)
 
 <!---HONumber=Mooncake_0104_2016-->

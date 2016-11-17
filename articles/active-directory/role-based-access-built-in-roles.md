@@ -166,7 +166,7 @@ Azure 基于角色的访问控制 (RBAC) 附带以下可分配到用户、组和
 | Microsoft.Resources/subscriptions/resourceGroups/read | 读取资源组 |
 | Microsoft.Support/* | 创建和管理支持票证 |
 
-### DevTest 实验室用户
+### <a name="devtest-labs-user"></a> DevTest 实验室用户
 可查看一切内容，并可连接、启动、重启和关闭虚拟机
 
 | **操作** ||
@@ -225,7 +225,7 @@ Azure 基于角色的访问控制 (RBAC) 附带以下可分配到用户、组和
 | Microsoft.Resources/subscriptions/resourceGroups/read | 读取资源组 |
 | Microsoft.Support/* | 创建和管理支持票证 |
 
-### 网络参与者
+### <a name="network-contributor"></a> 网络参与者
 可管理所有网络资源
 
 | **操作** ||

@@ -975,7 +975,7 @@ __Azure CLI__
 __模板__
 
 * 使用 Powershell 或 Azure CLI 上载 VHD
-* 使用引用 VHD 的 JSON 模板部署 VM，如[此 JSON 模板示例](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-vm-from-specialized-vhd/azuredeploy.json)中所示。
+* 使用引用 VHD 的 JSON 模板部署 VM，如[此 JSON 模板示例](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-vm-specialized-vhd/azuredeploy.json)中所示。
 
 #### 部署 VM 映像
 若要从本地网络上载现有的 VM 或 VHD 以将其用作 Azure VM 映像，这种 VM 或 VHD 需要满足本文档的[准备使用特定于客户的映像为 SAP 部署 VM][planning-guide-5.2.2] 一章中列出的要求。
