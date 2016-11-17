@@ -9,13 +9,13 @@
   editor="EricChen"/>
 <tags ms.service=""
     ms.date=""
-    wacn.date="08/11/2016"
+    wacn.date="11/17/2016"
     />
 
 
 <h1 id="menu-php-cloud">云服务</h1>
 <h2 id="header-0">常规</h2>
-<h3>指南： <a href="/documentation/articles/fundamentals-application-models/#CloudServices">什么是 Azure 云服务？</a></h3>
+<h3>指南： <a href="/documentation/articles/fundamentals-application-models/">什么是 Azure 云服务？</a></h3>
 <p>Azure 提供了三种用于运行应用程序的计算模型：Azure 网站、Azure 虚拟机和 Azure 云服务。本主题概述了这三种模型，以及可帮助您确定适用于自己应用程序的模型的信息。</p>
 <h2 id="header-1">创建</h2>
 <h3>功能指南： <a href="/documentation/articles/cloud-services-php-create-web-role/">创建 PHP Web 角色或辅助角色</a></h3>

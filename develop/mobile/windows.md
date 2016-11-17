@@ -1,6 +1,6 @@
 <properties pageTitle="移动服务-Windows - Azure 微软云" metakeywords="" description="" services="" documentationCenter="Windows" authors="" manager="Tiffena" editor="EricChen"/>
   
-<tags ms.service="mobile-services" ms.date="" wacn.date="04/11/2015"/>
+<tags ms.service="mobile-services" ms.date="" wacn.date="11/17/2016"/>
 
 
 
@@ -50,7 +50,7 @@
 
 - [通知中心入门](/documentation/articles/notification-hubs-windows-mobile-push-notifications-mpns/)
 - [通过通知中心发送有针对性的通知](/documentation/articles/notification-hubs-windows-phone-push-xplat-segmented-mpns-notification/)
-- [向已验证的用户发送通知](/documentation/articles/mobile-services-javascript-backend-windows-phone-push-notifications-app-users/)
+
 
 查看服务： [通知中心](/documentation/services/notification-hubs)
 

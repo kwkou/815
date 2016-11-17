@@ -8,7 +8,7 @@ manager="Tiffena"
 editor="Eric Chen" />
 <tags ms.service="RUBY"
     ms.date=""
-    wacn.date="08/11/2016"
+    wacn.date="11/17/2016"
     />
 
 #Ruby开发人员中心
@@ -16,7 +16,7 @@ editor="Eric Chen" />
 ##快速链接
 
 - 安装 SDK：<br>
-    [Windows](http://go.microsoft.com/fwlink/?linkid=296417&clcid=0x804) | [Mac](http://go.microsoft.com/fwlink/?linkid=253471&clcid=0x804) | [Linux](http://go.microsoft.com/fwlink/?linkid=253472&clcid=0x804)
+    [Windows](https://go.microsoft.com/fwlink/?LinkId=296417&clcid=0x409) | [Mac](http://go.microsoft.com/fwlink/?linkid=253471&clcid=0x804) | [Linux](http://go.microsoft.com/fwlink/?linkid=253472&clcid=0x804)
 - [GitHub 上的源代码](https://github.com/Azure/azure-sdk-for-ruby)
 - [在论坛上获取帮助](/support/forums)
 

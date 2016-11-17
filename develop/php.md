@@ -23,7 +23,7 @@ editor="Eric Chen" />
 
 ### Web 应用
 
-- [Azure Web 应用](/documentation/articles/fundamentals-application-models/#WebSites)
+- [Azure Web 应用](/documentation/articles/fundamentals-application-models/)
 - [配置 PHP](/documentation/articles/web-sites-php-configure/)
 - [创建 PHP-MySQL Web 应用](/documentation/articles/web-sites-php-mysql-deploy-use-git/)
 - **[全部显示](/develop/php/websites)**
@@ -38,7 +38,7 @@ editor="Eric Chen" />
 
 ###云服务
 
-- [什么是云服务？](/documentation/articles/fundamentals-application-models/#CloudServices)
+- [什么是云服务？](/documentation/articles/fundamentals-application-models/)
 - [创建 PHP 云服务](/documentation/articles/cloud-services-php-create-web-role/)
 - [扩展云服务](/documentation/articles/cloud-services-how-to-scale/)
 - [管理云服务](/documentation/articles/cloud-services-how-to-manage/)
