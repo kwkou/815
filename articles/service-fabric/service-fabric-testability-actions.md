@@ -14,7 +14,7 @@
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
    ms.date="07/08/2016"
-   wacn.date="08/08/2016"
+   wacn.date="11/17/2016"
    ms.author="motanv;heeldin"/>
 
 # 可测试性操作
@@ -24,7 +24,7 @@ Service Fabric 提供某些由这些操作组成的常见测试方案。强烈�
 
 System.Fabric.dll 程序集包含了这些操作的 C# 实现。Microsoft.ServiceFabric.Powershell.dll 程序集包含了 System Fabric PowerShell 模块。作为运行时安装的一部分，安装了 ServiceFabric PowerShell 模块以便易于使用。
 
-## 常规故障与非常规故障操作
+##<a name="graceful-vs-ungraceful-fault-actions"></a>常规故障与非常规故障操作
 可测试性操作分为两个主要的类型：
 
 * 非常规故障：这些故障诸如计算机重新启动和进程崩溃等故障。在此类故障情形下，进程的执行上下文将突然停止。这意味着在该应用程序重新启动之前，无法运行任何状态清理。
@@ -181,7 +181,7 @@ Restart-ServiceFabricNode -NodeName Node1 -CompletionMode DoNotVerify
 	}
 
 
-## PartitionSelector 和 ReplicaSelector
+##<a name="partition_replica_selector"></a> PartitionSelector 和 ReplicaSelector
 
 ### PartitionSelector
 PartitionSelector 是在可测试性中运用的一个帮助程序，用于选择在其上执行任何可测试性操作的具体分区。如果事先知道分区 ID，则它可用于选择具体分区。或者，你可以提供分区键，操作将在内部解析分区 ID。你还可以选择一个随机分区。

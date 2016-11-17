@@ -14,7 +14,7 @@
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
    ms.date="07/06/2016"
-   wacn.date="08/08/2016"
+   wacn.date="11/17/2016"
    ms.author="vturecek"/>
 
 # Reliable Actors 如何使用 Service Fabric 平台
@@ -202,7 +202,7 @@
 
 
 
-## 应用程序模型
+##<a name="service-fabric-application-model-concepts-for-actors"></a> 应用程序模型
 
 执行组件服务都是 Reliable Services，因此服务的应用程序模型是相同的。但是，执行组件框架生成工具为你生成了很多应用程序模型文件。
 
@@ -222,7 +222,7 @@
  - 副本集计数由执行组件的持久性属性决定。每次更改执行组件的持久性属性时，将相应地重置默认服务定义中的副本集计数。
  - 分区方案和范围设置为具有完整的 Int64 键范围的统一 Int64。
 
-## 针对执行组件的 Service Fabric 分区概念
+##<a name="service-fabric-partition-concepts-for-actors"></a> 针对执行组件的 Service Fabric 分区概念
 
 执行组件服务是已分区的有状态服务。执行组件服务的每个分区包含一组执行组件。服务分区在 Service Fabric 的多个节点中自动分布。因此，执行组件实例也就被分布到各个节点中。
 

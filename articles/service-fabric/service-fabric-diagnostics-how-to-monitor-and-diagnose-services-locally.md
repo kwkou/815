@@ -32,7 +32,7 @@
 * **Service Fabric Visual Studio 工具中有内置支持，可以查看 ETW 事件。**
 
 
-## 在 Visual Studio 中查看 Service Fabric 系统事件
+##<a name="view-service-fabric-system-events-in-visual-studio"></a> 在 Visual Studio 中查看 Service Fabric 系统事件
 
 Service Fabric 发出 ETW 事件以帮助应用程序开发人员了解平台中发生的情况。如果你还没有这么做，请继续遵循[在 Visual Studio 中创建第一个应用程序](/documentation/articles/service-fabric-create-your-first-application-in-visual-studio/)中的步骤。此信息将帮助你启动应用程序，并运行可显示跟踪消息的诊断事件查看器。
 

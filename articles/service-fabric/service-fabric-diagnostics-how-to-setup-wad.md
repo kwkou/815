@@ -14,7 +14,7 @@
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
    ms.date="06/24/2016"
-   wacn.date="08/08/2016"
+   wacn.date="11/24/2016"
    ms.author="toddabel"/>
 
 
@@ -68,7 +68,7 @@ Azure 支持团队**需要**支持日志才能涉及所创建的任何支持请�
 4. 运行 **deploy.ps1** 并填入 subscriptionId、资源组名称（使用相同的名称更新配置）和唯一的部署名称
 
 
-### 使用 Azure Resource Manager 在创建群集过程中部署诊断扩展
+###<a name="deploywadarm"></a> 使用 Azure Resource Manager 在创建群集过程中部署诊断扩展
 若要使用 Resource Manager 创建群集，需要在创建群集之前，将诊断配置 JSON 添加到整个 Resource Manager 模板。我们将在 Resource Manager 模板示例中提供包含五个 VM 的群集 Resource Manager 模板，并在演示 Resource Manager 模板示例的过程中添加诊断配置。你可以在 Azure 示例库中的以下位置找到该示例：[包含五节点群集的诊断 Resource Manager 模板示例](https://github.com/Azure/azure-quickstart-templates/tree/master/service-fabric-secure-cluster-5-node-1-nodetype-wad)。若要查看 Resource Manager 模板中的诊断设置，请打开 **azuredeploy.json** 文件并搜索 **IaaSDiagnostics**。若要使用此模板创建群集，只要按上述链接提供的“部署到 Azure”按钮即可。
 
 或者，也可以下载 Resource Manager 示例，进行更改，然后在 Azure PowerShell 窗口中输入 `New-AzureRmResourceGroupDeployment` 命令，使用修改后的模板创建群集。请参阅以下信息获取需要传入命令的参数。有关如何使用 PowerShell 部署资源组的详细信息，请参阅 [Deploy a Resource Group with Azure Resource Manager template](/documentation/articles/resource-group-template-deploy/)（使用 Azure Resource Manager 模板部署资源组）一文

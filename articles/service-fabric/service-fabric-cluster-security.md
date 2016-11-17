@@ -15,7 +15,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="na"
    ms.date="08/19/2016"
-   wacn.date="10/24/2016"
+   wacn.date="11/17/2016"
    ms.author="chackdan"/>  
 
 
@@ -29,7 +29,7 @@ Service Fabric 群集是你拥有的资源。始终都应该保护群集，防�
 - 客户端到节点安全性
 - 基于角色的访问控制 (RBAC)
 
-## 节点到节点安全性
+##<a name="node-to-node-security"></a> 节点到节点安全性
 保护群集中 VM 或计算机之间的通信。这可确保只有已获授权加入群集的计算机可以参与托管应用程序和群集中的服务。
 
 ![节点到节点通信示意图][Node-to-Node]  
@@ -48,7 +48,7 @@ Service Fabric 群集是你拥有的资源。始终都应该保护群集，防�
 ### 节点到节点的 Windows 安全性
 对于独立的 Windows Server，请参阅 [Secure a standalone cluster on Windows using Windows security](/documentation/articles/service-fabric-windows-cluster-windows-security/)（使用 Windows 安全性保护 Windows 上的独立群集）
 
-## 客户端到节点安全性
+##<a name="client-to-node-security"></a> 客户端到节点安全性
 对客户端进行身份验证，并保护客户端与群集中单个节点之间的通信。这种类型的安全性将验证并保护客户端通信，确保只有已获授权的用户可以访问群集与群集上部署的应用程序。客户端通过其 Windows 安全性凭据或其证书安全性凭据进行唯一标识。
 
 ![客户端到节点通信示意图][Client-to-Node]  
@@ -73,7 +73,7 @@ Service Fabric 群集是你拥有的资源。始终都应该保护群集，防�
 
 对于独立 Windows Server 群集，如果有 Windows Server 2012 R2 和 Active Directory，建议结合使用 Windows 安全性和组管理帐户 (GMA)。否则，仍可以结合使用 Windows 安全性和 Windows 帐户。
 
-## 基于角色的访问控制 (RBAC)
+##<a name="role-based-access-control-rbac"></a> 基于角色的访问控制 (RBAC)
 访问控制可让群集管理员针对不同的用户组限制特定群集操作的访问权限，使群集更加安全。连接到群集的客户端支持两种不同的访问控制类型：管理员角色和用户角色。
 
 管理员对管理功能（包括读取/写入功能）拥有完全访问权限。默认情况下，用户只有管理功能的读取访问权限（例如查询功能），以及解析应用程序和服务的能力。
@@ -81,7 +81,7 @@ Service Fabric 群集是你拥有的资源。始终都应该保护群集，防�
 可在创建群集时为每个角色提供不同的标识（证书、AAD，等等），以指定管理员和用户客户端角色。有关默认访问控制设置以及如何更改默认设置的详细信息，请参阅 [Role based access control for Service Fabric clients](/documentation/articles/service-fabric-cluster-security-roles/)（Service Fabric 客户端的基于角色的访问控制）。
 
 
-## X.509 证书和 Service Fabric
+##<a name="x509-certificates-and-service-fabric"></a> X.509 证书和 Service Fabric
 X.509 数字证书通常用于验证客户端与服务器，以及对消息进行加密和数字签名。有关这些证书的详细信息，请参阅 [Working with certificates](http://msdn.microsoft.com/zh-cn/library/ms731899.aspx)（使用证书）。
 
 要考虑的几个要点：

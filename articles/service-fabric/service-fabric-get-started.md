@@ -15,7 +15,7 @@
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
    ms.date="09/13/2016"
-   wacn.date="10/24/2016"
+   wacn.date="11/17/2016"
    ms.author="ryanwi"/>
 
 # 准备开发环境
@@ -39,7 +39,7 @@ Web 平台安装程序为 Service Fabric 开发提供两种配置：
 - [安装适用于 Visual Studio 2015 的 Service Fabric 运行时、SDK 和工具（需要 Visual Studio 2015 Update 2 或更高版本）][full-bundle-vs2015]
 - [仅安装 Service Fabric 运行时和 SDK（不安装 Visual Studio 工具）][core-sdk]
 
-## 启用 PowerShell 脚本执行
+##<a name="enable-powershell-script-execution"></a> 启用 PowerShell 脚本执行
 
 Service Fabric 使用 Windows PowerShell 脚本创建本地开发群集和部署 Visual Studio 中的应用程序。默认情况下，Windows 会阻止这些脚本运行。若要启用它们，你必须修改你的 PowerShell 执行策略。以管理员身份打开 PowerShell 并输入以下命令：
 
@@ -61,6 +61,6 @@ Service Fabric 使用 Windows PowerShell 脚本创建本地开发群集和部署
 [full-bundle-vs2015]: http://www.microsoft.com/web/handlers/webpi.ashx?command=getinstallerredirect&appid=MicrosoftAzure-ServiceFabric-VS2015 "VS 2015 WebPI 链接"
 [full-bundle-dev15]: http://www.microsoft.com/web/handlers/webpi.ashx?command=getinstallerredirect&appid=MicrosoftAzure-ServiceFabric-Dev15 "Dev15 WebPI 链接"
 [core-sdk]: http://www.microsoft.com/web/handlers/webpi.ashx?command=getinstallerredirect&appid=MicrosoftAzure-ServiceFabric-CoreSDK "Core SDK WebPI 链接"
-[powershell5-download]: https://www.microsoft.com/zh-CN/download/details.aspx?id=50395
+[powershell5-download]: https://www.microsoft.com/en-us/download/details.aspx?id=50395
 
 <!---HONumber=Mooncake_1017_2016-->
