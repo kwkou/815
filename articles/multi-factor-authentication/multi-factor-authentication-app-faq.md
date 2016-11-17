@@ -5,7 +5,8 @@
 	documentationCenter=""
 	authors="kgremban"
 	manager="femila"
-	editor="curtand"/>
+	editor="curtand"/>  
+
 
 <tags
 	ms.service="multi-factor-authentication"
@@ -15,7 +16,7 @@
 	ms.topic="article"
 	ms.date="08/16/2016"
 	ms.author="kgremban"
-   	wacn.date="10/19/2016"/>
+   	wacn.date="11/16/2016"/>
 
 # Microsoft Authenticator 应用程序常见问题解答
 
@@ -43,4 +44,4 @@ Microsoft Authenticator 应用替代了 Azure Authenticator 应用，建议使�
 - 关于 Microsoft 帐户的[双重验证](https://support.microsoft.com/zh-cn/help/12408/microsoft-account-about-two-step-verification)
 - [身份验证应用常见问题解答](https://support.microsoft.com/zh-cn/help/12414/microsoft-account-identity-verification-apps-faq)
 
-<!---HONumber=Mooncake_1010_2016-->
+<!---HONumber=Mooncake_1107_2016-->

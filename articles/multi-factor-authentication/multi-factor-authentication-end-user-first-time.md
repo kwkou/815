@@ -6,7 +6,8 @@
 	documentationCenter="" 
 	authors="billmath" 
 	manager="stevenp" 
-	editor="curtland"/>
+	editor="curtland"/>  
+
 
 <tags 
 	ms.service="multi-factor-authentication" 
@@ -16,7 +17,8 @@
 	ms.topic="article" 
 	ms.date="08/22/2016" 
 	ms.author="billmath"
-   	wacn.date="10/19/2016"/>
+   	wacn.date="11/16/2016"/>
+
 # Azure 多重身份验证的设置体验
 
  当管理员已将你的帐户配置为要求必须同时使用密码和手机响应以验证你的身份时，将使用其他安全性验证设置。如果管理员已将你的帐户配置为需要其他安全性验证，则**你在完成自动注册过程之前将无法登录**。
@@ -38,4 +40,4 @@
 
  
 
-<!---HONumber=Mooncake_1010_2016-->
+<!---HONumber=Mooncake_1107_2016-->

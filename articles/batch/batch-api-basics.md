@@ -16,7 +16,7 @@
 	ms.workload="big-compute"
 	ms.date="09/08/2016"
 	ms.author="marsma"
-   	wacn.date="10/26/2016"/>  
+   	wacn.date="11/16/2016"/>  
 
 
 # 面向开发人员的 Batch 功能概述
@@ -98,14 +98,13 @@ Azure Batch 池构建在核心 Azure 计算平台的顶层。这些池提供大�
 
 	为池中的节点选择操作系统时，可以使用两个选项：“虚拟机配置”和“云服务配置”。
 
-	“虚拟机配置”可从 [Azure 虚拟机应用商店][vm_marketplace]提供适用于计算节点的 Linux 和 Windows 映像。
-	创建包含虚拟机配置节点的池时，不仅需要指定节点的大小，还需要在节点上安装**虚拟机映像引用**和 Batch **节点代理 SKU**。有关指定这些池属性的详细信息，请参阅 [Provision Linux compute nodes in Azure Batch pools](/documentation/articles/batch-linux-nodes/)（在 Azure Batch 池中预配 Linux 计算节点）。
+	“虚拟机配置”可从 [Azure 虚拟机应用商店][vm_marketplace]提供适用于计算节点的 Linux 和 Windows 映像。创建包含虚拟机配置节点的池时，不仅需要指定节点的大小，还需要在节点上安装**虚拟机映像引用**和 Batch **节点代理 SKU**。有关指定这些池属性的详细信息，请参阅 [Provision Linux compute nodes in Azure Batch pools](/documentation/articles/batch-linux-nodes/)（在 Azure Batch 池中预配 Linux 计算节点）。
 
-	“云服务配置” *只* 提供 Windows 计算节点。[Azure Guest OS releases and SDK compatibility matrix](/documentation/articles/cloud-services-guestos-update-matrix/)（Azure 来宾 OS 版本和 SDK 兼容性对照表）中列出了适用于云服务配置池的操作系统。创建包含云服务节点的池时，只需指定节点大小及其 *OS 系列*。创建 Windows 计算节点池时，最常使用的是云服务。
+	“云服务配置”*只*提供 Windows 计算节点。[Azure Guest OS releases and SDK compatibility matrix](/documentation/articles/cloud-services-guestos-update-matrix/)（Azure 来宾 OS 版本和 SDK 兼容性对照表）中列出了适用于云服务配置池的操作系统。创建包含云服务节点的池时，只需指定节点大小及其 *OS 系列*。创建 Windows 计算节点池时，最常使用的是云服务。
 
-    - *OS 系列* 还确定了要与操作系统一起安装哪些版本的 .NET。
-	- 与云服务中的辅助角色一样，可以指定 *OS 版本* （有关辅助角色的详细信息，请参阅 [Cloud Services overview](/documentation/articles/cloud-services-choose-me/)（云服务概述）中的 [Tell me about cloud services](/documentation/articles/cloud-services-choose-me/#tell-me-about-cloud-services/)（介绍云服务）部分）。
-    - 与辅助角色一样，对于 *OS 版本*，建议指定 `*`，使节点可自动升级，而无需采取措施来适应新的版本。选择特定 OS 版本的主要用例是在允许更新版本之前执行向后兼容测试，以确保保持应用程序兼容性。验证后，便可以更新池的 *OS 版本* 并安装新的操作系统映像 - 所有正在运行的任务将会中断并重新排队。
+    - *OS 系列*还确定了要与操作系统一起安装哪些版本的 .NET。
+	- 与云服务中的辅助角色一样，可以指定 *OS 版本*（有关辅助角色的详细信息，请参阅 [Cloud Services overview](/documentation/articles/cloud-services-choose-me/)（云服务概述）中的 [Tell me about cloud services](/documentation/articles/cloud-services-choose-me/#tell-me-about-cloud-services/)（介绍云服务）部分）。
+    - 与辅助角色一样，对于 *OS 版本*，建议指定 `*`，使节点可自动升级，而无需采取措施来适应新的版本。选择特定 OS 版本的主要用例是在允许更新版本之前执行向后兼容测试，以确保保持应用程序兼容性。验证后，便可以更新池的 *OS 版本*并安装新的操作系统映像 - 所有正在运行的任务将会中断并重新排队。
 
 - **节点大小**
 
@@ -119,7 +118,7 @@ Azure Batch 池构建在核心 Azure 计算平台的顶层。这些池提供大�
 
 - **节点目标数目**
 
-	这是你要在池中部署的计算节点数目。之所以称为 *目标* ，是因为在某些情况下，池可能无法达到所需的节点数目。如果池已达到 Batch 帐户的[核心配额](/documentation/articles/batch-quota-limit/#batch-account-quotas/)，或应用到池的自动缩放公式限制了最大节点数（请参阅下面的“缩放策略”部分），则池无法达到所需节点数目。
+	这是你要在池中部署的计算节点数目。之所以称为*目标*，是因为在某些情况下，池可能无法达到所需的节点数目。如果池已达到 Batch 帐户的[核心配额](/documentation/articles/batch-quota-limit/#batch-account-quotas/)，或应用到池的自动缩放公式限制了最大节点数（请参阅下面的“缩放策略”部分），则池无法达到所需节点数目。
 
 - **缩放策略**
 
@@ -131,7 +130,7 @@ Azure Batch 池构建在核心 Azure 计算平台的顶层。这些池提供大�
 
 	默认配置是在每次在节点上运行一个任务，但在某些情况下，在一个节点上同时执行多个任务可能更有利。请参阅 [concurrent node tasks](/documentation/articles/batch-parallel-node-tasks/)（并发节点任务）一文中的[示例方案](/documentation/articles/batch-parallel-node-tasks/#example-scenario/)，以了解如何通过在每个节点上运行多个任务来受益。
 
-	还可以指定一个 *填充类型* ，用于确定 Batch 是要将任务平均分散到池中的所有节点，还是在将最大数目的任务分配给一个节点后，再将任务分配给另一个节点。
+	还可以指定一个*填充类型*，用于确定 Batch 是要将任务平均分散到池中的所有节点，还是在将最大数目的任务分配给一个节点后，再将任务分配给另一个节点。
 
 - 计算节点的**通信状态**
 
@@ -143,7 +142,7 @@ Azure Batch 池构建在核心 Azure 计算平台的顶层。这些池提供大�
 
 - 计算节点的**启动任务**
 
-	可选的 *启动任务* 将在每个节点加入池以及节点每次重新启动或重置映像时在该节点上运行。启动任务特别适合用于准备计算节点，以便执行任务，例如安装任务将要在计算节点上运行的应用程序。
+	可选的*启动任务*将在每个节点加入池以及节点每次重新启动或重置映像时在该节点上运行。启动任务特别适合用于准备计算节点，以便执行任务，例如安装任务将要在计算节点上运行的应用程序。
 
 - **应用程序包**
 
@@ -173,7 +172,7 @@ Azure Batch 池构建在核心 Azure 计算平台的顶层。这些池提供大�
 
 - 默认情况下，当作业内的所有任务都完成时，作业仍保持活动状态。可以更改此行为，使作业在其中的所有任务完成时自动终止。将作业的 **onAllTasksComplete** 属性（在 Batch .NET 中为 [OnAllTasksComplete][net_onalltaskscomplete]）设置为 *terminatejob*，可在作业的所有任务处于已完成状态时自动终止该作业。
 
-	请注意，Batch 服务将 *没有* 任务的作业视为其所有任务都已完成。因此，此选项往往与[作业管理器任务](#job-manager-task)配合使用。如果想要使用自动作业终止而不通过作业管理器终止，首先应该将新作业的 **onAllTasksComplete** 属性设置为 *noaction*，然后只有在完成将任务添加到作业之后才将它设置为 *terminatejob*。
+	请注意，Batch 服务将*没有*任务的作业视为其所有任务都已完成。因此，此选项往往与[作业管理器任务](#job-manager-task)配合使用。如果想要使用自动作业终止而不通过作业管理器终止，首先应该将新作业的 **onAllTasksComplete** 属性设置为 *noaction*，然后只有在完成将任务添加到作业之后才将它设置为 *terminatejob*。
 
 ### 作业优先级
 
@@ -197,10 +196,10 @@ Azure Batch 池构建在核心 Azure 计算平台的顶层。这些池提供大�
 
 	请务必注意，命令行实际上不是在 shell 下运行。因此无法以本机方式利用 shell 功能，例如[环境变量](#environment-settings-for-tasks)扩展（包括 `PATH`）。若要利用此类功能，必须在命令行中调用 shell - 例如，在 Windows 节点上启动 `cmd.exe`，或者在 Linux 上启动 `/bin/sh`：
 
-	`cmd /c MyTaskApplication.exe %MY_ENV_VAR%`
+	`cmd /c MyTaskApplication.exe %MY_ENV_VAR%`  
 
 
-	`/bin/sh -c MyTaskApplication $MY_ENV_VAR`
+	`/bin/sh -c MyTaskApplication $MY_ENV_VAR`  
 
 
 	如果任务需要运行不在节点的 `PATH` 中的应用程序或脚本，或在引用环境变量，请在任务命令行中显式调用 shell。
@@ -231,13 +230,13 @@ Azure Batch 池构建在核心 Azure 计算平台的顶层。这些池提供大�
 
 但是，它还可能包含计算节点上运行的所有任务使用的引用数据。例如，启动任务的命令行可执行 `robocopy` 操作，将应用程序文件（已指定为资源文件并下载到节点）从启动任务的[工作目录](#files-and-directories)复制到[共享文件夹](#files-and-directories)，然后然后运行 MSI 或 `setup.exe`。
 
-> [AZURE.IMPORTANT] Batch 目前 *仅* 支持**常规用途**存储帐户类型，如 [About Azure storage accounts](/documentation/articles/storage-create-storage-account/)（关于 Azure 存储帐户）的 [Create a storage account](/documentation/articles/storage-create-storage-account/#create-a-storage-account/)（创建存储帐户）中步骤 5 所述。Batch 任务（包括标准任务、启动任务、作业准备任务和作业释放任务） *只能* 指定位于**常规用途**存储帐户中的资源文件。
+> [AZURE.IMPORTANT] Batch 目前*仅*支持**常规用途**存储帐户类型，如 [About Azure storage accounts](/documentation/articles/storage-create-storage-account/)（关于 Azure 存储帐户）的 [Create a storage account](/documentation/articles/storage-create-storage-account/#create-a-storage-account/)（创建存储帐户）中步骤 5 所述。Batch 任务（包括标准任务、启动任务、作业准备任务和作业释放任务）*只能*指定位于**常规用途**存储帐户中的资源文件。
 
 通常，Batch 服务需要等待启动任务完成，然后认为节点已准备好分配任务，但你可以配置这种行为。
 
 如果某个计算节点上的启动任务失败，则节点的状态将会更新以反映失败状态，同时，该节点不可用于要分配的任务。如果从存储中复制启动任务的资源文件时出现问题，或由其命令行执行的进程返回了非零退出代码，则启动任务可能会失败。
 
-如果添加或更新 *现有* 池的启动任务，必须重新启动其计算节点，启动任务才应用到节点。
+如果添加或更新*现有*池的启动任务，必须重新启动其计算节点，启动任务才应用到节点。
 
 ### 作业管理器任务
 
@@ -280,7 +279,7 @@ Batch 提供作业准备任务来设置作业前的执行。作业释放任务�
 
 使用任务依赖性，可以配置如下所述的方案：
 
-* *taskB* 依赖于 *taskA* （直到 *taskA* 完成，才开始执行 *taskB*）。
+* *taskB* 依赖于 *taskA*（直到 *taskA* 完成，才开始执行 *taskB*）。
 * *taskC* 同时依赖于 *taskA* 和 *taskB*。
 * *taskD* 在执行前依赖于某个范围的任务，例如任务 *1* 到 *10*。
 
@@ -290,7 +289,7 @@ Batch 提供作业准备任务来设置作业前的执行。作业释放任务�
 
 在 Batch 作业中执行的每个任务可以访问由 Batch 服务设置的环境变量（服务定义的环境变量，如下表中所述）以及可为任务设置的自定义环境变量。任务在节点上运行的应用程序和脚本可以在执行期间访问这些环境变量。
 
-可以通过填充这些实体的 *环境设置* 属性，在任务或作业级别设置自定义环境变量。有关示例，请参阅 [Add a task to a job][rest_add_task]（将任务添加到作业）操作 (Batch REST API)，或 Batch .NET 中的 [CloudTask.EnvironmentSettings][net_cloudtask_env] 和 [CloudJob.CommonEnvironmentSettings][net_job_env] 属性。
+可以通过填充这些实体的*环境设置*属性，在任务或作业级别设置自定义环境变量。有关示例，请参阅 [Add a task to a job][rest_add_task]（将任务添加到作业）操作 (Batch REST API)，或 Batch .NET 中的 [CloudTask.EnvironmentSettings][net_cloudtask_env] 和 [CloudJob.CommonEnvironmentSettings][net_job_env] 属性。
 
 客户端应用程序或服务可使用[获取有关任务的信息][rest_get_task_info]操作 (Batch REST) 或通过访问 [CloudTask.EnvironmentSettings][net_cloudtask_env] 属性 (Batch .NET)，来获取任务的环境变量（服务定义的和自定义的环境变量）。在计算节点上执行的进程可以在节点上访问这些和其他环境变量，例如，通过使用熟悉的 `%VARIABLE_NAME%` (Windows) 或 `$VARIABLE_NAME` (Linux) 语法。
 
@@ -311,20 +310,20 @@ Batch 提供作业准备任务来设置作业前的执行。作业释放任务�
 | `AZ_BATCH_TASK_ID`   | 当前任务的 ID。 |
 | `AZ_BATCH_TASK_WORKING_DIR`   | 节点上的任务工作目录的完整路径。 |
 
->[AZURE.IMPORTANT] 这些环境变量仅可在**任务用户**（即执行任务的节点上的用户帐户）的上下文中使用。如果通过远程桌面协议 (RDP) 或安全外壳 (SSH) 从[远程连接](#connecting-to-compute-nodes)到计算节点并列出环境变量，将 *看不到* 这些变量。这是因为，用于远程连接的用户帐户与任务使用的帐户不同。
+>[AZURE.IMPORTANT] 这些环境变量仅可在**任务用户**（即执行任务的节点上的用户帐户）的上下文中使用。如果通过远程桌面协议 (RDP) 或安全外壳 (SSH) 从[远程连接](#connecting-to-compute-nodes)到计算节点并列出环境变量，将*看不到*这些变量。这是因为，用于远程连接的用户帐户与任务使用的帐户不同。
 
 ## 文件和目录
 
-每个任务都有一个 *工作目录*，任务将在该目录中创建零个或多个文件和目录。此工作目录可用于存储任务运行的程序、任务处理的数据，以及任务执行的处理的输出。任务的所有文件和目录由任务用户拥有。
+每个任务都有一个*工作目录*，任务将在该目录中创建零个或多个文件和目录。此工作目录可用于存储任务运行的程序、任务处理的数据，以及任务执行的处理的输出。任务的所有文件和目录由任务用户拥有。
 
-Batch 服务在节点上公开文件系统的一部分作为 *根目录*。任务可通过引用 `AZ_BATCH_NODE_ROOT_DIR` 环境变量来访问根目录。有关使用环境变量的详细信息，请参阅[任务的环境设置](#environment-settings-for-tasks)。
+Batch 服务在节点上公开文件系统的一部分作为*根目录*。任务可通过引用 `AZ_BATCH_NODE_ROOT_DIR` 环境变量来访问根目录。有关使用环境变量的详细信息，请参阅[任务的环境设置](#environment-settings-for-tasks)。
 
 根目录包含以下目录结构：
 
 ![计算节点目录结构][1]  
 
 
-- **共享**：此目录允许对节点上运行的 *所有* 任务进行读取/写入访问。在节点上运行的任何任务都可以创建、读取、更新和删除此目录中的文件。任务可通过引用 `AZ_BATCH_NODE_SHARED_DIR` 环境变量来访问此目录。
+- **共享**：此目录允许对节点上运行的*所有*任务进行读取/写入访问。在节点上运行的任何任务都可以创建、读取、更新和删除此目录中的文件。任务可通过引用 `AZ_BATCH_NODE_SHARED_DIR` 环境变量来访问此目录。
 
 - **启动**：启动任务使用此目录作为它的工作目录。由启动任务下载到的节点所有文件都存储在此处。启动任务可以创建、读取、更新和删除此目录下的文件。任务可通过引用 `AZ_BATCH_NODE_STARTUP_DIR` 环境变量来访问此目录。
 
@@ -334,7 +333,7 @@ Batch 服务在节点上公开文件系统的一部分作为 *根目录*。任�
 
 	`stdout.txt` 和 `stderr.txt`：在任务执行期间，会将这些文件写入任务文件夹。
 
->[AZURE.IMPORTANT] 从池中删除节点时，也会删除节点上存储的 *所有* 文件。
+>[AZURE.IMPORTANT] 从池中删除节点时，也会删除节点上存储的*所有*文件。
 
 ## 应用程序包
 
@@ -346,13 +345,13 @@ Batch 可以处理使用 Azure 存储将应用程序包存储及部署到计算�
 
 若要了解应用程序包功能的详细信息，请参阅 [Application deployment with Azure Batch application packages](/documentation/articles/batch-application-packages/)（使用 Azure Batch 应用程序包部署应用程序）。
 
->[AZURE.NOTE] 如果将池应用程序包添加到 *现有* 池，则必须重新启动其计算节点，应用程序包才会应用到节点。
+>[AZURE.NOTE] 如果将池应用程序包添加到*现有*池，则必须重新启动其计算节点，应用程序包才会应用到节点。
 
 ## 池和计算节点生存期
 
 在设计 Azure Batch 解决方案时，必须做出有关如何及何时创建池，以及这些池中的计算节点可用性要保持多久的设计决策。
 
-在极端情况下，可以在提交作业为每个作业创建一个池，并在任务完成执行后立即删除节点。这可以最大程度地提高利用率，因为仅当绝对必要时才会分配节点，并且在节点空闲时会立即将其关闭。这意味着作业必须等待分配节点，不过，你必须注意，在任务单独可用、已分配并且启动任务已完成时，会立即将任务安排给节点。Batch *不会* 在等到池中的所有节点都可用后才分配任务。这可确保最大程度地利用所有可用节点。
+在极端情况下，可以在提交作业为每个作业创建一个池，并在任务完成执行后立即删除节点。这可以最大程度地提高利用率，因为仅当绝对必要时才会分配节点，并且在节点空闲时会立即将其关闭。这意味着作业必须等待分配节点，不过，你必须注意，在任务单独可用、已分配并且启动任务已完成时，会立即将任务安排给节点。Batch *不会*在等到池中的所有节点都可用后才分配任务。这可确保最大程度地利用所有可用节点。
 
 在另一种极端情况下，如果最高优先级是让作业立即启动，则你可以预先创建池，并使其节点在提交作业之前可用。在此情况下，作业任务可以立即启动，但节点可能会保持空闲状态以等待分配任务。
 
@@ -374,7 +373,7 @@ Batch 可以处理使用 Azure 存储将应用程序包存储及部署到计算�
 
 - **任务度量值**基于任务状态，例如“活动”（已排队）、“正在运行”或“已完成”。
 
-如果自动缩放会减少池中的计算节点数，则必须考虑如何处理在执行减少操作时运行的任务。为了满足这一点，Batch 提供可包含在公式中的 *节点解除分配选项*。例如，可以指定运行中的任务立即停止，立即停止然后重新排入队列以便在另一个节点上运行，或允许先完成再从池中删除节点。
+如果自动缩放会减少池中的计算节点数，则必须考虑如何处理在执行减少操作时运行的任务。为了满足这一点，Batch 提供可包含在公式中的*节点解除分配选项*。例如，可以指定运行中的任务立即停止，立即停止然后重新排入队列以便在另一个节点上运行，或允许先完成再从池中删除节点。
 
 有关自动缩放应用程序的详细信息，请参阅[自动缩放 Azure Batch 池中的计算节点](/documentation/articles/batch-automatic-scaling/)。
 
@@ -386,7 +385,7 @@ Batch 可以处理使用 Azure 存储将应用程序包存储及部署到计算�
 
 可以使用[添加证书][rest_add_cert]操作 (Batch REST) 或 [CertificateOperations.CreateCertificate][net_create_cert] 方法 (Batch .NET) 将证书添加到 Batch 帐户。然后，可以将该证书与新的或现有的池相关联。将证书与池关联后，Batch 服务将在池中的每个节点上安装该证书。在启动节点之后、启动任何任务（包括启动任务和作业管理器任务）之前，Batch 服务将安装相应的证书。
 
-如果将证书添加到 *现有* 池，必须重新启动其计算节点，证书才会应用到节点。
+如果将证书添加到*现有*池，必须重新启动其计算节点，证书才会应用到节点。
 
 ## 错误处理。
 
@@ -403,7 +402,7 @@ Batch 可以处理使用 Azure 存储将应用程序包存储及部署到计算�
 
 - **应用程序失败**
 
-	任务命令行指定的进程也可能会失败。如果任务执行的进程返回非零退出代码，则将该进程视为失败（请参阅下一部分中的 *任务退出代码* ）。
+	任务命令行指定的进程也可能会失败。如果任务执行的进程返回非零退出代码，则将该进程视为失败（请参阅下一部分中的*任务退出代码*）。
 
 	对于应用程序失败，可以将 Batch 配置为自动重试任务，并最多重试指定的次数。
 
@@ -411,7 +410,7 @@ Batch 可以处理使用 Azure 存储将应用程序包存储及部署到计算�
 
 	可以设置一个约束来指定作业或任务的最大执行持续期间，即 *maxWallClockTime*。此约束可用于终止“挂起的”任务。
 
-	如果超出了最长时间，则将任务标记为 *已完成*，但退出代码将设置为 `0xC000013A`，*schedulingError* 字段将标记为 `{ category:"ServerError", code="TaskEnded"}`。
+	如果超出了最长时间，则将任务标记为*已完成*，但退出代码将设置为 `0xC000013A`，*schedulingError* 字段将标记为 `{ category:"ServerError", code="TaskEnded"}`。
 
 ### 调试应用程序失败
 
@@ -421,7 +420,7 @@ Batch 可以处理使用 Azure 存储将应用程序包存储及部署到计算�
 
 - **任务退出代码**
 
-	如前所述，如果任务执行的程序返回非零退出代码，则 Batch 服务会将此任务标记为失败。当任务执行某个进程时，Batch 将使用 *进程的返回代码* 填充任务的退出代码属性。请务必注意，任务的退出代码**不是**由Batch 服务确定，而是由进程本身或此进程运行所在的操作系统确定。
+	如前所述，如果任务执行的程序返回非零退出代码，则 Batch 服务会将此任务标记为失败。当任务执行某个进程时，Batch 将使用*进程的返回代码*填充任务的退出代码属性。请务必注意，任务的退出代码**不是**由Batch 服务确定，而是由进程本身或此进程运行所在的操作系统确定。
 
 ### 应对任务失败或中断
 
@@ -523,4 +522,4 @@ Batch 可以处理使用 Azure 存储将应用程序包存储及部署到计算�
 
 [vm_marketplace]: https://azure.microsoft.com/marketplace/virtual-machines/
 
-<!---HONumber=Mooncake_1017_2016-->
+<!---HONumber=Mooncake_1107_2016-->

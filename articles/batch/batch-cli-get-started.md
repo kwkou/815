@@ -16,7 +16,7 @@
    ms.workload="big-compute"
    ms.date="09/06/2016"
    ms.author="marsma"
-   wacn.date="10/26/2016"/>  
+   wacn.date="11/16/2016"/>  
 
 
 # Azure Batch CLI 入门
@@ -49,7 +49,7 @@
 
 用法：
 
-	azure batch account create [options] <name>
+    azure batch account create [options] <name>
 
 示例：
 
@@ -69,17 +69,17 @@
 
 首先，显示存储帐户的详细信息：
 
-	azure storage account show --resource-group "resgroup001" "storageaccount001"
+    azure storage account show --resource-group "resgroup001" "storageaccount001"
 
 然后，为 `--autostorage-account-id` 选项使用 **Url** 值。Url 值以 "/subscriptions/" 开头，包含订阅 ID 和存储帐户的资源路径：
 
-	azure batch account create --location "China North"  --resource-group "resgroup001" --autostorage-account-id "/subscriptions/8ffffff8-4444-4444-bfbf-8ffffff84444/resourceGroups/resgroup001/providers/Microsoft.Storage/storageAccounts/storageaccount001" "batchaccount001"
+    azure batch account create --location "China North"  --resource-group "resgroup001" --autostorage-account-id "/subscriptions/8ffffff8-4444-4444-bfbf-8ffffff84444/resourceGroups/resgroup001/providers/Microsoft.Storage/storageAccounts/storageaccount001" "batchaccount001"
 
 ## 删除批处理帐户
 
 用法：
 
-	azure batch account delete [options] <name>
+    azure batch account delete [options] <name>
 
 示例：
 
@@ -107,7 +107,7 @@
 
 用法：
 
-	azure batch account keys renew [options] --<primary|secondary> <name>
+    azure batch account keys renew [options] --<primary|secondary> <name>
 
 示例：
 
@@ -134,7 +134,7 @@
 
 尽管可以使用命令行选项执行许多资源创建操作，但有些功能需要 JSON 格式的文件（包含资源详细信息）。例如，若要指定启动任务的资源文件，必须使用 JSON 文件。
 
-若要查找创建资源所需的 JSON，请参阅 MSDN 上的 [Batch REST API reference][rest_api]（Batch REST API 参考）文档。每个“Add *resource type* ”（添加 <资源类型>）主题都包含用于创建资源的示例 JSON，可将它用作 JSON 文件的模板。例如，在 [Add a pool to an account][rest_add_pool]（将池添加到帐户）中可以找到用于创建池的 JSON。
+若要查找创建资源所需的 JSON，请参阅 MSDN 上的 [Batch REST API reference][rest_api]（Batch REST API 参考）文档。每个“Add *resource type*”（添加 <资源类型>）主题都包含用于创建资源的示例 JSON，可将它用作 JSON 文件的模板。例如，在 [Add a pool to an account][rest_add_pool]（将池添加到帐户）中可以找到用于创建池的 JSON。
 
 >[AZURE.NOTE] 如果在创建资源时指定 JSON 文件，则会忽略在命令行上为该资源指定的所有其他参数。
 
@@ -142,11 +142,11 @@
 
 用法：
 
-	azure batch pool create [options] [json-file]
+    azure batch pool create [options] [json-file]
 
 示例（虚拟机配置）：
 
-	azure batch pool create --id "pool001" --target-dedicated 1 --vm-size "STANDARD_A1" --image-publisher "Canonical" --image-offer "UbuntuServer" --image-sku "14.04.2-LTS" --node-agent-id "batch.node.ubuntu 14.04"
+    azure batch pool create --id "pool001" --target-dedicated 1 --vm-size "STANDARD_A1" --image-publisher "Canonical" --image-offer "UbuntuServer" --image-sku "14.04.2-LTS" --node-agent-id "batch.node.ubuntu 14.04"
 
 示例（云服务配置）：
 
@@ -160,7 +160,7 @@
 
 使用以下命令删除池：
 
-	azure batch pool delete [pool-id]
+    azure batch pool delete [pool-id]
 
 >[AZURE.TIP] 在[虚拟机映像列表](/documentation/articles/batch-linux-nodes/#list-of-virtual-machine-images/)中检查适合 `--image-*` 选项的值。
 
@@ -168,24 +168,24 @@
 
 用法：
 
-	azure batch job create [options] [json-file]
+    azure batch job create [options] [json-file]
 
 示例：
 
-	azure batch job create --id "job001" --pool-id "pool001"
+    azure batch job create --id "job001" --pool-id "pool001"
 
 将作业添加到 Batch 帐户，指定执行其任务的池。
 
 使用以下命令删除作业：
 
-	azure batch job delete [job-id]
+    azure batch job delete [job-id]
 
 ## 列出池、作业、任务和其他资源
 
 每个 Batch 资源类型都支持 `list` 命令，该命令可查询 Batch 帐户并列出该类型的资源。例如，可以列出帐户中的池以及作业中的任务：
 
-	azure batch pool list
-	azure batch task list --job-id "job001"
+    azure batch pool list
+    azure batch task list --job-id "job001"
 
 ### 有效列出资源
 
@@ -193,7 +193,7 @@
 
 例如，以下命令只返回 ID 以“renderTask”开头的池：
 
-	azure batch task list --job-id "job001" --filter-clause "startswith(id, 'renderTask')"
+    azure batch task list --job-id "job001" --filter-clause "startswith(id, 'renderTask')"
 
 Batch CLI 支持 Batch 服务所支持的所有三个子句：
 
@@ -211,15 +211,15 @@ Batch CLI 支持 Batch 服务所支持的所有三个子句：
 
 **创建**应用程序：
 
-	azure batch application create "resgroup001" "batchaccount001" "MyTaskApplication"
+    azure batch application create "resgroup001" "batchaccount001" "MyTaskApplication"
 
 **添加**应用程序包：
 
-	azure batch application package create "resgroup001" "batchaccount001" "MyTaskApplication" "1.10-beta3" package001.zip
+    azure batch application package create "resgroup001" "batchaccount001" "MyTaskApplication" "1.10-beta3" package001.zip
 
 **激活**包：
 
-	azure batch application package activate "resgroup002" "azbatch002" "MyTaskApplication" "1.10-beta3" zip
+    azure batch application package activate "resgroup002" "azbatch002" "MyTaskApplication" "1.10-beta3" zip
 
 ### 部署应用程序包
 
@@ -227,7 +227,7 @@ Batch CLI 支持 Batch 服务所支持的所有三个子句：
 
 此命令在创建池时指定包，并在每个节点加入新池时部署该包：
 
-	azure batch pool create --id "pool001" --target-dedicated 1 --vm-size "small" --os-family "4" --app-package-ref "MyTaskApplication"
+    azure batch pool create --id "pool001" --target-dedicated 1 --vm-size "small" --os-family "4" --app-package-ref "MyTaskApplication"
 
 目前无法使用命令行选项指定要部署的包版本。必须先使用 Azure 门户预览设置应用程序的默认版本，才可以将应用程序分配到池。在 [Application deployment with Azure Batch application packages](/documentation/articles/batch-application-packages/)（使用 Azure Batch 应用程序包部署应用程序）中了解如何设置默认版本。但是，如果在创建池时使用 [JSON 文件](#json-files)而不是命令行选项，则可以指定默认版本。
 
@@ -245,7 +245,7 @@ Batch CLI 支持 Batch 服务所支持的所有三个子句：
 
 * [MSDN 上的 Batch 论坛][batch_forum]是一个极佳的帮助资源，受到 Batch 团队成员的密切监视。如果遇到问题或需要特定操作的帮助，请务必在这里发布问题。
 
-* Azure CLI 目前不一定支持所有的 Batch 资源操作。例如，目前无法指定池的应用程序包 *版本* ，只能指定包 ID。在这种情况下，可能需要为命令提供 `--json-file`，而不是使用命令行选项。请务必安装最新的 CLI 版本，获取将来所做的增强。
+* Azure CLI 目前不一定支持所有的 Batch 资源操作。例如，目前无法指定池的应用程序包*版本*，只能指定包 ID。在这种情况下，可能需要为命令提供 `--json-file`，而不是使用命令行选项。请务必安装最新的 CLI 版本，获取将来所做的增强。
 
 ## 后续步骤
 
@@ -253,9 +253,8 @@ Batch CLI 支持 Batch 服务所支持的所有三个子句：
 
 * 有关如何减少项数以及针对 Batch 查询返回的信息类型的详细信息，请参阅 [Query the Batch service efficiently](/documentation/articles/batch-efficient-list-queries/)（有效查询 Batch 服务）。
 
-[batch_forum]: https://social.msdn.microsoft.com/forums/azure/en-US/home?forum=azurebatch
-[github_readme]: /documentation/articles/README/
+[batch_forum]: https://social.msdn.microsoft.com/forums/azure/zh-cn/home?forum=azurebatch
 [rest_api]: https://msdn.microsoft.com/zh-cn/library/azure/dn820158.aspx
 [rest_add_pool]: https://msdn.microsoft.com/zh-cn/library/azure/dn820174.aspx
 
-<!---HONumber=Mooncake_1017_2016-->
+<!---HONumber=Mooncake_1107_2016-->
