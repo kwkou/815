@@ -9,13 +9,13 @@
   editor="EricChen"/>
 <tags ms.service=""
     ms.date=""
-    wacn.date="01/11/2016"
+    wacn.date="11/17/2016"
     />
 
 
 <h1 id="menu-php-websites">网站</h1>
 <h2 id="header-0">常规</h2>
-<h3>指南：<a href="/documentation/articles/fundamentals-application-models/#WebSites">什么是 Azure 网站？</a></h3>
+<h3>指南：<a href="/documentation/articles/fundamentals-application-models/">什么是 Azure 网站？</a></h3>
 <p>Azure 为运行的应用程序提供三种计算模型：Azure 网站、Azure 虚拟机和 Azure 云服务。本主题概述了三种模型和信息，以帮助你确定适用于你的应用程序的模型。</p>
 <h2 id="header-1">创建</h2>
 <h3>教程：<a href="/documentation/articles/web-sites-php-mysql-deploy-use-git/">带 MySQL 的 PHP 网站（使用 Git）</a></h3>
