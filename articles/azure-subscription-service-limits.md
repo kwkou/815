@@ -97,7 +97,7 @@
 
 - [虚拟机规模集](#virtual-machine-scale-sets-limits)
 
-<a id="subscription-limits"></a>
+<a id="subscription-limits" name="subscription"></a>
 ### 订阅限制
 #### 订阅限制
 [AZURE.INCLUDE [azure-subscription-limits](../includes/azure-subscription-limits.md)]
@@ -150,7 +150,7 @@
 
 [AZURE.INCLUDE [azure-storage-limits](../includes/azure-storage-limits.md)]
 
-#### 虚拟机磁盘限制
+#### <a name="virtual-machine-disk-limits"></a> 虚拟机磁盘限制
 
 [AZURE.INCLUDE [azure-storage-limits-vm-disks](../includes/azure-storage-limits-vm-disks.md)]
 

@@ -602,7 +602,7 @@ Azure 提供内部负载均衡器 (ILB)。有了 ILB，便可通过群集虚拟 
 
 ## <a name="2e3fec50-241e-441b-8708-0b1864f66dfa"></a>Azure IaaS 上的 SAP NetWeaver 高可用性
 
-如 HA 章节 [SAP NetWeaver on Windows virtual machines (VMs) - Planning and Implementation Guide][planning-guide-11]（Windows 虚拟机 (VM) 上的 SAP NetWeaver - 规划和实施指南）中所述，若要实现 SAP 应用程序的高可用性（例如 SAP 软件组件的 HA），需要保护以下组件：
+如 HA 章节 [SAP NetWeaver on Windows virtual machines (VMs) - Planning and Implementation Guide][planning-guide]（Windows 虚拟机 (VM) 上的 SAP NetWeaver - 规划和实施指南）中所述，若要实现 SAP 应用程序的高可用性（例如 SAP 软件组件的 HA），需要保护以下组件：
 
 - SAP 应用程序服务器
 - SAP ASCS/SCS 实例

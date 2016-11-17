@@ -21,7 +21,7 @@
 
 >[AZURE.NOTE] 若要在 Visual Studio 2015 中使用 Azure 中国区，需要配置 Visual Studio 环境。有关详细信息，请参阅[开发人员差异](/documentation/articles/developerdifferences/)。
 
-本教程将向你介绍如何使用 Visual Studio 工具，通过远程运行[调试模式](http://www.visualstudio.com/get-started/debug-your-app-vs.aspx)或查看应用程序日志和 Web 服务器日志来帮助调试 [Azure App Service](/documentation/articles/app-service-changes-existing-services/) 中的 Web 应用。
+本教程将向你介绍如何使用 Visual Studio 工具，通过远程运行调试模式或查看应用程序日志和 Web 服务器日志来帮助调试 [Azure App Service](/documentation/articles/app-service-changes-existing-services/) 中的 Web 应用。
 
 [AZURE.INCLUDE [app-service-web-to-api-and-mobile](../../includes/app-service-web-to-api-and-mobile.md)]
 

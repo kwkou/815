@@ -340,7 +340,7 @@
 [premium-storage]: /documentation/articles/storage-premium-storage/
 [rbac]: /documentation/articles/role-based-access-control-what-is/
 [rbac-roles]: /documentation/articles/role-based-access-built-in-roles/
-[rbac-devtest]: /documentation/articles/role-based-access-built-in-roles/#devtest-lab-user
+[rbac-devtest]: /documentation/articles/role-based-access-built-in-roles/#devtest-labs-user
 [rbac-network]: /documentation/articles/role-based-access-built-in-roles/#network-contributor
 [reboot-logs]: https://azure.microsoft.com/blog/viewing-vm-reboot-logs/
 [resize-os-disk]: /documentation/articles/virtual-machines-windows-expand-os-disk/

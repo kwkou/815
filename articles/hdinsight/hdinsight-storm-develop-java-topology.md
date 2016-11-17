@@ -123,7 +123,7 @@ Maven 插件可让你自定义项目的生成阶段，例如，如何编译项�
 
 ###添加插件
 
-针对 Storm 拓扑，<a href="http://mojo.codehaus.org/exec-maven-plugin/" target="_blank">Exec Maven 插件</a>十分有用，因为它可让你轻松地在开发环境本地运行拓扑。将以下内容添加至 **pom.xml** 文件的 `<plugins>` 节，以包括 Exec Maven 插件：
+针对 Storm 拓扑，<a href="http://www.mojohaus.org/exec-maven-plugin/" target="_blank">Exec Maven 插件</a>十分有用，因为它可让你轻松地在开发环境本地运行拓扑。将以下内容添加至 **pom.xml** 文件的 `<plugins>` 节，以包括 Exec Maven 插件：
 
     <plugin>
         <groupId>org.codehaus.mojo</groupId>

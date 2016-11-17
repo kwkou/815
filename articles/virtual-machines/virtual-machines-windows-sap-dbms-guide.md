@@ -784,7 +784,6 @@ SAP 支持的数据库镜像（请参阅 SAP 说明 [965908]）依赖于在 SAP 
 \[comment]: <> （通过 Azure 库 <https://blogs.technet.com/b/dataplatforminsider/archive/2014/08/25/sql-server-alwayson-offering-in-microsoft-azure-portal-gallery.aspx> 预配置 AlwaysOn 设置）
 \[comment]: <> （[此教程][virtual-machines-windows-classic-ps-sql-int-listener]详细介绍了如何创建可用性组侦听器）
 \[comment]: <> （此处详细介绍了如何使用 ACL 来保护网络终结点：）
-\[comment]: <> (*	<https://michaelwasham.com/windows-azure-powershell-reference-guide/network-access-control-list-capability-in-windows-azure-powershell/>)
 \[comment]: <> (*	<https://blogs.technet.com/b/heyscriptingguy/archive/2013/08/31/weekend-scripter-creating-acls-for-windows-azure-endpoints-part-1-of-2.aspx> )
 \[comment]: <> (*	<https://blogs.technet.com/b/heyscriptingguy/archive/2013/09/01/weekend-scripter-creating-acls-for-windows-azure-endpoints-part-2-of-2.aspx>)  
 \[comment]: <> (*	<https://blogs.technet.com/b/heyscriptingguy/archive/2013/09/18/creating-acls-for-windows-azure-endpoints.aspx>) 

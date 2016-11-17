@@ -300,7 +300,7 @@
 [Umbraco CMS](http://umbraco.com/) 是许多开发人员所使用的一种流行的 .NET CMS 解决方案，它提供了 [Courier2](http://umbraco.com/products/more-add-ons/courier-2) 模块用于从开发到过渡，再到生产环境的部署。你可以使用 Visual Studio 或 WebMatrix 为 Umbraco CMS Web 应用轻松创建本地开发环境。
 
 1. 若要使用 Visual Studio 创建 Umbraco Web 应用，请单击[此处](https://our.umbraco.org/documentation/Installation/install-umbraco-with-nuget)。
-2. 若要使用 WebMatrix 创建 Umbraco Web 应用，请单击[此处](http://umbraco.com/help-and-support/video-tutorials/getting-started/working-with-webmatrix)。
+2. 若要使用 WebMatrix 创建 Umbraco Web 应用，请单击[此处](https://our.umbraco.org/documentation/getting-started/setup/install/install-umbraco-with-microsoft-webmatrix)。
 
 务必记住删除应用程序下的 `install` 文件夹，不要将其上载到过渡或生产 Web 应用。本教程使用 WebMatrix
 
@@ -354,7 +354,7 @@
 			</repository>
 	</repositories>
 
-在 `<repositories>` 下面输入生产站点 URL 和用户信息。如果使用默认的 Umbraco 成员资格提供程序，则在 <用户> 部分添加管理用户的 ID。如果使用自定义的 Umbraco 成员资格提供程序，则使用 Courier2 模块的 `<login>`、`<password>` 了解如何连接到生产站点。有关详细信息，请参阅 Courier 模块的[文档](http://umbraco.com/help-and-support/customer-area/courier-2-support-and-download/developer-documentation)。
+在 `<repositories>` 下面输入生产站点 URL 和用户信息。如果使用默认的 Umbraco 成员资格提供程序，则在 <用户> 部分添加管理用户的 ID。如果使用自定义的 Umbraco 成员资格提供程序，则使用 Courier2 模块的 `<login>`、`<password>` 了解如何连接到生产站点。有关详细信息，请参阅 Courier 模块的[文档](https://our.umbraco.org/documentation/Add-ons/UmbracoCourier/Developer/)。
 
 同样，在生产站点上安装 Courier 模块，并在其相应的 courier.config 文件中将其配置为指向过渡 Web 应用，如下所示
 

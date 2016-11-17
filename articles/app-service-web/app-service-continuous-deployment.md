@@ -20,7 +20,7 @@
 
 若要启用连续部署，请执行以下操作：
 
-将应用内容发布到用于连续部署的存储库。有关将项目发布到这些服务的详细信息，请参阅[创建存储库 (GitHub)]、[创建存储库 (BitBucket)] 和 [VSTS 入门]。以下步骤仅适用于 GitHub 存储库。有关 GitHub 以外的存储库，请参阅[手动触发部署](https://github.com/projectkudu/kudu/wiki/Manually-triggering-a-deployment)以设置 Webhook。
+将应用内容发布到用于连续部署的存储库。有关将项目发布到这些服务的详细信息，请参阅[创建存储库 (GitHub)]。以下步骤仅适用于 GitHub 存储库。有关 GitHub 以外的存储库，请参阅[手动触发部署](https://github.com/projectkudu/kudu/wiki/Manually-triggering-a-deployment)以设置 Webhook。
 
 1. 登录到 [Azure 经典管理门户](https://manage.windowsazure.cn)。在“Web 应用”页上，选择要为其安装连续部署的 Web 应用，然后选择“仪表板”选项卡。
 
