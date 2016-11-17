@@ -128,6 +128,6 @@ Blob 快照是在某个时间点捕获的 Blob 只读版本。在创建快照后
 使用以下链接详细了解如何创建 Blob 的快照和规划 VM 备份基础结构。
 
 - [创建 Blob 的快照](https://msdn.microsoft.com/zh-cn/library/azure/hh488361.aspx)
-- [Plan your VM Backup Infrastructure（规划 VM 备份基础结构）](/documentation/articles//backup-azure-vms-introduction)
+- [Plan your VM Backup Infrastructure（规划 VM 备份基础结构）](/documentation/articles/backup-azure-vms-introduction/)
 
 <!---HONumber=Mooncake_1031_2016-->
