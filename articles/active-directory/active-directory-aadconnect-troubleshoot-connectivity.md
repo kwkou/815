@@ -25,7 +25,7 @@ Azure AD Connect 使用现代身份验证（使用 ADAL 库）来进行身份验
 
 在本文中，我们将说明 Fabrikam 如何通过其代理连接到 Azure AD。代理服务器名为 fabrikamproxy，并使用端口 8080。
 
-首先，我们需要确保正确配置 [**machine.config**](/documentation/articles/active-directory-aadconnect-prerequisites/#connectivity)。  
+首先，我们需要确保正确配置 [**machine.config**](/documentation/articles/active-directory-aadconnect-prerequisites/)。  
 ![machineconfig](./media/active-directory-aadconnect-troubleshoot-connectivity/machineconfig.png)
 
 > [AZURE.NOTE] 某些非 Microsoft 博客提到，应该对 miiserver.exe.config 进行更改。但是，每次升级都会覆盖此文件，因此，尽管系统在初始安装期间可正常工作，但首次升级时将停止工作。出于此原因，建议改为更新 machine.config。
@@ -46,7 +46,7 @@ secure.aadcdn.microsoftonline p.com | HTTPS/443 | 用于 MFA。
 *.microsoftonline.com | HTTPS/443 | 用于配置 Azure AD 目录并导入/导出数据。
 
 ## 向导中的错误
-安装向导使用两种不同的安全上下文。在“连接到 Azure AD”页上，使用的是当前登录的用户。在“配置”页上，改为[运行同步引擎服务的帐户](/documentation/articles/active-directory-aadconnect-accounts-permissions/#azure-ad-connect-sync-service-accounts)。我们要做的是计算机的全局代理配置，因此如果出现问题，该问题很有可能已出现在向导的“连接到 Azure AD”页中。
+安装向导使用两种不同的安全上下文。在“连接到 Azure AD”页上，使用的是当前登录的用户。在“配置”页上，改为[运行同步引擎服务的帐户](/documentation/articles/active-directory-aadconnect-accounts-permissions/)。我们要做的是计算机的全局代理配置，因此如果出现问题，该问题很有可能已出现在向导的“连接到 Azure AD”页中。
 
 下面是在安装向导中看到的最常见错误。
 
@@ -54,7 +54,7 @@ secure.aadcdn.microsoftonline p.com | HTTPS/443 | 用于 MFA。
 当向导本身无法访问代理时，将出现此错误。
 ![nomachineconfig](./media/active-directory-aadconnect-troubleshoot-connectivity/nomachineconfig.png)
 
-- 如果你看到此错误，请验证是否已正确配置 [machine.config](/documentation/articles/active-directory-aadconnect-prerequisites/#connectivity)。
+- 如果你看到此错误，请验证是否已正确配置 [machine.config](/documentation/articles/active-directory-aadconnect-prerequisites/)。
 - 如果配置看起来正确，请按照[验证代理连接](#verify-proxy-connectivity)中的步骤，查看问题是否也出现在向导外部的位置。
 
 ### 无法访问 MFA 终结点

@@ -76,7 +76,7 @@ Azure Active Directory Connect 由三个主要组件构成：同步服务、可�
 
 ### 了解有关安装 Azure AD Connect 的详细信息
 
-你还要预先了解[操作](/documentation/articles/active-directory-aadconnectsync-operations/)注意事项。可能需要部署一台待机服务器，在发生[灾难](/documentation/articles/active-directory-aadconnectsync-operations/#disaster-recovery/)时轻松进行故障转移。若要频繁进行配置更改，则应计划部署一台[暂存模式](/documentation/articles/active-directory-aadconnectsync-operations/#staging-mode/)服务器。
+你还要预先了解[操作](/documentation/articles/active-directory-aadconnectsync-operations/)注意事项。可能需要部署一台待机服务器，在发生[灾难](/documentation/articles/active-directory-aadconnectsync-operations/)时轻松进行故障转移。若要频繁进行配置更改，则应计划部署一台[暂存模式](/documentation/articles/active-directory-aadconnectsync-operations/)服务器。
 
 主题 |  
 --------- | ---------

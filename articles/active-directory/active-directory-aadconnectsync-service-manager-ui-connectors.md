@@ -33,15 +33,15 @@
 --- | ---
 创建 | 请勿使用。若要连接到其他 AD 林，请使用安装向导。
 属性 | 用于域和 OU 筛选。
-[删除](#delete) | 用于删除连接器空间中的数据或删除与林的连接。
-[配置运行配置文件](#configure-run-profiles) | 除了域筛选，不会在此处进行任何配置。可以通过此操作来查看已配置的运行配置文件。
+删除 | 用于删除连接器空间中的数据或删除与林的连接。
+配置运行配置文件 | 除了域筛选，不会在此处进行任何配置。可以通过此操作来查看已配置的运行配置文件。
 运行 | 用于启动配置文件的一次性运行。
 停止 | 停止当前运行配置文件的连接器。
 导出连接器 | 请勿使用。
 导入连接器 | 请勿使用。
 更新连接器 | 请勿使用。
 刷新架构 | 刷新缓存架构。最好改在安装向导中使用此选项，因为它也会更新同步规则。
-[搜索连接器空间](#search-connector-space) | 用于查找对象，以及[在整个系统中跟踪对象及其数据](#follow-an-object-and-its-data-through-the-system)。
+搜索连接器空间 | 用于查找对象，以及在整个系统中跟踪对象及其数据。
 
 ### 删除
 删除操作适用于两种不同的用途。
@@ -79,7 +79,7 @@
 "旧值"显示当前存储在系统中的数据，而"新值"显示从源系统收到但尚未应用的数据。在本例中，由于发生同步错误，因此无法应用更改。
 
 **错误**  
-对象出现问题时才会显示"错误"页面。有关如何[排查同步错误](/documentation/articles/active-directory-aadconnectsync-service-manager-ui-operations/#troubleshoot-errors-in-operations-tab/)的详细信息，请参阅"操作"页上的详细信息。
+对象出现问题时才会显示"错误"页面。有关如何[排查同步错误](/documentation/articles/active-directory-aadconnectsync-service-manager-ui-operations/)的详细信息，请参阅"操作"页上的详细信息。
 
 **沿袭**  
 "沿袭"选项卡显示连接器空间对象与 Metaverse 对象关联的方式。可以看到连接器上次从连接的系统导入更改的时间，以及应用哪些规则以便在 Metaverse 中填充数据。
@@ -88,7 +88,7 @@
 ![Sync Service Manager](./media/active-directory-aadconnectsync-service-manager-ui/cslineageout.png)
 在"PasswordSync"列中，还会发现入站连接器空间可进行密码更改，因为有一个同步规则的值为 **True**。此密码接着会通过出站规则发送到 Azure AD。
 
-从"沿袭"选项卡中，可以单击["Metaverse 对象属性"](#metaverse-object-properties)转到 Metaverse。
+从"沿袭"选项卡中，可以单击"Metaverse 对象属性"转到 Metaverse。
 
 所有选项卡的底部都有两个按钮："预览"和"日志"。
 
@@ -99,7 +99,7 @@
 ![Sync Service Manager](./media/active-directory-aadconnectsync-service-manager-ui/preview2.png)
 
 **日志**  
-"日志"页用于查看密码同步状态和历史记录。有关详细信息，请参阅 [Troubleshoot password synchronization](/documentation/articles/active-directory-aadconnectsync-implement-password-synchronization/#troubleshoot-password-synchronization/)（排查密码同步问题）。
+"日志"页用于查看密码同步状态和历史记录。有关详细信息，请参阅 [Troubleshoot password synchronization](/documentation/articles/active-directory-aadconnectsync-implement-password-synchronization/)（排查密码同步问题）。
 
 ### Metaverse 对象属性
 **属性**  
@@ -108,7 +108,7 @@
 **连接器**  
 "连接器"选项卡显示所有具有对象表示形式的连接器空间。
 ![Sync Service Manager](./media/active-directory-aadconnectsync-service-manager-ui/mvconnectors.png)
-此选项卡也可让你导航到[连接器空间对象](#connector-space-object-properties)。
+此选项卡也可让你导航到连接器空间对象。
 
 ## 后续步骤
 了解有关 [Azure AD Connect 同步](/documentation/articles/active-directory-aadconnectsync-whatis/)配置的详细信息。

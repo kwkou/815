@@ -43,7 +43,7 @@
 
 有关详细信息，请参阅 [Integrating your on-premises identities with Azure Active Directory](/documentation/articles/active-directory-aadconnect/)（将本地标识与 Azure Active Directory 集成）
 
-> [AZURE.NOTE] 有关为 FIPS 和密码同步配置的 Active Directory 域服务的更多详细信息，请参阅 [Password Sync and FIPS](#password-synchronization-and-fips)（密码同步和 FIPS）。
+> [AZURE.NOTE] 有关为 FIPS 和密码同步配置的 Active Directory 域服务的更多详细信息，请参阅密码同步和 FIPS。
 
 ## 密码同步的工作原理
 Active Directory 域服务以实际用户密码的哈希值表示形式存储密码。哈希值是单向数学函数（" *哈希算法* "）的计算结果。没有任何方法可将单向函数的结果还原为纯文本版本的密码。无法使用密码哈希来登录本地网络。
@@ -124,8 +124,8 @@ Active Directory 域服务以实际用户密码的哈希值表示形式存储密
 ## 排查密码同步问题
 如果密码未按预期同步，请区分该密码是一部分用户的密码还是所有用户的密码。
 
-- 如果单个对象出现问题，请参阅[排查一个对象的密码同步问题](#troubleshoot-one-object-that-is-not-synchronizing-passwords)。
-- 如果遇到密码都未同步的问题，请参阅[排查未同步任何密码的问题](#troubleshoot-issues-where-no-passwords-are-synchronized)。
+- 如果单个对象出现问题，请参阅排查一个对象的密码同步问题。
+- 如果遇到密码都未同步的问题，请参阅排查未同步任何密码的问题。
 
 ### 排查一个对象的密码同步问题
 可以通过检查对象的状态，轻松排查密码同步问题。
@@ -143,7 +143,7 @@ Active Directory 域服务以实际用户密码的哈希值表示形式存储密
 5. 找到你要查找的用户。
 6. 选择"沿袭"选项卡，确保至少有一个同步规则的"密码同步"显示为 **True**。在默认配置中，同步规则的名称为 **In from AD - User AccountEnabled**。  
 ![有关用户的沿袭信息](./media/active-directory-aadconnectsync-implement-password-synchronization/cspasswordsync.png)
-7. 然后，从 Metaverse 到 Azure AD 连接器空间一直[跟踪用户](/documentation/articles/active-directory-aadconnectsync-service-manager-ui-connectors/#follow-an-object-and-its-data-through-the-system/)。连接器空间对象应存在一个"密码同步"设置为 **True** 的出站规则。在默认配置中，同步规则的名称为 **Out to AAD - User Join**。  
+7. 然后，从 Metaverse 到 Azure AD 连接器空间一直[跟踪用户](/documentation/articles/active-directory-aadconnectsync-service-manager-ui-connectors/)。连接器空间对象应存在一个"密码同步"设置为 **True** 的出站规则。在默认配置中，同步规则的名称为 **Out to AAD - User Join**。  
 ![用户的连接器空间属性](./media/active-directory-aadconnectsync-implement-password-synchronization/cspasswordsync2.png)
 8. 若要查看对象在过去一周的密码同步详细信息，请单击"日志..."。  
 ![对象日志详细信息](./media/active-directory-aadconnectsync-implement-password-synchronization/csobjectlog.png)
@@ -160,11 +160,11 @@ TargetNotExportedToDirectory | 尚未导出 Azure AD 连接器空间中的对象
 MigratedCheckDetailsForMoreInfo | 日志条目创建于版本 1.0.9125.0 之前，并且以其旧状态显示。
 
 ### 排查未同步任何密码的问题
-首先，请运行["获取密码同步设置"](#get-the-status-of-password-sync-settings)部分中的脚本。这样就可以获得密码同步配置的概述。  
+首先，请运行"获取密码同步设置"部分中的脚本。这样就可以获得密码同步配置的概述。  
 ![PowerShell 脚本从密码同步设置中返回的输出](./media/active-directory-aadconnectsync-implement-password-synchronization/psverifyconfig.png)  
 如果未在 Azure AD 中启用该功能，或者未启用同步通道状态，请运行 Connect 安装向导。选择"自定义同步选项"并取消选择密码同步。此项更改会暂时禁用该功能。然后再次运行向导并重新启用密码同步。再次运行脚本，验证配置是否正确。
 
-如果脚本显示没有检测信号，请运行["触发所有密码的完全同步"](#trigger-a-full-sync-of-all-passwords)中的脚本。在配置正确但密码不同步的其他一些情况下。也可以使用此脚本。
+如果脚本显示没有检测信号，请运行"触发所有密码的完全同步"中的脚本。在配置正确但密码不同步的其他一些情况下。也可以使用此脚本。
 
 #### 获取密码同步设置的状态
 

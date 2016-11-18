@@ -34,26 +34,26 @@ Azure Active Directory 为 Office 365 和其他 Microsoft Online 服务提供单
 
 
 
-- [Azure Active Directory](#azure-active-directory)
-- [Optimal IDM Virtual Identity Server Federation Services](#optimal-idm-virtual-identity-server-federation-services)
-- [PingFederate 6.11](#pingfederate-611)
-- [PingFederate 7.2](#pingfederate-72)
-- [PingFederate 8.x](#pingfederate-8x)
-- [Centrify](#centrify)
-- [IBM Tivoli Federated Identity Manager 6.2.2](#ibm-tivoli-federated-identity-manager-622)
-- [SecureAuth IdP 7.2.0](#secureauth-idp-720)
-- [CA SiteMinder 12.52](#ca-siteminder-1252-sp1-cumulative-release-4)
-- [RadiantOne CFS 3.0](#radiantone-cfs-30)
-- [Okta](#okta)
-- [OneLogin](#onelogin)
-- [NetIQ Access Manager 4.0.1](#netiq-access-manager-401)
-- [BIG-IP with Access Policy Manager BIG-IP ver.11.3x - 11.6x](#big-ip-with-access-policy-manager-big-ip-ver-113x-116x)
-- [VMware Workspace Portal version 2.1](#vmware-workspace-portal-version-21)
-- [Sign&go 5.3](#signampgo-53)
-- [IceWall Federation Version 3.0](#icewall-federation-version-30)
-- [CA Secure Cloud](#ca-secure-cloud)
-- [Dell One Identity Cloud Access Manager v7.1](#dell-one-identity-cloud-access-manager-v71)
-- [AuthAnvil Single Sign On 4.5](#authavil-single-sign-on-45)
+- Azure Active Directory
+- Optimal IDM Virtual Identity Server Federation Services
+- PingFederate 6.11
+- PingFederate 7.2
+- PingFederate 8.x
+- Centrify
+- IBM Tivoli Federated Identity Manager 6.2.2
+- SecureAuth IdP 7.2.0
+- CA SiteMinder 12.52
+- RadiantOne CFS 3.0
+- Okta
+- OneLogin
+- NetIQ Access Manager 4.0.1
+- BIG-IP with Access Policy Manager BIG-IP ver.11.3x - 11.6x
+- VMware Workspace Portal version 2.1
+- Sign&go 5.3
+- IceWall Federation Version 3.0
+- CA Secure Cloud
+- Dell One Identity Cloud Access Manager v7.1
+- AuthAnvil Single Sign On 4.5
 
 >[AZURE.IMPORTANT] 由于这些是第三方产品，Microsoft 不会对与这些标识提供者相关的问题和疑问提供支持，例如部署、配置、故障排除、最佳实践等方面的问题和疑问。如果需要获得支持或者存在有关这些标识提供者的疑问，请直接联系提供支持的第三方。
 
@@ -72,7 +72,7 @@ Azure Active Directory 可以通过与本地 Active-Directory 联合，或者在
 | 多重格式电子邮件客户端（如 Outlook 和 ActiveSync） | 支持 |无|
 |使用 ADAL 的现代应用程序，例如 Office 2016| 支持|无|
 
-有关将 Azure Active Directory 与 AD FS 配合使用的详细信息，请参阅 [Active Directory 联合身份验证服务 (ADFS)](/documentation/articles/active-directory-aadconnect-get-started-custom/#configuring-federation-with-ad-fs/)
+有关将 Azure Active Directory 与 AD FS 配合使用的详细信息，请参阅 [Active Directory 联合身份验证服务 (ADFS)](/documentation/articles/active-directory-aadconnect-get-started-custom/)
 
 有关将 Azure Active Directory 与密码同步配合使用的详细信息，请参阅 [Azure AD Connect](/documentation/articles/active-directory-aadconnect/)。
 

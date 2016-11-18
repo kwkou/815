@@ -87,8 +87,8 @@ UpgradeNotSupportedInvalidPersistedState | 安装不是快速设置或 DirSync �
 UpgradeNotSupportedMetaverseSizeExceeeded | Metaverse 中的对象超过 100,000 个。
 UpgradeNotSupportedMultiForestSetup | 你正在连接到多个林。快速安装只会连接到一个林。
 UpgradeNotSupportedNonLocalDbInstall | 你使用的不是 SQL Server Express LocalDB 数据库。
-UpgradeNotSupportedNonMsolAccount | [AD 连接器帐户](/documentation/articles/active-directory-aadconnect-accounts-permissions/#active-directory-account/)不再是默认的 MSOL\_ 帐户。
-UpgradeNotSupportedStagingModeEnabled | 服务器已设置为[过渡模式](/documentation/articles/active-directory-aadconnectsync-operations/#staging-mode/)。
+UpgradeNotSupportedNonMsolAccount | [AD 连接器帐户](/documentation/articles/active-directory-aadconnect-accounts-permissions/)不再是默认的 MSOL\_ 帐户。
+UpgradeNotSupportedStagingModeEnabled | 服务器已设置为[过渡模式](/documentation/articles/active-directory-aadconnectsync-operations/)。
 UpgradeNotSupportedUserWritebackEnabled | 你已启用[用户写回](/documentation/articles/active-directory-aadconnect-feature-preview/#user-writeback/)功能。
 
 ## 后续步骤
