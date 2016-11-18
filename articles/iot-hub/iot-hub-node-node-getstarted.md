@@ -106,7 +106,7 @@
 
 9. 记下**设备 ID** 和**设备密钥**。稍后在创建作为设备连接到 IoT 中心的应用程序时，需要这些值。
 
-> [AZURE.NOTE] IoT 中心标识注册表只存储设备标识，以启用对中心的安全访问。它存储设备 ID 和密钥作为安全凭据，以及启用或禁用标志（可用于禁用对单个设备的访问）。如果应用程序需要存储其他特定于设备的元数据，则应使用特定于应用程序的存储。有关详细信息，请参阅 [IoT Hub Developer Guide][lnk-devguide-identity]（IoT 中心开发人员指南）。
+> [AZURE.NOTE] IoT 中心标识注册表只存储设备标识，以启用对中心的安全访问。它存储设备 ID 和密钥作为安全凭据，以及启用或禁用标志（可用于禁用对单个设备的访问）。如果应用程序需要存储其他特定于设备的元数据，则应使用特定于应用程序的存储。
 
 ## 接收设备到云的消息
 
@@ -302,7 +302,6 @@
 [lnk-transient-faults]: https://msdn.microsoft.com/zh-cn/library/hh680901(v=pandp.50).aspx
 
 [lnk-eventhubs-tutorial]: /documentation/articles/event-hubs-csharp-ephcs-getstarted/
-[lnk-devguide-identity]: /documentation/articles/iot-hub-devguide/#identityregistry
 [lnk-event-hubs-overview]: /documentation/articles/event-hubs-overview/
 
 [lnk-dev-setup]: https://github.com/Azure/azure-iot-sdks/blob/master/doc/get_started/node-devbox-setup.md
