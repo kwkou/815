@@ -23,7 +23,7 @@
 本文档概述了这两种服务的区别，并为中国 [Azure 门户](https://www.azure.cn)及 [MSDN 上的 Azure 技术库](http://msdn.microsoft.com/zh-cn/library/dd163896.aspx)提供补充信息。同时，官方信息也会通过多个途径发布，例如 Azure [海报](http://www.microsoft.com/zh-cn/download/details.aspx?id=35473)、[TechNet wiki](http://social.technet.microsoft.com/wiki/contents/articles/inside-sql-azure.aspx) 以及博客。本文目标读者为在中国部署、托管数据中心的合作伙伴及开发人员。
 
 有关中国区 Azure 服务功能的更新，请访问中国 [Azure 门户](https://www.azure.cn)。有关当前 Azure 内容信息，请参阅本文档附录。 
- 
+ 
 ##<a name="dev-guide"></a>开发人员指南
 
 目前微软公司提供的大部分英文技术文档中，应用程序都针对境外 Azure 开发，而非中国区 Azure，因此开发人员必须了解两者主要区别：
@@ -150,7 +150,7 @@ Visual Studio 支持在中国区 Azure 上开发，使用 Visual Studio 2015 upd
 ###<a name="endpointmap"></a>端点映射<a name="endpointmap"></a>
 
 下表指导用户将境外 Azure 资源端点映射到中国特定端点。
- 
+ 
 
 服务类型|在境外由微软运营的 Microsoft Azure URI|由世纪互联运营的 Microsoft Azure URI
 :--|:--|:--
@@ -380,7 +380,7 @@ Azure Active Directory（AAD）可以为本地部署和云应用程序提供身�
 
 境外 Azure 编写代码使用的路径为：<a href="https://management.core.windows.net">https://management.core.windows.net</a>。中国区 Azure 编写代码使用的路径为：<span class="Italic">
   <a href="https://management.core.chinacloudapi.cn">https://management.core.chinacloudapi.cn</a>。
- 
+ 
 
 ##<a name="dnsred"></a>重定将自定义域名定位到中国区 Azure 的托管服务中
 
@@ -388,7 +388,7 @@ Azure Active Directory（AAD）可以为本地部署和云应用程序提供身�
 
 
 例如，如果要将 www.contoso.com 重定向到运行在 contoso.cloudapp.net 的 web 角色中，那么现在就必须将其重定向到 contoso.chinacloudapp.cn 中。
- 
+ 
 
 ##<a name="wadig"></a>使用 Azure 诊断
 
@@ -450,14 +450,14 @@ Azure 诊断通过使用开发计算机上的本地存储或中国区 Azure 存�
 要管理 SQL 数据库服务器，可以使用此配置：
 
 	var sqlManagementService = azure.createSqlManagementService(subscriptionId, authentication, hostOptions);
- 
+ 
 
 #<a name="appendix"></a>附录：Azure 的内容库
 
 
 以下列出了 Azure 当前可用的所有内容资产，并指明该资产是否专门针对中国区 Azure。
 
- 
+ 
 <table border="1" cellspacing="0" cellpadding="0">
   <tbody>
     <tr>
@@ -483,7 +483,7 @@ Azure 诊断通过使用开发计算机上的本地存储或中国区 Azure 存�
     <tr>
       <td width="130" valign="top"> 中国客户案例 </td>
       <td width="180" valign="top"> 是 </td>
-      <td><a href="/zh-cn/home/case-studies/">https://www.azure.cn/partnerancasestudy/case-studies/</a></td>
+      <td><a href="/partnerancasestudy/case-studies/">https://www.azure.cn/partnerancasestudy/case-studies/</a></td>
     </tr>
     <tr>
       <td width="130" valign="top"> P&amp;P 丛书 </td>
@@ -543,6 +543,6 @@ Azure 诊断通过使用开发计算机上的本地存储或中国区 Azure 存�
     </tr>
   </tbody>
 </table>
- 
- 
+ 
+ 
 

@@ -304,11 +304,11 @@ HAProxy 可以看作是提供高可用，负载均衡，反向代理等功能的
 
 	![](./media/open-source-azure-virtual-machines-linux-install-and-configure-haproxy/ssl3.png)
 
-	输入 [https://HAProxy 的公网地址](#) 访问也是同样效果。
+	输入 [https://HAProxy 的公网地址]() 访问也是同样效果。
 
 	![](./media/open-source-azure-virtual-machines-linux-install-and-configure-haproxy/ssl4.png)
 
-6. 输入 [http://HAProxy 域名](#)，会转向 https. 至此配置成功。
+6. 输入 [http://HAProxy 域名]()，会转向 https. 至此配置成功。
 
 第二种配置。即在后端的 web server 配置 ssl, HAProxy 只提供负载均衡的作用。
 
