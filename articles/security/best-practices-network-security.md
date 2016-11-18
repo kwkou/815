@@ -27,12 +27,6 @@
 以下逻辑图表以具体示例说明了 Azure 平台提供的许多安全技术。有关快速参考，请找到最适合你案例的示例。有关更完整的说明，请继续阅读本文。
 ![安全选项流程图][0]
 
-[示例 1：构建外围网络（也称为 DMZ、外围安全区域或屏蔽子网），以使用网络安全组 (NSG) 帮助保护应用程序。](#example-1-build-a-simple-dmz-with-nsgs)</br> 
-[示例 2：构建外围网络以使用防火墙和 NSG 帮助保护应用程序。](#example-2-build-a-dmz-to-protect-applications-with-a-firewall-and-nsgs)</br> 
-[示例 3：构建外围网络，以使用防火墙、用户定义的路由 (UDR) 和 NSG 帮助保护网络。](#example-3-build-a-dmz-to-protect-networks-with-a-firewall-udr-and-nsg)</br> 
-[示例 4：使用站点到站点虚拟设备虚拟专用网络 (VPN) 添加混合连接。](#example-4-adding-a-hybrid-connection-with-a-site-to-site-virtual-appliance-vpn)</br> 
-[示例 5：使用站点到站点 Azure 网关 VPN 添加混合连接。](#example-5-adding-a-hybrid-connection-with-a-site-to-site-azure-gateway-vpn)</br> 
-[示例 6：使用 ExpressRoute 添加混合连接。](#example-6-adding-a-hybrid-connection-with-expressroute)</br> 
 未来几个月内，本文档中将会加入有关在虚拟网络之间添加连接、高可用性和服务链接的示例。
 
 ## 合规性与基础结构保护
@@ -490,8 +484,8 @@ IP 转发是 UDR 的随附功能。这是虚拟设备上的一项设置，使虚
 - 虚拟网络文档：[https://azure.cn/documentation/services/networking/](/documentation/services/networking/)
 - 网络安全组文档：[https://azure.cn/documentation/articles/virtual-networks-nsg/](/documentation/articles/virtual-networks-nsg)
 - 用户定义的路由文档：[https://azure.cn/documentation/articles/virtual-networks-udr-overview/](/documentation/articles/virtual-networks-udr-overview)
-- Azure 虚拟网关：[https://azure.cn/documentation/services/vpn-gateway/](./vpn-gateway/)
-- 站点到站点 VPN：[https://azure.cn/documentation/articles/vpn-gateway-create-site-to-site-rm-powershell](./vpn-gateway/vpn-gateway-create-site-to-site-rm-powershell)
+- Azure 虚拟网关：[https://azure.cn/documentation/services/vpn-gateway/](/documentation/services/vpn-gateway/)
+- 站点到站点 VPN：[https://azure.cn/documentation/articles/vpn-gateway-create-site-to-site-rm-powershell](/documentation/articles/vpn-gateway-create-site-to-site-rm-powershell)
 - ExpressRoute 文档：[确保查看“入门”和“方法”部分](/documentation/services/expressroute/)
 
 <!--Image References-->
