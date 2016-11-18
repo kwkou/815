@@ -183,7 +183,7 @@ Node.js 应用在 **server.js** 文件中定义，该文件位于 Web 角色（�
 [使用轻型 Web 应用]:/documentation/articles/web-sites-nodejs-develop-deploy-mac/
 [Azure Powershell]: /documentation/articles/powershell-install-configure/
 [Azure SDK for .NET 2.7]: http://www.microsoft.com/en-us/download/details.aspx?id=48178
-[将 PowerShell 连接]: /documentation/articles/powershell-install-configure/#how-to-connect-to-your-subscription
+[将 PowerShell 连接]: /documentation/articles/powershell-install-configure/#Connect
 [nodejs.org]: http://nodejs.org/
 [如何从 Azure 订阅中删除存储帐户]: /documentation/articles/how-to-manage-a-storage-account/
 [创建 Azure 托管服务概述]: /documentation/services/cloud-services/

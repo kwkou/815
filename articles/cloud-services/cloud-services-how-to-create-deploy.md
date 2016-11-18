@@ -56,7 +56,7 @@ Azure 经典管理门户为你提供两种创建和部署云服务的方法：�
 
 - 如果要为云服务配置详细监视，请为云服务启用 Azure 诊断。*“最少监视”*（默认监视级别）使用从角色实例（虚拟机）的主机操作系统中收集到的性能计数器。“详细监视”根据角色实例中的性能数据收集其他度量信息，以便对处理应用程序期间出现的问题进行进一步分析。若要了解如何启用 Azure 诊断，请参阅[在 Azure 中启用诊断](/documentation/articles/cloud-services-dotnet-diagnostics/)。
 
-要使用 Web 角色或辅助角色创建云服务，你必须[创建服务包](/documentation/articles/cloud-services-model-and-package/#servicepackagecspkg)。
+要使用 Web 角色或辅助角色创建云服务，你必须[创建服务包](/documentation/articles/cloud-services-model-and-package/#cspkg)。
 
 ## 开始之前
 

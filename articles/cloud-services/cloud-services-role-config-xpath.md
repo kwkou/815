@@ -184,9 +184,9 @@ ms.author="adegeo"/>
 
 ## 后续步骤
 
-了解有关 [ServiceConfiguration.cscfg](/documentation/articles/cloud-services-model-and-package/#serviceconfigurationcscfg) 文件的详细信息。
+了解有关 [ServiceConfiguration.cscfg](/documentation/articles/cloud-services-model-and-package/#cscfg) 文件的详细信息。
 
-创建 [ServicePackage.cspkg](/documentation/articles/cloud-services-model-and-package/#servicepackagecspkg) 包。
+创建 [ServicePackage.cspkg](/documentation/articles/cloud-services-model-and-package/#cspkg) 包。
 
 为角色启用[远程桌面](/documentation/articles/cloud-services-role-enable-remote-desktop/)。
 

@@ -32,7 +32,7 @@
     * [通过远程桌面连接到云服务实例][remotedesktop]
 
 
-## <a name="servicedefinitioncsdef"></a> ServiceDefinition.csdef
+## <a name="csdef"></a> ServiceDefinition.csdef
 **ServiceDefinition.csdef** 文件指定 Azure 用于配置云服务的设置。[Azure 服务定义架构（.csdef 文件）](https://msdn.microsoft.com/zh-cn/library/azure/ee758711.aspx)为服务定义文件提供允许的格式。以下示例显示了可为 Web 角色和辅助角色定义的设置：
 
  
@@ -114,7 +114,7 @@
 
 
 
-## <a name="serviceconfigurationcscfg"></a> ServiceConfiguration.cscfg
+## <a name="cscfg"></a> ServiceConfiguration.cscfg
 你的云服务设置配置由 **ServiceConfiguration.cscfg** 文件中的值确定。指定要为此文件中每个角色部署的实例数。在服务定义文件中定义的配置设置值已添加到服务配置文件中。与云服务相关联的所有管理证书的指纹也会添加到该文件中。[Azure 服务配置架构（.cscfg 文件）](https://msdn.microsoft.com/zh-cn/library/azure/ee758710.aspx)为服务配置文件提供允许的格式。
 
 服务配置文件不与该应用程序一起打包，但将作为一个单独的文件上载到 Azure 中并用于配置云服务。无需重新部署云服务即可上载新的服务配置文件。云服务正在运行时可以更改云服务的配置值。以下示例显示了可为 Web 角色和辅助角色定义的配置设置：
@@ -213,7 +213,7 @@ Azure 仅允许 Web 角色有一个入口点。这意味着所有通信都通过
 > [AZURE.NOTE] 由于证书更改始终使角色实例处于脱机状态，因此不会引发 RoleEnvironment.Changing 或 RoleEnvironment.Changed 事件。
 
 
-## <a name="servicepackagecspkg"></a> ServicePackage.cspkg
+## <a name="cspkg"></a> ServicePackage.cspkg
 要将应用程序部署为 Azure 中的云服务，必须首先以适当的格式打包该应用程序。可以使用 **CSPack** 命令行工具（与 [Azure SDK](/downloads/) 一起安装）来创建包文件作为 Visual Studio 的替代。
 
 **CSPack** 使用服务定义文件和服务配置文件的内容来定义包的内容。CSPack 生成可以使用 [Azure 门户](/documentation/articles/cloud-services-how-to-create-deploy-portal/#create-and-deploy)上载到 Azure 的应用程序包文件 (.cspkg)。默认情况下，该应用程序包名为 `[ServiceDefinitionFileName].cspkg`，但可以通过使用 **CSPack** 的 `/out` 选项指定不同的名称。
