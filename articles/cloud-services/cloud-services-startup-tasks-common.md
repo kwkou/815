@@ -382,7 +382,7 @@ string fileContent = System.IO.File.ReadAllText(System.IO.Path.Combine(localStor
 ## 任务最佳做法
 以下是在配置 web 角色或辅助角色的任务时应遵循的一些最佳做法。
 
-### 始终记录启动活动
+### <a name="always-log-startup-activities"></a> 始终记录启动活动
 
 Visual Studio 未提供用于单步调试批处理文件的调试器，因此最好在批处理文件操作中尽可能多地获取数据。记录批处理文件的输出（**stdout** 和 **stderr**），可以在尝试调试和修复批处理文件时为你提供重要信息。若要记录 **%TEMP%** 环境变量指向的目录中 StartupLog.txt 文件的 **stdout** 和 **stderr**，请将文本 `>>  "%TEMP%\\StartupLog.txt" 2>&1` 添加到要记录的特定行的末尾。例如，若要在 **%PathToApp1Install%** 目录中执行 setup.exe，请执行以下操作：
 
