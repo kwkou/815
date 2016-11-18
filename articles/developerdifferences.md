@@ -1,5 +1,14 @@
-<properties linkid="DeveloperDifferences" urlDisplayName="DeveloperDifferences" pageTitle="DeveloperDifferences" metaKeywords="DeveloperDifferences" description="DeveloperDifferences" metaCanonical="" services="" documentationCenter="develop"  title="中国区 Azure 应用程序开发人员说明" authors="" solutions="" manager="TK" editor="Eric Chen"/>
-<tags ms.service="multiple" ms.date="" wacn.date="11/11/2016"/>
+<properties 
+	pageTitle="中国区 Azure 应用程序开发说明"
+	description="本文主要介绍中国区 Azure 与国际版 Azure 应用程序开发上的区别" 
+	metaCanonical="" 
+	services="" 
+	documentationCenter="develop"  
+	authors="" 
+	solutions="" 
+	manager="TK" 
+	editor=""/>
+<tags ms.service="multiple" ms.date="" wacn.date="11/18/2016"/>
 
 
 # 中国区 Azure 应用程序开发说明
