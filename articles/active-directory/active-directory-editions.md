@@ -46,23 +46,23 @@ Office 365 订阅包括以下比较表中所述的其他 Azure Active Directory 
 
 **常用功能**
 
-- [目录对象](#directory-objects)
+- 目录对象
 
-- [用户/组管理（添加/更新/删除）/基于用户的预配、设备注册](#usergroup-management-addupdatedelete-user-based-provisioning-device-registration)
+- 用户/组管理（添加/更新/删除）/基于用户的预配、设备注册
 
-- [单一登录 (SSO)](#single-sign-on-sso)
+- 单一登录 (SSO)
 
-- [云用户的自助密码更改](#self-service-password-change-for-cloud-users)
+- 云用户的自助密码更改
 
-- [Connect（将本地目录扩展到 Azure Active Directory 的同步引擎）](#connect-sync-engine-that-extends-on-premises-directories-to-azure-active-directory)
+- Connect（将本地目录扩展到 Azure Active Directory 的同步引擎）
 
-- [安全性/使用情况报告](#securityusage-reports)
+- 安全性/使用情况报告
 
 **Azure Active Directory Join - 仅适用于 Windows 10 的相关功能**
 
-- [让设备加入 Azure AD、Desktop SSO、Microsoft Passport for Azure AD 和 Administrator Bitlocker 恢复](#join-a-device-to-azure-ad-desktop-sso-microsoft-passport-for-azure-ad-administrator-bitlocker-recovery)
+- 让设备加入 Azure AD、Desktop SSO、Microsoft Passport for Azure AD 和 Administrator Bitlocker 恢复
 
-- [MDM 自动注册、自助 Bitlocker 恢复、其他本地管理员通过 Azure AD Join 加入 Windows 10 设备](#mdm-auto-enrolment-self-service-bitlocker-recovery-additional-local-administrators-to-windows-10-devices-via-azure-ad-join)
+- MDM 自动注册、自助 Bitlocker 恢复、其他本地管理员通过 Azure AD Join 加入 Windows 10 设备
 
 
 ## 常用功能

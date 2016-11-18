@@ -25,8 +25,8 @@
 
 * [**你需要帮助时应提供的信息**](#information-to-include-when-you-need-help)
 * [**Azure 经典管理门户中的密码管理配置问题**](#troubleshoot-password-reset-configuration-in-the-azure-management-portal)
-* [**Azure 经典管理门户中的密码管理报告问题**](#troubleshoot-password-management-reports-in-the-azure-management-portal)
-* [**密码重置注册门户的问题**](#troubleshoot-the-password-reset-registration-portal)
+* **Azure 经典管理门户中的密码管理报告问题**
+* [**密码重置注册门户的问题**](#troubleshoot-password-writeback)
 * [**密码重置门户的问题**](#troubleshoot-the-password-reset-portal)
 * [**密码写回的问题**](#troubleshoot-password-writeback)
   - [密码写回事件日志错误代码](#password-writeback-event-log-error-codes)
@@ -107,7 +107,7 @@
             </td>
             <td>
               <p>UI 的许多元素都是隐藏的，直到需要它们时才会显示。如果你希望看到它们，请尝试启用页面上的所有选项。</p>
-              <p>有关可供你使用的所有控件的更多信息，请参阅<a href="/documentation/articles/active-directory-passwords-customize/#password-management-behavior">自定义用户密码策重置略</a>。</p>
+              <p>有关可供你使用的所有控件的更多信息，请参阅<a href="/documentation/articles/active-directory-passwords-customize/">自定义用户密码策重置略</a>。</p>
             </td>
           </tr>
           <tr>
@@ -657,7 +657,7 @@
               <p>尝试通过 Azure 经典管理门户代表用户重置密码时，你将看到一条消息：“在本地环境中运行的密码重置服务不支持管理员重置用户密码。请升级到最新版本的 AAD Sync 以解决此问题。”</p>
             </td>
             <td>
-              <p>当同步引擎的版本不支持所使用的特定密码写回操作时，将会发生这种情况。1.0.0419.0911 以上的 AAD Sync 版本支持所有密码管理操作，包括密码重置写回、密码更改写回，以及管理员通过 Azure 经典管理门户启动的密码重置写回。&#160; 1.0.6862 以上的 DirSync 版本仅支持密码重置写回。若要解决此问题，强烈建议你安装最新版本的 AAD Sync 或 Azure Active Directory Connect（有关详细信息，请参阅<a href="/documentation/articles/active-directory-aadconnect/#download-azure-ad-connect">目录集成工具</a>），这样既能解决此问题，又可以在你的组织中充分利用密码写回功能。</p>
+              <p>当同步引擎的版本不支持所使用的特定密码写回操作时，将会发生这种情况。1.0.0419.0911 以上的 AAD Sync 版本支持所有密码管理操作，包括密码重置写回、密码更改写回，以及管理员通过 Azure 经典管理门户启动的密码重置写回。&#160; 1.0.6862 以上的 DirSync 版本仅支持密码重置写回。若要解决此问题，强烈建议你安装最新版本的 AAD Sync 或 Azure Active Directory Connect（有关详细信息，请参阅<a href="/documentation/articles/active-directory-aadconnect/">目录集成工具</a>），这样既能解决此问题，又可以在你的组织中充分利用密码写回功能。</p>
             </td>
           </tr>
         </tbody></table>
@@ -1065,7 +1065,7 @@
               <p>PasswordResetService</p>
             </td>
             <td>
-              <p>此事件表示连接到你的租户的服务总线实例时发生错误。发生此错误可能是因为你在本地环境中阻止了出站连接。请检查你的防火墙以确保你允许基于 TCP 443 的连接或者到 <a href="https://ssprsbprodncu-sb.accesscontrol.chinacloudapi.cn/">https://ssprsbprodncu-sb.accesscontrol.chinacloudapi.cn/</a> 的连接，然后重试。如果仍然有问题，请尝试禁用再重新启用密码写回。</p>
+              <p>此事件表示连接到你的租户的服务总线实例时发生错误。发生此错误可能是因为你在本地环境中阻止了出站连接。请检查你的防火墙以确保你允许基于 TCP 443 的连接或者到 <a href="https://ssprsbprodncu-sb.accesscontrol.windows.net/">https://ssprsbprodncu-sb.accesscontrol.windows.net/</a> 的连接，然后重试。如果仍然有问题，请尝试禁用再重新启用密码写回。</p>
             </td>
           </tr>
           <tr>
@@ -1191,7 +1191,7 @@
               <p>PasswordResetService</p>
             </td>
             <td>
-              <p>此事件表示本地服务无法正确地与密码重置 web 服务进行通信来启动登记过程。这可能是由于防火墙规则导致的，也可能是因为获取你的租户的授权令牌时出现问题。若要解决此问题，请确保你没有阻止基于 TCP 443 和 TCP 9350-9354  的出站连接或者到 <a href="https://ssprsbprodncu-sb.accesscontrol.chinacloudapi.cn/">https://ssprsbprodncu-sb.accesscontrol.chinacloudapi.cn/</a> 的出站连接，并确保你用来登记的 AAD 管理员帐户不是联合的。</p>
+              <p>此事件表示本地服务无法正确地与密码重置 web 服务进行通信来启动登记过程。这可能是由于防火墙规则导致的，也可能是因为获取你的租户的授权令牌时出现问题。若要解决此问题，请确保你没有阻止基于 TCP 443 和 TCP 9350-9354  的出站连接或者到 <a href="https://ssprsbprodncu-sb.accesscontrol.windows.net/">https://ssprsbprodncu-sb.accesscontrol.windows.net/</a> 的出站连接，并确保你用来登记的 AAD 管理员帐户不是联合的。</p>
             </td>
           </tr>
           <tr>
@@ -1219,7 +1219,7 @@
               <p>PasswordResetService</p>
             </td>
             <td>
-              <p>此事件表示本地服务无法正确地与密码重置 web 服务进行通信来启动卸载过程。这可能是由于防火墙规则导致的，也可能是因为获取你的租户的授权令牌时出现问题。若要解决此问题，请确保你没有阻止基于 443 的出站连接或者到 <a href="https://ssprsbprodncu-sb.accesscontrol.chinacloudapi.cn/">https://ssprsbprodncu-sb.accesscontrol.chinacloudapi.cn/</a> 的出站连接，并确保你用来卸载的 AAD 管理员帐户不是联合的。</p>
+              <p>此事件表示本地服务无法正确地与密码重置 web 服务进行通信来启动卸载过程。这可能是由于防火墙规则导致的，也可能是因为获取你的租户的授权令牌时出现问题。若要解决此问题，请确保你没有阻止基于 443 的出站连接或者到 <a href="https://ssprsbprodncu-sb.accesscontrol.windows.net/">https://ssprsbprodncu-sb.accesscontrol.windows.net/</a> 的出站连接，并确保你用来卸载的 AAD 管理员帐户不是联合的。</p>
             </td>
           </tr>
           <tr>
@@ -1439,7 +1439,7 @@
 
 如果遇到 Azure AD Sync 密码写回组件的服务中断，可以使用以下快速步骤来解决此问题：
 
- - [重新启动 Azure AD Sync 服务](#restart-the-azure-AD-Connect-sync-service)
+ - 重新启动 Azure AD Sync 服务](#restart-the-azure-AD-sync-service)
  - [禁用再重新启用密码写回功能](#disable-and-re-enable-the-password-writeback-feature)
  - [安装最新版本的 Azure AD Connect](#install-the-latest-azure-ad-connect-release)
  - [排查密码写回问题](#troubleshoot-password-writeback)
@@ -1484,7 +1484,7 @@
 ### <a name="install-the-latest-azure-ad-connect-release"></a>安装最新版本的 Azure AD Connect
 重新安装 Azure AD Connect 包可以解决所有可能会影响你在本地 AD 环境中连接到我们的云服务或管理你的密码的配置问题。我们建议你仅在尝试了上述前两个步骤后再执行此步骤。
 
- 1.	可从[此处](/documentation/articles/active-directory-aadconnect/#download-azure-ad-connect)下载最新版本的 Azure AD Connect。
+ 1.	可从[此处](/documentation/articles/active-directory-aadconnect/)下载最新版本的 Azure AD Connect。
  2.	由于你已安装 Azure AD Connect，只需执行就地升级将 Azure AD Connect 安装更新到最新版本。
  3.	执行下载的程序包，然后按照屏幕说明进行操作来更新 Azure AD Connect 计算机。无需执行其他手动步骤，除非你自定义了现成的规则，在这种情况下，你应该**先备份这些规则，然后再继续进行升级，并在完成后手动重新部署这些规则**。
 

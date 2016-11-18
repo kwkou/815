@@ -22,7 +22,7 @@
 
 # IT 管理员的 Azure AD 密码重置
 
-  >[AZURE.IMPORTANT] 你是因为想要重置 Azure 或 O365 密码而来到这里吗？ 如果是这样，请[跳到此部分](#users-how-to-manage-your-own-password)。
+  >[AZURE.IMPORTANT] 你是因为想要重置 Azure 或 O365 密码而来到这里吗？ 如果是这样，请[跳到此部分](#manage-your-users-passwords)。
 
 利用自助服务降低成本和节省人力，一直以来都是世界各地 IT 部门追求的主要目标。事实上，市场中充斥着各种产品，让你能够从云或本地管理本地组、密码或用户配置文件。Azure AD 因具有如今最容易使用且最强大的自助服务功能而从这些产品中脱颖而出。
 
@@ -34,7 +34,7 @@
 
 | 主题 | |
 | --------- | --------- |
-| 支持的方案 | [Azure AD 密码重置有何用途？](#what-is-possible-with-azure-ad-password-reset) |
+| 支持的方案 | Azure AD 密码重置有何用途？ |
 | 为何要使用它？ | [为何使用 Azure AD 密码重置？](#why-use-azure-ad-password-reset) |
 | 定价和可用性 | [定价和可用性](#pricing-and-availability) |
 | 启用密码重置 | [为用户启用密码重置](#enable-password-reset-for-your-users) |
@@ -98,7 +98,7 @@ Azure AD 密码重置根据用户使用的订阅提供 3 个级别：
 | 如何让用户直接解锁 AD 帐户而不必重置密码？ | [设置：让用户直接解锁 AD 帐户而不必重置密码](/documentation/articles/active-directory-passwords-customize/#allow-users-to-unlock-accounts-without-resetting-their-password/) |
 | 如何为用户启用密码重置通知？ | [设置：在用户的密码重置时通知用户](/documentation/articles/active-directory-passwords-customize/#notify-users-and-admins-when-their-own-password-has-been-reset/) |
 | 如何为管理员启用密码重置通知？ | [设置：在管理员重置其密码时通知其他管理员](/documentation/articles/active-directory-passwords-customize/#notify-admins-when-other-admins-reset-their-own-passwords/) |
-| 如何自定义密码重置的外观？ | [设置：公司名称、品牌和徽标](/documentation/articles/active-directory-passwords-customize/#password-management-look-and-feel/) |
+| 如何自定义密码重置的外观？ | [设置：公司名称、品牌和徽标](/documentation/articles/active-directory-passwords-customize/) |
 
 
 ## <a name="configure-your-users-to-use-password-reset"></a>将用户配置为使用密码重置
@@ -147,8 +147,8 @@ Azure AD 密码重置根据用户使用的订阅提供 3 个级别：
 | 如何解决密码写回问题 | [排查密码写回问题](/documentation/articles/active-directory-passwords-troubleshoot/#troubleshoot-password-writeback/) |
 | 如何解决密码写回连接问题 | [排查密码写回连接问题](/documentation/articles/active-directory-passwords-troubleshoot/#troubleshoot-password-writeback-connectivity/) |
 | 如何解决密码重置配置问题 | [在 Azure 管理门户中排查密码重置配置问题](/documentation/articles/active-directory-passwords-troubleshoot/#troubleshoot-password-reset-configuration-in-the-azure-management-portal/) |
-| 如何解决密码重置报告问题 | [在 Azure 管理门户中排查密码管理报告问题](/documentation/articles/active-directory-passwords-troubleshoot/#troubleshoot-password-management-reports-in-the-azure-management-portal/) |
-| 如何解决密码重置注册问题 | [排查密码重置注册门户问题](/documentation/articles/active-directory-passwords-troubleshoot/#troubleshoot-the-password-reset-registration-portal/) |
+| 如何解决密码重置报告问题 | [在 Azure 管理门户中排查密码管理报告问题](/documentation/articles/active-directory-passwords-troubleshoot/) |
+| 如何解决密码重置注册问题 | [排查密码重置注册门户问题](/documentation/articles/active-directory-passwords-troubleshoot/) |
 | 密码写回事件日志错误代码 | [密码写回事件日志错误代码](/documentation/articles/active-directory-passwords-troubleshoot/#password-writeback-event-log-error-codes/) |
 
 
@@ -157,7 +157,7 @@ Azure AD 密码重置根据用户使用的订阅提供 3 个级别：
 | --------- | --------- |
 | 我想要阅读关于密码重置注册的常见问题 | [密码重置注册常见问题](/documentation/articles/active-directory-passwords-faq/#password-reset-registration/) |
 | 我想要阅读关于密码重置的常见问题 | [密码重置常见问题](/documentation/articles/active-directory-passwords-faq/#password-reset/) |
-| 我想要阅读关于密码重置报告的常见问题 | [密码管理报告常见问题](/documentation/articles/active-directory-passwords-faq/#password-management-reports/) |
+| 我想要阅读关于密码重置报告的常见问题 | [密码管理报告常见问题](/documentation/articles/active-directory-passwords-faq/) |
 | 我想要阅读关于密码写回的常见问题 | [密码写回常见问题](/documentation/articles/active-directory-passwords-faq/#password-writeback/) |
 
 

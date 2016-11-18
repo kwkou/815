@@ -76,17 +76,17 @@ Azure Active Directory 并不是完全无法预配或更新具有重复属性的
 
 然后，使用以下 cmdlet 和运算符以不同的方式查看错误：
 
-1. [查看全部](#see-all)
+1. 查看全部
 
-2. [按属性类型](#by-property-type)
+2. 按属性类型
 
-3. [按冲突值](#by-conflicting-value)
+3. 按冲突值
 
-4. [使用字符串搜索](#using-a-string-search)
+4. 使用字符串搜索
 
-5. [已排序](#sorted)
+5. 已排序
 
-6. [以有限的数量或全部](#in-a-limited-quantity-or-all)
+6. 以有限的数量或全部
 
 
 #### 查看全部

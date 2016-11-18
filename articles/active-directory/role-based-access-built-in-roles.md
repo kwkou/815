@@ -31,35 +31,35 @@ Azure 基于角色的访问控制 (RBAC) 附带以下可分配到用户、组和
 
 | 角色名称 | 说明 |
 | --------- | ----------- |
-| [API 管理服务参与者](#api-management-service-contributor) | 可管理 API 管理服务 |
-| [Application Insights 组件参与者](#application-insights-component-contributor) | 可管理 Application Insights 组件 |
-| [自动化运算符](#automation-operator) | 能够启动、停止、暂停和继续执行作业 |
-| [BizTalk 参与者](#biztalk-contributor) | 可管理 BizTalk 服务 |
-| [ClearDB MySQL DB 参与者](#cleardb-mysql-db-contributor) | 可管理 ClearDB MySQL 数据库 |
-| [参与者](#contributor) | 可管理除访问权限以外的一切内容。 |
-| [数据工厂参与者](#data-factory-contributor) | 可创建和管理数据工厂，以及它们包含的子资源。 |
-| [DevTest 实验室用户](#devtest-labs-user) | 可查看一切内容，并可连接、启动、重启和关闭虚拟机 |
-| [DocumentDB 帐户参与者](#documentdb-account-contributor) | 可管理 DocumentDB 帐户 |
-| [Intelligent Systems 帐户参与者](#intelligent-systems-account-contributor) | 可管理 Intelligent Systems 帐户 |
-| [网络参与者](#network-contributor) | 可管理所有网络资源 |
-| [New elic APM 帐户参与者](#new-relic-apm-account-contributor) | 可管理 New Relic 应用程序性能管理帐户和应用程序 |
-| [所有者](#owner) | 可管理一切内容（包括访问权限） |
-| [读者](#reader) | 可查看一切内容，但不可作出更改 |
-| [Redis Cache 参与者](#redis-cache-contributor) | 可管理 Redis 缓存 |
-| [计划程序作业集合参与者](#scheduler-job-collections-contributor) | 可管理计划程序作业集合 |
-| [搜索服务参与者](#search-service-contributor) | 可管理搜索服务 |
-| [安全管理器](#security-manager) | 可管理安全组件、安全策略和虚拟机 |
-| [SQL DB 参与者](#sql-db-contributor) | 可管理 SQL 数据库，但不包括其安全性相关的策略 |
-| [SQL 安全管理器](#sql-security-manager) | 可管理 SQL 服务器和数据库与安全性相关的策略 |
-| [SQL Server 参与者](#sql-server-contributor) | 可管理 SQL 服务器和数据库，但不包括其安全性相关的策略 |
-| [经典存储帐户参与者](#classic-storage-account-contributor) | 可管理经典存储帐户 |
-| [存储帐户参与者](#storage-account-contributor) | 可管理存储帐户 |
-| [用户访问管理员](#user-access-administrator) | 可管理用户对 Azure 资源的访问权限 |
-| [经典虚拟机参与者](#classic-virtual-machine-contributor) | 可管理经典虚拟机，但不包括与其连接的虚拟网络或存储帐户 |
-| [虚拟机参与者](#virtual-machine-contributor) | 可管理虚拟机，但不包括与其连接的虚拟网络或存储帐户 |
-| [经典网络参与者](#classic-network-contributor) | 可管理经典虚拟网络和保留 IP |
-| [Web 计划参与者](#web-plan-contributor) | 可管理 Web 计划 |
-| [网站参与者](#website-contributor) | 可管理网站，但不包括与其连接的 Web 计划 |
+| API 管理服务参与者 | 可管理 API 管理服务 |
+| Application Insights 组件参与者 | 可管理 Application Insights 组件 |
+| 自动化运算符 | 能够启动、停止、暂停和继续执行作业 |
+| BizTalk 参与者 | 可管理 BizTalk 服务 |
+| ClearDB MySQL DB 参与者 | 可管理 ClearDB MySQL 数据库 |
+| 参与者 | 可管理除访问权限以外的一切内容。 |
+| 数据工厂参与者 | 可创建和管理数据工厂，以及它们包含的子资源。 |
+| DevTest 实验室用户 | 可查看一切内容，并可连接、启动、重启和关闭虚拟机 |
+| DocumentDB 帐户参与者 | 可管理 DocumentDB 帐户 |
+| Intelligent Systems 帐户参与者 | 可管理 Intelligent Systems 帐户 |
+| 网络参与者 | 可管理所有网络资源 |
+| New elic APM 帐户参与者 | 可管理 New Relic 应用程序性能管理帐户和应用程序 |
+| 所有者 | 可管理一切内容（包括访问权限） |
+| 读者 | 可查看一切内容，但不可作出更改 |
+| Redis Cache 参与者 | 可管理 Redis 缓存 |
+| 计划程序作业集合参与者 | 可管理计划程序作业集合 |
+| 搜索服务参与者 | 可管理搜索服务 |
+| 安全管理器 | 可管理安全组件、安全策略和虚拟机 |
+| SQL DB 参与者 | 可管理 SQL 数据库，但不包括其安全性相关的策略 |
+| SQL 安全管理器 | 可管理 SQL 服务器和数据库与安全性相关的策略 |
+| SQL Server 参与者 | 可管理 SQL 服务器和数据库，但不包括其安全性相关的策略 |
+| 经典存储帐户参与者 | 可管理经典存储帐户 |
+| 存储帐户参与者 | 可管理存储帐户 |
+| 用户访问管理员 | 可管理用户对 Azure 资源的访问权限 |
+| 经典虚拟机参与者 | 可管理经典虚拟机，但不包括与其连接的虚拟网络或存储帐户 |
+| 虚拟机参与者 | 可管理虚拟机，但不包括与其连接的虚拟网络或存储帐户 |
+| 经典网络参与者 | 可管理经典虚拟网络和保留 IP |
+| Web 计划参与者 | 可管理 Web 计划 |
+| 网站参与者 | 可管理网站，但不包括与其连接的 Web 计划 |
 
 ## 角色权限
 下表描述授予每个角色的特定权限。这可能包括授予权限的 **Actions** 和限制权限的 **NotActions**。

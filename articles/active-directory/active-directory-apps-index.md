@@ -41,7 +41,7 @@
 | 功能区 | |
 | :---: | --- |
 | 联合单一登录 | [排查基于 SAML 的单一登录问题](/documentation/articles/active-directory-saml-debugging/) |
-| 本地 AD 与 Azure AD 之间的单一登录 | [密码同步疑难解答](/documentation/articles/active-directory-aadconnectsync-implement-password-synchronization/#troubleshooting-password-synchronization/)<br /><br />[密码写回疑难解答](/documentation/articles/active-directory-passwords-troubleshoot/#troubleshoot-password-writeback/) | 
+| 本地 AD 与 Azure AD 之间的单一登录 | [密码同步疑难解答](/documentation/articles/active-directory-aadconnectsync-implement-password-synchronization/)<br /><br />[密码写回疑难解答](/documentation/articles/active-directory-passwords-troubleshoot/#troubleshoot-password-writeback/) | 
 
 
 ##单一登录 (SSO)
@@ -58,7 +58,7 @@
 | 使用 SAML 协议的联合应用的故障排除指南 | [排查基于 SAML 的单一登录问题](/documentation/articles/active-directory-saml-debugging/) |
 | 如何设置应用的证书过期日期，以及如何续订证书 | [在 Azure Active Directory 中管理用于联合单一登录的证书](/documentation/articles/active-directory-sso-certs/) |
 
-联合单一登录适用于所有版本的 Azure AD，每个用户最多十个应用。[Azure AD 高级版](/pricing/details/identity/)支持无限数目的应用程序。如果组织拥有 [Azure AD 基本版](/pricing/details/identity/)或 [Azure AD 高级版](/pricing/details/identity/)，则可以[使用组来分配对联合应用程序的访问权限](#managing-access-to-applications)。
+联合单一登录适用于所有版本的 Azure AD，每个用户最多十个应用。[Azure AD 高级版](/pricing/details/identity/)支持无限数目的应用程序。如果组织拥有 [Azure AD 基本版](/pricing/details/identity/)或 [Azure AD 高级版](/pricing/details/identity/)，则可以使用组来分配对联合应用程序的访问权限。
 
 ###基于密码的单一登录：非联合应用的帐户共享和 SSO
 
@@ -66,11 +66,11 @@
 
 | 文章指南 | |
 | :---: | --- |
-| 基于密码的 SSO 工作原理简介以及简要的技术概述 | [使用 Azure AD 进行基于密码的单一登录](/documentation/articles/active-directory-appssoaccess-whatis/#password-based-single-sign-on/) |
+| 基于密码的 SSO 工作原理简介以及简要的技术概述 | [使用 Azure AD 进行基于密码的单一登录](/documentation/articles/active-directory-appssoaccess-whatis/) |
 | 与共享帐户相关的方案以及 Azure AD 如何解决这些问题的摘要 | [使用 Azure AD 共享帐户](/documentation/articles/active-directory-sharing-accounts/) |
 | 自动定期更改特定应用的密码 | [自动密码滚动更新（预览版）](https://blogs.technet.microsoft.com/enterprisemobility/2015/02/20/azure-ad-automated-password-roll-over-for-facebook-twitter-and-linkedin-now-in-preview) |
 
-基于密码的单一登录适用于所有版本的 Azure AD，每个用户最多十个应用。[Azure AD 高级版](/pricing/details/identity/) 支持无限数目的应用程序。如果组织拥有 [Azure AD 基本版](/pricing/details/identity/)或 [Azure AD 高级版](/pricing/details/identity/)，则可以[使用组来分配对应用程序的访问权限](#managing-access-to-applications)。自动密码滚动更新是一项 [Azure AD 高级版](/pricing/details/identity/)功能。
+基于密码的单一登录适用于所有版本的 Azure AD，每个用户最多十个应用。[Azure AD 高级版](/pricing/details/identity/) 支持无限数目的应用程序。如果组织拥有 [Azure AD 基本版](/pricing/details/identity/)或 [Azure AD 高级版](/pricing/details/identity/)，则可以使用组来分配对应用程序的访问权限。自动密码滚动更新是一项 [Azure AD 高级版](/pricing/details/identity/)功能。
 
 ###应用程序代理：单一登录和远程访问本地应用程序
 
@@ -83,7 +83,7 @@
 | 有关如何对以下方案使用应用程序代理的指导 | 如何支持本机客户端应用程序<br /><br />如何支持声明感知应用程序<br /><br />如何支持在不同网络和位置上发布的应用程序 |
 | 应用程序代理故障排除指南 | 应用代理故障排除指南 |
 
-应用程序代理适用于所有版本的 Azure AD，每个用户最多十个应用。[Azure AD 高级版](/pricing/details/identity/)支持无限数目的应用程序。如果组织拥有 [Azure AD 基本版](/pricing/details/identity/)或 [Azure AD 高级版](/pricing/details/identity/)，则可以[使用组来分配对应用程序的访问权限](#managing-access-to-applications)。
+应用程序代理适用于所有版本的 Azure AD，每个用户最多十个应用。[Azure AD 高级版](/pricing/details/identity/)支持无限数目的应用程序。如果组织拥有 [Azure AD 基本版](/pricing/details/identity/)或 [Azure AD 高级版](/pricing/details/identity/)，则可以使用组来分配对应用程序的访问权限。
 
 
 ###在 Azure AD 与本地 AD 之间启用单一登录
@@ -138,7 +138,7 @@ Azure AD Connect 适用于[所有版本的 Azure Active Directory](/pricing/deta
 | 访问面板及其移动对应产品 MyApps 的概述 | 访问面板和 MyApps 简介<br /> — [iOS](https://itunes.apple.com/us/app/my-apps-azure-active-directory/id824048653?mt=8)<br /> — [Android](https://play.google.com/store/apps/details?id=com.microsoft.myapps) |
 | 如何从 Office 365 网站访问 Azure AD 应用 | [使用 Office 365 应用启动程序](https://support.office.com/zh-cn/article/Meet-the-Office-365-app-launcher-79f12104-6fed-442f-96a0-eb089a3f476a) |
 | 如何从 Intune Managed Browser 移动应用访问 Azure AD 应用 | [Intune Managed Browser](https://technet.microsoft.com/zh-cn/library/dn878029.aspx)<br /> - [iOS](https://itunes.apple.com/us/app/microsoft-intune-managed-browser/id943264951?mt=8)<br /> - [Android](https://play.google.com/store/apps/details?id=com.microsoft.intune.mam.managedbrowser) |
-| 如何使用深层链接访问 Azure AD 应用和启动单一登录 | [获取应用的直接登录链接](/documentation/articles/active-directory-appssoaccess-whatis/#direct-sign-on-links-for-federated-password-based-or-existing-apps/) |
+| 如何使用深层链接访问 Azure AD 应用和启动单一登录 | [获取应用的直接登录链接](/documentation/articles/active-directory-appssoaccess-whatis/) |
 
 访问面板适用于[所有版本的 Azure Active Directory](/pricing/details/identity/)。
 
@@ -147,6 +147,6 @@ Azure AD Connect 适用于[所有版本的 Azure Active Directory](/pricing/deta
 
 [什么是 Azure Active Directory？](/documentation/articles/active-directory-whatis/)
 
-[Azure Multi-Factor Authentication](/services/multi-factor-authentication/)
+[Azure Multi-Factor Authentication](/documentation/services/multi-factor-authentication/)
 
 <!---HONumber=Mooncake_0926_2016-->

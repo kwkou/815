@@ -62,8 +62,8 @@ Windows PowerShell 连接器用于存储同步服务数据库中的每个脚本�
 域 | <Blank> | 要存储的以便在连接器运行时使用的凭据域。
 用户 | <Blank> | 要存储的以便在连接器运行时使用的凭据用户名。
 密码 | <Blank> | 要存储的以便在连接器运行时使用的凭据密码。
-模拟连接器帐户 | False | 如果为 true，同步服务将对提供的凭据上下文中运行 Windows PowerShell 脚本。如果可能，建议使用传递给每个脚本的 **$Credentials** 参数来代替模拟。有关使用此选项时必须具有的其他权限的详细信息，请参阅 [Additional Configuration for Impersonation](#additional-configuration-for-impersonation)（其他模拟配置）。
-模拟时加载用户配置文件 | False | 指示 Windows 在模拟期间加载连接器凭据的用户配置文件。如果要模拟的用户具有漫游配置文件，连接器不会加载漫游配置文件。有关使用此参数时必须具有的其他权限的详细信息，请参阅 [Additional Configuration for Impersonation](#additional-configuration-for-impersonation)（其他模拟配置）。
+模拟连接器帐户 | False | 如果为 true，同步服务将对提供的凭据上下文中运行 Windows PowerShell 脚本。如果可能，建议使用传递给每个脚本的 **$Credentials** 参数来代替模拟。有关使用此选项时必须具有的其他权限的详细信息，请参阅其他模拟配置。
+模拟时加载用户配置文件 | False | 指示 Windows 在模拟期间加载连接器凭据的用户配置文件。如果要模拟的用户具有漫游配置文件，连接器不会加载漫游配置文件。有关使用此参数时必须具有的其他权限的详细信息，请参阅其他模拟配置。
 模拟时的登录类型 | 无 | 模拟期间的登录类型。有关详细信息，请参阅 [dwLogonType][dw] 文档。
 仅限已签名的脚本 | False | 如果为 true，Windows PowerShell 连接器将验证每个脚本是否具有有效的数字签名。如果为 false，请确保同步服务服务器的 Windows PowerShell 执行策略是 RemoteSigned 或 Unrestricted。
 

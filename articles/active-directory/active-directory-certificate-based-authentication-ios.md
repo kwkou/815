@@ -45,7 +45,7 @@
 
 - 访问证书颁发机构以颁发客户端证书。
 
-- 必须在 Azure Active Directory 中配置证书颁发机构。有关如何完成该配置的详细步骤，请参阅[入门](#getting-started)部分。
+- 必须在 Azure Active Directory 中配置证书颁发机构。有关如何完成该配置的详细步骤，请参阅入门部分。
 
 - 必须在 Azure Active Directory 中配置根证书颁发机构和任何中间证书颁发机构。
 
