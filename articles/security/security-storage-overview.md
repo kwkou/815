@@ -64,8 +64,8 @@ Azure 存储空间是依赖于持续性、可用性和可缩放性来满足客�
 传输中加密是通过网络传输数据时用于保护数据的机制。在 Azure 存储中，可以使用以下功能保护数据：
 
 - [传输级别加密](/documentation/articles/storage-security-guide/#encryption-in-transit)，例如从 Azure 存储传入或传出数据时使用的 HTTPS。
-- [线路加密](/documentation/articles/storage-security-guide/#using-encryption-during-transit-with-azure-file-shares)，例如 Azure 文件共享的 SMB 3.0 加密。
-- [客户端加密](/documentation/articles/storage-security-guide/#using-client-side-encryption-to-secure-data-that-you-send-to-storage)，在将数据传输到存储之前加密数据，以及从存储传出数据后解密数据。
+- [线路加密](/documentation/articles/storage-security-guide/)，例如 Azure 文件共享的 SMB 3.0 加密。
+- [客户端加密](/documentation/articles/storage-security-guide/)，在将数据传输到存储之前加密数据，以及从存储传出数据后解密数据。
 
 了解有关客户端加密的详细信息：
 
@@ -77,13 +77,13 @@ Azure 存储空间是依赖于持续性、可用性和可缩放性来满足客�
 对许多组织而言，[静态数据加密](https://blogs.microsoft.com/cybertrust/2015/09/10/cloud-security-controls-series-encrypting-data-at-rest/)是实现数据隐私性、合规性和数据所有权的必要措施。有三项 Azure 功能可提供“静态”数据加密：
 
 - [存储服务加密](/documentation/articles/storage-security-guide/#encryption-at-rest)可以请求存储服务在将数据写入 Azure 存储时自动加密数据。
-- [客户端加密](/documentation/articles/storage-security-guide/#client-side-encryption)也提供静态加密功能。
-- [Azure 磁盘加密](/documentation/articles/storage-security-guide/#using-azure-disk-encryption-to-encrypt-disks-used-by-your-virtual-machines)允许加密 IaaS 虚拟机使用的 OS 磁盘和数据磁盘。
+- [客户端加密](/documentation/articles/storage-security-guide/)也提供静态加密功能。
+- [Azure 磁盘加密](/documentation/articles/storage-security-guide/)允许加密 IaaS 虚拟机使用的 OS 磁盘和数据磁盘。
 
 了解有关存储服务加密的详细信息：
 
 - [Azure 存储服务加密](/home/features/storage/)适用于 [Azure Blob 存储](/documentation/articles/storage-introduction/)。有关其他 Azure 存储类型的详细信息，请参阅[文件](/documentation/articles/storage-dotnet-how-to-use-files/)、[表](/documentation/articles/storage-dotnet-how-to-use-files/)和[队列](/documentation/articles/storage-dotnet-how-to-use-queues/)。
-- [静态数据的 Azure 存储空间服务加密](/documentation/articles//storage-service-encryption/)
+- [静态数据的 Azure 存储空间服务加密](/documentation/articles/storage-service-encryption/)
 
 ## Azure 磁盘加密
 

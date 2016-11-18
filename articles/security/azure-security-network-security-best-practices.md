@@ -174,7 +174,7 @@ Azure 网络安全设备可通过网络级别控件提供的功能来提供大�
 
 建议将内部负载均衡用于将受益于此功能的方案，例如当需要对 SQL 服务器或内部 Web 服务器的连接进行负载均衡时。
 
-若要详细了解 Azure 内部负载均衡器的工作原理和部署方式，请阅读 [Get Started Creating an Internal Load Balancer using PowerShell](/documentation/articles/load-balancer-get-started-internet-arm-ps/#update-an-existing-load-balancer)（开始使用 PowerShell 创建 Internet 负载均衡器）一文。
+若要详细了解 Azure 内部负载均衡器的工作原理和部署方式，请阅读 [Get Started Creating an Internal Load Balancer using PowerShell](/documentation/articles/load-balancer-get-started-internet-arm-ps/)（开始使用 PowerShell 创建 Internet 负载均衡器）一文。
 
 ## 使用全局负载均衡
 使用公有云计算可部署遍布全球的应用程序，其组件位于世界各地的数据中心。由于 Azure 有全局数据中心，因此这种方案在 Azure 上可行。相比于前面提到的负载均衡技术，全局负载均衡可让服务即使在整个数据中心可能不可用时也能使用。
