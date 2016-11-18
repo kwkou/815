@@ -110,11 +110,11 @@
 |中继小时数|每 100 中继小时数收取 0.52 元|
 |消息|每 10,000 条消息收取 0.05 元|
 
-## <a name="#FAQ"></a> 常见问题
+## <a name="FAQ"></a> 常见问题
 
 ### 如何计算中继小时数？
 
-请参阅[此主题](/documentation/articles/service-bus-faq/#How-is-the-Relay-Hours-meter-calculated)。
+请参阅[此主题](/documentation/articles/service-bus-faq/#how-is-the-relay-hours-meter-calculated)。
 
 ### 什么是中转连接，它的计费方式是怎样的？
 
