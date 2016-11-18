@@ -165,7 +165,7 @@
 
 	虽然你可以将配置对象直接传递给 init 方法，但我们建议创建一个名为 **azure** 的 Sencha 应用程序配置属性，并将所有相应信息都放入其中。然后，可以将此属性的值传递给 Ext.Azure.init 方法。
 
-	当你在 Azure 中创建移动服务时（请参阅 [Azure 入门](http://senchaazuredocs.azurewebsites.net/#!/guide/getting_started)），将应用程序密钥和 URL 分配给该服务。必须向 Azure 包提供此信息，以便它可以连接到您的服务。
+	当你在 Azure 中创建移动服务时，将应用程序密钥和 URL 分配给该服务。必须向 Azure 包提供此信息，以便它可以连接到您的服务。
 
 	此示例演示了在仅提供应用程序密钥和 URL 时进行的非常简单的 Azure 配置和初始化：
 
