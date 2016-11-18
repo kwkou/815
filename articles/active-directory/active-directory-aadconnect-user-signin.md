@@ -27,8 +27,8 @@ Azure AD Connect 可让用户使用同一组密码登录云和本地资源。本
 
 如果用户已熟悉 Azure AD 标识模型，只想详细了解某个特定的方法，则可直接单击下面的相应标题。
 
-* [密码同步](#password-synchronization)
-* [联合 SSO（使用 ADFS）](#federation-using-a-new-or-existing-ad-fs-in-windows-server-2012-r2-farm)
+* 密码同步
+* 联合 SSO（使用 ADFS）
 
 
 ## 选择用户登录方法
@@ -69,7 +69,7 @@ Azure AD Connect 可让用户使用同一组密码登录云和本地资源。本
 - 要部署 Web 应用程序代理角色的任何工作组（未加入域）服务器上的本地管理员凭据。
 - 执行向导的计算机必须能够通过 Windows 远程管理连接到要安装 AD FS 或 Web 应用程序代理的任何其他计算机。
 
-[使用 AD FS 配置 SSO](/documentation/articles/active-directory-aadconnect-get-started-custom/#configuring-federation-with-ad-fs/)
+[使用 AD FS 配置 SSO](/documentation/articles/active-directory-aadconnect-get-started-custom/)
 
 #### 使用早期版本的 AD FS 或第三方解决方案登录
 
@@ -89,7 +89,7 @@ Azure AD Connect 可让用户使用同一组密码登录云和本地资源。本
 
 Azure AD Connect 向导将使用 userPrincipalName 属性，或让你指定要从本地用作 Azure AD 中的用户主体名的属性（在自定义安装中）。这是要用于登录 Azure AD 的值。如果用户主体名属性的值不对应于 Azure AD 中已验证的域，则 Azure AD 会将该值替换为默认的 .partner.onmschina.cn 值。
 
-Azure Active Directory 中的每个目录随附内置域名，格式为 contoso.partner.onmschina.cn，可让你开始使用 Azure 或其他 Microsoft 服务。你可以使用自定义域来改善和简化登录体验。有关 Azure AD 中的自定义域名以及如何验证域的信息，请阅读 [Add your custom domain name to Azure Active Directory](/documentation/articles/active-directory-add-domain/#add-your-custom-domain-name-to-azure-active-directory/)（将自定义域名添加到 Azure Active Directory）
+Azure Active Directory 中的每个目录随附内置域名，格式为 contoso.partner.onmschina.cn，可让你开始使用 Azure 或其他 Microsoft 服务。你可以使用自定义域来改善和简化登录体验。有关 Azure AD 中的自定义域名以及如何验证域的信息，请阅读 [Add your custom domain name to Azure Active Directory](/documentation/articles/active-directory-add-domain/)（将自定义域名添加到 Azure Active Directory）
 
 ## Azure AD 登录配置
 
@@ -99,7 +99,7 @@ Azure AD 登录体验取决于 Azure AD是否能够匹配要同步到 Azure AD �
 | 状态 | 说明 | 所需操作 |
 |:----|:----|:----|
 |已验证| Azure AD Connect 在 Azure AD 中找到匹配的已验证域。此域的所有用户均可使用其本地凭据登录| 无需操作 |
-|未验证| Azure AD Connect 可在 Azure AD 中找到匹配的但未验证的自定义域。如果域未验证，则在同步后会将此域的用户的 UPN 后缀更改为默认的 .partner.onmschina.cn 后缀。 | 在 Azure AD 中验证自定义域。[了解详细信息](/documentation/articles/active-directory-add-domain/#verify-the-domain-name-with-azure-ad/) |  
+|未验证| Azure AD Connect 可在 Azure AD 中找到匹配的但未验证的自定义域。如果域未验证，则在同步后会将此域的用户的 UPN 后缀更改为默认的 .partner.onmschina.cn 后缀。 | 在 Azure AD 中验证自定义域。[了解详细信息](/documentation/articles/active-directory-add-domain/) |  
 |未添加| Azure AD Connect 找不到对应于 UPN 后缀的自定义域。如果未在 Azure 中添加和验证域，则会将此域的用户的 UPN 后缀更改为默认的 .partner.onmschina.cn。| 添加和验证与 UPN 后缀相对应的自定义域 [了解更多](/documentation/articles/active-directory-add-domain/)|
 
 Azure AD 的登录页列出了针对本地 Active Directory 定义的 UPN 后缀，以及 Azure AD 中对应的自定义域与当前验证状态。在自定义安装中，现在你可以在“Azure AD 登录”页上选择用户主体名的属性。
@@ -127,7 +127,7 @@ UserPrincipalName - 属性 userPrincipalName 是用户登录 Azure AD 和 Office
 | 已验证 | 在这种情况下，我们已在 Azure AD 中为 UPN 后缀添加并验证自定义域 contoso.com。用户可以使用其本地用户主体名（例如 user@contoso.com），在其同步到 Azure AD 之后登录到 Azure|
 
 ###### AD FS 联合
-你无法与 Azure AD 中的默认 .partner.onmschina.cn 域或 Azure AD 中未验证的自定义域创建联合。当你运行 Azure AD Connect 向导时，如果选择要与未验证的域创建联合，Azure AD Connect 将发出提示，并提供要创建的、包含域 DNS 托管位置的所需记录。有关详细信息，请参阅[此文](/documentation/articles/active-directory-aadconnect-get-started-custom/#verify-the-azure-ad-domain-selected-for-federation/)。
+你无法与 Azure AD 中的默认 .partner.onmschina.cn 域或 Azure AD 中未验证的自定义域创建联合。当你运行 Azure AD Connect 向导时，如果选择要与未验证的域创建联合，Azure AD Connect 将发出提示，并提供要创建的、包含域 DNS 托管位置的所需记录。有关详细信息，请参阅[此文](/documentation/articles/active-directory-aadconnect-get-started-custom/)。
 
 如果选择的用户登录选项为“与 AD FS 联合”，则必须有一个自定义域才能继续在 Azure AD 中创建联合。在我们的介绍中，这意味着应在 Azure AD 目录中添加自定义域 contoso.com。
 

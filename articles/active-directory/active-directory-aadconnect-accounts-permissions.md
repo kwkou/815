@@ -41,18 +41,18 @@ Azure AD Connect 安装向导提供提供两种不同的路径：
 
 向导页 | 收集的凭据 | 所需的权限| 用途
 ------------- | ------------- |------------- |-------------
-不适用|运行安装向导的用户| 本地服务器的管理员| <li>创建用作[同步引擎服务帐户](#azure-ad-connect-sync-service-account)的本地帐户。
-连接到 Azure AD| Azure AD 目录凭据 | Azure AD 中的全局管理员角色 | <li>在 Azure AD 目录中启用同步。</li> <li>创建将在 Azure AD 中用于进行中同步操作的 [Azure AD 帐户](#azure-ad-service-account)。</li>
-连接到 AD DS | 本地 Active Directory 凭据 | Active Directory 中企业管理员 (EA) 组的成员| <li>在 Active Directory 中创建一个[帐户](#active-directory-account)并向其授予权限。在同步期间，将使用这个创建的帐户读取和写入目录信息。</li>
+不适用|运行安装向导的用户| 本地服务器的管理员| <li>创建用作同步引擎服务帐户的本地帐户。
+连接到 Azure AD| Azure AD 目录凭据 | Azure AD 中的全局管理员角色 | <li>在 Azure AD 目录中启用同步。</li> <li>创建将在 Azure AD 中用于进行中同步操作的 Azure AD 帐户。</li>
+连接到 AD DS | 本地 Active Directory 凭据 | Active Directory 中企业管理员 (EA) 组的成员| <li>在 Active Directory 中创建一个帐户并向其授予权限。在同步期间，将使用这个创建的帐户读取和写入目录信息。</li>
 
 ### 企业管理员凭据
 这些凭据只能在安装期间使用，而不能在安装完成后使用。需由企业管理员而不是域管理员确保可以在所有域中设置 Active Directory 中的权限。
 
 ### 全局管理员凭据
-这些凭据只能在安装期间使用，而不能在安装完成后使用。它用于创建 [Azure AD 帐户](#azure-ad-service-account)，以便将更改同步到 Azure AD。该帐户还会在 Azure AD 中启用同步作为功能。
+这些凭据只能在安装期间使用，而不能在安装完成后使用。它用于创建 Azure AD 帐户，以便将更改同步到 Azure AD。该帐户还会在 Azure AD 中启用同步作为功能。
 
 ### 使用快速设置创建的 AD DS 帐户的权限
-如果使用快速设置创建用于在 AD DS 中读取和写入数据的[帐户](#active-directory-account)，该帐户将拥有以下权限：
+如果使用快速设置创建用于在 AD DS 中读取和写入数据的帐户，该帐户将拥有以下权限：
 
 权限 | 用途
 ---- | ----
@@ -64,14 +64,14 @@ Azure AD Connect 安装向导提供提供两种不同的路径：
 重置密码 | 准备启用密码写回
 
 ## 自定义设置安装
-使用自定义设置时，必须在安装之前创建用于连接 Active Directory 的帐户。授予此帐户的权限可在[创建 AD DS 帐户](#create-the-ad-ds-account)中找到。
+使用自定义设置时，必须在安装之前创建用于连接 Active Directory 的帐户。授予此帐户的权限可在创建 AD DS 帐户中找到。
 
 向导页 | 收集的凭据 | 所需的权限| 用途
 ------------- | ------------- |------------- |-------------
-不适用 | 运行安装向导的用户|<li>本地服务器的管理员</li><li>如果使用完整的 SQL Server，用户必须是 SQL 中的系统管理员 (SA)</li>| 默认情况下，将创建用作[同步引擎服务帐户](#azure-ad-connect-sync-service-account)的本地帐户。只有在管理员未指定特定帐户时才创建该帐户。
+不适用 | 运行安装向导的用户|<li>本地服务器的管理员</li><li>如果使用完整的 SQL Server，用户必须是 SQL 中的系统管理员 (SA)</li>| 默认情况下，将创建用作同步引擎服务帐户的本地帐户。只有在管理员未指定特定帐户时才创建该帐户。
 安装同步服务，服务帐户选项 | AD 或本地用户帐户凭据 | 用户，权限将由安装向导授予 | 如果管理员指定了帐户，则此帐户将用作同步服务的服务帐户。
-连接到 Azure AD | Azure AD 目录凭据| Azure AD 中的全局管理员角色| <li>在 Azure AD 目录中启用同步。</li> <li>创建将在 Azure AD 中用于进行中同步操作的 [Azure AD 帐户](#azure-ad-service-account)。</li>
-连接你的目录 | 要连接到 Azure AD 的每个林的本地 Active Directory 凭据 | 权限将取决于启用的功能，可在[创建 AD DS 帐户](#create-the-ad-ds-account)中找到 |在同步期间，将使用此帐户读取和写入目录信息。
+连接到 Azure AD | Azure AD 目录凭据| Azure AD 中的全局管理员角色| <li>在 Azure AD 目录中启用同步。</li> <li>创建将在 Azure AD 中用于进行中同步操作的 Azure AD 帐户。</li>
+连接你的目录 | 要连接到 Azure AD 的每个林的本地 Active Directory 凭据 | 权限将取决于启用的功能，可在创建 AD DS 帐户中找到 |在同步期间，将使用此帐户读取和写入目录信息。
 AD FS 服务器 | 对于列表中的每个服务器，如果运行向导的用户的登录凭据权限不足，因而无法连接，则向导将会收集凭据 | 域管理员 | 安装和配置 AD FS 服务器角色。
 Web 应用程序代理服务器 |对于列表中的每个服务器，如果运行向导的用户的登录凭据权限不足，因而无法连接，则向导将会收集凭据 | 目标计算机上的本地管理员 | 安装和配置 WAP 服务器角色。
 代理信任凭据 |联合身份验证服务信任凭据（代理用来注册 FS 信任证书的凭据） |作为 AD FS 服务器本地管理员的域帐户 | 初始注册 FS-WAP 信任证书。
@@ -85,7 +85,7 @@ Web 应用程序代理服务器 |对于列表中的每个服务器，如果运�
 功能 | 权限
 ------ | ------
 密码同步 | <li>复制目录更改</li><li>复制所有目录更改。
-Exchange 混合部署 | [Exchange 混合写回](/documentation/articles/active-directory-aadconnectsync-attributes-synchronized/#exchange-hybrid-writeback/)中叙述了对用户、组和联系人的属性的写入权限。
+Exchange 混合部署 | [Exchange 混合写回](/documentation/articles/active-directory-aadconnectsync-attributes-synchronized/)中叙述了对用户、组和联系人的属性的写入权限。
 密码写回 | [密码管理入门](/documentation/articles/active-directory-passwords-getting-started/#step-4-set-up-the-appropriate-active-directory-permissions/)中叙述了对用户的属性的写入权限。
 组写回 | 在分发组应该放置到的 OU 中读取、创建、更新和删除组对象。
 

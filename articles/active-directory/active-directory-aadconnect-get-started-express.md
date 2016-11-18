@@ -24,7 +24,7 @@
 
 开始安装 Azure AD Connect 之前，确保[下载 Azure AD Connect](http://go.microsoft.com/fwlink/?LinkId=615771)，完成 [Azure AD Connect：硬件和先决条件](/documentation/articles/active-directory-aadconnect-prerequisites/)中的预先准备步骤。
 
-如果快速设置与拓扑不匹配，请参阅[相关文档](#related-documentation)中的其他方案。
+如果快速设置与拓扑不匹配，请参阅相关文档中的其他方案。
 
 ## Azure AD Connect 的快速安装
 
@@ -38,7 +38,7 @@
 如果收到错误消息并且出现连接问题，请参阅[排查连接问题](/documentation/articles/active-directory-aadconnect-troubleshoot-connectivity/)。
 6. 在"连接到 AD DS"屏幕上，输入企业管理员帐户的用户名和密码。可以采用 NetBios 或 FQDN 格式输入域部分，即 FABRIKAM\\administrator 或 fabrikam.com\\administrator。单击"下一步"。  
 ![连接到 AD DS](./media/active-directory-aadconnect-get-started-express/connectad.png)
-7. 只有在未完成[预先准备步骤](/documentation/articles/active-directory-aadconnect-prerequisites/)中的[验证域](/documentation/articles/active-directory-add-domain/)步骤时，才会显示[**Azure AD 登录配置**](/documentation/articles/active-directory-aadconnect-user-signin/#azure-ad-sign-in-configuration/)页面。  
+7. 只有在未完成[预先准备步骤](/documentation/articles/active-directory-aadconnect-prerequisites/)中的[验证域](/documentation/articles/active-directory-add-domain/)步骤时，才会显示[**Azure AD 登录配置**](/documentation/articles/active-directory-aadconnect-user-signin/)页面。  
 ![未验证的域](./media/active-directory-aadconnect-get-started-express/unverifieddomain.png)  
 如果你看到此页，请查看标记为"未添加"和"未验证"的每个域。确保使用的域已在 Azure AD 中验证。验证域后，单击"刷新"符号。
 8. 在"准备好配置"屏幕上，单击"安装"。

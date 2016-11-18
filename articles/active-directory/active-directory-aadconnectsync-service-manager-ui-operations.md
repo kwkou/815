@@ -54,7 +54,7 @@ completed-*-warnings | 运行已完成，但某些数据并未处于预期的状
 ![Sync Service Manager](./media/active-directory-aadconnectsync-service-manager-ui/errorinnerexception.png)  
 后面的行显示错误。在上图中，错误来自所创建的自定义同步规则 Fabrikam。
 
-如果错误本身未提供足够的信息，则请查看数据本身。可以单击对象标识符的链接，然后[在整个系统中跟踪对象及其数据](/documentation/articles/active-directory-aadconnectsync-service-manager-ui-connectors/#follow-an-object-and-its-data-through-the-system/)。
+如果错误本身未提供足够的信息，则请查看数据本身。可以单击对象标识符的链接，然后[在整个系统中跟踪对象及其数据](/documentation/articles/active-directory-aadconnectsync-service-manager-ui-connectors/)。
 
 ## 后续步骤
 了解有关 [Azure AD Connect 同步](/documentation/articles/active-directory-aadconnectsync-whatis/)配置的详细信息。

@@ -136,9 +136,9 @@ Active Directory 中的某些属性在架构中是多值，不过它们在 Activ
 在此表达式中，如果属性具有值，我们会使用属性中的第一项 (Item)，删除前导空格和尾随空格 (Trim)，然后保留字符串中的前 448 个字符（左）。
 
 ### 不要流送属性
-有关本部分方案的背景信息，请参阅[控制属性流过程](/documentation/articles/active-directory-aadconnectsync-understanding-declarative-provisioning/#control-the-attribute-flow-process/)。
+有关本部分方案的背景信息，请参阅[控制属性流过程](/documentation/articles/active-directory-aadconnectsync-understanding-declarative-provisioning/)。
 
-有两种方法可防止流送属性。第一种方法可在安装向导中使用，可让你[删除选定的属性](/documentation/articles/active-directory-aadconnect-get-started-custom/#azure-ad-app-and-attribute-filtering/)。如果你以前未曾同步该属性，则可以使用这个选项。但是，如果已开始同步此属性，后来使用此功能将它删除，则同步引擎将停止管理属性，现有值将保留在 Azure AD 中。
+有两种方法可防止流送属性。第一种方法可在安装向导中使用，可让你[删除选定的属性](/documentation/articles/active-directory-aadconnect-get-started-custom/)。如果你以前未曾同步该属性，则可以使用这个选项。但是，如果已开始同步此属性，后来使用此功能将它删除，则同步引擎将停止管理属性，现有值将保留在 Azure AD 中。
 
 如果想要删除某个属性的值并确保将来不会流送该属性，则需要改为创建自定义规则。
 

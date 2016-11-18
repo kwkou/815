@@ -51,31 +51,31 @@
 函数列表 | | | | |  
 --------- | --------- | --------- | --------- | --------- | ---------
 **转换** |  
-[CBool](#cbool) | [CDate](#cdate) | [CGuid](#cguid) | [ConvertFromBase64](#convertfrombase64)
-[ConvertToBase64](#converttobase64) | [ConvertFromUTF8Hex](#convertfromutf8hex) | [ConvertToUTF8Hex](#converttoutf8hex) | [CNum](#cnum)
-[CRef](#cref) | [CStr](#cstr) | [StringFromGuid](#StringFromGuid) | [StringFromSid](#stringfromsid)
+CBool | CDate | CGuid | ConvertFromBase64 
+ConvertToBase64 | ConvertFromUTF8Hex | ConvertToUTF8Hex | CNum
+CRef | CStr | StringFromGuid | StringFromSid
 **日期/时间** |  
-[DateAdd](#dateadd) | [DateFromNum](#datefromnum) | [FormatDateTime](#formatdatetime) | [Now](#now)
-[NumFromDate](#numfromdate) |  
+DateAdd | DateFromNum | FormatDateTime | Now
+NumFromDate |  
 **Directory** |  
-[DNComponent](#dncomponent) | [DNComponentRev](#dncomponentrev) | [EscapeDNComponent](#escapedncomponent)
+DNComponent | DNComponentRev | EscapeDNComponent
 **计算** |  
-[IsBitSet](#isbitset) | [IsDate](#isdate) | [IsEmpty](#isempty) | [IsGuid](#isguid)
-[IsNull](#isnull) | [IsNullOrEmpty](#isnullorempty) | [IsNumeric](#isnumeric) | [IsPresent](#ispresent) |
-[IsString](#isstring) |  
+IsBitSet | IsDate | IsEmpty | IsGuid
+IsNull | IsNullOrEmpty | IsNumeric | IsPresent |
+IsString |  
 **数学** |  
-[BitAnd](#bitand) | [BitOr](#bitor) | [RandomNum](#randomnum)
+BitAnd | BitOr | RandomNum
 **多值** |  
-[Contains](#contains) | [计数](#count) | [项目](#item) | [ItemOrNull](#itemornull)
-[Join](#join) | [RemoveDuplicates](#removeduplicates) | [拆分](#split) |
+Contains | 计数 | 项目 | ItemOrNull
+Join | RemoveDuplicates | 拆分 |
 **程序流** |  
-[错误](#error) | [IIF](#iif) | [Switch](#switch)
+错误 | IIF | Switch
 **文本** |  
-[GUID](#guid) | [InStr](#instr) | [InStrRev](#instrrev) | [LCase](#lcase)
-[Left](#left) | [Len](#len) | [LTrim](#ltrim) | [Mid](#mid)
-[PadLeft](#padleft) | [PadRight](#padright) | [PCase](#pcase) | [将](#replace)
-[ReplaceChars](#replacechars) | [Right](#right) | [RTrim](#rtrim) | [Trim](#trim)
-[UCase](#ucase) | [Word](#word)
+GUID | InStr | InStrRev | LCase
+Left | Len | LTrim | Mid
+PadLeft | PadRight | PCase | 将
+ReplaceChars | Right | RTrim | Trim
+UCase | Word
 
 ----------
 ### BitAnd

@@ -30,7 +30,7 @@
 - 单值属性：String、Boolean、Integer、Binary
 - 多值属性：String、Binary
 
-属性列表是安装 Azure AD Connect 过程中从缓存读取的。如果已使用附加属性扩展 Active Directory 架构，则只有在[刷新架构](/documentation/articles/active-directory-aadconnectsync-installation-wizard/#refresh-directory-schema/)后，这些新属性才可见。
+属性列表是安装 Azure AD Connect 过程中从缓存读取的。如果已使用附加属性扩展 Active Directory 架构，则只有在[刷新架构](/documentation/articles/active-directory-aadconnectsync-installation-wizard/)后，这些新属性才可见。
 
 对象最多可以有 100 个目录扩展属性。最大长度为 250 个字符。如果属性值更长，它将被同步引擎截断。
 

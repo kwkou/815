@@ -30,7 +30,7 @@
 
 ![列出其他任务的页面](./media/active-directory-aadconnectsync-installation-wizard/additionaltasks.png)
 
-如果已使用 Azure AD Connect 安装 ADFS，则会有更多选项。[ADFS management](/documentation/articles/active-directory-aadconnect-federation-management/#ad-fs-management/)（ADFS 管理）中介绍了其他 ADFS 选项。
+如果已使用 Azure AD Connect 安装 ADFS，则会有更多选项。[ADFS management](/documentation/articles/active-directory-aadconnect-federation-management/)（ADFS 管理）中介绍了其他 ADFS 选项。
 
 请选择其中一项任务，然后单击"下一步"继续。
 
@@ -46,10 +46,10 @@
 ## 自定义同步选项
 此选项可用于更改同步配置。将在自定义配置安装路径中看到一部分选项。即使一开始是使用快速安装也会看到此选项。
 
-- [添加更多目录](/documentation/articles/active-directory-aadconnect-get-started-custom/#connect-your-directories/)。若要删除目录，请参阅[删除连接器](/documentation/articles/active-directory-aadconnectsync-service-manager-ui-connectors/#delete/)。
-- [更改域和 OU 筛选](/documentation/articles/active-directory-aadconnect-get-started-custom/#domain-and-ou-filtering/)。
+- [添加更多目录](/documentation/articles/active-directory-aadconnect-get-started-custom/)。若要删除目录，请参阅[删除连接器](/documentation/articles/active-directory-aadconnectsync-service-manager-ui-connectors/)。
+- [更改域和 OU 筛选](/documentation/articles/active-directory-aadconnect-get-started-custom/)。
 - 删除组筛选。
-- [更改可选功能](/documentation/articles/active-directory-aadconnect-get-started-custom/#optional-features/)。
+- [更改可选功能](/documentation/articles/active-directory-aadconnect-get-started-custom/)。
 
 初始安装中的其他选项既无法更改，也不能使用。这些选项包括：
 
@@ -65,7 +65,7 @@
 ![列出环境中所有目录的页面](./media/active-directory-aadconnectsync-installation-wizard/refreshschema.png)
 
 ## 配置过渡模式
-此选项可让你启用和禁用服务器上的过渡模式。过渡模式及其使用方式的详细信息可在[操作](/documentation/articles/active-directory-aadconnectsync-operations/#staging-mode/)中找到。
+此选项可让你启用和禁用服务器上的过渡模式。过渡模式及其使用方式的详细信息可在[操作](/documentation/articles/active-directory-aadconnectsync-operations/)中找到。
 
 此选项显示过渡模式当前是已启用还是已禁用：  
 ![同时显示过渡模式当前状态的选项](./media/active-directory-aadconnectsync-installation-wizard/stagingmodecurrentstate.png)
@@ -76,7 +76,7 @@
 ## 更改用户登录
 此选项可让你从密码同步更改为联盟，反之亦然。但不能更改为"不配置"。
 
-有关此选项的详细信息，请参阅[用户登录](/documentation/articles/active-directory-aadconnect-user-signin/#changing-user-sign-in-method/)。
+有关此选项的详细信息，请参阅[用户登录](/documentation/articles/active-directory-aadconnect-user-signin/)。
 
 ## 后续步骤
 

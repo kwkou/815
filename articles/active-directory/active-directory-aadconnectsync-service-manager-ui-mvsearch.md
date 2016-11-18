@@ -27,7 +27,7 @@
 
 排查与数据相关的问题时，"Metaverse 搜索"选项卡非常有用。在上半部分，可以基于属性组合创建查询。如果对查询结果满意，请单击"搜索"。结果显示在底部网格中。你可以利用"列设置"来选择应显示的列。
 
-在搜索结果中，选择对象，然后选择"属性"查看 [Metaverse 对象属性](/documentation/articles/active-directory-aadconnectsync-service-manager-ui-connectors/#metaverse-object-properties/)。
+在搜索结果中，选择对象，然后选择"属性"查看 [Metaverse 对象属性](/documentation/articles/active-directory-aadconnectsync-service-manager-ui-connectors/)。
 
 ## 后续步骤
 了解有关 [Azure AD Connect 同步](/documentation/articles/active-directory-aadconnectsync-whatis/)配置的详细信息。

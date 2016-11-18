@@ -31,8 +31,8 @@
 | **Azure AD Connect 用户登录选项** ||
 | [了解用户登录选项](/documentation/articles/active-directory-aadconnect-user-signin/) | 各种用户登录选项以及它们如何影响 Azure 登录的用户体验的说明 |
 | **使用 Azure AD Connect 安装 AD FS**||
-| [先决条件](/documentation/articles/active-directory-aadconnect-get-started-custom/#ad-fs-configuration-pre-requisites) | 通过 Azure AD Connect 成功安装 AD FS 的前提条件|
-| [配置 AD FS 场](/documentation/articles/active-directory-aadconnect-get-started-custom/#configuring-federation-with-ad-fs) | 如何使用 Azure AD Connect 安装新的 AD FS 场 |
+| [先决条件](/documentation/articles/active-directory-aadconnect-get-started-custom/) | 通过 Azure AD Connect 成功安装 AD FS 的前提条件|
+| [配置 AD FS 场](/documentation/articles/active-directory-aadconnect-get-started-custom/) | 如何使用 Azure AD Connect 安装新的 AD FS 场 |
 | **修改 AD FS 配置** | |
 | [修复信任](/documentation/articles/active-directory-aadconnect-federation-management/#reparing-the-trust) | 如何修复当前本地 AD FS 和 Office 365/Azure 之间的信任 |
 | [添加新的 AD FS 服务器](/documentation/articles/active-directory-aadconnect-federation-management/#adding-a-new-ad-fs-server) | 初始安装后，使用其他 AD FS 服务器扩展 AD FS 场 |

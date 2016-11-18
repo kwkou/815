@@ -28,7 +28,7 @@ Azure Active Directory 团队会定期更新 Azure AD Sync 的新特性和功能
 主题 |  
 --------- | --------- |
 从 Azure AD Connect 升级的步骤 | [从旧版升级到最新版](/documentation/articles/active-directory-aadconnect-upgrade-previous-version/) Azure AD Connect 的不同方法。
-所需的权限 | 有关应用更新时所需的权限，请参阅[帐户和权限](/documentation/articles/active-directory-aadconnect-accounts-permissions/#upgrade/)
+所需的权限 | 有关应用更新时所需的权限，请参阅[帐户和权限](/documentation/articles/active-directory-aadconnect-accounts-permissions/)
 下载| [下载 Azure AD Connect](http://go.microsoft.com/fwlink/?LinkId=615771)
 
 ## 1\.1.281.0
@@ -58,7 +58,7 @@ Azure Active Directory 团队会定期更新 Azure AD Sync 的新特性和功能
 **已解决的问题和改进：**
 
 - Azure AD Connect 现在可以安装于符合 FIPS 的服务器上。
-    - 有关密码同步，请参阅 [Password Sync and FIPS](/documentation/articles/active-directory-aadconnectsync-implement-password-synchronization/#password-synchronization-and-fips/)（密码同步和 FIPS）
+    - 有关密码同步，请参阅 [Password Sync and FIPS](/documentation/articles/active-directory-aadconnectsync-implement-password-synchronization/)（密码同步和 FIPS）
 - 已修复下列问题：NetBIOS 名称无法解析为 Active Directory 连接器中的 FQDN。
 
 ## 1\.1.180.0
@@ -67,7 +67,7 @@ Azure Active Directory 团队会定期更新 Azure AD Sync 的新特性和功能
 **新功能：**
 
 - 警告并帮助你验证域（如果你在运行 Azure AD Connect 之前未执行此操作）。
-- 添加了对[德国 Microsoft 云](/documentation/articles/active-directory-aadconnect-instances/#microsoft-cloud-germany/)的支持。
+- 添加了对[德国 Microsoft 云](/documentation/articles/active-directory-aadconnect-instances/)的支持。
 - 添加了对最新 [Azure 政府云](/documentation/articles/active-directory-aadconnect-instances/#microsoft-azure-government-cloud/)基础结构的支持，以及新的 URL 要求。
 
 **已解决的问题和改进：**
@@ -115,7 +115,7 @@ Azure Active Directory 团队会定期更新 Azure AD Sync 的新特性和功能
     - 如果使用 MFA，则需要让代理也允许向 https://secure.aadcdn.microsoftonline-p.com 传送流量。
     - 需要将 https://secure.aadcdn.microsoftonline-p.com 添加到受信任站点列表，MFA 才能正常运行。
 - 允许在初始安装之后更改用户的登录方法。
-- 允许在安装向导中使用[域和 OU 筛选](/documentation/articles/active-directory-aadconnect-get-started-custom/#domain-and-ou-filtering/)。这也允许连接到并非所有域都可供使用的林。
+- 允许在安装向导中使用[域和 OU 筛选](/documentation/articles/active-directory-aadconnect-get-started-custom/)。这也允许连接到并非所有域都可供使用的林。
 - [计划程序](/documentation/articles/active-directory-aadconnectsync-feature-scheduler/)是同步引擎的内置功能。
 
 **从预览版升级到 GA 的功能：**
@@ -167,7 +167,7 @@ Azure Active Directory 团队会定期更新 Azure AD Sync 的新特性和功能
     - 选择要包含在同步中的新 OU 时不需要完全密码同步。
     - 启用已禁用的用户时密码不会同步。
     - 密码重试队列是无限的，以前实施的 5000 个对象限制已停用且已被删除。
-    - [改进了故障排除](/documentation/articles/active-directory-aadconnectsync-implement-password-synchronization/#troubleshoot-password-synchronization/)。
+    - [改进了故障排除](/documentation/articles/active-directory-aadconnectsync-implement-password-synchronization/)。
 - 无法连接到具有 Windows Server 2016 林功能级别的 Active Directory。
 - 初始安装后，无法更改用于组筛选的组。
 - 对于在启用密码写回的情况下执行密码更改的每个用户，不再能够在 Azure AD Connect 服务器上创建新的用户配置文件。
@@ -209,16 +209,16 @@ Azure Active Directory 团队会定期更新 Azure AD Sync 的新特性和功能
 **新功能：**
 
 - [快速设置](/documentation/articles/active-directory-aadconnect-get-started-express/)安装
-- 可以[配置 ADFS](/documentation/articles/active-directory-aadconnect-get-started-custom/#configuring-federation-with-ad-fs/)
+- 可以[配置 ADFS](/documentation/articles/active-directory-aadconnect-get-started-custom/)
 - 可以[从 DirSync 升级](/documentation/articles/active-directory-aadconnect-dirsync-upgrade-get-started/)
 - [防止意外删除](/documentation/articles/active-directory-aadconnectsync-feature-prevent-accidental-deletes/)
-- 引入了[过渡模式](/documentation/articles/active-directory-aadconnectsync-operations/#staging-mode/)
+- 引入了[过渡模式](/documentation/articles/active-directory-aadconnectsync-operations/)
 
 **新的预览功能：**
 
 - [用户写回](/documentation/articles/active-directory-aadconnect-feature-preview/#user-writeback/)
 - [组写回](/documentation/articles/active-directory-aadconnect-feature-preview/#group-writeback/)
-- [目录扩展](/documentation/articles/active-directory-aadconnect-feature-preview/#directory-extensions/)
+- [目录扩展](/documentation/articles/active-directory-aadconnect-feature-preview/)
 
 
 ## 1\.0.494.0501

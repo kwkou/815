@@ -21,7 +21,7 @@
 本主题是一份循序渐进的指南。其中将会创建一个简单的示例 HR 数据库，然后使用它导入一些用户及其组成员身份。
 
 ## 准备示例数据库
-在运行 SQL Server 的服务器上，运行[附录 A](#appendix-a) 中的 SQL 脚本。此脚本创建名为 GSQLDEMO 的示例数据库。创建的数据库的对象模型如下图所示：  
+在运行 SQL Server 的服务器上，运行附录 A 中的 SQL 脚本。此脚本创建名为 GSQLDEMO 的示例数据库。创建的数据库的对象模型如下图所示：  
 ![对象模型](./media/active-directory-aadconnectsync-connector-genericsql-step-by-step/objectmodel.png)
 
 还会创建要用于连接到数据库的用户。在本演练中，用户名为 FABRIKAM\\SQLUser 并位于域中。

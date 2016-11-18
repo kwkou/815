@@ -267,11 +267,11 @@ Lotus Domino 中有许多属性具有多个值。相对应的 Metaverse 属性�
 本部分概述 Domino 中的不同对象。
 
 ### Person 对象
-Person 对象代表组织和组织单位中的用户。除了默认属性，Domino 管理员还可以在 Person 对象中添加自定义属性。Person 对象至少必须包含所有必需属性。有关必需属性的完整列表，请参阅 [Lotus Notes 属性](#lotus-notes-properties)。若要注册 person 对象，必须符合以下先决条件：
+Person 对象代表组织和组织单位中的用户。除了默认属性，Domino 管理员还可以在 Person 对象中添加自定义属性。Person 对象至少必须包含所有必需属性。有关必需属性的完整列表，请参阅 Lotus Notes 属性。若要注册 person 对象，必须符合以下先决条件：
 
 - 必须已定义通讯簿 (names.nsf)，并且它应该是主要通讯簿。
 - 应该拥有 O/OU 认证者 ID 和密码才能在组织/组织单位中注册特定用户。
-- 必须为 person 对象定义一组特定的 Lotus Notes 属性。这些属性用于预配 person 对象。有关详细信息，请参阅本文档后面的 [Lotus Notes 属性](#lotus-notes-properties)部分。
+- 必须为 person 对象定义一组特定的 Lotus Notes 属性。这些属性用于预配 person 对象。有关详细信息，请参阅本文档后面的 Lotus Notes 属性部分。
 - person 的初始 HTTP 密码是一个属性，且已在预配期间设置好。
 - person 对象必须是以下三种支持的类型之一：
     1. 具有邮件文件和用户 ID 文件的普通用户
@@ -320,7 +320,7 @@ Lotus Domino 连接器在资源保留数据库中执行创建、更新和删除�
 
 如果需要可让不同用户共享的单个邮箱，且此邮箱拥有自己的电子邮件地址（例如：group@contoso.com），则创建邮件数据库。此邮箱通过其访问控制列表 (ACL) 来控制访问，此列表中包含允许其打开邮箱的 Notes 用户的名称。
 
-有关必需属性的列表，请参阅本文后面的[必需的属性](#mandatory-attributes)部分。
+有关必需属性的列表，请参阅本文后面的必需的属性部分。
 
 设计用于接收邮件的数据库时，将在 Lotus Domino 中创建邮件数据库文档。存储数据库副本的每台服务器的 Domino 目录中都必须有此文档。有关创建邮件数据库文档的详细说明，请参阅 [Creating a Mail-In Database document](http://publib.boulder.ibm.com/infocenter/domhelp/v8r0/index.jsp?topic=/com.ibm.help.domino.admin85.doc/H_CREATING_A_MAILIN_DATABASE_DOCUMENT_FOR_A_NEW_DATABASE_OVERVIEW.html)（创建"邮件收集数据库"文档）。
 

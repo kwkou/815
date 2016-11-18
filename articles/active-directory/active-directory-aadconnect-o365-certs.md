@@ -166,6 +166,6 @@ https://(your_FS_name)/federationmetadata/2007-06/federationmetadata.xml
 
 如果你已使用 Azure AD Connect 配置了 AD FS 场和 Azure AD 信任，则可以使用 Azure AD Connect 来检测是否需要对令牌签名证书采取任何操作。如果需要续订证书，可以使用 Azure AD Connect 来执行此操作。
 
-有关详细信息，请阅读[修复信任](/documentation/articles/active-directory-aadconnect-federation-management/#repairing-the-trust)
+有关详细信息，请阅读[修复信任](/documentation/articles/active-directory-aadconnect-federation-management/#repairthetrust)
 
 <!---HONumber=Mooncake_0822_2016-->

@@ -49,7 +49,7 @@ Azure AD Connect 同步会使用计划程序同步本地目录中发生的更改
 - **PurgeRunHistoryInterval**。操作日志应保留的时间。可以在同步服务管理器中查看这些日志。默认设置是保留这些日志 7 天。
 - **SyncCycleEnabled**。指示计划程序是否正在运行导入、同步和导出过程作为其操作的一部分。
 - **MaintenanceEnabled**。显示是否启用了维护过程。它将更新证书/密钥，并清除操作日志。
-- **IsStagingModeEnabled**。显示是否启用了[暂存模式](/documentation/articles/active-directory-aadconnectsync-operations/#staging-mode)。
+- **IsStagingModeEnabled**。显示是否启用了[暂存模式](/documentation/articles/active-directory-aadconnectsync-operations/)。
 
 你可以使用 `Set-ADSyncScheduler` 更改上述一些设置。可以修改以下参数：
 
@@ -109,7 +109,7 @@ Azure AD Connect 同步会使用计划程序同步本地目录中发生的更改
 计划程序仍处于活动状态，并将在下次有机会时重新启动。
 
 ## <a name="custom-scheduler"></a>自定义计划程序
-本节中所述的 cmdlet 仅在内部版本 [1\.1.130.0](/documentation/articles/active-directory-aadconnect-version-history/#111300) 及更高版本中提供。
+本节中所述的 cmdlet 仅在内部版本 [1\.1.130.0](/documentation/articles/active-directory-aadconnect-version-history/) 及更高版本中提供。
 
 如果内置的计划程序不符合你的要求，则可以使用 PowerShell 计划连接器。
 
@@ -120,7 +120,7 @@ Azure AD Connect 同步会使用计划程序同步本地目录中发生的更改
 	Invoke-ADSyncRunProfile -ConnectorName "name of connector" -RunProfileName "name of profile"
 
 
-用于[连接器名称](/documentation/articles/active-directory-aadconnectsync-service-manager-ui-connectors/)和[运行配置文件名称](/documentation/articles/active-directory-aadconnectsync-service-manager-ui-connectors/#configure-run-profiles)的名称可以在[同步服务管理器 UI](/documentation/articles/active-directory-aadconnectsync-service-manager-ui/) 中找到。
+用于[连接器名称](/documentation/articles/active-directory-aadconnectsync-service-manager-ui-connectors/)和[运行配置文件名称](/documentation/articles/active-directory-aadconnectsync-service-manager-ui-connectors/)的名称可以在[同步服务管理器 UI](/documentation/articles/active-directory-aadconnectsync-service-manager-ui/) 中找到。
 
 ![调用运行配置文件](./media/active-directory-aadconnectsync-feature-scheduler/invokerunprofile.png)
 
