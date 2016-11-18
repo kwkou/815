@@ -126,7 +126,7 @@ IoT 中心通过服务端遥测数据读取终结点使收到的遥测数据可�
 [lnk-asa]: /documentation/services/stream-analytics/
 [lnk-event-processor]: /documentation/articles/event-hubs-programming-guide/#event-processor-host
 [lnk-web-job]: /documentation/articles/web-sites-create-web-jobs/
-[lnk-identity-registry]: /documentation/articles/iot-hub-devguide/#device-identity-registry
+[lnk-identity-registry]: /documentation/articles/iot-hub-devguide-identity-registry/
 [lnk-predictive-maintenance]: /documentation/articles/iot-suite-predictive-overview/
 [lnk-azureiotsuite]: https://www.azureiotsuite.cn/
 [lnk-refarch]: http://download.microsoft.com/download/A/4/D/A4DAD253-BC21-41D3-B9D9-87D2AE6F0719/Microsoft_Azure_IoT_Reference_Architecture.pdf
