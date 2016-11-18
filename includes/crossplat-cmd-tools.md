@@ -171,13 +171,13 @@
 
 你可使用 `vm create` 命令从可用映像之一设置和启动虚拟机。下面的示例演示了如何从映像库 (CentOS 6.2) 中的映像创建 Linux 虚拟机（名为 `myVM`）。虚拟机的根用户名和密码分别为 `myusername` 和 `Mypassw0rd`。（请注意，`--location` 参数指定在其中创建虚拟机的数据中心。如果忽略 `--location` 参数，则系统将提示你选择一个位置。）
 
-	azure vm create myVM OpenLogic__OpenLogic-CentOS-62-20120509-en-us-30GB.vhd myusername --location "West US"
+	azure vm create myVM OpenLogic__OpenLogic-CentOS-62-20120509-en-us-30GB.vhd myusername --location "China East"
 
 你可以考虑将 `--ssh` 标志 (Linux) 或 `--rdp` 标志 (Windows) 传递到 `vm create` 以支持与新创建的虚拟机的远程连接。
 
 如果你更愿意从自定义映像设置虚拟机，则可使用 `vm image create` 命令从 .vhd 文件创建映像，然后使用 `vm create` 命令设置虚拟机。下面的示例演示了如何从本地 .vhd 文件创建 Linux 映像（名为 `myImage`）。（`--location` 参数指定在其中存储映像的数据。）
 
-	azure vm image create myImage /path/to/myImage.vhd --os linux --location "West US"
+	azure vm image create myImage /path/to/myImage.vhd --os linux --location "China East"
 
 你可以从存储在 Azure Blob 存储中的 .vhd 创建映像，而不用从本地 .vhd 创建映像。你可使用 `blob-url` 参数做到这一点：
 
