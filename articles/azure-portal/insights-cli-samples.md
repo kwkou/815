@@ -105,7 +105,7 @@ azure insights logs list --caller "myname@company.com"
 azure insights logs list --resourceProvider "Microsoft.Web" --caller "myname@company.com" --startTime 2016-03-08T00:00:00Z --endTime 2016-03-16T00:00:00Z
 ```
 
-## <a name="work-with-alerts></a> 使用警报
+## <a name="work-with-alerts"></a> 使用警报
 可以按照该部分中的信息使用警报。
 
 ### 获取资源组中的警报规则
