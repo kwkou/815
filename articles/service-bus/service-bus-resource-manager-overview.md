@@ -196,8 +196,7 @@ Test-AzureRmResourceGroupDeployment -ResourceGroupName MyDemoRG -TemplateFile <p
 
 ### 创建部署
 
-若要创建新部署，请运行 `New-AzureRmResourceGroupDeployment` 命令，并在出现提示时提供必需的参数。参数包括部署的名称、资源组的名称，以及模板文件的路径或 URL。如果未指定 **Mode** 参数，将使用 **Incremental** 的默认值。有关详细信息，请参阅[增量部署和完整部署](/documentation/articles/resource-group-template-deploy/#incremental-and-complete-deployments)。
-
+若要创建新部署，请运行 `New-AzureRmResourceGroupDeployment` 命令，并在出现提示时提供必需的参数。参数包括部署的名称、资源组的名称，以及模板文件的路径或 URL。如果未指定 **Mode** 参数，将使用 **Incremental** 的默认值。
 以下命令会提示你在 PowerShell 窗口中输入三个参数：
 
 ```
