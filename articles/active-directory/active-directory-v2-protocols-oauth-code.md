@@ -28,7 +28,7 @@ OAuth 2.0 授权代码授予可用于设备上所安装的应用中，以访问�
 > [AZURE.NOTE]
 	v2.0 终结点并不支持所有 Azure Active Directory 方案和功能。若要确定是否应使用 v2.0 终结点，请阅读 [v2.0 限制](/documentation/articles/active-directory-v2-limitations/)。
 
-有关 OAuth 2.0 授权代码流的说明，请参阅 [OAuth 2.0 规范第 4.1 部分](http://tools.ietf.org/html/rfc6749)。它用于在大部分的应用类型（包括 [Web 应用](/documentation/articles/active-directory-v2-flows/#web-apps/)和[本机安装的应用](/documentation/articles/active-directory-v2-flows/#mobile-and-native-apps/)）中执行身份验证与授权。它可让应用程序安全地获取 access\_tokens，用于访问以 v2.0 终结点保护的资源。
+有关 OAuth 2.0 授权代码流的说明，请参阅 [OAuth 2.0 规范第 4.1 部分](http://tools.ietf.org/html/rfc6749)。它用于在大部分的应用类型（包括 [Web 应用](/documentation/articles/active-directory-v2-flows/)和[本机安装的应用](/documentation/articles/active-directory-v2-flows/)）中执行身份验证与授权。它可让应用程序安全地获取 access\_tokens，用于访问以 v2.0 终结点保护的资源。
 
 ## 协议图
 从较高层面讲，本机/移动应用程序的整个身份验证流有点类似于：
@@ -55,7 +55,7 @@ OAuth 2.0 授权代码授予可用于设备上所安装的应用中，以访问�
 
 | 参数 | | 说明 |
 | ----------------------- | ------------------------------- | --------------- |
-| tenant | 必填 | 请求路径中的 `{tenant}` 值可用于控制哪些用户可以登录应用程序。允许的值为 `common`、`organizations`、`consumers` 和租户标识符。有关更多详细信息，请参阅[协议基础知识](/documentation/articles/active-directory-v2-protocols/#endpoints/)。 |
+| tenant | 必填 | 请求路径中的 `{tenant}` 值可用于控制哪些用户可以登录应用程序。允许的值为 `common`、`organizations`、`consumers` 和租户标识符。有关更多详细信息，请参阅[协议基础知识](/documentation/articles/active-directory-v2-protocols/)。 |
 | client\_id | 必填 | 注册门户 ([apps.dev.microsoft.com](https://apps.dev.microsoft.com/?referrer=/documentation/articles&deeplink=/appList)) 分配给应用的应用程序 ID。 |
 | response\_type | 必填 | 必须包括授权代码流的 `code`。 |
 | redirect\_uri | 建议 | 应用程序的 redirect\_uri，应用程序可在此发送及接收身份验证响应。其必须完全符合在门户中注册的其中一个 redirect\_uris，否则必须是编码的 url。对于本机和移动应用，应使用默认值 `https://login.microsoftonline.com/common/oauth2/nativeclient`。 |
@@ -291,6 +291,6 @@ Access\_token 生存期很短，必须在其过期后刷新，才能继续访问
 | trace\_id | 帮助诊断的请求唯一标识符。 |
 | correlation\_id | 帮助跨组件诊断的请求唯一标识符。 |
 
-有关错误代码的描述和建议的客户端操作，请参阅[令牌终结点错误的错误代码](#error-codes-for-token-endpoint-errors)。
+有关错误代码的描述和建议的客户端操作，请参阅令牌终结点错误的错误代码。
 
 <!---HONumber=Mooncake_1031_2016-->

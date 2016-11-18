@@ -26,7 +26,7 @@ OpenID Connect 是构建在 OAuth 2.0 基础之上的身份验证协议，可用
 > [AZURE.NOTE]
 	v2.0 终结点并不支持所有 Azure Active Directory 方案和功能。若要确定是否应使用 v2.0 终结点，请阅读 [v2.0 限制](/documentation/articles/active-directory-v2-limitations/)。
 
-[OpenID Connect](http://openid.net/specs/openid-connect-core-1_0.html) 扩展了 OAuth 2.0 *授权*协议，以将其用作*身份验证*协议，从而允许你使用 OAuth 执行单一登录。它引入了 `id_token` 的概念，这是一种安全令牌，可让客户端验证用户的标识，并获取有关用户的基本配置文件信息。由于它扩展了 OAuth 2.0，因此还可让应用程序安全地获取 **access\_tokens**，而这些令牌可用于访问[授权服务器](/documentation/articles/active-directory-v2-protocols/#the-basics/)保护的资源。如果要构建的 [Web 应用程序](/documentation/articles/active-directory-v2-flows/#web-apps/)托管在服务器中并通过浏览器访问，我们建议使用 OpenID Connect。
+[OpenID Connect](http://openid.net/specs/openid-connect-core-1_0.html) 扩展了 OAuth 2.0 *授权*协议，以将其用作*身份验证*协议，从而允许你使用 OAuth 执行单一登录。它引入了 `id_token` 的概念，这是一种安全令牌，可让客户端验证用户的标识，并获取有关用户的基本配置文件信息。由于它扩展了 OAuth 2.0，因此还可让应用程序安全地获取 **access\_tokens**，而这些令牌可用于访问[授权服务器](/documentation/articles/active-directory-v2-protocols/)保护的资源。如果要构建的 [Web 应用程序](/documentation/articles/active-directory-v2-flows/)托管在服务器中并通过浏览器访问，我们建议使用 OpenID Connect。
 
 ## 协议图 - 登录
 最基本的登录流包含以下步骤 - 下面详细描述了每个步骤。
@@ -94,7 +94,7 @@ OpenID Connect 描述了元数据文档，该文档包含了应用执行登录�
 
 | 参数 | | 说明 |
 | ----------------------- | ------------------------------- | --------------- |
-| tenant | 必填 | 请求路径中的 `{tenant}` 值可用于控制哪些用户可以登录应用程序。允许的值为 `common`、`organizations`、`consumers` 和租户标识符。有关更多详细信息，请参阅[协议基础知识](/documentation/articles/active-directory-v2-protocols/#endpoints/)。 |
+| tenant | 必填 | 请求路径中的 `{tenant}` 值可用于控制哪些用户可以登录应用程序。允许的值为 `common`、`organizations`、`consumers` 和租户标识符。有关更多详细信息，请参阅[协议基础知识](/documentation/articles/active-directory-v2-protocols/)。 |
 | client\_id | 必填 | 注册门户 ([apps.dev.microsoft.com](https://apps.dev.microsoft.com/?referrer=/documentation/articles&deeplink=/appList)) 分配给应用的应用程序 ID。 |
 | response\_type | 必填 | 必须包含 OpenID Connect 登录的 `id_token`。还可以包含其他 response\_type，例如 `code`。 |
 | redirect\_uri | 建议 | 应用程序的 redirect\_uri，应用程序可在此发送及接收身份验证响应。其必须完全符合在门户中注册的其中一个 redirect\_uris，否则必须是编码的 url。 |
@@ -158,7 +158,7 @@ OpenID Connect 描述了元数据文档，该文档包含了应用执行登录�
 ## <a name="validating-the-id-token"></a>验证 id\_token
 仅接收 id\_token 不足以验证用户，必须身份验证 id\_token 签名，并按照应用的要求验证令牌中的声明。v2.0 终结点使用 [JSON Web 令牌 (JWT)](http://self-issued.info/docs/draft-ietf-oauth-json-web-token.html) 和公钥加密对令牌进行签名并验证其是否有效。
 
-可以选择验证客户端代码中的 `id_token`，但是常见的做法是将 `id_token` 发送到后端服务器，并在那里执行验证。验证 id\_token 的签名后，就有几项声明需要验证。有关详细信息，请参阅 [v2.0 令牌参考](/documentation/articles/active-directory-v2-tokens/)，包括[验证令牌](/documentation/articles/active-directory-v2-tokens/#validating-tokens/)和[有关签名密钥滚动更新的重要信息](/documentation/articles/active-directory-v2-tokens/#validating-tokens/)。我们建议利用库来分析和验证令牌 - 对于大多数语言和平台至少有一个可用。
+可以选择验证客户端代码中的 `id_token`，但是常见的做法是将 `id_token` 发送到后端服务器，并在那里执行验证。验证 id\_token 的签名后，就有几项声明需要验证。有关详细信息，请参阅 [v2.0 令牌参考](/documentation/articles/active-directory-v2-tokens/)，包括[验证令牌](/documentation/articles/active-directory-v2-tokens/)和[有关签名密钥滚动更新的重要信息](/documentation/articles/active-directory-v2-tokens/)。我们建议利用库来分析和验证令牌 - 对于大多数语言和平台至少有一个可用。
 <!--TODO: Improve the information on this-->
 
 你可能还希望根据自己的方案验证其他声明。一些常见的验证包括：
@@ -257,8 +257,8 @@ You can simply redirect the user to the `end_session_endpoint` listed in the Ope
 | error | 用于分类发生的错误类型与响应错误的错误码字符串。 |
 | error\_description | 帮助开发人员识别身份验证错误根本原因的特定错误消息。 |
 
-有关可能的错误代码的描述及其建议的客户端操作，请参阅[授权终结点错误的错误代码](#error-codes-for-authorization-endpoint-errors)。
+有关可能的错误代码的描述及其建议的客户端操作，请参阅授权终结点错误的错误代码。
 
-获取授权 `code` 和 `id_token` 之后，可以将用户登录，并代表他们获取访问令牌。若要将用户登录，必须确切地按[上面](#validating-the-id-token)所述验证 `id_token`。若要获取访问令牌，可以遵循 [OAuth 协议文档](/documentation/articles/active-directory-v2-protocols-oauth-code/#request-an-access-token/)中所述的步骤。
+获取授权 `code` 和 `id_token` 之后，可以将用户登录，并代表他们获取访问令牌。若要将用户登录，必须确切地按[上面](#validating-the-id-token)所述验证 `id_token`。若要获取访问令牌，可以遵循 [OAuth 协议文档](/documentation/articles/active-directory-v2-protocols-oauth-code/)中所述的步骤。
 
 <!---HONumber=Mooncake_1031_2016-->
