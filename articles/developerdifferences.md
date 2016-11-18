@@ -1,7 +1,7 @@
 <properties 
 	pageTitle="中国区 Azure 应用程序开发说明"
 	description="本文主要介绍中国区 Azure 与国际版 Azure 应用程序开发上的区别" 
-	metaKeywords="Azure China, develop guidance, Visual Sutdio, resource endpoints, Azure SQL Database, AAD, Cloud Services, Service Bus, Azure PowerShell, Azure CLI"
+	metaKeywords="中国区 Azure, 开发说明, 境外 Azure, Visual Studio, 资源端点URI, 指南, 云服务, Active Directory, 服务总线, Azure PowerShell, Azure CLI, Azure SDK"
 	metaCanonical="" 
 	services="" 
 	documentationCenter="develop"  
