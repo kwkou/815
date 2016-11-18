@@ -108,7 +108,7 @@
 [门户]: /documentation/articles/sql-data-warehouse-restore-database-portal/
 [PowerShell]: /documentation/articles/sql-data-warehouse-restore-database-powershell/
 [REST]: /documentation/articles/sql-data-warehouse-restore-database-rest-api/
-[Configure your database after recovery]: /documentation/articles/sql-database-disaster-recovery#configure-your-database-after-recovery
+[Configure your database after recovery]: /documentation/articles/sql-database-disaster-recovery
 
 <!--MSDN references-->
 
