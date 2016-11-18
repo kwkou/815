@@ -134,7 +134,7 @@ Azure 资源管理器模板定义应用程序使用的所有 Azure 资源。你�
 | **requestedServiceObjectiveName** | S0 | S1 |
 
 ## 创建环境
-所有 Azure 资源必须在 [Azure 资源组](/documentation/articles/resource-group-portal#create-resource-group-and-resources)中创建。资源组可让你将 Azure 资源分组，以便可以统一管理这些资源。[权限](/documentation/articles/role-based-access-built-in-roles)可以分配给资源组，使组织中的特定人员可以创建、修改、删除或查看这些组及其包含的资源。可以在 [Azure 门户预览](https://portal.azure.cn)中查看资源组中资源的警报和计费信息。资源组在 Azure 区域中创建。在本文中，所有资源都在美国中部区域创建。开始创建实际环境时，请选择最符合要求的区域。
+所有 Azure 资源必须在 [Azure 资源组](/documentation/articles/resource-group-portal)中创建。资源组可让你将 Azure 资源分组，以便可以统一管理这些资源。[权限](/documentation/articles/role-based-access-built-in-roles)可以分配给资源组，使组织中的特定人员可以创建、修改、删除或查看这些组及其包含的资源。可以在 [Azure 门户预览](https://portal.azure.cn)中查看资源组中资源的警报和计费信息。资源组在 Azure 区域中创建。在本文中，所有资源都在美国中部区域创建。开始创建实际环境时，请选择最符合要求的区域。
 
 使用以下方法之一为每个环境创建资源组。所有方法都可实现相同的结果。
 
@@ -306,7 +306,7 @@ Azure 资源管理器模板定义应用程序使用的所有 Azure 资源。你�
 4. 单击上图中所示的资源组之后，你将看到“资源组”边栏选项卡，以及在上一步骤中创建的三个资源组，如下图所示。单击 TestApp1-Development 资源组之后，你将看到一个边栏选项卡，其中列出了模板在上一步骤完成的 TestApp1-Development 资源组部署中所创建的资源。单击“TestApp1-Development 资源组”边栏选项卡中的 TestApp1DevApp，删除 TestApp1DevApp Web 应用资源，然后单击“TestApp1DevApp Web 应用”边栏选项卡中的“删除”。
    ![门户](./media/solution-dev-test-environments/portal2.png)
 5. 当门户提示是否确定要删除该资源时，请单击“是”。如果关闭“TestApp1-Development 资源组”边栏选项卡并将它重新打开，显示的内容不会出现刚刚删除的 Web 应用。资源组的内容现在与其应有内容不同。你可以从多个资源组删除多个资源来进一步试验，甚至可以更改某些资源的配置设置。如果不使用 Azure 门户预览从资源组删除资源，你可以使用 PowerShell [Remove-AzureResource](https://msdn.microsoft.com/zh-cn/library/azure/dn757676.aspx) 命令或者从 CLI 使用“azure resource delete”命令来完成相同的任务。
-6. 要让所有应该位于资源组中的所有资源和配置恢复到其应有状态，请使用[将资源部署到环境](#deploy-resources-to-environments)部分中的相同命令，将环境重新部署到资源组，但这次请将“Deployment1”替换为“Deployment2”。
+6. 要让所有应该位于资源组中的所有资源和配置恢复到其应有状态，请使用[将资源部署到环境]()部分中的相同命令，将环境重新部署到资源组，但这次请将“Deployment1”替换为“Deployment2”。
 7.  如步骤 4 中图示的 TestApp1-Development 边栏选项卡中的“摘要”部分，你将看到在上一步骤中删除的 Web 应用以及其他删除的资源再次出现。如果你更改了任何资源的配置，则还可以验证这些配置是否已设置回到参数文件中的值。使用 Azure 资源管理器模板部署环境的优点之一是可以随时轻松地将环境重新部署回到已知状态。
 8. 如果你单击下图中“上次部署”下面的文本，将会看到边栏选项卡显示资源组的部署历史记录。由于你已将名称“Deployment1”用于第一个部署，并已将“Deployment2”用于第二个部署，因此会有两个条目。单击某个部署会显示一个边栏选项卡，其中显示了每个部署的结果。
    ![门户](./media/solution-dev-test-environments/portal3.png)

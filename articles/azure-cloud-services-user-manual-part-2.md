@@ -1315,7 +1315,7 @@ BlobBrowser 是 GUI 图形界面的工具，背后其实是利用 AzCopy 命令�
 10. 设置完毕后，用 VS2013 发布 Cloud Service；
 
 
-11. 可以通过 [https://leissl.cloudapp.net:8080/](https://leissl.cloudapp.net:8080/ "https://leissl.cloudapp.net:8080/") 来访问发布成功的应用程序。
+11. 可以通过 [https://leissl.chinacloudapp.cn:8080/](https://leissl.chinacloudapp.cn:8080/ "https://leissl.chinacloudapp.cn:8080/") 来访问发布成功的应用程序。
 
 	![Copy Always][133]
 

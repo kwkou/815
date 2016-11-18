@@ -22,7 +22,7 @@
 - [Web 应用扩展](#ext)
 
 ## <a id="login"></a>登陆 Azure Kudu 站点
-在浏览器中输入[https://{sitename}.scm.chinacloudsites.cn](#),在弹出的认证窗口中输入web应用的部署账号和密码（关于如何访问 KUDU 请阅读[这篇文章](https://github.com/projectkudu/kudu/wiki/Accessing-the-kudu-service)），验证成功后进入 Kudu 首页，首页包含 Kudu 当前的版本信息以及 Kudu REST API 接口信息，如下图:
+在浏览器中输入[https://{sitename}.scm.chinacloudsites.cn](),在弹出的认证窗口中输入web应用的部署账号和密码（关于如何访问 KUDU 请阅读[这篇文章](https://github.com/projectkudu/kudu/wiki/Accessing-the-kudu-service)），验证成功后进入 Kudu 首页，首页包含 Kudu 当前的版本信息以及 Kudu REST API 接口信息，如下图:
 
 ![Kudu REST API接口信息](./media/aog-web-app-diagnostics-kudu/kudu-rest-api.png)
 
