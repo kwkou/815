@@ -63,7 +63,7 @@
 
 <!--Article references-->
 [Azure SQL 数据库业务连续性概述]: /documentation/articles/sql-database-business-continuity/
-[Configure your database after recovery]: /documentation/articles/sql-database-disaster-recovery#configure-your-database-after-recovery
+[Configure your database after recovery]: /documentation/articles/sql-database-disaster-recovery/
 [How to install and configure Azure PowerShell]: /documentation/articles/powershell-install-configure/
 [概述]: /documentation/articles/sql-data-warehouse-restore-database-overview/
 [门户]: /documentation/articles/sql-data-warehouse-restore-database-portal/
