@@ -48,7 +48,7 @@
 
 请注意，[JsonPropertyAttribute] 用于定义客户端类型与表之间的 *PropertyName* 映射。
 
-若要了解如何在移动应用后端创建新表，请参阅 [.NET 服务器 SDK](/documentation/articles/app-service-mobile-dotnet-backend-how-to-use-server-sdk/#define-table-controller)主题或 [Node.js 服务器 SDK 主题](/documentation/articles/app-service-mobile-node-backend-how-to-use-server-sdk/#howto-dynamicschema)中的信息。如果已在 Azure 门户中使用快速入门项目创建移动应用后端，则也可以在 [Azure 门户预览]中使用“简易表”设置。
+若要了解如何在移动应用后端创建新表，请参阅 [.NET 服务器 SDK](/documentation/articles/app-service-mobile-dotnet-backend-how-to-use-server-sdk/#how-to-define-a-table-controller)主题或 [Node.js 服务器 SDK 主题](/documentation/articles/app-service-mobile-node-backend-how-to-use-server-sdk/#howto-dynamicschema)中的信息。如果已在 Azure 门户中使用快速入门项目创建移动应用后端，则也可以在 [Azure 门户预览]中使用“简易表”设置。
 
 ###如何安装托管的客户端 SDK 包
 
@@ -646,7 +646,7 @@
 
 有关 [Windows Live SDK] 的详细信息，请参阅相关文档。
 
-###<a name="serverflow"></a>服务器托管的身份验证
+###<a name="serverflow"></a> 服务器托管的身份验证
 注册标识提供者后，使用提供者的 [MobileServiceAuthenticationProvider] 值对 [MobileServiceClient] 调用 [LoginAsync] 方法。例如，以下代码使用 Microsoft 启动服务器流登录。
 
 	private MobileServiceUser user;
@@ -677,7 +677,7 @@
 
 在服务器流中，Azure 应用服务通过以下方式管理 OAuth 2.0 身份验证流：显示选定提供者的登录页，并在用户成功使用标识提供者登录后生成应用服务身份验证令牌。[LoginAsync 方法]返回 [MobileServiceUser]，后者提供已经过身份验证的用户的 [UserId]，以及 JSON Web 令牌 (JWT) 形式的 [MobileServiceAuthenticationToken]。你可以缓存此令牌，并在它过期之前重复使用。有关详细信息，请参阅[缓存身份验证令牌](#caching)。
 
-###<a name="caching"></a>缓存身份验证令牌
+###<a name="caching"></a> 缓存身份验证令牌
 
 在某些情况下，使用客户端流程时，存储身份验证令牌甚至来自提供程序的访问令牌可避免在首次成功身份验证后调用登录方法。
 
@@ -722,15 +722,15 @@ Xamarin 应用使用 [Xamarin.Auth API](https://components.xamarin.com/view/xama
 	await client.LoginAsync(MobileServiceAuthenticationProvider.Microsoft, token);
 
 
-##<a name="pushnotifications"></a>推送通知
+##<a name="pushnotifications"></a> 推送通知
 
 以下主题介绍了推送通知：
 
 * [注册推送通知](#register-for-push)
 * [获取 Windows 应用商店包 SID](#package-sid)
-* [使用跨平台模板注册](#register-xplat)
+* [使用跨平台模板注册](#how-to-register-push-templates-to-send-cross-platform-notifications)
 
-###<a name="register-for-push"></a>如何注册推送通知
+###<a name="register-for-push"></a> 如何注册推送通知
 
 使用移动应用客户端可向 Azure 通知中心注册推送通知。注册时，你将获得从平台特定的推送通知服务 (PNS) 获取的句柄。然后你就可以在创建注册时提供此值以及任何标记。以下代码将用于推送通知的 Windows 应用注册到 Windows 通知服务 (WNS)：
 
@@ -747,7 +747,7 @@ Xamarin 应用使用 [Xamarin.Auth API](https://components.xamarin.com/view/xama
 
 请注意，不支持从客户端请求标记。注册时将静默删除标记请求。如果想要使用标记注册设备，请创建自定义 API，使用通知中心 API 自动执行注册。调用[自定义 API](#customapi) 而不是 `RegisterNativeAsync()` 方法。
 
-###<a name="package-sid"></a>如何获取 Windows 应用商店包 SID
+###<a name="package-sid"></a> 如何获取 Windows 应用商店包 SID
 
 在 Windows 应用商店应用中启用推送通知需有包 SID。包 SID 也可用于其他操作（如 Windows 单一登录）。需要向 Windows 应用商店注册应用程序才能收到包 SID。
 
@@ -765,7 +765,7 @@ Xamarin 应用需要一些额外的代码才能将 iOS 上运行的应用注册�
 
 * [Xamarin.iOS](/documentation/articles/app-service-mobile-xamarin-ios-get-started-push/#add-push)
 
-###<a name="how-to-register-push-templates-to-send-cross-platform-notifications"></a>如何注册推送模板以发送跨平台通知
+###<a name="how-to-register-push-templates-to-send-cross-platform-notifications"></a> 如何注册推送模板以发送跨平台通知
 
 若要注册模板，请结合模板使用 `RegisterAsync()` 方法，如下所示：
 

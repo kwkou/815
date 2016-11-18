@@ -54,7 +54,7 @@ iOS 模拟器不支持推送通知，因此在本教程中，需要有一个 iOS
 ##<a id="more"></a>其他信息
 
 * 使用模板可以灵活地发送跨平台推送和本地化推送。[How to Use iOS Client Library for Azure Mobile Apps](/documentation/articles/app-service-mobile-ios-how-to-use-client-library/#templates)（如何使用适用于 Azure 移动应用的 iOS 客户端库）说明了如何注册模板。
-* 使用标记可以锁定接收推送通知的细分客户。[Work with the .NET backend server SDK for Azure Mobile Apps](/documentation/articles/app-service-mobile-dotnet-backend-how-to-use-server-sdk/#tags)（使用适用于 Azure 移动应用的 .NET 后端服务器 SDK）说明了如何在设备安装中添加标记。
+* 使用标记可以锁定接收推送通知的细分客户。[Work with the .NET backend server SDK for Azure Mobile Apps](/documentation/articles/app-service-mobile-dotnet-backend-how-to-use-server-sdk/#how-to-add-tags-to-a-device-installation-to-enable-push-to-tags)（使用适用于 Azure 移动应用的 .NET 后端服务器 SDK）说明了如何在设备安装中添加标记。
 
 <!-- Anchors.  -->
 [Generate iOS certificate signing request]: #certificates
