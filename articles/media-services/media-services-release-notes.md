@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="媒体服务发行说明" 
+	pageTitle="媒体服务发行说明 | Azure" 
 	description="媒体服务发行说明" 
 	services="media-services" 
 	documentationCenter="" 
@@ -14,10 +14,9 @@
 	ms.tgt_pltfrm="media" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="07/14/2016" 
-	wacn.date="08/22/2016"
+	ms.date="09/19/2016"
+	wacn.date=11/21/2016"
 	ms.author="juliako"/>
-
 
 
 # Azure 媒体服务发行说明
@@ -26,40 +25,6 @@
 
 >[AZURE.NOTE] 我们希望能够倾听客户的心声，并致力于解决对客户造成影响的问题。若要报告问题或提出问题，请将问题发布到 [Azure 媒体服务 MSDN 论坛]中。
 
-- [当前已知的问题](#issues)
-- [REST API 版本历史记录](#rest_version_history)
-- [2016 年 7 月版本](#july_changes16)
-- [2016 年 4 月版本](#apr_changes16)
-- [2016 年 2 月版本](#feb_changes16)
-- [2016 年 1 月版本](#jan_changes_16)
-- [2015 年 12 月版本](#dec_changes_15)
-- [2015 年 11 月版本](#nov_changes_15)
-- [2015 年 10 月版本](#oct_changes_15)
-- [2015 年 9 月版本](#september_changes_15)
-- [2015 年 8 月版本](#august_changes_15)
-- [2015 年 7 月版本](#july_changes_15)
-- [2015 年 6 月版本](#june_changes_15)
-- [2015 年 5 月版本](#may_changes_15)
-- [2015 年 4 月版本](#april_changes_15)
-- [2015 年 3 月版本](#march_changes_15)
-- [2015 年 2 月版本](#february_changes_15)
-- [2015 年 1 月版本](#january_changes_15)
-- [2014 年 12 月版本](#december_changes_14)
-- [2014 年 11 月版本](#november_changes_14)
-- [2014 年 10 月版本](#october_changes_14)
-- [2014 年 9 月版本](#september_changes_14)
-- [2014 年 8 月版本](#august_changes_14)
-- [2014 年 7 月版本](#july_changes_14)
-- [2014 年 5 月版本](#may_changes_14)
-- [2014 年 4 月版本](#april_changes_14)
-- [2014 年 1/2 月版本](#jan_feb_changes_14)
-- [2013 年 12 月版本](#december_changes_13)
-- [2013 年 11 月版本](#november_changes_13)
-- [2013 年 8 月版本](#august_changes_13)
-- [2013 年 6 月版本](#june_changes_13)
-- [2012 年 12 月版本](#december_changes_12)
-- [2012 年 11 月版本](#november_changes_12)
-- [2012 年 6 月预览版](#june_changes_12)
 
 
 ##<a id="issues"></a>当前已知的问题
@@ -69,17 +34,13 @@
 问题|说明
 ---|---
 REST API 中未提供几种常见的 HTTP 标头。|如果你使用 REST API 来开发媒体服务应用程序，你将发现一些常见的 HTTP 标头字段（包括 CLIENT-REQUEST-ID、REQUEST-ID 和 RETURN-CLIENT-REQUEST-ID）不受支持。未来的更新将增加这些标头。
-使用包含转义字符（例如 %20）的文件名对资产进行编码失败，出现错误：“MediaProcessor: 找不到文件”。|将添加到资产然后进行编码的文件的名称应只能包含字母数字字符和空格。未来的更新将解决该问题。
+不允许使用百分号编码。|构建流内容的 URL 时，媒体服务会使用 IAssetFile.Name 属性的值（如 http://{AMSAccount}.origin.mediaservices.chinacloudapi.cn/{GUID}/{IAssetFile.Name}/streamingParameters.）。出于此原因，不允许使用百分号编码。**Name** 属性的值不能含有任何以下保留的[百分号编码字符](http://en.wikipedia.org/wiki/Percent-encoding#Percent-encoding_reserved_characters)：!*'();:@&=+$,/?%#"。此外，文件扩展名中只能含有一个“.”。
 Azure 存储空间 SDK 版本 3.x 中的 ListBlobs 方法将失败。|媒体服务基于 [2012-02-12](http://msdn.microsoft.com/zh-cn/library/azure/dn592123.aspx) 版本生成 SAS URL。如果你希望使用 Azure 存储空间 SDK 来列出 BLOB 容器中的 BLOB，请使用 Azure 存储空间 SDK 版本 2.x 中的 [CloudBlobContainer.ListBlobs](http://msdn.microsoft.com/zh-cn/library/microsoft.windowsazure.storage.blob.cloudblobcontainer.listblobs.aspx) 方法。Azure 存储空间 SDK 版本 3.x 中的 ListBlobs 方法将失败。
 媒体服务限制机制会限制那些发出过多服务请求的应用程序的资源使用情况。该服务可能返回“服务不可用”(503) HTTP 状态代码。|有关详细信息，请参阅 [Azure 媒体服务错误代码](http://msdn.microsoft.com/zh-cn/library/azure/dn168949.aspx)主题中 503 HTTP 状态代码的说明。
 查询实体时，一次返回的实体数限制为 1000 个，因为公共 REST v2 将查询结果数限制为 1000 个。 | 你需要使用[此 .NET 示例](/documentation/articles/media-services-dotnet-manage-entities/#enumerating-through-large-collections-of-entities)和[此 REST API 示例](/documentation/articles/media-services-rest-manage-entities/#enumerating-through-large-collections-of-entities)中所述的 **Skip** 和 **Take** (.NET)/ **top** (REST)。 
 某些客户端可能会在平滑流式处理清单中碰到重复标记问题。|有关详细信息，请参阅[此](/documentation/articles/media-services-deliver-content-overview/#known-issues)部分。
-
-### <a id="dotnet_issues"></a>适用于 .NET 的媒体服务 SDK 存在的问题
-
-问题|说明
----|---
-SDK 中的媒体服务对象无法进行序列化，因此无法与 Azure Caching 配合使用。|如果你尝试对 SDK AssetCollection 对象进行序列化以将其添加到 Azure Caching，则会引发异常。
+Azure 媒体服务 .NET SDK 对象无法进行序列化，因此无法与 Azure Caching 配合使用。|如果你尝试对 SDK AssetCollection 对象进行序列化以将其添加到 Azure Caching，则会引发异常。
+编码作业失败，并显示消息字符串“Stage: DownloadFile.Code: System.NullReferenceException”。|典型的编码工作流是将输入视频文件上载到输入资产，并提交此输入资产的一个或多个编码作业，而不对此输入资产做进一步修改。但是，如果修改输入资产（例如添加/删除/重命名资产中的文件），那么后续作业可能会失败，并显示 DownloadFile 错误。解决方法是删除此输入资产，并将输入文件重新上载到新的资产中。 
 
 ##<a id="rest_version_history"></a>REST API 版本历史记录
 
@@ -147,9 +108,9 @@ Azure SDK 团队已发布新版 [Azure SDK for PHP](http://github.com/Azure/azur
 
 ##<a id="nov_changes_15"></a>2015 年 11 月版本
 
-现在，Azure 媒体服务在云中提供 Google Widevine 许可证传送服务。有关更多详细信息，请阅读[此通知博客](http://azure.microsoft.com/blog/announcing-google-widevine-license-delivery-services-public-preview-in-azure-media-services/)。另请参阅[此教程](/documentation/articles/media-services-protect-with-drm/)和 [GitHub 存储库](http://github.com/Azure-Samples/media-services-dotnet-dynamic-encryption-with-drm)。
+现在，Azure 媒体服务在云中提供 Google Widevine 许可证传送服务。有关更多详细信息，请阅读[此通知博客](https://azure.microsoft.com/blog/announcing-google-widevine-license-delivery-services-public-preview-in-azure-media-services/)。另请参阅[此教程](/documentation/articles/media-services-protect-with-drm/)和 [GitHub 存储库](http://github.com/Azure-Samples/media-services-dotnet-dynamic-encryption-with-drm)。
 
-请注意，Azure 媒体服务提供的 Widevine 许可证传送服务是预览版。有关详细信息，请参阅[此博客](http://azure.microsoft.com/blog/announcing-google-widevine-license-delivery-services-public-preview-in-azure-media-services/)。
+请注意，Azure 媒体服务提供的 Widevine 许可证传送服务是预览版。有关详细信息，请参阅[此博客](https://azure.microsoft.com/blog/announcing-google-widevine-license-delivery-services-public-preview-in-azure-media-services/)。
 
 ##<a id="oct_changes_15"></a>2015 年 10 月版本
 
@@ -640,14 +601,16 @@ Azure 媒体服务 .NET SDK 扩展是一组扩展方法和帮助器函数，可�
 	对所有方法增加了异步支持。
 
 
-[AZURE.INCLUDE [media-services-user-voice-include](../../includes/media-services-user-voice-include.md)]
+
 
 
 <!-- Anchors. -->
 
+
 <!-- Images. -->
 
-<!-- URLs. -->
+<!--- URLs. --->
+
 [Azure 媒体服务 MSDN 论坛]: http://social.msdn.microsoft.com/forums/azure/home?forum=MediaServices
 [Azure 媒体服务 REST API 参考]: http://msdn.microsoft.com/zh-cn/library/azure/hh973617.aspx
 [媒体服务定价详细信息]: /pricing/details/media-services/
@@ -681,4 +644,4 @@ Azure 媒体服务 .NET SDK 扩展是一组扩展方法和帮助器函数，可�
 [处理媒体服务作业通知]: /documentation/articles/media-services-check-job-progress/#check_progress_with_queues
  
 
-<!---HONumber=Mooncake_0620_2016-->
+<!---HONumber=Mooncake_1114_2016-->

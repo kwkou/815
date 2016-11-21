@@ -5,7 +5,8 @@
 	manager="erikre" 
 	editor="" 
 	services="media-services" 
-	documentationCenter=""/>
+	documentationCenter=""/>  
+
 
 <tags 
 	ms.service="media-services" 
@@ -13,8 +14,8 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/04/2016" 
-	wacn.date="10/10/2016"
+	ms.date="10/03/2016"
+	wacn.date="11/21/2016"
 	ms.author="juliako"/>  
 
 
@@ -442,7 +443,7 @@ ParameterSet: AccountNameParameterSet
 
 ### 语法
 
-	Sync-AzureRmMediaServiceStorageKeys [-ResourceGroupName] <string> [-MediaServiceAccountName] <string>    [-StorageAccountName] <string>  [<CommonParameters>]
+	Sync-AzureRmMediaServiceStorageKeys [-ResourceGroupName] <string> [-MediaServiceAccountName] <string>    [-StorageAccountId] <string>  [<CommonParameters>]
 
 ### 参数
 
@@ -500,4 +501,4 @@ ParameterSet: AccountNameParameterSet
 
  
 
-<!---HONumber=Mooncake_0926_2016-->
+<!---HONumber=Mooncake_1114_2016-->

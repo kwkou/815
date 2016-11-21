@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="媒体服务配额和限制" 
+	pageTitle="媒体服务配额和限制 | Azure" 
 	description="本主题介绍与 Azure 媒体服务关联的配额和限制。" 
 	services="media-services" 
 	documentationCenter="" 
@@ -14,8 +14,8 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="06/22/2016" 
-	wacn.date="08/22/2016" 
+	ms.date="09/26/2016" 
+	wacn.date="11/21/2016" 
 	ms.author="juliako"/>
 
 
@@ -26,4 +26,4 @@
 
 [AZURE.INCLUDE [azure-mediaservices-limits](../../includes/azure-mediaservices-limits.md)]
 
-<!---HONumber=Mooncake_0815_2016-->
+<!---HONumber=Mooncake_1114_2016-->

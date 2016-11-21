@@ -1,10 +1,10 @@
 <properties 
-	pageTitle="如何使用媒体编码器标准版对资产进行编码" 
+	pageTitle="如何使用 Media Encoder Standard 对资产进行编码 | Azure" 
 	description="了解如何使用媒体编码器标准版为媒体服务上的媒体内容编码。代码示例使用 REST API。" 
 	services="media-services" 
 	documentationCenter="" 
 	authors="Juliako" 
-	manager="dwrede" 
+	manager="erikre" 
 	editor=""/>  
 
 
@@ -14,8 +14,8 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="06/22/2016" 
-	wacn.date="08/22/2016"
+	ms.date="09/19/2016"
+	wacn.date="11/21/2016"
 	ms.author="juliako"/>  
 
 
@@ -37,7 +37,7 @@
 
 - 可按以下两种方式以内联形式定义任务：通过作业实体上的任务导航属性，或
 - 通过 OData 批处理。
-  
+
 
 建议始终将夹层文件编码为自适应比特率 MP4 集，然后使用[动态打包](/documentation/articles/media-services-dynamic-packaging-overview/)将该集转换为所需的格式。若要利用动态打包，首先必须获取你计划从中传送内容的流式处理终结点的至少一个点播流单元。有关详细信息，请参阅[如何缩放媒体服务](/documentation/articles/media-services-manage-origins/#scale_streaming_endpoints)。
 
@@ -46,7 +46,7 @@
 
 >[AZURE.NOTE]在开始引用媒体处理器之前，请确认你的媒体处理器 ID 准确无误。有关详细信息，请参阅[获取媒体处理器](/documentation/articles/media-services-rest-get-media-processor/)。
 
-##创建包含单个编码任务的作业 
+##创建包含单个编码任务的作业
 
 >[AZURE.NOTE] 使用媒体服务 REST API 时，需注意以下事项：
 >
@@ -83,7 +83,7 @@
 
 以下示例说明了如何设置 assetName 属性：
 
-	{ "TaskBody" : "<?xml version="1.0" encoding="utf-8"?><taskBody><inputAsset>JobInputAsset(0)</inputAsset><outputAsset assetName="CustomOutputAssetName">JobOutputAsset(0)</outputAsset></taskBody>"}
+	{ "TaskBody" : "<?xml version=\"1.0\" encoding=\"utf-8\"?><taskBody><inputAsset>JobInputAsset(0)</inputAsset><outputAsset assetName=\"CustomOutputAssetName\">JobOutputAsset(0)</outputAsset></taskBody>"}
 
 ##注意事项
 
@@ -93,8 +93,8 @@
 - 可以将 JobInputAsset 或 JobOutputAsset 指定为某任务的输入资产。
 - 任务不得构成循环。
 - 传递给 JobInputAsset 或 JobOutputAsset 的 value 参数代表资产的索引值。实际资产在作业实体定义的 InputMediaAssets 和 OutputMediaAssets 导航属性中定义。
-- 由于媒体服务基于 OData v3，因此 InputMediaAssets 和 OutputMediaAssets 导航属性集合中的单个资产将通过“\_\_metadata : uri”名称-值对。
-- InputMediaAssets 将映射到已在媒体服务中创建的一个或多个资产。OutputMediaAssets 由系统创建。它们不引用现有资产。
+- 由于媒体服务基于 OData v3，因此 InputMediaAssets 和 OutputMediaAssets 导航属性集合中的单个资产将通过“\_\_metadata : uri”名称-值对进行引用。
+- InputMediaAssets 映射到已在媒体服务中创建的一个或多个资产。OutputMediaAssets 由系统创建。它们不引用现有资产。
 - OutputMediaAssets 可以使用 assetName 属性来命名。如果该属性不存在，则 OutputMediaAsset 的名称将为 <outputAsset> 元素的任意内部文本值，并以作业名称值或作业 ID 值（在没有定义名称属性的情况下）为后缀。例如，如果将 assetName 的值设置为“Sample”，则会将 OutputMediaAsset 名称属性设置为“Sample”。但是，如果未设置 assetName 的值，但已将作业名称设置为“NewJob”，则 OutputMediaAsset 名称将为“JobOutputAsset(value)\_NewJob”。
 
 
@@ -127,12 +127,12 @@
 	      {  
 	         "Configuration":"H264 Adaptive Bitrate MP4 Set 720p",
 	         "MediaProcessorId":"nb:mpid:UUID:ff4df607-d419-42f0-bc17-a481b1331e56",
-	         "TaskBody":"<?xml version="1.0" encoding="utf-8"?><taskBody><inputAsset>JobInputAsset(0)</inputAsset><outputAsset>JobOutputAsset(0)</outputAsset></taskBody>"
+	         "TaskBody":"<?xml version=\"1.0\" encoding=\"utf-8\"?><taskBody><inputAsset>JobInputAsset(0)</inputAsset><outputAsset>JobOutputAsset(0)</outputAsset></taskBody>"
 	      },
 	      {  
 	         "Configuration":"H264 Smooth Streaming 720p",
 	         "MediaProcessorId":"nb:mpid:UUID:ff4df607-d419-42f0-bc17-a481b1331e56",
-	         "TaskBody":"<?xml version="1.0" encoding="utf-16"?><taskBody><inputAsset>JobOutputAsset(0)</inputAsset><outputAsset>JobOutputAsset(1)</outputAsset></taskBody>"
+	         "TaskBody":"<?xml version=\"1.0\" encoding=\"utf-16\"?><taskBody><inputAsset>JobOutputAsset(0)</inputAsset><outputAsset>JobOutputAsset(1)</outputAsset></taskBody>"
 	      }
 	   ]
 	}
@@ -271,4 +271,4 @@
 
 [获取媒体处理器](/documentation/articles/media-services-rest-get-media-processor/)
 
-<!---HONumber=Mooncake_0815_2016-->
+<!---HONumber=Mooncake_1114_2016-->

@@ -5,7 +5,8 @@
 	documentationCenter="" 
 	authors="juliako" 
 	manager="dwrede" 
-	editor=""/>
+	editor=""/>  
+
 
 <tags 
 	ms.service="media-services" 
@@ -13,10 +14,9 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="06/22/2016" 
-	wacn.date="08/22/2016"
+	ms.date="09/26/2016"
+	wacn.date="11/21/2016"
 	ms.author="juliako"/>
-
 
 
 # 如何使用适用于 Adobe Open Source Media Framework 的 Microsoft 平滑流式处理插件
@@ -406,4 +406,4 @@ package
 
 [适用于 OSMF 的 Microsoft 自适应流式处理插件更新](https://azure.microsoft.com/blog/2014/10/27/microsoft-adaptive-streaming-plugin-for-osmf-update/)
 
-<!---HONumber=Mooncake_0815_2016-->
+<!---HONumber=Mooncake_1114_2016-->

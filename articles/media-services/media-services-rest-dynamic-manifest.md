@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="使用 Azure 媒体服务 REST API 创建筛选器" 
+	pageTitle="使用 Azure 媒体服务 REST API 创建筛选器 | Azure" 
 	description="本主题介绍如何创建筛选器，以便客户端能够使用它们来流式传输流的特定部分。媒体服务将创建动态清单来存档此选择性流。"
 	services="media-services" 
 	documentationCenter="" 
@@ -14,8 +14,8 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="ne" 
 	ms.topic="article" 
-	ms.date="06/22/2016" 
-	wacn.date="08/22/2016"  
+	ms.date="09/26/2016"  
+	wacn.date="11/21/2016"  
 	ms.author="juliako;cenkdin"/>
 
 #使用 Azure 媒体服务 REST API 创建筛选器
@@ -29,7 +29,7 @@
 
 有关与筛选器和动态清单相关的更多详细信息，请参阅[动态清单概述](/documentation/articles/media-services-dynamic-manifest-overview/)。
 
-本主题说明如何使用 REST API 创建、更新和删除筛选器。
+本主题介绍如何使用 REST API 创建、更新和删除筛选器。
 
 ##用于创建筛选器的类型
 
@@ -365,4 +365,4 @@
 
  
 
-<!---HONumber=Mooncake_0815_2016-->
+<!---HONumber=Mooncake_1114_2016-->

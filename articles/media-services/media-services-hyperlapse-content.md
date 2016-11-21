@@ -5,7 +5,8 @@
 	documentationCenter=""
 	authors="asolanki"
 	manager="johndeu"
-	editor=""/>
+	editor=""/>  
+
 
 <tags
 	ms.service="media-services"
@@ -13,9 +14,10 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="dotnet"
 	ms.topic="article"
-	ms.date="04/14/2016"
-	wacn.date="05/16/2016"  
-	ms.author="adsolank"/>
+	ms.date="09/19/2016"  
+	wacn.date="11/21/2016"  
+	ms.author="adsolank"/>  
+
 
 
 # Hyperlapse 媒体文件与 Azure Media Hyperlapse
@@ -76,7 +78,7 @@ Speed|用于加速输入视频的倍数。
 
 以下方法将媒体文件上载为资产，然后使用 Azure Media Hyperlapse 媒体处理器来创建作业。
 
-> [AZURE.NOTE] 为了使代码正常工作，你应该事先在名为“context”的作用域中创建 CloudMediaContext。若要了解详细信息，请阅读[内容管理文章](/documentation/articles/media-services-manage-content/)。
+> [AZURE.NOTE] 为了使代码正常工作，你应该事先在名为“context”的作用域中创建 CloudMediaContext。若要了解详细信息，请阅读[内容管理文章](/documentation/articles/media-services-dotnet-get-started/)。
 
 > [AZURE.NOTE] 字符串参数“hyperConfig”应是上述采用 JSON 或 XML 格式且符合要求的配置预设。
 
@@ -215,4 +217,4 @@ Speed|用于加速输入视频的倍数。
 
 [Azure 媒体分析演示](http://azuremedialabs.azurewebsites.net/demos/Analytics.html)
 
-<!---HONumber=Mooncake_0509_2016-->
+<!---HONumber=Mooncake_1114_2016-->

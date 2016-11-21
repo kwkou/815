@@ -14,8 +14,8 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="06/22/2016" 
-	wacn.date="08/22/2016"
+	ms.date="09/26/2016"
+	wacn.date="11/21/2016"
 	ms.author="juliako"/>
 
 
@@ -28,8 +28,8 @@
 - 创建内容密钥。
 - 创建资产。创建资产时，请将 AssetCreationOption 设置为 StorageEncryption。
 
-	加密的资产必须与内容密钥关联。
-- 将内容密钥链接到资产。  
+	 加密的资产必须与内容密钥关联。
+- 将内容密钥链接到资产。
 - 对 AssetFile 实体设置加密相关的参数。
  
 >[AZURE.NOTE]如果要传送存储加密资产，则必须配置资产的传送策略。在流式传输资产之前，流式处理服务器会删除存储加密，然后再使用指定的传送策略流式传输你的内容。有关详细信息，请参阅[配置资产传送策略](/documentation/articles/media-services-rest-configure-asset-delivery-policy/)。
@@ -55,11 +55,11 @@ AMS 存储空间加密将 **AES-CTR** 模式加密应用于整个文件。AES-CT
 
 以下是用于生成内容密钥的常规步骤，你会将这些内容密钥与你想要进行加密的资产关联。
 
-1. 对于存储空间加密，随机生成一个 32 字节的 AES 密钥。 
+1. 对于存储空间加密，随机生成一个 32 字节的 AES 密钥。
 
-	这将成为你资产的内容密钥，这意味着该资产的所有关联文件在解密过程中需要使用同一内容密钥。 
+	这将成为你资产的内容密钥，这意味着该资产的所有关联文件在解密过程中需要使用同一内容密钥。
 2.	调用 [GetProtectionKeyId](https://msdn.microsoft.com/zh-cn/library/azure/jj683097.aspx#getprotectionkeyid) 和 [GetProtectionKey](https://msdn.microsoft.com/zh-cn/library/azure/jj683097.aspx#getprotectionkey) 方法来获取正确的 X.509 证书，必须使用该证书加密你的内容密钥。
-3.	使用 X.509 证书的公钥来加密你的内容密钥。 
+3.	使用 X.509 证书的公钥来加密你的内容密钥。
 
 	媒体服务 .NET SDK 在加密时使用 RSA 和 OAEP。你可以参阅 [EncryptSymmetricKeyData 函数](https://github.com/Azure/azure-sdk-for-media-services/blob/dev/src/net/Client/Common/Common.FileEncryption/EncryptionUtils.cs)中的 .NET 示例。
 4.	创建使用密钥标识符和内容密钥计算的校验和值。下面的 .NET 示例将使用密钥标识符和明文内容密钥的 GUID 部分计算校验和。
@@ -101,7 +101,7 @@ AMS 存储空间加密将 **AES-CTR** 模式加密应用于整个文件。AES-CT
 	---|---
 	ID | 我们使用以下格式自行生成的 ContentKey ID：“nb:kid:UUID:<NEW GUID>”。
 	ContentKeyType | 这是此内容密钥的内容密钥类型（为整数）。我们为存储加密传递了值 1。
-	EncryptedContentKey | 我们创建一个新的内容密钥值，这是一个 256 位（32 字节）的值。该密钥通过使用存储空间加密 X.509 证书进行加密，我们通过执行 GetProtectionKeyId 和 GetProtectionKey 方法的 HTTP GET 请求从 Azure 媒体服务中检索该证书。有关示例，请参阅下面的 .NET 代码：[此处](https://github.com/Azure/azure-sdk-for-media-services/blob/dev/src/net/Client/Common/Common.FileEncryption/EncryptionUtils.cs)定义的 **EncryptSymmetricKeyData** 方法 。
+	EncryptedContentKey | 我们创建一个新的内容密钥值，这是一个 256 位（32 字节）的值。该密钥通过使用存储空间加密 X.509 证书进行加密，我们通过执行 GetProtectionKeyId 和 GetProtectionKey 方法的 HTTP GET 请求从 Azure 媒体服务中检索该证书。有关示例，请参阅下面的 .NET 代码：[此处](https://github.com/Azure/azure-sdk-for-media-services/blob/dev/src/net/Client/Common/Common.FileEncryption/EncryptionUtils.cs)定义的 **EncryptSymmetricKeyData** 方法。
 	ProtectionKeyId | 这是存储空间加密 X.509 证书的保护密钥 ID，用于加密内容密钥。
 	ProtectionKeyType | 这是用于加密内容密钥的保护密钥的加密类型。对于我们的示例，此值为 StorageEncryption(1)。
 	校验和 |内容密钥的 MD5 计算的校验和。它通过使用内容密钥加密内容 ID 计算得出。此示例代码演示了如何计算校验和。
@@ -377,4 +377,4 @@ AMS 存储空间加密将 **AES-CTR** 模式加密应用于整个文件。AES-CT
 	   "ContentChecksum":null
 	}
 
-<!---HONumber=Mooncake_0815_2016-->
+<!---HONumber=Mooncake_1114_2016-->

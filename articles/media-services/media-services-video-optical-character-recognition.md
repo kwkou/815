@@ -5,7 +5,8 @@
 	documentationCenter=""
 	authors="juliako"
 	manager="erikre"
-	editor=""/>
+	editor=""/>  
+
 
 <tags
 	ms.service="media-services"
@@ -13,8 +14,8 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="dotnet"
 	ms.topic="article"
-	ms.date="06/27/2016"
-	wacn.date="08/15/2016"   
+	ms.date="09/26/2016"   
+	wacn.date="11/21/2016"   
 	ms.author="juliako"/>
  
 #使用 Azure 媒体分析将视频文件中的文本内容转换为数字文本 
@@ -27,7 +28,7 @@
 
 **Azure 媒体 OCR** 媒体处理器目前以预览版提供。
 
-本主题提供有关 **Azure 媒体 OCR** 的详细信息，并演示如何通过适用于 .NET 的媒体服务 SDK 使用它。有关其他信息和示例，请参阅[这篇博客](https://azure.microsoft.com/blog/announcing-video-ocr-public-preview-new-config/)。
+本主题提供有关 **Azure 媒体 OCR** 的详细信息，并演示如何将其与适用于 .NET 的媒体服务 SDK 结合使用。有关其他信息和示例，请参阅[这篇博客](https://azure.microsoft.com/blog/announcing-video-ocr-public-preview-new-config/)。
 
 ##OCR 输入文件
 
@@ -340,9 +341,6 @@ text|实际文本
 
 
 
-<!--
-##相关链接
 
-[Azure Media Services Analytics Overview（Azure 媒体服务分析概述）](/documentation/articles/media-services-analytics-overview/)-->
 
-<!---HONumber=Mooncake_0808_2016-->
+<!---HONumber=Mooncake_1114_2016-->

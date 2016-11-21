@@ -14,8 +14,8 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="06/22/2016" 
-	wacn.date="08/22/2016" 
+	ms.date="09/26/2016" 
+	wacn.date="11/21/2016" 
 	ms.author="juliako"/>
 
 
@@ -817,4 +817,4 @@ Microsoft Media Platform：适用于 iOS 的播放器框架包含示例应用程
 
 [开发视频播放器应用程序](/documentation/articles/media-services-develop-video-players/)
 
-<!---HONumber=Mooncake_0815_2016-->
+<!---HONumber=Mooncake_1114_2016-->

@@ -1,11 +1,12 @@
 <properties 
-	pageTitle="Widevine 许可证模板概述" 
+	pageTitle="Widevine 许可证模板概述 | Azure" 
 	description="本主题概述了用于配置 Widevine 许可证的 Widevine 许可证模板。" 
 	authors="juliako" 
 	manager="erikre" 
 	editor="" 
 	services="media-services" 
-	documentationCenter=""/>
+	documentationCenter=""/>  
+
 
 <tags 
 	ms.service="media-services" 
@@ -13,8 +14,8 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="06/22/2016" 
-	wacn.date="08/22/2016"  
+	ms.date="09/26/2016"  
+	wacn.date="11/21/2016"  
 	ms.author="juliako"/>
 
 #Widevine 许可证模板概述
@@ -203,4 +204,4 @@ override_provider_client_token | 布尔值。true 或 false |如果为 false 并
 
 [使用 PlayReady 和/或 Widevine DRM 动态通用加密](/documentation/articles/media-services-protect-with-drm/)
 
-<!---HONumber=Mooncake_0815_2016-->
+<!---HONumber=Mooncake_1114_2016-->

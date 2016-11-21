@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="播放内容" 
+	pageTitle="播放内容 | Azure" 
 	description="本主题列出了你可以用来播放内容的现有播放器。" 
 	services="media-services" 
 	documentationCenter="" 
@@ -14,15 +14,15 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="06/22/2016" 
-	wacn.date="08/22/2016" 
+	ms.date="10/12/2016" 
+	wacn.date="11/21/2016" 
 	ms.author="juliako"/>
 
 
 
 #使用现有播放器播放内容
 
-Azure 媒体服务支持多种常用的流式处理格式，如平滑流、HTTP 实时流和 MPEG-Dash。本主题会将你指向可用来测试流的现有播放器。
+Azure 媒体服务支持多种常用的流式处理格式，如平滑流、HTTP 实时流和 MPEG-Dash。本主题列出了可用于测试流的现有播放器。
 
 >[AZURE.NOTE]若要播放动态打包或动态加密的内容，请确保获取你计划从中传送内容的流式处理终结点的至少一个流式处理单元。有关缩放流式处理单元的信息，请参阅：[如何缩放流式处理单元](/documentation/articles/media-services-manage-origins/#scale_streaming_endpoints)。
 
@@ -51,7 +51,7 @@ Azure 媒体服务支持多种常用的流式处理格式，如平滑流、HTTP 
 
 ###Flash Player
 
-####带令牌的 AES 加密 
+####带令牌的 AES 加密
 
 [http://aestoken.azurewebsites.net](http://aestoken.azurewebsites.net)
 
@@ -59,7 +59,7 @@ Azure 媒体服务支持多种常用的流式处理格式，如平滑流、HTTP 
 
 ####监视
 
-[http://smf.chinacloudapp.cn/healthmonitor](http://smf.chinacloudapp.cn/healthmonitor)
+[http://smf.cloudapp.net/healthmonitor](http://smf.cloudapp.net/healthmonitor)
 
 ####带令牌的 PlayReady
 
@@ -87,4 +87,4 @@ Azure 媒体服务支持多种常用的流式处理格式，如平滑流、HTTP 
  
 [AMSPlayer]: ./media/media-services-playback-content-with-existing-players/media-services-portal-player.png
 
-<!---HONumber=Mooncake_0815_2016-->
+<!---HONumber=Mooncake_1114_2016-->

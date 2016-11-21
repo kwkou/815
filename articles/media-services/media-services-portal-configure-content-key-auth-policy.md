@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="使用门户配置内容密钥授权策略" 
+	pageTitle="使用 Azure 门户配置内容密钥授权策略 | Azure" 
 	description="了解如何配置内容密钥的授权策略。" 
 	services="media-services" 
 	documentationCenter="" 
@@ -14,14 +14,14 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
- 	ms.date="06/22/2016" 
- 	wacn.date="08/22/2016" 
+ 	ms.date="10/12/2016" 
+ 	wacn.date="11/21/2016" 
 	ms.author="juliako"/>
 
 
 
 
-#配置内容密钥授权策略 
+#配置内容密钥授权策略
 [AZURE.INCLUDE [media-services-selector-content-key-auth-policy](../../includes/media-services-selector-content-key-auth-policy.md)]
 
 
@@ -52,7 +52,7 @@ Azure 媒体服务允许你传送受高级加密标准 (AES)（使用 128 位加
 ##如何：配置密钥授权策略
 
 若要配置密钥授权策略，请选择“内容保护”页。
-	
+
 媒体服务支持通过多种方式对发出密钥请求的用户进行身份验证。内容密钥授权策略可能且受到**开放**、**令牌**或 **IP** 授权限制（可以使用 REST 或 .NET SDK 配置 **IP**）。
 
 ###开放限制
@@ -75,8 +75,8 @@ Azure 媒体服务允许你传送受高级加密标准 (AES)（使用 128 位加
 ###PlayReady
 
 使用 **PlayReady** 保护你的内容时，需要在授权策略中指定的项目之一是用于定义 PlayReady 许可证模板的 XML 字符串。默认情况下，已设置以下策略：
-		
-	<PlayReadyLicenseResponseTemplate xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/Azure/MediaServices/KeyDelivery/PlayReadyTemplate/v1">
+
+<PlayReadyLicenseResponseTemplate xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/Azure/MediaServices/KeyDelivery/PlayReadyTemplate/v1">
 	  <LicenseTemplates>
 	    <PlayReadyLicenseTemplate><AllowTestDevices>true</AllowTestDevices>
 	      <ContentKey i:type="ContentEncryptionKeyFromHeader" />
@@ -101,4 +101,4 @@ Azure 媒体服务允许你传送受高级加密标准 (AES)（使用 128 位加
 
  
 
-<!---HONumber=Mooncake_0815_2016-->
+<!---HONumber=Mooncake_1114_2016-->

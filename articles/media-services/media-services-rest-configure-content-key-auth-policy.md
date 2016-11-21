@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="使用媒体服务 REST API 配置内容密钥授权策略" 
+	pageTitle="使用媒体服务 REST API 配置内容密钥授权策略 | Azure" 
 	description="了解如何使用媒体服务 REST API 配置内容密钥的授权策略。" 
 	services="media-services" 
 	documentationCenter="" 
@@ -14,15 +14,15 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="06/22/2016" 
-	wacn.date="08/22/2016"  
+	ms.date="09/19/2016"  
+	wacn.date="11/21/2016"  
 	ms.author="juliako"/>
 
 
 
-#动态加密：配置内容密钥授权策略 
+#动态加密：配置内容密钥授权策略
 [AZURE.INCLUDE [media-services-selector-content-key-auth-policy](../../includes/media-services-selector-content-key-auth-policy.md)]
- 
+
 
 ##概述
 
@@ -31,7 +31,7 @@
 如果你需要媒体服务来加密资产，则需要将加密密钥（**CommonEncryption** 或 **EnvelopeEncryption**）与资产相关联（如[此处](/documentation/articles/media-services-rest-create-contentkey/)所述），并且配置密钥的授权策略（如本文所述）。
 
 
-当播放器请求流时，媒体服务将使用指定的密钥通过 AES 或 PlayReady 加密来动态加密你的内容。为了解密流，播放器将从密钥传送服务请求密钥。为了确定用户是否被授权获取密钥，服务将评估你为密钥指定的授权策略。
+当播放器请求流时，媒体服务将使用指定的密钥通过 AES 或 PlayReady 加密来动态加密你的内容。为了解密流，播放器将从密钥传送服务请求密钥。为了确定用户是否有权获取密钥，服务将评估为密钥指定的授权策略。
 
 媒体服务支持通过多种方式对发出密钥请求的用户进行身份验证。内容密钥授权策略可能受到一种或多种授权限制：**开放**或**令牌**限制。令牌限制策略必须附带由安全令牌服务 (STS) 颁发的令牌。媒体服务支持采用简单的“Web 令牌”([SWT](https://msdn.microsoft.com/zh-cn/library/gg185950.aspx#BKMK_2)) 格式和“JSON Web 令牌”(JWT) 格式的令牌。
 
@@ -56,7 +56,7 @@
 - 目前，无法加密 HDS 流格式或渐进式下载。
 
 
-##AES-128 动态加密 
+##AES-128 动态加密
 
 >[AZURE.NOTE] 使用媒体服务 REST API 时，需注意以下事项：
 >
@@ -479,4 +479,4 @@
 
  
 
-<!---HONumber=Mooncake_0815_2016-->
+<!---HONumber=Mooncake_1114_2016-->
