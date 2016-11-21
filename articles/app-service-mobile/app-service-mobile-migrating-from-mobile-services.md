@@ -20,7 +20,7 @@
 
 # <a name="article-top"></a>将现有的 Azure 移动服务迁移到 Azure 应用服务
 
-通过 [Azure 应用服务正式版]，可以轻松迁移 Azure 移动服务站点，使用 Azure 应用服务的所有功能。本文档说明将站点从 Azure 移动服务迁移到 Azure 应用服务时的情形。
+通过 Azure 应用服务正式版，可以轻松迁移 Azure 移动服务站点，使用 Azure 应用服务的所有功能。本文档说明将站点从 Azure 移动服务迁移到 Azure 应用服务时的情形。
 
 ## <a name="what-does-migration-do"></a>迁移对站点有何作用
 
@@ -33,8 +33,8 @@
 Microsoft 建议迁移 Azure 移动服务来利用 Azure 应用服务的各项功能，其中包括：
 
   *  新的主机功能，包括 [Web 作业]和[自定义域名]。
-  *  除了 [混合连接] 以外，还可使用 [VNet] 连接到本地资源。
-  *  使用 New Relic 或 [Application Insights] 进行监视和故障排除。
+  *  除了 [混合连接] 以外，还可使用 VNet 连接到本地资源。
+  *  使用 New Relic 进行监视和故障排除。
   *  内置的 DevOps 工具，包括[过渡槽]、回滚和生产环境内测试。
   *  [自动缩放]、负载平衡和[性能监视]。
 
@@ -250,7 +250,6 @@ PublishSettings 文件将下载到计算机。此文件通常名为 _站点名�
 
 > [AZURE.NOTE] 如果通知中心是“混合”类型，则它不可见。“混合”类型的通知中心同时利用通知中心功能和旧式服务总线功能。[转换混合命名空间]，然后继续。转换完成后，通知中心将出现在 [Azure 门户预览]中。
 
-有关详细信息，请查看 [Notification Hubs]（通知中心）文档。
 
 > [AZURE.TIP] 在[Azure 门户预览]中的通知中心管理功能仍以预览版提供。仍可使用 [Azure 经典管理门户]管理所有通知中心。
 
@@ -363,7 +362,6 @@ Azure 应用服务中通常会禁用诊断日志记录。若要启用诊断日�
   * 使用部署[过渡槽]可以暂存站点更改，以及执行 A/B 测试。
   * [Web 作业]可以取代按需计划作业。
   * 可通过将站点链接到 GitHub、TFS 或 Mercurial [连续部署]站点。
-  * 可以使用 [Application Insights] 监视站点。
   * 以相同的代码为网站和移动 API 提供服务。
 
 ### <a name="upgrading-your-site"></a>将移动服务站点升级到 Azure 移动应用 SDK
@@ -379,7 +377,6 @@ Azure 应用服务中通常会禁用诊断日志记录。若要启用诊断日�
 
 <!-- Links -->
 [App Service pricing]: /pricing/details/app-service/
-[Application Insights]: /documentation/articles/app-insights-overview/
 [自动缩放]: /documentation/articles/web-sites-scale/
 [Azure App Service]: /documentation/articles/app-service-value-prop-what-is/
 [Azure 应用服务部署文档]: /documentation/articles/web-sites-deploy/
@@ -391,16 +388,14 @@ Azure 应用服务中通常会禁用诊断日志记录。若要启用诊断日�
 [curl]: http://curl.haxx.se/
 [自定义域名]: /documentation/articles/web-sites-custom-domain-name/
 [Fiddler]: http://www.telerik.com/fiddler
-[Azure 应用服务正式版]: /blog/announcing-general-availability-of-app-service-mobile-apps/
+
 [日志记录]: /documentation/articles/web-sites-enable-diagnostic-log/
 [移动应用 Node.js SDK]: https://github.com/azure/azure-mobile-apps-node
 [Mobile Services vs.App Service]: /documentation/articles/app-service-mobile-value-prop-migration-from-mobile-services/
-[Notification Hubs]: /documentation/articles/notification-hubs-overview/
 [性能监视]: /documentation/articles/web-sites-monitor/
 [Postman]: http://www.getpostman.com/
 [备份移动服务]: /documentation/articles/mobile-services-disaster-recovery/
 [过渡槽]: /documentation/articles/web-sites-staged-publishing/
-[VNet]: /documentation/articles/web-sites-integrate-with-vnet/
 [Web 作业]: /documentation/articles/websites-webjobs-resources/
 [XDT Transform Samples]: https://github.com/projectkudu/kudu/wiki/Xdt-transform-samples
 

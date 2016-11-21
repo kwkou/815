@@ -103,7 +103,7 @@
 [Content-Security-Policy 文档]: https://cordova.apache.org/docs/en/latest/guide/appdev/whitelist/index.html
 
 [有关 Azure 应用服务身份验证]: /documentation/articles/app-service-mobile-auth/
-[Apache Cordova SDK]: /documentation/articles/app-service-mobile-codova-how-to-use-client-library/
+[Apache Cordova SDK]: /documentation/articles/app-service-mobile-cordova-how-to-use-client-library/
 [ASP.NET Server SDK]: /documentation/articles/app-service-mobile-dotnet-backend-how-to-use-server-sdk/
 [Node.js Server SDK]: /documentation/articles/app-service-mobile-node-backend-how-to-use-server-sdk/
 
