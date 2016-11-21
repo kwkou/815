@@ -14,7 +14,7 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="08/02/2016" 
-	wacn.date="10/18/2016" 
+	wacn.date="11/21/2016" 
 	ms.author="hawong"/>  
 
 
@@ -34,7 +34,7 @@
 
 在按照本教程中的说明操作之前，请确保已有下列各项：
 
-- Azure 订阅。Azure 是基于订阅的平台。有关获得订阅的详细信息，请参阅[购买选项](/pricing/purchase-options/)或[试用版](/pricing/1rmb-trial/)。
+- Azure 订阅。Azure 是基于订阅的平台。有关获得订阅的详细信息，请参阅[试用版](/pricing/1rmb-trial/)。
 
 ##<a id="CreateDB"></a>步骤 1：下载模板文件 ##
 让我们从下载模板文件开始，我们将在本教程中使用这些文件。

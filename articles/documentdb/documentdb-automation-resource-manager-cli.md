@@ -16,7 +16,7 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="03/04/2016" 
-	wacn.date="07/01/2016" 
+	wacn.date="11/21/2016" 
 	ms.author="mimig"/>
 
 # 使用 Azure Resource Manager 模板和 Azure CLI 自动创建 DocumentDB 帐户
@@ -346,7 +346,7 @@ DocumentDB 数据库帐户是目前唯一可以使用 ARM 模板和 Azure CLI �
 
 创建数据库后，你必须向数据库[添加一个或多个集合](/documentation/articles/documentdb-create-collection/)，然后向集合[添加文档](/documentation/articles/documentdb-view-json-document-explorer/)。
 
-当集合中有文档后，你就可以利用门户预览中的[查询资源管理器](/documentation/articles/documentdb-query-collections-query-explorer/)、[REST API](https://msdn.microsoft.com/library/azure/dn781481.aspx) 或某个 [SDK](https://msdn.microsoft.com/library/azure/dn781482.aspx)，来针对文档使用 [DocumentDB SQL](/documentation/articles/documentdb-sql-query/) [执行查询](/documentation/articles/documentdb-sql-query/#executing-queries)。
+当集合中有文档后，你就可以利用门户预览中的[查询资源管理器](/documentation/articles/documentdb-query-collections-query-explorer/)、[REST API](https://msdn.microsoft.com/library/azure/dn781481.aspx) 或某个 [SDK](https://msdn.microsoft.com/library/azure/dn781482.aspx)，来针对文档使用 [DocumentDB SQL](/documentation/articles/documentdb-sql-query/) [执行查询](/documentation/articles/documentdb-sql-query/#executing-sql-queries)。
 
 若要详细了解 DocumentDB，请浏览以下资源：
 

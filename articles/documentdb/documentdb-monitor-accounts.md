@@ -14,7 +14,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="08/25/2016"
-	wacn.date="10/18/2016"
+	wacn.date="11/21/2016"
 	ms.author="mimig"/>  
 
 
@@ -105,6 +105,7 @@ Azure 门户预览使你能够创建并排的指标图表。
 
 有关详细信息，请参阅 [Retrieving Resource Metrics via the Azure Insights API](https://blogs.msdn.microsoft.com/cloud_solution_architect/2016/02/23/retrieving-resource-metrics-via-the-azure-insights-api/)（通过 Azure Insights API 检索资源指标）。
 
+<a name="troubleshooting"></a>
 ## 故障排除
 如果监视磁贴显示“无可用数据”消息，并且你最近向数据库发出过请求或添加过数据，则可以编辑该磁贴以反映最新使用情况。
 

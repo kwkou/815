@@ -16,7 +16,7 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="07/21/2016" 
-	wacn.date="09/12/2016" 
+	wacn.date="11/21/2016" 
 	ms.author="rnagpal"/>
 
 
@@ -43,6 +43,7 @@
 > [AZURE.NOTE]
 每个示例都是独立的，自行对自身进行设置并在完成后自行进行清理。同样地，这些示例对 CreateDocumentCollectionAsync() 发出多个调用。每当执行此操作时，即会根据所创建的集合的性能层，对你的订阅收取使用 1 小时的费用。
 
+<a name="database-examples"></a>
 ## 数据库示例
 
 DatabaseManagement 项目示例的 [RunDatabaseDemo](https://github.com/Azure/azure-documentdb-dotnet/blob/530c8d9cf7c99df7300246da05206c57ce654233/samples/code-samples/DatabaseManagement/Program.cs#L72-L121) 方法演示如何执行以下任务。
@@ -55,6 +56,7 @@ DatabaseManagement 项目示例的 [RunDatabaseDemo](https://github.com/Azure/az
 [列出帐户的数据库](https://github.com/Azure/azure-documentdb-dotnet/blob/530c8d9cf7c99df7300246da05206c57ce654233/samples/code-samples/DatabaseManagement/Program.cs#L108-L113) | [DocumentClient.ReadDatabaseFeedAsync](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.documents.client.documentclient.readdatabasefeedasync.aspx)
 [删除数据库](https://github.com/Azure/azure-documentdb-dotnet/blob/530c8d9cf7c99df7300246da05206c57ce654233/samples/code-samples/DatabaseManagement/Program.cs#L118) | [DocumentClient.DeleteDatabaseAsync](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.documents.client.documentclient.deletedatabaseasync.aspx)
 
+<a name="collection-examples"></a>
 ## 集合示例 
 
 CollectionManagement 项目示例的 [RunCollectionDemo](https://github.com/Azure/azure-documentdb-dotnet/blob/530c8d9cf7c99df7300246da05206c57ce654233/samples/code-samples/CollectionManagement/Program.cs#L96-L185) 方法演示如何执行以下任务。
@@ -68,6 +70,7 @@ CollectionManagement 项目示例的 [RunCollectionDemo](https://github.com/Azur
 [在数据库中读取所有集合的列表](https://github.com/Azure/azure-documentdb-dotnet/blob/89670bc8aefd9bdd932db7f9b6d2fcb9b6acf35e/samples/code-samples/CollectionManagement/Program.cs#L162) | [DocumentClient.ReadDocumentCollectionFeedAsync](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.documents.client.documentclient.readdocumentcollectionfeedasync.aspx)
 [删除集合](https://github.com/Azure/azure-documentdb-dotnet/blob/89670bc8aefd9bdd932db7f9b6d2fcb9b6acf35e/samples/code-samples/CollectionManagement/Program.cs#L175) | [DocumentClient.DeleteDocumentCollectionAsync](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.documents.client.documentclient.deletedocumentcollectionasync.aspx)
 
+<a name="document-examples"></a>
 ## 文档示例
 
 DocumentManagement 项目示例的 [RunDocumentsDemo](https://github.com/Azure/azure-documentdb-dotnet/blob/f374cc601f4cf08d11c88f0c3fa7dcefaf7ecfe8/samples/code-samples/DocumentManagement/Program.cs#L97-L102) 方法演示如何执行以下任务。
@@ -127,7 +130,7 @@ IndexManagement 项目示例的 [RunIndexDemo](https://github.com/Azure/azure-do
 ---- | ---  
 [对新集合启用地理空间索引](https://github.com/Azure/azure-documentdb-dotnet/blob/7b09c085817e850d683bc59bd864c2f6b552d275/samples/code-samples/Geospatial/Program.cs#L45-L63) | [IndexingPolicy](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.documents.indexingpolicy.aspx)<br>[IndexKind.Spatial](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.documents.indexkind.aspx)<br>[DataType.Point](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.documents.datatype.aspx)  
 [使用 GeoJSON 点插入文档](https://github.com/Azure/azure-documentdb-dotnet/blob/7b09c085817e850d683bc59bd864c2f6b552d275/samples/code-samples/Geospatial/Program.cs#L116-L126) | [DocumentClient.CreateDocumentAsync](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.documents.client.documentclient.createdocumentasync.aspx)<br>[DataType.Point](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.documents.datatype.aspx)   
-[查找指定距离内的点](https://github.com/Azure/azure-documentdb-dotnet/blob/7b09c085817e850d683bc59bd864c2f6b552d275/samples/code-samples/Geospatial/Program.cs#L152-L194) | [ST\_DISTANCE](/documentation/articles/documentdb-sql-query/#built-in-functions) 或<br>[GeometryOperationExtensions.Distance](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.documents.spatial.geometryoperationextensions.distance.aspx#M:Microsoft.Azure.Documents.Spatial.GeometryOperationExtensions.Distance(Microsoft.Azure.Documents.Spatial.Geometry,Microsoft.Azure.Documents.Spatial.Geometry)  
+[查找指定距离内的点](https://github.com/Azure/azure-documentdb-dotnet/blob/7b09c085817e850d683bc59bd864c2f6b552d275/samples/code-samples/Geospatial/Program.cs#L152-L194) | [ST\_DISTANCE](/documentation/articles/documentdb-sql-query/) 或<br>[GeometryOperationExtensions.Distance](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.documents.spatial.geometryoperationextensions.distance.aspx#M:Microsoft.Azure.Documents.Spatial.GeometryOperationExtensions.Distance(Microsoft.Azure.Documents.Spatial.Geometry,Microsoft.Azure.Documents.Spatial.Geometry)  
 [查找多边形内的点](https://github.com/Azure/azure-documentdb-dotnet/blob/7b09c085817e850d683bc59bd864c2f6b552d275/samples/code-samples/Geospatial/Program.cs#L196-L221) | [ST\_WITHIN](/documentation/articles/documentdb-sql-query/#built-in-functions) 或<br>[GeometryOperationExtensions.Within](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.documents.spatial.geometryoperationextensions.within.aspx#M:Microsoft.Azure.Documents.Spatial.GeometryOperationExtensions.Within(Microsoft.Azure.Documents.Spatial.Geometry,Microsoft.Azure.Documents.Spatial.Geometry) and<br>[Polygon](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.documents.spatial.polygon.aspx)  
 [对现有集合启用地理空间索引](https://github.com/Azure/azure-documentdb-dotnet/blob/7b09c085817e850d683bc59bd864c2f6b552d275/samples/code-samples/Geospatial/Program.cs#L312-L336) | [DocumentClient.ReplaceDocumentCollectionAsync](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.documents.client.documentclient.replacedocumentcollectionasync.aspx)<br>[DocumentCollection.IndexingPolicy](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.documents.documentcollection.indexingpolicy.aspx#P:Microsoft.Azure.Documents.DocumentCollection.IndexingPolicy)  
 [验证点和多边形数据](https://github.com/Azure/azure-documentdb-dotnet/blob/7b09c085817e850d683bc59bd864c2f6b552d275/samples/code-samples/Geospatial/Program.cs#L223-L265) | [ST\_ISVALID](/documentation/articles/documentdb-sql-query/#built-in-functions)<br>[ST\_ISVALIDDETAILED](/documentation/articles/documentdb-sql-query/#built-in-functions)<br>[GeometryOperationExtensions.IsValid](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.documents.spatial.geometryoperationextensions.isvalid.aspx)<br>[GeometryOperationExtensions.IsValidDetailed](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.documents.spatial.geometryoperationextensions.isvaliddetailed.aspx)  
@@ -156,7 +159,7 @@ IndexManagement 项目示例的 [RunIndexDemo](https://github.com/Azure/azure-do
 
 有关编写查询的详细信息，请参阅 [DocumentDB 内的 SQL 查询](/documentation/articles/documentdb-sql-query/)。
 
-
+<a name="server-side-programming-examples></a>
 ## 服务器端编程示例
 
 服务器端编程文件 [azure-documentdb-net/samples/code-samples/ServerSideScripts/Program.cs](https://github.com/Azure/azure-documentdb-net/blob/master/samples/code-samples/ServerSideScripts/Program.cs) 演示如何执行以下任务。
