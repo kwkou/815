@@ -15,7 +15,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="na"
    ms.date="09/07/2016"
-   wacn.date="10/24/2016"
+   wacn.date="11/21/2016"
    ms.author="tomfitz"/>  
 
 
@@ -240,4 +240,4 @@
 
 - 若要了解如何指定安全策略，请参阅 [Azure 基于角色的访问控制](/documentation/articles/role-based-access-control-configure/)。
 
-<!---HONumber=Mooncake_1017_2016-->
+<!---HONumber=Mooncake_1114_2016-->

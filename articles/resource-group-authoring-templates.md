@@ -6,7 +6,8 @@
    documentationCenter="na"
    authors="tfitzmac"
    manager="timlt"
-   editor="tysonn"/>
+   editor="tysonn"/>  
+
 
 <tags
    ms.service="azure-resource-manager"
@@ -15,7 +16,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="na"
    ms.date="07/19/2016"
-   wacn.date="09/28/2016"
+   wacn.date="11/21/2016"
    ms.author="tomfitz"/>
 
 # 创作 Azure 资源管理器模板
@@ -365,4 +366,4 @@ resources 节包含要部署的资源数组。在每个资源内，还可以定�
 - 若要在创建资源类型时迭代指定的次数，请参阅[在 Azure 资源管理器中创建多个资源实例](/documentation/articles/resource-group-create-multiple/)。
 - 你可能需要使用不同资源组中的资源。使用跨多个资源组共享的存储帐户或虚拟网络时，这很常见。有关详细信息，请参阅 [resourceId 函数](/documentation/articles/resource-group-template-functions/#resourceid)。
 
-<!---HONumber=Mooncake_0919_2016-->
+<!---HONumber=Mooncake_1114_2016-->

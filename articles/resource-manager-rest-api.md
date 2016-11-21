@@ -5,7 +5,8 @@
    documentationCenter="na"
    authors="navalev"
    manager=""
-   editor=""/>
+   editor=""/>  
+
 
 <tags
    ms.service="azure-resource-manager"
@@ -14,10 +15,18 @@
    ms.tgt_pltfrm="na"
    ms.workload="na"
    ms.date="06/23/2016"
-   wacn.date="11/15/2016"
-   ms.author="navale;tomfitz;"/>
+   wacn.date="11/21/2016"
+   ms.author="navale;tomfitz;"/>  
+
    
 # Resource Manager REST API
+
+> [AZURE.SELECTOR]
+- [Azure PowerShell](/documentation/articles/powershell-azure-resource-manager/)
+- [Azure CLI](/documentation/articles/xplat-cli-azure-resource-manager/)
+- [门户](/documentation/articles/azure-portal/resource-group-portal/)
+- [REST API](/documentation/articles/resource-manager-rest-api/)
+
 在每次调用 Azure Resource Manager、每次部署模板以及每次配置存储帐户时，都会对 Azure Resource Manager 的 RESTful API 进行一次或多次调用。本主题专门介绍这些 API 以及如何在完全不使用任何 SDK 的情况下调用它们。如果你想要完全控制对 Azure 的所有请求，或者你偏好语言的 SDK 无法使用或不支持你想要执行的操作，这些 API 可能非常有用。
 
 本文不逐一介绍 Azure 中公开的每个 API，而以某些 API 为例，说明如何继续连接到这些 API。如果你有一定的基础知识，则可继续阅读 [Azure Resource Manager REST API 参考](https://msdn.microsoft.com/zh-cn/library/azure/dn790568.aspx)，以查找有关如何使用其余 API 的详细信息。
@@ -37,7 +46,7 @@
 **常规 HTTP 请求：**
 
 
-    POST /<Azure AD Tenant ID>.onmicrosoft.com/oauth2/token?api-version=1.0 HTTP/1.1 HTTP/1.1
+    POST /<Azure AD Tenant ID>/oauth2/token?api-version=1.0 HTTP/1.1 HTTP/1.1
     Host: login.microsoftonline.com
     Cache-Control: no-cache
     Content-Type: application/x-www-form-urlencoded
@@ -68,7 +77,7 @@
 **使用 PowerShell 生成访问令牌：**
 
 
-    Invoke-RestMethod -Uri https://login.microsoftonline.com/microsoft.onmicrosoft.com/oauth2/token?api-version=1.0 -Method Post
+    Invoke-RestMethod -Uri https://login.microsoftonline.com/<Azure AD Tenant ID>/oauth2/token?api-version=1.0 -Method Post
      -Body @{"grant_type" = "client_credentials"; "resource" = "https://management.core.chinacloudapi.cn/"; "client_id" = "<application id>"; "client_secret" = "<password you selected for authentication>" }
 
 
@@ -93,7 +102,7 @@
     Content-Type: application/json
 
 
-因此，你将收到此服务主体可以访问的订阅列表
+因此，会收到此服务主体可以访问的订阅列表
 
 （为了方便阅读，以下订阅 ID 已缩短）
 
@@ -241,5 +250,4 @@ ARM 模板的部署与调用其他 API 的方式并没有太大差别。其中�
 
 为了方便阅读本文档，此处省略了此请求的较长 JSON 响应。响应将包含刚创建的样板化部署的相关信息。
 
-
-<!---HONumber=Mooncake_0411_2016-->
+<!---HONumber=Mooncake_1114_2016-->

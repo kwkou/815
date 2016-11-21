@@ -15,7 +15,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="na"
    ms.date="09/12/2016"
-   wacn.date="10/24/2016"
+   wacn.date="11/21/2016"
    ms.author="tomfitz"/>
 
 # Azure 资源管理器模板函数
@@ -750,7 +750,7 @@
 
 有关对字符串值使用 length 的示例，请参阅 [length - 字符串](#lengthstring)。
 
-<a id="skip" />></a>
+<a id="skip" /></a>
 ### skip - 数组
 **skip(originalValue, numberToSkip)**
 
@@ -836,6 +836,7 @@
 - [参数](#parameters)
 - [variables](#variables)
 
+若要从资源、资源组或订阅获取值，请参阅 [Resource functions](#resource-functions)（资源函数）。
 
 <a id="deployment" /></a>
 ### 部署
@@ -956,6 +957,7 @@
 - [resourceId](#resourceid)
 - [订阅](#subscription)
 
+若要从参数、变量或当前部署获取值，请参阅 [Deployment value functions](#deployment-value-functions)（部署值函数）。
 
 <a id="listkeys" /></a>
 <a id="list" /></a>
@@ -1051,8 +1053,7 @@ ListKeys 返回的对象采用以下格式：
 
 **reference** 函数从运行时状态派生其值，因此不能在 variables 节中使用。可以在模板的 outputs 节中使用它。
 
-如果在相同的模板内设置了引用的资源，则可使用 reference 函数来隐式声明一个资源依赖于另一个资源。另外，不需要使用 **dependsOn** 属性。
-只有当引用的资源已完成部署后，才会对函数求值。
+如果在相同的模板内设置了引用的资源，则可使用 reference 函数来隐式声明一个资源依赖于另一个资源。另外，不需要使用 **dependsOn** 属性。只有当引用的资源已完成部署后，才会对函数求值。
 
 以下示例引用同一模板中部署的存储帐户。
 
@@ -1092,7 +1093,7 @@ ListKeys 返回的对象采用以下格式：
 
 从 **reference** 函数中返回的对象上的属性因资源类型而异。若要查看资源类型的属性名称和值，请创建一个简单模板，该模板返回 **outputs** 部分中的对象。如果有现有的该类型的资源，则模板只返回对象而不部署任何新资源。如果没有现有的该类型的资源，则模板只部署该类型并返回对象。然后，将这些属性添加到需要在部署期间动态检索值的其他模板。
 
-<a id="resourcegroup" /></a>
+<a id="resourcegroup" /></a>  
 
 ### resourceGroup
 
@@ -1192,7 +1193,7 @@ ListKeys 返回的对象采用以下格式：
       }]
     }
 
-<a id="subscription" />></a>
+<a id="subscription" /></a>
 ### 订阅
 
 **subscription()**
@@ -1221,4 +1222,4 @@ ListKeys 返回的对象采用以下格式：
 - 若要在创建资源类型时迭代指定的次数，请参阅[在 Azure 资源管理器中创建多个资源实例](/documentation/articles/resource-group-create-multiple/)
 - 若要查看如何部署已创建的模板，请参阅[使用 Azure 资源管理器模板部署应用程序](/documentation/articles/resource-group-template-deploy/)
 
-<!---HONumber=Mooncake_1017_2016-->
+<!---HONumber=Mooncake_1114_2016-->

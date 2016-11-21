@@ -15,7 +15,7 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="09/15/2016" 
-	wacn.date="10/24/2016" 
+	wacn.date="11/21/2016" 
 	ms.author="tomfitz"/>  
 
 
@@ -133,4 +133,4 @@
 - 若要排查部署错误，请参阅[《Troubleshooting resource group deployments with Azure Portal》](/documentation/articles/resource-manager-troubleshoot-deployments-portal/)（使用 Azure 门户预览对资源组部署进行故障排除）。
 - 若要从部署或资源组中检索模板，请参阅[从现有资源导出 Azure Resource Manager 模板](/documentation/articles/resource-manager-export-template/)。
 
-<!---HONumber=Mooncake_1017_2016-->
+<!---HONumber=Mooncake_1114_2016-->

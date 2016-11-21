@@ -14,8 +14,8 @@
 	ms.tgt_pltfrm="AzurePortal"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="08/16/2016"
-	wacn.date="10/24/2016"
+	ms.date="10/08/2016"
+	wacn.date="11/21/2016"
 	ms.author="tomfitz"/>
 
 
@@ -94,75 +94,7 @@ Resource Manager 当前不支持处理标记名称和值对象。可以传递标
 
 ## Azure CLI
 
-标记直接存在于资源和资源组中。若要查看现有标记，只需使用 **azure group show** 获取资源组及其资源。
-
-    azure group show -n tag-demo-group
-    
-该操作返回有关资源组的元数据，包括任何应用到其中的标记。
-    
-    info:    Executing command group show
-    + Listing resource groups
-    + Listing resources for the group
-    data:    Id:                  /subscriptions/{guid}/resourceGroups/tag-demo-group
-    data:    Name:                tag-demo-group
-    data:    Location:            westus
-    data:    Provisioning State:  Succeeded
-    data:    Tags: Dept=Finance;Environment=Production
-    data:    Resources:
-    data:
-    data:      Id      : /subscriptions/{guid}/resourceGroups/tag-demo-group/providers/Microsoft.Sql/servers/tfsqlserver
-    data:      Name    : tfsqlserver
-    data:      Type    : servers
-    data:      Location: eastus2
-    data:      Tags    : Dept=Finance;Environment=Production
-    ...
-
-若要仅获取资源组的标记，请使用 JSON 实用工具，例如 [jq](http://stedolan.github.io/jq/download/)。
-
-    azure group show -n tag-demo-group --json | jq ".tags"
-    
-该操作返回该资源组的标记。
-    
-    {
-      "Dept": "Finance",
-      "Environment": "Production" 
-    }
-
-使用 **azure resource show** 可以查看特定资源的标记。
-
-    azure resource show -g tag-demo-group -n tfsqlserver -r Microsoft.Sql/servers -o 2014-04-01-preview --json | jq ".tags"
-    
-该操作返回该资源的标记。
-    
-    {
-      "Dept": "Finance",
-      "Environment": "Production"
-    }
-    
-以下示例演示如何检索包含标记名称和值的所有资源。
-
-    azure resource list --json | jq ".[] | select(.tags.Dept == "Finance") | .name"
-    
-该操作返回带有该标记的资源的名称。
-    
-    "tfsqlserver"
-    "tfsqlserver/tfsqldata"
-
-标记作为一个整体更新。若要将一个标记添加到包含现有标记的资源，请检索要保留的所有现有标记。若要为资源组设置标记值，请使用 **azure group set** 并提供该资源组的所有标记。
-
-    azure group set -n tag-demo-group -t Dept=Finance;Environment=Production;Project=Upgrade
-    
-将返回带新标记的资源组的摘要。
-    
-    info:    Executing command group set
-    ...
-    data:    Name:                tag-demo-group
-    data:    Location:            westus
-    data:    Provisioning State:  Succeeded
-    data:    Tags: Dept=Finance;Environment=Production;Project=Upgrade
-    ...
-    
-可以使用 **azure tag list** 列出订阅中的现有标记，使用 **azure tag create** 添加标记。若要从订阅的分类中删除某个标记，首先请从所有资源中删除该标记。然后，使用 **azure tag delete** 删除该标记。
+[AZURE.INCLUDE [resource-manager-tag-resources-cli](../includes/resource-manager-tag-resources-cli.md)]
 
 ## REST API
 
@@ -179,9 +111,9 @@ Resource Manager 当前不支持处理标记名称和值对象。可以传递标
 
 ## 后续步骤
 
-- 可以使用自定义策略对订阅应用限制和约定。你定义的策略可能要求为所有资源设置特定的标记。有关详细信息，请参阅[使用策略来管理资源和控制访问](/documentation/articles/resource-manager-policy/)。
+- 可以使用自定义策略对订阅应用限制和约定。定义的策略可能要求所有资源都拥有针对特定标记的值。有关详细信息，请参阅[使用策略来管理资源和控制访问](/documentation/articles/resource-manager-policy/)。
 - 有关部署资源时使用 Azure PowerShell 的说明，请参阅[将 Azure PowerShell 与 Azure 资源管理器配合使用](/documentation/articles/powershell-azure-resource-manager/)。
 - 有关部署资源时使用 Azure CLI 的说明，请参阅[将适用于 Mac、Linux 和 Windows 的 Azure CLI 与 Azure 资源管理配合使用](/documentation/articles/xplat-cli-azure-resource-manager/)。
 - 有关使用门户的说明，请参阅 [Using the Azure portal to manage your Azure resources](/documentation/articles/resource-group-portal/)（使用 Azure 门户管理 Azure 资源）
 
-<!---HONumber=Mooncake_1017_2016-->
+<!---HONumber=Mooncake_1114_2016-->
