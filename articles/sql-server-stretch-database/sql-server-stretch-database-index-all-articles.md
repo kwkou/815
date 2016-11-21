@@ -1,11 +1,12 @@
 <properties
 	pageTitle="有关 SQL Server Stretch Database 服务的所有主题 | Azure"
-	description="位于 https://azure.cn/documentation/articles/ 且名为 SQL Server Stretch Database 的 Azure 服务的所有主题的表格，包括标题和描述。"
+	description="位于 /documentation/articles/ 且名为 SQL Server Stretch Database 的 Azure 服务的所有主题的表格，包括标题和描述。"
 	services="sql-server-stretch-database"
 	documentationCenter=""
 	authors="DouglasL"
 	manager="jhubbard"
-	editor=""/>
+	editor=""/>  
+
 
 <tags
 	ms.service="sql-server-stretch-database"
@@ -13,8 +14,8 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="07/25/2016"
-	wacn.date="09/05/2016"
+	ms.date="10/05/2016"
+	wacn.date="11/21/2016"
 	ms.author="DouglasL"/>
 
 
@@ -72,4 +73,4 @@
 | 13 | [备份启用了延伸的数据库](/documentation/articles/sql-server-stretch-database-backup/) | 了解如何备份启用了 Stretch 的数据库。 |
 | 14 | [还原已启用延伸的数据库](/documentation/articles/sql-server-stretch-database-restore/) | 了解如何还原启用了 Stretch 的数据库。 |
 
-<!---HONumber=Mooncake_0829_2016-->
+<!---HONumber=Mooncake_1114_2016-->
