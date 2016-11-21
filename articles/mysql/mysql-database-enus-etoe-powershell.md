@@ -1,6 +1,6 @@
 <properties linkid="" urlDisplayName="" pageTitle="Use Azure Resource Manager and PowerShell to deploy and use MySQL Database on Azure – Azure cloud" metaKeywords="Azure Cloud, technical documentation, documents and resources, MySQL, database, beginner’s guide, Azure MySQL, MySQL PaaS, Azure MySQL PaaS, Azure MySQL Service, Azure RDS" description="This article explains how to use Azure PowerShell scripts to quickly set up and use MySQL services." metaCanonical="" services="MySQL" documentationCenter="Services" title="" authors="sofia" solutions="" manager="" editor="" />
 
-<tags ms.service="mysql_en" ms.date="07/05/2016" wacn.date="07/05/2016" wacn.lang="en" />
+<tags ms.service="mysql_en" ms.date="11/21/2016" wacn.date="11/21/2016" wacn.lang="en" />
 
 > [AZURE.LANGUAGE]
 - [中文](/documentation/articles/mysql-database-etoe-powershell/)
