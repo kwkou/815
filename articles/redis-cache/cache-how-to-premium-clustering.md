@@ -5,7 +5,8 @@
 	documentationCenter="" 
 	authors="steved0x" 
 	manager="douge" 
-	editor=""/>
+	editor=""/>  
+
 
 <tags 
 	ms.service="cache" 
@@ -13,17 +14,17 @@
 	ms.tgt_pltfrm="cache-redis" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/09/2016" 
-	wacn.date="10/25/2016" 
+	ms.date="09/15/2016" 
+	wacn.date="11/21/2016" 
 	ms.author="sdanie"/>  
 
 
 # 如何为高级 Azure Redis 缓存配置 Redis 群集功能
 Azure Redis 缓存具有不同的缓存产品（包括新推出的高级层），使缓存大小和功能的选择更加灵活。
 
-Azure Redis 缓存高级级别包括群集、暂留和虚拟网络支持。本文介绍如何配置高级 Azure Redis 缓存实例中的群集功能。
+Azure Redis 缓存高级层包括群集、持久性和虚拟网络支持等功能。本文介绍如何配置高级 Azure Redis 缓存实例中的群集功能。
 
-有关其他高级缓存功能的信息，请参阅[如何配置高级 Azure Redis 缓存的暂留](/documentation/articles/cache-how-to-premium-persistence/)和[如何配置高级 Azure Redis 缓存的虚拟网络支持](/documentation/articles/cache-how-to-premium-vnet/)。
+有关其他高级缓存功能的信息，请参阅 [Azure Redis 缓存高级层简介](/documentation/articles/cache-premium-tier-intro/)。
 
 ## 什么是 Redis 群集？
 Azure Redis 缓存提供的 Redis 群集与[在 Redis 中实施](http://redis.io/topics/cluster-tutorial)的一样。Redis 群集具有以下优势。
@@ -33,7 +34,7 @@ Azure Redis 缓存提供的 Redis 群集与[在 Redis 中实施](http://redis.io
 -	更大的吞吐量：增加分片数时，吞吐量呈线性增加。
 -	更大的内存大小：增加分片数时，内存大小呈线性增加。
 
-有关高级缓存大小、吞吐量和带宽的更多详细信息，请参阅 [Azure Redis 缓存常见问题](/documentation/articles/cache-faq/#what-redis-cache-offering-and-size-should-i-use)。
+有关高级缓存大小、吞吐量和带宽的更多详细信息，请参阅 [Azure Redis Cache FAQ](/documentation/articles/cache-faq/#what-redis-cache-offering-and-size-should-i-use)（Azure Redis 缓存常见问题解答）。
 
 在 Azure 中，Redis 群集以主/副模型提供。在该模型中，每个分片都有一个带副本的主/副对，副本由 Azure Redis 缓存服务管理。
 
@@ -51,6 +52,7 @@ Azure Redis 缓存提供的 Redis 群集与[在 Redis 中实施](http://redis.io
 每个分片都是一个由 Azure 管理的主/副缓存对，而缓存的总大小则通过将定价层中选择的缓存大小乘以分片数来计算。
 
 ![群集功能][redis-cache-clustering-selected]  
+
 
 创建缓存后，即可连接到缓存并使用缓存，就像该缓存没有进行群集一样，而 Redis 则会将数据分布到整个缓存分片中。如果诊断[已启用](/documentation/articles/cache-how-to-monitor/#enable-cache-diagnostics)，则会分别为每个分片捕获相应的度量值，这些度量值可以在“Redis 缓存”边栏选项卡中[查看](/documentation/articles/cache-how-to-monitor/)。
 
@@ -88,7 +90,7 @@ Azure Redis 缓存提供的 Redis 群集与[在 Redis 中实施](http://redis.io
 
     有关详细信息，请参阅 [Redis 群集规范 - 已实现子集](http://redis.io/topics/cluster-spec#implemented-subset)。
 
--	如果你使用的是 [StackExchange.Redis](https://www.nuget.org/packages/StackExchange.Redis/)，则必须使用 1.0.481 或更高版本。连接到该缓存时，你使用的[终结点、端口和密钥](/documentation/articles/cache-configure/#properties)与你连接到未启用群集功能的缓存时使用的相同。唯一的区别是，所有读取和写入都必须在数据库 0 中进行。
+-	如果使用的是 [StackExchange.Redis](https://www.nuget.org/packages/StackExchange.Redis/)，则必须使用 1.0.481 或更高版本。连接到该缓存时，你使用的[终结点、端口和密钥](/documentation/articles/cache-configure/#properties)与你连接到未启用群集功能的缓存时使用的相同。唯一的区别是，所有读取和写入都必须在数据库 0 中进行。
 	-	其他客户端可能有不同的要求。请参阅[是否所有 Redis 客户端都支持群集功能？](#do-all-redis-clients-support-clustering)
 -	如果应用程序使用的多个密钥操作都在单个命令中成批执行，则所有密钥都必须位于同一分片。若要完成此操作，请参阅[密钥在群集中是如何分布的？](#how-are-keys-distributed-in-a-cluster)。
 -	如果你使用的是 Redis ASP.NET 会话状态提供程序，则必须使用 2.0.1 或更高版本。请参阅[能否在 Redis ASP.NET 会话状态和输出缓存提供程序中使用群集功能？](#can-i-use-clustering-with-the-redis-aspnet-session-state-and-output-caching-providers)。
@@ -100,7 +102,7 @@ Azure Redis 缓存提供的 Redis 群集与[在 Redis 中实施](http://redis.io
 -	使用哈希标记的密钥 - 如果将密钥的任意部分括在 `{` 和 `}` 中，则只会对密钥的该部分进行哈希处理，以便确定密钥的哈希槽。例如，以下 3 个密钥将位于同一分片中：`{key}1`、`{key}2` 和 `{key}3`，因为只对名称的 `key` 部分进行了哈希处理。如需密钥哈希标记规范的完整列表，请参阅[密钥哈希标记](http://redis.io/topics/cluster-spec#keys-hash-tags)。
 -	没有哈希标记的密钥 - 使用整个密钥名称进行哈希处理。从统计学意义上来说，这样会导致密钥平均分布到缓存的各个分片中。
 
-为了优化性能和吞吐量，我们建议你让密钥平均分布。如果你使用带哈希标记的密钥，则应用程序会负责确保密钥平均分布。
+为了优化性能和吞吐量，建议将密钥平均分布。如果你使用带哈希标记的密钥，则应用程序会负责确保密钥平均分布。
 
 有关详细信息，请参阅[密钥分布模型](http://redis.io/topics/cluster-spec#keys-distribution-model)、[Redis 群集数据分片](http://redis.io/topics/cluster-tutorial#redis-cluster-data-sharding)和[密钥哈希标记](http://redis.io/topics/cluster-spec#keys-hash-tags)。
 
@@ -136,7 +138,7 @@ Azure Redis 缓存提供的 Redis 群集与[在 Redis 中实施](http://redis.io
 
 ### <a name="can-i-configure-clustering-for-a-previously-created-cache"></a>我可以为以前创建的缓存配置群集功能吗？
 
-目前，你只能在创建缓存时启用群集。创建缓存后，你可以更改群集大小，但不能将群集添加到高级缓存，或者从高级缓存中删除群集。已启用群集且只包含一个分片的高级缓存不同于具有相同大小且没有群集的高级缓存。
+目前，只能在创建缓存时启用群集。创建缓存后，你可以更改群集大小，但不能将群集添加到高级缓存，或者从高级缓存中删除群集。已启用群集且只包含一个分片的高级缓存不同于具有相同大小且没有群集的高级缓存。
 
 ### <a name="can-i-configure-clustering-for-a-basic-or-standard-cache"></a>我可以为基本缓存或标准缓存配置群集功能吗？
 
@@ -154,10 +156,10 @@ Azure Redis 缓存提供的 Redis 群集与[在 Redis 中实施](http://redis.io
 ## 后续步骤
 了解如何使用更多的高级版缓存功能。
 
--	[如何为高级 Azure Redis 缓存配置暂留](/documentation/articles/cache-how-to-premium-persistence/)
--	[如何为高级 Azure Redis 缓存配置虚拟网络支持](/documentation/articles/cache-how-to-premium-vnet/)
+-	[Azure Redis 缓存高级层简介](/documentation/articles/cache-premium-tier-intro/)
   
 <!-- IMAGES -->
+
 
 [redis-cache-clustering]: ./media/cache-how-to-premium-clustering/redis-cache-clustering.png
 
@@ -165,4 +167,4 @@ Azure Redis 缓存提供的 Redis 群集与[在 Redis 中实施](http://redis.io
 
 [redis-cache-redis-cluster-size]: ./media/cache-how-to-premium-clustering/redis-cache-redis-cluster-size.png
 
-<!---HONumber=Mooncake_0829_2016-->
+<!---HONumber=Mooncake_1114_2016-->

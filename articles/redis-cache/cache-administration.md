@@ -5,15 +5,16 @@
 	documentationCenter="na"
 	authors="steved0x"
 	manager="douge"
-	editor="tysonn" />
+	editor="tysonn" />  
+
 <tags 
 	ms.service="cache"
 	ms.devlang="na"
 	ms.topic="article"
 	ms.tgt_pltfrm="cache-redis"
 	ms.workload="tbd"
-	ms.date="07/13/2016"
-	wacn.date="09/12/2016"
+	ms.date="09/27/2016"
+	wacn.date="11/21/2016"
 	ms.author="sdanie" />
 
 # 如何管理 Azure Redis 缓存
@@ -35,7 +36,7 @@
 
 ## <a name="reboot"></a>重新启动
 
-你可以通过“重新启动”边栏选项卡重新启动缓存的一个或多个节点。这可以测试应用程序在故障时的还原能力。
+可以通过“重新启动”边栏选项卡重新启动缓存的一个或多个节点。这可以测试应用程序在故障时的还原能力。
 
 ![重新启动](./media/cache-administration/redis-cache-reboot.png)  
 
@@ -75,7 +76,7 @@
 
 >[AZURE.IMPORTANT] 如果由于客户端代码中的逻辑错误或 bug 客户端连接已用完，请注意在 Redis 节点重新联机后，StackExchange.Redis 自动将重新连接。如果未解决这一基本问题，客户端连接将继续用完。
 
-### <a name="will-i-lose-data-from-my-cache-if-i-do-a-reboot"></a>如果我执行重新启动，是否会丢失缓存中的数据？
+### <a name="will-i-lose-data-from-my-cache-if-i-do-a-reboot"></a>如果执行重新启动，是否会丢失缓存中的数据？
 
 如果同时重新启动**主**节点和**从属**节点，则缓存中或该分片中（如果用户使用的是已启用群集的高级缓存）的所有数据都会丢失。如果已配置[数据持久性](/documentation/articles/cache-how-to-premium-persistence/)，则在缓存重新联机时，将还原最新备份。请注意，在进行该备份后进行的所有缓存写入将丢失。
 
@@ -98,19 +99,31 @@
 
 若要指定维护时段，请勾选合适的日期，然后指定每天的维护时段开始时间，最后再单击“确定”。请注意，维护时段使用 UTC 时间。
 
+>[AZURE.NOTE] 更新的默认维护时段为 5 小时。此值不可以在 Azure 门户预览版中配置，但可以在 PowerShell 中使用 [New-AzureRmRedisCacheScheduleEntry](https://msdn.microsoft.com/zh-cn/library/azure/mt763833.aspx) cmdlet 的 `MaintenanceWindow` 参数进行配置。有关详细信息，请参阅 [Can I managed scheduled updates using PowerShell, CLI, or other management tools?](#can-i-managed-scheduled-updates-using-powershell-cli-or-other-management-tools)（能否使用 PowerShell、CLI 或其他管理工具管理计划的更新？）
+
 ## <a name="schedule-updates-faq"></a>计划更新常见问题
 
 -	[如果我不使用计划更新功能，何时进行更新？](#when-do-updates-occur-if-i-dont-use-the-schedule-updates-feature)
 -	[在计划的维护时段进行哪种类型的更新？](#what-type-of-updates-are-made-during-the-scheduled-maintenance-window)
+-	有关详细信息，请参阅[能否使用 PowerShell、CLI 或其他管理工具管理计划的更新？](#can-i-managed-scheduled-updates-using-powershell-cli-or-other-management-tools)
 -	[哪些定价层可以使用计划更新功能？](#what-pricing-tiers-can-use-the-schedule-updates-functionality)
 
-### <a name="when-do-updates-occur-if-i-dont-use-the-schedule-updates-feature"></a>如果我不使用计划更新功能，何时进行更新？
+### <a name="when-do-updates-occur-if-i-dont-use-the-schedule-updates-feature"></a>如果不使用计划更新功能，何时会进行更新？
 
 如果未指定维护时段，可以随时进行更新。
 
 ### <a name="what-type-of-updates-are-made-during-the-scheduled-maintenance-window"></a>在计划的维护时段进行哪种类型的更新？
 
 仅在计划的维护时段进行 Redis 服务器更新。维护时段不适用于 Azure 更新或 VM 操作系统更新。
+
+### <a name="can-i-managed-scheduled-updates-using-powershell-cli-or-other-management-tools"></a>能否使用 PowerShell、CLI 或其他管理工具管理计划的更新？
+
+可以使用以下 PowerShell cmdlet 管理计划的更新。
+
+-	[Get-AzureRmRedisCachePatchSchedule](https://msdn.microsoft.com/zh-cn/library/azure/mt763835.aspx)
+-	[New-AzureRmRedisCachePatchSchedule](https://msdn.microsoft.com/zh-cn/library/azure/mt763834.aspx)
+-	[New-AzureRmRedisCacheScheduleEntry](https://msdn.microsoft.com/zh-cn/library/azure/mt763833.aspx)
+-	[Remove-AzureRmRedisCachePatchSchedule](https://msdn.microsoft.com/zh-cn/library/azure/mt763837.aspx)
 
 ### <a name="what-pricing-tiers-can-use-the-schedule-updates-functionality"></a>哪些定价层可以使用计划更新功能？
 
@@ -120,4 +133,4 @@
 
 -	了解更多 [Azure Redis 缓存高级层](/documentation/articles/cache-premium-tier-intro/)功能。
 
-<!---HONumber=Mooncake_0905_2016-->
+<!---HONumber=Mooncake_1114_2016-->

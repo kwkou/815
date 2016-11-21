@@ -5,7 +5,8 @@
 	documentationCenter="" 
 	authors="steved0x" 
 	manager="douge" 
-	editor=""/>
+	editor=""/>  
+
 
 <tags 
 	ms.service="cache" 
@@ -13,8 +14,8 @@
 	ms.tgt_pltfrm="cache-redis" 
 	ms.devlang="na" 
 	ms.topic="hero-article" 
-	ms.date="07/22/2016" 
-	wacn.date="09/05/2016" 
+	ms.date="10/11/2016" 
+	wacn.date="11/21/2016" 
 	ms.author="sdanie"/>
 
 # 如何使用 Redis 缓存创建 Web 应用
@@ -26,7 +27,7 @@
 - [Java](/documentation/articles/cache-java-get-started/)
 - [Python](/documentation/articles/cache-python-get-started/)
 
-本教程将向你介绍如何使用 Visual Studio 2015 创建 ASP.NET Web 应用程序并将其部署到 Azure 中的 Web 应用。该示例应用程序显示了数据库中的团队统计信息列表，并显示了使用 Azure Redis 缓存通过缓存存储和检索数据的不同方式。完成本教程后，你将有一个运行的 Web 应用，该应用可以对数据库执行读写操作，已通过 Azure Redis 缓存进行优化，并且托管在 Azure 中。
+本教程介绍如何使用 Visual Studio 2015 创建 ASP.NET Web 应用程序并将其部署到 Azure 应用服务中的 Web 应用。该示例应用程序显示了数据库中的团队统计信息列表，并显示了使用 Azure Redis 缓存通过缓存存储和检索数据的不同方式。完成本教程后，你将有一个运行的 Web 应用，该应用可以对数据库执行读写操作，已通过 Azure Redis 缓存进行优化，并且托管在 Azure 中。
 
 学习内容：
 
@@ -34,7 +35,7 @@
 -	如何使用实体框架从数据库访问数据。
 -	如何使用 Azure Redis 缓存来存储和检索数据，以便改进数据吞吐量并降低数据库负载。
 -	如何使用 Redis 排序的集来检索排名前 5 的团队。
--	如何使用 ARM 模板为应用程序预配 Azure 资源。
+-	如何使用 Resource Manager 模板为应用程序预配 Azure 资源。
 -	如何使用 Visual Studio 将应用程序发布到 Azure。
 
 ## 先决条件
@@ -50,7 +51,7 @@
 
 * [注册一元 Azure 帐户](/pricing/1rmb-trial/?WT.mc_id=redis_cache_hero)。获取可用来尝试付费版 Azure 服务的信用额度。即使在信用额度用完之后，你也可以保留帐户和使用免费的 Azure 服务和功能。
 
-### <a name="visual-studio-2015-with-the-azure-sdk-for-net"></a>带有用于 .NET 的 Azure SDK 的 Visual Studio 2015
+### <a name="visual-studio-2015-with-the-azure-sdk-for-net"></a>包含用于 .NET 的 Azure SDK 的 Visual Studio 2015
 
 本教程专为配合使用 Visual Studio 2015 和 [用于 .NET 的 Azure SDK](/documentation/articles/dotnet-sdk/) 2.8.2 或更高版本编写。[单击此处下载最新的用于 Visual Studio 2015 的 Azure SDK](http://go.microsoft.com/fwlink/?linkid=518003)。如果尚未安装 Visual Studio，则会随 SDK 一起自动安装。
 
@@ -67,7 +68,7 @@
     ![创建项目][cache-create-project]  
 
 
-3. 选择“MVC”作为项目类型。清除“在云中托管”复选框。本教程的后续步骤介绍了[预配 Azure 资源](#provision-the-azure-resources)以及[将应用程序发布到 Azure](#publish-the-application-to-azure)。勾选“在云中托管”即可通过 Visual Studio 预配 Azure Web 应用，如需此方面的示例，请参阅[配合 ASP.NET 和 Visual Studio 使用 Azure 中的 Web Apps 入门](/documentation/articles/web-sites-dotnet-get-started/)。
+3. 选择“MVC”作为项目类型。清除“在云中托管”复选框。本教程的后续步骤介绍了[预配 Azure 资源](#provision-the-azure-resources)以及[将应用程序发布到 Azure](#publish-the-application-to-azure)。勾选“在云中托管”即可通过 Visual Studio 预配应用服务 Web 应用，如需此方面的示例，请参阅 [Get started with Web Apps in Azure App Service, using ASP.NET and Visual Studio](/documentation/articles/web-sites-dotnet-get-started/)（通过 ASP.NET 和 Visual Studio 开始使用 Azure 应用服务中的 Web 应用）。
 
     ![选择项目模板][cache-select-template]  
 
@@ -244,7 +245,7 @@
 
 1. 在“解决方案资源管理器”中，先展开 **Views** 文件夹，再展开 **Shared** 文件夹，然后双击 **\_Layout.cshtml**。
 
-    ![_Layout.cshtml][cache-layout-cshtml]
+    ![\_Layout.cshtml][cache-layout-cshtml]
 
 2. 更改 `title` 元素的内容，将 `My ASP.NET Application` 替换为 `Contoso Team Stats`，如以下示例所示。
 
@@ -331,7 +332,7 @@
 	-	之前：`<appSettings>`
 	-	之后：` <appSettings file="C:\AppSecrets\WebAppPlusCacheAppSecrets.config">`
 
-    ASP.NET 运行时合并了外部文件的内容以及 `<appSettings>` 元素中的标记。如果找不到指定的文件，运行时将忽略文件属性。应用程序的源代码中将不包括你的机密（连接到缓存的连接字符串）。将 Web 应用部署到 Azure 时，不会部署 `WebAppPlusCacheAppSecrests.config` 文件（这正是您所需要的）。可以通过多种方式在 Azure 中指定这些机密，而在本教程中，当您在后续的教程步骤中[预配 Azure 资源](#provision-the-azure-resources)时，系统将为您自动配置这些机密。有关如何在 Azure 中处理机密的详细信息，请参阅 [Best practices for deploying passwords and other sensitive data to ASP.NET and Azure Web App](http://www.asp.net/identity/overview/features-api/best-practices-for-deploying-passwords-and-other-sensitive-data-to-aspnet-and-azure)（将密码和其他敏感数据部署到 ASP.NET 和 Azure Web 应用的最佳做法）。
+    ASP.NET 运行时合并了外部文件的内容以及 `<appSettings>` 元素中的标记。如果找不到指定的文件，运行时将忽略文件属性。应用程序的源代码中将不包括你的机密（连接到缓存的连接字符串）。将 Web 应用部署到 Azure 时，不会部署 `WebAppPlusCacheAppSecrests.config` 文件（这正是您所需要的）。可以通过多种方式在 Azure 中指定这些机密，而在本教程中，当您在后续的教程步骤中[预配 Azure 资源](#provision-the-azure-resources)时，系统将为您自动配置这些机密。有关如何在 Azure 中处理机密的详细信息，请参阅 [Best practices for deploying passwords and other sensitive data to ASP.NET and Azure App Service](http://www.asp.net/identity/overview/features-api/best-practices-for-deploying-passwords-and-other-sensitive-data-to-aspnet-and-azure)（有关将密码和其他敏感数据部署到 ASP.NET 与 Azure 应用服务的最佳实践）。
 
 
 ### <a name="update-the-teamscontroller-class-to-return-results-from-the-cache-or-the-database"></a>更新 TeamsController 类，以便从缓存或数据库返回结果
@@ -686,34 +687,71 @@
 
 若要在 Azure 中托管应用程序，必须先预配应用程序所需的 Azure 服务。本教程中的示例应用程序使用以下 Azure 服务。
 
--	Azure Redis 缓存
--	Azure Web 应用
+-	Azure Redis Cache
+-	应用服务 Web 应用
 -	SQL 数据库
 
-从 GitHub 下载[此 ARM 模板](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-web-app-redis-cache-sql-database/azuredeploy.json)，并进行以下修改。
+若要将这些服务部署到选定的新的或现有资源组，请单击下面的“部署到 Azure”按钮。
 
-对于参数 **skuName**，请删除允许的值“P1”、“P2”、“P3”和“P4”，因为 Premium Web App 在 Azure 中国区尚不可用。
+[![部署到 Azure][deploybutton]](https://portal.azure.cn/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F201-web-app-redis-cache-sql-database%2Fazuredeploy.json)
+
+>[AZURE.NOTE] 必须修改从 GitHub 存储库“azure-quickstart-templates”部署的模板，以适应 Azure 中国云环境。例如，替换某些终结点 -- 将“blob.core.windows.net”替换为“blob.core.chinacloudapi.cn”，将“cloudapp.azure.com”替换为“chinacloudapp.cn”。
+
+此“部署到 Azure”按钮使用“创建 Web 应用、Redis 缓存和 SQL 数据库”[Azure 快速入门](https://github.com/Azure/azure-quickstart-templates)模板来预配这些服务，设置 SQL 数据库的连接字符串，以及 Azure Redis 缓存连接字符串的应用程序设置。[](https://github.com/Azure/azure-quickstart-templates/tree/master/201-web-app-redis-cache-sql-database)
+
+>[AZURE.NOTE] 如果你没有 Azure 帐户，只需花费几分钟的时间就能[创建一个免费的 Azure 帐户](/pricing/1rmb-trial/?WT.mc_id=redis_cache_hero)。
+
+单击“部署到 Azure”按钮会转到 Azure 门户预览，并启动创建模板所述资源的过程。
+
+![部署到 Azure][cache-deploy-to-azure-step-1]  
 
 
-完成修改后，请使用以下 PowerShell 命令来部署模板。
+1. 在“自定义部署”边栏选项卡中，选择要使用的 Azure 订阅，然后选择现有资源组或创建新资源组并指定资源组的位置。
+2. 在“参数”边栏选项卡中，指定管理员帐户名 （**ADMINISTRATORLOGIN** - 请勿使用 **admin**）、管理员登录密码 (**ADMINISTRATORLOGINPASSWORD**) 和数据库名称 (**DATABASENAME**)。其他参数是针对免费应用服务托管计划以及不附带免费层的 SQL 数据库和 Azure Redis 缓存低价格选项配置的。
+3. 根据需要更改其他任何设置或保留默认值，然后单击“确定”。
 
-	New-AzureRmResourceGroup -Name MyWebAppPlusCache -Location "China East"
 
-    New-AzureRmResourceGroupDeployment -ResourceGroupName MyWebAppPlusCache -TemplateFile azuredeploy.json
+![部署到 Azure][cache-deploy-to-azure-step-2]  
 
-注意：可以使用参数对象来指定参数。有关详细信息，请参阅[使用 Azure Resource Manager 模板部署资源](/documentation/articles/resource-group-template-deploy/)。
+
+1. 单击“查看法律条款”。
+2. 阅读“购买”边栏选项卡中的条款，然后单击“购买”。
+3. 若要开始预配资源，请单击“自定义部署”边栏选项卡上的“创建”。
+
+若要查看部署进度，请单击通知图标，然后单击“部署已开始”。
+
+![部署已开始][cache-deployment-started]  
+
+
+可以在“Microsoft.Template”边栏选项卡上查看部署状态。
+
+![部署到 Azure][cache-deploy-to-azure-step-3]  
+
+
+预配完成后，可以从 Visual Studio 将应用程序发布到 Azure。
+
+>[AZURE.NOTE] 预配过程中可能发生的任何错误都显示在“Microsoft.Template”Microsoft.Template 边栏选项卡上。常见错误包括 SQL Server 过多或每个订阅的免费应用服务托管计划过多。请解决所有错误，然后单击“Microsoft.Template”边栏选项卡上的“重新部署”或本教程中的“部署到 Azure”按钮重新启动过程。
 
 ## <a name="publish-the-application-to-azure"></a>将应用程序发布到 Azure
+
+>[AZURE.NOTE] 若要在 Visual Studio 2015 中使用 Azure 中国区，需要配置 Visual Studio 环境。有关详细信息，请参阅[开发人员差异](/documentation/articles/developerdifferences/)。
 
 在教程的这一步中，你需要将应用程序发布到 Azure 并在云中运行。
 
 1. 在 Visual Studio 中右键单击“ContosoTeamStats”项目，然后选择“发布”。
 
-    ![发布][cache-publish-app]
+    ![发布][cache-publish-app]  
 
-2. 单击“导入”，然后选择已下载的“发布配置文件”。
 
-	如果你尚未创建 Web 应用，可以登录到 [Azure 经典管理门户](https://manage.windowsazure.cn/)创建一个，然后转到“仪表板”页，在“速览”下下载“发布配置文件”。
+2. 单击“Azure 应用服务”。
+
+    ![发布][cache-publish-to-app-service]  
+
+
+3. 选择创建 Azure 资源时使用的订阅，展开包含资源的资源组，选择所需的 Web 应用，然后单击“确定”。如果前面使用的是“部署到 Azure”按钮，Web 应用名称将以 **webSite** 开头，后接一些附加字符。
+
+    ![选择 Web 应用][cache-select-web-app]  
+
 
 4. 单击“验证连接”对设置进行验证，然后单击“发布”。
 
@@ -768,7 +806,7 @@
 -	如果你有另一个现成的 Azure Redis 缓存实例，则可使用该实例在本地运行此示例。
 -	如果需要创建 Azure Redis 缓存实例，则可按[创建缓存](/documentation/articles/cache-dotnet-how-to-use-azure-redis-cache/#create-a-cache)中的步骤来执行操作。
 
-选择或创建要使用的缓存后，在 Azure 门户中浏览到该缓存，然后检索缓存的[主机名](/documentation/articles/cache-configure/#properties)和[访问密钥](/documentation/articles/cache-configure/#access-keys)。有关说明，请参阅[配置 Redis 缓存设置](/documentation/articles/cache-configure/#configure-redis-cache-settings)。
+选择或创建要使用的缓存后，在 Azure 门户预览中浏览到该缓存，然后检索缓存的[主机名](/documentation/articles/cache-configure/#properties)和[访问密钥](/documentation/articles/cache-configure/#access-keys)。有关说明，请参阅[配置 Redis 缓存设置](/documentation/articles/cache-configure/#configure-redis-cache-settings)。
 
 1. 使用所选编辑器打开在本教程的[配置应用程序以使用 Redis 缓存](#configure-the-application-to-use-redis-cache)步骤中创建的 `WebAppPlusCacheAppSecrets.config` 文件。
 
@@ -787,10 +825,10 @@
 ## 后续步骤
 
 -	在 [ASP.NET](http://asp.net/) 站点上了解有关 [ASP.NET MVC 5 入门](http://www.asp.net/mvc/overview/getting-started/introduction/getting-started)的详细信息。
--	有关在 Azure 中创建 ASP.NET Web 应用的更多示例，请从 [HealthClinic.biz](https://github.com/Microsoft/HealthClinic.biz) 2015 Connect [演示](https://blogs.msdn.microsoft.com/visualstudio/2015/12/08/connectdemos-2015-healthclinic-biz/)参阅 [在 Azure 中创建和部署 ASP.NET Web 应用](https://github.com/Microsoft/HealthClinic.biz/wiki/Create-and-deploy-an-ASP.NET-web-app-in-Azure-App-Service)。
+-	有关在应用服务中创建 ASP.NET Web 应用的更多示例，请参阅 [HealthClinic.biz](https://github.com/Microsoft/HealthClinic.biz) 2015 Connect [演示](https://blogs.msdn.microsoft.com/visualstudio/2015/12/08/connectdemos-2015-healthclinic-biz/)中的 [Create and deploy an ASP.NET web app in Azure App Service](https://github.com/Microsoft/HealthClinic.biz/wiki/Create-and-deploy-an-ASP.NET-web-app-in-Azure-App-Service)（在 Azure 应用服务中创建和部署 ASP.NET Web 应用）。
 	-	有关 HealthClinic.biz 演示的多个快速入门，请参阅 [Azure Developer Tools Quickstarts](https://github.com/Microsoft/HealthClinic.biz/wiki/Azure-Developer-Tools-Quickstarts)（Azure 开发人员工具快速入门）。
 -	详细了解[对新数据库使用 Code First](https://msdn.microsoft.com/data/jj193542) 中介绍的本教程所用实体框架需要的方法。
--	详细了解 [Azure 中的 Web 应用](/home/features/web-site/)。
+-	详细了解 [Azure 应用服务中的 Web 应用](/documentation/articles/app-service-web-overview/)。
 -	了解如何在 Azure 门户预览中[监视](/documentation/articles/cache-how-to-monitor/)缓存。
 
 -	了解 Azure Redis 缓存高级功能
@@ -835,4 +873,4 @@
 [cache-delete-resource-group]: ./media/cache-web-app-howto/cache-delete-resource-group.png
 [cache-delete-confirm]: ./media/cache-web-app-howto/cache-delete-confirm.png
 
-<!---HONumber=Mooncake_0829_2016-->
+<!---HONumber=Mooncake_1114_2016-->

@@ -6,7 +6,8 @@
 	authors="cynthn"
 	manager="timlt"
 	editor="tysonn"
-	tags="azure-service-management"/>
+	tags="azure-service-management"/>  
+
 
 <tags
 	ms.service="virtual-machines-linux"
@@ -14,21 +15,22 @@
 	ms.tgt_pltfrm="vm-linux"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="07/06/2016"
-	wacn.date="08/23/2016"
-	ms.author="cynthn"/>
+	ms.date="09/27/2016"
+	wacn.date="11/21/2016"
+	ms.author="cynthn"/>  
 
-	
+
+
 # 创建运行 Linux 的自定义虚拟机
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]
+> [AZURE.IMPORTANT] Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model/)。本文介绍使用经典部署模型。Azure 建议大多数新部署使用资源管理器模型。有关使用新 Azure 门户预览创建 Linux 虚拟机的信息，请参阅[使用门户在 Azure 上创建 Linux VM](/documentation/articles/virtual-machines-linux-quick-create-portal/)。
+
+
 
 [AZURE.INCLUDE [virtual-machines-common-classic-createportal](../../includes/virtual-machines-common-classic-createportal.md)]
 
+
+
 [AZURE.INCLUDE [virtual-machines-create-linuxvm](../../includes/virtual-machines-create-linuxvm.md)]
 
-## 下一步
-
-你也可以使用经典管理门户[创建运行 Windows 的自定义虚拟机](/documentation/articles/virtual-machines-windows-classic-createportal/)。
-
-<!---HONumber=Mooncake_0215_2016-->
+<!---HONumber=Mooncake_1114_2016-->

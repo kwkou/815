@@ -1,6 +1,6 @@
-对于无法启动或连接到 Azure 虚拟机 (VM) 上运行的应用程序存在各种原因，例如，应用程序未运行和未侦听所需的端口、侦听端口被阻止，或网络规则未将流量正确地传递到应用程序。本文说明有条理地找到问题并更正问题。
+有多种原因可导致无法启用或连接到在 Azure 虚拟机 (VM) 上运行的应用程序。原因包括应用程序未在预期端口上运行或侦听、侦听端口受到阻止，或网络规则未将流量正确传递到应用程序。本文说明有条理地找到问题并更正问题。
 
-如果你在使用 RDP 或 SSH 连接到 VM 时发生问题，请先参阅以下文章之一：
+如果在使用 RDP 或 SSH 连接到 VM 时发生问题，请先参阅以下文章之一：
 
  - [对与基于 Windows 的 Azure 虚拟机的远程桌面连接进行故障排除](/documentation/articles/virtual-machines-windows-troubleshoot-rdp-connection/)
  - [对于基于 Linux 的 Azure 虚拟机的 Secure Shell (SSH) 连接进行故障排除](/documentation/articles/virtual-machines-linux-troubleshoot-ssh-connection/)
@@ -29,48 +29,52 @@
 
 有四个主要区域需要对 Azure 虚拟机上运行的应用程序的访问进行故障排除。
 
-![对无法启动应用程序进行故障排除](./media/virtual-machines-common-troubleshoot-app-connection/tshoot_app_access1.png)
+![对无法启动应用程序进行故障排除](./media/virtual-machines-common-troubleshoot-app-connection/tshoot_app_access1.png)  
+
 
 1.	在 Azure 虚拟机上运行的应用程序。
 	- 应用程序本身是否正常运行？
 2.	Azure 虚拟机。
 	- VM 本身是否正常运行并响应请求？
-3.	云服务的 Azure 终结点包含虚拟机（针对经典部署模型中的虚拟机）、入站 NAT 规则（针对 Resource Manager 部署模型中的虚拟机）和网络安全组。
+3.	Azure 网络终结点。
+	- 用于经典部署模型中虚拟机的云服务终结点。
+	- 用于 Resource Manager 部署模型中虚拟机的网络安全组和入站 NAT 规则。
 	- 流量是否可以通过预期的端口从用户流向 VM/应用程序？
 4.	Internet 边缘设备。
 	- 是否有防火墙规则阻止流量正常流动？
 
-对于通过站点到站点 VPN 或 ExpressRoute 连接访问应用程序的客户端计算机，可能会导致问题的主要区域是应用程序和 Azure 虚拟机。
-若要确定问题并进行更正，请遵循下列步骤。
+对于通过站点到站点 VPN 或 ExpressRoute 连接访问应用程序的客户端计算机，可能会导致问题的主要区域是应用程序和 Azure 虚拟机。若要确定问题根源并进行更正，请执行以下步骤。
 
-## 步骤 1：是否可以访问目标 VM 中的应用程序？
+## 步骤 1：从目标 VM 访问应用程序
 
 尝试使用适当的客户端程序，从运行该程序的 VM 访问应用程序。使用本地主机名、本地 IP 地址或环回地址 (127.0.0.1)。
 
-![直接从 VM 启动应用程序](./media/virtual-machines-common-troubleshoot-app-connection/tshoot_app_access2.png)
+![直接从 VM 启动应用程序](./media/virtual-machines-common-troubleshoot-app-connection/tshoot_app_access2.png)  
+
 
 例如，如果应用程序是 Web 服务器，则在 VM 上打开浏览器，并尝试访问 VM 上托管的网页。
 
 如果可以访问应用程序，请转到[步骤 2](#step2)。
 
-如果不能访问应用程序，请验证以下各项：
+如果不能访问应用程序，请验证以下设置：
 
 - 应用程序是否在目标虚拟机上运行。
 - 应用程序是否在预期 TCP 和 UDP 端口侦听。
 
 在基于 Windows 和基于 Linux 的虚拟机上，使用 **netstat -a** 命令显示活动的侦听端口。检查应用程序应侦听的预期端口的输出。重新启动应用程序，或根据需要将其配置为使用预期的端口，然后尝试在本地重新访问应用程序。
 
-## <a id="step2"></a>步骤 2：是否可以通过相同虚拟网络中的另一台虚拟机访问应用程序？
+## <a id="step2"></a>步骤 2：从同一虚拟网络中的另一个 VM 访问应用程序
 
 使用 VM 的主机名或其 Azure 分配的公共、专用或提供程序 IP 地址尝试访问位于不同 VM 但相同虚拟网络中的应用程序。对于使用经典部署模型创建的虚拟机，请不要使用云服务的公共 IP 地址。
 
-![从不同的 VM 启动应用程序](./media/virtual-machines-common-troubleshoot-app-connection/tshoot_app_access3.png)
+![从不同的 VM 启动应用程序](./media/virtual-machines-common-troubleshoot-app-connection/tshoot_app_access3.png)  
+
 
 例如，如果应用程序是 Web 服务器，则尝试在相同虚拟网络中的不同 VM 上使用浏览器访问网页。
 
 如果可以访问应用程序，请转到[步骤 3](#step3)。
 
-如果不能访问应用程序，请验证以下各项：
+如果不能访问应用程序，请验证以下设置：
 
 - 目标 VM 上的主机防火墙允许入站请求和出站响应流量。
 - 目标 VM 上运行的入侵检测或网络监视软件允许流量。
@@ -81,15 +85,16 @@
 
 在基于 Windows 的虚拟机上，使用具有高级安全性的 Windows 防火墙确定防火墙规则是否排除应用程序的入站和出站流量。
 
-## <a id="step3"></a>步骤 3：是否可以通过虚拟网络之外但未连接到你的计算机所在的相同网络的计算机访问应用程序？
+## <a id="step3"></a>步骤 3：从虚拟网络外部访问应用程序
 
-尝试通过虚拟网络之外的计算机访问应用程序，作为应用程序运行但与原始客户端计算机不在相同的网络的 VM。
+尝试通过虚拟网络之外的计算机访问应用程序，作为应用程序运行的 VM。使用其他网络作为原始客户端计算机。
 
-![从虚拟网络外部的计算机启动应用程序。](./media/virtual-machines-common-troubleshoot-app-connection/tshoot_app_access4.png)
+![从虚拟网络外部的计算机启动应用程序。](./media/virtual-machines-common-troubleshoot-app-connection/tshoot_app_access4.png)  
 
-例如，如果应用程序是Web 服务器，则尝试通过不在虚拟网络中的虚拟机使用浏览器访问网页。
 
-如果不能访问应用程序，请验证以下各项：
+例如，如果应用程序是 Web 服务器，则尝试通过不在虚拟网络中的虚拟机使用浏览器访问网页。
+
+如果不能访问应用程序，请验证以下设置：
 
 - 对于使用经典部署模型创建的 VM：
 	- VM 的终结点配置允许传入流量，尤其是协议（TCP 或 UDP）及公用和专用端口号。
@@ -99,7 +104,7 @@
 - 对于使用 Resource Manager 部署模型创建的 VM：
 	- VM 的入站 NAT 规则配置允许传入流量，尤其是协议（TCP 或 UDP）及公用和专用端口号。
 	- 网络安全组允许入站请求和出站响应流量。
-	- 有关详细信息，请参阅[什么是网络安全组 (NSG)？](/documentation/articles/virtual-networks-nsg/)。
+	- 有关详细信息，请参阅[什么是网络安全组 (NSG)？](/documentation/articles/virtual-networks-nsg/)
 
 如果虚拟机或终结点是负载均衡集的成员，则：
 
@@ -119,4 +124,4 @@
 
 [对于基于 Linux 的 Azure 虚拟机的 Secure Shell (SSH) 连接进行故障排除](/documentation/articles/virtual-machines-linux-troubleshoot-ssh-connection/)
 
-<!---HONumber=Mooncake_0808_2016-->
+<!---HONumber=Mooncake_1114_2016-->

@@ -15,8 +15,8 @@
 	ms.tgt_pltfrm="vm-linux"
 	ms.devlang="na"
 	ms.topic="get-started-article"
-	ms.date="08/08/2016"
-	wacn.date="10/24/2016"
+	ms.date="10/06/2016"
+	wacn.date="11/21/2016"
 	ms.author="v-livech"/>  
 
 
@@ -26,7 +26,7 @@
 
 ## 快速命令列表
 
-在以下命令示例中，请将 &lt; 与 &gt; 之间的值替换为你自己环境中的值。
+在以下命令示例中，请将 &lt; 与 &gt; 之间的值替换为你自己环境中的值。首先请更改目录 `cd ~/.ssh/`，以便所有 ssh 密钥都在该目录中创建。
 
 	ssh-keygen -t rsa -b 2048 -C "<your_user@yourdomain.com>"
 
@@ -69,7 +69,7 @@ Azure 需要至少 2048 位采用 ssh-rsa 格式的公钥和私钥。为了创�
 
 ## 使用 ssh-keygen
 
-此命令使用 2048 位 RSA 创建密码保护的（加密）SSH 密钥对，并为其加上注释以方便识别。
+此命令使用 2048 位 RSA 创建密码保护的（加密）SSH 密钥对，并为其加上注释以方便识别。首先请更改目录 `cd ~/.ssh/`，以便所有 ssh 密钥都在该目录中创建。
 
 	ssh-keygen -t rsa -b 2048 -C "ahmet@fedoraVMAzure"
 
@@ -90,12 +90,12 @@ _命令解释_
 使用现有的 SSH 公钥创建 PEM 格式的密钥：
 
 ```bash
-ssh-keygen -f id_rsa.pub -m 'PEM' -e > id_rsa.pem
+ssh-keygen -f ~/.ssh/id_rsa.pub -e > ~/.ssh/id_ssh2.pem
 ```
 
 ## ssh-keygen 演练
 
-每个步骤的详解。首先运行 `ssh-keygen`。
+每个步骤的详解。首先请切换到 `~/.ssh` 目录，然后运行 `ssh-keygen`。
 
 	ssh-keygen -t rsa -b 2048 -C "ahmet@fedoraVMAzure"
 	Generating public/private rsa key pair.
@@ -218,4 +218,4 @@ ssh-keygen -f id_rsa.pub -m 'PEM' -e > id_rsa.pem
 - [使用 Azure 门户预览创建安全 Linux VM](/documentation/articles/virtual-machines-linux-quick-create-portal/)
 - [使用 Azure CLI 创建安全 Linux VM](/documentation/articles/virtual-machines-linux-quick-create-cli/)
 
-<!---HONumber=Mooncake_1017_2016-->
+<!---HONumber=Mooncake_1114_2016-->
