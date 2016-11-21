@@ -13,8 +13,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
-   ms.date="06/01/2016"
-   wacn.date="07/28/2016"
+   ms.date="10/05/2016"
+   wacn.date="11/21/2016"
    ms.author="nitinme"/>
 
 # Azure HDInsight 文档积压工作

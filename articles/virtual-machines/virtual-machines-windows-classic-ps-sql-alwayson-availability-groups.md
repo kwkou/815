@@ -12,8 +12,8 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="vm-windows-sql-server"
 	ms.workload="infrastructure-services"
-	ms.date="06/09/2016"
-	wacn.date="07/28/2016"
+	ms.date="09/22/2016"
+	wacn.date="11/21/2016"
 	ms.author="mikeray" />
 
 # 在 Azure 中配置 AlwaysOn 可用性组 (PowerShell)

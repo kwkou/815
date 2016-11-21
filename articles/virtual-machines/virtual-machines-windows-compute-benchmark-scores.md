@@ -13,8 +13,8 @@ ms.service="virtual-machines-windows"
  ms.topic="article"
  ms.tgt_pltfrm="vm-windows"
  ms.workload="infrastructure-services"
- ms.date="07/18/2016"
- wacn.date="09/05/2016"
+ ms.date="09/22/2016"
+ wacn.date="11/21/2016"
  ms.author="cynthn"/>
 
 # Windows VM 的计算基准测试分数

@@ -13,8 +13,8 @@ ms.service="virtual-machines-windows"
  ms.topic="article"
  ms.tgt_pltfrm="vm-multiple"
  ms.workload="big-compute"
- ms.date="07/15/2016"
- wacn.date="08/08/2016"
+ ms.date="10/14/2016"
+ wacn.date="11/21/2016"
  ms.author="danlep"/>
 
 # 在 Azure 中将按需“突发”节点添加到 HPC Pack 群集

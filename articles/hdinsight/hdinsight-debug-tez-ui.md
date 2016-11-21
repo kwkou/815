@@ -13,8 +13,8 @@ ms.devlang="na"
 ms.topic="article"
 ms.tgt_pltfrm="na"
 ms.workload="big-data"
-ms.date="07/19/2016"
-wacn.date="09/30/2016"
+ms.date="10/04/2016"
+wacn.date="11/21/2016"
 ms.author="larryfr"/>
 
 # 使用 Tez UI 调试基于 Windows 的 HDInsight 上的 Tez 作业

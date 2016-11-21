@@ -13,8 +13,8 @@ ms.devlang="na"
 ms.topic="article"
 ms.tgt_pltfrm="na"
 ms.workload="big-data"
-ms.date="07/25/2016"
-wacn.date="09/30/2016"
+ms.date="10/11/2016"
+wacn.date="11/21/2016"
 ms.author="larryfr"/>
 
 #使用 Azure 存储空间共享访问签名来限制使用 HDInsight 访问数据

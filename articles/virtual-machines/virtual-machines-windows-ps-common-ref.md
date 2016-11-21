@@ -14,8 +14,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="vm-windows"
    ms.workload="infrastructure-services"
-   ms.date="06/07/2016"
-   wacn.date="07/11/2016"
+   ms.date="09/27/2016"
+   wacn.date="11/21/2016"
    ms.author="davidmu" />
 
 # 创建和管理 VM 的常用 PowerShell 命令

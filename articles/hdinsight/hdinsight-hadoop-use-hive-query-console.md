@@ -14,8 +14,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
-   ms.date="07/19/2016"
-   wacn.date="09/30/2016"
+   ms.date="09/20/2016"
+   wacn.date="11/21/2016"
    ms.author="larryfr"/>
 
 # 使用查询控制台运行 Hive 查询

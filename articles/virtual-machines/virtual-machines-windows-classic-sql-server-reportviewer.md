@@ -13,8 +13,8 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="vm-windows-sql-server"
 	ms.workload="infrastructure-services"
-	ms.date="04/14/2016"
-	wacn.date="05/24/2016"
+	ms.date="10/04/2016"
+	wacn.date="11/21/2016"
 	ms.author="asaxton" />
 
 # 在 Azure 中托管的 Web 应用中使用 ReportViewer

@@ -14,8 +14,8 @@
 	ms.tgt_pltfrm="vm-windows"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="07/20/2016"
-	wacn.date="09/30/2016"
+	ms.date="10/10/2016"
+	wacn.date="11/21/2016"
 	ms.author="iainfou"/>
 
 #在 Windows VM 上安装 MongoDB

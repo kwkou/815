@@ -14,8 +14,8 @@
  ms.topic="article"
  ms.tgt_pltfrm="na"
  ms.workload="big-data"
- ms.date="07/05/2016"
- wacn.date="08/01/2016"
+ ms.date="09/27/2016"
+ wacn.date="11/21/2016"
  ms.author="larryfr"/>
 
 # 使用 HDInsight 上的 Storm 和 HBase 按时间对事件进行关联

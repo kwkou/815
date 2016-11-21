@@ -13,8 +13,8 @@
 	ms.topic="hero-article"
 	ms.tgt_pltfrm="vm-windows-sql-server"
 	ms.workload="infrastructure-services"
-	ms.date="06/08/2016"
-	wacn.date="11/04/2016"
+	ms.date="09/21/2016"
+	wacn.date="11/21/2016"
 	ms.author="jroth" />
 
 # 在 Azure 门户预览中预配 SQL Server 虚拟机

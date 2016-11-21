@@ -14,8 +14,8 @@
 	ms.tgt_pltfrm="vm-windows" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="08/08/2016" 
-	wacn.date="09/12/2016" 
+	ms.date="09/30/2016" 
+	wacn.date="11/21/2016" 
 	ms.author="josephd"/>
 
 # 在混合云中设置用于测试且基于 Web 的 LOB 应用程序
