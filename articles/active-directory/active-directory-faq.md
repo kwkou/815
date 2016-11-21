@@ -14,7 +14,7 @@
 	ms.devlang="na"
 	ms.topic="get-started-article"
 	ms.date="08/16/2016"
-	wacn.date="10/17/2016"
+	wacn.date="11/21/2016"
 	ms.author="markusvi"/>  
 
 
@@ -161,7 +161,7 @@ Azure Active Directory 是综合性的标识即服务 (IDaaS) 解决方案，其
 
 - [Active Directory 身份验证协议](/documentation/articles/active-directory-developers-guide/)
 
-- [Azure Active Directory 中单一登录的工作原理是什么？](/documentation/articles/active-directory-appssoaccess-whatis/#how-does-single-sign-on-with-azure-active-directory-work/)
+- [Azure Active Directory 中单一登录的工作原理是什么？](/documentation/articles/active-directory-appssoaccess-whatis/)
 
 
 

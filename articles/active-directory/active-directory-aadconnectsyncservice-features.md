@@ -14,7 +14,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="08/22/2016"
-	wacn.date="10/11/2016"
+	wacn.date="11/21/2016"
 	ms.author="andkjell;markvi"/>
 
 # Azure AD Connect 同步服务功能
@@ -37,9 +37,9 @@ Azure AD Connect 的同步功能有两个组件：
 
 DirSyncFeature | 注释
 --- | ---
-[DuplicateProxyAddressResiliency<br/>DuplicateUPNResiliency](#duplicate-attribute-resiliency) | 如果某些属性是另一个对象的副本而不会在导出期间导致整个对象失败，则允许隔离该属性。
-[EnableSoftMatchOnUpn](#userprincipalname-soft-match) | 除了允许对象加入主 SMTP 地址，还允许对象加入 userPrincipalName。
-[SynchronizeUpnForManagedUsers](#synchronize-userprincipalname-updates) | 允许同步引擎更新托管/许可（非联合）用户的 userPrincipalName 属性。
+DuplicateProxyAddressResiliency<br/>DuplicateUPNResiliency | 如果某些属性是另一个对象的副本而不会在导出期间导致整个对象失败，则允许隔离该属性。
+EnableSoftMatchOnUpn | 除了允许对象加入主 SMTP 地址，还允许对象加入 userPrincipalName。
+SynchronizeUpnForManagedUsers | 允许同步引擎更新托管/许可（非联合）用户的 userPrincipalName 属性。
 
 启用某个功能后，无法再次将其禁用。
 

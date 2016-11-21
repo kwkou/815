@@ -14,14 +14,14 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="07/12/2016"
-	wacn.date="08/22/2016"
+	wacn.date="11/21/2016"
 	ms.author="asteen"/>  
 
 # 如何使用密码管理报告获取 Operational Insights
 本部分介绍如何使用 Azure Active Directory 的密码管理报告来查看组织中用户对密码重置和更改的使用情况。
 
 - [**密码管理报告概述**](#overview-of-password-management-reports)
-- [**如何查看密码管理报告**](#how-to-view-password-management-reports)
+- **如何查看密码管理报告**
 - [**在组织中查看密码重置注册活动**](#view-password-reset-registration-activity)
 - [**在组织中查看密码重置活动**](#view-password-reset-activity)
 
@@ -37,7 +37,7 @@
 - 哪些管理员经常重置其自己的密码？
 - 密码重置时是否有任何可疑的活动？
 
-
+## <a name="view-password-reset-registration-activity"></a> 
 编写有效的脚本后，接下来请根据你的方案，检查可以检索的密码重置和注册事件。
 
 - [SsprActivityEvent](https://msdn.microsoft.com/library/azure/mt126081.aspx#BKMK_SsprActivityEvent)：列出密码重置事件可用的列

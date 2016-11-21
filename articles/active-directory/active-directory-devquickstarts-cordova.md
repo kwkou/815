@@ -14,7 +14,7 @@
 	ms.devlang="javascript"
 	ms.topic="article"
 	ms.date="09/16/2016"
-	wacn.date="10/11/2016"
+	wacn.date="11/21/2016"
 	ms.author="vittorib"/>  
 
 
@@ -69,7 +69,7 @@ Apache Cordova 可让你开发能够在移动设备上运行的完全成熟的 H
 	-   [ios sim](https://www.npmjs.org/package/ios-sim) - 用于通过命令行在 iOS 模拟器中启动 iOS 应用程序（可以通过终端轻松安装：`npm install -g ios-sim`）
 
 - 生成并运行适用于 Android 的应用程序
-	- 安装 [Java 开发工具包 (JDK) 7](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html) 或更高版本。请确保根据 JDK 安装路径（例如 C:\\Program Files\\Java\\jdk1.7.0\_75）正确设置 `JAVA_HOME`（环境变量）。
+	- 安装 Java 开发工具包 (JDK) 7 或更高版本。请确保根据 JDK 安装路径（例如 C:\\Program Files\\Java\\jdk1.7.0\_75）正确设置 `JAVA_HOME`（环境变量）。
 	- 安装 [Android SDK](http://developer.android.com/sdk/installing/index.html?pkg=tools) 并将 `<android-sdk-location>\tools` 位置（例如 C:\\tools\\Android\\android-sdk\\tools）添加到 `PATH` 环境变量。
 	- 打开 Android SDK Manager（例如，通过终端：`android`）并安装
     - *Android 5.0.1 (API 21)* 平台 SDK

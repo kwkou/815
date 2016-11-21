@@ -15,7 +15,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="identity"
    ms.date="10/11/2016"
-   wacn.date="10/31/2016"
+   wacn.date="11/21/2016"
    ms.author="skwan;bryanla"/>
 
 # 如何使用多租户应用程序模式将任何 Azure Active Directory (AD) 用户登录
@@ -156,7 +156,7 @@ Web 应用程序和 Web API 接收并验证来自 Azure AD 的令牌。
 ## 多租户应用程序和缓存访问令牌
 多租户应用程序也可以获取访问令牌来调用受 Azure AD 保护的 API。配合多租户应用程序使用 Active Directory 身份验证库 (ADAL) 时经常会出现一个错误，就是一开始即使用 /common 来为用户请求令牌、接收响应，然后同样使用 /common 来为同一用户请求后续令牌。由于从 Azure AD 返回的响应来自租户而不同 /common，因此 ADAL 缓存令牌时将它视为来自租户。后续为了为用户获取访问令牌而执行的 /common 调用将错过缓存项，因此系统会再次提示用户登录。为了避免缓存未命中，请确保后续为登录用户执行的调用是针对租户的终结点发出的。
 
-## 相关内容
+## <a name="related-content"></a>相关内容
 
 - [Multi-tenant application samples（多租户应用程序示例）][AAD-Samples-MT]
 - [适用于应用程序的品牌准则][AAD-App-Branding]
@@ -175,7 +175,7 @@ Web 应用程序和 Web API 接收并验证来自 Azure AD 的令牌。
 [AAD-App-Manifest]: /documentation/articles/active-directory-application-manifest/
 [AAD-App-SP-Objects]: /documentation/articles/active-directory-application-objects/
 [AAD-Auth-Scenarios]: /documentation/articles/active-directory-authentication-scenarios/
-[AAD-Consent-Overview]: /documentation/articles/active-directory-integrating-applications/#overview-of-the-consent-framework/
+[AAD-Consent-Overview]: /documentation/articles/active-directory-integrating-applications/
 [AAD-Dev-Guide]: /documentation/articles/active-directory-developers-guide/
 [AAD-Graph-Overview]: /documentation/articles/active-directory-graph-api/
 [AAD-Graph-Perm-Scopes]: https://msdn.microsoft.com/zh-cn/library/azure/ad/graph/howto/azure-ad-graph-api-permission-scopes

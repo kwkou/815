@@ -14,7 +14,7 @@
 	ms.devlang="na"
 	ms.topic="hero-article"
 	ms.date="09/28/2015"
-	wacn.date="06/06/2016"
+	wacn.date="11/21/2016"
 	ms.author="dastrock"/>
 
 # 如何获取 Azure Active Directory 租户
@@ -61,7 +61,7 @@
 如果你以前使用组织帐户注册过 Azure 订阅，则你已经有了一个租户！ 在 [Azure 经典管理门户](https://manage.windowsazure.cn)中，你应该会在“所有项”和“Active Directory”的下面看到一个租户。 你可以根据需要任意使用此租户。你还可以想要使用门户左下角的“新建”按钮创建新租户。
 
 
-## <a name="tart-from-scratch"></a>从头开始
+## <a name="start-from-scratch"></a>从头开始
 如果上述所有方法都不起作用，请不要担心。只需访问 [https://account.windowsazure.cn/organization](https://account.windowsazure.cn/organization)，以新组织的身份注册 Azure。完成注册过程后，你将会获得自己的 Azure AD 租户，该租户使用了你在注册期间选择的域名。在 [Azure 经典管理门户](https://manage.windowsazure.cn)中，可以通过导航到左侧导航栏中“Active Directory”来查找你的租户。
 
 在注册 Azure 的过程中，你需要提供信用卡详细信息。你可以放心地继续注册 - 在 Azure AD 中发布应用程序或者创建新租户时，我们不会向你收费。
