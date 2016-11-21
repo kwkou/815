@@ -6,7 +6,8 @@
 	authors="dlepow"
 	manager="timlt"
 	editor="tysonn"
-	tags="azure-service-management"/>
+	tags="azure-service-management"/>  
+
 
 <tags
 	ms.service="multiple"
@@ -14,8 +15,8 @@
 	ms.tgt_pltfrm="vm-multiple"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="06/15/2016"
-	wacn.date="05/23/2016"
+	ms.date="09/22/2016"
+	wacn.date="11/21/2016"
 	ms.author="danlep"/>
 
 # Azure 服务管理 (asm) 模式下的 Azure CLI 命令
@@ -26,22 +27,22 @@
 
 若要开始，请先[安装 Azure CLI](/documentation/articles/xplat-cli-install) 并[连接到 Azure 订阅](/documentation/articles/xplat-cli-connect/)。
 
-若要在 asm 模式下在命令行中查看当前的命令语法和选项，请键入 `azure help`；若要显示特定命令的帮助，请键入 `azure help [command]`。你还可以在创建和管理具体 Azure 服务的说明文档中找到 CLI 示例。
+有关命令行当前的命令语法和选项，请键入 `azure help`；若要显示特定命令的帮助，请键入 `azure help [command]`。还可以在创建和管理特定 Azure 服务的说明文档中找到 CLI 示例。
 
 可选参数显示在方括号中（例如，`[parameter]`）。其他所有参数都是必需的。
 
-除了此处记录的特定于命令的可选参数外，还有三个可用于显示详细输出（例如请求选项和状态代码）的可选参数。`-v` 参数提供详细输出，而 `-vv` 参数提供更详细的输出。`--json` 选项将以原始的 json 格式输出结果。
+除了此处记录的特定于命令的可选参数外，还有三个可用于显示详细输出（例如请求选项和状态代码）的可选参数。`-v` 参数提供详细输出，而 `-vv` 参数提供更详细的输出。`--json` 选项以原始的 json 格式输出结果。
 
 ## 设置 asm 模式
 
-当前，首次安装 CLI 时，在默认情况下启用 asm 模式。如果需要，请使用以下命令设置 asm 模式。
+使用以下命令启用 Azure CLI 服务管理模式命令。
 
 	azure config mode asm
 
->[AZURE.NOTE] CLI 的 Azure Resource Manager 模式与 asm 模式互斥。即在一种模式下创建的资源不能从另一种模式进行管理。
+>[AZURE.NOTE] CLI 的 Azure Resource Manager 模式与 Azure 服务管理模式互斥。即，在一种模式下创建的资源不能通过另一种模式进行管理。
 
 ## 管理帐户信息和发布设置
-CLI 可以连接到你的帐户的一种方式是使用你的 Azure 订阅信息。（有关其他选项，请参阅[从 Azure CLI 连接到 Azure 订阅](/documentation/articles/xplat-cli-connect)。） 可以从 Azure 经典门户中的发布设置文件中获取此信息，如下所述。可以导入发布设置文件作为永久性本地配置设置，CLI 会将此设置用于后续操作。你只需导入你的发布设置一次。
+CLI 可以连接到帐户的一种方式是使用 Azure 订阅信息。（有关其他选项，请参阅[从 Azure CLI 连接到 Azure 订阅](/documentation/articles/xplat-cli-connect)。） 可以从 Azure 经典门户中的发布设置文件中获取此信息，如下所述。可以导入发布设置文件作为永久性本地配置设置，CLI 会将此设置用于后续操作。只需导入一次发布设置即可。
 
 **account download [options]**
 
@@ -57,7 +58,7 @@ CLI 可以连接到你的帐户的一种方式是使用你的 Azure 订阅信息
 **account import [options] &lt;file>**
 
 
-此命令导入 publishsettings 文件或证书以便日后可以供该工具使用。
+此命令导入 publishsettings 文件或证书，以便在未来的会话中可供该工具使用。
 
 	~$ azure account import publishsettings.publishsettings
 	info:   Importing publish settings file publishsettings.publishsettings
@@ -68,11 +69,11 @@ CLI 可以连接到你的帐户的一种方式是使用你的 Azure 订阅信息
 	warn:   Remember to delete it now that it has been imported.
 	info:   Account publish settings imported successfully
 
-> [AZURE.NOTE] publishsettings 文件可以包含有关多个订阅的详细信息（即，订阅名称和 ID）。当你导入 publishsettings 文件时，第一个订阅将用作默认订阅。若要使用不同订阅，请运行以下命令。<code>~$ azure config set subscription &lt;other-subscription-id&gt;</code>
+> [AZURE.NOTE] publishsettings 文件可以包含有关多个订阅的详细信息（即，订阅名称和 ID）。在导入 publishsettings 文件时，第一个订阅将用作默认订阅。若要使用其他订阅，请运行以下命令：<code>~$ azure config set subscription &lt;other-subscription-id&gt;</code>
 
 **account clear [options]**
 
-此命令删除已导入的存储的发布设置。如果你在此计算机上使用完该工具，并且希望确保日后不能通过你的帐户使用该工具，则使用此命令。
+此命令删除已导入的存储的发布设置。如果在此计算机上用完工具后，希望确保在未来的会话中不能通过帐户使用该工具，可使用此命令。
 
 	~$ azure account clear
 	Clearing account info.
@@ -100,7 +101,7 @@ CLI 可以连接到你的帐户的一种方式是使用你的 Azure 订阅信息
 
 **account affinity-group list [options]**
 
-此命令列出你的 Azure 地缘组。
+此命令列出 Azure 地缘组。
 
 可以在一组虚拟机跨越多台物理计算机时设置地缘组。地缘组指定物理计算机应尽可能彼此接近，从而减少网络延迟。
 
@@ -195,15 +196,15 @@ CLI 可以连接到你的帐户的一种方式是使用你的 Azure 订阅信息
 
 **vm create [options] &lt;dns-name> &lt;image> &lt;userName> [password]**
 
-此命令创建新的 Azure 虚拟机。默认情况下，所创建的每台虚拟机 (vm) 都位于其自己的云服务中；但是，你可以使用此处提及的 -c 选项指定将虚拟机添加到现有云服务中。
+此命令创建新的 Azure 虚拟机。默认情况下，所创建的每台虚拟机 (vm) 都位于其自己的云服务中；但是，可以使用此处提及的 -c 选项指定将虚拟机添加到现有云服务中。
 
-vm create 命令与 Azure 门户一样，只会在生产部署环境中创建虚拟机。目前没有用于在云服务的过渡部署环境中创建虚拟机的选项。如果你的订阅没有现有的 Azure 存储帐户，此命令将创建一个。
+vm create 命令与 Azure 门户一样，只会在生产部署环境中创建虚拟机。目前没有用于在云服务的过渡部署环境中创建虚拟机的选项。如果订阅没有现有的 Azure 存储帐户，此命令将创建一个。
 
-你可以通过 --location 参数指定位置，也可以通过 --affinity-group 参数指定地缘组。如果这两个参数任何一个都没有提供，系统将提示你从有效位置列表中提供一个。
+可以通过 --location 参数指定位置，也可以通过 --affinity-group 参数指定地缘组。如果这两个参数任何一个都没有提供，系统将提示从有效位置列表中提供一个。
 
-所提供密码的长度必须为 8-123 个字符，并且满足你要用于此虚拟机的操作系统的密码复杂度要求。
+所提供密码的长度必须为 8-123 个字符，并且满足要用于此虚拟机的操作系统的密码复杂度要求。
 
-如果你预计需要使用 SSH 来管理部署的 Linux 虚拟机（通常都是如此），则必须在创建虚拟机时通过 -e 选项启用 SSH。在创建该虚拟机后无法启用 SSH。
+如果预计需要使用 SSH 来管理部署的 Linux 虚拟机（通常都是如此），则必须在创建虚拟机时通过 -e 选项启用 SSH。在创建该虚拟机后便无法启用 SSH。
 
 Windows 虚拟机稍后可以通过添加端口 3389 作为终结点来启用 RDP。
 
@@ -212,11 +213,15 @@ Windows 虚拟机稍后可以通过添加端口 3389 作为终结点来启用 RD
 **-c, --connect** 在托管服务中已创建的部署中创建虚拟机。如果 -vmname 未与此选项一起使用，将自动生成新虚拟机的名称。<br />
 **-n, --vm-name** 指定虚拟机的名称。默认情况下，此参数采用托管服务名称。如果未指定 -vmname，将生成 &lt;service-name>&lt;id> 形式的新虚拟机名称，其中 &lt;id> 是服务中现有虚拟机的数量加上 1。例如，如果你使用此命令向拥有一个现有虚拟机的托管服务 MyService 中添加新虚拟机，则会将新虚拟机命名为 MyService2。<br />
 **-u, --blob-url** 指定从中创建虚拟机系统磁盘的目标 Blob 存储 URL。<br />
-**-z, --vm-size** 指定虚拟机的大小。有效值为：“ExtraSmall”、“Small”、“Medium”、“Large”、“ExtraLarge”、“A5”、“A6”、“A7”、“A8”、“A9”、“A10”、“A11”、“Basic\_A0”、“Basic\_A1”、“Basic\_A2”、“Basic\_A3”、“Basic\_A4”、“Standard\_D1”、“Standard\_D2”、“Standard\_D3”、“Standard\_D4”、“Standard\_D11”、“Standard\_D12”、“Standard\_D13”、“Standard\_D14”、“Standard\_DS1”、“Standard\_DS2”、“Standard\_DS3”、“Standard\_DS4”、“Standard\_DS11”、“Standard\_DS12”、“Standard\_DS13”、“Standard\_DS14”、“Standard\_G1”、“Standard\_G2”、“Standard\_G3”、“Standard\_G4”、“Standard\_G55”。默认值为“Small”。<br /> **-r** 添加到 Windows 虚拟机的 RDP 连接。<br />
+**-z, --vm-size** 指定虚拟机的大小。有效值为：
+“ExtraSmall”、“Small”、“Medium”、“Large”、“ExtraLarge”、“A5”、“A6”、“A7”、“A8”、“A9”、“A10”、“A11”、“Basic\_A0”、“Basic\_A1”、“Basic\_A2”、“Basic\_A3”、“Basic\_A4”、“Standard\_D1”、“Standard\_D2”、“Standard\_D3”、“Standard\_D4”、“Standard\_D11”、“Standard\_D12”、“Standard\_D13”、“Standard\_D14”、“Standard\_DS1”、“Standard\_DS2”、“Standard\_DS3”、“Standard\_DS4”、“Standard\_DS11”、“Standard\_DS12”、“Standard\_DS13”、“Standard\_DS14”、“Standard\_G1”、“Standard\_G2”、“Standard\_G3”、“Standard\_G4”、“Standard\_G55”。默认值为“Small”。<br />
+**-r** 添加到 Windows 虚拟机的 RDP 连接。<br />
 **-e, --ssh** 添加到 Windows 虚拟机的 SSH 连接。<br />
-**-t, --ssh-cert** 指定 SSH 证书。<br /> **-s** 订阅。<br />
+**-t, --ssh-cert** 指定 SSH 证书。<br />
+**-s** 订阅。<br />
 **-o, --community** 指定的映像是社区映像。<br />
-**-w** 虚拟网络名称。<br/> **-l, --location** 指定位置（例如，“China North”）。<br />
+**-w** 虚拟网络名称。<br/>
+**-l, --location** 指定位置（例如，“North Central US”）。<br />
 **-a, --affinity-group** 指定地缘组。<br />
 **-w, --virtual-network-name** 指定要在其中添加新虚拟机的虚拟网络。可从 Azure 门户设置和管理虚拟网络。<br />
 **-b, --subnet-names** 指定要分配虚拟机的子网名称。
@@ -338,7 +343,7 @@ Windows 虚拟机稍后可以通过添加端口 3389 作为终结点来启用 RD
 
 此命令将一个 Azure 虚拟机映像导出到文件
 
-	~$ azure vm export "myvm" "C:"
+	~$ azure vm export "myvm" "C:\"
 	info:    Executing command vm export
 	+ Getting virtual machines
 	+ Exporting the VM
@@ -353,7 +358,7 @@ Windows 虚拟机稍后可以通过添加端口 3389 作为终结点来启用 RD
 
 **vm endpoint create &lt;vm-name> &lt;lb-port> [vm-port]**
 
-此命令创建虚拟机终结点。你还可以使用 -u 或 --enable-direct-server-return 来指定是否在此终结点上启用直接服务器返回，默认情况下为禁用。
+此命令创建虚拟机终结点。还可以使用 -u 或 --enable-direct-server-return 来指定是否在此终结点上启用直接服务器返回，默认情况下为禁用。
 
 	~$ azure vm endpoint create my-vm 8888 8888
 	azure vm endpoint create my-vm 8888 8888
@@ -365,7 +370,7 @@ Windows 虚拟机稍后可以通过添加端口 3389 作为终结点来启用 RD
 
 **vm endpoint create-multiple [options] &lt;vm-name> &lt;lb-port>[:&lt;vm-port>[:&lt;protocol>[:&lt;lb-set-name>[:&lt;prob-protocol>:&lt;lb-prob-port>[:&lt;prob-path>]]]]] ]{1-*}**
 
-创建多个 VM 终结点。你还可以使用 -u 或 --enable-direct-server-return 来指定是否在此终结点上启用直接服务器返回，默认情况下为禁用。
+创建多个 VM 终结点。还可以使用 -u 或 --enable-direct-server-return 来指定是否在此终结点上启用直接服务器返回，默认情况下为禁用。
 
 **vm endpoint delete &lt;vm-name> &lt;lb-port>**
 
@@ -429,7 +434,7 @@ Windows 虚拟机稍后可以通过添加端口 3389 作为终结点来启用 RD
 
 **vm image list [options]**
 
-此命令获取虚拟机映像的列表。有三种类型的映像：Microsoft 创建的映像（以“MSFT”作为前缀）、第三方创建的映像（通常以供应商的名称作为前缀）以及你创建的映像。若要创建映像，你可以捕获现有虚拟机或从上载到 Blob 存储的自定义 .vhd 创建映像。有关使用自定义 .vhd 的更多信息，请参见 VM 映像创建。
+此命令获取虚拟机映像的列表。有三种类型的映像：Microsoft 创建的映像（以“MSFT”作为前缀）、第三方创建的映像（通常以供应商的名称作为前缀）以及所创建的映像。若要创建映像，可以捕获现有虚拟机或从上载到 Blob 存储的自定义 .vhd 创建映像。有关使用自定义 .vhd 的更多信息，请参见 VM 映像创建。
 -json 选项指定以原始 JSON 格式返回结果。
 
 	~$ azure vm image list
@@ -479,9 +484,9 @@ Windows 虚拟机稍后可以通过添加端口 3389 作为终结点来启用 RD
 
 **vm image create &lt;name> [source-path]**
 
-此命令创建虚拟机映像。你的自定义 .vhd 文件将上载到 Blob 存储，然后从该位置创建虚拟机映像。然后可使用此虚拟机映像创建虚拟机。Location 和 OS 参数是必需的。
+此命令创建虚拟机映像。自定义 .vhd 文件将上传到 Blob 存储，然后从该位置创建虚拟机映像。然后可使用此虚拟机映像创建虚拟机。Location 和 OS 参数是必需的。
 
-某些系统会施加每进程文件描述符限制。如果超出此限制，工具将显示文件描述符限制错误。你可以使用 -p &lt;number> 参数再次运行此命令，以减小最大并行上载数。默认的最大并行上载数为 96。
+某些系统会施加每进程文件描述符限制。如果超出此限制，工具将显示文件描述符限制错误。可以使用 -p &lt;number> 参数再次运行此命令，以减小最大并行上传数。默认的最大并行上传数为 96。
 
 	~$ azure vm image create mytestimage ./Sample.vhd -o windows -l "China North"
 	info:   Executing command vm image create
@@ -552,9 +557,9 @@ Windows 虚拟机稍后可以通过添加端口 3389 作为终结点来启用 RD
 
 **vm disk create &lt;name> [source-path]**
 
-此命令将上载并注册 Azure 磁盘。必须指定 --blob-url、--location 或 --affinity-group。如果将此命令与 [source-path] 结合使用，将上载指定的 .vhd 文件并创建新映像。然后你可以使用 vm disk attach 将此映像附加到虚拟机。
+此命令将上传并注册 Azure 磁盘。必须指定 --blob-url、--location 或 --affinity-group。如果将此命令与 [source-path] 结合使用，将上传指定的 .vhd 文件并创建新映像。然后可以使用 vm disk attach 将此映像附加到虚拟机。
 
-某些系统会施加每进程文件描述符限制。如果超出此限制，工具将显示文件描述符限制错误。你可以使用 -p &lt;number> 参数再次运行此命令，以减小最大并行上载数。默认的最大并行上载数为 96。
+某些系统会施加每进程文件描述符限制。如果超出此限制，工具将显示文件描述符限制错误。可以使用 -p &lt;number> 参数再次运行此命令，以减小最大并行上传数。默认的最大并行上传数为 96。
 
 	~$ azure vm disk create my-data-disk ~/test.vhd --location "China North"
 	info:   Executing command vm disk create
@@ -566,7 +571,7 @@ Windows 虚拟机稍后可以通过添加端口 3389 作为终结点来启用 RD
 
 **vm disk upload [options] &lt;source-path> &lt;blob-url> &lt;storage-account-key>**
 
-此命令用来上载 vm 磁盘
+此命令用来上传 vm 磁盘
 
 	~$ azure vm disk upload "http://sourcestorage.blob.core.chinacloudapi.cn/vhds/sample.vhd" "http://destinationstorage.blob.core.chinacloudapi.cn/vhds/sample.vhd" "DESTINATIONSTORAGEACCOUNTKEY"
 	info:   Executing command vm disk upload
@@ -583,7 +588,7 @@ Windows 虚拟机稍后可以通过添加端口 3389 作为终结点来启用 RD
 
 **vm disk attach-new &lt;vm-name> &lt;size-in-gb> [blob-url]**
 
-此命令将数据磁盘附加到 Azure 虚拟机。在此示例中，20 是要附加的新磁盘的大小（以 GB 为单位）。你可以选择使用 Blob URL 作为显式指定要创建的目标 Blob 的最后一个参数。如果你不指定 Blob URL，将自动生成一个 Blob 对象。
+此命令将数据磁盘附加到 Azure 虚拟机。在此示例中，20 是要附加的新磁盘的大小（以 GB 为单位）。可以选择使用 Blob URL 作为显式指定要创建的目标 Blob 的最后一个参数。如果不指定 Blob URL，将自动生成一个 Blob 对象。
 
 	~$ azure vm disk attach-new nick-test36 20 http://nghinazz.blob.core.chinacloudapi.cn/vhds/vmdisk1.vhd
 	info:   Executing command vm disk attach-new
@@ -597,7 +602,7 @@ Windows 虚拟机稍后可以通过添加端口 3389 作为终结点来启用 RD
 	info:   Executing command vm disk detach
 	info:   vm disk detach command OK
 
-## 用于管理 Azure 云服务的命令
+##<a name="Commands_to_manage_your_Azure_cloud_services"></a>用于管理 Azure 云服务的命令
 
 Azure 云服务是托管在 Web 角色和辅助角色上的应用程序和服务。以下命令可用于管理 Azure 云服务。
 
@@ -657,7 +662,7 @@ Azure 云服务是托管在 Web 角色和辅助角色上的应用程序和服务
 
 ##<a name="Commands_to_manage_your_Azure_certificates"></a>用于管理 Azure 证书的命令
 
-Azure 服务证书是连接到你的 Azure 帐户的 SSL 证书。
+Azure 服务证书是连接到 Azure 帐户的 SSL 证书。有关 Azure 证书的详细信息，请参阅[管理证书](http://msdn.microsoft.com/zh-cn/library/azure/gg981929.aspx)。
 
 **service cert list [options]**
 
@@ -674,7 +679,7 @@ Azure 服务证书是连接到你的 Azure 帐户的 SSL 证书。
 
 **service cert create &lt;dns-prefix> &lt;file> [password]**
 
-此命令上载证书。将没有密码保护的证书的密码提示保留为空。
+此命令上传证书。将没有密码保护的证书的密码提示保留为空。
 
 	~$ azure service cert create nghinazz ~/publishSet.pfx
 	info:   Executing command service cert create
@@ -695,11 +700,11 @@ Azure 服务证书是连接到你的 Azure 帐户的 SSL 证书。
 
 ##<a name="Commands_to_manage_your_web_sites"></a>用于管理网站的命令
 
-Azure Web 应用是可通过 URI 访问的 Web 配置。 Web 应用在虚拟机中托管，但你无需自己考虑创建和部署虚拟机的详细步骤。这些详细步骤将由 Azure 为你完成。
+Azure 网站是可通过 URI 访问的 Web 配置。尽管网站托管在虚拟机中，但无需自己考虑创建和部署虚拟机的详细步骤。这些详细步骤将由 Azure 为你完成。
 
 **site list [options]**
 
-此命令列出你的 Web 应用。
+此命令列出网站。
 
 	~$ azure site list
 	info:   Executing command site list
@@ -712,7 +717,7 @@ Azure Web 应用是可通过 URI 访问的 Web 配置。 Web 应用在虚拟机�
 
 **site set [options] [name]**
 
-此命令将设置你的 Web 应用[名称] 的配置选项
+此命令将设置网站 [name] 的配置选项
 
 	~$ azure site set
 	info:    Executing command site set
@@ -733,7 +738,7 @@ Azure Web 应用是可通过 URI 访问的 Web 配置。 Web 应用在虚拟机�
 
 **site create [options] [name]**
 
-此命令创建新的 Web 应用和本地目录。
+此命令创建新的网站和本地目录。
 
 	~$ azure site create mysite
 	info:   Executing command site create
@@ -744,7 +749,7 @@ Azure Web 应用是可通过 URI 访问的 Web 配置。 Web 应用在虚拟机�
 	info:   Repository initialized
 	info:   site create command OK
 
-> [AZURE.NOTE]站点名称必须是唯一的。你无法创建与现有站点具有相同 DNS 名称的站点。
+> [AZURE.NOTE] 站点名称必须是唯一的。无法创建与现有站点具有相同 DNS 名称的站点。
 
 **site browse [options] [name]**
 
@@ -842,12 +847,8 @@ Azure Web 应用是可通过 URI 访问的 Web 配置。 Web 应用在虚拟机�
 	+ Getting locations
 	data:    Name
 	data:    ----------------
-	data:    West Europe
 	data:    China North
-	data:    North Central China
-	data:    North Europe
-	data:    East Asia
-	data:    ChinaEast
+	data:    China East
 	info:    site location list command OK
 
 <a id="Commands_to_manage_mobile_services"></a>
@@ -1294,7 +1295,7 @@ Azure 移动服务汇聚了一系列支持你的应用程序的后端功能的 A
 
 密钥类型为 `master` 和 `application`。
 
-> [AZURE.NOTE] 当重新生成密钥时，使用旧密钥的客户端可能无法访问你的移动服务。当重新生成应用程序密钥时，应使用新密钥值更新你的应用程序。
+> [AZURE.NOTE] 当重新生成密钥时，使用旧密钥的客户端可能无法访问你的移动服务。当重新生成应用程序密钥时，应使用新密钥值更新应用程序。
 
 **mobile key set [options] [servicename] [type] [value]**
 
@@ -1347,7 +1348,7 @@ Azure 移动服务汇聚了一系列支持你的应用程序的后端功能的 A
 
 **mobile table list [options] [servicename]**
 
-此命令列出您的移动服务中的所有表。
+此命令列出你的移动服务中的所有表。
 
 	~$azure mobile table list todolist
 	info:    Executing command mobile table list
@@ -1392,7 +1393,7 @@ Azure 移动服务汇聚了一系列支持你的应用程序的后端功能的 A
 
 此命令支持以下附加选项：
 
-+ **-p`&lt;permissions>`** 或 **--permissions`&lt;permissions>`**：以逗号分隔的 `<operation>`=`<permission>` 对列表，其中 `<operation>` 为 `insert`、`read`、`update` 或 `delete`；`&lt;permissions>` 为 `public`、`application`（默认值）、`user` 或 `admin`。
++ **-p `&lt;permissions>`** 或 **--permissions `&lt;permissions>`**：以逗号分隔的 `<operation>`=`<permission>` 对列表，其中 `<operation>` 为 `insert`、`read`、`update` 或 `delete`；`&lt;permissions>` 为 `public`、`application`（默认值）、`user` 或 `admin`。
 
 **mobile data read [options] [servicename] [tablename] [query]**
 
@@ -1426,7 +1427,7 @@ Azure 移动服务汇聚了一系列支持你的应用程序的后端功能的 A
 
 此命令支持以下附加选项：
 
-+ **-p`&lt;permissions>`** 或 **--permissions`&lt;permissions>`**：以逗号分隔的 `<operation>`=`<permission>` 对列表，其中 `<operation>` 为 `insert`、`read`、`update` 或 `delete`；`&lt;permissions>` 为 `public`、`application`（默认值）、`user` 或 `admin`。
++ **-p `&lt;permissions>`** 或 **--permissions `&lt;permissions>`**：以逗号分隔的 `<operation>`=`<permission>` 对列表，其中 `<operation>` 为 `insert`、`read`、`update` 或 `delete`；`&lt;permissions>` 为 `public`、`application`（默认值）、`user` 或 `admin`。
 + **--deleteColumn `<columns>`**：要删除的列的逗号分隔列表，如 `<columns>`。
 + **-q** 或 **--quiet**：删除列而不提示确认。
 + **--addIndex`<columns>`**：要包含在索引中的列的逗号分隔列表。
@@ -1553,7 +1554,7 @@ Azure 移动服务汇聚了一系列支持你的应用程序的后端功能的 A
 	+ **none**（按需作业）
 + **-t`<time>`** **--startTime `<time>`** 脚本的首次运行开始时间，采用 ISO 格式；默认值为 `now`。
 
-> [AZURE.NOTE] 创建的新作业处于禁用状态，因为还必须上载脚本。请使用 **mobile script upload** 命令上载脚本并使用 **mobile job update** 命令启用作业。
+> [AZURE.NOTE] 创建的新作业处于禁用状态，因为还必须上传脚本。请使用 **mobile script upload** 命令上载脚本并使用 **mobile job update** 命令启用作业。
 
 **mobile job update [options] [servicename] [jobname]**
 
@@ -1583,7 +1584,7 @@ Azure 移动服务汇聚了一系列支持你的应用程序的后端功能的 A
 	info:    Executing command mobile job delete
 	info:    mobile job delete command OK
 
-> [AZURE.NOTE] 删除作业也将删除已上载的脚本。
+> [AZURE.NOTE] 删除作业也将删除已上传的脚本。
 
 ###<a name="Mobile_Scale"></a>用于缩放移动服务的命令
 
@@ -1641,7 +1642,7 @@ Azure 移动服务汇聚了一系列支持你的应用程序的后端功能的 A
 
 **mobile api list [options] [servicename]**
 
-此命令列出你为你的移动服务创建的移动服务自定义 API。
+此命令列出为移动服务创建的移动服务自定义 API。
 
 	~$ azure mobile api list mysite
 	info:    Executing command mobile api list
@@ -1733,7 +1734,7 @@ Azure 移动服务汇聚了一系列支持你的应用程序的后端功能的 A
 
 ##<a name="Manage_tool_local_settings"></a>管理工具本地设置
 
-本地设置是指你的订阅 ID 和默认存储帐户名称。
+本地设置是指订阅 ID 和默认存储帐户名称。
 
 **config list [options]**
 
@@ -1756,7 +1757,7 @@ Azure 移动服务汇聚了一系列支持你的应用程序的后端功能的 A
 
 ##<a name ="Commands_to_manage_service_bus"></a>用于管理 Service Bus 的命令
 
-使用这些命令来管理你的 Service Bus 帐户
+使用这些命令来管理 Service Bus 帐户
 
 **sb namespace check [options] &lt;name>**
 
@@ -1792,7 +1793,7 @@ Azure 移动服务汇聚了一系列支持你的应用程序的后端功能的 A
 
 **sb namespace list**
 
-列出为你的帐户创建的所有命名空间。
+列出为帐户所创建的所有命名空间。
 
 	~$ azure sb namespace list
 	info:    Executing command sb namespace list
@@ -1843,7 +1844,7 @@ Azure 移动服务汇聚了一系列支持你的应用程序的后端功能的 A
 
 **storage account list [options]**
 
-此命令显示你的订阅上的存储帐户。
+此命令显示订阅上的存储帐户。
 
 	~$ azure storage account list
 	info:    Executing command storage account list
@@ -1922,7 +1923,8 @@ Azure 移动服务汇聚了一系列支持你的应用程序的后端功能的 A
 + **-c** 或 **--connection-string** &lt;connectionString>：存储连接字符串。
 + **--debug**：在调试模式下运行 storage 命令。
 
-**storage container show [options] [container]** **storage container create [options] [container]**
+**storage container show [options] [container]**
+**storage container create [options] [container]**
 
 此命令为指定的存储帐户创建存储容器。存储帐户是通过连接字符串或者存储帐户名称和帐户密钥指定的。
 
@@ -2038,11 +2040,11 @@ Azure 移动服务汇聚了一系列支持你的应用程序的后端功能的 A
 
 ##<a name ="Commands_to_manage_sql"></a>用于管理 SQL 数据库的命令
 
-使用这些命令来管理你的 Azure SQL 数据库
+使用这些命令来管理 Azure SQL 数据库
 
 ###用于管理 SQL Server 的数据库
 
-使用这些命令来管理你的 SQL Server
+使用这些命令来管理 SQL Server
 
 **sql server create &lt;administratorLogin> &lt;administratorPassword> &lt;location>**
 
@@ -2091,7 +2093,7 @@ Azure 移动服务汇聚了一系列支持你的应用程序的后端功能的 A
 
 ###用于管理 SQL 数据库的命令
 
-使用这些命令来管理你的 SQL 数据库。
+使用这些命令来管理 SQL 数据库。
 
 **sql db create [options] &lt;serverName> &lt;databaseName> &lt;administratorPassword>**
 
@@ -2236,7 +2238,7 @@ Azure 移动服务汇聚了一系列支持你的应用程序的后端功能的 A
 
 ##<a name ="Commands_to_manage_vnet"></a>用于管理虚拟网络的命令
 
-使用这些命令来管理你的虚拟网络
+使用这些命令来管理虚拟网络
 
 **network vnet create [options] &lt;location>**
 
@@ -2304,7 +2306,7 @@ Azure 移动服务汇聚了一系列支持你的应用程序的后端功能的 A
 
 **network export [file-path]**
 
-若要进行高级网络配置，请在本地导出你的网络配置。注意，导出的网络配置包括 DNS 服务器设置、虚拟网络设置、本地网络站点设置和其他设置。
+若要进行高级网络配置，请在本地导出网络配置。注意，导出的网络配置包括 DNS 服务器设置、虚拟网络设置、本地网络站点设置和其他设置。
 
 **network import [file-path]**
 
@@ -2312,7 +2314,7 @@ Azure 移动服务汇聚了一系列支持你的应用程序的后端功能的 A
 
 **network dnsserver register [options] &lt;dnsIP>**
 
-注册你计划在网络配置中用来进行名称解析的 DNS 服务器。
+注册计划在网络配置中用来进行名称解析的 DNS 服务器。
 
 	~$ azure network dnsserver register 98.138.253.109 --dns-id FrontEndDnsServer
 	info:    Executing command network dnsserver register
@@ -2322,7 +2324,7 @@ Azure 移动服务汇聚了一系列支持你的应用程序的后端功能的 A
 
 **network dnsserver list**
 
-列出在你的网络配置中注册的所有 DNS 服务器。
+列出在网络配置中注册的所有 DNS 服务器。
 
 	~$ azure network dnsserver list
 	info:    Executing command network dnsserver list
@@ -2344,4 +2346,4 @@ Azure 移动服务汇聚了一系列支持你的应用程序的后端功能的 A
 	+ Deleting the DNS server entry dns-4 ( 77.88.99.11 )
 	info:    network dnsserver unregister command OK
 
-<!---HONumber=AcomDC_0718_2016-->
+<!---HONumber=Mooncake_1114_2016-->
