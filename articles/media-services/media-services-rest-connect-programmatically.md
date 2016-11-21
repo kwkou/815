@@ -1,11 +1,12 @@
 <properties 
-	pageTitle="使用 REST API 连接到媒体服务帐户" 
+	pageTitle="使用 REST API 连接到媒体服务帐户 | Azure" 
 	description="本主题演示如何使用 REST API 连接到媒体服务。" 
 	services="media-services" 
 	documentationCenter="" 
 	authors="Juliako" 
-	manager="dwrede" 
-	editor=""/>
+	manager="erikre" 
+	editor=""/>  
+
 
 <tags 
 	ms.service="media-services" 
@@ -13,8 +14,8 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="06/22/2016" 
-	wacn.date="08/15/2016"  
+	ms.date="09/26/2016"  
+	wacn.date="11/21/2016"  
 	ms.author="juliako"/>
 
 
@@ -30,8 +31,8 @@
 
 以下步骤描述了在使用媒体服务 REST API 连接到媒体服务时运用的最常见工作流：
 
-1. 获取访问令牌 
-2. 连接到媒体服务 URI 
+1. 获取访问令牌
+2. 连接到媒体服务 URI
 
 	>[AZURE.NOTE]上海 DC URI：https://wamsshaclus001rest-hs.chinacloudapp.cn/API/ ； 北京 DC URI： https://wamsbjbclus001rest-hs.chinacloudapp.cn/API/
 
@@ -39,7 +40,7 @@
 
 ##获取访问令牌
 
-若要直接通过 REST API 访问媒体服务，请从 ACS 检索一个访问令牌，并在向该服务提出每个 HTTP 请求期间使用该令牌。此令牌类似于 ACS 基于 HTTP 请求标头中的访问声明提供的其他令牌，并且使用 OAuth v2 协议。在直接连接到媒体服务之前，你不需要满足任何其他先决条件。
+若要直接通过 REST API 访问媒体服务，请从 ACS 中检索一个访问令牌，并在向该服务提出每个 HTTP 请求期间使用该令牌。此令牌类似于 ACS 基于 HTTP 请求标头中的访问声明提供的其他令牌，并且使用 OAuth v2 协议。在直接连接到媒体服务之前，你不需要满足任何其他先决条件。
 
 以下示例显示了用于检索令牌的 HTTP 请求标头和正文。
 
@@ -90,7 +91,7 @@
 	
 
 >[AZURE.NOTE]
-建议在外部存储中缓存“access\_token”和“expires\_in”值。以后可以从存储中检索令牌数据，并在你的媒体服务 REST API 调用中重新使用。这对于令牌可以在多个进程或多台计算机之间安全共享的方案尤其有用。
+建议在外部存储中缓存“access\_token”和“expires\_in”值。以后可以从存储中检索令牌数据，并在媒体服务 REST API 调用中重新使用。这对于令牌可以在多个进程或多台计算机之间安全共享的方案尤其有用。
 
 确保监视访问令牌的“expires\_in”值，并在必要时使用新令牌更新你的 REST API 调用。
 
@@ -130,4 +131,4 @@
 
 
 
-<!---HONumber=Mooncake_0808_2016-->
+<!---HONumber=Mooncake_1114_2016-->

@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="使用 Azure 媒体包装器完成静态打包任务" 
+	pageTitle="使用 Azure 媒体包装器完成静态打包任务 | Azure" 
 	description="本主题说明了通过 Azure 媒体包装器完成的各种任务。" 
 	services="media-services" 
 	documentationCenter="" 
@@ -7,15 +7,17 @@
 	manager="erikre" 
 	editor=""/>  
 
+
 <tags 
 	ms.service="media-services" 
 	ms.workload="media" 
 	ms.tgt_pltfrm="na" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
- 	ms.date="06/22/2016" 
- 	wacn.date="11/17/2016"    
+ 	ms.date="09/26/2016"    
+ 	wacn.date="11/21/2016"    
 	ms.author="juliako"/>
+
 
 
 # 使用 Azure 媒体包装器完成静态打包任务
@@ -1440,4 +1442,4 @@
 	    }
 	}
 
-<!---HONumber=Mooncake_0815_2016-->
+<!---HONumber=Mooncake_1114_2016-->

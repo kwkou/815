@@ -14,8 +14,8 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="06/22/2016" 
-	wacn.date="08/22/2016" 
+	ms.date="09/26/2016" 
+	wacn.date="11/21/2016" 
 	ms.author="juliako"/>
 
 
@@ -92,4 +92,4 @@ Azure 媒体加密器|已过时|
 
 了解如何获取媒体处理器实例后，请转到[如何对资产进行编码](/documentation/articles/media-services-rest-get-started/)主题，其中说明了如何使用媒体编码器标准版对资产进行编码。
 
-<!---HONumber=Mooncake_0815_2016-->
+<!---HONumber=Mooncake_1114_2016-->

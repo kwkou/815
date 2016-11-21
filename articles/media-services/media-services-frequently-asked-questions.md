@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="常见问题" 
+	pageTitle="常见问题 | Azure" 
 	description="常见问题 (FAQ)" 
 	services="media-services" 
 	documentationCenter="" 
@@ -14,19 +14,19 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="06/22/2016" 
-	wacn.date="08/22/2016" 
+	ms.date="09/19/2016" 
+	wacn.date="11/21/2016" 
 	ms.author="juliako"/>
 
 
 
-#常见问题  
+#常见问题
 
-##一般性的 AMS 常见问题 
+##一般性的 AMS 常见问题
 
 问：如何缩放索引？
 
-答：编码任务和索引任务的保留单位相同。请遵循[如何缩放编码保留单位](/documentation/articles/media-services-how-to-scale/)中的说明。**请注意**，保留单位类型不影响索引器性能。
+答：编码任务和索引任务的保留单位相同。请遵循[如何缩放编码保留单位](/documentation/articles/media-services-scale-media-processing-overview/)中的说明。**请注意**，保留单位类型不影响索引器性能。
 
 问：我已经上载、编码并发布了视频。为什么在我尝试对视频进行流式处理时，它不播放？
 
@@ -75,4 +75,4 @@
 	
 	...
 
-<!---HONumber=Mooncake_0815_2016-->
+<!---HONumber=Mooncake_1114_2016-->

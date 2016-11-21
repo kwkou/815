@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="使用 REST 创建 ContentKey" 
+	pageTitle="使用 REST 创建 ContentKey | Azure" 
 	description="了解如何创建提供对资产进行安全访问的内容密钥。" 
 	services="media-services" 
 	documentationCenter="" 
@@ -14,8 +14,8 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="06/22/2016" 
-	wacn.date="08/22/2016"  
+	ms.date="09/26/2016"  
+	wacn.date="11/21/2016"  
 	ms.author="juliako"/>
 
 
@@ -255,4 +255,4 @@
 
 	HTTP/1.1 204 No Content 
 
-<!---HONumber=Mooncake_0815_2016-->
+<!---HONumber=Mooncake_1114_2016-->

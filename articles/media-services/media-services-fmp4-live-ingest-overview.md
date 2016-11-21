@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Azure 媒体服务分片 MP4 实时引入规范" 
+	pageTitle="Azure 媒体服务分片 MP4 实时引入规范 | Azure" 
 	description="本规范描述基于分片 MP4 的实时流引入协议和格式（适用于 Azure 媒体服务）。Azure 媒体服务提供实时流服务，让客户使用 Azure 作为云平台来实时流式传输实时事件和广播内容。本文档还介绍了有关构建高度冗余和稳健的实时引入机制的最佳实践。" 
 	services="media-services" 
 	documentationCenter="" 
@@ -14,8 +14,8 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="06/22/2016" 
-	wacn.date="08/22/2016"     
+	ms.date="09/26/2016"     
+	wacn.date="11/21/2016"     
 	ms.author="cenkdin;juliako"/>
 
 
@@ -223,4 +223,4 @@ Azure 媒体服务的 ISO 分片 MP4 实时引入使用长时间运行的标准 
 
  
 
-<!---HONumber=Mooncake_0815_2016-->
+<!---HONumber=Mooncake_1114_2016-->

@@ -3,9 +3,10 @@
 	description="介绍如何使用 Azure 媒体服务执行编码、加密和流式处理资源等常见任务。" 
 	services="media-services" 
 	documentationCenter="java" 
-	authors="rmcmurray" 
-	manager="wpickett" 
-	editor="jimbe"/>
+	authors="juliako" 
+	manager="erikre" 
+/>  
+
 
 <tags 
 	ms.service="media-services" 
@@ -13,8 +14,8 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="get-started-article"
-	ms.date="08/17/2016"
-	wacn.date="10/10/2016"   
+	ms.date="10/12/2016"   
+	wacn.date="11/21/2016"   
 	ms.author="juliako"/>
 
 
@@ -24,7 +25,7 @@
 
 ##<a id="setup-account"></a>为媒体服务设置 Azure 帐户
 
-若要设置你的媒体服务帐户，请使用 Azure 经典管理门户。请参阅主题[如何创建媒体服务帐户](/documentation/articles/media-services-create-account/)。在 Azure 经典管理门户中创建帐户后，便可以设置你的计算机以进行媒体服务开发。
+若要设置媒体服务帐户，请使用 Azure 经典管理门户。请参阅主题[如何创建媒体服务帐户](/documentation/articles/media-services-create-account/)。在 Azure 经典管理门户中创建帐户后，便可以设置计算机以进行媒体服务开发。
 
 ##<a id="setup-dev"></a>完成设置以进行媒体服务开发
 
@@ -41,7 +42,7 @@
 
 使用此代码前，需设置一个媒体服务帐户。有关设置帐户的信息，请参阅[如何创建媒体服务帐户](/documentation/articles/media-services-create-account/)。
 
-将“clientId”和“clientSecret”变量替换为你自己的值。该代码还依赖于本地存储的文件。你需要提供自己的文件以供使用。
+将“clientId”和“clientSecret”变量替换为你自己的值。该代码还依赖于本地存储的文件。需要提供自己的文件以供使用。
 	
 	import java.io.*;
 	import java.security.NoSuchAlgorithmException;
@@ -185,8 +186,8 @@
 	        // Create a task with the specified Media Processor
 	        String outputAssetName = String.format("%s as %s", assetToEncode.getName(), encodingPreset);
 	        String taskXml = "<taskBody><inputAsset>JobInputAsset(0)</inputAsset>"
-	                + "<outputAsset assetCreationOptions="0"" // AssetCreationOptions.None
-	                + " assetName="" + outputAssetName + "">JobOutputAsset(0)</outputAsset></taskBody>";
+	                + "<outputAsset assetCreationOptions=\"0\"" // AssetCreationOptions.None
+	                + " assetName=\"" + outputAssetName + "\">JobOutputAsset(0)</outputAsset></taskBody>";
 	
 	        Task.CreateBatchOperation task = Task.create(mediaProcessor.getId(), taskXml)
 	                .setConfiguration(encodingPreset).setName("Encoding");
@@ -272,4 +273,4 @@
 
  
 
-<!---HONumber=Mooncake_0926_2016-->
+<!---HONumber=Mooncake_1114_2016-->

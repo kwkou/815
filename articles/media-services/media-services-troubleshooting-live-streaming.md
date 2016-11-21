@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="实时流式处理故障排除指南" 
+	pageTitle="实时流式处理故障排除指南 | Azure" 
 	description="本主题提供有关如何排查实时流式处理问题的建议。" 
 	services="media-services" 
 	documentationCenter="" 
@@ -7,15 +7,17 @@
 	manager="erikre" 
 	editor=""/>  
 
+
 <tags 
 	ms.service="media-services" 
 	ms.workload="media" 
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="06/22/2016" 
-	wacn.date="08/22/2016"  
+	ms.date="10/12/2016"  
+	wacn.date="11/21/2016"  
 	ms.author="juliako"/>
+
 
 #实时流式处理故障排除指南
 
@@ -29,7 +31,7 @@
 
 - **潜在问题**：找不到可帮助调试问题的编码器日志。
 	
-	- **Telestream Wirecast**：通常可以在 C:\Users{username}\AppData\Roaming\Wirecast\ 下找到日志
+	- **Telestream Wirecast**：通常可以在 C:\\Users{username}\\AppData\\Roaming\\Wirecast\\ 下找到日志
 	- **Elemental Live**：可以在管理门户上找到日志的链接。单击“统计信息”，然后单击“日志”。在“日志文件”页上，可以看到所有 LiveEvent 项的日志列表；选择与当前会话匹配的日志。
 	- **Flash Media Live Encoder**：可以通过导航到“编码日志”选项卡找到“日志目录...”。
 	
@@ -76,4 +78,4 @@
 	
 >[AZURE.NOTE] 如果遵循故障排除步骤后仍然无法成功流式处理，请[在线申请支持](/support/support-ticket-form/?l=zh-cn)创建工单。
 
-<!---HONumber=Mooncake_0815_2016-->
+<!---HONumber=Mooncake_1114_2016-->

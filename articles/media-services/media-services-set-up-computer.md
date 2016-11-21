@@ -7,14 +7,15 @@
 	manager="erikre"
 	editor=""/>  
 
+
 <tags
 	ms.service="media-services"
 	ms.workload="media"
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="get-started-article"
-	ms.date="06/22/2016"
-	wacn.date="08/22/2016"
+	ms.date="10/12/2016"
+	wacn.date="11/21/2016"
 	ms.author="juliako"/>
 
 # 设置你的环境
@@ -45,4 +46,4 @@
 
 [AZURE.INCLUDE [media-services-selector-connect](../../includes/media-services-selector-connect.md)]
 
-<!---HONumber=Mooncake_0815_2016-->
+<!---HONumber=Mooncake_1114_2016-->

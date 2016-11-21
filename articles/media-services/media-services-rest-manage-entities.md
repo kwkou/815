@@ -1,6 +1,6 @@
 
 <properties 
-	pageTitle="使用 REST API 管理媒体服务实体" 
+	pageTitle="使用 REST API 管理媒体服务实体 | Azure" 
 	description="了解如何使用 REST API 管理媒体服务实体。" 
 	authors="juliako" 
 	manager="dwrede" 
@@ -15,8 +15,8 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="06/22/2016" 
-	wacn.date="11/17/2016" 
+	ms.date="09/26/2016" 
+	wacn.date="11/21/2016" 
 	ms.author="juliako"/>
 
 
@@ -28,11 +28,11 @@
 
 Azure 媒体服务是一项以 OData v3 为基础的基于 REST 的服务。因此，你可以像在任何其他 OData 服务上一样添加、查询、更新和删除实体。适用时，将标注例外情况。有关 OData 的详细信息，请参阅[开放数据协议文档](http://www.odata.org/documentation/)。
 
-- 添加实体 
-- 查询实体 
+- 添加实体
+- 查询实体
 - 枚举大型实体集合
-- 更新实体 
-- 删除实体 
+- 更新实体
+- 删除实体
 
 >[AZURE.NOTE] 使用媒体服务 REST API 时，需注意以下事项：
 >
@@ -168,4 +168,4 @@ Azure 媒体服务是一项以 OData v3 为基础的基于 REST 的服务。因�
 	Host: wamsshaclus001rest-hs.chinacloudapp.cn
 	Content-Length: 0
 
-<!---HONumber=Mooncake_0815_2016-->
+<!---HONumber=Mooncake_1114_2016-->

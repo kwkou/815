@@ -1,11 +1,12 @@
 <properties 
-	pageTitle="使用 Azure 媒体服务流式传输受 Apple FairPlay 保护的 HLS 内容" 
+	pageTitle="使用 Apple FairPlay 和/或 Microsoft PlayReady 保护 HLS 内容 | Azure" 
 	description="本主题概括介绍并演示了如何使用 Azure 媒体服务通过 Apple FairPlay 动态加密 HTTP 实时传送视频流 (HLS) 内容。它还演示了如何使用媒体服务许可证传送服务将 FairPlay 许可证传送到客户端。" 
 	services="media-services" 
 	documentationCenter="" 
 	authors="Juliako" 
 	manager="erikre" 
-	editor=""/>
+	editor=""/>  
+
 
 <tags 
 	ms.service="media-services" 
@@ -13,24 +14,32 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="08/15/2016" 
-	wacn.date="11/15/2016"
+	ms.date="09/27/2016"
+	wacn.date="11/21/2016"
 	ms.author="juliako"/>  
 
 
-#使用 Azure 媒体服务流式传输受 Apple FairPlay 保护的 HLS 内容 
+# 使用 Apple FairPlay 和/或 Microsoft PlayReady 保护 HLS 内容
 
 使用 Azure 媒体服务，可动态加密使用以下格式的 HTTP Live Streaming (HLS) 内容：
 
-- **AES-128 信封明文密钥** - 整个区块使用 **AES-128 CBC** 模式进行加密。iOS 和 OSX 播放器本身支持解密流。有关详细信息，请参阅[此文章](/documentation/articles/media-services-protect-with-aes128/)。
+- **AES-128 信封明文密钥**
 
-- **Apple FairPlay** - 各视频和音频示例都使用 **AES-128 CBC** 模式进行加密。**FairPlay 流式处理** (FPS) 集成到设备操作系统，iOS 和 Apple TV 本身支持这项功能。OS X 上的 Safari 使用加密媒体扩展 (EME) 接口支持启用 FPS。
+	整个区块使用 **AES-128 CBC** 模式进行加密。iOS 和 OSX 播放器本身支持解密流。有关详细信息，请参阅[此文章](/documentation/articles/media-services-protect-with-aes128/)。
 
-下图显示了“FairPlay 动态加密”工作流。
+- **Apple FairPlay**
 
-![使用 FairPlay 进行保护](./media/media-services-content-protection-overview/media-services-content-protection-with-fairplay.png)
+	各视频和音频示例都使用 **AES-128 CBC** 模式进行加密。**FairPlay 流式处理** (FPS) 集成到设备操作系统，iOS 和 Apple TV 本身支持这项功能。OS X 上的 Safari 使用加密媒体扩展 (EME) 接口支持启用 FPS。
+- **Microsoft PlayReady**
+
+下图显示了 **HLS + FairPlay 和/或 PlayReady 动态加密**工作流。
+
+![使用 FairPlay 进行保护](./media/media-services-content-protection-overview/media-services-content-protection-with-fairplay.png)  
+
 
 本主题演示如何使用 Azure 媒体服务通过 Apple FairPlay 动态加密 HLS 内容。它还演示了如何使用媒体服务许可证传送服务将 FairPlay 许可证传送到客户端。
+
+>[AZURE.NOTE] 如果还想要使用 PlayReady 加密 HLS 内容，则需要创建一个通用的内容密钥并将其与你的资产相关联。你还需要配置此内容密钥的授权策略，如[使用 PlayReady 动态通用加密](/documentation/articles/media-services-protect-with-drm/)主题中所述。
 
 	
 ## 要求和注意事项
@@ -57,11 +66,11 @@
 		
 		2. 将 cer 转换为 pem 的命令行：
 		
-			"C:\OpenSSL-Win32\bin\openssl.exe" x509 -inform der -in fairplay.cer -out fairplay-out.pem
+			"C:\\OpenSSL-Win32\\bin\\openssl.exe" x509 -inform der -in fairplay.cer -out fairplay-out.pem
 		
 		3. 使用私钥将 pem 转换为 pfx 的命令行（随后 OpenSSL 会要求提供 pfx 文件的密码）。
 		
-			"C:\OpenSSL-Win32\bin\openssl.exe" pkcs12 -export -out fairplay-out.pfx -inkey privatekey.pem -in fairplay-out.pem -passin file:privatekey-pem-pass.txt 
+			"C:\\OpenSSL-Win32\\bin\\openssl.exe" pkcs12 -export -out fairplay-out.pfx -inkey privatekey.pem -in fairplay-out.pem -passin file:privatekey-pem-pass.txt
 		
 	- **应用证书密码** - 客户创建 .pfx 文件的密码。
 	- **应用证书密码 ID** - 客户上载密码的方式必须与上载其他 AMS 密钥类似，并且必须使用 **ContentKeyType.FairPlayPfxPassword** 枚举值。最后，他们将得到 AMS ID，在密钥传送策略选项中，他们需要使用此 ID。
@@ -117,6 +126,20 @@
 
 >[AZURE.NOTE] Azure Media Player 不支持现成的 FairPlay 播放。客户需要通过 Apple 开发人员帐户获得示例播放器，以便在 MAC OSX 上播放 FairPlay。
  
+##流 URL
+
+如果资产使用多个 DRM 加密，则应在流式处理 URL 中使用加密标记：(format='m3u8-aapl', encryption='xxx')。
+
+请注意以下事项：
+
+- 仅可指定零个或一个加密类型。
+- 如果只将一个加密应用到资产，则无需在 URL 中指定加密类型。
+- 加密类型区分大小写。
+- 可以指定以下加密类型：
+	- **cenc**：通用加密（Playready 或 Widevine）
+	- **cbc aapl**：Fairplay
+	- **cbc**：AES 信封加密。
+
 
 ##.NET 示例
 
@@ -146,7 +169,7 @@
 			  </appSettings>
 		</configuration>
 
-1. 针对你要传送内容的“流式处理终结点”，获取至少一个流式处理单位。有关详细信息，请参阅：[配置流式处理终结点](/documentation/articles/media-services-dotnet-get-started/#configure-streaming-endpoint-using-the-portal)。
+1. 针对要传送内容的“流式处理终结点”，获取至少一个流式处理单位。有关详细信息，请参阅：[配置流式处理终结点](/documentation/articles/media-services-dotnet-get-started/#configure-streaming-endpoint-using-the-portal)。
 
 1. 使用本部分中所示的代码覆盖 Program.cs 文件中的代码。
 			
@@ -543,4 +566,4 @@
 		    }
 		}
 
-<!---HONumber=Mooncake_0926_2016-->
+<!---HONumber=Mooncake_1114_2016-->

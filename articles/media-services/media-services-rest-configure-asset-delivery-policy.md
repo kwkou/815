@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="使用媒体服务 REST API 配置资产传送策略" 
-	description="本主题说明如何使用媒体服务 REST API 配置不同的资产传送策略。" 
+	pageTitle="使用媒体服务 REST API 配置资产传送策略 | Azure" 
+	description="本主题介绍如何使用媒体服务 REST API 配置不同的资产传送策略。" 
 	services="media-services" 
 	documentationCenter="" 
 	authors="Juliako" 
@@ -14,11 +14,12 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="06/22/2016" 
-	wacn.date="08/22/2016"  
+	ms.date="09/19/2016"  
+	wacn.date="11/21/2016"  
 	ms.author="juliako"/>
 
-#如何：配置资产传送策略
+
+#配置资产传送策略
 
 [AZURE.INCLUDE [media-services-selector-asset-delivery-policy](../../includes/media-services-selector-asset-delivery-policy.md)]
 
@@ -63,7 +64,7 @@ HDS
 - 如果未设置资产传送策略，则无法在存储加密的资产上创建流式处理定位符。如果资产未经过存储加密，则即使未设置资产传送策略，系统也可让你顺利地创建定位符和流式处理资产。
 - 可将多个资产传送策略关联到单个资产，但只能指定一种方法来处理给定的 AssetDeliveryProtocol。也就是说，如果你尝试链接两个指定 AssetDeliveryProtocol.SmoothStreaming 协议的传送策略，则会导致出错，因为当客户端发出平滑流请求时，系统不知道你要应用哪个策略。
 - 如果你的资产包含现有的流式处理定位符，则不能将新策略链接到该资产、取消现有策略与资产的链接，或者更新与该资产关联的传送策略。必须先删除流式传输定位符，再调整策略，然后重新创建流式传输定位符。在重新创建流式处理定位符时可以使用同一个 locatorId，但应确保该操作不会导致客户端出现问题，因为内容可能已被来源或下游 CDN 缓存。
- 
+
 >[AZURE.NOTE] 使用媒体服务 REST API 时，需注意以下事项：
 >
 >访问媒体服务中的实体时，必须在 HTTP 请求中设置特定标头字段和值。有关详细信息，请参阅[媒体服务 REST API 开发的设置](/documentation/articles/media-services-rest-how-to-use/)。
@@ -449,4 +450,4 @@ HDS
         WidevineLicenseAcquisitionUrl
     }
 
-<!---HONumber=Mooncake_0815_2016-->
+<!---HONumber=Mooncake_1114_2016-->
