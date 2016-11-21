@@ -14,7 +14,7 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="07/07/2016" 
-	wacn.date="08/08/2016" 
+	wacn.date="11/21/2016" 
 	ms.author="arramac"/>
 
 # 使用 Order By 对 DocumentDB 数据进行排序
@@ -58,8 +58,6 @@ Azure DocumentDB 支持使用 JSON 文档的 SQL 对文档进行查询。可以�
         // Iterate through books
     }
 
-DocumentDB 支持每个查询使用单个数值、字符串或布尔值属性进行排序，即将推出其他查询类型。请参阅[即将推出的内容](#Whats_coming_next)以了解详细信息。
-
 ## 为 Order By 配置索引策略
 
 回想一下，DocumentDB 支持两种索引（哈希和范围），可以为特定的路径/属性、数据类型（字符串/数字）设置该索引并且是以不同的精度值（最大精度值或固定精度值）。由于 DocumentDB 使用哈希索引做为默认索引，因此必须使用带有数字、字符串（或两者）范围的自定义索引策略创建新集合，以便能够使用 Order By。
@@ -96,9 +94,11 @@ DocumentDB 支持每个查询使用单个数值、字符串或布尔值属性进
     await client.CreateDocumentCollectionAsync(UriFactory.CreateDatabaseUri("db"), booksCollection);  
 
 
+<a name="samples"></a>
 ## 示例
 查看 [Github 示例项目](https://github.com/Azure/azure-documentdb-dotnet/tree/master/samples/code-samples/Queries)，了解如何使用 Order By，包括创建索引策略和使用 Order By 进行分页。这些示例是开放源代码的，并且我们鼓励你提交可让其他 DocumentDB 开发人员获益的相关拉取请求。请参考 [Contribution guidelines（贡献准则）](https://github.com/Azure/azure-documentdb-net/blob/master/Contributing.md)以获如何做出贡献的指导。
 
+<a name="faq"></a>
 ## 常见问题
 
 **Order By 查询的预期请求单位 (RU) 使用情况如何？**

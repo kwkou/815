@@ -15,7 +15,7 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="08/25/2016" 
-	wacn.date="10/18/2016" 
+	wacn.date="11/21/2016" 
 	ms.author="mimig"/>  
 
 
@@ -45,7 +45,7 @@
  
 	![屏幕截图：“DocumentDB 帐户”边栏选项卡中的新数据库](./media/documentdb-create-database/docdb-database-creation-6.png)  
 
-
+<a name="other-ways-to-create-a-documentdb-database"></a>
 ## 创建 DocumentDB 数据库的其他方法
 
 数据库不一定要使用门户预览来创建，也可以使用 [DocumentDB SDK](/documentation/articles/documentdb-sdk-dotnet/) 或 [REST API](https://msdn.microsoft.com/zh-cn/library/mt489072.aspx) 来创建数据库。有关使用 .NET SDK 处理数据库的信息，请参阅 [.NET 数据库示例](/documentation/articles/documentdb-dotnet-samples/#database-examples/)。有关使用 Node.js SDK 处理数据库的信息，请参阅 [Node.js 数据库示例](/documentation/articles/documentdb-nodejs-samples/#database-examples/)。

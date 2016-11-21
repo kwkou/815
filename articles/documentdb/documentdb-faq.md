@@ -15,7 +15,7 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="07/01/2016" 
-	wacn.date="08/02/2016" 
+	wacn.date="11/21/2016" 
 	ms.author="mimig"/>
 
 
@@ -49,7 +49,7 @@ DocumentDB 是面向 NoSQL 文档的数据库，以 JSON 格式存储数据。Do
 每个 DocumentDB 集合都可以保留以每秒 RU 表示的预配吞吐量。对于任何规模的应用程序，你都可以将单个请求设为基准以测量其 RU 值，并预配集合以处理所有请求的请求单位总和。你也可以随着应用程序的发展需求，相应增加或减少集合的吞吐量。如需请求单位的详细信息以及帮助确定你的集合需求，请阅读[管理性能和容量](/documentation/articles/documentdb-manage/)并尝试使用[吞吐量计算器](https://www.documentdb.com/capacityplanner)。
 
 ### DocumentDB 是否符合 HIPAA 标准？
-是，DocumentDB 符合 HIPAA 标准。HIPAA 针对可识别个人身份的健康信息的使用、泄露与保护制定了要求。有关详细信息，请参阅 [Microsoft 信任中心](https://www.microsoft.com/zh-cn/TrustCenter/Compliance/HIPAA)。
+是，DocumentDB 符合 HIPAA 标准。HIPAA 针对可识别个人身份的健康信息的使用、泄露与保护制定了要求。
 
 ### DocumentDB 的存储限制有哪些？ 
 对于集合可以存储在 DocumentDB 中的数据总量，理论上没有任何限制。如果你想在单个集合中存储超过 250 GB 的数据，请[与支持部门联系](/documentation/articles/documentdb-increase-limits/)。

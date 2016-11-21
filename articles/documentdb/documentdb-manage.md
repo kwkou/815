@@ -15,7 +15,7 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="08/18/2016" 
-	wacn.date="10/18/2016" 
+	wacn.date="11/21/2016" 
 	ms.author="syamk"/>  
 
 
@@ -38,6 +38,7 @@ Azure DocumentDB 是一个全面托管的，面向可扩展文档的针对 JSON 
 
 使用 DocumentDB，可根据你扩展应用程序的需求创建多个集合或数据库，或同时创建两者。可以通过 [Azure 门户预览](/documentation/articles/documentdb-create-database/)或任意一个 [DocumentDB SDK](/documentation/articles/documentdb-dotnet-samples/) 创建数据库。
 
+<a name="Collections"></a>
 ## 数据库集合
 每个 DocumentDB 数据库可以包含一个或多个集合。集合是用于文档存储和处理的高可用的数据分区。每个集合可以存储具有各种架构的文档。DocumentDB 的自动索引和查询功能允许你轻松筛选并检索文档。集合提供了文档存储和查询执行的范围。集合还是它所包含的所有文档的事务域。基于 Azure 门户预览中设置的值或通过 SDK 为集合分配吞吐量。
 
@@ -118,16 +119,17 @@ DocumentDB 自动将集合分区到一个或多个物理服务器。创建集合
 
 查询、存储过程和触发器是根据所执行的操作的复杂性来使用请求单位的。在开发应用程序时，检查请求费用标头，以更好地了解每个操作消耗请求单位容量的方式。
 
-
+<a name="ProvThroughput"></a>
 ## 一致性级别的选择和吞吐量
 默认一致性级别的选择会影响吞吐量和延迟。可以编程方式和通过 Azure 门户预览设置默认的一致性级别。你还可以重写单个请求的一致性级别。默认情况下一致性级别设置为**会话**，该级别提供单调读取/写入和读取最新写入内容的保证。会话一致性非常适用于以用户为中心的应用程序，可提供一致性和性能的完美平衡。
 
 有关在 Azure 门户预览上更改一致性级别的说明，请参阅[如何管理 DocumentDB 帐户](/documentation/articles/documentdb-manage-account/#consistency/)。或者，有关一致性级别的详细信息，请参阅[使用一致性级别](/documentation/articles/documentdb-consistency-levels/)。
 
+<a name="IndexOverhead"></a>
 ## 设置的文档存储和索引开销
 DocumentDB 支持创建单个分区和已分区的集合。DocumentDB 中的每个分区支持高达 10 GB 的 SSD 支持的存储空间。10 GB 文档存储空间包含文档和索引的存储。默认情况下，DocumentDB 集合配置为自动为所有文档创建索引，且没有明确要求任何二级索引或架构。根据使用 DocumentDB 的应用程序，索引开销通常介于 2-20%。DocumentDB 使用的索引技术可以确保无论属性值是多少，索引开销都不会超过具有默认设置的文档大小的 80% 以上。
 
-默认情况下，DocumentDB 为所有文档自动创建索引。但是，如果要精细调整索引开销，则可以在插入或替换文档时选择不对某些文档创建索引，如 [DocumentDB 索引策略](/documentation/articles/documentdb-indexing-policies/)中所述。你可以将 DocumentDB 集合配置为不对集合中的所有文档创建索引。还可以将 DocumentDB 集合配置为有选择地只对 JSON 文档的某些具有通配符的属性或路径创建索引，如[配置集合的索引策略](/documentation/articles/documentdb-indexing-policies/#configuring-the-indexing-policy-of-a-collection/)中所述。不对某些属性或文档创建索引还可以提高写入吞吐量 - 这意味着将消耗更少的请求单位。
+默认情况下，DocumentDB 为所有文档自动创建索引。但是，如果要精细调整索引开销，则可以在插入或替换文档时选择不对某些文档创建索引，如 [DocumentDB 索引策略](/documentation/articles/documentdb-indexing-policies/)中所述。你可以将 DocumentDB 集合配置为不对集合中的所有文档创建索引。还可以将 DocumentDB 集合配置为有选择地只对 JSON 文档的某些具有通配符的属性或路径创建索引，如[配置集合的索引策略](/documentation/articles/documentdb-indexing-policies/)中所述。不对某些属性或文档创建索引还可以提高写入吞吐量 - 这意味着将消耗更少的请求单位。
 
 ## 后续步骤
 

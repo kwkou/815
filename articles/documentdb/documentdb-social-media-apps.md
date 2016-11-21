@@ -15,7 +15,7 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="06/29/2016" 
-	wacn.date="08/22/2016" 
+	wacn.date="11/21/2016" 
 	ms.author="mimig"/>  
 
 
@@ -104,7 +104,7 @@ Azure DocumentDB 可确保所有属性通过其[自动索引](/documentation/art
 
 我们可以有一个“最新”流（其中帖子按创建日期排序）和一个“最热门”流（其中包括在过去 24 小时内获得了更多赞的帖子），甚至还可以基于逻辑点赞粉丝和兴趣为每个用户实现客户流，且它仍然可以是一个帖子列表。虽然如何生成这些列表还是一个问题，但读取性能仍然不受阻碍。一旦我们获得其中一个列表之后，我们就可以使用 [IN 运算符](/documentation/articles/documentdb-sql-query/#where-clause) 向 DocumentDB 发布单个查询以一次性获取帖子的所有页面。
 
-可以使用 [Azure App Service](/services/app-service/) 的后台进程 - [Web 作业](/documentation/articles/web-sites-create-web-jobs/) - 来构建源流。创建一个帖子后，可以通过使用 [Azure 存储空间](/documentation/services/storage/)[队列](/documentation/articles/storage-dotnet-how-to-use-queues/)和 Web 作业（通过 [Azure Webjobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk/) 触发）触发后台处理，从而根据我们自己的自定义逻辑实现流内的帖子传播。
+可以使用 [Azure App Service](/documentation/services/app-service/) 的后台进程 - [Web 作业](/documentation/articles/web-sites-create-web-jobs/) - 来构建源流。创建一个帖子后，可以通过使用 [Azure 存储空间](/documentation/services/storage/)[队列](/documentation/articles/storage-dotnet-how-to-use-queues/)和 Web 作业（通过 [Azure Webjobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk/) 触发）触发后台处理，从而根据我们自己的自定义逻辑实现流内的帖子传播。
 
 通过使用这种相同的技术创建最终一致性环境还可以以延迟方式处理评分和点赞。
 
@@ -198,7 +198,7 @@ Azure DocumentDB 可确保所有属性通过其[自动索引](/documentation/art
 
 幸运的是，用户将生成大量内容。并且我们应能够提供搜索和查找可能在其内容流中不直接显示的内容的能力，也许是由于我们未关注创建者，或者也许是因为我们只是想要尽力找到 6 个月之前我们发布的旧帖子。
 
-好在我们使用的是 Azure DocumentDB，因此，可以使用 [Azure 搜索](/services/search/) 在几分钟内轻松实现搜索引擎，而无需键入一行代码（显然，搜索过程和 UI 除外）。
+好在我们使用的是 Azure DocumentDB，因此，可以使用 Azure 搜索在几分钟内轻松实现搜索引擎，而无需键入一行代码（显然，搜索过程和 UI 除外）。
 
 为什么会这么简单？
 

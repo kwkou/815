@@ -15,7 +15,7 @@
 	ms.devlang="dotnet"
 	ms.topic="hero-article"
 	ms.date="09/01/2016"
-	wacn.date="10/18/2016"
+	wacn.date="11/21/2016"
 	ms.author="anhoh"/>
 
 # NoSQL 教程︰构建 DocumentDB C# 控制台应用程序
@@ -35,6 +35,7 @@
 - [Visual Studio 2013 或 Visual Studio 2015](http://www.visualstudio.com/)。
 - .NET Framework 4.6
 
+<a name="quickstart"></a>
 ## 快速启动
 
 1. 从 [GitHub](https://github.com/Azure-Samples/documentdb-dotnet-getting-started-quickstart/archive/master.zip) 下载示例项目 .zip，或者克隆 [documentdb-dotnet-getting-started-quickstart](https://github.com/Azure-Samples/documentdb-dotnet-getting-started-quickstart) 存储库。

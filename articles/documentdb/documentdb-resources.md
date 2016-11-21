@@ -15,7 +15,7 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="09/15/2016" 
-	wacn.date="10/18/2016" 
+	wacn.date="11/21/2016" 
 	ms.author="anhoh"/>  
 
 
@@ -147,6 +147,7 @@ DocumentDB REST API 支持资源寻址和由 ID 和 \_rid 属性提出的请求�
 
 请注意，除了从 Azure 门户预览预配、配置和管理数据库帐户，还可以通过使用 [Azure DocumentDB REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn781481.aspx) 和[客户端 SDK](https://msdn.microsoft.com/zh-cn/library/azure/dn781482.aspx)，以编程方式创建和管理 DocumentDB 数据库帐户。
 
+<a name="databases"></a>
 ## 数据库
 DocumentDB 数据库是一个或多个集合和用户的逻辑容器，如下面的关系图中所示。你可以使用 DocumentDB 数据库帐户创建任意数量的数据库（取决于产品/服务限制）。
 
@@ -166,6 +167,7 @@ DocumentDB 数据库也是用户的容器。反过来，用户是一组权限的
  
 与 DocumentDB 资源模型中的其他资源一样，可以使用 [Azure DocumentDB REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn781481.aspx) 或任一[客户端 SDK](https://msdn.microsoft.com/zh-cn/library/azure/dn781482.aspx) 轻松创建、替换、删除、读取或枚举数据库。DocumentDB 确保读取或查询数据库资源的元数据操作的高度一致性。自动删除数据库，确保你不能访问任何集合或它所包含的用户。
 
+<a name="collections"></a>
 ## 集合
 DocumentDB 集合是 JSON 文档的一个容器。集合也是一组用于事务和查询的规模单位。
 
@@ -396,6 +398,7 @@ DocumentDB 查询模型尝试在功能、效率和简单性之间取得平衡。
 
 尽管上面的代码段演示了通过 [DocumentDB JavaScript SDK](https://github.com/Azure/azure-documentdb-js) 注册 (POST)、取消注册 (PUT)、读取/列出 (GET) 和执行 (POST)，但也可以使用 [REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn781481.aspx) 或其他[客户端 SDK](https://msdn.microsoft.com/zh-cn/library/azure/dn781482.aspx)。
 
+<a name="documents"></a>
 ## 文档
 你可以插入、替换、删除、读取、枚举和查询集合中的任意 JSON 文档。DocumentDB 不强制要求任何架构，并且对集合中的文档进行查询也不需要辅助索引的支持。
 

@@ -15,7 +15,7 @@
 	ms.devlang="na"
 	ms.topic="get-started-article"
 	ms.date="09/12/2016"
-	wacn.date="10/18/2016"
+	wacn.date="11/21/2016"
 	ms.author="mimig"/>  
 
 
@@ -84,7 +84,7 @@
 
 创建数据库后，必须向数据库[添加一个或多个集合](/documentation/articles/documentdb-create-collection/)，然后向集合[添加文档](/documentation/articles/documentdb-view-json-document-explorer/)。
 
-集合中有文档后，可以使用 [DocumentDB SQL](/documentation/articles/documentdb-sql-query/) 对这些文档[执行查询](/documentation/articles/documentdb-sql-query/#executing-queries/)。可以使用门户中的[查询浏览器](/documentation/articles/documentdb-query-collections-query-explorer/)、[REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn781481.aspx) 或其中一个 [SDK](/documentation/articles/documentdb-sdk-dotnet/) 执行查询。
+集合中有文档后，可以使用 [DocumentDB SQL](/documentation/articles/documentdb-sql-query/) 对这些文档[执行查询](/documentation/articles/documentdb-sql-query/#executing-sql-queries/)。可以使用门户中的[查询浏览器](/documentation/articles/documentdb-query-collections-query-explorer/)、[REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn781481.aspx) 或其中一个 [SDK](/documentation/articles/documentdb-sdk-dotnet/) 执行查询。
 
 ### 了解详细信息
 

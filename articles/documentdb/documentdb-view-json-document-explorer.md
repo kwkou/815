@@ -15,7 +15,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="08/30/2016"
-	wacn.date="10/18/2016"
+	wacn.date="11/21/2016"
 	ms.author="kirillg"/>
 
 # 使用 DocumentDB 文档资源管理器查看、编辑、创建和上传 JSON 文档
@@ -24,6 +24,7 @@
 
 请注意，具有 MongoDB 协议支持的 DocumentDB 帐户未启用文档资源管理器。启用此功能后，此页将会更新。
 
+<a name="launch-document-explorer"></a>
 ## 启动文档资源管理器
 
 1. 在 Azure 门户预览的跳转栏中，单击“DocumentDB (NoSQL)”。如果“DocumentDB (NoSQL)”不可见，则单击“更多服务”，再单击“DocumentDB (NoSQL)”。
@@ -132,6 +133,7 @@
 
 	![文档资源管理器“刷新”命令的屏幕截图](./media/documentdb-view-JSON-document-explorer/documentexplorerrefresh.png)
 
+<a name="BulkAdd"></a>
 ## 批量添加文档
 
 文档资源管理器支持批量引入一个或多个现有 JSON 文档，每个上传操作最多上传 100 个 JSON 文件。
@@ -165,13 +167,14 @@ Azure 门户预览中的文档资源管理器只是在 DocumentDB 中使用文�
 
 如果需要从其他源（JSON 文件、MongoDB、SQL Server、CSV 文件、Azure 表存储、Amazon DynamoDB 或 HBase）导入或迁移文件，你可以使用 DocumentDB 的[数据迁移工具](/documentation/articles/documentdb-import-data/)将数据快速导入到 DocumentDB。
 
+<a name="troubleshoot"></a>
 ## 故障排除
 
 **症状**：文档资源管理器返回“未找到文档”。
 
 **解决方案**：确保已选择正确的订阅、已插入文档的数据库和集合。另外，请检查以确保在吞吐量配额内运行。如果在最大吞吐量级别运行并受到限制，请减少应用程序使用量，以便在集合的最大吞吐量配额下运行。
 
-**说明**：门户是一个应用程序，就像任何其他应用程序一样，对 DocumentDB 数据库和集合进行调用。如果当前由于从单独的应用程序进行调用，请求受到限制，门户可能也同样受到限制，导致资源未显示在门户中。若要解决此问题，需解决高吞吐量使用率的原因，然后刷新门户边栏选项卡。有关如何测量和降低吞吐量使用率的信息，请参阅[性能提示](/documentation/articles/documentdb-performance-tips/)一文的[吞吐量](/documentation/articles/documentdb-performance-tips/#throughput/)部分。
+**说明**：门户是一个应用程序，就像任何其他应用程序一样，对 DocumentDB 数据库和集合进行调用。如果当前由于从单独的应用程序进行调用，请求受到限制，门户可能也同样受到限制，导致资源未显示在门户中。若要解决此问题，需解决高吞吐量使用率的原因，然后刷新门户边栏选项卡。有关如何测量和降低吞吐量使用率的信息，请参阅[性能提示](/documentation/articles/documentdb-performance-tips/)一文的[吞吐量](/documentation/articles/documentdb-performance-tips/#measure-rus/)部分。
 
 ## 后续步骤
 

@@ -14,7 +14,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="08/29/2016"
-    wacn.date="10/18/2016"
+    wacn.date="11/21/2016"
     ms.author="mimig"/>  
 
 
@@ -28,7 +28,7 @@
 
 **解决方案**：减少应用程序使用量，以在集合的最大吞吐量配额下运行。
 
-**说明**：门户是一个应用程序，就像任何其他应用程序一样，对 DocumentDB 数据库和集合进行调用。如果当前由于从单独的应用程序进行调用，请求受到限制，门户可能也同样受到限制，导致资源未显示在门户中。若要解决此问题，需解决高吞吐量使用率的原因，然后刷新门户边栏选项卡。有关如何测量和降低吞吐量使用率的信息，请参阅[性能提示](/documentation/articles/documentdb-performance-tips/)一文的[吞吐量](/documentation/articles/documentdb-performance-tips/#throughput/)部分。
+**说明**：门户是一个应用程序，就像任何其他应用程序一样，对 DocumentDB 数据库和集合进行调用。如果当前由于从单独的应用程序进行调用，请求受到限制，门户可能也同样受到限制，导致资源未显示在门户中。若要解决此问题，需解决高吞吐量使用率的原因，然后刷新门户边栏选项卡。有关如何测量和降低吞吐量使用率的信息，请参阅[性能提示](/documentation/articles/documentdb-performance-tips/)一文的[吞吐量](/documentation/articles/documentdb-performance-tips/#measure-rus/)部分。
  
 ## 页面或边栏选项卡无法加载
 
@@ -36,7 +36,7 @@
 
 **解决方案**：减少应用程序使用量，以在集合的最大吞吐量配额下运行。
 
-**说明**：门户是一个应用程序，就像任何其他应用程序一样，对 DocumentDB 数据库和集合进行调用。如果当前由于从单独的应用程序进行调用，请求受到限制，门户可能也同样受到限制，导致资源未显示在门户中。若要解决此问题，需解决高吞吐量使用率的原因，然后刷新门户边栏选项卡。有关如何测量和降低吞吐量使用率的信息，请参阅[性能提示](/documentation/articles/documentdb-performance-tips/)一文的[吞吐量](/documentation/articles/documentdb-performance-tips/#throughput/)部分。
+**说明**：门户是一个应用程序，就像任何其他应用程序一样，对 DocumentDB 数据库和集合进行调用。如果当前由于从单独的应用程序进行调用，请求受到限制，门户可能也同样受到限制，导致资源未显示在门户中。若要解决此问题，需解决高吞吐量使用率的原因，然后刷新门户边栏选项卡。有关如何测量和降低吞吐量使用率的信息，请参阅[性能提示](/documentation/articles/documentdb-performance-tips/)一文的[吞吐量](/documentation/articles/documentdb-performance-tips/#measure-rus/)部分。
 
 ## “添加集合”按钮处于禁用状态
 

@@ -15,7 +15,7 @@
     ms.devlang="python"
     ms.topic="hero-article"
     ms.date="08/25/2016"
-    wacn.date="10/18/2016"
+    wacn.date="11/21/2016"
     ms.author="syamk"/>
 
 # 使用 DocumentDB 开发 Python Flask Web 应用程序
@@ -65,6 +65,7 @@
 <br/>
 现在，我们将演练如何从头开始新建 Python Flask Web 应用程序。
 
+<a name="step-2:-create-a-new-python-flask-web-application></a>
 ## 步骤 2：新建 Python Flask Web 应用程序
 
 1. 在 Visual Studio 的“文件”菜单中，指向“新建”，然后单击“项目”。
@@ -120,6 +121,7 @@
 
     > [AZURE.NOTE] 在相当少见的情况下，你可能会在输出窗口中看到失败。如果出现此情况，请检查错误是否与清理相关。有时候清理会失败，但安装仍是成功的（在输出窗口中向上滚动以确认这一点）。可以通过[验证虚拟环境](#verify-the-virtual-environment)来检查安装。如果安装失败，但验证成功，则可以继续操作。
 
+<a name="verify-the-virtual-environment"></a>
 ### 验证虚拟环境
 
 我们必须确保正确安装所有内容。
@@ -441,7 +443,7 @@ Python
 
   [Visual Studio Express]: http://www.visualstudio.com/products/visual-studio-express-vs.aspx
   [2]: https://www.python.org/downloads/windows/
-  [3]: https://www.microsoft.com/zh-cn/download/details.aspx?id=44266
+  [3]: https://www.microsoft.com/download/details.aspx?id=44266
   [Microsoft Web Platform Installer]: http://www.microsoft.com/web/downloads/platform.aspx
   [Azure portal]: http://portal.azure.cn
 

@@ -14,7 +14,7 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="08/24/2016" 
-	wacn.date="10/18/2016" 
+	wacn.date="11/21/2016" 
 	ms.author="mimig"/>  
 
 
@@ -64,6 +64,7 @@
  
 	![屏幕截图：数据库边栏选项卡中的新集合 — 用于 DocumentDB 的 Azure 门户预览 — 用于 NoSQL JSON 数据库的云端数据库创建程序](./media/documentdb-create-collection/docdb-collection-creation-9.png)
 
+<a name="what-is-a-documentdb-collection"></a>
 ## 什么是 DocumentDB 集合？ 
 
 集合是 JSON 文档和相关联的 JavaScript 应用程序逻辑的容器。集合是一个计费实体，其中[成本](/documentation/articles/documentdb-performance-levels/)由集合的预配吞吐量确定。集合可以跨一个或多个分区/服务器，并且能伸缩以处理几乎无限制增长的存储或吞吐量。
@@ -93,6 +94,6 @@ DocumentDB 自动将集合分区到一个或多个物理服务器。创建集合
 - 可以使用 DocumentDB 数据迁移工具来[导入文档和数据](/documentation/articles/documentdb-import-data/)，利用此工具可以导入 JSON 和 CSV 文件，以及来自 SQL Server、MongoDB、Azure 表存储及其他 DocumentDB 集合的数据。
 - 也可以使用某个 [DocumentDB SDK](/documentation/articles/documentdb-sdk-dotnet/) 来添加文档。DocumentDB 有 .NET、Java、Python、Node.js 和 JavaScript API SDK。有关说明如何使用 DocumentDB .NET SDK 处理文档的 C# 代码示例，请参阅 [C# 文档示例](/documentation/articles/documentdb-dotnet-samples/#document-examples/)。有关说明如何使用 DocumentDB Node.js SDK 处理文档的 Node.js 代码示例，请参阅 [Node.js 文档示例](/documentation/articles/documentdb-nodejs-samples/#document-examples/)。
 
-当集合中有文档后，就可以利用门户中的[查询资源管理器](/documentation/articles/documentdb-query-collections-query-explorer/)、[REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn781481.aspx) 或某个 [SDK](/documentation/articles/documentdb-sdk-dotnet/)，来针对文档使用 [DocumentDB SQL](/documentation/articles/documentdb-sql-query/) [执行查询](/documentation/articles/documentdb-sql-query/#executing-queries/)。
+当集合中有文档后，就可以利用门户中的[查询资源管理器](/documentation/articles/documentdb-query-collections-query-explorer/)、[REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn781481.aspx) 或某个 [SDK](/documentation/articles/documentdb-sdk-dotnet/)，来针对文档使用 [DocumentDB SQL](/documentation/articles/documentdb-sql-query/) [执行查询](/documentation/articles/documentdb-sql-query/#executing-sql-queries/)。
 
 <!---HONumber=Mooncake_1010_2016-->
