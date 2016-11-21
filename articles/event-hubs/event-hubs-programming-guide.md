@@ -122,6 +122,7 @@ var partitionedSender = client.CreatePartitionedSender(description.PartitionIds[
 
 [CreatePartitionedSender](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.eventhubclient.createpartitionedsender.aspx) 返回一个 [EventHubSender](https://msdn.microsoft.com/zh-cn/library/microsoft.servicebus.messaging.eventhubsender.aspx) 对象，你可以使用该对象将事件发布到特定的事件中心分区。
 
+<a id="event-consumers"></a>
 ## 事件使用者
 
 事件中心针对事件使用提供两个主要模型：直接接收者和和较高级别的抽象，如 [EventProcessorHost](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.eventprocessorhost.aspx)。直接接收者负责自行协调对使用者组中分区的访问。
@@ -153,6 +154,7 @@ while(receive)
 
 请注意，在任何时候，使用者组中的单个分区不能连接 5 个以上的并发读取者。当读取者连接或断开连接时，其会话可能会保持活动状态几分钟，然后服务才会将其识别为已断开连接。在此期间，重新连接到分区可能会失败。有关编写事件中心直接接收者的示例，请参阅[服务总线事件中心直接接收者](https://code.msdn.microsoft.com/Event-Hub-Direct-Receivers-13fa95c6)示例。
 
+<a id="event-processor-host"></a>
 ### 事件处理程序主机
 
 [EventProcessorHost](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.eventprocessorhost.aspx) 类处理来自事件中心的数据。在 .NET 平台上构建事件读取者时，应该使用此实现。[EventProcessorHost](https://msdn.microsoft.com/zh-cn/library/microsoft.servicebus.messaging.eventprocessorhost.aspx) 为事件处理器实现提供线程安全、多进程安全的运行时环境，该环境还能提供检查点和分区租用管理。
