@@ -92,7 +92,7 @@ Azure 资源组部署是一种通过单个部署操作将相关的一组 Azure �
 
 ## 浏览 VM 缩放集
 
-部署完成后，你可以在 Visual Studio **云资源管理器**中（刷新列表）查看新的 VM 缩放集。云资源管理器让你可以在开发应用程序时管理 Visual Studio 中的 Azure 资源。此外，还可以在 [Azure 门户](https://portal.azure.cn)和 [Azure 资源浏览器](https://resources.azure.com/)中查看 VM 规模集。
+部署完成后，你可以在 Visual Studio **云资源管理器**中（刷新列表）查看新的 VM 缩放集。云资源管理器让你可以在开发应用程序时管理 Visual Studio 中的 Azure 资源。此外，还可以在 [Azure 门户预览](https://portal.azure.cn)和 [Azure 资源浏览器](https://resources.azure.com/)中查看 VM 规模集。
 
 ![云资源管理器][cloud_explorer]
 
