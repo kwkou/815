@@ -7,7 +7,8 @@
 	authors="rickstercdn"
 	manager="timlt"
 	editor="tysonn"
-	tags="azure-resource-manager" />
+	tags="azure-resource-manager" />  
+
 
 <tags
 	ms.service="virtual-machines-linux"
@@ -16,8 +17,9 @@
 	ms.tgt_pltfrm="vm-linux"
 	ms.devlang="na"
 	ms.date="09/06/2016"
-	wacn.date="10/25/2016"
-	ms.author="rclaus"/>
+	wacn.date="11/21/2016"
+	ms.author="rclaus"/>  
+
 
 # 将磁盘添加到 Linux VM
 
@@ -26,12 +28,12 @@
 ## 快速命令
 
 在以下命令示例中，请将 &lt; 与 &gt; 之间的值替换为你自己环境中的值。
-	
+
 	azure vm disk attach-new <myuniquegroupname> <myuniquevmname> <size-in-GB>
 
 ## 附加磁盘
 
-连接新的磁盘很快。键入 `azure vm disk attach-new <myuniquegroupname> <myuniquevmname> <size-in-GB>` 即可为 VM 创建和连接新的 GB 磁盘。如果你未显式标识存储帐户，则创建的任何磁盘将位于 OS 磁盘所在的同一个存储帐户中。你应该会看到类似下面的屏幕：
+连接新的磁盘很快。键入 `azure vm disk attach-new <myuniquegroupname> <myuniquevmname> <size-in-GB>` 可为 VM 创建和连接新的 GB 磁盘。如果你未显式标识存储帐户，则创建的任何磁盘将位于 OS 磁盘所在的同一个存储帐户中。如下所示：
 
 	azure vm disk attach-new myuniquegroupname myuniquevmname 5
 
@@ -43,9 +45,9 @@
 	+ Updating VM "myuniquevmname"
 	info:    vm disk attach-new command OK
 
-## <a name="connect-to-the-linux-vm-to-mount-the-new-disk"></a> 连接到 Linux VM 以装入新磁盘
+## <a name="connect-to-the-linux-vm-to-mount-the-new-disk"></a>连接到 Linux VM 以装入新磁盘
 
-> [AZURE.NOTE] 本主题介绍如何使用用户名和密码连接到 VM；若要使用公钥和私钥对与 VM 通信，请参阅[如何在 Azure 上通过 Linux 使用 SSH](/documentation/articles/virtual-machines-linux-mac-create-ssh-keys/)。你可以通过使用 `azure vm reset-access` 命令完全重置 **SSH** 访问权限、添加或删除用户，或者添加公钥文件以确保安全访问，来修改使用 `azure vm quick-create` 命令创建的 VM 的 **SSH** 连接。
+> [AZURE.NOTE] 本主题使用用户名和密码连接到 VM。若要使用公钥和私钥对与 VM 通信，请参阅 [How to Use SSH with Linux on Azure](/documentation/articles/virtual-machines-linux-mac-create-ssh-keys/)（如何在 Azure 上的 Linux 中使用 SSH）。你可以通过使用 `azure vm reset-access` 命令完全重置 **SSH** 访问权限、添加或删除用户，或者添加公钥文件以确保安全访问，来修改使用 `azure vm quick-create` 命令创建的 VM 的 **SSH** 连接。
 
 需要使用 SSH 访问 Azure VM 才能分区、格式化和装入新磁盘以供 Linux VM 使用。如果你不熟悉如何使用 **ssh** 进行连接，请注意，该命令采用 `ssh <username>@<FQDNofAzureVM> -p <the ssh port>` 格式，如下所示：
 
@@ -141,7 +143,7 @@
 	Calling ioctl() to re-read partition table.
 	Syncing disks.
 
-同时，还需将文件系统写入分区，只需使用 **mkfs** 命令指定文件系统类型和设备名称即可。在本主题中，我们将使用上面提供的 `ext4` 和 `/dev/sdc1`：
+同时，还需将文件系统写入分区，只需使用 **mkfs** 命令指定文件系统类型和设备名称即可。本主题使用上面提供的 `ext4` 和 `/dev/sdc1`：
 
 	sudo mkfs -t ext4 /dev/sdc1
 
@@ -185,13 +187,35 @@
 	bin   datadrive  etc   initrd.img  lib64       media  opt   root  sbin  sys  usr  vmlinuz
 	boot  dev        home  lib         lost+found  mnt    proc  run   srv   tmp  var
 
-> [AZURE.NOTE] 你还可以在连接到 Linux 虚拟机时，使用 SSH 密钥进行身份验证。有关详细信息，请参阅[如何在 Azure 上将 SSH 用于 Linux](/documentation/articles/virtual-machines-linux-mac-create-ssh-keys/)。
+若要确保在重新引导后自动重新装载驱动器，必须将其添加到 /etc/fstab 文件。此外，强烈建议在 /etc/fstab 中使用 UUID（全局唯一标识符）来引用驱动器而不是只使用设备名称（例如 `/dev/sdc1`）。如果 OS 在启动过程中检测到磁盘错误，使用 UUID 可以避免将错误的磁盘装载到给定位置。然后为剩余的数据磁盘分配这些设备 ID。若要查找新驱动器的 UUID，可以使用 **blkid** 实用工具：
+
+	sudo -i blkid
+
+输出与下面类似：
+
+	/dev/sda1: UUID="11111111-1b1b-1c1c-1d1d-1e1e1e1e1e1e" TYPE="ext4"
+	/dev/sdb1: UUID="22222222-2b2b-2c2c-2d2d-2e2e2e2e2e2e" TYPE="ext4"
+	/dev/sdc1: UUID="33333333-3b3b-3c3c-3d3d-3e3e3e3e3e3e" TYPE="ext4"
+
+>[AZURE.NOTE] 错误地编辑 **/etc/fstab** 文件可能会导致系统无法引导。如果没有把握，请参考分发的文档来获取有关如何正确编辑该文件的信息。另外，建议在编辑之前创建 /etc/fstab 文件的备份。
+
+接下来，请在文本编辑器中打开 **/etc/fstab** 文件：
+
+	sudo vi /etc/fstab
+
+在此示例中，将使用在之前的步骤中创建的新 **/dev/sdc1** 设备的 UUID 值并使用装载点 **/datadrive**。将以下行添加到 **/etc/fstab** 文件的末尾：
+
+	UUID=33333333-3b3b-3c3c-3d3d-3e3e3e3e3e3e   /datadrive   ext4   defaults,nofail   1   2
+
+>[AZURE.NOTE] 之后，在不编辑 fstab 的情况下删除数据磁盘可能会导致 VM 无法启动。大多数分发版提供 `nofail` 和/或 `nobootwait` fstab 选项。这些选项使系统在磁盘无法装载的情况下也能启动。有关这些参数的详细信息，请查阅分发文档。
+
+>[AZURE.NOTE] 即使文件系统已损坏或磁盘在引导时不存在，**nofail** 选项也能确保 VM 启动。如果不使用此选项，可能会遇到 [Cannot SSH to Linux VM due to FSTAB errors](https://blogs.msdn.microsoft.com/linuxonazure/2016/07/21/cannot-ssh-to-linux-vm-after-adding-data-disk-to-etcfstab-and-rebooting/)（由于 FSTAB 错误而无法通过 SSH 连接到 Linux VM）中所述的行为
 
 
 ### Azure 中对 Linux 的 TRIM/UNMAP 支持
-某些 Linux 内核将支持 TRIM/UNMAP 操作以放弃磁盘上未使用的块。这主要适用于标准存储，以通知 Azure 已删除的页不再有效可以丢弃。如果你创建了较大的文件，然后将其删除，则这可以节省成本。
+某些 Linux 内核支持 TRIM/UNMAP 操作以放弃磁盘上未使用的块。这主要适用于标准存储，以通知 Azure 已删除的页不再有效，并且可以丢弃。如果创建了较大的文件，然后将其删除，这样可以节省成本。
 
-在 Linux VM 中有两种方法可以启用 TRIM 支持。与往常一样，有关建议的方法，请参阅你的分发：
+在 Linux VM 中有两种方法可以启用 TRIM 支持。与往常一样，有关建议的方法，请参阅分发：
 
 - 在 `/etc/fstab` 中使用 `discard` 装载选项，例如：
 
@@ -209,11 +233,13 @@
 		# sudo yum install util-linux
 		# sudo fstrim /datadrive
 
+## 故障排除
+[AZURE.INCLUDE [virtual-machines-linux-lunzero](../../includes/virtual-machines-linux-lunzero.md)]
 
 ## 后续步骤
 
-- 请记住，即使重新启动 VM，你的新磁盘通常也无法供 VM 使用，除非你将该信息写入 [fstab](http://en.wikipedia.org/wiki/Fstab) 文件。
-- 请查看[优化 Linux 计算机性能](/documentation/articles/virtual-machines-linux-optimization/)的建议，以确保 Linux VM 正确配置。
-- 通过添加更多的磁盘来扩展存储容量，并[配置 RAID](/documentation/articles/virtual-machines-linux-configure-raid/) 以提高性能。
+- 请记住，除非将该信息写入 [fstab](http://en.wikipedia.org/wiki/Fstab) 文件，否则即使重新启动 VM，新磁盘也无法供 VM 使用。
+- 为确保正确配置 Linux VM，请查看有关[优化 Linux 计算机性能](/documentation/articles/virtual-machines-linux-optimization/)的建议。
+- 可以添加更多的磁盘来扩展存储容量，[配置 RAID](/documentation/articles/virtual-machines-linux-configure-raid/) 来提高性能。
 
-<!---HONumber=Mooncake_0808_2016-->
+<!---HONumber=Mooncake_1114_2016-->

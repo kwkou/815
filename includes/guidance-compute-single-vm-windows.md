@@ -2,7 +2,7 @@
 
 > [AZURE.NOTE] Azure 有两个不同的部署模型：[Azure Resource Manager][resource-manager-overview] 和经典模型。本文使用 Resource Manager，Azure 建议将它用于新部署。
 
-建议不要对生产工作负荷使用单个 VM，因为 Azure 上的单个 VM 没有正常运行时间服务级别协议 (SLA)。若要获取 SLA，必须在[可用性集][availability-set]中部署多个 VM。有关详细信息，请参阅 [Running multiple Windows VMs on Azure][multi-vm]（在 Azure 上运行多个 Windows VM）。
+建议不要对生产工作负荷使用单个 VM，因为 Azure 上的单个 VM 没有正常运行时间服务级别协议 (SLA)。若要获取 SLA，必须在[可用性集][availability-set]中部署多个 VM。
 
 ## 体系结构关系图
 
@@ -10,7 +10,7 @@
 
 ![[0]][0]
 
-- **资源组。** [资源组][resource-manager-overview]是一个容器，包含相关资源。创建资源组以保存此 VM 的资源。
+- **资源组。** [_资源组_][resource-manager-overview]是一个容器，包含相关资源。创建资源组以保存此 VM 的资源。
 
 - **VM**。可以基于已发布的映像列表或上载到 Azure Blob 存储的虚拟硬盘 (VHD) 文件预配 VM。
 
@@ -36,7 +36,7 @@
 
 - 建议使用 DS 系列。有关详细信息，请参阅 [Virtual machine sizes][virtual-machine-sizes]（虚拟机大小）。将现有工作负荷移到 Azure 时，最初是使用与本地服务器最匹配的 VM 大小。然后测量与 CPU、内存和每秒磁盘输入/输出操作次数 (IOPS) 有关的实际工作负荷的性能，并根据需要调整大小。此外，如果需要多个 NIC，请注意每种大小的 NIC 限制。
 
-- 当你预配 VM 和其他资源时，必须指定位置。通常，选择离你的内部用户或客户最近的位置。但是，并非所有 VM 大小都可在所有位置中使用。有关详细信息，请参阅 [Services by region][services-by-region]（按区域列出的服务）。若要列出给定位置中可用的 VM 大小，请运行以下 Azure 命令行接口 (CLI) 命令：
+- 当你预配 VM 和其他资源时，必须指定位置。通常，选择离你的内部用户或客户最近的位置。但是，并非所有 VM 大小都可在所有位置中使用。若要列出给定位置中可用的 VM 大小，请运行以下 Azure 命令行接口 (CLI) 命令：
 
         azure vm sizes --location <location>
 
@@ -62,7 +62,7 @@
 
     - 如果需要不会更改的固定 IP 地址（例如，如果需要在 DNS 中创建 A 记录，或者需要将 IP 地址列入允许列表，请保留[静态 IP 地址][static-ip]。
 
-    - 你还可以为 IP 地址创建完全限定域名 (FQDN)。然后，可以在 DNS 中注册指向 FQDN 的 [CNAME 记录][cname-record]。有关详细信息，请参阅 [Create a Fully Qualified Domain Name in the Azure portal][fqdn]（在 Azure 门户预览中创建完全限定的域名）。
+    - 你还可以为 IP 地址创建完全限定域名 (FQDN)。然后，可以在 DNS 中注册指向 FQDN 的 [CNAME 记录][cname-record]。有关详细信息，请参阅[在 Azure 门户预览中创建完全限定域名][fqdn]。
 
 - 所有 NSG 都包含一组[默认规则][nsg-default-rules]，其中包括阻止所有入站 Internet 流量的规则。无法删除默认规则，但其他规则可以覆盖它们。若要启用 Internet 流量，请创建允许特定端口（例如，将端口 80 用于 HTTP）的入站流量的规则。
 
@@ -72,7 +72,7 @@
 
 - 可以通过[更改 VM 大小][vm-resize]来扩大或缩小 VM。
 
-- 若要水平扩大，请将两个或更多 VM 放入负载均衡器后面的可用性集中。有关详细信息，请参阅 [Running multiple Windows VMs on Azure][multi-vm]（在 Azure 上运行多个 Windows VM）。
+- 若要水平扩大，请将两个或更多 VM 放入负载均衡器后面的可用性集中。
 
 ## 可用性注意事项
 
@@ -94,7 +94,7 @@
 
         azure vm enable-diag <resource-group> <vm-name>
 
-- **停止 VM。** Azure 对“已停止”和“已解除分配”状态进行了区分。当 VM 状态为“已停止”时，将向你收费。已解除分配 VM 时，不会向你收费。
+- **停止 VM。** Azure 对“已停止”和“已解除分配”状态进行了区分。当 VM 状态为“已停止”时，将向你收费。已解除分配 VM 时，无需收费。
 
     使用以下 CLI 命令可解除分配 VM：
 
@@ -110,9 +110,9 @@
 
 - **修补程序管理。** 使用 VM 上的[组策略设置][group-policy]可启用自动系统更新。
 
-- **反恶意软件。** 可以使用可以通过添加扩展的方式用 Azure PowerShell 安装反恶意软件。
+- **反恶意软件。** 可以使用 Azure PowerShell 通过将扩展添加到 VM 来安装反恶意软件。
 
-- 使用[基于角色的访问控制][rbac] (RBAC) 来控制对你部署的 Azure 资源的访问权限。RBAC 允许你将授权角色分配给开发运营团队的成员。例如，“读者”角色可以查看 Azure 资源，但不能创建、管理或删除这些资源。某些角色特定于特定的 Azure 资源类型。例如，“虚拟机参与者”角色可以执行重启或解除分配 VM、重置管理员密码、创建新的 VM 等操作。可能会对此参考体系结构有用的其他[内置 RBAC 角色][rbac-roles]包括 [DevTest Lab 用户][rbac-devtest]和[网络参与者][rbac-network]。可将用户分配给多个角色，并且可以创建自定义角色以实现更细化的权限。
+- 使用[基于角色的访问控制][rbac] (RBAC) 来控制对你部署的 Azure 资源的访问权限。RBAC 允许你将授权角色分配给开发运营团队的成员。例如，“读者”角色可以查看 Azure 资源，但不能创建、管理或删除这些资源。某些角色特定于特定的 Azure 资源类型。例如，“虚拟机参与者”角色可以执行重启或解除分配 VM、重置管理员密码、创建新的 VM 等操作。可能对此参考体系结构有用的其他[内置 RBAC 角色][rbac-roles]包括 [DevTest Lab 用户][rbac-devtest]和[网络参与者][rbac-network]。可将用户分配给多个角色，并且可以创建自定义角色以实现更细化的权限。
 
     > [AZURE.NOTE] RBAC 不限制已登录到 VM 的用户可以执行的操作。这些权限由来宾 OS 上的帐户类型决定。
 
@@ -122,200 +122,30 @@
 
 - 使用[审核日志][audit-logs]可查看预配操作和其他 VM 事件。
 
-## 解决方案组件
-
-可以使用示例解决方案脚本 [Deploy-ReferenceArchitecture.ps1][solution-script] 来实现遵循本文中所述建议的体系结构。此脚本利用 [Resource Manager][ARM-Templates] 模板。这些模板以一组基本构造块的形式提供，其中每个块执行特定的操作，例如创建 VNet 或配置 NSG。该脚本的目的是协调模板部署。
-
-模板已使用单独 JSON 文件中的参数进行参数化。可以修改这些文件的参数，以根据自己的要求配置部署。不需要修改模板本身。请注意，不得更改参数文件中对象的架构。
-
-编辑模板时，请根据Azure 资源的建议命名约定中所述的命名约定创建对象。
-
-脚本将引用以下参数文件来构建 VM 和周边基础结构。
-
-- **[virtualNetwork.parameters.json][vnet-parameters]**。此文件定义 VNet 设置，例如任何所需 DNS 服务器的名称、地址空间、子网和地址。请注意，必须根据 VNet 的地址空间来划归子网地址。
-
-		  "parameters": {
-		    "virtualNetworkSettings": {
-		      "value": {
-		        "name": "app1-vnet",
-		        "resourceGroup": "app1-dev-rg",
-		        "addressPrefixes": [
-		          "172.17.0.0/16"
-		        ],
-		        "subnets": [
-		          {
-		            "name": "app1-subnet",
-		            "addressPrefix": "172.17.0.0/24"
-		          }
-		        ],
-		        "dnsServers": [ ]
-		      }
-		    }
-		  }
-
-- **[networkSecurityGroup.parameters.json][nsg-parameters]**。此文件包含 NSG 和 NSG 规则的定义。`virtualNetworkSettings` 块中的 `name` 参数指定 NSG 所附加到的 VNet。`networkSecurityGroupSettings` 块中的 `subnets` 参数标识要在 VNet 中应用 NSG 规则的任何子网。这些子网应是 **virtualNetwork.parameters.json** 文件中定义的项。
-
-	请注意，示例中所示的默认安全规则可让用户通过远程桌面 (RDP) 连接到 VM。可以通过在 `securityRules` 数组中添加更多的项来打开其他端口（或拒绝通过特定的端口访问）。
-
-	  "parameters": {
-	    "virtualNetworkSettings": {
-	      "value": {
-	        "name": "app1-vnet",
-	        "resourceGroup": "app1-dev-rg"
-	      },
-	      "metadata": {
-	        "description": "Infrastructure Settings"
-	      }
-	    },
-	    "networkSecurityGroupSettings": {
-	      "value": [
-	        {
-	          "name": "app1-nsg",
-	          "subnets": [
-	            "app1-subnet"
-	          ],
-	          "securityRules": [
-	            {
-	              "name": "RDPAllow",
-	              "direction": "Inbound",
-	              "priority": 100,
-	              "sourceAddressPrefix": "*",
-	              "destinationAddressPrefix": "*",
-	              "sourcePortRange": "*",
-	              "destinationPortRange": "3389",
-	              "access": "Allow",
-	              "protocol": "Tcp"
-	            }
-	          ]
-	        }
-	      ]
-	    }
-	  }
-
-- **[virtualMachineParameters.json][vm-parameters]**。此文件定义 VM 本身的设置，包括 VM 的名称和大小、管理员用户的安全凭据、要创建的磁盘，以及用于保存这些磁盘的存储帐户。
-
-	必须在 `imageReference` 节中指定映像。下面显示的值将创建使用最新版本 Windows Server 2012 R2 Datacenter 的 VM。可以使用以下 Azure CLI 命令获取某个区域（本示例使用 chinanorth 区域）中所有可用 Windows 映像的列表：
-
-		azure vm image list chinanorth MicrosoftWindowsServer WindowsServer
-
-	`nics` 节中的 `subnetName` 参数指定 VM 的子网。类似地，`virtualNetworkSettings` 中的 `name` 参数标识要使用的 VNet。这些设置应是 **virtualNetwork.parameters.json** 文件中定义的子网和 VNet 的名称。
-
-	可以通过修改 `buildingBlockSettings` 节中的设置，来创建多个共享存储帐户或者具有自身存储帐户的 VM。如果创建多个 VM，则还必须指定要在 `availabilitySet` 节中使用或创建的可用性集的名称。
-
-		  "parameters": {
-		    "virtualMachinesSettings": {
-		      "value": {
-		        "namePrefix": "app1",
-		        "computerNamePrefix": "cn",
-		        "size": "Standard_DS1",
-		        "osType": "windows",
-		        "adminUsername": "testuser",
-		        "adminPassword": "AweS0me@PW",
-		        "sshPublicKey": "",
-		        "osAuthenticationType": "password",
-		        "nics": [
-		          {
-		            "isPublic": "true",
-		            "subnetName": "app1-subnet",
-		            "privateIPAllocationMethod": "dynamic",
-		            "publicIPAllocationMethod": "dynamic",
-		            "isPrimary": "true"
-		          }
-		        ],
-		        "imageReference": {
-		          "publisher": "MicrosoftWindowsServer",
-		          "offer": "WindowsServer",
-		          "sku": "2012-R2-Datacenter",
-		          "version": "latest"
-		        },
-		        "dataDisks": {
-		          "count": 2,
-		          "properties": {
-		            "diskSizeGB": 128,
-		            "caching": "None",
-		            "createOption": "Empty"
-		          }
-		        },
-		        "osDisk": {
-		          "caching": "ReadWrite"
-		        },
-		        "availabilitySet": {
-		          "useExistingAvailabilitySet": "No",
-		          "name": ""
-		        }
-		      },
-		      "metadata": {
-		        "description": "Settings for Virtual Machines"
-		      }
-		    },
-		    "virtualNetworkSettings": {
-		      "value": {
-		        "name": "app1-vnet",
-		        "resourceGroup": "app1-dev-rg"
-		      },
-		      "metadata": {
-		        "description": "Infrastructure Settings"
-		      }
-		    },
-		    "buildingBlockSettings": {
-		      "value": {
-		        "storageAccountsCount": 1,
-		        "vmCount": 1,
-		        "vmStartIndex": 0
-		      },
-		      "metadata": {
-		        "description": "Settings specific to the building block"
-		      }
-		    }
-		  }
-
 ## 解决方案部署
 
-该解决方案假设满足以下先决条件：
+本指南中提供的示例部署使用三种不同的[模板构建基块][blocks]创建：
 
-- 你已有一个 Azure 订阅，可以在其中创建资源组。
+- 虚拟网络 (VNet)
+- 网络安全组 (NSG)
+- 虚拟机 (VM)
 
-- 已下载并安装最新版本的 Azure PowerShell。有关说明，请参阅[此文][azure-powershell-download]。
+此参考体系结构使用单个资源组，可以通过单击下面的按钮并接受所有参数的默认值部署此资源组。
 
-若要运行用于部署解决方案的脚本，请执行以下操作：
+<a href="https://portal.azure.cn/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fmspnp%2Freference-architectures%2Fmaster%2Fguidance-compute-single-vm%2Fazuredeploy.json" target="_blank">
+    <img src="http://azuredeploy.net/deploybutton.png"/>
+</a>
 
-1. 创建一个文件夹，其中包含名为 `Scripts` 和 `Templates` 的子文件夹。
+### 自定义部署
 
-2. 在 Templates 文件夹中，创建名为 Windows 的另一个子文件夹。
-
-3. 将 [Deploy-ReferenceArchitecture.ps1][solution-script] 文件下载到 Scripts 文件夹。
-
-4. 将以下文件下载到 Templates/Windows 文件夹：
-
-	- [virtualNetwork.parameters.json][vnet-parameters]
-
-	- [networkSecurityGroup.parameters.json][nsg-parameters]
-
-	- [virtualMachineParameters.json][vm-parameters]
-
-5. 编辑 Scripts 文件夹中的 Deploy-ReferenceArchitecture.ps1 文件并更改以下行，以指定为了保存脚本所创建的 VM 和资源而要创建或使用的资源组：
-
-		$resourceGroupName = "app1-dev-rg"
-
-6. 如前面“解决方案组件”部分中所述，编辑 Templates/Windows 文件夹中的每个 JSON 文件，设置虚拟网络、 NSG 和 VM 的参数。
-
-	>[AZURE.NOTE] 确保 virtualMachineParameters.json 文件的 `virtualNetworkSettings` 节中的 `resourceGroup` 参数设置与 Deploy-ReferenceArchitecture.ps1 脚本文件中指定的设置相同。
-
-7. 打开 PowerShell 窗口，转到 Scripts 文件夹，然后运行以下命令：
-
-		.\Deploy-ReferenceArchitecture.ps1 <subscription id> <location> Windows
-
-	将 `<subscription id>` 替换为你的 Azure 订阅 ID。
-
-	对于 `<location>`，请指定 Azure 区域，例如 `chinaeast` 或 `chinanorth`。
-
-8. 完成脚本后，使用 Azure 门户预览验证是否已成功创建网络、NSG 和 VM。
+如果需要更改部署以满足你的需求，请按照 [guidance-single-vm][readme] 页中的说明操作。
 
 ## 后续步骤
 
-要使[虚拟机的 SLA][vm-sla] 适用，必须在一个可用性集中部署两个或更多实例。有关详细信息，请参阅 [Running multiple VMs on Azure][multi-vm]（在 Azure 上运行多个 VM）。
+要使[虚拟机的 SLA][vm-sla] 适用，必须在一个可用性集中部署两个或更多实例。
 
 <!-- links -->
+
 
 [audit-logs]: https://azure.microsoft.com/blog/analyze-azure-audit-logs-in-powerbi-more/
 [availability-set]: /documentation/articles/virtual-machines-windows-create-availability-set/
@@ -332,7 +162,7 @@
 [group-policy]: https://technet.microsoft.com/zh-cn/library/dn595129.aspx
 [log-collector]: https://azure.microsoft.com/blog/simplifying-virtual-machine-troubleshooting-using-azure-log-collector/
 [manage-vm-availability]: /documentation/articles/virtual-machines-windows-manage-availability/
-[multi-vm]: /documentation/articles/virtual-machines-windows-multiple-vms/
+[multi-vm]: /documentation/articles/guidance-compute-multi-vm/
 [naming conventions]: /documentation/articles/guidance-naming-conventions/
 [nsg]: /documentation/articles/virtual-networks-nsg/
 [nsg-default-rules]: /documentation/articles/virtual-networks-nsg/#default-rules
@@ -350,20 +180,22 @@
 [resource-manager-overview]: /documentation/articles/resource-group-overview
 [security-center]: https://azure.microsoft.com/services/security-center/
 [select-vm-image]: /documentation/articles/virtual-machines-windows-cli-ps-findimage/
-[services-by-region]: /support/service-dashboard/
+[services-by-region]: https://azure.microsoft.com/regions/#services
 [static-ip]: /documentation/articles/virtual-networks-reserved-public-ip/
 [storage-price]: /pricing/details/storage/
-[使用安全中心]: /documentation/articles/security-center-get-started/#use-security-center
+[Use Security Center]: /documentation/articles/security-center-get-started/#use-security-center
 [virtual-machine-sizes]: /documentation/articles/virtual-machines-windows-sizes/
 [vm-disk-limits]: /documentation/articles/azure-subscription-service-limits/#virtual-machine-disk-limits
 [vm-resize]: /documentation/articles/virtual-machines-linux-change-vm-size/
 [vm-sla]: /support/sla/virtual-machines/
 [ARM-Templates]: /documentation/articles/resource-group-authoring-templates/
-[solution-script]: https://github.com/mspnp/reference-architectures/blob/master/guidance-compute-single-vm/Deploy-ReferenceArchitecture.ps1
-[vnet-parameters]: https://github.com/mspnp/reference-architectures/blob/master/guidance-compute-single-vm/parameters/windows/virtualNetwork.parameters.json
-[nsg-parameters]: https://github.com/mspnp/reference-architectures/blob/master/guidance-compute-single-vm/parameters/windows/networkSecurityGroups.parameters.json
-[vm-parameters]: https://github.com/mspnp/reference-architectures/blob/master/guidance-compute-single-vm/parameters/windows/virtualMachine.parameters.json
+[solution-script]: https://github.com/mspnp/reference-architectures/tree/master/guidance-compute-single-vm/Deploy-ReferenceArchitecture.ps1
+[vnet-parameters]: https://github.com/mspnp/reference-architectures/tree/master/guidance-compute-single-vm/parameters/windows/virtualNetwork.parameters.json
+[nsg-parameters]: https://github.com/mspnp/reference-architectures/tree/master/guidance-compute-single-vm/parameters/windows/networkSecurityGroups.parameters.json
+[vm-parameters]: https://github.com/mspnp/reference-architectures/tree/master/guidance-compute-single-vm/parameters/windows/virtualMachine.parameters.json
 [azure-powershell-download]: /documentation/articles/powershell-install-configure/
 [0]: ./media/guidance-blueprints/compute-single-vm.png "Azure 中的单一 Windows VM 体系结构"
+[readme]: https://github.com/mspnp/reference-architectures/blob/master/guidance-compute-single-vm
+[blocks]: https://github.com/mspnp/template-building-blocks
 
-<!---HONumber=Mooncake_0829_2016-->
+<!---HONumber=Mooncake_1114_2016-->

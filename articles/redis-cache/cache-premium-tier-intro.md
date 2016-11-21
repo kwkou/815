@@ -5,7 +5,8 @@
 	documentationCenter="" 
 	authors="steved0x" 
 	manager="douge" 
-	editor=""/>
+	editor=""/>  
+
 
 <tags 
 	ms.service="cache" 
@@ -13,8 +14,8 @@
 	ms.tgt_pltfrm="cache-redis" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="06/29/2016" 
-	wacn.date="09/05/2016" 
+	ms.date="09/15/2016" 
+	wacn.date="11/21/2016" 
 	ms.author="sdanie"/>  
 
 
@@ -26,9 +27,9 @@ Azure Redis 缓存是一种分布式托管缓存，可通过提供对数据的�
 ## 与标准或基本层相比性能更佳
 **性能优于标准或基本层。** 相对于基本级别或标准级别，高级层的缓存部署在处理器速度更快且性能更高的硬件上。高级级别缓存的吞吐量更高，延迟更低。
 
-**如果缓存大小相同，则高级级别中的吞吐量高于标准级别。** 例如：53 GB 的缓存，其 P4（高级层）的吞吐量是每秒 250K 个请求，相比之下，C6（标准层）只有 150K。
+**如果缓存大小相同，则高级级别中的吞吐量高于标准级别。** 例如：53 GB P4（高级层）缓存的吞吐量是每秒 250K 个请求，相比之下，C6（标准层）只有 150K。
 
-有关高级缓存大小、吞吐量和带宽的更多详细信息，请参阅 [Azure Redis 缓存常见问题](/documentation/articles/cache-faq/#what-redis-cache-offering-and-size-should-i-use)。
+有关高级缓存大小、吞吐量和带宽的详细信息，请参阅 [Azure Redis 缓存常见问题](/documentation/articles/cache-faq/#what-redis-cache-offering-and-size-should-i-use)
 
 ## Redis 数据持久性
 高级层允许你将缓存数据暂留在 Azure 存储空间帐户中。在基本/标准缓存中，所有数据只存储在内存中。如果底层基础结构出现问题，可能会导致数据丢失。我们建议使用高级级别中的 Redis 数据暂留功能来增加灵活性，防止数据丢失。Azure Redis 缓存提供可在 [Redis 持久性](http://redis.io/topics/persistence)中使用的 RDB 和 AOF（即将推出）选项。
@@ -50,9 +51,9 @@ Azure Redis 缓存是一种分布式托管缓存，可通过提供对数据的�
 
 ## 导入/导出
 
-导入/导出是一种 Azure Redis 缓存数据管理操作，可用于通过从高级缓存导入 Redis 缓存数据库 (RDB) 快照以及将 Redis 缓存数据库 (RDB) 快照导出到 Azure 存储帐户中的页 blob 来相应地将数据导入到 Azure Redis 缓存以及从 Azure Redis 缓存导出数据。这使你可以在不同 Azure Redis 缓存实例之间进行迁移，或者在使用之前使用数据填充缓存。
+导入/导出是一种 Azure Redis 缓存数据管理操作，可用于通过从高级缓存导入 Redis 缓存数据库 (RDB) 快照以及将 Redis 缓存数据库 (RDB) 快照导出到 Azure 存储帐户中的页 blob 来相应地将数据导入到 Azure Redis 缓存以及从 Azure Redis 缓存导出数据。这将允许在不同 Azure Redis 缓存实例之间进行迁移，或者在使用之前使用数据填充缓存。
 
-导入可用于从任何云或环境中运行的任何 Redis 服务器引入与 Redis 兼容的 RDB 文件，包括在 Linux、Windows 上运行的 Redis 或任何云提供程序（如 Amazon Web Services 等）。导入数据是使用预先填充的数据创建缓存的简单方式。在导入过程中，Azure Redis 缓存从 Azure 存储空间将 RDB 文件加载到内存中，然后再将密钥插入到缓存中。
+导入可用于从任何云或环境中运行的任何 Redis 服务器引入与 Redis 兼容的 RDB 文件，包括在 Linux、Windows 上运行的 Redis 或任何云提供程序（如 Amazon Web Services 等）。导入数据是使用预先填充的数据创建缓存的简单方式。在导入过程中，Azure Redis 缓存从 Azure 存储将 RDB 文件加载到内存中，然后再将密钥插入到缓存中。
 
 使用导出可以将 Azure Redis 缓存中存储的数据导出到与 Redis 兼容的 RDB 文件。可以使用此功能将一个 Azure Redis 缓存实例中的数据移到另一个 Azure Redis 缓存实例或另一个 Redis 服务器。在导出过程中，将在托管 Azure Redis 缓存服务器实例的 VM 上创建临时文件，并将该文件上载到指定的存储帐户。导出操作完成后，无论状态为成功还是失败，都会删除临时文件。
 
@@ -91,4 +92,4 @@ Azure Redis 缓存是一种分布式托管缓存，可通过提供对数据的�
 -	[如何在 Azure Redis 缓存中导入和导出数据](/documentation/articles/cache-how-to-import-export-data/)
 -	[如何管理 Azure Redis 缓存](/documentation/articles/cache-administration/)
 
-<!---HONumber=Mooncake_0829_2016-->
+<!---HONumber=Mooncake_1114_2016-->

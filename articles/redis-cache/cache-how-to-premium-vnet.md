@@ -5,7 +5,8 @@
 	documentationCenter="" 
 	authors="steved0x" 
 	manager="douge" 
-	editor=""/>
+	editor=""/>  
+
 
 <tags 
 	ms.service="cache" 
@@ -13,18 +14,18 @@
 	ms.tgt_pltfrm="cache-redis" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="07/12/2016" 
-	wacn.date="09/05/2016" 
+	ms.date="09/15/2016" 
+	wacn.date="11/21/2016" 
 	ms.author="sdanie"/>
 
 # 如何为高级 Azure Redis 缓存配置虚拟网络支持
 Azure Redis 缓存具有不同的缓存产品（包括新推出的高级层），使缓存大小和功能的选择更加灵活。
 
-Azure Redis 缓存高级层包括群集、持久性和虚拟网络 (VNet) 支持。VNet 是云中的专用网络。为 Azure Redis 缓存实例配置了 VNet 后，该实例不可公开寻址，而只能从 VNet 中的虚拟机和应用程序进行访问。本文说明如何为高级 Azure Redis 缓存实例配置虚拟网络支持。
+Azure Redis 缓存高级层功能包括群集、持久性和虚拟网络 (VNet) 支持。VNet 是云中的专用网络。为 Azure Redis 缓存实例配置了 VNet 后，该实例不可公开寻址，而只能从 VNet 中的虚拟机和应用程序进行访问。本文说明如何为高级 Azure Redis 缓存实例配置虚拟网络支持。
 
 >[AZURE.NOTE] Azure Redis 缓存同时支持经典 VNet 和 ARM VNet。
 
-有关其他高级缓存功能的信息，请参阅[如何配置高级 Azure Redis 缓存的持久性](/documentation/articles/cache-how-to-premium-persistence/)和[如何配置高级 Azure Redis 缓存的群集](/documentation/articles/cache-how-to-premium-clustering/)。
+有关其他高级缓存功能的信息，请参阅 [Azure Redis 缓存高级层简介](/documentation/articles/cache-premium-tier-intro/)。
 
 ## 为何使用 VNet？
 [Azure 虚拟网络 (VNet)](/home/features/networking/) 部署为 Azure Redis 缓存提供增强的安全性和隔离性，并提供子网、访问控制策略和进一步限制访问 Azure Redis 缓存的其他功能。
@@ -34,7 +35,7 @@ Azure Redis 缓存高级层包括群集、持久性和虚拟网络 (VNet) 支持
 
 [AZURE.INCLUDE [redis-cache-create](../../includes/redis-cache-premium-create.md)]
 
-选择高级定价层之后，可以通过选择与缓存相同的订阅和位置中的 VNet，来配置 Azure Redis 缓存 VNet 集成。若要使用新 VNet，请先创建 VNet，方法是遵循 [Create a virtual network using the Azure portal](/documentation/articles/virtual-networks-create-vnet-arm-pportal/)（使用 Azure 门户预览创建虚拟网络）或 [Create a virtual network (classic) by using the Azure Portal](/documentation/articles/virtual-networks-create-vnet-classic-portal/)（使用 Azure 门户预览创建虚拟网络（经典））中的步骤，然后返回“建的 Redis 缓存”边栏选项卡来创建和配置高级缓存。
+选择高级定价层之后，可以通过选择与缓存相同的订阅和位置中的 VNet，来配置 Azure Redis 缓存 VNet 集成。若要使用新 VNet，请先创建 VNet，方法是遵循 [Create a virtual network using the Azure portal Preview](/documentation/articles/virtual-networks-create-vnet-arm-pportal/)（使用 Azure 门户预览创建虚拟网络）或 [Create a virtual network (classic) by using the Azure portal Preview](/documentation/articles/virtual-networks-create-vnet-classic-portal/)（使用 Azure 门户预览创建虚拟网络（经典））中的步骤，然后返回“建的 Redis 缓存”边栏选项卡来创建和配置高级缓存。
 
 若要为新缓存配置 VNet，请单击“新建 Redis 缓存”边栏选项卡上的“虚拟网络”，然后从下拉列表中选择所需的 VNet。
 
@@ -44,9 +45,10 @@ Azure Redis 缓存高级层包括群集、持久性和虚拟网络 (VNet) 支持
 
 >[AZURE.IMPORTANT] 将 Azure Redis 缓存部署到 ARM VNet 时，缓存必须位于专用子网中，其中只能包含 Azure Redis 缓存实例，而不能包含其他任何资源。如果尝试将 Azure Redis 缓存部署到包含其他资源的 ARM VNet 子网，部署将会失败。
 
-![虚拟网络][redis-cache-vnet-ip]
+![虚拟网络][redis-cache-vnet-ip]  
 
->[AZURE.IMPORTANT] 子网中的前 4 个地址是保留的，无法使用。有关详细信息，请参阅 [Are there any restrictions on using IP addresses within these subnets?](/documentation/articles/virtual-networks-faq/#are-there-any-restrictions-on-using-ip-addresses-within-these-subnets)（使用这些子网中的 IP 地址是否有任何限制？）
+
+>[AZURE.IMPORTANT] 子网中的前四个地址是保留的，无法使用。有关详细信息，请参阅 [Are there any restrictions on using IP addresses within these subnets?](/documentation/articles/virtual-networks-faq/#are-there-any-restrictions-on-using-ip-addresses-within-these-subnets)（使用这些子网中的 IP 地址是否有任何限制？）
 
 创建缓存之后，可以在“设置”边栏选项卡中单击“虚拟网络”，查看 VNet 的配置。
 
@@ -99,7 +101,7 @@ Azure Redis 缓存高级层包括群集、持久性和虚拟网络 (VNet) 支持
 
 在虚拟网络中，可能一开始不符合 Azure Redis 缓存的网络连接要求。在虚拟网络中使用时，Azure Redis 缓存需要以下所有项才能正常运行。
 
--  与全球 Azure 存储空间终结点建立的出站网络连接。这包括位于与 Azure Redis 缓存实例相同区域中的终结点，以及位于**其他** Azure 区域的存储终结点。Azure 存储空间终结点在以下 DNS 域之下解析：*table.core.chinacloudapi.cn*、*blob.core.chinacloudapi.cn*、*queue.core.chinacloudapi.cn* 和 *file.core.chinacloudapi.cn*。
+-  与全球 Azure 存储空间终结点建立的出站网络连接。这包括位于与 Azure Redis 缓存实例相同区域中的终结点，以及位于**其他** Azure 区域的存储终结点。Azure 存储终结点在以下 DNS 域之下解析：*table.core.chinacloudapi.cn*、*blob.core.chinacloudapi.cn*、*queue.core.chinacloudapi.cn* 和 *file.core.chinacloudapi.cn*。
 -  与 *ocsp.msocsp.com*、*mscrl.microsoft.com* 和 *crl.microsoft.com* 建立的出站网络连接。需要此连接才能支持 SSL 功能。
 -  虚拟网络的 DNS 设置必须能够解析前面几点所提到的所有终结点和域。确保已针对虚拟网络配置并维护有效的 DNS 基础结构即可符合这些 DNS 要求。
 
@@ -115,9 +117,9 @@ Azure Redis 缓存高级层包括群集、持久性和虚拟网络 (VNet) 支持
 
 只要你有足够的可用 IP 地址，就可以将多种类型的资源部署到经典 VNet。
 
-### <a name="do-all-cache-features-work-when-hosting-a-cache-in-a-vnet"></a> 在 VNET 中托管缓存时，是否可以使用所有缓存功能？
+### <a name="do-all-cache-features-work-when-hosting-a-cache-in-a-vnet"></a>在 VNET 中托管缓存时，是否可以使用所有缓存功能？
 
-如果缓存是 VNET 的一部分，则只允许 VNET 中的客户端访问缓存，因此在目前情况下，以下缓存管理功能无法使用。
+如果缓存是 VNET 的一部分，则只有 VNET 中的客户端可以访问缓存。因此，以下缓存管理功能目前不起作用。
 
 -	Redis 控制台 - Redis 控制台使用的 redis cli.exe 客户端承载于不属于 VNET 的 VM 上，因此该控制台无法连接到你的缓存。
 
@@ -152,9 +154,7 @@ Azure Redis 缓存高级层包括群集、持久性和虚拟网络 (VNet) 支持
 ## 后续步骤
 了解如何使用更多的高级版缓存功能。
 
--	[如何为高级 Azure Redis 缓存配置暂留](/documentation/articles/cache-how-to-premium-persistence/)
--	[如何为高级 Azure Redis 缓存配置群集功能](/documentation/articles/cache-how-to-premium-clustering/)
--	[在 Azure Redis 缓存中导入和导出数据](/documentation/articles/cache-how-to-import-export-data/)
+-	[Azure Redis 缓存高级层简介](/documentation/articles/cache-premium-tier-intro/)
 
 
 
@@ -163,10 +163,11 @@ Azure Redis 缓存高级层包括群集、持久性和虚拟网络 (VNet) 支持
   
 <!-- IMAGES -->
 
+
 [redis-cache-vnet]: ./media/cache-how-to-premium-vnet/redis-cache-vnet.png
 
 [redis-cache-vnet-ip]: ./media/cache-how-to-premium-vnet/redis-cache-vnet-ip.png
 
 [redis-cache-vnet-info]: ./media/cache-how-to-premium-vnet/redis-cache-vnet-info.png
 
-<!---HONumber=Mooncake_0829_2016-->
+<!---HONumber=Mooncake_1114_2016-->
