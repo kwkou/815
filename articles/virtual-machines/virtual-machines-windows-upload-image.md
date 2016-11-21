@@ -14,8 +14,8 @@
 	ms.tgt_pltfrm="vm-windows"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="08/02/2016"
-	wacn.date="09/12/2016"
+	ms.date="10/10/2016"
+	wacn.date="11/21/2016"
 	ms.author="cynthn"/>
 
 # 将 Windows VM 映像上载到 Azure 以进行资源管理器部署

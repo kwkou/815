@@ -13,8 +13,8 @@
 	ms.tgt_pltfrm="vm-windows-sql-server"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="07/07/2016"
-	wacn.date="08/15/2016"
+	ms.date="09/26/2016"
+	wacn.date="11/21/2016"
 	ms.author="carlasab"/>
 
 

@@ -14,8 +14,8 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="vm-windows-sql-server"
 	ms.workload="infrastructure-services"
-	ms.date="07/05/2016"
-	wacn.date="08/23/2016"
+	ms.date="09/26/2016"
+	wacn.date="11/21/2016"
 	ms.author="jroth"/>
 
 # 为 Azure VM 上的 SQL Serve 配置 Azure 密钥保管库集成

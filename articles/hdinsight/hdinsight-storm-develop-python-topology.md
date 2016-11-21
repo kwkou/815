@@ -13,8 +13,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
-   ms.date="07/11/2016"
-   wacn.date="08/23/2016"
+   ms.date="09/27/2016"
+   wacn.date="11/21/2016"
    ms.author="larryfr"/>
 
 #在 HDInsight 上使用 Python 开发 Apache Storm 拓扑

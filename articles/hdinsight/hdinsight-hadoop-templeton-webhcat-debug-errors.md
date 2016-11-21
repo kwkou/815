@@ -14,8 +14,8 @@
  ms.topic="article"
  ms.tgt_pltfrm="na"
  ms.workload="big-data"
- ms.date="07/12/2016"
- wacn.date="08/23/2016"
+ ms.date="09/27/2016"
+ wacn.date="11/21/2016"
  ms.author="larryfr"/>
 
 #了解和解决从 HDInsight 上的 WebHCat (Templeton) 收到的错误

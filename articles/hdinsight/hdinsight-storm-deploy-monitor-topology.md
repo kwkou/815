@@ -14,8 +14,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
-   ms.date="07/26/2016"
-   wacn.date="09/30/2016"
+   ms.date="10/11/2016"
+   wacn.date="11/21/2016"
    ms.author="larryfr"/>
 
 #在基于 Windows 的 HDInsight 上部署和管理 Apache Storm 拓扑

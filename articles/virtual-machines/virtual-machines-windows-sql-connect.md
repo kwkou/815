@@ -12,8 +12,8 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="vm-windows-sql-server"
 	ms.workload="infrastructure-services"
-	ms.date="06/23/2016"
-	wacn.date="11/04/2016"
+	ms.date="09/21/2016"
+	wacn.date="11/21/2016"
 	ms.author="jroth" />
 
 # 连接到 Azure (Resource Manager) 上的 SQL Server 虚拟机

@@ -14,8 +14,8 @@ ms.service="virtual-machines-linux"
  ms.topic="article"
  ms.tgt_pltfrm="vm-linux"
  ms.workload="infrastructure-services"
- ms.date="07/18/2016"
- wacn.date="09/05/2016"
+ ms.date="09/22/2016"
+ wacn.date="11/21/2016"
  ms.author="cynthn"/>
 
 # Linux VM 的计算基准测试分数

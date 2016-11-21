@@ -13,8 +13,8 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="05/02/2016"
-	wacn.date="09/26/2016"
+	ms.date="08/30/2016"
+	wacn.date="11/21/2016"
 	ms.author="rachelap"/>
 
 # 用于 API 恢复和代码生成的应用服务 API 应用元数据 

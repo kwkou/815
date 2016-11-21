@@ -14,8 +14,8 @@
 	ms.tgt_pltfrm="vm-windows"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="06/24/2016"
-	wacn.date="08/15/2016"
+	ms.date="10/10/2016"
+	wacn.date="11/21/2016"
 	ms.author="davidmu"/>
 
 # 使用 C# 和 Resource Manager 模板部署 Azure 虚拟机

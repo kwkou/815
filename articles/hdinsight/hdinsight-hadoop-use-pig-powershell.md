@@ -14,8 +14,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
-   ms.date="07/25/2016"
-   wacn.date="09/30/2016"
+   ms.date="10/11/2016"
+   wacn.date="11/21/2016"
    ms.author="larryfr"/>
 
 #使用 PowerShell 运行 Pig 作业
