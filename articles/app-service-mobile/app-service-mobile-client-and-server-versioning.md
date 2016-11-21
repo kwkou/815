@@ -3,7 +3,7 @@
   description="客户端 SDK 列表，以及移动服务与 Azure 移动应用的服务器 SDK 版本兼容性"
   services="app-service\mobile"
   documentationCenter=""
-  authors="lindydonna"
+  authors="adrianhall"
   manager="erikre"
   editor=""/>
 
@@ -13,8 +13,8 @@
   ms.tgt_pltfrm="mobile-multiple"
   ms.devlang="dotnet"
   ms.topic="article"
-  ms.date="05/10/2016"
-  wacn.date="10/17/2016"
+  ms.date="10/01/2016"
+  wacn.date="11/21/2016"
   ms.author="adrianha"/>
 
 # 移动应用和移动服务中的客户端与服务器版本控制

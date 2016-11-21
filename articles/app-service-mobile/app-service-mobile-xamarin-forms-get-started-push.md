@@ -3,9 +3,10 @@
 	description="了解如何使用 Azure 服务将多平台推送通知发送到 Xamarin.Forms 应用。"
 	services="app-service\mobile"
 	documentationCenter="xamarin"
-	authors="wesmc7777"
+	authors="adrianhall"
 	manager="dwrede"
-	editor=""/>
+	editor=""/>  
+
 
 <tags
 	ms.service="app-service-mobile"
@@ -13,8 +14,8 @@
 	ms.tgt_pltfrm="mobile-xamarin"
 	ms.devlang="dotnet"
 	ms.topic="article"
-	ms.date="07/17/2016"
-	wacn.date="09/26/2016"
+	ms.date="10/01/2016"
+	wacn.date="11/21/2016"
 	ms.author="adrianha"/>
 
 # 向 Xamarin.Forms 应用添加推送通知
@@ -215,19 +216,19 @@
 
 了解有关推送通知的详细信息：
 
-* [使用适用于 Azure 移动应用的 .NET 后端服务器 SDK](/documentation/articles/app-service-mobile-dotnet-backend-how-to-use-server-sdk/#how-to-add-tags-to-a-device-installation-to-enable-push-to-tags)
+* [使用适用于 Azure 移动应用的 .NET 后端服务器 SDK](/documentation/articles/app-service-mobile-dotnet-backend-how-to-use-server-sdk/#how-to-add-tags-to-a-device-installation-to-enable-push-to-tags)  
 标记可用于通过推送定位分段客户。了解如何将标记添加到设备安装。
 
-* [诊断推送通知问题](/documentation/articles/notification-hubs-push-notification-fixer/)
+* [诊断推送通知问题](/documentation/articles/notification-hubs-push-notification-fixer/)  
 有多种原因可能导致通知被丢弃或最终未到达设备。本主题演示如何分析和确定推送通知失败的根本原因。
 
 请考虑继续学习以下教程之一：
 
-* [向应用添加身份验证](/documentation/articles/app-service-mobile-xamarin-forms-get-started-users/)
+* [向应用添加身份验证](/documentation/articles/app-service-mobile-xamarin-forms-get-started-users/)  
 了解如何使用标识提供者对应用的用户进行身份验证。
 
-* [为应用启用脱机同步](/documentation/articles/app-service-mobile-xamarin-forms-get-started-offline-data/)
-了解如何使用移动应用后端向应用添加脱机支持。脱机同步允许最终用户与移动应用交互（查看、添加或修改数据），即使在没有网络连接时也是如此。
+* [为应用启用脱机同步](/documentation/articles/app-service-mobile-xamarin-forms-get-started-offline-data/)  
+  了解如何使用移动应用后端向应用添加脱机支持。脱机同步允许最终用户与移动应用交互（查看、添加或修改数据），即使在没有网络连接时也是如此。
 
 <!-- Images. -->
 
@@ -236,4 +237,4 @@
 [Xcode]: https://go.microsoft.com/fwLink/?LinkID=266532
 [apns object]: http://go.microsoft.com/fwlink/p/?LinkId=272333
 
-<!---HONumber=Mooncake_0919_2016-->
+<!---HONumber=Mooncake_1114_2016-->

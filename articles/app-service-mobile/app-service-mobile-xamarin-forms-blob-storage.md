@@ -2,7 +2,7 @@
     pageTitle="在 Xamarin.Forms 应用中连接到 Azure 存储"
     description="连接到 Azure blob 存储向待办事项列表 Xamarin.Forms 移动应用添加图像"
     documentationCenter="xamarin"
-    authors="lindydonna"
+    authors="adrianhall"
     manager="erikre"
     editor=""
     services="app-service\mobile"/>
@@ -13,8 +13,8 @@
     ms.tgt_pltfrm="mobile-xamarin-ios"
     ms.devlang="dotnet"
     ms.topic="article"
-    ms.date="05/10/2016"
-    wacn.date="09/26/2016"
+    ms.date="10/01/2016"
+    wacn.date="11/21/2016"
     ms.author="adrianha"/>
 
 #在 Xamarin.Forms 应用中连接到 Azure 存储

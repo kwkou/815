@@ -7,14 +7,15 @@
 	manager="erikre"
 	editor=""/>  
 
+
 <tags
 	ms.service="app-service-mobile"
 	ms.workload="mobile"
 	ms.tgt_pltfrm="html"
 	ms.devlang="javascript"
 	ms.topic="article"
-	ms.date="09/12/2016"
-	wacn.date="10/17/2016"
+	ms.date="10/01/2016"
+	wacn.date="11/21/2016"
 	ms.author="adrianha"/>
 
 # 如何使用适用于 Azure 移动应用的 JavaScript 客户端库
@@ -22,6 +23,12 @@
 [AZURE.INCLUDE [app-service-mobile-selector-client-library](../../includes/app-service-mobile-selector-client-library.md)]
 
 本指南介绍如何使用最新的 [Azure 移动应用 JavaScript SDK] 执行常见任务。对于 Azure 移动应用的新手，请先完成 [Azure Mobile Apps Quick Start]（Azure 移动应用快速入门）创建后端和表。本指南着重介绍如何在 HTML/JavaScript Web 应用程序中使用移动后端。
+
+## 支持的平台
+
+我们将浏览器支持限制为主要浏览器的当前最新版本：Google Chrome、Microsoft Edge、Microsoft Internet Explorer 和 Mozilla Firefox。我们预期 SDK 可与任何相对现代的浏览器搭配使用。
+
+包作为通用 JavaScript 模块分发，因此支持全局、AMD 和 CommonJS 格式。
 
 ##<a name="Setup"></a>安装与先决条件
 
@@ -68,50 +75,13 @@ Azure 应用服务支持使用各种外部标识提供者（包括 Microsoft 帐
 
 在本地运行可能会导致问题产生，因为默认情况下，应用服务身份验证只配置为允许从移动应用后端访问。使用以下步骤更改应用服务设置，允许在本地运行服务器时进行身份验证：
 
-可使用 REST API 配置移动应用。
-
-1. 从以下 URL 获取。
-
-        https://management.chinacloudapi.cn/subscriptions/<Subscription id>/resourceGroups/<resource group>/providers/Microsoft.Web/sites/<you app>/config/authsettings/list?api-version=2015-08-01
-
-2. 将出现类似于下面的内容：
-
-        {
-        "id": "/subscriptions/<Subscription id>/resourceGroups/<resource group>/providers/Microsoft.Web/sites/<you app>/config/authsettings",
-        "name": "authsettings",
-        "type": "Microsoft.Web/sites/config",
-        "location": "East Asia",
-        "tags": {
-            "hidden-related:/subscriptions/<Subscription id>/resourcegroups/<resource group>/providers/Microsoft.Web/serverfarms/<app service plan>": "empty"
-        },
-        "properties": {
-            "enabled": false,
-            "httpApiPrefixPath": null,
-            "unauthenticatedClientAction": null,
-            "tokenStoreEnabled": null,
-            "allowedExternalRedirectUrls": null,
-            "defaultProvider": null,
-            "clientId": null,
-            "clientSecret": null,
-            "issuer": null,
-            "allowedAudiences": null,
-            "additionalLoginParams": null,
-            "isAadAutoProvisioned": false,
-            "googleClientId": null,
-            "googleClientSecret": null,
-            "googleOAuthScopes": null,
-            "facebookAppId": null,
-            "facebookAppSecret": null,
-            "facebookOAuthScopes": null,
-            "twitterConsumerKey": null,
-            "twitterConsumerSecret": null,
-            "microsoftAccountClientId": null,
-            "microsoftAccountClientSecret": null,
-            "microsoftAccountOAuthScopes": null
-        }
-        }
-
-3. 更新 `allowedExternalRedirectUrls` 如下所示。
+1. 登录到 [Azure 门户预览]
+2. 导航到移动应用后端。
+3. 选择“开发工具”菜单中的“资源浏览器”。
+4. 单击“转到”，在新选项卡或窗口中打开移动应用后端的资源浏览器。
+5. 展开应用的“config”>“authsettings”节点。
+6. 单击“编辑”按钮启用对资源的编辑。
+7. 查找 **allowedExternalRedirectUrls** 元素，此元素应为 null。在数组中添加 URL：
 
          "allowedExternalRedirectUrls": [
              "http://localhost:3000",
@@ -120,7 +90,7 @@ Azure 应用服务支持使用各种外部标识提供者（包括 Microsoft 帐
 
     将数组中的 URL 替换为服务的 URL，在本示例中为本地 Node.js 示例服务的 `http://localhost:3000`。对于 Ripple 服务，也可以根据应用的配置方式，使用 `http://localhost:4400` 或其他某个 URL。
 
-8. 将 json 放置在 URL 的上面。
+8. 在页面顶部，单击“读/写”，然后单击“PUT”保存更新。
 
 还需要将相同的环回 URL 添加到 CORS 白名单设置：
 
@@ -141,4 +111,4 @@ Azure 应用服务支持使用各种外部标识提供者（包括 Microsoft 帐
 [Azure 移动应用 JavaScript SDK]: https://www.npmjs.com/package/azure-mobile-apps-client
 [Query object documentation]: https://msdn.microsoft.com/zh-cn/library/azure/jj613353.aspx
 
-<!---HONumber=Mooncake_0919_2016-->
+<!---HONumber=Mooncake_1114_2016-->

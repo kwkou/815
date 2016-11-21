@@ -3,9 +3,10 @@
 	description="了解如何在 Windows 和 Xamarin 应用中使用 Azure 应用服务移动应用的 .NET 客户端。"
 	services="app-service\mobile"
 	documentationCenter=""
-	authors="ggailey777"
+	authors="adrianhall"
 	manager="erikre"
-	editor=""/>
+	editor=""/>  
+
 
 <tags
 	ms.service="app-service-mobile"
@@ -13,8 +14,8 @@
 	ms.tgt_pltfrm="mobile-multiple"
 	ms.devlang="dotnet"
 	ms.topic="article"
-	ms.date="06/11/2016"
-	wacn.date="09/26/2016"
+	ms.date="10/01/2016"
+	wacn.date="11/21/2016"
 	ms.author="adrianha"/>
 
 # 如何使用 Azure 移动应用的托管客户端
@@ -23,17 +24,30 @@
 
 ##概述
 
-本指南说明如何在 Windows 应用和 Xamarin 应用中使用 Azure 应用服务移动应用的托管客户端库执行常见方案。如果是移动服务的新手，最好先完成 [Azure Mobile Apps quickstart]（Azure 移动应用快速入门）教程。在本指南中，我们侧重于客户端托管的 SDK。有关移动应用的服务器端 SDK 的详细信息，请参阅 [.NET 服务器 SDK](/documentation/articles/app-service-mobile-dotnet-backend-how-to-use-server-sdk/) 或 [Node.js 服务器 SDK](/documentation/articles/app-service-mobile-node-backend-how-to-use-server-sdk/) 的文档。
+本指南说明如何在 Windows 应用和 Xamarin 应用中使用 Azure 应用服务移动应用的托管客户端库执行常见方案。如果是移动服务的新手，最好先完成 [Azure Mobile Apps quickstart][1]（Azure 移动应用快速入门）教程。在本指南中，我们侧重于客户端托管的 SDK。有关移动应用的服务器端 SDK 的详细信息，请参阅 [.NET 服务器 SDK][2] 或 [Node.js 服务器 SDK][3] 的文档。
 
 ## 参考文档
 
-客户端 SDK 的参考文档位于此处：[Azure Mobile Apps .NET client reference]（Azure 移动应用 .NET 客户端参考）。还可以在 [Azure-Samples GitHub 存储库]中找到多个客户端示例。
+客户端 SDK 的参考文档位于此处：[Azure Mobile Apps .NET client reference][4]（Azure 移动应用 .NET 客户端参考）。
+还可以在 [Azure-Samples GitHub 存储库][5]中找到多个客户端示例。
+
+## 支持的平台
+
+.NET 平台支持以下平台：
+
+* Xamarin Android 版支持 API 19 到 24（KitKat 到 Nougat）
+* Xamarin iOS 版支持 iOS 8.0 及更高版本
+* 通用 Windows 平台
+* Windows Phone 8.1
+* Windows Phone 8.0（Silverlight 应用程序除外）
+
+“服务器流”身份验证在呈现的 UI 中使用 WebView。如果设备不能呈现 WebView UI，则需要其他身份验证方法。因此这个 SDK 不适用于监视类型或同样受限制的设备。
 
 ##<a name="setup"></a>安装与先决条件
 
-假设已创建并发布移动应用后端项目（至少包含一个表）。在本主题使用的代码中，表的名称为 `TodoItem`，其中包含以下列：`Id`、`Text` 和 `Complete`。这就是当完成 [Azure Mobile Apps quickstart]（Azure 移动应用快速入门）时所创建的同一个表。
+假设已创建并发布移动应用后端项目（至少包含一个表）。在本主题使用的代码中，表的名称为 `TodoItem`，它包含以下列：`Id`、`Text` 和 `Complete`。此表就是完成 [Azure 移动应用快速入门]时创建的表。
 
-相应的类型化客户端 C# 类型如下：
+C# 中对应的类型化客户端类型为以下类：
 
 	public class TodoItem
 	{
@@ -46,17 +60,19 @@
 		public bool Complete { get; set; }
 	}
 
-请注意，[JsonPropertyAttribute] 用于定义客户端类型与表之间的 *PropertyName* 映射。
+[JsonPropertyAttribute][6] 用于定义客户端类型与表之间的 *PropertyName* 映射。
 
-若要了解如何在移动应用后端创建新表，请参阅 [.NET 服务器 SDK](/documentation/articles/app-service-mobile-dotnet-backend-how-to-use-server-sdk/#how-to-define-a-table-controller)主题或 [Node.js 服务器 SDK 主题](/documentation/articles/app-service-mobile-node-backend-how-to-use-server-sdk/#howto-dynamicschema)中的信息。如果已在 Azure 门户中使用快速入门项目创建移动应用后端，则也可以在 [Azure 门户预览]中使用“简易表”设置。
+若要了解如何在移动应用后端中创建表，请参阅 [.NET 服务器 SDK 主题][7]或 [Node.js 服务器 SDK 主题][8]中的信息。如果已在 Azure 门户中使用快速入门项目创建移动应用后端，也可以在 [Azure 门户预览]中使用“简易表”设置。
 
 ###如何安装托管的客户端 SDK 包
 
-使用以下方法之一从 [NuGet](https://www.nuget.org/packages/Microsoft.Azure.Mobile.Client/) 安装适用于移动应用的托管客户端 SDK 包：
+使用以下方法之一从 [NuGet][9] 安装适用于移动应用的托管客户端 SDK 包：
 
-+ **Visual Studio** 右键单击项目，单击“管理 NuGet 包”，搜索 `Microsoft.Azure.Mobile.Client` 包，然后单击“安装”。
++ **Visual Studio**  
+右键单击项目，单击“管理 NuGet 包”，搜索 `Microsoft.Azure.Mobile.Client` 包，然后单击“安装”。
 
-+ **Xamarin Studio** 右键单击项目，单击“添加”>“添加 NuGet 包”，搜索 `Microsoft.Azure.Mobile.Client ` 包，然后单击“添加包”。
++ **Xamarin Studio**  
+右键单击项目，单击“添加”>“添加 NuGet 包”，搜索 `Microsoft.Azure.Mobile.Client ` 包，然后单击“添加包”。
 
 在主活动文件中，请记得添加以下 **using** 语句：
 
@@ -64,15 +80,15 @@
 
 ###<a name="symbolsource"></a>如何在 Visual Studio 中使用调试符号
 
-[SymbolSource] 上提供了 Microsoft.Azure.Mobile 命名空间的符号。若要将 SymbolSource 与 Visual Studio 集成，请参阅 [SymbolSource 说明]。
+[SymbolSource][10] 上提供了 Microsoft.Azure.Mobile 命名空间的符号。若要将 SymbolSource 与 Visual Studio 集成，请参阅 [SymbolSource 说明][11]。
 
 ##<a name="create-client"></a>创建移动应用客户端
 
-以下代码创建用于访问移动应用后端的 [MobileServiceClient] 对象。
+以下代码创建用于访问移动应用后端的 [MobileServiceClient][12] 对象。
 
-	MobileServiceClient client = new MobileServiceClient("MOBILE_APP_URL");
+	var client = new MobileServiceClient("MOBILE_APP_URL");
 
-在上述代码中，请将 `MOBILE_APP_URL` 替换为移动应用后端的 URL，可以在 [Azure 门户预览]中移动应用后端的边栏选项卡内找到此 URL。这是一般做法，我们建议使用客户端的单一实例。
+在上述代码中，请将 `MOBILE_APP_URL` 替换为移动应用后端的 URL，可以在 [Azure 门户预览]中移动应用后端的边栏选项卡内找到此 URL。MobileServiceClient 对象应为单一实例。
 
 ## 使用表
 
@@ -94,11 +110,11 @@
 
 ###<a name="instantiating"></a>如何创建表引用
 
-访问或修改后端表中数据的所有代码均将调用 `MobileServiceTable` 对象的函数。通过对 `MobileServiceClient` 的实例调用 [GetTable] 方法可以获取对表的引用，如下所示：
+访问或修改后端表中数据的所有代码都会调用 `MobileServiceTable` 对象的函数。调用 [GetTable] 方法可获取对表的引用，如下所示：
 
     IMobileServiceTable<TodoItem> todoTable = client.GetTable<TodoItem>();
 
-这是类型化的序列化模型。也支持非类型化的序列化模型。下面[创建对非类型化表的引用]：
+返回的对象使用类型化序列化模型。也支持非类型化的序列化模型。以下示例[创建对非类型化表的引用]：
 
 	// Get an untyped table reference
 	IMobileServiceTable untypedTodoTable = client.GetTable("TodoItem");
@@ -109,13 +125,13 @@
 
 本部分介绍如何向包含以下功能的移动应用后端发出查询：
 
-- [筛选返回的数据]
-- [为返回的数据排序]
-- [在页中返回数据]
-- [选择特定的列]
-- [按 ID 查找数据]
+- [筛选返回的数据](#filtering)
+- [为返回的数据排序](#sorting)
+- [在页中返回数据](#paging)
+- [选择特定的列](#selecting)
+- [按 ID 查找数据](#lookingup)
 
->[AZURE.NOTE] 将强制使用服务器驱动的页大小来防止返回所有行。这可以防止对大型数据集发出的默认请求对服务造成负面影响。若要返回 50 个以上的行，请根据[在页中返回数据]所述使用 `Take` 方法。
+>[AZURE.NOTE] 将强制使用服务器驱动的页大小来防止返回所有行。分页可以防止对大型数据集发出的默认请求对服务造成负面影响。若要返回 50 个以上的行，请根据[在页中返回数据]所述使用 `Skip` 和 `Take` 方法。
 
 ###<a name="filtering"></a>如何筛选返回的数据
 
@@ -126,31 +142,29 @@
 	   .Where(todoItem => todoItem.Complete == false)
 	   .ToListAsync();
 
-可以使用消息检查软件（例如浏览器开发人员工具或 [Fiddler]）来查看发送到后端的请求的 URI。从下面的请求 URI 中，可以看出已修改查询字符串：
+可以使用消息检查软件（例如浏览器开发人员工具或 [Fiddler]）来查看发送到后端的请求的 URI。从请求 URI 中，可以看出查询字符串已修改：
 
 	GET /tables/todoitem?$filter=(complete+eq+false) HTTP/1.1
 
-服务器 SDK 将此 OData 请求转换成类似于以下示例的 SQL 查询：
+服务器 SDK 将此 OData 请求转换成 SQL 查询：
 
 	SELECT *
 	FROM TodoItem
 	WHERE ISNULL(complete, 0) = 0
 
-传递给 `Where` 方法的函数可以包含任意数目的条件。例如，以下行：
+传递给 `Where` 方法的函数可以包含任意数目的条件。
 
 	// This query filters out completed TodoItems where Text isn't null
 	List<TodoItem> items = await todoTable
 	   .Where(todoItem => todoItem.Complete == false && todoItem.Text != null)
 	   .ToListAsync();
 
-服务器 SDK 转换成类似于以下示例的 SQL 查询：
+服务器 SDK 会将此示例转换成 SQL 查询：
 
 	SELECT *
 	FROM TodoItem
 	WHERE ISNULL(complete, 0) = 0
 	      AND ISNULL(text, 0) = 0
-
-上述 `WHERE` 语句将查找 `Complete` 状态设置为 false 且 `Text` 不为 null 的项。
 
 此查询也可以拆分成多个子句：
 
@@ -161,7 +175,17 @@
 
 这两种方法是等效的，可以换用。前一个选项（在一个查询中连接多个谓词）更为精简，也是我们推荐的方法。
 
-`Where` 子句支持可转换成 OData 子集的操作。其中包括关系运算符（==、!=、<、<=、>、>=）、数学运算符（+、-、/、*、%）、数字精度（Math.Floor、Math.Ceiling）、字符串函数（Length、Substring、Replace、IndexOf、StartsWith、EndsWith）、日期属性（Year、Month、Day、Hour、Minute、Second）、对象的访问属性，以及组合了上述所有操作的表达式。在考虑服务器 SDK 支持的操作时，可以参考 [OData v3 文档]。
+`Where` 子句支持可转换成 OData 子集的操作。运算包括：
+
+* 关系运算符（==、!=、<、<=、>、>=），
+* 算术运算符（+、-、/、*、%），
+* 数字精度（Math.Floor、Math.Ceiling），
+* 字符串函数（Length、Substring、Replace、IndexOf、StartsWith、EndsWith），
+* 日期属性（Year、Month、Day、Hour、Minute、Second），
+* 对象的访问属性，以及
+* 组合上述任意运算的表达式。
+
+在考虑服务器 SDK 支持的操作时，可以参考 [OData v3 文档]。
 
 ###<a name="sorting"></a>如何为返回的数据排序
 
@@ -186,7 +210,7 @@
 					.Take(3);
 	List<TodoItem> items = await query.ToListAsync();
 
-以下经过修改的查询将跳过前三个结果，返回其后的三个结果。实际上这是数据的第二“页”，其页大小为三个项。
+以下经过修改的查询会跳过前三个结果，返回接下来的三个结果。此查询生成数据的第二“页”，其页大小为三个项。
 
 	// Define a filtered query that skips the top 3 items and returns the next 3 items.
 	MobileServiceTableQuery<TodoItem> query = todoTable
@@ -194,13 +218,13 @@
 					.Take(3);
 	List<TodoItem> items = await query.ToListAsync();
 
-你还可以使用 [IncludeTotalCount] 方法来确保查询获取应该返回的<i>所有</i>记录的总计数，并忽略指定的任何 take 分页/限制子句：
+[IncludeTotalCount] 方法请求应该返回的_所有_记录的总计数，并忽略指定的任何分页/限制子句：
 
 	query = query.IncludeTotalCount();
 
-这是将硬编码分页值传递给 `Take` 和 `Skip` 方法的简化方案。在实际应用中，你可以对页导航控件或类似的 UI 使用类似于上面的查询，让用户导航到上一页和下一页。
+在实际应用中，可以搭配页导航控件或类似的 UI 使用类似于上述示例的查询，在页之间导航。
 
->[AZURE.NOTE]若要重写移动应用后端中的 50 行限制，还必须将 [EnableQueryAttribute] 应用到公共 GET 方法，并指定分页行为。将以下语句应用到该方法后，最大返回行数将设置为 1000：
+>[AZURE.NOTE]若要替代移动应用后端中的 50 行限制，还必须将 [EnableQueryAttribute] 应用到公共 GET 方法，并指定分页行为。将以下语句应用到该方法后，最大返回行数将设置为 1000：
 >
 >    [EnableQuery(MaxTop=1000)]
 
@@ -220,7 +244,7 @@
 						"Now complete!" : "Incomplete!"));
 	List<string> items = await query.ToListAsync();
 
-到目前为止所述的所有函数都是加性函数，我们可以不断地调用它们，每次调用都能进一步影响查询。再提供一个示例：
+目前所述的所有函数都是累加式的，因此可以一直链接。每个链接的调用会影响多个查询。再提供一个示例：
 
 	MobileServiceTableQuery<TodoItem> query = todoTable
 					.Where(todoItem => todoItem.Complete == false)
@@ -247,20 +271,20 @@
 
 ### <a name="inserting"></a>如何将数据插入移动应用后端
 
-所有客户端类型必须包含名为 **Id** 的成员，其默认为字符串。需要有此 **Id** 才能执行脱机 CRUD 操作。以下代码演示如何使用 [InsertAsync] 方法将新行插入表中。参数包含要作为 .NET 对象插入的数据。
+所有客户端类型必须包含名为 **Id** 的成员，其默认为字符串。需要此 **ID** 才能执行 CRUD 操作和脱机同步。以下代码演示如何使用 [InsertAsync] 方法将新行插入表中。参数包含要作为 .NET 对象插入的数据。
 
 	await todoTable.InsertAsync(todoItem);
 
-如果在传递给 `todoTable.InsertAsync` 调用的 `todoItem` 中未包含唯一的自定义 ID 值，则服务器将会生成一个 ID 值，并在返回到客户端的 `todoItem` 对象中设置该值。
+如果插入期间没有在 `todoItem` 中包括唯一的自定义 ID 值，服务器会生成 GUID。在调用返回后，可通过检查对象来检索生成的 ID。
 
-若要插入非类型化数据，你可以按如下所示利用 Json.NET。
+若要插入非类型化数据，可利用 Json.NET：
 
 	JObject jo = new JObject();
 	jo.Add("Text", "Hello World");
 	jo.Add("Complete", false);
 	var inserted = await table.InsertAsync(jo);
 
-以下示例使用电子邮件地址作为唯一的字符串 ID。
+以下示例使用电子邮件地址作为唯一的字符串 ID：
 
 	JObject jo = new JObject();
 	jo.Add("id", "myemail@emaildomain.com");
@@ -268,11 +292,9 @@
 	jo.Add("Complete", false);
 	var inserted = await table.InsertAsync(jo);
 
-###使用 ID 值
+### 使用 ID 值
 
-移动应用支持为表的 **ID** 列使用唯一的自定义字符串值。这样，应用程序便可为 ID 使用自定义值（如电子邮件地址或用户名）。
-
-字符串 ID 可提供以下优势：
+移动应用支持为表的 **ID** 列使用唯一的自定义字符串值。使用字符串值，应用程序便可为 ID 使用自定义值，例如电子邮件地址或用户名。字符串 ID 可提供以下优势：
 
 * 无需往返访问数据库即可生成 ID。
 * 更方便地合并不同表或数据库中的记录。
@@ -289,7 +311,7 @@
 
 	await todoTable.UpdateAsync(todoItem);
 
-若要插入非类型化数据，可按如下所示利用 [Json.NET]：
+若要更新非类型化数据，可按如下所示利用 [Json.NET]：
 
 	JObject jo = new JObject();
 	jo.Add("id", "37BBF396-11F0-4B39-85C8-B319C729AF6D");
@@ -297,7 +319,7 @@
 	jo.Add("Complete", false);
 	var inserted = await table.UpdateAsync(jo);
 
-更新时，必须指定 `id` 字段。这是后端识别要更新哪个实例的方式。可以从 `InsertAsync` 调用的结果中获取 `id` 字段。如果尝试更新项但未提供 `id` 值，将引发 `ArgumentException`。
+更新时，必须指定 `id` 字段。后端使用 `id` 字段标识要更新的行。可以从 `InsertAsync` 调用的结果中获取 `id` 字段。如果尝试更新项但未提供 `id` 值，将引发 `ArgumentException`。
 
 ###<a name="deleting"></a>如何删除移动应用后端中的数据
 
@@ -311,11 +333,11 @@
 	jo.Add("id", "37BBF396-11F0-4B39-85C8-B319C729AF6D");
 	await table.DeleteAsync(jo);
 
-请注意，发出删除请求时，必须指定 ID。其他属性不会传递到服务，否则服务会将它们忽略。`DeleteAsync` 调用的结果通常是 `null`。可以从 `InsertAsync` 调用的结果中获取要传入的 ID。如果尝试删除项但未指定 `id` 字段，将引发 `MobileServiceInvalidOperationException`。
+发出删除请求时，必须指定 ID。其他属性不会传递到服务，否则服务会将它们忽略。`DeleteAsync` 调用的结果通常是 `null`。可以从 `InsertAsync` 调用的结果中获取要传入的 ID。如果尝试删除项但未指定 `id` 字段，将引发 `MobileServiceInvalidOperationException`。
 
 ###<a name="optimisticconcurrency"></a>如何使用乐观并发解决冲突
 
-两个或两个以上客户端可能会同时将更改写入同一项目。如果没有任何冲突检测，则最后一次写入会覆盖任何以前的更新，即使这并不是所需要的结果。 *乐观并发控制* 假设每个事务均可以提交，因此不使用任何资源锁定。提交事务之前，乐观并发控制将验证是否没有其他事务修改了数据。如果数据已修改，则将回滚正在提交的事务。
+两个或两个以上客户端可能会同时将更改写入同一项目。如果没有冲突检测，最后一次写入会覆盖任何以前的更新。**乐观并发控制**假设每个事务均可以提交，因此不使用任何资源锁定。提交事务之前，乐观并发控制将验证是否没有其他事务修改了数据。如果数据已修改，则将回滚正在提交的事务。
 
 移动应用通过使用 `version` 系统属性列（该列是为移动应用后端中的每个表定义的）跟踪对每个项的更改来支持乐观并发控制。每次更新某个记录时，移动应用都将该记录的 `version` 属性设置为新值。在每次执行更新请求期间，会将该请求包含的记录的 `version` 属性与服务器上的记录的同一属性进行比较。如果随请求传递的版本与后端不匹配，客户端库将引发 `MobileServicePreconditionFailedException<T>` 异常。该异常中提供的类型就是包含记录服务器版本的后端中的记录。然后，应用程序可以借助此信息来确定是否要使用后端中正确的 `version` 值再次执行更新请求以提交更改。
 
@@ -402,7 +424,7 @@
 
 ###<a name="binding"></a>如何将移动应用数据绑定到 Windows 用户界面
 
-本部分说明如何使用 Windows 应用中的 UI 元素显示返回的数据对象。可以运行以下示例代码，使用查询绑定到列表源，从而找出 `todoTable` 中的不完整项并在极简单的列表中显示这些项。[MobileServiceCollection] 创建移动应用感知的绑定集合。
+本部分说明如何使用 Windows 应用中的 UI 元素显示返回的数据对象。以下示例代码绑定到具有不完整项查询的列表的源。[MobileServiceCollection] 创建感知移动应用的绑定集合。
 
 	// This query filters out completed TodoItems.
 	MobileServiceCollection<TodoItem, TodoItem> items = await todoTable
@@ -416,7 +438,7 @@
 	ListBox lb = new ListBox();
 	lb.ItemsSource = items;
 
-托管运行时中的某些控件支持名为 [ISupportIncrementalLoading] 的接口。当用户滚动浏览时，此接口允许控件请求更多的数据。系统通过 [MobileServiceIncrementalLoadingCollection]（可自动处理来自控件的调用）为这个适用于通用 Windows 应用程序的接口提供内置支持。若要在 Windows 应用中使用 `MobileServiceIncrementalLoadingCollection`，请执行以下代码：
+托管运行时中的某些控件支持名为 [ISupportIncrementalLoading] 的接口。当用户滚动浏览时，此接口允许控件请求更多的数据。系统通过 [MobileServiceIncrementalLoadingCollection]（可自动处理来自控件的调用）为这个适用于通用 Windows 应用程序的接口提供内置支持。在 Windows 应用中使用 `MobileServiceIncrementalLoadingCollection`，如下所示：
 
     MobileServiceIncrementalLoadingCollection<TodoItem,TodoItem> items;
     items = todoTable.Where(todoItem => todoItem.Complete == false).ToIncrementalLoadingCollection();
@@ -424,36 +446,122 @@
     ListBox lb = new ListBox();
     lb.ItemsSource = items;
 
-若要在 Windows Phone 8 和“Silverlight”应用上使用新的集合，请在 `IMobileServiceTableQuery<T>` 和 `IMobileServiceTable<T>` 上使用 `ToCollection` 扩展方法。若要实际加载数据，请调用 `LoadMoreItemsAsync()`。
+若要在 Windows Phone 8 和“Silverlight”应用上使用新的集合，请在 `IMobileServiceTableQuery<T>` 和 `IMobileServiceTable<T>` 上使用 `ToCollection` 扩展方法。若要加载数据，请调用 `LoadMoreItemsAsync()`。
 
 	MobileServiceCollection<TodoItem, TodoItem> items = todoTable.Where(todoItem => todoItem.Complete==false).ToCollection();
 	await items.LoadMoreItemsAsync();
 
-当你使用通过调用 `ToCollectionAsync` 或 `ToCollection` 创建的集合时，可以获取可绑定到 UI 控件的集合。此集合支持分页，也就是说，控件可以要求该集合“加载更多项”，而该集合也确实会这样做。这样看来，无需执行任何用户代码，控件就能启动工作流。但是，由于集合要从网络加载数据，因此可以预料到这种加载有时会失败。若要处理这种故障，你可以重写 `MobileServiceIncrementalLoadingCollection` 中的 `OnException` 方法，以处理调用控件执行的 `LoadMoreItemsAsync` 后发生的异常。
+使用通过调用 `ToCollectionAsync` 或 `ToCollection` 创建的集合时，可以获取可绑定到 UI 控件的集合。此集合具有分页感知功能。该集合从网络加载数据，因此加载有时候会失败。若要处理此类故障，可以替代 `MobileServiceIncrementalLoadingCollection` 中的 `OnException` 方法，以处理调用 `LoadMoreItemsAsync` 导致的异常。
 
-最后，假设你的表包含许多字段，但你只想在控件中显示其中的某些字段。在这种情况下，你可以参考上面“[选择特定的列](#selecting)”部分中的指导，选择要在 UI 中显示的特定列。
+假设表包含许多字段，但只想在控件中显示其中的某些字段。可以使用上面“[选择特定的列](#selecting)”部分中的指导，选择要在 UI 中显示的特定列。
 
 ###<a name="pagesize"></a>更改页面大小
 
-默认情况下，Azure 移动应用针对每个请求最多返回 50 个项。可以通过增大服务器中的页面大小上限，以及增大客户端中请求的页面大小，来更改此设置。若要增大请求的页面大小，请使用 `PullAsync` 的重载指定 `PullOptions`：
+默认情况下，Azure 移动应用针对每个请求最多返回 50 个项。可通过增加客户端和服务器上的最大页面大小来更改分页大小。若要增加请求的页面大小，请在使用 `PullAsync()` 时指定 `PullOptions`：
 
     PullOptions pullOptions = new PullOptions
 		{
 			MaxPageSize = 100
 		};
 
-假设已在服务器中使 PageSize 等于或大于 100，这样，每个请求最多可返回 100 个项。
+假设已在服务器中使 `PageSize` 等于或大于 100，此时请求最多可返回 100 个项。
+
+##<a name="offlinesync"></a>使用脱机表
+
+脱机表使用本地 SQLite 存储来存储数据，供脱机时使用。所有表操作都针对本地 SQLite 存储（而不是远程服务器存储）完成。若要创建脱机表，请先准备项目：
+
+1. 在 Visual Studio 中，右键单击解决方案 >“管理解决方案的 NuGet 程序包…”，然后在解决方案的所有项目中搜索并安装 **Microsoft.Azure.Mobile.Client.SQLiteStore** NuGet 包。
+
+2. （可选）若要支持 Windows 设备，请安装以下 SQLite 运行时包之一：
+
+    * **Windows 8.1 运行时：**安装 [SQLite for Windows 8.1][3]。
+    * **Windows Phone 8.1：**安装 [SQLite for Windows Phone 8.1][4]。
+    * **通用 Windows 平台** 安装[适用于通用 Windows 平台的 SQLite][5]。
+
+3. （可选）。对于 Windows 设备，单击“引用”>“添加引用...”，展开 **Windows** 文件夹 >“扩展”，然后启用相应的 **SQLite for Windows** SDK 和 **Visual C++ 2013 Runtime for Windows** SDK。每个 Windows 平台的 SQLite SDK 名称略有不同。
+
+创建表引用前，必须先准备本地存储：
+
+	var store = new MobileServiceSQLiteStore(Constants.OfflineDbPath);
+	store.DefineTable<TodoItem>();
+
+	//Initializes the SyncContext using the default IMobileServiceSyncHandler.
+	await this.client.SyncContext.InitializeAsync(store);
+
+存储初始化通常在创建客户端后立即完成。**OfflineDbPath** 应该是适合在支持的所有平台上使用的文件名。如果路径是完全限定路径（即，以斜杠开头），则使用该路径。如果路径不是完全限定路径，文件会放在平台特定的位置。
+
+* 对于 iOS 和 Android 设备，默认路径为“个人文件”文件夹。
+* 对于 Windows 设备，默认路径是应用程序特定的“AppData”文件夹。
+
+可以使用 `GetSyncTable<>` 方法获取表引用：
+
+	var table = client.GetSyncTable<TodoItem>();
+
+无需身份验证即可使用脱机表。只需在与后端服务通信时进行身份验证。
+
+###<a name="syncoffline"></a>同步脱机表
+
+默认情况下，脱机表不与后端同步。同步拆分为两个部分。可通过下载新项单独推送更改。以下是典型的同步方法：
+
+	public async Task SyncAsync()
+	{
+		ReadOnlyCollection<MobileServiceTableOperationError> syncErrors = null;
+
+		try
+		{
+			await this.client.SyncContext.PushAsync();
+
+			await this.todoTable.PullAsync(
+				//The first parameter is a query name that is used internally by the client SDK to implement incremental sync.
+				//Use a different query name for each unique query in your program
+				"allTodoItems",
+				this.todoTable.CreateQuery());
+		}
+		catch (MobileServicePushFailedException exc)
+		{
+			if (exc.PushResult != null)
+			{
+				syncErrors = exc.PushResult.Errors;
+			}
+		}
+
+		// Simple error/conflict handling. A real application would handle the various errors like network conditions,
+		// server conflicts and others via the IMobileServiceSyncHandler.
+		if (syncErrors != null)
+		{
+			foreach (var error in syncErrors)
+			{
+				if (error.OperationKind == MobileServiceTableOperationKind.Update && error.Result != null)
+				{
+					//Update failed, reverting to server's copy.
+					await error.CancelAndUpdateItemAsync(error.Result);
+				}
+				else
+				{
+					// Discard local change.
+					await error.CancelAndDiscardItemAsync();
+				}
+
+				Debug.WriteLine(@"Error executing sync operation. Item: {0} ({1}). Operation discarded.", error.TableName, error.Item["id"]);
+			}
+		}
+	}
+
+如果 `PullAsync` 的第一个参数为 null，则不使用增量同步。每个同步操作都会检索所有记录。
+
+SDK 会在提取记录前执行隐式 `PushAsync()`。
+
+冲突处理会在 `PullAsync()` 方法上发生。可以使用与联机表相同的方式处理冲突。生成在调用 `PullAsync()` 时生成，而不是在插入、更新或删除期间生成。如果发生多个冲突，会将它们绑定到单个 MobileServicePushFailedException。分别处理每个故障。
 
 ##<a name="customapi"></a>使用自定义 API
 
 自定义 API 可让你定义自定义终结点，这些终结点将会公开不映射到插入、更新、删除或读取操作的服务器功能。使用自定义 API 能够以更大的力度控制消息传送，包括读取和设置 HTTP 消息标头，以及定义除 JSON 以外的消息正文格式。
 
-通过在客户端上调用某一个 [InvokeApiAsync] 方法重载来调用自定义 API。例如，以下代码行向后端上的 **completeAll** API 发送 POST 请求：
+通过在客户端上调用其中一个 [InvokeApiAsync] 方法来调用自定义 API。例如，以下代码行向后端上的 **completeAll** API 发送 POST 请求：
 
     var result = await client.InvokeApiAsync<MarkAllResult>("completeAll", System.Net.Http.HttpMethod.Post, null);
 
-请注意，这种类型化方法调用要求定义 **MarkAllResult** 返回类型。支持类型化和非类型化的方法。
-
+此表单是类型化方法调用，要求定义 **MarkAllResult** 返回类型。支持类型化和非类型化的方法。
 
 ##<a name="authentication"></a>对用户进行身份验证
 
@@ -467,7 +575,7 @@
 
 本部分介绍以下主题：
 
-+ [客户端托管的身份验证](#clientflow)
++ [客户端托管的身份验证](#client-flow)
 + [服务器托管的身份验证](#serverflow)
 + [缓存身份验证令牌](#caching)
 
@@ -484,15 +592,13 @@
 
 可以使用 Active Directory 身份验证库 (ADAL)，从使用 Azure Active Directory 身份验证的客户端启动用户身份验证。
 
-1. 根据 [How to configure App Service for Active Directory login]（如何为 Active Directory 登录配置应用服务）教程的说明，为 AAD 登录配置移动应用。请务必完成注册本机客户端应用程序的可选步骤。
-
+1. 根据[如何为 Active Directory 登录配置应用服务]教程的说明，为 AAD 登录配置移动应用后端。请务必完成注册本机客户端应用程序的可选步骤。
 2. 在 Visual Studio 或 Xamarin Studio 中打开项目，然后添加对 `Microsoft.IdentityModel.CLients.ActiveDirectory` NuGet 包的引用。搜索时，请包含预发行版。
-
 3. 根据使用的平台，将以下代码添加到应用程序。在每条代码中进行以下替换：
 
-	* 将 **INSERT-AUTHORITY-HERE** 替换为在其中预配应用程序的租户的名称。格式应为 https://login.chinacloudapi.cn/contoso.partner.onmschina.cn。可以在 [Azure 经典管理门户]中 Azure Active Directory 的“域”选项卡复制此值。
+	* 将 **INSERT-AUTHORITY-HERE** 替换为在其中预配应用程序的租户的名称。格式应为 https://login.chinacloudapi.cn/contoso.partner.onmschina.cn。可以在 [Azure 经典管理门户]中 Azure Active Directory 的“域”选项卡中复制此值。
 	
-	* 将 **INSERT-RESOURCE-ID-HERE** 替换移动应用后端的客户端 ID。可以在门户中“Azure Active Directory 设置”下面的“高级”选项卡获取此值。
+	* 将 **INSERT-RESOURCE-ID-HERE** 替换移动应用后端的客户端 ID。可以在门户中“Azure Active Directory 设置”下面的“高级”选项卡获取客户端 ID。
 	
 	* 将 **INSERT-CLIENT-ID-HERE** 替换为从本机客户端应用程序复制的客户端 ID。
 	
@@ -593,7 +699,7 @@
 
 ####<a name="client-livesdk"></a>使用 Microsoft 帐户和 Live SDK 进行单一登录
 
-若要对用户进行身份验证，必须在 Microsoft 帐户开发人员中心注册你的应用程序。然后，必须将此注册连接到移动应用后端。完成 [Register your app to use a Microsoft account login]（注册应用以使用 Microsoft 帐户登录）中的步骤，创建 Microsoft 帐户注册并将注册连接到移动应用后端。如果你同时拥有 Windows 应用商店和 Windows Phone 8/Silverlight 版本的应用，请先注册 Windows 应用商店版本。
+若要对用户进行身份验证，必须在 Microsoft 帐户开发人员中心注册应用。在移动应用后端上配置注册详细信息。若要创建 Microsoft 帐户注册并将注册连接到移动应用后端，请完成[注册应用以使用 Microsoft 帐户登录]中的步骤。如果你同时拥有 Windows 应用商店和 Windows Phone 8/Silverlight 版本的应用，请先注册 Windows 应用商店版本。
 
 以下代码使用 Live SDK 进行身份验证，并使用返回的令牌登录到移动应用后端。
 
@@ -644,9 +750,9 @@
         }
     }
 
-有关 [Windows Live SDK] 的详细信息，请参阅相关文档。
+有关详细信息，请参阅 [Windows Live SDK] 文档。
 
-###<a name="serverflow"></a> 服务器托管的身份验证
+###<a name="serverflow"></a>服务器托管的身份验证
 注册标识提供者后，使用提供者的 [MobileServiceAuthenticationProvider] 值对 [MobileServiceClient] 调用 [LoginAsync] 方法。例如，以下代码使用 Microsoft 启动服务器流登录。
 
 	private MobileServiceUser user;
@@ -677,7 +783,7 @@
 
 在服务器流中，Azure 应用服务通过以下方式管理 OAuth 2.0 身份验证流：显示选定提供者的登录页，并在用户成功使用标识提供者登录后生成应用服务身份验证令牌。[LoginAsync 方法]返回 [MobileServiceUser]，后者提供已经过身份验证的用户的 [UserId]，以及 JSON Web 令牌 (JWT) 形式的 [MobileServiceAuthenticationToken]。你可以缓存此令牌，并在它过期之前重复使用。有关详细信息，请参阅[缓存身份验证令牌](#caching)。
 
-###<a name="caching"></a> 缓存身份验证令牌
+###<a name="caching"></a>缓存身份验证令牌
 
 在某些情况下，使用客户端流程时，存储身份验证令牌甚至来自提供程序的访问令牌可避免在首次成功身份验证后调用登录方法。
 
@@ -722,7 +828,7 @@ Xamarin 应用使用 [Xamarin.Auth API](https://components.xamarin.com/view/xama
 	await client.LoginAsync(MobileServiceAuthenticationProvider.Microsoft, token);
 
 
-##<a name="pushnotifications"></a> 推送通知
+##<a name="pushnotifications"></a>推送通知
 
 以下主题介绍了推送通知：
 
@@ -755,7 +861,7 @@ Xamarin 应用使用 [Xamarin.Auth API](https://components.xamarin.com/view/xama
 
 1. 在“Visual Studio 资源管理器”中，右键单击 Windows 应用商店应用项目，单击“应用商店”>“将应用与应用商店关联...”。
 2. 在向导中，单击“下一步”，使用 Microsoft 帐户登录，在“保留新应用名称”中键入应用的名称，然后单击“保留”。
-3. 成功创建应用注册后，选择新应用名称，单击“下一步”、“关联”。这会将所需的 Windows 应用商店注册信息添加到应用程序清单中。
+3. 成功创建应用注册后，选择新应用名称，再依次单击“下一步”和“关联”。这会将所需的 Windows 应用商店注册信息添加到应用程序清单中。
 4. 使用 Microsoft 帐户登录到 [Windows 开发人员中心]。在“我的应用”下面，单击刚刚创建的应用注册。
 5. 单击“应用管理”>“应用标识”，然后向下滚动找到“包 SID”。
 
@@ -763,6 +869,7 @@ Xamarin 应用使用 [Xamarin.Auth API](https://components.xamarin.com/view/xama
 
 Xamarin 应用需要一些额外的代码才能将 iOS 上运行的应用注册到 Apple Push Notification 服务 (APNS)。有关详细信息，请参阅适用于平台的主题：
 
+* [Xamarin.Android](/documentation/articles/app-service-mobile-xamarin-android-get-started-push/#add-push)
 * [Xamarin.iOS](/documentation/articles/app-service-mobile-xamarin-ios-get-started-push/#add-push)
 
 ###<a name="how-to-register-push-templates-to-send-cross-platform-notifications"></a> 如何注册推送模板以发送跨平台通知
@@ -772,7 +879,7 @@ Xamarin 应用需要一些额外的代码才能将 iOS 上运行的应用注册�
         JObject templates = myTemplates();
         MobileService.GetPush().RegisterAsync(channel.Uri, templates);
 
-模板类型是 JObject，可以包含采用以下 JSON 格式的多个模板：
+模板应该是 `JObject` 类型，并且可以包含采用以下 JSON 格式的多个模板：
 
         public JObject myTemplates()
         {
@@ -799,7 +906,7 @@ Xamarin 应用需要一些额外的代码才能将 iOS 上运行的应用注册�
 
         MobileService.GetPush().RegisterAsync(string channelUri, JObject templates, JObject secondaryTiles);
 
-请注意，所有标记因安全考虑而删除。若要将标记添加到安装或安装中的模板，请参阅 [Work with the .NET backend server SDK for Azure Mobile Apps]（使用适用于 Azure 移动应用的 .NET 后端服务器 SDK）。
+为确保安全，注册期间会移除所有标记。若要将标记添加到安装或安装中的模板，请参阅[使用适用于 Azure 移动应用的 .NET 后端服务器 SDK]。
 
 若要使用这些注册的模板发送通知，请参阅 [Notification Hubs APIs]（通知中心 API）。
 
@@ -807,7 +914,7 @@ Xamarin 应用需要一些额外的代码才能将 iOS 上运行的应用注册�
 
 ###<a name="errors"></a>如何：处理错误
 
-当后端发生错误时，客户端 SDK 将引发 `MobileServiceInvalidOperationException`。以下示例演示如何处理后端返回的异常：
+后端发生错误时，客户端 SDK 会引发 `MobileServiceInvalidOperationException`。以下示例演示如何处理后端返回的异常：
 
 	private async void InsertTodoItem(TodoItem todoItem)
 	{
@@ -824,11 +931,11 @@ Xamarin 应用需要一些额外的代码才能将 iOS 上运行的应用注册�
 		}
 	}
 
-在 [Mobile Apps Files Sample]（移动应用文件示例）中可以找到有关处理错误状态的另一个示例 - [LoggingHandler] 示例提供日志记录委托处理例程（请参阅下文），将发出的请求记录到后端。这样，便可以在不依赖 Fiddler 的情况下轻松调试 Xamarin 应用程序。
+有关处理错误条件的其他示例，可在 [Mobile Apps Files Sample]（移动应用文件示例）中找到。[LoggingHandler] 示例提供日志记录委托处理程序（如下所示），记录向后端发出的请求。
 
 ###<a name="headers"></a>如何自定义请求标头
 
-若要支持特定的应用程序方案，可能需要自定义与移动应用后端之间的通信。例如，你可能需要将一个自定义标头添加到每个传出请求，甚至要更改响应状态代码。可以通过提供自定义 [DelegatingHandler] 来实现此目的，如以下示例中所示：
+若要支持特定的应用程序方案，可能需要自定义与移动应用后端之间的通信。例如，你可能需要将一个自定义标头添加到每个传出请求，甚至要更改响应状态代码。可使用自定义 [DelegatingHandler]，如以下示例中所示：
 
     public async Task CallClientWithHandler()
     {
@@ -861,26 +968,30 @@ Xamarin 应用需要一些额外的代码才能将 iOS 上运行的应用注册�
 
 
 <!-- Anchors. -->
-[筛选返回的数据]: #filtering
-[为返回的数据排序]: #sorting
-[在页中返回数据]: #paging
-[选择特定的列]: #selecting
-[按 ID 查找数据]: #lookingup
+
+
 
 <!-- Images. -->
 
-<!-- Internal URLs. -->
-[Azure Mobile Apps quickstart]: /documentation/articles/app-service-mobile-windows-store-dotnet-get-started/
+<!-- URLs. -->
+[1]: /documentation/articles/app-service-mobile-windows-store-dotnet-get-started/
+[2]: /documentation/articles/app-service-mobile-dotnet-backend-how-to-use-server-sdk/
+[3]: /documentation/articles/app-service-mobile-node-backend-how-to-use-server-sdk/
+[4]: https://msdn.microsoft.com/zh-cn/library/azure/mt419521(v=azure.10).aspx
+[5]: https://github.com/Azure-Samples
+[6]: http://www.newtonsoft.com/json/help/html/Properties_T_Newtonsoft_Json_JsonPropertyAttribute.htm
+[7]: /documentation/articles/app-service-mobile-dotnet-backend-how-to-use-server-sdk/#how-to-define-a-table-controller
+[8]: /documentation/articles/app-service-mobile-node-backend-how-to-use-server-sdk/#TableOperations
+[9]: https://www.nuget.org/packages/Microsoft.Azure.Mobile.Client/
+[10]: http://www.symbolsource.org/
+[11]: http://www.symbolsource.org/Public/Wiki/Using
+[12]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.mobileservices.mobileserviceclient(v=azure.10).aspx
+
 [Add authentication to your app]: /documentation/articles/app-service-mobile-windows-store-dotnet-get-started-users/
 [向应用程序添加身份验证]: /documentation/articles/app-service-mobile-windows-store-dotnet-get-started-users/
-[Work with .NET backend SDK]: /documentation/articles/app-service-mobile-dotnet-backend-how-to-use-server-sdk/
-[Work with the .NET backend server SDK for Azure Mobile Apps]: /documentation/articles/app-service-mobile-dotnet-backend-how-to-use-server-sdk/
-[How to use the Node.js backend SDK]: /documentation/articles/app-service-mobile-node-backend-how-to-use-server-sdk/
-[How to: Define a table controller]: /documentation/articles/app-service-mobile-dotnet-backend-how-to-use-server-sdk/#how-to-define-a-table-controller
-[Define Tables using a Dynamic Schema]: /documentation/articles/app-service-mobile-node-backend-how-to-use-server-sdk/#TableOperations
 [Offline Data Sync in Azure Mobile Apps]: /documentation/articles/app-service-mobile-offline-data-sync/
 [Add push notifications to your app]: /documentation/articles/app-service-mobile-windows-store-dotnet-get-started-push/
-[Register your app to use a Microsoft account login]: /documentation/articles/app-service-mobile-how-to-configure-microsoft-authentication/
+[注册应用以使用 Microsoft 帐户登录]: /documentation/articles/app-service-mobile-how-to-configure-microsoft-authentication/
 [How to configure App Service for Active Directory login]: /documentation/articles/app-service-mobile-how-to-configure-active-directory-authentication/
 
 <!-- Microsoft URLs. -->
@@ -922,14 +1033,13 @@ Xamarin 应用需要一些额外的代码才能将 iOS 上运行的应用注册�
 [Notification Hubs APIs]: https://msdn.microsoft.com/zh-cn/library/azure/dn495101.aspx
 [Mobile Apps Files Sample]: https://github.com/Azure-Samples/app-service-mobile-dotnet-todo-list-files
 [LoggingHandler]: https://github.com/Azure-Samples/app-service-mobile-dotnet-todo-list-files/blob/master/src/client/MobileAppsFilesSample/Helpers/LoggingHandler.cs#L63
-[Azure-Samples GitHub 存储库]: https://github.com/Azure-Samples
 
 <!-- External URLs -->
-[JsonPropertyAttribute]: http://www.newtonsoft.com/json/help/html/Properties_T_Newtonsoft_Json_JsonPropertyAttribute.htm
 [OData v3 文档]: http://www.odata.org/documentation/odata-version-3-0/
 [Fiddler]: http://www.telerik.com/fiddler
 [Json.NET]: http://www.newtonsoft.com/json
-[SymbolSource]: http://www.symbolsource.org/
-[SymbolSource 说明]: http://www.symbolsource.org/Public/Wiki/Using
+[Xamarin.Auth]: https://components.xamarin.com/view/xamarin.auth/
+[AuthStore.cs]: (https://github.com/azure-appservice-samples/ContosoMoments/blob/dev/src/Mobile/ContosoMoments/Helpers/AuthStore.cs)
+[ContosoMoments photo sharing sample]: https://github.com/azure-appservice-samples/ContosoMoments
 
-<!---HONumber=Mooncake_0919_2016-->
+<!---HONumber=Mooncake_1114_2016-->

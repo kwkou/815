@@ -3,9 +3,10 @@
 	description="了解如何使用 Azure 应用服务将推送通知发送到 Xamarin iOS 应用"
 	services="app-service\mobile"
 	documentationCenter="xamarin"
-	authors="wesmc7777"
+	authors="adrianhall"
 	manager="dwrede"
-	editor=""/>
+	editor=""/>  
+
 
 <tags
 	ms.service="app-service-mobile"
@@ -13,8 +14,8 @@
 	ms.tgt_pltfrm="mobile-xamarin-ios"
 	ms.devlang="dotnet"
 	ms.topic="article"
-	ms.date="05/05/2016"
-	wacn.date="09/26/2016"
+	ms.date="10/01/2016"
+	wacn.date="11/21/2016"
 	ms.author="adrianha"/>
 
 # 向 Xamarin.iOS 应用添加推送通知
@@ -98,6 +99,7 @@
 
 3. 在同一文件中，重写 **RegisteredForRemoteNotifications** 事件。在此代码中，将注册一个简单的模板通知，服务器会将此通知发送到所有支持的平台。
 
+	有关使用通知中心的模板的详细信息，请参阅[模板](/documentation/articles/notification-hubs-templates-cross-platform-push-messages/)。
 
 
         public override void RegisteredForRemoteNotifications(UIApplication application, NSData deviceToken)
@@ -156,4 +158,4 @@
 
 <!-- URLs. -->
 
-<!---HONumber=Mooncake_0919_2016-->
+<!---HONumber=Mooncake_1114_2016-->

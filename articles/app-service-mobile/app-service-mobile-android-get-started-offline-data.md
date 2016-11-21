@@ -2,7 +2,7 @@
 	pageTitle="为 Azure 移动应用启用脱机同步 (Android)"
 	description="了解如何在 Android 应用程序中使用应用服务移动应用来缓存和同步脱机数据"
 	documentationCenter="android"
-	authors="RickSaling"
+	authors="yuaxu"
 	manager="erikre"
 	services="app-service\mobile"/>
 
@@ -12,8 +12,8 @@
 	ms.tgt_pltfrm="mobile-android"
 	ms.devlang="java"
 	ms.topic="article"
-	ms.date="07/21/2016"
-	wacn.date="09/26/2016"
+	ms.date="10/01/2016"
+	wacn.date="11/21/2016"
 	ms.author="yuaxu"/>
 
 # 为 Android 移动应用启用脱机同步

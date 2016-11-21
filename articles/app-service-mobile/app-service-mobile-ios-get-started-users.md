@@ -3,8 +3,8 @@
 	description="了解如何使用 Azure 移动应用通过各种标识提供者（包括 AAD 和 Microsoft）对 iOS 应用的用户进行身份验证。"
 	services="app-service\mobile"
 	documentationCenter="ios"
-	authors="krisragh"
-	manager="dwrede"
+	authors="yuaxu"
+	manager="yochayk"
 	editor=""/>
 
 <tags
@@ -13,8 +13,8 @@
 	ms.tgt_pltfrm="mobile-ios"
 	ms.devlang="dotnet"
 	ms.topic="article"
-	ms.date="06/28/2016"
-	wacn.date="09/26/2016"
+	ms.date="10/01/2016"
+	wacn.date="11/21/2016"
 	ms.author="yuaxu"/>
 
 # Add authentication to your iOS app（将身份验证添加到 iOS 应用）

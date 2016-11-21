@@ -3,9 +3,9 @@
 	description="了解如何使用 Azure 移动应用将推送通知发送到 iOS 应用。"
 	services="app-service\mobile"
 	documentationCenter="ios"
-	manager="dwrede"
+	manager="yochayk"
 	editor=""
-	authors="krisragh"/>
+	authors="yuaxu"/>
 
 <tags
 	ms.service="app-service-mobile"
@@ -13,8 +13,8 @@
 	ms.tgt_pltfrm="mobile-ios"
 	ms.devlang="objective-c"
 	ms.topic="article"
-	ms.date="06/28/2016"
-	wacn.date="09/26/2016"
+	ms.date="10/01/2016"
+	wacn.date="11/21/2016"
 	ms.author="yuaxu"/>
 
 

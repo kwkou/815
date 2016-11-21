@@ -3,7 +3,7 @@
 	description="了解如何使用移动应用通过各种标识提供者（包括 AAD 和 Microsoft）对 Xamarin Forms 应用的用户进行身份验证。"
 	services="app-service\mobile"
 	documentationCenter="xamarin"
-	authors="wesmc7777"
+	authors="adrianhall"
 	manager="dwrede"
 	editor=""/>
 
@@ -13,8 +13,8 @@
 	ms.tgt_pltfrm="mobile-xamarin"
 	ms.devlang="dotnet"
 	ms.topic="article"
-	ms.date="06/16/2016"
-	wacn.date="09/26/2016"
+	ms.date="10/01/2016"
+	wacn.date="11/21/2016"
 	ms.author="adrianha"/>
 
 # 向 Xamarin.Forms 应用添加身份验证

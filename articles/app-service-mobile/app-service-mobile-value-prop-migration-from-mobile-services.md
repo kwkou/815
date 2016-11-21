@@ -13,8 +13,8 @@
 	ms.tgt_pltfrm="mobile-multiple"
 	ms.devlang="na"
 	ms.topic="get-started-article"
-	ms.date="06/30/2016"
-	wacn.date="10/17/2016"
+	ms.date="10/01/2016"
+	wacn.date="11/21/2016"
 	ms.author="adrianha"/>
 
 # <a name="getting-started"></a>使用移动服务时，应用服务有何作用？
