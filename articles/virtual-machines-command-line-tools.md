@@ -850,6 +850,7 @@ Azure Web 应用是可通过 URI 访问的 Web 配置。 Web 应用在虚拟机�
 	data:    ChinaEast
 	info:    site location list command OK
 
+<a id="Commands_to_manage_mobile_services"></a>
 ###用于管理 Web 应用应用程序设置的命令
 
 **site appsetting list [options] [name]**
