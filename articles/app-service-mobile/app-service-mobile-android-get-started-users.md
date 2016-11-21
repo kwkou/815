@@ -3,7 +3,7 @@
 	description="了解如何使用 Azure 应用服务中的移动应用，通过各种标识提供者对 Android 应用的用户进行身份验证。"
 	services="app-service\mobile"
 	documentationCenter="android"
-	authors="RickSaling"
+	authors="yuaxu"
 	manager="erikre"
 	editor=""/>
 
@@ -14,7 +14,7 @@
 	ms.devlang="java"
 	ms.topic="article"
 	ms.date="07/18/2016"
-	wacn.date="09/26/2016"
+	wacn.date="11/21/2016"
 	ms.author="yuaxu"/>
 
 # 将身份验证添加到 Android 应用

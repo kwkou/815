@@ -15,8 +15,8 @@
     ms.tgt_pltfrm="mobile-html"
     ms.devlang="javascript"
     ms.topic="hero-article"
-    ms.date="08/11/2016"
-    wacn.date="10/17/2016"
+    ms.date="10/01/2016"
+    wacn.date="11/21/2016"
     ms.author="adrianha"/>
 
 #创建 Apache Cordova 应用

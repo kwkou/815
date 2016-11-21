@@ -2,7 +2,7 @@
 	pageTitle="Azure 移动应用中的脱机数据同步 | Azure"
 	description="Azure 移动应用脱机数据同步功能的概念参考和概述"
 	documentationCenter="windows"
-	authors="wesmc7777"
+	authors="adrianhall"
 	manager="dwrede"
 	editor=""
 	services="app-service\mobile"/>
@@ -13,8 +13,8 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="multiple"
 	ms.topic="article"
-	ms.date="06/28/2016"
-	wacn.date="10/17/2016"
+	ms.date="10/01/2016"
+	wacn.date="11/21/2016"
 	ms.author="adrianha"/>
 
 # Azure 移动应用中的脱机数据同步

@@ -2,7 +2,7 @@
     pageTitle="为 Azure 移动应用启用脱机同步 (Cordova) | Azure"
     description="了解如何在 Cordova 应用程序中使用应用服务移动应用来缓存和同步脱机数据"
     documentationCenter="cordova"
-    authors="mikejo5000"
+    authors="adrianhall"
     manager="erikre"
     editor=""
     services="app-service\mobile"/>  
@@ -14,8 +14,8 @@
     ms.tgt_pltfrm="mobile-cordova-ios"
     ms.devlang="dotnet"
     ms.topic="article"
-	ms.date="08/14/2016"
-	wacn.date="10/17/2016"
+    ms.date="10/01/2016"
+    wacn.date="11/21/2016"
     ms.author="adrianha"/>  
 
 

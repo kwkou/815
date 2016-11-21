@@ -3,8 +3,8 @@
 	description="遵循本教程开始使用 Azure 移动应用后端以 Objective-C 或 Swift 进行 iOS 开发"
 	services="app-service\mobile"
 	documentationCenter="ios"
-	authors="krisragh"
-	manager="dwrede"
+	authors="yuaxu"
+	manager="yuchayk"
 	editor=""/>
 
 <tags
@@ -13,8 +13,8 @@
 	ms.tgt_pltfrm="mobile-ios"
 	ms.devlang="objective-c"
 	ms.topic="hero-article"
-	ms.date="06/30/2016"
-	wacn.date="10/17/2016"
+	ms.date="10/01/2016"
+	wacn.date="11/21/2016"
 	ms.author="yuaxu"/>
 
 #创建 iOS 应用
