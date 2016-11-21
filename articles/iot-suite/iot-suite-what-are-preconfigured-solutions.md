@@ -30,7 +30,7 @@ Azure IoT 套件预配置解决方案是你可以使用订阅部署到 Azure 的
 
 除了在 Azure 中部署和运行解决方案，你还可以下载完整的源代码，然后自定义并扩展解决方案以满足特定的 IoT 要求。
 
-> [AZURE.NOTE] 要部署其中一个预配置的解决方案，请访问 [Azure IoT 套件][lnk-azureiotsuite]。[IoT 预配置解决方案入门][lnk-getstarted-preconfigured]这篇文章介绍了有关如何部署并运行其中一个解决方案的详细信息。
+> [AZURE.NOTE] 要部署其中一个预配置的解决方案。[IoT 预配置解决方案入门][lnk-getstarted-preconfigured]这篇文章介绍了有关如何部署并运行其中一个解决方案的详细信息。
 
 下表显示了如何将解决方案映射到特定的 IoT 功能：
 
