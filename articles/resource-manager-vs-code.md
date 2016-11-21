@@ -5,7 +5,8 @@
    documentationCenter="na"
    authors="cmatskas"
    manager="timlt"
-   editor="tysonn"/>
+   editor="tysonn"/>  
+
 
 <tags
    ms.service="azure-resource-manager"
@@ -13,9 +14,10 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="06/29/2016"
-   wacn.date="08/01/2016"
-   ms.author="chmatsk;tomfitz"/>
+   ms.date="09/26/2016"
+   wacn.date="11/21/2016"
+   ms.author="chmatsk;tomfitz"/>  
+
 
 # 在 Visual Studio Code 中使用 Azure Resource Manager 模板
 
@@ -104,7 +106,7 @@ Azure Resource Manager 模板是用于描述资源和相关依赖性的 JSON 文
 
         Login-AzureRmAccount -EnvironmentName AzureChinaCloud
 
-3. 如果你有多个订阅，请使用以下命令获取订阅列表：
+3. 如果有多个订阅，请使用以下命令获取订阅列表：
 
         Get-AzureRmSubscription
 
@@ -122,7 +124,7 @@ Azure Resource Manager 模板是用于描述资源和相关依赖性的 JSON 文
 
         azure login -e AzureChinaCloud
 
-3. 如果你有多个订阅，请使用以下命令选择适当的订阅：
+3. 如果有多个订阅，请使用以下命令选择适当的订阅：
 
         azure account set <subscriptionNameOrId> 
 
@@ -136,4 +138,4 @@ Azure Resource Manager 模板是用于描述资源和相关依赖性的 JSON 文
 - 若要详细了解模板，请参阅 [Authoring Azure Resource Manager templates](/documentation/articles/resource-group-authoring-templates/)（创作 Azure Resource Manager 模板）。
 - 若要了解模板函数，请参阅 [Azure Resource Manager template functions](/documentation/articles/resource-group-template-functions/)（Azure Resource Manager 模板函数）。
 
-<!---HONumber=Mooncake_0725_2016-->
+<!---HONumber=Mooncake_1114_2016-->
