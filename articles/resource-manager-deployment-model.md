@@ -6,7 +6,8 @@
    documentationCenter="na"
    authors="tfitzmac"
    manager="timlt"
-   editor="tysonn"/>
+   editor="tysonn"/>  
+
 
 <tags
    ms.service="azure-resource-manager"
@@ -15,7 +16,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="na"
    ms.date="07/29/2016"
-   wacn.date="09/19/2016"
+   wacn.date="11/21/2016"
    ms.author="tomfitz"/>
 
 # Azure Resource Manager 与经典部署：了解部署模型和资源状态
@@ -168,4 +169,4 @@ Azure 在 2014 年引入了 Resource Manager，增加了资源组这一概念。
 - 若要了解 Resource Manager 模板的结构，请参阅 [Authoring Azure Resource Manager templates](/documentation/articles/resource-group-authoring-templates/)（创作 Azure Resource Manager 模板）。
 - 若要查看用于部署模板的命令，请参阅[使用 Azure 资源管理器模板部署应用程序](/documentation/articles/resource-group-template-deploy/)。
 
-<!---HONumber=Mooncake_0912_2016-->
+<!---HONumber=Mooncake_1114_2016-->

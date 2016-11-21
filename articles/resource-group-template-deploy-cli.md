@@ -15,7 +15,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="na"
    ms.date="08/15/2016"
-   wacn.date="10/24/2016"
+   wacn.date="11/21/2016"
    ms.author="tomfitz"/>  
 
 
@@ -102,7 +102,7 @@
 
             azure group deployment create --template-uri <LinkToTemplate> -p "{"ParameterName":{"value":"ParameterValue"}}" -g ExampleResourceGroup -n ExampleDeployment
 
-     3. 使用参数文件。有关模板文件的信息，请参阅[参数文件](/#parameter-file)。
+     3. 使用参数文件。有关模板文件的信息，请参阅[参数文件](#parameter-file)。
     
             azure group deployment create -f <PathToTemplate> -e <PathToParameterFile> -g ExampleResourceGroup -n ExampleDeployment
 
@@ -176,4 +176,4 @@
 - 有关将解决方案部署到不同环境的指南，请参阅 [Azure 中的开发和测试环境](/documentation/articles/solution-dev-test-environments/)。
 - 有关使用 KeyVault 引用来传递安全值的详细信息，请参阅[在部署期间传递安全值](/documentation/articles/resource-manager-keyvault-parameter/)。
 
-<!---HONumber=Mooncake_1017_2016-->
+<!---HONumber=Mooncake_1114_2016-->

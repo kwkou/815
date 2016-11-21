@@ -5,7 +5,8 @@
 	documentationCenter=""
 	authors="tfitzmac"
 	manager="timlt"
-	editor="tysonn"/>
+	editor="tysonn"/>  
+
 
 <tags
 	ms.service="azure-resource-manager"
@@ -14,7 +15,7 @@
 	ms.devlang="na"
 	ms.topic="get-started-article"
 	ms.date="08/03/2016"
-	wacn.date="09/19/2016"
+	wacn.date="11/21/2016"
 	ms.author="tomfitz"/>
 
 # 从现有资源导出 Azure Resource Manager 模板
@@ -149,7 +150,7 @@
 
       ![导出资源组](./media/resource-manager-export-template/export-resource-group.png)
 
-     并非所有资源类型都支持导出模板功能。如果你的资源组仅包含本文中显示的存储帐户和虚拟网络，则不会显示错误。不过，如果你已经创建其他资源类型，则可能会显示一个错误，指出导出存在问题。修复导出问题部分介绍了如何处理这些问题。
+     并非所有资源类型都支持导出模板功能。如果你的资源组仅包含本文中显示的存储帐户和虚拟网络，则不会显示错误。不过，如果你已经创建其他资源类型，则可能会显示一个错误，指出导出存在问题。[修复导出问题](#fix-export-issues)部分介绍了如何处理这些问题。
 
       
 
@@ -344,4 +345,4 @@
 - 若要了解如何通过 PowerShell 导出模板，请参阅 [Using Azure PowerShell with Azure Resource Manager](/documentation/articles/powershell-azure-resource-manager/)（将 Azure PowerShell 与 Azure Resource Manager 配合使用）。
 - 若要了解如何通过 Azure CLI 导出模板，请参阅 [Use the Azure CLI for Mac, Linux, and Windows with Azure Resource Manager](/documentation/articles/xplat-cli-azure-resource-manager/)（将用于 Mac、Linux 和 Windows 的 Azure CLI 与 Azure Resource Manager 配合使用）。
 
-<!---HONumber=Mooncake_0912_2016-->
+<!---HONumber=Mooncake_1114_2016-->
