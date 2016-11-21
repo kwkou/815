@@ -77,7 +77,7 @@
 
     如果所使用的数据库具有足够的历史使用情况遥测数据，则将更新“估计的弹性 DTU 和 GB 使用量”图表和“弹性 DTU 实际使用量”条形图，以帮助进行配置决策。此外，服务可能会向你提供建议消息，以帮助正确调整池大小。请参阅[动态建议](#dynamic-recommendations)。
 
-3. 使用“配置池”页面上的控件浏览设置并配置池。请参阅 [Elastic pools limits](/documentation/articles/sql-database-elastic-pool/#edtu-and-storage-limits-for-elastic-pools-and-elastic-databases)（弹性池限制）以了解有关每个服务层的限制的详细信息，以及参阅 [Price and performance considerations for elastic database pools](/documentation/articles/sql-database-elastic-pool-guidance/)（弹性数据库池的价格和性能注意事项）以了解有关正确调整池大小的详细指南。有关池设置的详细信息，请参阅 [Elastic database pool properties](/documentation/articles/sql-database-elastic-pool/#elastic-database-pool-properties)（弹性数据库池属性）。
+3. 使用“配置池”页面上的控件浏览设置并配置池。请参阅 [Elastic pools limits](/documentation/articles/sql-database-elastic-pool/#eDTU-and-storage-limits-for-elastic-pools-and-elastic-databases)（弹性池限制）以了解有关每个服务层的限制的详细信息，以及参阅 [Price and performance considerations for elastic database pools](/documentation/articles/sql-database-elastic-pool-guidance/)（弹性数据库池的价格和性能注意事项）以了解有关正确调整池大小的详细指南。有关池设置的详细信息，请参阅 [Elastic database pool properties](/documentation/articles/sql-database-elastic-pool/#elastic-database-pool-properties)（弹性数据库池属性）。
 
 	![配置弹性池](./media/sql-database-elastic-pool-create-portal/configure-performance.png)
 
@@ -85,7 +85,7 @@
 5. 单击“确定”以创建池。
 
 
-## 了解池建议
+##<a name="understand-pool-recommendations"></a> 了解池建议
 
 SQL 数据库服务将评估使用量历史记录，并在比使用单一数据库更符合成本效益时，建议使用一个或多个池。每项建议是使用最适合该池的服务器数据库的唯一子集配置的。
 
@@ -102,7 +102,7 @@ SQL 数据库服务将评估使用量历史记录，并在比使用单一数据�
 
 服务会评估将每个服务层中的单一数据库移到同一层的池的资源需求和成本效益。例如，评估服务器上的所有标准数据库是否适合标准弹性池。这意味着，服务不进行跨层建议，例如将标准数据库移到高级池。
 
-### 动态建议
+###<a name="dynamic-recommendations"></a> 动态建议
 
 将数据库添加到池中后，将基于所选数据库的历史使用情况动态地生成建议。这些建议显示在 eDTU 和 GB 使用情况图表中以及“配置池”边栏选项卡顶部的建议横幅中。这些建议旨在帮助你创建针对特定数据库进行了优化的池。
 

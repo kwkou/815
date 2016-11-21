@@ -15,7 +15,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="data-management"
    ms.date="09/16/2016"
-   wacn.date="10/17/2016"
+   wacn.date="11/21/2016"
    ms.author="rick.byham@microsoft.com"/>
 
 # 使用 Azure Active Directory 身份验证连接到 SQL 数据库或 SQL 数据仓库
@@ -222,7 +222,7 @@ Azure Active Directory 身份验证要求以包含数据库用户的身份创建
 
 > [AZURE.IMPORTANT] [SQL Server 2016 Management Studio](https://msdn.microsoft.com/zh-cn/library/mt238290.aspx) 和 Visual Studio 2015 中的 [SQL Server Data Tools](https://msdn.microsoft.com/zh-cn/library/mt204009.aspx) 支持 Azure Active Directory 身份验证。
 
-#### 使用 Active Directory 集成的身份验证进行连接
+####<a name="connect-using-active-directory-integrated-authentication"></a> 使用 Active Directory 集成的身份验证进行连接
 
 如果从联合域使用 Azure Active Directory 凭据登录到 Windows，则使用此方法。
 
@@ -233,7 +233,7 @@ Azure Active Directory 身份验证要求以包含数据库用户的身份创建
 	![选择数据库名称][13]
 
 
-#### 使用 Active Directory 密码身份验证进行连接
+####<a name="connect-using-active-directory-password-authentication"></a> 使用 Active Directory 密码身份验证进行连接
 
 在使用 Azure AD 托管域与 Azure AD 主体名称连接时使用此方法。你还可以将其用于无需访问该域的联合帐户，例如远程工作时。
 

@@ -89,7 +89,7 @@ SQL 数据库顾问允许你通过以下 3 大选项之一全权控制建议的�
 
     ![应用建议](./media/sql-database-advisor-portal/apply.png)
 
-### 启用自动索引管理
+###<a name="enable-automatic-index-management"></a> 启用自动索引管理
 
 可以将 SQL 数据库顾问设置为自动实施建议。建议一出现就会自动应用。对于该服务所管理的所有索引操作，如果存在负面的性能影响，则会还原所受到的影响。
 

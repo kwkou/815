@@ -49,13 +49,13 @@
 
 > [AZURE.NOTE] 弹性数据库池仅适用于 SQL 数据库 V12 服务器。
 
-##<a name="eDTU-and-storage-limits-for-elastic-pools-and-elastic-databases"></a> 弹性池和弹性数据库的 eDTU 和存储限制
+##<a name="eDTU-and-storage-limits-for-elastic-pools-and-elastic-databases"></a><a name="elastic-database-pool-pricing-tier-recommendations"></a> 弹性池和弹性数据库的 eDTU 和存储限制
 
 [AZURE.INCLUDE [用于弹性数据库的 SQL 数据库服务层表](../../includes/sql-database-service-tiers-table-elastic-db-pools.md)]
 
 如果使用了弹性池的所有 DTU，那么池中的每个数据库将接收相同数量的资源来处理查询。SQL DB 服务通过确保相等的计算时间片，在数据库之间提供资源共享的公平性。此资源共享公平性的应用程序是在将每个数据库的 DTU 最小值设为非零值时，对另外为每个数据库保证的任意资源量的补充。
 
-## 弹性数据库池属性
+##<a name="elastic-database-pool-properties"></a> 弹性数据库池属性
 
 ### 弹性池的限制
 
