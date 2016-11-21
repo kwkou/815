@@ -2,7 +2,7 @@
     pageTitle="为 Azure 移动应用启用脱机同步 (Xamarin iOS)"
     description="了解如何在 Xamarin iOS 应用程序中使用应用服务移动应用缓存和同步脱机数据"
     documentationCenter="xamarin"
-    authors="wesmc7777"
+    authors="adrianhall"
     manager="dwrede"
     editor=""
     services="app-service\mobile"/>
@@ -13,8 +13,8 @@
     ms.tgt_pltfrm="mobile-xamarin-ios"
     ms.devlang="dotnet"
     ms.topic="article"
-	ms.date="05/05/2016"
-	wacn.date="09/26/2016"
+    ms.date="10/01/2016"
+    wacn.date="11/21/2016"
     ms.author="adrianha"/>
 
 # 为 Xamarin.iOS 移动应用启用脱机同步
