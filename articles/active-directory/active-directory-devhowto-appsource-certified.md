@@ -15,7 +15,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="identity"
    ms.date="09/22/2016"
-   wacn.date="10/31/2016"
+   wacn.date="11/21/2016"
    ms.author="skwan;bryanla"/>  
 
 
@@ -36,10 +36,10 @@
 
 <!--Reference style links -->
 [AAD-Auth-Scenarios]: /documentation/articles/active-directory-authentication-scenarios/
-[AAD-Auth-Scenarios-Browser-To-WebApp]: /documentation/articles/active-directory-authentication-scenarios/#web-browser-to-web-application/
+[AAD-Auth-Scenarios-Browser-To-WebApp]: /documentation/articles/active-directory-authentication-scenarios/
 [AAD-Dev-Guide]: /documentation/articles/active-directory-developers-guide/
 [AAD-Howto-Multitenant-Overview]: /documentation/articles/active-directory-devhowto-multi-tenant-overview/
-[AAD-QuickStart-Web-Apps]: /documentation/articles/active-directory-developers-guide/#web-application-quick-start-guides/
+[AAD-QuickStart-Web-Apps]: /documentation/articles/active-directory-developers-guide/
 
 
 <!--Image references-->

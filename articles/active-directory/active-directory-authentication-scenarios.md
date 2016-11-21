@@ -15,7 +15,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="identity"
    ms.date="09/16/2016"
-   wacn.date="10/11/2016"
+   wacn.date="11/21/2016"
    ms.author="mbaldwin"/>
 
 # Azure AD 的身份验证方案
@@ -319,7 +319,7 @@ Azure AD 颁发的安全令牌包含与经过授权的使用者有关的信息�
 
 
 
-### Web 应用程序到 Web API
+### <a name="web-application-to-web-api"></a>Web 应用程序到 Web API
 
 
 本部分介绍了需要从 Web API 获取资源的 Web 应用程序。在此方案中，Web 应用程序可以使用两种标识类型进行身份验证并调用 Web API：应用程序标识或委托用户标识。

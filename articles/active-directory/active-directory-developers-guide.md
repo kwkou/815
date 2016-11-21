@@ -15,7 +15,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="identity"
    ms.date="10/11/2016"
-   wacn.date="10/31/2016"
+   wacn.date="11/21/2016"
    ms.author="mbaldwin"/>  
 
 
@@ -37,7 +37,7 @@
 1. [Azure AD 身份验证库](/documentation/articles/active-directory-authentication-libraries/)：使用适用于 .NET、JavaScript、Objective-C、Android 及其他语言的 Azure AD 身份验证库，轻松对用户进行身份验证，获取访问令牌。
 
 
-## 入门
+## <a name="getting-started"></a>入门 
 
 以下教程是专门针对多种平台编写的，可帮助你快速开始使用 Azure Active Directory 进行开发。作为先决条件，你必须[获取一个 Azure Active Directory 租户](/documentation/articles/active-directory-howto-tenant/)。
 

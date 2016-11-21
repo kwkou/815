@@ -15,7 +15,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="identity"
    ms.date="10/06/2016"
-   wacn.date="11/08/2016"
+   wacn.date="11/21/2016"
    ms.author="mbaldwin"/>  
 
 
@@ -23,6 +23,7 @@
 
 Azure Active Directory (Azure AD) 在每个身份验证流的处理中发出多种安全令牌。本文档说明每种令牌的格式、安全特征和内容。
 
+<a name="types-of-tokens"></a>
 ## 类型的令牌
 
 Azure AD 支持 [OAuth 2.0 授权协议](/documentation/articles/active-directory-protocols-oauth-code/)，该协议使用 access\_token 与 refresh\_token。它还支持通过 [OpenID Connect](/documentation/articles/active-directory-protocols-openid-connect-code/) 进行身份验证和登录，其中引入了第三种类型的令牌 id\_token。每个令牌表示为“持有者令牌”。
@@ -31,6 +32,7 @@ Azure AD 支持 [OAuth 2.0 授权协议](/documentation/articles/active-director
 
 Azure AD 颁发的许多令牌都以 JSON Web 令牌或 JWT 的方式实现。JWT 是一种精简的 URL 安全方法，可在两方之间传输信息。JWT 中包含的信息也称为令牌持有者及使用者相关信息的“声明”或断言。JWT 中的声明是为了传输而编码和序列化的 JSON 对象。由于 Azure AD 所颁发的 JWT 已签名但未加密，因此可以轻松地检查 JWT 的内容以进行调试。有多个工具可以进行这项操作，例如 [jwt.calebb.net](http://jwt.calebb.net)。有关 JWT 的详细信息，请参阅 [JWT 规范](http://self-issued.info/docs/draft-ietf-oauth-json-web-token.html)。
 
+<a name="id-tokens"></a>
 ## Id\_tokens
 
 Id\_token 是应用使用 [OpenID Connect](/documentation/articles/active-directory-protocols-openid-connect-code/) 执行身份验证时收到的一种登录安全令牌形式。它以 [JWT](#types-of-tokens) 表示，包含可让用户登录应用的声明。可以适时使用 id\_token 中的声明 - 通常用于显示帐户信息或在应用程序中进行访问控制决策。
@@ -89,6 +91,7 @@ Id\_token 已签名，但目前不会加密。应用收到 id\_token 时，必�
 
 使用刷新令牌兑换新的访问令牌时，将在令牌响应中收到新的刷新令牌。你应该保存新颁发的刷新令牌，并替换请求中使用的刷新令牌。这将保证刷新令牌尽可能长期保持有效。
 
+<a name="validating-tokens"></a>
 ## 验证令牌
 
 目前，客户端应用必须执行的唯一令牌验证就是验证 id\_token。若要验证 id\_token，应用应该验证 id\_token 签名和 id\_token 中的声明。

@@ -14,7 +14,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="07/18/2016"
-	wacn.date="08/22/2016"
+	wacn.date="11/21/2016"
 	ms.author="gsacavdm"/>
 
 # Azure Active Directory 中的签名密钥滚动更新
@@ -148,7 +148,7 @@ Azure App Service 的服务身份验证/授权 (EasyAuth) 功能已包含必要�
 6. 构建并运行应用程序。登录到你的帐户后，可以停止应用程序。
 7. 返回到“服务器资源管理器”，查看 **IssuingAuthorityKeys** 和 **Tenants** 表中的值。你会注意到，已自动使用联合元数据文档中的相应信息对这两个表进行重新填充。
 
-### <a name="vs2013"></a>保护资源的和使用 Visual Studio 2013 创建的 Web API
+### <a name="vs2013_webapi"></a>保护资源的和使用 Visual Studio 2013 创建的 Web API
 
 如果你在 Visual Studio 2013 中使用 Web API 模板创建了 Web API 应用程序，然后从“更改身份验证”菜单中选择了“组织帐户”，则应用程序中已包含必需的逻辑。如果你已手动配置身份验证，请参阅下面的说明，了解如何配置 Web API 来自动更新其密钥信息。
 

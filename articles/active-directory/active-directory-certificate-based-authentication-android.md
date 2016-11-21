@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="na" 
     ms.workload="identity" 
     ms.date="10/10/2016" 
-    wacn.date="10/31/2016" 
+    wacn.date="11/21/2016" 
     ms.author="markvi" />
 
 
@@ -101,7 +101,7 @@
 
 
 
-## 入门 
+## <a name="getting-started"></a>入门 
 
 
 若要开始操作，你需要在 Azure Active Directory 中配置证书颁发机构。针对每个证书颁发机构，上传以下信息：
