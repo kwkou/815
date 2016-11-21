@@ -66,7 +66,7 @@ Azure 团队会努力尽快还原服务可用性，但视根本原因而定，�
 - [使用 PowerShell 故障转移到异地复制的辅助数据库](/documentation/articles/sql-database-geo-replication-powershell/)
 - [使用 T-SQL 故障转移到异地复制的辅助数据库](/documentation/articles/sql-database-geo-replication-transact-sql/) 
 
-##<a name="recovery-using-geo-restore"></a> 使用异地还原进行恢复
+##<a name="recover-using-geo-restore"></a> 使用异地还原进行恢复
 
 如果应用程序停机不会带来业务责任，则可以使用异地还原作为恢复应用程序数据库的方法。它会从其最新的异地冗余备份创建数据库的副本。
 

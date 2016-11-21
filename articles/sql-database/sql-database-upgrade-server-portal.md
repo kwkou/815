@@ -62,7 +62,7 @@ SQL 数据库 V12 具有[旧版所欠缺的许多优点](/documentation/articles
 
 3. 将服务器升级到最新 SQL 数据库更新是永久且不可逆的。要确认升级，请键入服务器的名称，然后单击“确定”。
 
-## 升级所有 Web 和企业数据库
+##<a name="upgrade-all-web-and-business-databases"></a> 升级所有 Web 和企业数据库
 
 如果你的服务器具有任何 Web 或企业数据库，你必须对这些数据库进行升级。在升级到 SQL 数据库 V12 的过程中，需要将所有 Web 和企业数据库更新到新的服务层。
 
@@ -159,7 +159,6 @@ SQL 数据库 V12 具有[旧版所欠缺的许多优点](/documentation/articles
 ## 相关链接
 
 - [SQL 数据库 V12 的新增功能](/documentation/articles/sql-database-v12-whats-new/)
-- [规划和准备升级到 SQL 数据库 V12](/documentation/articles/sql-database-v12-plan-prepare-upgrade/)
 
 
 <!--Image references-->
