@@ -75,7 +75,6 @@
 
 * [向应用添加脱机同步功能](/documentation/articles/app-service-mobile-xamarin-android-get-started-offline-data/)
 * [向应用程序添加身份验证](/documentation/articles/app-service-mobile-xamarin-android-get-started-users/)
-* [向 Xamarin.Android 应用添加推送通知](/documentation/articles/app-service-mobile-xamarin-android-get-started-push/)
 * [如何使用 Azure 移动应用的托管客户端](/documentation/articles/app-service-mobile-dotnet-how-to-use-client-library/)
 
 

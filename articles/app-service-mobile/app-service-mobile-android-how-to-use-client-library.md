@@ -137,7 +137,7 @@ Azure 移动应用的 Android SDK 支持 API 级别 19 到 24（KitKat 到 Nouga
 
 ###<a name="instantiating"></a>如何创建表引用
 
-在后端中查询或修改数据的最简单方法是使用 *类型化编程模型* ，因为 Java 是强类型化语言。在客户端对象与后端 Azure SQL 中的表之间发送数据时，此模型使用 [gson][3] 库提供无缝的 JSON 序列化和反序列化。
+在后端中查询或修改数据的最简单方法是使用 *类型化编程模型* ，因为 Java 是强类型化语言。在客户端对象与后端 Azure SQL 中的表之间发送数据时，此模型使用 gson 库提供无缝的 JSON 序列化和反序列化。
 
 若要访问表，请先通过对 [MobileServiceClient][9] 调用 **getTable** 方法来创建一个 [MobileServiceTable][8] 对象。此方法有两个重载：
 
@@ -461,7 +461,7 @@ Select 函数的参数是要返回的表列的字符串名称。
 
 ### <a name="json_insert"></a>如何插入到非类型化表中
 
-以下代码演示了如何执行插入。第一步是创建属于 [gson][3] 库的 [JsonObject][1]。
+以下代码演示了如何执行插入。第一步是创建属于 gson 库的 JsonObject 。
 
 	JsonObject jsonItem = new JsonObject();
 	jsonItem.addProperty("text", "Wake up");
@@ -684,7 +684,7 @@ Select 函数的参数是要返回的表列的字符串名称。
 
 ## 如何将推送通知添加到应用
 
-可以[阅读概述][6]，其中介绍了 Azure 通知中心如何支持各种推送通知。根据[本教程][5]所述，每次插入一条记录，都会向所有设备发送一条推送通知。
+可以[阅读概述][6]，其中介绍了 Azure 通知中心如何支持各种推送通知。每次插入一条记录，都会向所有设备发送一条推送通知。
 
 ## 如何将脱机同步添加到应用
 
@@ -743,7 +743,7 @@ Select 函数的参数是要返回的表列的字符串名称。
 - mComplete
 - mDuration
 
-将客户端名称序列化为与服务器上 **ToDoItem** 表的列名称匹配的 JSON 名称。下面的代码使用 [gson][3] 库批注属性：
+将客户端名称序列化为与服务器上 **ToDoItem** 表的列名称匹配的 JSON 名称。下面的代码使用 gson 库批注属性：
 
 	@com.google.gson.annotations.SerializedName("text")
 	private String mText;
@@ -759,14 +759,14 @@ Select 函数的参数是要返回的表列的字符串名称。
 
 ### <a name="table"></a>如何在客户端与后端之间映射不同的表名称
 
-使用 [getTable()][4] 方法的替代，将客户端表名称映射到其他移动服务表名称：
+使用 getTable() 方法的替代，将客户端表名称映射到其他移动服务表名称：
 
 	mToDoTable = mClient.getTable("ToDoItemBackup", ToDoItem.class);
 
 
 ### <a name="conversions"></a>如何自动执行列名称映射
 
-可以使用 [gson][3] API，指定适用于每个列的转换策略。在发送数据到 Azure App Service 之前，Android 客户端库会在幕后使用 [gson][3] 将 Java 对象序列化为 JSON 数据。下面的代码使用 **setFieldNamingStrategy()** 方法设置策略。此示例会删除初始字符（“m”），然后将每个字段名称的下一个字符小写。例如，它会将“mId”变为“id”。
+可以使用 gson API，指定适用于每个列的转换策略。在发送数据到 Azure App Service 之前，Android 客户端库会在幕后使用 gson 将 Java 对象序列化为 JSON 数据。下面的代码使用 **setFieldNamingStrategy()** 方法设置策略。此示例会删除初始字符（“m”），然后将每个字段名称的下一个字符小写。例如，它会将“mId”变为“id”。
 
 	client.setGsonBuilder(
 	    MobileServiceClient
@@ -828,11 +828,9 @@ Select 函数的参数是要返回的表列的字符串名称。
 [Azure 门户预览]: https://portal.azure.cn
 [Get started with authentication]: /documentation/articles/app-service-mobile-android-get-started-users/
 [身份验证入门]: /documentation/articles/app-service-mobile-android-get-started-users/
-[1]: http://google-gson.googlecode.com/svn/trunk/gson/docs/javadocs/com/google/gson/JsonObject.html
 [2]: http://hashtagfail.com/post/44606137082/mobile-services-android-serialization-gson
-[3]: http://go.microsoft.com/fwlink/p/?LinkId=290801
-[4]: http://go.microsoft.com/fwlink/p/?LinkId=296840
-[5]: /documentation/articles/app-service-mobile-android-get-started-push/
+
+
 [6]: /documentation/articles/notification-hubs-push-notification-overview/#integration-with-app-service-mobile-apps
 [7]: /documentation/articles/app-service-mobile-android-get-started-users/#cache-tokens
 [8]: http://azure.github.io/azure-mobile-apps-android-client/com/microsoft/windowsazure/mobileservices/table/MobileServiceTable.html
