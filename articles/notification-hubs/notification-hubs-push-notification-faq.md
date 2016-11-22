@@ -15,7 +15,7 @@
 	ms.devlang="multiple"
 	ms.topic="article"
 	ms.date="06/29/2016"
-	wacn.date="11/11/2016"
+	wacn.date="11/22/2016"
 	ms.author="wesmc" />
 
 #使用 Azure 通知中心推送通知 — 常见问题
@@ -192,7 +192,7 @@ Azure 通知中心支持在 [Azure 经典门户]中查看遥测数据。你可�
 [注册信息导出/导入]: https://msdn.microsoft.com/library/dn790624.aspx
 [Azure Portal]: https://portal.azure.cn
 [完整的示例]: https://github.com/Azure/azure-notificationhubs-samples
-[Azure Mobile Apps]: /services/mobile-services/
+[Azure Mobile Apps]: /documentation/services/mobile-services/
 [App Service 定价]: /pricing/details/mobile-services/
 
 <!---HONumber=Mooncake_0808_2016-->

@@ -14,7 +14,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="07/14/2016"
-	wacn.date="08/22/2016"
+	wacn.date="11/22/2016"
 	ms.author="kgremban"/>
 
 
@@ -68,7 +68,7 @@ Azure Active Directory Identity Protection 提供一个整合的视图来让你�
 
 
 
-有关构建完整安全路线图的详细信息，请参阅 [Microsoft Cloud Security for Enterprise Architects（针对企业结构设计的 Microsoft 云安全性）](http://aka.ms/securecustomer)文档中的“Customer responsibilities and roadmap”（客户责任和路线图）部分。有关运用 Microsoft 服务来帮助实现其中任一主题所述功能的详细信息，请联系 Microsoft 代表或访问我们的[网络安全解决方案网页](https://www.microsoft.com/microsoftservices/campaigns/cybersecurity-protection.aspx)。
+有关构建完整安全路线图的详细信息，请参阅 [Microsoft Cloud Security for Enterprise Architects（针对企业结构设计的 Microsoft 云安全性）](http://aka.ms/securecustomer)文档中的“Customer responsibilities and roadmap”（客户责任和路线图）部分。有关运用 Microsoft 服务来帮助实现其中任一主题所述功能的详细信息，请联系 Microsoft 代表或访问我们的网络安全解决方案网页。
 
 <!--Image references-->
 

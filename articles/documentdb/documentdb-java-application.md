@@ -15,7 +15,7 @@
 	ms.tgt_pltfrm="NA"
 	ms.workload="data-services"
 	ms.date="08/24/2016"
-	wacn.date="10/18/2016"
+	wacn.date="11/22/2016"
 	ms.author="denlee"/>
 
 # 使用 DocumentDB 生成一个 Java Web 应用程序
@@ -233,7 +233,7 @@
 		    }
 		}
 
-4. 下一步是编写一些代码将 TodoItem 保存到集合中。在本示例中，我们将使用 [Gson](https://code.google.com/p/google-gson/) 将 TodoItem 普通 Java 对象 (POJO) 序列化到 JSON 文档和从中反序列化 POJO。[Jackson](http://jackson.codehaus.org/) 或你自己的自定义序列化程序也是用于序列化 POJO 的很好的替代项。
+4. 下一步是编写一些代码将 TodoItem 保存到集合中。在本示例中，我们将使用 [Gson](https://code.google.com/p/google-gson/) 将 TodoItem 普通 Java 对象 (POJO) 序列化到 JSON 文档和从中反序列化 POJO。Jackson或你自己的自定义序列化程序也是用于序列化 POJO 的很好的替代项。
 
 	    // We'll use Gson for POJO <=> JSON serialization for this example.
 	    private static Gson gson = new Gson();

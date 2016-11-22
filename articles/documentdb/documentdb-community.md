@@ -14,7 +14,7 @@
   ms.tgt_pltfrm="na"
   ms.workload="data-services"
   ms.date="09/12/2016"
-  wacn.date="10/18/2016"
+  wacn.date="11/22/2016"
   ms.author="andrl"/>  
 
 
@@ -123,7 +123,7 @@ fluent-plugin-documentdb 是用于输出到 Azure DocumentDB 的 Fluentd 插件�
 
 | 学习合作伙伴 | 说明 |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------- |
-| [![Microsoft 虚拟大学](./media/documentdb-community/mva.png)](https://mva.microsoft.com/zh-cn/training-courses/deploying-web-apps-to-azure-app-service-16629) | [**Microsoft Virtual Academy**](https://mva.microsoft.com/zh-cn/training-courses/deploying-web-apps-to-azure-app-service-16629) 向你提供培训，这些培训来自那些帮助构建 Azure DocumentDB 的人士。 |
+| [![Microsoft 虚拟大学](./media/documentdb-community/mva.png)](https://mva.microsoft.com/training-courses/deploying-web-apps-to-azure-app-service-16629) | [**Microsoft Virtual Academy**](https://mva.microsoft.com/training-courses/deploying-web-apps-to-azure-app-service-16629) 向你提供培训，这些培训来自那些帮助构建 Azure DocumentDB 的人士。 |
 | [![Pluralsight](./media/documentdb-community/pluralsight.png)](http://www.pluralsight.com/courses/azure-documentdb-introduction) | [**Pluralsight**](http://www.pluralsight.com/courses/azure-documentdb-introduction) 是提供 Azure 培训的重要 Microsoft 合作伙伴。如果你是一名 MSDN 订户，请使用你访问 Azure 培训的权益。 |
 | [![OpsGility](./media/documentdb-community/opsgility.png)](https://www.opsgility.com/courses/player/introduction_to_azure_documentdb) | [**OpsGility**](https://www.opsgility.com/courses/player/introduction_to_azure_documentdb) 提供有关 Azure 的深层次技术培训。在现场或通过远程教室获得由业内认可的培训师指导的培训。 |
 
@@ -158,7 +158,7 @@ fluent-plugin-documentdb 是用于输出到 Azure DocumentDB 的 Fluentd 插件�
 
 | 名称 | Github | 网站 |
 | ------------------- | ------------------------------------------------------------------------------------------------- | ------- |
-| 文档 | [azure-content](https://github.com/Azure/azure-content/tree/master/articles/documentdb) | [文档网站](/documentation/services/documentdb/) |
+| 文档 | azure-content | [文档网站](/documentation/services/documentdb/) |
 | Hadoop 连接器 | [azure-documentdb-hadoop](https://github.com/Azure/azure-documentdb-hadoop) | [Maven](http://search.maven.org/#search%7Cga%7C1%7Ca%3A%22azure-documentdb-hadoop%22) |
 | 数据迁移工具 | [azure-documentdb-datamigrationtool](https://github.com/Azure/azure-documentdb-datamigrationtool) | [Microsoft 下载中心](http://www.microsoft.com/en-us/download/details.aspx?id=46436) |
 

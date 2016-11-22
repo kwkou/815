@@ -15,7 +15,7 @@
 	ms.devlang="multiple" 
 	ms.topic="article" 
 	ms.date="08/19/2016" 
-	wacn.date="11/11/2016" 
+	wacn.date="11/22/2016" 
 	ms.author="wesmc"/>  
 
 
@@ -89,7 +89,7 @@ Azure 通知中心需要在开发人员的应用程序的环境中对自身进�
 
 各自的 PNS 收到通知消息之后，那么它的责任就是将通知传递到设备。此时，Azure 通知中心是不相关的，而且不会控制何时将通知传递到设备或是否将通知传递到设备。由于平台通知服务非常强大，这些通知会在几秒钟时间从 PNS 到达很多设备。但是，如果 PNS 进行限制的话，那么 Azure 通知中心会应用指数让步策略；如果 PNS 在 30 分钟之内都无法联系，则我们会准备一个策略以宣布这些消息过期并永久删除它们。
 
-如果 PNS 尝试传递通知，但设备处于脱机状态，则通知被 PNS 短暂存储，然后在设备可用时传递到该设备。只存储了特定应用的一个最近通知。如果在设备处于脱机状态时发送了多个通知，则每个新通知将导致前一个通知被放弃。只保留最新通知的这类行为在 APNS 中被称为合并通知，在 GCM（它使用折叠密钥）中被称为折叠通知。如果设备长时间处于脱机状态，则放弃所有为它存储的通知。信息来源 - APNS 指南和 [GCM 指南]
+如果 PNS 尝试传递通知，但设备处于脱机状态，则通知被 PNS 短暂存储，然后在设备可用时传递到该设备。只存储了特定应用的一个最近通知。如果在设备处于脱机状态时发送了多个通知，则每个新通知将导致前一个通知被放弃。只保留最新通知的这类行为在 APNS 中被称为合并通知，在 GCM（它使用折叠密钥）中被称为折叠通知。如果设备长时间处于脱机状态，则放弃所有为它存储的通知。信息来源 - APNS 指南和 GCM 指南
 
 在 Azure 通知中心中，你可以使用泛型 `SendNotification` API（例如，对于 .NET SDK - `SendNotificationAsync`）通过 HTTP 标头来传递合并密钥，其还会将按原样传递的 HTTP 标头传递到各自的 PNS。
 
@@ -232,7 +232,6 @@ Azure 通知中心需要在开发人员的应用程序的环境中对自身进�
 
 [通知中心概述]: /documentation/articles/notification-hubs-push-notification-overview/
 [模板指南]: https://msdn.microsoft.com/zh-cn/library/dn530748.aspx
-[GCM 指南]: http://developer.android.com/google/gcm/adv.html
 [Export/Import Registrations]: http://msdn.microsoft.com/zh-cn/library/dn790624.aspx
 [ServiceBus 资源管理器]: http://msdn.microsoft.com/zh-cn/library/dn530751.aspx
 [ServiceBus 资源管理器代码]: https://code.msdn.microsoft.com/windowsazure/Service-Bus-Explorer-f2abca5a
