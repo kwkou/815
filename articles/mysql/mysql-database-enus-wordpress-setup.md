@@ -1,6 +1,6 @@
 <properties linkid="" urlDisplayName="" pageTitle="Use MySQL Database on Azure to configure WordPress websites – Azure cloud" metakeywords="Azure Cloud, technical documentation, documents and resources, MySQL, database, Wordpress, website configuration, Azure MySQL, MySQL PaaS, Azure MySQL PaaS, Azure MySQL Service, Azure RDS" description="WordPress is a very widely used CMS. This article explains how to use MySQL Database on Azure and Azure Web Apps to install and configure WordPress." metaCanonical="" services="MySQL" documentationCenter="Services" title="" authors="" solutions="" manager="" editor=""/>
 
-<tags ms.service="mysql_en" ms.date="11/21/2016" wacn.date="11/21/2016" wacn.lang="en" />
+<tags ms.service="mysql_en" ms.date="11/22/2016" wacn.date="11/22/2016" wacn.lang="en" />
 
 > [AZURE.LANGUAGE]
 - [中文](/documentation/articles/mysql-database-wordpress-setup/)
@@ -35,7 +35,11 @@ Switch the workspace to “database,” and click “Create” at the bottom of 
 
 ## Step 3: Create a new web app  
 
-See [How to create and deploy web apps](/documentation/articles/web-sites-php-web-site-gallery/) for details of this process.
+3.1 Logon Azure Managemet Portal, and click "CREATE" button in the bottom left.
+
+3.2 Click "COMPUTE > WEB APP > QUICK CREATE", then enter URL.
+
+3.3 Click "CREATE WEB APP", and wait for Azure to finish the tasks.
 
 ![Creating New Web Apps][4]
 

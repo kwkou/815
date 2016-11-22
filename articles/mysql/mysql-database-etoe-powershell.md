@@ -1,6 +1,6 @@
 <properties linkid="" urlDisplayName="" pageTitle="使用PowerShell管理使用MySQL Database on Azure - Azure 微软云" metaKeywords="Azure 云,技术文档,文档与资源,Azure 资源管理器,MySQL,数据库,入门指南,Azure MySQL, MySQL PaaS,Azure MySQL PaaS, Azure MySQL Service, Azure RDS" description="本文主要介绍如何使用PowerShell脚本快速搭建使用MySQL服务。" metaCanonical="" services="MySQL" documentationCenter="Services" title="" authors="sofia" solutions="" manager="" editor="" />  
 
-<tags ms.service="mysql" ms.date="11/21/2016" wacn.date="11/21/2016" wacn.lang="cn" />
+<tags ms.service="mysql" ms.date="11/22/2016" wacn.date="11/22/2016" wacn.lang="cn" />
 
 > [AZURE.LANGUAGE]
 - [中文](/documentation/articles/mysql-database-etoe-powershell/)
@@ -8,7 +8,7 @@
 
 #利用Azure 资源管理器与 PowerShell 来部署使用MySQL Database on Azure
 
-Azure 资源管理器 (ARM) 是适用于 Azure 服务的全新管理框架。现在可以使用基于 Azure 资源管理器的 API 和工具来管理 MySQL Database on Azure。若要了解有关 Azure 资源管理器的详细信息，请参阅[使用资源组管理 Azure 资源](/documentation/articles/azure-preview-portal-using-resource-groups/)。MySQL Database on Azure支持您通过PowerShell脚本查询创建管理删除MySQL服务器、数据库、防火墙原则、用户等，同时支持您通过脚本更改参数设置。本文主要介绍如何使用PowerShell脚本快速搭建使用MySQL服务。对于更多创建、查看、删除、更改的操作，您可以查看[使用PowerShell管理MySQL Database on Azure](/documentation/articles/mysql-database-commandlines/)。
+Azure 资源管理器 (ARM) 是适用于 Azure 服务的全新管理框架。现在可以使用基于 Azure 资源管理器的 API 和工具来管理 MySQL Database on Azure。MySQL Database on Azure支持您通过PowerShell脚本查询创建管理删除MySQL服务器、数据库、防火墙原则、用户等，同时支持您通过脚本更改参数设置。本文主要介绍如何使用PowerShell脚本快速搭建使用MySQL服务。对于更多创建、查看、删除、更改的操作，您可以查看[使用PowerShell管理MySQL Database on Azure](/documentation/articles/mysql-database-commandlines/)。
 
 ###目录
 - [步骤1：安装Azure PowerShell](#step1)
