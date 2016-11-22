@@ -32,8 +32,6 @@
 |:---------|:--------------------------:|:------------------:|
 | [云服务](/home/features/cloud-services/ "Azure 云服务") | [链接](/documentation/articles/cloud-services-disaster-recovery-guidance "Azure 云服务灾难恢复指南") | 不可用 |
 | [存储](/home/features/storage/ "Azure 存储空间") | [链接](/documentation/articles/storage-disaster-recovery-guidance "Azure 存储空间灾难恢复指南") | 不可用 |
-| [SQL 数据库](/home/features/sql-database/ "Azure SQL 数据库") | [链接](/documentation/articles/sql-database-disaster-recovery "Azure SQL 数据库灾难恢复指南") | [链接](/documentation/articles/sql-database-business-continuity-design "Azure SQL 数据库设计指南") |
-| [虚拟机](/home/features/virtual-machines/ "Azure 虚拟机") | [链接](/documentation/articles/virtual-machines-disaster-recovery-guidance "Azure 虚拟机灾难恢复指南") | 不可用 |
 | [虚拟网络](/home/features/networking/ "Azure 虚拟网络") | [链接](/documentation/articles/virtual-network-disaster-recovery-guidance "Azure 虚拟网络灾难恢复指南") | 不可用 |
 
 ##后续步骤
