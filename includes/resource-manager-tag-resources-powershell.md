@@ -231,6 +231,6 @@
 使用 **New-AzureRmTag** cmdlet 可将新标记添加到分类。即使这些标记尚未应用到任何资源或资源组，也会包含在自动填充内容中。若要删除某个标记名称/值，请先从它可能已应用到的所有资源中将它删除，然后使用 **Remove-AzureRmTag** cmdlet 从分类中将它删除。
 
 
-[powershell]: https://msdn.microsoft.com/library/mt619274(v=azure.200).aspx
+[powershell]: https://msdn.microsoft.com/zh-cn/library/mt619274(v=azure.200).aspx
 
 <!---HONumber=Mooncake_0926_2016-->
