@@ -1,6 +1,6 @@
 <properties linkid="" urlDisplayName="" pageTitle="使用PowerShell管理MySQL Database on Azure - Azure 微软云" metaKeywords="Azure 云,技术文档,文档与资源,MySQL,数据库,入门指南,Azure MySQL, MySQL PaaS,Azure MySQL PaaS, Azure MySQL Service, Azure RDS,Azure MySQL PowerShell" description="本文介绍如何通过PowerShell实现更多MySQL Database on Azure的查询、创建、修改、删除等操作。" metaCanonical="" services="MySQL" documentationCenter="Services" title="" authors="sofia" solutions="" manager="" editor="" />  
 
-<tags ms.service="mysql" ms.date="07/05/2016" wacn.date="07/05/2016" wacn.lang="cn" />
+<tags ms.service="mysql" ms.date="11/22/2016" wacn.date="11/22/2016" wacn.lang="cn" />
 
 > [AZURE.LANGUAGE]
 - [中文](/documentation/articles/mysql-database-commandlines/)
@@ -89,7 +89,7 @@ New-AzureResource -ResourceType "Microsoft.MySql/servers" -ResourceName testrest
 编辑运行以下命令，查看当前所有服务器列表
 
 ```
-Get-AzureResource -ResourceType "Microsoft.MySql/servers"  -ApiVersion 2015-01-01 
+Get-AzureResource -ResourceType "Microsoft.MySql/servers"  -ApiVersion 2015-01-01 -ResourceGroupName resourcegroupchinaeast 
 ```
 >[AZURE.NOTE] ** 注意:与其他指令不同，查看服务器中的“-ApiVersion 2015-01-01”，指向ARM的API，其他指令中，均为“-ApiVersion 2015-09-01”，指向MySQL的API。**
 

@@ -1,6 +1,6 @@
 <properties linkid="" urlDisplayName="" pageTitle="Use Windows PowerShell to manage MySQL Database on Azure – Azure cloud" metaKeywords="Azure Cloud, technical documentation, documents and resources, MySQL, database, beginner’s guide, Azure MySQL, MySQL PaaS, Azure MySQL PaaS, Azure MySQL Service, Azure RDS" description="This article explains how to use Windows PowerShell to do more with MySQL Database on Azure, including create, view, delete, and modify operations." metaCanonical="" services="MySQL" documentationCenter="Services" title="" authors="sofia" solutions="" manager="" editor="" />
 
-<tags ms.service="mysql_en" ms.date="07/05/2016" wacn.date="07/05/2016" wacn.lang="en" />
+<tags ms.service="mysql_en" ms.date="11/22/2016" wacn.date="11/22/2016" wacn.lang="en" />
 
 > [AZURE.LANGUAGE]
 - [中文](/documentation/articles/mysql-database-commandlines/)
@@ -83,7 +83,7 @@ Use the **Get** command to view lists such as current MySQL servers, databases, 
 Edit and run the following commands to view all the current server lists.
 
 ```
-Get-AzureResource -ResourceType "Microsoft.MySql/servers"  -ApiVersion 2015-01-01 
+Get-AzureResource -ResourceType "Microsoft.MySql/servers"  -ApiVersion 2015-01-01 -ResourceGroupName resourcegroupchinaeast
 ```
 >[AZURE.NOTE] **This command checks that the “-ApiVersion 2015-01-01” in the server is directed at the Azure Resource Manager API. In all other commands, this is “-ApiVersion 2015-09-01” and is directed at the MySQL API.**
 
