@@ -89,7 +89,7 @@
             }
         }
 
-	此方法使用返回的 GCM 注册 ID 向 Azure 注册以获取推送通知。仅能在创建注册后向其添加标记。有关详细信息，请参阅[如何：将标记添加到设备安装以启用“推送到标记”](/documentation/articles/app-service-mobile-dotnet-backend-how-to-use-server-sdk/#tags)。
+	此方法使用返回的 GCM 注册 ID 向 Azure 注册以获取推送通知。仅能在创建注册后向其添加标记。有关详细信息，请参阅[如何：将标记添加到设备安装以启用“推送到标记”](/documentation/articles/app-service-mobile-dotnet-backend-how-to-use-server-sdk/#how-to-add-tags-to-a-device-installation-to-enable-push-to-tags)。
 
 10. 在 **PushHandlerService** 中使用以下代码重写 **OnMessage** 方法：
 

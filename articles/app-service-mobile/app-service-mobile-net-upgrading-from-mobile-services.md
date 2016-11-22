@@ -200,7 +200,7 @@
 是否使用 CORS 的主要考虑范畴是必须允许 `eTag` 和 `Location` 标头，客户端 SDK 才能正常工作。
 
 ### 推送通知
-对于推送，可能会发现服务器 SDK 中遗漏的主项是 PushRegistrationHandler 类。注册在移动应用中的处理方式稍有不同，默认情况下启用不带标记的注册。可以使用自定义 API 实现标记管理。有关详细信息，请参阅[注册标记](/documentation/articles/app-service-mobile-dotnet-backend-how-to-use-server-sdk/#tags)说明。
+对于推送，可能会发现服务器 SDK 中遗漏的主项是 PushRegistrationHandler 类。注册在移动应用中的处理方式稍有不同，默认情况下启用不带标记的注册。可以使用自定义 API 实现标记管理。有关详细信息，请参阅[注册标记](/documentation/articles/app-service-mobile-dotnet-backend-how-to-use-server-sdk/#how-to-add-tags-to-a-device-installation-to-enable-push-to-tags)说明。
 
 ### 计划的作业
 移动应用中未内置计划的作业，因此在 .NET 后端中的任何现有作业都必须单独升级。一种做法是在移动应用代码站点上创建计划的 [Web 作业]。也可以设置用于保存作业代码的控制器，并设置按预期计划在终结点上运行的 [Azure 计划程序]。
