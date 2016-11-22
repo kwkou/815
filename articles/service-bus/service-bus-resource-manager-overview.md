@@ -215,7 +215,7 @@ New-AzureRmResourceGroupDeployment -Name MyDemoDeployment -ResourceGroupName MyD
 New-AzureRmResourceGroupDeployment -Name MyDemoDeployment -ResourceGroupName MyDemoRG -TemplateFile <path to template file>\azuredeploy.json -parameterName "parameterValue"
 ```
 
-若要运行[完整](/documentation/articles/resource-group-template-deploy/#incremental-and-complete-deployments)部署，请将 **Mode** 参数设置为 **Complete**：
+若要运行完整部署，请将 **Mode** 参数设置为 **Complete**：
 
 ```
 New-AzureRmResourceGroupDeployment -Name MyDemoDeployment -Mode Complete -ResourceGroupName MyDemoRG -TemplateFile <path to template file>\azuredeploy.json 
