@@ -414,7 +414,7 @@ Azure 存储客户端使用存储连接字符串来存储用于访问数据管�
 -	[如何通过 C++ 使用队列存储](/documentation/articles/storage-c-plus-plus-how-to-use-queues/)
 -	[使用 C++ 列出 Azure 存储资源](/documentation/articles/storage-c-plus-plus-enumeration/)
 -	[适用于 C++ 的存储空间客户端库参考](http://azure.github.io/azure-storage-cpp)
--	[Azure 存储文档](/documentation/services/storage)
+-	[Azure 存储文档](/documentation/services/storage/)
  
 
 <!---HONumber=Mooncake_1031_2016-->

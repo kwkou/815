@@ -148,7 +148,7 @@ New-AzureRmResourceGroup -Name MyIoTRG1 -Location "China East"
 [lnk-powershell-install]: /documentation/articles/powershell-install-configure/
 [lnk-rest-api]: https://msdn.microsoft.com/zh-cn/library/mt589014.aspx
 [lnk-azure-rm-overview]: /documentation/articles/resource-group-overview/
-[lnk-powershell-arm]: /documentation/articles/powershell-azure-resource-manager
+[lnk-powershell-arm]: /documentation/articles/powershell-azure-resource-manager/
 [lnk-c-sdk]: /documentation/articles/iot-hub-device-sdk-c-intro/
 [lnk-sdks]: /documentation/articles/iot-hub-sdks-summary/
 

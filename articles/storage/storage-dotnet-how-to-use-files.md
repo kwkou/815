@@ -662,7 +662,7 @@ Azure 存储服务分析现在支持用于文件存储的指标。使用指标�
 ### 博客文章
 
 - [Azure 文件存储现已正式发布](https://azure.microsoft.com/blog/azure-file-storage-now-generally-available/)
-- [深入了解 Azure 文件存储](/home/features/storage) 
+- [深入了解 Azure 文件存储](/home/features/storage/) 
 - [Azure 文件服务简介](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/12/introducing-microsoft-azure-file-service.aspx)
 - [将连接保存到 Azure 文件中](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/27/persisting-connections-to-microsoft-azure-files.aspx)
 

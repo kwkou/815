@@ -219,7 +219,7 @@ Azure 文件共享是 Azure 中的 SMB 文件共享。所有目录和文件都�
 
 下面是一些相关的文章和资源，可以让你更多地了解 Azure 存储服务。
 
-- [Azure 存储空间文档](/documentation/services/storage)
+- [Azure 存储空间文档](/documentation/services/storage/)
 - [Azure 存储 REST API 引用](https://msdn.microsoft.com/zh-cn/library/azure/dd179355.aspx)
 
 

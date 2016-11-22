@@ -156,13 +156,13 @@
 
 <!--Article references-->
 [Azure SQL 数据库业务连续性概述]: /documentation/articles/sql-database-business-continuity/
-[Configure your database after recovery]: /documentation/articles/sql-database-disaster-recovery
+[Configure your database after recovery]: /documentation/articles/sql-database-disaster-recovery/
 [如何安装和配置 Azure PowerShell]: /documentation/articles/powershell-install-configure/
 [概述]: /documentation/articles/sql-data-warehouse-restore-database-overview/
 [门户]: /documentation/articles/sql-data-warehouse-restore-database-portal/
 [PowerShell]: /documentation/articles/sql-data-warehouse-restore-database-powershell/
 [REST]: /documentation/articles/sql-data-warehouse-restore-database-rest-api/
-[Configure your database after recovery]: /documentation/articles/sql-database-disaster-recovery
+[Configure your database after recovery]: /documentation/articles/sql-database-disaster-recovery/
 
 <!--MSDN references-->
 [Restore-AzureRmSqlDatabase]: https://msdn.microsoft.com/zh-cn/library/mt693390.aspx

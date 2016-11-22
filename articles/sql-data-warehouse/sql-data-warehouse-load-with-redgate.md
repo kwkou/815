@@ -23,9 +23,9 @@
 # 使用 Redgate Data Platform Studio 加载数据
 
 > [AZURE.SELECTOR]
-- [Redgate](/documentation/articles/sql-data-warehouse-load-with-redgate)
-- [PolyBase](/documentation/articles/sql-data-warehouse-get-started-load-with-polybase)
-- [BCP](/documentation/articles/sql-data-warehouse-load-with-bcp)
+- [Redgate](/documentation/articles/sql-data-warehouse-load-with-redgate/)
+- [PolyBase](/documentation/articles/sql-data-warehouse-get-started-load-with-polybase/)
+- [BCP](/documentation/articles/sql-data-warehouse-load-with-bcp/)
 
 本教程介绍如何使用 [Redgate 的 Data Platform Studio](http://www.red-gate.com/products/azure-development/data-platform-studio/) (DPS) 将数据从本地 SQL Server 迁移到 Azure SQL 数据仓库。Data Platform Studio 应用了适当的兼容性修补程序和优化措施，可以快速启动 SQL 数据仓库操作。
 
@@ -136,10 +136,10 @@ DPS 会以可视化方式显示从本地 SQL Server 提取和上载数据的进�
 
 <!--Article references-->
 
-[查询 Azure SQL 数据仓库 (Visual Studio)]: /documentation/articles/sql-data-warehouse-query-visual-studio
-[使用 Power BI 可视化数据]: /documentation/articles/sql-data-warehouse-get-started-visualize-with-power-bi
-[将解决方案迁移到 SQL 数据仓库]: /documentation/articles/sql-data-warehouse-overview-migrate
-[Load data into Azure SQL Data Warehouse]: /documentation/articles/sql-data-warehouse-overview-load
-[SQL Data Warehouse development overview]: /documentation/articles/sql-data-warehouse-overview-develop
+[查询 Azure SQL 数据仓库 (Visual Studio)]: /documentation/articles/sql-data-warehouse-query-visual-studio/
+[使用 Power BI 可视化数据]: /documentation/articles/sql-data-warehouse-get-started-visualize-with-power-bi/
+[将解决方案迁移到 SQL 数据仓库]: /documentation/articles/sql-data-warehouse-overview-migrate/
+[Load data into Azure SQL Data Warehouse]: /documentation/articles/sql-data-warehouse-overview-load/
+[SQL Data Warehouse development overview]: /documentation/articles/sql-data-warehouse-overview-develop/
 
 <!---HONumber=Mooncake_1024_2016-->

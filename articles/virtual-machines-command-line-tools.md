@@ -25,7 +25,7 @@
 
 本文提供经常用于在经典部署模型中创建和管理 Azure 资源的 Azure CLI 命令的语法和选项。通过在 Azure 服务管理 (asm) 模式下运行 CLI 可以访问这些命令。本参考内容并不完整，你的 CLI 版本可能会显示略微不同的命令或参数。
 
-若要开始，请先[安装 Azure CLI](/documentation/articles/xplat-cli-install) 并[连接到 Azure 订阅](/documentation/articles/xplat-cli-connect/)。
+若要开始，请先[安装 Azure CLI](/documentation/articles/xplat-cli-install/) 并[连接到 Azure 订阅](/documentation/articles/xplat-cli-connect/)。
 
 有关命令行当前的命令语法和选项，请键入 `azure help`；若要显示特定命令的帮助，请键入 `azure help [command]`。还可以在创建和管理特定 Azure 服务的说明文档中找到 CLI 示例。
 
@@ -42,7 +42,7 @@
 >[AZURE.NOTE] CLI 的 Azure Resource Manager 模式与 Azure 服务管理模式互斥。即，在一种模式下创建的资源不能通过另一种模式进行管理。
 
 ## 管理帐户信息和发布设置
-CLI 可以连接到帐户的一种方式是使用 Azure 订阅信息。（有关其他选项，请参阅[从 Azure CLI 连接到 Azure 订阅](/documentation/articles/xplat-cli-connect)。） 可以从 Azure 经典门户中的发布设置文件中获取此信息，如下所述。可以导入发布设置文件作为永久性本地配置设置，CLI 会将此设置用于后续操作。只需导入一次发布设置即可。
+CLI 可以连接到帐户的一种方式是使用 Azure 订阅信息。（有关其他选项，请参阅[从 Azure CLI 连接到 Azure 订阅](/documentation/articles/xplat-cli-connect/)。） 可以从 Azure 经典门户中的发布设置文件中获取此信息，如下所述。可以导入发布设置文件作为永久性本地配置设置，CLI 会将此设置用于后续操作。只需导入一次发布设置即可。
 
 **account download [options]**
 

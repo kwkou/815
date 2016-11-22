@@ -18,7 +18,7 @@
 
 # 跨扩展云数据库进行报告（预览）
 
-你可以使用[弹性查询](/documentation/articles/sql-database-elastic-query-overview)从单个连接点中的多个 Azure SQL 数据库中创建报告。数据库必须进行横向分区（也称为“分片”）。
+你可以使用[弹性查询](/documentation/articles/sql-database-elastic-query-overview/)从单个连接点中的多个 Azure SQL 数据库中创建报告。数据库必须进行横向分区（也称为“分片”）。
 
 如果有现有的数据库，请参阅 [Migrating existing databases to scaled-out databases（将现有数据库迁移到扩展数据库）](/documentation/articles/sql-database-elastic-convert-to-use-elastic-tools/)。
 

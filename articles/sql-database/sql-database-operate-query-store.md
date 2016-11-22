@@ -47,7 +47,7 @@ Azure 中的 Query Store 是完全托管的数据库功能，可持续收集和�
 
 ## 后续步骤
 
-[SQL 数据库性能见解](/documentation/articles/sql-database-performance-guidance)
+[SQL 数据库性能见解](/documentation/articles/sql-database-performance-guidance/)
 
 ## 其他资源
 

@@ -29,25 +29,25 @@
 
 上面显示了三个开发和测试环境。每个环境具有模板文件中指定的 Web 应用程序和 SQL 数据库资源。每个环境中的应用程序和数据库名称各不相同，且在每个环境中唯一的参数文件中指定。
 
-如果你不熟悉 Azure 资源管理器的概念，建议在阅读本文之前先阅读 [Azure 资源管理器概述](/documentation/articles/resource-group-overview)一文。
+如果你不熟悉 Azure 资源管理器的概念，建议在阅读本文之前先阅读 [Azure 资源管理器概述](/documentation/articles/resource-group-overview/)一文。
 
 你也可以先完成本文中所列的步骤而不阅读任何参考文章，以快速体验 Azure 资源管理器模板的使用。完成这些步骤后，可以利用这些步骤体验并阅读参考文章，以获得首次使用时遇到的大多数问题的解答。
 
 ## 规划 Azure 资源的使用
 在拥有应用程序高级设计经验后，你可以定义：
 
-- 应用程序所要包含的 Azure 资源。你可以构建应用程序并将它部署为包含 Azure SQL 数据库的 Azure Web 应用。可以在虚拟机中使用 PHP 和 MySQL 或 IIS 和 SQL Server 或其他组件构建应用程序。[Azure App Service、云服务与虚拟机的比较](/documentation/articles/choose-web-site-cloud-service-vm)一文可帮助你确定想要用于应用程序的 Azure 资源。
+- 应用程序所要包含的 Azure 资源。你可以构建应用程序并将它部署为包含 Azure SQL 数据库的 Azure Web 应用。可以在虚拟机中使用 PHP 和 MySQL 或 IIS 和 SQL Server 或其他组件构建应用程序。[Azure App Service、云服务与虚拟机的比较](/documentation/articles/choose-web-site-cloud-service-vm/)一文可帮助你确定想要用于应用程序的 Azure 资源。
 - 应用程序应符合哪些服务级别要求，例如可用性、安全性和缩放性。
 
 ## 下载现有模板
 Azure 资源管理器模板定义应用程序使用的所有 Azure 资源。你可以直接在 Azure 门户预览中部署多个现有的模板，或者使用应用程序代码在源代码管理系统中下载、修改和保存这些模板。完成以下步骤以下载现有的模板。
 
-1. 可以在 [Azure 快速入门模板](https://github.com/Azure/azure-quickstart-templates/) GitHub 存储库中浏览现有模板。在列表中，你将看到“[201-web-app-sql-database](https://github.com/Azure/azure-quickstart-templates/tree/master/201-web-app-sql-database)”文件夹。由于许多自定义应用程序包含 Web 应用程序和 SQL 数据库，此模板可作为本文其余部分的示例，帮助你了解如何使用模板。 <!-- 本文未提供有关创建和配置此模板的完整内容，但是，如果你打算使用它在组织中创建实际环境，请阅读[预配包含 SQL 数据库的 Web 应用](/documentation/articles/app-service-web-arm-with-sql-database-provision)一文以全面了解该模板。 -->
+1. 可以在 [Azure 快速入门模板](https://github.com/Azure/azure-quickstart-templates/) GitHub 存储库中浏览现有模板。在列表中，你将看到“[201-web-app-sql-database](https://github.com/Azure/azure-quickstart-templates/tree/master/201-web-app-sql-database)”文件夹。由于许多自定义应用程序包含 Web 应用程序和 SQL 数据库，此模板可作为本文其余部分的示例，帮助你了解如何使用模板。 <!-- 本文未提供有关创建和配置此模板的完整内容，但是，如果你打算使用它在组织中创建实际环境，请阅读[预配包含 SQL 数据库的 Web 应用](/documentation/articles/app-service-web-arm-with-sql-database-provision/)一文以全面了解该模板。 -->
 2. 单击 201-web-app-sql-databas 文件夹中的 [azuredeploy.json](https://github.com/Azure/azure-quickstart-templates/blob/master/201-web-app-sql-database/azuredeploy.json) 文件以查看其内容。这是 Azure 资源管理器模板文件。 
 3. 在视图模式中，单击 “[原始](https://github.com/Azure/azure-quickstart-templates/raw/master/201-web-app-sql-database/azuredeploy.json)” 按钮。 
 4. 使用鼠标选择此文件的内容，然后将内容以“TestApp1-Template.json”文件名保存到计算机。 
 5. 检查模板的内容，并注意以下事项：
- - **Resources** 节：此节定义此模板创建的 Azure 资源类型。在其他资源类型中，此模板将创建 Azure Web 应用和 [Azure SQL 数据库](/documentation/articles/sql-database-technical-overview)资源。如果你偏好在虚拟机中运行和管理 Web 与 SQL 服务器，可以使用“[iis-2vm-sql-1vm](https://github.com/Azure/azure-quickstart-templates/tree/master/iis-2vm-sql-1vm)”或“[lamp-app](https://github.com/Azure/azure-quickstart-templates/tree/master/lamp-app)”模板；但本文中的说明基于 [201-web-app-sql-database](https://github.com/Azure/azure-quickstart-templates/tree/master/201-web-app-sql-database) 模板。
+ - **Resources** 节：此节定义此模板创建的 Azure 资源类型。在其他资源类型中，此模板将创建 Azure Web 应用和 [Azure SQL 数据库](/documentation/articles/sql-database-technical-overview/)资源。如果你偏好在虚拟机中运行和管理 Web 与 SQL 服务器，可以使用“[iis-2vm-sql-1vm](https://github.com/Azure/azure-quickstart-templates/tree/master/iis-2vm-sql-1vm)”或“[lamp-app](https://github.com/Azure/azure-quickstart-templates/tree/master/lamp-app)”模板；但本文中的说明基于 [201-web-app-sql-database](https://github.com/Azure/azure-quickstart-templates/tree/master/201-web-app-sql-database) 模板。
  - **Parameters** 节：此节定义可用于配置每个资源的参数。在模板中指定的一些参数带有“defaultValue”属性，而其他一些参数则没有该属性。使用模板部署 Azure 资源时，必须将值提供给模板中所有未指定 defaultValue 属性的参数。如果未向带有 defaultValue 属性的参数提供值，则会使用模板中为 defaultValue 参数指定的值。
 
 
@@ -134,13 +134,13 @@ Azure 资源管理器模板定义应用程序使用的所有 Azure 资源。你�
 | **requestedServiceObjectiveName** | S0 | S1 |
 
 ## 创建环境
-所有 Azure 资源必须在 [Azure 资源组](/documentation/articles/resource-group-portal)中创建。资源组可让你将 Azure 资源分组，以便可以统一管理这些资源。[权限](/documentation/articles/role-based-access-built-in-roles)可以分配给资源组，使组织中的特定人员可以创建、修改、删除或查看这些组及其包含的资源。可以在 [Azure 门户预览](https://portal.azure.cn)中查看资源组中资源的警报和计费信息。资源组在 Azure 区域中创建。在本文中，所有资源都在美国中部区域创建。开始创建实际环境时，请选择最符合要求的区域。
+所有 Azure 资源必须在 [Azure 资源组](/documentation/articles/resource-group-portal/)中创建。资源组可让你将 Azure 资源分组，以便可以统一管理这些资源。[权限](/documentation/articles/role-based-access-built-in-roles/)可以分配给资源组，使组织中的特定人员可以创建、修改、删除或查看这些组及其包含的资源。可以在 [Azure 门户预览](https://portal.azure.cn)中查看资源组中资源的警报和计费信息。资源组在 Azure 区域中创建。在本文中，所有资源都在美国中部区域创建。开始创建实际环境时，请选择最符合要求的区域。
 
 使用以下方法之一为每个环境创建资源组。所有方法都可实现相同的结果。
 
 ###Azure 命令行界面 (CLI)
 
-确保 Windows、OS X 或 Linux 计算机上[已安装](/documentation/articles/xplat-cli-install) CLI，并将你的 [Azure AD 帐户](/documentation/articles/active-directory-how-subscriptions-associated-directory)（也称为工作帐户或学校帐户）[连接到](/documentation/articles/xplat-cli-connect) Azure 订阅。在 CLI 命令行中键入以下命令以创建开发环境的资源组。
+确保 Windows、OS X 或 Linux 计算机上[已安装](/documentation/articles/xplat-cli-install/) CLI，并将你的 [Azure AD 帐户](/documentation/articles/active-directory-how-subscriptions-associated-directory/)（也称为工作帐户或学校帐户）[连接到](/documentation/articles/xplat-cli-connect/) Azure 订阅。在 CLI 命令行中键入以下命令以创建开发环境的资源组。
 
 	azure group create "TestApp1-Development" "China East"
 
@@ -168,7 +168,7 @@ Azure 资源管理器模板定义应用程序使用的所有 Azure 资源。你�
 
 ###PowerShell
 
-确保已按 [How to install and configure Azure PowerShell（如何安装和配置 Azure PowerShell）](/documentation/articles/powershell-install-configure) 一文中的详述，在 Windows 计算机上安装了 PowerShell 1.01 或更高版本，并将你的 [Azure AD 帐户](/documentation/articles/active-directory-how-subscriptions-associated-directory)（也称为工作帐户或学校帐户）连接到你的订阅。在 PowerShell 命令提示符下，键入以下命令以创建开发环境的资源组。
+确保已按 [How to install and configure Azure PowerShell（如何安装和配置 Azure PowerShell）](/documentation/articles/powershell-install-configure/) 一文中的详述，在 Windows 计算机上安装了 PowerShell 1.01 或更高版本，并将你的 [Azure AD 帐户](/documentation/articles/active-directory-how-subscriptions-associated-directory/)（也称为工作帐户或学校帐户）连接到你的订阅。在 PowerShell 命令提示符下，键入以下命令以创建开发环境的资源组。
 
 	New-AzureRmResourceGroup -Name TestApp1-Development -Location "China East"
 
@@ -190,7 +190,7 @@ Azure 资源管理器模板定义应用程序使用的所有 Azure 资源。你�
 
 ###Azure 门户预览
 
-1. 使用 [Azure AD](/documentation/articles/active-directory-how-subscriptions-associated-directory)（也称为工作或学校）帐户登录到 [Azure 门户预览](https://portal.azure.cn)。单击“新建”-->“管理”-->“资源组”，在“资源组名称”框中输入“TestApp1-Development”、选择你的订阅，然后在“资源组位置”框中选择“美国中部”，如下图所示。
+1. 使用 [Azure AD](/documentation/articles/active-directory-how-subscriptions-associated-directory/)（也称为工作或学校）帐户登录到 [Azure 门户预览](https://portal.azure.cn)。单击“新建”-->“管理”-->“资源组”，在“资源组名称”框中输入“TestApp1-Development”、选择你的订阅，然后在“资源组位置”框中选择“美国中部”，如下图所示。
    ![门户](./media/solution-dev-test-environments/rgcreate.png)
 2. 单击“创建”按钮以创建资源组。
 3. 单击“浏览”并在列表中向下滚动到“资源组”，然后单击“资源组”，如下所示。
@@ -355,7 +355,7 @@ Azure 资源管理器模板定义应用程序使用的所有 Azure 资源。你�
 
 不管使用哪种方法，资源组及其包含的所有资源都将不再存在，但你不再需要支付资源的使用费。
 
-若要在应用程序开发过程中最大程度地减少 Azure 资源的使用费，你可以使用 [Azure 自动化](/documentation/articles/automation-intro)来计划作业，以便：
+若要在应用程序开发过程中最大程度地减少 Azure 资源的使用费，你可以使用 [Azure 自动化](/documentation/articles/automation-intro/)来计划作业，以便：
 
 - 在每天结束时停止虚拟机并在每天开始时重新启动它们。
 - 在每天结束时删除整个环境并在每天开始时重新创建它们。
@@ -364,8 +364,8 @@ Azure 资源管理器模板定义应用程序使用的所有 Azure 资源。你�
 
 ## 后续步骤
 
-- 通过将 Azure AD 组或用户分配到能够对 Azure 资源执行部分操作的特定角色，向每个环境中的不同资源[委派系统管理控制](/documentation/articles/role-based-access-control-configure)。
-- 向每个环境的资源组和/或单个资源[分配标记](/documentation/articles/resource-group-using-tags)。你可以将“Environment”标记添加到资源组，并将其值设置为与环境名称相对应。当您需要组织资源以进行计费或管理时，标记会特别有用。
+- 通过将 Azure AD 组或用户分配到能够对 Azure 资源执行部分操作的特定角色，向每个环境中的不同资源[委派系统管理控制](/documentation/articles/role-based-access-control-configure/)。
+- 向每个环境的资源组和/或单个资源[分配标记](/documentation/articles/resource-group-using-tags/)。你可以将“Environment”标记添加到资源组，并将其值设置为与环境名称相对应。当您需要组织资源以进行计费或管理时，标记会特别有用。
 - 在 [Azure 门户预览](https://portal.azure.cn)中监视资源组中资源的警报和计费。
 
 

@@ -22,9 +22,9 @@
 
 分片数据库跨扩展数据层分布行。所有分区（也称为横向分区）数据库的架构都是一样的。使用弹性查询，可以创建跨分片数据库中的所有数据库的报表。
 
-有关快速入门，请参阅 [Reporting across scaled-out cloud databases（跨扩展云数据库进行报告）](/documentation/articles/sql-database-elastic-query-getting-started)。
+有关快速入门，请参阅 [Reporting across scaled-out cloud databases（跨扩展云数据库进行报告）](/documentation/articles/sql-database-elastic-query-getting-started/)。
 
-对于非分片数据库，请参阅 [Query across cloud databases with different schemas（跨具有不同架构的云数据库进行查询）](/documentation/articles/sql-database-elastic-query-vertical-partitioning)。
+对于非分片数据库，请参阅 [Query across cloud databases with different schemas（跨具有不同架构的云数据库进行查询）](/documentation/articles/sql-database-elastic-query-vertical-partitioning/)。
 
  
 ## 先决条件

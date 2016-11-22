@@ -263,7 +263,7 @@ VNet 包含以下属性。
 
 ## 后续步骤
 
-- 了解如何对 IaaS VM 进行[负载均衡](/documentation/articles/load-balancer-overview)，以及如何[管理通过多个 Azure 区域的路由](/documentation/articles/traffic-manager-overview/)。
+- 了解如何对 IaaS VM 进行[负载均衡](/documentation/articles/load-balancer-overview/)，以及如何[管理通过多个 Azure 区域的路由](/documentation/articles/traffic-manager-overview/)。
 - 详细了解 [NSG 以及如何规划和设计](/documentation/articles/virtual-networks-nsg/) NSG 解决方案。
 - 详细了解[跨界连接和 VNet 连接选项](/documentation/articles/vpn-gateway-plan-design/)。  
 

@@ -188,7 +188,7 @@
 [Resize-VHD]: https://technet.microsoft.com/zh-cn/library/hh848535.aspx
 [Resize virtual machines]: https://azure.microsoft.com/blog/resize-virtual-machines/
 [resource-lock]: /documentation/articles/resource-group-lock-resources/
-[resource-manager-overview]: /documentation/articles/resource-group-overview
+[resource-manager-overview]: /documentation/articles/resource-group-overview/
 [select-vm-image]: /documentation/articles/virtual-machines-linux-cli-ps-findimage/
 [services-by-region]: https://azure.microsoft.com/regions/#services
 [ssh-linux]: /documentation/articles/virtual-machines-linux-mac-create-ssh-keys/

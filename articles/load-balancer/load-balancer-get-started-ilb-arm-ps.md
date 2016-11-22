@@ -245,7 +245,7 @@ Azure 资源管理器要求所有资源组指定一个位置。此位置将用�
 
 使用命令 Add-AzureRmVMNetworkInterface 将 NIC 分配给虚拟机。
 
-你可以按照以下文档找到相关分步说明，以创建虚拟机并将其分配给 NIC：[使用 PowerShell 创建 Azure VM(/documentation/articles/virtual-machines-windows-create-powershell)。
+你可以按照以下文档找到相关分步说明，以创建虚拟机并将其分配给 NIC：[使用 PowerShell 创建 Azure VM(/documentation/articles/virtual-machines-windows-create-powershell/)。
 
 或者，如果你已创建虚拟机，则可以使用以下步骤添加网络接口：
 
@@ -315,8 +315,8 @@ Azure 资源管理器要求所有资源组指定一个位置。此位置将用�
 
 ## 后续步骤
 
-[配置负载均衡器分发模式](/documentation/articles/load-balancer-distribution-mode)
+[配置负载均衡器分发模式](/documentation/articles/load-balancer-distribution-mode/)
 
-[为负载均衡器配置空闲 TCP 超时设置](/documentation/articles/load-balancer-tcp-idle-timeout)
+[为负载均衡器配置空闲 TCP 超时设置](/documentation/articles/load-balancer-tcp-idle-timeout/)
 
 <!---HONumber=Mooncake_1031_2016-->

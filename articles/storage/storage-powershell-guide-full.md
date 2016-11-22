@@ -689,7 +689,7 @@ Azure 环境的部署独立于 Azure，例如[中国 21Vianet 运营的 AzureChi
 ## 后续步骤
 在本指南中，你已了解如何使用 Azure PowerShell 管理 Azure 存储空间。下面是一些相关的文章和了解有关这些更多的资源。
 
-- [Azure 存储文档](/documentation/services/storage)
+- [Azure 存储文档](/documentation/services/storage/)
 - [Azure 存储空间 PowerShell Cmdlet](http://msdn.microsoft.com/zh-cn/library/azure/dn806401.aspx)
 - [Windows PowerShell 参考](https://msdn.microsoft.com/zh-cn/library/ms714469.aspx)
 

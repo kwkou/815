@@ -39,7 +39,7 @@
 
 要访问密钥保管库的 Web 应用程序已在 Azure Active Directory 中注册，因此有权访问你的密钥保管库。如果这不是这样，请返回入门教程中的“注册应用程序”，并重复列出的步骤。
 
-本教程面向 Web 开发人员，他们已经了解有关在 Azure 上创建 Web 应用程序的基本知识。有关 Azure Web Apps 的详细信息，请参阅 [Web Apps 概述](/home/features/web-site)。
+本教程面向 Web 开发人员，他们已经了解有关在 Azure 上创建 Web 应用程序的基本知识。有关 Azure Web Apps 的详细信息，请参阅 [Web Apps 概述](/home/features/web-site/)。
 
 
 

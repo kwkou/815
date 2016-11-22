@@ -98,7 +98,7 @@
 
 - [远程访问 Azure 中的角色实例] 
 - [将远程桌面与 Azure 角色一起使用]
-- [Node.js 开发人员中心](/develop/nodejs)
+- [Node.js 开发人员中心](/develop/nodejs/)
 
   [Azure PowerShell]: http://go.microsoft.com/?linkid=9790229&clcid=0x409
 

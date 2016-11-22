@@ -124,7 +124,7 @@ Azure 文件存储使用标准 SMB 协议在云中提供文件共享。使用 Az
 ### 博客文章
 
 - [Azure 文件存储现已正式发布](/blog/)
-- [Azure 文件存储内部](/home/features/storage) 
+- [Azure 文件存储内部](/home/features/storage/) 
 - [Azure 文件服务简介](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/12/introducing-microsoft-azure-file-service.aspx)
 - [将连接保存到 Azure 文件中](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/27/persisting-connections-to-microsoft-azure-files.aspx)
 

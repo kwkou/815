@@ -90,7 +90,7 @@ dev       home      root      tmp       var
 	
 ##生成: 无法生成映像，检查 TLS 连接时出错: 主机未运行
 
-- 验证默认 Docker 主机是否正在运行。请参阅 [Configure the Docker client](/documentation/articles/vs-azure-tools-docker-setup)（配置 Docker 客户端）一文。
+- 验证默认 Docker 主机是否正在运行。请参阅 [Configure the Docker client](/documentation/articles/vs-azure-tools-docker-setup/)（配置 Docker 客户端）一文。
 
 ##使用 Microsoft Edge 作为默认浏览器
 

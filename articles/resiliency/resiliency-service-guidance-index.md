@@ -30,9 +30,9 @@
 ##服务指南
 | 服务 | 灾难恢复指南 | 设计指南 |
 |:---------|:--------------------------:|:------------------:|
-| [云服务](/home/features/cloud-services/ "Azure 云服务") | [链接](/documentation/articles/cloud-services-disaster-recovery-guidance "Azure 云服务灾难恢复指南") | 不可用 |
-| [存储](/home/features/storage/ "Azure 存储空间") | [链接](/documentation/articles/storage-disaster-recovery-guidance "Azure 存储空间灾难恢复指南") | 不可用 |
-| [虚拟网络](/home/features/networking/ "Azure 虚拟网络") | [链接](/documentation/articles/virtual-network-disaster-recovery-guidance "Azure 虚拟网络灾难恢复指南") | 不可用 |
+| [云服务](/home/features/cloud-services/ "Azure 云服务") | [链接](/documentation/articles/cloud-services-disaster-recovery-guidance/ "Azure 云服务灾难恢复指南") | 不可用 |
+| [存储](/home/features/storage/ "Azure 存储空间") | [链接](/documentation/articles/storage-disaster-recovery-guidance/ "Azure 存储空间灾难恢复指南") | 不可用 |
+| [虚拟网络](/home/features/networking/ "Azure 虚拟网络") | [链接](/documentation/articles/virtual-network-disaster-recovery-guidance/ "Azure 虚拟网络灾难恢复指南") | 不可用 |
 
 ##后续步骤
 如果你正在查找主要侧重于系统与解决方案的指南，请参阅[构建在 Azure 基础之上的应用程序灾难恢复和高可用性](/documentation/articles/resiliency-disaster-recovery-high-availability-azure-applications/)。

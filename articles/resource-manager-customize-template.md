@@ -19,11 +19,11 @@
 
 # 自定义导出的 Azure Resource Manager 模板
 
-本文演示如何修改导出的模板，以便可以以参数形式传入其他值。它基于[导出 Resource Manager 模板](/documentation/articles/resource-manager-export-template)一文中执行的步骤构建，但你不一定要先完成该文。你可以在本文中找到所需的模板和脚本。
+本文演示如何修改导出的模板，以便可以以参数形式传入其他值。它基于[导出 Resource Manager 模板](/documentation/articles/resource-manager-export-template/)一文中执行的步骤构建，但你不一定要先完成该文。你可以在本文中找到所需的模板和脚本。
 
 ## 查看导出的模板
 
-如果你已完成[导出 Resource Manager 模板](/documentation/articles/resource-manager-export-template)，请打开已下载的模板。该模板名为 **template.json**。如果你有 Visual Studio 或 Visual Code，则可以使用这两种中的任一个来编辑模板。否则，可以使用任何 JSON 编辑器或文本编辑器。
+如果你已完成[导出 Resource Manager 模板](/documentation/articles/resource-manager-export-template/)，请打开已下载的模板。该模板名为 **template.json**。如果你有 Visual Studio 或 Visual Code，则可以使用这两种中的任一个来编辑模板。否则，可以使用任何 JSON 编辑器或文本编辑器。
 
 如果你尚未完成前面的演练，请创建一个名为 **template.json** 的文件，并将导出模板中的以下内容添加到该文件。
 
@@ -188,7 +188,7 @@
 
 ## 部署模板
 
-可以使用 Azure PowerShell 或 Azure 命令行界面 (CLI) 部署自定义的模板和参数文件。如果需要，请安装 [Azure PowerShell](/documentation/articles/powershell-install-configure) 或 [Azure CLI](/documentation/articles/xplat-cli-install)。你导出原始模板后，可以将下载的脚本与模板配合使用，也可以编写自己的脚本来部署模板。
+可以使用 Azure PowerShell 或 Azure 命令行界面 (CLI) 部署自定义的模板和参数文件。如果需要，请安装 [Azure PowerShell](/documentation/articles/powershell-install-configure/) 或 [Azure CLI](/documentation/articles/xplat-cli-install/)。你导出原始模板后，可以将下载的脚本与模板配合使用，也可以编写自己的脚本来部署模板。
 在本文中说明了这两个选项。
 
 2. 若要使用你自己的脚本部署，请使用以下任一项。
@@ -226,9 +226,9 @@
 
 ## 后续步骤
 
-- [Resource Manager 模板演练](/documentation/articles/resource-manager-template-walkthrough)在本文中学习的内容的基础上构建，它将为更复杂的解决方案创建模板。它可帮助你了解有关可用资源的更多信息以及如何确定要提供的值。
-- 若要了解如何通过 PowerShell 导出模板，请参阅[将 Azure PowerShell 与 Azure Resource Manager 配合使用](/documentation/articles/powershell-azure-resource-manager)。
-- 若要了解如何通过 Azure CLI 导出模板，请参阅[将适用于 Mac、Linux 和 Windows 的 Azure CLI 与 Azure Resource Manager 配合使用](/documentation/articles/xplat-cli-azure-resource-manager)。
-- 若要了解如何构造模板，请参阅[创作 Azure Resource Manager 模板](/documentation/articles/resource-group-authoring-templates)。
+- [Resource Manager 模板演练](/documentation/articles/resource-manager-template-walkthrough/)在本文中学习的内容的基础上构建，它将为更复杂的解决方案创建模板。它可帮助你了解有关可用资源的更多信息以及如何确定要提供的值。
+- 若要了解如何通过 PowerShell 导出模板，请参阅[将 Azure PowerShell 与 Azure Resource Manager 配合使用](/documentation/articles/powershell-azure-resource-manager/)。
+- 若要了解如何通过 Azure CLI 导出模板，请参阅[将适用于 Mac、Linux 和 Windows 的 Azure CLI 与 Azure Resource Manager 配合使用](/documentation/articles/xplat-cli-azure-resource-manager/)。
+- 若要了解如何构造模板，请参阅[创作 Azure Resource Manager 模板](/documentation/articles/resource-group-authoring-templates/)。
 
 <!---HONumber=Mooncake_0711_2016-->

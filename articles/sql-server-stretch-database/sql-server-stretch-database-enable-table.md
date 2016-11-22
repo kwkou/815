@@ -84,7 +84,7 @@
 	ALTER TABLE <table name>  
 	    SET ( REMOTE_DATA_ARCHIVE = ON ( MIGRATION_STATE = OUTBOUND ) ) ;  
 	GO
-以下示例只会迁移 `dbo.fn_stretchpredicate` 内联表值函数识别的行，并推迟数据迁移。有关筛选器函数的详细信息，请参阅[使用筛选器函数选择要迁移的行](/documentation/articles/sql-server-stretch-database-predicate-function)。
+以下示例只会迁移 `dbo.fn_stretchpredicate` 内联表值函数识别的行，并推迟数据迁移。有关筛选器函数的详细信息，请参阅[使用筛选器函数选择要迁移的行](/documentation/articles/sql-server-stretch-database-predicate-function/)。
 
 	USE <Stretch-enabled database name>;
 	GO

@@ -331,7 +331,7 @@ NIC 是将 VM 与所在虚拟网络连接到一起的设备。一个 VM 可以�
 
 
 ### 使用模板化部署
-有关如何部署模板的详细说明，请阅读[使用 .NET 库和模板部署 Azure 资源](/documentation/articles/virtual-machines-windows-csharp-template)一文。
+有关如何部署模板的详细说明，请阅读[使用 .NET 库和模板部署 Azure 资源](/documentation/articles/virtual-machines-windows-csharp-template/)一文。
 
 简而言之，部署模板比手动预配资源容易得多。以下代码演示如何通过指向包含模板和参数文件的 URI 来执行该操作。
 

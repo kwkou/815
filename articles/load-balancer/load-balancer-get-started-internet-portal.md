@@ -112,10 +112,10 @@
 
 ## 后续步骤
 
-[开始配置内部负载均衡器](/documentation/articles/load-balancer-get-started-ilb-arm-cli)
+[开始配置内部负载均衡器](/documentation/articles/load-balancer-get-started-ilb-arm-cli/)
 
-[配置负载均衡器分发模式](/documentation/articles/load-balancer-distribution-mode)
+[配置负载均衡器分发模式](/documentation/articles/load-balancer-distribution-mode/)
 
-[为负载均衡器配置空闲 TCP 超时设置](/documentation/articles/load-balancer-tcp-idle-timeout)
+[为负载均衡器配置空闲 TCP 超时设置](/documentation/articles/load-balancer-tcp-idle-timeout/)
 
 <!---HONumber=Mooncake_1031_2016-->

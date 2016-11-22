@@ -65,8 +65,8 @@
 <!--Image references-->
 
 <!--Article references-->
-[加载示例数据]: /documentation/articles/sql-data-warehouse-load-sample-databases
-[创建 SQL 数据仓库]: /documentation/articles/sql-data-warehouse-get-started-provision-powershell
+[加载示例数据]: /documentation/articles/sql-data-warehouse-load-sample-databases/
+[创建 SQL 数据仓库]: /documentation/articles/sql-data-warehouse-get-started-provision-powershell/
 
 <!--MSDN references-->
 

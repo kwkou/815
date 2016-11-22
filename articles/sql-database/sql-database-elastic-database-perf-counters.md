@@ -19,11 +19,11 @@
 
 # 分片映射管理器的性能计数器
 
-你可以捕获[分片映射管理器](/documentation/articles/sql-database-elastic-scale-shard-map-management)的性能，尤其是在使用[数据相关的路由](/documentation/articles/sql-database-elastic-scale-data-dependent-routing)时。计数器是使用 Microsoft.Azure.SqlDatabase.ElasticScale.Client 类的方法创建的。
+你可以捕获[分片映射管理器](/documentation/articles/sql-database-elastic-scale-shard-map-management/)的性能，尤其是在使用[数据相关的路由](/documentation/articles/sql-database-elastic-scale-data-dependent-routing/)时。计数器是使用 Microsoft.Azure.SqlDatabase.ElasticScale.Client 类的方法创建的。
 
-计数器用于跟踪[数据相关路由](/documentation/articles/sql-database-elastic-scale-data-dependent-routing)操作的性能。可在“弹性数据库: 分片管理”类别下的“性能监视器”中访问这些计数器。
+计数器用于跟踪[数据相关路由](/documentation/articles/sql-database-elastic-scale-data-dependent-routing/)操作的性能。可在“弹性数据库: 分片管理”类别下的“性能监视器”中访问这些计数器。
 
-**有关最新版本：**请转到 [Microsoft.Azure.SqlDatabase.ElasticScale.Client](https://www.nuget.org/packages/Microsoft.Azure.SqlDatabase.ElasticScale.Client/)。另请参阅 [Upgrade an app to use the latest elastic database client library（升级应用以使用最新的弹性数据库客户端库）](/documentation/articles/sql-database-elastic-scale-upgrade-client-library)。
+**有关最新版本：**请转到 [Microsoft.Azure.SqlDatabase.ElasticScale.Client](https://www.nuget.org/packages/Microsoft.Azure.SqlDatabase.ElasticScale.Client/)。另请参阅 [Upgrade an app to use the latest elastic database client library（升级应用以使用最新的弹性数据库客户端库）](/documentation/articles/sql-database-elastic-scale-upgrade-client-library/)。
 
 ## 先决条件
 
@@ -67,7 +67,7 @@
 
 ### 另请参阅
 
-[弹性数据库功能概述](/documentation/articles/sql-database-elastic-scale-introduction)
+[弹性数据库功能概述](/documentation/articles/sql-database-elastic-scale-introduction/)
 
 [AZURE.INCLUDE [elastic-scale-include](../../includes/elastic-scale-include.md)]
 

@@ -24,10 +24,10 @@
 
 
 > [AZURE.SELECTOR]
-- [概述](/documentation/articles/sql-database-copy)
+- [概述](/documentation/articles/sql-database-copy/)
 - [T-SQL](/documentation/articles/sql-database-copy-transact-sql/)
-- [PowerShell](/documentation/articles/sql-database-copy-powershell)
-- [T-SQL](/documentation/articles/sql-database-copy-transact-sql)
+- [PowerShell](/documentation/articles/sql-database-copy-powershell/)
+- [T-SQL](/documentation/articles/sql-database-copy-transact-sql/)
 
 
 以下步骤说明如何使用 Transact-SQL 将 SQL 数据库复制到同一服务器或其他服务器。复制数据库的操作将使用 [CREATE DATABASE](https://msdn.microsoft.com/zh-cn/library/ms176061.aspx) 语句。

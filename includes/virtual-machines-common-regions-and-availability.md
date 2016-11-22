@@ -39,7 +39,7 @@ Azure 允许你在规定的地理区域（例如“中国北部”或“中国�
 ## Azure 映像
 在 Azure 中，VM 是基于映像创建的。通常，映像来自 Azure 应用商店，合作伙伴可在 Azure 应用商店提供预配置的完整 OS 映像或应用程序映像。
 
-从 Azure 应用商店中的映像创建 VM 时，实际上是在使用模板。Azure Resource Manager 模板是声明性的 JavaScript 对象表示法 (JSON) 文件，可用于创建包含 VM、存储、虚拟网络等的复杂应用程序环境。详细了解如何使用 [Azure Resource Manager 模板](/documentation/articles/resource-group-overview)，包括如何[构建自己的模板](/documentation/articles/resource-group-authoring-templates/)。
+从 Azure 应用商店中的映像创建 VM 时，实际上是在使用模板。Azure Resource Manager 模板是声明性的 JavaScript 对象表示法 (JSON) 文件，可用于创建包含 VM、存储、虚拟网络等的复杂应用程序环境。详细了解如何使用 [Azure Resource Manager 模板](/documentation/articles/resource-group-overview/)，包括如何[构建自己的模板](/documentation/articles/resource-group-authoring-templates/)。
 
 也可以使用 [Azure CLI](/documentation/articles/virtual-machines-linux-upload-vhd/) 或 [Azure PowerShell](/documentation/articles/virtual-machines-windows-upload-image/) 创建自己的自定义映像并将其上载，快速创建符合特定构建要求的自定义 VM。
 

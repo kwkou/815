@@ -106,7 +106,7 @@
 [数据仓库单位 (DWU)]: /documentation/articles/sql-data-warehouse-overview-what-is/
 [SQL 数据仓库参考概述]: /documentation/articles/sql-data-warehouse-overview-reference/
 [工作负荷管理]: /documentation/articles/sql-data-warehouse-develop-concurrency/
-[Tempdb]: /documentation/articles/sql-data-warehouse-tables-temporary
+[Tempdb]: /documentation/articles/sql-data-warehouse-tables-temporary/
 [数据类型]: /documentation/articles/sql-data-warehouse-tables-data-types/
 [创建支持票证]: /documentation/articles/sql-data-warehouse-get-started-create-support-ticket/
 

@@ -35,7 +35,7 @@
  
 ![为 SSH 端口配置 ACL][4]
  
-以上简单几步，就可以让你更安全的远程连接到 Azure Linux 虚拟机。如果你希望进一步加强安全性，可以参考 [Network tutorial](/documentation/services/networking) 来利用网络功能对虚拟机做更好的隔离，比如部署点到站点 VPN 或网络安全组。  
+以上简单几步，就可以让你更安全的远程连接到 Azure Linux 虚拟机。如果你希望进一步加强安全性，可以参考 [Network tutorial](/documentation/services/networking/) 来利用网络功能对虚拟机做更好的隔离，比如部署点到站点 VPN 或网络安全组。  
 
 <!--image references-->
 [1]: ./media/open-source-azure-virtual-machines-linux-rdp-security-guide/open-source-azure-virtual-machines-linux-rdp-security-guide-1.png  

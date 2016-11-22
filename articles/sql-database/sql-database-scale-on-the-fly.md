@@ -45,7 +45,7 @@ SQL 数据库包含最前沿的内存技术，可执行极快的事务，同时�
 [阅读文档](http://go.microsoft.com/fwlink/?LinkID=787580)
 
 转到主页以查看 SQL 数据库可提供的其他功能。
-[请查看](/home/features/sql-database)
+[请查看](/home/features/sql-database/)
 
 ## 后续步骤
 
@@ -53,7 +53,7 @@ SQL 数据库包含最前沿的内存技术，可执行极快的事务，同时�
 
 ## 其他资源
 
-浏览所有 [SQL 数据库的功能](/home/features/sql-database)。
+浏览所有 [SQL 数据库的功能](/home/features/sql-database/)。
  
 查看 [SQL 数据库技术概述](/documentation/articles/sql-database-technical-overview/)。
 

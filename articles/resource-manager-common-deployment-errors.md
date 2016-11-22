@@ -21,7 +21,7 @@
 
 # 排查使用 Azure Resource Manager 时的常见 Azure 部署错误
 
-本主题介绍如何解决可能遇到的一些常见 Azure 部署错误。如果你需要详细了解部署错误，请先参阅[查看部署操作](/documentation/articles/resource-manager-troubleshoot-deployments-portal)，然后再回到此文章来获取相关帮助以解决该错误。
+本主题介绍如何解决可能遇到的一些常见 Azure 部署错误。如果你需要详细了解部署错误，请先参阅[查看部署操作](/documentation/articles/resource-manager-troubleshoot-deployments-portal/)，然后再回到此文章来获取相关帮助以解决该错误。
 
 ## 无效的模板或资源
 
@@ -256,6 +256,6 @@ Azure Resource Manager 部署成功返回所有提供程序时，将报告部署
 ## 后续步骤
 
 - 若要了解审核操作，请参阅 [使用 Resource Manager 执行审核操作](/documentation/articles/resource-group-audit/)。
-- 若要了解部署期间为确定错误需要执行哪些操作，请参阅[查看部署操作](/documentation/articles/resource-manager-troubleshoot-deployments-portal)。
+- 若要了解部署期间为确定错误需要执行哪些操作，请参阅[查看部署操作](/documentation/articles/resource-manager-troubleshoot-deployments-portal/)。
 
 <!---HONumber=Mooncake_0808_2016-->

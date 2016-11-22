@@ -139,12 +139,12 @@ SQL 数据仓库有多个 DMV 可用于监视查询执行。以下监视相关�
 [表数据类型]: /documentation/articles/sql-data-warehouse-tables-data-types/
 [表数据分布]: /documentation/articles/sql-data-warehouse-tables-distribute/
 [表索引]: /documentation/articles/sql-data-warehouse-tables-index/
-[列存储索引质量差的原因]: /documentation/articles/sql-data-warehouse-tables-index
-[重新生成列存储索引]: /documentation/articles/sql-data-warehouse-tables-index
+[列存储索引质量差的原因]: /documentation/articles/sql-data-warehouse-tables-index/
+[重新生成列存储索引]: /documentation/articles/sql-data-warehouse-tables-index/
 [表分区]: /documentation/articles/sql-data-warehouse-tables-partition/
 [管理表统计信息]: /documentation/articles/sql-data-warehouse-tables-statistics/
 [临时表]: /documentation/articles/sql-data-warehouse-tables-temporary/
-[Guide for using PolyBase]: /documentation/articles/sql-data-warehouse-load-polybase-guide
+[Guide for using PolyBase]: /documentation/articles/sql-data-warehouse-load-polybase-guide/
 [PolyBase 使用指南]: /documentation/articles/sql-data-warehouse-load-polybase-guide/
 [加载数据]: /documentation/articles/sql-data-warehouse-overview-load/
 [使用 Azure 数据工厂移动数据]: /documentation/articles/data-factory/data-factory-azure-sql-data-warehouse-connector/

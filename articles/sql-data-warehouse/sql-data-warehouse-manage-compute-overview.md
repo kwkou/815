@@ -121,7 +121,7 @@ SQL 数据仓库的性能以线性方式缩放，在几秒内就能从某个计�
 <!--Image reference-->
 
 <!--Article references-->
-[数据仓库单位 (DWU)]: /documentation/articles/sql-data-warehouse-overview-what-is
+[数据仓库单位 (DWU)]: /documentation/articles/sql-data-warehouse-overview-what-is/
 
 [通过 Azure 门户缩放计算能力]: /documentation/articles/sql-data-warehouse-manage-compute-portal#scale-compute-bk
 [通过 PowerShell 缩放计算能力]: /documentation/articles/sql-data-warehouse-manage-compute-powershell#scale-compute-bk

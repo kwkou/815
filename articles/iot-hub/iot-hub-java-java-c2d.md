@@ -192,7 +192,7 @@ Azure IoT 中心是一项完全托管的服务，有助于在数百万个 IoT �
 
 [Get started with IoT Hub]: /documentation/articles/iot-hub-java-java-getstarted/
 [IoT 中心入门]: /documentation/articles/iot-hub-java-java-getstarted/
-[IoT Hub Developer Guide - C2D]: /documentation/articles/iot-hub-devguide-messaging
+[IoT Hub Developer Guide - C2D]: /documentation/articles/iot-hub-devguide-messaging/
 [IoT Hub Developer Guide]: /documentation/articles/iot-hub-devguide/
 [Azure IoT Developer Center]: /develop/iot
 [lnk-free-trial]: /pricing/1rmb-trial/

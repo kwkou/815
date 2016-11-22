@@ -93,7 +93,7 @@
 [安全性概述]: /documentation/articles/sql-data-warehouse-overview-manage-security/
 [Create support ticket]: /documentation/articles/sql-data-warehouse-get-started-create-support-ticket/
 [缩放 SQL 数据仓库]: /documentation/articles/sql-data-warehouse-manage-compute-overview/
-[DWU]: /documentation/articles/sql-data-warehouse-overview-what-is
+[DWU]: /documentation/articles/sql-data-warehouse-overview-what-is/
 [请求增加配额]: /documentation/articles/sql-data-warehouse-get-started-create-support-ticket#request-quota-change
 [Learning how to monitor your queries]: /documentation/articles/sql-data-warehouse-manage-monitor/
 [预配说明]: /documentation/articles/sql-data-warehouse-get-started-provision/

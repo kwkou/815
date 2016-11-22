@@ -24,7 +24,7 @@
 [AZURE.INCLUDE [storage-selector-client-side-encryption-include](../../includes/storage-selector-client-side-encryption-include.md)]
 
 ## 概述  
-[用于 Java 的 Azure 存储空间客户端库](http://mvnrepository.com/artifact/com.microsoft.azure/azure-storage)支持在上载到 Azure 存储空间之前加密客户端应用程序中的数据，以及在下载到客户端时解密数据。此库还支持与 [Azure 密钥保管库](/home/features/key-vault)集成，以便管理存储帐户密钥。
+[用于 Java 的 Azure 存储空间客户端库](http://mvnrepository.com/artifact/com.microsoft.azure/azure-storage)支持在上载到 Azure 存储空间之前加密客户端应用程序中的数据，以及在下载到客户端时解密数据。此库还支持与 [Azure 密钥保管库](/home/features/key-vault/)集成，以便管理存储帐户密钥。
 
 ## 通过信封技术加密和解密    
 加密和解密的过程遵循信封技术。

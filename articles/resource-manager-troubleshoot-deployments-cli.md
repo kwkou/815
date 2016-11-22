@@ -120,8 +120,8 @@
 
 ## 后续步骤
 
-- 有关解决特定部署错误的帮助，请参阅 [Resolve common errors when deploying resources to Azure with Azure Resource Manager（解决使用 Azure Resource Manager 将资源部署到 Azure 时的常见错误）](/documentation/articles/resource-manager-common-deployment-errors)。
-- 若要了解如何使用审核日志来监视其他类型的操作，请参阅 [Audit operations with Resource Manager（使用 Resource Manager 执行审核操作）](/documentation/articles/resource-group-audit)。
-- 若要在执行部署之前验证部署，请参阅 [Deploy a resource group with Azure Resource Manager template（使用 Azure Resource Manager 模板部署资源组）](/documentation/articles/resource-group-template-deploy)。
+- 有关解决特定部署错误的帮助，请参阅 [Resolve common errors when deploying resources to Azure with Azure Resource Manager（解决使用 Azure Resource Manager 将资源部署到 Azure 时的常见错误）](/documentation/articles/resource-manager-common-deployment-errors/)。
+- 若要了解如何使用审核日志来监视其他类型的操作，请参阅 [Audit operations with Resource Manager（使用 Resource Manager 执行审核操作）](/documentation/articles/resource-group-audit/)。
+- 若要在执行部署之前验证部署，请参阅 [Deploy a resource group with Azure Resource Manager template（使用 Azure Resource Manager 模板部署资源组）](/documentation/articles/resource-group-template-deploy/)。
 
 <!---HONumber=Mooncake_0926_2016-->
