@@ -57,7 +57,6 @@ table
 
 随结果调用 success 函数。请勿在 success 函数中使用 `for (var i in results)`，因为这会在使用其他查询函数（如 `.includeTotalCount()`）时迭代结果中所含的信息。
 
-有关查询语法的详细信息，请参阅[查询对象文档]。
 
 ####<a name="table-filter"></a>在服务器上筛选数据
 
@@ -124,7 +123,6 @@ table
     .then(success, failure);
 ```
 
-有关 Query 对象的详细信息，请参阅[查询对象文档]。
 
 ###<a name="inserting"></a>如何：插入数据
 

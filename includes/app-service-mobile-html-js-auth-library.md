@@ -1,8 +1,8 @@
 ###<a name="server-auth"></a>如何：使用提供程序（服务器流）进行身份验证
 
-若要让移动服务管理应用中的身份验证过程，必须将你的应用注册到标识提供者。然后，需要在 Azure App Service 中配置提供者提供的应用程序 ID 和机密。有关详细信息，请参阅 [向应用添加身份验证]教程。
+若要让移动服务管理应用中的身份验证过程，必须将你的应用注册到标识提供者。然后，需要在 Azure App Service 中配置提供者提供的应用程序 ID 和机密。
 
-注册标识提供者后，只需使用提供者的名称调用 .login() 方法即可。例如，若要使用 Facebook 登录，请使用以下代码。
+注册标识提供者后，只需使用提供者的名称调用 .login() 方法即可。例如，若要使用 microsoftaccount 登录，请使用以下代码。
 
 ```
 client.login("microsoftaccount").done(function (results) {

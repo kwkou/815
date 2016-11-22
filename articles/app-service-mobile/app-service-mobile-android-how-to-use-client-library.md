@@ -826,6 +826,7 @@ Select 函数的参数是要返回的表列的字符串名称。
 [ASCII control codes C0 and C1]: http://en.wikipedia.org/wiki/Data_link_escape_character#C1_set
 [Mobile Services SDK for Android]: http://go.microsoft.com/fwlink/p/?LinkID=717033
 [Azure 门户预览]: https://portal.azure.cn
+[Azure 经典管理门户]: https://manage.windowsazure.cn/
 [Get started with authentication]: /documentation/articles/app-service-mobile-android-get-started-users/
 [身份验证入门]: /documentation/articles/app-service-mobile-android-get-started-users/
 [2]: http://hashtagfail.com/post/44606137082/mobile-services-android-serialization-gson
