@@ -21,12 +21,12 @@
 # 准备使用 Azure 备份服务器来备份工作负荷
 
 > [AZURE.SELECTOR]
-- [Azure 备份服务器（经典）](/documentation/articles/backup-azure-microsoft-azure-backup-classic)
-- [SCDPM（经典）](/documentation/articles/backup-azure-dpm-introduction-classic)
+- [Azure 备份服务器（经典）](/documentation/articles/backup-azure-microsoft-azure-backup-classic/)
+- [SCDPM（经典）](/documentation/articles/backup-azure-dpm-introduction-classic/)
 
 本文介绍如何准备环境，以使用 Azure 备份服务器来备份工作负荷。
 
-> [AZURE.NOTE] Azure 有两种用于创建和使用资源的部署模型：[Resource Manager 和经典部署模型](/documentation/articles/resource-manager-deployment-model)。本文提供有关还原使用 Resource Manager 模型部署的 VM 的信息和过程。
+> [AZURE.NOTE] Azure 有两种用于创建和使用资源的部署模型：[Resource Manager 和经典部署模型](/documentation/articles/resource-manager-deployment-model/)。本文提供有关还原使用 Resource Manager 模型部署的 VM 的信息和过程。
 
 使用 Azure 备份服务器，可以从单个控制台保护应用程序工作负荷，例如 Hyper-V VM、Microsoft SQL Server、SharePoint Server、Microsoft Exchange 和 Windows 客户端。
 

@@ -16,7 +16,7 @@
 
 #Azure 云服务操作手册
 
-[Azure 云服务操作手册 - 第一部分](/documentation/articles/azure-cloud-services-user-manual-part-1)
+[Azure 云服务操作手册 - 第一部分](/documentation/articles/azure-cloud-services-user-manual-part-1/)
 
 ##<a id="azure-cloud-service-get-started"></a>2.	着手创建 Azure 云服务  
 
@@ -26,7 +26,7 @@
 
 如果一个企业的 IT 部门、销售部门、市场部门均使用 Azure，并且需要根据不同部门的 Azure 实际使用量进行内部成本核算，就要合理规划三种不同的 Azure 订阅。创建 Azure IaaS 相关资源时，将这些资源创建在不同的订阅下。
 
-具体请参考 [Azure 企业门户管理手册](/documentation/articles/azure-ea-portal-user-manual)
+具体请参考 [Azure 企业门户管理手册](/documentation/articles/azure-ea-portal-user-manual/)
 
 ###<a id="azure-subscription-choose"></a>2.2 选择订阅  
 

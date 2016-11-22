@@ -35,7 +35,7 @@
 
 ### 1\.查看先决条件和工作流文章
 
-在开始配置之前，请务必查看[先决条件](/documentation/articles/expressroute-prerequisites/)和[工作流](/documentation/articles/expressroute-workflows)。
+在开始配置之前，请务必查看[先决条件](/documentation/articles/expressroute-prerequisites/)和[工作流](/documentation/articles/expressroute-workflows/)。
 
 
 ### 2\.安装最新版本的 Azure PowerShell 模块 

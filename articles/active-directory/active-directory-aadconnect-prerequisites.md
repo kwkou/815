@@ -62,7 +62,7 @@
 - Azure AD Connect 服务器需要 Intranet 和 Internet 的 DNS 解析。DNS 服务器必须能够将名称解析成本地 Active Directory 以及 Azure AD 终结点。
 - 如果 Intranet 有防火墙，而你需要开放 Azure AD Connect 服务器与域控制器之间的端口，请参阅 [Azure AD Connect 连接端口](/documentation/articles/active-directory-aadconnect-ports/)来了解详细信息。
 - 如果代理限制了可访问的 URL，则必须在代理中打开 [Office 365 URL 和 IP 地址范围](https://support.office.com/article/Office-365-URLs-and-IP-address-ranges-8548a211-3fe7-47cb-abb1-355ea5aa88a2)中所述的 URL。
-    - 如果你在德国使用 Microsoft 云或 Microsoft Azure 政府版云，请参阅 [Azure AD Connect 同步服务实例注意事项](/documentation/articles/active-directory-aadconnect-instances)以了解 URL。
+    - 如果你在德国使用 Microsoft 云或 Microsoft Azure 政府版云，请参阅 [Azure AD Connect 同步服务实例注意事项](/documentation/articles/active-directory-aadconnect-instances/)以了解 URL。
 - Azure AD Connect 默认情况下使用 TLS 1.0 与 Azure AD 进行通信。可以通过遵循 [为 Azure AD connect 启用 TLS 1.2](#enable-tls-12-for-azure-ad-connect) 中的步骤将此更改为 TLS 1.2。
 - 如果你正在使用出站代理连接到 Internet，则必须在 **C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319\\Config\\machine.config** 文件中添加以下设置，才能将安装向导和 Azure AD Connect 同步连接到 Internet 和 Azure AD。必须在文件底部输入此文本。在此代码中，&lt;PROXYADRESS&gt; 代表实际代理 IP 地址或主机名。
 

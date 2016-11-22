@@ -20,8 +20,8 @@
 #ExpressRoute 故障排除指南 - 在 Resource Manager 部署模型中获取 ARP 表
 
 > [AZURE.SELECTOR]
-[PowerShell - Resource Manager](/documentation/articles/expressroute-troubleshooting-arp-resource-manager)
-[PowerShell - Classic](/documentation/articles/expressroute-troubleshooting-arp-classic)
+[PowerShell - Resource Manager](/documentation/articles/expressroute-troubleshooting-arp-resource-manager/)
+[PowerShell - Classic](/documentation/articles/expressroute-troubleshooting-arp-classic/)
 
 本文将指导你完成相关步骤，以便了解 ExpressRoute 线路的 ARP 表。
 
@@ -53,7 +53,7 @@ ARP 表示例：
 在继续下一步之前，请确保你已具备以下条件
 
  - 配置了至少一个对等互连的有效的 ExpressRoute 线路。该线路必须由连接提供商进行完整的配置。你（或你的连接提供商）必须已经在该线路上配置了 Azure 专用和 Azure 公共这二者中的至少一个对等互连。
- - 用于配置对等互连（Azure 专用和 Azure 公共）的 IP 地址范围。查看 [ExpressRoute 路由要求页](/documentation/articles/expressroute-routing)中的 IP 地址分配示例，了解如何将 IP 地址映射到你所在的一侧和 ExpressRoute 侧的接口。你可以通过查看 [ExpressRoute 对等互连配置页](/documentation/articles/expressroute-howto-routing-arm)了解对等互连配置。
+ - 用于配置对等互连（Azure 专用和 Azure 公共）的 IP 地址范围。查看 [ExpressRoute 路由要求页](/documentation/articles/expressroute-routing/中的 IP 地址分配示例，了解如何将 IP 地址映射到你所在的一侧和 ExpressRoute 侧的接口。你可以通过查看 [ExpressRoute 对等互连配置页](/documentation/articles/expressroute-howto-routing-arm/)了解对等互连配置。
  - 你的网络团队/连接提供商提供的有关接口（用于这些 IP 地址）的 MAC 地址的信息。
  - 必须安装 Azure 的最新 PowerShell 模块（1.50 或更高版本）。
 

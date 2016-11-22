@@ -142,7 +142,7 @@ SDK 会自动将所有写入请求发送到当前写入区域。
 
 - [使用 DocumentDB 全局分发数据](/documentation/articles/documentdb-distribute-data-globally/)
 - [Consistency levels（一致性级别）](/documentation/articles/documentdb-consistency-levels/)
-- [How throughput works with multiple regions（多个区域中的吞吐量工作原理）](/documentation/articles/documentdb-manage)
+- [How throughput works with multiple regions（多个区域中的吞吐量工作原理）](/documentation/articles/documentdb-manage/)
 - [Add regions using the Azure portal（使用 Azure 门户预览添加区域）](/documentation/articles/documentdb-portal-global-replication/)
 
 [regions]: https://azure.microsoft.com/regions/

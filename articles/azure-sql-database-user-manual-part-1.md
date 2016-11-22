@@ -14,7 +14,7 @@
 
 #Azure SQL 数据库用户手册
 
-- [Azure SQL 数据库用户手册 - 第二部分](/documentation/articles/azure-sql-database-user-manual-part-2)
+- [Azure SQL 数据库用户手册 - 第二部分](/documentation/articles/azure-sql-database-user-manual-part-2/)
 
  
 ##<a id="overview"></a>1. 总体介绍

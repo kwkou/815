@@ -189,7 +189,7 @@
 
 ##[工具下载](/downloads/)
 
-##[常用操作指南](/documentation/services/azure-operations-guide)
+##[常用操作指南](/documentation/services/azure-operations-guide/)
 <!--
 ##故障排除-->
 

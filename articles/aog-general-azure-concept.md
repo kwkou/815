@@ -111,7 +111,7 @@ Azure 流量管理器用于控制用户流量的分布，根据需要将用户�
 ## <a id="vip"></a>VIP / Virtual IP address / 虚拟 IP
 虚拟 IP 是允许你从外部访问在 Azure 中部署的资源的 IP 地址。它可以被用于云服务，IaaS 虚拟机，PaaS 角色实例，和应用程序网关。如果需要为 Azure 资源分配虚拟 IP 地址，该 IP 地址将动态地从资源的创建位置中的可用公共 IP 地址池中分配。停止该资源时，此 IP 地址将被释放。对于需要使用固定 IP 的资源，可以使用静态（保留）IP 来实现。
 
-[Azure 中的 IP 地址（经典）](/documentation/articles/virtual-network-ip-addresses-overview-classic)
+[Azure 中的 IP 地址（经典）](/documentation/articles/virtual-network-ip-addresses-overview-classic/)
 
 [保留 IP 概述](/documentation/articles/virtual-networks-reserved-public-ip/)
 ## <a id="vnet"></a>VNET / Virtual Network / 虚拟网络
