@@ -15,7 +15,7 @@
 	ms.devlang="multiple"
 	ms.topic="hero-article"
 	ms.date="08/25/2016"
-	wacn.date="11/11/2016"
+	wacn.date="11/22/2016"
 	ms.author="wesmc"/>  
 
 
@@ -164,7 +164,7 @@ Mobile Apps 开发人员可以借助以下工作流来利用通知中心：
   [1]: ./media/notification-hubs-overview/notification-hub-diagram.png
   [客户如何使用通知中心]: /home/features/notification-hubs/
   [通知中心教程和指南]: /documentation/services/notification-hubs/
-  [iOS]: /documentation/articles/notification-hubs-ios-get-started/
+  [iOS]: /documentation/articles/notification-hubs-ios-apple-push-notification-apns-get-started/
   [Windows Universal]: /documentation/articles/notification-hubs-windows-store-dotnet-get-started-wns-push-notification/
   [Windows Phone]: /documentation/articles/notification-hubs-windows-mobile-push-notifications-mpns/
   [Kindle]: /documentation/articles/notification-hubs-kindle-amazon-adm-push-notification/

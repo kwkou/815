@@ -15,7 +15,7 @@
 	ms.tgt_pltfrm="na"
 	ms.workload="big-compute"
 	ms.date="09/08/2016"
-	wacn.date="11/16/2016"
+	wacn.date="11/22/2016"
 	ms.author="marsma"/>  
 
 
@@ -63,7 +63,7 @@ Python 教程[代码示例][github_article_samples]是 GitHub 上的 [azure-batc
 
 `pip install azure-batch==0.30.0rc4`<br/> `pip install azure-storage==0.30.0`
 
-> [AZURE.TIP] 如果使用无特权帐户，可能需要在命令前面加上 `sudo`。例如，`sudo pip install -r requirements.txt`。有关如何安装 Python 包的详细信息，请参阅 readthedocs.io 中的 [Installing Packages][pypi_install]（安装包）。
+> [AZURE.TIP] 如果使用无特权帐户，可能需要在命令前面加上 `sudo`。例如，`sudo pip install -r requirements.txt`。有关如何安装 Python 包的详细信息，请参阅 readthedocs.io 中的安装包。
 
 ## Batch Python 教程代码示例
 
@@ -662,8 +662,6 @@ python
 [py_vm_config]: http://azure-sdk-for-python.readthedocs.io/en/latest/ref/azure.batch.models.html#azure.batch.models.VirtualMachineConfiguration
 [pypi_batch]: https://pypi.python.org/pypi/azure-batch
 [pypi_storage]: https://pypi.python.org/pypi/azure-storage
-
-[pypi_install]: http://python-packaging-user-guide.readthedocs.io/en/latest/installing/
 [storage_explorer]: http://storageexplorer.com/
 [visual_studio]: https://www.visualstudio.com/products/vs-2015-product-editions
 [vm_marketplace]: https://azure.microsoft.com/marketplace/virtual-machines/

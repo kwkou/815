@@ -15,7 +15,7 @@
     ms.devlang="python"
     ms.topic="hero-article"
     ms.date="08/25/2016"
-    wacn.date="11/21/2016"
+    wacn.date="11/22/2016"
     ms.author="syamk"/>
 
 # 使用 DocumentDB 开发 Python Flask Web 应用程序
@@ -45,7 +45,7 @@
 在按照本文中的说明操作之前，你应确保已安装下列项：
 
 - 有效的 Azure 帐户。如果你没有帐户，可以创建一个试用帐户，只需几分钟即可完成。有关详细信息，请参阅 [Azure 1元试用](/pricing/1rmb-trial/)。
-- [Visual Studio 2013](http://www.visualstudio.com/) 或更高版本，或者免费版 [Visual Studio Express]()。本教程中的说明专为 Visual Studio 2015 所编写。
+- [Visual Studio 2013](http://www.visualstudio.com/) 或更高版本，或者免费版Visual Studio Express。本教程中的说明专为 Visual Studio 2015 所编写。
 - 来自 [GitHub](http://microsoft.github.io/PTVS/) 的 Python Tools for Visual Studio。本教程使用的是 Python Tools for VS 2015。
 - [azure.cn](/downloads/) 上提供 Azure Python SDK for Visual Studio 2.4 版本或更高版本。我们使用的是 Azure SDK for Python 2.7。
 - 来自 [python.org][2] 的 Python 2.7。我们使用的是 Python 2.7.11。
@@ -54,7 +54,7 @@
 > 
 >    ![自定义 Python 2.7.11 屏幕的屏幕截图，你需要在该屏幕中选择“向路径添加 python.exe”](./media/documentdb-python-application/image2.png)
 
-- 来自 [Microsoft 下载中心][3]的Microsoft Visual C++ Compiler for Python 2.7。
+- 来自 Microsoft 下载中心的Microsoft Visual C++ Compiler for Python 2.7。
 
 ## 步骤 1：创建一个 DocumentDB 数据库帐户
 
@@ -443,7 +443,6 @@ Python
 
   [Visual Studio Express]: http://www.visualstudio.com/products/visual-studio-express-vs.aspx
   [2]: https://www.python.org/downloads/windows/
-  [3]: https://www.microsoft.com/download/details.aspx?id=44266
   [Microsoft Web Platform Installer]: http://www.microsoft.com/web/downloads/platform.aspx
   [Azure portal]: http://portal.azure.cn
 

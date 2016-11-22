@@ -15,7 +15,7 @@
 	ms.devlang="na"
 	ms.topic="get-started-article"
 	ms.date="08/22/2016"
-	wacn.date="10/26/2016"
+	wacn.date="11/22/2016"
 	ms.author="marsma"/>
 
 # Azure Batch 基础知识
@@ -58,7 +58,7 @@ Batch 很适合处理本质并行（也称为“超简单并行”）的应用�
 
 开发 Batch 解决方案时，用户在 Azure 中使用以下帐户。
 
-- **Azure 帐户和订阅** - 如果没有 Azure 订阅，可以激活 [MSDN 订户权益][msdn_benefits]，或注册一个 [Azure 帐户][free_account]。创建帐户时，系统为用户创建默认订阅。
+- **Azure 帐户和订阅** - 如果没有 Azure 订阅，可以激活 MSDN 订户权益，或注册一个 [Azure 帐户][free_account]。创建帐户时，系统为用户创建默认订阅。
 
 - **Batch 帐户** - 应用程序与 Batch 服务交互时，使用帐户名、帐户的 URL 和访问密钥作为凭据。所有 Batch 资源（如池、计算节点、作业和任务）都与 Batch 帐户关联。可以在 Azure 门户预览中[创建 Batch 帐户](/documentation/articles/batch-account-create-portal/)。
 
@@ -154,7 +154,6 @@ Batch 很适合处理本质并行（也称为“超简单并行”）的应用�
 [free_account]: /pricing/1rmb-trial/
 [github_samples]: https://github.com/Azure/azure-batch-samples
 [learning_path]: https://azure.microsoft.com/documentation/learning-paths/batch/
-[msdn_benefits]: /pricing/member-offers/msdn-benefits-details/
 [batch_explorer]: https://github.com/Azure/azure-batch-samples/tree/master/CSharp/BatchExplorer
 [storage_explorer]: http://storageexplorer.com/
 [portal]: https://portal.azure.cn

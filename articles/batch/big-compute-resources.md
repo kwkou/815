@@ -15,7 +15,7 @@
    ms.tgt_pltfrm="NA"
    ms.workload="big-compute"
    ms.date="09/22/2016"
-   wacn.date="11/16/2016"
+   wacn.date="11/22/2016"
    ms.author="danlep"/>  
 
 
@@ -34,7 +34,7 @@
 
 * [文档](/documentation/services/batch/)
 
-* [.NET](https://msdn.microsoft.com/zh-cn/library/azure/mt348682.aspx)、[Python](http://azure-sdk-for-python.readthedocs.io/latest/)、[Node.js](http://azure.github.io/azure-sdk-for-node/azure-batch/latest/)、[Java](http://azure.github.io/azure-sdk-for-java/) 和 [REST](https://msdn.microsoft.com/zh-cn/library/azure/dn820158.aspx) API 参考
+* [.NET](https://msdn.microsoft.com/zh-cn/library/azure/mt348682.aspx)、Python、[Node.js](http://azure.github.io/azure-sdk-for-node/azure-batch/latest/)、[Java](http://azure.github.io/azure-sdk-for-java/) 和 [REST](https://msdn.microsoft.com/zh-cn/library/azure/dn820158.aspx) API 参考
 
 * [Batch 管理 .NET 库](https://msdn.microsoft.com/zh-cn/library/mt463120.aspx)参考
 

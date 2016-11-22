@@ -15,7 +15,7 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="07/01/2016" 
-	wacn.date="11/21/2016" 
+	wacn.date="11/22/2016" 
 	ms.author="mimig"/>
 
 
@@ -64,7 +64,7 @@ DocumentDB 是面向 NoSQL 文档的数据库，以 JSON 格式存储数据。Do
 如果你不熟悉 Azure，可以注册 [Azure 试用帐户](/pricing/1rmb-trial-full/?form-type=identityauth)，这样可以得到 30 天试用期和 200 美元的 Azure 信用额度，让你试用所有 Azure 服务。
 
 ### 如何获取 DocumentDB 的其他帮助？
-如果你需要任何帮助，请在 [Stack Overflow](http://stackoverflow.com/questions/tagged/azure-documentdb)或 [Azure DocumentDB MSDN 开发人员论坛](https://social.msdn.microsoft.com/forums/azure/home?forum=AzureDocumentDB)联系我们，或者安排[与 DocumentDB 工程团队进行 1 对 1 交谈](http://www.askdocdb.com/)。
+如果你需要任何帮助，请在 [Stack Overflow](http://stackoverflow.com/questions/tagged/azure-documentdb)或 [Azure DocumentDB MSDN 开发人员论坛](https://social.msdn.microsoft.com/forums/azure/home?forum=AzureDocumentDB)联系我们，或者安排与 DocumentDB 工程团队进行 1 对 1 交谈。
 
 ## 设置 Azure DocumentDB
 

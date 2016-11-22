@@ -16,7 +16,7 @@
 	ms.devlang="JavaScript"
 	ms.topic="hero-article"
 	ms.date="07/22/2016"
-	wacn.date="11/11/2016"
+	wacn.date="11/22/2016"
 	ms.author="wesmc"/>
 
 
@@ -403,7 +403,7 @@
 
         Install-Package Microsoft.Azure.NotificationHubs
 
-   	这将使用 <a href="http://nuget.org/packages/  WindowsAzure.ServiceBus/">WindowsAzure.ServiceBus NuGet 包</a>添加对 Azure 服务总线 SDK 的引用。
+   	这将使用 <a href="http://nuget.org/packages/WindowsAzure.ServiceBus/">WindowsAzure.ServiceBus NuGet 包</a>添加对 Azure 服务总线 SDK 的引用。
 
 4. 打开 `Program.cs` 并添加以下 `using` 语句：
 

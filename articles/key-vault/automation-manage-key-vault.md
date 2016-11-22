@@ -14,7 +14,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="07/29/2016"
-	wacn.date="09/26/2016"
+	wacn.date="11/22/2016"
 	ms.author="magoedte;csand"/>
 
 
@@ -41,12 +41,5 @@ Azure 自动化提供了具有高可靠性和高可用性的工作流执行引�
 下面是使用 PowerShell 管理密钥保管库的一些示例：
 * [Azure Key Vault - Step by Step（Azure 密钥保管库 - 分步指南）](https://blogs.technet.microsoft.com/kv/2015/06/02/azure-key-vault-step-by-step)
 * [Setting Up and Configuring an Azure Key Vault（设置和配置 Azure 密钥保管库）](https://www.simple-talk.com/cloud/platform-as-a-service/setting-up-and-configuring-an-azure-key-vault)
-
-
-## 后续步骤
-
-在了解 Azure 自动化 以及如何使用它来管理 Azure 密钥保管库的基础知识后，请使用以下链接了解有关 Azure 自动化的更多信息。
-
-* 请参阅 [Azure 密钥保管库 PowerShell 脚本](https://gallery.technet.microsoft.com/scriptcenter/Azure-Key-Vault-Powershell-1349b091)。
 
 <!---HONumber=Mooncake_0620_2016-->

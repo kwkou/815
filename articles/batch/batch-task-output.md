@@ -15,7 +15,7 @@
 	ms.tgt_pltfrm="vm-windows"
 	ms.workload="big-compute"
 	ms.date="09/07/2016"
-	wacn.date="10/26/2016"
+	wacn.date="11/22/2016"
 	ms.author="marsma" />  
 
 
@@ -192,14 +192,14 @@ csharp
 
 ## 任务输出和 Azure 门户预览
 
-Azure 门户预览将显示使用 [Azure Batch 文件约定自述文件][github_file_conventions_readme]中提到的命名约定保存到链接的 Azure 存储帐户的任务输出和日志。你可以使用所选语言自行实现这些约定，也可以在 .NET 应用程序中使用该文件约定库。
+Azure 门户预览将显示使用 Azure Batch 文件约定自述文件中提到的命名约定保存到链接的 Azure 存储帐户的任务输出和日志。你可以使用所选语言自行实现这些约定，也可以在 .NET 应用程序中使用该文件约定库。
 
 ### 启用门户显示
 
 若要在门户中显示输出，必须满足以下要求：
 
  1. [将 Azure 存储帐户链接](#requirement-linked-storage-account)到你的 Batch 帐户。
- 2. 保存输出时遵循存储容器和文件的预定义命名约定。可以在文件约定库的[自述文件][github_file_conventions_readme]中找到这些约定的定义。如果你使用 [Azure Batch 文件约定][nuget_package]库来保存输出，则可以满足此要求。
+ 2. 保存输出时遵循存储容器和文件的预定义命名约定。可以在文件约定库的自述文件中找到这些约定的定义。如果你使用 [Azure Batch 文件约定][nuget_package]库来保存输出，则可以满足此要求。
 
 ### 在门户中查看输出
 
@@ -229,7 +229,6 @@ Azure 门户预览将显示使用 [Azure Batch 文件约定自述文件][github_
 
 [forum_post]: https://social.msdn.microsoft.com/Forums/en-US/87b19671-1bdf-427a-972c-2af7e5ba82d9/installing-applications-and-staging-data-on-batch-compute-nodes?forum=azurebatch
 [github_file_conventions]: https://github.com/Azure/azure-sdk-for-net/tree/AutoRest/src/Batch/FileConventions
-[github_file_conventions_readme]: /documentation/articles/README/
 [github_persistoutputs]: https://github.com/Azure/azure-batch-samples/tree/master/CSharp/ArticleProjects/PersistOutputs
 [github_samples]: https://github.com/Azure/azure-batch-samples
 [net_batchclient]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.batchclient.aspx

@@ -15,7 +15,7 @@
 	ms.tgt_pltfrm="vm-linux"
 	ms.workload="na"
 	ms.date="09/08/2016"
-	wacn.date="10/26/2016"
+	wacn.date="11/22/2016"
 	ms.author="marsma" />  
 
 
@@ -316,7 +316,7 @@ Azure Batch 构建在 Azure 云服务和 Azure 虚拟机技术基础之上。Bat
 
 ### Batch Python 代码示例
 
-查看 GitHub 上 [azure-batch-samples][github_samples] 存储库中的其他 [Python 代码示例][github_samples_py]，获取演示如何执行常见 Batch 操作（例如创建池、作业和任务）的多个脚本。Python 示例随附的 [README][github_py_readme] 文件包含有关如何安装所需包的详细信息。
+查看 GitHub 上 azure-batch-samples 存储库中的其他 [Python 代码示例][github_samples_py]，获取演示如何执行常见 Batch 操作（例如创建池、作业和任务）的多个脚本。Python 示例随附的 [README][github_py_readme] 文件包含有关如何安装所需包的详细信息。
 
 ### Batch 论坛
 
@@ -327,7 +327,6 @@ MSDN 上的 [Azure Batch 论坛][forum]是探讨 Batch 服务以及咨询其相�
 [api_rest]: http://msdn.microsoft.com/zh-cn/library/azure/dn820158.aspx
 [cloud_services_pricing]: /pricing/details/cloud-services/
 [forum]: https://social.msdn.microsoft.com/forums/azure/en-US/home?forum=azurebatch
-[github_py_readme]: /documentation/articles/README/
 [github_samples]: https://github.com/Azure/azure-batch-samples
 [github_samples_py]: https://github.com/Azure/azure-batch-samples/tree/master/Python/Batch
 [github_samples_pyclient]: https://github.com/Azure/azure-batch-samples/blob/master/Python/Batch/article_samples/python_tutorial_client.py
