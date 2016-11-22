@@ -275,8 +275,8 @@ azure group deployment create \<my-resource-group\> \<my-deployment-name\> --tem
 ```
 
 [创作 Azure Resource Manager 模板]: /documentation/articles/resource-group-authoring-templates/
-[将 Azure PowerShell 与 Azure 资源管理器配合使用]: /documentation/articles/powershell-azure-resource-manager
-[使用 Azure CLI 管理 Azure 资源和资源组]: /documentation/articles/xplat-cli-azure-resource-manager
+[将 Azure PowerShell 与 Azure 资源管理器配合使用]: /documentation/articles/powershell-azure-resource-manager/
+[使用 Azure CLI 管理 Azure 资源和资源组]: /documentation/articles/xplat-cli-azure-resource-manager/
 [Event Hub and consumer group template]: https://github.com/Azure/azure-quickstart-templates/blob/master/201-eventhubs-create-namespace-and-enable-archive/
 [事件中心和启用存档模板]: https://github.com/Azure/azure-quickstart-templates/tree/master/201-eventhubs-create-namespace-and-enable-archive
 

@@ -23,7 +23,7 @@
 
 > [AZURE.SELECTOR]
 
-- [经典管理门户](/documentation/articles/site-recovery-vmm-to-azure-classic)
+- [经典管理门户](/documentation/articles/site-recovery-vmm-to-azure-classic/)
 - [PowerShell - 经典](/documentation/articles/site-recovery-deploy-with-powershell/)
 
 

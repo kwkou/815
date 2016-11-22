@@ -41,7 +41,7 @@
     }
 
 
-有关模板格式的完整说明，请参阅[资源链接 - 模板架构](/documentation/articles/resource-manager-template-links)。
+有关模板格式的完整说明，请参阅[资源链接 - 模板架构](/documentation/articles/resource-manager-template-links/)。
 
 ## 使用 REST API 进行链接
 

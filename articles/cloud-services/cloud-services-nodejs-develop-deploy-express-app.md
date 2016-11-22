@@ -131,7 +131,7 @@ Node.js 包含核心运行时中最小的一个功能集。开发人员在开发
 
 ## 后续步骤
 
-有关详细信息，请参阅 [Node.js 开发人员中心](/develop/nodejs)。
+有关详细信息，请参阅 [Node.js 开发人员中心](/develop/nodejs/)。
 
   [Node.js Web Application]: /documentation/articles/cloud-services-nodejs-develop-deploy-app/
   [Express]: http://expressjs.com/

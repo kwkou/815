@@ -265,7 +265,7 @@
 [Azure 门户预览]: https://portal.azure.cn/
 [Azure 经典管理门户]: https://manage.windowsazure.cn/
 [What are Mobile Apps?]: /documentation/articles/app-service-mobile-value-prop/
-[I already use web sites and mobile services - how does App Service help me?]: /documentation/articles/app-service-mobile-value-prop-migration-from-mobile-services
+[I already use web sites and mobile services - how does App Service help me?]: /documentation/articles/app-service-mobile-value-prop-migration-from-mobile-services/
 [移动应用服务器 SDK]: http://www.nuget.org/packages/microsoft.azure.mobile.server
 [Create a Mobile App]: /documentation/articles/app-service-mobile-xamarin-ios-get-started/
 [Add push notifications to your mobile app]: /documentation/articles/app-service-mobile-xamarin-ios-get-started-push/

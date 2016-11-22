@@ -29,7 +29,7 @@
 * [Azure 资源管理器](/documentation/articles/resource-group-overview/)
 * [Azure PowerShell](/documentation/articles/powershell-install-configure/)
 * [Azure Resource Manager 客户端](https://github.com/projectkudu/ARMClient)
-* [使用 Azure 资源管理器模板创建具有监视和诊断功能的 Windows 虚拟机](/documentation/articles/virtual-machines-windows-extensions-diagnostics-template)
+* [使用 Azure 资源管理器模板创建具有监视和诊断功能的 Windows 虚拟机](/documentation/articles/virtual-machines-windows-extensions-diagnostics-template/)
 
 
 ## 可以收集的不同日志源

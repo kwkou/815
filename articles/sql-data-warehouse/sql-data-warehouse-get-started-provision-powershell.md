@@ -84,7 +84,7 @@
 
 
 <!--Article references-->
-[DWU]: /documentation/articles/sql-data-warehouse-overview-what-is
+[DWU]: /documentation/articles/sql-data-warehouse-overview-what-is/
 [迁移]: /documentation/articles/sql-data-warehouse-overview-migrate/
 [开发]: /documentation/articles/sql-data-warehouse-overview-develop/
 [加载]: /documentation/articles/sql-data-warehouse-load-with-bcp/

@@ -26,7 +26,7 @@
 
 本主题提供有关优化 SQL Server 在 Azure 虚拟机中性能的最佳实践。在 Azure 虚拟机中运行 SQL Server 时，我们建议你继续使用适用于 SQL Server 在本地服务器环境中的相同数据库性能优化选项。但是，关系数据库在公有云中的性能取决于许多因素，如虚拟机的大小和数据磁盘的配置。
 
-创建 SQL Server 映像时，[请考虑在 Azure 门户预览中预配 VM](/documentation/articles/virtual-machines-windows-portal-sql-server-provision)。使用 Resource Manager 在门户中预配的 SQL Server VM 将实施所有这些最佳实践，包括存储配置。
+创建 SQL Server 映像时，[请考虑在 Azure 门户预览中预配 VM](/documentation/articles/virtual-machines-windows-portal-sql-server-provision/)。使用 Resource Manager 在门户中预配的 SQL Server VM 将实施所有这些最佳实践，包括存储配置。
 
 本文重点介绍获得 SQL Server 在 Azure VM 上的*最佳*性能。如果你的工作负荷要求较低，可能不需要下面列出的每项优化。评估这些建议时应考虑性能需求和工作负荷模式。
 

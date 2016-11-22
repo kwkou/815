@@ -24,10 +24,10 @@
 
 
 > [AZURE.SELECTOR]
-- [概述](/documentation/articles/sql-database-firewall-configure)
-- [TSQL](/documentation/articles/sql-database-configure-firewall-settings-tsql)
-- [PowerShell](/documentation/articles/sql-database-configure-firewall-settings-powershell)
-- [REST API](/documentation/articles/sql-database-configure-firewall-settings-rest)
+- [概述](/documentation/articles/sql-database-firewall-configure/)
+- [TSQL](/documentation/articles/sql-database-configure-firewall-settings-tsql/)
+- [PowerShell](/documentation/articles/sql-database-configure-firewall-settings-powershell/)
+- [REST API](/documentation/articles/sql-database-configure-firewall-settings-rest/)
 
 
 Azure SQL 数据库为 Azure 和其他基于 Internet 的应用程序提供关系数据库服务。为了保护你的数据，在你指定哪些计算机具有访问权限之前，防火墙将禁止所有对数据库服务器的访问。防火墙基于每个请求的起始 IP 地址授予数据库的访问权限。

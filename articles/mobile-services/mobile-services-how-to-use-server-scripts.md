@@ -1027,7 +1027,7 @@ Stream|不支持
 [Azure SDK for Node.js]: http://go.microsoft.com/fwlink/p/?LinkId=275539
 [发送 HTTP 请求]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj631641.aspx
 [使用 SendGrid 从移动服务发送电子邮件]: /documentation/articles/store-sendgrid-mobile-services-send-email-scripts/
-[身份验证入门]: /documentation/articles/mobile-services-windows-store-dotnet-get-started-users
+[身份验证入门]: /documentation/articles/mobile-services-windows-store-dotnet-get-started-users/
 [crypto API]: http://go.microsoft.com/fwlink/p/?LinkId=288802
 [path API]: http://go.microsoft.com/fwlink/p/?LinkId=288803
 [querystring API]: http://go.microsoft.com/fwlink/p/?LinkId=288804

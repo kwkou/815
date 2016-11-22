@@ -35,7 +35,7 @@ Azure IoT 套件提供的预配置解决方案演示了套件中的服务如何�
 
 ## 更改预配置规则
 
-远程监视解决方案包含三个 [Azure 流分析](/home/features/stream-analytics)作业，这些作业可实现针对解决方案显示的设备信息、遥测数据及规则逻辑。
+远程监视解决方案包含三个 [Azure 流分析](/home/features/stream-analytics/)作业，这些作业可实现针对解决方案显示的设备信息、遥测数据及规则逻辑。
 
 [远程监视预配置解决方案演练](/documentation/articles/iot-suite-remote-monitoring-sample-walkthrough/)深入介绍了这三个流分析作业及其语法。
 

@@ -252,7 +252,7 @@
   <tr>
     <td></td>
     <td></td>
-    <td><a href="/documentation/services/automation">自动化</a></td>
+    <td><a href="/documentation/services/automation/">自动化</a></td>
     <td></td>  
   </tr>
 </table>

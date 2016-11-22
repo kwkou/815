@@ -38,7 +38,7 @@
 
 - [在 SQL 数据库 中使用移动服务存储结构化数据](/documentation/articles/mobile-services-windows-phone-get-started-data/)
 
-查看服务：[移动服务](/documentation/services/mobile-services/) | [存储](/documentation/services/storage)
+查看服务：[移动服务](/documentation/services/mobile-services/) | [存储](/documentation/services/storage/)
 
 ###同步
 

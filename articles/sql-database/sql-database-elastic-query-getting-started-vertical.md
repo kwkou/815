@@ -98,7 +98,7 @@ Azure SQL 数据库弹性数据库查询（预览版）可让你使用单一连�
 
 目前，弹性数据库查询功能包含在 Azure SQL 数据库的成本中。
 
-有关定价信息，请参阅 [SQL 数据库定价](/pricing/details/sql-database)。
+有关定价信息，请参阅 [SQL 数据库定价](/pricing/details/sql-database/)。
 
 
 [AZURE.INCLUDE [elastic-scale-include](../../includes/elastic-scale-include.md)]

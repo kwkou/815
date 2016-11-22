@@ -47,7 +47,7 @@
 
 ## 其他资源
 
-浏览所有 [SQL 数据库的功能](/home/features/sql-database)。查看 [SQL 数据库技术概述](/documentation/articles/sql-database-technical-overview/)。
+浏览所有 [SQL 数据库的功能](/home/features/sql-database/)。查看 [SQL 数据库技术概述](/documentation/articles/sql-database-technical-overview/)。
 * [SQL 数据库开发概述](/documentation/articles/sql-database-develop-overview/)
 
 <!---HONumber=Mooncake_1024_2016-->

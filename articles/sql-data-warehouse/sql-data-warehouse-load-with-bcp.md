@@ -24,8 +24,8 @@
 
 > [AZURE.SELECTOR]
 - [Redgate](/documentation/articles/sql-data-warehouse-load-with-redgate/)
-- [PolyBase](/documentation/articles/sql-data-warehouse-get-started-load-with-polybase)
-- [BCP](/documentation/articles/sql-data-warehouse-load-with-bcp)
+- [PolyBase](/documentation/articles/sql-data-warehouse-get-started-load-with-polybase/)
+- [BCP](/documentation/articles/sql-data-warehouse-load-with-bcp/)
 
 
 **[bcp][]** 是一个命令行批量加载实用程序，可让你在 SQL Server、数据文件和 SQL 数据仓库之间复制数据。使用 bcp 实用程序可将大量的行导入 SQL 数据仓库表，或将 SQL Server 表中的数据导出到数据文件。除非与 queryout 选项一起使用，否则 bcp 不需要 Transact-SQL 方面的知识。

@@ -31,7 +31,7 @@
 
 ##**如何在客户端配置验证机制确认长连接有效性?**
 
-以Tomcat JDBC连接池为例，通过设定testOnBorrow参数，在有新的请求时，如果连接池中有闲置的可用连接，在返回这个闲置连接之前，连接池会自动验证这个连接的有效性，如果有效，直接返回，如果无效，连接池会回收这个无效连接，重新建立一个新的有效连接并返回。这样会有效地保障数据库的访问速度。具体配置请参考我们的技术文档：[配置验证机制验证连接池有效](https://www.azure.cn/documentation/articles/mysql-database-validationquery)。
+以Tomcat JDBC连接池为例，通过设定testOnBorrow参数，在有新的请求时，如果连接池中有闲置的可用连接，在返回这个闲置连接之前，连接池会自动验证这个连接的有效性，如果有效，直接返回，如果无效，连接池会回收这个无效连接，重新建立一个新的有效连接并返回。这样会有效地保障数据库的访问速度。具体配置请参考我们的技术文档：[配置验证机制验证连接池有效](https://www.azure.cn/documentation/articles/mysql-database-validationquery/)。
 
 ## **JDBC连接MySQL on Azure报IllegalArgumentException，错误信息显示“URLDecoder: Illegal hex characters in escape (%) pattern - For input string: ...”。**
 

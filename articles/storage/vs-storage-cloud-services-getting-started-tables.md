@@ -30,7 +30,7 @@ Azure 表存储服务使用户可以存储大量结构化数据。该服务是�
 **注意：**执行 Azure 存储调用的一些 API 是异步的。有关详细信息，请参阅[使用 Async 和 Await 进行异步编程](http://msdn.microsoft.com/zh-cn/library/hh191443.aspx)。下面的代码假定正在使用异步编程方法。
 
 - 有关以编程方式操作表的详细信息，请参阅[通过 .NET 开始使用 Azure 表存储](/documentation/articles/storage-dotnet-how-to-use-tables/)。
-- 有关 Azure 存储空间的常规信息，请参阅[存储空间文档](/documentation/services/storage)。
+- 有关 Azure 存储空间的常规信息，请参阅[存储空间文档](/documentation/services/storage/)。
 - 有关 Azure 云服务的常规信息，请参阅[云服务文档](/documentation/services/cloud-services/)。
 - 有关对 ASP.NET 应用程序进行编程的详细信息，请参阅 [ASP.NET](http://www.asp.net)。
 

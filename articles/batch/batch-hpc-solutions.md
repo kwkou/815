@@ -113,7 +113,7 @@ Azure 计算服务是大型计算解决方案的核心，不同的计算服务�
 
 大型计算解决方案通常会操作一组输入数据，然后生成其结果的数据。许多大型计算解决方案中使用的一些 Azure 存储空间服务包括：
 
-* [Blob、表和队列存储](/documentation/services/storage) - 分别管理大量非结构化数据、NoSQL 数据，以及有关工作流和通信的消息。例如，你可以为大型技术数据集或应用程序处理的输入图像或媒体文件使用 Blob 存储。可以在解决方案中使用队列以进行异步通信。有关这些存储解决方案的详细信息，请参阅 [Azure 存储空间简介](/documentation/articles/storage-introduction/)。
+* [Blob、表和队列存储](/documentation/services/storage/) - 分别管理大量非结构化数据、NoSQL 数据，以及有关工作流和通信的消息。例如，你可以为大型技术数据集或应用程序处理的输入图像或媒体文件使用 Blob 存储。可以在解决方案中使用队列以进行异步通信。有关这些存储解决方案的详细信息，请参阅 [Azure 存储空间简介](/documentation/articles/storage-introduction/)。
 
 
 
@@ -123,7 +123,7 @@ Azure 计算服务是大型计算解决方案的核心，不同的计算服务�
 
 * [SQL 数据库](/documentation/services/sql-databases/) - 提供托管平台服务中 Microsoft SQL Server 关系数据库管理系统的主要功能。
 
-* [HDInsight](/documentation/services/hdinsight) - 在云中部署和设置基于 Windows Server 或 Linux 的 Apache Hadoop 群集，用于管理、分析和报告具有高可靠性与可用性的大数据。
+* [HDInsight](/documentation/services/hdinsight/) - 在云中部署和设置基于 Windows Server 或 Linux 的 Apache Hadoop 群集，用于管理、分析和报告具有高可靠性与可用性的大数据。
 
 
 ### 其他服务

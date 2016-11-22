@@ -388,7 +388,7 @@ DNS 服务器是可选的，但在某些情况下又是必需的。[在两个 Az
 [3]: http://technet.microsoft.com/zh-cn/library/hh847889.aspx
 
 [hbase-get-started]: /documentation/articles/hdinsight-hbase-tutorial-get-started-v1/
-[vnet-overview]: /documentation/services/networking
+[vnet-overview]: /documentation/services/networking/
 [vm-create]: /documentation/articles/virtual-machines-windows-classic-tutorial/
 [azure-portal]: https://manage.windowsazure.cn
 [azure-create-storageaccount]: /documentation/articles/storage-create-storage-account/

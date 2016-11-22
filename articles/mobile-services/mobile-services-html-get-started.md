@@ -153,7 +153,7 @@
 [Azure 经典管理门户]: https://manage.windowsazure.cn/
 [Microsoft Web 平台安装程序]: http://go.microsoft.com/fwlink/p/?LinkId=286333
 [最新版本的 Python]: http://go.microsoft.com/fwlink/p/?LinkId=286342
-[移动服务 HTML/JavaScript 操作方法概念性参考]: /zh-cn/documentation/articles/mobile-services-html-how-to-use-client-library
+[移动服务 HTML/JavaScript 操作方法概念性参考]: /documentation/articles/mobile-services-html-how-to-use-client-library/
 [Cross-origin resource sharing]: http://msdn.microsoft.com/zh-cn/library/windowsazure/dn155871.aspx
 
 <!---HONumber=Mooncake_0118_2016-->

@@ -369,7 +369,7 @@ Azure 会将磁盘大小映射（向上舍入）至表中指定的最接近高�
 
 [Azure 的虚拟机和云服务大小](/documentation/articles/virtual-machines-windows-sizes/)
 
-[存储服务文档](/documentation/services/storage)
+[存储服务文档](/documentation/services/storage/)
 
 [Image1]: ./media/storage-premium-storage-preview-portal/Azure_pricing_tier.png
 

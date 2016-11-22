@@ -480,12 +480,12 @@ IP 转发是 UDR 的随附功能。这是虚拟设备上的一项设置，使虚
 
 ## 参考
 ### 有用的网站和文档
-- 使用 PowerShell 访问 Azure：[https://azure.cn/documentation/articles/powershell-install-configure/](/documentation/articles/powershell-install-configure)
+- 使用 PowerShell 访问 Azure：[https://azure.cn/documentation/articles/powershell-install-configure/](/documentation/articles/powershell-install-configure/)
 - 虚拟网络文档：[https://azure.cn/documentation/services/networking/](/documentation/services/networking/)
-- 网络安全组文档：[https://azure.cn/documentation/articles/virtual-networks-nsg/](/documentation/articles/virtual-networks-nsg)
-- 用户定义的路由文档：[https://azure.cn/documentation/articles/virtual-networks-udr-overview/](/documentation/articles/virtual-networks-udr-overview)
+- 网络安全组文档：[https://azure.cn/documentation/articles/virtual-networks-nsg/](/documentation/articles/virtual-networks-nsg/)
+- 用户定义的路由文档：[https://azure.cn/documentation/articles/virtual-networks-udr-overview/](/documentation/articles/virtual-networks-udr-overview/)
 - Azure 虚拟网关：[https://azure.cn/documentation/services/vpn-gateway/](/documentation/services/vpn-gateway/)
-- 站点到站点 VPN：[https://azure.cn/documentation/articles/vpn-gateway-create-site-to-site-rm-powershell](/documentation/articles/vpn-gateway-create-site-to-site-rm-powershell)
+- 站点到站点 VPN：[https://azure.cn/documentation/articles/vpn-gateway-create-site-to-site-rm-powershell](/documentation/articles/vpn-gateway-create-site-to-site-rm-powershell/)
 - ExpressRoute 文档：[确保查看“入门”和“方法”部分](/documentation/services/expressroute/)
 
 <!--Image References-->
@@ -511,13 +511,13 @@ IP 转发是 UDR 的随附功能。这是虚拟设备上的一项设置，使虚
 
 <!--Link References-->
 
-[Example1]: /documentation/articles/virtual-networks-dmz-nsg-asm
-[Example2]: /documentation/articles/virtual-networks-dmz-nsg-fw-asm
-[Example3]: /documentation/articles/virtual-networks-dmz-nsg-fw-udr-asm
-[Example4]: /documentation/articles/virtual-networks-hybrid-s2s-nva-asm
-[Example5]: /documentation/articles/virtual-networks-hybrid-s2s-agw-asm
-[Example6]: /documentation/articles/virtual-networks-hybrid-expressroute-asm
-[Example7]: /documentation/articles/virtual-networks-vnet2vnet-direct-asm
-[Example8]: /documentation/articles/virtual-networks-vnet2vnet-transit-asm
+[Example1]: /documentation/articles/virtual-networks-dmz-nsg-asm/
+[Example2]: /documentation/articles/virtual-networks-dmz-nsg-fw-asm/
+[Example3]: /documentation/articles/virtual-networks-dmz-nsg-fw-udr-asm/
+[Example4]: /documentation/articles/virtual-networks-hybrid-s2s-nva-asm/
+[Example5]: /documentation/articles/virtual-networks-hybrid-s2s-agw-asm/
+[Example6]: /documentation/articles/virtual-networks-hybrid-expressroute-asm/
+[Example7]: /documentation/articles/virtual-networks-vnet2vnet-direct-asm/
+[Example8]: /documentation/articles/virtual-networks-vnet2vnet-transit-asm/
 
 <!---HONumber=Mooncake_1024_2016-->

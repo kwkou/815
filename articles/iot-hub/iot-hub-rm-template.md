@@ -224,7 +224,7 @@
 [lnk-powershell-install]: /documentation/articles/powershell-install-configure/
 [lnk-rest-api]: https://msdn.microsoft.com/zh-cn/library/mt589014.aspx
 [lnk-azure-rm-overview]: /documentation/articles/resource-group-overview/
-[lnk-storage-account]: /documentation/articles/storage-create-storage-account
+[lnk-storage-account]: /documentation/articles/storage-create-storage-account/
 [lnk-c-sdk]: /documentation/articles/iot-hub-device-sdk-c-intro/
 [lnk-sdks]: /documentation/articles/iot-hub-sdks-summary/
 [lnk-design]: /documentation/articles/iot-hub-guidance/

@@ -101,8 +101,8 @@ SecondaryTiles 字典使用的 TileId 与在 Windows 应用商店应用中创建
 
 ![](./media/notification-hubs-registration-management/notification-hubs-registering-on-device.png)
 
-设备首先从 PNS 检索 PNS 句柄，然后直接向通知中心进行注册。注册成功之后，应用后端即可发送以该注册为目标的通知。有关如何发送通知的详细信息，请参阅[路由和标记表达式](/documentation/articles/notification-hubs-tags-segment-push-message)。
-请注意，在此情况下，将只使用“侦听”权限从设备访问通知中心。有关详细信息，请参阅[安全性](/documentation/articles/notification-hubs-push-notification-security)。
+设备首先从 PNS 检索 PNS 句柄，然后直接向通知中心进行注册。注册成功之后，应用后端即可发送以该注册为目标的通知。有关如何发送通知的详细信息，请参阅[路由和标记表达式](/documentation/articles/notification-hubs-tags-segment-push-message/)。
+请注意，在此情况下，将只使用“侦听”权限从设备访问通知中心。有关详细信息，请参阅[安全性](/documentation/articles/notification-hubs-push-notification-security/)。
 
 从设备注册是最简单的方法，但存在一些缺点。
 第一个缺点是客户端应用只能在它处于活动状态时更新其标记。例如，如果用户有两台设备要注册与体育团队相关的标记，则当第一台设备注册附加标记（例如，Seahawks）时，第二台设备将不会收到有关 Seahawks 的通知，直到第二次在第二台设备上执行应用程序为止。更概括地说，如果标记受多个设备的影响，则从后端管理标记是理想的选择。

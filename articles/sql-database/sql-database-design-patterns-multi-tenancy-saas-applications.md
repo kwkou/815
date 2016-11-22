@@ -146,7 +146,7 @@ SQL 数据库中的弹性池结合租户隔离与租户数据库之间的资源�
 
 ## 后续步骤
 
-有关演示客户端库的示例应用，请参阅 [Get started with Elastic Datababase tools（弹性数据库工具入门）](/documentation/articles/sql-database-elastic-scale-get-started)。
+有关演示客户端库的示例应用，请参阅 [Get started with Elastic Datababase tools（弹性数据库工具入门）](/documentation/articles/sql-database-elastic-scale-get-started/)。
 
 使用一个示例应用创建 [SaaS 的弹性池自定义仪表板](https://github.com/Microsoft/sql-server-samples/tree/master/samples/manage/azure-sql-db-elastic-pools-custom-dashboard)。该示例使用弹性池构建符合成本效益、可缩放的数据库解决方案。
 
@@ -158,7 +158,7 @@ SQL 数据库中的弹性池结合租户隔离与租户数据库之间的资源�
 
 ## 其他资源
 
-- [什么是 Azure 弹性数据库池？](/documentation/articles/sql-database-elastic-pool)
+- [什么是 Azure 弹性数据库池？](/documentation/articles/sql-database-elastic-pool/)
 - [Scaling out with Azure SQL Database（使用 Azure SQL 数据库进行扩展）](/documentation/articles/sql-database-elastic-scale-introduction/)
 - [具有弹性数据库工具和行级安全性的多租户应用程序](/documentation/articles/sql-database-elastic-tools-multi-tenant-row-level-security/)
 

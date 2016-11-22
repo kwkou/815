@@ -55,7 +55,7 @@ IoT 解决方案中部署拓扑的完整处理已超出本文的范围，但为�
 
 [防故障：弹性云体系结构指南]: https://msdn.microsoft.com/zh-cn/library/azure/jj853352.aspx
 [Azure 流量管理器]: /documentation/services/traffic-manager/
-[IoT 中心开发人员指南 - 标识注册表]: /documentation/articles/iot-hub-devguide-identity-registry
+[IoT 中心开发人员指南 - 标识注册表]: /documentation/articles/iot-hub-devguide-identity-registry/
 
 [lnk-get-started]: /documentation/articles/iot-hub-csharp-csharp-getstarted/
 [Azure IoT 中心是什么？]: /documentation/articles/iot-hub-what-is-iot-hub/

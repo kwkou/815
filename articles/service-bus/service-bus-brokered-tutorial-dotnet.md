@@ -646,7 +646,7 @@ namespace Microsoft.ServiceBus.Samples
 
 本教程介绍了如何使用服务总线中转消息传送功能构建服务总线客户端应用程序和服务。有关使用服务总线[中继消息传送](/documentation/articles/service-bus-messaging-overview/#Relayed-messaging)的类似教程，请参阅[服务总线中继消息传送教程](/documentation/articles/service-bus-relay-tutorial/)。
 
-若要了解有关[服务总线](/home/features/messaging)的详细信息，请参阅以下主题。
+若要了解有关[服务总线](/home/features/messaging/)的详细信息，请参阅以下主题。
 
 - [服务总线消息传送概述](/documentation/articles/service-bus-messaging-overview/)
 - [服务总线基础知识](/documentation/articles/service-bus-fundamentals-hybrid-solutions/)

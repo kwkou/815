@@ -145,9 +145,9 @@ azure config mode arm
 azure group deployment create \<my-resource-group\> \<my-deployment-name\> --template-uri https://raw.githubusercontent.com/azure/azure-quickstart-templates/master/201-event-hubs-create-event-hub-and-consumer-group/azuredeploy.json
 ```
 
-[创作 Azure Resource Manager 模板]: /documentation/articles/resource-group-authoring-templates
-[将 Azure PowerShell 与 Azure 资源管理器配合使用]: /documentation/articles/powershell-azure-resource-manager
-[使用 Azure CLI 管理 Azure 资源和资源组]: /documentation/articles/xplat-cli-azure-resource-manager
+[创作 Azure Resource Manager 模板]: /documentation/articles/resource-group-authoring-templates/
+[将 Azure PowerShell 与 Azure 资源管理器配合使用]: /documentation/articles/powershell-azure-resource-manager/
+[使用 Azure CLI 管理 Azure 资源和资源组]: /documentation/articles/xplat-cli-azure-resource-manager/
 [事件中心和使用者组模板]: https://github.com/Azure/azure-quickstart-templates/blob/master/201-event-hubs-create-event-hub-and-consumer-group/
 
 <!---HONumber=Mooncake_1031_2016-->

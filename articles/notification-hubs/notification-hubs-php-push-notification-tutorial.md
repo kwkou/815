@@ -25,7 +25,7 @@
 本主题中，我们将向你介绍如何：
 
 * 以 PHP 构建 REST 客户端以获取通知中心功能；
-* 请按照你选定的移动平台的[入门教程](/documentation/articles/notification-hubs-ios-apple-push-notification-apns-get-started)以 PHP 实现后端部分。
+* 请按照你选定的移动平台的[入门教程](/documentation/articles/notification-hubs-ios-apple-push-notification-apns-get-started/)以 PHP 实现后端部分。
 
 ## 客户端接口
 主要的客户端接口可提供 [.NET 通知中心 SDK](http://msdn.microsoft.com/library/jj933431.aspx) 中提供的相同方法，这将允许你直接翻译当前此站点上提供的所有教程和示例，这些内容均来自 Internet 上的社区。

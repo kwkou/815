@@ -113,7 +113,7 @@
           ]
         }
  
-这是用于创建你的存储帐户的实际模板。请注意，该模板包含的参数可用于部署不同类型的存储帐户。若要详细了解模板的结构，请参阅 [Authoring Azure Resource Manager templates](/documentation/articles/resource-group-authoring-templates)（创作 Azure Resource Manager 模板）。有关可在模板中使用的函数的完整列表，请参阅 [Azure Resource Manager template functions](/documentation/articles/resource-group-template-functions)（Azure Resource Manager 模板函数）。
+这是用于创建你的存储帐户的实际模板。请注意，该模板包含的参数可用于部署不同类型的存储帐户。若要详细了解模板的结构，请参阅 [Authoring Azure Resource Manager templates](/documentation/articles/resource-group-authoring-templates/)（创作 Azure Resource Manager 模板）。有关可在模板中使用的函数的完整列表，请参阅 [Azure Resource Manager template functions](/documentation/articles/resource-group-template-functions/)（Azure Resource Manager 模板函数）。
 
 
 ## 添加虚拟网络

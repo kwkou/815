@@ -20,8 +20,8 @@
 #Azure 通知中心安全推送
 
 > [AZURE.SELECTOR]
-- [Windows Universal](/documentation/articles/notification-hubs-aspnet-backend-windows-dotnet-wns-secure-push-notification)
-- [iOS](/documentation/articles/notification-hubs-aspnet-backend-ios-push-apple-apns-secure-notification)
+- [Windows Universal](/documentation/articles/notification-hubs-aspnet-backend-windows-dotnet-wns-secure-push-notification/)
+- [iOS](/documentation/articles/notification-hubs-aspnet-backend-ios-push-apple-apns-secure-notification/)
 
 
 ##概述

@@ -24,7 +24,7 @@
 
 ## 概述
 
-[用于 .NET Nuget 包的 Azure 存储客户端库](https://www.nuget.org/packages/WindowsAzure.Storage)支持在上载到 Azure 存储空间之前加密客户端应用程序中的数据，以及在下载到客户端时解密数据。此库还支持与 [Azure 密钥保管库](/home/features/key-vault)集成，以便管理存储帐户密钥。
+[用于 .NET Nuget 包的 Azure 存储客户端库](https://www.nuget.org/packages/WindowsAzure.Storage)支持在上载到 Azure 存储空间之前加密客户端应用程序中的数据，以及在下载到客户端时解密数据。此库还支持与 [Azure 密钥保管库](/home/features/key-vault/)集成，以便管理存储帐户密钥。
 
 有关使用客户端的加密和 Azure 密钥保管库引导你完成加密 blob 的过程的分步教程，请参阅[使用 Azure 密钥保管库在 Azure 存储中加密和解密 blob](/documentation/articles/storage-encrypt-decrypt-blobs-key-vault/)。
 

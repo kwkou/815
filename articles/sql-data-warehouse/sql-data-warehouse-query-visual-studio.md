@@ -21,8 +21,8 @@
 # 查询 Azure SQL 数据仓库 (Visual Studio)
 
 > [AZURE.SELECTOR]
-- [Visual Studio](/documentation/articles/sql-data-warehouse-query-visual-studio)
-- [sqlcmd](/documentation/articles/sql-data-warehouse-get-started-connect-sqlcmd)
+- [Visual Studio](/documentation/articles/sql-data-warehouse-query-visual-studio/)
+- [sqlcmd](/documentation/articles/sql-data-warehouse-get-started-connect-sqlcmd/)
 
 <!-- - [Power BI](sql-data-warehouse-get-started-visualize-with-power-bi)
 - [Azure 机器学习](sql-data-warehouse-get-started-analyze-with-azure-machine-learning)

@@ -41,7 +41,7 @@ DocumentDB 是面向 NoSQL 文档的数据库，以 JSON 格式存储数据。Do
 是，DocumentDB 支持以 JavaScript 存储过程和触发器形式表示的跨文档事务。事务以每个集合内的单个分区为范围，且以 ACID 语义执行，也就是全有或全无，与其他并发执行的代码和用户请求隔离。如果在服务器端执行 JavaScript 应用程序代码的过程中引发了异常，则会回滚整个事务。
 
 ### DocumentDB 的典型用例有哪些？  
-对于侧重于以下要求的新 Web、移动、游戏和 IoT 应用程序而言，DocumentDB 是一个不错的选择：自动缩放、可预测的性能、毫秒响应时间的快速排序，以及查询无架构数据的能力。DocumentDB 有助于快速开发，且支持应用程序数据模型的连续迭代。用于管理用户生成的内容和数据的应用程序就是 [DocumentDB 的常见用例](/documentation/articles/documentdb-use-cases)。
+对于侧重于以下要求的新 Web、移动、游戏和 IoT 应用程序而言，DocumentDB 是一个不错的选择：自动缩放、可预测的性能、毫秒响应时间的快速排序，以及查询无架构数据的能力。DocumentDB 有助于快速开发，且支持应用程序数据模型的连续迭代。用于管理用户生成的内容和数据的应用程序就是 [DocumentDB 的常见用例](/documentation/articles/documentdb-use-cases/)。
 
 ### DocumentDB 如何提供可预测的性能？
 请求单位 (RU) 是 DocumentDB 中吞吐量的衡量单位。1 个 RU 相当于读取 1KB 文档的吞吐量。在 DocumentDB 中进行的每个操作（包括读、写、SQL 查询和执行存储过程）都将具有一个确定的请求单位值，该值基于完成该操作所需的吞吐量。你无需考虑 CPU、IO 和内存，以及它们会怎样影响你的应用程序吞吐量，而是从单个请求单位度量值的角度进行考虑。

@@ -102,20 +102,20 @@ SQL 数据仓库每隔 4 到 8 小时创建一次联机数据仓库的快照，�
 
 SQL 数据仓库备份的主要用途是在保留期内将数据仓库还原到其中一个还原点。
 
-- 若要还原 SQL 数据仓库，请参阅 [还原 SQL 数据仓库](/documentation/articles/sql-data-warehouse-restore-database-overview)。
+- 若要还原 SQL 数据仓库，请参阅 [还原 SQL 数据仓库](/documentation/articles/sql-data-warehouse-restore-database-overview/)。
 
 
 ## 相关主题
 
 ### 方案
 
-- 有关业务连续性概述，请参阅[业务连续性概述](/documentation/articles/sql-database-business-continuity)
+- 有关业务连续性概述，请参阅[业务连续性概述](/documentation/articles/sql-database-business-continuity/)
 
 
 <!-- ### Tasks -->
 
 
-- 若要还原数据仓库，请参阅 [还原 SQL 数据仓库](/documentation/articles/sql-data-warehouse-restore-database-overview)
+- 若要还原数据仓库，请参阅 [还原 SQL 数据仓库](/documentation/articles/sql-data-warehouse-restore-database-overview/)
 
 <!-- ### Tutorials -->
 

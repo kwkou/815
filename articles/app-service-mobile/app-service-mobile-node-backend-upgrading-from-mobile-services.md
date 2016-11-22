@@ -162,7 +162,7 @@ Azure 移动应用允许在服务中配置 Azure Active Directory 和 Microsoft 
 
 [Azure Classic Management Portal]: https://manage.windowsazure.cn/
 [What are Mobile Apps?]: /documentation/articles/app-service-mobile-value-prop/
-[I already use web sites and mobile services - how does App Service help me?]: /documentation/articles/app-service-mobile-value-prop-migration-from-mobile-services
+[I already use web sites and mobile services - how does App Service help me?]: /documentation/articles/app-service-mobile-value-prop-migration-from-mobile-services/
 [Mobile App Server SDK]: https://www.npmjs.com/package/azure-mobile-apps
 [Create a Mobile App]: /documentation/articles/app-service-mobile-xamarin-ios-get-started/
 [Add push notifications to your mobile app]: /documentation/articles/app-service-mobile-xamarin-ios-get-started-push/

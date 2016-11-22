@@ -81,7 +81,7 @@
 
 使用 Resource Manager 可以创建一个模板（采用 JSON 格式），用于定义应用程序的部署和配置。使用模板可以在整个应用程序生命周期内反复部署该应用程序，并确保以一致的状态部署资源。Azure Resource Manager 会分析依赖关系，以确保按正确的顺序创建资源。有关详细信息，请参阅[在 Azure 资源管理器模板中定义依赖关系](/documentation/articles/resource-group-define-dependencies/)。
 
-从门户创建解决方案时，该解决方案将自动包含部署模板。你无需从头开始创建模板，因为你可以从解决方案的模板着手，并根据你的特定需求自定义该模板。可以通过导出资源组的当前状态或查看特定部署所用的模板，来检索现有资源组的模板。查看导出的模板是了解模板语法的有用方法。若要了解有关使用导出的模板的详细信息，请参阅[从现有资源导出 Azure Resource Manager 模板](/documentation/articles/resource-manager-export-template)。
+从门户创建解决方案时，该解决方案将自动包含部署模板。你无需从头开始创建模板，因为你可以从解决方案的模板着手，并根据你的特定需求自定义该模板。可以通过导出资源组的当前状态或查看特定部署所用的模板，来检索现有资源组的模板。查看导出的模板是了解模板语法的有用方法。若要了解有关使用导出的模板的详细信息，请参阅[从现有资源导出 Azure Resource Manager 模板](/documentation/articles/resource-manager-export-template/)。
 
 无需在单个模板中定义整个基础结构。通常，合理的做法是将部署要求划分成一组有针对性的模板。可以轻松地将这些模板重复用于不同的解决方案。若要部署特定的解决方案，请创建链接所有所需模板的主模板。有关详细信息，请参阅[将链接的模板与 Azure 资源管理器配合使用](/documentation/articles/resource-group-linked-templates/)。
 
@@ -128,7 +128,7 @@
 
 Resource Manager 通过 Azure PowerShell、适用于 Mac、Linux 和 Windows 的 Azure CLI、Azure 门户或 REST API 提供兼容的操作。你可以使用最适合自己的界面，并快速切换不同的界面，而不会造成任何混淆。
 
-有关 PowerShell 的信息，请参阅[将 Azure PowerShell 用于资源管理器](/documentation/articles/powershell-azure-resource-manager)和 [Azure Resource Manager Cmdlet](https://msdn.microsoft.com/zh-cn/library/azure/dn757692.aspx)。
+有关 PowerShell 的信息，请参阅[将 Azure PowerShell 用于资源管理器](/documentation/articles/powershell-azure-resource-manager/)和 [Azure Resource Manager Cmdlet](https://msdn.microsoft.com/zh-cn/library/azure/dn757692.aspx)。
 
 有关 Azure CLI 的信息，请参阅[将适用于 Mac、Linux 和 Windows 的 Azure CLI 与 Azure 资源管理配合使用](/documentation/articles/xplat-cli-azure-resource-manager/)。
 

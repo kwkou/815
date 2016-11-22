@@ -521,7 +521,7 @@ https://blogs.msdn.microsoft.com/sqlserverstorageengine/2016/05/06/improved-quer
 CAPS / MSDN ideally, but instead on ACom:
 .. # Assess effects of latest compatibility level on query performance, how to
 
-/documentation/articles/sql-database-compatibility-level-query-performance-130
+/documentation/articles/sql-database-compatibility-level-query-performance-130/
 
 genemi = MightyPen , 2016-05-20  Friday  17:00pm
 -->

@@ -46,7 +46,7 @@ SQL 数据库提供多层数据保护。通过在空闲时、运转中或使用�
 [阅读文档](http://go.microsoft.com/fwlink/?LinkID=787593)
 
 转到主页以查看 SQL 数据库可提供的其他功能。
-[请查看](/home/features/sql-database)
+[请查看](/home/features/sql-database/)
 
 ## 后续步骤
 
@@ -54,7 +54,7 @@ SQL 数据库提供多层数据保护。通过在空闲时、运转中或使用�
 
 ## 其他资源
 
-浏览所有 [SQL 数据库的功能](/home/features/sql-database)。
+浏览所有 [SQL 数据库的功能](/home/features/sql-database/)。
  
 查看 [SQL 数据库技术概述](/documentation/articles/sql-database-technical-overview/)。
 

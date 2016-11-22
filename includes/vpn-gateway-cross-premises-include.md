@@ -8,7 +8,7 @@
 | **典型用例** | 云服务和虚拟机的原型设计、开发/测试/实验方案 | 云服务和虚拟机的开发/测试/实验方案和小规模生产工作负荷 | 访问所有 Azure 服务（已验证列表）、企业级和任务关键型工作负荷、备份、大数据、Azure 即 DR 站点 |
 | **SLA** | [SLA](/support/legal/sla) | [SLA](/support/legal/sla) | [SLA](/support/legal/sla) |
 | **价格** | [价格](/pricing/details/vpn-gateway/) | [价格](/pricing/details/vpn-gateway/) | [价格](/pricing/details/expressroute/) |
-| **技术文档** | [VPN 网关文档](/documentation/services/vpn-gateway/) | [VPN 网关文档](/documentation/services/vpn-gateway/) | [ExpressRoute 文档](/documentation/services/expressroute) |
+| **技术文档** | [VPN 网关文档](/documentation/services/vpn-gateway/) | [VPN 网关文档](/documentation/services/vpn-gateway/) | [ExpressRoute 文档](/documentation/services/expressroute/) |
 | **常见问题** | [VPN 网关常见问题](/documentation/articles/vpn-gateway-vpn-faq/) | [VPN 网关常见问题](/documentation/articles/vpn-gateway-vpn-faq/) | [ExpressRoute 常见问题](/documentation/articles/expressroute-faqs/) |
 
 <!---HONumber=Mooncake_0425_2016-->

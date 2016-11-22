@@ -93,10 +93,10 @@ Azure SQL 数据仓库透明数据加密 (TDE) 可以对静态数据进行实时
 <!--Image references-->
 
 <!--Article references-->
-[连接到 SQL 数据仓库]: /documentation/articles/sql-data-warehouse-connect-overview
-[Encryption with Portal]: /documentation/articles/sql-data-warehouse-encryption-tde
-[Encryption with TSQL]: /documentation/articles/sql-data-warehouse-encryption-tde-tsql
-[Connecting to SQL Data Warehouse By Using Azure Active Directory Authentication]: /documentation/articles/sql-data-warehouse-authentication
+[连接到 SQL 数据仓库]: /documentation/articles/sql-data-warehouse-connect-overview/
+[Encryption with Portal]: /documentation/articles/sql-data-warehouse-encryption-tde/
+[Encryption with TSQL]: /documentation/articles/sql-data-warehouse-encryption-tde-tsql/
+[Connecting to SQL Data Warehouse By Using Azure Active Directory Authentication]: /documentation/articles/sql-data-warehouse-authentication/
 
 <!--MSDN references-->
 [Azure SQL 数据库防火墙]: https://msdn.microsoft.com/zh-cn/library/ee621782.aspx
@@ -110,6 +110,6 @@ Azure SQL 数据仓库透明数据加密 (TDE) 可以对静态数据进行实时
 [Azure portal]: https://manage.windowsazure.cn/
 
 <!--Other Web references-->
-[Azure 门户中基于角色的访问控制]: /documentation/articles/role-based-access-control-configure
+[Azure 门户中基于角色的访问控制]: /documentation/articles/role-based-access-control-configure/
 
 <!---HONumber=Mooncake_1024_2016-->

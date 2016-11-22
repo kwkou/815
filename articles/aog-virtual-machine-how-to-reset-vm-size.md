@@ -23,7 +23,7 @@
 
 - 修改尺寸后我的虚拟机的 IP 是否会变？
 
-	在修改虚拟机尺寸后虚拟机的 IP 可能会改变，如果业务逻辑中不希望 IP 变化的话，请尝试“保留 IP”，关于更多有关保留 IP 的内容，请阅读：https://www.azure.cn/documentation/articles/virtual-networks-reserved-public-ip
+	在修改虚拟机尺寸后虚拟机的 IP 可能会改变，如果业务逻辑中不希望 IP 变化的话，请尝试“保留 IP”，关于更多有关保留 IP 的内容，请阅读：https://www.azure.cn/documentation/articles/virtual-networks-reserved-public-ip/
 
 ## <a id="detail"></a>详细步骤
 

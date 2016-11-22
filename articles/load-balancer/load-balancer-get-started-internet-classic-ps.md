@@ -62,8 +62,8 @@
 
 ## 后续步骤
 
-你还可以[开始创建内部负载均衡器](/documentation/articles/load-balancer-get-started-ilb-classic-ps)，并配置适合特定负载均衡器网络流量行为的[分发模式](/documentation/articles/load-balancer-distribution-mode)类型。
+你还可以[开始创建内部负载均衡器](/documentation/articles/load-balancer-get-started-ilb-classic-ps/)，并配置适合特定负载均衡器网络流量行为的[分发模式](/documentation/articles/load-balancer-distribution-mode/)类型。
 
-如果应用程序需要始终保持对负载均衡器后面的服务器的连接，你可以详细了解[负载均衡器的空闲 TCP 超时设置](/documentation/articles/load-balancer-tcp-idle-timeout)。该文章将有助于你了解使用 Azure Load Balancer 时的空闲连接行为。
+如果应用程序需要始终保持对负载均衡器后面的服务器的连接，你可以详细了解[负载均衡器的空闲 TCP 超时设置](/documentation/articles/load-balancer-tcp-idle-timeout/)。该文章将有助于你了解使用 Azure Load Balancer 时的空闲连接行为。
 
 <!---HONumber=Mooncake_0822_2016-->

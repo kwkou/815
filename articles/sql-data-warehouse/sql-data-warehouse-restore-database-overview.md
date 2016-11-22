@@ -70,7 +70,7 @@ SQL 数据仓库始终将备份还原到新的数据仓库。可以保留还原�
 
 ### 方案
 
-- 有关业务连续性概述，请参阅[业务连续性概述](/documentation/articles/sql-database-business-continuity)
+- 有关业务连续性概述，请参阅[业务连续性概述](/documentation/articles/sql-database-business-continuity/)
 
 
 <!-- ### Tasks -->
@@ -88,11 +88,11 @@ SQL 数据仓库始终将备份还原到新的数据仓库。可以保留还原�
 <!--Image references-->
 
 <!--Article references-->
-[Azure SQL Database business continuity overview]: /documentation/articles/sql-database-business-continuity
-[概述]: /documentation/articles/sql-data-warehouse-restore-database-overview
-[门户]: /documentation/articles/sql-data-warehouse-restore-database-portal
-[PowerShell]: /documentation/articles/sql-data-warehouse-restore-database-powershell
-[REST]: /documentation/articles/sql-data-warehouse-restore-database-rest-api
+[Azure SQL Database business continuity overview]: /documentation/articles/sql-database-business-continuity/
+[概述]: /documentation/articles/sql-data-warehouse-restore-database-overview/
+[门户]: /documentation/articles/sql-data-warehouse-restore-database-portal/
+[PowerShell]: /documentation/articles/sql-data-warehouse-restore-database-powershell/
+[REST]: /documentation/articles/sql-data-warehouse-restore-database-rest-api/
 
 <!--MSDN references-->
 

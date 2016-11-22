@@ -33,7 +33,7 @@
 无需在生成服务器上安装 Visual Studio。若要使用 Team Foundation 生成服务管理生成服务器，请按照 [Team Foundation 生成服务][]文档中的说明操作。
 
 1.  在生成服务器上，安装包含 MSBuild 的 [.NET Framework 4.5.2][]。
-2.  安装最新的 [Azure Authoring Tools for .NET](/develop/net)。
+2.  安装最新的 [Azure Authoring Tools for .NET](/develop/net/)。
 3.	安装 [Azure Libraries for .NET](http://go.microsoft.com/fwlink/?LinkId=623519)。
 4.  将 Microsoft.WebApplication.targets 文件从 Visual Studio 安装复制到生成服务器。
 

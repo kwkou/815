@@ -165,7 +165,7 @@ Blob 存储帐户使用基于存储层的 Blob 存储的新定价模型。使用
 
 8. 选择想在其中创建新存储帐户的订阅。
 
-9. 指定新资源组或选择现有资源组。有关资源组的详细信息，请参阅 [Azure Resource Manager 概述](/documentation/articles/resource-group-overview)。
+9. 指定新资源组或选择现有资源组。有关资源组的详细信息，请参阅 [Azure Resource Manager 概述](/documentation/articles/resource-group-overview/)。
 
 10. 选择存储帐户的区域。
 

@@ -181,11 +181,11 @@
 
 
 <!--Article references-->
-[Manage overview]: /documentation/articles/sql-data-warehouse-overview-manage
-[SQL 数据仓库最佳实践]: /documentation/articles/sql-data-warehouse-best-practices
-[系统视图]: /documentation/articles/sql-data-warehouse-reference-tsql-system-views
-[表分布]: /documentation/articles/sql-data-warehouse-tables-distribute
-[Concurrency and workload management]: /documentation/articles/sql-data-warehouse-develop-concurrency
+[Manage overview]: /documentation/articles/sql-data-warehouse-overview-manage/
+[SQL 数据仓库最佳实践]: /documentation/articles/sql-data-warehouse-best-practices/
+[系统视图]: /documentation/articles/sql-data-warehouse-reference-tsql-system-views/
+[表分布]: /documentation/articles/sql-data-warehouse-tables-distribute/
+[Concurrency and workload management]: /documentation/articles/sql-data-warehouse-develop-concurrency/
 [调查等待资源的查询]: /documentation/articles/sql-data-warehouse-manage-monitor#waiting
 
 <!--MSDN references-->

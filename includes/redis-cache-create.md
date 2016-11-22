@@ -16,7 +16,7 @@
 
 -	在“DNS 名称”中，输入要用于缓存终结点的缓存名称。缓存名称必须是包含 1 到 63 个字符的字符串，只能包含数字、字母和 `-` 字符。缓存名称的开头或末尾不能是 `-` 字符，并且连续的 `-` 字符无效。
 -	对于“订阅”，请选择要用于缓存的 Azure 订阅。如果你的帐户仅具有一个订阅，将自动选择该订阅并且将不显示“订阅”下拉菜单。
--	在“资源组”中，为缓存选择或创建资源组。有关详细信息，请参阅 [Using Resource groups to manage your Azure resources](/documentation/articles/resource-group-overview)（使用资源组管理 Azure 资源）。
+-	在“资源组”中，为缓存选择或创建资源组。有关详细信息，请参阅 [Using Resource groups to manage your Azure resources](/documentation/articles/resource-group-overview/)（使用资源组管理 Azure 资源）。
 -	使用“位置”指定在其中托管你的缓存的地理位置。Microsoft 强烈推荐的最佳做法，是在与缓存客户端应用程序相同的区域中创建缓存。
 -	使用“定价层”选择所需的缓存大小和功能。
 -	**Redis 群集**允许你创建大于 53 GB 的缓存，以及将数据分散到多个 Redis 节点。有关详细信息，请参阅[如何为高级 Azure Redis 缓存配置群集功能](/documentation/articles/cache-how-to-premium-clustering/)。

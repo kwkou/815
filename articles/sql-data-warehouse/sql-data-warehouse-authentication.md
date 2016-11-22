@@ -92,6 +92,6 @@ Azure Active Directory 的优点包括：
 [保护 SQL 数据仓库中的数据库]: /documentation/articles/sql-data-warehouse-overview-manage-security/
 [使用 Visual Studio 进行查询]: /documentation/articles/sql-data-warehouse-query-visual-studio/
 [What is Azure Active Directory]: /documentation/articles/active-directory-whatis/
-[Azure AD features and limitations]: /documentation/articles/sql-database-aad-authentication
+[Azure AD features and limitations]: /documentation/articles/sql-database-aad-authentication/
 
 <!---HONumber=Mooncake_1024_2016-->
