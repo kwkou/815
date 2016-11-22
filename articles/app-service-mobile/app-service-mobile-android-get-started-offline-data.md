@@ -99,7 +99,7 @@
 
 4. 在设备或模拟器中打开 WiFi。接下来，按“刷新”按钮。
 
-5. 在 Azure 门户中再次查看 TodoItem 数据。新的和更改的 TodoItem 现在应会出现。
+5. 在 Azure 门户预览中再次查看 TodoItem 数据。新的和更改的 TodoItem 现在应会出现。
 
 ## 其他资源
 

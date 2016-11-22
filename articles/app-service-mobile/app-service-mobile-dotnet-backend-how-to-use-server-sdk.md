@@ -489,7 +489,7 @@ Azure 应用服务提供多种适用于 ASP.NET 应用程序的调试和故障�
 [4]: /downloads/
 [5]: https://github.com/Azure-Samples/app-service-mobile-dotnet-backend-quickstart/blob/master/README.md#client-added-push-notification-tags
 [6]: https://github.com/Azure-Samples/app-service-mobile-dotnet-backend-quickstart/blob/master/README.md#push-to-users
-[Azure 门户]: https://portal.azure.cn
+[Azure 门户预览]: https://portal.azure.cn/
 [NuGet.org]: http://www.nuget.org/
 [Microsoft.Azure.Mobile.Server]: http://www.nuget.org/packages/Microsoft.Azure.Mobile.Server/
 [Microsoft.Azure.Mobile.Server.Quickstart]: http://www.nuget.org/packages/Microsoft.Azure.Mobile.Server.Quickstart/
