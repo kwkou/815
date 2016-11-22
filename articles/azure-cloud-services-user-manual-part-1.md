@@ -16,7 +16,7 @@
 
 #Azure 云服务操作手册
 
-[Azure 云服务操作手册 - 第二部分](/documentation/articles/azure-cloud-services-user-manual-part-2)
+[Azure 云服务操作手册 - 第二部分](/documentation/articles/azure-cloud-services-user-manual-part-2/)
 
 
 

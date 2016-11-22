@@ -329,9 +329,9 @@ Azure 提供了许多功能用于对正在运行的应用程序进行监视和�
 
 ## 后续步骤 
 
-* Azure Resource Manager 对于在 Azure 平台中启用 DevOps 至关重要。有关详细信息，请访问 [Azure Resource Manager overview](/documentation/articles/resource-group-overview)（Azure Resource Manager 概述）。
+* Azure Resource Manager 对于在 Azure 平台中启用 DevOps 至关重要。有关详细信息，请访问 [Azure Resource Manager overview](/documentation/articles/resource-group-overview/)（Azure Resource Manager 概述）。
 
-* 有关 Azure App Service 部署的详细信息，请访问 [Deploy your app to Azure App Service](/documentation/articles/web-sites-deploy)（将应用部署到 Azure App Service）
+* 有关 Azure App Service 部署的详细信息，请访问 [Deploy your app to Azure App Service](/documentation/articles/web-sites-deploy/)（将应用部署到 Azure App Service）
 
 
 [image1]: ./media/tutorial-azureportal-devops/image1.png

@@ -14,7 +14,7 @@
 
 #Azure SQL 数据库用户手册
 
-- [Azure SQL 数据库用户手册 - 第一部分](/documentation/articles/azure-sql-database-user-manual-part-1)
+- [Azure SQL 数据库用户手册 - 第一部分](/documentation/articles/azure-sql-database-user-manual-part-1/)
 
 ##<a id="azure-sql-database-get-started"></a>2. 开始使用 Azure SQL 数据库  
 

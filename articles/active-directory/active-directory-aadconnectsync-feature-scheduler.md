@@ -84,7 +84,7 @@ Azure AD Connect 同步会使用计划程序同步本地目录中发生的更改
 
 - 从源目录中添加了更多要导入的对象或属性
 - 更改了同步规则
-- 更改了[筛选设置](/documentation/articles/active-directory-aadconnectsync-configure-filtering)，因此应包含不同的对象数
+- 更改了[筛选设置](/documentation/articles/active-directory-aadconnectsync-configure-filtering/)，因此应包含不同的对象数
 
 如果进行了上述某项更改，则需要运行完全同步周期，以便同步引擎有机会重新合并连接器空间。完全同步周期包括以下步骤：
 
