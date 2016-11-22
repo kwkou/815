@@ -1,6 +1,6 @@
 <properties linkid="" urlDisplayName="" pageTitle="Use Azure Resource Manager and PowerShell to deploy and use MySQL Database on Azure – Azure cloud" metaKeywords="Azure Cloud, technical documentation, documents and resources, MySQL, database, beginner’s guide, Azure MySQL, MySQL PaaS, Azure MySQL PaaS, Azure MySQL Service, Azure RDS" description="This article explains how to use Azure PowerShell scripts to quickly set up and use MySQL services." metaCanonical="" services="MySQL" documentationCenter="Services" title="" authors="sofia" solutions="" manager="" editor="" />
 
-<tags ms.service="mysql_en" ms.date="11/21/2016" wacn.date="11/21/2016" wacn.lang="en" />
+<tags ms.service="mysql_en" ms.date="11/22/2016" wacn.date="11/22/2016" wacn.lang="en" />
 
 > [AZURE.LANGUAGE]
 - [中文](/documentation/articles/mysql-database-etoe-powershell/)
@@ -8,7 +8,7 @@
 
 #Use Azure Resource Manager and Windows PowerShell to deploy and use MySQL Database on Azure
 
-Azure Resource Manager is a new management framework for Azure services. Now you can use APIs and tools based on Azure Resource Manager to manage MySQL Database on Azure. For more information about Azure Resource Manager, see [Use resource groups to manage Azure resources](/documentation/articles/azure-preview-portal-using-resource-groups/). MySQL Database on Azure supports the use of PowerShell scripts to query, create, manage, and delete MySQL servers, databases, firewall rules, and users. It also supports the use of scripts to change parameters and settings. For more information about create, view, remove and modify operations, please see [Use PowerShell to manage MySQL Database on Azure](/documentation/articles/mysql-database-commandlines/).
+Azure Resource Manager is a new management framework for Azure services. Now you can use APIs and tools based on Azure Resource Manager to manage MySQL Database on Azure. MySQL Database on Azure supports the use of PowerShell scripts to query, create, manage, and delete MySQL servers, databases, firewall rules, and users. It also supports the use of scripts to change parameters and settings. For more information about create, view, remove and modify operations, please see [Use PowerShell to manage MySQL Database on Azure](/documentation/articles/mysql-database-commandlines/).
 
 ### Contents
 - [Step 1: Install Azure PowerShell](#step1)

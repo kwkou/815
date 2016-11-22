@@ -1,6 +1,6 @@
 <properties linkid="" urlDisplayName="" pageTitle="如何使用MySQL 数据库 on Azure来配置WordPress Web 应用- Azure 微软云" metaKeywords="Azure 云，技术文档，文档与资源，MySQL,数据库，WordPress, Web 应用配置,Azure MySQL, MySQL PaaS,Azure MySQL PaaS, Azure MySQL Service, Azure RDS" description="WordPress是一种使用非常广泛的CMS系统。本文介绍如何使用 MySQL 数据库 on Azure 和 Azure Web应用来安装配置WordPress。" metaCanonical="" services="MySQL" documentationCenter="Services" title="" authors="" solutions="" manager="" editor=""/>
 
-<tags ms.service="mysql" ms.date="11/21/2016" wacn.date="11/21/2016" wacn.lang="cn" />
+<tags ms.service="mysql" ms.date="11/22/2016" wacn.date="11/22/2016" wacn.lang="cn" />
 
 > [AZURE.LANGUAGE]
 - [中文](/documentation/articles/mysql-database-wordpress-setup/)
@@ -35,7 +35,11 @@ WordPress是一种使用非常广泛的CMS系统。本文介绍如何使用 MySQ
 
 ## 步骤 3:新建Web应用  
 
-详细步骤请参阅 [如何创建和部署Web应用](/documentation/articles/web-sites-php-web-site-gallery/)  
+3.1 登录Azure经典管理门户，单击左下角“新建”按钮。
+
+3.2 依次单击“计算 > WEB应用 > 快速创建”，并输入URL。
+
+3.3 单击“创建WEB应用”，静待Azure完成操作。
 
 ![新建Web应用][4]
 
