@@ -107,7 +107,7 @@
 ## 其他资源
 
 - [业务连续性概述](/documentation/articles/sql-database-business-continuity/)
-- [SQL 数据库文档](/documentation/services/sql-databases)
+- [SQL 数据库文档](/documentation/services/sql-databases/)
 - [Azure SQL 数据库 Cmdlet](http://msdn.microsoft.com/zh-cn/library/mt574084.aspx)
 
 <!---HONumber=Mooncake_1024_2016-->

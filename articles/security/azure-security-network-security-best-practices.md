@@ -51,7 +51,7 @@ Azure 可让你将虚拟机和设备放在 Azure 虚拟网络上，从而将它�
 
 ## 以逻辑方式分段子网
 
-[Azure 虚拟网络](/documentation/services/networking/)类似于本地网络上的 LAN。Azure 虚拟网络背后的思路是创建单个基于空间的专用 IP 地址网络，将所有 [Azure 虚拟机](/documentation/services/virtual-machines)置于其上。可用的专用 IP 地址空间位于类别 A (10.0.0.0/8)、类别 B (172.16.0.0/12) 和类别 C (192.168.0.0/16) 范围内。
+[Azure 虚拟网络](/documentation/services/networking/)类似于本地网络上的 LAN。Azure 虚拟网络背后的思路是创建单个基于空间的专用 IP 地址网络，将所有 [Azure 虚拟机](/documentation/services/virtual-machines/)置于其上。可用的专用 IP 地址空间位于类别 A (10.0.0.0/8)、类别 B (172.16.0.0/12) 和类别 C (192.168.0.0/16) 范围内。
 
 类似于在本地执行的操作，需要将较大的地址空间分段成子网。可以使用基于 [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) 的子网原理来创建子网。
 

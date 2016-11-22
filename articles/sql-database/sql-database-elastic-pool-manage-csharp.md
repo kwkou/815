@@ -108,7 +108,7 @@
 ## 其他资源
 
 - [SQL 数据库客户端应用程序的 SQL 错误代码：数据库连接错误和其他问题](/documentation/articles/sql-database-develop-error-messages/)。
-- [SQL 数据库](/documentation/services/sql-databases)
+- [SQL 数据库](/documentation/services/sql-databases/)
 - [Azure 资源管理 API](https://msdn.microsoft.com/zh-cn/library/azure/dn948464.aspx)
 - [使用 C# 创建新的弹性数据库池](/documentation/articles/sql-database-elastic-pool-create-csharp/)
 - [何时使用弹性数据库池？](/documentation/articles/sql-database-elastic-pool-guidance/)

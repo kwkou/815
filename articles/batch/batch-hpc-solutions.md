@@ -105,9 +105,9 @@ Azure 计算服务是大型计算解决方案的核心，不同的计算服务�
 
 服务 | 说明
 ------------- | -----------
-**[云服务](/documentation/services/cloud-services)**<br/><br/> |• 可以在辅助角色实例中运行大型计算应用程序，辅助角色实例是运行某个 Windows Server 版本的虚拟机并且完全由 Azure 托管<br/><br/>• 可以较低的管理开销支持运行在平台即服务 (PaaS) 模型中的可缩放的可靠应用程序<br/><br/>• 可能需要额外的工具或开发来与现有的本地 HPC 群集解决方案进行集成
-**[虚拟机](/documentation/services/virtual-machines)**<br/><br/> |• 使用 Microsoft Hyper-V 技术提供计算基础结构即服务 (IaaS)<br/><br/>• 使你能够从标准 Windows Server 或 Linux 映像，或者你提供的映像和数据磁盘灵活地设置和管理永久性虚拟机<br/><br/>• 完全在云中运行本地计算群集工具和应用程序
-**[ 批处理( Batch )](/documentation/services/batch)**<br/><br/> |• 在完全托管的服务中运行大规模的并行与 批处理( Batch )工作负荷<br/><br/>• 针对虚拟机的托管池提供作业计划和自动缩放<br/><br/>• 允许开发人员构建自定义大型计算解决方案或支持云的现有应用程序<br/>
+**[云服务](/documentation/services/cloud-services/)**<br/><br/> |• 可以在辅助角色实例中运行大型计算应用程序，辅助角色实例是运行某个 Windows Server 版本的虚拟机并且完全由 Azure 托管<br/><br/>• 可以较低的管理开销支持运行在平台即服务 (PaaS) 模型中的可缩放的可靠应用程序<br/><br/>• 可能需要额外的工具或开发来与现有的本地 HPC 群集解决方案进行集成
+**[虚拟机](/documentation/services/virtual-machines/)**<br/><br/> |• 使用 Microsoft Hyper-V 技术提供计算基础结构即服务 (IaaS)<br/><br/>• 使你能够从标准 Windows Server 或 Linux 映像，或者你提供的映像和数据磁盘灵活地设置和管理永久性虚拟机<br/><br/>• 完全在云中运行本地计算群集工具和应用程序
+**[ 批处理( Batch )](/documentation/services/batch/)**<br/><br/> |• 在完全托管的服务中运行大规模的并行与 批处理( Batch )工作负荷<br/><br/>• 针对虚拟机的托管池提供作业计划和自动缩放<br/><br/>• 允许开发人员构建自定义大型计算解决方案或支持云的现有应用程序<br/>
 
 ### 存储服务
 
@@ -121,7 +121,7 @@ Azure 计算服务是大型计算解决方案的核心，不同的计算服务�
 
 某些大型计算方案涉及到大规模数据流，或者会生成需要进一步处理或分析的数据。为了应对这种情况，Azure 提供了许多数据和分析服务，包括：
 
-* [SQL 数据库](/documentation/services/sql-databases) - 提供托管平台服务中 Microsoft SQL Server 关系数据库管理系统的主要功能。
+* [SQL 数据库](/documentation/services/sql-databases/) - 提供托管平台服务中 Microsoft SQL Server 关系数据库管理系统的主要功能。
 
 * [HDInsight](/documentation/services/hdinsight) - 在云中部署和设置基于 Windows Server 或 Linux 的 Apache Hadoop 群集，用于管理、分析和报告具有高可靠性与可用性的大数据。
 
@@ -132,7 +132,7 @@ Azure 计算服务是大型计算解决方案的核心，不同的计算服务�
 
 * [虚拟网络](/documentation/services/virtual-machines/windows/) - 在 Azure 中创建逻辑隔离的区段，以使用 IPSec 将 Azure 资源连接到本地数据中心或单个客户端计算机；可让大型计算应用程序访问本地数据、Active Directory 服务和许可证服务器
 
-* [服务总线](/documentation/services/service-bus) - 提供多种机制让应用程序进行通信或交换数据，无论这些应用程序位于 Azure、另一个云平台还是数据中心。
+* [服务总线](/documentation/services/service-bus/) - 提供多种机制让应用程序进行通信或交换数据，无论这些应用程序位于 Azure、另一个云平台还是数据中心。
 
 ## 后续步骤
 

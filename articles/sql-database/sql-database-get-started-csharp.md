@@ -278,7 +278,7 @@
 
 ## 其他资源
 
-- [SQL 数据库](/documentation/services/sql-databases)
+- [SQL 数据库](/documentation/services/sql-databases/)
 - [数据库类](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.management.sql.models.database.aspx)
 
 

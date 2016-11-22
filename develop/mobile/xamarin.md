@@ -38,19 +38,19 @@
 
 
 
-查看服务：[移动服务](/documentation/services/mobile-services) | [存储](/documentation/services/storage)
+查看服务：[移动服务](/documentation/services/mobile-services/) | [存储](/documentation/services/storage)
 <!--
 ###同步
 
 - 使用移动服务同步脱机数据 [iOS](/documentation/articles/mobile-services-xamarin-ios-get-started-offline-data/) | [Android](/documentation/articles/mobile-services-xamarin-android-get-started-offline-data/)
 
-查看服务：[移动服务](/documentation/services/mobile-services)
+查看服务：[移动服务](/documentation/services/mobile-services/)
 -->
 ###推送
 
 - 通知中心入门 [iOS](/documentation/articles/xamarin-notification-hubs-ios-push-notification-apns-get-started/)
 
-查看服务： [通知中心](/documentation/services/notification-hubs)
+查看服务： [通知中心](/documentation/services/notification-hubs/)
 
 ##资源
 - [Xamarin 参考查找针对客户端库和服务器脚本的文档](http://developer.xamarin.com/guides/cross-platform/azure/mobile-services)

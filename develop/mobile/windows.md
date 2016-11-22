@@ -38,13 +38,13 @@
 
 - [在 SQL 数据库 中使用移动服务存储结构化数据](/documentation/articles/mobile-services-windows-phone-get-started-data/)
 
-查看服务：[移动服务](/documentation/services/mobile-services) | [存储](/documentation/services/storage)
+查看服务：[移动服务](/documentation/services/mobile-services/) | [存储](/documentation/services/storage)
 
 ###同步
 
 
 
-查看服务：[移动服务](/documentation/services/mobile-services)
+查看服务：[移动服务](/documentation/services/mobile-services/)
 
 ###推送
 
@@ -52,7 +52,7 @@
 - [通过通知中心发送有针对性的通知](/documentation/articles/notification-hubs-windows-phone-push-xplat-segmented-mpns-notification/)
 
 
-查看服务： [通知中心](/documentation/services/notification-hubs)
+查看服务： [通知中心](/documentation/services/notification-hubs/)
 
 ###媒体
 

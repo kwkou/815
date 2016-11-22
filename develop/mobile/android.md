@@ -43,13 +43,13 @@
 - [在 Blob 存储中存储二进制数据](/documentation/articles/storage-java-how-to-use-blob-storage/)
 - [使用表存储来存储简单结构化数据](/documentation/articles/storage-java-how-to-use-table-storage/)
 
-查看服务：[移动服务](/documentation/services/mobile-services) | [存储](/documentation/services/storage)
+查看服务：[移动服务](/documentation/services/mobile-services/) | [存储](/documentation/services/storage/)
 
 ###推送
 
 
 
-查看服务： [通知中心](/documentation/services/notification-hubs)
+查看服务： [通知中心](/documentation/services/notification-hubs/)
 
 <!--
 ###分析</h3>

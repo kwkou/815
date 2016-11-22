@@ -141,6 +141,6 @@ SQL 数据库在 Azure SQL 数据库服务器中创建。运行 **New-AzureRmSql
 
 ## 其他资源
 
-- [Azure SQL 数据库](/documentation/services/sql-databases)
+- [Azure SQL 数据库](/documentation/services/sql-databases/)
 
 <!---HONumber=Mooncake_1010_2016-->
