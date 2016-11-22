@@ -26,7 +26,7 @@ Azure 云服务是适合你的选择吗？ Azure 提供了用于运行应用程�
 <a name="tellmecs"></a>
 ## 告诉我有关云服务的信息
 
-云服务是平台即服务 (PaaS) 的一个例子。与 [App Service](/documentation/services/web-sites) 一样，这种技术旨在支持可缩放、可靠且经济节省的应用程序。正如 App Service，云服务也托管在 VM 中，不过，在 VM 上对云服务的控制力度更大。你可以在云服务 VM 上安装自己的软件，还可以远程接入这些 VM。
+云服务是平台即服务 (PaaS) 的一个例子。与 [App Service](/documentation/services/web-sites/) 一样，这种技术旨在支持可缩放、可靠且经济节省的应用程序。正如 App Service，云服务也托管在 VM 中，不过，在 VM 上对云服务的控制力度更大。你可以在云服务 VM 上安装自己的软件，还可以远程接入这些 VM。
 
 ![cs\_diagram](./media/cloud-services-choose-me/diagram.png)
 

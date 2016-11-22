@@ -86,7 +86,7 @@
 - [使用 SQL Server Management Studio 连接到 SQL 数据库并执行示例 T-SQL 查询](/documentation/articles/sql-database-connect-query-ssms/)
 - [将数据库导出到 BACPAC](/documentation/articles/sql-database-export/)
 - [业务连续性概述](/documentation/articles/sql-database-business-continuity/)
-- [SQL 数据库文档](/documentation/services/sql-databases)
+- [SQL 数据库文档](/documentation/services/sql-databases/)
 
 
 

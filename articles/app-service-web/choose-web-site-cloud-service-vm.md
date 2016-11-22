@@ -171,7 +171,7 @@ Azure App Service 是适合该情况的强大解决方案，原因是其可免�
 * [Azure App Service](/documentation/services/app-service/)
 * [Azure 云服务](/documentation/services/cloud-services/)
 * [Azure 虚拟机](/documentation/services/virtual-machines/)
-* [Service Fabric](/documentation/services/service-fabric)
+* [Service Fabric](/documentation/services/service-fabric/)
 
 <!-- URL List -->
 

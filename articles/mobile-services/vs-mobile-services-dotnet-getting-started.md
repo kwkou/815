@@ -81,6 +81,6 @@
 	await todoTable.DeleteAsync(item);
 
 
-[详细了解移动服务](/documentation/services/mobile-services)
+[详细了解移动服务](/documentation/services/mobile-services/)
 
 <!---HONumber=Mooncake_0215_2016-->

@@ -29,7 +29,7 @@
 
  - 有关以代码方式操作队列的详细信息，请参阅[通过 .NET 开始使用 Azure 队列存储](/documentation/articles/storage-dotnet-how-to-use-queues/)。
  - 有关 Azure 存储空间的常规信息，请参阅[存储空间文档](/documentation/services/storage)。
- - 有关 Azure 云服务的常规信息，请参阅[云服务文档](/documentation/services/cloud-services)。
+ - 有关 Azure 云服务的常规信息，请参阅[云服务文档](/documentation/services/cloud-services/)。
  - 有关对 ASP.NET 应用程序进行编程的详细信息，请参阅 [ASP.NET](http://www.asp.net)。
 
 

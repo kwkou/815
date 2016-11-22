@@ -98,7 +98,7 @@
 ## 其他资源
 
 - [业务连续性概述](/documentation/articles/sql-database-business-continuity/)
-- [SQL 数据库文档](/documentation/services/sql-databases)
+- [SQL 数据库文档](/documentation/services/sql-databases/)
 
 
 <!--Image references-->

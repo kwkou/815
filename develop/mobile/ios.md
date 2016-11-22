@@ -38,13 +38,13 @@
 
 
 
-查看服务：[移动服务](/documentation/services/mobile-services) | [存储](/documentation/services/storage)
+查看服务：[移动服务](/documentation/services/mobile-services/) | [存储](/documentation/services/storage)
 
 ###同步
 
 - [使用移动服务同步脱机数据](/documentation/articles/mobile-services-ios-get-started-offline-data/)
 
-查看服务：[移动服务](/documentation/services/mobile-services)
+查看服务：[移动服务](/documentation/services/mobile-services/)
 
 ###推送
 
@@ -52,7 +52,7 @@
 - [使用通知中心广播通知](/documentation/articles/notification-hubs-ios-xplat-segmented-apns-push-notification/)
 - [向已验证的用户发送通知](/documentation/articles/mobile-services-javascript-backend-ios-push-notifications-app-users/)
 
-查看服务： [通知中心](/documentation/services/notification-hubs)
+查看服务： [通知中心](/documentation/services/notification-hubs/)
 
 
 

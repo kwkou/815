@@ -29,7 +29,7 @@ Azure Blob 存储是一项可存储大量非结构化数据的服务，用户可
 
 - 有关以编程方式操作 blob 的详细信息，请参阅[通过 .NET 开始使用 Azure Blob 存储](/documentation/articles/storage-dotnet-how-to-use-blobs/)。
 - 有关 Azure 存储空间的常规信息，请参阅[存储空间文档](/documentation/services/storage)。
-- 有关 Azure 云服务的常规信息，请参阅[云服务文档](/documentation/services/cloud-services)。
+- 有关 Azure 云服务的常规信息，请参阅[云服务文档](/documentation/services/cloud-services/)。
 - 有关对 ASP.NET 应用程序进行编程的详细信息，请参阅 [ASP.NET](http://www.asp.net)。
 
 ## 使用代码访问 blob 容器
