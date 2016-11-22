@@ -20,7 +20,7 @@
 # 使用 Azure PowerShell 命令可创建一个空的云服务容器
 本文介绍如何使用 Azure PowerShell cmdlet 快速创建云服务容器。请执行以下步骤：
 
-1. 从 [Azure PowerShell 下载](http://aka.ms/webpi-azps)页安装 Azure PowerShell cmdlet。
+1. 从 Azure PowerShell 下载页安装 Azure PowerShell cmdlet。
 2. 打开 PowerShell 命令提示符。
 3. 使用 [Add-AzureAccount](https://msdn.microsoft.com/zh-cn/library/dn495128.aspx) 登录。
 
