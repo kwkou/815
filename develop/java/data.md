@@ -33,6 +33,4 @@ pageTitle="数据服务 - Azure 微软云" metakeywords=""
 <p>您可以使用 SQL Server Management Studio 管理 SQL 数据库 逻辑服务器和数据库。本文包括有关创建和管理数据库、创建和管理登录，以及使用动态管理视图进行监视的详细信息。</p>
 <h3>教程：<a href="http://petclinic.cloudapp.net/">将 Java Spring Framework 应用程序迁移到 Azure 和 Azure SQL 数据库</a></h3>
 <p>此端到端教程演示了如何将完整的 Spring Framework 应用程序（Java Pet Clinic）迁移到 Azure，包括将 Azure SQL 数据库 用于使用最新 SQL Server JDBC 驱动程序的 JPA/Hibernate。</p>
-<!--
-<h3>Tutorial: <a href="/documentation/articles/documentdb-java-application/">Build a Java web application using DocumentDB</a></h3>
-<p>This tutorial shows you how to use the Azure DocumentDB service to store and access data from a Java application hosted on Azure Websites.</p>-->
+
