@@ -5,7 +5,8 @@
 	documentationCenter="ios"
 	authors="wesmc7777"
 	manager="erikre"
-	editor=""/>
+	editor=""/>  
+
 
 <tags
 	ms.service="notification-hubs"
@@ -13,9 +14,10 @@
 	ms.tgt_pltfrm="ios"
 	ms.devlang="objective-c"
 	ms.topic="article"
-	ms.date="06/29/2016"
-	wacn.date="08/08/2016"
-	ms.author="wesmc"/>
+	ms.date="10/03/2016"
+	ms.author="wesmc"
+	wacn.date="11/22/2016"/>  
+
 
 # 使用通知中心将本地化的突发新闻发送到 iOS 设备
 
@@ -47,9 +49,7 @@
 
 ##模板概念
 
-在[使用通知中心发送突发新闻]中，你构建了一个使用**标记**订阅不同新闻类别通知的应用程序。
-但是，很多应用程序针对多个市场，需要本地化。这意味着通知内容本身必须本地化且传递到正确的设备组
-。在本主题中，我们将演示如何使用通知中心的**模板**功能轻松传递本地化的突发新闻通知。
+在[使用通知中心发送突发新闻]中，你构建了一个使用**标记**订阅不同新闻类别通知的应用程序。但是，很多应用程序针对多个市场，需要本地化。这意味着通知内容本身必须本地化且传递到正确的设备组。在本主题中，我们将演示如何使用通知中心的**模板**功能轻松传递本地化的突发新闻通知。
 
 注意：发送本地化的通知的一种方式是创建每个标签的多个版本。例如，要支持英语、法语和汉语，我们需要三种不同的标签用于世界新闻：“world\_en”、“world\_fr”和“world\_ch”。我们然后必须将世界新闻的本地化版本分别发送到这些标签。在本主题中，我们使用模板来避免增生标签和发送多个消息的要求。
 
@@ -73,7 +73,7 @@
 
 ##应用程序用户界面
 
-我们现在将修改你在[使用通知中心发送突发新闻]主题中创建的“突发新闻”应用，以使用模板发送本地化的突发新闻。
+我们现在修改在[使用通知中心发送突发新闻]主题中创建的“突发新闻”应用，以使用模板发送本地化的突发新闻。
 
 
 在 MainStoryboard\_iPhone.storyboard 中，添加使用我们支持的三种语言的分段控件：英语、法语和汉语。
@@ -202,10 +202,10 @@
 		    [request setValue:categoryTag forHTTPHeaderField:@"ServiceBusNotification-Tags"];
 
 			// Template notification
-	        json = [NSString stringWithFormat:@"{"messageParam":"Breaking %@ News : %@","
-					"News_English":"Breaking %@ News in English : %@","
-					"News_French":"Breaking %@ News in French : %@","
-					"News_Mandarin":"Breaking %@ News in Mandarin : %@","
+	        json = [NSString stringWithFormat:@"{\"messageParam\":\"Breaking %@ News : %@\","
+					\"News_English\":\"Breaking %@ News in English : %@\","
+					\"News_French\":\"Breaking %@ News in French : %@\","
+					\"News_Mandarin\":\"Breaking %@ News in Mandarin : %@\","
 	                categoryTag, self.notificationMessage.text,
 	                categoryTag, self.notificationMessage.text,  // insert English localized news here
 	                categoryTag, self.notificationMessage.text,  // insert French localized news here
@@ -254,7 +254,12 @@
 - [使用通知中心通知用户：移动服务]
 
 
+
+
+
+
 <!-- Images. -->
+
 
 [13]: ./media/notification-hubs-ios-send-localized-breaking-news/ios_localized1.png
 [14]: ./media/notification-hubs-ios-send-localized-breaking-news/ios_localized2.png
@@ -266,11 +271,16 @@
 
 <!-- URLs. -->
 
+[How To: Service Bus Notification Hubs (iOS Apps)]: http://msdn.microsoft.com/zh-cn/library/jj927168.aspx
 [使用通知中心发送突发新闻]: /documentation/articles/notification-hubs-ios-xplat-segmented-apns-push-notification/
-
 [使用通知中心通知用户：ASP.NET]: /documentation/articles/notification-hubs-aspnet-backend-windows-dotnet-wns-notification/
 [使用通知中心通知用户：移动服务]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users/
+[Submit an app page]: http://go.microsoft.com/fwlink/p/?LinkID=266582
+[My Applications]: http://go.microsoft.com/fwlink/p/?LinkId=262039
+[Get started with Mobile Services]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started/#create-new-service/
 
+[wns object]: http://go.microsoft.com/fwlink/p/?LinkId=260591
+[Notification Hubs Guidance]: http://msdn.microsoft.com/zh-cn/library/jj927170.aspx
+[Notification Hubs How-To for iOS]: http://msdn.microsoft.com/zh-cn/library/jj927168.aspx
 
-
-<!---HONumber=Mooncake_0801_2016-->
+<!---HONumber=Mooncake_1114_2016-->
