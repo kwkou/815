@@ -1,6 +1,6 @@
 <properties
 	pageTitle="SQL 数据库 + Blob 存储实现托管备份操作手册"
-    description=""
+    description="SQL 数据库 + Blob 存储实现托管备份操作手册"
     services=""
     documentationCenter=""
     authors=""

@@ -1,6 +1,6 @@
 <properties 
 pageTitle="Azure 开发人员中心：Media Services" 
-description="" 
+description="Azure 开发人员中心：Media Services" 
 services="Media Services" 
 documentationCenter="Develop" 
 authors="" 

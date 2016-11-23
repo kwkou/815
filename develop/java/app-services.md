@@ -1,7 +1,7 @@
 <properties 
   pageTitle="应用服务 - Azure 微软云"
   metakeywords="" 
-  description="" 
+  description="应用服务 - Azure 微软云" 
   services="" 
   documentationCenter="java-app-services" 
   authors="" 

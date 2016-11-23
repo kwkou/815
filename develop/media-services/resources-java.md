@@ -1,7 +1,7 @@
 <properties 
   pageTitle="媒体服务资源-Java - Azure 微软云"
   metakeywords="" 
-  description="" 
+  description="媒体服务资源-Java - Azure 微软云" 
   services="" 
   documentationCenter="media-services-resources-java" 
   authors="" 

@@ -1,6 +1,6 @@
 <properties 
 pageTitle="Azure 开发人员中心：开源软件" 
-description="" 
+description="Azure 开发人员中心：开源软件" 
 services="" 
 documentationCenter="Develop" 
 authors="" 

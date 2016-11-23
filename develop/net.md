@@ -1,7 +1,7 @@
 <properties 
 pageTitle="Azure 开发人员中心：.NET" 
 metaKeywords=".NET" 
-description="" 
+description="Azure 开发人员中心：.NET" 
 services=".NET" 
 documentationCenter="Develop" 
 authors="" 

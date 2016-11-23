@@ -1,6 +1,6 @@
 <properties 
 pageTitle="Best Practice" 
-description="" 
+description="Best Practice" 
 services="" 
 documentationCenter="Best Practice" 
 authors="" 

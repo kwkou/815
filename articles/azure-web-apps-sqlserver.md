@@ -1,6 +1,6 @@
 <properties
 	pageTitle="SQL 数据库 + Web 应用操作手册"
-    description=""
+    description="SQL 数据库 + Web 应用操作手册"
     services=""
     documentationCenter=""
     authors=""

@@ -1,6 +1,6 @@
 <properties
 	pageTitle="Azure SQL 数据库用户手册 - 第一部分 | Azure"
-	description=""
+	description="Azure SQL 数据库用户手册 - 第一部分 | Azure"
 	services=""
 	documentationCenter=""
 	authors="Lei Zhang"

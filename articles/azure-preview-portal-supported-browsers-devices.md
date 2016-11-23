@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="支持的浏览器和设备" 
-	description="" 
+	description="支持的浏览器和设备" 
 	services="" 
 	documentationCenter="" 
 	authors="flanakin" 

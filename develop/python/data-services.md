@@ -1,7 +1,7 @@
 <properties 
   pageTitle="Python-数据服务 - Azure 微软云"
   metakeywords="" 
-  description="" 
+  description="Python-数据服务 - Azure 微软云" 
   services="" 
   documentationCenter="python" 
   authors="" 
