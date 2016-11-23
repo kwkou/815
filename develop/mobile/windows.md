@@ -1,4 +1,4 @@
-<properties pageTitle="移动服务-Windows - Azure 微软云" metakeywords="" description="移动服务-Windows - Azure 微软云" metakeywords="" description="" services="" documentationCenter="Windows" authors="" manager="Tiffena" editor="EricChen" services="" documentationCenter="Windows" authors="" manager="Tiffena" editor="EricChen"/>
+<properties pageTitle="移动服务-Windows - Azure 微软云" metakeywords="" description="移动服务-Windows - Azure 微软云" services="" documentationCenter="Windows" authors="" manager="Tiffena" editor="EricChen"/>
   
 <tags ms.service="mobile-services" ms.date="" wacn.date="11/17/2016"/>
 
