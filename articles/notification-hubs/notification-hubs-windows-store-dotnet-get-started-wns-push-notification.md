@@ -114,7 +114,7 @@
 </li>
 </ol>
 
-&emsp;&emsp;![](./media/notification-hubs-windows-store-dotnet-get-started-wns-push-notification/notification-hub-configure-wns.png)
+&emsp;&emsp;![](./media/notification-hubs-windows-store-dotnet-get-started/notification-hub-configure-wns.png)
 
 
 你的通知中心现在已配置为使用 WNS，并且你有连接字符串用于注册你的应用程序和发送通知。
@@ -184,7 +184,7 @@
 
 在 [Azure 门户预览](https://portal.azure.cn/)中使用通知中心的“测试发送”按钮（如以下屏幕中所示）来发送通知，可以在应用中快速地测试通知的接收情况。
 
-![](./media/notification-hubs-windows-store-dotnet-get-started-wns-push-notification/notification-hub-test-send-wns.png)  
+![](./media/notification-hubs-windows-store-dotnet-get-started/notification-hub-test-send-wns.png)  
 
 
 通常，推送通知是在后端服务（例如，移动服务，或者使用兼容库的 ASP.NET）中发送的。如果你的后端没有可用的库，则你也可以使用 REST API 直接发送通知消息。
@@ -223,7 +223,7 @@
 
 	这将使用 <a href="http://www.nuget.org/packages/Microsoft.Azure.NotificationHubs/">Microsoft.Azure.Notification Hubs NuGet 包</a>添加对 Azure 通知中心 SDK 的引用。
 
-	![](./media/notification-hubs-windows-store-dotnet-get-started-wns-push-notification/notification-hub-package-manager.png)
+	![](./media/notification-hubs-windows-store-dotnet-get-started/notification-hub-package-manager.png)
 
 
 4. 打开文件 Program.cs 并添加以下 `using` 语句：
