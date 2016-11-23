@@ -21,7 +21,7 @@
 
 # Azure 服务管理 (asm) 模式下的 Azure CLI 命令
 
-[AZURE.INCLUDE [了解部署模型](../../includes/learn-about-deployment-models-classic-include.md)] [Resource Manager model](/documentation/articles/azure-cli-arm-commands/)。
+[AZURE.IMPORTANT]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model/)。本文介绍使用经典部署模型。Azure 建议大多数新部署使用 [Resource Manager model](/documentation/articles/azure-cli-arm-commands/)。
 
 本文提供经常用于在经典部署模型中创建和管理 Azure 资源的 Azure CLI 命令的语法和选项。通过在 Azure 服务管理 (asm) 模式下运行 CLI 可以访问这些命令。本参考内容并不完整，你的 CLI 版本可能会显示略微不同的命令或参数。
 
@@ -42,7 +42,7 @@
 >[AZURE.NOTE] CLI 的 Azure Resource Manager 模式与 Azure 服务管理模式互斥。即，在一种模式下创建的资源不能通过另一种模式进行管理。
 
 ## 管理帐户信息和发布设置
-CLI 可以连接到帐户的一种方式是使用 Azure 订阅信息。（有关其他选项，请参阅[从 Azure CLI 连接到 Azure 订阅](/documentation/articles/xplat-cli-connect)。） 可以从 Azure 经典门户中的发布设置文件中获取此信息，如下所述。可以导入发布设置文件作为永久性本地配置设置，CLI 会将此设置用于后续操作。只需导入一次发布设置即可。
+CLI 可以连接到帐户的一种方式是使用 Azure 订阅信息。（有关其他选项，请参阅[从 Azure CLI 连接到 Azure 订阅](/documentation/articles/xplat-cli-connect/)。） 可以从 Azure 经典门户中的发布设置文件中获取此信息，如下所述。可以导入发布设置文件作为永久性本地配置设置，CLI 会将此设置用于后续操作。只需导入一次发布设置即可。
 
 **account download [options]**
 
