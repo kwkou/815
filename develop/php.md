@@ -1,6 +1,6 @@
 <properties 
 pageTitle="Azure 开发人员中心：PHP" 
-description="" 
+description="Azure 开发人员中心：PHP" 
 services="PHP" 
 documentationCenter="Develop" 
 authors="" 

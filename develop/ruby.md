@@ -1,6 +1,6 @@
 <properties 
 pageTitle="Azure 开发人员中心：RUBY" 
-description="" 
+description="Azure 开发人员中心：RUBY" 
 services="RUBY" 
 documentationCenter="Develop" 
 authors="" 

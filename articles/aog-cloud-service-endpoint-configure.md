@@ -1,7 +1,7 @@
 
 <properties 
 	pageTitle="终结点（Endpoint）介绍和相关配置" 
-	description="" 
+	description="终结点（Endpoint）介绍和相关配置" 
 	services="cloud-service" 
 	documentationCenter="" 
 	authors=""

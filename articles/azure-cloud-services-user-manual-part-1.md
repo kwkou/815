@@ -1,6 +1,6 @@
 <properties
 	pageTitle="Azure 云服务操作手册 - 第一部分 | Azure"
-	description=""
+	description="Azure 云服务操作手册 - 第一部分 | Azure"
 	services=""
 	documentationCenter=""
 	authors="Lei Zhang"

@@ -1,7 +1,7 @@
 <properties 
   pageTitle="Php-工具 - Azure 微软云"
   metakeywords="" 
-  description="" 
+  description="Php-工具 - Azure 微软云" 
   services="" 
   documentationCenter="php" 
   authors="" 

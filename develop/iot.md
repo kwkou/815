@@ -1,6 +1,6 @@
 <properties 
 pageTitle="Azure 开发人员中心： Azure IoT" 
-description="" 
+description="Azure 开发人员中心： Azure IoT" 
 services="IoT" 
 documentationCenter="Develop" 
 authors="" 

@@ -1,7 +1,7 @@
 <properties 
   pageTitle="Ruby-应用服务 - Azure 微软云"
   metakeywords="" 
-  description="" 
+  description="Ruby-应用服务 - Azure 微软云" 
   services="" 
   documentationCenter="ruby" 
   authors="" 

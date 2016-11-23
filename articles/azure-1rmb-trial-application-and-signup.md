@@ -1,6 +1,6 @@
 <properties
 	pageTitle="Azure 1元试用申请和注册指南"
-    description=""
+    description="Azure 1元试用申请和注册指南"
     services=""
     documentationCenter=""
     authors=""

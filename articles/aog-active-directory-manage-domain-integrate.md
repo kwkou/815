@@ -1,7 +1,7 @@
 
 <properties 
 	pageTitle="使用 PowerShell 在 Azure Active Directory 中管理域的集成方式" 
-	description="" 
+	description="使用 PowerShell 在 Azure Active Directory 中管理域的集成方式" 
 	services="Active Directory" 
 	documentationCenter="" 
 	authors=""

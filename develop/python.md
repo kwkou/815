@@ -1,6 +1,6 @@
 <properties 
 pageTitle="Azure 开发人员中心：PYTHON" 
-description="" 
+description="Azure 开发人员中心：PYTHON" 
 services="PYTHON" 
 documentationCenter="Develop" 
 authors="" 

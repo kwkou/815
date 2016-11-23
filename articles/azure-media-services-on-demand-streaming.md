@@ -1,6 +1,6 @@
 <properties
 	pageTitle="Azure 媒体服务实现视频点播操作手册"
-    description=""
+    description="Azure 媒体服务实现视频点播操作手册"
     services=""
     documentationCenter=""
     authors=""

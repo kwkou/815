@@ -1,7 +1,7 @@
 <properties 
   pageTitle="媒体服务开发人员工具 - Azure 微软云"
   metakeywords="" 
-  description="" 
+  description="媒体服务开发人员工具 - Azure 微软云" 
   services="" 
   documentationCenter="media-services-dev-tools" 
   authors="" 

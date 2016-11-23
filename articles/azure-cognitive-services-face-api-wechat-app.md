@@ -1,6 +1,6 @@
 <properties
 	pageTitle="人脸识别API+微信应用开发操作手册"
-    description=""
+    description="人脸识别API+微信应用开发操作手册"
     services=""
     documentationCenter=""
     authors=""

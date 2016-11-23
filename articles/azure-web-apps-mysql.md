@@ -1,6 +1,6 @@
 <properties
 	pageTitle="MySQL 数据库 + Web 应用操作手册"
-    description=""
+    description="MySQL 数据库 + Web 应用操作手册"
     services=""
     documentationCenter=""
     authors=""
