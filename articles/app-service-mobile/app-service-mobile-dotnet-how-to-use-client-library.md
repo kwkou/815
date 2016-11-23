@@ -574,7 +574,7 @@ SDK 会在提取记录前执行隐式 `PushAsync()`。
 
 本部分介绍以下主题：
 
-+ [客户端托管的身份验证](#client-flow)
++ [客户端托管的身份验证](#clientflow)
 + [服务器托管的身份验证](#serverflow)
 + [缓存身份验证令牌](#caching)
 
