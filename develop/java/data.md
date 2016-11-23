@@ -1,6 +1,6 @@
 <properties 
 pageTitle="数据服务 - Azure 微软云" metakeywords="" 
-  description="数据服务 - Azure 微软云" metakeywords="" 
+  description="数据服务 - Azure 微软云"
   services="" 
   documentationCenter="java-data" 
   authors="" 

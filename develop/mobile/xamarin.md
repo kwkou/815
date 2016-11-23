@@ -1,4 +1,4 @@
-<properties pageTitle="移动服务-xamarin - Azure 微软云" metakeywords="" description="移动服务-xamarin - Azure 微软云" metakeywords="" description="" services="" documentationCenter="xamarin" authors="" manager="Tiffena" editor="EricChen" services="" documentationCenter="xamarin" authors="" manager="Tiffena" editor="EricChen"/>
+<properties pageTitle="移动服务-xamarin - Azure 微软云" metakeywords="" description="移动服务-xamarin - Azure 微软云" services="" documentationCenter="xamarin" authors="" manager="Tiffena" editor="EricChen"/>
   
 <tags ms.service="mobile-services" ms.date="" wacn.date="11/02/2015"/>
 
