@@ -3,10 +3,11 @@
 	description="在本教程中，你将了解如何使用 Azure 通知中心将推送通知发送到 iOS 应用程序。"
 	services="notification-hubs"
 	documentationCenter="ios"
-    keywords="推送通知, 推送通知, ios 推送通知"
+	keywords="推送通知, 推送通知, ios 推送通知"
 	authors="wesmc7777"
 	manager="erikre"
-	editor=""/>
+	editor=""/>  
+
 
 <tags
 	ms.service="notification-hubs"
@@ -14,9 +15,10 @@
 	ms.tgt_pltfrm="mobile-ios"
 	ms.devlang="objective-c"
 	ms.topic="hero-article"
-	ms.date="06/29/2016"
-	wacn.date="11/11/2016"
-	ms.author="wesmc"/>
+	ms.date="10/03/2016"
+	ms.author="wesmc"
+	wacn.date="11/22/2016"/>  
+
 
 # 通过 Azure 通知中心向 iOS 发送推送通知
 
@@ -24,9 +26,9 @@
 
 ##概述
 
-> [AZURE.NOTE] 若要完成本教程，你必须有一个有效的 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个免费试用帐户。有关详细信息，请参阅 [Azure 试用](/pricing/free-trial)。
+> [AZURE.NOTE] 若要完成本教程，你必须有一个有效的 Azure 帐户。如果你没有帐户，可以创建一个试用帐户，只需几分钟即可完成。有关详细信息，请参阅 [Azure 1 元试用](/pricing/1rmb-trial/)。
 
-本教程演示如何使用 Azure 通知中心将推送通知发送到 iOS 应用程序。你将创建一个空白 iOS 应用，它使用 Apple Push Notification 服务 (APNs) 接收推送通知。
+本教程演示如何使用 Azure 通知中心将推送通知发送到 iOS 应用程序。你将创建一个空白 iOS 应用，它使用 Apple 推送通知服务 (APNS) 接收推送通知。
 
 完成后，你将能够使用通知中心将推送通知广播到运行你的应用的所有设备。
 
@@ -34,7 +36,7 @@
 
 [AZURE.INCLUDE [notification-hubs-hero-slug](../../includes/notification-hubs-hero-slug.md)]
 
-你可以[在 GitHub 上](https://github.com/Azure/azure-notificationhubs-samples/tree/master/iOS/GetStartedNH/GetStarted)找到本教程的已完成代码。
+可以[在 GitHub 上](https://github.com/Azure/azure-notificationhubs-samples/tree/master/iOS/GetStartedNH/GetStarted)找到本教程的已完成代码。
 
 ##先决条件
 
@@ -51,7 +53,6 @@
 
 [AZURE.INCLUDE [通知中心：启用 Apple 推送通知](../../includes/notification-hubs-enable-apple-push-notifications.md)]
 
-<!--
 ##针对 iOS 推送通知配置通知中心
 
 本部分将引导你使用创建的 **.p12** 推送证书创建新的通知中心并配置 APNS 身份验证。如果你想要使用已创建的通知中心，可以跳到步骤 5。
@@ -60,15 +61,15 @@
 
 <ol start="6">
 <li>
-<p>单击<b>“设置”</b>边栏选项卡中的<b>“通知服务”</b>按钮，然后选择<b>“Apple (APNS)”</b>。单击<b>“上载证书”</b>，然后选择你先前导出的 <b>.p12</b> 文件。确保同时指定正确的密码。</p>
-<p>由于此项目用于开发，因此请务必选择<b>“沙箱”</b>模式。仅当你想要将推送通知发送给从应用商店购买你应用的用户时，才使用<b>“生产”</b>模式。</p>
+<p>单击“设置”边栏选项卡中的“通知服务”按钮，然后选择“Apple (APNS)”。<b></b><b></b><b></b>单击“上载证书”，然后选择你先前导出的 <b>.p12</b> 文件。<b></b>确保同时指定正确的密码。</p>
+<p>由于此项目用于开发，因此请务必选择“沙箱”模式。<b></b>仅当你想要将推送通知发送给从应用商店购买你应用的用户时，才使用“生产”模式。<b></b></p>
 </li>
 </ol>
-&emsp;&emsp;![在 Azure 门户中配置 APNS](./media/notification-hubs-ios-get-started/notification-hubs-apple-config.png)
+&emsp;&emsp;![在 Azure 门户预览中配置 APNS](./media/notification-hubs-ios-get-started/notification-hubs-apple-config.png)
 
-&emsp;&emsp;![在 Azure 门户中配置 APNS 证书](./media/notification-hubs-ios-get-started/notification-hubs-apple-config-cert.png)
+&emsp;&emsp;![在 Azure 门户预览中配置 APNS 证书](./media/notification-hubs-ios-get-started/notification-hubs-apple-config-cert.png)
 
--->
+
 
 你的通知中心现在已配置为使用 APNS，并且你有连接字符串用于注册你的应用和发送推送通知。
 
@@ -76,25 +77,29 @@
 
 1. 在 Xcode 中，创建新的 iOS 项目，然后选择“单视图应用程序”模板。
 
-   	![Xcode — 单一视图应用程序][8]
+   	![Xcode — 单一视图应用程序][8]  
+
 
 2. 设置新项目的选项时，请务必使用前面在 Apple 开发人员门户上设置捆绑 ID 时使用的同一**产品名称**和**组织标识符**。
 
-	![Xcode — 项目选项][11]
+	![Xcode — 项目选项][11]  
+
 
 3. 在“目标”下，单击你的项目名称，单击“生成设置”选项卡，展开“代码签名标识”，然后在“调试”下设置你的代码签名标识。将“级别”从“基本”切换为“全部”，然后将“预配配置文件”设为前面创建的预配配置文件。
 
 	如果屏幕未显示在 Xcode 中创建的新预配配置文件，请尝试刷新签名标识的配置文件。单击菜单栏上的“Xcode”，再依次单击“首选项”、“帐户”选项卡、“查看详细信息”按钮、你的签名标识，然后单击右下角的刷新按钮。
 
-   	![Xcode — 预配配置文件][9]
+   	![Xcode — 预配配置文件][9]  
+
 
 4. 下载[移动服务 iOS SDK 版本 1.2.4]，然后将文件解压缩。在 Xcode 中，右键单击你的项目，然后单击“将文件添加到”选项，将 **WindowsAzureMessaging.framework** 文件夹添加到 Xcode 项目。选择“需要时复制项”，然后单击“添加”。
 
 	>[AZURE.NOTE] 通知中心 SDK 目前不支持 Xcode 7 上的 Bitcode。你必须在项目的“构建选项”中将“启用 Bitcode”设置为“否”。
 
-   	![解压缩 Azure SDK][10]
+   	![解压缩 Azure SDK][10]  
 
-5. 将新的标头文件添加到名为 `HubInfo.h` 的项目。此文件将保存通知中心的常量。添加以下定义，然后将字符串文本占位符替换为你的中心名称以及前面记下的 DefaultListenSharedAccessSignature。
+
+5. 将新的标头文件添加到名为 `HubInfo.h` 的项目。此文件将保存通知中心的常量。添加以下定义，然后将字符串文本占位符替换为你的 *中心名称* 以及前面记下的 *DefaultListenSharedAccessSignature*。
 
 		#ifndef HubInfo_h
 		#define HubInfo_h
@@ -109,7 +114,7 @@
          #import <WindowsAzureMessaging/WindowsAzureMessaging.h> 
 		 #import "HubInfo.h"
 		
-7. 根据你的 iOS 版本，在 `AppDelegate.m file` 的 `didFinishLaunchingWithOptions` 方法中添加以下代码。此代码将向 APNs 注册设备句柄：
+7. 根据 iOS 版本，在 `AppDelegate.m file` 的 `didFinishLaunchingWithOptions` 方法中添加以下代码。此代码将向 APNs 注册设备句柄：
 
 	对于 iOS 8：
 
@@ -161,16 +166,17 @@
 ## 发送测试推送通知
 
 
-你可以在 [Azure 门户]中通过中心边栏选项卡中的“故障排除”部分（使用“测试发送”选项）发送推送通知，以在你的应用中测试通知接收。
+可以在 [Azure 门户预览]中通过中心边栏选项卡中的“故障排除”部分（使用“测试发送”选项）发送推送通知，以便测试应用的通知接收功能。
 
-![Azure 门户 — 测试发送][30]
+![Azure 门户预览 — 测试发送][30]  
+
 
 [AZURE.INCLUDE [notification-hubs-sending-notifications-from-the-portal](../../includes/notification-hubs-sending-notifications-from-the-portal.md)]
 
 
 ## （可选）从应用发送推送通知
 
->[AZURE.IMPORTANT] 提供这个从客户端应用发送通知查询的示例仅供学习。由于这需要将 `DefaultFullSharedAccessSignature` 呈现在客户端应用中，这使你的通知中心面临这样的风险：即用户可能会获得相应访问权限将未经授权的通知发送到你的客户端。
+>[AZURE.IMPORTANT] 提供这个从客户端应用发送通知查询的示例仅供学习。由于这需要将 `DefaultFullSharedAccessSignature` 呈现在客户端应用中，这使您的通知中心面临这样的风险：即用户可能会获得相应访问权限将未经授权的通知发送到您的客户端。
 
 如果你要从应用内发送推送通知，本节提供如何使用 REST 接口执行此操作的示例。
 
@@ -182,7 +188,8 @@
 
 	该视图应如下所示：
 
-	![Xcode 设计器][32]
+	![Xcode 设计器][32]  
+
 
 
 2. 为与视图连接的标签和文本字段[添加容器](https://developer.apple.com/library/ios/recipes/xcode_help-IB_connections/chapters/CreatingOutlet.html)，并更新 `interface` 定义，以支持 `UITextFieldDelegate` 和 `NSXMLParserDelegate`。添加如下所示的三个属性声明，以帮助调用 REST API 和分析响应。
@@ -205,7 +212,7 @@
 
 		@end
 
-3. 打开 `HubInfo.h` 并添加以下常量，用于向中心发送通知。将占位符字符串文本替换为实际的 DefaultFullSharedAccessSignature 连接字符串。
+3. 打开 `HubInfo.h` 并添加以下常量，用于向中心发送通知。将占位符字符串文本替换为实际的 *DefaultFullSharedAccessSignature* 连接字符串。
 
 		#define API_VERSION @"?api-version=2015-01"
 		#define HUBFULLACCESS @"<Enter Your DefaultFullSharedAccess Connection string>"
@@ -215,7 +222,7 @@
 		#import <CommonCrypto/CommonHMAC.h>
 		#import "HubInfo.h"
 
-5. 在 `ViewController.m` 中，将以下代码添加到接口实现。此代码将会分析你的 DefaultFullSharedAccessSignature 连接字符串。如 [REST API 参考](http://msdn.microsoft.com/library/azure/dn495627.aspx)中所述，此类已分析的信息将用于生成 **Authorization** 请求标头的 SaS 令牌。
+5. 在 `ViewController.m` 中，将以下代码添加到接口实现。此代码将会分析你的 *DefaultFullSharedAccessSignature* 连接字符串。如 [REST API 参考](http://msdn.microsoft.com/zh-cn/library/azure/dn495627.aspx)中所述，此类已分析的信息将用于生成 **Authorization** 请求标头的 SaS 令牌。
 
 		NSString *HubEndpoint;
 		NSString *HubSasKeyName;
@@ -251,7 +258,7 @@
 			}
 		}
 
-6. 在 `ViewController.m` 中更新 `viewDidLoad` 方法，以便在加载视图时分析连接字符串。此外，将如下所示的实用程序方法添加到接口实现。
+6. 在 `ViewController.m` 中更新 `viewDidLoad` 方法，以便在加载视图时解析连接字符串。此外，将如下所示的实用程序方法添加到接口实现。
 
 
 		- (void)viewDidLoad
@@ -278,7 +285,7 @@
 
 
 
-7. 如 [REST API 参考](http://msdn.microsoft.com/library/azure/dn495627.aspx)中所述，在 `ViewController.m` 中，将以下代码添加到接口实现，以生成将在 **Authorization** 标头中提供的 SaS 授权令牌。
+7. 如 [REST API 参考](http://msdn.microsoft.com/zh-cn/library/azure/dn495627.aspx)中所述，在 `ViewController.m` 中，将以下代码添加到接口实现，以生成将在 **Authorization** 标头中提供的 SaS 授权令牌。
 
 		-(NSString*) generateSasToken:(NSString*)uri
 		{
@@ -386,7 +393,7 @@
 		}
 
 
-9. 在 `ViewController.m` 中，添加以下委派方法，以支持关闭文本字段的键盘。按住 Ctrl 并从文本字段拖到接口设计器中的视图控制器图标，以将视图控制器设为容器委派。
+9. 在 `ViewController.m` 中，添加以下委托方法，以支持关闭文本字段的键盘。按住 Ctrl 并从文本字段拖到接口设计器中的视图控制器图标，以将视图控制器设为容器委派。
 
 		//===[ Implement UITextFieldDelegate methods ]===
 
@@ -397,7 +404,7 @@
 		}
 
 
-10. 在 `ViewController.m` 中添加以下委派方法，以支持使用 `NSXMLParser` 分析响应。
+10. 在 `ViewController.m` 中添加以下委托方法，以支持使用 `NSXMLParser` 解析响应。
 
 		//===[ Implement NSXMLParserDelegate methods ]===
 
@@ -441,7 +448,7 @@
 
 > [AZURE.NOTE] 如果在 Xcode7 中遇到有关 bitcode 支持的生成错误，应该在 Xcode 中将“生成设置”>“启用 Bitcode (ENABLE\_BITCODE)”更改为“否”。通知中心 SDK 目前不支持 Bitcode。
 
-可以在 Apple 本地和推送通知编程指南中查看所有可能的通知负载。
+可以在 Apple [本地和推送通知编程指南]中查看所有可能的通知负载。
 
 
 ##检查你的应用能否接收推送通知
@@ -450,28 +457,32 @@
 
 1. 运行应用并确认注册成功，然后按“确定”。
 
-	![iOS 应用推送通知注册测试][33]
+	![iOS 应用推送通知注册测试][33]  
 
-2. 如上所述，你可以从 [Azure 门户]发送测试推送通知。如果你在应用中添加了发送推送通知的代码，请触摸文本字段以输入通知消息。然后，按键盘上的“发送”按钮或视图中的“发送通知”按钮，以发送通知消息。
 
-	![iOS 应用推送通知发送测试][34]
+2. 如上所述，可以从 [Azure 门户预览]发送测试推送通知。如果你在应用中添加了发送推送通知的代码，请触摸文本字段以输入通知消息。然后，按键盘上的“发送”按钮或视图中的“发送通知”按钮，以发送通知消息。
+
+	![iOS 应用推送通知发送测试][34]  
+
 
 3. 该推送通知会从特定通知中心发送到所有已注册为接收通知的设备。
 
-	![iOS 应用推送通知接收测试][35]
+	![iOS 应用推送通知接收测试][35]  
+
 
 
 ##后续步骤
 
-在这个简单的示例中，你已将推送通知广播到所有已注册的 iOS 设备。建议你转到 [Azure Notification Hubs Notify Users for iOS with .NET backend（Azure 通知中心 - 使用 .NET 后端通知 iOS 用户）]教程开始下一步的学习，该教程将引导你使用标记创建后端以发送推送通知。
+在这个简单的示例中，你已将推送通知广播到所有已注册的 iOS 设备。建议转到 [Azure 通知中心 - 使用 .NET 后端通知 iOS 用户]教程开始下一步的学习，该教程将引导你使用标记创建后端以发送推送通知。
 
-如果要按兴趣组划分用户，可以进一步阅读 [Use Notification Hubs to send breaking news（使用通知中心发送突发新闻）]教程。
+如果要按兴趣组划分用户，可以进一步阅读[使用通知中心发送突发新闻]教程。
 
 有关通知中心的常规信息，请参阅[通知中心指南]。
 
 
 
 <!-- Images. -->
+
 
 [6]: ./media/notification-hubs-ios-get-started/notification-hubs-configure-ios.png
 [8]: ./media/notification-hubs-ios-get-started/notification-hubs-create-ios-app.png
@@ -490,20 +501,22 @@
 
 
 <!-- URLs. -->
+
 [移动服务 iOS SDK 版本 1.2.4]: http://aka.ms/kymw2g
 [Mobile Services iOS SDK]: http://go.microsoft.com/fwLink/?LinkID=266533
 [Submit an app page]: http://go.microsoft.com/fwlink/p/?LinkID=266582
 [My Applications]: http://go.microsoft.com/fwlink/p/?LinkId=262039
 
-[Azure Classic Portal]: https://manage.windowsazure.com/
-[通知中心指南]: http://msdn.microsoft.com/library/jj927170.aspx
+[Azure Classic Management Portal]: https://manage.windowsazure.cn/
+[通知中心指南]: http://msdn.microsoft.com/zh-cn/library/jj927170.aspx
 [Xcode]: https://go.microsoft.com/fwLink/p/?LinkID=266532
 [iOS Provisioning Portal]: http://go.microsoft.com/fwlink/p/?LinkId=272456
 
 [Get started with push notifications in Mobile Services]: /documentation/articles/mobile-services-javascript-backend-ios-get-started-push/
-[Azure Notification Hubs Notify Users for iOS with .NET backend（Azure 通知中心 - 使用 .NET 后端通知 iOS 用户）]: /documentation/articles/notification-hubs-aspnet-backend-ios-apple-apns-notification/
-[Use Notification Hubs to send breaking news（使用通知中心发送突发新闻）]: /documentation/articles/notification-hubs-ios-xplat-segmented-apns-push-notification/
+[Azure 通知中心 - 使用 .NET 后端通知 iOS 用户]: /documentation/articles/notification-hubs-aspnet-backend-ios-apple-apns-notification/
+[使用通知中心发送突发新闻]: /documentation/articles/notification-hubs-ios-xplat-segmented-apns-push-notification/
 
-[Azure 门户]: https://portal.azure.cn
+[本地和推送通知编程指南]: http://developer.apple.com/library/mac/#documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/ApplePushService.html#//apple_ref/doc/uid/TP40008194-CH100-SW1
+[Azure 门户预览]: https://portal.azure.cn
 
-<!---HONumber=Mooncake_0801_2016-->
+<!---HONumber=Mooncake_1114_2016-->
