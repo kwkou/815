@@ -249,9 +249,9 @@
 5. 在 `MainActivity` 类中，删除或注释掉 `NotificationHub` 的私有字段，并添加一个用于 `RegisterClient` 类的字段和一个用于 ASP.NET 后端终结点的字符串。确保使用前面获取的实际后端终结点来替换 `<Enter Your Backend Endpoint>`。例如，`http://mybackend.chinacloudsites.cn`。
 
 
-	//private NotificationHub hub;
-	private RegisterClient registerClient;
-	private static final String BACKEND_ENDPOINT = "<Enter Your Backend Endpoint>";
+		//private NotificationHub hub;
+		private RegisterClient registerClient;
+		private static final String BACKEND_ENDPOINT = "<Enter Your Backend Endpoint>";
 
 
 6. 在 `MainActivity` 类的 `onCreate` 方法中，删除或注释掉 `hub` 字段的初始化以及对 `registerWithNotificationHubs` 方法的调用。然后添加代码以初始化 `RegisterClient` 类的实例。该方法应包含以下行：
@@ -276,14 +276,14 @@
 
 8. 将以下 `import` 语句添加到 **MainActivity.java** 文件中。
 
-	import android.widget.Button;
-	import java.io.UnsupportedEncodingException;
-	import android.content.Context;
-	import java.util.HashSet;
-	import android.widget.Toast;
-	import org.apache.http.client.ClientProtocolException;
-	import java.io.IOException;
-	import org.apache.http.HttpStatus;
+		import android.widget.Button;
+		import java.io.UnsupportedEncodingException;
+		import android.content.Context;
+		import java.util.HashSet;
+		import android.widget.Toast;
+		import org.apache.http.client.ClientProtocolException;
+		import java.io.IOException;
+		import org.apache.http.HttpStatus;
 
 
 9. 然后，添加以下方法以处理“登录”按钮单击事件以及发送推送通知。
