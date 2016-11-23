@@ -5,8 +5,7 @@
 	authors="wesmc7777"
 	manager="erikre"
 	services="notification-hubs"
-	editor=""/>  
-
+	editor=""/>
 
 <tags
 	ms.service="notification-hubs"
@@ -14,10 +13,9 @@
 	ms.tgt_pltfrm="mobile-windows"
 	ms.devlang="dotnet"
 	ms.topic="article"
-	ms.date="10/03/2016"
-	ms.author="wesmc"
-	wacn.date="11/22/2016"/>  
-
+	ms.date="06/29/2016"
+	wacn.date="08/02/2016"
+	ms.author="wesmc"/>
 
 #Azure 通知中心 - 使用 .NET 后端通知用户
 
@@ -26,7 +24,7 @@
 
 ##概述
 
-利用 Azure 中的推送通知支持，你可以访问易于使用且向外扩展的多平台推送基础结构，这大大简化了为移动平台的使用者应用程序和企业应用程序实现推送通知的过程。本教程说明如何使用 Azure 通知中心将推送通知发送到特定设备上的特定应用程序用户。ASP.NET WebAPI 后端用于对客户端进行身份验证。后端使用经过身份验证的客户端用户自动将标记添加通知注册。后端将使用此标记为特定的用户生成通知。有关使用应用后端注册通知的详细信息，请参阅指南主题[从应用后端注册](http://msdn.microsoft.com/zh-cn/library/dn743807.aspx)。本教程以你在[通知中心入门]教程中创建的通知中心和项目为基础。
+利用 Azure 中的推送通知支持，你可以访问易于使用且向外扩展的多平台推送基础结构，这大大简化了为移动平台的使用者应用程序和企业应用程序实现推送通知的过程。本教程说明如何使用 Azure 通知中心将推送通知发送到特定设备上的特定应用程序用户。ASP.NET WebAPI 后端用于对客户端进行身份验证。后端使用经过身份验证的客户端用户自动将标记添加通知注册。后端将使用此标记为特定的用户生成通知。有关使用应用后端注册通知的详细信息，请参阅指南主题[从应用后端注册](http://msdn.microsoft.com/library/dn743807.aspx)。本教程以你在[通知中心入门]教程中创建的通知中心和项目为基础。
 
 此外，只有在学习本教程后，才可以学习[安全推送]教程。完成本教程中的步骤后，你可以继续学习[安全推送]教程，其中说明了如何修改本教程中的代码以安全地发送推送通知。
 
@@ -46,10 +44,14 @@
 
 在开始本教程之前，必须已完成以下移动服务教程：
 
-+ [通知中心入门]<br/>在此教程中，你创建通知中心，保留应用名称，然后注册以接收通知。本教程假设已完成这些步骤。请遵循[通知中心入门（Windows 应用商店）](/documentation/articles/notification-hubs-windows-store-dotnet-get-started-wns-push-notification/)中的步骤；具体而言，请遵循[在 Windows 应用商店中注册你的应用](/documentation/articles/notification-hubs-windows-store-dotnet-get-started-wns-push-notification/#register-your-app-for-the-windows-store/)和[配置通知中心](/documentation/articles/notification-hubs-windows-store-dotnet-get-started-wns-push-notification/#configure-your-notification-hub/)部分中的步骤。请务必确保已在门户中你的通知中心的“配置”选项卡上输入了“程序包 SID”和“客户端机密”值。[配置通知中心](/documentation/articles/notification-hubs-windows-store-dotnet-get-started-wns-push-notification/#configure-your-notification-hub/)部分中介绍了此配置过程。这个步骤非常重要：如果门户上的凭据与针对所选应用程序名称指定的凭据不匹配，推送通知将不会成功。
++ [通知中心入门]<br/>在此教程中，你创建通知中心，保留应用名称，然后注册以接收通知。本教程假设已完成这些步骤。请遵循[通知中心入门（Windows 应用商店）](/documentation/articles/notification-hubs-windows-store-dotnet-get-started-wns-push-notification/)中的步骤；具体而言，请遵循[在 Windows 应用商店中注册你的应用](/documentation/articles/notification-hubs-windows-store-dotnet-get-started-wns-push-notification#register-your-app-for-the-windows-store)和[配置通知中心](/documentation/articles/notification-hubs-windows-store-dotnet-get-started-wns-push-notification#configure-your-notification-hub)部分中的步骤。请务必确保已在门户中你的通知中心的“配置”选项卡上输入了“程序包 SID”和“客户端机密”值。[配置通知中心](/documentation/articles/notification-hubs-windows-store-dotnet-get-started-wns-push-notification#configure-your-notification-hub)部分中介绍了此配置过程。这个步骤非常重要：如果门户上的凭据与针对所选应用程序名称指定的凭据不匹配，推送通知将不会成功。
 
 
-> [AZURE.NOTE] 如果使用应用服务中的移动应用作为后端，请参阅本教程的[移动应用版本](/documentation/articles/app-service-mobile-windows-store-dotnet-get-started-push/)。
+
+
+> [AZURE.NOTE] 如果你使用移动服务作为后端服务，请参阅本教程的[移动服务版本](/documentation/articles/mobile-services-dotnet-backend-windows-universal-dotnet-get-started-push/)。
+
+
 
 
 [AZURE.INCLUDE [notification-hubs-aspnet-backend-notifyusers](../../includes/notification-hubs-aspnet-backend-notifyusers.md)]
@@ -140,7 +142,7 @@
 		using Windows.UI.Popups;
 		using System.Threading.Tasks;
 
-12. 在“(Windows 8.1)”和“(Windows 8.1)”项目的 **MainPage.xaml.cs** 中，将以下成员添加 `MainPage` 类。确保使用前面获取的实际后端终结点来替换 `<Enter Your Backend Endpoint>`。例如，`http://mybackend.chinacloudsites.cn`。
+12. 在“(Windows 8.1)”和“(Windows 8.1)”项目的 **MainPage.xaml.cs** 中，将以下成员添加 `MainPage` 类。确保使用前面获取的实际后端终结点来替换 `<Enter Your Backend Endpoint>`。例如，`http://mybackend.azurewebsites.net`。
 
         private static string BACKEND_ENDPOINT = "<Enter Your Backend Endpoint>";
 
@@ -240,7 +242,7 @@
 
 15. 在“解决方案资源管理器”中，右键单击“共享”项目，然后依次单击“添加”和“类”。将类命名为 **RegisterClient.cs**，然后单击“确定”以生成该类。
 
-	此类将包装所需的 REST 调用，以便能够联系应用程序后端来注册推送通知。它还会在本地存储通知中心创建的 *registrationIds* （从[应用后端注册](http://msdn.microsoft.com/zh-cn/library/dn743807.aspx)中提供了详细信息）。请注意，该组件使用当你单击“登录并注册”按钮时存储在本地存储中的授权令牌。
+	此类将包装所需的 REST 调用，以便能够联系应用程序后端来注册推送通知。它还会在本地存储通知中心创建的 *registrationIds*（从[应用后端注册](http://msdn.microsoft.com/library/dn743807.aspx)中提供了详细信息）。请注意，该组件使用当你单击“登录并注册”按钮时存储在本地存储中的授权令牌。
 
 
 16. 在 RegisterClient.cs 文件的顶部添加以下 `using` 语句：
@@ -381,10 +383,9 @@
 
 
 <!-- URLs. -->
-
 [通知中心入门]: /documentation/articles/notification-hubs-windows-store-dotnet-get-started-wns-push-notification/
 [安全推送]: /documentation/articles/notification-hubs-aspnet-backend-windows-dotnet-wns-secure-push-notification/
 [使用通知中心发送突发新闻]: /documentation/articles/notification-hubs-windows-notification-dotnet-push-xplat-segmented-wns/
-[通知中心指南]: http://msdn.microsoft.com/zh-cn/library/jj927170.aspx
+[通知中心指南]: http://msdn.microsoft.com/library/jj927170.aspx
 
-<!---HONumber=Mooncake_1114_2016-->
+<!---HONumber=Mooncake_0725_2016-->

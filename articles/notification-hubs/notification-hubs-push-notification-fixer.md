@@ -14,9 +14,9 @@
 	ms.tgt_pltfrm="NA" 
 	ms.devlang="multiple" 
 	ms.topic="article" 
-	ms.date="10/03/2016" 
-	ms.author="wesmc"
-	wacn.date="11/22/2016"/>  
+	ms.date="08/19/2016" 
+	wacn.date="11/22/2016" 
+	ms.author="wesmc"/>  
 
 
 #Azure 通知中心 - 诊断指南
@@ -28,13 +28,13 @@
 首先，理解 Azure 通知中心如何将通知推送到设备很重要。
 ![][0]
 
-在典型的发送通知工作流中，消息是从**应用程序后端**发送到 **Azure 通知中心 (NH)**，这反过来会处理将确定“目标”的已配置标记和标记表达式考虑在内的所有注册，即需要接收推送通知的所有注册。这些注册可以横跨各种受支持的平台 - iOS、Google、Windows、Windows Phone、Kindle 和 Baidu for China Android。建立目标之后，NH 将推送出通知，将通知拆分为多个批量发送到设备平台专用**推送通知服务 (PNS)**（例如，APNS for Apple、GCM for Google 等）。NH 使用各自的 PNS（基于在 Azure 经典管理门户中“配置通知中心”页上设置的凭据）进行身份验证。然后，PNS 会将通知转发到各自的**客户端设备**。这是平台推荐的方式，用以传递推送通知，并且注意通知传递的最后 Leg 在平台 PNS 和设备之间发生。因此，我们有四个主要组件（ *客户端* 、 *应用程序后端* 、 *Azure 通知中心 (NH)* 和 *推送通知服务 (PNS)* ）并且这些组件的任意一个都有可能导致通知被删除。可在[通知中心概述]中找到有关此体系结构的更多详细信息。
+在典型的发送通知工作流中，消息是从**应用程序后端**发送到 **Azure 通知中心 (NH)**，这反过来会处理将确定“目标”的已配置标记和标记表达式考虑在内的所有注册，即需要接收推送通知的所有注册。这些注册可以横跨各种受支持的平台 - iOS、Google、Windows、Windows Phone、Kindle 和 Baidu for China Android。建立目标之后，NH 将推送出通知，将通知拆分为多个批量发送到设备平台专用**推送通知服务 (PNS)**（例如，APNS for Apple、GCM for Google 等）。NH 使用各自的 PNS（基于在 Azure 经典管理门户中“配置通知中心”页上设置的凭据）进行身份验证。然后，PNS 会将通知转发到各自的**客户端设备**。这是平台推荐的方式，用以传递推送通知，并且注意通知传递的最后 Leg 在平台 PNS 和设备之间发生。因此，我们有四个主要组件（*客户端*、*应用程序后端*、*Azure 通知中心 (NH)* 和*推送通知服务 (PNS)*）并且这些组件的任意一个都有可能导致通知被删除。可在[通知中心概述]中找到有关此体系结构的更多详细信息。
 
 在可能指示配置问题的初始测试/暂存阶段中，可能出现无法传递通知的情况，或者可能在生产中发生这种情况，这可能导致所有或部分通知被删除，同时指明一些更深层次的应用程序或消息模式问题。在本节中，我们将在下面查看各种已删除通知场景，从常见类型到更加稀有的类型一应俱全，其中一些你可能发现很常见，其中一些并不常见。
 
 ##Azure 通知中心配置错误 
 
-Azure 通知中心需要在开发人员的应用程序的环境中对自身进行身份验证，以成功将通知发送到各自的 PNS。这种情况是可能的，方法是开发人员在各自的平台（Google、Apple、Windows 等）中创建开发人员帐户，然后注册可在其中获取凭据（需要在通知中心配置部分下的门户中进行配置）的应用程序。如果没有通过任何通知，第一步应该是确保在通知中心中配置正确的凭据，并且要与在平台专用开发人员帐户下创建的应用程序相匹配。你会发现[入门教程]非常有用，以便一步一步完成此过程。下面是一些常见的错误配置：
+Azure 通知中心需要在开发人员的应用程序的环境中对自身进行身份验证，以成功将通知发送到各自的 PNS。这种情况是可能的，方法是开发人员在各自的平台（Google、Apple、Windows 等）中创建开发人员帐户，然后注册可在其中获取凭据（需要在通知中心配置部分下的门户中进行配置）的应用程序。如果没有通过任何通知，第一步应该是确保在通知中心中配置正确的凭据，并且要与在平台专用开发人员帐户下创建的应用程序相匹配。你会发现入门教程非常有用，以便一步一步完成此过程。下面是一些常见的错误配置：
 
 1. **常规**
  
@@ -89,9 +89,9 @@ Azure 通知中心需要在开发人员的应用程序的环境中对自身进�
 
 各自的 PNS 收到通知消息之后，那么它的责任就是将通知传递到设备。此时，Azure 通知中心是不相关的，而且不会控制何时将通知传递到设备或是否将通知传递到设备。由于平台通知服务非常强大，这些通知会在几秒钟时间从 PNS 到达很多设备。但是，如果 PNS 进行限制的话，那么 Azure 通知中心会应用指数让步策略；如果 PNS 在 30 分钟之内都无法联系，则我们会准备一个策略以宣布这些消息过期并永久删除它们。
 
-如果 PNS 尝试传递通知，但设备处于脱机状态，则通知被 PNS 短暂存储，然后在设备可用时传递到该设备。只存储了特定应用的一个最近通知。如果在设备处于脱机状态时发送了多个通知，则每个新通知将导致前一个通知被放弃。只保留最新通知的这类行为在 APNS 中被称为合并通知，在 GCM（它使用折叠密钥）中被称为折叠通知。如果设备长时间处于脱机状态，则放弃所有为它存储的通知。来源 — APNS 指南和 GCM 指南
+如果 PNS 尝试传递通知，但设备处于脱机状态，则通知被 PNS 短暂存储，然后在设备可用时传递到该设备。只存储了特定应用的一个最近通知。如果在设备处于脱机状态时发送了多个通知，则每个新通知将导致前一个通知被放弃。只保留最新通知的这类行为在 APNS 中被称为合并通知，在 GCM（它使用折叠密钥）中被称为折叠通知。如果设备长时间处于脱机状态，则放弃所有为它存储的通知。信息来源 - APNS 指南和 GCM 指南
 
-在 Azure 通知中心中，可以使用泛型 `SendNotification` API（例如，对于 .NET SDK，使用 `SendNotificationAsync`）通过 HTTP 标头来传递合并密钥，此 API 还会按原样将 HTTP 标头传递到各自的 PNS。
+在 Azure 通知中心中，你可以使用泛型 `SendNotification` API（例如，对于 .NET SDK - `SendNotificationAsync`）通过 HTTP 标头来传递合并密钥，其还会将按原样传递的 HTTP 标头传递到各自的 PNS。
 
 ##自我诊断提示
 
@@ -101,7 +101,7 @@ Azure 通知中心需要在开发人员的应用程序的环境中对自身进�
 
 1. **PNS 开发人员门户**
 
-	使用[入门教程]在各自的 PNS 开发人员门户（APNS、GCM、WNS 等）中验证它们。
+	使用入门教程在各自的 PNS 开发人员门户（APNS、GCM、WNS 等）中验证它们。
 
 2. **Azure 经典管理门户**
 
@@ -151,21 +151,19 @@ Azure 通知中心需要在开发人员的应用程序的环境中对自身进�
 
 **EnableTestSend 属性**
 
-当你通过通知中心发送通知时，起初只要对 NH 排队以进行处理，从而找到它的所有目标，然后最终 NH 将它发送到 PNS。这意味着，当你使用 REST API 或任意客户端 SDK 时，你的发送调用的成功返回只表示消息已成功在通知中心中排队。当 NH 最终准备将消息发送到 PNS 时，它不会深入探索发生了什么情况。如果你的通知没有到达客户端设备，则可能在 NH 尝试将消息传递到 PNS 时出现错误。例如，负载大小超出了 PNS 允许的上限，或者在 NH 中配置的凭据无效等。
-若要深入分析 PNS 错误，我们引入了一个名为 [EnableTestSend 功能]的属性。当你从门户或 Visual Studio 客户端中发送测试消息时，系统会自动启用此属性，从而允许你查看详细的调试信息。根据 .NET SDK 的示例，你可以通过 API 使用此属性，其现在可用，并且最终将被添加到所有客户端 SDK。若要和 REST 调用一起使用此属性，直接在你的发送调用的末尾附加名为“test”的查询字符串参数。例如：
+当你通过通知中心发送通知时，起初只要对 NH 排队以进行处理，从而找到它的所有目标，然后最终 NH 将它发送到 PNS。这意味着，当你使用 REST API 或任意客户端 SDK 时，你的发送调用的成功返回只表示消息已成功在通知中心中排队。当 NH 最终准备将消息发送到 PNS 时，它不会深入探索发生了什么情况。如果你的通知没有到达客户端设备，则可能在 NH 尝试将消息传递到 PNS 时出现错误。例如，负载大小超出了 PNS 允许的上限，或者在 NH 中配置的凭据无效等。若要深入分析 PNS 错误，我们引入了一个名为 [EnableTestSend 功能]的属性。当你从门户或 Visual Studio 客户端中发送测试消息时，系统会自动启用此属性，从而允许你查看详细的调试信息。根据 .NET SDK 的示例，你可以通过 API 使用此属性，其现在可用，并且最终将被添加到所有客户端 SDK。若要和 REST 调用一起使用此属性，直接在你的发送调用的末尾附加名为“test”的查询字符串参数。例如：
 
 	https://mynamespace.servicebus.chinacloudapi.cn/mynotificationhub/messages?api-version=2013-10&test
 
-*示例 (.NET SDK)* 
+*示例 (.NET SDK)*
  
 假设你正在使用 .NET SDK 发送本机 toast 通知：
 
-    NotificationHubClient hub = NotificationHubClient.CreateClientFromConnectionString(connString, hubName);
-    var result = await hub.SendWindowsNativeNotificationAsync(toast);
-    Console.WriteLine(result.State);
+	NotificationHubClient hub = NotificationHubClient.CreateClientFromConnectionString(connString, hubName);
+	var result = await hub.SendWindowsNativeNotificationAsync(toast);
+	Console.WriteLine(result.State);
  
-`result.State` 将只在执行结束时陈述 `Enqueued`，而不深入分析你的推送发生了什么情况。 
-现在，你可以使用 `EnableTestSend` 布尔值属性，同时初始化 `NotificationHubClient`，并获取有关发送通知时遇到的 PNS 错误的详细状态。此处发送调用需要更多时间进行返回，因为它只在 NH 已将通知传递到 PNS 之后返回以确定结果。
+`result.State` 将只在执行结束时陈述 `Enqueued`，而不深入分析你的推送发生了什么情况。现在，你可以使用 `EnableTestSend` 布尔值属性，同时初始化 `NotificationHubClient`，并获取有关发送通知时遇到的 PNS 错误的详细状态。此处发送调用需要更多时间进行返回，因为它只在 NH 已将通知传递到 PNS 之后返回以确定结果。
  
 	bool enableTestSend = true;
 	NotificationHubClient hub = NotificationHubClient.CreateClientFromConnectionString(connString, hubName, enableTestSend);
@@ -178,7 +176,7 @@ Azure 通知中心需要在开发人员的应用程序的环境中对自身进�
 	    Console.WriteLine(result.ApplicationPlatform + "\n" + result.RegistrationId + "\n" + result.Outcome);
 	}
 
-*示例输出* 
+*示例输出*
 
     DetailedStateAvailable
     windows
@@ -233,7 +231,6 @@ Azure 通知中心需要在开发人员的应用程序的环境中对自身进�
 <!-- LINKS -->
 
 [通知中心概述]: /documentation/articles/notification-hubs-push-notification-overview/
-[入门教程]: /documentation/articles/notification-hubs-windows-store-dotnet-get-started-wns-push-notification/
 [模板指南]: https://msdn.microsoft.com/zh-cn/library/dn530748.aspx
 [Export/Import Registrations]: http://msdn.microsoft.com/zh-cn/library/dn790624.aspx
 [ServiceBus 资源管理器]: http://msdn.microsoft.com/zh-cn/library/dn530751.aspx
@@ -247,4 +244,4 @@ Azure 通知中心需要在开发人员的应用程序的环境中对自身进�
 
  
 
-<!---HONumber=Mooncake_1114_2016-->
+<!---HONumber=Mooncake_1017_2016-->

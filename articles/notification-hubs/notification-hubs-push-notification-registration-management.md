@@ -248,7 +248,7 @@ SecondaryTiles 字典使用的 TileId 与在 Windows 应用商店应用中创建
 		settings.Remove("__NHRegistrationId");
 	}
 
-<a name="registration-management-from-a-backend"></a>
+
 ## 从后端管理注册
 
 从后端管理注册需要编写附加代码。每次设备中的应用启动时，该应用都必须为后端提供已更新的 PNS 句柄（以及标记和模板），然后后端必须在通知中心上更新此句柄。下图演示了此设计。
