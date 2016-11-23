@@ -14,9 +14,9 @@
 	ms.tgt_pltfrm="mobile-windows"
 	ms.devlang="dotnet"
 	ms.topic="hero-article"
-	ms.date="07/21/2016"
-	wacn.date="11/11/2016"
-	ms.author="wesmc"/>  
+	ms.date="10/03/2016"
+	ms.author="wesmc"
+	wacn.date="11/22/2016"/>  
 
 
 # 用于 Windows 通用平台应用的通知中心入门
@@ -46,7 +46,7 @@
 
 + [已安装通用 Windows 应用开发工具](https://msdn.microsoft.com/windows/uwp/get-started/get-set-up)
 
-+ 一个有效的 Azure 帐户<br/>如果没有帐户，只需花费几分钟就能创建一个试用帐户。有关详细信息，请参阅 [Azure 1 元试用](/pricing/1rmb-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fen-us%2Fdocumentation%2Farticles%2Fnotification-hubs-windows-store-dotnet-get-started%2F/)。
++ 一个有效的 Azure 帐户<br/>如果没有帐户，只需花费几分钟就能创建一个试用帐户。有关详细信息，请参阅 [Azure 1 元试用](/pricing/1rmb-trial/)。
 
 + 有效的 Windows 应用商店帐户
 
@@ -90,7 +90,7 @@
 
    	这会将所需的 Windows 应用商店注册信息添加到应用程序清单中。
 
-8. 返回新应用的“Windows 开发人员中心”[](http://go.microsoft.com/fwlink/p/?LinkID=266582)页，依次单击“服务”和“推送通知”，然后单击“Windows 推送通知服务(WNS)和 Azure 移动应用”下的“Live 服务网站”。
+8. 返回新应用的[“Windows 开发人员中心”](http://go.microsoft.com/fwlink/p/?LinkID=266582)页，依次单击“服务”和“推送通知”，然后单击“Windows 推送通知服务(WNS)和 Azure 移动应用”下的“Live 服务网站”。
 
    	![](./media/notification-hubs-windows-store-dotnet-get-started/notification-hubs-uwp-app-live-services.png)  
 
@@ -104,22 +104,22 @@
  	> [AZURE.WARNING]
 	应用程序密钥和程序包 SID 是重要的安全凭据。请勿将这些值告知任何人或随你的应用程序分发它们。
 
+<a name="configure-your-notification-hub"></a>
 ##配置通知中心
 
 [AZURE.INCLUDE [notification-hubs-portal-create-new-hub](../../includes/notification-hubs-portal-create-new-hub.md)]
 
 <ol start="6">
 <li><p>选择“通知服务”<b></b>选项和“Windows (WNS)”<b></b>选项。然后在“安全密钥”<b></b>字段中输入“应用程序密码”<b></b>。输入在之前部分从 WNS 获取的“包 SID”<b></b>值，然后单击“保存”<b></b>。</p>
-</li> 
+</li>
 </ol>
 
-![](./media/notification-hubs-windows-store-dotnet-get-started/notification-hub-configure-wns.png)
-
-
+&emsp;&emsp;![](./media/notification-hubs-windows-store-dotnet-get-started-wns-push-notification/notification-hub-configure-wns.png)
 
 
 你的通知中心现在已配置为使用 WNS，并且你有连接字符串用于注册你的应用程序和发送通知。
 
+<a name="register-your-app-for-the-windows-store"></a>
 ##将你的应用连接到通知中心
 
 1. 在 Visual Studio 中，右键单击该解决方案，然后单击“管理 NuGet 包”。
@@ -184,7 +184,7 @@
 
 在 [Azure 门户预览](https://portal.azure.cn/)中使用通知中心的“测试发送”按钮（如以下屏幕中所示）来发送通知，可以在应用中快速地测试通知的接收情况。
 
-![](./media/notification-hubs-windows-store-dotnet-get-started/notification-hub-test-send-wns.png)  
+![](./media/notification-hubs-windows-store-dotnet-get-started-wns-push-notification/notification-hub-test-send-wns.png)  
 
 
 通常，推送通知是在后端服务（例如，移动服务，或者使用兼容库的 ASP.NET）中发送的。如果你的后端没有可用的库，则你也可以使用 REST API 直接发送通知消息。
@@ -223,7 +223,7 @@
 
 	这将使用 <a href="http://www.nuget.org/packages/Microsoft.Azure.NotificationHubs/">Microsoft.Azure.Notification Hubs NuGet 包</a>添加对 Azure 通知中心 SDK 的引用。
 
-	![](./media/notification-hubs-windows-store-dotnet-get-started/notification-hub-package-manager.png)
+	![](./media/notification-hubs-windows-store-dotnet-get-started-wns-push-notification/notification-hub-package-manager.png)
 
 
 4. 打开文件 Program.cs 并添加以下 `using` 语句：
@@ -287,4 +287,4 @@
 [磁贴目录]: http://msdn.microsoft.com/zh-cn/library/windows/apps/hh761491.aspx
 [锁屏提醒]: http://msdn.microsoft.com/zh-cn/library/windows/apps/hh779719.aspx
 
-<!---HONumber=Mooncake_1017_2016-->
+<!---HONumber=Mooncake_1114_2016-->

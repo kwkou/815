@@ -5,7 +5,8 @@
 	documentationCenter=""
 	authors="wesmc7777"
 	manager="erikre"
-	editor=""/>
+	editor=""/>  
+
 
 <tags
 	ms.service="notification-hubs"
@@ -13,14 +14,15 @@
 	ms.tgt_pltfrm="mobile-windows"
 	ms.devlang="multiple"
 	ms.topic="article"
-	ms.date="06/29/2016"
-	wacn.date="08/08/2016" 
-	ms.author="wesmc"/>
+	ms.date="10/03/2016" 
+	ms.author="wesmc"
+	wacn.date="11/22/2016"/>  
+
 
 # 使用通知中心向用户发送跨平台通知
 
 
-在上一教程[使用通知中心通知用户]中，你了解了如何将通知推送到经过身份验证的特定用户所注册的所有设备。在该教程中，需要使用多个请求将通知发送到每个支持的客户端平台。通知中心支持模板，这允许你指定特定设备要如何接收通知。这简化了发送跨平台通知。本主题演示如何利用模板在单个请求中发送针对所有平台的平台未知通知。有关模板的更多详细信息，请参阅 [Azure 通知中心概述][Templates]。
+在上一教程[使用通知中心通知用户]中，你了解了如何将通知推送到经过身份验证的特定用户所注册的所有设备。在该教程中，需要使用多个请求将通知发送到每个支持的客户端平台。通知中心支持模板，这允许你指定特定设备要如何接收通知。这简化了发送跨平台通知。本主题演示如何利用模板在单个请求中发送针对所有平台的与平台无关的通知。有关模板的更多详细信息，请参阅 [Azure 通知中心概述][Templates]。
 
 > [AZURE.NOTE] 通知中心允许设备使用同一标记注册多个模板。在这种情况下，针对该标签的传入消息将导致多个通知发送到设备（每个通知对应一个模板）。这允许你在多个可视通知中显示同一消息，如作为 Windows 应用商店应用程序中的徽章和 toast 通知。
 
@@ -93,20 +95,21 @@
 
 <!-- Anchors. -->
 
+
 <!-- Images. -->
 
 
 
 
 <!-- URLs. -->
-[Push to users ASP.NET]:/documentation/articles/notification-hubs-aspnet-backend-windows-dotnet-wns-notification/
-[Push to users Mobile Services]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users/
+
+[Push to users ASP.NET]: /documentation/articles/notification-hubs-aspnet-backend-windows-dotnet-wns-notification/
 [Visual Studio 2012 Express for Windows 8]: http://go.microsoft.com/fwlink/?LinkId=257546
 
 [使用通知中心发送突发新闻]: /documentation/articles/notification-hubs-windows-notification-dotnet-push-xplat-segmented-wns/
 [Azure Notification Hubs]: http://go.microsoft.com/fwlink/p/?LinkId=314257
 [使用通知中心通知用户]: /documentation/articles/notification-hubs-aspnet-backend-windows-dotnet-wns-notification/
 [Templates]: http://go.microsoft.com/fwlink/p/?LinkId=317339
-[Notification Hub How to for Windows Store]: http://msdn.microsoft.com/library/windowsazure/jj927172.aspx
+[Notification Hub How to for Windows Store]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj927172.aspx
 
-<!---HONumber=Mooncake_0801_2016-->
+<!---HONumber=Mooncake_1114_2016-->
