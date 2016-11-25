@@ -2,7 +2,7 @@
 - [Linux](/documentation/articles/iot-hub-linux-gateway-sdk-simulated-device/)
 - [Windows](/documentation/articles/iot-hub-windows-gateway-sdk-simulated-device/)
 
-本文演示了 [Simulated Device Cloud Upload sample]（模拟设备云上载示例），说明了如何使用 [Azure IoT Gateway SDK][lnk-sdk]（Azure IoT 网关 SDK）从模拟设备将设备到云的遥测发送到 IoT 中心。
+本文演示了 Simulated Device Cloud Upload sample，说明了如何使用 [Azure IoT Gateway SDK][lnk-sdk]（Azure IoT 网关 SDK）从模拟设备将设备到云的遥测发送到 IoT 中心。
 
 本文介绍的内容包括：
 
@@ -65,7 +65,7 @@
 [2]: ./media/iot-hub-gateway-sdk-simulated-selector/image2.png
 
 <!-- Links -->
-[Simulated Device Cloud Upload sample]: https://github.com/Azure/azure-iot-gateway-sdk/blob/master/doc/sample_simulated_device_cloud_upload.md
+
 [lnk-sdk]: https://github.com/Azure/azure-iot-gateway-sdk
 [lnk-gw-getstarted]: /documentation/articles/iot-hub-linux-gateway-sdk-get-started/
 <!---HONumber=Mooncake_0523_2016-->
