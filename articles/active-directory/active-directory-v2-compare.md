@@ -15,7 +15,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="09/16/2016"
-	wacn.date="10/25/2016"
+	wacn.date="11/25/2016"
 	ms.author="dastrock"/>  
 
 
@@ -83,6 +83,7 @@ v2.0 终结点只能在下列新位置中注册：[apps.dev.microsoft.com](https
 
 其中 **scope** 参数指示应用请求授权的资源和权限。所需的资源仍是请求中最新的 - 它只包含在 scope 参数的每个值中。以此方式使用 scope 参数可让 v2.0 终结点更符合 OAuth 2.0 规范，并且更贴近常见的行业实践。它还可以让应用执行下一节中所述的[增量同意](#incremental-and-dynamic-consent)。
 
+<a name="incremental-and-dynamic-consent"></a>
 ## 增量同意和动态同意
 在正式版 Azure AD 服务中注册的应用程序必须于应用程序创建时在 Azure 门户预览中指定其所需的 OAuth 2.0 权限：
 

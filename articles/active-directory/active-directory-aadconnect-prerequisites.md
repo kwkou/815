@@ -14,7 +14,7 @@
    ms.devlang="na"
    ms.topic="article"
    ms.date="06/27/2016"
-   wacn.date="08/01/2016"
+   wacn.date="11/25/2016"
    ms.author="billmath"/>
 
 # Azure AD Connect 的先决条件
@@ -58,6 +58,7 @@
 ### Azure AD Connect 服务器配置
 - 如果全局管理员已启用 MFA，URL **https://secure.aadcdn.microsoftonline-p.com** 就必须在受信任的站点列表中。在显示 MFA 质询提示之前，系统会先提示你将此 URL 添加到受信任的站点列表中（如果尚未添加）。可以使用 Internet Explorer 将它添加到受信任的站点。
 
+<a name="connectivity"></a>
 ### 连接
 - Azure AD Connect 服务器需要 Intranet 和 Internet 的 DNS 解析。DNS 服务器必须能够将名称解析成本地 Active Directory 以及 Azure AD 终结点。
 - 如果 Intranet 有防火墙，而你需要开放 Azure AD Connect 服务器与域控制器之间的端口，请参阅 [Azure AD Connect 连接端口](/documentation/articles/active-directory-aadconnect-ports/)来了解详细信息。

@@ -14,7 +14,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="identity"
    ms.date="10/11/2016"
-   wacn.date="11/21/2016"
+   wacn.date="11/25/2016"
    ms.author="mbaldwin;bryanla" />  
 
 
@@ -28,6 +28,7 @@
 
 若要详细了解表示已注册应用程序的两个 Azure AD 对象及其关系，请参阅[应用程序对象和服务主体对象](/documentation/articles/active-directory-application-objects/)；若要详细了解利用 Azure Active Directory 开发应用程序时应使用的品牌准则，请参阅[适用于集成应用的品牌准则](/documentation/articles/active-directory-branding-guidelines/)。
 
+<a name="BKMK_Native"></a>
 ## 添加应用程序
 
 任何想要使用 Azure AD 功能的应用程序都必须先在 Azure AD 租户中注册。此注册过程涉及到提供有关应用程序的 Azure AD 详细信息，例如，该应用程序所在位置的 URL、对用户进行身份验证后用于发送答复的 URL、用于标识应用程序的 URI，等等。

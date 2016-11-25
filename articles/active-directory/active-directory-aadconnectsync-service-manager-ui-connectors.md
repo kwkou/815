@@ -14,7 +14,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="09/07/2016"
-	wacn.date="10/11/2016"
+	wacn.date="11/25/2016"
 	ms.author="billmath"/>
 
 
@@ -67,7 +67,7 @@
 ![Sync Service Manager](./media/active-directory-aadconnectsync-service-manager-ui/cssearchscope.png)  
 例如，如果进行子树搜索，将获取某个 OU 中的所有对象。
 ![Sync Service Manager](./media/active-directory-aadconnectsync-service-manager-ui/cssearchsubtree.png)
-可以从此处选择对象，选择"属性"，从源连接器空间到 Metaverse 再到目标连接器空间一直[跟踪对象](#follow-an-object-and-its-data-through-the-system)。
+可以从此处选择对象，选择"属性"，从源连接器空间到 Metaverse 再到目标连接器空间一直跟踪对象。
 
 ## 在整个系统中跟踪对象及其数据
 当你排查数据问题时，从源连接器空间到 Metaverse 再到目标连接器空间一直跟踪对象是一个关键过程，可从中了解为什么数据没有预期值。

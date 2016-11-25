@@ -15,7 +15,7 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="07/01/2016" 
-	wacn.date="11/22/2016" 
+	wacn.date="11/25/2016" 
 	ms.author="mimig"/>
 
 
@@ -75,7 +75,7 @@ DocumentDB 是面向 NoSQL 文档的数据库，以 JSON 格式存储数据。Do
 主密钥是用于访问帐户的所有资源的安全令牌。拥有此密钥的人对数据库帐户中的所有资源具有读取和写入访问权。分发主密钥时要格外谨慎。[Azure 门户预览][azure-portal]的**密钥**边栏选项卡中提供主要主密钥和辅助主密钥。有关密钥的详细信息，请参阅[查看、复制和重新生成访问密钥](/documentation/articles/documentdb-manage-account/#keys)。
 
 ### 我如何创建数据库？
-你可以如[创建 DocumentDB 数据库](/documentation/articles/documentdb-create-database/)中所述使用 [Azure 门户预览]()、利用某个 [DocumentDB SDK](/documentation/articles/documentdb-dotnet-samples/) 或通过 [REST API](https://msdn.microsoft.com/library/azure/dn781481.aspx) 来创建数据库。
+你可以如[创建 DocumentDB 数据库](/documentation/articles/documentdb-create-database/)中所述使用 Azure 门户预览、利用某个 [DocumentDB SDK](/documentation/articles/documentdb-dotnet-samples/) 或通过 [REST API](https://msdn.microsoft.com/library/azure/dn781481.aspx) 来创建数据库。
 
 ### 什么是集合？
 集合是 JSON 文档和相关联的 JavaScript 应用程序逻辑的容器。集合是一个计费实体，其中[成本](/documentation/articles/documentdb-performance-levels/)由与集合关联的性能级别确定。集合可以跨一个或多个分区/服务器，并且能扩展以处理几乎无限制增长的存储或吞吐量。

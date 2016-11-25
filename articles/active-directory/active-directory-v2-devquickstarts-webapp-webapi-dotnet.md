@@ -15,7 +15,7 @@
 	ms.devlang="dotnet"
 	ms.topic="article"
 	ms.date="09/16/2016"
-	wacn.date="10/25/2016"
+	wacn.date="11/25/2016"
 	ms.author="dastrock"/>  
 
 
@@ -109,7 +109,7 @@ C#
 
 
 ## 使用 ADAL 获取访问令牌
-在 `AuthorizationCodeReceived` 通知中，我们想要使用[与 OpenID Connect 串联的 OAuth 2.0](/documentation/articles/active-directory-v2-protocols/#openid-connect-with-oauth-code-flow/)，以兑换待办事项列表服务的访问令牌的 authorization\_code。ADAL 可以简化此过程：
+在 `AuthorizationCodeReceived` 通知中，我们想要使用[与 OpenID Connect 串联的 OAuth 2.0](/documentation/articles/active-directory-v2-protocols/#oauth2-authorization-code-flow/)，以兑换待办事项列表服务的访问令牌的 authorization\_code。ADAL 可以简化此过程：
 
 - 首先，安装 ADAL 预览版：
 

@@ -15,11 +15,12 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="09/16/2016"
-	wacn.date="10/25/2016"
+	wacn.date="11/25/2016"
 	ms.author="dastrock"/>  
 
 
 # v2.0 协议 - OAuth 2.0 和 OpenID Connect
+<a name="oauth2-authorization-code-flow"></a>
 
 v2.0 终结点可以使用 Azure AD，通过行业标准协议（OpenID Connect 与 OAuth 2.0）提供标识即服务。尽管此服务与标准兼容，但这些协议的两个实现之间仍然存在微妙的差异。如果你选择通过直接发送和处理 HTTP 请求，或使用第三方开放源代码库来编写代码，而不是使用我们的其中一个开放源代码库，则可以参考此处提供的有用信息。
 <!-- TODO: Need link to libraries above -->
@@ -37,7 +38,7 @@ v2.0 终结点可以使用 Azure AD，通过行业标准协议（OpenID Connect 
 - **OAuth 客户端**是你的应用，按照其应用程序 ID 进行标识。它通常是与最终用户交互的对象，并向授权服务器请求令牌。客户端必须获得资源所有者授权才能访问资源。
 - **资源服务器**是资源或数据所在的位置。它信任授权服务器安全验证和授权 OAuth 客户端，并使用 Bearer access\_token 来确保可以授予对资源的访问权限。
 
-
+<a name="openid-connect-sign-in-flow"></a>
 ## 应用注册
 所有使用 v2.0 终结点的应用都必须先在 [apps.dev.microsoft.com](https://apps.dev.microsoft.com) 上注册，然后才能使用 OAuth 或 OpenID Connect 进行交互。应用注册进程会收集一些值并将其分配到你的应用：
 
@@ -47,6 +48,7 @@ v2.0 终结点可以使用 Azure AD，通过行业标准协议（OpenID Connect 
 
 有关详细信息，请了解如何[注册应用](/documentation/articles/active-directory-v2-app-registration/)。
 
+<a name="endpoints"></a>
 ## 终结点
 注册后，应用将通过向 v2.0 终结点发送请求来与 Azure AD 通信：
 
