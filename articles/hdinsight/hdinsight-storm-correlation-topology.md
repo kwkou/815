@@ -15,10 +15,12 @@
  ms.tgt_pltfrm="na"
  ms.workload="big-data"
  ms.date="09/27/2016"
- wacn.date="11/21/2016"
+ wacn.date="11/25/2016"
  ms.author="larryfr"/>
 
 # 使用 HDInsight 上的 Storm 和 HBase 按时间对事件进行关联
+
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-sdk-developer-differences.md)]
 
 通过使用 Apache Storm 的持久数据存储，你可以将不同时间到达的数据条目关联起来。例如，将用户会话的登录事件和注销事件关联起来即可计算该会话的持续时间。
 

@@ -13,10 +13,12 @@
 	ms.tgt_pltfrm="cache-redis"
 	ms.workload="tbd"
 	ms.date="07/12/2016"
-	wacn.date="08/23/2016"
+	wacn.date="11/25/2016"
 	ms.author="sdanie" />
 
 # Azure Redis 缓存的 ASP.NET 输出缓存提供程序
+
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-sdk-developer-differences.md)]
 
 Redis 输出缓存提供程序是用于输出缓存数据的进程外存储机制。此数据专门用于完整 HTTP 响应（页面输出缓存）。此提供程序会插入 ASP.NET 4 中引入的新输出缓存提供程序扩展点。
 

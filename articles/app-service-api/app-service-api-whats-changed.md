@@ -67,7 +67,7 @@ Web 应用、移动应用和 API 应用中各自提供了 API 定义边栏选项
 
 ## Visual Studio
 
->[AZURE.NOTE] 若要在 Visual Studio 2015 中使用 Azure 中国区，需要配置 Visual Studio 环境。有关详细信息，请参阅[开发人员差异](/documentation/articles/developerdifferences/)。
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-sdk-developer-differences.md)]
 
 大多数 Web 应用工具适用于新的 API 应用，因为它们共享相同的基础 **Microsoft.Web/sites** 资源类型。但是，应该将 Azure Visual Studio 工具升级到 2.8.1 或更高版本，因为它公开一些特定于 API 的功能。从 [Azure 下载页](/downloads/)下载 SDK。
 

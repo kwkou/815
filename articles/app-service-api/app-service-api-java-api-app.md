@@ -14,12 +14,14 @@
 	ms.devlang="java"
 	ms.topic="get-started-article"
 	ms.date="08/31/2016"
-	wacn.date="11/21/2016"
+	wacn.date="11/25/2016"
 	ms.author="rachelap"/>
 
 # 在 Azure 应用服务中生成和部署 Java API 应用
 
 [AZURE.INCLUDE [app-service-api-get-started-selector](../../includes/app-service-api-get-started-selector.md)]
+
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-sdk-developer-differences.md)]
 
 本教程介绍如何创建 Java 应用程序，并使用 [Git] 将其部署到 Azure 应用服务 API 应用。本教程中的说明适用于任何能够运行 Java 的操作系统。本教程中的代码是使用 [Maven] 生成的。将使用 [Jax-RS] 创建 RESTful 服务，这些 Jax-RS 是根据 [Swagger] 元数据规范使用[Swagger 编辑器]生成的。
 

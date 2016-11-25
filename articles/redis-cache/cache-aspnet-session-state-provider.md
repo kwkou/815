@@ -13,10 +13,12 @@
 	ms.tgt_pltfrm="cache-redis"
 	ms.workload="tbd"
 	ms.date="09/01/2016"
-	wacn.date="10/25/2016"
+	wacn.date="11/25/2016"
 	ms.author="sdanie" />
 
 # Azure Redis 缓存的 ASP.NET 会话状态提供程序
+
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-sdk-developer-differences.md)]
 
 Azure Redis Cache 提供一个会话状态提供程序，可用于在缓存而不是内存或 SQL Server 数据库中存储您的会话状态。若要使用缓存会话状态提供程序，首先配置你的缓存，然后使用 Redis 缓存会话状态 NuGet 包为缓存配置 ASP.NET 应用程序。
 

@@ -15,7 +15,7 @@
 	ms.devlang="na" 
 	ms.topic="hero-article" 
 	ms.date="10/11/2016" 
-	wacn.date="11/21/2016" 
+	wacn.date="11/25/2016" 
 	ms.author="sdanie"/>
 
 # 如何使用 Redis 缓存创建 Web 应用
@@ -26,6 +26,8 @@
 - [Node.js](/documentation/articles/cache-nodejs-get-started/)
 - [Java](/documentation/articles/cache-java-get-started/)
 - [Python](/documentation/articles/cache-python-get-started/)
+
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-sdk-developer-differences.md)]
 
 本教程介绍如何使用 Visual Studio 2015 创建 ASP.NET Web 应用程序并将其部署到 Azure 应用服务中的 Web 应用。该示例应用程序显示了数据库中的团队统计信息列表，并显示了使用 Azure Redis 缓存通过缓存存储和检索数据的不同方式。完成本教程后，你将有一个运行的 Web 应用，该应用可以对数据库执行读写操作，已通过 Azure Redis 缓存进行优化，并且托管在 Azure 中。
 
@@ -733,8 +735,6 @@
 >[AZURE.NOTE] 预配过程中可能发生的任何错误都显示在“Microsoft.Template”Microsoft.Template 边栏选项卡上。常见错误包括 SQL Server 过多或每个订阅的免费应用服务托管计划过多。请解决所有错误，然后单击“Microsoft.Template”边栏选项卡上的“重新部署”或本教程中的“部署到 Azure”按钮重新启动过程。
 
 ## <a name="publish-the-application-to-azure"></a>将应用程序发布到 Azure
-
->[AZURE.NOTE] 若要在 Visual Studio 2015 中使用 Azure 中国区，需要配置 Visual Studio 环境。有关详细信息，请参阅[开发人员差异](/documentation/articles/developerdifferences/)。
 
 在教程的这一步中，你需要将应用程序发布到 Azure 并在云中运行。
 

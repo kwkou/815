@@ -14,10 +14,12 @@
 	ms.tgt_pltfrm="na" 
 	ms.workload="na" 
 	ms.date="04/27/2016" 
-	wacn.date="09/26/2016" 
+	wacn.date="11/25/2016" 
 	ms.author="tdykstra"/>
 
 # 使用 Visual Studio 部署 Web 作业
+
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-sdk-developer-differences.md)]
 
 ## 概述
 

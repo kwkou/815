@@ -14,10 +14,12 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="06/01/2016"
-	wacn.date="11/14/2016"
+	wacn.date="11/25/2016"
 	ms.author="tdykstra"/>
 
 # 在 Azure App Service 中创建 .NET Web 作业
+
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-sdk-developer-differences.md)]
 
 本教程演示如何为使用 [WebJobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk/) 的简单多层 ASP.NET MVC 5 应用程序编写代码。
 

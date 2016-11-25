@@ -14,10 +14,12 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="06/01/2016" 
-	wacn.date="10/10/2016" 
+	wacn.date="11/25/2016" 
 	ms.author="tdykstra"/>
 
 # 什么是 Azure WebJobs SDK
+
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-sdk-developer-differences.md)]
 
 ## <a id="overview"></a>概述
 

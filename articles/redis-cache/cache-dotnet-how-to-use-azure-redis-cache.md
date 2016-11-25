@@ -14,7 +14,7 @@
 	ms.devlang="dotnet" 
 	ms.topic="hero-article" 
 	ms.date="08/25/2016" 
-	wacn.date="10/25/2016" 
+	wacn.date="11/25/2016" 
 	ms.author="sdanie"/>
 
 # 如何使用 Azure Redis Cache
@@ -25,6 +25,8 @@
 - [Node.js](/documentation/articles/cache-nodejs-get-started/)
 - [Java](/documentation/articles/cache-java-get-started/)
 - [Python](/documentation/articles/cache-python-get-started/)
+
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-sdk-developer-differences.md)]
 
 本指南说明如何开始使用 **Azure Redis 缓存**。Azure Redis 缓存以常用的开放源 Redis 缓存为基础。它使您可以访问 Azure.cn 托管的安全专用的 Redis 缓存。你可以通过 Azure 中的任何应用程序访问使用 Azure Redis 缓存创建的缓存。
 

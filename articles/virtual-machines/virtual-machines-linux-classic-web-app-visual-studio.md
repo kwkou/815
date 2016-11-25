@@ -15,10 +15,12 @@
 	ms.devlang="dotnet"
 	ms.topic="article"
 	ms.date="08/15/2016"
-	wacn.date="09/30/2016"
+	wacn.date="11/25/2016"
 	ms.author="tarcher"/>
 
 # 使用 Visual Studio 创建用于Web 应用程序的虚拟机
+
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-sdk-developer-differences.md)]
 
 [AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]
 

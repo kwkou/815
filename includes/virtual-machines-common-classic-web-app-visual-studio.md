@@ -1,6 +1,4 @@
 
->[AZURE.NOTE] 若要在 Visual Studio 2015 中使用 Azure 中国区，需要配置 Visual Studio 环境。有关详细信息，请参阅[开发人员差异](/documentation/articles/developerdifferences/)。
-
 创建 Azure 的 Web 应用程序项目时，可以在 Azure 中设置虚拟机。可以然后使用其他软件来配置该虚拟机，或将虚拟机用于诊断或调试。
 
 若要在创建 Web 应用程序时创建虚拟机，请执行以下步骤：

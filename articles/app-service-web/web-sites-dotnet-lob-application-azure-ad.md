@@ -14,11 +14,13 @@
 	ms.tgt_pltfrm="na" 
 	ms.workload="web" 
 	ms.date="09/01/2016" 
-	wacn.date="10/25/2016" 
+	wacn.date="11/25/2016" 
 	ms.author="cephalin"/>
 	ms.author="cephalin"/>
 
 # 使用 Azure Active Directory 身份验证创建业务线 Azure 应用 #
+
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-sdk-developer-differences.md)]
 
 本文说明如何在 [Azure 应用服务 Web 应用](/documentation/articles/app-service-changes-existing-services/)中使用[身份验证/授权](/documentation/articles/app-service-authentication-overview/)功能创建 .NET 业务线应用。另外，还说明如何在应用程序中使用 [Azure Active Directory 图形 API](https://msdn.microsoft.com/Library/Azure/Ad/Graph/api/api-catalog) 查询目录数据。
 

@@ -14,12 +14,14 @@
 	ms.devlang="node"
 	ms.topic="get-started-article"
 	ms.date="05/26/2016"
-	wacn.date="09/26/2016"
+	wacn.date="11/25/2016"
 	ms.author="rachelap"/>
 
 # 构建 Node.js RESTful API 并将它部署到 Azure 中的 API 应用
 
 [AZURE.INCLUDE [app-service-api-get-started-selector](../../includes/app-service-api-get-started-selector.md)]
+
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-sdk-developer-differences.md)]
 
 本教程说明如何创建一个简单的 [Node.js](http://nodejs.org) API，并使用 [Git](http://git-scm.com) 将其部署到 [Azure 应用服务](/documentation/articles/app-service-value-prop-what-is/)中的 [API 应用](/documentation/articles/app-service-api-apps-why-best-platform/)。可以使用任何能够运行 Node.js 的操作系统，使用 cmd.exe 或 bash 等命令行工具执行所有任务。
 

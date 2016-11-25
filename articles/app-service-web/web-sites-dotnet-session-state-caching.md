@@ -14,12 +14,14 @@
 	ms.devlang="dotnet" 
 	ms.topic="get-started-article" 
 	ms.date="06/27/2016" 
-	wacn.date="09/26/2016" 
+	wacn.date="11/25/2016" 
 	ms.author="riande"/>
 
 
 # 将 Azure App Service 中的 Azure Redis 缓存用于会话状态
 
+
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-sdk-developer-differences.md)]
 
 本主题说明如何将 Azure Redis Cache 服务（预览版）用于会话状态。
 

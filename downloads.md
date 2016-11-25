@@ -1,9 +1,11 @@
 <properties linkid="downloads" urlDisplayName="下载和安装 Azure SDK工具" pageTitle="Azure 服务管理" metaKeywords="下载和安装 Azure SDK工具" description="下载和安装 Azure SDK、Azure PowerShell 和用于管理和部署的命令行工具" metaCanonical="" services="downloads" documentationCenter="downloads" title="下载和安装 Azure SDK工具" authors="ACom" solutions="" manager="" editor="Eric Chen" />
 <tags ms.service="downloads"
     ms.date=""
-    wacn.date="02/01/2016"
+    wacn.date="11/25/2016"
     />
 
+
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-sdk-developer-differences.md)]
 
 <div>
   <h1>下载</h1>

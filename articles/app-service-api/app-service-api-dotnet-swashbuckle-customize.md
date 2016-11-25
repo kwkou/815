@@ -15,10 +15,12 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="08/29/2016" 
-	wacn.date="11/21/2016" 
+	wacn.date="11/25/2016" 
 	ms.author="rachelap"/>
 
 # 自定义 Swashbuckle 生成的 API 定义 
+
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-sdk-developer-differences.md)]
 
 ## 概述
 

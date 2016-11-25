@@ -14,10 +14,12 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="08/08/2016" 
-	wacn.date="09/26/2016" 
+	wacn.date="11/25/2016" 
 	ms.author="naziml"/>
 
 # 如何为 Web 应用配置 TLS 相互身份验证
+
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-sdk-developer-differences.md)]
 
 ## 概述 ##
 通过为 Azure Web 应用启用不同类型的身份验证可以限制对网站的访问。执行此操作的方法之一是在通过 TLS/SSL 发送请求时使用客户端证书进行身份验证。此机制称为 TLS 相互身份验证或客户端证书身份验证，本文将详细说明如何将 Web 应用设置为使用客户端证书身份验证。

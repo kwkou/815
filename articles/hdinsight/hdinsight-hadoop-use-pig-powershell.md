@@ -15,12 +15,14 @@
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
    ms.date="10/11/2016"
-   wacn.date="11/21/2016"
+   wacn.date="11/25/2016"
    ms.author="larryfr"/>
 
 #使用 PowerShell 运行 Pig 作业
 
 [AZURE.INCLUDE [pig-selector](../../includes/hdinsight-selector-use-pig.md)]
+
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-sdk-developer-differences.md)]
 
 本文档提供使用 Azure PowerShell 向 HDInsight 群集上的 Hadoop 提交 Pig 作业的示例。Pig 允许你通过使用可为数据转换建模的语言 (Pig Latin) 编写 MapReduce 作业，而无需使用映射和化简函数。
 

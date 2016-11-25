@@ -15,10 +15,12 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="09/02/2016"
-	wacn.date="10/25/2016"
+	wacn.date="11/25/2016"
 	ms.author="jgao"/>
 
 # 使用 Bootstrap 自定义 HDInsight 群集
+
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-sdk-developer-differences.md)]
 
 有时，你可能需要配置配置文件，包括：
 

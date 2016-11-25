@@ -15,12 +15,14 @@
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
    ms.date="08/29/2016"
-   wacn.date="10/25/2016"
+   wacn.date="11/25/2016"
    ms.author="larryfr"/>
 
 #使用 PowerShell 对 HDInsight 上的 Hadoop 运行 Hive 查询
 
 [AZURE.INCLUDE [mapreduce-selector](../../includes/hdinsight-selector-use-mapreduce.md)]
+
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-sdk-developer-differences.md)]
 
 本文档提供使用 Azure PowerShell 在 HDInsight 上的 Hadoop 群集中运行 MapReduce 作业的示例。
 

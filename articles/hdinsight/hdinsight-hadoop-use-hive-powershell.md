@@ -15,12 +15,14 @@
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
    ms.date="09/07/2016"
-   wacn.date="10/25/2016"
+   wacn.date="11/25/2016"
    ms.author="larryfr"/>
 
 #使用 PowerShell 运行 Hive 查询
 
 [AZURE.INCLUDE [hive-selector](../../includes/hdinsight-selector-use-hive.md)]
+
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-sdk-developer-differences.md)]
 
 > [AZURE.NOTE] 本文档未详细描述示例中使用的 HiveQL 语句的作用。有关此示例中使用的 HiveQL 的信息，请参阅[将 Hive 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-hive/)。
 

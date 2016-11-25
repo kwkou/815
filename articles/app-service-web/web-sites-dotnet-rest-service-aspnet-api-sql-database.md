@@ -15,10 +15,12 @@
 	ms.devlang="dotnet" 
 	ms.topic="article" 
 	ms.date="02/29/2016" 
-	wacn.date="09/26/2016" 
+	wacn.date="11/25/2016" 
 	ms.author="riande"/>
 
 # 在 Azure App Service 中使用 ASP.NET Web API 和 SQL 数据库创建 REST 服务
+
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-sdk-developer-differences.md)]
 
 本教程介绍如何使用 Visual Studio 2013 或 Visual Studio 2013 Community Edition 中的“发布 Web”向导将 ASP.NET Web 应用部署到 [Azure App Service](/documentation/articles/app-service-changes-existing-services/)。
 

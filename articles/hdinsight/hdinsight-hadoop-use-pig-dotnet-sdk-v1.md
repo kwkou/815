@@ -14,12 +14,14 @@
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
    ms.date="05/04/2016"
-   wacn.date="06/06/2016"
+   wacn.date="11/25/2016"
    ms.author="larryfr"/>
 
 #使用 HDInsight 中的 .NET SDK for Hadoop 运行 Pig 作业
 
 [AZURE.INCLUDE [pig-selector](../../includes/hdinsight-selector-use-pig.md)]
+
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-sdk-developer-differences.md)]
 
 本文档提供使用 .NET SDK for Hadoop 将 Pig 作业提交到 HDInsight 上的 Hadoop 群集的示例。
 

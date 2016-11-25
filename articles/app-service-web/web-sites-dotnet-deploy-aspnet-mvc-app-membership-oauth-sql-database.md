@@ -15,11 +15,13 @@
 	ms.devlang="dotnet" 
 	ms.topic="article" 
 	ms.date="03/21/2016" 
-	wacn.date="11/14/2016" 
+	wacn.date="11/25/2016" 
 	ms.author="riande"/> 
 
 
 # 创建具有身份验证和 SQL 数据库的 ASP.NET MVC 应用程序并将其部署到 Azure App Service
+
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-sdk-developer-differences.md)]
 
 本教程演示如何构建安全的 ASP.NET MVC 5 Web 应用，以便用户能够使用 Facebook 或 Google 凭据进行登录。该应用是一个简单的联系人列表，使用 ADO.NET Entity Framework 进行数据库访问。你需要将该应用部署到 [Azure 应用服务](/documentation/articles/app-service-changes-existing-services/)。
 
@@ -48,8 +50,6 @@
 ## 创建 ASP.NET MVC 5 应用程序
 
 ### 创建项目
-
->[AZURE.NOTE] 若要在 Visual Studio 2015 中使用 Azure 中国区，需要配置 Visual Studio 环境。有关详细信息，请参阅[开发人员差异](/documentation/articles/developerdifferences/)。
 
 1. 在“文件”菜单中，单击“新建项目”。
 

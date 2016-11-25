@@ -14,10 +14,12 @@
 	ms.devlang="dotnet" 
 	ms.topic="article" 
 	ms.date="06/01/2016" 
-	wacn.date="07/28/2016" 
+	wacn.date="11/25/2016" 
 	ms.author="tdykstra"/>
 
 # 如何通过 WebJobs SDK 使用 Azure Blob 存储
+
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-sdk-developer-differences.md)]
 
 ## 概述
 

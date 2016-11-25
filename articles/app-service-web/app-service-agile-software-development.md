@@ -14,11 +14,13 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="07/01/2016"
-	wacn.date="09/26/2016"
+	wacn.date="11/25/2016"
 	ms.author="cephalin"/>
 
 
 # 使用 Azure App Service 进行敏捷软件开发 #
+
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-sdk-developer-differences.md)]
 
 在本教程中，你将学习如何使用支持[敏捷软件开发](https://en.wikipedia.org/wiki/Agile_software_development)的方式，通过 [Azure App Service](/home/features/app-service/) 创建高缩放性的复杂应用程序。假设你已经知道如何[通过可预测方式在 Azure 中部署复杂应用程序](/documentation/articles/app-service-deploy-complex-application-predictably/)。
 

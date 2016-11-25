@@ -15,11 +15,13 @@
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
    ms.date="03/07/2016"
-   wacn.date="04/26/2016"
+   wacn.date="11/25/2016"
    ms.author="nitinme"/>
 
 
 # Hadoop 教程：在 Windows 上的 HDInsight 中开始将 Hadoop 与 Hive 查询配合使用
+
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-sdk-developer-differences.md)]
 
 为了帮助你了解并开始使用 Windows 上的 HDInsight，本教程说明了如何对 Hadoop 群集中的非结构化数据运行 Hive 查询，然后在 Microsoft Excel 中分析结果。
 

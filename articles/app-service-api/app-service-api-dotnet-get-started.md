@@ -15,12 +15,14 @@
 	ms.devlang="na"
 	ms.topic="hero-article"
 	ms.date="09/20/2016"
-	wacn.date="11/14/2016"
+	wacn.date="11/25/2016"
 	ms.author="rachelap"/>
 
 # Azure 应用服务中的 API 应用、ASP.NET 和 Swagger 入门
 
 [AZURE.INCLUDE [选择器](../../includes/app-service-api-get-started-selector.md)]
+
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-sdk-developer-differences.md)]
 
 本文是系列教程的第一篇，介绍如何使用 Azure 应用服务中有助于开发和托管 RESTful API 的功能。本教程介绍 Swagger 格式 API 元数据的支持。
 
@@ -215,8 +217,6 @@ Swashbuckle 可用于任何 ASP.NET Web API 项目。如果要将 Swagger 元数
 ## <a id="createapiapp"></a>在 Azure 中创建 API 应用并向其部署代码
 
 本部分使用已集成到 Visual Studio 的“发布 Web”向导中的 Azure 工具，在 Azure 中创建新的 API 应用。然后，将 ToDoListDataAPI 项目部署到新的 API 应用，并通过运行 Swagger UI 来调用 API。
-
->[AZURE.NOTE] 若要在 Visual Studio 2015 中使用 Azure 中国区，需要配置 Visual Studio 环境。有关详细信息，请参阅[开发人员差异](/documentation/articles/developerdifferences/)。
 
 1. 在“解决方案资源管理器”中，右键单击 ToDoListDataAPI 项目，然后单击“发布”。
 

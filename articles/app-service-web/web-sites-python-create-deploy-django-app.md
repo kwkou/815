@@ -15,11 +15,13 @@
 	ms.devlang="python"
 	ms.topic="hero-article" 
 	ms.date="02/19/2016" 
-	wacn.date="09/26/2016"
+	wacn.date="11/25/2016"
 	ms.author="huvalo"/>
 
 
 # 在 Azure 中使用 Django 创建 Web 应用
+
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-sdk-developer-differences.md)]
 
 本教程将介绍如何开始在 [Azure App Service Web 应用](/documentation/articles/app-service-changes-existing-services/)中运行 Python。Web Apps 提供有限的免费托管和快速部署功能，现在，您可以使用 Python！ 随着您的应用增长，可以切换到付费托管，并且还可以与所有其他 Azure 服务集成。
 

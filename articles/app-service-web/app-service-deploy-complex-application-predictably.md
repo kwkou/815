@@ -14,12 +14,14 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="01/06/2016"
-	wacn.date="11/14/2016"
+	wacn.date="11/25/2016"
 	ms.author="cephalin"/>
 
 
 
 # 按可预见的方式在 Azure 中设置和部署微服务 #
+
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-sdk-developer-differences.md)]
 
 本教程演示如何通过使用 JSON 资源组模板和 PowerShell 脚本以一种可预见的方式，在 [Azure App Service](/home/features/app-service/) 中将由[微服务](https://zh.wikipedia.org/wiki/微服务)构成的应用程序设置并部署为单个单元。
 
@@ -187,8 +189,6 @@ Web 应用取决于两个不同的资源。这意味着只有在创建 App Servi
 ## 自己部署资源组模板 ##
 
 “部署到 Azure”按钮太好用了，但是只有当你已将 azuredeploy.json 推送到 GitHub 时，它才允许你部署 azuredeploy.json 中的资源组模板。Azure.NET SDK 还提供了工具，使你能够直接从本地计算机部署任何 JSON 模板文件。为此，请执行以下步骤：
-
->[AZURE.NOTE] 若要在 Visual Studio 2015 中使用 Azure 中国区，需要配置 Visual Studio 环境。有关详细信息，请参阅[开发人员差异](/documentation/articles/developerdifferences/)。
 
 1.	在 Visual Studio 中，单击“文件”>“新建”>“项目”。
 

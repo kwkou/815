@@ -1,7 +1,5 @@
 
 
->[AZURE.NOTE] 若要在 Visual Studio 2015 中使用 Azure 中国区，需要配置 Visual Studio 环境。有关详细信息，请参阅[开发人员差异](/documentation/articles/developerdifferences/)。
-
 本文介绍如何使用 Visual Studio 资源组部署来部署 Azure 虚拟机规模集。
 
 
