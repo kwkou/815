@@ -15,10 +15,12 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="09/02/2016"
-	wacn.date="10/25/2016"
+	wacn.date="11/25/2016"
 	ms.author="jgao"/>
 
 # 分析 HDInsight 日志
+
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-sdk-developer-differences.md)]
 
 Azure HDInsight 中的每个 Hadoop 群集都有一个用作默认文件系统的 Azure 存储帐户。该存储帐户称作默认存储帐户。群集使用默认存储帐户上的 Azure 表存储和 Blob 存储来存储其日志。即使在删除群集以后，日志仍会保留在存储帐户中。
 

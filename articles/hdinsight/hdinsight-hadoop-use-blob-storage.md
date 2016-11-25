@@ -16,11 +16,13 @@
 	ms.devlang="na"
 	ms.topic="get-started-article"
 	ms.date="09/06/2016"
-	wacn.date="10/25/2016"
+	wacn.date="11/25/2016"
 	ms.author="jgao"/>
 
 
 # 将 HDFS 兼容的 Azure Blob 存储与 HDInsight 中的 Hadoop 配合使用
+
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-sdk-developer-differences.md)]
 
 学习如何将低成本 Azure Blob 存储与 HDInsight 配合使用、创建 Azure 存储帐户和 Blob 存储容器，然后处理其中的数据。
 

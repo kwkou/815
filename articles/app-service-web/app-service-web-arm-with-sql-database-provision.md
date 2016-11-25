@@ -14,10 +14,12 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="04/27/2016" 
-	wacn.date="09/26/2016" 
+	wacn.date="11/25/2016" 
 	ms.author="cephalin"/>
 
 # 设置使用 SQL 数据库的 Web 应用
+
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-sdk-developer-differences.md)]
 
 在本主题中，你将学习如何创建用于部署 Web 应用和 SQL 数据库的 Azure 资源管理器模板。你将了解如何定义要部署的资源以及如何定义执行部署时指定的参数。可将此模板用于自己的部署，或自定义此模板以满足要求。
 

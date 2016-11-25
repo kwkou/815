@@ -14,10 +14,12 @@
 	ms.tgt_pltfrm="windows"
 	ms.workload="na"
 	ms.date="02/29/2016"
-	wacn.date="09/26/2016"
+	wacn.date="11/25/2016"
 	ms.author="cfowler"/>
 
 # 通过 Memcache 协议将 Azure App Service 中的 Web 应用连接到 Redis 缓存
+
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-sdk-developer-differences.md)]
 
 本文将介绍如何使用 [Memcache][13] 协议将 [Azure App Service](/documentation/articles/app-service-changes-existing-services/) 中的 WordPress Web 应用连接到 [Azure Redis 缓存][12]。如果某个现有 Web 应用使用 Memcached 服务器进行内部缓存，可将其迁移到 Azure App Service 并使用 Azure 中不（几乎不）更改应用程序代码的第一方缓存解决方案。还可利用现有的 Memcache 专业知识在 Azure App Service（带用于内部缓存的 Azure Redis 缓存）中创建高度可缩放的分布式应用，同时使用常用的应用程序框架，例如 .NET、PHP、Node.js、Java 和 Python。
 

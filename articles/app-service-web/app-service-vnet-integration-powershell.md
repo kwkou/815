@@ -14,10 +14,12 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="08/29/2016"
-	wacn.date="10/25/2016"
+	wacn.date="11/25/2016"
 	ms.author="ccompy"/>
 
 # 使用 PowerShell 将应用程序连接到虚拟网络 #
+
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-sdk-developer-differences.md)]
 
 ## 概述 ##
 

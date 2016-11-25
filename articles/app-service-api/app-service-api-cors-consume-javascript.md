@@ -14,10 +14,12 @@
 	ms.devlang="na"
 	ms.topic="get-started-article"
 	ms.date="08/27/2016"
-	wacn.date="11/21/2016"
+	wacn.date="11/25/2016"
 	ms.author="rachelap"/>
 
 # 借助 CORS 从 JavaScript 使用 API 应用
+
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-sdk-developer-differences.md)]
 
 应用服务提供内置的[跨域资源共享 (CORS)](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing) 支持，可让 JavaScript 客户端对 API 应用中托管的 API 进行跨域调用。应用服务允许配置对 API 的 CORS 访问，无需在 API 中编写任何代码。
 

@@ -13,10 +13,12 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="05/31/2016"
-	wacn.date="09/26/2016"
+	wacn.date="11/25/2016"
 	ms.author="john.dehavilland"/>
 
 # 使用 MSDeploy、自定义主机名和 SSL 证书部署 Web 应用
+
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-sdk-developer-differences.md)]
 
 本指南逐步说明如何通过利用 MSDeploy，以及将自定义主机名和 SSL 证书添加到 ARM 模板，来创建 Azure Web 应用的端到端部署。
 

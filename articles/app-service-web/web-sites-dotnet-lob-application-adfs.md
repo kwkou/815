@@ -14,11 +14,13 @@
 	ms.tgt_pltfrm="na" 
 	ms.workload="web" 
 	ms.date="08/31/2016" 
-	wacn.date="10/25/2016" 
+	wacn.date="11/25/2016" 
 	ms.author="cephalin"/>
 	ms.author="cephalin"/>
 
 # 使用 AD FS 身份验证创建业务线 Azure 应用
+
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-sdk-developer-differences.md)]
 
 本文说明如何使用本地 [Active Directory 联合身份验证服务](http://technet.microsoft.com/zh-cn/library/hh831502.aspx)作为标识提供者，在 [Azure 应用服务](/documentation/articles/app-service-value-prop-what-is/)中创建 ASP.NET MVC 业务线应用程序。如果要在 Azure 应用服务中创建业务线应用程序，并且组织要求在现场存储目录数据，则可以使用此方案。
 

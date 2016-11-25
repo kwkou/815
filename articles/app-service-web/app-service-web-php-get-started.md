@@ -15,12 +15,14 @@
 	ms.devlang="PHP"
 	ms.topic="article"
 	ms.date="06/03/2016"
-	wacn.date="11/14/2016" 
+	wacn.date="11/25/2016" 
 	ms.author="cephalin"/>
 
 # 创建、配置 PHP Web 应用，并将其部署到 Azure
 
 [AZURE.INCLUDE [选项卡](../../includes/app-service-web-get-started-nav-tabs.md)]
+
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-sdk-developer-differences.md)]
 
 本教程演示了如何为 Azure 创建、配置和部署 PHP Web 应用，以及如何配置 Azure App Service 以满足 PHP Web 应用的要求。在本教程结束时，将在 [Azure App Service](/documentation/articles/app-service-value-prop-what-is/) 中实时运行一个工作 [Laravel](https://www.laravel.com/) Web 应用。
 

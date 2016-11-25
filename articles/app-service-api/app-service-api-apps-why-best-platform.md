@@ -14,10 +14,12 @@
 	ms.devlang="na" 
 	ms.topic="get-started-article" 
 	ms.date="08/23/2016" 
-	wacn.date="11/21/2016" 
+	wacn.date="11/25/2016" 
 	ms.author="rachelap"/>
 
 # API 应用概述
+
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-sdk-developer-differences.md)]
 
 Azure 应用服务中的 API 应用提供各种功能，用于轻松在云中和本地开发、托管和使用 API。使用 API 应用可受益于企业级安全性、简单的访问控制、和自动 SDK 生成等功能。
 

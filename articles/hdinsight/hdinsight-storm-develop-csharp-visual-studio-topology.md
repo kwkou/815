@@ -15,10 +15,12 @@
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
    ms.date="10/17/2016"
-   wacn.date="11/21/2016"
+   wacn.date="11/25/2016"
    ms.author="larryfr"/>
 
 # 使用 Hadoop Tools for Visual Studio 开发 Apache Storm on HDInsight 的 C# 拓扑
+
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-sdk-developer-differences.md)]
 
 了解如何使用 HDInsight Tools for Visual Studio 创建 C# Storm 拓扑。本教程逐步说明在 Visual Studio 中创建新的 Storm 项目、在本地测试该项目，然后将它部署到 Apache Storm on HDInsight 群集的过程。
 

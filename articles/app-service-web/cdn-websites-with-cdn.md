@@ -14,12 +14,14 @@
 	ms.devlang="dotnet" 
 	ms.topic="article" 
 	ms.date="07/01/2016" 
-	wacn.date="11/14/2016" 
+	wacn.date="11/25/2016" 
 	ms.author="cephalin"/>
 
 
 
 # 在 Azure App Service 中使用 Azure CDN
+
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-sdk-developer-differences.md)]
 
 [应用服务](/documentation/articles/app-service-changes-existing-services/)可以与 [Azure CDN](/home/features/cdn/) 相集成，增强[应用服务 Web 应用](/documentation/articles/app-service-changes-existing-services/)中固有的全局缩放功能，在全国通过靠近客户的服务器节点提供 Web 应用内容（如需已更新的包含所有最新节点位置的列表，请单击[此处](http://msdn.microsoft.com/zh-cn/library/azure/gg680302.aspx)）。在特定情况下（例如提供静态映像），此集成可以大幅提高 Azure 应用服务 Web 应用的性能，在全国显著改善 Web 应用的用户体验。
 
@@ -47,8 +49,6 @@
 > + 可以[注册一个 Azure 帐户](/pricing/1rmb-trial/) — 获取可用来试用付费版 Azure 服务的信用额度，甚至在用完信用额度后，仍可以保留帐户和使用免费的 Azure 服务（如 Web 应用）。
 
 ##<a name="deploy-a-web-app-to-azure-with-an-integrated-cdn-endpoint"></a> 将 Web 应用部署到具有集成 CDN 终结点的 Azure ##
-
->[AZURE.NOTE] 若要在 Visual Studio 2015 中使用 Azure 中国区，需要配置 Visual Studio 环境。有关详细信息，请参阅[开发人员差异](/documentation/articles/developerdifferences/)。
 
 在本部分，你需要将 Visual Studio 2015 中的默认 ASP.NET MVC 应用程序模板部署到应用服务，然后将其与新的 CDN 终结点相集成。请根据以下说明进行操作：
 

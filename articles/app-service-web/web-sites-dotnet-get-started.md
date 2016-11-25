@@ -14,12 +14,14 @@
 	ms.devlang="dotnet"
 	ms.topic="get-started-article"
 	ms.date="07/22/2016"
-	wacn.date="09/26/2016"
+	wacn.date="11/25/2016"
 	ms.author="rachelap"/>
 
 # 使用 Visual Studio 将 ASP.NET Web 应用部署到 Azure App Service
 
 [AZURE.INCLUDE [选项卡](../../includes/app-service-web-get-started-nav-tabs.md)]
+
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-sdk-developer-differences.md)]
 
 ## 概述
 

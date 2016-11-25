@@ -6,8 +6,6 @@
 
 ### 创建新虚拟机
 
->[AZURE.NOTE] 若要在 Visual Studio 2015 中使用 Azure 中国区，需要配置 Visual Studio 环境。有关详细信息，请参阅[开发人员差异](/documentation/articles/developerdifferences/)。
-
 1. 在“服务器资源管理器”中打开“Azure”节点，然后单击“虚拟机”。
 
 1. 在上下文菜单中，单击“创建虚拟机”。

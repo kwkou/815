@@ -15,12 +15,14 @@
 	ms.devlang="python"
 	ms.topic="get-started-article" 
 	ms.date="07/07/2016" 
-	wacn.date="09/26/2016"
+	wacn.date="11/25/2016"
 	ms.author="huvalo"/>
 
 # 具有 Python Tools 2.2 for Visual Studio 的 Azure 上的 Django 和 MySQL 
 
 [AZURE.INCLUDE [选项卡](../../includes/app-service-web-get-started-nav-tabs.md)]
+
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-sdk-developer-differences.md)]
 
 在本教程中，你将使用 [Python Tools for Visual Studio](http://aka.ms/ptvs) 通过一个 PTVS 样本模板创建简单的轮询 Web 应用。你将了解如何使用在 Azure 上托管的 MySQL 服务、如何将 Web 应用配置为使用 MySQL，以及如何将 Web 应用发布到 [Azure App Service Web Apps](/documentation/articles/app-service-changes-existing-services/) 中。
 

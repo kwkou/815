@@ -15,10 +15,12 @@
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
    ms.date="10/11/2016"
-   wacn.date="11/21/2016"
+   wacn.date="11/25/2016"
    ms.author="larryfr"/>
 
 #在基于 Windows 的 HDInsight 上部署和管理 Apache Storm 拓扑
+
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-sdk-developer-differences.md)]
 
 Storm 仪表板可让你使用 Web 浏览器轻松在 HDInsight 群集中部署和运行 Apache Storm 拓扑。还可以使用该仪表板监视和管理正在运行的拓扑。如果你使用 Visual Studio，则 HDInsight Tools for Visual Studio 会提供 Visual Studio 中的类似功能。
 

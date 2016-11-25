@@ -15,10 +15,12 @@
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
    ms.date="09/02/2016"
-   wacn.date="10/25/2016"
+   wacn.date="11/25/2016"
    ms.author="jgao"/>
 
 # 在 Azure 虚拟网络上设置 HBase 群集
+
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-sdk-developer-differences.md)]
 
 了解如何在 [Azure 虚拟网络][1]上创建 Azure HDInsight HBase 群集。
 

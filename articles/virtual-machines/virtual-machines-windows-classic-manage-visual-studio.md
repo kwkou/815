@@ -13,11 +13,13 @@
    ms.tgt_pltfrm="vm-windows"
    ms.workload="na"
    ms.date="08/15/2016"
-   wacn.date="09/30/2016"
+   wacn.date="11/25/2016"
    ms.author="tarcher" />
 
 # 在 Visual Studio 中创建和管理 Windows 虚拟机
 
+
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-sdk-developer-differences.md)]
 
 
 [AZURE.INCLUDE [virtual-machines-common-classic-manage-visual-studio](../../includes/virtual-machines-common-classic-manage-visual-studio.md)]

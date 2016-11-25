@@ -14,10 +14,12 @@
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
    ms.date="08/02/2016"
-   wacn.date="09/30/2016"
+   wacn.date="11/25/2016"
    ms.author="larryfr"/>
 
 # 使用 Storm on HDInsight 从 Azure 事件中心处理事件 (C#)
+
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-sdk-developer-differences.md)]
 
 Azure 事件中心可让你处理网站、应用程序和设备中的大量数据。借助事件中心 Spout，你可以轻松使用 Apache Storm on HDInsight 实时分析这些数据。你还可以使用事件中心 Bolt 从 Storm 向事件中心写入数据。
 

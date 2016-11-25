@@ -14,7 +14,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="big-data" 
    ms.date="06/28/2016" 
-   wacn.date="08/23/2016"
+   wacn.date="11/25/2016"
    ms.author="jgao"/>
 
 # 在两个 Azure 虚拟网络之间配置 DNS
@@ -23,6 +23,8 @@
 - [Configure VPN connectivity](/documentation/articles/hdinsight-hbase-geo-replication-configure-VNets/)
 - [Configure DNS](/documentation/articles/hdinsight-hbase-geo-replication-configure-DNS/)
 - [Configure HBase replication](/documentation/articles/hdinsight-hbase-geo-replication/) 
+
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-sdk-developer-differences.md)]
 
 
 了解如何向 Azure 虚拟网络添加和配置 DNS 服务器，以处理虚拟机内部和跨虚拟网络的名称解析。

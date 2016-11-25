@@ -14,10 +14,12 @@
    ms.tgt_pltfrm="na"
    ms.workload="big-data" 
    ms.date="07/25/2016" 
-   wacn.date="09/30/2016"
+   wacn.date="11/25/2016"
    ms.author="jgao"/>
 
 #在 HDInsight 中设置 Hadoop 群集
+
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-sdk-developer-differences.md)]
 
 了解如何规划 HDInsight 群集的预配。
 

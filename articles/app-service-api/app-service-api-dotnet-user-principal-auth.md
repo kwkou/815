@@ -14,10 +14,12 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="06/30/2016"
-	wacn.date="09/26/2016"
+	wacn.date="11/25/2016"
 	ms.author="rachelap"/>
 
 # Azure 应用服务中 API 应用的用户身份验证
+
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-sdk-developer-differences.md)]
 
 ## 概述
 

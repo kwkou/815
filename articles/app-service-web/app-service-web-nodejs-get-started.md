@@ -15,13 +15,15 @@
 	ms.devlang="nodejs"
 	ms.topic="get-started-article"
 	ms.date="07/01/2016"
-	wacn.date="10/31/2016"
+	wacn.date="11/25/2016"
 	ms.author="cephalin"/>  
 
 
 # 在 Azure App Service 中 Node.js Web 应用入门
 
 [AZURE.INCLUDE [选项卡](../../includes/app-service-web-get-started-nav-tabs.md)]
+
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-sdk-developer-differences.md)]
 
 本教程说明如何创建一个简单的 [Node.js] 应用程序，然后通过 cmd.exe 或 bash 等命令行环境将它部署到 [Azure App Service]。本教程中的说明适用于任何能够运行 Node.js 的操作系统。
 

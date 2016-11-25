@@ -15,12 +15,14 @@
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
    ms.date="09/06/2016"
-   wacn.date="10/25/2016"
+   wacn.date="11/25/2016"
    ms.author="larryfr"/>
 
 #使用适用于 Visual Studio 的 HDInsight 工具运行 Hive 查询
 
 [AZURE.INCLUDE [hive-selector](../../includes/hdinsight-selector-use-hive.md)]
+
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-sdk-developer-differences.md)]
 
 在本文中，你将了解如何使用适用于 Visual Studio 的 HDInsight 工具将 Hive 查询提交到 HDInsight 群集。
 

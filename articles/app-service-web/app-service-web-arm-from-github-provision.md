@@ -14,10 +14,12 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="04/27/2016" 
-	wacn.date="09/26/2016" 
+	wacn.date="11/25/2016" 
 	ms.author="cephalin"/>
 
 # 部署链接到 GitHub 存储库的网站
+
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-sdk-developer-differences.md)]
 
 在本主题中，你将学习如何创建 Azure 资源管理器模板，该模板部署链接到 GitHub 存储库中项目的网站。你将了解如何定义要部署的资源以及如何定义执行部署时指定的参数。可将此模板用于自己的部署，或自定义此模板以满足要求。
 

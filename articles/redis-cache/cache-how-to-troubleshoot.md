@@ -14,10 +14,12 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="08/09/2016" 
-	wacn.date="09/05/2016" 
+	wacn.date="11/25/2016" 
 	ms.author="sdanie"/>
 
 # 如何排查 Azure Redis 缓存问题
+
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-sdk-developer-differences.md)]
 
 本文提供的指南适用于排查以下类别的 Azure Redis 缓存问题。
 

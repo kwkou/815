@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="cache-redis"
 	ms.workload="tbd"
 	ms.date="08/16/2016"
-	wacn.date="10/17/2016"
+	wacn.date="11/25/2016"
 	ms.author="sdanie"/>
 
 # 如何将 Azure Redis 缓存与 Node.js 配合使用
@@ -25,6 +25,8 @@
 - [Node.js](/documentation/articles/cache-nodejs-get-started/)
 - [Java](/documentation/articles/cache-java-get-started/)
 - [Python](/documentation/articles/cache-python-get-started/)
+
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-sdk-developer-differences.md)]
 
 Azure Redis 缓存允许访问 Microsoft 管理的、专用安全的 Redis 缓存。可从 Azure 内部的任何应用程序访问缓存。
 

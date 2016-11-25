@@ -14,12 +14,14 @@
 	ms.devlang="python" 
 	ms.topic="article" 
 	ms.date="07/07/2016" 
-	wacn.date="09/26/2016"
+	wacn.date="11/25/2016"
 	ms.author="huvalo"/>  
 
 
 
 # 具有 Python Tools 2.2 for Visual Studio 的 Azure 上的 Bottle 和 Azure 表存储 
+
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-sdk-developer-differences.md)]
 
 在本教程中，我们将使用 [Python Tools for Visual Studio] 通过一个 PTVS 样本模板创建简单的轮询 Web 应用。
 

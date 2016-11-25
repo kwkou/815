@@ -15,10 +15,12 @@
 	ms.devlang="nodejs"
 	ms.topic="article"
 	ms.date="09/23/2016"
-	wacn.date="10/31/2016"
+	wacn.date="11/25/2016"
 	ms.author="cephalin"/>
 
 # 将 Sails.js Web 应用部署到 Azure App Service
+
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-sdk-developer-differences.md)]
 
 本教程说明如何将 Sails.js 应用部署到 Azure App Service。在此过程中，可以搜集一些有关如何将 Node.js 应用配置为在应用服务中运行的一般知识。
 

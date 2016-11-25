@@ -15,10 +15,12 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="02/25/2016"
-	wacn.date="10/10/2016"
+	wacn.date="11/25/2016"
 	ms.author="cephalin"/>
 
 # Azure 应用服务 Web 应用高级配置和扩展
+
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-sdk-developer-differences.md)]
 
 使用 [XML 文档转换](http://msdn.microsoft.com/zh-cn/library/dd465326.aspx) (XDT) 声明，可以转换 Azure 应用服务中 Web 应用的 [ApplicationHost.config](http://www.iis.net/learn/get-started/planning-your-iis-architecture/introduction-to-applicationhostconfig) 文件。你还可使用 XDT 声明添加专用扩展，启用自定义 Web 应用管理操作。本文包括一个 PHP Manager Web 应用扩展示例，可用于通过 Web 界面管理 PHP 设置。
 

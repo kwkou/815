@@ -14,7 +14,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="big-data" 
    ms.date="07/25/2016" 
-   wacn.date="09/30/2016"
+   wacn.date="11/25/2016"
    ms.author="jgao"/>
 
 # 在 HDInsight 中配置 HBase 地域复制
@@ -23,6 +23,8 @@
 - [配置 DNS](/documentation/articles/hdinsight-hbase-geo-replication-configure-DNS/)
 - [配置 HBase 复制](/documentation/articles/hdinsight-hbase-geo-replication/) 
  
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-sdk-developer-differences.md)]
+
 了解如何跨两个数据中心配置 HBase 复制。群集复制的部分用例包括：
 
 - 备份和灾难恢复

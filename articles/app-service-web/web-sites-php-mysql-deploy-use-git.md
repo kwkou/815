@@ -15,10 +15,12 @@
 	ms.devlang="PHP"
 	ms.topic="article"
 	ms.date="08/11/2016"
-	wacn.date="09/26/2016"
+	wacn.date="11/25/2016"
 	ms.author="robmcm"/>
 
 # 使用 Git 在 Azure App Service 中创建和部署 PHP-MySQL Web 应用
+
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-sdk-developer-differences.md)]
 
 本教程演示如何创建 PHP-MySQL Web 应用以及如何使用 Git 将该应用部署到[应用服务](/documentation/articles/app-service-changes-existing-services/)。需要使用计算机上已安装的 [PHP][install-php]、MySQL 命令行工具（[MySQL][install-mysql] 的一部分）和 [Git][install-git]。本教程中的说明适用于任何操作系统，包括 Windows、Mac 和 Linux。完成本指南之后，你将拥有一个在 Azure 中运行的 PHP/MySQL Web 应用。
 

@@ -14,10 +14,12 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="07/23/2016"
-	wacn.date="11/14/2016"
+	wacn.date="11/25/2016"
 	ms.author="dariagrigoriu"/>
     
 # 连续部署到 Azure App Service
+
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-sdk-developer-differences.md)]
 
 本教程说明如何为 [Azure App Service] 应用配置连续部署工作流。将应用服务与 BitBucket、GitHub 和 Visual Studio Team Services (VSTS) 集成可以实现一种连续部署工作流，在其中，Azure 可以从发布到其中一种服务的项目中拉取最近的更新。连续部署选项非常适合用于频繁集成多个分发内容的项目。
 

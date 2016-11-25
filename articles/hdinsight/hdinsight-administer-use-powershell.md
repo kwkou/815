@@ -15,12 +15,14 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="08/10/2016"
-	wacn.date="09/30/2016"
+	wacn.date="11/25/2016"
 	ms.author="jgao"/>
 
 # 使用 Azure PowerShell 管理 HDInsight 中的 Hadoop 群集
 
 [AZURE.INCLUDE [选择器](../../includes/hdinsight-portal-management-selector.md)]
+
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-sdk-developer-differences.md)]
 
 Azure PowerShell 是一个功能强大的脚本编写环境，可用于在 Azure 中控制和自动执行工作负荷的部署和管理。在本文中，你将要学习如何通过使用 Windows PowerShell 借助于本地 Azure PowerShell 控制台来管理 Azure HDInsight 中的 Hadoop 群集。有关 HDInsight PowerShell cmdlet 的列表，请参阅 [HDInsight cmdlet 参考][hdinsight-powershell-reference]。
 

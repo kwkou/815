@@ -14,13 +14,15 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="08/10/2016"
-	wacn.date="09/26/2016"
+	wacn.date="11/25/2016"
 	ms.author="nicking"/>
 # 使用 REST 备份和还原 App Service 应用
 
 > [AZURE.SELECTOR]
 - [PowerShell](/documentation/articles/app-service-powershell-backup/)
 - [REST API](/documentation/articles/websites-csm-backup/)
+
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-sdk-developer-differences.md)]
 
 [应用服务应用](/home/features/app-service/web-apps/)可以备份为 Azure 存储中的 Blob。备份还可以包含该应用的数据库。如果曾经意外地删除了该应用，或者该应用需要还原到以前的版本，则可以从任何以前的备份还原。可随时按需备份，也可以计划以合适的时间间隔备份。
 

@@ -15,10 +15,12 @@
  ms.tgt_pltfrm="na"
  ms.workload="big-data"
  ms.date="08/16/2016"
- wacn.date="10/25/2016"
+ wacn.date="11/25/2016"
  ms.author="larryfr"/>
 
 # 使用 Power BI 直观显示 Apache Storm 拓扑中的数据
+
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-sdk-developer-differences.md)]
 
 Power BI 允许你以可视方式将数据显示为报表。使用适用于 Storm on HDInsight 的 Visual Studio 模板，可以轻松地将 Apache Storm on HDInsight 群集上运行的拓扑中的数据存储到 SQL Azure，然后使用 Power BI 将数据可视化。
 

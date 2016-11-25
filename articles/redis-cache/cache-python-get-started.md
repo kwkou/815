@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="cache-redis"
 	ms.workload="tbd"
 	ms.date="08/16/2016"
-	wacn.date="10/25/2016"
+	wacn.date="11/25/2016"
 	ms.author="sdanie"/>  
 
 
@@ -26,6 +26,8 @@
 - [Node.js](/documentation/articles/cache-nodejs-get-started/)
 - [Java](/documentation/articles/cache-java-get-started/)
 - [Python](/documentation/articles/cache-python-get-started/)
+
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-sdk-developer-differences.md)]
 
 本主题说明如何将Azure Redis 缓存与 Python 配合使用。
 

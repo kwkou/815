@@ -15,12 +15,14 @@
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
    ms.date="07/25/2016"
-   wacn.date="09/30/2016"
+   wacn.date="11/25/2016"
    ms.author="jgao"/>
 
 # 使用 Microsoft Hive ODBC 驱动程序将 Excel 连接到 Hadoop
 
 [AZURE.INCLUDE [ODBC-JDBC-selector](../../includes/hdinsight-selector-odbc-jdbc.md)]
+
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-sdk-developer-differences.md)]
 
 Microsoft 的大数据解决方案可将 Microsoft 商业智能 (BI) 组件与已由 Azure HDInsight 部署的 Apache Hadoop 群集相集成。此集成的一个例子是，能够使用 Microsoft Hive 开放式数据库连接 (ODBC) 驱动程序将 Excel 连接到 HDInsight 中的 Hadoop 群集的 Hive 数据仓库。
 
