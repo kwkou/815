@@ -8,8 +8,6 @@
 	manager="jhubbard" 
 	editor="cgronlun"/>  
 
-
-
 <tags 
 	ms.service="documentdb" 
 	ms.workload="data-services" 
@@ -17,7 +15,7 @@
 	ms.devlang="dotnet" 
 	ms.topic="hero-article" 
 	ms.date="08/25/2016" 
-	wacn.date="10/18/2016" 
+	wacn.date="11/25/2016" 
 	ms.author="syamk"/>
 
 # <a name="_Toc395809351"></a>ASP.NET MVC 教程：使用 DocumentDB 开发 Web 应用程序
@@ -42,7 +40,7 @@
 
 - 有效的 Azure 帐户。如果你没有帐户，可以创建一个试用帐户，只需几分钟即可完成。有关详细信息，请参阅 [Azure 试用](/pricing/1rmb-trial/)。
 - [Visual Studio 2015](http://www.visualstudio.com/)、Visual Studio 2013 Update 4 或更高版本。如果使用的是 Visual Studio 2013，则需安装 [Microsoft.Net.Compilers Nuget 包](https://www.nuget.org/packages/Microsoft.Net.Compilers/)以添加对 C# 6.0 的支持。
-- 用于 .NET 2.5.1 或更高版的 Azure SDK，可通过 [Microsoft Web 平台安装程序][]获取。
+- 用于 .NET 2.5.1 或更高版的 Azure SDK，可通过 Microsoft Web 平台安装程序获取。
 
 本文中的所有屏幕截图都是使用已应用 Update 4 的 Visual Studio 2013 以及 用于 .NET 的 Azure SDK 2.5.1 版获取的。如果你的系统配备了不同的版本，那么，你的屏幕和选项可能不会完全相符，但只要你符合上述先决条件，本解决方案应该还是有效。
 
@@ -594,7 +592,6 @@
 
 
 [Visual Studio Express]: http://www.visualstudio.com/products/visual-studio-express-vs.aspx
-[Microsoft Web 平台安装程序]: http://www.microsoft.com/web/downloads/platform.aspx
 [防止跨站点请求伪造]: http://go.microsoft.com/fwlink/?LinkID=517254
 [ASP.NET MVC 中的基本 CRUD 操作]: http://go.microsoft.com/fwlink/?LinkId=317598
 [GitHub]: https://github.com/Azure-Samples/documentdb-net-todo-app

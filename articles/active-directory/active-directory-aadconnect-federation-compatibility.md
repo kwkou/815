@@ -14,7 +14,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="09/12/2016"
-	wacn.date="10/11/2016"
+	wacn.date="11/25/2016"
 	ms.author="billmath"/>
 
 # Azure AD 联合身份验证兼容性列表
@@ -308,8 +308,6 @@ CA Secure Cloud 实施广泛使用的 WS 联合标识标准以提供单一登录
 | 基于 Web 的客户端（如 Exchange Web Access 和 SharePoint Online） | 支持 |不支持集成 Windows 身份验证|
 | 富客户端应用程序（如 Lync、Office Subscription、CRM） | 支持 |不支持集成 Windows 身份验证|
 | 多重格式电子邮件客户端（如 Outlook 和 ActiveSync） | 支持 |无|
-
-有关 CA Secure Cloud 详细信息，请参阅 [CA Secure Cloud。](http://www.ca.com/us/products/security-as-a-service.aspx)
 
 ## Dell One Identity Cloud Access Manager v7.1 
 Dell One Identity Cloud Access Manager 实施广泛使用的 WS 联合标识标准以提供单一登录和属性交换框架。

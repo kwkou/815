@@ -14,7 +14,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="08/30/2016"
-	wacn.date="10/17/2016"
+	wacn.date="11/25/2016"
 	ms.author="asteen"/>
 
 # 如何更新自己的密码
@@ -78,6 +78,7 @@
 
  更改密码时遇到问题？ 请阅读[常见问题及其解决方法](#common-problems-and-their-solutions)。
 
+<a name="how-to-reset-your-password"></a>
 ## 如何重置密码
 
 
@@ -183,6 +184,7 @@
 
 解锁帐户时遇到问题？ 请阅读[常见问题及其解决方法](#common-problems-and-their-solutions)。
 
+<a name="common-problems-and-their-solutions"></a>
 ## 常见问题及其解决方法
 以下是一些常见的错误案例及其解决方法：
 

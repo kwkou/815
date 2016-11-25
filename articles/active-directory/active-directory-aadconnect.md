@@ -16,7 +16,7 @@
 	ms.devlang="na"
 	ms.topic="get-started-article"
 	ms.date="10/04/2016"
-	wacn.date="11/21/2016"
+	wacn.date="11/25/2016"
 	ms.author="billmath"/>  
 
 
@@ -47,7 +47,7 @@ Azure Active Directory Connect 由三个主要组件构成：同步服务、可�
 - 同步 - 此组件负责创建用户、组和其他对象。它还负责确保本地用户和组的标识信息与云匹配。
 - AD FS - 联合身份验证是 Azure AD Connect 的可选部件，可用于使用本地 AD FS 基础结构配置混合环境。组织可以使用此部件来解决复杂的部署，例如域加入 SSO、实施 AD 登录策略和智能卡或第三方 MFA。
 
-
+<a name="install-azure-ad-connect"></a>
 ## <a name="download-azure-ad-connect"></a>安装 Azure AD Connect
 
 可以在 [Microsoft 下载中心](http://go.microsoft.com/fwlink/?LinkId=615771)找到 Azure AD Connect 的下载文件。

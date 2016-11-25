@@ -15,7 +15,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="identity"
    ms.date="09/16/2016"
-   wacn.date="11/21/2016"
+   wacn.date="11/25/2016"
    ms.author="mbaldwin"/>
 
 # Azure AD 的身份验证方案
@@ -137,6 +137,7 @@ Azure AD 颁发的安全令牌包含与经过授权的使用者有关的信息�
 
 本文档中列出的每个方案都包括一个小节，用以介绍其设置要求。有关在 Azure AD 中预配应用程序以及单租户应用程序与多租户应用程序之间区别的更深入信息，请参阅[将应用程序与 Azure Active Directory 集成](/documentation/articles/active-directory-integrating-applications/)。继续阅读以了解 Azure AD 中的常见应用程序方案。
 
+<a name="application-types-and-scenarios"></a>
 ## 应用程序类型和方案
 
 本文档中所述的每个方案可以使用各种语言和平台进行开发。它们都由完整代码示例提供支持（在[代码示例指南](/documentation/articles/active-directory-code-samples/)中提供的，也可以直接从对应的 [Github 示例存储库](https://github.com/Azure-Samples?utf8=%E2%9C%93&query=active-directory)中获取）。此外，如果你的应用程序需要某个端到端方案的特定片段，在大多数情况下都可以独立添加该功能。例如，如果你有一个调用某个 Web API 的本机应用程序，则你可以轻松添加也调用该 Web API 的 Web 应用程序。下面的图示介绍了这些方案和应用程序类型，以及可以如何添加各种组件：
@@ -155,6 +156,7 @@ Azure AD 颁发的安全令牌包含与经过授权的使用者有关的信息�
 
 - [后台或服务器应用程序到 Web API](#daemon-or-server-application-to-web-api)：没有 Web 用户界面的后台应用程序或服务器应用程序需要从 Azure AD 所保护的 Web API 获取资源。
 
+<a name="web-browser-to-web-application"></a>
 ### Web 浏览器到 Web 应用程序
 
 本部分介绍了在 Web 浏览器到 Web 应用程序方案中对用户进行身份验证的应用程序。在此方案中，Web 应用程序指示用户的浏览器让用户登录到 Azure AD 中。Azure AD 通过用户的浏览器返回一个登录响应，该响应在一个安全令牌中包含了关于用户的声明。此方案支持使用 WS-Federation、SAML 2.0 和 OpenID Connect 协议进行登录。
@@ -201,7 +203,7 @@ Azure AD 颁发的安全令牌包含与经过授权的使用者有关的信息�
 
 
 
-
+<a name="single-page-application-spa"></a>
 ### 单页面应用程序 (SPA)
 
 本部分介绍使用 Azure AD 和 OAuth 2.0 隐式授权授予来保护其 Web API 后端的单页面应用程序的身份验证。通常将单页面应用程序构建为一个 JavaScript 表示层（前端），该表示层不仅在浏览器中运行，还在一个在服务器上运行并实现应用程序业务逻辑的 Web API 中运行。若要了解有关隐式授权授予的详细信息，并帮助确定它是否适合应用程序方案，请参阅 [Understanding the OAuth2 implicit grant flow in Azure Active Directory](/documentation/articles/active-directory-dev-understanding-oauth2-implicit-grant/)（了解 Azure Active Directory 中的 OAuth2 隐式授予流）。
@@ -257,7 +259,7 @@ Azure AD 颁发的安全令牌包含与经过授权的使用者有关的信息�
 
 当你使用 ADAL.js 来管理 Azure AD 身份验证时，你将从几个功能中获益，这些功能不仅有助于刷新过期的令牌，还有助于为可能被应用程序调用的其他 Web API 资源获取令牌。当用户成功向 Azure AD 进行身份验证时，将在浏览器与 Azure AD 之间建立一个通过 Cookie 进行保护的会话。请务必注意，此会话存在于用户与 Azure AD 之间，而非存在于用户与服务器上运行的 Web 应用程序之间。当一个令牌过期时，ADAL.js 将使用此会话以无提示方式获取另一个令牌。通过使用隐藏的 iFrame 来发送和接收使用 OAuth 隐式授予协议的请求来执行上述操作。对于应用程序调用的其他 Web API 资源，只要它们支持跨域资源共享 (CORS)，在用户的目录中注册，并在登录期间获得用户的所需许可，ADAL.js 就可以使用此相同的机制以无提示方式为这些资源从 Azure AD 中获取访问令牌。
 
-
+<a name="native-application-to-web-api"></a>
 ### 本机应用程序到 Web API
 
 
@@ -402,7 +404,7 @@ Azure AD 颁发的安全令牌包含与经过授权的使用者有关的信息�
 
 当 Web 应用程序使用其授权代码来获取 JWT 访问令牌时，它还会收到一个 JWT 刷新令牌。当访问令牌过期时，可以使用刷新令牌来重新对用户进行身份验证，不需要他们重新登录。然后将使用此刷新令牌对用户进行身份验证，这将生成新的访问令牌和刷新令牌。
 
-
+<a name="daemon-or-server-application-to-web-api"></a>
 ### 后台或服务器应用程序到 Web API
 
 

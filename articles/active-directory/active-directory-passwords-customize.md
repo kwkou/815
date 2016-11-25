@@ -14,7 +14,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="08/03/2016"
-	wacn.date="09/05/2016"
+	wacn.date="11/25/2016"
 	ms.author="asteen"/>
 
 # 自定义密码管理以符合组织的需求
@@ -38,8 +38,6 @@
 | 如何让用户直接解锁 AD 帐户而不必重置密码？ | [设置：让用户直接解锁 AD 帐户而不必重置密码](#allow-users-to-unlock-accounts-without-resetting-their-password) |
 | 如何为用户启用密码重置通知？ | [设置：在用户的密码重置时通知用户](#notify-users-and-admins-when-their-own-password-has-been-reset) |
 | 如何为管理员启用密码重置通知？ | [设置：在管理员重置其密码时通知其他管理员](#notify-admins-when-other-admins-reset-their-own-passwords) |
-| 如何自定义密码重置的外观？ | [设置：公司名称、品牌和徽标](#password-managment-look-and-feel) |
-
 
 ## 密码管理外观
 下表说明了每个控件对注册密码重置并重置密码的用户体验有何影响。你可以在 [Azure 经典管理门户](https://manage.windowsazure.cn)中目录的“配置”选项卡的“目录属性”部分下配置这些选项。
@@ -131,6 +129,7 @@
             </tr>
           </tbody></table>
 
+<a name="password-management-behavior"></a>
 ## 密码管理行为
 下表说明了每个控件对注册密码重置并重置密码的用户体验有何影响。可以在 [Azure 经典管理门户](https://manage.windowsazure.cn)中目录的“配置”选项卡的“用户密码重置策略”部分下配置这些选项。
 
