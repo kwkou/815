@@ -102,7 +102,7 @@
 
             azure group deployment create --template-uri <LinkToTemplate> -p "{"ParameterName":{"value":"ParameterValue"}}" -g ExampleResourceGroup -n ExampleDeployment
 
-     3. 使用参数文件。有关模板文件的信息，请参阅[参数文件](#parameter-file)。
+     3. 使用参数文件。有关模板文件的信息。
     
             azure group deployment create -f <PathToTemplate> -e <PathToParameterFile> -g ExampleResourceGroup -n ExampleDeployment
 

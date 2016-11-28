@@ -121,6 +121,7 @@
 
 如果 Web 应用使用应用服务证书，则可以将 Web 应用和证书移动到新的资源组，而不会出现问题。若要将应用服务证书移动到新的订阅，请联系 Azure 支持。
 
+<a name="recovery-services-limitations"></a>
 ## 恢复服务限制
 
 不支持移动用于使用 Azure Site Recovery 设置灾难恢复的存储、网络或计算资源。
@@ -198,6 +199,7 @@
 
 此操作可能需要运行几分钟。
 
+<a name="use-portal"></a>
 ## 使用门户
 
 若要将资源移动到**同一订阅**中的新资源组，请选择包含这些资源的资源组，然后选择“移动”按钮。
@@ -252,6 +254,7 @@
     /subscriptions/{guid}/resourceGroups/destinationgroup/providers/Microsoft.Web/sites/examplesite
     [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): y
 
+<a name="use-azure-cli"></a>
 ## 使用 Azure CLI
 
 若要将现有资源移到另一个资源组或订阅，请使用 **azure resource move** 命令。需要提供要移动的资源的资源 ID。可以使用以下命令获取资源 ID：
@@ -281,6 +284,7 @@
 	
 系统将要求确认是否想要移动指定的资源。
 
+<a name="use-rest-api"></a>
 ## 使用 REST API
 
 若要将现有资源移到另一个资源组或订阅中，请运行：
