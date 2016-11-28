@@ -474,7 +474,7 @@ SLA 中经常会规定以下条款：
 - Windows 事件日志
 - 性能计数器
 - 故障转储
-- Azure 诊断基础结构日志  
+- Azure 诊断基础结构日志
 - 自定义错误日志
 - .NET EventSource
 - 基于清单的 ETW

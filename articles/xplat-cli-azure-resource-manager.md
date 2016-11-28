@@ -6,7 +6,8 @@
 	manager="timlt"
 	documentationCenter=""
 	authors="dlepow"
-	services="azure-resource-manager"/>
+	services="azure-resource-manager"/>  
+
 
 <tags
 	ms.service="azure-resource-manager"
@@ -15,14 +16,14 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="08/22/2016"
-	wacn.date="10/10/2016"
+	wacn.date="11/28/2016"
 	ms.author="danlep"/>
 
 # 使用 Azure CLI 管理 Azure 资源和资源组
 
 
 > [AZURE.SELECTOR]
-- [Azure CLI](/documentation/articles/xplat-cli-azure-resource-manager/)
+- [门户]](/documentation/articles/resource-group-portal/)
 - [Azure PowerShell](/documentation/articles/powershell-azure-resource-manager/)
 - [Azure PowerShell](/documentation/articles/powershell-azure-resource-manager/)
 - [REST API](/documentation/articles/resource-manager-rest-api/)
@@ -66,75 +67,7 @@ Azure 命令行接口 (Azure CLI) 是可以配合 Resource Manager 部署和管�
 
 ### 标记
 
-为了帮助组织资源，可将[标记](/documentation/articles/resource-group-using-tags/)添加到资源和资源组。若要查看已应用哪些标记，只需使用 **azure group show** 获取资源组及其资源即可。
-
-    azure group show -n tag-demo-group
-    
-此命令返回有关资源组的元数据，包括任何应用到其中的标记。
-    
-    info:    Executing command group show
-    + Listing resource groups
-    + Listing resources for the group
-    data:    Id:                  /subscriptions/{guid}/resourceGroups/tag-demo-group
-    data:    Name:                tag-demo-group
-    data:    Location:            chinaeast
-    data:    Provisioning State:  Succeeded
-    data:    Tags: Dept=Finance;Environment=Production
-    data:    Resources:
-    data:
-    data:      Id      : /subscriptions/{guid}/resourceGroups/tag-demo-group/providers/Microsoft.Sql/servers/tfsqlserver
-    data:      Name    : tfsqlserver
-    data:      Type    : servers
-    data:      Location: eastus2
-    data:      Tags    : Dept=Finance;Environment=Production
-    ...
-
-若要仅获取资源组的标记，请使用 JSON 实用工具，例如 [jq](http://stedolan.github.io/jq/download/)。
-
-    azure group show -n tag-demo-group --json | jq ".tags"
-    
-此命令返回该资源组的标记。
-    
-    {
-      "Dept": "Finance",
-      "Environment": "Production" 
-    }
-
-使用 **azure resource show** 查看特定资源的标记。
-
-    azure resource show -g tag-demo-group -n tfsqlserver -r Microsoft.Sql/servers -o 2014-04-01-preview --json | jq ".tags"
-    
-此命令返回以下信息。
-    
-    {
-      "Dept": "Finance",
-      "Environment": "Production"
-    }
-    
-使用如下所示的命令检索具有特定标记的所有资源。
-
-    azure resource list --json | jq ".[] | select(.tags.Dept == "Finance") | .name"
-    
-此命令返回具有该标记的资源的名称。
-    
-    "tfsqlserver"
-    "tfsqlserver/tfsqldata"
-
-标记作为一个整体进行更新，因此，如果向已标记的资源添加一个标记，需要检索要保留的现有标记。若要为资源组设置标记值，请使用 **azure group set** 并提供该资源组的所有标记。
-
-    azure group set -n tag-demo-group -t Dept=Finance;Environment=Production;Project=Upgrade
-    
-将返回带新标记的资源组的摘要。
-    
-    info:    Executing command group set
-    ...
-    data:    Name:                tag-demo-group
-    data:    Location:            chinaeast
-    data:    Provisioning State:  Succeeded
-    data:    Tags: Dept=Finance;Environment=Production;Project=Upgrade
-    ...
-    
-可以使用 **azure tag list** 列出订阅中的现有标记，使用 **azure tag create** 添加标记。若要从订阅的分类中删除某个标记，请先从它已应用到的所有资源中将它删除，然后使用 **azure tag delete** 删除它。
+[AZURE.INCLUDE [resource-manager-tag-resources-cli](../includes/resource-manager-tag-resources-cli.md)]
 
 ## 管理资源
 
@@ -228,4 +161,4 @@ Azure 命令行接口 (Azure CLI) 是可以配合 Resource Manager 部署和管�
 * 若要获取部署操作的详细信息并使用 Azure CLI 排查部署错误，请参阅 [View deployment operations with Azure CLI](/documentation/articles/resource-manager-troubleshoot-deployments-cli/)（使用 Azure CLI 查看部署操作）。
 * 若要使用 CLI 设置一个应用程序或脚本来访问资源，请参阅 [Use Azure CLI to create a service principal to access resources](/documentation/articles/resource-group-authenticate-service-principal-cli/)（使用 Azure CLI 创建服务主体来访问资源）。
 
-<!---HONumber=Mooncake_0926_2016-->
+<!---HONumber=Mooncake_1121_2016-->
