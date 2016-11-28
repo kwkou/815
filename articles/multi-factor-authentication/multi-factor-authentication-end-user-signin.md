@@ -15,7 +15,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="08/22/2016"
-	wacn.date="10/19/2016"
+	wacn.date="11/28/2016"
 	ms.author="kgremban"/>  
 
 
@@ -35,6 +35,7 @@
 [使用验证码通过 Microsoft Authenticator 应用登录](#signing-in-with-the-microsoft-authenticator-app-using-verification-code)|这是将验证码与 Microsoft Authenticator 应用配合使用时所能预期到的情况。
 [使用替代方法登录](#signing-in-with-an-alternate-method)|说明使用替代方法时所能预期到的情况。
 
+<a name="signing-in-with-mobile-or-office-phone"></a>
 ## 使用手机或办公电话登录
 
 以下信息介绍在使用手机或办公电话执行多重身份验证时的体验。
@@ -52,6 +53,7 @@
 
 - 现在你应已登录。</li>
 
+<a name="signing-in-with-the-microsoft-authenticator-app-using-notification"></a>
 ## 使用通知通过 Microsoft Authenticator 应用登录
 
 以下信息介绍在系统向用户发送通知后，用户在 Microsoft Authenticator 应用上使用多重身份验证的体验。
@@ -74,7 +76,7 @@
 
 - 现在你应已登录。
 
-
+<a name="signing-in-with-the-microsoft-authenticator-app-using-verification-code"></a>
 ## 使用验证码通过 Microsoft Authenticator 应用登录
 
 以下信息介绍当你使用验证码执行身份验证时，在 Microsoft Authenticator 应用上使用多重身份验证的体验。
@@ -96,7 +98,7 @@
 
 - 现在你应已登录。
 
-
+<a name="signing-in-with-an-alternate-method"></a>
 ## 使用替代方法登录
 
 

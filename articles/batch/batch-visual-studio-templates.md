@@ -15,7 +15,7 @@
 	ms.tgt_pltfrm="vm-windows"
 	ms.workload="big-compute"
 	ms.date="09/07/2016"
-	wacn.date="10/26/2016"
+	wacn.date="11/28/2016"
 	ms.author="marsma" />  
 
 # Azure Batch 的 Visual Studio 项目模板
@@ -435,6 +435,7 @@ csharp
 
 建议客户端或作业管理器任务先创建任务所需的任何容器，再将任务添加到作业。如果使用具有 SAS 的容器 URL 就必须这样做，因为这样的 URL 并未包含创建容器的权限。即使传递的是存储帐户凭据仍建议这样做，因为它存储每一项必须在容器上调用 CloudBlobContainer.CreateIfNotExistsAsync 的任务。
 
+<a name="pass-environment-settings"></a>
 ## 传递参数和环境变量
 
 ### 传递环境设置

@@ -15,7 +15,7 @@
 	ms.tgt_pltfrm="vm-linux"
 	ms.workload="na"
 	ms.date="09/08/2016"
-	wacn.date="11/22/2016"
+	wacn.date="11/28/2016"
 	ms.author="marsma" />  
 
 
@@ -25,6 +25,7 @@
 
 > [AZURE.NOTE] [Application packages]Linux 计算节点目前不支持 (/documentation/articles/batch-application-packages/)。
 
+<a name="virtual-machine-configuration"></a>
 ## 虚拟机配置
 
 在 Batch 中创建计算节点池时，可以使用两个选项来选择节点大小和操作系统：“云服务配置”和“虚拟机配置”。
@@ -46,6 +47,7 @@ Batch 服务使用[虚拟机规模集](/documentation/articles/virtual-machine-s
 
 > [AZURE.TIP] 可以在 [Navigate and select Linux virtual machine images in Azure with CLI or PowerShell](/documentation/articles/virtual-machines-linux-cli-ps-findimage/)（使用 CLI 或 PowerShell 在 Azure 中导航和选择 Linux 虚拟机映像）中详细了解这些属性，以及如何列出应用商店映像。请注意，目前并非所有应用商店映像都与 Batch 兼容。有关详细信息，请参阅[节点代理 SKU](#node-agent-sku)。
 
+<a name="node-agent-sku"></a>
 ### 节点代理 SKU
 
 Batch 节点代理是一个程序，它在池中的每个节点上运行，并在节点与 Batch 服务之间提供命令和控制接口。节点代理对于不同操作系统有不同的实现（称为 SKU）。从根本上讲，在创建虚拟机配置时，需要先指定虚拟机映像引用，然后指定要在其上安装映像的代理节点。通常，每个节点代理 SKU 与多个虚拟机映像兼容。下面是节点代理 SKU 的几个示例：
@@ -199,6 +201,7 @@ csharp
 	    skuId: "14.04.2-LTS",
 	    version: "latest");
 
+<a name="list-of-virtual-machine-images"></a>
 ## 虚拟机映像列表
 
 下表列出了本文上次更新时，与可用 Batch 节点代理兼容的应用商店虚拟机映像。请务必注意，此列表并非永久不变，因为可能随时会添加或删除映像和节点代理。建议 Batch 应用程序和服务始终使用 [list\_node\_agent\_skus][py_list_skus] (Python) 和 [ListNodeAgentSkus][net_list_skus] (Batch .NET)，从当前可用的 SKU 中做出决定和选择。
@@ -231,6 +234,7 @@ csharp
 | MicrosoftWindowsServer | WindowsServer | 2012-R2-Datacenter | 最新 | batch.node.windows amd64 |
 | MicrosoftWindowsServer | WindowsServer | Windows-Server-Technical-Preview | 最新 | batch.node.windows amd64 |
 
+<a name="connect-to-linux-nodes"></a>
 ## 连接到 Linux 节点
 
 在开发期间或进行故障排除时，可能会发现需要登录到池中的节点。不同于 Windows 计算节点，你无法使用远程桌面协议 (RDP) 连接到 Linux 节点。相反，Batch 服务在每个节点上启用 SSH 访问以建立远程连接。

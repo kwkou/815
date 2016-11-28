@@ -14,7 +14,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="08/30/2016"
-	wacn.date="11/16/2016"
+	wacn.date="11/28/2016"
 	ms.author="kgremban"/>
 
 # 配置 Azure 多重身份验证
@@ -34,7 +34,7 @@
 [可选择验证方法](#selectable-verification-methods)|允许你选择可供用户使用的身份验证方法。|有关启用或禁用特定身份验证方法（如呼叫或短信）的信息。
 
 
- 
+<a name="app-passwords"></a>
 ## 应用密码
 
 在 Office 2010 或更低版本和 Apple Mail 等某些应用中，无法使用多重身份验证。若要使用这些应用，你需要使用“应用密码”来替换传统密码。应用密码可让应用程序跳过多重身份验证并继续工作。
@@ -148,6 +148,7 @@ Azure AD 支持与本地 Windows Server Active Directory 域服务 (AD DS) 联�
 
 ![应用密码](./media/multi-factor-authentication-whats-next/myapp.png)
 
+<a name="selectable-verification-methods"></a>
 ## 可选择验证方法
 现在，可以选择当用户使用 Azure 多重身份验证时供用户使用的身份验证方法。此功能以前只提供了本地服务器版本。下表提供了可为用户启用或禁用的各种身份验证方法的简要概述。
 
