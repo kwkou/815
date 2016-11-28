@@ -14,16 +14,16 @@
     ms.topic="article"
     ms.tgt_pltfrm="dotnet"
     ms.workload="na"
-    ms.date="07/11/2016"
+    ms.date="10/14/2016"
     ms.author="sethm"
-    wacn.date="10/24/2016"/>  
+    wacn.date="11/28/2016"/>  
 
 
 # 使用 Azure Resource Manager 模板创建服务总线资源
 
-本文演示如何使用 Azure Resource Manager 模板、PowerShell 和服务总线资源提供程序创建和部署服务总线和事件中心资源。
+本文说明如何使用 Azure Resource Manager 模板、PowerShell 和服务总线资源提供程序创建和部署服务总线和事件中心资源。
 
-Azure Resource Manager 模板可帮助你定义要为解决方案部署的资源，以及指定可用于为不同环境输入值的参数和变量。模板中包含可用于构造部署值的 JSON 和表达式。有关编写 Azure Resource Manager 模板的详细信息，以及模板格式的讨论，请参阅[创作 Azure Resource Manager 模板](/documentation/articles/resource-group-authoring-templates/)。
+Azure Resource Manager 模板可帮助你定义要为解决方案部署的资源，以及指定可用于为不同环境输入值的参数和变量。模板中包含可用于为部署构造值的 JSON 和表达式。有关编写 Azure Resource Manager 模板的详细信息，以及模板格式的讨论，请参阅[创作 Azure Resource Manager 模板](/documentation/articles/resource-group-authoring-templates/)。
 
 >[AZURE.NOTE] 本文中的示例演示如何使用 Azure Resource Manager 来创建服务总线命名空间和消息实体（队列）。
 
@@ -35,6 +35,7 @@ Azure Resource Manager 模板可帮助你定义要为解决方案部署的资源
 - [创建包含队列的服务总线命名空间](/documentation/articles/service-bus-resource-manager-namespace-queue/)
 - [创建包含主题和订阅的服务总线命名空间](/documentation/articles/service-bus-resource-manager-namespace-topic/)
 - [创建包含队列和授权规则的服务总线命名空间](/documentation/articles/service-bus-resource-manager-namespace-auth-rule/)
+- [创建包含事件中心和使用者组的事件中心命名空间](/documentation/articles/event-hubs-resource-manager-namespace-event-hub/)
 
 ## 使用 PowerShell 进行部署
 
@@ -197,6 +198,7 @@ Test-AzureRmResourceGroupDeployment -ResourceGroupName MyDemoRG -TemplateFile <p
 ### 创建部署
 
 若要创建新部署，请运行 `New-AzureRmResourceGroupDeployment` 命令，并在出现提示时提供必需的参数。参数包括部署的名称、资源组的名称，以及模板文件的路径或 URL。如果未指定 **Mode** 参数，将使用 **Incremental** 的默认值。
+
 以下命令会提示你在 PowerShell 窗口中输入三个参数：
 
 ```
@@ -253,4 +255,4 @@ Parameters        :
 [Azure 资源管理器概述]: /documentation/articles/resource-group-overview/
 [使用 Azure Resource Manager 模板部署资源]: /documentation/articles/resource-group-template-deploy/
 [Azure 快速入门模板库]: https://azure.microsoft.com/zh-cn/documentation/templates/?term=service+bus
-<!---HONumber=Mooncake_0620_2016-->
+<!---HONumber=Mooncake_1121_2016-->

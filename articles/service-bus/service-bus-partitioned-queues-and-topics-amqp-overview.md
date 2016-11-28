@@ -5,12 +5,18 @@
 	documentationCenter=".net" 
 	authors="hillaryc" 
 	manager="timlt" 
-	editor=""/>
+	editor=""/>  
+
 
 <tags 
 	ms.service="service-bus" 
-	ms.date="07/08/2016" 
-	wacn.date="08/15/2016"/>
+	ms.workload="na" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="multiple" 
+	ms.topic="article" 
+	ms.date="10/14/2016" 
+	ms.author="hillaryc;sethm"
+	wacn.date="11/28/2016"/>  
 
 
 # 针对服务总线分区队列和主题的 AMQP 1.0 支持 
@@ -19,7 +25,7 @@ Azure 服务总线现在支持用于服务总线**分区队列和主题**的高�
 
 **AMQP** 是一种开放标准消息队列协议，它允许使用不同的编程语言开发跨平台应用程序。有关服务总线的 AMQP 支持的常规信息，请参阅[服务总线的 AMQP 1.0 支持](/documentation/articles/service-bus-amqp-overview/)。
 
-**分区队列和主题**也称为分区实体，相比传统的非分区队列和主题，提供更高可用性、可靠性和吞吐量。有关分区实体的详细信息，请参阅[分区消息实体](/documentation/articles/service-bus-partitioning/)。
+**分区队列和主题**也称为*分区实体*，相比传统的非分区队列和主题，提供更高可用性、可靠性和吞吐量。有关分区实体的详细信息，请参阅[分区消息实体](/documentation/articles/service-bus-partitioning/)。
 
 添加 AMQP 1.0 作为与分区队列和主题通信的协议使你能够构建相互间可操作的应用程序，这些应用程序可利用服务总线分区实体提供的更高可用性、可靠性和吞吐量。
 
@@ -118,4 +124,4 @@ receivedMessage.Complete();
 
 [Azure 经典管理门户]: http://manage.windowsazure.cn
 
-<!---HONumber=Mooncake_0104_2016-->
+<!---HONumber=Mooncake_1121_2016-->

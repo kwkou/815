@@ -16,7 +16,8 @@
     ms.workload="na"
     ms.date="04/15/2016"
     ms.author="sethm;shvija"
-    wacn.date="10/24/2016"/>  
+    wacn.date="11/28/2016"/>  
+
 
 # 使用 Azure Resource Manager 模板创建服务总线命名空间
 
@@ -28,6 +29,7 @@
 
 >[AZURE.NOTE] 以下 Azure Resource Manager 模板可供下载和部署。
 >
+>-    [创建包含事件中心和使用者组的事件中心命名空间](/documentation/articles/event-hubs-resource-manager-namespace-event-hub/)
 >-    [创建包含队列的服务总线命名空间](/documentation/articles/service-bus-resource-manager-namespace-queue/)
 >-    [创建包含主题和订阅的服务总线命名空间](/documentation/articles/service-bus-resource-manager-namespace-topic/)
 >-    [创建包含队列和授权规则的服务总线命名空间](/documentation/articles/service-bus-resource-manager-namespace-auth-rule/)
@@ -154,4 +156,4 @@ azure group deployment create <my-resource-group> <my-deployment-name> --templat
   [Using Azure PowerShell with Azure Resource Manager]: /documentation/articles/powershell-azure-resource-manager/
   [Using the Azure CLI for Mac, Linux, and Windows with Azure Resource Management]: /documentation/articles/xplat-cli-azure-resource-manager/
 
-<!---HONumber=Mooncake_0808_2016-->
+<!---HONumber=Mooncake_1121_2016-->

@@ -5,12 +5,19 @@
 	documentationCenter="java"
 	authors="sethmanheim"
 	manager="timlt"
-	/>
+	/>  
+
 
 <tags
 	ms.service="service-bus"
-	ms.date="05/06/2016"
-	wacn.date="07/25/2016"/>
+	ms.workload="na"
+	ms.tgt_pltfrm="na"
+	ms.devlang="Java"
+	ms.topic="article"
+	ms.date="10/04/2016"
+	ms.author="sethm"
+	wacn.date="11/28/2016"/>  
+
 
 # 如何使用 Service Bus 队列
 
@@ -36,49 +43,12 @@ Service Bus 队列是一种可用于各种应用场景的通用技术：
 
 若要开始在 Azure 中使用服务总线队列，必须先创建一个命名空间。命名空间提供了用于对应用程序中的 Service Bus 资源进行寻址的范围容器。
 
-创建命名空间：
-
-1.  登录到 [Azure 经典管理门户][]。
-
-2.  在门户的左侧导航窗格中，单击“服务总线”。
-
-3.  在门户的下方窗格中，单击“创建”。
-
-	![](./media/service-bus-java-how-to-use-queues/sb-queues-03.png)
-
-4.  在“添加新命名空间”对话框中，输入命名空间名称。系统会立即检查该名称是否可用。
-
-	![](./media/service-bus-java-how-to-use-queues/sb-queues-04.png)
-
-5.  在确保命名空间名称可用后，选择应承载你的命名空间的国家或地区（确保使用在其中部署计算资源的同一国家/地区）。
-
-	重要说明：选取要部署应用程序的**相同区域**。这将为你提供最佳性能。
-
-6. 	将对话框中的其他字段保留其默认值（“消息传递”和“标准层”），然后单击复选标记。系统现已创建命名空间并已将其启用。您可能需要等待几分钟，因为系统将为您的帐户配置资源。
-
-创建的命名空间将花费一段时间来激活，然后显示在 Azure 门户中。请等到命名空间状态变为“活动”后再继续操作。
-
-## 获取命名空间的默认管理凭据
-
-若要在新命名空间上执行管理操作（如创建队列），则必须获取该命名空间的管理凭据。可以从门户中获取这些凭据。
-
-1.  在左侧导航窗格中，单击“Service Bus”节点以显示可用命名空间的列表：
-
-	![](./media/service-bus-java-how-to-use-queues/sb-queues-13.png)
-
-2.  从显示的列表中单击你刚刚创建的命名空间。
-
-3.  单击“配置”以查看命名空间的共享访问策略。
-
-	![](./media/service-bus-java-how-to-use-queues/sb-queues-14.png)
-
-4.  记下主密钥，或将其复制到剪贴板。
-
 ## 配置应用程序以使用 Service Bus
 
 在生成本示例之前，请确保已安装 [Azure SDK for Java][]。如果使用了 Eclipse，则可以安装包含 Azure SDK for Java 的 [Azure Toolkit for Eclipse][]。然后，你可以将 **Microsoft Azure Libraries for Java** 添加到你的项目：
 
-![](./media/service-bus-java-how-to-use-queues/eclipselibs.png)
+![](./media/service-bus-java-how-to-use-queues/eclipselibs.png)  
+
 
 将以下 `import` 语句添加到 Java 文件顶部：
 
@@ -121,7 +91,7 @@ import javax.xml.datatype.*;
 
     long maxSizeInMegabytes = 5120;
     QueueInfo queueInfo = new QueueInfo("TestQueue");
-    queueInfo.setMaxSizeInMegabytes(maxSizeInMegabytes); 
+    queueInfo.setMaxSizeInMegabytes(maxSizeInMegabytes);
     CreateQueueResult result = service.createQueue(queueInfo);
 
 注意：你可以对 **ServiceBusContract** 对象使用 **listQueues** 方法来检查具有指定名称的队列在某个服务命名空间中是否已存在。
@@ -156,7 +126,7 @@ import javax.xml.datatype.*;
          service.sendQueueMessage("TestQueue", message);
     }
 
-服务总线队列在[标准层](/documentation/articles/service-bus-premium-messaging/)中支持的最大消息大小为 256 KB，在[高级层](/documentation/articles/service-bus-premium-messaging/)中则为 1 MB。标头最大为 64 KB，其中包括标准和自定义应用程序属性。一个队列可包含的消息数不受限制，但消息的总大小受限。此队列大小是在创建时定义的，上限为 5 GB。
+服务总线队列在标准层中支持的最大消息大小为 256 KB。标头最大为 64 KB，其中包括标准和自定义应用程序属性。一个队列可包含的消息数不受限制，但消息的总大小受限。此队列大小是在创建时定义的，上限为 5 GB。
 
 ## 从队列接收消息
 
@@ -225,20 +195,17 @@ Service Bus 提供了相关功能来帮助你轻松地从应用程序错误或�
 
 还存在与队列中已锁定消息关联的超时，并且如果应用程序无法在锁定超时到期之前处理消息（例如，如果应用程序崩溃），Service Bus 将自动解锁该消息并使它可再次被接收。
 
-如果在处理消息之后，发出 **deleteMessage** 请求之前应用程序发生崩溃，该消息将在应用程序重新启动时重新传送给它。此情况通常称作**至少处理一次**，即每条消息将至少被处理一次，但在某些情况下，同一消息可能会被重新传送。如果方案无法容忍重复处理，则应用程序开发人员应向其应用程序添加更多逻辑以处理重复消息传送。通常可使用消息的 **getMessageId** 方法实现此操作，这在多个传送尝试中保持不变。
+如果在处理消息之后，发出 **deleteMessage** 请求之前应用程序发生崩溃，该消息将在应用程序重新启动时重新传送给它。此情况通常称作**至少处理一次**，即每条消息将至少被处理一次，但在某些情况下，同一消息可能会被重新传送如果方案无法容忍重复处理，则应用程序开发人员应向其应用程序添加更多逻辑以处理重复消息传送。通常可使用消息的 **getMessageId** 方法实现此操作，这在多个传送尝试中保持不变。
 
 ## 后续步骤
 
 现在，你已了解服务总线队列的基础知识，请参阅[队列、主题和订阅][]以获取更多信息。
 
 有关详细信息，请参阅 [Java 开发人员中心](/develop/java/)。
+  [Azure SDK for Java]: /develop/java/
+  [Azure Toolkit for Eclipse]: https://msdn.microsoft.com/zh-cn/library/azure/hh694271.aspx
 
+  [队列、主题和订阅]: /documentation/articles/service-bus-queues-topics-subscriptions/
+  [BrokeredMessage]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.aspx
 
-[Azure SDK for Java]: /develop/java/
-[Azure Toolkit for Eclipse]: https://msdn.microsoft.com/zh-cn/library/azure/hh694271.aspx
-
-[队列、主题和订阅]: /documentation/articles/service-bus-queues-topics-subscriptions/
-[BrokeredMessage]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.aspx
-  [Azure 经典管理门户]: http://manage.windowsazure.cn/
-
-<!---HONumber=Mooncake_0104_2016-->
+<!---HONumber=Mooncake_1121_2016-->

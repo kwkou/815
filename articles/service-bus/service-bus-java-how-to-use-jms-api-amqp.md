@@ -5,13 +5,18 @@
 	documentationCenter="java" 
 	authors="sethmanheim" 
 	manager="timlt" 
-	editor=""/>
+	editor=""/>  
+
 
 <tags 
 	ms.service="service-bus" 
-	ms.date="06/20/2016" 
-	wacn.date="08/15/2016"/>
-
+	ms.workload="na" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="Java" 
+	ms.topic="article" 
+	ms.date="10/04/2016" 
+	ms.author="sethm"
+	wacn.date="11/28/2016"/>  
 
 
 # 如何将 Java 消息服务 (JMS) API 用于服务总线和 AMQP 1.0
@@ -20,11 +25,11 @@
 
 在 Service Bus 中支持 AMQP 1.0 意味着可以通过一系列使用有效的二进制协议的平台利用队列和发布/订阅中转消息传送功能。此外，你还可以生成由结合使用多个语言、框架和操作系统构建的组件组成的应用程序。
 
-本文说明如何从使用常用 Java 消息服务 (JMS) API 标准的 Java 应用程序使用服务总线消息传送功能（队列和发布/订阅主题）。有一个随附的说明如何使用 Service Bus .NET API 来执行相同操作的操作方法指南。使用 AMQP 1.0，可以同时使用以下两个指南来了解跨平台消息。
+本文说明如何从使用常用 Java 消息服务 (JMS) API 标准的 Java 应用程序使用服务总线消息传送功能（队列和发布/订阅主题）。有一个[配套文章](/documentation/articles/service-bus-dotnet-advanced-message-queuing/)，该文说明如何使用服务总线 .NET API 执行相同的操作。使用 AMQP 1.0，可以同时使用以下两个指南来了解跨平台消息。
 
 ## 服务总线入门
 
-此指南假定你已具有包含名为“queue1”的队列的服务总线命名空间。如果没有，则可以使用 [Azure 经典管理门户](http://manage.windowsazure.cn)创建命名空间和队列。有关如何创建服务总线命名空间和队列的详细信息，请参阅[如何使用服务总线队列](/documentation/articles/service-bus-dotnet-get-started-with-queues/)。
+此指南假定你已有包含名为“queue1”的队列的服务总线命名空间。如果没有，则可以使用 [Azure 经典管理门户](http://manage.windowsazure.cn)创建命名空间和队列。有关如何创建服务总线命名空间和队列的详细信息，请参阅[如何使用服务总线队列](/documentation/articles/service-bus-dotnet-get-started-with-queues/)。
 > [AZURE.NOTE]分区队列和主题也支持 AMQP。有关详细信息，请参阅[分区消息实体](/documentation/articles/service-bus-partitioning/)和[针对服务总线分区队列和主题的 AMQP 1.0 支持](/documentation/articles/service-bus-partitioned-queues-and-topics-amqp-overview/)。
 
 ## 下载 AMQP 1.0 JMS 客户端库
@@ -41,6 +46,7 @@
 ## 为 Java 应用程序编码
 
 ### Java 命名和目录接口 (JNDI)
+
 JMS 使用 Java 命名和目录接口 (JNDI) 创建逻辑名称和物理名称之间的分隔。将使用 JNDI 解析以下两种类型的 JMS 对象：ConnectionFactory 和 Destination。JNDI 使用一个提供程序模型，你可以在其中插入不同目录服务来处理名称解析任务。Apache Qpid JMS AMQP 1.0 库附带一个使用以下格式的属性文件配置的、基于属性文件的简单 JNDI 提供程序。
 
 ```
@@ -65,9 +71,9 @@ connectionfactory.SBCF = amqps://[SASPolicyName]:[SASPolicyKey]@[namespace].serv
 connectionfactory.[jndi_name] = [ConnectionURL]
 ```
 
-其中，**[jndi_name]** 和 **[ConnectionURL]** 具有以下含义：
+其中，**[jndi\_name]** 和 **[ConnectionURL]** 具有以下含义：
 
-- **[jndi_name]**：ConnectionFactory 的逻辑名称。这是将使用 JNDI IntialContext.lookup() 方法在 Java 应用程序中解析的名称。
+- **[jndi\_name]**：ConnectionFactory 的逻辑名称。这是将使用 JNDI IntialContext.lookup() 方法在 Java 应用程序中解析的名称。
 - **[ConnectionURL]**：向 AMQP 中转站提供包含所需信息的 JMS 库的 URL。
 
 **ConnectionURL** 的格式如下：
@@ -75,16 +81,15 @@ connectionfactory.[jndi_name] = [ConnectionURL]
 ```
 amqps://[SASPolicyName]:[SASPolicyKey]@[namespace].servicebus.chinacloudapi.cn
 ```
-其中 **[namespace]**, **[SASPolicyName]** and **[SASPolicyKey]** 具有以下含义：
+其中 **[namespace]**、**[SASPolicyName]** 和 **[SASPolicyKey]** 具有以下含义：
 
 - **[namespace]**：服务总线命名空间。
 - **[SASPolicyName]**：队列共享访问签名策略名称。
 - **[SASPolicyKey]**：队列共享访问签名策略密钥。
 
-> [AZURE.NOTE] 必须手动为密码进行 URL 编码。在 [http://www.w3schools.com/tags/ref_urlencode.asp](http://www.w3schools.com/tags/ref_urlencode.asp) 上提供了一个有用的 URL 编码实用工具。
+> [AZURE.NOTE] 必须手动为密码进行 URL 编码。在 [http://www.w3schools.com/tags/ref\_urlencode.asp](http://www.w3schools.com/tags/ref_urlencode.asp) 上提供了一个有用的 URL 编码实用工具。
 
 #### 配置目标
-
 
 用于在 Qpid 属性文件 JNDI 提供程序中定义目标的项的格式如下：
 
@@ -308,7 +313,7 @@ Received message with JMSMessageID = ID:acbca67f03c346de9b7893026f97ddeb
 exit
 ```
 
-##不受支持的功能和限制
+## 不受支持的功能和限制
 
 在将 JMS over AMQP 1.0 用于 Service Bus 时存在以下限制，即：
 
@@ -318,7 +323,7 @@ exit
 * 当前不支持临时目标（即 **TemporaryQueue** 和 **TemporaryTopic**），以及使用这些目标的 **QueueRequestor** 和 **TopicRequestor** API。
 * 不支持事务处理会话和分布式事务。
 
-##摘要
+## 摘要
 
 本操作方法指南演示了如何通过使用常用 JMS API 和 AMQP 1.0 通过 Java 使用 Service Bus 中转消息传送功能（队列和发布/订阅主题）。
 
@@ -332,4 +337,4 @@ exit
 * [如何使用 Service Bus 队列](/documentation/articles/service-bus-dotnet-get-started-with-queues/)
 * [Java 开发人员中心](/develop/java/)。
 
-<!---HONumber=Mooncake_0104_2016-->
+<!---HONumber=Mooncake_1121_2016-->

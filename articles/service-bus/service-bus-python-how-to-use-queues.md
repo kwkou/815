@@ -67,7 +67,7 @@ msg = Message(b'Test Message')
 bus_service.send_queue_message('taskqueue', msg)
 ```
 
-服务总线队列在[标准层](/documentation/articles/service-bus-premium-messaging/)中支持的最大消息大小为 256 KB，在[高级层](/documentation/articles/service-bus-premium-messaging/)中则为 1 MB。标头最大为 64 KB，其中包括标准和自定义应用程序属性。一个队列可包含的消息数不受限制，但消息的总大小受限。此队列大小是在创建时定义的，上限为 5 GB。有关配额的详细信息，请参阅[服务总线配额][]。
+服务总线队列在标准层中支持的最大消息大小为 256 KB。标头最大为 64 KB，其中包括标准和自定义应用程序属性。一个队列可包含的消息数不受限制，但消息的总大小受限。此队列大小是在创建时定义的，上限为 5 GB。有关配额的详细信息，请参阅[服务总线配额][]。
 
 ## 从队列接收消息
 

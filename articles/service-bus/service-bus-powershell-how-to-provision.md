@@ -5,12 +5,19 @@
 	documentationCenter=".net"
 	authors="sethmanheim"
 	manager="timlt"
-	editor=""/>
+	editor=""/>  
+
 
 <tags
 	ms.service="service-bus"
-	ms.date="05/02/2016"
-	wacn.date="06/21/2016"/>
+	ms.workload="na"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="10/03/2016"
+	ms.author="sethm"
+	wacn.date="11/28/2016"/>  
+
 
 # 使用 PowerShell 管理服务总线
 
@@ -20,7 +27,7 @@ Azure PowerShell 是一个脚本编写环境，可用于在 Azure 中控制和�
 
 ## 先决条件
 
-在开始阅读本文前，你必须具有：
+开始阅读本文之前，必须具备以下先决条件：
 
 - Azure 订阅。Azure 是基于订阅的平台。有关获取订阅的详细信息，请参阅[购买选项]、[成员优惠]或[试用]。
 
@@ -56,7 +63,7 @@ try
 
 catch [System.Exception]
 {
-    Write-Error("Could not add the Microsoft.ServiceBus.dll assembly to the script. Make sure you build the solution before running the provisioning script.")
+    Write-Error "Could not add the Microsoft.ServiceBus.dll assembly to the script. Make sure you build the solution before running the provisioning script."
 }
 ```
 
@@ -66,7 +73,7 @@ catch [System.Exception]
 
 本示例在脚本中创建几个本地变量：`$Namespace` 和 `$Location`。
 
-- `$Namespace` 是我们要使用的 Service Bus 命名空间的名称。
+- `$Namespace` 是要使用的服务总线命名空间的名称。
 - `$Location` 标识脚本要在其中预配命名空间的数据中心。
 - `$CurrentNamespace` 将存储脚本检索（或创建）的引用命名空间。
 
@@ -158,12 +165,12 @@ catch [System.Exception]
 ```
 # Create a new resource group in target subscription
 Select-AzureRmSubscription -SubscriptionId 'ffffffff-ffff-ffff-ffff-ffffffffffff'
-New-AzureRmResourceGroup -Name 'targetRP' -Location 'China East'
+New-AzureRmResourceGroup -Name 'targetRG' -Location 'China East'
 
 # Move namespace from source subscription to target subscription
 Select-AzureRmSubscription -SubscriptionId 'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa'
 $res = Find-AzureRmResource -ResourceNameContains mynamespace -ResourceType 'Microsoft.ServiceBus/namespaces'
-Move-AzureRmResource -DestinationResourceGroupName 'targetRP' -DestinationSubscriptionId 'ffffffff-ffff-ffff-ffff-ffffffffffff' -ResourceId $res.ResourceId
+Move-AzureRmResource -DestinationResourceGroupName 'targetRG' -DestinationSubscriptionId 'ffffffff-ffff-ffff-ffff-ffffffffffff' -ResourceId $res.ResourceId
 ```
 
 ## 后续步骤
@@ -172,7 +179,7 @@ Move-AzureRmResource -DestinationResourceGroupName 'targetRP' -DestinationSubscr
 
 以下博客文章提供了更多详细示例：
 
-- [如何使用 PowerShell 脚本创建 Service Bus 队列、主题和订阅](http://blogs.msdn.com/b/paolos/archive/2014/12/02/how-to-create-a-service-bus-queues-topics-and-subscriptions-using-a-powershell-script.aspx)
+- [How to create Service Bus queues, topics and subscriptions using a PowerShell script（如何使用 PowerShell 脚本创建服务总线队列、主题和订阅）](http://blogs.msdn.com/b/paolos/archive/2014/12/02/how-to-create-a-service-bus-queues-topics-and-subscriptions-using-a-powershell-script.aspx)
 - [如何使用 PowerShell 脚本创建 Service Bus 命名空间和事件中心](http://blogs.msdn.com/b/paolos/archive/2014/12/01/how-to-create-a-service-bus-namespace-and-an-event-hub-using-a-powershell-script.aspx)
 
 一些现成的脚本也可供下载：
@@ -191,4 +198,4 @@ Move-AzureRmResource -DestinationResourceGroupName 'targetRP' -DestinationSubscr
 [适用于服务总线的 .NET API]: https://msdn.microsoft.com/zh-cn/library/microsoft.servicebus.aspx
 [NamespaceManager]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.namespacemanager.aspx
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_1121_2016-->
