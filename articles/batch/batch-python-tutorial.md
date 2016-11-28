@@ -15,7 +15,7 @@
 	ms.tgt_pltfrm="na"
 	ms.workload="big-compute"
 	ms.date="09/08/2016"
-	wacn.date="11/22/2016"
+	wacn.date="11/28/2016"
 	ms.author="marsma"/>  
 
 
@@ -134,6 +134,7 @@ python
 
          if __name__ == '__main__':
 
+<a name="step-1-create-storage-containers"></a>
 ## 步骤 1：创建存储容器
 
 ![在 Azure 存储空间中创建容器][1] <br/>
@@ -167,6 +168,7 @@ python
 
 > [AZURE.TIP] [How to use Azure Blob storage from Python](/documentation/articles/storage-python-how-to-use-blob-storage/) 对如何使用 Azure 存储容器和 Blob 做了全面的概述。当你开始使用 Batch 时，它应该位于阅读列表顶部附近。
 
+<a name="step-2-upload-task-script-and-data-files"></a>
 ## 步骤 2：上载任务脚本和数据文件
 
 ![将任务应用程序和输入（数据）文件上载到容器][2] <br/>
@@ -254,6 +256,7 @@ python
 
 > [AZURE.TIP] 请查看有关共享访问签名的两篇系列教程的[第 1 部分：了解 SAS 模型](/documentation/articles/storage-dotnet-shared-access-signature-part-1/)和[第 2 部分：创建 SAS 并将其用于 Blob 服务](/documentation/articles/storage-dotnet-shared-access-signature-part-2/)，以详细了解如何提供对存储帐户中数据的安全访问。
 
+<a name="step-3-create-batch-pool"></a>
 ## 步骤 3：创建 Batch 池
 
 ![创建 Batch 池][3] <br/>
@@ -355,6 +358,7 @@ python
 
 > [AZURE.TIP] 若要深入了解 Batch 池中计算节点上可用的环境变量，以及有关任务工作目录的信息，请参阅 [overview of Azure Batch features](/documentation/articles/batch-api-basics/)（Azure Batch 功能概述）中的 **Environment settings for tasks**（任务的环境设置）及 **Files and directories**（文件和目录）。
 
+<a name="step-4-create-batch-job"></a>
 ## 步骤 4：创建 Batch 作业
 
 ![创建 Batch 作业][4]<br/>
@@ -390,6 +394,7 @@ python
 
 创建作业后，可以添加任务来执行工作。
 
+<a name="step-5-add-tasks-to-job"></a>
 ## 步骤 5：将任务添加到作业
 
 ![将任务添加到作业][5]<br/> 
@@ -465,6 +470,7 @@ python
 	blob_client = azureblob.BlockBlobService(account_name=args.storageaccount,
 	                                         sas_token=args.sastoken)
 
+<a name="step-6-monitor-tasks"></a>
 ## 步骤 6：监视任务
 
 ![监视任务][6]<br/>
@@ -509,6 +515,7 @@ python
 	    raise RuntimeError("ERROR: Tasks did not reach 'Completed' state within "
 	                       "timeout period of " + str(timeout))
 
+<a name="step-7-download-task-output"></a>
 ## 步骤 7：下载任务输出
 
 ![从存储空间下载任务输出][7]

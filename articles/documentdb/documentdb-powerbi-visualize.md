@@ -15,7 +15,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="05/31/2016"
-	wacn.date="07/04/2016"
+	wacn.date="11/28/2016"
 	ms.author="hawong"/>
 
 # DocumentDB 的 Power BI 教程：使用 Power BI 连接器可视化数据
@@ -40,7 +40,7 @@
 	- 演示帐户使用本教程中显示的火山数据填充。此演示帐户未被任何 SLA 绑定且只用于演示意图。我们保留对此演示帐户进行修改的权利，包括但不限于在任何时间无需提前通知或理由而终止帐户、更改密钥、限制访问、更改和删除数据。
 		- URL：https://analytics.documents.azure.com
 		- 只读密钥：MSr6kt7Gn0YRQbjd6RbTnTt7VHc5ohaAFu7osF0HdyQmfR+YhwCH2D2jcczVIR1LNK3nMPNBD31losN7lQ/fkw==
-	- 或者，若要创建你自己帐户，请参阅[使用 Azure 门户预览创建 DocumentDB 数据库帐户](/documentation/articles/documentdb-create-account/)。然后，要获取类似于本教程中使用的示例火山数据（但不包含 GeoJSON 块），请参阅 [NOAA 站点](https://www.ngdc.noaa.gov/nndc/struts/form?t=102557&s=5&d=5)，然后使用 [DocumentDB 数据迁移工具](/documentation/articles/documentdb-import-data/)导入数据。
+	- 或者，若要创建你自己帐户，请参阅[使用 Azure 门户预览创建 DocumentDB 数据库帐户](/documentation/articles/documentdb-create-account/)。然后，要获取类似于本教程中使用的示例火山数据（但不包含 GeoJSON 块），请参阅 NOAA 站点，然后使用 [DocumentDB 数据迁移工具](/documentation/articles/documentdb-import-data/)导入数据。
 
 
 要在 PowerBI.com 中共享你的报表，必须在 PowerBI.com 中拥有帐户。若要了解更多有关 Power BI 免费版和 Power BI Pro 的信息，请访问 [https://powerbi.microsoft.com/pricing](https://powerbi.microsoft.com/pricing)。

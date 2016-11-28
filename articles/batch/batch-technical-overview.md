@@ -15,7 +15,7 @@
 	ms.devlang="na"
 	ms.topic="get-started-article"
 	ms.date="08/22/2016"
-	wacn.date="11/22/2016"
+	wacn.date="11/28/2016"
 	ms.author="marsma"/>
 
 # Azure Batch 基础知识
@@ -64,6 +64,7 @@ Batch 很适合处理本质并行（也称为“超简单并行”）的应用�
 
 - **存储帐户** - Batch 提供的内置支持允许处理 [Azure 存储][azure_storage]中的文件。几乎每个 Batch 方案都使用 Azure 存储来暂存任务所运行的程序及其处理的数据，以及存储任务生成的输出数据。若要创建存储帐户，请参阅[关于 Azure 存储帐户](/documentation/articles/storage-create-storage-account/)。
 
+<a name="batch-development-apis"></a>
 ### Batch 开发 API
 
 应用程序和服务可以发出直接的 REST API 调用，使用以下一个或多个客户端库或将其结合使用，以使用 Batch 服务管理计算资源和大规模运行并行工作负荷。
