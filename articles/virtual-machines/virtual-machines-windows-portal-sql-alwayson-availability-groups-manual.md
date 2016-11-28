@@ -52,7 +52,7 @@
 
 可如此配置。可按需求进行修改。例如，可将域控制器用作仲裁文件共享见证，减少虚拟机数。这会减少双副本可用性组的 VM 数量。利用此方法，解决方案可少用一个 VM。
 
-必须配置多个 Azure 虚拟机，因此需要几小时才能学完本教程。你也可以自动构建这整个解决方案。Azure 门户预览中设置了一个带侦听器的库，可用于 AlwaysOn 可用性组。该库设置可自动配置可用性组所需的一切内容。有关详细信息，请参阅[门户 - Resource Manager](/documentation/articles/virtual-machines-windows-portal-sql-alwayson-availability-groups/)。
+必须配置多个 Azure 虚拟机，因此需要几小时才能学完本教程。
 
 [AZURE.INCLUDE [可用性组模板](../../includes/virtual-machines-windows-portal-sql-alwayson-ag-template.md)]
 
@@ -862,7 +862,7 @@ Azure 将创建虚拟机。
 | **负载均衡规则空闲超时** | 4
 | **负载均衡规则浮动 IP（直接服务器返回）** | Enabled
 
-> * SQL Server 端口默认为 1433。用于默认实例的前端端口。如果需要多个可用性组，则需为每个可用性组创建额外的 IP 地址。每个可用性组均需自备前端端口。请参阅[创建可用性组侦听器和负载均衡器 | Azure](virtual-machines-windows-portal-sql-ps-alwayson-int-listener.md)。
+> * SQL Server 端口默认为 1433。用于默认实例的前端端口。如果需要多个可用性组，则需为每个可用性组创建额外的 IP 地址。每个可用性组均需自备前端端口。请参阅[创建可用性组侦听器和负载均衡器 | Azure](/documentation/articles/virtual-machines-windows-portal-sql-ps-alwayson-int-listener/)。
 
 >[AZURE.NOTE] 必须在创建时于负载均衡规则中启用直接服务器返回。
 
