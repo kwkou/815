@@ -5,12 +5,13 @@
    documentationCenter=".NET"
    authors="sethmanheim"
    manager="timlt"
-   editor=""/>
+   editor=""/>  
+
 
 <tags
    ms.service="service-bus"
-   ms.date="03/09/2016"
-   wacn.date="01/14/2016"/>
+    ms.date="06/24/2016"
+   wacn.date="11/28/2016"/>  
 
 # 使用 PowerShell 管理 Service Bus 和事件中心资源
 
@@ -109,7 +110,7 @@ catch [System.Exception]
 
 ## 设置其他 Service Bus 实体
 
-若要设置其他实体（如队列、主题和事件中心），可以使用 [.NET API for Service Bus]。更多详细示例（包括其他实体）将在本文末尾提及。
+若要预配其他实体（如队列、主题和事件中心），可以使用 [.NET API for Service Bus]。更多详细示例（包括其他实体）将在本文末尾提及。
 
 ### 创建事件中心
 
@@ -249,13 +250,15 @@ catch [System.Exception]
 
 以下博客文章提供了更多详细示例：
 
-- [如何使用 PowerShell 脚本创建 Service Bus 队列、主题和订阅](http://blogs.msdn.com/b/paolos/archive/2014/12/02/how-to-create-a-service-bus-queues-topics-and-subscriptions-using-a-powershell-script.aspx)
+- [How to create Service Bus queues, topics and subscriptions using a PowerShell script（如何使用 PowerShell 脚本创建服务总线队列、主题和订阅）](http://blogs.msdn.com/b/paolos/archive/2014/12/02/how-to-create-a-service-bus-queues-topics-and-subscriptions-using-a-powershell-script.aspx)
 - [如何使用 PowerShell 脚本创建 Service Bus 命名空间和事件中心](http://blogs.msdn.com/b/paolos/archive/2014/12/01/how-to-create-a-service-bus-namespace-and-an-event-hub-using-a-powershell-script.aspx)
 
 一些现成的脚本也可供下载：
-- [服务总线 PowerShell 脚本](https://code.msdn.microsoft.com/windowsazure/Service-Bus-PowerShell-a46b7059)
+
+- [服务总线 PowerShell 脚本](https://code.msdn.microsoft.com/Service-Bus-PowerShell-a46b7059)
 
 <!--Anchors-->
+
 
 [购买选项]: /pricing/overview/
 [试用版]: /pricing/1rmb-trial/
@@ -263,7 +266,7 @@ catch [System.Exception]
 [Get-AzureSBNamespace]: https://msdn.microsoft.com/zh-cn/library/azure/dn495122.aspx
 [New-AzureSBNamespace]: https://msdn.microsoft.com/zh-cn/library/azure/dn495165.aspx
 [Get-AzureSBAuthorizationRule]: https://msdn.microsoft.com/zh-cn/library/azure/dn495113.aspx
-[.NET API for Service Bus]: https://msdn.microsoft.com/zh-cn/library/microsoft.servicebus.aspx
+[.NET API for Service Bus]: https://msdn.microsoft.com/zh-cn/library/azure/mt419900.aspx
 [安装和配置 Azure PowerShell]: /documentation/articles/powershell-install-configure/
 
-<!---HONumber=Mooncake_0104_2016-->
+<!---HONumber=Mooncake_1121_2016-->

@@ -1,16 +1,23 @@
 <properties 
 	pageTitle="如何通过 Node.js 使用服务总线主题 | Azure" 
-	description="了解如何在来自 Node.js 应用的 Azure 中使用服务总线主题和订阅。" 
+	description="了解如何通过 Node.js 应用在 Azure 中使用服务总线主题和订阅。" 
 	services="service-bus" 
 	documentationCenter="nodejs" 
 	authors="sethmanheim" 
 	manager="timlt" 
-	editor=""/>
+	editor=""/>  
+
 
 <tags 
 	ms.service="service-bus" 
-	ms.date="05/10/2016" 
-	wacn.date="07/25/2016"/>
+	ms.workload="na" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="nodejs" 
+	ms.topic="article" 
+	ms.date="10/04/2016" 
+	ms.author="sethm"
+	wacn.date="11/28/2016"/>  
+
 
 
 # 如何使用服务总线主题和订阅
@@ -23,13 +30,13 @@
 
 ## 创建 Node.js 应用程序
 
-创建一个空的 Node.js 应用程序。有关创建 Node.js 应用程序的说明，请参阅[创建 Node.js 应用程序并将其部署到 Azure 网站]、[Node.js 云服务][Node.js Cloud Service]（使用 Windows PowerShell）或“使用 WebMatrix 创建网站”。
+创建一个空的 Node.js 应用程序。有关创建 Node.js 应用程序的说明，请参阅[创建 Node.js 应用程序并将其部署到 Azure 网站]、[Node.js 云服务][]（使用 Windows PowerShell）或“使用 WebMatrix 创建网站”。
 
 ## 配置应用程序以使用 Service Bus
 
 若要使用服务总线，请下载 Node.js Azure 包。此包包括一组用来与服务总线 REST 服务通信的库。
 
-### 使用 Node 包管理器 (NPM) 可获取该程序包
+### 使用 Node 包管理器 (NPM) 可获取包
 
 1.  使用 **PowerShell** (Windows)、**Terminal** (Mac) 或 **Bash** (Unix) 等命令行界面导航到您在其中创建了示例应用程序的文件夹。
 
@@ -49,7 +56,7 @@
 	└── request@2.21.0 (json-stringify-safe@4.0.0, forever-agent@0.5.0, aws-sign@0.3.0, tunnel-agent@0.3.0, oauth-sign@0.3.0, qs@0.6.5, cookie-jar@0.3.0, node-uuid@1.4.0, http-signature@0.9.11, form-data@0.0.8, hawk@0.13.1)
 	```
 
-3.  可以手动运行 **ls** 命令来验证是否创建了 **node_modules** 文件夹。在该文件夹中，找到 **azure** 程序包，其中包含访问服务总线主题所需的库。
+3.  可以手动运行 **ls** 命令来验证是否创建了 **node\_modules** 文件夹。在该文件夹中，找到 **azure** 程序包，其中包含访问服务总线主题所需的库。
 
 ### 导入模块
 
@@ -61,7 +68,7 @@ var azure = require('azure');
 
 ### 设置服务总线连接
 
-Azure 模块将读取环境变量 AZURE_SERVICEBUS_NAMESPACE 和 AZURE_SERVICEBUS_ACCESS_KEY 以获取连接到服务总线所需的信息。如果未设置这些环境变量，则在调用 **createServiceBusService** 时必须指定帐户信息。
+Azure 模块将读取环境变量 AZURE\_SERVICEBUS\_NAMESPACE 和 AZURE\_SERVICEBUS\_ACCESS\_KEY 以获取连接到服务总线所需的信息。如果未设置这些环境变量，则在调用 **createServiceBusService** 时必须指定帐户信息。
 
 有关在 Azure 云服务的配置文件中设置环境变量的示例，请参阅[使用存储构建 Node.js 云服务][]。
 
@@ -86,7 +93,7 @@ serviceBusService.createTopicIfNotExists('MyTopic',function(error){
 });
 ```
 
-**createServiceBusService** 还支持其他选项，以允许你重写默认主题设置，如消息生存时间或最大主题大小。以下示例将最大主题大小设置为 5GB，将生存时间设置为 1 分钟：
+**createServiceBusService** 还支持其他选项，以允许重写默认主题设置，如消息生存时间或最大主题大小。以下示例将最大主题大小设置为 5GB，将生存时间设置为 1 分钟：
 
 ```
 var topicOptions = {
@@ -101,7 +108,7 @@ serviceBusService.createTopicIfNotExists('MyTopic', topicOptions, function(error
 });
 ```
 
-###筛选器
+### 筛选器
 
 可选的筛选操作可应用于使用 **ServiceBusService** 执行的操作。筛选操作可包括日志记录、自动重试等。筛选器是实现具有签名的方法的对象：
 
@@ -126,7 +133,7 @@ Azure SDK for Node.js 中附带了两个实现了重试逻辑的筛选器，分�
 
 主题订阅也是使用 **ServiceBusService** 对象创建的。订阅已命名，并且具有一个限制传递到订阅的虚拟队列的消息集的可选筛选器。
 
-> [AZURE.NOTE]订阅是永久性的，并且除非删除它或删除与之相关的主题，否则订阅将一直存在。如果你的应用程序包含创建订阅的逻辑，则它应首先使用 **getSubscription** 方法检查该订阅是否已经存在。
+> [AZURE.NOTE] 订阅是永久性的，除非删除它或删除与之相关的主题，否则订阅将一直存在。如果你的应用程序包含创建订阅的逻辑，则它应首先使用 **getSubscription** 方法检查该订阅是否已经存在。
 
 ### 创建具有默认 (MatchAll) 筛选器的订阅
 
@@ -146,11 +153,11 @@ serviceBusService.createSubscription('MyTopic','AllMessages',function(error){
 
 订阅支持的最灵活的一种筛选器是 **SqlFilter**，它实现了一部分 SQL92 功能。SQL 筛选器将对发布到主题的消息的属性进行操作。有关可用于 SQL 筛选器的表达式的更多详细信息，请参阅 [SqlFilter.SqlExpression][SqlFilter.SqlExpression] 语法。
 
-可以使用 **ServiceBusService** 对象的 **createRule** 方法向订阅中添加筛选器。此方法允许你向现有订阅中添加新筛选器。
+可以使用 **ServiceBusService** 对象的 **createRule** 方法向订阅中添加筛选器。此方法允许用户向现有订阅中添加新筛选器。
 
-> [AZURE.NOTE] 由于默认筛选器会自动应用到所有新订阅，因此，你必须首先删除默认筛选器，否则 **MatchAll** 会替代你可能指定的任何其他筛选器。可以使用 **ServiceBusService** 对象的 **deleteRule** 方法删除默认规则。
+> [AZURE.NOTE] 由于默认筛选器会自动应用到所有新订阅，因此，必须首先删除默认筛选器，否则 **MatchAll** 会替代用户可能指定的任何其他筛选器。可以使用 **ServiceBusService** 对象的 **deleteRule** 方法删除默认规则。
 
-以下示例创建了一个名为 `HighMessages` 的订阅（带有只选择自定义 **messagenumber** 属性大于 3 的消息的 **SqlFilter**）：
+以下示例创建了一个名为 `HighMessages` 的订阅，其 **SqlFilter** 只选择自定义 **messagenumber** 属性大于 3 的消息：
 
 ```
 serviceBusService.createSubscription('MyTopic', 'HighMessages', function (error){
@@ -247,11 +254,11 @@ for (i = 0;i < 5;i++) {
 }
 ```
 
-服务总线主题在[标准层](/documentation/articles/service-bus-premium-messaging/)中支持的最大消息大小为 256 KB，在[高级层](/documentation/articles/service-bus-premium-messaging/)中则为 1 MB。标头最大为 64 KB，其中包括标准和自定义应用程序属性。一个主题中包含的消息数量不受限制，但消息的总大小受限制。此主题大小是在创建时定义的，上限为 5 GB。
+服务总线主题在标准层中支持的最大消息大小为 256 KB。标头最大为 64 KB，其中包括标准和自定义应用程序属性。一个主题中包含的消息数量不受限制，但消息的总大小受限制。此主题大小是在创建时定义的，上限为 5 GB。
 
 ## 从订阅接收消息
 
-对 **ServiceBusService** 对象使用 **receiveSubscriptionMessage** 方法可从订阅接收消息。默认情况下，在读取消息后将从订阅中删除它们；但是，你可以读取（速览）并锁定消息，以避免将其从订阅中删除，只要将可选参数 **isPeekLock** 设置为 **true** 即可。
+对 **ServiceBusService** 对象使用 **receiveSubscriptionMessage** 方法可从订阅接收消息。默认情况下，在读取消息后将从订阅中删除它们；但是，可以读取（速览）并锁定消息，以避免将其从订阅中删除，只要将可选参数 **isPeekLock** 设置为 **true** 即可。
 
 在接收过程中读取并删除消息的默认行为是最简单的模式，并且最适合在发生故障时应用程序可以容忍不处理消息的情况。为了理解这一点，可以考虑这样一种情形：使用方发出接收请求，但在处理该请求前发生了崩溃。由于 Service Bus 会将消息标记为“将使用”，因此当应用程序重启并重新开始使用消息时，它会丢失在发生崩溃前使用的消息。
 
@@ -280,9 +287,9 @@ for (i = 0;i < 5;i++) {
 
 ## 如何处理应用程序崩溃和不可读消息
 
-Service Bus 提供了相关功能来帮助你轻松地从应用程序错误或消息处理问题中恢复。如果接收方应用程序因某种原因无法处理消息，则它可以对 **ServiceBusService** 对象调用 **unlockMessage** 方法。这会导致 Service Bus 在订阅中将该消息解锁，使之再次可供同一使用方应用程序或其他使用方应用程序接收。
+Service Bus 提供了相关功能来帮助你轻松地从应用程序错误或消息处理问题中恢复。如果接收方应用程序因某种原因无法处理消息，则它可以对 **ServiceBusService** 对象调用 **unlockMessage** 方法。这会导致服务总线在订阅中将该消息解锁，使之再次可供同一使用方应用程序或其他使用方应用程序接收。
 
-还存在与订阅中的锁定消息关联的超时，如果应用程序未能在锁定超时过期前处理消息（例如，如果应用程序崩溃），Service Bus 将自动解锁该消息并使之重新可供接收。
+还存在与订阅中的锁定消息关联的超时，如果应用程序未能在锁定超时过期前处理消息（例如，如果应用程序崩溃），则服务总线将自动解锁该消息并使它重新可供接收。
 
 如果应用程序在处理消息之后，调用 **deleteMessage** 方法之前崩溃，则在应用程序重新启动时会将该消息重新传送给它。此情况通常称作**至少处理一次**，即每条消息将至少被处理一次，但在某些情况下，同一消息可能会被重新传送。如果方案无法容忍重复处理，则应用程序开发人员应向其应用程序添加更多逻辑以处理重复消息传送。这通常可以通过使用消息的 **MessageId** 属性来实现，该属性在多次传送尝试中保持不变。
 
@@ -318,7 +325,7 @@ Service Bus 提供了相关功能来帮助你轻松地从应用程序错误或�
   [SqlFilter.SqlExpression]: http://msdn.microsoft.com/zh-cn/library/windowsazure/microsoft.servicebus.messaging.sqlfilter.sqlexpression.aspx
   [队列、主题和订阅]: /documentation/articles/service-bus-queues-topics-subscriptions/
   [SqlFilter]: http://msdn.microsoft.com/zh-cn/library/windowsazure/microsoft.servicebus.messaging.sqlfilter.aspx
-  [Node.js Cloud Service]: /zh-cn/documentation/articles/cloud-services-nodejs-develop-deploy-app/
+  [Node.js 云服务]: /zh-cn/documentation/articles/cloud-services-nodejs-develop-deploy-app/
   [创建 Node.js 应用程序并将其部署到 Azure 网站]: /documentation/articles/web-sites-nodejs-develop-deploy-mac/
   [使用存储构建 Node.js 云服务]: /documentation/articles/cloud-services-nodejs-develop-deploy-app/
   [使用存储构建 Node.js Web 应用程序]: /documentation/articles/storage-nodejs-use-table-storage-cloud-service-app/

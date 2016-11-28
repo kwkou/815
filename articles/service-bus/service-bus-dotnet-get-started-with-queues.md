@@ -40,13 +40,11 @@
 
 如果你已创建服务总线命名空间，请跳转到[使用 Azure 门户创建队列](#2-create-a-queue-using-the-azure-portal)部分。
 
-[AZURE.INCLUDE [service-bus-create-namespace-portal](../../includes/service-bus-create-namespace-portal.md)]
 
 ## <a name="2-create-a-queue-using-the-azure-portal"></a> 使用 Azure 门户创建队列
 
 如果你已创建服务总线队列，请跳转到[将消息发送到队列](#3-send-messages-to-the-queue)部分。
 
-[AZURE.INCLUDE [service-bus-create-queue-portal](../../includes/service-bus-create-queue-portal.md)]
 
 ## <a name="3-send-messages-to-the-queue"></a> 将消息发送到队列
 

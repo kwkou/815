@@ -1,49 +1,57 @@
 <properties
 	pageTitle="如何使用服务总线主题 (Ruby) | Azure"
-	description="了解如何在 Azure 中使用 Service Bus 主题和订阅。相关代码示例是针对 Ruby 应用程序编写的。"
+	description="了解如何在 Azure 中使用服务总线主题和订阅。相关代码示例是针对 Ruby 应用程序编写的。"
 	services="service-bus"
 	documentationCenter="ruby"
 	authors="sethmanheim"
 	manager="timlt"
-	editor=""/>
+	editor=""/>  
+
 
 <tags
 	ms.service="service-bus"
-	ms.date="03/09/2016"
-	wacn.date="07/25/2016"/>
+	ms.workload="na"
+	ms.tgt_pltfrm="na"
+	ms.devlang="ruby"
+	ms.topic="article"
+	ms.date="10/04/2016"
+	ms.author="sethm"
+	wacn.date="11/28/2016"/>  
 
 
 # 如何使用 Service Bus 主题/订阅
 
 [AZURE.INCLUDE [service-bus-selector-topics](../../includes/service-bus-selector-topics.md)]
 
-本指南介绍如何从 Ruby 应用程序使用服务总线主题和订阅。涉及的任务包括**创建主题和订阅、创建订阅筛选器、将消息发送到主题**、**从订阅接收消息**以**及删除主题和订阅**。有关主题和订阅的详细信息，请参阅[后续步骤](#next-steps)部分。
+本文介绍如何从 Ruby 应用程序使用服务总线主题和订阅。涉及的任务包括**创建主题和订阅、创建订阅筛选器、将消息发送到主题**、**从订阅接收消息**以**及删除主题和订阅**。有关主题和订阅的详细信息，请参阅[后续步骤](#next-steps)部分。
 
 ## 服务总线主题和订阅
 
-服务总线主题和订阅支持**发布/订阅**消息通信模型。在使用主题和订阅时，分布式应用程序的组件不会直接相互通信，而是通过充当中介的主题交换消息。
+服务总线主题和订阅支持*发布/订阅*消息通信模型。在使用主题和订阅时，分布式应用程序的组件不会直接相互通信，而是通过充当中介的主题交换消息。
 
-![TopicConcepts](./media/service-bus-ruby-how-to-use-topics-subscriptions/sb-topics-01.png)
+![TopicConcepts](./media/service-bus-ruby-how-to-use-topics-subscriptions/sb-topics-01.png)  
 
-与每条消息由单个使用方处理的服务总线队列相比，主题和订阅通过发布/订阅模式提供**一对多**通信方式。可向一个主题注册多个订阅。当消息发送到主题时，每个订阅会分别对该消息进行处理。
 
-主题订阅类似于接收发送至该主题的消息副本的虚拟队列。您可以选择基于每个订阅注册主题的筛选规则，这样就可以筛选/限制哪些主题订阅接收发送至某个主题的哪些消息。
+与每条消息由单个使用方处理的服务总线队列相比，主题和订阅通过发布/订阅模式提供**一对多**通信方式。可向一个主题注册多个订阅。消息发送到主题时，每个订阅会分别对该消息进行处理。
 
-利用 Service Bus 主题和订阅，您可以进行扩展以处理跨大量用户和应用程序的许多消息。
+主题订阅类似于接收发送至该主题的消息副本的虚拟队列。可以选择基于每个订阅注册主题的筛选规则，这样就可以筛选/限制哪些主题订阅接收发送至某个主题的哪些消息。
 
-## 创建服务命名空间
+利用服务总线主题和订阅，可以进行扩展以处理跨大量用户和应用程序的许多消息。
 
-若要开始在 Azure 中使用服务总线队列，必须先创建一个服务命名空间。命名空间提供了用于对应用程序中的 Service Bus 资源进行寻址的范围容器。必须通过命令行界面创建命名空间，因为 [Azure 经典管理门户][] 不会使用 ACS 连接创建命名空间。
+## 创建命名空间
+
+若要开始在 Azure 中使用服务总线队列，必须先创建一个命名空间。命名空间提供了用于对应用程序中的 Service Bus 资源进行寻址的范围容器。必须通过命令行接口创建命名空间，因为 [Azure 经典管理门户][] 不会使用 ACS 连接创建命名空间。
 
 创建命名空间：
 
-1. 打开 Azure PowerShell 控制台。
+1. 打开 Azure Powershell 控制台窗口。
 
 2. 键入以下命令以创建命名空间。提供你自己的命名空间值，并指定与应用程序相同的区域。
 
       New-AzureSBNamespace -Name 'yourexamplenamespace' -Location 'China East' -NamespaceType 'Messaging' -CreateACSNamespace $true
 
-      ![创建命名空间](./media/service-bus-ruby-how-to-use-topics-subscriptions/showcmdcreate.png)
+	![创建命名空间](./media/service-bus-ruby-how-to-use-topics-subscriptions/showcmdcreate.png)  
+
 
 ## 获取命名空间的默认管理凭据
 
@@ -51,7 +59,8 @@
 
 你运行的用于创建服务总线命名空间的 PowerShell cmdlet 将显示可用于管理命名空间的密钥。复制 **DefaultKey** 值。你将本教程稍后的代码中使用此值。
 
-![复制密钥](./media/service-bus-ruby-how-to-use-topics-subscriptions/defaultkey.png)
+![复制密钥](./media/service-bus-ruby-how-to-use-topics-subscriptions/defaultkey.png)  
+
 
 > [AZURE.NOTE]
 > 如果登录到 [Azure 经典管理门户][] 并导航到命名空间的连接信息，也可以找到此密钥。
@@ -102,7 +111,7 @@ rescue
 end
 ```
 
-还可以通过其他选项传递 **Azure::ServiceBus::Topic** 对象，这些选项允许你重写默认主题设置，如消息保存时间或最大队列大小。下面的示例演示如何将最大队列大小设置为 5 GB，将保存时间设置为 1 分钟：
+还可以通过其他选项传递 **Azure::ServiceBus::Topic** 对象，这些选项允许用户重写默认主题设置，如消息保存时间或最大队列大小。下面的示例演示如何将最大队列大小设置为 5 GB，将保存时间设置为 1 分钟：
 
 ```
 topic = Azure::ServiceBus::Topic.new("test-topic")
@@ -116,7 +125,7 @@ topic = azure_service_bus_service.create_topic(topic)
 
 主题订阅也是使用 **Azure::ServiceBusService** 对象创建的。订阅已命名，并且具有一个限制传递到订阅的虚拟队列的消息集的可选筛选器。
 
-订阅是永久性的，并且除非删除它或删除与之相关的主题，否则订阅将一直存在。如果你的应用程序包含创建订阅的逻辑，则它应首先使用 getSubscription 方法检查该订阅是否已经存在。
+订阅是永久性的，除非删除它或删除与之相关的主题，否则订阅将一直存在。如果你的应用程序包含创建订阅的逻辑，则它应首先使用 getSubscription 方法检查该订阅是否已经存在。
 
 ### 创建具有默认 (MatchAll) 筛选器的订阅
 
@@ -132,7 +141,7 @@ subscription = azure_service_bus_service.create_subscription("test-topic", "all-
 
 订阅支持的最灵活的筛选器类型是 **Azure::ServiceBus::SqlFilter**，它实现了部分 SQL92 功能。SQL 筛选器将对发布到主题的消息的属性进行操作。有关可用于 SQL 筛选器的表达式的更多详细信息，请参阅 [SqlFilter.SqlExpression](http://msdn.microsoft.com/zh-cn/library/windowsazure/microsoft.servicebus.messaging.sqlfilter.sqlexpression.aspx) 语法。
 
-可以使用 **Azure::ServiceBusService** 对象的 **create\_rule()** 方法向订阅中添加筛选器。此方法允许你向现有订阅中添加新筛选器。
+可以使用 **Azure::ServiceBusService** 对象的 **create\_rule()** 方法向订阅中添加筛选器。此方法允许用户向现有订阅中添加新筛选器。
 
 由于默认筛选器会自动应用到所有新订阅，因此，你必须首先删除默认筛选器，否则 **MatchAll** 会替代你可能指定的任何其他筛选器。可以对 **Azure::ServiceBusService** 对象使用 **delete\_rule()** 方法来删除默认规则。
 
@@ -164,7 +173,7 @@ rule.filter = Azure::ServiceBus::SqlFilter.new({
 rule = azure_service_bus_service.create_rule(rule)
 ```
 
-现在，将消息发送到“test-topic”时，它总是会传送给订阅了“all-messages”主题订阅的接收者，并选择性地传送给订阅了“high-messages”和“low-messages”主题订阅的接收者（具体取决于消息内容）。
+现在，将消息发送到“test-topic”时，它始终会传送给订阅了“all-messages”主题订阅的接收者，并选择性地传送给订阅了“high-messages”和“low-messages”主题订阅的接收者（具体取决于消息内容）。
 
 ## 将消息发送到主题
 
@@ -180,7 +189,7 @@ rule = azure_service_bus_service.create_rule(rule)
 end
 ```
 
-服务总线主题在[标准层](/documentation/articles/service-bus-premium-messaging/)中支持的最大消息大小为 256 KB，在[高级层](/documentation/articles/service-bus-premium-messaging/)中则为 1 MB。标头最大为 64 KB，其中包括标准和自定义应用程序属性。一个主题中包含的消息数量不受限制，但消息的总大小受限制。此主题大小是在创建时定义的，上限为 5 GB。
+服务总线主题在标准层中支持的最大消息大小为 256 KB。标头最大为 64 KB，其中包括标准和自定义应用程序属性。一个主题中包含的消息数量不受限制，但消息的总大小受限制。此主题大小是在创建时定义的，上限为 5 GB。
 
 ## 从订阅接收消息
 
@@ -204,7 +213,7 @@ azure_service_bus_service.delete_subscription_message(message)
 
 Service Bus 提供了相关功能来帮助你轻松地从应用程序错误或消息处理问题中恢复。如果接收方应用程序因某种原因无法处理消息，则它可以对 **Azure::ServiceBusService** 对象调用 **unlock\_subscription\_message()** 方法。这会导致服务总线解锁订阅中的消息并使其能够重新被同一个正在使用的应用程序或其他正在使用的应用程序接收。
 
-还存在与订阅中的锁定消息关联的超时，如果应用程序未能在锁定超时过期前处理消息（例如，应用程序崩溃），服务总线将自动解锁该消息并使之重新可供接收。
+还存在与订阅中的锁定消息关联的超时，如果应用程序未能在锁定超时过期前处理消息（例如，如果应用程序崩溃），则服务总线将自动解锁该消息并使它重新可供接收。
 
 如果应用程序在处理消息之后，但在调用 **delete\_subscription\_message()** 方法之前崩溃，则在应用程序重新启动时，该消息将重新传送给应用程序。此情况通常称作**至少处理一次**，即每条消息将至少被处理一次，但在某些情况下，同一消息可能会被重新传送。如果方案无法容忍重复处理，则应用程序开发人员应向其应用程序添加更多逻辑以处理重复消息传送。此逻辑通常可以通过使用消息的 **message\_id** 属性来实现，该属性在多次传送尝试中保持不变。
 

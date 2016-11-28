@@ -1,17 +1,24 @@
 <properties 
-   pageTitle="服务总线 和 Java 与 AMQP 1.0 | Azure"
-   description="使用 AMQP 通过 Java 使用服务总线。"
+   pageTitle="服务总线和 Java 与 AMQP 1.0 | Azure"
+    description="使用 AMQP 通过 Java 使用服务总线"
    services="service-bus"
    documentationCenter="na"
    authors="sethmanheim"
    manager="timlt"
-   editor="tysonn" /> 
+    editor="" />  
+ 
 <tags 
-   ms.service="service-bus"
-   ms.date="05/06/2016"
-   wacn.date="06/27/2016" />
+    ms.service="service-bus"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.tgt_pltfrm="na"
+    ms.workload="na"
+    ms.date="09/29/2016"
+    ms.author="sethm"
+    wacn.date="11/28/2016"/>  
 
-# 使用 AMQP 1.0 通过 Java 使用服务总线
+
+# 使用 AMQP 1.0 通过 Java 使用 Service Bus
 
 [AZURE.INCLUDE [service-bus-selector-amqp](../../includes/service-bus-selector-amqp.md)]
 
@@ -21,7 +28,7 @@ Java 消息服务 (JMS) 是一种标准 API，用于处理 Java 平台上面向�
 
 有关下载 Apache Qpid JMS AMQP 1.0 客户端库的最新版本的信息，请访问 [http://people.apache.org/~rgodfrey/qpid-java-amqp-1-0-client-jms.html](http://people.apache.org/~rgodfrey/qpid-java-amqp-1-0-client-jms.html)。
 
-使用服务总线构建和运行 JMS 应用程序时必须将以下 4 个 JAR 文件从 Apache Qpid JMS AMQP 1.0 分发存档添加到 Java CLASSPATH：
+使用 Service Bus 构建和运行 JMS 应用程序时必须将以下 4 个 JAR 文件从 Apache Qpid JMS AMQP 1.0 分发存档添加到 Java CLASSPATH：
 
 -   geronimo-jms\_1.1\_spec-[version].jar
 
@@ -79,8 +86,8 @@ amqps://[username]:[password]@[namespace].servicebus.chinacloudapi.cn
 | 名称 | 含义 | | | | |
 |---------------|--------------------------------------------------------------------------------|---|---|---|---|
 | `[namespace]` | 从 [Azure 经典管理门户][]获取的服务总线命名空间。 | | | | |
-| `[username]` | 从 [Azure 经典管理门户][]获取的服务总线颁发者名称。 | | | | |
-| `[password]` | 从 [Azure 经典管理门户][]获取的 URL 编码形式的服务总线颁发者密钥。 | | | | |
+| `[username]` | 从 [Azure 经典管理门户][]获取的服务总线 SAS 密钥名称。 | | | | |
+| `[password]` | 从 [Azure 经典管理门户][]获取的 URL 编码形式的服务总线 SAS 密钥。 | | | | |
 
 > [AZURE.NOTE]必须手动为密码进行 URL 编码。在 [http://www.w3schools.com/tags/ref\_urlencode.asp](http://www.w3schools.com/tags/ref_urlencode.asp) 上提供了一个有用的 URL 编码实用工具。
 
@@ -88,13 +95,13 @@ amqps://[username]:[password]@[namespace].servicebus.chinacloudapi.cn
 
 | Namespace： | test.servicebus.chinacloudapi.cn |
 |--------------|----------------------------------------------|
-| 颁发者名称： | owner |
+| 颁发者名称： | RootManageSharedAccessKey |
 | 颁发者密钥： | abcdefg |
 
 那么，为了定义名为 `SBCONNECTIONFACTORY` 的 **ConnectionFactory** 对象，配置字符串将如下所示：
 
 ```
-connectionfactory.SBCONNECTIONFACTORY = amqps://owner:abcdefg@test.servicebus.chinacloudapi.cn
+connectionfactory.SBCONNECTIONFACTORY = amqps://RootManageSharedAccessKey:abcdefg@test.servicebus.chinacloudapi.cn
 ```
 
 #### 配置目标
@@ -108,17 +115,17 @@ topic.[jndi_name] = [physical_name]
 
 其中 `[jndi\_name]` 和 `[physical\_name]` 具有以下含义：
 
-| 名称 | 含义 |
+| Name | 含义 |
 |-------------------|------------------------------------------------------------------------------------------------------------------------------------------|
 | `[jndi\_name]` | 目标的逻辑名称。通过使用 JNDI `IntialContext.lookup()` 方法在 Java 应用程序中解析此名称。 |
-| `[physical\name]` | 应用程序在其中发送或接收消息的服务总线实体的名称。 |
+| `[physical\name]` | 应用程序在其中发送或接收消息的 Service Bus 实体的名称。 |
 
 注意以下事项：
 
 - `[physical\name]` 值可以是服务总线队列或主题。
 - 在从 Service Bus 主题订阅中接收时，在 JNDI 中指定的物理名称应该是该主题的名称。在 JMS 应用程序代码中创建可持久订阅时提供该订阅名称。
 - 还可以将服务总线主题订阅视为一个 JMS 队列。此方法具有以下几个优点：可以针对队列和主题订阅使用同一接收者代码，并且所有地址信息（主题和订阅名称）都在属性文件中外部化。
-- 若要将服务总线主题订阅视为一个 JMS 队列，属性文件中的条目应采用以下形式：`queue.[jndi_name] = [topic_name]/Subscriptions/[subscription_name]`。
+- 若要将服务总线主题订阅视为一个 JMS 队列，属性文件中的条目应采用以下形式：`queue.[jndi\_name] = [topic\_name]/Subscriptions/[subscription\_name]`。|
 
 若要定义映射到名为“topic1”的服务总线主题的名为“TOPIC”的逻辑 JMS 目标，属性文件中的条目应如下所示：
 
@@ -149,7 +156,7 @@ topic.[jndi_name] = [physical_name]
 
 ### 使用 JMS 接收消息
 
-以下代码演示如何从服务总线主题订阅接收消息。`how`假设在上一部分中所述的 **servicebus.properties** 配置文件中定义了 `SBCONNECTIONFACTORY` 和 TOPIC。它还假定订阅名称是 `subscription1`。
+以下代码演示`how`从服务总线主题订阅接收消息。假设在上一部分中所述的 **servicebus.properties** 配置文件中定义了 `SBCONNECTIONFACTORY` 和 TOPIC。它还假定订阅名称是 `subscription1`。
 
 
     Hashtable<String, String> env = new Hashtable<String, String>(); 
@@ -175,7 +182,7 @@ JMS 规范定义了应如何编写 API 方法和应用程序代码的异常约�
 -   使用 **connection.setExceptionListener** 向 JMS 连接注册 **ExceptionListener**。这允许以异步方式向客户端通知问题。此通知对于仅使用消息的连接特别重要，因为客户端没有其他方法可以获知其连接已失败。如果底层 AMQP 连接、会话或链接有问题，将调用 **ExceptionListener**。在此情况下，应用程序应从零开始重新创建 **JMS Connection**、**Session**、**MessageProducer** 和 **MessageConsumer** 对象。
 
 -   若要验证是否已从 **MessageProducer** 将一条消息成功发送到服务总线实体，请确保已为应用程序配置 **qpid.sync\_publish** 系统属性集。可以通过在启动应用程序时在命令行上设置 **-Dqpid.sync\_publish=true** Java VM 选项启动程序来完成此操作。设置此选项可将库配置为不从发送调用返回，直到收到该消息已被服务总线接受的确认为止。如果在发送操作期间出现问题，则将引发 **JMSException**。有两个可能的原因：
-	1. 如果问题是由于服务总线拒绝所发送的特定消息所致，则将引发 **MessageRejectedException** 异常。此错误是暂时的，或者由于消息出现某些问题所致。建议的操作过程是进行多次尝试，以便使用一些后退逻辑重试该操作。如果问题仍然存在，则应使用本地记录的错误放弃该消息。在这种情况下，无需重新创建 **JMS Connection**、**Session** 或 **MessageProducer** 对象。 
+	1. 如果问题是由于服务总线拒绝所发送的特定消息所致，则将引发 **MessageRejectedException** 异常。此错误是暂时的，或者由于消息出现某些问题所致。建议的操作过程是进行多次尝试，以便使用一些后退逻辑重试该操作。如果问题仍然存在，则应使用本地记录的错误放弃该消息。在这种情况下，无需重新创建 **JMS Connection**、**Session** 或 **MessageProducer** 对象。
 	2. 如果问题是由于服务总线关闭 AMQP 链接所致，则将引发 **InvalidDestinationException** 异常。这可能是由于暂时性问题或由于消息实体被删除所致。在这两种情况中的任一情况下，均应重新创建 **JMS Connection**、**Session** 和 **MessageProducer** 对象。如果错误条件是暂时的，则此操作最终将会成功。如果实体已被删除，则失败将是永久的。
 
 ## 在 .NET 和 JMS 之间进行消息传递
@@ -312,11 +319,11 @@ JMS 消息支持以下类型的应用程序属性：**boolean**、**byte**、**s
 | JMS 属性类型 | .NET 属性类型 |
 |-------------------|--------------------|
 | Byte | sbyte |
-| Integer | int |
+| 整数 | int |
 | Float | float |
 | Double | double |
-| Boolean | bool |
-| String | string |
+| 布尔 | bool |
+| String | 字符串 |
 
 [BrokeredMessage][] 类型支持以下类型的应用程序属性：**byte**、**sbyte**、**char**、**short**、**ushort**、**int**、**uint**、**long**、**ulong**、**float**、**double**、**decimal**、**bool**、**Guid**、**string**、**Uri**、**DateTime**、**DateTimeOffset** 和 **TimeSpan**。以下 .NET 代码显示如何使用上述每种属性类型在 [BrokeredMessage][] 对象上设置属性。
 
@@ -383,34 +390,34 @@ JMS 消息支持以下类型的应用程序属性：**boolean**、**byte**、**s
 
 #### JMS 到服务总线 .NET API
 
-| JMS | 服务总线 .NET | 说明                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| JMS | 服务总线 .NET | 说明 |
 |------------------|--------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| JMSCorrelationID | Message.CorrelationID | -                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-| JMSDeliveryMode  | 当前不可用             | 服务总线仅支持持久消息；例如，DeliveryMode.PERSISTENT，而不考虑指定的内容。                                                                                                                                                                                                                                                                                                            |
-| JMSDestination   | Message.To            | -                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-| JMSExpiration    | Message.TimeToLive    | 转换                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
-| JMSMessageID     | Message.MessageID     | 默认情况下，JMSMessageID 在 AMQP 消息中以二进制格式编码。收到二进制消息 ID 后，.NET 客户端库将根据字节的 unicode 值将其转换为字符串表示形式。若要将 JMS 库切换为使用字符串消息 ID，请在 JNDI ConnectionURL 的查询参数后面追加“binary-messageid=false”字符串。例如：“amqps://[username]:[password]@[namespace].servicebus.chinacloudapi.cn? binary-messageid=false”。 |
-| JMSPriority      | 当前不可用             | 服务总线不支持消息优先级。                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
-| JMSRedelivered   | 当前不可用             | -                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-| JMSReplyTo       | 消息。ReplyTo          | -                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-| JMSTimestamp | Message.EnqueuedTimeUtc | 转换 |
-| JMSType          | Message.Properties[“jms-type”] | -                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| JMSCorrelationID | Message.CorrelationID | - | 
+| JMSDeliveryMode | 当前不可用 | 服务总线仅支持持久消息；例如，DeliveryMode.PERSISTENT，而不考虑指定的内容。| 
+| JMSDestination | Message.To | - | 
+| JMSExpiration | Message.TimeToLive | 转换 | 
+| JMSMessageID | Message.MessageID | 默认情况下，JMSMessageID 在 AMQP 消息中以二进制格式编码。收到二进制消息 ID 后，.NET 客户端库将根据字节的 unicode 值将其转换为字符串表示形式。若要将 JMS 库切换为使用字符串消息 ID，请在 JNDI ConnectionURL 的查询参数后面追加“binary-messageid=false”字符串。例如：“amqps://[username]:[password]@[namespace].servicebus.chinacloudapi.cn? binary-messageid=false”。| 
+| JMSPriority | 当前不可用 | 服务总线不支持消息优先级。| 
+| JMSRedelivered | 当前不可用 | - | 
+| JMSReplyTo | 消息。ReplyTo | - | 
+| JMSTimestamp | Message.EnqueuedTimeUtc | Conversion | 
+| JMSType | Message.Properties[“jms-type”] | - |
 
 #### 服务总线 .NET API 到 JMS
 
-| 服务总线 .NET            | JMS              | 说明                     |
+| 服务总线 .NET | JMS | 说明 |
 |-------------------------|------------------|-------------------------|
-| ContentType             | -                  | 当前不可用              |
-| CorrelationId           | JMSCorrelationID | -                        |
-| EnqueuedTimeUtc         | JMSTimestamp     | 转换                    |
-| Label                   | 不适用            | 当前不可用                |
-| MessageId               | JMSMessageID     | -                        |
-| ReplyTo                 | JMSReplyTo       | -                        |
-| ReplyToSessionId        | 不适用            | 当前不可用                |
-| ScheduledEnqueueTimeUtc | 不适用            | 当前不可用                |
-| SessionId               | 不适用            | 当前不可用                |
-| TimeToLive              | JMSExpiration    | 转换                      |
-| To                      | JMSDestination    | -                       |
+| ContentType | - | 当前不可用 | 
+| CorrelationId | JMSCorrelationID | - | 
+| EnqueuedTimeUtc | JMSTimestamp | 转换 | 
+| Label | 不适用 | 当前不可用 | 
+| MessageId | JMSMessageID | - | 
+| ReplyTo | JMSReplyTo | - | 
+| ReplyToSessionId | 不适用 | 当前不可用 | 
+| ScheduledEnqueueTimeUtc | 不适用 | 当前不可用 | 
+| SessionId | 不适用 | 当前不可用| 
+| TimeToLive | JMSExpiration | 转换 | 
+| To | JMSDestination | - |
 
 ## 不受支持的功能和限制
 
@@ -441,4 +448,4 @@ JMS 消息支持以下类型的应用程序属性：**boolean**、**byte**、**s
 [服务总线 AMQP 概述]: /documentation/articles/service-bus-amqp-overview/
 [Azure 经典管理门户]: http://manage.windowsazure.cn
 
-<!---HONumber=Mooncake_0104_2016-->
+<!---HONumber=Mooncake_1121_2016-->

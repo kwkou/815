@@ -5,11 +5,18 @@
    documentationCenter="na"
    authors="sethmanheim"
    manager="timlt"
-    editor="" />
+    editor="" />  
+
 <tags 
-   ms.service="service-bus"
-    ms.date="05/25/2016"
-   wacn.date="07/25/2016" />
+    ms.service="service-bus"
+    ms.devlang="na"
+    ms.topic="get-started-article"
+    ms.tgt_pltfrm="na"
+    ms.workload="na"
+    ms.date="09/27/2016"
+    ms.author="sethm"
+    wacn.date="11/28/2016"/>  
+
 
 # 服务总线中转消息传送 .NET 教程
 
@@ -17,19 +24,17 @@ Azure 服务总线提供两个综合性消息传送解决方案：一是通过�
 
 第二个消息传送解决方案启用了“中转”消息传送功能。可将它们视为异步或分离式消息传送功能，支持使用服务总线消息传送基础结构的发布-订阅、临时分离和负载均衡方案。分离式通信具有很多优点；例如，客户端和服务器可以根据需要进行连接并以异步方式执行其操作。
 
-本教程旨在提供有关队列的概述和实践经验，队列是服务总线中转消息传送的一个核心组件。完成本教程中的一系列主题后，你将获得一个应用程序，它能填充消息列表、创建队列和向队列发送消息。最后，该应用程序从队列接收消息并将其显示出来，然后清理其资源并退出。有关介绍如何构建使用“中继”消息传送功能的应用程序的相应教程，请参阅[服务总线中继消息传送教程](/documentation/articles/service-bus-relay-tutorial/)。
+本教程旨在提供有关队列的概述和实践经验，队列是服务总线中转消息传送的一个核心组件。完成本教程中的一系列主题后，你将获得一个应用程序，它能填充消息列表、创建队列和向队列发送消息。最后，该应用程序从队列接收消息并将其显示出来，然后清理其资源并退出。有关介绍如何构建使用服务总线中继的应用程序的相应教程，请参阅[服务总线中继消息传送教程](/documentation/articles/service-bus-relay-tutorial/)。
 
 ## 简介和先决条件
 
-队列为一个或多个竞争使用方提供“先入先出 (FIFO)”消息传递方式。FIFO 表示接收方通常按照消息排队的临时顺序来接收并处理消息，并且每条消息将仅由一个消息使用方接收并处理。使用队列的主要优点是实现应用程序组件的暂时分离：换而言之，创建方和使用方无需同时发送和接收消息，因为消息被持久存储在队列中。相关的优点是负载分级，它允许创建方和使用方以不同速率发送和接收消息。
+队列为一个或多个竞争使用方提供“先入先出 (FIFO)”消息传递方式。FIFO 表示接收方通常按照消息排队的临时顺序来接收并处理消息，并且每条消息将仅由一个消息使用方接收并处理。使用队列的主要优点是实现应用程序组件的*暂时分离*：换而言之，创建方和使用方无需同时发送和接收消息，因为消息被持久存储在队列中。相关的优点是*负载分级*，它允许创建方和使用方以不同速率发送和接收消息。
 
 以下是开始本教程之前应遵循的一些管理步骤和前提步骤。首先是创建服务命名空间，并获取共享的访问签名 (SAS) 密钥。命名空间为每个通过服务总线公开的应用程序提供应用程序边界。创建服务命名空间时，系统将自动生成 SAS 密钥。服务命名空间与 SAS 密钥的组合提供了一个凭据，服务总线可用其验证应用程序访问权限。
 
 ### 创建服务命名空间并获取 SAS 密钥
 
-1. 若要创建服务命名空间，请访问 [Azure 经典管理门户][]。单击左侧的“服务总线”，然后单击“创建”。为你的命名空间键入一个名称，然后单击复选标记。
-
-1. 在门户的主窗口中，单击在上一步中创建的命名空间的名称。
+第一步是创建服务命名空间并获取[共享访问签名](/documentation/articles/service-bus-sas-overview/) (SAS) 密钥。命名空间为每个通过服务总线公开的应用程序提供应用程序边界。创建服务命名空间时，系统将自动生成 SAS 密钥。服务命名空间与 SAS 密钥的组合为服务总线提供了一个用于验证应用程序访问权限的凭据。
 
 1. 单击**“配置”**。
 
@@ -45,8 +50,7 @@ Azure 服务总线提供两个综合性消息传送解决方案：一是通过�
 
 1. 使用 NuGet 包管理器将服务总线库添加到你的项目：
 	1. 在“解决方案资源管理器”中，右键单击“QueueSample”项目，然后单击“管理 NuGet 程序包”。
-	2. 在“管理 Nuget 包”对话框中，单击“浏览”选项卡，搜索“Azure 服务总线”，然后单击“安装”。
-<br />
+	2. 在“管理 Nuget 包”对话框中，单击“浏览”选项卡，搜索“Azure 服务总线”，然后单击“安装”。<br />
 1. 在解决方案资源管理器中，双击 Program.cs 文件以在 Visual Studio 编辑器中将其打开。将命名空间名称从其默认名称 `QueueSample` 更改为 `Microsoft.ServiceBus.Samples`。
 
 	```
@@ -96,7 +100,7 @@ Azure 服务总线提供两个综合性消息传送解决方案：一是通过�
 
 ### 创建用于解析消息列表的方法
 
-1. 在 `Program` 类的 `Main()` 方法前面，声明两个变量：其中之一为 **DataTable** 类型，用于包含 Data.csv 中的消息列表。另一个应为 List 对象类型，强类型化为 [BrokeredMessage](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.aspx)。后者是中转消息列表，本教程中的后续步骤将用到它。
+1. 在 `Program` 类的 `Main()` 方法前面，声明两个变量：其中之一为 **DataTable** 类型，用于包含 Data.csv 中的消息列表。另一个应为 List 对象类型，强类型化为 [BrokeredMessage](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.brokeredmessage.aspx)。后者是中转消息列表，本教程中的后续步骤将用到它。
 
 	```
 	namespace Microsoft.ServiceBus.Samples
@@ -159,7 +163,7 @@ Azure 服务总线提供两个综合性消息传送解决方案：一是通过�
 
 ### 创建用于加载消息列表的方法
 
-1. 在 `Main()` 之外，定义 `GenerateMessages()` 方法，用于接收 `ParseCSVFile()` 返回的 **DataTable** 对象，并将该表加载到强类型化的中转消息列表中。该方法随后返回 **List** 对象，如下面的示例所示。 
+1. 在 `Main()` 之外，定义 `GenerateMessages()` 方法，用于接收 `ParseCSVFile()` 返回的 **DataTable** 对象，并将该表加载到强类型化的中转消息列表中。该方法随后返回 **List** 对象，如下面的示例所示。
 
 	```
 	static List<BrokeredMessage> GenerateMessages(DataTable issues)
@@ -245,7 +249,7 @@ Azure 服务总线提供两个综合性消息传送解决方案：一是通过�
 
 ### 生成解决方案
 
-在 Visual Studio 的“生成”菜单中，单击“生成解决方案”或按 **Ctrl+Shift+B** 以确认到目前为止你的操作的准确性。
+在 Visual Studio 的“生成”菜单中，单击“生成解决方案”或按 **Ctrl+Shift+B** 确认到目前为止的操作的准确性。
 
 ## 创建管理凭据
 
@@ -263,7 +267,7 @@ Azure 服务总线提供两个综合性消息传送解决方案：一是通过�
 	}
 	```
 
-2. 下一步是使用 [TokenProvider](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.tokenprovider.aspx) 对象创建 SAS 凭据。此创建方法用于接受在 `CollectUserInput()` 方法中获取的 SAS 密钥名称和值。将以下代码添加到 `Queue()` 方法中：
+1. 下一步是使用 [TokenProvider](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.tokenprovider.aspx) 对象创建 SAS 凭据。此创建方法用于接受在 `CollectUserInput()` 方法中获取的 SAS 密钥名称和值。将以下代码添加到 `Queue()` 方法中：
 
 	```
 	static async Task Queue()
@@ -273,7 +277,7 @@ Azure 服务总线提供两个综合性消息传送解决方案：一是通过�
 	}
 	```
 
-2. 使用 URI 创建新的命名空间管理对象，此 URI 包含在上一步中获得的作为参数的命名空间名称和管理凭据。直接在上一步中添加的代码后面添加以下代码。请确保将 `<yourNamespace>` 替换为你的服务命名空间的名称。
+2. 使用 URI 创建新的命名空间管理对象，此 URI 包含在上一步中获得的作为参数的命名空间名称和管理凭据。直接在上一步中添加的代码后面添加以下代码。请确保将 `<yourNamespace>` 替换为服务命名空间的名称。
 	
 	```
 	NamespaceManager namespaceClient = new NamespaceManager(ServiceBusEnvironment.CreateServiceUri("sb", "<yourNamespace>", string.Empty), credentials);
@@ -406,7 +410,7 @@ namespace Microsoft.ServiceBus.Samples
     myQueue = namespaceClient.CreateQueue("IssueTrackingQueue");
 	```
 
-1. 在 `Queue()` 方法中，使用新创建的服务总线 URI 作为参数创建一个消息工厂对象。在上一步中添加的管理操作后面直接添加以下代码。请确保将 `<yourNamespace>` 替换为你的服务命名空间的名称：
+1. 在 `Queue()` 方法中，使用新创建的服务总线 URI 作为参数创建一个消息工厂对象。在上一步中添加的管理操作后面直接添加以下代码。请确保将 `<yourNamespace>` 替换为服务命名空间的名称：
 
 	```
 	MessagingFactory factory = MessagingFactory.Create(ServiceBusEnvironment.CreateServiceUri("sb", "<yourNamespace>", string.Empty), credentials);
@@ -453,7 +457,7 @@ while ((message = await myQueueClient.ReceiveAsync(new TimeSpan(hours: 0, minute
     }
 ```
 
-请注意，`Thread.Sleep` 只用来模拟消息处理，在实际消息传送应用程序中你可能无需使用它。
+请注意，`Thread.Sleep` 只用来模拟消息处理，在实际消息传送应用程序中可能无需使用它。
 
 ### 结束 Queue 方法并清理资源
 
@@ -654,4 +658,4 @@ namespace Microsoft.ServiceBus.Samples
 
 [Azure 经典管理门户]: http://manage.windowsazure.cn
 
-<!---HONumber=Mooncake_0104_2016-->
+<!---HONumber=Mooncake_1121_2016-->

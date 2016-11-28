@@ -5,12 +5,19 @@
 	documentationCenter="java"
 	authors="sethmanheim"  
 	manager="timlt" 
-	editor=""/>
+	editor=""/>  
+
 
 <tags 
 	ms.service="service-bus" 
-	ms.date="06/20/2016" 
-	wacn.date="08/14/2016"/>
+	ms.workload="na" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="java" 
+	ms.topic="article" 
+	ms.date="10/04/2016" 
+	ms.author="sethm"
+	wacn.date="11/28/2016"/>  
+
 
 # 如何将 Java 消息服务 (JMS) API 用于服务总线和 AMQP 1.0
 
@@ -22,7 +29,7 @@
 
 ## 服务总线入门
 
-本指南假定你已拥有包含名为“queue1”的队列的服务总线命名空间，如果没有，则可以使用 [Azure 经典管理门户](http://manage.windowsazure.cn)创建命名空间和队列。有关如何创建服务总线命名空间和队列的详细信息，请参阅[如何使用服务总线队列](/documentation/articles/service-bus-dotnet-get-started-with-queues/)。
+此指南假定你已具有包含名为“queue1”的队列的服务总线命名空间，如果没有，则可以使用 [Azure 经典管理门户](http://manage.windowsazure.cn)创建命名空间和队列。有关如何创建服务总线命名空间和队列的详细信息，请参阅[如何使用服务总线队列](/documentation/articles/service-bus-dotnet-get-started-with-queues/)。
 
 ### 下载 AMQP 1.0 JMS 客户端库
 
@@ -100,8 +107,7 @@ topic.[jndi_name] = [physical_name]
 - **[jndi\_name]**：目标的逻辑名称。这是将使用 JNDI IntialContext.lookup() 方法在 Java 应用程序中解析的名称。
 - **[physical\_name]**：应用程序向其发送或从该处接收消息的服务总线实体的名称。
 
-
-> [AZURE.NOTE]在从 Service Bus 主题订阅中接收时，在 JNDI 中指定的物理名称应该是该主题的名称。在 JMS 应用程序代码中创建可持久订阅时提供该订阅名称。[服务总线 AMQP 1.0 开发人员指南](/documentation/articles/service-bus-amqp-dotnet/)提供了有关从 JMS 使用服务总线主题订阅的更多详细信息。
+> [AZURE.NOTE] 在从 Service Bus 主题订阅中接收时，在 JNDI 中指定的物理名称应该是该主题的名称。在 JMS 应用程序代码中创建可持久订阅时提供该订阅名称。[服务总线 AMQP 1.0 开发人员指南](/documentation/articles/service-bus-amqp-dotnet/)提供了有关从 JMS 使用服务总线主题订阅的更多详细信息。
 
 ### 编写 JMS 应用程序
 
@@ -319,7 +325,7 @@ exit
 
 ## 摘要
 
-本操作方法指南演示了如何通过使用常用 JMS API 和 AMQP 1.0 通过 Java 使用 Service Bus 中转消息传送功能（队列和发布/订阅主题）。
+本文说明了如何使用常用 JMS API 和 AMQP 1.0 通过 Java 使用服务总线消息传送功能（队列和发布/订阅主题）。
 
 也可以通过其他语言（包括 .NET、C、Python 和 PHP）使用 Service Bus AMQP 1.0。使用这些不同语言构建的组件可以使用服务总线中的 AMQP 1.0 支持可靠且完全无损地交换消息。有关详细信息，请参阅[服务总线 AMQP 1.0 开发人员指南](/documentation/articles/service-bus-amqp-dotnet/)。
 

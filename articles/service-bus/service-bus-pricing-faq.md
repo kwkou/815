@@ -104,8 +104,6 @@
 
 若要了解有关服务总线消息传送的详细信息，请参阅以下主题。
 
-- [Azure 服务总线高级消息传送简介（博客文章）](http://azure.microsoft.com/blog/introducing-azure-service-bus-premium-messaging/)
-- [Azure 服务总线高级消息传送简介（Channel9）](https://channel9.msdn.com/Blogs/Subscribe/Introducing-Azure-Service-Bus-Premium-Messaging)
 - [服务总线消息传送概述](/documentation/articles/service-bus-messaging-overview/)
 - [Azure 服务总线体系结构概述](/documentation/articles/service-bus-fundamentals-hybrid-solutions/)
 - [如何使用 Service Bus 队列](/documentation/articles/service-bus-dotnet-get-started-with-queues/)

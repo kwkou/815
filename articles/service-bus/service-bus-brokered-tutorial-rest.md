@@ -5,19 +5,28 @@
    documentationCenter="na"
    authors="sethmanheim"
    manager="timlt"
-    editor="" />
+    editor="" />  
+
 <tags 
-   ms.service="service-bus"
-    ms.date="06/03/2016"
-   wacn.date="07/25/2016" />
+    ms.service="service-bus"
+    ms.devlang="na"
+    ms.topic="get-started-article"
+    ms.tgt_pltfrm="na"
+    ms.workload="na"
+    ms.date="09/27/2016"
+    ms.author="sethm"
+    wacn.date="11/28/2016"/>  
+
 
 # 服务总线中转消息传送 REST 教程
 
+[AZURE.INCLUDE [service-bus-selector-queues](../../includes/service-bus-selector-queues.md)]
+
 本教程介绍了如何创建基本的基于 REST 的 Azure 服务总线队列和主题/订阅。
 
-## 第 1 步：创建命名空间
+## 创建命名空间
 
-第一步是创建服务命名空间并获取[共享访问签名](/documentation/articles/service-bus-sas-overview/) (SAS) 密钥。服务命名空间为每个通过服务总线公开的应用程序提供应用程序边界。创建服务命名空间时，系统将自动生成 SAS 密钥。服务命名空间与 SAS 密钥的组合为服务总线提供了一个用于验证应用程序访问权限的凭据。
+第一步是创建服务命名空间并获取[共享访问签名](/documentation/articles/service-bus-sas-overview/) (SAS) 密钥。命名空间为每个通过服务总线公开的应用程序提供应用程序边界。创建服务命名空间时，系统将自动生成 SAS 密钥。服务命名空间与 SAS 密钥的组合为服务总线提供了一个用于验证应用程序访问权限的凭据。
 
 ### 创建命名空间并获取 SAS 密钥
 
@@ -35,7 +44,7 @@
 
 本教程中的代码将执行以下操作。
 
-- 使用服务命名空间和[共享访问签名](/documentation/articles/service-bus-sas-overview/) (SAS) 密钥来获取对服务总线命名空间资源的访问权限。
+- 使用命名空间和[共享访问签名](/documentation/articles/service-bus-sas-overview/) (SAS) 密钥来获取对服务总线命名空间资源的访问权限。
 
 - 创建队列、将消息发送到队列，并读取来自队列的消息。
 
@@ -47,7 +56,7 @@
 
 由于该服务是 REST 样式的 Web 服务并且整个交换只涉及字符串，因此不涉及任何特殊类型。这意味着 Visual Studio 项目不得引用任何服务总线库。
 
-获取第一步中的服务命名空间和凭据后，下一步是创建一个基本的 Visual Studio 控制台应用程序。
+在第一步中获取命名空间和凭据后，下一步是创建一个基本的 Visual Studio 控制台应用程序。
 
 ### 创建控制台应用程序
 
@@ -377,7 +386,7 @@ private static string FormatXml(string inputXml)
 
 ## 构建并运行应用程序
 
-现在可以构建并运行应用程序。单击 Visual Studio 中“生成”菜单上的“生成解决方案”，或按 F6。
+现在可以构建并运行应用程序。在 Visual Studio 中的“生成”菜单上，单击“生成解决方案”，或按 **Ctrl+Shift+B**。
 
 ### 运行应用程序
 
@@ -628,6 +637,9 @@ namespace Microsoft.ServiceBus.Samples
 - [服务总线消息传送概述](/documentation/articles/service-bus-messaging-overview/)
 - [Azure 服务总线基础知识](/documentation/articles/service-bus-fundamentals-hybrid-solutions/)
 - [服务总线中继 REST 教程](/documentation/articles/service-bus-relay-rest-tutorial/)
+
+
+
 [Azure 经典管理门户]: http://manage.windowsazure.cn
 
 <!---HONumber=Mooncake_0104_2016-->

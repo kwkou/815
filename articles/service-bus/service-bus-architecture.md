@@ -27,7 +27,7 @@
 
 - **一个网关存储。** 网关存储保存此缩放单位中定义的每个实体的数据。网关存储在 SQL Azure 数据库顶层实施。
 
-- **多个消息存储。** 消息存储保存此缩放单位中定义的所有队列、主题和订阅的消息。它还包含所有订阅数据。除非启用了[分区消息实体](/documentation/articles/service-bus-partitioning/)，否则队列或主题将映射到一个消息存储。订阅是存储在与其父主题相同的消息存储中。除了服务总线[高级消息传送](/documentation/articles/service-bus-premium-messaging/)外，消息存储在 SQL Azure 数据库顶层实施。
+- **多个消息存储。** 消息存储保存此缩放单位中定义的所有队列、主题和订阅的消息。它还包含所有订阅数据。除非启用了[分区消息实体](/documentation/articles/service-bus-partitioning/)，否则队列或主题将映射到一个消息存储。订阅是存储在与其父主题相同的消息存储中。
 
 ## 容器
 
