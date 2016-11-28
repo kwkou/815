@@ -27,7 +27,7 @@
 ## 先决条件
 若要使用自动存储配置设置，虚拟机需有以下特征：
 
-- 是使用 [SQL Server 库映像](/documentation/articles/virtual-machines-windows-sql-server-iaas-overview/#option-1-deploy-a-sql-vm-per-minute-licensing)预配的。
+- 是使用 [SQL Server 库映像](/documentation/articles/virtual-machines-windows-sql-server-iaas-overview/#option-1-create-a-sql-vm-with-per-minute-licensing)预配的。
 - 使用 [Resource Manager 部署模型](/documentation/articles/resource-manager-deployment-model/)。
 - 使用[高级存储](/documentation/articles/storage-premium-storage/)。
 

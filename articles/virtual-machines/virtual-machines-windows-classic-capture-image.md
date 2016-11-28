@@ -16,21 +16,21 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="09/27/2016"
-	wacn.date="11/21/2016"
+	wacn.date="11/28/2016"
 	ms.author="cynthn"/>
 
 #捕获使用经典部署模型创建的 Azure Windows 虚拟机的映像。
 
-> [AZURE.IMPORTANT] Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model/)。本文介绍使用经典部署模型。Azure 建议大多数新部署使用 Resource Manager 模型。了解如何[使用 Resource Manager 模型执行这些步骤](/documentation/articles/virtual-machines-windows-capture-image/)。
+> [AZURE.IMPORTANT] Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model/)。本文介绍使用经典部署模型。Azure 建议大多数新部署使用资源管理器模型。有关 Resource Manager 模型的信息，请参阅[为 Azure 中运行的 Windows VM 创建副本](/documentation/articles/virtual-machines-windows-vhd-copy/)。
 
 
-本文将演示如何捕获运行 Windows 的 Azure 虚拟机，你可以将它用作映像来创建其他虚拟机。此映像包含操作系统磁盘和任何附加到虚拟机的数据磁盘。由于它不包括网络配置，因此你在使用此映像创建其他虚拟机时，需要进行相关配置。
+本文将演示如何捕获运行 Windows 的 Azure 虚拟机，可以将它用作映像来创建其他虚拟机。此映像包含操作系统磁盘和任何附加到虚拟机的数据磁盘。由于它不包括网络配置，因此在使用此映像创建其他虚拟机时，需要进行相关配置。
 
-Azure 将映像存储在**“我的映像”**下。你上载的任何映像都会存储在同一位置。有关映像的详细信息，请参阅[关于虚拟机的映像](/documentation/articles/virtual-machines-linux-classic-about-images/)。
+Azure 将映像存储在**“我的映像”**下。上传的任何映像都会存储在同一位置。有关映像的详细信息，请参阅[关于虚拟机的映像](/documentation/articles/virtual-machines-linux-classic-about-images/)。
 
 ##开始之前##
 
-这些步骤假定你已创建了 Azure 虚拟机并配置了操作系统，包括附加任何数据磁盘。如果你尚未执行此操作，请参阅以下说明：
+这些步骤假定已创建了 Azure 虚拟机并配置了操作系统，包括附加任何数据磁盘。如果尚未执行此操作，请参阅以下说明：
 
 - [从映像创建虚拟机](/documentation/articles/virtual-machines-windows-classic-createportal/)
 - [如何将数据磁盘附加到虚拟机](/documentation/articles/virtual-machines-windows-classic-attach-disk/)
@@ -72,7 +72,7 @@ Azure 将映像存储在**“我的映像”**下。你上载的任何映像都�
 
 10.	在**“映像名称”**中，键入新映像的名称。
 
-11.	在将 Windows Server 映像添加到自定义映像组之前，必须先按前面步骤中的说明通过运行 Sysprep 将该映像通用化。单击**“我已经在虚拟机上运行了 Sysprep”**以指明你已完成此操作。
+11.	在将 Windows Server 映像添加到自定义映像集之前，必须先按前面步骤中的说明通过运行 Sysprep 使该映像通用化。单击**“我已经在虚拟机上运行了 Sysprep”**以指明你已完成此操作。
 
 12.	单击复选标记以捕获映像。新映像现在将显示在**“映像”**下。
 
@@ -94,4 +94,4 @@ Azure 将映像存储在**“我的映像”**下。你上载的任何映像都�
 [Image capture successful]: ./media/virtual-machines-capture-image-windows-server/CaptureSuccess.png
 [Use the captured image]: ./media/virtual-machines-capture-image-windows-server/MyImagesWindows.png
 
-<!---HONumber=Mooncake_0905_2016-->
+<!---HONumber=Mooncake_1121_2016-->

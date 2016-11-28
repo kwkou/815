@@ -17,7 +17,7 @@
    ms.tgt_pltfrm="vm-windows"
    ms.workload="na"
    ms.date="09/15/2016"
-   wacn.date="11/21/2016"
+   wacn.date="11/28/2016"
    ms.author="zachal"/>  
 
 
@@ -26,7 +26,7 @@
 
 ## Windows VM 模板示例
 
-将以下代码片段放入模板的 Resource 节。
+模板的“资源”部分中要使用以下代码片段。
 
 			"name": "Microsoft.Powershell.DSC",
 			"type": "extensions",
@@ -61,35 +61,35 @@
 VMSS 节点具有“properties”节，其中包含“VirtualMachineProfile”和“extensionProfile”属性。DSC 添加在“extensions”下面。
 
     "extensionProfile": {
-                "extensions": [
-                    {
-                        "name": "Microsoft.Powershell.DSC",
-                        "properties": {
-                            "publisher": "Microsoft.Powershell",
-                            "type": "DSC",
-                            "typeHandlerVersion": "2.20",
-                            "autoUpgradeMinorVersion": true,
-                            "forceUpdateTag": "[parameters('DscExtensionUpdateTagVersion')]",
-                            "settings": {
-                                "configuration": {
-                                    "url": "[concat(parameters('_artifactsLocation'), '/', variables('DscExtensionArchiveFolder'), '/', variables('DscExtensionArchiveFileName'))]",
-                                    "script": "DscExtension.ps1",
-                                    "function": "Main"
-                                },
-                                "configurationArguments": {
-                                    "nodeName": "localhost"
-                                }
+            "extensions": [
+                {
+                    "name": "Microsoft.Powershell.DSC",
+                    "properties": {
+                        "publisher": "Microsoft.Powershell",
+                        "type": "DSC",
+                        "typeHandlerVersion": "2.20",
+                        "autoUpgradeMinorVersion": true,
+                        "forceUpdateTag": "[parameters('DscExtensionUpdateTagVersion')]",
+                        "settings": {
+                            "configuration": {
+                                "url": "[concat(parameters('_artifactsLocation'), '/', variables('DscExtensionArchiveFolder'), '/', variables('DscExtensionArchiveFileName'))]",
+                                "script": "DscExtension.ps1",
+                                "function": "Main"
                             },
-                            "protectedSettings": {
-                                "configurationUrlSasToken": "[parameters('_artifactsLocationSasToken')]"
+                            "configurationArguments": {
+                                "nodeName": "localhost"
                             }
+                        },
+                        "protectedSettings": {
+                            "configurationUrlSasToken": "[parameters('_artifactsLocationSasToken')]"
                         }
                     }
-                ]
+                }
+            ]
 
 ## 详细设置信息
 
-以下架构用于 Azure Resource Manager 模板中 Azure DSC 扩展的 settings 部分。
+Azure Resource Manager 模板中 Azure DSC 扩展的“设置”部分会使用以下架构。
 
     "settings": {
     "wmfVersion": "latest",
@@ -163,7 +163,7 @@ VMSS 节点具有“properties”节，其中包含“VirtualMachineProfile”�
 ## 示例
 
 以下示例摘自 [DSC Extension Handler Overview](/documentation/articles/virtual-machines-windows-extensions-dsc-overview/)（DSC 扩展处理程序概述）网页中的“Getting Started”（入门）部分。
-此示例使用 Resource Manager 模板而不是cmdlet 来部署该扩展。 
+此示例使用 Resource Manager 模板而不是cmdlet 来部署该扩展。
 保存“IisInstall.ps1”配置，将它放在 .ZIP 文件中，然后将该文件上载到可访问的 URL 中。此示例使用 Azure Blob 存储，但可以从任意位置下载 .ZIP 文件。
 
 在 Azure Resource Manager 模板中，以下代码指示 VM 下载正确的文件并运行适当的 PowerShell 函数：
@@ -181,7 +181,7 @@ VMSS 节点具有“properties”节，其中包含“VirtualMachineProfile”�
     }
 
 ## 从以前的格式进行更新
-以前格式（包含 ModulesUrl、ConfigurationFunction、SasToken 或 Properties 等公共属性）中的所有设置将自动调整为当前格式，并按以前的相同方式运行。
+先前格式（包含 ModulesUrl、ConfigurationFunction、SasToken 或 Properties 等公共属性）中的所有设置将自动调整为当前格式，并按以前的相同方式运行。
 
 以前的 settings 架构如下所示：
 
@@ -217,8 +217,8 @@ VMSS 节点具有“properties”节，其中包含“VirtualMachineProfile”�
 | --- | --- |
 | settings.wmfVersion | settings.WMFVersion |
 | settings.configuration.url | settings.ModulesUrl |
-| settings.configuration.script | settings.ConfigurationFunction 的第 1 个部分（在 '\\\\' 前面） |
-| settings.configuration.function | settings.ConfigurationFunction 的第 2 个部分（在 '\\\\' 后面） |
+| settings.configuration.script | settings.ConfigurationFunction 的第 1 个部分（在 '\\\' 前面） |
+| settings.configuration.function | settings.ConfigurationFunction 的第 2 个部分（在 '\\\' 后面） |
 | settings.configurationArguments | settings.Properties |
 | settings.configurationData.url | protectedSettings.DataBlobUri（没有 SAS 令牌） |
 | settings.privacy.dataEnabled | settings.Privacy.DataEnabled |
@@ -234,14 +234,17 @@ VMSS 节点具有“properties”节，其中包含“VirtualMachineProfile”�
 下面是可能会遇到的一些错误及其解决方法。
 
 ### 无效值
-“Privacy.dataCollection 为‘{0}’。可能的值只有 ''、'Enable' 和 'Disable'”。“WmfVersion 为‘{0}’。可能值只有 ... 和 'latest'”
+“Privacy.dataCollection 为‘{0}’。可能的值只有 ''、'Enable' 和 'Disable'”。
+“WmfVersion 为‘{0}’。可能值只有 ... 和 'latest'”
 
 问题：不允许使用提供的值。
 
 解决方法：将无效值更改为有效值。请参阅“详细信息”部分中的表格。
 
 ### 无效的 URL
-“ConfigurationData.url 为‘{0}’。这不是有效的 URL”。“DataBlobUri 为‘{0}’。这不是有效的 URL”。“Configuration.url 为‘{0}’。这不是有效的 URL”
+“ConfigurationData.url 为‘{0}’。这不是有效的 URL”。
+“DataBlobUri 为‘{0}’。这不是有效的 URL”。
+“Configuration.url 为‘{0}’。这不是有效的 URL”
 
 问题：提供的 URL 无效。
 
@@ -280,4 +283,14 @@ VMSS 节点具有“properties”节，其中包含“VirtualMachineProfile”�
 - 提供缺少的属性。
 - 删除需要缺失属性的属性。
 
-<!---HONumber=Mooncake_1010_2016-->
+
+## 后续步骤
+若要了解 DSC 的和虚拟机规模集，请参阅[将虚拟机规模集与 Azure DSC 扩展配合使用](/documentation/articles/virtual-machine-scale-sets-dsc/)
+
+有关详细信息，请参阅 [DSC 的安全凭据管理](/documentation/articles/virtual-machines-windows-extensions-dsc-credentials/)。
+
+若要深入了解 Azure DSC 扩展处理程序，请参阅 [Azure Desired State Configuration 扩展处理程序简介](/documentation/articles/virtual-machines-windows-extensions-dsc-overview/)。
+
+有关 PowerShell DSC 的详细信息，请[访问 PowerShell 文档中心](https://msdn.microsoft.com/powershell/dsc/overview)。
+
+<!---HONumber=Mooncake_1121_2016-->

@@ -1,5 +1,3 @@
-<!-- ARM: tested -->
-
 <properties
 	pageTitle="使用 Resource Manager 和 PowerShell 管理 VM | Azure"
 	description="使用 Azure Resource Manager 与 PowerShell 来管理虚拟机。"
@@ -8,7 +6,8 @@
 	authors="davidmu1"
 	manager="timlt"
 	editor=""
-	tags="azure-resource-manager"/>
+	tags="azure-resource-manager"/>  
+
 
 <tags
 	ms.service="virtual-machines-windows"
@@ -17,14 +16,15 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="09/27/2016"
-	wacn.date="11/21/2016"
-	ms.author="davidmu"/>
+	wacn.date="11/28/2016"
+	ms.author="davidmu"/>  
+
 
 # 使用 Resource Manager 与 PowerShell 来管理 Azure 虚拟机
 
 ## 安装 Azure PowerShell
  
-有关如何安装最新版 Azure PowerShell 的信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)。选择要使用的订阅，然后登录到你的 Azure 帐户。
+有关安装最新版本的 Azure PowerShell、选择订阅和登录帐户的信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)。
 
 ## 设置变量
 
@@ -39,14 +39,14 @@
   
     Get-AzureRmVM -ResourceGroupName $rgName -Name $vmName
 
-它会返回类似于下面的内容：
+它会返回与此示例类似的内容：
 
     ResourceGroupName        : rg1
     Id                       : /subscriptions/{subscription-id}/resourceGroups/
                                rg1/providers/Microsoft.Compute/virtualMachines/vm1
     Name                     : vm1
     Type                     : Microsoft.Compute/virtualMachines
-    Location                 : centralus
+    Location                 : chinaeast
     Tags                     : {}
     AvailabilitySetReference : {
                                   "id": "/subscriptions/{subscription-id}/resourceGroups/
@@ -107,25 +107,13 @@
     NetworkInterfaceIDs      : {/subscriptions/{subscription-id}/resourceGroups/
                                 rg1/providers/Microsoft.Network/networkInterfaces/nc1}
 
-## 启动虚拟机
-
-启动虚拟机。
-
-    Start-AzureRmVM -ResourceGroupName $rgName -Name $vmName
-
-几分钟后，将返回类似于下面的内容：
-
-    RequestId  IsSuccessStatusCode  StatusCode  ReasonPhrase
-    ---------  -------------------  ----------  ------------
-                              True          OK  OK
-
 ## 停止虚拟机
 
-停止虚拟机。
+停止正在运行的虚拟机。
 
     Stop-AzureRmVM -ResourceGroupName $rgName -Name $vmName
 
-系统会提示你进行确认：
+系统会提示进行确认：
 
     Virtual machine stopping operation
     This cmdlet will stop the specified virtual machine. Do you want to continue?
@@ -133,23 +121,37 @@
         
 输入 **Y** 以停止虚拟机。
 
-几分钟后，将返回类似于下面的内容：
+几分钟后，将返回类似于下面示例的内容：
 
-    RequestId  IsSuccessStatusCode  StatusCode  ReasonPhrase
-    ---------  -------------------  ----------  ------------
-                              True          OK  OK
+    StatusCode : Succeeded
+    StartTime  : 9/13/2016 12:11:57 PM
+    EndTime    : 9/13/2016 12:14:40 PM
+
+## 启动虚拟机
+
+如果已停止，请启动虚拟机。
+
+    Start-AzureRmVM -ResourceGroupName $rgName -Name $vmName
+
+几分钟后，将返回类似于下面示例的内容：
+
+    StatusCode : Succeeded
+    StartTime  : 9/13/2016 12:32:55 PM
+    EndTime    : 9/13/2016 12:35:09 PM
+
+如果想要重新启动已在运行虚拟机，请使用下文所述的 **Restart-AzureRmVM**。
 
 ## 重新启动虚拟机
 
-重启虚拟机。
+重新启动正在运行的虚拟机。
 
     Restart-AzureRmVM -ResourceGroupName $rgName -Name $vmName
 
-它会返回类似于下面的内容：
+它会返回与此示例类似的内容：
 
-    RequestId  IsSuccessStatusCode  StatusCode  ReasonPhrase
-    ---------  -------------------  ----------  ------------
-                              True          OK  OK
+    StatusCode : Succeeded
+    StartTime  : 9/13/2016 12:54:40 PM
+    EndTime    : 9/13/2016 12:55:54 PM
 
 ## 删除虚拟机
 
@@ -159,13 +161,13 @@
 
 > [AZURE.NOTE] 可以使用 **-Force** 参数跳过确认提示。
 
-如果你没有使用 -Force 参数，系统会提示你进行确认：
+如果没有使用 -Force 参数，系统会提示进行确认：
 
     Virtual machine removal operation
     This cmdlet will remove the specified virtual machine. Do you want to continue?
     [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"):
 
-它会返回类似于下面的内容：
+它会返回与此示例类似的内容：
 
     RequestId  IsSuccessStatusCode  StatusCode  ReasonPhrase
     ---------  -------------------  ----------  ------------
@@ -180,13 +182,13 @@
     $vm.HardwareProfile.vmSize = $vmSize
     Update-AzureRmVM -ResourceGroupName $rgName -VM $vm
     
-它会返回类似于下面的内容：
+它会返回与此示例类似的内容：
 
     RequestId  IsSuccessStatusCode  StatusCode  ReasonPhrase
     ---------  -------------------  ----------  ------------
                               True          OK  OK
                               
-有关虚拟机的可用大小列表，请参阅 [Azure 中的虚拟机大小](/documentation/articles/virtual-machines-windows-sizes/)。
+有关虚拟机的可用大小列表，请参阅 [Sizes for virtual machines in Azure](/documentation/articles/virtual-machines-windows-sizes/)（Azure 中的虚拟机大小）。
 
 ## 将数据磁盘添加到虚拟机
 
@@ -203,7 +205,7 @@
     $fileName = "script-file-name"
     Set-AzureRmVMCustomScriptExtension -ResourceGroupName $rgName -Location $locName -VMName $vmName -Name $scriptName -TypeHandlerVersion "1.4" -StorageAccountName "mystore1" -StorageAccountKey "primary-key" -FileName $fileName -ContainerName "scripts"
 
-脚本文件可以包含类似如下所示内容初始化磁盘：
+脚本文件可以包含类似如下所示代码初始化磁盘：
 
     $disks = Get-Disk |   Where partitionstyle -eq 'raw' | sort number
 
@@ -223,6 +225,6 @@
 
 ## 后续步骤
 
-如果部署出现问题，请参阅[使用 Azure 门户预览对资源组部署进行故障排除](/documentation/articles/resource-manager-troubleshoot-deployments-portal/)
+如果部署出现问题，请参阅[使用 Azure 门户预览排除资源组部署故障](/documentation/articles/resource-manager-troubleshoot-deployments-portal/)
 
-<!---HONumber=Mooncake_0718_2016-->
+<!---HONumber=Mooncake_1121_2016-->

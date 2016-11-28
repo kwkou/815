@@ -17,7 +17,7 @@
    ms.tgt_pltfrm="vm-windows"
    ms.workload="na"
    ms.date="09/15/2016"
-   wacn.date="11/21/2016"
+   wacn.date="11/28/2016"
    ms.author="zachal"/>  
 
 
@@ -31,10 +31,10 @@ Azure VM 代理和关联的扩展是 Azure 基础结构服务的一部分。VM �
 
 ## 先决条件 ##
 **本地计算机**
-若要与 Azure VM 扩展交互，需要使用 Azure 门户预览或 Azure PowerShell SDK。
+需要使用 Azure 门户预览或 Azure PowerShell SDK 才能与 Azure VM 扩展交互。
 
 **来宾代理**
-要使用 DSC 配置进行配置的 Azure VM 需是支持 Windows Management Framework (WMF) 4.0 或 5.0 的 OS。有关支持的 OS 版本的完整列表，请参阅 [DSC Extension Version History](https://blogs.msdn.microsoft.com/powershell/2014/11/20/release-history-for-the-azure-dsc-extension/)（DSC 扩展版本历史记录）。
+要由 DSC 配置进行配置的 Azure VM 必须是支持 Windows Management Framework (WMF) 4.0 或 5.0 的 OS。有关支持的 OS 版本的完整列表，请参阅 [DSC Extension Version History](https://blogs.msdn.microsoft.com/powershell/2014/11/20/release-history-for-the-azure-dsc-extension/)（DSC 扩展版本历史记录）。
 
 ## 术语和概念 ##
 本指南假设你熟悉以下概念：
@@ -49,9 +49,9 @@ Azure VM 代理和关联的扩展是 Azure 基础结构服务的一部分。VM �
 
 Azure DSC 扩展使用 Azure VM 代理框架来传送、启用和报告 Azure VM 上运行的 DSC 配置。DSC 扩展需要一个 .zip 文件，其中至少包含一个配置文档，以及通过 Azure PowerShell SDK 或 Azure 门户预览提供的一组参数。
 
-首次调用该扩展时，它将运行安装过程。此过程将安装下面定义的 Windows Management Framework (WMF) 版本：
+首次调用该扩展时，它将运行安装过程。此过程将使用以下逻辑安装 Windows Management Framework (WMF) 版本：
 
-1. 如果 Azure VM OS 是 Windows Server 2016，则不执行任何操作。WS 2016 上已安装最新版本的 PowerShell。
+1. 如果 Azure VM OS 是 Windows Server 2016，则不执行任何操作。Windows Server 2016 上已安装最新版本的 PowerShell。
 2. 如果已指定 `wmfVersion` 属性，除非该 WMF 版本与 VM 的 OS 不兼容，否则将安装该版本。
 3. 如果未指定 `wmfVersion` 属性，则安装 WMF 的最新适用版本。
 
@@ -65,7 +65,7 @@ Azure DSC 扩展使用 Azure VM 代理框架来传送、启用和报告 Azure VM
 
 在此 cmdlet 创建的 .zip 文件中，存档文件夹根目录处提供了 .ps1 配置脚本。资源会将模块文件夹放置在存档文件夹中。
 
-`Set-AzureVMDscExtension` 将 PowerShell DSC 扩展所需的设置注入 VM 配置对象，然后即可使用 `Update-AzureVM` 在 Azure VM 中应用此对象。
+`Set-AzureVMDscExtension` 将 PowerShell DSC 扩展所需的设置注入 VM 配置对象，然后即可在 Azure VM 中通过 `Update-AzureVM` 应用该对象。
 
 `Get-AzureVMDscExtension` 可检索特定 VM 的 DSC 扩展状态。
 
@@ -87,14 +87,13 @@ Azure DSC 扩展使用 Azure VM 代理框架来传送、启用和报告 Azure VM
 ## Azure 门户预览功能 ##
 浏览到经典 VM。在“设置”->“常规”下面，单击“扩展”。 此时将创建一个新窗格。单击“添加”，然后选择“PowerShell DSC”。
 
-门户需要输入。
-**配置模块或脚本**：这是必填字段。需要一个包含配置脚本的 .ps1 文件，或者需要一个 .zip 文件，其中的 .ps1 配置脚本位于根目录，所有依赖资源位于模块文件夹。可以使用 Azure PowerShell SDK 随附的 `Publish-AzureVMDscConfiguration -ConfigurationArchivePath` cmdlet 来创建该文件。系统会将 .zip 文件上载到受 SAS 令牌保护的用户 Blob 存储。
+门户需要输入。**配置模块或脚本**：此字段必填。需要一个包含配置脚本的 .ps1 文件，或者需要一个 .zip 文件，其中的 .ps1 配置脚本位于根目录，所有依赖资源位于模块文件夹。可以使用 Azure PowerShell SDK 随附的 `Publish-AzureVMDscConfiguration -ConfigurationArchivePath` cmdlet 来创建该文件。系统会将 .zip 文件上载到受 SAS 令牌保护的用户 Blob 存储。
 
-**配置数据 PSD1 文件**：这是可选字段。如果配置要求 .psd1 中有配置数据文件，请使用此字段来进行选择，然后将它上载到受 SAS 令牌保护的用户 Blob 存储。
+**配置数据 PSD1 文件**：此字段选填。如果配置要求 .psd1 中有配置数据文件，请使用此字段来进行选择，然后将它上载到受 SAS 令牌保护的用户 Blob 存储。
  
 **配置的模块限定名称**：.ps1 文件可以包含多个配置函数。请输入配置 .ps1 脚本的名称，后面再加上 '' 和配置函数的名称。例如，如果 .ps1 脚本的名称为“configuration.ps1”，而配置为“IisInstall”，则可输入：`configuration.ps1\IisInstall`
 
-**配置参数**：如果配置函数采用参数，请使用 `argumentName1=value1,argumentName2=value2` 格式在此处输入。请注意，此处的格式与通过 PowerShell cmdlet 或 Resource Manager 模板接受配置参数的方式不同。
+**配置参数**：如果配置函数采用参数，请使用 `argumentName1=value1,argumentName2=value2` 格式在此处输入。请注意，此格式与通过 PowerShell cmdlet 或 Resource Manager 模板接受配置参数的方式不同。
 
 ## 入门 ##
 
@@ -136,14 +135,16 @@ Azure DSC 扩展将检索并在 Azure VM 上启用 DSC 配置文档。下面是�
 
 日志位于：
 
-C:\WindowsAzure\Logs\Plugins\Microsoft.Powershell.DSC\[Version Number]
+C:\\WindowsAzure\\Logs\\Plugins\\Microsoft.Powershell.DSC[Version Number]
 
 ## 后续步骤 ##
 
 有关 PowerShell DSC 的详细信息，请[访问 PowerShell 文档中心](https://msdn.microsoft.com/powershell/dsc/overview)。
 
+检查 [Azure Resource Manager template for the DSC extension](/documentation/articles/virtual-machines-windows-extensions-dsc-template/)（适用于 DSC 扩展的 Azure Resource Manager 模板）。
+
 若要查找可以使用 PowerShell DSC 管理的其他功能，请[浏览 PowerShell 库](https://www.powershellgallery.com/packages?q=DscResource&x=0&y=0)以获取更多 DSC 资源。
 
 有关将敏感参数传入配置的详细信息，请参阅 [Manage credentials securely with the DSC extension handler](/documentation/articles/virtual-machines-windows-extensions-dsc-credentials/)（使用 DSC 扩展处理程序安全管理凭据）。
 
-<!---HONumber=Mooncake_1017_2016-->
+<!---HONumber=Mooncake_1121_2016-->
