@@ -16,7 +16,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="09/18/2016"
-	wacn.date="10/24/2016"
+	wacn.date="11/28/2016"
 	ms.author="glimoli;genli"/>  
 
 
@@ -25,7 +25,11 @@
 
 ## 准备虚拟磁盘
 
->[AZURE.NOTE] Azure 不支持更新的 VHDX 格式。VHD 的大小必须是固定的而不是动态的。如果需要，请参阅下面有关如何从 VHDX 或动态磁盘进行转换的详细说明。VHD 允许的最大大小为 1,023 GB。
+>[AZURE.NOTE] 
+Azure 仅支持使用 VHD 文件格式的[第 1 代虚拟机](http://blogs.technet.com/b/ausoemteam/archive/2015/04/21/deciding-when-to-use-generation-1-or-generation-2-virtual-machines-with-hyper-v.aspx)。Azure 不支持更新的 VHDX 格式。
+><p>
+><p> VHD 的大小必须是固定的而不是动态的。如果需要，请参阅下面有关如何从 VHDX 或动态磁盘进行转换的详细说明。VHD 允许的最大大小为 1,023 GB。
+
 
 确保 Windows VHD 在本地服务器上正常工作。在尝试转换磁盘或将其上载到 Azure 之前，请解决 VM 本身内部的所有错误。
 
@@ -56,7 +60,7 @@
 1. 删除路由表中的所有静态持久性路由：
 
 	- 若要查看路由表，请运行 `route print`。
-	- 请查看**持久性路由**部分。如果有持久性路由，请使用 route delete 将它删除。
+	- 请查看**持久性路由**部分。如果有持久性路由，请使用“路由删除”将它删除。
 
 2. 删除 WinHTTP 代理：
 
@@ -252,10 +256,11 @@
 	- [KB3140410](https://support.microsoft.com/kb/3140410) MS16-031：Microsoft Windows 安全更新，解决权限提升过程中的问题：2016 年 3 月 8 日
 
 	- [KB3146723](https://support.microsoft.com/kb/3146723) MS16-048：描述 CSRSS 的安全更新：2016 年 4 月 12 日
-	- [KB2904100](https://support.microsoft.com/kb/2904100)：Windows 中发生磁盘 I/O 期间系统会冻结 <a id="step23"></a>
+	- [KB2904100](https://support.microsoft.com/kb/2904100)：Windows 中发生磁盘 I/O 期间系统会冻结 
+<a id="step23"></a>
 23. 如果你想要创建一个映像并从中部署多个计算机，则在将 VHD 上载到 Azure 之前，需要运行 `sysprep` 来通用化该映像。不需运行 `sysprep` 即可使用专用的 VHD。有关如何创建通用化映像的详细信息，请参阅以下文章：
 
-	- [Create a VM image from an existing Azure VM using the Resource Manager deployment model（使用 Resource Manager 部署模型从现有 Azure VM 创建 VM 映像）](/documentation/articles/virtual-machines-windows-capture-image/)
+	- [Create a VM image from an existing Azure VM using the Resource Manager deployment model（使用 Resource Manager 部署模型从现有 Azure VM 创建 VM 映像）](/documentation/articles/virtual-machines-windows-create-vm-generalized/)
 	- [Create a VM image from an existing Azure VM using the Classic deployment modem（使用经典部署模型从现有 Azure VM 创建 VM 映像）](/documentation/articles/virtual-machines-windows-classic-capture-image/)
 	- [针对服务器角色的 Sysprep 支持](https://msdn.microsoft.com/windows/hardware/commercialize/manufacture/desktop/sysprep-support-for-server-roles)
 
@@ -287,4 +292,4 @@
 
 - [将 Windows VM 映像上载到 Azure 以进行资源管理器部署](/documentation/articles/virtual-machines-windows-upload-image/)
 
-<!---HONumber=Mooncake_1017_2016-->
+<!---HONumber=Mooncake_1121_2016-->

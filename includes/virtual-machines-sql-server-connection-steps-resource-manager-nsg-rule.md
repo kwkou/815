@@ -1,4 +1,4 @@
-### 为 VM 配置网络安全组入站规则
+### <a name="configure-a-network-security-group-inbound-rule-for-the-vm"></a> 为 VM 配置网络安全组入站规则
 
 如果你希望能够通过 Internet 连接到 SQL Server，则需为 SQL Server 实例所侦听的端口配置网络安全组入站规则。默认情况下，该端口为 TCP 端口 1433。
 

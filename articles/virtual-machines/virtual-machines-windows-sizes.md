@@ -1,12 +1,13 @@
 <properties
- pageTitle="Windows 虚拟机大小 | Azure"
- description="列出 Windows 虚拟机的不同大小及其容量。"
+ pageTitle="Windows VM 大小 | Azure"
+ description="列出 Azure 中 Windows 虚拟机的不同可用大小。"
  services="virtual-machines-windows"
  documentationCenter=""
  authors="cynthn"
  manager="timlt"
  editor=""
- tags="azure-resource-manager,azure-service-management"/>
+ tags="azure-resource-manager,azure-service-management"/>  
+
 
 <tags
 ms.service="virtual-machines-windows"
@@ -15,15 +16,20 @@ ms.service="virtual-machines-windows"
  ms.tgt_pltfrm="vm-windows"
  ms.workload="infrastructure-services"
  ms.date="09/21/2016"
- wacn.date="11/21/2016"
- ms.author="cynthn"/>
+ wacn.date="11/28/2016"
+ ms.author="cynthn"/>  
 
-# 虚拟机的大小
 
-本文介绍了你可用于运行 Windows 应用程序和工作负荷的基于虚拟机的计算资源的可用大小和选项。此外，还提供了你在计划使用这些资源时要考虑的部署注意事项。有关不同大小的定价信息，请参阅[虚拟机定价](/pricing/details/virtual-machines/)。这篇文章同样适用于 [Linux 虚拟机](/documentation/articles/virtual-machines-linux-sizes/).
+# Azure 中虚拟机的大小
 
-[AZURE.INCLUDE [了解部署模型](../../includes/learn-about-deployment-models-both-include.md)]
+本文介绍可用于运行 Windows 应用和工作负荷的 Azure 虚拟机的可用大小与选项。此外，还提供在计划使用这些资源时要考虑的部署注意事项。本文也适用于 [Linux 虚拟机](/documentation/articles/virtual-machines-linux-sizes/)。
+
+>[AZURE.IMPORTANT] 
+><p>
+><p>- 有关不同大小的定价信息，请参阅[虚拟机定价](/pricing/details/virtual-machines/)。
+><p>
+><p>- 若要查看 Azure VM 的一般限制，请参阅 [Azure 订阅和服务的限制、配额与约束](/documentation/articles/azure-subscription-service-limits/)。<br>
 
 [AZURE.INCLUDE [virtual-machines-common-sizes](../../includes/virtual-machines-common-sizes.md)]
 
-<!---HONumber=Mooncake_0215_2016-->
+<!---HONumber=Mooncake_1121_2016-->
