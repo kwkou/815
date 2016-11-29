@@ -13,8 +13,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="06/30/2016"
-   wacn.date="08/08/2016"
+   ms.date="09/20/2016"
+   wacn.date="11/28/2016"
    ms.author="sumukhs"/>
 # 配置有状态 Reliable Services
 
@@ -61,8 +61,7 @@ SharedLogSizeInMB 指定要预先分配给所有节点上的默认共享日志�
 
 默认情况下，Azure Service Fabric 运行时在 Settings.xml 文件中查找预定义的节名称，并在创建基础运行时组件时使用这些配置值。
 
->[AZURE.NOTE] 请**勿**删除 Visual Studio 解决方案中生成的 Settings.xml 文件中的以下配置的节名称，除非你打算通过代码配置你的服务。
-配置 ReliableStateManager 时，重命名配置包名称或节名称需要进行代码更改。
+>[AZURE.NOTE] 请**勿**删除 Visual Studio 解决方案中生成的 Settings.xml 文件中的以下配置的节名称，除非你打算通过代码配置你的服务。配置 ReliableStateManager 时，重命名配置包名称或节名称需要进行代码更改。
 
 
 ### 复制器安全配置
@@ -75,8 +74,7 @@ ReplicatorSecurityConfig
 
 
 ### 复制器配置
-复制器配置用于配置通过在本地复制和保持状态，负责使有状态 Reliable Service 的状态高度可靠的复制器。
-默认配置由 Visual Studio 模板生成，并应已足够。本部分介绍了可用于调整复制器的其他配置。
+复制器配置用于配置通过在本地复制和保持状态，负责使有状态 Reliable Service 的状态高度可靠的复制器。默认配置由 Visual Studio 模板生成，并应已足够。本部分介绍了可用于调整复制器的其他配置。
 
 ### 默认节名称
 ReplicatorConfig
@@ -87,7 +85,7 @@ ReplicatorConfig
 ### 配置名称
 |Name|计价单位|默认值|备注|
 |----|----|-------------|-------|
-|BatchAcknowledgementInterval|秒|0\.05|收到操作后，在向主要复制器送回确认之前，辅助复制器等待的时间段。为在此间隔内处理的操作发送的任何其他确认都作为响应发送。|
+|BatchAcknowledgementInterval|秒|0\.015|收到操作后，在向主要复制器送回确认之前，辅助复制器等待的时间段。为在此间隔内处理的操作发送的任何其他确认都作为响应发送。|
 |ReplicatorEndpoint|不适用|无默认值--必选参数|主要/辅助复制器用于与副本集中其他复制器通信的 IP 地址和端口。这应该引用服务清单中的 TCP 资源终结点。若要了解有关在服务清单中定义终结点资源的详细信息，请参阅[服务清单资源](/documentation/articles/service-fabric-service-manifest-resources/)。 |
 |MaxPrimaryReplicationQueueSize|操作的数量|8192|主要队列中的操作的最大数目。主复制器接收到来自所有辅助复制器的确认之后，将释放一个操作。此值必须大于 64 和 2 的幂。|
 |MaxSecondaryReplicationQueueSize|操作的数量|16384|辅助队列中的操作的最大数目。将在使操作的状态在暂留期间高度可用后释放该操作。此值必须大于 64 和 2 的幂。|
@@ -152,8 +150,7 @@ ReplicatorConfig
 
 
 ### 备注
-BatchAcknowledgementInterval 控制复制延迟。“0”值导致可能的最低延迟，但代价是牺牲吞吐量（因为必须发送和处理更多的确认消息，每个包含较少的确认）。
-BatchAcknowledgementInterval 的值越大，整体复制吞吐量就越高，但代价是导致更高的操作延迟。这直接转换为事务提交的延迟。
+BatchAcknowledgementInterval 控制复制延迟。“0”值导致可能的最低延迟，但代价是牺牲吞吐量（因为必须发送和处理更多的确认消息，每个包含较少的确认）。BatchAcknowledgementInterval 的值越大，整体复制吞吐量就越高，但代价是导致更高的操作延迟。这直接转换为事务提交的延迟。
 
 CheckpointThresholdInMB 的值控制复制器可以用于将状态信息存储在副本的专用日志文件中的磁盘空间量。将此值提高到大于默认值可以在将副本添加到集时缩短重新配置的时间。这是因为日志中会提供更多的操作历史记录，从而发生部分状态传输。在崩溃后，这可能会延长副本恢复时间。
 
@@ -165,4 +162,4 @@ SharedLogId 和 SharedLogPath 设置始终一起使用，使服务可以使用�
  - [在 Visual Studio 中调试 Service Fabric 应用程序](/documentation/articles/service-fabric-debugging-your-application/)
  - [Reliable Services 的开发人员参考](https://msdn.microsoft.com/zh-cn/library/azure/dn706529.aspx)
 
-<!---HONumber=Mooncake_0801_2016-->
+<!---HONumber=Mooncake_1121_2016-->

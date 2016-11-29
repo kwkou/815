@@ -14,14 +14,16 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="08/19/2016"
-   wacn.date="10/24/2016"
+   ms.date="09/25/2016"
+   wacn.date="11/28/2016"
    ms.author="vturecek"/>  
 
 
 # 使用 Azure Resource Manager 在 Azure 中创建 Service Fabric 群集
 
-
+> [AZURE.SELECTOR]
+- [Azure 资源管理器](/documentation/articles/service-fabric-cluster-creation-via-arm/)
+- [Azure 门户](/documentation/articles/service-fabric-cluster-creation-via-portal/)
 
 本指南逐步介绍如何使用 Azure Resource Manager 在 Azure 中设置安全的 Azure Service Fabric 群集，其中包括以下步骤：
 
@@ -31,7 +33,7 @@
 
 安全的群集是防止未经授权访问管理操作的群集，这些操作包括部署、升级和删除应用程序、服务及其包含的数据。不安全的群集是任何人都可以随时连接并执行管理操作的群集。尽管可以创建不安全的群集，但**强烈建议创建安全的群集**。不安全的群集**无法在事后受到保护** - 要保护群集，必须创建新群集。
 
-## 登录 Azure
+## 登录到 Azure
 本指南使用 [Azure PowerShell][azure-powershell]。开始新的 PowerShell 会话时，请登录到 Azure 帐户并选择订阅，然后执行 Azure 命令。
 
 登录到 Azure 帐户：
@@ -60,12 +62,12 @@ Service Fabric 使用 X.509 证书保护群集，提供应用程序安全功能�
 
 ### 创建资源组。
 
-第一个步骤是专门针对密钥保管库创建资源组。建议将密钥保管库放入其自身的资源组中，以便可以删除计算与存储资源组（例如包含 Service Fabric 群集的资源组），而不会丢失密钥和密码。包含密钥保管库的资源组必须与正在使用它的群集位于同一区域。
+第一个步骤是专门针对密钥保管库创建资源组。建议将密钥保管库放入其自身的资源组。这样，便可以删除计算与存储资源组（例如包含 Service Fabric 群集的资源组），而不会丢失密钥和机密。包含密钥保管库的资源组必须与正在使用它的群集位于同一区域。
 
 
 
 		New-AzureRmResourceGroup -Name mycluster-keyvault -Location 'China East'
-		WARNING: The output object type of this cmdlet will be modified in a future release.
+		WARNING: The output object type of this cmdlet is going to be modified in a future release.
 	
 		ResourceGroupName : mycluster-keyvault
 		Location          : chinaeast
@@ -116,7 +118,7 @@ Service Fabric 使用 X.509 证书保护群集，提供应用程序安全功能�
 	> azure keyvault set-policy --vault-name "your vault name" --enabled-for-deployment true
 
 
-
+<a id="add-certificate-to-key-vault"></a>
 ## 将证书添加到密钥保管库
 
 证书在 Service Fabric 中用于提供身份验证和加密，为群集及其应用程序提供全方位的保护。有关如何在 Service Fabric 中使用证书的详细信息，请参阅 [Service Fabric cluster security scenarios][service-fabric-cluster-security]（Service Fabric 群集安全方案）。
@@ -154,14 +156,14 @@ Service Fabric 使用 X.509 证书保护群集，提供应用程序安全功能�
   		PS C:\Users\vturecek> Import-Module "C:\users\vturecek\Documents\ServiceFabricRPHelpers\ServiceFabricRPHelpers.psm1"
 
      
-此 PowerShell 模块中的 `Invoke-AddCertToKeyVault` 命令自动将证书私钥的格式设置为 JSON 字符串，并将它上载到密钥保管库。使用该字符串可将群集证书与任何其他应用程序证书添加到密钥保管库。只需针对要在群集中安装的其他任何证书重复此步骤。
+此 PowerShell 模块中的 `Invoke-AddCertToKeyVault` 命令自动将证书私钥的格式设置为 JSON 字符串，并将它上载到密钥保管库。使用该字符串可将群集证书与任何其他应用程序证书添加到密钥保管库。针对要在群集中安装的其他任何证书重复此步骤。
 
 
 	 Invoke-AddCertToKeyVault -SubscriptionId <guid> -ResourceGroupName mycluster-keyvault -Location "China East" -VaultName myvault -CertificateName mycert -Password "<password>" -UseExistingCertificate -ExistingPfxFilePath "C:\path\to\mycertkey.pfx"
 	
 		Switching context to SubscriptionId <guid>
 		Ensuring ResourceGroup mycluster-keyvault in China East
-		WARNING: The output object type of this cmdlet will be modified in a future release.
+		WARNING: The output object type of this cmdlet is going to be modified in a future release.
 		Using existing valut myvault in China East
 		Reading pfx file from C:\path\to\key.pfx
 		Writing secret to myvault in vault myvault
@@ -179,7 +181,7 @@ Service Fabric 使用 X.509 证书保护群集，提供应用程序安全功能�
 
 
 
-这就是配置 Service Fabric 群集 Resource Manager 模板时所要满足的所有密钥保管库先决条件。该模板可安装用于节点身份验证、管理终结点安全性与身份验证以及使用 X.509 证书的其他任何应用程序安全功能的证书。此时，应已在 Azure 中设置以下各项：
+前面的字符串是配置 Service Fabric 群集 Resource Manager 模板时所要满足的所有密钥保管库先决条件。该模板可安装用于节点身份验证、管理终结点安全性与身份验证以及使用 X.509 证书的其他任何应用程序安全功能的证书。此时，应已在 Azure 中设置以下各项：
 
  - 密钥保管库资源组
    - 密钥保管库
@@ -190,7 +192,7 @@ Service Fabric 使用 X.509 证书保护群集，提供应用程序安全功能�
 
 AAD 可让组织（称为租户）管理用户对应用程序的访问，这些应用程序划分为提供基于 Web 的 UI 的应用程序，以及提供本机客户端体验的应用程序。本文假设已创建了一个租户。如果未创建，请先阅读 [How to get an Azure Active Directory tenant][active-directory-howto-tenant]（如何获取 Azure Active Directory 租户）。
 
-Service Fabric 群集提供其管理功能的各种入口点，包括基于 Web 的 [Service Fabric Explorer][service-fabric-visualizing-your-cluster] 和 [Visual Studio][service-fabric-manage-application-in-visual-studio]。因此，你将要创建两个 AAD 应用程序来控制对群集的访问：一个 Web 应用程序和一个本机应用程序。
+Service Fabric 群集提供其管理功能的各种入口点，包括基于 Web 的 [Service Fabric Explorer][service-fabric-visualizing-your-cluster] 和 [Visual Studio][service-fabric-manage-application-in-visual-studio]。因此，要创建两个 AAD 应用程序来控制对群集的访问：一个 Web 应用程序和一个本机应用程序。
 
 为了简化涉及到配置 AAD 与 Service Fabric 群集的一些步骤，我们创建了一组 Windows PowerShell 脚本。
 
@@ -219,7 +221,7 @@ Service Fabric 群集提供其管理功能的各种入口点，包括基于 Web 
     https://&lt;cluster_domain&gt;:19080/Explorer  
 
 
-    系统将提示登录到具有 AAD 租户管理权限的帐户。在你完成此操作后，脚本将继续创建 Web 和本机应用程序来代表 Service Fabric 群集。在 [Azure 经典门户][azure-classic-portal]中查看租户的应用程序时，应会看到两个新条目：
+    系统将提示登录到具有 AAD 租户管理权限的帐户。完成此操作后，脚本将继续创建 Web 和本机应用程序来代表 Service Fabric 群集。在 [Azure 经典门户][azure-classic-portal]中查看租户的应用程序时，应会看到两个新条目：
 
     - *ClusterName*\_Cluster
     - *ClusterName*\_Client
@@ -236,7 +238,7 @@ Service Fabric 群集提供其管理功能的各种入口点，包括基于 Web 
 
 ## 创建 Service Fabric 群集 Resource Manager 模板
 
-本部分将在 Service Fabric 群集 Resource Manager 模板中使用上述 PowerShell 命令的输出。
+本部分在 Service Fabric 群集 Resource Manager 模板中使用上述 PowerShell 命令的输出。
 
 可以从 [GitHub 上的 Azure 快速入门模板库][azure-quickstart-templates]获取示例 Resource Manager 模板。这些模板可用作群集模板的起点。
 
@@ -368,7 +370,7 @@ Service Fabric 群集提供其管理功能的各种入口点，包括基于 Web 
 	}
 
 
-### 配置 Resource Manager 模板参数
+### <a "configure-arm" ></a>配置 Resource Manager 模板参数
 
 最后，使用密钥保管库和 AAD PowerShell 命令的输出值填充参数文件：
 
@@ -472,6 +474,69 @@ Service Fabric 群集提供其管理功能的各种入口点，包括基于 Web 
 
 此时，已创建一个使用 Azure Active Directory 进行管理身份验证的安全群集。接下来，请[连接到该群集](/documentation/articles/service-fabric-connect-to-secure-cluster/)，了解如何[管理应用程序机密](/documentation/articles/service-fabric-application-secret-management/)。
 
+## 排查用于客户端身份验证的 Azure Active Directory 的设置问题
+
+如果设置用于客户端身份验证的 Azure Active Directory 时遇到问题，请参阅下面建议的可能解决方法。
+
+### Service Fabric Explorer 提示选择证书
+
+#### 问题
+
+在 Service Fabric Explorer 的 AAD 登录页上成功登录后，浏览器返回主页，但出现提示选择证书的对话框。
+
+![SFX - 选择证书对话框][sfx-select-certificate-dialog]  
+
+
+#### 原因
+
+未在 AAD 群集应用程序中为用户分配角色。因此，Service Fabric 群集的 AAD 身份验证失败。Service Fabric Explorer 将故障回复到证书身份验证。
+
+#### 解决方案
+
+遵循有关设置 AAD 的说明操作，并为用户分配角色。另外，建议启用“访问应用需要进行用户分配”，就像使用 `SetupApplications.ps1` 时一样。
+
+### 使用 PowerShell 连接失败并出现错误：“指定的凭据无效”
+
+#### 问题
+
+使用 PowerShell 以“AzureActiveDirectory”安全模式连接到群集时，在 AAD 登录页上成功登录后，连接失败并显示错误：“指定的凭据无效”。
+
+#### 解决方案
+
+同上。
+
+### Service Fabric Explorer 登录返回错误代码：AADSTS50011
+
+#### 问题
+
+在 Service Fabric Explorer 的 AAD 登录页上成功登录后，页面返回登录失败 -“AADSTS50011: 回复地址 &lt;url&gt; 与针对应用程序 &lt;guid&gt; 配置的回复地址不匹配”。
+
+![SFX - 回复地址不匹配][sfx-reply-address-not-match]  
+
+
+#### 原因
+
+代表 Service Fabric Explorer 的群集 (Web) 应用程序尝试针对 AAD 进行身份验证，在执行请求的过程中提供了重定向返回 URL。但是，该 URL 并未列在 AAD 应用程序的“回复 URL”列表中。
+
+#### 解决方案
+
+将 Service Fabric Explorer 的 URL 添加到群集 (Web) 应用程序“配置”选项卡中的“回复 URL”，或替换列表中的某个项。然后保存。
+
+![Web 应用程序回复 URL][web-application-reply-url]  
+
+
+### 是否可将同一个 AAD 租户用于多个群集？
+
+#### 回答
+
+可以。但请记得将 Service Fabric Explorer 的 URL 添加到群集 (Web) 应用程序，否则 Service Fabric Explorer 无法正常工作。
+
+### 为何启用 AAD 时仍然需要服务器证书？
+
+#### 回答
+
+FabricClient 和 FabricGateway 执行相互身份验证。使用 AAD 身份验证时，AAD 集成可将客户端标识提供给服务器，服务器证书将用于验证服务器标识。有关如何在 Service Fabric 上使用证书的详细信息，请参阅 [X.509 证书和 Service Fabric][x509-certificates-and-service-fabric]
+
 <!-- Links -->
 
 [azure-powershell]: /documentation/articles/powershell-install-configure/
@@ -487,6 +552,7 @@ Service Fabric 群集提供其管理功能的各种入口点，包括基于 Web 
 [azure-quickstart-templates]: https://github.com/Azure/azure-quickstart-templates
 [service-fabric-secure-cluster-5-node-1-nodetype-wad]: https://github.com/Azure/azure-quickstart-templates/blob/master/service-fabric-secure-cluster-5-node-1-nodetype-wad/
 [resource-group-template-deploy]: /documentation/articles/resource-group-template-deploy/
+[x509-certificates-and-service-fabric]: /documentation/articles/service-fabric-cluster-security/#x509-certificates-and-service-fabric
 
 <!-- Images -->
 
@@ -494,5 +560,8 @@ Service Fabric 群集提供其管理功能的各种入口点，包括基于 Web 
 [cluster-security-cert-installation]: ./media/service-fabric-cluster-creation-via-arm/cluster-security-cert-installation.png
 [assign-users-to-roles-button]: ./media/service-fabric-cluster-creation-via-arm/assign-users-to-roles-button.png
 [assign-users-to-roles-dialog]: ./media/service-fabric-cluster-creation-via-arm/assign-users-to-roles.png
+[sfx-select-certificate-dialog]: ./media/service-fabric-cluster-creation-via-arm/sfx-select-certificate-dialog.png
+[sfx-reply-address-not-match]: ./media/service-fabric-cluster-creation-via-arm/sfx-reply-address-not-match.png
+[web-application-reply-url]: ./media/service-fabric-cluster-creation-via-arm/web-application-reply-url.png
 
-<!---HONumber=Mooncake_1017_2016-->
+<!---HONumber=Mooncake_1121_2016-->

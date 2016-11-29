@@ -3,9 +3,10 @@
    description="使用 Service Fabric 的反向代理从群集内部和外部与微服务通信"
    services="service-fabric"
    documentationCenter=".net"
-   authors="BharatNarasimman,vturecek"
+   authors="BharatNarasimman"
    manager="timlt"
-   editor="vturecek"/>
+   editor="vturecek"/>  
+
 
 <tags
    ms.service="service-fabric"
@@ -13,8 +14,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="required"
-   ms.date="07/26/2016"
-   wacn.date="08/29/2016"
+   ms.date="10/04/2016"
+   wacn.date="11/28/2016"
    ms.author="vturecek"/>
 
 
@@ -30,7 +31,8 @@ Service Fabric 中的微服务通常在群集的一部分 VM 中运行，并且�
 2. 连接到服务。
 3. 确定连接失败的原因，必要时重新解析服务位置。
 
-此过程通常涉及将客户端通信库包装到重试循环中，以便执行服务解析和重试策略。有关本主题的详细信息，请参阅[与服务通信](/documentation/articles/service-fabric-connect-and-communicate-with-services/)。
+此过程通常涉及将客户端通信库包装到重试循环中，以便执行服务解析和重试策略。
+有关本主题的详细信息，请参阅[与服务通信](/documentation/articles/service-fabric-connect-and-communicate-with-services/)。
 
 ### 通过 SF 反向代理进行通信
 Service Fabric 反向代理在群集的所有节点上运行。它会代表客户端执行整个服务解析流程，然后再转发客户端请求。因此，在群集上运行的客户端可以通过在同一节点上以本地方式运行的 SF 反向代理，直接使用任何客户端 HTTP 通信库与目标服务通信。
@@ -38,7 +40,7 @@ Service Fabric 反向代理在群集的所有节点上运行。它会代表客�
 ![内部通信][1]
 
 ## 从群集外部访问微服务
-微服务的默认外部通信模型为“选择加入”，即默认情况下，不能直接从外部客户端访问每个服务。 Azure Load Balancer 充当微服务和外部客户端之间的网络边界，可以进行网络地址转换并将外部请求转发到内部的 **IP:端口**终结点。若要允许外部客户端直接访问微服务的终结点，必须先将 Azure Load Balancer 配置为将流量转发到群集中服务使用的每个端口。另外，大多数微服务（尤其是有状态微服务）并不是位于群集的所有节点上，这些微服务在故障转移时可以在节点之间移动，因此在这样的情况下，Azure Load Balancer 无法有效地确定副本的目标节点的位置，无法向其转发流量。
+微服务的默认外部通信模型为“选择加入”，即默认情况下，不能直接从外部客户端访问每个服务。[Azure 负载均衡器](/documentation/articles/load-balancer-overview/) 充当微服务和外部客户端之间的网络边界，可以进行网络地址转换并将外部请求转发到内部的 **IP:端口**终结点。若要允许外部客户端直接访问微服务的终结点，必须先将 Azure Load Balancer 配置为将流量转发到群集中服务使用的每个端口。另外，大多数微服务（尤其是有状态微服务）并不是位于群集的所有节点上，这些微服务在故障转移时可以在节点之间移动，因此在这样的情况下，Azure Load Balancer 无法有效地确定副本的目标节点的位置，无法向其转发流量。
 
 ### 从群集外部通过 SF 反向代理访问微服务
 
@@ -58,7 +60,7 @@ Service Fabric 反向代理在群集的所有节点上运行。它会代表客�
 
 
  - **http(s):** 可以将反向代理配置为接受 HTTP 或 HTTPS 流量。如果为 HTTPS 流量，则会在反向代理中出现 SSL 终止的情况。由反向代理转发到群集中服务的请求是通过 HTTP 进行的。
- - **网关 FQDN| internal IP:** For external clients, the reverse proxy can be configured so that it is reachable through the cluster domain (e.g., mycluster.chinaeast.chinacloudapp.cn). By default the reverse proxy runs on every node, so for internal traffic it can be reached on localhost or on any internal node IP (e.g., 10.0.0.1).
+ - **群集 FQDN| internal IP:** For external clients, the reverse proxy can be configured so that it is reachable through the cluster domain (e.g., mycluster.chinaeast.chinacloudapp.cn). By default the reverse proxy runs on every node, so for internal traffic it can be reached on localhost or on any internal node IP (e.g., 10.0.0.1).
  - **Port:** 为反向代理指定的端口。例如：19008。
  - **ServiceInstanceName:** 这是要在不使用“fabric:/”方案的情况下访问的服务的完全限定式已部署服务实例名称。例如，若要访问服务 *fabric:/myapp/myservice/*，可使用 *myapp/myservice*。
  - **Suffix path:** 这是要连接到的服务的实际 URL 路径。例如，*myapi/values/add/3*
@@ -145,6 +147,7 @@ Service Fabric 反向代理在群集的所有节点上运行。它会代表客�
 
 2. 为**群集**的[“资源类型”部分](/documentation/articles/resource-group-authoring-templates/)中的每个 nodetype 对象指定端口
 
+    对于“2016-09-01”以前的 apiVersion，端口由参数名称 ***httpApplicationGatewayEndpointPort*** 标识
 
     	{
         	"apiVersion": "2016-03-01",
@@ -163,7 +166,28 @@ Service Fabric 反向代理在群集的所有节点上运行。它会代表客�
         	...
     	}
 
-3. 若要从 Azure 群集外部与反向代理通信，请为步骤 1 中指定的端口设置 **Azure Load Balancer 规则**。
+    对于“2016-09-01”或以后的 apiVersion，端口由参数名称 ***reverseProxyEndpointPort*** 标识
+
+
+	    {
+	        "apiVersion": "2016-09-01",
+	        "type": "Microsoft.ServiceFabric/clusters",
+	        "name": "[parameters('clusterName')]",
+	        "location": "[parameters('clusterLocation')]",
+	        ...
+	       "nodeTypes": [
+	          {
+	           ...
+	           "reverseProxyEndpointPort": "[parameters('SFReverseProxyPort')]",
+	           ...
+	          },
+	        ...
+	        ],
+	        ...
+	    }
+
+
+3. 若要从 Azure 群集外部与反向代理通信，请为步骤 1 中指定的端口设置 **Azure 负载均衡器规则**。
 
 
     	{
@@ -209,6 +233,7 @@ Service Fabric 反向代理在群集的所有节点上运行。它会代表客�
 
 4. 若要在反向代理的端口上配置 SSL 证书，请在**群集**的[“资源类型”部分](/documentation/articles/resource-group-authoring-templates/)将证书添加到 httpApplicationGatewayCertificate 属性中
 
+    对于“2016-09-01”以前的 apiVersion，证书由参数名称 ***httpApplicationGatewayCertificate*** 标识
 
     	{
         	"apiVersion": "2016-03-01",
@@ -229,6 +254,28 @@ Service Fabric 反向代理在群集的所有节点上运行。它会代表客�
         	}
     	}
 
+    对于“2016-09-01”或以后的 apiVersion，证书由参数名称 ***reverseProxyCertificate*** 标识
+    
+
+	    {
+	        "apiVersion": "2016-09-01",
+	        "type": "Microsoft.ServiceFabric/clusters",
+	        "name": "[parameters('clusterName')]",
+	        "location": "[parameters('clusterLocation')]",
+	        "dependsOn": [
+	            "[concat('Microsoft.Storage/storageAccounts/', parameters('supportLogStorageAccountName'))]"
+	        ],
+	        "properties": {
+	            ...
+	            "reverseProxyCertificate": {
+	                "thumbprint": "[parameters('sfReverseProxyCertificateThumbprint')]",
+	                "x509StoreName": "[parameters('sfReverseProxyCertificateStoreName')]"
+	            },
+	            ...
+	            "clusterState": "Default",
+	        }
+	    }
+
 
 ## 后续步骤
  - 请参阅 [GitHUb 上的示例项目](https://github.com/Azure-Samples/service-fabric-dotnet-getting-started/tree/master/Services/WordCount)中服务之间的 HTTP 通信示例。
@@ -243,4 +290,4 @@ Service Fabric 反向代理在群集的所有节点上运行。它会代表客�
 [0]: ./media/service-fabric-reverseproxy/external-communication.png
 [1]: ./media/service-fabric-reverseproxy/internal-communication.png
 
-<!---HONumber=Mooncake_0822_2016-->
+<!---HONumber=Mooncake_1121_2016-->

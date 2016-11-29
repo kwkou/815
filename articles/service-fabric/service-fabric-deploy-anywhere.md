@@ -14,42 +14,52 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="09/09/2016"
-   wacn.date="10/24/2016"
+   ms.date="09/22/2016"
+   wacn.date="11/28/2016"
    ms.author="chackdan"/>  
 
 
-# 在 Windows Server 或 Linux 上创建独立的 Service Fabric 群集
-Azure Service Fabric 允许在运行 Windows Server 或 Linux 的任何 VM 或计算机上创建 Service Fabric 群集。这意味着用户能够在具有一组相互连接的 Windows Server 或 Linux 计算机（无论是本地计算机还是具有任何云提供程序的计算机）的任何环境中部署和运行 Service Fabric 应用程序。
+# 在 Windows Server 或 Linux 上创建 Service Fabric 群集
 
-**注意**：应该通过 Azure 资源模型模板或 Azure 门户预览在 Azure 上创建群集。有关详细信息，请参阅[使用 Azure Resource Manager 模板创建 Service Fabric 群集](/documentation/articles/service-fabric-cluster-creation-via-arm/)或[在 Azure 门户预览中创建 Service Fabric 群集](/documentation/articles/service-fabric-cluster-creation-via-portal/)。
+使用 Azure Service Fabric 可在运行 Windows Server 的任何 VM 或计算机上创建 Service Fabric 群集。这意味着，可以在包含一组互连 Windows Server 计算机（无论是本地计算机、Azure 计算机还是任何云提供商的计算机）的任何环境中部署和运行 Service Fabric 应用程序。
 
-Service Fabric 提供了一个安装包用于在本地创建这些独立 Service Fabric 群集。此功能的一个主要优点是在使用 Service Fabric 构建应用程序时不存在供应商锁定，因为是由你选择这些应用程序的运行位置。此功能还会使你有更大的能力实现更广泛的客户群，因为客户对于想要在其中运行你的应用程序的环境可能具有不同的要求。例如，医疗保健和金融行业中的客户的需求可能与汽车或旅行行业中的客户不同。
+##在 Azure 上创建 Service Fabric 群集
 
-## 支持的操作系统
-可以在运行以下操作系统的 VM 或计算机上创建群集：
+应该通过资源模型模板或 Azure 门户预览在 Azure 上创建群集。有关详细信息，请参阅[使用 Resource Manager 模板创建 Service Fabric 群集](/documentation/articles/service-fabric-cluster-creation-via-arm/)或[在 Azure 门户预览中创建 Service Fabric 群集](/documentation/articles/service-fabric-cluster-creation-via-portal/)。
+
+## Azure 上支持的群集操作系统
+
+可以在运行以下操作系统的 VM 上创建群集：
 
 * Windows Server 2012 R2
 * Windows Server 2016（在发布正式版之后）
-* Linux（立即）
 
-有关 Windows Server 的详细信息，请参阅 [Service Fabric cluster creation for Windows Server（创建适用于 Windows Server 的 Service Fabric 群集）](/documentation/articles/service-fabric-cluster-creation-for-windows-server/)
 
-## 群集创建和配置
-Service Fabric 提供可以下载的安装包。下载了此包之后，便需要对 JSON 配置文件进行更改，以指定群集的设置。编辑了群集设置之后，你会运行安装程序脚本，该脚本会创建跨群集设置中指定的计算机的群集。你还可以运行脚本来从一组计算机中删除群集。
+##在本地或者与任何云提供商合作创建 Service Fabric 独立群集
 
-## 任何云部署与本地部署
-用于在本地创建 Service Fabric 群集的过程类似于在具有一组 VM 的任何所选云上创建群集的过程。预配 VM 的初始步骤由所使用的云提供程序或本地环境进行控制。具有一组在它们之间启用了网络连接的 VM 之后，随后用于设置 Service Fabric 包、编辑群集设置以及运行群集创建和管理脚本的步骤相同。这可在你选择面向新宿主环境时，确保你操作和管理 Service Fabric 群集的知识和经验可转移。
+Service Fabric 提供一个安装包，用于在本地或者与任何云提供商合作创建独立的 Service Fabric 群集。
 
-## 创建独立 Service Fabric 群集的优点
-* 由于不存在供应商限制，你可以选择创建群集的位置。
+有关在 Windows Server 上设置独立 Service Fabric 群集的详细信息，请参阅[创建适用于 Windows Server 的 Service Fabric 群集](/documentation/articles/service-fabric-cluster-creation-for-windows-server/)
+
+### 任何云部署与本地部署
+用于在本地创建 Service Fabric 群集的过程类似于在具有一组 VM 的任何所选云上创建群集的过程。预配 VM 的初始步骤由所使用的云提供程序或本地环境进行控制。具有一组在它们之间启用了网络连接的 VM 之后，随后用于设置 Service Fabric 包、编辑群集设置以及运行群集创建和管理脚本的步骤相同。这可以在选择面向新宿主环境时，确保操作和管理 Service Fabric 群集的知识和经验可以转移。
+
+### 创建独立 Service Fabric 群集的优点
+* 可以自由选择任何云提供商来托管群集。
 * Service Fabric 应用程序在编写之后，可以在多个宿主环境中运行，只需进行最小程度的更改，甚至无需更改。
 * 构建 Service Fabric 应用程序的知识可从一个宿主环境转移到另一个环境。
 * 运行和管理 Service Fabric 群集的操作经验可从一个环境转移到另一个环境。
 * 广泛的客户范围不会受宿主环境约束的限制。
 * 存在针对大范围中断的额外一层可靠性和保护，因为你可以在数据中心或云提供商中断时将服务转移到其他部署环境。
 
+## 独立群集支持的操作系统
+可以在运行以下操作系统的 VM 或计算机上创建群集：
+
+* Windows Server 2012 R2
+* Windows Server 2016（在发布正式版之后）
+
 ## 与在本地创建的独立 Service Fabric 群集相比 Azure 上的 Service Fabric 群集的优势
+
 在 Azure 上运行 Service Fabric 群集相对于本地运行具有一些优势，因此，如果对于群集的运行位置没有特定需求，则我们建议在 Azure 上运行它们。在 Azure 上，我们提供与其他 Azure 功能和服务的集成，这样可使群集的操作和管理更容易且更可靠。
 
 * **Azure 门户预览：**Azure 门户预览使群集易于创建和管理。
@@ -65,4 +75,4 @@ Service Fabric 提供可以下载的安装包。下载了此包之后，便需�
 
 在运行 Linux 的 VM 或计算机上创建群集：[Linux 上的 Service Fabric](/documentation/articles/service-fabric-linux-overview/)
 
-<!---HONumber=Mooncake_1017_2016-->
+<!---HONumber=Mooncake_1121_2016-->
