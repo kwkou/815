@@ -19,6 +19,9 @@
    ms.author="ryanwi"/>
 
 # 准备开发环境
+
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-sdk-developer-differences.md)]
+
  若要在开发计算机上生成并运行 [Azure Service Fabric 应用程序][1]，请安装运行时、SDK 和工具。此外，还需执行 SDK 中包含的 Windows PowerShell 脚本。
 
 ## 先决条件

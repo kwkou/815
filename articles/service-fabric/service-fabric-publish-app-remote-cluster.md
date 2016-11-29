@@ -20,6 +20,8 @@
 
 # 使用 Visual Studio 将应用程序发布到远程群集
 
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-sdk-developer-differences.md)]
+
 适用于 Visual Studio 的 Azure Service Fabric 扩展提供简单、可重复且可编写脚本的方式，用于将应用程序发布到 Service Fabric 群集。
 
 ## 发布时所需的项目

@@ -19,6 +19,8 @@
 
 # 使用 Visual Studio 调试 Service Fabric 应用程序
 
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-sdk-developer-differences.md)]
+
 ## 调试本地 Service Fabric 应用程序
 
 可以通过在本地计算机开发群集中部署和调试 Azure Service Fabric 应用程序来节省时间和资金。Visual Studio 可以将应用程序部署到本地群集并自动将调试器连接到应用程序的所有实例。
