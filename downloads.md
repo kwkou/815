@@ -5,7 +5,7 @@
     />
 
 
-[AZURE.INCLUDE [azure-sdk-developer-differences](./azure-sdk-developer-differences.md)]
+>[AZURE.NOTE] 本文涉及的 SDK 和工具应用于由微软运营的 Microsoft Azure 服务；在中国， Microsoft Azure服务由世纪互联公司运营，如需使用，请参考 [Azure 应用程序开发说明](/documentation/articles/developerdifferences/)。
 
 <div>
   <h1>下载</h1>
