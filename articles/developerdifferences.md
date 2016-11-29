@@ -20,9 +20,9 @@
 
 在中国，由世纪互联运营的 Microsoft Azure （以下简称为 “中国区 Azure”）是独立的服务平台，由世纪互联公司提供并运营，其数据中心位于中国大陆（不包括香港特别行政区、澳门特别行政区和中国台湾地区）。因此，创建和部署应用程序时，开发人员需先了解中国区 Azure 和境外 Azure 的主要区别，然后再设置编程环境，编写应用程序，部署在中国托管的服务。
 
-本文档概述了这两种服务的区别，并为中国 [Azure 门户](https://www.azure.cn)及 [MSDN 上的 Azure 技术库](http://msdn.microsoft.com/zh-cn/library/dd163896.aspx)提供补充信息。同时，官方信息也会通过多个途径发布，例如 Azure [海报](http://www.microsoft.com/zh-cn/download/details.aspx?id=35473)、[TechNet wiki](http://social.technet.microsoft.com/wiki/contents/articles/inside-sql-azure.aspx) 以及博客。本文目标读者为在中国部署、托管数据中心的合作伙伴及开发人员。
+本文档概述了这两种服务的区别，并为中国 [Azure 门户](https://www.azure.cn)提供补充信息。同时，官方信息也会通过多个途径发布，例如 Azure [海报](http://www.microsoft.com/zh-cn/download/details.aspx?id=35473)以及博客。本文目标读者为在中国部署、托管数据中心的合作伙伴及开发人员。
 
-有关中国区 Azure 服务功能的更新，请访问中国 [Azure 门户](https://www.azure.cn)。有关当前 Azure 内容信息，请参阅本文档附录。 
+有关中国区 Azure 服务功能的更新，请访问中国 [Azure 门户](https://www.azure.cn)。有关当前 Azure 内容信息，请参阅本文档[附录](#appendix)。 
  
 ##<a name="dev-guide"></a>开发人员指南
 
@@ -51,7 +51,7 @@ Visual Studio 支持在中国区 Azure 上开发，使用 Visual Studio 2015 upd
 
 步骤如下：
 
-1. 请使用以下 Reg key files： 
+1. 请使用以下注册表文件： 
 	
 		
 	Azure.reg
@@ -67,7 +67,7 @@ Visual Studio 支持在中国区 Azure 上开发，使用 Visual Studio 2015 upd
 			"GraphUrl"="graph.chinacloudapi.cn"
 	
 
-	若要将 Reg 值返回境外 Azure，请使用此处的 Reg key file：
+	若要将 Reg 值返回境外 Azure，请使用此处的注册表文件：
 
 	TargetProduction.reg
 			
@@ -157,7 +157,7 @@ Visual Studio 支持在中国区 Azure 上开发，使用 Visual Studio 2015 upd
 Azure - 常规 | *.windows.net | *.chinacloudapi.cn
 Azure - 计算 | *.cloudapp.net | *.chinacloudapp.cn  
 Azure - Service Fabric Cluster | *.cloudapp.azure.com | *.chinaeast.chinacloudapp.cn
-Azure - 存储 | <p>*.blob.core.windows.net </p> <p>*.queue.core.windows.net </p> <p>*.table.core.windows.net</p> | <p>*.blob.core.chinacloudapi.cn </p><p> *.queue.core.chinacloudapi.cn </p><p> *.table.core.chinacloudapi.cn</p>
+Azure - 存储 | <p>\*.blob.core.windows.net </p> <p>\*.queue.core.windows.net </p> <p>\*.table.core.windows.net</p> | <p>*.blob.core.chinacloudapi.cn </p><p> *.queue.core.chinacloudapi.cn </p><p> *.table.core.chinacloudapi.cn</p>
 Azure - 服务管理 | https://management.core.windows.net | https://management.core.chinacloudapi.cn
 Azure - 资源管理器 (ARM) | https://management.azure.com | https://management.chinacloudapi.cn
 SQL 数据库 | *.database.windows.net | *.database.chinacloudapi.cn
@@ -167,10 +167,10 @@ SQL Azure 数据库管理 API | https://management.database.windows.net | https:
 ACS | *.accesscontrol.windows.net | *.accesscontrol.chinacloudapi.cn
 HDInsight | *.azurehdinsight.net | *.azurehdinsight.cn
 MySQL Paas | - | *.mysqldb.chinacloudapi.cn
-Azure PowerShell Login (Classic, 旧的 Azure 服务管理) | Add-AzureAccount | Add-AzureAccount -EnvironmentName AzureChinaCloud
+Azure PowerShell Login (Classic, 旧的 Azure 服务管理) | Add-AzureAccount | Add-AzureAccount -Environment AzureChinaCloud
 Azure PowerShell Login (Azure 资源管理) | Add-AzureRmAccount | Add-AzureRmAccount -EnvironmentName AzureChinaCloud
 AAD | *.onmicrosoft.com | *.partner.onmschina.cn
-AAD PowerShell Login | Connect-msolservice| Connect-msolservice
+AAD PowerShell Login | Connect-msolservice| Connect-msolservice -AzureEnvironment AzureChinaCloud
 AAD Login | https://login.windows.net| https://login.chinacloudapi.cn
 AAD Graph API | https://graph.windows.net| https://graph.chinacloudapi.cn
 Azure 认知服务 | https://api.projectoxford.ai/face/v1.0 | https://api.cognitive.azure.cn/face/v1.0
@@ -236,12 +236,12 @@ Visual Studio 在服务配置文件中创建自定义存储端点，开发人员
 ##连接 SQL 数据库服务器
 
 
-SQL 数据库服务器名称将由 `*.database.windows.net` 更改为 `*.devdatabase.chinacloudapi.cn`。 所有客户端应用程序或工具都必须使用新名称命名其连接字符串，连接到数据库。 对于未在中国区 Azure 运行的应用程序，可参照 SQL数据库服务器的值，该值可以是服务定义文件中的 DataConnectionString 值，或 .NET 其它配置文件中的值。 例如：
+SQL 数据库服务器名称将由 `*.database.windows.net` 更改为 `*.database.chinacloudapi.cn`。 所有客户端应用程序或工具都必须使用新名称命名其连接字符串，连接到数据库。 对于未在中国区 Azure 运行的应用程序，可参照 SQL 数据库服务器的值，该值可以是服务定义文件中的 DataConnectionString 值，或 .NET 其它配置文件中的值。 例如：
 
 
 	<configuration>
   		<connectionStrings>
-    		<add name="SQLAzure" connectionString="Server=tcp:yourserver.devdatabase.chinacloudapi.cn;
+    		<add name="SQLAzure" connectionString="Server=tcp:yourserver.database.chinacloudapi.cn,1433;
 			Database=Test;User ID=login@server;Password=yourPassword;
 			Trusted_Connection=False;Encrypt=True;"/>
   		</connectionStrings>
@@ -317,8 +317,8 @@ Azure Active Directory（AAD）可以为本地部署和云应用程序提供身�
 		<?xml version="1.0" encoding="utf-8"?>
 		<configuration>
   			<Microsoft.ServiceBus>
-    			<relayHostName>servicebus. chinacloudapi.cn</relayHostName>
-    			<stsHostName>accesscontrol. chinacloudapi.cn</stsHostName>    
+    			<relayHostName>servicebus.chinacloudapi.cn</relayHostName>
+    			<stsHostName>accesscontrol.chinacloudapi.cn</stsHostName>    
   			</Microsoft.ServiceBus>
 		</configuration>
 
