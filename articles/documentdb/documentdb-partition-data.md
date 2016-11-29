@@ -81,8 +81,8 @@ DocumentDB 存储文档时，它将基于分区键值在分区间均匀地分布
 
 >[AZURE.NOTE] 为了实现集合的全部吞吐量，必须选择分区键，可用于在多个不同的分区键之间均匀分布请求。
 
-<a name="single-partition-and-partitioned-collections"></a>
-## 单个分区和已分区的集合
+
+## 单个分区和已分区的集合 <a name="single-partition-and-partitioned-collections"></a>
 DocumentDB 支持创建单个分区和已分区的集合。
 
 - **已分区集合**可以跨越多个分区并支持数量非常大的存储和吞吐量。必须指定集合的分区键。
@@ -282,8 +282,7 @@ DocumentDB SDK 1.9.0 及更高版本支持并行查询执行选项，这些选�
 
 在下一节，我们将介绍如何从单个分区集合移动到已分区集合。
 
-<a name="migrating-from-single-partition"></a>
-### 从单个分区集合迁移到已分区集合
+### 从单个分区集合迁移到已分区集合 <a name="migrating-from-single-partition"></a>
 当使用单个分区集合的应用程序需要更高的吞吐量 (>10,000 RU/s) 或更大的数据存储 (>10GB) 时，可以使用 [DocumentDB 数据迁移工具](http://www.microsoft.com/downloads/details.aspx?FamilyID=cda7703a-2774-4c07-adcc-ad02ddc1a44d)将单个分区集合中的数据迁移到已分区集合。
 
 从单个分区集合迁移到已分区集合
@@ -298,8 +297,8 @@ DocumentDB SDK 1.9.0 及更高版本支持并行查询执行选项，这些选�
 
 现在我们已经学完了基础知识，让我们看看当在 DocumentDB 中使用分区键时几个重要的设计注意事项。
 
-<a name="designing-for-partitioning"></a>
-## 设计分区
+
+## 设计分区  <a name="designing-for-partitioning"></a>
 选择分区键是设计时需要做的一项重要决定。本节将介绍在为集合选择分区键时所涉及的一些利弊。
 
 ### 作为事务边界的分区键

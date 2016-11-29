@@ -17,7 +17,7 @@
 	ms.topic="article"
 	ms.date="10/03/2016"
 	ms.author="moderakh"
-	wacn.date="11/28/2016"/>
+	wacn.date="11/29/2016"/>
 
 
 # DocumentDB Node.js 示例
@@ -41,8 +41,8 @@
 
     > [AZURE.NOTE] 每个示例都是独立的，自行对自身进行设置并在完成后自行进行清理。因此，这些示例对 [DocumentClient.createCollection](http://azure.github.io/azure-documentdb-node/DocumentClient.html#createCollection) 发出多个调用。每次执行完此操作，均会按照正在创建的集合的性能层，向你的订阅收取使用 1 小时的费用。
 
-<a name="database-examples"></a>
-## 数据库示例
+
+## <a name="database-examples"></a>数据库示例
 
 [DatabaseManagement](https://github.com/Azure/azure-documentdb-node/tree/master/samples/DatabaseManagement) 项目的 [app.js](https://github.com/Azure/azure-documentdb-node/blob/master/samples/DatabaseManagement/app.js) 文件演示如何执行以下任务。
 
@@ -54,8 +54,8 @@
 [列出帐户的数据库](https://github.com/Azure/azure-documentdb-node/blob/ef53e5f6707a5dc45920fb6ad54d9c7e008a6c18/samples/DocumentDB.Samples.DatabaseManagement/app.js#L111-L119) | [DocumentClient.readDatabases](http://azure.github.io/azure-documentdb-node/DocumentClient.html#readDatabase)
 [删除数据库](https://github.com/Azure/azure-documentdb-node/blob/ef53e5f6707a5dc45920fb6ad54d9c7e008a6c18/samples/DocumentDB.Samples.DatabaseManagement/app.js#L133-L144) | [DocumentClient.deleteDatabase](http://azure.github.io/azure-documentdb-node/DocumentClient.html#deleteDatabase)
 
-<a name="collection-examples"></a>
-## 集合示例
+
+## <a name="collection-examples"></a>集合示例
 
 [CollectionManagement](https://github.com/Azure/azure-documentdb-node/tree/master/samples/CollectionManagement) 项目的 [app.js](https://github.com/Azure/azure-documentdb-node/blob/master/samples/CollectionManagement/app.js) 文件演示如何执行以下任务。
 
@@ -69,8 +69,8 @@
 [更改集合的性能层](https://github.com/Azure/azure-documentdb-node/blob/ef53e5f6707a5dc45920fb6ad54d9c7e008a6c18/samples/DocumentDB.Samples.CollectionManagement/app.js#L188-L202) | [DocumentClient.replaceOffer](http://azure.github.io/azure-documentdb-node/DocumentClient.html#replaceOffer)
 [删除集合](https://github.com/Azure/azure-documentdb-node/blob/ef53e5f6707a5dc45920fb6ad54d9c7e008a6c18/samples/DocumentDB.Samples.CollectionManagement/app.js#L204-L215) | [DocumentClient.deleteCollection](http://azure.github.io/azure-documentdb-node/DocumentClient.html#deleteCollection)
 
-<a name="document-examples"></a>
-## 文档示例
+
+## <a name="document-examples"></a>文档示例
 
 [DocumentManagement](https://github.com/Azure/azure-documentdb-node/tree/master/samples/DocumentManagement) 项目的 [app.js](https://github.com/Azure/azure-documentdb-node/blob/master/samples/DocumentManagement/app.js) 文件演示如何执行以下任务。
 
