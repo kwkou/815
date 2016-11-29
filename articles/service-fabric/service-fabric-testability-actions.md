@@ -5,7 +5,8 @@
    documentationCenter=".net"
    authors="motanv"
    manager="timlt"
-   editor="toddabel"/>
+   editor="toddabel"/>  
+
 
 <tags
    ms.service="service-fabric"
@@ -13,8 +14,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="07/08/2016"
-   wacn.date="11/17/2016"
+   ms.date="10/03/2016"
+   wacn.date="11/28/2016"
    ms.author="motanv;heeldin"/>
 
 # 可测试性操作
@@ -98,7 +99,8 @@ Restart-ServiceFabricNode -NodeName Node1 -CompletionMode DoNotVerify
 
 ## 使用 C# 运行可测试性操作；
 
-若要使用 C# 运行可测试性操作，首先你需要使用 FabricClient 连接到群集。然后获取运行该操作所需的参数。可用不同的参数来运行相同的操作。请看一看 RestartServiceFabricNode 操作，运行该操作的方式之一是在群集中使用节点信息（节点名称和节点实例 ID）。
+若要使用 C# 运行可测试性操作，首先你需要使用 FabricClient 连接到群集。然后获取运行该操作所需的参数。可用不同的参数来运行相同的操作。
+请看一看 RestartServiceFabricNode 操作，运行该操作的方式之一是在群集中使用节点信息（节点名称和节点实例 ID）。
 
 
 	RestartNodeAsync(nodeName, nodeInstanceId, completeMode, operationTimeout, CancellationToken.None)
@@ -238,4 +240,4 @@ ReplicaSelector 是在可测试性中运用的一个帮助程序，用于帮助�
    - [服务到服务通信失败](/documentation/articles/service-fabric-testability-scenarios-service-communication/)
  
 
-<!---HONumber=Mooncake_0801_2016-->
+<!---HONumber=Mooncake_1121_2016-->

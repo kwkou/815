@@ -13,8 +13,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="06/14/2016"
-   wacn.date="08/08/2016"
+   ms.date="09/19/2016"
+   wacn.date="11/28/2016"
    ms.author="lemai"/>
    
 # 如何在服务中调用数据丢失
@@ -49,7 +49,7 @@
 
 在成功调用启动 API 以后，应采用循环方式调用 GetProgress API，直到返回的进度对象的“状态”属性为“已完成”。应重试所有 [FabricTransientException 类][fte]和 OperationCanceledException 类。当命令进入终止状态（“已完成”、“出错”或“已取消”）后，返回的进度对象的“结果”属性将包含其他信息。如果状态为“已完成”，Result.SelectedPartition.PartitionId 将包含所选分区 ID。Result.Exception 将为 Null。如果状态为“出错”，则 Result.Exception 会提供错误注入和分析服务无法执行命令的原因。Result.SelectedPartition.PartitionId 将提供所选分区 ID。某些情况下，该命令可能尚未执行到选择分区的进度。这种情况下，PartitionId 将为 0。如果状态为“已取消”，则 Result.Exception 将为 Null。与“出错”情况类型，Result.SelectedPartition.PartitionId 将会提供所选分区 ID，但如果命令尚未执行到相应进度，则 PartitionId 将为 0。另请参阅下面的示例。
 
-下面的示例代码演示了如何先启动某个重启特定分区的命令，然后检查其进度。
+以下示例代码演示如何启动一个命令在特定的分区上导致数据丢失，然后检查该命令的进度。
 
 
 	    static async Task PerformDataLossSample()
@@ -233,4 +233,4 @@
 [cancelps]: https://msdn.microsoft.com/zh-cn/library/mt697566.aspx
 [fte]: https://msdn.microsoft.com/zh-cn/library/azure/system.fabric.fabrictransientexception.aspx
 
-<!---HONumber=Mooncake_0801_2016-->
+<!---HONumber=Mooncake_1121_2016-->

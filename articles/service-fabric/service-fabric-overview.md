@@ -13,8 +13,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="08/03/2016"
-   wacn.date="08/29/2016"
+   ms.date="09/22/2016"
+   wacn.date="11/28/2016"
    ms.author="mfussell"/>
 
 # Service Fabric 概述
@@ -42,9 +42,10 @@ Service Fabric 为由这些微服务组成的应用程序提供全面的运行�
 ## 随地创建 Service Fabric 群集
 您可以在许多环境中（例如在 Azure 或本地、Windows Server 或 Linux 中）创建 Service Fabric 群集。此外，SDK 中的开发环境与生产环境完全相同，都不涉及模拟器。换而言之，如果 SDK 在本地开发群集上运行，则会部署到其他环境中的相同群集。
 
-有关在本地创建群集的详细信息，请阅读[在 Windows Server 或 Linux 上创建群集](/documentation/articles/service-fabric-deploy-anywhere/)。
+有关在本地创建群集的详细信息，请阅读[在 Windows Server 或 Linux 上创建群集](/documentation/articles/service-fabric-deploy-anywhere/)，或阅读[通过 Azure 门户预览](/documentation/articles/service-fabric-cluster-creation-via-portal/)了解通过此门户创建群集的详细信息。
 
-![Service Fabric 平台][Image1]
+![Service Fabric 平台][Image1]  
+
 
 ## 无状态和有状态 Service Fabric 微服务
 
@@ -111,4 +112,4 @@ Service Fabric 为云应用程序的整个应用程序生命周期管理 (ALM) �
 
 [Image1]: ./media/service-fabric-overview/Service-Fabric-Overview.png
 
-<!---HONumber=Mooncake_0822_2016-->
+<!---HONumber=Mooncake_1121_2016-->
