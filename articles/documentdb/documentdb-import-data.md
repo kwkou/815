@@ -1,12 +1,13 @@
 <properties
 	pageTitle="适用于 DocumentDB 的数据库迁移工具 | Azure"
 	description="本文演示了如何使用开源 DocumentDB 数据迁移工具将数据从各种源导入到 DocumentDB，包括 MongoDB、SQL Server、表存储、Amazon DynamoDB、CSV 和 JSON 文件。将 CSV 转换为 JSON。"
-	keywords="csv 到 json, 数据库迁移工具, 将 csv 转换为 json" 
+	keywords="csv 到 json, 数据库迁移工具, 将 csv 转换为 json"
 	services="documentdb"
 	authors="andrewhoh"
 	manager="jhubbard"
 	editor="monicar"
-	documentationCenter=""/>
+	documentationCenter=""/>  
+
 
 <tags
 	ms.service="documentdb"
@@ -14,24 +15,19 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="08/23/2016"
-	wacn.date="11/21/2016"
-	ms.author="anhoh"/>  
+	ms.date="10/06/2016"
+	ms.author="anhoh"
+	wacn.date="11/28/2016"/>  
 
 
 # 使用数据库迁移工具将数据导入到 DocumentDB
 
-本文演示了如何使用开源 DocumentDB 数据迁移工具将数据从各种源（包括 JSON 文件、CSV 文件、SQL、MongoDB、Azure 表存储、Amazon DynamoDB 和 DocumentDB 集合）导入到 [Azure DocumentDB](/home/features/documentdb/)。
+本文演示如何使用官方开源 DocumentDB 数据迁移工具将数据从各种源（包括 JSON 文件、CSV 文件、SQL、MongoDB、Azure 表存储、Amazon DynamoDB 和 DocumentDB 集合）导入到 [Azure DocumentDB](/home/features/documentdb/)。
 
 阅读本文之后，你将能够回答以下问题：
 
--	如何将 JSON 文件数据导入到 DocumentDB？
--	如何将 CSV 文件数据导入到 DocumentDB？
--	如何将 SQL Server 数据导入到 DocumentDB？
--	如何将 MongoDB 数据导入到 DocumentDB？
--	如何将数据从 Azure 表存储导入到 DocumentDB？
--	如何将数据从 Amazon DynamoDB 导入到 DocumentDB？
--	如何将数据从 HBase 中导入到 DocumentDB？
+-	如何将 JSON 文件、CSV 文件、SQL Server 数据或 MongoDB 数据导入 DocumentDB？
+-	如何将数据从 Azure 表存储、Amazon DynamoDB, 和 HBase 导入 DocumentDB？
 -	如何在 DocumentDB 集合之间迁移数据？
 
 ##<a id="Prerequisites"></a>先决条件
@@ -72,19 +68,19 @@ DocumentDB 数据迁移工具是一个开源解决方案，它将数据从多个
 下面是一些导入 JSON 文件的命令行示例︰
 
 	#Import a single JSON file
-	dt.exe /s:JsonFile /s.Files:.\Sessions.json /t:DocumentDBBulk /t.ConnectionString:"AccountEndpoint=<DocumentDB Endpoint>;AccountKey=<DocumentDB Key>;Database=<DocumentDB Database>;" /t.Collection:Sessions /t.CollectionTier:S3
+	dt.exe /s:JsonFile /s.Files:.\Sessions.json /t:DocumentDBBulk /t.ConnectionString:"AccountEndpoint=<DocumentDB Endpoint>;AccountKey=<DocumentDB Key>;Database=<DocumentDB Database>;" /t.Collection:Sessions /t.CollectionThroughput:2500
 
 	#Import a directory of JSON files
-	dt.exe /s:JsonFile /s.Files:C:\TESessions\*.json /t:DocumentDBBulk /t.ConnectionString:" AccountEndpoint=<DocumentDB Endpoint>;AccountKey=<DocumentDB Key>;Database=<DocumentDB Database>;" /t.Collection:Sessions /t.CollectionTier:S3
+	dt.exe /s:JsonFile /s.Files:C:\TESessions\*.json /t:DocumentDBBulk /t.ConnectionString:" AccountEndpoint=<DocumentDB Endpoint>;AccountKey=<DocumentDB Key>;Database=<DocumentDB Database>;" /t.Collection:Sessions /t.CollectionThroughput:2500
 
 	#Import a directory (including sub-directories) of JSON files
-	dt.exe /s:JsonFile /s.Files:C:\LastFMMusic\**\*.json /t:DocumentDBBulk /t.ConnectionString:" AccountEndpoint=<DocumentDB Endpoint>;AccountKey=<DocumentDB Key>;Database=<DocumentDB Database>;" /t.Collection:Music /t.CollectionTier:S3
+	dt.exe /s:JsonFile /s.Files:C:\LastFMMusic\**\*.json /t:DocumentDBBulk /t.ConnectionString:" AccountEndpoint=<DocumentDB Endpoint>;AccountKey=<DocumentDB Key>;Database=<DocumentDB Database>;" /t.Collection:Music /t.CollectionThroughput:2500
 
 	#Import a directory (single), directory (recursive), and individual JSON files
-	dt.exe /s:JsonFile /s.Files:C:\Tweets\*.*;C:\LargeDocs\**\*.*;C:\TESessions\Session48172.json;C:\TESessions\Session48173.json;C:\TESessions\Session48174.json;C:\TESessions\Session48175.json;C:\TESessions\Session48177.json /t:DocumentDBBulk /t.ConnectionString:"AccountEndpoint=<DocumentDB Endpoint>;AccountKey=<DocumentDB Key>;Database=<DocumentDB Database>;" /t.Collection:subs /t.CollectionTier:S3
+	dt.exe /s:JsonFile /s.Files:C:\Tweets\*.*;C:\LargeDocs\**\*.*;C:\TESessions\Session48172.json;C:\TESessions\Session48173.json;C:\TESessions\Session48174.json;C:\TESessions\Session48175.json;C:\TESessions\Session48177.json /t:DocumentDBBulk /t.ConnectionString:"AccountEndpoint=<DocumentDB Endpoint>;AccountKey=<DocumentDB Key>;Database=<DocumentDB Database>;" /t.Collection:subs /t.CollectionThroughput:2500
 
 	#Import a single JSON file and partition the data across 4 collections
-	dt.exe /s:JsonFile /s.Files:D:\\CompanyData\\Companies.json /t:DocumentDBBulk /t.ConnectionString:"AccountEndpoint=<DocumentDB Endpoint>;AccountKey=<DocumentDB Key>;Database=<DocumentDB Database>;" /t.Collection:comp[1-4] /t.PartitionKey:name /t.CollectionTier:S3
+	dt.exe /s:JsonFile /s.Files:D:\\CompanyData\\Companies.json /t:DocumentDBBulk /t.ConnectionString:"AccountEndpoint=<DocumentDB Endpoint>;AccountKey=<DocumentDB Key>;Database=<DocumentDB Database>;" /t.Collection:comp[1-4] /t.PartitionKey:name /t.CollectionThroughput:2500
 
 ##<a id="MongoDB"></a>从 MongoDB 中导入
 
@@ -103,10 +99,10 @@ DocumentDB 数据迁移工具是一个开源解决方案，它将数据从多个
 下面是一些从 MongoDB 中导入的命令行示例︰
 
 	#Import all documents from a MongoDB collection
-	dt.exe /s:MongoDB /s.ConnectionString:mongodb://<dbuser>:<dbpassword>@<host>:<port>/<database> /s.Collection:zips /t:DocumentDBBulk /t.ConnectionString:"AccountEndpoint=<DocumentDB Endpoint>;AccountKey=<DocumentDB Key>;Database=<DocumentDB Database>;" /t.Collection:BulkZips /t.IdField:_id /t.CollectionTier:S3
+	dt.exe /s:MongoDB /s.ConnectionString:mongodb://<dbuser>:<dbpassword>@<host>:<port>/<database> /s.Collection:zips /t:DocumentDBBulk /t.ConnectionString:"AccountEndpoint=<DocumentDB Endpoint>;AccountKey=<DocumentDB Key>;Database=<DocumentDB Database>;" /t.Collection:BulkZips /t.IdField:_id /t.CollectionThroughput:2500
 
 	#Import documents from a MongoDB collection which match the query and exclude the loc field
-	dt.exe /s:MongoDB /s.ConnectionString:mongodb://<dbuser>:<dbpassword>@<host>:<port>/<database> /s.Collection:zips /s.Query:{pop:{$gt:50000}} /s.Projection:{loc:0} /t:DocumentDBBulk /t.ConnectionString:"AccountEndpoint=<DocumentDB Endpoint>;AccountKey=<DocumentDB Key>;Database=<DocumentDB Database>;" /t.Collection:BulkZipsTransform /t.IdField:_id/t.CollectionTier:S3
+	dt.exe /s:MongoDB /s.ConnectionString:mongodb://<dbuser>:<dbpassword>@<host>:<port>/<database> /s.Collection:zips /s.Query:{pop:{$gt:50000}} /s.Projection:{loc:0} /t:DocumentDBBulk /t.ConnectionString:"AccountEndpoint=<DocumentDB Endpoint>;AccountKey=<DocumentDB Key>;Database=<DocumentDB Database>;" /t.Collection:BulkZipsTransform /t.IdField:_id/t.CollectionThroughput:2500
 
 ##<a id="MongoDBExport"></a>导入 MongoDB 导出文件
 
@@ -118,7 +114,7 @@ DocumentDB 数据迁移工具是一个开源解决方案，它将数据从多个
 
 下面是一个用于从 MongoDB 导出 JSON 文件中导入的命令行示例︰
 
-	dt.exe /s:MongoDBExport /s.Files:D:\mongoemployees.json /t:DocumentDBBulk /t.ConnectionString:"AccountEndpoint=<DocumentDB Endpoint>;AccountKey=<DocumentDB Key>;Database=<DocumentDB Database>;" /t.Collection:employees /t.IdField:_id /t.Dates:Epoch /t.CollectionTier:S3
+	dt.exe /s:MongoDBExport /s.Files:D:\mongoemployees.json /t:DocumentDBBulk /t.ConnectionString:"AccountEndpoint=<DocumentDB Endpoint>;AccountKey=<DocumentDB Key>;Database=<DocumentDB Database>;" /t.Collection:employees /t.IdField:_id /t.Dates:Epoch /t.CollectionThroughput:2500
 
 ##<a id="SQL"></a>从 SQL Server 中导入
 
@@ -158,10 +154,10 @@ DocumentDB 数据迁移工具是一个开源解决方案，它将数据从多个
 下面是一些从 SQL Server 中导入的命令行示例︰
 
 	#Import records from SQL which match a query
-	dt.exe /s:SQL /s.ConnectionString:"Data Source=<server>;Initial Catalog=AdventureWorks;User Id=advworks;Password=<password>;" /s.Query:"select CAST(BusinessEntityID AS varchar) as Id, * from Sales.vStoreWithAddresses WHERE AddressType='Main Office'" /t:DocumentDBBulk /t.ConnectionString:" AccountEndpoint=<DocumentDB Endpoint>;AccountKey=<DocumentDB Key>;Database=<DocumentDB Database>;" /t.Collection:Stores /t.IdField:Id /t.CollectionTier:S3
+	dt.exe /s:SQL /s.ConnectionString:"Data Source=<server>;Initial Catalog=AdventureWorks;User Id=advworks;Password=<password>;" /s.Query:"select CAST(BusinessEntityID AS varchar) as Id, * from Sales.vStoreWithAddresses WHERE AddressType='Main Office'" /t:DocumentDBBulk /t.ConnectionString:" AccountEndpoint=<DocumentDB Endpoint>;AccountKey=<DocumentDB Key>;Database=<DocumentDB Database>;" /t.Collection:Stores /t.IdField:Id /t.CollectionThroughput:2500
 
 	#Import records from sql which match a query and create hierarchical relationships
-	dt.exe /s:SQL /s.ConnectionString:"Data Source=<server>;Initial Catalog=AdventureWorks;User Id=advworks;Password=<password>;" /s.Query:"select CAST(BusinessEntityID AS varchar) as Id, Name, AddressType as [Address.AddressType], AddressLine1 as [Address.AddressLine1], City as [Address.Location.City], StateProvinceName as [Address.Location.StateProvinceName], PostalCode as [Address.PostalCode], CountryRegionName as [Address.CountryRegionName] from Sales.vStoreWithAddresses WHERE AddressType='Main Office'" /s.NestingSeparator:. /t:DocumentDBBulk /t.ConnectionString:" AccountEndpoint=<DocumentDB Endpoint>;AccountKey=<DocumentDB Key>;Database=<DocumentDB Database>;" /t.Collection:StoresSub /t.IdField:Id /t.CollectionTier:S3
+	dt.exe /s:SQL /s.ConnectionString:"Data Source=<server>;Initial Catalog=AdventureWorks;User Id=advworks;Password=<password>;" /s.Query:"select CAST(BusinessEntityID AS varchar) as Id, Name, AddressType as [Address.AddressType], AddressLine1 as [Address.AddressLine1], City as [Address.Location.City], StateProvinceName as [Address.Location.StateProvinceName], PostalCode as [Address.PostalCode], CountryRegionName as [Address.CountryRegionName] from Sales.vStoreWithAddresses WHERE AddressType='Main Office'" /s.NestingSeparator:. /t:DocumentDBBulk /t.ConnectionString:" AccountEndpoint=<DocumentDB Endpoint>;AccountKey=<DocumentDB Key>;Database=<DocumentDB Database>;" /t.Collection:StoresSub /t.IdField:Id /t.CollectionThroughput:2500
 
 ##<a id="CSV"></a>导入 CSV 文件 - 将 CSV 转换为 JSON
 
@@ -201,7 +197,7 @@ CSV 文件源导入程序选项可用于导入一个或多个 CSV 文件。添�
 
 下面是 CSV 导入的命令行示例︰
 
-	dt.exe /s:CsvFile /s.Files:.\Employees.csv /t:DocumentDBBulk /t.ConnectionString:"AccountEndpoint=<DocumentDB Endpoint>;AccountKey=<DocumentDB Key>;Database=<DocumentDB Database>;" /t.Collection:Employees /t.IdField:EntityID /t.CollectionTier:S3
+	dt.exe /s:CsvFile /s.Files:.\Employees.csv /t:DocumentDBBulk /t.ConnectionString:"AccountEndpoint=<DocumentDB Endpoint>;AccountKey=<DocumentDB Key>;Database=<DocumentDB Database>;" /t.Collection:Employees /t.IdField:EntityID /t.CollectionThroughput:2500
 
 ##<a id="AzureTableSource"></a>从 Azure 表存储中导入
 
@@ -229,7 +225,7 @@ Azure 表存储源导入程序选项具有下列附加选项︰
 
 下面是一个用于从 Azure 表存储中导入的命令行示例︰
 
-	dt.exe /s:AzureTable /s.ConnectionString:"DefaultEndpointsProtocol=https;AccountName=<Account Name>;AccountKey=<Account Key>" /s.Table:metrics /s.InternalFields:All /s.Filter:"PartitionKey eq 'Partition1' and RowKey gt '00001'" /s.Projection:ObjectCount;ObjectSize  /t:DocumentDBBulk /t.ConnectionString:" AccountEndpoint=<DocumentDB Endpoint>;AccountKey=<DocumentDB Key>;Database=<DocumentDB Database>;" /t.Collection:metrics /t.CollectionTier:S3
+	dt.exe /s:AzureTable /s.ConnectionString:"DefaultEndpointsProtocol=https;AccountName=<Account Name>;AccountKey=<Account Key>" /s.Table:metrics /s.InternalFields:All /s.Filter:"PartitionKey eq 'Partition1' and RowKey gt '00001'" /s.Projection:ObjectCount;ObjectSize  /t:DocumentDBBulk /t.ConnectionString:" AccountEndpoint=<DocumentDB Endpoint>;AccountKey=<DocumentDB Key>;Database=<DocumentDB Database>;" /t.Collection:metrics /t.CollectionThroughput:2500
 
 ##<a id="DynamoDBSource"></a>从 Amazon DynamoDB 中导入
 
@@ -249,7 +245,7 @@ Amazon DynamoDB 连接字符串的格式为：
 
 下面是一个用于从 Amazon DynamoDB 中导入的命令行示例︰
 
-	dt.exe /s:DynamoDB /s.ConnectionString:ServiceURL=https://dynamodb.us-east-1.amazonaws.com;AccessKey=<accessKey>;SecretKey=<secretKey> /s.Request:"{   """TableName""": """ProductCatalog""" }" /t:DocumentDBBulk /t.ConnectionString:"AccountEndpoint=<DocumentDB Endpoint>;AccountKey=<DocumentDB Key>;Database=<DocumentDB Database>;" /t.Collection:catalogCollection /t.CollectionTier:S3
+	dt.exe /s:DynamoDB /s.ConnectionString:ServiceURL=https://dynamodb.us-east-1.amazonaws.com;AccessKey=<accessKey>;SecretKey=<secretKey> /s.Request:"{   """TableName""": """ProductCatalog""" }" /t:DocumentDBBulk /t.ConnectionString:"AccountEndpoint=<DocumentDB Endpoint>;AccountKey=<DocumentDB Key>;Database=<DocumentDB Database>;" /t.Collection:catalogCollection /t.CollectionThroughput:2500
 
 ##<a id="BlobImport"></a>从 Azure Blob 存储中导入文件
 
@@ -290,8 +286,7 @@ DocumentDB 源导入程序选项具有下列高级选项︰
 3. 重试间隔︰指定在发生暂时性故障（例如网络连接中断）时重试 DocumentDB 连接等待的时间间隔。
 4. 连接模式︰指定要配合 DocumentDB 使用的连接模式。可用选项包括 DirectTcp、DirectHttps 和网关。直接连接模式速度更快，而网关模式对于防火墙更加友好，因为它仅使用端口 443。
 
-![DocumentDB 源高级选项的屏幕截图](./media/documentdb-import-data/documentdbsourceoptions.png)  
-
+![DocumentDB 源高级选项的屏幕截图](./media/documentdb-import-data/documentdbsourceoptions.png)
 
 > [AZURE.TIP] 导入工具默认设置为 DirectTcp 连接模式。如果遇到防火墙问题，请切换到网关连接模式，因为它只需要端口 443。
 
@@ -299,13 +294,13 @@ DocumentDB 源导入程序选项具有下列高级选项︰
 下面是一些从 DocumentDB 中导入的命令行示例︰
 
 	#Migrate data from one DocumentDB collection to another DocumentDB collections
-	dt.exe /s:DocumentDB /s.ConnectionString:"AccountEndpoint=<DocumentDB Endpoint>;AccountKey=<DocumentDB Key>;Database=<DocumentDB Database>;" /s.Collection:TEColl /t:DocumentDBBulk /t.ConnectionString:" AccountEndpoint=<DocumentDB Endpoint>;AccountKey=<DocumentDB Key>;Database=<DocumentDB Database>;" /t.Collection:TESessions /t.CollectionTier:S3
+	dt.exe /s:DocumentDB /s.ConnectionString:"AccountEndpoint=<DocumentDB Endpoint>;AccountKey=<DocumentDB Key>;Database=<DocumentDB Database>;" /s.Collection:TEColl /t:DocumentDBBulk /t.ConnectionString:" AccountEndpoint=<DocumentDB Endpoint>;AccountKey=<DocumentDB Key>;Database=<DocumentDB Database>;" /t.Collection:TESessions /t.CollectionThroughput:2500
 
 	#Migrate data from multiple DocumentDB collections to a single DocumentDB collection
-	dt.exe /s:DocumentDB /s.ConnectionString:"AccountEndpoint=<DocumentDB Endpoint>;AccountKey=<DocumentDB Key>;Database=<DocumentDB Database>;" /s.Collection:comp1|comp2|comp3|comp4 /t:DocumentDBBulk /t.ConnectionString:"AccountEndpoint=<DocumentDB Endpoint>;AccountKey=<DocumentDB Key>;Database=<DocumentDB Database>;" /t.Collection:singleCollection /t.CollectionTier:S3
+	dt.exe /s:DocumentDB /s.ConnectionString:"AccountEndpoint=<DocumentDB Endpoint>;AccountKey=<DocumentDB Key>;Database=<DocumentDB Database>;" /s.Collection:comp1|comp2|comp3|comp4 /t:DocumentDBBulk /t.ConnectionString:"AccountEndpoint=<DocumentDB Endpoint>;AccountKey=<DocumentDB Key>;Database=<DocumentDB Database>;" /t.Collection:singleCollection /t.CollectionThroughput:2500
 
 	#Export a DocumentDB collection to a JSON file
-	dt.exe /s:DocumentDB /s.ConnectionString:"AccountEndpoint=<DocumentDB Endpoint>;AccountKey=<DocumentDB Key>;Database=<DocumentDB Database>;" /s.Collection:StoresSub /t:JsonFile /t.File:StoresExport.json /t.Overwrite /t.CollectionTier:S3
+	dt.exe /s:DocumentDB /s.ConnectionString:"AccountEndpoint=<DocumentDB Endpoint>;AccountKey=<DocumentDB Key>;Database=<DocumentDB Database>;" /s.Collection:StoresSub /t:JsonFile /t.File:StoresExport.json /t.Overwrite /t.CollectionThroughput:2500
 
 ##<a id="HBaseSource"></a>从 HBase 中导入
 
@@ -329,7 +324,7 @@ HBase Stargate 连接字符串的格式为︰
 
 ##<a id="DocumentDBBulkTarget"></a>导入到 DocumentDB（批量导入）
 
-借助 DocumentDB 批量导入程序，可以使用 DocumentDB 存储的过程从所有可用的源选项中导入，以提高效率。该工具支持导入到单个 DocumentDB 集合，并支持分片导入，通过这种方法可跨多个 DocumentDB 集合对数据进行分区。有关数据分区的详细信息，请参阅 [Azure DocumentDB 中的分区和缩放](/documentation/articles/documentdb-partition-data/)。该工具将创建、执行，然后删除目标集合中存储的过程。
+借助 DocumentDB 批量导入程序，可以使用 DocumentDB 存储的过程从所有可用的源选项中导入，以提高效率。该工具支持导入到一个单分区 DocumentDB 集合，并支持分片导入，通过这种方法可跨多个单分区 DocumentDB 集合对数据进行分区。有关数据分区的详细信息，请参阅 [Azure DocumentDB 中的分区和缩放](/documentation/articles/documentdb-partition-data/)。该工具将创建、执行，然后删除目标集合中存储的过程。
 
 ![DocumentDB 批量选项的屏幕截图](./media/documentdb-import-data/documentdbbulk.png)  
 
@@ -350,9 +345,9 @@ DocumentDB 帐户连接字符串可从 Azure 门户预览的“密钥”边栏�
 2. 可以使用缩写的语法︰collection[3] 将生成与第 1 步相同的一组集合。
 3. 可以提供多个替代。例如，collection[0-1] [0-9] 将生成 20 个带前导零的集合名称 (collection01，...02...03)。
 
-指定集合名称后，请选择集合所需的定价层（S1、S2 或 S3）。为了获得最佳导入性能，请选择 S3。有关性能级别的详细信息，请参阅 [DocumentDB 中的性能级别](/documentation/articles/documentdb-performance-levels/)。
+指定集合名称后，请选择集合所需的吞吐量（400 RU 到 10,000 RU）。为了获得最佳导入性能，请选择较高的吞吐量。有关性能级别的详细信息，请参阅 [DocumentDB 中的性能级别](/documentation/articles/documentdb-performance-levels/)。
 
-> [AZURE.NOTE] 性能层设置仅适用于创建集合。如果指定的集合已经存在，将不会修改其定价层。
+> [AZURE.NOTE] 性能吞吐量设置仅适用于创建集合。如果指定的集合已存在，将不会修改其吞吐量。
 
 在导入到多个集合时，导入工具支持基于哈希的分片。在此方案中，指定要用作分区键的文档属性（如果分区键留空，文档将跨多个目标集合随机分片）。
 
@@ -377,6 +372,8 @@ DocumentDB 帐户连接字符串可从 Azure 门户预览的“密钥”边栏�
 	    "Epoch": 1382390245
 	  }
 
+DocumentDB 批量导入程序具有下列高级附加选项︰
+
 1. 批大小︰工具默认将批大小设置为 50。如果要导入的文档很大，请考虑减小批大小。如果要导入的文档很小，请考虑增大批大小。
 2. 最大脚本大小（字节）︰工具默认设置为 512KB 的最大脚本大小
 3. 禁用自动生成 ID︰如果要导入的每个文档都包含一个 ID 字段，则选择此选项可以提高性能。将不会导入缺少唯一 ID 字段的文档。
@@ -385,14 +382,13 @@ DocumentDB 帐户连接字符串可从 Azure 门户预览的“密钥”边栏�
 6. 重试间隔︰指定在发生暂时性故障（例如网络连接中断）时重试 DocumentDB 连接等待的时间间隔。
 7. 连接模式︰指定要配合 DocumentDB 使用的连接模式。可用选项包括 DirectTcp、DirectHttps 和网关。直接连接模式速度更快，而网关模式对于防火墙更加友好，因为它仅使用端口 443。
 
-![DocumentDB 批量导入高级选项的屏幕截图](./media/documentdb-import-data/docdbbulkoptions.png)  
-
+![DocumentDB 批量导入高级选项的屏幕截图](./media/documentdb-import-data/docdbbulkoptions.png)
 
 > [AZURE.TIP] 导入工具默认设置为 DirectTcp 连接模式。如果遇到防火墙问题，请切换到网关连接模式，因为它只需要端口 443。
 
 ##<a id="DocumentDBSeqTarget"></a>导入到 DocumentDB（顺序记录导入）
 
-借助 DocumentDB 顺序记录导入程序，可以从任何可用的源选项中逐条导入记录。如果要导入到已达到存储过程配额的现有集合中，可以选择此选项。该工具支持导入到单个 DocumentDB 集合，并支持分片导入，通过这种方法可跨多个 DocumentDB 集合对数据进行分区。有关数据分区的详细信息，请参阅 [Azure DocumentDB 中的分区和缩放](/documentation/articles/documentdb-partition-data/)。
+借助 DocumentDB 顺序记录导入程序，可以从任何可用的源选项中逐条导入记录。如果要导入到已达到存储过程配额的现有集合中，可以选择此选项。该工具支持导入到单个（单分区和多分区）DocumentDB 集合，并支持分片导入，通过这种方法可跨多个单分区和/或多分区 DocumentDB 集合对数据进行分区。有关数据分区的详细信息，请参阅 [Azure DocumentDB 中的分区和缩放](/documentation/articles/documentdb-partition-data/)。
 
 ![DocumentDB 顺序记录导入选项的屏幕截图](./media/documentdb-import-data/documentdbsequential.png)  
 
@@ -413,9 +409,9 @@ DocumentDB 帐户连接字符串可从 Azure 门户预览的“密钥”边栏�
 2. 可以使用缩写的语法︰collection[3] 将生成与第 1 步相同的一组集合。
 3. 可以提供多个替代。例如，collection[0-1] [0-9] 将生成 20 个带前导零的集合名称 (collection01，...02...03)。
 
-指定集合名称后，请选择集合所需的定价层（S1、S2 或 S3）。为了获得最佳导入性能，请选择 S3。有关性能级别的详细信息，请参阅 [DocumentDB 中的性能级别](/documentation/articles/documentdb-performance-levels/)。
+指定集合名称后，请选择集合所需的吞吐量（400 RU 到 250,000 RU）。为了获得最佳导入性能，请选择较高的吞吐量。有关性能级别的详细信息，请参阅 [DocumentDB 中的性能级别](/documentation/articles/documentdb-performance-levels/)。在吞吐量超过 10,000 RU 的集合中进行任何导入都需要使用分区键。如果选择使用 250,000 个以上的 RU，请参阅[请求提高 DocumentDB 帐户限制](/documentation/articles/documentdb-increase-limits/)。
 
-> [AZURE.NOTE] 性能层设置仅适用于创建集合。如果指定的集合已经存在，将不会修改其定价层。
+> [AZURE.NOTE] 吞吐量设置仅适用于创建集合。如果指定的集合已存在，将不会修改其吞吐量。
 
 在导入到多个集合时，导入工具支持基于哈希的分片。在此方案中，指定要用作分区键的文档属性（如果分区键留空，文档将跨多个目标集合随机分片）。
 
@@ -533,9 +529,6 @@ DocumentDB - 顺序记录导入程序具有下列高级附加选项︰
 
 3. 你也可以启动新的导入，可保留现有设置（例如连接字符串信息、源和目标选项等），也可重置所有值。
 
-	![DocumentDB JSON 导出选项的屏幕截图](./media/documentdb-import-data/newimport.png)
+	![DocumentDB JSON 导出选项的屏幕截图](./media/documentdb-import-data/newimport.png)  
 
-## 后续步骤
-
-
-<!---HONumber=Mooncake_1010_2016-->
+<!---HONumber=Mooncake_1121_2016-->

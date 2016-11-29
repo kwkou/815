@@ -1,11 +1,12 @@
-<properties 
-	pageTitle="DocumentDB Java API 和 SDK | Azure" 
-	description="了解有关 Java API 和 SDK 的全部信息，包括发布日期、停用日期和 DocumentDB Java SDK 各版本之间所做的更改。" 
-	services="documentdb" 
-	documentationCenter="java" 
-	authors="rnagpal" 
-	manager="jhubbard" 
-	editor="cgronlun"/>
+<properties
+	pageTitle="DocumentDB Java API 和 SDK | Azure"
+	description="了解有关 Java API 和 SDK 的全部信息，包括发布日期、停用日期和 DocumentDB Java SDK 各版本之间所做的更改。"
+	services="documentdb"
+	documentationCenter="java"
+	authors="rnagpal"
+	manager="jhubbard"
+	editor="cgronlun"/>  
+
 
 <tags
 	ms.service="documentdb"
@@ -13,11 +14,11 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="java"
 	ms.topic="article"
-	ms.date="08/09/2016"
-	wacn.date="11/21/2016"
-	ms.author="rnagpal"/>
+	ms.date="10/03/2016"
+	ms.author="rnagpal"
+	wacn.date="11/28/2016"/>
 
-# DocumentDB SDK
+# DocumentDB API 和 SDK
 
 > [AZURE.SELECTOR]
 - [.NET](/documentation/articles/documentdb-sdk-dotnet/)
@@ -27,10 +28,11 @@
 - [REST](https://msdn.microsoft.com/zh-cn/library/azure/dn781481.aspx)
 - [SQL](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx)
 
-##DocumentDB Java SDK
+## DocumentDB Java API 和 SDK
 
-<table>
-<tr><td>**SDK 下载**</td><td>[Maven](http://mvnrepository.com/artifact/com.microsoft.azure/azure-documentdb)</td></tr>
+<table>  
+
+<tr><td>**SDK 下载**</td><td>[Maven](http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22com.microsoft.azure%22%20AND%20a%3A%22azure-documentdb%22)</td></tr>
 <tr><td>**API 文档**</td><td>[Java API 参考文档](http://azure.github.io/azure-documentdb-java/)</td></tr>
 <tr><td>**参与 SDK**</td><td>[GitHub](https://github.com/Azure/azure-documentdb-java/)</td></tr>
 <tr><td>**入门**</td><td>[Java SDK 入门](/documentation/articles/documentdb-java-application/)</td></tr>
@@ -38,6 +40,16 @@
 </table>
 
 ## 发行说明
+
+### <a name="1.9.0"/>[1.9.0](http://mvnrepository.com/artifact/com.microsoft.azure/azure-documentdb/1.9.0)
+
+  - 添加了对跨分区并行查询的支持。
+  - 添加了对分区集合的 TOP/ORDER BY 查询支持。
+  - 添加了非常一致性支持。
+  - 添加了使用直接连接时对基于名称的请求的支持。
+  - 修复了 bug，使 ActivityId 在所有请求重试中保持一致。
+  - 修复了在重新创建同名集合时与会话缓存相关的 bug。
+  - 修复了 Java 1.8 文档中的问题。
 
 ### <a name="1.8.1"/>[1\.8.1](http://mvnrepository.com/artifact/com.microsoft.azure/azure-documentdb/1.8.1)
   - 修复了 PartitionKeyDefinitionMap 中的一个 bug，以便缓存单个分区集合，而不进行额外的提取分区键的请求。
@@ -93,33 +105,34 @@ Azure DocumentDB SDK for Java 在 **1.0.0** 版之前的所有版本都将在 **
 
 <br/>
 
-| 版本 | 发布日期 | 停用日期 
+| 版本 | 发布日期 | 停用日期
 | ---	  | ---	         | ---
-| [1\.8.1](#1.8.1) | 2016 年 6 月 30 日 |---
-| [1\.8.0](#1.8.0) | 2016 年 6 月 14 日 |---
-| [1\.7.1](#1.7.1) | 2016 年 4 月 30 日 |---
-| [1\.7.0](#1.7.0) | 2016 年 4 月 27 日 |---
-| [1\.6.0](#1.6.0) | 2016 年 3 月 29 日 |---
-| [1\.5.1](#1.5.1) | 2015 年 12 月 31 日 |---
-| [1\.5.0](#1.5.0) | 2015 年 12 月 4 日 |---
-| [1\.4.0](#1.4.0) | 2015 年 10 月 5 日 |---
-| [1\.3.0](#1.3.0) | 2015 年 10 月 5 日 |---
-| [1\.2.0](#1.2.0) | 2015 年 8 月 5 日 |---
-| [1\.1.0](#1.1.0) | 2015 年 7 月 9 日 |---
-| 1\.0.1           | 2015 年 5 月 12 日 |---
-| [1\.0.0](#1.0.0) | 2015 年 4 月 7 日 |---
-|0.9.5-prelease | 2015 年 3 月 9 日 | 2016 年 2 月 29 日
-|0.9.4-prelease | 2015 年 2 月 17 日 | 2016 年 2 月 29 日
-|0.9.3-prelease | 2015 年 1 月 13 日 | 2016 年 2 月 29 日
-|0.9.2-prelease | 2014 年 12 月 19 日 | 2016 年 2 月 29 日
-|0.9.1-prelease | 2014 年 12 月 19 日 | 2016 年 2 月 29 日
-|0.9.0-prelease | 2014 年 12 月 10 日 | 2016 年 2 月 29 日
+| [1\.9.0](#1.9.0) | 2016 年 10 月 3 日 |--- 
+| [1\.8.1](#1.8.1) | 2016 年 6 月 30 日 |--- 
+| [1\.8.0](#1.8.0) | 2016 年 6 月 14 日 |--- 
+| [1\.7.1](#1.7.1) | 2016 年 4 月 30 日 |--- 
+| [1\.7.0](#1.7.0) | 2016 年 4 月 27 日 |--- 
+| [1\.6.0](#1.6.0) | 2016 年 3 月 29 日 |--- 
+| [1\.5.1](#1.5.1) | 2015 年 12 月 31 日 |--- 
+| [1\.5.0](#1.5.0) | 2015 年 12 月 4 日 |--- 
+| [1\.4.0](#1.4.0) | 2015 年 10 月 5 日 |--- 
+| [1\.3.0](#1.3.0) | 2015 年 10 月 5 日 |--- 
+| [1\.2.0](#1.2.0) | 2015 年 8 月 5 日 |--- 
+| [1\.1.0](#1.1.0) | 2015 年 7 月 9 日 |--- 
+| 1\.0.1           | 2015 年 5 月 12 日 |--- 
+| [1\.0.0](#1.0.0) | 2015 年 4 月 7 日 |--- 
+| 0.9.5-prelease | 2015 年 3 月 9 日 | 2016 年 2 月 29 日 
+| 0.9.4-prelease | 2015 年 2 月 17 日 | 2016 年 2 月 29 日 
+| 0.9.3-prelease | 2015 年 1 月 13 日 | 2016 年 2 月 29 日 
+| 0.9.2-prelease | 2014 年 12 月 19 日 | 2016 年 2 月 29 日 
+| 0.9.1-prelease | 2014 年 12 月 19 日 | 2016 年 2 月 29 日 
+| 0.9.0-prelease | 2014 年 12 月 10 日 | 2016 年 2 月 29 日
 
 ## 常见问题
 [AZURE.INCLUDE [documentdb sdk 常见问题](../../includes/documentdb-sdk-faq.md)]
 
 ## 另请参阅
 
-要了解有关 DocumentDB 的详细信息，请参阅 [Azure DocumentDB](/documentation/services/documentdb/) 服务页。
+若要了解有关 DocumentDB 的详细信息，请参阅 [Azure DocumentDB](/home/features/documentdb/) 服务页。
 
-<!---HONumber=Mooncake_0919_2016-->
+<!---HONumber=Mooncake_1121_2016-->

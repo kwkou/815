@@ -5,7 +5,8 @@
 	documentationCenter=".net" 
 	authors="rnagpal" 
 	manager="jhubbard" 
-	editor="cgronlun"/>
+	editor="cgronlun"/>  
+
 
 <tags 
 	ms.service="documentdb" 
@@ -13,9 +14,9 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="09/01/2016" 
-	wacn.date="10/18/2016" 
-	ms.author="rnagpal"/>
+	ms.date="09/27/2016" 
+	ms.author="rnagpal"
+	wacn.date="11/28/2016"/>
 
 # DocumentDB API 和 SDK 
 
@@ -41,7 +42,14 @@
 
 ## 发行说明
 
-> [AZURE.IMPORTANT] 在查询已分区的集合时，可能会收到 System.NotSupportedException。若要避免此错误，请在“生成”选项卡上的属性窗口中取消选中“首选 32 位”选项。
+> [AZURE.IMPORTANT] 从版本 1.9.2 开始，在查询已分区的集合时，可能会出现 System.NotSupportedException。为了避免此错误，请确保主机进程是 64 位。对于可执行的项目，可以通过在项目属性窗口中的“生成”选项卡上取消选中“首选 32 位”来实现此目的。
+
+### <a name="1.10.0"/>[1\.10.0](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB/1.10.0)
+
+  - 添加了对分区集合的直接连接支持。
+  - 改进了受限停滞一致性级别的性能。
+  - 添加了转换谓词时对 StringEnumConverter、IsoDateTimeConverter 和 UnixDateTimeConverter 的 LINQ 支持。
+  - 各种 SDK Bug 修复。
 
 ### <a name="1.9.5"/>[1\.9.5](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB/1.9.5)
 
@@ -156,11 +164,11 @@
 - GA SDK
 
 > [AZURE.NOTE]
-预览版和 GA 版之间的 NuGet 程序包名称有所更改。从 **Microsoft.Azure.Documents.Client** 移到了 **Microsoft.Azure.DocumentDB** 
+预览版和 GA 版之间的 NuGet 程序包名称有所更改。从 **Microsoft.Azure.Documents.Client** 移到了 **Microsoft.Azure.DocumentDB**
 <br/>
 
 
-### <a name="0.9.x-preview"/>[0.9.x-preview](https://www.nuget.org/packages/Microsoft.Azure.Documents.Client)
+### <a name="0.9.x-preview"/>[0\.9.x-preview](https://www.nuget.org/packages/Microsoft.Azure.Documents.Client)
 - 预览版 SDK[已过时]
 
 ## 发布和停用日期
@@ -177,8 +185,9 @@ Microsoft 至少会在停用 SDK 的 **12 个月**之前发出通知，以便顺
  
 | 版本 | 发布日期 | 停用日期 
 | ---	  | ---	         | ---
+| [1\.10.0](#1.10.0) | 2016 年 9 月 27 日 |--- 
 | [1\.9.5](#1.9.5) | 2016 年 9 月 1 日 |--- 
-| [1\.9.4](#1.9.4) | 2016 年 8 月 24 日 |---
+| [1\.9.4](#1.9.4) | 2016 年 8 月 24 日 |--- 
 | [1\.9.3](#1.9.3) | 2016 年 8 月 15 日 |--- 
 | [1\.9.2](#1.9.2) | 2016 年 7 月 23 日 |--- 
 | 1.9.1 | 已弃用 |--- 
@@ -200,7 +209,7 @@ Microsoft 至少会在停用 SDK 的 **12 个月**之前发出通知，以便顺
 | [1\.0.0](#1.0.0) | 2015 年 4 月 8 日 |--- 
 | [0\.9.3-prelease](#0.9.x-preview) | 2015 年 3 月 12 日 | 2016 年 2 月 29 日 
 | [0\.9.2-prelease](#0.9.x-preview) | 2015 年 1 月 | 2016 年 2 月 29 日 
-| [.9.1-prelease](#0.9.x-preview) | 2014 年 10 月 13 日 | 2016 年 2 月 29 日 
+| [9\.1-prelease](#0.9.x-preview) | 2014 年 10 月 13 日 | 2016 年 2 月 29 日 
 | [0\.9.0-prelease](#0.9.x-preview) | 2014 年 8 月 21 日 | 2016 年 2 月 29 日
 
 ## 常见问题
@@ -210,4 +219,4 @@ Microsoft 至少会在停用 SDK 的 **12 个月**之前发出通知，以便顺
 
 若要了解有关 DocumentDB 的详细信息，请参阅 [Azure DocumentDB](/home/features/documentdb/) 服务页。
 
-<!---HONumber=Mooncake_1010_2016-->
+<!---HONumber=Mooncake_1121_2016-->

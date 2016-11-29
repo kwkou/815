@@ -5,7 +5,8 @@
   documentationCenter=""
   authors="aliuy"
   manager="johnmac"
-  editor="mimig"/>
+  editor="mimig"/>  
+
 
 <tags
   ms.service="documentdb"
@@ -13,9 +14,9 @@
   ms.topic="article"
   ms.tgt_pltfrm="na"
   ms.workload="data-services"
-  ms.date="09/12/2016"
-  wacn.date="11/22/2016"
-  ms.author="andrl"/>  
+  ms.date="09/26/2016"
+  ms.author="andrl"
+  wacn.date="11/28/2016"/>  
 
 
 # 社区门户
@@ -86,7 +87,7 @@ fluent-plugin-documentdb 是用于输出到 Azure DocumentDB 的 Fluentd 插件�
 
 - [**Azure DocumentDB Server-Side Scripting**](https://www.simple-talk.com/cloud/cloud-data/azure-documentdb-server-side-scripting/)（Azure DocumentDB 服务器端脚本）- *作者：Robert Sheldon*
 
-- [**DocumentDB as a data sink for Azure Stream Analytics**](http://janatdevelopment.com/2015/12/11/documentdb-as-a-data-sink-for-azure-stream-analytics/?utm_source=twitterfeed&utm_medium=twitter)（作为 Azure 流分析的数据接收器的 DocumentDB）- *作者：Jan Hentschel*
+- **Azure DocumentDB in production!** - *作者：Alexandre Walsh 和 Marc-Olivier Duval*
 
 - [**Azure Search Indexers - DocumentDB Queries (Spanish)**](http://www.ealsur.com.ar/wp/index.php/2015/11/19/azure-search-indexers-documentdb-queries/)（Azure 搜索索引器 - DocumentDB 查询）（西班牙语）- *作者：Matthias Quaranta*
 
@@ -112,10 +113,7 @@ fluent-plugin-documentdb 是用于输出到 Azure DocumentDB 的 Fluentd 插件�
 
 - [**Azure DocumentDB - Point in time Backups**](http://softwarejuancarlos.com/2015/09/06/azure-documentdb-point-in-time-backups/)（Azure DocumentDB - 时间点备份）- *作者：Juan Carlos Sanchez*
 
-<br/><br/>
-
-
-<br/><br/>
+*有想要分享的博客文章、代码示例或案例研究吗？ [请告诉我们](mailto:askdocdb@microsoft.com)！*
 
 <hr/>
 
@@ -150,9 +148,9 @@ fluent-plugin-documentdb 是用于输出到 Azure DocumentDB 的 Fluentd 插件�
 
 | 平台 | Github | 程序包 |
 | -------- | --------------------------------------------------------------------------- | ------- |
-| Node.js  | [azure-documentdb-node](https://github.com/Azure/azure-documentdb-node)     | [npm](https://www.npmjs.com/package/documentdb) |
-| Java     | [azure-documentdb-java](https://github.com/Azure/azure-documentdb-java)     | [Maven](http://search.maven.org/#search%7Cga%7C1%7Ca%3A%22azure-documentdb%22) |
-| Python   | [azure-documentdb-python](https://github.com/Azure/azure-documentdb-python) | [PyPI](https://pypi.python.org/pypi/pydocumentdb) |
+| Node.js | [azure-documentdb-node](https://github.com/Azure/azure-documentdb-node) | [npm](https://www.npmjs.com/package/documentdb) |
+| Java | [azure-documentdb-java](https://github.com/Azure/azure-documentdb-java) | [Maven](http://search.maven.org/#search%7Cga%7C1%7Ca%3A%22azure-documentdb%22) |
+| Python | [azure-documentdb-python](https://github.com/Azure/azure-documentdb-python) | [PyPI](https://pypi.python.org/pypi/pydocumentdb) |
 
 ### 其他项目
 
@@ -166,8 +164,6 @@ fluent-plugin-documentdb 是用于输出到 Azure DocumentDB 的 Fluentd 插件�
 
 DocumentDB 奇才是社区领导者，他们是帮助其他人充分利用他们在 Azure DocumentDB 上的经验的最佳典范。他们和社区及 DocumentDB 团队分享了他们超乎常人的热情、实用的知识以及专业技术。
 
-
-
 想要成为 DocumentDB 奇才？ 由于是否能成为 DocumentDB 奇才并没有任何评判基准，因此我们会针对部分条件来评估，包括被提名人对在线论坛（例如 StackOverflow 和 MSDN；Wiki 和在线内容；会议和用户组；播客；网站；博客和社交媒体；以及文章与书籍）的贡献所产生的影响。如果想提名自己或其他人，[请向我们发送电子邮件](mailto:askdocdb@microsoft.com)。
 
-<!---HONumber=Mooncake_1010_2016-->
+<!---HONumber=Mooncake_1121_2016-->

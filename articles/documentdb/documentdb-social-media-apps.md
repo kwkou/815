@@ -6,7 +6,8 @@
 	authors="ealsur" 
 	manager="" 
 	editor="" 
-	documentationCenter=""/>
+	documentationCenter=""/>  
+
 
 <tags 
 	ms.service="documentdb" 
@@ -14,9 +15,9 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="06/29/2016" 
-	wacn.date="11/21/2016" 
-	ms.author="mimig"/>  
+	ms.date="09/27/2016" 
+	ms.author="mimig"
+	wacn.date="11/28/2016"/>  
 
 
 # 使用 DocumentDB 进行社交
@@ -43,7 +44,7 @@
 
 ## NoSQL 加载
 
-有许多特殊图形数据库可以[在 Azure 上运行](http://neo4j.com/developer/guide-cloud-deployment/#_windows_azure)，但它们成本较高且需要 IaaS 服务（基础结构即服务，主要是虚拟机）和维护。本文介绍的成本更低的解决方案适用于在 Azure 的 NoSQL 数据库 [DocumentDB](/documentation/services/documentdb/) 上运行的大多数方案。使用 [NoSQL](https://en.wikipedia.org/wiki/NoSQL) 方法以 JSON 格式存储数据并应用[非规范化](https://en.wikipedia.org/wiki/Denormalization)，就可以将我们以前的复杂帖子转换为单个[文档](https://en.wikipedia.org/wiki/Document-oriented_database)：
+有许多特殊图形数据库可以[在 Azure 上运行](http://neo4j.com/developer/guide-cloud-deployment/#_windows_azure)，但它们成本较高且需要 IaaS 服务（基础结构即服务，主要是虚拟机）和维护。本文介绍的成本更低的解决方案适用于在 Azure 的 NoSQL 数据库 [DocumentDB](/home/features/documentdb/) 上运行的大多数方案。使用 [NoSQL](https://zh.wikipedia.org/wiki/NoSQL) 方法以 JSON 格式存储数据并应用[非规范化](https://en.wikipedia.org/wiki/Denormalization)，就可以将我们以前的复杂帖子转换为单个[文档](https://en.wikipedia.org/wiki/Document-oriented_database)：
 
     {
         "id":"ew12-res2-234e-544f",
@@ -64,7 +65,7 @@
 
 可以使用单个查询获得，且无需联接。这种方法更简单且更直观，且在预算方面，它所需要的资源更少，但得到的结果更好。
 
-Azure DocumentDB 可确保所有属性通过其[自动索引](/documentation/articles/documentdb-indexing/)功能进行索引，此功能甚至可以进行[自定义](/documentation/articles/documentdb-indexing-policies/)。非结构化数据的方式可以让我们存储具有不同和动态结构的文档，也许明天我们希望帖子上显示一系列类别或与其关联的哈希标记，我们不需要执行任何额外操作，DocumentDB 将自行使用添加的属性处理新文档。
+Azure DocumentDB 可确保所有属性通过其[自动索引](/documentation/articles/documentdb-indexing/)功能进行索引，此功能甚至可以进行[自定义](/documentation/articles/documentdb-indexing-policies/)。自由架构方法可以让我们存储具有不同和动态结构的文档，也许明天我们希望帖子上显示一系列类别或与其关联的哈希标记，我们不需要执行任何额外操作，DocumentDB 将自行使用添加的属性处理新文档。
 
 可以将对帖子的评论视为具有父属性的其他帖子（这可以简化我们的对象映射）。
 
@@ -102,9 +103,9 @@ Azure DocumentDB 可确保所有属性通过其[自动索引](/documentation/art
         {"relevance":7, "post":"w34r-qeg6-ref6-8565"}
     ]
 
-我们可以有一个“最新”流（其中帖子按创建日期排序）和一个“最热门”流（其中包括在过去 24 小时内获得了更多赞的帖子），甚至还可以基于逻辑点赞粉丝和兴趣为每个用户实现客户流，且它仍然可以是一个帖子列表。虽然如何生成这些列表还是一个问题，但读取性能仍然不受阻碍。一旦我们获得其中一个列表之后，我们就可以使用 [IN 运算符](/documentation/articles/documentdb-sql-query/#where-clause) 向 DocumentDB 发布单个查询以一次性获取帖子的所有页面。
+我们可以有一个“最新”流（其中帖子按创建日期排序）和一个“最热门”流（其中包括在过去 24 小时内获得了更多赞的帖子），甚至还可以基于逻辑点赞粉丝和兴趣为每个用户实现客户流，且它仍然可以是一个帖子列表。虽然如何生成这些列表还是一个问题，但读取性能仍然不受阻碍。一旦我们获得其中一个列表之后，我们就可以使用 [IN 运算符](/documentation/articles/documentdb-sql-query/#where-clause/) 向 DocumentDB 发布单个查询以一次性获取帖子的所有页面。
 
-可以使用 [Azure App Service](/documentation/services/app-service/) 的后台进程 - [Web 作业](/documentation/articles/web-sites-create-web-jobs/) - 来构建源流。创建一个帖子后，可以通过使用 [Azure 存储空间](/documentation/services/storage/)[队列](/documentation/articles/storage-dotnet-how-to-use-queues/)和 Web 作业（通过 [Azure Webjobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk/) 触发）触发后台处理，从而根据我们自己的自定义逻辑实现流内的帖子传播。
+可以使用 [Azure App Service](/home/features/app-service/) 的后台进程 - [Web 作业](/documentation/articles/web-sites-create-web-jobs/) - 来构建源流。创建一个帖子后，可以通过使用 [Azure 存储空间](/home/features/storage/)[队列](/documentation/articles/storage-dotnet-how-to-use-queues/)和 Web 作业（通过 [Azure Webjobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk/) 触发）触发后台处理，从而根据我们自己的自定义逻辑实现流内的帖子传播。
 
 通过使用这种相同的技术创建最终一致性环境还可以以延迟方式处理评分和点赞。
 
@@ -169,7 +170,7 @@ Azure DocumentDB 可确保所有属性通过其[自动索引](/documentation/art
 
 最复杂的一步是扩展用户。它包括所有重要的用户信息以及并不需要快速读取的其他数据，或者它的使用情况就是最终结果（就像登录过程一样）。此数据可以存储在 DocumentDB 外、Azure SQL 数据库或 Azure 表存储中。
 
-为什么我们要拆分用户，甚至将此信息存储在不同的位置？ 由于 DocumentDB 中的存储空间并不是无限大，并且从性能角度考虑，文档越大，查询成本将越高。保持文档精简，包含用于对社交网络执行所有依赖性能的查询的适当信息，并为最终方案（例如完整的配置文件编辑、登录名，甚至使用情况分析和大数据方案的数据挖掘）存储其他额外信息。我们实际上并不关心用于数据分析的数据收集速度是否减慢了，因为它是在 Azure SQL 数据库上运行的，然而我们确实很在意我们的用户是否具有快速和精简的用户体验。在 DocumentDB 中存储的用户外观如下所示：
+为什么我们要拆分用户，甚至将此信息存储在不同的位置？ 由于 DocumentDB 中的存储空间并[不是无限大](/documentation/articles/documentdb-limits/)，并且从性能角度考虑，文档越大，查询成本将越高。保持文档精简，包含用于对社交网络执行所有依赖性能的查询的适当信息，并为最终方案（例如完整的配置文件编辑、登录名，甚至使用情况分析和大数据方案的数据挖掘）存储其他额外信息。我们实际上并不关心用于数据分析的数据收集速度是否减慢了，因为它是在 Azure SQL 数据库上运行的，然而我们确实很在意我们的用户是否具有快速和精简的用户体验。在 DocumentDB 中存储的用户外观如下所示：
 
     {
         "id":"dse4-qwe2-ert4-aad2",
@@ -202,9 +203,9 @@ Azure DocumentDB 可确保所有属性通过其[自动索引](/documentation/art
 
 为什么会这么简单？
 
-Azure 搜索可实现它们称之为[索引器](https://msdn.microsoft.com/library/azure/dn946891.aspx)的内容，这是在数据存储库中挂钩的后台处理程序，可以自动添加、更新或删除索引中的对象。它们支持 [Azure SQL 数据库索引器](https://blogs.msdn.microsoft.com/kaevans/2015/03/06/indexing-azure-sql-database-with-azure-search/)、Azure Blob 索引器和 [Azure DocumentDB 索引器](/documentation/articles/documentdb-search-indexer/)。将信息从 DocumentDB 转换至 Azure 搜索比较简单，因为这两者都采用 JSON 格式存储数据，我们只需创建索引并映射我们想要编制索引的文档的属性即可，几分钟后（取决于数据的大小），便可通过云基础结构中最好的搜索即服务解决方案搜索所有内容。
+Azure 搜索可实现它们称之为[索引器](https://msdn.microsoft.com/zh-cn/library/azure/dn946891.aspx)的内容，这是在数据存储库中挂钩的后台处理程序，可以自动添加、更新或删除索引中的对象。它们支持 [Azure SQL 数据库索引器](https://blogs.msdn.microsoft.com/kaevans/2015/03/06/indexing-azure-sql-database-with-azure-search/)、Azure Blob 索引器和 [Azure DocumentDB 索引器](/documentation/articles/documentdb-search-indexer/)。将信息从 DocumentDB 转换至 Azure 搜索比较简单，因为这两者都采用 JSON 格式存储数据，我们只需创建索引并映射我们想要编制索引的文档的属性即可，几分钟后（取决于数据的大小），便可通过云基础结构中最好的搜索即服务解决方案搜索所有内容。
 
-有关 Azure 搜索的详细信息，请访问[Hitchhiker’s Guide to Search（搜索漫游指南）](https://blogs.msdn.microsoft.com/mvpawardprogram/2016/02/02/a-hitchhikers-guide-to-search/)。
+有关 Azure 搜索的详细信息，请访问 [Hitchhiker’s Guide to Search](https://blogs.msdn.microsoft.com/mvpawardprogram/2016/02/02/a-hitchhikers-guide-to-search/)（搜索漫游指南）。
 
 ## 基础知识
 
@@ -228,7 +229,6 @@ Azure 搜索可实现它们称之为[索引器](https://msdn.microsoft.com/libra
 
 ## 后续步骤
 
-阅读[对 DocumentDB 中的数据进行建模](/documentation/articles/documentdb-modeling-data/)一文，了解有关数据建模的详细信息。如需了解 DocumentDB 其他用例信息，请参阅 [DocumentDB 的常见用例](/documentation/articles/documentdb-use-cases/)。
+阅读 [Modeling data in DocumentDB](/documentation/articles/documentdb-modeling-data/)（为 DocumentDB 中的数据建模）一文，了解有关数据建模的详细信息。如需了解 DocumentDB 其他用例信息，请参阅 [Common DocumentDB use cases](/documentation/articles/documentdb-use-cases/)（DocumentDB 的常见用例）。
 
-
-<!---HONumber=Mooncake_0815_2016-->
+<!---HONumber=Mooncake_1121_2016-->
