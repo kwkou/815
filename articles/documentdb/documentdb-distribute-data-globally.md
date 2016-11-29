@@ -14,7 +14,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="na"
    ms.date="08/15/2016"
-   wacn.date="09/12/2016"
+   wacn.date="11/29/2016"
    ms.author="kipandya"/>
    
    
@@ -39,7 +39,7 @@ DocumentDB 提供多个妥善定义的（宽松）一致性模型供你选择。
 
 Azure DocumentDB 能够跨多个 Azure 区域以透明方式故障转移数据库帐户 - 新的[多宿主 API][developingwithmultipleregions] 保证应用可以继续使用逻辑终结点，并且不受故障转移的干扰。故障转移由你自己控制，在发生任何范围的故障状况时（包括应用程序、基础结构、服务或区域性故障，不管是实际的还是模拟的），可让你灵活复位数据库帐户。在发生 DocumentDB 区域性故障时，该服务将以透明方式故障转移你的数据库帐户，然后，你的应用程序可继续访问数据而不会失去可用性。DocumentDB 提供 [99.99% 的可用性 SLA][sla]，但你也可以测试应用程序的端到端可用性属性。为此，可以[通过编程方式][arm]或者 Azure 门户模拟区域性故障。
 
-
+<a name="scaling-across-the-planet"></a>
 ## 在全球范围内缩放
 DocumentDB 允许你在数据库帐户关联的所有区域中，以任何规模针对每个 DocumentDB 集合全局独立预配吞吐量以及使用存储。DocumentDB 集合将在数据库帐户关联的所有区域之间自动进行全局分发和管理。
 

@@ -1,11 +1,12 @@
-<properties 
-	pageTitle="DocumentDB Node.js SDK | Azure" 
-	description="了解有关 Node.js API 和 SDK 的全部信息，包括发布日期、停用日期和 DocumentDB Node.js SDK 各版本之间所做的更改。" 
-	services="documentdb" 
-	documentationCenter="nodejs" 
-	authors="rnagpal" 
-	manager="jhubbard" 
-	editor="cgronlun"/>
+<properties
+	pageTitle="DocumentDB Node.js API 和 SDK | Azure"
+	description="了解有关 Node.js API 和 SDK 的全部信息，包括发布日期、停用日期和 DocumentDB Node.js SDK 各版本之间所做的更改。"
+	services="documentdb"
+	documentationCenter="nodejs"
+	authors="rnagpal"
+	manager="jhubbard"
+	editor="cgronlun"/>  
+
 
 <tags
 	ms.service="documentdb"
@@ -13,17 +14,19 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="nodejs"
 	ms.topic="article"
-	ms.date="08/09/2016"
-	wacn.date="09/28/2016"
-	ms.author="rnagpal"/>
+	ms.date="10/03/2016"
+	ms.author="rnagpal"
+	wacn.date="11/28/2016"/>
 
-# DocumentDB SDK
+# DocumentDB API 和 SDK
 
 > [AZURE.SELECTOR]
 - [.NET](/documentation/articles/documentdb-sdk-dotnet/)
 - [Node.js](/documentation/articles/documentdb-sdk-node/)
 - [Java](/documentation/articles/documentdb-sdk-java/)
 - [Python](/documentation/articles/documentdb-sdk-python/)
+- [REST](https://go.microsoft.com/fwlink/?LinkId=402413)
+- [SQL](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx)
 
 ##DocumentDB Node.js API 和 SDK
 
@@ -36,9 +39,14 @@
 <tr><td>**入门教程**</td><td>[Node.js SDK 入门](/documentation/articles/documentdb-nodejs-get-started/)</td></tr>
 <tr><td>**Web 应用教程**</td><td>[使用 DocumentDB 构建 Node.js Web 应用程序](/documentation/articles/documentdb-nodejs-application/)</td></tr>
 <tr><td>**当前受支持的平台**</td><td>[Node.js v0.10](https://nodejs.org/en/blog/release/v0.10.0/)<br/>[Node.js v0.12](https://nodejs.org/en/blog/release/v0.12.0/)<br/>[Node.js v4.2.0](https://nodejs.org/en/blog/release/v4.2.0/)</td></tr>
-</table></br>
+</table>
 
 ##发行说明
+
+###<a name="1.10.0"/>1.10.0</a>
+
+- 添加了对跨分区并行查询的支持。
+- 添加了对分区集合的 TOP/ORDER BY 查询支持。
 
 ###<a name="1.9.0"/>1.9.0</a>
 
@@ -57,6 +65,7 @@
 - 在文档中添加了对生存时间 (TTL) 的支持。
 
 ###<a name="1.6.0"/>1.6.0</a>
+
 - 实现了[分区集合](/documentation/articles/documentdb-partition-data/)和[用户定义的性能级别](/documentation/articles/documentdb-performance-levels/)。
 
 ###<a name="1.5.6"/>1.5.6</a>
@@ -145,33 +154,34 @@ Azure DocumentDB SDK for Node.js 在 **1.0.0** 版之前的所有版本都将在
 
 <br/>
 
-| 版本 | 发布日期 | 停用日期 
+| 版本 | 发布日期 | 停用日期
 | ---	  | ---	         | ---
-| [1\.9.0](#1.9.0) | 2016 年 7 月 7 日 |---
-| [1\.8.0](#1.8.0) | 2016 年 6 月 14 日 |---
-| [1\.7.0](#1.7.0) | 2016 年 4 月 26 日 |---
-| [1\.6.0](#1.6.0) | 2016 年 3 月 29 日 |---
-| [1\.5.6](#1.5.6) | 2016 年 3 月 8 日 |---
-| [1\.5.5](#1.5.5) | 2016 年 2 月 2 日 |---
-| [1\.5.4](#1.5.4) | 2016 年 2 月 1 日 |---
-| [1\.5.2](#1.5.2) | 2016 年 1 月 26 日 |---
-| [1\.5.2](#1.5.2) | 2016 年 1 月 22 日 |---
-| [1\.5.1](#1.5.1) | 2016 年 1 月 4 日 |---
-| [1\.5.0](#1.5.0) | 2015 年 12 月 31 日 |---
-| [1\.4.0](#1.4.0) | 2015 年 10 月 6 日 |---
-| [1\.3.0](#1.3.0) | 2015 年 10 月 6 日 |---
-| [1\.2.2](#1.2.2) | 2015 年 9 月 10 日 |---
-| [1\.2.1](#1.2.1) | 2015 年 8 月 15 日 |---
-| [1\.2.0](#1.2.0) | 2015 年 8 月 5 日 |---
-| [1\.1.0](#1.1.0) | 2015 年 7 月 9 日 |---
-| [1\.0.3](#1.0.3) | 2015 年 6 月 4 日 |---
-| [1\.0.2](#1.0.2) | 2015 年 5 月 23 日 |---
-| [1\.0.1](#1.0.1) | 2015 年 5 月 15 日 |---
-| [1\.0.0](#1.0.0) | 2015 年 4 月 8 日 |---
-| 0.9.4-prerelease | 2015 年 4 月 6 日 | 2016 年 2 月 29 日
-| 0.9.3-prerelease | 2015 年 1 月 14 日 | 2016 年 2 月 29 日
-| 0.9.2-prerelease | 2014 年 12 月 18 日 | 2016 年 2 月 29 日
-| 0.9.1-prerelease | 2014 年 8 月 22 日 | 2016 年 2 月 29 日
+| [1\.10.0](#1.10.0) | 2016 年 10 月 3 日 |--- 
+| [1\.9.0](#1.9.0) | 2016 年 7 月 7 日 |--- 
+| [1\.8.0](#1.8.0) | 2016 年 6 月 14 日 |--- 
+| [1\.7.0](#1.7.0) | 2016 年 4 月 26 日 |--- 
+| [1\.6.0](#1.6.0) | 2016 年 3 月 29 日 |--- 
+| [1\.5.6](#1.5.6) | 2016 年 3 月 8 日 |--- 
+| [1\.5.5](#1.5.5) | 2016 年 2 月 2 日 |--- 
+| [1\.5.4](#1.5.4) | 2016 年 2 月 1 日 |--- 
+| [1\.5.2](#1.5.2) | 2016 年 1 月 26 日 |--- 
+| [1\.5.2](#1.5.2) | 2016 年 1 月 22 日 |--- 
+| [1\.5.1](#1.5.1) | 2016 年 1 月 4 日 |--- 
+| [1\.5.0](#1.5.0) | 2015 年 12 月 31 日 |--- 
+| [1\.4.0](#1.4.0) | 2015 年 10 月 6 日 |--- 
+| [1\.3.0](#1.3.0) | 2015 年 10 月 6 日 |--- 
+| [1\.2.2](#1.2.2) | 2015 年 9 月 10 日 |--- 
+| [1\.2.1](#1.2.1) | 2015 年 8 月 15 日 |--- 
+| [1\.2.0](#1.2.0) | 2015 年 8 月 5 日 |--- 
+| [1\.1.0](#1.1.0) | 2015 年 7 月 9 日 |--- 
+| [1\.0.3](#1.0.3) | 2015 年 6 月 4 日 |--- 
+| [1\.0.2](#1.0.2) | 2015 年 5 月 23 日 |--- 
+| [1\.0.1](#1.0.1) | 2015 年 5 月 15 日 |--- 
+| [1\.0.0](#1.0.0) | 2015 年 4 月 8 日 |--- 
+| 0.9.4-prerelease | 2015 年 4 月 6 日 | 2016 年 2 月 29 日 
+| 0.9.3-prerelease | 2015 年 1 月 14 日 | 2016 年 2 月 29 日 
+| 0.9.2-prerelease | 2014 年 12 月 18 日 | 2016 年 2 月 29 日 
+| 0.9.1-prerelease | 2014 年 8 月 22 日 | 2016 年 2 月 29 日 
 | 0.9.0-prerelease | 2014 年 8 月 21 日 | 2016 年 2 月 29日
 
 
@@ -180,6 +190,6 @@ Azure DocumentDB SDK for Node.js 在 **1.0.0** 版之前的所有版本都将在
 
 ## 另请参阅
 
-要了解有关 DocumentDB 的详细信息，请参阅 [Azure DocumentDB](https://azure.microsoft.com/services/documentdb/) 服务页。
+若要了解有关 DocumentDB 的详细信息，请参阅 [Azure DocumentDB](/home/features/documentdb/) 服务页。
 
-<!---HONumber=Mooncake_0919_2016-->
+<!---HONumber=Mooncake_1121_2016-->

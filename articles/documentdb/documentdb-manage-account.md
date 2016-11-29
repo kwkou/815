@@ -4,9 +4,10 @@
 	keywords="Azure 门户预览, documentdb, azure, Azure"
 	services="documentdb"
 	documentationCenter=""
-	authors="AndrewHoh"
+	authors="kirillg"
 	manager="jhubbard"
-	editor="cgronlun"/>
+	editor="cgronlun"/>  
+
 
 <tags
 	ms.service="documentdb"
@@ -14,9 +15,9 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="08/24/2016"
-	wacn.date="11/10/2016"
-	ms.author="kirillg"/>
+	ms.date="10/14/2016"
+	ms.author="kirillg"
+	wacn.date="11/28/2016"/>
 
 # 如何管理 DocumentDB 帐户
 
@@ -30,7 +31,9 @@
 
 1. 在 [Azure 门户预览](https://portal.azure.cn/)中，访问 DocumentDB 帐户。
 2. 在帐户边栏选项卡中，单击“默认一致性”。
-3. 在“默认一致性”边栏选项卡中，选择新的一致性级别，然后单击“保存”。![默认一致性会话][5]
+3. 在“默认一致性”边栏选项卡中，选择新的一致性级别，然后单击“保存”。
+
+    ![默认一致性会话][5]
 
 ## <a id="keys"></a>查看、复制和重新生成访问密钥
 当你创建 DocumentDB 帐户时，服务生成两个主访问密钥，用于访问 DocumentDB 帐户时的身份验证。提供两个访问密钥后，DocumentDB 支持在不中断你的 DocumentDB 帐户连接的情况下重新生成密钥。
@@ -62,7 +65,8 @@
 2. 为你的 DocumentDB 帐户重新生成主访问密钥。在 [Azure 门户预览](https://portal.azure.cn/)中，访问 DocumentDB 帐户。
 3. 在“DocumentDB 帐户”边栏选项卡中，单击“密钥”。
 4. 在“密钥”边栏选项卡上，单击“重新生成”按钮，然后单击“确定”确认要生成新密钥。
-    ![重新生成访问密钥](./media/documentdb-manage-account/regenerate-keys.png)
+
+	![重新生成访问密钥](./media/documentdb-manage-account/regenerate-keys.png)
 
 5. 当你确认新的密钥可供使用后（大约在重新生成后的 5 分钟），请更新应用程序代码中的访问密钥以引用新的主访问密钥。
 6. 重新生成辅助访问密钥。
@@ -72,6 +76,16 @@
 
 
 > [AZURE.NOTE] 可能需要几分钟时间才能使用新生成的密钥来访问你的 DocumentDB 帐户。
+
+## 获取连接字符串
+
+若要检索连接字符串，请执行以下操作：
+
+1. 在 [Azure 门户预览](https://portal.azure.cn)中，访问 DocumentDB 帐户。
+2. 在资源菜单中，单击“密钥”。
+3. 单击“主连接字符串”或“辅助连接字符串”框旁边的“复制”按钮。
+
+如果在 [DocumentDB 数据库迁移工具](/documentation/articles/documentdb-import-data/)中使用连接字符串，请数据库名称追加到连接字符串的末尾。`AccountEndpoint=< >;AccountKey=< >;Database=< >`。
 
 ## <a id="delete"></a> 删除 DocumentDB 帐户
 若要从 Azure 门户预览中删除不再使用的 DocumentDB 帐户，请使用“DocumentDB 帐户”边栏选项卡中的“删除帐户”命令。
@@ -85,11 +99,11 @@
 3. 在生成的确认边栏选项卡中，键入 DocumentDB 帐户名称以确认要删除该帐户。
 4. 单击“删除”按钮。
 
-![如何在 Azure 门户预览中删除 DocumentDB 帐户](./media/documentdb-manage-account/delete-account-confirm.png)
+	![如何在 Azure 门户预览中删除 DocumentDB 帐户](./media/documentdb-manage-account/delete-account-confirm.png)
 
 ## <a id="next"></a>后续步骤
 
-了解如何[开始使用 DocumentDB 帐户](/documentation/articles/documentdb-get-started/)。
+了解如何[开始使用 DocumentDB 帐户](/documentation/articles/documentdb-get-started-quickstart/)。
 
 若要了解更多有关 DocumentDB 的信息，请参阅 [azure.cn](/documentation/services/documentdb/) 上的 Azure DocumentDB 文档。
 
@@ -104,7 +118,6 @@
 
 <!--Reference style links - using these makes the source content way more readable than using inline links-->
 [consistency]: /documentation/articles/documentdb-consistency-levels/
-[azureregions]: https://azure.microsoft.com/zh-cn/regions/#services
 [offers]: /pricing/details/documentdb/
 
-<!---HONumber=Mooncake_1010_2016-->
+<!---HONumber=Mooncake_1121_2016-->
