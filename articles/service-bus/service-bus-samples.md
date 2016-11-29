@@ -24,7 +24,6 @@
 >
 >另外，[此处](https://github.com/Azure-Samples/azure-servicebus-messaging-samples)提供一组已更新的服务总线消息传送示例（撰写本文时未介绍这些示例）。[此处](https://github.com/Azure-Samples/azure-servicebus-relay-samples)是中继示例。
 
-有关中继示例，请参阅[服务总线中继示例](/documentation/articles/service-bus-relay-samples/)。
 
 ## 服务总线消息传送
 
