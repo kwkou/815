@@ -19,6 +19,8 @@
 
 # 从 Visual Studio 配置与 Service Fabric 群集的安全连接
 
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-sdk-developer-differences.md)]
+
 了解如何使用 Visual Studio 安全访问已配置访问控制策略的 Azure Service Fabric 群集。
 
 ## 群集连接类型

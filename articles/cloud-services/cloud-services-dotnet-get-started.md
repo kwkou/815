@@ -19,6 +19,8 @@
 
 # Azure 云服务和 ASP.NET 入门
 
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-sdk-developer-differences.md)]
+
 > [AZURE.SELECTOR]
 - [Node.js](/documentation/articles/cloud-services-nodejs-develop-deploy-app/)
 - [.NET](/documentation/articles/cloud-services-dotnet-get-started/)

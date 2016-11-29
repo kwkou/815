@@ -19,6 +19,8 @@
 
 # 管理多个环境的应用程序参数
 
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-sdk-developer-differences.md)]
+
 你可以在任何位置，使用任意数量的计算机（从一台到数千台）来创建 Service Fabric 群集。尽管无需针对各种环境进行修改即可运行应用程序二进制文件，但你通常会根据所要部署的计算机数目，以不同的方式配置应用程序。
 
 举个简单的例子，假设某个无状态服务有 `InstanceCount` 参数。当你在 Azure 中运行应用程序时，通常要将此参数设置为特殊值“-1”。这可确保服务在群集中的每个节点上运行。但是，此配置并不适用于单计算机群集，因为不能有多个进程在单计算机的同一终结点上侦听。在这种情况下，你通常会将 `InstanceCount` 设置为“1”。
