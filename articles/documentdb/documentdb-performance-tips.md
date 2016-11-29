@@ -25,8 +25,7 @@ Azure DocumentDB 是一个快速、弹性的分布式数据库，可以在提供
 
 如果你有“如何改善数据库性能”的疑问，请考虑以下选项：
 
-## 联网
-<a id="direct-connection"></a>
+## 联网 <a id="direct-connection"></a>
 
 1. **连接策略：使用直接连接模式**
     
@@ -70,8 +69,8 @@ Azure DocumentDB 是一个快速、弹性的分布式数据库，可以在提供
     默认情况下，第一个请求因为必须提取地址路由表而有较高的延迟。为了避免首次请求时的这种启动延迟，应该在初始化期间调用 OpenAsync() 一次，如下所示。
 
         await client.OpenAsync();
-<a id="same-region"></a>
-4. **将客户端并置在同一个 Azure 区域以提高性能**
+
+4. **将客户端并置在同一个 Azure 区域以提高性能** <a id="same-region"></a>
 
     如果可能，请将任何调用 DocumentDB 的应用程序放在与 DocumentDB 数据库相同的区域中。通过大致的比较发现，在同一区域中对 DocumentDB 的调用可在 1-2 毫秒内完成，而美国西岸和美国东岸之间的延迟则大于 50 毫秒。根据请求采用的路由，各项请求从客户端传递到 Azure 数据中心边界时的此类延迟可能有所不同。确保调用方应用程序位于与预配的 DocumentDB 终结点相同的 Azure 区域中，有可能会实现最低的延迟。
 
@@ -160,8 +159,8 @@ Azure DocumentDB 是一个快速、弹性的分布式数据库，可以在提供
 
     有关详细信息，请参阅 [DocumentDB indexing policies](/documentation/articles/documentdb-indexing-policies/)（DocumentDB 索引策略）。
 
-## 吞吐量
-<a id="measure-rus"></a>
+## 吞吐量  <a id="measure-rus"></a>
+
 
 1. **测量和优化较低的每秒请求单位使用量**
 

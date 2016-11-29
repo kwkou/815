@@ -462,8 +462,7 @@ DocumentDB - 顺序记录导入程序具有下列高级附加选项︰
 
 > [AZURE.NOTE] 如果未指定索引策略，则将应用默认策略。有关索引策略的详细信息，请参阅 [DocumentDB 索引策略](/documentation/articles/documentdb-indexing-policies/)。
 
-<a name="export-to-json-file"></a>
-## 导出到 JSON 文件
+## <a name="export-to-json-file"></a>导出到 JSON 文件
 
 使用 DocumentDB JSON 导出程序，可以将所有可用的源选项导出到包含一组 JSON 文档的 JSON 文件。该工具可为你处理导出，你也可以选择查看生成的迁移命令并自己运行该命令。生成的 JSON 文件可能存储在本地或 Azure Blob 存储中。
 
@@ -513,7 +512,7 @@ DocumentDB - 顺序记录导入程序具有下列高级附加选项︰
 
 然后，选择是记录所有、关键还是无错误消息。最后，根据进度决定更新屏幕传输消息的频率。
 
-	![Screenshot of Advanced configuration screen](./media/documentdb-import-data/AdvancedConfiguration.png)
+![Screenshot of Advanced configuration screen](./media/documentdb-import-data/AdvancedConfiguration.png)
 
 ## 确认导入设置并查看命令行
 

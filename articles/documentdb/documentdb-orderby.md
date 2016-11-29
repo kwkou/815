@@ -95,12 +95,12 @@ DocumentDB 支持每个查询使用单个数值、字符串或布尔值属性进
     
     await client.CreateDocumentCollectionAsync(UriFactory.CreateDatabaseUri("db"), booksCollection);  
 
-<a name="samples"></a>
-## 示例
+
+## 示例 <a name="samples"></a>
 查看 [Github 示例项目](https://github.com/Azure/azure-documentdb-dotnet/tree/master/samples/code-samples/Queries)，了解如何使用 Order By，包括创建索引策略和使用 Order By 进行分页。这些示例是开放源代码的，并且我们鼓励你提交可让其他 DocumentDB 开发人员获益的相关拉取请求。
 
-<a name="faq"></a>
-## 常见问题
+
+## 常见问题 <a name="faq"></a>
 
 **Order By 查询的预期请求单位 (RU) 使用情况如何？**
 
@@ -133,8 +133,8 @@ DocumentDB 支持每个查询使用单个数值、字符串或布尔值属性进
 
 如果收到不支持 Order By 的错误，请确保使用支持 Order By 的 [SDK](/documentation/articles/documentdb-sdk-dotnet/) 版本。
 
-<a name="Whats_coming_next"></a>
-## 后续步骤
+
+## 后续步骤 <a name="Whats_coming_next"></a>
 
 派生 [Github 示例项目](https://github.com/Azure/azure-documentdb-dotnet/tree/master/samples/code-samples/Queries)并开始对数据排序！
 
