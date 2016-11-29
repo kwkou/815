@@ -7,11 +7,11 @@
 
 <div>
   <h1>下载</h1>
+  <h3>获取你所需的 SDK 和命令行工具</h3>
+</div>
 
 >[AZURE.NOTE] 本文涉及的 SDK 和工具应用于由微软运营的 Microsoft Azure 服务；在中国， Microsoft Azure 服务由世纪互联公司运营，如需使用，请参考 [Azure 应用程序开发说明](/documentation/articles/developerdifferences/)。
 
-  <h3>获取你所需的 SDK 和命令行工具</h3>
-</div>
 <div>
   <h2>SDK</h2>
   <p>为所选平台下载并安装语言特定的 SDK 和工具。</p>
