@@ -5,7 +5,7 @@
     />
 
 
-[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-sdk-developer-differences.md)]
+[AZURE.INCLUDE [azure-sdk-developer-differences](../includes/azure-sdk-developer-differences.md)]
 
 <div>
   <h1>下载</h1>
