@@ -6,8 +6,8 @@
 	authors=""
 	manager="" 
 	editor=""/>
-<tags ms.service="sql-database-aog" ms.date="" wacn.date="08/31/2016"/>
-# 如何查看 SQL Azure 数据库死锁 (DB POD)
+<tags ms.service="sql-database-aog" ms.date="" wacn.date="11/30/2016"/>
+# 如何查看 SQL Azure 数据库死锁
 
 >前言：对于 SQL Server on premise 来说, 我们可以 enable trace flag 1222 或者 1205，然后死锁的信息就会被打印到 error log 中，我们就可以进行进一步的分析。
 但是对于 SQL Azure 来说，由于权限的问题，用户没有办法直接访问 SQL Azure 的 error log, 这篇文章的目的就是介绍如何查看 SQL Azure中 的数据库死锁的情况。
