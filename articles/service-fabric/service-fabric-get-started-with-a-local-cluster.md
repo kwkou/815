@@ -212,9 +212,9 @@ Service Fabric 在应用程序推出于群集时监视其运行状况，从而�
 
 2. 从 SDK 文件夹运行群集设置脚本：
 
-	```powershell
-	& "$ENV:ProgramFiles\Microsoft SDKs\Service Fabric\ClusterSetup\DevClusterSetup.ps1" -CreateOneNodeCluster
-	```
+
+        & "$ENV:ProgramFiles\Microsoft SDKs\Service Fabric\ClusterSetup\DevClusterSetup.ps1" -CreateOneNodeCluster
+
 
     群集设置需要一段时间。完成设置后，您应会看到类似于下面的输出：
     
