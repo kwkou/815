@@ -370,7 +370,7 @@ Service Fabric 群集提供其管理功能的各种入口点，包括基于 Web 
 	}
 
 
-### <a "configure-arm" ></a>配置 Resource Manager 模板参数
+### <a name="configure-arm"></a>配置 Resource Manager 模板参数
 
 最后，使用密钥保管库和 AAD PowerShell 命令的输出值填充参数文件：
 

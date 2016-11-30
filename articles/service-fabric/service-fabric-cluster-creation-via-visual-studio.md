@@ -128,7 +128,7 @@ Visual Studio Service Fabric Resource Manager 模板将创建一个受证书保�
 >[AZURE.NOTE] Service Fabric 群集需要有一定数量的节点可以启动，以保持可用性和状态 - 称为“维持仲裁”。 因此，除非已事先执行[状态的完整备份](/documentation/articles/service-fabric-reliable-services-backup-restore/)，否则关闭群集中的所有计算机是不安全的做法。
 
 ## 后续步骤
-- [了解如何使用 Azure 门户设置 Service Fabric 群集](/documentation/articles/service-fabric-cluster-creation-via-portal/)
+- [了解如何使用 Azure 门户预览设置 Service Fabric 群集](/documentation/articles/service-fabric-cluster-creation-via-portal/)
 - [了解如何使用 Visual Studio 管理和部署 Service Fabric 应用程序](/documentation/articles/service-fabric-manage-application-in-visual-studio/)
 
 <!--Image references-->

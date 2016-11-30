@@ -107,9 +107,7 @@ Visual Studio 提供 Service Fabric 服务模板来帮助你将来宾可执行�
 3. 编辑服务清单文件。
 4. 编辑应用程序清单文件。
 
-<!--
->[AZURE.NOTE] We do provide a packaging tool that allows you to create the ApplicationPackage automatically. The tool is currently in preview. You can download it from [here](http://aka.ms/servicefabricpacktool).
--->
+
 
 
 ### 创建包目录结构

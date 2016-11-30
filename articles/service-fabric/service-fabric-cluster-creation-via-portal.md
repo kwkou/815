@@ -200,8 +200,8 @@ Service Fabric 使用 X.509 证书保护群集。Azure 密钥保管库用于管�
    - 密钥保管库
      - 群集服务器身份验证证书
 
-</a "create-cluster-portal" ></a>
-## 在 Azure 门户预览中创建群集
+
+##<a name="create-cluster-portal"></a> 在 Azure 门户预览中创建群集
 
 ### 搜索 Service Fabric 群集资源
 

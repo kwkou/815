@@ -204,30 +204,30 @@ TestConfiguration 脚本可测试 cluster.json 中定义的基础结构，确保
 
 默认情况下，本产品会收集有关 Service Fabric 使用情况的遥测数据来改善自身。在安装过程运行的最佳实践分析器将检查能否连接到 [https://vortex.data.microsoft.com/collect/v1](https://vortex.data.microsoft.com/collect/v1)。如果无法连接，安装将会失败，除非选择禁用遥测。
 
-  1. 遥测管道每天都会尝试一次将以下数据上载到 [https://vortex.data.microsoft.com/collect/v1](https://vortex.data.microsoft.com/collect/v1)。这是一种尽力而为的上载操作，不会影响群集功能。遥测数据只会从运行主要故障转移管理器的节点发送。其他节点都不会发送遥测数据。
+1. 遥测管道每天都会尝试一次将以下数据上载到 [https://vortex.data.microsoft.com/collect/v1](https://vortex.data.microsoft.com/collect/v1)。这是一种尽力而为的上载操作，不会影响群集功能。遥测数据只会从运行主要故障转移管理器的节点发送。其他节点都不会发送遥测数据。
 
-  2. 遥测数据由以下内容组成：
+2. 遥测数据由以下内容组成：
 
--            服务数目
--            ServiceTypes 数目
--            Applications 数目
--            ApplicationUpgrades 数目
--            FailoverUnits 数目
--            InBuildFailoverUnits 数目
--            UnhealthyFailoverUnits 数目
--            Replicas 数目
--            InBuildReplicas 数目
--            StandByReplicas 数目
--            OfflineReplicas 数目
--            CommonQueueLength
--            QueryQueueLength
--            FailoverUnitQueueLength
--            CommitQueueLength
--            Nodes 数目
--            IsContextComplete: True/False
--            ClusterId：为每个群集随机生成的 GUID。
--            ServiceFabricVersion
--             从中上载遥测数据的虚拟机或计算机的 IP 地址
+	- 服务数目
+	- ServiceTypes 数目
+	- Applications 数目
+	- ApplicationUpgrades 数目
+	- FailoverUnits 数目
+	- InBuildFailoverUnits 数目
+	- UnhealthyFailoverUnits 数目
+	- Replicas 数目
+	- InBuildReplicas 数目
+	- StandByReplicas 数目
+	- OfflineReplicas 数目
+	- CommonQueueLength
+	- QueryQueueLength
+	- FailoverUnitQueueLength
+	- CommitQueueLength
+	- Nodes 数目
+	- IsContextComplete: True/False
+	- ClusterId：为每个群集随机生成的 GUID。
+	- ServiceFabricVersion
+	- 从中上载遥测数据的虚拟机或计算机的 IP 地址
 
 
 若要禁用遥测，请将以下参数添加到群集配置中的 *properties*：*enableTelemetry: false*。
