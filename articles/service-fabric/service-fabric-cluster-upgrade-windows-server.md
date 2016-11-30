@@ -196,7 +196,7 @@
 		Get-ServiceFabricClusterUpgrade
 
 
-	如果不符合现行的群集运行状况策略，则回滚升级。此时，可以指定自定义运行状况策略。有关 start-serviceFabricClusterUpgrade 命令的详细信息，请参阅[此文档](https://msdn.microsoft.com/zh-cn/library/mt125872.aspx)。
+如果不符合现行的群集运行状况策略，则回滚升级。此时，可以指定自定义运行状况策略。有关 start-serviceFabricClusterUpgrade 命令的详细信息，请参阅[此文档](https://msdn.microsoft.com/zh-cn/library/mt125872.aspx)。
 
 解决导致回滚的问题后，需要遵循前面相同的步骤再次启动升级。
 
