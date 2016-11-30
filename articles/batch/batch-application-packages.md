@@ -15,7 +15,7 @@
 	ms.tgt_pltfrm="vm-windows"
 	ms.workload="big-compute"
 	ms.date="08/25/2016"
-	wacn.date="11/28/2016"
+	wacn.date="11/30/2016"
 	ms.author="marsma" />  
 
 
@@ -76,8 +76,7 @@ Batch 中的应用程序包含一个或多个应用程序包，指定应用程�
 
 可以使用 [Azure 门户预览][portal]或 [Batch 管理 .NET](/documentation/articles/batch-management-dotnet/) 库来管理 Batch 帐户中的应用程序包。在后面几个部分中，将先链接存储帐户，然后介绍如何使用门户来添加应用程序和包以及管理它们。
 
-<a name="link-a-storage-account"></a>
-### 链接存储帐户
+### 链接存储帐户 <a name="link-a-storage-account"></a>
 
 若要使用应用程序包，必须先将 Azure 存储帐户链接到 Batch 帐户。如果还没有为 Batch 帐户配置存储帐户，Azure 门户预览在第一次单击 Batch 帐户边栏选项卡中的“应用程序”磁贴时显示警告。
 

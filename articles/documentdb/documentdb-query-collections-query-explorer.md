@@ -15,7 +15,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="08/30/2016"
-	wacn.date="11/21/2016"
+	wacn.date="11/30/2016"
 	ms.author="kirillg"/>  
 
 
@@ -71,8 +71,7 @@
 
 ![显示如何使用“加载文件”将 SQL 查询从文件加载到查询资源管理器的屏幕截图](./media/documentdb-query-collections-query-explorer/loadqueryfile.png)  
 
-<a name="troubleshoot"></a>
-## 故障排除
+## 故障排除  <a name="troubleshoot"></a>
 
 如果查询完成但有错误，查询资源管理器将显示可以帮助进行故障排除工作的错误列表。
 

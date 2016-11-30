@@ -14,7 +14,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="08/03/2016"
-	wacn.date="11/25/2016"
+	wacn.date="11/30/2016"
 	ms.author="asteen"/>
 
 # 自定义密码管理以符合组织的需求
@@ -129,8 +129,8 @@
             </tr>
           </tbody></table>
 
-<a name="password-management-behavior"></a>
-## 密码管理行为
+
+## 密码管理行为 <a name="password-management-behavior"></a>
 下表说明了每个控件对注册密码重置并重置密码的用户体验有何影响。可以在 [Azure 经典管理门户](https://manage.windowsazure.cn)中目录的“配置”选项卡的“用户密码重置策略”部分下配置这些选项。
 
 > [AZURE.NOTE]你所使用的管理员帐户必须分配了 AAD Premium 许可证才能看到这些策略控件。<br><br>这些策略控件仅适用于重置密码的最终用户，而不是管理员。**Microsoft 为管理员指定了默认的备用电子邮件和/或移动电话策略，这些策略无法更改。**
@@ -781,7 +781,7 @@
             </tr>
           </tbody></table>
 
-## <a name="password-management-notifications"></a>密码管理通知
+## 密码管理通知  <a name="password-management-notifications"></a>
 下表介绍每个控件对接收密码重置通知的用户和管理员的体验有何影响。可以在 [Azure 经典管理门户](https://manage.windowsazure.cn)中目录“配置”选项卡的“通知”部分下方配置这些选项。
 
 <table>

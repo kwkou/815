@@ -15,7 +15,7 @@
 	ms.topic="article"
 	ms.date="08/30/2016"
 	ms.author="billmath"
-   	wacn.date="11/28/2016"/>  
+   	wacn.date="11/30/2016"/>  
 
 
 # 在 Azure 多重身份验证中使用移动应用作为联系方法
@@ -72,8 +72,7 @@ Microsoft Authenticator 应用可用于 [Windows Phone](http://go.microsoft.com/
 11. 如果正在使用非浏览器应用，请复制提供的应用密码，然后将该密码粘贴到这些应用。有关在单个应用（例如 Outlook 和 Lync）上执行的步骤，请参阅“如何将电子邮件中的密码更改为应用密码”和“如何将应用程序中的密码更改为应用密码”。
 12. 选择“完成”。
 
-<a name="add-an-account-manually"></a>
-## 手动添加帐户
+## 手动添加帐户 <a name="add-an-account-manually"></a>
 如果要手动添加帐户，请执行以下操作：
 
 1. 选择“手动输入帐户”按钮。

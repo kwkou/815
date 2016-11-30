@@ -15,7 +15,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="09/10/2016"
-	wacn.date="11/28/2016"
+	wacn.date="11/30/2016"
 	ms.author="marsma"/>  
 
 
@@ -32,8 +32,7 @@
 ---|---|---
 每个区域每个订阅的 Batch 帐户数 | 1 | 50
 
-<a name="batch-account-quotas"></a>
-## Batch 帐户配额
+## Batch 帐户配额  <a name="batch-account-quotas"></a>
 [AZURE.INCLUDE [azure-batch-limits](../../includes/azure-batch-limits.md)]
 
 ## 其他限制
@@ -58,8 +57,7 @@
 
 	![Batch 帐户配额][account_quotas]  
 
-<a name="increase-a-quota"></a>
-## 提高配额
+## 提高配额  <a name="increase-a-quota"></a>
 
 执行以下步骤，使用 [Azure 门户预览][portal]来请求提高配额。
 

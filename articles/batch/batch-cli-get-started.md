@@ -15,7 +15,7 @@
    ms.tgt_pltfrm="multiple"
    ms.workload="big-compute"
    ms.date="09/06/2016"
-   wacn.date="11/28/2016"
+   wacn.date="11/30/2016"
    ms.author="marsma"/>  
 
 
@@ -61,8 +61,7 @@
 
 > [AZURE.NOTE] Batch 帐户名必须是创建帐户的 Azure 区域内的唯一名称。它只能包含小写字母数字字符，且长度必须为 3-24 个字符。不能在 Batch 帐户名中使用 `-` 或 `_` 等特殊字符。
 
-<a name="linked-storage-account-autostorage"></a>
-### 链接存储帐户（自动存储）
+### 链接存储帐户（自动存储） <a name="linked-storage-account-autostorage"></a>
 
 （可选）在创建 Batch 帐户时，可以将**常规用途**存储帐户链接到该帐户。与 [Batch 文件约定 .NET](/documentation/articles/batch-task-output/)库一样，Batch 的[应用程序包](/documentation/articles/batch-application-packages/)功能在链接的常规用途存储帐户中使用 Blob 存储。这些可选功能可帮助部署 Batch 任务运行的应用程序，以及保存它们生成的数据。
 
@@ -116,20 +115,17 @@
 
 为给定的 Batch 帐户重新生成指定的帐户密钥。
 
-<a name="create-and-modify-batch-resources"></a>
-## 创建和修改 Batch 资源
+## 创建和修改 Batch 资源 <a name="create-and-modify-batch-resources"></a>
 
 可以使用 Azure CLI 创建、读取、更新和删除 (CRUD) Batch 资源，例如池、计算节点、作业和任务。这些 CRUD 操作需要 Batch 帐户名、访问密钥和终结点。可以使用 `-a`、`-k` 和 `-u` 选项指定这些对象，或者设置 CLI 自动使用的[环境变量](#credential-environment-variables)（如果已填充）。
 
-<a name="credential-environment-variables"></a>
-### 凭据环境变量
+### 凭据环境变量  <a name="credential-environment-variables"></a>
 
 可以设置 `AZURE_BATCH_ACCOUNT`、`AZURE_BATCH_ACCESS_KEY` 和 `AZURE_BATCH_ENDPOINT` 环境变量，而无需每次执行命令时在命令行上指定 `-a`、`-k` 和 `-u` 选项。Batch CLI 将使用这些变量（如果已设置），因此可以省略 `-a`、`-k` 和 `-u` 选项。本文的余下部分假设使用这些环境变量。
 
 >[AZURE.TIP] 使用 `azure batch account keys list` 列出密钥，使用 `azure batch account show` 显示帐户的终结点。
 
-<a name="json-files"></a>
-### JSON 文件
+### JSON 文件  <a name="json-files"></a>
 
 创建 Batch 资源（如池和作业）时，可以指定包含新资源配置的 JSON 文件，而无需将资源的参数作为命令行选项传递。例如：
 

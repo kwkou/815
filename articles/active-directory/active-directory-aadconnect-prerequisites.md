@@ -14,7 +14,7 @@
    ms.devlang="na"
    ms.topic="article"
    ms.date="06/27/2016"
-   wacn.date="11/25/2016"
+   wacn.date="11/30/2016"
    ms.author="billmath"/>
 
 # Azure AD Connect 的先决条件
@@ -58,8 +58,7 @@
 ### Azure AD Connect 服务器配置
 - 如果全局管理员已启用 MFA，URL **https://secure.aadcdn.microsoftonline-p.com** 就必须在受信任的站点列表中。在显示 MFA 质询提示之前，系统会先提示你将此 URL 添加到受信任的站点列表中（如果尚未添加）。可以使用 Internet Explorer 将它添加到受信任的站点。
 
-<a name="connectivity"></a>
-### 连接
+### 连接 <a name="connectivity"></a>
 - Azure AD Connect 服务器需要 Intranet 和 Internet 的 DNS 解析。DNS 服务器必须能够将名称解析成本地 Active Directory 以及 Azure AD 终结点。
 - 如果 Intranet 有防火墙，而你需要开放 Azure AD Connect 服务器与域控制器之间的端口，请参阅 [Azure AD Connect 连接端口](/documentation/articles/active-directory-aadconnect-ports/)来了解详细信息。
 - 如果代理限制了可访问的 URL，则必须在代理中打开 [Office 365 URL 和 IP 地址范围](https://support.office.com/article/Office-365-URLs-and-IP-address-ranges-8548a211-3fe7-47cb-abb1-355ea5aa88a2)中所述的 URL。
@@ -100,7 +99,7 @@
 ### 其他
 - 可选：一个用于验证同步的测试用户帐户。
 
-## <a name="component-prerequisites"></a>组件先决条件
+## 组件先决条件 <a name="component-prerequisites"></a>
 
 ### PowerShell 和.Net Framework
 Azure AD Connect 依赖于 Microsoft PowerShell 和 .NET Framework 4.5.1。你的服务器上需要安装此版本或更高版本。请根据 Windows Server 版本执行以下操作：
@@ -115,7 +114,7 @@ Azure AD Connect 依赖于 Microsoft PowerShell 和 .NET Framework 4.5.1。你�
   - 可从 [Microsoft 下载中心](http://www.microsoft.com/downloads)获取的 **Windows Management Framework 3.0** 中包含最新的受支持 PowerShell 版本。
  - .NET Framework 4.5.1 和更高版本可从 [Microsoft 下载中心](http://www.microsoft.com/downloads)获取。
 
-### <a name="enable-tls-12-for-azure-ad-connect"></a>为 Azure AD Connect 启用 TLS 1.2
+### 为 Azure AD Connect 启用 TLS 1.2  <a name="enable-tls-12-for-azure-ad-connect"></a>
 Azure AD Connect 默认情况下使用 TLS 1.0 对同步引擎服务器和 Azure AD 之间的通信进行加密。可以通过配置 .Net 应用程序在服务器上默认使用 TLS 1.2 来更改此项。有关 TLS 1.2 的详细信息，请参阅 [Microsoft 安全通报 2960358](https://technet.microsoft.com/security/advisory/2960358)。
 
 1. 无法在 Windows Server 2008 上启用 TLS 1.2。需要 Windows Server 2008R2 或更高版本。请确保已为操作系统安装了 .Net 4.5.1 修补程序，请参阅 [Microsoft 安全通报 2960358](https://technet.microsoft.com/security/advisory/2960358)。在你的服务器上可能已经安装了此版本或更高版本。
@@ -134,7 +133,7 @@ Azure AD Connect 默认情况下使用 TLS 1.0 对同步引擎服务器和 Azure
 
 ## 联合身份验证安装和配置的先决条件
 
-### <a name="windows-remote-management"></a>Windows 远程管理
+### Windows 远程管理  <a name="windows-remote-management"></a>
 当你使用 Azure AD Connect 部署 Active Directory 联合身份验证服务或 Web 应用程序代理时，请检查以下要求，以确保连接和配置成功：
 
 - 如果目标服务器已加入域，请确保已启用“Windows 远程托管”

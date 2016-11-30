@@ -16,7 +16,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="08/22/2016"
-	wacn.date="11/28/2016"
+	wacn.date="11/30/2016"
 	ms.author="kgremban"/>  
 
 
@@ -36,8 +36,7 @@
 - [如何从旧设备清除 Microsoft Authenticator 并将其迁移到新设备？](#how-do-i-clean-up-microsoft-authenticator-from-my-old-device-and-move-to-a-new-one)
 - [我找不到问题的解答](#i-didnt-find-an-answer-to-my-problem)
 
-<a name="correlation-id-errors"></a>
-##相关性 ID 错误
+##相关性 ID 错误  <a name="correlation-id-errors"></a>
 如果你已尝试过以下故障排除步骤，但仍遇到问题，请将问题发布到 [Azure AD 论坛](https://social.msdn.microsoft.com/Forums/zh-cn/home?forum=WindowsAzureAD)、[搜索 Microsoft 知识库 (KB)](https://www.microsoft.com/zh-cn/Search/result.aspx?q=azure%20active%20directory%20connect&form=mssupport) 或者[与支持人员联系](https://support.microsoft.com/zh-cn)，我们将尽快解答你的问题。
 
 与支持人员联系时，建议你包含以下信息：
@@ -56,8 +55,7 @@
 
 包含这些信息将有助于我们尽快为你解决问题。
 
-<a name="i-have-lost-my-phone-or-it-was-stolen"></a>
-## 我的手机已丢失或被盗
+## 我的手机已丢失或被盗  <a name="i-have-lost-my-phone-or-it-was-stolen"></a>
 如果你的手机已丢失或被盗，建议你让管理员重置你的[应用密码](/documentation/articles/multi-factor-authentication-manage-users-and-devices/#delete-users-existing-app-passwords/)并清除所有[已记住的设备](/documentation/articles/multi-factor-authentication-manage-users-and-devices/)。
 
 若要取回你的帐户，可以采取两种做法。第一种做法是，如果你已设置备用身份验证电话号码，你可以使用此号码来取回你的帐户并更改安全设置。
@@ -78,8 +76,7 @@
 
 如果你未配置辅助身份验证电话号码，则需要与管理员联系并让他们清除你的设置，这样，当你下次登录时，系统将提示你再次[设置多重身份验证](/documentation/articles/multi-factor-authentication-manage-users-and-devices/#require-selected-users-to-provide-contact-methods-again/)。
 
-<a name="i-want-to-change-my-phone-number"></a>
-## 我想要更改我的电话号码
+## 我想要更改我的电话号码  <a name="i-want-to-change-my-phone-number"></a>
 根据多重身份验证的使用方式，你可以在多个位置更改设置，例如你的电话号码。使用下表来帮助选择最适合自己的方式。
 
 如何使用多重身份验证|说明
@@ -89,9 +86,7 @@
 [要将它用于 Azure](#changing-your-settings-with-microsoft-azure)| 这意味着你要通过 Azure 门户预览更改设置。
 
 
- 
-<a name="changing-your-settings-with-office-365"></a>
-### 在 Office 365 中更改设置
+### 在 Office 365 中更改设置  <a name="changing-your-settings-with-office-365"></a>
 
 
 如果你在 Office 365 上使用多重身份验证，则需要通过 Office 365 门户管理其他安全性验证设置。
@@ -106,9 +101,7 @@
 5. 随后你将转到可以更改设置的页面。
 ![O365](./media/multi-factor-authentication-end-user-manage/o365b.png)
 
-
-<a name="changing-your-settings-with-the-myapps-portal"></a>
-### 使用 Myapps 门户更改设置
+### 使用 Myapps 门户更改设置  <a name="changing-your-settings-with-the-myapps-portal"></a>
 
 如果你不确定多重身份验证的使用方式，你始终可以通过 myapps 门户更改设置。
 
@@ -124,9 +117,7 @@
 
 	![验证](./media/multi-factor-authentication-end-user-manage-myapps/proofup.png)  
 
-
-<a name="changing-your-settings-with-microsoft-azure"></a>
-### 在 Azure 中更改设置
+### 在 Azure 中更改设置  <a name="changing-your-settings-with-microsoft-azure"></a>
 
 如果你在 Azure 上使用多重身份验证，则需要通过 Azure 门户预览更改设置。
 
@@ -140,8 +131,7 @@
 4. 随后你将转到可以更改设置的页面。
 ![验证](./media/multi-factor-authentication-end-user-manage-azure/proofup.png)
 
-<a name="i-have-a-new-phone-and-need-to-change-my-phone-number"></a>
-##我换了手机，想要更改我的电话号码
+##我换了手机，想要更改我的电话号码  <a name="i-have-a-new-phone-and-need-to-change-my-phone-number"></a>
 
 如果你换了新手机，需要更改 MFA 使用的主要联系电话号码，可以使用以下两种方法之一来实现此目的。
 
@@ -161,8 +151,7 @@
 
 第二种方法是联系管理员或为你设置 MFA 的人员。仅当你尚未配置辅助身份验证电话号码时，才需要这样做。否则，需要与管理员或者为你设置 MFA 的人员联系并让他们清除你的设置，这样，当你下次登录时，系统将提示你再次[设置多重身份验证](/documentation/articles/multi-factor-authentication-manage-users-and-devices/#require-selected-users-to-provide-contact-methods-again/)。
 
-<a name="i-am-not-receiving-a-code-or-a-call-on-my-phone"></a>
-##我的手机上未收到代码或来电
+##我的手机上未收到代码或来电  <a name="i-am-not-receiving-a-code-or-a-call-on-my-phone"></a>
 
 首先，需要确保满足以下条件：
 
@@ -184,16 +173,13 @@
 
 如果先前已配置备用电话，建议你在登录页出现提示时选择该电话，然后再试一次。如果你未配置其他方法，请与管理员联系并让他们清除你的设置，这样，当你下次登录时，系统将提示你再次[设置多重身份验证](/documentation/articles/multi-factor-authentication-manage-users-and-devices/#require-selected-users-to-provide-contact-methods-again/)。
 
-<a name="app-passwords-are-not-working"></a>
-##应用密码不起作用
+##应用密码不起作用  <a name="app-passwords-are-not-working"></a>
 首先，请确保正确输入应用密码。如果仍然无法解决问题，请尝试登录并[创建新的应用密码](/documentation/articles/multi-factor-authentication-end-user-app-passwords/)。如果还是不起作用，请与管理员联系并让他们[删除现有应用密码](/documentation/articles/multi-factor-authentication-manage-users-and-devices/#delete-users-existing-app-passwords/)，然后请新建一个应用密码并使用该密码。
 
-<a name="how-do-i-clean-up-microsoft-authenticator-from-my-old-device-and-move-to-a-new-one"></a>
-##如何从旧设备清除 Microsoft Authenticator 并将其迁移到新设备？
+##如何从旧设备清除 Microsoft Authenticator 并将其迁移到新设备？  <a name="how-do-i-clean-up-microsoft-authenticator-from-my-old-device-and-move-to-a-new-one"></a>
 当你从设备上卸载应用或者在设备上刷机时，不会在后端删除激活信息。你应该使用[转移到新设备](/documentation/articles/multi-factor-authentication-microsoft-authenticator/)中所述的步骤。
 
-<a name="i-didnt-find-an-answer-to-my-problem"></a>
-##我找不到问题的解答
+##我找不到问题的解答  <a name="i-didnt-find-an-answer-to-my-problem"></a>
 如果在此页面上找不到问题的解答，你可以将问题发布到 [Azure AD 论坛](https://social.msdn.microsoft.com/Forums/zh-cn/home?forum=WindowsAzureAD)、[搜索 Microsoft 知识库 (KB)](https://www.microsoft.com/zh-cn/Search/result.aspx?q=azure%20active%20directory%20connect&form=mssupport) 或[联系支持人员](https://support.microsoft.com/zh-cn)。
 
 此外，你可以联系管理员或为你设置多重身份验证的人员，看看他们是否可以提供帮助。

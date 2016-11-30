@@ -15,7 +15,7 @@
 	ms.tgt_pltfrm="vm-windows"
 	ms.workload="big-compute"
 	ms.date="09/07/2016"
-	wacn.date="11/28/2016"
+	wacn.date="11/30/2016"
 	ms.author="marsma" />  
 
 
@@ -60,8 +60,7 @@
 
 >[AZURE.TIP] 可以在 GitHub 上的用于 .NET 的 Azure SDK 存储库中找到 Azure Batch 文件约定库的[源代码][github_file_conventions]。
 
-<a name="requirement-linked-storage-account"></a>
-## 要求：链接的存储帐户
+## 要求：链接的存储帐户  <a name="requirement-linked-storage-account"></a>
 
 若要使用文件约定库将输出存储到持久性存储并在 Azure 门户预览中查看这些输出，必须[将 Azure 存储帐户链接](/documentation/articles/batch-application-packages/#link-a-storage-account/)到 Batch 帐户。如果尚未这样做，请使用 Azure 门户预览将存储帐户链接到 Batch 帐户：
 
@@ -169,8 +168,7 @@ csharp
 
 >[AZURE.NOTE] 启用 SaveTrackedAsync 文件跟踪时，只会在 Azure 存储空间中保存被跟踪文件的 *追加* 内容。此方法只应该用于跟踪非轮转的日志文件或追加到的其他文件，也就是说，数据在更新时只会添加到文件末尾。
 
-<a name="retrieve-output"></a>
-## 检索输出
+## 检索输出  <a name="retrieve-output"></a>
 
 使用 Azure Batch 文件约定库检索保存的输出时，将以任务和作业为中心的方式执行此操作。你可以请求给定任务或作业的输出，而无需知道输出在 Blob 存储中的路径，甚至不需要知道其文件名。你只需提出，“给我返回任务 *109* 的输出文件。”
 

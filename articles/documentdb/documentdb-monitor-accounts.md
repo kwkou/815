@@ -5,7 +5,8 @@
 	documentationCenter=""
 	authors="mimig1"
 	manager="jhubbard"
-	editor="cgronlun"/>
+	editor="cgronlun"/>  
+
 
 <tags
 	ms.service="documentdb"
@@ -13,17 +14,27 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="08/25/2016"
-	wacn.date="11/21/2016"
-	ms.author="mimig"/>  
+	ms.date="10/17/2016"
+	ms.author="mimig"
+	wacn.date="11/30/2016"/>  
 
 
 # 监视 DocumentDB 请求、使用情况和存储
 
 可以在 [Azure 门户预览](https://portal.azure.cn/)中监视 Azure DocumentDB 帐户。对于每个 DocumentDB 帐户，性能指标（如请求和服务器错误）和使用情况指标（如存储消耗）都可用。
 
-## 在门户预览中查看性能指标 
+可以在“帐户”边栏选项卡或新的“指标”边栏选项卡上查看指标。
+
+## 在“指标”边栏选项卡上查看性能指标
+
+1. 在新窗口中打开 [Azure 门户预览](https://portal.azure.cn/)，依次单击“更多服务”、“DocumentDB (NoSQL)”，然后单击要查看其性能指标的 DocumentDB 帐户的名称。
+2. 在资源菜单中，单击“指标”。
+
+此时将打开“指标”边栏选项卡，可以选择要查看的集合。可以查看“可用性”、“请求”、“吞吐量”和“存储”指标，并将其与 DocumentDB SLA 进行比较。
+
+## 在帐户边栏选项卡上查看性能指标
 1.	在新窗口中打开 [Azure 门户预览](https://portal.azure.cn/)，依次单击“更多服务”、“DocumentDB (NoSQL)”，然后单击要查看其性能指标的 DocumentDB 帐户的名称。
+
 2.	默认情况下，“监视”可重用功能区显示以下磁贴：
 	*	当天的请求总数。
 	*	使用的存储量。
@@ -105,8 +116,9 @@ Azure 门户预览使你能够创建并排的指标图表。
 
 有关详细信息，请参阅 [Retrieving Resource Metrics via the Azure Insights API](https://blogs.msdn.microsoft.com/cloud_solution_architect/2016/02/23/retrieving-resource-metrics-via-the-azure-insights-api/)（通过 Azure Insights API 检索资源指标）。
 
-<a name="troubleshooting"></a>
-## 故障排除
+
+## 故障排除<a name="troubleshooting"></a>
+
 如果监视磁贴显示“无可用数据”消息，并且你最近向数据库发出过请求或添加过数据，则可以编辑该磁贴以反映最新使用情况。
 
 ### 编辑磁贴以刷新当前数据
@@ -123,4 +135,4 @@ Azure 门户预览使你能够创建并排的指标图表。
 ## 后续步骤
 若要了解有关 DocumentDB 容量的详细信息，请参阅 [Manage DocumentDB capacity](/documentation/articles/documentdb-manage/)（管理 DocumentDB 容量）。
 
-<!---HONumber=Mooncake_1010_2016-->
+<!---HONumber=Mooncake_1121_2016-->

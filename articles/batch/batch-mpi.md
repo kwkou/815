@@ -15,7 +15,7 @@
 	ms.tgt_pltfrm="vm-windows"
 	ms.workload="big-compute"
 	ms.date="08/29/2016"
-	wacn.date="11/28/2016"
+	wacn.date="11/30/2016"
 	ms.author="marsma" />
 
 # 在 Azure Batch 中使用多实例任务来执行消息传递接口 (MPI) 应用程序
@@ -139,8 +139,7 @@ csharp
 
 >[AZURE.NOTE] 由于 MS-MPI 的 `mpiexec.exe` 默认使用 `CCP_NODES` 变量（请参阅[环境变量](#environment-variables)），上述示例应用程序命令行已排除该变量。
 
-<a name="environment-variables"></a>
-## 环境变量
+## 环境变量  <a name="environment-variables"></a>
 
 这些环境变量可在计算节点上获取，用于主任务的应用程序命令运行的应用程序和脚本：
 

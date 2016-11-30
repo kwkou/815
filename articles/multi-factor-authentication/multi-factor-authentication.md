@@ -16,7 +16,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="08/22/2016"
-	wacn.date="11/28/2016"
+	wacn.date="11/30/2016"
 	ms.author="kgremban"/>  
 
 
@@ -147,8 +147,7 @@ Azure 多重身份验证为云和服务器提供了可选择的验证方法。�
 
 以下部分将提供有关如何做出判断的指导。
 
-<a name="what-am-i-trying-to-secure"></a>
-### 我要保护什么？
+### 我要保护什么？ <a name="what-am-i-trying-to-secure"></a>
 
 为了确定适当的多重身份验证解决方案，首先我们必须回答一个问题：试图使用第二种身份验证方法来保护什么？它是 Azure 中的应用程序， 还是远程访问系统之类的系统？通过判断我们尝试保护的项目，就可以找出要在何处启用多重身份验证这个问题的答案。
 
@@ -162,9 +161,7 @@ Azure 多重身份验证为云和服务器提供了可选择的验证方法。�
 不是通过 Azure AD 应用代理发布的 IIS 应用程序 | |* |
 VPN、RDG 等远程访问系统| |* |
 
-
-<a name="where-are-the-users-located"></a>
-### 用户位于何处
+### 用户位于何处 <a name="where-are-the-users-located"></a>
 
 接下来，不论是云中的多重身份验证还使用 MFA 服务器的本地多重身份验证，只要根据用户的所在位置，我们就能确定合适的解决方案。
 
