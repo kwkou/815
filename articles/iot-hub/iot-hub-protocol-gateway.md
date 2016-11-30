@@ -54,7 +54,6 @@ MQTT 适配器还会演示用来为其他协议构建协议适配器的编程模
 [lnk-compare]: /documentation/articles/iot-hub-compare-event-hubs/
 [lnk-scaling]: /documentation/articles/iot-hub-scaling/
 [lnk-devguide]: /documentation/articles/iot-hub-devguide/
-[lnk-dmui]: /documentation/articles/iot-hub-device-management-ui-sample/
 [lnk-gateway]: /documentation/articles/iot-hub-linux-gateway-sdk-simulated-device/
 [lnk-portal]: /documentation/articles/iot-hub-manage-through-portal/
 

@@ -8,7 +8,7 @@
 
 在本教程中，会学习如何结合使用克隆的*所需属性*和*报告属性*来远程配置设备应用。具体而言，本教程演示克隆的报告属性和所需属性如何启用设备应用程序设置的多步配置，并跨所有设备向解决方案后端提供此操作状态的可见性。
 
-在更高级别，本教程遵循设备管理的*所需状态模式*。此模式的基本思路是，让解决方案后端指定托管设备的所需状态，而不是发送特定命令。这个方法让设备负责确定达到所需状态的最佳方法（对于特定设备条件影响即时执行特定命令的能力的 IoT 方案而言十分重要），同时继续向后端报告当前状态和潜在错误条件。所需状态模式能够帮助管理大量设备，因为它让后端能够跨所有设备完全掌握配置流程状态。有关设备管理中所需状态模式角色的详细信息，请参阅 [Azure IoT 中心设备管理概述][lnk-dm-overview]。
+在更高级别，本教程遵循设备管理的*所需状态模式*。此模式的基本思路是，让解决方案后端指定托管设备的所需状态，而不是发送特定命令。这个方法让设备负责确定达到所需状态的最佳方法（对于特定设备条件影响即时执行特定命令的能力的 IoT 方案而言十分重要），同时继续向后端报告当前状态和潜在错误条件。所需状态模式能够帮助管理大量设备，因为它让后端能够跨所有设备完全掌握配置流程状态。
 
 > [AZURE.NOTE] 在以更具交互性的方式控制设备的方案中（通过用户控制的应用打开风扇），请考虑使用[云到设备方法][lnk-methods]。
 
@@ -82,7 +82,6 @@
 
 
 [lnk-methods]: /documentation/articles/iot-hub-devguide-direct-methods/
-[lnk-dm-overview]: /documentation/articles/iot-hub-device-management-overview/
 [lnk-twin-tutorial]: /documentation/articles/iot-hub-node-node-twin-getstarted/
 [lnk-guid]: https://en.wikipedia.org/wiki/Globally_unique_identifier
 

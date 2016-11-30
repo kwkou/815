@@ -80,7 +80,6 @@ IoT 中心提供多个度量值，使你大致了解中心的运行状况及连�
 
 [lnk-design]: /documentation/articles/iot-hub-guidance/
 [lnk-devguide]: /documentation/articles/iot-hub-devguide/
-[lnk-dmui]: /documentation/articles/iot-hub-device-management-ui-sample/
 [lnk-gateway]: /documentation/articles/iot-hub-linux-gateway-sdk-simulated-device/
 
 <!---HONumber=Mooncake_0725_2016-->

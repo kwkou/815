@@ -168,7 +168,6 @@ IoT 中心监视 5 种类别的事件：
 
 [lnk-design]: /documentation/articles/iot-hub-guidance/
 [lnk-devguide]: /documentation/articles/iot-hub-devguide/
-[lnk-dmui]: /documentation/articles/iot-hub-device-management-ui-sample/
 [lnk-gateway]: /documentation/articles/iot-hub-linux-gateway-sdk-simulated-device/
 
 <!---HONumber=Mooncake_0725_2016-->

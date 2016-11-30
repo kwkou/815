@@ -287,7 +287,6 @@
 若要继续了解 IoT 中心入门知识并浏览其他 IoT 方案，请参阅：
 
 - [连接你的设备][lnk-connect-device]
-- [设备管理入门][lnk-device-management]
 - [网关 SDK 入门][lnk-gateway-SDK]
 
 若要了解如何扩展 IoT 解决方案和如何大规模处理设备到云的消息，请参阅[处理设备到云的消息][lnk-process-d2c-tutorial]教程。
@@ -311,7 +310,6 @@
 [lnk-free-trial]: /pricing/1rmb-trial/
 [lnk-portal]: https://portal.azure.cn/
 
-[lnk-device-management]: /documentation/articles/iot-hub-device-management-get-started/
 [lnk-gateway-SDK]: /documentation/articles/iot-hub-linux-gateway-sdk-get-started/
 [lnk-connect-device]: /develop/iot/
 

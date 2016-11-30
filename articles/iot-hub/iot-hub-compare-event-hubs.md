@@ -57,7 +57,6 @@ Azure IoT 中心的主要用例之一是从设备收集遥测数据。因此，�
 
 [lnk-scaling]: /documentation/articles/iot-hub-scaling/
 [lnk-devguide]: /documentation/articles/iot-hub-devguide/
-[lnk-dmui]: /documentation/articles/iot-hub-device-management-ui-sample/
 [lnk-gateway]: /documentation/articles/iot-hub-linux-gateway-sdk-simulated-device/
 [lnk-portal]: /documentation/articles/iot-hub-manage-through-portal/
 

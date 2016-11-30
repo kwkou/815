@@ -331,7 +331,7 @@ IoT 中心公开[事件中心][lnk-event-hubs]兼容的终结点来接收设备�
     }
     ```
 
-    > [AZURE.NOTE] 为简单起见，本教程使用 [EventProcessorHost] 类的单个实例。有关详细信息，请参阅 [EEvent Hubs Programming Guide]（事件中心编程指南）。
+    > [AZURE.NOTE] 为简单起见，本教程使用 [EventProcessorHost] 类的单个实例。有关详细信息，请参阅 [Event Hubs Programming Guide]（事件中心编程指南）。
 
 ## 接收交互式消息
 在本部分，将编写一个 Windows 控制台应用，用于接收来自服务总线队列的交互式消息。若要深入了解如何使用服务总线构建解决方案，请参阅[使用服务总线构建多层应用程序][]。

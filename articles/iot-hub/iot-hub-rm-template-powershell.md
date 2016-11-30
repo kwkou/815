@@ -153,7 +153,6 @@ New-AzureRmResourceGroup -Name MyIoTRG1 -Location "China East"
 [lnk-sdks]: /documentation/articles/iot-hub-sdks-summary/
 
 [lnk-design]: /documentation/articles/iot-hub-guidance/
-[lnk-dmui]: /documentation/articles/iot-hub-device-management-ui-sample/
 [lnk-gateway]: /documentation/articles/iot-hub-linux-gateway-sdk-simulated-device/
 [lnk-portal]: /documentation/articles/iot-hub-manage-through-portal/
 <!---HONumber=Mooncake_0307_2016-->
