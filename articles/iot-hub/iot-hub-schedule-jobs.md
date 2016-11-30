@@ -270,17 +270,12 @@ Node.js 版本 0.12.x 或更高版本，<br/>[准备开发环境][lnk-dev-setup]
 
 在本教程中，使用了作业来安排用于设备的直接方法以及设备克隆属性的更新。
 
-若要继续完成 IoT 中心和设备管理模式（如远程无线固件更新）的入门内容，请参阅：
-
-[教程：如何进行固件更新][lnk-fwupdate]
-
 若要继续完成 IoT 中心的入门内容，请参阅[网关 SDK 入门][lnk-gateway-SDK]。
 
 [lnk-get-started-twin]: /documentation/articles/iot-hub-node-node-twin-getstarted/
 [lnk-twin-props]: /documentation/articles/iot-hub-node-node-twin-how-to-configure/
 [lnk-c2d-methods]: /documentation/articles/iot-hub-c2d-methods/
 [lnk-dev-methods]: /documentation/articles/iot-hub-devguide-direct-methods/
-[lnk-fwupdate]: /documentation/articles/iot-hub-firmware-update/
 [lnk-gateway-SDK]: /documentation/articles/iot-hub-linux-gateway-sdk-get-started/
 [lnk-dev-setup]: https://github.com/Azure/azure-iot-sdks/blob/master/doc/get_started/node-devbox-setup.md
 [lnk-free-trial]: /pricing/1rmb-trial/

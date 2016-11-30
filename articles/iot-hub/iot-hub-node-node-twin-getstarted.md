@@ -65,25 +65,25 @@
 
         registry.getTwin('myDeviceId', function(err, twin){
             if (err) {
-                console.error(err.constructor.name + ': ' + err.message);
-            } else {
+                console.error(err.constructor.name + ': ' + err.message);
+            } else {
                 var patch = {
-                    tags: {
-                        location: {
+                    tags: {
+                        location: {
                             region: 'US',
                             plant: 'Redmond43'
-                      }
+                      }
                     }
                 };
-             
-                twin.update(patch, function(err) {
-                  if (err) {
-                    console.error('Could not update twin: ' + err.constructor.name + ': ' + err.message);
-                  } else {
-                    console.log(twin.deviceId + ' twin updated successfully');
+             
+                twin.update(patch, function(err) {
+                  if (err) {
+                    console.error('Could not update twin: ' + err.constructor.name + ': ' + err.message);
+                  } else {
+                    console.log(twin.deviceId + ' twin updated successfully');
                     queryTwins();
-                  }
-                });
+                  }
+                });
             }
         });
 
@@ -229,7 +229,6 @@
 [lnk-identity]: /documentation/articles/iot-hub-devguide-identity-registry/
 
 [lnk-iothub-getstarted]: /documentation/articles/iot-hub-node-node-getstarted/
-[lnk-device-management]: /documentation/articles/iot-hub-device-management-get-started/
 [lnk-gateway-SDK]: /documentation/articles/iot-hub-linux-gateway-sdk-get-started/
 [lnk-connect-device]: /develop/iot/
 

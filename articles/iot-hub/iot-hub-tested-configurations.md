@@ -154,7 +154,6 @@ Azure IoT 库在以下操作系统平台上进行了测试：
 [lnk-compare]: /documentation/articles/iot-hub-compare-event-hubs/
 [lnk-scaling]: /documentation/articles/iot-hub-scaling/
 [lnk-devguide]: /documentation/articles/iot-hub-devguide/
-[lnk-dmui]: /documentation/articles/iot-hub-device-management-ui-sample/
 [lnk-gateway]: /documentation/articles/iot-hub-linux-gateway-sdk-simulated-device/
 [lnk-portal]: /documentation/articles/iot-hub-manage-through-portal/
 

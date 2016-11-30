@@ -49,14 +49,12 @@
 
 - [设计你的解决方案][lnk-design]
 - [开发人员指南][lnk-devguide]
-- [使用 UI 示例探索设备管理][lnk-dmui]
 - [使用网关 SDK 模拟设备][lnk-gateway]
 
 [lnk-devguide]: /documentation/articles/iot-hub-devguide/#security
 
 [lnk-design]: /documentation/articles/iot-hub-guidance/
 [lnk-devguide]: /documentation/articles/iot-hub-devguide/
-[lnk-dmui]: /documentation/articles/iot-hub-device-management-ui-sample/
 [lnk-gateway]: /documentation/articles/iot-hub-linux-gateway-sdk-simulated-device/
 [lnk-tokens]: /documentation/articles/iot-hub-sas-tokens/
 

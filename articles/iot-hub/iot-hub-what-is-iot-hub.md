@@ -99,7 +99,6 @@ Azure IoT 中心会实现[服务辅助通信][lnk-service-assisted-pattern]模�
 
 ## 后续步骤
 
-若要了解 Azure IoT 中心如何实现标准的 IoT 设备管理，以便远程管理、配置和更新设备，请参阅 [Azure IoT 中心设备管理概述][lnk-device-management]。
 
 你可以使用 IoT 设备 SDK 在各种设备硬件平台和操作系统上实现客户端应用程序。IoT 设备 SDK 包含库，可协助将遥测数据发送到 IoT 中心，并接收云到设备的命令。使用 SDK 时，提供各种网络协议可与 IoT 中心进行通信。若要了解详细信息，请参阅[设备 SDK 的相关信息][lnk-device-sdks]。
 
@@ -122,4 +121,3 @@ Azure IoT 中心会实现[服务辅助通信][lnk-service-assisted-pattern]模�
 [lnk-device-sdks]: https://github.com/Azure/azure-iot-sdks
 [lnk-refarch]: http://download.microsoft.com/download/A/4/D/A4DAD253-BC21-41D3-B9D9-87D2AE6F0719/Microsoft_Azure_IoT_Reference_Architecture.pdf
 [lnk-gateway-sdk]: https://github.com/Azure/azure-iot-gateway-sdk
-[lnk-device-management]: /documentation/articles/iot-hub-device-management-overview/

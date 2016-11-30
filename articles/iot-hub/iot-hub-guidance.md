@@ -107,7 +107,6 @@ IoT 中心标识注册表 API 可让你将 IoT 中心集成到预配过程。
 若要进一步探索 IoT 中心的功能，请参阅：
 
 - [开发人员指南][lnk-devguide]
-- [使用 UI 示例探索设备管理][lnk-dmui]
 - [使用网关 SDK 模拟设备][lnk-gateway]
 - [使用 Azure 门户管理 IoT 中心][lnk-portal-manage]
 
@@ -127,7 +126,6 @@ IoT 中心标识注册表 API 可让你将 IoT 中心集成到预配过程。
 [lnk-compare]: /documentation/articles/iot-hub-compare-event-hubs/
 [lnk-scaling]: /documentation/articles/iot-hub-scaling/
 [lnk-devguide]: /documentation/articles/iot-hub-devguide/
-[lnk-dmui]: /documentation/articles/iot-hub-device-management-ui-sample/
 [lnk-gateway]: /documentation/articles/iot-hub-linux-gateway-sdk-simulated-device/
 [lnk-portal-manage]: /documentation/articles/iot-hub-manage-through-portal/
 [lnk-sas-token]: /documentation/articles/iot-hub-sas-tokens/

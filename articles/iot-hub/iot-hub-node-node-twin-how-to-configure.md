@@ -262,12 +262,10 @@
 [lnk-query]: /documentation/articles/iot-hub-devguide-query-language/
 [lnk-d2c]: /documentation/articles/iot-hub-devguide-messaging/#device-to-cloud-messages
 [lnk-methods]: /documentation/articles/iot-hub-devguide-direct-methods/
-[lnk-dm-overview]: /documentation/articles/iot-hub-device-management-overview./
 [lnk-twin-tutorial]: /documentation/articles/iot-hub-node-node-twin-getstarted/
 [lnk-schedule-jobs]: /documentation/articles/iot-hub-schedule-jobs/
 [lnk-dev-setup]: https://github.com/Azure/azure-iot-sdks/blob/master/doc/get_started/node-devbox-setup.md
 [lnk-connect-device]: /develop/iot/
-[lnk-device-management]: /documentation/articles/iot-hub-device-management-get-started/
 [lnk-gateway-SDK]: /documentation/articles/iot-hub-linux-gateway-sdk-get-started/
 [lnk-iothub-getstarted]: /documentation/articles/iot-hub-node-node-getstarted/
 [lnk-methods-tutorial]: /documentation/articles/iot-hub-c2d-methods/
