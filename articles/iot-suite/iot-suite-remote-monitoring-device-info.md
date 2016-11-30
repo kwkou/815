@@ -33,7 +33,7 @@ Azure IoT 套件远程监视预配置解决方案演示了管理设备元数据�
 
 > [AZURE.NOTE] 远程监视预配置解决方案可使设备标识注册表与设备注册表保持同步。这两个注册表使用相同的设备 ID 来唯一标识连接到 IoT 中心的每个设备。
 
-[IoT 中心设备管理预览][lnk-dm-preview]向 IoT 中心添加类似于本文中设备信息管理功能的功能。目前，远程监视解决方案仅使用 IoT 中心内的正式版 (GA) 功能。
+目前，远程监视解决方案仅使用 IoT 中心内的正式版 (GA) 功能。
 
 ## 设备信息元数据
 
@@ -281,7 +281,6 @@ Azure IoT 套件远程监视预配置解决方案演示了管理设备元数据�
 [lnk-docdb]: /documentation/services/documentdb/
 [lnk-ref-arch]: http://download.microsoft.com/download/A/4/D/A4DAD253-BC21-41D3-B9D9-87D2AE6F0719/Microsoft_Azure_IoT_Reference_Architecture.pdf
 [lnk-stream-analytics]: /documentation/services/stream-analytics/
-[lnk-dm-preview]: /documentation/articles/iot-hub-device-management-overview/
 [lnk-dynamic-telemetry]: /documentation/articles/iot-suite-dynamic-telemetry/
 [lnk-predictive-overview]: /documentation/articles/iot-suite-predictive-overview/
 [lnk-faq]: /documentation/articles/iot-suite-faq/
