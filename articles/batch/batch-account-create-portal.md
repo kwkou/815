@@ -15,7 +15,7 @@
 	ms.devlang="na"
 	ms.topic="get-started-article"
 	ms.date="08/26/2016"
-	wacn.date="11/28/2016"
+	wacn.date="11/30/2016"
 	ms.author="marsma"/>  
 
 
@@ -79,8 +79,7 @@
 
 Batch 帐户只在“免费层”中提供，这意味着无需为 Batch 帐户本身付费。需要支付 Batch 解决方案使用的底层 Azure 计算资源的费用，以及工作负荷运行时其他服务所用资源的费用。例如，需要针对池中的计算节点以及作为任务输入或输出存储在 Azure 存储中的数据付费。如果使用 Batch 的[应用程序包](/documentation/articles/batch-application-packages/)功能，则需支付用于存储应用程序包的 Azure 存储资源费用。有关详细信息，请参阅 [Batch pricing][batch_pricing]（Batch 定价）。
 
-<a name="linked-azure-storage-account"></a>
-## 链接的 Azure 存储帐户
+## 链接的 Azure 存储帐户 <a name="linked-azure-storage-account"></a>
 
 如前所述，可以将**常规用途**存储帐户链接到 Batch 帐户（可选）。与 [Batch 文件约定 .NET](/documentation/articles/batch-task-output/)库一样，Batch 的[应用程序包](/documentation/articles/batch-application-packages/)功能在链接的常规用途存储帐户中使用 Blob 存储。这些可选功能可帮助部署 Batch 任务运行的应用程序，以及保存它们生成的数据。
 

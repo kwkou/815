@@ -17,7 +17,7 @@
 	ms.topic="article" 
 	ms.date="10/17/2016" 
 	ms.author="mimig"
-	wacn.date="11/28/2016"/>  
+	wacn.date="11/30/2016"/>  
 
 
 # 如何使用 Azure 门户预览创建 DocumentDB 数据库
@@ -26,7 +26,7 @@
 
 若要在门户预览中创建 DocumentDB 数据库和集合，请参阅[如何使用 Azure 门户预览创建 DocumentDB 集合](/documentation/articles/documentdb-create-collection/)。
 
-## 创建 DocumentDB 数据库的其他方法
+## 创建 DocumentDB 数据库的其他方法 <a name="other-ways-to-create-a-documentdb-database"></a>
 
 数据库不一定要使用门户预览来创建，也可以使用 [DocumentDB SDK](/documentation/articles/documentdb-sdk-dotnet/) 或 [REST API](https://msdn.microsoft.com/zh-cn/library/mt489072.aspx) 来创建数据库。有关使用 .NET SDK 处理数据库的信息，请参阅 [.NET 数据库示例](/documentation/articles/documentdb-dotnet-samples/#database-examples/)。有关使用 Node.js SDK 处理数据库的信息，请参阅 [Node.js 数据库示例](/documentation/articles/documentdb-nodejs-samples/#database-examples/)。
 

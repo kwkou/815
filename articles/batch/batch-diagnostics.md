@@ -15,7 +15,7 @@
    ms.tgt_pltfrm="multiple"
    ms.workload="big-compute"
    ms.date="10/12/2016"
-   wacn.date="11/28/2016"
+   wacn.date="11/30/2016"
    ms.author="marsma"/>  
 
 
@@ -35,8 +35,7 @@
 
   >[AZURE.WARNING] 对于存储在 Azure 存储帐户中的数据，将会向你**收费**。这包括本文中讨论的诊断日志。在设计日志保留策略时请记住这一点。
 
-<a name="enable-diagnostic-logging"></a>
-## 启用诊断日志记录
+## 启用诊断日志记录  <a name="enable-diagnostic-logging"></a>
 
 默认情况下没有为 Batch 帐户启用诊断日志记录。必须显式为要监视的每个 Batch 帐户启用诊断日志：
 

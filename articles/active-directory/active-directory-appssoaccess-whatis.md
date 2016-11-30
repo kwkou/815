@@ -14,7 +14,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="08/15/2016"
-	wacn.date="11/21/2016"
+	wacn.date="11/30/2016"
 	ms.author="asmalser-msft"/>
 
 #Azure Active Directory 的应用程序访问与单一登录是什么？
@@ -65,8 +65,8 @@ Azure AD 允许对支持 SAML 2.0、WS 联合身份验证或 OpenID Connect 协�
 
 另请参阅：[管理用于联合单一登录的证书](/documentation/articles/active-directory-sso-certs/)
 
-<a name="password-based-single-sign-on"></a>
-###基于密码的单一登录
+
+###基于密码的单一登录  <a name="password-based-single-sign-on"></a>
 
 配置基于密码的单一登录可使组织中的用户能够使用第三方 SaaS 应用程序中的用户帐户信息通过 Azure AD 自动登录到第三方 SaaS 应用程序。当你启用此功能时，Azure AD 将收集并安全地存储用户帐户信息和相关密码。
 

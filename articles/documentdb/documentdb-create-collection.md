@@ -16,7 +16,7 @@
 	ms.topic="article" 
 	ms.date="10/17/2016" 
 	ms.author="mimig"
-	wacn.date="11/28/2016"/>  
+	wacn.date="11/30/2016"/>  
 
 
 # 如何使用 Azure 门户预览创建 DocumentDB 集合和数据库
@@ -66,8 +66,8 @@
 
 	![资源菜单的屏幕截图，其中已选择“缩放”](./media/documentdb-create-collection/docdb-collection-creation-scale.png)  
 
-<a name="what-is-a-documentdb-collection"></a>
-## 什么是 DocumentDB 集合？ 
+
+## 什么是 DocumentDB 集合？  <a name="what-is-a-documentdb-collection"></a>
 
 集合是 JSON 文档和相关联的 JavaScript 应用程序逻辑的容器。集合是一个计费实体，其中[成本](/documentation/articles/documentdb-performance-levels/)由集合的预配吞吐量确定。集合可以跨一个或多个分区/服务器，并且能伸缩以处理几乎无限制增长的存储或吞吐量。
 

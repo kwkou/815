@@ -14,7 +14,7 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="06/29/2016" 
-	wacn.date="11/21/2016" 
+	wacn.date="11/30/2016" 
 	ms.author="syamk"/>
 
 #DocumentDB 中的请求单位
@@ -54,8 +54,8 @@ DocumentDB 通过保留资源提供了快速且可预测的性能，以满足应
 - **查询模式**。查询的复杂性会影响操作使用的请求单位数量。谓词数、谓词性质、投影、UDF 数和源数据集的大小都会影响查询操作的成本。
 - **脚本使用情况**。正如查询一样，存储过程和触发器也是根据所执行的操作的复杂性来使用请求单位的。在开发应用程序时，检查请求费用标头，以更好地了解每个操作消耗请求单位容量的方式。
 
-<a name="estimating-throughput-needs"></a>
-##估计吞吐量需求
+
+##估计吞吐量需求 <a name="estimating-throughput-needs"></a>
 请求单位是请求处理成本的规范化的度量。单个请求单位用于表示读取（通过自链接或 ID）一个包含 10 个唯一属性值（系统属性除外）的 1 KB JSON 文档所需的处理容量。插入、替换或删除同一文档的请求要占用服务的更多处理，因此需要更多请求单位。
 
 > [AZURE.NOTE] 用于 1 KB 文档的 1 个请求单位基线通过自链接或文档的ID 与简单的 GET 对应。
@@ -191,8 +191,7 @@ DocumentDB 通过保留资源提供了快速且可预测的性能，以满足应
 
 在此示例中，我们认为平均吞吐量需求为 1,275 RU/s。舍入到最接近的百位数，我们会将此应用程序的集合设置为 1,300 RU/s。
 
-<a name="exceeding-reserved-throughput-limits"></a>
-##超过保留的吞吐量限制
+##超过保留的吞吐量限制 <a name="exceeding-reserved-throughput-limits"></a>
 前面提到，请求单位消耗以每秒速率进行评估。对于超过集合设置的请求单位速率的应用程序，将限制对该集合的请求数，直到速率降低到保留级别之下。被限制时，服务器将抢先结束请求、引发 RequestRateTooLargeException（HTTP 状态代码 429）并返回 x-ms-retry-after-ms 标头，该标头指示重试请求前用户必须等待的时间（以毫秒为单位）。
 
 	HTTP Status 429

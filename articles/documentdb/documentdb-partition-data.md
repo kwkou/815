@@ -16,7 +16,7 @@
 	ms.topic="article" 
 	ms.date="09/20/2016" 
 	ms.author="arramac" 
-	wacn.date="11/28/2016"/>  
+	wacn.date="11/30/2016"/>  
 
 
 # Azure DocumentDB 中的分区和缩放
@@ -141,8 +141,8 @@ DocumentDB 支持创建单个分区和已分区的集合。
     </tbody>
 </table>
 
-<a name="working-with-the-sdks"></a>
-## 使用 SDK
+
+## 使用 SDK  <a name="working-with-the-sdks"></a>
 
 Azure DocumentDB 增加了对 [REST API 版本 2015-12-16](https://msdn.microsoft.com/zh-cn/library/azure/dn781481.aspx) 的自动分区支持。为了创建已分区集合，必须在支持的 SDK 平台之一（.NET、Node.js、Java、Python）下载 SDK 版本 1.6.0 或更高版本。
 

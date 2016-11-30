@@ -15,7 +15,7 @@
 	ms.tgt_pltfrm="na"
 	ms.workload="big-compute"
 	ms.date="09/08/2016"
-	wacn.date="11/28/2016"
+	wacn.date="11/30/2016"
 	ms.author="marsma"/>  
 
 
@@ -68,13 +68,11 @@
 
 - [应用程序包](#application-packages)
 
-<a name="account"></a>
-## 帐户
+## 帐户 <a name="account"></a>
 
 批处理帐户是批处理服务中唯一标识的实体。所有处理都与一个 Batch 帐户相关联。当你使用 Batch 服务执行操作时，需要同时用到帐户名及其帐户密钥之一。可以[使用 Azure 门户预览创建 Azure Batch 帐户](/documentation/articles/batch-account-create-portal/)。
 
-<a name="compute-node"></a>
-## 计算节点
+## 计算节点 <a name="compute-node"></a>
 
 计算节点是专门用于处理一部分应用程序工作负荷的 Azure 虚拟机 (VM)。节点大小确定了 CPU 核心数目、内存容量，以及分配给节点的本地文件系统大小。可以使用 Azure 云服务或虚拟机应用商店映像创建的 Windows 或 Linux 节点池。有关这些选项的详细信息，请参阅下面的[池](#pool)部分。
 
@@ -86,8 +84,7 @@ Batch 中的所有计算节点还包括：
 - 配置为控制访问的**防火墙**设置。
 - [远程访问](#connecting-to-compute-nodes) Windows（远程桌面协议 (RDP)）和 Linux（安全外壳 (SSH)）节点。
 
-<a name="pool"></a>
-## 池
+## 池 <a name="pool"></a>
 
 池是运行应用程序的节点集合。你可以手动创建池；或者在你指定要完成的工作时，由 Batch 服务自动创建池。你可以创建和管理符合应用程序资源要求的池。池只能由创建它的 Batch 帐户使用。一个批处理帐户可以有多个池。
 
@@ -157,8 +154,7 @@ Azure Batch 池构建在核心 Azure 计算平台的顶层。这些池提供大�
 
 > [AZURE.IMPORTANT] 所有 Batch 帐户都有默认**配额**，用于限制 Batch 帐户中的**核心**（因此也包括计算节点）数目。可以在 [Quotas and limits for the Azure Batch service](/documentation/articles/batch-quota-limit/)（Azure Batch 服务的配额和限制）中找到默认配额以及如何[提高配额](/documentation/articles/batch-quota-limit/#increase-a-quota/)（例如 Batch 帐户中的核心数目上限）的说明。如果你有类似于“为什么我的池不能包含 X 个以上的节点？”的疑惑，则原因可能在于此核心配额。
 
-<a name="job"></a>
-## 作业
+## 作业  <a name="job"></a>
 
 作业是任务的集合。作业控制其任务对池中计算节点执行计算的方式。
 
@@ -186,13 +182,11 @@ Azure Batch 池构建在核心 Azure 计算平台的顶层。这些池提供大�
 
 不同池的作业计划是独立的。在不同的池之间，即使作业的优先级较高，如果其关联的池缺少空闲的节点，则不保证此作业优先计划。在同一个池中，相同优先级的作业有相同的计划机会。
 
-<a name="scheduled-jobs"></a>
-### 计划的作业
+### 计划的作业  <a name="scheduled-jobs"></a>
 
 使用[作业计划][rest_job_schedules]可在 Batch 服务中创建周期性作业。作业计划指定何时要运行作业，并包含要运行的作业的规范。可以指定计划的持续时间（计划的持续时间和生效时间），以及在该时间段创建作业的频率。
 
-<a name="task"></a>
-## 任务
+## 任务  <a name="task"></a>
 
 任务是与作业关联的计算单位。它在节点上运行。任务将分配到节点以执行，或排入队列直到节点空闲。简而言之，任务将在计算节点上运行一个或多个程序或脚本，以执行你需要完成的工作。
 
@@ -226,8 +220,7 @@ Azure Batch 池构建在核心 Azure 计算平台的顶层。这些池提供大�
 - [多实例任务 (MPI)](#multi-instance-tasks)
 - [任务依赖项](#task-dependencies)
 
-<a name="start-task"></a>
-### 启动任务
+### 启动任务  <a name="start-task"></a>
 
 通过将**启动任务**与池相关联，可以准备池节点的操作环境。你可以执行各种操作，例如，安装任务所要运行的应用程序，以及启动后台进程。启动任务在节点每次启动时运行，且只要保留在池中就会持续运行（包括首次将节点添加到池时，以及节点重新启动或重置映像时）。
 
@@ -245,8 +238,7 @@ Azure Batch 池构建在核心 Azure 计算平台的顶层。这些池提供大�
 
 如果添加或更新*现有*池的启动任务，必须重新启动其计算节点，启动任务才应用到节点。
 
-<a name="job-manager-task"></a>
-### 作业管理器任务
+### 作业管理器任务  <a name="job-manager-task"></a>
 
 通常使用**作业管理器任务**来控制和/或监视作业的执行 - 例如，创建和提交作业的任务、确定其他要运行的任务，以及确定任务何时完成。但是，作业管理器任务并不限定于这些活动。它是功能齐备的任务，可执行作业所需的任何操作。例如，作业管理器任务可以下载指定为参数的文件、分析该文件的内容，并根据这些内容提交其他任务。
 
@@ -264,8 +256,7 @@ Azure Batch 池构建在核心 Azure 计算平台的顶层。这些池提供大�
 
 - 一个作业中的作业管理器任务的优先级不高于其他作业的任务。不同作业之间只遵循作业级别的优先级。
 
-<a name="job-preparation-and-release-tasks"></a>
-### 作业准备和释放任务
+### 作业准备和释放任务  <a name="job-preparation-and-release-tasks"></a>
 
 Batch 提供作业准备任务来设置作业前的执行。作业释放任务用于作业后的维护或清理。
 
@@ -276,15 +267,13 @@ Batch 提供作业准备任务来设置作业前的执行。作业释放任务�
 
 有关作业准备和释放任务的详细信息，请参阅[在 Azure Batch 计算节点上运行作业准备和完成任务](/documentation/articles/batch-job-prep-release/)。
 
-<a name="multi-instance-tasks"></a>
-### 多实例任务
+### 多实例任务  <a name="multi-instance-tasks"></a>
 
 [多实例任务](/documentation/articles/batch-mpi/)是经过配置后可以在多个计算节点上同时运行的任务。通过多实例任务，可以启用等高性能计算方案（例如消息传递接口 (MPI)），此类方案需要将一组计算节点分配到一起来处理单个工作负荷。
 
 有关在 Batch 中使用 Batch .NET 库运行 MPI 作业的详细介绍，请参阅 [Use multi-instance tasks to run Message Passing Interface (MPI) applications in Azure Batch](/documentation/articles/batch-mpi/)（在 Azure Batch 中使用多实例任务来执行消息传递接口 (MPI) 应用程序）。
 
-<a name="task-dependencies"></a>
-### 任务依赖项
+### 任务依赖项  <a name="task-dependencies"></a>
 
 顾名思义，使用[任务依赖性](/documentation/articles/batch-task-dependencies/)可在执行某个任务之前，指定该任务与其他任务的依赖性。此功能提供以下情况的支持：“下游”任务取用“上游”任务的输出，或当上游任务执行下游任务所需的某种初始化时。若要使用此功能，必须先在 Batch 作业中启用任务依赖性。然后，针对每个依赖于另一个任务（或其他许多任务）的任务，指定该任务依赖的任务。
 
@@ -296,8 +285,7 @@ Batch 提供作业准备任务来设置作业前的执行。作业释放任务�
 
 有关此功能的更深入信息，请查看 [Task dependencies in Azure Batch](/documentation/articles/batch-task-dependencies/)（Azure Batch 中的任务依赖关系）和 [azure-batch-samples][github_samples] GitHub 存储库中的 [TaskDependencies][github_sample_taskdeps] 代码示例。
 
-<a name="environment-settings-for-tasks"></a>
-## 任务的环境设置
+## 任务的环境设置  <a name="environment-settings-for-tasks"></a>
 
 在 Batch 作业中执行的每个任务可以访问由 Batch 服务设置的环境变量（服务定义的环境变量，如下表中所述）以及可为任务设置的自定义环境变量。任务在节点上运行的应用程序和脚本可以在执行期间访问这些环境变量。
 
@@ -324,8 +312,7 @@ Batch 提供作业准备任务来设置作业前的执行。作业释放任务�
 
 >[AZURE.IMPORTANT] 这些环境变量仅可在**任务用户**（即执行任务的节点上的用户帐户）的上下文中使用。如果通过远程桌面协议 (RDP) 或安全外壳 (SSH) 从[远程连接](#connecting-to-compute-nodes)到计算节点并列出环境变量，将*看不到*这些变量。这是因为，用于远程连接的用户帐户与任务使用的帐户不同。
 
-<a name="files-and-directories"></a>
-## 文件和目录
+## 文件和目录  <a name="files-and-directories"></a>
 
 每个任务都有一个*工作目录*，任务将在该目录中创建零个或多个文件和目录。此工作目录可用于存储任务运行的程序、任务处理的数据，以及任务执行的处理的输出。任务的所有文件和目录由任务用户拥有。
 
@@ -348,8 +335,7 @@ Batch 服务在节点上公开文件系统的一部分作为*根目录*。任务
 
 >[AZURE.IMPORTANT] 从池中删除节点时，也会删除节点上存储的*所有*文件。
 
-<a name="application-packages"></a>
-## 应用程序包
+## 应用程序包  <a name="application-packages"></a>
 
 [应用程序包](/documentation/articles/batch-application-packages/)功能可为池中的计算节点提供简单的应用程序管理和部署能力。可以上载和管理任务运行的多个应用程序版本，包括二进制文件和支持文件。然后可以将一个或多个此类应用程序自动部署到池中的计算节点。
 
@@ -371,8 +357,7 @@ Batch 可以处理使用 Azure 存储将应用程序包存储及部署到计算�
 
 通常会使用一种组合方法来处理可变但持续存在的负载。可以创建一个池用于容纳提交的多个作业，但同时根据作业负载向上或向下缩放节点数目（请参阅下一部分中的[缩放计算资源](#scaling-compute-resources)）。可以根据当前负载被动执行此操作，或者在负载可预测时主动执行此操作。
 
-<a name="scaling-compute-resources"></a>
-## 缩放计算资源
+## 缩放计算资源  <a name="scaling-compute-resources"></a>
 
 通过[自动缩放](/documentation/articles/batch-automatic-scaling/)功能，可以让 Batch 服务根据计算方案的当前工作负荷和资源使用状况动态缩放池中的计算节点数目。这样，便可做到只使用所需资源并可释放不需要的资源，因而能够降低运行应用程序的整体成本。
 
@@ -402,8 +387,7 @@ Batch 可以处理使用 Azure 存储将应用程序包存储及部署到计算�
 
 如果将证书添加到*现有*池，必须重新启动其计算节点，证书才会应用到节点。
 
-<a name="error-handling"></a>
-## 错误处理。
+## 错误处理。  <a name="error-handling"></a>
 
 有时你可能需要处理 Batch 解决方案中的任务和应用程序失败。
 
@@ -444,8 +428,7 @@ Batch 可以处理使用 Azure 存储将应用程序包存储及部署到计算�
 
 间歇性的问题也有可能会导致任务挂起，或者花费很长时间才能完成执行。可为任务设置最长执行时间。如果超过此时间，Batch 会中断任务应用程序。
 
-<a name="connecting-to-compute-nodes"></a>
-### 连接到计算节点
+### 连接到计算节点  <a name="connecting-to-compute-nodes"></a>
 
 可通过远程登录到计算节点来进一步执行调试和故障排除。可以使用 Azure 门户预览下载 Windows 节点的远程桌面协议 (RDP) 文件，并获取 Linux 节点的安全外壳 (SSH) 连接信息。也可以使用 Batch API（例如，使用 [Batch .NET][net_rdpfile] 或 [Batch Python](/documentation/articles/batch-linux-nodes/#connect-to-linux-nodes/)）执行此操作。
 

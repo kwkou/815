@@ -15,7 +15,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="08/30/2016"
-	wacn.date="11/21/2016"
+	wacn.date="11/30/2016"
 	ms.author="kirillg"/>
 
 # 使用 DocumentDB 文档资源管理器查看、编辑、创建和上传 JSON 文档
@@ -24,8 +24,8 @@
 
 请注意，具有 MongoDB 协议支持的 DocumentDB 帐户未启用文档资源管理器。启用此功能后，此页将会更新。
 
-<a name="launch-document-explorer"></a>
-## 启动文档资源管理器
+
+## 启动文档资源管理器  <a name="launch-document-explorer"></a>
 
 1. 在 Azure 门户预览的跳转栏中，单击“DocumentDB (NoSQL)”。如果“DocumentDB (NoSQL)”不可见，则单击“更多服务”，再单击“DocumentDB (NoSQL)”。
 
@@ -133,8 +133,8 @@
 
 	![文档资源管理器“刷新”命令的屏幕截图](./media/documentdb-view-JSON-document-explorer/documentexplorerrefresh.png)
 
-<a name="BulkAdd"></a>
-## 批量添加文档
+
+## 批量添加文档  <a name="BulkAdd"></a>
 
 文档资源管理器支持批量引入一个或多个现有 JSON 文档，每个上传操作最多上传 100 个 JSON 文件。
 
@@ -167,8 +167,8 @@ Azure 门户预览中的文档资源管理器只是在 DocumentDB 中使用文�
 
 如果需要从其他源（JSON 文件、MongoDB、SQL Server、CSV 文件、Azure 表存储、Amazon DynamoDB 或 HBase）导入或迁移文件，你可以使用 DocumentDB 的[数据迁移工具](/documentation/articles/documentdb-import-data/)将数据快速导入到 DocumentDB。
 
-<a name="troubleshoot"></a>
-## 故障排除
+
+## 故障排除  <a name="troubleshoot"></a>
 
 **症状**：文档资源管理器返回“未找到文档”。
 

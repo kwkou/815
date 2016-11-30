@@ -15,7 +15,7 @@
     ms.tgt_pltfrm="na" 
     ms.workload="data-services" 
     ms.date="08/08/2016" 
-    wacn.date="11/21/2016" 
+    wacn.date="11/30/2016" 
     ms.author="arramac"/>  
 
 
@@ -595,8 +595,7 @@ DocumentDB 还针对每个路径支持空间索引，可为点数据类型指定
         new { id = "AndersenFamily", isRegistered = true },
         new RequestOptions { IndexingDirective = IndexingDirective.Include });
 
-<a name="modifying-the-indexing-policy-of-a-collection"></a>
-## 修改集合的索引策略
+## 修改集合的索引策略 <a name="modifying-the-indexing-policy-of-a-collection"></a>
 
 DocumentDB 允许你动态更改集合的索引策略。更改 DocumentDB 集合的索引策略可能导致索引形状改变，包括可编制索引的路径、其精度以及索引本身的一致性模型。因此，索引策略的更改实际上要求将旧索引转换为新索引。
 

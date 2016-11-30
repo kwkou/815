@@ -15,7 +15,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="09/30/2016"
-	wacn.date="11/25/2016"
+	wacn.date="11/30/2016"
 	ms.author="dastrock"/>  
 
 
@@ -26,8 +26,7 @@ v2.0 终结点在每个[身份验证流](/documentation/articles/active-director
 > [AZURE.NOTE]
 	v2.0 终结点并不支持所有 Azure Active Directory 方案和功能。若要确定是否应使用 v2.0 终结点，请阅读 [v2.0 限制](/documentation/articles/active-directory-v2-limitations/)。
 
-<a name="types-of-tokens"></a>
-## 类型的令牌
+## 类型的令牌  <a name="types-of-tokens"></a>
 
 v2.0 终结点支持 [OAuth 2.0 授权协议](/documentation/articles/active-directory-v2-protocols/)，该协议使用 access\_token 与 refresh\_token。它还支持通过 [OpenID Connect](/documentation/articles/active-directory-v2-protocols/#openid-connect-sign-in-flow/) 进行身份验证和登录，其中引入了第三种类型的令牌 id\_token。每个令牌表示为“持有者令牌”。
 
@@ -35,8 +34,7 @@ v2.0 终结点支持 [OAuth 2.0 授权协议](/documentation/articles/active-dir
 
 v2.0 终结点颁发的许多令牌都实现为 Json Web 令牌或 JWT。JWT 是一种精简的 URL 安全方法，可在两方之间传输信息。JWT 中包含的信息也称为令牌持有者及使用者相关信息的“声明”或断言。JWT 中的声明是为了传输而编码和序列化的 JSON 对象。由于 v2.0 终结点所颁发的 JWT 已签名但未加密，因此你可以轻松地检查 JWT 的内容以便调试。有关 JWT 的详细信息，请参阅 [JWT 规范](http://self-issued.info/docs/draft-ietf-oauth-json-web-token.html)。
 
-<a name="id_tokens"></a>
-## Id\_tokens
+## Id\_tokens  <a name="id_tokens"></a>
 
 Id\_token 是应用使用 [OpenID Connect](/documentation/articles/active-directory-v2-protocols/#openid-connect-sign-in-flow/) 执行身份验证时收到的一种登录安全令牌形式。它以 [JWT](#types-of-tokens) 表示，包含可让用户登录应用的声明。可以适时使用 id\_token 中的声明 - 通常用于显示帐户信息或在应用程序中进行访问控制决策。v2.0 终结点只颁发一种类型的 id\_token，而无论用户登录的类型为何，都具有一组一致的声明。也就是说，id\_token 的格式和内容与个人 Microsoft 帐户用户及工作或学校帐户的格式与内容相同。
 
@@ -91,8 +89,7 @@ v2.0 终结点颁发的访问令牌目前仅适用于 Microsoft 服务。在任�
 
 使用刷新令牌兑换新的访问令牌（而且应用已获得 `offline_access` 范围）时，将在令牌响应中收到新的刷新令牌。你应该保存新颁发的刷新令牌，并替换请求中使用的刷新令牌。这将保证刷新令牌尽可能长期保持有效。
 
-<a name="validating-tokens"></a>
-## 验证令牌
+## 验证令牌  <a name="validating-tokens"></a>
 
 目前，应用程序必须执行的唯一令牌验证就是验证 id\_token。若要验证 id\_token，应用应该验证 id\_token 签名和 id\_token 中的声明。
 

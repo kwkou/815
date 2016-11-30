@@ -15,7 +15,7 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="04/18/2016" 
-	wacn.date="11/21/2016" 
+	wacn.date="11/30/2016" 
 	ms.author="moderakh"/>
 
 
@@ -41,8 +41,7 @@
 
     > [AZURE.NOTE] 每个示例都是独立的，自行对自身进行设置并在完成后自行进行清理。因此，示例问题将多次调用 [document\_client.CreateCollection](http://azure.github.io/azure-documentdb-python/api/pydocumentdb.document_client.html)。每次执行完此操作，均会按照正在创建的集合的性能等级，向你的订阅收取使用 1 小时的费用。
 
-<a name="database-examples"></a>
-## 数据库示例
+## 数据库示例  <a name="database-examples"></a>
 
 [DatabaseManagement](https://github.com/Azure/azure-documentdb-python/tree/master/samples/DatabaseManagement) 项目的 [Program.py](https://github.com/Azure/azure-documentdb-python/tree/master/samples/DatabaseManagement/Program.py) 文件演示了如何执行以下任务。
 
@@ -54,8 +53,7 @@
 [列出帐户的数据库](https://github.com/Azure/azure-documentdb-python/blob/d78170214467e3ab71ace1a7400f5a7fa5a7b5b0/samples/DatabaseManagement/Program.py#L99-L110) | [document\_client.ReadDatabases](http://azure.github.io/azure-documentdb-python/api/pydocumentdb.document_client.html)
 [删除数据库](https://github.com/Azure/azure-documentdb-python/blob/d78170214467e3ab71ace1a7400f5a7fa5a7b5b0/samples/DatabaseManagement/Program.py#L113-L126) | [document\_client.DeleteDatabase](http://azure.github.io/azure-documentdb-python/api/pydocumentdb.document_client.html)
 
-<a name="collection-examples"></a>
-## 集合示例 
+## 集合示例  <a name="collection-examples"></a>
 
 [CollectionManagement](https://github.com/Azure/azure-documentdb-python/tree/master/samples/CollectionManagement) 项目的 [Program.py](https://github.com/Azure/azure-documentdb-python/tree/master/samples/CollectionManagement/Program.py) 文件演示了如何执行以下任务。
 

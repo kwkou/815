@@ -15,7 +15,7 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="08/22/2016" 
-	wacn.date="11/21/2016" 
+	wacn.date="11/30/2016" 
 	ms.author="arramac"/>  
 
 
@@ -193,8 +193,7 @@ Azure DocumentDB 通过将 SQL（结构化查询语言）用作 JSON 查询语�
     [WHERE <filter_condition>]
     [ORDER BY <sort_specification]    
 
-<a name="from-clause"></a>
-## FROM 子句
+## FROM 子句 <a name="from-clause"></a>
 `FROM <from_specification>` 子句是可选的，除非稍后在查询中对源进行筛选或投影。此子句的目的在于指定必须对其执行查询的数据源。通常情况下，整个集合作为源，但可以改为指定集合的子集作为源。
 
 一个类似 `SELECT * FROM Families` 的查询指示整个家庭集合是要枚举的源。特殊标识符 ROOT 可以用来表示集合，而不使用集合名称来表示。以下列表包含每个查询需要强制执行的规则：
@@ -259,8 +258,8 @@ Azure DocumentDB 通过将 SQL（结构化查询语言）用作 JSON 查询语�
 	]
 
 
-<a name="where-clause"></a>
-## WHERE 子句
+
+## WHERE 子句  <a name="where-clause"></a>
 WHERE 子句（**`WHERE <filter_condition>`**）是可选的。它指定由源提供的 JSON 文档必须满足的条件，以便作为结果的一部分包含在内。任何 JSON 文档必须将指定的条件评估为“true”以作为结果。WHERE 子句由索引层使用，以确定可以作为结果的一部分的源文档的绝对最小子集。
 
 以下查询请求包含值为 `AndersenFamily` 的名称属性的文档。任何其他不具有名称属性或值与 `AndersenFamily` 不匹配的文档则被排除在外。
@@ -2089,8 +2088,7 @@ DocumentDB 查询提供程序执行从 LINQ 查询到 DocumentDB SQL 查询的�
 	JOIN c IN f.children
 	WHERE c.familyName = f.parents[0].familyName
 
-<a name="executing-sql-queries"></a>
-## 执行 SQL 查询
+## 执行 SQL 查询  <a name="executing-sql-queries"></a>
 DocumentDB 通过一个 REST API 来公开资源，任何可以发出 HTTP/HTTPS 请求的语言都可以调用该 REST API。此外，DocumentDB 还为多种常用语言（如 .NET、Node.js、JavaScript 和 Python）提供编程库。REST API 和各种库均支持通过 SQL 进行查询。除了 SQL 之外，.NET SDK 还支持 LINQ 查询。
 
 以下示例演示了如何对 DocumentDB 数据库帐户创建和提交该查询。

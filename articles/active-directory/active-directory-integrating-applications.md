@@ -14,7 +14,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="identity"
    ms.date="10/11/2016"
-   wacn.date="11/28/2016"
+   wacn.date="11/30/2016"
    ms.author="mbaldwin;bryanla" />  
 
 
@@ -28,8 +28,7 @@
 
 若要详细了解表示已注册应用程序的两个 Azure AD 对象及其关系，请参阅[应用程序对象和服务主体对象](/documentation/articles/active-directory-application-objects/)；若要详细了解利用 Azure Active Directory 开发应用程序时应使用的品牌准则，请参阅[适用于集成应用的品牌准则](/documentation/articles/active-directory-branding-guidelines/)。
 
-<a name="BKMK_Native"></a><a name="adding-an-application"></a>
-## 添加应用程序
+## 添加应用程序 <a name="BKMK_Native"></a><a name="adding-an-application"></a>
 
 任何想要使用 Azure AD 功能的应用程序都必须先在 Azure AD 租户中注册。此注册过程涉及到提供有关应用程序的 Azure AD 详细信息，例如，该应用程序所在位置的 URL、对用户进行身份验证后用于发送答复的 URL、用于标识应用程序的 URI，等等。
 
@@ -53,7 +52,7 @@
 
 >[AZURE.NOTE] 默认情况下，新建的应用程序注册已配置为允许你的目录中的用户登录到你的应用程序。
 
-## <a name="updating-an-application"></a>更新应用程序
+## 更新应用程序 <a name="updating-an-application"></a>
 
 将应用程序注册到 Azure AD 后，可能需要更新该应用程序，以提供对 Web API 的访问权限、使其可在其他组织中使用，等等。本部分介绍可以通过哪些不同的方法来进一步配置应用程序。首先，我们将概述同意框架。如果你要构建资源/API 应用程序，并且这些应用程序将由你的组织或其他组织中的开发人员构建的应用程序使用，则必须了解此框架。
 
