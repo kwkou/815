@@ -14,6 +14,8 @@
 
 # 使用 Azure 服务总线中继创建 .NET 本地/云混合应用程序
 
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-sdk-developer-differences.md)]
+
 ##介绍
 
 本文说明如何使用 Azure 和 Visual Studio 生成混合云应用程序。本教程假定你之前未使用过 Azure。在不到 30 分钟的时间内，你就能让使用多个 Azure 资源的应用程序在云中启动并运行。

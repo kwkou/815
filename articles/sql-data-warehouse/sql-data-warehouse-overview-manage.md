@@ -21,6 +21,8 @@
 
 # 在 Azure SQL 数据仓库中管理数据库
 
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-sdk-developer-differences.md)]
+
 SQL 数据仓库自动执行管理数据库的许多方面的操作。例如，若要缩放性能，你只需调整相应级别的计算资源并为这些资源付费，然后即可让 SQL 数据仓库执行向外扩展和缩减的所有工作。
 
 你肯定需要监视工作负荷以确定所需性能，并对长时间运行的查询进行故障排除。你还需要执行几个安全任务来管理用户和登录名的权限。

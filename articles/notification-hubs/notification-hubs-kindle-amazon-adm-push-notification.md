@@ -21,6 +21,8 @@
 
 [AZURE.INCLUDE [notification-hubs-selector-get-started](../../includes/notification-hubs-selector-get-started.md)]
 
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-sdk-developer-differences.md)]
+
 ##概述
 
 本教程演示如何使用 Azure 通知中心将推送通知发送到 Kindle 应用程序。

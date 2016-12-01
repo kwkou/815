@@ -20,6 +20,8 @@
 
 # Azure 中的开发和测试环境
 
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-sdk-developer-differences.md)]
+
 自定义应用程序在部署到生产环境之前，通常会先部署到多个开发和测试环境。在本地创建环境时，需要为每个应用程序的每个环境采购或分配计算资源。环境通常包含多个物理或虚拟机，这些虚拟机采用手动部署的特定配置或包含复杂的自动化脚本。部署通常需要数小时，并且会在环境中导致不一致的配置。
 
 ## 方案 ##

@@ -14,6 +14,8 @@
 
 # 使用 Azure 服务总线队列创建 .NET 多层应用程序
 
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-sdk-developer-differences.md)]
+
 ## 介绍
 
 使用 Visual Studio 和免费的 Azure SDK for .NET，可以轻松针对 Azure 进行开发。本教程将指导你完成创建使用在本地环境中运行的多个 Azure 资源的应用程序的步骤。这些步骤假设你之前未使用过 Azure。

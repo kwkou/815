@@ -19,6 +19,8 @@
 
 # 概述：SQL 数据库的管理工具
 
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-sdk-developer-differences.md)]
+
 本主题介绍并比较用于管理 Azure SQL 数据库的工具和选项，以便你可以挑选适合作业、业务以及你自己的工具。选择合适的工具取决于你管理的数据库数量、任务以及执行任务的频率。
 
 ## Azure 经典管理门户
