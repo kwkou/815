@@ -21,6 +21,8 @@
 
 [AZURE.INCLUDE [sql-database-develop-includes-selector-language-platform-depth](../../includes/sql-database-develop-includes-selector-language-platform-depth.md)]
 
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-sdk-developer-differences.md)]
+
 ## 步骤 1：配置开发环境
 
 [配置用于 ADO.NET 开发的开发环境](https://msdn.microsoft.com/zh-cn/library/mt718321.aspx)

@@ -23,6 +23,8 @@
 
 [AZURE.INCLUDE [iot-hub-gateway-sdk-getstarted-selector](../../includes/iot-hub-gateway-sdk-getstarted-selector.md)]
 
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-sdk-developer-differences.md)]
+
 ## 如何生成示例
 
 开始之前，必须[设置开发环境][lnk-setupdevbox]，以便在 Windows 上使用 SDK。

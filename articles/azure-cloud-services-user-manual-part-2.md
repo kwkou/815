@@ -16,6 +16,8 @@
 
 #Azure 云服务操作手册
 
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-sdk-developer-differences.md)]
+
 [Azure 云服务操作手册 - 第一部分](/documentation/articles/azure-cloud-services-user-manual-part-1/)
 
 ##<a id="azure-cloud-service-get-started"></a>2.	着手创建 Azure 云服务  
