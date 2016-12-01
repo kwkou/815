@@ -66,6 +66,7 @@ HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 中使用 HDInsi
 		
 		        private const string DefaultStorageAccountName = "<Default Storage Account Name>";
 		        private const string DefaultStorageAccountKey = "<Default Storage Account Key>";
+				private const string StorageAccountSuffix = "core.chinacloudapi.cn";
 		        private const string DefaultStorageContainerName = "<Default Blob Container Name>";
 		
 		        static void Main(string[] args)
@@ -110,7 +111,7 @@ HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 中使用 HDInsi
 		
 		            // Get job output
 		            var storageAccess = new AzureStorageAccess(DefaultStorageAccountName, DefaultStorageAccountKey,
-		                DefaultStorageContainerName);
+		                DefaultStorageContainerName, StorageAccountSuffix);
 		            var output = (jobDetail.ExitValue == 0)
 		                ? _hdiJobManagementClient.JobManagement.GetJobOutput(jobId, storageAccess) // fetch stdout output in case of success
 		                : _hdiJobManagementClient.JobManagement.GetJobErrorLogs(jobId, storageAccess); // fetch stderr output in case of failure
