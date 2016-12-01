@@ -44,7 +44,7 @@
 
 ## 步骤 1：创建资源组和存储帐户
 
-1. **登录 Azure** - 在命令行接口（Bash、终端、命令行提示符）中，切换到 Resource Manager 模式，然后[使用工作或学校 ID 登录](/documentation/articles/xplat-cli-connect/#use-the-log-in-method)。按照提示进行操作以获取 Azure 帐户的交互式登录体验。
+1. **登录 Azure** - 在命令行接口（Bash、终端、命令行提示符）中，切换到 Resource Manager 模式，然后[使用工作或学校 ID 登录](/documentation/articles/xplat-cli-connect/)。按照提示进行操作以获取 Azure 帐户的交互式登录体验。
 
         azure config mode arm
 
