@@ -49,7 +49,7 @@
 
 - [常见实时流式处理方案](/documentation/articles/media-services-live-streaming-with-onprem-encoders/#scenario)
 - [频道及其相关组件的说明](/documentation/articles/media-services-live-streaming-with-onprem-encoders/#channel)
-- [注意事项](/documentation/articles/media-services-live-streaming-with-onprem-encoders/#considerations)
+- [注意事项](/documentation/articles/media-services-live-streaming-with-onprem-encoders/#Considerations)
 
 ##<a id="scenario"></a>常见实时流式处理方案
 以下步骤介绍创建常见的实时流式处理应用程序时涉及的任务。

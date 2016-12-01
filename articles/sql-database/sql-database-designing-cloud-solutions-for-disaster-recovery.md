@@ -15,7 +15,7 @@
    ms.tgt_pltfrm="NA"
    ms.workload="data-management"
    ms.date="07/20/2016"
-   wacn.date="09/19/2016"
+   wacn.date="12/01/2016"
    ms.author="sashan"/>
 
 # 使用 SQL 数据库中的活动异地复制功能为云灾难恢复设计应用程序
@@ -59,7 +59,7 @@
 
 如果服务中断发生在次要区域中，主数据库和辅助数据库之间的复制链接将暂停，并且监视应用程序将注册公开主数据库的警报。应用程序的性能不会受到影响，但是暴露了应用程序的运行，因此在两个区域连续失败的情况下应用程序具有较高风险。
 
-> [AZURE.NOTE] 我们仅建议使用单个 DR 区域进行部署配置。这是因为大多数 Azure 地理位置都有两个区域。这些配置不会保护你的应用程序免受这两个区域的灾难性故障的影响。在此类失败的不可能事件中，你可以使用[地域还原操作](/documentation/articles/sql-database-disaster-recovery/#recovery-using-geo-restore)在第三个区域中恢复数据库。
+> [AZURE.NOTE] 我们仅建议使用单个 DR 区域进行部署配置。这是因为大多数 Azure 地理位置都有两个区域。这些配置不会保护你的应用程序免受这两个区域的灾难性故障的影响。在此类失败的不可能事件中，你可以使用[地域还原操作](/documentation/articles/sql-database-disaster-recovery/#recover-using-geo-restore)在第三个区域中恢复数据库。
 
 缓解服务中断后，辅助数据库自动与主数据库进行同步。在同步过程中，主数据库的性能可能会略微受影响，具体取决于需要进行同步的数据量。下图说明了次要区域中的服务中断。
 
