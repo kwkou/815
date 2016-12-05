@@ -5,7 +5,8 @@
 	manager="rboucher"
 	editor=""
 	services="monitoring-and-diagnostics"
-	documentationCenter="monitoring-and-diagnostics"/>
+	documentationCenter="monitoring-and-diagnostics"/>  
+
 
 <tags
 	ms.service="monitoring-and-diagnostics"
@@ -13,13 +14,13 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="08/17/2016"
-	wacn.date="10/17/2016"
+	ms.date="10/25/2016"
+	wacn.date="12/05/2016"
 	ms.author="johnkem"/>  
 
 
 # Azure 活动日志概述
-**Azure 活动日志**是一种日志，方便用户了解对订阅中的资源执行的操作。活动日志此前称为“审核日志”或“操作日志”，因为它报告订阅的控制平面事件。使用活动日志，用户可确定任何针对订阅中资源的写入（PUT、POST、DELETE）操作的“内容、人员和时间”，并可了解操作状态和其他相关属性。活动日志不包括读取 (GET) 操作。
+**Azure 活动日志**是一种日志，方便用户了解对订阅中的资源执行的操作。活动日志此前称为“审核日志”或“操作日志”，因为它报告订阅的控制平面事件。使用活动日志，用户可以确定针对订阅中的资源执行的任何写入操作（PUT、POST、DELETE）的“内容、人员和时间”。还可以了解该操作和其他相关属性的状态。活动日志不包括读取 (GET) 操作。
 
 
 可以通过 Azure 门户预览、CLI、PowerShell cmdlet 和 Insights REST API 从活动日志检索事件。
@@ -42,7 +43,7 @@
 - 应该导出哪些区域（位置）
 - 应该将活动日志保留在存储帐户中多长时间 – 保留期为 0 天表示永久保留日志。如果不需永久保留，则可将该值设置为 1 到 2147483647 之间的任意天数。如果设置了保留策略，但禁止将日志存储在存储帐户中（例如，如果仅选择事件中心或 OMS 选项），则保留策略无效。
 
-这些设置可以在门户预览的“活动日志”边栏选项卡中通过“导出”选项配置，也可以[使用 REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn931927.aspx)、PowerShell cmdlet 或 CLI 通过编程方式配置。一个订阅只能有一个日志配置文件。
+可通过门户中“活动日志”边栏选项卡的“导出”选项配置这些设置。还可[使用 Azure Monitor REST API](https://msdn.microsoft.com/library/azure/dn931927.aspx)、PowerShell cmdlet 或 CLI 以编程方式配置这些设置。一个订阅只能有一个日志配置文件。
 
 ### 通过 Azure 门户预览配置日志配置文件
 可以在 Azure 门户预览中使用“导出”选项将活动日志流式传输到事件中心，或者将其存储在存储帐户中。
@@ -55,9 +56,14 @@
 
     ![门户预览中的“导出”按钮](./media/monitoring-overview-activity-logs/activity-logs-portal-export.png)  
 
-3. 在出现的边栏选项卡中，可以选择要导出事件的区域、要保存事件的存储帐户、要在存储中保留这些事件的天数（0 天意味着永久保留日志），以及要在其中创建事件中心（用于流式传输这些事件）的服务总线命名空间。
-
-    ![“导出活动日志”边栏选项卡](./media/monitoring-overview-activity-logs/activity-logs-portal-export-blade.png)  
+3. 在显示的边栏选项卡中，可以选择：
+   
+   * 想要导出其事件的区域
+   * 想要将事件保存到的存储帐户
+   * 想要在存储中保留这些事件的天数。设置为 0 天可以永久保留日志。
+   * 想要在其中创建用于流式处理这些事件的事件中心的服务总线命名空间。
+     
+     ![“导出活动日志”边栏选项卡](./media/monitoring-overview-activity-logs/activity-logs-portal-export-blade.png)  
 
 4. 单击“保存”保存这些设置。这些设置会即时应用到订阅。
 
@@ -116,7 +122,7 @@ azure insights logprofile delete --name my_log_profile
 ```
 
 ## 事件架构
-活动日志中的每个事件都有一个 JSON blob，如下所示：
+活动日志中的每个事件都有一个类似于此示例的 JSON blob：
 
 ```
 {
@@ -221,7 +227,7 @@ azure insights logprofile delete --name my_log_profile
 | eventTimestamp | 处理与事件对应的请求的 Azure 服务生成事件时的时间戳。 |
 | submissionTimestamp | 事件可供查询的时间戳。 |
 | subscriptionId | Azure 订阅 ID。 |
-| nextLink | 继续标记，用于提取下一结果集，此时这些结果已分解成多个响应。如果有 200 多个记录，通常会出现这种情况。 |
+| nextLink |继续标记，用于提取下一结果集，此时这些结果已分解成多个响应。通常在有超过 200 个记录时需要。 |
 
 ## 后续步骤
 - [详细了解活动日志（以前称为审核日志）](/documentation/articles/resource-group-audit/)
