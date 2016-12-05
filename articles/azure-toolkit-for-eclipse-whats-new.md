@@ -5,38 +5,47 @@
 	documentationCenter="java"
 	authors="rmcmurray"
 	manager="wpickett"
-	editor=""/>
+	editor=""/>  
+
 
 <tags
 	ms.service="multiple"
-	ms.workload="na"
-	ms.tgt_pltfrm="multiple"
-	ms.devlang="Java"
-	ms.topic="article"
-	ms.date="06/24/2016"
-	wacn.date="08/01/2016" 
+    	ms.workload="na"
+   	ms.tgt_pltfrm="multiple"
+    	ms.devlang="Java"
+    	ms.topic="article"
+	ms.date="11/01/2016" 
+	wacn.date="12/05/2016" 
 	ms.author="robmcm;asirveda;martinsawicki"/>
 
 <!-- Legacy MSDN URL = https://msdn.microsoft.com/library/azure/hh694270.aspx -->
 
 # Azure Toolkit for Eclipse 的新增功能
-
 ## Azure Toolkit for Eclipse 版本
-
 本文包含有关 Azure Toolkit for Eclipse 的不同版本和最新更新的信息。
 
 > [AZURE.NOTE] 另外还有 Azure Toolkit for IntelliJ IDE。有关详细信息，请参阅 [Azure Toolkit for IntelliJ]。
 
-### 2016 年 6 月 29 日
+### 2016 年 8 月 26 日
+用于 Eclipse 的 Azure 工具包 - 2016 年 8 月版包含以下增强功能：
 
+* **自定义 JDK 分发版**。用于 Eclipse 的 Azure 工具包现在支持指定任意 JDK 版本并将其部署到 Azure WebApp 容器：
+  * 除了 Azure 提供的 JDK 以外，还可以从 Azul Systems 在 Azure 上提供的多种 Zulu OpenJDK 版本中进行选择。
+  * 还可以指定自己的 JDK 分发版，前提是将它以 ZIP 文件的形式上载到存储帐户。
+* **Azure 资源管理器视图增强**：
+  * 支持使用 Azure 的新 Resource Manager 模型管理虚拟机：无需退出 IDE，即可列出、创建和删除基于 Resource Manager 的虚拟机。
+  * 支持使用 Azure 的 Resource Manager 管理存储帐户 Blob。此功能对现有的“经典”存储帐户管理功能做了补充。
+* **用于 SQL Server 的 Microsoft JDBC 驱动程序 6.0**此项更新包含适用于 Microsoft SQL Server 的最新 JDBC 驱动程序 (v6.0)，该驱动程序现在以库的形式提供，可轻松添加到项目并取代旧版本。
+
+### 2016 年 6 月 29 日
 Azure Toolkit for Eclipse — 2016 年 6 月版包含以下增强功能：
 
 * **需要 Java 8**。Azure Toolkit for Eclipse 现在需要 Java 8，不过此需求仅适用于此工具包 — 你的应用程序可以继续使用 Azure 支持的所有 Java 版本。
 * **支持最新的 Java JDK**。Azure Toolkit for Eclipse 现在支持最新版本的 Java JDK。
 * **支持 Azure SDK v2.9.1**。最新版 Azure SDK 现在是 Azure Toolkit for Eclipse 的最低必备组件。
 * **集成示例**。Azure Toolkit for Eclipse 目前精选了数个示例应用程序，可帮助开发人员快速入门。
-* **HDInsight 工具集成**。Azure 的 HDInsight 工具现在随附于 Azure Toolkit for Eclipse。
-* **远程调试 Java Web Apps**。Azure Toolkit for Eclipse 现在支持对 Azure App Service 上的 Java Web Apps 进行远程调试。
+* **HDInsight 工具集成**。Azure 的 HDInsight 工具现在随附于 Azure Toolkit for Eclipse。有关详细信息，请参阅 [HDInsight Tools Plugin for Eclipse]（用于 Eclipse 的 HDInsight 工具插件）。
+* **远程调试 Java Web 应用**。Azure Toolkit for Eclipse 现在支持对 Azure App Service 上的 Java Web Apps 进行远程调试。
 * **支持 Eclipse Luna 版本。** 新的最低所需 Eclipse IDE 版本为 Luna。
 
 ### 2016 年 4 月 12 日
