@@ -16,7 +16,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="na"
    ms.date="10/05/2016"
-   wacn.date="10/31/2016"
+   wacn.date="12/05/2016"
    ms.author="dobett"/>
 
 
@@ -421,6 +421,7 @@ int main(void)
         curl
         ssl
         crypto
+        m
     )
     ```
 
@@ -441,4 +442,4 @@ int main(void)
 
 [AZURE.INCLUDE [iot-suite-visualize-connecting](../../includes/iot-suite-visualize-connecting.md)]
 
-<!---HONumber=Mooncake_0815_2016-->
+<!---HONumber=Mooncake_1128_2016-->
