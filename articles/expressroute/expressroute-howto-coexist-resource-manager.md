@@ -6,7 +6,8 @@
    authors="charwen"
    manager="carmonm"
    editor=""
-   tags="azure-resource-manager"/>
+   tags="azure-resource-manager"/>  
+
 <tags
    ms.service="expressroute"
    ms.devlang="na"
@@ -14,7 +15,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
    ms.date="10/10/2016"
-   wacn.date="10/31/2016"
+   wacn.date="12/05/2016"
    ms.author="charleywen"/>  
 
 
@@ -48,7 +49,13 @@
 
 你可以将站点到站点 VPN 连接配置为 ExpressRoute 的备份。这仅适用于链接到 Azure 专用对等路径的虚拟网络。对于可通过 Azure 公共线路访问的服务，没有基于 VPN 的故障转移解决方案。ExpressRoute 线路始终是主链接。仅当 ExpressRoute 线路失败时，数据才会流经站点到站点 VPN 路径。
 
-![共存](./media/expressroute-howto-coexist-resource-manager/scenario1.jpg)
+> [AZURE.NOTE]
+> 两个路由相同时，会优先选择 ExpressRoute 线路（而不选择站点到站点 VPN），而 Azure 会使用 longuest 前缀匹配来选择通往数据包目标的路由。
+> 
+> 
+
+![共存](media/expressroute-howto-coexist-resource-manager/scenario1.jpg)  
+
 
 ### 配置站点到站点 VPN，以便连接到不通过 ExpressRoute 进行连接的站点
 
@@ -143,6 +150,7 @@
 		$localBGPASN = "<ASN>"
 		$localAddressPrefix = $localBGPPeeringIP + "/32"
 		$localVpn = New-AzureRmLocalNetworkGateway -Name "LocalVPNGateway" -ResourceGroupName $resgrp.ResourceGroupName -Location $location -GatewayIpAddress $localVPNPublicIP -AddressPrefix $localAddressPrefix -BgpPeeringAddress $localBGPPeeringIP -Asn $localBGPASN
+
 8. 配置本地 VPN 设备以连接到新的 Azure VPN 网关。有关 VPN 设备配置的详细信息，请参阅 [VPN 设备配置](/documentation/articles/vpn-gateway-about-vpn-devices/)。
 
 9. 将 Azure 上的站点到站点 VPN 网关连接到本地网关。
@@ -159,7 +167,7 @@
 
 >[AZURE.NOTE] 如果你删除的是现有网关，则当你进行此配置时，本地系统将失去与虚拟网络建立的连接。
 
-1. 你需要安装 Azure PowerShell cmdlet 的最新版本。有关安装 PowerShell cmdlet 的详细信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)。请注意，针对此配置使用的 cmdlet 可能与你熟悉的 cmdlet 稍有不同。请务必使用说明内容中指定的 cmdlet。 
+1. 你需要安装 Azure PowerShell cmdlet 的最新版本。有关安装 PowerShell cmdlet 的详细信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)。请注意，针对此配置使用的 cmdlet 可能与你熟悉的 cmdlet 稍有不同。请务必使用说明内容中指定的 cmdlet。
 
 2. 删除现有的 ExpressRoute 或站点到站点 VPN 网关。
 
@@ -185,7 +193,7 @@
 ## 将点到站点配置添加到 VPN 网关
 可以按照下面的步骤将点到站点配置添加到共存设置中的 VPN 网关。
 
-1. 添加 VPN 客户端地址池。 
+1. 添加 VPN 客户端地址池。
 
 		$azureVpn = Get-AzureRmVirtualNetworkGateway -Name "VPNGateway" -ResourceGroupName $resgrp.ResourceGroupName
 		Set-AzureRmVirtualNetworkGatewayVpnClientConfig -VirtualNetworkGateway $azureVpn -VpnClientAddressPool "10.251.251.0/24"
@@ -207,7 +215,6 @@
 有关点到站点 VPN 的详细信息，请参阅[配置点到站点连接](/documentation/articles/vpn-gateway-howto-point-to-site-rm-ps/)。
 
 ## 后续步骤
-
 有关 ExpressRoute 的详细信息，请参阅 [ExpressRoute 常见问题](/documentation/articles/expressroute-faqs/)。
 
-<!---HONumber=Mooncake_0509_2016-->
+<!---HONumber=Mooncake_1128_2016-->

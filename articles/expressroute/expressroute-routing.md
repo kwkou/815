@@ -5,15 +5,16 @@
    services="expressroute"
    authors="ganesr"
    manager="rossort"
-   editor=""/>
+   editor=""/>  
+
 <tags
    ms.service="expressroute"
    ms.devlang="na"
    ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="10/14/2016"
-   wacn.date="10/31/2016"
+   ms.date="10/19/2016"
+   wacn.date="12/05/2016"
    ms.author="ganesr"/>  
 
 
@@ -26,12 +27,10 @@
 
 **注意：** ExpressRoute 不支持任何高可用性配置的路由器冗余协议（如 HSRP 和 VRRP）。我们依赖每个对等互连的一组冗余 BGP 会话来获得高可用性。
 
-## 对等互连的 IP 地址
+## 用于对等互连的 IP 地址
+需要保留一些 IP 地址块用于配置网络与 Microsoft Enterprise Edge (MSEE) 路由器之间的路由。本部分提供了要求列表，并介绍有关如何获取和使用这些 IP 地址的规则。
 
-你需要保留一些 IP 地址用于配置网络与 Microsoft Enterprise Edge (MSEE) 路由器之间的路由。本部分提供了要求列表，并介绍有关如何获取和使用这些 IP 地址的规则。
-
-### Azure 专用对等互连的 IP 地址
-
+### 用于 Azure 专用对等互连的 IP 地址
 你可以使用专用 IP 地址或公共 IP 地址来配置对等互连。用于配置路由的地址范围不得与用于在 Azure 中创建虚拟网络的地址范围重叠。
 
  - 必须为路由接口保留一个 /29 子网或两个 /30 子网。
@@ -59,18 +58,16 @@ a.b.c.d/29 拆分成 a.b.c.d/30 和 a.b.c.d+4/30 并通过预配 API 一路传�
 
 ## 自治系统编号
 
-Azure 使用 AS 12076 进行 Azure 公共和Azure 专用。我们保留了 ASN 65515-65520 供内部使用。支持 16 和 32 位 AS 编号。
+Microsoft 将为 Azure 公共对等互连和 Azure 专用对等互连使用 AS 12076。同时我们保留了从 65515 到 65520 的 ASN 供内部使用。支持 16 和 32 位 AS 编号。在对等互连端（客户或提供商）上，如果可以验证 AS 的所有者是你，则它是公共 ASN，否则它是专用 ASN 编号。
 
-对于任何给定线路的主要和次要路径上的数据传输对称没有相关要求。转发与返回路径可以遍历不同的路由器对。相同的路由必须在你拥有的任何给定线路对上，从主要或次要端进行播发。路由指标不需要完全相同。
+数据传输对称没有相关要求。转发与返回路径可以遍历不同的路由器对。相同的路由必须在你拥有的多个线路对上，从任何一端播发。路由指标不需要完全相同。
 
 ## 路由聚合与前缀限制
-
 我们支持通过 Azure 专用对等互连向我们播发最多 4000 个前缀。如果已启用 ExpressRoute 高级版附加组件，则可增加到 10,000 个前缀。我们接受为每个 BGP 会话最多使用 200 个前缀建立 Azure 公共互连。
 
-如果前缀数目超过此限制，将丢弃 BGP 会话。我们只接受专用对等互连链路上的默认路由。提供商或客户必须从其到 Azure 公共互连路径的 BGP 播发中筛选出默认路由和专用 IP 地址 (RFC 1918)。
+如果前缀数目超过此限制，将丢弃 BGP 会话。我们只接受专用对等互连链路上的默认路由。提供商必须从 Azure 公共对等互连路径中筛选出默认路由和专用 IP 地址 (RFC 1918)。
 
 ## 传输路由和跨区域路由
-
 ExpressRoute 不能配置为传输路由器。你必须依赖连接服务提供商的传输路由服务。
 
 ## <a name="advertising-default-routes"></a> 播发默认路由
@@ -110,4 +107,4 @@ Azure 不遵循你设置的任何 BGP 社区值。你需要为每个对等互连
 	- [为经典部署模型配置路由](/documentation/articles/expressroute-howto-routing-classic/)或[为 Resource Manager 部署模型配置路由](/documentation/articles/expressroute-howto-routing-arm/)
 	- [将经典 VNet 链接到 ExpressRoute 线路](/documentation/articles/expressroute-howto-linkvnet-classic/)或[将 Resource Manager VNet 链接到 ExpressRoute 线路](/documentation/articles/expressroute-howto-linkvnet-arm/)
 
-<!---HONumber=Mooncake_0104_2016-->
+<!---HONumber=Mooncake_1128_2016-->
