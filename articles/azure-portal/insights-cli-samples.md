@@ -7,6 +7,7 @@
 	services="monitoring-and-diagnostics"
 	documentationCenter="monitoring-and-diagnostics"/>  
 
+
 <tags
 	ms.service="monitoring-and-diagnostics"
 	ms.workload="na"
@@ -14,13 +15,18 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="09/08/2016"
-	wacn.date="10/17/2016"
-	ms.author="ashwink"/>  
+	ms.author="ashwink"
+	wacn.date="12/05/2016"/>  
 
-# Azure Insights 跨平台 CLI 快速启动示例
 
-本文演示可帮助访问 Azure Insights 监视功能的示例命令行接口 (CLI) 命令。Azure Insights 允许你基于配置的遥测数据值自动缩放云服务、虚拟机和 Web Apps 以及发送警报通知或调用 Web URL。
+# Azure Monitor 跨平台 CLI 快速启动示例
 
+本文说明可帮助访问 Azure Monitor 功能的示例命令行接口 (CLI) 命令。Azure Monitor 允许基于配置的遥测数据值自动缩放云服务、虚拟机和 Web 应用，以及发送警报通知或调用 Web URL。
+
+> [AZURE.NOTE]
+“Azure Insights”在 2016 年 9 月 25 日后称为 Azure Monitor。但是，命名空间和以下命令中仍然包含“insights”。
+> 
+> 
 
 ## 先决条件
 
@@ -61,21 +67,20 @@ azure account show
 azure account set "subscription ID or subscription name"
 ```
 
-若要使用 Azure Resource Manager 和 Azure Insights 命令，需要处于 Azure Resource Manager 模式下。
+若要使用 Azure Resource Manager 和 Azure Monitor 命令，需要处于 Azure Resource Manager 模式下。
 
 ```
 azure config mode arm
 ```
 
-若要查看所有支持的 Azure Insights 命令的列表，请执行以下操作。
+若要查看所有支持的 Azure Monitor 命令的列表，请执行以下操作。
 
 ```
 azure insights
 ```
 
-## 查看订阅的审核日志
-
-若要查看审核日志的列表，请执行以下操作。
+## 查看订阅的活动日志
+若要查看活动日志事件的列表，请执行以下操作。
 
 ```
 azure insights logs list [options]

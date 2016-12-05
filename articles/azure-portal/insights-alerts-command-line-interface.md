@@ -8,13 +8,13 @@
 	documentationCenter="monitoring-and-diagnostics"/>
 
 <tags
-	ms.service="monitoring-and-diagnostics"
+	ms.service="azure-portal"
 	ms.workload="na"
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/23/2016"
-	wacn.date="11/14/2016"
+	ms.date="10/24/2016"
+	wacn.date="12/05/2016"
 	ms.author="robb"/>
 
 
@@ -28,6 +28,11 @@
 ## 概述
 
 本文将展示如何使用命令行界面 (CLI) 设置 Azure 警报。
+
+> [Azure.NOTE]
+> “Azure Insights”在 2016 年 9 月 25 日后称为 Azure Monitor。但是，命名空间和以下命令中仍然包含“insights”。
+> 
+> 
 
 可以根据监视指标或事件接收 Azure 服务的警报。
 
@@ -56,8 +61,7 @@
 
 
 ## 使用 CLI 创建警报规则
-
-1. 执行先决条件并登录到 Azure。请参阅 [Azure Insights CLI 示例](/documentation/articles/insights-cli-samples/)。简而言之，就是安装 CLI 并运行以下命令。这些命令将使你登录，显示你当前使用的订阅，并为运行 Insights 命令做好准备。
+1. 执行先决条件并登录到 Azure。请参阅 [Azure Monitor CLI 示例](/documentation/articles/insights-cli-samples/)。简而言之，就是安装 CLI 并运行以下命令。这些命令可帮助登录、显示当前使用的订阅，以及为运行 Azure Monitor 命令做好准备。
 
 
     	azure login -e AzureChinaCloud

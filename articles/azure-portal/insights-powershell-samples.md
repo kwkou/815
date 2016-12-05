@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Azure Insights: Azure Insights PowerShell 快速入门示例。| Azure"
-	description="Azure Insights 快速入门示例 PowerShell 命令可以帮助你快速访问 Azure Insights 监视功能。"
+	pageTitle="Azure Insights：Azure Insights PowerShell 快速启动示例。| Azure"
+	description="使用 PowerShell 访问 Azure Monitor 功能，例如自动缩放、警报、webhook 和搜索活动日志。"
 	authors="kamathashwin"
 	manager=""
 	editor=""
@@ -13,31 +13,35 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="03/30/2016"
-	wacn.date="10/17/2016"
-	ms.author="ashwink"/>
+	ms.date="10/26/2016"
+	ms.author="ashwink"
+	wacn.date="12/05/2016"/>  
 
-# Azure Insights PowerShell 快速入门示例
 
-本文章演示了示例 PowerShell 命令，以帮助你快速访问 Azure Insights 监视功能。Azure Insights 允许你基于配置的遥测数据值自动缩放云服务、虚拟机和 Web Apps 以及发送警报通知或调用 Web URL。
+# Azure Monitor PowerShell 快速启动示例
+本文说明可帮助访问 Azure Monitor 功能的示例 PowerShell 命令。Azure Monitor 允许基于配置的遥测数据值自动缩放云服务、虚拟机和 Web 应用，以及发送警报通知或调用 Web URL。
+
+> [AZURE.NOTE]
+“Azure Insights”在 2016 年 9 月 25 日后称为 Azure Monitor。但是，命名空间和以下命令中仍然包含“insights”。
+> 
+> 
 
 ## 设置 PowerShell
 如果尚未安装，请在你的计算机上安装要运行的 PowerShell。有关详细信息，请参阅[如何安装和配置 PowerShell](/documentation/articles/powershell-install-configure/)。
 
 ## 本文中的示例
-
-本文中的示例演示了如何使用 Azure Insights cmdlet。还可以在 [Azure Insights Cmdlet](https://msdn.microsoft.com/zh-cn/library/mt282452.aspx) 上查看 Azure Insights（监视）cmdlet 的完整列表。
+本文中的示例演示如何使用 Azure Monitor cmdlet。还可以在 [Azure Monitor (Insights) Cmdlet](https://msdn.microsoft.com/zh-cn/library/azure/mt282452#40v=azure.200#41.aspx) 中查看 Azure Monitor PowerShell cmdlet 的完整列表。
 
 
 ## 登录并使用订阅
 
-首先，登录到你的 Azure 订阅。
+首先，登录 Azure 订阅。
 
 ```
 Login-AzureRmAccount -Environment $(Get-AzureRmEnvironment -Name AzureChinaCloud)
 ```
 
-这要求你进行登录。执行此操作后，将显示你的帐户、TenantId 和默认的订阅 ID。所有 Azure cmdlet 都可用于你的默认订阅的上下文中。若要查看你有权访问的订阅的列表，请使用以下命令。
+这要求你进行登录。执行此操作后，会显示帐户、TenantId 和默认的订阅 ID。所有 Azure cmdlet 都可用于默认订阅的上下文。若要查看有权访问的订阅的列表，请使用以下命令。
 
 ```
 Get-AzureRmSubscription
@@ -83,13 +87,13 @@ Get-AzureRmLog -ResourceProvider 'Microsoft.Web' -StartTime 2015-01-01T10:30 -En
 Get-AzureRmLog -Caller 'myname@company.com'
 ```
 
-以下命令将从审核日志中检索最后 1000 个事件︰
+以下命令从活动日志中检索最后 1000 个事件：
 
 ```
 Get-AzureRmLog -MaxEvents 1000
 ```
 
-`Get-AzureRmLog` 支持许多其他参数。有关更多信息，请参阅 `Get-AzureRmLog`。
+`Get-AzureRmLog` 支持许多其他参数。有关详细信息，请参阅 `Get-AzureRmLog` 参考文档。
 
 >[AZURE.NOTE] `Get-AzureRmLog` 仅提供 15 天的历史记录。使用 **-MaxEvents** 参数可查询 15 天之外的最后 N 个事件。要访问超过 15 天的事件，请使用 REST API 或 SDK （使用 SDK 的 C# 示例）。如果不包括 **StartTime**，则默认值为 **EndTime** 减去一小时。如果不包括 **EndTime**，则默认值为当前时间。所有时间均是 UTC 时间。
 
@@ -149,13 +153,13 @@ Get-AzureRmAlertRule -ResourceGroup montest -TargetResourceId /subscriptions/s1/
 |此警报规则的位置|	中国东部|
 |resourceGroup|	montest|
 |TargetResourceId|	/subscriptions/s1/resourceGroups/montest/providers/Microsoft.Compute/virtualMachines/testconfig|
-|创建的警报的 MetricName|	\\PhysicalDisk(\_Total)\\Disk Writes/sec。请参阅下面关于如何检索准确指标名称的 `Get-MetricDefinitions` cmdlet|
+|创建的警报的 MetricName|	\\PhysicalDisk(\_Total)\\Disk Writes/sec。请参阅以下 `Get-MetricDefinitions` cmdlet，了解如何检索确切的指标名称|
 |操作符| GreaterThan|
-|阀值（此指标为数量/秒）| 1|
-|WindowSize（格式为 hh:mm:ss）| 00:05:00|
-|聚合器（指标的统计信息，在本例中使用 Average 数）| Average|
-|自定义电子邮件（字符串数组）|'foo@example.com','bar@example.com'|
-|向所有者、参与者和读者发送电子邮件| -SendToServiceOwners|
+|阈值（对于此指标，单位为计数/秒）|	1|
+|WindowSize（格式为 hh:mm:ss）|	00:05:00|
+|聚合器（指标的统计信息，在此情况下使用平均值计数）|	平均值|
+|自定义电子邮件（字符串数组）|“foo@example.com”、“bar@example.com”|
+|将电子邮件发送给所有者、参与者和读者|	-SendToServiceOwners|
 
 创建电子邮件操作
 
@@ -183,11 +187,11 @@ Get-AzureRmAlertRule -Name vmcpu_gt_1 -ResourceGroup myrg1 -DetailedOutput
 
 如果给定属性已存在警报规则，则添加警报 cmdlet 还会更新该规则。若要禁用警报规则，请包括 **-DisableRule** 参数。
 
-### 针对审核日志事件发出警报
+### 活动日志事件警报
 
 >[AZURE.NOTE] 该功能仍以预览版提供。
 
-在此方案中，在资源组 abhingrgtest123 中的我的订阅中成功启动网站时，你将发送电子邮件。
+在此方案中，在资源组 *abhingrgtest123* 中的我的订阅中成功启动网站时，会发送电子邮件。
 
 设置电子邮件规则
 
@@ -282,7 +286,7 @@ Add-AzureRmAutoscaleSetting -Location "China East" -Name "MyScaleVMSSSetting" -R
 有关管理自动缩放设置的详细信息，请参阅 [Get AutoscaleSetting](https://msdn.microsoft.com/zh-cn/library/mt282461.aspx)。
 
 ## 自动缩放历史记录
-以下示例演示了如何查看近期的自动缩放和警报事件。使用审核日志搜索来查看自动缩放历史记录。
+以下示例演示了如何查看近期的自动缩放和警报事件。使用活动日志搜索来查看自动缩放历史记录。
 
 ```
 Get-AzureRmLog -Caller "Microsoft.Insights/autoscaleSettings" -DetailedOutput -StartTime 2015-03-01
@@ -318,9 +322,8 @@ Get-AzureRmAutoscalesetting -ResourceGroup myrg1 -Name MyScaleVMSSSetting -Detai
 Remove-AzureRmAutoscalesetting -ResourceGroup myrg1 -Name MyScaleVMSSSetting
 ```
 
-## 管理审核日志的日志配置文件
-
-可以创建日志配置文件并从审核日志中将数据导出到存储帐户，并且可以为其配置数据保留期。也可以选择将数据流式传输到事件中心。请注意，此功能目前以预览版提供，每个订阅只能创建一个日志配置文件。可以用当前订阅使用以下 cmdlet，以创建和管理日志配置文件。也可以选择一个特定订阅。虽然 PowerShell 默认为当前订阅，但可以使用 `Set-AzureRmContext` 随时更改。可以配置审核日志将数据路由到该订阅中的任何存储帐户或事件中心。以 JSON 格式将数据写为 blob 文件。
+## 管理活动日志的日志配置文件
+可以创建*日志配置文件*并从活动日志中将数据导出到存储帐户，并且可以为其配置数据保留期。也可以选择将数据流式传输到事件中心。请注意，此功能目前以预览版提供，每个订阅只能创建一个日志配置文件。可以通过当前订阅使用以下 cmdlet 来创建和管理日志配置文件。也可以选择一个特定订阅。虽然 PowerShell 默认使用当前订阅，但可以使用 `Set-AzureRmContext` 随时更改。可以配置活动日志将数据路由到该订阅中的任何存储帐户或事件中心。以 JSON 格式将数据写为 blob 文件。
 
 ### 获取日志配置文件
 若要提取现有日志配置文件，请使用 `Get-AzureRmLogProfile` cmdlet。
@@ -339,7 +342,7 @@ Remove-AzureRmLogProfile -name my_log_profile_s1
 
 ### 添加有数据保留期的日志配置文件
 
-可以用天数将 **-RetentionInDays** 属性指定为一个正整数，将保留其中的数据。
+可以用天数将 **-RetentionInDays** 属性指定为一个正整数，会在此期间保留数据。
 
 ```
 Add-AzureRmLogProfile -Name my_log_profile_s1 -StorageAccountId /subscriptions/s1/resourceGroups/myrg1/providers/Microsoft.Storage/storageAccounts/my_storage -Locations chinaeast,chinanorth
@@ -385,4 +388,4 @@ Set-AzureRmDiagnosticSetting -ResourceId /subscriptions/s1/resourceGroups/myrg1/
 Set-AzureRmDiagnosticSetting -ResourceId /subscriptions/s1/resourceGroups/insights-integration/providers/Microsoft.Network/networkSecurityGroups/viruela1 -StorageAccountId /subscriptions/s1/resourceGroups/myrg1/providers/Microsoft.Storage/storageAccounts/sakteststorage -Categories NetworkSecurityGroupEvent -Enable $true -RetentionEnabled $true -RetentionInDays 90
 ```
 
-<!---HONumber=Mooncake_0503_2016-->
+<!---HONumber=Mooncake_1128_2016-->
