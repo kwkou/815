@@ -15,8 +15,8 @@
   ms.topic="article"
   ms.tgt_pltfrm="na"
   ms.workload="na"
-  ms.date="08/10/2016"
-  wacn.date="09/05/2016"
+  ms.date="10/24/2016"
+  wacn.date="12/05/2016"
   ms.author="araguila"/>
   
 # azureiotsuite.cn 站点权限
