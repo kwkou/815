@@ -5,65 +5,52 @@
    documentationCenter="na"
    authors="joaoma"
    manager="carmonm"
-   editor="tysonn" />
-<tags
+   editor="tysonn" />  
+
+<tags 
    ms.service="load-balancer"
    ms.devlang="na"
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="03/03/2016"
-   wacn.date="08/29/2016"
+   ms.date="10/24/2016"
+   wacn.date="12/05/2016"
    ms.author="sewhee" />
 
 
-# 如何更改负载均衡器的 TCP 空闲超时设置
 
-在默认配置中，Azure Load Balancer 的“空闲超时”设置为 4 分钟。
+# 为 Azure Load Balancer 配置 TCP 空闲超时设置
 
-这意味着，如果你的 tcp 或 http 会话处于非活动状态的时间超出超时值，则无法保证客户端和你的服务之间会维持连接状态。
+在默认配置中，Azure Load Balancer 的空闲超时设置为 4 分钟。如果处于非活动状态的时间超过超时值，则不能保证在客户端和云服务之间保持 TCP 或 HTTP 会话。
 
-当连接关闭时，你的客户端应用程序会收到一条类似于下面这样的错误消息：“基础连接已关闭: 应保持活动状态的连接已由服务器关闭”。
+当连接关闭时，客户端应用程序可能收到以下错误消息：“基础连接已关闭: 应保持连接状态的连接已由服务器关闭”。
 
-若要让连接处于活动状态的时间更长一些，常见的做法是使用 TCP Keep-alive（如需 .NET 示例，可单击[此处](https://msdn.microsoft.com/zh-cn/library/system.net.servicepoint.settcpkeepalive.aspx)）。
+常见的做法是使用 TCP 保持连接状态。这种做法可以将连接状态保持更长时间。有关详细信息，请参阅 [.NET 示例](https://msdn.microsoft.com/zh-cn/library/system.net.servicepoint.settcpkeepalive.aspx)。在启用保持连接状态的情况下，在连接处于非活动状态时发送数据包。这些用于保持连接状态的数据包可以确保始终达不到空闲超时值，于是就可以长时间维持连接。
 
-在连接上检测不到活动时，会发送数据包。让网络活动处于持续状态，则始终达不到空闲超时值，于是就可以长时间维持连接。
+此设置仅适用于入站连接。为了避免断开连接，必须将 TCP 保持连接的时间间隔配置为小于空闲超时设置，或者增加空闲超时值。我们已允许对空闲超时进行配置，以便支持这样的情况。现在，你可以将空闲超时的持续时间设置为 4 到 30 分钟。
 
-可以考虑在配置 TCP Keep-alive 时，让时间间隔短于默认的超时设置，以免连接掉线，也可以通过增加 TCP 连接会话的空闲超时值来保持连接。
+TCP 保持连接状态非常适用于不受电池寿命限制的情况。不建议将其用于移动应用程序。在移动应用程序中使用 TCP 保持连接状态可能会加快设备电池的耗尽速度。
 
-虽然在不需要考虑 电池因素的情况下可以使用 TCP Keep-alive，但对于移动应用程序来说，这种选择通常无效。在移动应用程序中使用 TCP Keep-alive 可能会加快设备电池的耗尽速度。
-
-我们已允许对空闲超时进行配置，以便支持这样的情况。现在，你可以将空闲超时的持续时间设置为 4 到 30 分钟。此设置仅适用于入站连接。
-
-![tcptimeout](./media/load-balancer-tcp-idle-timeout/image1.png)
+![TCP 超时](./media/load-balancer-tcp-idle-timeout/image1.png)  
 
 
-## 如何更改虚拟机和云服务中的空闲超时设置
+以下章节介绍了如何更改虚拟机和云服务中的空闲超时设置
 
-- 通过 PowerShell 或服务管理 API 配置虚拟机上某个终结点的 TCP 超时
-- 通过 PowerShell 或服务管理 API 配置负载均衡终结点集的 TCP 超时。
-- 配置实例层级公共 IP 的 TCP 超时
-- 通过服务模型配置 Web 角色/辅助角色的 TCP 超时。
- 
+## 将实例级公共 IP 的 TCP 超时值配置为 15 分钟
 
->[AZURE.NOTE] 请记住，某些命令将只存在于最新 Azure PowerShell 包中。如果该 PowerShell 命令不存在，请下载最新 PowerShell 包。
 
- 
-### 将你的实例层级公共 IP 的 TCP 超时配置为 15 分钟。
-
-	Set-AzurePublicIP –PublicIPName webip –VM MyVM -IdleTimeoutInMinutes 15
+	Set-AzurePublicIP -PublicIPName webip -VM MyVM -IdleTimeoutInMinutes 15
 
 IdleTimeoutInMinutes 为可选。在未设置的情况下，默认超时为 4 分钟。
 
->[AZURE.NOTE] 可接受的超时范围为 4 到 30 分钟。
- 
-### 在虚拟机上创建 Azure 终结点时设置空闲超时
 
-若要更改终结点的超时设置，请执行以下命令
+## 在虚拟机上创建 Azure 终结点时设置空闲超时
+
+若要更改终结点的超时设置，请执行以下命令：
 
 	Get-AzureVM -ServiceName "mySvc" -Name "MyVM1" | Add-AzureEndpoint -Name "HttpIn" -Protocol "tcp" -PublicPort 80 -LocalPort 8080 -IdleTimeoutInMinutes 15| Update-AzureVM
  
-检索空闲超时配置
+若要检索空闲超时配置，请执行以下命令：
 
 	PS C:\> Get-AzureVM –ServiceName “MyService” –Name “MyVM” | Get-AzureEndpoint
 	VERBOSE: 6:43:50 PM - Completed Operation: Get Deployment
@@ -83,17 +70,15 @@ IdleTimeoutInMinutes 为可选。在未设置的情况下，默认超时为 4 �
 	InternalLoadBalancerName :
 	IdleTimeoutInMinutes : 15
  
-### 在负载均衡终结点集上设置 TCP 超时
+## 在负载平衡的终结点集上设置 TCP 超时
 
-如果终结点是负载均衡终结点集的一部分，则必须在负载均衡终结点集上设置 TCP 超时：
+如果终结点是负载平衡的终结点集的一部分，则必须在负载平衡的终结点集上设置 TCP 超时。例如：
 
 	Set-AzureLoadBalancedEndpoint -ServiceName "MyService" -LBSetName "LBSet1" -Protocol tcp -LocalPort 80 -ProbeProtocolTCP -ProbePort 8080 -IdleTimeoutInMinutes 15
- 
-### 更改云服务的超时设置
 
-你可以利用用于 .NET 2.4 的 Azure SDK 来更新云服务。
+## 更改云服务的超时设置
 
-云服务的终结点设置在 .csdef 中进行。若要更新云服务部署的 TCP 超时，需进行部署升级。例外情况是仅针对公共 IP 指定 TCP 超时。公共 IP 设置位于 .cscfg 中，可以通过部署更新和升级进行更新。
+可以使用 Azure SDK 来更新云服务。在 .csdef 文件中进行云服务的终结点设置。更新云服务部署的 TCP 超时需要升级部署。例外情况是如果仅针对公共 IP 指定 TCP 超时，则无需升级。公共 IP 设置位于 .cscfg 文件中，可以通过部署更新和升级进行更新。
 
 终结点设置的 .csdef 更改如下：
 
@@ -116,19 +101,16 @@ IdleTimeoutInMinutes 为可选。在未设置的情况下，默认超时为 4 �
  	 </AddressAssignments>
 	</NetworkConfiguration>
 
-## Rest API 示例
+## REST API 示例
 
-你可以使用服务管理 API 来配置 TCP 空闲超时。
-请确保添加 x-ms-version 标头并将其设置为 2014-06-01 或更高版本。
- 
-通过一次部署，在所有虚拟机上更新指定的负载均衡输入终结点的配置
-	
-	Request
+可以通过使用服务管理 API 配置 TCP 空闲超时。请确保 `x-ms-version` 标头设置为版本 `2014-06-01` 或更高版本。通过一次部署，在所有虚拟机上更新指定的负载平衡的输入终结点的配置。
+
+### 请求
 
 	POST https://management.core.chinacloudapi.cn/<subscription-id>/services/hostedservices/<cloudservice-name>/deployments/<deployment-name>
-<BR>
 
-	Response
+### 响应
+
 
 	<LoadBalancedEndpointList xmlns="http://schemas.microsoft.com/windowsazure" xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
 	<InputEndpoint>
@@ -161,12 +143,10 @@ IdleTimeoutInMinutes 为可选。在未设置的情况下，默认超时为 4 �
 
 ## 后续步骤
 
-[内部负载均衡器概述](/documentation/articles/load-balancer-internal-overview/)
+[Internal load balancer overview（内部负载均衡器概述）](/documentation/articles/load-balancer-internal-overview/)
 
 [开始配置面向 Internet 的负载均衡器](/documentation/articles/load-balancer-get-started-internet-arm-ps/)
 
 [配置负载均衡器分发模式](/documentation/articles/load-balancer-distribution-mode/)
 
- 
-
-<!---HONumber=Mooncake_0822_2016-->
+<!---HONumber=Mooncake_1128_2016-->
