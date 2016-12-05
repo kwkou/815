@@ -1,20 +1,23 @@
-<properties 
-   pageTitle="Azure 自动化中的变量资产 | Azure"
-   description="变量资产是可供 Azure 自动化中的所有 Runbook 使用的值。本文介绍了变量的详细信息，以及如何在文本和图形创作中使用变量。"
-   services="automation"
-   documentationCenter=""
-   authors="mgoedtel"
-   manager="jwhit"
-   editor="tysonn" />
-<tags 
-   ms.service="automation"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
-   ms.date="05/24/2016"
-   wacn.date="08/11/2016"
-   ms.author="magoedte;bwren" />
+<properties
+    pageTitle="Azure 自动化中的变量资产 | Azure"
+    description="变量资产是可供 Azure 自动化中的所有 Runbook 使用的值。本文介绍了变量的详细信息，以及如何在文本和图形创作中使用变量。"
+    services="automation"
+    documentationcenter=""
+    author="mgoedtel"
+    manager="jwhit"
+    editor="tysonn" />  
+
+<tags
+    ms.assetid="b880c15f-46f5-4881-8e98-e034cc5a66ec"
+    ms.service="automation"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.tgt_pltfrm="na"
+    ms.workload="infrastructure-services"
+    ms.date="11/14/2016"
+    wacn.date="12/05/2016"
+    ms.author="magoedte;bwren" />  
+
 
 # Azure 自动化中的变量资产
 
@@ -30,13 +33,22 @@
 
 创建变量时，可以指定将其加密存储。当变量加密后，它将安全地存储在 Azure 自动化中并且不能从 Azure PowerShell 模块随附的 [Get-AzureAutomationVariable](http://msdn.microsoft.com/zh-cn/library/dn913772.aspx) cmdlet 检索变量值。可以检索加密值的唯一方法是从 Runbook 中的 **Get-AutomationVariable** 活动检索。
 
->[AZURE.NOTE]Azure 自动化中的安全资产包括凭据、证书、连接和加密的变量。这些资产已使用针对每个自动化帐户生成的唯一密钥加密并存储在 Azure 自动化中。此密钥由主证书加密，并存储在 Azure 自动化中。在存储安全资产之前，会先使用主证书来解密自动化帐户的密钥，然后使用该密钥来加密资产。
+> [AZURE.NOTE]
+Azure 自动化中的安全资产包括凭据、证书、连接和加密的变量。这些资产已使用针对每个自动化帐户生成的唯一密钥加密并存储在 Azure 自动化中。此密钥由主证书加密，并存储在 Azure 自动化中。在存储安全资产之前，会先使用主证书来解密自动化帐户的密钥，然后使用该密钥来加密资产。
 
-## <a id="variable-types"></a> 变量类型
+## <a id="variable-types"></a>变量类型
 
 当使用 Azure 经典管理门户创建变量时，你必须通过下拉列表指定一个数据类型，以便门户可以显示用于输入变量值的相应控件。该变量并不局限于此数据类型，但如果您想要指定不同类型的值，则必须使用 Windows PowerShell 设置该变量。如果指定为“未定义”，则该变量的值将设置为 **$null**，并且你必须使用 [Set-AzureAutomationVariable](http://msdn.microsoft.com/zh-cn/library/dn913767.aspx) cmdlet 或 **Set-AutomationVariable** 活动来设置该值。无法在该门户中创建或更改复杂变量类型的值，但您可以使用 Windows PowerShell 提供任何类型的值。复杂类型将作为 [PSCustomObject](http://msdn.microsoft.com/zh-cn/library/system.management.automation.pscustomobject.aspx) 返回。
 
 您可以通过创建一个数组或哈希表并将其保存到变量，来将多个值存储到单一变量。
+
+以下列出自动化中的可用变量类型：
+
+* String
+* 整数
+* DateTime
+* 布尔
+* Null
 
 ## Cmdlet 和工作流活动
 
@@ -49,7 +61,7 @@
 |[Remove-AzureAutomationVariable](http://msdn.microsoft.com/zh-cn/library/dn913775.aspx)|删除现有变量。|
 |[Set-AzureAutomationVariable](http://msdn.microsoft.com/zh-cn/library/dn913767.aspx)|设置现有变量的值。|
 
-下表中的工作流活动用于在 Runbook 中访问自动化变量。它们仅可在 Runbook 中使用，而不作为“Azure PowerShell 模块”的一部分提供。
+下表中的工作流活动用于在 Runbook 中访问自动化变量。它们仅可在 Runbook 中使用，而不作为 Azure PowerShell 模块的一部分提供。
 
 |工作流活动|说明|
 |:---|:---|
@@ -67,8 +79,6 @@
 1. 单击“添加变量”。
 1. 完成向导并单击复选框以保存新变量。
 
-
-
 ### 使用 Windows PowerShell 创建新变量
 
 [New-AzureAutomationVariable](http://msdn.microsoft.com/zh-cn/library/dn913771.aspx) cmdlet 创建一个新的变量并设置其初始值。你可以使用 [Get-AzureAutomationVariable](http://msdn.microsoft.com/zh-cn/library/dn913772.aspx) 检索该值。如果该值为简单类型，则返回相同的类型。如果其为复杂类型，则返回 **PSCustomObject**。
@@ -76,17 +86,17 @@
 下面的示例命令演示如何创建字符串类型的变量，然后返回其值。
 
 
-	New-AzureAutomationVariable -AutomationAccountName "MyAutomationAccount" -Name 'MyStringVariable' -Encrypted $false -Value 'My String'
-	$string = (Get-AzureAutomationVariable -AutomationAccountName "MyAutomationAccount" -Name 'MyStringVariable').Value
+    New-AzureAutomationVariable -AutomationAccountName "MyAutomationAccount" -Name 'MyStringVariable' -Encrypted $false -Value 'My String'
+    $string = (Get-AzureAutomationVariable -AutomationAccountName "MyAutomationAccount" -Name 'MyStringVariable').Value
 
 下面的示例命令演示如何创建复杂类型的变量，然后返回其属性。在这种情况下，会使用来自 **Get-AzureVM** 的虚拟机对象。
 
-	$vm = Get-AzureVM -ServiceName "MyVM" -Name "MyVM"
-	New-AzureAutomationVariable -AutomationAccountName "MyAutomationAccount" -Name "MyComplexVariable" -Encrypted $false -Value $vm
-	
-	$vmValue = (Get-AzureAutomationVariable -AutomationAccountName "MyAutomationAccount" -Name "MyComplexVariable").Value
-	$vmName = $vmValue.Name
-	$vmIpAddress = $vmValue.IpAddress
+    $vm = Get-AzureVM -ServiceName "MyVM" -Name "MyVM"
+    New-AzureAutomationVariable -AutomationAccountName "MyAutomationAccount" -Name "MyComplexVariable" -Encrypted $false -Value $vm
+    
+    $vmValue = (Get-AzureAutomationVariable -AutomationAccountName "MyAutomationAccount" -Name "MyComplexVariable").Value
+    $vmName = $vmValue.Name
+    $vmIpAddress = $vmValue.IpAddress
 
 
 
@@ -101,49 +111,48 @@
 
 下面的示例命令演示如何设置和检索文本 Runbook 中的变量。在此示例中，假定已经创建了名为 *NumberOfIterations* 和 *NumberOfRunnings* 的整数类型变量和名为 *SampleMessage* 的字符串类型变量。
 
-	$NumberOfIterations = Get-AutomationVariable -Name 'NumberOfIterations'
-	$NumberOfRunnings = Get-AutomationVariable -Name 'NumberOfRunnings'
-	$SampleMessage = Get-AutomationVariable -Name 'SampleMessage'
-	
-	Write-Output "Runbook has been run $NumberOfRunnings times."
-	
-	for ($i = 1; $i -le $NumberOfIterations; $i++) {
-	   Write-Output "$i`: $SampleMessage"
-	}
-	Set-AutomationVariable -Name NumberOfRunnings -Value ($NumberOfRunnings += 1)
-
+    $NumberOfIterations = Get-AutomationVariable -Name 'NumberOfIterations'
+    $NumberOfRunnings = Get-AutomationVariable -Name 'NumberOfRunnings'
+    $SampleMessage = Get-AutomationVariable -Name 'SampleMessage'
+    
+    Write-Output "Runbook has been run $NumberOfRunnings times."
+    
+    for ($i = 1; $i -le $NumberOfIterations; $i++) {
+       Write-Output "$i`: $SampleMessage"
+    }
+    Set-AutomationVariable -Name NumberOfRunnings -Value ($NumberOfRunnings += 1)
 
 #### 设置和检索变量中的复杂对象
 
 下面的示例代码演示如何更新文本 Runbook 中具有复杂值的变量。在此示例中，使用 **Get-AzureVM** 检索到一个 Azure 虚拟机并保存到一个现有的自动化变量。如[变量类型](#variable-types)中所述，该对象存储为一个 PSCustomObject。
 
-	$vm = Get-AzureVM -ServiceName "MyVM" -Name "MyVM"
-	Set-AutomationVariable -Name "MyComplexVariable" -Value $vm
+    $vm = Get-AzureVM -ServiceName "MyVM" -Name "MyVM"
+    Set-AutomationVariable -Name "MyComplexVariable" -Value $vm
 
 
 在下面的代码中，从该变量检索值并将其用于启动虚拟机。
 
-	$vmObject = Get-AutomationVariable -Name "MyComplexVariable"
-	if ($vmObject.PowerState -eq 'Stopped') {
-	   Start-AzureVM -ServiceName $vmObject.ServiceName -Name $vmObject.Name
-	}
+    $vmObject = Get-AutomationVariable -Name "MyComplexVariable"
+    if ($vmObject.PowerState -eq 'Stopped') {
+       Start-AzureVM -ServiceName $vmObject.ServiceName -Name $vmObject.Name
+    }
 
 
 #### 设置和检索变量中的集合
 
 下面的示例代码演示如何使用文本 Runbook 中包含一组复杂值的变量。在此示例中，使用 **Get-AzureVM** 检索到多个 Azure 虚拟机并保存到一个现有的自动化变量。如[变量类型](#variable-types)中所述，变量存储为一组 PSCustomObject。
 
-	$vms = Get-AzureVM | Where -FilterScript {$_.Name -match "my"}     
+    $vms = Get-AzureVM | Where -FilterScript {$_.Name -match "my"}     
     Set-AutomationVariable -Name 'MyComplexVariable' -Value $vms
 
 在下面的代码中，从该变量检索此集合并用于启动每个虚拟机。
 
-	$vmValues = Get-AutomationVariable -Name "MyComplexVariable"
-	ForEach ($vmValue in $vmValues)
-	{
-	   if ($vmValue.PowerState -eq 'Stopped') {
-	      Start-AzureVM -ServiceName $vmValue.ServiceName -Name $vmValue.Name
-	   }
-	}
+    $vmValues = Get-AutomationVariable -Name "MyComplexVariable"
+    ForEach ($vmValue in $vmValues)
+    {
+       if ($vmValue.PowerState -eq 'Stopped') {
+          Start-AzureVM -ServiceName $vmValue.ServiceName -Name $vmValue.Name
+       }
+    }
 
-<!---HONumber=Mooncake_0725_2016-->
+<!---HONumber=Mooncake_1128_2016-->

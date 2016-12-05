@@ -1,57 +1,62 @@
 <properties
-   pageTitle="在 Resource Manager 中使用 Azure CLI 创建应用程序网关 | Azure"
-   description="了解如何在 Resource Manager 中使用 Azure CLI 创建应用程序网关"
-   services="application-gateway"
-   documentationCenter="na"
-   authors="georgewallace"
-   manager="carmonm"
-   editor=""
-   tags="azure-resource-manager"
-/>  
+    pageTitle="在 Resource Manager 中使用 Azure CLI 创建应用程序网关 | Azure"
+    description="了解如何在 Resource Manager 中使用 Azure CLI 创建应用程序网关"
+    services="application-gateway"
+    documentationcenter="na"
+    author="georgewallace"
+    manager="carmonm"
+    editor=""
+    tags="azure-resource-manager" />  
 
-<tags  
-   ms.service="application-gateway"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
-   ms.date="09/09/2016"
-   wacn.date="10/17/2016"
-   ms.author="gwallace" />  
+<tags
+    ms.assetid="c2f6516e-3805-49ac-826e-776b909a9104"
+    ms.service="application-gateway"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.tgt_pltfrm="na"
+    ms.workload="infrastructure-services"
+    ms.date="11/16/2016"
+    wacn.date="12/05/2016"
+    ms.author="gwallace" />  
 
 
 # 使用 Azure CLI 创建应用程序网关
-
-Azure 应用程序网关是第 7 层负载均衡器。它在不同服务器之间提供故障转移和性能路由 HTTP 请求，而不管它们是在云中还是本地。应用程序网关具有以下应用程序传递功能：HTTP 负载均衡、基于 Cookie 的会话相关性、安全套接字层 (SSL) 卸载、自定义运行状况探测，以及多站点支持。
-
 > [AZURE.SELECTOR]
-- [Azure 门户预览](/documentation/articles/application-gateway-create-gateway-portal/)
+- [Azure 门户](/documentation/articles/application-gateway-create-gateway-portal/)
 - [Azure Resource Manager PowerShell](/documentation/articles/application-gateway-create-gateway-arm/)
 - [Azure 经典 PowerShell](/documentation/articles/application-gateway-create-gateway/)
 - [Azure Resource Manager 模板](/documentation/articles/application-gateway-create-gateway-arm-template/)
 - [Azure CLI](/documentation/articles/application-gateway-create-gateway-cli/)
 
+Azure 应用程序网关是第 7 层负载均衡器。它在不同服务器之间提供故障转移和性能路由 HTTP 请求，而不管它们是在云中还是本地。应用程序网关具有以下应用程序传递功能：HTTP 负载均衡、基于 Cookie 的会话相关性、安全套接字层 (SSL) 卸载、自定义运行状况探测，以及多站点支持。
+
 ## 先决条件：安装 Azure CLI
 
 若要执行本文中的步骤，需要[安装适用于 Mac、Linux 和 Windows 的 Azure 命令行接口 (Azure CLI)](/documentation/articles/xplat-cli-install/)，并且需要[登录 Azure](/documentation/articles/xplat-cli-connect/)。
 
-> [AZURE.NOTE] 如果没有 Azure 帐户，则需要注册一个。请[在此处注册试用版](/documentation/articles/sign-up-organization/)。
+> [AZURE.NOTE]
+如果没有 Azure 帐户，则需要注册一个。请[在此处注册试用版](/documentation/articles/sign-up-organization/)。
+> 
+> 
 
 ## 方案
 
-在此方案中，将学习如何使用 Azure 门户预览创建应用程序网关。
+此方案介绍如何使用 Azure 门户预览创建应用程序网关。
 
 此方案将：
 
-- 创建包含两个实例的中型应用程序网关。
-- 创建名为 AdatumAppGatewayVNET 且包含 10.0.0.0/16 保留 CIDR 块的虚拟网络。
-- 创建名为 Appgatewaysubnet 且使用 10.0.0.0/28 作为其 CIDR 块的子网。
-- 配置进行 SSL 卸载的证书。
+* 创建包含两个实例的中型应用程序网关。
+* 创建名为 AdatumAppGatewayVNET 且包含 10.0.0.0/16 保留 CIDR 块的虚拟网络。
+* 创建名为 Appgatewaysubnet 且使用 10.0.0.0/28 作为其 CIDR 块的子网。
+* 配置进行 SSL 卸载的证书。
 
 ![方案示例][scenario]  
 
 
->[AZURE.NOTE] 针对应用程序网关进行的其他配置（包括自定义运行状况探测、后端池地址以及其他规则）是在对应用程序网关配置以后配置的，不是在初始部署期间配置的。
+> [AZURE.NOTE]
+针对应用程序网关进行的其他配置（包括自定义运行状况探测、后端池地址以及其他规则）是在对应用程序网关配置以后配置的，不是在初始部署期间配置的。
+> 
+> 
 
 ## 开始之前
 
@@ -63,7 +68,7 @@ Azure 应用程序网关需要自己的子网。在创建虚拟网络时，请�
 
     azure login -e AzureChinaCloud
 
-键入前述示例后，将提供代码。在浏览器中导航到 https://aka.ms/devicelogin， 继续登录过程。
+键入前述示例后，将提供代码。在浏览器中导航到 https://aka.ms/devicelogin，继续登录过程。
 
 ![显示设备登录信息的 cmd][1]  
 
@@ -106,7 +111,10 @@ Azure 应用程序网关需要自己的子网。在创建虚拟网络时，请�
 
     azure network application-gateway create -n AdatumAppGateway -l chinaeast -g AdatumAppGatewayRG -e AdatumAppGatewayVNET -m Appgatewaysubnet -r 134.170.185.46,134.170.188.221,134.170.185.50 -y c:\AdatumAppGateway\adatumcert.pfx -x P@ssw0rd -z 2 -a Standard_Medium -w Basic -j 443 -f Enabled -o 80 -i http -b https -u Standard
 
-
+> [AZURE.NOTE]
+如需在创建过程中能够提供的参数的列表，请运行以下命令：**azure network application-gateway create --help**。
+> 
+> 
 
 此示例会创建基本的应用程序网关，提供的默认设置适用于侦听器、后端池、后端 http 设置以及规则。它还会配置 SSL 卸载。预配成功后，即可根据部署修改这些设置。如果在之前的步骤中已使用后端池定义 Web 应用程序，则在创建后，负载均衡即会开始。
 
@@ -124,4 +132,4 @@ Azure 应用程序网关需要自己的子网。在创建虚拟网络时，请�
 [2]: ./media/application-gateway-create-gateway-cli/figure2.png
 [3]: ./media/application-gateway-create-gateway-cli/figure3.png
 
-<!---HONumber=Mooncake_1010_2016-->
+<!---HONumber=Mooncake_1128_2016-->
