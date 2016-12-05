@@ -8,13 +8,13 @@
 	documentationCenter="monitoring-and-diagnostics"/>
 
 <tags
-	ms.service="monitoring-and-diagnostics"
+	ms.service="azure-portal"
 	ms.workload="na"
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/23/2016"
-	wacn.date="11/14/2016"
+	ms.date="10/10/2016"
+	wacn.date="12/05/2016"
 	ms.author="robb"/>
 
 
