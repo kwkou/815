@@ -1,34 +1,33 @@
 <properties
-   pageTitle="使用门户创建具有 Web 应用程序防火墙的应用程序网关 | Azure"
-   description="了解如何使用门户创建具有 Web 应用程序防火墙的应用程序网关"
-   services="application-gateway"
-   documentationCenter="na"
-   authors="georgewallace"
-   manager="carmonm"
-   editor="tysonn"
-   tags="azure-resource-manager"
-/>  
+    pageTitle="使用门户创建具有 Web 应用程序防火墙的应用程序网关 | Azure"
+    description="了解如何使用门户创建具有 Web 应用程序防火墙的应用程序网关"
+    services="application-gateway"
+    documentationcenter="na"
+    author="georgewallace"
+    manager="carmonm"
+    editor="tysonn"
+    tags="azure-resource-manager" />  
 
-<tags  
-   ms.service="application-gateway"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
-   ms.date="09/26/2016"
-   wacn.date="11/07/2016"
-   ms.author="gwallace" />  
+<tags
+    ms.assetid="b561a210-ed99-4ab4-be06-b49215e3255a"
+    ms.service="application-gateway"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.tgt_pltfrm="na"
+    ms.workload="infrastructure-services"
+    ms.date="11/16/2016"
+    wacn.date="12/05/2016"
+    ms.author="gwallace" />  
 
 
 # 使用门户创建具有 Web 应用程序防火墙的应用程序网关
-
 > [AZURE.SELECTOR]
 - [Azure 门户预览](/documentation/articles/application-gateway-web-application-firewall-portal/)
 - [Azure Resource Manager PowerShell](/documentation/articles/application-gateway-web-application-firewall-powershell/)
 
-Azure 应用程序网关是第 7 层负载均衡器。它在不同服务器之间提供故障转移和性能路由 HTTP 请求，而不管它们是在云中还是本地。应用程序网关提供许多应用程序传送控制器 (ADC) 功能，包括 HTTP 负载均衡、基于 cookie 的会话相关性、安全套接字层 (SSL) 卸载、自定义运行状况探测、多站点支持，以及许多其他功能。若要查找支持的功能的完整列表，请参阅[应用程序网关概述](/documentation/articles/application-gateway-introduction/)
+Azure 应用程序网关中的 Web 应用程序防火墙 (WAF) 可保护 Web 应用程序，使其免受常见 Web 攻击的威胁，例如 SQL 注入、跨站点脚本攻击和会话劫持。Web 应用程序可以防止 OWASP 十大常见 Web 漏洞中的大部分漏洞。
 
-Azure 应用程序网关中的 Web 应用程序防火墙 (WAF) 可保护 Web 应用程序，使其免受常见 Web 攻击的威胁，例如 SQL 注入、跨站点脚本攻击和会话劫持。
+Azure 应用程序网关是第 7 层负载均衡器。它在不同服务器之间提供故障转移和性能路由 HTTP 请求，而不管它们是在云中还是本地。应用程序网关提供许多应用程序传送控制器 (ADC) 功能，包括 HTTP 负载均衡、基于 cookie 的会话相关性、安全套接字层 (SSL) 卸载、自定义运行状况探测、多站点支持，以及许多其他功能。若要查找支持的功能的完整列表，请参阅[应用程序网关概述](/documentation/articles/application-gateway-introduction/)
 
 ## <a name="scenario"></a> 方案
 
@@ -41,7 +40,10 @@ Azure 应用程序网关中的 Web 应用程序防火墙 (WAF) 可保护 Web 应
 ![方案示例][scenario]  
 
 
->[AZURE.NOTE] 针对应用程序网关进行的其他配置（包括自定义运行状况探测、后端池地址以及其他规则）是在对应用程序网关配置以后配置的，不是在初始部署期间配置的。
+> [AZURE.NOTE]
+针对应用程序网关进行的其他配置（包括自定义运行状况探测、后端池地址以及其他规则）是在对应用程序网关配置以后配置的，不是在初始部署期间配置的。
+> 
+> 
 
 ## 开始之前
 
@@ -64,24 +66,27 @@ Azure 应用程序网关需要自己的子网。在创建虚拟网络时，请�
 
 用于更新现有应用程序网关以支持 Web 应用程序防火墙的设置如下：
 
-- **层** - 所选的层必须是 **WAF** 才能支持 Web 应用程序防火墙
-- **SKU 大小** - 此设置是指具有 Web 应用程序防火墙的应用程序网关的大小，可用选项包括**中型**和**大型**。
-- **防火墙状态** - 此设置会禁用或启用 Web 应用程序防火墙。
-- **防火墙模式** - 此设置是指 Web 应用程序防火墙处理恶意流量的方式。**检测**模式只记录事件，而**阻止**模式则会记录事件并停止恶意流量。
+* **层** - 所选的层必须是 **WAF** 才能支持 Web 应用程序防火墙
+* **SKU 大小** - 此设置是指具有 Web 应用程序防火墙的应用程序网关的大小，可用选项包括**中型**和**大型**。
+* **防火墙状态** - 此设置会禁用或启用 Web 应用程序防火墙。
+* **防火墙模式** - 此设置是指 Web 应用程序防火墙处理恶意流量的方式。**检测**模式只记录事件，而**阻止**模式则会记录事件并停止恶意流量。
 
 ![显示基本设置的边栏选项卡][2]  
 
 
->[AZURE.NOTE] 若要查看 Web 应用程序防火墙日志，必须启用诊断功能并选择 ApplicationGatewayFirewallLog。进行测试时，可以选择 1 作为实例计数。必须知道的是，2 以下的实例计数不受 SLA 支持，因此不建议使用。使用 Web 应用程序防火墙时，无法使用小型网关。
+> [AZURE.NOTE]
+若要查看 Web 应用程序防火墙日志，必须启用诊断功能并选择 ApplicationGatewayFirewallLog。进行测试时，可以选择 1 作为实例计数。必须知道的是，2 以下的实例计数不受 SLA 支持，因此不建议使用。使用 Web 应用程序防火墙时，无法使用小型网关。
+> 
+> 
 
 ## <a name="create-an-application-gateway-with-web-application-firewall"></a> 创建具有 Web 应用程序防火墙的应用程序网关
 
 此方案将：
 
-- 创建包含两个实例的中型应用程序防火墙应用程序网关。
-- 创建名为 AdatumAppGatewayVNET 且包含 10.0.0.0/16 保留 CIDR 块的虚拟网络。
-- 创建名为 Appgatewaysubnet 且使用 10.0.0.0/28 作为其 CIDR 块的子网。
-- 配置进行 SSL 卸载的证书。
+* 创建包含两个实例的中型应用程序防火墙应用程序网关。
+* 创建名为 AdatumAppGatewayVNET 且包含 10.0.0.0/16 保留 CIDR 块的虚拟网络。
+* 创建名为 Appgatewaysubnet 且使用 10.0.0.0/28 作为其 CIDR 块的子网。
+* 配置进行 SSL 卸载的证书。
 
 ### 步骤 1
 
@@ -96,17 +101,20 @@ Azure 应用程序网关需要自己的子网。在创建虚拟网络时，请�
 
 基本设置需要的信息如下：
 
-- **Name** - 应用程序网关的名称。
-- **层** - 应用程序网关的层，可用选项包括**标准**和 **WAF**。Web 应用程序防火墙仅在 WAF 层中提供。
-- **SKU 大小** - 此设置是指应用程序网关的大小，可用选项包括**中型**和**大型**。
-- **实例计数** - 实例的数目，此值应该是 **2** 到 **10** 之间的数字。
-- **资源组** - 用于保存应用程序网关的资源组，可以是现有资源组，也可以是新的资源组。
-- **位置** - 应用程序网关所在的区域，与资源组的位置相同。*位置很重要，因为虚拟网络和公共 IP 必须与网关位于同一位置*。
+* **Name** - 应用程序网关的名称。
+* **层** - 应用程序网关的层，可用选项包括**标准**和 **WAF**。Web 应用程序防火墙仅在 WAF 层中提供。
+* **SKU 大小** - 此设置是指应用程序网关的大小，可用选项包括**中型**和**大型**。
+* **实例计数** - 实例的数目，此值应该是 **2** 到 **10** 之间的数字。
+* **资源组** - 用于保存应用程序网关的资源组，可以是现有资源组，也可以是新的资源组。
+* **位置** - 应用程序网关所在的区域，与资源组的位置相同。*位置很重要，因为虚拟网络和公共 IP 必须与网关位于同一位置*。
 
 ![显示基本设置的边栏选项卡][2-2]  
 
 
->[AZURE.NOTE] 进行测试时，可以选择 1 作为实例计数。必须知道的是，2 以下的实例计数不受 SLA 支持，因此不建议使用。Web 应用程序防火墙方案不支持小型网关。
+> [AZURE.NOTE]
+进行测试时，可以选择 1 作为实例计数。必须知道的是，2 以下的实例计数不受 SLA 支持，因此不建议使用。Web 应用程序防火墙方案不支持小型网关。
+> 
+> 
 
 ### 步骤 3
 
@@ -165,8 +173,8 @@ Azure 应用程序网关需要自己的子网。在创建虚拟网络时，请�
 
 配置 **WAF** 特定设置。
 
-- **防火墙状态** - 此设置可打开或关闭 WAF。
-- **防火墙模式** - 此设置确定 WAF 对恶意流量采取的操作。如果选择**检测**，只会记录流量。如果选择**阻止**，会记录并停止流量，同时提供“403 未授权”响应。
+* **防火墙状态** - 此设置可打开或关闭 WAF。
+* **防火墙模式** - 此设置确定 WAF 对恶意流量采取的操作。如果选择**检测**，只会记录流量。如果选择**阻止**，会记录并停止流量，同时提供“403 未授权”响应。
 
 ![Web 应用程序防火墙设置][9]  
 
@@ -175,7 +183,7 @@ Azure 应用程序网关需要自己的子网。在创建虚拟网络时，请�
 
 查看“摘要”页，然后单击“确定”。现在会让应用程序网关排队，然后创建它。
 
-### 步骤 12
+### 步骤 11
 
 创建应用程序网关以后，可在门户中导航到该网关，然后继续进行配置。
 
@@ -208,4 +216,4 @@ Azure 应用程序网关需要自己的子网。在创建虚拟网络时，请�
 [10]: ./media/application-gateway-web-application-firewall-portal/figure10.png
 [scenario]: ./media/application-gateway-web-application-firewall-portal/scenario.png
 
-<!---HONumber=Mooncake_1024_2016-->
+<!---HONumber=Mooncake_1128_2016-->
