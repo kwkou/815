@@ -13,8 +13,8 @@
     ms.tgt_pltfrm="multiple"
     ms.devlang="Java"
     ms.topic="article"
-    ms.date="08/11/2016"
-    wacn.date="09/26/2016" 
+    ms.date="11/01/2016" 
+    wacn.date="12/05/2016" 
     ms.author="robmcm"/>
 
 <!-- Legacy MSDN URL = https://msdn.microsoft.com/library/azure/dn268600.aspx -->
@@ -63,4 +63,5 @@ Azure 服务终结点确定你的应用程序是在全球 Azure 平台管理、�
 
 [ic719493]: ./media/azure-toolkit-for-eclipse-azure-service-endpoints/ic719493.png
 
-<!---HONumber=Mooncake_0606_2016-->
+
+<!---HONumber=Mooncake_1128_2016-->

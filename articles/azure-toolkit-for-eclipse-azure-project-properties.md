@@ -5,7 +5,8 @@
     documentationCenter="java"
     authors="rmcmurray"
     manager="wpickett"
-    editor=""/>
+    editor=""/>  
+
 
 <tags
     ms.service="multiple"
@@ -13,29 +14,26 @@
     ms.tgt_pltfrm="multiple"
     ms.devlang="Java"
     ms.topic="article"
-    ms.date="8/11/2016"
-    wacn.date="09/26/2016" 
+    ms.date="11/01/2016" 
+    wacn.date="12/05/2016" 
     ms.author="robmcm"/>
 
-<!-- Legacy MSDN URL = https://msdn.microsoft.com/library/azure/jj835232.aspx -->
 
-# Azure 项目属性 #
-
+# Azure 项目属性
 可以在 Azure Toolkit for Eclipse 中指定 Azure 项目的各种设置。
 
-## 配置 Azure 项目属性 ##
-
+## 配置 Azure 项目属性
 配置 Azure 项目属性是通过 Azure 项目的属性对话框完成的。在 Eclipse 的“项目资源管理器”窗格中右键单击该项目，单击“属性”，然后选择“Azure”子菜单。
 
 ![][ic719480]
 
 在此属性页中，你可以更改以下各项：
 
-* **服务名称：**Azure 项目的名称。
-* **生成目标：**设置该项目的目的是要在计算模拟器中生成还是部署到 Azure。
-* **目标操作系统：**将项目部署到 Azure 时要使用的操作系统。
+* **服务名称**：Azure 项目的名称。
+* **生成目标**：设置该项目的目的是要在计算模拟器中生成还是部署到 Azure。
+* **目标操作系统**：将项目部署到 Azure 时要使用的操作系统。
 
-## 另请参阅 ##
+## 另请参阅
 
 [适用于 Eclipse 的 Azure 工具包][]
 
@@ -62,4 +60,5 @@
 
 [ic719480]: ./media/azure-toolkit-for-eclipse-azure-project-properties/ic719480.png
 
-<!---HONumber=Mooncake_0606_2016-->
+
+<!---HONumber=Mooncake_1128_2016-->
