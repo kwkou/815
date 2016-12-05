@@ -15,32 +15,39 @@
   ms.topic="article"
   ms.tgt_pltfrm="na"
   ms.workload="infrastructure-services"
-  ms.date="08/31/2016"
-  wacn.date="11/08/2016"
-  ms.author="sewhee" />  
+  ms.date="10/24/2016"
+  ms.author="sewhee"
+  wacn.date="" />  
 
 
-# <a name="get-started"></a>使用 PowerShell 在 Resource Manager 中创建面向 Internet 的负载均衡器
+# <a name="get-started">  
+</a>使用 PowerShell 在 Resource Manager 中创建面向 Internet 的负载均衡器
 
-[AZURE.INCLUDE [load-balancer-get-started-internet-arm-selectors-include.md](../../includes/load-balancer-get-started-internet-arm-selectors-include.md)]
+> [AZURE.SELECTOR]
+[Portal](/documentation/articles/load-balancer-get-started-internet-portal/)
+[PowerShell](/documentation/articles/load-balancer-get-started-internet-arm-ps/)
+[Azure CLI](/documentation/articles/load-balancer-get-started-internet-arm-cli/)
+[Template](/documentation/articles/load-balancer-get-started-internet-arm-template/)
 
 [AZURE.INCLUDE [load-balancer-get-started-internet-intro-include.md](../../includes/load-balancer-get-started-internet-intro-include.md)]
 
-[AZURE.INCLUDE [azure-arm-classic-important-include](../../includes/azure-arm-classic-important-include.md)] 本文介绍资源管理器部署模型。还可[了解如何使用经典部署模型创建面向 Internet 的负载均衡器](/documentation/articles/load-balancer-get-started-internet-classic-cli/)。
+[AZURE.INCLUDE [azure-arm-classic-important-include](../../includes/azure-arm-classic-important-include.md)]
+
+本文介绍资源管理器部署模型。还可[了解如何使用经典部署模型创建面向 Internet 的负载均衡器](/documentation/articles/load-balancer-get-started-internet-classic-cli.md)。
 
 [AZURE.INCLUDE [load-balancer-get-started-internet-scenario-include.md](../../includes/load-balancer-get-started-internet-scenario-include.md)]
 
 ## 使用 Azure PowerShell 部署解决方案
 
-以下流程介绍了如何使用 Azure Resource Manager 和 PowerShell 创建面向 Internet 的负载均衡器。借助 Azure Resource Manager，可单独创建和配置每个资源，再将其合成一个新资源。
+以下过程介绍如何使用 Azure Resource Manager 和 PowerShell 创建面向 Internet 的负载均衡器。借助 Azure Resource Manager，可单独创建和配置每个资源，然后将其放在一起用于创建负载均衡器。
 
 需要创建和配置以下对象才能部署负载均衡器：
 
-- 前端 IP 配置：包含传入网络流量的公共 IP (PIP) 地址。
-- 后端地址池：包含要从负载均衡器接收网络流量的虚拟机网络接口 (NIC)。
-- 负载均衡规则：所含规则可将负载均衡器上的公共端口映射到后端地址池的端口上。
-- 入站 NAT 规则：所含规则可将负载均衡器上的公共端口映射到后端地址池中特定虚拟机的端口。
-- 探测器：包含用于检查后端地址池中虚拟机实例的可用性的运行状况探测器。
+* 前端 IP 配置：包含传入网络流量的公共 IP (PIP) 地址。
+* 后端地址池：包含要从负载均衡器接收网络流量的虚拟机网络接口 (NIC)。
+* 负载平衡规则：所含规则可将负载均衡器上的公共端口映射到后端地址池的端口上。
+* 入站 NAT 规则：所含规则可将负载均衡器上的公共端口映射到后端地址池中特定虚拟机的端口。
+* 探测器：包含用于检查后端地址池中虚拟机实例的可用性的运行状况探测器。
 
 有关详细信息，请参阅 [Azure Resource Manager 对负载均衡器的支持](/documentation/articles/load-balancer-arm/)。
 
@@ -78,7 +85,6 @@
 	    $publicIP = New-AzureRmPublicIpAddress -Name PublicIp -ResourceGroupName NRP-RG -Location 'China East' –AllocationMethod Static -DomainNameLabel loadbalancernrp 
 
     >[AZURE.IMPORTANT] 负载均衡器将公共 IP 的域标签用作 FQDN 的前缀。这不同于经典部署模型，后者将云服务用作负载均衡器 FQDN。
-    该实例中，FQDN 是 **loadbalancernrp.chinaeast.chinacloudapp.cn**。
 
 ## 创建前端 IP 池和后端地址池
 
@@ -94,11 +100,11 @@
 
 下例会创建以下项：
 
-- 用于将端口 3441 上的所有传入流量转换到端口 3389 的 NAT 规则
-- 用于将端口 3442 上的所有传入流量转换到端口 3389 的 NAT 规则
-- 用于检查 **HealthProbe.aspx** 页面上的运行状况状态的探测规则
-- 用于将端口 80 上的所有传入流量平衡到后端池中的地址端口 80 的负载均衡器规则
-- 使用上述所有对象的负载均衡器
+* 用于将端口 3441 上的所有传入流量转换到端口 3389 的 NAT 规则
+* 用于将端口 3442 上的所有传入流量转换到端口 3389 的 NAT 规则
+* 用于检查 **HealthProbe.aspx** 页面上的运行状况状态的探测规则
+* 用于将端口 80 上的所有传入流量平衡到后端池中的地址端口 80 的负载均衡器规则
+* 使用上述所有对象的负载均衡器
 
 执行以下步骤：
 
@@ -161,7 +167,7 @@
         IpConfigurations     : [
                             {
                             "Name": "ipconfig1",
-                            "Etag": "W/\"d448256a-e1df-413a-9103-a137e07276d1\"",
+                            "Etag": "W/"d448256a-e1df-413a-9103-a137e07276d1"",
                             "Id": "/subscriptions/f50504a2-1865-4541-823a-b32842e3e0ee/resourceGroups/NRP-RG/providers/Microsoft.Network/networkInterfaces/lb-nic1-be/ipConfigurations/ipconfig1",
                             "PrivateIpAddress": "10.0.2.6",
                             "PrivateIpAllocationMethod": "Static",
@@ -226,7 +232,7 @@
 
         Set-AzureRmNetworkInterface -NetworkInterface $nic
 
-    将网络接口添加到负载均衡器后端池后，它会根据该负载均衡器资源的负载均衡规则开始接收网络流量。
+    将网络接口添加到负载均衡器后端池后，它会根据该负载均衡器资源的负载平衡规则开始接收网络流量。
 
 ## 更新现有的负载均衡器
 
@@ -258,4 +264,4 @@
 
 [为负载均衡器配置空闲 TCP 超时设置](/documentation/articles/load-balancer-tcp-idle-timeout/)
 
-<!---HONumber=Mooncake_1031_2016-->
+<!---HONumber=Mooncake_1128_2016-->

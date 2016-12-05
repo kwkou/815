@@ -16,18 +16,23 @@
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
    ms.date="08/31/2016"
-   wacn.date="11/08/2016"
+   wacn.date="12/05/2016"
    ms.author="sewhee" />  
 
 
 # 使用 Azure CLI 创建内部负载均衡器
 
-[AZURE.INCLUDE [load-balancer-get-started-internet-arm-selectors-include.md](../../includes/load-balancer-get-started-internet-arm-selectors-include.md)]
+> [AZURE.SELECTOR]
+[Portal](/documentation/articles/load-balancer-get-started-internet-portal/)
+[PowerShell](/documentation/articles/load-balancer-get-started-internet-arm-ps/)
+[Azure CLI](/documentation/articles/load-balancer-get-started-internet-arm-cli/)
+[Template](/documentation/articles/load-balancer-get-started-internet-arm-template/)
 
 [AZURE.INCLUDE [load-balancer-get-started-internet-intro-include.md](../../includes/load-balancer-get-started-internet-intro-include.md)]
 
-[AZURE.INCLUDE [azure-arm-classic-important-include.md](../../includes/azure-arm-classic-important-include.md)] 本文介绍资源管理器部署模型。你还可以[了解如何使用经典部署创建面向 Internet 的负载均衡器](/documentation/articles/load-balancer-get-started-internet-classic-portal/)
+[AZURE.INCLUDE [azure-arm-classic-important-include](../../includes/azure-arm-classic-important-include.md)]
 
+本文介绍 Resource Manager 部署模型。你还可以[了解如何使用经典部署创建面向 Internet 的负载均衡器](/documentation/articles/load-balancer-get-started-internet-classic-portal/)
 
 [AZURE.INCLUDE [load-balancer-get-started-internet-scenario-include.md](../../includes/load-balancer-get-started-internet-scenario-include.md)]
 
@@ -37,18 +42,17 @@
 
 需要创建和配置以下对象才能部署负载均衡器：
 
-- 前端 IP 配置 - 包含传入网络流量的公共 IP 地址。
-- 后端地址池 - 包含从负载均衡器接收网络流量的虚拟机网络接口 (NIC)。
-- 负载均衡规则 - 包含将负载均衡器上的公共端口映射到后端地址池中的端口的规则。
-- 入站 NAT 规则 - 包含将负载均衡器上的公共端口映射到后端地址池中特定虚拟机的端口的规则。
-- 探测器 - 包含用于检查后端地址池中虚拟机实例的可用性的运行状况探测器。
+* 前端 IP 配置 - 包含传入网络流量的公共 IP 地址。
+* 后端地址池 - 包含从负载均衡器接收网络流量的虚拟机网络接口 (NIC)。
+* 负载平衡规则 - 包含将负载均衡器上的公共端口映射到后端地址池中的端口的规则。
+* 入站 NAT 规则 - 包含将负载均衡器上的公共端口映射到后端地址池中特定虚拟机的端口的规则。
+* 探测器 - 包含用于检查后端地址池中虚拟机实例的可用性的运行状况探测器。
 
 有关详细信息，请参阅 [Azure Resource Manager 对负载均衡器的支持](/documentation/articles/load-balancer-arm/)。
 
 ## 将 CLI 设置为使用 Resource Manager
 
 1. 如果你从未使用过 Azure CLI，请参阅[安装和配置 Azure CLI](/documentation/articles/xplat-cli-install/)，并按照说明进行操作，直到选择 Azure 帐户和订阅。
-
 2. 运行 **azure config mode** 命令以切换到资源管理器模式，如下所示。
 
         azure config mode arm
@@ -71,8 +75,7 @@
 
 	azure network public-ip create -g NRPRG -n NRPPublicIP -l chinaeast -d loadbalancernrp -a static -i 4
 
-    >[AZURE.IMPORTANT] 负载均衡器将使用公共 IP 的域标签作为其 FQDN。这与经典部署不同，后者使用云服务座位负载均衡器 FQDN。
-    该实例中，FQDN 是 *loadbalancernrp.eastus.cloudapp.azure.com*。
+    >[AZURE.IMPORTANT] 负载均衡器将使用公共 IP 的域标签作为其 FQDN。这与经典部署不同，后者使用云服务座位负载均衡器 FQDN。该实例中，FQDN 是 *loadbalancernrp.eastus.cloudapp.azure.com* 。
 
 ## 创建负载均衡器
 
@@ -81,8 +84,7 @@
 	azure network lb create NRPRG NRPlb chinaeast
 
 ## 创建前端 IP 池和后端地址池
-
-下例会创建前端和后端 IP 池，前者接收负载均衡器上的传入网络流量，后者发送负载均衡的网络流量。
+此示例演示如何创建前端和后端 IP 池，前者接收负载均衡器上的传入网络流量，并向后者发送经过负载均衡的网络流量。
 
 1. 创建前端 IP 池，它与负载均衡器和上一步中创建的公共 IP 相关联。
 
@@ -96,10 +98,10 @@
 
 下例会创建以下项。
 
-- 用于将端口 21 上的所有传入流量转换到端口 22 的 NAT 规则<sup>1</sup>
-- 用于将端口 23 上的所有传入流量转换到端口 22 的 NAT 规则
-- 用于将端口 80 上的所有传入流量平衡到后端池中的地址端口 80 的负载均衡器规则。
-- 用于检查 *HealthProbe.aspx* 页面上的运行状况状态的探测规则。
+* 用于将端口 21 上的所有传入流量转换到端口 22 的 NAT 规则<sup>1</sup>
+* 用于将端口 23 上的所有传入流量转换到端口 22 的 NAT 规则
+* 用于将端口 80 上的所有传入流量平衡到后端池中的地址端口 80 的负载均衡器规则。
+* 用于检查 *HealthProbe.aspx* 页面上的运行状况状态的探测规则。
 
 <sup>1</sup> NAT 规则将关联到负载均衡器后面的特定虚拟机实例。到达端口 21 的网络流量发送至端口 22 上与该 NAT 规则关联的特定虚拟机。必须为 NAT 规则指定协议（UDP 或 TCP）。这两种协议不能分配给同一个端口。
 
@@ -108,13 +110,6 @@
         azure network lb inbound-nat-rule create -g nrprg -l nrplb -n ssh1 -p tcp -f 21 -b 22
         azure network lb inbound-nat-rule create -g nrprg -l nrplb -n ssh2 -p tcp -f 23 -b 22
 
-    参数：
-    * **-g** - 资源组名称
-    * **-l** - 负载均衡器名称
-    * **-n** - 资源名称（Nat 规则、探测或 LB 规则皆可）。
-    * **-p** - 协议（可以是 TCP 或 UDP）
-    * **-f** - 要使用的前端端口（探测命令使用 -f 定义探测路径）
-    * **-b** - 要使用的后端端口
 
 2. 创建负载均衡器规则。
 
@@ -124,13 +119,6 @@
 
         azure network lb probe create -g nrprg -l nrplb -n healthprobe -p "http" -o 80 -f healthprobe.aspx -i 15 -c 4
 
-    参数：
-    * **-g** - 资源组
-    * **-l** - 负载均衡器规则集的名称
-    * **-n** - 运行状况探测器的名称
-    * **-p** - 运行状况探测器所用的协议
-    * **-i** - 探测间隔（以秒计）
-    * **-c** - 检查数
 
 4. 检查你的设置。
 
@@ -205,14 +193,6 @@
 
         azure network nic create -g nrprg -n lb-nic1-be --subnet-name nrpvnetsubnet --subnet-vnet-name nrpvnet -d "/subscriptions/####################################/resourceGroups/nrprg/providers/Microsoft.Network/loadBalancers/nrplb/backendAddressPools/NRPbackendpool" -e "/subscriptions/####################################/resourceGroups/nrprg/providers/Microsoft.Network/loadBalancers/nrplb/inboundNatRules/rdp1" eastus
 
-    参数：
-
-    * **-g** - 资源组名称
-    * **-n** - NIC 资源的名称
-    * **--subnet-name** - 子网的名称
-    * **--subnet-vnet-name** - 虚拟网络的名称
-    * **-d** - 后端池资源的 ID（以 /subscription/{subscriptionID/resourcegroups/<resourcegroup-name>/providers/Microsoft.Network/loadbalancers/<load-balancer-name>/backendaddresspools/<name-of-the-backend-pool> 开头）
-    * **-e** - 要关联到 NIC 资源的 NAT 规则的 ID（以 /subscriptions/####################################/resourceGroups/<resourcegroup-name>/providers/Microsoft.Network/loadBalancers/<load-balancer-name>/inboundNatRules/<nat-rule-name> 开头）
 
     预期输出：
 
@@ -242,7 +222,7 @@
 
 2. 创建名为 *lb-nic2-be* 的 NIC，并将其与 *rdp2* NAT 规则和 *NRPbackendpool* 后端地址池相关联。
 
- 	    azure network nic create -g nrprg -n lb-nic2-be --subnet-name nrpvnetsubnet --subnet-vnet-name nrpvnet -d "/subscriptions/####################################/resourceGroups/nrprg/providers/Microsoft.Network/loadBalancers/nrplb/backendAddressPools/NRPbackendpool" -e "/subscriptions/####################################/resourceGroups/nrprg/providers/Microsoft.Network/loadBalancers/nrplb/inboundNatRules/rdp2" chinaeast
+        azure network nic create --resource-group nrprg --name lb-nic2-be --subnet-name nrpvnetsubnet --subnet-vnet-name nrpvnet --lb-address-pool-ids "/subscriptions/####################################/resourceGroups/nrprg/providers/Microsoft.Network/loadBalancers/nrplb/backendAddressPools/NRPbackendpool" --lb-inbound-nat-rule-ids "/subscriptions/####################################/resourceGroups/nrprg/providers/Microsoft.Network/loadBalancers/nrplb/inboundNatRules/rdp2" eastus
 
 3. 创建名为 *web1* 的虚拟机 (VM)，并将其与名为 *lb-nic1-be* 的 NIC 相关联。名为 *web1nrp* 的存储帐户在运行以下命令之前已创建。
 
@@ -271,43 +251,29 @@
 
     >[AZURE.NOTE] 应显示信息性消息**这是未配置公共 IP 的 NIC**，因为为连接到 Internet 的负载均衡器创建的 NIC 使用的是负载均衡器公共 IP 地址。
 
-    由于 *lb-nic1-be* NIC 与 *rdp1* NAT 规则相关联，因此你可以使用 RDP 通过负载均衡器上的端口 3441 连接到 *web1*。
+    由于 *lb-nic1-be* NIC 与 *rdp1* NAT 规则相关联，因此你可以使用 RDP 通过负载均衡器上的端口 3441 连接到 *web1* 。
 
 4. 创建名为 *web2* 的虚拟机 (VM)，并将其与名为 *lb-nic2-be* 的 NIC 相关联。名为 *web1nrp* 的存储帐户在运行以下命令之前已创建。
 
 	    azure vm create --resource-group nrprg --name web2 --location chinaeast --vnet-	name nrpvnet --vnet-subnet-name nrpvnetsubnet --nic-name lb-nic2-be --availset-name nrp-avset --storage-account-name web2nrp --os-type Windows --image-urn MicrosoftWindowsServer:WindowsServer:2012-R2-Datacenter:4.0.20150825
 
 ## 更新现有的负载均衡器
-
 可添加引用现有负载均衡器的规则。在下例中，向现有负载均衡器 **NRPlb** 添加了新的负载均衡器规则
 
-    azure network lb rule create -g nrprg -l nrplb -n lbrule2 -p tcp -f 8080 -b 8051 -t frontendnrppool -o NRPbackendpool
+	azure network lb rule create --resource-group nrprg --lb-name nrplb --name lbrule2 --protocol tcp --frontend-port 8080 --backend-port 8051 --frontend-ip-name frontendnrppool --backend-address-pool-name NRPbackendpool
 
-参数：
-
-* **-g** - 资源组名称
-* **-l** - 负载均衡器名称
-* **-n** - 负载均衡器规则名称
-* **-p** - 协议
-* **-f** - 前端端口
-* **-b** - 后端端口
-* **-t** - 前端池名称
-* **-b** - 后端池名称
 
 ## 删除负载均衡器
-
 以下命令可删除负载均衡器：
 
-    azure network lb delete -g nrprg -n nrplb
+	azure network lb delete --resource-group nrprg --name nrplb
 
-其中 **nrprg** 是资源组，**nrplb** 是负载均衡器名称。
 
 ## 后续步骤
-
 [开始配置内部负载均衡器](/documentation/articles/load-balancer-get-started-ilb-arm-cli/)
 
 [配置负载均衡器分发模式](/documentation/articles/load-balancer-distribution-mode/)
 
 [为负载均衡器配置空闲 TCP 超时设置](/documentation/articles/load-balancer-tcp-idle-timeout/)
 
-<!---HONumber=Mooncake_1031_2016-->
+<!---HONumber=Mooncake_1128_2016-->

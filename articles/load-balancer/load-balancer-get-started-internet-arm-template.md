@@ -15,19 +15,24 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="02/09/2016"
-   wacn.date="11/08/2016"
+   ms.date="10/24/2016"
+   wacn.date="12/05/2016"
    ms.author="sewhee" />  
 
 
 # 使用模板创建面向 Internet 的负载均衡器
 
-[AZURE.INCLUDE [load-balancer-get-started-internet-arm-selectors-include.md](../../includes/load-balancer-get-started-internet-arm-selectors-include.md)]
+> [AZURE.SELECTOR]
+[Portal](/documentation/articles/load-balancer-get-started-internet-portal/)
+[PowerShell](/documentation/articles/load-balancer-get-started-internet-arm-ps/)
+[Azure CLI](/documentation/articles/load-balancer-get-started-internet-arm-cli/)
+[Template](/documentation/articles/load-balancer-get-started-internet-arm-template/)
 
 [AZURE.INCLUDE [load-balancer-get-started-internet-intro-include.md](../../includes/load-balancer-get-started-internet-intro-include.md)]
 
-[AZURE.INCLUDE [azure-arm-classic-important-include](../../includes/azure-arm-classic-important-include.md)] 本文介绍资源管理器部署模型。你还可以[了解如何使用经典部署模型创建面向 Internet 的负载均衡器](/documentation/articles/load-balancer-get-started-internet-classic-portal/)
+[AZURE.INCLUDE [azure-arm-classic-important-include](../../includes/azure-arm-classic-important-include.md)]
 
+本文介绍资源管理器部署模型。你还可以[了解如何使用经典部署模型创建面向 Internet 的负载均衡器](/documentation/articles/load-balancer-get-started-internet-classic-portal/)
 
 [AZURE.INCLUDE [load-balancer-get-started-internet-scenario-include.md](../../includes/load-balancer-get-started-internet-scenario-include.md)]
 
@@ -40,7 +45,6 @@
 若要使用 PowerShell 部署下载的模板，请执行以下步骤。
 
 1. 如果你从未使用过 Azure PowerShell，请参阅 [How to Install and Configure Azure PowerShell](/documentation/articles/powershell-install-configure/)（如何安装和配置 Azure PowerShell），并始终按照说明进行操作，以登录到 Azure 并选择你的订阅。
-
 2. 运行 **New-AzureRmResourceGroupDeployment** cmdlet 以使用模板创建资源组。
 
 		New-AzureRmResourceGroupDeployment -Name TestRG `
@@ -73,4 +77,4 @@
 
 [为负载均衡器配置空闲 TCP 超时设置](/documentation/articles/load-balancer-tcp-idle-timeout/)
 
-<!---HONumber=Mooncake_1031_2016-->
+<!---HONumber=Mooncake_1128_2016-->
