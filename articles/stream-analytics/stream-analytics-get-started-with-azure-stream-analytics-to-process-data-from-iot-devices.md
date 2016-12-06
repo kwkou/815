@@ -132,6 +132,6 @@ Contoso 是一家工业自动化公司，该公司已将其制造流程完全自
 此时，使用 **LEFT OUTER** 联接到相同的数据流（自联接）。对于 **INNER** 联接，仅当找到匹配项时才返回结果。对于 **LEFT OUTER** 联接，如果联接左侧的事件不匹配，则返回右侧所有列的带 NULL 的行。这种方法对于查找事件缺失很有用。有关详细信息，请参阅 MSDN 文档 [JOIN](https://msdn.microsoft.com/zh-cn/library/azure/dn835026.aspx)（联接）。
 
 ## 结束语
-本教程旨在演示如何编写不同的流分析查询语言查询，并在浏览器中查看结果。但是，这仅仅是一个开始。使用流分析还可以完成许多其他操作。流分析支持多种输入和输出，甚至可以使用 Azure 机器学习中的函数，因而是用于分析数据流的可靠工具。可以通过[学习路线图](https://azure.microsoft.com/documentation/learning-paths/stream-analytics/)开始详细了解流分析。有关如何编写查询的详细信息，请阅读有关[常用查询模式](stream-analytics-stream-analytics-query-patterns.md)的文章。
+本教程旨在演示如何编写不同的流分析查询语言查询，并在浏览器中查看结果。但是，这仅仅是一个开始。使用流分析还可以完成许多其他操作。流分析支持多种输入和输出，甚至可以使用 Azure 机器学习中的函数，因而是用于分析数据流的可靠工具。可以通过[学习路线图](https://azure.microsoft.com/documentation/learning-paths/stream-analytics/)开始详细了解流分析。有关如何编写查询的详细信息，请阅读有关[常用查询模式](/documentation/articles/stream-analytics-stream-analytics-query-patterns/)的文章。
 
 <!---HONumber=Mooncake_1128_2016-->

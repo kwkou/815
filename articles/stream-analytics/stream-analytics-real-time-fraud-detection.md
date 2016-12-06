@@ -44,7 +44,7 @@
 创建事件中心：
 
 1. 在 [Azure 经典管理门户](https://manage.windowsazure.cn/)中，单击“新建”>“应用程序服务”>“服务总线”>“事件中心”>“快速创建”。提供创建新的事件中心所需的名称、区域以及新的或现有的命名空间。
-2. 最佳做法是让每个流分析作业都从单个事件中心使用者组进行读取。我们稍后会引导完成创建使用者组的过程。[了解有关使用者组的详细信息](https://msdn.microsoft.com/library/azure/dn836025.aspx)。若要创建使用者组，请转到新创建的事件中心，单击“使用者组”选项卡，然后单击页面底部的“创建”，为使用者组提供一个名称。
+2. 最佳做法是让每个流分析作业都从单个事件中心使用者组进行读取。我们稍后会引导完成创建使用者组的过程。[了解有关使用者组的详细信息](https://msdn.microsoft.com/zh-cn/library/azure/dn836025.aspx)。若要创建使用者组，请转到新创建的事件中心，单击“使用者组”选项卡，然后单击页面底部的“创建”，为使用者组提供一个名称。
 3. 若要授予对事件中心的访问权限，需创建共享访问策略。单击事件中心的“配置”选项卡。
 4. 在“共享访问策略”下，使用**管理**权限创建一个新策略。
 
@@ -183,13 +183,13 @@
 
 1. 在代码编辑器中将查询更改为：
 
-     SELECT System.Timestamp as Time, CS1.CallingIMSI, CS1.CallingNum as CallingNum1,
-     CS2.CallingNum as CallingNum2, CS1.SwitchNum as Switch1, CS2.SwitchNum as Switch2
-     FROM CallStream CS1 TIMESTAMP BY CallRecTime
-     JOIN CallStream CS2 TIMESTAMP BY CallRecTime
-     ON CS1.CallingIMSI = CS2.CallingIMSI
-     AND DATEDIFF(ss, CS1, CS2) BETWEEN 1 AND 5 
-     WHERE CS1.SwitchNum != CS2.SwitchNum
+         SELECT System.Timestamp as Time, CS1.CallingIMSI, CS1.CallingNum as CallingNum1,
+         CS2.CallingNum as CallingNum2, CS1.SwitchNum as Switch1, CS2.SwitchNum as Switch2
+         FROM CallStream CS1 TIMESTAMP BY CallRecTime
+         JOIN CallStream CS2 TIMESTAMP BY CallRecTime
+         ON CS1.CallingIMSI = CS2.CallingIMSI
+         AND DATEDIFF(ss, CS1, CS2) BETWEEN 1 AND 5 
+         WHERE CS1.SwitchNum != CS2.SwitchNum
 2. 单击查询编辑器下的**“重新运行”**以查看查询结果。
 
    ![联接的查询结果](./media/stream-analytics-real-time-fraud-detection/stream-ananlytics-query-editor-join.png)
