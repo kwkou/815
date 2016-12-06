@@ -264,7 +264,7 @@ Bootstrap [链接列表组][linked list group]样式使每个链接的整个框�
 
 ![][AllSpeakersFixedDesktop]
 
-尽管移动浏览器视图得到了改进，但很难在较长的发言人列表中导航。Bootstrap 未提供现成的搜索筛选器功能，但你只需使用几行代码就能添加此功能。首先，将一个搜索框添加到视图，然后与筛选函数的 JavaScript 代码相挂接。在 *Views\\Home\\AllSpeakers.cshtml* 中，将 <form> 标记添加到 <h2> 标记的后面，如下所示：
+尽管移动浏览器视图得到了改进，但很难在较长的发言人列表中导航。Bootstrap 未提供现成的搜索筛选器功能，但你只需使用几行代码就能添加此功能。首先，将一个搜索框添加到视图，然后与筛选函数的 JavaScript 代码相挂接。在 *Views\\Home\\AllSpeakers.cshtml* 中，将 <form\> 标记添加到 <h2\> 标记的后面，如下所示：
 
     @model IEnumerable<string>
 
