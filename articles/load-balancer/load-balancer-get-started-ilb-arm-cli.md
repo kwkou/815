@@ -168,7 +168,7 @@ Azure Resource Manager 中的所有资源将与资源组关联。创建资源组
 
     	azure vm create --resource--resource-grouproup nrprg --name DB1 --location eastus --vnet-name nrpvnet --vnet-subnet-name nrpvnetsubnet --nic-name lb-nic1-be --availset-name nrp-avset --storage-account-name web1nrp --os-type Windows --image-urn MicrosoftWindowsServer:WindowsServer:2012-R2-Datacenter:4.0.20150825
 
-    	>[AZURE.IMPORTANT] VMs in a load balancer need to be in the same availability set. Use `azure availset create` to create an availability set.
+    >[AZURE.IMPORTANT] VMs in a load balancer need to be in the same availability set. Use `azure availset create` to create an availability set.
 
 4. 创建名为 *DB2* 的虚拟机 (VM)，然后将其与名为 *lb-nic2-be* 的 NIC 相关联。名为 *web1nrp* 的存储帐户在运行以下命令之前已创建。
 

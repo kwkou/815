@@ -1,6 +1,6 @@
 <properties
-   pageTitle="在多个 IP 配置上进行负载平衡 | Azure"
-   description="主要和辅助 IP 配置服务之间的负载平衡。"
+   pageTitle="在多个 IP 配置上进行负载均衡 | Azure"
+   description="主要和辅助 IP 配置服务之间的负载均衡。"
    services="load-balancer"
    documentationCenter="na"
    authors="anavinahar"
@@ -17,24 +17,24 @@
    wacn.date="12/05/2016"
    ms.author="annahar" />
 
-# 在多个 IP 配置上进行负载平衡
+# 在多个 IP 配置上进行负载均衡
 
 本文介绍如何将 Azure Load Balancer 用于每个虚拟网络接口 (NIC) 的多个 IP 地址。目前，对一个 NIC 的多个 IP 地址的支持是预览版的功能。有关详细信息，请参阅本文的[限制](#limitations)部分。以下场景说明了如何通过负载均衡器使用此功能。
 
 在本场景中有两个运行 Windows 的 VM，每个 VM 有一个 NIC。每个 NIC 具有多个 IP 配置。每个 VM 都托管了 contoso.com 和 fabrikam.com 这两个网站。每个网站都绑定到 NIC 的一个 IP 配置。我们使用负载均衡器来公开两个前端 IP 地址，每个地址分别对应于一个网站，从而将流量分发到各个网站的 IP 配置。此场景中两个前端以及两个后端池 IP 地址都使用相同的端口号。
 
-![负载平衡应用场景图像](./media/load-balancer-multiple-ip/lb-multi-ip.PNG)  
+![负载均衡应用场景图像](./media/load-balancer-multiple-ip/lb-multi-ip.PNG)  
 
 
 ## 限制
 
-现在，只有使用 Azure PowerShell 才能对辅助 IP 配置进行负载平衡配置。该限制是暂时性的，以后随时可能更改。重新访问此页以检查更新。
+现在，只有使用 Azure PowerShell 才能对辅助 IP 配置进行负载均衡配置。该限制是暂时性的，以后随时可能更改。重新访问此页以检查更新。
 
 [AZURE.INCLUDE [virtual-network-preview](../../includes/virtual-network-preview.md)]
 
 若要注册预览版，请向[多个 IP](mailto:MultipleIPsPreview@microsoft.com?subject=Request%20to%20enable%20subscription%20%3csubscription%20id%3e) 发送一封电子邮件，其中包含你的订阅 ID 和目标用途。
 
-## 在多个 IP 配置上进行负载平衡的步骤
+## 在多个 IP 配置上进行负载均衡的步骤
 
 按照以下步骤来实现本文所概述的场景：
 
@@ -94,7 +94,7 @@
     $frontendIP2 = New-AzureRmLoadBalancerFrontendIpConfig -Name fabrikamfe -PublicIpAddress $publicIP2
     ```
 
-9. 创建后端地址池、探测程序和负载平衡规则：
+9. 创建后端地址池、探测程序和负载均衡规则：
 
     ```powershell
     $beaddresspool1 = New-AzureRmLoadBalancerBackendAddressPoolConfig -Name contosopool
@@ -139,6 +139,6 @@
     $nic2 | Set-AzureRmNetworkInterface
     ```
 
-13. 最后，必须将 DNS 资源记录配置为指向各自的负载均衡器的前端 IP 地址。可以在 Azure DNS 中托管域。有关在负载均衡器中使用 Azure DNS 的详细信息，请参阅[在其他 Azure 服务中使用 Azure DNS](/documentation/articles/dns-for-azure-services/)。
+13. 最后，必须将 DNS 资源记录配置为指向各自的负载均衡器的前端 IP 地址。
 
 <!---HONumber=Mooncake_1128_2016-->
