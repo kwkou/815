@@ -1,6 +1,6 @@
 <properties 
 pageTitle="云服务的常见启动任务 | Azure" 
-description="提供了一些你可能需要在云服务 Web 角色或辅助角色中执行的常见启动任务示例。" 
+description="提供了一些可能需要在云服务 Web 角色或辅助角色中执行的常见启动任务示例。" 
 services="cloud-services" 
 documentationCenter="" 
 authors="Thraka" 
@@ -14,16 +14,15 @@ ms.tgt_pltfrm="na"
 ms.devlang="na" 
 ms.topic="article" 
 ms.date="10/17/2016" 
-wacn.date="11/14/2016" 
+wacn.date="12/05/2016" 
 ms.author="adegeo"/>
 
 # 常见的云服务启动任务
 
-本文提供了一些你可能需要在云服务中执行的常见启动任务示例。在角色启动之前，可以使用启动任务执行操作。你可能需要执行的操作包括安装组件、注册 COM 组件、设置注册表项或启动长时间运行的进程。
+本文提供了一些可能需要在云服务中执行的常见启动任务示例。角色启动之前，可以使用启动任务执行操作。可能需要执行的操作包括安装组件、注册 COM 组件、设置注册表项或启动长时间运行的进程。
 
 参阅[本文](/documentation/articles/cloud-services-startup-tasks/)可了解启动任务的工作方式，特别是如何创建定义启动任务的条目。
 
-此处的许多任务使用
 
 >[AZURE.NOTE] 启动任务不适用于虚拟机，只适用于云服务 Web 角色和辅助角色。
 
@@ -126,7 +125,7 @@ ms.author="adegeo"/>
 
 ## 添加防火墙规则
 
-在 Azure 中，实际上有两个防火墙。第一个防火墙控制虚拟机与外界之间的连接。此防火墙由 [ServiceDefinition.csdef] 文件中的 [EndPoints] 元素控制。
+实际上，Azure 中有两个防火墙。第一个防火墙控制虚拟机与外界之间的连接。此防火墙由 [ServiceDefinition.csdef] 文件中的 [EndPoints] 元素控制。
 
 第二个防火墙控制虚拟机与该虚拟机中的进程之间的连接。可以通过 `netsh advfirewall firewall` 命令行工具控制此防火墙。
 
@@ -230,7 +229,7 @@ Windows PowerShell 脚本不能直接从 [ServiceDefinition.csdef] 文件调用�
     EXIT /B %errorlevel%
 
 
-如果你使用的是运行 PowerShell 2.0 或 1.0 的来宾 OS，则可强制运行版本 2，如果不可用，则使用版本 1。
+如果使用的是运行 PowerShell 2.0 或 1.0 的来宾 OS，则可强制运行版本 2，如果不可用，则使用版本 1。
 
     REM   Attempt to set the execution policy by using PowerShell version 2.0 syntax.
     PowerShell -Version 2.0 -ExecutionPolicy Unrestricted .\startup.ps1 >> "%TEMP%\StartupLog.txt" 2>&1
@@ -341,11 +340,11 @@ string fileContent = System.IO.File.ReadAllText(System.IO.Path.Combine(localStor
     )
 
 
-## <a name="detect-that-your-task-has-already-run"></a> 检测到你的任务已运行
+## <a name="detect-that-your-task-has-already-run"></a> 检测到任务已运行
 
 该角色可能会无需重新启动即可回收，从而不会导致启动任务重新运行。没有标志来指示任务已在宿主 VM 上运行。你可能有一些任务它们运行多次无关紧要。但是，也可能会遇到需要阻止任务运行多次的情况。
 
-检测任务是否已运行的最简单方式是在任务成功时在 **%TEMP%** 文件夹中创建一个文件，然后在任务开始时查找该文件。下面是可为你执行该操作的示例 cmd shell 脚本。
+检测任务是否已运行的最简单方式是在任务成功时在 **%TEMP%** 文件夹中创建一个文件，然后在任务开始时查找该文件。下面是可执行该操作的示例 cmd shell 脚本。
 
     REM   If Task1_Success.txt exists, then Application 1 is already installed.
     IF EXIST "%RoleRoot%\Task1_Success.txt" (
@@ -377,7 +376,6 @@ string fileContent = System.IO.File.ReadAllText(System.IO.Path.Combine(localStor
 
     REM   Exit normally.
     EXIT /B 0
-
 
 ## 任务最佳做法
 以下是在配置 web 角色或辅助角色的任务时应遵循的一些最佳做法。
@@ -519,4 +517,4 @@ EXIT %ERRORLEVEL%
 [LocalResources]: https://msdn.microsoft.com/zh-cn/library/azure/gg557552.aspx#LocalResources
 [RoleInstanceValue]: https://msdn.microsoft.com/zh-cn/library/azure/gg557552.aspx#RoleInstanceValue
 
-<!---HONumber=Mooncake_1107_2016-->
+<!---HONumber=Mooncake_1128_2016-->

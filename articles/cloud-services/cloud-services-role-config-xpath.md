@@ -12,8 +12,8 @@ ms.workload="tbd"
 ms.tgt_pltfrm="na" 
 ms.devlang="na" 
 ms.topic="article" 
-ms.date="02/25/2016" 
-wacn.date="09/26/2016" 
+ms.date="08/10/2016" 
+wacn.date="12/05/2016" 
 ms.author="adegeo"/>
 
 # 使用 XPath 将角色配置设置公共为环境变量
@@ -190,4 +190,4 @@ ms.author="adegeo"/>
 
 为角色启用[远程桌面](/documentation/articles/cloud-services-role-enable-remote-desktop/)。
 
-<!---HONumber=Mooncake_0328_2016-->
+<!---HONumber=Mooncake_1128_2016-->

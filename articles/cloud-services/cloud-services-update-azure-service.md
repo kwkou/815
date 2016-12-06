@@ -12,8 +12,8 @@ ms.workload="tbd"
 ms.tgt_pltfrm="na"
 ms.devlang="na"
 ms.topic="article"
-ms.date="08/10/2016"
-wacn.date="09/19/2016"
+ms.date="11/14/2016"
+wacn.date="12/05/2016"
 ms.author="adegeo"/>
 
 # 如何更新云服务

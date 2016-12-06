@@ -13,8 +13,8 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="nodejs" 
 	ms.topic="article" 
-	ms.date="08/11/2016" 
-	wacn.date="09/26/2016" 
+	ms.date="11/01/2016" 
+	wacn.date="12/05/2016" 
 	ms.author="robmcm"/>
 
 
@@ -26,11 +26,12 @@
 
 Node.js 包含核心运行时中最小的一个功能集。开发人员在开发 Node.js 应用程序时经常会使用第三方模块来提供额外功能。在本教程中，你将使用 [Express][] 模块新建一个应用程序，该模块可提供用于创建 Node.js Web 应用程序的 MVC 框架。
 
-以下是已完成应用程序的屏幕快照：
+以下是已完成应用程序的屏幕截图：
 
 ![显示“Welcome to Express in Azure”的 Web 浏览器](./media/cloud-services-nodejs-develop-deploy-express-app/node36.png)
 
 ##创建云服务项目
+[AZURE.INCLUDE [install-dev-tools](../../includes/install-dev-tools.md)]
 
 执行下列步骤可新建一个名为“expressapp”的云服务项目：
 
@@ -62,7 +63,7 @@ Node.js 包含核心运行时中最小的一个功能集。开发人员在开发
 
         PS C:\node\expressapp\WebRole1> express
 
-	系统将提示你是否覆盖之前创建的应用程序。输入 **y** 或 **yes** 以继续操作。Express 将生成用于生成应用程序的 app.js 文件和一个文件夹结构。
+	系统将提示是否覆盖之前创建的应用程序。输入 **y** 或 **yes** 以继续操作。Express 会生成用于生成应用程序的 app.js 文件和一个文件夹结构。
 
 	![express 命令的输出](./media/cloud-services-nodejs-develop-deploy-express-app/node23.png)
 
@@ -97,7 +98,7 @@ Node.js 包含核心运行时中最小的一个功能集。开发人员在开发
 
 ## 修改视图
 
-现在，你将修改视图以显示消息“Welcome to Express in Azure”。
+现在，修改视图以显示消息“Welcome to Express in Azure”。
 
 1.  请输入以下命令来打开 index.jade 文件：
 
@@ -113,7 +114,7 @@ Node.js 包含核心运行时中最小的一个功能集。开发人员在开发
 
 3.  保存文件并退出记事本。
 
-4.  刷新浏览器，你将看到所做的更改。
+4.  刷新浏览器即可看到所做的更改。
 
 	![浏览器窗口，其中的页面包含 Welcome to Express in Azure](./media/cloud-services-nodejs-develop-deploy-express-app/node32.png)
 
@@ -139,4 +140,4 @@ Node.js 包含核心运行时中最小的一个功能集。开发人员在开发
 
  
 
-<!---HONumber=Mooncake_0523_2016-->
+<!---HONumber=Mooncake_1128_2016-->
