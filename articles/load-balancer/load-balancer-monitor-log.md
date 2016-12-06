@@ -85,37 +85,37 @@ JSON 输出显示的 *eventname* 属性将说明负载均衡器创建警报的�
 
 只有你按照上述详细步骤基于每个负载均衡器启用了该日志，才会生成该日志。数据存储在你启用日志记录时指定的存储帐户中。创建了名为“insights-logs-loadbalancerprobehealthstatus”的容器并记录了以下数据：
 
-{
-    "records":[
     {
-        "time": "2016-01-26T10:37:46.6024215Z",
-        "systemId": "32077926-b9c4-42fb-94c1-762e528b5b27",
-        "category": "LoadBalancerProbeHealthStatus",
-        "resourceId": "/SUBSCRIPTIONS/XXXXXXXXXXXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXX/RESOURCEGROUPS/RG7/PROVIDERS/MICROSOFT.NETWORK/LOADBALANCERS/WWEBLB",
-        "operationName": "LoadBalancerProbeHealthStatus",
-        "properties": {
-            "publicIpAddress": "40.83.190.158",
-            "port": "81",
-            "totalDipCount": 2,
-            "dipDownCount": 1,
-            "healthPercentage": 50.000000
-        }
-    },
-    {
-        "time": "2016-01-26T10:37:46.6024215Z",
-        "systemId": "32077926-b9c4-42fb-94c1-762e528b5b27",
-        "category": "LoadBalancerProbeHealthStatus",
-        "resourceId": "/SUBSCRIPTIONS/XXXXXXXXXXXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXX/RESOURCEGROUPS/RG7/PROVIDERS/MICROSOFT.NETWORK/LOADBALANCERS/WWEBLB",
-        "operationName": "LoadBalancerProbeHealthStatus",
-        "properties": {
-            "publicIpAddress": "40.83.190.158",
-            "port": "81",
-            "totalDipCount": 2,
-            "dipDownCount": 0,
-            "healthPercentage": 100.000000
-        }
-    }]
-}
+        "records":[
+        {
+            "time": "2016-01-26T10:37:46.6024215Z",
+            "systemId": "32077926-b9c4-42fb-94c1-762e528b5b27",
+            "category": "LoadBalancerProbeHealthStatus",
+            "resourceId": "/SUBSCRIPTIONS/XXXXXXXXXXXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXX/RESOURCEGROUPS/RG7/PROVIDERS/MICROSOFT.NETWORK/LOADBALANCERS/WWEBLB",
+            "operationName": "LoadBalancerProbeHealthStatus",
+            "properties": {
+                "publicIpAddress": "40.83.190.158",
+                "port": "81",
+                "totalDipCount": 2,
+                "dipDownCount": 1,
+                "healthPercentage": 50.000000
+            }
+        },
+        {
+            "time": "2016-01-26T10:37:46.6024215Z",
+            "systemId": "32077926-b9c4-42fb-94c1-762e528b5b27",
+            "category": "LoadBalancerProbeHealthStatus",
+            "resourceId": "/SUBSCRIPTIONS/XXXXXXXXXXXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXX/RESOURCEGROUPS/RG7/PROVIDERS/MICROSOFT.NETWORK/LOADBALANCERS/WWEBLB",
+            "operationName": "LoadBalancerProbeHealthStatus",
+            "properties": {
+                "publicIpAddress": "40.83.190.158",
+                "port": "81",
+                "totalDipCount": 2,
+                "dipDownCount": 0,
+                "healthPercentage": 100.000000
+            }
+        }]
+    }
 
 JSON 输出在属性字段显示了探测运行状况的基本信息。 *dipDownCount* 属性显示在后端因探测响应失败而收不到网络流量的实例的总数。
 

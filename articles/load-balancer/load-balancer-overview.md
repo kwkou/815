@@ -113,7 +113,7 @@ Azure Load Balancer 可提高应用程序的可用性和网络性能。它是第
     VIP 或实例层级公共 IP (PIP) 可以使用的最大端口数为 64,000。这属于 TCP 标准限制。
 
 ### 支持为虚拟机提供多个负载平衡的 IP 地址
-可将多个负载平衡的公共 IP 地址分配给一组虚拟机。可以通过此功能在同一组虚拟机上托管多个 SSL 网站和/或多个 SQL Server AlwaysOn 可用性组侦听器。有关详细信息，请参阅[每个云服务的多 VIP](load-balancer-multivip.md)。
+可将多个负载平衡的公共 IP 地址分配给一组虚拟机。可以通过此功能在同一组虚拟机上托管多个 SSL 网站和/或多个 SQL Server AlwaysOn 可用性组侦听器。有关详细信息，请参阅[每个云服务的多 VIP](/documentation/articles/load-balancer-multivip/)。
 
 [AZURE.INCLUDE [load-balancer-compare-tm-ag-lb-include.md](../../includes/load-balancer-compare-tm-ag-lb-include.md)]
 
