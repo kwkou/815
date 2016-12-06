@@ -21,7 +21,7 @@
 ### 预配远程监视预配置解决方案
 本教程中创建的设备会将数据发送到[远程监视][lnk-remote-monitoring]预配置解决方案的实例中。如果尚未在 Azure 帐户中预配该方案，请执行以下步骤：
 
-1. 在 https://www.azureiotsuite.cn/ 页面上，单击“+”键创建新的解决方案。
+1. 在 [https://www.azureiotsuite.cn/](https://www.azureiotsuite.cn/) 页面上，单击“+”键创建新的解决方案。
 
 2. 单击“远程监视”面板上的“选择”，新建解决方案。
 
@@ -29,7 +29,7 @@
 
 4. 等待预配过程完成。
 
-> [AZURE.WARNING] 预配置的解决方案使用可计费的 Azure 服务。当使用完预配置的解决方案之后，请务必将它从订阅中删除，以避免产生任何不必要的费用。访问 https://www.azureiotsuite.cn/ 页面，即可将预配置的解决方案从订阅中完全删除。
+> [AZURE.WARNING] 预配置的解决方案使用可计费的 Azure 服务。当使用完预配置的解决方案之后，请务必将它从订阅中删除，以避免产生任何不必要的费用。访问 [https://www.azureiotsuite.cn/](https://www.azureiotsuite.cn/) 页面，即可将预配置的解决方案从订阅中完全删除。
 
 预配好远程监视解决方案后，单击“启动”，在浏览器中打开解决方案仪表板。
 
