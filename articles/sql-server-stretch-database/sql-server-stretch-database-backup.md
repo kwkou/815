@@ -28,7 +28,7 @@
 >    [AZURE.NOTE] 备份只是完整的高可用性和业务连续性解决方案的一个部分。有关高可用性的详细信息，请参阅[高可用性解决方案](https://msdn.microsoft.com/zh-cn/library/ms190202.aspx)。
 
 ## 备份 SQL Server 数据
-若要备份启用了延伸的 SQL Server 数据库，可继续使用当前所用的 SQL Server 备份方法。有关详细信息，请参阅 [SQL Server 数据库的备份和还原](https://msdn.microsoft.com/library/ms187048.aspx)。
+若要备份启用了延伸的 SQL Server 数据库，可继续使用当前所用的 SQL Server 备份方法。有关详细信息，请参阅 [SQL Server 数据库的备份和还原](https://msdn.microsoft.com/zh-cn/library/ms187048.aspx)。
 
 对于启用了延伸的 SQL Server 数据库，其备份仅包括本地数据和备份运行时可进行迁移的合格数据。（合格数据是指尚未迁移，但将根据表的迁移设置迁移到 Azure 的数据。） 这称为**浅**备份，且不包括已迁移至 Azure 的数据。
 
