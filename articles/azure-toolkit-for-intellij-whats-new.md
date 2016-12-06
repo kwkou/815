@@ -42,7 +42,7 @@ Azure Toolkit for IntelliJ - 2016 年 6 月版包含以下增强功能：
 * **支持最新的 Java JDK**。Azure Toolkit for IntelliJ 现在支持最新版本的 Java JDK。
 * **支持 Azure SDK v2.9.1**。最新版 Azure SDK 现在是 Azure Toolkit for IntelliJ 的最低必备组件。
 * **集成示例**。Azure Toolkit for IntelliJ 目前精选了数个示例应用程序，可帮助开发人员快速入门。
-* **HDInsight 工具集成**。Azure 的 HDInsight 工具现在随附于 Azure Toolkit for IntelliJ。有关详细信息，请参阅 [HDInsight Tools Plugin for IntelliJ]（用于 IntelliJ 的 HDInsight 工具插件）。
+* **HDInsight 工具集成**。Azure 的 HDInsight 工具现在随附于 Azure Toolkit for IntelliJ。
 * **远程调试 Java Web 应用**。Azure Toolkit for IntelliJ 现在支持对 Azure 应用服务上的 Java Web 应用进行远程调试。
 
 ### 2016 年 4 月 12 日

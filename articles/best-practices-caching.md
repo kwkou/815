@@ -533,52 +533,52 @@ Redis 支持对字符串值执行一系列原子性“获取和设置”操作�
 - `INCR`、`INCRBY`、`DECR` 和 `DECRBY`，用于对整数数字数据值执行原子递增和递减操作。StackExchange 库提供了 `IDatabase.StringIncrementAsync` 和 `IDatabase.StringDecrementAsync` 方法的重载版本，用于执行这些操作并返回存储在缓存中的结果值。以下代码段演示了如何使用这些方法：
 
 
-    ConnectionMultiplexer redisHostConnection = ...;
-    IDatabase cache = redisHostConnection.GetDatabase();
-    ...
-    await cache.StringSetAsync("data:counter", 99);
-    ...
-    long oldValue = await cache.StringIncrementAsync("data:counter");
-    // Increment by 1 (the default)
-    // oldValue should be 100
-    
-    long newValue = await cache.StringDecrementAsync("data:counter", 50);
-    // Decrement by 50
-    // newValue should be 50
+        ConnectionMultiplexer redisHostConnection = ...;
+        IDatabase cache = redisHostConnection.GetDatabase();
+        ...
+        await cache.StringSetAsync("data:counter", 99);
+        ...
+        long oldValue = await cache.StringIncrementAsync("data:counter");
+        // Increment by 1 (the default)
+        // oldValue should be 100
+        
+        long newValue = await cache.StringDecrementAsync("data:counter", 50);
+        // Decrement by 50
+        // newValue should be 50
 
 
 - `GETSET` 用于检索与键关联的值，并将其更改为新值。StackExchange 库通过 `IDatabase.StringGetSetAsync` 方法使此操作可供使用。以下代码段演示了此方法的示例。此代码从前一示例返回与键 "data:counter" 关联的当前值。然后将此键的值重置为零，这些都是同一操作的一部分：
 
 
-    ConnectionMultiplexer redisHostConnection = ...;
-    IDatabase cache = redisHostConnection.GetDatabase();
-    ...
-    string oldValue = await cache.StringGetSetAsync("data:counter", 0);
+        ConnectionMultiplexer redisHostConnection = ...;
+        IDatabase cache = redisHostConnection.GetDatabase();
+        ...
+        string oldValue = await cache.StringGetSetAsync("data:counter", 0);
 
 
 - `MGET` 和 `MSET` 可以作为单个操作返回或更改一组字符串值。`IDatabase.StringGetAsync` 和 `IDatabase.StringSetAsync` 已重载以支持此功能，如以下示例中所示：
 
 
-    ConnectionMultiplexer redisHostConnection = ...;
-    IDatabase cache = redisHostConnection.GetDatabase();
-    ...
-    // Create a list of key-value pairs
-    var keysAndValues =
-        new List<KeyValuePair<RedisKey, RedisValue>>()
-        {
-            new KeyValuePair<RedisKey, RedisValue>("data:key1", "value1"),
-            new KeyValuePair<RedisKey, RedisValue>("data:key99", "value2"),
-            new KeyValuePair<RedisKey, RedisValue>("data:key322", "value3")
-        };
-
-    // Store the list of key-value pairs in the cache
-    cache.StringSet(keysAndValues.ToArray());
-    ...
-    // Find all values that match a list of keys
-    RedisKey[] keys = { "data:key1", "data:key99", "data:key322"};
-    RedisValue[] values = null;
-    values = cache.StringGet(keys);
-    // values should contain { "value1", "value2", "value3" }
+        ConnectionMultiplexer redisHostConnection = ...;
+        IDatabase cache = redisHostConnection.GetDatabase();
+        ...
+        // Create a list of key-value pairs
+        var keysAndValues =
+            new List<KeyValuePair<RedisKey, RedisValue>>()
+            {
+                new KeyValuePair<RedisKey, RedisValue>("data:key1", "value1"),
+                new KeyValuePair<RedisKey, RedisValue>("data:key99", "value2"),
+                new KeyValuePair<RedisKey, RedisValue>("data:key322", "value3")
+            };
+    
+        // Store the list of key-value pairs in the cache
+        cache.StringSet(keysAndValues.ToArray());
+        ...
+        // Find all values that match a list of keys
+        RedisKey[] keys = { "data:key1", "data:key99", "data:key322"};
+        RedisValue[] values = null;
+        values = cache.StringGet(keys);
+        // values should contain { "value1", "value2", "value3" }
 
 
 你也可以将多个操作合并成单个 Redis 事务，如本文前面的“Redis 事务和批处理”部分中所述。StackExchange 库通过 `ITransaction` 接口提供事务支持。
