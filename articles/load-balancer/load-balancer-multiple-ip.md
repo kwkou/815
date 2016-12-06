@@ -30,7 +30,7 @@
 
 现在，只有使用 Azure PowerShell 才能对辅助 IP 配置进行负载平衡配置。该限制是暂时性的，以后随时可能更改。重新访问此页以检查更新。
 
-[!INCLUDE [virtual-network-preview](../../includes/virtual-network-preview.md)]
+[AZURE.INCLUDE [virtual-network-preview](../../includes/virtual-network-preview.md)]
 
 若要注册预览版，请向[多个 IP](mailto:MultipleIPsPreview@microsoft.com?subject=Request%20to%20enable%20subscription%20%3csubscription%20id%3e) 发送一封电子邮件，其中包含你的订阅 ID 和目标用途。
 
