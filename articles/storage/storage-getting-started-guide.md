@@ -1,45 +1,39 @@
 <properties
-	pageTitle="五分钟内开始使用 Azure 存储 | Azure"
-	description="使用 Azure 存储空间快速入门、Visual Studio 和 Azure 存储模拟器快速掌握 Azure Blob、表和队列。在五分钟内运行你的第一个 Azure 存储空间应用程序。"
-	services="storage"
-	documentationCenter=".net"
-	authors="tamram"
-	manager="carmonm"
-	editor="tysonn"/>  
-
+    pageTitle="五分钟内开始使用 Azure 存储 | Azure"
+    description="使用 Azure 存储空间快速入门、Visual Studio 和 Azure 存储模拟器快速掌握 Azure Blob、表和队列。在五分钟内运行你的第一个 Azure 存储空间应用程序。"
+    services="storage"
+    documentationcenter=".net"
+    author="tamram"
+    manager="carmonm"
+    editor="tysonn" />  
 
 <tags
-	ms.service="storage"
-	ms.workload="storage"
-	ms.tgt_pltfrm="na"
-	ms.devlang="dotnet"
-	ms.topic="get-started-article"
-	ms.date="09/20/2016"
-	wacn.date="11/07/2016"
-	ms.author="dineshm;tamram"/>
+    ms.assetid="582f76f8-c814-4a69-8a5c-1fd0e0d5d8f2"
+    ms.service="storage"
+    ms.workload="storage"
+    ms.tgt_pltfrm="na"
+    ms.devlang="dotnet"
+    ms.topic="get-started-article"
+    ms.date="11/17/2016"
+    wacn.date="12/05/2016"
+    ms.author="tamram" />
 
 # 五分钟内开始使用 Azure 存储空间
-
 ## 概述
-
 通过 Azure 存储空间进行开发很容易入门。本教程向你说明如何构建一个 Azure 存储空间应用程序并快速运行。你将使用用于 .NET 的 Azure SDK 随附的快速启动模板。这些快速启动模板包含可以立刻运行的代码，用于演示部分通过 Azure 存储空间进行的基本编程方案。
 
 在深入分析代码之前，若要详细了解 Azure 存储空间，请参阅[后续步骤](#next-steps)。
 
 ## 先决条件
-
 在开始之前，你需要符合以下先决条件：
 
 1. 若要编译和生成应用程序，你需要在你的计算机上安装 [Visual Studio](https://www.visualstudio.com/)。
-
 2. 安装最新版的 [用于 .NET 的 Azure SDK](/downloads/)。SDK 包括 Azure 快速入门示例项目、Azure 存储模拟器和[用于 .NET 的 Azure 存储空间客户端库](https://msdn.microsoft.com/zh-cn/library/azure/dn261237.aspx)。
-
 3. 确保在你的计算机上安装了 [.NET Framework 4.5](http://www.microsoft.com/download/details.aspx?id=30653)，因为我们将在本教程中使用的 Azure 快速入门示例项目需要它。
-
-	如果你不确定计算机上安装了哪个版本的 .NET Framework，请参阅[如何：确定安装的 .NET Framework 版本](https://msdn.microsoft.com/zh-cn/vstudio/hh925568.aspx)。或者，按“开始”按钮或 Windows 键，并键入“控制面板”。然后，单击“程序” > “程序和功能”，然后在已安装程序中确定是否列出 .NET Framework 4.5。
-
+   
+    如果你不确定计算机上安装了哪个版本的 .NET Framework，请参阅[如何：确定安装的 .NET Framework 版本](https://msdn.microsoft.com/zh-cn/vstudio/hh925568.aspx)。或者，按“开始”按钮或 Windows 键，并键入“控制面板”。然后，单击“程序” > “程序和功能”，然后在已安装程序中确定是否列出 .NET Framework 4.5。
 4. 你将需要 Azure 订阅和 Azure 存储帐户。
-
+   
     - 若要获取 Azure 订阅，请参阅 [1rmb 试用版](/pricing/1rmb-trial/)、[购买选项](/pricing/overview/)。
     - 若要在 Azure 中创建存储帐户，请参阅[如何创建存储帐户](/documentation/articles/storage-create-storage-account/#create-a-storage-account)。
 
@@ -64,7 +58,7 @@
 
 	`<!--<add key="StorageConnectionString" value = "UseDevelopmentStorage=true;"/>-->`
 
-2.	取消 Azure 存储服务的连接字符串的注释，并在 App.config 文件中提供存储帐户名称和访问密钥：
+2.	取消注释 Azure 存储服务的连接字符串，并在 App.config 文件中提供存储帐户名称和访问密钥：
 	`<add key="StorageConnectionString" value="DefaultEndpointsProtocol=https;AccountName=[AccountName];AccountKey=[AccountKey];EndpointSuffix=core.chinacloudapi.cn"`
 
 	若要检索存储帐户访问密钥，请参阅[管理存储访问密钥](/documentation/articles/storage-create-storage-account/#manage-your-storage-access-keys)。
@@ -117,6 +111,5 @@
 * [Azure 存储 REST API](https://msdn.microsoft.com/zh-cn/library/azure/dd179355.aspx)
 
 [Image1]: ./media/storage-getting-started-guide/QuickStart.png
- 
 
-<!---HONumber=Mooncake_1031_2016-->
+<!---HONumber=Mooncake_1128_2016-->

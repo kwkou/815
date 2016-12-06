@@ -1,33 +1,32 @@
 <properties
-	pageTitle="如何通过 Java 使用 Azure Blob 存储（对象存储）| Azure"
-	description="使用 Azure Blob 存储（对象存储）将非结构化数据存储在云中。"
-	services="storage"
-	documentationCenter="java"
-	authors="rmcmurray"
-	manager="wpickett"
-	editor=""/>
+    pageTitle="如何通过 Java 使用 Azure Blob 存储（对象存储）| Azure"
+    description="使用 Azure Blob 存储（对象存储）将非结构化数据存储在云中。"
+    services="storage"
+    documentationcenter="java"
+    author="tamram"
+    manager="carmonm"
+    editor="tysonn" />  
 
 <tags
-	ms.service="storage"
-	ms.workload="storage"
-	ms.tgt_pltfrm="na"
-	ms.devlang="java"
-	ms.topic="article"
-	ms.date="08/11/2016"
-	wacn.date="11/16/2016"
-	ms.author="jwillis;robmcm"/>
+    ms.assetid="2e223b38-92de-4c2f-9254-346374545d32"
+    ms.service="storage"
+    ms.workload="storage"
+    ms.tgt_pltfrm="na"
+    ms.devlang="java"
+    ms.topic="article"
+    ms.date="11/17/2016"
+    wacn.date="12/05/2016"
+    ms.author="tamram" />
 
 # 如何通过 Java 使用 Blob 存储
-
 [AZURE.INCLUDE [storage-selector-blob-include](../../includes/storage-selector-blob-include.md)]
 
 ## 概述
-
 Azure Blob 存储是一种将非结构化数据作为对象/Blob 存储在云中的服务。Blob 存储可以存储任何类型的文本或二进制数据，例如文档、媒体文件或应用程序安装程序。Blob 存储也称为对象存储。
 
-本文将演示如何使用 Azure Blob 存储执行常见任务。这些示例用 Java 编写并使用 [Azure Storage SDK for Java][]。涉及的任务包括**上传**、**列出**、**下载**和**删除** Blob。有关 Blob 的详细信息，请参阅[后续步骤](#NextSteps)部分。
+本文介绍如何使用 Azure Blob 存储执行常见任务。这些示例用 Java 编写并使用 [Azure Storage SDK for Java][Azure Storage SDK for Java]。涉及的任务包括**上传**、**列出**、**下传**和**删除** Blob。有关 Blob 的详细信息，请参阅[后续步骤](#NextSteps)部分。
 
-> [AZURE.NOTE] SDK 提供给在 Android 设备上使用 Azure 存储空间的开发人员。有关详细信息，请参阅 [Azure Storage SDK for Android][]。
+> [AZURE.NOTE] SDK 提供给在 Android 设备上使用 Azure 存储空间的开发人员。有关详细信息，请参阅 [Azure Storage SDK for Android][Azure Storage SDK for Android]。
 
 [AZURE.INCLUDE [storage-blob-concepts-include](../../includes/storage-blob-concepts-include.md)]
 
@@ -37,10 +36,9 @@ Azure Blob 存储是一种将非结构化数据作为对象/Blob 存储在云中
 
 在本文中，你将使用存储功能，这些功能可在本地 Java 应用程序中运行，或在 Azure 的 Web 角色或辅助角色中通过运行的代码来运行。
 
-为此，你将需要安装 Java 开发工具包 (JDK)，并在你的 Azure 订阅中创建一个 Azure 存储帐户。完成此操作后，你将需要验证开发系统满足最低要求和 GitHub 上的 [Azure Storage SDK for Java][] 存储库中列出的依赖项。如果你的系统满足这些要求，你可以按照说明下载和安装系统中该存储库的 Azure Storage Libraries for Java。完成这些任务后，您将能够创建一个 Java 应用程序，以便使用本文中的示例。
+为此，你将需要安装 Java 开发工具包 (JDK)，并在你的 Azure 订阅中创建一个 Azure 存储帐户。完成此操作后，你将需要验证开发系统满足最低要求和 GitHub 上的 [Azure Storage SDK for Java][Azure Storage SDK for Java] 存储库中列出的依赖项。如果系统满足这些要求，可以按照说明下载和安装系统中该存储库的 Azure Storage Libraries for Java。完成这些任务后，您将能够创建一个 Java 应用程序，以便使用本文中的示例。
 
 ## 配置你的应用程序以访问 Blob 存储
-
 将下列导入语句添加到要在其中使用 Azure 存储 API 以访问 Blob 的 Java 文件的顶部：
 
     // Include the following imports to use blob APIs.
@@ -67,7 +65,6 @@ Azure 存储客户端使用存储连接字符串来存储用于访问数据管�
 下面的示例假定你使用了这两个方法之一来获取存储连接字符串。
 
 ## 创建容器
-
 利用 **CloudBlobClient** 对象，可以获得容器和 Blob 的引用对象。以下代码将创建 **CloudBlobClient** 对象。
 
 > [AZURE.NOTE] 还有其他方式来创建 **CloudStorageAccount** 对象；有关详细信息，请参阅 [Azure 存储空间客户端 SDK 参考]中的 **CloudStorageAccount**。
@@ -98,7 +95,6 @@ Azure 存储客户端使用存储连接字符串来存储用于访问数据管�
     }
 
 ### 可选：配置进行公共访问的容器
-
 默认情况下，容器的权限已配置为允许进行私有访问，但你也可以轻松地将容器的权限配置为允许 Internet 上的用户进行公开的、只读的访问：
 
     // Create a permissions object.
@@ -203,7 +199,6 @@ Azure 存储客户端使用存储连接字符串来存储用于访问数据管�
     }
 
 ## 删除 Blob
-
 若要删除 Blob，请获取 Blob 引用，然后调用 **deleteIfExists**。
 
     try
@@ -257,19 +252,19 @@ Azure 存储客户端使用存储连接字符串来存储用于访问数据管�
 
 现在，你已了解有关 Blob 存储的基础知识，可单击下面的链接来了解更复杂的存储任务。
 
-- [Azure Storage SDK for Java][]
-- [Azure 存储客户端 SDK 参考][]
-- [Azure 存储 REST API][]
-- [Azure 存储团队博客][]
+* [Azure Storage SDK for Java][Azure Storage SDK for Java]
+* [Azure 存储客户端 SDK 参考][Azure Storage Client SDK Reference]
+* [Azure Storage REST API（Azure 存储 REST API）][Azure Storage REST API]
+* [Azure 存储团队博客][Azure Storage Team Blog]
 
 有关详细信息，另请参阅 [Java 开发人员中心](/develop/java/)。
 
 [Azure SDK for Java]: /develop/java/
 [Azure Storage SDK for Java]: https://github.com/azure/azure-storage-java
 [Azure Storage SDK for Android]: https://github.com/azure/azure-storage-android
-[Azure 存储客户端 SDK 参考]: http://dl.windowsazure.com/storage/javadoc/
+[Azure Storage Client SDK Reference]: http://dl.windowsazure.com/storage/javadoc/
 [Azure 存储空间客户端 SDK 参考]: http://dl.windowsazure.com/storage/javadoc/
-[Azure 存储 REST API]: https://msdn.microsoft.com/zh-cn/library/azure/dd179355.aspx
-[Azure 存储团队博客]: http://blogs.msdn.com/b/windowsazurestorage/
+[Azure Storage REST API]: https://msdn.microsoft.com/zh-cn/library/azure/dd179355.aspx
+[Azure Storage Team Blog]: http://blogs.msdn.com/b/windowsazurestorage/
 
-<!---HONumber=Mooncake_0829_2016-->
+<!---HONumber=Mooncake_1128_2016-->

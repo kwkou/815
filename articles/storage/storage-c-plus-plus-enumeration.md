@@ -3,39 +3,38 @@
     description="了解如何在用于 C++ 的 Azure 存储客户端库中使用列表 API 来枚举容器、blob、队列、表和实体。" 
     documentationCenter=".net" 
     services="storage"
-    authors="dineshmurthy"
+    author="dineshmurthy"
     manager="jahogg"
-    editor="tysonn"/>  
+    editor="tysonn" />  
 
 <tags
+    ms.assetid="33563639-2945-4567-9254-bc4a7e80698f"
     ms.service="storage"
     ms.workload="storage"
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="09/20/2016"
-    wacn.date="11/07/2016"
-    ms.author="dineshm;tamram"/>  
+    ms.date="11/17/2016"
+    wacn.date="12/05/2016"
+    ms.author="dineshm" />  
 
 
 # 使用 C++ 列出 Azure 存储资源
-
 使用 Azure 存储空间进行开发时，很多情况下列表操作很重要。本文介绍如何使用用于 C++ 的 Azure 存储客户端库中提供的列表 API 最有效率地枚举 Azure 存储空间中的对象。
 
 >[AZURE.NOTE] 本指南主要面向适用于 C++ 版本 2.x 的 Azure 存储客户端库，该库可通过 [NuGet](http://www.nuget.org/packages/wastorage) 或 [GitHub](https://github.com/Azure/azure-storage-cpp) 获取。
 
 存储客户端库提供了多种方法，用于列出或查询 Azure 存储空间中的对象。本文将探讨以下方案：
 
--	列出帐户中的容器
--	列出容器或虚拟 blob 目录中的 blob
--	列出帐户中的队列
--	列出帐户中的表
--	查询表中的实体
+* 列出帐户中的容器
+* 列出容器或虚拟 blob 目录中的 blob
+* 列出帐户中的队列
+* 列出帐户中的表
+* 查询表中的实体
 
 将使用不同的重载针对不同的方案演示上述每种方法。
 
 ## 异步与同步
-
 由于 C++ 的存储客户端库是在 [C++ REST 库](https://github.com/Microsoft/cpprestsdk)基础上构建的，因此我们实际上也支持使用 [pplx::task](http://microsoft.github.io/cpprestsdk/classpplx_1_1task.html) 进行异步操作。例如：
 
 	pplx::task<list_blob_item_segment> list_blobs_segmented_async(continuation_token& token) const;
@@ -50,10 +49,9 @@
 如果你要使用多个线程应用程序或服务，我们建议你直接使用异步 API，不必创建线程来调用同步 API，那样会严重影响性能。
 
 ## 分段列表
-
 云存储的规模决定了要使用分段列表。例如，你可能在 Azure blob 容器中有超过一百万个 blob，或者在 Azure 表中有十亿个以上的实体。这些不是理论上的数字，而是实际的客户使用情况。
 
-因此，要在单个响应中列出所有对象是不实际的。与之相反，你可以使用分页来列出对象。每个列表 API 都有*分段*重载。
+因此，要在单个响应中列出所有对象是不实际的。与之相反，你可以使用分页来列出对象。每个列表 API 都有 *分段* 重载。
 
 分段列表操作的响应包括：
 
@@ -96,7 +94,6 @@
 大多数情况下，建议采用分段列表编码模式，因为这样可以明确地了解列表或查询的进度，以及服务对每个请求是如何响应的。具体说来，对于 C++ 应用程序或服务来说，对列表进程进行低级别的控制可以更好地控制内存和性能。
 
 ## 贪婪列表
-
 早期版本的用于 C++ 的存储客户端库（0.5.0 预览版以及更低版本）包括适用于表和查询的不分段列表 API，如以下示例所示：
 
 	std::vector<cloud_table> list_tables(const utility::string_t& prefix) const;
@@ -168,7 +165,6 @@ SDK 中的此类贪婪列表 API 在 C#、Java 或 JavaScript Node.js 环境中�
 延迟列表 API 包括在用于 C++ 的存储客户端库的 2.2.0 版中。
 
 ## 结束语
-
 在本文中，我们针对用于 C++ 的存储客户端库中的各种对象，对列表 API 的不同重载进行了讨论。总结：
 
 -	在出现多个线程的情况下，强烈建议使用异步 API。
@@ -176,8 +172,7 @@ SDK 中的此类贪婪列表 API 在 C#、Java 或 JavaScript Node.js 环境中�
 -	在库中提供懒惰列表是将其作为封装器，适合在同步方案中使用。
 -	不建议使用贪婪列表，因此已将其从库中删除。
 
-##后续步骤
-
+## 后续步骤
 有关 Azure 存储空间以及用于 C++ 的客户端库的更多信息，请参阅以下资源。
 
 -	[如何通过 C++ 使用 Blob 存储](/documentation/articles/storage-c-plus-plus-how-to-use-blobs/)
@@ -187,4 +182,4 @@ SDK 中的此类贪婪列表 API 在 C#、Java 或 JavaScript Node.js 环境中�
 -	[Azure 存储团队博客](http://blogs.msdn.com/b/windowsazurestorage/)
 -	[Azure 存档文档](/documentation/services/storage/)
 
-<!---HONumber=Mooncake_1031_2016-->
+<!---HONumber=Mooncake_1128_2016-->

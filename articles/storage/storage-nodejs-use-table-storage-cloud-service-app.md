@@ -1,26 +1,25 @@
-<properties 
-	pageTitle="使用表存储构建 Web 应用 (Node.js) | Azure" 
-	description="本教程以“使用 Express 构建 Web 应用程序”教程为基础，演示如何添加 Azure 存储服务和 Azure 模块。" 
-	services="cloud-services, storage" 
-	documentationCenter="nodejs" 
-	authors="rmcmurray" 
-	manager="wpickett" 
-	editor=""/>
+<properties
+    pageTitle="使用表存储构建 Web 应用 (Node.js) | Azure"
+    description="本教程以“使用 Express 构建 Web 应用程序”教程为基础，演示如何添加 Azure 存储服务和 Azure 模块。"
+    services="cloud-services, storage"
+    documentationcenter="nodejs"
+    author="tamram"
+    manager="carmonm"
+    editor="tysonn" />  
 
-<tags 
-	ms.service="storage" 
-	ms.workload="storage" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="nodejs" 
-	ms.topic="article" 
-	ms.date="08/11/2016" 
-	wacn.date="09/05/2016" 
-	ms.author="robmcm"/>
+<tags
+    ms.assetid="e90959a2-4cb2-4b19-9bfb-aede15b18b1c"
+    ms.service="storage"
+    ms.workload="storage"
+    ms.tgt_pltfrm="na"
+    ms.devlang="nodejs"
+    ms.topic="article"
+    ms.date="10/18/2016"
+    wacn.date="12/05/2016"
+    ms.author="robmcm" />
 
 # 使用存储构建 Node.js Web 应用程序
-
 ## 概述
-
 在本教程中，你将通过将用于 Node.js 的 Azure 客户端库与数据管理服务结合使用，来扩展在[使用 Express 构建 Node.js Web 应用程序]教程中创建的应用程序。你将扩展你的应用程序以创建可部署到 Azure 的基于 Web 的任务列表应用程序。用户可以通过任务列表来检索任务、添加新任务以及将任务标记为已完成。
 
 任务项存储在 Azure 存储空间中。Azure 存储空间提供了具有容错能力且可用性非常好的非结构化数据存储。Azure 存储空间包含一些可用来存储和访问数据的数据结构，你可以通过 Azure SDK for Node.js 中包含的 API 或通过 REST API 利用存储服务。有关详细信息，请参阅[在 Azure 中存储和访问数据]。
@@ -29,15 +28,14 @@
 
 你将学习以下内容：
 
--   如何操作 Jade 模板引擎
--   如何操作 Azure 数据管理服务
+* 如何操作 Jade 模板引擎
+* 如何操作 Azure 数据管理服务
 
 以下是已完成应用程序的屏幕快照：
 
 ![Internet Explorer 中已完成的网页](./media/storage-nodejs-use-table-storage-cloud-service-app/getting-started-1.png)
 
 ## 在 Web.Config 中设置存储凭据
-
 若要访问 Azure 存储空间，你需要传入存储凭据。为此，您将使用 web.config 应用程序设置。这些设置将作为环境变量传递给 Node，然后再由 Azure SDK 进行读取。
 
 > [AZURE.NOTE] 仅在将应用程序部署到 Azure 时才使用存储凭据。应用程序在模拟器中运行时将使用存储模拟器。
@@ -255,7 +253,7 @@
 		app.use('/', routes);
 		app.use('/users', users);
 
-	将上面的行替换为下面显示的代码。这将通过与你的存储帐户的连接初始化 <strong>Task</strong> 的实例。这是 <strong>TaskList</strong> 的密码，TaskList 将使用该密码与表服务进行通信：
+	将上面的行替换为下面显示的代码。这将通过连接到你的存储帐户来初始化 <strong>Task</strong> 的实例。这是 <strong>TaskList</strong> 的密码，TaskList 将使用该密码与表服务进行通信：
 
 		var TaskList = require('./routes/tasklist');
 		var Task = require('./models/task');
@@ -376,7 +374,6 @@
 ![浏览器窗口中显示 My Task List 页面。URL 表明该页面现在托管在 Azure 上。](./media/storage-nodejs-use-table-storage-cloud-service-app/getting-started-1.png)
 
 ## 停止并删除应用程序
-
 在部署应用程序后，您可能希望禁用它，以避免在免费试用期内产生费用或生成和部署其他应用程序。
 
 Azure 将按使用的服务器小时数对 Web 角色实例计费。你的应用程序部署之后就会开始使用服务器时间，即使相关实例并未运行且处于停止状态也是如此。
@@ -404,4 +401,4 @@ Azure 将按使用的服务器小时数对 Web 角色实例计费。你的应用
  
  
 
-<!---HONumber=Mooncake_0829_2016-->
+<!---HONumber=Mooncake_1128_2016-->

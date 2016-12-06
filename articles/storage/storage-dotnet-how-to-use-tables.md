@@ -1,27 +1,25 @@
 <properties
-	pageTitle="通过 .NET 开始使用 Azure 表存储 | Azure"
-	description="使用 Azure 表存储（一种 NoSQL 数据存储）将结构化数据存储在云中。"
-	services="storage"
-	documentationCenter=".net"
-	authors="tamram"
-	manager="carmonm"
-	editor="tysonn"/>  
-
+    pageTitle="通过 .NET 开始使用 Azure 表存储 | Azure"
+    description="使用 Azure 表存储（一种 NoSQL 数据存储）将结构化数据存储在云中。"
+    services="storage"
+    documentationcenter=".net"
+    author="tamram"
+    manager="carmonm"
+    editor="tysonn" />  
 
 <tags
-	ms.service="storage"
-	ms.workload="storage"
-	ms.tgt_pltfrm="na"
-	ms.devlang="dotnet"
-	ms.topic="hero-article"
-	ms.date="09/20/2016"
-	wacn.date="11/16/2016"
-	ms.author="gusapost;tamram"/>  
-
+    ms.assetid="fe46d883-7bed-49dd-980e-5c71df36adb3"
+    ms.service="storage"
+    ms.workload="storage"
+    ms.tgt_pltfrm="na"
+    ms.devlang="dotnet"
+    ms.topic="hero-article"
+    ms.date="11/17/2016"
+    wacn.date="12/05/2016"
+    ms.author="tamram" />  
 
 
 # 通过 .NET 开始使用 Azure 表存储
-
 [AZURE.INCLUDE [storage-selector-table-include](../../includes/storage-selector-table-include.md)]
 
 ## 概述
@@ -31,17 +29,14 @@ Azure 表存储是一种将结构化的 NoSQL 数据存储在云中的服务。�
 你可以使用表存储来存储灵活的数据集，例如 Web 应用程序的用户数据、通讯簿、设备信息，以及你的服务需要的任何其他类型的元数据。可以在表中存储任意数量的实体，并且一个存储帐户可以包含任意数量的表，直至达到存储帐户的容量极限。
 
 ### 关于本教程
-
 本教程演示如何对使用 Azure 表存储的某些常见情形（包括创建和删除表和插入、更新、删除和查询表数据）编写 .NET 代码。
-
-**估计完成时间：**45 分钟
 
 **先决条件：**
 
 - [Microsoft Visual Studio](https://www.visualstudio.com/zh-cn/visual-studio-homepage-vs.aspx)
 - [适用于 .NET 的 Azure 存储空间客户端库](https://www.nuget.org/packages/WindowsAzure.Storage/)
 - [适用于 .NET 的 Azure Configuration Manager](https://www.nuget.org/packages/Microsoft.WindowsAzure.ConfigurationManager/)
-- [Azure 存储帐户](/documentation/articles/storage-create-storage-account/#create-a-storage-account)
+- 一个 [Azure 存储帐户](/documentation/articles/storage-create-storage-account/#create-a-storage-account)
 
 [AZURE.INCLUDE [storage-dotnet-client-library-version-include](../../includes/storage-dotnet-client-library-version-include.md)]
 
@@ -52,8 +47,7 @@ Azure 表存储是一种将结构化的 NoSQL 数据存储在云中的服务。�
 [AZURE.INCLUDE [storage-development-environment-include](../../includes/storage-development-environment-include.md)]
 
 ### 添加命名空间声明
-
-将下列 `using` 语句添加到 `program.cs` 文件顶部：
+将以下 **using** 语句添加到 `program.cs` 文件的顶部：
 
 	using Microsoft.Azure; // Namespace for CloudConfigurationManager 
 	using Microsoft.WindowsAzure.Storage; // Namespace for CloudStorageAccount
@@ -64,7 +58,6 @@ Azure 表存储是一种将结构化的 NoSQL 数据存储在云中的服务。�
 [AZURE.INCLUDE [storage-cloud-configuration-manager-include](../../includes/storage-cloud-configuration-manager-include.md)]
 
 ### 创建表服务客户端
-
 **CloudTableClient** 类使你能够检索存储在表存储中的表和实体。下面是创建服务客户端的一种方法：
 
 	// Create the table client.
@@ -132,13 +125,12 @@ Azure 表存储是一种将结构化的 NoSQL 数据存储在云中的服务。�
     table.Execute(insertOperation);
 
 ## 插入一批实体
-
 你可以通过一次写入操作将一批实体插入表中。批处理操作的一些其他注意事项：
 
--  你可以在同一批处理操作中执行更新、删除和插入操作。
--  单个批处理操作最多可包含 100 个实体。
--  单次批处理操作中的所有实体都必须具有相同的分区键。
--  虽然可以将某个查询作为批处理操作执行，但该操作必须是批处理中仅有的操作。
+* 你可以在同一批处理操作中执行更新、删除和插入操作。
+* 单个批处理操作最多可包含 100 个实体。
+* 单次批处理操作中的所有实体都必须具有相同的分区键。
+* 虽然可以将某个查询作为批处理操作执行，但该操作必须是批处理中仅有的操作。
 
 <!-- -->
 
@@ -175,7 +167,6 @@ Azure 表存储是一种将结构化的 NoSQL 数据存储在云中的服务。�
 	table.ExecuteBatch(batchOperation);
 
 ## 检索分区中的所有实体
-
 若要查询表以获取分区中的所有实体，请使用 **TableQuery** 对象。以下代码示例指定了一个筛选器，以筛选分区键为“Smith”的实体。此示例会将查询结果中每个实体的字段输出到控制台。
 
     // Retrieve the storage account from the connection string.
@@ -253,7 +244,6 @@ Azure 表存储是一种将结构化的 NoSQL 数据存储在云中的服务。�
 	   Console.WriteLine("The phone number could not be retrieved.");
 
 ## 替换实体
-
 若要更新实体，请从表服务中检索它，修改实体对象，然后将更改保存回表服务。以下代码将更改现有客户的电话号码。此代码使用 **Replace**，而不是调用 **Insert**。这将导致在服务器上完全替换该实体，除非服务器上的该实体自检索到它以后发生更改，在此情况下，该操作将失败。操作失败将防止你的应用程序无意中覆盖应用程序的其他组件在检索与更新之间所做的更改。正确处理此失败问题的方法是再次检索实体，进行更改（如果仍有效），然后再次执行 **Replace** 操作。下一节将为你演示如何重写此行为。
 
     // Retrieve the storage account from the connection string.
@@ -293,7 +283,6 @@ Azure 表存储是一种将结构化的 NoSQL 数据存储在云中的服务。�
 	   Console.WriteLine("Entity could not be retrieved.");
 
 ## 插入或替换实体
-
 如果该实体自从服务器中检索到它以后发生更改，则 **Replace** 操作将失败。此外，必须首先从服务器中检索该实体，**Replace** 操作才能成功。但是，有时你不知道服务器上是否存在该实体以及存储在其中的当前值是否无关。更新操作会将其全部覆盖。为此，你应使用 **InsertOrReplace** 操作。如果该实体不存在，此操作将插入它，如果存在，则替换它，而不管上次更新是何时进行的。在以下代码示例中，仍将检索 Ben Smith 的客户实体，但稍后会使用 **InsertOrReplace** 将其保存回服务器。将覆盖在检索与更新操作之间对实体进行的任何更新。
 
     // Retrieve the storage account from the connection string.
@@ -333,8 +322,7 @@ Azure 表存储是一种将结构化的 NoSQL 数据存储在云中的服务。�
 	   Console.WriteLine("Entity could not be retrieved.");
 
 ## 查询一部分实体属性
-
-表查询可以只检索实体中的少数几个属性而不是所有实体属性。此方法称为“投影”，可减少带宽并提高查询性能，尤其适用于大型实体。以下代码中的查询只返回表中实体的电子邮件地址。这可通过使用 **DynamicTableEntity** 和 **EntityResolver** 的查询来实现。你可以在[“Upsert 和查询投影介绍”博客文章][]中更加详细地了解投影。注意，本地存储模拟器不支持投影，因此，此代码仅在使用表服务中的帐户时才能运行。
+表查询可以只检索实体中的少数几个属性而不是所有实体属性。此方法称为“投影”，可减少带宽并提高查询性能，尤其适用于大型实体。以下代码中的查询只返回表中实体的电子邮件地址。这可通过使用 **DynamicTableEntity** 和 **EntityResolver** 的查询来实现。你可以在[“Upsert 和查询投影介绍”博客文章][Introducing Upsert and Query Projection blog post]中更加详细地了解投影。注意，本地存储模拟器不支持投影，因此，此代码仅在使用表服务中的帐户时才能运行。
 
     // Retrieve the storage account from the connection string.
     CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
@@ -358,7 +346,6 @@ Azure 表存储是一种将结构化的 NoSQL 数据存储在云中的服务。�
     }
 
 ## 删除实体
-
 在检索实体之后，可使用更新实体的相同演示模式轻松删除该实体。以下代码检索并删除一个客户实体。
 
     // Retrieve the storage account from the connection string.
@@ -395,7 +382,6 @@ Azure 表存储是一种将结构化的 NoSQL 数据存储在云中的服务。�
 	   Console.WriteLine("Could not retrieve the entity.");
 
 ## 删除表
-
 最后，以下代码示例将从存储帐户中删除表。在删除表之后的一段时间内无法重新创建它。
 
     // Retrieve the storage account from the connection string.
@@ -412,7 +398,6 @@ Azure 表存储是一种将结构化的 NoSQL 数据存储在云中的服务。�
     table.DeleteIfExists();
 
 ## 以异步方式检索页中的实体
-
 如果你正在读取大量实体，并且想要在检索进行时处理/显示实体，而非等待返回全部实体，则可以通过使用分段查询检索实体。此示例显示如何通过 Async-Await 模式以页面形式返回结果，这样就不会在等待返回大量结果时阻止操作的执行。有关在 .NET 中使用 Async-Await 模式的详细信息，请参阅 [使用 Async 和 Await 进行异步编程（C# 和 Visual Basic）](https://msdn.microsoft.com/zh-cn/library/hh191443.aspx)。
 
     // Initialize a default TableQuery to retrieve all the entities in the table.
@@ -438,7 +423,6 @@ Azure 表存储是一种将结构化的 NoSQL 数据存储在云中的服务。�
     } while(continuationToken != null);
 
 ## 后续步骤
-
 现在，你已了解有关表存储的基础知识，请按照下面的链接了解更复杂的存储任务：
 
 - 查看表服务参考文档，了解有关可用 API 的完整详情：
@@ -466,4 +450,6 @@ Azure 表存储是一种将结构化的 NoSQL 数据存储在云中的服务。�
   [OData]: http://nuget.org/packages/Microsoft.Data.OData/5.0.2
   [Edm]: http://nuget.org/packages/Microsoft.Data.Edm/5.0.2
   [空间]: http://nuget.org/packages/System.Spatial/5.0.2
-<!---HONumber=Mooncake_1031_2016-->
+  [How to: Programmatically access Table storage]: #tablestorage
+
+<!---HONumber=Mooncake_1128_2016-->

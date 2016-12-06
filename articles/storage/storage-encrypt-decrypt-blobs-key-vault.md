@@ -1,48 +1,42 @@
 <properties
-	pageTitle="教程：在 Azure 存储空间中使用 Azure 密钥保管库加密和解密 blob | Azure"
-	description="本教程将指导你如何将 Azure 存储空间的客户端加密与 Azure 密钥保管库配合使用来加密和解密 blob。"
-	services="storage"
-	documentationCenter=""
-	authors="adhurwit"
-	manager=""
-	editor="tysonn"/>  
-
+    pageTitle="教程：在 Azure 存储中使用 Azure 密钥保管库加密和解密 Blob | Azure"
+    description="本教程指导用户如何将 Azure 存储的客户端加密与 Azure 密钥保管库配合使用来加密和解密 blob。"
+    services="storage"
+    documentationcenter=""
+    author="robinsh"
+    manager="carmonm"
+    editor="tysonn" />  
 
 <tags
-	ms.service="storage"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="required"
-	ms.date="09/20/2016"
-	wacn.date="11/07/2016"
-	ms.author="lakasa;robinsh"/>  
+    ms.assetid="027e8631-c1bf-48c1-9d9b-f6843e88b583"
+    ms.service="storage"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.tgt_pltfrm="na"
+    ms.workload="required"
+    ms.date="10/18/2016"
+    wacn.date="12/05/2016"
+    ms.author="lakasa;robinsh" />  
 
 
 # 教程：在 Azure 存储空间中使用 Azure 密钥保管库加密和解密 Blob
-
 ## 介绍
+本教程介绍如何结合使用客户端存储加密与 Azure 密钥保管库。其中将引导你使用这些技术在控制台应用程序中加密和解密 Blob。
 
-本教程介绍如何结合使用客户端存储加密与 Azure 密钥保管库。其中将引导您完成如何在控制台应用程序中使用这些技术加密和解密 blob。
-
-**估计完成时间：**20 分钟。
+**估计完成时间**：20 分钟。
 
 有关 Azure 密钥保管库的概述信息，请参阅[什么是 Azure 密钥保管库？](/documentation/articles/key-vault-whatis/)
 
 有关 Azure 存储的客户端加密的概述信息，请参阅 [Azure 存储的客户端加密和 Azure 密钥保管库](/documentation/articles/storage-client-side-encryption/)
 
-
 ## 先决条件
+若要完成本教程，必须具备以下项目：
 
-若要完成本教程，你必须准备好以下各项：
-
-- Azure 存储帐户
-- Visual Studio 2013 或更高版本
-- Azure PowerShell
-
+* Azure 存储帐户
+* Visual Studio 2013 或更高版本
+* Azure PowerShell
 
 ## 客户端加密概述
-
 有关 Azure 存储的客户端加密的概述，请参阅 [Azure 存储的客户端加密和 Azure 密钥保管库](/documentation/articles/storage-client-side-encryption/)
 
 下面是客户端加密的工作原理的简要说明：
@@ -50,24 +44,21 @@
 1. Azure 存储客户端 SDK 生成内容加密密钥 (CEK)，这是一次性使用对称密钥。
 2. 使用此 CEK 对客户数据进行加密。
 3. 然后，使用密钥加密密钥 (KEK) 对此 CEK 进行包装（加密）。KEK 由密钥标识符标识，可以是非对称密钥对或对称密钥，还可以在本地托管或存储在 Azure 密钥保管库中。存储空间客户端本身永远无法访问 KEK。它只能调用密钥保管库提供的密钥包装算法。客户可以根据需要选择使用自定义提供程序进行密钥包装/解包。
-4. 然后，将已加密的数据上载到 Azure 存储服务。
+4. 然后，将已加密的数据上传到 Azure 存储服务。
 
+## 设置 Azure 密钥保管库
+若要继续本教程，需要执行 [Azure 密钥保管库入门](/documentation/articles/key-vault-get-started/)教程中所述的以下步骤：
 
-## 设置你的 Azure 密钥保管库
-若要继续本教程，你需要执行教程 [Azure 密钥保管库入门](/documentation/articles/key-vault-get-started/)中所述的以下步骤：
-
-- 创建密钥保管库。
-- 将密钥或密码添加到密钥保管库。
-- 将应用程序注册到 Azure Active Directory。
-- 授权应用程序使用密钥或密码。
+* 创建密钥保管库。
+* 将密钥或密码添加到密钥保管库。
+* 将应用程序注册到 Azure Active Directory。
+* 授权应用程序使用密钥或密码。
 
 记下将应用程序注册到 Azure Active Directory 时生成的 ClientID 和 ClientSecret。
 
-在密钥保管库中创建这两个密钥。我们在本教程的其余部分将假定使用了以下名称：ContosoKeyVault 和 TestRSAKey1。
-
+在密钥保管库中创建这两个密钥。本教程的其余部分假定使用以下名称：ContosoKeyVault 和 TestRSAKey1。
 
 ## 使用程序包和 AppSettings 创建控制台应用程序
-
 在 Visual Studio 中创建新的控制台应用程序。
 
 在 Package Manager Console 中添加必要的 Nuget 包。
@@ -104,8 +95,7 @@
 
 
 ## 添加方法以便为控制台应用程序获取令牌
-
-以下方法由密钥保管库类使用，这些类需要进行身份验证才能访问你的密钥保管库。
+以下方法由密钥保管库类使用，这些类需要进行身份验证才能访问密钥保管库。
 
 	private async static Task<string> GetToken(string authority, string resource, string scope)
 	{
@@ -121,8 +111,7 @@
 	    return result.AccessToken;
 	}
 
-## 在你的程序中访问存储和密钥保管库
-
+## 在程序中访问存储和密钥保管库
 在 Main 函数中，添加以下代码。
 
 	// This is standard code to interact with Blob storage.
@@ -145,11 +134,11 @@
 
 > 密钥保管库客户端与 REST API 进行交互，并了解密钥保管库中包含的两种模型的 JSON Web 密钥和密码。
 
-> 密钥保管库扩展似乎是专门为 Azure 存储空间中的客户端加密所创建的类。根据密钥解析程序的概念，它们包含密钥 (IKey) 和类的接口。您需要了解两种 IKey 实现：RSAKey 和 SymmetricKey。现在它们碰巧与密钥保管库中包含的内容保持一致，但此时它们是独立的类（因此，密钥保管库客户端检索到的密钥与秘密检索未实现 IKey）。
+> 密钥保管库扩展似乎是专为 Azure 存储中的客户端加密而创建的类。根据密钥解析程序的概念，它们包含密钥 (IKey) 和类的接口。需要了解两种 IKey 实现：RSAKey 和 SymmetricKey。现在它们碰巧与密钥保管库中包含的内容保持一致，但此时它们是独立的类（因此，密钥保管库客户端检索到的密钥与秘密检索未实现 IKey）。
 
 
-## 加密 blob 和上载
-添加以下代码以加密 blob 并将其上载到 Azure 存储帐户。使用的 **ResolveKeyAsync** 方法会返回 IKey。
+## 加密 Blob 和上传
+添加以下代码以加密 Blob 并将其上传到 Azure 存储帐户。使用的 **ResolveKeyAsync** 方法会返回 IKey。
 
 
 	// Retrieve the key that you created previously.
@@ -172,18 +161,19 @@
 
 下面是一个 blob 的 [Azure 经典管理门户](https://manage.windowsazure.cn)的屏幕截图，该 blob 已使用客户端加密通过密钥保管库中存储的密钥进行加密。**KeyId** 属性是密钥保管库中充当 KEK 的密钥的 URI。**EncryptedKey** 属性包含 CEK 的加密版本。
 
-![显示包含加密元数据的 Blob 元数据的屏幕截图][1]
-
-> [AZURE.NOTE] 如果您看一下 BlobEncryptionPolicy 构造函数，您将看到它可以接受密钥和/或解析程序。请注意，您现在无法将解析程序用于加密，因为它当前不支持默认密钥。
+![显示包含加密元数据的 Blob 元数据的屏幕截图](./media/storage-encrypt-decrypt-blobs-key-vault/blobmetadata.png)
 
 
+> [AZURE.NOTE] 如果查看 BlobEncryptionPolicy 构造函数，将看到它可以接受密钥和/或解析程序。请注意，现在无法将解析程序用于加密，因为它当前不支持默认密钥。
 
-## 解密 blob 并下载
-当使用解析程序类有意义时，实际上就是解密。用于加密的密钥的 ID 与其元数据中的 Blob 相关联，因此你没有理由检索该密钥，请记住密钥与 blob 之间的关联关系。你只需确保该密钥保留在密钥保管库中。
 
-RSA 密钥的私钥则保留在密钥保管库中，因此，为了进行解密，来自包含 CEK 的 blob 元数据的加密密钥将发送到密钥保管库进行解密。
 
-添加以下代码以解密刚刚上载的 blob。
+## 解密 Blob 并下载
+当使用解析程序类有意义时，实际上就是解密。用于加密的密钥的 ID 与其元数据中的 Blob 相关联，因此没有理由检索该密钥，请记住密钥与 Blob 之间的关联关系。只需确保该密钥保留在密钥保管库中。
+
+RSA 密钥的私钥则保留在密钥保管库中，因此，为了进行解密，来自包含 CEK 的 Blob 元数据的加密密钥将发送到密钥保管库进行解密。
+
+添加以下代码以解密刚刚上传的 Blob。
 
 	// In this case, we will not pass a key and only pass the resolver because
 	// this policy will only be used for downloading / decrypting.
@@ -200,10 +190,9 @@ RSA 密钥的私钥则保留在密钥保管库中，因此，为了进行解密�
 ## 使用密钥保管库密码
 将密码用于客户端加密的方式是通过 SymmetricKey 类，因为密码实际上是一种对称密钥。但是，如上所述，密钥保管库中的密码不会完全映射到 SymmetricKey。这里要注意几个问题：
 
-
-- SymmetricKey 中的密钥必须是固定长度：128、192、256、384 或 512 位。
-- SymmetricKey 中的密钥应采用 Base64 编码。
-- 用作 SymmetricKey 的密钥保管库密钥需要在密钥保管库中具有“application/octet-stream”内容类型。
+* SymmetricKey 中的密钥必须是固定长度：128、192、256、384 或 512 位。
+* SymmetricKey 中的密钥应采用 Base64 编码。
+* 用作 SymmetricKey 的密钥保管库密钥需要在密钥保管库中具有“application/octet-stream”内容类型。
 
 以下是使用 PowerShell 在密钥保管库中创建可用作 SymmetricKey 的密钥的示例。注意：硬编码值 $key 仅用于演示目的。在你自己的代码中需要生成此密钥。
 
@@ -227,16 +216,10 @@ RSA 密钥的私钥则保留在密钥保管库中，因此，为了进行解密�
 就这么简单。请尽情享受其中的乐趣！
 
 ## 后续步骤
-
-有关将 Azure 存储空间与 C# 配合使用的详细信息，请参阅[用于 .NET 的 Azure 存储客户端库](https://msdn.microsoft.com/zh-cn/library/azure/dn261237.aspx)。
+有关将 Azure 存储与 C# 配合使用的详细信息，请参阅[用于 .NET 的 Azure 存储客户端库](https://msdn.microsoft.com/zh-cn/library/azure/dn261237.aspx)。
 
 有关 Blob REST API 的详细信息，请参阅 [Blob 服务 REST API](https://msdn.microsoft.com/zh-cn/library/azure/dd135733.aspx)。
 
-有关 Azure 存储空间的最新信息，请转到 [Azure 存储空间团队博客](http://blogs.msdn.com/b/windowsazurestorage/)。
+有关 Azure 存储的最新信息，请转到 [Azure 存储团队博客](http://blogs.msdn.com/b/windowsazurestorage/)。
 
-
-<!--Image references-->
-
-[1]: ./media/storage-encrypt-decrypt-blobs-key-vault/blobmetadata.png
-
-<!---HONumber=Mooncake_1031_2016-->
+<!---HONumber=Mooncake_1128_2016-->
