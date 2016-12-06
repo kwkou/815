@@ -254,7 +254,7 @@ Azure 存储帐户可提供在云中存储队列和 Blob 数据的资源。并�
     只有在学习下一节在 Azure 环境中设置连接字符串后，才可使用该 Web 应用。将会看到错误页或主页，具体取决于在前面选择的 Web 应用和数据库创建选项。
 
 ### 将 Web 应用配置为使用 Azure SQL 数据库和存储帐户。
-最佳安全做法是[避免将敏感信息（如连接字符串）放置在源代码存储库中存储的文件内](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/source-control#secrets)。Azure 提供一种方法实现此目的：可在 Azure 环境中设置连接字符串和其他设置值，在 Azure 中运行应用程序时，ASP.NET 配置 API 自动提取这些值。也可以使用**服务器资源管理器**、Azure 门户、Windows PowerShell 或跨平台命令行接口在 Azure 中设置这些值。有关详细信息，请参阅[应用程序字符串和连接字符串的工作原理](https://azure.microsoft.com/blog/2013/07/17/windows-azure-web-sites-how-application-strings-and-connection-strings-work/)。
+最佳安全做法是[避免将敏感信息（如连接字符串）放置在源代码存储库中存储的文件内](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/source-control#secrets)。Azure 提供一种方法实现此目的：可在 Azure 环境中设置连接字符串和其他设置值，在 Azure 中运行应用程序时，ASP.NET 配置 API 自动提取这些值。也可以使用**服务器资源管理器**、Azure 门户预览、Windows PowerShell 或跨平台命令行接口在 Azure 中设置这些值。有关详细信息，请参阅[应用程序字符串和连接字符串的工作原理](https://azure.microsoft.com/blog/2013/07/17/windows-azure-web-sites-how-application-strings-and-connection-strings-work/)。
 
 在本节中，将使用**服务器资源管理器**在 Azure 中设置连接字符串值。
 
@@ -269,11 +269,11 @@ Azure 存储帐户可提供在云中存储队列和 Blob 数据的资源。并�
     WebJobs SDK 使用这两个连接字符串：一个用于应用程序数据，另一个用于日志记录。如前面所看到的，Web 前端代码也使用用于应用程序数据的连接字符串。
 4. 单击“保存”。
 
-    ![Azure 门户中的连接字符串](./media/websites-dotnet-webjobs-sdk-get-started/azconnstr.png)
+    ![Azure 门户预览中的连接字符串](./media/websites-dotnet-webjobs-sdk-get-started/azconnstr.png)
 5. 在“服务器资源管理器”中右键单击该 Web 应用，然后单击“停止”。
 6. Web 应用停止后，再次右键单击该 Web 应用，然后单击“启动”。
 
-   发布时 Web 作业会自动启动，但在更改配置时会停止。若要重新启动它，可以重新启动 Web 应用或者在 [Azure 门户](/documentation/articles/app-service-web-app-azure-portal/)中重新启动 Web 作业。通常建议在更改配置后重新启动 Web 应用。
+   发布时 Web 作业会自动启动，但在更改配置时会停止。若要重新启动它，可以重新启动 Web 应用或者在 [Azure 门户预览](/documentation/articles/app-service-web-app-azure-portal/)中重新启动 Web 作业。通常建议在更改配置后重新启动 Web 应用。
 7. 刷新地址栏中包含 Web 应用 URL 的浏览器窗口。
 
     此时将显示主页。

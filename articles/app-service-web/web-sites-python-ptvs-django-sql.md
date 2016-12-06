@@ -41,7 +41,7 @@
 在此部分中，我们将使用样本模板创建 Visual Studio 项目。我们将创建虚拟环境并安装所需软件包。我们将创建一个使用 sqlite 的本地数据库。然后，我们将在本地运行 Web 应用。
 
 1. 在 Visual Studio 中，依次选择“文件”和“新建项目”。
-2. 可以从“Python”>“示例”下面获取“Python Tools 2.2 for Visual Studio 示例 VSIX”中的项目模板。[]选择“轮询 Django Web 项目”，然后单击“确定”创建项目。
+2. 可以从“Python”>“示例”下面获取“[Python Tools 2.2 for Visual Studio 示例 VSIX]”中的项目模板。选择“轮询 Django Web 项目”，然后单击“确定”创建项目。
 
      ![新建项目对话框](./media/web-sites-python-ptvs-django-sql/PollsDjangoNewProject.png)
 3. 系统将提示你安装外部软件包。选择**安装到虚拟环境**。
@@ -170,7 +170,6 @@
 [Azure 门户预览]: https://portal.azure.cn
 [Python Tools for Visual Studio]: http://aka.ms/ptvs
 [Python Tools 2.2 for Visual Studio]: http://go.microsoft.com/fwlink/?LinkID=624025
-[]: http://go.microsoft.com/fwlink/?LinkID=624025
 [Python Tools 2.2 for Visual Studio 示例 VSIX]: http://go.microsoft.com/fwlink/?LinkID=624025
 [Azure SDK Tools for VS 2015]: http://go.microsoft.com/fwlink/?LinkId=518003
 [Python 2.7（32 位）]: http://go.microsoft.com/fwlink/?LinkId=517190

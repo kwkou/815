@@ -5,9 +5,6 @@
   
 ## WordPress 应用程序故障排除
 * [如何排除你的 WordPress 应用故障](https://sunithamk.wordpress.com/2014/09/04/wordpress-troubleshooting-techniques-on-azure-websites/)
-* [使用 Azure Application Insights 服务收集使用遥测数据](https://azure.microsoft.com/blog/usage-analytics-for-wordpress-with-azure-app-insights/)
-* [对 Web 应用运行 Zend Zray 探查器以诊断问题和性能](https://sunithamk.wordpress.com/2015/08/04/profiling-php-application-on-azure-web-apps/)
-* [使用 Kudu 支持门户实时诊断和解决问题](https://sunithamk.wordpress.com/2015/11/04/diagnose-and-mitigate-issues-with-azure-web-apps-support-portal/)
 * [使用各种自动修复规则来自动解决实时事件](http://microsoftazurewebsitescheatsheet.info/#auto-heal)
 * [如何备份 Web 应用](/documentation/articles/web-sites-backup/)和[如何还原 Web 应用](/documentation/articles/web-sites-restore/)
 

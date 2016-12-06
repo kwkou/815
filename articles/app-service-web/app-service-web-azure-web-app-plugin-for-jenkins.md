@@ -93,8 +93,8 @@
 
 
 [Azure Java 开发人员中心]: /develop/java/
-[integrate-apps-with-AAD]: http://msdn.microsoft.com/zh-cn/library/azure/dn132599.aspx
-[register-client-app]: http://msdn.microsoft.com/dn877542.aspx
+[integrate-apps-with-AAD]: /documentation/articles/active-directory-integrating-applications/
+[register-client-app]: https://powerbi.microsoft.com/zh-cn/documentation/powerbi-developer-register-a-client-app/
 [Azure Web 应用插件]: https://github.com/Microsoft/azure-webapp-plugin
 [azure-webapp-plugin-install]: https://github.com/Microsoft/azure-webapp-plugin/tree/master/install
 

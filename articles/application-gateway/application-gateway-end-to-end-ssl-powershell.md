@@ -62,7 +62,7 @@ SSL 2.0 和 SSL 3.0 默认处于禁用状态且无法启用。这些版本被视
 
 登录 Azure 帐户。
 
-    Login-AzureRmAccount
+    Login-AzureRmAccount -EnvironmentName AzureChinaCloud
 
 ### 步骤 2
 
