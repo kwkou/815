@@ -54,7 +54,7 @@
 > 
 > 
 
-![共存](media/expressroute-howto-coexist-resource-manager/scenario1.jpg)  
+![共存](./media/expressroute-howto-coexist-resource-manager/scenario1.jpg)  
 
 
 ### 配置站点到站点 VPN，以便连接到不通过 ExpressRoute 进行连接的站点
