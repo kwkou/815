@@ -20,7 +20,7 @@
 
 # 创建托管多个 Web 应用程序的应用程序网关
 > [AZURE.SELECTOR]
-- [Azure 门户](/documentation/articles/application-gateway-create-multisite-portal/)
+- [Azure 门户预览](/documentation/articles/application-gateway-create-multisite-portal/)
 - [Azure Resource Manager PowerShell](/documentation/articles/application-gateway-create-multisite-azureresourcemanager-powershell/)
 
 托管多个站点可以让你在同一应用程序网关上部署多个 Web 应用程序。系统会通过传入 HTTP 请求中存在的主机标头来确定接收流量的侦听器。然后，侦听器会根据网关规则定义中的配置将流量定向到适当的后端池。在启用了 SSL 的 Web 应用程序中，应用程序网关将根据服务器名称指示 (SNI) 扩展来选择 Web 流量的适当侦听器。通常会通过托管多个站点将不同 Web 域的请求负载均衡到不同的后端服务器池。同样还可以将同一根域的多个子域托管到同一应用程序网关。

@@ -63,7 +63,7 @@
 ## 创建 Azure 存储帐户
 要使用存储操作，你需要一个 Azure 存储帐户。可通过以下步骤创建存储帐户。
 
-1. 登录到 [Azure 门户](https://portal.azure.cn/)。
+1. 登录到 [Azure 门户预览](https://portal.azure.cn/)。
 2. 单击门户左下角的“新建”图标，然后单击“数据 + 存储”>“存储帐户”。单击“创建”，然后为存储帐户指定一个唯一名称，并为其新建一个[资源组](/documentation/articles/resource-group-overview/)。
    
       ![快速创建](./media/web-sites-python-ptvs-flask-table-storage/PollsCommonAzureStorageCreate.png)  
@@ -77,7 +77,7 @@
     我们将需要使用此信息在下一部分中配置您的项目。
 
 ## 配置项目
-在此部分中，我们将配置应用程序以使用我们刚刚创建的存储帐户。我们将了解如何从 Azure 门户中获取连接设置。然后我们将在本地运行应用程序。
+在此部分中，我们将配置应用程序以使用我们刚刚创建的存储帐户。我们将了解如何从 Azure 门户预览中获取连接设置。然后我们将在本地运行应用程序。
 
 1. 在 Visual Studio 中，右键单击 Solution Explorer 中的项目节点，然后选择**属性**。单击“调试”选项卡。
    
@@ -182,7 +182,6 @@
 [用于 .NET 的 Azure SDK]: /downloads/
 [Python Tools for Visual Studio]: http://aka.ms/ptvs
 [Python Tools 2.2 for Visual Studio]: http://go.microsoft.com/fwlink/?LinkID=624025
-[]: http://go.microsoft.com/fwlink/?LinkID=624025
 [Python Tools 2.2 for Visual Studio 示例 VSIX]: http://go.microsoft.com/fwlink/?LinkID=624025
 [Azure SDK Tools for VS 2015]: http://go.microsoft.com/fwlink/?linkid=518003
 [Python 2.7（32 位）]: http://go.microsoft.com/fwlink/?LinkId=517190

@@ -38,7 +38,7 @@
 
 [AZURE.INCLUDE [create-account-and-websites-note](../../includes/create-account-and-websites-note.md)]
 
-<a id="virtualmachine">
+<a id="virtualmachine"></a>
 
 ## 创建虚拟机和安装 MongoDB
 本教程假定你已在 Azure 中创建了一个虚拟机。创建虚拟机后，你需要在该虚拟机上安装 MongoDB：

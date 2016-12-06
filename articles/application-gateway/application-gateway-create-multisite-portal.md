@@ -1,6 +1,6 @@
 <properties
-    pageTitle="在 Azure 门户中配置托管多个站点的现有应用程序网关 | Azure"
-    description="此页说明了如何通过 Azure 门户配置现有的 Azure 应用程序网关，以便在同一网关托管多个 Web 应用程序。"
+    pageTitle="在 Azure 门户预览中配置托管多个站点的现有应用程序网关 | Azure"
+    description="此页说明了如何通过 Azure 门户预览配置现有的 Azure 应用程序网关，以便在同一网关托管多个 Web 应用程序。"
     documentationcenter="na"
     services="application-gateway"
     author="georgewallace"
@@ -21,7 +21,7 @@
 
 # 配置托管多个 Web 应用程序的现有应用程序网关
 > [AZURE.SELECTOR]
-- [Azure 门户](/documentation/articles/application-gateway-create-multisite-portal/)
+- [Azure 门户预览](/documentation/articles/application-gateway-create-multisite-portal/)
 - [Azure Resource Manager PowerShell](/documentation/articles/application-gateway-create-multisite-azureresourcemanager-powershell/)
 
 托管多个站点可以让你在同一应用程序网关上部署多个 Web 应用程序。系统会通过传入 HTTP 请求中存在的主机标头来确定接收流量的侦听器。然后，侦听器会根据网关规则定义中的配置将流量定向到适当的后端池。在启用了 SSL 的 Web 应用程序中，应用程序网关将根据服务器名称指示 (SNI) 扩展来选择 Web 流量的适当侦听器。通常会通过托管多个站点将不同 Web 域的请求负载均衡到不同的后端服务器池。同样还可以将同一根域的多个子域托管到同一应用程序网关。
@@ -54,7 +54,7 @@
 应用程序网关支持的每个站点都需要一个后端池。在此示例中，将创建 2 个后端池，一个用于 contoso11.com，另一个用于 fabrikam11.com。
 
 ### 步骤 1
-在 Azure 门户 (https://portal.azure.cn) 中导航到现有的应用程序网关。选择“后端池”，单击“添加”
+在 Azure 门户预览 (https://portal.azure.cn) 中导航到现有的应用程序网关。选择“后端池”，单击“添加”
 
 ![添加后端池][7]  
 
@@ -93,7 +93,7 @@
 
 
 > [AZURE.NOTE]
-在 Azure 门户中创建应用程序网关的侦听器是一项运行时间长的任务，可能需要一些时间才能在此方案中创建两个侦听器。完成时，侦听器会显示在门户中，如下图所示。
+在 Azure 门户预览中创建应用程序网关的侦听器是一项运行时间长的任务，可能需要一些时间才能在此方案中创建两个侦听器。完成时，侦听器会显示在门户中，如下图所示。
 > 
 > 
 
@@ -102,7 +102,7 @@
 
 ### 创建规则，将侦听器映射到后端池
 ### 步骤 1
-在 Azure 门户 (https://portal.azure.cn) 中导航到现有的应用程序网关。选择“规则”，再选择现有的默认规则“rule1”，然后单击“编辑”。
+在 Azure 门户预览 (https://portal.azure.cn) 中导航到现有的应用程序网关。选择“规则”，再选择现有的默认规则“rule1”，然后单击“编辑”。
 
 ### 步骤 2
 填写规则边栏选项卡，如下图所示。选择第一个侦听器和第一个池，完成时单击“保存”。
@@ -116,7 +116,7 @@
 ![添加基本规则边栏选项卡][10]  
 
 
-通过 Azure 门户为现有应用程序网关配置多站点支持至此操作完毕。
+通过 Azure 门户预览为现有应用程序网关配置多站点支持至此操作完毕。
 
 ## 后续步骤
 通过[应用程序网关 - Web 应用程序防火墙](/documentation/articles/application-gateway-webapplicationfirewall-overview/)了解如何保护网站

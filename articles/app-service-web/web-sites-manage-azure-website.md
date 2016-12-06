@@ -58,7 +58,7 @@
 * [缩放您的 Web 应用](/documentation/articles/web-sites-scale/)以响应流量。您可以根据不同的层缩放虚拟机数量和/或虚拟机实例的大小。在标准层和高级层中，您还可以设置自动缩放，那么您的 Web 应用将能够根据固定计划，或以负载为依据进行自动缩放。
 
 ### 备份
-* 设置 Web 应用的[自动备份](/documentation/articles/web-sites-backup/)。观看[本视频](https://azure.microsoft.com/documentation/videos/azure-websites-automatic-and-easy-backup/)了解更多关于备份的信息。
+* 设置 Web 应用的[自动备份](/documentation/articles/web-sites-backup/)。
 * 了解 Azure SQL 数据库的[数据库恢复](/documentation/articles/sql-database-business-continuity/)选项。
 
 ### 故障排除

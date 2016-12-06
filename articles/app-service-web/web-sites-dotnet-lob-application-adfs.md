@@ -53,29 +53,29 @@
 ## <a name="bkmk_setup"></a>设置示例应用程序
 1. 将 [WebApp-WSFederation-DotNet](https://github.com/AzureADSamples/WebApp-WSFederation-DotNet) 的示例解决方案克隆或下载到您的本地目录中。
    
-   > [AZURE.NOTE]
-   [README.md](https://github.com/AzureADSamples/WebApp-WSFederation-DotNet/blob/master/README.md) 中的说明介绍了如何使用 Azure Active Directory 设置应用程序。但本教程中使用 AD FS 进行设置，因此请改用本教程中的步骤。
-   > 
-   > 
+    > [AZURE.NOTE]
+    [README.md](https://github.com/AzureADSamples/WebApp-WSFederation-DotNet/blob/master/README.md) 中的说明介绍了如何使用 Azure Active Directory 设置应用程序。但本教程中使用 AD FS 进行设置，因此请改用本教程中的步骤。
+    > 
+    > 
 2. 打开解决方案，然后在“解决方案资源管理器”中打开 Controllers\\AccountController.cs。
    
-   你将看到，代码只是发出身份验证质询以使用 WS-Federation 对用户进行身份验证。所有身份验证都在 App\_Start.Auth.cs 中配置。
+    你将看到，代码只是发出身份验证质询以使用 WS-Federation 对用户进行身份验证。所有身份验证都在 App\_Start.Auth.cs 中配置。
 3. 打开 App\_Start.Auth.cs。在 `ConfigureAuth` 方法中，记录下面的代码行：
    
-       app.UseWsFederationAuthentication(
+        app.UseWsFederationAuthentication(
            new WsFederationAuthenticationOptions
-	   {
+	    {
 	       Wtrealm = realm,
 	       MetadataAddress = metadata                                      
            });
    
-   在 OWIN 领域中，此代码片段实际上配置 WS-Federation 所需的最低要求。这比 WIF 要精简得多，因为 Web.config 中的各个位置都注入了 XML。所需的唯一信息就是信赖方 (RP) 标识符和 AD FS 服务元数据文件的 URL。下面是一个示例：
+    在 OWIN 领域中，此代码片段实际上配置 WS-Federation 所需的最低要求。这比 WIF 要精简得多，因为 Web.config 中的各个位置都注入了 XML。所需的唯一信息就是信赖方 (RP) 标识符和 AD FS 服务元数据文件的 URL。下面是一个示例：
    
-   * RP 标识符：`https://contoso.com/MyLOBApp`
-   * 元数据地址：`http://adfs.contoso.com/FederationMetadata/2007-06/FederationMetadata.xml`
+    * RP 标识符：`https://contoso.com/MyLOBApp`
+    * 元数据地址：`http://adfs.contoso.com/FederationMetadata/2007-06/FederationMetadata.xml`
 4. 在 App\_Start\\Startup.Auth.cs 中，更改以下静态字符串定义：
    
-   <pre class="prettyprint">
+    <pre class="prettyprint">
       private static string realm = ConfigurationManager.AppSettings["ida:<mark>RPIdentifier</mark>"];
       <mark><del>private static string aadInstance = ConfigurationManager.AppSettings["ida:AADInstance"];</del></mark>
       <mark><del>private static string tenant = ConfigurationManager.AppSettings["ida:Tenant"];</del></mark>
@@ -86,7 +86,7 @@
       </pre>
 5. 现在，请在 Web.config 中进行相应的更改。打开 Web.config，修改以下应用设置：
    
-   <pre class="prettyprint">
+    <pre class="prettyprint">
       &lt;appSettings>
       &lt;add key="webpages:Version" value="3.0.0.0" />
       &lt;add key="webpages:Enabled" value="false" />
@@ -101,7 +101,7 @@
       &lt;/appSettings>
       </pre>
    
-   根据相应的环境填写键值。
+    根据相应的环境填写键值。
 6. 生成应用程序，以确保没有任何错误。
 
 就这么简单。现在，便可以配合 AD FS 运行该示例应用程序。稍后，仍需要在 AD FS 中配置 RP 与此应用程序间的信任关系。
@@ -126,7 +126,7 @@
     ![](./media/web-sites-dotnet-lob-application-adfs/03-destination-url.png)
 8. 在 Visual Studio 中，在项目中打开 **Web.Release.config**。在 `<configuration>` 标记中插入以下 XML，然后将键值替换为发布 Web 应用的 URL。
    
-   <pre class="prettyprint">
+    <pre class="prettyprint">
       &lt;appSettings>
       &lt;add key="ida:RPIdentifier" value="<mark>[e.g. https://mylobapp.chinacloudsites.cn/]</mark>" xdt:Transform="SetAttributes" xdt:Locator="Match(key)" />
       &lt;/appSettings></pre>
@@ -146,35 +146,35 @@
 1. 在 AD FS 服务器上，使用对 AD FS 具有管理权限的凭据登录。
 2. 打开“AD FS 管理”。右键单击“AD FS\\信任关系\\信赖方信任”，然后选择“添加信赖方信任”。
    
-   ![](./media/web-sites-dotnet-lob-application-adfs/1-add-rptrust.png)
+    ![](./media/web-sites-dotnet-lob-application-adfs/1-add-rptrust.png)
 3. 在“选择数据源”页面上，选择“手动输入信赖方数据”。
-   
-   ![](./media/web-sites-dotnet-lob-application-adfs/2-enter-rp-manually.png)
+    
+    ![](./media/web-sites-dotnet-lob-application-adfs/2-enter-rp-manually.png)
 4. 在“指定显示名称”页面上，键入应用程序的显示名称，然后单击“下一步”。
 5. 在“选择协议”页面上，单击“下一步”。
 6. 在“配置证书”页面上，单击“下一步”。
-   
-   > [AZURE.NOTE]
-   由于你已在使用 HTTPS，因此加密令牌是可选的。如果你确实想要在此页上加密来自 AD FS 的令牌，则还必须在代码中添加令牌解密逻辑。有关详细信息，请参阅[手动配置 OWIN WS 联合身份验证中间件和接受加密令牌](http://chris.59north.com/post/2014/08/21/Manually-configuring-OWIN-WS-Federation-middleware-and-accepting-encrypted-tokens.aspx)。
-   > 
-   > 
+    
+    > [AZURE.NOTE]
+    由于你已在使用 HTTPS，因此加密令牌是可选的。如果你确实想要在此页上加密来自 AD FS 的令牌，则还必须在代码中添加令牌解密逻辑。有关详细信息，请参阅[手动配置 OWIN WS 联合身份验证中间件和接受加密令牌](http://chris.59north.com/post/2014/08/21/Manually-configuring-OWIN-WS-Federation-middleware-and-accepting-encrypted-tokens.aspx)。
+    > 
+    > 
 7. 在转到下一步之前，需要获得 Visual Studio 项目中的一个信息片段。在项目属性中，记录应用程序的 **SSL URL**。
-   
-   ![](./media/web-sites-dotnet-lob-application-adfs/3-ssl-url.png)
+    
+    ![](./media/web-sites-dotnet-lob-application-adfs/3-ssl-url.png)
 8. 返回“AD FS 管理”，在“添加信赖方信任向导”的“配置 URL”页面中，选择“启用支持 WS 联合身份验证被动协议”，然后键入您在上一步中记录的 Visual Studio 项目 SSL URL。然后，单击“下一步”。
-   
-   ![](./media/web-sites-dotnet-lob-application-adfs/4-configure-url.png)
-   
-   > [AZURE.NOTE]
-   URL 指定身份验证成功后要将客户端发送到的位置。对于调试环境，它应为 <code>https://localhost:&lt;port&gt;/</code>。对于发布的 Web 应用，它应该是 Web 应用 URL。
-   > 
-   > 
+    
+    ![](./media/web-sites-dotnet-lob-application-adfs/4-configure-url.png)
+    
+    > [AZURE.NOTE]
+    URL 指定身份验证成功后要将客户端发送到的位置。对于调试环境，它应为 <code>https://localhost:&lt;port&gt;/</code>。对于发布的 Web 应用，它应该是 Web 应用 URL。
+    > 
+    > 
 9. 在“配置标识符”页面上，确认您的项目 SSL URL 是否已列出，然后单击“下一步”。保持默认选择不变，同时单击“下一步”，一直到向导结束。
-   
-   > [AZURE.NOTE]
-   在 Visual Studio 项目的 App\_Start\\Startup.Auth.cs 中，此标识符与联合身份验证期间 <code>WsFederationAuthenticationOptions.Wtrealm</code> 的值相匹配。默认情况下，将添加上一步中的应用程序 URL 作为 RP 标识符。
-   > 
-   > 
+    
+    > [AZURE.NOTE]
+    在 Visual Studio 项目的 App\_Start\\Startup.Auth.cs 中，此标识符与联合身份验证期间 <code>WsFederationAuthenticationOptions.Wtrealm</code> 的值相匹配。默认情况下，将添加上一步中的应用程序 URL 作为 RP 标识符。
+    > 
+    > 
 10. 现在，你已在 AD FS 中为项目完成了 RP 应用程序的配置。接下来，对此应用程序进行配置以发送应用程序所需的声明。在向导结束时，系统会默认打开“编辑声明规则”对话框，方便您立即启动。至少要配置以下声明（括号中为架构）：
     
     * 名称 (http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name) - ASP.NET 用来解冻 `User.Identity.Name`。
