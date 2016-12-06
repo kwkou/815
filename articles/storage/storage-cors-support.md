@@ -155,7 +155,7 @@ Azure 存储服务支持为 **AllowedHeaders** 和 **ExposedHeaders** 两个元�
 
 | 请求 | 帐户设置和规则评估结果 | | | 响应 | | |
 | --- | --- | --- | --- | --- | --- | --- |
-| **请求中存在 Origin 标头** |**为此服务指定了 CORS 规则** |**存在允许所有域 (*) 的匹配规则(*)** |**存在精确匹配域的匹配规则** |**响应包含设置为 Origin 的 Vary 标头** |**响应包含 Access-Control-Allowed-Origin: "*"** |**响应包含 Access-Control-Exposed-Headers** |
+| **请求中存在 Origin 标头** |**为此服务指定了 CORS 规则** |**存在允许所有域 (\*) 的匹配规则(\*)** |**存在精确匹配域的匹配规则** |**响应包含设置为 Origin 的 Vary 标头** |**响应包含 Access-Control-Allowed-Origin: "\*"** |**响应包含 Access-Control-Exposed-Headers** |
 | 否 |否 |否 |否 |否 |否 |否 |
 | 否 |是 |否 |否 |是 |否 |否 |
 | 否 |是 |是 |否 |否 |是 |是 |
