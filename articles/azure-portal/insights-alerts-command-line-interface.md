@@ -29,10 +29,9 @@
 
 本文将展示如何使用命令行界面 (CLI) 设置 Azure 警报。
 
-> [Azure.NOTE]
+> [AZURE.NOTE]
 > “Azure Insights”在 2016 年 9 月 25 日后称为 Azure Monitor。但是，命名空间和以下命令中仍然包含“insights”。
-> 
-> 
+
 
 可以根据监视指标或事件接收 Azure 服务的警报。
 
