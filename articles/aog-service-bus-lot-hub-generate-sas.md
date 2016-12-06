@@ -30,28 +30,28 @@
 
 如果您是使用 C# 做开发，可以通过以下方法生成 SAS Token:
 
-```C#
-class SASTokenGenerator
-{
-	public static string GetSASToken(string resourceUri, string keyName, string key, TimeSpan ttl)
-    {
-	    var expiry = GetExpiry(ttl);
-	    string stringToSign = HttpUtility.UrlEncode(resourceUri) + "\n" + expiry;
-	    // HMACSHA256 hmac = new HMACSHA256(Convert.FromBase64String(key)); for IoT Hub Service
-	    HMACSHA256 hmac = new HMACSHA256(Encoding.UTF8.GetBytes(key)); //for service bus Service
-	    var signature = Convert.ToBase64String(hmac.ComputeHash(Encoding.UTF8.GetBytes(stringToSign)));
-	    var sasToken = String.Format(CultureInfo.InvariantCulture, "SharedAccessSignature sr={0}&sig={1}&se={2}&skn={3}", 
-	    HttpUtility.UrlEncode(resourceUri), HttpUtility.UrlEncode(signature), expiry, keyName);
-	    return sasToken;
-    }
 
-    private static string GetExpiry(TimeSpan ttl)
-    {
-    	TimeSpan expirySinceEpoch = DateTime.UtcNow - new DateTime(1970, 1, 1) + ttl;
-    	return Convert.ToString((int)expirySinceEpoch.TotalSeconds);
-    }
-}
-```
+	class SASTokenGenerator
+	{
+		public static string GetSASToken(string resourceUri, string keyName, string key, TimeSpan ttl)
+	    {
+		    var expiry = GetExpiry(ttl);
+		    string stringToSign = HttpUtility.UrlEncode(resourceUri) + "\n" + expiry;
+		    // HMACSHA256 hmac = new HMACSHA256(Convert.FromBase64String(key)); for IoT Hub Service
+		    HMACSHA256 hmac = new HMACSHA256(Encoding.UTF8.GetBytes(key)); //for service bus Service
+		    var signature = Convert.ToBase64String(hmac.ComputeHash(Encoding.UTF8.GetBytes(stringToSign)));
+		    var sasToken = String.Format(CultureInfo.InvariantCulture, "SharedAccessSignature sr={0}&sig={1}&se={2}&skn={3}", 
+		    HttpUtility.UrlEncode(resourceUri), HttpUtility.UrlEncode(signature), expiry, keyName);
+		    return sasToken;
+	    }
+
+	    private static string GetExpiry(TimeSpan ttl)
+	    {
+	    	TimeSpan expirySinceEpoch = DateTime.UtcNow - new DateTime(1970, 1, 1) + ttl;
+	    	return Convert.ToString((int)expirySinceEpoch.TotalSeconds);
+	    }
+	}
+
 
 
 
