@@ -13,8 +13,8 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="dotnet"
 	ms.topic="hero-article"
-	ms.date="06/10/2016"
-	wacn.date="07/18/2016"
+	ms.date="11/16/2016"
+	wacn.date="12/05/2016"
 	ms.author="adegeo"/>
 
 # Azure 云服务和 ASP.NET 入门

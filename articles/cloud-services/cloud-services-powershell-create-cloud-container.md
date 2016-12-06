@@ -13,8 +13,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="powershell"
    ms.workload="na"
-   ms.date="04/25/2016"
-   wacn.date="09/26/2016"
+   ms.date="11/18/2016"
+   wacn.date="12/05/2016"
    ms.author="cawa"/>
 
 # 使用 Azure PowerShell 命令可创建一个空的云服务容器

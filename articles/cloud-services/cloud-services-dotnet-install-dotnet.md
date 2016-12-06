@@ -13,14 +13,16 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="08/10/2016"
-   wacn.date="11/14/2016"
+   ms.date="11/16/2016"
+   wacn.date="12/05/2016"
    ms.author="adegeo"/>
 
 
 # 在云服务角色上安装 .NET 
+本文介绍如何在云服务 Web 角色和辅助角色上安装来宾 OS 随附版本以外的 .NET Framework 版本。例如，可以使用这些步骤在 Azure 来宾 OS 系列 4 上安装不随任何版本的 .NET 4.6 提供的 .NET 4.6.1。有关最新的来宾 OS 版本信息，请参阅 [Azure 来宾 OS 版本发行动态](/documentation/articles/cloud-services-guestos-update-matrix/)。
 
-本文介绍如何在云服务 Web 角色和辅助角色上安装 .NET Framework。可以使用以下步骤在 Azure 来宾 OS 系列 4 上安装 .NET 4.6.1。有关最新的来宾 OS 版本信息，请参阅 [Azure 来宾 OS 版本和 SDK 兼容性对照表](/documentation/articles/cloud-services-guestos-update-matrix/)。
+>[AZURE.NOTE]
+来宾 OS 5 包括 .NET 4.6
 
 在 Web 角色和辅助角色上安装 .NET 的过程涉及到在云项目中添加 .NET 安装包，并在执行角色的启动任务过程中启动安装程序。
 
@@ -35,7 +37,7 @@
 
 以此方式添加到角色内容文件夹的文件会自动添加到云服务包，并部署到虚拟机上的一致位置。对云服务中的所有 Web 和辅助角色重复此过程，使所有角色都有安装程序的副本。
 
-> [AZURE.NOTE] 即使你的应用程序面向 .NET 4.6，你也应该在云服务角色上安装 .NET 4.6.1。Azure 来宾 OS 包含更新 [3098779](https://support.microsoft.com/zh-cn/kb/3098779) 和 [3097997](https://support.microsoft.com/zh-cn/kb/3097997)。在这些更新的顶层安装 .NET 4.6 可能会在运行 .NET 应用程序时造成问题，因此，你应该直接安装 .NET 4.6.1 而不是 .NET 4.6。有关详细信息，请参阅 [KB 3118750](https://support.microsoft.com/zh-cn/kb/3118750)。
+> [AZURE.NOTE] 即使你的应用程序面向 .NET 4.6，你也应该在云服务角色上安装 .NET 4.6.1。Azure 来宾 OS 包括更新 [3098779](https://support.microsoft.com/zh-cn/kb/3098779) 和 [3097997](https://support.microsoft.com/zh-cn/kb/3097997)。在这些更新的顶层安装 .NET 4.6 可能会在运行 .NET 应用程序时造成问题，因此，你应该直接安装 .NET 4.6.1 而不是 .NET 4.6。有关详细信息，请参阅 [KB 3118750](https://support.microsoft.com/zh-cn/kb/3118750)。
 
 ![包含安装程序文件的角色内容][1]
 
@@ -62,11 +64,12 @@
     </Startup>
 	```
 
-	上述配置将使用管理员特权来执行控制台命令*install.cmd*，以安装 .NET Framework。该配置还会创建名为 *NETFXInstall* 的 LocalStorage。启动脚本会将临时文件夹设置为使用此本地存储资源，以便从此资源下载并安装 .NET Framework 安装程序。必须将此资源的大小设置为至少 1024MB，以确保能够正确安装 Framework。有关启动任务的详细信息，请参阅：[常见的云服务启动任务](/documentation/articles/cloud-services-startup-tasks-common/)。
+	上述配置将使用管理员特权来执行控制台命令 *install.cmd*，以安装 .NET Framework。该配置还会创建名为 *NETFXInstall* 的 LocalStorage。启动脚本会将临时文件夹设置为使用此本地存储资源，以便从此资源下载并安装 .NET Framework 安装程序。必须将此资源的大小设置为至少 1024MB，以确保能够正确安装 Framework。有关启动任务的详细信息，请参阅[常见的云服务启动任务](/documentation/articles/cloud-services-startup-tasks-common/)
 
 2. 创建文件 **install.cmd**，然后右键单击角色并选择“添加 > 现有项...”将此文件添加到所有角色。因此，所有角色现在应该都有 .NET 安装程序文件，以及 install.cmd 文件。
 	
-	![包含所有文件的角色内容][2]
+	![包含所有文件的角色内容][2]  
+
 
 	> [AZURE.NOTE] 使用记事本之类的简单文字编辑器来创建这个文件。如果使用 Visual Studio 来创建文本文件，然后将它重命名为“.cmd”，则此文件可能仍包含 UTF-8 字节顺序标记，并在运行第一行脚本时出现错误。如果你要使用 Visual Studio 来创建文件，请在文件的第一行保留添加 REM（备注），以便在运行时将它忽略。
 
@@ -77,6 +80,7 @@
 		REM ***** To install .NET 4.5.2 set the variable netfx to "NDP452" *****
 		REM ***** To install .NET 4.6 set the variable netfx to "NDP46" *****
 		REM ***** To install .NET 4.6.1 set the variable netfx to "NDP461" *****
+		REM ***** To install .NET 4.6.2 set the variable netfx to "NDP462" *****
 		set netfx="NDP461"
 		
 		
@@ -93,6 +97,7 @@
 		set TEMP=%PathToNETFXInstall%
 		
 		REM ***** Setup .NET filenames and registry keys *****
+		if %netfx%=="NDP462" goto NDP462
 		if %netfx%=="NDP461" goto NDP461
 		if %netfx%=="NDP46" goto NDP46
 		    set "netfxinstallfile=NDP452-KB2901954-Web.exe"
@@ -101,13 +106,17 @@
 		
 		:NDP46
 		set "netfxinstallfile=NDP46-KB3045560-Web.exe"
-		set netfxregkey="0x60051"
+		set netfxregkey="0x6004f"
 		goto logtimestamp
 		
 		:NDP461
 		set "netfxinstallfile=NDP461-KB3102438-Web.exe"
-		set netfxregkey="0x6041f"
-		
+		set netfxregkey="0x6040e"
+		goto logtimestamp
+	
+		:NDP462
+		set "netfxinstallfile=NDP462-KB3151802-Web.exe"
+		set netfxregkey="0x60632"
 		:logtimestamp
 		REM ***** Setup LogFile with timestamp *****
 		md "%PathToNETFXInstall%\log"
@@ -120,8 +129,11 @@
 		
 		REM ***** Check if .NET is installed *****
 		echo Checking if .NET (%netfx%) is installed >> %startuptasklog%
-		reg query "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full" /v Release | Find %netfxregkey%
-		if %ERRORLEVEL%== 0 goto installed
+		set /A netfxregkeydecimal=%netfxregkey%
+		set foundkey=0
+		FOR /F "usebackq skip=2 tokens=1,2*" %%A in (`reg query "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full" /v Release 2^>nul`) do @set /A foundkey=%%C
+		echo Minimum required key: %netfxregkeydecimal% -- found key: %foundkey% >> %startuptasklog%
+		if %foundkey% GEQ %netfxregkeydecimal% goto installed
 		
 		REM ***** Installing .NET *****
 		echo Installing .NET with commandline: start /wait %~dp0%netfxinstallfile% /q /serialdownload /log %netfxinstallerlog%  /chainingpackage "CloudService Startup Task" >> %startuptasklog%
@@ -134,7 +146,7 @@
 		
 		:restart
 		echo Restarting to complete .NET (%netfx%) installation >> %startuptasklog%
-		goto end
+		EXIT /B %ERRORLEVEL%
 		
 		:installed
 		echo .NET (%netfx%) is installed >> %startuptasklog%
@@ -148,7 +160,7 @@
 		
 	安装脚本将通过查询注册表来检查指定的 .NET Framework 版本是否已安装在计算机上。如果未安装该 .NET 版本，.Net Web 安装程序将会启动。为帮助排查任何问题，该脚本会将所有活动记录到名为 *startuptasklog-(currentdatetime).txt* 的文件（存储在 *InstallLogs* 本地存储中）。
 
-	> [AZURE.NOTE] 为了保持内容连贯，该脚本仍会演示如何安装 .NET 4.5.2 或 .NET 4.6。你不需要手动安装 .NET 4.5.2，因为 Azure 来宾 OS 上已提供该组件。由于 [KB 3118750](https://support.microsoft.com/zh-cn/kb/3118750) 中所述的原因，你应该直接安装 .NET 4.6.1，而不要安装 .NET 4.6。
+	> [AZURE.NOTE] 为了保持内容连贯，该脚本仍会演示如何安装 .NET 4.5.2 或 .NET 4.6。你不需要手动安装 .NET 4.5.2，因为 Azure 来宾 OS 上已提供该组件。由于 [KB 3118750](https://support.microsoft.com/zh-cn/kb/3118750) 中所述的原因，应该直接安装 .NET 4.6.1，而不要安装 .NET 4.6。
       
 
 ## 配置诊断以将启动任务日志传输到 Blob 存储 
@@ -180,9 +192,10 @@
 [.NET Framework 安装疑难解答]: https://msdn.microsoft.com/zh-cn/library/hh925569.aspx
 
 <!--Image references-->
+
 [1]: ./media/cloud-services-dotnet-install-dotnet/rolecontentwithinstallerfiles.png
 [2]: ./media/cloud-services-dotnet-install-dotnet/rolecontentwithallfiles.png
 
  
 
-<!---HONumber=Mooncake_0328_2016-->
+<!---HONumber=Mooncake_1128_2016-->

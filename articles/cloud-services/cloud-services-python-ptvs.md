@@ -14,8 +14,8 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="python"
 	ms.topic="hero-article"
-	ms.date="08/03/2016"
-	wacn.date="10/24"
+	ms.date="11/16/2016"
+	wacn.date="12/05/2016"
 	ms.author="adegeo"/>
 
 
@@ -27,7 +27,7 @@
 
  - Visual Studio 2013 或 2015
  - [Python Tools for Visual Studio][]（用于 Visual Studio 的 Python 工具，简称 PTVS）
- - [Azure SDK Tools for VS 2013][] 或 [Azure SDK Tools for VS 2015][]
+ - Azure SDK Tools for VS 2013 或 [Azure SDK Tools for VS 2015][]
  - [Python 2.7（32 位）][]或 [Python 3.5（32 位）][]
 
 [AZURE.INCLUDE [create-account-and-websites-note](../../includes/create-account-and-websites-note.md)]
@@ -364,7 +364,6 @@ Visual Studio 模板应在 **./bin** 文件夹中创建了一个 **ps.cmd** 文�
 [Python Tools for Visual Studio]: https://www.visualstudio.com/vs/python/
 [Python Tools for Visual Studio Documentation]: http://aka.ms/ptvsdocs
 [云服务项目]: http://go.microsoft.com/fwlink/?LinkId=624028
-[Azure SDK Tools for VS 2013]: http://go.microsoft.com/fwlink/?LinkId=323510
 [Azure SDK Tools for VS 2015]: https://www.visualstudio.com/vs/python/
 [Python 2.7（32 位）]: https://www.python.org/downloads/
 [Python 3.5（32 位）]: https://www.python.org/downloads/

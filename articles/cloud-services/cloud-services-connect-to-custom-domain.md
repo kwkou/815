@@ -5,7 +5,8 @@
   documentationCenter=""
   authors="Thraka"
   manager="timlt"
-  editor=""/>
+  editor=""/>  
+
 
   <tags
     ms.service="cloud-services"
@@ -13,9 +14,10 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="09/06/2016"
-    wacn.date="10/24/2016"
+    ms.date="10/21/2016"
+    wacn.date="12/05/2016"
     ms.author="adegeo"/>
+
 
 # 将 Azure 云服务角色连接到 Azure 中托管的自定义 AD 域控制器
 
@@ -29,9 +31,11 @@
 
 请遵循以下分步指南，如果你遇到任何问题，请在下面留言。我们将回复你（没错，我们真的会阅读留言）。
 
+1. 云服务引用的网络<mark>必须是</mark>**经典虚拟网络**。
+
 ## 创建虚拟网络
 
-你可以使用 Azure 经典管理门户或 Powershell 在 Azure 中创建虚拟网络。在本教程中，我们将使用 Powershell。若要使用 Azure 经典管理门户创建虚拟网络，请参阅[创建虚拟网络](/documentation/articles/virtual-networks-create-vnet-classic-portal/)。
+可使用 Azure 经典管理门户或 Powershell 在 Azure 中创建虚拟网络。在本教程中，我们将使用 Powershell。若要使用 Azure 经典管理门户创建虚拟网络，请参阅[创建虚拟网络](/documentation/articles/virtual-networks-create-vnet-arm-pportal/)。
 
 #创建虚拟网络
 
@@ -65,6 +69,7 @@
 为此，请使用以下命令通过 Powershell 创建虚拟机。
 
 	# Initialize variables
+	# VNet and subnet must be classic virtual network resources, not Azure Resource Manager resources.
 
 	$vnetname = '<your-vnet-name>'
 	$subnetname = '<your-subnet-name>'
@@ -105,44 +110,45 @@
         </Dns>
         <!--optional-->
 
-        <!--VNET settings-->
-        <VirtualNetworkSite name="[virtual-network-name]" />
-        <AddressAssignments>
-          <InstanceAddress roleName="[role-name]">
-            <Subnets>
-              <Subnet name="[subnet-name]" />
-            </Subnets>
-          </InstanceAddress>
-        </AddressAssignments>
-        <!--VNET settings-->
+    <!--VNet settings
+        VNet and subnet must be classic virtual network resources, not Azure Resource Manager resources.-->
+    <VirtualNetworkSite name="[virtual-network-name]" />
+    <AddressAssignments>
+        <InstanceAddress roleName="[role-name]">
+        <Subnets>
+            <Subnet name="[subnet-name]" />
+        </Subnets>
+        </InstanceAddress>
+    </AddressAssignments>
+    <!--VNet settings-->
 
       </NetworkConfiguration>
     </ServiceConfiguration>
 
-接下来，请生成云服务项目并将它部署到 Azure。有关将云服务包部署到 Azure 的帮助，请参阅[如何创建和部署云服务](/documentation/articles/cloud-services-how-to-create-deploy/#deploy)。
+接下来，请生成云服务项目并将它部署到 Azure。有关将云服务包部署到 Azure 的帮助，请参阅[如何创建和部署云服务](/documentation/articles/cloud-services-how-to-create-deploy/#deploy)
 
 ## 将 Web/辅助角色连接到域
 
 在 Azure 上部署云服务项目后，请使用 AD 域扩展将角色实例连接到自定义 AD 域。若要将 AD 域扩展添加到现有云服务部署并加入自定义域，请在 Powershell 中执行以下命令：
 
-    # 初始化域变量
+# 初始化域变量
+
 	$domain = '<your-domain-name>'
 	$dmuser = '$domain<your-username>'
 	$dmpswd = '<your-domain-password>'
 	$dmspwd = ConvertTo-SecureString $dmpswd -AsPlainText -Force
 	$dmcred = New-Object System.Management.Automation.PSCredential ($dmuser, $dmspwd)
 
-    # 将 AD 域扩展添加到云服务角色
+# 将 AD 域扩展添加到云服务角色
+
 	Set-AzureServiceADDomainExtension -Service <your-cloud-service-hosted-service-name> -Role <your-role-name> -Slot <staging-or-production> -DomainName $domain -Credential $dmcred -JoinOption 35
 
 这就是所有的操作。
 
-云服务现在应已加入自定义域控制器。如果你想要深入了解用于配置 AD 域扩展的其他选项，请如下所示使用 PS 帮助。
+云服务现在应已加入自定义域控制器。如果想要详细了解可用于配置 AD 域扩展的其他选项，请如下所示使用 PowerShell 帮助。
 
-    help Set-AzureServiceADDomainExtension;
-    help New-AzureServiceADDomainExtensionConfig;
-
-我们也想知道，你是否希望我们提供一个扩展用于将虚拟机提升为域控制器。如果你认为这样会很有用，请在意见部分中留言告诉我们。
+    help Set-AzureServiceADDomainExtension
+    help New-AzureServiceADDomainExtensionConfig
 
 
-<!---HONumber=Mooncake_0503_2016-->
+<!---HONumber=Mooncake_1128_2016-->
