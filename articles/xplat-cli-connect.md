@@ -30,7 +30,7 @@ Azure CLI 是一组开源且跨平台的命令，可以用于 Azure 资源。本
 
 如果你尚未安装 CLI，请参阅[安装 Azure CLI](xplat-cli-install.md)。如果没有 Azure 订阅，只需要花费几分钟就能创建一个[免费帐户](http://azure.microsoft.com/free/)。
 
-有关不同帐户的标识和 Azure 订阅的背景信息，请参阅[Azure 订阅如何与 Azure Active Directory 相关联](./active-directory/active-directory-how-subscriptions-associated-directory.md)。
+有关不同帐户的标识和 Azure 订阅的背景信息，请参阅[Azure 订阅如何与 Azure Active Directory 相关联](/documentation/articles/active-directory-how-subscriptions-associated-directory/)。
 
 
 
@@ -93,7 +93,7 @@ info:    To sign in, use a web browser to open the page http://aka.ms/devicelogi
 
     azure login -u https://www.contoso.org/example --service-principal --tenant myTenantID
 
-随后，系统会提示提供密码。还可以通过 CLI 脚本或应用程序代码提供凭据，或使用证书针对自动化方案以非交互方式对服务主体进行身份验证。有关详细信息与示例，请参阅[使用 Azure Resource Manager 对服务主体进行身份验证](resource-group-authenticate-service-principal-cli.md)。
+随后，系统会提示提供密码。还可以通过 CLI 脚本或应用程序代码提供凭据，或使用证书针对自动化方案以非交互方式对服务主体进行身份验证。有关详细信息与示例，请参阅[使用 Azure Resource Manager 对服务主体进行身份验证](/documentation/articles/resource-group-authenticate-service-principal-cli/)。
 
 ## 方案 4：使用发布设置文件
 
@@ -115,6 +115,7 @@ info:    To sign in, use a web browser to open the page http://aka.ms/devicelogi
 
 >[AZURE.IMPORTANT]导入发布设置后，应删除 `.publishsettings` 文件。因为 Azure CLI 不再需要该文件，并且该文件会产生安全风险，因为它可以用来访问你的订阅。
 
+<a name="CLI-command-modes"></a>
 ## CLI 命令模式
 
 Azure CLI 提供两种命令模式让你使用不同的命令集来处理 Azure 资源：

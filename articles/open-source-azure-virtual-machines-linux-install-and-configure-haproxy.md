@@ -144,11 +144,11 @@ HAProxy 可以看作是提供高可用，负载均衡，反向代理等功能的
 
 		$sudo /usr/local/haproxy/sbin/haproxy -f /usr/local/haproxy/haproxy.cfg
 
-	这个时候访问 [http://HAProxy 的公网地址:80](#) 会出错，因为它后端的两台 web server 还没有提供 web 服务。
+	这个时候访问 [http://HAProxy 的公网地址:80]() 会出错，因为它后端的两台 web server 还没有提供 web 服务。
 
 3. 去到两台 web server 安装好 apache2 并启动。
 
-4. 这时访问 [http://HAProxy 的公网地址:80](#) 就可正常访问了。类似下图：
+4. 这时访问 [http://HAProxy 的公网地址:80]() 就可正常访问了。类似下图：
 
 	![](./media/open-source-azure-virtual-machines-linux-install-and-configure-haproxy/configure.png)
 
