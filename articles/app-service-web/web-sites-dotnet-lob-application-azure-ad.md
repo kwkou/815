@@ -187,10 +187,10 @@
 4. 选择“使用实体框架的包含视图的 MVC 5 控制器”并单击“添加”。
 5. 选择创建的模型，依次单击“+”和“添加”来添加数据上下文，然后单击“添加”。
    
-   ![](./media/web-sites-dotnet-lob-application-azure-ad/16-add-scaffolded-controller.png)
+    ![](./media/web-sites-dotnet-lob-application-azure-ad/16-add-scaffolded-controller.png)
 6. 在 ~\\Views\\WorkItems\\Create.cshtml（自动搭建基架的项）中查找 `Html.BeginForm` 帮助器方法，并根据以下突出显示的内容进行更改：
    
-   <pre class="prettyprint">
+    <pre class="prettyprint">
       @model WebApplication1.Models.WorkItem
       
       @{
@@ -276,28 +276,28 @@
       }
       </pre>
    
-   请注意，`AadPicker` 对象使用 `token` 和 `tenant` 发出 Azure Active Directory 图形 API 调用。稍后将要添加 `AadPicker`。
+    请注意，`AadPicker` 对象使用 `token` 和 `tenant` 发出 Azure Active Directory 图形 API 调用。稍后将要添加 `AadPicker`。
    
-   > [AZURE.NOTE]
-   也可以使用 `~/.auth/me` 直接从客户端获取 `token` 和 `tenant`，但这是一个额外的服务器调用。例如：
-   > 
-   > $.ajax({
-   > dataType: "json",
-   > url: "/.auth/me",
-   > success: function (data) {
-   > var token = data[0].access_token;
-   > var tenant = data[0].user_claims
-   > .find(c => c.typ === 'http://schemas.microsoft.com/identity/claims/tenantid')
-   > .val;
-   > }
-   > });
-   > 
-   > 
+    > [AZURE.NOTE]
+    也可以使用 `~/.auth/me` 直接从客户端获取 `token` 和 `tenant`，但这是一个额外的服务器调用。例如：
+    > 
+    > $.ajax({
+    > dataType: "json",
+    > url: "/.auth/me",
+    > success: function (data) {
+    > var token = data[0].access_token;
+    > var tenant = data[0].user_claims
+    > .find(c => c.typ === 'http://schemas.microsoft.com/identity/claims/tenantid')
+    > .val;
+    > }
+    > });
+    > 
+    > 
 7. 对 ~\\Views\\WorkItems\\Edit.cshtml 进行相同的更改。
 8. `AadPicker` 对象在需要添加到项目的脚本中定义。右键单击 ~\\Scripts 文件夹，指向“添加”，然后单击“JavaScript 文件”。键入 `AadPickerLibrary` 作为文件名，然后单击“确定”。
 9. 将[此处](https://raw.githubusercontent.com/cephalin/active-directory-dotnet-webapp-roleclaims/master/WebApp-RoleClaims-DotNet/Scripts/AadPickerLibrary.js)的内容复制到 ~\\Scripts\\AadPickerLibrary.js。
    
-   在脚本中，`AadPicker` 对象调用 [Azure Active Directory 图形 API](https://msdn.microsoft.com/Library/Azure/Ad/Graph/api/api-catalog) 来搜索与输入内容匹配的用户和组。
+    在脚本中，`AadPicker` 对象调用 [Azure Active Directory 图形 API](https://msdn.microsoft.com/Library/Azure/Ad/Graph/api/api-catalog) 来搜索与输入内容匹配的用户和组。
 10. ~\\Scripts\\AadPickerLibrary.js 还使用 [jQuery UI 自动填充小组件](https://jqueryui.com/autocomplete/)。因此，需要将 jQuery UI 添加到项目。右键单击项目，然后单击“管理 NuGet 包”。
 11. 在 NuGet 包管理器中单击“浏览”，在搜索栏中键入 **jquery-ui**，然后单击“jQuery.UI.Combined”。
     

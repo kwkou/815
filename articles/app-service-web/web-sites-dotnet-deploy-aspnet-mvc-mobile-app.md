@@ -64,15 +64,15 @@
 5. 在 Visual Studio 中，打开 *C#\\Mvc5Mobile.sln* 文件。
 6. 在“解决方案资源管理器”中，右键单击该项目并单击“发布”。
    
-   ![][DeployClickPublish]  
+    ![][DeployClickPublish]  
 
 7. 在“发布 Web”中单击“Azure 应用服务”。
    
-   ![][DeployClickWebSites]  
+    ![][DeployClickWebSites]  
 
 8. 如果尚未登录到 Azure，请单击“添加帐户”。
    
-   ![][DeploySignIn]  
+    ![][DeploySignIn]  
 
 9. 按照提示操作以登录到你的 Azure 帐户。
 10. “应用服务”对话框现在会显示用户已登录。单击“新建”。

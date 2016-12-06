@@ -260,7 +260,7 @@ ASP.NET MVC 基架功能可以自动生成用于执行创建、读取、更新�
 
 1. 单击“添加”。
 
-   Visual Studio 将创建一个控制器方法，并为 **Contact** 对象的 CRUD 数据库操作创建视图。
+    Visual Studio 将创建一个控制器方法，并为 **Contact** 对象的 CRUD 数据库操作创建视图。
 
 ## 启用迁移，创建数据库，添加示例数据和数据初始值设定项 ##
 
@@ -429,7 +429,7 @@ ASP.NET MVC 基架功能可以自动生成用于执行创建、读取、更新�
 
 		await UserManager.AddToRoleAsync(user.Id, "canEdit");
 
-   上面的代码会将新注册的用户添加到“canEdit”角色，这为他们提供了对更改（编辑）数据的操作方法的访问权限。以下代码段根据上下文显示了新的代码行。
+    上面的代码会将新注册的用户添加到“canEdit”角色，这为他们提供了对更改（编辑）数据的操作方法的访问权限。以下代码段根据上下文显示了新的代码行。
 
 		  // POST: /Account/ExternalLoginConfirmation
 		  [HttpPost]

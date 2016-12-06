@@ -138,9 +138,9 @@ Visual Studio 开始执行将文件复制到 Azure 服务器的过程。“输�
 
 1. 默认浏览器会自动打开，并指向所部署站点的 URL。
    
-   你创建的应用程序现在在云中运行。
+    你创建的应用程序现在在云中运行。
    
-   ![在 Azure 中运行的待办事项列表主页][rxz2]
+    ![在 Azure 中运行的待办事项列表主页][rxz2]
 
 ## 向应用程序添加数据库
 接下来，你将更新 MVC 应用程序以添加显示和更新联系人以及在数据库中存储数据的功能。应用程序将使用 Entity Framework 创建数据库并读取和更新数据库中的数据。
@@ -191,7 +191,7 @@ ASP.NET MVC 基架功能可以自动生成用于执行创建、读取、更新�
     ![在 Controllers 文件夹中“添加控制器”上下文菜单][addcode001]
 4. 在“添加基架”对话框中，选择“包含视图的 MVC 控制器(使用 Entity Framework)”并单击“添加”。
    
-   ![添加控制器](./media/web-sites-dotnet-rest-service-aspnet-api-sql-database/rrAC.png)
+    ![添加控制器](./media/web-sites-dotnet-rest-service-aspnet-api-sql-database/rrAC.png)
 5. 将控制器名设置为 **HomeController**。选择“联系人”作为模型类。单击“新建数据上下文”按钮并接受默认的“ContactManager.Models.ContactManagerContext”为“新的数据上下文类型”。单击**“添加”**。
 
     将出现一个提示对话框：“名为 HomeController 的文件已存在。是否希望将其替换？”。单击**“是”**。我们正在覆盖使用新项目创建的主控制器。我们将为联系人列表使用新的主控制器。
@@ -455,7 +455,7 @@ ASP.NET MVC 基架功能可以自动生成用于执行创建、读取、更新�
                  bundles.Add(new StyleBundle("~/Content/css").Include(
                    "~/Content/bootstrap.css",
                    "~/Content/site.css"));
-   更改为：
+    更改为：
    
         bundles.Add(new StyleBundle("~/Content/css").Include(
                    "~/Content/bootstrap.css",
