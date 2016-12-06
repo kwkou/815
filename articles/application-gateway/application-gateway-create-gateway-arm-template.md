@@ -59,17 +59,17 @@ Azure 应用程序网关是第 7 层负载均衡器。它在不同服务器之�
 4. 如果你熟悉 Azure Resource Manager 模板，则跳到步骤 7。
 5. 打开保存的文件，并查看 **parameters** 下第 5 行中的内容。Azure Resource Manager 模板参数提供了在部署过程中可以填充的值的占位符。
    
-   | 参数 | 说明 |
-   | --- | --- |
-   | **location** |创建应用程序网关的 Azure 区域 |
-   | **VirtualNetwork1** |新建虚拟网络的名称 |
-   | **addressPrefix** |虚拟网络的地址空间，采用 CIDR 格式 |
-   | **ApplicationGatewaysubnet** |应用程序网关子网的名称 |
-   | **subnetPrefix** |应用程序网关子网的 CIDR 块 |
-   | **skuname** |SKU 实例大小 |
-   | **capacity** |实例数 | 
-   | **backendaddress1** |第一个 Web 服务器的 IP 地址 |
-   | **backendaddress2** |第二个 Web 服务器的 IP 地址 |
+    | 参数 | 说明 |
+    | --- | --- |
+    | **location** |创建应用程序网关的 Azure 区域 |
+    | **VirtualNetwork1** |新建虚拟网络的名称 |
+    | **addressPrefix** |虚拟网络的地址空间，采用 CIDR 格式 |
+    | **ApplicationGatewaysubnet** |应用程序网关子网的名称 |
+    | **subnetPrefix** |应用程序网关子网的 CIDR 块 |
+    | **skuname** |SKU 实例大小 |
+    | **capacity** |实例数 | 
+    | **backendaddress1** |第一个 Web 服务器的 IP 地址 |
+    | **backendaddress2** |第二个 Web 服务器的 IP 地址 |
 
 > [AZURE.IMPORTANT]
 >在 GitHub 中维护的 Azure Resource Manager 模板可能随着时间的推移发生变化。请确保在使用该模板之前对其进行检查。
@@ -78,9 +78,9 @@ Azure 应用程序网关是第 7 层负载均衡器。它在不同服务器之�
 
 1. 查看 **resources** 下的内容，并注意以下项：
    
-   * **type**。模板创建的资源的类型。在本例中，该类型为 **Microsoft.Network/applicationGateways**，表示应用程序网关。
-   * **name**。资源的名称。请注意 **[parameters('applicationGatewayName')]** 的使用，这意味着在部署过程中将通过用户输入或参数文件输入的方式提供该名称。
-   * **properties**。资源的属性列表。此模板在应用程序网关创建期间，使用虚拟网络与公共 IP 地址。
+    * **type**。模板创建的资源的类型。在本例中，该类型为 **Microsoft.Network/applicationGateways**，表示应用程序网关。
+    * **name**。资源的名称。请注意 **[parameters('applicationGatewayName')]** 的使用，这意味着在部署过程中将通过用户输入或参数文件输入的方式提供该名称。
+    * **properties**。资源的属性列表。此模板在应用程序网关创建期间，使用虚拟网络与公共 IP 地址。
 2. 导航回到 [https://github.com/Azure/azure-quickstart-templates/blob/master/101-application-gateway-create/](https://github.com/Azure/azure-quickstart-templates/blob/master/101-application-gateway-create)。
 3. 单击 **azuredeploy-paremeters.json**，然后单击 **RAW**。
 4. 将该文件保存到你计算机上的本地文件夹。

@@ -165,29 +165,29 @@
     下一步是“设置”选项卡。可以在此处更改调试版本的配置，以部署用于[远程调试](/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/#remotedebug)的调试版本。该选项卡还提供了多个“文件发布选项”。[](https://msdn.microsoft.com/zh-cn/library/dd465337.aspx#Anchor_2)
 3. 在“设置”选项卡中，单击“下一步”。
    
-   ![“发布 Web”向导的“设置”选项卡](./media/web-sites-dotnet-get-started/GS13SettingsTab.png)  
+    ![“发布 Web”向导的“设置”选项卡](./media/web-sites-dotnet-get-started/GS13SettingsTab.png)  
 
    
-   然后是“预览”选项卡。可以在此处查看要从项目复制到 API 应用的文件。如果要将项目部署到前面已部署到的 API 应用，则只会复制已更改的文件。如果想要查看要复制的项列表，请单击“开始预览”按钮。
+    然后是“预览”选项卡。可以在此处查看要从项目复制到 API 应用的文件。如果要将项目部署到前面已部署到的 API 应用，则只会复制已更改的文件。如果想要查看要复制的项列表，请单击“开始预览”按钮。
 4. 在“预览”选项卡中，单击“发布”。
    
-   ![“发布 Web”向导的“预览”选项卡](./media/web-sites-dotnet-get-started/GS13previewoutput.png)
+    ![“发布 Web”向导的“预览”选项卡](./media/web-sites-dotnet-get-started/GS13previewoutput.png)
    
-   单击“发布”后，Visual Studio 开始执行将文件复制到 Azure 服务器的过程。这可能需要一到两分钟。
+    单击“发布”后，Visual Studio 开始执行将文件复制到 Azure 服务器的过程。这可能需要一到两分钟。
    
-   “输出”和“Azure 应用服务活动”窗口将显示已执行的部署操作并报告已成功完成部署。
+    “输出”和“Azure 应用服务活动”窗口将显示已执行的部署操作并报告已成功完成部署。
    
-   ![报告部署成功的 Visual Studio 输出窗口](./media/web-sites-dotnet-get-started/PublishOutput.png)
+    ![报告部署成功的 Visual Studio 输出窗口](./media/web-sites-dotnet-get-started/PublishOutput.png)
    
-   成功完成部署后，默认浏览器将自动打开指向已部署 Web 应用的 URL。你创建的应用程序现在运行于云中。浏览器地址栏中的 URL 显示正在从 Internet 加载该 Web 应用。
+    成功完成部署后，默认浏览器将自动打开指向已部署 Web 应用的 URL。你创建的应用程序现在运行于云中。浏览器地址栏中的 URL 显示正在从 Internet 加载该 Web 应用。
    
-   ![Web 应用在 Azure 中运行](./media/web-sites-dotnet-get-started/GS13deployedsite.png)
+    ![Web 应用在 Azure 中运行](./media/web-sites-dotnet-get-started/GS13deployedsite.png)
    
-   > [AZURE.TIP]
-   > 可以启用“Web 单键发布”工具栏以快速完成部署。单击“视图”>“工具栏”，然后选择“Web 单键发布”。可以通过工具栏选择一个配置文件，然后单击相关按钮进行发布，或者单击相关按钮打开“发布 Web”向导。
-   > ![Web 单键发布工具栏](./media/web-sites-dotnet-get-started/weboneclickpublish.png)
-   > 
-   > 
+    > [AZURE.TIP]
+    > 可以启用“Web 单键发布”工具栏以快速完成部署。单击“视图”>“工具栏”，然后选择“Web 单键发布”。可以通过工具栏选择一个配置文件，然后单击相关按钮进行发布，或者单击相关按钮打开“发布 Web”向导。
+    > ![Web 单键发布工具栏](./media/web-sites-dotnet-get-started/weboneclickpublish.png)
+    > 
+    > 
 
 ## <a name="troubleshooting"></a>故障排除
 如果在学习本教程的过程中遇到问题，请确保你使用的是最新版本的用于 .NET 的 Azure SDK。检查版本的最简单方法是[下载用于 Visual Studio 2015 的 Azure SDK](http://go.microsoft.com/fwlink/?linkid=518003)。如果你已安装最新版本，Web 平台安装程序会指出不需要进行安装。

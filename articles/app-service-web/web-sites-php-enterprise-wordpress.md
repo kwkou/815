@@ -133,20 +133,20 @@ Azure 应用服务为大规模的关键任务 [WordPress][wordpress] 网站提�
 2. 使用[备份您的数据库][wordpressdbbackup]中的信息，备份您现有的数据库。
 3. 创建数据库并恢复备份。
 
-   1.  在“Azure 上的 MySQL 数据库”中创建一个数据库，或者在 [Windows][mysqlwindows] 或 [Linux][mysqllinux] VM 上设置一个 MySQL 数据库。
-   2. 使用 MySQL 客户端，如 [MySQL Workbench][workbench]，连接到新的数据库，然后导入您的 WordPress 数据库。
-   3. 更新数据库，将域条目更改为新的 Azure App Service 域。例如，mywordpress.chinacloudsites.cn。使用[搜索和替换为 WordPress 数据库脚本][searchandreplace]，安全地更改所有实例。
+    1.  在“Azure 上的 MySQL 数据库”中创建一个数据库，或者在 [Windows][mysqlwindows] 或 [Linux][mysqllinux] VM 上设置一个 MySQL 数据库。
+    2. 使用 MySQL 客户端，如 [MySQL Workbench][workbench]，连接到新的数据库，然后导入您的 WordPress 数据库。
+    3. 更新数据库，将域条目更改为新的 Azure App Service 域。例如，mywordpress.chinacloudsites.cn。使用[搜索和替换为 WordPress 数据库脚本][searchandreplace]，安全地更改所有实例。
 4. 在 Azure 门户预览中创建 Web 应用并发布 WordPress 备份。
 
-   1. 在 [Azure 门户预览][mgmtportal]中创建带数据库的 Web 应用，方法是： 单击“新建”->“Web + 移动”->“Web 应用”->“创建”。配置所有所需的设置来创建空 Web 应用。
-   2. 在 WordPress 备份中，找到 **wp-config.php** 文件，并在编辑器中打开它。将以下项替换为新的 MySQL 数据库的信息。
+    1. 在 [Azure 门户预览][mgmtportal]中创建带数据库的 Web 应用，方法是： 单击“新建”->“Web + 移动”->“Web 应用”->“创建”。配置所有所需的设置来创建空 Web 应用。
+    2. 在 WordPress 备份中，找到 **wp-config.php** 文件，并在编辑器中打开它。将以下项替换为新的 MySQL 数据库的信息。
 
       * **DB\_NAME** - 数据库的用户名称
       * **DB\_USER** - 用来访问数据库的用户名称
       * **DB\_PASSWORD** - 用户密码
 
         更改这些条目之后，保存并关闭 **wp-config.php** 文件。
-   3. 使用[在 Azure App Service 中部署 Web 应用][deploy]信息来启用您想要使用的部署方法，然后将 WordPress 备份部署到 Azure App Service 中的 Web 应用。
+    3. 使用[在 Azure App Service 中部署 Web 应用][deploy]信息来启用您想要使用的部署方法，然后将 WordPress 备份部署到 Azure App Service 中的 Web 应用。
 5. 部署 WordPress 网站后，您应该能够使用网站的 *. azurewebsite.net URL（作为 App Service Web 应用）访问新的站点。
 
 ### 配置您的网站

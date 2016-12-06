@@ -74,10 +74,10 @@ Azure 存储帐户可提供在云中存储队列和 Blob 数据的资源。并�
 
 1. 在 Visual Studio 中，打开“服务器资源管理器”窗口。
 2. 右键单击“Azure”节点，然后单击“连接到 Azure”。
-   ![连接到 Azure](./media/websites-dotnet-webjobs-sdk-get-started/connaz.png)
+    ![连接到 Azure](./media/websites-dotnet-webjobs-sdk-get-started/connaz.png)
 3. 使用 Azure 凭据登录。
 4. 在 Azure 节点下右键单击“存储”，然后单击“创建存储帐户”。
-   ![创建存储帐户](./media/websites-dotnet-webjobs-sdk-get-started/createstor.png)
+    ![创建存储帐户](./media/websites-dotnet-webjobs-sdk-get-started/createstor.png)
 5. 在“创建存储帐户”对话框中，输入存储帐户的名称。
 
     该名称必须唯一（其他 Azure 存储帐户不能使用该名称）。如果输入的名称已被使用，可以进行更改。
@@ -273,16 +273,16 @@ Azure 存储帐户可提供在云中存储队列和 Blob 数据的资源。并�
 5. 在“服务器资源管理器”中右键单击该 Web 应用，然后单击“停止”。
 6. Web 应用停止后，再次右键单击该 Web 应用，然后单击“启动”。
 
-   发布时 Web 作业会自动启动，但在更改配置时会停止。若要重新启动它，可以重新启动 Web 应用或者在 [Azure 门户预览](/documentation/articles/app-service-web-app-azure-portal/)中重新启动 Web 作业。通常建议在更改配置后重新启动 Web 应用。
+    发布时 Web 作业会自动启动，但在更改配置时会停止。若要重新启动它，可以重新启动 Web 应用或者在 [Azure 门户预览](/documentation/articles/app-service-web-app-azure-portal/)中重新启动 Web 作业。通常建议在更改配置后重新启动 Web 应用。
 7. 刷新地址栏中包含 Web 应用 URL 的浏览器窗口。
 
     此时将显示主页。
 8. 就像在本地运行应用程序时一样创建一个广告。
 
-   “索引”页首先不会显示缩略图。
+    “索引”页首先不会显示缩略图。
 9. 几秒钟后刷新页面，随后会显示缩略图。
 
-   如果未显示缩略图，可能需要等待大约一分钟，让 Web 作业重新启动。如果在刷新页面后仍未显示缩略图，可能是 Web 作业没有自动启动。在此情况下，转到[经典管理门户](https://manage.windowsazure.cn)页中 Web 应用的“Web 作业”选项卡，然后单击“启动”。
+    如果未显示缩略图，可能需要等待大约一分钟，让 Web 作业重新启动。如果在刷新页面后仍未显示缩略图，可能是 Web 作业没有自动启动。在此情况下，转到[经典管理门户](https://manage.windowsazure.cn)页中 Web 应用的“Web 作业”选项卡，然后单击“启动”。
 
 ### <a name="view-the-webjobs-sdk-dashboard"></a>查看 WebJobs SDK 仪表板
 1. 在[经典管理门户](https://manage.windowsazure.cn)中选择 Web 应用。
@@ -347,13 +347,13 @@ Azure 存储帐户可提供在云中存储队列和 Blob 数据的资源。并�
 2. 在“添加 Azure Web 作业”对话框中，输入 ContosoAdsWebJob 作为“项目名称”和“Web 作业名称”。将“Web 作业运行模式”保留设置为“连续运行”。
 3. 单击“确定”。
 
-   Visual Studio 创建控制台应用程序，每当部署 Web 项目时，该应用程序就会部署为 Web 作业。为此，它将在创建项目后执行以下任务：
+    Visual Studio 创建控制台应用程序，每当部署 Web 项目时，该应用程序就会部署为 Web 作业。为此，它将在创建项目后执行以下任务：
 
-   * 在 Web 作业项目的 Properties 文件夹中添加 *webjob-publish-settings.json* 文件。
-   * 在 Web 项目的 Properties 文件夹中添加 *webjobs-list.json* 文件。
-   * 在 Web 作业项目中安装 Microsoft.Web.WebJobs.Publish NuGet 包。
+    * 在 Web 作业项目的 Properties 文件夹中添加 *webjob-publish-settings.json* 文件。
+    * 在 Web 项目的 Properties 文件夹中添加 *webjobs-list.json* 文件。
+    * 在 Web 作业项目中安装 Microsoft.Web.WebJobs.Publish NuGet 包。
 
-   有关这些更改的详细信息，请参阅[如何使用 Visual Studio 部署 Web 作业](/documentation/articles/websites-dotnet-deploy-webjobs/)。
+    有关这些更改的详细信息，请参阅[如何使用 Visual Studio 部署 Web 作业](/documentation/articles/websites-dotnet-deploy-webjobs/)。
 
 ### 添加 NuGet 包
 Web 作业的 new-project 模板自动安装 WebJobs SDK NuGet 包 [Microsoft.Azure.WebJobs](http://www.nuget.org/packages/Microsoft.Azure.WebJobs) 及其依赖项。
@@ -385,22 +385,22 @@ Web 项目和 Web 作业项目都处理 SQL 数据库，因此两者都需要引
 
 1. 在 ContosoAdsCommon 项目中，删除 *Class1.cs* 文件，并在其原位置添加已下载项目中的以下文件。
 
-   * *Ad.cs*
-   * *ContosoAdscontext.cs*
-   * *BlobInformation.cs*<br/><br/>
+    * *Ad.cs*
+    * *ContosoAdscontext.cs*
+    * *BlobInformation.cs*<br/><br/>
 2. 在 ContosoAdsWeb 项目中，从下载的项目添加以下文件。
 
-   * *Web.config*
-   * *Global.asax.cs*
-   * 在 *Controllers* 文件夹中：*AdController.cs*
-   * 在 *Views/Shared* 文件夹中：*\_Layout.cshtml* 文件
-   * 在 *Views/Home* 文件夹中：*Index.cshtml*
-   * 在 *Views/Ad* 文件夹（首先创建该文件夹）中：五个 *.cshtml* 文件<br/><br/>
+    * *Web.config*
+    * *Global.asax.cs*
+    * 在 *Controllers* 文件夹中：*AdController.cs*
+    * 在 *Views/Shared* 文件夹中：*\_Layout.cshtml* 文件
+    * 在 *Views/Home* 文件夹中：*Index.cshtml*
+    * 在 *Views/Ad* 文件夹（首先创建该文件夹）中：五个 *.cshtml* 文件<br/><br/>
 3. 在 ContosoAdsWebJob 项目中，添加已下载项目中的以下文件。
 
-   * *App.config*（将文件类型筛选器更改为“所有文件”）
-   * *Program.cs*
-   * *Functions.cs*
+    * *App.config*（将文件类型筛选器更改为“所有文件”）
+    * *Program.cs*
+    * *Functions.cs*
 
 现在，可以根据本教程前面所述生成、运行和部署应用程序。但是，在执行此操作前，在部署到的第一个 Web 应用中停止正在运行的 Web 作业。否则，Web 作业将处理本地创建的，或新 Web 应用运行的应用程序创建的队列消息，因为所有消息使用相同的存储帐户。
 
