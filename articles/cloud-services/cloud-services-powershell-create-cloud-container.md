@@ -28,20 +28,18 @@
 
 4. 使用 **New-AzureService** cmdlet 创建一个空的 Azure 云服务容器。
 
-    ```
-    New-AzureService [-ServiceName] <String> [-AffinityGroup] <String> [[-Label] <String>] [[-Description] <String>] [[-ReverseDnsFqdn] <String>] [<CommonParameters>]
-    New-AzureService [-ServiceName] <String> [-Location] <String> [[-Label] <String>] [[-Description] <String>] [[-ReverseDnsFqdn] <String>] [<CommonParameters>]
-```
+        New-AzureService [-ServiceName] <String> [-AffinityGroup] <String> [[-Label] <String>] [[-Description] <String>] [[-ReverseDnsFqdn] <String>] [<CommonParameters>]
+        New-AzureService [-ServiceName] <String> [-Location] <String> [[-Label] <String>] [[-Description] <String>] [[-ReverseDnsFqdn] <String>] [<CommonParameters>]
 
 5. 请按照本示例操作以调用 cmdlet：
-```
-New-AzureService -ServiceName "mytestcloudservice" -Location "China North" -Label "mytestcloudservice"
-```
 
-有关创建 Azure 云服务的详细信息，请运行：
-```
-Get-help New-AzureService
-```
+        New-AzureService -ServiceName "mytestcloudservice" -Location "China North" -Label "mytestcloudservice"
+
+
+    有关创建 Azure 云服务的详细信息，请运行：
+
+        Get-help New-AzureService
+
 
 ### 后续步骤
 

@@ -31,29 +31,27 @@ ms.author="adegeo"/>
 
 如果需要为特定任务定义环境变量，则可以在 [Task] 元素内使用 [Environment] 元素。
 
-```xml
-<ServiceDefinition name="MyService" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceDefinition">
-    <WorkerRole name="WorkerRole1">
-        ...
-        <Startup>
-            <Task commandLine="Startup.cmd" executionContext="limited" taskType="simple">
-                <Environment>
-                    <Variable name="MyEnvironmentVariable" value="MyVariableValue" />
-                </Environment>
-            </Task>
-        </Startup>
-    </WorkerRole>
-</ServiceDefinition>
-```
+
+    <ServiceDefinition name="MyService" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceDefinition">
+        <WorkerRole name="WorkerRole1">
+            ...
+            <Startup>
+                <Task commandLine="Startup.cmd" executionContext="limited" taskType="simple">
+                    <Environment>
+                        <Variable name="MyEnvironmentVariable" value="MyVariableValue" />
+                    </Environment>
+                </Task>
+            </Startup>
+        </WorkerRole>
+    </ServiceDefinition>
+
 
 此外，变量还可以使用[有效的 Azure XPath 值](/documentation/articles/cloud-services-role-config-xpath/)引用有关部署的内容。请不要使用 `value` 属性，而是定义 [RoleInstanceValue] 子元素。
 
-```xml
-<Variable name="PathToStartupStorage">
-    <RoleInstanceValue xpath="/RoleEnvironment/CurrentInstance/LocalResources/LocalResource[@name='StartupLocalStorage']/@path" />
-</Variable>
-```
-
+    <Variable name="PathToStartupStorage">
+        <RoleInstanceValue xpath="/RoleEnvironment/CurrentInstance/LocalResources/LocalResource[@name='StartupLocalStorage']/@path" />
+    </Variable>
+    
 
 ## 使用 AppCmd.exe 配置 IIS 启动
 
@@ -75,16 +73,16 @@ ms.author="adegeo"/>
 
 此处显示了 [ServiceDefinition.csdef] 文件的相关节，其中包括将 [executionContext](https://msdn.microsoft.com/zh-cn/library/azure/gg557552.aspx#Task) 属性设为 `elevated` 以为 *AppCmd.exe* 提供足够的权限来更改 *Web.config* 文件中的设置：
 
-```xml
-<ServiceDefinition name="MyService" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceDefinition">
-    <WorkerRole name="WorkerRole1">
-        ...
-        <Startup>
-            <Task commandLine="Startup.cmd" executionContext="elevated" taskType="simple" />
-        </Startup>
-    </WorkerRole>
-</ServiceDefinition>
-```
+
+    <ServiceDefinition name="MyService" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceDefinition">
+        <WorkerRole name="WorkerRole1">
+            ...
+            <Startup>
+                <Task commandLine="Startup.cmd" executionContext="elevated" taskType="simple" />
+            </Startup>
+        </WorkerRole>
+    </ServiceDefinition>
+
 
 *Startup.cmd* 批处理文件使用 *AppCmd.exe* 将 JSON 的压缩节和压缩条目添加到 *Web.config* 文件。使用 VERIFY.EXE 命令行程序将预期的 **errorlevel** 183 设为零。意外的 errorlevel 将记录到 StartupErrorLog.txt 中。
 
@@ -133,16 +131,16 @@ Azure 将为你角色中启动的进程创建防火墙规则。例如，当你�
 
 创建防火墙规则的启动任务的 [executionContext][Task] 必须为 **elevated**。将以下启动任务添加到 [ServiceDefinition.csdef] 文件。
 
-```xml
-<ServiceDefinition name="MyService" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceDefinition">
-    <WorkerRole name="WorkerRole1">
-        ...
-        <Startup>
-            <Task commandLine="AddFirewallRules.cmd" executionContext="elevated" taskType="simple" />
-        </Startup>
-    </WorkerRole>
-</ServiceDefinition>
-```
+
+    <ServiceDefinition name="MyService" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceDefinition">
+        <WorkerRole name="WorkerRole1">
+            ...
+            <Startup>
+                <Task commandLine="AddFirewallRules.cmd" executionContext="elevated" taskType="simple" />
+            </Startup>
+        </WorkerRole>
+    </ServiceDefinition>
+
 
 若要添加防火墙规则，必须在启动批处理文件中使用相应的 `netsh advfirewall firewall` 命令。在此示例中，启动任务对 TCP 端口 80 具有安全性和加密要求。
 
@@ -163,16 +161,16 @@ Azure 将为你角色中启动的进程创建防火墙规则。例如，当你�
 
 将以下启动任务添加到 [ServiceDefinition.csdef] 文件。
 
-```xml
-<ServiceDefinition name="MyService" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceDefinition">
-    <WebRole name="WebRole1">
-        ...
-        <Startup>
-            <Task commandLine="startup.cmd" executionContext="elevated" />
-        </Startup>
-    </WebRole>
-</ServiceDefinition>
-```
+
+    <ServiceDefinition name="MyService" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceDefinition">
+        <WebRole name="WebRole1">
+            ...
+            <Startup>
+                <Task commandLine="startup.cmd" executionContext="elevated" />
+            </Startup>
+        </WebRole>
+    </ServiceDefinition>
+
 
 将此命令添加到 **startup.cmd** 文件：
 
@@ -188,33 +186,33 @@ Azure 将为你角色中启动的进程创建防火墙规则。例如，当你�
 
 此示例配置**允许**所有 IP（两个已定义的 IP 除外）访问服务器
 
-```xml
-<system.webServer>
-    <security>
-    <!--Unlisted IP addresses are granted access-->
-    <ipSecurity>
-        <!--The following IP addresses are denied access-->
-        <add allowed="false" ipAddress="192.168.100.1" subnetMask="255.255.0.0" />
-        <add allowed="false" ipAddress="192.168.100.2" subnetMask="255.255.0.0" />
-    </ipSecurity>
-    </security>
-</system.webServer>
-```
+
+    <system.webServer>
+        <security>
+        <!--Unlisted IP addresses are granted access-->
+        <ipSecurity>
+            <!--The following IP addresses are denied access-->
+            <add allowed="false" ipAddress="192.168.100.1" subnetMask="255.255.0.0" />
+            <add allowed="false" ipAddress="192.168.100.2" subnetMask="255.255.0.0" />
+        </ipSecurity>
+        </security>
+    </system.webServer>
+
 
 此示例配置**拒绝**所有 IP（两个已定义的 IP 除外）访问服务器。
 
-```xml
-<system.webServer>
-    <security>
-    <!--Unlisted IP addresses are denied access-->
-    <ipSecurity allowUnlisted="false">
-        <!--The following IP addresses are granted access-->
-        <add allowed="true" ipAddress="192.168.100.1" subnetMask="255.255.0.0" />
-        <add allowed="true" ipAddress="192.168.100.2" subnetMask="255.255.0.0" />
-    </ipSecurity>
-    </security>
-</system.webServer>
-```
+
+    <system.webServer>
+        <security>
+        <!--Unlisted IP addresses are denied access-->
+        <ipSecurity allowUnlisted="false">
+            <!--The following IP addresses are granted access-->
+            <add allowed="true" ipAddress="192.168.100.1" subnetMask="255.255.0.0" />
+            <add allowed="true" ipAddress="192.168.100.2" subnetMask="255.255.0.0" />
+        </ipSecurity>
+        </security>
+    </system.webServer>
+
 
 ## <a name="create-a-powershell-startup-task"></a> 创建 PowerShell 启动任务
 
@@ -254,27 +252,27 @@ Windows PowerShell 脚本不能直接从 [ServiceDefinition.csdef] 文件调用�
 
 在此处显示 **ServiceDefinition.csdef** 文件的相关节：
 
-```xml
-<ServiceDefinition name="MyService" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceDefinition">
-  <WorkerRole name="WorkerRole1">
-    ...
-        
-    <LocalResources>
-      <LocalStorage name="StartupLocalStorage" sizeInMB="5"/>
-    </LocalResources>
-        
-    <Startup>
-      <Task commandLine="Startup.cmd" executionContext="limited" taskType="simple">
-        <Environment>
-          <Variable name="PathToStartupStorage">
-            <RoleInstanceValue xpath="/RoleEnvironment/CurrentInstance/LocalResources/LocalResource[@name='StartupLocalStorage']/@path" />
-          </Variable>
-        </Environment>
-      </Task>
-    </Startup>
-  </WorkerRole>
-</ServiceDefinition>
-```
+
+    <ServiceDefinition name="MyService" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceDefinition">
+      <WorkerRole name="WorkerRole1">
+        ...
+            
+        <LocalResources>
+          <LocalStorage name="StartupLocalStorage" sizeInMB="5"/>
+        </LocalResources>
+            
+        <Startup>
+          <Task commandLine="Startup.cmd" executionContext="limited" taskType="simple">
+            <Environment>
+              <Variable name="PathToStartupStorage">
+                <RoleInstanceValue xpath="/RoleEnvironment/CurrentInstance/LocalResources/LocalResource[@name='StartupLocalStorage']/@path" />
+              </Variable>
+            </Environment>
+          </Task>
+        </Startup>
+      </WorkerRole>
+    </ServiceDefinition>
+
 
 例如，这个 **Startup.cmd** 批处理文件使用 **PathToStartupStorage** 环境变量在本地存储位置上创建文件 **MyTest.txt**。
 
@@ -291,11 +289,11 @@ Windows PowerShell 脚本不能直接从 [ServiceDefinition.csdef] 文件调用�
 
 可以从 Azure SDK 中使用 [GetLocalResource](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.serviceruntime.roleenvironment.getlocalresource.aspx) 方法访问本地存储文件夹。
 
-```csharp
-string localStoragePath = Microsoft.WindowsAzure.ServiceRuntime.RoleEnvironment.GetLocalResource("StartupLocalStorage").RootPath;
+    
+    string localStoragePath = Microsoft.WindowsAzure.ServiceRuntime.RoleEnvironment.GetLocalResource("StartupLocalStorage").RootPath;
+    
+    string fileContent = System.IO.File.ReadAllText(System.IO.Path.Combine(localStoragePath, "MyTestFile.txt"));
 
-string fileContent = System.IO.File.ReadAllText(System.IO.Path.Combine(localStoragePath, "MyTestFile.txt"));
-```
 
 
 ## 在模拟器或云中运行
@@ -307,25 +305,25 @@ string fileContent = System.IO.File.ReadAllText(System.IO.Path.Combine(localStor
 若要创建环境变量，请添加 [Variable]/[RoleInstanceValue] 元素并创建 `/RoleEnvironment/Deployment/@emulated` 的 XPath 值。在计算模拟器中运行时，**%ComputeEmulatorRunning%** 环境变量的值为 `true`，而在云中运行时，该值为 `false`。
 
 
-```xml
-<ServiceDefinition name="MyService" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceDefinition">
-  <WorkerRole name="WorkerRole1">
 
-    ...
+    <ServiceDefinition name="MyService" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceDefinition">
+      <WorkerRole name="WorkerRole1">
+    
+        ...
+    
+        <Startup>
+          <Task commandLine="Startup.cmd" executionContext="limited" taskType="simple">
+            <Environment>
+              <Variable name="ComputeEmulatorRunning">
+                <RoleInstanceValue xpath="/RoleEnvironment/Deployment/@emulated" />
+              </Variable>
+            </Environment>
+          </Task>
+        </Startup>
+    
+      </WorkerRole>
+    </ServiceDefinition>
 
-    <Startup>
-      <Task commandLine="Startup.cmd" executionContext="limited" taskType="simple">
-        <Environment>
-          <Variable name="ComputeEmulatorRunning">
-            <RoleInstanceValue xpath="/RoleEnvironment/Deployment/@emulated" />
-          </Variable>
-        </Environment>
-      </Task>
-    </Startup>
-
-  </WorkerRole>
-</ServiceDefinition>
-```
 
 该任务现在可以使用 **%ComputeEmulatorRunning%** 环境变量根据角色是在云中还是在模拟器中运行来执行不同的操作。下面是用于检查该环境变量的 .cmd shell 脚本。
 
@@ -392,74 +390,74 @@ Visual Studio 未提供用于单步调试批处理文件的调试器，因此最
 
 ServiceDefinition.cmd：
 
-```xml
-<Startup>
-    <Task commandLine="logwrap.cmd startup2.cmd" executionContext="limited" taskType="simple" />
-</Startup>
-```
+
+    <Startup>
+        <Task commandLine="logwrap.cmd startup2.cmd" executionContext="limited" taskType="simple" />
+    </Startup>
+
 
 **logwrap.cmd：**
 
-```cmd
-@ECHO OFF
 
-REM   logwrap.cmd calls passed in batch file, redirecting all output to the StartupLog.txt log file.
+    @ECHO OFF
+    
+    REM   logwrap.cmd calls passed in batch file, redirecting all output to the StartupLog.txt log file.
+    
+    ECHO [%date% %time%] == START logwrap.cmd ============================================== >> "%TEMP%\StartupLog.txt" 2>&1
+    ECHO [%date% %time%] Running %1 >> "%TEMP%\StartupLog.txt" 2>&1
+    
+    REM   Call the child command batch file, redirecting all output to the StartupLog.txt log file.
+    START /B /WAIT %1 >> "%TEMP%\StartupLog.txt" 2>&1
+    
+    REM   Log the completion of child command.
+    ECHO [%date% %time%] Done >> "%TEMP%\StartupLog.txt" 2>&1
+    
+    IF %ERRORLEVEL% EQU 0 (
+    
+       REM   No errors occurred. Exit logwrap.cmd normally.
+       ECHO [%date% %time%] == END logwrap.cmd ================================================ >> "%TEMP%\StartupLog.txt" 2>&1
+       ECHO.  >> "%TEMP%\StartupLog.txt" 2>&1
+       EXIT /B 0
+       
+    ) ELSE (
+    
+       REM   Log the error.
+       ECHO [%date% %time%] An error occurred. The ERRORLEVEL = %ERRORLEVEL%.  >> "%TEMP%\StartupLog.txt" 2>&1
+       ECHO [%date% %time%] == END logwrap.cmd ================================================ >> "%TEMP%\StartupLog.txt" 2>&1
+       ECHO.  >> "%TEMP%\StartupLog.txt" 2>&1
+       EXIT /B %ERRORLEVEL%
+       
+    )
 
-ECHO [%date% %time%] == START logwrap.cmd ============================================== >> "%TEMP%\StartupLog.txt" 2>&1
-ECHO [%date% %time%] Running %1 >> "%TEMP%\StartupLog.txt" 2>&1
-
-REM   Call the child command batch file, redirecting all output to the StartupLog.txt log file.
-START /B /WAIT %1 >> "%TEMP%\StartupLog.txt" 2>&1
-
-REM   Log the completion of child command.
-ECHO [%date% %time%] Done >> "%TEMP%\StartupLog.txt" 2>&1
-
-IF %ERRORLEVEL% EQU 0 (
-
-   REM   No errors occurred. Exit logwrap.cmd normally.
-   ECHO [%date% %time%] == END logwrap.cmd ================================================ >> "%TEMP%\StartupLog.txt" 2>&1
-   ECHO.  >> "%TEMP%\StartupLog.txt" 2>&1
-   EXIT /B 0
-   
-) ELSE (
-
-   REM   Log the error.
-   ECHO [%date% %time%] An error occurred. The ERRORLEVEL = %ERRORLEVEL%.  >> "%TEMP%\StartupLog.txt" 2>&1
-   ECHO [%date% %time%] == END logwrap.cmd ================================================ >> "%TEMP%\StartupLog.txt" 2>&1
-   ECHO.  >> "%TEMP%\StartupLog.txt" 2>&1
-   EXIT /B %ERRORLEVEL%
-   
-)
-```
 
 **Startup2.cmd：**
 
-```cmd
-@ECHO OFF
 
-REM   This is the batch file where the startup steps should be performed. Because of the
-REM   way Startup2.cmd was called, all commands and their outputs will be stored in the
-REM   StartupLog.txt file in the directory pointed to by the TEMP environment variable.
+    @ECHO OFF
+    
+    REM   This is the batch file where the startup steps should be performed. Because of the
+    REM   way Startup2.cmd was called, all commands and their outputs will be stored in the
+    REM   StartupLog.txt file in the directory pointed to by the TEMP environment variable.
+    
+    REM   If an error occurs, the following command will pass the ERRORLEVEL back to the
+    REM   calling batch file.
+    
+    ECHO [%date% %time%] Some log information about this task
+    ECHO [%date% %time%] Some more log information about this task
+    
+    EXIT %ERRORLEVEL%
 
-REM   If an error occurs, the following command will pass the ERRORLEVEL back to the
-REM   calling batch file.
-
-ECHO [%date% %time%] Some log information about this task
-ECHO [%date% %time%] Some more log information about this task
-
-EXIT %ERRORLEVEL%
-```
 
 **StartupLog.txt** 文件中的示例输出：
 
-```txt
-[Mon 10/17/2016 20:24:46.75] == START logwrap.cmd ============================================== 
-[Mon 10/17/2016 20:24:46.75] Running command1.cmd 
-[Mon 10/17/2016 20:24:46.77] Some log information about this task
-[Mon 10/17/2016 20:24:46.77] Some more log information about this task
-[Mon 10/17/2016 20:24:46.77] Done 
-[Mon 10/17/2016 20:24:46.77] == END logwrap.cmd ================================================ 
-```
+
+    [Mon 10/17/2016 20:24:46.75] == START logwrap.cmd ============================================== 
+    [Mon 10/17/2016 20:24:46.75] Running command1.cmd 
+    [Mon 10/17/2016 20:24:46.77] Some log information about this task
+    [Mon 10/17/2016 20:24:46.77] Some more log information about this task
+    [Mon 10/17/2016 20:24:46.77] Done 
+    [Mon 10/17/2016 20:24:46.77] == END logwrap.cmd ================================================ 
+
 
 >[AZURE.TIP] **StartupLog.txt** 文件位于 *C:\\Resources\\temp\\{role identifier}\\RoleTemp* 文件夹中。
 

@@ -68,7 +68,7 @@ Azure 会阻止删除正在使用的证书。需要删除使用该证书的部�
 
 ## “安全”
 ### 禁用 SSL 3.0
-若要禁用 SSL 3.0 并使用 TLS 安全性，请创建此博客文章中介绍的启动任务：https://azure.microsoft.com/zh-CN/blog/how-to-disable-ssl-3-0-in-azure-websites-roles-and-virtual-machines/
+若要禁用 SSL 3.0 并使用 TLS 安全性，请创建此[博客](https://azure.microsoft.com/zh-CN/blog/how-to-disable-ssl-3-0-in-azure-websites-roles-and-virtual-machines/)文章中介绍的启动任务。
 
 ## 扩展云服务
 ### 我不能缩放超过 X 个实例
