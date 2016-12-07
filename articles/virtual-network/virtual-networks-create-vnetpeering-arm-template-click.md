@@ -15,7 +15,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
    ms.date="09/14/2016"
-   wacn.date=""
+   wacn.date="12/07/2016"
    ms.author="narayanannamalai;annahar"/>
 
 # 使用 Resource Manager 模板创建 VNet 对等互连
