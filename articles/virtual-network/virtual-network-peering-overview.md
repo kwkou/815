@@ -13,7 +13,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
    ms.date="10/17/2016"
-   wacn.date=""
+   wacn.date="12/07/2016"
    ms.author="narayan" />
 
 # VNet 对等互连

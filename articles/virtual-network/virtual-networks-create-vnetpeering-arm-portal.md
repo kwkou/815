@@ -1,6 +1,3 @@
-<!-- not suitable for Mooncake -->
-
-
 <properties
    pageTitle="使用 Azure 门户创建 VNet 对等互连 | Azure"
    description="了解如何在 Resource Manager 中使用 Azure 门户创建虚拟网络。"
@@ -18,7 +15,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
    ms.date="09/14/2016"
-   wacn.date=""
+   wacn.date="12/07/2016"
    ms.author="narayanannamalai;annahar"/>
 
 # 使用 Azure 门户创建虚拟网络对等互连
@@ -101,7 +98,7 @@ VNet 对等互连中的每个链接都具有上述这组属性。从门户中，
 
 6. 作为用户 A 登录到门户，导航到 VNET3 边栏选项卡，单击“对等互连”，勾选“我知道我的资源 ID”复选框并使用以下格式键入 VNET5 的资源 ID。
 
-    /subscriptions/<Subscription- ID>/resourceGroups/<ResourceGroupName>/providers/Microsoft.Network/VirtualNetwork/<VNET name>
+        /subscriptions/<Subscription- ID>/resourceGroups/<ResourceGroupName>/providers/Microsoft.Network/VirtualNetwork/<VNET name>
 
     ![资源 ID](./media/virtual-networks-create-vnetpeering-arm-portal/figure12.png)
 
