@@ -123,7 +123,7 @@
 
 角色是资源定义的字符串（例如"开支审批人"、"只读"、"Directory.ReadWrite.All"），可在 [Azure 经典管理门户][AZURE-classic-portal]中通过资源的应用程序清单进行管理，并且存储在资源的 [appRoles 属性][AAD-Graph-Sp-Entity]中。也可通过 Azure 经典管理门户为用户分配"用户"角色，并配置用于访问"应用程序"角色的客户端应用程序权限。
 
-有关 Azure AD 图形 API 公开的应用程序角色的详细介绍，请参阅 [Graph API Permission Scopes][AAD-Graph-Perm-Scopes]（图形 API 权限范围）。有关分步实现示例，请参阅 [Role based access control in cloud applications using Azure AD][Duyshant-Role-Blog]（使用 Azure AD 在云应用程序中执行基于角色的访问控制）。
+有关 Azure AD 图形 API 公开的应用程序角色的详细介绍，请参阅 [Graph API Permission Scopes][AAD-Graph-Perm-Scopes]（图形 API 权限范围）。
 
 ## 范围
 与角色一样，范围提供某种方式让资源服务器控制其受保护资源的访问权限。对于已获得资源所有者委托资源访问权限的客户端应用程序，范围可用于实现[基于范围][OAuth2-Access-Token-Scopes]的访问控制。
@@ -193,7 +193,6 @@ Azure AD 目录的实例称为 Azure AD 租户。所提供的功能包括：
 [AAD-Security-Token-Claims]: ./active-directory-authentication-scenarios/#claims-in-azure-ad-security-tokens
 [AAD-Tokens-Claims]: /documentation/articles/active-directory-token-and-claims/
 [AZURE-classic-portal]: https://manage.windowsazure.cn
-[Duyshant-Role-Blog]: http://www.dushyantgill.com/blog/2014/12/10/roles-based-access-control-in-cloud-applications-using-azure-ad/
 [JWT]: https://tools.ietf.org/html/draft-ietf-oauth-json-web-token-32
 [Microsoft-Graph]: https://graph.microsoft.io
 [OAuth2-Access-Token-Scopes]: https://tools.ietf.org/html/rfc6749#section-3.3

@@ -34,7 +34,7 @@
 * Windows Phone
 * 通用 Windows 平台 
 
-有关通知中心的详细信息，请参阅[后续步骤](#next)部分。
+有关通知中心的详细信息，请参阅[后续步骤](#Next_Steps)部分。
 
 ##什么是通知中心？
 
@@ -180,7 +180,7 @@ Azure 通知中心提供用于向移动设备发送推送通知的易于使用�
 -   请访问 GitHub 上的 [Azure SDK for Node] 存储库以获取更多示例和实施详细信息。
 
   [Azure SDK for Node]: https://github.com/WindowsAzure/azure-sdk-for-node
-  [Next Steps]: #nextsteps
+  [Next Steps]: #Next_Steps
   [What are Service Bus Topics and Subscriptions?]: #what-are-service-bus-topics
   [Create a Service Namespace]: #create-a-service-namespace
   [Obtain the Default Management Credentials for the Namespace]: #obtain-default-credentials
