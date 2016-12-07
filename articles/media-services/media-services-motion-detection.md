@@ -221,16 +221,16 @@ Fragments|元数据划分成称为“片段”的不同段。每个片段包含�
 		        private static readonly string _mediaServicesAccountKey =
 		            ConfigurationManager.AppSettings["MediaServicesAccountKey"];
 			    
-			private static readonly String _defaultScope = "urn:WindowsAzureMediaServices";
+				private static readonly String _defaultScope = "urn:WindowsAzureMediaServices";
 
-			// Azure China uses a different API server and a different ACS Base Address from the Global.
-			private static readonly String _chinaApiServerUrl = "https://wamsshaclus001rest-hs.chinacloudapp.cn/API/";
-			private static readonly String _chinaAcsBaseAddr
+				// Azure China uses a different API server and a different ACS Base Address from the Global.
+				private static readonly String _chinaApiServerUrl = "https://wamsshaclus001rest-hs.chinacloudapp.cn/API/";
+				private static readonly String _chinaAcsBaseAddressUrl = "https://wamsprodglobal001acs.accesscontrol.chinacloudapi.cn";
 		
 		        // Field for service context.
 		        private static CloudMediaContext _context = null;
 		        private static MediaServicesCredentials _cachedCredentials = null;
-			private static Uri _apiServer = null;
+				private static Uri _apiServer = null;
 			
 		        static void Main(string[] args)
 		        {
