@@ -1,6 +1,3 @@
-<!-- not suitable for Mooncake -->
-
-
 <properties
    pageTitle="使用 Powershell cmdlet 创建 VNet 对等互连 | Azure"
    description="了解如何在 Resource Manager 中使用 Azure 门户创建虚拟网络。"
@@ -18,7 +15,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
    ms.date="09/14/2016"
-   wacn.date=""
+   wacn.date="12/07/2016"
    ms.author="narayanannamalai; annahar"/>
 
 # 使用 Powershell cmdlet 创建 VNet 对等互连
@@ -33,7 +30,7 @@
 
 1. 如果你从未使用过 Azure PowerShell，请参阅 [How to Install and Configure Azure PowerShell](/documentation/articles/powershell-install-configure/)（如何安装和配置 Azure PowerShell），并始终按照说明进行操作，以登录到 Azure 并选择你的订阅。
 
-        > [AZURE.NOTE] PowerShell cmdlet for managing VNet peering is shipped with [Azure PowerShell 1.6.](http://www.powershellgallery.com/packages/Azure/1.6.0)
+    > [AZURE.NOTE] PowerShell cmdlet for managing VNet peering is shipped with [Azure PowerShell 1.6.](http://www.powershellgallery.com/packages/Azure/1.6.0)
 
 2. 读取虚拟网络对象：
 
