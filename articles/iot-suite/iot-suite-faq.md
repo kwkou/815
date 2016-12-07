@@ -24,7 +24,7 @@
 
 ### 在 Azure 门户预览中删除资源组与在 azureiotsuite.cn 中删除预配置解决方案有什么区别？
 
-- 如果在 azureiotsuite.cn 中删除预配置解决方案，则会删除在创建该解决方案时设置的所有资源；如果向资源组添加了其他资源，则也会删除这些资源。
+- 如果在 [azureiotsuite.cn][lnk-azureiotsuite] 中删除预配置解决方案，则会删除在创建该解决方案时设置的所有资源；如果向资源组添加了其他资源，则也会删除这些资源。
 
 - 如果在 [Azure 门户预览][lnk-azure-portal]中删除某个资源组，则只删除该资源组中的资源；还需要在 [Azure 经典管理门户][lnk-classic-portal]中删除与预配置解决方案关联的 Azure Active Directory 应用程序。
 
