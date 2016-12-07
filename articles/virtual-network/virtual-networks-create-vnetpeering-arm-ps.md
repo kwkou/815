@@ -197,6 +197,7 @@
         $vnet1 = Get-AzureRmVirtualNetwork -ResourceGroupName vnet101 -Name vnet1
 
 2. 若要在此方案中建立对等互连，只需要一个链接，具体而言，是从 **VNET1** 到 **VNET2** 的链接。此步骤需要知道经典 VNet 的资源 ID。资源组 ID 格式如下所示：
+
         /subscriptions/SubscriptionID/resourceGroups/ResourceGroupName/providers/Microsoft.ClassicNetwork/virtualNetworks/VirtualNetworkName
 
     请务必将 SubscriptionID、ResourceGroupName 和 VirtualNetworkName 替换为相应的名称。
