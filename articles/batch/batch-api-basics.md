@@ -103,7 +103,7 @@ Azure Batch 池构建在核心 Azure 计算平台的顶层。这些池提供大�
 	“云服务配置”*只*提供 Windows 计算节点。[Azure Guest OS releases and SDK compatibility matrix](/documentation/articles/cloud-services-guestos-update-matrix/)（Azure 来宾 OS 版本和 SDK 兼容性对照表）中列出了适用于云服务配置池的操作系统。创建包含云服务节点的池时，只需指定节点大小及其 *OS 系列*。创建 Windows 计算节点池时，最常使用的是云服务。
 
     - *OS 系列*还确定了要与操作系统一起安装哪些版本的 .NET。
-	- 与云服务中的辅助角色一样，可以指定 *OS 版本*（有关辅助角色的详细信息，请参阅 [Cloud Services overview](/documentation/articles/cloud-services-choose-me/)（云服务概述）中的 [Tell me about cloud services](/documentation/articles/cloud-services-choose-me/#tell-me-about-cloud-services/)（介绍云服务）部分）。
+	- 与云服务中的辅助角色一样，可以指定 *OS 版本*（有关辅助角色的详细信息，请参阅 [Cloud Services overview](/documentation/articles/cloud-services-choose-me/)（云服务概述）中的 [Tell me about cloud services](/documentation/articles/cloud-services-choose-me/#tellmecs/)（介绍云服务）部分）。
     - 与辅助角色一样，对于 *OS 版本*，建议指定 `*`，使节点可自动升级，而无需采取措施来适应新的版本。选择特定 OS 版本的主要用例是在允许更新版本之前执行向后兼容测试，以确保保持应用程序兼容性。验证后，便可以更新池的 *OS 版本*并安装新的操作系统映像 - 所有正在运行的任务将会中断并重新排队。
 
 - **节点大小**

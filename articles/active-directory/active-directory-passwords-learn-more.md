@@ -232,8 +232,7 @@
               <p>可从 PowerShell、Azure 经典管理门户和 Office 经典管理门户设置 AlternateEmail</p>
             </td>
             <td>
-              <p>
-                <a href="mailto:user@domain.com">user@domain.com</a> 或 甲斐@黒川.日本</p>
+              <p> user@domain.com 或 甲斐@黒川.日本 </p>
               <ul>
                 <li class="unordered">
 										电子邮件应遵循标准格式。<br><br></li>

@@ -1676,7 +1676,7 @@ DocumentDB 支持以下用于查询地理空间的开放地理空间信息联盟
   <td>ST_DISTANCE (point_expr、point_expr)</td>
   <td>返回两个 GeoJSON 点表达式之间的距离。</td>
 </tr>
-<tr>
+<tr><a name="built-in-functions"></a>
   <td>ST_WITHIN (point_expr、polygon_expr)</td>
   <td>返回布尔表达式，该表达式指示第一个参数中指定的 GeoJSON 点是否位于第二个参数中的 GeoJSON 多边形内。</td>
 </tr>

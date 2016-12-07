@@ -67,6 +67,6 @@
 
 ## 后续步骤
 
-如果在门户中仍遇到问题，请发送电子邮件至 [askdocdb@microsoft.com](mailto:askdocdb@microsoft.com) 寻求帮助，或者通过依次单击“浏览”、“帮助 + 支持”、“创建支持请求”来提出支持请求。
+如果在门户中仍遇到问题，请发送电子邮件至 askdocdb@microsoft.com 寻求帮助，或者通过依次单击“浏览”、“帮助 + 支持”、“创建支持请求”来提出支持请求。
 
 <!---HONumber=Mooncake_1010_2016-->

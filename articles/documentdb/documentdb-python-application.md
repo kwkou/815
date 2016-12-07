@@ -65,7 +65,7 @@
 <br/>
 现在，我们将演练如何从头开始新建 Python Flask Web 应用程序。
 
-## 步骤 2：新建 Python Flask Web 应用程序  <a name="step-2:-create-a-new-python-flask-web-application></a>
+## 步骤 2：新建 Python Flask Web 应用程序  <a name="step-2:-create-a-new-python-flask-web-application"></a>
 
 1. 在 Visual Studio 的“文件”菜单中，指向“新建”，然后单击“项目”。
 

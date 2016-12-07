@@ -26,7 +26,7 @@ Azure Active Directory 为 Office 365 和其他 Microsoft Online 服务提供单
 ![](./media/active-directory-aadconnect-federation-compatibility/oxford2.jpg)   
 [Oxford Computer Group](http://oxfordcomputergroup.com) 作为代表 Microsoft 的第三方，利用非 Microsoft 标识提供者针对 Azure Active Directory 的一组常见用例测试了这些单一登录体验。
 
-有关如何获取此处列出的第三方标识提供者的信息，请通过 [idp@oxfordcomputergroup.com](mailto:idp@oxfordcomputergroup.com) 与 Oxford Computer Group 联系。
+有关如何获取此处列出的第三方标识提供者的信息，请通过 idp@oxfordcomputergroup.com 与 Oxford Computer Group 联系。
 
 >[AZURE.IMPORTANT] Oxford Computer Group 仅测试了这些单一登录方案的联合功能。Oxford Computer Group 未对这些单一登录方案的同步、双重身份验证等组件执行测试。
 

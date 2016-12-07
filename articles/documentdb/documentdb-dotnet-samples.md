@@ -156,7 +156,7 @@ IndexManagement 项目示例的 [RunIndexDemo](https://github.com/Azure/azure-do
 
 有关编写查询的详细信息，请参阅 [DocumentDB 内的 SQL 查询](/documentation/articles/documentdb-sql-query/)。
 
-## 服务器端编程示例  <a name="server-side-programming-examples></a>
+## 服务器端编程示例  <a name="server-side-programming-examples"></a>
 
 服务器端编程文件 [azure-documentdb-net/samples/code-samples/ServerSideScripts/Program.cs](https://github.com/Azure/azure-documentdb-net/blob/master/samples/code-samples/ServerSideScripts/Program.cs) 演示如何执行以下任务。
 
