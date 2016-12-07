@@ -23,7 +23,7 @@
 
 ## 登录时发生的情况
 
-当你在 [https://www.azureiotsuite.cn/](https://www.azureiotsuite.cn/) 上首次登录时，站点会基于当前所选 Azure Active Directory (AAD) 租户和 Azure 订阅来确定你拥有的权限级别。
+当你在 [azureiotsuite.cn][lnk-azureiotsuite] 上首次登录时，站点会基于当前所选 Azure Active Directory (AAD) 租户和 Azure 订阅来确定你拥有的权限级别。
 
 1.  站点首先从 Azure 查明你所属的 AAD 租户以便已登录用户名旁显示的租户列表。当前，站点一次只能获取一个租户的用户令牌。因此，当你使用右上角的下拉列表切换到不同租户时，站点会使你重新登录到该租户，以获取该租户的令牌。
 
@@ -41,7 +41,7 @@ AAD 角色可控制设置预配置解决方案以及在预配置解决方案中�
 
 **全局管理员：**对于每个 AAD 租户，可以存在许多个全局管理员。你在创建某个 AAD 租户时，默认情况下会成为该租户的全局管理员。全局管理员可以设置预配置解决方案，以及为 AAD 租户内的应用程序分配 **ADMINISTRATOR** 角色。但是，如果相同 AAD 租户中的其他用户创建应用程序，则向全局管理员授予的默认角色是 **IMPLICIT READ ONLY**。全局管理员可以使用 [Azure 经典管理门户][lnk-classic-portal]为应用程序分配角色。
 
-**域用户/组成员：**对于每个 AAD 租户，可以存在许多个域用户/成员。域用户可以通过 [https://www.azureiotsuite.cn/](https://www.azureiotsuite.cn/) 站点设置预配置解决方案。对于他们设置的应用程序，向他们授予的默认角色是 **ADMINISTRATOR**。他们可以使用 [azure-iot-remote-monitoring][lnk-rm-github-repo]，但是向他们授予的默认角色是 **IMPLICIT READONLY**，因为他们没有分配角色的权限。如果 AAD 租户中的其他用户创建应用程序，则默认情况下对于该应用程序，会向他们分配 **IMPLICIT READONLY** 角色。他们无法为应用程序分配角色；因此无法为应用程序添加用户或用户的角色（即使是他们设置的应用程序）。
+**域用户/组成员：**对于每个 AAD 租户，可以存在许多个域用户/成员。域用户可以通过 [azureiotsuite.cn][lnk-azureiotsuite] 站点设置预配置解决方案。对于他们设置的应用程序，向他们授予的默认角色是 **ADMINISTRATOR**。他们可以使用 [azure-iot-remote-monitoring][lnk-rm-github-repo]，但是向他们授予的默认角色是 **IMPLICIT READONLY**，因为他们没有分配角色的权限。如果 AAD 租户中的其他用户创建应用程序，则默认情况下对于该应用程序，会向他们分配 **IMPLICIT READONLY** 角色。他们无法为应用程序分配角色；因此无法为应用程序添加用户或用户的角色（即使是他们设置的应用程序）。
 
 **来宾用户/来宾：**对于每个 AAD 租户，可以存在许多个来宾用户/来宾。来宾用户在 AAD 租户中拥有有限的权利集。因此，来宾用户无法在 AAD 租户中设置预配置解决方案。
 

@@ -221,9 +221,9 @@ Azure IoT 套件[预配置解决方案][lnk-preconfigured-solutions]结合了多
 - **Simulator** 文件夹包含模拟设备的源代码。
 - **EventProcessor** 文件夹包含后端进程的源代码，可用于处理传入遥测。
 
-完成后，可在 [https://www.azureiotsuite.cn/](https://www.azureiotsuite.cn/) 站点的 Azure 订阅中删除预配置解决方案。通过该站点，可轻松删除创建预配置解决方案时预配的所有资源。
+完成后，可在 [azureiotsuite.cn][lnk-azureiotsuite] 站点的 Azure 订阅中删除预配置解决方案。通过该站点，可轻松删除创建预配置解决方案时预配的所有资源。
 
-> [AZURE.NOTE] 若要确保删除与预配置解决方案相关的所有内容，请在 [https://www.azureiotsuite.cn/](https://www.azureiotsuite.cn/) 站点中删除这些内容，而不只是删除门户中的资源组。
+> [AZURE.NOTE] 若要确保删除与预配置解决方案相关的所有内容，请在 [azureiotsuite.cn][lnk-azureiotsuite] 站点中删除这些内容，而不只是删除门户中的资源组。
 
 ## 后续步骤
 
