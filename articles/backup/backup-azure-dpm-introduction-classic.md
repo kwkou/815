@@ -52,8 +52,8 @@ System Center DPM 备份文件和应用程序数据。备份到 DPM 的数据可
 
 >[AZURE.NOTE] Linux 虚拟机只能使用文件一致性备份。
 
-<a name="prerequisites"></a>
-## 先决条件
+
+## 先决条件 <a name="prerequisites"></a>
 按如下所述让 Azure 备份做好备份 DPM 数据的准备：
 
 1. **创建备份保管库** — 在 Azure 备份控制台中创建一个保管库。

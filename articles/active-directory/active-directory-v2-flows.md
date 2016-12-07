@@ -68,8 +68,8 @@ v2.0 终结点支持各种现代应用体系结构的身份验证，所有这些
 
 除了简单登录，Web 服务器应用可能还需要访问其他一些 Web 服务，例如 REST API。在这种情况下，Web 服务器应用可以使用 [OAuth 2.0 授权代码流](/documentation/articles/active-directory-v2-protocols/#oauth2-authorization-code-flow/)参与合并的 OpenID Connect 和 OAuth 2.0 流。下面的 [WebApp-WebAPI 入门主题](/documentation/articles/active-directory-v2-devquickstarts-webapp-webapi-dotnet/)中介绍了此方案。
 
-<a name="web-apis"></a>
-## Web API
+
+## Web API <a name="web-apis"></a>
 你可以使用 v2.0 终结点来保护 Web 服务，例如应用的 RESTful Web API。Web API 使用 OAuth 2.0 access\_token 而不是 id\_token 和会话 Cookie 来保护数据以及对传入的请求进行身份验证。Web API 调用方会在 HTTP 请求的授权标头中附加一个 access\_token：
 
 
