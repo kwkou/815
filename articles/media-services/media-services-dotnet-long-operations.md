@@ -65,6 +65,7 @@ Azure 媒体服务提供了相应的 API 用来请求媒体服务启动操作（
 	    // Field for service context.
 	    private static CloudMediaContext _context = null;
 	    private static MediaServicesCredentials _cachedCredentials = null;
+		private static Uri _apiServer = null;
 	
 	    public ChannelOperations()
 	    {

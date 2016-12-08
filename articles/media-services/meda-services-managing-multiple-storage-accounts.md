@@ -15,7 +15,7 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="09/26/2016" 
-	wacn.date="11/14/2016"    
+	wacn.date="12/08/2016"    
 	ms.author="juliako"/>  
 
 
@@ -83,10 +83,12 @@
 				// Azure China uses a different API server and a different ACS Base Address from the Global.
 				private static readonly String _chinaApiServerUrl = "https://wamsshaclus001rest-hs.chinacloudapp.cn/API/";
 				private static readonly String _chinaAcsBaseAddressUrl = "https://wamsprodglobal001acs.accesscontrol.chinacloudapi.cn";
+				
 
 		        private static CloudMediaContext _context;
 		        private static MediaServicesCredentials _cachedCredentials = null;
-	
+				private static Uri _apiServer = null;
+
 		        static void Main(string[] args)
 		        {
 	

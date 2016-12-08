@@ -67,6 +67,12 @@ Azure 媒体服务 (AMS) 可让你引入、编码、添加内容保护，以及�
 	            ConfigurationManager.AppSettings["MediaServicesAccountName"];
 	        private static readonly string _mediaServicesAccountKey =
 	            ConfigurationManager.AppSettings["MediaServicesAccountKey"];
+
+			private static readonly String _defaultScope = "urn:WindowsAzureMediaServices";
+
+			// Azure China uses a different API server and a different ACS Base Address from the Global.
+			private static readonly String _chinaApiServerUrl = "https://wamsshaclus001rest-hs.chinacloudapp.cn/API/";
+			private static readonly String _chinaAcsBaseAddressUrl = "https://wamsprodglobal001acs.accesscontrol.chinacloudapi.cn";
 	
 	        private static readonly Uri _sampleIssuer =
 	            new Uri(ConfigurationManager.AppSettings["Issuer"]);
@@ -76,15 +82,22 @@ Azure 媒体服务 (AMS) 可让你引入、编码、添加内容保护，以及�
 	        // Field for service context.
 	        private static CloudMediaContext _context = null;
 	        private static MediaServicesCredentials _cachedCredentials = null;
+			private static Uri _apiServer = null;
 	
 	        static void Main(string[] args)
 	        {
 	            // Create and cache the Media Services credentials in a static class variable.
-	            _cachedCredentials = new MediaServicesCredentials(
-	                            _mediaServicesAccountName,
-	                            _mediaServicesAccountKey);
-	            // Used the cached credentials to create CloudMediaContext.
-	            _context = new CloudMediaContext(_cachedCredentials);
+                _cachedCredentials = new MediaServicesCredentials(
+                                _mediaServicesAccountName,
+                                _mediaServicesAccountKey,
+								_defaultScope,
+								_chinaAcsBaseAddressUrl);
+
+				// Create the API server Uri
+				_apiServer = new Uri(_chinaApiServerUrl);
+
+                // Used the chached credentials to create CloudMediaContext.
+                _context = new CloudMediaContext(_apiServer, _cachedCredentials);
 	
 	            bool tokenRestriction = true;
 	            string tokenTemplateString = null;

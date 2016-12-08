@@ -14,7 +14,7 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="08/30/2016" 
-	wacn.date="11/17/2016"   
+	wacn.date="12/08/2016"   
 	ms.author="juliako"/>
 
 
@@ -78,10 +78,13 @@
 		            ConfigurationManager.AppSettings["MediaServicesAccountName"];
 		        private static readonly string _mediaServicesAccountKey =
 		            ConfigurationManager.AppSettings["MediaServicesAccountKey"];
+
+						private static readonly String _defaultScope = "urn:WindowsAzureMediaServices";
 		
 		        // Field for service context.
 		        private static CloudMediaContext _context = null;
 		        private static MediaServicesCredentials _cachedCredentials = null;
+						private static Uri _apiServer = null;
 		
 		        private static readonly string _mediaFiles =
 		            Path.GetFullPath(@"../..\Media");
@@ -92,11 +95,17 @@
 		        static void Main(string[] args)
 		        {
 		            // Create and cache the Media Services credentials in a static class variable.
-		            _cachedCredentials = new MediaServicesCredentials(
-		                            _mediaServicesAccountName,
-		                            _mediaServicesAccountKey);
-		            // Used the chached credentials to create CloudMediaContext.
-		            _context = new CloudMediaContext(_cachedCredentials);
+                _cachedCredentials = new MediaServicesCredentials(
+                                _mediaServicesAccountName,
+                                _mediaServicesAccountKey,
+								_defaultScope,
+								_chinaAcsBaseAddressUrl);
+
+								// Create the API server Uri
+								_apiServer = new Uri(_chinaApiServerUrl);
+
+                // Used the chached credentials to create CloudMediaContext.
+                _context = new CloudMediaContext(_apiServer, _cachedCredentials);
 		
 		            // Get an uploaded asset.
 		            var asset = _context.Assets.FirstOrDefault();

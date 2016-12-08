@@ -289,6 +289,8 @@
 		        // Field for service context.
 		        private static CloudMediaContext _context = null;
 		        private static MediaServicesCredentials _cachedCredentials = null;
+
+				private static Uri _apiServer = null;
 		
 		        private static readonly string _mediaFiles =
 		            Path.GetFullPath(@"../..\Media");
