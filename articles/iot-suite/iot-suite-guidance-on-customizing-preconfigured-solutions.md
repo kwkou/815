@@ -61,7 +61,7 @@ Azure IoT 套件提供的预配置解决方案演示了套件中的服务如何�
 
 最常见的扩展活动之一是使用方案特定的设备。使用设备的方法有数种。这些方法包括更改模拟设备以符合你的方案，或使用 [IoT 设备 SDK][] 将物理设备连接到解决方案。
 
-有关向远程监视预配置解决方案添加设备的分步指南，请参阅 [Iot 套件连接设备](/documentation/articles/iot-suite-connecting-devices/)和[远程监视 C SDK 示例](https://github.com/Azure/azure-iot-sdks/tree/master/c/serializer/samples/remote_monitoring)（旨在搭配远程监视预配置解决方案）。
+有关向远程监视预配置解决方案添加设备的分步指南，请参阅 [Iot 套件连接设备](/documentation/articles/iot-suite-connecting-devices/)和远程监视 C SDK 示例（旨在搭配远程监视预配置解决方案）。
 
 ### 创建你自己的模拟设备
 
