@@ -59,7 +59,7 @@
 
 如果需要在 Azure 订阅上创建 Azure IoT 中心的实例，请按照[此处](https://github.com/Azure/azure-iot-sdks/blob/master/doc/setup_iothub.md)的说明操作。
 
-SDK 中包含的[自述文件](https://github.com/Azure/azure-iot-sdks/tree/master/c)提供了有关准备开发环境和获取设备凭据的说明。
+SDK 中包含的自述文件提供了有关准备开发环境和获取设备凭据的说明。
 以下部分包含有关这些说明的一些额外注释。
 
 ### 准备开发环境
@@ -93,7 +93,7 @@ SDK 中包含的[自述文件](https://github.com/Azure/azure-iot-sdks/tree/mast
   		![](./media/iot-hub-device-sdk-c-intro/11-GitToolsPath.PNG)
 
 
-当你完成[准备开发环境](https://github.com/Azure/azure-iot-sdks/blob/master/c/doc/devbox_setup.md)页面上所述的所有步骤后，就可以编译示例应用程序。
+当你完成准备开发环境页面上所述的所有步骤后，就可以编译示例应用程序。
 
 ### 获取设备凭据
 
@@ -103,11 +103,11 @@ SDK 开放源代码存储库中提供了两个工具用来帮助管理 IoT 中�
 
 本文中所述的在 Windows 上运行这些示例时使用的是设备资源管理器工具。但是，如果你更喜欢 CLI 工具，也可以使用 iothub-explorer。
 
-[设备资源管理器](https://github.com/Azure/azure-iot-sdks/tree/master/tools/DeviceExplorer)工具使用 Azure IoT 服务库在 IoT 中心执行各种功能（包括添加设备）。如果你使用设备资源管理器来添加设备，将会获得相应的连接字符串。需要此连接字符串才能运行示例应用程序。
+设备资源管理器工具使用 Azure IoT 服务库在 IoT 中心执行各种功能（包括添加设备）。如果你使用设备资源管理器来添加设备，将会获得相应的连接字符串。需要此连接字符串才能运行示例应用程序。
 
 如果你不熟悉上述过程，以下过程描述了如何使用设备资源管理器来添加设备和获取设备连接字符串。
 
-你可以在 [SDK 发布页面](https://github.com/Azure/azure-iot-sdks/releases)中找到设备资源管理器工具的 Windows 安装程序。但是也可以直接从其代码运行该工具，方法是在 **Visual Studio 2015** 中打开 **[DeviceExplorer.sln](https://github.com/Azure/azure-iot-sdks/blob/master/tools/DeviceExplorer/DeviceExplorer.sln)**，然后生成解决方案。
+你可以在 [SDK 发布页面](https://github.com/Azure/azure-iot-sdks/releases)中找到设备资源管理器工具的 Windows 安装程序。但是也可以直接从其代码运行该工具，方法是在 **Visual Studio 2015** 中打开 **DeviceExplorer.sln**，然后生成解决方案。
 
 运行该程序时，你将看到此界面：
 

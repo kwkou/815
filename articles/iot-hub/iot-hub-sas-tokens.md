@@ -134,7 +134,7 @@ IoT 中心还允许设备使用 X.509 证书向 IoT 中心进行身份验证。I
 
     SharedAccessSignature sr=myhub.azure-devices.cn%2fdevices%2fdevice1&sig=13y8ejUk2z7PLmvtwR5RqlGBOVwiq7rQR3WZ5xZX3N4%3D&se=1456971697
 
-> [AZURE.NOTE] 可以使用 .NET 工具[设备资源管理器][lnk-device-explorer]来生成安全令牌。
+> [AZURE.NOTE] 可以使用 .NET 工具设备资源管理器来生成安全令牌。
 
 ### 使用共享访问策略
 
@@ -213,7 +213,7 @@ IoT 中心还允许设备使用 X.509 证书向 IoT 中心进行身份验证。I
 
 ## 为设备注册 X.509 客户端证书
 
-[适用于 C# 的 Azure IoT 服务 SDK][lnk-service-sdk]（版本 1.0.8+）支持注册使用 X.509 客户端证书进行身份验证的设备。其他 API（如设备的导入/导出）还支持 X.509 客户端证书。
+适用于 C# 的 Azure IoT 服务 SDK（版本 1.0.8+）支持注册使用 X.509 客户端证书进行身份验证的设备。其他 API（如设备的导入/导出）还支持 X.509 客户端证书。
 
 ### C# 支持
 
@@ -240,7 +240,7 @@ await registryManager.AddDeviceAsync(device);
 
 ## 在运行时操作期间使用 X.509 客户端证书
 
-[用于 .NET 的 Azure IoT 设备 SDK][lnk-client-sdk]（版本 1.0.11+）支持使用 X.509 客户端证书。
+用于 .NET 的 Azure IoT 设备 SDK（版本 1.0.11+）支持使用 X.509 客户端证书。
 
 ### C# 支持
 

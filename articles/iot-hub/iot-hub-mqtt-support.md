@@ -38,9 +38,9 @@ IoT 中心允许设备在端口 8883 上使用 [MQTT v3.1.1][lnk-mqtt-org] 协�
 | -------------------------- | ------------------------- |
 | [Node.js][lnk-sample-node] | azure-iot-device-mqtt |
 | [Java][lnk-sample-java] | IotHubClientProtocol.MQTT |
-| [C][lnk-sample-c] | MQTT\_Protocol |
-| [C#][lnk-sample-csharp] | TransportType.Mqtt |
-| [Python][lnk-sample-python] | IoTHubTransportProvider.MQTT |
+| C | MQTT\_Protocol |
+| C# | TransportType.Mqtt |
+| Python | IoTHubTransportProvider.MQTT |
 
 ### 将设备应用从 AMQP 迁移到 MQTT
 如果使用[设备客户端 SDK][lnk-device-sdks]，则从使用 AMQP 切换到 MQTT 需要在客户端初始化中更改协议参数，如上所述。
@@ -64,7 +64,7 @@ IoT 中心允许设备在端口 8883 上使用 [MQTT v3.1.1][lnk-mqtt-org] 协�
 
     有关如何生成 SAS 令牌的详细信息，请参阅[使用 IoT 中心安全令牌][lnk-sas-tokens]的设备部分。
     
-    测试时也可以使用[设备资源管理器][lnk-device-explorer]工具来快速生成可以复制并粘贴到自己的代码中的 SAS 令牌。
+    测试时也可以使用设备资源管理器工具来快速生成可以复制并粘贴到自己的代码中的 SAS 令牌。
     
     1. 转到设备资源管理器中的“管理”选项卡。
     2. 单击“SAS 令牌”（右上角）。

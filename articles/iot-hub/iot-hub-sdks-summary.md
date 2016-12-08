@@ -23,9 +23,9 @@ Azure IoT 设备 SDK 包含的代码可帮助构建连接到 Azure IoT 中心服
 以下 IoT 设备 SDK 可以从 GitHub 进行下载：
 
 - [适用于 C 的 Azure IoT 设备 SDK][]，采用 ANSI C (C99) 编写，具有可移植性和广泛的平台兼容性。
-- [适用于 .NET 的 Azure IoT 设备 SDK][]
+- 适用于 .NET 的 Azure IoT 设备 SDK
 - [适用于 Java 的 Azure IoT 设备 SDK][]
-- [适用于 Python 2.7 的 Azure IoT 设备 SDK][]
+- 适用于 Python 2.7 的 Azure IoT 设备 SDK
 
 ### 操作系统平台和硬件兼容性
 

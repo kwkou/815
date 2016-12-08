@@ -365,7 +365,7 @@ BLE 设备的示例配置假定使用 Texas Instruments SensorTag 设备。任�
 
 ## 发送云到设备的消息
 
-BLE 模块还支持从 Azure IoT 中心将指令发送到设备。可使用 [Azure IoT 中心设备资源管理器](https://github.com/Azure/azure-iot-sdks/blob/master/tools/DeviceExplorer/doc/how_to_use_device_explorer.md)或 [IoT 中心资源管理器](https://github.com/Azure/azure-iot-sdks/tree/master/tools/iothub-explorer) 将传递 BLE 网关模块的 JSON 消息发送到 BLE 设备。例如，如果你使用的是 Texas Instruments SensorTag 设备，则可以从 IoT 中心将以下 JSON 消息发送到设备。
+BLE 模块还支持从 Azure IoT 中心将指令发送到设备。可使用 Azure IoT 中心设备资源管理器或 IoT 中心资源管理器将传递 BLE 网关模块的 JSON 消息发送到 BLE 设备。例如，如果你使用的是 Texas Instruments SensorTag 设备，则可以从 IoT 中心将以下 JSON 消息发送到设备。
 
 - 重置所有 LED 和蜂鸣器（将它们关闭）
 

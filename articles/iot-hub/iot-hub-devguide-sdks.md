@@ -27,11 +27,11 @@ Microsoft Azure IoT 设备 SDK 包含的代码可帮助构建连接到 Azure IoT
 
 以下 IoT 设备 SDK 可以从 GitHub 进行下载：
 
-- [适用于 C 的 Azure IoT 设备 SDK][lnk-c-device-sdk]，采用 ANSI C (C99) 编写，具有可移植性和广泛的平台兼容性。
-- [适用于 .NET 的 Azure IoT 设备 SDK][lnk-dotnet-device-sdk]
-- [适用于 Java 的 Azure IoT 设备 SDK][lnk-java-device-sdk]
-- [适用于 Node.js 的 Azure IoT 设备 SDK][lnk-node-device-sdk]
-- [适用于 Python 2.7 的 Microsoft Azure IoT 设备 SDK][lnk-python-device-sdk]
+- 适用于 C 的 Azure IoT 设备 SDK，采用 ANSI C (C99) 编写，具有可移植性和广泛的平台兼容性。
+- 适用于 .NET 的 Azure IoT 设备 SDK
+- 适用于 Java 的 Azure IoT 设备 SDK
+- 适用于 Node.js 的 Azure IoT 设备 SDK
+- 适用于 Python 2.7 的 Microsoft Azure IoT 设备 SDK
 
 > [AZURE.NOTE] 有关使用语言和平台特定的程序包管理器在开发计算机上安装二进制文件和依赖项的信息，请参阅 GitHub 存储库中的自述文件。
 
@@ -47,9 +47,9 @@ Microsoft Azure IoT 服务 SDK 包含的代码可帮助构建直接与 IoT 中�
 
 可从 GitHub 下载以下 IoT 服务 SDK：
 
-- [适用于 .NET 的 Azure IoT 服务 SDK][lnk-dotnet-service-sdk]
-- [适用于 Node.js 的 Azure IoT 服务 SDK][lnk-node-service-sdk]
-- [适用于 Java 的 Azure IoT 服务 SDK][lnk-java-service-sdk]
+- 适用于 .NET 的 Azure IoT 服务 SDK
+- 适用于 Node.js 的 Azure IoT 服务 SDK
+- 适用于 Java 的 Azure IoT 服务 SDK
 
 > [AZURE.NOTE] 有关使用语言和平台特定的程序包管理器在开发计算机上安装二进制文件和依赖项的信息，请参阅 GitHub 存储库中的自述文件。
 
