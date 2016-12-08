@@ -67,10 +67,17 @@
 		            ConfigurationManager.AppSettings["MediaServicesAccountName"];
 		        private static readonly string _mediaServicesAccountKey =
 		            ConfigurationManager.AppSettings["MediaServicesAccountKey"];
+
+						private static readonly String _defaultScope = "urn:WindowsAzureMediaServices";
+
+						// Azure China uses a different API server and a different ACS Base Address from the Global.
+						private static readonly String _chinaApiServerUrl = "https://wamsshaclus001rest-hs.chinacloudapp.cn/API/";
+						private static readonly String _chinaAcsBaseAddressUrl = "https://wamsprodglobal001acs.accesscontrol.chinacloudapi.cn";
 		
 		        // Field for service context.
 		        private static CloudMediaContext _context = null;
 		        private static MediaServicesCredentials _cachedCredentials = null;
+						private static Uri _apiServer = null;
 		
 		        private static readonly string _mediaFiles =
 		            Path.GetFullPath(@"../..\Media");
@@ -81,11 +88,17 @@
 		        static void Main(string[] args)
 		        {
 		            // Create and cache the Media Services credentials in a static class variable.
-		            _cachedCredentials = new MediaServicesCredentials(
-		                            _mediaServicesAccountName,
-		                            _mediaServicesAccountKey);
-		            // Used the chached credentials to create CloudMediaContext.
-		            _context = new CloudMediaContext(_cachedCredentials);
+                _cachedCredentials = new MediaServicesCredentials(
+                                _mediaServicesAccountName,
+                                _mediaServicesAccountKey,
+								_defaultScope,
+								_chinaAcsBaseAddressUrl);
+
+								// Create the API server Uri
+								_apiServer = new Uri(_chinaApiServerUrl);
+
+                // Used the chached credentials to create CloudMediaContext.
+                _context = new CloudMediaContext(_apiServer, _cachedCredentials);
 		
 		            // Get an uploaded asset.
 		            var asset = _context.Assets.FirstOrDefault();

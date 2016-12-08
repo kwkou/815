@@ -95,6 +95,7 @@
 		        // Field for service context.
 		        private static CloudMediaContext _context = null;
 		        private static MediaServicesCredentials _cachedCredentials = null;
+				private static Uri _apiServer = null;
 		
 		        static void Main(string[] args)
 		        {

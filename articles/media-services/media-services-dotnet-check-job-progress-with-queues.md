@@ -115,6 +115,15 @@ Azure 媒体服务可以在处理媒体作业时向 [Azure 队列存储](/docume
 	        private static CloudMediaContext _context = null;
 	        private static CloudQueue _queue = null;
 	        private static INotificationEndPoint _notificationEndPoint = null;
+
+			private static readonly String _defaultScope = "urn:WindowsAzureMediaServices";
+
+			
+			// Azure China uses a different API server and a different ACS Base Address from the Global.
+			private static readonly String _chinaApiServerUrl = "https://wamsshaclus001rest-hs.chinacloudapp.cn/API/";
+			private static readonly String _chinaAcsBaseAddressUrl = "https://wamsprodglobal001acs.accesscontrol.chinacloudapi.cn";
+
+			private static Uri _apiServer = null;
 	
 	        private static readonly string _singleInputMp4Path =
 	            Path.GetFullPath(@"C:\supportFiles\multifile\BigBuckBunny.mp4");
@@ -129,8 +138,18 @@ Azure 媒体服务可以在处理媒体作业时向 [Azure 队列存储](/docume
 	
 	            string endPointAddress = Guid.NewGuid().ToString();
 	
-	            // Create the context. 
-	            _context = new CloudMediaContext(mediaServicesAccountName, mediaServicesAccountKey);
+				// Create and cache the Media Services credentials in a static class variable.
+                _cachedCredentials = new MediaServicesCredentials(
+                                mediaServicesAccountName,
+                                mediaServicesAccountKey,
+								_defaultScope,
+								_chinaAcsBaseAddressUrl);
+
+				// Create the API server Uri
+				_apiServer = new Uri(_chinaApiServerUrl);
+
+                // Used the chached credentials to create CloudMediaContext.
+                _context = new CloudMediaContext(_apiServer, _cachedCredentials);
 	
 	            // Create the queue that will be receiving the notification messages.
 	            _queue = CreateQueue(storageConnectionString, endPointAddress);
