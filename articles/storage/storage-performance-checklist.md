@@ -214,7 +214,7 @@ Azure 存储空间使用基于范围的分区方案来对系统进行缩放和�
 ####有用的资源
 有关存储错误代码的详细信息，请参阅 Azure Web 应用上的[状态和错误代码](http://msdn.microsoft.com/zh-cn/library/azure/dd179382.aspx)。
 
-##Blob
+##<a name="blobs"></a>Blob
 除了前面所述的适用于[所有服务](#allservices)的经过验证的做法，此外还有以下经过验证的做法，这些做法尤其适用于 Blob 服务。
 
 ###特定于 Blob 的可伸缩性目标

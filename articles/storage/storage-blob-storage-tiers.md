@@ -207,7 +207,7 @@ Blob 存储帐户使用基于存储层的 Blob 存储的新定价模型。使用
 
 > [AZURE.NOTE] 存储、访问和下载分析数据也会收费，就像使用常规用户数据一样。
 
-#### 通过使用情况度量值来估算费用
+####<a name="pricing-and-billing"></a> 通过使用情况度量值来估算费用
 ##### 存储费用
 容量度量值表 *$MetricsCapacityBlob* 中行键为“data”的最新条目显示了用户数据所占用的存储容量。容量度量值表 *$MetricsCapacityBlob* 中行键为“analytics”的最新条目显示了分析日志所占用的存储容量。
 
