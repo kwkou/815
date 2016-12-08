@@ -91,7 +91,7 @@ Azure 流分析作业可以连接到一个或多个数据输入，每个数据�
 
 
 ## 获取有关流数据输入的帮助
-如需进一步的帮助，请尝试我们的 [Azure 流分析论坛](https://social.msdn.microsoft.com/Forums/zh-cn/home?forum=AzureStreamAnalytics)
+如需进一步的帮助，请尝试我们的 [Azure 流分析论坛](https://social.msdn.microsoft.com/Forums/zh-cn/home?forum=AzureStreamAnalytics)。 
 
 ## 后续步骤
 
