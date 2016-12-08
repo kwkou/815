@@ -91,7 +91,7 @@ Azure 经典管理门户和 Azure 门户预览都提供了可用于监视和故�
   ![查询诊断](./media/stream-analytics-monitoring/05-stream-analytics-monitoring.png)
 
 ## 获取帮助
-如需进一步的帮助，请尝试我们的 [Azure 流分析论坛](https://social.msdn.microsoft.com/Forums/zh-cn/home?forum=AzureStreamAnalytics)
+如需进一步的帮助，请尝试我们的 [Azure 流分析论坛](https://social.msdn.microsoft.com/Forums/zh-cn/home?forum=AzureStreamAnalytics)。
 
 ## 后续步骤
 - [Azure 流分析简介](/documentation/articles/stream-analytics-introduction/)

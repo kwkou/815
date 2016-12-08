@@ -46,7 +46,7 @@ Azure 流分析是完全托管的、经济高效的实时事件处理引擎，�
 -   **连接性：**流分析会直接连接到 Azure 事件中心和 Azure IoT 中心以引入流，并会连接到 Azure Blob 服务以引入历史数据。结果可以从流分析写入 Azure 存储 Blob 或表、Azure SQL 数据库、事件中心、Azure 服务总线主题或队列，以及 Power BI，然后从中可以对结果进行可视化，用工作流进行进一步处理，通过 [Azure HDInsight](/documentation/services/hdinsight/) 用于批量分析或者作为一系列事件再次处理。使用事件中心时，可以将多个流分析与其他数据源和处理引擎组合在一起，而不会失去计算的流处理本质。
 
 ## 获取帮助
-如需进一步的帮助，请尝试我们的 [Azure 流分析论坛](https://social.msdn.microsoft.com/Forums/zh-cn/home?forum=AzureStreamAnalytics)
+如需进一步的帮助，请尝试我们的 [Azure 流分析论坛](https://social.msdn.microsoft.com/Forums/zh-cn/home?forum=AzureStreamAnalytics)。
 
 ## 后续步骤
 我们已经向你介绍了流分析，这是一种托管服务，适用于对物联网的数据进行流式分析。若要了解有关此服务的详细信息，请参阅：

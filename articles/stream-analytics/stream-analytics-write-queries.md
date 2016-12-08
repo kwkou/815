@@ -60,7 +60,7 @@
     ![测试数据查询](./media/stream-analytics-write-queries/4-stream-analytics-write-queries.png)  
 
 
-3.	浏览到一个测试文件。[github]（https://github.com/Azure/azure-stream-analytics/tree/master/Sample%20Data）提供了几个样本文件，你还可以通过输入选项卡上的“样本数据”功能，从你自己的数据流输入获取样本数据。
+3.	浏览到一个测试文件。[github](https://github.com/Azure/azure-stream-analytics/tree/master/Sample%20Data) 提供了几个样本文件，你还可以通过输入选项卡上的“样本数据”功能，从你自己的数据流输入获取样本数据。
 
     ![查询输入](./media/stream-analytics-write-queries/5-stream-analytics-write-queries.png)  
 
@@ -71,7 +71,7 @@
 
 
 ## 获取帮助
-如需进一步的帮助，请尝试我们的 [Azure 流分析论坛](https://social.msdn.microsoft.com/Forums/zh-cn/home?forum=AzureStreamAnalytics)
+如需进一步的帮助，请尝试我们的 [Azure 流分析论坛](https://social.msdn.microsoft.com/Forums/zh-cn/home?forum=AzureStreamAnalytics)。
 
 ## 后续步骤
 

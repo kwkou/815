@@ -31,7 +31,7 @@
 数据流是一段时间内不受限制的事件序列。流分析作业必须包含至少一种可供作业使用和转换的数据流输入。Blob 存储、事件中心和 IoT 中心均可作为数据流输入源。事件中心用于从多个设备和服务（例如传感器提供的社交媒体活动源、股票交易信息或数据）收集事件流。IoT 中心经过优化以从物联网 (IoT) 方案中连接的设备收集数据。Blob 存储可用作按流的形式引入大量数据的输入源。
 
 ### 引用数据
-流分析支持称为引用数据的第二类输入。此类数据为辅助数据，处于静态或者缓慢变化状态，通常用于执行关联性操作和查找操作。目前只支持使用 Azure Blob 存储作为引用数据的输入源。引用数据源 Blob 存在 100MB 的大小限制。若要了解如何创建引用数据输入，请参阅[使用引用数据](/documentation/articles/stream-analytics-use-reference-data/)
+流分析支持称为引用数据的第二类输入。此类数据为辅助数据，处于静态或者缓慢变化状态，通常用于执行关联性操作和查找操作。目前只支持使用 Azure Blob 存储作为引用数据的输入源。引用数据源 Blob 存在 100MB 的大小限制。若要了解如何创建引用数据输入，请参阅[使用引用数据](/documentation/articles/stream-analytics-use-reference-data/)。
 
 ## 通过事件中心创建数据流输入
 
@@ -198,7 +198,7 @@ Azure Iot 中心是已针对 IoT 进行优化，具有高度可缩放性的发�
 
 
 ## 获取帮助
-如需进一步的帮助，请尝试我们的 [Azure 流分析论坛](https://social.msdn.microsoft.com/Forums/zh-cn/home?forum=AzureStreamAnalytics)
+如需进一步的帮助，请尝试我们的 [Azure 流分析论坛](https://social.msdn.microsoft.com/Forums/zh-cn/home?forum=AzureStreamAnalytics)。
 
 ## 后续步骤
 你已经了解了 Azure 中针对流分析作业的数据连接选项。若要了解流分析的更多内容，请参阅：

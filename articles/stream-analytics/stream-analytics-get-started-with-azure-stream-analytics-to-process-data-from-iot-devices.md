@@ -60,10 +60,11 @@ Contoso 是一家工业自动化公司，该公司已将其制造流程完全自
     ![新建流分析作业详细信息](./media/stream-analytics-get-started-with-iot-devices/stream-analytics-get-started-with-iot-devices-03.png)  
 
    
-   > [!注意]
-   > 只应为每个区域创建此存储帐户一次。跨该区域中创建的所有流分析作业共享此存储。
-   > 
-   > 
+       > [AZURE.NOTE]
+       > 只应为每个区域创建此存储帐户一次。跨该区域中创建的所有流分析作业共享此存储。
+       > 
+       > 
+       
 4. 勾选框以将作业放在仪表板上，然后单击“创建”。
    
     ![正在创建作业](./media/stream-analytics-get-started-with-iot-devices/stream-analytics-get-started-with-iot-devices-03a.png)  

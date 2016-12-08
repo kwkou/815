@@ -213,7 +213,7 @@ Blob 存储提供了一种经济高效且可缩放的解决方案，用于在云
 
 
 ## 获取帮助
-如需进一步的帮助，请尝试我们的 [Azure 流分析论坛](https://social.msdn.microsoft.com/Forums/zh-cn/home?forum=AzureStreamAnalytics)
+如需进一步的帮助，请尝试我们的 [Azure 流分析论坛](https://social.msdn.microsoft.com/Forums/zh-cn/home?forum=AzureStreamAnalytics)。
 
 ## 后续步骤
 我们已经向你介绍了流分析，这是一种托管服务，用于对物联网的数据进行流式分析。若要了解有关此服务的详细信息，请参阅：
