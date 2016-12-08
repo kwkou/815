@@ -56,7 +56,7 @@ Azure IoT 库在以下操作系统平台上进行了测试：
 
 ## C 库
 
-[适用于 C 的 Azure IoT 设备 SDK](https://github.com/Azure/azure-iot-sdks/blob/master/c/readme.md) 在以下配置上进行了测试：
+适用于 C 的 Azure IoT 设备 SDK 在以下配置上进行了测试：
 
 |OS 平台| 版本|协议|
 |:---------|:----------:|:----------:|
@@ -73,7 +73,7 @@ Azure IoT 库在以下操作系统平台上进行了测试：
 
 ## Node.js 库
 
-[适用于 Node.js 的 Azure IoT 设备 SDK](https://github.com/Azure/azure-iot-sdks/blob/master/node/device/readme.md) 在以下配置上进行了测试：
+适用于 Node.js 的 Azure IoT 设备 SDK 在以下配置上进行了测试：
 
 
 |运行时| 版本|协议|
@@ -88,7 +88,7 @@ Azure IoT 库在以下操作系统平台上进行了测试：
 
 ## Java 库
 
-[适用于 Java 的 Azure IoT 设备 SDK](https://github.com/Azure/azure-iot-sdks/blob/master/java/device/readme.md) 在以下配置上进行了测试：
+适用于 Java 的 Azure IoT 设备 SDK 在以下配置上进行了测试：
 
 |运行时| 版本|协议|
 |:---------|:----------:|----|
@@ -105,7 +105,7 @@ Azure IoT 库在以下操作系统平台上进行了测试：
 
 ## CSharp
 
-[适用于 .NET 的 Azure IoT 设备 SDK](https://github.com/Azure/azure-iot-sdks/blob/master/csharp/device/readme.md) 在以下配置上进行了测试：
+适用于 .NET 的 Azure IoT 设备 SDK 在以下配置上进行了测试：
 
 |OS 平台| 版本|协议|
 |:---------|:----------:|:----------:|
@@ -125,7 +125,7 @@ Azure IoT 库在以下操作系统平台上进行了测试：
 
 ## Python 库
 
-[适用于 Python 的 Azure IoT 设备 SDK](https://github.com/Azure/azure-iot-sdks/blob/master/python/device/readme.md) 在以下配置上进行了测试：
+适用于 Python 的 Azure IoT 设备 SDK 在以下配置上进行了测试：
 
 |运行时| 版本|协议|
 |:---------|:----------:|:----------:|
