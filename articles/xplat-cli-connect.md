@@ -28,7 +28,7 @@ Azure CLI 是一组开源且跨平台的命令，可以用于 Azure 资源。本
 
 * 如果只需使用 Azure 服务管理模式 CLI 命令（不建议用于大部分新部署），可以在计算机上下载并安装发布设置文件。
 
-如果你尚未安装 CLI，请参阅[安装 Azure CLI](xplat-cli-install.md)。如果没有 Azure 订阅，只需要花费几分钟就能创建一个[免费帐户](http://azure.microsoft.com/free/)。
+如果你尚未安装 CLI，请参阅[安装 Azure CLI](/documentation/articles/xplat-cli-install/)。如果没有 Azure 订阅，只需要花费几分钟就能创建一个[免费帐户](http://azure.microsoft.com/free/)。
 
 有关不同帐户的标识和 Azure 订阅的背景信息，请参阅[Azure 订阅如何与 Azure Active Directory 相关联](/documentation/articles/active-directory-how-subscriptions-associated-directory/)。
 

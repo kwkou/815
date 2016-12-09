@@ -368,7 +368,7 @@ IoT 中心实现 MQTT v3.1.1 协议，但具有以下限制和特定行为：
 [lnk-device-properties]: /documentation/articles/iot-hub-devguide-identity-registry/#device-identity-properties
 [lnk-ttl]: /documentation/articles/iot-hub-devguide-messaging/#message-expiration-time-to-live
 [lnk-c2d-configuration]: /documentation/articles/iot-hub-devguide-messaging/#cloud-to-device-configuration-options
-[lnk-lifecycle]: /documentation/articles/iot-hub-devguide-messaging#message-lifecycle
+[lnk-lifecycle]: /documentation/articles/iot-hub-devguide-messaging/#message-lifecycle
 [lnk-feedback]: /documentation/articles/iot-hub-devguide-messaging/#message-feedback
 [lnk-antispoofing]: /documentation/articles/iot-hub-devguide-messaging/#anti-spoofing-properties
 [lnk-compare]: /documentation/articles/iot-hub-compare-event-hubs/

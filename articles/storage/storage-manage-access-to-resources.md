@@ -37,7 +37,7 @@
 
 - 通过 [Azure 门户预览](https://portal.azure.cn)设置。
 - 通过使用存储客户端库或 REST API 以编程方式设置。
-- 通过使用 PowerShell 设置。若要了解如何通过 Azure PowerShell 来设置容器权限，请参阅[对 Azure 存储使用 Azure PowerShell](/documentation/articles/storage-powershell-guide-full#how-to-manage-azure-blobs/)。
+- 通过使用 PowerShell 设置。若要了解如何通过 Azure PowerShell 来设置容器权限，请参阅[对 Azure 存储使用 Azure PowerShell](/documentation/articles/storage-powershell-guide-full/#how-to-manage-azure-blobs/)。
 
 ### 通过 Azure 门户预览设置容器权限
 若要通过 [Azure 门户预览](https://portal.azure.cn)设置容器权限，请按以下步骤操作：

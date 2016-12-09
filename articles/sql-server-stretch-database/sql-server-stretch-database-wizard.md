@@ -90,7 +90,7 @@
 
 -   退出向导并运行 ALTER TABLE 语句，以便为表启用延伸，并指定筛选器函数。有关详细信息，请参阅[为表启用 Stretch Database](/documentation/articles/sql-server-stretch-database-enable-table/)。
 
--   退出向导后，运行 ALTER TABLE 语句，以便指定筛选器函数。有关所需步骤，请参阅[运行向导后添加筛选器函数](/documentation/articles/sql-server-stretch-database-predicate-function#addafterwiz)。
+-   退出向导后，运行 ALTER TABLE 语句，以便指定筛选器函数。有关所需步骤，请参阅[运行向导后添加筛选器函数](/documentation/articles/sql-server-stretch-database-predicate-function/#addafterwiz)。
 
 ## <a name="Configure"></a>配置 Azure 部署
 

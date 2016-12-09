@@ -35,7 +35,7 @@ v2.0 终结点并不支持所有 Azure Active Directory 方案和功能。
 
 
 ## 从 GitHub 下载代码。
-本教程的代码[在 GitHub 上](git@github.com:Azure-Samples/active-directory-android-native-oidcandroidlib-v2.git)维护。若要遵照该代码，你可以[下载 .zip 格式应用骨架](git@github.com:Azure-Samples/active-directory-android-native-oidcandroidlib-v2.git/archive/skeleton.zip)，或克隆该骨架：
+本教程的代码[在 GitHub 上](https://github.com/azure-samples/active-directory-android-native-oidcandroidlib-v2)维护。若要遵照该代码，你可以[下载 .zip 格式应用骨架](git@github.com:Azure-Samples/active-directory-android-native-oidcandroidlib-v2.git/archive/skeleton.zip)，或克隆该骨架：
 
 
 	git clone --branch skeleton git@github.com:Azure-Samples/active-directory-android-native-oidcandroidlib-v2.git

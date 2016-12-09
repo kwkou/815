@@ -123,20 +123,20 @@ SQL 数据仓库的性能以线性方式缩放，在几秒内就能从某个计�
 <!--Article references-->
 [数据仓库单位 (DWU)]: /documentation/articles/sql-data-warehouse-overview-what-is/
 
-[通过 Azure 门户缩放计算能力]: /documentation/articles/sql-data-warehouse-manage-compute-portal#scale-compute-bk
-[通过 PowerShell 缩放计算能力]: /documentation/articles/sql-data-warehouse-manage-compute-powershell#scale-compute-bk
-[通过 REST API 缩放计算能力]: /documentation/articles/sql-data-warehouse-manage-compute-rest-api#scale-compute-bk
-[通过 TSQL 缩放计算能力]: /documentation/articles/sql-data-warehouse-manage-compute-tsql#scale-compute-bk
+[通过 Azure 门户缩放计算能力]: /documentation/articles/sql-data-warehouse-manage-compute-portal/#scale-compute-bk
+[通过 PowerShell 缩放计算能力]: /documentation/articles/sql-data-warehouse-manage-compute-powershell/#scale-compute-bk
+[通过 REST API 缩放计算能力]: /documentation/articles/sql-data-warehouse-manage-compute-rest-api/#scale-compute-bk
+[通过 TSQL 缩放计算能力]: /documentation/articles/sql-data-warehouse-manage-compute-tsql/#scale-compute-bk
 
 [capacity limits]: /documentation/articles/sql-data-warehouse-service-capacity-limits/
 
-[通过 Azure 门户暂停计算]: /documentation/articles/sql-data-warehouse-manage-compute-portal#pause-compute-bk
-[通过 PowerShell 暂停计算]: /documentation/articles/sql-data-warehouse-manage-compute-powershell#pause-compute-bk
-[通过 REST API 暂停计算]: /documentation/articles/sql-data-warehouse-manage-compute-rest-api#pause-compute-bk
+[通过 Azure 门户暂停计算]: /documentation/articles/sql-data-warehouse-manage-compute-portal/#pause-compute-bk
+[通过 PowerShell 暂停计算]: /documentation/articles/sql-data-warehouse-manage-compute-powershell/#pause-compute-bk
+[通过 REST API 暂停计算]: /documentation/articles/sql-data-warehouse-manage-compute-rest-api/#pause-compute-bk
 
-[通过 Azure 门户恢复计算]: /documentation/articles/sql-data-warehouse-manage-compute-portal#resume-compute-bk
-[通过 PowerShell 恢复计算]: /documentation/articles/sql-data-warehouse-manage-compute-powershell#resume-compute-bk
-[通过 REST API 恢复计算]: /documentation/articles/sql-data-warehouse-manage-compute-rest-api#resume-compute-bk
+[通过 Azure 门户恢复计算]: /documentation/articles/sql-data-warehouse-manage-compute-portal/#resume-compute-bk
+[通过 PowerShell 恢复计算]: /documentation/articles/sql-data-warehouse-manage-compute-powershell/#resume-compute-bk
+[通过 REST API 恢复计算]: /documentation/articles/sql-data-warehouse-manage-compute-rest-api/#resume-compute-bk
 
 [工作负荷和并发管理]: /documentation/articles/sql-data-warehouse-develop-concurrency/
 [表设计概述]: /documentation/articles/sql-data-warehouse-tables-overview/
@@ -147,7 +147,7 @@ SQL 数据仓库的性能以线性方式缩放，在几秒内就能从某个计�
 [最佳实践]: /documentation/articles/sql-data-warehouse-best-practices/
 [development overview]: /documentation/articles/sql-data-warehouse-overview-develop/
 
-[SQL DB 参与者]: /documentation/articles/role-based-access-built-in-roles
+[SQL DB 参与者]: /documentation/articles/role-based-access-built-in-roles/
 
 <!--MSDN references-->
 [ALTER DATABASE]: https://msdn.microsoft.com/zh-cn/library/mt204042.aspx

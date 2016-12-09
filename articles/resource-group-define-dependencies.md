@@ -98,13 +98,13 @@
 
 ## 引用函数
 
-[引用函数](/documentation/articles/resource-group-template-functions#reference)使表达式能够从其他 JSON 名值对或运行时资源中派生其值。引用表达式隐式声明一个资源依赖于另一个资源。
+[引用函数](/documentation/articles/resource-group-template-functions/#reference)使表达式能够从其他 JSON 名值对或运行时资源中派生其值。引用表达式隐式声明一个资源依赖于另一个资源。
 
     reference('resourceName').propertyPath
 
 可以使用此元素或 dependsOn 元素来指定依赖关系，但不需要同时使用它们用于同一依赖资源。只要可能，可使用隐式引用以避免无意添加不必要的依赖关系。
 
-若要了解详细信息，请参阅[引用函数](/documentation/articles/resource-group-template-functions#reference)。
+若要了解详细信息，请参阅[引用函数](/documentation/articles/resource-group-template-functions/#reference)。
 
 ## 后续步骤
 

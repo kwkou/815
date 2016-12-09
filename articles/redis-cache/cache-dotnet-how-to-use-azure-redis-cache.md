@@ -236,7 +236,7 @@ Azure Redis 缓存可以缓存 .NET 对象以及基元数据类型，但在缓�
 <!-- LINKS -->
 
 [http://redis.io/clients]: http://redis.io/clients
-[Develop in other languages for Azure Redis Cache]: /documentation/services/redis-cache
+[Develop in other languages for Azure Redis Cache]: /documentation/services/redis-cache/
 [如何检索 Azure Redis 连接字符串并将其用于 Redsmin]: https://redsmin.uservoice.com/knowledgebase/articles/485711-how-to-connect-redsmin-to-azure-redis-cache
 [Azure Redis Session State Provider]: /documentation/articles/cache-aspnet-session-state-provider/
 [How to: Configure a Cache Client Programmatically]: http://msdn.microsoft.com/zh-cn/library/azure/gg618003.aspx
@@ -262,8 +262,8 @@ Azure Redis 缓存可以缓存 .NET 对象以及基元数据类型，但在缓�
 [缓存定价详细信息]: /pricing/details/redis-cache/
 [Azure Management Portal]: https://manage.windowsazure.cn/
 
-[Overview of Azure Redis Cache]: /documentation/services/redis-cache
-[Azure Redis Cache]: /documentation/services/redis-cache
+[Overview of Azure Redis Cache]: /documentation/services/redis-cache/
+[Azure Redis Cache]: /documentation/services/redis-cache/
 
 [Migrate to Azure Redis Cache]: http://go.microsoft.com/fwlink/?LinkId=317347
 [Azure Redis Cache Samples]: http://go.microsoft.com/fwlink/?LinkId=320840

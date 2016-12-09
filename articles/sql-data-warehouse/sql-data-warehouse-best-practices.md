@@ -152,9 +152,9 @@ SQL 数据仓库有多个 DMV 可用于监视查询执行。以下监视相关�
 [Load data with bcp]: /documentation/articles/sql-data-warehouse-load-with-bcp/
 [Load data with PolyBase]: /documentation/articles/sql-data-warehouse-get-started-load-with-polybase/
 [使用 DMV 监视工作负荷]: /documentation/articles/sql-data-warehouse-manage-monitor/
-[暂停计算资源]: /documentation/articles/sql-data-warehouse-manage-compute-overview#pause-compute-bk/
-[恢复计算资源]: /documentation/articles/sql-data-warehouse-manage-compute-overview#resume-compute-bk/
-[缩放计算资源]: /documentation/articles/sql-data-warehouse-manage-compute-overview#scale-performance-bk/
+[暂停计算资源]: /documentation/articles/sql-data-warehouse-manage-compute-overview/#pause-compute-bk/
+[恢复计算资源]: /documentation/articles/sql-data-warehouse-manage-compute-overview/#resume-compute-bk/
+[缩放计算资源]: /documentation/articles/sql-data-warehouse-manage-compute-overview/#scale-performance-bk/
 [了解事务]: /documentation/articles/sql-data-warehouse-develop-transactions/
 [优化事务]: /documentation/articles/sql-data-warehouse-develop-best-practices-transactions/
 [故障诊断]: /documentation/articles/sql-data-warehouse-troubleshoot/

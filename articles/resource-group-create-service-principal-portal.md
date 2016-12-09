@@ -145,7 +145,7 @@
 
 如果应用程序在其自己的凭据下运行，则必须将应用程序分配到某个角色。决定哪个角色表示应用程序的相应权限。若要了解有关可用角色的信息，请参阅 [RBAC：内置角色](/documentation/articles/role-based-access-built-in-roles/)。
 
-若要将角色分配到应用程序，必须具有正确的权限。具体而言，必须拥有[所有者](/documentation/articles/role-based-access-built-in-roles#owner)角色或[用户访问管理员](/documentation/articles/role-based-access-built-in-roles#user-access-administrator)角色授予的 `Microsoft.Authorization/*/Write` 访问权限。“参与者”角色没有正确的访问权限。
+若要将角色分配到应用程序，必须具有正确的权限。具体而言，必须拥有[所有者](/documentation/articles/role-based-access-built-in-roles/#owner)角色或[用户访问管理员](/documentation/articles/role-based-access-built-in-roles/#user-access-administrator)角色授予的 `Microsoft.Authorization/*/Write` 访问权限。“参与者”角色没有正确的访问权限。
 
 可将作用域设置为订阅、资源组或资源级别。较低级别的作用域将继承权限。例如，将某个应用程序添加到资源组的“读取者”角色意味着该应用程序可以读取该资源组及其包含的所有资源。
 

@@ -137,7 +137,7 @@ Azure 资源管理器模板定义应用程序使用的所有 Azure 资源。你�
 | **requestedServiceObjectiveName** | S0 | S1 |
 
 ## 创建环境
-所有 Azure 资源必须在 [Azure 资源组](/documentation/articles/resource-group-portal#create-resource-group-and-resources)中创建。资源组可让你将 Azure 资源分组，以便可以统一管理这些资源。[权限](/documentation/articles/role-based-access-built-in-roles/)可以分配给资源组，使组织中的特定人员可以创建、修改、删除或查看这些组及其包含的资源。可以在 [Azure 门户预览](https://portal.azure.cn)中查看资源组中资源的警报和计费信息。资源组在 Azure 区域中创建。
+所有 Azure 资源必须在 [Azure 资源组](/documentation/articles/resource-group-portal/#create-resource-group-and-resources)中创建。资源组可让你将 Azure 资源分组，以便可以统一管理这些资源。[权限](/documentation/articles/role-based-access-built-in-roles/)可以分配给资源组，使组织中的特定人员可以创建、修改、删除或查看这些组及其包含的资源。可以在 [Azure 门户预览](https://portal.azure.cn)中查看资源组中资源的警报和计费信息。资源组在 Azure 区域中创建。
 
 使用以下方法之一为每个环境创建资源组。所有方法都可实现相同的结果。
 
@@ -287,7 +287,7 @@ Azure 资源管理器模板定义应用程序使用的所有 Azure 资源。你�
 	                    
 	Outputs           :
 
-  如果命令未成功，请解决任何错误消息并重试。常见的问题是使用了未遵循 Azure 资源命名约束的参数值。其他故障排除提示可在 [Azure 中的资源组部署故障排除](/documentation/articles/resource-group-deploy-debug/)一文中找到。
+  如果命令未成功，请解决任何错误消息并重试。常见的问题是使用了未遵循 Azure 资源命名约束的参数值。
 
   在 PowerShell 命令提示符下键入以下命令（将 [path] 替换为前面步骤中的文件保存路径），将资源部署到为测试环境创建的资源组。
 

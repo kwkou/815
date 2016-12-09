@@ -110,10 +110,10 @@ DMV 是管理 SQL 数据仓库的必备工具。在门户中显示的所有信�
 [Connect and query with sqlcmd]: /documentation/articles/sql-data-warehouse-get-started-connect-sqlcmd/
 [开发概述]: /documentation/articles/sql-data-warehouse-overview-develop/
 [Monitor your workload using DMVs]: /documentation/articles/sql-data-warehouse-manage-monitor/
-[暂停计算]: /documentation/articles/sql-data-warehouse-manage-compute-overview#pause-compute-bk
+[暂停计算]: /documentation/articles/sql-data-warehouse-manage-compute-overview/#pause-compute-bk
 [从快照还原]: /documentation/articles/sql-data-warehouse-restore-database-overview/
 [恢复计算]: /documentation/articles/sql-data-warehouse-manage-compute-overview/
-[缩放性能]: /documentation/articles/sql-data-warehouse-manage-compute-overview#scale-performance-bk
+[缩放性能]: /documentation/articles/sql-data-warehouse-manage-compute-overview/#scale-performance-bk
 [安全性概述]: /documentation/articles/sql-data-warehouse-overview-manage-security/
 [SQL 数据仓库最佳实践]: /documentation/articles/sql-data-warehouse-best-practices/
 [SQL 数据仓库系统视图]: /documentation/articles/sql-data-warehouse-reference-tsql-system-views/

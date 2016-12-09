@@ -58,7 +58,7 @@ SQL 数据仓库将完整的数据仓库存储在“标准”存储中，每隔 
 
 详细了解以下内容：
 - 有关异地冗余存储的内容，请参阅 [Azure Storage replication](/documentation/articles/storage-redundancy/)（Azure 存储复制）。
-- 有关 RA-GRS 存储的内容，请参阅 [Read-access geo-redundant storage](/documentation/articles/storage-redundancy#read-access-geo-redundant-storage)（读取访问异地冗余存储）。
+- 有关 RA-GRS 存储的内容，请参阅 [Read-access geo-redundant storage](/documentation/articles/storage-redundancy/#read-access-geo-redundant-storage)（读取访问异地冗余存储）。
 
 ## 数据仓库备份计划和保留期
 

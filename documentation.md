@@ -27,8 +27,8 @@
 
 <table width="100%" border="0" cellspacing="0" cellpadding="0" style="table-layout:fixed;">
   <tr>
-    <td><a href="/documentation/services/virtual-machines/windows">Windows 虚拟机</a></td>
-    <td><a href="/documentation/services/virtual-machines/linux">Linux 虚拟机</a></td>
+    <td><a href="/documentation/services/virtual-machines/windows/">Windows 虚拟机</a></td>
+    <td><a href="/documentation/services/virtual-machines/linux/">Linux 虚拟机</a></td>
     <td><a href="/documentation/services/cloud-services/">云服务</a></td>
     <td><a href="/documentation/services/batch/">批处理（Batch）</a></td>
   </tr>
@@ -89,8 +89,8 @@
 
 <table width="100%" border="0" cellspacing="0" cellpadding="0" style="table-layout:fixed;">
   <tr>
-	<td><a href="/documentation/services/iot-suite">Azure IoT 套件</a></td>
-	<td><a href="/documentation/services/iot-hub">Azure IoT 中心</a></td>
+	<td><a href="/documentation/services/iot-suite/">Azure IoT 套件</a></td>
+	<td><a href="/documentation/services/iot-hub/">Azure IoT 中心</a></td>
 	<td><a href="/documentation/services/event-hubs/">事件中心</a></td>
 	<td><a href="/documentation/services/stream-analytics/">流分析</a></td>
   </tr>
