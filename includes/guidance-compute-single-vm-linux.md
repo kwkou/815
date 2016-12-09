@@ -174,7 +174,6 @@
 [iostat]: https://en.wikipedia.org/wiki/Iostat
 [manage-vm-availability]: /documentation/articles/virtual-machines-linux-manage-availability/
 [multi-vm]: /documentation/articles/guidance-compute-multi-vm/
-[naming conventions]: /documentation/articles/guidance-naming-conventions/
 [nsg]: /documentation/articles/virtual-networks-nsg/
 [nsg-default-rules]: /documentation/articles/virtual-networks-nsg/#default-rules
 [OSPatching]: https://github.com/Azure/azure-linux-extensions/tree/master/OSPatching

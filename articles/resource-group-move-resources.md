@@ -38,7 +38,7 @@
 移动资源之前需执行的一些重要步骤。验证这些条件可以避免错误。
 
 1. 该服务必须支持移动资源的功能。请参阅以下列表，以了解[哪些服务支持移动资源](#services-that-support-move)。
-2. 必须针对要移动的资源的资源提供程序注册目标订阅。否则，会收到错误，指明**未针对资源类型注册订阅**。将资源移到新的订阅时，可能会遇到此问题，但该订阅从未配合该资源类型使用。若要了解如何检查注册状态和注册资源提供程序，请参阅 [Resource providers and types](/documentation/articles/resource-manager-supported-services#resource-providers-and-types)（资源提供程序和类型）。
+2. 必须针对要移动的资源的资源提供程序注册目标订阅。否则，会收到错误，指明**未针对资源类型注册订阅**。将资源移到新的订阅时，可能会遇到此问题，但该订阅从未配合该资源类型使用。若要了解如何检查注册状态和注册资源提供程序，请参阅 [Resource providers and types](/documentation/articles/resource-manager-supported-services/#resource-providers-and-types)（资源提供程序和类型）。
 4. 如果你要移动 App Service 应用，则你已查看 [App Service 限制](#app-service-limitations)。
 4. 如果要移动与恢复服务关联的资源，则必须查看[恢复服务限制](#recovery-services-limitations)
 5. 如果你要移动通过经典模型部署的资源，则你已查看[经典部署限制](#classic-deployment-limitations)。

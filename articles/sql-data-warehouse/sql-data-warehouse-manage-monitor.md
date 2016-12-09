@@ -186,7 +186,7 @@
 [系统视图]: /documentation/articles/sql-data-warehouse-reference-tsql-system-views/
 [表分布]: /documentation/articles/sql-data-warehouse-tables-distribute/
 [Concurrency and workload management]: /documentation/articles/sql-data-warehouse-develop-concurrency/
-[调查等待资源的查询]: /documentation/articles/sql-data-warehouse-manage-monitor#waiting
+[调查等待资源的查询]: /documentation/articles/sql-data-warehouse-manage-monitor/#waiting
 
 <!--MSDN references-->
 [sys.dm\_pdw\_dms\_workers]: http://msdn.microsoft.com/zh-cn/library/mt203878.aspx

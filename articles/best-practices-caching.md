@@ -203,7 +203,7 @@ Azure Redis 缓存是高性能缓存解决方案，提供可用性、可缩放�
 >
 > 此外，Azure 支持角色中缓存。此功能可让你创建云服务专用的缓存。缓存由 Web 角色或辅助角色的实例托管，只能由以同一云服务部署单位的一部分来操作的角色进行访问。（部署单位是作为云服务部署到特定区域的角色实例集合。） 缓存已组建群集，托管缓存的同一部署单位中的所有角色实例将成为同一缓存群集的一部分。但是，不再建议使用此选项，提供此选项只是为了支持构建为使用此选项的现有应用程序。针对所有新的开发，请改用 Azure Redis 缓存。
 >
-> Azure 托管缓存服务和 Azure 角色中缓存目前已预定于 2016 年 11 月 16 日停用。建议你迁移到 Azure Redis 缓存，以便为这次停用做好准备。有关详细信息，请访问 Microsoft 网站上的[我应使用哪种 Azure Redis 缓存产品和大小？](/documentation/articles/cache-faq#what-redis-cache-offering-and-size-should-i-use)。
+> Azure 托管缓存服务和 Azure 角色中缓存目前已预定于 2016 年 11 月 16 日停用。建议你迁移到 Azure Redis 缓存，以便为这次停用做好准备。有关详细信息，请访问 Microsoft 网站上的[我应使用哪种 Azure Redis 缓存产品和大小？](/documentation/articles/cache-faq/#what-redis-cache-offering-and-size-should-i-use)。
 
 
 ### Redis 的功能

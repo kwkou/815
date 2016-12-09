@@ -91,7 +91,7 @@ Web 应用：
 
 Azure AD 还支持应用程序的证书凭据：创建自签名证书、保留私钥，以及将公钥添加到 Azure AD 应用程序注册。对于身份验证，应用程序会使用你的私钥将小负载发送到签名的 Azure AD，然后 Azure AD 使用注册的公钥来验证签名。
 
-有关使用证书创建 AD 应用的信息，请参阅 [Use Azure PowerShell to create a service principal to access resources](/documentation/articles/resource-group-authenticate-service-principal#create-service-principal-with-certificate)（使用 Azure PowerShell 创建服务主体来访问资源）或 [Use Azure CLI to create a service principal to access resources](/documentation/articles/resource-group-authenticate-service-principal-cli#create-service-principal-with-certificate)（使用 Azure CLI 创建服务主体来访问资源）。
+有关使用证书创建 AD 应用的信息，请参阅 [Use Azure PowerShell to create a service principal to access resources](/documentation/articles/resource-group-authenticate-service-principal/#create-service-principal-with-certificate)（使用 Azure PowerShell 创建服务主体来访问资源）或 [Use Azure CLI to create a service principal to access resources](/documentation/articles/resource-group-authenticate-service-principal-cli/#create-service-principal-with-certificate)（使用 Azure CLI 创建服务主体来访问资源）。
 
 ## 从订阅 ID 获取租户 ID
 

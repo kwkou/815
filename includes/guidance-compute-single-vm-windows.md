@@ -163,7 +163,6 @@
 [log-collector]: https://azure.microsoft.com/blog/simplifying-virtual-machine-troubleshooting-using-azure-log-collector/
 [manage-vm-availability]: /documentation/articles/virtual-machines-windows-manage-availability/
 [multi-vm]: /documentation/articles/guidance-compute-multi-vm/
-[naming conventions]: /documentation/articles/guidance-naming-conventions/
 [nsg]: /documentation/articles/virtual-networks-nsg/
 [nsg-default-rules]: /documentation/articles/virtual-networks-nsg/#default-rules
 [planned-maintenance]: /documentation/articles/virtual-machines-windows-planned-maintenance/

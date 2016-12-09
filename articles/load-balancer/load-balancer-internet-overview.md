@@ -33,7 +33,7 @@ Azure 负载均衡器将传入流量的公用 IP 地址和端口号映射到虚�
 
 图 1 - 加密 Web 流量的负载均衡终结点
 
-当 Internet 客户端将网页请求发送到 TCP 端口 443 上的云服务的公共 IP 地址时，Azure Load Balancer 会在负载平衡集中的三个虚拟机之间分发请求。有关负载均衡器算法的详细信息，请参阅[负载均衡器概述页](/documentation/articles/load-balancer-overview#load-balancer-features)。
+当 Internet 客户端将网页请求发送到 TCP 端口 443 上的云服务的公共 IP 地址时，Azure Load Balancer 会在负载平衡集中的三个虚拟机之间分发请求。有关负载均衡器算法的详细信息，请参阅[负载均衡器概述页](/documentation/articles/load-balancer-overview/#load-balancer-features)。
 
 默认情况下，Azure Load Balancer 在多个虚拟机实例之间平均分发网络流量。还可以配置会话关联，有关详细信息，请参阅[负载均衡器分发模式](/documentation/articles/load-balancer-distribution-mode/)。
 

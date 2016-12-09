@@ -30,7 +30,7 @@
 1. 必须唯一的资源名称。
 2. 不需要唯一的资源名称，不过，提供的名称应可帮助识别上下文。
 3. 通用的资源名称。
-有关建立命名约定的帮助，请参阅 [Infrastructure naming guidelines](/documentation/articles/virtual-machines-windows-infrastructure-naming-guidelines/)（基础结构命名指南）。有关资源名称限制的信息，请参阅 [Recommended naming conventions for Azure resources](/documentation/articles/guidance-naming-conventions/)（Azure 资源的建议命名约定）。
+有关建立命名约定的帮助，请参阅 [Infrastructure naming guidelines](/documentation/articles/virtual-machines-windows-infrastructure-naming-guidelines/)（基础结构命名指南）。
 
 ### 唯一的资源名称
 
@@ -48,7 +48,7 @@
 
 此外，存储帐户名必须使用小写字母，包含 24 个或更少的字符，并且不包含任何连字符。
 
-如果不为这些资源名称提供参数并且不想要在部署期间试图猜测唯一名称，你可以创建一个使用 [uniqueString()](/documentation/articles/resource-group-template-functions#uniquestring) 函数的变量来生成名称。通常，还需要在 **uniqueString** 中添加一个前缀或后缀，这样，只需查看名称就能更轻松地确定资源类型。例如，可以使用以下变量生成存储帐户的唯一名称。
+如果不为这些资源名称提供参数并且不想要在部署期间试图猜测唯一名称，你可以创建一个使用 [uniqueString()](/documentation/articles/resource-group-template-functions/#uniquestring) 函数的变量来生成名称。通常，还需要在 **uniqueString** 中添加一个前缀或后缀，这样，只需查看名称就能更轻松地确定资源类型。例如，可以使用以下变量生成存储帐户的唯一名称。
 
     "variables": {
         "storageAccountName": "[concat(uniqueString(resourceGroup().id),'storage')]"
@@ -159,7 +159,7 @@
 
 1. 针对需要在模板中多次使用的值使用变量。如果一次只使用一个值，则硬编码值可使模板更易于阅读。
 
-1. 不能在 variables 节中使用 [reference](/documentation/articles/resource-group-template-functions#reference) 函数。reference 函数从资源的运行时状态中派生其值，但变量是在初始模板分析期间解析的。应直接在模板的 **resources** 或 **outputs** 节中构造需要 **reference** 函数的值。
+1. 不能在 variables 节中使用 [reference](/documentation/articles/resource-group-template-functions/#reference) 函数。reference 函数从资源的运行时状态中派生其值，但变量是在初始模板分析期间解析的。应直接在模板的 **resources** 或 **outputs** 节中构造需要 **reference** 函数的值。
 
 1. 根据[资源名称](#resource-names)中所述，针对需要保持唯一的资源名称包含变量。
 

@@ -89,12 +89,12 @@
 
 <!--Article references-->
 [使用 Azure 门户预览创建 Azure SQL 数据库逻辑服务器]: /documentation/articles/sql-database-get-started/
-[Create an Azure SQL Database logical server with PowerShell]: /documentation/articles/sql-database-get-started-powershell#database-setup-create-a-resource-group-server-and-firewall-rule
+[Create an Azure SQL Database logical server with PowerShell]: /documentation/articles/sql-database-get-started-powershell/#database-setup-create-a-resource-group-server-and-firewall-rule
 [resource groups]: /documentation/articles/resource-group-template-deploy-portal/
 [最佳实践]: /documentation/articles/sql-data-warehouse-best-practices/
 [DWU]: /documentation/articles/sql-data-warehouse-overview-what-is/
-[订阅]: /documentation/articles/azure-glossary-cloud-terminology#subscription/
-[resource group]: /documentation/articles/azure-glossary-cloud-terminology
+[订阅]: /documentation/articles/azure-glossary-cloud-terminology/#subscription/
+[resource group]: /documentation/articles/azure-glossary-cloud-terminology/
 [T-SQL]: /documentation/articles/sql-data-warehouse-get-started-create-database-tsql/
  
 <!--MSDN references-->
