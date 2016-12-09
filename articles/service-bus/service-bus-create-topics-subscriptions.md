@@ -8,8 +8,8 @@
    editor="tysonn" />
 <tags 
    ms.service="service-bus"
-    ms.date="03/16/2016"
-   wacn.date="06/27/2016" />
+    ms.date="10/04/2016"
+   wacn.date="12/02/2016" />
 
 # 创建使用服务总线主题和订阅的应用程序
 

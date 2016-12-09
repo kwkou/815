@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="service-bus" 
-	ms.date="06/01/2016" 
-	wacn.date="07/25/2016"/>
+	ms.date="10/04/2016" 
+	wacn.date="12/02/2016"/>
 
 # 如何使用 Service Bus 队列
 

@@ -8,8 +8,8 @@
     editor="" /> 
 <tags 
    ms.service="service-bus"
-    ms.date="05/10/2016"
-   wacn.date="06/27/2016" />
+    ms.date="09/29/2016"
+   wacn.date="12/02/2016" />
 
 # 使用集成了 AMQP 1.0 的 Python 中的服务总线。
 

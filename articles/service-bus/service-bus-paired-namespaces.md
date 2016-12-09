@@ -8,8 +8,8 @@
    editor="" />
 <tags 
    ms.service="service-bus"
-   ms.date="03/16/2016"
-   wacn.date="08/15/2016" />
+   ms.date="10/04/2016"
+   wacn.date="12/02/2016" />
 
 # 配对命名空间实现详细信息和成本影响
 

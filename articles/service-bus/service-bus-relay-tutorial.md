@@ -8,8 +8,8 @@
    editor="tysonn" />
 <tags 
    ms.service="service-bus"
-    ms.date="05/17/2016"
-   wacn.date="07/25/2016" />
+    ms.date="09/27/2016"
+   wacn.date="12/02/2016" />
 
 # 服务总线中继消息传送教程
 

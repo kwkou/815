@@ -8,8 +8,8 @@
    editor="" />
 <tags 
    ms.service="service-bus"
-   ms.date="05/04/2016"
-   wacn.date="06/21/2016"/>
+   ms.date="10/05/2016"
+   wacn.date="12/02/2016"/>
 
 # 服务总线配额
 

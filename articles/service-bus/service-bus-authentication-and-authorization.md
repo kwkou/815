@@ -8,8 +8,8 @@
    editor="tysonn" />
 <tags 
    ms.service="service-bus"
-   ms.date="03/09/2016"
-   wacn.date="08/15/2016" />
+   ms.date="10/03/2016"
+   wacn.date="12/02/2016" />
 
 # 服务总线身份验证和授权
 
