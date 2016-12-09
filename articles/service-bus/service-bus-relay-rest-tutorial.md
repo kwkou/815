@@ -8,8 +8,8 @@
    editor="" />
 <tags 
    ms.service="service-bus"
-    ms.date="06/03/2016"
-   wacn.date="07/28/2016" />
+    ms.date="09/27/2016"
+   wacn.date="12/02/2016" />
 
 # 服务总线 REST 教程
 

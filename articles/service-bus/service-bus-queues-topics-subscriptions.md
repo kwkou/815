@@ -8,8 +8,8 @@
    editor="tysonn" />
 <tags 
    ms.service="service-bus"
-    ms.date="06/20/2016"
-   wacn.date="08/15/2016" />
+    ms.date="10/14/2016"
+   wacn.date="12/02/2016" />
 
 # 服务总线队列、主题和订阅
 

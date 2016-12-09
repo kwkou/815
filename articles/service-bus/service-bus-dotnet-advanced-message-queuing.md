@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="service-bus" 
-	ms.date="05/10/2016" 
-	wacn.date="06/27/2016"/>
+	ms.date="09/29/2016" 
+	wacn.date="12/02/2016"/>
 
 # 如何将 AMQP 1.0 与服务总线 .NET API 一起使用
 

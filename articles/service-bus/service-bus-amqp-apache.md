@@ -8,8 +8,8 @@
     editor="" /> 
 <tags 
    ms.service="service-bus"
-    ms.date="05/06/2016"
-   wacn.date="06/27/2016" />
+    ms.date="09/29/2016"
+   wacn.date="12/02/2016" />
 
 # 在 Azure Linux VM 上安装 Apache Qpid Proton-C
 
