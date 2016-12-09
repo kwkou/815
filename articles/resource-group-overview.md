@@ -15,8 +15,8 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="09/16/2016"
-   wacn.date="10/24/2016"/>
+   ms.date="10/04/2016"
+   wacn.date="12/02/2016"/>
 
 # Azure 资源管理器概述
 
