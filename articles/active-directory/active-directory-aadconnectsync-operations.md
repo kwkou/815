@@ -60,7 +60,7 @@
 
 现在，已将导出更改暂存到 Azure AD 和本地 AD（如果你正在使用 Exchange 混合部署）。接下来的步骤可让你在实际开始导出到目录之前，检查将要更改的内容。
 
-#### 验证
+#### 验证 <a name="verify-the-configuration-of-a-server"></a>
 
 1. 启动 cmd 提示符并转到 `%ProgramFiles%\Microsoft AD Sync\bin`
 2. 运行：`csexport "Name of Connector" %temp%\export.xml /f:x`  
@@ -84,7 +84,7 @@
 2. 在处于"暂存模式"的服务器上运行安装向导，然后禁用"暂存模式"。
 ![ReadyToConfigure](./media/active-directory-aadconnectsync-operations/additionaltasks.png)
 
-## 灾难恢复
+## 灾难恢复 <a name="disaster-recovery"></a>
 实现设计的一部分是规划在灾难中失去同步服务器时如何应对。有不同的模型可用，要使用哪一种模型取决于许多因素，包括：
 
 -	停机期间无法对 Azure AD 中的对象进行更改的容限度如何？
