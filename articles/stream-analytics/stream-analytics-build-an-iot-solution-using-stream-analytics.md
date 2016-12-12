@@ -133,7 +133,7 @@
 ## 预配本教程所需的 Azure 资源
 本教程需要两个事件中心来接收*入口*和*出口*数据流。Azure SQL 数据库会输出流分析作业的结果。Azure 存储会存储有关车辆登记的参考数据。
 
-可以使用 GitHub 上 TollApp 文件夹中的 Setup.ps1 脚本来创建所有必要的资源。为了节省时间，我们建议运行此脚本。如果想要详细了解如何在 Azure 门户中配置这些资源，请参阅“在 Azure 门户中配置教程资源”附录。
+可以使用 GitHub 上 TollApp 文件夹中的 Setup.ps1 脚本来创建所有必要的资源。为了节省时间，我们建议运行此脚本。
 
 下载并保存 [TollApp](http://download.microsoft.com/download/D/4/A/D4A3C379-65E8-494F-A8C5-79303FD43B0A/TollApp.zip) 支持文件夹和文件。
 
@@ -156,7 +156,7 @@ Windows 会自动阻止 .ps1、.dll 和 .exe 文件，因此需要在运行该�
 
 键入 **.\\Setup.ps1** 以设置 Azure 帐户，创建并配置所有必需的资源，然后开始生成事件。脚本会随机挑选一个区域来创建资源。若要显式指定一个区域，可以传递 **-location** 参数，如以下示例所示：
 
-**.\\Setup.ps1 -location “Central US”**
+**.\\Setup.ps1 -location “Chinaeast”**
 
 ![Azure 登录页的屏幕截图](./media/stream-analytics-build-an-iot-solution-using-stream-analytics/image5.png)  
 
