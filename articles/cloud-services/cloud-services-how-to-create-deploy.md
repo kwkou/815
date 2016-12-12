@@ -15,7 +15,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="09/06/2016"
-	wacn.date="12/05/2016"
+	wacn.date="12/12/2016"
 	ms.author="adegeo"/>  
 
 
@@ -145,7 +145,6 @@ Azure 经典门户提供两种创建和部署云服务的方法：“快速创�
     ![CloudServices\_QuickGlance](./media/cloud-services-how-to-create-deploy/CloudServices_QuickGlance.png)
 
 
-[TFSTutorialForCloudService]: http://go.microsoft.com/fwlink/?LinkID=251796
  
 ## 后续步骤
 

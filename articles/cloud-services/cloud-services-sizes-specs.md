@@ -13,7 +13,7 @@
  ms.tgt_pltfrm="na"
  ms.workload="tbd"
  ms.date="10/27/2016"
- wacn.date="12/05/2016"
+ wacn.date="12/12/2016"
  ms.author="adegeo"/>
 
 # 云服务的大小
