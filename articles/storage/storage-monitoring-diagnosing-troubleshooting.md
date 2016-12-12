@@ -212,7 +212,7 @@
 
 ### <a name="storage-emulator-issues"></a>存储模拟器问题
 
-Azure SDK 提供了一个存储模拟器，你可以在开发工作站上运行它。此模拟器可模拟 Azure 存储服务的大多数行为，因此在开发和测试期间很有用，让用户无需 Azure 订阅和 Azure 存储帐户即可运行使用 Azure 存储服务的应用程序。
+Azure SDK 提供了一个存储模拟器，你可以在开发工作站上运行它。此模拟器模拟 Azure 存储服务的大部分行为，并可在开发和测试期间使用，能够实现运行使用 Azure 存储服务的应用程序，而无需 Azure 订阅和 Azure 存储帐户。
 
 本指南的“[故障排除指南]”一节将介绍使用存储模拟器时遇到的一些常见问题。
 
@@ -499,7 +499,7 @@ Microsoft.WindowsAzure.Storage|错误|1|85d077ab -…|重试策略不允许重�
 - SAS 密钥中的版本参数（例如 **sv=2015-04-05**）是否与你正在使用的存储客户端库的版本匹配？ 建议你始终使用最新版的[存储客户端库](https://www.nuget.org/packages/WindowsAzure.Storage/)。
 - 如果你重新生成存储访问密钥，则可能会使任何现有的 SAS 令牌无效。如果你生成的 SAS 令牌具有较长的到期时间供客户端应用程序缓存，这可能是个问题。
 
-如果你使用存储客户端库生成 SAS 令牌，则可轻松生成有效令牌。但是，如果你使用的是存储 REST API 并手动构造 SAS 令牌，则应仔细阅读主题[使用共享访问签名委托访问](http://msdn.microsoft.com/zh-cn/library/azure/ee395415.aspx)。
+如果你使用存储客户端库生成 SAS 令牌，则可轻松生成有效令牌。但是，如果使用的是存储 REST API 并手动构造 SAS 令牌，则应仔细阅读主题[使用共享访问签名委托访问](http://msdn.microsoft.com/zh-cn/library/azure/ee395415.aspx)。
 
 ### <a name="the-client-is-receiving-404-messages"></a>客户端正在接收“HTTP 404 (未找到)”消息
 如果客户端应用程序从服务器收到“HTTP 404 (未找到)”消息，这意味着客户端正在尝试使用的对象（如实体、表、Blob、容器或队列）在存储服务中不存在。有多种原因可能会导致此问题，例如：
@@ -567,7 +567,7 @@ de8b1c3c-...| 在操作期间引发的异常: 远程服务器返回了错误： 
 de8b1c3c-... | 重试策略不允许重试。操作失败，远程服务器返回了一个错误：(404) 未找到...
 e2d06d78-... | 重试策略不允许重试。操作失败，远程服务器返回了一个错误 ：(409) 冲突...
 
-在此示例中，该日志显示客户端正在交错执行 **CreateIfNotExists** 方法发出的请求（请求 ID e2d06d78…）与 **UploadFromStream** 方法发出的请求 (de8b1c3c-...)；之所以发生这种情况是因为客户端应用程序以异步方式调用了这两个方法。你应修改客户端中的异步代码，以确保客户端在尝试将任何数据上载到该容器中的 Blob 之前已创建该容器。理想情况下，你应该提前创建所有容器。
+在此示例中，该日志显示客户端正在交错执行 **CreateIfNotExists** 方法发出的请求（请求 ID e2d06d78…）与 **UploadFromStream** 方法发出的请求 (de8b1c3c-...)；之所以发生这种情况是因为客户端应用程序以异步方式调用了这两个方法。应修改客户端中的异步代码，以确保客户端在尝试将任何数据上传到该容器中的 Blob 之前已创建该容器。理想情况下，你应该提前创建所有容器。
 
 #### <a name="SAS-authorization-issue"></a>共享访问签名 (SAS) 授权问题
 
@@ -745,7 +745,7 @@ Timestamp|操作|结果|容器名称|客户端请求 ID
 如果前面的故障排除章节未包括你遇到的存储服务问题，则应采用以下方法来诊断和排查你的问题。
 
 - 检查你的度量值，以了解与预期的基准行为相比是否存在任何更改。从度量值，你可能能够确定此问题是暂时的还是永久性的，并可确定此问题影响哪些存储操作。
-- 可以使用度量值信息来帮助你搜索服务器端日志数据，以获取有关发生的任何错误的更多详细信息。此信息可能会帮助你排查和解决该问题。
+- 可以使用度量值信息来帮助搜索服务器端日志数据，以获取有关发生的任何错误的更多详细信息。此信息可能会帮助你排查和解决该问题。
 - 如果服务器端日志中的信息不足以成功排查此问题，则可以使用存储客户端库客户端日志来调查客户端应用程序和工具（如 Fiddler、Wireshark 和 Microsoft Message Analyzer）的行为以调查你的网络。
 
 有关使用 Fiddler 的详细信息，请参阅“[附录 1：使用 Fiddler 捕获 HTTP 和 HTTPS 通信]”。
@@ -756,20 +756,20 @@ Timestamp|操作|结果|容器名称|客户端请求 ID
 
 ## <a name="appendices"></a>附录
 
-附录介绍几种在诊断和排查 Azure 存储空间（及其他服务）问题时你可能会发现很有用的工具。这些工具不属于 Azure 存储空间，有些工具是第三方产品。因此，这些附录中介绍的工具可能在你与 Azure 或 Azure 存储空间签订的任何支持协议中均未涉及，因此，你在评估过程中，应查看这些工具的提供者提供的许可和支持选项。
+附录介绍几种在诊断和排查 Azure 存储空间（及其他服务）问题时你可能会发现很有用的工具。这些工具不属于 Azure 存储空间，有些工具是第三方产品。因此，这些附录中介绍的工具可能在与 Azure 或 Azure 存储签订的任何支持协议中均未涉及，因此，在评估过程中，应查看这些工具的提供者提供的许可和支持选项。
 
 ### <a name="appendix-1"></a>附录 1：使用 Fiddler 捕获 HTTP 和 HTTPS 通信
 
-[Fiddler](http://www.telerik.com/fiddler) 是一个有用的工具，用于分析客户端应用程序与你所用的 Azure 存储服务之间的 HTTP 和 HTTPS 通信。
+[Fiddler](http://www.telerik.com/fiddler) 是一个有用的工具，用于分析客户端应用程序与所用的 Azure 存储服务之间的 HTTP 和 HTTPS 通信。
 
-> [AZURE.NOTE] Fiddler 可以解码 HTTPS 通信；你应仔细阅读 Fiddler 文档以了解它如何执行此操作，并了解安全隐患。
+> [AZURE.NOTE] Fiddler 可以解码 HTTPS 通信；应仔细阅读 Fiddler 文档以了解它如何执行此操作，并了解安全隐患。
 
 本附录提供了一个简要演练，介绍如何配置 Fiddler 以捕获已安装 Fiddler 的本地计算机与 Azure 存储服务之间的通信。
 
-启动 Fiddler 后，它将开始捕获你的本地计算机上的 HTTP 和 HTTPS 通信。以下是一些用于控制 Fiddler 的有用命令：
+启动 Fiddler 后，它将开始捕获本地计算机上的 HTTP 和 HTTPS 通信。以下是一些用于控制 Fiddler 的有用命令：
 
 - 停止和启动捕获流量。在主菜单上，转到“文件”，然后单击“捕获流量”可在打开和关闭捕获之间切换。
-- 保存捕获的通信数据。在主菜单上，转到“文件”，单击“保存”，然后单击“所有会话”：这使您可以将流量保存在一个会话存档文件中。你以后可以重新加载会话存档以进行分析，或者将其发送到 Microsoft 技术支持（如果被要求）。
+- 保存捕获的通信数据。在主菜单上，转到“文件”，单击“保存”，然后单击“所有会话”：可以将流量保存在一个会话存档文件中。以后可以重新加载会话存档以进行分析，或者将其发送到 Microsoft 技术支持（如有需要）。
 
 若要限制 Fiddler 捕获的通信量，可以使用在“筛选器”选项卡中配置的筛选器。下面的屏幕截图显示了只捕获发送到 **contosoemaildist.table.core.chinacloudapi.cn** 存储终结点的流量的筛选器：
 
@@ -788,15 +788,15 @@ Timestamp|操作|结果|容器名称|客户端请求 ID
 
     ![][6]
 
-5.	单击“启动”。现在，当你在本地计算机上使用客户端应用程序时，Wireshark 将捕获发送到表服务终结点或从该终结点发送的所有数据包。
-6.	完成后，在主菜单上，依次单击“捕获”、“停止”。
-7.	若要将捕获的数据保存到 Wireshark 捕获文件中，请在主菜单上依次单击“文件”、“保存”。
+5.	单击“启动”。现在，当在本地计算机上使用客户端应用程序时，Wireshark 将捕获发送到表服务终结点或从该终结点发送的所有数据包。
+6.	完成后，在主菜单上，依次单击“捕获”和“停止”。
+7.	若要将捕获的数据保存到 Wireshark 捕获文件中，请在主菜单上依次单击“文件”和“保存”。
 
-WireShark 将在 **packetlist** 窗口中突出显示存在的任何错误。您还可以使用“专家信息”窗口（依次单击“分析”、“专家信息”）来查看错误和警告的摘要。
+WireShark 将在 **packetlist** 窗口中突出显示存在的任何错误。还可以使用“专家信息”窗口（依次单击“分析”和“专家信息”）来查看错误和警告的摘要。
 
 ![][7]
 
-您还可以选择查看 TCP 数据（如果应用程序层看到该数据），方法是右键单击 TCP 数据，然后选择“跟踪 TCP 流”。当你不使用捕获筛选器捕获转储时，此方法特别有用。有关详细信息，请参阅 [Following TCP Streams（跟踪 TCP 流）](http://www.wireshark.org/docs/wsug_html_chunked/ChAdvFollowTCPSection.html)。
+还可以选择查看 TCP 数据（如果应用程序层看到该数据），方法是右键单击 TCP 数据，然后选择“跟踪 TCP 流”。在不使用捕获筛选器捕获转储时，此方法特别有用。有关详细信息，请参阅 [Following TCP Streams（跟踪 TCP 流）](http://www.wireshark.org/docs/wsug_html_chunked/ChAdvFollowTCPSection.html)。
 
 ![][8]
 
@@ -808,13 +808,13 @@ WireShark 将在 **packetlist** 窗口中突出显示存在的任何错误。您
 
 #### 使用 Microsoft Message Analyzer 配置 Web 跟踪会话
 
-若要使用 Microsoft Message Analyzer 为 HTTP 和 HTTPS 通信配置 Web 跟踪会话，请运行 Microsoft Message Analyzer 应用程序的，然后在“文件”菜单上单击“捕获/跟踪”。在可用的跟踪方案列表中，选择“Web 代理”。然后在“跟踪方案配置”面板的“HostnameFilter”文本框中，添加存储终结点的名称（你可以在 [Azure 门户预览](https://portal.azure.cn)中查找这些名称）。例如，如果您的 Azure 存储帐户的名称是 **contosodata**，则应将以下内容添加到 **HostnameFilter** 文本框：
+若要使用 Microsoft Message Analyzer 为 HTTP 和 HTTPS 通信配置 Web 跟踪会话，请运行 Microsoft Message Analyzer 应用程序的，然后在“文件”菜单上单击“捕获/跟踪”。在可用的跟踪方案列表中，选择“Web 代理”。然后在“跟踪方案配置”面板的“HostnameFilter”文本框中，添加存储终结点的名称（你可以在 [Azure 门户预览](https://portal.azure.cn)中查找这些名称）。例如，如果 Azure 存储帐户的名称是 **contosodata**，则应将以下内容添加到 **HostnameFilter** 文本框：
 
     contosodata.blob.core.chinacloudapi.cn contosodata.table.core.chinacloudapi.cn contosodata.queue.core.chinacloudapi.cn
 
 > [AZURE.NOTE] 空格字符分隔主机名。
 
-当您准备好开始收集跟踪数据时，请单击“就此开始”按钮。
+当准备好开始收集跟踪数据时，请单击“就此开始”按钮。
 
 有关 Microsoft Message Analyzer **Web 代理**跟踪的详细信息，请参阅 [Microsoft-PEF-WebProxy 提供程序](http://technet.microsoft.com/zh-cn/library/jj674814.aspx)。
 
@@ -822,13 +822,13 @@ Microsoft Message Analyzer 中内置的“Web 代理”跟踪基于 Fiddler；�
 
 #### 使用 Microsoft Message Analyzer 诊断网络问题
 
-除了使用 Microsoft Message Analyzer “Web 代理”跟踪来捕获客户端应用程序和存储服务之间的 HTTP/HTTPS 通信的详细信息外，您还可以使用内置的“本地链路层”跟踪来捕获网络数据包信息。这使你可以捕获类似于使用 Wireshark，可以捕获的数据，并诊断丢弃的数据包等网络问题。
+除了使用 Microsoft Message Analyzer “Web 代理”跟踪来捕获客户端应用程序和存储服务之间的 HTTP/HTTPS 通信的详细信息外，还可以使用内置的“本地链路层”跟踪来捕获网络数据包信息。此能够实现捕获类似于使用 Wireshark 捕获的数据，并诊断丢弃的数据包等网络问题。
 
 下面的屏幕截图显示了“本地链路层”跟踪的一个示例，其中一些“信息性”消息显示在 **DiagnosisTypes** 列中。单击 **DiagnosisTypes** 列中的图标可显示消息的详细信息。在此示例中，服务器重新传输了消息 #305，因为它未收到来自客户端的确认消息：
 
 ![][9]
 
-当你在 Microsoft Message Analyzer 中创建跟踪会话时，可以指定筛选器，以减少跟踪中的干扰项量。在定义跟踪的“捕获/跟踪”页上，单击 **Microsoft-Windows-NDIS-PacketCapture** 旁边的“配置”链接。下面的屏幕截图显示了筛选三个存储服务的 IP 地址的 TCP 通信的配置：
+当在 Microsoft Message Analyzer 中创建跟踪会话时，可以指定筛选器，以减少跟踪中的干扰项量。在定义跟踪的“捕获/跟踪”页上，单击 **Microsoft-Windows-NDIS-PacketCapture** 旁边的“配置”链接。下面的屏幕截图显示了筛选三个存储服务的 IP 地址的 TCP 通信的配置：
 
 ![][10]
 
@@ -836,7 +836,7 @@ Microsoft Message Analyzer 中内置的“Web 代理”跟踪基于 Fiddler；�
 
 ### <a name="appendix-4"></a>附录 4：使用 Excel 查看度量值和日志数据
 
-使用许多工具可以从 Azure 表存储中下载带分隔符格式的存储度量值数据，以便可以轻松地将这些数据加载到 Excel 中进行查看和分析。来自 Azure Blob 存储的存储日志记录数据已采用可以加载到 Excel 中的带分隔符格式。但是，你需要基于[存储分析日志格式](http://msdn.microsoft.com/zh-cn/library/azure/hh343259.aspx)和[存储分析度量值表架构](http://msdn.microsoft.com/zh-cn/library/azure/hh343264.aspx)中的信息添加相应的列标题。
+使用许多工具可以从 Azure 表存储中下载带分隔符格式的存储度量值数据，以便可以轻松地将这些数据加载到 Excel 中进行查看和分析。来自 Azure Blob 存储的存储日志记录数据已采用可以加载到 Excel 中的带分隔符格式。但是，需要基于[存储分析日志格式](http://msdn.microsoft.com/zh-cn/library/azure/hh343259.aspx)和[存储分析度量值表架构](http://msdn.microsoft.com/zh-cn/library/azure/hh343264.aspx)中的信息添加相应的列标题。
 
 若要将存储日志记录数据导入 Excel（从 Blob 存储下载后），请执行以下操作：
 
@@ -930,4 +930,4 @@ Microsoft Message Analyzer 中内置的“Web 代理”跟踪基于 Fiddler；�
 [9]: ./media/storage-monitoring-diagnosing-troubleshooting/mma-screenshot-1.png
 [10]: ./media/storage-monitoring-diagnosing-troubleshooting/mma-screenshot-2.png
 
-<!---HONumber=Mooncake_1031_2016-->
+<!---HONumber=Mooncake_Quality_Review_1118_2016-->

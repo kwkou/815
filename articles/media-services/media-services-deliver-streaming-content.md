@@ -1,6 +1,6 @@
 ﻿<properties 
 	pageTitle="使用 .NET 发布 Azure 媒体服务内容" 
-	description="了解如何创建用于生成流 URL 的定位符。代码示例用 C# 编写且使用适用于 .NET 的媒体服务 SDK。" 
+	description="了解如何创建用于生成流式处理 URL 的定位符。代码示例用 C# 编写且使用适用于 .NET 的媒体服务 SDK。" 
 	authors="juliako" 
 	manager="erikre" 
 	editor="" 
@@ -14,7 +14,7 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="08/30/2016" 
-	wacn.date="10/10/2016"
+	wacn.date="12/12/2016"
 	ms.author="juliako"/>
 
 
@@ -27,29 +27,29 @@
 
 ##概述
 
-你可以通过创建 OnDemand 流式处理定位符并生成流 URL 来流式传输自适应比特率 MP4 集。[对资产进行编码](/documentation/articles/media-services-encode-asset/)主题说明了如何编码成自适应比特率 MP4 集。
+可通过创建 OnDemand 流式处理定位符并生成流式处理 URL 来流式传输自适应比特率 MP4 集。[对资产进行编码](/documentation/articles/media-services-encode-asset/)主题说明了如何编码成自适应比特率 MP4 集。
 
 >[AZURE.NOTE]如果内容已加密，则在创建定位符之前配置资产传送策略（如[本](/documentation/articles/media-services-dotnet-configure-asset-delivery-policy/)主题中所述）。
 
-你也可以使用 OnDemand 流式处理定位符生成指向可渐进式下载的 MP4 文件的 URL。
+也可以使用 OnDemand 流式处理定位符生成指向可渐进式下载的 MP4 文件的 URL。
 
 本主题说明如何创建 OnDemand 流式处理定位符，以发布资产及生成平滑流、MPEG DASH 和 HLS 流式处理 URL。此外，还将示范如何生成渐进式下载 URL。
   	 
 ##创建 OnDemand 流式处理定位符
 
-若要创建 OnDemand 流式处理定位符并获取 URL，你需要执行以下操作：
+若要创建 OnDemand 流式处理定位符并获取 URL，需要执行以下操作：
 
-   1. 如果内容已加密，则定义访问策略。
+   1. 如果内容已加密，请定义访问策略。
    2. 创建 OnDemand 流式处理定位符。
-   3. 如果你想要流式处理，请获取资产中的流式处理清单文件 (.ism)。
+   3. 如果计划进行流式处理，请获取资产中的流式处理清单文件 (.ism)。
    		
-	如果你想要渐进式下载，请获取资产中的 MP4 文件名。
+	如果计划进行渐进式下载，请获取资产中的 MP4 文件名。
    4. 生成清单文件或 MP4 文件的 URL。
    
 
 ###使用媒体服务 .NET SDK 
 
-生成流 URL
+生成流式处理 URL
 
 	private static void BuildStreamingURLs(IAsset asset)
 	{
@@ -88,7 +88,7 @@
 	    Console.WriteLine();
 	}
 
-代码将输出：
+代码输出：
 	
 	URL to manifest for client streaming using Smooth Streaming protocol:
 	http://amstest1.streaming.mediaservices.chinacloudapi.cn/3c5fe676-199c-4620-9b03-ba014900f214/BigBuckBunny.ism/manifest
@@ -98,7 +98,7 @@
 	http://amstest1.streaming.mediaservices.chinacloudapi.cn/3c5fe676-199c-4620-9b03-ba014900f214/BigBuckBunny.ism/manifest(format=mpd-time-csf)
 	
 
->[AZURE.NOTE]你也可以通过 SSL 连接流式传输内容。为此，请确保流 URL 以 HTTPS 开头。
+>[AZURE.NOTE]也可通过 SSL 连接流式传输内容。为此，请确保流式处理 URL 以 HTTPS 开头。
 
 生成渐进式下载 URL
 
@@ -130,7 +130,7 @@
 	        Console.WriteLine(originLocator.Path + pd.Name);
 	}
 
-代码将输出：
+代码输出：
 	
 	http://amstest1.streaming.mediaservices.chinacloudapi.cn/3c5fe676-199c-4620-9b03-ba014900f214/BigBuckBunny_H264_650kbps_AAC_und_ch2_96kbps.mp4
 	http://amstest1.streaming.mediaservices.chinacloudapi.cn/3c5fe676-199c-4620-9b03-ba014900f214/BigBuckBunny_H264_400kbps_AAC_und_ch2_96kbps.mp4
@@ -141,7 +141,7 @@
 
 ###使用 Azure 媒体服务 .NET SDK 扩展
 
-以下代码将调用 .NET SDK 扩展方法，用于创建定位符，并为自适应流生成平滑流、HLS 和 MPEG-DASH URL。
+以下代码调用 .NET SDK 扩展方法，用于创建定位符，并为自适应流式处理生成平滑流式处理、HLS 和 MPEG-DASH URL。
 
 	// Create a loctor.
 	_context.Locators.Create(
@@ -166,4 +166,4 @@
 [下载资产](/documentation/articles/media-services-deliver-asset-download/)
 [配置资产传送策略](/documentation/articles/media-services-dotnet-configure-asset-delivery-policy/)
 
-<!---HONumber=Mooncake_0926_2016-->
+<!---HONumber=Mooncake_Quality_Review_1118_2016-->

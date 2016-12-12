@@ -16,7 +16,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="data-management"
    ms.date="09/20/2016"
-   wacn.date="10/31/2016"
+   wacn.date="12/12/2016"
    ms.author="carlrab"/>
 
 # 使用动态管理视图监视 Azure SQL 数据库
@@ -41,7 +41,7 @@ SQL 数据库部分支持三种类别的动态管理视图：
 
 ## 计算数据库大小
 
-下面的查询返回你的数据库的大小（以 MB 为单位）：
+下面的查询将返回数据库的大小（以 MB 为单位）：
 
 
 	-- Calculates the size of the database.
@@ -63,8 +63,7 @@ SQL 数据库部分支持三种类别的动态管理视图：
 
 ## 监视连接
 
-你可以使用 [sys.dm\_exec\_connections](https://msdn.microsoft.com/zh-cn/library/ms181509.aspx) 视图来检索有关特定的 Azure SQL 数据库服务器所建立连接的信息以及每个连接的详细信息。此外，[sys.dm\_exec\_sessions](https://msdn.microsoft.com/zh-cn/library/ms176013.aspx) 视图在检索有关所有活动用户连接和内部任务的信息时非常有用。
-下面的查询将检索当前连接上的信息：
+可以使用 [sys.dm\_exec\_connections](https://msdn.microsoft.com/zh-cn/library/ms181509.aspx) 视图来检索有关特定的 Azure SQL 数据库服务器所建立连接的信息以及每个连接的详细信息。此外，[sys.dm\_exec\_sessions](https://msdn.microsoft.com/zh-cn/library/ms176013.aspx) 视图在检索有关所有活动用户连接和内部任务的信息时非常有用。下面的查询将检索当前连接上的信息：
 
 
 	SELECT
@@ -108,7 +107,7 @@ SQL 数据库部分支持三种类别的动态管理视图：
 
 ### 监视受阻的查询
 
-缓慢或长时间运行的查询会导致过多的资源消耗并会导致查询受阻。受阻的原因可能是应用程序设计欠佳、查询计划不良、缺乏有用的索引等。你可以使用 sys.dm\_tran\_locks 视图来获取有关 Azure SQL 数据库中当前锁定活动的信息。有关示例代码，请参阅 SQL Server 联机丛书中的 [sys.dm\_tran\_locks (Transact-SQL)](https://msdn.microsoft.com/zh-cn/library/ms190345.aspx)。
+缓慢或长时间运行的查询会造成过多的资源消耗并会导致查询受阻。受阻的原因可能是应用程序设计欠佳、查询计划不良、缺乏有用的索引等。可以使用 sys.dm\_tran\_locks 视图来获取有关 Azure SQL 数据库中当前锁定活动的信息。有关示例代码，请参阅 SQL Server 联机丛书中的 [sys.dm\_tran\_locks (Transact-SQL)](https://msdn.microsoft.com/zh-cn/library/ms190345.aspx)。
 
 ### 监视查询计划
 
@@ -138,4 +137,4 @@ SQL 数据库部分支持三种类别的动态管理视图：
 
 [SQL 数据库简介](/documentation/articles/sql-database-technical-overview/)
 
-<!---HONumber=Mooncake_1024_2016-->
+<!---HONumber=Mooncake_Quality_Review_1118_2016-->

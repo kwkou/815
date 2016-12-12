@@ -200,4 +200,4 @@
 [轮转存储密钥后更新媒体服务定位符](/documentation/articles/media-services-roll-storage-access-keys/)
  
 
-<!---HONumber=Mooncake_1107_2016-->
+<!---HONumber=Mooncake_Quality_Review_1118_2016-->

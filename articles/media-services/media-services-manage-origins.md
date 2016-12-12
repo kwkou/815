@@ -139,4 +139,4 @@
 [configure-origin-configure-custom-host-names]: ./media/media-services-manage-origins/media-services-configure-custom-host-names.png
  
 
-<!---HONumber=Mooncake_0815_2016-->
+<!---HONumber=Mooncake_Quality_Review_1118_2016-->

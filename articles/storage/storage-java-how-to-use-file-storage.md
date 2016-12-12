@@ -218,4 +218,4 @@ Azure 文件存储共享至少包含文件所在的根目录。在本部分，�
 - [Azure 存储团队博客](http://blogs.msdn.com/b/windowsazurestorage/)
 - [使用 AzCopy 命令行实用程序传输数据](/documentation/articles/storage-use-azcopy/)
 
-<!---HONumber=Mooncake_0829_2016-->
+<!---HONumber=Mooncake_Quality_Review_1118_2016-->

@@ -1,6 +1,6 @@
 <properties
 	pageTitle="开始使用 Azure 经典管理门户按需传送内容 | Azure"
-	description="本教程将引导你完成使用 Azure 媒体服务和 Azure 经典管理门户实施视频点播 (VoD) 内容传送应用程序的步骤。"
+	description="本教程介绍了使用 Azure 媒体服务和 Azure 经典管理门户实施视频点播 (VoD) 内容传送应用程序的步骤。"
 	services="media-services"
 	documentationCenter=""
 	authors="Juliako"
@@ -21,7 +21,7 @@
 [AZURE.INCLUDE [media-services-selector-get-started](../../includes/media-services-selector-get-started.md)]
 
 
-本教程将引导你完成使用 Azure 经典管理门户实施基本视频点播 (VoD) 内容传送应用程序的步骤。
+本教程介绍了使用 Azure 经典管理门户实施基本视频点播 (VoD) 内容传送应用程序的步骤。
 
 > [AZURE.NOTE] 若要完成本教程，你需要一个 Azure 帐户。有关详细信息，请参阅 [Azure 免费试用](/pricing/1rmb-trial/?WT.mc_id=A261C142F)。
 
@@ -30,7 +30,7 @@
 
 1.  创建 Azure 媒体服务帐户。
 2.  配置流式处理终结点。
-1.  上载视频文件。
+1.  上传视频文件。
 1.  将源文件编码为一组自适应比特率 MP4 文件。
 1.  发布资产并获取流式处理和渐进式下载 URL。
 1.  播放内容。
@@ -46,9 +46,9 @@
 
 3. 在“区域”中，选择将用于存储媒体服务帐户的元数据记录的地理区域。下拉列表中仅显示可用的媒体服务区域。
 
-4. 在“存储帐户”中，选择一个存储帐户以便为媒体服务帐户中的媒体内容提供 Blob 存储。你可以选择位于媒体服务帐户所在的地理区域内的现有存储帐户，也可以创建一个新的存储帐户。将在同一区域内创建一个新的存储帐户。
+4. 在“存储帐户”中，选择一个存储帐户以便为媒体服务帐户中的媒体内容提供 Blob 存储。可以选择位于媒体服务帐户所在的地理区域内的现有存储帐户，也可以创建一个新的存储帐户。将在同一区域内创建一个新的存储帐户。
 
-5. 如果你创建了一个新的存储帐户，请在“新建存储帐户名称”中输入该存储帐户的名称。适用于存储帐户名的规则对媒体服务帐户同样适用。
+5. 如果已创建了新的存储帐户，请在“新建存储帐户名称”中输入该存储帐户的名称。适用于存储帐户名的规则对媒体服务帐户同样适用。
 
 6. 单击窗体底部的“快速创建”。
 
@@ -56,25 +56,25 @@
 
 	成功创建帐户后，状态将更改为“活动”。
 
-	在页面底部，将出现“管理密钥”按钮。当你单击此按钮时，将会显示一个对话框，其中包含媒体服务帐户名以及主密钥和辅助密钥。你必须要有帐户名和主要密钥信息，才能以编程方式访问媒体服务帐户。
+	在页面底部，将出现“管理密钥”按钮。单击此按钮时，会显示一个对话框，其中包含媒体服务帐户名以及主密钥和辅助密钥。需要帐户名和主密钥信息，才能以编程方式访问媒体服务帐户。
 
 	![“媒体服务”页](./media/media-services-portal-get-started/wams-mediaservices-page.png)
 
-	当你双击帐户名时，默认情况下将显示“快速启动”页。可从此页执行某些管理任务，而这些管理任务也可从该门户的其他页执行。例如，你可以从此页上载视频文件，也可以从“内容”页执行此操作。
+	双击帐户名时，默认情况下将显示“快速启动”页。可从此页执行某些管理任务，而这些管理任务也可从该门户的其他页执行。例如，可以从此页上传视频文件，也可以从“内容”页执行此操作。
 
 
 ## 使用门户配置流式处理终结点
 
-使用 Azure 媒体服务时最常见的方案之一是将自适应比特率流传送至你的客户端。通过自适应比特率流，客户端可以在视频显示时，根据当前网络带宽、CPU 利用率和其他因素，切换至较高或较低的比特率流。媒体服务支持以下自适应比特率流式处理技术：HTTP 实时流式处理 (HLS)、平滑流式处理、MPEG DASH 和 HDS（仅适用于 Adobe PrimeTime/Access 许可证持有人）。
+使用 Azure 媒体服务最常见的方案之一是将自适应比特率流传送至客户端。通过自适应比特率流，客户端可以在视频显示时，根据当前网络带宽、CPU 利用率和其他因素，切换至较高或较低的比特率流。媒体服务支持以下自适应比特率流式处理技术：HTTP 实时流式处理 (HLS)、平滑流式处理、MPEG DASH 和 HDS（仅适用于 Adobe PrimeTime/Access 许可证持有人）。
 
-媒体服务所提供的动态打包可让你以媒体服务支持的流格式（MPEG DASH、HLS、Smooth Streaming、HDS）传送自适应比特率 MP4 或平滑流编码内容，而无须重新打包成这些流格式。
+媒体服务提供的动态打包允许以媒体服务支持的流格式（MPEG DASH、HLS、Smooth Streaming、HDS）传送自适应比特率 MP4 或平滑流编码内容，而无须重新打包成这些流格式。
 
 若要使用动态打包，必须执行下列操作：
 
 - 将夹层（源）文件编码成一组自适应比特率 MP4 文件或自适应比特率平滑流文件（本教程稍后将演示编码步骤）。
-- 针对你要传送内容的*流式处理终结点*，获取至少一个流式处理单位。
+- 针对要传送内容的*流式处理终结点*，获取至少一个流式处理单位。
 
-通过动态打包，你只需要存储及支付一种存储格式的文件，媒体服务将会根据客户端的要求创建并提供适当的响应。
+通过动态打包，只需要存储及支付一种存储格式的文件，媒体服务将会根据客户端的要求创建并提供适当的响应。
 
 若要更改流式处理保留单元数，请执行以下操作：
 
@@ -94,53 +94,53 @@
 	>
 	> 为 24 小时期间指定的最大单位数将用于计算成本。有关定价详细信息，请参阅 [媒体服务定价详细信息](/pricing/details/media-services/)。
 
-## 上载内容
+## 上传内容
 
 
 1. 在 [Azure 经典管理门户](http://manage.windowsazure.cn)中，单击“媒体服务”，然后单击媒体服务帐户名。
 2. 选择“内容”页。
-3. 单击该页上或者门户底部的“上载”按钮。
-4. 在“上载内容”对话框中，浏览到所需的资产文件。单击该文件，然后单击“打开”或按 Enter。
+3. 单击该页上或者门户底部的“上传”按钮。
+4. 在“上传内容”对话框中，浏览到所需的资产文件。单击该文件，然后单击“打开”或按 Enter。
 
 	![UploadContentDialog][uploadcontent]
 
-5. 在“上载内容”对话框中，单击勾选按钮以接受“文件”和“内容名称”。
-6. 随后将开始上载，你可以从门户底部跟踪进度。
+5. 在“上传内容”对话框中，单击复选按钮以接受“文件”和“内容名称”。
+6. 随后将开始上传，可从门户底部跟踪进度。
 
 	![JobStatus][status]
 
-上载完成后，内容列表中会列出新的资产。根据约定，名称的末尾将附加“**-Source**”，以便将新内容作为编码任务的源内容进行跟踪。
+上传完成后，内容列表中会列出新的资产。根据约定，名称的末尾将附加“**-Source**”，以便将新内容作为编码任务的源内容进行跟踪。
 
 ![ContentPage][contentpage]
 
-如果在上载过程停止后未更新文件大小值，请选择“同步元数据”按钮。这会将资产文件大小与存储中的实际文件大小同步，并刷新“内容”页上的值。
+如果在上传过程停止后未更新文件大小值，请选择“同步元数据”按钮。这会将资产文件大小与存储中的实际文件大小同步，并刷新“内容”页上的值。
 
 
 ## 对内容进行编码
 
 ### 概述
 
-若要通过 Internet 传送数字视频，你必须对媒体进行压缩。媒体服务提供了一个媒体编码器，可让你指定如何为内容编码（例如，要使用的编解码器、文件格式、分辨率和比特率。）
+若要通过 Internet 传送数字视频，必须对媒体进行压缩。媒体服务提供了一个媒体编码器，可让你指定如何为内容编码（例如，要使用的编解码器、文件格式、分辨率和比特率。）
 
-使用 Azure 媒体服务时最常见的方案之一是将自适应比特率流传送至你的客户端。通过自适应比特率流，客户端可以在视频显示时，根据当前网络带宽、CPU 利用率和其他因素，切换至较高或较低的比特率流。媒体服务支持以下自适应比特率流式处理技术：HTTP 实时流式处理 (HLS)、平滑流式处理、MPEG DASH 和 HDS（仅适用于 Adobe PrimeTime/Access 许可证持有人）。
+使用 Azure 媒体服务最常见的方案之一是将自适应比特率流传送至客户端。通过自适应比特率流，客户端可以在视频显示时，根据当前网络带宽、CPU 利用率和其他因素，切换至较高或较低的比特率流。媒体服务支持以下自适应比特率流式处理技术：HTTP 实时流式处理 (HLS)、平滑流式处理、MPEG DASH 和 HDS（仅适用于 Adobe PrimeTime/Access 许可证持有人）。
 
 媒体服务所提供的动态打包可让你以媒体服务支持的流格式（MPEG DASH、HLS、Smooth Streaming 或 HDS）传送自适应比特率 MP4 或平滑流编码内容，而无须重新打包成这些流格式。
 
 若要使用动态打包，必须执行下列操作：
 
 - 将夹层（源）文件编码成一组自适应比特率 MP4 文件或自适应比特率平滑流文件（本教程稍后将演示编码步骤）。
-- 针对你要传送内容的流式处理终结点，获取至少一个按需流式处理单位。有关详细信息，请参阅[如何缩放按需流式处理保留单位](/documentation/articles/media-services-manage-origins/#scale_streaming_endpoints)。
+- 针对要传送内容的流式处理终结点，获取至少一个按需流式处理单位。有关详细信息，请参阅[如何缩放按需流式处理保留单位](/documentation/articles/media-services-manage-origins/#scale_streaming_endpoints)。
 
-通过动态打包，你只需要存储及支付一种存储格式的文件，媒体服务将会根据客户端的要求创建并提供适当的响应。
+通过动态打包，只需要存储及支付一种存储格式的文件，媒体服务将会根据客户端的要求创建并提供适当的响应。
 
-请注意，除了能够使用动态打包功能以外，点播流保留单元也为你提供可购买的专用流出容量（以 200 Mbps 为增量来购买）。默认情况下，按需流式处理在共享实例模型中配置，该模型的服务器资源（例如计算或出口容量）与所有其他用户共享。若要增加按需流式处理吞吐量，建议购买按需流式处理保留单位。
+请注意，除了能够使用动态打包功能以外，点播流保留单元还提供可购买的专用流出容量（以 200 Mbps 为增量来购买）。默认情况下，按需流式处理在共享实例模型中配置，该模型的服务器资源（例如计算或出口容量）与所有其他用户共享。若要增加按需流式处理吞吐量，建议购买按需流式处理保留单位。
 
 ### 编码
 
-本部分介绍通过 Azure 经典管理门户使用媒体编码器标准版为内容编码时可以执行的步骤。
+本部分介绍通过 Azure 经典管理门户使用 Media Encoder Standard 为内容编码时可以执行的步骤。
 
 1.  选择要编码的文件。如果此文件类型支持编码，则“内容”页底部将启用“处理”按钮。
-4. 在“处理”对话框中，选择“媒体编码器标准版”处理器。
+4. 在“处理”对话框中，选择“Media Encoder Standard”处理器。
 5. 选择其中一个“编码配置”。
 
 	![Process2][process2]  
@@ -148,7 +148,7 @@
 
 	[媒体编码器标准版的任务预设字符串](https://msdn.microsoft.com/zh-cn/library/mt269960)主题说明了每个预设的含义。
 
-5. 然后，输入所需的友好输出内容名称或接受默认值。然后，单击勾选按钮开始编码操作，你可以在门户底部跟踪进度。
+5. 然后，输入所需的友好输出内容名称或接受默认值。然后，单击复选按钮开始编码操作。可在门户底部跟踪进度。
 6. 选择“确定”。
 
 	完成编码后，“内容”页将包含已编码的文件。
@@ -162,39 +162,39 @@
 
 ### 概述
 
-若要为用户提供一个可用来流式传输内容或下载内容的 URL，你首先需要通过创建定位符来“发布”资产。定位符提供对资产中所含文件的访问权限。媒体服务支持两种类型的定位符：用于流媒体（例如 MPEG DASH、HLS 或平滑流式处理）的 OnDemandOrigin 定位符，以及用于下载媒体文件的访问签名 (SAS) 定位符。
+若要为用户提供可用于流式传输内容或下载内容的 URL，首先需要通过创建定位符来“发布”资产。定位符提供对资产中所含文件的访问权限。媒体服务支持两种类型的定位符：用于流媒体（例如 MPEG DASH、HLS 或平滑流式处理）的 OnDemandOrigin 定位符，以及用于下载媒体文件的访问签名 (SAS) 定位符。
 
-当你使用 Azure 经典管理门户发布资产时，系统将为你创建定位符并提供基于 OnDemand 的 URL（如果你的资产包含 .ism 文件）或 SAS URL。
+使用 Azure 经典管理门户发布资产时，系统将创建定位符并提供基于 OnDemand 的 URL（如果资产包含 .ism 文件）或 SAS URL。
 
 SAS URL 采用以下格式。
 
 	{blob container name}/{asset name}/{file name}/{SAS signature}
 
-流 URL 采用以下格式，你可以用它来播放平滑流资产。
+流式处理 URL 采用以下格式，你可以用它来播放平滑流资产。
 
 	{streaming endpoint name-media services account name}.streaming.mediaservices.chinacloudapi.cn/{locator ID}/{filename}.ism/Manifest
 
-若要生成 HLS 流 URL，请将 (format=m3u8-aapl) 附加到 URL。
+若要生成 HLS 流式处理 URL，请将 (format=m3u8-aapl) 附加到 URL。
 
 	{streaming endpoint name-media services account name}.streaming.mediaservices.chinacloudapi.cn/{locator ID}/{filename}.ism/Manifest(format=m3u8-aapl)
 
-若要生成 MPEG DASH 流 URL，请将 (format=mpd-time-csf) 追加到 URL。
+若要生成 MPEG DASH 流式处理 URL，请将 (format=mpd-time-csf) 追加到 URL。
 
 	{streaming endpoint name-media services account name}.streaming.mediaservices.chinacloudapi.cn/{locator ID}/{filename}.ism/Manifest(format=mpd-time-csf)
 
 
-定位符附带过期日期。当你使用门户发布资产时，将会创建过期日期在 100 年后的定位符。
+定位符附带到期日期。使用门户发布资产时，会创建到期日期在 100 年后的定位符。
 
->[AZURE.NOTE] 如果你使用门户在 2015 年 3 月之前创建了定位符，则会创建过期日期在两年后的定位符。
+>[AZURE.NOTE] 如果使用门户在 2015 年 3 月之前创建了定位符，则会创建到期日期在两年后的定位符。
 
-若要更新定位符的过期日期，请使用 [REST](http://msdn.microsoft.com/zh-cn/library/azure/hh974308.aspx#update_a_locator) 或 [.NET](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.mediaservices.client.ilocator.update(v=azure.10).aspx) API。请注意，当你更新 SAS 定位符的过期日期时，URL 会发生变化。
+若要更新定位符的到期日期，请使用 [REST](http://msdn.microsoft.com/zh-cn/library/azure/hh974308.aspx#update_a_locator) 或 [.NET](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.mediaservices.client.ilocator.update(v=azure.10).aspx) API。请注意，更新 SAS 定位符的到期日期时，URL 会发生变化。
 
 ### 发布
 
 若要使用门户发布资产，请执行以下操作：
 
 1. 选择资源。
-2. 然后单击发布按钮。
+2. 然后单击“发布”按钮。
 
  ![PublishedContent][publishedcontent]  
 
@@ -238,4 +238,4 @@ Azure 经典管理门户提供了可用于测试视频的内容播放器。
 [encrypt]: ./media/media-services-manage-content/media-services-encrypt-content.png
 [AMSPlayer]: ./media/media-services-portal-get-started/media-services-portal-player.png
 
-<!---HONumber=Mooncake_0815_2016-->
+<!---HONumber=Mooncake_Quality_Review_1118_2016-->

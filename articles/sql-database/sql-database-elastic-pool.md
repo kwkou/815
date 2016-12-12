@@ -1,7 +1,7 @@
 <properties
 	pageTitle="什么是 Azure 弹性数据库池？| Azure"
-	description="可通过使用池管理成百上千个数据库可通过池分发一组性能单位的一个价格。可随心所欲地移入或移出数据。"
-	keywords="弹性数据库,sql 数据库"
+	description="可通过使用池管理成百上千个数据库可通过池分发一组性能单位的价格。可随心所欲地移入或移出数据。"
+	keywords="弹性数据库, SQL 数据库"
 	services="sql-database"
 	documentationCenter=""
 	authors="CarlRabeler"
@@ -12,7 +12,7 @@
 	ms.service="sql-database"
 	ms.devlang="NA"
 	ms.date="07/12/2016"
-	wacn.date="11/16/2016"
+	wacn.date="12/12/2016"
 	ms.author="CarlRabeler"
 	ms.workload="data-management"
 	ms.topic="article"
@@ -27,22 +27,22 @@
 
 ## 工作原理
 
-常见的 SaaS 应用程序模式是单租户数据库模型：每个客户都有一个数据库。每个客户（数据库）对内存、IO 和 CPU 具有不可预知的资源要求。由于需求有高峰和低谷，如何分配资源？ 通常有两个选项：(1) 基于高峰使用情况过度设置资源，因此需要支付额外的费用，或者 (2) 为了节省成本而采用低配，但在高峰期间会出现性能下降而导致客户满意度降低。弹性数据库池通过确保数据库在必要时获取所需的效能资源，同时在可预测的预算内提供简单的资源分配机制，以此来解决此问题。若要了解有关使用弹性池的 SaaS 应用程序的设计模式的详细信息，请参阅[具有 Azure SQL 数据库的多租户 SaaS 应用程序的设计模式](/documentation/articles/sql-database-design-patterns-multi-tenancy-saas-applications/)。
+常见的 SaaS 应用程序模式是单租户数据库模型：每个客户都有一个数据库。每个客户（数据库）对内存、IO 和 CPU 具有不可预知的资源要求。由于需求有高峰和低谷，如何分配资源？ 通常有两个选项：(1) 基于高峰使用情况过度设置资源，因此需要支付额外的费用，或者 (2) 为了节省成本而采用低配，但在高峰期间会出现性能下降而导致客户满意度降低。弹性数据库池通过确保数据库在必要时获取所需的效能资源，同时在可预测的预算内提供简单的资源分配机制，以此来解决此问题。若要了解有关使用弹性池的 SaaS 应用程序的设计模式的详细信息，请参阅[多租户 SaaS 应用程序和 Azure SQL 数据库的设计模式](/documentation/articles/sql-database-design-patterns-multi-tenancy-saas-applications/)。
 
 
 在 SQL 数据库中，单一数据库在数据库事务单位 (DTU) 中相对衡量数据库处理资源需求的能力，弹性数据库池则在弹性 DTU (eDTU) 中衡量此能力。请参阅 [Introduction to SQL Database（SQL 数据库简介）](/documentation/articles/sql-database-what-is-a-dtu/)，了解有关 DTU 和 eDTU 的详细信息。
 
-对池提供了固定数量的 eDTU，以获得固定价格。在池中，单独的数据库都被赋予了在固定参数内自动缩放的灵活性。高负荷下的数据库可能会消耗更多的 eDTU 以满足需求。轻负荷下的数据库占用较少 eDTU，并且没有任何负荷的数据库不会消耗任何 eDTU。设置整个池（而非单个数据库）的资源简化了管理任务。此外，必须具有该池的可预测预算。
+为池提供了固定数量的 eDTU，以获得固定价格。池向单独的数据库赋予了在固定参数内自动缩放的灵活性。高负载下的数据库可能会消耗更多的 eDTU 以满足需求。轻负载下的数据库占用较少 eDTU，并且没有任何负荷的数据库不会消耗任何 eDTU。为整个池（而非单个数据库）预配资源简化了管理任务。此外，必须具有该池的可预测预算。
 
-其他的 eDTU 可添加到现有的池，而未发生数据库停机或对数据库产生负面影响。同样，你随时可以从现有池中删除不再需要的额外 eDTU。
+其他的 eDTU 可添加到现有的池，而不会发生数据库停机或对数据库产生负面影响。同样，可随时从现有池中删除不再需要的额外 eDTU。
 
 并且可以向池添加或缩减数据库。如果可以预测到数据库的资源利用率不足，则将其移出。
 
-## 在池中有哪些数据库？
+## 池中有哪些数据库？
 
 ![弹性数据库池中共享 eDTU 的 SQL 数据库。][1]
 
-最适合添加到弹性数据库池的数据库通常是有时活动，有时不活动。在上述示例中，你可以看到单一数据库的活动、4 个数据库的活动，最后是包含 20 个数据库的弹性数据库池的活动。活动随时间而不同的数据库很适合添加到弹性池，因为它们不是永远都在使用中，而且可以共享 eDTU。并非所有数据库都符合此模式。具有更稳定的资源需求的数据库更适合“基本”、“标准”和“高级”服务层级，这些层级的资源是单独分配的。
+最适合添加到弹性数据库池的数据库通常有时活动，有时不活动。上述示例中，可以看到单一数据库的活动、4 个数据库的活动，最后是包含 20 个数据库的弹性数据库池的活动。活动随时间而不同的数据库很适合添加到弹性池，因为它们不是永远都在使用中，而且可以共享 eDTU。并非所有数据库都符合此模式。具有更稳定资源需求的数据库更适合“基本”、“标准”和“高级”服务层级，这些层级的资源是单独分配的。
 
 [弹性数据库池的价格和性能注意事项](/documentation/articles/sql-database-elastic-pool-guidance/)。
 
@@ -53,7 +53,7 @@
 
 [AZURE.INCLUDE [用于弹性数据库的 SQL 数据库服务层表](../../includes/sql-database-service-tiers-table-elastic-db-pools.md)]
 
-如果使用了弹性池的所有 DTU，那么池中的每个数据库将接收相同数量的资源来处理查询。SQL DB 服务通过确保相等的计算时间片，在数据库之间提供资源共享的公平性。此资源共享公平性的应用程序是在将每个数据库的 DTU 最小值设为非零值时，对另外为每个数据库保证的任意资源量的补充。
+如果使用了弹性池的所有 DTU，那么池中的每个数据库将接收相同数量的资源来处理查询。SQL DB 服务通过确保相等的计算时间片段，在数据库之间提供资源共享的公平性。此资源共享公平性的应用程序是在将每个数据库的 DTU 最小值设为非零值时，对另外为每个数据库保证的任意资源量的补充。
 
 ##<a name="elastic-database-pool-properties"></a> 弹性数据库池属性
 
@@ -81,7 +81,7 @@
 
 ## 弹性数据库作业
 
-借助池，可以通过在**[弹性作业](/documentation/articles/sql-database-elastic-jobs-overview/)**中运行脚本来简化管理任务。弹性数据库作业可消除与大量数据库有关的大部分麻烦。若要开始使用该作业，请参阅[弹性数据库作业入门](/documentation/articles/sql-database-elastic-jobs-getting-started/)。
+借助池，可以通过在**[弹性作业](/documentation/articles/sql-database-elastic-jobs-overview/)**中运行脚本来简化管理任务。弹性数据库作业可消除与大量数据库有关的大部分问题。若要开始使用该作业，请参阅[弹性数据库作业入门](/documentation/articles/sql-database-elastic-jobs-getting-started/)。
 
 
 ## 池中数据库的业务连续性功能
@@ -105,4 +105,4 @@
 <!--Image references-->
 [1]: ./media/sql-database-elastic-pool/databases.png
 
-<!---HONumber=Mooncake_0808_2016-->
+<!---HONumber=Mooncake_Quality_Review_1118_2016-->

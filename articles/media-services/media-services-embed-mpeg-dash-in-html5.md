@@ -110,4 +110,4 @@ Dash.js 是用 JavaScript 编写的开源 MPEG-DASH 视频播放器。其目标�
 
 [GitHub dash.js 存储库](https://github.com/Dash-Industry-Forum/dash.js)
 
-<!---HONumber=Mooncake_1107_2016-->
+<!---HONumber=Mooncake_Quality_Review_1118_2016-->

@@ -14,7 +14,7 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="05/27/2016" 
-	wacn.date="11/16/2016" 
+	wacn.date="12/12/2016" 
 	ms.author="ddove"/>
 
 #<a name="Getting-started-with-elastic-database-tools"></a> 弹性数据库工具入门
@@ -36,7 +36,7 @@
 2. 在对话框中，单击“联机”。
 
     ![“新建项目”>“联机”][2]
-3. 然后单击“示例”下面的“Visual C#”。
+3. 然后单击“示例”下的“Visual C#”。
 
     ![单击“Visual C#”][3]
 4. 在搜索框中，键入 **elastic db** 以搜索示例。随后将出现标题 **Azure SQL 弹性数据库工具 - 入门**。
@@ -44,34 +44,34 @@
     ![搜索框][1]
  
 5. 选择该示例，选择新项目的名称和位置，然后按“确定”创建该项目。
-6. 在示例项目的解决方案中打开 **app.config** 文件，然后遵循该文件中的说明添加 Azure SQL 数据库服务器名称和你的登录信息（用户名和密码）。
-7. 构建并运行应用程序。当出现提示时，请允许 Visual Studio 还原该解决方案的 NuGet 包。这将会从 NuGet 下载最新版本的弹性数据库客户端库。
-8. 尝试使用不同的选项，以了解有关弹性缩放功能的详细信息。请注意应用程序在控制台输出中执行的步骤，并随意浏览后台代码。
+6. 在示例项目的解决方案中打开 **app.config** 文件，然后按照该文件中的说明添加 Azure SQL 数据库服务器名称和登录信息（用户名和密码）。
+7. 构建并运行应用程序。出现提示时，请允许 Visual Studio 还原该解决方案的 NuGet 包。这会从 NuGet 下载最新版本的弹性数据库客户端库。
+8. 尝试使用不同的选项，以了解有关客户端库功能的详细信息。请注意应用程序在控制台输出中执行的步骤，并随意浏览后台代码。
 
     ![进度][4]
 
-祝贺你 - 你已成功地使用弹性数据库池在 Azure SQL 数据库上生成并运行了第一个分片应用程序。通过将 Visual Studio 或 SQL Server Management Studio 连接到 Azure DB 服务器，快速查看一下该示例创建的分片。你将会看到该示例创建的新示例分片数据库和分片映射管理器数据库。
+祝贺 - 你已成功使用弹性数据库池在 Azure SQL 数据库上生成并运行了第一个分片应用程序。通过将 Visual Studio 或 SQL Server Management Studio 连接到 Azure DB 服务器，快速查看该示例创建的分片。你会看到该示例创建的新示例分片数据库和分片映射管理器数据库。
 
-**注意：**如果你没有 SQL Server Management Studio，请参阅[使用 SQL Server Management Studio 管理 Azure SQL 数据库](/documentation/articles/sql-database-manage-azure-ssms/)，其中提供了有关获取该工具的说明。
+**注意：**如果没有 SQL Server Management Studio，请参阅[使用 SQL Server Management Studio 管理 Azure SQL 数据库](/documentation/articles/sql-database-manage-azure-ssms/)，其中提供了有关获取该工具的说明。
 
 ### 重要的代码示例片段
 
-1. **管理分片和分片映射：**该代码演示如何在文件 **ShardMapManagerSample.cs** 中处理分片、范围和映射。你可以在以下位置找到有关此主题的详细信息：[分片映射管理](/documentation/articles/sql-database-elastic-scale-shard-map-management/)。  
+1. **管理分片和分片映射：**该代码演示如何在文件 **ShardMapManagerSample.cs** 中处理分片、范围和映射。可以在以下位置找到有关此主题的详细信息：[分片映射管理](/documentation/articles/sql-database-elastic-scale-shard-map-management/)。  
 2. **数据相关的路由**：**DataDependentRoutingSample.cs** 中演示了如何向正确的分片路由事务。有关详细信息，请参阅[数据相关的路由](/documentation/articles/sql-database-elastic-scale-data-dependent-routing/)。
 3. **查询多个分片**：文件 **MultiShardQuerySample.cs** 中演示了如何查询多个分片。有关详细信息，请参阅[多分片查询](/documentation/articles/sql-database-elastic-scale-multishard-querying/)。
 4. **添加空分片**：文件 **AddNewShardsSample.cs** 中的代码以迭代方式添加新的空分片。以下位置提供了此主题的详细信息：[分片映射管理](/documentation/articles/sql-database-elastic-scale-shard-map-management/)。
 
 ### 其他弹性缩放操作
 
-1. **拆分现有分片**：拆分分片的功能是通过**拆分/合并工具**提供的。可在以下位置找到有关此服务的详细信息：[拆分/合并工具概述](/documentation/articles/sql-database-elastic-scale-overview-split-and-merge/)。
+1. **拆分现有分片**：拆分分片的功能由**拆分/合并工具**提供。可在以下位置找到有关此服务的详细信息：[拆分/合并工具概述](/documentation/articles/sql-database-elastic-scale-overview-split-and-merge/)。
 2. **合并现有分片**：分片合并也是使用**拆分/合并工具**执行的。有关详细信息，请参阅：[拆分/合并工具概述](/documentation/articles/sql-database-elastic-scale-overview-split-and-merge/)。   
 
 
 ## 成本
 
-弹性数据库工具是免费的。弹性数据库工具不会在 Azure 使用费的基础上施加额外的费用。
+弹性数据库工具是免费的。弹性数据库工具不会在 Azure 使用费的基础上增加额外的费用。
 
-例如，示例应用程序会创建新的数据库。这种费用取决于你选择的 Azure SQL DB 数据库版本，以及你的应用程序的 Azure 使用情况。
+例如，示例应用程序会创建新的数据库。这种费用取决于所选择的 Azure SQL DB 数据库版本，以及应用程序的 Azure 使用情况。
 
 有关价格信息，请参阅 [SQL 数据库定价详细信息](/pricing/details/sql-database/)。
 
@@ -83,10 +83,10 @@
     -    [Azure SQL 弹性数据库 - 入门](http://code.msdn.microsoft.com/Elastic-Scale-with-Azure-a80d8dc6?SRC=VSIDE)
     -    [Azure SQL 弹性数据库 - 与实体框架集成](http://code.msdn.microsoft.com/Elastic-Scale-with-Azure-bae904ba?SRC=VSIDE)
     -    [脚本中心上的分片弹性](https://gallery.technet.microsoft.com/scriptcenter/Elastic-Scale-Shard-c9530cbe)
--    博客：[弹性缩放产品通告](https://azure.microsoft.com/blog/2014/10/02/introducing-elastic-scale-preview-for-azure-sql-database)
+-    博客：[弹性缩放公告](https://azure.microsoft.com/blog/2014/10/02/introducing-elastic-scale-preview-for-azure-sql-database)
 -    第 9 频道：[弹性缩放概述视频](http://channel9.msdn.com/Shows/Data-Exposed/Azure-SQL-Database-Elastic-Scale)
 -    论坛：[Azure SQL 数据库论坛](https://social.msdn.microsoft.com/Forums/zh-cn/home?forum=ssdsgetstarted)
--    要测量性能：[分片映射管理器的性能计数器](/documentation/articles/sql-database-elastic-database-client-library/)
+-    测量性能：[分片映射管理器的性能计数器](/documentation/articles/sql-database-elastic-database-client-library)
 
 
 <!--Anchors-->
@@ -102,4 +102,4 @@
 [4]: ./media/sql-database-elastic-scale-get-started/output2.png
  
 
-<!---HONumber=Mooncake_0711_2016-->
+<!---HONumber=Mooncake_Quality_Review_1118_2016-->

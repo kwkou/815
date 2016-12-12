@@ -15,7 +15,7 @@
 	ms.devlang="dotnet"
 	ms.topic="get-started-article"
 	ms.date="08/17/2016"
-	wacn.date="10/17/2016"
+	wacn.date="12/12/2016"
 	ms.author="stevestein"/>  
 
 
@@ -36,7 +36,7 @@
 若要使用 Visual Studio 连接到 SQL 数据库，需具备以下条件：
 
 
-- 可连接到的 SQL 数据库。本文使用 **AdventureWorks** 示例数据库。若要获取 AdventureWorks 示例数据库，请参阅 [Create the demo database](/documentation/articles/sql-database-get-started/)（创建演示数据库）。
+- 可连接的 SQL 数据库。本文使用 **AdventureWorks** 示例数据库。若要获取 AdventureWorks 示例数据库，请参阅[创建演示数据库](/documentation/articles/sql-database-get-started/)。
 
 
 - Visual Studio 2013 Update 4（或更高版本）。Microsoft 现在*免费*提供 Visual Studio Community。
@@ -305,4 +305,4 @@
 
 [50-VSCopyToOutputDirectoryProperty]: ./media/sql-database-connect-query/connqry-vs-appconfig-copytoputputdir-h.png
 
-<!---HONumber=Mooncake_1010_2016-->
+<!---HONumber=Mooncake_Quality_Review_1118_2016-->

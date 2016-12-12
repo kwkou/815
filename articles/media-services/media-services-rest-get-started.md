@@ -1,22 +1,22 @@
-<properties 
-	pageTitle="开始使用 REST 按需传送内容 | Azure" 
-	description="本教程介绍了使用 Azure 媒体服务和 REST API 实现点播内容传送应用程序的步骤。" 
-	services="media-services" 
-	documentationCenter="" 
-	authors="Juliako" 
-	manager="erikre" 
-	editor=""/>  
+<properties
+    pageTitle="开始使用 REST 按需传送内容 | Azure"
+    description="本教程介绍了使用 Azure 媒体服务和 REST API 实现点播内容传送应用程序的步骤。"
+    services="media-services"
+    documentationcenter=""
+    author="Juliako"
+    manager="erikre"
+    editor="" />  
 
-
-<tags 
-	ms.service="media-services" 
-	ms.workload="media" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="10/11/2016" 
-	wacn.date="11/21/2016" 
-	ms.author="juliako"/>
+<tags
+    ms.assetid="88194b59-e479-43ac-b179-af4f295e3780"
+    ms.service="media-services"
+    ms.workload="media"
+    ms.tgt_pltfrm="na"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.date="11/07/2016"
+    wacn.date="12/12/2016"
+    ms.author="juliako" />
 
 #开始使用 REST 传送点播内容 
 
@@ -41,7 +41,7 @@
 
 1.  使用门户创建媒体服务帐户。
 1.  使用 REST API 连接到媒体服务帐户。
-1.  使用 REST API 创建新资产并上载视频文件。
+1.  使用 REST API 创建新资产并上传视频文件。
 1.  使用 REST API 配置流单元。
 2.  使用 REST API 将源文件编码为一组自适应比特率 MP4 文件。
 1.  使用 REST API 发布资产并获取流式处理和渐进式下载 URL。
@@ -73,7 +73,7 @@
 	
 	![“媒体服务”页](./media/media-services-rest-get-started/wams-mediaservices-page.png)
 
-	当你双击帐户名时，默认情况下将显示“快速启动”页。可从此页执行某些管理任务，而这些管理任务也可从该门户的其他页执行。例如，你可以从此页上载视频文件，也可以从“内容”页执行此操作。
+	当你双击帐户名时，默认情况下将显示“快速启动”页。可从此页执行某些管理任务，而这些管理任务也可从该门户的其他页执行。例如，你可以从此页上传视频文件，也可以从“内容”页执行此操作。
 
 
 ## <a id="connect"></a>使用 REST API 连接到媒体服务帐户
@@ -151,7 +151,7 @@
 - 上海 DC URI：https://wamsshaclus001rest-hs.chinacloudapp.cn/API/ 
 - 北京 DC URI： https://wamsbjbclus001rest-hs.chinacloudapp.cn/API/
 
-请注意，用于上载和下载资产文件的根 URI 为 https://yourstorageaccount.blob.core.chinacloudapi.cn/ ，其中的存储帐户名为你在媒体服务帐户设置期间使用的同一帐户名。
+请注意，用于上传和下载资产文件的根 URI 为 https://yourstorageaccount.blob.core.chinacloudapi.cn/ ，其中的存储帐户名为你在媒体服务帐户设置期间使用的同一帐户名。
 
 以下示例演示了对上海 DC 媒体服务 URI 发出的 HTTP 请求 (https://wamsshaclus001rest-hs.chinacloudapp.cn/API/)。 
 
@@ -185,7 +185,7 @@
 
 >[AZURE.NOTE] 从现在起，本教程使用新 URI。
 
-## <a id="upload"></a>使用 REST API 创建新资产并上载视频文件
+## <a id="upload"></a>使用 REST API 创建新资产并上传视频文件
 
 在媒体服务中，可以将数字文件上传到资产中。**资产**实体可以包含视频、音频、图像、缩略图集合、图文轨迹和隐藏式字幕文件（以及有关这些文件的元数据。） 将文件上传到资产后，相关内容即安全地存储在云中供后续处理和流式处理。
 
@@ -194,9 +194,9 @@
  
 - **None** = **0** - 不使用加密。使用此选项时，内容在传送过程中或静态存储过程中都不会受到保护。
 	如果计划使用渐进式下载交付 MP4，则使用此选项。
-- **StorageEncrypted** = **1** - 使用 AES-256 位加密在本地加密明文内容，然后将其上载到 Azure 存储空间中以加密形式静态存储相关内容。受存储加密保护的资产将在编码前自动解密并放入经过加密的文件系统中，并可选择在重新上传为新的输出资产前重新加密。存储加密的主要用例是在磁盘上通过静态增强加密来保护高品质的输入媒体文件。
-- **CommonEncryptionProtected** = **2** - 上载经过常用加密或 PlayReady DRM 加密并受其保护的内容（例如，受 PlayReady DRM 保护的平滑流）时使用此选项。
-- **EnvelopeEncryptionProtected** = **4** – 如果要上载使用 AES 加密的 HLS，请使用此选项。Transform Manager 必须已对文件进行编码和加密。
+- **StorageEncrypted** = **1** - 使用 AES-256 位加密在本地加密明文内容，然后将其上传到 Azure 存储空间中以加密形式静态存储相关内容。受存储加密保护的资产将在编码前自动解密并放入经过加密的文件系统中，并可选择在重新上传为新的输出资产前重新加密。存储加密的主要用例是在磁盘上通过静态增强加密来保护高品质的输入媒体文件。
+- **CommonEncryptionProtected** = **2** - 上传经过常用加密或 PlayReady DRM 加密并受其保护的内容（例如，受 PlayReady DRM 保护的平滑流）时使用此选项。
+- **EnvelopeEncryptionProtected** = **4** – 如果要上传使用 AES 加密的 HLS，请使用此选项。Transform Manager 必须已对文件进行编码和加密。
 
 ### 创建资产
 
@@ -380,7 +380,7 @@ SAS URL 采用以下格式：
 - 如果需要立即上传文件，应将 StartTime 值设置为当前时间前五分钟。这是因为你的客户端计算机与媒体服务之间可能存在时钟偏差。此外，StartTime 值必须采用以下 DateTime 格式：YYYY-MM-DDTHH:mm:ssZ（例如，“2014-05-23T17:53:50Z”）。
 - 定位符从创建到可用可能会有 30-40 秒的延迟。SAS URL 和源定位符都会出现这个问题。
 
-以下示例说明了如何创建 SAS URL 定位符，如请求正文中的 Type 属性定义（“1”表示 SAS 定位符，“2”表示按需来源定位符）。返回的 **Path** 属性包含上载文件时必须使用的 URL。
+以下示例说明了如何创建 SAS URL 定位符，如请求正文中的 Type 属性定义（“1”表示 SAS 定位符，“2”表示按需来源定位符）。返回的 **Path** 属性包含上传文件时必须使用的 URL。
 	
 **HTTP 请求**
 	
@@ -439,7 +439,7 @@ SAS URL 采用以下格式：
 	
 设置 AccessPolicy 和定位符后，即可使用 Azure 存储 REST API 将具体的文件上传到 Azure BLOB 存储容器。也可以按页或块 BLOB 来上传。
 
->[AZURE.NOTE] 必须将要上载的文件的文件名添加到在上一节收到的定位符 **Path** 值中。例如，https://storagetestaccount001.blob.core.chinacloudapi.cn/asset-e7b02da4-5a69-40e7-a8db-e8f4f697aac0/BigBuckBunny.mp4? . . .
+>[AZURE.NOTE] 必须将要上传的文件的文件名添加到在上一节收到的定位符 **Path** 值中。例如，https://storagetestaccount001.blob.core.chinacloudapi.cn/asset-e7b02da4-5a69-40e7-a8db-e8f4f697aac0/BigBuckBunny.mp4? . . .
 
 有关使用 Azure 存储 blob 的详细信息，请参阅 [Blob 服务 REST API](http://msdn.microsoft.com/zh-cn/library/azure/dd135733.aspx)。
 
@@ -647,7 +647,7 @@ SAS URL 采用以下格式：
 
 ### 获取媒体处理器
 
-在媒体服务中，媒体处理器是完成特定处理任务（例如，对媒体内容进行编码、格式转换、加密或解密）的组件。对于本教程中所示的编码任务，将使用媒体编码器标准版。
+在媒体服务中，媒体处理器是完成特定处理任务（例如，对媒体内容进行编码、格式转换、加密或解密）的组件。对于本教程中所示的编码任务，将使用 Media Encoder Standard。
 
 以下代码会请求编码器的 ID。
 
@@ -796,14 +796,14 @@ SAS URL 采用以下格式：
 
 - TaskBody 属性必须使用文本 XML 来定义任务使用的输入资产或输出资产的数量。任务主题包含 XML 的 XML 架构定义。
 - 在 TaskBody 定义中，必须将 <inputAsset> 和 <outputAsset> 的每个内部值设置为 JobInputAsset(value) 或 JobOutputAsset(value)。
-- 一个任务可以有多个输出资产。作为作业任务的输出，一个 JobOutputAsset(x) 只能使用一次。
-- 可以将 JobInputAsset 或 JobOutputAsset 指定为某任务的输入资产。
+- 一个任务可以有多个输出资产。一个 JobOutputAsset(x) 只能一次用作作业中任务的输出。
+- 可以将 JobInputAsset 或 JobOutputAsset 指定为任务的输入资产。
 - 任务不得构成循环。
-- 传递给 JobInputAsset 或 JobOutputAsset 的 value 参数代表资产的索引值。实际资产在作业实体定义的 InputMediaAssets 和 OutputMediaAssets 导航属性中定义。
+- 传递给 JobInputAsset 或 JobOutputAsset 的 value 参数代表资产的索引值。在作业实体定义的 InputMediaAssets 和 OutputMediaAssets 导航属性中定义实际资产。
 
->[AZURE.NOTE] 由于媒体服务基于 OData v3，因此 InputMediaAssets 和 OutputMediaAssets 导航属性集合中的单个资产将通过“\_\_metadata : uri”名称-值对进行引用。
+>[AZURE.NOTE] 由于媒体服务基于 OData v3，因此通过“\_\_metadata : uri”名称-值对引用 InputMediaAssets 和 OutputMediaAssets 导航属性集合中的各项资产。
 
-- InputMediaAssets 映射到已在媒体服务中创建的一个或多个资产。OutputMediaAssets 由系统创建。它们不引用现有资产。
+- InputMediaAssets 映射到已在媒体服务中创建的一项或多项资产。OutputMediaAssets 由系统创建。它们不引用现有资产。
 - 可以使用 assetName 属性来命名 OutputMediaAssets。如果此属性不存在，则 OutputMediaAsset 的名称将为 <outputAsset> 元素的任意内部文本值，并以作业名称值或作业 ID 值（在没有定义名称属性的情况下）为后缀。例如，如果将 assetName 的值设置为“Sample”，则会将 OutputMediaAsset 名称属性设置为“Sample”。但是，如果未设置 assetName 的值，但已将作业名称设置为“NewJob”，则 OutputMediaAsset 名称为“JobOutputAsset(value)\_NewJob”。
 
 	以下示例说明了如何设置 assetName 属性：
@@ -1158,4 +1158,4 @@ MPEG DASH 的流 URL 采用以下格式：
 
 若要测试渐进式下载，请将 URL 粘贴到浏览器（例如 IE、Chrome、Safari）中。
 
-<!---HONumber=Mooncake_1114_2016-->
+<!---HONumber=Mooncake_1205_2016-->

@@ -119,4 +119,4 @@ Azure 媒体服务支持传送使用 AES 明文密钥和 DRM 加密（Microsoft 
 
 [content-protection]: ./media/media-services-content-protection-overview/media-services-content-protection.png
 
-<!---HONumber=Mooncake_1107_2016-->
+<!---HONumber=Mooncake_Quality_Review_1118_2016-->

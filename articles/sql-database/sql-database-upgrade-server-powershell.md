@@ -15,7 +15,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="09/19/2016"
-	wacn.date="10/31/2016"
+	wacn.date="12/12/2016"
 	ms.author="sstein"/>  
 
 
@@ -25,27 +25,26 @@
 
 
 
-SQL 数据库 V12 是最新版本，因此我们建议升级到 SQL 数据库 V12。
-SQL 数据库 V12 具有[旧版所欠缺的许多优点](/documentation/articles/sql-database-v12-whats-new/)，包括：
+
+SQL 数据库 V12 是最新版本，因此我们建议升级到 SQL 数据库 V12。SQL 数据库 V12 具有[旧版所欠缺的许多优点](/documentation/articles/sql-database-v12-whats-new/)，包括：
 
 - 提高了与 SQL Server 的兼容性。
-- 经过改进的高级性能和新的性能级别。
+- 改进了高级性能和新的性能级别。
 - [弹性数据库池](/documentation/articles/sql-database-elastic-pool/)。
 
 本文提供有关将现有 SQL 数据库 V11 服务器和数据库升级到 SQL 数据库 V12 的指导。
 
 在升级到 V12 的过程中，会将所有 Web 和企业数据库升级到新的服务级别，因此本文还包含了有关升级 Web 和企业数据库的说明。
 
-此外，与升级到单一数据库的单独性能级别（定价层）相比，迁移到[弹性数据库池](/documentation/articles/sql-database-elastic-pool/)更具成本效益。池还可以简化数据库管理，因为你只需管理池的性能设置，而无需分开管理单个数据库的性能级别。如果你的数据库位于多台服务器上，请考虑将它们迁移到同一台服务器，并利用入池所带来的优势。
+此外，与升级到单一数据库的单独性能级别（定价层）相比，迁移到[弹性数据库池](/documentation/articles/sql-database-elastic-pool/)更具成本效益。池还可以简化数据库管理，因为只需要管理池的性能设置，而无需分开管理单个数据库的性能级别。如果你的数据库位于多台服务器上，请考虑将它们迁移到同一台服务器，并利用入池所带来的优势。
 
 可以遵循本文中的步骤，轻松将数据库从 V11 服务器直接迁移到弹性数据库池。
 
-请注意，数据库将保持联机，并且在整个升级操作过程中都会继续保持工作。在实际转换到新的性能级别时，数据库连接可能会暂时中断很短的一段时间，通常约 90 秒，但最长可达 5 分钟。如果你的应用程序有[针对连接终止的暂时性故障处理机制](/documentation/articles/sql-database-connectivity-issues/)，则足以防止升级结束时连接中断。
+请注意，数据库将保持联机，并且在整个升级操作过程中都会继续保持工作。实际转换到新的性能级别时，数据库连接可能会暂时中断很短的一段时间，通常约 90 秒，但最长可达 5 分钟。如果应用程序有[针对连接终止的暂时性故障处理机制](/documentation/articles/sql-database-connectivity-issues/)，则足以防止升级结束时连接中断。
 
 升级到 SQL 数据库 V12 的操作不可撤销。升级后，无法将服务器还原到 V11。
 
-升级到 V12 之后，服务层建议和[弹性池建议](/documentation/articles/sql-database-elastic-pool-create-powershell/)将不会立即可用，必须等到服务有时间评估新服务器上的工作负荷之后，才可供使用。V11 服务器建议历史记录不适用于 V12 服务器，因此不会保留。
-
+升级到 V12 之后，服务层建议和[弹性池建议](/documentation/articles/sql-database-elastic-pool-create-powershell/)不会立即可用，必须等到服务有时间评估新服务器上的工作负荷之后，才可供使用。V11 服务器建议历史记录不适用于 V12 服务器，因此不会保留。
 
 ## 准备升级
 
@@ -59,21 +58,21 @@ SQL 数据库 V12 具有[旧版所欠缺的许多优点](/documentation/articles
 若要使用 PowerShell 将服务器升级到 V12，需要安装并运行最新的 Azure PowerShell。有关详细信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)。
 
 
-## 配置你的凭据，然后选择你的订阅
+## 配置凭据，然后选择订阅
 
 若要针对 Azure 订阅运行 PowerShell cmdlet，必须先与 Azure 帐户建立访问连接。运行以下命令，然后就会出现一个要求输入凭据的登录屏幕。使用登录 Azure 门户时所用的相同电子邮件和密码。
 
 	Add-AzureRmAccount -EnvironmentName AzureChinaCloud
 
-成功登录后，你会在屏幕上看到一些信息，其中包括你登录时使用的 ID，以及你有权访问的 Azure 订阅。
+成功登录后，你会在屏幕上看到一些信息，其中包括登录时使用的 ID，以及有权访问的 Azure 订阅。
 
 若要选择要使用的订阅，需要提供订阅 ID (**-SubscriptionId**) 或订阅名称 (**-SubscriptionName**)。可以从前面的步骤中复制该信息，或者，如果有多个订阅，可以运行 **Get-AzureRmSubscription** cmdlet，然后从结果集中复制所需的订阅信息。
 
-使用订阅信息运行以下 cmdlet，设置当前订阅：
+使用订阅信息运行以下 cmdlet 来设置当前订阅：
 
 	Set-AzureRmContext -SubscriptionId 4cac86b0-1e56-bbbb-aaaa-000000000000
 
-针对前面刚刚选择的订阅运行以下命令。
+以下命令将针对上方所选的订阅运行。
 
 ## 获取建议
 
@@ -125,7 +124,7 @@ SQL 数据库 V12 具有[旧版所欠缺的许多优点](/documentation/articles
 
 ## 自定义升级映射
 
-如果建议不适合于你的服务器和业务案例，你可以选择数据库的升级方式并可以将它们映射到单一或弹性数据库。
+如果建议不适合于服务器和业务案例，可以选择数据库的升级方式并可以将它们映射到单一或弹性数据库。
 
 ElasticPoolCollection 和 DatabaseCollection 参数是可选的：
 
@@ -161,13 +160,14 @@ ElasticPoolCollection 和 DatabaseCollection 参数是可选的：
 ## 升级到 SQL 数据库 V12 后监视数据库
 
 
-升级后，建议你主动监视数据库，以确保应用程序以所需的性能运行，并根据需要优化使用方式。
+升级后，建议主动监视数据库，以确保应用程序以所需的性能运行，并根据需要优化使用方式。
 
 
 除了监视单个数据库之外，你还可以通过 [PowerShell](/documentation/articles/sql-database-elastic-pool-manage-powershell/) 监视弹性数据库池。
 
 
-**资源消耗数据：**对于基本、标准和高级数据库，可通过用户数据库中的 [sys.dm\_ db\_ resource\_stats](http://msdn.microsoft.com/zh-cn/library/azure/dn800981.aspx) DMV 查看资源消耗数据。此 DMV 针对前一小时的操作，以 15 秒的粒度级提供接近实时的资源消耗信息。每个间隔的 DTU 消耗百分比将计算为 CPU、IO 和日志维度的最大消耗百分比。下面是一个用于计算过去一小时平均 DTU 消耗百分比的查询：
+
+**资源消耗数据：**对于基本、标准和高级数据库，可通过用户数据库中的 [sys.dm_ db_ resource\_stats](http://msdn.microsoft.com/zh-cn/library/azure/dn800981.aspx) DMV 查看资源消耗数据。此 DMV 针对前一小时的操作，以 15 秒的粒度提供接近实时的资源消耗信息。每个间隔的 DTU 消耗百分比将计算为 CPU、IO 和日志维度的最大消耗百分比。下面是用于计算过去一小时平均 DTU 消耗百分比的查询：
 
     SELECT end_time
     	 , (SELECT Max(v)
@@ -205,4 +205,4 @@ ElasticPoolCollection 和 DatabaseCollection 参数是可选的：
 - [Start-AzureRmSqlServerUpgrade](https://msdn.microsoft.com/zh-cn/library/azure/mt619403.aspx)
 - [Stop-AzureRmSqlServerUpgrade](https://msdn.microsoft.com/zh-cn/library/azure/mt603589.aspx)
 
-<!---HONumber=Mooncake_1024_2016-->
+<!---HONumber=Mooncake_Quality_Review_1118_2016-->

@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="SQL 数据库 V12 的新增功能 | Azure" 
+	pageTitle="SQL 数据库 V12 中的新增功能 | Azure" 
 	description="介绍云中使用 Azure SQL 数据库的业务系统在升级到版本 V12 后为何能够受益。" 
 	services="sql-database" 
 	documentationCenter="" 
@@ -15,7 +15,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="08/15/2016"
-	wacn.date="10/17/2016"
+	wacn.date="12/12/2016"
 	ms.author="genemi"/>  
 
 
@@ -58,11 +58,11 @@ SQL 数据库 V12 的主要目标是提高与 Microsoft SQL Server 2014 的兼�
 > 
 > 如果愿意，也可以使用 `ALTER DATABASE YourDatabase SET COMPATIBILITY_LEVEL = 120`。
 > 
-> 此默认更改不会更改 2016 年 6 月之前所创建的数据库的兼容级别。从 V11 升级到 V12 也不会更改数据库级别。
+> 此默认更改不会改变 2016 年 6 月之前所创建的数据库的兼容级别。从 V11 升级到 V12 也不会更改数据库级别。
 
 
 
-有关可以如何在最新兼容性级别与之前的兼容性级别之间比较你最重要的查询的说明，请参阅：
+有关如何在最新兼容性级别与之前的兼容性级别之间比较最重要的查询的说明，请参阅：
 
 - [Azure SQL 数据库中已改善的兼容级别 130 的查询性能](/documentation/articles/sql-database-compatibility-level-query-performance-130/)
 
@@ -74,8 +74,8 @@ SQL 数据库 V12 的主要目标是提高与 Microsoft SQL Server 2014 的兼�
 在 V12 中，我们将分配给所有“高级”性能级别的数据库事务单位 (DTU) 提高了 25% 且不收取额外的费用。使用如下所述的新功能可以进一步提高性能：
 
 
-- 支持内存中[列存储索引](http://msdn.microsoft.com/zh-cn/library/gg492153.aspx)。
-- 使用 [TRUNCATE TABLE](http://msdn.microsoft.com/zh-cn/library/ms177570.aspx) 的相关增强功能，[按行进行表分区](http://msdn.microsoft.com/zh-cn/library/ms187802.aspx)。
+- 对内存中[列存储索引](http://msdn.microsoft.com/zh-cn/library/gg492153.aspx)的支持。
+- [按行进行表分区](http://msdn.microsoft.com/zh-cn/library/ms187802.aspx)和[TRUNCATE TABLE](http://msdn.microsoft.com/zh-cn/library/ms177570.aspx) 的相关增强功能。
 - 可以使用动态管理视图 [(DMV)](http://msdn.microsoft.com/zh-cn/library/ms188754.aspx) 来帮助监视和优化性能。
 
 
@@ -92,10 +92,10 @@ SQL 数据库 V12 的主要目标是提高与 Microsoft SQL Server 2014 的兼�
 SQL 数据库 V12 中的性能增强功能需要这些端口。
 
 
-## 更好支持云 SaaS 供应商
+## 更好地支持云 SaaS 供应商
 
 
-我们只在 V12 中发布了新的标准性能级别 S3 与[弹性数据库池](/documentation/articles/sql-database-elastic-pool/)公共预览版。弹性数据库池是专门为云 SaaS 供应商设计的解决方案。使用弹性数据库池，你可以：
+我们只在 V12 中发布了新的标准性能级别 S3 和[弹性数据库池](/documentation/articles/sql-database-elastic-pool/)公共预览版。弹性数据库池是专门为云 SaaS 供应商设计的解决方案。使用弹性数据库池，你可以：
 
 
 - 在数据库之间共享 DTU，降低部署大量数据库所带来的成本。
@@ -109,7 +109,6 @@ SQL 数据库 V12 中的性能增强功能需要这些端口。
 
 
 - [行级安全性](http://msdn.microsoft.com/zh-cn/library/dn765131.aspx) (RLS)
-- [动态数据屏蔽](/documentation/articles/sql-database-dynamic-data-masking-get-started-portal/)
 - [包含的数据库](http://msdn.microsoft.com/zh-cn/library/ff929188.aspx)
 - 使用 GRANT、DENY、REVOKE 管理的[应用程序角色](http://msdn.microsoft.com/zh-cn/library/ms190998.aspx)
 - [透明数据加密](http://msdn.microsoft.com/zh-cn/library/0bf7e8ff-1416-4923-9c4c-49341e208c62.aspx) (TDE)
@@ -140,14 +139,14 @@ V12 提供更有利的恢复点目标 (RPO) 与预计恢复时间 (ERT)：
 
 
 - 与 V11 的功能相比，SQL 数据库 V12 中增加了大量新功能。
-- 我们将持续在 V12 中新增功能，但是 V11 不会再新增功能。
+- 我们会持续向 V12 中添加新功能，但是不会再向 V11 中添加新功能。
 - 大多数新功能都会先在 SQL 数据库 V12 中发布，然后再发布到 Microsoft SQL Server。
 
 
 ## 已开始使用 V12 了吗？
 
 
-执行以下操作可以轻松判断你是否在早期版本的 SQL 数据库服务上运行数据库或逻辑服务器，是在数据库中运行 `SELECT @@version;` 语句，然后查看类似于下面的结果：
+执行以下操作可以轻松判断是否在早期版本的 SQL 数据库服务上运行数据库或逻辑服务器，是在数据库中运行 `SELECT @@version;` 语句，然后查看类似于下面的结果：
 
 
 - **12**.0.2000.10 &nbsp; (版本 V12)
@@ -167,4 +166,4 @@ V12 数据库只能托管在 V12 逻辑服务器上。V12 服务器只能托管 
 
 [Azure 预览版补充使用条款](/support/legal)。
 
-<!---HONumber=Mooncake_0718_2016-->
+<!---HONumber=Mooncake_Quality_Review_1118_2016-->

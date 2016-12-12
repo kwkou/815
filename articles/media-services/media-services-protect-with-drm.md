@@ -86,7 +86,7 @@ Azure 媒体服务允许传送受 [Microsoft PlayReady DRM](https://www.microsof
 
 使用动态加密时，只需创建包含一组多码率 MP4 文件或多码率平滑流源文件的资产。然后，按需流式处理服务器会确保你以选定的协议按清单和分段请求中的指定格式接收流。因此，只需以单一存储格式存储文件并为其付费，然后媒体服务服务就会基于客户端的请求构建并提供相应响应。有关详细信息，请参阅[动态打包概述](/documentation/articles/media-services-dynamic-packaging-overview/)主题。
 
-有关如何编码的说明，请参阅[如何使用媒体编码器标准版对资产进行编码](/documentation/articles/media-services-dotnet-encode-with-media-encoder-standard/)。
+有关如何编码的说明，请参阅[如何使用 Media Encoder Standard 对资产进行编码](/documentation/articles/media-services-dotnet-encode-with-media-encoder-standard/)。
 	
 
 ##<a id="create_contentkey"></a>创建内容密钥并将其与编码资产相关联

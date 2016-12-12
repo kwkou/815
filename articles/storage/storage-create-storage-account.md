@@ -14,7 +14,7 @@
 	ms.devlang="na"
 	ms.topic="get-started-article"
 	ms.date="07/26/2016"
-	wacn.date="11/16/2016"
+	wacn.date="12/12/2016"
 	ms.author="micurd;robinsh"/>
 
 
@@ -64,7 +64,7 @@ Azure 存储帐户提供唯一的命名空间来存储和访问你的 Azure 存�
 
 	> [AZURE.NOTE] 存储帐户名称必须为 3 到 24 个字符，并且只能包含数字和小写字母。
 	>  
-	> 你的存储帐户名称在 Azure 中必须是唯一的。Azure 门户预览将指出你选择的存储帐户名称是否已被使用。
+	> 存储帐户名称在 Azure 中必须是唯一的。Azure 门户预览将指出选择的存储帐户名称是否已被使用。
 
 4. 指定要使用的部署模型：“Resource Manager”或“经典”。建议使用“Resource Manager”部署模型。有关详细信息，请参阅[了解 Resource Manager 部署和经典部署](/documentation/articles/resource-manager-deployment-model/)。
 
@@ -152,10 +152,10 @@ Azure 存储帐户提供唯一的命名空间来存储和访问你的 Azure 存�
 
 ## 后续步骤
 
-- [Azure Blob 存储：冷层和热层](/documentation/articles/storage-blob-storage-tiers/)
+- [Azure Blob 存储：不常访问和经常访问的层](/documentation/articles/storage-blob-storage-tiers/)
 - [Azure 存储空间复制](/documentation/articles/storage-redundancy/)
 - [配置 Azure 存储空间连接字符串](/documentation/articles/storage-configure-connection-string/)
 - [使用 AzCopy 命令行实用程序传输数据](/documentation/articles/storage-use-azcopy/)
 - 访问 [Azure 存储空间团队博客](http://blogs.msdn.com/b/windowsazurestorage/)。
 
-<!---HONumber=Mooncake_0829_2016-->
+<!---HONumber=Mooncake_Quality_Review_1118_2016-->
