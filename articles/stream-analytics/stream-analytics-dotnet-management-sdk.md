@@ -341,7 +341,7 @@ Azure 流分析是一种完全托管的服务，可以在云中通过流式数�
 - [Azure 流分析简介](/documentation/articles/stream-analytics-introduction/)
 - [Azure 流分析入门](/documentation/articles/stream-analytics-get-started/)
 - [缩放 Azure 流分析作业](/documentation/articles/stream-analytics-scale-jobs/)
-- [Azure 流分析管理 .NET SDK](https://msdn.microsoft.com/zh-cn/library/azure/dn889315.aspx)。
+- [Azure 流分析管理 .NET SDK](https://msdn.microsoft.com/zh-cn/library/azure/dn889315.aspx)
 - [Azure 流分析查询语言参考](https://msdn.microsoft.com/zh-cn/library/azure/dn834998.aspx)
 - [Azure 流分析管理 REST API 参考](https://msdn.microsoft.com/zh-cn/library/azure/dn835031.aspx)
 
