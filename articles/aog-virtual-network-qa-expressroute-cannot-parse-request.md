@@ -17,7 +17,7 @@
 
 ### 问题描述 ###
 
-将不同订阅中的 虚拟网络（VNET） 连接到 ExpressRoute 线路时收到报错“Cannot parse the request” 
+将不同订阅中的 虚拟网络（VNET） 连接到 ExpressRoute 线路时收到报错 “Cannot parse the request” 。
 
 ### 问题现象 ###
 
@@ -55,7 +55,7 @@
 **获取授权ID**
 
 `$ID=(Get-AzureRmExpressRouteCircuit -Name "21VDemoSH" -ResourceGroupName "CraneER").id`
-或"`/subscriptions/8775dxxxxxxxxxxxxxxxxxxxxxxxxx518/resourceGroups/CraneER/providers/Microsoft.Network/expressRouteCircuits/21VDemoSH` （在如下 Get 命令的输出中，将 ID 对应的条目下参数值 Copy 后赋值给 $ID
+ 或 `/subscriptions/8775dxxxxxxxxxxxxxxxxxxxxxxxxx518/resourceGroups/CraneER/providers/Microsoft.Network/expressRouteCircuits/21VDemoSH` （在如下 Get 命令的输出中，将 ID 对应的条目下参数值 Copy 后赋值给 $ID
 `Get-AzureRmExpressRouteCircuit -Name "21VDemoSH" -ResourceGroupName "CraneER"`）
 
 **登录到另外一个订阅 WATSTEST02**
@@ -73,8 +73,8 @@
 > 即：`"/subscriptions/8775dxxxxxxxxxxxxxxxxxxxxxxxxx518/resourceGroups/CraneER/providers/Microsoft.Network/expressRouteCircuits/21VDemoSH"`
 > 
 > 而不是：
-`$ID=(Get-AzureRmExpressRouteCircuit -Name "21VDemoSH" -ResourceGroupName "CraneER").Authorizations.id`
-即：`"/subscriptions/8775dxxxxxxxxxxxxxxxxxxxxxxxxx518/resourceGroups/CraneER/providers/Microsoft.Network/expressRouteCircuits/21VDemoSH/authorizations/MyAuthorization"`
+>`$ID=(Get-AzureRmExpressRouteCircuit -Name "21VDemoSH" -ResourceGroupName "CraneER").Authorizations.id`
+>即：>`"/subscriptions/8775dxxxxxxxxxxxxxxxxxxxxxxxxx518/resourceGroups/CraneER/providers/Microsoft.Network/expressRouteCircuits/21VDemoSH/authorizations/MyAuthorization"`
 
 “Cannot parse the request”， 该错误的原因是因为 `$ID` 赋错值了。在（`Get-AzureRmExpressRouteCircuit -Name "21VDemoSH" -ResourceGroupName "CraneER"`）的输出中会有如下两个参数：
  `id` 及 `Authorizations.id` 。
@@ -85,5 +85,6 @@
 
 [将虚拟网络链接到 ExpressRoute 线路](/documentation/articles/expressroute-howto-linkvnet-arm/)
 
+ 
 
 

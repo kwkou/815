@@ -25,7 +25,7 @@
 
 #### 下载和安装 ####
 
-PsPing 可以的下载页面网址为：[https://technet.microsoft.com/zh-cn/sysinternals/jj729731.aspx](https://technet.microsoft.com/zh-cn/sysinternals/jj729731.aspx)。此页面上也包含它的详细使用方法，若有需要可以查看此页面上的帮助信息。下载完后，可以单独将 psping.exe 命令解压出来放在任意路径，然后从命令提示符来运行。当然，您也可以将整个压缩包解压到指定的路径来获取压缩包内完整的 PSTools 工具套件。
+PsPing [下载地址](https://technet.microsoft.com/zh-cn/sysinternals/jj729731.aspx)包含了它的详细使用方法，若有需要可以查看此页面上的帮助信息。下载完后，可以单独将 psping.exe 命令解压出来放在任意路径，然后从命令提示符来运行。当然，您也可以将整个压缩包解压到指定的路径来获取压缩包内完整的 PSTools 工具套件。
 
 #### 使用方法 ####
 
@@ -71,7 +71,7 @@ PsPing 可以的下载页面网址为：[https://technet.microsoft.com/zh-cn/sys
 	Copyright (C) 2012-2016 Mark Russinovich
 	Sysinternals - www.sysinternals.com
 	
-	TCP connect to 175.25.168.95:80:
+TCP connect to 175.25.168.95:80:
 	501 iterations (warmup 1) ping test:
 	Connecting to 175.25.168.95:80 (warmup): from 10.91.1.4:51531: 2.28ms
 	Connecting to 175.25.168.95:80: from 10.91.1.4:51532: 1.86ms
@@ -90,9 +90,7 @@ PsPing 可以的下载页面网址为：[https://technet.microsoft.com/zh-cn/sys
 
 #### 下载和安装 ####
 
-PaPing 的下载网址为：[https://code.google.com/archive/p/paping/downloads](https://code.google.com/archive/p/paping/downloads)。
-
-其中 32 位 Linux 对应的压缩包为 `paping_1.5.5_x86_linux.tar.gz`，64 位的 Linux 对应的压缩包为 `paping_1.5.5_x86-64_linux.tar.gz`。下载完成后，直接解压到任意路径，就可以直接执行了。
+PaPing [下载网址](https://code.google.com/archive/p/paping/downloads)，其中 32 位 Linux 对应的压缩包为 `paping_1.5.5_x86_linux.tar.gz`，64 位的 Linux 对应的压缩包为 `paping_1.5.5_x86-64_linux.tar.gz`。下载完成后，直接解压到任意路径，就可以直接执行了。
 
 以 64 位 Linux 为例：
 
