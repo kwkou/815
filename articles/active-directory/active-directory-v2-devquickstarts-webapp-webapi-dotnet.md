@@ -109,7 +109,7 @@ C#
 
 - 首先，安装 MSAL 预览版：
 
-	PM> Install-Package Microsoft.Identity.Client -ProjectName TodoList-WebApp -IncludePrerelease```
+	PM> Install-Package Microsoft.Identity.Client -ProjectName TodoList-WebApp -IncludePrerelease
 
 - 在 `App_Start\Startup.Auth.cs` 文件中为 MSAL 添加另一个 `using` 语句。
 - 现在，添加一个新方法，即 `OnAuthorizationCodeReceived` 事件处理程序。此处理程序将使用 MSAL 获取待办事项列表 API 的访问令牌，并将 MSAL 令牌缓存中的令牌存储起来以供稍后使用：
