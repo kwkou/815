@@ -32,7 +32,7 @@
 ### 快速设置
 在此页面上，单击"自定义"，开始自定义的设置安装。
 
-### 安装所需的组件
+### 安装所需的组件 <a name="install-required-components"></a>
 安装同步服务时，可以将可选配置部分保留未选中状态，Azure AD Connect 会自动完成所有设置。这会设置 SQL Server 2012 Express LocalDB 实例、创建相应的组并分配权限。如果你想要更改默认设置，可以使用下表来了解可用的可选配置选项。
 
 ![所需的组件](./media/active-directory-aadconnect-get-started-custom/requiredcomponents.png)
@@ -155,7 +155,7 @@ Azure AD 应用程序和属性筛选 | 通过启用 Azure AD 应用和属性筛�
 
 若要了解详细信息，请参阅[目录扩展](/documentation/articles/active-directory-aadconnectsync-feature-directory-extensions/)。
 
-## 配置与 AD FS 的联合
+## 配置与 AD FS 的联合 <a name="configuring-federation-with-ad-fs"></a>
 只需单击几下鼠标，请能使用 Azure AD Connect 配置 AD FS。配置之前需要做好以下准备。
 
 - 已启用远程管理的、用作联合服务器的 Windows Server 2012 R2 服务器
@@ -209,7 +209,7 @@ AD FS 服务需要域服务帐户来验证用户，以及在 Active Directory �
 
 ![Azure AD 域](./media/active-directory-aadconnect-get-started-custom/adfs6.png)
 
-### 验证选择用于联合的 Azure AD 域
+### 验证选择用于联合的 Azure AD 域 <a name="verify-the-azure-ad-domain-selected-for-federation"></a>
 当你选择要联合的域时，Azure AD Connect 将提供所需的信息来验证尚未验证的域。请参阅[添加和验证域](/documentation/articles/active-directory-add-domain/)，了解如何使用此信息。
 
 ![Azure AD 域](./media/active-directory-aadconnect-get-started-custom/verifyfeddomain.png)

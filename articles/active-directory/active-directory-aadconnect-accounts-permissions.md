@@ -89,7 +89,7 @@ Exchange 混合部署 | [Exchange 混合写回](/documentation/articles/active-d
 密码写回 | [密码管理入门](/documentation/articles/active-directory-passwords-getting-started/#step-4-set-up-the-appropriate-active-directory-permissions/)中叙述了对用户的属性的写入权限。
 组写回 | 在分发组应该放置到的 OU 中读取、创建、更新和删除组对象。
 
-## 升级
+## 升级 <a name="upgrade"></a>
 从 Azure AD Connect 的一个版本升级到新版本时，需要拥有以下权限：
 
 主体 | 所需的权限 | 用途
@@ -105,7 +105,7 @@ Exchange 混合部署 | [Exchange 混合写回](/documentation/articles/active-d
 
 ![AD 帐户](./media/active-directory-aadconnect-accounts-permissions/adsyncserviceaccount.png)
 
-### Azure AD Connect 同步服务帐户
+### Azure AD Connect 同步服务帐户 <a name="azure-ad-connect-sync-service-accounts"></a>
 本地服务帐户将由安装向导创建（除非你在自定义设置指定了要使用的帐户）。该帐户具有 **AAD_** 前缀，可作为实际同步服务的运行帐户。如果你在域控制器上安装 Azure AD Connect，则会在该域中创建帐户。如果使用运行 SQL 服务器的远程服务器或使用需要身份验证的代理，**AAD_** 服务帐户必须位于域中。
 
 ![同步服务帐户](./media/active-directory-aadconnect-accounts-permissions/syncserviceaccount.png)
