@@ -15,7 +15,7 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="10/04/2016" 
-	wacn.date="11/14/2016"
+	wacn.date="12/12/2016"
 	ms.author="adegeo"/>  
 
 
@@ -187,4 +187,4 @@
   [3]: ./media/cloud-services-configure-ssl-certificate/SSLCloudService.png
   [4]: ./media/cloud-services-configure-ssl-certificate/AddCertificateComplete.png
 
-<!---HONumber=Mooncake_0523_2016-->
+<!---HONumber=Mooncake_Quality_Review_1118_2016-->

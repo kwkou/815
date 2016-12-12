@@ -1,11 +1,12 @@
 <properties
-	pageTitle="如何在云服务中使用 Azure 诊断 (.NET) | Azure"
-	description="使用 Azure 诊断从 Azure 云服务收集数据，以用于调试、性能度量、监视和流量分析等目的。"
+	pageTitle="如何将 Azure 诊断 (.NET) 用于云服务 | Azure"
+	description="使用 Azure 诊断从 Azure 云服务收集数据，以用于调试、衡量性能、监视和流量分析等目的。"
 	services="cloud-services"
 	documentationCenter=".net"
 	authors="rboucher"
 	manager="jwhit"
-	editor=""/>
+	editor=""/>  
+
 
 <tags
 	ms.service="cloud-services"
@@ -14,7 +15,7 @@
 	ms.devlang="dotnet"
 	ms.topic="article"
 	ms.date="01/25/2016"
-	wacn.date="04/06/2016"
+	wacn.date="12/12/2016"
 	ms.author="robb"/>
 
 
@@ -35,9 +36,9 @@
 1.	启动 **Visual Studio 2013**。
 2.	从面向 .NET Framework 4.5 的**云**模板创建一个新的 **Azure 云服务**项目。将该项目命名为“WadExample”。
 3.	选择“辅助角色”并单击“确定”。随后将创建该项目。
-4.	在“解决方案资源管理器”中，双击 **WorkerRole1** properties 文件。
+4.	在“解决方案资源管理器”中，双击 **WorkerRole1** 属性文件。
 5.	在“配置”选项卡中，取消选中“启用诊断”以禁用 Diagnostics 1.0（Azure SDK 2.4 和更低版本）。
-6.	生成你的解决方案，以确认不会出错。
+6.	生成解决方案以验证无误。
 
 ### 步骤 2：检测代码
 将 WorkerRole.cs 的内容替换为以下代码。继承自 [EventSource 类][]的 SampleEventSourceWriter 类实现四个日志记录方法：**SendEnums**、**MessageMethod**、**SetOther** 和 **HighFreq**。**WriteEvent** 方法的第一个参数定义相关事件的 ID。Run 方法实现一个无限循环，该循环每隔 10 秒调用 **SampleEventSourceWriter** 类中实现的每个日志记录方法。
@@ -196,5 +197,4 @@
 [试用版]: /pricing/1rmb-trial/
 [安装和配置 Azure PowerShell 0.8.7 或更高版本]:  /documentation/articles/powershell-install-configure/
 
-
-<!---HONumber=Mooncake_0328_2016-->
+<!---HONumber=Mooncake_Quality_Review_1118_2016-->

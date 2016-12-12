@@ -7,6 +7,7 @@
 	manager="wpickett"
 	editor=""/>
 
+
 <tags
 	ms.service="cloud-services"
 	ms.workload="tbd"
@@ -14,9 +15,8 @@
 	ms.devlang="nodejs"
 	ms.topic="hero-article"
 	ms.date="11/01/2016" 
-	wacn.date="12/05/2016" 
+	wacn.date="12/12/2016" 
 	ms.author="robmcm"/>
-
 
 # 生成 Node.js 应用程序并将其部署到 Azure 云服务
 

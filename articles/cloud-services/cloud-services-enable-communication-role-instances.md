@@ -12,8 +12,8 @@ ms.workload="tbd"
 ms.tgt_pltfrm="na" 
 ms.devlang="na" 
 ms.topic="article" 
-ms.date="09/06/2016" 
-wacn.date="10/24/2016" 
+ms.date="12/07/2015" 
+wacn.date="12/12/2016" 
 ms.author="adegeo"/>
 
 # 为 Azure 中的角色实例启用通信
@@ -357,4 +357,4 @@ namespace WorkerRole1
 ## 后续步骤
 阅读有关云服务[模型](/documentation/articles/cloud-services-model-and-package/)的详细信息。
 
-<!---HONumber=Mooncake_0104_2016-->
+<!---HONumber=Mooncake_Quality_Review_1118_2016-->

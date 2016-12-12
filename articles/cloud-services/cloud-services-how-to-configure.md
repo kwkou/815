@@ -14,7 +14,7 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="10/11/2016" 
-	wacn.date="11/14/2016"
+	wacn.date="12/12/2016"
 	ms.author="adegeo"/>
 
 
@@ -27,11 +27,11 @@
 - [Azure 门户预览](/documentation/articles/cloud-services-how-to-configure-portal/)
 - [Azure 经典管理门户](/documentation/articles/cloud-services-how-to-configure/)
 
-Azure 经典管理门户可设置经常使用的云服务。或者，如果希望直接更新配置文件，则可以下载要更新的服务配置文件，然后上载更新文件并使用配置更改更新云服务。无论使用哪种方法，配置更新都将应用于所有角色实例。
+你可以在 Azure 经典管理门户中配置最常使用的云服务设置。或者，如果希望直接更新配置文件，可下载要更新的服务配置文件，然后上传更新文件并通过配置更改更新云服务。无论使用哪种方法，配置更新都将应用于所有角色实例。
 
 Azure 经典管理门户还允许你[为 Azure 云服务中的角色启用远程桌面连接](/documentation/articles/cloud-services-role-enable-remote-desktop/)。
 
-如果每个角色至少有两个角色实例，那么 Azure 在配置更新期间只能确保 99.95% 的服务可用性。这使得一台虚拟机可以在另一台虚拟机正更新时处理客户端请求。有关详细信息，请参阅[服务级别协议](/support/legal/sla)。
+如果每个角色至少具有两个角色实例，那么 Azure 在配置更新期间只能确保 99.95% 的服务可用性。这使得一台虚拟机可以在另一台虚拟机正更新时处理客户端请求。有关详细信息，请参阅[服务级别协议](/support/legal/sla)。
 
 ## 更改云服务
 
@@ -45,33 +45,31 @@ Azure 经典管理门户还允许你[为 Azure 云服务中的角色启用远程
 
 3. 对于服务角色（按角色分组），你可以更新下列设置：
     
-    >**设置**：  
-    >修改服务配置 (.cscfg) 文件的 *ConfigurationSettings* 元素中指定的其他配置设置的值。
+    >**设置**：修改服务配置 (.cscfg) 文件的 *ConfigurationSettings* 元素中指定的其他配置设置的值。
     >
-    >**证书**：  
-    >更改 SSL 加密中用于角色的证书指纹。若要更改证书，你必须首先上载新证书（在“证书”页上）。然后更新角色设置中显示的证书字符串中的指纹。
+    >**证书**：更改 SSL 加密中用于角色的证书指纹。若要更改证书，必须首先（在“证书”页上）上传新证书。然后更新角色设置中显示的证书字符串中的指纹。
 
 4. 在“操作系统”中，你可以更改角色实例的操作系统系列或版本，或选择“自动”以启用当前操作系统版本的自动更新。操作系统设置将应用到 Web 角色和辅助角色，但不影响虚拟机。
 
     部署期间，所有角色实例都将安装最新版本的操作系统，并且默认情况下这些操作系统会自动更新。
     
-    如果由于代码中的兼容性要求而需要云服务在不同的操作系统版本上运行，则可选择操作系统系列和版本。当你选择一个特定的操作系统版本时，云服务的自动操作系统更新便挂起。你将需要确保操作系统接收更新。
+    如果由于你代码中的兼容性要求而需要云服务在不同的操作系统版本上运行，则可选择操作系统系列和版本。当你选择一个特定的操作系统版本时，云服务的自动操作系统更新便挂起。你将需要确保操作系统接收更新。
     
     如果你使用最新版本的操作系统解决了应用程序中的所有兼容性问题，则可通过将操作系统版本设置成“自动”来启用自动操作系统更新。
     
     ![操作系统设置](./media/cloud-services-how-to-configure/CloudServices_ConfigurePage_OSSettings.png)
 
-5. 若要保存你的配置设置，并将其推送至角色实例，请单击“保存”。（单击“丢弃”可取消更改。） 更改设置后，命令栏中会出现“保存”和“丢弃”。
+5. 若要保存你的配置设置，并将其推送至角色实例，请单击“保存”。（单击“放弃”可取消更改。） 更改设置后，命令栏中会出现“保存”和“放弃”。
 
 ## <a name="update-a-cloud-service-configuration-file"></a> 更新云服务配置文件
 
 1. 下载包含当前配置的云服务配置文件 (.cscfg)。在云服务的“配置”页上，单击“下载”。然后单击“保存”或单击“另存为”以保存文件。
 
-2. 更新服务配置文件后，上载并应用配置更新：
+2. 更新服务配置文件后，上传并应用配置更新：
 
-    1. 在“配置”页上，单击“上载”。
+    1. 在“配置”页上，单击“上传”。
     
-        ![上载配置](./media/cloud-services-how-to-configure/CloudServices_UploadConfigFile.png)
+        ![上传配置](./media/cloud-services-how-to-configure/CloudServices_UploadConfigFile.png)
     
     2. 在“配置文件”中，使用“浏览”选择已更新的 .cscfg 文件。
     
@@ -90,4 +88,4 @@ Azure 经典管理门户还允许你[为 Azure 云服务中的角色启用远程
 * [为 Azure 云服务中的角色启用远程桌面连接](/documentation/articles/cloud-services-role-enable-remote-desktop/)
 * 配置 [SSL 证书](/documentation/articles/cloud-services-configure-ssl-certificate/)。
 
-<!---HONumber=Mooncake_0523_2016-->
+<!---HONumber=Mooncake_Quality_Review_1118_2016-->
