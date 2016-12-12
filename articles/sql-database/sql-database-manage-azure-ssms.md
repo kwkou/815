@@ -19,7 +19,6 @@
 	ms.author="sstein"/>  
 
 
-
 # 使用 SQL Server Management Studio 管理 Azure SQL 数据库 
 
 
@@ -153,4 +152,4 @@ SQL 数据库支持多个您可用于监视单个数据库的动态管理视图�
  
  
 
-<!---HONumber=Mooncake_1024_2016-->
+<!---HONumber=Mooncake_Quality_Review_1118_2016-->

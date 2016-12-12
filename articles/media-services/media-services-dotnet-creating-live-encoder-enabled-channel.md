@@ -15,7 +15,7 @@
 	ms.devlang="na" 
 	ms.topic="get-started-article"
 	ms.date="10/12/2016"
-	wacn.date="11/14/2016"
+	wacn.date="12/12/2016"
 	ms.author="juliako;anilmur"/>  
 
 
@@ -114,7 +114,7 @@
 ##连接到媒体服务
 最佳做法是，应使用 app.config 文件来存储媒体服务名称和帐户密钥。
 
->[AZURE.NOTE]若要查找名称和密钥值，请转到 Azure 经典管理门户，选择你的媒体服务帐户，然后单击门户窗口底部的“管理密钥”图标。单击每个文本框旁边的图标将值复制到系统剪贴板中。
+>[AZURE.NOTE]若要查找名称和密钥值，请转到 Azure 经典管理门户，选择媒体服务帐户，然后单击门户窗口底部的“管理密钥”图标。单击每个文本框旁边的图标将值复制到系统剪贴板中。
 
 在 app.config 文件中添加 appSettings 部分，并设置媒体服务帐户名称和帐户密钥的值。
 
@@ -530,4 +530,4 @@
 	    }
 	}	
 
-<!---HONumber=Mooncake_1107_2016-->
+<!---HONumber=Mooncake_Quality_Review_1118_2016-->

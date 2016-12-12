@@ -16,7 +16,7 @@
 	ms.devlang="na"
 	ms.topic="get-started-article"
 	ms.date="08/17/2016"
-	wacn.date="10/17/2016"
+	wacn.date="12/12/2016"
 	ms.author="sstein;carlrab" />  
 
 
@@ -36,7 +36,7 @@
 
 ## 运行示例查询
 
-连接到服务器后，即可连接到数据库并运行示例查询。如果不熟悉如何编写查询，请参阅 [Writing Transact-SQL Statements](https://msdn.microsoft.com/zh-cn/library/ms365303.aspx)（编写 Transact-SQL 语句）。
+连接到服务器后，即可连接到数据库并运行示例查询。如果不熟悉如何编写查询，请参阅[编写 Transact-SQL 语句](https://msdn.microsoft.com/zh-cn/library/ms365303.aspx)。
 
 1. 在“对象资源管理器”中，导航到服务器上的数据库，例如 **AdventureWorks** 示例数据库。
 2. 右键单击数据库，然后选择“新建查询”：
@@ -67,6 +67,6 @@
 
 若要开始创建数据库用户和数据库用户管理员，请参阅 [Azure SQL 数据库安全性入门](/documentation/articles/sql-database-get-started-security/)
 
-有关 SSMS 的详细信息，请参阅 [Use SQL Server Management Studio](https://msdn.microsoft.com/zh-cn/library/ms174173.aspx)（使用 SQL Server Management Studio）。
+有关 SSMS 的详细信息，请参阅[使用 SQL Server Management Studio](https://msdn.microsoft.com/zh-cn/library/ms174173.aspx)。
 
-<!---HONumber=Mooncake_1010_2016-->
+<!---HONumber=Mooncake_Quality_Review_1118_2016-->

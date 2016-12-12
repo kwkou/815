@@ -1,7 +1,7 @@
 <properties 
     pageTitle="使用 PowerShell 设置新的 SQL 数据库 | Azure" 
     description="了解如何使用 PowerShell 创建 SQL 数据库。可以通过 PowerShell cmdlet 管理常见的数据库设置任务。"
-    keywords="新建 sql 数据库,数据库设置"
+    keywords="新建 sql 数据库, 数据库设置"
 	services="sql-database"
     documentationCenter=""
     authors="stevestein"
@@ -16,7 +16,7 @@
     ms.tgt_pltfrm="powershell"
     ms.workload="data-management"
     ms.date="08/19/2016"
-    wacn.date="11/16/2016"
+    wacn.date="12/12/2016"
     ms.author="sstein"/>  
 
 
@@ -30,14 +30,14 @@
 
 
 
-了解如何使用 PowerShell cmdlet 创建 SQL 数据库。（有关如何创建弹性数据库，请参阅[使用 PowerShell 创建新的弹性数据库池](/documentation/articles/sql-database-elastic-pool-create-powershell/)。）
+了解如何使用 PowerShell cmdlet 创建 SQL 数据库。（有关如何创建弹性数据库的信息，请参阅[使用 PowerShell 创建新的弹性数据库池](/documentation/articles/sql-database-elastic-pool-create-powershell/)。）
 
 
 [AZURE.INCLUDE [启动 PowerShell 会话](../../includes/sql-database-powershell.md)]
 
 ## 数据库设置：创建资源组、服务器和防火墙规则
 
-获取针对所选 Azure 订阅运行 cmdlet 所需的访问权限后，下一步是建立一个资源组，使其中包含创建数据库所需的服务器。你可以编辑下一个命令，以便使用所选择的有效位置。运行 **(Get-AzureRmLocation | Where-Object { $\_.Providers -eq "Microsoft.Sql" }).Location** 获取有效位置的列表。
+获取针对所选 Azure 订阅运行 cmdlet 所需的访问权限后，下一步是建立一个资源组，使其中包含创建数据库所需的服务器。可以编辑下一条命令，以便使用所选择的有效位置。运行 **(Get-AzureRmLocation | Where-Object { $\_.Providers -eq "Microsoft.Sql" }).Location** 获取有效位置的列表。
 
 运行以下命令创建资源组：
 
@@ -46,7 +46,7 @@
 
 ### 创建服务器
 
-SQL 数据库在 Azure SQL 数据库服务器中创建。运行 **New-AzureRmSqlServer** 命令创建服务器。该服务器的名称在所有 Azure SQL 数据库服务器中必须是唯一的。如果服务器名称已使用，将出现错误。还必须指出的是，该命令可能需要数分钟才能运行完毕。可以编辑该命令，使用所选择的任何有效位置，但应使用上一步骤中创建的资源组所用的相同位置。
+SQL 数据库在 Azure SQL 数据库服务器中创建。运行 **New-AzureRmSqlServer** 来创建服务器。服务器的名称在所有 Azure SQL 数据库服务器中必须是唯一的。如果服务器名称已使用，将出现错误。还必须指出的是，此命令可能需要数分钟才能运行完毕。可以编辑该命令，使用所选择的任何有效位置，但应使用上一步骤中创建的资源组所用的相同位置。
 
 	New-AzureRmSqlServer -ResourceGroupName "resourcegroupsqlgsps" -ServerName "server1" -Location "China North" -ServerVersion "12.0"
 
@@ -81,7 +81,7 @@ SQL 数据库在 Azure SQL 数据库服务器中创建。运行 **New-AzureRmSql
 
 ##<a name="create-a-sql-database-powershell-script"></a> 创建 SQL 数据库 PowerShell 脚本
 
-以下 PowerShell 脚本创建一个 SQL 数据库及其所有相关资源。将所有的 `{variables}` 替换为订阅和资源特定的值（设置值时请删除 **{}**）。
+以下 PowerShell 脚本创建一个 SQL 数据库及其所有相关资源。将所有的 `{variables}` 替换为特定于订阅和资源的值（设置值时请删除 **{}**）。
 
     # Sign in to Azure and set the subscription to work with
     $SubscriptionId = "{subscription-id}"
@@ -143,4 +143,4 @@ SQL 数据库在 Azure SQL 数据库服务器中创建。运行 **New-AzureRmSql
 
 - [Azure SQL 数据库](/documentation/services/sql-databases/)
 
-<!---HONumber=Mooncake_1010_2016-->
+<!---HONumber=Mooncake_Quality_Review_1118_2016-->

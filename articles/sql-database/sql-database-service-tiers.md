@@ -93,4 +93,4 @@
 
 有关多租户软件即服务 (SaaS) 数据库应用程序的常见数据体系结构模式的信息，请参阅[包含 Azure SQL 数据库的多租户 SaaS 应用程序的设计模式](/documentation/articles/sql-database-design-patterns-multi-tenancy-saas-applications/)。
 
-<!---HONumber=Mooncake_0919_2016-->
+<!---HONumber=Mooncake_Quality_Review_1118_2016-->

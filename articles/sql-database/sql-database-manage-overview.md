@@ -14,22 +14,23 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="07/19/2016"
-	wacn.date="09/28/2016"
+	wacn.date="12/12/2016"
 	ms.author="sstein"/>
 
 # 概述：SQL 数据库的管理工具
 
 [AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-sdk-developer-differences.md)]
 
-本主题介绍并比较用于管理 Azure SQL 数据库的工具和选项，以便你可以挑选适合作业、业务以及你自己的工具。选择合适的工具取决于你管理的数据库数量、任务以及执行任务的频率。
+本主题探讨并比较用于管理 Azure SQL 数据库的工具和选项，便于用户挑选适合作业、业务以及自身需求的工具。选择合适的工具取决于所管理的数据库数量、任务以及执行任务的频率。
 
 ## Azure 经典管理门户
 
-[Azure 经典管理门户](https://manage.windowsazure.cn)是一个基于 Web 的应用程序，你可以从中创建、更新和删除数据库及逻辑服务器并监视数据库活动。如果你是刚开始使用 Azure（管理少量的数据库）或需要快速执行某些操作，该工具是理想之选。
+[Azure 经典管理门户](https://manage.windowsazure.cn)是一个基于 Web 的应用程序，可以在其中创建、更新和删除数据库及逻辑服务器并监视数据库活动。如果刚开始使用 Azure（管理少量的数据库）或需要快速执行某些操作，该工具是理想之选。
 
 ## Visual Studio 中的 SQL Server Management Studio 和 SQL Server Data Tools
 
-Visual Studio 中的 SQL Server Management Studio (SSMS) 和 SQL Server Data Tools (SSDT) 是在计算机上运行的客户端工具，你可以用它们来连接到、管理和开发云中的数据库。如果你是熟悉 Visual Studio 或其他集成开发环境 (IDE) 的应用程序开发人员，请[尝试使用 Visual Studio 中的 SSDT](https://msdn.microsoft.com/zh-cn/library/mt204009.aspx)。许多数据库管理员都熟悉 SSMS（可用于 Azure SQL 数据库）。[下载最新版本的 SSMS](https://msdn.microsoft.com/zh-cn/library/mt238290)，在使用 Azure SQL 数据库时始终使用该最新版本。有关使用 SSMS 管理 Azure SQL 数据库的详细信息，请参阅[使用 SSMS 管理 SQL 数据库](/documentation/articles/sql-database-manage-azure-ssms/)。
+Visual Studio 中的 SQL Server Management Studio (SSMS) 和 SQL Server Data Tools (SSDT) 是在计算机上运行的客户端工具，可用于连接到、管理和开发云中的数据库。如果你是熟悉 Visual Studio 或其他集成开发环境 (IDE) 的应用程序开发人员，请[尝试使用 Visual Studio 中的 SSDT](https://msdn.microsoft.com/zh-cn/library/mt204009.aspx)。许多数据库管理员都熟悉 SSMS（可用于 Azure SQL 数据库）。[下载最新版本的 SSMS](https://msdn.microsoft.com/zh-cn/library/mt238290)，在使用 Azure SQL 数据库时始终使用该最新版本。有关使用 SSMS 管理 Azure SQL 数据库的详细信息，请参阅[使用 SSMS 管理 SQL 数据库](/documentation/articles/sql-database-manage-azure-ssms/)。
+
 > [AZURE.IMPORTANT] 必须使用最新版本的 SQL Server Management Studio 和 SQL Server Data Tools for Visual Studio 来保持与 Azure 和 SQL 数据库的更新同步。这些早期版本的工具无法正常用于 SQL 数据库。
 
 ## 命令行工具
@@ -46,4 +47,4 @@ Visual Studio 中的 SQL Server Management Studio (SSMS) 和 SQL Server Data Too
 * 使用[弹性扩展客户端库](/documentation/articles/sql-database-elastic-database-client-library/)管理单租户模型或多租户模型中的数据库。
  
 
-<!---HONumber=Mooncake_0919_2016-->
+<!---HONumber=Mooncake_Quality_Review_1118_2016-->

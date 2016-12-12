@@ -680,4 +680,4 @@
 [2]: ./media/sql-database-elastic-jobs-powershell/portal.png
 <!--anchors-->
 
-<!---HONumber=Mooncake_0704_2016-->
+<!---HONumber=Mooncake_Quality_Review_1118_2016-->

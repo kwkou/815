@@ -14,7 +14,7 @@
 	ms.devlang="Java"
 	ms.topic="article"
 	ms.date="08/11/2016"
-	wacn.date="09/05/2016"
+	wacn.date="12/12/2016"
 	ms.author="cbrooks;robmcm"/>
 
 # 如何通过 Java 使用队列存储
@@ -33,9 +33,9 @@
 
 ## 创建 Java 应用程序
 
-在本指南中，你将使用存储功能，这些功能可在本地 Java 应用程序中运行，或在 Azure 的 Web 角色或辅助角色中通过运行的代码来运行。
+在本指南中，将使用存储功能，这些功能可在本地 Java 应用程序中运行，或在 Azure 的 Web 角色或辅助角色中通过运行的代码来运行。
 
-为此，你将需要安装 Java 开发工具包 (JDK)，并在你的 Azure 订阅中创建一个 Azure 存储帐户。完成此操作后，你将需要验证开发系统满足最低要求和 GitHub 上的 [Azure Storage SDK for Java][] 存储库中列出的依赖项。如果你的系统满足这些要求，你可以按照说明下载和安装系统中该存储库的 Azure Storage Libraries for Java。完成这些任务后，您将能够创建一个 Java 应用程序，以便使用本文中的示例。
+为此，需要安装 Java 开发工具包 (JDK)，并在 Azure 订阅中创建一个 Azure 存储帐户。完成此操作后，你将需要验证开发系统满足最低要求和 GitHub 上的 [Azure Storage SDK for Java][] 存储库中列出的依赖项。如果系统满足这些要求，可以按照说明下载和安装系统中该存储库的 Azure Storage Libraries for Java。完成这些任务后，您将能够创建一个 Java 应用程序，以便使用本文中的示例。
 
 ## 配置应用程序以访问队列存储
 
@@ -296,7 +296,7 @@ Azure 存储客户端使用存储连接字符串来存储用于访问数据管�
 
 ## 用于取消对消息进行排队的其他选项
 
-你可以通过两种方式自定义队列中的消息检索。首先，你可以获取一批消息（最多 32 个）。其次，你可以设置更长或更短的不可见超时时间，从而允许你的代码使用更多或更少时间来完全处理每个消息。
+你可以通过两种方式自定义队列中的消息检索。首先，可以获取一批消息（最多 32 个）。其次，你可以设置更长或更短的不可见超时时间，从而允许你的代码使用更多或更少时间来完全处理每个消息。
 
 下面的代码示例使用 **retrieveMessages** 方法以在一次调用中获取 20 条消息。然后，它会使用 **for** 循环处理每条消息。它还将每条消息的不可见超时设置为五分钟（300 秒）。请注意，这五分钟超时对于所有消息都是同时开始的，因此在调用 **retrieveMessages** 五分钟后，尚未删除的任何消息都将再次变得可见。
 
@@ -394,4 +394,4 @@ Azure 存储客户端使用存储连接字符串来存储用于访问数据管�
 [Azure 存储 REST API]: https://msdn.microsoft.com/zh-cn/library/azure/dd179355.aspx
 [Azure 存储团队博客]: http://blogs.msdn.com/b/windowsazurestorage/
 
-<!---HONumber=Mooncake_0829_2016-->
+<!---HONumber=Mooncake_Quality_Review_1118_2016-->

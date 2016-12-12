@@ -15,7 +15,7 @@
 	ms.devlang="dotnet"
 	ms.topic="article" 
 	ms.date="08/30/2016" 
-	wacn.date="11/15/2016"
+	wacn.date="12/12/2016"
 	ms.author="rickbyh;carlrab"/>  
 
 
@@ -34,7 +34,7 @@ Azure SQL Server 通过防火墙规则允许连接到服务器和数据库。可
 
 > [AZURE.IMPORTANT] 若要允许来自 Azure 的应用程序连接到 Azure SQL Server，则必须启用 Azure 连接。若要了解防火墙规则的工作方式，请参阅[如何配置 Azure SQL 服务器防火墙 - 概述](/documentation/articles/sql-database-firewall-configure/)。如果要在 Azure 云边界内建立连接，可能需要打开一些其他 TCP 端口。有关详细信息，请参阅[用于 ADO.NET 4.5 和 SQL 数据库 V12 的非 1433 端口](/documentation/articles/sql-database-develop-direct-route-ports-adonet-v12/)中的 **SQL 数据库 V12：内部与外部**部分
 
-**建议：**如果你的多个数据库具有相同的访问要求，并且你不想花时间分别设置每个数据库，则使用管理员的服务器级防火墙规则。Azure 建议尽量使用数据库级防火墙规则，以增强安全性并提高数据库的可移植性。
+**建议：**如果多个数据库具有相同的访问要求，并且不想花时间分别设置每个数据库，则使用管理员的服务器级防火墙规则。Azure 建议尽量使用数据库级防火墙规则，以增强安全性并提高数据库的可移植性。
 
 [AZURE.INCLUDE [创建 SQL 数据库数据库](../../includes/sql-database-create-new-server-firewall-portal.md)]
 
@@ -45,7 +45,7 @@ Azure SQL Server 通过防火墙规则允许连接到服务器和数据库。可
 - 若要添加当前计算机，请单击“添加客户端 IP”。
 - 若要添加其他 IP 地址，请键入“规则名称”、“起始 IP 地址”和“结束 IP 地址”。
 - 若要修改现有规则，单击规则中的任意字段并修改。
-- 若要删除现有规则，将鼠标悬停在该规则上直到 X 出现在行的末尾。单击“X”删除规则。
+- 若要删除现有规则，将鼠标悬停在该规则上直到“X”出现在行的末尾。单击“X”删除规则。
 
 单击“保存”以保存更改。
 
@@ -75,4 +75,4 @@ Azure SQL Server 通过防火墙规则允许连接到服务器和数据库。可
 
  
 
-<!---HONumber=Mooncake_1010_2016-->
+<!---HONumber=Mooncake_Quality_Review_1118_2016-->

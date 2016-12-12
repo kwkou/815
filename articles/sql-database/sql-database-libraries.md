@@ -46,4 +46,4 @@
 
 - [使用 Ruby 连接到 SQL 数据库](/documentation/articles/sql-database-develop-ruby-simple/)
 
-<!---HONumber=Mooncake_1024_2016-->
+<!---HONumber=Mooncake_Quality_Review_1118_2016-->

@@ -325,4 +325,4 @@ Blob 可以存在于与媒体服务帐户关联的存储帐户中，也可以存
 
  
 
-<!---HONumber=Mooncake_1107_2016-->
+<!---HONumber=Mooncake_Quality_Review_1118_2016-->

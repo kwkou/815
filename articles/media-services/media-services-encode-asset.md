@@ -237,4 +237,4 @@ TransientError|涵盖暂时性问题（例如 Azure 存储空间发生暂时性�
 
 [1]: /pricing/details/media-services/
 
-<!---HONumber=Mooncake_1107_2016-->
+<!---HONumber=Mooncake_Quality_Review_1118_2016-->

@@ -1,22 +1,22 @@
-<properties 
-	pageTitle="开始使用 Java 传送点播内容 | Azure" 
-	description="介绍如何使用 Azure 媒体服务执行编码、加密和流式处理资源等常见任务。" 
-	services="media-services" 
-	documentationCenter="java" 
-	authors="juliako" 
-	manager="erikre" 
-/>  
+<properties
+    pageTitle="开始使用 Java 传送点播内容 | Azure"
+    description="介绍如何使用 Azure 媒体服务执行编码、加密和流式处理资源等常见任务。"
+    services="media-services"
+    documentationcenter="java"
+    author="juliako"
+    manager="erikre"
+    editor="" />  
 
-
-<tags 
-	ms.service="media-services" 
-	ms.workload="media" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="get-started-article"
-	ms.date="10/12/2016"   
-	wacn.date="11/21/2016"   
-	ms.author="juliako"/>
+<tags
+    ms.assetid="b884bd61-dbdb-42ea-b170-8fb02e7fded7"
+    ms.service="media-services"
+    ms.workload="media"
+    ms.tgt_pltfrm="na"
+    ms.devlang="java"
+    ms.topic="get-started-article"
+    ms.date="10/19/2016"
+    wacn.date="12/12/2016"
+    ms.author="juliako" />  
 
 
 # 开始使用 Java 传送点播内容
@@ -34,7 +34,7 @@
 ###先决条件
 
 -   在新的或现有的 Azure 订阅中拥有一个媒体服务帐户。请参阅主题[如何创建媒体服务帐户](/documentation/articles/media-services-create-account/)。
--   适用于 Java 的 Azure 库，可以从 [Azure Java 开发人员中心][]安装。
+-   适用于 Java 的 Azure 库，可以从 [Azure Java 开发人员中心][Azure Java Developer Center]安装。
 
 ##<a if="connect"></a>如何将媒体服务与 Java 结合使用
 
@@ -260,17 +260,16 @@
 
 
 
-##其他资源
-
-有关媒体服务 Javadoc 文档，请参阅[适用于 Java 的 Azure 库文档][]。
+## 其他资源
+有关媒体服务 Javadoc 文档，请参阅[适用于 Java 的 Azure 库文档][Azure Libraries for Java documentation]。
 
 <!-- URLs. -->
 
 
-  [Azure Java 开发人员中心]: /develop/java/
-  [适用于 Java 的 Azure 库文档]: http://azure.github.io/azure-sdk-for-java/
+  [Azure Java Developer Center]: /develop/java/
+  [Azure Libraries for Java documentation]: http://azure.github.io/azure-sdk-for-java/
   [Media Services Client Development]: /documentation/articles/media-services-develop-video-players/
 
  
 
-<!---HONumber=Mooncake_1114_2016-->
+<!---HONumber=Mooncake_1205_2016-->

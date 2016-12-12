@@ -15,7 +15,7 @@
 	ms.devlang="dotnet"
 	ms.topic="hero-article"
 	ms.date="10/12/2016"
-	wacn.date="11/16/2016"
+	wacn.date="12/12/2016"
 	ms.author="cbrooks;robinsh"/>  
 
 
@@ -38,7 +38,7 @@ Azure 队列存储用于在应用程序组件之间进行云消息传送。在�
 - [Microsoft Visual Studio](https://www.visualstudio.com/zh-cn/visual-studio-homepage-vs.aspx)
 - [适用于 .NET 的 Azure 存储空间客户端库](https://www.nuget.org/packages/WindowsAzure.Storage/)
 - [适用于 .NET 的 Azure Configuration Manager](https://www.nuget.org/packages/Microsoft.WindowsAzure.ConfigurationManager/)
-- [Azure 存储帐户](/documentation/articles/storage-create-storage-account/#create-a-storage-account)
+- 一个 [Azure 存储帐户](/documentation/articles/storage-create-storage-account/#create-a-storage-account)
 
 
 [AZURE.INCLUDE [storage-dotnet-client-library-version-include](../../includes/storage-dotnet-client-library-version-include.md)]
@@ -199,7 +199,7 @@ Azure 队列存储用于在应用程序组件之间进行云消息传送。在�
 
 ## 使用其他方法取消对消息的排队
 
-你可以通过两种方式自定义队列中的消息检索。首先，你可以获取一批消息（最多 32 个）。其次，你可以设置更长或更短的不可见超时时间，从而允许你的代码使用更多或更少时间来完全处理每个消息。以下代码示例使用 **GetMessages** 方法在一次调用中获取 20 条消息。然后，它使用 **foreach** 循环处理每条消息。它还将每条消息的不可见超时时间设置为 5 分钟。请注意，5 分钟超时时间对于所有消息都是同时开始的，因此在调用 **GetMessages** 5 分钟后，尚未删除的任何消息都将再次变得可见。
+你可以通过两种方式自定义队列中的消息检索。首先，可以获取一批消息（最多 32 个）。其次，你可以设置更长或更短的不可见超时时间，从而允许你的代码使用更多或更少时间来完全处理每个消息。以下代码示例使用 **GetMessages** 方法在一次调用中获取 20 条消息。然后，它使用 **foreach** 循环处理每条消息。它还将每条消息的不可见超时时间设置为 5 分钟。请注意，5 分钟超时时间对于所有消息都是同时开始的，因此在调用 **GetMessages** 5 分钟后，尚未删除的任何消息都将再次变得可见。
 
     // Retrieve storage account from connection string.
     CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
@@ -262,7 +262,7 @@ Azure 队列存储用于在应用程序组件之间进行云消息传送。在�
 现在，您已了解有关队列存储的基础知识，可单击下面的链接来了解更复杂的存储任务。
 
 - 查看队列服务参考文档，了解有关可用 API 的完整详细信息：
-    - [.NET 存储客户端库参考](https://msdn.microsoft.com/zh-cn/library/mt347887.aspx)
+    - [.NET 存储客户端库参考](http://go.microsoft.com/fwlink/?LinkID=390731&clcid=0x409)
     - [REST API 参考](http://msdn.microsoft.com/zh-cn/library/azure/dd179355)
 - 了解如何通过使用 [Azure WebJobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk/) 简化为使用 Azure 存储空间而写的代码。
 - 查看更多功能指南，以了解在 Azure 中存储数据的其他方式。
@@ -270,15 +270,13 @@ Azure 队列存储用于在应用程序组件之间进行云消息传送。在�
     - [通过 .NET 开始使用 Azure Blob 存储](/documentation/articles/storage-dotnet-how-to-use-blobs/)来存储非结构化数据。
     - [使用.NET (C#) 连接到 SQL 数据库](/documentation/articles/sql-database-develop-dotnet-simple/)，存储关系数据。
 
-
-
-  [下载并安装 Azure SDK for.NET]:/develop/net/
-  [.NET 客户端库引用]: https://msdn.microsoft.com/zh-cn/library/mt347887.aspx
-  [在 Visual Studio 中创建 Azure 项目]: http://msdn.microsoft.com/zh-cn/library/azure/ee405487.aspx
-  [Azure 存储团队博客]: http://blogs.msdn.com/b/windowsazurestorage/
+  [Download and install the Azure SDK for .NET]: /develop/net/
+  [.NET client library reference]: http://go.microsoft.com/fwlink/?LinkID=390731&clcid=0x409
+  [Creating a Azure Project in Visual Studio]: http://msdn.microsoft.com/zh-cn/library/azure/ee405487.aspx
+  [Azure Storage Team Blog]: http://blogs.msdn.com/b/windowsazurestorage/
   [OData]: http://nuget.org/packages/Microsoft.Data.OData/5.0.2
   [Edm]: http://nuget.org/packages/Microsoft.Data.Edm/5.0.2
   [Spatial]: http://nuget.org/packages/System.Spatial/5.0.2
  
 
-<!---HONumber=Mooncake_1031_2016-->
+<!---HONumber=Mooncake_Quality_Review_1118_2016-->

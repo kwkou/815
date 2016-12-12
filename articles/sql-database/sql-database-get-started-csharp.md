@@ -16,7 +16,7 @@
    ms.tgt_pltfrm="csharp"
    ms.workload="data-management"
    ms.date="10/04/2016"
-   wacn.date="10/31/2016"
+   wacn.date="12/12/2016"
    ms.author="sstein"/>  
 
 
@@ -36,7 +36,7 @@
 
 若要完成本文中的步骤，需要做好以下准备：
 
-- Azure 订阅。如果你需要 Azure 订阅，只需单击本页顶部的“试用”，然后再回来完成本文的相关操作即可。
+- Azure 订阅。如果需要 Azure 订阅，只需单击本页顶部的“试用”，然后再回来完成本文的相关操作即可。
 - Visual Studio。如需 Visual Studio 的免费副本，请参阅 [Visual Studio 下载](https://www.visualstudio.com/downloads/download-visual-studio-vs)页。
 
 >[AZURE.NOTE] 本文将创建一个新的空白 SQL 数据库。修改以下示例中的 *CreateOrUpdateDatabase(...)* 方法，即可复制数据库、缩放数据库、在池中创建数据库，等等。有关详细信息，请参阅 [DatabaseCreateMode](https://msdn.microsoft.com/zh-cn/library/microsoft.azure.management.sql.models.databasecreatemode.aspx) 和 [DatabaseProperties](https://msdn.microsoft.com/zh-cn/library/microsoft.azure.management.sql.models.databaseproperties.aspx) 类。
@@ -46,7 +46,7 @@
 ## 创建控制台应用并安装所需的库
 
 1. 启动 Visual Studio。
-2. 单击“文件”>“新建”>“项目”。
+2. 依次单击“文件”>“新建”>“项目”。
 3. 创建 C# **控制台应用程序**并将其命名为 *SqlDbConsoleApp*
 
 
@@ -66,7 +66,7 @@
 
 以下示例将创建资源组、服务器、防火墙规则和 SQL 数据库。请参阅[创建用于访问资源的服务主体](#create-a-service-principal-to-access-resources)获取 `_subscriptionId, _tenantId, _applicationId, and _applicationSecret` 变量。
 
-将 **Program.cs** 的内容替换为以下内容，使用应用值更新 `{variables}`（请不要包含 `{}`）。
+将 **Program.cs** 的内容替换为以下内容，并使用应用值更新 `{variables}`（请不要包含 `{}`）。
 
 
     using Microsoft.Azure;
@@ -228,7 +228,7 @@
 
 ##<a id="create-a-service-principal-to-access-resources"></a> 创建用于访问资源的服务主体
 
-以下 PowerShell 脚本创建 Active Directory (AD) 应用程序，以及对 C# 应用进行身份验证时所需的服务主体。该脚本将输出前面 C# 示例所需的值。有关详细信息，请参阅 [Use Azure PowerShell to create a service principal to access resources](/documentation/articles/resource-group-authenticate-service-principal/)（使用 Azure PowerShell 创建用于访问资源的服务主体）。
+以下 PowerShell 脚本创建 Active Directory (AD) 应用程序，以及对 C# 应用进行身份验证时所需的服务主体。该脚本将输出前面 C# 示例所需的值。有关详细信息，请参阅[使用 Azure PowerShell 创建用于访问资源的服务主体](/documentation/articles/resource-group-authenticate-service-principal/)。
 
    
     # Sign in to Azure.
@@ -296,4 +296,4 @@
 [8]: ./media/sql-database-get-started-csharp/add-application2.png
 [9]: ./media/sql-database-get-started-csharp/clientid.png
 
-<!---HONumber=Mooncake_1024_2016-->
+<!---HONumber=Mooncake_Quality_Review_1118_2016-->
