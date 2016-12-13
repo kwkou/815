@@ -546,7 +546,6 @@ Azure 可用性集是 VM 或服务的逻辑分组，可确保 VM 和其他服务
 
 * 将 VM 添加到相同的 Azure 虚拟网络 (<https://www.azure.cn/documentation/services/networking/>)
 * HA 配置的 VM 也应该位于相同的子网中。在仅限云的部署中，无法在不同子网之间进行名称解析，只能进行 IP 解析。在跨界部署中使用站点到站点或 ExpressRoute 连接，就已经建立了包含至少一个子网的网络。名称解析将根据本地 AD 策略和网络基础结构来完成。
-\[comment]: <> （MSSedusch TODO 测试在 ARM 中是否仍适用）
 
 #### IP 地址
 强烈建议以弹性方式来设置 HA 配置的 VM。除非使用静态 IP 地址，否则，在 Azure 中依赖 IP 地址来处理 HA 配置内的 HA 伙伴并不可靠。Azure 中有两种“关闭”概念：
@@ -625,7 +624,6 @@ SQL Server 2014 开启了一种可能性：将数据库文件直接存储在 Azu
 
 * 所用存储帐户所在的 Azure 区域必须与部署运行 SQL Server 的 VM 时所用的存储帐户相同。
 * 之前列出的有关将 VHD 分布到不同 Azure 存储帐户的注意事项也适用于这种部署方法。意味着 I/O 操作计数会以 Azure 存储帐户的限制为依据。
-\[comment]: <> (MSSedusch TODO 但这会使用网络带宽，而不是存储带宽，不是吗？）
 
 此处列出了有关此类部署的详细信息：<https://msdn.microsoft.com/zh-cn/library/dn385720.aspx>
  
@@ -710,12 +708,6 @@ SQL Server 2014 引入了一项称为缓冲池扩展的新功能。此功能使�
 * Azure 存储资源管理器 (<https://www.azure.cn/downloads/>)
 * 第三方工具
 
-\[comment]: <> （ARM 尚不支持）
-\[comment]: <> （#### Azure VM 备份）
-\[comment]: <> （可以使用 Azure 虚拟机备份功能来备份 SAP 系统中的 VM。Azure 虚拟机备份已在 2015 年初引入，这也是目前在 Azure 中备份完整 VM 的标准方法。Azure 备份将备份存储在 Azure 中，并允许再次还原 VM。）
-\[comment]: <> （如果 DBMS 系统支持 Windows VSS（卷影复制服务 — <https://msdn.microsoft.com/zh-cn/library/windows/desktop/bb968832.aspx>），则与 SQL Server 一样，可以通过一致的方式备份运行数据库的 VM。因此，可以使用 Azure VM 备份对 SAP 数据库进行可还原的备份。不过请注意，无法根据 Azure VM 备份时间点来还原数据库。因此，建议使用 DBMS 功能执行数据库备份，而不要依赖于 Azure VM 备份。）
-\[comment]: <> （若要熟悉 Azure 虚拟机备份，请从此处着手：<https://www.azure.cn/documentation/services/backup/>）
-
 ### <a name="1b353e38-21b3-4310-aeb6-a77e7c8e81c8"></a>使用来自 Azure 应用商店的 SQL Server 映像
 Microsoft 在 Azure 应用商店中提供已经包含 SQL Server 版本的 VM。对于需要 SQL Server 和 Windows 许可证的 SAP 客户，可以通过运行已安装 SQL Server 的 VM，基本满足对许可证的需求。若要针对 SAP 使用此类映像，必须注意以下事项：
 
@@ -746,9 +738,6 @@ Microsoft 在 Azure 应用商店中提供已经包含 SQL Server 版本的 VM。
 ### Azure 中适用于 SAP 的 SQL Server 高可用性
 如本文前面所述，你无法创建使用最早 SQL Server 高可用性功能时所需的共享存储。此功能会在 Windows Server 故障转移群集 (WSFC) 中使用共享磁盘，为用户数据库（以及最终的 tempdb）安装两个或更多个 SQL Server 实例。这是 SAP 也支持的长期标准高可用性方法。由于 Azure 不支持共享存储，因此，无法实现具有共享磁盘群集配置的 SQL Server 高可用性配置。不过，仍有许多其他高可用性方法，如下列各节所述。
 
-\[comment]: <> （文章仍引用 ASM）
-\[comment]: <> （在阅读 Azure 中可用于 SQL Server 的各种特定高可用性技术的相关信息之前，[此处][virtual-machines-sql-server-high-availability-and-disaster-recovery-solutions]有一篇非常好的文档，其中提供了更多详细信息和指导）
-
 #### SQL Server 日志传送
 高可用性 (HA) 的方法之一是 SQL Server 日志传送。如果参与 HA 配置的 VM 具有有效的名称解析，就不会出现问题，而且 Azure 中的设置与任何本地设置无任何差别。建议不要完全依赖于 IP 解析。有关设置日志传送的信息和日志传送的原理，请查看此文档：
 
@@ -773,24 +762,11 @@ SAP 支持的数据库镜像（请参阅 SAP 说明 [965908]）依赖于在 SAP 
 * 只有将 Windows Server 2012 或 Windows Server 2012 R2 作为 VM 的来宾 OS 时，才支持使用可用性组侦听器。对于 Windows Server 2012，必须确保应用此补丁：<https://support.microsoft.com/kb/2854082>
 * 对于 Windows Server 2008 R2，此补丁并不存在，而 AlwaysOn 需要通过与数据库镜像相同的方式来使用，即，在连接字符串中指定故障转移伙伴（通过 SAP default.pfl 参数 dbs/mss/server 完成 — 请参阅 SAP 说明 [965908]）。
 * 使用可用性组侦听器时，数据库 VM 需要连接到专用的负载均衡器。仅限云部署中的名称解析可能会要求 SAP 系统的所有 VM（应用程序服务器、DBMS 服务器及 (A)SCS 服务器）位于同一个虚拟网络中，或者要求从 SAP 应用程序层维护 etc\\host 文件，以解析 SQL Server VM 的 VM 名称。为了避免 Azure 在这两个 VM 都意外关闭的情况下分配新的 IP 地址，应该在 AlwaysOn 配置中为这些 VM 的网络接口分配静态 IP 地址（有关如何定义静态 IP 地址的信息，请参阅[此][virtual-networks-reserved-private-ip]文）
-\[comment]: <> （旧博客）
-\[comment]: <> （<https://blogs.msdn.com/b/alwaysonpro/archive/2014/08/29/recommendations-and-best-practices-when-deploying-sql-server-alwayson-availability-groups-in-windows-azure-iaas.aspx>、<https://blogs.technet.com/b/rmilne/archive/2015/07/27/how-to-set-static-ip-on-azure-vm.aspx>）
 * 构建群集需要分配特殊 IP 地址的 WSFC 群集配置时，需执行一些特殊的步骤，因为 Azure 及其当前功能会为群集名称分配与创建群集所在的节点相同的 IP 地址。这表示必须执行手动步骤，为群集分配不同的 IP 地址。
 * 可用性组侦听器将创建于具有 TCP/IP 终结点的 Azure 中，这些终结点会分配给运行可用性组主要和次要副本的 VM。
 * 可能需要使用 ACL 来保护这些终结点。
 
-\[comment]: <> （TODO 旧博客）
-\[comment]: <> （学完[此处][virtual-machines-windows-classic-ps-sql-alwayson-availability-groups]提供的教程后，将全面了解在 Azure 上安装 AlwaysOn 配置的详细步骤和必要条件）
-\[comment]: <> （通过 Azure 库 <https://blogs.technet.com/b/dataplatforminsider/archive/2014/08/25/sql-server-alwayson-offering-in-microsoft-azure-portal-gallery.aspx> 预配置 AlwaysOn 设置）
-\[comment]: <> （[此教程][virtual-machines-windows-classic-ps-sql-int-listener]详细介绍了如何创建可用性组侦听器）
-\[comment]: <> （此处详细介绍了如何使用 ACL 来保护网络终结点：）
-\[comment]: <> (*	<https://blogs.technet.com/b/heyscriptingguy/archive/2013/08/31/weekend-scripter-creating-acls-for-windows-azure-endpoints-part-1-of-2.aspx> )
-\[comment]: <> (*	<https://blogs.technet.com/b/heyscriptingguy/archive/2013/09/01/weekend-scripter-creating-acls-for-windows-azure-endpoints-part-2-of-2.aspx>)  
-\[comment]: <> (*	<https://blogs.technet.com/b/heyscriptingguy/archive/2013/09/18/creating-acls-for-windows-azure-endpoints.aspx>) 
-
 你也可以在不同的 Azure 区域部署 SQL Server AlwaysOn 可用性组。此功能将使用 Azure VNet 到 Vnet 连接（[更多详细信息][virtual-networks-configure-vnet-to-vnet-connection]）。
-\[comment]: <> （TODO 旧博客）
-\[comment]: <> （此处介绍了如何在此类方案中设置 SQL Server AlwaysOn 可用性组：<https://blogs.technet.com/b/dataplatforminsider/archive/2014/06/19/sql-server-alwayson-availability-groups-supported-between-microsoft-azure-regions.aspx>。）
 
 #### Azure 中的 SQL Server 高可用性汇总
 Azure 存储空间会保护内容，因此，更加没有理由坚持使用热备用映像。这意味着，你的高可用性方案只需针对下列情况提供保护：
@@ -811,7 +787,6 @@ Azure 存储空间会保护内容，因此，更加没有理由坚持使用热�
 ### <a name="9053f720-6f3b-4483-904d-15dc54141e30"></a>适用于 Azure 上的 SAP 的 SQL Server 总体摘要
 本指南提供了许多建议，因此，建议你在规划 Azure 部署之前，反复阅读本指南。但是，一般而言，请务必遵循有关 Azure 上的 DBMS 的前十大要点：
 
-\[comment]: <>（2.3 吞吐量比什么更高？ 比一个 VHD 更高？）
 1. 使用最新的 DBMS 版本（例如 SQL Server 2014），其在 Azure 中最具优势。单论 SQL Server，SQL Server 2012 SP1 CU4 便已足够，该版本包含对 Azure 存储空间进行备份的功能。但是，如果与 SAP 搭配使用，则建议至少使用 SQL Server 2014 SP1 CU1 或 SQL Server 2012 SP2 以及最新的 CU。
 1. 在 Azure 中仔细规划你的 SAP 系统布局，以平衡数据文件布局和 Azure 限制：
 	* 不要有太多 VHD，但必须足以确保你可以达到所需的 IOPS。
@@ -1153,7 +1128,6 @@ SAP 目前支持 SAP ASE 版本 16.0，可与 SAP Business Suite 产品搭配使
 支持通过适用于 Oracle 的 SAP BR* 工具提供备份/还原功能，其方式与在标准 Windows Server 操作系统和 Hyper-V 上一样。Oracle 恢复管理器 (RMAN) 也支持备份到磁盘以及从磁盘还原。
 
 #### 高可用性
-\[comment]: <>（链接引用 ASM）
 支持通过 Oracle Data Guard 实现高可用性和灾难恢复。可以在[此文档][virtual-machines-windows-classic-configure-oracle-data-guard]中找到详细信息。
 
 #### 其他

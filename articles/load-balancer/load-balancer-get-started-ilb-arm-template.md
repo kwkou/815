@@ -16,8 +16,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
    ms.date="10/24/2016"
-   wacn.date="12/05/2016"
-   wacn.date="" />  
+   wacn.date="12/05/2016" />  
 
 
 # 开始使用模板创建内部负载均衡器

@@ -371,8 +371,6 @@ Azure 提供了优异的平台检测，以满足所有业务关键型应用程�
 * [Azure PowerShell][azure-ps] 中特定于 SAP 的 PowerShell cmdlet
 * [Azure CLI][azure-cli] 中特定于 SAP 的 Azure CLI
 * [Azure 门户预览][azure-portal]
-
-[comment]: <>（MSSedusch TODO：在 SAP 说明 1409604 中添加 SAP 主机代理的 ARM 修补级别）
  
 以下指南也包含了有关 Azure 上的 SAP 的主题：
 
@@ -389,8 +387,6 @@ Azure 提供多种用于部署 VM 和相关磁盘的方法。因此，请务必�
 
 #### 部署从 Azure 应用商店中取出的 VM
 想要从 Azure 应用商店中获取某个 Microsoft 或第三方映像来部署 VM。将 VM 部署到 Azure 之后，你需要像在本地环境中一样，遵照相同的准则并使用相同的工具在 VM 内部安装 SAP 软件。若要在 Azure VM 内部安装 SAP 软件，SAP 和 Azure 建议将 SAP 安装媒体上载并存储到 Azure VHD 中，或创建一个充当“文件服务器”并包含所有必要 SAP 安装媒体的 Azure VM。
-
-[comment]: <>（MSSedusch TODO：为何需要建议一种文件管理方法，例如文件服务器或 VHD？ 与本地操作有很大差别吗？）
 
 有关详细信息，请参阅[方案 1：为 SAP 部署从 Azure 应用商店中取出的 VM][deployment-guide-3.2] 一章。
 
@@ -562,8 +558,6 @@ Azure 可让用户从 Azure 应用商店部署 VM 实例，该库提供 Windows 
 
 ### <a name="a9a60133-a763-4de8-8986-ac0fa33aa8c1"></a>方案 3：使用包含 SAP 的非通用化 Azure VHD 从本地移动 VM
 此方案可以满足只将 SAP 系统以其当前格式和形式从本地移至 Azure 的需要。这意味着，Windows 或 Linux 主机名和 SAP SID 或类似信息不会发生更改。在此情况下，VHD 在部署期间不是作为映像引用，而是直接用作 OS 磁盘。在部署方面，此方案与前面两种方案的不同之处在于，部署期间无法自动安装 VM 代理。因此，以后需要从 Microsoft 下载 Azure VM 代理，并且需要在 VM 中手动安装并启用该代理。成功完成该任务后，可以继续启动 SAP 主机监视 Azure 扩展及其配置。有关 Azure VM 代理的功能的详细信息，请查看以下文章：
-
-[comment]: <>（MSSedusch TODO：更新下面的 Windows 链接）
 
 ___
 
