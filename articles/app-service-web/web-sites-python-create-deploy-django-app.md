@@ -15,7 +15,7 @@
 	ms.devlang="python"
 	ms.topic="hero-article" 
 	ms.date="02/19/2016" 
-	wacn.date="11/25/2016"
+	wacn.date="12/12/2016"
 	ms.author="huvalo"/>
 
 
@@ -23,7 +23,7 @@
 
 [AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-sdk-developer-differences.md)]
 
-本教程将介绍如何开始在 [Azure App Service Web 应用](/documentation/articles/app-service-changes-existing-services/)中运行 Python。Web Apps 提供有限的免费托管和快速部署功能，现在，您可以使用 Python！ 随着您的应用增长，可以切换到付费托管，并且还可以与所有其他 Azure 服务集成。
+本教程介绍如何在 [Azure 应用服务 Web 应用](/documentation/articles/app-service-changes-existing-services/)中运行 Python。Web Apps 提供有限的免费托管和快速部署功能，现在，你可以使用 Python！ 随着应用的增长，可以切换到付费托管，并且还可以与所有其他 Azure 服务集成。
 
 你将使用 Django Web 框架创建应用程序（请参阅本教程针对 [Flask](/documentation/articles/web-sites-python-create-deploy-flask-app/) 和 [Bottle](/documentation/articles/web-sites-python-create-deploy-bottle-app/) 的备选版本）。将从 Azure 应用商店创建 Web 应用，设置 Git 部署和本地克隆存储库。然后将本地运行应用程序，将其更改、 提交和推送到 Azure。本教程演示如何从 Windows 或 Mac/Linux 执行此操作。
 
@@ -41,32 +41,32 @@
 
 ### Windows
 
-如果您还没有 Python 2.7 或 3.4 安装（32 位），我们建议使用 Web 平台安装程序来安装 [Azure SDK for Python 2.7] 或 [Azure SDK for Python 3.4]。这将安装 32 位版本的 Python、setuptools、pip、virtualenv 等（32 位 Python 是在 Azure 主机计算机上安装的）。或者，您可以从 [python.org] 获取 Python。
+如果你还没有 Python 2.7 或 3.4 安装（32 位），建议使用 Web 平台安装程序来安装 [Azure SDK for Python 2.7] 或 [Azure SDK for Python 3.4]。这将安装 32 位版本的 Python、setuptools、pip、virtualenv 等（32 位 Python 是在 Azure 主机计算机上安装的）。或者，你可以从 [python.org] 获取 Python。
 
-对于 Git，我们建议 [Git for Windows] 或 [GitHub for Windows]。如果您使用 Visual Studio，可以使用集成的 Git 支持。
+对于 Git，我们建议 [Git for Windows] 或 [GitHub for Windows]。如果你使用 Visual Studio，可以使用集成的 Git 支持。
 
-我们还建议你安装 [Python Tools 2.2 for Visual Studio]。这是可选的，但是如果您有 [Visual Studio]（包括免费 Visual Studio Community 2013 或 Visual Studio Express 2013 for Web），则这将为您提供很好的 Python IDE。
+我们还建议你安装 [Python Tools 2.2 for Visual Studio]。这是可选的，但是如果你有 [Visual Studio]（包括免费 Visual Studio Community 2013 或 Visual Studio Express 2013 for Web），则可以提供 Python IDE。
 
 ### Mac/Linux
 
-您应安装了 Python 和 Git ，但请确保您具有 Python 2.7 或 3.4。
+你应安装了 Python 和 Git ，但请确保你具有 Python 2.7 或 3.4。
 
 
 ##<a name="website-creation-on-portal"></a>在门户中创建 Web 应用
 
-创建您的应用的第一步是通过 [Azure 门户预览](https://portal.azure.cn)创建 Web 应用。
+创建应用的第一步是通过 [Azure 门户预览](https://portal.azure.cn)创建 Web 应用。
 
 1. 登录到 Azure 门户预览，然后单击左下角的“新建”按钮。
 3. 在搜索框中，键入“python”。
 4. 在搜索结果中，选择 **Django** （由 PTVS 发布），然后单击“创建”。
 5. 配置新的 Django 应用，如为其创建新的应用服务计划和新的资源组。然后单击**创建**。
-6. 按照[从本地 Git 部署到 Azure App Service](/documentation/articles/app-service-deploy-local-git/) 的说明为新创建的 Web 应用配置 Git 发布。
+6. 按照[从本地 Git 部署到 Azure 应用服务](/documentation/articles/app-service-deploy-local-git/)的说明为新创建的 Web 应用配置 Git 发布。
 
 ##<a name="application-overview"></a>应用程序概述
 
 ### Git 存储库内容
 
-下面是您会在初始 Git 存储库找到的文件的概览，我们将在下一节中予以克隆。
+下面是你会在初始 Git 存储库找到的文件的概览，我们将在下一节中予以克隆。
 
     \app\__init__.py
     \app\forms.py
@@ -146,7 +146,7 @@ Python 虚拟环境。如果在 Web 应用上尚不存在兼容的虚拟环境�
 
 ### 克隆存储库
 
-首先，使用 Azure 门户预览网站上提供的 URL 来克隆存储库。有关详细信息，请参阅[从本地 Git 部署到 Azure App Service](/documentation/articles/app-service-deploy-local-git/)。
+首先，使用 Azure 门户预览网站上提供的 URL 来克隆存储库。有关详细信息，请参阅[从本地 Git 部署到 Azure 应用服务](/documentation/articles/app-service-deploy-local-git/)。
 
 打开包含在存储库根中的解决方案文件 (.sln) 。
 
@@ -168,7 +168,7 @@ Python 虚拟环境。如果在 Web 应用上尚不存在兼容的虚拟环境�
 
 ### 创建超级用户
 
-应用程序随附的数据库没有定义任何超级用户。若要使用应用程序的登录功能或 Django 管理界面（如果您决定将其启用），则需创建超级用户。
+应用程序随附的数据库没有定义任何超级用户。若要使用应用程序的登录功能或 Django 管理界面（如果你决定将其启用），则需创建超级用户。
 
 通过命令行从项目文件夹运行此命令：
 
@@ -178,33 +178,33 @@ Python 虚拟环境。如果在 Web 应用上尚不存在兼容的虚拟环境�
 
 ### 使用开发服务器运行
 
-按 F5 开始调试，您的 web 浏览器会自动打开到本地运行的页面。
+按 F5 开始调试，你的 web 浏览器会自动打开到本地运行的页面。
 
 ![](./media/web-sites-python-create-deploy-django-app/windows-browser-django.png)
 
-您可以在源中设置断点，使用监视窗口等。请参阅 [Python Tools for Visual Studio 文档]以了解有关各种功能的更多信息。
+你可以在源中设置断点，使用监视窗口等。请参阅 [Python Tools for Visual Studio 文档]以了解有关各种功能的更多信息。
 
-### 进行更改
+### 执行更改
 
-现在您可以通过更改应用程序源和/或模板进行试验。
+现在你可以通过更改应用程序源和/或模板进行试验。
 
-您测试您的更改后，将其提交到 Git 存储库：
+测试更改后，将其提交到 Git 存储库：
 
 ![](./media/web-sites-python-create-deploy-django-app/ptvs-commit-django.png)
 
 ### 安装多个软件包
 
-您应用程序可能具有除 Python 和 Django 以外的其他依赖项。
+你应用程序可能具有除 Python 和 Django 以外的其他依赖项。
 
-您可以使用 pip 安装其他软件包。要安装包，请右键单击虚拟环境，然后选择**安装 Python 软件包**。
+你可以使用 pip 安装其他软件包。要安装包，请右键单击虚拟环境，然后选择**安装 Python 软件包**。
 
-例如，要安装 Azure SDK for Python（使您可以访问 Azure 存储、服务总线和其他 Azure 服务），请输入 `azure`：
+例如，要安装 Azure SDK for Python（使你可以访问 Azure 存储、服务总线和其他 Azure 服务），请输入 `azure`：
 
 ![](./media/web-sites-python-create-deploy-django-app/ptvs-install-package-dialog.png)
 
 在虚拟环境上右键单击并选择**生成 requirements.txt** 以更新 requirements.txt。
 
-然后，将 requirements.txt 的更改落实到 Git 存储库。
+然后，将 requirements.txt 的更改提交到 Git 存储库。
 
 ###<a name="troubleshooting-deployment"></a>部署到 Azure
 
@@ -214,16 +214,16 @@ Python 虚拟环境。如果在 Web 应用上尚不存在兼容的虚拟环境�
 
 首次部署将需要一些时间，因为它将创建虚拟环境、 安装包等。
 
-Visual Studio 不会显示部署的进度。如果您想要查看输出，请参阅[故障排除 - 部署](#troubleshooting-deployment)上的相关部分。
+Visual Studio 不会显示部署的进度。如果你想要查看输出，请参阅[故障排除 - 部署](#troubleshooting-deployment)上的相关部分。
 
-浏览到 Azure URL 要查看您的更改。
+浏览到 Azure URL 以查看更改。
 
 
 ##<a name="website-development-windows-command-line"></a>Web 应用开发 - Windows - 命令行
 
 ### 克隆存储库
 
-首先，使用在 Azure 门户预览中提供的 URL 来克隆存储库，并将 Azure 存储库添加为远程。有关详细信息，请参阅[从本地 Git 部署到 Azure App Service](/documentation/articles/app-service-deploy-local-git/)。
+首先，使用在 Azure 门户预览中提供的 URL 来克隆存储库，并将 Azure 存储库添加为远程。有关详细信息，请参阅[从本地 Git 部署到 Azure 应用服务](/documentation/articles/app-service-deploy-local-git/)。
 
     git clone <repo-url>
     cd <repo-folder>
@@ -249,7 +249,7 @@ Visual Studio 不会显示部署的进度。如果您想要查看输出，请参
 
 ### 创建超级用户
 
-应用程序随附的数据库没有定义任何超级用户。若要使用应用程序的登录功能或 Django 管理界面（如果您决定将其启用），则需创建超级用户。
+应用程序随附的数据库没有定义任何超级用户。若要使用应用程序的登录功能或 Django 管理界面（如果你决定将其启用），则需创建超级用户。
 
 通过命令行从项目文件夹运行此命令：
 
@@ -259,7 +259,7 @@ Visual Studio 不会显示部署的进度。如果您想要查看输出，请参
 
 ### 使用开发服务器运行
 
-您可以使用以下命令在开发服务器下启用应用程序：
+你可以使用以下命令在开发服务器下启用应用程序：
 
     env\scripts\python manage.py runserver
 
@@ -271,20 +271,20 @@ Visual Studio 不会显示部署的进度。如果您想要查看输出，请参
 
 ![](./media/web-sites-python-create-deploy-django-app/windows-browser-django.png)
 
-### 进行更改
+### 执行更改
 
-现在您可以通过更改应用程序源和/或模板进行试验。
+现在你可以通过更改应用程序源和/或模板进行试验。
 
-您测试您的更改后，将其提交到 Git 存储库：
+测试更改后，将其提交到 Git 存储库：
 
     git add <modified-file>
     git commit -m "<commit-comment>"
 
 ### 安装多个软件包
 
-您应用程序可能具有除 Python 和 Django 以外的其他依赖项。
+你应用程序可能具有除 Python 和 Django 以外的其他依赖项。
 
-您可以使用 pip 安装其他软件包。例如，要安装 Azure SDK for Python（使您可以访问 Azure 存储、 服务总线和其他 Azure 服务），请输入：
+你可以使用 pip 安装其他软件包。例如，要安装 Azure SDK for Python（使你可以访问 Azure 存储、 服务总线和其他 Azure 服务），请输入：
 
     env\scripts\pip install azure
 
@@ -292,7 +292,7 @@ Visual Studio 不会显示部署的进度。如果您想要查看输出，请参
 
     env\scripts\pip freeze > requirements.txt
 
-落实更改：
+提交更改：
 
     git add requirements.txt
     git commit -m "Added azure package"
@@ -303,16 +303,16 @@ Visual Studio 不会显示部署的进度。如果您想要查看输出，请参
 
     git push azure master
 
-您将看到部署脚本的输出，包括虚拟环境创建，安装软件包，创建 web.config。
+你将看到部署脚本的输出，包括虚拟环境创建，安装软件包，创建 web.config。
 
-浏览到 Azure URL 要查看您的更改。
+浏览到 Azure URL 以查看更改。
 
 
 ##<a name="website-development-mac-linux-command-line"></a>Web 应用开发 - Mac/Linux - 命令行
 
 ### 克隆存储库
 
-首先，使用在 Azure 门户预览中提供的 URL 来克隆存储库，并将 Azure 存储库添加为远程。有关详细信息，请参阅[从本地 Git 部署到 Azure App Service](/documentation/articles/app-service-deploy-local-git/)。
+首先，使用在 Azure 门户预览中提供的 URL 来克隆存储库，并将 Azure 存储库添加为远程。有关详细信息，请参阅[从本地 Git 部署到 Azure 应用服务](/documentation/articles/app-service-deploy-local-git/)。
 
     git clone <repo-url>
     cd <repo-folder>
@@ -342,7 +342,7 @@ Visual Studio 不会显示部署的进度。如果您想要查看输出，请参
 
 ### 创建超级用户
 
-应用程序随附的数据库没有定义任何超级用户。若要使用应用程序的登录功能或 Django 管理界面（如果您决定将其启用），则需创建超级用户。
+应用程序随附的数据库没有定义任何超级用户。若要使用应用程序的登录功能或 Django 管理界面（如果你决定将其启用），则需创建超级用户。
 
 通过命令行从项目文件夹运行此命令：
 
@@ -352,7 +352,7 @@ Visual Studio 不会显示部署的进度。如果您想要查看输出，请参
 
 ### 使用开发服务器运行
 
-您可以使用以下命令在开发服务器下启用应用程序：
+你可以使用以下命令在开发服务器下启用应用程序：
 
     env/bin/python manage.py runserver
 
@@ -364,20 +364,20 @@ Visual Studio 不会显示部署的进度。如果您想要查看输出，请参
 
 ![](./media/web-sites-python-create-deploy-django-app/mac-browser-django.png)
 
-### 进行更改
+### 执行更改
 
-现在您可以通过更改应用程序源和/或模板进行试验。
+现在你可以通过更改应用程序源和/或模板进行试验。
 
-您测试您的更改后，将其提交到 Git 存储库：
+测试更改后，将其提交到 Git 存储库：
 
     git add <modified-file>
     git commit -m "<commit-comment>"
 
 ### 安装多个软件包
 
-您应用程序可能具有除 Python 和 Django 以外的其他依赖项。
+你应用程序可能具有除 Python 和 Django 以外的其他依赖项。
 
-您可以使用 pip 安装其他软件包。例如，要安装 Azure SDK for Python（使您可以访问 Azure 存储、 服务总线和其他 Azure 服务），请输入：
+你可以使用 pip 安装其他软件包。例如，要安装 Azure SDK for Python（使你可以访问 Azure 存储、 服务总线和其他 Azure 服务），请输入：
 
     env/bin/pip install azure
 
@@ -385,7 +385,7 @@ Visual Studio 不会显示部署的进度。如果您想要查看输出，请参
 
     env/bin/pip freeze > requirements.txt
 
-落实更改：
+提交更改：
 
     git add requirements.txt
     git commit -m "Added azure package"
@@ -396,9 +396,9 @@ Visual Studio 不会显示部署的进度。如果您想要查看输出，请参
 
     git push azure master
 
-您将看到部署脚本的输出，包括虚拟环境创建，安装软件包，创建 web.config。
+你将看到部署脚本的输出，包括虚拟环境创建，安装软件包，创建 web.config。
 
-浏览到 Azure URL 要查看您的更改。
+浏览到 Azure URL 以查看更改。
 
 
 ##<a name="troubleshooting-package-installation"></a>故障排除 - 软件包安装
@@ -423,11 +423,11 @@ Django 有收集静态文件的概念。这将从原始位置取用所有静态�
 
 静态文件收集是在部署脚本中自动完成的，将清除以前收集的文件。这意味着每次部署时都会发生收集，这对部署速度会有点影响，但可确保不使用过时文件，从而避免潜在的安全问题。
 
-如果您想要跳过为 Django 应用程序收集静态文件的操作：
+如果你想要跳过为 Django 应用程序收集静态文件的操作：
 
     \.skipDjango
 
-然后，您将需要在本地计算机上手动收集：
+然后，你将需要在本地计算机上手动收集：
 
     env\scripts\python manage.py collectstatic
 
@@ -467,12 +467,12 @@ Django 有收集静态文件的概念。这将从原始位置取用所有静态�
 
 Azure 提供可以从 Django 应用程序方便地使用的数据库服务。从 Django 应用程序使用 [SQL 数据库]和 [MySQL] 的教程展示了创建数据库服务、更改 `DjangoWebProject/settings.py` 中的数据库设置所需的步骤以及安装所需的库。
 
-当然，如果想要管理您自己的数据库服务器，您可以使用在 Azure 上运行的 Windows 或 Linux 虚拟机来执行此操作。
+当然，如果想要管理你自己的数据库服务器，你可以使用在 Azure 上运行的 Windows 或 Linux 虚拟机来执行此操作。
 
 
 ##<a name="django-admin-interface"></a>Django 管理界面
 
-开始构建您的模型后，您将需要使用一些数据来填充数据库。交互方式添加和编辑的一种简便方法是使用 Django 管理界面。
+开始构建你的模型后，你将需要使用一些数据来填充数据库。交互方式添加和编辑的一种简便方法是使用 Django 管理界面。
 
 该管理界面的代码在应用程序源中已被注释掉，但有清楚的标记，可以方便地将其启用（搜索“admin”）。
 
@@ -481,7 +481,7 @@ Azure 提供可以从 Django 应用程序方便地使用的数据库服务。从
 
 ##<a name="next-steps"></a>后续步骤
 
-通过下面的链接，可了解有关 Django 和 Python Tools for Visual Studio的详细信息：
+通过下面的链接，可了解有关 Django 和 Python Tools for Visual Studio 的详细信息：
 
 - [Django 文档]
 - [Python Tools for Visual Studio 文档]
@@ -494,8 +494,8 @@ Azure 提供可以从 Django 应用程序方便地使用的数据库服务。从
 有关详细信息，请参阅 [Python 开发人员中心](/develop/python/)。
 
 
-## 发生的更改
-* 有关从网站更改为 App Service 的指南，请参阅 [Azure App Service 及其对现有 Azure 服务的影响](/documentation/articles/app-service-changes-existing-services/)
+## 更改内容
+* 有关从网站更改为应用服务的指南，请参阅 [Azure 应用服务及其对现有 Azure 服务的影响](/documentation/articles/app-service-changes-existing-services/)
 
 
 <!--Link references-->
@@ -516,4 +516,4 @@ Azure 提供可以从 Django 应用程序方便地使用的数据库服务。从
 [Python Tools for Visual Studio 文档]: http://aka.ms/ptvsdocs
 [Django 文档]: https://www.djangoproject.com/
 
-<!---HONumber=Mooncake_0919_2016-->
+<!---HONumber=Mooncake_Quality_Review_1118_2016-->

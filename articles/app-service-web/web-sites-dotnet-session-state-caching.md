@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="将 Azure App Service 中的 Azure Redis 缓存用于会话状态" 
+	pageTitle="将 Azure 应用服务中的 Azure Redis 缓存用于会话状态" 
 	description="了解如何使用 Azure 缓存服务来支持 ASP.NET 会话状态缓存。" 
 	services="app-service\web" 
 	documentationCenter=".net" 
@@ -14,27 +14,27 @@
 	ms.devlang="dotnet" 
 	ms.topic="get-started-article" 
 	ms.date="06/27/2016" 
-	wacn.date="11/25/2016" 
+	wacn.date="12/12/2016" 
 	ms.author="riande"/>
 
 
-# 将 Azure App Service 中的 Azure Redis 缓存用于会话状态
+# 将 Azure 应用服务中的 Azure Redis 缓存用于会话状态
 
 
 [AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-sdk-developer-differences.md)]
 
-本主题说明如何将 Azure Redis Cache 服务（预览版）用于会话状态。
+本主题介绍如何将 Azure Redis Cache 服务（预览版）用于会话状态。
 
-如果你的 ASP.NET Web 应用使用会话状态，则你需要设置外部会话状态提供程序（可为 Redis Cache 服务或 SQL Server 会话状态提供程序）。如果你使用会话状态，但未使用外部提供程序，则你的 Web 应用只能限定为一个实例。Redis Cache 服务是最快最简单的启用方式。
+如果 ASP.NET Web 应用程序使用会话状态，则需要设置外部会话状态提供程序（可以是 Redis Cache 服务或 SQL Server 会话状态提供程序）。如果使用会话状态，但未使用外部提供程序，则只能使用 Web 应用程序的一个实例。Redis Cache 服务是最快和最简单的启用方式。
 
 [AZURE.INCLUDE [app-service-web-to-api-and-mobile](../../includes/app-service-web-to-api-and-mobile.md)] 
 
-## <a id="configureproject"></a>将 RedisSessionStateProvider NuGet 包添加到 Web 应用
+## <a id="configureproject"></a>将 RedisSessionStateProvider NuGet 包添加到 Web 应用程序
 安装 NuGet `RedisSessionStateProvider` 包。从包管理器控制台（“工具”>“NuGet 包管理器”>“包管理器控制台”）使用以下命令进行安装：
 
   `PM> Install-Package Microsoft.Web.RedisSessionStateProvider`
   
-若要从“工具”>“NuGet 包管理器”>“管理解决方案的 NuGet 包”进行安装，请搜索 `RedisSessionStateProvider`。
+要从“工具”>“NuGet 包管理器”>“管理解决方案的 NuGet 包”进行安装，请搜索 `RedisSessionStateProvider`。
 
 有关详细信息，请参阅 [NuGet RedisSessionStateProvider 页](http://www.nuget.org/packages/Microsoft.Web.RedisSessionStateProvider/)。
 
@@ -86,7 +86,7 @@
     if (objValue != null)
        strValue = (string)objValue;	
 
-还可以使用 Redis Cache 在 Web 应用中缓存对象。有关详细信息，请参阅 [15 分钟学会创建包含 Azure Redis 缓存的 MVC 影片应用](http://azure.microsoft.com/blog/2014/06/05/mvc-movie-app-with-azure-redis-cache-in-15-minutes/)。
+还可以使用 Redis Cache 在 Web 应用程序中缓存对象。有关详细信息，请参阅 [15 分钟学会创建包含 Azure Redis 缓存的 MVC 影片应用](http://azure.microsoft.com/blog/2014/06/05/mvc-movie-app-with-azure-redis-cache-in-15-minutes/)。
 有关如何使用 ASP.NET 会话状态的详细信息，请参阅 [ASP.NET 会话状态概述][]。
 
   
@@ -103,4 +103,4 @@
   [EndpointURL]: ./media/web-sites-dotnet-session-state-caching/CachingScreenshot_EndpointURL.png
   [ManageKeys]: ./media/web-sites-dotnet-session-state-caching/CachingScreenshot_ManageAccessKeys.png
 
-<!---HONumber=74-->
+<!---HONumber=Mooncake_Quality_Review_1118_2016-->

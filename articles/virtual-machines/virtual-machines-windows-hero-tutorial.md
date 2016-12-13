@@ -16,7 +16,7 @@
 	ms.devlang="na"
 	ms.topic="hero-article"
 	ms.date="09/06/2016"
-	wacn.date="10/24/2016"
+	wacn.date="12/12/2016"
 	ms.author="cynthn"/>  
 
 
@@ -131,4 +131,4 @@
 
 - 如果对部署自动化感兴趣，请参阅 [Create a Windows virtual machine by using a Resource Manager template](/documentation/articles/virtual-machines-windows-ps-template/)（使用 Resource Manager 模板创建 Windows 虚拟机）。
 
-<!---HONumber=Mooncake_1017_2016-->
+<!---HONumber=Mooncake_Quality_Review_1118_2016-->

@@ -10,7 +10,7 @@
 <tags 
    ms.service="hdinsight"
    ms.date="07/11/2015"
-   wacn.date="11/25/2016"/>
+   wacn.date="12/12/2016"/>
 
 # 为 HDInsight 中的 Hadoop 开发 Java MapReduce 程序
 
@@ -314,7 +314,7 @@ Azure HDInsight 将 Azure Blob 存储用于数据存储。设置 HDInsight 群�
 		$containerName_Data = "<ContainerName>"
 		$location = "<MicrosoftDataCenter>"  # For example, "China East"
 
-	**$subscripionName** 变量与你的 Azure 订阅相关联。必须命名 **$storageAccountName\_Data** 和 **$containerName\_Data**。有关命名限制，请参阅[命名和引用容器、Blob 与元数据](https://msdn.microsoft.com/zh-cn/library/azure/dd135715.aspx)。
+	**$subscripionName** 变量与 Azure 订阅相关联。必须命名 **$storageAccountName\_Data** 和 **$containerName\_Data**。有关命名限制，请参阅[命名和引用容器、Blob 与元数据](https://msdn.microsoft.com/zh-cn/library/azure/dd135715.aspx)。
 
 3. 运行以下命令以创建存储帐户，并在该帐户上创建 Blob 存储容器
 
@@ -562,7 +562,7 @@ Azure HDInsight 将 Azure Blob 存储用于数据存储。设置 HDInsight 群�
 		Get-AzureStorageBlobContent -Container $containerName_Data -Blob $blobName -Context $storageContext -Force
 		cat "./$blobName" | findstr "there"
 
-作业完成后，你可以选择使用 [Sqoop][hdinsight-use-sqoop] 将数据导出到 SQL Server 或 Azure SQL Database，或者将数据导出到 Excel。
+作业完成后，你可以选择使用 [Sqoop][hdinsight-use-sqoop] 将数据导出到 SQL Server 或 Azure SQL 数据库，或者将数据导出到 Excel。
 
 ## <a id="nextsteps"></a>后续步骤
 在本教程中，你已学习如何执行以下操作：开发 Java MapReduce 作业、在 HDInsight Emulator 中测试应用程序、编写 Azure PowerShell 脚本以设置 HDInsight 群集以及在群集上运行 MapReduce 作业。若要了解更多信息，请参阅下列文章：
@@ -603,4 +603,4 @@ Azure HDInsight 将 Azure Blob 存储用于数据存储。设置 HDInsight 群�
 [image-emulator-wordcount-compile]: ./media/hdinsight-develop-deploy-java-mapreduce/HDI-Emulator-Compile-Java-MapReduce.png
 [image-emulator-wordcount-run]: ./media/hdinsight-develop-deploy-java-mapreduce/HDI-Emulator-Run-Java-MapReduce.png
 
-<!---HONumber=66-->
+<!---HONumber=Mooncake_Quality_Review_1118_2016-->

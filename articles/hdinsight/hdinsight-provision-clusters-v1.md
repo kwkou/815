@@ -14,7 +14,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="big-data" 
    ms.date="07/25/2016" 
-   wacn.date="11/25/2016"
+   wacn.date="12/12/2016"
    ms.author="jgao"/>
 
 #在 HDInsight 中设置 Hadoop 群集
@@ -66,7 +66,7 @@
 
 	![HDInsight 群集](./media/hdinsight-provision-clusters-v1/hdinsight.clusters.png)
  
-	> [AZURE.NOTE] Azure HDInsight 群集也称为 HDInsight 中的 Hadoop 群集或者 HDInsight 群集。有时，该术语可与 Hadoop 群集换用。它们都代表托管在 Azure 环境中的 Hadoop 群集。
+	> [AZURE.NOTE] *Azure HDInsight 群集*也称为 *HDInsight 中的 Hadoop 群集*或者 *HDInsight 群集*。有时，该术语可与 *Hadoop 群集*换用。它们都代表托管在 Azure 环境中的 Hadoop 群集。
 
 	在给定的群集类型中，各节点有不同的角色，使客户能够针对特定角色，根据适合其工作负荷的详细信息来调整节点的大小。例如，如果执行的分析作业类型会消耗大量内存，Hadoop 群集可以使用大量内存来预配辅助节点。
 
@@ -222,7 +222,7 @@
 
 	![点到站点配置示意图](./media/hdinsight-provision-clusters-v1/hdinsight-vnet-point-to-site.png)
 
-有关将 HDInsight 与虚拟网络配合使用的信息（包括虚拟网络的特定配置要求），请参阅 [Extend HDInsight capbilities by using an Azure Virtual Network（使用 Azure 虚拟网络扩展 HDInsight 功能）](/documentation/articles/hdinsight-extend-hadoop-virtual-network/)。
+有关将 HDInsight 与虚拟网络配合使用的信息（包括虚拟网络的特定配置要求），请参阅 [Extend HDInsight capbilities by using an Azure Virtual Network](/documentation/articles/hdinsight-extend-hadoop-virtual-network/)（使用 Azure 虚拟网络扩展 HDInsight 功能）。
 
 
 ## <a name="cluster-creation-methods"></a> 预配工具
@@ -450,7 +450,7 @@ HDInsight 使用 Azure Blob 存储容器作为默认文件系统。你需要先�
 执行以下过程，将你的 Linux 计算机设置为使用 Azure 命令行界面 (Azure CLI)：
 
 - 使用 Node.js 包管理器 (NPM) 安装 Azure CLI
-- 连接到你的 Azure 订阅
+- 连接到 Azure 订阅
 
 **使用 NPM 安装 Azure CLI**
 
@@ -566,7 +566,7 @@ HDInsight 使用 Azure Blob 存储容器作为默认文件系统。你需要先�
 
 	出现指定位置的提示时，请选择 HDInsight 群集可以设置到的位置。该存储位置必须与 HDInsight 群集所在的位置相同。
 
-有关使用 Azure 经典管理门户创建 Azure 存储帐户的信息，请参阅 [Create, manage, or delete a storage account（创建、管理或删除存储帐户）](/documentation/articles/storage-create-storage-account/)。
+有关使用 Azure 经典管理门户创建 Azure 存储帐户的信息，请参阅 [Create, manage, or delete a storage account](/documentation/articles/storage-create-storage-account/)（创建、管理或删除存储帐户）。
 
 如果你已有存储帐户但是不知道帐户名称和帐户密钥，则可以使用以下命令来检索该信息：
 
@@ -579,7 +579,7 @@ HDInsight 使用 Azure Blob 存储容器作为默认文件系统。你需要先�
 	-- Lists the keys for a Storage account
 	azure storage account keys list <StorageAccountName>
 
-有关使用 Azure 经典管理门户获取信息的详细信息，请参阅 [Create, manage, or delete a storage account（创建、管理或删除存储帐户）](/documentation/articles/storage-create-storage-account/)中的 How to: View, copy and regenerate storage access keys（如何：查看、复制和重新生成存储访问密钥）部分。
+有关使用 Azure 经典管理门户获取信息的详细信息，请参阅 [Create, manage, or delete a storage account](/documentation/articles/storage-create-storage-account/)（创建、管理或删除存储帐户）中的 *How to: View, copy and regenerate storage access keys*（如何：查看、复制和重新生成存储访问密钥）部分。
 
 HDInsight 群集还需要在存储帐户中提供一个容器。如果你提供的存储帐户尚不包含容器，*azure hdinsight cluster create* 命令将提示你输入容器名称，然后会创建该容器。但是，如果你想要预先创建容器，则可以使用以下命令：
 
@@ -679,7 +679,7 @@ HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 应用程序使�
 	|属性|值|
 	|--------|-----|
 	|模板|模板/Visual C#/Windows/控制台应用程序|
-	|Name|CreateHDICluster|
+	|名称|CreateHDICluster|
 
 4. 单击“确定”以创建该项目。
 
@@ -769,4 +769,4 @@ HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 应用程序使�
 [hdinsight-sdk-documentation]: http://msdn.microsoft.com/zh-cn/library/dn479185.aspx
 [azure-management-portal]: https://manage.windowsazure.cn
 
-<!---HONumber=Mooncake_0530_2016-->
+<!---HONumber=Mooncake_Quality_Review_1118_2016-->

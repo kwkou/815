@@ -15,7 +15,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="07/27/2016"
-	wacn.date="10/10/2016"
+	wacn.date="12/12/2016"
 	ms.author="cephalin"/>
 
 # 将自定义域名映射到 Azure 应用
@@ -56,20 +56,20 @@ Azure App Service 允许将以下类别的自定义域映射到应用。
 根据需要，可以使用两种不同类型的标准 DNS 记录来映射自定义域：
 
 - [A](https://en.wikipedia.org/wiki/List_of_DNS_record_types#A) - 直接将自定义域名映射到 Azure 应用的虚拟 IP 地址。
-- [CNAME](https://en.wikipedia.org/wiki/CNAME_record) - 将自定义域名映射到应用的 Azure 域名称，**&lt;*appname*>.chinacloudsites.cn**。
+- [CNAME](https://en.wikipedia.org/wiki/CNAME_record) - 将自定义域名映射到应用的 Azure 域名，**&lt;*appname*>.chinacloudsites.cn**。
 
 CNAME 的优点是其不会随 IP 地址的更改而更改。如果删除和重新创建应用，或从更高的定价层更改回**共享**层，应用的虚拟 IP 地址可能会发生更改。经过这种更改后，CNAME 记录仍然有效，而 A 记录则需要更新。
 
 本教程将演示使用 A 记录和使用 CNAME 记录的步骤。
 
->[AZURE.IMPORTANT] 不要为根域（即“根记录”）创建 CNAME 记录。有关详细信息，请参阅[Why can't a CNAME record be used at the root domain](http://serverfault.com/questions/613829/why-cant-a-cname-record-be-used-at-the-apex-aka-root-of-a-domain)（为什么不能将 CNAME 记录用于根域）。若要将根域映射到 Azure 应用，请改用 A 记录。
+>[AZURE.IMPORTANT] 不要为根域（即“根记录”）创建 CNAME 记录。有关详细信息，请参阅 [Why can't a CNAME record be used at the root domain](http://serverfault.com/questions/613829/why-cant-a-cname-record-be-used-at-the-apex-aka-root-of-a-domain)（为什么不能将 CNAME 记录用于根域）。若要将根域映射到 Azure 应用，请改用 A 记录。
 
 ## <a name="vip"></a>步骤 1。*（仅 A 记录）*获取应用的 IP 地址
-若要使用 A 记录映射自定义域名，则需要 Azure 应用的 IP 地址。如果要使用 CNAME 记录进行映射，则请跳过此步骤并转到下一节。
+若要使用 A 记录映射自定义域名，则需要 Azure 应用的 IP 地址。如果要使用 CNAME 记录进行映射，请跳过此步骤并转到下一节。
 
 1.	登录到 [Azure 门户预览](https://portal.azure.cn)。
 
-2.	在左侧菜单上，单击“应用程序服务”。
+2.	在左侧菜单上，单击“应用服务”。
 
 4.	单击应用，然后单击“自定义域”。
 
@@ -83,7 +83,7 @@ CNAME 的优点是其不会随 IP 地址的更改而更改。如果删除和重�
 
 登录域注册机构，并使用他们的工具添加 A 记录或 CNAME 记录。由于每个注册机构的 UI 都略有不同，因此应查阅提供商的文档。但是，仍然有一些一般准则。
 
-1.	查找管理 DNS 记录的页面。查找站点中标签为“域名”、“DNS”或“名称服务器管理”的链接或区域。通常可通过查看帐户信息，然后查找如“我的域”之类的链接，便可以找到连接。
+1.	查找管理 DNS 记录的页面。查找站点中标签为“域名”、“DNS”或“名称服务器管理”的链接或区域。通常可通过查看帐户信息，然后查找如“我的域”之类的链接，便可以找到链接。
 2.	查找允许添加或编辑 DNS 记录的链接。此链接可能为“区域文件”、“DNS 记录”链接或“高级”配置链接。
 3.  创建记录并保存所做的更改。
     - [此处为 A 记录的说明](#a)。
@@ -147,7 +147,7 @@ CNAME 的优点是其不会随 IP 地址的更改而更改。如果删除和重�
 
 如果使用 CNAME 记录映射到 Azure 应用的默认域名，则不需要其他 TXT 记录，这一点与使用 A 记录不同。
 
->[AZURE.IMPORTANT] 不要为根域（即“根记录”）创建 CNAME 记录。有关详细信息，请参阅[Why can't a CNAME record be used at the root domain](http://serverfault.com/questions/613829/why-cant-a-cname-record-be-used-at-the-apex-aka-root-of-a-domain)（为什么不能将 CNAME 记录用于根域）。若要将根域映射到 Azure 应用，请改用 [A 记录](#a)。
+>[AZURE.IMPORTANT] 不要为根域（即“根记录”）创建 CNAME 记录。有关详细信息，请参阅 [Why can't a CNAME record be used at the root domain](http://serverfault.com/questions/613829/why-cant-a-cname-record-be-used-at-the-apex-aka-root-of-a-domain)（为什么不能将 CNAME 记录用于根域）。若要将根域映射到 Azure 应用，请改用 [A 记录](#a)。
 
 按以下方式配置 CNAME 记录（@ 通常表示根域）：
 
@@ -175,7 +175,7 @@ CNAME 的优点是其不会随 IP 地址的更改而更改。如果删除和重�
 
 1.	登录 [Azure 门户预览](https://portal.azure.cn)（如果尚未登录）。
 
-2.	在 Azure 门户预览中，单击左侧菜单中的“应用程序服务”。
+2.	在 Azure 门户预览中，单击左侧菜单中的“应用服务”。
 
 3.	单击应用，然后单击“自定义域”>“添加域”。
 
@@ -187,13 +187,13 @@ CNAME 的优点是其不会随 IP 地址的更改而更改。如果删除和重�
 
 5.  单击“验证”。
 
-6.  单击“验证”时，Azure 将启动域验证工作流。这会检查域的所有权和主机名的可用性，发出成功报告或附带解决错误说明性指南的错误详情。
+6.  单击“验证”后，Azure 将启动域验证工作流。这将检查域的所有权和主机名的可用性，并报告成功或错误详情（附带有关如何修复错误的说明性指导）。
 
-7.  验证成功后，将激活“添加主机名”按钮用于分配主机名。现在，请在浏览器中导航到自定义域名。应会看到应用正在使用自定义域名运行。
+7.  验证成功后，“添加主机名”按钮变为激活状态，就可以分配主机名了。现在，在浏览器中导航到你的自定义域名。应会看到应用正在使用自定义域名运行。
 
-8.  Azure 完成配置新的自定义域名后，在浏览器中导航到自定义域名。浏览器应会打开 Azure 应用，这意味着已正确配置自定义域名。
+8.  Azure 完成配置新的自定义域名后，可在浏览器中导航到自定义域名。浏览器应会打开 Azure 应用，这意味着已正确配置自定义域名。
 
-> [AZURE.NOTE] 如果 DNS 记录已被使用（为流量方案提供服务的活动域）并且需要事先将 Web 应用与其绑定以验证域，则只需根据下表中的示例创建 TXT 记录。其他 TXT 记录遵循从 &lt;*子域*>.&lt;*根域*> 映射到 &lt;*应用名称*>.chinacloudsites.cn 的约定。
+> [AZURE.NOTE] 如果已在使用 DNS 记录（为流量方案提供服务的活动域）且需要事先将 Web 应用与其绑定以验证域，则只需根据下表中的示例创建 TXT 记录。其他 TXT 记录遵循从 &lt;*子域*>.&lt;*根域*> 映射到 &lt;*应用名称*>.chinacloudsites.cn 的约定。
 > <table cellspacing="0" border="1">
 >   <tr>
 >     <th>FQDN 示例</th>
@@ -221,7 +221,7 @@ CNAME 的优点是其不会随 IP 地址的更改而更改。如果删除和重�
 
 ## <a name="verify"></a>验证 DNS 传播
 
-完成配置步骤后，更改可能需要一些时间来进行传播，传播速度取决于 DNS 提供商。可以通过 [http://digwebinterface.com/](http://digwebinterface.com/) 来验证 DNS 传播是否按预期的方式进行工作。浏览到该网站后，在文本框中指定主机名并单击“深入发掘”。验证结果以确认最近所做的更改是否已生效。
+完成配置步骤后，更改可能需要一些时间来进行传播，传播速度取决于 DNS 提供商。可以通过使用 [http://digwebinterface.com/](http://digwebinterface.com/) 验证 DNS 传播是否按预期方式工作。浏览到站点后，在文本框中指定主机名并单击“深入发掘”。验证结果以确认最近所做的更改是否已生效。
 
 ![将自定义域名映射到 Azure 应用：验证 DNS 传播](./media/web-sites-custom-domain-name/1-digwebinterface.png)
 
@@ -234,4 +234,4 @@ CNAME 的优点是其不会随 IP 地址的更改而更改。如果删除和重�
 <!-- Images -->
 [subdomain]: ./media/web-sites-custom-domain-name/azurewebsites-subdomain.png
 
-<!---HONumber=Mooncake_0926_2016-->
+<!---HONumber=Mooncake_Quality_Review_1118_2016-->

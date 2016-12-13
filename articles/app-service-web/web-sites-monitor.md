@@ -14,7 +14,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="09/07/2016"
-	wacn.date="10/25/2016"
+	wacn.date="12/12/2016"
 	ms.author="byvinyal"/>
 
 # <a name="howtomonitor"></a>在 Azure 中监视 Web Apps
@@ -273,4 +273,4 @@
 [vmsizes]: http://go.microsoft.com/fwlink/?LinkID=309169
  
 
-<!---HONumber=Mooncake_0307_2016-->
+<!---HONumber=Mooncake_Quality_Review_1118_2016-->

@@ -15,7 +15,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
    ms.date="09/07/2016"
-   wacn.date="11/25/2016"
+   wacn.date="12/12/2016"
    ms.author="larryfr"/>
 
 #使用 PowerShell 运行 Hive 查询
@@ -158,4 +158,4 @@ Azure PowerShell 提供 *cmdlet*，可让你在 HDInsight 上远程运行 Hive �
 
 * [将 MapReduce 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-mapreduce/)
 
-<!---HONumber=Mooncake_0215_2016-->
+<!---HONumber=Mooncake_Quality_Review_1118_2016-->

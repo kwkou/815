@@ -1,6 +1,6 @@
 <properties
 	pageTitle="Windows VM 的常见问题 | Azure"
-	description="回答了通过 Resource Manager 模型创建的 Windows 虚拟机的一些常见问题。"
+	description="解答通过 Resource Manager 模型创建 Windows 虚拟机的一些常见问题。"
 	services="virtual-machines-windows"
 	documentationCenter=""
 	authors="cynthn"
@@ -16,7 +16,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="08/16/2016"
-	wacn.date="10/24/2016"
+	wacn.date="12/12/2016"
 	ms.author="cynthn"/>  
 
 
@@ -25,18 +25,18 @@
 
 本文讨论了在 Azure 中使用 Resource Manager 部署模型创建的 Windows 虚拟机的一些常见问题。有关本主题的 Linux 版本，请参阅[有关 Linux 虚拟机的常见问题](/documentation/articles/virtual-machines-linux-faq/)
 
-## 我可以在 Azure VM 上运行什么程序？
+## 可以在 Azure VM 上运行哪些程序？
 
 所有订户都可以在 Azure 虚拟机上运行服务器软件。有关在 Azure 中运行 Microsoft 服务器软件的支持策略的信息，请参阅 [Microsoft server software support for Azure Virtual Machines](https://support.microsoft.com/zh-cn/kb/2721672)（对 Azure 虚拟机中的 Microsoft 服务器软件的支持）
 
 某些版本的 Windows 7 和 Windows 8.1 可供 MSDN Azure 权益订户以及 MSDN 开发和测试即用即付订户用于开发和测试任务。有关详细信息（包括说明和限制），请参阅 [Windows Client images for MSDN subscribers（适用于 MSDN 订户的 Windows 客户端映像）](http://azure.microsoft.com/blog/2014/05/29/windows-client-images-on-azure/)。
 
 
-## 使用虚拟机时，我可以使用多少存储？
+## 虚拟机可以使用多少存储空间？
 
-每个数据磁盘的容量高达 1 TB。你可以使用的数据磁盘的数目取决于虚拟机的大小。有关详细信息，请参阅[虚拟机大小](/documentation/articles/virtual-machines-windows-sizes/)。
+每个数据磁盘容量最高可达 1 TB。可以使用的数据磁盘数取决于虚拟机大小。有关详细信息，请参阅[虚拟机大小](/documentation/articles/virtual-machines-windows-sizes/)。
 
-Azure 存储帐户提供可用于操作系统磁盘和任意数据磁盘的存储。每个磁盘都是一个 .vhd 文件，以页 blob 形式存储。有关定价详细信息，请参阅 [Storage Pricing Details](/pricing/details/storage/)（存储定价详细信息）。
+Azure 存储帐户可为操作系统磁盘和任何数据磁盘提供存储空间。每个磁盘都是一个 .vhd 文件，存储作为页 blob。有关定价详细信息，请参阅 [Storage Pricing Details](/pricing/details/storage/)（存储定价详细信息）。
 
 
 ## 如何访问我的虚拟机？
@@ -46,7 +46,7 @@ Azure 存储帐户提供可用于操作系统磁盘和任意数据磁盘的存�
 
 如果在使用远程桌面时遇到问题，请参阅 [Troubleshoot Remote Desktop connections to a Windows-based Azure Virtual Machine](/documentation/articles/virtual-machines-windows-troubleshoot-rdp-connection/)（对与基于 Windows 的 Azure 虚拟机的远程桌面连接进行故障排除）。
 
-如果你熟悉 Hyper-V，可以寻找类似于 VMConnect 的工具。Azure 不提供类似的工具，因为不支持通过控制台来访问虚拟机。
+如果熟悉 Hyper-V，可以查找与 VMConnect 类似的工具。Azure 不提供类似工具，因为不支持通过控制台访问虚拟机。
 
 ## 我是否可以使用临时磁盘（默认为 D: 驱动器）存储数据？
 
@@ -58,25 +58,25 @@ Azure 存储帐户提供可用于操作系统磁盘和任意数据磁盘的存�
 
 可以通过移动页面文件和重新分配驱动器号来更改驱动器号，但需确保按特定顺序执行这些步骤。有关说明，请参阅 [Change the drive letter of the Windows temporary disk](/documentation/articles/virtual-machines-windows-classic-change-drive-letter/)（更改 Windows 临时磁盘的驱动器号）。
 
-## 我是否可以将现有 VM 添加到可用性集？
+## 可否将现有 VM 添加到可用性集？
 
-不可以。如果你希望你的 VM 成为可用性集的一部分，需要在该集内创建 VM。目前不支持在创建 VM 之后再将其添加到可用性集。
+不可以。如果希望将 VM 作为可用性集的一部分，则需要在该可用性集中创建 VM。目前，不支持在创建 VM 后将其添加到可用性集。
 
-## 我是否可以将虚拟机上传到 Azure？
+## 可否将虚拟机上载到 Azure？
 
-是的。有关说明，请参阅 [Upload a Windows VM image to Azure ](/documentation/articles/virtual-machines-windows-upload-image/)（将 Windows VM 映像上传到 Azure）
+可以。有关说明，请参阅 [Upload a Windows VM image to Azure ](/documentation/articles/virtual-machines-windows-upload-image/)（将 Windows VM 映像上载到 Azure）
 
-## 我是否可以调整 OS 磁盘的大小？
+## 可否调整 OS 磁盘的大小？
 
-是的。有关说明，请参阅 [How to expand the OS drive of a Virtual Machine in an Azure Resource Group](/documentation/articles/virtual-machines-windows-expand-os-disk/)（如何扩展 Azure 资源组中虚拟机的 OS 驱动器）。
+可以。有关说明，请参阅 [How to expand the OS drive of a Virtual Machine in an Azure Resource Group](/documentation/articles/virtual-machines-windows-expand-os-disk/)（如何扩展 Azure 资源组中虚拟机的 OS 驱动器）。
 
-## 我是否可以复制或克隆现有的 Azure VM？
+## 可否复制或克隆现有的 Azure VM？
 
-是的。有关说明，请参阅 [How to create a copy of a Windows virtual machine in the Resource Manager deployment model](/documentation/articles/virtual-machines-windows-specialized-image/)（如何在 Resource Manager 部署模型中创建 Windows 虚拟机的副本）。
+可以。有关说明，请参阅 [How to create a copy of a Windows virtual machine in the Resource Manager deployment model](/documentation/articles/virtual-machines-windows-specialized-image/)（如何在 Resource Manager 部署模型中创建 Windows 虚拟机副本）。
 
-## Azure 是否支持 Linux VM？
+## Azure 可否支持 Linux VM？
 
-是的。若要快速创建 Linux VM 进行试用，请参阅 [Create a Linux VM on Azure using the Portal](/documentation/articles/virtual-machines-linux-quick-create-portal/)（使用门户在 Azure 上创建 Linux VM）。
+可以。若要快速创建 Linux VM 进行试用，请参阅 [Create a Linux VM on Azure using the Portal](/documentation/articles/virtual-machines-linux-quick-create-portal/)（使用门户在 Azure 上创建 Linux VM）。
 
 ## 创建 VM 后能否向 VM 添加 NIC？
 
@@ -140,4 +140,4 @@ Azure 存储帐户提供可用于操作系统磁盘和任意数据磁盘的存�
 	</tr>
 </table>
 
-<!---HONumber=Mooncake_1017_2016-->
+<!---HONumber=Mooncake_Quality_Review_1118_2016-->

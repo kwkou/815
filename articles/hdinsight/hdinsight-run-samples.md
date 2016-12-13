@@ -15,7 +15,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="07/25/2016"
-	wacn.date="09/30/2016"
+	wacn.date="12/12/2016"
 	ms.author="jgao"/>
 
 #在基于 Windows 的 HDInsight 中运行 Hadoop MapReduce 示例
@@ -339,7 +339,7 @@ cat.cs 文件中的映射器代码使用 [StreamReader][streamreader] 对象将�
 	}
 
 
-wc.cs 文件中的化简器代码使用 [StreamReader][streamreader] 对象从 cat.exe 映射器输出的标准输入流读取字符。当它使用 [Console.Writeline][console-writeline] 方法读取字符时，它将通过统计每个单词末尾的空格和行结束字符的数目来计算单词数量。然后使用 [Console.Writeline][console-writeline] 方法将总数写入标准输出流中。
+wc.cs 文件中的化简器代码使用 [StreamReader][streamreader] 对象从 cat.exe 映射器输出的标准输入流读取字符。当它使用 [Console.Writeline][console-writeline] 方法读取字符时，它将通过统计位于每个单词末尾的空格和行结束字符的数目来计算单词数量。然后使用 [Console.Writeline][console-writeline] 方法将总数写入标准输出流中。
 
 
 
@@ -998,4 +998,4 @@ wc.cs 文件中的化简器代码使用 [StreamReader][streamreader] 对象从 c
 [console-writeline]: http://msdn.microsoft.com/zh-cn/library/system.console.writeline
 [stdin-stdout-stderr]: https://msdn.microsoft.com/zh-cn/library/3x292kth.aspx
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_Quality_Review_1118_2016-->

@@ -15,7 +15,7 @@
 	ms.devlang="PHP"
 	ms.topic="article"
 	ms.date="08/11/2016"
-	wacn.date="11/25/2016"
+	wacn.date="12/12/2016"
 	ms.author="robmcm"/>
 
 # 使用 Git 在 Azure App Service 中创建和部署 PHP-MySQL Web 应用
@@ -58,7 +58,7 @@
 
 7. 创建 Web 应用程序后，用户将看到新的 Web 应用边栏选项卡。
 
-9. 若要启用 Git 发布，必须提供用户名和密码。记下你创建的用户名和密码。（如果之前已设置 Git 存储库，则将跳过此步骤。）
+9. 若要启用 Git 发布，必须提供用户名和密码。记下你创建的用户名和密码。（如果之前已设置 Git 存储库，则会跳过此步骤。）
 
 	![创建发布凭据][credentials]
 
@@ -85,11 +85,11 @@
 
 ## 在本地生成并测试应用
 
-现在你已创建 Web 应用，可以在本地开发应用程序，然后在测试后部署该应用程序。
+现在已创建 Web 应用，可以在本地开发应用程序，然后在测试后部署该应用程序。
 
-注册应用程序是一个简单的 PHP 应用程序，它使您能够通过提供您的姓名和电子邮件地址来注册事件。有关以前的注册者的信息将显示在表中。注册信息将存储在 MySQL 数据库中。应用程序由一个文件组成（复制/粘贴以下可用代码）：
+注册应用程序是一个简单的 PHP 应用程序，在该应用程序中提供姓名和电子邮件地址即可注册事件。以前的注册者的信息将显示在表中。注册信息存储在 MySQL 数据库中。应用程序由一个文件组成（复制/粘贴以下可用代码）：
 
-* **index.php**：将显示注册形式及包含注册者信息的表。
+* **index.php**：显示注册形式及包含注册者信息的表。
 
 若要本地构建和运行应用程序，请执行下列步骤。请注意，这些步骤假定已在本地计算机上设置 PHP 和 MySQL 命令行工具（MySQL 的一部分），并且已启用 [MySQL 的 PDO 扩展][pdo-mysql]。
 
@@ -261,8 +261,9 @@
     
 3. 单击“确定”接受法律条款。再次单击“确定”以添加该扩展。
 
-    **已安装扩展**边栏选项卡将不会显示编辑器扩展。  
-    ![查看编辑器扩展插件][composer-extension-view]
+    **已安装扩展**边栏选项卡将不会显示编辑器扩展。
+
+	![查看编辑器扩展插件][composer-extension-view]
     
 4. 现在，如上一节所示，执行 `git add`、`git commit` 和 `git push`。现在将看到编辑器正在安装在 composer.json 中定义的依赖项。
 
@@ -309,4 +310,4 @@
 [composer-extension-view]: ./media/web-sites-php-mysql-deploy-use-git/composer-extension-view.png
 [composer-extension-success]: ./media/web-sites-php-mysql-deploy-use-git/composer-extension-success.png
 
-<!---HONumber=Mooncake_0919_2016-->
+<!---HONumber=Mooncake_Quality_Review_1118_2016-->

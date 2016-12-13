@@ -15,12 +15,12 @@
 	ms.devlang="python"
 	ms.topic="article"
 	ms.date="09/07/2016"
-	wacn.date="10/10/2016" 
+	wacn.date="12/12/2016" 
 	ms.author="larryfr"/>
 
 #在 HDInsight 中将 Python 与 Hive 和 Pig 配合使用
 
-Hive 和 Pig 非常适用于在 HDInsight 中处理数据，但有时你需要一种更通用的语言。Hive 和 Pig 都可让你使用各种编程语言创建用户定义的功能 (UDF)。在本文中，你将了解如何通过 Hive 和 Pig 使用 Python UDF。
+Hive 和 Pig 非常适用于在 HDInsight 中处理数据，但有时需要使用更通用的语言。Hive 和 Pig 都允许使用多种编程语言创建用户定义的功能 (UDF)。在本文中，你将了解如何通过 Hive 和 Pig 使用 Python UDF。
 
 ##要求
 
@@ -48,9 +48,9 @@ HDInsight 还包含 Jython，后者是用 Java 编写的 Python 实现。Pig 无
 	FROM hivesampletable
 	ORDER BY clientid LIMIT 50;
 
-> [AZURE.NOTE] 在基于 Windows 的 HDInsight 群集上，**USING** 子句必须指定 python.exe 的完整路径。这始终是 `D:\Python27\python.exe`。
+> [AZURE.NOTE] 在基于 Windows 的 HDInsight 群集上，**USING** 子句必须指定 python.exe 的完整路径。该路径始终为 `D:\Python27\python.exe`。
 
-下面是本示例执行的操作：
+本示例执行以下操作：
 
 1. 文件开头的 **add file** 语句将 **streaming.py** 文件添加到分布式缓存，使群集中的所有节点都可访问该文件。
 
@@ -58,8 +58,7 @@ HDInsight 还包含 Jython，后者是用 Java 编写的 Python 实现。Pig 无
 
 3. **AS** 子句描述从 **streaming.py** 返回的字段
 
-<a name="streamingpy"></a>
-下面是该 HiveQL 示例使用的 **streaming.py** 文件。
+<a name="streamingpy"></a>下面是该 HiveQL 示例使用的 **streaming.py** 文件。
 
 	#!/usr/bin/env python
 
@@ -77,19 +76,19 @@ HDInsight 还包含 Jython，后者是用 Java 编写的 Python 实现。Pig 无
 	  phone_label = devicemake + ' ' + devicemodel
 	  print "\t".join([clientid, phone_label, hashlib.md5(phone_label).hexdigest()])
 
-由于我们要使用流式处理，因此此脚本必须执行以下操作：
+由于使用流式处理，因此此脚本必须执行以下操作：
 
-1. 从 STDIN 中读取数据。在本示例中，这是使用 `sys.stdin.readline()` 来完成的。
+1. 从 STDIN 中读取数据。在本示例中，使用 `sys.stdin.readline()` 完成此操作。
 
 2. 已使用 `string.strip(line, "\n ")` 删除尾部的换行符，因为我们只需要文本数据，而不需要行尾指示符。
 
 2. 执行流式处理时，一个行就包含了所有值，每两个值之间有一个制表符。因此，`string.split(line, "\t")` 可用于在每个制表符处拆分输入，并只返回字段。
 
-3. 在处理完成后，必须将输出以单行形式写入到 STDOUT，并在每两个字段之间提供一个制表符。这可以通过使用 `print "\t".join([clientid, phone_label, hashlib.md5(phone_label).hexdigest()])` 来实现。
+3. 在处理完成后，必须将输出以单行形式写入到 STDOUT，并在每两个字段之间提供一个制表符。可使用 `print "\t".join([clientid, phone_label, hashlib.md5(phone_label).hexdigest()])` 来实现此操作。
 
 4. 这全都发生在 `while` 循环中，该循环将不断重复，直到不再读到任何 `line` 为止，此时 `break` 退出循环且脚本终止。
 
-除此之外，脚本只会连接 `devicemake` 和 `devicemodel` 的输入值，并计算连接值的哈希。很简单，但说明了从 Hive 调用的任何 Python 脚本工作原理的基本知识：循环，读取输入直到没有更多的输入，用制表符拆分每个输入行，处理，写入以制表符分隔的单行输出。
+除此之外，脚本只会连接 `devicemake` 和 `devicemodel` 的输入值，并计算连接值的哈希。此示例很简单，但它说明了从 Hive 调用的任何 Python 脚本工作原理的基本知识：循环，读取输入直到没有更多的输入，用制表符拆分每个输入行，处理，写入以制表符分隔的单行输出。
 
 有关如何在 HDInsight 群集上运行此示例的信息，请参阅[运行示例](#running)。
 
@@ -113,7 +112,7 @@ HDInsight 还包含 Jython，后者是用 Java 编写的 Python 实现。Pig 无
     DETAILS = FOREACH LOG GENERATE myfuncs.create_structure(LINE);
     DUMP DETAILS;
 
-下面是本示例执行的操作：
+本示例执行以下操作：
 
 1. 第一行代码将示例数据文件 **sample.log** 加载到 **LOGS** 中。由于此日志文件不包含一致的架构，因此它还将每条记录（在本例中为 **LINE**）定义为 **chararray**。简单而言，Chararray 就是一个字符串。
 
@@ -149,9 +148,9 @@ HDInsight 还包含 Jython，后者是用 Java 编写的 Python 实现。Pig 无
 
 2. 接下来，**def create\_structure(input)** 将定义 Pig 要将行项传递到的函数。
 
-3. 示例数据 **sample.log** 基本上符合我们要返回的日期、时间、类名、级别和详细信息架构。但是，它还包含了一些以字符串“ *java.lang.Exception* ”开头的行，我们需要修改这些行，使之与架构匹配。**if** 语句将检查这些行，然后调整输入数据以将“ *java.lang.Exception* ”字符串移到末尾，使数据与预期的输出架构相一致。
+3. 示例数据 **sample.log** 基本上符合我们要返回的日期、时间、类名、级别和详细信息架构。但是，它还包含了一些以字符串“*java.lang.Exception*”开头的行，我们需要修改这些行，使之与架构匹配。**if** 语句将检查这些行，然后调整输入数据以将“*java.lang.Exception*”字符串移到末尾，使数据与预期的输出架构相一致。
 
-4. 接下来，使用 **split** 命令在前四个空格字符处拆分数据。这将生成五个值，它们将分配到“日期”、“时间”、“类名”、“级别”和“详细信息”。
+4. 接下来，使用 **split** 命令在前四个空格字符处拆分数据。这将生成五个值，分别分配给 **date**、**time**、**classname**、**level** 和 **detail**。
 
 5. 最后，将值返回到 Pig。
 
@@ -163,7 +162,7 @@ HDInsight 还包含 Jython，后者是用 Java 编写的 Python 实现。Pig 无
 
 ####Hive
 
-1. 使用 `hive` 命令来启动 hive shell。在 shell 加载后，你应会看到 `hive>` 提示符。
+1. 使用 `hive` 命令来启动 Hive Shell。加载 Shell 后，应可看到 `hive>` 提示符。
 
 2. 在 `hive>` 提示符下输入以下命令。
 
@@ -174,7 +173,7 @@ HDInsight 还包含 Jython，后者是用 Java 编写的 Python 实现。Pig 无
 		FROM hivesampletable
 		ORDER BY clientid LIMIT 50;
 
-3. 在输入最后一行后，该作业应该启动。最终，它将返回类似于以下内容的输出。
+3. 输入最后一行后，应会启动作业。最终，它将返回类似于以下内容的输出。
 
 		100041	RIM 9650	d476f3687700442549a83fac4560c51c
 		100041	RIM 9650	d476f3687700442549a83fac4560c51c
@@ -184,9 +183,9 @@ HDInsight 还包含 Jython，后者是用 Java 编写的 Python 实现。Pig 无
 
 ####Pig
 
-1. 使用 `pig` 命令来启动该 shell。在 shell 加载后，你应会看到 `grunt>` 提示符。
+1. 使用 `pig` 命令来启动该 shell。加载 Shell 后，应可看到 `grunt>` 提示符。
 
-2. 在 `grunt>` 提示符下输入以下语句，运行带有 Jython 解释器的 Python 脚本。
+2. 在 `grunt>` 提示符下输入以下语句，使用 Jython 解释器运行 Python 脚本。
 
 		Register wasbs:///pig_python.py using jython as myfuncs;
 	    LOGS = LOAD 'wasbs:///example/data/sample.log' as (LINE:chararray);
@@ -194,7 +193,7 @@ HDInsight 还包含 Jython，后者是用 Java 编写的 Python 实现。Pig 无
 	    DETAILS = foreach LOG generate myfuncs.create_structure(LINE);
 	    DUMP DETAILS;
 
-3. 在输入以下行后，作业应会启动。最终，它将返回类似于以下内容的输出。
+3. 输入以下行后，应会启动作业。最终，它将返回类似于以下内容的输出。
 
 		((2012-02-03,20:11:56,SampleClass5,[TRACE],verbose detail for id 990982084))
 		((2012-02-03,20:11:56,SampleClass7,[TRACE],verbose detail for id 1560323914))
@@ -202,11 +201,11 @@ HDInsight 还包含 Jython，后者是用 Java 编写的 Python 实现。Pig 无
 		((2012-02-03,20:11:56,SampleClass3,[TRACE],verbose detail for id 1718828806))
 		((2012-02-03,20:11:56,SampleClass3,[INFO],everything normal for id 530537821))
 
-4. 使用 `quit` 退出 Grunt shell，然后在本地文件系统上使用以下命令编辑 pig\_python.py 文件：
+4. 使用 `quit` 退出 Grunt Shell，然后在本地文件系统上使用以下命令编辑 pig\_python.py 文件：
 
     nano pig\_python.py
 
-5. 进入编辑器后，通过删除行开头的 `#` 字符来取消注释以下行：
+5. 进入编辑器后，删除行开头的 `#` 字符以取消注释以下行：
 
         #from pig_util import outputSchema
 
@@ -230,7 +229,7 @@ HDInsight 还包含 Jython，后者是用 Java 编写的 Python 实现。Pig 无
 
 1. 使用 Python 示例 [streaming.py](#streamingpy) 和 pig_python.py 在开发计算机上创建文件的本地副本。
 
-2. 使用以下 PowerShell 脚本将 **streaming.py** 和 **pig\_python.py** 文件上载到服务器。在脚本的前三行中，替换 Azure HDInsight 群集的名称，以及 **streaming.py** 和 **pig\_python.py** 文件的路径。
+2. 使用以下 PowerShell 脚本将 **streaming.py** 和 **pig\_python.py** 文件上传到服务器。在脚本的前三行中，替换 Azure HDInsight 群集的名称，以及 **streaming.py** 和 **pig\_python.py** 文件的路径。
 
 		$clusterName = YourHDIClusterName
 		$pathToStreamingFile = "C:\path\to\streaming.py"
@@ -245,11 +244,11 @@ HDInsight 还包含 Jython，后者是用 Java 编写的 Python 实现。Pig 无
 		set-azurestorageblobcontent -file $pathToStreamingFile -Container $defaultContainer -Blob "streaming.py" -context $destContext
 		set-azurestorageblobcontent -file $pathToJythonFile -Container $defaultContainer -Blob "jython.py" -context $destContext
 
-	此脚本将检索 HDInsight 群集的信息，然后提取默认存储帐户的名称和密钥，并将文件上载到容器的根目录。
+	此脚本将检索 HDInsight 群集的信息，然后提取默认存储帐户的名称和密钥，并将文件上传到容器的根目录。
 
-	> [AZURE.NOTE] [在 HDInsight 中上载 Hadoop 作业的数据](/documentation/articles/hdinsight-upload-data/)文档中介绍了上载脚本的其他方法。
+	> [AZURE.NOTE] [在 HDInsight 中上传 Hadoop 作业的数据](/documentation/articles/hdinsight-upload-data/)文档中介绍了上传脚本的其他方法。
 
-上载文件后，使用以下 PowerShell 脚本启动作业。在完成作业时，会将输出写入到 PowerShell 控制台。
+上传文件后，使用以下 PowerShell 脚本启动作业。完成作业时，会将输出写入到 PowerShell 控制台。
 
 ####Hive
 
@@ -315,13 +314,13 @@ HDInsight 还包含 Jython，后者是用 Java 编写的 Python 实现。Pig 无
 
 ###运行作业时出现错误
 
-在运行 hive 作业时，你可能会遇到如下错误：
+运行 hive 作业时，可能遇到如下错误：
 
     Caused by: org.apache.hadoop.hive.ql.metadata.HiveException: [Error 20001]: An error occurred while reading or writing to your custom script. It may have crashed with an error.
     
 此问题可能是由 streaming.py 文件中的行尾结束符号导致的。许多 Windows 编辑器默认为使用 CRLF 作为行尾结束符号，但 Linux 应用程序通常应使用 LF。
 
-如果你使用的编辑器无法创建 LF 行尾结束符号，或者不确定要使用什么行尾结束符号，在将文件上载到 HDInsight 之前，请使用以下 PowerShell 语句删除 CR 字符：
+如果所用编辑器无法创建 LF 行尾结束符号，或者不确定要使用什么行尾结束符号，在将文件上传到 HDInsight 之前，请使用以下 PowerShell 语句删除 CR 字符：
 
     $original_file ='c:\path\to\streaming.py'
     $text = [IO.File]::ReadAllText($original_file) -replace "`r`n", "`n"
@@ -352,4 +351,4 @@ Pig|/PigPython/stderr<p>/PigPython/stdout
 
 * [将 MapReduce 与 HDInsight 配合使用](/documentation/articles/hdinsight-use-mapreduce/)
 
-<!---HONumber=Mooncake_0926_2016-->
+<!---HONumber=Mooncake_Quality_Review_1118_2016-->

@@ -1,6 +1,6 @@
 <properties
 	pageTitle="使用 PowerShell 管理 HDInsight 中的 Hadoop 群集 | Azure"
-	description="了解如何使用 Azure PowerShell 执行针对 HDInsight 中 Hadoop 的管理任务。"
+	description="了解如何使用 Azure PowerShell 对 HDInsight 中的 Hadoop 群集执行管理任务。"
 	services="hdinsight"
 	editor="cgronlun"
 	manager="paulettm"
@@ -15,7 +15,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="08/10/2016"
-	wacn.date="11/25/2016"
+	wacn.date="12/12/2016"
 	ms.author="jgao"/>
 
 # 使用 Azure PowerShell 管理 HDInsight 中的 Hadoop 群集
@@ -30,9 +30,9 @@ Azure PowerShell 是一个功能强大的脚本编写环境，可用于在 Azure
 
 **先决条件**
 
-在开始阅读本文前，你必须具有：
+开始阅读本文之前，必须具备以下先决条件：
 
-- **一个 Azure 订阅**。请参阅[获取 Azure 试用版](/pricing/1rmb-trial/)。
+- **Azure 订阅**。请参阅[获取 Azure 试用版](/pricing/1rmb-trial/)。
 
 ## <a id="install-azure-powershell-10-and-greater"></a>安装 Azure PowerShell 1.0 和更高版本
 
@@ -86,7 +86,7 @@ HDInsight 群集要求在 Azure 存储帐户中创建 Blob 容器：
 [AZURE.INCLUDE [数据中心列表](../../includes/hdinsight-pricing-data-centers-clusters.md)]
 
 
-如果你已有存储帐户但是不知道帐户名称和帐户密钥，可以使用以下命令来检索该信息：
+如果已有存储帐户但是不知道帐户名称和帐户密钥，可以使用以下命令来检索该信息：
 
 	# List Storage accounts for the current subscription
 	Get-AzureStorageAccount
@@ -97,7 +97,7 @@ HDInsight 群集要求在 Azure 存储帐户中创建 Blob 容器：
 
 **创建 Azure 存储帐户**
 
-Azure PowerShell 无法在 HDInsight 创建过程中创建 Blob 容器。你可以使用以下脚本创建一个容器：
+Azure PowerShell 无法在 HDInsight 创建过程中创建 Blob 容器。可使用以下脚本创建容器：
 
 	$storageAccountName = "<Azure Storage Account Name>"
 	$storageAccountKey = Get-AzureStorageKey -StorageAccountName $storageAccountName |  %{ $_.Primary }
@@ -111,7 +111,7 @@ Azure PowerShell 无法在 HDInsight 创建过程中创建 Blob 容器。你可�
 
 **创建群集**
 
-准备好存储帐户和 Blob 容器后，你就可以创建群集了。
+准备好存储帐户和 Blob 容器后，即可创建群集。
 
 	$storageAccountName = "<Azure Storage Account Name>"
 	$containerName = "<AzureBlobContainerName>"
@@ -148,7 +148,7 @@ Azure PowerShell 无法在 HDInsight 创建过程中创建 Blob 容器。你可�
 	Remove-AzureHDInsightCluster -Name <Cluster Name>
 
 ##缩放群集
-群集缩放功能可让你更改 Azure HDInsight 中运行的群集使用的辅助节点数，而无需重新创建群集。
+使用群集缩放功能，可更改 Azure HDInsight 中运行的群集使用的辅助节点数，而无需重新创建群集。
 
 >[AZURE.NOTE] 只支持使用 HDInsight 3.1.3 或更高版本的群集。如果你不确定群集的版本，可以查看“属性”页。
 
@@ -156,13 +156,13 @@ Azure PowerShell 无法在 HDInsight 创建过程中创建 Blob 容器。你可�
 
 - Hadoop
 
-	你可以顺利地增加正在运行的 Hadoop 群集中的辅助节点数，而不会影响任何挂起或运行中的作业。你还可以在操作进行中提交新作业。系统会正常处理失败的缩放操作，让群集始终保持正常运行状态。
+	可顺利增加正在运行的 Hadoop 群集中的辅助节点数，而不会影响任何挂起或运行中的作业。也可在操作进行中提交新作业。系统会正常处理失败的缩放操作，让群集始终保持正常运行状态。
 
-	减少数据节点数目以缩减 Hadoop 群集时，系统会重新启动群集中的某些服务。这会导致所有正在运行和挂起的作业在缩放操作完成时失败。但是，你可以在操作完成后重新提交这些作业。
+	减少数据节点数目以缩减 Hadoop 群集时，系统会重新启动群集中的某些服务。这会导致所有正在运行和挂起的作业在缩放操作完成时失败。但是，可在操作完成后重新提交这些作业。
 
 - HBase
 
-	你可以顺利地在 HBase 群集运行时对其添加或删除节点。在完成缩放操作后的几分钟内，区域服务器就能自动平衡。不过，你也可以手动平衡区域服务器，方法是登录到群集的头节点，然后在命令提示符窗口中运行以下命令：
+	可在 HBase 群集运行时顺利添加或删除节点。完成缩放操作后的几分钟内，区域服务器将自动平衡。但也可手动平衡区域服务器，方法是登录到群集的头节点，然后在命令提示符窗口中运行以下命令：
 
 		>pushd %HBASE_HOME%\bin
 		>hbase shell
@@ -171,7 +171,7 @@ Azure PowerShell 无法在 HDInsight 创建过程中创建 Blob 容器。你可�
 	有关使用 HBase shell 的详细信息，请参阅
 - Storm
 
-	你可以顺利地在 Storm 群集运行时对其添加或删除数据节点。但是，在缩放操作成功完成后，你需要重新平衡拓扑。
+	可在 Storm 群集运行时顺利添加或删除数据节点。但是，缩放操作成功完成后，需要重新平衡拓扑。
 
 	可以使用两种方法来完成重新平衡操作：
 
@@ -207,7 +207,7 @@ HDInsight 群集提供以下 HTTP Web 服务（所有这些服务都有 REST 样
 - Templeton
 
 
-默认情况下，将授权这些服务进行访问。你可以撤消/授予访问权限。若要撤消：
+默认情况下，将授权这些服务进行访问。可撤消/授予访问权限。若要撤消：
 
 	Revoke-AzureHDInsightHttpServicesAccess -Name <Cluster Name>
 
@@ -226,7 +226,7 @@ HDInsight 群集提供以下 HTTP Web 服务（所有这些服务都有 REST 样
 	
 	Grant-AzureHDInsightHttpServicesAccess -Name $clusterName -HttpCredential $credential
 
->[AZURE.NOTE] 授予/撤消访问权限时，你将重设群集用户的用户名和密码。
+>[AZURE.NOTE] 授予/撤消访问权限时，将重设群集用户的用户名和密码。
 
 也可以使用经典管理门户完成此操作。请参阅[使用 Azure 经典管理门户管理 HDInsight][hdinsight-admin-portal]。
 
@@ -269,8 +269,8 @@ HDInsight 群集提供以下 HTTP Web 服务（所有这些服务都有 REST 样
 
 请参阅[在 HDInsight 中将 Oozie 与 Hadoop 配合使用以定义和运行工作流](/documentation/articles/hdinsight-use-oozie/)。
 
-##将数据上载到 Azure Blob 存储
-请参阅[将数据上载到 HDInsight][hdinsight-upload-data]。
+##将数据上传到 Azure Blob 存储
+请参阅[将数据上传到 HDInsight][hdinsight-upload-data]。
 
 
 ## 另请参阅
@@ -278,7 +278,7 @@ HDInsight 群集提供以下 HTTP Web 服务（所有这些服务都有 REST 样
 * [使用 Azure 经典管理门户管理 HDInsight][hdinsight-admin-portal]
 * [使用命令行界面管理 HDInsight][hdinsight-admin-cli]
 * [创建 HDInsight 群集][hdinsight-provision]
-* [将数据上载到 HDInsight][hdinsight-upload-data]
+* [将数据上传到 HDInsight][hdinsight-upload-data]
 * [以编程方式提交 Hadoop 作业][hdinsight-submit-jobs]
 * [Azure HDInsight 入门][hdinsight-get-started]
 
@@ -307,4 +307,4 @@ HDInsight 群集提供以下 HTTP Web 服务（所有这些服务都有 REST 样
 
 [image-hdi-ps-provision]: ./media/hdinsight-administer-use-powershell/HDI.PS.Provision.png
 
-<!---HONumber=Mooncake_0215_2016-->
+<!---HONumber=Mooncake_Quality_Review_1118_2016-->

@@ -1,6 +1,6 @@
 <properties
    pageTitle="使用 Visual Studio 和 C# 创建 Apache Storm 拓扑 | Azure"
-   description="了解如何通过使用 HDInsight Tools for Visual Studio 创建一个简单的单词计数拓扑，来以 C# 语言创建一个 Storm 拓扑。"
+   description="了解如何通过使用用于 Visual Studio 的 HDInsight 工具创建一个简单的单词计数拓扑，来以 C# 语言创建一个 Storm 拓扑。"
    services="hdinsight"
    documentationCenter=""
    authors="Blackmist"
@@ -15,14 +15,14 @@
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
    ms.date="10/17/2016"
-   wacn.date="11/25/2016"
+   wacn.date="12/12/2016"
    ms.author="larryfr"/>
 
 # 使用 Hadoop Tools for Visual Studio 开发 Apache Storm on HDInsight 的 C# 拓扑
 
 [AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-sdk-developer-differences.md)]
 
-了解如何使用 HDInsight Tools for Visual Studio 创建 C# Storm 拓扑。本教程逐步说明在 Visual Studio 中创建新的 Storm 项目、在本地测试该项目，然后将它部署到 Apache Storm on HDInsight 群集的过程。
+了解如何使用用于 Visual Studio 的 HDInsight 工具创建 C# Storm 拓扑。本教程逐步说明在 Visual Studio 中创建新的 Storm 项目、在本地测试该项目，然后将它部署到 Apache Storm on HDInsight 群集的过程。
 
 你还将学习如何创建使用 C# 和 Java 组件的混合拓扑。
 
@@ -38,17 +38,17 @@
 
 -	Azure SDK 2.5.1 或更高版本
 
--	HDInsight Tools for Visual Studio - 参阅[开始使用 HDInsight Tools for Visual Studio](/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started/) 安装并配置 HDInsight Tools for Visual Studio。
+-	用于 Visual Studio 的 HDInsight 工具 - 参阅[开始使用用于 Visual Studio 的 HDInsight 工具](/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started/) 安装并配置用于 Visual Studio 的 HDInsight 工具。
 
-    > [AZURE.NOTE]Visual Studio Express 不支持 HDInsight Tools for Visual Studio
+    > [AZURE.NOTE] Visual Studio Express 不支持用于 Visual Studio 的 HDInsight 工具
 
 -	Apache Storm on HDInsight 群集：参阅 [Apache Storm on HDInsight 入门](/documentation/articles/hdinsight-apache-storm-tutorial-get-started/)了解创建群集的步骤。
 
-	> [AZURE.NOTE]HDInsight Tools for Visual Studio 目前只支持 Storm on HDInsight 版本 3.2 群集。
+	> [AZURE.NOTE] 用于 Visual Studio 的 HDInsight 工具目前只支持 Storm on HDInsight 版本 3.2 群集。
 
 ##模板
 
-HDInsight Tools for Visual Studio 提供以下模板：
+用于 Visual Studio 的 HDInsight 工具提供以下模板：
 
 | 项目类型 | 演示 |
 | ------------ | ------------- |
@@ -69,7 +69,7 @@ HDInsight Tools for Visual Studio 提供以下模板：
 
 ##创建 C# 拓扑
 
-1.	如果你尚未安装最新版本的 HDInsight Tools for Visual Studio，请参阅[开始使用 HDInsight Tools for Visual Studio](/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started/)。
+1.	如果你尚未安装最新版本的用于 Visual Studio 的 HDInsight 工具，请参阅[开始使用用于 Visual Studio 的 HDInsight 工具](/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started/)。
 
 2.	打开 Visual Studio，选择“文件”>“新建”>“项目”。
 
@@ -407,7 +407,7 @@ Spout 和 Bolt 以图形方式排列，用于定义数据在组件之间的流�
 
 ##混合拓扑
 
-HDInsight Tools for Visual Studio 还可用于创建混合拓扑，其中，有些组件是 C#，有些是 Java。
+用于 Visual Studio 的 HDInsight 工具还可用于创建混合拓扑，其中，有些组件是 C#，有些是 Java。
 
 针对示例混合拓扑，请创建一个新项目，然后选择“Storm 混合示例”。这会创建完全注释的示例，此示例包含演示以下项的多个拓扑：
 
@@ -616,7 +616,7 @@ SCP.Net 版本 0.9.4.203 引入了专用于事件中心 Spout（从事件中心�
 
 ##后续步骤
 
-在了解如何使用 HDInsight Tools for Visual Studio 开发和部署 Storm 拓扑后，请了解如何[使用 Storm on HDInsight 从 Azure 事件中心处理事件](/documentation/articles/hdinsight-storm-develop-csharp-event-hub-topology/)。
+在了解如何使用用于 Visual Studio 的 HDInsight 工具开发和部署 Storm 拓扑后，请了解如何[使用 Storm on HDInsight 从 Azure 事件中心处理事件](/documentation/articles/hdinsight-storm-develop-csharp-event-hub-topology/)。
 
 有关将流数据拆分为多个流的 C# 拓扑示例，请参阅 [C# Storm 示例](https://github.com/Blackmist/csharp-storm-example)。
 
@@ -646,4 +646,4 @@ SCP.Net 版本 0.9.4.203 引入了专用于事件中心 Spout（从事件中心�
 
 -	[HBase on HDInsight 入门](/documentation/articles/hdinsight-hbase-tutorial-get-started-v1/)
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_Quality_Review_1118_2016-->

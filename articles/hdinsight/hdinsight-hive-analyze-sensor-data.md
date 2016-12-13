@@ -15,7 +15,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="09/20/2016"
-	wacn.date="11/21/2016" 
+	wacn.date="12/12/2016" 
 	ms.author="larryfr"/>
 
 #使用 HDInsight 中 Hadoop上的 Hive 查询控制台分析传感器数据
@@ -55,4 +55,4 @@
 
 3. 按照网页上提供的说明完成该示例。
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_Quality_Review_1118_2016-->

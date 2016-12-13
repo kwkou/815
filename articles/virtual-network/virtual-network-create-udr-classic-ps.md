@@ -15,7 +15,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
    ms.date="02/02/2016"
-   wacn.date="03/17/2016"
+   wacn.date="12/12/2016"
    ms.author="jdial" />
 
 #使用 PowerShell 控制路由和使用虚拟设备（经典）
@@ -109,4 +109,4 @@
 		Get-AzureVM -Name FW1 -ServiceName TestRGFW `
 			| Set-AzureIPForwarding -Enable
 
-<!---HONumber=Mooncake_0307_2016-->
+<!---HONumber=Mooncake_Quality_Review_1118_2016-->

@@ -1,6 +1,6 @@
 <properties
    pageTitle="适用于 Azure 中 Windows VM 的技术文章 | Azure"
-   description="与 Windows 虚拟机相关的 Azure 文章完整列表"
+   description="与 Windows 虚拟机相关的 Azure 文档文章完整列表"
    services="virtual-machines-windows"
    documentationCenter=""
    authors="dlepow"
@@ -15,7 +15,7 @@
    ms.tgt_pltfrm="vm-windows"
    ms.workload="infrastructure-services"
    ms.date="08/05/2016"
-   wacn.date="09/30/2016"
+   wacn.date="12/12/2016"
    ms.author="cynthn"/>
 
 # 适用于经典部署模型中 Windows VM 的技术文章
@@ -74,7 +74,7 @@
 
 [使用 Powershell 创建和上载经典 Windows Server VHD](/documentation/articles/virtual-machines-windows-classic-createupload-vhd/)
 
-[使用 Chef 自动执行 Azure 虚拟机部署](/documentation/articles/virtual-machines-windows-chef-automation/)
+[使用 Chef 自动部署 Azure 虚拟机](/documentation/articles/virtual-machines-windows-chef-automation/)
 
 [在 Azure PowerShell 中创建和配置经典 Windows 虚拟机](/documentation/articles/virtual-machines-windows-classic-create-powershell/)
 
@@ -85,7 +85,7 @@
 
 [使用 Azure PowerShell 管理虚拟机](/documentation/articles/virtual-machines-windows-classic-manage-psh/)
 
-[将经典 VNet 连接到新的 VNet](/documentation/articles/vpn-gateway-connect-different-deployment-models-portal/)
+[将经典 VNet 连接到新 VNet](/documentation/articles/vpn-gateway-connect-different-deployment-models-portal/)
 	
 [关于虚拟机代理和扩展](/documentation/articles/virtual-machines-windows-classic-agents-and-extensions/)
 
@@ -121,11 +121,11 @@
 
 [使用 D 盘作为 Windows VM 上的数据驱动器](/documentation/articles/virtual-machines-windows-classic-change-drive-letter/)
 
-## 联网
+## 网络
 
 [虚拟网络概述](/documentation/articles/virtual-networks-overview/)
 
-[将使用经典部署模型创建的虚拟机连接到虚拟网络或云服务](/documentation/articles/virtual-machines-windows-classic-connect-vms/)
+[将使用经典部署模型创建虚拟机连接到虚拟网络或云服务](/documentation/articles/virtual-machines-windows-classic-connect-vms/)
 	
 [使用 Azure PowerShell 管理 NSG](/documentation/articles/virtual-networks-create-nsg-classic-ps/)
 
@@ -139,7 +139,7 @@
 
 [使用 Visual Studio 创建用于Web 应用程序的虚拟机](/documentation/articles/virtual-machines-windows-classic-web-app-visual-studio/)
 
-[如何在虚拟机上通过 Java 运行需要进行大量计算的任务](/documentation/articles/virtual-machines-windows-classic-java-run-compute-intensive-task/)
+[如何在虚拟机上运行 Java 中的计算密集型任务](/documentation/articles/virtual-machines-windows-classic-java-run-compute-intensive-task/)
 
 [Windows Server VM 上的 Django Hello World Web 应用程序](/documentation/articles/virtual-machines-windows-classic-python-django-web-app/)
 		
@@ -162,13 +162,13 @@
 [Tomcat](/documentation/articles/virtual-machines-windows-classic-java-run-tomcat-app-server/)
 
 ## 引用
-[将适用于 Mac、Linux 和 Windows 的 Azure CLI 与 Azure 服务管理配合使用](/documentation/articles/virtual-machines-command-line-tools/)
+[将适用于 Mac、Linux 和 Windows 的 Azure CLI 与 Azure Service Management 配合使用](/documentation/articles/virtual-machines-command-line-tools/)
 
-[服务管理 REST API](https://msdn.microsoft.com/zh-cn/library/azure/ee460799.aspx)
+[Service Management REST API](https://msdn.microsoft.com/zh-cn/library/azure/ee460799.aspx)
 
-[服务管理 .NET API](https://msdn.microsoft.com/zh-cn/library/azure/mt420161.aspx)
+[Service Management .NET API](https://msdn.microsoft.com/zh-cn/library/azure/mt420161.aspx)
 
-[Azure 服务管理 PowerShell cmdlet 参考文档](https://msdn.microsoft.com/zh-cn/library/azure/dn708504.aspx)
+[Azure Service Management REST API PowerShell cmdlet 参考文档](https://msdn.microsoft.com/zh-cn/library/azure/dn708504.aspx)
 
 
 ## 故障排除
@@ -177,12 +177,6 @@
 
 [对在 Azure 虚拟机上运行的应用程序的访问进行故障排除](/documentation/articles/virtual-machines-windows-troubleshoot-app-connection/)
 
-[在 Azure 中创建、重新启动 VM 或调整其大小时排查分配失败](/documentation/articles/virtual-machines-windows-allocation-failure/)
+[在 Azure 中创建、重新启动或调整 VM 大小时排除分配失败](/documentation/articles/virtual-machines-windows-allocation-failure/)
 
-
-
-
-
-
-
-<!---HONumber=Mooncake_0503_2016-->
+<!---HONumber=Mooncake_Quality_Review_1118_2016-->

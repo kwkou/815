@@ -15,7 +15,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
    ms.date="03/07/2016"
-   wacn.date="11/25/2016"
+   wacn.date="12/12/2016"
    ms.author="nitinme"/>
 
 
@@ -23,13 +23,13 @@
 
 [AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-sdk-developer-differences.md)]
 
-为了帮助你了解并开始使用 Windows 上的 HDInsight，本教程说明了如何对 Hadoop 群集中的非结构化数据运行 Hive 查询，然后在 Microsoft Excel 中分析结果。
+为帮助用户了解并开始使用 Windows 上的 HDInsight，本教程说明如何对 Hadoop 群集中的非结构化数据运行 Hive 查询，然后在 Microsoft Excel 中分析结果。
 
 [AZURE.INCLUDE [delete-cluster-warning](../../includes/hdinsight-delete-cluster-warning.md)]
 
 ## 本 Hadoop 教程的目标是什么？
 
-假设你具有一个大型非结构化数据集，想要对其运行 Hive 查询以提取一些有意义的信息。这正是我们在本教程中将要实现的目标。下面说明了如何实现此目标：
+假设你拥有大型非结构化数据集，并想对其运行 Hive 查询以提取一些有意义的信息。这正是我们在本教程中将要实现的目标。下面说明了如何实现此目标：
 
    ![Hadoop 教程：创建帐户；预配 Hadoop 群集；提交 Hive 查询；在 Excel 中分析数据。][image-hdi-getstarted-flow]
 
@@ -43,7 +43,7 @@ Microsoft 还提供了 HDInsight Emulator for Azure（以前称作 *Microsoft HD
 在开始学习这篇针对 Windows 上的 Hadoop 的教程之前，你必须具有：
 
 
-- **一个 Azure 订阅**。请参阅[获取 Azure 免费试用版](/pricing/1rmb-trial/)。
+- **Azure 订阅**。请参阅[获取 Azure 试用版](/pricing/1rmb-trial/)。
 - 装有 Office 2013 Professional Plus、Office 365 Pro Plus、Excel 2013 Standalone 或 Office 2010 Professional Plus 的**工作站计算机**。
 
 **本教程预计完成时间：**30 分钟
@@ -52,13 +52,13 @@ Microsoft 还提供了 HDInsight Emulator for Azure（以前称作 *Microsoft HD
 
 ## <a name="storage"></a>创建 Azure 存储帐户
 
-在设置 HDInsight 中的 Hadoop 群集时，将要指定 Azure 存储帐户。将该帐户的一个特定 Blob 存储容器指定为默认文件系统，如同在 Hadoop 分布式文件系统 (HDFS) 中一样。默认情况下，HDInsight 群集与你指定的存储帐户设置在同一数据中心内。有关详细信息，请参阅[将 Azure Blob 存储与 HDInsight 配合使用][hdinsight-storage]
+在设置 HDInsight 中的 Hadoop 群集时，将要指定 Azure 存储帐户。将该帐户的一个特定 Blob 存储容器指定为默认文件系统，如同在 Hadoop 分布式文件系统 (HDFS) 中一样。默认情况下，HDInsight 群集与指定存储帐户预配在同一数据中心内。有关详细信息，请参阅[将 Azure Blob 存储与 HDInsight 配合使用][hdinsight-storage]
 
 >[AZURE.NOTE]请不要在多个 Hadoop 群集之间共享默认的 Blob 存储容器。
 
-除此存储帐户外，你在自定义配置群集时还可以添加其他存储帐户。附加的此存储帐户可以来自同一 Azure 订阅，也可以来自不同的 Azure 订阅。有关说明，请参阅[使用自定义选项设置 HDInsight 群集][hdinsight-provision]。
+除此存储帐户外，还可在自定义配置群集时以添加其他存储帐户。附加的此存储帐户可以来自同一 Azure 订阅，也可以来自不同的 Azure 订阅。有关说明，请参阅[使用自定义选项设置 HDInsight 群集][hdinsight-provision]。
 
-本教程仅使用了默认 Blob 和默认存储帐户。
+本教程仅使用默认 Blob 和默认存储帐户。
 
 **创建 Azure 存储帐户**
 
@@ -67,11 +67,11 @@ Microsoft 还提供了 HDInsight Emulator for Azure（以前称作 *Microsoft HD
 
 	![在 Azure 经典管理门户中，可以使用“快速创建”来设置新的存储帐户。][image-hdi-storageaccount-quickcreate]
 
-从列表中选择新存储帐户，然后单击页面底部的“管理访问密钥”。记下“主访问密钥”（或“辅助访问密钥”- 任一密钥都有效）。本教程后面的步骤中将会用到此密钥。有关详细信息，请参阅[如何创建存储帐户][azure-create-storageaccount]。
+从列表中选择新存储帐户，然后单击页面底部的“管理访问密钥”。记下“主访问密钥”（或“辅助访问密钥”- 可使用任一密钥）。本教程后面的步骤中将会用到此密钥。有关详细信息，请参阅[如何创建存储帐户][azure-create-storageaccount]。
 
 ## <a name="provision"></a>设置 Hadoop 群集
 
-当你设置群集时，便设置了包含 Hadoop 和相关应用程序的 Azure 计算资源。在此部分中，设置基于 Hadoop 版本 2.4 的 HDInsight 版本 3.1 群集。你还可以使用 Azure 经典管理门户、HDInsight PowerShell cmdlet 或 HDInsight .NET SDK 为其他版本创建 Hadoop 群集。有关说明，请参阅[使用自定义选项设置 HDInsight 群集][hdinsight-provision]。有关 HDInsight 版本及其 SLA 的信息，请参阅 [HDInsight 组件版本](/documentation/articles/hdinsight-component-versioning-v1/)。
+设置群集时，将预配包含 Hadoop 和相关应用程序的 Azure 计算资源。在此部分中，设置基于 Hadoop 版本 2.4 的 HDInsight 版本 3.1 群集。也可以使用 Azure 经典管理门户、HDInsight PowerShell cmdlet 或 HDInsight .NET SDK 为其他版本创建 Hadoop 群集。有关说明，请参阅[使用自定义选项设置 HDInsight 群集][hdinsight-provision]。有关 HDInsight 版本及其 SLA 的信息，请参阅 [HDInsight 组件版本](/documentation/articles/hdinsight-component-versioning-v1/)。
 
 [AZURE.INCLUDE [provisioningnote](../../includes/hdinsight-provisioning.md)]
 
@@ -114,7 +114,7 @@ Microsoft 还提供了 HDInsight Emulator for Azure（以前称作 *Microsoft HD
 
 ## <a name="sample"></a>从经典管理门户运行示例数据
 
-成功设置的 HDInsight 群集提供包括入门库的查询控制台以直接从经典管理门户运行示例。通过浏览一些基本方案，你可以使用示例了解如何使用 HDInsight。这些示例提供所有必要组件，比如要分析的数据和要对数据运行的查询。若要了解有关入门库中的示例的详细信息，请参阅[使用 HDInsight 入门库了解 HDInsight 中的 Hadoop](/documentation/articles/hdinsight-learn-hadoop-use-sample-gallery-v1/)。
+成功设置的 HDInsight 群集提供包括入门库的查询控制台以直接从经典管理门户运行示例。使用示例，可通过完成一些基本方案了解如何使用 HDInsight。这些示例提供所有必要组件，比如要分析的数据和要对数据运行的查询。若要了解有关入门库中的示例的详细信息，请参阅[使用 HDInsight 入门库了解 HDInsight 中的 Hadoop](/documentation/articles/hdinsight-learn-hadoop-use-sample-gallery-v1/)。
 
 **若要运行示例**，请从 Azure 经典管理门户中单击你想要运行示例的群集名称，然后单击页面底部的“查询控制台”。从打开的网页中，单击“入门库”选项卡，然后在“示例”类别下，单击要运行的示例。按照网页上的说明完成示例。下表列出了几个示例，并提供了有关每个示例的作用的详细信息。
 
@@ -126,16 +126,16 @@ Microsoft 还提供了 HDInsight Emulator for Azure（以前称作 *Microsoft HD
 
 
 ## <a name="hivequery"></a>从经典管理门户运行 Hive 查询
-现在，你的 HDInsight 群集已设置完毕，下一步是运行 Hive 作业以查询示例 Hive 表。我们将使用 HDInsight 群集随附的 *hivesampletable*。该表包含有关移动设备制造商、平台和型号的数据。对此表运行 Hive 查询可按特定制造商检索移动设备的数据。
+既已配置 HDInsight 群集，下一步是运行 Hive 作业以查询示例 Hive 表。我们将使用 HDInsight 群集随附的 *hivesampletable*。该表包含有关移动设备制造商、平台和型号的数据。对此表运行 Hive 查询可按特定制造商检索移动设备的数据。
 
-> [AZURE.NOTE]HDInsight Tools for Visual Studio 随附了 Azure SDK for .NET 2.5 或更高版本。使用 Visual Studio 中的工具可以连接到 HDInsight 群集、创建 Hive 表和运行 Hive 查询。有关详细信息，请参阅 [HDInsight Hadoop Tools for Visual Studio 入门][1]。
+> [AZURE.NOTE] 用于 Visual Studio 的 HDInsight 工具随附了用于 .NET 的 Azure SDK 2.5 或更高版本。使用 Visual Studio 中的工具可以连接到 HDInsight 群集、创建 Hive 表和运行 Hive 查询。有关详细信息，请参阅 [用于 Visual Studio 的 HDInsight Hadoop 工具入门][1]。
 
 **从群集仪表板运行 Hive 作业**
 
 1. 登录到 [Azure 经典管理门户][azure-management-portal]。
-2. 单击左窗格中的“HDINSIGHT”。你将会看到所创建的群集的列表，包括你刚刚在上一部分中创建的群集。
+2. 单击左窗格中的“HDINSIGHT”。将会看到所创建的群集的列表，包括刚才在上一节中创建的群集。
 3. 单击要用于运行 Hive 作业的群集名称，然后单击页面底部的“查询控制台”。
-4. 这会在另一个浏览器选项卡中打开一个网页。输入 Hadoop 用户帐户和密码。默认用户名为 **admin**；密码是你在设置群集时所输入的密码。仪表板类似于：
+4. 这会在另一个浏览器选项卡中打开一个网页。输入 Hadoop 用户帐户和密码。默认用户名为 **admin**；密码是设置群集时输入的密码。仪表板类似于：
 
 	![HDInsight 群集仪表板中的“Hive 编辑器”选项卡。][img-hdi-dashboard]
 
@@ -170,7 +170,7 @@ Microsoft 还提供了 HDInsight Emulator for Azure（以前称作 *Microsoft HD
 
 ## <a name="powerquery"></a>连接到 Excel 的 Microsoft 商业智能工具
 
-你可以使用 Microsoft Excel 的 Power Query 附加组件将作业输出从 HDInsight 导入到 Excel 中，从中可以使用 Microsoft 商业智能工具进一步分析结果。
+可使用 Microsoft Excel 的 Power Query 附加组件将作业输出从 HDInsight 导入到 Excel，并在其中使用 Microsoft 商业智能工具进一步分析结果。
 
 要完成本部分教程，必须已安装 Excel 2013 或 2010。
 
@@ -193,7 +193,7 @@ Microsoft 还提供了 HDInsight Emulator for Azure（以前称作 *Microsoft HD
 
 	![按内容列表中的 GUID 查找数据输出。][image-hdi-gettingstarted-powerquery-importdata2]
 
-9. 单击左上角的“关闭并加载”以将 Hive 作业输出导入到 Excel 中。
+9. 单击左上角的“关闭并加载”，以将 Hive 作业输出导入到 Excel。
 
 ## 删除集群
 
@@ -262,4 +262,4 @@ Microsoft 还提供了 HDInsight Emulator for Azure（以前称作 *Microsoft HD
 [image-hdi-gettingstarted-powerquery-importdata2]: ./media/hdinsight-hadoop-tutorial-get-started-windows-v1/HDI.GettingStarted.PowerQuery.ImportData2.png
  
 
-<!---HONumber=71-->
+<!---HONumber=Mooncake_Quality_Review_1118_2016-->

@@ -15,7 +15,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
    ms.date="09/14/2016"
-   wacn.date="10/25/2016"
+   wacn.date="12/12/2016"
    ms.author="larryfr"/>
 
 # 将 Pig 与 HDInsight 上的 Hadoop 配合使用
@@ -146,4 +146,4 @@ HDInsight 可以使用各种方法来运行 Pig Latin 作业。使用下表来�
 [image-hdi-pig-powershell]: ./media/hdinsight-use-pig/hdi.pig.powershell.png
 [image-hdi-pig-architecture]: ./media/hdinsight-use-pig/HDI.Pig.Architecture.png
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_Quality_Review_1118_2016-->

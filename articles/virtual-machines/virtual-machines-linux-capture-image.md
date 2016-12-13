@@ -1,5 +1,3 @@
-<!-- ARM: tested -->
-
 <properties
 	pageTitle="捕获 Linux VM 以用作模板 | Azure"
 	description="了解如何捕获使用 Azure 资源管理器部署模型创建的、基于 Linux 的 Azure 虚拟机 (VM) 的映像。"
@@ -17,7 +15,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="07/19/2016"
-	wacn.date="09/30/2016"
+	wacn.date="12/12/2016"
 	ms.author="danlep"/>
 
 
@@ -200,4 +198,4 @@ VM 预配完成并运行后，你可能想要连接和安装数据磁盘。请�
 
 要使用 CLI 管理 VM，请参阅[使用 Azure 资源管理器模板和 Azure CLI 部署和管理虚拟机](/documentation/articles/virtual-machines-linux-cli-deploy-templates/)中的任务。
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_Quality_Review_1118_2016-->

@@ -1,6 +1,6 @@
 <properties
 	pageTitle="管理 Windows VM 的可用性 | Azure"
-	description="了解如何使用多个虚拟机来确保 Windows 应用程序在 Azure 中的高可用性"
+	description="了解如何使用多个虚拟机确保 Azure 中 Windows 应用程序的高可用性"
 	services="virtual-machines-windows"
 	documentationCenter=""
 	authors="cynthn"
@@ -15,12 +15,12 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="09/27/2016"
-	wacn.date="11/21/2016"
+	wacn.date="12/12/2016"
 	ms.author="cynthn"/>
 
 # 管理虚拟机的可用性
 
-了解如何设置和管理多个虚拟机，以确保 Windows 应用程序在 Azure 中的高可用性。你也可以[管理 Linux 虚拟机的可用性](/documentation/articles/virtual-machines-linux-manage-availability/)。
+了解如何设置和管理多个虚拟机，以确保 Azure 中 Windows 应用程序的高可用性。还可以[管理 Linux 虚拟机的可用性](/documentation/articles/virtual-machines-linux-manage-availability/)。
 
 [AZURE.INCLUDE [了解部署模型](../../includes/learn-about-deployment-models-both-include.md)]
 
@@ -31,4 +31,5 @@
 ## 后续步骤
 
 若要了解有关对虚拟机进行负载均衡的详细信息，请参阅[对虚拟机进行负载均衡](/documentation/articles/virtual-machines-windows-load-balance/)。
-<!---HONumber=Mooncake_0704_2016-->
+
+<!---HONumber=Mooncake_Quality_Review_1118_2016-->

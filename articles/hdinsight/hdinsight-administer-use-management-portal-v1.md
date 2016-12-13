@@ -14,7 +14,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="07/25/2016"
-	wacn.date="09/30/2016"
+	wacn.date="12/12/2016"
 	ms.author="jgao"/>
 
 # 使用 Azure 经典管理门户管理 HDInsight 中的 Hadoop 群集
@@ -118,7 +118,7 @@ HDInsight 群集可以有两个用户帐户。HDInsight 群集用户帐户是在
 
 2. 浏览到证书所在的位置，右键单击该证书，单击“安装证书”，然后将证书安装到计算机的个人存储。编辑证书属性，以便为证书指定一个友好名称。
 
-3. 将证书导入 Azure 经典管理门户。在经典管理门户中，单击页面左下角的“设置”，然后单击“管理证书”。在页面底部，单击“上载”，然后按照说明上载你在前一步骤中创建的 .cer 文件。
+3. 将证书导入 Azure 经典管理门户。在门户中，单击页面左下角的“设置”，然后单击“管理证书”。在页面底部，单击“上载”，然后按照说明上载你在前一步骤中创建的 .cer 文件。
 
 	![HDI.ClusterCreate.UploadCert][image-hdiclustercreate-uploadcert]
 
@@ -193,4 +193,4 @@ HDInsight 群集提供以下 HTTP Web 服务（所有这些服务都有 REST 样
 [image-hadoopcommandline]: ./media/hdinsight-administer-use-management-portal-v1/HDI.HadoopCommandLine.PNG "Hadoop 命令行"
 [image-hdiclustercreate-uploadcert]: ./media/hdinsight-administer-use-management-portal-v1/HDI.ClusterCreate.UploadCert.png
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_Quality_Review_1118_2016-->

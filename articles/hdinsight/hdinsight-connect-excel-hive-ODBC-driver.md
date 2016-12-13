@@ -15,7 +15,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
    ms.date="07/25/2016"
-   wacn.date="11/25/2016"
+   wacn.date="12/12/2016"
    ms.author="jgao"/>
 
 # 使用 Microsoft Hive ODBC 驱动程序将 Excel 连接到 Hadoop
@@ -130,4 +130,4 @@ Microsoft 的大数据解决方案可将 Microsoft 商业智能 (BI) 组件与�
 [img-hdi-simbahiveodbc-excel-connectionproperties]: ./media/hdinsight-connect-excel-hive-ODBC-driver/HDI.SimbaHiveODBC.Excel.ConnectionProperties1.png
 [img-hdi-simbahiveodbc.excel.dataconnection]: ./media/hdinsight-connect-excel-hive-ODBC-driver/HDI.SimbaHiveOdbc.Excel.DataConnection1.png
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_Quality_Review_1118_2016-->

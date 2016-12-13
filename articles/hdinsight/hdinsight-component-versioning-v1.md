@@ -14,7 +14,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="07/25/2016"
-	wacn.date="09/30/2016"
+	wacn.date="12/12/2016"
 	ms.author="jgao"/>
 
 
@@ -158,4 +158,4 @@ SLA 用“支持窗口”来定义。“支持窗口”是指 HDInsight 群集�
 
 [zookeeper]: http://zookeeper.apache.org/
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_Quality_Review_1118_2016-->
