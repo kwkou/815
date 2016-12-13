@@ -22,7 +22,7 @@
 
 
 # 使用 Azure 门户预览创建虚拟机规模集
-本教程介绍如何通过 Azure 门户预览在数分钟内轻松创建虚拟机规模集。如果没有 Azure 订阅，可在开始前创建一个[免费帐户](/pricing/1rmb-trial-full/)。
+本教程介绍如何通过 Azure 门户预览在数分钟内轻松创建虚拟机规模集。如果没有 Azure 订阅，可在开始前创建一个[一元帐户](/pricing/1rmb-trial-full/)。
 
 ## 从应用商店中选择 VM 映像
 在门户中，可以使用 CentOS、CoreOS、Debian、Open Suse、Red Hat Enterprise Linux、SUSE Linux Enterprise Server、Ubuntu Server 或 Windows Server 映像轻松部署规模集。

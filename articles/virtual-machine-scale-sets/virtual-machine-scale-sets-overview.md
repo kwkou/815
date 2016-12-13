@@ -59,24 +59,24 @@
 * **通过 RDP/SSH 连接到 VM 规模集实例** - VM 规模集是在 VNET 中创建的，并且没有为规模集中单独的 VM 分配公共 IP 地址。这是一件好事，因为您通常不希望承担为计算网格中的所有无状态资源分配单独的公共 IP 地址而产生的支出和管理开销，并且您可以轻松地从 VNET 中的其他资源（包括负载均衡器或独立虚拟机等具有公共 IP 地址的资源）连接到这些 VM。
 * **使用 NAT 规则连接到 VM** - 可以创建一个公共 IP 地址，并将其分配给负载均衡器，然后定义入站 NAT 规则，用于将 IP 地址上的端口映射到 VM 规模集中的 VM 上的端口。例如：
   
-  | 源 | 源端口 | 目标 | 目标端口 | 
-  | --- | --- | --- | --- | 
-  | 公共 IP |端口 50000 |vmss\_0 |端口 22 | 
-  | 公共 IP |端口 50001 |vmss\_1 |端口 22 | 
-  | 公共 IP |端口 50002 |vmss\_2 |端口 22 |
+    | 源 | 源端口 | 目标 | 目标端口 | 
+    | --- | --- | --- | --- | 
+    | 公共 IP |端口 50000 |vmss\_0 |端口 22 | 
+    | 公共 IP |端口 50001 |vmss\_1 |端口 22 | 
+    | 公共 IP |端口 50002 |vmss\_2 |端口 22 |
   
-   下面的示例创建了一个 VM 规模集，该规模集使用 NAT 规则，通过单个公共 IP 实现与规模集中每个 VM 的 SSH 连接：[https://github.com/Azure/azure-quickstart-templates/tree/master/201-vmss-linux-nat](https://github.com/Azure/azure-quickstart-templates/tree/master/201-vmss-linux-nat)
+    下面的示例创建了一个 VM 规模集，该规模集使用 NAT 规则，通过单个公共 IP 实现与规模集中每个 VM 的 SSH 连接：[https://github.com/Azure/azure-quickstart-templates/tree/master/201-vmss-linux-nat](https://github.com/Azure/azure-quickstart-templates/tree/master/201-vmss-linux-nat)
   
-   下面的示例使用 RDP 和 Windows 实现相同的目的：[https://github.com/Azure/azure-quickstart-templates/tree/master/201-vmss-windows-nat](https://github.com/Azure/azure-quickstart-templates/tree/master/201-vmss-windows-nat)
+    下面的示例使用 RDP 和 Windows 实现相同的目的：[https://github.com/Azure/azure-quickstart-templates/tree/master/201-vmss-windows-nat](https://github.com/Azure/azure-quickstart-templates/tree/master/201-vmss-windows-nat)
 * **使用“jumpbox”连接到 VM** - 如果在同一个 VNET 中创建一个 VM 规模集和一个独立 VM，则该独立 VM 和 VM 规模集 VM 能够使用其由 VNET/子网定义的内部 IP 地址彼此连接。如果创建一个公共 IP 地址并将其分配给独立 VM，则可以通过 RDP 或 SSH 连接到该独立 VM，然后从该虚拟机连接到 VM 规模集实例。此时你可能会发现，与使用其默认配置中的公共 IP 地址的简单独立 VM 相比，简单的 VM 规模集本质上更安全。
   
-   如，以下模板将使用一个独立的 VM 部署简单的规模集：[https://github.com/Azure/azure-quickstart-templates/tree/master/201-vmss-linux-jumpbox](https://github.com/Azure/azure-quickstart-templates/tree/master/201-vmss-linux-jumpbox)
+    如，以下模板将使用一个独立的 VM 部署简单的规模集：[https://github.com/Azure/azure-quickstart-templates/tree/master/201-vmss-linux-jumpbox](https://github.com/Azure/azure-quickstart-templates/tree/master/201-vmss-linux-jumpbox)
 * **负载均衡到 VM 规模集实例** - 如果想要使用“轮循机制”方法向 VM 的计算群集交付工作，则可以使用负载均衡规则对 Azure 负载均衡器进行相应的配置。可以定义探测，通过使用指定的协议、间隔和请求路径对端口执行 ping 操作来验证应用程序是否正在运行。Azure [应用程序网关](/home/features/application-gateway/) 也支持规模集，以及更复杂的负载均衡方案。
   
-   以下示例将创建运行 Apache Web 服务器的 VM 规模集，并使用负载均衡器来均衡每个 VM 接收的负载：[https://github.com/Azure/azure-quickstart-templates/tree/master/201-vmss-ubuntu-web-ssl](https://github.com/Azure/azure-quickstart-templates/tree/master/201-vmss-ubuntu-web-ssl)（查看 Microsoft.Network/loadBalancers 资源类型以及 virtualMachineScaleSet 中的 networkProfile 和 extensionProfile）
+    以下示例将创建运行 Apache Web 服务器的 VM 规模集，并使用负载均衡器来均衡每个 VM 接收的负载：[https://github.com/Azure/azure-quickstart-templates/tree/master/201-vmss-ubuntu-web-ssl](https://github.com/Azure/azure-quickstart-templates/tree/master/201-vmss-ubuntu-web-ssl)（查看 Microsoft.Network/loadBalancers 资源类型以及 virtualMachineScaleSet 中的 networkProfile 和 extensionProfile）
 * **在 PaaS 群集管理器中将 VM 规模集部署为计算群集** - VM 规模集有时作为下一代辅助角色进行说明。这是有效的说明，但也可能导致将规模集功能与 PaaS v1 辅助角色功能混淆。在某种意义上，VM 规模集提供真正的“辅助角色”或辅助角色资源，并在此资源中提供独立于平台/运行时且集成到 Azure 资源管理器 IaaS 中的可自定义通用计算资源。
   
-   PaaS v1 辅助角色虽然在平台/运行时支持方面受到限制（仅 Windows 平台映像），但它也包括多项服务，如 VIP 交换，可配置升级设置，以及*尚未*在 VM 规模集中提供，或者将由 Service Fabric 等其他更高级别 PaaS 服务提供的特定于运行时/应用部署的设置。考虑到这一点，你可以将 VM 规模集视为支持 PaaS 的基础结构。即，生成 Service Fabric 等 PaaS 解决方案或 Mesos 等群集管理器时，可以在将 VM 规模集作为可缩放计算层的基础上进行生成。
+    PaaS v1 辅助角色虽然在平台/运行时支持方面受到限制（仅 Windows 平台映像），但它也包括多项服务，如 VIP 交换，可配置升级设置，以及*尚未*在 VM 规模集中提供，或者将由 Service Fabric 等其他更高级别 PaaS 服务提供的特定于运行时/应用部署的设置。考虑到这一点，你可以将 VM 规模集视为支持 PaaS 的基础结构。即，生成 Service Fabric 等 PaaS 解决方案或 Mesos 等群集管理器时，可以在将 VM 规模集作为可缩放计算层的基础上进行生成。
   
 	[作为此方法的一个示例，此模板创建了一个简单的 Mesos 群集，其中包含一个独立的主 VM，用于管理由 VM 组成的基于 VM 规模集的群集。](https://github.com/gbowerman/azure-myriad/blob/master/mesos-vmss-simple-cluster.json)
 
