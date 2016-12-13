@@ -54,7 +54,7 @@
 
 	
 	
-	>[AZURE.NOTE]<p>1. 将 `Properties` 参数中的 `serverFarmID` 的值替换成步骤 2 中返回的 `Id` 值；</p><p>2. 将参数`<ResourceGroupName1>`替换成应用服务计划所在的资源组名称，将参数`<ResourceGroupName2>`替换成 Web 应用所在的资源组名称。</p>
+	>[AZURE.NOTE]<p>1. 将 `Properties` 参数中的 `serverFarmID` 的值替换成步骤 2 中返回的 `Id` 值；<p>2. 将参数`<ResourceGroupName1>`替换成应用服务计划所在的资源组名称，将参数`<ResourceGroupName2>`替换成 Web 应用所在的资源组名称。
 
 4. 登录 Azure Portal 查看 Web 应用是否已经迁移到新的应用服务计划中。
 
