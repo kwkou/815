@@ -38,48 +38,47 @@
     生成脚本将 **logger.dll** 放在 **build\\modules\\logger\\Debug** 文件夹中，将 **hello\_world.dll** 放在 **build\\modules\\hello\_world\\Debug** 文件夹中。按如下 JSON 设置文件所示，将这些路径用于 **module path** 值。
 2. hello\_world\_sample 进程采用 JSON 配置文件路径作为命令行中的参数。已在 **azure-iot-gateway-sdk\\samples\\hello\_world\\src\\hello\_world\_win.json** 中将示例 JSON 文件作为存储库的一部分提供，并复制在下方。除非修改生成脚本，将模块或示例可执行文件放在非默认位置，否则它会按原样运行。
 
-   > [AZURE.NOTE]
+    > [AZURE.NOTE]
    模块路径相对 hello\_world\_sample.exe 所在的目录。示例 JSON 配置文件默认将“log.txt”写入当前工作目录。
    
-    ```
-    {
-      "modules": [
+
         {
-          "name": "logger",
-          "loader": {
-            "name": "native",
-            "entrypoint": {
-              "module.path": "..\\..\\..\\modules\\logger\\Debug\\logger.dll"
+          "modules": [
+            {
+              "name": "logger",
+              "loader": {
+                "name": "native",
+                "entrypoint": {
+                  "module.path": "..\\..\\..\\modules\\logger\\Debug\\logger.dll"
+                }
+              },
+              "args": { "filename": "log.txt" }
+            },
+            {
+              "name": "hello_world",
+              "loader": {
+                "name": "native",
+                "entrypoint": {
+                  "module.path": "..\\..\\..\\modules\\hello_world\\Debug\\hello_world.dll"
+                }
+              },
+              "args": null
+              }
+          ],
+          "links": [
+            {
+              "source": "hello_world",
+              "sink": "logger"
             }
-          },
-          "args": { "filename": "log.txt" }
-        },
-        {
-          "name": "hello_world",
-          "loader": {
-            "name": "native",
-            "entrypoint": {
-              "module.path": "..\\..\\..\\modules\\hello_world\\Debug\\hello_world.dll"
-            }
-          },
-          "args": null
-          }
-      ],
-      "links": [
-        {
-          "source": "hello_world",
-          "sink": "logger"
+          ]
         }
-      ]
-    }
-    ```
+
 3. 浏览到 **azure-iot-gateway-sdk** 存储库的本地副本中的根文件夹。
 
 4. 运行以下命令：
-   
-   ```
-   build\samples\hello_world\Debug\hello_world_sample.exe samples\hello_world\src\hello_world_win.json
-   ```
+
+        build\samples\hello_world\Debug\hello_world_sample.exe samples\hello_world\src\hello_world_win.json
+
 
 [AZURE.INCLUDE [iot-hub-gateway-sdk-getstarted-code](../../includes/iot-hub-gateway-sdk-getstarted-code.md)]
 

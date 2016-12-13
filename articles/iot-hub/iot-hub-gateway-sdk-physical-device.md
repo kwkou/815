@@ -413,23 +413,23 @@ BLE 设备的示例配置假定使用 Texas Instruments SensorTag 设备。任�
 - **mapping** 模块将消息发送到 **BLEC2D** 模块。
 - **BLEC2D** 模块将消息发回 **SensorTag** 模块。
 
-```json
-"links" : [
-    {"source" : "*", "sink" : "Logger" },
-    {"source" : "SensorTag", "sink" : "mapping" },
-    {"source" : "SensorTag", "sink" : "BLE Printer" },
-    {"source" : "mapping", "sink" : "IoTHub" },
-    {"source" : "IoTHub", "sink" : "mapping" },
-    {"source" : "mapping", "sink" : "BLEC2D" },
-    {"source" : "BLEC2D", "sink" : "SensorTag"}
- ]
-```
+
+        "links" : [
+            {"source" : "*", "sink" : "Logger" },
+            {"source" : "SensorTag", "sink" : "mapping" },
+            {"source" : "SensorTag", "sink" : "BLE Printer" },
+            {"source" : "mapping", "sink" : "IoTHub" },
+            {"source" : "IoTHub", "sink" : "mapping" },
+            {"source" : "mapping", "sink" : "BLEC2D" },
+            {"source" : "BLEC2D", "sink" : "SensorTag"}
+         ]
+
 
 若要运行示例，请将 JSON 配置文件的路径传递到 **ble\_gateway** 二进制文件。如果使用 **gateway\_sample.json** 文件，请执行如下命令。从 azure-iot-gateway-sdk 目录执行此命令
 
-```
-./build/samples/ble_gateway/ble_gateway ./samples/ble_gateway/src/gateway_sample.json
-```
+
+        ./build/samples/ble_gateway/ble_gateway ./samples/ble_gateway/src/gateway_sample.json
+
 
 在运行示例前，可能需要按 SensorTag 设备上的小按钮，使其可被发现。
 

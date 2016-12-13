@@ -41,7 +41,6 @@ Azure IoT 中心提供：
 - [参考 - IoT 中心终结点][devguide-endpoints]说明了每个 IoT 中心针对运行时和管理操作公开的各种终结点。此文章还介绍如何使用现场网关使某些设备能够连接到 IoT 中心终结点。
 - [参考 - 克隆、方法和作业的查询语言][devguide-query]说明了可用于从中心检索有关设备克隆和作业的信息的查询语言。
 - [参考 - 配额和限制][devguide-quotas]总结了 IoT 中心服务中设置的配额，以及当超过配额时可以预期看到的限制行为。
-- [参考 - 定价][devguide-pricing]提供有关 IoT 中心的不同 SKU 和定价的常规信息，以及 IoT 中心如何将各种 IoT 中心功能作为消息计量的其他详细信息。
 - [参考 - 设备和服务 SDK][devguide-sdks] 列出了在开发与 IoT 中心交互的设备和服务应用程序时可以使用的 SDK。此文章包括指向联机 API 文档的链接。
 - [参考 - IoT 中心 MQTT 支持][devguide-mqtt]详细介绍了 IoT 中心如何支持 MQTT 协议。此文章介绍对内置到 SDK 的 MQTT 协议的支持，并提供有关直接使用 MQTT 协议的信息。
 - [词汇表][devguide-glossary]是与 IoT 中心相关的常见术语的列表。

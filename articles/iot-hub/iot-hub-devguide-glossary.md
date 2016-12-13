@@ -200,7 +200,7 @@ IoT 中心[操作监视](/documentation/articles/iot-hub-operations-monitoring/)
 [Azure Resource Manager](#azure-resource-manager) 使用资源组将相关的资源组合在一起。通过使用资源组，可以对组中的所有资源同时执行操作。
 
 ## 重试策略
-连接到云服务时使用重试策略来处理 [暂时性错误] (https://msdn.microsoft.com/zh-cn/library/hh680901(v=pandp.50).aspx)。
+连接到云服务时使用重试策略来处理 [暂时性错误][]。
 
 ## SASL PLAIN
 SASL PLAIN 是一种协议， [AMQP](#advanced-message-queue-protocol) 协议使用它传输安全令牌。
@@ -235,4 +235,7 @@ Azure 订阅是发生计费的地方。用户创建的每个 Azure 资源或使�
 ## X.509 客户端证书
 设备可以使用 X.509 证书在 [IoT 中心](#iot-hub)进行身份验证。使用 X.509 证书是使用 [SAS 令牌](#shared-access-signature)的替代方案。
 
+
+
+[暂时性错误]: https://msdn.microsoft.com/library/hh680901(v=pandp.50).aspx
 <!---HONumber=Mooncake_1205_2016-->

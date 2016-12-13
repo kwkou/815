@@ -172,63 +172,63 @@
 
 8. 将以下 **receiveMessages** 方法添加到 **App** 类。此方法创建 **EventHubClient** 实例以连接到与事件中心兼容的终结点，然后以异步方式创建 **PartitionReceiver** 实例以从事件中心分区进行读取。它将持续循环并输出消息详细信息，直到应用程序终止。
 
-    ```
-    private static EventHubClient receiveMessages(final String partitionId)
-    {
-      EventHubClient client = null;
-      try {
-        client = EventHubClient.createFromConnectionStringSync(connStr);
-      }
-      catch(Exception e) {
-        System.out.println("Failed to create client: " + e.getMessage());
-        System.exit(1);
-      }
-      try {
-        client.createReceiver( 
-          EventHubClient.DEFAULT_CONSUMER_GROUP_NAME,  
-          partitionId,  
-          Instant.now()).thenAccept(new Consumer<PartitionReceiver>()
+
+        private static EventHubClient receiveMessages(final String partitionId)
         {
-          public void accept(PartitionReceiver receiver)
-          {
-            System.out.println("** Created receiver on partition " + partitionId);
-            try {
-              while (true) {
-                Iterable<EventData> receivedEvents = receiver.receive(100).get();
-                int batchSize = 0;
-                if (receivedEvents != null)
-                {
-                  for(EventData receivedEvent: receivedEvents)
-                  {
-                    System.out.println(String.format("Offset: %s, SeqNo: %s, EnqueueTime: %s", 
-                      receivedEvent.getSystemProperties().getOffset(), 
-                      receivedEvent.getSystemProperties().getSequenceNumber(), 
-                      receivedEvent.getSystemProperties().getEnqueuedTime()));
-                    System.out.println(String.format("| Device ID: %s", receivedEvent.getProperties().get("iothub-connection-device-id")));
-                    System.out.println(String.format("| Message Payload: %s", new String(receivedEvent.getBody(),
-                      Charset.defaultCharset())));
-                    batchSize++;
+          EventHubClient client = null;
+          try {
+            client = EventHubClient.createFromConnectionStringSync(connStr);
+          }
+          catch(Exception e) {
+            System.out.println("Failed to create client: " + e.getMessage());
+            System.exit(1);
+          }
+          try {
+            client.createReceiver( 
+              EventHubClient.DEFAULT_CONSUMER_GROUP_NAME,  
+              partitionId,  
+              Instant.now()).thenAccept(new Consumer<PartitionReceiver>()
+            {
+              public void accept(PartitionReceiver receiver)
+              {
+                System.out.println("** Created receiver on partition " + partitionId);
+                try {
+                  while (true) {
+                    Iterable<EventData> receivedEvents = receiver.receive(100).get();
+                    int batchSize = 0;
+                    if (receivedEvents != null)
+                    {
+                      for(EventData receivedEvent: receivedEvents)
+                      {
+                        System.out.println(String.format("Offset: %s, SeqNo: %s, EnqueueTime: %s", 
+                          receivedEvent.getSystemProperties().getOffset(), 
+                          receivedEvent.getSystemProperties().getSequenceNumber(), 
+                          receivedEvent.getSystemProperties().getEnqueuedTime()));
+                        System.out.println(String.format("| Device ID: %s", receivedEvent.getProperties().get("iothub-connection-device-id")));
+                        System.out.println(String.format("| Message Payload: %s", new String(receivedEvent.getBody(),
+                          Charset.defaultCharset())));
+                        batchSize++;
+                      }
+                    }
+                    System.out.println(String.format("Partition: %s, ReceivedBatch Size: %s", partitionId,batchSize));
                   }
                 }
-                System.out.println(String.format("Partition: %s, ReceivedBatch Size: %s", partitionId,batchSize));
+                catch (Exception e)
+                {
+                  System.out.println("Failed to receive messages: " + e.getMessage());
+                }
               }
-            }
-            catch (Exception e)
-            {
-              System.out.println("Failed to receive messages: " + e.getMessage());
-            }
+            });
           }
-        });
-      }
-      catch (Exception e)
-      {
-        System.out.println("Failed to create receiver: " + e.getMessage());
-      }
-      return client;
-    }
-    ```
+          catch (Exception e)
+          {
+            System.out.println("Failed to create receiver: " + e.getMessage());
+          }
+          return client;
+        }
 
-   > [AZURE.NOTE] 在创建开始运行后只读取发送到 IoT 中心的消息的接收方时，此方法将使用筛选器。此技术适合测试环境，因为这样可以看到当前的消息集。在生产环境中，代码应确保它能处理所有消息。有关详细信息，请参阅[如何处理 IoT 中心设备到云消息][lnk-process-d2c-tutorial]教程。
+
+    > [AZURE.NOTE] 在创建开始运行后只读取发送到 IoT 中心的消息的接收方时，此方法将使用筛选器。此技术适合测试环境，因为这样可以看到当前的消息集。在生产环境中，代码应确保它能处理所有消息。有关详细信息，请参阅[如何处理 IoT 中心设备到云消息][lnk-process-d2c-tutorial]教程。
 
 9. 修改 **main** 方法的签名，包含如下所示的异常：
 

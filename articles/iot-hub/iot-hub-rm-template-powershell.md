@@ -31,7 +31,7 @@
 
 完成本教程需具备以下条件：
 
-- 有效的 Azure 帐户。<br/>如果你没有帐户，可以创建一个试用帐户，只需几分钟即可完成。有关详细信息，请参阅 [Azure 免费试用][lnk-free-trial]。
+- 有效的 Azure 帐户。<br/>如果你没有帐户，可以创建一个试用帐户，只需几分钟即可完成。有关详细信息，请参阅 [Azure 试用][lnk-free-trial]。
 - [Azure PowerShell 1.0][lnk-powershell-install] 或更高版本。
 
 > [AZURE.TIP] [将 Azure PowerShell 与 Azure Resource Manager 配合使用][lnk-powershell-arm]一文提供有关如何使用 PowerShell 脚本和 Resource Manager 模板创建 Azure 资源的详细信息。
