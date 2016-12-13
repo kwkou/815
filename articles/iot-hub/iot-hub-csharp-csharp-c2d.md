@@ -15,7 +15,7 @@
      ms.tgt_pltfrm="na"
      ms.workload="na"
      ms.date="06/23/2016"
-     wacn.date="11/07/2016"
+     wacn.date="12/12/2016"
      ms.author="elioda"/>
 
 # 教程：如何使用 IoT 中心和 .Net 发送云到设备的消息
@@ -30,7 +30,7 @@ Azure IoT 中心是一项完全托管的服务，有助于在数百万个 IoT �
 
 - 通过 IoT 中心从应用程序云后端将云到设备的消息发送到单个设备。
 - 在设备上接收云到设备的消息。
-- 从应用程序云后端请求确认收到从 IoT 中心发送到设备的消息（ *反馈* ）。
+- 从应用程序云后端请求确认收到从 IoT 中心发送到设备的消息（*反馈*）。
 
 可以在 [IoT Hub Developer Guide][IoT Hub Developer Guide - C2D]（IoT 中心开发人员指南）中找到有关云到设备的消息的详细信息。
 
@@ -69,11 +69,11 @@ Azure IoT 中心是一项完全托管的服务，有助于在数百万个 IoT �
             }
         }
 
-    在设备收到消息时，`ReceiveAsync` 方法以异步方式返回收到的消息。它在可指定的超时期限过后返回 *null* （在本例中，使用的是默认值一分钟）。当发生这种情况时，代码应继续等待新消息。因此加上 `if (receivedMessage == null) continue` 行。
+    在设备收到消息时，`ReceiveAsync` 方法以异步方式返回收到的消息。它在可指定的超时期限过后返回 *null*（在本例中，使用的是默认值一分钟）。当发生这种情况时，代码应继续等待新消息。因此加上 `if (receivedMessage == null) continue` 行。
 
-    对 `CompleteAsync()` 的调用将通知 IoT 中心，指出已成功处理消息。可以安全地从设备队列中删除该消息。如果因故导致设备应用无法完成消息处理作业，IoT 中心将再传递一次。因此设备应用中的消息处理逻辑必须是 *幂等的* ，以便多次接收相同的消息会生成相同的结果。应用程序也可以暂时放弃消息，让 IoT 中心将消息保留在队列中以供将来使用。或者，应用程序可以拒绝消息，以永久性从队列中删除该消息。有关云到设备消息生命周期的详细信息，请参阅 [IoT Hub Developer Guide][IoT Hub Developer Guide - C2D]（IoT 中心开发人员指南）。
+    对 `CompleteAsync()` 的调用将通知 IoT 中心，指出已成功处理消息。可以安全地从设备队列中删除该消息。如果因故导致设备应用无法完成消息处理作业，IoT 中心将再传递一次。因此设备应用中的消息处理逻辑必须是*幂等的*，以便多次接收相同的消息会生成相同的结果。应用程序也可以暂时放弃消息，让 IoT 中心将消息保留在队列中以供将来使用。或者，应用程序可以拒绝消息，以永久性从队列中删除该消息。有关云到设备消息生命周期的详细信息，请参阅 [IoT Hub Developer Guide][IoT Hub Developer Guide - C2D]（IoT 中心开发人员指南）。
 
-    > [AZURE.NOTE] 使用 HTTP/1 而不使用 AMQP 作为传输时，`ReceiveAsync` 方法将立即返回。使用 HTTP/1 的云到设备消息，其支持模式是间歇连接到设备，且不常检查消息（时间间隔小于 25 分钟）。发出更多 HTTP/1 接收会导致 IoT 中心限制请求。有关 AMQP 和 HTTP/1 支持之间的差异，以及 IoT 中心限制的详细信息，请参阅 [IoT Hub Developer Guide][IoT Hub Developer Guide - C2D]（IoT 中心开发人员指南）。
+    > [AZURE.NOTE] 使用 HTTP 而不使用 MQTT 或 AMQP 作为传输时，`ReceiveAsync` 方法将立即返回。使用 HTTP/1 的云到设备消息，其支持模式是间歇连接到设备，且不常检查消息（时间间隔小于 25 分钟）。发出更多 HTTP/1 接收会导致 IoT 中心限制请求。有关 AMQP 和 HTTP/1 支持之间的差异，以及 IoT 中心限制的详细信息，请参阅 [IoT Hub Developer Guide][IoT Hub Developer Guide - C2D]（IoT 中心开发人员指南）。
 
 2. 将以下方法添加到 **Main** 方法的 `Console.ReadLine()` 行的前面：
 
@@ -199,4 +199,4 @@ Azure IoT 中心是一项完全托管的服务，有助于在数百万个 IoT �
 [lnk-free-trial]: /pricing/1rmb-trial/
 [Azure IoT 套件]: /documentation/services/iot-suite/
 
-<!---HONumber=Mooncake_0307_2016-->
+<!---HONumber=Mooncake_1205_2016-->

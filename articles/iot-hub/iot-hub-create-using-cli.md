@@ -15,11 +15,11 @@
      ms.tgt_pltfrm="na"
      ms.workload="na"
      ms.date="09/21/2016"
-     wacn.date="11/07/2016"
+     wacn.date="12/12/2016"
      ms.author="boltean"/>  
 
 
-# 使用 CLI 创建 IoT 中心
+# 使用 Azure CLI 创建 IoT 中心
 
 [AZURE.INCLUDE [iot-hub-resource-manager-selector](../../includes/iot-hub-resource-manager-selector.md)]
 
@@ -48,10 +48,10 @@
 	```
 使用建议的 Web 浏览器和代码进行身份验证。
 
-2. 如果你有多个 Azure 订阅，则连接到 Azure 即有权访问与凭据关联的所有订阅。可以查看这些订阅以及哪个订阅是默认订阅，只需使用以下命令：
-	```
-	    azure account list 
-	```
+2. 如果你有多个 Azure 订阅，则连接到 Azure 即有权访问与凭据关联的所有 Azure 订阅。可查看这些订阅以及哪个订阅是默认订阅，只需使用以下命令
+```
+    azure account list 
+```
 
 	若要设置订阅上下文，以便在其下运行其余命令，请使用：
 
@@ -90,8 +90,7 @@
     azure iothub create -g exampleResourceGroup -n exampleIoTHubName -l chinaeast -k s1 -u 1
 ```
 
-> [AZURE.NOTE] 此 CLI 命令为用户创建付费的 S1 标准 IoT 中心。可以使用以下命令删除 IoT 中心 **exampleIoTHubName**
-
+> [AZURE.NOTE] 此 Azure CLI 命令为用户创建付费的 S1 标准 IoT 中心。可以使用以下命令删除 IoT 中心 **exampleIoTHubName**
 ```
     azure iothub delete -g exampleResourceGroup -n exampleIoTHubName
 ```
@@ -111,10 +110,9 @@
 [lnk-azure-portal]: https://portal.azure.cn/
 [lnk-CLI-install]: /documentation/articles/xplat-cli-install/
 [lnk-rest-api]: https://msdn.microsoft.com/zh-cn/library/mt589014.aspx
-[lnk-azure-rm-overview]: /documentation/articles/resource-group-overview/
 [lnk-CLI-arm]: /documentation/articles/xplat-cli-azure-resource-manager/
 
 [lnk-sdks]: /documentation/articles/iot-hub-devguide-sdks/
 [lnk-portal]: /documentation/articles/iot-hub-create-through-portal/
 
-<!---HONumber=Mooncake_1031_2016-->
+<!---HONumber=Mooncake_1205_2016-->

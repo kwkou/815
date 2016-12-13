@@ -15,12 +15,12 @@
      ms.tgt_pltfrm="na"
      ms.workload="na"
      ms.date="08/25/2016"
-     wacn.date="11/07/2016"
+     wacn.date="12/12/2016"
      ms.author="andbuc"/>  
 
 
 
-# IoT 网关 SDK（Beta 版）- 使用 Linux 入门
+# Azure IoT 网关 SDK - 开始使用 Linux
 
 [AZURE.INCLUDE [iot-hub-gateway-sdk-getstarted-selector](../../includes/iot-hub-gateway-sdk-getstarted-selector.md)]
 
@@ -37,49 +37,53 @@
 ## 如何运行示例
 
 1. **build.sh** 脚本在本地 **azure-iot-gateway-sdk** 存储库副本的 **build** 文件夹中生成输出。该文件夹中包含本示例中使用的两个模块。
+   
+    生成脚本将 **liblogger.so** 放在 **build/modules/logger/** 文件夹中，将 **libhello\_world.so** 放在 **build/modules/hello\_world/** 文件夹中。按如下 JSON 设置文件所示，将这些路径用于 **module path** 值。
+2. hello\_world\_sample 进程采用 JSON 配置文件路径作为命令行中的参数。已在 **azure-iot-gateway-sdk/samples/hello\_world/src/hello\_world\_win.json** 中将示例 JSON 文件作为存储库的一部分提供，并复制在下方。除非修改生成脚本，将模块或示例可执行文件放在非默认位置，否则它会按原样运行。
 
-    生成脚本将 **liblogger\_hl.so** 放在 **build/modules/logger/** 文件夹中，将 **libhello\_world\_hl.so** 放在 **build/modules/hello\_world/** 文件夹中。按如下 JSON 设置文件所示，将这些路径用于 **module path** 值。
-
-2. **samples/hello\_world/src** 文件夹中的文件 **hello\_world\_lin.json** 是可用于运行示例的面向 Linux 的示例 JSON 设置文件。如下所示的示例 JSON 设置假定你将从本地 **azure-iot-gateway-sdk** 存储库副本的根文件夹运行示例。
-
-3. 对于 **logger\_hl** 模块，请在 **args** 部分，将 **filename** 值设置为包含日志数据的文件的名称和路径。
-
-    这是面向 Linux 的 JSON 设置文件的示例，该文件将写入从其运行示例的文件夹中的 **log.txt**。
-
+   > [AZURE.NOTE]
+   模块路径相对于当前工作目录（hello\_world\_sample 可执行文件的启动位置），而不相对于可执行文件所在的目录。示例 JSON 配置文件默认将“log.txt”写入当前工作目录。
+   
     ```
     {
-      "modules" :
-      [ 
-        {
-          "module name" : "logger_hl",
-          "module path" : "./build/modules/logger/liblogger_hl.so",
-          "args" : 
-          {
-            "filename":"./log.txt"
-          }
-        },
-        {
-          "module name" : "hello_world",
-          "module path" : "./build/modules/hello_world/libhello_world_hl.so",
-          "args" : null
-        }
-      ],
-      "links" :
-      [
-        {
-          "source": "hello_world",
-          "sink": "logger_hl"
-        }
-      ]
+        "modules" :
+        [
+            {
+              "name" : "logger",
+              "loader": {
+                "name": "native",
+                "entrypoint": {
+                  "module.path": "./modules/logger/liblogger.so"
+                }
+              },
+              "args" : {"filename":"log.txt"}
+            },
+            {
+                "name" : "hello_world",
+              "loader": {
+                "name": "native",
+                "entrypoint": {
+                  "module.path": "./modules/hello_world/libhello_world.so"
+                }
+              },
+                "args" : null
+            }
+        ],
+        "links": 
+        [
+            {
+                "source": "hello_world",
+                "sink": "logger"
+            }
+        ]
     }
     ```
-
-3. 在 shell 中，浏览到 **azure-iot-gateway-sdk** 文件夹。
+3. 浏览到 **azure-iot-gateway-sdk** 文件夹。
 4. 运行以下命令：
-  
-  ```
-  ./build/samples/hello_world/hello_world_sample ./samples/hello_world/src/hello_world_lin.json
-  ``` 
+   
+   ```
+   ./build/samples/hello_world/hello_world_sample ./samples/hello_world/src/hello_world_lin.json
+   ``` 
 
 [AZURE.INCLUDE [iot-hub-gateway-sdk-getstarted-code](../../includes/iot-hub-gateway-sdk-getstarted-code.md)]
 
@@ -87,6 +91,4 @@
 
 [lnk-setupdevbox]: https://github.com/Azure/azure-iot-gateway-sdk/blob/master/doc/devbox_setup.md
 
-
-
-<!---HONumber=Mooncake_0523_2016-->
+<!---HONumber=Mooncake_1205_2016-->

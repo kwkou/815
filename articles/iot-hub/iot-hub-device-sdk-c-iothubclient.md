@@ -14,7 +14,7 @@
      ms.tgt_pltfrm="na"
      ms.workload="na"
      ms.date="09/06/2016"
-     wacn.date="10/10/2016"
+     wacn.date="12/12/2016"
      ms.author="obloch"/>
 
 # 适用于 C 语言的 Azure IoT 设备 SDK – 有关 IoTHubClient 的详细信息
@@ -70,7 +70,7 @@ IoTHubClient_Destroy(iotHubClientHandle);
 
 这些函数的 API 名称中包含“LL”。除此之外，其中每个函数的参数都与其非 LL 的对等项相同。但是，这些函数的行为有一个重要的差异。
 
-当你调用 **IoTHubClient\_CreateFromConnectionString** 时，基础库将创建在后台运行的新线程。此线程将事件发送到 IoT 中心以及从 IoT 中心接收消息。使用“LL”API 时不会创建此类线程。创建后台线程是为了给开发人员提供方便。你无需担心如何明确与 IoT 中心相互发送和接收消息 -- 此操作将在后台自动进行。相比之下，“LL”API 可让你根据需要明确控制与 IoT 中心的通信。
+当你调用 **IoTHubClient\_CreateFromConnectionString** 时，基础库将创建在后台运行的新线程。此线程将事件发送到 IoT 中心以及从 IoT 中心接收消息。使用“LL”API 时不会创建此类线程。创建后台线程是为了给开发人员提供方便。你无需担心如何明确与 IoT 中心相互发送和接收消息 -- 此操作将在后台自动进行。相比之下，借助“LL”API，可根据需要明确控制与 IoT 中心的通信。
 
 为了更好地理解这一点，让我们看一个示例：
 
@@ -106,7 +106,7 @@ while (1)
 IoTHubClient_LL_SetMessageCallback(iotHubClientHandle, ReceiveMessageCallback, &receiveContext)
 ```
 
-经常在循环中调用 **IoTHubClient\_LL\_DoWork** 的原因是每次调用它时，它都会将 *一些* 缓冲的事件发送到 IoT 中心，并检索设备的*下一个* 排队消息。每次调用并不保证发送所有缓冲的事件或检索所有排队的消息。如果你想要发送缓冲区中的所有事件，并继续进行其他处理，可以使用如下代码来替换此循环：
+经常在循环中调用 **IoTHubClient\_LL\_DoWork** 的原因是每次调用它时，它都会将*一些* 缓冲的事件发送到 IoT 中心，并检索设备的*下一个* 排队消息。每次调用并不保证发送所有缓冲的事件或检索所有排队的消息。如果你想要发送缓冲区中的所有事件，并继续进行其他处理，可以使用如下代码来替换此循环：
 
 ```
 IOTHUB_CLIENT_STATUS status;
@@ -128,7 +128,7 @@ IoTHubClient_LL_Destroy(iotHubClientHandle);
 
 基本上，只有一组 API 使用后台线程来发送和接收数据，而另一组 API 不会使用后台线程来执行相同的操作。许多开发人员可能偏好非 LL API，但是当他们想要明确控制网络传输时，较低级别 API 就很有用。例如，有些设备会收集各时间段的数据，并且只按指定的时间间隔引入事件（例如，每小时一次或每天一次）。较低级别 API 可以在与 IoT 中心之间发送和接收数据时提供明确控制的能力。还有一些人纯粹偏好较低级别 API 提供的简单性。所有操作都发生在主线程上，而不是有些操作在后台发生。
 
-无论选择哪种模型，都必须与使用的 API 相一致。如果首先调用 **IoTHubClient\_LL\_CreateFromConnectionString**，则对于任何后续工作，请务必只使用相应的较低级别的 API：
+无论选择哪种模型，都必须与使用的 API 相一致。如果首先调用 **IoTHubClient\_LL\_CreateFromConnectionString**，则对于任何后续工作，请务必只使用相应的较低级别 API：
 
 -   IoTHubClient\_LL\_SendEventAsync
 
@@ -140,7 +140,7 @@ IoTHubClient_LL_Destroy(iotHubClientHandle);
 
 相反的情况也成立。如果首先调用 **IoTHubClient\_CreateFromConnectionString**，请使用非 LL API 进行任何其他处理。
 
-在适用于 C 语言的 Azure IoT 设备 SDK 中，查看 **iothub\_client\_sample\_http** 应用程序是否有较低级别 API 的完整示例。有关非 LL API 的完整示例，请参考 **Iothub\_client\_sample\_amqp** 应用程序。
+在用于 C 语言的 Azure IoT 设备 SDK 中，请查看 **iothub\_client\_sample\_http** 应用程序，获取较低级别 API 的完整示例。有关非 LL API 的完整示例，请参考 **Iothub\_client\_sample\_amqp** 应用程序。
 
 ## 属性处理
 
@@ -271,9 +271,8 @@ IoTHubClient_LL_SetOption(iotHubClientHandle, "timeout", &timeout);
 
 有一些常用的选项：
 
--   **SetBatching**（布尔值）– 如果为 **true**，则将数据分批发送到 IoT 中心。如果为 **false**，则逐个发送消息。默认值为 **false**。请注意，**SetBatching** 选项仅适用于 HTTP 协议，不适用于 AMQP 或 MQTT 协议。
-
--   **Timeout**（无符号整数）– 此值以毫秒表示。如果发送 HTTP 请求或接收响应所花费的时间超过此时间，即表示连接超时。
+-  **SetBatching**（布尔值）– 如果为 **true**，则将数据分批发送到 IoT 中心。如果为 **false**，则逐个发送消息。默认值为 **false**。请注意，**SetBatching** 选项仅适用于 HTTP 协议，不适用于 MQTT 或 AMQP 协议。
+-  **Timeout**（无符号整数）– 此值以毫秒表示。如果发送 HTTP 请求或接收响应所花费的时间超过此时间，即表示连接超时。
 
 batching 选项非常重要。默认情况下，库将逐个引入事件（单个事件是你传递给 **IoTHubClient\_LL\_SendEventAsync** 的任何内容）。如果 batching 选项为 **true**，库将尽可能多地从缓冲区中收集事件（上限为 IoT 中心接受的消息大小上限）。事件批在单个 HTTP 调用中发送到 IoT 中心（单个事件已捆绑到 JSON 数组中）。启用批处理通常可以大幅提升性能，因为网络往返时间会缩减。不过，这也会明显减少带宽，因为你要在事件批中发送一组 HTTP 标头，而不是针对每个事件发送一组标头。除非有使用其他方式的特殊理由，否则建议你启用批处理。
 
@@ -285,14 +284,10 @@ batching 选项非常重要。默认情况下，库将逐个引入事件（单�
 
 若要进一步探索 IoT 中心的功能，请参阅：
 
-- [设计你的解决方案][lnk-design]
-- [使用网关 SDK 模拟设备][lnk-gateway]
-- [使用 Azure 门户管理 IoT 中心][lnk-portal]
+- [使用 IoT 网关 SDK 模拟设备][lnk-gateway]
 
-[lnk-sdks]: /documentation/articles/iot-hub-sdks-summary/
+[lnk-sdks]: /documentation/articles/iot-hub-devguide-sdks/
 
-[lnk-design]: /documentation/articles/iot-hub-guidance/
 [lnk-gateway]: /documentation/articles/iot-hub-linux-gateway-sdk-simulated-device/
-[lnk-portal]: /documentation/articles/iot-hub-manage-through-portal/
 
-<!---HONumber=Mooncake_0725_2016-->
+<!---HONumber=Mooncake_1205_2016-->

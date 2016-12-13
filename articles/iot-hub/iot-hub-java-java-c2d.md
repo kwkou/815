@@ -5,7 +5,8 @@
 	documentationCenter="java"
 	authors="dominicbetts"
 	manager="timlt"
-	editor=""/>
+	editor=""/>  
+
 
 <tags
      ms.service="iot-hub"
@@ -14,7 +15,7 @@
      ms.tgt_pltfrm="na"
      ms.workload="na"
      ms.date="09/13/2016"
-     wacn.date="11/07/2016"
+     wacn.date="12/12/2016"
      ms.author="dobett"/>
 
 # 教程：如何使用 IoT 中心和 Java 发送云到设备的消息
@@ -46,7 +47,7 @@ Azure IoT 中心是一项完全托管的服务，有助于在数百万个 IoT �
 
 + Maven 3。<br/>[准备开发环境][lnk-dev-setup]介绍了如何在 Windows 或 Linux 上安装本教程所用的 Maven。
 
-+ 有效的 Azure 帐户。（如果你没有帐户，只需花费几分钟就能创建一个试用帐户。有关详细信息，请参阅 [Azure Trial][lnk-free-trial]（Azure 试用）。）
++ 有效的 Azure 帐户。（如果没有帐户，只需花费几分钟就能创建一个[帐户][lnk-free-trial]。）
 
 ## 在模拟设备上接收消息
 
@@ -78,7 +79,7 @@ Azure IoT 中心是一项完全托管的服务，有助于在数百万个 IoT �
     client.open();
     ```
 
-    > [AZURE.NOTE] 如果使用 HTTP/1 而不是 AMQP 作为传输，**DeviceClient** 实例不会经常检查 IoT 中心发来的消息（时间间隔小于 25 分钟）。有关 AMQP 和 HTTP/1 支持之间的差异，以及 IoT 中心限制的详细信息，请参阅 [IoT Hub Developer Guide][IoT Hub Developer Guide - C2D]（IoT 中心开发人员指南）。
+   > [AZURE.NOTE] 如果使用 HTTP（而不使用 MQTT 或 AMQP）作为传输，**DeviceClient** 实例不会经常检查 IoT 中心发来的消息（时间间隔小于 25 分钟）。有关 MQTT、AMQP 和 HTTP 支持之间的差异，以及 IoT 中心限制的详细信息，请参阅 [IoT 中心开发人员指南][IoT Hub Developer Guide - C2D]。
 
 ## 发送云到设备的消息
 
@@ -119,7 +120,7 @@ Azure IoT 中心是一项完全托管的服务，有助于在数百万个 IoT �
     ```
     private static final String connectionString = "{yourhubconnectionstring}";
     private static final String deviceId = "{yourdeviceid}";
-    private static final IotHubServiceClientProtocol protocol = IotHubServiceClientProtocol.AMQPS;
+    private static final IotHubServiceClientProtocol protocol = IotHubServiceClientProtocol.AMQP;
     ```
     
 8. 将 **main** 方法替换为以下用于连接到 IoT 中心的代码，将消息发送到设备，然后等待设备已接收并处理消息的通知：
@@ -201,4 +202,4 @@ Azure IoT 中心是一项完全托管的服务，有助于在数百万个 IoT �
 [Azure 门户预览]: https://portal.azure.cn
 [Azure IoT Suite]: /documentation/services/iot-suite/
 
-<!---HONumber=Mooncake_0801_2016-->
+<!---HONumber=Mooncake_1205_2016-->

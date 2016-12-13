@@ -15,7 +15,7 @@
  ms.tgt_pltfrm="na"
  ms.workload="na"
  ms.date="10/05/2016"
- wacn.date="11/07/2016"
+ wacn.date="12/12/2016"
  ms.author="dobett"/>  
 
 
@@ -23,7 +23,7 @@
 
 每个 IoT 中心都有一个设备标识注册表，用于在服务中创建各设备的资源（例如包含即时云到设备消息的队列）。设备标识注册表还可用于控制对面向设备的终结点的访问。本文说明如何在设备标识注册表中批量导入和导出设备标识。
 
-导入和导出操作在 *作业* 的上下文中进行，可让用户对 IoT 中心执行批量服务操作。
+导入和导出操作在*作业*的上下文中进行，可让用户对 IoT 中心执行批量服务操作。
 
 **RegistryManager** 类包含使用**作业**框架的 **ExportDevicesAsync** 和 **ImportDevicesAsync** 方法。这些方法可让你导出、导入和同步整个 IoT 中心设备注册表。
 
@@ -72,13 +72,13 @@ while(true)
 
 **ExportDevicesAsync** 方法需要两个参数：
 
-*  包含 Blob 容器 URI 的 *字符串* 。此 URI 必须包含可授予容器写入权限的 SAS 令牌。作业在此容器中创建用于存储序列化导出设备数据的块 Blob。SAS 令牌必须包含这些权限：
+*  包含 Blob 容器 URI 的*字符串*。此 URI 必须包含可授予容器写入权限的 SAS 令牌。作业在此容器中创建用于存储序列化导出设备数据的块 Blob。SAS 令牌必须包含这些权限：
     
     ```
     SharedAccessBlobPermissions.Write | SharedAccessBlobPermissions.Read | SharedAccessBlobPermissions.Delete
     ```
 
-*  指示你是否要在导出数据中排除身份验证密钥的 *布尔值* 。如果为 **false**，则身份验证密钥将包含在导出输出中；否则像为 **null** 时一样导出密钥。
+*  指示你是否要在导出数据中排除身份验证密钥的*布尔值*。如果为 **false**，则身份验证密钥将包含在导出输出中；否则像为 **null** 时一样导出密钥。
 
 下面的 C# 代码段演示了如何启动在导出数据中包含设备身份验证密钥的导出作业，然后对完成情况进行轮询：
 
@@ -142,13 +142,13 @@ using (var streamReader = new StreamReader(await blob.OpenReadAsync(AccessCondit
 
 **ImportDevicesAsync** 方法有两个参数：
 
-*  一个 *字符串* ，其中包含作为作业的 *输入* 的 [Azure 存储](/documentation/services/storage/) Blob 容器的 URI。此 URI 必须包含可授予容器读取权限的 SAS 令牌。此容器必须包含名为 **devices.txt** 的 Blob，而此 Blob 中包含要导入到设备标识注册表的序列化设备数据。导入数据必须包含使用 **ExportImportDevice** 作业所创建的相同 JSON 格式的设备信息。SAS 令牌必须包含这些权限：
+*  一个*字符串*，其中包含作为作业的*输入*的 [Azure 存储](/documentation/services/storage/) Blob 容器的 URI。此 URI 必须包含可授予容器读取权限的 SAS 令牌。此容器必须包含名为 **devices.txt** 的 Blob，而此 Blob 中包含要导入到设备标识注册表的序列化设备数据。导入数据必须包含使用 **ExportImportDevice** 作业所创建的相同 JSON 格式的设备信息。SAS 令牌必须包含这些权限：
 
     ```
     SharedAccessBlobPermissions.Read
     ```
 
-*  一个 *字符串* ，其中包含作为作业的 *输出* 的 [Azure 存储](/documentation/services/storage/) Blob 容器的 URI。作业在此容器中创建块 Blob，用于存储已完成的导入**作业**中的任何错误信息。SAS 令牌必须包含这些权限：
+*  一个*字符串*，其中包含作为作业的*输出*的 [Azure 存储](/documentation/services/storage/) Blob 容器的 URI。作业在此容器中创建块 Blob，用于存储已完成的导入**作业**中的任何错误信息。SAS 令牌必须包含这些权限：
     
     ```
     SharedAccessBlobPermissions.Write | SharedAccessBlobPermissions.Read | SharedAccessBlobPermissions.Delete
@@ -193,7 +193,7 @@ JobProperties importJob = await registryManager.ImportDevicesAsync(containerSasU
 以下 C# 代码示例说明了如何生成多个具有下述功能的设备标识：
 
 - 包括身份验证密钥。
-- 将该设备信息写入 Azure 存储块 blob。
+- 将该设备信息写入块 blob。
 - 将设备导入设备标识注册表。
 
 ```
@@ -222,7 +222,7 @@ for (var i = 0; i < 1000; i++)
   serializedDevices.Add(JsonConvert.SerializeObject(deviceToAdd));
 }
 
-// Write this list to the Azure storage blob
+// Write this list to the blob
 var sb = new StringBuilder();
 serializedDevices.ForEach(serializedDevice => sb.AppendLine(serializedDevice));
 await blob.DeleteIfExistsAsync();
@@ -237,7 +237,7 @@ using (CloudBlobStream stream = await blob.OpenWriteAsync())
   }
 }
 
-// Call import using the same storage blob to add new devices!
+// Call import using the same blob to add new devices!
 // This normally takes 1 minute per 100 devices the normal way
 JobProperties importJob = await registryManager.ImportDevicesAsync(containerSasUri, containerSasUri);
 
@@ -258,7 +258,6 @@ while(true)
 ```
 
 ## 导入设备示例 – 批量删除
-
 以下代码示例演示如何删除使用前面代码示例添加的设备：
 
 ```
@@ -288,7 +287,7 @@ using (CloudBlobStream stream = await blob.OpenWriteAsync())
   }
 }
 
-// Step 3: Call import using the same storage blob to delete all devices!
+// Step 3: Call import using the same blob to delete all devices!
 importJob = await registryManager.ImportDevicesAsync(containerSasUri, containerSasUri);
 
 // Wait until job is finished
@@ -347,7 +346,7 @@ static string GetContainerSasUri(CloudBlobContainer container)
 若要进一步探索 IoT 中心的功能，请参阅：
 
 - [开发人员指南][lnk-devguide]
-- [使用网关 SDK 模拟设备][lnk-gateway]
+- [使用 IoT 网关 SDK 模拟设备][lnk-gateway]
 
 [lnk-metrics]: /documentation/articles/iot-hub-metrics/
 [lnk-monitor]: /documentation/articles/iot-hub-operations-monitoring/
@@ -355,4 +354,4 @@ static string GetContainerSasUri(CloudBlobContainer container)
 [lnk-devguide]: /documentation/articles/iot-hub-devguide/
 [lnk-gateway]: /documentation/articles/iot-hub-linux-gateway-sdk-simulated-device/
 
-<!---HONumber=Mooncake_0801_2016-->
+<!---HONumber=Mooncake_1205_2016-->

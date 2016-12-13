@@ -15,7 +15,7 @@
  ms.tgt_pltfrm="na"
  ms.workload="na"
  ms.date="09/30/2016"
- wacn.date="11/07/2016" 
+ wacn.date="12/12/2016" 
  ms.author="dobett"/>  
 
 
@@ -70,7 +70,6 @@ Azure IoT 中心可根据共享访问策略和设备标识注册表安全凭据�
 有关如何构造和使用安全令牌的详细信息，请参阅 [IoT Hub security tokens][lnk-sas-tokens]（IoT 中心安全令牌）。
 
 ### 协议详情
-
 每个支持的协议（如 MQTT、AMQP 和 HTTP）以不同方式传输令牌。
 
 使用 MQTT 时，CONNECT 数据包具有用作 ClientId 的 deviceId，在 Username 字段中具有 {iothubhostname}/{deviceId}，在 Password 字段中具有 SAS 令牌。{iothubhostname} 应是 IoT 中心的完整 CName（例如，contoso.azure-devices.cn）。
@@ -93,7 +92,7 @@ HTTP 通过在**授权**请求标头中包含有效的令牌来实施身份验�
 用户名（DeviceId 区分大小写）：
 `iothubname.azure-devices.cn/DeviceId`
 
-密码（使用设备资源管理器生成 SAS）：`SharedAccessSignature sr=iothubname.azure-devices.cn%2fdevices%2fDeviceId&sig=kPszxZZZZZZZZZZZZZZZZZAhLT%2bV7o%3d&se=1487709501`
+密码（使用设备资源管理器生成 SAS 令牌）：`SharedAccessSignature sr=iothubname.azure-devices.cn%2fdevices%2fDeviceId&sig=kPszxZZZZZZZZZZZZZZZZZAhLT%2bV7o%3d&se=1487709501`
 
 > [AZURE.NOTE] [Azure IoT Hub SDKs][lnk-sdks]（Azure IoT 中心 SDK）在连接到服务时自动生成令牌。在某些情况下，SDK 不支持所有的协议或所有身份验证方法。
 
@@ -117,7 +116,7 @@ IoT 中心使用安全令牌对设备和服务进行身份验证，以避免在�
 IoT 中心还允许设备使用 [X.509 证书][lnk-x509]向 IoT 中心进行身份验证。
 
 ### 安全令牌结构
-可以使用安全令牌向设备和服务授予限时访问 IoT 中心特定功能的权限。为确保只有经过授权的设备和服务能够连接，安全令牌必须使用共享访问策略密钥或存储在标识注册表中并带有设备标识的对称密钥进行签名。
+可以使用安全令牌向设备和服务授予限时访问 IoT 中心特定功能的权限。若要确保只有经过授权的设备和服务能够连接，安全令牌必须使用共享访问密钥或存储在标识注册表中并带有设备标识的对称密钥进行签名。
 
 使用共享访问策略密钥进行签名的令牌可以授权访问与共享访问策略权限相关的所有功能。另一方面，使用设备标识的对称密钥进行签名的令牌只能向相关设备标识授予 **DeviceConnect** 权限。
 
@@ -128,18 +127,16 @@ IoT 中心还允许设备使用 [X.509 证书][lnk-x509]向 IoT 中心进行身�
 以下是预期值：
 
 | 值 | 说明 |
-| ----- | ----------- |
-| {signature} | HMAC-SHA256 签名字符串的格式为：`{URL-encoded-resourceURI} + "\n" + expiry`。**重要说明**：密钥是从 base64 解码得出的，用作执行 HMAC-SHA256 计算的密钥。 |
-| {resourceURI} | 此令牌可以访问的终结点的 URI 前缀（根据分段）以 IoT 中心的主机名开始（无协议）。例如 `myHub.azure-devices.cn/devices/device1` |
-| {expiry} | 从纪元 1970 年 1 月 1日 00:00:00 UTC 时间至今秒数的 UTF8 字符串。 |
-| {URL-encoded-resourceURI} | 小写资源 URI 的小写 URL 编码 |
-| {policyName} | 此令牌所引用的共享访问策略名称。在令牌引用设备注册表凭据的情况下不存在。 |
+| --- | --- |
+| {signature} |HMAC-SHA256 签名字符串的格式为：`{URL-encoded-resourceURI} + "\n" + expiry`。**重要说明**：密钥是从 base64 解码得出的，用作执行 HMAC-SHA256 计算的密钥。 |
+| {resourceURI} |此令牌可以访问的终结点的 URI 前缀（根据分段）以 IoT 中心的主机名开始（无协议）。例如 `myHub.azure-devices.cn/devices/device1` |
+| {expiry} |从纪元 1970 年 1 月 1日 00:00:00 UTC 时间至今秒数的 UTF8 字符串。 |
+| {URL-encoded-resourceURI} |小写资源 URI 的小写 URL 编码 |
+| {policyName} |此令牌所引用的共享访问策略名称。在令牌引用设备注册表凭据的情况下不存在。 |
 
 **有关前缀的说明**：URI 前缀是根据分段而不是字符计算的。例如，`/a/b` 是 `/a/b/c` 的前缀，而不是 `/a/bc` 的前缀。
 
-下面是一个根据输入 `resourceUri, signingKey, policyName, expiresInMins` 计算令牌的 Node.js 函数。以下各节将详细讲解如何初始化不同令牌用例的不同输入。
-
-    var crypto = require('crypto');
+以下 Node.js 代码片段显示名为 **generateSasToken** 的函数，该函数通过输入 `resourceUri, signingKey, policyName, expiresInMins` 计算令牌。以下各节将详细讲解如何初始化不同令牌用例的不同输入。
 
     var generateSasToken = function(resourceUri, signingKey, policyName, expiresInMins) {
         resourceUri = encodeURIComponent(resourceUri.toLowerCase()).toLowerCase();
@@ -149,45 +146,48 @@ IoT 中心还允许设备使用 [X.509 证书][lnk-x509]向 IoT 中心进行身�
         expires = Math.ceil(expires);
         var toSign = resourceUri + '\n' + expires;
 
-        // using crypto
-        var decodedPassword = new Buffer(signingKey, 'base64').toString('binary');
-        const hmac = crypto.createHmac('sha256', decodedPassword);
+        // Use crypto
+        var hmac = crypto.createHmac('sha256', new Buffer(signingKey, 'base64'));
         hmac.update(toSign);
-        var base64signature = hmac.digest('base64');
-        var base64UriEncoded = encodeURIComponent(base64signature);
+        var base64UriEncoded = encodeURIComponent(hmac.digest('base64'));
 
-        // construct autorization string
+        // Construct autorization string
         var token = "SharedAccessSignature sr=" + resourceUri + "&sig="
         + base64UriEncoded + "&se=" + expires;
         if (policyName) token += "&skn="+policyName;
-        // console.log("signature:" + token);
         return token;
     };
- 
- 为方便比较，下面提供了等效的 Python 代码：
- 
+
+作为对照，用于生成安全令牌的等效 Python 代码是：
+
     from base64 import b64encode, b64decode
     from hashlib import sha256
+    from time import time
+    from urllib import quote_plus, urlencode
     from hmac import HMAC
-    from urllib import urlencode
-    
-    def generate_sas_token(uri, key, policy_name='device', expiry=3600):
+
+    def generate_sas_token(uri, key, policy_name, expiry=3600):
         ttl = time() + expiry
-        sign_key = "%s\n%d" % (uri, int(ttl))
+        sign_key = "%s\n%d" % ((quote_plus(uri)), int(ttl))
+        print sign_key
         signature = b64encode(HMAC(b64decode(key), sign_key, sha256).digest())
-     
-        return 'SharedAccessSignature ' + urlencode({
+
+        rawtoken = {
             'sr' :  uri,
             'sig': signature,
-            'se' : str(int(ttl)),
-            'skn': policy_name
-        })
+            'se' : str(int(ttl))
+        }
+
+        if policy_name is not None:
+            rawtoken['skn'] = policy_name
+
+        return 'SharedAccessSignature ' + urlencode(rawtoken)
 
 > [AZURE.NOTE] 由于 IoT 中心计算机会验证令牌的有效期，因此生成令牌的计算机的时间偏差必须很小。
 
 ### <a name="using-sas-tokens-as-a-device"></a> 在设备客户端中使用 SAS 令牌
 
-有两种方法可以使用安全令牌来获取 IoT 中心的 **DeviceConnect** 权限：使用[设备标识注册表中的对称设备密钥](#use-a-symmetric-key-in-the-identity-registry)，或者使用[共享访问策略密钥](#use-a-shared-access-policy)。
+有两种方法可以使用安全令牌来获取 IoT 中心的 **DeviceConnect** 权限：使用[设备标识注册表中的对称设备密钥](#use-a-symmetric-key-in-the-identity-registry)，或者使用[共享访问密钥](#use-a-shared-access-policy)。
 
 请记住，可从设备访问的所有功能都故意显示在前缀为 `/devices/{deviceId}` 的终结点上。
 
@@ -196,7 +196,7 @@ IoT 中心还允许设备使用 [X.509 证书][lnk-x509]向 IoT 中心进行身�
 面向设备的终结点包括（无论任何协议）：
 
 | 终结点 | 功能 |
-| ----- | ----------- |
+| --- | --- |
 | `{iot hub host name}/devices/{deviceId}/messages/events` | 发送设备到云的消息。 |
 | `{iot hub host name}/devices/{deviceId}/devicebound`   | 接收云到设备的消息。 |
 
@@ -222,7 +222,7 @@ IoT 中心还允许设备使用 [X.509 证书][lnk-x509]向 IoT 中心进行身�
 
     SharedAccessSignature sr=myhub.azure-devices.cn%2fdevices%2fdevice1&sig=13y8ejUk2z7PLmvtwR5RqlGBOVwiq7rQR3WZ5xZX3N4%3D&se=1456971697
 
-> [AZURE.NOTE] 可以使用 .NET 工具设备资源管理器来生成安全令牌。
+> [AZURE.NOTE] 可以使用 .NET 工具设备资源管理器来生成 SAS 令牌。
 
 ### <a name="use-a-shared-access-policy"></a> 使用共享访问策略
 
@@ -263,7 +263,7 @@ IoT 中心还允许设备使用 [X.509 证书][lnk-x509]向 IoT 中心进行身�
 以下是终结点上显示的服务功能：
 
 | 终结点 | 功能 |
-| ----- | ----------- |
+| --- | --- |
 | `{iot hub host name}/devices` | 创建、更新、检索和删除设备标识。 |
 | `{iot hub host name}/messages/events` | 接收设备到云的消息 |
 | `{iot hub host name}/servicebound/feedback` | 接收云到设备的消息的反馈。 |
@@ -298,17 +298,16 @@ IoT 中心还允许设备使用 [X.509 证书][lnk-x509]向 IoT 中心进行身�
 
 设备可以使用 X.509 证书或安全令牌进行身份验证，但不能同时使用这两者。
 
-### 为设备注册 X.509 客户端证书
-
-适用于 C# 的 Azure IoT 服务 SDK（版本 1.0.8+）支持注册使用 X.509 客户端证书进行身份验证的设备。其他 API（如设备的导入/导出）还支持 X.509 客户端证书。
+### 为设备注册 X.509 证书
+用于 C# 的 Azure IoT 服务 SDK （版本 1.0.8+）支持注册使用 X.509 证书进行身份验证的设备。其他 API（例如设备的导入/导出）也支持 X.509 证书。
 
 ### C# 支持
 
 **RegistryManager** 类提供了用于注册设备的编程方式。具体而言，使用 **AddDeviceAsync** 和 **UpdateDeviceAsync** 方法，用户可以在 Iot 中心设备标识注册表中注册和更新设备。这两种方法均采用 **Device** 实例作为输入。**Device** 类包括 **Authentication** 属性，以允许用户指定主要和次要 X.509 证书指纹。指纹表示 X.509 证书的 SHA-1 哈希值（使用二进制 DER 编码存储）。用户可以选择指定主要指纹和/或次要指纹。为了处理证书滚动更新方案，支持主要和次要指纹。
 
-> [AZURE.NOTE] IoT 中心不需要也不存储整个 X.509 客户端证书，仅存储指纹。
+> [AZURE.NOTE] IoT 中心不需要也不存储整个 X.509 证书，它仅存储指纹。
 
-下面是使用 X.509 客户端证书注册设备的示例 C# 代码片段：
+下面是使用 X.509 证书注册设备的示例 C# 代码片段：
 
 ```
 var device = new Device(deviceId)
@@ -325,13 +324,11 @@ RegistryManager registryManager = RegistryManager.CreateFromConnectionString(dev
 await registryManager.AddDeviceAsync(device);
 ```
 
-### 在运行时操作期间使用 X.509 客户端证书
-
-用于 .NET 的 Azure IoT 设备 SDK（版本 1.0.11+）支持使用 X.509 客户端证书。
+### 在运行时操作期间使用 X.509 证书
+用于 .NET 的 Azure IoT 设备 SDK （版本 1.0.11+）支持使用 X.509 证书。
 
 ### C# 支持
-
-类 **DeviceAuthenticationWithX509Certificate** 支持使用 X.509 客户端证书创建 **DeviceClient** 实例。
+类 **DeviceAuthenticationWithX509Certificate** 支持使用 X.509 证书创建 **DeviceClient** 实例。
 
 下面是示例代码片段：
 
@@ -364,7 +361,7 @@ var deviceClient = DeviceClient.Create("<IotHub DNS HostName>", authMethod);
 
 ### 与自定义网关的比较
 
-令牌服务模式是使用 IoT 中心实现自定义标识注册表/身份验证方案的建议方式。提供这种建议是因为 IoT 中心继续处理大部分解决方案流量。但在某些情况下，自定义身份验证方案和协议过度交织，因此需要可处理所有流量（ *自定义网关* ）的服务。[传输层安全 (TLS) 和预共享密钥 (PSK)][lnk-tls-psk] 就是这种服务的例子。有关详细信息，请参阅[协议网关][lnk-protocols]主题。
+令牌服务模式是使用 IoT 中心实现自定义标识注册表/身份验证方案的建议方式。提供这种建议是因为 IoT 中心继续处理大部分解决方案流量。但在某些情况下，自定义身份验证方案和协议过度交织，因此需要可处理所有流量（*自定义网关*）的服务。[传输层安全 (TLS) 和预共享密钥 (PSK)][lnk-tls-psk] 就是这种服务的例子。有关详细信息，请参阅[协议网关][lnk-protocols]主题。
 
 ## 参考主题：
 
@@ -375,20 +372,20 @@ var deviceClient = DeviceClient.Create("<IotHub DNS HostName>", authMethod);
 下表列出了可用于控制对 IoT 中心的访问的权限。
 
 | 权限 | 说明 |
-| --------------------- | ----- |
-| **RegistryRead** | 授予对设备标识注册表的读取访问权限。有关详细信息，请参阅 [Device identity registry][lnk-identity-registry]（设备标识注册表）。 |
-| **RegistryReadWrite** | 授予对设备标识注册表的读取和写入访问权限。有关详细信息，请参阅 [Device identity registry][lnk-identity-registry]（设备标识注册表）。 |
-| **ServiceConnect** | 授予对面向云服务的通信和监视终结点的访问权限。例如，它授权后端云服务接收设备到云的消息、发送云到设备的消息，以及检索对应的传送确认。 |
-| **DeviceConnect** | 授予对面向设备的通信终结点的访问权限。例如，它授予发送设备到云的消息和接收云到设备的消息的权限。此权限由设备使用。 |
+| --- | --- |
+| **RegistryRead** |授予对设备标识注册表的读取访问权限。有关详细信息，请参阅 [Device identity registry][lnk-identity-registry]（设备标识注册表）。 |
+| **RegistryReadWrite** |授予对设备标识注册表的读取和写入访问权限。有关详细信息，请参阅 [Device identity registry][lnk-identity-registry]（设备标识注册表）。 |
+| **ServiceConnect** |授予对面向云服务的通信和监视终结点的访问权限。例如，它授权后端云服务接收设备到云的消息、发送云到设备的消息，以及检索对应的传送确认。 |
+| **DeviceConnect** |授予对面向设备的通信终结点的访问权限。例如，它授予发送设备到云的消息和接收云到设备的消息的权限。此权限由设备使用。 |
 
 ## 其他参考资料
 
 开发人员指南中的其他参考主题包括：
 
-- [IoT 中心终结点][lnk-endpoints]说明每个 IoT 中心针对运行时和管理操作公开的各种终结点。
-- [限制和配额][lnk-quotas]说明适用于 IoT 中心服务的配额，以及使用服务时可预期的限制行为。
-- [IoT 中心设备和服务 SDK][lnk-sdks] 列出在开发与 IoT 中心交互的设备和服务应用程序时使用的各种语言 SDK。
-- [克隆、方法和作业的查询语言][lnk-query]描述可用于从 IoT 中心检索有关设备克隆、方法和作业的信息的查询语言。
+- [IoT 中心终结点][lnk-endpoints]，说明了每个 IoT 中心针对运行时和管理操作公开的各种终结点。
+- [限制和配额][lnk-quotas]，说明了适用于 IoT 中心服务的配额，以及使用服务时预期会碰到的限制行为。
+- [IoT 中心设备和服务 SDK][lnk-sdks]，列出了在开发与 IoT 中心交互的设备和服务应用程序时可以使用的各种语言 SDK。
+- [设备克隆、方法和作业的 IoT 中心查询语言][lnk-query]介绍从 IoT 中心检索有关设备克隆、方法和作业的信息时可以使用的查询语言。
 - [IoT 中心 MQTT 支持][lnk-devguide-mqtt]提供有关 IoT 中心对 MQTT 协议的支持的详细信息。
 
 ## 后续步骤
@@ -443,4 +440,4 @@ var deviceClient = DeviceClient.Create("<IotHub DNS HostName>", authMethod);
 [lnk-c2d-tutorial]: /documentation/articles/iot-hub-csharp-csharp-c2d/
 [lnk-d2c-tutorial]: /documentation/articles/iot-hub-csharp-csharp-process-d2c/
 
-<!---HONumber=Mooncake_1031_2016-->
+<!---HONumber=Mooncake_1205_2016-->

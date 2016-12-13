@@ -7,6 +7,7 @@
 	manager="timlt"
 	editor=""/>  
 
+
 <tags
      ms.service="iot-hub"
      ms.devlang="cpp"
@@ -14,16 +15,14 @@
      ms.tgt_pltfrm="na"
      ms.workload="na"
      ms.date="08/29/2016"
-     wacn.date="11/07/2016"
+     wacn.date="12/12/2016"
      ms.author="andbuc"/>  
 
 
 
-# IoT 网关 SDK（Beta 版）– 使用 Windows 通过模拟设备发送设备至云消息
+# Azure IoT 网关 SDK - 使用 Windows 通过模拟设备发送设备到云消息
 
 [AZURE.INCLUDE [iot-hub-gateway-sdk-simulated-selector](../../includes/iot-hub-gateway-sdk-simulated-selector.md)]
-
-[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-sdk-developer-differences.md)]
 
 ## 生成并运行示例
 
@@ -47,70 +46,90 @@
 - **mapping** 模块将模拟设备的 MAC 地址映射到 IoT 中心设备 ID。确保 **deviceId** 值与添加到 IoT 中心的两台设备的 ID 一致，确保 **deviceKey** 值包含两台设备的密钥。
 - **BLE1** 和 **BLE2** 模块是模拟设备。注意其 MAC 地址是否与 **mapping** 模块中的地址一致。
 - **Logger** 模块将网关活动记录到一个文件中。
-- 如下所示的 **module path** 值假定你已将网关 SDK 存储库克隆到了 **C:** 盘的根目录。如果将该存储库下载到其他位置，则需要相应地调整 **module path** 值。
+- 如下所示的 **module path** 值假设已将 IoT 网关 SDK 存储库克隆到 **C:** 盘的根目录。如果将该存储库下载到其他位置，则需要相应地调整 **module path** 值。
 - JSON 文件的底部的 **links** 数组将 **BLE1** 和 **BLE2** 模块连接到 **mapping** 模块，并将 **mapping** 模块连接到 **IoTHub** 模块。它还确保 **Logger** 模块记录所有消息。
 
 ```
 {
     "modules" :
-    [ 
-        {
-            "module name" : "IoTHub",
-            "module path" : "C:\\azure-iot-gateway-sdk\\build\\modules\\iothub\\Debug\\iothub_hl.dll",
-            "args" : 
-            {
-                "IoTHubName" : "{Your IoT hub name}",
-                "IoTHubSuffix" : "azure-devices.cn"
-                "Transport": "HTTP"
-            }
+    [
+      {
+        "name": "IotHub",
+        "loader": {
+          "name": "native",
+          "entrypoint": {
+            "module.path": "..\\..\\..\\modules\\iothub\\Debug\\iothub.dll"
+          }
+          },
+          "args": {
+            "IoTHubName": "<<insert here IoTHubName>>",
+            "IoTHubSuffix": "<<insert here IoTHubSuffix>>",
+            "Transport": "HTTP"
+          }
         },
-        {
-            "module name" : "mapping",
-            "module path" : "C:\\azure-iot-gateway-sdk\\build\\modules\\identitymap\\Debug\\identity_map_hl.dll",
-            "args" : 
-            [
-                {
-                    "macAddress" : "01-01-01-01-01-01",
-                    "deviceId"   : "{Device ID 1}",
-                    "deviceKey"  : "{Device key 1}"
-                },
-                {
-                    "macAddress" : "02-02-02-02-02-02",
-                    "deviceId"   : "{Device ID 2}",
-                    "deviceKey"  : "{Device key 2}"
-                }
-            ]
-        },
-        {
-            "module name":"BLE1",
-            "module path" : "C:\\azure-iot-gateway-sdk\\build\\modules\\simulated_device\\Debug\\simulated_device_hl.dll",
-            "args":
+      {
+        "name": "mapping",
+        "loader": {
+          "name": "native",
+          "entrypoint": {
+            "module.path": "..\\..\\..\\modules\\identitymap\\Debug\\identity_map.dll"
+          }
+          },
+          "args": [
             {
-                "macAddress" : "01-01-01-01-01-01"
-            }
-        },
-        {
-            "module name":"BLE2",
-            "module path" : "C:\\azure-iot-gateway-sdk\\build\\modules\\simulated_device\\Debug\\simulated_device_hl.dll",
-            "args":
+              "macAddress": "01:01:01:01:01:01",
+              "deviceId": "<<insert here deviceId>>",
+              "deviceKey": "<<insert here deviceKey>>"
+            },
             {
-                "macAddress" : "02-02-02-02-02-02"
+              "macAddress": "02:02:02:02:02:02",
+              "deviceId": "<<insert here deviceId>>",
+              "deviceKey": "<<insert here deviceKey>>"
             }
+          ]
         },
-        {
-            "module name":"Logger",
-            "module path" : "C:\\azure-iot-gateway-sdk\\build\\modules\\logger\\Debug\\logger_hl.dll",
-            "args":
-            {
-                "filename":"C:\\azure-iot-gateway-sdk\\deviceCloudUploadGatewaylog.log"
-            }
+      {
+        "name": "BLE1",
+        "loader": {
+          "name": "native",
+          "entrypoint": {
+            "module.path": "..\\..\\..\\modules\\simulated_device\\Debug\\simulated_device.dll"
+          }
+          },
+          "args": {
+            "macAddress": "01:01:01:01:01:01"
+          }
+        },
+      {
+        "name": "BLE2",
+        "loader": {
+          "name": "native",
+          "entrypoint": {
+            "module.path": "..\\..\\..\\modules\\simulated_device\\Debug\\simulated_device.dll"
+          }
+          },
+          "args": {
+            "macAddress": "02:02:02:02:02:02"
+          }
+        },
+      {
+        "name": "Logger",
+        "loader": {
+          "name": "native",
+          "entrypoint": {
+            "module.path": "..\\..\\..\\modules\\logger\\Debug\\logger.dll"
+          }
+        },
+        "args": {
+          "filename": "deviceCloudUploadGatewaylog.log"
         }
+      }
     ],
     "links" : [
         { "source" : "*", "sink" : "Logger" },
         { "source" : "BLE1", "sink" : "mapping" },
         { "source" : "BLE2", "sink" : "mapping" },
-        { "source" : "mapping", "sink" : "IoTHub" }
+        { "source" : "mapping", "sink" : "IotHub" }
     ]
 }
 ```
@@ -121,19 +140,16 @@
 
 1. 在命令提示符下，浏览到本地 **azure-iot-gateway-sdk** 存储库副本中的根文件夹。
 2. 运行以下命令：
-  
+   
     ```
     build\samples\simulated_device_cloud_upload\Debug\simulated_device_cloud_upload_sample.exe samples\simulated_device_cloud_upload\src\simulated_device_cloud_upload_win.json
     ```
-
 3. 可使用[设备资源管理器或 iothub-explorer][lnk-explorer-tools] 工具来监视 IoT 中心从网关接收的消息。
 
-
 ## 后续步骤
+如果想要深入了解 IoT 网关 SDK 并尝试一些代码示例，请访问以下开发人员教程和资源：
 
-如果想要深入了解网关 SDK 并尝试一些代码示例，请访问以下开发人员教程和资源：
-
-- [使用网关 SDK 从实际设备发送设备到云的消息][lnk-physical-device]
+- [使用 IoT 网关 SDK 从实际设备发送设备到云消息][lnk-physical-device]
 - [Azure IoT 网关 SDK][lnk-gateway-sdk]
 
 若要进一步探索 IoT 中心的功能，请参阅：
@@ -141,6 +157,7 @@
 - [开发人员指南][lnk-devguide]
 
 <!-- Links -->
+
 [lnk-setupdevbox]: https://github.com/Azure/azure-iot-gateway-sdk/blob/master/doc/devbox_setup.md
 [lnk-create-hub]: /documentation/articles/iot-hub-manage-through-portal/
 [lnk-free-trial]: /pricing/1rmb-trial/
@@ -152,4 +169,4 @@
 [lnk-devguide]: /documentation/articles/iot-hub-devguide/
 [lnk-create-hub]: /documentation/articles/iot-hub-create-through-portal/
 
-<!---HONumber=Mooncake_0523_2016-->
+<!---HONumber=Mooncake_1205_2016-->
