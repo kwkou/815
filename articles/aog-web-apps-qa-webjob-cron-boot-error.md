@@ -45,7 +45,7 @@ json
 - 每天上午 `9:30：0 30 9 * * *`
 - 各工作日的上午 `9:30：0 30 9 * * 1-5`
 
-> 注意：从 Visual Studio 部署 WebJobs 时，请确保将 `settings.job` 文件属性标记为“如果较新则复制”。
+>[AZURE.NOTE] 从 Visual Studio 部署 WebJobs 时，请确保将 `settings.job` 文件属性标记为 “如果较新则复制”。
 
 Azure 平台默认是 UTC 时间，所以如果要基于中国时间配置则需要转换：中国时间 = UTC+8。
 
