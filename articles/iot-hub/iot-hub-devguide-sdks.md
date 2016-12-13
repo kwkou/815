@@ -15,13 +15,13 @@
  ms.tgt_pltfrm="na"
  ms.workload="na"
  ms.date="09/30/2016"
- wacn.date="11/07/2016"
+ wacn.date="12/12/2016"
  ms.author="dobett"/>  
 
 
-# IoT 中心 SDK
+# Azure IoT SDK
 
-## IoT 中心设备 SDK
+## Azure IoT 设备 SDK
 
 Microsoft Azure IoT 设备 SDK 包含的代码可帮助构建连接到 Azure IoT 中心服务并由这些服务管理的设备和应用程序。
 
@@ -41,7 +41,7 @@ Microsoft Azure IoT 设备 SDK 包含的代码可帮助构建连接到 Azure IoT
 
 - [OS 平台和硬件与设备 SDK 的兼容性][lnk-compatibility]
 
-## IoT 中心服务 SDK
+## Azure IoT 服务 SDK
 
 Microsoft Azure IoT 服务 SDK 包含的代码可帮助构建直接与 IoT 中心进行交互以管理设备和安全性的应用程序。
 
@@ -77,7 +77,7 @@ Microsoft Azure IoT 服务 SDK 包含的代码可帮助构建直接与 IoT 中�
 此 IoT 中心开发人员指南中的其他参考主题包括：
 
 - [IoT 中心终结点][lnk-devguide-endpoints]
-- [克隆、方法和作业的查询语言][lnk-devguide-query]
+- [设备克隆、方法和作业的 IoT 中心查询语言][lnk-devguide-query]
 - [配额和限制][lnk-devguide-quotas]
 - [IoT 中心 MQTT 支持][lnk-devguide-mqtt]
 
@@ -109,4 +109,4 @@ Microsoft Azure IoT 服务 SDK 包含的代码可帮助构建直接与 IoT 中�
 [lnk-devguide-query]: /documentation/articles/iot-hub-devguide-query-language/
 [lnk-devguide-mqtt]: /documentation/articles/iot-hub-mqtt-support/
 
-<!---HONumber=Mooncake_1031_2016-->
+<!---HONumber=Mooncake_1205_2016-->

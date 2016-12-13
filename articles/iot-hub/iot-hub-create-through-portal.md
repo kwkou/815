@@ -15,7 +15,7 @@
 	 ms.tgt_pltfrm="na"
 	 ms.workload="na"
 	 ms.date="09/30/2016"
-	 wacn.date="11/07/2016"
+	 wacn.date="12/12/2016"
 	 ms.author="dobett"/>  
 
 
@@ -25,8 +25,7 @@
 
 
 ## 介绍
-
-本文介绍如何在门户中查找 IoT 中心服务，以及如何创建和管理 IoT 中心。
+本文介绍如何在 Azure 门户中查找 IoT 中心服务，以及如何创建和管理 IoT 中心。
 
 ## 在哪里可以找到 IoT 中心
 
@@ -58,9 +57,10 @@
 
 **标准 S3**：IoT 中心 S3 版专为生成大量数据的 IoT 解决方案而设计。S3 版的每个计价单位让你能够在所有已连接设备间每天传输最多 3 亿条消息。
 
-![][4]
+![][4]  
 
-> [AZURE.NOTE] IoT 中心只允许每个订阅有一个免费中心。
+
+> [AZURE.NOTE] IoT 中心只允许每个 Azure 订阅有一个免费中心。
 
 ### IoT 中心单位
 
@@ -76,8 +76,7 @@
 
 
 ### 选择订阅
-
-Azure IoT 中心自动显示用户帐户所链接的订阅列表。可以在此处选择其中一个选项，将 IoT 中心与该订阅关联。
+Azure IoT 中心自动显示用户帐户所链接的 Azure 订阅列表。可在此处选择其中一个选项，将 IoT 中心与该 Azure 订阅关联。
 
 ### 选择位置
 
@@ -135,9 +134,10 @@ Azure IoT 中心自动显示用户帐户所链接的订阅列表。可以在此�
 现有 IoT 中心的定价可通过“定价”设置来更改，但存在以下例外情况：
 
 - 在当前的实现中，使用免费 SKU 的 IoT 中心无法更改为付费型 SKU 层，反之亦然。
-- 订阅中只能有一个免费层 IoT 中心。
+- Azure 订阅中只能有一个免费层 IoT 中心。
 
-![][12]
+![][12]  
+
 
 只有在当天发送的消息数目不冲突时，才允许从较高层（S2 或 S3）转到较低层（S1 或 S2）。例如，如果每天的消息数目超过 400,000，则可更改 IoT 中心的层。但是，如果更改为 S1 层，则会在该天对中心进行限制。
 
@@ -156,7 +156,7 @@ Azure IoT 中心自动显示用户帐户所链接的订阅列表。可以在此�
 若要进一步探索 IoT 中心的功能，请参阅：
 
 - [开发人员指南][lnk-devguide]
-- [使用网关 SDK 模拟设备][lnk-gateway]
+- [使用 IoT 网关 SDK 模拟设备][lnk-gateway]
 
 
   [4]: ./media/iot-hub-create-through-portal/create-iothub.png
@@ -173,4 +173,4 @@ Azure IoT 中心自动显示用户帐户所链接的订阅列表。可以在此�
 [lnk-devguide]: /documentation/articles/iot-hub-devguide/
 [lnk-gateway]: /documentation/articles/iot-hub-linux-gateway-sdk-simulated-device/
 
-<!---HONumber=Mooncake_1031_2016-->
+<!---HONumber=Mooncake_1205_2016-->

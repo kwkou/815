@@ -15,17 +15,17 @@
  ms.tgt_pltfrm="na"
  ms.workload="na"
  ms.date="09/30/2016"
- wacn.date="11/07/2016" 
+ wacn.date="12/12/2016" 
  ms.author="elioda"/>  
 
 
-# 了解设备克隆 - 预览版
+# 了解设备克隆
 
 ## 概述
 
-*设备克隆* 是存储设备状态信息（元数据、配置和条件）的 JSON 文档。IoT 中心为连接到 IoT 中心的每台设备保留一个设备克隆。本文介绍：
+*设备克隆*是存储设备状态信息（元数据、配置和条件）的 JSON 文档。IoT 中心为连接到 IoT 中心的每台设备保留一个设备克隆。本文介绍：
 
-* 设备克隆的结构： *标记* 、 *所需属性* 和 *报告属性* ，以及
+* 设备克隆的结构：*标记*、*所需属性*和*报告属性*，以及
 * 设备应用和后端可在设备克隆上执行的操作。
 
 > [AZURE.NOTE] 目前，只能从使用 MQTT 协议连接到 IoT 中心的设备访问设备克隆。有关如何转换现有设备应用以使用 MQTT 的说明，请参阅 [MQTT 支持][lnk-devguide-mqtt]一文。
@@ -34,12 +34,11 @@
 
 使用设备克隆可以：
 
-* 将设备特定的元数据存储在云中，例如，存储在自动贩卖机的部署位置。
-* 通过设备应用（例如，通过移动电话网络或 Wifi 连接的设备）报告可用功能和状态等当前状态信息。
+* 将设备特定的元数据存储在云中，例如，存储在自动售货机的部署位置。
+* 从设备应用（例如，通过移动电话网络或 Wifi 连接的设备）中报告可用功能和条件等当前状态信息。
 * 在设备应用与后端（例如，指定要安装的新固件版本的后端，以及报告更新过程各个阶段的设备应用）之间同步长时间运行的工作流的状态。
 * 查询设备的元数据、配置或状态。
 
-使用[设备到云的消息][lnk-d2c]发送带时间戳的事件序列，例如，传感器数据或警报的时间序列。使用[云到设备的方法][lnk-methods]对设备进行交互控制，例如，打开风扇。
 
 ## 设备克隆
 
@@ -48,7 +47,7 @@
 - 设备和后端可以使用这些信息来同步设备状态和配置。
 - 应用程序后端可以使用这些信息来查询和定位长时间运行的操作。
 
-设备克隆的生命周期链接到相应的[设备标识][lnk-identity]。在 IoT 中心创建或删除新的设备标识时，将隐式创建和删除克隆。
+设备克隆的生命周期链接到相应的[设备标识][lnk-identity]。在 IoT 中心创建或删除新的设备标识时，将隐式创建和删除设备克隆。
 
 设备克隆是一个 JSON 文档，其中包含：
 
@@ -99,20 +98,18 @@
             }
         }
 
-根对象包含系统属性，以及 `tags`、`reported` 和 `desired properties` 的容器对象。`properties` 容器包含一些只读元素（`$metadata`、`$etag` 和 `$version`），[克隆元数据][lnk-twin-metadata]和[乐观并发][lnk-concurrency]部分将分别介绍这些元素。
+根对象包含系统属性，以及 `tags`、`reported` 和 `desired properties` 的容器对象。`properties` 容器包含一些只读元素（`$metadata`、`$etag` 和 `$version`），[设备克隆元数据][lnk-twin-metadata]和[乐观并发][lnk-concurrency]部分将分别介绍这些元素。
 
 ### 报告属性示例
-
 在上述示例中，设备克隆包含设备应用报告的 `batteryLevel` 属性。使用此属性可以根据上次报告的电池电量水平查询和操作设备。另一个示例是让设备应用报告设备功能或连接选项。
 
 请注意报告属性如何简化后端获取属性最后一个已知值的方案。如果后端需要以带时间戳事件序列（例如时间序列）的形式处理设备遥测数据，可以使用[设备到云的消息][lnk-d2c]。
 
-### 所需配置示例
-
+### 所需属性示例
 在上述示例中，后端和设备应用使用 `telemetryConfig` 所需和报告属性来同步此设备的遥测配置。例如：
 
 1. 应用后端使用所需配置值设置所需属性。下面是包含所需属性的文档的一部分：
-
+   
         ...
         "desired": {
             "telemetryConfig": {
@@ -121,9 +118,8 @@
             ...
         },
         ...
-        
 2. 连接后或者首次重新连接时，设备应用会立即收到更改通知。然后，设备应用报告更新的配置（或使用 `status` 属性报告错误状态）。下面是报告属性的一部分：
-
+   
         ...
         "reported": {
             "telemetryConfig": {
@@ -133,20 +129,18 @@
             ...
         }
         ...
-
-3. 应用后端可以通过[查询][lnk-query]克隆，跟踪多个设备上的配置操作结果。
+3. 应用后端可以通过[查询][lnk-query]设备克隆，保持跟踪多个设备上的配置操作结果。
 
 > [AZURE.NOTE] 为便于阅读，上述代码片段示例经过优化，演示了为设备配置及其状态进行编码的一种可能方式。IoT 中心不会对设备克隆中的所需属性和报告属性施加特定的架构。
 
 在许多情况下，克隆用于同步长时间运行的操作，例如固件更新。有关如何使用属性来同步和跟踪设备上长时间运行的操作，请参阅 [Use desired properties to configure devices][lnk-twin-properties]（使用所需属性配置设备）。
 
 ## 后端操作
+后端使用以下通过 HTTP 公开的原子操作对设备克隆执行操作：
 
-后端使用以下通过 HTTP 公开的原子操作对克隆执行操作：
-
-1. **按 ID 检索克隆**。此操作返回克隆的文档内容，包括标记、所需属性、报告属性和系统属性。
-2. **部分更新克隆**。后端可以使用此操作部分更新克隆的标记或所需属性。部分更新以 JSON 文档的形式表示，可添加或更新所述的任何属性。将删除设置为 `null` 的属性。例如，以下代码将创建值为 `{"newProperty": "newValue"}` 的新所需属性，将现有值 `existingProperty` 覆盖为 `"otherNewValue"`，并完全删除 `otherOldProperty`。其他现有的所需属性或标记未发生任何更改：
-
+1. **按 id 检索设备克隆**。此操作返回设备克隆的文档内容，包括标记、所需属性、报告属性和系统属性。
+2. **部分更新设备克隆**。后端可以使用此操作部分更新设备克隆的标记或所需属性。部分更新以 JSON 文档的形式表示，可添加或更新所述的任何属性。将删除设置为 `null` 的属性。例如，以下代码将创建值为 `{"newProperty": "newValue"}` 的新所需属性，将现有值 `existingProperty` 覆盖为 `"otherNewValue"`，并完全删除 `otherOldProperty`。其他现有的所需属性或标记未发生任何更改：
+   
         {
             "properties": {
                 "desired": {
@@ -158,19 +152,17 @@
                 }
             }
         }
-
 3. **替换所需属性**。后端可以使用此操作完全覆盖所有现有的所需属性，并使用新 JSON 文档替代 `properties/desired`。
 4. **替换标记**。与替换所需属性类似，此操作可让后端完全覆盖所有的现有标记，并使用新 JSON 文档替代 `tags`。
 
 上述所有操作支持[乐观并发][lnk-concurrency]，需要 [Security][lnk-security]（安全性）一文中定义的 **ServiceConnect** 权限。
 
-除了上述操作以外，后端还可以使用类似于 SQL 的[查询语言][lnk-query]查询克隆，使用[作业][lnk-jobs]针对大型克隆集执行操作。
+除了上述操作以外，后端还可以使用类似于 SQL 的[查询语言][lnk-query]查询设备克隆，以及使用[作业][lnk-jobs]针对大型设备克隆集执行操作。
 
 ## 设备操作
+设备应用使用以下原子操作对设备克隆执行操作：
 
-设备应用使用以下原子操作对克隆执行操作：
-
-1. **检索克隆**。此操作返回当前连接的设备的克隆文档内容（包括标记、所需属性、报告属性和系统属性）。
+1. **检索设备克隆**。此操作返回当前连接的设备的设备克隆文档内容（包括标记、所需属性、报告属性和系统属性）。
 2. **部分更新报告属性**。使用此操作可以部分更新当前连接的设备的报告属性。此操作使用的 JSON 更新格式，与后端部分更新所需属性时使用的格式相同。
 3. **监视所需属性**。当前连接的设备可以选择在所需属性发生更新时立即接收通知。设备收到的更新格式与后端执行的更新格式相同（部分或完全替换）。
 
@@ -188,19 +180,35 @@
 
 标记、所需属性和报告属性是具有以下限制的 JSON 对象：
 
-* JSON 对象中的所有键是区分大小写的 128 字符 UNICODE 字符串。允许的字符不包括 UNICODE 控制字符（段 C0 和 C1）以及 `'.'`、`' '` 和 `'$'`。
+* JSON 对象中的所有键是区分大小写的 64 字节 UTF-8 UNICODE 字符串。允许的字符不包括 UNICODE 控制字符（段 C0 和 C1）以及 `'.'`、`' '` 和 `'$'`。
 * JSON 对象中的所有值可采用以下 JSON 类型：布尔值、数字、字符串、对象。不允许数组。
+* 标记、所需属性和报告属性中的所有 JSON 对象的最大嵌套深度为 5 层。例如，以下对象是有效的：
 
-## 克隆大小
+        {
+            ...
+            "tags": {
+                "one": {
+                    "two": {
+                        "three": {
+                            "four": {
+                                "five": {
+                                    "property": "value"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            ...
+        }
 
-IoT 中心对 `tags`、`properties/desired` 和 `properties/reported`（不包括只读元素）的值强制实施 8KB 大小限制。
-该大小的计算考虑到了所有字符，但不包括 UNICODE 控制字符（段 C0 和 C1），以及出现在字符串常量外部的空格 `' '`。
-IoT 中心会拒绝将这些文档的大小增加到超出限制的所有操作，在这种情况下还会返回错误。
+* 所有字符串的值的长度最多为 512 个字节。
 
-## <a name="twin-metadata"></a> 克隆元数据
+## 设备克隆的大小
+IoT 中心对 `tags`、`properties/desired` 和 `properties/reported`（不包括只读元素）的值强制实施 8KB 大小限制。该大小的计算考虑到了所有字符，但不包括 UNICODE 控制字符（段 C0 和 C1），以及出现在字符串常量外部的空格 `' '`。IoT 中心会拒绝将这些文档的大小增加到超出限制的所有操作，在这种情况下还会返回错误。
 
-IoT 中心保留所需属性性和报告属性中每个 JSON 对象的上次更新时间戳。时间戳采用 UTC，以 [ISO8601] 格式 `YYYY-MM-DDTHH:MM:SS.mmmZ` 编码。
-例如：
+## <a name="device-twin-metadata"></a> 设备克隆的元数据
+IoT 中心保留所需属性性和报告属性中每个 JSON 对象的上次更新时间戳。时间戳采用 UTC，以 [ISO8601] 格式 `YYYY-MM-DDTHH:MM:SS.mmmZ` 编码。例如：
 
         {
             ...
@@ -272,10 +280,10 @@ IoT 中心不会保留已断开连接设备的所需属性更新通知。它遵�
 
 开发人员指南中的其他参考主题包括：
 
-- [IoT 中心终结点][lnk-endpoints]说明每个 IoT 中心针对运行时和管理操作公开的各种终结点。
-- [限制和配额][lnk-quotas]说明适用于 IoT 中心服务的配额，以及使用服务时可预期的限制行为。
-- [IoT 中心设备和服务 SDK][lnk-sdks] 列出在开发与 IoT 中心交互的设备和服务应用程序时使用的各种语言 SDK。
-- [克隆、方法和作业的查询语言][lnk-query]描述可用于从 IoT 中心检索有关设备克隆、方法和作业的信息的查询语言。
+- [IoT 中心终结点][lnk-endpoints]，说明了每个 IoT 中心针对运行时和管理操作公开的各种终结点。
+- [限制和配额][lnk-quotas]，说明了适用于 IoT 中心服务的配额，以及使用服务时预期会碰到的限制行为。
+- [IoT 中心设备和服务 SDK][lnk-sdks]，列出了在开发与 IoT 中心交互的设备和服务应用程序时可以使用的各种语言 SDK。
+- [设备克隆、方法和作业的 IoT 中心查询语言][lnk-query]介绍从 IoT 中心检索有关设备克隆、方法和作业的信息时可以使用的查询语言。
 - [IoT 中心 MQTT 支持][lnk-devguide-mqtt]提供有关 IoT 中心对 MQTT 协议的支持的详细信息。
 
 ## 后续步骤
@@ -288,7 +296,7 @@ IoT 中心不会保留已断开连接设备的所需属性更新通知。它遵�
 如果要尝试本文中介绍的一些概念，你可能对以下 IoT 中心教程感兴趣：
 
 - [如何使用设备克隆][lnk-twin-tutorial]
-- [如何使用克隆属性][lnk-twin-properties]
+- [如何使用设备克隆的属性][lnk-twin-properties]
 
 <!-- links and images -->
 
@@ -302,6 +310,8 @@ IoT 中心不会保留已断开连接设备的所需属性更新通知。它遵�
 [lnk-d2c]: /documentation/articles/iot-hub-devguide-messaging/#device-to-cloud-messages
 [lnk-methods]: /documentation/articles/iot-hub-devguide-direct-methods/
 [lnk-security]: /documentation/articles/iot-hub-devguide-security/
+[lnk-c2d-guidance]: /documentation/articles/iot-hub-devguide-c2d-guidance/
+[lnk-d2c-guidance]: /documentation/articles/iot-hub-devguide-d2c-guidance/
 
 [ISO8601]: https://en.wikipedia.org/wiki/ISO_8601
 [RFC7232]: https://tools.ietf.org/html/rfc7232
@@ -311,10 +321,10 @@ IoT 中心不会保留已断开连接设备的所需属性更新通知。它遵�
 [lnk-devguide-jobs]: /documentation/articles/iot-hub-devguide-jobs/
 [lnk-twin-tutorial]: /documentation/articles/iot-hub-node-node-twin-getstarted/
 [lnk-twin-properties]: /documentation/articles/iot-hub-node-node-twin-how-to-configure/
-[lnk-twin-metadata]: /documentation/articles/iot-hub-devguide-device-twins/#twin-metadata
+[lnk-twin-metadata]: /documentation/articles/iot-hub-devguide-device-twins/#device-twin-metadata
 [lnk-concurrency]: /documentation/articles/iot-hub-devguide-device-twins/#optimistic-concurrency
 [lnk-reconnection]: /documentation/articles/iot-hub-devguide-device-twins/#device-reconnection-flow
 
 [img-twin]: ./media/iot-hub-devguide-device-twins/twin.png
 
-<!---HONumber=Mooncake_1031_2016-->
+<!---HONumber=Mooncake_1205_2016-->

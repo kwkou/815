@@ -14,7 +14,7 @@
      ms.tgt_pltfrm="na"
      ms.workload="na"
      ms.date="09/06/2016"
-     wacn.date="10/10/2016"
+     wacn.date="12/12/2016"
      ms.author="obloch"/>
 
 # 适用于 C 语言的 Azure IoT 设备 SDK 简介
@@ -23,7 +23,7 @@
 
 适用于 C 语言的 Azure IoT 设备 SDK 以 ANSI C (C99) 编写，以获得最大可移植性。如此就很适合在一些平台和设备上运行 - 尤其是在以将磁盘和内存占用量降到最低作为优先考虑的情况下。
 
-许多平台已对 SDK 进行了测试（有关详细信息，请参阅[平台和兼容性列表](/documentation/articles/iot-hub-tested-configurations/)）。尽管本文包含的是在 Windows 平台上运行的示例代码演示，但请记住，本文所述的代码在各种支持的平台上都完全相同。
+SDK 已在许多平台上进行了测试（有关详细信息，请参阅[平台和兼容性列表](/documentation/articles/iot-hub-tested-configurations/)）。尽管本文包含的是在 Windows 平台上运行的示例代码演示，但请记住，本文所述的代码在各种支持的平台上都完全相同。
 
 本文将介绍适用于 C 语言的 Azure IoT 设备 SDK 的体系结构。我们将演示如何初始化设备库，将事件发送到 IoT 中心，以及从 IoT 中心接收消息。本文中的信息应足以让你开始使用 SDK，但同时也提供了有关库的其他信息的链接。
 
@@ -42,18 +42,17 @@
   ![](./media/iot-hub-device-sdk-c-intro/02-CFolder.PNG)
 
 * 此 SDK 的核心实现可在 **iothub\_client** 文件夹中找到，此文件夹包含 SDK 的最低 API 层的实现：**IoTHubClient** 库。此 **IoTHubClient** 库包含实现原始消息传送的 API，即将消息发送到 IoT 中心以及从 IoT 中心接收消息。如果你使用此库，就需负责实现消息序列化（最终使用下面描述的序列化程序示例），但与 IoT 中心通信的其他细节则由系统为你处理。
-* **serializer** 文件夹包含帮助器函数和示例代码，演示了使用客户端库向 Azure IoT 中心发送消息之前如何序列化数据。请注意使用序列化程序不是必需的，仅为了提供便利。如果你使用**序列化程序**库，首先需要定义一个模型，以指定要发送到 IoT 中心的事件以及预期要从 IoT 中心接收的消息。定义此模型后，SDK 将提供一个 API 界面，让你轻松处理事件和消息，而无需担心序列化细节。
-此库依赖于其他使用一些协议（AMQP、MQTT）实现传输的开放源代码库。
+* **serializer** 文件夹包含帮助器函数和示例代码，演示了使用客户端库向 Azure IoT 中心发送消息之前如何序列化数据。请注意，使用序列化程序不是必需的，仅为了提供便利。如果你使用**序列化程序**库，首先需要定义一个模型，以指定要发送到 IoT 中心的事件以及预期要从 IoT 中心接收的消息。定义此模型后，SDK 将提供一个 API 图面，让你轻松处理事件和消息，而无需担心序列化细节。库依赖使用多个协议（MQTT、AMQP）实现传输的其他开放源代码库。
 * **IoTHubClient** 库依赖于其他开放源代码库：
-   * [Azure C 共享实用程序](https://github.com/Azure/azure-c-shared-utility)库，其常用功能用于很多 Azure 相关的 C SDK 中所需的基本任务（如字符串、列表操作、IO 等）
-   * [Azure uAMQP](https://github.com/Azure/azure-uamqp-c) 库，此库是针对资源约束设备的 AMQP 的客户端实现的优化。
-   * [Azure uMQTT](https://github.com/Azure/azure-umqtt-c) 库，它是实现 MQTT 协议并针对资源约束设备进行了优化的通用型库。
+  * [Azure C 共享实用程序](https://github.com/Azure/azure-c-shared-utility)库，其常用功能用于很多 Azure 相关的 C SDK 中所需的基本任务（如字符串、列表操作、IO 等）
+  * [Azure uAMQP](https://github.com/Azure/azure-uamqp-c) 库，此库是针对资源约束设备的 AMQP 的客户端实现的优化。
+  * [Azure uMQTT](https://github.com/Azure/azure-umqtt-c) 库，它是实现 MQTT 协议并针对资源约束设备进行了优化的通用型库。
 
 查看示例代码可以更轻松地了解所有这些知识。以下部分将演练 SDK 中包含的几个示例应用程序。这应可让你轻松了解 SDK 体系结构层的各种功能以及 API 工作原理的简介。
 
 ## 运行示例之前
-
 必须先在 Azure 订阅中创建一个服务实例（若无）并完成以下 2 个任务，才可在面向 C 的 Azure IoT 设备 SDK 中运行示例：
+
 * 准备开发环境
 * 获取设备凭据。
 
@@ -68,7 +67,6 @@ SDK 中包含的自述文件提供了有关准备开发环境和获取设备凭�
 
 首先，需要从 GitHub 获取 SDK 的副本，然后构建源。请从 [GitHub 存储库](https://github.com/Azure/azure-iot-sdks)的 **master** 分支获取源的副本。
 
-下载源副本后，必须完成 SDK 文章[准备开发环境](https://github.com/Azure/azure-iot-sdks/blob/master/c/doc/devbox_setup.md)中所述的步骤。
 
 
 以下是一些提示，可帮助你完成准备指南中所述的过程：
@@ -93,7 +91,6 @@ SDK 中包含的自述文件提供了有关准备开发环境和获取设备凭�
   		![](./media/iot-hub-device-sdk-c-intro/11-GitToolsPath.PNG)
 
 
-当你完成准备开发环境页面上所述的所有步骤后，就可以编译示例应用程序。
 
 ### 获取设备凭据
 
@@ -469,19 +466,19 @@ serializer_deinit();
 ## 后续步骤
 
 本文介绍了有关使用**适用于 C 语言的 Azure IoT 设备 SDK** 中的库的基本知识。其中提供了足够的信息来让你了解 SDK 中包含哪些组件及其体系结构，以及如何开始使用 Windows 示例。下一篇文章通过讲解[有关 IoTHubClient 库的详细信息](/documentation/articles/iot-hub-device-sdk-c-iothubclient/)来继续介绍该 SDK。
+
 若要详细了解如何针对 IoT 中心进行开发，请参阅 [IoT 中心 SDK][lnk-sdks]。
 
 若要进一步探索 IoT 中心的功能，请参阅：
 
-- [使用网关 SDK 模拟设备][lnk-gateway]
+- [使用 IoT 网关 SDK 模拟设备][lnk-gateway]
+
 
 [lnk-file upload]: /documentation/articles/iot-hub-csharp-csharp-file-upload/
 [lnk-create-hub]: /documentation/articles/iot-hub-rm-template-powershell/
 [lnk-c-sdk]: /documentation/articles/iot-hub-device-sdk-c-intro/
 [lnk-sdks]: /documentation/articles/iot-hub-devguide-sdks/
 
-[lnk-design]: /documentation/articles/iot-hub-guidance/
 [lnk-gateway]: /documentation/articles/iot-hub-linux-gateway-sdk-simulated-device/
-[lnk-portal]: /documentation/articles/iot-hub-manage-through-portal/
 
-<!---HONumber=Mooncake_0725_2016-->
+<!---HONumber=Mooncake_1205_2016-->

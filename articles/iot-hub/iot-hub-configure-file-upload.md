@@ -15,7 +15,7 @@
 	 ms.tgt_pltfrm="na"
 	 ms.workload="na"
 	 ms.date="09/30/2016"
-	 wacn.date="11/07/2016"
+	 wacn.date="12/12/2016"
 	 ms.author="dobett"/>  
 
 
@@ -28,7 +28,7 @@
 ![][13]  
 
 
-**存储容器**：使用门户在当前订阅中选择存储帐户中的 Blob 容器，以便与 IoT 中心关联。如有必要，可以在“存储帐户”边栏选项卡上创建存储帐户，并在“容器”边栏选项卡上创建 Blob 容器。IoT 中心会自动生成对此 Blob 容器具有写入权限的 SAS URI，以供设备上传文件时使用。
+**存储容器**：使用 Azure 门户在当前 Azure 订阅中选择 Azure 存储帐户中的 Blob 容器，以便与 IoT 中心关联。如有必要，可在“存储帐户”边栏选项卡上创建 Azure 存储帐户，并在“容器”边栏选项卡上创建 Blob 容器。IoT 中心会自动生成对此 Blob 容器具有写入权限的 SAS URI，以供设备上传文件时使用。
 
 ![][14]
 
@@ -44,7 +44,6 @@
 
 
 ## 后续步骤
-
 如需详细了解 IoT 中心的文件上载功能，请参阅开发人员指南中的 [Upload files from a device][lnk-upload]（从设备上载文件）。
 
 若要了解有关如何管理 Azure IoT 中心的详细信息，请参阅以下链接：
@@ -56,7 +55,7 @@
 若要进一步探索 IoT 中心的功能，请参阅：
 
 - [开发人员指南][lnk-devguide]
-- [使用网关 SDK 模拟设备][lnk-gateway]
+- [使用 IoT 网关 SDK 模拟设备][lnk-gateway]
 
 
   [13]: ./media/iot-hub-configure-file-upload/file-upload-settings.png
@@ -72,4 +71,4 @@
 [lnk-devguide]: /documentation/articles/iot-hub-devguide/
 [lnk-gateway]: /documentation/articles/iot-hub-linux-gateway-sdk-simulated-device/
 
-<!---HONumber=Mooncake_1031_2016-->
+<!---HONumber=Mooncake_1205_2016-->

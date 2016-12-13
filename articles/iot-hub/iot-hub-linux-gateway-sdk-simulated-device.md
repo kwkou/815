@@ -14,12 +14,12 @@
      ms.tgt_pltfrm="na"
      ms.workload="na"
      ms.date="08/29/2016"
-     wacn.date="11/07/2016"
+     wacn.date="12/12/2016"
      ms.author="andbuc"/>  
 
 
 
-# IoT 网关 SDK（Beta 版）– 使用 Linux 通过模拟设备发送设备至云消息
+# Azure IoT 网关 SDK - 使用 Linux 通过模拟设备发送设备到云消息
 
 [AZURE.INCLUDE [iot-hub-gateway-sdk-simulated-selector](../../includes/iot-hub-gateway-sdk-simulated-selector.md)]
 
@@ -52,68 +52,98 @@
 
 ```
 {
-    "modules" :
-    [ 
+    "modules": [
         {
-            "module name" : "IoTHub",
-            "module path" : "./build/modules/iothub/libiothub_hl.so",
-            "args" : 
-            {
-                "IoTHubName" : "{Your IoT hub name}",
-                "IoTHubSuffix" : "azure-devices.cn",
-                "Transport": "HTTP"
+            "name": "IotHub",
+          "loader": {
+            "name": "native",
+            "entrypoint": {
+              "module.path": "./modules/iothub/libiothub.so"
             }
-        },
+            },
+            "args": {
+              "IoTHubName": "<<insert here IoTHubName>>",
+              "IoTHubSuffix": "<<insert here IoTHubSuffix>>",
+              "Transport": "HTTP"
+            }
+          },
         {
-            "module name" : "mapping",
-            "module path" : "./build/modules/identitymap/libidentity_map_hl.so",
-            "args" : 
-            [
-                {
-                    "macAddress" : "01-01-01-01-01-01",
-                    "deviceId"   : "{Device ID 1}",
-                    "deviceKey"  : "{Device key 1}"
-                },
-                {
-                    "macAddress" : "02-02-02-02-02-02",
-                    "deviceId"   : "{Device ID 2}",
-                    "deviceKey"  : "{Device key 2}"
-                }
+            "name": "mapping",
+          "loader": {
+            "name": "native",
+            "entrypoint": {
+              "module.path": "./modules/identitymap/libidentity_map.so"
+            }
+            },
+            "args": [
+              {
+                "macAddress": "01:01:01:01:01:01",
+                "deviceId": "<<insert here deviceId>>",
+                "deviceKey": "<<insert here deviceKey>>"
+              },
+              {
+                "macAddress": "02:02:02:02:02:02",
+                "deviceId": "<<insert here deviceId>>",
+                "deviceKey": "<<insert here deviceKey>>"
+              }
             ]
-        },
+          },
         {
-            "module name":"BLE1",
-            "module path" : "./build/modules/simulated_device/libsimulated_device_hl.so",
-            "args":
-            {
-                "macAddress" : "01-01-01-01-01-01"
+            "name": "BLE1",
+          "loader": {
+            "name": "native",
+            "entrypoint": {
+              "module.path": "./modules/simulated_device/libsimulated_device.so"
             }
-        },
+            },
+            "args": {
+              "macAddress": "01:01:01:01:01:01"
+            }
+          },
         {
-            "module name":"BLE2",
-            "module path" : "./build/modules/simulated_device/libsimulated_device_hl.so",
-            "args":
-            {
-                "macAddress" : "02-02-02-02-02-02"
+            "name": "BLE2",
+          "loader": {
+            "name": "native",
+            "entrypoint": {
+              "module.path": "./modules/simulated_device/libsimulated_device.so"
             }
-        },
+            },
+            "args": {
+              "macAddress": "02:02:02:02:02:02"
+            }
+          },
         {
-            "module name":"Logger",
-            "module path" : "./build/modules/logger/liblogger_hl.so",
-            "args":
-            {
-                "filename":"./deviceCloudUploadGatewaylog.log"
+            "name": "Logger",
+          "loader": {
+            "name": "native",
+            "entrypoint": {
+              "module.path": "./modules/logger/liblogger.so"
             }
-        }
+            },
+            "args": {
+              "filename": "deviceCloudUploadGatewaylog.log"
+            }
+          }
     ],
-    "links" : [
-        { "source" : "*", "sink" : "Logger" },
-        { "source" : "BLE1", "sink" : "mapping" },
-        { "source" : "BLE2", "sink" : "mapping" },
-        { "source" : "mapping", "sink" : "IoTHub" }
+    "links": [
+        {
+            "source": "*",
+            "sink": "Logger"
+        },
+        {
+            "source": "BLE1",
+            "sink": "mapping"
+        },
+        {
+            "source": "BLE2",
+            "sink": "mapping"
+        },
+        {
+            "source": "mapping",
+            "sink": "IotHub"
+        }
     ]
 }
-
 ```
 
 保存对配置文件所做的任何更改。
@@ -122,18 +152,16 @@
 
 1. 在 shell 中，浏览到本地 **azure-iot-gateway-sdk** 存储库副本中的根文件夹。
 2. 运行以下命令：
-
+   
     ```
     ./build/samples/simulated_device_cloud_upload/simulated_device_cloud_upload_sample ./samples/simulated_device_cloud_upload/src/simulated_device_cloud_upload_lin.json
     ```
-
 3. 可使用[设备资源管理器或 iothub-explorer][lnk-explorer-tools] 工具来监视 IoT 中心从网关接收的消息。
 
 ## 后续步骤
+如果想要深入了解 IoT 网关 SDK 并尝试一些代码示例，请访问以下开发人员教程和资源：
 
-如果想要深入了解网关 SDK 并尝试一些代码示例，请访问以下开发人员教程和资源：
-
-- [使用网关 SDK 从实际设备发送设备到云的消息][lnk-physical-device]
+- [使用 IoT 网关 SDK 从实际设备发送设备到云消息][lnk-physical-device]
 - [Azure IoT 网关 SDK][lnk-gateway-sdk]
 
 若要进一步探索 IoT 中心的功能，请参阅：
@@ -152,4 +180,4 @@
 [lnk-devguide]: /documentation/articles/iot-hub-devguide/
 [lnk-create-hub]: /documentation/articles/iot-hub-create-through-portal/
 
-<!---HONumber=Mooncake_0523_2016-->
+<!---HONumber=Mooncake_1205_2016-->

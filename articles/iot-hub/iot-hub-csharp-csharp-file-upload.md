@@ -15,7 +15,7 @@
      ms.tgt_pltfrm="na"
      ms.workload="na"
      ms.date="06/21/2016"
-     wacn.date="11/07/2016"
+     wacn.date="12/12/2016"
      ms.author="elioda"/>  
 
 # 教程：如何使用 IoT 中心将文件从设备上载到云中
@@ -40,8 +40,7 @@ Azure IoT 中心是一项完全托管的服务，可在数百万个 IoT 设备�
 + 有效的 Azure 帐户。<br/>如果你没有帐户，只需花费几分钟就能创建一个试用帐户。有关详细信息，请参阅 [Azure 试用](/pricing/1rmb-trial/)。
 
 ## 将 Azure 存储帐户关联到 IoT 中心
-
-由于模拟设备将文件上载到 Azure 存储 Blob，因此必须拥有与 IoT 中心关联的 [Azure 存储]帐户。将存储帐户与 IoT 中心关联时，中心将生成一个 SAS URI，设备可以使用它安全地将文件上载到 Blob 容器。IoT 中心服务和设备 SDK 协调生成 SAS URI 的过程，并使其可供设备用来上载文件。
+由于模拟设备将文件上传到 Blob，因此必须拥有与 IoT 中心关联的 [Azure 存储]帐户。将 Azure 存储帐户与 IoT 中心关联时，中心将生成一个 SAS URI，设备可使用它安全地将文件上传到 Blob 容器。IoT 中心服务和设备 SDK 协调生成 SAS URI 的过程，并使其可供设备用来上载文件。
 
 根据 [Configure file uploads using the Azure portal][lnk-configure-upload]（通过 Azure 门户配置文件上载）中的说明，将 Azure 存储帐户关联到 IoT 中心。
 
@@ -146,7 +145,7 @@ Azure IoT 中心是一项完全托管的服务，可在数百万个 IoT 设备�
 
 2. 按 **F5**。这两个应用程序应该都会启动。你将在其中一个控制台应用中看到上载已完成，同时还会看到另一个控制台应用收到的上载通知消息。可以使用 [Azure 门户预览]或 Visual Studio 服务器资源管理器检查存储帐户中是否存在上载的文件。
 
-    ![][50]
+  ![][50]
 
 
 ## 后续步骤
@@ -193,5 +192,4 @@ Azure IoT 中心是一项完全托管的服务，可在数百万个 IoT 设备�
 
 [lnk-gateway]: /documentation/articles/iot-hub-linux-gateway-sdk-simulated-device/
 
-
-<!---HONumber=Mooncake_0307_2016-->
+<!---HONumber=Mooncake_1205_2016-->
