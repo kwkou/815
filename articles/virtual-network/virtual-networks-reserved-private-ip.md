@@ -13,13 +13,13 @@
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
    ms.date="03/22/2016"
-   wacn.date="05/24/2016"
+   wacn.date="12/12/2016"
    ms.author="jdial" />
 
 # 如何设置静态内部专用 IP
-大多数情况下，你不需要指定虚拟机的静态内部 IP 地址。虚拟网络中的 VM 将自动从你所指定的范围接收内部 IP 地址。但在某些情况下，需要为特定 VM 指定静态 IP 地址。例如，在你的 VM 需要运行 DNS 或将要成为域控制器的情况下。
+大多数情况下，不需要指定虚拟机的静态内部 IP 地址。虚拟网络中的 VM 将自动从指定的范围接收内部 IP 地址。但在某些情况下，需要为特定 VM 指定静态 IP 地址。例如，在你的 VM 需要运行 DNS 或将要成为域控制器的情况下。
 
->[AZURE.NOTE]静态内部 IP 地址会始终与 VM 关联在一起，即使经历“停止/取消预配”状态变化。
+>[AZURE.NOTE] 静态内部 IP 地址会始终与 VM 关联在一起，即使经历“停止/取消预配”状态变化。
 
 ## 如何验证特定 IP 地址是否可用：
 若要验证 IP 地址 *10.0.0.7* 在名为 *TestVnet* 的 VNet 中是否可用，请运行以下 PowerShell 命令并验证 *IsAvailable* 的值：
@@ -99,4 +99,4 @@
 
 [保留 IP REST API](https://msdn.microsoft.com/zh-CN/library/azure/dn722420.aspx)
 
-<!---HONumber=70-->
+<!---HONumber=Mooncake_Quality_Review_1118_2016-->

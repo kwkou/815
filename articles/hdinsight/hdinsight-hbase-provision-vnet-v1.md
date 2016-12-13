@@ -15,7 +15,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
    ms.date="09/02/2016"
-   wacn.date="11/25/2016"
+   wacn.date="12/12/2016"
    ms.author="jgao"/>
 
 # 在 Azure 虚拟网络上设置 HBase 群集
@@ -26,23 +26,23 @@
 
 通过虚拟网络集成，可以将 HBase 群集部署到应用程序所在的虚拟网络，以便应用程序直接与 HBase 进行通信。优点包括：
 
-- 将 Web 应用直接连接到 HBase 群集节点，以通过 HBase Java 远程过程调用 (RPC) API 实现通信。
+- 将 Web 应用程序直接连接到 HBase 群集节点，以通过 HBase Java 远程过程调用 (RPC) API 实现通信。
 - 提高性能，因为流量不必通过多个网关和负载均衡器。
 - 能够以更安全的方式处理敏感信息，而无需公开公共终结点。
 
 ##先决条件
 在开始阅读本教程前，你必须具有：
 
-- **一个 Azure 订阅**。请参阅[获取 Azure 免费试用版](/pricing/1rmb-trial/)。
+- **一个 Azure 订阅**。请参阅[获取 Azure 试用版](/pricing/1rmb-trial/)。
 
 - **配备 Azure PowerShell 的工作站**。
 
-	在运行 Azure PowerShell 脚本之前，请确保你已通过使用以下 cmdlet 连接到 Azure 订阅：
+	在运行 Azure PowerShell 脚本之前，请确保已使用以下 cmdlet 连接到 Azure 订阅：
 
 		Clear-AzureProfile
 		Import-AzurePublishSettingsFile -PublishSettingsFile path/to/<subscription name>-<date>-credentials.publishsettings
 
-	如果你有多个 Azure 订阅，请使用以下 cmdlet 来设置当前订阅：
+	如果有多个 Azure 订阅，请使用以下 cmdlet 设置当前订阅：
 
 		Select-AzureSubscription <AzureSubscriptionName>
 
@@ -175,7 +175,7 @@ DNS 服务器是可选的，但在某些情况下又是必需的。[在两个 Az
 		<td>如果选择了“使用其他订阅中的存储”选项，请指定该存储帐户的帐户密钥。<strong></strong></td></tr>
 	<tr><td>默认容器</td>
 		<td><p>指定存储帐户上用作 HDInsight 群集默认文件系统的默认容器。如果为“存储帐户”字段选择了“使用现有存储”，并且该帐户中不存在现有容器，则默认情况下，将创建与群集同名的容器<strong></strong><strong></strong>。如果已存在与群集同名的容器，则将在容器名称后追加一个序列号。例如，mycontainer1、mycontainer2，等等。但是，如果现有存储帐户的容器名称与你指定的群集名称不同，则你也可以使用该容器。</p>
-        <p>如果选择创建新存储或使用其他 Azure 订阅中的存储，则必须指定默认容器名称</p>
+        <p>如果选择了创建新存储或使用其他 Azure 订阅中的存储，则必须指定默认容器名称。</p>
     </td></tr>
 	<tr><td>其他存储帐户</td>
 		<td>如果需要，请为群集指定其他存储帐户。HDInsight 支持多个存储帐户。一个群集可以使用的其他存储帐户数没有限制。但是，如果你通过使用 Azure 经典管理门户创建群集，则由于 UI 限制，你最多只能创建七个存储帐户。指定的每个其他存储帐户将在向导中添加一个额外的“存储帐户”页，以便你在此指定帐户信息。<strong></strong>例如，在以上屏幕截图中，未选择其他存储帐户，因此，不会将额外的页添加到向导中。</td></tr>
@@ -424,4 +424,4 @@ DNS 服务器是可选的，但在某些情况下又是必需的。[在两个 Az
 [img-provision-cluster-page1]: ./media/hdinsight-hbase-provision-vnet-v1/hbasewizard1.png "预配新 HBase 群集的详细信息"
 [img-provision-cluster-page5]: ./media/hdinsight-hbase-provision-vnet-v1/hbasewizard5.png "使用脚本操作来自定义 HBase 群集"
 
-<!---HONumber=71-->
+<!---HONumber=Mooncake_Quality_Review_1118_2016-->

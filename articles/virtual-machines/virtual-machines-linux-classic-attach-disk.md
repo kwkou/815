@@ -16,40 +16,38 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="08/23/2016"
-	wacn.date="10/24/2016"
-	ms.author="iainfou"/>  
-
+	wacn.date="12/12/2016"
+	ms.author="iainfou"/>
 
 # 如何将数据磁盘附加到 Linux 虚拟机
 
-> [AZURE.IMPORTANT] Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model/)。本文介绍使用经典部署模型。Azure 建议大多数新部署使用 Resource Manager 模型。请参阅如何[使用 Resource Manager 部署模型附加数据磁盘](/documentation/articles/virtual-machines-linux-add-disk/)。
+> [AZURE.IMPORTANT] Azure 具有用于创建和处理资源的两个不同的部署模型：[Resource Manager 模型和经典部署模型](/documentation/articles/resource-manager-deployment-model/)。本文介绍使用经典部署模型。Azure 建议大多数新的部署使用 Resource Manager 模型。请参阅如何[使用 Resource Manager 部署模型附加数据磁盘](/documentation/articles/virtual-machines-linux-add-disk/)。
 
-你可以将空磁盘和包含数据的磁盘附加到 Azure VM。这两种类型的磁盘是驻留在 Azure 存储帐户中的 .vhd 文件。与将任何磁盘添加到 Linux 计算机一样，附加磁盘之后需要将它初始化和格式化才可供使用。本文将详细说明如何附加空磁盘和附加包含数据的磁盘到 VM，以及初始化和格式化新磁盘的方法。
+可以将空磁盘和包含数据的磁盘附加到 Azure VM。这两种类型的磁盘是驻留在 Azure 存储帐户中的 .vhd 文件。与将任何磁盘添加到 Linux 计算机一样，附加磁盘之后需要将它初始化和格式化才可供使用。本文将详细说明如何附加空磁盘和附加包含数据的磁盘到 VM，以及初始化和格式化新磁盘的方法。
 
-> [AZURE.NOTE] 最佳做法是使用一个或多个不同的磁盘来存储虚拟机的数据。当你创建 Azure 虚拟机时，该虚拟机有一个操作系统磁盘和一个临时磁盘。**不要使用临时磁盘来存储持久性数据。** 顾名思义，它仅提供临时存储。它不提供冗余或备份，因为它不驻留在 Azure 存储空间中。
-临时磁盘通常由 Azure Linux 代理管理并且自动装载到 **/mnt/resource**（或 Ubuntu 映像上的 **/mnt**）。另一方面，数据磁盘可以由 Linux 内核命名为 `/dev/sdc` 这样的形式，而用户则需对该资源进行分区、格式化和安装。有关详细信息，请参阅 [Azure Linux 代理用户指南][Agent]。
+> [AZURE.NOTE] 最佳做法是使用一个或多个不同的磁盘来存储虚拟机的数据。在创建 Azure 虚拟机时，该虚拟机有一个操作系统磁盘和一个临时磁盘。**不要使用临时磁盘来存储持久性数据。** 顾名思义，它仅提供临时存储。它不提供冗余或备份，因为它不驻留在 Azure 存储中。临时磁盘通常由 Azure Linux 代理管理并且自动装载到 **/mnt/resource**（或 Ubuntu 映像上的 **/mnt**）。另一方面，数据磁盘可以由 Linux 内核命名为 `/dev/sdc` 这样的形式，而用户则需对该资源进行分区、格式化和安装。有关详细信息，请参阅 [Azure Linux 代理用户指南][Agent]。
 
 [AZURE.INCLUDE [howto-attach-disk-windows-linux](../../includes/howto-attach-disk-linux.md)]
 
 ## <a name="how-to-initialize-a-new-data-disk-in-linux"></a> 在 Linux 中初始化新的数据磁盘
 
-1. 通过 SSH 连接到你的 VM。有关更多详细信息，请参阅[如何登录到运行 Linux 的虚拟机][Logon]。
+1. 通过 SSH 连接到 VM。有关更多详细信息，请参阅[如何登录到运行 Linux 的虚拟机][Logon]。
 
-2. 接下来，你需要查找可供数据磁盘初始化的设备标识符。可通过两种方式实现该目的：
+2. 接下来，需要查找可供数据磁盘初始化的设备标识符。可通过两种方式实现此操作：
 
-	a) 获取 SCSI 设备中的日志，例如，使用以下命令：
+	a) 日志中 SCSI 设备的 Grep，例如，在以下命令中：
 
 			$sudo grep SCSI /var/log/messages
 
-	如果是最近的 Ubuntu 分发，你可能需要使用 `sudo grep SCSI /var/log/syslog`，因为默认情况下可能已禁止登录到 `/var/log/messages`。
+	如果是最近的 Ubuntu 分发，则可能需要使用 `sudo grep SCSI /var/log/syslog`，因为默认情况下可能已禁止登录到 `/var/log/messages`。
 
-	您可以在所示消息中找到最后添加的数据磁盘的标识符。
+	可以在所示消息中找到最后添加的数据磁盘的标识符。
 
 	![获取磁盘消息](./media/virtual-machines-linux-classic-attach-disk/scsidisklog.png)
 
 	或
 
-	b) 使用 `lsscsi` 命令找出设备 ID。`lsscsi` 的安装可以通过 `yum install lsscsi`（在基于 Red Hat 的分发上）或 `apt-get install lsscsi`（在基于 Debian 的分发上）来进行。你可以通过 _lun_（即**逻辑单元号**）找到所要的磁盘。例如，所附加磁盘的 _lun_ 可以轻松地通过 `azure vm disk list <virtual-machine>` 来查看，如下所示：
+	b) 使用 `lsscsi` 命令找出设备 ID。可以通过 `yum install lsscsi`（在基于 Red Hat 的分发上）或 `apt-get install lsscsi`（在基于 Debian 的分发上）安装 `lsscsi`。可以通过磁盘的 _lun_（即 **逻辑单元号**）找到所需磁盘。例如，所附加磁盘的 _lun_ 可以轻松地通过 `azure vm disk list <virtual-machine>` 来查看，如下所示：
 
 			~$ azure vm disk list TestVM
 			info:    Executing command vm disk list
@@ -83,19 +81,17 @@
 	![创建设备](./media/virtual-machines-linux-classic-attach-disk/fdisknewpartition.png)  
 
 
-5. 出现提示时，键入 **p** 以将分区设置为主分区。键入“1”将其设置为第一分区，然后键入 Enter 以接受柱面的默认值。在某些系统上，它可以显示第一个和最后一个扇区（而不是柱面）的默认值。你可以选择接受这些默认值。
+5. 出现提示时，键入 **p** 以将分区设置为主分区。键入“1”将其设置为第一分区，然后键入 Enter 以接受柱面的默认值。在某些系统上，它可以显示第一个和最后一个扇区（而不是柱面）的默认值。可以选择接受这些默认值。
 
 
-	![创建分区](./media/virtual-machines-linux-classic-attach-disk/fdisknewpartdetails.png)  
+	![创建分区](./media/virtual-machines-linux-classic-attach-disk/fdisknewpartdetails.png)
 
 
 
+6. 键入“p”以查看有关分区磁盘的详细信息。
 
-6. 键入 **p** 以查看有关分区磁盘的详细信息。
 
-
-	![列出磁盘信息](./media/virtual-machines-linux-classic-attach-disk/fdiskpartitiondetails.png)  
-
+	![列出磁盘信息](./media/virtual-machines-linux-classic-attach-disk/fdiskpartitiondetails.png)
 
 
 
@@ -104,7 +100,7 @@
 
 	![写入磁盘更改](./media/virtual-machines-linux-classic-attach-disk/fdiskwritedisk.png)
 
-8. 现在，你可以在新分区上创建文件系统。在设备 ID 后面追加磁盘分区号（在以下示例中为 `/dev/sdc1`）。以下示例在 /dev/sdc1 上创建 ext4 磁盘分区：
+8. 现在，可以在新分区上创建文件系统。在设备 ID 后面追加磁盘分区号（在以下示例中为 `/dev/sdc1`）。以下示例在 /dev/sdc1 上创建 ext4 磁盘分区：
 
 		# sudo mkfs -t ext4 /dev/sdc1
 
@@ -194,7 +190,7 @@
 
 
 ## 后续步骤
-你可以阅读下列文章，进一步了解如何使用 Linux VM：
+可以阅读下列文章，进一步了解如何使用 Linux VM：
 
 - [如何登录到运行 Linux 的虚拟机][Logon]
 
@@ -206,4 +202,4 @@
 [Agent]: /documentation/articles/virtual-machines-linux-agent-user-guide/
 [Logon]: /documentation/articles/virtual-machines-linux-mac-create-ssh-keys/
 
-<!---HONumber=Mooncake_1017_2016-->
+<!---HONumber=Mooncake_Quality_Review_1118_2016-->

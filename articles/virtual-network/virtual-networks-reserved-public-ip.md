@@ -13,20 +13,20 @@
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
    ms.date="02/10/2016"
-   wacn.date="03/17/2016"
+   wacn.date="12/12/2016"
    ms.author="jdial" />
 
 # 保留 IP 概述
-Azure 中的 IP 地址分为两类：动态 IP 地址和保留 IP 地址。由 Azure 管理的公共 IP 地址默认为动态 IP 地址。这意味着，用于给定云服务的 IP 地址 (VIP) 或用于直接访问 VM 或角色示例的 IP 地址 (ILPIP) 可能会在关闭资源或释放资源的情况下不时进行更改。
+Azure 中的 IP 地址分为两类：动态 IP 地址和保留 IP 地址。由 Azure 管理的公共 IP 地址默认为动态 IP 地址。这意味着，用于给定云服务的 IP 地址 (VIP) 或用于直接访问 VM 或角色实例的 IP 地址 (ILPIP) 可能会在关闭资源或释放资源的情况下不时进行更改。
 
-若要防止 IP 地址更改，可将其设置为保留 IP 地址。保留 IP 只能用作 VIP，可确保云服务的 IP 地址即使在关闭资源或释放资源的情况下也是相同的。此外，你还可以将用作 VIP 的现有动态 IP 转换为保留 IP 地址。
+若要防止 IP 地址更改，可将其设置为保留 IP 地址。保留 IP 只能用作 VIP，可确保云服务的 IP 地址即使在关闭资源或释放资源的情况下也是相同的。此外，还可以将用作 VIP 的现有动态 IP 转换为保留 IP 地址。
 
 > [AZURE.IMPORTANT]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model/)。本文介绍使用经典部署模型。Azure 建议大多数新部署使用资源管理器模型。学习如何[使用资源管理器模型执行这些步骤](/documentation/articles/virtual-network-ip-addresses-overview-arm/)。
 
 请确保你了解 [IP 地址](/documentation/articles/virtual-network-ip-addresses-overview-classic/)在 Azure 中的工作原理。
 
 ## 何时需要保留 IP？
-- **你想要确保订阅中的 IP 为保留 IP**。如果你想要保留一个 IP 地址，使得该 IP 地址在任何情况下都不会从你的订阅中释放，则应使用保留的公共 IP。  
+- **你想要确保将 IP 保留在订阅中**。如果你想要保留一个 IP 地址，使得该 IP 地址在任何情况下都不会从你的订阅中释放，则应使用保留的公共 IP。  
 - **你想要 IP 始终与云服务相关联，即使 VM 处于停止或释放状态下**。如果你想要通过即使在云服务中的 VM 处于停止或释放状态下也不会更改的 IP 地址来访问服务。
 - **你想要确保 Azure 的出站流量使用可预测的 IP 地址**。你可以将本地防火墙配置为仅允许来自特定 IP 地址的流量。通过对 IP 进行保留，你就可以了解源 IP 地址，不必因 IP 更改而更新防火墙规则。
 
@@ -65,7 +65,7 @@ Azure 中的 IP 地址分为两类：动态 IP 地址和保留 IP 地址。由 A
 	OperationId          : 55e4f245-82e4-9c66-9bd8-273e815ce30a
 	OperationStatus      : Succeeded
 
-某个 IP 成为保留 IP 以后，它就会始终与你的订阅相关联，直至你将它删除。若要删除如上所示的保留 IP，请运行以下 PowerShell 命令：
+某个 IP 成为保留 IP 后，它就会始终与你的订阅相关联，直至将它删除。若要删除如上所示的保留 IP，请运行以下 PowerShell 命令：
 
 	Remove-AzureReservedIP -ReservedIPName "MyReservedIP"
 
@@ -85,7 +85,7 @@ Azure 中的 IP 地址分为两类：动态 IP 地址和保留 IP 地址。由 A
 	| Add-AzureProvisioningConfig -Windows -AdminUsername adminuser -Password MyP@ssw0rd!! `
 	| New-AzureVM -ServiceName TestService -ReservedIPName MyReservedIP -Location "China North"
 
->[AZURE.NOTE] 创建用于云服务的保留 IP 时，仍需使用 *VIP:&lt;端口号>* 来引用 VM，以便进行入站通信。使用保留 IP 并不意味着你可以直接连接到 VM。保留 IP 将分配给 VM 所部署到的云服务。如果你想要直接通过 IP 连接到 VM，则必须配置实例级公共 IP。实例级公共 IP 是一类可直接分配给 VM 的公共 IP（称为 ILPIP）。它不能保留。有关详细信息，请参阅[实例级公共 IP (ILPIP)](/documentation/articles/virtual-networks-instance-level-public-ip/)。
+>[AZURE.NOTE] 创建用于云服务的保留 IP 时，仍需使用 *VIP:&lt;端口号>* 来引用 VM，以便进行入站通信。使用保留 IP 并不意味着你可以直接连接到 VM。保留 IP 将分配给 VM 所部署到的云服务。如果你想要直接通过 IP 连接到 VM，则必须配置实例层级公共 IP。实例层级公共 IP 是一类可直接分配给 VM 的公共 IP（称为 ILPIP）。它不能保留。有关详细信息，请参阅[实例层级公共 IP (ILPIP)](/documentation/articles/virtual-networks-instance-level-public-ip/)。
 
 ## 如何从正在运行的部署中删除保留 IP
 若要删除已添加到以上脚本中创建的新服务中的保留 IP，请运行以下 PowerShell 命令：
@@ -95,7 +95,7 @@ Azure 中的 IP 地址分为两类：动态 IP 地址和保留 IP 地址。由 A
 >[AZURE.NOTE] 从正在运行的部署中删除保留 IP 并不会从你的订阅中删除保留 IP。它只是释放该 IP，以供订阅中的其他资源使用。
 
 ## 如何将保留 IP 关联到正在运行的部署
-下面的脚本将创建名为 *TestService2* 的新的云服务，以及名为 *TestVM2* 的新的 VM，然后将名为 *MyReservedIP* 的现有保留 IP 关联到云服务。
+下面的脚本将新建名为 *TestService2* 的云服务，以及名为 *TestVM2* 的 VM，然后将名为 *MyReservedIP* 的现有保留 IP 关联到云服务。
 
 	$image = Get-AzureVMImage|?{$_.ImageName -like "*RightImage-Windows-2012R2-x64*"}
 	New-AzureVMConfig -Name TestVM2 -InstanceSize Small -ImageName $image.ImageName `
@@ -129,6 +129,6 @@ Azure 中的 IP 地址分为两类：动态 IP 地址和保留 IP 地址。由 A
 
 - 了解[保留专用 IP 地址](/documentation/articles/virtual-networks-reserved-private-ip/)。
 
-- 了解[实例级公共 IP (ILPIP) 地址](/documentation/articles/virtual-networks-instance-level-public-ip/)。
+- 了解[实例层级公共 IP (ILPIP) 地址](/documentation/articles/virtual-networks-instance-level-public-ip/)。
 
-<!---HONumber=Mooncake_0307_2016-->
+<!---HONumber=Mooncake_Quality_Review_1118_2016-->

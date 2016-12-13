@@ -15,27 +15,27 @@
 	ms.devlang="multiple"
 	ms.topic="article"
 	ms.date="07/25/2016"
-	wacn.date="09/30/2016"
+	wacn.date="12/12/2016"
 	ms.author="jgao"/>
 
 
 #HDInsight 中 Hadoop 群集的可用性和可靠性
 
 
-HDInsight 可让客户部署各种不同的群集类型，用于不同的数据分析工作负荷。目前提供的群集类型包括用于查询和分析工作负荷的 Hadoop 群集、用于 NoSQL 工作负荷的 HBase 群集，以及用于实时事件处理工作负荷的 Storm 群集。在给定的群集类型中，不同的节点有不同的角色。例如：
+HDInsight 允许客户部署各种群集类型，用于不同的数据分析工作负荷。目前提供的群集类型包括用于查询和分析工作负荷的 Hadoop 群集、用于 NoSQL 工作负荷的 HBase 群集，以及用于实时事件处理工作负荷的 Storm 群集。在给定的群集类型中，不同的节点有不同的角色。例如：
 
 
 
-- HDInsight 的 Hadoop 群集是使用两个角色部署的：
+- HDInsight 的 Hadoop 群集部署到了两个角色：
 	- 头节点（2 个节点）
 	- 数据节点（至少 1 个节点）
 
-- HDInsight 的 HBase 群集是使用三个角色部署的：
+- HDInsight 的 HBase 群集部署到了三个角色：
 	- 头服务器（2 个节点）
 	- 区域服务器（至少 1 个节点）
 	- 主控/Zookeeper 节点（3 个节点）
 
-- HDInsight 的 Storm 群集是使用三个角色部署的：
+- HDInsight 的 Storm 群集部署到了三个角色：
 	- Nimbus 节点（2 个节点）
 	- Supervisor 服务器（至少 1 个节点）
 	- Zookeeper 节点（3 个节点）
@@ -51,7 +51,7 @@ Hadoop 群集的标准实现通常具有单个头节点。HDInsight 通过添加
 
 
 ## 检查活动头节点服务的状态
-若要确定哪个头节点处于活动状态，并检查该头节点上运行的服务状态，你必须通过使用远程桌面协议 (RDP) 连接到 Hadoop 群集。有关 RDP 说明，请参阅[使用 Azure 经典管理门户管理 HDInsight 中的 Hadoop 群集](/documentation/articles/hdinsight-administer-use-management-portal-v1/#connect-to-hdinsight-clusters-by-using-rdp)。一旦远程连接到了该群集，请双击位于桌面上的“Hadoop 服务可用状态”图标，以便通过相关状态来了解 Namenode、Jobtracker、Templeton、Oozieservice、Metastore 和 Hiveserver2 服务正在哪个头节点上运行，如果是 HDI 3.0，则可通过相关状态来了解 Namenode、Resource Manager、History Server、Templeton、Oozieservice、Metastore 和 Hiveserver2 服务正在哪个头节点上运行。
+若要确定头节点处于活动状态，并检查该头节点上运行的服务状态，必需通过使用远程桌面协议 (RDP) 连接到 Hadoop 群集。有关 RDP 说明，请参阅[使用 Azure 经典管理门户管理 HDInsight 中的 Hadoop 群集](/documentation/articles/hdinsight-administer-use-management-portal-v1/#connect-to-hdinsight-clusters-by-using-rdp)。一旦远程连接到了该群集，请双击位于桌面上的“Hadoop 服务可用状态”图标，以便通过相关状态来了解 Namenode、Jobtracker、Templeton、Oozieservice、Metastore 和 Hiveserver2 服务正在哪个头节点上运行，如果是 HDI 3.0，则可通过相关状态来了解 Namenode、Resource Manager、History Server、Templeton、Oozieservice、Metastore 和 Hiveserver2 服务正在哪个头节点上运行。
 
 ![](./media/hdinsight-high-availability/Hadoop.Service.Availability.Status.png)
 
@@ -59,7 +59,7 @@ Hadoop 群集的标准实现通常具有单个头节点。HDInsight 通过添加
 
 ## 访问辅助头节点上的日志文件
 
-当辅助头节点变为活动头节点时，可以通过浏览 JobTracker UI 来访问辅助头节点上的作业日志，就像是在主活动节点上操作一样。若要访问 JobTracker，你必须通过使用 RDP 连接到 Hadoop 群集，如以上部分中所述。在远程连接到了该群集后，双击位于桌面上的“Hadoop 名称节点状态”图标，然后单击“NameNode 日志”，即可转到辅助头节点上的日志目录。
+当辅助头节点变为活动头节点时，可以通过浏览 JobTracker UI 来访问辅助头节点上的作业日志，就像是在主活动节点上操作一样。若要访问 JobTracker，必需通过使用 RDP 连接到 Hadoop 群集，如以上部分中所述。在远程连接到了该群集后，双击位于桌面上的“Hadoop 名称节点状态”图标，然后单击“NameNode 日志”，即可转到辅助头节点上的日志目录。
 
 ![](./media/hdinsight-high-availability/Hadoop.Head.Node.Log.Files.png)
 
@@ -106,4 +106,4 @@ Hadoop 群集的标准实现通常具有单个头节点。HDInsight 通过添加
 - [使用 RDP 连接到 HDInsight 群集](/documentation/articles/hdinsight-administer-use-management-portal-v1/#rdp)
 - [使用 HDInsight .NET SDK](/documentation/articles/hdinsight-provision-clusters-v1/#sdk)
 
-<!---HONumber=Mooncake_0307_2016-->
+<!---HONumber=Mooncake_Quality_Review_1118_2016-->

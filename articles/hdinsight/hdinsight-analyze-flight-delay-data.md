@@ -14,7 +14,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="07/25/2016"
-	wacn.date="11/25/2016"
+	wacn.date="12/12/2016"
 	ms.author="jgao"/>
 
 #使用 HDInsight 中的 Hive 分析航班延误数据
@@ -88,7 +88,7 @@ Hadoop MapReduce 属于批处理。运行 Hive 作业时，最具成本效益的
 <tr><td>$sqlDatabasePassword</td><td>Azure SQL 数据库服务器登录密码。</td></tr>
 <tr><td>$sqlDatabaseName</td><td>Sqoop 将数据导出到的 SQL 数据库。默认名称是 HDISqoop。Sqooop 作业输出的表名称为 AvgDelays。</td></tr>
 </table>
-3. 打开 Windows PowerShell 集成脚本环境 (ISE)。
+3. 打开 Windows PowerShell ISE 并运行以下脚本：
 4. 将以下脚本复制并粘贴到脚本窗格中：
 
 		[CmdletBinding()]
@@ -344,7 +344,7 @@ Hadoop MapReduce 属于批处理。运行 Hive 作业时，最具成本效益的
 
 
 ---
-## <a id="appendix-a"></a>附录 A - 将航班延误数据上载到 Azure Blob 存储
+## <a id="appendix-a"></a>附录 A - 将航班延迟数据上载到 Azure Blob 存储
 上载数据文件和 HiveQL 脚本文件（请参阅[附录 B](#appendix-b)）需要进行规划。思路是在创建 HDInsight 群集和运行 Hive 作业之前存储数据文件和 HiveQL 文件。可以使用两个选项：
 
 - **使用将由 HDInsight 群集用作默认文件系统的同一 Azure 存储帐户。** 由于 HDInsight 群集将具有存储帐户访问密钥，因此你无需进行任何其他更改。
@@ -358,7 +358,7 @@ Hadoop MapReduce 属于批处理。运行 Hive 作业时，最具成本效益的
 2. 在该页面上，选择以下值：
 
 	<table border="1">
-	<tr><th>Name</th><th>值</th></tr>
+	<tr><th>名称</th><th>值</th></tr>
 	<tr><td>筛选年份</td><td>2013 </td></tr>
 	<tr><td>筛选期间</td><td>1 月</td></tr>
 	<tr><td>字段</td><td>*Year*、*FlightDate*、*UniqueCarrier*、*Carrier*、*FlightNum*、*OriginAirportID*、*Origin*、*OriginCityName*、*OriginState*、*DestAirportID*、*Dest*、*DestCityName*、*DestState*、*DepDelayMinutes*、*ArrDelay*、*ArrDelayMinutes*、*CarrierDelay*、*WeatherDelay*、*NASDelay*、*SecurityDelay*、*LateAircraftDelay*（清除其他所有字段）</td></tr>
@@ -640,8 +640,8 @@ HiveQL 脚本将执行以下操作：
 
 	- **$hqlLocalFileName** - 该脚本会先将 HiveQL 脚本文件保存在本地，然后才上载到 Blob 存储。这是文件名。默认值是 <u>C:\\tutorials\\flightdelays\\flightdelays.hql</u>。
 	- **$hqlBlobName** - 这是 Azure Blob 存储中使用的 HiveQL 脚本文件 Blob 名称。默认值是 tutorials/flightdelay/flightdelays.hql。因为文件会直接写入 Azure Blob 存储，所以 Blob 名称的开头不是“/”。如果你要从 Blob 存储访问文件，必须在文件名的开头添加“/”。
-	- **$srcDataFolder** 和 **$dstDataFolder** - = "tutorials/flightdelay/data" 
-	= "tutorials/flightdelays/output"
+	- **$srcDataFolder** 和 **$dstDataFolder** - = "tutorials/flightdelay/data"
+    = "tutorials/flightdelays/output"
 
 
 ---
@@ -842,4 +842,4 @@ HiveQL 脚本将执行以下操作：
 [img-hdi-flightdelays-run-hive-job-output]: ./media/hdinsight-analyze-flight-delay-data/HDI.FlightDelays.RunHiveJob.Output.png
 [img-hdi-flightdelays-flow]: ./media/hdinsight-analyze-flight-delay-data/HDI.FlightDelays.Flow.png
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_Quality_Review_1118_2016-->

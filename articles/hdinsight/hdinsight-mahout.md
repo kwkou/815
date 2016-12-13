@@ -1,6 +1,6 @@
 <properties
 	pageTitle="使用 Mahout 和基于 WIndows 的 HDInsight 生成推荐 | Azure"
-	description="了解如何使用 Apache Mahout 机器学习库通过基于 Windows 的 HDInsight (Hadoop) 生成电影推荐。"
+	description="了解如何使用 Apache Mahout 机器学习库，通过基于 Windows 的 HDInsight (Hadoop) 生成电影推荐。"
 	services="hdinsight"
 	documentationCenter=""
 	authors="Blackmist"
@@ -15,7 +15,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="10/11/2016"
-	wacn.date="11/21/2016"
+	wacn.date="12/12/2016"
 	ms.author="larryfr"/>
 
 #将 Apache Mahout 与 HDInsight 中的 Hadoop 配合使用以生成电影推荐
@@ -25,15 +25,15 @@
 
 ## <a name="learn"></a>学习内容
 
-Mahout 是适用于 Apache Hadoop 的[计算机学习][ml]库。Mahout 包含用于处理数据的算法，例如筛选、分类和群集。在本文中，你将使用推荐引擎生成基于你的朋友看过的电影的电影推荐。你还将学习如何使用决策林执行分类。本文将为你传授以下知识：
+Mahout 是适用于 Apache Hadoop 的[计算机学习][ml]库。Mahout 包含用于处理数据的算法，例如筛选、分类和群集。在本文中，你将使用推荐引擎生成基于你的朋友看过的电影的电影推荐。你还将学习如何使用决策林执行分类。本文将介绍以下内容：
 
-* 如何通过使用 Windows PowerShell 运行 Mahout 作业
+* 如何使用 Windows PowerShell 运行 Mahout 作业
 
 * 如何从 Hadoop 命令行运行 Mahout 作业
 
 * 如何在 HDInsight 3.0 和 HDInsight 2.0 群集上安装 Mahout
 
-	> [AZURE.NOTE] Mahout 是随 HDInsight 3.1 版本的群集一起提供的。如果你使用的是早期版本的 HDInsight，请在继续操作之前参阅[安装 Mahout](#install)。
+	> [AZURE.NOTE] Mahout 是随 HDInsight 3.1 版本的群集一起提供的。如果使用早期版本的 HDInsight，请在继续操作之前参阅[安装 Mahout](#install)。
 
 ##先决条件
 
@@ -44,17 +44,17 @@ Mahout 是适用于 Apache Hadoop 的[计算机学习][ml]库。Mahout 包含用
 
 ## <a name="recommendations"></a>使用 Windows PowerShell 生成推荐
 
-> [AZURE.NOTE] 尽管在本部分中使用的作业使用 Windows PowerShell 执行，但是，随 Mahout 一起提供的很多类当前不使用 Windows PowerShell，并且它们必须通过使用 Hadoop 命令行来运行。有关不使用 Windows PowerShell 的类的列表，请参阅[故障排除](#troubleshooting)部分。<p>有关使用 Hadoop 命令行运行 Mahout 作业的示例，请参阅[使用 Hadoop 命令行对数据分类](#classify)。
+> [AZURE.NOTE] 尽管在本部分中使用的作业使用 Windows PowerShell 执行，但是，随 Mahout 一起提供的很多类当前不使用 Windows PowerShell，必须使用 Hadoop 命令行来运行这些类。有关不使用 Windows PowerShell 的类的列表，请参阅[故障排除](#troubleshooting)部分。<p>有关使用 Hadoop 命令行运行 Mahout 作业的示例，请参阅[使用 Hadoop 命令行对数据进行分类](#classify)。
 
-由 Mahout 提供的功能之一是推荐引擎。此引擎接受 `userID`、`itemId` 和 `prefValue` 格式（项的用户首选项）的数据。然后，Mahout 将执行共现分析，以确定：_偏好某个项的用户也偏好其他类似项_。Mahout 然后确定拥有类似项首选项的用户，这些首选项可用于做出推荐。
+Mahout 提供的功能之一是推荐引擎。此引擎接受 `userID`、`itemId` 和 `prefValue` 格式（此项的用户偏好）的数据。然后，Mahout 将执行共同匹配项分析，以确定：_偏好某个项的用户也偏好其他类似项_。随后，Mahout 确定拥有类似项偏好的用户，这些偏好可用于推荐。
 
 下面是使用电影的极其简单的示例：
 
-* __共现__：Joe、Alice 和 Bob 都喜欢电影_星球大战_、_帝国反击战_和_绝地大反击_。Mahout 可确定喜欢以上电影之一的用户也喜欢其他两部。
+* __共同匹配项__：Joe、Alice 和 Bob 都喜欢电影《星球大战》、《帝国反击战》和《绝地归来》。Mahout 可确定喜欢以上电影之一的用户也喜欢其他两部。
 
-* __共现__：Bob 和 Alice 还喜欢电影_幽灵的威胁_、_克隆人的进攻_和_西斯的复仇_。Mahout 可确定喜欢前面三部电影的用户也喜欢这三部电影。
+* __共同匹配项__：Bob 和 Alice 还喜欢电影《幽灵的威胁》、《克隆人的进攻》和《西斯的复仇》。Mahout 可确定喜欢前面三部电影的用户也喜欢这三部电影。
 
-* __类似性推荐__：由于 Joe 喜欢前三部电影，Mahout 会查看具有类似首选项的其他人喜欢的电影，但是 Joe 还未观看过（喜欢/评价）。在这种情况下，Mahout 推荐《幽灵的威胁》、《克隆人的进攻》和《西斯的复仇》。
+* __类似性推荐__：由于 Joe 喜欢前三部电影，Mahout 会查看具有类似偏好的其他人喜欢、但 Joe 还未观看过（喜欢/评价）的电影。在本例中，Mahout 推荐《幽灵的威胁》、《克隆人的进攻》和《西斯的复仇》。
 
 ###了解数据
 
@@ -152,7 +152,7 @@ user-ratings.txt 中包含的数据具有 `userID`、`movieID`、`userRating` �
             -JobId $job.JobId `
             -StandardError
 
-> [AZURE.NOTE] Mahout 作业不删除在处理作业时创建的临时数据。在示例作业中指定 `--tempDir` 参数，以将临时文件隔离到特定目录中。
+> [AZURE.NOTE] Mahout 作业不会删除处理作业时创建的临时数据。在示例作业中指定 `--tempDir` 参数，以将临时文件隔离到特定目录中。
 
 Mahout 作业不会将输出返回到 STDOUT。而是会将其作为 __part-r-00000__ 存储在指定的输出目录中。该脚本将此文件下载到你工作站上的当前目录中的 __output.txt__ 中。
 
@@ -167,7 +167,7 @@ Mahout 作业不会将输出返回到 STDOUT。而是会将其作为 __part-r-00
 
 ###查看输出
 
-尽管生成的输出也许能够正常地在应用程序中使用，但它的用户可读性并不太好。服务器的 `moviedb.txt` 可用于将 `movieId` 解析为电影名称，但是必须首先使用以下脚本从服务器下载它并对文件评级：
+生成的输出也许可用于应用程序中，但其可读性欠佳。可使用服务器的 `moviedb.txt` 将 `movieId` 解析为电影名称，但必须先使用以下脚本从服务器下载它并对文件评级：
 
     # The HDInsight cluster name.
 	$clusterName = "the cluster name"
@@ -192,7 +192,7 @@ Mahout 作业不会将输出返回到 STDOUT。而是会将其作为 __part-r-00
     -Destination user-ratings.txt `
     -Context $context
     
-下载文件后，使用以下 PowerShell 脚本通过影片名称显示推荐：
+下载文件后，使用以下 PowerShell 脚本显示包含影片名称的推荐：
 
 	<#
 	.SYNOPSIS
@@ -313,7 +313,7 @@ Mahout 作业不会将输出返回到 STDOUT。而是会将其作为 __part-r-00
 
 ## <a name="classify"></a>通过使用 Hadoop 命令行对数据进行分类
 
-Mahout 提供的分类方法之一是生成[随机林][forest]。这是一个多步骤过程，涉及到使用训练数据来生成决策树，然后使用决策树对数据进行分类。此过程使用 Mahout 提供的 __org.apache.mahout.classifier.df.tools.Describe__ 类。它当前必须通过使用 Hadoop 命令行来运行。
+Mahout 提供的分类方法之一是生成[随机林][forest]。这是一个多步骤过程，涉及到使用训练数据来生成决策树，然后使用决策树对数据进行分类。此过程使用 Mahout 提供的 __org.apache.mahout.classifier.df.tools.Describe__ 类。目前必须使用 Hadoop 命令行来运行它。
 
 ###加载数据
 
@@ -323,9 +323,9 @@ Mahout 提供的分类方法之一是生成[随机林][forest]。这是一个多
 
   * KDDTest+.ARFF：测试数据
 
-2. 打开每个文件，删除顶部以“@”开头的行，然后保存文件。如果未删除这些行，则你在 Mahout 中使用数据时将会收到错误消息。
+2. 打开每个文件，删除顶部以“@”开头的行，然后保存文件。如果未删除这些行，则将此数据用于 Mahout 时将收到错误消息。
 
-2. 将文件上载到 __example/data__。为此，可以使用以下脚本。将 __CLUSTERNAME__ 替换为 HDInsight 群集的名称。将 FILENAME 替换为要上载的文件的名称。
+2. 将文件上传到 __example/data__。为此，可以使用以下脚本。将 __CLUSTERNAME__ 替换为 HDInsight 群集的名称。将 FILENAME 替换为要上传的文件的名称。
 
         #Get the cluster info so we can get the storage, etc.
         $clusterName="CLUSTERNAME"
@@ -363,17 +363,17 @@ Mahout 提供的分类方法之一是生成[随机林][forest]。这是一个多
 
 	`N 3 C 2 N C 4 N C 8 N 2 C 19 N L` 描述文件中数据的属性。例如，L 指示标签。
 
-4. 通过使用以下命令生成决策树的林：
+4. 使用以下命令生成决策树的林：
 
 		hadoop jar c:/apps/dist/mahout-0.9.0.2.2.9.1-8/examples/target/mahout-examples-0.9.0.2.2.9.1-8-job.jar org.apache.mahout.classifier.df.mapreduce.BuildForest -Dmapred.max.split.size=1874231 -d wasbs:///example/data/KDDTrain+.arff -ds wasbs:///example/data/KDDTrain+.info -sl 5 -p -t 100 -o nsl-forest
 
-    此操作的输出存储在 __nsl-forest__ 目录中，该目录位于 HDInsight 群集的存储中的 __wasbs://user/&lt;username>/nsl-forest/nsl-forest.seq 处。&lt;用户名> 是你用于远程桌面会话的用户名。此文件对用户不可读。
+    此操作的输出存储在 __nsl-forest__ 目录中，该目录位于 HDInsight 群集的存储中的 __wasbs://user/&lt;username>/nsl-forest/nsl-forest.seq 处。&lt;用户名> 即用于远程桌面会话的用户名。此文件对用户不可读。
 
-5. 通过为 __KDDTest+.arff__ 数据集分类来测试该林。请使用以下命令：
+5. 通过为 __KDDTest+.arff__ 数据集分类来测试该林。使用以下命令：
 
     	hadoop jar c:/apps/dist/mahout-0.9.0.2.2.9.1-8/examples/target/mahout-examples-0.9.0.2.2.9.1-8-job.jar org.apache.mahout.classifier.df.mapreduce.TestForest -i wasbs:///example/data/KDDTest+.arff -ds wasbs:///example/data/KDDTrain+.info -m nsl-forest -a -mr -o wasbs:///example/data/predictions
 
-    此命令返回如下有关分类过程的摘要信息：
+    此命令返回有关分类过程的如下摘要信息：
 
 	    14/07/02 14:29:28 INFO mapreduce.TestForest:
 
@@ -399,7 +399,7 @@ Mahout 提供的分类方法之一是生成[随机林][forest]。这是一个多
 	    Reliability                                53.4921%
 	    Reliability (standard deviation)            0.4933
 
-  此作业还将生成位于 __wasbs:///example/data/predictions/KDDTest+.arff.out__ 的文件。但是，此文件对用户不可读。
+  此作业还将生成位于 __wasbs:///example/data/predictions/KDDTest+.arff.out__ 的文件。但是，用户无法阅读此文。
 
 > [AZURE.NOTE] Mahout 作业不会覆盖文件。如果要再次运行这些作业，则必须删除由以前的作业创建的文件。
 
@@ -407,9 +407,9 @@ Mahout 提供的分类方法之一是生成[随机林][forest]。这是一个多
 
 ### <a name="install"></a>安装 Mahout
 
-Mahout 安装在 HDInsight 3.1 群集上，它可以通过使用以下步骤手动安装在 HDInsight 3.0 或 HDInsight 2.1 群集上：
+Mahout 安装在 HDInsight 3.1 群集上，可使用以下步骤将其手动安装在 HDInsight 3.0 或 HDInsight 2.1 群集上：
 
-1. 要使用的 Mahout 版本取决于群集的 HDInsight 版本。可以通过在 Azure 经典管理门户中查看群集的属性找到群集版本。
+1. 要使用的 Mahout 版本取决于群集的 HDInsight 版本。在 Azure 经典管理门户中查看群集的属性即可找到群集版本。
 
   * __对于 HDInsight 2.1__，可以下载包含 [Mahout 0.9](http://repo2.maven.org/maven2/org/apache/mahout/mahout-core/0.9/mahout-core-0.9-job.jar) 的 Java 存档 (JAR) 文件。
 
@@ -421,7 +421,7 @@ Mahout 安装在 HDInsight 3.1 群集上，它可以通过使用以下步骤手�
 
     	> [AZURE.NOTE] When Mahout 1.0 is released, you should be able to use the prebuilt packages with HDInsight 3.0.
 
-2. 将该 jar 文件上载到群集默认存储的 __example/jars__ 中。在以下脚本中将 CLUSTERNAME 替换为你的 HDInsight 群集的名称，并将 FILENAME 替换为 __mahout-coure-0.9-job.jar__ 文件的路径。
+2. 将该 jar 文件上传到群集默认存储内的 __example/jars__ 中。在以下脚本中将 CLUSTERNAME 替换为你的 HDInsight 群集的名称，并将 FILENAME 替换为 __mahout-coure-0.9-job.jar__ 文件的路径。
 
         #Get the cluster info so we can get the storage, etc.
         $clusterName = "CLUSTERNAME"
@@ -484,7 +484,7 @@ Mahout 作业如果使用以下类，则从 Windows PowerShell 中使用这些�
 
 ##后续步骤
 
-现在，你已经学习了如何使用 Mahout，因此可以探索通过其他方式来使用 HDInsight 上的数据：
+既已学习如何使用 Mahout，可探索在 HDInsight 上处理数据的其他方式：
 
 * [Hive 和 HDInsight](/documentation/articles/hdinsight-use-hive/)
 * [Pig 和 HDInsight](/documentation/articles/hdinsight-use-pig/)
@@ -504,4 +504,4 @@ Mahout 作业如果使用以下类，则从 Windows PowerShell 中使用这些�
 [hadoopcli]: ./media/hdinsight-mahout/hadoopcli.png
 [tools]: https://github.com/Blackmist/hdinsight-tools
 
-<!---HONumber=Mooncake_0516_2016-->
+<!---HONumber=Mooncake_Quality_Review_1118_2016-->

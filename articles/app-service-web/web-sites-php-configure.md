@@ -14,19 +14,19 @@
 	ms.devlang="PHP"
 	ms.topic="article"
 	ms.date="08/11/2016"
-	wacn.date="09/26/2016"
+	wacn.date="12/12/2016"
 	ms.author="robmcm"/>
 
 #在 Azure App Service Web Apps 中配置 PHP
 
 ##<a name="WhatIs"></a>介绍
 
-本指南将演示如何执行以下操作：在 [Azure App Service](/documentation/articles/app-service-changes-existing-services/) 中配置 Web 应用的内置 PHP 运行时，提供自定义 PHP 运行时，并启用扩展。若要使用应用服务，请注册[试用版]。若要充分利用本指南，你应先在 App Service 中创建一个 PHP Web 应用。
+本指南将演示如何执行以下操作：在 [Azure 应用服务](/documentation/articles/app-service-changes-existing-services/)中配置 Web 应用的内置 PHP 运行时，提供自定义 PHP 运行时，以及启用扩展。若要使用应用服务，请注册[试用版]。若要充分利用本指南，你应先在应用服务中创建一个 PHP Web 应用。
 
 [AZURE.INCLUDE [app-service-web-to-api-and-mobile](../../includes/app-service-web-to-api-and-mobile.md)]
 
 ##<a name="ChangeBuiltInPHP"></a>如何：更改内置 PHP 版本
-默认情况下，将安装 PHP 5.4 并且在创建应用服务 Web 应用时立即可用。查看可用发行版、其默认配置以及已启用的扩展的最佳方式是部署调用 [phpinfo()] 函数的脚本。
+默认情况下，安装 PHP 5.4 后，创建应用服务 Web 应用时立即可以使用。查看可用发行版、其默认配置以及已启用扩展的最佳方式是部署调用 [phpinfo()] 函数的脚本。
 
 PHP 5.5 和 PHP 5.6 也可用，但它们在默认情况下不启用。若要更新 PHP 版本，请使用下列方法之一：
 
@@ -58,7 +58,7 @@ PHP 5.5 和 PHP 5.6 也可用，但它们在默认情况下不启用。若要更
 
         PS C:\> Get-AzureWebsite -Name {site-name} | findstr PhpVersion
 
-### Azure 命令行界面（Linux、Mac、Windows）
+### Azure 命令行接口（Linux、Mac、Windows）
 
 若要使用 Azure 命令行接口，必须已在计算机上安装 **Node.js**。
 
@@ -82,22 +82,22 @@ PHP 5.5 和 PHP 5.6 也可用，但它们在默认情况下不启用。若要更
 ### 更改 PHP\_INI\_USER、PHP\_INI\_PERDIR、PHP\_INI\_ALL 配置设置
 
 1. 将 [.user.ini] 文件添加到根目录。
-2. 使用你将在 `php.ini` 文件中使用的语法，将配置设置添加到 `.user.ini` 文件。例如，如果你希望打开 `display_errors` 设置，并将 `upload_max_filesize` 设置设为 10 分钟，你的 `.user.ini` 文件将包含此文本：
+2. 使用将在 `php.ini` 文件中使用的语法，将配置设置添加到 `.user.ini` 文件中。例如，如果你希望打开 `display_errors` 设置，并将 `upload_max_filesize` 设置设为 10 分钟，`.user.ini` 文件中将包含以下内容：
 
 		; Example Settings
 		display_errors=On
 		upload_max_filesize=10M
 
-3. 部署你的 Web 应用。
-4. 重新启动 Web 应用。（需要进行重新启动，因为 PHP 读取 `.user.ini` 文件的频率受 `user_ini.cache_ttl` 设置的约束，该设置是一个系统级别设置且默认值为 300 秒（5 分钟）。重新启动 Web 应用会强制 PHP 读取 `.user.ini` 文件中的新设置。）
+3. 部署 Web 应用。
+4. 重新启动 Web 应用。（必须重新启动，因为 PHP 读取 `.user.ini` 文件的频率受 `user_ini.cache_ttl` 设置的约束，该设置是一个系统级别设置且默认值为 300 秒（5 分钟）。重新启动 Web 应用会强制 PHP 读取 `.user.ini` 文件中的新设置。）
 
-作为使用 `.user.ini` 文件的替代方法，你可以使用脚本中的 [ini\_set()] 函数来设置不是系统级别指令的配置选项。
+如果不使用 `.user.ini` 文件，则可以使用脚本中的 [ini\_set()] 函数来设置不属于系统级别指令的配置选项。
 
 ### 更改 PHP\_INI\_SYSTEM 配置设置
 
-1. 使用密钥 `PHP_INI_SCAN_DIR` 和值 `d:\home\site\ini` 将应用设置添加到你的 Web 应用
+1. 使用密钥 `PHP_INI_SCAN_DIR` 和值 `d:\home\site\ini` 将应用设置添加到 Web 应用
 2. 使用 Kudu 控制台 (http://&lt;site-name&gt;.scm.azurewebsite.net) 在 `d:\home\site\ini` 目录中创建 `settings.ini` 文件。
-3. 使用你将在 php.ini 文件中使用的语法，将配置设置添加到 `settings.ini` 文件。例如，如果你希望将 `curl.cainfo` 设置指向 `*.crt` 文件并将“wincache.maxfilesize”设置为 512K，则 `settings.ini` 文件将包含此文本：
+3. 使用将在 php.ini 文件中使用的语法，将配置设置添加到 `settings.ini` 文件中。例如，如果你希望将 `curl.cainfo` 设置指向 `*.crt` 文件并将“wincache.maxfilesize”设置为 512K，则 `settings.ini` 文件将包含以下内容：
 
 		; Example Settings
 		curl.cainfo="%ProgramFiles(x86)%\Git\bin\curl-ca-bundle.crt"
@@ -105,15 +105,15 @@ PHP 5.5 和 PHP 5.6 也可用，但它们在默认情况下不启用。若要更
 4. 重新启动 Web 应用以加载更改。
 
 ## 如何：在默认 PHP 运行时中启用扩展
-如上一部分所述，查看默认 PHP 版本、其默认配置以及已启用的扩展的最佳方式是部署调用 [phpinfo()] 的脚本。若要启用其他扩展，请执行下列步骤：
+如上一节所述，查看默认 PHP 版本、其默认配置和已启用的扩展的最佳方法是部署调用 [phpinfo()] 的脚本。若要启用其他扩展，请执行下列步骤：
 
 ### 通过 ini 设置进行配置
 
 1. 将 `ext` 目录添加到 `d:\home\site` 目录。
 2. 将 `.dll` 扩展文件置于 `ext` 目录中（例如 `php_mongo.dll` 和 `php_xdebug.dll`）。确保扩展与默认版本的 PHP（撰写本文时为 PHP 5.4）兼容，并且是 VC9 版本且与非线程安全 (nts) 兼容。
-3. 使用密钥 `PHP_INI_SCAN_DIR` 和值 `d:\home\site\ini` 将应用设置添加到你的 Web 应用
+3. 使用密钥 `PHP_INI_SCAN_DIR` 和值 `d:\home\site\ini` 将应用设置添加到 Web 应用
 4. 在 `d:\home\site\ini` 中创建名为 `extensions.ini` 的 `ini` 文件。
-5. 使用你将在 php.ini 文件中使用的语法，将配置设置添加到 `extensions.ini` 文件。例如，如果你想要启用 MongoDB 和 XDebug 扩展，则 `extensions.ini` 文件将包含此文本：
+5. 使用将在 php.ini 文件中使用的语法，将配置设置添加到 `extensions.ini` 文件中。例如，如果你想要启用 MongoDB 和 XDebug 扩展，则 `extensions.ini` 文件将包含此文本：
 
 		; Enable Extensions
 		extension=d:\home\site\ext\php_mongo.dll
@@ -123,14 +123,14 @@ PHP 5.5 和 PHP 5.6 也可用，但它们在默认情况下不启用。若要更
 ### 通过应用设置进行配置
 
 1. 将 `bin` 目录添加到根目录。
-2. 将 `.dll` 扩展文件置于 `bin` 目录中（例如 `php_mongo.dll`）。确保扩展与默认版本的 PHP（撰写本文时为 PHP 5.4）兼容，并且是 VC9 版本且与非线程安全 (nts) 兼容。
-3. 部署你的 Web 应用。
+2. 将 `.dll` 扩展文件放在 `bin` 目录中（例如 `php_mongo.dll`）。确保扩展与默认版本的 PHP（撰写本文时为 PHP 5.4）兼容，并且是 VC9 版本且与非线程安全 (nts) 兼容。
+3. 部署 Web 应用。
 4. 在 Azure 门户预览中浏览到 Web 应用，然后单击“设置”按钮。
 
 	![Web 应用设置][settings-button]
 
 5. 在“设置”边栏选项卡中选择“应用程序设置”，然后滚动到“应用设置”部分。
-6. 在“应用设置”部分中，创建 **PHP\_EXTENSIONS** 键。此键的值将为网站根路径相对路径：**bin\\your-ext-file**。
+6. 在“应用设置”部分中，创建 **PHP\_EXTENSIONS** 键。此键的值为网站根目录的相对路径：**bin\\your-ext-file**。
 
 	![启用应用程序设置中的扩展][php-extensions]
 
@@ -142,18 +142,18 @@ PHP 5.5 和 PHP 5.6 也可用，但它们在默认情况下不启用。若要更
 
 
 ##<a name="UseCustomPHP"></a>如何：使用自定义 PHP 运行时
-应用服务 Web 应用可以使用提供的 PHP 运行时（而非默认 PHP 运行时）来执行 PHP 脚本。提供的运行时可由提供的 `php.ini` 文件配置。若要在 Web 应用中使用自定义 PHP 运行时，请执行下列步骤。
+应用服务 Web 应用可以使用提供的 PHP 运行时（而非默认 PHP 运行时）来执行 PHP 脚本。你提供的运行时可由 `php.ini` 文件（也是你提供的）配置。若要在 Web 应用中使用自定义 PHP 运行时，请执行下列步骤。
 
 1. 获取非线程安全、VC9 或 VC11 兼容版本的 PHP for Windows。可在此处找到 PHP for Windows 最新版本：[http://windows.php.net/download/]。可在此处的存档中找到旧版本：[http://windows.php.net/downloads/releases/archives/]。
 2. 修改运行时的 `php.ini` 文件。请注意，Web 应用将忽略作为任何仅在系统级别使用的指令的配置设置。（有关仅在系统级别使用的指令的信息，请参阅 [php.ini 指令的列表]。）
 3. （可选）将扩展添加到 PHP 运行时并在 `php.ini` 文件中启用这些扩展。
 4. 将 `bin` 目录添加到根目录，并将包含 PHP 运行时的目录置于该目录中（例如 `bin\php`）。
-5. 部署你的 Web 应用。
+5. 部署 Web 应用。
 4. 在 Azure 门户预览中浏览到 Web 应用，然后单击“设置”按钮。
 
 	![Web 应用设置][settings-button]
 
-7. 在“设置”边栏选项卡中选择“应用程序设置”，然后滚动到“处理程序映射”部分。将 `*.php` 添加到扩展字段，并将路径添加到 `php-cgi.exe` 可执行文件。如果将 PHP 运行时放在应用程序根目录中的 `bin` 目录下，路径将为 `D:\home\site\wwwroot\bin\php\php-cgi.exe`。
+7. 在“设置”边栏选项卡中选择“应用程序设置”，然后滚动到“处理程序映射”部分。将 `*.php` 添加到扩展字段，并将路径添加到 `php-cgi.exe` 可执行文件。如果将 PHP 运行时放在应用程序根目录下的 `bin` 目录中，则路径为 `D:\home\site\wwwroot\bin\php\php-cgi.exe`。
 
 	![指定处理程序映射中的处理程序][handler-mappings]
 
@@ -164,7 +164,7 @@ PHP 5.5 和 PHP 5.6 也可用，但它们在默认情况下不启用。若要更
 <a name="composer" /></a>
 ## 如何：在 Azure 中启用编辑器自动化
 
-默认情况下，如果 PHP 项目中有 composer.json，则应用服务与其不相关。 如果使用 [Git 部署](/documentation/articles/app-service-web-php-get-started/)，可以在 `git push` 期间通过启用编辑器扩展启用 composer.json 处理。
+默认情况下，应用服务与 composer.json（如果 PHP 项目中有）不相关。如果使用 [Git 部署](/documentation/articles/app-service-web-php-get-started/)，可以在 `git push` 期间通过启用编辑器扩展启用 composer.json 处理。
 
 >[AZURE.NOTE] 可以[在这里为应用服务中的一流编辑器支持投票](https://feedback.azure.com/forums/169385-web-apps-formerly-websites/suggestions/6477437-first-class-support-for-composer-and-pip)！
 
@@ -207,4 +207,4 @@ PHP 5.5 和 PHP 5.6 也可用，但它们在默认情况下不启用。若要更
 [GETPHPVERPS]: ./media/web-sites-php-configure/ShowPHPVersion-PS.png
  
 
-<!---HONumber=Mooncake_0919_2016-->
+<!---HONumber=Mooncake_Quality_Review_1118_2016-->

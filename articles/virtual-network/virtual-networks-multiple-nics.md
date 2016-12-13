@@ -1,6 +1,6 @@
 <properties 
-   pageTitle="创建具有多个 NIC 的 VM"
-   description="了解如何创建和配置具有多个 NIC 的 VM"
+   pageTitle="创建有多个 NIC 的 VM"
+   description="了解如何创建和配置有多个 NIC 的 VM"
    services="virtual-network, virtual-machines"
    documentationCenter="na"
    authors="telmosampaio"
@@ -15,12 +15,12 @@
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
    ms.date="02/02/2016"
-   wacn.date="09/23/2016"
+   wacn.date="12/12/2016"
    ms.author="jdial" />
 
-# 创建具有多个 NIC 的 VM
+# 创建有多个 NIC 的 VM
 
-你可以在 Azure 中创建虚拟机 (VM)，然后将多个网络接口 (NIC) 附加到每个 VM。多 NIC 是许多网络虚拟设备（例如应用程序传送和 WAN 优化解决方案）所必需的。多 NIC 还提供更多的网络流量管理功能，包括在前端 NIC 和后端 NIC 之间进行流量隔离，或者将数据平面流量与管理平面流量进行隔离。
+你可以在 Azure 中创建虚拟机 (VM)，然后将多个网络接口 (NIC) 附加到每个 VM。多 NIC 是许多网络虚拟设备（例如应用程序传送和 WAN 优化解决方案）所必需的。多 NIC 还可提供更多的网络流量管理功能，包括在前端 NIC 和后端 NIC 之间进行流量隔离，或者将数据平面流量与管理平面流量进行隔离。
 
 ![用于 VM 的多 NIC](./media/virtual-networks-multiple-nics/IC757773.png)
 
@@ -31,7 +31,7 @@
 多 NIC 目前有以下要求和约束：
 
 - 必须在 Azure 虚拟网络 (VNet) 中创建多 NIC VM。不支持非 VNet VM。 
-- 在单个云服务（经典部署）或资源组中，仅允许以下设置： 
+- 在单个云服务（经典部署）或资源组（资源管理器部署）中，仅允许以下设置： 
 	- 该云服务中的所有 VM 都必须启用多 NIC，否则 
 	- 该云服务中的所有 VM 都必须使用单个 NIC 
 
@@ -41,7 +41,7 @@
 - 多 NIC VM 目前不支持实例级公共 IP (LPIP) 地址（经典部署）。 
 - VM 内部 NIC 的顺序将是随机的，在 Azure 基础结构更新过程中也可能会更改。不过，IP 地址和相应的以太网 MAC 地址将会保持不变。例如，假定 **Eth1** 的 IP 地址为 10.1.0.100，MAC 地址为 00-0D-3A-B0-39-0D；在进行 Azure 基础结构更新并重新启动后，它可能会更改为 **Eth2**，但 IP 和 MAC 配对将会保持不变。如果是客户执行的重新启动，NIC 顺序将保持不变。 
 - 每个 VM 上的每个 NIC 的地址必须位于一个子网中，你可以向单个 VM 上的多个 NIC 分配同一子网中的地址。 
-- VM 大小决定了可以为 VM 创建的 NIC 的数目。下表列出了与 VM 大小相对应的 NIC 数目： 
+- VM 大小决定了可以为 VM 创建的 NIC 的数目。下表列出了与 VM 大小对应的 NIC 数目： 
 
 |VM 大小（标准 SKU）|NIC 数（每个 VM 允许的最大数目）|
 |---|---|
@@ -137,17 +137,17 @@
 
 		New-AzureVM -ServiceName "MultiNIC-CS" –VNetName "MultiNIC-VNet" –VMs $vm
 
->[AZURE.NOTE]你在此处指定的 VNet 必须已存在（已在先决条件中提到过）。下面的示例指定名为“MultiNIC-VNet”的虚拟网络。
+>[AZURE.NOTE] 此处指定的 VNet 必须已存在（如先决条件中所述）。下述示例指定名为“MultiNIC-VNet”的虚拟网络。
 
 ## 辅助 NIC 对其他子网的访问
 
-Azure 中的当前模型是虚拟机中的所有 NIC 都设置有默认网关。这允许 NIC 与其子网之外的 IP 地址进行通信。在使用弱主机路由模型的操作系统（如 Linux）中，如果流入和流出流量使用不同 NIC，Internet 连接就会中断。
+Azure 中的当前模型是虚拟机中的所有 NIC 都设置有默认网关。这允许 NIC 与其子网之外的 IP 地址进行通信。在使用弱主机路由模型的操作系统（如 Linux）中，如果流入和出口流量使用不同 NIC，Internet 连接就会中断。
 
-为了解决此问题，Azure 将在 2015 年 7 月的第一周中推出平台更新，该更新将从辅助 NIC 中删除默认网关。这不会影响现有的虚拟机，直到这些虚拟机重新启动。在重新启动后，新设置将生效，在那时，辅助 NIC 上的通信流将限制为在同一子网内。如果用户要启用辅助 NIC 以在其自己的子网之外进行对话，他们必须在路由表中添加一个条目以配置网关，如下所述。
+为了解决此问题，Azure 在 2015 年 7 月第一周推出了平台更新，该更新从辅助 NIC 中删除了默认网关。重新启动现有虚拟机之前，这不会产生任何影响。重新启动后，新设置将生效，届时辅助 NIC 上的通信流将限制为在同一子网内。如果用户要启用辅助 NIC，以在其自己的子网之外进行对话，则必须在路由表中添加一个条目来配置网关，如下所述。
 
 ### 配置 Windows VM
 
-假设你有一个具有两个 NIC 的 Windows VM，如下所示：
+假设有一个包含两个 NIC 的 Windows VM，如下所示：
 
 - 主 NIC IP 地址：192.168.1.4
 - 辅助 NIC IP 地址：192.168.2.5
@@ -231,10 +231,10 @@ Azure 中的当前模型是虚拟机中的所有 NIC 都设置有默认网关。
 
 ### 配置 Linux VM
 
-对于 Linux VM，由于默认行为使用弱主机路由，因为我们建议将辅助 NIC 限制为仅在同一子网内的通信流。但是，如果某些情况需要子网外的连接，用户应启用基于策略的路由以确保流入和流出流量使用同一 NIC。
+对于 Linux VM，由于默认行为使用弱主机路由，因此，建议将辅助 NIC 限制为仅同一子网内的通信流。但是，在某些情况下，如果需要子网外的连接，用户应启用基于策略的路由，以确保流入和出口流量使用同一 NIC。
 
 ## 后续步骤
 
 - [在经典部署的 2 层应用程序方案中部署多 NIC VM](/documentation/articles/virtual-network-deploy-multinic-classic-ps/)。
 
-<!---HONumber=Mooncake_1221_2015-->
+<!---HONumber=Mooncake_Quality_Review_1118_2016-->

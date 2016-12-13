@@ -15,7 +15,7 @@
 	ms.devlang="dotnet" 
 	ms.topic="article" 
 	ms.date="03/21/2016" 
-	wacn.date="11/25/2016" 
+	wacn.date="12/12/2016" 
 	ms.author="riande"/> 
 
 
@@ -45,7 +45,7 @@
 
 要完成本教程，你需要一个 Azure 帐户。如果你没有帐户，可以[注册试用版](/pricing/1rmb-trial/?WT.mc_id=A261C142F)。
 
-要设置开发环境，则必须安装 [Visual Studio 2013 Update 5](http://go.microsoft.com/fwlink/?LinkId=390521) 或更高版本，以及最新版本的 [用于 .NET 的 Azure SDK](http://go.microsoft.com/fwlink/?linkid=324322&clcid=0x409)。本文专为 Visual Studio Update 4 和 SDK 2.8.1 编写。相同的说明同样适用于已安装最新 [Azure SDK for .NET](http://go.microsoft.com/fwlink/?linkid=518003&clcid=0x409) 的 Visual Studio 2015，但有些屏幕看起来与插图不同。
+要设置开发环境，则必须安装 [Visual Studio 2013 Update 5](http://go.microsoft.com/fwlink/?LinkId=390521) 或更高版本，以及最新版本的 [Azure SDK for .NET](http://go.microsoft.com/fwlink/?linkid=324322&clcid=0x409)。本文专为 Visual Studio Update 4 和 SDK 2.8.1 编写。相同的说明同样适用于已安装最新 [Azure SDK for .NET](http://go.microsoft.com/fwlink/?linkid=518003&clcid=0x409) 的 Visual Studio 2015，但有些屏幕看起来与插图不同。
 
 ## 创建 ASP.NET MVC 5 应用程序
 
@@ -142,7 +142,7 @@
 
 ## 将应用程序部署到 Azure
 
-1. 在 Visual Studio 中，在“解决方案资源管理器”中右键单击该项目，然后从上下文菜单中选择“发布”。
+1. 在 Visual Studio 中，在“解决方案资源管理器”中右键单击该项目，从上下文菜单中选择“发布”。
 
 	![项目上下文菜单中的“发布”](./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/GS13publish.png)
 	
@@ -352,7 +352,7 @@ ASP.NET MVC 基架功能可以自动生成用于执行创建、读取、更新�
 
 	![“程序包管理器控制台”命令][addcode009]
 
-	**update-database** 用于运行创建数据库的初始迁移。默认情况下，将以 SQL Server Express LocalDB 数据库的形式创建数据库。
+	**update-database** 用于运行将创建数据库的初始迁移。默认情况下，将以 SQL Server Express LocalDB 数据库的形式创建数据库。
 
 7. 按 Ctrl+F5 运行应用程序，然后单击“CM Demo”链接；或者导航到 https://localhost:(port#)/Cm。
 
@@ -417,6 +417,7 @@ ASP.NET MVC 基架功能可以自动生成用于执行创建、读取、更新�
 	下图显示了对 *Seed* 方法所做的更改：
 
 	![代码映像](./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/ss24.PNG)  
+
 	此代码会创建一个名为 *canEdit* 的新角色，创建新的本地用户 *user1@contoso.com*，并将 *user1@contoso.com* 添加到 *canEdit* 角色。有关详细信息，请参阅 ASP.NET 站点上的 [ASP.NET 标识教程](http://www.asp.net/identity/overview/features-api)。
 
 ## 使用临时代码将新的社交登录用户添加到 canEdit 角色  ##
@@ -712,7 +713,7 @@ ASP.NET MVC 基架功能可以自动生成用于执行创建、读取、更新�
 
 ## 发生的更改
 
-* 有关从网站更改为 App Service 的指南，请参阅 [Azure App Service 及其对现有 Azure 服务的影响](/documentation/articles/app-service-changes-existing-services/)
+* 有关从网站更改为应用服务的指南，请参阅 [Azure App Service 及其对现有 Azure 服务的影响](/documentation/articles/app-service-changes-existing-services/)
 
 <!-- bookmarks -->
 [Add an OAuth Provider]: #addOauth
@@ -774,4 +775,4 @@ ASP.NET MVC 基架功能可以自动生成用于执行创建、读取、更新�
 [ImportPublishSettings]: ./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database-vs2013/ImportPublishSettings.png
  
 
-<!---HONumber=Mooncake_1107_2016-->
+<!---HONumber=Mooncake_Quality_Review_1118_2016-->

@@ -14,14 +14,14 @@
    ms.tgt_pltfrm="na"
    ms.workload="big-data" 
    ms.date="09/02/2016" 
-   wacn.date="10/25/2016"
+   wacn.date="12/12/2016"
    ms.author="jgao"/>
 
 # 将 Apache Phoenix 和 SQuirreL 与 HDinsight 中的 HBase 配合使用  
 
-了解如何在 HDInsight 中使用 [Apache Phoenix](http://phoenix.apache.org/)，以及如何在工作站上安装和配置 SQuirrel 以连接到 HDInsight 中的 HBase 群集。有关 Phoenix 的详细信息，请参阅[在 15 分钟或更短时间内了解 Phoenix](http://phoenix.apache.org/Phoenix-in-15-minutes-or-less.html)。有关 Phoenix 语法，请参阅 [Phoenix 语法](http://phoenix.apache.org/language/index.html)。
+了解如何在 HDInsight 中使用 [Apache Phoenix](http://phoenix.apache.org/)，以及如何在工作站上安装和配置 SQuirrel 以连接到 HDInsight 中的 HBase 群集。有关 Phoenix 的详细信息，请参阅[在 15 分钟或以下了解 Phoenix](http://phoenix.apache.org/Phoenix-in-15-minutes-or-less.html)。有关 Phoenix 语法，请参阅 [Phoenix 语法](http://phoenix.apache.org/language/index.html)。
 
->[AZURE.NOTE]有关 HDInsight 中的 Phoenix 版本信息，请参阅 [HDInsight 提供的 Hadoop 群集版本有哪些新功能？][hdinsight-versions]。
+>[AZURE.NOTE] 有关 HDInsight 中的 Phoenix 版本信息，请参阅 [HDInsight 提供的 Hadoop 群集版本有有何变化？][hdinsight-versions]。
 
 ## 使用 SQLLine
 [SQLLine](http://sqlline.sourceforge.net/) 是用于执行 SQL 的命令行实用工具。
@@ -39,7 +39,7 @@
 
 		ipconfig
 
-	记下**特定于连接的 DNS 后缀**。例如 *myhbasecluster.f5.internal.chinacloudapp.cn*。在连接到 HBase 群集时，你需要使用 FQDN 连接到 Zookeeper 之一。每个 HDInsight 群集有 3 个 Zookeeper。它们分别是 *zookeeper0*、*zookeeper1* 和 *zookeeper2*。FQDN 类似于 *zookeeper2.myhbasecluster.f5.internal.chinacloudapp.cn*。
+	记下**特定于连接的 DNS 后缀**。例如 *myhbasecluster.f5.internal.chinacloudapp.cn*。连接到 HBase 群集时，需要使用 FQDN 连接到某一 Zookeeper。每个 HDInsight 群集有 3 个 Zookeeper。它们分别是 *zookeeper0*、*zookeeper1* 和 *zookeeper2*。FQDN 类似于 *zookeeper2.myhbasecluster.f5.internal.chinacloudapp.cn*。
 
 **使用 SQLLine**
 
@@ -82,7 +82,7 @@
 
 ## 使用 SQuirrel
 
-[SQuirreL SQL 客户端](http://squirrel-sql.sourceforge.net/)是一种图形 Java 程序，可让你查看 JDBC 兼容数据库的结构，浏览表中的数据，发出 SQL 命令，等等。它可用于连接到 HDInsight 上的 Apache Phoenix。
+[SQuirreL SQL 客户端](http://squirrel-sql.sourceforge.net/)是一种图形 Java 程序，可用于查看 JDBC 兼容数据库的结构、浏览表中的数据、发出 SQL 命令等。可使用它连接到 HDInsight 上的 Apache Phoenix。
 
 ### 先决条件
 
@@ -95,7 +95,7 @@
 - 获取 HBase 群集的特定于连接的 DNS 后缀。若要获取该后缀，请与群集建立连接桌面连接 (RDP)，然后运行 IPConfig。DNS 后缀类似于：
 
 		myhbase.b7.internal.chinacloudapp.cn
-- 在工作站中下载并安装 [Microsoft Visual Studio Express 2013 for Windows Desktop](https://www.visualstudio.com/products/visual-studio-express-vs.aspx)。你将需要使用该程序包的 makecert 来创建证书。  
+- 在工作站中下载并安装 [Microsoft Visual Studio Express 2013 for Windows Desktop](https://www.visualstudio.com/products/visual-studio-express-vs.aspx)。需要使用该程序包的 makecert 来创建证书。  
 - 在工作站中下载并安装 [Java 运行时环境](http://www.oracle.com/technetwork/java/javase/downloads/jre7-downloads-1880261.html)。SQuirrel SQL 客户端 3.0 和更高版本需要 JRE 1.6 或更高版本。  
 
 
@@ -107,10 +107,10 @@
 2. 打开/运行该 jar 文件。它需要 [Java 运行时环境](http://www.oracle.com/technetwork/java/javase/downloads/jre7-downloads-1880261.html)。
 3. 单击“下一步”两次。
 4. 指定你具有写入权限的路径，然后单击“下一步”。
-	>[AZURE.NOTE]默认的安装文件夹为 C:\\Program Files\\squirrel-sql-3.6 文件夹。若要写入此路径，必须为安装程序授予管理员权限。你可以管理员身份打开命令提示符，导航到 Java 的 bin 文件夹，然后运行
-	><p>`java.ejava.exe -jar [the path of the SQuirrel jar file]`
+	>[AZURE.NOTE]默认的安装文件夹为 C:\\Program Files\\squirrel-sql-3.6 文件夹。若要写入此路径，必须为安装程序授予管理员权限。可以管理员身份打开命令提示符，导航到 Java 的 bin 文件夹，然后运行
+	><p>`java.exe -jar [the path of the SQuirrel jar file]`
 5. 单击“确定”确认创建目标目录。
-6. 默认设置是安装基本和标准程序包。单击**“下一步”**。
+6. 默认设置是安装基本和标准程序包。单击“下一步”。
 7. 单击“下一步”两次，然后单击“完成”。
 
 
@@ -119,7 +119,7 @@
 Phoenix 驱动程序 jar 文件位于 HBase 群集上。根据具体的版本，其路径类似于：
 
 	C:\apps\dist\phoenix-4.0.0.2.1.11.0-2316\phoenix-4.0.0.2.1.11.0-2316-client.jar
-你需要将它复制到工作站的 [SQuirrel 安装文件夹]/lib 路径下。最简单的方法是与群集建立 RDP，然后使用文件复制/粘贴功能（CTRL+C 和 CTRL+V）将其复制到工作站。
+需将其复制到工作站的 [SQuirrel 安装文件夹]/lib 路径下。最简单的方法是与群集建立 RDP，然后使用文件复制/粘贴功能（Ctrl+C 和 Ctrl+V）将其复制到工作站。
 
 **将 Phoenix 驱动程序添加到 SQuirrel**
 
@@ -132,7 +132,7 @@ Phoenix 驱动程序 jar 文件位于 HBase 群集上。根据具体的版本，
 	- **示例 URL**：jdbc:phoenix:zookeeper2.contoso-hbase-eu.f5.internal.chinacloudapp.cn
 	- **类名**：org.apache.phoenix.jdbc.PhoenixDriver
 
-	>[AZURE.WARNING]在“示例 URL”中使用全小写。当其中一个主机关闭时，你可以使用整个 zookeeper 仲裁。主机名为 zookeeper0、zookeeper1 和 zookeeper2。
+	>[AZURE.WARNING] 在“示例 URL”中使用全小写。当其中一个主机关闭时，可以使用整个 zookeeper 仲裁。主机名为 zookeeper0、zookeeper1 和 zookeeper2。
 
 	![HDInsight HBase Phoenix SQuirrel 驱动程序][img-squirrel-driver]
 4. 单击**“确定”**。
@@ -144,7 +144,7 @@ Phoenix 驱动程序 jar 文件位于 HBase 群集上。根据具体的版本，
 3. 输入以下信息：
 
 	- **名称**：HBase 群集的名称，或者所需的任何名称。
-	- **驱动程序**：Phoenix。它必须与你在上一过程中创建的驱动程序名称匹配。
+	- **驱动程序**：Phoenix。它必须与在上一过程中创建的驱动程序名称匹配。
 	- **URL**：从驱动程序配置中复制的 URL。确保使用全小写。
 	- **用户名**：可以是任何文本。
 	- **密码**：可以是任何文本。
@@ -165,7 +165,7 @@ Phoenix 驱动程序 jar 文件位于 HBase 群集上。根据具体的版本，
 
 	![HBase Phoenix SQuirrel][img-squirrel-sql]
 4. 切换回到“对象”选项卡。
-5. 展开别名，然后展开“表”。你应会看到下面列出新表。
+5. 展开别名，然后展开“表”。应会看到下面列出新表。
  
 ## 后续步骤
 在本文中，你已了解如何在 HDInsight 中使用 Apache Phoenix。若要了解详细信息，请参阅
@@ -189,4 +189,4 @@ Phoenix 驱动程序 jar 文件位于 HBase 群集上。根据具体的版本，
 [img-squirrel]: ./media/hdinsight-hbase-phoenix-squirrel/hdinsight-hbase-squirrel.png
 [img-squirrel-sql]: ./media/hdinsight-hbase-phoenix-squirrel/hdinsight-hbase-squirrel-sql.png
 
-<!---HONumber=71-->
+<!---HONumber=Mooncake_Quality_Review_1118_2016-->

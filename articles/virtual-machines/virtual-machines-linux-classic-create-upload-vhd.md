@@ -16,7 +16,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="09/01/2016"
-	wacn.date="10/24/2016"
+	wacn.date="12/12/2016"
 	ms.author="iainfou"/>  
 
 
@@ -29,7 +29,7 @@
 >  [AZURE.NOTE] 如果有时间，请参加这个有关体验的[快速调查](https://aka.ms/linuxdocsurvey)，帮助我们改进 Azure Linux VM 文档。每个回答都将帮助我们帮助你完成工作。
 
 ## 先决条件
-本文假定你拥有以下项目：
+本文假设拥有以下项目：
 
 - **安装在 .vhd 文件中的 Linux 操作系统** - 已将 [Azure 认可的 Linux 分发](/documentation/articles/virtual-machines-linux-endorsed-distros/)（或参阅[关于未认可分发的信息](/documentation/articles/virtual-machines-linux-create-upload-generic/)）安装在 VHD 格式的虚拟磁盘中。可使用多种工具创建 VM 和 VHD：
 	- 安装并配置 [QEMU](https://en.wikibooks.org/wiki/QEMU/Installing_QEMU) 或 [KVM](http://www.linux-kvm.org/page/RunningKVM)，并小心使用 VHD 作为你的映像格式。如有需要，可以使用 `qemu-img convert` [转换映像](https://en.wikibooks.org/wiki/QEMU/Images#Converting_image_formats)。
@@ -75,11 +75,11 @@ Azure 支持各种 Linux 分发版（请参阅 [Endorsed Distributions](/documen
 		--blob-url <BlobStorageURL>/<YourImagesFolder>/<VHDName> `
 		--os Linux <PathToVHDFile>
 
-在上面的示例中：
+在上述示例中：
 
-- **BlobStorageURL** 是打算使用的存储帐户的 URL
-- **YourImagesFolder** 是在 Blob 存储中要用来存储映像的容器
-- **VHDName** 是显示在门户中用于标识虚拟硬盘的标签。
+- **BlobStorageURL** 是要使用的存储帐户的 URL
+- **YourImagesFolder** 是 Blob 存储中用于存储映像的容器
+- **VHDName** 是在门户中显示用于标识虚拟硬盘的标签。
 - **PathToVHDFile** 是 .vhd 文件在计算机上的完整路径和名称。
 
 下面显示一个完整示例：
@@ -104,4 +104,4 @@ Azure 支持各种 Linux 分发版（请参阅 [Endorsed Distributions](/documen
 [Step 2: Prepare the connection to Azure]: #connect
 [Step 3: Upload the image to Azure]: #upload
 
-<!---HONumber=Mooncake_1017_2016-->
+<!---HONumber=Mooncake_Quality_Review_1118_2016-->

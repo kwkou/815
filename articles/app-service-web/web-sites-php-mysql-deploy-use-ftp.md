@@ -14,7 +14,7 @@
 	ms.devlang="PHP" 
 	ms.topic="article" 
 	ms.date="08/11/2016" 
-	wacn.date="11/25/2016" 
+	wacn.date="12/12/2016" 
 	ms.author="robmcm"/>
 
 
@@ -60,20 +60,20 @@
 
 ##在本地生成并测试应用
 
-注册应用程序是一个简单的 PHP 应用程序，它使您能够通过提供您的姓名和电子邮件地址来注册事件。有关以前的注册者的信息将显示在表中。注册信息将存储在 MySQL 数据库中。该应用由两个文件组成：
+注册应用程序是一个简单的 PHP 应用程序，在该应用程序中提供姓名和电子邮件地址即可注册事件。以前的注册者的信息将显示在表中。注册信息存储在 MySQL 数据库中。该应用由两个文件组成：
 
-* **index.php**：将显示注册形式及包含注册者信息的表。
-* **createtable.php**：创建用于应用程序的 MySQL 表。该文件只能被使用一次。
+* **index.php**：显示注册形式及包含注册者信息的表。
+* **createtable.php**：创建用于应用程序的 MySQL 表。该文件仅供使用一次。
 
 若要本地构建和运行应用，请执行下列步骤。请注意，这些步骤假定你已在本地计算机上设置 PHP、MySQL 和 Web 服务器，并且已启用 [MySQL 的 PDO 扩展][pdo-mysql]。
 
-1. 创建名为 `registration` 的 MySQL 数据库。您可以在 MySQL 命令提示符中使用此命令执行此操作：
+1. 创建名为 `registration` 的 MySQL 数据库。你可以在 MySQL 命令提示符中使用此命令执行此操作：
 
 		mysql> create database registration;
 
 2. 在 Web 服务器的根目录中，创建一个名为 `registration` 的文件夹，并在其中创建两个文件 - 一个名为 `createtable.php`，另一个名为 `index.php`。
 
-3. 在文本编辑器或 IDE 中打开 `createtable.php` 文件并添加以下代码。此代码将用于在 `registration` 数据库中创建 `registration_tbl` 表。
+3. 在文本编辑器或 IDE 中打开 `createtable.php` 文件并添加以下代码。此代码用于在 `registration` 数据库中创建 `registration_tbl` 表。
 
 		<?php
 		// DB connection info
@@ -99,11 +99,11 @@
 		?>
 
 	> [AZURE.NOTE] 
-	需要使用本地 MySQL 用户名和密码更新 <code>$user</code> 和 <code>$pwd</code> 的值。
+	你需要使用本地 MySQL 用户名和密码更新 <code>$user</code> 和 <code>$pwd</code> 的值。
 
 4. 打开 Web 浏览器并浏览到 [http://localhost/registration/createtable.php][localhost-createtable]。这将在数据库中创建 `registration_tbl` 表。
 
-5. 在文本编辑器或 IDE 中打开 **index.php** 文件，并为页面添加基本 HTML 和 CSS 代码（将在后续步骤中添加 PHP 代码）。
+5. 在文本编辑器或 IDE 中打开 **index.php** 文件，并为页面添加基本 HTML 和 CSS 代码（后续步骤会添加 PHP 代码）。
 
 		<html>
 		<head>
@@ -244,19 +244,19 @@
 	$pwd = "value of Password";
 	$db = "value of Database";
 
-现在你可使用 FTP 发布应用。
+现在可以使用 FTP 发布应用。
 
 1. 打开选择的 FTP 客户端。
 
-2. 将上文中记下的 `publishUrl` 属性中的 *主机名部分* 输入到 FTP 客户端。
+2. 将上文中记下的 `publishUrl` 属性中的*主机名部分*输入到 FTP 客户端。
 
 3. 将上面记下的 `userName` 和 `userPWD` 属性按原样输入到 FTP 客户端。
 
 4. 建立连接。
 
-连接后，您将能够根据需要上载和下载文件。确保将文件上载到根目录 `/site/wwwroot`。
+连接后，你可以根据需要上载和下载文件。确保将文件上载到根目录 `/site/wwwroot`。
 
-上载 `index.php` 和 `createtable.php` 之后，浏览到 **http://[site name].chinacloudsites.cn/createtable.php** 以创建用于应用程序的 MySQL 表，然后浏览到 **http://[site name].chinacloudsites.cn/index.php** 以开始使用应用程序。
+上载 `index.php` 和 `createtable.php` 之后，浏览到 **http://[site name].chinacloudsites.cn/createtable.php**，创建用于应用程序的 MySQL 表，然后浏览到 **http://[site name].chinacloudsites.cn/index.php**，开始使用应用程序。
  
 ## 后续步骤
 
@@ -287,4 +287,4 @@
 [download-publish-profile]: ./media/web-sites-php-mysql-deploy-use-ftp/download_publish_profile_3.png
  
 
-<!---HONumber=Mooncake_0919_2016-->
+<!---HONumber=Mooncake_Quality_Review_1118_2016-->

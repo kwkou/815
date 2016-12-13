@@ -15,7 +15,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="09/14/2016"
-	wacn.date="10/25/2016"
+	wacn.date="12/12/2016"
 	ms.author="jgao"/>
 
 # 在 HDInsight 中提交 Hadoop 作业
@@ -223,4 +223,4 @@ HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 中使用 HDInsi
 
 [apache-hive]: http://hive.apache.org/
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_Quality_Review_1118_2016-->

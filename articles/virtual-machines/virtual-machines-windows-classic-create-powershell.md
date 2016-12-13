@@ -15,7 +15,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="09/27/2016"
-	wacn.date="11/21/2016"
+	wacn.date="12/12/2016"
 	ms.author="cynthn"/>
 
 # 使用 Powershell 和经典部署模型创建 Windows 虚拟机 
@@ -30,7 +30,7 @@
 > [AZURE.IMPORTANT] Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model/)。本文介绍使用经典部署模型。Azure 建议大多数新部署使用资源管理器模型。学习如何[使用资源管理器模型执行这些步骤](/documentation/articles/virtual-machines-windows-ps-create/)。
 
 
-这些步骤演示了如何使用构建基块方法自定义一组 Azure PowerShell 命令以创建和预配置基于 Windows 的 Azure 虚拟机。可以使用此过程快速创建用于新的基于 Windows 的虚拟机的命令集并扩展现有部署，或者创建多个命令集以快速构建出自定义开发/测试或 IT 专业环境。
+这些步骤演示了如何使用构建基块方法自定义一组 Azure PowerShell 命令以创建和预配置基于 Windows 的 Azure 虚拟机。可以使用此过程快速创建用于基于 Windows 的新虚拟机的命令集并扩展现有部署，或者创建多个命令集以快速构建出自定义开发/测试或 IT 专业环境。
 
 这些步骤采用填空方法来创建 Azure PowerShell 命令集。如果你不熟悉 PowerShell 或只想知道为成功的配置指定什么值，则此方法很有用。高级 PowerShell 用户可以使用命令并将变量（以“$”开头的行）替换为他们自己的值。
 
@@ -38,14 +38,14 @@
 
 ## 步骤 1：添加帐户
 
-1. 在 PowerShell 命令提示下，键入 “Add-AzureAccount” 并单击“Enter”。 
+1. 在 PowerShell 命令提示处，键入 **Add-AzureAccount -Environment AzureChinaCloud** 并单击“Enter”。 
 2. 键入与你的 Azure 订阅相关联的电子邮件地址并单击“继续”。 
 3. 键入你的帐户的密码。 
 4. 单击“登录”。
 
 ## 步骤 2：设置订阅和存储帐户
 
-通过在 Windows PowerShell 命令提示符下运行以下命令设置你的 Azure 订阅和存储帐户。将引号内的所有内容（包括 < and > 字符）替换为相应的名称。
+通过在 Windows PowerShell 命令提示符处运行以下命令，设置你的 Azure 订阅和存储帐户。将引号内的所有内容（包括 < and > 字符）替换为相应的名称。
 
 	$subscr="<subscription name>"
 	$staccount="<storage account name>"
@@ -72,7 +72,7 @@
 	$family="<ImageFamily value>"
 	$image=Get-AzureVMImage | where { $_.ImageFamily -eq $family } | sort PublishedDate -Descending | select -ExpandProperty ImageName -First 1
 
-在某些情况下，映像名称在 Label 属性中而不是 ImageFamily 值。如果你使用 ImageFamily 属性找不到要查找的映像，请使用此命令按映像的 Label 属性列出映像。
+在某些情况下，映像名称在 Label 属性中，而不是 ImageFamily 值。如果你使用 ImageFamily 属性找不到要查找的映像，请使用此命令按映像的 Label 属性列出映像。
 
 	Get-AzureVMImage | select Label -Unique
 
@@ -81,9 +81,9 @@
 	$label="<Label value>"
 	$image = Get-AzureVMImage | where { $_.Label -eq $label } | sort PublishedDate -Descending | select -ExpandProperty ImageName -First 1
 
-## 步骤 4：生成命令集
+## 步骤 4：构建命令集
 
-通过将下面相应的一组程序块复制到新文本文件或 ISE 中，然后填写变量值并删除 < and > 字符来生成命令集的其余部分。请参阅本文末尾的两个[示例](#examples)，了解最终结果。
+通过将下面相应的一组程序块复制到新文本文件或 ISE 中，然后填写变量值并删除 < and > 字符来构建命令集的其余部分。请参阅本文末尾的两个[示例](#examples)，了解最终结果。
 
 通过选择这两个命令块之一启动命令集（必需）。
 
@@ -159,7 +159,7 @@
 
 	New-AzureVM -ServiceName "<short name of the cloud service>" -VMs $vm1
 
-云服务的短名称是在 Azure 经典管理门户的云服务列表中。
+云服务的短名称是在 Azure 经典管理门户的云服务列表中或 Azure 门户预览的资源组列表中显示的名称。
 
 选项 2：在现有的云服务和虚拟网络中创建虚拟机。
 
@@ -259,10 +259,6 @@
 
 ## 后续步骤
 
-如果需要大于 127 GB 的 OS 驱动器，你可以[展开 OS 驱动器](/documentation/articles/virtual-machines-windows-expand-os-disk/)。
+如果需要大于 127 GB 的操作系统磁盘，你可以[展开操作系统驱动器](/documentation/articles/virtual-machines-windows-expand-os-disk/)。
 
-
-
-
-
-<!---HONumber=Mooncake_0509_2016-->
+<!---HONumber=Mooncake_Quality_Review_1118_2016-->

@@ -13,12 +13,12 @@
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
    ms.date="08/31/2016"
-   wacn.date="10/25/2016"
+   wacn.date="12/12/2016"
    ms.author="telmos" />
 
 # VM 和角色实例的名称解析
 
-具体取决于如何使用 Azure 托管 IaaS、PaaS 和混合解决方案，你可能需要允许 VM 和创建的角色实例彼此进行通信。尽管这种通信可以通过使用 IP 地址完成，但使用容易记住且不会更改的名称要简单得多。
+你可能需要允许 VM 和创建的角色实例相互通信，具体取决于如何使用 Azure 托管 IaaS、PaaS 和混合解决方案。尽管这种通信可以通过使用 IP 地址完成，但使用容易记住且不会更改的名称要简单得多。
 
 当 Azure 中托管的角色实例和 VM 需要将域名解析到内部 IP 地址时，它们可以使用两种方法之一：
 
@@ -33,7 +33,7 @@
 | **方案** | **解决方案** | **后缀** |
 |--------------|--------------|----------|
 | 位于相同云服务或虚拟网络中的角色实例或 VM 之间的名称解析 | [Azure 提供的名称解析](#azure-provided-name-resolution)| 主机名或 FQDN |
-| 位于不同虚拟网络中的角色实例或 VM 之间的名称解析 | 客户托管的 DNS 服务器，在 VNet 之间转发可供 Azure（DNS 代理）解析的查询。请参阅[使用你自己的 DNS 服务器的名称解析](#name-resolution-using-your-own-dns-server)| 仅 FQDN |
+| 位于不同虚拟网络中的角色实例或 VM 之间的名称解析 | 客户托管的 DNS 服务器，在 VNet 之间转发可供 Azure（DNS 代理）解析的查询。请参阅 [Name resolution using your own DNS server](#name-resolution-using-your-own-dns-server)（使用你自己的 DNS 服务器的名称解析）| 仅 FQDN |
 | 通过 Azure 中的角色实例或 VM 解析本地计算机和服务的名称 | 客户托管的 DNS 服务器（例如本地域控制器、本地只读域控制器或使用区域传送同步的 DNS 辅助服务器）。请参阅[使用你自己的 DNS 服务器的名称解析](#name-resolution-using-your-own-dns-server)|仅 FQDN |
 | 解析本地计算机中的 Azure 主机名 | 将查询转发到客户托管的相应 VNet 中的 DNS 代理服务器，代理服务器再将查询转发到 Azure 进行解析。请参阅[使用你自己的 DNS 服务器的名称解析](#name-resolution-using-your-own-dns-server)| 仅 FQDN |
 | 针对内部 IP 的反向 DNS | [使用你自己的 DNS 服务器的名称解析](#name-resolution-using-your-own-dns-server) | 不适用 |
@@ -108,7 +108,7 @@
 
 DNS 主要是一个 UDP 协议。因为 UDP 协议无法保证消息传递，所以重试逻辑在DNS 协议本身中处理。每个 DNS 客户端（操作系统）可能会表现出不同的重试逻辑，具体取决于创建者偏好：
 
- - Windows 操作系统在 1 秒后重试，然后在再 2 秒后、再 4 秒后和另一个 4 秒后再次重试。 
+ - Windows 操作系统在 1 秒后重试，然后在再过 2 秒后、再过 4 秒后和另外再过 4 秒后重试。 
  - 默认 Linux 设置在 5 秒后重试。建议将此更改为重试 5 次，每次间隔 1 秒。  
 
 若要检查 Linux VM 上的当前设置，“cat /etc/resolv.conf”并查看“options”行，例如：
@@ -150,7 +150,7 @@ DNS 转发还可用于在 VNet 之间进行 DNS 解析，可以通过本地计�
 -  可以从其所服务的对象（即客户端）进行访问（在端口 53 上启用 TCP 和 UDP），并可访问 Internet。
 -  禁止从 Internet 进行访问，减少外部代理带来的威胁。
 
-> [AZURE.NOTE] 为了获得最佳性能，在将 Azure VM用作 DNS 服务器时，应禁用 IPv6，并且[实例层级公共 IP](/documentation/articles/virtual-networks-instance-level-public-ip/) 应分配给每个 DNS 服务器 VM。如果你选择使用 Windows Server 作为 DNS 服务器，则可参阅[此文](http://blogs.technet.com/b/networking/archive/2015/08/19/name-resolution-performance-of-a-recursive-windows-dns-server-2012-r2.aspx)，其中提供了其他性能分析和优化措施。
+> [AZURE.NOTE] 为了获得最佳性能，在将 Azure VM用作 DNS 服务器时，应禁用 IPv6，并且[实例层级公共 IP](/documentation/articles/virtual-networks-instance-level-public-ip/) 应分配到每个 DNS 服务器 VM。如果你选择使用 Windows Server 作为 DNS 服务器，则可参阅[此文](http://blogs.technet.com/b/networking/archive/2015/08/19/name-resolution-performance-of-a-recursive-windows-dns-server-2012-r2.aspx)，其中提供了其他性能分析和优化措施。
 
 
 ### 指定 DNS 服务器
@@ -159,7 +159,7 @@ DNS 转发还可用于在 VNet 之间进行 DNS 解析，可以通过本地计�
 
 > [AZURE.NOTE] 不应直接在 Windows VM 中编辑网络连接属性（例如 DNS 服务器 IP），因为如果更换虚拟网络适配器，则可能会在服务修复过程中擦除这些属性。
 
-使用经典部署模型时，可以在经典管理门户或[网络配置文件](https://msdn.microsoft.com/zh-cn/library/azure/jj157100)中指定虚拟网络的 DNS 服务器。对于云服务器，则可通过[服务配置文件](https://msdn.microsoft.com/zh-cn/library/azure/ee758710)或 PowerShell ([New-AzureVM](https://msdn.microsoft.com/zh-cn/library/azure/dn495254.aspx)) 指定 DNS 服务器。
+使用经典部署模型时，可以在经典管理门户或[*网络配置*文件](https://msdn.microsoft.com/zh-cn/library/azure/jj157100)中指定虚拟网络的 DNS 服务器。对于云服务器，则可通过[*服务配置*文件](https://msdn.microsoft.com/zh-cn/library/azure/ee758710)或 PowerShell ([New-AzureVM](https://msdn.microsoft.com/zh-cn/library/azure/dn495254.aspx)) 指定 DNS 服务器。
 
 > [AZURE.NOTE] 如果更改已部署的虚拟网络/虚拟机的 DNS 设置，则需重新启动每个受影响的 VM，所做的更改才会生效。
 
@@ -172,4 +172,4 @@ DNS 转发还可用于在 VNet 之间进行 DNS 解析，可以通过本地计�
 - [虚拟网络配置架构](https://msdn.microsoft.com/zh-cn/library/azure/jj157100)
 - [使用网络配置文件配置虚拟网络](/documentation/articles/virtual-networks-using-network-configuration-file/) 
 
-<!---HONumber=Mooncake_0418_2016-->
+<!---HONumber=Mooncake_Quality_Review_1118_2016-->

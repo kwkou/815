@@ -14,7 +14,7 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="05/17/2016" 
-	wacn.date="07/28/2016" 
+	wacn.date="12/12/2016" 
 	ms.author="nitinme"/> 
 
 # 使用脚本操作自定义 HDInsight 群集
@@ -64,7 +64,7 @@ Name | 脚本
 	
 	<table border='1'>
 	<tr><th>属性</th><th>值</th></tr>
-	<tr><td>Name</td>
+	<tr><td>名称</td>
 		<td>指定脚本操作的名称。</td></tr>
 	<tr><td>脚本 URI</td>
 		<td>指定要调用以自定义群集的脚本的 URI。</td></tr>
@@ -162,4 +162,4 @@ HDInsight 服务提供多种方式来使用自定义组件。不论在群集上�
 [img-hdi-cluster-states]: ./media/hdinsight-hadoop-customize-cluster-v1/HDI-Cluster-state.png "群集设置过程中的阶段"
  
 
-<!---HONumber=74-->
+<!---HONumber=Mooncake_Quality_Review_1118_2016-->

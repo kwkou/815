@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="使用 Azure App Service Web 应用配置 Python" 
-	description="本教程介绍用于在 Azure App Service Web 应用上创作并配置符合基本 Web 服务器网关接口 (WSGI) 的 Python 应用程序的选项。" 
+	pageTitle="使用 Azure 应用服务 Web 应用配置 Python" 
+	description="本教程介绍在 Azure 应用服务 Web 应用中创作和配置符合基本 Web 服务器网关接口 (WSGI) 的 Python 应用程序的选项。" 
 	services="app-service" 
 	documentationCenter="python" 
 	tags="python"
@@ -15,21 +15,21 @@
 	ms.devlang="python" 
 	ms.topic="article" 
 	ms.date="02/26/2016" 
-	wacn.date="09/26/2016" 
+	wacn.date="12/12/2016" 
 	ms.author="huvalo"/>
 
 
 
 
-# 使用 Azure App Service Web 应用配置 Python
+# 使用 Azure 应用服务 Web 应用配置 Python
 
-本教程介绍用于在 [Azure App Service Web 应用](/documentation/services/web-sites/)上创作并配置符合基本 Web 服务器网关接口 (WSGI) 的 Python 应用程序的选项。
+本教程介绍在 [Azure 应用服务 Web 应用](/documentation/services/web-sites/)中创作和配置符合基本 Web 服务器网关接口 (WSGI) 的 Python 应用程序的选项。
 
-其中描述了 Git 部署的其他功能，如使用 requirements.txt 安装虚拟环境和包。
+其中讲解了 Git 部署的一些功能，如使用 requirements.txt 安装虚拟环境和包。
 
 ##<a name="bottle-django-flask"></a> Bottle、Django 还是 Flask？
 
-如果你正在 Azure App Service 中开发第一个 Web 应用，或者你不熟悉 Git，我们建议你遵循以下教程之一，其中包括用于从 Windows 或 Mac 使用 Git 部署从库构建工作应用程序的分步说明：
+如果你正在 Azure 应用服务中开发第一个 Web 应用，或者不熟悉 Git，我们建议你参考以下教程之一，其中包括用于从 Windows 或 Mac 使用 Git 部署从库构建工作应用程序的分步说明：
 
 - [使用 Bottle 创建 Web 应用](/documentation/articles/web-sites-python-create-deploy-bottle-app/)
 - [使用 Django 创建 Web 应用](/documentation/articles/web-sites-python-create-deploy-django-app/)
@@ -38,20 +38,20 @@
 
 ##<a name="website-creation-on-portal"></a>在 Azure 门户预览中创建 Web 应用
 
-本教程使用现有 Azure 订阅以及对 Azure 门户预览的访问权限。
+本教程假设已有 Azure 订阅和 Azure 门户预览访问权限。
 
 如果没有现成的 Web 应用，则可从 [Azure 门户预览](https://portal.azure.cn)中创建一个。单击左上角的“新建”按钮，然后单击“Web + 移动”>“Web 应用”。
 
 ##<a name="git-publishing"></a>Git 发布
 
-按照[从本地 Git 部署到 Azure App Service](/documentation/articles/app-service-deploy-local-git/) 的说明为新创建的 Web 应用配置 Git 发布。本教程使用 Git 来创建、管理 Python Web 应用以及将其发布到 Azure App Service。
+按照[从本地 Git 部署到 Azure 应用服务](/documentation/articles/app-service-deploy-local-git/)的说明为新创建的 Web 应用配置 Git 发布。本教程使用 Git 来创建、管理 Python Web 应用以及将其发布到 Azure 应用服务。
 
-在设置 Git 发布之后，将创建 Git 存储库并使其与你的 Web 应用相关联。将显示该存储库的 URL，并且之后可将其用于将数据从本地开发环境推送到云。若要通过 Git 发布应用程序，请确保还安装了 Git 客户端，并按照提供的说明将 Web 应用内容推送到 Azure App Service。
+在设置 Git 发布之后，将创建 Git 存储库并使其与你的 Web 应用相关联。随即会显示该存储库的 URL，之后其可用于将数据从本地开发环境推送到云。若要通过 Git 发布应用程序，请确保还安装了 Git 客户端，并按照提供的说明将 Web 应用内容推送到 Azure 应用服务。
 
 
 ##<a name="application-overview"></a>应用程序概述
 
-在接下来的各节中，将创建以下文件。这些文件应放在 Git 存储库的根目录中。
+接下来几节将创建以下文件。这些文件应放在 Git 存储库的根目录中。
 
     app.py
     requirements.txt
@@ -62,7 +62,7 @@
 
 ##<a name="wsgi-handler"></a>WSGI 处理程序
 
-WSGI 是 [PEP 3333](http://www.python.org/dev/peps/pep-3333/) 描述的 Python 标准，用于定义 Web 服务器和 Python 之间的接口。它提供了用于使用 Python 编写各种 Web 应用程序和框架的标准化接口。当今常用的 Python Web 框架都使用 WSGI。Azure App Service Web 应用支持任何此类框架；此外，高级用户甚至可以创作自己的框架，只要自定义处理程序遵循 WSGI 规范准则即可。
+WSGI 是 [PEP 3333](http://www.python.org/dev/peps/pep-3333/) 所述的 Python 标准，用于定义 Web 服务器和 Python 之间的接口。它提供了使用 Python 编写各种 Web 应用程序和框架所需的标准化接口。当今常用的 Python Web 框架都使用 WSGI。Azure 应用服务 Web 应用支持任何此类框架；此外，高级用户可以创作自己的框架，只要自定义处理程序遵循 WSGI 规范准则即可。
 
 下面是定义自定义处理程序的 `app.py` 的一个示例：
 
@@ -84,18 +84,18 @@ WSGI 是 [PEP 3333](http://www.python.org/dev/peps/pep-3333/) 描述的 Python �
 
 ## 虚拟环境
 
-尽管上面的示例应用程序不需要任何外部包，则您的应用程序很可能需要一些外部包。
+尽管上述示例应用程序不需要任何外部包，但你的应用程序很可能需要一些外部包。
 
-为了帮助管理外部包依赖项，Azure Git 部署支持创建虚拟环境。
+为了便于管理外部包依赖项，Azure Git 部署支持创建虚拟环境。
 
-当 Azure 在存储库的根目录中检测到 requirements.txt 文件时，将自动创建名为 `env` 的虚拟环境。仅在第一次部署进执行此操作，或者在所选的 Python 运行时发生更改后进行任何部署的过程中执行此操作。
+当 Azure 在存储库的根目录中检测到 requirements.txt 文件时，将自动创建名为 `env` 的虚拟环境。仅第一次部署会执行此操作，也可以在所选的 Python 运行时发生更改后进行任何部署的过程中执行此操作。
 
-您可能需要创建虚拟环境用于开发，但不将其包括在 Git 存储库中。
+你可能需要创建虚拟环境用于开发，但不将其包括在 Git 存储库中。
 
 
 ## 包管理
 
-Requirements.txt 中列出的包将使用 pip 自动安装在虚拟环境中。在每次部署时都会发生这种情况，但如果已安装包，则 pip 将跳过安装。
+Requirements.txt 中列出的包将使用 pip 自动安装到虚拟环境中。每次部署时都会发生这种情况，但如果已安装包，则 pip 将跳过安装。
 
 示例 `requirements.txt`：
 
@@ -113,11 +113,11 @@ Requirements.txt 中列出的包将使用 pip 自动安装在虚拟环境中。�
 
 ## Web.config
 
-需要创建一个 web.config 文件以指定服务器应如何处理请求。
+需要创建一个 web.config 文件以指定服务器处理请求的方式。
 
-请注意，如果在存储库中有一个 Web.x.y 文件，其中 x.y 与所选的 Python 运行时匹配，则 Azure 会自动将相应的文件复制为 web.config。
+请注意，如果存储库中有一个 Web.x.y 文件，其中 x.y 与所选的 Python 运行时匹配，则 Azure 会自动将相应的文件复制为 web.config。
 
-以下 web.config 示例依赖于某个虚拟环境代理脚本下（下一节中介绍）。它们与上面的示例 `app.py` 中所用的 WSGI 处理程序配合使用。
+以下 web.config 示例依赖于某个虚拟环境代理脚本（下一节介绍）。它们与上述示例 `app.py` 中所用的 WSGI 处理程序配合使用。
 
 Python 2.7 的示例 `web.config`：
 
@@ -217,18 +217,18 @@ Python 3.4 的示例 `web.config`：
     </configuration>
 
 
-静态文件将由 Web 服务器直接处理，无需通过 Python 代码，从而可提高性能。
+静态文件将由 Web 服务器直接处理，无需通过 Python 代码，从而提高性能。
 
-在上面的示例中，磁盘上的静态文件的位置应与 URL 中的位置匹配。也就是说，对 `http://pythonapp.chinacloudsites.cn/static/site.css` 的请求将为磁盘上 `\static\site.css` 处的文件服务。
+在上述示例中，磁盘上静态文件的位置应与 URL 中的位置匹配。也就是说，`http://pythonapp.chinacloudsites.cn/static/site.css` 的请求将为磁盘上 `\static\site.css` 处的文件服务。
 
-`WSGI_ALT_VIRTUALENV_HANDLER` 是指定 WSGI 处理程序的位置。在上面的示例中，该位置为 `app.wsgi_app`，因为处理程序是根文件夹中的 `app.py` 中一个名为 `wsgi_app` 的函数。
+`WSGI_ALT_VIRTUALENV_HANDLER` 是指定 WSGI 处理程序的位置。在上述示例中，该位置为 `app.wsgi_app`，因为处理程序是根文件夹中 `app.py` 中的一个名为 `wsgi_app` 的函数。
 
-可以自定义 `PYTHONPATH`，但是，如果通过在 requirements.txt 中指定所有依赖项将全部安装在虚拟环境中，则不需要对其更改。
+可以自定义 `PYTHONPATH`，但是，如果通过在 requirements.txt 中指定将所有依赖项全部安装到虚拟环境中，则不需要更改。
 
 
 ## 虚拟环境代理
 
-使用以下脚本可检索 WSGI 处理程序、激活虚拟环境以及记录错误。该脚本用于一般目的，无需修改即可使用。
+使用以下脚本可检索 WSGI 处理程序、激活虚拟环境以及记录错误。该脚本是通用的，无需修改即可使用。
 
 `ptvs_virtualenv_proxy.py` 的内容：
 
@@ -374,7 +374,7 @@ Python 3.4 的示例 `web.config`：
 
 有关详细信息，请参阅 [Python 开发人员中心](/develop/python/)。
 
-## 发生的更改
-* 有关从网站更改为 App Service 的指南，请参阅 [Azure App Service 及其对现有 Azure 服务的影响](/documentation/articles/app-service-changes-existing-services/)
+## 更改内容
+* 有关从网站更改为应用服务的指南，请参阅 [Azure 应用服务及其对现有 Azure 服务的影响](/documentation/articles/app-service-changes-existing-services/)
 
-<!---HONumber=Mooncake_0919_2016-->
+<!---HONumber=Mooncake_Quality_Review_1118_2016-->

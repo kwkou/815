@@ -15,7 +15,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
    ms.date="02/02/2016"
-   wacn.date="04/07/2016"
+   wacn.date="12/12/2016"
    ms.author="jdial" />
 
 # 如何在 Azure CLI 中创建 NSG（经典）
@@ -33,7 +33,7 @@
 ## 如何为前端子网创建 NSG
 若要基于上述方案创建名为 *NSG-FrontEnd* 的 NSG，请执行下面的步骤。
 
-1. 如果你从未使用过 Azure CLI，请参阅[安装和配置 Azure CLI](/documentation/articles/xplat-cli-install/)，并按照说明进行操作，直到选择 Azure 帐户和订阅。
+1. 如果你从未使用过 Azure CLI，请参阅 [Install and Configure the Azure CLI](/documentation/articles/xplat-cli-install/)（安装和配置 Azure CLI），并按照说明进行操作，直到选择 Azure 帐户和订阅。
 
 2. 运行 **azure config mode** 命令以切换到经典模式，如下所示。
 
@@ -75,7 +75,7 @@
 
 	参数：
 
-	- **-l（或 --location）**。要创建新 NSG 所在的 Azure 区域。对于我们的方案，为 *chinanorth*。
+	- **-l（或 --location）**。将在其中创建新 NSG 的 Azure 区域。对于我们的方案，为 *chinanorth*。
 	- **-n（或 --name）**。新 NSG 的名称。对于我们的方案，为 *NSG-FrontEnd*。
 
 4. 运行 **azure network nsg rule create** 命令以创建允许从 Internet 访问端口 3389 (RDP) 的规则。
@@ -101,7 +101,7 @@
 
 	参数：
 
-	- **-a（或 --nsg-name）**。要创建规则所在的 NSG 的名称。对于我们的方案，为 *NSG-FrontEnd*。
+	- **-a（或 --nsg-name）**。将在其中创建规则的 NSG 的名称。对于我们的方案，为 *NSG-FrontEnd*。
 	- **-n（或 --name）**。新规则的名称。对于我们的方案，为 *rdp-rule*。
 	- **-c（或 --action）**。规则的访问级别（拒绝或允许）。
 	- **-p（或 --protocol）**。规则的协议（Tcp、Udp 或 *）。
@@ -181,7 +181,7 @@
 
 	参数：
 
-	- **-l（或 --location）**。要创建新 NSG 所在的 Azure 区域。对于我们的方案，为 *chinanorth*。
+	- **-l（或 --location）**。将在其中创建新 NSG 的 Azure 区域。对于我们的方案，为 *chinanorth*。
 	- **-n（或 --name）**。新 NSG 的名称。对于我们的方案，为 *NSG-FrontEnd*。
 
 4. 运行 **azure network nsg rule create** 命令以创建允许从前端子网访问端口 1433 (SQL) 的规则。
@@ -240,4 +240,4 @@
 		info:    Creating a network security group "NSG-BackEndX"
 		info:    network nsg subnet add command OK
 
-<!---HONumber=74-->
+<!---HONumber=Mooncake_Quality_Review_1118_2016-->

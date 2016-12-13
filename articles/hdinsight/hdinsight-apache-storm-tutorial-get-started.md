@@ -16,7 +16,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
    ms.date="09/07/2016"
-   wacn.date="10/25/2016"
+   wacn.date="12/12/2016"
    ms.author="larryfr"/>
 
 
@@ -197,9 +197,9 @@ Storm UI 可以用于监视拓扑。
 
 ## <a id="next"></a>后续步骤
 
-* **HDInsight Tools for Visual Studio** - HDInsight Tools 允许你使用 Visual Studio 提交、监视和管理 Storm 拓扑，就像在前面提到的 Storm 仪表板中一样。HDInsight Tools 可让你创建 C# Storm 拓扑，并包含可在群集上部署和运行的示例拓扑。
+* **用于 Visual Studio 的 HDInsight 工具** - HDInsight Tools 允许你使用 Visual Studio 提交、监视和管理 Storm 拓扑，就像在前面提到的 Storm 仪表板中一样。HDInsight Tools 可让你创建 C# Storm 拓扑，并包含可在群集上部署和运行的示例拓扑。
 
-	有关详细信息，请参阅 [HDInsight Tools for Visual Studio 入门](/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started/)。
+	有关详细信息，请参阅 [用于 Visual Studio 的 HDInsight 工具入门](/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started/)。
 
 * **示例文件** - HDInsight Storm 群集在 **%STORM\_HOME%\\contrib** 目录中提供了多个示例。每个示例都会包含以下内容：
 
@@ -226,4 +226,4 @@ Storm UI 可以用于监视拓扑。
 [azureportal]: https://manage.windowsazure.cn/
 [hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1/
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_Quality_Review_1118_2016-->

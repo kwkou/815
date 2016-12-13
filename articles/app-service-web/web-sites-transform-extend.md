@@ -15,7 +15,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="02/25/2016"
-	wacn.date="11/25/2016"
+	wacn.date="12/12/2016"
 	ms.author="cephalin"/>
 
 # Azure 应用服务 Web 应用高级配置和扩展
@@ -51,11 +51,11 @@
 
 有关其他示例，请参阅 [https://github.com/projectkudu/kudu/wiki/Xdt-transform-samples](https://github.com/projectkudu/kudu/wiki/Xdt-transform-samples)。
 
-**注意**<br/>
-`system.webServer` 下的模块列表中的元素无法删除或重新排序，但列表的附加内容可以删除或重新排序。
+**注意**<br />
+无法删除或重新排序 `system.webServer` 的模块列表中的元素，但可以删除或重新排列排序列表的附加内容。
 
 
-## <a id="extend"></a> 扩展你的 Web 应用
+## <a id="extend"></a> 扩展 Web 应用
 
 ### <a id="overview"></a> 专用 Web 应用扩展概述
 
@@ -73,7 +73,7 @@ Web 应用的内部链接应指向 ApplicationHost.xdt 文件中指定的应用�
 
 ### <a id="SiteSample"></a> Web 应用扩展示例：PHP Manager
 
-PHP Manager 是一个 Web 应用扩展，通过该 Web 应用扩展，Web 应用管理员可以轻松地使用 Web 界面来查看和配置 PHP 设置，而无需直接修改 PHP.ini 文件。PHP 常用配置文件包括位于 Program Files 下的 php.ini 文件和位于 Web 应用根文件夹中的 .user.ini 文件。由于 php.ini 文件不可在 App Service 平台上直接编辑，因此 PHP Manager 扩展使用 .user.ini 文件来应用设置更改。
+PHP Manager 是一个 Web 应用扩展，通过该 Web 应用扩展，Web 应用管理员可以轻松地使用 Web 界面来查看和配置 PHP 设置，而无需直接修改 PHP.ini 文件。PHP 常用配置文件包括位于 Program Files 下的 php.ini 文件和位于 Web 应用根文件夹中的 .user.ini 文件。由于 php.ini 文件不可在应用服务平台上直接编辑，因此 PHP Manager 扩展使用 .user.ini 文件来应用设置更改。
 
 #### <a id="PHPwebapp"></a> PHP Manager Web 应用程序
 
@@ -175,12 +175,12 @@ Web 应用扩展位于：
 
 在开发和调查过程中，可以通过添加使用键 `WEBSITE_PRIVATE_EXTENSIONS` 和值 `0` 的应用设置，来禁用 Web 应用的所有专用（非预装）扩展。
 
-## 发生的更改
-* 有关从网站更改为 App Service 的指南，请参阅 [Azure App Service 及其对现有 Azure 服务的影响](/documentation/articles/app-service-changes-existing-services/)
+## 更改内容
+* 有关从网站更改为应用服务的指南，请参阅 [Azure 应用服务及其对现有 Azure 服务的影响](/documentation/articles/app-service-changes-existing-services/)
 
 <!-- IMAGES -->
 [TransformSitePHPUI]: ./media/web-sites-transform-extend/TransformSitePHPUI.png
 [TransformSiteSolEx]: ./media/web-sites-transform-extend/TransformSiteSolEx.png
  
 
-<!---HONumber=Mooncake_0926_2016-->
+<!---HONumber=Mooncake_Quality_Review_1118_2016-->

@@ -17,14 +17,14 @@
    ms.tgt_pltfrm="vm-linux"
    ms.workload="infrastructure"
    ms.date="08/23/2016"
-   wacn.date="10/24/2016"
+   wacn.date="12/12/2016"
    ms.author="iainfou"/>
 
 # 使用 Azure CLI 创建完整的 Linux 环境
 
 在本文中，我们将构建一个简单网络，其中包含一个负载均衡器，以及一对可用于开发和简单计算的 VM。将以逐条命令的方式完成整个过程，直到创建两个可以从 Internet 上的任何位置连接的有效且安全的 Linux VM。然后，便可以继续构建更复杂的网络和环境。
 
-在此过程中，将了解 Resource Manager 部署模型提供的依赖性层次结构及其提供的功能。明白系统是如何构建的以后，即可使用 [Azure Resource Manager 模板](/documentation/articles/resource-group-authoring-templates/)更快速地重新构建系统。此外，在了解环境的部件如何彼此配合运行后，可以更轻松地创建模板来将它们自动化。
+在此过程中，将了解 Resource Manager 部署模型提供的依赖性层次结构及其提供的功能。明白系统是如何构建的以后，即可使用 [Azure Resource Manager 模板](/documentation/articles/resource-group-authoring-templates/)更快速地重新构建系统。此外，了解环境的各个部分如何彼此配合运行后，可以更轻松创建模板以实现自动化。
 
 该环境包含：
 
@@ -34,7 +34,7 @@
 
 ![基本环境概述](./media/virtual-machines-linux-create-cli-complete/environment_overview.png)
 
-若要创建此自定义环境，需要在 Resource Manager 模式 (`azure config mode arm`) 下安装最新的 [Azure CLI](/documentation/articles/xplat-cli-install/)。此外，还需要一个 JSON 分析工具。本示例使用 [jq](https://stedolan.github.io/jq/)。
+若要创建此自定义环境，需要在 Resource Manager 模式 (`azure config mode arm`) 下安装最新的 [Azure CLI](/documentation/articles/xplat-cli-install/)。此外，还需要安装 JSON 解析工具。本示例使用 [jq](https://stedolan.github.io/jq/)。
 
 ## 快速命令
 可以使用以下快速命令构建自定义环境。有关构建环境时每条命令的作用的详细信息，请参阅[下面的详细演练步骤](#detailed-walkthrough)。
@@ -67,7 +67,7 @@
 
 	azure network vnet show TestRG TestVNet --json | jq '.'
 
-创建一个公共 IP：
+创建公共 IP 地址：
 
 	azure network public-ip create -g TestRG -n TestLBPIP -l chinaeast -d testlb -a static -i 4
 
@@ -188,7 +188,7 @@ azure network nsg show -g TestRG -n TestNSG --json | jq '.'
 
 ## 创建资源组并选择部署位置
 
-Azure 资源组是逻辑部署实体，其中包含用于启用资源部署逻辑管理的配置信息和元数据。
+Azure 资源组是逻辑部署实体，包含用于启用资源部署逻辑管理的配置信息和元数据。
 
 	azure group create TestRG chinaeast
 
@@ -209,9 +209,9 @@ Azure 资源组是逻辑部署实体，其中包含用于启用资源部署逻�
 
 ## 创建存储帐户
 
-需要对 VM 磁盘和任何想要添加的额外数据磁盘使用存储帐户。应该在创建资源组之后马上创建存储帐户。
+需要为 VM 磁盘和要添加的任何其他数据磁盘创建存储帐户。创建资源组后，应立即创建存储帐户。
 
-我们在此处使用 `azure storage account create` 命令，并传递帐户的位置、将要控制该帐户的资源组，以及所需的存储支持类型。
+此处，使用 `azure storage account create` 命令传递帐户的位置、控制该帐户的资源组，以及所需的存储支持类型。
 
 	azure storage account create \  
 	--location chinaeast \
@@ -281,7 +281,7 @@ Azure 资源组是逻辑部署实体，其中包含用于启用资源部署逻�
 	  ]
 	}
 
-若要使用 CLI 检查存储帐户，首先需要使用以下命令的变体设置帐户名和密钥。将以下示例中的存储帐户名替换为所选的名称：
+若要使用 CLI 检查存储帐户，首先需要使用以下命令的其他形式设置帐户名和密钥。将下例中的存储帐户名替换为所选的名称：
 
 	AZURE_STORAGE_CONNECTION_STRING="$(azure storage account connectionstring show computeteststore --resource-group testrg --json | jq -r '.string')"
 
@@ -300,7 +300,7 @@ azure 存储容器列表
 
 ## 创建虚拟网络和子网
 
-接下来，需要创建一个在 Azure 中运行的虚拟网络，以及一个可在其中安装 VM 的子网。
+接下来，需要创建在 Azure 中运行的虚拟网络，以及可在其中安装 VM 的子网。
 
 	azure network vnet create -g TestRG -n TestVNet -a 192.168.0.0/16 -l chinaeast
 
@@ -319,7 +319,7 @@ azure 存储容器列表
 	data:      192.168.0.0/16
 	info:    network vnet create command OK
 
-同样，让我们了解如何使用 `azure group show` 的 --json 选项以及 **jq** 来构建资源。现在，我们有了一个 `storageAccounts` 资源和一个 `virtualNetworks` 资源。
+同样，可以了解如何使用 `azure group show` 的 --json 选项和 **jq** 构建资源。现在，已经创建 `storageAccounts` 资源和 `virtualNetworks` 资源。
 
 	azure group show TestRG --json | jq '.'
 
@@ -533,7 +533,7 @@ azure 存储容器列表
 
 我们的负载均衡器很空，因此让我们创建一些 IP 池。我们想要为负载均衡器创建两个 IP 池：一个用于前端，一个用于后端。前端 IP 池将公开显示。它也是我们将前面创建的 PIP 分配到的位置。然后我们使用后端池作为 VM 要连接到的位置。这样，流量便可以通过负载均衡器流向 VM。
 
-首先，让我们创建前端 IP 池：
+首先，创建前端 IP 池：
 
 	azure network lb frontend-ip create -g TestRG -l TestLB -n TestFrontEndPool -i TestLBPIP
 
@@ -628,7 +628,7 @@ azure 存储容器列表
 	data:    Frontend IP configuration id    : /subscriptions/guid/resourceGroups/TestRG/providers/Microsoft.Network/loadBalancers/TestLB/frontendIPConfigurations/TestFrontEndPool
 	info:    network lb inbound-nat-rule create command OK
 
-针对第二个 NAT 规则中的 SSH 访问重复该过程：
+对于第二个 NAT 规则中的 SSH 访问，重复该过程：
 
 	azure network lb inbound-nat-rule create -g TestRG -l TestLB -n VM2-SSH -p tcp -f 4223 -b 22
 
@@ -659,7 +659,7 @@ azure 存储容器列表
 
 ## 创建负载均衡器运行状况探测
 
-运行状况探测定期检查受负载均衡器后面的 VM，以确保它们可以根据定义操作和响应请求。否则，这些 VM 将从操作中删除，以确保不会将用户定向到这些 VM。你可以针对运行状况探测定义自定义检查，以及间隔和超时值。有关运行状况探测的详细信息，请参阅 [Load Balancer probes](/documentation/articles/load-balancer-custom-probe-overview/)（负载均衡器探测）。
+运行状况探测定期检查受负载均衡器后面的 VM，以确保它们可以根据定义操作和响应请求。否则，将从操作中删除这些 VM，确保不会将用户定向到它们。可以针对运行状况探测定义自定义检查，以及间隔和超时值。有关运行状况探测的详细信息，请参阅 [Load Balancer probes](/documentation/articles/load-balancer-custom-probe-overview/)（负载均衡器探测）。
 
 	azure network lb probe create -g TestRG -l TestLB -n HealthProbe -p "http" -f healthprobe.aspx -i 15 -c 4
 
@@ -681,12 +681,12 @@ azure 存储容器列表
 
 ## 验证负载均衡器
 
-现已完成负载均衡器配置。下面是已执行的步骤：
+现已完成负载均衡器配置。以下是执行的步骤：
 
 1. 首先，创建了负载均衡器。
-2. 其次，创建了前端 IP 池并为它分配了公共 IP 地址。
-3. 再次，创建了 VM 可以连接到的后端 IP 池。
-4. 接下来，创建了允许通过 SSH 连接到 VM 以进行管理的 NAT 规则，以及允许对 Web 应用使用 TCP 端口 80 的规则。
+2. 其次，创建前端 IP 池并为其分配公共 IP 地址。
+3. 再次，创建 VM 可以连接到的后端 IP 池。
+4. 接下来，创建允许通过 SSH 连接到 VM 以进行管理的 NAT 规则，以及允许对 Web 应用使用 TCP 端口 80 的规则。
 5. 最后，添加了一个运行状况探测来定期检查 VM。此运行状况探测可以确保用户不会尝试访问不再正常运行和不再提供内容的 VM。
 
 让我们查看负载均衡器现在的情形：
@@ -809,7 +809,7 @@ azure 存储容器列表
 
 ## 创建用于 Linux VM 的 NIC
 
- 由于可以将规则应用到 NIC 的使用上，因此能以编程方式使用 NIC。可以创建多个规则。在下面的 `azure network nic create` 命令中，要将 NIC 挂接到负载后端 IP 池，并与 NAT 规则关联以允许 SSH 流量。为此，需要指定 Azure 订阅的订阅 ID 来取代 `<GUID>`：
+ 由于可以对 NIC 使用应用规则，因此能以编程方式使用 NIC。可以创建多个规则。在下面的 `azure network nic create` 命令中，要将 NIC 挂接到负载后端 IP 池，并与 NAT 规则关联以允许 SSH 流量。为此，需要指定 Azure 订阅的订阅 ID 来取代 `<GUID>`：
 
 	azure network nic create -g TestRG -n LB-NIC1 -l chinaeast --subnet-vnet-name TestVNet --subnet-name FrontEnd \
 	     -d /subscriptions/<GUID>/resourceGroups/TestRG/providers/Microsoft.Network/loadBalancers/TestLB/backendAddressPools/TestBackEndPool \
@@ -892,11 +892,11 @@ azure 存储容器列表
 
 ## 创建网络安全组和规则
 
-现在，我们将创建 NSG 和用于控制 NIC 访问权限的入站规则。
+现在，将创建 NSG 和用于控制 NIC 访问权限的入站规则。
 
 	azure network nsg create TestRG TestNSG chinaeast
 
-让我们添加 NSG 的入站规则以允许端口 22 上的入站连接（以支持 SSH）：
+添加 NSG 的入站规则，允许端口 22 上的入站连接（以支持 SSH）：
 
 	azure network nsg rule create --protocol tcp --direction inbound --priority 1000 \
 	    --destination-port-range 22 --access allow TestRG TestNSG SSHRule
@@ -915,19 +915,19 @@ azure 存储容器列表
 	azure network nic set -g TestRG -n LB-NIC2 -o TestNSG
 
 ## 创建可用性集
-可用性集有助于将 VM 分散到容错域和升级域。让我们为 VM 创建可用性集：
+可用性集有助于将 VM 分散到容错域和升级域。为 VM 创建可用性集：
 
 	azure availset create -g TestRG -n TestAvailSet -l chinaeast
 
-容错域定义一组共用一个通用电源和网络交换机的虚拟机。默认情况下，在可用性集中配置的虚拟机隔离在最多三个容错域中。思路是其中一个容错域中的硬件问题不会影响运行应用的每个 VM。将多个 VM 放入一个可用性集时，Azure 会自动将它们分散到容错域。
+容错域定义共享通用电源和网络交换机的一组虚拟机。默认情况下，在可用性集中配置的虚拟机隔离在最多三个容错域中。思路是其中一个容错域中的硬件问题不会影响运行应用的每个 VM。将多个 VM 放入一个可用性集时，Azure 会自动将它们分散到容错域。
 
 升级域表示虚拟机组以及可同时重新启动的基础物理硬件。在计划内维护期间，升级域的重新启动顺序可能不会按序进行，但一次只重新启动一个升级域。同样，将多个 VM 放入一个可用性站点时，Azure 会自动将它们分散到升级域。
 
-请阅读有关[管理 VM 可用性](/documentation/articles/virtual-machines-linux-manage-availability/)的详细信息。
+有关详细信息，请阅读[管理 VM 可用性](/documentation/articles/virtual-machines-linux-manage-availability/)。
 
 ## 创建 Linux VM
 
-已创建存储和网络资源以支持可访问 Internet 的 VM。现在，让我们创建 VM，并使用不带密码的 SSH 密钥来保护其安全。在此情况下，我们需要基于最新的 LTS 创建 Ubuntu VM。我们将根据 [finding Azure VM images](/documentation/articles/virtual-machines-linux-cli-ps-findimage/)（查找 Azure VM 映像）中所述，使用 `azure vm image list` 来查找该映像信息。
+已经创建存储和网络资源，支持可访问 Internet 的 VM。现在，创建 VM 并使用不含密码的 SSH 密钥保护其安全。在此情况下，我们需要基于最新的 LTS 创建 Ubuntu VM。我们将根据 [finding Azure VM images](/documentation/articles/virtual-machines-linux-cli-ps-findimage/)（查找 Azure VM 映像）中所述，使用 `azure vm image list` 来查找该映像信息。
 
 我们使用命令 `azure vm image list westeurope canonical | grep LTS` 选择了映像。在此示例中，使用 `canonical:UbuntuServer:16.04.0-LTS:16.04.201608150`。对于最后一个字段，我们将传递 `latest`，以便将来可随时获取最新的内部版本。（使用的字符串是 `canonical:UbuntuServer:16.04.0-LTS:16.04.201608150`）。
 
@@ -969,7 +969,7 @@ azure 存储容器列表
 	info:    The storage URI 'https://computeteststore.blob.core.chinacloudapi.cn/' will be used for boot diagnostics settings, and it can be overwritten by the parameter input of '--boot-diagnostics-storage-uri'.
 	info:    vm create command OK
 
-可以使用默认的 SSH 密钥立即连接到 VM。请确保指定适当的端口，因为我们要通过负载均衡器传递流量。（对于第一个 VM，我们设置了 NAT 规则以将端口 4222 转发到 VM）：
+可以使用默认的 SSH 密钥立即连接到 VM。请确保指定适当的端口，因为我们要通过负载均衡器传递流量。（对于第一个 VM，设置 NAT 规则以将端口 4222 转发到 VM）：
 
 	ssh ops@testlb.chinaeast.chinacloudapp.cn -p 4222
 
@@ -981,15 +981,13 @@ azure 存储容器列表
 	Warning: Permanently added '[testlb.chinaeast.chinacloudapp.cn]:4222,[xx.xx.xx.xx]:4222' (ECDSA) to the list of known hosts.
 	Welcome to Ubuntu 16.04.1 LTS (GNU/Linux 4.4.0-34-generic x86_64)
 	
- * 文档：https://help.ubuntu.com
+* 文档：https://help.ubuntu.com	
+* 管理：https://landscape.canonical.com
+* 支持：https://ubuntu.com/advantage
 	
-	
-	
- * 管理：https://landscape.canonical.com
- * 支持：https://ubuntu.com/advantage
-	
-	  使用 Ubuntu 优势云来宾获取云支持：
-	    http://www.ubuntu.com/business/services/cloud
+    使用 Ubuntu 优势云来宾获取云支持：
+
+      http://www.ubuntu.com/business/services/cloud
 	
 	可以更新 0 个包。
 	0 项更新是安全更新。
@@ -1001,7 +999,8 @@ Ubuntu 附带了在适用法律允许的范围内绝对不担保的声明。
 
 若要以管理员（用户“root”）身份运行命令，请使用“sudo <command>”。
 有关详细信息，请参阅“man sudo\_root”。
-	ops@TestVM1：~$
+
+    ops@TestVM1：~$
 
 以相同的方式继续创建第二个 VM：
 
@@ -1019,7 +1018,7 @@ Ubuntu 附带了在适用法律允许的范围内绝对不担保的声明。
 	    --ssh-publickey-file ~/.ssh/id_rsa.pub \
 	    --admin-username ops
 
-现在，可以使用 `azure vm show testrg testvm` 命令来检查创建的内容。此时，已在 Azure 中运行了一个位于负载均衡器后面的 Ubuntu VM，只能使用 SSH 密钥对登录到该 VM（因为密码已禁用）。可以安装 nginx 或 httpd、部署 Web 应用，以及查看流量是否通过负载均衡器流向两个 VM。
+现在，可以使用 `azure vm show testrg testvm` 命令检查创建的内容。此时，已在 Azure 中运行了一个位于负载均衡器后面的 Ubuntu VM，只能使用 SSH 密钥对登录到该 VM（因为密码已禁用）。可以安装 nginx 或 httpd、部署 Web 应用，以及查看流量是否通过负载均衡器流向两个 VM。
 
 	azure vm show TestRG TestVM1
 
@@ -1078,7 +1077,7 @@ Ubuntu 附带了在适用法律允许的范围内绝对不担保的声明。
 	info:    vm show command OK
 
 ## 将环境导出为模板
-现在，已经构建了此环境，那么，如果需要使用相同的参数创建额外的开发环境或者要创建生产环境，该怎么办？ Resource Manager 使用定义了所有环境参数的 JSON 模板。通过引用此 JSON 模板构建出整个环境。可以[手动构建 JSON 模板](/documentation/articles/resource-group-authoring-templates/)，也可以通过直接导出现有环境来为自己创建 JSON 模板：
+现已构建此环境，如果要使用相同的参数创建与其相符的额外开发环境或生产环境，该怎么办？ Resource Manager 使用定义了所有环境参数的 JSON 模板。通过引用此 JSON 模板构建出整个环境。可以[手动构建 JSON 模板](/documentation/articles/resource-group-authoring-templates/)，也可以通过直接导出现有环境来为自己创建 JSON 模板：
 
 	azure group export TestRG
 
@@ -1088,10 +1087,10 @@ Ubuntu 附带了在适用法律允许的范围内绝对不担保的声明。
 
 	azure group deployment create -f TestRG.json -g NewRGFromTemplate
 
-可能需要阅读[有关通过模板进行部署的详细信息](/documentation/articles/resource-group-template-deploy-cli/)。请了解如何对环境进行增量更新、如何使用参数文件，以及如何从单个存储位置访问模板。
+可能需要阅读[有关通过模板进行部署的详细信息](/documentation/articles/resource-group-template-deploy-cli/)。了解如何对环境进行增量更新、如何使用参数文件，以及如何从单个存储位置访问模板。
 
 ## 后续步骤
 
-现在，已准备好开始使用多个网络组件和 VM。可以使用此处介绍的核心组件，通过此示例环境来构建应用程序。
+现在，已准备好开始使用多个网络组件和 VM。可以使用本文介绍的核心组件，通过此示例环境构建应用程序。
 
-<!---HONumber=Mooncake_1017_2016-->
+<!---HONumber=Mooncake_Quality_Review_1118_2016-->

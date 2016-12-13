@@ -16,7 +16,7 @@ ms.tgt_pltfrm="na"
 ms.devlang="na"
 ms.topic="article"
 ms.date="10/03/2016"
-wacn.date="11/14/2016"
+wacn.date="12/12/2016"
 ms.author="larryfr"/>
 
 # 借助 Maven 构建可将 HBase 与基于 Windows 的 HDInsight (Hadoop) 配合使用的 Java 应用程序
@@ -636,4 +636,4 @@ ms.author="larryfr"/>
 
 使用 `-showErr` 参数可查看运行作业时生成的标准错误 (STDERR)。
 
-<!---HONumber=Mooncake_1107_2016-->
+<!---HONumber=Mooncake_Quality_Review_1118_2016-->

@@ -15,7 +15,7 @@
    ms.tgt_pltfrm="vm-linux"
    ms.workload="infrastructure"
    ms.date="09/08/2016"
-   wacn.date="10/24/2016"
+   wacn.date="12/12/2016"
    ms.author="v-livech"/>  
 
 
@@ -192,8 +192,8 @@
 
 使用 `azure vm quick-create` 命令可以快速部署 VM，以便可以登录到 bash shell 开始工作。但是，使用 `vm quick-create` 不会为用户提供广泛的控制，也不会让用户创建更复杂的环境。若要部署针对基础结构自定义的 Linux VM，可以遵循下列任一文章操作：
 
-- [Use an Azure Resource Manager template to create a specific deployment](/documentation/articles/virtual-machines-linux-cli-deploy-templates/)（使用 Azure Resource Manager 模板创建特定部署）
-- [Create your own custom environment for a Linux VM using Azure CLI commands directly](/documentation/articles/virtual-machines-linux-create-cli-complete/)（直接使用 Azure CLI 命令为 Linux VM 创建用户自己的自定义环境）
-- [Create an SSH Secured Linux VM on Azure using templates](/documentation/articles/virtual-machines-linux-create-ssh-secured-vm-from-template/)（使用模板在 Azure 上创建受 SSH 保护的 Linux VM）
+- [Use an Azure Resource Manager template to create a specific deployment（使用 Azure Resource Manager 模板创建特定部署）](/documentation/articles/virtual-machines-linux-cli-deploy-templates/)
+- [Create your own custom environment for a Linux VM using Azure CLI commands directly（直接使用 Azure CLI 命令为 Linux VM 创建用户自己的自定义环境）](/documentation/articles/virtual-machines-linux-create-cli-complete/)
+- [Create an SSH Secured Linux VM on Azure using templates（使用模板在 Azure 上创建受 SSH 保护的 Linux VM）](/documentation/articles/virtual-machines-linux-create-ssh-secured-vm-from-template/)
 
-<!---HONumber=Mooncake_1017_2016-->
+<!---HONumber=Mooncake_Quality_Review_1118_2016-->

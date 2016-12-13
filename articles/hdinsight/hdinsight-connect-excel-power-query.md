@@ -15,7 +15,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="07/25/2016"
-	wacn.date="11/25/2016"
+	wacn.date="12/12/2016"
 	ms.author="jgao"/>
 
 
@@ -27,9 +27,9 @@ Microsoft 大数据解决方案的一个关键功能是，将 Microsoft 商业�
 
 ### 先决条件
 
-在开始阅读本文前，你必须具有：
+开始阅读本文之前，必须具备以下先决条件：
 
-- **一个 HDInsight 群集**。若要配置一个 HDInsight 群集，请参阅 [Azure HDInsight 入门][hdinsight-get-started]。
+- **HDInsight 群集**。若要配置 HDInsight 群集，请参阅 [Azure HDInsight 入门][hdinsight-get-started]。
 - 运行 Windows 7、Windows Server 2008 R2 或更高版本操作系统的**工作站**。
 - **Office 2013 Professional Plus、Office 365 ProPlus、Excel 2013 Standalone 或 Office 2010 Professional Plus**。
 
@@ -60,24 +60,24 @@ Microsoft 大数据解决方案的一个关键功能是，将 Microsoft 商业�
 
 3. 对于“帐户名称”，请输入与你的群集相关联的 Azure Blob 存储帐户的名称，然后单击“确定”。（对于 Azure 中国区，**帐户名称**必须是一个完整的 URL，如: https://<你的帐户名称>.blob.core.chinacloudapi.cn/），这可以是默认存储帐户或链接存储帐户。
 
-4. 对于“帐户密钥”，请输入 Blob 存储帐户的密钥，然后单击“保存”。（你仅需要在首次访问该存储时执行此操作。）
+4. 对于“帐户密钥”，请输入 Blob 存储帐户的密钥，然后单击“保存”。（仅需在首次访问该存储时执行此操作。）
 
 5. 在“查询编辑器”左侧的“导航器”窗格中，双击 Blob 存储容器名称。默认情况下，该容器名称与群集名称相同。
 
-6. 在“名称”列中找到 **HiveSampleData.txt**（文件夹路径是 **../hive/warehouse/hivesampletable/**），然后单击 HiveSampleData.txt 左侧的“二进制”。HiveSampleData.txt 随所有群集提供。（可选）你可以使用自己的文件。
+6. 在“名称”列中找到 **HiveSampleData.txt**（文件夹路径是 **../hive/warehouse/hivesampletable/**），然后单击 HiveSampleData.txt 左侧的“二进制”。HiveSampleData.txt 随所有群集提供。（可选）可使用自己的文件。
 
 	![HDI.PowerQuery.ImportData][image-hdi-powerquery-importdata]
 
-7. 如果需要，可以重命名列名称。准备就绪后，单击“关闭并加载”。数据已加载到你的工作簿：
+7. 可根据需要重命名列名称。准备就绪后，单击“关闭并加载”。数据已加载到工作簿：
 
 	![HDI.PowerQuery.ImportedTable][image-hdi-powerquery-imported-table]
 
 ## <a id="NextSteps"></a>后续步骤
 
-在本文中，你已了解如何使用 Power Query 将数据从 HDInsight 检索到 Excel 中。同样地，你也可以将来自 HDInsight 的数据检索到 Azure SQL 数据库中。也可以将数据上载到 HDInsight 中。若要了解更多信息，请参阅下列文章：
+在本文中，你已了解如何使用 Power Query 将数据从 HDInsight 检索到 Excel 中。同样地，你也可以将来自 HDInsight 的数据检索到 Azure SQL 数据库中。也可以将数据上传到 HDInsight 中。若要了解更多信息，请参阅下列文章：
 
 * [使用 Microsoft Hive ODBC Driver 将 Excel 连接到 HDInsight][hdinsight-ODBC]
-* [将数据上载到 HDInsight][hdinsight-upload-data]
+* [将数据上传到 HDInsight][hdinsight-upload-data]
 
 [hdinsight-ODBC]: /documentation/articles/hdinsight-connect-excel-hive-ODBC-driver/
 [hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1/
@@ -89,4 +89,4 @@ Microsoft 大数据解决方案的一个关键功能是，将 Microsoft 商业�
 
 [powerquery-download]: http://www.microsoft.com/zh-cn/download/details.aspx?id=39379
 
-<!---HONumber=Mooncake_0307_2016-->
+<!---HONumber=Mooncake_Quality_Review_1118_2016-->

@@ -15,7 +15,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="09/14/2016"
-	wacn.date="10/25/2016"
+	wacn.date="12/12/2016"
 	ms.author="jgao"/>
 
 
@@ -105,7 +105,7 @@ Microsoft Avro Library 包含代码生成实用工具，可让你自动根据先
 
 第六个示例显示如何使用 Avro 序列化来上载数据到 Azure Blob 存储，然后使用具有 HDInsight (Hadoop) 群集的 Hive 加以分析。可以从 <a href="https://github.com/Azure-Samples" target="_blank">Azure 代码示例</a>站点下载该示例。
 
-以下是本主题所讨论的六个示例的链接：
+本主题所讨论六个示例的链接如下：
 
  * <a href="#Scenario1">**通过反射进行序列化**</a> - 自动从数据协定特性生成要序列化的类型的 JSON 架构。
  * <a href="#Scenario2">**通过通用记录进行序列化**</a> - 当没有可用于反射的 .NET 类型时，在记录中显式指定 JSON 架构。
@@ -1405,4 +1405,4 @@ Microsoft Avro Library 可以使用反射从要序列化的 C# 对象的数据�
 [deflate-100]: http://msdn.microsoft.com/zh-cn/library/system.io.compression.deflatestream(v=vs.100).aspx
 [deflate-110]: http://msdn.microsoft.com/zh-cn/library/system.io.compression.deflatestream(v=vs.110).aspx
 
-<!---HONumber=Mooncake_0307_2016-->
+<!---HONumber=Mooncake_Quality_Review_1118_2016-->

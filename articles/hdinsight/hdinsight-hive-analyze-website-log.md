@@ -15,7 +15,7 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="05/17/2016" 
-	wacn.date="07/28/2016" 
+	wacn.date="12/12/2016" 
 	ms.author="nitinme"/>
 
 # 将 Hive 与 HDInsight 配合使用来分析来自网站的日志
@@ -33,14 +33,14 @@
 
 ##先决条件
 
-- 必须已在 Azure HDInsight 上预配了一个 Hadoop 群集。有关说明，请参阅[预配 HDInsight 群集][hdinsight-provision]。 
-- 你必须已安装 Microsoft Excel 2013 或 Excel 2010。
-- 你必须拥有 [Microsoft Hive ODBC 驱动程序](http://www.microsoft.com/download/details.aspx?id=40886)，才能将数据从 Hive 导入 Excel。
+- 必须已在 Azure HDInsight 上预配 Hadoop 群集。有关说明，请参阅[预配 HDInsight 群集][hdinsight-provision]。 
+- 必须已安装 Microsoft Excel 2013 或 Excel 2010。
+- 必须拥有 [Microsoft Hive ODBC 驱动程序](http://www.microsoft.com/download/details.aspx?id=40886)，才能将数据从 Hive 导入 Excel。
 
 
 ##运行示例
 
-1. 在 Azure 经典管理门户中，单击要在其上运行示例的群集，然后单击底部的“查询控制台”。或者，你也可以通过使用以下 URL 直接打开查询控制台：
+1. 在 Azure 经典管理门户中，单击要在其上运行示例的群集，然后单击底部的“查询控制台”。或者，也可以通过使用以下 URL 直接打开查询控制台：
 
 	 	https://<clustername>.azurehdinsight.cn
 	
@@ -57,4 +57,4 @@
 [hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1/
 [img-hdi-weblogs-sample]: ./media/hdinsight-hive-analyze-website-log/hdinsight-weblogs-sample.png
 
-<!---HONumber=Mooncake_0411_2016-->
+<!---HONumber=Mooncake_Quality_Review_1118_2016-->
