@@ -47,7 +47,7 @@
     > 
     > 
 
-## 安装用于 Visual Studio 的 Data Lake 工具
+## <a name="install-hdinsight-tools-for-visual-studio"></a> 安装用于 Visual Studio 的 Data Lake 工具
 可以使用 [Web 平台安装程序](https://www.microsoft.com/web/downloads/)来安装 Data Lake 工具。你必须选择与你的 Visual Studio 版本匹配的版本。如果尚未安装 Visual Studio，则可使用 [Web 平台安装程序](https://www.microsoft.com/web/downloads/)安装最新 Visual Studio Community 和 Azure SDK：
 
 ![用于 Visual Studio 的 Data Lake 工具 Web 平台安装程序。][1]  
