@@ -15,7 +15,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="big-data"
     ms.date="11/18/2016"
-    wacn.date=""
+    wacn.date="12/12/2016"
     ms.author="larryfr" />
 
 # 使用 Storm on HDInsight 从 Azure 事件中心处理事件 (C#)

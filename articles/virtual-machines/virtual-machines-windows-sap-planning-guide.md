@@ -649,14 +649,9 @@ Azure 将提供一种网络基础结构，可让我们映射想要使用 SAP 软
 
 通过构建 Azure 虚拟网络，你可以定义 Azure DNS 服务器的 DHCP 功能分配的专用 IP 地址范围。在跨界方案中，Azure 仍将以 DHCP 方式分配定义的 IP 地址范围。但是，域名解析在本地运行（假设 VM 是本地域的一部分），因此可解析不同 Azure 云服务以外的地址。
 
-\[comment]: <>（是否仍需要 MSSedusch？） TODO：Azure 虚拟网络最初已绑定到地缘组。因此，Azure 中的虚拟网络限制为地缘组分配到的 Azure 缩放单位。最终，这意味着虚拟网络被限制为 Azure 缩放单位中可用的资源。这种情况已发生变化，现在，Azure 虚拟网络可跨多个 Azure 缩放单位延伸。但是，这要求 Azure 虚拟网络在创建时**不**再与地缘组关联。如前所述，在一年前的建议相反，**不再应该利用 Azure 地缘组**。有关详细信息，请参阅 <https://azure.microsoft.com/blog/regional-virtual-networks/>）
-
 Azure 中的每个虚拟机都需要连接到虚拟网络。
 
 有关详细信息，请参阅[此文][resource-groups-networking]和[此页](/documentation/services/networking/)。
-
-\[comment]: <>（MShermannd TODO：找不到包括 OpenLDAP 主题和 ARM 的文章；）
-\[comment]: <> (MSSedusch <https://channel9.msdn.com/Blogs/Open/Load-balancing-highly-available-Linux-services-on-Windows-Azure-OpenLDAP-and-MySQL>)
 
 > [AZURE.NOTE] 默认情况下，部署 VM 后，无法更改虚拟网络配置。TCP/IP 设置必须留给 Azure DHCP 服务器。默认行为是动态 IP 配置。
 
@@ -690,16 +685,10 @@ Azure 中的每个虚拟机都需要连接到虚拟网络。
 #### 点到站点 VPN
 点到站点 VPN 要求每台客户端计算机使用自身的 VPN 连接到 Azure。对于我们目前正在探讨的 SAP 方案，点到站点连接是不可行的。因此，我们将不提供有关点到站点 VPN 连接的更多参考。
 
-\[comment]: <>（MSSedusch -- 可在此处找到详细信息）
-\[comment]: <>（MShermannd TODO：链接不再有效；但仍不支持 ARM - 请参阅下面的链接）
-\[comment]: <> （MShermannd TODO：ARM 尚不支持点到站点）
-\[comment]: <> (MSSedusch -- <https://www.azure.cn/documentation/articles/vpn-gateway-point-to-site-create/>)
-
 #### 多站点 VPN
 Azure 现在也可让为一个 Azure 订阅创建多站点 VPN 连接。以前，单个订阅仅限于一个站点到站点 VPN 连接。此限制在单个订阅可以有多站点 VPN 连接之后已不存在。可以通过跨界配置，针对特定订阅使用多个 Azure 区域。
 
 有关详细说明，请参阅[此文][vpn-gateway-create-site-to-site-rm-powershell] 
-\[comment]: <> （MShermannd TODO：找不到 ARM 文档链接）
 
 #### VNet 到 VNet 连接
 使用多站点 VPN 时，需要在每个区域中配置不同的 Azure 虚拟网络。但是，通常必须让不同区域中的软件组件能够彼此通信。在理想情况下，此通信应该从一个 Azure 区域路由到本地，再由此路由到其他 Azure 区域。简而言之，Azure 可让设置从某个区域中的一个 Azure 虚拟网络到托管在另一个区域中的另一个 Azure 虚拟网络的连接。此功能称为 VNet 对 VNet 连接。有关此功能的详细信息，请参阅：
@@ -778,9 +767,6 @@ Azure 门户预览是用于管理 Azure VM 部署的三个界面之一。基本�
  
 ![Azure 门户预览 - 虚拟机概览][planning-guide-figure-800]
 
-\[comment]: <> (MSSedusch * <https://www.azure.cn/documentation/articles/virtual-networks-create-vnet-arm-pportal/>)
-\[comment]: <> (MSSedusch * <https://www.azure.cn/documentation/articles/virtual-machines-windows-classic-tutorial/>)
-
 可以从 Azure 门户预览内部完成虚拟机实例的管理和配置任务。
 
 除了重新启动和关闭虚拟机以外，你还可以为虚拟机实例附加、分离和创建数据磁盘，捕获实例以进行映像准备，更改终结点配置，以及配置虚拟机实例的大小。
@@ -789,10 +775,6 @@ Azure 门户预览提供了基本的功能用于部署和配置 VM 以及其他�
 
 * 将 VHD 上载到 Azure
 * 复制 VM
-
-\[comment]: <> （MShermannd TODO：适用于 SAP VM 的自动化服务支持此操作吗？）
-\[comment]: <> （MSSedusch：可以部署多个 VM 操作系统）
-\[comment]: <> （MSSedusch 另外，无法使用 Azure 门户预览来完成有关部署的任何类型的自动化操作。无法通过 Azure 门户预览完成使用脚本部署多个 VM 等任务。）
 
 ### 通过 Azure PowerShell cmdlet 进行管理
 Windows PowerShell 是一个功能强大的可扩展框架，在 Azure 中部署大量系统的客户已广泛使用了该框架。在台式机、便携式计算机或专用管理工作站上使用证书安装 PowerShell cmdlet 后，可以远程运行 PowerShell cmdlet。
@@ -806,7 +788,6 @@ Windows PowerShell 是一个功能强大的可扩展框架，在 Azure 中部署
 请参阅此处的示例：
 <http://blogs.technet.com/b/keithmayer/archive/2015/07/07/18-steps-for-end-to-end-iaas-provisioning-in-the-cloud-with-azure-resource-manager-arm-powershell-and-desired-state-configuration-dsc.aspx>
 
-\[comment]: <> （MShermannd TODO：测试后将介绍新的 CLI 命令）
 部署适用于 SAP 的 Azure 监视扩展（请参阅本文档中的[适用于 SAP 的 Azure 监视解决方案][planning-guide-9.1]）只能通过 PowerShell 或 CLI 完成。因此，在 Azure 中部署或管理 SAP NetWeaver 系统时，必须安装并配置 PowerShell 或 CLI。
 
 随着 Azure 提供的功能越来越多，我们将会添加新的 PS cmdlet，这就需要你更新 cmdlet。因此，最好是每月至少查看 Azure 下载站点 <https://www.azure.cn/downloads/> 一次，以获取新版 cmdlet。只需覆盖旧版本安装新版本即可。
@@ -843,10 +824,6 @@ ___
 > ![Windows][Logo_Windows] Windows
 >
 > Windows 设置（例如 Windows SID 和主机名）必须通过 sysprep 命令在本地 VM 抽象化/通用化。
-\[comment]: <>（MSSedusch > 在此处查看详细信息：）
-\[comment]: <>（MShermannd TODO：第一个链接与经典模型有关。找不到 Azure 文档）
-\[comment]: <> (MSSedusch > <https://www.azure.cn/documentation/articles/virtual-machines-windows-classic-createupload-vhd/>)
-\[comment]: <> (MSSedusch > <http://blogs.technet.com/b/blainbar/archive/2014/09/12/modernizing-your-infrastructure-with-hybrid-cloud-using-custom-vm-images-and-resource-groups-in-microsoft-azure-part-21-blain-barton.aspx>)
 >
 > ![Linux][Logo_Linux] Linux
 >
@@ -868,7 +845,6 @@ ___
 准备自己的 Azure VM 磁盘时要满足的要求如下：
 
 * 包含操作系统的 VHD 的最大大小最初只能是 127GB。此限制已在 2015 年 3 月底消除。现在，包含操作系统的 VHD 可以有高达 1TB 的大小，Azure 存储空间托管任何其他 VHD 也是一样。
-\[comment]: <>（MShermannd TODO：必须检查 CLI 也转换为静态）
 * 它需要采用固定的 VHD 格式。Azure 尚不支持动态 VHD 或采用 VHDx 格式的 VHD。当你使用 PowerShell cmdlet 或 CLI 上载 VHD 时，动态 VHD 将转换为静态 VHD
 * 已装载到 VM、并且应该在 Azure 中再次装载到 VM 的 VHD 也需要采用固定的 VHD 格式。OS 磁盘的相同大小限制也适用于数据磁盘。VHD 可以有 1TB 的大小上限。当你使用 PowerShell cmdlet 或 CLI 上载 VHD 时，动态 VHD 将转换为静态 VHD
 * 使用管理员特权添加另一个本地帐户，该帐户可供 Microsoft 支持人员使用，或者在部署 VM 之前分配为上下文以供服务和应用程序短暂访问，并可供其他适当的用户使用。
@@ -897,7 +873,6 @@ ___
 准备自己的 Azure VM 映像时要满足的要求如下：
 
 * 包含操作系统的 VHD 的最大大小最初只能是 127GB。此限制已在 2015 年 3 月底消除。现在，包含操作系统的 VHD 可以有高达 1TB 的大小，Azure 存储空间托管任何其他 VHD 也是一样。
-\[comment]: <> （MShermannd TODO：必须检查 CLI 也转换为静态）
 * 它需要采用固定的 VHD 格式。Azure 尚不支持动态 VHD 或采用 VHDx 格式的 VHD。当你使用 PowerShell cmdlet 或 CLI 上载 VHD 时，动态 VHD 将转换为静态 VHD
 * 已装载到 VM、并且应该在 Azure 中再次装载到 VM 的 VHD 也需要采用固定的 VHD 格式。OS 磁盘的相同大小限制也适用于数据磁盘。VHD 可以有 1TB 的大小上限。当你使用 PowerShell cmdlet 或 CLI 上载 VHD 时，动态 VHD 将转换为静态 VHD
 * 由于已注册为 VM 中的用户的所有域用户将不会包括在仅限云方案中（请参阅本文档的[仅限云 - 在不将依赖项部署到本地客户网络的情况下将虚拟机部署到 Azure 中][planning-guide-2.1]一章），因此，在 Azure 中部署该映像后，使用这种域帐户的服务可能无法工作。对于用于运行 DBMS 等服务或 SAP 应用程序的帐户，尤其如此。因此，需要将这种域帐户替换为 VM 本地帐户，并删除 VM 中的内部域帐户。如果根据本文档的[跨界 - 将单个或多个 SAP VM 部署到 Azure 中并要求完全集成到本地网络][planning-guide-2.2]一章中所述将 VM 部署在跨界方案中，则在 VM 映像中保留本地域用户可能不会出现问题。
@@ -928,7 +903,6 @@ ___
 
 ___
 
-\[comment]: <>（MShermannd TODO：必须找到有关为 ARM 通用化 VM 的更佳文章/文档）
 > ![Windows][Logo_Windows] Windows
 >
 > 最后一步是使用管理员帐户登录到 VM。以“管理员”身份打开 Windows 命令窗口。转到 ..\\windows\\system32\\sysprep 并执行 sysprep.exe。
@@ -1125,8 +1099,6 @@ PS cmdlet 逻辑的基本流程如下所示：
 ![适用于 SAP 的 Azure IaaS VM 的参考配置][planning-guide-figure-1300]  
 
 
-\[comment]: <> （MShermannd TODO：描述 Linux 结构）
-
 ___
 
 > ![Windows][Logo_Windows] Windows
@@ -1307,7 +1279,6 @@ SAP GUI 不会立即连接到运行中的任何 SAP 实例（端口 32xx），�
 
 用于实施该方案的事件顺序如下：
 
-\[comment]: <>（MShermannd TODO：对于 ARM 虚拟网络中的唯一 VM 名称，必须使用 json 模板和阐述来提供 ARM 示例/描述）
 ##### Powershell
 
 * 为每个培训/演示布局创建新资源组
