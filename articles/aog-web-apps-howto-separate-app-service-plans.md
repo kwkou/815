@@ -11,7 +11,7 @@
 <tags
     ms.service="app-service-web-aog"
     ms.date="12/08/2016"
-    wacn.date="12/08/2016"/>
+    wacn.date="12/13/2016"/>
 
 # 如何将现有的 Azure Web 应用分离到不同的应用服务计划 #
 
@@ -52,10 +52,9 @@
 
 		Set-AzureRmResource -ResourceName <YourWebSiteName> -ResourceType Microsoft.Web/sites -Properties @{"serverFarmId"="/subscriptions/<SubscirptionID>/resourceGroups/<ResourceGroupName1>/providers/Microsoft.Web/serverfarms/TestAppServicePlan"} -ResourceGroupName <ResourceGroupName2>
 
-	注: 
 	
-	1. 将 `Properties` 参数中的 `serverFarmID` 的值替换成步骤 2 中返回的 `Id` 值；	
-	2. 将参数`<ResourceGroupName1>`替换成应用服务计划所在的资源组名称，将参数`<ResourceGroupName2>`替换成 Web 应用所在的资源组名称。
+	
+	>[AZURE.NOTE]<p>1. 将 `Properties` 参数中的 `serverFarmID` 的值替换成步骤 2 中返回的 `Id` 值；</p><p>2. 将参数`<ResourceGroupName1>`替换成应用服务计划所在的资源组名称，将参数`<ResourceGroupName2>`替换成 Web 应用所在的资源组名称。</p>
 
 4. 登录 Azure Portal 查看 Web 应用是否已经迁移到新的应用服务计划中。
 
