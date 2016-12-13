@@ -97,51 +97,51 @@ ALTER DATABASE CurrentDatabasename MODIFY NAME = NewDatabaseName;
 
 1.	数据仓库应以 1,000 DWU 或更高 DWU 运行（请参阅[缩放计算能力][缩放计算能力]）
 2.	执行脚本的用户应为 [mediumrc 角色][mediumrc 角色]或更高版本
-	1.	若要将用户添加到此角色中，请执行下列语句：
-		1.	````EXEC sp_addrolemember 'xlargerc', 'MyUser'````
+	a.	若要将用户添加到此角色中，请执行下列语句：
+		a.	`EXEC sp_addrolemember 'xlargerc', 'MyUser'`
 
 
-````sql
--------------------------------------------------------------------------------
--- 步骤 1：创建表来控制索引重新生成
--- 在 mediumrc 或更高版本中以用户身份运行
---------------------------------------------------------------------------------
-create table sql_statements
-WITH (distribution = round_robin)
-as select 
-    'alter index all on ' + s.name + '.' + t.NAME + ' rebuild;' as statement,
-    row_number() over (order by s.name, t.name) as sequence
-from 
-    sys.schemas s
-    inner join sys.tables t
-        on s.schema_id = t.schema_id
-where
-    is_external = 0
-;
-go
- 
---------------------------------------------------------------------------------
--- 步骤 2：执行索引重新生成。如果脚本失败，可以重新运行以下语句以从最后中断的地方重新启动
--- 在 mediumrc 或更高版本中以用户身份运行
---------------------------------------------------------------------------------
 
-declare @nbr_statements int = (select count(*) from sql_statements)
-declare @i int = 1
-while(@i <= @nbr_statements)
-begin
-      declare @statement nvarchar(1000)= (select statement from sql_statements where sequence = @i)
-      print cast(getdate() as nvarchar(1000)) + ' Executing... ' + @statement
-      exec (@statement)
-      delete from sql_statements where sequence = @i
-      set @i += 1
-end;
-go
--------------------------------------------------------------------------------
--- 步骤 3：清理步骤 1 中创建的表
---------------------------------------------------------------------------------
-drop table sql_statements;
-go
-````
+    -------------------------------------------------------------------------------
+    -- 步骤 1：创建表来控制索引重新生成
+    -- 在 mediumrc 或更高版本中以用户身份运行
+    --------------------------------------------------------------------------------
+    create table sql_statements
+    WITH (distribution = round_robin)
+    as select 
+        'alter index all on ' + s.name + '.' + t.NAME + ' rebuild;' as statement,
+        row_number() over (order by s.name, t.name) as sequence
+    from 
+        sys.schemas s
+        inner join sys.tables t
+            on s.schema_id = t.schema_id
+    where
+        is_external = 0
+    ;
+    go
+    
+    --------------------------------------------------------------------------------
+    -- 步骤 2：执行索引重新生成。如果脚本失败，可以重新运行以下语句以从最后中断的地方重新启动
+    -- 在 mediumrc 或更高版本中以用户身份运行
+    --------------------------------------------------------------------------------
+
+    declare @nbr_statements int = (select count(*) from sql_statements)
+    declare @i int = 1
+    while(@i <= @nbr_statements)
+    begin
+        declare @statement nvarchar(1000)= (select statement from sql_statements where sequence = @i)
+        print cast(getdate() as nvarchar(1000)) + ' Executing... ' + @statement
+        exec (@statement)
+        delete from sql_statements where sequence = @i
+        set @i += 1
+    end;
+    go
+    -------------------------------------------------------------------------------
+    -- 步骤 3：清理步骤 1 中创建的表
+    --------------------------------------------------------------------------------
+    drop table sql_statements;
+    go
+
 
 如果有任何关于数据仓库的问题，请[在线提交工单][在线提交工单]，并参阅“迁移到高级存储”寻找可能的原因。
 
