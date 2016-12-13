@@ -45,6 +45,8 @@
 
 - [App Service](#app-service-limits)
 
+- [Application 网关](#application-gateway-limits)
+
 - [自动化](#automation-limits)
 
 - [Azure Redis Cache](#azure-redis-cache-limits)
@@ -136,6 +138,9 @@
 
 #### 网络限制
 [AZURE.INCLUDE [azure-virtual-network-limits](../includes/azure-virtual-network-limits.md)]
+
+#### <a name="application-gateway-limits"></a> Application 网关限制
+[AZURE.INCLUDE [application-gateway-limits](../includes/application-gateway-limits.md)]
 
 <a id="traffic-manager-limits"></a>
 #### 流量管理器限制

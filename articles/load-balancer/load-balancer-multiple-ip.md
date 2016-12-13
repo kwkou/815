@@ -26,13 +26,11 @@
 ![负载均衡应用场景图像](./media/load-balancer-multiple-ip/lb-multi-ip.PNG)  
 
 
-## 限制
+## <a name="limitations"></a> 限制
 
 现在，只有使用 Azure PowerShell 才能对辅助 IP 配置进行负载均衡配置。该限制是暂时性的，以后随时可能更改。重新访问此页以检查更新。
 
 [AZURE.INCLUDE [virtual-network-preview](../../includes/virtual-network-preview.md)]
-
-若要注册预览版，请向[多个 IP](mailto:MultipleIPsPreview@microsoft.com?subject=Request%20to%20enable%20subscription%20%3csubscription%20id%3e) 发送一封电子邮件，其中包含你的订阅 ID 和目标用途。
 
 ## 在多个 IP 配置上进行负载均衡的步骤
 
@@ -46,22 +44,22 @@
     $myResourceGroup = "contosofabrikam"
     ```
 
-    有关详细信息，请参阅[创建资源组](/documentation/articles/virtual-machines-windows-ps-create?toc=%2fazure%2fload-balancer%2ftoc.json)的第 2 步。
+    有关详细信息，请参阅[创建资源组](/documentation/articles/virtual-machines-windows-ps-create/)的第 2 步。
 
-3. [创建用于包含 VM 的可用性集](/documentation/articles/virtual-machines-windows-create-availability-set?toc=%2fazure%2fload-balancer%2ftoc.json)。对于此场景，请使用以下命令：
+3. [创建用于包含 VM 的可用性集](/documentation/articles/virtual-machines-windows-create-availability-set/)。对于此场景，请使用以下命令：
 
     ```powershell
     New-AzureRmAvailabilitySet -ResourceGroupName "contosofabrikam" -Name "myAvailset" -Location "China East"
     ```
 
-4. 按照[创建 Windows VM](/documentation/articles/virtual-machines-windows-ps-create?toc=%2fazure%2fload-balancer%2ftoc.json) 中步骤 3 至 5 的说明准备创建具有单个 NIC 的 VM。执行步骤 6.1，使用以下命令而不是步骤 6.2：
+4. 按照[创建 Windows VM](/documentation/articles/virtual-machines-windows-ps-create/) 中步骤 3 至 5 的说明准备创建具有单个 NIC 的 VM。执行步骤 6.1，使用以下命令而不是步骤 6.2：
 
     ```powershell
     $availset = Get-AzureRmAvailabilitySet -ResourceGroupName "contosofabrikam" -Name "myAvailset"
     New-AzureRmVMConfig -VMName "VM1" -VMSize "Standard_DS1_v2" -AvailabilitySetId $availset.Id
     ```
 
-    然后完成[创建 Windows VM](/documentation/articles/virtual-machines-windows-ps-create?toc=%2fazure%2fload-balancer%2ftoc.json) 的步骤 6.3 至 6.8。
+    然后完成[创建 Windows VM](/documentation/articles/virtual-machines-windows-ps-create/) 的步骤 6.3 至 6.8。
 
 5. 向每个 VM 中添加另一个 IP 配置。按照[将多个 IP 地址分配给虚拟机](/documentation/articles/virtual-network-multiple-ip-addresses-powershell#add)文章中的说明执行操作。请使用以下配置设置：
 

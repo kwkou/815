@@ -59,7 +59,7 @@
 
 
 
-## 检查云服务的负载均衡器运行状况状态
+## <a name="check-load-balancer-health-status-for-cloud-services"></a> 检查云服务的负载均衡器运行状况状态
 
 
 下面是运行状况探测器的示例：

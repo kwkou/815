@@ -63,7 +63,7 @@ Azure Load Balancer 可提高应用程序的可用性和网络性能。它是第
 
 负载均衡器可以通过基于 Resource Manager 的 API 和工具进行管理。若要了解有关 Resource Manager 的详细信息，请参阅 [Resource Manager overview](/documentation/articles/resource-group-overview/)（Resource Manager 概述）。
 
-## 负载均衡器的功能
+## <a name="load-balancer-features"></a> 负载均衡器的功能
 
 * 基于哈希的分发
 

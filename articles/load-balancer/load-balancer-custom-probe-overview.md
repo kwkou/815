@@ -46,7 +46,7 @@ Azure Load Balancer 提供相应的功能让你使用探测来监视服务器实
 
 此探测仅适用于 Azure 云服务。仅当实例处于就绪状态（即，不处于其他状态，例如“繁忙”、“正在回收”或“正在停止”）时，负载均衡器才利用虚拟机内部的来宾代理，然后侦听并以“HTTP 200 正常”作为响应。
 
-有关详细信息，请参阅 [Configuring the service definition file (csdef) for health probes](https://msdn.microsoft.com/zh-cn/library/azure/jj151530.asp)（配置运行状况探测的服务定义文件 (csdef)）或 [Get started creating an Internet-facing load balancer for cloud services](/documentation/articles/load-balancer-get-started-internet-classic-cloud/#check-load-balancer-health-status-for-cloud-services)（开始为云服务创建面向 Internet 的负载均衡器）。
+有关详细信息，请参阅 [Configuring the service definition file (csdef) for health probes](https://msdn.microsoft.com/library/zh-cn/Ee758710.aspx)（配置运行状况探测的服务定义文件 (csdef)）或 [Get started creating an Internet-facing load balancer for cloud services](/documentation/articles/load-balancer-get-started-internet-classic-cloud/#check-load-balancer-health-status-for-cloud-services)（开始为云服务创建面向 Internet 的负载均衡器）。
 
 ### 来宾代理探测将实例标记为状况不良的原因有哪些？
 

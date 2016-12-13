@@ -37,7 +37,7 @@ Azure 提供三种不同的方法来实现出站连接。每种方法都有自�
 
 SNAT 端口是可能会被耗尽的有限资源。因此了解它们的使用方式很重要。每个到单个目标 IP 地址的流使用一个 SNAT 端口。对于到相同的目标 IP 地址的多个流，每个流使用一个 SNAT 端口。这可以确保源自相同的公共 IP 地址，并到相同的目标 IP 地址的流的唯一性。每个流到不同的目标 IP 地址的多个流对于每个目标使用一个 SNAT 端口。目标 IP 地址使流具有唯一性。
 
-你可以使用[用于负载均衡器的 Log Analytics](/documentation/articles/load-balancer-monitor-log/) 和[针对 SNAT 端口耗尽消息要监视的警报事件日志](/documentation/articles/load-balancer-monitor-log#alert-event-log)。如果 SNAT 端口资源已经耗尽，那么在现有流释放 SNAT 端口之前出站流将失败。负载均衡器对于回收 SNAT 端口使用 4 分钟的空闲超时时间。
+你可以使用[用于负载均衡器的 Log Analytics](/documentation/articles/load-balancer-monitor-log/) 和[针对 SNAT 端口耗尽消息要监视的警报事件日志](/documentation/articles/load-balancer-monitor-log/#alert-event-log)。如果 SNAT 端口资源已经耗尽，那么在现有流释放 SNAT 端口之前出站流将失败。负载均衡器对于回收 SNAT 端口使用 4 分钟的空闲超时时间。
 
 ## 负载均衡的 VM（无实例级公共 IP 地址）
 
@@ -45,7 +45,7 @@ SNAT 端口是可能会被耗尽的有限资源。因此了解它们的使用方
 
 SNAT 端口是可能会被耗尽的有限资源。因此了解它们的使用方式很重要。每个到单个目标 IP 地址的流使用一个 SNAT 端口。对于到相同的目标 IP 地址的多个流，每个流使用一个 SNAT 端口。这可以确保源自相同的公共 IP 地址，并到相同的目标 IP 地址的流的唯一性。每个流到不同的目标 IP 地址的多个流对于每个目标使用一个 SNAT 端口。目标 IP 地址使流具有唯一性。
 
-你可以使用[用于负载均衡器的 Log Analytics](/documentation/articles/load-balancer-monitor-log/) 和[针对 SNAT 端口耗尽消息要监视的警报事件日志](/documentation/articles/load-balancer-monitor-log#alert-event-log)。如果 SNAT 端口资源已经耗尽，那么在现有流释放 SNAT 端口之前出站流将失败。负载均衡器对于回收 SNAT 端口使用 4 分钟的空闲超时时间。
+你可以使用[用于负载均衡器的 Log Analytics](/documentation/articles/load-balancer-monitor-log/) 和[针对 SNAT 端口耗尽消息要监视的警报事件日志](/documentation/articles/load-balancer-monitor-log/#alert-event-log)。如果 SNAT 端口资源已经耗尽，那么在现有流释放 SNAT 端口之前出站流将失败。负载均衡器对于回收 SNAT 端口使用 4 分钟的空闲超时时间。
 
 ## 具有实例级公共 IP 地址的 VM（有或没有负载均衡器）
 
@@ -57,9 +57,9 @@ SNAT 端口是可能会被耗尽的有限资源。因此了解它们的使用方
 
     nslookup myip.opendns.com resolver1.opendns.com
 
-## 阻止公共连接
+## <a name="preventing-public-connectivity"></a> 阻止公共连接
 
-有时允许 VM 创建出站流是不可取的，或者可能需要管理哪些目标可以通过出站流进行访问。在此情况下，使用[网络安全组 (NSG)](/documentation/articles/virtual-networks-nsg/) 来管理 VM 可以访问的目标。将 NSG 应用于负载均衡的 VM 时，需要注意[默认标记](/documentation/articles/virtual-networks-nsg#default-tags)和[默认规则](/documentation/articles/virtual-networks-nsg#default-rules)。
+有时允许 VM 创建出站流是不可取的，或者可能需要管理哪些目标可以通过出站流进行访问。在此情况下，使用[网络安全组 (NSG)](/documentation/articles/virtual-networks-nsg/) 来管理 VM 可以访问的目标。将 NSG 应用于负载均衡的 VM 时，需要注意[默认标记](/documentation/articles/virtual-networks-nsg/#default-tags)和[默认规则](/documentation/articles/virtual-networks-nsg/#default-rules)。
 
 必须确保 VM 可以接收来自 Azure Load Balancer 的运行状况探测请求。如果 NSG 阻止来自 AZURE\_LOADBALANCER 默认标记的运行状况探测请求，那么 VM 的运行状况探测程序将失败，并且 VM 被标记为停机。负载均衡器停止向此 VM 发送新流。
 
