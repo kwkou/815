@@ -15,7 +15,7 @@
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
    ms.date="11/29/2016"
-   wacn.date="12/09/2016"
+   wacn.date="12/13/2016"
    ms.author="nicw;barbkess;sonyama"/>
 
 # 迁移到高级存储的详细信息
@@ -154,7 +154,7 @@ go
 [Azure paired region]: /documentation/articles/best-practices-availability-paired-regions
 [main documentation site]: /documentation/articles/services/sql-data-warehouse
 [暂停]: /documentation/articles/sql-data-warehouse-manage-compute-portal/#pause-compute
-[还原]: /documentation/articles/sql-data-warehouse-manage-database-restore-portal
+[还原]: /documentation/articles/sql-data-warehouse-restore-database-portal
 [迁移期间重命名的步骤]: #optional-steps-to-rename-during-migration
 [缩放计算能力]: /documentation/articles/sql-data-warehouse-manage-compute-portal/#scale-compute-power
 [mediumrc 角色]: /documentation/articles/sql-data-warehouse-develop-concurrency/#workload-management
