@@ -2,33 +2,34 @@
     pageTitle="在 Azure 流量管理器中管理终结点 | Azure"
     description="本文将帮助你从 Azure 流量管理器中添加、删除、启用和禁用终结点。"
     services="traffic-manager"
-    documentationCenter=""
-    authors="sdwheeler"
+    documentationcenter=""
+    author="sdwheeler"
     manager="carmonm"
-    editor=""
-/>  
+    editor="" />  
 
 <tags
+    ms.assetid="ade2bbc2-35a7-43c5-8001-4698f7254526"
     ms.service="traffic-manager"
     ms.devlang="na"
     ms.topic="get-started-article"
     ms.tgt_pltfrm="na"
     ms.workload="infrastructure-services"
     ms.date="10/11/2016"
-    wacn.date="11/07/2016"
-    ms.author="sewhee"
-/>  
+    wacn.date="12/12/2016"
+    ms.author="sewhee" />  
 
 
 # 添加、禁用、启用或删除终结点
 
 无论网站模式如何，Azure 应用服务中的 Web 应用功能都已针对数据中心内的网站提供了故障转移和轮循机制流量路由功能。你可以使用 Azure 流量管理器为不同数据中心内的网站和云服务指定故障转移和轮询机制流量路由。提供该功能所需的第一个步骤是将云服务或网站终结点添加到流量管理器中。
 
->[AZURE.NOTE]  本文介绍如何使用经典管理门户。Azure 经典管理门户仅支持以终结点的形式创建和分配云服务和 Web 应用。新的 [Azure 门户预览](https://portal.azure.cn)是首选界面。
+> [AZURE.NOTE]
+本文介绍如何使用经典管理门户。Azure 经典管理门户仅支持以终结点的形式创建和分配云服务和 Web 应用。新的 [Azure 门户预览](https://portal.azure.cn)是首选界面。
 
 你还可以禁用属于流量管理器配置文件的一部分的个体终结点。禁用某个终结点会将其保留为配置文件的一部分，但是配置文件的行为就如同其中不包括该终结点一样。此操作对于临时删除处于维护模式或正在重新部署的终结点十分有用。终结点再次运行后，可以启用它。
 
->[AZURE.NOTE] 禁用某个终结点对其在 Azure 中的部署状态没有任何影响。正常的终结点保持运行并能够接收流量，即使在流量管理器中已将其禁用也是如此。此外，在一个配置文件中禁用某个终结点不会影响它在其他配置文件中的状态。
+> [AZURE.NOTE]
+禁用某个终结点对其在 Azure 中的部署状态没有任何影响。正常的终结点保持运行并能够接收流量，即使在流量管理器中已将其禁用也是如此。此外，在一个配置文件中禁用某个终结点不会影响它在其他配置文件中的状态。
 
 ## 添加云服务或网站终结点
 
@@ -40,7 +41,8 @@
 6. 在列表中选择网站以将其添加为此配置文件的终结点。清除网站名称会将其从终结点列表中删除。对于每个 Azure 数据中心（也称为区域），只能选择一个网站。选择第一个网站后，无法选择同一数据中心内的其他网站。另请注意，只会列出标准网站。
 7. 在为此配置文件选择终结点后，单击右下角的复选标记来保存你的更改。
 
->[AZURE.NOTE] 使用“故障转移”流量路由方法在配置文件中添加或删除终结点后，故障转移优先级列表可能不会按所需的顺序列出。可以在“配置”页上调整故障转移优先级列表的顺序。有关详细信息，请参阅[配置故障转移流量路由](/documentation/articles/traffic-manager-configure-failover-routing-method/)。
+> [AZURE.NOTE]
+使用“故障转移”流量路由方法在配置文件中添加或删除终结点后，故障转移优先级列表可能不会按所需的顺序列出。可以在“配置”页上调整故障转移优先级列表的顺序。有关详细信息，请参阅[配置故障转移流量路由](/documentation/articles/traffic-manager-configure-failover-routing-method/)。
 
 ## 禁用终结点
 
@@ -65,12 +67,10 @@
 
 ## 后续步骤
 
-* [流量管理器 - 禁用、启用或删除配置文件](/documentation/articles/traffic-manager-manage-profiles/)
-* [配置故障转移路由方法](/documentation/articles/traffic-manager-configure-failover-routing-method/)
-* [配置轮循机制路由方法](/documentation/articles/traffic-manager-configure-round-robin-routing-method/)
-* [配置性能路由方法](/documentation/articles/traffic-manager-configure-performance-routing-method/)
+* [管理流量管理器配置文件](/documentation/articles/traffic-manager-manage-profiles/)
+* [配置路由方法](/documentation/articles/traffic-manager-configure-routing-method/)
 * [流量管理器降级状态疑难解答](/documentation/articles/traffic-manager-troubleshooting-degraded/)
 * [流量管理器性能注意事项](/documentation/articles/traffic-manager-performance-considerations/)
 * [流量管理器上的操作（REST API 参考）](https://msdn.microsoft.com/zh-cn/library/hh758255.aspx)
 
-<!---HONumber=Mooncake_1031_2016-->
+<!---HONumber=Mooncake_1205_2016-->

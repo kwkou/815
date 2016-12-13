@@ -37,7 +37,7 @@ Azure CLI 是一组开源且跨平台的命令，可以用于 Azure 资源。本
 
 
 
-## 方案 1：使用交互式登录方法登录 Azure 
+## <a name="scenario-1-azure-login-with-interactive-login"></a> 方案 1：使用交互式登录方法登录 Azure 
 
 使用特定帐户时，CLI 会要求运行 `azure login`，然后通过 Web 门户使用 Web 浏览器继续完成登录过程，此过程称为*交互式登录*。常见原因是，拥有设置为要求多重身份验证的工作或学校帐户（也称为*组织帐户*）。想要使用 Resource Manager 模式命令时，也会使用交互式登录方法来登录 Microsoft 帐户。
 
