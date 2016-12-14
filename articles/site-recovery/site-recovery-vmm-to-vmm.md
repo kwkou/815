@@ -1,25 +1,30 @@
-<properties 
-	pageTitle="使用 Azure 门户将 VMM 云中的 Hyper-V 虚拟机复制到辅助 VMM 站点 | Azure"
-	description="介绍如何部署 Azure Site Recovery，以便使用 Azure 门户来协调 VMM 云中 Hyper-V VM 到辅助 VMM 站点的复制、故障转移和恢复。"
-	services="site-recovery"
-	documentationCenter=""
-	authors="rayne-wiselman"
-	manager="jwhit"
-	editor=""/>
+<properties
+    pageTitle="使用 Azure 门户将 VMM 云中的 Hyper-V 虚拟机复制到辅助 VMM 站点 | Azure"
+    description="介绍如何部署 Azure Site Recovery，以便使用 Azure 门户来协调 VMM 云中 Hyper-V VM 到辅助 VMM 站点的复制、故障转移和恢复。"
+    services="site-recovery"
+    documentationcenter=""
+    author="rayne-wiselman"
+    manager="jwhit"
+    editor="" />  
 
 <tags
-	ms.service="site-recovery"
-	ms.workload="backup-recovery"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="08/23/2016"
-	wacn.date="11/17/2016"
-	ms.author="raynew"/>
+    ms.assetid="b33a1922-aed6-4916-9209-0e257620fded"
+    ms.service="site-recovery"
+    ms.workload="backup-recovery"
+    ms.tgt_pltfrm="na"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.date="11/14/2016"
+    wacn.date="12/12/2016"
+    ms.author="raynew" />
 
 # 将 VMM 云中的 Hyper-V 虚拟机复制到辅助 VMM 站点
 
-Azure Site Recovery 服务有助于业务连续性和灾难恢复 (BCDR) 策略，因为它可以协调虚拟机和物理服务器的复制、故障转移和恢复。虚拟机可复制到 Azure 中，也可复制到本地数据中心中。如需快速概览，请阅读[什么是 Azure Site Recovery？](/documentation/articles/site-recovery-overview/)。
+> [AZURE.SELECTOR]
+- [经典管理门户](/documentation/articles/site-recovery-vmm-to-vmm-classic/)
+- [PowerShell - Resource Manager](/documentation/articles/site-recovery-vmm-to-vmm-powershell-resource-manager/)
+
+欢迎使用 Azure Site Recovery！ 如果你要将 System Center Virtual Machine Manager (VMM) 云中管理的本地 Hyper-V 虚拟机复制到辅助站点，请参考本文。本文介绍如何在 Azure 门户中使用 Azure Site Recovery 设置复制。
 
 ## 概述
 
@@ -289,15 +294,21 @@ Azure Site Recovery 服务有助于业务连续性和灾难恢复 (BCDR) 策略�
 ### 运行恢复计划
 在复制之后，副本虚拟机的 IP 地址可能不同于主虚拟机的 IP 地址。虚拟机在启动后将更新它们使用的 DNS 服务器。你也可以添加一个脚本来更新 DNS 服务器，以确保及时更新。
 
-#### 用于检索 IP 地址的脚本
+### 使用副本 VM IP 地址更新 DNS
+故障转移之后，副本 VM 的 IP 地址可能与主虚拟机不同。
+
+* 虚拟机在启动后将更新它们使用的 DNS 服务器。
+* 也可以按如下所述手动更新 DNS：
+
+#### 检索 IP 地址
 运行此示例脚本来检索 IP 地址。
 
-    	$vm = Get-SCVirtualMachine -Name <VM_NAME>
-		$na = $vm[0].VirtualNetworkAdapters>
-		$ip = Get-SCIPAddress -GrantToObjectID $na[0].id
-		$ip.address  
+        $vm = Get-SCVirtualMachine -Name <VM_NAME>
+        $na = $vm[0].VirtualNetworkAdapters>
+        $ip = Get-SCIPAddress -GrantToObjectID $na[0].id
+        $ip.address  
 
-#### 用于更新 DNS 的脚本
+#### 更新 DNS
 运行此示例脚本来更新 DNS 并指定你通过前一个示例脚本检索到的 IP 地址。
 
 		string]$Zone,
@@ -310,7 +321,6 @@ Azure Site Recovery 服务有助于业务连续性和灾难恢复 (BCDR) 策略�
 		Set-DnsServerResourceRecord -zonename $zone -OldInputObject $record -NewInputObject $Newrecord
 
 ## 后续步骤
-
 设置并运行部署后，请[详细了解](/documentation/articles/site-recovery-failover/)不同类型的故障转移。
 
-<!---HONumber=Mooncake_0926_2016-->
+<!---HONumber=Mooncake_1205_2016-->

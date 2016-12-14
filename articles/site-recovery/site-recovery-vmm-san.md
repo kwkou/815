@@ -1,40 +1,37 @@
-<properties 
-	pageTitle="通过 Azure Site Recovery 使用 SAN 将 VMM 云中的 Hyper-V VM 复制到辅助站点 | Azure"
-	description="本文介绍了如何通过 Azure Site Recovery 使用 SAN 复制在两个站点之间复制 Hyper-V 虚拟机。"
-	services="site-recovery" 
-	documentationCenter="" 
-	authors="rayne-wiselman" 
-	manager="jwhit" 
-	editor="tysonn"/>
+<properties
+    pageTitle="通过 Azure Site Recovery 使用 SAN 将 VMM 云中的 Hyper-V VM 复制到辅助站点 | Azure"
+    description="本文介绍了如何通过 Azure Site Recovery 使用 SAN 复制在两个站点之间复制 Hyper-V 虚拟机。"
+    services="site-recovery"
+    documentationcenter=""
+    author="rayne-wiselman"
+    manager="jwhit"
+    editor="" />  
 
 <tags
-	ms.service="site-recovery"
-	ms.workload="backup-recovery"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="07/06/2016"
-	wacn.date="11/17/2016"
-	ms.author="raynew"/>
+    ms.assetid="eb480459-04d0-4c57-96c6-9b0829e96d65"
+    ms.service="site-recovery"
+    ms.workload="backup-recovery"
+    ms.tgt_pltfrm="na"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.date="11/01/2016"
+    wacn.date="12/12/2016"
+    ms.author="raynew" />  
+
 
 # 通过 Azure Site Recovery 使用 SAN 将 VMM 云中的 Hyper-V VM 复制到辅助站点
-
 在本文中，你将了解如何部署站点恢复以安排和自动化 SAN 复制以及位于 System Center VMM 云中的 Hyper-V 虚拟机故障转移到辅助 VMM 站点。
 
 阅读本文后，请将任何评论或问题发布到本文底部，或者发布到 [Azure 恢复服务论坛](https://social.msdn.microsoft.com/Forums/zh-cn/home?forum=hypervrecovmgr)。
 
-
 ## 概述
-
 组织需要制定业务连续性和灾难恢复 (BCDR) 策略来确定应用、工作负荷和数据如何在计划和非计划停机期间保持运行和可用，并尽快恢复正常运行情况。BCDR 策略的重点在于，发生灾难时提供确保业务数据的安全性和可恢复性以及工作负荷的持续可用性的解决方案。
 
 站点恢复是一项 Azure 服务，可以通过协调从本地物理服务器和虚拟机到云 (Azure) 或辅助数据中心的的复制，来为 BCDR 策略提供辅助。当主要位置发生故障时，你可以故障转移到辅助站点，使应用和工作负荷保持可用。当主要位置恢复正常时，你可以故障转移回到主要位置。站点恢复可用于许多方案，并可保护许多工作负荷。在[什么是 Azure Site Recovery？](/documentation/articles/site-recovery-overview/)中了解详细信息
 
 本文说明了使用 SAN 复制设置从一个 VMM 站点到其他 VMM 站点的 Hyper-V 虚拟机的复制。本文包含架构概述、部署先决条件和说明。你可以发现和分类 VMM 中的 SAN 存储，设置 LUN，以及向 Hyper-V 群集分配存储。本文最后指导你测试故障转移，以确保一切都按预期进行。
 
-
 ## 为何使用 SAN 进行复制？
-
 以下是此方案所提供的优势：
 
 - 提供可由 Site Recovery 自动实现的企业可缩放复制解决方案。
@@ -45,7 +42,6 @@
 - 与 VMM 的集成可以在 VMM 控制台中提供 SAN 管理，VMM 中的 SMI-S 可发现现有的存储。
 
 ## 体系结构
-
 此方案会通过使用 SAN 复制将 Hyper-V 虚拟机从一个本地 VMM 站点备份到另一个站点，保护你的工作负载。
 
 ![SAN 体系结构](./media/site-recovery-vmm-san/architecture.png)
@@ -70,9 +66,7 @@
 **SAN 存储** | 使用可以通过 iSCSI 或光纤通道存储复制来宾群集虚拟机的 SAN 复制，或使用共享虚拟硬盘 (vhdx)。<br/><br/>你需要设置两个 SAN 阵列，一个位于主站点，另一个位于辅助站点。<br/><br/>应在阵列之间设置网络基础结构。应该配置对等互连和复制。应该根据存储阵列要求设置复制许可证。<br/><br/>应该在 Hyper-V 主机服务器与存储阵列之间设置网络，使主机能够使用 ISCSI 或光纤通道与存储 LUN 通信。<br/><br/> 查看[支持的存储阵列](http://social.technet.microsoft.com/wiki/contents/articles/28317.deploying-azure-site-recovery-with-vmm-and-san-supported-storage-arrays.aspx)列表。<br/><br/>应安装存储阵列制造商提供的 SMI-S 提供程序，并且 SAN 阵列应由提供程序管理。按提供程序文档要求设置提供程序。<br/><br/>确保阵列的 SMI-S 提供程序位于某个服务器上，使得 VMM 服务器能够通过 IP 地址或 FQDN 进行经网络的访问。<br/><br/>每个 SAN 阵列应该有一个或多个可以用于此部署的存储池。主站点的 VMM 服务器需管理主阵列，辅助 VMM 服务器将管理辅助阵列。<br/><br/>主站点的 VMM 服务器应管理主阵列，辅助 VMM 服务器应管理辅助阵列。
 **网络映射** | 你可以配置网络映射，以确保在故障转移后以最佳方式将复制的虚拟机放置在辅助 Hyper-V 主机服务器上，并确保它们连接到适当的 VM 网络。如果不配置网络映射，则在故障转移后，副本 VM 将不会连接到任何网络。<br/><br/>若要在部署期间设置网络映射，请确保源 Hyper-V 主机服务器上的虚拟机连接到 VMM VM 网络。该网络应链接到与云关联的逻辑网络。<br/<br/>辅助 VMM 服务器上用于恢复的目标云应当配置了相应的 VM 网络，并且该网络应当链接到与目标云关联的相应逻辑网络。<br/><br/>[详细了解](/documentation/articles/site-recovery-network-mapping/)网络映射。
 
-
 ## 步骤 1：准备 VMM 基础结构
-
 若要准备 VMM 基础结构，你需要：
 
 1. 确保已设置 VMM 云
@@ -82,11 +76,9 @@
 5. 设置 VM 网络
 
 ### 确保已设置 VMM 云
-
 Site Recovery 将协调 VMM 云中 Hyper-V 主机服务器上的虚拟机的保护。在开始部署 Site Recovery 之前，需要确保已正确设置这些云。在[创建私有云](http://blogs.technet.com/b/keithmayer/archive/2013/04/18/walkthrough-creating-private-clouds-with-system-center-2012-sp1-virtual-machine-manager-build-your-private-cloud-in-a-month.aspx)（Keith Mayer 博客文章）中了解详细信息。
 
 ### 集成并分类 VMM 中的 SAN 存储
-
 在 VMM 控制台中添加并分类 SAN：
 
 1. 在“结构”工作区中，单击“存储”。单击“主页”>“添加资源”>“存储设备”以启动“添加存储设备向导”。
@@ -123,7 +115,6 @@ Site Recovery 将协调 VMM 云中 Hyper-V 主机服务器上的虚拟机的保�
 	- 然后，根据[如何在 VMM 中的 Hyper-V 主机群集上配置存储](https://technet.microsoft.com/zh-cn/library/gg610692.aspx)中所述，向群集分配存储容量。</a>
 
 ### 创建复制组
-
 创建一个复制组，其中包含需要一起复制的所有 LUN。
 
 1. 在 VMM 控制台中，打开存储阵列属性的“复制组”选项卡，然后单击“新建”。
@@ -132,7 +123,6 @@ Site Recovery 将协调 VMM 云中 Hyper-V 主机服务器上的虚拟机的保�
 	![SAN 复制组](./media/site-recovery-vmm-san/rep-group.png)
 
 ### 设置网络
-
 如果你要配置网络映射，请执行以下操作：
 
 1. [了解](/documentation/articles/site-recovery-network-mapping/)网络映射。
@@ -147,9 +137,7 @@ Site Recovery 将协调 VMM 云中 Hyper-V 主机服务器上的虚拟机的保�
 1. 从你要注册的 VMM 服务器登录到[管理门户](https://manage.windowsazure.cn)。
 
 2. 展开“数据服务”>“恢复服务”，并单击“Site Recovery 保管库”。
-
 3. 单击“新建”>“快速创建”。
-
 4. 在“名称”中，输入一个友好名称以标识此保管库。
 
 5. 在“区域”中，为保管库选择地理区域。若要查看受支持的区域，请参阅 [Azure Site Recovery 价格详细信息](/pricing/details/site-recovery/)中的“地域可用性”。
@@ -248,9 +236,7 @@ Site Recovery 将协调 VMM 云中 Hyper-V 主机服务器上的虚拟机的保�
  - **/proxyUsername**：可选参数，用于指定代理服务器用户名（如果代理服务器要求身份验证）。
  - **/proxyPassword**：可选参数，用于指定密码，以便通过代理服务器进行身份验证（如果代理服务器要求身份验证）。
 
-
 ## 步骤 3：映射存储阵列和池
-
 映射阵列，以指定哪个辅助存储池要从主池接收复制数据。之所以要在配置云保护之前映射存储，是因为当你为复制组启用保护时要使用映射信息。
 
 在开始操作之前，请检查云是否已显示在保管库中。若要检测云，你可以在安装提供程序时选择同步所有云，也可以在 VMM 控制台中云属性的“常规”选项卡上选择同步特定的云。然后按如下所述映射存储阵列：
@@ -271,7 +257,7 @@ Site Recovery 将协调 VMM 云中 Hyper-V 主机服务器上的虚拟机的保�
 1. 在“快速启动”页上，单击“为 VMM 云设置保护”。
 2. 在“受保护的项”选项卡上，选择要配置的云并转到“配置”选项卡。请注意：
 3. 在“目标”中，选择“VMM”。
-4. 在“目标位置”中，选择管理着你要用于恢复的云的现场 VMM 服务器。
+4. 在“目标位置”中，选择管理要用于恢复的云的现场 VMM 服务器。
 5. 在“目标云”中，选择要用于源云中虚拟机故障转移的目标云。请注意：
 	- 我们建议你选择可满足你要保护的虚拟机的恢复要求的目标云。
 	- 一个云只能属于一个云对 — 作为主云或目标云。
@@ -306,7 +292,6 @@ Site Recovery 将协调 VMM 云中 Hyper-V 主机服务器上的虚拟机的保�
 完成此操作后，Azure Site Recovery 以及 VMM 和 SMI-S 提供程序将设置目标站点存储 LUN，并启用存储复制。如果复制组已复制，Azure Site Recovery 将重用现有的复制关系并更新 Azure Site Recovery 中的信息。
 
 ## 步骤 7：为虚拟机启用保护
-
 存储组开始复制后，请在 VMM 控制台中使用以下方法之一为虚拟机启用保护：
 
 - **新的虚拟机** - 在创建新的虚拟机时，可以在 VMM 控制台中启用 Azure Site Recovery 保护，并将虚拟机与复制组相关联。如果选择此选项，VMM 将使用智能定位以最佳方式将虚拟机存储放置在复制组的 LUN 上。Azure Site Recovery 将协调辅助站点上的阴影虚拟机的创建并分配容量，以便在故障转移后可以启动副本虚拟机。
@@ -323,7 +308,6 @@ Site Recovery 将协调 VMM 云中 Hyper-V 主机服务器上的虚拟机的保�
 ![虚拟机保护作业](./media/site-recovery-vmm-san/job-props.png)
 
 ## 步骤 8：测试部署
-
 测试你的部署，以确保虚拟机和数据可按预期方式故障转移。为此，你将要通过选择复制组创建恢复计划。然后，对该计划运行测试故障转移。
 
 1. 在“恢复计划”选项卡上，单击“创建恢复计划”。
@@ -363,6 +347,6 @@ Site Recovery 将协调 VMM 云中 Hyper-V 主机服务器上的虚拟机的保�
 
 ## 后续步骤
 
-运行测试故障转移以确保环境功能正常以后，请[了解](/documentation/articles/site-recovery-failover/)不同类型的故障转移。
+运行测试性故障转移以确保环境功能正常以后，请[了解](/documentation/articles/site-recovery-failover/)不同类型的故障转移。
 
-<!---HONumber=Mooncake_0725_2016-->
+<!---HONumber=Mooncake_1205_2016-->

@@ -1,21 +1,22 @@
 <properties
-	pageTitle="使用 PowerShell (Resource Manager) 将 VMM 云中的 Hyper-V 虚拟机复制到辅助 VMM 站点 | Azure"
-	description="介绍如何部署 Azure Site Recovery，以便使用 PowerShell (Resource Manager) 来协调 VMM 云中 Hyper-V VM 到辅助 VMM 站点的复制、故障转移和恢复"
-	services="site-recovery"
-	documentationCenter=""
-	authors="sujaytalasila"
-	manager="rochakm"
-	editor="raynew"/>
+    pageTitle="使用 PowerShell (Resource Manager) 将 VMM 云中的 Hyper-V 虚拟机复制到辅助 VMM 站点 | Azure"
+    description="介绍如何部署 Azure Site Recovery，以便使用 PowerShell (Resource Manager) 来协调 VMM 云中 Hyper-V VM 到辅助 VMM 站点的复制、故障转移和恢复"
+    services="site-recovery"
+    documentationcenter=""
+    author="sujaytalasila"
+    manager="rochakm"
+    editor="raynew" />  
 
 <tags
-	ms.service="site-recovery"
-	ms.workload="backup-recovery"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="07/19/2016"
-	wacn.date="11/17/2016"
-	ms.author="sutalasi"/>  
+    ms.assetid="9d38e9c3-217c-4e44-830c-575e9a4141f2"
+    ms.service="site-recovery"
+    ms.workload="backup-recovery"
+    ms.tgt_pltfrm="na"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.date="11/01/2016"
+    wacn.date="12/12/2016"
+    ms.author="sutalasi" />  
 
 
 # 使用 PowerShell (Resource Manager) 将 VMM 云中的 Hyper-V 虚拟机复制到辅助 VMM 站点
@@ -46,7 +47,6 @@
 
 
 ## 本地先决条件
-
 下面是在主要和辅助本地站点中部署此方案所要满足的条件：
 
 **先决条件** | **详细信息** 
@@ -228,8 +228,26 @@
 
 		New-AzureRmSiteRecoveryNetworkMapping -PrimaryNetwork $PrimaryNetworks[0] -RecoveryNetwork $RecoveryNetworks[0]
 
-## 步骤 6：为虚拟机启用保护
+## 步骤 6：配置存储映射
+1. 以下命令在 $storageclassifications 变量中获取存储分类的列表。
+   
+        $storageclassifications = Get-AzureRmSiteRecoveryStorageClassification
+2. 以下命令在 $SourceClassificaion 变量中获取源分类，在 $TargetClassification 变量中获取目标分类。
+   
+        $SourceClassificaion = $storageclassifications[0]
+   
+        $TargetClassification = $storageclassifications[1]
 
+    > [AZURE.NOTE] 源和目标分类可以是数组中的任何元素。请参考以下命令的输出，了解 $storageclassifications 数组中源和目标分类的索引。
+
+    > Get-AzureRmSiteRecoveryStorageClassification | Select-Object -Property FriendlyName, Id | Format-Table
+
+
+1. 以下 cmdlet 在源分类与目标分类之间创建映射。
+   
+        New-AzureRmSiteRecoveryStorageClassificationMapping -PrimaryStorageClassification $SourceClassificaion -RecoveryStorageClassification $TargetClassification
+
+## 步骤 7：为虚拟机启用保护
 在正确配置服务器、云和网络后，可以在云中为虚拟机启用保护。
 
 
@@ -333,4 +351,4 @@
 
 [详细了解](https://msdn.microsoft.com/zh-cn/library/azure/mt637930.aspx) Azure Site Recovery 和 Azure Resource Manager PowerShell cmdlet。
 
-<!---HONumber=Mooncake_0822_2016-->
+<!---HONumber=Mooncake_1205_2016-->
