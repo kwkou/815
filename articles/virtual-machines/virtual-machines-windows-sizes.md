@@ -16,7 +16,7 @@ ms.service="virtual-machines-windows"
  ms.tgt_pltfrm="vm-windows"
  ms.workload="infrastructure-services"
  ms.date="09/21/2016"
- wacn.date="11/28/2016"
+ wacn.date="12/14/2016"
  ms.author="cynthn"/>  
 
 
