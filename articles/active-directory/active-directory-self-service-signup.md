@@ -16,7 +16,7 @@
     ms.workload="identity"
     ms.date="11/09/2016"
     ms.author="curtand"
-    wacn.date="12/12/2016"/>  
+    wacn.date="12/13/2016"/>  
 
 
 
@@ -116,16 +116,17 @@
 ## 如何执行 DNS 域名接管
 你可以使用几个选项来执行域验证（并根据需要执行接管）：
 
-1.  Azure 经典管理门户
+1.Azure 经典管理门户
 
    通过添加域来触发接管。如果域已经存在一个目录，则你可以选择执行外部接管。
 
 	使用你的凭据登录到 Azure 经典管理门户。导航到现有目录，然后选择“添加域”。
 
-2.  Office 365
+2.Office 365
 
    在 Office 365 中，可以使用“管理域”[](https://support.office.com/article/Navigate-to-the-Office-365-Manage-domains-page-026af1f2-0e6d-4f2d-9b33-fd147420fac2/)页上的选项来处理域和 DNS 记录。请参阅[在 Office 365 中验证域](https://support.office.com/article/Verify-your-domain-in-Office-365-6383f56d-3d09-4dcb-9b41-b5f5a5efd611/)。
-3. Windows PowerShell
+
+3.Windows PowerShell
 
    需要执行以下步骤以使用 Windows PowerShell 执行验证。
 
@@ -140,29 +141,29 @@
         connect-msolservice -credential $msolcred
 2. 获取域的列表：
 
-    Get-MsolDomain
+    	Get-MsolDomain
 3. 然后 Get-MsolDomainVerificationDns cmdlet 来创建质询：
 
-    Get-MsolDomainVerificationDns -DomainName *your\_domain\_name* -Mode DnsTxtRecord
+    	Get-MsolDomainVerificationDns -DomainName *your\_domain\_name* -Mode DnsTxtRecord
 
     例如：
 
-    Get-MsolDomainVerificationDns -DomainName contoso.com -Mode DnsTxtRecord
+    	Get-MsolDomainVerificationDns -DomainName contoso.com -Mode DnsTxtRecord
 4. 复制从此命令返回的值（质询）。
 
     例如：
 
-    MS=32DD01B82C05D27151EA9AE93C5890787F0E65D9
+    	MS=32DD01B82C05D27151EA9AE93C5890787F0E65D9
 5. 在公共 DNS 命名空间中，创建包含你在上一步复制的值的 DNS txt 记录。
 
     此记录的名称即是父域的名称，因此，如果你要使用 Windows Server 中的 DNS 角色创建此资源记录，请将记录名称保留空白，而只在文本框中粘贴该值
 6. 运行 Confirm-MsolDomain cmdlet 以验证质询：
 
-    Confirm-MsolEmailVerifiedDomain -DomainName *your\_domain\_name*
+    	Confirm-MsolEmailVerifiedDomain -DomainName *your\_domain\_name*
 
     例如：
 
-    Confirm-MsolEmailVerifiedDomain -DomainName contoso.com
+    	Confirm-MsolEmailVerifiedDomain -DomainName contoso.com
 
 如果质询成功，你将返回到提示符，且不会显示错误。
 

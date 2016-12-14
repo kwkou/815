@@ -15,7 +15,8 @@
     ms.workload="identity"
     ms.topic="article"
     ms.date="11/01/2016"
-    ms.author="billmath" />  
+    ms.author="billmath"
+    wacn.date="12/13/2016" />  
 
 
 # Azure AD Connect 的拓扑

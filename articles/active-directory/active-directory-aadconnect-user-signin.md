@@ -47,7 +47,8 @@ Azure AD Connect 可让用户使用同一组密码登录云和本地资源。本
 [有关密码同步的详细信息](/documentation/articles/active-directory-aadconnectsync-implement-password-synchronization/)
 
 
-### 使用 Windows Server 2012 R2 场中新的或现有 AD FS 的联合 <a name="federation-using-a-new-or-existing-ad-fs-in-windows-server-2012-r2-farm">
+### 使用 Windows Server 2012 R2 场中新的或现有 AD FS 的联合 <a name="federation-using-a-new-or-existing-ad-fs-in-windows-server-2012-r2-farm"></a>  
+
 通过联合登录，用户可以使用本地密码登录基于 Azure AD 服务；使用公司网络时，无需再次输入密码就可登录服务。使用 AD FS 的联合选项可让你在 Windows Server 2012 R2 场中部署新的或指定现有的 AD FS。如果你选择指定现有的场，Azure AD Connect 将在场与 Azure AD 之间配置信任，使用户能够登录。
 
 <center>![云](./media/active-directory-aadconnect-user-signin/federatedsignin.png)</center>
