@@ -268,7 +268,7 @@ ASR 会将上下文变量传递给 Runbook，以帮助你编写确定性的脚�
 尽管我们在本教程中演练的是一个常见任务，那就是向 Azure 虚拟机添加终结点，但是，你可以使用 Azure 自动化完成其他许多功能强大的自动化任务。Microsoft 和 Azure 自动化社区提供了示例 Runbook，可帮助你开始创建自己的解决方案和实用 Runbook，可用作更大自动化任务的构建基块。你可以从库中使用这些 Runbook，通过 Azure 站点恢复为应用程序生成强大的单击式恢复计划。
 
 ## 其他资源
-[Azure 自动化概述](http://msdn.microsoft.com/zh-cn/library/azure/dn643629.aspx "Azure 自动化概述")
+[Azure 自动化概述](/documentation/articles/automation/ "Azure 自动化概述")
 
 [Azure 自动化示例脚本](http://gallery.technet.microsoft.com/scriptcenter/site/search?f[0].Type=User&f[0].Value=SC%20Automation%20Product%20Team&f[0].Text=SC%20Automation%20Product%20Team "Azure 自动化示例脚本")
 
