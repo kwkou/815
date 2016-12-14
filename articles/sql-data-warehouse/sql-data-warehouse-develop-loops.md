@@ -5,7 +5,8 @@
    documentationCenter="NA"
    authors="jrowlandjones"
    manager="barbkess"
-   editor=""/>
+   editor=""/>  
+
 
 <tags
    ms.service="sql-data-warehouse"
@@ -13,12 +14,13 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="06/14/2016"
-   wacn.date="08/01/2016"
+   ms.date="10/31/2016"
+   wacn.date="12/12/2016"
    ms.author="jrj;barbkess;sonyama"/>
 
+
 # SQL 数据仓库中的循环
-SQL 数据仓库支持对重复执行的语句块使用 [WHILE][] 循环。只要指定的条件都成立，或者在代码专门使用 `BREAK` 关键字终止循环之前，这些语句将不断继续。循环特别适合用于替换 SQL 代码中定义的游标。幸运的是，几乎所有以 SQL 代码编写的游标都是快进的只读变体。因此，如果你发现自己必须替换一个游标，[WHILE] 循环是绝佳的替代方案。
+SQL 数据仓库支持对重复执行的语句块使用 [WHILE][WHILE] 循环。只要指定的条件都成立，或者在代码专门使用 `BREAK` 关键字终止循环之前，这些语句将不断继续。循环特别适合用于替换 SQL 代码中定义的游标。幸运的是，几乎所有以 SQL 代码编写的游标都是快进的只读变体。因此，如果你发现自己必须替换一个游标，[WHILE] 循环是绝佳的替代方案。
 
 ## 利用循环和替换 SQL 数据仓库中的游标
 但是，在深入学习之前，你应该先自问以下问题：“此游标是否可重写以使用基于集的操作？”。在许多情况下，答案是肯定的，通常这也是最佳方法。基于集的操作的执行速度通常比迭代性的逐行方法要快得多。
@@ -68,6 +70,7 @@ SQL 数据仓库支持对重复执行的语句块使用 [WHILE][] 循环。只�
 
 <!--Every topic should have next steps and links to the next logical set of content to keep the customer engaged-->
 
+
 ## 后续步骤
 有关更多开发技巧，请参阅[开发概述][]。
 
@@ -82,4 +85,4 @@ SQL 数据仓库支持对重复执行的语句块使用 [WHILE][] 循环。只�
 
 <!--Other Web references-->
 
-<!---HONumber=Mooncake_0725_2016-->
+<!---HONumber=Mooncake_1205_2016-->

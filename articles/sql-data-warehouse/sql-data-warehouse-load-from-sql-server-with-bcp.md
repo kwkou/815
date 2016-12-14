@@ -6,7 +6,8 @@
    documentationCenter="NA"
    authors="lodipalm"
    manager="barbkess"
-   editor=""/>
+   editor=""/>  
+
 
 <tags
    ms.service="sql-data-warehouse"
@@ -14,8 +15,8 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="06/30/2016"
-   wacn.date="08/08/2016"
+   ms.date="10/31/2016"
+   wacn.date="12/12/2016"
    ms.author="lodipalm;barbkess;sonyama"/>
 
 
@@ -37,30 +38,24 @@
 
 
 ## 开始之前
-
 ### 先决条件
-
 若要逐步完成本教程，你需要：
 
 - 一个 SQL 数据仓库数据库。
 - 已安装 bcp 命令行实用工具
 - 已安装 sqlcmd 命令行实用工具
 
-可以从 [Microsoft 下载中心][]下载 bcp 和 sqlcmd 实用程序。
+可以从 [Microsoft 下载中心][Microsoft Download Center]下载 bcp 和 sqlcmd 实用程序。
 
 ### 采用 ASCII 或 UTF-16 格式的数据
-
 如果你使用自己的数据尝试学习本教程，则数据需要使用 ASCII 或 UTF-16 编码，因为 bcp 不支持 UTF-8。
 
 PolyBase 支持 UTF-8，但尚不支持 UTF-16。请注意，如果你要结合使用 bcp 和 PolyBase，则从 SQL Server 导出数据后，需要将数据转换为 UTF-8。
 
-
 ## 1\.创建目标表
-
 在 SQL 数据仓库中定义加载操作的目标表。该表中的列必须对应于数据文件每一行中的数据。
 
 若要创建表，请打开命令提示符并使用 sqlcmd.exe 运行以下命令：
-
 
 
 	sqlcmd.exe -S <server name> -d <database name> -U <username> -P <password> -I -Q "
@@ -137,8 +132,7 @@ DateId |CalendarQuarter |FiscalQuarter
 20151201 |4 |2
 
 ## 4\.创建统计信息
-
-SQL 数据仓库尚不支持自动创建或自动更新统计信息。为了获得最佳查询性能，在首次加载数据或者在数据发生重大更改之后，必须针对所有表的所有列创建统计信息。<!-- 有关统计信息的详细说明，请参阅 [Statistics][]（统计信息）。-->
+SQL 数据仓库尚不支持自动创建或自动更新统计信息。为了获得最佳查询性能，在首次加载数据或者在数据发生重大更改之后，必须针对所有表的所有列创建统计信息。有关统计信息的详细说明，请参阅 [Statistics][Statistics]（统计信息）。
 
 运行以下命令针对新加载的表创建统计信息。
 
@@ -156,7 +150,6 @@ SQL 数据仓库尚不支持自动创建或自动更新统计信息。为了获�
 但是，结果会有所差异。由于数据存储在 SQL 数据仓库中的分散位置，因此，当你导出数据时，每个计算节点会将数据写入输出文件。输出文件中的数据顺序与输入文件中的数据顺序可能不同。
 
 ### 导出表并比较导出的结果
-
 若要查看导出的数据，请打开命令提示符并使用自己的参数运行此命令。ServerName 是 Azure 逻辑 SQL Server 的名称。
 
 
@@ -180,20 +173,20 @@ SQL 数据仓库尚不支持自动创建或自动更新统计信息。为了获�
 
 
 ### 导出查询结果
-
 可以使用 bcp 的 **queryout** 函数导出查询结果，而无需导出整个表。
 
 ## 后续步骤
-有关加载数据的概述，请参阅[将数据载入 SQL 数据仓库][]。
-有关更多开发技巧，请参阅 [SQL 数据仓库开发概述][]。
-有关在 SQL 数据仓库中创建表的详细信息，请参阅 <!-- [Table Overview][]（表概述）或 --> [CREATE TABLE syntax][]（CREATE TABLE 语法）。
+有关加载数据的概述，请参阅[将数据载入 SQL 数据仓库][Load data into SQL Data Warehouse]。
+有关更多开发技巧，请参阅 [SQL 数据仓库开发概述][SQL Data Warehouse development overview]。
+有关在 SQL 数据仓库中创建表的详细信息，请参阅 [Table Overview][Table Overview]（表概述）或 [CREATE TABLE syntax][CREATE TABLE syntax]（CREATE TABLE 语法）。
 
 <!--Image references-->
 
+
 <!--Article references-->
 
-[将数据载入 SQL 数据仓库]: /documentation/articles/sql-data-warehouse-overview-load/
-[SQL 数据仓库开发概述]: /documentation/articles/sql-data-warehouse-overview-develop/
+[Load data into SQL Data Warehouse]: /documentation/articles/sql-data-warehouse-overview-load/
+[SQL Data Warehouse development overview]: /documentation/articles/sql-data-warehouse-overview-develop/
 [Table Overview]: /documentation/articles/sql-data-warehouse-tables-overview/
 [Statistics]: /documentation/articles/sql-data-warehouse-tables-statistics/
 
@@ -202,6 +195,7 @@ SQL 数据仓库尚不支持自动创建或自动更新统计信息。为了获�
 [CREATE TABLE syntax]: https://msdn.microsoft.com/zh-cn/library/mt203953.aspx
 
 <!--Other Web references-->
-[Microsoft 下载中心]: https://www.microsoft.com/download/details.aspx?id=36433
 
-<!---HONumber=Mooncake_0801_2016-->
+[Microsoft Download Center]: https://www.microsoft.com/download/details.aspx?id=36433
+
+<!---HONumber=Mooncake_1205_2016-->

@@ -14,8 +14,8 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="08/21/2016"
-	wacn.date="10/31/2016"
+	ms.date="10/31/2016"
+	wacn.date="12/12/2016"
 	ms.author="barbkess"/>
 
 
@@ -170,4 +170,4 @@
 | 69 | service-capacity-limits | [SQL 数据仓库容量限制](/documentation/articles/sql-data-warehouse-service-capacity-limits/) | SQL 数据仓库的连接、数据库、表和查询的最大值。 |
 | 70 | 故障排除 | [排查 Azure SQL 数据仓库问题](/documentation/articles/sql-data-warehouse-troubleshoot/) | 排查 Azure SQL 数据仓库问题。 |
 
-<!---HONumber=Mooncake_1010_2016-->
+<!---HONumber=Mooncake_1205_2016-->

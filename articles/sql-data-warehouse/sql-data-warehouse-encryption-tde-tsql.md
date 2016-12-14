@@ -14,9 +14,9 @@
    ms.tgt_pltfrm="na"
    ms.devlang="na"
    ms.topic="article"
-   ms.date="09/24/2016"
-   wacn.date="10/31/2016"
-   ms.author="rortloff;barbkess;sonyama"/>  
+   ms.date="10/31/2016"
+   wacn.date="12/12/2016"
+   ms.author="rortloff;barbkess"/>  
 
 
 # 透明数据加密 (TDE) 入门
@@ -29,11 +29,9 @@
 - [加密 (T-SQL)](/documentation/articles/sql-data-warehouse-encryption-tde-tsql/)
 
 ## 所需的权限
-
 若要启用透明数据加密 (TDE)，用户必须是管理员或 dbmanager 角色的成员。
 
 ## 启用加密
-
 执行以下步骤，对 SQL 数据仓库启用 TDE：
 
 1. 使用在 master 数据库中充当管理员或 **dbmanager** 角色成员的登录名，连接到托管数据库的服务器上的 *master* 数据库
@@ -44,7 +42,6 @@
 
 
 ## 禁用加密
-
 执行以下步骤，对 SQL 数据仓库禁用 TDE：
 
 1. 使用在 master 数据库中充当管理员或 **dbmanager** 角色成员的登录名，连接到 *master* 数据库
@@ -56,23 +53,23 @@
 > [AZURE.NOTE] 在更改 TDE 设置之前，必须恢复暂停的 SQL 数据仓库。
 
 ## 验证加密
-
 若要验证 SQL 数据仓库的加密状态，请遵循以下步骤：
 
 1. 使用在 master 数据库中充当管理员或 **dbmanager** 角色成员的登录名，连接到 *master* 数据库或实例数据库
 2. 执行以下语句来加密数据库。
 
 
-	    SELECT [name], [is\_encrypted] FROM sys.databases;
-
+	SELECT
+	    [name],
+	    [is_encrypted]
+	FROM
+	    sys.databases;
 
 结果 ```1``` 表示数据库已加密，```0``` 表示数据库未加密。
 
-## 加密 DMV  
-
-- [sys.databases][]
-- [sys.dm\_pdw\_nodes\_database\_encryption\_keys][]
-
+## 加密 DMV
+* [sys.databases][sys.databases]
+* [sys.dm\_pdw\_nodes\_database\_encryption\_keys][sys.dm_pdw_nodes_database_encryption_keys]
 
 <!--Anchors-->
 
@@ -84,4 +81,4 @@
 
 <!--Link references-->
 
-<!---HONumber=Mooncake_1024_2016-->
+<!---HONumber=Mooncake_1205_2016-->

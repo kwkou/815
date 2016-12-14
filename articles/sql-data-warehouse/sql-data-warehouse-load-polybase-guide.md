@@ -5,7 +5,8 @@
    documentationCenter="NA"
    authors="happynicolle"
    manager="barbkess"
-   editor=""/>
+   editor=""/>  
+
 
 <tags
    ms.service="sql-data-warehouse"
@@ -13,20 +14,16 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="06/30/2016"
-   wacn.date="08/08/2016"
-   ms.author="cakarst;barbkess;sonyama"/>
+   ms.date="10/31/2016"
+   wacn.date="12/12/2016"/>
 
 
 # 在 SQL 数据仓库中使用 PolyBase 的指南
-
 本指南提供有关在 SQL 数据仓库中使用 PolyBase 的实用信息。
 
-若要开始，请参阅[使用 PolyBase 加载数据][]教程。
-
+若要开始，请参阅[使用 PolyBase 加载数据][Load data with PolyBase]教程。
 
 ## 轮换存储密钥
-
 有时出于安全考虑，想要更改 Blob 存储的访问密钥。
 
 执行此任务的最佳方式是遵循称为“轮换密钥”的过程。你可能已注意到，Blob 存储帐户有两个存储密钥。这样你便可以转换
@@ -125,7 +122,6 @@ Azure SQL 数据仓库尚不支持自动创建或自动更新统计信息。为�
 有多种方法可实现此目的。以下是两种使用 Powershell 的方法：
 
 ### 适用于小文件的简单示例
-
 以下是用于创建文件的一行简单 Powershell 脚本。
  
 
@@ -135,7 +131,6 @@ Azure SQL 数据仓库尚不支持自动创建或自动更新统计信息。为�
 但是，尽管将数据重新编码的方法非常简单，但绝非最有效的做法。以下 IO 流式处理示例要快得多，并可达到相同的效果。
 
 ### 适用于较大文件的 IO 流式处理示例
-
 以下代码示例更为复杂，但在流式处理从源到目标的数据行时要有效得多。请对较大的文件应用此方法。
 
 
@@ -177,11 +172,10 @@ Azure SQL 数据仓库尚不支持自动创建或自动更新统计信息。为�
 
 <!--Image references-->
 
+
 <!--Article references-->
 [Load data with bcp]: /documentation/articles/sql-data-warehouse-load-with-bcp/
-[使用 PolyBase 加载数据]: /documentation/articles/sql-data-warehouse-get-started-load-with-polybase/
-[solution partners]: /documentation/articles/sql-data-warehouse-solution-partners/
-[development overview]: /documentation/articles/sql-data-warehouse-overview-develop/
+[Load data with PolyBase]: /documentation/articles/sql-data-warehouse-get-started-load-with-polybase/
 [统计信息]: /documentation/articles/sql-data-warehouse-tables-statistics/
 [数据迁移概述]: /documentation/articles/sql-data-warehouse-overview-migrate/
 
@@ -208,4 +202,4 @@ Azure SQL 数据仓库尚不支持自动创建或自动更新统计信息。为�
 
 <!-- External Links -->
 
-<!---HONumber=Mooncake_0801_2016-->
+<!---HONumber=Mooncake_1205_2016-->

@@ -14,8 +14,8 @@
    ms.tgt_pltfrm="na"
    ms.devlang="na"
    ms.topic="article"
-   ms.date="09/24/2016"
-   wacn.date="10/31/2016" 
+   ms.date="10/31/2016" 
+   wacn.date="12/12/2016"
    ms.author="rortloff;barbkess;sonyama"/>  
 
 
@@ -28,11 +28,9 @@
 - [加密 (T-SQL)](/documentation/articles/sql-data-warehouse-encryption-tde-tsql/)
 
 ## 所需的权限
-
 若要启用透明数据加密 (TDE)，用户必须是管理员或 dbmanager 角色的成员。
 
 ## 启用加密
-
 若要为 SQL 数据仓库启用 TDE，请遵循以下步骤：
 
 1. 在 [Azure 门户预览](https://portal.azure.cn/)中打开数据库
@@ -44,8 +42,7 @@
 5. 选择“保存” 
 ![][3]  
 
-##禁用加密
-
+## 禁用加密
 若要为 SQL 数据仓库禁用 TDE，请遵循以下步骤：
 
 1. 在 [Azure 门户预览](https://portal.azure.cn/)中打开数据库
@@ -79,4 +76,4 @@
 
 <!--Link references-->
 
-<!---HONumber=Mooncake_1024_2016-->
+<!---HONumber=Mooncake_1205_2016-->

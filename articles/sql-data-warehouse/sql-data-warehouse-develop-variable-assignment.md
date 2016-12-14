@@ -5,7 +5,8 @@
    documentationCenter="NA"
    authors="jrowlandjones"
    manager="barbkess"
-   editor=""/>
+   editor=""/>  
+
 
 <tags
    ms.service="sql-data-warehouse"
@@ -13,9 +14,10 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="06/14/2016"
-   wacn.date="08/08/2016"
+   ms.date="10/31/2016"
+   wacn.date="12/12/2016"
    ms.author="jrj;barbkess;sonyama"/>
+
 
 # 在 SQL 数据仓库中分配变量
 SQL 数据仓库中的变量是使用 `DECLARE` 语句或 `SET` 语句设置的。
@@ -23,7 +25,6 @@ SQL 数据仓库中的变量是使用 `DECLARE` 语句或 `SET` 语句设置的�
 以下各项是设置变量值的完全有效方式：
 
 ## 使用 DECLARE 设置变量
-
 使用 DECLARE 初始化变量是在 SQL 数据仓库中设置变量值的最灵活方式之一。
 
 
@@ -64,17 +65,16 @@ SET 是设置单个变量的很常见方法。
 ## 限制
 不能使用 SELECT 或 UPDATE 来分配变量。
 
-
 ## 后续步骤
-有关更多开发技巧，请参阅[开发概述][]。
+有关更多开发技巧，请参阅[开发概述][development overview]。
 
 <!--Image references-->
 
 <!--Article references-->
-[开发概述]: /documentation/articles/sql-data-warehouse-overview-develop/
+[development overview]: /documentation/articles/sql-data-warehouse-overview-develop/
 
 <!--MSDN references-->
 
 <!--Other Web references-->
 
-<!---HONumber=Mooncake_0801_2016-->
+<!---HONumber=Mooncake_1205_2016-->

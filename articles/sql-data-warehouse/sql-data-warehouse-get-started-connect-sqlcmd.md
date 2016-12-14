@@ -15,8 +15,8 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="09/06/2016"
-   wacn.date="10/17/2016"
+   ms.date="10/31/2016"
+   wacn.date="12/12/2016"
    ms.author="barbkess;sonyama"/>  
 
 
@@ -26,11 +26,10 @@
 - [Visual Studio](/documentation/articles/sql-data-warehouse-query-visual-studio/)
 - [sqlcmd](/documentation/articles/sql-data-warehouse-get-started-connect-sqlcmd/)
 
-本演练使用 [sqlcmd][] 命令行实用程序来查询 Azure SQL 数据仓库。
+使用 [sqlcmd][sqlcmd] 命令行实用程序来连接到并查询 Azure SQL 数据仓库。
 
 ## 1\.连接
-
-若要开始使用 [sqlcmd][]，请打开命令提示符并输入 **sqlcmd**，后跟 SQL 数据仓库数据库的连接字符串。连接字符串需要以下参数：
+若要开始使用 [sqlcmd][sqlcmd]，请打开命令提示符并输入 **sqlcmd**，后跟 SQL 数据仓库数据库的连接字符串。连接字符串需要以下参数：
 
 + **服务器 (-S)：**采用 < 服务器名称 >.database.chinacloudapi.cn 格式的服务器
 + **数据库 (-d)：**数据库名称。
@@ -54,13 +53,12 @@
 例如，你的连接字符串可能如下所示：
 
 
-	C:\>sqlcmd -S MySqlDw.database.chinacloudapi.cn -d Adventure_Works -U myuser -P myP@ssword -I
+	C:\>sqlcmd -S MySqlDw.database.chinacloudapi.cn -d Adventure_Works -G -I
 
 
 > [AZURE.NOTE] 需[启用 Azure Active Directory 身份验证](/documentation/articles/sql-data-warehouse-authentication/)才能使用 Active Directory 进行身份验证。
 
 ## 2\.查询
-
 连接后，可以对实例发出任何支持的 Transact-SQL 语句。在此示例中，查询以交互模式进行提交。
 
 
@@ -81,11 +79,9 @@
 
 
 ## 后续步骤
-
 请参阅 [sqlcmd 文档][sqlcmd]，详细了解 sqlcmd 中的可用选项。
 
 <!--Image references-->
-
 
 <!--Article references-->
 
@@ -95,4 +91,4 @@
 
 <!--Other Web references-->
 
-<!---HONumber=Mooncake_1010_2016-->
+<!---HONumber=Mooncake_1205_2016-->

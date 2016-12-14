@@ -14,30 +14,27 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="08/27/2016"
-   wacn.date="10/31/2016"
+   ms.date="10/31/2016"
+   wacn.date="12/12/2016"
    ms.author="sonyama;barbkess"/>  
 
 
 # 连接到 Azure SQL 数据仓库
-
 本文介绍首次连接到 SQL 数据仓库的操作方法。
 
 ## 查找服务器名称
-
 连接到 SQL 数据仓库时，第一步是了解如何查找服务器名称。例如，以下示例中的服务器名称是 sample.database.chinacloudapi.cn。若要查找完全限定的服务器名称，请执行以下操作：
 
-1. 转到 [Azure 门户][]。
+1. 转到 [Azure 门户预览][Azure portal]。
 2. 单击“SQL 数据库”
 3. 单击要连接到的数据库。
 4. 找到完整的服务器名称。
-
+   
     ![完整服务器名称][1]  
 
 
 ## 支持的驱动程序和连接字符串
-
-Azure SQL 数据仓库支持 [ADO.NET][]、[ODBC][]、[PHP][] 和 [JDBC][]。单击前述的某个驱动程序，查找最新版本和文档。若要自动生成通过 Azure 门户使用的驱动程序的连接字符串，可单击前述示例中的“显示数据库连接字符串”。下面也是一些示例，说明了每个驱动程序的连接字符串的样式。
+Azure SQL 数据仓库支持 [ADO.NET][ADO.NET]、[ODBC][ODBC]、[PHP][PHP] 和 [JDBC][JDBC]。单击前述的某个驱动程序，查找最新版本和文档。若要自动生成通过 Azure 门户使用的驱动程序的连接字符串，可单击前述示例中的“显示数据库连接字符串”。下面也是一些示例，说明了每个驱动程序的连接字符串的样式。
 
 > [AZURE.NOTE] 请考虑将连接超时值设置为 300 秒，以便连接可以经受住短时间内不可用。
 
@@ -70,15 +67,14 @@ Azure SQL 数据仓库支持 [ADO.NET][]、[ODBC][]、[PHP][] 和 [JDBC][]。单
 SQL 数据仓库在连接和创建对象期间标准化一些设置。这些设置不能重写，其中包括：
 
 | 数据库设置 | 值 |
-| :--------------------- | :--------------------------- |
-| [ANSI\_NULLS][] | 开 |
-| [QUOTED\_IDENTIFIERS][] | 开 |
-| [DATEFORMAT][] | mdy |
-| [DATEFIRST][] | 7 |
+|:--- |:--- |
+| [ANSI\_NULLS][ANSI_NULLS] |开 |
+| [QUOTED\_IDENTIFIERS][QUOTED_IDENTIFIERS] |开 |
+| [DATEFORMAT][DATEFORMAT] |mdy |
+| [DATEFIRST][DATEFIRST] |7 |
 
 ## 后续步骤
-
-若要使用 Visual Studio 进行连接和查询，请参阅 [Query with Visual Studio][]（使用 Visual Studio 进行查询）。若要详细了解身份验证选项，请参阅 [Authentication to Azure SQL Data Warehouse][]（通过 Azure SQL 数据仓库进行身份验证）。
+若要使用 Visual Studio 进行连接和查询，请参阅 [Query with Visual Studio][Query with Visual Studio]（使用 Visual Studio 进行查询）。若要详细了解身份验证选项，请参阅 [Authentication to Azure SQL Data Warehouse][Authentication to Azure SQL Data Warehouse]（通过 Azure SQL 数据仓库进行身份验证）。
 
 <!--Articles-->
 
@@ -96,10 +92,10 @@ SQL 数据仓库在连接和创建对象期间标准化一些设置。这些设�
 [DATEFIRST]: https://msdn.microsoft.com/zh-cn/library/ms181598.aspx
 
 <!--Other-->
-[Azure 门户预览]: https://portal.azure.cn
+[Azure portal]: https://portal.azure.cn
 
 <!--Image references-->
 
 [1]: ./media/sql-data-warehouse-connect-overview/get-server-name.png
 
-<!---HONumber=Mooncake_1024_2016-->
+<!---HONumber=Mooncake_1205_2016-->

@@ -5,7 +5,8 @@
    documentationCenter="NA"
    authors="jrowlandjones"
    manager="barbkess"
-   editor=""/>
+   editor=""/>  
+
 
 <tags
    ms.service="sql-data-warehouse"
@@ -13,17 +14,15 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="07/31/2016"
-   wacn.date="08/29/2016"
+   ms.date="10/31/2016"
+   wacn.date="12/12/2016"
    ms.author="jrj;barbkess"/>
 
 
 # 优化 SQL 数据仓库的事务
-
 本文介绍了如何在尽量降低长时间回退风险的情况下优化事务性代码的性能。
 
 ## 事务和日志记录
-
 事务是关系数据库引擎的一个重要组成部分。SQL 数据仓库在数据修改期间使用事务。这些事务可以是显式或隐式。单个 `INSERT`、`UPDATE` 和 `DELETE` 语句都是隐式事务示例。显式事务由开发人员使用 `BEGIN TRAN`、`COMMIT TRAN` 或 `ROLLBACK TRAN` 进行显式编写，且通常用于多个修改语句需要绑定在单个原子单元的时候。
 
 Azure SQL 数据仓库使用事务日志将更改提交到数据库。每个分布区都具有其自己的事务日志。事务日志写入都是自动的。无需任何配置。尽管此过程可保证写入，但它确在系统中引入一项开销。编写事务性高效的代码，可以尽量减少这种影响。事务性高效的代码大致分为两类。
@@ -41,17 +40,16 @@ Azure SQL 数据仓库使用事务日志将更改提交到数据库。每个分�
 >[AZURE.NOTE] 最少记录的操作可以参与显式事务。分配结构中的所有更改都被跟踪，因此实现回滚最少记录的操作变得可能。务必理解，更改是采用“最少”记录的方式进行记录，而不是未记录。
 
 ## 最少记录的操作
-
 以下操作可以实现最少记录：
 
-- CREATE TABLE AS SELECT ([CTAS][])
-- INSERT..SELECT
-- CREATE INDEX
-- ALTER INDEX REBUILD
-- DROP INDEX
-- TRUNCATE TABLE
-- DROP TABLE
-- ALTER TABLE SWITCH PARTITION
+* CREATE TABLE AS SELECT ([CTAS][CTAS])
+* INSERT..SELECT
+* CREATE INDEX
+* ALTER INDEX REBUILD
+* DROP INDEX
+* TRUNCATE TABLE
+* DROP TABLE
+* ALTER TABLE SWITCH PARTITION
 
 <!--
 - MERGE
@@ -66,13 +64,13 @@ Azure SQL 数据仓库使用事务日志将更改提交到数据库。每个分�
 `CTAS` 和 `INSERT...SELECT` 都是批量加载操作。但两者都受目标表定义影响，并且取决于加载方案。下表说明了批量操作要使用完整记录方式还是最少记录方式进行记录：
 
 | 主索引 | 加载方案 | 日志记录模式 |
-| --------------------------- | -------------------------------------------------------- | ------------ |
-| 堆 | 任意 | **最少** |
-| 聚集索引 | 空目标表 | **最少** |
-| 聚集索引 | 加载的行不与目标中现有页面重叠 | **最少** |
-| 聚集索引 | 加载的行与目标中现有页面重叠 | 完整 |
-| 聚集列存储索引 | 批大小 >= 102,400/每分区对齐的分布区 | **最少** |
-| 聚集列存储索引 | 批大小 < 102,400/每分区对齐的分布区 | 完整 |
+| --- | --- | --- |
+| 堆 |任意 |**最少** |
+| 聚集索引 |空目标表 |**最少** |
+| 聚集索引 |加载的行不与目标中现有页面重叠 |**最少** |
+| 聚集索引 |加载的行与目标中现有页面重叠 |完整 |
+| 聚集列存储索引 |批大小 >= 102,400/每分区对齐的分布区 |**最少** |
+| 聚集列存储索引 |批大小 < 102,400/每分区对齐的分布区 |完整 |
 
 值得注意的是，任何更新辅助或非聚集索引的写入都将始终是完整记录的操作。
 
@@ -81,8 +79,7 @@ Azure SQL 数据仓库使用事务日志将更改提交到数据库。每个分�
 将数据加载到含聚集索引的非空表通常可以包含完整记录和最少记录的行的组合。聚集索引是页面的平衡树 (b-tree)。如果正写入的页面已包含其他事务中的行，则这些写入操作会被完整记录。但如果该页面为空，则写入到该页面将会按最少记录的方式记录。
 
 ## 优化删除
-
-`DELETE` 是完整记录的操作。如果需要删除表或分区中的大量数据，`SELECT` 要保留的数据通常更有意义，其可作为最少记录的操作来运行。为此，可使用 [CTAS][] 创建新表。创建完以后，可通过 [RENAME][] 操作使用新创建的表将旧表交换出来。
+`DELETE` 是完整记录的操作。如果需要删除表或分区中的大量数据，`SELECT` 要保留的数据通常更有意义，其可作为最少记录的操作来运行。为此，可使用 [CTAS][CTAS] 创建新表。创建完以后，可通过 [RENAME][RENAME] 操作使用新创建的表将旧表交换出来。
 
 
 	-- Delete all sales transactions for Promotions except PromotionKey 2.
@@ -113,8 +110,7 @@ Azure SQL 数据仓库使用事务日志将更改提交到数据库。每个分�
 
 
 ## 优化更新
-
-`UPDATE` 是完整记录的操作。如果需要更新表或分区中的大量行，通常更有效的方法是使用最少记录的操作（如 [CTAS][]）来实现。
+`UPDATE` 是完整记录的操作。如果需要更新表或分区中的大量行，通常更有效的方法是使用最少记录的操作（如 [CTAS][CTAS]）来实现。
 
 在下面的示例中，完整的表更新已转换为 `CTAS`，以便使最少日志记录成为可能。
 
@@ -177,10 +173,10 @@ Azure SQL 数据仓库使用事务日志将更改提交到数据库。每个分�
 > [AZURE.NOTE] 重新创建大型表可以受益于使用 SQL 数据仓库工作负荷管理功能。有关详细信息，请参阅[并发][]文章中的工作负荷管理部分。
 
 ## 使用分区切换进行优化
-
-面对[表分区][]内较大规模修改时，分区切换模式非常有用。如果数据修改非常重要且跨越多个分区，只需遍历分区即可获得相同的结果。
+面对[表分区][table partition]内较大规模修改时，分区切换模式非常有用。如果数据修改非常重要且跨越多个分区，只需遍历分区即可获得相同的结果。
 
 执行分区切换的步骤如下所示：
+
 1. 创建清空的分区
 2. 采用 CTAS 执行“update”
 3. 将现有数据转出到输出表
@@ -339,7 +335,6 @@ Azure SQL 数据仓库使用事务日志将更改提交到数据库。每个分�
 
 
 ## 使用小批量尽量减少日志记录
-
 对于大型数据修改操作，将操作划分为区块或批次来界定工作单元很有效。
 
 下面提供了可用示例。批大小已设置为一个简单的数字来突显该方法。实际中批大小会变得非常大。
@@ -408,21 +403,20 @@ Azure SQL 数据仓库使用事务日志将更改提交到数据库。每个分�
 
 最佳方案是在暂停或缩放 SQL 数据仓库前就完成正提交的数据修改事务。但这不一定始终可行。若要降低长时间回退的风险，请考虑以下选项之一：
 
-- 使用 [CTAS][] 重新编写长时间运行的操作
-- 将该操作分解为多个块；针对行的子集进行操作
+* 使用 [CTAS][CTAS] 重新编写长时间运行的操作
+* 将该操作分解为多个块；针对行的子集进行操作
 
 ## 后续步骤
-
-参阅 [SQL 数据仓库中的事务][]，以便详细了解隔离级别和事务限制。有关其他最佳实践的概述，请参阅 [SQL 数据仓库最佳实践][]。
+参阅 [SQL 数据仓库中的事务][Transactions in SQL Data Warehouse]，以便详细了解隔离级别和事务限制。有关其他最佳实践的概述，请参阅 [SQL 数据仓库最佳实践][SQL Data Warehouse Best Practices]。
 
 <!--Image references-->
 
 <!--Article references-->
-[SQL 数据仓库中的事务]: /documentation/articles/sql-data-warehouse-develop-transactions/
-[表分区]: /documentation/articles/sql-data-warehouse-tables-partition/
+[Transactions in SQL Data Warehouse]: /documentation/articles/sql-data-warehouse-develop-transactions/
+[table partition]: /documentation/articles/sql-data-warehouse-tables-partition/
 [并发]: /documentation/articles/sql-data-warehouse-develop-concurrency/
 [CTAS]: /documentation/articles/sql-data-warehouse-develop-ctas/
-[SQL 数据仓库最佳实践]: /documentation/articles/sql-data-warehouse-best-practices/
+[SQL Data Warehouse Best Practices]: /documentation/articles/sql-data-warehouse-best-practices/
 
 <!--MSDN references-->
 [alter index]: https://msdn.microsoft.com/zh-cn/library/ms188388.aspx
@@ -430,4 +424,4 @@ Azure SQL 数据仓库使用事务日志将更改提交到数据库。每个分�
 
 <!-- Other web references -->
 
-<!---HONumber=Mooncake_0822_2016-->
+<!---HONumber=Mooncake_1205_2016-->

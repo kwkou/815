@@ -13,14 +13,15 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="06/13/2016"
-   wacn.date="07/18/2016"
+   ms.date="10/31/2016"
+   wacn.date="12/12/2016"
    ms.author="barbkess;sonyama"/>
 
 # 管理 Azure SQL 数据仓库中的计算能力 (PowerShell)
 
 > [AZURE.SELECTOR]
 - [概述](/documentation/articles/sql-data-warehouse-manage-compute-overview/)
+- [Azure 门户预览](/documentation/articles/sql-data-warehouse-manage-compute-portal/)
 - [PowerShell](/documentation/articles/sql-data-warehouse-manage-compute-powershell/)
 - [REST](/documentation/articles/sql-data-warehouse-manage-compute-rest-api/)
 - [TSQL](/documentation/articles/sql-data-warehouse-manage-compute-tsql/)
@@ -28,13 +29,13 @@
 
 通过扩大计算资源和内存来提升性能，从而满足工作负荷不断变化的需求。通过在非高峰时段缩减资源或同时暂停计算来节省成本。
 
-此任务集合使用 Powershell 实现：
+此任务集合使用 Azure 门户预览实现：
 
 - 缩放计算
 - 暂停计算
 - 恢复计算
 
-若要了解相关信息，请参阅 [管理计算概述][]。
+若要了解相关信息，请参阅[管理计算概述][]。
 
 
 ## 开始之前
@@ -85,6 +86,7 @@
     $resultDatabase = $database | Suspend-AzureRmSqlDatabase
     $resultDatabase
 
+
 <a name="resume-compute-bk"></a>
 
 ## 恢复计算
@@ -115,6 +117,7 @@
 [Service capacity limits]: /documentation/articles/sql-data-warehouse-service-capacity-limits/
 [管理概述]: /documentation/articles/sql-data-warehouse-overview-manage/
 [如何安装和配置 Azure PowerShell]: /documentation/articles/powershell-install-configure/
+[管理计算概述]: /documentation/articles/sql-data-warehouse-manage-compute-overview/
 
 <!--MSDN references-->
 [Resume-AzureRmSqlDatabase]: https://msdn.microsoft.com/zh-cn/library/mt619347.aspx
@@ -122,7 +125,8 @@
 [Set-AzureRmSqlDatabase]: https://msdn.microsoft.com/zh-cn/library/mt619433.aspx
 
 <!--Other Web references-->
+
 [Microsoft Web 平台安装程序]: https://aka.ms/webpi-azps
 [Azure portal]: http://manage.windowsazure.cn/
 
-<!---HONumber=Mooncake_0711_2016-->
+<!---HONumber=Mooncake_1205_2016-->

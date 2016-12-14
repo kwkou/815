@@ -5,7 +5,8 @@
    documentationCenter="NA"
    authors="jrowlandjones"
    manager="barbkess"
-   editor=""/>
+   editor=""/>  
+
 
 <tags
    ms.service="sql-data-warehouse"
@@ -13,18 +14,18 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="06/14/2016"
-   wacn.date="08/01/2016"
+   ms.date="10/31/2016"
+   wacn.date="12/12/2016"
    ms.author="jrj;barbkess;sonyama"/>
 
 # SQL 数据仓库中的 Group By 选项
-
-[GROUP BY][] 子句可用于将数据聚合成摘要行集。它还具有一些扩展其功能的选项，但这些选项需要经过处理，因为 Azure SQL 数据仓库不直接支持这些选项。
+[GROUP BY][GROUP BY] 子句可用于将数据聚合成摘要行集。它还具有一些扩展其功能的选项，但这些选项需要经过处理，因为 Azure SQL 数据仓库不直接支持这些选项。
 
 这些选项包括：
-- 带 ROLLUP 的 GROUP BY
-- GROUPING SETS
-- 带 CUBE 的 GROUP BY
+
+* 带 ROLLUP 的 GROUP BY
+* GROUPING SETS
+* 带 CUBE 的 GROUP BY
 
 ## Rollup 和 grouping sets 选项
 此处最简单的选项是改为使用 `UNION ALL` 来执行汇总，而不是依赖显式语法。结果应完全相同
@@ -45,9 +46,10 @@
 
 
 我们已通过使用 ROLLUP 请求以下聚合：
-- 国家/地区和区域
-- 国家/地区
-- 总计
+
+* 国家/地区和区域
+* 国家/地区
+* 总计
 
 若要替换此语句，需要使用 `UNION ALL`；显式指定所需的聚合以返回相同的结果：
 
@@ -176,15 +178,14 @@ CTAS 的结果如下所示：
 
 通过将代码拆分成不同的部分并生成循环构造，代码将更好管理和维护。
 
-
 ## 后续步骤
-有关更多开发技巧，请参阅[开发概述][]。
+有关更多开发技巧，请参阅[开发概述][development overview]。
 
 <!--Image references-->
 [1]: ./media/sql-data-warehouse-develop-group-by-options/sql-data-warehouse-develop-group-by-cube.png
 
 <!--Article references-->
-[开发概述]: /documentation/articles/sql-data-warehouse-overview-develop/
+[development overview]: /documentation/articles/sql-data-warehouse-overview-develop/
 
 <!--MSDN references-->
 [GROUP BY]: https://msdn.microsoft.com/zh-cn/library/ms177673.aspx
@@ -192,4 +193,4 @@ CTAS 的结果如下所示：
 
 <!--Other Web references-->
 
-<!---HONumber=Mooncake_0725_2016-->
+<!---HONumber=Mooncake_1205_2016-->

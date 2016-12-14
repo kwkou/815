@@ -15,8 +15,8 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="08/25/2016"
-   wacn.date="10/31/2016"
+   ms.date="10/31/2016"
+   wacn.date="12/12/2016"
    ms.author="barbkess;lodipalm;sonyama"/>  
 
 
@@ -29,9 +29,7 @@
 
 本教程使用 Azure 门户预览来创建包含 AdventureWorksDW 示例数据库的 SQL 数据仓库。
 
-
 ## 先决条件
-
 若要开始，您需要：
 
 - **Azure 帐户**：访问 [Azure 试用版][] 或者 [MSDN Azure 信用额度][]，以创建帐户。
@@ -77,7 +75,7 @@
 
 ## 后续步骤
 
-创建 SQL 数据仓库后，便可以[连接](/documentation/articles/sql-data-warehouse-query-visual-studio/)并开始查询。
+创建 SQL 数据仓库后，便可以[连接](/documentation/articles/sql-data-warehouse-connect-overview/)并开始查询。
 
 若要将数据加载到 SQL 数据仓库中，请参阅[加载概述](/documentation/articles/sql-data-warehouse-overview-load/)。
 
@@ -88,13 +86,13 @@
 查看[最佳实践][]也是一个很好的想法。
 
 <!--Article references-->
-[使用 Azure 门户预览创建 Azure SQL 数据库逻辑服务器]: /documentation/articles/sql-database-get-started/
+[使用 Azure 门户预览创建 Azure SQL 数据库逻辑服务器]: /documentation/articles/sql-database-get-started/#create-an-azure-sql-database-logical-server
 [Create an Azure SQL Database logical server with PowerShell]: /documentation/articles/sql-database-get-started-powershell/#database-setup-create-a-resource-group-server-and-firewall-rule
 [resource groups]: /documentation/articles/resource-group-template-deploy-portal/
 [最佳实践]: /documentation/articles/sql-data-warehouse-best-practices/
-[DWU]: /documentation/articles/sql-data-warehouse-overview-what-is/
+[DWU]: /documentation/articles/sql-data-warehouse-overview-what-is/#data-warehouse-units
 [订阅]: /documentation/articles/azure-glossary-cloud-terminology/#subscription/
-[resource group]: /documentation/articles/azure-glossary-cloud-terminology/
+[resource group]: /documentation/articles/azure-glossary-cloud-terminology/#resource-group
 [T-SQL]: /documentation/articles/sql-data-warehouse-get-started-create-database-tsql/
  
 <!--MSDN references-->
@@ -108,4 +106,4 @@
 [Azure 试用版]: /pricing/1rmb-trial
 [MSDN Azure 信用额度]: /pricing/member-offers/
 
-<!---HONumber=Mooncake_1024_2016-->
+<!---HONumber=Mooncake_1205_2016-->

@@ -5,7 +5,8 @@
    documentationCenter="NA"
    authors="barbkess"
    manager="barbkess"
-   editor=""/>
+   editor=""/>  
+
 
 <tags
    ms.service="sql-data-warehouse"
@@ -13,14 +14,16 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="08/08/2016"
-   wacn.date="09/26/2016"
+   ms.date="10/31/2016"
+   wacn.date="12/12/2016"
    ms.author="barbkess;sonyama"/>
+
 
 # 管理 Azure SQL 数据仓库中的计算能力 (REST)
 
 > [AZURE.SELECTOR]
 - [概述](/documentation/articles/sql-data-warehouse-manage-compute-overview/)
+- [Azure 门户预览](/documentation/articles/sql-data-warehouse-manage-compute-portal/)
 - [PowerShell](/documentation/articles/sql-data-warehouse-manage-compute-powershell/)
 - [REST](/documentation/articles/sql-data-warehouse-manage-compute-rest-api/)
 - [TSQL](/documentation/articles/sql-data-warehouse-manage-compute-tsql/)
@@ -28,7 +31,7 @@
 
 通过扩大计算资源和内存来提升性能，从而满足工作负荷不断变化的需求。通过在非高峰时段缩减资源或同时暂停计算来节省成本。
 
-此任务集合使用 Powershell 实现：
+此任务集合使用 Azure 门户预览实现：
 
 - 缩放计算
 - 暂停计算
@@ -41,7 +44,7 @@
 
 ## 缩放计算能力
 
-[AZURE.INCLUDE [SQL Data Warehouse scale DWUs description（SQL 数据仓库缩放 DWU 说明）](../../includes/sql-data-warehouse-scale-dwus-description)]
+[AZURE.INCLUDE [SQL Data Warehouse scale DWUs description（SQL 数据仓库缩放 DWU 说明）](../../includes/sql-data-warehouse-scale-dwus-description.md)]
 
 若要更改 DWU，请使用[创建或更新数据库][] REST API。以下示例将托管在服务器 MyServer 上的数据库 MySQLDW 的服务级别目标设置为 DW1000。该服务器位于名为 ResourceGroup1 的 Azure 资源组中。
 
@@ -72,7 +75,7 @@ POST https://management.chinacloudapi.cn/subscriptions/{subscription-id}/resourc
 
 ## 恢复计算
 
-[AZURE.INCLUDE [SQL Data Warehouse resume description（SQL 数据仓库恢复说明）](../../includes/sql-data-warehouse-resume-description)]
+[AZURE.INCLUDE [SQL Data Warehouse resume description（SQL 数据仓库恢复说明）](../../includes/sql-data-warehouse-resume-description.md)]
 
 若要启动数据库，请使用[恢复数据库][] REST API。以下示例将启动 Server01 服务器上托管的 Database02 数据库。该服务器位于名为 ResourceGroup1 的 Azure 资源组中。
 
@@ -101,4 +104,4 @@ POST https://management.chinacloudapi.cn/subscriptions{subscription-id}/resource
 
 [Azure portal]: http://portal.azure.cn/
 
-<!---HONumber=Mooncake_0808_2016-->
+<!---HONumber=Mooncake_1205_2016-->

@@ -5,7 +5,8 @@
    documentationCenter="NA"
    authors="jrowlandjones"
    manager="barbkess"
-   editor=""/>
+   editor=""/>  
+
 
 <tags
    ms.service="sql-data-warehouse"
@@ -13,9 +14,10 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="06/14/2016"
-   wacn.date="08/01/2016"
+   ms.date="10/31/2016"
+   wacn.date="12/12/2016"
    ms.author="jrj;barbkess;sonyama"/>
+
 
 # 在 SQL 数据仓库中使用标签检测查询
 SQL 数据仓库支持称为查询标签的概念。在继续之前，让我们看一个示例：
@@ -42,15 +44,15 @@ SQL 数据仓库支持称为查询标签的概念。在继续之前，让我们�
 
 
 ## 后续步骤
-有关更多开发技巧，请参阅[开发概述][]。
+有关更多开发技巧，请参阅[开发概述][development overview]。
 
 <!--Image references-->
 
 <!--Article references-->
-[开发概述]: /documentation/articles/sql-data-warehouse-overview-develop/
+[development overview]: /documentation/articles/sql-data-warehouse-overview-develop/
 
 <!--MSDN references-->
 
 <!--Other Web references-->
 
-<!---HONumber=Mooncake_0725_2016-->
+<!---HONumber=Mooncake_1205_2016-->
