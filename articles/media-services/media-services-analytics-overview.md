@@ -1,36 +1,37 @@
 <properties
-	pageTitle="Azure 媒体服务分析概述 | Azure"
-	description="Azure 媒体服务提供了 Azure 媒体分析公共预览版，其中集合了企业级的语音和计算机视觉服务、合规性、安全性和全球市场宣传功能。Azure 媒体分析服务是使用核心 Azure 媒体服务平台组件构建而成的，因此一开始就能进行大规模的媒体处理。"
-	services="media-services"
-	documentationCenter=""
-	authors="juliako"
-	manager="erikre"
-	editor=""/>
+    pageTitle="Azure 媒体服务分析概述 | Azure"
+    description="Azure 媒体服务提供了 Azure 媒体分析公共预览版，其中集合了企业级的语音和计算机视觉服务、合规性、安全性和全球市场宣传功能。Azure 媒体分析服务是使用核心 Azure 媒体服务平台组件构建而成的，因此一开始就能进行大规模的媒体处理。"
+    services="media-services"
+    documentationcenter=""
+    author="juliako"
+    manager="erikre"
+    editor="" />  
 
 <tags
-	ms.service="media-services"
-	ms.workload="media"
-	ms.tgt_pltfrm="na"
-	ms.devlang="dotnet"
-	ms.topic="article"
-	ms.date="09/14/2016"   
-	wacn.date="10/10/2016"
-	ms.author="milanga;juliako;johndeu"/>
+    ms.assetid="c56e3781-8510-4f7f-b5ff-a218c1bb6f4c"
+    ms.service="media-services"
+    ms.workload="media"
+    ms.tgt_pltfrm="na"
+    ms.devlang="dotnet"
+    ms.topic="article"
+    ms.date="10/24/2016"
+    wacn.date="12/12/2016"
+    ms.author="milanga;juliako;johndeu" />
 
 # Azure 媒体服务分析概述
-
-##概述
-
+## 概述
 越来越多的组织和企业采用视频作为首选媒体来培训员工、与客户沟通以及规定业务职能。使用云计算可以有效地存储、流式传输和访问这些大型媒体文件，但是当公司扩展其视频内容库时，必须采用同样有效的方式从视频中提取新的见解，以便与其受众之间建立更有意义且个性化的交互，并将其业务提升到更高的层次。
 
 为了解决市场上这一不断增长的需求，Azure 媒体服务提供了媒体分析，即一系列语音和影像组件（具企业规模、合规性、安全性和全球性覆盖），让组织和企业可以从其视频文件中更轻松地获得可操作的见解。Azure 媒体分析服务是使用核心 Azure 媒体服务平台组件构建而成的，因此一开始就能进行大规模的媒体处理。
 
-Azure 媒体分析可让开发人员在一定程度上对视频快速使用视觉功能，并将此高级功能引入 Bot 和应用程序。Azure 媒体分析可在企业环境中使用，满足各种规模的大型组织所需的合规性、安全性和全球市场宣传需求。
+Azure 媒体分析可让开发人员快速学会如何在有限范围内使用视频的视觉功能，并将此高级功能引入应用程序。Azure 媒体分析可在企业环境中使用，满足各种规模的大型组织所需的合规性、安全性和全球市场宣传需求。
 
-下图显示**媒体分析**和媒体服务平台的其他主要部分。请注意，媒体分析媒体处理器会生成 MP4 文件或 JSON 文件。如果媒体处理器生成了 MP4 文件，你可以采用渐进方式下载该文件。如果媒体处理器生成了 JSON 文件，你可以从 Azure Blob 存储下载该文件。
+下图显示**媒体分析**和媒体服务平台的其他主要部分。
 
 ![VoD 工作流](./media/media-services-video-on-demand-workflow/media-services-video-on-demand.png)
 
+
+媒体分析媒体处理器会生成 MP4 文件或 JSON 文件。如果媒体处理器生成了 MP4 文件，可采用渐进方式下载该文件。如果媒体处理器生成了 JSON 文件，可从 Azure Blob 存储下载该文件。
 
 ## Azure 媒体分析服务
 
@@ -46,11 +47,9 @@ Azure 媒体分析可让开发人员在一定程度上对视频快速使用视�
 
 - **光学字符识别** — Azure 媒体分析 OCR（光学字符识别）可让你将视频文件中的文本内容转换成可编辑、可搜索的数字文本。这可让你从媒体的视频信号中自动提取有意义的元数据。
  
+- **可缩放的面部修订** - **Azure 媒体修订器**是一种 Azure 媒体分析 (MP)，可用于在云中进行可缩放的面部修订。使用面部修订，可对视频进行修改，使所选个人的面部模糊显示。用户可能想要在公共安全和新闻媒体场景中使用面部修订服务。对于时长仅几分钟但包含多张面孔的镜头，进行手动面部修订可能需要几个小时，但使用此服务仅需几个简单步骤即可完成该过程。有关详细信息，请参阅[此](/documentation/articles/media-services-face-redaction/)文章。
 
-
- 
 ## 常见方案
-
 在下面的方案中，Azure 媒体分析可帮助跨行业组织和企业从视频搜集新的见解，以便以更加个性化的方式来与观众和员工沟通，以及更有效地管理大量视频内容：
 
 - **呼叫中心** - 即使是出现了社交媒体，客户呼叫中心也仍能够帮助解决大量的客户服务事务。此音频数据中编码了有关客户的丰富信息，分析这些信息可以改进产品路线图，同时为客服中心员工提供培训，以实现更高的客户满意度。通过使用 Azure Media Indexer，客户可以提取文本并生成搜索索引和仪表板来提取最常见的投诉、投诉原因以及其他相关数据的情报。
@@ -74,7 +73,6 @@ Azure 媒体分析可让开发人员在一定程度上对视频快速使用视�
 - Azure 媒体 OCR
 
 ### .NET
-
 以下函数采用其中一个指定的 MP 名称，并返回 MP 对象。
 
     static IMediaProcessor GetLatestMediaProcessorByName(string mediaProcessorName)
@@ -94,7 +92,6 @@ Azure 媒体分析可让开发人员在一定程度上对视频快速使用视�
 
 
 ## REST
-
 请求：
 
 	GET https://wamsshaclus001rest-hs.chinacloudapp.cn/api/MediaProcessors()?$filter=Name%20eq%20'Azure%20Media%20OCR' HTTP/1.1
@@ -125,8 +122,7 @@ Azure 媒体分析可让开发人员在一定程度上对视频快速使用视�
 	   ]
 	}
 
-##演示
-
+## 演示
 [Azure Media Analytics demos（Azure 媒体分析演示）](http://azuremedialabs.azurewebsites.net/demos/Analytics.html)
 
 
@@ -139,4 +135,4 @@ Azure 媒体分析可让开发人员在一定程度上对视频快速使用视�
 
 [overview]: ./media/media-services-video-on-demand-workflow/media-services-video-on-demand.png
 
-<!---HONumber=Mooncake_0926_2016-->
+<!---HONumber=Mooncake_1205_2016-->

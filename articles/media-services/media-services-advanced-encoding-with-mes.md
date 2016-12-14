@@ -1,27 +1,25 @@
-<properties 
-	pageTitle="使用媒体编码器标准版进行高级编码" 
-	description="本主题说明如何通过自定义媒体编码器标准任务预设执行高级编码。本主题说明如何使用媒体服务 .NET SDK 创建编码任务和作业。此外，还说明如何向编码作业提供自定义预设。" 
-	services="media-services" 
-	documentationCenter="" 
-	authors="juliako" 
-	manager="erikre" 
-	editor=""/>
+<properties
+    pageTitle="使用 Media Encoder Standard 进行高级编码"
+    description="本主题说明如何通过自定义 Media Encoder Standard 任务预设执行高级编码。本主题说明如何使用媒体服务 .NET SDK 创建编码任务和作业。此外，还说明如何向编码作业提供自定义预设。"
+    services="media-services"
+    documentationcenter=""
+    author="juliako"
+    manager="erikre"
+    editor="" />  
 
-<tags 
-	ms.service="media-services" 
-	ms.workload="media" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="08/30/2016" 
-	wacn.date="12/08/2016"   
-	ms.author="juliako"/>
+<tags
+    ms.assetid="2a4ade25-e600-4bce-a66e-e29cf4a38369"
+    ms.service="media-services"
+    ms.workload="media"
+    ms.tgt_pltfrm="na"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.date="09/25/2016"
+    wacn.date="12/12/2016"
+    ms.author="juliako" />
 
-
-#使用媒体编码器标准版进行高级编码
-
-##概述
-
+# 使用 Media Encoder Standard 进行高级编码
+## 概述
 本主题演示如何使用媒体编码器标准版执行高级编码任务。本主题演示[如何使用 .NET 创建编码任务和执行此任务的作业](/documentation/articles/media-services-advanced-encoding-with-mes/#encoding_with_dotnet)。此外，还说明如何向编码任务提供自定义预设。有关预设所用元素的说明，请参阅[此文档](https://msdn.microsoft.com/zh-cn/library/mt269962.aspx)。
 
 下面演示了执行以下编码任务的自定义预设：
@@ -35,13 +33,13 @@
 - [连接两个或更多个视频文件](/documentation/articles/media-services-advanced-encoding-with-mes/#concatenate)
 - [使用媒体编码器标准版裁剪视频](/documentation/articles/media-services-advanced-encoding-with-mes/#crop)
 - [在输入不包含视频时插入视频轨迹](/documentation/articles/media-services-advanced-encoding-with-mes/#no_video)
+* [旋转视频](#rotate_video)
 
-##<a id="encoding_with_dotnet"></a>使用媒体服务 .NET SDK 进行编码
-
+## <a id="encoding_with_dotnet"></a>使用媒体服务 .NET SDK 进行编码
 以下代码示例使用媒体服务 .NET SDK 执行下列任务：
 
 - 创建编码作业。
-- 获取对媒体编码器标准版编码器的引用。
+- 获取对 Media Encoder Standard 编码器的引用。
 - 加载自定义 XML 或 JSON 预设。可以在某个文件中保存 XML 或 JSON（例如 [XML](/documentation/articles/media-services-advanced-encoding-with-mes/#xml) 或 [JSON](/documentation/articles/media-services-advanced-encoding-with-mes/#json)），然后使用以下代码加载该文件。
 
 		// Load the XML (or JSON) from the local file.
@@ -599,7 +597,7 @@
 若要剪裁视频，可以使用[此处](https://msdn.microsoft.com/zh-cn/library/mt269960.aspx)所述的任何 MES 预设，并修改 **Sources** 元素（如下所示）。
 
 	<?xml version="1.0" encoding="utf-16"?>
-	<Preset xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="1.0" xmlns="http://www.windowsazure.cn/media/encoding/Preset/2014/03">
+	<Preset xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="1.0" xmlns="http://www.windowsazure.com/media/encoding/Preset/2014/03">
 	  <Sources>
 	    <Source StartTime="PT4S" Duration="PT14S"/>
 	  </Sources>
@@ -715,11 +713,11 @@
 
 ##<a id="overlay"></a>创建覆盖层
 
-媒体编码器标准允许你在现有视频上覆盖图像。目前支持以下格式：png、jpg、gif 和 bmp。下面定义的预设是视频覆盖层的基本示例。
+Media Encoder Standard 允许在现有视频上覆盖图像。目前支持以下格式：png、jpg、gif 和 bmp。下面定义的预设是视频覆盖层的基本示例。
 
-除了定义预设文件外，你还必须让媒体服务知道资产中的哪个文件是覆盖层图像，哪个文件是你要在其上覆盖图像的源视频。视频文件必须是**主**文件。
+除了定义预设文件外，还必须让媒体服务知道资产中的哪个文件是覆盖层图像，哪个文件是要在其上覆盖图像的源视频。视频文件必须是**主**文件。
 
-上面的 .NET 示例定义了两个函数：**UploadMediaFilesFromFolder** 和 **EncodeWithOverlay**。UploadMediaFilesFromFolder 函数从文件夹上载文件（例如 BigBuckBunny.mp4 和 Image001.png），并将 mp4 文件设置为资产中的主文件。**EncodeWithOverlay** 函数使用传递给它的自定义预设文件（例如，下面的预设）来创建编码任务。
+上面的 .NET 示例定义了两个函数：**UploadMediaFilesFromFolder** 和 **EncodeWithOverlay**。UploadMediaFilesFromFolder 函数从文件夹上传文件（例如 BigBuckBunny.mp4 和 Image001.png），并将 mp4 文件设置为资产中的主文件。**EncodeWithOverlay** 函数使用传递给它的自定义预设文件（例如，下面的预设）来创建编码任务。
 
 >[AZURE.NOTE]当前限制：
 >
@@ -808,7 +806,7 @@
 ###XML 预设
 	
 	<?xml version="1.0" encoding="utf-16"?>
-	<Preset xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="1.0" xmlns="http://www.windowsazure.cn/media/encoding/Preset/2014/03">
+	<Preset xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="1.0" xmlns="http://www.windowsazure.com/media/encoding/Preset/2014/03">
 	  <Sources>
 	    <Source>
 	      <Streams />
@@ -1141,10 +1139,38 @@
 	<StretchMode>AutoSize</StretchMode>
 	<Condition>InsertBlackIfNoVideo</Condition>
 
+## <a id="rotate_video"></a>旋转视频
+[Media Encoder Standard](/documentation/articles/media-services-dotnet-encode-with-media-encoder-standard/) 支持的旋转角度为 0/90/180/270。默认行为是“自动”，即尝试在传入的视频文件中检测旋转元数据并对其进行补偿。包含[此处](http://msdn.microsoft.com/zh-cn/library/azure/mt269960.aspx)定义的预设之一的以下 **Sources** 元素：
+
+### JSON 预设
+    "Sources": [
+    {
+      "Streams": [],
+      "Filters": {
+        "Rotation": "90"
+      }
+    }
+    ],
+    "Codecs": [
+
+    ...
+### XML 预设
+    <Sources>
+           <Source>
+          <Streams />
+          <Filters>
+            <Rotation>90</Rotation>
+          </Filters>
+        </Source>
+    </Sources>
+
+另请参阅[此](https://msdn.microsoft.com/zh-cn/library/azure/mt269962.aspx#PreserveResolutionAfterRotation)主题，了解有关编码器如何在触发旋转补偿后解释预设中的宽度和高度设置的详细信息。
+
+可以使用值“0”指示编码器忽略输入视频中的旋转元数据（如果存在）。
 
 
-##另请参阅 
 
+## 另请参阅
 [媒体服务编码概述](/documentation/articles/media-services-encode-asset/)
 
-<!---HONumber=Mooncake_0926_2016-->
+<!---HONumber=Mooncake_1205_2016-->

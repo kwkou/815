@@ -1,22 +1,22 @@
 <properties
-	pageTitle="使用 Azure 媒体分析检测面部和情绪"
-	description="本主题演示如何使用 Azure 媒体分析检测人脸和情感。"
-	services="media-services"
-	documentationCenter=""
-	authors="juliako"
-	manager="erikre"
-	editor=""/>  
-
+    pageTitle="使用 Azure 媒体分析检测面部和情绪 | Azure"
+    description="本主题演示如何使用 Azure 媒体分析检测人脸和情感。"
+    services="media-services"
+    documentationcenter=""
+    author="juliako"
+    manager="erikre"
+    editor="" />  
 
 <tags
-	ms.service="media-services"
-	ms.workload="media"
-	ms.tgt_pltfrm="na"
-	ms.devlang="dotnet"
-	ms.topic="article"
-	ms.date="09/26/2016"   
-	wacn.date="11/18/2016"
-	ms.author="milanga;juliako;"/>  
+    ms.assetid="5ca4692c-23f1-451d-9d82-cbc8bf0fd707"
+    ms.service="media-services"
+    ms.workload="media"
+    ms.tgt_pltfrm="na"
+    ms.devlang="dotnet"
+    ms.topic="article"
+    ms.date="11/17/2016"
+    wacn.date="12/12/2016"
+    ms.author="milanga;juliako;" />  
 
  
 #使用 Azure 媒体分析检测面部和情绪
@@ -73,20 +73,11 @@ facesDetected|位于 JSON 结果的末尾，汇总在生成视频期间算法所
 
 面部检测器使用分片（元数据可以分解为基于时间的区块，你可以只下载需要的部分）和分段（可以在事件数过于庞大的情况下对事件进行分解）技术。一些简单的计算可帮助你转换数据。例如，如果事件从 6300（刻度）开始，其时间刻度为 2997（刻度/秒），帧速率为 29.97（帧/秒），那么：
 
-- 开始时间/时间刻度 = 2.1 秒
-- 秒数 x (帧速率/时间刻度) = 63 帧
+* 开始时间/时间刻度 = 2.1 秒
+* 秒数 x 帧速率 = 63 帧
 
-下面是针对面部检测和跟踪，将 JSON 提取为每帧格式的简单示例：
-	
-	var faceDetectionResultJsonString = operationResult.ProcessingResult;
-	var faceDetecionTracking = 
-	     JsonConvert.DeserializeObject<FaceDetectionResult>(faceDetectionResultJsonString, settings);
-
-
-##面部检测输入和输出示例
-
-###输入视频
-
+## 面部检测输入和输出示例
+### 输入视频
 [输入视频](http://ampdemo.azureedge.net/azuremediaplayer.html?url=https%3A%2F%2Freferencestream-samplestream.streaming.mediaservices.windows.net%2Fc8834d9f-0b49-4b38-bcaf-ece2746f1972%2FMicrosoft%20Convergence%202015%20%20Keynote%20Highlights.ism%2Fmanifest&amp;autoplay=false)
 
 ###任务配置（预设）
@@ -179,10 +170,10 @@ AggregateEmotionIntervalMs|在已选择 AggregateEmotion 模式时使用。指�
 
 下面是聚合窗口和间隔设置的建议值。AggregateEmotionWindowMs 应该超过 AggregateEmotionIntervalMs。
 
- |默认值|最大值|最小值
----|---|---|---
-AggregateEmotionWindowMs|0\.5|2|0\.25
-AggregateEmotionIntervalMs|0\.5|1|0\.25
+| 默认值 | 最大值 | 最小值 |
+| --- | --- | --- | --- |
+| AggregateEmotionWindowMs |0\.5 |2 |
+| AggregateEmotionIntervalMs |0\.5 |1 |
 
 ###JSON 输出
 
@@ -541,10 +532,9 @@ AggregateEmotionIntervalMs|0\.5|1|0\.25
 
 
 
-##相关链接
-
+## 相关链接
 [Azure Media Services Analytics Overview（Azure 媒体服务分析概述）](/documentation/articles/media-services-analytics-overview/)
 
-[Azure Media Analytics demos](http://azuremedialabs.azurewebsites.net/demos/Analytics.html)（Azure 媒体分析演示）
+[Azure Media Analytics demos（Azure 媒体分析演示）](http://azuremedialabs.azurewebsites.net/demos/Analytics.html)
 
-<!---HONumber=Mooncake_1107_2016-->
+<!---HONumber=Mooncake_1205_2016-->
