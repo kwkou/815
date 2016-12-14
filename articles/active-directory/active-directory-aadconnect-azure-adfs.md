@@ -17,7 +17,7 @@
     ms.topic="get-started-article"
     ms.date="10/03/2016"
     ms.author="anandy;billmath" 
-    wacn.date="12/09/2016"/>  
+    wacn.date="12/13/2016"/>  
 
 
 # Azure 中的 AD FS 部署
@@ -275,8 +275,6 @@ AD FS 提供简化、安全的标识联合与 Web 单一登录 (SSO) 功能。�
 ![INT 访问规则（入站）](./media/active-directory-aadconnect-azure-adfs/nsg_int.png)  
 
 
-[comment]: <> (![INT 访问规则（入站）](./media/active-directory-aadconnect-azure-adfs/nsgintinbound.png)) [comment]: <> (![INT 访问规则（出站）](./media/active-directory-aadconnect-azure-adfs/nsgintoutbound.png))
-
 **9.2.保护外围网络子网**
 
 | 规则 | 说明 | 流向 |
@@ -287,7 +285,6 @@ AD FS 提供简化、安全的标识联合与 Web 单一登录 (SSO) 功能。�
 ![EXT 访问规则（入站）](./media/active-directory-aadconnect-azure-adfs/nsg_dmz.png)  
 
 
-[comment]: <> (![EXT 访问规则（入站）](./media/active-directory-aadconnect-azure-adfs/nsgdmzinbound.png)) [comment]: <> (![EXT 访问规则（出站）](./media/active-directory-aadconnect-azure-adfs/nsgdmzoutbound.png))
 
 >[AZURE.NOTE] 如果需要使用客户端用户证书身份验证（使用 X509 用户证书进行 clientTLS 身份验证），则 AD FS 要求为入站访问启用 TCP 端口 49443。
 

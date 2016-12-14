@@ -122,14 +122,15 @@ Azure AD Connect 默认情况下使用 TLS 1.0 对同步引擎服务器和 Azure
 
 1. 无法在 Windows Server 2008 上启用 TLS 1.2。需要 Windows Server 2008R2 或更高版本。请确保已为操作系统安装了 .Net 4.5.1 修补程序，请参阅 [Microsoft 安全通报 2960358](https://technet.microsoft.com/security/advisory/2960358)。在你的服务器上可能已经安装了此版本或更高版本。
 2. 如果使用 Windows Server 2008R2，请确保已启用 TLS 1.2。在 Windows Server 2012 服务器和更高版本上，应已启用 TLS 1.2。
-	[HKEY\_LOCAL\_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\SecurityProviders\\SCHANNEL\\Protocols\\TLS 1.2] 
-	[HKEY\_LOCAL\_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\SecurityProviders\\SCHANNEL\\Protocols\\TLS 1.2\\Client] "DisabledByDefault"=dword:00000000 "Enabled"=dword:00000001
-	[HKEY\_LOCAL\_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\SecurityProviders\\SCHANNEL\\Protocols\\TLS 1.2\\Server] "DisabledByDefault"=dword:00000000 "Enabled"=dword:00000001
+
+		[HKEY\_LOCAL\_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\SecurityProviders\\SCHANNEL\\Protocols\\TLS 1.2] 
+		[HKEY\_LOCAL\_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\SecurityProviders\\SCHANNEL\\Protocols\\TLS 1.2\\Client] "DisabledByDefault"=dword:00000000 "Enabled"=dword:00000001
+		[HKEY\_LOCAL\_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\SecurityProviders\\SCHANNEL\\Protocols\\TLS 1.2\\Server] "DisabledByDefault"=dword:00000000 "Enabled"=dword:00000001
 
 3. 对于所有操作系统，设置此注册表项并重新启动服务器。
 
-	HKEY\_LOCAL\_MACHINE\\SOFTWARE\\Microsoft.NETFramework\\v4.0.30319 
-	"SchUseStrongCrypto"=dword:00000001
+		HKEY\_LOCAL\_MACHINE\\SOFTWARE\\Microsoft.NETFramework\\v4.0.30319 
+		"SchUseStrongCrypto"=dword:00000001
 
 4. 如果还想要在同步引擎服务器和远程 SQL Server 之间启用 TLS 1.2，请确保为 [Microsoft SQL Server 的 TLS 1.2 支持](https://support.microsoft.com/zh-cn/kb/3135244)安装所需的版本。
 
