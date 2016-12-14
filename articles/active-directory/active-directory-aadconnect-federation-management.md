@@ -29,7 +29,7 @@
 | [添加 AD FS 服务器](#addadfsserver) |使用附加的 AD FS 服务器扩展 AD FS 场 |
 | [添加 AD FS Web 应用程序代理服务器](#addwapserver) |使用附加的 WAP 服务器扩展 AD FS 场 |
 | [添加联合域](#addfeddomain) |添加联合域 |
-| [**AD FS 自定义**](#adfsselfdefine) | |
+| **AD FS 自定义** | |
 | [添加自定义公司徽标或插图](#customlogo) |使用公司徽标和插图自定义 AD FS 登录页 |
 | [添加登录说明](#addsignindescription) |添加登录页说明 |
 | [修改 AD FS 声明规则](#modclaims) |修改各种联合方案的 AD FS 声明 |
@@ -119,7 +119,7 @@ Azure AD Connect 可以检查 AD FS 和 Azure Active Directory 信任的当前�
 5. 单击“下一步”，“准备好配置”页将显示 Azure AD Connect 将要执行的操作列表。单击“安装”完成配置。
    ![已准备好配置](./media/active-directory-aadconnect-federation-management/AdditionalDomain5.PNG)
 
-## AD FS 自定义 <a name="adfsselfdefine"></a>
+## AD FS 自定义
 以下部分提供有关自定义 AD FS 登录页时可能必须执行的一些常见任务的详细信息。
 
 ### 添加自定义公司徽标或插图 <a name="customlogo"></a>
