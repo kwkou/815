@@ -35,7 +35,7 @@
 
 如果内存不足，无法将至少 10,000 个行压缩到每个行组中，SQL 数据仓库将生成错误。
 
-有关批量加载的详细信息，请参阅[批量加载到聚集列存储索引中](https://msdn.microsoft.com/zh-CN/library/dn935008.aspx#Bulk load into a clustered columnstore index)。
+有关批量加载的详细信息，请参阅[批量加载到聚集列存储索引中](https://msdn.microsoft.com/zh-CN/library/dn935008.aspx)。
 
 ## 如何估算内存需求
 
