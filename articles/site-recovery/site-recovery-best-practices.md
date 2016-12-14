@@ -98,7 +98,7 @@ Bitlocker | 不支持 | 保护虚拟机之前，必须先禁用 Bitlocker。
  *.backup.windowsazure.cn | | 需要访问权限 | 需要访问权限 
  *.hypervrecoverymanager.windowsazure.cn | 需要访问权限 | 需要访问权限 | 需要访问权限 
  *.store.core.chinacloudapi.cn | 需要访问权限 | 需要访问权限 | 需要访问权限 
- *.blob.core.chinacloudapi.cn | | 需要访问权限 | 需要访问权限 | 需要访问权限
+ *.blob.core.chinacloudapi.cn | | 需要访问权限 | 需要访问权限 
  https://www.msftncsi.com/ncsi.txt | 需要访问权限 | 需要访问权限 | 需要访问权限 
  https://dev.mysql.com/get/archives/mysql-5.5/mysql-5.5.37-win32.msi | | | 
 
