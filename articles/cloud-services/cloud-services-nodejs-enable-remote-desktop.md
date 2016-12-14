@@ -84,7 +84,7 @@
 
 ## 步骤 3：配置服务以禁用远程桌面访问 
 
-当你不再需要与云中角色实例的远程桌面连接时，可使用 [Azure PowerShell] 禁用远程桌面访问。
+当你不再需要与云中角色实例的远程桌面连接时，可使用 [Azure PowerShell](/documentation/articles/powershell-install-configure/) 禁用远程桌面访问。
 
 1.  输入以下 Azure Powershell cmdlet：
 
@@ -100,7 +100,7 @@
 - [将远程桌面与 Azure 角色一起使用]
 - [Node.js 开发人员中心](/develop/nodejs/)
 
-  [Azure PowerShell]: http://go.microsoft.com/?linkid=9790229&clcid=0x409
+
 
 [Azure 经典管理门户]: http://manage.windowsazure.cn
 [publish-project]: ./media/cloud-services-nodejs-enable-remote-desktop/publish-rdp.png
