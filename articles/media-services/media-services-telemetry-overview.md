@@ -73,14 +73,14 @@
 
 属性|值|示例/说明
 ---|---|---
-PartitionKey|{account ID}\_{entity ID}|e49bef329c29495f9b9570989682069d\_64435281c50a4dd8ab7011cb0f4cdf66<br/<br/>帐户 ID 包括在分区键中，可简化将多个媒体服务帐户写入同一存储帐户的工作流。
-RowKey|{seconds to midnight}\_{random value}|01688\_00199<br/><br/>行键以距午夜的秒数开头，可允许分区内的前 n 个样式查询。有关详细信息，请参阅[此](/documentation/articles/storage-table-design-guide/#log-tail-pattern)文章。 
+PartitionKey|<p>{account ID}\_{entity ID}|e49bef329c29495f9b9570989682069d\_64435281c50a4dd8ab7011cb0f4cdf66</p><p>帐户 ID 包括在分区键中，可简化将多个媒体服务帐户写入同一存储帐户的工作流。</p>
+RowKey|<p>{seconds to midnight}\_{random value}|01688\_00199</p><p>行键以距午夜的秒数开头，可允许分区内的前 n 个样式查询。有关详细信息，请参阅[此](/documentation/articles/storage-table-design-guide/#log-tail-pattern)文章。</p> 
 Timestamp|日期/时间|Azure 表中的自动时间戳 2016-09-09T22:43:42.241Z
-类型|提供遥测数据的实体类型|Channel/StreamingEndpoint/Archive<br/><br/>事件类型只是一个字符串值。
+类型|提供遥测数据的实体类型|<p>Channel/StreamingEndpoint/Archive</p><p>事件类型只是一个字符串值。</p>
 名称|遥测事件的名称|ChannelHeartbeat/StreamingEndpointRequestLog
-ObservedTime|发生遥测事件的时间 (UTC)|2016-09-09T22:42:36.924Z<br/><br/>观察时间由发送遥测的实体（例如通道）提供。组件之间可能存在时间同步问题，因此此值为近似值
+ObservedTime|发生遥测事件的时间 (UTC)|<p>2016-09-09T22:42:36.924Z</p><p>观察时间由发送遥测的实体（例如通道）提供。组件之间可能存在时间同步问题，因此此值为近似值</p>
 ServiceID|{service ID}|f70bd731-691d-41c6-8f2d-671d0bdc9c7e
-特定于实体的属性|由事件定义|StreamName: stream1, Bitrate 10123, …<br/><br/>其余属性针对给定时间类型定义。Azure 表内容是键值对，也就是说，表中的不同行具有不同的属性集。
+特定于实体的属性|由事件定义|<p>StreamName: stream1, Bitrate 10123, …</p><p>其余属性针对给定时间类型定义。Azure 表内容是键值对，也就是说，表中的不同行具有不同的属性集。</p>
 
 
 ### 特定于实体的架构
@@ -134,7 +134,7 @@ NonincreasingCount|由于非递增时间戳而丢弃的片段计数|2
 UnalignedKeyFrames|是否收到关键帧不一致的片段（跨音质级别） |True
 UnalignedPresentationTime|是否收到演示时间不一致的片段（跨音质级别/轨道）|True
 UnexpectedBitrate|如果音频/视频轨道的计算/实际比特率 > 40,000 bps 且 IncomingBitrate == 0，或者 IncomingBitrate 和 actualBitrate 相差 50%，则为 true |True
-Healthy|如果 <br/>overlapCount、<br/>DiscontinuityCount、<br/>NonIncreasingCount、<br/>UnalignedKeyFrames、<br/>UnalignedPresentationTime 和 <br/>UnexpectedBitrate<br/> 全部为 0，则为 true|True<br/><br/>Healthy 是一个复合函数，满足以下任意条件时返回 false：<br/><br/>- OverlapCount > 0<br/>- DiscontinuityCount > 0<br/>- NonincreasingCount > 0<br/>- UnalignedKeyFrames == True<br/>- UnalignedPresentationTime == True<br/>- UnexpectedBitrate == True
+Healthy|如果 <br/>overlapCount、<br/>DiscontinuityCount、<br/>NonIncreasingCount、<br/>UnalignedKeyFrames、<br/>UnalignedPresentationTime 和 <br/>UnexpectedBitrate<br/> 全部为 0，则为 true|<p>True</p><p>Healthy 是一个复合函数，满足以下任意条件时返回 false：</p><p>- OverlapCount > 0</p><p>- DiscontinuityCount > 0</p><p>- NonincreasingCount > 0</p><p>- UnalignedKeyFrames == True</p><p>- UnalignedPresentationTime == True</p><p>- UnexpectedBitrate == True</p>
 
 
 **直播存档**
@@ -153,7 +153,7 @@ TrackName|轨道名称|audio\_1
 TrackType|轨道类型|音频/视频
 CustomAttribute|十六进制字符串，用于区分具有相同名称和比特率的不同轨道（多摄像机角度）|
 比特率|轨道比特率|785000
-Healthy|如果 FragmentDiscardedCount == 0 && ArchiveAcquisitionError == False，则为 true|True（这两个值不在指标中显示，但是它们会在源事件中显示）<br/><br/>Healthy 是一个复合函数，满足以下任意条件时返回 false：<br/><br/>- FragmentDiscardedCount > 0<br/>- ArchiveAcquisitionError == True
+Healthy|如果 FragmentDiscardedCount == 0 && ArchiveAcquisitionError == False，则为 true|<p>True（这两个值不在指标中显示，但是它们会在源事件中显示）</p><p>Healthy 是一个复合函数，满足以下任意条件时返回 false：</p><p>- FragmentDiscardedCount > 0</p><p>- ArchiveAcquisitionError == True</p>
 
 
 ## 常见问答
@@ -163,7 +163,7 @@ Healthy|如果 FragmentDiscardedCount == 0 && ArchiveAcquisitionError == False�
 指标数据将存储为客户存储帐户中的一系列 Azure 表。可通过以下工具使用此数据：
 
 - AMS SDK
-- Microsoft Azure 存储资源管理器（支持导出逗号分隔值格式并在 Excel 中进行处理）
+- Azure 存储资源管理器（支持导出逗号分隔值格式并在 Excel 中进行处理）
 - REST API
 
 ### 如何查找平均带宽消耗？
