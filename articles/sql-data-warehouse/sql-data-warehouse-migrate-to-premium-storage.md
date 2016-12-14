@@ -150,7 +150,7 @@ ALTER DATABASE CurrentDatabasename MODIFY NAME = NewDatabaseName;
 <!--Article references-->
 [自动迁移计划]: #automatic-migration-schedule
 [self-migration to Premium Storage]: #self-migration-to-premium-storage
-[在线提交工单]: //support/support-ticket-form/?l=zh-cn
+[在线提交工单]: /support/support-ticket-form/?l=zh-cn
 [Azure paired region]: /documentation/articles/best-practices-availability-paired-regions
 [main documentation site]: /documentation/articles/services/sql-data-warehouse
 [暂停]: /documentation/articles/sql-data-warehouse-manage-compute-portal/#pause-compute
