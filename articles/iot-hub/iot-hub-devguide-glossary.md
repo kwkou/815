@@ -215,7 +215,7 @@ SASL PLAIN 是一种协议， [AMQP](#advanced-message-queue-protocol) 协议使
 为方便起见，许多 IoT 中心教程使用模拟设备，以便在本地计算机上运行示例。相反，[物理设备](#physical-device)是真实的设备，如连接到 IoT 中心的 Raspberry Pi。
 
 ## 解决方案
-_解决方案_可以是包含一个或多个项目的 Visual Studio 解决方案。_解决方案_也可能是包括诸如设备、[设备应用](#device-app)、IoT 中心、其他 Azure 服务和[后端应用](#back-end-app)等元素的 IoT 解决方案。
+*解决方案* 可以是包含一个或多个项目的 Visual Studio 解决方案。 *解决方案* 也可能是包括诸如设备、[设备应用](#device-app)、IoT 中心、其他 Azure 服务和[后端应用](#back-end-app)等元素的 IoT 解决方案。
 
 ## <a name="subscription"></a> 订阅
 Azure 订阅是发生计费的地方。用户创建的每个 Azure 资源或使用的 Azure 服务均与单个订阅关联。许多配额也在订阅级别应用。
