@@ -181,10 +181,10 @@ Azure 本身使用 Azure AD 来对其客户、服务管理员和组织用户进�
 <br /> 
 *显示新资源组和 Batch 帐户的 Azure 门户预览*
 
-[aad_about]:/documentation/articles/active-directory-whatis/ "什么是 Azure Active Directory？"/
+[aad_about]:/documentation/articles/active-directory-whatis/
 [aad_adal]: /documentation/articles/active-directory-authentication-libraries/
-[aad_auth_scenarios]:/documentation/articles/active-directory-authentication-scenarios/ "Azure AD 的身份验证方案"/
-[aad_integrate]:/documentation/articles/active-directory-integrating-applications/ "将应用程序与 Azure Active Directory 集成"/
+[aad_auth_scenarios]:/documentation/articles/active-directory-authentication-scenarios/
+[aad_integrate]:/documentation/articles/active-directory-integrating-applications/
 [acct_mgmt_sample]: https://github.com/Azure/azure-batch-samples/tree/master/CSharp/AccountManagement
 [api_net]: http://msdn.microsoft.com/zh-cn/library/azure/mt348682.aspx
 [api_mgmt_net]: https://msdn.microsoft.com/zh-cn/library/azure/mt463120.aspx
