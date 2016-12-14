@@ -5,7 +5,8 @@
    documentationCenter="NA"
    authors="jrowlandjones"
    manager="barbkess"
-   editor=""/>
+   editor=""/>  
+
 
 <tags
    ms.service="sql-data-warehouse"
@@ -13,15 +14,15 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="06/14/2016"
-   wacn.date="08/01/2016"
+   ms.date="10/31/2016"
+   wacn.date="12/12/2016"
    ms.author="jrj;barbkess;sonyama"/>
+
 
 # SQL 数据仓库中的 Create Table As Select (CTAS)
 Create Table As Select (`CTAS`) 是所提供的最重要的 T-SQL 功能之一。它是根据 SELECT 语句的输出创建新表的完全并行化操作。若要创建表的副本，则 `CTAS` 是最简便快速的方法。你不妨将它视为 `SELECT..INTO` 的增强版本。本文档提供 `CTAS` 的示例和最佳实践。
 
 ## 使用 CTAS 复制表
-
 `CTAS` 最常见的用途之一就是创建表副本，使你可以更改 DDL。例如，如果最初你将表创建为 `ROUND_ROBIN`，现在想要改为在列上分布的表，则可以使用 `CTAS` 来更改分布列。也可使用 `CTAS` 来更改分区、索引或列类型。
 
 假设你在 `CREATE TABLE` 中没有指定分布列，因而使用 `ROUND_ROBIN` 分布的默认分布类型创建此表。
@@ -88,7 +89,6 @@ Create Table As Select (`CTAS`) 是所提供的最重要的 T-SQL 功能之一�
 > [AZURE.NOTE] Azure SQL 数据仓库尚不支持自动创建或自动更新统计信息。为了获得查询的最佳性能，在首次加载数据或者在数据发生重大更改之后，创建所有表的所有列统计信息非常重要。有关统计信息的详细说明，请参阅开发主题组中的[统计信息][]主题。
 
 ## 使用 CTAS 解决不支持的功能
-
 `CTAS` 还可用于解决以下多种不支持的功能。这往往是一种经过证实的双赢局面，因为代码不但能够兼容，而且通常可以在 SQL 数据仓库中更快速执行。这是完全并行化设计的结果。可以使用 CTAS 解决的方案包括：
 
 - SELECT..INTO
@@ -266,7 +266,6 @@ Create Table As Select (`CTAS`) 是所提供的最重要的 T-SQL 功能之一�
 
 
 ## CTAS 建议：显式声明数据类型和输出是否可为 null
-
 迁移代码时，你可能会遇到这种类型的编码模式：
 
 
@@ -336,10 +335,11 @@ Create Table As Select (`CTAS`) 是所提供的最重要的 T-SQL 功能之一�
 
 
 注意以下事项：
-- CAST 或 CONVERT 可能已被使用
-- 使用 ISNULL 而非 COALESCE 来强制可为 NULL 属性
-- ISNULL 是最外层的函数
-- ISNULL 的第二个部分是常量，即 0
+
+* CAST 或 CONVERT 可能已被使用
+* 使用 ISNULL 而非 COALESCE 来强制可为 NULL 属性
+* ISNULL 是最外层的函数
+* ISNULL 的第二个部分是常量，即 0
 
 > [AZURE.NOTE] 若要正确设置可为 null 属性，必须使用 `ISNULL` 而不是 `COALESCE`。`COALESCE` 不是确定性的函数 ，因此表达式的结果始终可为 NULL。`ISNULL` 则不同。它是确定性的。因此当 `ISNULL` 函数的第二个部分是常量或文本时，结果值将是 NOT NULL。
 
@@ -417,16 +417,16 @@ Create Table As Select (`CTAS`) 是所提供的最重要的 T-SQL 功能之一�
 
 因此，可以看出，保持类型一致性并维护 CTAS 上的可为 null 属性是良好的工程最佳实践。这有助于维护计算的完整性，而且还可确保分区切换能够实现。
 
-有关使用 [CTAS][] 的详细信息，请参阅 MSDN。CTAS 是 Azure SQL 数据仓库中最重要的语句之一。请确保全面了解该语句。
+有关使用 [CTAS][CTAS] 的详细信息，请参阅 MSDN。CTAS 是 Azure SQL 数据仓库中最重要的语句之一。请确保全面了解该语句。
 
 ## 后续步骤
-有关更多开发技巧，请参阅[开发概述][]。
+有关更多开发技巧，请参阅[开发概述][development overview]。
 
 <!--Image references-->
 [1]: ./media/sql-data-warehouse-develop-ctas/ctas-results.png
 
 <!--Article references-->
-[开发概述]: /documentation/articles/sql-data-warehouse-overview-develop/
+[development overview]: /documentation/articles/sql-data-warehouse-overview-develop/
 [统计信息]: /documentation/articles/sql-data-warehouse-tables-statistics/
 
 <!--MSDN references-->
@@ -434,4 +434,4 @@ Create Table As Select (`CTAS`) 是所提供的最重要的 T-SQL 功能之一�
 
 <!--Other Web references-->
 
-<!---HONumber=Mooncake_0725_2016-->
+<!---HONumber=Mooncake_1205_2016-->

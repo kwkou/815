@@ -5,7 +5,8 @@
    documentationCenter="NA"
    authors="jrowlandjones"
    manager="barbkess"
-   editor=""/>
+   editor=""/>  
+
 
 <tags
    ms.service="sql-data-warehouse"
@@ -13,12 +14,11 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="07/31/2016"
-   wacn.date="08/29/2016"
+   ms.date="10/31/2016"
+   wacn.date="12/12/2016"
    ms.author="jrj;barbkess;sonyama"/>
 
 # SQL 数据仓库中的事务
-
 如你所料，SQL 数据仓库支持支持事务作为数据仓库工作负荷的一部分。但是，为了确保 SQL 数据仓库的性能维持在一定的程度，相比于 SQL Server，其某些功能会受到限制。本文将突出两者的差异，并列出其他信息。
 
 ## 事务隔离级别
@@ -32,24 +32,24 @@ SQL 数据仓库实现 ACID 事务。但是，事务支持的隔离仅限于 `RE
 * 出现平均数据分布
 * 平均行长度为 250 个字节
 
-| [DWU][] | 每个分布的上限（GiB） | 分布的数量 | 最大事务大小（GiB） | # 每个分布的行数 | 每个事务的最大行数 |
-| ------ | -------------------------- | ----------------------- | -------------------------- | ----------------------- | ------------------------ |
-| DW100 | 1 | 60 | 60 | 4,000,000 | 240,000,000 |
-| DW200 | 1\.5 | 60 | 90 | 6,000,000 | 360,000,000 |
-| DW300 | 2\.25 | 60 | 135 | 9,000,000 | 540,000,000 |
-| DW400 | 3 | 60 | 180 | 12,000,000 | 720,000,000 |
-| DW500 | 3\.75 | 60 | 225 | 15,000,000 | 900,000,000 |
-| DW600 | 4\.5 | 60 | 270 | 18,000,000 | 1,080,000,000 |
-| DW1000 | 7\.5 | 60 | 450 | 30,000,000 | 1,800,000,000 |
-| DW1200 | 9 | 60 | 540 | 36,000,000 | 2,160,000,000 |
-| DW1500 | 11\.25 | 60 | 675 | 45,000,000 | 2,700,000,000 |
-| DW2000 | 15 | 60 | 900 | 60,000,000 | 3,600,000,000 |
-| DW3000 | 22\.5 | 60 | 1,350 | 90,000,000 | 5,400,000,000 |
-| DW6000 | 45 | 60 | 2,700 | 180,000,000 | 10,800,000,000 |
+| [DWU][DWU] | 每个分布的上限（GiB） | 分布的数量 | 最大事务大小（GiB） | # 每个分布的行数 | 每个事务的最大行数 |
+| --- | --- | --- | --- | --- | --- |
+| DW100 |1 |60 |60 |4,000,000 |240,000,000 |
+| DW200 |1\.5 |60 |90 |6,000,000 |360,000,000 |
+| DW300 |2\.25 |60 |135 |9,000,000 |540,000,000 |
+| DW400 |3 |60 |180 |12,000,000 |720,000,000 |
+| DW500 |3\.75 |60 |225 |15,000,000 |900,000,000 |
+| DW600 |4\.5 |60 |270 |18,000,000 |1,080,000,000 |
+| DW1000 |7\.5 |60 |450 |30,000,000 |1,800,000,000 |
+| DW1200 |9 |60 |540 |36,000,000 |2,160,000,000 |
+| DW1500 |11\.25 |60 |675 |45,000,000 |2,700,000,000 |
+| DW2000 |15 |60 |900 |60,000,000 |3,600,000,000 |
+| DW3000 |22\.5 |60 |1,350 |90,000,000 |5,400,000,000 |
+| DW6000 |45 |60 |2,700 |180,000,000 |10,800,000,000 |
 
 事务大小限制按每个事务或操作进行应用。不会跨所有当前事务进行应用。因此，允许每个事务向日志写入此数量的数据。
 
-为优化和最大程度减少写入到日志中的数据量，请参阅[事务最佳实践][]文章。
+为优化和最大程度减少写入到日志中的数据量，请参阅[事务最佳实践][Transactions best practices]文章。
 
 > [AZURE.WARNING] 最大事务大小仅可在哈希或者 ROUND\_ROBIN 分布式表（其中数据均匀分布）中实现。如果事务以偏斜方式向分布写入数据，那么更有可能在达到最大事务大小之前达到该限制。
 <!--REPLICATED_TABLE-->
@@ -70,7 +70,6 @@ SQL 数据仓库使用 XACT\_STATE() 函数（采用值 -2）来报告失败的�
 	        SET     @i = CONVERT(int,'ABC');
 	    END TRY
 	    BEGIN CATCH
-
         	SET @xact_state = XACT_STATE();
 	
 	        SELECT  ERROR_NUMBER()    AS ErrNumber
@@ -110,7 +109,7 @@ Msg 111233, Level 16, State 1, Line 1 111233；当前事务已中止，所有挂
 	BEGIN TRAN
 	    BEGIN TRY
 	        DECLARE @i INT;
-	        SET     @i = CONVERT(int,'ABC');
+        	SET     @i = CONVERT(INT,'ABC');
 	    END TRY
 	    BEGIN CATCH
 	        SET @xact_state = XACT_STATE();
@@ -142,41 +141,41 @@ Msg 111233, Level 16, State 1, Line 1 111233；当前事务已中止，所有挂
 所做的一切改变是事务的 `ROLLBACK` 必须发生于在 `CATCH` 块中读取错误信息之前。
 
 ## Error\_Line() 函数
-另外值得注意的是，SQL 数据仓库不实现或支持 ERROR\_LINE() 函数。如果你的代码中包含此函数，需要将它删除才能符合 SQL 数据仓库的要求。请在代码中使用查询标签，而不是实现等效的功能。有关此功能的详细信息，请参阅 [LABEL][] 一文。
+另外值得注意的是，SQL 数据仓库不实现或支持 ERROR\_LINE() 函数。如果你的代码中包含此函数，需要将它删除才能符合 SQL 数据仓库的要求。请在代码中使用查询标签，而不是实现等效的功能。有关此功能的详细信息，请参阅 [LABEL][LABEL] 一文。
 
 ## 使用 THROW 和 RAISERROR
 THROW 是在 SQL 数据仓库中引发异常的新式做法，但也支持 RAISERROR。不过，有些值得注意的差异。
 
-- 对于 THROW，用户定义的错误消息数目不能在 100,000 - 150,000 的范围内
-- RAISERROR 错误消息固定为 50,000
-- 不支持 sys.messages
+* 对于 THROW，用户定义的错误消息数目不能在 100,000 - 150,000 的范围内
+* RAISERROR 错误消息固定为 50,000
+* 不支持 sys.messages
 
 ## 限制
 SQL 数据仓库有一些与事务相关的其他限制。
 
 这些限制如下：
 
-- 无分布式事务
-- 不允许嵌套事务
-- 不允许保存点
-- 无已命名事务
-- 无已标记事务
-- 不支持 DDL，如用户定义的事务内的 `CREATE TABLE`
+* 无分布式事务
+* 不允许嵌套事务
+* 不允许保存点
+* 无已命名事务
+* 无已标记事务
+* 不支持 DDL，如用户定义的事务内的 `CREATE TABLE`
 
 ## 后续步骤
-若要深入了解如何优化事务，请参阅[事务最佳实践][]。若要了解有关其他 SQL 数据仓库最佳实践的详细信息，请参阅 [SQL 数据仓库最佳实践][]。
+若要了解有关优化事务的详细信息，请参阅[事务最佳实践][Transactions best practices]。若要了解有关其他 SQL 数据仓库最佳实践的详细信息，请参阅 [SQL 数据仓库最佳实践][SQL Data Warehouse best practices]。
 
 <!--Image references-->
 
 <!--Article references-->
-[DWU]: /documentation/articles/sql-data-warehouse-overview-what-is/
+[DWU]: /documentation/articles/sql-data-warehouse-overview-what-is/#data-warehouse-units
 [development overview]: /documentation/articles/sql-data-warehouse-overview-develop/
-[事务最佳实践]: /documentation/articles/sql-data-warehouse-develop-best-practices-transactions/
-[SQL 数据仓库最佳实践]: /documentation/articles/sql-data-warehouse-best-practices/
+[Transactions best practices]: /documentation/articles/sql-data-warehouse-develop-best-practices-transactions/
+[SQL Data Warehouse best practices]: /documentation/articles/sql-data-warehouse-best-practices/
 [LABEL]: /documentation/articles/sql-data-warehouse-develop-label/
 
 <!--MSDN references-->
 
 <!--Other Web references-->
 
-<!---HONumber=Mooncake_0822_2016-->
+<!---HONumber=Mooncake_1205_2016-->

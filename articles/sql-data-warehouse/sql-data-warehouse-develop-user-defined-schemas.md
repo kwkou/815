@@ -5,7 +5,8 @@
    documentationCenter="NA"
    authors="jrowlandjones"
    manager="barbkess"
-   editor=""/>
+   editor=""/>  
+
 
 <tags
    ms.service="sql-data-warehouse"
@@ -13,12 +14,12 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="06/14/2016"
-   wacn.date="08/01/2016"
+   ms.date="10/31/2016"
+   wacn.date="12/12/2016"
    ms.author="jrj;barbkess;sonyama"/>
 
-# SQL 数据仓库中用户定义的架构
 
+# SQL 数据仓库中用户定义的架构
 传统数据仓库通常使用不同的数据库，根据工作负荷、域或安全性来创建应用程序边界。例如，传统 SQL Server 数据仓库可能包含过渡数据库、数据仓库数据库和某些数据集市数据库。在此拓扑中，每个数据库均作为体系结构中的工作负荷和安全边界来运行。
 
 相比之下，SQL 数据仓库在一个数据库中运行整个数据仓库工作负荷。不允许跨数据库联接。因此，SQL 数据仓库预期仓库使用的所有表都存储在一个数据库中。
@@ -26,7 +27,6 @@
 > [AZURE.NOTE] SQL 数据仓库不支持任何种类的跨数据库查询。因此，需要修改利用此模式的数据仓库实现。
 
 ## 建议
-
 以下是针对使用用户定义的架构合并工作负荷、安全性、域和功能边界的一些建议
 
 1. 使用一个 SQL 数据仓库数据库来运行整个数据仓库工作负荷
@@ -45,7 +45,6 @@
 
 
 ### 示例:
-
 基于数据库名称实现用户定义的架构
 
 
@@ -123,4 +122,4 @@
 
 <!--Other Web references-->
 
-<!---HONumber=Mooncake_0725_2016-->
+<!---HONumber=Mooncake_1205_2016-->

@@ -14,8 +14,8 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="10/10/2016"
-   wacn.date="10/31/2016"
+   ms.date="10/31/2016"
+   wacn.date="12/12/2016"
    ms.author="mausher;barbkess;sonyama"/>  
 
 
@@ -78,7 +78,7 @@ bcp 是将较小数据集移入和移出 SQL 数据仓库数据库的快速轻�
 	"
 
 
->[AZURE.NOTE] 有关在 SQL 数据仓库中创建表和 WITH 子句中可用选项的详细信息，请参阅 [Table Design][]（表设计）或 [CREATE TABLE syntax][]（CREATE TABLE 语法）。
+>[AZURE.NOTE] 若要深入了解如何在 SQL 数据仓库中创建表和 WITH 子句中可用选项，请参阅 [表设计][Table Design] 或 [CREATE TABLE 语法][CREATE TABLE syntax]。
 
 ### 步骤 2：创建源数据文件
 
@@ -132,8 +132,7 @@ DateId |CalendarQuarter |FiscalQuarter
 20151201 |4 |2
 
 ### 步骤 4：基于新加载的数据创建统计信息
-
-Azure SQL 数据仓库尚不支持自动创建或自动更新统计信息。为了获得查询的最佳性能，在首次加载数据或者在数据发生重大更改之后，创建所有表的所有列统计信息非常重要。有关统计信息的详细说明，请参阅开发主题组中的[统计信息][]主题。以下快速示例说明如何基于此示例中加载的表创建统计信息
+Azure SQL 数据仓库尚不支持自动创建或自动更新统计信息。为了获得查询的最佳性能，在首次加载数据或者在数据发生重大更改之后，创建所有表的所有列统计信息非常重要。有关统计信息的详细说明，请参阅开发主题组中的[统计信息][Statistics]主题。以下快速示例说明如何基于此示例中加载的表创建统计信息
 
 在 sqlcmd 提示符下执行以下 CREATE STATISTICS 语句：
 
@@ -149,7 +148,6 @@ Azure SQL 数据仓库尚不支持自动创建或自动更新统计信息。为�
 在本教程中，你将从 Azure SQL 数据仓库中的表创建数据文件。我们将上面创建的数据导出到名为 DimDate2\_export.txt 的新数据文件。
 
 ### 步骤 1：导出数据
-
 在 bcp 实用程序中，可以使用以下命令来连接并导出数据（相应地替换其中的值）：
 
 
@@ -185,7 +183,7 @@ Azure SQL 数据仓库尚不支持自动创建或自动更新统计信息。为�
 [将数据载入 SQL 数据仓库]: /documentation/articles/sql-data-warehouse-overview-load/
 [SQL 数据仓库开发概述]: /documentation/articles/sql-data-warehouse-overview-develop/
 [Table Design]: /documentation/articles/sql-data-warehouse-tables-overview/
-[统计信息]: /documentation/articles/sql-data-warehouse-tables-statistics/
+[Statistics]: /documentation/articles/sql-data-warehouse-tables-statistics/
 
 <!--MSDN references-->
 [bcp]: https://msdn.microsoft.com/zh-cn/library/ms162802.aspx
@@ -195,4 +193,4 @@ Azure SQL 数据仓库尚不支持自动创建或自动更新统计信息。为�
 
 [Microsoft 下载中心]: https://www.microsoft.com/download/details.aspx?id=36433
 
-<!---HONumber=Mooncake_1024_2016-->
+<!---HONumber=Mooncake_1205_2016-->

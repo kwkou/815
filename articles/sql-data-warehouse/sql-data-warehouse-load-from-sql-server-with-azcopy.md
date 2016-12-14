@@ -5,40 +5,35 @@
    documentationCenter="NA"
    authors="lodipalm"
    manager="barbkess"
-   editor=""/>
+   editor=""/>  
+
 
 <tags
    ms.service="sql-data-warehouse"
    ms.devlang="NA"
-   ms.topic="get-started-article"
+   ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="06/30/2016"
-   wacn.date="08/08/2016"
-   ms.author="cakarst;barbkess;sonyama"/>
+   ms.date="10/31/2016"
+   wacn.date="12/12/2016"/>
 
 
 # 将数据从 SQL Server 载入 Azure SQL 数据仓库 (AZCopy)
-
 使用 bcp 和 AZCopy 命令行实用工具将数据从 SQL Server 加载到 Azure Blob 存储。然后使用 PolyBase 或 Azure 数据工厂将数据载入 Azure SQL 数据仓库。
 
-
 ## 先决条件
-
 若要逐步完成本教程，你需要：
 
-- 一个 SQL 数据仓库数据库。
-- 已安装 bcp 命令行实用工具
-- 已安装 SQLCMD 命令行实用工具
+* 一个 SQL 数据仓库数据库。
+* 已安装 bcp 命令行实用工具
+* 已安装 SQLCMD 命令行实用工具
 
->[AZURE.NOTE] 可以从 [Microsoft 下载中心][]下载 bcp 和 sqlcmd 实用工具。
+>[AZURE.NOTE] 可以从 [Microsoft 下载中心][]下载 bcp 和 sqlcmd 实用程序。
 
 ## 将数据导入 SQL 数据仓库
-
 在本教程中，你将在 Azure SQL 数据仓库中创建一个表，然后将数据导入该表。
 
 ### 步骤 1：在 Azure SQL 数据仓库中创建表
-
 在命令提示符下，使用 sqlcmd 运行以下查询，以在实例上创建表：
 
 
@@ -57,10 +52,9 @@
     "
 
 
->[AZURE.NOTE] 有关在 SQL 数据仓库中创建表和 WITH 子句中可用选项的详细信息，请参阅 [CREATE TABLE syntax][]（CREATE TABLE 语法）。
+>[AZURE.NOTE] 有关在 SQL 数据仓库中创建表和 WITH 子句中可用选项的详细信息，请参阅 [Table Overview][]（表概述）或 [CREATE TABLE syntax][]（CREATE TABLE 语法）。
 
 ### 步骤 2：创建源数据文件
-
 打开记事本，将以下几行数据复制到新文本文件，然后将此文件保存到本地临时目录，路径为 C:\Temp\DimDate2.txt。
 
 
@@ -111,8 +105,7 @@ DateId |CalendarQuarter |FiscalQuarter
 20151201 |4 |2
 
 ### 步骤 4：基于新加载的数据创建统计信息
-
-Azure SQL 数据仓库尚不支持自动创建或自动更新统计信息。为了获得查询的最佳性能，在首次加载数据或者在数据发生重大更改之后，创建所有表的所有列统计信息非常重要。有关统计信息的详细说明，请参阅开发主题组中的[统计信息][]主题。以下快速示例说明如何基于此示例中加载的表创建统计信息
+Azure SQL 数据仓库尚不支持自动创建或自动更新统计信息。为了获得查询的最佳性能，在首次加载数据或者在数据发生重大更改之后，创建所有表的所有列统计信息非常重要。有关统计信息的详细说明，请参阅开发主题组中的[统计信息][Statistics]主题。以下快速示例说明如何基于此示例中加载的表创建统计信息
 
 在 sqlcmd 提示符下执行以下 CREATE STATISTICS 语句：
 
@@ -154,23 +147,25 @@ Azure SQL 数据仓库尚不支持自动创建或自动更新统计信息。为�
 >[AZURE.NOTE] 由于分布式系统的性质，数据顺序在不同 SQL 数据仓库数据库之间可能不同。另一种做法是使用 bcp 的 **queryout** 函数来编写查询提取，而不是导出整个表。
 
 ## 后续步骤
-有关加载数据的概述，请参阅[将数据载入 SQL 数据仓库][]。
-有关更多开发技巧，请参阅 [SQL 数据仓库开发概述][]。
+有关加载数据的概述，请参阅[将数据载入 SQL 数据仓库][Load data into SQL Data Warehouse]。
+有关更多开发技巧，请参阅 [SQL 数据仓库开发概述][SQL Data Warehouse development overview]。
 
 <!--Image references-->
 
+
 <!--Article references-->
 
-[将数据载入 SQL 数据仓库]: /documentation/articles/sql-data-warehouse-overview-load/
-[SQL 数据仓库开发概述]: /documentation/articles/sql-data-warehouse-overview-develop/
+[Load data into SQL Data Warehouse]: /documentation/articles/sql-data-warehouse-overview-load/
+[SQL Data Warehouse development overview]: /documentation/articles/sql-data-warehouse-overview-develop/
 [Table Design]: /documentation/articles/sql-data-warehouse-tables-overview/
-[统计信息]: /documentation/articles/sql-data-warehouse-tables-statistics/
+[Statistics]: /documentation/articles/sql-data-warehouse-tables-statistics/
 
 <!--MSDN references-->
 [bcp]: https://msdn.microsoft.com/zh-cn/library/ms162802.aspx
 [CREATE TABLE syntax]: https://msdn.microsoft.com/zh-cn/library/mt203953.aspx
 
 <!--Other Web references-->
+
 [Microsoft 下载中心]: https://www.microsoft.com/download/details.aspx?id=36433
 
-<!---HONumber=Mooncake_0801_2016-->
+<!---HONumber=Mooncake_1205_2016-->

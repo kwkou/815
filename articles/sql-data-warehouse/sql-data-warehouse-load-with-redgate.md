@@ -14,8 +14,8 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="10/13/2016"
-   wacn.date="11/15/2016"
+   ms.date="10/31/2016"
+   wacn.date="12/12/2016"
    ms.author="mausher;barbkess"/>  
 
 
@@ -33,7 +33,6 @@
 
 ## 开始之前
 ### 创建或标识资源
-
 在开始此教程之前，用户需具备：
 
 - **本地 SQL Server 数据库**：需要导入到 SQL 数据仓库中的数据必须来自本地 SQL Server（2008R2 或更高版本）。Data Platform Studio 不能直接从 Azure SQL 数据库或文本文件导入数据。
@@ -56,7 +55,7 @@
 ## 步骤 3：安装 Data Platform Studio 网关
 若要连接到本地 SQL Server 数据库，需安装 DPS 网关。该网关是一个客户端代理，用于访问本地环境、提取数据，以及将数据上载到存储帐户。用户的数据不会通过 Redgate 的服务器。安装该网关的步骤：
 
-1.	单击“创建网关”链接
+1. 单击“创建网关”链接
 2. 使用提供的安装程序下载和安装该网关
 
 ![][2]  
@@ -109,7 +108,7 @@ DPS 会以可视化方式显示从本地 SQL Server 提取和上载数据的进�
 ## 后续步骤
 若要浏览 SQL 数据仓库中的数据，请先查看以下内容：
 
-- [查询 Azure SQL 数据仓库 (Visual Studio)][]
+- [查询 Azure SQL 数据仓库 (Visual Studio)][Query Azure SQL Data Warehouse (Visual Studio)]
 
 若要详细了解 Redgate 的 Data Platform Studio，请：
 
@@ -118,7 +117,7 @@ DPS 会以可视化方式显示从本地 SQL Server 提取和上载数据的进�
 
 若只需大致了解如何通过其他方式在 SQL 数据仓库中迁移和加载数据，请参阅：
 
-- [将解决方案迁移到 SQL 数据仓库][]
+- [将解决方案迁移到 SQL 数据仓库][Migrate your solution to SQL Data Warehouse]
 - [将数据载入 Azure SQL 数据仓库](/documentation/articles/sql-data-warehouse-overview-load/)
 
 如需更多的开发技巧，请参阅 [SQL 数据仓库开发概述](/documentation/articles/sql-data-warehouse-overview-develop/)。
@@ -136,10 +135,9 @@ DPS 会以可视化方式显示从本地 SQL Server 提取和上载数据的进�
 
 <!--Article references-->
 
-[查询 Azure SQL 数据仓库 (Visual Studio)]: /documentation/articles/sql-data-warehouse-query-visual-studio/
-[使用 Power BI 可视化数据]: /documentation/articles/sql-data-warehouse-get-started-visualize-with-power-bi/
-[将解决方案迁移到 SQL 数据仓库]: /documentation/articles/sql-data-warehouse-overview-migrate/
+[Query Azure SQL Data Warehouse (Visual Studio)]: /documentation/articles/sql-data-warehouse-query-visual-studio/
+[Migrate your solution to SQL Data Warehouse]: /documentation/articles/sql-data-warehouse-overview-migrate/
 [Load data into Azure SQL Data Warehouse]: /documentation/articles/sql-data-warehouse-overview-load/
 [SQL Data Warehouse development overview]: /documentation/articles/sql-data-warehouse-overview-develop/
 
-<!---HONumber=Mooncake_1024_2016-->
+<!---HONumber=Mooncake_1205_2016-->

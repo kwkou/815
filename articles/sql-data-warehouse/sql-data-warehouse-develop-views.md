@@ -5,7 +5,8 @@
    documentationCenter="NA"
    authors="jrowlandjones"
    manager="barbkess"
-   editor=""/>
+   editor=""/>  
+
 
 <tags
    ms.service="sql-data-warehouse"
@@ -13,13 +14,12 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="07/01/2016"
-   wacn.date="08/08/2016"
+   ms.date="10/31/2016"
+   wacn.date="12/12/2016"
    ms.author="jrj;barbkess;sonyama"/>
 
- 
-# SQL 数据仓库中的视图
 
+# SQL 数据仓库中的视图
 SQL 数据仓库中的视图特别有用。可以通过多种不同的方式使用这些视图以提升解决方案的质量。本文重点介绍几个示例，说明如何使用视图来丰富你的解决方案，以及需要注意的限制。
 
 > [AZURE.NOTE] 本文不讨论 `CREATE VIEW` 的语法。有关这方面的参考信息，请参阅 MSDN 上的 [CREATE VIEW][] 文章。
@@ -27,7 +27,7 @@ SQL 数据仓库中的视图特别有用。可以通过多种不同的方式使�
 ## 体系结构摘要
 一种很常见的应用模式是在加载数据时，使用 CREATE TABLE AS SELECT (CTAS) 并后接对象重命名模式来重建表。
 
-以下示例将新的日期记录添加到日期维度。请注意，这里先创建了一个新表 DimDate_New，然后将它重命名以替换表的原始版本。
+以下示例将新的日期记录添加到日期维度。请注意，这里先创建了一个新表 DimDate\_New，然后将它重命名以替换表的原始版本。
 
 
 	CREATE TABLE dbo.DimDate_New
@@ -55,23 +55,24 @@ SQL 数据仓库中的视图特别有用。可以通过多种不同的方式使�
 ## 限制
 SQL 数据仓库中的视图只是元数据。因此无法使用以下选项：
 
-- 	不提供任何架构绑定选项
-- 	无法通过视图更新基表
-- 	无法基于临时表创建视图
-- 	不支持 EXPAND/NOEXPAND 提示
-- 	SQL 数据仓库中没有索引视图
-
+* 不提供任何架构绑定选项
+* 无法通过视图更新基表
+* 无法基于临时表创建视图
+* 不支持 EXPAND/NOEXPAND 提示
+* SQL 数据仓库中没有索引视图
 
 ## 后续步骤
-有关更多开发技巧，请参阅 [SQL 数据仓库开发概述][]。有关 `CREATE VIEW` 语法，请参阅 [CREATE VIEW][]。
+有关更多开发技巧，请参阅 [SQL 数据仓库开发概述][SQL Data Warehouse development overview]。有关 `CREATE VIEW` 语法，请参阅 [CREATE VIEW][CREATE VIEW]。
 
 <!--Image references-->
 
+
 <!--Article references-->
-[SQL 数据仓库开发概述]: /documentation/articles/sql-data-warehouse-overview-develop/
+[SQL Data Warehouse development overview]: /documentation/articles/sql-data-warehouse-overview-develop/
 
 <!--MSDN references-->
 [CREATE VIEW]: https://msdn.microsoft.com/zh-cn/library/ms187956.aspx
+
 <!--Other Web references-->
 
-<!---HONumber=Mooncake_0801_2016-->
+<!---HONumber=Mooncake_1205_2016-->

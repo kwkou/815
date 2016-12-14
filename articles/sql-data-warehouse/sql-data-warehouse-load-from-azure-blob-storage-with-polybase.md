@@ -14,8 +14,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="08/25/2016"
-   wacn.date="10/17/2016"
+   ms.date="10/31/2016"
+   wacn.date="12/12/2016"
    ms.author="cakarst;barbkess;sonyama"/>  
 
 
@@ -27,7 +27,7 @@
 
 使用 PolyBase 和 T-SQL 命令可将数据从 Azure Blob 存储载入 Azure SQL 数据仓库。
 
-为简单起见，本教程会将两个表从公共 Azure 存储 Blob 载入 Contoso 零售数据仓库架构。若要加载完整的数据集，请运行 Microsoft SQL Server 示例存储库中的 [Load the full Contoso Retail Data Warehouse][]（加载完整的 Contoso 零售数据仓库）示例。
+为简单起见，本教程会将两个表从公共 Azure 存储 Blob 载入 Contoso 零售数据仓库架构。若要加载完整的数据集，请运行 Microsoft SQL Server 示例存储库中的 [Load the full Contoso Retail Data Warehouse][Load the full Contoso Retail Data Warehouse]（加载完整的 Contoso 零售数据仓库）示例。
 
 在本教程中你将：
 
@@ -35,16 +35,13 @@
 2. 将公共数据载入数据库
 3. 完成加载后执行优化。
 
-
 ## 开始之前
-若要运行本教程，需要一个已包含 SQL 数据仓库数据库的 Azure 帐户。如果没有此帐户，请参阅 [Create a SQL Data Warehouse][]（创建 SQL 数据仓库）。
+若要运行本教程，需要一个已包含 SQL 数据仓库数据库的 Azure 帐户。如果没有此帐户，请参阅 [Create a SQL Data Warehouse][Create a SQL Data Warehouse]（创建 SQL 数据仓库）。
 
 ## 1\.配置数据源
-
 PolyBase 使用 T-SQL 外部对象来定义外部数据的位置和属性。外部对象定义存储在 SQL 数据仓库中。数据本身存储在外部。
 
 ### 1\.1.创建凭据
-
 如果要加载 Contoso 公共数据，请**跳过此步骤**。不需要以安全方式访问公共数据，因为它已经可供任何人访问。
 
 如果你使用本教程作为加载自己数据的模板，请**不要跳过此步骤**。若要通过凭据访问数据，请使用以下脚本创建数据库范围的凭据，然后在定义数据源的位置时使用该凭据。
@@ -86,8 +83,7 @@ PolyBase 使用 T-SQL 外部对象来定义外部数据的位置和属性。外�
 跳到步骤 2。
 
 ### 1\.2.创建外部数据源
-
-使用 [CREATE EXTERNAL DATA SOURCE][] 命令存储数据的位置以及数据的类型。
+使用 [CREATE EXTERNAL DATA SOURCE][CREATE EXTERNAL DATA SOURCE] 命令存储数据的位置以及数据的类型。
 
 
 	CREATE EXTERNAL DATA SOURCE AzureStorage_west_public
@@ -117,11 +113,9 @@ PolyBase 使用 T-SQL 外部对象来定义外部数据的位置和属性。外�
 
 
 ## 3\.创建外部表
-
 指定数据源和文件格式后，可以开始创建外部表。
 
-### 3\.1.创建数据的架构。 
-
+### 3\.1.创建数据的架构。
 若要创建一个位置用于存储数据库中的 Contoso 数据，请创建架构。
 
 
@@ -129,8 +123,7 @@ PolyBase 使用 T-SQL 外部对象来定义外部数据的位置和属性。外�
 	GO
 
 
-### 3\.2.创建外部表。 
-
+### 3\.2.创建外部表。
 运行此脚本以创建 DimProduct 和 FactOnlineSales 外部表。在这里，我们只需定义列名和数据类型，然后将其绑定到 Azure blob 存储文件的位置和格式。定义存储在 SQL 数据仓库中，数据仍位于 Azure 存储 Blob 中。
 
 **LOCATION** 参数是 Azure 存储 Blob 中根文件夹下的文件夹。每个表位于不同的文件夹中。
@@ -221,9 +214,7 @@ PolyBase 使用 T-SQL 外部对象来定义外部数据的位置和属性。外�
 ## 4\.加载数据
 可通过其他方式访问外部数据。可以直接从外部表查询数据、将数据载入新数据库表，或者将外部数据添加到现有数据库表。
 
-
 ### 4\.1.创建新架构
-
 CTAS 可创建包含数据的新表。首先，请创建 contoso 数据的架构。
 
 
@@ -232,8 +223,7 @@ CTAS 可创建包含数据的新表。首先，请创建 contoso 数据的架构
 
 
 ### 4\.2.将数据载入新表
-
-若要从 Azure Blob 存储加载数据并将其保存到数据库中的某个表内，请使用 [CREATE TABLE AS SELECT][] (CTAS) T-SQL 语句。使用 CTAS 加载可以利用你刚刚创建的强类型化外部表。若要将数据载入新表，请对每个表使用一个 [CTAS][] 语句。
+若要从 Azure Blob 存储加载数据并将其保存到数据库中的某个表内，请使用 [CREATE TABLE AS SELECT (Transact-SQL)][CREATE TABLE AS SELECT (Transact-SQL)] 语句。使用 CTAS 加载可以利用你刚刚创建的强类型化外部表。若要将数据载入新表，请对每个表使用一个 [CTAS][CTAS] 语句。
 
 CTAS 将创建新表，并在该表中填充 select 语句的结果。CTAS 将新表定义为包含与 select 语句结果相同的列和数据类型。如果你选择了外部表中的所有列，新表将是外部表中的列和数据类型的副本。
 
@@ -249,8 +239,7 @@ CTAS 将创建新表，并在该表中填充 select 语句的结果。CTAS 将�
 
 
 ### 4\.3 跟踪加载进度
-
-可以使用 `[sys].[dm_pdw_exec_requests]` 动态管理视图 (DMV) 跟踪加载操作的进度。
+可以使用动态管理视图 (DMV) 跟踪加载操作的进度。
 
 
 	-- To see all requests
@@ -286,8 +275,7 @@ CTAS 将创建新表，并在该表中填充 select 语句的结果。CTAS 将�
 
 
 ## 5\.优化列存储压缩
-
-默认情况下，SQL 数据仓库将表存储为聚集列存储索引。加载完成后，某些数据行可能未压缩到列存储中。发生这种情况的原因多种多样。若要了解详细信息，请参阅[管理列存储索引][]。
+默认情况下，SQL 数据仓库将表存储为聚集列存储索引。加载完成后，某些数据行可能未压缩到列存储中。发生这种情况的原因多种多样。若要了解详细信息，请参阅[管理列存储索引][manage columnstore indexes]。
 
 若要在加载后优化查询性能和列存储压缩，请重新生成表，以强制列存储索引压缩所有行。
 
@@ -299,16 +287,14 @@ CTAS 将创建新表，并在该表中填充 select 语句的结果。CTAS 将�
 	ALTER INDEX ALL ON [cso].[FactOnlineSales]          REBUILD;
 
 
-有关维护列存储索引的详细信息，请参阅[管理列存储索引][]一文。
+有关维护列存储索引的详细信息，请参阅[管理列存储索引][manage columnstore indexes]一文。
 
 ## 6\.优化统计信息
-
 最好是在加载之后马上创建单列统计信息。对于统计信息，可以使用多个选项。例如，如果针对每个列创建单列统计信息，则重新生成所有统计信息可能需要花费很长时间。如果你知道某些列不会在查询谓词中使用，可以不创建有关这些列的统计信息。
 
 如果决定针对每个表的每个列创建单列统计信息，可以使用 [statistics][]（统计信息）一文中的存储过程代码示例 `prc_sqldw_create_stats`。
 
 以下示例是创建统计信息的不错起点。它会针对维度表中的每个列以及事实表中的每个联接列创建单列统计信息。以后，你随时可以将单列或多列统计信息添加到其他事实表列。
-
 
 
 	CREATE STATISTICS [stat_cso_DimProduct_AvailableForSaleDate] ON [cso].[DimProduct]([AvailableForSaleDate]);
@@ -353,7 +339,6 @@ CTAS 将创建新表，并在该表中填充 select 语句的结果。CTAS 将�
 
 
 ## 大功告成！
-
 你已成功地将公共数据载入 Azure SQL 数据仓库。干得不错！
 
 现在，你可以使用如下所示的查询，开始查询表：
@@ -368,7 +353,7 @@ CTAS 将创建新表，并在该表中填充 select 语句的结果。CTAS 将�
 
 ## 后续步骤
 若要加载整个 Contoso 零售数据仓库数据，可以使用脚本。
-有关更多开发技巧，请参阅 [SQL Data Warehouse development overview][]（SQL 数据仓库开发概述）。
+有关更多开发技巧，请参阅 [SQL Data Warehouse development overview][SQL Data Warehouse development overview]（SQL 数据仓库开发概述）。
 
 <!--Image references-->
 
@@ -377,7 +362,7 @@ CTAS 将创建新表，并在该表中填充 select 语句的结果。CTAS 将�
 [Create a SQL Data Warehouse]: /documentation/articles/sql-data-warehouse-get-started-provision/
 [Load data into SQL Data Warehouse]: /documentation/articles/sql-data-warehouse-overview-load/
 [SQL Data Warehouse development overview]: /documentation/articles/sql-data-warehouse-overview-develop/
-[管理列存储索引]: /documentation/articles/sql-data-warehouse-tables-index/
+[manage columnstore indexes]: /documentation/articles/sql-data-warehouse-tables-index/
 [Statistics]: /documentation/articles/sql-data-warehouse-tables-statistics/
 [CTAS]: /documentation/articles/sql-data-warehouse-develop-ctas/
 [label]: /documentation/articles/sql-data-warehouse-develop-label/
@@ -394,4 +379,4 @@ CTAS 将创建新表，并在该表中填充 select 语句的结果。CTAS 将�
 [Microsoft Download Center]: http://www.microsoft.com/download/details.aspx?id=36433
 [Load the full Contoso Retail Data Warehouse]: https://github.com/Microsoft/sql-server-samples/tree/master/samples/databases/contoso-data-warehouse/readme.md
 
-<!---HONumber=Mooncake_1010_2016-->
+<!---HONumber=Mooncake_1205_2016-->

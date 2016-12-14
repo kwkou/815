@@ -14,8 +14,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="08/22/2016"
-   wacn.date="10/17/2016"
+   ms.date="10/31/2016"
+   wacn.date="12/12/2016"
    ms.author="barbkess;sonyama"/>  
 
 
@@ -37,7 +37,7 @@
 - 暂停计算
 - 恢复计算
 
-有关详细信息，请参阅 [管理计算概述][]。
+有关详细信息，请参阅 [管理计算概述][Manage compute overview]。
 
 <a name="scale-performance-bk"></a>
 <a name="scale-compute-bk"></a>
@@ -51,7 +51,6 @@
 1. 打开 [Azure 门户预览][]，打开你的数据库，然后单击“缩放”。
 
     ![单击“缩放”][1]
-
 1. 在“缩放”边栏选项卡上，向左或向右移动滑块，以更改 DWU 设置。
 
     ![移动滑块][2]
@@ -91,7 +90,7 @@
 [AZURE.INCLUDE [SQL Data Warehouse resume description（SQL 数据仓库恢复说明）](../../includes/sql-data-warehouse-resume-description.md)] 
 恢复数据库：
 
-1. 打开 [Azure 门户预览][]，并打开你的数据库。请注意，状态为“已暂停”。
+1. 打开 [Azure 门户预览][]，并打开数据库。请注意，状态为“已暂停”。
 
     ![暂停数据库][4]  
 
@@ -110,7 +109,7 @@
 <a name="next-steps-bk"></a>
 
 ## 后续步骤
-有关详细信息，请参阅[管理概述][]。
+有关详细信息，请参阅[管理概述][Management overview]。
 
 <!--Image references-->
 [1]: ./media/sql-data-warehouse-manage-compute-portal/click-scale.png
@@ -122,7 +121,7 @@
 [7]: ./media/sql-data-warehouse-manage-compute-portal/pause-confirm.png
 
 <!--Article references-->
-[管理概述]: /documentation/articles/sql-data-warehouse-overview-manage/
+[Management overview]: /documentation/articles/sql-data-warehouse-overview-manage/
 [Manage compute power overview]: /documentation/articles/sql-data-warehouse-manage-compute-overview/
 
 <!--MSDN references-->
@@ -132,4 +131,4 @@
 
 [Azure 门户预览]: http://portal.azure.cn/
 
-<!---HONumber=Mooncake_1010_2016-->
+<!---HONumber=Mooncake_1205_2016-->
