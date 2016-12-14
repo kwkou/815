@@ -15,7 +15,7 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="09/26/2016" 
-	wacn.date="11/14/2016"
+	wacn.date="12/14/2016"
 	ms.author="juliako"/>  
 
 
@@ -41,7 +41,7 @@ Azure 媒体服务允许播放使用 DASH、平滑流和 HLS 流格式提供的�
 - [添加新的功能请求、想法和反馈](/product-feedback/) 
 
 
-##用于创建播放器应用程序的其他工具
+##<a name="other-tools-for-creating-player-applications"></a>用于创建播放器应用程序的其他工具
 
 你也可以使用以下任意 SDK：
 

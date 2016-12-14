@@ -157,7 +157,7 @@ ALTER DATABASE CurrentDatabasename MODIFY NAME = NewDatabaseName;
 [还原]: /documentation/articles/sql-data-warehouse-restore-database-portal
 [迁移期间重命名的步骤]: #optional-steps-to-rename-during-migration
 [缩放计算能力]: /documentation/articles/sql-data-warehouse-manage-compute-portal/#scale-compute-power
-[mediumrc 角色]: /documentation/articles/sql-data-warehouse-develop-concurrency/#workload-management
+[mediumrc 角色]: /documentation/articles/sql-data-warehouse-develop-concurrency/
 
 <!--MSDN references-->
 

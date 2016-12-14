@@ -41,6 +41,7 @@
 
 <a name="scale-performance-bk"></a>
 <a name="scale-compute-bk"></a>
+<a name="scale-compute-power"></a>
 
 ## 缩放计算能力
 
@@ -61,7 +62,7 @@
 
 <a name="pause-compute-bk"></a>
 
-## 暂停计算
+##<a name="pause-compute"></a> 暂停计算
 
 [AZURE.INCLUDE [SQL Data Warehouse pause description（SQL 数据仓库暂停说明）](../../includes/sql-data-warehouse-pause-description.md)]
 

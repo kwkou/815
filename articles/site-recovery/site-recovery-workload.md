@@ -15,7 +15,7 @@
 	ms.tgt_pltfrm="na"
 	ms.workload="storage-backup-recovery"
 	ms.date="10/10/2016"
-	wacn.date="11/14/2016"
+	wacn.date="12/14/2016"
 	ms.author="raynew"/>  
 
 
@@ -89,7 +89,7 @@ SQL Server 是本地数据中心许多业务应用的数据服务基础。站点
 
 [详细了解](/documentation/articles/site-recovery-sql/)如何保护 SQL Server。
 
-##保护 SharePoint
+##<a name="sharepoint"></a>保护 SharePoint
 
 Azure Site Recovery 可帮助保护 SharePoint 部署，如下所述：
 
