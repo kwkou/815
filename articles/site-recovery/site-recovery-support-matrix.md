@@ -1,28 +1,28 @@
 <properties
-	pageTitle="Azure Site Recovery 支持矩阵 | Azure"
-	description="汇总了 Azure Site Recovery 支持的操作系统和组件"
-	services="site-recovery"
-	documentationCenter=""
-	authors="rayne-wiselman"
-	manager="jwhit"
-	editor=""/>  
-
+    pageTitle="Azure Site Recovery 支持矩阵 | Azure"
+    description="汇总了 Azure Site Recovery 支持的操作系统和组件"
+    services="site-recovery"
+    documentationcenter=""
+    author="rayne-wiselman"
+    manager="jwhit"
+    editor="" />  
 
 <tags
-	ms.service="site-recovery"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="storage-backup-recovery"
-	ms.date="10/05/2016"
-	wacn.date="11/14/2016"
-	ms.author="raynew"/>
+    ms.assetid="1bbcc13c-ea21-4349-9ddf-0d7dfdcdcbfb"
+    ms.service="site-recovery"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.tgt_pltfrm="na"
+    ms.workload="storage-backup-recovery"
+    ms.date="11/20/2016"
+    wacn.date="12/12/2016"
+    ms.author="raynew" />
 
 # Azure Site Recovery 支持矩阵
 
-本文汇总了 Azure Site Recovery 部署支持的操作系统和组件。每篇相应部署文章中均提供有每种可用部署方案支持的组件和先决条件的列表，本文档是对这些内容的汇总。
+本文汇总了 Azure Site Recovery 支持的操作系统和组件。每篇相应部署文章中均提供有每种可用部署方案支持的组件和先决条件的列表，本文档是对这些内容的汇总。
 
-## 虚拟化服务器支持的操作系统
+## 虚拟化服务器操作系统支持
 
 
 **源** | **目标** | **主机 OS**
@@ -32,28 +32,185 @@
 **Hyper-V 主机（包含 VMM）** | 辅助 VMM 站点 | 至少为装有最新更新的 Windows Server 2012
 
 
-## 复制计算机的支持要求
+## 复制的计算机支持
 
-**源** | **复制内容** | **目标** | **主机 OS**
----|---|---|--- 
-**Hyper-V VM** | 任何工作负荷 | Azure | [Azure 支持的](https://technet.microsoft.com/zh-cn/library/cc794868.aspx)任何来宾 OS<br/><br/> VM 必须满足 [Azure 要求](/documentation/articles/site-recovery-best-practices/#azure-virtual-machine-requirements)
-**Hyper-V VM（包含 VMM）** | 任何工作负荷 | Azure | [Azure 支持的](https://technet.microsoft.com/zh-cn/library/cc794868.aspx)任何来宾 OS<br/><br/> VM 必须满足 [Azure 要求](/documentation/articles/site-recovery-best-practices/#azure-virtual-machine-requirements)
-**Hyper-V VM（包含 VMM）** | 任何工作负荷 | 辅助 VMM 站点 | [Hyper-V 支持的](https://technet.microsoft.com/zh-cn/library/mt126277.aspx)任何来宾 OS
-**物理服务器** | 在 Windows 上运行的任何工作负荷 | Azure | 64 位 Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 SP1 及其更高版本
-**物理服务器** | 在 Linux 上运行的任何工作负荷 | Azure | <p>Red Hat Enterprise Linux 6.7、7.1、7.2 </p><p> Centos 6.5、6.6、6.7、7.0、7.1、7.2 </p><p> Oracle Enterprise Linux 6.4、6.5（运行 Red Hat 兼容内核或 Unbreakable Enterprise Kernel Release 3 (UEK3)）</p><p> SUSE Linux Enterprise Server 11 SP3 </p><p> 所需的存储：文件系统 (EXT3, ETX4, ReiserFS, XFS)；多路径软件设备映射器 (multipath))；卷管理器：(LVM2)。不支持使用 HP CCISS 控制器存储的物理服务器。ReiserFS 文件系统仅在 SUSE Linux Enterprise Server 11 SP3 上受支持。</p>
-**物理服务器** | 在 Windows 上运行的任何工作负荷 | 辅助站点 | 64 位 Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 SP1 及其更高版本
-**物理服务器** | 在 Linux 上运行的任何工作负荷 | 辅助站点 | <p>Red Hat Enterprise Linux 6.7、7.1、7.2 </p><p> Centos 6.5、6.6、6.7、7.0、7.1、7.2 </p><p> Oracle Enterprise Linux 6.4、6.5（运行 Red Hat 兼容内核或 Unbreakable Enterprise Kernel Release 3 (UEK3)）</p><p> SUSE Linux Enterprise Server 11 SP3 </p><p> 所需的存储：文件系统 (EXT3, ETX4, ReiserFS, XFS)；多路径软件设备映射器 (multipath))；卷管理器：(LVM2)。不支持使用 HP CCISS 控制器存储的物理服务器。ReiserFS 文件系统仅在 SUSE Linux Enterprise Server 11 SP3 上受支持。</p>
+### 计算机（复制到 Azure）
+
+虚拟机必须满足 [Azure 要求](/documentation/articles/site-recovery-best-practices/#azure-virtual-machine-requirements)。
+
+**要求** | **Hyper-V（不包含 VMM）** | **Hyper-V（包含 VMM）**
+--- | --- | ---
+复制内容 |  任何工作负荷 | 任何工作负荷
+主机 OS | 64 位 Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2（至少装有 SP1）<br/><br/>Red Hat Enterprise Linux 6.7、7.1、7.2 <br/><br/> Centos 6.5、6.6、6.7、7.0、7.1、7.2 <br/><br/> Oracle Enterprise Linux 6.4、6.5（运行 Red Hat 兼容内核或 Unbreakable Enterprise Kernel Release 3 (UEK3)）<br/><br/> SUSE Linux Enterprise Server 11 SP3<bbr/><br/> 所需的存储：文件系统 (EXT3, ETX4, ReiserFS, XFS)；多路径软件设备映射器 (multipath))；卷管理器：(LVM2)。不支持使用 HP CCISS 控制器存储的物理服务器。ReiserFS 文件系统仅在 SUSE Linux Enterprise Server 11 SP3 上受支持。 | [Azure 支持的](https://technet.microsoft.com/zh-cn/library/cc794868.aspx)任何来宾 OS | [Azure 支持的](https://technet.microsoft.com/zh-cn/library/cc794868.aspx)任何来宾 OS
 
 
-## 提供程序版本
+### 计算机（复制到辅助站点）
+
+**要求** | **VMware/物理服务器** | **Hyper-V（包含 VMM）**
+--- | --- | ---
+复制内容 | Windows 或 Linux VM 上的任何工作负荷 | 任何工作负荷 | 任何工作负荷
+主机 OS | 64 位 Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2（至少装有 SP1）<br/><br/>Red Hat Enterprise Linux 6.7、7.1、7.2 <br/><br/> Centos 6.5、6.6、6.7、7.0、7.1、7.2 <br/><br/> Oracle Enterprise Linux 6.4、6.5（运行 Red Hat 兼容内核或 Unbreakable Enterprise Kernel Release 3 (UEK3)）<br/><br/> SUSE Linux Enterprise Server 11 SP3<bbr/><br/> 所需的存储：文件系统 (EXT3, ETX4, ReiserFS, XFS)；多路径软件设备映射器 (multipath))；卷管理器：(LVM2)。<br/><br/> 不支持使用 HP CCISS 控制器存储的物理服务器。ReiserFS 文件系统仅在 SUSE Linux Enterprise Server 11 SP3 上受支持。 | Hyper-V 支持的任何来宾 OS](https://technet.microsoft.com/zh-cn/library/mt126277.aspx)
+
+
+## 提供程序和代理支持
 
 **名称** | **说明** | **最新版本** | **支持** | **详细信息**
 ---|---|---|---| ---
 **Azure Site Recovery 提供程序** | <p>协调本地服务器与 Azure/辅助站点之间的通信 </p><p> 安装在本地 VMM 服务器或 Hyper-V 服务器（如果没有 VMM 服务器）上</p> | 5\.1.1700（可从门户获取） | [最新功能和修复](https://support.microsoft.com/zh-cn/kb/3155002)
-**移动服务** | 协调本地物理服务器和 Azure/辅助站点之间的复制 | NA（可从门户获取） | 在想要复制的每个物理服务器上安装。**Azure 恢复服务 (MARS) 代理** | <p>协调 Hyper-V 虚拟机和 Azure 之间的复制</p><p>安装在本地 Hyper-V 服务器（具有或不具有 VMM 服务器）上</p>
+**Azure 恢复服务 (MARS) 代理** | 协调 Hyper-V 虚拟机和 Azure 之间的复制<br/><br/>安装在本地 Hyper-V 服务器（具有或不具有 VMM 服务器）上 | |
+
+## 网络支持
+
+### 网络（复制到 Azure）
+
+**主机网络** |**Hyper-V（不包含 VMM）** | **Hyper-V（包含 VMM）**
+--- | --- | ---
+NIC 组合 | 是 | 是
+VLAN | 是 | 是
+IPv4 | 是 | 是
+IPv6 | 否 | 否
+
+**来宾 VM 网络** |**Hyper-V（不包含 VMM）** | **Hyper-V（包含 VMM）**
+--- | --- | ---
+NIC 组合 | 否 | 否
+IPv4 | 是 | 是
+IPv6 | 否 | 否
+静态 IP (Windows) | 是 | 是
+静态 IP (Linux) | 否 | 否
+多 NIC | 是 | 是
+
+**Azure 网络** | **Hyper-V（不包含 VMM）** | **Hyper-V（包含 VMM）**
+--- | --- | ---
+Express Route | 是 | 是
+ILB |是 | 是
+ELB |  |
+流量管理器 |是 | 是
+多 NIC | 是 | 是
+保留 IP | 是 | 是
+IPv4 | 是 | 是
+保留源 IP | 是 | 是
+
+### 网络（复制到辅助站点）
+
+**主机网络**  | **Hyper-V（包含 VMM）**
+--- |---
+NIC 组合 | 是
+VLAN | 是
+IPv4 | 是
+IPv6 | 否
+
+**来宾 VM 网络**| **Hyper-V（包含 VMM）**
+--- |---
+NIC 组合 | 否
+IPv4 | 是
+IPv6 | 否
+静态 IP (Windows) | 是
+静态 IP (Linux) | 是
+多 NIC | 是
+
+
+## 存储支持
+
+### 复制到 Azure
+
+**存储（主机）** | **Hyper-V（不包含 VMM）** | **Hyper-V（包含 VMM）**
+--- |--- | ---
+NFS | 不可用 | 不可用
+SMB 3.0 | 是 | 是
+SAN (ISCSI) | 是 | 是
+多路径 (MPIO) | 是 | 是
+
+**存储（来宾 VM/物理服务器）** | **Hyper-V（不包含 VMM）** | **Hyper-V（包含 VMM）**
+--- | --- | ---
+VMDK |不可用 | 不可用
+VHD/VHDX |是 | 是
+第 2 代 VM | 是 | 是
+共享群集磁盘 | 否 | 否
+加密磁盘 |否 | 否
+EFI/UEFI|是 | 是
+NFS |否 | 否
+SMB 3.0 |否 | 否
+RDM |不可用 | 不可用
+磁盘 > 1 TB |否 | 否
+包含条带化磁盘的卷 > 1 TB<br/><br/> LVM |是 | 是
+存储空间 |是 | 是
+热添加/移除磁盘 |否 | 否
+排除磁盘 |否 | 否
+多路径 (MPIO) |是 | 是
+
+**Azure 存储** |**Hyper-V（不包含 VMM）** | **Hyper-V（包含 VMM）**
+--- |--- | ---
+LRS |是 | 是
+GRS |是 | 是
+冷存储 |否 | 否
+热存储|否 | 否
+静态加密 |是 | 是
+高级存储 |否 | 否
+导入/导出服务 |否 | 否
+
+
+### 存储（复制到辅助站点）
+
+**存储（主机）** |**Hyper-V（包含 VMM）**
+--- |---
+NFS |不可用
+SMB 3.0 |是
+SAN (ISCSI) |是
+多路径 (MPIO) |是
+
+**存储（来宾 VM/物理服务器）** |**Hyper-V（包含 VMM）**
+--- |---
+VMDK |不可用
+VHD/VHDX |是（最多 64 个磁盘）
+第 2 代 VM |是
+共享群集磁盘 |否
+加密磁盘 |否
+UEFI|不可用
+NFS |否
+SMB 3.0 |否
+RDM |不可用
+磁盘 > 1 TB |是
+包含条带化磁盘的卷 > 1 TB<br/><br/> LVM |是
+存储空间 |是
+热添加/移除磁盘 |否
+排除磁盘 |否
+多路径 (MPIO) |是
+
+## 恢复服务保管库操作支持
+
+### 保管库（复制到 Azure）
+
+**操作** |**Hyper-V（不包含 VMM）** | **Hyper-V（包含 VMM）**
+--- | --- | ---
+跨资源组移动保管库<br/><br/> 订阅内和跨订阅移动 | 否 | 否
+跨资源组移动存储、网络和 Azure VM<br/><br/> 订阅内和跨订阅移动 |否 | 否
+
+### 保管库（复制到辅助站点）
+
+**操作** |**Hyper-V（包含 VMM）**
+--- | ---
+跨资源组移动保管库<br/><br/> 订阅内和跨订阅移动 | 否
+跨资源组移动存储、网络和 Azure VM<br/><br/> 订阅内和跨订阅移动 | 否
+
+
+## Azure 计算支持（复制到 Azure）
+
+**计算功能** |**Hyper-V（不包含 VMM）** | **Hyper-V（包含 VMM）**
+--- |--- | ---
+共享磁盘来宾群集 |否 | 否
+可用性集 |否 | 否
+HUB | 是 | 是
+
+
+
+
+
+
+
+
 
 ## 后续步骤
 
 [准备部署](/documentation/articles/site-recovery-best-practices/)
 
-<!---HONumber=Mooncake_1107_2016-->
+<!---HONumber=Mooncake_1205_2016-->

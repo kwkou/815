@@ -1,22 +1,22 @@
 <properties
-	pageTitle="在 Azure 门户中使用 Site Recovery 将 VMM 云中的 Hyper-V 虚拟机复制到 Azure | Azure"
-	description="介绍如何部署 Azure Site Recovery，以便使用 Azure 门户来协调 VMM 云中 Hyper-V VM 到 Azure 的复制、故障转移和恢复"
-	services="site-recovery"
-	documentationCenter=""
-	authors="rayne-wiselman"
-	manager="jwhit"
-	editor="tysonn"/>  
-
+    pageTitle="使用 Azure 门户将 VMM 云中的 Hyper-V 虚拟机复制到 Azure | Azure"
+    description="介绍如何部署 Azure Site Recovery，以便使用 Azure 门户来协调 VMM 云中 Hyper-V VM 到 Azure 的复制、故障转移和恢复"
+    services="site-recovery"
+    documentationcenter=""
+    author="rayne-wiselman"
+    manager="jwhit"
+    editor="tysonn" />  
 
 <tags
-	ms.service="site-recovery"
-	ms.workload="backup-recovery"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="hero-article"
-	ms.date="09/16/2016"
-	wacn.date="11/17/2016"
-	ms.author="raynew"/>  
+    ms.assetid="8e7d868e-00f3-4e8b-9a9e-f23365abf6ac"
+    ms.service="site-recovery"
+    ms.workload="backup-recovery"
+    ms.tgt_pltfrm="na"
+    ms.devlang="na"
+    ms.topic="hero-article"
+    ms.date="10/31/2016"
+    wacn.date="12/12/2016"
+    ms.author="raynew" />  
 
 #  将 VMM 云中的 Hyper-V 虚拟机复制到 Azure
 
@@ -24,10 +24,14 @@
 - [Azure 经典管理门户](/documentation/articles/site-recovery-vmm-to-azure/)
 - [PowerShell — 经典](/documentation/articles/site-recovery-deploy-with-powershell/)
 
-欢迎使用 Azure Site Recovery！ 如果你要在 Azure 门户中使用 Azure Site Recovery 将 System Center Virtual Machine Manager (VMM) 云中管理的本地 Hyper-V 虚拟机复制到 Azure，请参考本文。
+欢迎使用 Azure Site Recovery 服务！
 
+Site Recovery 是能够帮助实现业务连续性和灾难恢复 (BCDR) 策略的 Azure 服务。Site Recovery 可以协调从本地物理服务器和虚拟机到云 (Azure) 或辅助数据中心的复制。当主要位置发生故障时，你可以故障转移到辅助位置，使应用和工作负荷保持可用。当主要位置恢复正常时，你可以故障转移回到主要位置。在[什么是 Azure Site Recovery？](/documentation/articles/site-recovery-overview/)中了解详细信息
 
-Azure Site Recovery 服务有助于业务连续性和灾难恢复 (BCDR) 策略，因为它可以协调虚拟机和物理服务器的复制、故障转移和恢复。虚拟机可复制到 Azure 中，也可复制到本地数据中心中。如需快速概览，请阅读[什么是 Azure Site Recovery？](/documentation/articles/site-recovery-overview/)。
+本文介绍如何在 Azure 门户中使用 Azure Site Recovery 将 System Center VMM 云中管理的本地 Hyper-V 虚拟机复制到 Azure。
+
+阅读本文后，如有技术问题，请在 [Azure 恢复服务论坛](https://social.msdn.microsoft.com/forums/azure/home?forum=hypervrecovmgr)上提出。
+
 
 ## 概述
 
@@ -387,4 +391,4 @@ Site Recovery 是一项 Azure 服务，可通过协调从本地物理服务器�
 
 设置并运行部署后，请[详细了解](/documentation/articles/site-recovery-failover/)不同类型的故障转移。
 
-<!---HONumber=Mooncake_1107_2016-->
+<!---HONumber=Mooncake_1205_2016-->

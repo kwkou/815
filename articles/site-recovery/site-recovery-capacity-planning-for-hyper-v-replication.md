@@ -1,62 +1,62 @@
 <properties
-	pageTitle="为站点恢复运行 Hyper-V Capacity Planner 工具 | Azure"
-	description="本文提供 Azure Site Recovery 的 Hyper-V Capacity Planner 工具的用法说明"
-	services="site-recovery"
-	documentationCenter="na"
-	authors="csilauraa"
-	manager="jwhit"
-	editor="tysonn"/>
+    pageTitle="为站点恢复运行 Hyper-V Capacity Planner 工具 | Azure"
+    description="本文介绍如何针对 Azure Site Recovery 运行 Hyper-V Capacity Planner 工具"
+    services="site-recovery"
+    documentationcenter="na"
+    author="rayne-wiselman"
+    manager="jwhit"
+    editor="" />  
+
 <tags
-	ms.service="site-recovery"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="storage-backup-recovery"
-	ms.date="07/12/2016"
-	wacn.date="08/01/2016"
-	ms.author="raynew" />
+    ms.assetid="2bc3832f-4d6e-458d-bf0c-f00567200ca0"
+    ms.service="site-recovery"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.tgt_pltfrm="na"
+    ms.workload="storage-backup-recovery"
+    ms.date="11/15/2016"
+    wacn.date="12/12/2016"
+    ms.author="nisoneji" />  
+
 
 # 为站点恢复运行 Hyper-V Capacity Planner 工具
 
-作为 Azure Site Recovery 部署的一部分，你需要确定复制和带宽要求。站点恢复的 Hyper-V Capacity Planner 工具可帮助你确定 Hyper-V 虚拟机复制的复制要求和带宽要求。
+作为 Azure Site Recovery 部署的一部分，需要确定复制和带宽要求。站点恢复的 Hyper-V Capacity Planner 工具可帮助用户针对 Hyper-V 虚拟机复制执行此操作。
 
 
-本文介绍如何运行 Hyper-V Capacity Planner 工具。此工具应与[站点恢复容量计划](/documentation/articles/site-recovery-capacity-planner/)中所述的其他容量计划工具和信息一起使用。
+本文介绍如何运行 Hyper-V Capacity Planner 工具。此工具应与[站点恢复容量规划](/documentation/articles/site-recovery-capacity-planner/)中的信息一起使用。
 
 
 ## 开始之前
 
 在主站点中的 Hyper-V 服务器或群集节点上运行该工具。若要运行 Hyper-V 主机服务器所需的工具，需满足以下要求：
 
-- 操作系统：Windows Server® 2012 或 Windows Server® 2012 R2
-- 内存：20 MB（最低）
-- CPU：5% 开销（最低）
-- 磁盘空间：5 MB（最低）
+* 操作系统：Windows Server 2012 或 2012 R2
+* 内存：20 MB（最低）
+* CPU：5% 开销（最低）
+* 磁盘空间：5 MB（最低）
 
-运行该工具之前，必须准备好主站点。如果在两个本地站点之间复制并想要检查带宽，则还需要准备好副本服务器。
-
+运行该工具之前，必须准备好主站点。如果要在两个本地站点之间复制并想要检查带宽，则还需要准备好副本服务器。
 
 ## 步骤 1：准备主站点
-1. 在主站点上生成要复制的所有 Hyper-V 虚拟机及其所在 Hyper-V 主机/群集的列表。该工具每次可针对多个独立主机或单个群集运行，但不能同时对此两者运行。还需要单独针对每个操作系统运行，因此你应该汇总并记下你的 Hyper-V 服务器，如下所示：
 
-  - Windows Server® 2012 独立服务器
-  - Windows Server® 2012 群集
-  - Windows Server® 2012 R2 独立服务器
-  - Windows Server® 2012 R2 群集
+1. 在主站点上生成要复制的所有 Hyper-V VM 及其所在 Hyper-V 主机/群集的列表。该工具可针对多个独立主机或单个群集运行，但不能同时对这两者运行。它还需要单独针对每个操作系统运行，因此用户应收集有关 Hyper-V 服务器的信息，如下所示：
 
-3. 在所有 Hyper-V 主机和群集上启用 WMI 远程访问。在每个服务器/群集上运行以下命令，以确保设置防火墙规则和用户权限：
+   * Windows Server 2012 独立服务器
+   * Windows Server 2012 群集
+   * Windows Server 2012 R2 独立服务器
+   * Windows Server 2012 R2 群集
+2. 在所有 Hyper-V 主机和群集上启用 WMI 远程访问。在每个服务器/群集上运行以下命令，以确保设置防火墙规则和用户权限：
 
         netsh firewall set service RemoteAdmin enable
+3. 在服务器和群集上启用性能监视，如下所示：
 
-5. 在服务器和群集上启用性能监视，如下所示：
-
-  - 使用“高级安全性”管理单元打开 Windows 防火墙，然后启用以下入站规则：“COM+ 网络访问(DCOM-IN)”，以及“远程事件日志管理组”中的所有规则。
+   * 使用“高级安全性”管理单元打开 Windows 防火墙，然后启用以下入站规则：“COM+ 网络访问(DCOM-IN)”，以及“远程事件日志管理组”中的所有规则。
 
 ## 步骤 2：准备副本服务器（本地到本地复制）
-
 如果要复制到 Azure，则不需要执行此操作。
 
-我们建议设置单个 Hyper-V 主机作为恢复服务器，以便可将虚构 VM 复制到该主机以检查带宽。你可以跳过此步骤，但如果不执行此操作，将无法测量带宽。
+我们建议设置单个 Hyper-V 主机作为恢复服务器，以便可将虚构 VM 复制到该主机以检查带宽。可以跳过此步骤，但如果不执行此操作，将无法测量带宽。
 
 1. 如果想要使用群集节点作为副本，请配置 Hyper-V 副本代理：
 
@@ -67,25 +67,24 @@
 	- 如果你使用基于证书的身份验证，请确保每个群集节点和客户端访问点上都安装了证书。
 2.  启用副本服务器：
 
-	- 针对某个群集打开“故障群集管理器”，连接到该群集，然后单击“角色”> 选择角色 >“复制设置”>“启用此群集作为副本服务器”。请注意，如果使用群集作为副本，则还需要在主站点的群集上显示 Hyper-V 副本代理角色。
-	- 对于独立服务器，请打开“Hyper-V 管理器”。在“操作”窗格中，单击想要启用的服务器的“Hyper-V 设置”，然后在“复制配置”中单击“启用这台计算机作为副本服务器”。
+	- 针对某个群集打开“故障群集管理器”，连接到该群集，然后单击“角色”> 选择角色 >“复制设置”>“启用此群集作为副本服务器”。如果使用群集作为副本，则还需要在主站点的群集上存在 Hyper-V 副本代理角色。
+	- 对于独立服务器，请打开“Hyper-V 管理器”。在“操作”窗格中，单击要启用的服务器的“Hyper-V 设置”，然后在“复制配置”中单击“启用这台计算机作为副本服务器”。
 3. 设置身份验证：
 
-	- 在“身份验证和端口”中选择如何对主服务器进行身份验证以及身份验证端口。如果你使用证书，请单击“选择证书”以选择一个证书。如果主服务器和恢复 Hyper-V 主机位于同一个域或信任的域中，请使用 Kerberos。对于不同的域或工作组部署使用证书。
-	- 在“授权和存储”部分中，允许**任何**已经过身份验证的（主）服务器将复制数据发送到这个副本服务器。单击“确定”或“应用”。
+	- 在“身份验证和端口”中选择对主服务器进行身份验证的方式以及身份验证端口。如果使用证书，请单击“选择证书”以选择一个证书。如果主服务器和恢复 Hyper-V 主机位于同一个域或受信任的域中，请使用 Kerberos。对于不同域或工作组部署使用证书。
+	- 在“授权和存储”中，允许**任何**已经过身份验证的（主）服务器将复制数据发送到这个副本服务器。
 
 	![](./media/site-recovery-capacity-planning-for-hyper-v-replication/image1.png)
 
 	- 运行 **netsh http show servicestate** 检查是否针对指定的协议/端口运行了侦听器：
 4. 设置防火墙。在 Hyper-V 安装期间创建防火墙规则，以允许默认端口上的流量（443 上的 HTTPS 流量，80 上的 Kerberos 流量）。按如下所示启用这些规则：
 
-		- Certificate authentication on cluster (443): **Get-ClusterNode | ForEach-Object {Invoke-command -computername \$\_.name -scriptblock {Enable-Netfirewallrule -displayname "Hyper-V Replica HTTPS Listener (TCP-In)"}}**
-		- Kerberos authentication on cluster (80): **Get-ClusterNode | ForEach-Object {Invoke-command -computername \$\_.name -scriptblock {Enable-Netfirewallrule -displayname "Hyper-V Replica HTTP Listener (TCP-In)"}}**
-		- Certificate authentication on standalone server: **Enable-Netfirewallrule -displayname "Hyper-V Replica HTTPS Listener (TCP-In)"**
-		- Kerberos authentication on standalone server: **Enable-Netfirewallrule -displayname "Hyper-V Replica HTTP Listener (TCP-In)"**
+  - 群集 (443) 上的证书身份验证：``Get-ClusterNode | ForEach-Object {Invoke-command -computername \$\_.name -scriptblock {Enable-Netfirewallrule -displayname "Hyper-V Replica HTTPS Listener (TCP-In)"}}``
+  - 群集 (80) 上的 Kerberos 身份验证：``Get-ClusterNode | ForEach-Object {Invoke-command -computername \$\_.name -scriptblock {Enable-Netfirewallrule -displayname "Hyper-V Replica HTTP Listener (TCP-In)"}}``
+  - 独立服务器上的证书身份验证：``Enable-Netfirewallrule -displayname "Hyper-V Replica HTTPS Listener (TCP-In)"``
+  - 独立服务器上的 Kerberos 身份验证：``Enable-Netfirewallrule -displayname "Hyper-V Replica HTTP Listener (TCP-In)"``
 
 ## 步骤 3：运行容量规划器工具
-
 在准备好主站点并设置恢复服务器之后，可以运行该工具。
 
 1. 从 Microsoft 下载中心[下载](https://www.microsoft.com/en-us/download/details.aspx?id=39057)该工具。
@@ -98,17 +97,17 @@
 
 	![](./media/site-recovery-capacity-planning-for-hyper-v-replication/image3.png)
 
-5. 在“副本站点详细信息”中，如果你要复制到 Azure 或辅助数据中心且尚未设置副本服务器，请选择“跳过涉及副本站点的测试”。如果要复制到辅助数据中心并且已设置副本，请在“服务器名称(或) Hyper-V 副本代理 CAP”中键入独立服务器的 FQDN，或群集的客户端接入点。
+5. 在“副本站点详细信息”中，如果要复制到 Azure 或辅助数据中心且尚未设置副本服务器，请选择“跳过涉及副本站点的测试”。如果要复制到辅助数据中心并且已设置副本类型，请在“服务器名称(或) Hyper-V 副本代理 CAP”中输入独立服务器的 FQDN，或群集的客户端接入点。
 
 	![](./media/site-recovery-capacity-planning-for-hyper-v-replication/image4.png)
 
-6. 在“扩展副本详细信息”中启用“跳过涉及扩展副本站点的测试”。这些测试不受站点恢复的支持。
-7. 在“选择要复制的 VM”中，工具将根据在“主站点详细信息”页上指定的设置连接到服务器或群集，并显示主服务器上运行的 VM 和磁盘。请注意，将不会显示已针对复制启用的或者尚未运行的 VM。选择你要收集其度量值的 VM。选择 VHD 也会自动收集 VM 的数据。
-9. 如果已配置副本服务器或群集，请在“网络信息”中指定你要用于主站点和副本站点之间的近似 WAN 带宽；如果已配置证书身份验证，请选择证书。
+6. 在“扩展副本详细信息”中启用“跳过涉及扩展副本站点的测试”。Site Recovery 不支持这些测试。
+7. 在“选择要复制的 VM”中，工具将根据在“主站点详细信息”页上指定的设置连接到服务器或群集，并显示主服务器上运行的 VM 和磁盘。将不会显示已针对复制启用或未在运行的 VM。选择你要收集其度量值的 VM。选择 VHD 也会自动收集 VM 的数据。
+8. 如果已配置副本服务器或群集，请在“网络信息”中指定要用于主站点和副本站点之间的近似 WAN 带宽；如果已配置证书身份验证，请选择证书。
 
 	![](./media/site-recovery-capacity-planning-for-hyper-v-replication/image5.png)
 
-10. 在“摘要”中检查设置，然后单击“下一步”开始收集度量值。工具的进度和状态将显示在“计算容量”页上。该工具完成运行时，请单击“查看报告”以查看输出。默认情况下，报告和日志存储在 **%systemdrive%\\Users\\Public\\Documents\\Capacity Planner** 中。
+9. 在“摘要”中检查设置，然后单击“下一步”开始收集度量值。工具的进度和状态将显示在“计算容量”页上。该工具完成运行时，请单击“查看报告”以查看输出。默认情况下，报告和日志存储在 **%systemdrive%\\Users\\Public\\Documents\\Capacity Planner** 中。
 
 	![](./media/site-recovery-capacity-planning-for-hyper-v-replication/image6.png)
 
@@ -129,12 +128,9 @@
   - 增量复制所需的总带宽 (Mbps)
 
 ## 更多资源
-
 - 有关该工具的详细信息，请阅读随工具下载的文档。
 - 观看 Keith Mayer 的 [TechNet 博客](http://blogs.technet.com/b/keithmayer/archive/2014/02/27/guided-hands-on-lab-capacity-planner-for-windows-server-2012-hyper-v-replica.aspx)中的工具演练。
 - 获取本地到本地 Hyper-V 复制的性能测试[结果](/documentation/articles/site-recovery-performance-and-scaling-testing-on-premises-to-on-premises/)
-
-
 
 ## 后续步骤
 
@@ -146,4 +142,4 @@
 - [使用 SAN 在 VMM 站点之间复制 Hyper-V VM](/documentation/articles/site-recovery-vmm-san/)
 - [在单个 VMM 服务器上复制 hyper-V VM](/documentation/articles/site-recovery-single-vmm/)
 
-<!---HONumber=Mooncake_0725_2016-->
+<!---HONumber=Mooncake_1205_2016-->

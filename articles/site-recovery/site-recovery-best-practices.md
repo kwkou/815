@@ -1,31 +1,28 @@
 <properties
-	pageTitle="准备站点恢复部署 | Azure"
-	description="本文介绍如何准备使用 Azure Site Recovery 部署复制。"
-	services="site-recovery"
-	documentationCenter=""
-	authors="rayne-wiselman"
-	manager="jwhit"
-	editor="tysonn"/>  
-
+    pageTitle="准备站点恢复部署 | Azure"
+    description="本文介绍如何准备使用 Azure Site Recovery 部署复制。"
+    services="site-recovery"
+    documentationcenter=""
+    author="rayne-wiselman"
+    manager="jwhit"
+    editor="tysonn" />  
 
 <tags
-	ms.service="site-recovery"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="storage-backup-recovery"
-	ms.date="10/05/2016"
-	wacn.date="11/17/2016"
-	ms.author="raynew"/>  
+    ms.assetid="e24eea6c-50a7-4cd5-aab4-2c5c4d72ee2d"
+    ms.service="site-recovery"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.tgt_pltfrm="na"
+    ms.workload="storage-backup-recovery"
+    ms.date="11/14/2016"
+    wacn.date="12/12/2016"
+    ms.author="raynew" />  
 
 
 # 准备 Azure Site Recovery 部署
-
-阅读本文可大致了解 Azure Site Recovery 服务支持的每种复制方案的部署要求。在阅读每种方案的一般要求之后，可将每个部署链接到特定部署详细信息。
+本文介绍 Azure Site Recovery 服务支持的每种复制方案的概括性要求。在阅读每种方案的一般要求之后，可将每个部署链接到特定部署详细信息。
 
 阅读本文后，请将任何评论或问题发布到本文底部，或者发布到 [Azure 恢复服务论坛](https://social.msdn.microsoft.com/Forums/zh-cn/home?forum=hypervrecovmgr)。
-
-## 概述
 
 组织需要制定 BCDR 策略来确定应用、工作负荷和数据如何在计划和非计划停机期间保持运行和可用，并尽快恢复正常运行情况。BCDR 策略应保持业务数据的安全性和可恢复性，并确保在发生灾难时工作负荷持续可用。
 
@@ -54,8 +51,7 @@
 
 ##<a id="azure-virtual-machine-requirements"></a>Azure 虚拟机要求
 
-可以部署站点恢复以复制运行受 Azure 支持的任何操作系统的虚拟机和物理服务器。这包括大多数的 Windows 和 Linux 版本。需要确保你要保护的本地虚拟机符合 Azure 要求。
-
+可以部署站点恢复以复制运行受 Azure 支持的任何操作系统的虚拟机和物理服务器。这包括大多数的 Windows 和 Linux 版本。要复制的本地虚拟机必须符合 Azure 要求。
 
 **功能** | **要求** | **详细信息**
 ---|---|---
@@ -67,20 +63,18 @@ Hyper-V 主机 | 应运行 Windows Server 2012 R2 | 如果操作系统不受支�
 数据磁盘计数 | 16 或更少（最大值取决于所创建的虚拟机大小。16 = XL） | 如果不支持，先决条件检查将会失败
 数据磁盘 VHD 大小 | 最大 1023 GB | 如果不支持，先决条件检查将会失败
 网络适配器 | 支持多个适配器 |
-静态 IP 地址 | 支持 | 如果主虚拟机使用的是静态 IP 地址，则你可为要在 Azure 中创建的虚拟机指定静态 IP 地址。请注意，不支持为 Hyper-v 上运行的 linux 虚拟机指定静态 IP 地址。
+静态 IP 地址 | 支持 | 如果主虚拟机使用的是静态 IP 地址，则可为要在 Azure 中创建的虚拟机指定静态 IP 地址。<br/><br/> 在 Hyper-v 上运行的 Linux VM 不支持静态 IP 地址。 
 iSCSI 磁盘 | 不支持 | 如果不支持，先决条件检查将会失败
 共享 VHD | 不支持 | 如果不支持，先决条件检查将会失败
 FC 磁盘 | 不支持 | 如果不支持，先决条件检查将会失败
 硬盘格式| VHD <br/><br/> VHDX | 尽管 Azure 当前不支持 VHDX，但当你故障转移到 Azure 时，站点恢复会自动将 VHDX 转换为 VHD。当你故障回复到本地时，虚拟机将继续使用 VHDX 格式。
 Bitlocker | 不支持 | 保护虚拟机之前，必须先禁用 Bitlocker。
 虚拟机名称| 介于 1 和 63 个字符之间。限制为字母、数字和连字符。应以字母或数字开头和结尾 | 在 Site Recovery 中更新虚拟机属性中的值
-虚拟机类型 | <p>第 1 代</p> <p>第 2 代 - Windows</p> | 支持第 2 代虚拟机：具备包含 1 或 2 个数据卷、磁盘格式为 VHDX、磁盘大小小于 300GB 的基本磁盘的操作系统磁盘类型。不支持 Linux 第 2 代虚拟机。[了解详细信息](https://azure.microsoft.com/blog/2015/04/28/disaster-recovery-to-azure-enhanced-and-were-listening/)
-
-
+虚拟机类型 | <p>第 1 代</p> <p>第 2 代 - Windows</p> | OS 磁盘类型为“基本”的第 2 代 VM，其中包括一个或两个格式化为 VHDX 的数据卷，并且支持的大小小于 300 GB。<br/><br/> 不支持 Linux 第 2 代 VM。[了解详细信息](https://azure.microsoft.com/blog/2015/04/28/disaster-recovery-to-azure-enhanced-and-were-listening/)
 
 ## 优化部署
 
-使用以下提示来帮助优化和缩放部署。
+使用以下提示来优化和缩放部署。
 
 - **操作系统卷大小**：将虚拟机复制到 Azure 时，操作系统卷必须小于 1TB。如果你的卷容量超过此值，可以在开始部署之前，手动将卷容量转移到另一个磁盘。
 - **数据磁盘大小**：如果要复制到 Azure，一个虚拟机中最多可以包含 32 个数据磁盘，每个磁盘的最大大小为 1 TB。可以有效地复制和故障转移约 32 TB 的虚拟机。
@@ -94,8 +88,7 @@ Bitlocker | 不支持 | 保护虚拟机之前，必须先禁用 Bitlocker。
 - **RTO**：若要度量使用 Site Recovery 时预期的恢复时间目标 (RTO)，我们建议运行测试故障转移并查看 Site Recovery 作业，分析完成操作所花费的时间。如果你要故障转移到 Azure，为实现最佳 RTO，我们建议你通过与 Azure 自动化和恢复计划集成来自动化所有手动操作。
 - **RPO**：当你复制到 Azure 时，Site Recovery 支持近乎同步的恢复点目标 (RPO)。这假设数据中心和 Azure 之间有足够的带宽。
 
-
-##服务 URL
+## 服务 URL
 确保可通过以下服务器访问 URL
 
 
@@ -111,8 +104,8 @@ Bitlocker | 不支持 | 保护虚拟机之前，必须先禁用 Bitlocker。
 
 
 ## 后续步骤
+查看常规部署要求之后，请阅读详细的先决条件并部署方案。
 
-了解并比较常规部署要求后，你可以阅读详细的先决条件并开始部署每个方案。
 
 
 - [将 VMM 云中的 Hyper-V 服务器复制到 Azure](/documentation/articles/site-recovery-vmm-to-azure/)
@@ -121,4 +114,4 @@ Bitlocker | 不支持 | 保护虚拟机之前，必须先禁用 Bitlocker。
 - [使用 SAN 将 Hyper-V VM 复制到辅助站点](/documentation/articles/site-recovery-vmm-san/)
 - [复制 Hyper-V VM（带单个 VMM 服务器）](/documentation/articles/site-recovery-single-vmm/)
 
-<!---HONumber=Mooncake_1107_2016-->
+<!---HONumber=Mooncake_1205_2016-->
