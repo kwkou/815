@@ -227,7 +227,7 @@ Azure 订阅是发生计费的地方。用户创建的每个 Azure 资源或使�
 在与[设备克隆](/documentation/articles/iot-hub-devguide-device-twins/)相关的使用中，标记是指由应用程序后端以 JSON 文档形式存储和检索的设备元数据。标记对设备上的应用不可见。
 
 ## <a name="telemetry"></a> 遥测
-设备收集遥测数据，如风速或温度，并使用[数据点消息](#data-point-messages)将遥测数据发送到 IoT 中心。
+设备收集遥测数据，如风速或温度，并使用[数据点消息](#data-point-message)将遥测数据发送到 IoT 中心。
 
 ## 令牌服务
 可以使用令牌服务对设备实施身份验证机制。它使用包含 **DeviceConnect** 权限的 IoT 中心[共享访问策略](#shared-access-policy) 创建*设备范围的* 令牌。这些令牌可让设备连接到 IoT 中心。设备通过令牌服务使用自定义的身份验证机制进行身份验证。如果设备成功通过身份验证，那么令牌服务向设备颁发 SAS 令牌用于访问 IoT 中心。
