@@ -15,7 +15,7 @@
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
    ms.date="09/27/2016"
-   wacn.date="10/31/2016"
+   wacn.date="12/15/2016"
    ms.author="lodipalm;barbkess;mausher;jrj;sonyama;kevin"/>
 
 
@@ -75,7 +75,7 @@ SQL 数据仓库对存储和计算功能进行了分隔，允许每项功能单�
 
 SQL 数据仓库提供独立于存储且可完全控制计算量的功能，可让你完全暂停数据仓库，这意味着在你不需要计算功能时可以不为其付费。在就地保留存储的同时，所有计算资源都将释放到 Azure 的主池中，从而为你节省费用。必要时，你只需恢复计算，让工作负荷使用数据和计算资源即可。
 
-## 数据仓库单位
+##<a name="data-warehouse-units"></a> 数据仓库单位
 
 对 SQL 数据仓库的资源分配以数据仓库单位 (DWU) 来度量。DWU 是分配给 SQL 数据仓库的基础资源（如 CPU、内存、IOPS）的度量值。增加 DWU 数可增加资源和提高性能。具体而言，DWU 可帮助确保：
 

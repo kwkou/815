@@ -15,7 +15,7 @@
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
    ms.date="06/29/2016"
-   wacn.date="11/15/2016"
+   wacn.date="12/15/2016"
    ms.author="jrj;barbkess;sonyama"/>  
 
 
@@ -129,7 +129,7 @@
     DROP TABLE #stats_ddl
 
 
-## 模块化代码
+##<a name="modularizing-code"></a> 模块化代码
 
 由于可以在用户会话中的任何位置查看临时表，可以利用这一点帮助将应用程序代码模块化。例如，下面的存储过程会将上面建议的做法组合在一起生成 DDL，该 DDL 会按统计名称更新数据库中的所有统计信息。
 

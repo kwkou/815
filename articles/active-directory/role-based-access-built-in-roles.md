@@ -15,7 +15,7 @@
 	ms.tgt_pltfrm="na"
 	ms.workload="identity"
 	ms.date="08/25/2016"
-	wacn.date="10/25/2016"
+	wacn.date="12/15/2016"
 	ms.author="kgremban"/>  
 
 
@@ -320,7 +320,7 @@ Azure 基于角色的访问控制 (RBAC) 附带以下可分配到用户、组和
 | Microsoft.Security/* | 创建和管理安全组件和策略 |
 | Microsoft.Support/* | 创建和管理支持票证 |
 
-### SQL DB 参与者
+###<a name="sql-db-contributor"></a> SQL DB 参与者
 可管理 SQL 数据库，但不包括其安全性相关的策略
 
 | **操作** ||

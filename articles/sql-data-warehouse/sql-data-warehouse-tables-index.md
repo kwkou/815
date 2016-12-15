@@ -15,7 +15,7 @@
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
    ms.date="07/12/2016"
-   wacn.date="08/08/2016"
+   wacn.date="12/12/2016"
    ms.author="jrj;barbkess;sonyama"/>
 
 # 为 SQL 数据仓库中的表编制索引
@@ -184,7 +184,7 @@ SQL 数据仓库提供多种索引选项，包括[聚集列存储索引][]、[�
 | [CLOSED\_rowgroup\_rows\_AVG] | 同上 |
 | [Rebuild\_Index\_SQL] | 用于重建表的列存储索引的 SQL |
 
-## 列存储索引质量不佳的原因
+##<a name="causes-of-poor-columnstore-index-quality"></a> 列存储索引质量不佳的原因
 
 如果你已识别出段质量不佳的表，接下来可以找出根本原因。下面是段质量不佳的其他一些常见原因：
 
@@ -221,7 +221,7 @@ SQL 数据仓库提供多种索引选项，包括[聚集列存储索引][]、[�
 
 在表中加载一些数据后，请遵循以下步骤来识别并重建聚集列存储索引质量欠佳的表。
 
-## 重建索引以提升段质量
+##<a name="rebuilding-indexes-to-improve-segment-quality"></a> 重建索引以提升段质量
 
 ### 步骤 1：识别或创建使用适当资源类的用户
 
