@@ -14,13 +14,13 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="06/27/2016"
-	wacn.date="08/01/2016"
+	wacn.date="12/15/2016"
 	ms.author="billmath"/>
 
 # Azure AD Connect：有关实例的特殊注意事项
 Azure AD Connect 最常用于全球范围内的 Azure AD 和 Office 365 实例。但也有其他实例，这些实例对 URL 具有不同的要求并且具有其他的特殊注意事项。
 
-## 德国 Microsoft 云
+## 德国 Microsoft 云 <a name="microsoft-cloud-germany"></a>
 [德国 Microsoft 云](http://www.microsoft.de/cloud-deutschland/)是由德国数据信托运营的最高等级的云。
 
 此云目前提供预览版。许多通常可以由自己完成的方案（如验证域）必须由运营商完成。有关如何参加使用预览版的详细信息，请与你当地的 Microsoft 代表联系。

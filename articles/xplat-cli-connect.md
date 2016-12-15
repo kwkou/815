@@ -16,7 +16,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="10/04/2016"
-	wacn.date="11/28/2016"
+	wacn.date="12/15/2016"
 	ms.author="danlep"/>
 
 
@@ -63,7 +63,7 @@ info:    To sign in, use a web browser to open the page http://aka.ms/devicelogi
     
 >[AZURE.NOTE]  使用交互式登录时，会使用 Azure Active Directory 进行身份验证和授权。如果使用 Microsoft 帐户标识，登录过程会访问 Azure Active Directory 的默认域。（如果注册的是免费 Azure 帐户，Azure Active Directory 已为该帐户自动创建了默认域。）
 
-## 方案 2：使用用户名和密码登录 Azure
+## 方案 2：使用用户名和密码登录 Azure <a name="use-the-log-in-method"></a>
 
 
 想要使用不需要多重身份验证的工作或学校帐户时，使用包含用户名 (`-u`) 参数的 `azure login` 命令进行身份验证。系统会在命令行中提示输入密码（也可以选择将密码作为 `azure login` 命令的其他参数传递）。以下示例将传递组织帐户的用户名：
@@ -115,8 +115,8 @@ info:    To sign in, use a web browser to open the page http://aka.ms/devicelogi
 
 >[AZURE.IMPORTANT]导入发布设置后，应删除 `.publishsettings` 文件。因为 Azure CLI 不再需要该文件，并且该文件会产生安全风险，因为它可以用来访问你的订阅。
 
-<a name="CLI-command-modes"></a>
-## CLI 命令模式
+
+## CLI 命令模式 <a name="CLI-command-modes"></a>
 
 Azure CLI 提供两种命令模式让你使用不同的命令集来处理 Azure 资源：
 

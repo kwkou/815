@@ -14,7 +14,7 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="09/12/2016" 
-	wacn.date="10/17/2016" 
+	wacn.date="12/15/2016" 
 	ms.author="tomfitz"/>  
 
 
@@ -30,7 +30,7 @@
 
 目前，并非每种服务都支持门户或资源管理器。对于这些服务，需要使用 [Azure 经典管理门户](https://manage.windowsazure.cn)。
 
-## 管理资源组
+## 管理资源组 <a name="create-resource-group-and-resources"></a>
 
 1. 若要查看订阅中的所有资源组，请选择“资源组”。
 

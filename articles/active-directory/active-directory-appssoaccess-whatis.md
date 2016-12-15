@@ -14,7 +14,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="08/15/2016"
-	wacn.date="11/30/2016"
+	wacn.date="12/15/2016"
 	ms.author="asmalser-msft"/>
 
 #Azure Active Directory 的应用程序访问与单一登录是什么？
@@ -39,7 +39,7 @@ Azure AD 能轻松集成到许多现今热门的 SaaS 应用程序。它提供�
 
 * 在 Azure AD 中对异常用户活动进行统一报告和监视
 
-##Azure Active Directory 中单一登录的工作原理是什么？
+##Azure Active Directory 中单一登录的工作原理是什么？  <a name="how-does-single-sign-on-with-azure-active-directory-work"></a>
 
 当用户“登录”应用程序时，需要经历一个身份验证过程，以证明他们的身份。如果不使用单一登录，这通常是通过输入存储在应用程序中的密码进行，而用户必须知道此密码。
 

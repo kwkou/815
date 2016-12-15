@@ -15,7 +15,7 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="09/13/2016" 
-	wacn.date="12/05/2016" 
+	wacn.date="12/15/2016" 
 	ms.author="robb"/>  
 
 
@@ -29,7 +29,7 @@ Microsoft 模式与实践部门已发布了[云设计模式](http://msdn.microso
 
 ## <a name="microsoft-architecture-certification-course"></a>Microsoft 体系结构认证课程
 
-Microsoft 创建了支持 Microsoft 认证考试 70-534 的体系结构课程。在 [EDX.ORG 上免费提供](https://www.edx.org/course/architecting-microsoft-azure-solutions-microsoft-dev205x)。它使用 [3D Blueprint Visio 模板](#3d-blueprint-visio-template)。
+Microsoft 创建了支持 Microsoft 认证考试 70-534 的体系结构课程。在 [EDX.ORG 上免费提供](https://www.edx.org/course/architecting-microsoft-azure-solutions-microsoft-dev205x)。它使用 3D Blueprint Visio 模板。
 
 ![Microsoft 体系结构认证课程](./media/architecture-overview/EDXCourse.png)  
 
@@ -39,7 +39,7 @@ Microsoft 发布了一套高级别的[解决方案体系结构](http://aka.ms/az
 
 之前，Microsoft 发布了一组展示示例体系结构的蓝图。它们已替换为前面提到的解决方案体系结构，并已将该蓝图链接重定向为指向这些体系结构。如果出于某种原因，需访问之前的蓝图材料，请发送电子邮件到 [CnESymbols@microsoft.com](mailto:CnESymbols@microsoft.com) 说明请求。
 
-蓝图和解决方案体系结构图都会使用部分[云和企业符号集](#Drawing-symbol-and-icon-sets)。
+蓝图和解决方案体系结构图都会使用部分云和企业符号集。
 
 ![Microsoft 体系结构蓝图 3D 图](./media/architecture-overview/BluePrintThumb.jpg)  
 

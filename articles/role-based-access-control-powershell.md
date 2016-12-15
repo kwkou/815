@@ -10,7 +10,7 @@
 <tags 
 	ms.service="azure-portal" 
 	ms.date="08/14/2015"
-	wacn.date="10/03/2015"/>
+	wacn.date="12/15/2015"/>
 
 # 使用 Windows PowerShell 管理基于角色的访问控制 #
 
@@ -154,7 +154,7 @@
 
 - [Azure 资源管理器 Cmdlet](https://msdn.microsoft.com/zh-cn/library/azure/dn708504.aspx)：了解如何在 AzureResourceManager 模块中使用这些 cmdlet。
 
-- [Azure 博客](http://blogs.msdn.com/windowsazure)：了解 Azure 中的新功能。
+- [Azure 博客](http://blogs.msdn.com/azure)：了解 Azure 中的新功能。
 - [Windows PowerShell 博客](http://blogs.msdn.com/powershell)：了解 Windows PowerShell 中的新功能。
 - [“你好，脚本编写专家！” 博客](http://blogs.technet.com/b/heyscriptingguy/)：从 Windows PowerShell 社区获取实用提示和技巧。
 - [使用 Azure CLI 配置基于角色的访问控制](/documentation/articles/role-based-access-control-xplat-cli/)

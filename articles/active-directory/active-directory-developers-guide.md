@@ -16,7 +16,7 @@
     ms.workload="identity"
     ms.date="10/24/2016"
     ms.author="mbaldwin" 
-    wacn.date="12/09/2016"/>  
+    wacn.date="12/15/2016"/>  
 
 
 # Azure Active Directory 开发人员指南
@@ -37,7 +37,7 @@
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 | [iOS](/documentation/articles/active-directory-devquickstarts-ios/) |[Android](/documentation/articles/active-directory-devquickstarts-android/) |[.NET](/documentation/articles/active-directory-devquickstarts-dotnet/) |[Windows Universal](/documentation/articles/active-directory-devquickstarts-windowsstore/) |[Xamarin](/documentation/articles/active-directory-devquickstarts-xamarin/) |[Cordova](/documentation/articles/active-directory-devquickstarts-cordova/) |[直接与 OAuth 2.0 集成](/documentation/articles/active-directory-protocols-oauth-code/) |
 
-### Web 应用程序快速入门指南
+### Web 应用程序快速入门指南  <a name="web-application-quick-start-guides"></a>
 | [![.NET](./media/active-directory-developers-guide/net.png)](/documentation/articles/active-directory-devquickstarts-webapp-dotnet/) | [![Java](./media/active-directory-developers-guide/java.png)](/documentation/articles/active-directory-devquickstarts-webapp-java/) | [![AngularJS](./media/active-directory-developers-guide/angularjs.png)](/documentation/articles/active-directory-devquickstarts-angular/) | [![Javascript](./media/active-directory-developers-guide/javascript.png)](https://github.com/Azure-Samples/active-directory-javascript-singlepageapp-dotnet-webapi) | [![Node.js](./media/active-directory-developers-guide/nodejs.png)](/documentation/articles/active-directory-devquickstarts-openidconnect-nodejs/) | [![OpenID Connect](./media/active-directory-developers-guide/openid-connect.png)](/documentation/articles/active-directory-protocols-openid-connect-code/) |
 |:---:|:---:|:---:|:---:|:---:|:---:|
 | [.NET](/documentation/articles/active-directory-devquickstarts-webapp-dotnet/) |[Java](/documentation/articles/active-directory-devquickstarts-webapp-java/) |[AngularJS](/documentation/articles/active-directory-devquickstarts-angular/) |[Javascript](https://github.com/Azure-Samples/active-directory-javascript-singlepageapp-dotnet-webapi) |[Node.js](/documentation/articles/active-directory-devquickstarts-openidconnect-nodejs/) |[直接与 OpenID Connect 集成](/documentation/articles/active-directory-protocols-openid-connect-code/) |
