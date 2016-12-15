@@ -35,7 +35,7 @@
 
 [AZURE.INCLUDE [启动 PowerShell 会话](../../includes/sql-database-powershell.md)]
 
-## 数据库设置：创建资源组、服务器和防火墙规则
+##<a name="database-setup-create-a-resource-group-server-and-firewall-rule"></a> 数据库设置：创建资源组、服务器和防火墙规则
 
 获取针对所选 Azure 订阅运行 cmdlet 所需的访问权限后，下一步是建立一个资源组，使其中包含创建数据库所需的服务器。可以编辑下一条命令，以便使用所选择的有效位置。运行 **(Get-AzureRmLocation | Where-Object { $\_.Providers -eq "Microsoft.Sql" }).Location** 获取有效位置的列表。
 

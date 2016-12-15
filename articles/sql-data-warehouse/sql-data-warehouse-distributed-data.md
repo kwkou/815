@@ -35,7 +35,7 @@
 
 选择分布列时需考虑到性能，例如特异性、数据偏斜，以及在系统上运行的查询的类型。
 
-![分布式表](media/sql-data-warehouse-distributed-data/hash-distributed-table.png "分布式表")  
+![分布式表](./media/sql-data-warehouse-distributed-data/hash-distributed-table.png "分布式表")  
 
 
 * 一个行属于一个分布区。

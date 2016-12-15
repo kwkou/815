@@ -15,7 +15,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="08/03/2016"
-    wacn.date="09/26/2016"
+    wacn.date="12/15/2016"
     ms.author="monicar"/>
 
 
@@ -94,7 +94,7 @@ Azure 术语以及上述两份参考文档提供了适用于 Azure 和云行业�
 另请参阅 [Azure Resource Manager overview（Azure Resource Manager 概述）](/documentation/articles/resource-group-overview/)
 
 
-### <a name="resourcegroup"></a>资源组  
+### <a name="resourcegroup"></a><a name="resource-group"></a>资源组  
 Resource Manager 中的容器，用于保存应用程序的相关资源。资源组可以包含应用程序的所有资源，也可以只包含逻辑分组在一起的资源。你可以根据对组织有利的原则，决定如何将资源分配到资源组。  
 另请参阅 [Azure Resource Manager overview（Azure Resource Manager 概述）](/documentation/articles/resource-group-overview/)
 

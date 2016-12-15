@@ -52,7 +52,7 @@ SQL 数据仓库允许多达 1,024 个并发连接。所有 1,024 个连接都�
 
 > [AZURE.NOTE]  以独占方式在动态管理视图 (DMV) 或目录视图上执行的 *Select* 查询不受任何并发限制的约束。用户可以对系统进行监视，而不用考虑在系统中执行的查询的数目。
 
-## 资源类
+##<a name="resource-classes"></a> 资源类
 资源类有助于控制针对查询的内存分配和 CPU 周期。可以*数据库角色*的形式向用户分配四个资源类。这四个资源类是：**smallrc**、**mediumrc**、**largerc** 和 **xlargerc**。smallrc 类的用户获得的内存量较小，但是可以利用更高的并发性。与之相反，分配给 xlargerc 类的用户获得的内存量大，因此可以并发运行的查询数较少。
 
 默认情况下，每个用户都是小型资源类 (smallrc) 的成员。过程 `sp_addrolemember` 用于提高资源类的级别，过程 `sp_droprolemember` 用于降低资源类的级别。例如，以下命令会将 loaduser 的资源类提高到 largerc 级别：
@@ -258,7 +258,7 @@ Removed as these two are not confirmed / supported under SQLDW
 - REDISTRIBUTE
 -->
 
-##<a name="changing-user-resource-class-example"></a> 更改用户资源类示例
+##<a name="changing-user-resource-class-example"></a><a name="change-a-user-resource-class-example"></a> 更改用户资源类示例
 
 1. **创建登录名：**在托管 SQL 数据仓库数据库的 SQL Server 上与 **master** 数据库建立连接，然后执行以下命令。
 

@@ -15,7 +15,7 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="09/15/2016" 
-	wacn.date="11/21/2016" 
+	wacn.date="12/12/2016" 
 	ms.author="tomfitz"/>  
 
 
@@ -31,7 +31,7 @@
 
 目前，并非每种服务都支持门户或资源管理器。对于这些服务，需要使用[Azure 经典管理门户](https://manage.windowsazure.cn)。若要了解每种服务的状态，请参阅 [Azure 门户可用性图表](/support/service-dashboard/)。
 
-## 创建资源组
+##<a name="create-resource-group"></a> 创建资源组
 
 1. 若要创建空资源组，请依次选择“新建”>“管理”>“资源组”。
 

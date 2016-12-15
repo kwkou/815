@@ -37,7 +37,7 @@ SQL 数据仓库的体系结构对存储和计算功能进行了分隔，允许�
 
 <a name="scale-performance-bk"></a>
 
-## 缩放性能
+##<a name="scale-performance"></a> 缩放性能
 
 在 SQL 数据仓库中，你可以快速地进行性能缩放，只需增加或减少 CPU 计算资源、内存和 I/O 带宽即可。进行性能缩放时，只需调整 SQL 数据仓库分配给你的数据库的[数据仓库单位 (DWU)][data warehouse units (DWUs)] 数即可。SQL 数据仓库可以快速地进行更改，并处理针对硬件或软件的所有基础更改。
 

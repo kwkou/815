@@ -253,7 +253,7 @@ SQL 数据仓库不会自动创建或自动更新统计信息。因此，若要�
 <!--Article references-->
 [PolyBase in SQL Data Warehouse Tutorial]: /documentation/articles/sql-data-warehouse-get-started-load-with-polybase/
 [Load data with bcp]: /documentation/articles/sql-data-warehouse-load-with-bcp/
-[Statistics]: /documentation/articles/sql-data-warehouse-develop-statistics/
+[Statistics]: /documentation/articles/sql-data-warehouse-tables-statistics/
 [PolyBase guide]: /documentation/articles/sql-data-warehouse-load-polybase-guide/
 [Getting Started with the AzCopy Command-Line Utility]: /documentation/articles/storage-use-azcopy/
 [latest version of AzCopy]: /documentation/articles/storage-use-azcopy/
