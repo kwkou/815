@@ -16,7 +16,7 @@
     ms.topic="article"
     ms.date="11/01/2016"
     ms.author="billmath"
-    wacn.date="12/09/2016"/>
+    wacn.date="12/15/2016"/>
 
 # Lotus Domino 连接器技术参考
 本指南介绍 Lotus Domino 连接器。本文适用于以下产品：
@@ -359,7 +359,7 @@ Lotus Domino 连接器支持对 Internet 密码执行以下操作：
 ## 参考信息
 本部分列出 Lotus Domino 连接器的属性描述和属性要求等信息。
 
-### Lotus Notes 属性
+### Lotus Notes 属性 <a name="lotus-notes-properties"></a>
 将 Person 对象预配到 Lotus Domino 目录时，对象必须有一组已填入特定值的特定属性。只有创建操作才需要这些值。
 
 下表列出了这些属性及其描述。

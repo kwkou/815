@@ -14,13 +14,13 @@
    ms.tgt_pltfrm="na"
    ms.workload="identity"
    ms.date="09/01/2016"
-   wacn.date="10/11/2016"
+   wacn.date="12/15/2016"
    ms.author="billmath"/>
 
 # Azure AD Connect 同步：操作任务和注意事项
 本主题旨在介绍 Azure AD Connect 同步的操作任务。
 
-## 过渡模式
+## 过渡模式  <a name="staging-mode"></a>
 暂存模式可以用于许多方案，包括：
 
 -	高可用性。

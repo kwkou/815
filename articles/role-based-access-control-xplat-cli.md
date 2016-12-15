@@ -10,7 +10,7 @@
 <tags 
 	ms.service="azure-portal" 
 	ms.date="08/14/2015"
-	wacn.date="10/03/2015"/>
+	wacn.date="12/15/2015"/>
 
 # 使用 Azure 命令行界面 (Azure CLI) 管理基于角色的访问控制 #
 
@@ -141,7 +141,7 @@
 - [安装和配置 Azure CLI](/documentation/articles/xplat-cli-install/)
 
 
-- [Azure 博客](http://blogs.msdn.com/windowsazure)：了解 Azure 中的新功能。
+- [Azure 博客](http://blogs.msdn.com/azure)：了解 Azure 中的新功能。
 - [使用 Windows PowerShell 配置基于角色的访问控制](/documentation/articles/role-based-access-control-powershell/)
 - [故障排除基于角色的访问控制](/documentation/articles/role-based-access-control-troubleshooting/)
 

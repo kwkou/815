@@ -15,7 +15,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="na"
    ms.date="06/23/2016"
-   wacn.date="11/21/2016"
+   wacn.date="12/15/2016"
    ms.author="navale;tomfitz;"/>  
 
    
@@ -24,7 +24,7 @@
 > [AZURE.SELECTOR]
 - [Azure PowerShell](/documentation/articles/powershell-azure-resource-manager/)
 - [Azure CLI](/documentation/articles/xplat-cli-azure-resource-manager/)
-- [门户](/documentation/articles/azure-portal/resource-group-portal/)
+- [门户](/documentation/articles/resource-group-portal/)
 - [REST API](/documentation/articles/resource-manager-rest-api/)
 
 在每次调用 Azure Resource Manager、每次部署模板以及每次配置存储帐户时，都会对 Azure Resource Manager 的 RESTful API 进行一次或多次调用。本主题专门介绍这些 API 以及如何在完全不使用任何 SDK 的情况下调用它们。如果你想要完全控制对 Azure 的所有请求，或者你偏好语言的 SDK 无法使用或不支持你想要执行的操作，这些 API 可能非常有用。

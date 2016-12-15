@@ -14,7 +14,7 @@
 	ms.devlang="Java" 
 	ms.topic="article" 
 	ms.date="08/11/2016" 
-	wacn.date="09/26/2016" 
+	wacn.date="12/15/2016" 
 	ms.author="robmcm"/>
 
 # 下载 Azure SDK for Java
@@ -108,7 +108,7 @@
 ### 基本安装步骤
 
 1. 在 Eclipse 中，从“帮助”菜单中选择“安装新软件”。
-1. 输入站点位置 <http://dl.microsoft.com/eclipse>，然后按 **Enter**。
+1. 输入站点位置，然后按 **Enter**。
 1. 选择要安装的项目，然后单击“完成”。
 
 Azure Toolkit for Eclipse 使用最新版本的 Azure SDK。可使用 Web 平台安装程序 (WebPI) 从以下地址下载 <http://go.microsoft.com/fwlink/?LinkID=252838>。但是，如果你尚未安装 Azure SDK，则在你创建第一个 Azure 部署项目时，适用于 Eclipse 的 Azure 工具包将自动安装相应版本的 Azure SDK。

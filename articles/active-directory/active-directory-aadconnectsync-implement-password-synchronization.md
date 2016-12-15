@@ -17,7 +17,7 @@
     ms.topic="article"
     ms.date="11/11/2016"
     ms.author="markusvi;andkjell" 
-    wacn.date="12/09/2016"/>
+    wacn.date="12/15/2016"/>
 
 # 使用 Azure AD Connect 同步实现密码同步
 本主题提供所需的信息，帮助将用户密码从本地 Active Directory (AD) 同步到基于云的 Azure Active Directory (Azure AD)。
@@ -121,7 +121,7 @@ Active Directory 域服务以实际用户密码的哈希值表示形式存储密
 
 有关安全性与 FIPS 的信息，请参阅 [AAD Password Sync, Encryption and FIPS compliance](https://blogs.technet.microsoft.com/enterprisemobility/2014/06/28/aad-password-sync-encryption-and-fips-compliance/)（AAD 密码同步、加密和 FIPS 合规性）
 
-## 排查密码同步问题
+## 排查密码同步问题  <a name="troubleshooting-password-synchronization"></a>
 如果密码未按预期同步，请区分该密码是一部分用户的密码还是所有用户的密码。
 
 - 如果单个对象出现问题，请参阅[排查一个对象的密码同步问题](#troubleshoot-one-object-that-is-not-synchronizing-passwords)。

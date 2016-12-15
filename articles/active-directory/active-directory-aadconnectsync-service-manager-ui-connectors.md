@@ -14,7 +14,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="09/07/2016"
-	wacn.date="11/25/2016"
+	wacn.date="12/15/2016"
 	ms.author="billmath"/>
 
 
@@ -69,7 +69,7 @@
 ![Sync Service Manager](./media/active-directory-aadconnectsync-service-manager-ui/cssearchsubtree.png)
 可以从此处选择对象，选择"属性"，从源连接器空间到 Metaverse 再到目标连接器空间一直跟踪对象。
 
-## 在整个系统中跟踪对象及其数据
+## 在整个系统中跟踪对象及其数据  <a name="follow-an-object-and-its-data-through-the-system"></a>
 当你排查数据问题时，从源连接器空间到 Metaverse 再到目标连接器空间一直跟踪对象是一个关键过程，可从中了解为什么数据没有预期值。
 
 ### 连接器空间对象属性

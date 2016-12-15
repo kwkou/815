@@ -15,7 +15,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="na"
    ms.date="07/18/2016"
-   wacn.date="09/19/2016"
+   wacn.date="12/15/2016"
    ms.author="magoedte;tomfitz"/>
 
 # 资源管理器提供程序、区域、 API 版本和架构
@@ -97,7 +97,7 @@ Azure 资源管理器为你提供了一种新的方式来部署和管理构成�
 | 服务 | 已启用资源管理器 | REST API | 架构 | 快速入门模板 |
 | ------- | ------- | -------- | ------ | ------ |
 | CDN | 是 | [CDN REST](https://msdn.microsoft.com/zh-cn/library/azure/mt634456.aspx) | [2016-04-02](https://github.com/Azure/azure-resource-manager-schemas/blob/master/schemas/2016-04-02/Microsoft.Cdn.json) | [Microsoft.Cdn](https://github.com/Azure/azure-quickstart-templates/search?utf8=%E2%9C%93&q=%22Microsoft.Cdn%22&type=Code) |
-| 媒体服务 | 是 | [媒体服务 REST](https://msdn.microsoft.com/zh-cn/library/azure/hh973617.aspx) | [2015-10-01](https://github.com/Azure/azure-resource-manager-schemas/blob/master/schemas/2015-10-01/Microsoft.Media.json) |
+| 媒体服务 | 是 | 媒体服务 REST | [2015-10-01](https://github.com/Azure/azure-resource-manager-schemas/blob/master/schemas/2015-10-01/Microsoft.Media.json) |
 
 
 ## 混合集成
@@ -123,7 +123,7 @@ Azure Active Directory 可以使用 Resource Manager 为订阅启用基于角色
 | 自动化 | 是 | [自动化 REST](https://msdn.microsoft.com/zh-cn/library/azure/mt662285.aspx) | [2015-10-31](https://github.com/Azure/azure-resource-manager-schemas/blob/master/schemas/2015-10-31/Microsoft.Automation.json) | [Microsoft.Automation](https://github.com/Azure/azure-quickstart-templates/search?utf8=%E2%9C%93&q=%22Microsoft.Automation%22&type=Code) |
 | 密钥保管库 | 是 | [密钥保管库 REST](https://msdn.microsoft.com/zh-cn/library/azure/dn903609.aspx) | [密钥保管库](/documentation/articles/resource-manager-template-keyvault/)<br />[密钥保管库机密](/documentation/articles/resource-manager-template-keyvault-secret/) | [Microsoft.KeyVault](https://github.com/Azure/azure-quickstart-templates/search?utf8=%E2%9C%93&q=%22Microsoft.KeyVault%22&type=Code) |
 | 操作见解 | 是 | | | |
-| 计划程序 | 是 | [计划程序 REST](https://msdn.microsoft.com/zh-cn/library/azure/mt629143.aspx) | [2014-08-01](https://github.com/Azure/azure-resource-manager-schemas/blob/master/schemas/2014-08-01/Microsoft.Scheduler.json) | [Microsoft.Scheduler](https://github.com/Azure/azure-quickstart-templates/search?utf8=%E2%9C%93&q=%22Microsoft.Scheduler%22&type=Code) |
+| 计划程序 | 是 | [计划程序 REST](https://msdn.microsoft.com/zh-cn/library/azure/mt629143.aspx) | 2014-08-01 | [Microsoft.Scheduler](https://github.com/Azure/azure-quickstart-templates/search?utf8=%E2%9C%93&q=%22Microsoft.Scheduler%22&type=Code) |
 | 安全性（预览版） | 是 | [安全 REST](https://msdn.microsoft.com/zh-cn/library/azure/mt704034.aspx) | | [Microsoft.Security](https://github.com/Azure/azure-quickstart-templates/search?utf8=%E2%9C%93&q=%22Microsoft.Security%22&type=Code) |
 
 ## 资源管理器

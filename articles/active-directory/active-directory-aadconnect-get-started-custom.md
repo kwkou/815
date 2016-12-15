@@ -17,7 +17,7 @@
 	ms.topic="get-started-article"
 	ms.date="09/13/2016"
 	ms.author="billmath;andkjell"
-	wacn.date="10/11/2016"/>  
+	wacn.date="12/15/2016"/>  
 
 
 # Azure AD Connect 的自定义安装
@@ -83,7 +83,7 @@
 >[AZURE.WARNING]
 所有 Office 365 工作负荷都不允许使用替代 ID。若要了解详细信息，请参阅[配置备用登录 ID](https://technet.microsoft.com/zh-cn/library/dn659436.aspx)。
 
-### 域和 OU 筛选
+### 域和 OU 筛选 <a name="domain-and-ou-filtering"></a>
 默认情况下将同步所有域和 OU。如果你不想将某些域或 OU 同步到 Azure AD，可以取消选择这些域和 OU。  
 ![DomainOU 筛选](./media/active-directory-aadconnect-get-started-custom/domainoufiltering.png)
 向导中的此页面用于配置基于域的筛选。若要了解详细信息，请参阅[基于域的筛选](/documentation/articles/active-directory-aadconnectsync-configure-filtering/)。
@@ -162,7 +162,7 @@ Azure AD 应用程序和属性筛选 | 通过启用 Azure AD 应用和属性筛�
 - 已启用远程管理的、用作 Web 应用程序代理服务器的 Windows Server 2012 R2 服务器
 - 要使用的联合身份验证服务名称（例如 sts.contoso.com）的 SSL 证书
 
-### AD FS 配置先决条件
+### AD FS 配置先决条件 <a name="ad-fs-configuration-pre-requisites"></a>
 若要使用 Azure AD Connect 配置 AD FS 场，请确保已在远程服务器上启用 WinRM。此外，请仔细查看[表 3 - Azure AD Connect 和联合服务器/WAP](/documentation/articles/active-directory-aadconnect-ports/) 中列出的端口要求。
 
 ### 创建新的 AD FS 场或使用现有的 AD FS 场
