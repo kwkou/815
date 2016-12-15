@@ -164,11 +164,11 @@ Azure PowerShell 1.0：
 
 Azure PowerShell 0.9.8：
 
-	Get-AzureStreamAnalyticsQuota –Location "China East" 
+	Get-AzureStreamAnalyticsQuota –Location "chinaeast" 
 
 Azure PowerShell 1.0：
 
-	Get-AzureRMStreamAnalyticsQuota –Location "China East" 
+	Get-AzureRMStreamAnalyticsQuota –Location "chinaeast" 
 
 此 PowerShell 命令返回有关美中地区配额和流式处理单位使用情况的信息。
 
