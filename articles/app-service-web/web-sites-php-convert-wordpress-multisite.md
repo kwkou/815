@@ -14,7 +14,7 @@
 	ms.devlang="PHP" 
 	ms.topic="article" 
 	ms.date="08/11/2016" 
-	wacn.date="09/26/2016" 
+	wacn.date="12/16/2016" 
 	ms.author="robmcm"/>
 
 
@@ -29,7 +29,7 @@
 
 假定你现在具有 WordPress 安装。如果没有，请按照 [在 Azure 中从库中创建 WordPress 网站][website-from-gallery] 中提供的指导操作。
 
-通常，将现有 WordPress 单站点安装转换为 Multisite 非常简单，此处的许多初始步骤直接来自在 [WordPress Codex](http://codex.wordpress.org) 上[创建网络][wordpress-codex-create-a-network]页面。
+通常，将现有 WordPress 单站点安装转换为 Multisite 非常简单，此处的许多初始步骤直接来自 [WordPress Codex](http://codex.wordpress.org) 上[“创建网络”][wordpress-codex-create-a-network]页面。
 
 让我们开始吧。
 
@@ -55,7 +55,7 @@
 
 ![“网络设置”屏幕][wordpress-network-setup]
 
-本教程使用 *子目录* 站点架构，因为它应始终运行，我们在本教程的后面将为每个子站点设置自定义域。但是，如果通过 [Azure 门户预览](https://portal.azure.cn)映射域并正确设置通配符 DNS，则应能够设置子域安装。
+本教程使用*子目录*站点架构，因为它应始终运行，我们在本教程的后面将为每个子站点设置自定义域。但是，如果通过 [Azure 门户预览](https://portal.azure.cn)映射域并正确设置通配符 DNS，则应能够设置子域安装。
 
 有关子域和子目录设置的详细信息，请参阅 WordPress Codex 上的[多站点网络的类型][wordpress-codex-types-of-networks]一文。
 
@@ -90,7 +90,7 @@
 
 ## 验证域
 
-在 Azure Web Apps 允许你将域映射到站点前，你先需要验证你是否有映射域的权限。为此，你必须将新的 CNAME 记录添加到 DNS 项。
+在 Azure Web Apps 允许你将域映射到站点前，你首先需要验证自己是否有映射域的权限。为此，你必须将新的 CNAME 记录添加到 DNS 项。
 
 * 登录到域的 DNS 管理器
 * 创建新的 CNAME *awverify*
@@ -102,7 +102,7 @@
 
 通过 Azure 门户预览返回到 Web 应用，单击“设置”，然后单击“自定义域和 SSL”。
 
-显示 *SSL 设置* 时，请在显示的字段里输入希望分配给 Web 应用的所有域。如果某个域未在此处列出，则无法在 WordPress 中将该域用于映射，无论设置域 DNS 的方式如何。
+显示 *SSL 设置*时，请在显示的字段里输入希望分配给 Web 应用的所有域。如果某个域未在此处列出，则无法在 WordPress 中将该域用于映射，无论设置域 DNS 的方式如何。
 
 ![“管理自定义域”对话框][wordpress-manage-domains]
 
@@ -114,16 +114,16 @@
 
 如果已成功执行其他步骤，则你现在可以通过 DNS A 记录将域分配给 Azure Web 应用。
 
-此处请务必记住，Azure Web 应用同时接受 CNAME 和 A 记录，但 *必须* 使用 A 记录才能启用正确的域映射。CNAME 无法转发到 Azure 使用 YOUR\_DOMAIN.chinacloudsites.cn 为你创建的其他 CNAME。
+此处请务必记住，Azure Web 应用同时接受 CNAME 和 A 记录，但*必须*使用 A 记录才能启用正确的域映射。CNAME 无法转发到 Azure 使用 YOUR\_DOMAIN.chinacloudsites.cn 为你创建的其他 CNAME。
 
 使用上一个步骤中的 IP 地址可返回你的 DNS 管理器并将 A 记录设置为指向该 IP。
 
 
 ## 安装和设置插件
 
-WordPress Multisite 当前没有用于映射自定义域的内置方法。但是，你可以利用一个名为[WordPress MU 域映射][wordpress-plugin-wordpress-mu-domain-mapping]的插件来为你添加该功能。登录到你网站的“网络管理员”部分，并安装“WordPress MU 域映射”插件。
+WordPress Multisite 当前没有用于映射自定义域的内置方法。但是，你可以利用一个名为 [WordPress MU 域映射][wordpress-plugin-wordpress-mu-domain-mapping]的插件来添加该功能。登录到你网站的“网络管理员”部分，并安装“WordPress MU 域映射”插件。
 
-安装并激活该插件后，请访问 “设置”>“域映射”来配置插件。在第一个文本框“服务器 IP 地址”中，输入用于设置域的 A 记录的 IP 地址。设置所需的任何“域选项”（通常使用默认值即可）并单击“保存”。
+安装并激活该插件后，访问 “设置”>“域映射”来配置插件。在第一个文本框“服务器 IP 地址”中，输入用于设置域的 A 记录的 IP 地址。设置所需的任何“域选项”（通常使用默认值即可）并单击“保存”。
 
 ## 映射域
 
@@ -133,7 +133,7 @@ WordPress Multisite 当前没有用于映射自定义域的内置方法。但是
 
 ## 再执行一次此操作
 
-利用 Azure Web 应用，可以向一个 Web 应用添加无数个域。若要添加另一个域，你需要为每个域执行**验证域**和**设置域 A 记录**部分中所述的操作。
+利用 Azure Web Apps，可以向一个 Web 应用添加无数个域。若要添加另一个域，你需要为每个域执行**验证域**和**设置域 A 记录**部分中所述的操作。
 
 ## 发生的更改
 * 有关从网站更改为 App Service 的指南，请参阅 [Azure App Service 及其对现有 Azure 服务的影响](/documentation/articles/app-service-changes-existing-services/)
@@ -151,4 +151,4 @@ WordPress Multisite 当前没有用于映射自定义域的内置方法。但是
 
  
 
-<!---HONumber=Mooncake_0919_2016-->
+<!---HONumber=Mooncake_Quality_Review_1202_2016-->

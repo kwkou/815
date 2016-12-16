@@ -15,20 +15,20 @@
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
    ms.date="09/07/2016"
-   wacn.date="10/25/2016"
+   wacn.date="12/16/2016"
    ms.author="larryfr"/>
 
 #使用 Curl 在 HDInsight 中以 Hadoop 运行 Hive 查询
 
 [AZURE.INCLUDE [hive-selector](../../includes/hdinsight-selector-use-hive.md)]
 
-在本文档中，你将学习如何使用 Curl 在 Azure HDInsight 群集上对 Hadoop 运行 Hive 查询。
+本文介绍如何使用 Curl 在 Azure HDInsight 群集上对 Hadoop 运行 Hive 查询。
 
-本文档使用 Curl 演示如何通过使用原始 HTTP 请求来与 HDInsight 交互，以便运行、监视和检索 Hive 查询的结果。若要执行这些操作，需要使用 HDInsight 群集提供的 WebHCat REST API（前称 Templeton）。
+本文档使用 Curl 演示如何通过使用原始 HTTP 请求来与 HDInsight 交互，以便运行、监视和检索 Hive 查询的结果。要执行这些操作，需要使用 HDInsight 群集提供的 WebHCat REST API（前称 Templeton）。
 
 ## <a id="prereq"></a>先决条件
 
-若要完成本文中的步骤，你将需要：
+要完成本文中的步骤，需要：
 
 * HDInsight 群集上的 Hadoop（基于 Windows）
 
@@ -42,7 +42,7 @@
 > <p>对本部分中的所有命令，请将 **USERNAME** 替换为在群集上进行身份验证群集的用户，并将 **PASSWORD** 替换为用户帐户的密码。将 **CLUSTERNAME** 替换为群集名称。
 > <p>REST API 通过[基本身份验证](http://en.wikipedia.org/wiki/Basic_access_authentication)进行保护。你始终应该使用安全 HTTP (HTTPS) 来发出请求，以确保安全地将凭据发送到服务器。
 
-1. 在命令行中，使用以下命令验证你是否可以连接到 HDInsight 群集。
+1. 在命令行中，使用以下命令验证是否可以连接到 HDInsight 群集。
 
         curl -u USERNAME:PASSWORD -G https://CLUSTERNAME.azurehdinsight.cn/templeton/v1/status
 
@@ -55,7 +55,7 @@
     * **-u** - 用来对请求进行身份验证的用户名和密码。
     * **-G** - 指出这是 GET 请求。
 
-    所有请求的 URL 开头 **https://CLUSTERNAME.azurehdinsight.cn/templeton/v1** 都是一样的。路径 **/status** 指示，请求是返回服务器的 WebHCat（也称为 Templeton）的状态。你还可以通过使用以下命令请求 Hive 的版本：
+    所有请求的 URL 开头 **https://CLUSTERNAME.azurehdinsight.cn/templeton/v1** 都是一样的。路径 **/status** 指示，请求是返回服务器的 WebHCat（也称为 Templeton）的状态。还可以通过使用以下命令请求 Hive 的版本：
 
         curl -u USERNAME:PASSWORD -G https://CLUSTERNAME.azurehdinsight.cn/templeton/v1/version/hive
 
@@ -77,13 +77,13 @@
 
         * **statusdir** - 此作业的状态要写入到的目录。
 
-    这些语句将执行以下操作：
+    这些语句可执行以下操作：
 
     * **DROP TABLE** - 删除表和数据文件（如果该表已存在）。
 
-    * **CREATE EXTERNAL TABLE** - 在 Hive 中创建新的“外部”表。外部表仅在 Hive 中存储表定义。数据将保留在原始位置。
+    * **CREATE EXTERNAL TABLE** - 在 Hive 中创建新“外部”表。外部表仅在 Hive 中存储表定义。数据将保留在原始位置。
 
-		> [AZURE.NOTE] 当你预期以外部源更新基础数据（例如自动化数据上载过程），或以其他 MapReduce 操作更新基础数据，但希望 Hive 查询始终使用最新数据时，必须使用外部表。
+		> [AZURE.NOTE] 如果希望以外部源更新基础数据（例如自动化数据上载过程），或以其他 MapReduce 操作更新基础数据，但希望 Hive 查询始终使用最新数据时，必须使用外部表。
 		> <p>删除外部表**不会**删除数据，只会删除表定义。
 
     * **ROW FORMAT** - 告知 Hive 如何设置数据的格式。在此情况下，每个日志中的字段以空格分隔。
@@ -102,7 +102,7 @@
 
         {"id":"job_1415651640909_0026"}
 
-3. 若要检查作业的状态，请使用以下命令。将 **JOBID** 替换为上一步骤返回的值。例如，如果返回值为 `{"id":"job_1415651640909_0026"}`，则 **JOBID** 将是 `job_1415651640909_0026`。
+3. 要检查作业的状态，请使用以下命令。将 **JOBID** 替换为上一步骤返回的值。例如，如果返回值为 `{"id":"job_1415651640909_0026"}`，则 **JOBID** 将是 `job_1415651640909_0026`。
 
         curl -G -u USERNAME:PASSWORD -d user.name=USERNAME https://CLUSTERNAME.azurehdinsight.cn/templeton/v1/jobs/JOBID | jq .status.state
 
@@ -110,25 +110,25 @@
 
     > [AZURE.NOTE] 此 Curl 请求返回具有作业相关信息的 JavaScript 对象表示法 (JSON) 文档；使用 jq 可以仅检索状态值。
 
-4. 在作业的状态更改为 **SUCCEEDED** 后，你可以从 Azure Blob 存储中检索作业的结果。随查询一起传递的 `statusdir` 参数包含输出文件的位置；在本例中为 **wasbs:///example/curl**。此地址会将作业的输出存储在 HDInsight 群集所用的默认存储容器的 **example/curl** 目录中。
+4. 在作业的状态更改为 **SUCCEEDED** 后，可以从 Azure Blob 存储中检索作业的结果。随查询一起传递的 `statusdir` 参数包含输出文件的位置；在本例中为 **wasbs:///example/curl**。此地址会将作业的输出存储在 HDInsight 群集所用的默认存储容器的 **example/curl** 目录中。
 
-    可以使用 [Azure CLI](/documentation/articles/xplat-cli-install/) 列出并下载这些文件。例如，若要列出 **example/curl** 中的文件，请使用以下命令：
+    可以使用 [Azure CLI](/documentation/articles/xplat-cli-install/) 列出并下载这些文件。例如，要列出 **example/curl** 中的文件，请使用以下命令：
 
 		azure storage blob list <container-name> example/curl
 
-	若要下载文件，请使用以下命令：
+	要下载文件，请使用以下命令：
 
 		azure storage blob download <container-name> <blob-name> <destination-file>
 
-	> [AZURE.NOTE] 你必须使用 `-a` 和 `-k` 参数指定包含 Blob 的存储帐户名称，或者设置 **AZURE\_STORAGE\_ACCOUNT** 和 **AZURE\_STORAGE\_ACCESS\_KEY** 环境变量。请参阅 <a href="/documentation/articles/hdinsight-upload-data/" target="\_blank" 了解详细信息。
+	> [AZURE.NOTE] 必须使用 `-a` 和 `-k` 参数指定包含 Blob 的存储帐户名称，或者设置 **AZURE\_STORAGE\_ACCOUNT** 和 **AZURE\_STORAGE\_ACCESS\_KEY** 环境变量。请参阅 <a href="/documentation/articles/hdinsight-upload-data/" target="\_blank" 了解详细信息。
 
 6. 使用以下语句创建名为 **errorLogs** 的新“内部”表：
 
         curl -u USERNAME:PASSWORD -d user.name=USERNAME -d execute="set+hive.execution.engine=tez;CREATE+TABLE+IF+NOT+EXISTS+errorLogs(t1+string,t2+string,t3+string,t4+string,t5+string,t6+string,t7+string)+STORED+AS+ORC;INSERT+OVERWRITE+TABLE+errorLogs+SELECT+t1,t2,t3,t4,t5,t6,t7+FROM+log4jLogs+WHERE+t4+=+'[ERROR]'+AND+INPUT__FILE__NAME+LIKE+'%25.log';SELECT+*+from+errorLogs;" -d statusdir="wasbs:///example/curl" https://CLUSTERNAME.azurehdinsight.cn/templeton/v1/hive
 
-    这些语句将执行以下操作：
+    这些语句可执行以下操作：
 
-    * **CREATE TABLE IF NOT EXISTS** - 创建表（如果该表尚不存在）。由于未使用 **EXTERNAL** 关键字，因此这是一个“内部”表，它存储在 Hive 数据仓库中并完全受 Hive 的管理。
+    * **CREATE TABLE IF NOT EXISTS** - 创建表（如果该表不存在）。由于未使用 **EXTERNAL** 关键字，因此这是一个“内部”表，它存储在 Hive 数据仓库中并完全由 Hive 管理。
 
 		> [AZURE.NOTE] 与外部表不同，删除内部表会同时删除基础数据。
 
@@ -141,7 +141,7 @@
 
 ## <a id="summary"></a>摘要
 
-如本文档中所示，你可以使用原始 HTTP 请求来运行、监视和查看 HDInsight 群集上的 Hive 作业的结果。
+如本文档中所示，可以使用原始 HTTP 请求来运行、监视和查看 HDInsight 群集上的 Hive 作业的结果。
 
 有关本文中使用的 REST 接口的详细信息，请参阅 <a href="https://cwiki.apache.org/confluence/display/Hive/WebHCat+Reference" target="_blank">WebHCat 参考</a>。
 
@@ -151,13 +151,13 @@
 
 * [将 Hive 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-hive/)
 
-有关 HDInsight 上的 Hadoop 的其他使用方法的信息：
+有关 HDInsight 上 Hadoop 的其他使用方法的信息：
 
 * [将 Pig 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-pig/)
 
 * [将 MapReduce 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-mapreduce/)
 
-如果将 Tez 与 Hive 配合使用，请参阅以下文档以了解调试信息：
+如果将 Tez 与 Hive 配合使用，请参阅以下文档，了解调试信息：
 
 * [在基于 Windows 的 HDInsight 上使用 Tez UI](/documentation/articles/hdinsight-debug-tez-ui/)
 
@@ -189,6 +189,4 @@
 [Powershell-install-configure]: /documentation/articles/powershell-install-configure/
 [powershell-here-strings]: http://technet.microsoft.com/zh-cn/library/ee692792.aspx
 
-
-
-<!---HONumber=Mooncake_0411_2016-->
+<!---HONumber=Mooncake_Quality_Review_1202_2016-->

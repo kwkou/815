@@ -1,5 +1,5 @@
 <properties
- pageTitle="使用 HDInsight 上的 Storm 和 HBase 按时间对事件进行关联"
+ pageTitle="使用 HDInsight 上的 Storm 和 HBase 按时间关联事件"
  description="了解如何使用 HDInsight 上的 Storm 和 HBase 将不同时间到达的事件关联起来。"
  services="hdinsight"
  documentationCenter=""
@@ -15,20 +15,20 @@
  ms.tgt_pltfrm="na"
  ms.workload="big-data"
  ms.date="09/27/2016"
- wacn.date="11/25/2016"
+ wacn.date="12/16/2016"
  ms.author="larryfr"/>
 
-# 使用 HDInsight 上的 Storm 和 HBase 按时间对事件进行关联
+# 使用 HDInsight 上的 Storm 和 HBase 按时间关联事件
 
 [AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-sdk-developer-differences.md)]
 
-通过使用 Apache Storm 的持久数据存储，你可以将不同时间到达的数据条目关联起来。例如，将用户会话的登录事件和注销事件关联起来即可计算该会话的持续时间。
+通过使用 Apache Storm 的持久数据存储，可以将不同时间到达的数据条目关联起来。例如，将用户会话的登录事件和注销事件关联起来，即可计算该会话的持续时间。
 
-在本文档中，你将学习如何创建基本的 C# Storm 拓扑来跟踪用户会话的登录事件和注销事件，从而计算出会话的持续时间。拓扑使用 HBase 作为永久性数据存储。HBase 还可用于对历史数据执行批查询，以便获得额外的信息，例如在特定的时段有多少用户会话启动或结束。
+本文介绍如何创建基本的 C# Storm 拓扑来跟踪用户会话的登录事件和注销事件，从而计算出会话的持续时间。拓扑使用 HBase 作为永久性数据存储。HBase 还可用于对历史数据执行批查询，以便获得额外的信息，例如在特定的时段有多少用户会话启动或结束。
 
 ## 先决条件
 
--	Visual Studio 和 HDInsight Tools for Visual Studio：有关安装信息，请参阅 [Get started using the HDInsight tools for Visual Studio（HDInsight Tools for Visual Studio 入门）](/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started/)。
+-	Visual Studio 和适用于 Visual Studio 的 HDInsight 工具：有关安装信息，请参阅[开始使用适用于 Visual Studio 的 HDInsight 工具](/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started/)。
 
 -	Apache Storm on HDInsight 群集（基于 Windows）。这将运行 Storm 拓扑，以便处理传入的数据并将其存储在 HBase 中。
 
@@ -67,11 +67,11 @@
 
 示例拓扑由以下组件组成：
 
-- 	Session.cs: 通过创建随机会话 ID、开始时间以及会话持续时间来模拟用户会话
+- 	Session.cs：通过创建随机会话 ID、开始时间以及会话持续时间来模拟用户会话
 
-- 	Spout.cs: 创建 100 个会话，发出一个开始事件，等待每个会话随机超时，然后发出一个结束事件。然后回收结束的会话，以便生成新的会话。
+- 	Spout.cs：创建 100 个会话，发出一个开始事件，等待每个会话随机超时，然后发出一个结束事件。然后回收结束的会话，以便生成新会话。
 
--	HBaseLookupBolt.cs：使用的会话 ID 来查找 HBase 中的会话信息。处理结束事件时，它会查找相应的开始事件，然后计算会话的持续时间。
+-	HBaseLookupBolt.cs：使用会话 ID 查找 HBase 中的会话信息。处理结束事件时，它会查找相应的开始事件，然后计算会话的持续时间。
 
 -	HBaseBolt.cs：将信息存储到 HBase。
 
@@ -111,7 +111,7 @@
 
 2. 在“解决方案资源管理器”中，右键单击“SessionInfo”项目，然后选择“属性”。
 
-	![属性已选定的菜单的屏幕快照](./media/hdinsight-storm-correlation-topology/selectproperties.png)
+	![已选择属性的菜单屏幕快照](./media/hdinsight-storm-correlation-topology/selectproperties.png)
 
 3. 选择**“设置”**，然后设置以下值：
 
@@ -151,23 +151,25 @@
 
 4.  保存属性，然后生成项目。
 
-5.	在“解决方案资源管理器”中，右键单击项目，然后选择“提交到 Storm on HDInsight”。如果出现提示，请输入你 Azure 订阅的凭据。
+5.	在“解决方案资源管理器”中，右键单击项目，然后选择“提交到 Storm on HDInsight”。如果出现提示，请输入 Azure 订阅的凭据。
 
 	![提交到 storm 菜单项的图像](./media/hdinsight-storm-correlation-topology/submittostorm.png)
 
-6.	在**“提交拓扑”**对话框中，选择将运行此拓扑的 Storm 群集。
+6.	在“提交拓扑”对话框中，选择将运行此拓扑的 Storm 群集。
 
 	> [AZURE.NOTE] 第一次提交拓扑时，可能需要几秒钟来检索 HDInsight 群集名称。
 
-7.	一旦上载拓扑并将其提交到该群集，**“Storm 拓扑视图”**将打开并显示正在运行的拓扑。选择 **CorrelationTopology**，然后使用页面右上角的刷新按钮刷新拓扑信息。
+7.	一旦上载拓扑并将其提交到该群集，“Storm 拓扑视图”将打开并显示正在运行的拓扑。选择 **CorrelationTopology**，然后使用页面右上角的刷新按钮刷新拓扑信息。
 
 	![拓扑视图的图像](./media/hdinsight-storm-correlation-topology/topologyview.png)
 
-	当拓扑开始生成数据时，**“已发出”**列中的值将递增。
+	当拓扑开始生成数据时，“已发出”列中的值将递增。
 
-	> [AZURE.NOTE] 如果**“Storm 拓扑视图”**不会自动打开，可使用以下步骤将其打开：
+	> [AZURE.NOTE] 如果“Storm 拓扑视图”未自动打开，可按以下步骤将其打开：
+	><p>
 	><p> 1. 在“解决方案资源管理器”中，展开“Azure”，然后展开“HDInsight”。
-	><p> 2. 右键单击在其上运行拓扑的 Storm 群集，然后选择**“查看 Storm 拓扑”**
+	><p>
+	><p> 2. 右键单击在其上运行拓扑的 Storm 群集，然后选择“查看 Storm 拓扑”
 
 ## 查询数据
 
@@ -175,23 +177,23 @@
 
 1. 返回到 **SessionInfo** 项目。如果该项目未运行，可启动一个新实例。
 
-2. 出现提示时，选择 **s** 即可搜索开始事件。系统会提示你输入开始时间和结束时间，以便定义一个时间范围 - 将只返回这两个时间之间的事件。
+2. 出现提示时，选择 **s** 即可搜索开始事件。系统会提示输入开始时间和结束时间，以便定义一个时间范围 - 只返回这两个时间之间的事件。
 
 	输入开始和结束时间时使用以下格式：HH:MM 以及“am”或“pm”。例如，11:20pm。
 
-	由于刚刚启动拓扑，可使用部署之前的某个时间作为开始时间，而使用现在的时间作为结束时间。这应该会捕获大多数在启动时生成的开始事件。当查询处于运行状态时，你会看到如下所示的条目列表：
+	由于刚刚启动拓扑，可使用部署之前的某个时间作为开始时间，而使用现在的时间作为结束时间。这应该会捕获大多数在启动时生成的开始事件。当查询处于运行状态时，可看到如下所示的条目列表：
 
 		Session e6992b3e-79be-4991-afcf-5cb47dd1c81c started at 6/5/2015 6:10:15 PM. Timestamp = 1433527820737
 
-搜索结束事件与搜索开始事件在原理上是相同的。不过，结束事件是在开始事件之后 1 到 5 分钟随机生成的。因此，你可能需要尝试数个时间范围才能找到结束事件。结束事件还会包含会话持续时间 - 开始事件时间与结束事件时间之差。下面是结束事件数据的一个示例：
+搜索结束事件与搜索开始事件在原理上是相同的。不过，结束事件是在开始事件之后 1 到 5 分钟随机生成的。因此，可能需要尝试数个时间范围才能找到结束事件。结束事件还会包含会话持续时间 - 开始事件时间与结束事件时间之差。下面是结束事件数据的一个示例：
 
 	Session fc9fa8e6-6892-4073-93b3-a587040d892e lasted 2 minutes, and ended at 6/5/2015 6:12:15 PM
 
-> [AZURE.NOTE] 虽然你输入的时间值为本地时间，但从查询返回的时间将是 UTC。
+> [AZURE.NOTE] 虽然输入的时间值为本地时间，但从查询返回的时间将是 UTC。
 
 ##停止拓扑
 
-当你准备停止拓扑时，请返回到 Visual Studio 中的 **CorrelationTopology** 项目。在**“Storm 拓扑视图”**中，选择拓扑，然后使用拓扑视图顶部的**“终止”**按钮。
+准备停止拓扑时，请返回到 Visual Studio 中的 **CorrelationTopology** 项目。在“Storm 拓扑视图”中，选择拓扑，然后使用拓扑视图顶部的**“终止”**按钮。
 
 ##删除群集
 
@@ -199,6 +201,6 @@
 
 ##后续步骤
 
-如需更多 Storm 示例，请参阅[Storm on HDInsight 拓扑示例](/documentation/articles/hdinsight-storm-example-topology/)。
+如需更多 Storm 示例，请参阅 [Storm on HDInsight 拓扑示例](/documentation/articles/hdinsight-storm-example-topology/)。
 
-<!---HONumber=Mooncake_0725_2016-->
+<!---HONumber=Mooncake_Quality_Review_1202_2016-->
