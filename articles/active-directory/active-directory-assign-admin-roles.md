@@ -14,7 +14,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="08/31/2016"
-	wacn.date="10/11/2016"
+	wacn.date="12/16/2016"
 	ms.author="curtand"/>
 
 # 在 Azure Active Directory 中分配管理员角色
@@ -144,7 +144,5 @@ In | 有权执行的操作
 - [管理用户](/documentation/articles/active-directory-create-users/)
 
 - [管理密码](/documentation/articles/active-directory-manage-passwords/)
-
-- [管理组](/documentation/articles/active-directory-manage-groups/)
 
 <!---HONumber=Mooncake_0926_2016-->

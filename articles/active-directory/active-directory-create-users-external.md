@@ -15,7 +15,7 @@
 	ms.devlang="na"
 	ms.topic="get-started-article"
 	ms.date="09/22/2016"
-	wacn.date="11/21/2016"
+	wacn.date="12/16/2016"
 	ms.author="curtand"/>
 
 # 在 Azure Active Directory 中添加来自其他目录或合作伙伴公司的用户
@@ -83,6 +83,5 @@
 - [向 Azure Active Directory 添加新用户](/documentation/articles/active-directory-create-users/)
 - [管理 Azure AD](/documentation/articles/active-directory-administer/)
 - [在 Azure AD 中管理密码](/documentation/articles/active-directory-manage-passwords/)
-- [在 Azure AD 中管理组](/documentation/articles/active-directory-manage-groups/)
 
 <!---HONumber=Mooncake_1024_2016-->

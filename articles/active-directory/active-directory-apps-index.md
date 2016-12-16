@@ -14,7 +14,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="09/02/2016"
-	wacn.date="10/11/2016"
+	wacn.date="12/16/2016"
 	ms.author="markvi"/>
 
 #有关 Azure Active Directory 中应用程序管理的文章索引
@@ -122,7 +122,7 @@ Azure AD Connect 适用于[所有版本的 Azure Active Directory](/pricing/deta
 
 | 文章指南 | |
 | :---: | --- |
-| Azure AD 访问管理功能的概述 | [有关管理对应用的访问的简介](/documentation/articles/active-directory-managing-access-to-apps/)<br /><br />[Azure AD 中访问管理的工作原理](/documentation/articles/active-directory-manage-groups/)|
+| Azure AD 访问管理功能的概述 | [有关管理对应用的访问的简介](/documentation/articles/active-directory-managing-access-to-apps/)<br /><br />|
 
 
 

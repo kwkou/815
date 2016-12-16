@@ -15,7 +15,7 @@
 	ms.devlang="na"
 	ms.topic="get-started-article"
 	ms.date="09/22/2016"
-	wacn.date="10/31/2016"
+	wacn.date="12/16/2016"
 	ms.author="curtand"/>  
 
 
@@ -84,7 +84,6 @@
 - [在 Azure Active Directory 中添加来自其他目录或合作伙伴公司的用户](/documentation/articles/active-directory-create-users-external/)
 - [管理 Azure AD](/documentation/articles/active-directory-administer/)
 - [在 Azure AD 中管理密码](/documentation/articles/active-directory-manage-passwords/)
-- [在 Azure AD 中管理组](/documentation/articles/active-directory-manage-groups/)
 
 <!--Image references-->
 [1]: ./media/active-directory-create-users/RBACDirConfigTab.png
