@@ -15,16 +15,16 @@
  ms.tgt_pltfrm="na"
  ms.workload="big-data"
  ms.date="08/16/2016"
- wacn.date="11/25/2016"
+ wacn.date="12/16/2016"
  ms.author="larryfr"/>
 
 # 使用 Power BI 直观显示 Apache Storm 拓扑中的数据
 
 [AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-sdk-developer-differences.md)]
 
-Power BI 允许你以可视方式将数据显示为报表。使用适用于 Storm on HDInsight 的 Visual Studio 模板，可以轻松地将 Apache Storm on HDInsight 群集上运行的拓扑中的数据存储到 SQL Azure，然后使用 Power BI 将数据可视化。
+Power BI 允许以可视方式将数据显示为报表。使用适用于 Storm on HDInsight 的 Visual Studio 模板，可以轻松地将 Apache Storm on HDInsight 群集上运行的拓扑中的数据存储到 SQL Azure，然后使用 Power BI 将数据可视化。
 
-在本文档中，你将学习如何使用 Power BI 基于 Apache Storm 生成的数据创建报表，然后将其存储到 Azure SQL 数据库中。
+在本文档中，将学习如何使用 Power BI 基于 Apache Storm 生成的数据创建报表，然后将其存储到 Azure SQL 数据库中。
 
 ## 先决条件
 
@@ -40,37 +40,37 @@ Power BI 允许你以可视方式将数据显示为报表。使用适用于 Stor
 
     * [Visual Studio 2015](https://www.visualstudio.com/downloads/download-visual-studio-vs.aspx)
 
-* HDInsight Tools for Visual Studio：有关安装方面的信息，请参阅 [HDInsight Tools for Visual Studio 入门](/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started/)。
+* 用于 Visual Studio 的 HDInsight 工具：有关安装方面的信息，请参阅 [用于 Visual Studio 的 HDInsight 工具入门](/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started/)。
 
 ## 工作原理
 
-本示例包含一个可随机生成 Internet Information Services (IIS) 日志数据的 C# Storm 拓扑。此数据将写入 SQL 数据库，随后用于在 Power BI 中生成报表。
+本示例包含随机生成 Internet Information Services (IIS) 日志数据的 C# Storm 拓扑。将此数据写入 SQL 数据库，随后用于在 Power BI 中生成报表。
 
-下面是实现本示例的主要功能的文件列表。
+以下是实现本示例的主要功能的文件列表。
 
 * **SqlAzureBolt.cs**：将 Storm 拓扑中生成的信息写入 SQL 数据库。
 
-* **IISLogsTable.sql**：Transact-SQL 语句，用于生成数据所要存储到的数据库。
+* **IISLogsTable.sql**：Transact-SQL 语句，用于生成存储数据的数据库。
 
-> [AZURE.WARNING] 在 HDInsight 群集上启动该拓扑之前，必须先在 SQL 数据库中创建表。
+> [AZURE.WARNING] 在 HDInsight 群集上启动该拓扑前，必须先在 SQL 数据库中创建表。
 
 ## 下载示例
 
-下载 [HDInsight C# Storm Power BI 示例](https://github.com/Azure-Samples/hdinsight-dotnet-storm-powerbi)。若要下载该示例，请使用 [git](http://git-scm.com/) 复制/克隆它，或使用“下载”链接下载 .zip 存档。
+下载 [HDInsight C# Storm Power BI 示例](https://github.com/Azure-Samples/hdinsight-dotnet-storm-powerbi)。要下载该示例，请使用 [git](http://git-scm.com/) 复制/克隆它，或使用“下载”链接下载 .zip 存档。
 
 ## 创建数据库
 
-1. 遵循 [SQL Database tutorial](/documentation/articles/sql-database-get-started/)（SQL 数据库教程）文档中的步骤创建新的 SQL 数据库。
+1. 按照 [SQL Database tutorial](/documentation/articles/sql-database-get-started/)（SQL 数据库教程）文档中的步骤创建新 SQL 数据库。
 
-2. 遵循 [Connect to a SQL Database with Visual Studio](/documentation/articles/sql-database-connect-query/)（使用 Visual Studio 连接到 SQL 数据库）文档中的步骤连接到该数据库。
+2. 按照 [Connect to a SQL Database with Visual Studio](/documentation/articles/sql-database-connect-query/)（使用 Visual Studio 连接到 SQL 数据库）文档中的步骤连接到数据库。
 
-4. 在对象资源管理器中右键单击该数据库，然后创建__新查询__。将下载的项目中包含的 __IISLogsTable.sql__ 文件的内容粘贴到查询窗口中，然后使用 Ctrl+Shift+E 执行查询。你应会收到已成功完成命令的消息。
+4. 在“对象资源管理器”中，右键单击数据库，然后创建__新查询__。将下载的项目中包含的 __IISLogsTable.sql__ 文件的内容粘贴到查询窗口中，然后按 Ctrl+Shift+E 执行查询。将会已成功完成命令的消息。
 
     完成此操作后，数据库中会出现名为 __IISLOGS__ 的新表。
 
 ## 配置示例
 
-1. 替换以下示例中“{”与“}”之间的值，以构造正确的 __ADO.NET（SQL 身份验证）__信息。
+1. 替换以下示例中“{”与“}”之间的值，构建正确的 __ADO.NET（SQL 身份验证）__信息。
 
 		Server=tcp:{your_dns}.database.chinacloudapi.cn,1433;Data Source={your_dns}.database.chinacloudapi.cn;Initial Catalog=j{your_dns};Persist Security Info=False;User ID={your_username};Password={your_password};MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;
 
@@ -78,28 +78,29 @@ Power BI 允许你以可视方式将数据显示为报表。使用适用于 Stor
 
         <add key="SqlAzureConnectionString" value="##TOBEFILLED##" />
     
-    将 __##TOBEFILLED##__ 值替换为上一步骤中复制的数据库连接字符串。将 __{your\_username}__ 和 __{your\_password}__ 替换为数据库的用户名和密码。
+    将 __##TOBEFILLED##__ 值替换为上一步中复制的数据库连接字符串。将 __{your\_username}__ 和 __{your\_password}__ 替换为数据库的用户名和密码。
 
 2. 保存并关闭文件。
 
 ## 部署示例
 
-1. 在“解决方案资源管理器”中，右键单击“StormToSQL”项目，然后选择“提交到 Storm on HDInsight”。从“Storm 群集”下拉对话框中选择 选择 HDInsight 群集。
+1. 在“解决方案资源管理器”中，右键单击“StormToSQL”项目，然后选择“提交到 Storm on HDInsight”。从“Storm 群集”下拉对话框中选择 HDInsight 群集。
 
-    > [AZURE.NOTE] 可能需要在几秒钟后，“Storm 群集”下拉对话框中才会填充服务器名称。
-    ><p> 如果出现提示，请输入你 Azure 订阅的登录凭据。如果你有多个订阅，请登录包含 Storm on HDInsight 群集的订阅。
+    > [AZURE.NOTE] “Storm 群集”下拉对话框中填充服务器名称可能需要几秒钟时间。
+    ><p>
+    ><p> 如果出现提示，请输入 Azure 订阅的登录凭据。如果有多个订阅，请登录包含 Storm on HDInsight 群集的订阅。
 
-2. 成功提交拓扑之后，应该会出现群集的“Storm 拓扑”。从列表中选择 SqlAzureWriterTopology 条目，以查看有关正在运行的拓扑的信息。
+2. 成功提交拓扑后，应该会出现群集的“Storm 拓扑”。从列表中选择 SqlAzureWriterTopology 条目，以查看有关正在运行的拓扑的信息。
 
-    ![拓扑列表和已选择的拓扑](./media/hdinsight-storm-power-bi-topology/topologyview.png)
+    ![拓扑，已选择的拓扑](./media/hdinsight-storm-power-bi-topology/topologyview.png)
 
     可以使用此视图查看有关拓扑的信息，或双击条目（例如 SqlAzureBolt）以查看拓扑中组件的具体信息。
 
-3. 在拓扑运行几分钟后，请返回到用于创建数据库的 SQL 查询窗口。将现有语句替换为以下内容。
+3. 在拓扑运行几分钟后，请返回用于创建数据库的 SQL 查询窗口。将现有语句替换为以下内容。
 
         select * from iislogs;
     
-    使用 Ctrl+Shift+E 执行查询，你应会收到类似于下面的结果。
+    按 Ctrl+Shift+E 执行查询，应显示类似如下的结果。
     
         1	2016-05-27 17:57:14.797	255.255.255.255	/bar	GET	200
         2	2016-05-27 17:57:14.843	127.0.0.1	/spam/eggs	POST	500
@@ -118,17 +119,17 @@ Power BI 允许你以可视方式将数据显示为报表。使用适用于 Stor
 
 3. 选择“Azure SQL 数据库”，然后选择“连接”。
 
-4. 输入信息以连接到 Azure SQL 数据库。可以通过访问 [Azure 经典管理门户](https://manage.windowsazure.cn)并选择你的 SQL 数据库来找到此信息。
+4. 输入信息以连接到 Azure SQL 数据库。可以通过访问 [Azure 经典管理门户](https://manage.windowsazure.cn)并选择 SQL 数据库查找此信息。
 
-    > [AZURE.NOTE] 还可以通过在连接对话框中使用“启用高级选项”，来设置刷新间隔和自定义筛选器。
+    > [AZURE.NOTE] 还可以通过在连接对话框中使用“启用高级选项”，以设置刷新间隔和自定义筛选器。
 
-5. 连接后，你将看到一个与所连接到的数据库同名的新数据集。选择该数据集以开始设计报表。
+5. 连接后，将显示一个名称与连接的数据库相同的新数据集。选择该数据集以开始设计报表。
 
-3. 在“字段”中展开“IISLOGS”条目。选中“URISTEM”对应的复选框。随后将创建新报表，其中列出了数据库中记录的 URI 词干（/foo、/bar 等等）。
+3. 在“字段”中，展开“IISLOGS”条目。选中“URISTEM”对应的复选框。这将创建一个新报表，列出数据库中记录的 URI 词干（/foo、/bar 等）。
 
     ![创建报表](./media/hdinsight-storm-power-bi-topology/createreport.png)
 
-5. 接下来，将“方法”拖到报表中。报表将会更新，以列出词干和用于 HTTP 请求的对应 HTTP 方法。
+5. 接下来，将“方法”拖到报表中。报表将更新，以列出词干和用于 HTTP 请求的对应 HTTP 方法。
 
     ![添加方法数据](./media/hdinsight-storm-power-bi-topology/uristemandmethod.png)
 
@@ -140,13 +141,13 @@ Power BI 允许你以可视方式将数据显示为报表。使用适用于 Stor
 
     ![更改为堆积图](./media/hdinsight-storm-power-bi-topology/stackedcolumn.png)
 
-7. 创建符合需要的报表后，请使用菜单中的“保存”项输入名称并保存报表。
+7. 创建所需的报表后，使用菜单中的“保存”项输入名称并保存报表。
 
 ## 停止拓扑
 
-在你停止该拓扑或者删除 Storm on HDInsight 之前，该拓扑会一直运行。执行以下步骤可停止拓扑。
+拓扑将继续运行，直至将其停止或删除 Storm on HDInsight 群集。执行以下步骤可停止拓扑。
 
-1. 在 Visual Studio 中，返回到拓扑查看器并选择拓扑。
+1. 在 Visual Studio 中，返回拓扑查看器并选择拓扑。
 
 2. 选择“终止”按钮即可停止拓扑。
 
@@ -158,8 +159,8 @@ Power BI 允许你以可视方式将数据显示为报表。使用适用于 Stor
 
 ## 后续步骤
 
-在本文档中，你已了解如何将数据从 Storm 拓扑发送到 SQL 数据库，然后使用 Power BI 可视化数据。有关如何在 Storm on HDInsight 中使用其他 Azure 技术的信息，请参阅以下文章：
+在本文档中，已学习如何将数据从 Storm 拓扑发送到 SQL 数据库，然后使用 Power BI 可视化数据。有关如何在 Storm on HDInsight 中使用其他 Azure 技术的信息，请参阅以下文章：
 
 * [Storm on HDInsight 的示例拓扑](/documentation/articles/hdinsight-storm-example-topology/)
 
-<!---HONumber=Mooncake_0711_2016-->
+<!---HONumber=Mooncake_Quality_Review_1202_2016-->

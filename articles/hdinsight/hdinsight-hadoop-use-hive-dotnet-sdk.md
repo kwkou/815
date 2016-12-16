@@ -15,7 +15,7 @@
 	ms.devlang="na"
 	ms.topic="article"
    ms.date="09/14/2016"
-   wacn.date="10/25/2016"
+   wacn.date="12/16/2016"
 	ms.author="jgao"/>
 
 # 使用 HDInsight .NET SDK 运行 Hive 查询
@@ -27,14 +27,14 @@
 
 ##先决条件
 
-在开始阅读本文前，你必须具有：
+开始阅读本文之前，必须具备以下条件：
 
-- **HDInsight 中的 Hadoop 群集**。请参阅[创建群集和 SQL 数据库](/documentation/articles/hdinsight-use-sqoop/#create-cluster-and-sql-database)。
+- **HDInsight 中有 Hadoop 群集**。请参阅[创建群集和 SQL 数据库](/documentation/articles/hdinsight-use-sqoop/#create-cluster-and-sql-database)。
 - **Visual Studio 2012/2013/2015**。
 
 ##使用 HDInsight .NET SDK 提交 Hive 查询
 
-HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 中使用 HDInsight 群集的操作。
+HDInsight .NET SDK 提供了 .NET 客户端库，可简化从 .NET 中使用 HDInsight 群集的操作。
 
 **提交作业**
 
@@ -66,7 +66,7 @@ HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 中使用 HDInsi
 		
 		        private const string DefaultStorageAccountName = "<Default Storage Account Name>";
 		        private const string DefaultStorageAccountKey = "<Default Storage Account Key>";
-				private const string StorageAccountSuffix = "core.chinacloudapi.cn";
+		        private const string StorageAccountSuffix = "core.chinacloudapi.cn";
 		        private const string DefaultStorageContainerName = "<Default Blob Container Name>";
 		
 		        static void Main(string[] args)
@@ -132,18 +132,17 @@ HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 中使用 HDInsi
 
 ## 后续步骤
 
-在本文中，你已经学习了几种创建 HDInsight 群集的方法。若要了解更多信息，请参阅下列文章：
+在本文中，你已经学习了几种创建 HDInsight 群集的方法。要了解更多信息，请参阅下列文章：
 
 * [Azure HDInsight 入门][hdinsight-get-started]
 * [在 HDInsight 中创建 Hadoop 群集][hdinsight-provision]
-* [Manage Hadoop clusters in HDInsight by using the Azure Portal（使用 Azure 经典管理门户管理 HDInsight 中的 Hadoop 群集）](/documentation/articles/hdinsight-administer-use-management-portal-v1/)
+* [使用 Azure 经典管理门户管理 HDInsight 中的 Hadoop 群集](/documentation/articles/hdinsight-administer-use-management-portal-v1/)
 * [HDInsight .NET SDK 参考](https://msdn.microsoft.com/zh-cn/library/mt271028.aspx)
 * [将 Pig 与 HDInsight 配合使用](/documentation/articles/hdinsight-use-pig/)
 * [将 Sqoop 与 HDInsight 配合使用](/documentation/articles/hdinsight-use-sqoop/)
 
+
 [hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1/
 [hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1/
 
-
-
-<!---HONumber=Mooncake_0516_2016-->
+<!---HONumber=Mooncake_Quality_Review_1202_2016-->

@@ -14,31 +14,35 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="05/17/2016" 
-	wacn.date="07/28/2016" 
+	wacn.date="12/16/2016" 
 	ms.author="nitinme"/>
 
-# 在 HDInsight Hadoop 群集上安装并使用 Solr
+# 在 HDInsight Hadoop 群集上安装和使用 Solr
 
 
 了解如何使用 Solr 通过脚本操作来自定义基于 Windows 的 HDInsight 群集，以及如何使用 R 来搜索数据。
+ 
 你可以使用*脚本操作*，在 Azure HDInsight 的任何一种群集（Hadoop、Storm、HBase）上安装 Solr。用于在 HDInsight 群集上安装 Solr 的示例脚本可通过 [https://hdiconfigactions.blob.core.windows.net/solrconfigactionv01/solr-installer-v01.ps1](https://hdiconfigactions.blob.core.windows.net/solrconfigactionv01/solr-installer-v01.ps1) 上的只读 Azure 存储 Blob 获得。
 
 示例脚本仅适用于 HDInsight 群集版本 3.1。有关 HDInsight 群集版本的详细信息，请参阅 [HDInsight 群集版本](/documentation/articles/hdinsight-component-versioning-v1/)。
 
-本主题中使用的示例脚本将使用特定配置创建基于 Windows 的 Solr 群集。如果你要使用不同集合、分片、架构、副本等配置 Solr 群集，则必须相应地修改脚本和 Solr 二进制文件。
+本主题中使用的示例脚本使用特定配置创建基于 Windows 的 Solr 群集。如果要使用不同集合、分片、架构、副本等配置 Solr 群集，则必须相应地修改脚本和 Solr 二进制文件。
 
 **相关文章** 
 
 - [在 HDInsight 中创建 Hadoop 群集](/documentation/articles/hdinsight-provision-clusters-v1/)：有关如何创建 HDInsight 群集的一般信息 
 - [使用脚本操作自定义 HDInsight 群集][hdinsight-cluster-customize]：有关如何使用脚本操作自定义 HDInsight 群集的一般信息 
 - [针对 HDInsight 开发脚本操作脚本](/documentation/articles/hdinsight-hadoop-script-actions/)
-<a name="whatis"></a> 
+
+<a name="whatis"></a>
+
 ## 什么是 Solr？
-<a href="http://lucene.apache.org/solr/features.html" target="_blank">Apache Solr</a> 是一种企业搜索平台，用于对数据实现功能强大的全文搜索。虽然 Hadoop 可用于存储和管理大量数据，但是，Apache Solr 提供了快速检索数据的搜索功能。
+
+<a href="http://lucene.apache.org/solr/features.html" target="_blank">Apache Solr</a> 是一种企业搜索平台，用于实现强大的全文搜索功能。虽然 Hadoop 可用于存储和管理大量数据，但是，Apache Solr 提供了快速检索数据的搜索功能。
 
 ## 如何安装 Solr？
 
-用于在 HDInsight 群集上安装 Solr 的示例脚本可通过 [https://hdiconfigactions.blob.core.windows.net/solrconfigactionv01/solr-installer-v01.ps1](https://hdiconfigactions.blob.core.windows.net/solrconfigactionv01/solr-installer-v01.ps1) 上的只读 Azure 存储 Blob 获得。本部分说明了如何在通过 Azure 经典管理门户预配群集时使用示例脚本。 
+用于在 HDInsight 群集上安装 Solr 的示例脚本可通过 [https://hdiconfigactions.blob.core.windows.net/solrconfigactionv01/solr-installer-v01.ps1](https://hdiconfigactions.blob.core.windows.net/solrconfigactionv01/solr-installer-v01.ps1) 上的只读 Azure 存储 Blob 获得。本部分介绍在通过 Azure 经典管理门户预配群集时，如何使用示例脚本。
 * [在 HDInsight 群集上安装 Solr](/documentation/articles/hdinsight-hadoop-solr-install-v1/)
 
 1. 根据[在 HDInsight 中创建 Hadoop 群集](/documentation/articles/hdinsight-provision-clusters-v1/#portal)中的说明，使用“自定义创建”选项开始创建群集。 
@@ -51,29 +55,29 @@
 		<tr><td>Name</td>
 			<td>指定脚本操作的名称。例如 <b>Install Solr</b>。</td></tr>
 		<tr><td>脚本 URI</td>
-			<td>指定调用以自定义群集的脚本的统一资源标识符 (URI)。例如 <i>https://hdiconfigactions.blob.core.windows.net/solrconfigactionv01/solr-installer-v01.ps1</i></td></tr>
+			<td>指定调用来自定义群集的脚本的统一资源标识符 (URI)。例如 <i>https://hdiconfigactions.blob.core.windows.net/solrconfigactionv01/solr-installer-v01.ps1</i></td></tr>
 		<tr><td>节点类型</td>
-			<td>指定在其上运行自定义脚本的节点。你可以选择“所有节点”、“仅限头节点”或“仅限从节点”<b></b><b></b><b></b>。
+			<td>指定运行自定义脚本的节点。可选择“所有节点”、“仅限头节点”或“仅限辅助节点”<b></b><b></b><b></b>。
 		<tr><td>Parameters</td>
-			<td>根据脚本的需要，指定参数。用于安装 Solr 的脚本不需要任何参数，因此，你可以将此项保留为空。</td></tr>
+			<td>根据脚本的需要，请指定参数。用于安装 Solr 的脚本不需要任何参数，因此，你可以将此项保留为空。</td></tr>
 	</table>
 
-	你可以添加多个脚本操作，以在群集上安装多个组件。在添加了脚本后，单击复选标记以开始创建群集。
+	可添加多个脚本操作，以便在群集上安装多个组件。添加脚本后，单击复选标记即可开始创建群集。
 
-你还可以通过 Azure PowerShell 或 the HDInsight .NET SDK 使用脚本在 HDInsight 上安装 Solr。本主题后面将提供有关这些过程的说明。
+还可以通过 Azure PowerShell 或 HDInsight .NET SDK 使用脚本在 HDInsight 上安装 Solr。本主题后面将提供有关这些过程的说明。
 
 <a name="usesolr"></a> 
 ## 使用 Solr
 
-你必须从使用一些数据文件为 Solr 编制索引开始。然后，可以使用 Solr 对索引数据运行搜索查询。执行以下步骤，以在 HDInsight 群集中使用 Solr：
+首先必须使用一些数据文件为 Solr 编制索引。然后，可以使用 Solr 对索引数据运行搜索查询。执行以下步骤，以在 HDInsight 群集中使用 Solr：
 
-1. **使用远程桌面协议 (RDP) 远程连接到安装有 Solr 的 HDInsight 群集**。在 Azure 经典管理门户中，对你创建的安装有 Solr 的群集启用远程桌面，然后远程连接到该群集。有关说明，请参阅<a href="/documentation/articles/hdinsight-administer-use-management-portal-v1/#rdp" target="_blank">使用 RDP 连接到 HDInsight 群集</a>。
+1. **使用远程桌面协议 (RDP) 远程连接到安装有 Solr 的 HDInsight 群集**。在 Azure 经典管理门户中，对创建的安装有 Solr 的群集启用远程桌面，然后远程连接到该群集。有关说明，请参阅<a href="/documentation/articles/hdinsight-administer-use-management-portal-v1/#rdp" target="_blank">使用 RDP 连接到 HDInsight 群集</a>。
 
-2. **通过上载数据文件为 Solr 编制索引**。在为 Solr 编制索引时，你应将可能需要搜索的文档放置在其中。若要为 Solr 编制索引，请使用 RDP 远程连接到群集，导航到桌面，打开 Hadoop 命令行，然后导航到 **C:\\apps\\dist\\solr-4.7.2\\example\\exampledocs**。运行以下命令：
+2. **通过上载数据文件为 Solr 编制索引**。在为 Solr 编制索引时，应将可能需要搜索的文档放在其中。要为 Solr 编制索引，请使用 RDP 远程连接到群集，导航到桌面，打开 Hadoop 命令行，然后导航到 **C:\\apps\\dist\\solr-4.7.2\\example\\exampledocs**。运行以下命令：
 	
 		java -jar post.jar solr.xml monitor.xml
 
-	你将会在控制台上看到以下输出：
+	控制台上会显示以下输出：
 
 		POSTing file solr.xml
 		POSTing file monitor.xml
@@ -83,13 +87,13 @@
 
 	post.jar 实用程序通过以下两个示例文档为 Solr 编制索引：**solr.xml** 和 **monitor.xml**。post.jar 实用程序和示例文档是随 Solr 安装一起提供的。
 
-3. **使用 Solr 仪表板在索引文档中搜索**。在连接到 HDInsight 群集的 RDP 会话中，打开 Internet Explorer，然后启动位于 **http://headnodehost:8983/solr/#/** 的 Solr 仪表板。在左窗格的**“核心选择器”**下拉列表中，选择**“collection1”**，然后在其中单击**“查询”**。作为示例，若要在 Solr 中选择并返回所有文档，请提供以下值：
-	1. 在 **q** 文本框中，输入 ***:***。此时将返回所有已在 Solr 中编制索引的文档。如果你要在文档中搜索特定字符串，则可以在此处输入该字符串。
-	2. 在 **wt** 文本框中，选择输出格式。默认值为 **json**。单击**“执行查询”**。
+3. **使用 Solr 仪表板在索引文档中搜索**。在连接到 HDInsight 群集的 RDP 会话中，打开 Internet Explorer，然后启动位于 **http://headnodehost:8983/solr/#/** 的 Solr 仪表板。在左窗格的“核心选择器”下拉列表中，选择“collection1”，然后在其中单击“查询”。作为示例，要在 Solr 中选择并返回所有文档，请提供以下值：
+	1. 在 **q** 文本框中，输入 ***:***。此时将返回所有已在 Solr 中编制索引的文档。如果要在文档中搜索特定字符串，则可以在此处输入。
+	2. 在 **wt** 文本框中，选择输出格式。默认值为 **json**。单击“执行查询”。
 
 		![使用脚本操作自定义群集](./media/hdinsight-hadoop-solr-install-v1/hdi-solr-dashboard-query.png "在 Solr 仪表板上运行查询")
 	
-	输出返回两个我们用于为 Solr 编制索引的文档。输出如下所示：
+	输出返回两个用于为 Solr 编制索引的文档。输出如下所示：
 
 			"response": {
 			    "numFound": 2,
@@ -144,7 +148,7 @@
 			  }
    
 
-4. **建议：将索引数据从 Solr 备份到与 HDInsight 群集关联的 Azure Blob 存储**。作为一种很好的做法，你应该将索引数据从 Solr 群集节点备份到 Azure Blob 存储上。执行以下步骤来完成此操作：
+4. **建议：将索引数据从 Solr 备份到与 HDInsight 群集关联的 Azure Blob 存储**。最好将索引数据从 Solr 群集节点备份到 Azure Blob 存储上。执行以下步骤来完成此操作：
 
 	1. 在 RDP 会话中，打开 Internet Explorer，然后指向以下 URL：
 
@@ -172,7 +176,7 @@
 <a name="usingPS"></a> 
 ## 使用 Azure PowerShell 安装 Solr
 
-在本部分中，我们使用 **<a href = "http://msdn.microsoft.com/zh-cn/library/dn858088.aspx" target="_blank">Add-AzureHDInsightScriptAction</a>** cmdlet 通过脚本操作来调用脚本，以自定义群集。在继续前，确保你已安装并配置 Azure PowerShell。有关配置工作站以运行 HDInsight Windows Powershell cmdlet 的信息，请参阅[安装和配置 Azure PowerShell][powershell-install-configure]。
+在本部分中，我们使用 **<a href = "http://msdn.microsoft.com/zh-cn/library/dn858088.aspx" target="_blank">Add-AzureHDInsightScriptAction</a>** cmdlet 通过脚本操作来调用脚本，以自定义群集。在继续前，确保已安装和配置 Azure PowerShell。有关配置工作站以运行 HDInsight Windows Powershell cmdlet 的信息，请参阅[安装和配置 Azure PowerShell][powershell-install-configure]。
 
 执行以下步骤：
 
@@ -205,26 +209,26 @@
 	**Add-AzureHDInsightScriptAction** cmdlet 采用以下参数：
 
 	<table style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse;">
-<tr>
-<th style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; width:90px; padding-left:5px; padding-right:5px;">参数</th>
-<th style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; width:550px; padding-left:5px; padding-right:5px;">定义</th></tr>
-<tr>
-<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;">Config</td>
-<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px; padding-right:5px;">脚本操作信息添加到的配置对象。</td></tr>
-<tr>
-<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;">Name</td>
-<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;">脚本操作的名称。</td></tr>
-<tr>
-<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;">ClusterRoleCollection</td>
-<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;">在其上运行自定义脚本的节点。有效值是 HeadNode（在头节点上安装）或 DataNode（在所有数据节点上安装）。你可以使用任一值或两个值。</td></tr>
-<tr>
-<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;">Uri</td>
-<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;">执行的脚本的 URI。</td></tr>
-<tr>
-<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;">Parameters</td>
-<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;">脚本所需的参数。本主题中使用的示例脚本不需要任何参数，因此，你在上述代码段中看不到此参数。
-</td></tr>
-</table>
+	<tr>
+	<th style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; width:90px; padding-left:5px; padding-right:5px;">Parameters</th>
+	<th style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; width:550px; padding-left:5px; padding-right:5px;">定义</th></tr>
+	<tr>
+	<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;">Config</td>
+	<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px; padding-right:5px;">添加脚本操作信息的配置对象。</td></tr>
+	<tr>
+	<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;">Name</td>
+	<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;">脚本操作的名称。</td></tr>
+	<tr>
+	<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;">ClusterRoleCollection</td>
+	<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;">在其上运行自定义脚本的节点。有效值是 HeadNode（在头节点上安装）或 DataNode（在所有数据节点上安装）。可以使用任一值或两个值。</td></tr>
+	<tr>
+	<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;">Uri</td>
+	<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;">执行的脚本的 URI。</td></tr>
+	<tr>
+	<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;">Parameters</td>
+	<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;">脚本所需的参数。本主题中使用的示例脚本不需要任何参数，因此，在上述代码段中看不到此参数。
+	</td></tr>
+	</table>
 	
 4. 最后，开始设置安装有 Solr 的自定义群集。
 	
@@ -246,11 +250,11 @@ HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 应用程序使�
 
 **安装 HDInsight .NET SDK**
 
-你可以从 [NuGet](http://nuget.codeplex.com/wikipage?title=Getting%20Started) 安装该 SDK 的最新发行版。下一过程中将显示说明。
+可以从 [NuGet](http://nuget.codeplex.com/wikipage?title=Getting%20Started) 安装该 SDK 的最新发行版。下一过程中将显示说明。
 
 **创建自签名证书**
 
-创建自签名证书，将其安装到工作站上，然后将其上传到你的 Azure 订阅。有关说明，请参阅[创建自签名证书](/documentation/articles/hdinsight-administer-use-management-portal-v1/#cert)。
+创建自签名证书，将其安装到工作站上，然后将其上传到 Azure 订阅。有关说明，请参阅[创建自签名证书](/documentation/articles/hdinsight-administer-use-management-portal-v1/#cert)。
 
 
 **创建 Visual Studio 应用程序**
@@ -262,23 +266,23 @@ HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 应用程序使�
 3. 在“新建项目”中，键入或选择以下值：
 	
 	<table style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse;">
-<tr>
-<th style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; width:90px; padding-left:5px; padding-right:5px;">属性</th>
-<th style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; width:90px; padding-left:5px; padding-right:5px;">值</th></tr>
-<tr>
-<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;">类别</td>
-<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px; padding-right:5px;">模板/Visual C#/Windows</td></tr>
-<tr>
-<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;">模板</td>
-<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;">控制台应用程序</td></tr>
-<tr>
-<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;">Name</td>
-<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;">CreateSolrCluster</td></tr>
-</table>
+	<tr>
+	<th style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; width:90px; padding-left:5px; padding-right:5px;">属性</th>
+	<th style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; width:90px; padding-left:5px; padding-right:5px;">值</th></tr>
+	<tr>
+	<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;">类别</td>
+	<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px; padding-right:5px;">模板/Visual C#/Windows</td></tr>
+	<tr>
+	<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;">模板</td>
+	<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;">控制台应用程序</td></tr>
+	<tr>
+	<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;">Name</td>
+	<td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;">CreateSolrCluster</td></tr>
+	</table>
 
 4. 单击“确定”以创建该项目。
 
-5. 在“工具”菜单中，单击“Nuget Package Manager”，然后单击“Package Manager Console”。
+5. 在“工具”菜单中，单击“Nuget 包管理器”，然后单击“包管理器控制台”。
 
 6. 在控制台中运行下列命令以安装程序包：
 
@@ -358,7 +362,6 @@ HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 应用程序使�
 
 提供群集名称，并按 ENTER 预配安装有 Solr 的群集。
 
-
 ## 另请参阅
 
 - [在 HDInsight 中创建 Hadoop 群集](/documentation/articles/hdinsight-provision-clusters-v1/)：有关如何创建 HDInsight 群集的一般信息
@@ -367,12 +370,9 @@ HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 应用程序使�
 - [在 HDInsight 群集上安装 R][hdinsight-install-r]：有关如何安装 R 的脚本操作示例
 - [在 HDInsight 群集上安装 Giraph](/documentation/articles/hdinsight-hadoop-giraph-install-v1/)：有关如何安装 Giraph 的脚本操作示例
 
-
-
-
 [powershell-install-configure]: /documentation/articles/powershell-install-configure/
 [hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1/
 [hdinsight-install-r]: /documentation/articles/hdinsight-hadoop-r-scripts/
 [hdinsight-cluster-customize]: /documentation/articles/hdinsight-hadoop-customize-cluster-v1/
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_Quality_Review_1202_2016-->

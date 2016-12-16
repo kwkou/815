@@ -14,14 +14,14 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="07/06/2016" 
-	wacn.date="09/26/2016" 
+	wacn.date="12/16/2016" 
 	ms.author="cephalin"/>
 
 # 在 Azure 中还原应用
 
 本文将演示如何在 [Azure App Service](/documentation/articles/app-service-value-prop-what-is/) 中还原已事先备份的应用（请参阅[在 Azure 中备份应用](/documentation/articles/web-sites-backup/)）。你可以根据需要将应用及其链接的数据库（SQL 数据库或 MySQL）还原到以前的状态，或者基于原始应用的备份之一创建新的应用。创建与最新版本并行运行的新应用对于 A/B 测试会很有用。
 
-从备份还原适用于在**标准**和**高级**层中运行的应用。有关向上缩放应用的信息，请参阅 [Scale up an app in Azure](/documentation/articles/web-sites-scale/)（向上缩放 Azure 中的应用）。相比于**标准**层，**高级**层允许更多的每日备份量。
+从备份还原适用于在**标准**和**高级**层中运行的应用。有关向上缩放应用的信息，请参阅 [Scale up an app in Azure](/documentation/articles/web-sites-scale/)（向上缩放 Azure 中的应用）。相比于**标准**层，**高级**层允许执行更多的每日备份量。
 
 ## <a name="PreviousBackup"></a>从现有备份还原应用
 
@@ -97,4 +97,4 @@
 [OperationDetails]: ./media/web-sites-restore/13OperationDetails.png
  
 
-<!---HONumber=Mooncake_0919_2016-->
+<!---HONumber=Mooncake_Quality_Review_1202_2016-->

@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="在 Azure 中使用 Bottle 的 Python Web 应用" 
+	pageTitle="Azure 中使用 Bottle 的 Python Web 应用" 
 	description="本教程介绍如何在 Azure App Service Web Apps 上运行 Python Web 应用。" 
 	services="app-service\web" 
 	documentationCenter="python" 
@@ -15,7 +15,7 @@
 	ms.devlang="python" 
 	ms.topic="article" 
 	ms.date="02/19/2016" 
-	wacn.date="11/25/2016"
+	wacn.date="12/16/2016"
 	ms.author="huvalo"/>
 
 
@@ -23,9 +23,9 @@
 
 [AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-sdk-developer-differences.md)]
 
-在本教程中，我们将介绍如何开始在 Azure App Service Web Apps 中运行 Python。Web Apps 提供有限的免费托管和快速部署功能，现在，您可以使用 Python！ 随着您的应用增长，可以切换到付费托管，并且还可以与所有其他 Azure 服务集成。
+在本教程中，我们将介绍如何开始在 Azure App Service Web Apps 中运行 Python。Web Apps 提供有限的免费托管和快速部署功能，现在，你可以使用 Python！ 随着你的应用增长，可以切换到付费托管，并且还可以与所有其他 Azure 服务集成。
 
-您将使用 Bottle web 框架创建 Web 应用（请参阅本教程针对 [Django](/documentation/articles/web-sites-python-create-deploy-django-app/) 和 [Flask](/documentation/articles/web-sites-python-create-deploy-flask-app/) 的备选版本)。将从 Azure 应用商店创建 Web 应用，设置 Git 部署和本地克隆存储库。然后将本地运行 Web 应用，将其更改、提交和推送到 [Azure App Service Web Apps](/documentation/articles/app-service-changes-existing-services/)。本教程演示如何从 Windows 或 Mac/Linux 执行此操作。
+你将使用 Bottle Web 框架创建 Web 应用（请参阅本教程针对 [Django](/documentation/articles/web-sites-python-create-deploy-django-app/) 和 [Flask](/documentation/articles/web-sites-python-create-deploy-flask-app/) 的备选版本)。将从 Azure 应用商店创建 Web 应用，设置 Git 部署和本地克隆存储库。然后，本地运行 Web 应用，将其更改、提交和推送到 [Azure App Service Web Apps](/documentation/articles/app-service-changes-existing-services/)。本教程演示如何从 Windows 或 Mac/Linux 执行此操作。
 
 [AZURE.INCLUDE [create-account-and-websites-note](../../includes/create-account-and-websites-note.md)]
 
@@ -33,7 +33,7 @@
 
 - Windows、 Mac 或 Linux
 - Python 2.7 或 3.4
-- setuptools, pip, virtualenv（仅限 Python 2.7）
+- setuptools、pip、virtualenv（仅限 Python 2.7）
 - Git
 - [Python Tools 2.2 for Visual Studio][] (PTVS) - 注意：这是可选的
 
@@ -41,32 +41,32 @@
 
 ### Windows
 
-如果您还没有 Python 2.7 或 3.4 安装（32 位），我们建议使用 Web 平台安装程序来安装 [Azure SDK for Python 2.7] 或 [Azure SDK for Python 3.4]。这将安装 32 位版本的 Python、setuptools、pip、virtualenv 等（32 位 Python 是在 Azure 主机计算机上安装的）。或者，您可以从 [python.org] 获取 Python。
+如果你还没有安装 Python 2.7 或 3.4（32 位），我们建议使用 Web 平台安装程序来安装 [Azure SDK for Python 2.7] 或 [Azure SDK for Python 3.4]。这将安装 32 位版本的 Python、setuptools、pip、virtualenv 等（32 位 Python 是在 Azure 主机计算机上安装的）。或者，你可以从 [python.org] 获取 Python。
 
-对于 Git，我们建议 [Git for Windows] 或 [GitHub for Windows]。如果您使用 Visual Studio，可以使用集成的 Git 支持。
+对于 Git，我们建议使用 [Git for Windows] 或 [GitHub for Windows]。如果你使用 Visual Studio，可以使用集成的 Git 支持。
 
-我们还建议你安装 [Python Tools 2.2 for Visual Studio]。这是可选的，但是如果您有 [Visual Studio]（包括免费 Visual Studio Community 2013 或 Visual Studio Express 2013 for Web），则这将为您提供很好的 Python IDE。
+我们还建议你安装 [Python Tools 2.2 for Visual Studio]。这是可选的，但是如果你有 [Visual Studio]（包括免费 Visual Studio Community 2013 或 Visual Studio Express 2013 for Web），则这将为你提供很好的 Python IDE。
 
 ### Mac/Linux
 
-您应安装了 Python 和 Git ，但请确保您具有 Python 2.7 或 3.4。
+你应安装了 Python 和 Git ，但请确保你具有 Python 2.7 或 3.4。
 
 
 ## 在 Azure 门户预览中创建 Web 应用
 
-创建您的应用的第一步是通过 [Azure 门户预览](https://portal.azure.cn)创建 Web 应用。
+创建应用的第一步是通过 [Azure 门户预览](https://portal.azure.cn)创建 Web 应用。
 
 1. 登录到 Azure 门户预览，然后单击左下角的“新建”按钮。
 3. 在搜索框中，键入“python”。
-4. 在搜索结果中，选择 **Bottle**，然后单击**创建**。
-5. 配置新的 Bottle 应用，如为其创建新的 App Service 计划和新的资源组。然后单击**创建**。
+4. 在搜索结果中，选择“Bottle”，然后单击“创建”。
+5. 配置新的 Bottle 应用，如为其创建新的应用服务计划和新的资源组。然后单击“创建”。
 6. 按照[从本地 Git 部署到 Azure App Service](/documentation/articles/app-service-deploy-local-git/) 的说明为新创建的 Web 应用配置 Git 发布。
  
 ## 应用程序概述
 
 ### Git 存储库内容
 
-下面是您会在初始 Git 存储库找到的文件的概览，我们将在下一节中予以克隆。
+下面是你会在初始 Git 存储库找到的文件的概览，我们将在下一节中予以克隆。
 
     \routes.py
     \static\content\
@@ -77,7 +77,7 @@
     \views\index.tpl
     \views\layout.tpl
 
-应用程序的的主要来源。包含具有母版布局的 3 页（索引、关于、联系人）。静态内容和脚本包括启动、 jquery、 modernizr 和响应。
+应用程序的的主要来源。包含具有母版布局的 3 页（索引、关于、联系人）。静态内容和脚本包括 bootstrap、 jquery、 modernizr 和 respond。
 
     \app.py
 
@@ -115,7 +115,7 @@ IIS 配置文件。部署脚本将使用适当的 web.x.y.config，并将其复�
 
     \web.config
 
-IIS 配置文件。每次部署中从 web.x.y.config 创建
+IIS 配置文件。每次部署中从 web.x.y.config 创建。
 
     \env\
 
@@ -154,37 +154,37 @@ Python 虚拟环境。如果在 Web 应用上尚不存在兼容的虚拟环境�
 
 ### 使用开发服务器运行
 
-按 F5 开始调试，您的 web 浏览器会自动打开到本地运行的页面。
+按 F5 开始调试，你的 Web 浏览器会自动打开到本地运行的页面。
 
 ![](./media/web-sites-python-create-deploy-bottle-app/windows-browser-bottle.png)
 
-您可以在源中设置断点，使用监视窗口等。请参阅 [Python Tools for Visual Studio 文档]以了解有关各种功能的更多信息。
+你可以在源中设置断点，使用监视窗口等。请参阅 [Python Tools for Visual Studio 文档]以了解有关各种功能的更多信息。
 
 ### 进行更改
 
-现在您可以通过更改应用程序源和/或模板进行试验。
+现在你可以通过更改应用程序源和/或模板进行试验。
 
-您测试您的更改后，将其提交到 Git 存储库：
+测试你的更改后，将其提交到 Git 存储库：
 
 ![](./media/web-sites-python-create-deploy-bottle-app/ptvs-commit-bottle.png)
 
 ### 安装多个软件包
 
-您的应用程序可能具有除 Python 和 Bottle 以外的依赖关系。
+你的应用程序可能具有除 Python 和 Bottle 以外的依赖关系。
 
-您可以使用 pip 安装其他软件包。要安装包，请右键单击虚拟环境，然后选择**安装 Python 软件包**。
+你可以使用 pip 安装其他软件包。要安装包，请右键单击虚拟环境，然后选择**安装 Python 软件包**。
 
-例如，要安装 Azure SDK for Python（使您可以访问 Azure 存储、服务总线和其他 Azure 服务），请输入 `azure`：
+例如，要安装 Azure SDK for Python（使你可以访问 Azure 存储、服务总线和其他 Azure 服务），请输入 `azure`：
 
 ![](./media/web-sites-python-create-deploy-bottle-app/ptvs-install-package-dialog.png)
 
-在虚拟环境上右键单击并选择**生成 requirements.txt** 以更新 requirements.txt。
+在虚拟环境上右键单击并选择“生成 requirements.txt”以更新 requirements.txt。
 
 然后，将 requirements.txt 的更改落实到 Git 存储库。
 
 ### 部署到 Azure
 
-要触发部署操作，请单击**同步**或**推送**。同步执行推送和拉取。
+要触发部署操作，请单击“同步”或“推送”。同步执行推送和拉取。
 
 ![](./media/web-sites-python-create-deploy-bottle-app/ptvs-git-push.png)
 
@@ -192,7 +192,7 @@ Python 虚拟环境。如果在 Web 应用上尚不存在兼容的虚拟环境�
 
 Visual Studio 不会显示部署的进度。
 
-浏览到 Azure URL 要查看您的更改。
+浏览到 Azure URL 以查看你的更改。
 
 
 ## Web 应用开发 - Windows - 命令行
@@ -209,7 +209,7 @@ Visual Studio 不会显示部署的进度。
 
 我们将为开发目的创建新的虚拟环境 （不要将其添加到存储库）。Python 中的虚拟环境是可重定位，因此使用该应用程序的每个开发人员将在本地创建自己的环境。
 
-请确保使用的 Python 版本与为 Web 应用所选的 Python 版本相同（在 runtime.txt 中或 Azure 门户预览中 Web 应用的“应用程序设置”边栏选项卡）。
+请确保使用的 Python 版本与为 Web 应用所选的 Python 版本相同（在 runtime.txt 中或 Azure 门户预览中 Web 应用的“应用程序设置”边栏选项卡）
 
 对于 Python 2.7：
 
@@ -225,7 +225,7 @@ Visual Studio 不会显示部署的进度。
 
 ### 使用开发服务器运行
 
-您可以使用以下命令在开发服务器下启用应用程序：
+你可以使用以下命令在开发服务器下启用应用程序：
 
     env\scripts\python app.py
 
@@ -233,24 +233,24 @@ Visual Studio 不会显示部署的进度。
 
 ![](./media/web-sites-python-create-deploy-bottle-app/windows-run-local-bottle.png)
 
-然后，将 web 浏览器打开到该 URL。
+然后，将 Web 浏览器打开到该 URL。
 
 ![](./media/web-sites-python-create-deploy-bottle-app/windows-browser-bottle.png)
 
 ### 进行更改
 
-现在您可以通过更改应用程序源和/或模板进行试验。
+现在你可以通过更改应用程序源和/或模板进行试验。
 
-您测试您的更改后，将其提交到 Git 存储库：
+测试你的更改后，将其提交到 Git 存储库：
 
     git add <modified-file>
     git commit -m "<commit-comment>"
 
 ### 安装多个软件包
 
-您的应用程序可能具有除 Python 和 Bottle 以外的依赖关系。
+你的应用程序可能具有除 Python 和 Bottle 以外的依赖关系。
 
-您可以使用 pip 安装其他软件包。例如，要安装 Azure SDK for Python（使您可以访问 Azure 存储、 服务总线和其他 Azure 服务），请输入：
+你可以使用 pip 安装其他软件包。例如，要安装 Azure SDK for Python（使你可以访问 Azure 存储、 服务总线和其他 Azure 服务），请输入：
 
     env\scripts\pip install azure
 
@@ -269,9 +269,9 @@ Visual Studio 不会显示部署的进度。
 
     git push azure master
 
-您将看到部署脚本的输出，包括虚拟环境创建，安装软件包，创建 web.config。
+你将看到部署脚本的输出，包括虚拟环境创建，安装软件包，创建 web.config。
 
-浏览到 Azure URL 要查看您的更改。
+浏览到 Azure URL 以查看你的更改。
 
 
 ## Web 应用开发 - Mac/Linux - 命令行
@@ -297,8 +297,10 @@ Visual Studio 不会显示部署的进度。
 对于 Python 3.4：
 
     python -m venv env
-或 
-	pyvenv env
+
+或
+
+    pyvenv env
 
 安装应用程序所需的任何外部软件包。可以使用该存储库的根处 requirements.txt 文件在虚拟环境中安装软件包：
 
@@ -306,7 +308,7 @@ Visual Studio 不会显示部署的进度。
 
 ### 使用开发服务器运行
 
-您可以使用以下命令在开发服务器下启用应用程序：
+你可以使用以下命令在开发服务器下启用应用程序：
 
     env/bin/python app.py
 
@@ -314,24 +316,24 @@ Visual Studio 不会显示部署的进度。
 
 ![](./media/web-sites-python-create-deploy-bottle-app/mac-run-local-bottle.png)
 
-然后，将 web 浏览器打开到该 URL。
+然后，将 Web 浏览器打开到该 URL。
 
 ![](./media/web-sites-python-create-deploy-bottle-app/mac-browser-bottle.png)
 
 ### 进行更改
 
-现在您可以通过更改应用程序源和/或模板进行试验。
+现在你可以通过更改应用程序源和/或模板进行试验。
 
-您测试您的更改后，将其提交到 Git 存储库：
+测试你的更改后，将其提交到 Git 存储库：
 
     git add <modified-file>
     git commit -m "<commit-comment>"
 
 ### 安装多个软件包
 
-您的应用程序可能具有除 Python 和 Bottle 以外的依赖关系。
+你的应用程序可能具有除 Python 和 Bottle 以外的依赖关系。
 
-您可以使用 pip 安装其他软件包。例如，要安装 Azure SDK for Python（使您可以访问 Azure 存储、 服务总线和其他 Azure 服务），请输入：
+你可以使用 pip 安装其他软件包。例如，要安装 Azure SDK for Python（使你可以访问 Azure 存储、 服务总线和其他 Azure 服务），请输入：
 
     env/bin/pip install azure
 
@@ -350,9 +352,9 @@ Visual Studio 不会显示部署的进度。
 
     git push azure master
 
-您将看到部署脚本的输出，包括虚拟环境创建，安装软件包，创建 web.config。
+你将看到部署脚本的输出，包括虚拟环境创建，安装软件包，创建 web.config。
 
-浏览到 Azure URL 要查看您的更改。
+浏览到 Azure URL 以查看你的更改。
 
 
 ## 故障排除 - 软件包安装
@@ -367,7 +369,7 @@ Visual Studio 不会显示部署的进度。
 
 ## 后续步骤
 
-请遵循下面链接以了解有关 Bottle 和 Python Tools for Visual Studio 的更多信息：
+请查看下面链接以了解有关 Bottle 和 Python Tools for Visual Studio 的更多信息：
  
 - [Bottle 文档]
 - [Python Tools for Visual Studio 文档]
@@ -398,4 +400,4 @@ Visual Studio 不会显示部署的进度。
 [Bottle 文档]: http://bottlepy.org/docs/dev/index.html
  
 
-<!---HONumber=Mooncake_0919_2016-->
+<!---HONumber=Mooncake_Quality_Review_1202_2016-->

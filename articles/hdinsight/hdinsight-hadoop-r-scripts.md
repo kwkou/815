@@ -15,14 +15,14 @@
 	ms.devlang="na"
 	ms.topic="article"
     ms.date="09/14/2016"
-    wacn.date="10/25/2016"
+    wacn.date="12/16/2016"
 	ms.author="jgao"/>
 
 # 在 HDInsight Hadoop 群集上安装并使用 R
 
-了解如何使用 R 通过脚本操作来自定义基于 Windows 的 HDInsight 群集，以及如何在 HDInsight 群集上使用 R。HDInsight 的[高级级别](/pricing/details/hdinsight/)产品/服务包括 R Server 作为 HDInsight 群集的一部分。
+了解如何使用 R 通过脚本操作来自定义基于 Windows 的 HDInsight 群集，以及如何在 HDInsight 群集上使用 R。HDInsight 的[高级级别](/pricing/details/hdinsight/)产品/服务包括 HDInsight 群集中的 R Server。
  
-你可以使用脚本操作，在 Azure HDInsight 的任何一种群集（Hadoop、Storm、HBase）上安装 R。用于在 HDInsight 群集上安装 R 的示例脚本可通过 [https://hdiconfigactions.blob.core.windows.net/rconfigactionv02/r-installer-v02.ps1](https://hdiconfigactions.blob.core.windows.net/rconfigactionv02/r-installer-v02.ps1) 上的只读 Azure 存储 Blob 获得。
+你可以使用*脚本操作*，在 Azure HDInsight 的任何一种群集（Hadoop、Storm、HBase）上安装 R。用于在 HDInsight 群集上安装 R 的示例脚本可通过 [https://hdiconfigactions.blob.core.windows.net/rconfigactionv02/r-installer-v02.ps1](https://hdiconfigactions.blob.core.windows.net/rconfigactionv02/r-installer-v02.ps1) 上的只读 Azure 存储 Blob 获得。
 
 **相关文章**
 
@@ -52,14 +52,14 @@ R 与 Azure Blob 存储 (WASB) 兼容，这样，存储在此的数据可以在 
 		<tr><td>脚本 URI</td>
 			<td>指定调用用于自定义群集的脚本的 URI，例如 <i>https://hdiconfigactions.blob.core.windows.net/rconfigactionv02/r-installer-v02.ps1</i></td></tr>
 		<tr><td>节点类型</td>
-			<td>指定在其上运行自定义脚本的节点。你可以选择“所有节点”、“仅限头节点”或“仅限从节点”<b></b><b></b><b></b>。
+			<td>指定运行自定义脚本的节点。可选择“所有节点”、“仅限头节点”或“仅限辅助节点”<b></b><b></b><b></b>。
 		<tr><td>参数</td>
-			<td>根据脚本的需要，指定参数。但是，用于安装 R 的脚本不需要任何参数，因此，你可以将此项保留为空。</td></tr>
+			<td>根据脚本的需要，请指定参数。但是，用于安装 R 的脚本不需要任何参数，因此，可以将此项保留为空。</td></tr>
 	</table>
 
-	你可以添加多个脚本操作，以在群集上安装多个组件。在添加了脚本后，单击复选标记以开始创建群集。
+	可添加多个脚本操作，以便在群集上安装多个组件。在继续前，确保已安装和配置 Azure PowerShell。
 
-你还可以通过 Azure PowerShell 或 HDInsight .NET SDK 使用脚本在 HDInsight 上安装 R。有关这些过程的说明在本文后面提供。
+还可以通过 Azure PowerShell 或 HDInsight .NET SDK 使用脚本在 HDInsight 上安装 R。有关这些过程的说明在本文后面提供。
 
 ## 运行 R 脚本
 本部分介绍如何在安装有 HDInsight 的 Hadoop 群集上运行 R 脚本。
@@ -109,4 +109,4 @@ R 与 Azure Blob 存储 (WASB) 兼容，这样，存储在此的数据可以在 
 [hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1/
 [hdinsight-cluster-customize]: /documentation/articles/hdinsight-hadoop-customize-cluster-v1/
 
-<!---HONumber=Mooncake_0516_2016-->
+<!---HONumber=Mooncake_Quality_Review_1202_2016-->

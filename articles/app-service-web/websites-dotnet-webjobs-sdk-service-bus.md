@@ -14,7 +14,7 @@
 	ms.devlang="dotnet" 
 	ms.topic="article" 
 	ms.date="06/01/2016" 
-	wacn.date="11/25/2016" 
+	wacn.date="12/16/2016" 
 	ms.author="tdykstra"/>
 
 # 如何通过 WebJobs SDK 使用 Azure Service Bus
@@ -25,7 +25,7 @@
 
 本指南提供 C# 代码示例，用于演示如何在创建或更新 Azure Blob 后触发进程。这些代码示例使用 [WebJobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk/) 版本 1.x。
 
-本指南假设您了解[如何使用指向存储帐户的连接字符串在 Visual Studio 中创建 WebJob 项目](/documentation/articles/websites-dotnet-webjobs-sdk-get-started/)。
+本指南假设你了解[如何使用指向存储帐户的连接字符串在 Visual Studio 中创建 WebJob 项目](/documentation/articles/websites-dotnet-webjobs-sdk-get-started/)。
 
 代码段只显示函数，不同于创建 `JobHost` 对象的代码（如以下示例所示）：
 
@@ -162,7 +162,7 @@ SDK 会自动反序列化包含 POCO[（普通旧 CLR 对象](http://en.wikipedi
 
 * 允许通过 `ServiceBusConfiguration.MessagingProvider` 对消息处理进行深层自定义。
 * `MessagingProvider` 支持服务总线 `MessagingFactory` 和 `NamespaceManager` 的自定义。
-* `MessageProcessor` 策略模式允许你为每个队列/主题指定处理器。
+* `MessageProcessor` 策略模式允许为每个队列/主题指定处理器。
 * 默认情况下支持消息处理并发。 
 * 可以轻松通过 `ServiceBusConfiguration.MessageOptions` 对 `OnMessageOptions` 进行自定义。
 * 允许在 `ServiceBusTriggerAttribute`/`ServiceBusAttribute` 上指定 [AccessRights](https://github.com/Azure/azure-webjobs-sdk-samples/blob/master/BasicSamples/ServiceBus/Functions.cs#L71)（适用于你可能不具有管理权限的情况）。 
@@ -177,7 +177,7 @@ SDK 会自动反序列化包含 POCO[（普通旧 CLR 对象](http://en.wikipedi
 * 多个实例
 * 正常关闭
 * 在函数正文中使用 WebJobs SDK 属性
-* 在代码中设置 SDK 连接字符串。
+* 在代码中设置 SDK 连接字符串
 * 在代码中设置 WebJobs SDK 构造函数参数的值
 * 手动触发函数
 * 写入日志
@@ -187,4 +187,4 @@ SDK 会自动反序列化包含 POCO[（普通旧 CLR 对象](http://en.wikipedi
 本指南中包含的代码示例展示了如何处理常见方案来结合使用 Azure 服务总线。有关如何使用 Azure WebJobs 和 WebJobs SDK 的详细信息，请参阅 [Azure WebJobs 推荐资源](/documentation/articles/websites-webjobs-resources/)。
  
 
-<!---HONumber=Mooncake_0411_2016-->
+<!---HONumber=Mooncake_Quality_Review_1202_2016-->

@@ -15,15 +15,15 @@
 	ms.devlang="dotnet"
 	ms.topic="article"
 	ms.date="09/27/2016"
-	wacn.date="11/21/2016"
+	wacn.date="12/16/2016"
 	ms.author="larryfr"/>
 
 
 #在 HDInsight 中的 Hadoop 上将 C# 用户定义函数与 Hive 和 Pig 流式处理配合使用
 
-Hive 和 Pig 非常适合用于处理 Azure HDInsight 中的数据，但有时你需要一种更通用的语言。Hive 和 Pig 都允许你通过用户定义的函数 (UDF) 或流式处理来调用外部代码。
+Hive 和 Pig 非常适合处理 Azure HDInsight 中的数据，但有时你需要一种更通用的语言。Hive 和 Pig 都允许通过用户定义的函数 (UDF) 或流式处理来调用外部代码。
 
-在本文档中，你将了解如何将 C# 与 Hive 和 Pig 配合使用。
+本文介绍如何将 C# 与 Hive 和 Pig 配合使用。
 
 ##先决条件
 
@@ -39,24 +39,24 @@ Hive 和 Pig 非常适合用于处理 Azure HDInsight 中的数据，但有时�
 
 * HDInsight 群集上的 Hadoop - 有关创建群集的步骤，请参阅[设置 HDInsight 群集](/documentation/articles/hdinsight-provision-clusters-v1/)
 
-* Hadoop Tools for Visual Studio。有关安装和配置该工具的步骤，请参阅[开始使用 HDInsight Hadoop Tools for Visual Studio](/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started/)。
+* Hadoop Tools for Visual Studio。有关安装和配置该工具的步骤，请参阅[开始使用用于 Visual Studio 的 HDInsight Hadoop 工具](/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started/)。
 
-##HDInsight 上的 .NET
+##HDInsight 的 .NET
 
-基于 Windows 的 HDInsight 群集上会默认安装 .NET 通用语言运行时 (CLR) 和框架。这允许你将 C# 应用程序与 Hive 和 Pig 流式处理配合使用（通过 stdout/stdin 在 Hive/Pig 与 C# 应用程序之间传递数据）。
+基于 Windows 的 HDInsight 群集会默认安装 .NET 通用语言运行时 (CLR) 和框架。这样就可以将 C# 应用程序与 Hive 和 Pig 流式处理配合使用（通过 stdout/stdin 在 Hive/Pig 与 C# 应用程序之间传递数据）。
 
 
 ##.NET 和流式处理
 
-流式处理涉及 Hive 和 Pig 将数据通过 stdout 传递到外部应用程序，并通过 stdin 接收结果。对于 C# 应用程序，这可以通过 `Console.ReadLine()` 和 `Console.WriteLine()` 非常轻松地实现。
+流式处理涉及 Hive 和 Pig 将数据通过 stdout 传递到外部应用程序，并通过 stdin 接收结果。对于 C# 应用程序，这可以通过 `Console.ReadLine()` 和 `Console.WriteLine()` 轻松实现。
 
-因为 Hive 和 Pig 在运行时需要调用应用程序，因此，应当为你的 C# 项目使用**控制台应用程序**模板。
+因为 Hive 和 Pig 在运行时需要调用应用程序，因此，需要为 C# 项目使用**控制台应用程序**模板。
 
 ##Hive 和 C&#35;
 
 ###创建 C# 项目
 
-1. 打开 Visual Studio 并创建一个新的解决方案。对于项目类型，选择“控制台应用程序”，并将新项目命名为“HiveCSharp”。
+1. 打开 Visual Studio 并创建一个新解决方案。对于项目类型，选择“控制台应用程序”，并将新项目命名为“HiveCSharp”。
 
 2. 将 **Program.cs** 的内容替换为以下内容：
 
@@ -127,7 +127,7 @@ Hive 和 Pig 非常适合用于处理 Azure HDInsight 中的数据，但有时�
 
 	![上载图标](./media/hdinsight-hadoop-hive-pig-udf-dotnet-csharp/upload.png)
 
-8. 在上载完成后，你将能够通过 Hive 查询使用应用程序。
+8. 上载完成后，你将能够通过 Hive 查询使用应用程序。
 
 ###Hive 查询
 
@@ -135,11 +135,11 @@ Hive 和 Pig 非常适合用于处理 Azure HDInsight 中的数据，但有时�
 
 2. 依次展开“Azure”和“HDInsight”。
 
-5. 右键单击你已将“HiveCSharp”应用程序部署到的群集，然后选择“编写 Hive 查询”。
+5. 右键单击已将“HiveCSharp”应用程序部署到的群集，然后选择“编写 Hive 查询”。
 
-6. 请为 Hive 查询使用以下内容：
+6. 请使用以下内容执行 Hive 查询：
 
-		add file wasbs:///HiveCSharp.exe;
+		add file wasb:///HiveCSharp.exe;
 
 		SELECT TRANSFORM (clientid, devicemake, devicemodel)
 		USING 'HiveCSharp.exe' AS
@@ -147,17 +147,17 @@ Hive 和 Pig 非常适合用于处理 Azure HDInsight 中的数据，但有时�
 		FROM hivesampletable
 		ORDER BY clientid LIMIT 50;
 
-    这将从 `hivesampletable` 中选择 `clientid`、`devicemake` 和 `devicemodel` 字段并将这些字段传递到 HiveCSharp.exe 应用程序。该查询预期应用程序返回三个字段，它们将存储为 `clientid`、`phoneLabel` 和 `phoneHash`。该查询还预期在默认存储容器的根目录中找到 HiveCSharp.exe (`add file wasbs:///HiveCSharp.exe`)。
+    这将从 `hivesampletable` 中选择 `clientid`、`devicemake` 和 `devicemodel` 字段，并将这些字段传递到 HiveCSharp.exe 应用程序。该查询预期应用程序返回三个字段，它们将存储为 `clientid`、`phoneLabel` 和 `phoneHash`。该查询还预期在默认存储容器的根目录中找到 HiveCSharp.exe (`add file wasbs:///HiveCSharp.exe`)。
 
 5. 单击“提交”将作业提交到 HDInsight 群集。此时将打开“Hive 作业摘要”窗口。
 
-6. 单击“刷新”以刷新摘要，直到“作业状态”变为“已完成”。若要查看作业输出，请单击“作业输出”。
+6. 单击“刷新”以刷新摘要，直到“作业状态”变为“已完成”。要查看作业输出，请单击“作业输出”。
 
 ##Pig 和 C&#35;
 
 ###创建 C# 项目
 
-1. 打开 Visual Studio 并创建一个新的解决方案。对于项目类型，选择“控制台应用程序”，并将新项目命名为“PigUDF”。
+1. 打开 Visual Studio 并创建一个新解决方案。对于项目类型，选择“控制台应用程序”，并将新项目命名为“PigUDF”。
 
 2. 将 **Program.cs** 文件的内容替换为以下内容：
 
@@ -188,26 +188,26 @@ Hive 和 Pig 非常适合用于处理 Azure HDInsight 中的数据，但有时�
 		    }
 		}
 
-	此应用程序将分析发送自 Pig 的行，并对以 `java.lang.Exception` 开头的行重新设置格式。
+	此应用程序将分析 Pig 发送的行，并对以 `java.lang.Exception` 开头的行重新设置格式。
 
 3. 保存 **Program.cs**，然后生成项目。
 
 ###上载应用程序
 
-1. Pig 流式处理预期应用程序位于群集文件系统本地。为 HDInsight 群集启用远程桌面，然后根据[使用 RDP 连接到 HDInsight 群集](/documentation/articles/hdinsight-administer-use-management-portal-v1/#rdp)中的说明连接到该群集。
+1. Pig 流式处理预期应用程序位于群集文件系统本地。为 HDInsight 群集启用远程桌面，然后根据[使用 RDP 连接到 HDInsight 群集](/documentation/articles/hdinsight-administer-use-management-portal-v1/#rdp)中的说明连接到群集。
 
-2. 在连接后，从你的本地计算机上 PigUDF 项目的 **bin/debug** 目录中复制 **PigUDF.exe**，并将其粘贴到群集上的 **%PIG\_HOME%** 目录中。
+2. 在连接后，从本地计算机上 PigUDF 项目的 **bin/debug** 目录中复制 **PigUDF.exe**，并将其粘贴到群集上的 **%PIG\_HOME%** 目录中。
 
 ###通过 Pig Latin 使用应用程序
 
 1. 从远程桌面会话中，使用桌面上的“Hadoop 命令行”图标启动 Hadoop 命令行。
 
-2. 使用以下命令来启动 Pig 命令行：
+2. 使用以下命令启动 Pig 命令行：
 
 		cd %PIG_HOME%
 		bin\pig
 
-	系统将为你提供 `grunt>` 提示符。
+	系统将显示 `grunt>` 提示符。
 
 3. 输入以下命令以使用 .NET Framework 应用程序运行简单的 Pig 作业：
 
@@ -217,11 +217,11 @@ Hive 和 Pig 非常适合用于处理 Azure HDInsight 中的数据，但有时�
 		DETAILS = STREAM LOG through streamer as (col1, col2, col3, col4, col5);
 		DUMP DETAILS;
 
-	`DEFINE` 语句为 pigudf.exe 应用程序创建别名 `streamer`，`SHIP` 将其在群集的节点中进行分发。以后，可以将 `streamer` 与 `STREAM` 运算符配合使用来处理 LOG 中包含的单一行，并将数据返回为一系列的列。
+	`DEFINE` 语句为 pigudf.exe 应用程序创建别名 `streamer`，`SHIP` 将其在群集的节点中进行分发。以后，可以将 `streamer` 与 `STREAM` 运算符配合使用，以便处理 LOG 中包含的单一行，并将数据返回为一系列的列。
 
-> [AZURE.NOTE]用于流式处理的应用程序名称在使用别名时必须用 `（反引号）字符括起来，当与 `SHIP` 一起使用时必须用 '（单引号）括起来。
+> [AZURE.NOTE]用于流式处理的应用程序名称在使用别名时必须用 `（反引号）字符括起来，当与 `SHIP` 一起使用时，必须用 '（单引号）括起来。
 
-3. 在输入最后一行后，该作业应该启动。最终，它将返回类似于以下内容的输出：
+3. 输入最后一行后，该作业应该启动。最终，它将返回类似于以下内容的输出：
 
 		(2012-02-03 20:11:56 SampleClass5 [WARN] problem finding id 1358451042 - java.lang.Exception)
 		(2012-02-03 20:11:56 SampleClass5 [DEBUG] detail for id 1976092771)
@@ -231,9 +231,9 @@ Hive 和 Pig 非常适合用于处理 Azure HDInsight 中的数据，但有时�
 
 ##摘要
 
-在本文档中，你已了解了如何在 HDInsight 上通过 Hive 和 Pig 使用 .NET Framework 应用程序。如果希望了解如何将 Python 与 Hive 和 Pig 配合使用，请参阅[在 HDInsight 中将 Python 与 Hive 和 Pig 配合使用](/documentation/articles/hdinsight-python/)。
+在本文档中，你了解了如何在 HDInsight 上通过 Hive 和 Pig 使用 .NET Framework 应用程序。如果希望了解如何将 Python 与 Hive 和 Pig 配合使用，请参阅[在 HDInsight 中将 Python 与 Hive 和 Pig 配合使用](/documentation/articles/hdinsight-python/)。
 
-若要了解使用 Pig、Hive 的其他方式以及如何使用 MapReduce，请参阅以下文章：
+要了解使用 Pig、Hive 的其他方式以及如何使用 MapReduce，请参阅以下文章：
 
 * [将 Hive 与 HDInsight 配合使用](/documentation/articles/hdinsight-use-hive/)
 
@@ -241,4 +241,4 @@ Hive 和 Pig 非常适合用于处理 Azure HDInsight 中的数据，但有时�
 
 * [将 MapReduce 与 HDInsight 配合使用](/documentation/articles/hdinsight-use-mapreduce/)
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_Quality_Review_1202_2016-->

@@ -15,7 +15,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="07/25/2016"
-	wacn.date="09/30/2016"
+	wacn.date="12/16/2016"
 	ms.author="jgao"/>
 
 # 为 HDInsight 开发脚本操作脚本
@@ -103,7 +103,7 @@ Name | 脚本
 
 ## <a name="helper-methods-for-custom-scripts"></a> 自定义脚本的帮助器方法
 
-脚本操作帮助器方法是可以在编写自定义脚本时使用的实用工具。这些方法在 [https://hdiconfigactions.blob.core.windows.net/configactionmodulev05/HDInsightUtilities-v05.psm1](https://hdiconfigactions.blob.core.windows.net/configactionmodulev05/HDInsightUtilities-v05.psm1) 中定义，可以使用以下语法包括在你的脚本中：
+脚本操作帮助器方法是可以在编写自定义脚本时使用的实用工具。这些方法在 [https://hdiconfigactions.blob.core.windows.net/configactionmodulev05/HDInsightUtilities-v05.psm1](https://hdiconfigactions.blob.core.windows.net/configactionmodulev05/HDInsightUtilities-v05.psm1) 中定义，可以使用以下语法将其包括在脚本中：
 
     # Download config action module from a well-known directory.
 	$CONFIGACTIONURI = "https://hdiconfigactions.blob.core.windows.net/configactionmodulev05/HDInsightUtilities-v05.psm1";
@@ -161,7 +161,7 @@ Name | 脚本
 
 - 确保群集自定义脚本是幂等的
 
-	你必须预期在群集的生存期内将对 HDInsight 群集的节点重新制作映像。只要对群集重新制作映像，就会运行群集自定义脚本。在某种意义上讲，此脚本必须设计为幂等的，即重新制作映像时，该脚本应确保将群集返回到在初次创建群集时首次运行脚本后所处的相同自定义状态。例如，如果自定义脚本在其首次运行时在 D:\\AppLocation 上安装了应用程序，则在随后每次运行时，重新制作映像后，该脚本应检查应用程序是否在 D:\\AppLocation 位置存在，然后才能继续在该脚本中执行其他步骤。
+	必须预期在群集的生存期内将对 HDInsight 群集的节点重新制作映像。只要对群集重新制作映像，就会运行群集自定义脚本。在某种意义上讲，此脚本必须设计为幂等的，即重新制作映像时，该脚本应确保将群集返回到在初次创建群集时首次运行脚本后所处的相同自定义状态。例如，如果自定义脚本在其首次运行时在 D:\\AppLocation 上安装了应用程序，则在随后每次运行时，重新制作映像后，该脚本应检查应用程序是否在 D:\\AppLocation 位置存在，然后才能继续在该脚本中执行其他步骤。
 
 
 - 在最佳位置安装自定义组件
@@ -173,20 +173,20 @@ Name | 脚本
 
 	HDInsight 具有实现高可用性的主-被体系结构，在该结构中，一个头节点处于主动模式（HDInsight 服务正在运行），而另一头节点处于备用模式（HDInsight 服务未在运行）。如果 HDInsight 服务中断，则节点会在主动和被动模式之间切换。如果使用脚本操作在两个头节点上安装服务以实现高可用性，请注意，HDInsight 故障转移机制无法对这些用户安装的服务执行自动故障转移。因此，用户在 HDInsight 头节点上安装的服务如果预期具有高可用性，则必须具有自己的故障转移机制，无论是在主-被模式还是在主-主模式下。
 
-	如果将头节点角色指定为 *ClusterRoleCollection* 参数（记录在下面的[如何运行脚本操作](#runScriptAction)部分中）中的值，则 HDInsight 脚本操作命令会在两个头节点上运行。因此，设计自定义脚本时，请确保你的脚本知道此设置。如果在两个头节点上安装并启动相同服务，并且这两个服务以相互争用结束，则你不会遇到问题。另请注意，数据将在重新制作映像期间丢失，因此，通过脚本操作安装的软件必须能够灵活应对此类事件。应用程序应设计使用分布在很多节点上的高可用数据。请注意，有 1/5 之多的群集节点可以同时重新制作映像。
+	如果将头节点角色指定为 *ClusterRoleCollection* 参数（记录在下面的[如何运行脚本操作](#runScriptAction)部分中）中的值，则 HDInsight 脚本操作命令会在两个头节点上运行。因此，设计自定义脚本时，请确保脚本知道此设置。如果在两个头节点上安装并启动相同服务，并且这两个服务以相互争用结束，则不会遇到问题。另请注意，数据将在重新制作映像期间丢失，因此，通过脚本操作安装的软件必须能够灵活应对此类事件。应用程序应设计使用分布在很多节点上的高可用数据。请注意，有 1/5 之多的群集节点可以同时重新制作映像。
 
 
 - 配置自定义组件以使用 Azure Blob 存储
 
-	你在群集节点上安装的自定义组件可能具有使用 Hadoop 分布式文件系统 (HDFS) 存储的默认配置。你应该更改该配置以改用 Azure Blob 存储。在对群集重新制作映像时，HDFS 文件系统将会进行格式化，因此，你可能会丢失存储在此处的所有数据。改用 Azure Blob 存储可确保将保留你的数据。
+	在群集节点上安装的自定义组件可能具有使用 Hadoop 分布式文件系统 (HDFS) 存储的默认配置。你应该更改该配置以改用 Azure Blob 存储。在对群集重新制作映像时，HDFS 文件系统将会进行格式化，因此，可能会丢失存储在此处的所有数据。改用 Azure Blob 存储可确保保留数据。
 
 ## 常见使用模式
 
-本部分提供有关实现你在编写自己的自定义脚本时可能遇到的一些常见使用模式的指导。
+本部分提供了实现一些常见使用模式的指导。在编写自定义脚本时可能会使用这些模式。
 
 ### 配置环境变量
 
-通常，在脚本操作开发中，你将需要设置环境变量。例如，最可能的情况是，从外部站点下载二进制文件，将其安装在群集上，并将其安装位置添加到你的“PATH”环境变量。以下代码段向你介绍如何在自定义脚本中设置环境变量。
+通常，在脚本操作开发中，需要设置环境变量。例如，最可能的情况是，从外部站点下载二进制文件，将其安装在群集上，并将其安装位置添加到“PATH”环境变量中。以下代码段介绍了如何在自定义脚本中设置环境变量。
 
 	Write-HDILog "Starting environment variable setting at: $(Get-Date)";
 	[Environment]::SetEnvironmentVariable('MDS_RUNNER_CUSTOM_CLUSTER', 'true', 'Machine');
@@ -199,11 +199,11 @@ Name | 脚本
 
 	Save-HDIFile -SrcUri 'https://somestorageaccount.blob.core.chinacloudapi.cn/somecontainer/some-file.jar' -DestFile 'C:\apps\dist\hadoop-2.4.0.2.1.9.0-2196\share\hadoop\mapreduce\some-file.jar'
 
-在此示例中，你必须确保存储帐户“somestorageaccount”中的容器“somecontainer”可公开访问。否则，该脚本将引发“未找到”异常并失败。
+在此示例中，你必须确保可公开访问存储帐户“somestorageaccount”中的容器“somecontainer”。否则，该脚本将引发“未找到”异常并失败。
 
 ### 将参数传递给 Add-AzureHDInsightScriptAction cmdlet
 
-若要将多个参数传递给 Add-AzureHDInsightScriptAction cmdlet，你需要将字符串值的格式设置为包含脚本的所有参数。例如：
+要将多个参数传递给 Add-AzureHDInsightScriptAction cmdlet，需要将字符串值的格式设置为包含脚本的所有参数。例如：
 
 	"-CertifcateUri wasbs:///abc.pfx -CertificatePassword 123456 -InstallFolderName MyFolder"
  
@@ -224,7 +224,7 @@ Name | 脚本
 	exit
 	}
 
-在此代码段中，如果文件不存在，则会导致脚本在列显错误消息后实际正常退出的状态，而群集将进入运行中状态（前提是它“成功”完成了群集自定义进程）。如果你要准确知道群集自定义操作由于缺少文件而未按预期成功完成，就更适合引发异常并使群集自定义步骤失败。若要达到这个目的，你必须改用以下示例代码段。
+在此代码段中，如果文件不存在，则会导致脚本在列显错误消息后实际正常退出的状态，而群集将进入运行中状态（前提是它“成功”完成了群集自定义进程）。如果要准确知道群集自定义操作由于缺少文件而未按预期成功完成，就更适合引发异常并使群集自定义步骤失败。要达到这个目的，必须使用以下示例代码段。
 
 	If(Test-Path($SomePath)) {
 		#Process file in some way
@@ -241,19 +241,19 @@ Name | 脚本
 1. 将包含自定义脚本的文件放置在群集节点在部署期间可访问的位置中。这可能是在部署群集时指定的任何默认或其他存储帐户，或任何其他可公共访问的存储容器。
 2. 向脚本中添加检查，以确保这些脚本可以幂等方式执行，从而使脚本可在同一节点上多次执行。
 3. 使用 **Write-Output** Azure PowerShell cmdlet 输出到 STDOUT 以及 STDERR。请勿使用 **Write-Host**。
-4. 使用临时文件夹，例如 $env:TEMP，来保留脚本使用的下载文件，并在执行脚本后将其清除。
-5. 仅在 D:\\ 或 C:\\apps 上安装自定义软件。不应使用 C: 驱动器上的其他位置，因为这些位置已保留。请注意，在 C: 驱动器上 C:\\apps 文件夹外安装文件可能会导致在对节点重新制作映像时设置失败。
-6. 如果 OS 级设置或 Hadoop 服务配置文件发生更改，则你可能需要重新启动 HDInsight 服务，使其可以选取任何 OS 级设置，例如脚本中设置的环境变量。
+4. 使用临时文件夹（例如 $env:TEMP）保存下载的文件，并在执行脚本后将其清除。
+5. 自定义软件只能安装在 D:\\ 或 C:\\apps 中。不应使用 C: 驱动器上的其他位置，因为这些位置已保留。请注意，在 C: 驱动器上 C:\\apps 文件夹外安装文件可能会导致在对节点重新制作映像时设置失败。
+6. 如果操作系统级设置或 Hadoop 服务配置文件发生更改，则可能需要重新启动 HDInsight 服务，使其可以选取任何操作系统级设置，例如脚本中设置的环境变量。
 
 
 
 ## 使用 HDInsight 模拟器测试自定义脚本
 
-若要在 HDInsight 脚本操作命令中使用自定义脚本前对其进行测试，一个直截了当的方法是在 HDInsight 模拟器上运行它。你可以在本地或 Azure 基础结构即服务 (IaaS) Windows Server 2012 R2 VM 或本地计算机上安装 HDInsight 模拟器，并观察脚本的行为是否正确。请注意，Windows Server 2012 R2 VM 是 HDInsight 用于其节点的相同 VM。
+要在 HDInsight 脚本操作命令中使用自定义脚本前对其进行测试，一个直截的方法是在 HDInsight 模拟器上运行它。你可以在本地或 Azure 基础结构即服务 (IaaS) Windows Server 2012 R2 VM 或本地计算机上安装 HDInsight 模拟器，并观察脚本的行为是否正确。请注意，Windows Server 2012 R2 VM 是 HDInsight 用于其节点的相同 VM。
 
-本部分概述在本地使用 HDInsight 模拟器进行测试的过程，但是使用 VM 的过程类似。
+本部分概括了在本地使用 HDInsight 模拟器进行测试的过程，但是使用 VM 的过程类似。
 
-**安装 HDInsight 模拟器** - 若要在本地运行脚本操作，你必须安装有 HDInsight 模拟器。有关如何安装该模拟器的说明，请参阅 [HDInsight 模拟器入门](/documentation/articles/hdinsight-hadoop-emulator-get-started/)。
+**安装 HDInsight 模拟器** - 要在本地运行脚本操作，必须安装 HDInsight 模拟器。有关如何安装该模拟器的说明，请参阅 [HDInsight 模拟器入门](/documentation/articles/hdinsight-hadoop-emulator-get-started/)。
 
 **设置 Azure PowerShell 的执行策略** - 打开 Azure PowerShell 并运行（以管理员身份）以下命令，以将执行策略设置为 *LocalMachine* 和 *Unrestricted*：
 
@@ -275,12 +275,12 @@ Name | 脚本
 	val file = sc.textFile("/example/data/gutenberg/davinci.txt")
 
 
-请注意，在某些情况下，自定义脚本实际上可能依赖于 HDInsight 组件，例如检测某些 Hadoop 服务是否启动。在这种情况下，你将需要在实际的 HDInsight 群集上部署自定义脚本以对其进行测试。
+请注意，在某些情况下，自定义脚本实际上可能依赖于 HDInsight 组件，例如检测某些 Hadoop 服务是否启动。在这种情况下，你需要在实际的 HDInsight 群集上部署自定义脚本以对其进行测试。
 
 
 ## <a name="runScriptAction"></a> 调试自定义脚本
 
-脚本错误日志随同其他输出一起存储在创建群集时为该群集指定的默认存储帐户中。这些日志存储在名为 *u<\\cluster-name-fragment><\\time-stamp>setuplog* 的表中。这些是包含所有节点（头节点和从节点）中的记录的聚合日志，脚本在群集中的这些节点上运行。若要查看日志，一个简单方法是使用 HDInsight Tools for Visual Studio。若要安装这些工具，请参阅[开始使用适用于 HDInsight 的 Visual Studio Hadoop 工具](/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started/#install-hdinsight-tools-for-visual-studio)
+脚本错误日志随同其他输出一起存储在创建群集时为该群集指定的默认存储帐户中。这些日志存储在名为 *u<\\cluster-name-fragment><\\time-stamp>setuplog* 的表中。这些是包含所有节点（头节点和从节点）中的记录的聚合日志，脚本在群集中的这些节点上运行。要查看日志，一个简单方法是使用用于 Visual Studio 的 HDInsight 工具。要安装这些工具，请参阅[开始使用适用于 HDInsight 的 Visual Studio Hadoop 工具](/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started/#install-hdinsight-tools-for-visual-studio)
 
 **使用 Visual Studio 查看日志的步骤**
 
@@ -290,7 +290,7 @@ Name | 脚本
 4. 依次展开“存储”、用作默认文件系统的 Azure 存储帐户、“表”，然后双击表名。
 
 
-你还可以远程连接到群集节点，以查看 STDOUT 和 STDERR 中的自定义脚本。每个节点上的日志仅特定于该节点，并记录到 **C:\\HDInsightLogs\\DeploymentAgent.log** 中。这些日志文件会记录自定义脚本中的所有输出。
+还可以远程连接到群集节点，以查看 STDOUT 和 STDERR 中的自定义脚本。每个节点上的日志仅特定于该节点，并记录到 **C:\\HDInsightLogs\\DeploymentAgent.log** 中。这些日志文件会记录自定义脚本中的所有输出。
 
 如果执行失败，则描述该情况的输出也将包含在此日志文件中。这些日志中提供的信息应该对调试可能出现的脚本问题有所帮助。
 
@@ -310,4 +310,4 @@ Name | 脚本
 <!--Reference links in article-->
 [1]: https://msdn.microsoft.com/zh-cn/library/96xafkes(v=vs.110).aspx
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_Quality_Review_1202_2016-->
