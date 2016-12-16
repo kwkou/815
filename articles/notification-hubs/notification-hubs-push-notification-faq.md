@@ -17,7 +17,7 @@
 	ms.topic="article"
 	ms.date="10/03/2016"
 	ms.author="wesmc" 
-	wacn.date="11/22/2016"/>  
+	wacn.date="12/16/2016"/>  
 
 
 #使用 Azure 通知中心推送通知 — 常见问题
@@ -66,12 +66,12 @@
 我们针对 .NET、Java、PHP、Python、Node.js 提供 SDK 和[完整的示例]，因此，可以设置应用后端以使用其中任一平台与通知中心通信。通知中心 API 以 REST 接口为基础，因此，如果你不想增加额外的依赖项，可以选择直接与其通信。可以在 [NH — REST API] 页面找到更多详细信息。
 
 ###2\.支持哪些客户端平台？
-我们支持将推送通知发送到 [Apple iOS](/documentation/articles/notification-hubs-ios-apple-push-notification-apns-get-started/)、Android、[Windows 通用](/documentation/articles/notification-hubs-windows-store-dotnet-get-started-wns-push-notification/)、[Windows Phone](/documentation/articles/notification-hubs-windows-mobile-push-notifications-mpns/)、[Kindle](/documentation/articles/notification-hubs-kindle-amazon-adm-push-notification/)、[Android China（通过百度）](/documentation/articles/notification-hubs-baidu-china-android-notifications-get-started/)、Xamarin（[iOS](/documentation/articles/xamarin-notification-hubs-ios-push-notification-apns-get-started/) 和 Android）、[Chrome 应用](/documentation/articles/notification-hubs-chrome-push-notifications-get-started/)和 [Safari](https://github.com/Azure/azure-notificationhubs-samples/tree/master/PushToSafari) 平台。有关在这些平台上发送推送通知的入门教程的完整列表，请访问 [NH — 入门教程]页面。
+我们支持将推送通知发送到 [Apple iOS](/documentation/articles/notification-hubs-ios-apple-push-notification-apns-get-started/)、[Windows 通用](/documentation/articles/notification-hubs-windows-store-dotnet-get-started-wns-push-notification/)、[Windows Phone](/documentation/articles/notification-hubs-windows-mobile-push-notifications-mpns/)、[Kindle](/documentation/articles/notification-hubs-kindle-amazon-adm-push-notification/)、[Android China（通过百度）](/documentation/articles/notification-hubs-baidu-china-android-notifications-get-started/)、Xamarin（[iOS](/documentation/articles/xamarin-notification-hubs-ios-push-notification-apns-get-started/) 和 Android） 和 [Safari](https://github.com/Azure/azure-notificationhubs-samples/tree/master/PushToSafari) 平台。有关在这些平台上发送推送通知的入门教程的完整列表，请访问 [NH — 入门教程]页面。
 
 ###3\.是否支持 SMS/电子邮件/Web 通知？
 通知中心主要针对使用上面列出的平台将通知发送到移动应用而设计。我们尚未提供发送电子邮件或短信提示的功能；但提供这些功能的第三方平台可以与通知中心进行集成，以通过使用 [Azure 移动应用]发送原生推送通知。
 
-通知中心也不提供现成的浏览器内推送通知传递服务。客户可以在支持的服务器端平台上，选择使用 SignalR 来实现此功能。如果想要在 Chrome 沙盒中将通知发送到浏览器应用，请查看 [Chrome 应用教程]。
+通知中心也不提供现成的浏览器内推送通知传递服务。客户可以在支持的服务器端平台上，选择使用 SignalR 来实现此功能。
 
 ###4\.Azure Mobile Apps 与 Azure 通知中心之间的关系如何？它们各自适用于什么场合？
 如果你有现成的移动应用后端并且只想添加发送推送通知的功能，则可以使用 Azure 通知中心。如果你想要从头开始安装移动应用后端，那么你应当考虑使用 Azure Mobile Apps。Azure Mobile Apps 会自动预配通知中心，以便你能够轻松地从移动应用后端发送推送通知。Azure Mobile Apps 的定价包括通知中心的基本费用，你只需在超出所含推送时支付费用。可以在[应用服务定价]页面找到有关成本的更多详细信息。
@@ -188,7 +188,6 @@ Azure 通知中心支持在 [Azure 经典管理门户]中查看遥测数据。�
 
 [NH — REST API]: https://msdn.microsoft.com/zh-cn/library/azure/dn530746.aspx
 [NH — 入门教程]: /documentation/articles/notification-hubs-ios-apple-push-notification-apns-get-started/
-[Chrome 应用教程]: /documentation/articles/notification-hubs-chrome-push-notifications-get-started/
 [Mobile Services Pricing]: /pricing/details/mobile-services/
 [后端注册指南]: https://msdn.microsoft.com/zh-cn/library/azure/dn743807.aspx
 [后端注册指南 — 2]: https://msdn.microsoft.com/zh-cn/library/azure/dn530747.aspx

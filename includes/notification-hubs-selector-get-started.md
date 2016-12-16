@@ -1,6 +1,5 @@
 > [AZURE.SELECTOR]
 - [百度](/documentation/articles/notification-hubs-baidu-china-android-notifications-get-started/)
-- [Chrome](/documentation/articles/notification-hubs-chrome-push-notifications-get-started/)
 - [iOS](/documentation/articles/notification-hubs-ios-apple-push-notification-apns-get-started/)
 - [Kindle](/documentation/articles/notification-hubs-kindle-amazon-adm-push-notification/)
 - [Windows Phone Silverlight 8.x](/documentation/articles/notification-hubs-windows-mobile-push-notifications-mpns/)
