@@ -13,34 +13,34 @@ ms.tgt_pltfrm="na"
 ms.devlang="na" 
 ms.topic="article" 
 ms.date="09/06/2016" 
-wacn.date="10/24/2016" 
+wacn.date="12/12/2016" 
 ms.author="adegeo"/>
 
 # 在 .NET 中自定义 Web 角色或辅助角色的生命周期
 
-在创建辅助角色时，你需要扩展 [RoleEntryPoint](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.serviceruntime.roleentrypoint.aspx) 类，重写该类提供的方法可以响应生命周期事件。此类对于 Web 角色而言是可选的，因此你主要将它用于响应生命周期事件。
+创建辅助角色时，需要扩展 [RoleEntryPoint](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.serviceruntime.roleentrypoint.aspx) 类，该类提供了重写方法，可对生命周期事件作出相应。此类对于 Web 角色而言是可选的，因此主要将它用于响应生命周期事件。
 
 ## 扩展 RoleEntryPoint 类
 
-[RoleEntryPoint](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.serviceruntime.roleentrypoint.aspx) 类包含由 Azure 在**启动**、**运行**或**停止** Web 角色或辅助角色时调用的方法。你可以选择重写这些方法来管理角色初始化、角色关闭序列或角色执行线程。
+[RoleEntryPoint](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.serviceruntime.roleentrypoint.aspx) 类包含由 Azure 在**启动**、**运行**或**停止** Web 角色或辅助角色时调用的方法。可以选择重写这些方法来管理角色初始化、角色关闭序列或角色执行线程。
 
-在扩展 **RoleEntryPoint** 时，应该了解方法的以下行为：
+扩展 **RoleEntryPoint** 时，应该了解方法的以下行为：
 
 -   [OnStart](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.serviceruntime.roleentrypoint.onstart.aspx) 和 [OnStop](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.serviceruntime.roleentrypoint.onstop.aspx) 方法返回布尔值，因此可以从这些方法返回 **false**。
 
-     如果你的代码返回 **false**，则该角色进程将突然终止，而不会运行可能拥有的任何关闭序列。一般来说，应该避免从 **OnStart** 方法返回 **false**。
+     如果代码返回 **false**，则该角色进程会突然终止，而不会运行可能拥有的任何关闭序列。一般来说，应该避免从 **OnStart** 方法返回 **false**。
      
 -   **RoleEntryPoint** 方法重载中未捕获的任何异常都被视为未处理的异常。
 
-     如果某个生命周期方法中发生异常，则 Azure 将引发 [UnhandledException](https://msdn.microsoft.com/zh-cn/library/system.appdomain.unhandledexception.aspx) 事件，然后进程会终止。角色脱机后，Azure 会将它重新启动。如果出现未处理的异常，则不会引发 [Stopping](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.serviceruntime.roleenvironment.stopping.aspx) 事件，并且不会调用 **OnStop** 方法。
+     如果某个生命周期方法中发生异常，Azure 将引发 [UnhandledException](https://msdn.microsoft.com/zh-cn/library/system.appdomain.unhandledexception.aspx) 事件，然后进程会终止。角色脱机后，Azure 会将它重新启动。如果出现未处理的异常，则不会引发 [Stopping](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.serviceruntime.roleenvironment.stopping.aspx) 事件，并且不会调用 **OnStop** 方法。
 
-如果角色未启动，或者在初始化、繁忙和停止状态之间循环，可能是因为每次角色重新启动生命周期事件时，你的代码都引发了未处理的异常。在这种情况下，请使用 [UnhandledException](https://msdn.microsoft.com/zh-cn/library/system.appdomain.unhandledexception.aspx) 事件来确定异常的原因并采用适当的方法进行处理。角色也可能会从 [Run](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.serviceruntime.roleentrypoint.run.aspx) 方法返回，从而促使角色重新启动。有关部署状态的详细信息，请参阅[导致角色回收的常见问题](https://msdn.microsoft.com/zh-cn/library/azure/gg465402.aspx)。
+如果角色未启动，或者在初始化、繁忙和停止状态之间循环，可能是因为每次角色重新启动生命周期事件时，代码都引发了未处理的异常。在这种情况下，请使用 [UnhandledException](https://msdn.microsoft.com/zh-cn/library/system.appdomain.unhandledexception.aspx) 事件来确定异常的原因并采用适当的方法进行处理。角色也可能会从 [Run](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.serviceruntime.roleentrypoint.run.aspx) 方法返回，从而促使角色重新启动。有关部署状态的详细信息，请参阅[导致角色回收的常见问题](https://msdn.microsoft.com/zh-cn/library/azure/gg465402.aspx)。
 
-> [AZURE.NOTE]如果你使用 [Azure Tools for Microsoft Visual Studio](https://msdn.microsoft.com/zh-cn/library/azure/ee405484.aspx) 开发应用程序，则角色项目模板将自动在 WebRole.cs 和 WorkerRole.cs 文件中为你扩展 **RoleEntryPoint** 类。
+> [AZURE.NOTE]如果使用 [Azure Tools for Microsoft Visual Studio](https://msdn.microsoft.com/zh-cn/library/azure/ee405484.aspx) 开发应用程序，则角色项目模板将自动在 WebRole.cs 和 WorkerRole.cs 文件中扩展 **RoleEntryPoint** 类。
 
 ## OnStart 方法
 
-当 Azure 使角色实例联机时，就会调用 **OnStart** 方法。OnStart 代码执行时，角色实例被标记为 **Busy**，并且负载均衡器不会将外部通信引导到该角色。你可以重写此方法以执行初始化工作，例如实现事件处理程序和启动 [Azure Diagnostics](/documentation/articles/cloud-services-how-to-monitor/)。
+Azure 使角色实例联机时，会调用 **OnStart** 方法。OnStart 代码执行时，角色实例被标记为 **Busy**，并且负载均衡器不会将外部通信引导到该角色。可以重写此方法执行初始化工作，例如实现事件处理程序和启动 [Azure 诊断](/documentation/articles/cloud-services-how-to-monitor)。
 
 如果 **OnStart** 返回 **true**，则该实例已成功初始化，并且 Azure 已调用 **RoleEntryPoint.Run** 方法。如果 **OnStart** 返回 **false**，则角色将立即终止，而不执行任何计划中的关闭序列。
 
@@ -63,14 +63,14 @@ ms.author="adegeo"/>
 
 **OnStop** 方法在 Azure 使角色实例脱机之后并且在进程退出之前被调用。可以重写此方法来调用角色实例所需的代码，以便彻底关闭此角色实例。
 
-> [AZURE.IMPORTANT]如果出于某些原因而不是用户启动的关闭而调用 **OnStop** 方法，则此方法中运行的代码必须在有限的时间内完成。这段时间过后，进程将被终止，因此你必须确保 **OnStop** 方法中的代码能够快速运行或者不必完全运行。引发 **Stopping** 事件后，会调用 **OnStop** 方法。
+> [AZURE.IMPORTANT]如果出于某些原因而不是用户启动的关闭而调用 **OnStop** 方法，则此方法中运行的代码必须在有限的时间内完成。这段时间过后，进程将被终止，因此必须确保 **OnStop** 方法中的代码能够快速运行或者不必完全运行。引发 **Stopping** 事件后，会调用 **OnStop** 方法。
 
 
 ## Run 方法
 
 可以重写 **Run** 方法以便为角色实例实现长时间运行的线程。
 
-重写 **Run** 方法不是必需的；默认实现可以启动一个永远休眠的线程。如果你重写 **Run** 方法，你的代码应会被无限期阻止。如果 **Run** 方法返回，角色将正常自动回收；也就是说，Azure 将引发 **Stopping** 事件并调用 **OnStop** 方法，因此在角色脱机之前可能执行了你的关闭序列。
+重写 **Run** 方法不是必需的；默认实现可以启动一个永远休眠的线程。如果重写 **Run** 方法，代码会被无限期阻止。如果 **Run** 方法返回，角色将正常自动回收；也就是说，Azure 将引发 **Stopping** 事件并调用 **OnStop** 方法，因此在角色脱机之前可能执行了你的关闭序列。
 
 
 ### 为 Web 角色实现 ASP.NET 生命周期方法
@@ -80,4 +80,4 @@ ms.author="adegeo"/>
 ## 后续步骤
 了解如何[创建云服务包](/documentation/articles/cloud-services-model-and-package/)。
 
-<!---HONumber=Mooncake_0104_2016-->
+<!---HONumber=Mooncake_Quality_Review_1202_2016-->

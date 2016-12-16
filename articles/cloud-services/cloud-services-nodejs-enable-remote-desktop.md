@@ -14,12 +14,12 @@
 	ms.devlang="nodejs" 
 	ms.topic="article" 
 	ms.date="11/01/2016" 
-	wacn.date="12/05/2016" 
+	wacn.date="12/16/2016" 
 	ms.author="robmcm"/>
 
 # 在 Azure 中启用远程桌面
 
-你可以通过远程桌面访问在 Azure 中运行的角色实例的桌面。您可以使用远程桌面连接配置虚拟机，或者排查应用程序问题。
+你可以通过远程桌面访问 Azure 中运行的角色实例的桌面。也可以使用远程桌面连接配置虚拟机，或者排查应用程序问题。
 
 > [AZURE.NOTE] 本文适用于托管为 Azure 云服务的 Node.js 应用程序。
 
@@ -32,7 +32,7 @@
 
 ## 步骤 1：使用 Azure PowerShell 配置服务以进行远程桌面访问
 
-若要使用远程桌面，你需要使用用户名、密码和证书更新 Azure 服务定义和配置。
+若要使用远程桌面，需要使用用户名、密码和证书更新 Azure 服务定义和配置。
 
 在包含应用源文件的计算机上执行以下步骤。
 
@@ -44,7 +44,7 @@
 
 		Enable-AzureServiceProjectRemoteDesktop
 
-4. 在提示符下，输入用户名和密码。
+4. 在提示符处，输入用户名和密码。
 
 	![enable-azureserviceprojectremotedesktop][enable-rdp]
 
@@ -58,15 +58,15 @@
 
 发布更新服务定义后，可以连接到角色实例。
 
-1.  在 [Azure 经典管理门户]中选择“云服务”，然后选择你的服务。
+1.  在 [Azure 经典管理门户]中选择“云服务”，然后选择服务。
 
 	![Azure 经典管理门户][cloud-services]
 
-2.  单击“实例”，然后单击“生产”或“过渡”查看你的服务实例。选择一个实例，然后单击页面底部的“连接”。
+2.  单击“实例”，然后单击“生产”或“过渡”查看服务实例。选择一个实例，然后单击页面底部的“连接”。
 
     ![实例页][3]
 
-2.  单击“连接”后，Web 浏览器会提示你保存.rdp 文件。打开此文件。（例如，如果你使用的是 Internet Explorer，请单击“打开”。）
+2.  单击“连接”后，Web 浏览器会提示保存.rdp 文件。打开此文件。（例如，如果使用的是 Internet Explorer，请单击“打开”。）
 
     ![提示打开或保存 .rdp 文件][4]
 
@@ -74,7 +74,7 @@
 
     ![Windows 安全性提示][5]
 
-4.  单击“连接”，将显示一个安全提示，要求输入访问该实例的凭据。输入你在 [步骤 1][步骤 1：使用 Azure PowerShell 配置服务以进行远程桌面访问] 中创建的密码，然后单击“确定”。
+4.  单击“连接”，将显示一个安全提示，要求输入访问该实例的凭据。输入[步骤 1][步骤 1：使用 Azure PowerShell 配置服务以进行远程桌面访问] 中创建的密码，然后单击“确定”。
 
     ![用户名/密码提示][6]
 
@@ -84,7 +84,7 @@
 
 ## 步骤 3：配置服务以禁用远程桌面访问 
 
-当你不再需要与云中角色实例的远程桌面连接时，可使用 [Azure PowerShell](/documentation/articles/powershell-install-configure/) 禁用远程桌面访问。
+不再需要与云中角色实例的远程桌面连接时，可使用 [Azure PowerShell](/documentation/articles/powershell-install-configure/) 禁用远程桌面访问。
 
 1.  输入以下 Azure Powershell cmdlet：
 
@@ -114,5 +114,6 @@
   
 [远程访问 Azure 中的角色实例]: http://msdn.microsoft.com/zh-cn/library/windowsazure/hh124107.aspx
 [将远程桌面与 Azure 角色一起使用]: http://msdn.microsoft.com/zh-cn/library/windowsazure/gg443832.aspx
+ 
 
-<!---HONumber=Mooncake_0307_2016-->
+<!---HONumber=Mooncake_Quality_Review_1202_2016-->

@@ -14,19 +14,19 @@
    ms.tgt_pltfrm="na"
    ms.workload="tbd"
    ms.date="10/12/2016"
-   wacn.date="11/14/2016"
+   wacn.date="12/16/2016"
    ms.author="v-six" />
 
 
 # 云服务 Web 角色/辅助角色的默认 TEMP 文件夹大小太小
 
-云服务辅助角色或 Web 角色的默认临时目录的最大大小为 100 MB，可能会导致该目录在某个时候被填满。本文介绍如何避免临时目录空间不足。
+云服务辅助角色或 Web 角色的默认临时目录的最大大小为 100 MB，该目录可能会在某个时候被填满。本文介绍如何避免临时目录空间不足的问题。
 
 [AZURE.INCLUDE [support-disclaimer](../../includes/support-disclaimer.md)]
 
 ## 为什么空间会不足？
 
-标准 Windows 环境变量 TEMP 和 TMP 可供在应用程序中运行的代码使用。TEMP 和 TMP 都指向一个最大大小为 100 MB 的目录。此目录中存储的任何数据都不会在云服务的整个生命周期中持久保存；如果云服务中的角色实例被回收，则会清除此目录。
+标准 Windows 环境变量 TEMP 和 TMP 可供应用程序中运行的代码使用。TEMP 和 TMP 都指向一个最大大小为 100 MB 的目录。此目录中存储的任何数据都不会在云服务的整个生命周期中持久保存；如果云服务中的角色实例被回收，则会清除此目录。
 
 ## 解决此问题的建议
 
@@ -74,4 +74,4 @@
 
 
 
-<!---HONumber=Mooncake_0523_2016-->
+<!---HONumber=Mooncake_Quality_Review_1202_2016-->
