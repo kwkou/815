@@ -14,7 +14,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="tbd"
    ms.date="11/14/2016"
-   wacn.date="12/05/2016"
+   wacn.date="12/16/2016"
    ms.author="v-six" />
 
 # 对无法启动的云服务角色进行故障排除
@@ -30,13 +30,13 @@ DLL 或程序集缺失可能导致出现不响应的角色以及在“正在初�
 DLL 或程序集缺失的症状可能为：
 
 - 角色实例的状态在“正在初始化”、“忙”、“正在停止”之间循环。
-- 角色实例已转为“就绪”状态，但在导航到 Web 应用程序时未显示相应页面。
+- 角色实例已转为“就绪”状态，但导航到 Web 应用程序后未显示相应页面。
 
 若要调查这些问题，可采用几种推荐的方法。
 
 ## 在 Web 角色中诊断缺失 DLL 的问题
 
-如果你导航到在 Web 角色中部署的网站，且浏览器显示类似于下面的服务器错误，可能指示 DLL 缺失。
+如果导航到 Web 角色中部署的网站，且浏览器显示类似于下面的服务器错误，可能指示 DLL 缺失。
 
 !['/' 应用程序中出现服务器错误。](./media/cloud-services-troubleshoot-roles-that-fail-start/ic503388.png)
 
@@ -59,7 +59,7 @@ DLL 或程序集缺失的症状可能为：
 
 5. 重新打包并重新部署服务。
 
-重新部署服务后，你将看到错误消息，其中包含缺失的程序集或 DLL 的名称。
+重新部署服务后，会看到错误消息，其中包含缺失的程序集或 DLL 的名称。
 
 ## 通过远程查看错误来诊断问题
 
@@ -69,7 +69,7 @@ DLL 或程序集缺失的症状可能为：
 
 2. 在使用 Visual Studio 部署解决方案的过程中，选择“配置远程桌面连接...”。
 
-3. 在 Azure 管理门户中，在实例显示“就绪”状态后，请单击其中一个角色实例。
+3. 在 Azure 经典管理门户中，实例显示“就绪”状态后，请单击其中一个角色实例。
 
 4. 单击功能区的“远程访问”区域中的“连接”图标。
 
@@ -101,7 +101,7 @@ DLL 或程序集缺失的症状可能为：
 
 可以使用 Azure 计算模拟器来诊断并解决缺失依赖项和出现 web.config 错误的问题。
 
-为了在使用此诊断方法时获得最佳结果，你应使用包含 Windows 的干净安装的计算机或虚拟机。若要以最佳效果模拟 Azure 环境，请使用 Windows Server 2008 R2 x64。
+为了在使用此诊断方法时获得最佳结果，应使用包含 Windows 的干净安装的计算机或虚拟机。若要以最佳效果模拟 Azure 环境，请使用 Windows Server 2008 R2 x64。
 
 1. 安装独立版本的 [Azure SDK](/downloads)
 
@@ -109,17 +109,17 @@ DLL 或程序集缺失的症状可能为：
 
 3. 在 Windows 资源管理器中，导航到云服务项目的 bin\\debug 文件夹。
 
-4. 将 .csx 文件夹和 .cscfg 文件复制到你用来调试问题的计算机。
+4. 将 .csx 文件夹和 .cscfg 文件复制到用于调试问题的计算机。
 
 5. 在干净的计算机上打开 Azure SDK 命令提示符窗口并键入 `csrun.exe /devstore:start`。
 
 6. 在命令提示符处，键入 `run csrun <path to .csx folder> <path to .cscfg file> /launchBrowser`。
 
-7. 角色启动后，你将在 Internet Explorer 中看到详细的错误信息。你还可使用标准的 Windows 故障排除工具来进一步诊断问题。
+7. 角色启动后，会在 Internet Explorer 中看到详细的错误信息。还可使用标准的 Windows 故障排除工具来进一步诊断问题。
 
 ## 使用 IntelliTrace 诊断问题
 
-对于使用 .NET Framework 4 的辅助角色和 Web 角色，你可以使用 Microsoft Visual Studio Ultimate 中提供的 [IntelliTrace](https://msdn.microsoft.com/zh-cn/library/dd264915.aspx)。
+对于使用 .NET Framework 4 的辅助角色和 Web 角色，可以使用 Microsoft Visual Studio Ultimate 中提供的 [IntelliTrace](https://msdn.microsoft.com/zh-cn/library/dd264915.aspx)。
 
 请按照以下步骤操作来部署启用了 IntelliTrace 的服务：
 
@@ -155,7 +155,7 @@ DLL 或程序集缺失的症状可能为：
 
 5. 重新部署云服务。
 
-确认所有错误均已更正后，则可在不选中“为 .NET 4 角色启用 IntelliTrace”复选框的情况下部署服务。
+确认所有错误均已更正后，可以在不选中“为 .NET 4 角色启用 IntelliTrace”复选框的情况下部署服务。
 
 ## 后续步骤
 
@@ -163,4 +163,4 @@ DLL 或程序集缺失的症状可能为：
 
 若要了解如何使用 Azure PaaS 计算机诊断数据对云服务角色问题进行故障排除，请参阅 [Kevin Williamson 博客系列](http://blogs.msdn.com/b/kwill/archive/2013/08/09/windows-azure-paas-compute-diagnostics-data.aspx)。
 
-<!---HONumber=Mooncake_0307_2016-->
+<!---HONumber=Mooncake_Quality_Review_1202_2016-->
