@@ -265,7 +265,7 @@ IoT 中心消息包含：
 | ConnectionDeviceGenerationId |IoT 中心对设备到云的消息设置的 ID。它包含发送消息的设备的 **generationId**（根据[设备标识属性][lnk-device-properties]）。 |
 | ConnectionAuthMethod |由 IoT 中心对设备到云的消息设置的身份验证方法。此属性包含用于验证发送消息的设备的身份验证方法的相关信息。有关详细信息，请参阅[设备到云的反欺骗技术][lnk-antispoofing]。 |
 
-## 消息大小
+## <a name="message-size"></a> 消息大小
 
 IoT 中心用于衡量消息大小的方法与协议无关，仅考虑实际有效负载。以字节为单位的大小计算以下各项之和：
 
