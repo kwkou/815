@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="如何缩放媒体服务" 
-	description="了解如何通过指定要为帐户设置的“按需流式处理保留单位”和“编码保留单位”数，缩放媒体服务。" 
+	description="了解如何通过指定要为帐户预配的“按需流式处理保留单位”和“编码保留单位”数，缩放媒体服务。" 
 	services="media-services" 
 	documentationCenter="" 
 	authors="juliako" 
@@ -11,7 +11,7 @@
 <tags
 	ms.service="media-services"
 	ms.date="06/22/2016" 
-	wacn.date="08/22/2016"/>
+	wacn.date="12/16/2016"/>
 
 
 
@@ -41,4 +41,4 @@
 
 有关详细信息，请参阅[跨多个存储帐户管理媒体服务资产](/documentation/articles/meda-services-managing-multiple-storage-accounts/)和[使用 Azure 存储空间](/documentation/services/storage/)。
 
-<!---HONumber=Mooncake_0815_2016-->
+<!---HONumber=Mooncake_Quality_Review_1202_2016-->

@@ -14,7 +14,7 @@
    ms.tgt_pltfrm="NA"
    ms.workload="sqldb-migrate"
    ms.date="08/24/2016"
-   wacn.date="10/17/2016"
+   wacn.date="12/19/2016"
    ms.author="carlrab"/>  
 
 
@@ -31,17 +31,15 @@
 
 1. 确认你安装了最新版本的 SQL Server Management Studio。Management Studio 的新版本将每月更新一次，以与 Azure 门户的更新保持同步。
 
-	 > [AZURE.IMPORTANT] 建议始终使用最新版本的 Management Studio 以保持与 Azure 和 SQL 数据库的更新同步。[更新 SQL Server Management Studio](https://msdn.microsoft.com/zh-cn/library/mt238290.aspx)。
+	 > [AZURE.IMPORTANT] 建议始终使用最新版本的 Management Studio 以与 Azure 和 SQL 数据库的更新保持同步。[更新 SQL Server Management Studio](https://msdn.microsoft.com/zh-cn/library/mt238290.aspx)。
 
-2. 连接到 Azure SQL 数据库服务器，右键单击“数据库”文件夹，然后单击“导入数据层应用程序...”
+2. 连接到 Azure SQL 数据库服务器、右键单击“数据库”文件夹，然后单击“导入数据层应用程序...”
 
-    ![导入数据层应用程序菜单项](./media/sql-database-cloud-migrate/MigrateUsingBACPAC03.png)  
+    ![导入数据层应用程序菜单项](./media/sql-database-cloud-migrate/MigrateUsingBACPAC03.png)
 
+3.	若要在 Azure SQL 数据库中创建数据库，请从本地磁盘导入 BACPAC 文件，或选择已将 BACPAC 文件上传到其中的 Azure 存储帐户和容器。
 
-3.	若要在 Azure SQL 数据库中创建数据库，请从本地磁盘导入 BACPAC 文件，或选择已将 BACPAC 文件上载到其中的 Azure 存储帐户和容器。
-
-    ![导入设置](./media/sql-database-cloud-migrate/MigrateUsingBACPAC04.png)  
-
+    ![导入设置](./media/sql-database-cloud-migrate/MigrateUsingBACPAC04.png)
 
 	 > [AZURE.IMPORTANT] 从 Azure Blob 存储导入 BACPAC 时，请使用标准存储。不支持从高级存储导入 BACPAC。
 
@@ -51,9 +49,9 @@
 
 5.	单击“下一步”，然后单击“完成”以将该 BACPAC 文件导入 Azure SQL 数据库服务器中的新数据库。
 
-6. 使用对象资源管理器连接到 Azure SQL 数据库服务器中的已迁移数据库。
+6. 使用对象资源管理器，连接到 Azure SQL 数据库服务器中的已迁移数据库。
 
-6.	使用 Azure 门户查看数据库及其属性。
+6.	使用 Azure 门户，查看数据库及其属性。
 
 ## 后续步骤
 
@@ -66,4 +64,4 @@
 - [Transact-SQL 部分支持或不支持的函数](/documentation/articles/sql-database-transact-sql-information/)
 - [使用 SQL Server 迁移助手迁移非 SQL Server 数据库](http://blogs.msdn.com/b/ssma/)
 
-<!---HONumber=Mooncake_1010_2016-->
+<!---HONumber=Mooncake_Quality_Review_1202_2016-->

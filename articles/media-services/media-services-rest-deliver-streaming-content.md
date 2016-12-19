@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="使用 REST 发布 Azure 媒体服务内容" 
-	description="了解如何创建用于生成流 URL 的定位符。代码使用 REST API。" 
+	description="了解如何创建用于生成流式处理 URL 的定位符。代码使用 REST API。" 
 	authors="Juliako" 
 	manager="erikre" 
 	editor="" 
@@ -14,7 +14,7 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="08/30/2016" 
-	wacn.date="10/10/2016"
+	wacn.date="12/16/2016"
 	ms.author="juliako"/>
 
 
@@ -28,26 +28,26 @@
 ##概述
 
 
-你可以通过创建 OnDemand 流式处理定位符并生成流 URL 来流式传输自适应比特率 MP4 集。[对资产进行编码](/documentation/articles/media-services-rest-encode-asset/)主题说明了如何编码成自适应比特率 MP4 集。如果内容已加密，则在创建定位符之前配置资产传送策略（如[此](/documentation/articles/media-services-rest-configure-asset-delivery-policy/)主题中所述）。
+可通过创建 OnDemand 流式处理定位符并生成流式处理 URL，来流式处理自适应比特率 MP4 集。[对资产进行编码](/documentation/articles/media-services-rest-encode-asset/)主题说明了如何编码成自适应比特率 MP4 集。如果内容已加密，则在创建定位符之前配置资产传送策略（如[此](/documentation/articles/media-services-rest-configure-asset-delivery-policy/)主题中所述）。
 
-你也可以使用 OnDemand 流式处理定位符生成指向可渐进式下载的 MP4 文件的 URL。
+也可以使用 OnDemand 流式处理定位符生成指向可渐进式下载的 MP4 文件的 URL。
 
-本主题说明如何创建 OnDemand 流式处理定位符，以发布资产及生成平滑流、MPEG DASH 和 HLS 流式处理 URL。此外，还将示范如何生成渐进式下载 URL。
+本主题说明如何创建 OnDemand 流式处理定位符，以发布资产及生成平滑流式处理、MPEG DASH 和 HLS 流式处理 URL。此外，还将演示如何生成渐进式下载 URL。
 
 [以下](#types)部分显示了其值将在 REST 调用中使用的枚举类型。
   
 ##创建 OnDemand 流式处理定位符
 
-若要创建 OnDemand 流式处理定位符并获取 URL，你需要执行以下操作：
+若要创建 OnDemand 流式处理定位符并获取 URL，需执行以下操作：
 
 
-   1. 如果内容已加密，则定义访问策略。
+   1. 如果内容已加密，请定义访问策略。
    2. 创建 OnDemand 流式处理定位符。
-   3. 如果你想要流式处理，请获取资产中的流式处理清单文件 (.ism)。
+   3. 若计划进行流式处理，请获取资产中的流式处理清单文件 (.ism)。
    		
-	如果你想要渐进式下载，请获取资产中的 MP4 文件名。
+	若计划进行渐进式下载，请获取资产中的 MP4 文件名。
    4. 生成清单文件或 MP4 文件的 URL。
-   5. 请注意，你无法使用包含写入或删除权限的 AccessPolicy 创建流式处理定位符。
+   5. 请注意，不能使用包含写入或删除权限的 AccessPolicy 创建流式处理定位符。
 
 
 ###创建访问策略
@@ -126,7 +126,7 @@
 	
 	{"odata.metadata":"https://wamsshaclus001rest-hs.chinacloudapp.cn/api/$metadata#Locators/@Element","Id":"nb:lid:UUID:be245661-2bbd-4fc6-b14f-9cf9a1492e5e","ExpirationDateTime":"2015-03-20T06:34:47.267872+00:00","Type":2,"Path":"http://amstest1.streaming.mediaservices.chinacloudapi.cn/be245661-2bbd-4fc6-b14f-9cf9a1492e5e/","BaseUri":"http://amstest1.streaming.mediaservices.chinacloudapi.cn","ContentAccessComponent":"be245661-2bbd-4fc6-b14f-9cf9a1492e5e","AccessPolicyId":"nb:pid:UUID:1480030d-c481-430a-9687-535c6a5cb272","AssetId":"nb:cid:UUID:cc1e445d-1500-80bd-538e-f1e4b71b465e","StartTime":"2015-02-18T06:34:47.267872+00:00","Name":null}
 
-###生成流 URL
+###生成流式处理 URL
 
 使用创建定位符后返回的**路径**值生成平滑流式处理、HLS 和 MPEG DASH URL。
 
@@ -185,4 +185,4 @@ URL：**路径** + 资产文件 mp4 名称
 
 [配置资产传送策略](/documentation/articles/media-services-rest-configure-asset-delivery-policy/)
 
-<!---HONumber=Mooncake_0926_2016-->
+<!---HONumber=Mooncake_Quality_Review_1202_2016-->

@@ -1,7 +1,7 @@
 <properties
    pageTitle="云灾难恢复解决方案 - SQL 数据库活动异地复制 | Azure"
-   description="了解如何使用 Azure SQL 数据库中应用程序数据备份的异地复制功能为业务连续性规划设计云灾难恢复解决方案。"
-   keywords="云灾难恢复、灾难恢复解决方案、应用程序数据备份、异地复制、业务连续性规划"
+   description="了解如何使用 Azure SQL 数据库中应用数据备份的异地复制功能为业务连续性规划设计云灾难恢复解决方案。"
+   keywords="云灾难恢复, 灾难恢复解决方案, 应用数据备份, 异地复制, 业务连续性规划"
    services="sql-database"
    documentationCenter=""
    authors="anosov1960"
@@ -15,33 +15,33 @@
    ms.tgt_pltfrm="NA"
    ms.workload="data-management"
    ms.date="07/20/2016"
-   wacn.date="12/01/2016"
+   wacn.date="12/19/2016"
    ms.author="sashan"/>
 
 # 使用 SQL 数据库中的活动异地复制功能为云灾难恢复设计应用程序
 
 
-> [AZURE.NOTE] [活动异地复制](/documentation/articles/sql-database-geo-replication-overview/) (Active Geo-Replication) 现在可用于标准层和高级层中的所有数据库。可读辅助副本（Readable Secondary）目前只能用于高级层 (Premium) 中的数据库。
+> [AZURE.NOTE] [活动异地复制](/documentation/articles/sql-database-geo-replication-overview) 现在可用于所有层中的所有数据库。
 
 
 
-了解如何使用 SQL 数据库中的[活动异地复制](/documentation/articles/sql-database-geo-replication-overview/)功能，设计能够在发生区域性故障和灾难性服务中断时复原的数据库应用程序。针对业务连续性规划，要考虑的因素包括应用程序部署拓扑、要采用的服务级别协议、流量延迟和成本。本文我们将探讨常见的应用程序模式并讨论每个模式的优点和不足。有关弹性池的活动异地复制的信息，请参阅[弹性池灾难恢复策略](/documentation/articles/sql-database-disaster-recovery-strategies-for-applications-with-elastic-pool/)。
+了解如何使用 SQL 数据库中的[活动异地复制](/documentation/articles/sql-database-geo-replication-overview/)功能，设计能够在发生区域性故障和灾难性服务中断时复原的数据库应用程序。针对业务连续性规划，要考虑的因素包括应用程序部署拓扑、要采用的服务级别协议、流量延迟和成本。在本文中，我们将探讨常见的应用程序模式并讨论每个模式的优点和不足。有关弹性池的活动异地复制的信息，请参阅[弹性池灾难恢复策略](/documentation/articles/sql-database-disaster-recovery-strategies-for-applications-with-elastic-pool/)。
 
-## 设计模式 1：使用并置数据库进行云灾难恢复的主动-被动部署
+## 设计模式 1：使用归置数据库进行云灾难恢复的主动-被动部署
 
 此选项最适合具有以下特征的应用程序：
 
-+ 在单个 Azure 区域中的活动实例
++ 单个 Azure 区域中的活动实例
 + 对数据的读写 (RW) 访问具有很强依赖性
 + 由于延迟和流量成本，应用程序逻辑与数据库之间的跨区域连接是不可接受的
 
-在这种情况下，当所有应用程序组件均受到影响并且需要作为一个单元进行故障转移时，将针对处理区域灾难对应用程序部署拓扑进行优化。对于地理冗余，应用程序逻辑和数据库被复制到另一个区域，但在正常情况下它们不用于应用程序工作负荷。次要区域中的应用程序应配置为使用辅助数据库的 SQL 连接字符串。流量管理器设置为使用[故障转移路由方法](/documentation/articles/traffic-manager-configure-failover-routing-method/)。
+在这种情况下，当所有应用程序组件均受到影响并且需要作为一个单元进行故障转移时，将针对处理区域灾难对应用程序部署拓扑进行优化。对于地理冗余，应用程序逻辑和数据库会复制到另一个区域，但在正常情况下它们不用于应用程序工作负荷。次要区域中的应用程序应配置为使用辅助数据库的 SQL 连接字符串。流量管理器设置为使用[故障转移路由方法](/documentation/articles/traffic-manager-configure-failover-routing-method/)。
 
 > [AZURE.NOTE] [Azure traffic manager](/documentation/articles/traffic-manager-overview/) 在整篇文章中仅供说明之用。你可以使用任何支持故障转移路由方法的负载均衡解决方案。
 
-除了主应用程序实例外，还应考虑部署一个较小的[辅助角色应用程序](/documentation/articles/cloud-services-choose-me/#tellmecs)，以通过定期发出 T-SQL 只读 (RO) 命令来监视主数据库。可使用它自动触发故障转移和/或在应用程序的管理控制台上生成警报。若要确保监视不受区域范围的停机影响，应将监视应用程序实例部署到每个区域，并将每个实例连接到主要区域中的主数据库和本地区域中的辅助数据库。
+除了主应用程序实例外，还应考虑部署一个较小的[辅助角色应用程序](/documentation/articles/cloud-services-choose-me/#tellmecs)，以通过定期发出 T-SQL 只读 (RO) 命令来监视主数据库。可使用它自动触发故障转移和/或在应用程序的管理控制台上生成警报。若要确保监视不受区域范围的服务中断影响，应将监视应用程序实例部署到每个区域，并将每个实例连接到主要区域中的主数据库和本地区域中的辅助数据库。
 
-> [AZURE.NOTE] 这两个监视应用程序都应该处于活动状态，并且探测主数据库和辅助数据库。后者可用于在次要区域中检测故障，并在应用程序未受保护时通知。
+> [AZURE.NOTE] 这两个监视应用程序都应该处于活动状态，并且探测主数据库和辅助数据库。后者可用于在次要区域中检测故障，并在应用程序未受保护时发出警报。
 
 下图显示了在发生服务中断之前的此配置。
 
@@ -52,14 +52,14 @@
 1. [更新主终结点的状态](https://msdn.microsoft.com/zh-cn/library/hh758250.aspx)以触发终结点故障转移。
 2. 调用辅助数据库以[启动数据库故障转移](/documentation/articles/sql-database-geo-replication-powershell/)。
 
-在故障转移后，应用程序将处理次要区域中的用户请求，但将保持与数据库共存，因为主数据库现在位于次要区域中。下面的关系图说明了该应用场景。在所有关系图中，实线表示活动连接，虚线表示暂停的连接，停止符号表示操作触发。
+在故障转移后，应用程序将处理次要区域中的用户请求，但将保持与数据库归置，因为主数据库现在位于次要区域中。下面的关系图说明了该应用场景。在所有关系图中，实线表示活动连接，虚线表示暂停的连接，停止符号表示操作触发。
 
 
-![异地复制：故障转移到辅助数据库。应用程序数据备份。](./media/sql-database-designing-cloud-solutions-for-disaster-recovery/pattern1-2.png)
+![异地复制：故障转移到辅助数据库。应用数据备份。](./media/sql-database-designing-cloud-solutions-for-disaster-recovery/pattern1-2.png)
 
 如果服务中断发生在次要区域中，主数据库和辅助数据库之间的复制链接将暂停，并且监视应用程序将注册公开主数据库的警报。应用程序的性能不会受到影响，但是暴露了应用程序的运行，因此在两个区域连续失败的情况下应用程序具有较高风险。
 
-> [AZURE.NOTE] 我们仅建议使用单个 DR 区域进行部署配置。这是因为大多数 Azure 地理位置都有两个区域。这些配置不会保护你的应用程序免受这两个区域的灾难性故障的影响。在此类失败的不可能事件中，你可以使用[地域还原操作](/documentation/articles/sql-database-disaster-recovery/#recover-using-geo-restore)在第三个区域中恢复数据库。
+> [AZURE.NOTE] 我们仅建议使用单个 DR 区域进行部署配置。这是因为大多数 Azure 地理位置都有两个区域。这些配置不会保护你的应用程序免受这两个区域的灾难性故障的影响。在此类失败的不可能事件中，你可以使用[异地恢复操作](/documentation/articles/sql-database-disaster-recovery/#recover-using-geo-restore)在第三个区域中恢复数据库。
 
 缓解服务中断后，辅助数据库自动与主数据库进行同步。在同步过程中，主数据库的性能可能会略微受影响，具体取决于需要进行同步的数据量。下图说明了次要区域中的服务中断。
 
@@ -69,7 +69,7 @@
 此设计模式的主要**优点**是：
 
 + 在应用程序部署期间在每个区域中设置 SQL 连接字符串，并且此连接字符串在故障转移后不会更改。
-+ 应用程序的性能不受故障转移影响，因为应用程序和数据库始终共存。
++ 应用程序的性能不受故障转移影响，因为应用程序和数据库始终归置。
 
 主要**不足**是次要区域中的冗余应用程序实例仅用于灾难恢复。
 
@@ -85,7 +85,7 @@
 
 如模式 #1 中所示，你应考虑部署类似的监视应用程序。但与模式 #1 不同的是，该监视应用程序不负责触发终结点故障转移。
 
-> [AZURE.NOTE] 虽然此模式使用多个辅助数据库，但由于前面所述的原因，只有其中一个辅助数据库将用于故障转移。由于此模式需要对辅助数据库进行只读访问，因此，它需要活动异地复制功能。
+> [AZURE.NOTE] 虽然此模式使用多个辅助数据库，但由于前面所述的原因，只有其中一个辅助数据库将用于故障转移。由于此模式需要对辅助数据库进行只读访问，因此它需要活动异地复制功能。
 
 应针对性能路由配置流量管理器以引导应用程序实例的用户连接最接近用户的地理位置。下图说明了在发生服务中断之前的此配置。
 ![无中断：性能路由到最近的应用程序。异地复制。](./media/sql-database-designing-cloud-solutions-for-disaster-recovery/pattern2-1.png)
@@ -100,7 +100,7 @@
 
 在其中一个次要区域中发生服务中断时，流量管理器自动从路由表中删除该区域中的脱机终结点。该区域中辅助数据库的复制通道处于挂起状态。由于在此情况下剩余区域获得了更多用户流量，因此在服务中断期间应用程序的性能会受到影响。缓解服务中断后，受影响区域中的辅助数据库立即与主数据库进行同步。在同步过程中，主数据库的性能可能会略微受影响，具体取决于需要进行同步的数据量。下图说明了某个次要区域中的服务中断。
 
-![次要区域的服务中断。云灾难恢复 - 异地复制。](./media/sql-database-designing-cloud-solutions-for-disaster-recovery/pattern2-3.png)
+![次要区域中的服务中断。云灾难恢复 - 异地复制。](./media/sql-database-designing-cloud-solutions-for-disaster-recovery/pattern2-3.png)
 
 此设计模式的主要**优点**是可以缩放多个辅助数据库上的应用程序工作负荷以获得最佳最终用户性能。此选项的**不足**是：
 
@@ -108,7 +108,7 @@
 + 在服务中断期间，应用程序性能会受到影响
 + 应用程序实例在数据库故障转移后需要动态更改 SQL 连接字符串。
 
-> [AZURE.NOTE] 可以使用类似的方法来卸载专用工作负荷，例如报告作业、商业智能工具或备份。通常这些工作负荷占用大量数据库资源，因此建议你为它们指定其中一个辅助数据库，并使性能级别与预期的工作负荷匹配。
+> [AZURE.NOTE] 可以使用类似的方法卸载专用工作负荷，例如报告作业、商业智能工具或备份。通常这些工作负荷占用大量数据库资源，因此建议你为它们指定其中一个辅助数据库，并使性能级别与预期的工作负荷匹配。
 
 ## 设计模式 3：实现保留数据的主动-被动部署  
 此选项最适合具有以下特征的应用程序：
@@ -116,22 +116,22 @@
 + 任何数据丢失都具有高业务风险。如果服务中断是永久性的，那么数据库故障转移只能用作最后的解决措施。
 + 在一段时间内，应用程序可以在“只读模式”下运行。
 
-在此模式下，应用程序在连接到辅助数据库时将切换到只读模式。主要区域中的应用程序逻辑与主数据库共存并在读写模式 (RW) 下运行，次要区域中的应用程序逻辑与辅助数据库共存并可以在只读模式 (RO) 下运行。流量管理器应设置为使用[故障转移路由](/documentation/articles/traffic-manager-configure-failover-routing-method/)，并为两个应用程序实例启用[终结点监视](/documentation/articles/traffic-manager-monitoring/)。
+在此模式下，应用程序在连接到辅助数据库时将切换到只读模式。主要区域中的应用程序逻辑与主数据库归置并在读写模式 (RW) 下运行，次要区域中的应用程序逻辑与辅助数据库归置并可以在只读模式 (RO) 下运行。流量管理器应设置为使用[故障转移路由](/documentation/articles/traffic-manager-configure-failover-routing-method/)，并为两个应用程序实例启用[终结点监视](/documentation/articles/traffic-manager-monitoring/)。
 
 下图说明了在发生服务中断之前的此配置。
 ![故障转移之前的主动-被动部署。云灾难恢复。](./media/sql-database-designing-cloud-solutions-for-disaster-recovery/pattern3-1.png)
 
-当流量管理器检测到主要区域连接失败时，它会自动将用户流量切换到次要区域中的应用程序实例。使用此模式时，务必要注意在检测到服务中断后**不要**启动数据库故障转移。次要区域中的应用程序将激活，并使用辅助数据库以只读模式运行。下图对此进行了说明。
+当流量管理器检测到主要区域连接失败时，它会自动将用户流量切换到次要区域中的应用程序实例。使用此模式时，务必要注意在检测到服务中断后**不要**启动数据库故障转移。次要区域中的应用程序将激活，并使用辅助数据库在只读模式下运行。下图对此进行了说明。
 
-![中断：只读模式下的应用程序。云灾难恢复。](./media/sql-database-designing-cloud-solutions-for-disaster-recovery/pattern3-2.png)
+![服务中断：只读模式下的应用程序。云灾难恢复。](./media/sql-database-designing-cloud-solutions-for-disaster-recovery/pattern3-2.png)
 
-缓解主要区域中的服务中断后，流量管理器在主要区域中检测到连接还原，并将用户流量切换回主要区域中的应用程序实例。该应用程序实例恢复并使用主数据库以读写模式运行。
+缓解主要区域中的服务中断后，流量管理器在主要区域中检测到连接还原，并将用户流量切换回主要区域中的应用程序实例。该应用程序实例恢复并使用主数据库在读写模式下运行。
 
 > [AZURE.NOTE] 由于此模式需要对辅助数据库进行只读访问，因此，它需要活动异地复制功能。
 
 在次要区域中发生服务中断时，流量管理器将主要区域中的应用程序终结点标记为降级，并挂起复制通道。但是，在服务中断期间，该服务中断不会影响应用程序的性能。缓解服务中断后，辅助数据库立即与主数据库进行同步。在同步过程中，主数据库的性能可能会略微受影响，具体取决于需要进行同步的数据量。
 
-![中断：辅助数据库。云灾难恢复。](./media/sql-database-designing-cloud-solutions-for-disaster-recovery/pattern3-3.png)
+![服务中断：辅助数据库。云灾难恢复。](./media/sql-database-designing-cloud-solutions-for-disaster-recovery/pattern3-3.png)
 
 此设计模式具有多个**优点**：
 
@@ -141,7 +141,7 @@
 
 **不足**是：
 
-+ 应用程序必须能够以只读模式运行。
++ 应用程序必须能够在只读模式下运行。
 + 在连接到只读数据库时，需要动态切换到此应用程序。
 + 恢复读写操作需要恢复主要区域，这意味着可能会几小时甚至若干天禁止完全数据访问。
 
@@ -153,7 +153,7 @@
 
 | 模式 | RPO | ERT
 | :--- |:--- | :---
-| 使用并置数据库访问权限进行灾难恢复的主动-被动部署 | 读写访问 < 5 秒 | 故障检测时间 + 故障转移 API 调用 + 应用程序验证测试
+| 使用归置的数据库访问权限进行灾难恢复的主动-被动部署 | 读写访问 < 5 秒 | 故障检测时间 + 故障转移 API 调用 + 应用程序验证测试
 | 实现应用程序负载均衡的主动-主动部署 | 读写访问 < 5 秒 | 故障检测时间 + 故障转移 API 调用 + SQL 连接字符串更改 + 应用程序验证测试
 | 实现保留数据的主动-被动部署 | 只读访问 < 5 秒，读写访问 = 0 | 只读访问 = 连接故障检测时间 + 应用程序验证测试 <br>读写访问 = 缓解服务中断所用时间
 
@@ -166,4 +166,4 @@
 - 若要了解如何使用自动备份进行存档，请参阅[数据库复制](/documentation/articles/sql-database-copy/)
 - 有关弹性池的活动异地复制的信息，请参阅[弹性池灾难恢复策略](/documentation/articles/sql-database-disaster-recovery-strategies-for-applications-with-elastic-pool/)。
 
-<!---HONumber=Mooncake_0912_2016-->
+<!---HONumber=Mooncake_Quality_Review_1202_2016-->

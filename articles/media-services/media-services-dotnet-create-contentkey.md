@@ -5,7 +5,7 @@
 	documentationCenter="" 
 	authors="Juliako" 
 	manager="erikre" 
-	editor=""/>  
+	editor=""/>
 
 
 <tags 
@@ -15,9 +15,8 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="09/26/2016" 
-	wacn.date="11/14/2016"
+	wacn.date="12/16/2016"
 	ms.author="juliako"/>  
-
 
 
 #使用 .NET 创建内容密钥
@@ -26,15 +25,15 @@
 - [REST](/documentation/articles/media-services-rest-create-contentkey/)
 - [.NET](/documentation/articles/media-services-dotnet-create-contentkey/)
 
-媒体服务允许你创建资产和传送加密的资产。**ContentKey** 提供对**资产**的安全访问。
+媒体服务允许创建资产和传送加密的资产。**ContentKey** 提供对**资产**的安全访问。
 
-创建新资产时（例如，[上载文件](/documentation/articles/media-services-dotnet-upload-files/)之前），可以指定以下加密选项：**StorageEncrypted**、**CommonEncryptionProtected** 或 **EnvelopeEncryptionProtected**。
+创建新资产时（例如，[上传文件](/documentation/articles/media-services-dotnet-upload-files/)之前），可以指定以下加密选项：**StorageEncrypted**、**CommonEncryptionProtected** 或 **EnvelopeEncryptionProtected**。
 
-将资产传送到你的客户端时，可以使用以下两个加密选项之一[将资产配置为动态加密](/documentation/articles/media-services-dotnet-configure-asset-delivery-policy/)：**DynamicEnvelopeEncryption** 或 **DynamicCommonEncryption**。
+向客户端传送资产时，可以使用以下两个加密选项之一[将资产配置为动态加密](/documentation/articles/media-services-dotnet-configure-asset-delivery-policy/)：**DynamicEnvelopeEncryption** 或 **DynamicCommonEncryption**。
 
 加密的资产必须与 **ContentKey** 关联。本文介绍如何创建内容密钥。
 
->[AZURE.NOTE] 在使用媒体服务 .NET SDK 创建新的 **StorageEncrypted** 资产时，会自动创建 **ContentKey** 并将其链接到资产。
+>[AZURE.NOTE] 使用媒体服务 .NET SDK 创建新的 **StorageEncrypted** 资产时，会自动创建 **ContentKey** 并将其链接到资产。
 
 ##ContentKeyType
 
@@ -66,7 +65,7 @@
 
 ##<a id="envelope_contentkey"></a>创建信封类型 ContentKey
 
-以下代码段创建信封加密类型的内容密钥。然后，它将密钥与指定的资产关联。
+以下代码段创建信封加密类型的内容密钥。然后，它会将密钥与指定的资产关联。
 
     static public IContentKey CreateEnvelopeTypeContentKey(IAsset asset)
     {
@@ -104,7 +103,7 @@ call
 
 ##<a id="common_contentkey"></a>创建公共类型 ContentKey    
 
-以下代码段创建公共加密类型的内容密钥。然后，它将密钥与指定的资产关联。
+以下代码段创建公共加密类型的内容密钥。然后，它会将密钥与指定的资产关联。
 
     static public IContentKey CreateCommonTypeContentKey(IAsset asset)
     {
@@ -140,4 +139,4 @@ call
 
 	IContentKey key = CreateCommonTypeContentKey(encryptedsset); 
 
-<!---HONumber=Mooncake_1107_2016-->
+<!---HONumber=Mooncake_Quality_Review_1202_2016-->

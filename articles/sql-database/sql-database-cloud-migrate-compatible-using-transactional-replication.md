@@ -1,6 +1,6 @@
 <properties
    pageTitle="使用事务复制迁移到 SQL 数据库"
-   description="Azure SQL 数据库，数据库迁移，导入数据库，事务复制"
+   description="Azure SQL 数据库, 数据库迁移, 导入数据库, 事务复制"
    services="sql-database"
    documentationCenter=""
    authors="CarlRabeler"
@@ -14,7 +14,7 @@
    ms.tgt_pltfrm="NA"
    ms.workload="sqldb-migrate"
    ms.date="08/23/2016"
-   wacn.date="11/16/2016"
+   wacn.date="12/19/2016"
    ms.author="carlrab"/>  
 
 
@@ -50,7 +50,7 @@
  - SQL Server 2012 SP3 和更高版本
 
 
-> [AZURE.IMPORTANT] 使用最新版本的 SQL Server Management Studio，保持与 Azure 和 SQL 数据库的更新同步。较旧版本的 SQL Server Management Studio 不能将 SQL 数据库设置为订阅服务器。[更新 SQL Server Management Studio](https://msdn.microsoft.com/zh-cn/library/mt238290.aspx)。
+> [AZURE.IMPORTANT] 使用最新版本的 SQL Server Management Studio 以与 Azure 和 SQL 数据库的更新保持同步。较旧版本的 SQL Server Management Studio 不能将 SQL 数据库设置为订阅服务器。[更新 SQL Server Management Studio](https://msdn.microsoft.com/zh-cn/library/mt238290.aspx)。
 
 
 ## 后续步骤
@@ -66,4 +66,4 @@
 - [Transact-SQL 部分支持或不支持的函数](/documentation/articles/sql-database-transact-sql-information/)
 - [使用 SQL Server 迁移助手迁移非 SQL Server 数据库](http://blogs.msdn.com/b/ssma/)
 
-<!---HONumber=Mooncake_1010_2016-->
+<!---HONumber=Mooncake_Quality_Review_1202_2016-->

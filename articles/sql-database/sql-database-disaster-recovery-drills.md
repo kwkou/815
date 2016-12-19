@@ -1,6 +1,6 @@
 <properties 
    pageTitle="SQL 数据库灾难恢复演练" 
-   description="了解有关使用 Azure SQL 数据库执行灾难恢复演练，帮助任务关键型业务应用程序弹性应对故障和中断的指导和最佳实践。" 
+   description="了解有关使用 Azure SQL 数据库执行灾难恢复演练，帮助任务关键型业务应用程序弹性应对故障和中断的指南和最佳实践。" 
    services="sql-database" 
    documentationCenter="" 
    authors="mihaelablendea" 
@@ -14,7 +14,7 @@
    ms.tgt_pltfrm="NA"
    ms.workload="data-management" 
    ms.date="07/31/2016" 
-   wacn.date="11/16/2016"
+   wacn.date="12/19/2016"
    ms.author="mihaelab"/>
 
 #执行灾难恢复演练
@@ -72,4 +72,4 @@
 - 若要了解如何使用自动备份进行恢复，请参阅[从服务启动的备份中还原数据库](/documentation/articles/sql-database-recovery-using-backups/)
 - 若要了解更快的恢复选项，请参阅[活动异地复制](/documentation/articles/sql-database-geo-replication-overview/)
 
-<!---HONumber=Mooncake_0912_2016-->
+<!---HONumber=Mooncake_Quality_Review_1202_2016-->

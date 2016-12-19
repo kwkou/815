@@ -14,12 +14,12 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="05/27/2016" 
-	wacn.date="07/11/2016" 
+	wacn.date="12/19/2016" 
 	ms.author="ddove"/>
 
 # 安装弹性数据库作业概述
 
-可以通过 PowerShell 或 Azure 经典管理门户安装[**弹性数据库作业**](/documentation/articles/sql-database-elastic-jobs-overview/)。只有安装了 PowerShell 包，才能获取使用 PowerShell API 创建和管理作业的权限。此外，PowerShell API 目前提供的功能明显多于门户。
+可以通过 PowerShell 或 Azure 经典管理门户安装[**弹性数据库作业**](/documentation/articles/sql-database-elastic-jobs-overview/)。只有安装了 PowerShell 程序包，才能获取使用 PowerShell API 创建和管理作业的权限。此外，PowerShell API 目前提供的功能明显多于门户。
 
 如果你从现有的**弹性数据库池**通过门户安装了**弹性数据库作业**，最新的 Powershell 预览包含用于升级现有安装的脚本。强烈建议将安装升级到最新的**弹性数据库作业**组件，以便利用通过 PowerShell API 公开的新功能。
 
@@ -28,14 +28,14 @@
 * Azure PowerShell。使用 [Web 平台安装程序](http://go.microsoft.com/fwlink/p/?linkid=320376)安装最新版本。有关详细信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)。
 * [NuGet 命令行实用程序](https://nuget.org/nuget.exe)用于安装弹性数据库作业包。有关详细信息，请参阅 http://docs.nuget.org/docs/start-here/installing-nuget。
 
-## 下载并导入弹性数据库作业 PowerShell 包
+## 下载并导入弹性数据库作业 PowerShell 程序包
 1. 启动 Azure PowerShell 命令窗口，并导航到 NuGet 命令行实用程序 (nuget.exe) 所下载到的目录。
 
 2. 使用以下命令，将**弹性数据库作业**包下载并导入到当前目录：
 
 		PS C:\>.\nuget install Microsoft.Azure.SqlDatabase.Jobs -prerelease
 
-    **弹性数据库作业**文件放在本地目录中名为 **Microsoft.Azure.SqlDatabase.Jobs.x.x.xxxx.x**（其中的 *x.x.xxxx.x* 表示版本号）的文件夹内。PowerShell cmdlet（包括所需的客户端.dll）位于 **tools\\ElasticDatabaseJobs** 子目录中，用于安装、升级和卸载的 PowerShell 脚本也位于 **tools** 子目录中。
+    **弹性数据库作业**文件放在本地目录中名为 **Microsoft.Azure.SqlDatabase.Jobs.x.x.xxxx.x**（其中的 *x.x.xxxx.x* 表示版本号）的文件夹内。PowerShell cmdlet（包括所需的客户端 .dll）位于 **tools\\ElasticDatabaseJobs** 子目录中，用于安装、升级和卸载的 PowerShell 脚本也位于 **tools** 子目录中。
 
 3. 键入 cd tools，导航到 Microsoft.Azure.SqlDatabase.Jobs.x.x.xxx.x 文件夹下的 tools 子目录，例如：
 
@@ -51,12 +51,12 @@
 
 		PS C:*Microsoft.Azure.SqlDatabase.Jobs.x.x.xxxx.x*>cd tools
 
-2.	执行.\\InstallElasticDatabaseJobs.ps1 PowerShell 脚本，并提供其所请求的变量的值。此脚本将根据[弹性数据库作业组件和定价](/documentation/articles/sql-database-elastic-jobs-overview/#components-and-pricing)中所述创建组件，并将 Azure 云服务配置为适当使用依赖组件。
+2.	执行 .\\InstallElasticDatabaseJobs.ps1 PowerShell 脚本，并提供其所请求变量的值。此脚本将根据[弹性数据库作业组件和定价](/documentation/articles/sql-database-elastic-jobs-overview/#components-and-pricing)中所述创建组件，并将 Azure 云服务配置为适当使用依赖组件。
 
 		PS C:*Microsoft.Azure.SqlDatabase.Jobs.x.x.xxxx.x*\tools>Unblock-File .\InstallElasticDatabaseJobs.ps1
 		PS C:*Microsoft.Azure.SqlDatabase.Jobs.x.x.xxxx.x*\tools>.\InstallElasticDatabaseJobs.ps1
 
-当你运行此命令时，会打开一个窗口，要求你提供**用户名**和**密码**。这不是你的 Azure 凭据，请输入用户名和密码，将其作为你要为新服务器创建的管理员凭据。
+当你运行此命令时，会打开一个窗口，要求你提供“用户名”和“密码”。这不是你的 Azure 凭据，请输入用户名和密码，将其作为你要为新服务器创建的管理员凭据。
 
 你可以根据所需的设置，修改此示例调用中提供的参数。下面提供了有关每个参数行为的详细信息：
 
@@ -68,14 +68,14 @@
 
 <tr>
 	<td>ResourceGroupName</td>
-	<td>提供为了包含新建 Azure 组件而创建的 Azure 资源组名称。此参数默认为“__ElasticDatabaseJob”。不建议更改此值。</td>
+	<td>提供为了包含新建的 Azure 组件而创建的 Azure 资源组名称。此参数默认为“__ElasticDatabaseJob”。不建议更改此值。</td>
 	</tr>
 
 </tr>
 
 	<tr>
 	<td>ResourceGroupLocation</td>
-	<td>提供用于保存新建 Azure 组件的 Azure 位置。此参数默认为“中国北部”位置。</td>
+	<td>提供用于保存新建的 Azure 组件的 Azure 位置。此参数默认为“中国北部”位置。</td>
 </tr>
 
 <tr>
@@ -98,13 +98,13 @@
 </tr>
 	<tr>
 	<td>SqlServerAdministratorUserName</td>
-	<td>提供新建 Azure SQL 数据库服务器的管理员用户名。如果你未指定，系统将打开 PowerShell 凭据窗口提示你输入凭据。</td>
+	<td>提供新建的 Azure SQL 数据库服务器的管理员用户名。如果你未指定，系统将打开 PowerShell 凭据窗口提示你输入凭据。</td>
 </tr>
 
 </tr>
 	<tr>
 	<td>SqlServerAdministratorPassword</td>
-	<td>提供新建 Azure SQL 数据库服务器的管理员密码。如果你未提供，系统将打开 PowerShell 凭据窗口提示你输入凭据。</td>
+	<td>提供新建的 Azure SQL 数据库服务器的管理员密码。如果你未提供，系统将打开 PowerShell 凭据窗口提示你输入凭据。</td>
 </tr>
 </table>
 
@@ -130,7 +130,7 @@
 
   <tr>
 	<td>ResourceGroupName</td>
-	<td>标识最初安装弹性数据库作业组件时使用的 Azure 资源组名称。此参数默认为“__ElasticDatabaseJob”。不建议更改此值，因为你应该不必指定此参数。</td>
+	<td>标识最初安装弹性数据库作业组件时使用的 Azure 资源组名称。此参数默认为“__ElasticDatabaseJob”。因为不建议更改此值，因此你应该不必指定此参数。</td>
 	</tr>
 </tr>
 
@@ -161,4 +161,4 @@
 [3]: ./media/sql-database-elastic-jobs-service-installation/start-board.png
 [4]: ./media/sql-database-elastic-jobs-service-installation/not-done.png
 
-<!---HONumber=Mooncake_0704_2016-->
+<!---HONumber=Mooncake_Quality_Review_1202_2016-->

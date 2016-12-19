@@ -14,22 +14,21 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="10/05/2016"
-	wacn.date="11/16/2016"
+	wacn.date="12/19/2016"
 	ms.author="CarlRabeler; ronitr; giladm"/>  
 
-
 # SQL 数据库审核入门
-Azure SQL 数据库审核可以跟踪数据库事件，并将审核的事件写入 Azure 存储帐户中的审核日志。一般而言，可以在基本、标准和高级服务层中使用审核功能。
+Azure SQL 数据库审核跟踪数据库事件，并将事件写入 Azure 存储帐户中的审核日志。
 
 审核可帮助你一直保持遵从法规、了解数据库活动，以及深入了解可以指明业务考量因素或疑似安全违规的偏差和异常。
 
-审核工具有助于遵从法规标准，但不能保证遵从法规。有关可帮助你遵从标准的 Azure 计划的详细信息，请参阅 [Azure 信任中心](https://www.trustcenter.cn/zh-cn/compliance/default.html)。
+审核有助于遵从法规标准，但不能保证遵从法规。有关支持标准法规的 Azure 计划的详细信息，请参阅 [Azure 信任中心](https://www.trustcenter.cn/zh-cn/compliance/default.html)。
 
-+ [Azure SQL 数据库审核基础知识]
++ [Azure SQL 数据库审核概述]
 + [分析审核日志和报告]
 + [使用 Azure 经典管理门户为数据库设置审核]
 
-##<a id="subheading-1"></a>Azure SQL 数据库审核基本信息
+##<a id="subheading-1"></a>Azure SQL 数据库审核概述
 
 以下部分介绍如何使用 Azure 经典管理门户配置审核。
 
@@ -142,4 +141,4 @@ SQL 数据库审核可让你：
 [7]: ./media/sql-database-auditing-get-started/7_auditing_get_started_classic_portal_storage.png
 [8]: ./media/sql-database-auditing-get-started/8_auditing_get_started_storage_key_rotation.png
 
-<!---HONumber=Mooncake_0808_2016-->
+<!---HONumber=Mooncake_Quality_Review_1202_2016-->

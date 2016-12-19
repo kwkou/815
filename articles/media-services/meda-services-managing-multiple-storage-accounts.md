@@ -1,11 +1,11 @@
 <properties 
 	pageTitle="跨多个存储帐户管理媒体服务资产" 
-	description="本文提供有关如何跨多个存储帐户管理媒体服务资产的指导。" 
+	description="本文提供如何跨多个存储帐户管理媒体服务资产的指导。" 
 	services="media-services" 
 	documentationCenter="" 
 	authors="Juliako" 
-	manager="erikre" 
-	editor=""/>  
+	manager="dwrede" 
+	editor=""/>
 
 
 <tags 
@@ -15,7 +15,7 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="09/26/2016" 
-	wacn.date="12/08/2016"    
+	wacn.date="12/16/2016"    
 	ms.author="juliako"/>  
 
 
@@ -27,7 +27,7 @@
 - 使多个存储帐户之间的资产实现负载均衡。
 - 缩放媒体服务以处理大量内容（目前，单个存储帐户的上限为 500 TB）。
 
-本主题演示如何使用 Azure 服务管理 REST API 将多个存储帐户附加到一个媒体服务帐户。此外还说明如何在使用媒体服务 SDK 创建资产时指定不同的存储帐户。
+本主题演示如何使用 Azure 服务管理 REST API 将多个存储帐户附加到一个媒体服务帐户，此外还说明如何在使用媒体服务 SDK 创建资产时指定不同的存储帐户。
 
 ##注意事项
 
@@ -35,15 +35,15 @@
 
 - 附加到媒体服务帐户的所有存储帐户必须与媒体服务帐户位于同一数据中心。
 - 目前，存储帐户一旦附加到指定的媒体服务帐户便无法断开。
-- 主存储帐户是在创建媒体服务帐户创建时指定的帐户。目前，你无法更改默认存储帐户。
+- 主存储帐户是在创建媒体服务帐户创建时指定的帐户。目前无法更改默认存储帐户。
 
 其他注意事项：
 
-构建流内容的 URL 时，媒体服务会使用 **IAssetFile.Name** 属性的值（如 http://{WAMSAccount}.origin.mediaservices.chinacloudapi.cn/{GUID}/{IAssetFile.Name}/streamingParameters.）。出于这个原因，不允许使用百分号编码。Name 属性的值不能含有任何以下保留的[百分号编码字符](http://zh.wikipedia.org/wiki/百分号编码#.E4.BF.9D.E7.95.99.E5.AD.97.E7.AC.A6.E7.9A.84.E7.99.BE.E5.88.86.E5.8F.B7.E7.BC.96.E7.A0.81)：!*'();:@&=+$,/?%#"。此外，文件扩展名中只能含有一个“.”。
+构建流内容的 URL 时，媒体服务会使用 **IAssetFile.Name** 属性的值（如 http://{WAMSAccount}.origin.mediaservices.chinacloudapi.cn/{GUID}/{IAssetFile.Name}/streamingParameters.）。出于此原因，不允许使用百分号编码。Name 属性的值不能含有任何以下[百分号编码保留字符](http://zh.wikipedia.org/wiki/百分号编码#.E4.BF.9D.E7.95.99.E5.AD.97.E7.AC.A6.E7.9A.84.E7.99.BE.E5.88.86.E5.8F.B7.E7.BC.96.E7.A0.81)：!*'();:@&=+$,/?%#"。此外，文件扩展名中只能含有一个“.”。
 
 ##使用 Azure 服务管理 REST API 附加存储帐户
 
-目前，只能使用 [Azure 服务管理 REST API](http://msdn.microsoft.com/zh-cn/library/azure/dn167014.aspx) 附加多个存储帐户。[如何：使用媒体服务管理 REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn167656.aspx) 主题中的代码示例定义了将存储帐户附加到指定媒体服务帐户的 **AttachStorageAccountToMediaServiceAccount** 方法。同一主题中的代码定义列出已附加到指定媒体服务帐户的所有存储帐户的 **ListStorageAccountDetails** 方法。
+目前，只能使用 [Azure 服务管理 REST API](http://msdn.microsoft.com/zh-cn/library/azure/dn167014.aspx) 附加多个存储帐户。[如何：使用媒体服务管理 REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn167656.aspx) 主题中的代码示例定义了将存储帐户附加到指定媒体服务帐户的 **AttachStorageAccountToMediaServiceAccount** 方法。此主题中的代码定义了列出已附加到指定媒体服务帐户的所有存储帐户的 **ListStorageAccountDetails** 方法。
 
 
 ##跨多个存储帐户管理媒体服务资产
@@ -268,4 +268,4 @@
 		}
  
 
-<!---HONumber=Mooncake_1107_2016-->
+<!---HONumber=Mooncake_Quality_Review_1202_2016-->

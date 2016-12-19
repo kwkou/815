@@ -14,7 +14,7 @@
     ms.tgt_pltfrm="powershell"
     ms.workload="data-management"
     ms.date="08/31/2016"
-    wacn.date="10/17/2016"
+    wacn.date="12/19/2016"
     ms.author="sstein"/>  
 
 
@@ -29,12 +29,12 @@
 
 本文说明如何使用 PowerShell 通过导入 [BACPAC](https://msdn.microsoft.com/zh-cn/library/ee210546.aspx#Anchor_4) 文件来创建 Azure SQL 数据库。
 
-数据库是使用从 Azure 存储 Blob 容器导入的 BACPAC 文件 (.bacpac) 创建的。如果 Azure 存储中没有 BACPAC 文件，请参阅[使用 PowerShell 将 Azure SQL 数据库存档到 BACPAC 文件](/documentation/articles/sql-database-export-powershell/)。如果已有一个 BACPAC 文件但该文件不在 Azure 存储中，可以[使用 AzCopy 轻松将它上载到 Azure 存储帐户](/documentation/articles/storage-use-azcopy/#blob-upload)。
+数据库通过从 Azure 存储 Blob 容器导入的 BACPAC 文件 (.bacpac) 创建。如果 Azure 存储中没有 BACPAC 文件，请参阅[使用 PowerShell 将 Azure SQL 数据库存档到 BACPAC 文件](/documentation/articles/sql-database-export-powershell/)。如果已有一个 BACPAC 文件但该文件不在 Azure 存储中，[使用 AzCopy 轻松将它上传到 Azure 存储帐户](/documentation/articles/storage-use-azcopy/#blob-upload)。
 
-> [AZURE.NOTE] Azure SQL 数据库会自动为你可以还原的每个用户数据库创建和维护备份。相关详细信息，请参阅 [SQL 数据库自动备份](/documentation/articles/sql-database-automated-backups/)。
+> [AZURE.NOTE] Azure SQL 数据库会自动为你可以还原的每个用户数据库创建和维护备份。有关详细信息，请参阅 [SQL 数据库自动备份](/documentation/articles/sql-database-automated-backups/)。
 
 
-若要导入 SQL 数据库，需要做好以下准备：
+若要导入 SQL 数据库，需要以下内容：
 
 - Azure 订阅。如果你需要 Azure 订阅，只需单击本页顶部的“试用”，然后再回来完成本文的相关操作即可。
 - 要导入的数据库的 BACPAC 文件。BACPAC 需位于 [Azure 存储帐户](/documentation/articles/storage-create-storage-account/) Blob 容器中。
@@ -49,9 +49,9 @@
 
 有几个变量需要你将示例值替换为你的数据库和存储帐户的特定值。
 
-服务器名称应是上一步骤选择的订阅中当前存在的服务器。它应该是要在其中创建数据库的服务器。不支持直接将数据库导入弹性池。可以先导入到单一数据库，然后将该数据库移入池中。
+服务器名称应是上一步骤选择的订阅中当前存在的服务器。它应该是要在其中创建数据库的服务器。不支持直接将数据库导入弹性池。但是可以先导入到单一数据库，然后将该数据库移入池中。
 
-数据库名称是你要给新数据库取的名称。
+数据库名称是要为新数据库赋予的名称。
 
     $ResourceGroupName = "resource group name"
     $ServerName = "server name"
@@ -110,6 +110,6 @@ Blob 名称是要从中创建数据库的现有 BACPAC 文件的名称。需要�
 
 ## 后续步骤
 
-- 若要了解如何连接到并查询导入的 SQL 数据库，请参阅 [使用 SQL Server Management Studio 连接到 SQL 数据库执行示例 T-SQL 查询](/documentation/articles/sql-database-connect-query-ssms/)
+- 若要了解如何连接到并查询导入的 SQL 数据库，请参阅[使用 SQL Server Management Studio 连接到 SQL 数据库并执行示例 T-SQL 查询](/documentation/articles/sql-database-connect-query-ssms/)
 
-<!---HONumber=Mooncake_1010_2016-->
+<!---HONumber=Mooncake_Quality_Review_1202_2016-->

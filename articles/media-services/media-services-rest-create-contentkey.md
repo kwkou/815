@@ -15,7 +15,7 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="09/26/2016"  
-	wacn.date="11/21/2016"  
+	wacn.date="12/16/2016"  
 	ms.author="juliako"/>
 
 
@@ -27,26 +27,26 @@
 - [.NET](/documentation/articles/media-services-dotnet-create-contentkey/)
 
 
-媒体服务允许你创建新资产和传送加密的资产。**ContentKey** 提供对**资产**的安全访问。
+媒体服务允许创建新资产和传送加密的资产。**ContentKey** 提供对**资产**的安全访问。
 
 创建新资产时（例如，[上载文件](/documentation/articles/media-services-rest-upload-files/)之前），可以指定以下加密选项：**StorageEncrypted**、**CommonEncryptionProtected** 或 **EnvelopeEncryptionProtected**。
 
-将资产传送到你的客户端时，可以使用以下两个加密选项之一[将资产配置为动态加密](/documentation/articles/media-services-rest-configure-asset-delivery-policy/)：**DynamicEnvelopeEncryption** 或 **DynamicCommonEncryption**。
+将资产传送到客户端时，可以使用以下两个加密选项之一[将资产配置为动态加密](/documentation/articles/media-services-rest-configure-asset-delivery-policy/)：**DynamicEnvelopeEncryption** 或 **DynamicCommonEncryption**。
 
 加密的资产必须与 **ContentKey** 关联。本文介绍如何创建内容密钥。
 
-以下是用于生成内容密钥的常规步骤，你会将这些内容密钥与你想要进行加密的资产关联。
+以下是用于生成要与想加密的资产关联的内容密钥的常规步骤。
 
 1. 随机生成一个 16 字节 AES 密钥（用于常规和信封加密）或 32 字节 AES 密钥（用于存储加密）。
 
-	这将成为你资产的内容密钥，这意味着该资产的所有关联文件在解密过程中需要使用同一内容密钥。
-2.	调用 [GetProtectionKeyId](https://msdn.microsoft.com/zh-cn/library/azure/jj683097.aspx#getprotectionkeyid) 和 [GetProtectionKey](https://msdn.microsoft.com/zh-cn/library/azure/jj683097.aspx#getprotectionkey) 方法来获取正确的 X.509 证书，必须使用该证书加密你的内容密钥。
-3.	使用 X.509 证书的公钥来加密你的内容密钥。
+	它将成为资产的内容密钥，这意味着该资产的所有关联文件在解密过程中需要使用同一内容密钥。
+2.	调用 [GetProtectionKeyId](https://msdn.microsoft.com/zh-cn/library/azure/jj683097.aspx#getprotectionkeyid) 和 [GetProtectionKey](https://msdn.microsoft.com/zh-cn/library/azure/jj683097.aspx#getprotectionkey) 方法来获取加密内容密钥所必须使用的正确的 X.509 证书。
+3.	使用 X.509 证书的公钥来加密内容密钥。
 
-	媒体服务 .NET SDK 在加密时使用 RSA 和 OAEP。你可以参阅 [EncryptSymmetricKeyData 函数](https://github.com/Azure/azure-sdk-for-media-services/blob/dev/src/net/Client/Common/Common.FileEncryption/EncryptionUtils.cs)中的示例。
-4.	创建一个使用密钥标识符和内容密钥计算得出的校验和值（基于 PlayReady AES 密钥校验和算法）。有关详细信息，请参阅位于[此处](http://www.microsoft.com/playready/documents/)的 PlayReady 标头对象文档的“PlayReady AES 密钥校验和算法”部分。
+	媒体服务 .NET SDK 在加密时使用 RSA 和 OAEP。可在 [EncryptSymmetricKeyData 函数](https://github.com/Azure/azure-sdk-for-media-services/blob/dev/src/net/Client/Common/Common.FileEncryption/EncryptionUtils.cs)中查看示例。
+4.	创建使用密钥标识符和内容密钥计算得出的校验和值（基于 PlayReady AES 密钥校验和算法）。有关详细信息，请参阅位于[此处](http://www.microsoft.com/playready/documents/)的 PlayReady 标头对象文档的“PlayReady AES 密钥校验和算法”部分。
 
-	下面的 .NET 示例将使用密钥标识符和明文内容密钥的 GUID 部分计算校验和。
+	下面的 .NET 示例将使用密钥标识符的 GUID 部分和明文内容密钥计算校验和。
 	
 		public static string CalculateChecksum(byte[] contentKey, Guid keyId)
 		{
@@ -66,7 +66,7 @@
 		}
 
 5. 创建具有 **EncryptedContentKey**（转换为 base64 编码的字符串）、**ProtectionKeyId**、**ProtectionKeyType**、**ContentKeyType** 和在前面步骤中收到的**校验和**值的内容密钥。
-6. 通过 $links 操作将 **ContentKey** 实体与你的 **资产**实体相关联。
+6. 通过 $links 操作将 **ContentKey** 实体与 **Asset** 实体相关联。
 
 请注意，本主题中省略了生成 AES 密钥、加密密钥以及计算校验和的示例。仅提供了演示如何与媒体服务进行交互的示例。
 
@@ -80,7 +80,7 @@
 ##检索 ProtectionKeyId 
  
 
-以下示例演示了如何检索证书的证书指纹 ProtectionKeyId，你在加密内容密钥时必须使用此指纹。执行此步骤以确保你的计算机已具备适当的证书。
+以下示例演示了如何检索加密内容密钥时必须使用的证书的证书指纹 ProtectionKeyId。执行此步骤以确保计算机上已具备适当的证书。
 
 
 请求：
@@ -152,7 +152,7 @@
 
 ##创建 ContentKey 
 
-检索到 X.509 证书并使用其公钥加密你的内容密钥后，请创建一个 **ContentKey** 实体并相应地设置其属性值。
+检索到 X.509 证书并使用其公钥加密内容密钥后，请创建 **ContentKey** 实体并相应地设置其属性值。
 
 创建内容密钥时必须设置的值之一是内容密钥类型。选择以下值之一。
 
@@ -181,7 +181,7 @@
     }
 
 
-以下示例演示了如何创建一个 **ContentKey**，其中它的 **ContentKeyType** 设置为存储加密 ("1") 且 **ProtectionKeyType** 设置为“0”，以指示保护密钥 ID 是 X.509 证书指纹。
+以下示例演示了如何创建 **ContentKey**，将 **ContentKeyType** 设置为存储加密（“1”）并将 **ProtectionKeyType** 设置为“0”，以指示保护密钥 ID 是 X.509 证书指纹。
 
 
 请求
@@ -234,7 +234,7 @@
 
 ##将 ContentKey 与资产关联
 
-创建 ContentKey 后，使用 $links 操作将其与你的资产关联，如以下示例所示：
+创建 ContentKey 后，使用 $links 操作将其与资产关联，如以下示例所示：
 	
 请求：
 	
@@ -255,4 +255,4 @@
 
 	HTTP/1.1 204 No Content 
 
-<!---HONumber=Mooncake_1114_2016-->
+<!---HONumber=Mooncake_Quality_Review_1202_2016-->

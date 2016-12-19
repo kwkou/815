@@ -14,7 +14,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="09/13/2016"
-	wacn.date="10/17/2016"
+	wacn.date="12/19/2016"
 	ms.author="sstein"/>  
 
 
@@ -22,10 +22,10 @@
 
 
 > [AZURE.SELECTOR]
-- [事务 - SQL (SSMS)](/documentation/articles/sql-database-manage-azure-ssms/)
+- [Transact-SQL (SSMS)](/documentation/articles/sql-database-manage-azure-ssms/)
 - [PowerShell](/documentation/articles/sql-database-command-line-tools/)
 
-本主题介绍用于执行许多 Azure SQL 数据库任务的 PowerShell cmdlet。如需完整列表，请参阅 [Azure SQL 数据库 Cmdlet](https://msdn.microsoft.com/zh-cn/library/mt574084.aspx)。
+本主题介绍用于执行许多 Azure SQL 数据库任务的 PowerShell cmdlet。有关完整列表，请参阅 [Azure SQL 数据库 Cmdlet](https://msdn.microsoft.com/zh-cn/library/mt574084.aspx)。
 
 
 ## 创建资源组
@@ -38,8 +38,7 @@
 	New-AzureRmResourceGroup -Name $resourceGroupName -Location $resourceGroupLocation
 
 
-有关详细信息，请参阅[将 Azure PowerShell 与 Azure 资源管理器配合使用](/documentation/articles/powershell-azure-resource-manager/)。
-如需脚本示例，请参阅 [Create a SQL database PowerShell script](/documentation/articles/sql-database-get-started-powershell/#create-a-sql-database-powershell-script)（创建 SQL 数据库 PowerShell 脚本）。
+有关详细信息，请参阅[将 Azure PowerShell 与 Azure Resource Manager 配合使用](/documentation/articles/powershell-azure-resource-manager/)。有关示例脚本，请参阅[创建 SQL 数据库 PowerShell 脚本](/documentation/articles/sql-database-get-started-powershell/#create-a-sql-database-powershell-script)。
 
 ## 创建 SQL 数据库服务器
 
@@ -62,7 +61,7 @@
 	 -ResourceGroupName $resourceGroupName -ServerVersion $sqlServerVersion
 
 
-有关详细信息，请参阅 [What is SQL Database](/documentation/articles/sql-database-technical-overview/)（什么是 SQL 数据库）。如需脚本示例，请参阅 [Create a SQL database PowerShell script](/documentation/articles/sql-database-get-started-powershell/#create-a-sql-database-powershell-script)（创建 SQL 数据库 PowerShell 脚本）。
+有关详细信息，请参阅[什么是 SQL 数据库](/documentation/articles/sql-database-technical-overview/)。有关示例脚本，请参阅[创建 SQL 数据库 PowerShell 脚本](/documentation/articles/sql-database-get-started-powershell/#create-a-sql-database-powershell-script)。
 
 
 ## 创建 SQL 数据库服务器防火墙规则
@@ -84,7 +83,7 @@
 
 若要允许其他 Azure 服务访问服务器，请创建防火墙规则，将 `-StartIpAddress` 和 `-EndIpAddress` 都设置为 **0.0.0.0**。这个特殊的防火墙规则允许所有 Azure 流量访问服务器。
 
-有关详细信息，请参阅 [Azure SQL 数据库防火墙](/documentation/articles/sql-database-firewall-configure/)。如需脚本示例，请参阅 [Create a SQL database PowerShell script](/documentation/articles/sql-database-get-started-powershell/#create-a-sql-database-powershell-script)（创建 SQL 数据库 PowerShell 脚本）。
+有关详细信息，请参阅 [Azure SQL 数据库防火墙](/documentation/articles/sql-database-firewall-configure/)。有关示例脚本，请参阅[创建 SQL 数据库 PowerShell 脚本](/documentation/articles/sql-database-get-started-powershell/#create-a-sql-database-powershell-script)。
 
 
 ## 创建 SQL 数据库（空）
@@ -104,12 +103,12 @@
 	 -Edition $databaseEdition -RequestedServiceObjectiveName $databaseServiceLevel
 
 
-有关详细信息，请参阅 [What is SQL Database](/documentation/articles/sql-database-technical-overview/)（什么是 SQL 数据库）。如需脚本示例，请参阅 [Create a SQL database PowerShell script](/documentation/articles/sql-database-get-started-powershell/#create-a-sql-database-powershell-script)（创建 SQL 数据库 PowerShell 脚本）。
+有关详细信息，请参阅[什么是 SQL 数据库](/documentation/articles/sql-database-technical-overview/)。有关示例脚本，请参阅[创建 SQL 数据库 PowerShell 脚本](/documentation/articles/sql-database-get-started-powershell/#create-a-sql-database-powershell-script)。
 
 
 ## 更改 SQL 数据库的性能级别
 
-使用 [Set-AzureRmSqlDatabase](https://msdn.microsoft.com/zh-cn/library/azure/mt619433.aspx) cmdlet 对数据库进行上下缩放。资源组、服务器和数据库必须已存在于订阅中。对于“基本”层，请将 `-RequestedServiceObjectiveName` 设置为单个空格（如以下代码段所示）。将其设置为 *S0*、*S1*、*P1*、*P6*，等等，如其他层的前述示例所示。
+使用 [Set-AzureRmSqlDatabase](https://msdn.microsoft.com/zh-cn/library/azure/mt619433.aspx) cmdlet 增加或减少数据库。资源组、服务器和数据库必须已存在于订阅中。对于“基本”层，请将 `-RequestedServiceObjectiveName` 设置为单个空格（如以下代码段）。将其设置为 *S0*、*S1*、*P1*、*P6* 等，如其他层的前述示例。
 
 
 	$resourceGroupName = "resourcegroup1"
@@ -124,11 +123,11 @@
 	 -Edition $databaseEdition -RequestedServiceObjectiveName $databaseServiceLevel
 
 
-有关详细信息，请参阅 [SQL 数据库选项和性能：了解每个服务层提供的功能](/documentation/articles/sql-database-service-tiers/)。如需脚本示例，请参阅 [Sample PowerShell script to change the service tier and performance level of your SQL database](/documentation/articles/sql-database-scale-up-powershell/#sample-powershell-script-to-change-the-service-tier-and-performance-level-of-your-sql-database)（用于更改 SQL 数据库的服务层和性能级别的示例 PowerShell 脚本）。
+有关详细信息，请参阅 [SQL 数据库选项和性能：了解每个服务层提供的功能](/documentation/articles/sql-database-service-tiers/)。有关示例脚本，请参阅[用于更改 SQL 数据库的服务层和性能级别的示例 PowerShell 脚本](/documentation/articles/sql-database-scale-up-powershell/#sample-powershell-script-to-change-the-service-tier-and-performance-level-of-your-sql-database)。
 
 ## 将 SQL 数据库复制到同一台服务器
 
-使用 [New-AzureRmSqlDatabaseCopy](https://msdn.microsoft.com/zh-cn/library/azure/mt603644.aspx) cmdlet 将 SQL 数据库复制到同一服务器。将 `-CopyServerName` 和 `-CopyResourceGroupName` 设置为与源数据库服务器和资源组相同的值。
+使用 [New-AzureRmSqlDatabaseCopy](https://msdn.microsoft.com/zh-cn/library/azure/mt603644.aspx) cmdlet 将 SQL 数据库复制到同一台服务器。将 `-CopyServerName` 和 `-CopyResourceGroupName` 设置为与源数据库服务器和资源组相同的值。
 
 
 	$resourceGroupName = "resourcegroup1"
@@ -145,7 +144,7 @@
 	 -CopyResourceGroupName $copyResourceGroupName
 
 
-有关详细信息，请参阅[复制 Azure SQL 数据库](/documentation/articles/sql-database-copy/)。如需脚本示例，请参阅 [Copy a SQL database PowerShell script](/documentation/articles/sql-database-copy-powershell/#example-powershell-script)（复制 SQL 数据库 PowerShell 脚本）。
+有关详细信息，请参阅[复制 Azure SQL 数据库](/documentation/articles/sql-database-copy/)。有关示例脚本，请参阅[复制 SQL 数据库 PowerShell 脚本](/documentation/articles/sql-database-copy-powershell/#example-powershell-script)。
 
 
 ## 删除 SQL 数据库
@@ -174,9 +173,9 @@
 
 ## 使用 PowerShell 创建和管理弹性数据库池
 
-如需详细了解如何使用 PowerShell 创建弹性数据库池，请参阅 [Create a new elastic database pool with PowerShell](/documentation/articles/sql-database-elastic-pool-create-powershell/)（使用 PowerShell 创建新的弹性数据库池）。
+有关使用 PowerShell 创建弹性数据库池的详细信息，请参阅[使用 PowerShell 创建新的弹性数据库池](/documentation/articles/sql-database-elastic-pool-create-powershell/)。
 
-如需详细了解如何使用 PowerShell 管理弹性数据库池，请参阅 [Monitor and manage an elastic database pool with PowerShell](/documentation/articles/sql-database-elastic-pool-manage-powershell/)（使用 PowerShell 监视和管理弹性数据库池）。
+有关使用 PowerShell 管理弹性数据库池的详细信息，请参阅[使用 PowerShell 监视和管理弹性数据库池](/documentation/articles/sql-database-elastic-pool-manage-powershell/)。
 
 
 
@@ -185,4 +184,4 @@
 - [Azure SQL 数据库 Cmdlet](https://msdn.microsoft.com/zh-cn/library/azure/mt574084.aspx)
 - [Azure Cmdlet 参考](https://msdn.microsoft.com/zh-cn/library/azure/dn708514.aspx)
 
-<!---HONumber=Mooncake_1010_2016-->
+<!---HONumber=Mooncake_Quality_Review_1202_2016-->

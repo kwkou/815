@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="在 Azure 门户预览中启用存储度量值 | Azure" 
-	description="如何为 Blob、队列、表和文件服务启用存储度量值"
+	pageTitle="在 Azure 门户中启用存储指标 | Azure" 
+	description="如何为 Blob、队列、表和文件服务启用存储指标"
 	services="storage"
 	documentationCenter=""
 	authors="robinsh"
@@ -14,36 +14,36 @@
 	ms.devlang="dotnet"
 	ms.topic="article"
 	ms.date="08/03/2016"
-	wacn.date="09/05/2016"
+	wacn.date="12/19/2016"
 	ms.author="fryu;robinsh"/>
 
-# 启用 Azure 存储空间度量值并查看度量值数据
+# 启用 Azure 存储指标并查看指标数据
 
 [AZURE.INCLUDE [storage-selector-portal-enable-and-view-metrics](../../includes/storage-selector-portal-enable-and-view-metrics.md)]
 
 ## 概述
 
-对于存储服务，默认情况下不启用存储度量值。可通过 [Azure 门户预览](https://portal.azure.cn)或 Windows PowerShell 启用监视，也可通过存储客户端库以编程方式启用监视。
+默认情况下，未为存储服务启用存储指标。可通过 [Azure 门户预览](https://portal.azure.cn)或 Windows PowerShell 启用监视，也可通过存储客户端库以编程方式启用监视。
 
-启用存储度量值时，必须为数据选择保留期：此期限用于确定存储服务保留度量值并针对存储度量值所需的空间向你收费的时长。通常，由于分钟度量值需要大量额外的空间，因此，应对分钟度量值而非小时度量值使用较短的保留期。你应该选择恰当的保留期，以便有足够的时间分析数据，并下载任何需要保留下来进行脱机分析或报告的度量值。请记住，从存储帐户下载度量值数据时，你也需要付费。
+启用存储指标时，必须为数据选择保留期：此期限将确定存储服务保留指标的时长，将对存储指标所需的空间收费。通常，由于分钟指标需要大量额外的空间，所以应对分钟指标而非小时指标使用较短的保留期。应选择恰当的保留期，以便有足够的时间分析数据，并下载需要保留以便脱机分析或报告的任何指标。请记住，从存储帐户下载指标数据也将计费。
 
-## 如何使用 Azure 门户预览启用度量值
+## 如何通过 Azure 门户预览启用指标
 
-请按照下列步骤来启用 [Azure 门户预览](https://portal.azure.cn)中的度量值：
+请按照下列步骤在 [Azure 门户预览](https://portal.azure.cn)中启用指标：
 
-1. 导航到你的存储帐户。
+1. 导航到存储帐户。
 1. 打开“设置”边栏选项卡，然后选择“诊断”。
 1. 确保“状态”设置为“打开”。
-1. 选择你希望监视的服务的度量值。
-2. 指定用来指示保留度量值和日志数据的时间长度的保留期策略。
+1. 为要监视的服务选择指标。
+2. 指定用于指示指标和日志数据保留时长的保留策略。
 
-请注意，[Azure 门户预览](https://portal.azure.cn)目前不允许你在存储帐户中配置分钟度量值；必须通过 PowerShell 或编程方式启用分钟度量值。
+请注意，[Azure 门户预览](https://portal.azure.cn)目前不允许在存储帐户中配置分钟指标；必须通过 PowerShell 或编程方式启用分钟指标。
 
-## 如何使用 PowerShell 启用度量值
+## 如何通过 PowerShell 启用指标
 
-你可以使用本地计算机上的 PowerShell 在存储帐户中配置存储度量值，具体方法是：使用 Azure PowerShell cmdlet Get-AzureStorageServiceMetricsProperty 检索当前设置，然后使用 cmdlet Set-AzureStorageServiceMetricsProperty 更改当前设置。
+可以使用本地计算机上的 PowerShell 在存储帐户中配置存储指标，具体方法是：使用 Azure PowerShell cmdlet Get-AzureStorageServiceMetricsProperty 检索当前设置，然后使用 cmdlet Set-AzureStorageServiceMetricsProperty 更改当前设置。
 
-控制存储度量值的 cmdlet 使用以下参数：
+控制存储指标的 cmdlet 使用以下参数：
 
 - MetricsType：可能值是 Hour 和 Minute。
 
@@ -51,19 +51,19 @@
 
 - MetricsLevel：可能的值为 None、Service 和 ServiceAndApi。
 
-例如，以下命令在保留期设为 5 天的情况下，在默认存储帐户中为 Blob 服务打开分钟度量值：
+例如，以下命令在默认存储帐户中为 Blob 服务打开分钟指标，并将保留期设为 5 天：
 
 `Set-AzureStorageServiceMetricsProperty -MetricsType Minute -ServiceType Blob -MetricsLevel ServiceAndApi  -RetentionDays 5`
 
-以下命令在默认存储帐户中为 Blob 服务检索当前的小时度量值级别和保留天数：
+以下命令在默认存储帐户中为 Blob 服务检索当前的小时指标级别和保留天数：
 
 `Get-AzureStorageServiceMetricsProperty -MetricsType Hour -ServiceType Blob`
 
 若要了解如何配置 Azure PowerShell cmdlet 以使用 Azure 订阅以及如何选择要使用的默认存储帐户，请参阅：[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)。
 
-## 如何以编程方式启用存储度量值
+## 如何以编程方式启用存储指标
 
-下面的 C# 代码段演示了如何使用 .NET 的存储客户端库为 Blob 服务启用度量值和日志记录：
+下面的 C# 代码段演示了如何使用 .NET 的存储客户端库为 Blob 服务启用指标和日志记录：
 
     //Parse the connection string for the storage account.
     const string ConnectionString = "DefaultEndpointsProtocol=https;AccountName=account-name;AccountKey=account-key;EndpointSuffix=core.chinacloudapi.cn";
@@ -94,16 +94,16 @@
     blobClient.SetServiceProperties(properties);
 
 
-## 查看存储度量值
+## 查看存储指标
 
-在将存储分析度量值配置为监视存储帐户后，存储分析将使用存储帐户在一组已知表中记录度量值。可以将图表配置为每小时查看 [Azure 门户预览](https://portal.azure.cn)中的度量值：
+在将存储分析指标配置为监视存储帐户后，存储分析将使用存储帐户在一组已知表中记录指标。可以将图表配置为每小时查看 [Azure 门户预览](https://portal.azure.cn)中的指标：
 
-1. 导航到你在 [Azure 门户预览](https://portal.azure.cn)中的存储帐户。
-2. 在“监视”部分中，单击“添加磁贴”以添加一个新图表。在“磁贴库”中，选择想要查看的度量值并将其拖到“监视”部分。
-3. 若要编辑哪些度量值在图表中显示，请单击“编辑”链接。可以通过选择或取消选择单个度量值来进行添加或删除。
-4. 完成度量值编辑后，单击“保存”。
+1. 在 [Azure 门户预览](https://portal.azure.cn)中导航到存储帐户。
+2. 在“监视”部分中，单击“添加磁贴”以添加一个新图表。在“磁贴库”中，选择要查看的指标并将其拖到“监视”部分。
+3. 若要编辑要在图表中显示的指标，请单击“编辑”链接。可以通过选择或取消选择单个指标来进行添加或删除。
+4. 编辑完指标后，单击“保存”。
 
-若要为长期存储下载度量值或在本地分析这些度量值，则需要：
+若要下载指标供长期存储或本地分析，需执行以下操作：
 
 - 使用识别这些表并允许查看和下载这些表的工具。
 - 编写自定义应用程序或脚本来读取和存储表。
@@ -111,16 +111,16 @@
 很多第三方存储浏览工具可识别这些表，并可用于直接查看这些表。
 有关可用工具的列表，请参阅 [Azure 存储资源管理器](/documentation/articles/storage-explorers/)。
 
-> [AZURE.NOTE] 从 [Azure 存储资源管理器](http://storageexplorer.com/) 0.8.0 版本开始，将能够查看和下载分析度量值表。
+> [AZURE.NOTE] 从 [Azure 存储资源管理器](http://storageexplorer.com/) 0.8.0 版本开始，可查看和下载分析指标表。
 
 若要以编程方式访问分析表，请注意如果存储帐户中列出这些表，将不显示它们。可按名称直接访问它们，也可使用 .NET 客户端库中的 [CloudAnalyticsClient API](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.storage.analytics.cloudanalyticsclient.aspx) 查询表名。
 
-### 每小时度量值
+### 小时指标
 - $MetricsHourPrimaryTransactionsBlob
 - $MetricsHourPrimaryTransactionsTable
 - $MetricsHourPrimaryTransactionsQueue
 
-### 分钟度量值
+### 分钟指标
 - $MetricsMinutePrimaryTransactionsBlob
 - $MetricsMinutePrimaryTransactionsTable
 - $MetricsMinutePrimaryTransactionsQueue
@@ -128,16 +128,16 @@
 ### 容量
 - $MetricsCapacityBlob
 
-有关这些表的完整架构详细信息，请参阅[存储分析度量值表架构](https://msdn.microsoft.com/zh-cn/library/azure/hh343264.aspx)。以下示例行仅显示一部分可用列，但也说明了存储度量值在采用相应方式保存这些度量值时展现的一些重要功能：
+有关这些表的完整架构详细信息，请参阅[存储分析指标表架构](https://msdn.microsoft.com/zh-cn/library/azure/hh343264.aspx)。以下示例行仅显示一部分可用列，但也说明了“存储指标”保存这些指标的方式的一些重要特征：
 
-| PartitionKey  |       RowKey       |                    Timestamp | TotalRequests | TotalBillableRequests | TotalIngress | TotalEgress | 可用性 | AverageE2ELatency | AverageServerLatency | PercentSuccess |
+| PartitionKey | RowKey | Timestamp | TotalRequests | TotalBillableRequests | TotalIngress | TotalEgress | Availability | AverageE2ELatency | AverageServerLatency | PercentSuccess |
 |---------------|:------------------:|-----------------------------:|---------------|-----------------------|--------------|-------------|--------------|-------------------|----------------------|----------------|
-| 20140522T1100 |      user;All      | 2014-05-22T11:01:16.7650250Z | 7             | 7                     | 4003         | 46801       | 100          | 104.4286          | 6.857143             | 100            |
-| 20140522T1100 | user;QueryEntities | 2014-05-22T11:01:16.7640250Z | 5             | 5                     | 2694         | 45951       | 100          | 143.8             | 7.8                  | 100            |
-| 20140522T1100 |  user;QueryEntity  | 2014-05-22T11:01:16.7650250Z | 1             | 1                     | 538          | 633         | 100          | 3                 | 3                    | 100            |
-| 20140522T1100 | user;UpdateEntity  | 2014-05-22T11:01:16.7650250Z | 1             | 1                     | 771          | 217         | 100          | 9                 | 6                    | 100               |
+| 20140522T1100 | user;All | 2014-05-22T11:01:16.7650250Z | 7 | 7 | 4003 | 46801 | 100 | 104\.4286 | 6\.857143 | 100 |
+| 20140522T1100 | user;QueryEntities | 2014-05-22T11:01:16.7640250Z | 5 | 5 | 2694 | 45951 | 100 | 143\.8 | 7\.8 | 100 |
+| 20140522T1100 | user;QueryEntity | 2014-05-22T11:01:16.7650250Z | 1 | 1 | 538 | 633 | 100 | 3 | 3 | 100 |
+| 20140522T1100 | user;UpdateEntity | 2014-05-22T11:01:16.7650250Z | 1 | 1 | 771 | 217 | 100 | 9 | 6 | 100 |
 
-在这个分钟度量值数据示例中，分区键按分钟使用时间。行键可识别行中存储的信息的类型，其中包含两条信息，即访问类型和请求类型：
+在这个分钟指标数据示例中，分区键按分钟使用时间。行键可识别行中存储的信息的类型，其中包含两条信息，即访问类型和请求类型：
 
 - 访问类型是 user 或 system，其中 user 是指用户对存储服务发出的所有请求，而 system 是指存储分析发出的请求。
 
@@ -146,13 +146,13 @@
 
 上面的示例数据显示一分钟的所有记录（从上午 11:00 开始），因此，QueryEntities 请求数加 QueryEntity 请求数再加 UpdateEntity 请求数的和为 7，这是显示在 user:All 行上的总数。同样，通过计算 ((143.8 * 5) + 3 + 9)/7，可以在 user:All 行得到平均端到端延迟为 104.4286。
 
-你应该考虑在 [Azure 门户预览](https://portal.azure.cn)中的“监视”页上设置警报，以便存储度量值自动通知你存储服务行为中发生的任何重要更改。如果你使用存储资源管理器工具下载这种采用分隔格式的度量值数据，则可以使用 Microsoft Excel 分析该数据。有关可用存储资源管理器工具的列表，请参阅博客文章 [Azure 存储空间资源管理器](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/03/11/windows-azure-storage-explorers-2014.aspx)。
+应考虑在 [Azure 门户预览](https://portal.azure.cn)中的“监视”页上设置警报，以便存储指标自动通知存储服务行为中发生的任何重要更改。如果使用存储资源管理器工具下载这种采用分隔格式的指标数据，可使用 Microsoft Excel 分析该数据。有关可用存储资源管理器工具的列表，请参阅博客文章 [Azure 存储资源管理器](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/03/11/windows-azure-storage-explorers-2014.aspx)。
 
 
 
-## 以编程方式访问度量值数据
+## 以编程方式访问指标数据
 
-以下列表显示示例 C# 代码，该代码用于访问分钟范围的分钟度量值，并在控制台窗口中显示结果。它使用 Azure 存储库版本 4，其中包括 CloudAnalyticsClient 类，用于简化访问存储中的度量值表的过程。
+以下列表显示示例 C# 代码，该代码用于访问分钟范围的分钟指标，并在控制台窗口中显示结果。它使用 Azure 存储库版本 4，其中包括 CloudAnalyticsClient 类，用于简化访问存储中的指标表的过程。
 
     private static void PrintMinuteMetrics(CloudAnalyticsClient analyticsClient, DateTimeOffset startDateTime, DateTimeOffset endDateTime)
     {
@@ -198,21 +198,21 @@
 
 
 
-## 在启用存储度量值时，你需要支付多少费用？
+## 启用存储指标时，需要支付多少费用？
 
-为度量值创建表实体的写入请求，按适用于所有 Azure 存储操作的标准费率收费。
+为指标创建表实体的写入请求，按适用于所有 Azure 存储操作的标准费率收费。
 
-客户端针对度量值数据的读取和删除请求也按标准费率收费。如果你已配置数据保留策略，则当 Azure 存储空间删除旧的度量值数据时，你不用付费。但是，如果你删除分析数据，则会针对删除操作向你的帐户收费。
+客户端针对指标数据的读取和删除请求也按标准费率收费。如果已配置数据保留策略，则 Azure 存储删除旧指标数据时不收费。但是，如果删除分析数据，则会针对删除操作向帐户收费。
 
-度量值表使用的容量也要付费：你可以依据以下内容估算用于存储度量值数据的容量：
+指标表使用的容量也要付费，可以依据以下内容估算用于存储指标数据的容量：
 
-- 如果某个服务每小时都会利用每个服务的每个 API，则在启用服务和 API 级别摘要后，每小时约有 148KB 的数据存储在度量值事务表中。
+- 如果某个服务每小时都会利用每个服务的每个 API，则在启用服务和 API 级别摘要后，每小时约有 148KB 的数据存储在指标事务表中。
 
-- 如果某个服务每小时都会利用每个服务的每个 API，则在仅启用服务级别摘要后，每小时约有 12KB 的数据存储在度量值事务表中。
+- 如果某个服务每小时都会利用每个服务的每个 API，则在仅启用服务级别摘要后，每小时约有 12KB 的数据存储在指标事务表中。
 
 - Blob 的容量表每天添加两行（如果用户已为日志选择加入）：这表示，此表的大小每天最多以约 300 字节的幅度增加。
 
 ## 后续步骤：
 [启用存储日志记录和访问日志数据](https://msdn.microsoft.com/zh-cn/library/dn782840.aspx)
 
-<!---HONumber=Mooncake_0829_2016-->
+<!---HONumber=Mooncake_Quality_Review_1202_2016-->

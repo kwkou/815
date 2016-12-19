@@ -1,11 +1,11 @@
 <properties 
 	pageTitle="下载媒体资产" 
-	description="了解如何将资产下载到计算机。代码示例用 C# 编写且使用 适用于 .NET 的媒体服务 SDK。" 
+	description="了解如何将资产下载到计算机。代码示例用 C# 编写且使用适用于 .NET 的媒体服务 SDK。" 
 	services="media-services" 
 	documentationCenter="" 
 	authors="juliako" 
 	manager="erikre" 
-	editor=""/>  
+	editor=""/>
 
 
 <tags 
@@ -15,13 +15,13 @@
 	ms.devlang="na" 
 	ms.topic="article"
 	ms.date="09/26/2016"
-	wacn.date="11/14/2016"
+	wacn.date="12/16/2016"
 	ms.author="juliako"/>  
 
 
 #如何：通过下载交付资产
 
-本主题介绍已上载到媒体服务的媒体资产的交付选项。你可以采用众多的应用程序方案来交付媒体服务内容。你可以下载媒体资产，或使用定位器访问媒体资产。你可以将媒体内容发送到其他应用程序或其他内容提供商。为了提高性能和可缩放性，你还可以使用内容传送网络 (CDN) 来传送内容。
+本主题介绍已上传到媒体服务的媒体资产交付选项。你可以采用众多的应用程序方案来交付媒体服务内容。可以下载媒体资产，或使用定位符访问媒体资产。还可以将媒体内容发送到其他应用程序或其他内容提供商。为了提高性能和可缩放性，还可以使用内容传送网络 (CDN) 来传送内容。
 
 此示例演示如何将媒体资产从媒体服务下载到本地计算机。该代码将按作业 ID 查询与媒体服务帐户关联的作业，并访问其 **OutputMediaAssets** 集合（运行作业后生成的、包含一个或多个输出媒体资产的集）。此示例演示如何通过作业下载输出媒体资产，但你可以运用相同的方法来下载其他资产。
 
@@ -81,4 +81,4 @@
 
 [交付流内容](/documentation/articles/media-services-deliver-streaming-content/)
 
-<!---HONumber=Mooncake_1107_2016-->
+<!---HONumber=Mooncake_Quality_Review_1202_2016-->

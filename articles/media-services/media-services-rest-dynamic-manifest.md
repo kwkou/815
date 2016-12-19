@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="使用 Azure 媒体服务 REST API 创建筛选器 | Azure" 
-	description="本主题介绍如何创建筛选器，以便客户端能够使用它们来流式传输流的特定部分。媒体服务将创建动态清单来存档此选择性流。"
+	description="本主题介绍如何创建筛选器，以便客户端能够使用它们对流的特定部分进行流式处理。媒体服务将创建动态清单来存档此选择性流。"
 	services="media-services" 
 	documentationCenter="" 
 	authors="Juliako" 
@@ -15,7 +15,7 @@
 	ms.devlang="ne" 
 	ms.topic="article" 
 	ms.date="09/26/2016"  
-	wacn.date="11/21/2016"  
+	wacn.date="12/16/2016"  
 	ms.author="juliako;cenkdin"/>
 
 #使用 Azure 媒体服务 REST API 创建筛选器
@@ -25,26 +25,24 @@
 - [REST](/documentation/articles/media-services-rest-dynamic-manifest/)
 
 
-从 2.11 版开始，媒体服务可让你为资产定义筛选器。这些筛选器是服务器端规则，可让你的客户选择运行如下操作：只播放一段视频（而非播放完整视频），或只指定客户设备可以处理的一部分音频和视频再现内容（而非与该资产相关的所有再现内容）。通过按客户请求创建的**动态清单**可以实现对资产进行这种筛选，并基于指定的筛选器流式传输视频。
+从 2.11 版开始，媒体服务允许为资产定义筛选器。这些筛选器是服务器端规则，可让你的客户选择执行如下操作：只播放一段视频（而非播放完整视频），或只指定客户设备可以处理的那一部分音频和视频再现内容（而非与该资产相关的所有再现内容）。通过按客户根据特定删选器对视频进行流式处理的请求创建的**动态清单**，对这种资产删选进行存档。
 
 有关与筛选器和动态清单相关的更多详细信息，请参阅[动态清单概述](/documentation/articles/media-services-dynamic-manifest-overview/)。
 
-本主题介绍如何使用 REST API 创建、更新和删除筛选器。
+本主题说明如何使用 REST API 创建、更新和删除筛选器。
 
 ##用于创建筛选器的类型
 
-创建筛选器时将使用以下类型：
+创建筛选器时使用以下类型：
 
-- [筛选器](http://msdn.microsoft.com/zh-cn/library/azure/mt149056.aspx)
+- [Filter](http://msdn.microsoft.com/zh-cn/library/azure/mt149056.aspx)
 - [AssetFilter](http://msdn.microsoft.com/zh-cn/library/azure/mt149053.aspx)
 - [PresentationTimeRange](http://msdn.microsoft.com/zh-cn/library/azure/mt149052.aspx)
 - [FilterTrackSelect 和 FilterTrackPropertyCondition](http://msdn.microsoft.com/zh-cn/library/azure/mt149055.aspx)
 
 
 
->[AZURE.NOTE]使用媒体服务 REST API 时，需注意以下事项：<br />
->访问媒体服务中的实体时，必须在 HTTP 请求中设置特定标头字段和值。有关详细信息，请参阅[媒体服务 REST API 开发的设置](/documentation/articles/media-services-rest-how-to-use/)。<br />
->请根据[使用 REST API 连接到媒体服务](/documentation/articles/media-services-rest-connect-programmatically/)中所述对媒体服务 URI 执行后续调用。
+>[AZURE.NOTE]<p>使用媒体服务 REST API 时，需注意以下事项：<p>访问媒体服务中的实体时，必须在 HTTP 请求中设置特定标头字段和值。有关详细信息，请参阅[媒体服务 REST API 开发的设置](/documentation/articles/media-services-rest-how-to-use/)。<p>请根据[使用 REST API 连接到媒体服务](/documentation/articles/media-services-rest-connect-programmatically/)中所述对媒体服务 URI 执行后续调用。
 
 
 ##创建筛选器
@@ -105,9 +103,9 @@
 	
 	HTTP/1.1 201 Created 
 
-###创建本地 AssetFilter
+###创建局部 AssetFilter
 
-若要创建本地 AssetFilter，请使用以下 HTTP 请求：
+若要创建局部 AssetFilter，请使用以下 HTTP 请求：
 
 ####HTTP 请求
 
@@ -207,9 +205,9 @@
 
 ##更新筛选器
  
-使用 PATCH、PUT 或 MERGE 并结合新的属性值来更新筛选器。有关这些操作的详细信息，请参阅 [PATCH、PUT、MERGE](http://msdn.microsoft.com/zh-cn/library/dd541276.aspx)。
+使用 PATCH、PUT 或 MERGE 更新筛选器，使其具有新的属性值。有关这些操作的详细信息，请参阅 [PATCH、PUT、MERGE](http://msdn.microsoft.com/zh-cn/library/dd541276.aspx)。
  
-如果你更新筛选器，则流式处理终结点需要 2 分钟的时间来刷新规则。如果内容是通过使用此筛选器提供的（并在代理和 CDN 缓存中缓存），则更新此筛选器会导致播放器失败。建议在更新筛选器之后清除缓存。如果此选项不可用，请考虑使用其他筛选器。
+如果更新筛选器，则流式处理终结点需要最多 2 分钟来刷新规则。如果内容是通过使用此筛选器提供的（并已在代理和 CDN 缓存中缓存），则更新此筛选器可能导致播放器故障。建议在更新筛选器之后清除缓存。如果此选项不可用，请考虑使用其他筛选器。
  
 ###更新全局筛选器
 
@@ -253,9 +251,9 @@
 	   ] 
 	} 
 
-###更新本地 AssetFilter
+###更新局部 AssetFilter
 
-若要更新本地筛选器，请使用以下 HTTP 请求：
+若要更新局部筛选器，请使用以下 HTTP 请求：
 
 ####HTTP 请求
 
@@ -314,9 +312,9 @@
 	Host: wamsshaclus001rest-hs.chinacloudapp.cn 
 
 
-###删除本地 AssetFilter
+###删除局部 AssetFilter
 
-若要删除本地 AssetFilter，请使用以下 HTTP 请求：
+若要删除局部 AssetFilter，请使用以下 HTTP 请求：
 
 ####HTTP 请求
 
@@ -329,12 +327,12 @@
 	x-ms-version: 2.11 
 	Host: wamsshaclus001rest-hs.chinacloudapp.cn
 
-##生成使用筛选器的流 URL
+##生成使用筛选器的流式处理 URL
 
 有关如何发布和传送资产的信息，请参阅[将内容传送到客户概述](/documentation/articles/media-services-deliver-content-overview/)。
 
 
-以下示例演示了如何将筛选器添加到流 URL。
+以下示例演示了如何将筛选器添加到流式处理 URL。
 
 **MPEG DASH**
 
@@ -348,7 +346,7 @@
 
 	http://testendpoint-testaccount.streaming.mediaservices.chinacloudapi.cn/fecebb23-46f6-490d-8b70-203e86b0df58/BigBuckBunny.ism/Manifest(format=m3u8-aapl-v3, filter=MyFilter)
 
-**平滑流**
+**平滑流式处理**
 
 	http://testendpoint-testaccount.streaming.mediaservices.chinacloudapi.cn/fecebb23-46f6-490d-8b70-203e86b0df58/BigBuckBunny.ism/Manifest(filter=MyFilter)
 
@@ -365,4 +363,4 @@
 
  
 
-<!---HONumber=Mooncake_1114_2016-->
+<!---HONumber=Mooncake_Quality_Review_1202_2016-->
