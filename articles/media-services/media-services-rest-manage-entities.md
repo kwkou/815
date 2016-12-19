@@ -6,7 +6,7 @@
 	manager="dwrede" 
 	editor="" 
 	services="media-services" 
-	documentationCenter=""/>  
+	documentationCenter=""/>
 
 
 <tags 
@@ -16,7 +16,7 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="09/26/2016" 
-	wacn.date="11/21/2016" 
+	wacn.date="12/16/2016" 
 	ms.author="juliako"/>
 
 
@@ -30,7 +30,7 @@ Azure 媒体服务是一项以 OData v3 为基础的基于 REST 的服务。因�
 
 - 添加实体
 - 查询实体
-- 枚举大型实体集合
+- 枚举实体的大型集合
 - 更新实体
 - 删除实体
 
@@ -43,7 +43,7 @@ Azure 媒体服务是一项以 OData v3 为基础的基于 REST 的服务。因�
 
 ##添加实体
 
-媒体服务中的每个实体都会通过 POST HTTP 请求添加到实体集（如资产）中。
+媒体服务中的每个实体都通过 POST HTTP 请求添加到实体集（如资产）中。
 
 以下示例说明了如何创建 AccessPolicy。
 
@@ -63,7 +63,7 @@ Azure 媒体服务是一项以 OData v3 为基础的基于 REST 的服务。因�
  
 ##查询实体
 
-查询和列出实体非常简单，仅涉及 GET HTTP 请求和可选的 OData 操作。下面的示例会检索一个包含所有 MediaProcessor 实体的列表。
+查询和列出实体非常简单，仅涉及 GET HTTP 请求和可选的 OData 操作。以下示例会检索包含所有 MediaProcessor 实体的列表。
 
 	GET https://wamsshaclus001rest-hs.chinacloudapp.cn/API/MediaProcessors HTTP/1.1
 	Content-Type: application/json;odata=verbose
@@ -74,7 +74,7 @@ Azure 媒体服务是一项以 OData v3 为基础的基于 REST 的服务。因�
 	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=youraccountname&urn%3aSubscriptionId=2f84471d-b1ae-4e75-aa09-010f0fc0cf5b&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.chinacloudapi.cn%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1337078831&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.chinacloudapi.cn%2f&HMACSHA256=suFkxhvPWxQVMjOYelOJfYEWkyTWJCBc02pF0N7NghI%3d
 	Host: wamsshaclus001rest-hs.chinacloudapp.cn
 
-你也可以检索特定实体或与特定实体关联的所有实体集，如下列示例所示：
+也可检索特定实体或与特定实体关联的所有实体集，如以下示例所示：
 
 	GET https://wamsshaclus001rest-hs.chinacloudapp.cn/API/JobTemplates('nb:jtid:UUID:e81192f5-576f-b247-b781-70a790c20e7c') HTTP/1.1
 	Content-Type: application/json;odata=verbose
@@ -94,7 +94,7 @@ Azure 媒体服务是一项以 OData v3 为基础的基于 REST 的服务。因�
 	Authorization: Bearer http%3a%2f%2fschemas.xmlsoap.org%2fws%2f2005%2f05%2fidentity%2fclaims%2fnameidentifier=youraccountname&urn%3aSubscriptionId=2f84471d-b1ae-4e75-aa09-010f0fc0cf5b&http%3a%2f%2fschemas.microsoft.com%2faccesscontrolservice%2f2010%2f07%2fclaims%2fidentityprovider=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.chinacloudapi.cn%2f&Audience=urn%3aWindowsAzureMediaServices&ExpiresOn=1336907474&Issuer=https%3a%2f%2fwamsprodglobal001acs.accesscontrol.chinacloudapi.cn%2f&HMACSHA256=OpuY0CeTylqFFcFaP4pKUVGesT4PGx4CP55zDf2zXnc%3d
 	Host: wamsshaclus001rest-hs.chinacloudapp.cn
 
-下面的示例仅返回所有作业的 State 属性。
+以下示例仅返回所有作业的 State 属性。
 
 	GET https://wamsshaclus001rest-hs.chinacloudapp.cn/API/Jobs?$select=State HTTP/1.1
 	Content-Type: application/json;odata=verbose
@@ -118,11 +118,11 @@ Azure 媒体服务是一项以 OData v3 为基础的基于 REST 的服务。因�
 
 >[AZURE.NOTE]媒体服务不支持 $expand 操作以及“LINQ 注意事项（WCF 数据服务）”中所述的不受支持的 LINQ 方法。
 
-##<a name="enumerating-through-large-collections-of-entities"></a>枚举大型实体集合
+##<a name="enumerating-through-large-collections-of-entities"></a>枚举实体的大型集合
 
-查询实体时，一次返回的实体数限制为 1000 个，因为公共 REST v2 将查询结果数限制为 1000 个。使用 **skip** 和 **top** 来枚举大型实体集合。
+查询实体时，一次返回的实体数限制为 1000 个，因为公共 REST v2 将查询结果数限制为 1000 个。使用 **skip** 和 **top** 来枚举实体的大型集合。
 
-以下示例说明如何使用 **skip** 和 **top** 来跳过前 2000 个作业并获取后 1000 个作业。
+以下示例说明如何使用 **skip** 和 **top** 来跳过前 2000 个作业并获取其后的 1000 个作业。
 
 	GET https://wamsshaclus001rest-hs.chinacloudapp.cn/api/Jobs()?$skip=2000&$top=1000 HTTP/1.1
 	Content-Type: application/json;odata=verbose
@@ -137,7 +137,7 @@ Azure 媒体服务是一项以 OData v3 为基础的基于 REST 的服务。因�
 
 根据实体类型及其所处的状态，可以通过 PATCH、PUT 或 MERGE HTTP 请求更新该实体上的属性。有关这些操作的详细信息，请参阅 [PATCH/PUT/MERGE](https://msdn.microsoft.com/zh-cn/library/dd541276.aspx)。
 
-下面的代码示例演示如何更新资产实体上的 Name 属性。
+以下代码示例演示如何更新资产实体上的 Name 属性。
 
 	MERGE https://wamsshaclus001rest-hs.chinacloudapp.cn/API/Assets('nb:cid:UUID:80782407-3f87-4e60-a43e-5e4454232f60') HTTP/1.1
 	Content-Type: application/json;odata=verbose
@@ -156,7 +156,7 @@ Azure 媒体服务是一项以 OData v3 为基础的基于 REST 的服务。因�
 
 可以使用 DELETE HTTP 请求在媒体服务中删除实体。删除实体的顺序可能很重要，具体视实体而定。例如，资产等实体要求先撤消（或删除）引用该特定资产的所有定位符，然后再删除资产。
 
-下面的示例演示如何删除用于将文件上载到 blob 存储的定位符。
+以下示例演示如何删除用于将文件上载到 blob 存储的定位符。
 
 	DELETE https://wamsshaclus001rest-hs.chinacloudapp.cn/API/Locators('nb:lid:UUID:76dcc8e8-4230-463d-97b0-ce25c41b5c8d') HTTP/1.1
 	Content-Type: application/json;odata=verbose
@@ -168,4 +168,4 @@ Azure 媒体服务是一项以 OData v3 为基础的基于 REST 的服务。因�
 	Host: wamsshaclus001rest-hs.chinacloudapp.cn
 	Content-Length: 0
 
-<!---HONumber=Mooncake_1114_2016-->
+<!---HONumber=Mooncake_Quality_Review_1202_2016-->

@@ -14,7 +14,7 @@
     ms.devlang="na" 
     ms.topic="article" 
     ms.date="05/27/2016" 
-    wacn.date="11/16/2016" 
+    wacn.date="12/19/2016" 
     ms.author="torsteng" />
 
 
@@ -57,29 +57,29 @@
 
 1.    [创建自签名证书](#Create-a-Self-Signed-Certificate)
 2.    [为自签名 SSL 证书创建 PFX 文件](#Create-PFX-file-for-Self-Signed-SSL-Certificate)
-3.    [将 SSL 证书上载到云服务](#Upload-SSL-Certificate-to-Cloud-Service)
+3.    [将 SSL 证书上传到云服务](#Upload-SSL-Certificate-to-Cloud-Service)
 4.    [在服务配置文件中更新 SSL 证书](#Update-SSL-Certificate-in-Service-Configuration-File)
 5.    [导入 SSL 证书颁发机构](#Import-SSL-Certification-Authority)
 
 ### 使用证书存储中的现有证书
 1. [从证书存储中导出 SSL 证书](#Export-SSL-Certificate-From-Certificate-Store)
-2. [将 SSL 证书上载到云服务](#Upload-SSL-Certificate-to-Cloud-Service)
+2. [将 SSL 证书上传到云服务](#Upload-SSL-Certificate-to-Cloud-Service)
 3. [在服务配置文件中更新 SSL 证书](#Update-SSL-Certificate-in-Service-Configuration-File)
 
 ### 在 PFX 文件中使用现有证书
 
-1. [将 SSL 证书上载到云服务](#Upload-SSL-Certificate-to-Cloud-Service)
+1. [将 SSL 证书上传到云服务](#Upload-SSL-Certificate-to-Cloud-Service)
 2. [在服务配置文件中更新 SSL 证书](#Update-SSL-Certificate-in-Service-Configuration-File)
 
 ##<a name="To-Configure-Client-Certificates"></a> 配置客户端证书
 若要对服务请求进行身份验证，需要使用客户端证书。从下面的三个方案中选择最适合的方案，然后执行其所有步骤：
 
-### 禁用客户端证书
-1.    [禁用基于客户端证书的身份验证](#Turn-Off-Client-Certificate-Based-Authentication)
+### 关闭客户端证书
+1.    [关闭基于客户端证书的身份验证](#Turn-Off-Client-Certificate-Based-Authentication)
 
 ### 颁发新的自签名客户端证书
 1.    [创建自签名证书颁发机构](#Create-a-Self-Signed-Certification-Authority)
-2.    [将 CA 证书上载到云服务](#Upload-CA-Certificate-to-Cloud-Service)
+2.    [将 CA 证书上传到云服务](#Upload-CA-Certificate-to-Cloud-Service)
 3.    [在服务配置文件中更新 CA 证书](#Update-CA-Certificate-in-Service-Configuration-File)
 4.    [颁发客户端证书](#Issue-Client-Certificates)
 5.    [为客户端证书创建 PFX 文件](#Create-PFX-files-for-Client-Certificates)
@@ -89,7 +89,7 @@
 
 ### 使用现有客户端证书
 1.    [查找 CA 公钥](#Find-CA-Public Key)
-2.    [将 CA 证书上载到云服务](#Upload-CA-Certificate-to-Cloud-Service)
+2.    [将 CA 证书上传到云服务](#Upload-CA-certificate-to-cloud-service)
 3.    [在服务配置文件中更新 CA 证书](#Update-CA-Certificate-in-Service-Configuration-File)
 4.    [复制客户端证书指纹](#Copy-Client-Certificate-Thumbprints)
 5.    [在服务配置文件中配置允许的客户端](#Configure-Allowed-Clients-in-the-Service-Configuration-File)
@@ -107,18 +107,18 @@
 
 1.     [创建自签名证书](#Create-a-Self-Signed-Certificate)
 2.     [为自签名加密证书创建 PFX 文件](#Create-PFX-file-for-Self-Signed-Encryption-Certificate)
-3.     [将加密证书上载到云服务](#Upload-Encryption-Certificate-to-Cloud-Service)
+3.     [将加密证书上传到云服务](#Upload-Encryption-Certificate-to-Cloud-Service)
 4.     [在服务配置文件中更新加密证书](#Update-Encryption-Certificate-in-Service-Configuration-File)
 
 ### 使用证书存储中的现有证书
 
 1.     [从证书存储中导出加密证书](#Export-Encryption-Certificate-From-Certificate-Store)
-2.     [将加密证书上载到云服务](#Upload-Encryption-Certificate-to-Cloud-Service)
+2.     [将加密证书上传到云服务](#Upload-Encryption-Certificate-to-Cloud-Service)
 3.     [在服务配置文件中更新加密证书](#Update-Encryption-Certificate-in-Service-Configuration-File)
 
 ### 在 PFX 文件中使用现有证书
 
-1.     [将加密证书上载到云服务](#Upload-Encryption-Certificate-to-Cloud-Service)
+1.     [将加密证书上传到云服务](#Upload-Encryption-Certificate-to-Cloud-Service)
 2.     [在服务配置文件中更新加密证书](#Update-Encryption-Certificate-in-Service-Configuration-File)
 
 ## 默认配置
@@ -128,7 +128,7 @@
 
 ### 更改配置
 
-在**服务配置文件**的 **<EndpointAcls>** 部分配置应用的访问控制组规则和终结点。
+在“服务配置文件”的 **<EndpointAcls>** 部分配置应用的访问控制组规则和终结点。
 
     <EndpointAcls>
       <EndpointAcl role="SplitMergeWeb" endPoint="HttpIn" accessControl="DenyAll" />
@@ -151,8 +151,8 @@
 
 可使用两种受支持的不同机制检测和防止拒绝服务攻击：
 
-*    限制每台远程主机的并发请求数（默认为禁用）
-*    限制每台远程主机的访问率（默认为启用）
+*    限制每台远程主机的并发请求数（默认关闭）
+*    限制每台远程主机的访问率（默认打开）
 
 这些机制还基于在 IIS 的动态 IP 安全中记录的功能。更改此配置时，请注意以下因素：
 
@@ -201,9 +201,8 @@
 
 自定义：
 
-*    -n，带有服务 URL。通配符 ("CN=*.chinacloudapp.cn") 和替代名称 ("CN=myservice1.chinacloudapp.cn, CN=myservice2.chinacloudapp.cn") 均受支持。
-*    -e，带有证书过期日期。
-创建强密码并在提示时指定它。
+*    -n，带有服务 URL。通配符（“CN=*.chinacloudapp.cn”）和替代名称（“CN=myservice1.chinacloudapp.cn、CN=myservice2.chinacloudapp.cn”）均受支持。
+*    -e，带有证书过期日期 创建强密码并在提示时指定它。
 
 ##<a name="Create-PFX-file-for-Self-Signed-SSL-Certificate"></a> 为自签名 SSL 证书创建 PFX 文件
 
@@ -226,13 +225,13 @@
 
 ##<a name="Upload-SSL-Certificate-to-Cloud-Service"></a> 将 SSL 证书上载到云服务
 
-使用带有 SSL 密钥对的现有或生成的 .PFX 文件上载证书：
+使用带有 SSL 密钥对的现有或生成的 .PFX 文件上传证书：
 
 * 输入用于保护私钥信息的密码
 
 ##<a name="Update-SSL-Certificate-in-Service-Configuration-File"></a> 在服务配置文件中更新 SSL 证书
 
-在服务配置文件中，使用已上载到云服务的证书指纹更新以下设置的指纹值：
+在服务配置文件中，使用已上传到云服务的证书指纹更新以下设置的指纹值：
 
     <Certificate name="SSL" thumbprint="" thumbprintAlgorithm="sha1" />
 
@@ -244,7 +243,7 @@
 * 在“证书”对话框中，单击“安装证书...”
 * 将证书导入到“受信任的根证书颁发机构”存储中
 
-##<a name="Turn-Off-Client-Certificate-Based-Authentication"></a> 禁用基于客户端证书的身份验证
+##<a name="Turn-Off-Client-Certificate-Based-Authentication"></a> 关闭基于客户端证书的身份验证
 
 仅支持基于客户端证书的身份验证，禁用它即可公开访问服务终结点，除非使用了其他机制（例如 Azure 虚拟网络）。
 
@@ -275,7 +274,7 @@
 
 ##<a name="Find-CA-Public Key"></a> 查找 CA 公钥
 
-所有客户端证书都必须由服务信任的证书颁发机构颁发。为了将证书上载到云服务，需要查找颁发了客户端证书（将用于身份验证）的证书颁发机构提供的公钥。
+所有客户端证书都必须由服务信任的证书颁发机构颁发。为了将证书上传到云服务，需要查找颁发了客户端证书（将用于身份验证）的证书颁发机构提供的公钥。
 
 如果具有公钥的文件不可用，则将其从证书存储中导出：
 
@@ -294,13 +293,13 @@
     * 包括证书路径中的所有证书（如果可能）。
     * 导出所有扩展属性。
 
-##<a name="Upload-CA-Certificate-to-Cloud-Service"></a> 将 CA 证书上载到云服务
+##<a name="Upload-CA-Certificate-to-Cloud-Service"></a> 将 CA 证书上传到云服务
 
-使用带有 CA 公钥的现有或生成的 .CER 文件上载证书。
+使用带有 CA 公钥的现有或生成的 .CER 文件上传证书。
 
 ##<a name="Update-CA-Certificate-in-Service-Configuration-File"></a> 在服务配置文件中更新 CA 证书
 
-在服务配置文件中，使用已上载到云服务的证书指纹更新以下设置的指纹值：
+在服务配置文件中，使用已上传到云服务的证书指纹更新以下设置的指纹值：
 
     <Certificate name="CA" thumbprint="" thumbprintAlgorithm="sha1" />
 
@@ -325,7 +324,7 @@
 自定义：
 
 * -n，带有将使用此证书进行身份验证的客户端的 ID
-* -e，带有证书过期日期
+* -e，带有证书到期日期
 * MyID.pvk 和 MyID.cer，带有用于此客户端证书的唯一文件名
 
 此命令将提示创建密码，然后使用一次该密码。使用强密码。
@@ -391,7 +390,7 @@
 输入密码，然后使用以下选项导出证书：
 *    是，导出私钥
 *    导出所有扩展属性
-*    将证书上载到云服务时，你将需要密码。
+*    将证书上传到云服务时，你将需要密码。
 
 ##<a name="Export-Encryption-Certificate-From-Certificate-Store"></a> 从证书存储中导出加密证书
 
@@ -402,15 +401,15 @@
   *    包括证书路径中的所有证书（如果可能）
 *    导出所有扩展属性
 
-##<a name="Upload-Encryption-Certificate-to-Cloud-Service"></a> 将加密证书上载到云服务
+##<a name="Upload-Encryption-Certificate-to-Cloud-Service"></a> 将加密证书上传到云服务
 
-使用带有加密密钥对的现有或生成的 .PFX 文件上载证书：
+使用带有加密密钥对的现有或生成的 .PFX 文件上传证书：
 
 * 输入用于保护私钥信息的密码
 
 ##<a name="Update-Encryption-Certificate-in-Service-Configuration-File"></a> 在服务配置文件中更新加密证书
 
-在服务配置文件中，使用已上载到云服务的证书指纹更新以下设置的指纹值：
+在服务配置文件中，使用已上传到云服务的证书指纹更新以下设置的指纹值：
 
     <Certificate name="DataEncryptionPrimary" thumbprint="" thumbprintAlgorithm="sha1" />
 
@@ -421,65 +420,65 @@
 
 ## 查找证书
 
-执行以下步骤:
+执行以下步骤：
 
 1. 运行 mmc.exe。
 2. “文件”->“添加/删除管理单元...”
 3. 选择“证书”。
-4. 单击**“添加”**。
+4. 单击“添加”。
 5. 选择证书存储位置。
 6. 单击“完成”。
-7. 单击**“确定”**。
+7. 单击“确定”。
 8. 展开“证书”。
 9. 展开证书存储节点。
 10. 展开证书子节点。
 11. 在列表中选择某个证书。
 
 ## 导出证书
-在**证书导出向导**中：
+在“证书导出向导”中：
 
-1. 单击**“下一步”**。
+1. 单击“下一步”。
 2. 选择“是”，然后选择“导出私钥”。
-3. 单击**“下一步”**。
+3. 单击“下一步”。
 4. 选择所需的输出文件格式。
 5. 选中所需的选项。
 6. 选中“密码”。
 7. 输入强密码并进行确认。
-8. 单击**“下一步”**。
+8. 单击“下一步”。
 9. 在证书的存储位置键入或浏览文件名（使用 .PFX 扩展名）。
-10. 单击**“下一步”**。
+10. 单击“下一步”。
 11. 单击“完成”。
-12. 单击**“确定”**。
+12. 单击“确定”。
 
 ## 导入证书
 
-在证书导入向导中：
+在“证书导入向导”中：
 
 1. 选择存储位置。
 
-    * 如果只有在当前用户下运行的进程将访问该服务，请选择“当前用户”。
-    * 如果此计算机中的其他进程将访问该服务，请选择“本地计算机”。
-2. 单击**“下一步”**。
+    * 如果只有在当前用户下运行的进程将访问该服务，请选择“当前用户”
+    * 如果此计算机中的其他进程将访问该服务，请选择“本地计算机”
+2. 单击“下一步”。
 3. 如果要从文件中导入，请确认文件路径。
 4. 如果要导入 .PFX 文件，请执行以下操作：
     1.     输入用于保护私钥的密码
     2.     选择导入选项
-5. 选择“将证书放入以下存储”
-6. 单击“浏览”。
-7. 选择所需的存储。
-8. 单击“完成”。
+5.     选择“将证书放入以下存储”
+6.     单击“浏览”。
+7.     选择所需的存储。
+8.     单击“完成”。
        
     * 如果已选中“受信任的根证书颁发机构”存储，请单击“是”。
 9.     在所有对话框窗口上单击“确定”。
 
-## 上载证书
+## 上传证书
 
 在 [Azure 经典管理门户](https://manage.windowsazure.cn)中：
 
 1. 选择“云服务”。
 2. 选择云服务。
-3. 单击顶部菜单上的“证书”。
-4. 在底部栏上，单击“上载”。
+3. 在顶部菜单上，单击“证书”。
+4. 在底部栏上，单击“上传”。
 5. 选择证书文件。
 6. 如果是 .PFX 文件，则输入私钥密码。
 7. 完成操作后，从列表中的新条目复制证书指纹。
@@ -490,7 +489,7 @@
 
     <Setting name="ElasticScaleMetadata" value="Server=…" />
 
-对此数据库中存储的凭据进行加密。但是，最佳做法是，确保服务部署的 Web 角色和辅助角色保持最新且是安全的，因为它们都有权访问元数据数据库和用于加密和解密存储凭据的证书。
+对此数据库中存储的凭据进行加密。但是，最佳实践是，确保服务部署的 Web 角色和辅助角色保持最新且是安全的，因为它们都有权访问元数据数据库和用于加密和解密存储凭据的证书。
 
 [AZURE.INCLUDE [elastic-scale-include](../../includes/elastic-scale-include.md)]
-<!---HONumber=Mooncake_0711_2016-->
+<!---HONumber=Mooncake_Quality_Review_1202_2016-->

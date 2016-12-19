@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="用于 SQL 数据库的非 1433 端口 | Azure"
-	description="从 ADO.NET 到 Azure SQL 数据库 V12 的客户端连接有时会绕过代理直接与数据库交互。除 1433 以外的端口变得非常重要。"
+	description="从 ADO.NET 到 Azure SQL 数据库 V12 的客户端连接有时会绕过代理，直接与数据库交互。除 1433 以外的端口变得非常重要。"
 	services="sql-database"
 	documentationCenter=""
 	authors="MightyPen"
@@ -15,7 +15,7 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="08/17/2016" 
-	wacn.date="10/17/2016"
+	wacn.date="12/19/2016"
 	ms.author="annemill"/>  
 
 
@@ -39,19 +39,19 @@
 3. SQL 数据库将其响应发回给中间件，中间件将响应转发给 ADO.NET 端口 1433。
 
 
-**术语：**我们使用*代理 路由*来描述 ADO.NET 与 SQL 数据库交互的上述顺序。如果没有涉及到中间件，使用的是*直接路由*。
+**术语：**我们使用*代理路由*描述 ADO.NET 与 SQL 数据库交互的上述顺序。如果没有涉及到中间件，使用的是*直接路由*。
 
 
-## SQL 数据库 V12：内部与外部
+## SQL 数据库 V12：外部与内部
 
 
 对于 V12 的连接，我们必须询问客户端程序是在 Azure 云边界*外部*还是*内部*运行。以下小节讨论了两种常见方案。
 
 
-#### *外部：*客户端在台式机上运行
+#### *外部：*客户端在台式计算机上运行
 
 
-端口 1433 是托管 SQL 数据库客户端应用程序的台式机上唯一必须打开的端口。
+端口 1433 是托管 SQL 数据库客户端应用程序的台式计算机上唯一必须打开的端口。
 
 
 #### *内部：*客户端在 Azure 上运行
@@ -104,11 +104,11 @@
 ## 相关链接
 
 
-- ADO.NET 4.6 已于 2015 年 7 月 20 日发布。可以在[这里](http://blogs.msdn.com/b/dotnet/archive/2015/07/20/announcing-net-framework-4-6.aspx)访问 .NET 团队的博客通告。
+- ADO.NET 4.6 已于 2015 年 7 月 20 日发布。可以在[此处](http://blogs.msdn.com/b/dotnet/archive/2015/07/20/announcing-net-framework-4-6.aspx)访问 .NET 团队的博客通告。
 
 
-- ADO.NET 4.5 已于 2012 年 8 月 15 日发布。可以在[这里](http://blogs.msdn.com/b/dotnet/archive/2012/08/15/announcing-the-release-of-net-framework-4-5-rtm-product-and-source-code.aspx)访问 .NET 团队的博客通告。
- - 可以在[这里](http://blogs.msdn.com/b/dotnet/archive/2013/06/26/announcing-the-net-framework-4-5-1-preview.aspx)访问有关 ADO.NET 4.5.1 的博客文章。
+- ADO.NET 4.5 已于 2012 年 8 月 15 日发布。可以在[此处](http://blogs.msdn.com/b/dotnet/archive/2012/08/15/announcing-the-release-of-net-framework-4-5-rtm-product-and-source-code.aspx)访问 .NET 团队的博客通告。
+ - 可以在[此处](http://blogs.msdn.com/b/dotnet/archive/2013/06/26/announcing-the-net-framework-4-5-1-preview.aspx)访问有关 ADO.NET 4.5.1 的博客文章。
 
 
 - [TDS 协议版本列表](http://www.freetds.org/userguide/tdshistory.htm)
@@ -122,4 +122,4 @@
 
 - [如何：在 SQL 数据库上配置防火墙设置](/documentation/articles/sql-database-configure-firewall-settings-powershell/)
 
-<!---HONumber=Mooncake_1010_2016-->
+<!---HONumber=Mooncake_Quality_Review_1202_2016-->

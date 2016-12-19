@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="使用 Azure 媒体服务 .NET SDK 创建筛选器" 
-	description="本主题介绍如何创建筛选器，以便客户端能够使用它们来流式传输流的特定部分。媒体服务将创建动态清单来存档此选择性流。" 
+	description="本主题介绍如何创建筛选器，以便客户端能够使用它们来流式传输流的特定部分。媒体服务创建动态清单来存档此选择性流。" 
 	services="media-services" 
 	documentationCenter="" 
 	authors="Juliako" 
@@ -14,7 +14,7 @@
 	ms.devlang="ne" 
 	ms.topic="article" 
 	ms.date="07/18/2016" 
-	wacn.date="09/28/2016"
+	wacn.date="12/16/2016"
 	ms.author="juliako;cenkdin"/>
 
 
@@ -24,18 +24,18 @@
 - [.NET](/documentation/articles/media-services-dotnet-dynamic-manifest/)
 - [REST](/documentation/articles/media-services-rest-dynamic-manifest/)
 
-从 2.11 版开始，媒体服务可让你为资产定义筛选器。这些筛选器是服务器端规则，可让你的客户选择运行如下操作：只播放一段视频（而非播放完整视频），或只指定客户设备可以处理的一部分音频和视频再现内容（而非与该资产相关的所有再现内容）。通过按客户请求创建的**动态清单**可以实现对资产进行这种筛选，并基于指定的筛选器流式传输视频。
+从 2.11 版开始，媒体服务支持为资产定义筛选器。这些筛选器是服务器端规则，允许客户选择执行如下操作：只播放一段视频（而非播放完整视频），或只指定客户设备可以处理的一部分音频和视频再现内容（而非与该资产相关的所有再现内容）。通过按客户请求（基于指定的筛选器流式传输视频）创建的**动态清单**可以实现对资产进行此筛选。
 
 有关与筛选器和动态清单相关的更多详细信息，请参阅[动态清单概述](/documentation/articles/media-services-dynamic-manifest-overview/)。
 
 本主题介绍如何使用媒体服务 .NET SDK 创建、更新和删除筛选器。
 
 
-请注意，如果你更新筛选器，则流式处理终结点需要 2 分钟的时间来刷新规则。如果内容是通过使用此筛选器提供的（并在代理和 CDN 缓存中缓存），则更新此筛选器会导致播放器失败。建议在更新筛选器之后清除缓存。如果此选项不可用，请考虑使用其他筛选器。
+请注意，如果更新筛选器，流式处理终结点可能需要 2 分钟的时间来刷新规则。如果内容是通过使用此筛选器提供的（并在代理和 CDN 缓存中缓存），更新此筛选器会导致播放器失败。建议在更新筛选器之后清除缓存。如果此选项不可用，请考虑使用其他筛选器。
 
 ##用于创建筛选器的类型
 
-创建筛选器时将使用以下类型：
+创建筛选器时使用以下类型：
 
 - **IStreamingFilter**。此类型基于以下 REST API [Filter](http://msdn.microsoft.com/zh-cn/library/azure/mt149056.aspx)
 - **IStreamingAssetFilter**。此类型基于以下 REST API [AssetFilter](http://msdn.microsoft.com/zh-cn/library/azure/mt149053.aspx)
@@ -106,12 +106,12 @@
 
 
 
-##生成使用筛选器的流 URL
+##生成使用筛选器的流式处理 URL
 
 有关如何发布和传送资产的信息，请参阅[将内容传送到客户概述](/documentation/articles/media-services-deliver-content-overview/)。
 
 
-以下示例演示了如何将筛选器添加到流 URL。
+以下示例演示了如何将筛选器添加到流式处理 URL。
 
 **MPEG DASH**
 
@@ -141,4 +141,4 @@
 [动态清单概述](/documentation/articles/media-services-dynamic-manifest-overview/)
  
 
-<!---HONumber=Mooncake_0919_2016-->
+<!---HONumber=Mooncake_Quality_Review_1202_2016-->

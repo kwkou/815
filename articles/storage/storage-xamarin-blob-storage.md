@@ -1,6 +1,6 @@
 <properties
 	pageTitle="如何通过 Xamarin 使用 Blob 存储 | Azure"
-	description="用于 Xamarin 的 Azure 存储客户端库使开发人员能够使用其本机用户界面创建 iOS、Android 和 Windows 应用商店应用。本教程演示了如何通过 Xamarin 来创建使用 Azure Blob 存储的应用程序。"
+	description="通过用于 Xamarin 的 Azure 存储客户端库，开发人员可以使用其本机用户界面创建 iOS、Android 和 Windows 应用商店应用。本教程演示了如何通过 Xamarin 来创建使用 Azure Blob 存储的应用程序。"
 	services="storage"
 	documentationCenter="xamarin"
 	authors="micurd"
@@ -15,7 +15,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="10/08/2016"
-	wacn.date="11/07/2016"
+	wacn.date="12/19/2016"
 	ms.author="micurd;tamram"/>
 
 # 如何通过 Xamarin 使用 Blob 存储
@@ -24,7 +24,7 @@
 
 ## 概述
 
-Xamarin 使开发人员能够通过共享的 C# 代码库来使用其本机用户界面创建 iOS、Android 和 Windows 应用商店应用程序。本教程演示了如何将 Azure Blob 存储用于 Xamarin 应用程序。如果在深入分析代码之前想要详细了解 Azure 存储，请参阅 [Azure 存储简介](/documentation/articles/storage-introduction/)。
+Xamarin 使开发人员能够通过共享的 C# 代码库来使用其本机用户界面创建 iOS、Android 和 Windows 应用商店应用程序。本教程演示了如何将 Azure Blob 存储用于 Xamarin 应用程序。如果要先详细了解 Azure 存储再深入分析代码，请参阅 [Azure 存储简介](/documentation/articles/storage-introduction/)。
 
 [AZURE.INCLUDE [storage-create-account-include](../../includes/storage-create-account-include.md)]
 
@@ -32,22 +32,22 @@ Xamarin 使开发人员能够通过共享的 C# 代码库来使用其本机用�
 
 ## 创建新的 Xamarin 应用程序
 
-对于本入门教程，我们将创建面向 Android、iOS 和 Windows 的应用。此应用只需将创建一个容器，并将 Blob 上传到此容器中。我们将通过 Windows 上 Visual Studio 开始入门，这些知识同样适用于通过 Mac OS 上的 Xamarin Studio 创建应用。
+对于本入门教程，我们将创建面向 Android、iOS 和 Windows 的应用。此应用将仅创建一个容器，并将 Blob 上传到此容器中。我们将通过 Windows 上 Visual Studio 开始入门，这些知识同样适用于通过 Mac OS 上的 Xamarin Studio 创建应用。
 
 请按以下步骤创建应用程序：
 
 1. 下载并安装 [Xamarin for Visual Studio](https://www.xamarin.com/download)（如果尚未这样做）。
-2. 打开 Visual Studio ，创建空白应用（本机共享）：“文件 > 新建 > 项目 > 跨平台 > 空白应用（本机共享）”。
+2. 打开 Visual Studio ，创建空白应用（本机共享）：“文件”>“新建”>“项目”>“跨平台”>“空白应用（本机共享）”。
 3. 右键单击“解决方案资源管理器”窗格中的解决方案，然后选择“为解决方案管理 NuGet 包”。搜索 **WindowsAzure.Storage**，并将最新稳定版本安装到解决方案中的所有项目。
 4. 生成并运行项目。
 
-现在，应该有了这样一个应用程序：单击某个按钮即可让计数器递增。
+现在，应该有了这样一个应用程序，单击其中某个按钮将使计数器递增。
 
-> [AZURE.NOTE] 用于 Xamarin 的 Azure 存储客户端库当前支持以下项目类型：Native Shared、Xamarin.Forms Shared、Xamarin.Android 和 Xamarin.iOS。
+> [AZURE.NOTE] 用于 Xamarin 的 Azure 存储客户端库当前支持以下项目类型：本机共享、Xamarin.Forms 共享、Xamarin.Android 和 Xamarin.iOS。
 
 ## 创建容器并上传 Blob
 
-接下来，将一些代码添加至创建容器并将 Blob 上传到此容器的共享类 `MyClass.cs`。`MyClass.cs` 应如下所示：
+接下来，将一些代码添加到共享类 `MyClass.cs` 以创建容器，然后将 Blob 上传到此容器。`MyClass.cs` 应如下所示：
 
 	using Microsoft.WindowsAzure.Storage;
 	using Microsoft.WindowsAzure.Storage.Blob;
@@ -84,7 +84,7 @@ Xamarin 使开发人员能够通过共享的 C# 代码库来使用其本机用�
 		}
 	}
 
-请确保将“your\_account\_name\_here”和“your\_account\_key\_here”替换为实际帐户名和帐户密钥。然后就可以在 iOS、Android 和 Windows Phone 应用程序中使用此共享类。可将 `MyClass.createContainerAndUpload()` 添加到每个项目。例如：
+确保将“your\_account\_name\_here”和“your\_account\_key\_here”替换为实际帐户名和帐户密钥。然后就可以在 iOS、Android 和 Windows Phone 应用程序中使用此共享类。可将 `MyClass.createContainerAndUpload()` 添加到每个项目。例如：
 
 ### XamarinApp.Droid > MainActivity.cs
 
@@ -205,16 +205,16 @@ Xamarin 使开发人员能够通过共享的 C# 代码库来使用其本机用�
 
 ## 运行应用程序
 
-现在可以在 Android 或 Windows Phone 仿真程序中运行此应用程序。还可以在 iOS 仿真程序中运行此应用程序，但需要一台 Mac。有关如何执行此操作的具体说明，请阅读 [connecting Visual Studio to a Mac](https://developer.xamarin.com/guides/ios/getting_started/installation/windows/connecting-to-mac/)（将 Visual Studio 连接到 Mac）文档
+现在可以在 Android 或 Windows Phone 仿真程序中运行此应用程序。也可在 iOS 仿真程序中运行此应用程序，但需要使用 Mac。有关如何执行此操作的具体说明，请阅读 [connecting Visual Studio to a Mac](https://developer.xamarin.com/guides/ios/getting_started/installation/windows/connecting-to-mac/)（将 Visual Studio 连接到 Mac）文档
 
-运行应用后，会在存储帐户中创建容器 `mycontainer`。它应该包含 Blob `myblob`，Blob 中包含文本 `Hello, world!`。可以使用 [Azure 存储资源管理器](http://storageexplorer.com/)对此进行验证。
+运行应用后，会在存储帐户中创建容器 `mycontainer`。它应该包含 Blob `myblob`，其中包含文本 `Hello, world!`。可以使用 [Azure 存储资源管理器](http://storageexplorer.com/)对此进行验证。
 
 ## 后续步骤
 
-在本入门指南中，你学习了如何使用 Azure 存储在 Xamarin 中创建跨平台应用程序。本入门指南侧重于 Blob 存储中的情况。但是，还可以进行更多操作，不光是使用 Blob 存储，还可以使用表、文件和队列存储。请参阅以下文章以了解更多信息：
+在本入门指南中，你学习了如何使用 Azure 存储在 Xamarin 中创建跨平台应用程序。本入门指南着重介绍 Blob 存储的情况。但是，还对 Blob 存储、表存储、文件存储和队列存储进行更多操作。请参阅以下文章以了解更多信息：
 - [通过 .NET 开始使用 Azure Blob 存储](/documentation/articles/storage-dotnet-how-to-use-blobs/)
 - [通过 .NET 开始使用 Azure 表存储](/documentation/articles/storage-dotnet-how-to-use-tables/)
 - [通过 .NET 开始使用 Azure 队列存储](/documentation/articles/storage-dotnet-how-to-use-queues/)
 - [在 Windows 上开始使用 Azure 文件存储](/documentation/articles/storage-dotnet-how-to-use-files/)
 
-<!---HONumber=Mooncake_1031_2016-->
+<!---HONumber=Mooncake_Quality_Review_1202_2016-->

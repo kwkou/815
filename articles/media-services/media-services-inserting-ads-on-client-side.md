@@ -15,14 +15,14 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="09/26/2016" 
-	wacn.date="11/21/2016" 
+	wacn.date="12/16/2016" 
 	ms.author="juliako"/>
 
 
 
 #在客户端上插入广告
 
-此主题涵盖有关如何在客户端上插入多种类型的广告的信息。
+本主题涵盖有关如何在客户端上插入多种类型的广告的信息。
 
 有关在实时流式处理视频中隐藏式字幕和广告支持的详细信息，请参阅[支持的隐藏式字幕和广告插入标准](/documentation/articles/media-services-live-streaming-with-onprem-encoders/#cc_and_ads)。
 
@@ -36,13 +36,13 @@ Azure 媒体服务通过“Windows 媒体平台：播放器框架”提供广告
 - **非线性** - 播放主视频时显示的叠加式广告，通常为放置在播放器内的一个徽标或其他静态图像。
 - **伴随** - 在播放器之外显示的广告。
 
-广告可置于主视频时间线中的任何一个时间点。你必须告知播放器何时播放广告以及播放哪些广告。完成该操作需使用一组标准的基于 XML 的文件：视频广告服务模板 (VAST)、数字视频多广告播放列表 (VMAP)、媒体抽象排序模板 (MAST) 和数字视频播放器广告接口定义 (VPAID)。VAST 文件用于指定要显示哪些广告。VMAP 文件用于指定何时播放各种广告并且包含 VAST XML。MAST 文件是对包含 VAST XML 的广告进行排序的另一种方法。VPAID 文件用于定义视频播放器与广告或广告服务器之间的接口。
+广告可置于主视频时间线中的任何一个时间点。必须告知播放器何时播放广告以及播放哪些广告。完成该操作需使用一组标准的基于 XML 的文件：视频广告服务模板 (VAST)、数字视频多广告播放列表 (VMAP)、媒体抽象排序模板 (MAST) 和数字视频播放器广告接口定义 (VPAID)。VAST 文件用于指定要显示哪些广告。VMAP 文件用于指定何时播放各种广告并且包含 VAST XML。MAST 文件是对包含 VAST XML 的广告进行排序的另一种方法。VPAID 文件用于定义视频播放器与广告或广告服务器之间的接口。
 
-每个播放器框架的工作方式不同，且都将被各自的主题所涵盖。本主题将介绍用来插入广告的基本机制。视频播放器应用程序从广告服务器请求广告。广告服务器可以通过多种方式进行响应：
+每个播放器框架的工作方式不同，且都会在各自的主题中进行介绍。本主题介绍用于插入广告的基本机制。视频播放器应用程序从广告服务器请求广告。广告服务器可以通过多种方式进行响应：
 
 - 返回一个 VAST 文件
-- 返回一个 VMAP 文件 （使用嵌入的 VAST)
-- 返回一个 MAST 文件 （使用嵌入的 VAST)
+- 返回一个 VMAP 文件 （使用嵌入的 VAST）
+- 返回一个 MAST 文件 （使用嵌入的 VAST）
 - 返回一个含有 VPAID 广告的 VAST 文件
 
  
@@ -92,7 +92,7 @@ VAST 文件指定要显示的广告。以下 XML 是线性广告 VAST 文件的�
 	  </Ad>
 	</VAST>
 	
-通过 **<Linear>** 元素描述线性广告。它指定广告的持续时间、跟踪事件、点击行为、点击跟踪和许多 **<MediaFile>** 元素。在 **<TrackingEvents>** 元素内指定跟踪事件，并允许广告服务器跟踪在观看广告时发生的各种事件。在这种情况下将跟踪开始、中点、完成和展开事件。于显示广告时发生开始事件。已观看至少 50% 的广告时间线时发生中点事件。广告结束时发生完成事件。用户将视频播放器展开为全屏时发生展开事件。“点击”是使用 **<ClickThrough>** 元素在 **<VideoClicks>** 元素内指定的，指定用户点击广告时要显示的资源的 URI。“点击跟踪”是在 **<ClickTracking>** 元素中指定的，也在 **<VideoClicks>** 元素中指定，指定用户点击广告时要请求的播放器的跟踪资源。**<MediaFile>** 元素指定有关广告特定编码的信息。如果存在多个 **<MediaFile>** 元素，则视频播放器可以选择适用于该平台的最佳编码。
+通过 **<Linear>** 元素描述线性广告。它指定广告的持续时间、跟踪事件、点击行为、点击跟踪和许多 **<MediaFile>** 元素。在 **<TrackingEvents>** 元素内指定跟踪事件，并允许广告服务器跟踪观看广告时发生的各种事件。在这种情况下会跟踪开始、中点、完成和展开事件。显示广告时发生开始事件。已观看至少 50% 的广告时间线时发生中点事件。广告结束时发生完成事件。用户将视频播放器展开为全屏时发生展开事件。“点击”是使用 **<ClickThrough>** 元素在 **<VideoClicks>** 元素内指定的，指定用户点击广告时要显示的资源的 URI。“点击跟踪”是在 **<ClickTracking>** 元素中指定的，也在 **<VideoClicks>** 元素中指定，指定用户点击广告时要请求的播放器的跟踪资源。**<MediaFile>** 元素指定有关广告特定编码的信息。如果存在多个 **<MediaFile>** 元素，则视频播放器可以选择适用于该平台的最佳编码。
 
 可以按指定顺序显示线性广告。若要执行此操作，请向 VAST 文件添加其他 <Ad> 元素，并使用 sequence 属性指定顺序。以下示例对此进行了说明：
 	
@@ -165,11 +165,11 @@ Application/x-shockwave-flash – 资源显示在 Flash Player 中。
 
 **<IFrameResource>** 描述可以在 IFrame 中显示的 HTML 资源。**<HTMLResource>** 描述可以插入网页中的一段 HTML 代码。**<TrackingEvents>** 指定跟踪事件以及事件发生时要请求的 URI。在此示例中，跟踪了 acceptInvitation 事件和折叠事件。有关 **<NonLinearAds>** 元素及其子元素的详细信息，请参阅 IAB.NET/VAST。请注意，**<TrackingEvents>** 元素位于** <NonLinearAds>** 元素而非 **<NonLinear>** 元素内。
 
-在 <CompanionAds> 元素内定义伴随广告。<CompanionAds> 元素可以包含一个或多个 <Companion> 元素。每个 <Companion> 元素均描述一个伴随广告，并且可以包含以与非线性广告相同的方式指定的 <StaticResource>、<IFrameResource> 或 <HTMLResource>。VAST 文件可以包含多个伴随广告，播放器应用程序可以选择最适合显示的广告。有关 VAST 的详细信息，请参阅 [VAST 3.0](http://www.iab.net/media/file/VASTv3.0.pdf)。
+<CompanionAds> 元素中定义了伴随广告。<CompanionAds> 元素可以包含一个或多个 <Companion> 元素。每个 <Companion> 元素均描述一个伴随广告，并且可以包含与非线性广告相同的方式指定的 <StaticResource>、<IFrameResource> 或 <HTMLResource>。VAST 文件可以包含多个伴随广告，播放器应用程序可以选择最适合显示的广告。有关 VAST 的详细信息，请参阅 [VAST 3.0](http://www.iab.net/media/file/VASTv3.0.pdf)。
 
 ###使用数字视频多广告播放列表 (VMAP) 文件
 
-VMAP 文件使你能够指定发生广告中断的时间、每次中断的时长、可在中断期间显示的广告数以及可在中断期间显示的广告类型。以下是定义单次广告中断的示例 VMAP 文件：
+VMAP 文件支持指定发生广告中断的时间、每次中断的时长、中断期间可显示的广告数以及中断期间可显示的广告类型。以下是定义单次广告中断的示例 VMAP 文件：
 	
 	<vmap:VMAP xmlns:vmap="http://www.iab.net/vmap-1.0" version="1.0">
 	  <vmap:AdBreak breakType="linear" breakId="mypre" timeOffset="start">
@@ -237,7 +237,7 @@ VMAP 文件以 <VMAP> 元素开头，该元素包含一个或多个 <AdBreak> �
 - <AdTagURI>：引用另一个系统中的广告响应的 URI
 - <CustomAdData> 表示非 VAST 响应的任意字符串
 
-在此示例中，线内广告响应是使用包含 VAST 广告响应的 <VASTAdData> 元素指定的。有关其他元素的详细信息，请参阅 [VMAP](http://www.iab.net/guidelines/508676/digitalvideo/vsuite/vmap)。
+此示例中，线内广告响应是使用包含 VAST 广告响应的 <VASTAdData> 元素指定的。有关其他元素的详细信息，请参阅 [VMAP](http://www.iab.net/guidelines/508676/digitalvideo/vsuite/vmap)。
 
 <**AdBreak**> 元素还可以包含一个 <**TrackingEvents**> 元素。<**TrackingEvents**> 元素允许跟踪广告中断的开始或结束，或广告中断期间是否发生了错误。<**TrackingEvents**> 元素包含一个或多个 <**Tracking**> 元素，其中每一个均指定一个跟踪事件和一个跟踪 URI。可能的跟踪事件是：
 
@@ -319,14 +319,14 @@ MAST 文件允许指定定义何时显示广告的触发器。以下是一个示
 
 MAST 文件以 **<MAST>** 元素开头，该元素包含一个 **<triggers>** 元素。<triggers> 元素包含一个或多个定义应何时播放广告的 **<trigger>** 元素。
 
-**<trigger>** 元素包含一个 **<startConditions>** 元素，后者指定应开始播放广告的时间。**<startConditions>** 元素包含一个或多个 <condition> 元素。当每个 <condition> 评估结果为 true 时，将启动或撤销一个触发器，具体取决于 <condition> 是否分别包含在 **<startConditions**> 或 **<endConditions>** 元素中。有多个 <condition> 元素时，将它们视为隐式 OR，任何评估结果为 true 的条件均将导致触发器启动。<condition> 元素可以嵌套。预设了子 <condition> 元素时，将它们视为隐式 AND；若要启动触发器，则所有条件的评估结果必须都为 true。<condition> 元素包含定义条件的以下属性：
+**<trigger>** 元素包含一个 **<startConditions>** 元素，后者指定应开始播放广告的时间。**<startConditions>** 元素包含一个或多个 <condition> 元素。当每个 <condition> 评估结果为 true 时，将启动或撤销一个触发器，具体取决于 <condition> 是否分别包含在 **<startConditions**> 或 **<endConditions>** 元素中。有多个 <condition> 元素时，将它们视为隐式 OR，任何评估结果为 true 的条件均会导致触发器启动。<condition> 元素可以嵌套。预设了子 <condition> 元素时，将它们视为隐式 AND；若要启动触发器，则所有条件的评估结果必须都为 true。<condition> 元素包含定义条件的以下属性：
 
-1. **type** – 指定的条件、事件或属性的类型
+1. **type** – 指定条件、事件或属性的类型
 1. **name** – 要在评估过程中使用的属性或事件的名称
 1. **value** – 将针对其进行评估的属性的值
 1. **operator** – 要在评估期间使用的操作符：EQ（等于）、NEQ（不等于）、GTR（大于）、GEQ（大于或等于）、LT（小于）、LEQ（小于或等于）、MOD（取模）
 
-**<endConditions>** 也包含 <condition> 元素。当某个条件的评估结果为 true 时，重置触发器。<trigger> 元素也包含 <sources> 元素，后者包含一个或多个 <source> 元素。<source> 元素定义广告响应的 URI 和广告响应的类型。在此示例中为 VAST 响应给定了一个 URI。
+**<endConditions>** 也包含 <condition> 元素。某个条件的评估结果为 true 时，重置触发器。<trigger> 元素也包含 <sources> 元素，后者包含一个或多个 <source> 元素。<source> 元素定义广告响应的 URI 和广告响应的类型。此示例中为 VAST 响应提供了一个 URI。
 
 
 	<trigger id="postroll" description="postroll"  >
@@ -343,9 +343,9 @@ MAST 文件以 **<MAST>** 元素开头，该元素包含一个 **<triggers>** �
 
 ###使用视频播放器广告接口定义 (VPAID)
 
-VPAID 是用于使可执行广告单元能够与视频播放器进行通信的 API。这可实现高度交互的广告体验。用户可以与广告交互；广告可以对查看者采取的操作做出响应。例如，广告可能会显示允许用户查看详细信息或更长时间版广告的按钮。视频播放器必须支持 VPAID API 且可执行广告必须实现该 API。当播放机从广告服务器请求广告时，服务器可能使用包含 VPAID 广告的 VAST 响应进行响应。
+VPAID 是用于使可执行广告单元能够与视频播放器进行通信的 API。这可实现高度交互的广告体验。用户可以与广告交互；广告可以对查看者采取的操作做出响应。例如，广告可能会显示允许用户查看详细信息或更长时间版广告的按钮。视频播放器必须支持 VPAID API 且可执行广告必须实现该 API。播放器从广告服务器请求广告时，服务器可能使用包含 VPAID 广告的 VAST 响应进行响应。
 
-在必须于运行时环境（例如 Adobe Flash™ 或可以在 Web 浏览器中执行的 JavaScript）中执行的代码中创建可执行广告。当广告服务器返回包含 VPAID 广告的 VAST 响应时，<MediaFile> 元素中 apiFramework 属性的值必须为“VPAID”。此属性指定所含广告为 VPAID 可执行广告。类型属性必须设置为可执行文件（如“application/x-shockwave-flash”或“application/x-javascript”）的 MIME 类型。以下 XML 代码片段演示包含 VPAID 可执行广告的 VAST 响应中的 <MediaFile> 元素。
+必须于运行时环境（例如 Adobe Flash™ 或可以在 Web 浏览器中执行的 JavaScript）中执行的代码中创建可执行广告。广告服务器返回包含 VPAID 广告的 VAST 响应时，<MediaFile> 元素中 apiFramework 属性的值必须为“VPAID”。此属性指定所含广告为 VPAID 可执行广告。类型属性必须设置为可执行文件（如“application/x-shockwave-flash”或“application/x-javascript”）的 MIME 类型。以下 XML 代码片段演示包含 VPAID 可执行广告的 VAST 响应中的 <MediaFile> 元素。
 
 	
 	<MediaFiles>
@@ -358,11 +358,11 @@ VPAID 是用于使可执行广告单元能够与视频播放器进行通信的 A
 
 可以使用 VAST 响应中 <Linear> 或 <NonLinear> 元素内的 <AdParameters> 元素来初始化可执行广告。有关 <AdParameters> 元素的详细信息，请参阅 [VAST 3.0](http://www.iab.net/media/file/VASTv3.0.pdf)。有关 VPAID API 的详细信息，请参阅 [VPAID 2.0](http://www.iab.net/media/file/VPAID_2.0_Final_04-10-2012.pdf)。
 
-##实现带有支持广告的 Windows 或 Windows Phone 8 播放器
+##实现带有广告支持的 Windows 或 Windows Phone 8 播放器
 
-Microsoft Media Platform：适用于 Windows 8 和 Windows Phone 8 的播放器框架包含示例应用程序集合，这些示例应用程序向你展示如何使用该框架实现视频播放器应用程序。可以从[适用于 Windows 8 和 Windows Phone 8 的播放器框架](https://playerframework.codeplex.com)下载播放器框架和示例。
+Microsoft Media Platform：适用于 Windows 8 和 Windows Phone 8 的播放器框架包含示例应用程序集合，这些示例应用程序展示如何使用该框架实现视频播放器应用程序。可以从[适用于 Windows 8 和 Windows Phone 8 的播放器框架](https://playerframework.codeplex.com)中下载播放器框架和示例。
 
-打开 Microsoft.PlayerFramework.Xaml.Samples 解决方案时，将看到项目中的多个文件夹。Advertising 文件夹包含与创建具有广告支持的视频播放器相关的示例代码。Advertising 文件夹中有多个 XAML/cs 文件，每一个均显示如何以不同的方式插入广告。以下列表对每个文件进行描述：
+打开 Microsoft.PlayerFramework.Xaml.Samples 解决方案时，可看到项目中的多个文件夹。Advertising 文件夹包含与创建具有广告支持的视频播放器相关的示例代码。Advertising 文件夹中有多个 XAML/cs 文件，每一个均显示如何以不同的方式插入广告。以下列表描述了每个文件：
 
 - AdPodPage.xaml 演示如何显示广告荚。
 - AdSchedulingPage.xaml 演示如何安排广告。
@@ -378,7 +378,7 @@ Microsoft Media Platform：适用于 Windows 8 和 Windows Phone 8 的播放器�
 
 ###AdPodPage 示例
 
-此示例使用 AdSchedulerPlugin 来定义何时显示广告。在此示例中，安排于 5 秒后播放中置式广告。广告荚（按顺序播放的一组广告）是在从广告服务器返回的 VAST 文件中指定的。在 <RemoteAdSource> 元素中指定 VAST 文件的 URI。
+此示例使用 AdSchedulerPlugin 来定义何时显示广告。此示例中计划 5 秒后播放中置式广告。广告荚（按顺序播放的一组广告）是从广告服务器返回的 VAST 文件中指定的。<RemoteAdSource> 元素中指定了 VAST 文件的 URI。
 
 	<mmppf:MediaPlayer x:Name="player" Source="http://smf.blob.core.chinacloudapi.cn/samples/videos/bigbuck.mp4">
 	
@@ -402,7 +402,7 @@ Microsoft Media Platform：适用于 Windows 8 和 Windows Phone 8 的播放器�
 
 ###AdSchedulingPage
 
-此示例还使用 AdSchedulerPlugin。它会安排三种广告：前置式广告、中置式广告和后置式广告。在 <RemoteAdSource> 元素中指定每个广告的 VAST 的 URI。
+此示例还使用 AdSchedulerPlugin。它会安排三种广告：前置式广告、中置式广告和后置式广告。<RemoteAdSource> 元素中指定了每个广告的 VAST 的 URI。
 	
 	<mmppf:MediaPlayer x:Name="player" Source="http://smf.blob.core.chinacloudapi.cn/samples/videos/bigbuck.mp4">
 	            <mmppf:MediaPlayer.Plugins>
@@ -436,7 +436,7 @@ Microsoft Media Platform：适用于 Windows 8 和 Windows Phone 8 的播放器�
 
 ###FreeWheelPage
 
-此示例使用 FreeWheelPlugin，它指定一个指定 URL 的源属性，该 URL 指向一个 SmartXML 文件，该文件指定广告内容和广告安排信息。
+此示例使用 FreeWheelPlugin，它指定一个指定 URI 的源属性，该 URI 指向一个 SmartXML 文件，该文件指定广告内容和广告安排信息。
 	
 	<mmppf:MediaPlayer x:Name="player" Source="http://smf.blob.core.chinacloudapi.cn/samples/videos/bigbuck.mp4">
 	            <mmppf:MediaPlayer.Plugins>
@@ -540,7 +540,7 @@ ProgrammaticAdPage.xaml.cs 文件创建 AdHandlerPlugin，添加 TimelineMarker 
 
 ###VastLinearNonLinearPage
 
-此示例使用 AdSchedulerPlugin 来安排线性广告和非线性广告。使用 <RemoteAdSource> 元素来指定 VAST 文件位置。
+此示例使用 AdSchedulerPlugin 来安排线性广告和非线性广告。<RemoteAdSource> 元素指定了 VAST 文件位置。
 	
 	<mmppf:MediaPlayer x:Name="player" Source="http://smf.blob.core.chinacloudapi.cn/samples/videos/bigbuck.mp4">
 	            <mmppf:MediaPlayer.Plugins>
@@ -561,7 +561,7 @@ ProgrammaticAdPage.xaml.cs 文件创建 AdHandlerPlugin，添加 TimelineMarker 
 
 ###VMAPPage
 
-此示例使用 VmapSchedulerPlugin，以便使用 VMAP 文件安排广告。在 <VmapSchedulerPlugin> 元素的源属性中指定指向 VMAP 文件的 URI。
+此示例使用 VmapSchedulerPlugin，以便使用 VMAP 文件安排广告。<VmapSchedulerPlugin> 元素的源属性中指定了指向 VMAP 文件的 URI。
 	
 	<mmppf:MediaPlayer x:Name="player" Source="http://smf.blob.core.chinacloudapi.cn/samples/videos/bigbuck.mp4">
 	            <mmppf:MediaPlayer.Plugins>
@@ -573,7 +573,7 @@ ProgrammaticAdPage.xaml.cs 文件创建 AdHandlerPlugin，添加 TimelineMarker 
 ##实现带有广告支持的 iOS 视频播放器
 
 
-Microsoft Media Platform：适用于 iOS 的播放器框架包含示例应用程序集合，这些示例应用程序向你展示如何使用该框架实现视频播放器应用程序。可以从 [Azure 媒体播放器框架](https://github.com/Azure/azure-media-player-framework)下载播放器框架和示例。GitHub 页面具有指向 Wiki（含有关播放器框架的其他信息）的链接和播放器示例简介：[Azure 媒体播放器 Wiki](https://github.com/Azure/azure-media-player-framework/wiki/How-to-use-Azure-media-player-framework)。
+Microsoft Media Platform：适用于 iOS 的播放器框架包含示例应用程序集合，这些示例应用程序展示如何使用该框架实现视频播放器应用程序。可以从 [Azure 媒体播放器框架](https://github.com/Azure/azure-media-player-framework)下载播放器框架和示例。GitHub 页面具有指向 Wiki（含有关播放器框架的其他信息）的链接和播放器示例简介：[Azure 媒体播放器 Wiki](https://github.com/Azure/azure-media-player-framework/wiki/How-to-use-Azure-media-player-framework)。
 
 
 ###使用 VMAP 安排广告
@@ -722,7 +722,7 @@ Microsoft Media Platform：适用于 iOS 的播放器框架包含示例应用程
 	    [self logFrameworkError];
 	}
 
-以下示例演示如何安排粘性中置式广告。每当到达时间线上指定时间点时就会显示粘性广告。
+以下示例演示如何安排粘性中置式广告。每当到达时间线上指定的时间点时就会显示粘性广告。
 
 	//Example:7 Schedule a single sticky mid roll Ad
 	NSString *stickyAd=@"http://wamsblureg001orig-hs.chinacloudapp.cn/2e4e7d1f-b72a-4994-a406-810c796fc4fc/The%20Surface%20Movement-m3u8-aapl.ism/Manifest(format=m3u8-aapl)";
@@ -817,4 +817,4 @@ Microsoft Media Platform：适用于 iOS 的播放器框架包含示例应用程
 
 [开发视频播放器应用程序](/documentation/articles/media-services-develop-video-players/)
 
-<!---HONumber=Mooncake_1114_2016-->
+<!---HONumber=Mooncake_Quality_Review_1202_2016-->

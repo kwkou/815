@@ -14,7 +14,7 @@
    ms.tgt_pltfrm="NA"
    ms.workload="sqldb-migrate"
    ms.date="08/24/2016"
-   wacn.date="11/16/2016"
+   wacn.date="12/19/2016"
    ms.author="carlrab"/>  
 
 
@@ -35,10 +35,10 @@ SQL Server Management Studio 中的“将数据库部署到 Azure 数据库”�
 
 1. 确认你安装了最新版本的 SQL Server Management Studio。Management Studio 的新版本将每月更新一次，以与 Azure 门户的更新保持同步。
 
-    > [AZURE.IMPORTANT] 建议始终使用最新版本的 Management Studio 以保持与 Azure 和 SQL 数据库的更新同步。[更新 SQL Server Management Studio](https://msdn.microsoft.com/zh-cn/library/mt238290.aspx)。
+    > [AZURE.IMPORTANT] 建议始终使用最新版本的 Management Studio 以与 Azure 和 SQL 数据库的更新保持同步。[更新 SQL Server Management Studio](https://msdn.microsoft.com/zh-cn/library/mt238290.aspx)。
 
 2. 打开 Management Studio 并连接到要在对象资源管理器中迁移的 SQL Server 数据库。
-3. 右键单击对象资源管理器中的数据库，指向“任务”，然后单击“将数据库部署到 Azure SQL 数据库...”
+3. 右键单击对象资源管理器中的数据库、指向“任务”，然后单击“将数据库部署到 Azure SQL 数据库...”
 
 	![通过“任务”菜单部署到 Azure](./media/sql-database-cloud-migrate/MigrateUsingDeploymentWizard01.png)  
 
@@ -63,11 +63,10 @@ SQL Server Management Studio 中的“将数据库部署到 Azure 数据库”�
 
     ![导出设置](./media/sql-database-cloud-migrate/MigrateUsingDeploymentWizard02.png)  
 
-
-6.	完成该向导。根据数据库的大小和复杂性，部署可能需要花费几分钟到几小时。如果此向导检测到兼容性问题，错误将显示到屏幕上，并且迁移将不会继续。有关如何修复数据库兼容性问题的指导，请转到[修复数据库兼容性问题](/documentation/articles/sql-database-cloud-migrate-fix-compatibility-issues/)。
+6.	完成该向导。根据数据库的大小和复杂度，部署可能需要花费几分钟到几小时。如果此向导检测到兼容性问题，错误将显示到屏幕上，并且迁移将不会继续。有关如何修复数据库兼容性问题的指导，请转到[修复数据库兼容性问题](/documentation/articles/sql-database-cloud-migrate-fix-compatibility-issues/)。
 
 7.	使用对象资源管理器连接到 Azure SQL 数据库服务器中的已迁移数据库。
-8.	使用 Azure 门户查看数据库及其属性。
+8.	使用 Azure 门户，查看数据库及其属性。
 
 ## 后续步骤
 
@@ -80,4 +79,4 @@ SQL Server Management Studio 中的“将数据库部署到 Azure 数据库”�
 - [Transact-SQL 部分支持或不支持的函数](/documentation/articles/sql-database-transact-sql-information/)
 - [使用 SQL Server 迁移助手迁移非 SQL Server 数据库](http://blogs.msdn.com/b/ssma/)
 
-<!---HONumber=Mooncake_1010_2016-->
+<!---HONumber=Mooncake_Quality_Review_1202_2016-->

@@ -1,7 +1,7 @@
 <properties
 	pageTitle="修复 SQL 连接错误和暂时性错误 | Azure"
 	description="了解如何排查、诊断和防止 Azure SQL 数据库中的 SQL 连接错误或暂时性错误。"
-	keywords="sql 连接, 连接字符串, 连接问题, 暂时性错误, 连接错误"
+	keywords="SQL 连接, 连接字符串, 连接问题, 暂时性错误, 连接错误"
 	services="sql-database"
 	documentationCenter=""
 	authors="dalechen"
@@ -15,9 +15,8 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="09/20/2016"
-	wacn.date="11/16/2016"
+	wacn.date="12/19/2016"
 	ms.author="daleche"/>  
-
 
 
 # 排查、诊断和防止 SQL 数据库中的 SQL 连接错误和暂时性错误
@@ -28,7 +27,7 @@
 
 ## 暂时性错误（暂时性故障）
 
-暂时性错误（也称为暂时性故障）存在很快解决自身问题的根本原因。当 Azure 系统快速地将硬件资源转移到负载均衡更好的各种工作负荷时，偶尔会发生暂时性错误。大多数这些重新配置事件通常在 60 秒内就能完成。在进行这种重新配置的过程中，可能会遇到与 Azure SQL 数据库的连接性问题。连接到 Azure SQL 数据库的应用程序应当构建为能预见这些暂时性错误，并能通过在它们的代码内实现重试逻辑来处理它们，而不是以应用程序错误的形式呈现给用户。
+暂时性错误（也称为暂时性故障）存在很快解决自身问题的根本原因。当 Azure 系统快速地将硬件资源转移到负载均衡更好的各种工作负荷时，偶尔会发生暂时性错误。大多数这些重新配置事件通常在 60 秒内就能完成。在进行这种重新配置的过程中，可能会遇到 Azure SQL 数据库的连接性问题。连接到 Azure SQL 数据库的应用程序应当构建为能预见这些暂时性错误，并能通过在它们的代码内实现重试逻辑来处理它们，而不是以应用程序错误的形式呈现给用户。
 
 如果客户端程序使用 ADO.NET，系统将会引发 **SqlException**，使你的程序知道已发生暂时性错误。你可以将 **Number** 属性与 [SQL 数据库客户端应用程序的 SQL 错误代码](/documentation/articles/sql-database-develop-error-messages/)主题顶部附近的暂时性错误列表进行比较。
 
@@ -109,13 +108,13 @@
 ##### 通过断开网络连接进行测试
 
 
-可以测试重试逻辑的方法，就是在程序运行时断中客户端计算机与网络的连接。将产生错误：
+可以测试重试逻辑的一种方法是在程序运行时断开客户端计算机与网络的连接。将产生错误：
 
-- **SqlException.Number** =11001
+- **SqlException.Number** = 11001
 - 消息：“不存在已知的这种主机”
 
 
-首次重试时，程序可以更正拼写错误，然后尝试连接。
+在首次重试过程中，程序可以更正拼写错误，然后尝试连接。
 
 
 若要使此操作可行，请从网络中断开计算机的连接，再启动你的程序。然后，你的程序将识别促使它执行以下操作的运行时参数：
@@ -124,7 +123,7 @@
 2. 像往常一样尝试首次连接。
 3. 在捕获该错误后，从列表中删除 11001。
 4. 显示一条消息，告知用户要将计算机接入网络。
- - 通过使用“Console.ReadLine”方法或具有“确定”按钮的对话框来暂停进一步的执行。将计算机接入网络后，用户按 Enter 键。
+ - 通过使用“Console.ReadLine”方法或具有“确定”按钮的对话框暂停进一步执行。将计算机接入网络后，用户按 Enter 键。
 5. 重新尝试连接，预期将会成功。
 
 
@@ -134,13 +133,13 @@
 在首次连接尝试之前，程序可以故意拼错用户名。将产生错误：
 
 - **SqlException.Number** = 18456
-- 消息：“用户 'WRONG\_MyUserName' 的登录失败。”
+- 消息：“用户‘WRONG\_MyUserName’的登录失败。”
 
 
-首次重试时，程序可以更正拼写错误，然后尝试连接。
+在首次重试过程中，程序可以更正拼写错误，然后尝试连接。
 
 
-要在实践中进行此测试，你的程序需要能够识别促使它执行以下操作的运行时参数：
+若要使此操作可行，你的程序需要能够识别促使它执行以下操作的运行时参数：
 
 1. 暂时将 18456 添加到视为暂时性故障的错误列表。
 2. 故意将“WRONG\_”添加到用户名。
@@ -153,7 +152,7 @@
 ### 连接重试的 .NET SqlConnection 参数
 
 
-如果客户端程序使用 .NET Framework 类“System.Data.SqlClient.SqlConnection”连接 Azure SQL 数据库，应使用 .NET 4.6.1 或更高版本，以便可以利用其连接重试功能。该功能的详细信息在[此处](http://go.microsoft.com/fwlink/?linkid=393996)。
+如果客户端程序使用 .NET Framework 类 **System.Data.SqlClient.SqlConnection** 连接 Azure SQL 数据库，应使用 .NET 4.6.1 或更高版本，以便可以利用其连接重试功能。该功能的详细信息在[此处](http://go.microsoft.com/fwlink/?linkid=393996)。
 
 
 <!--
@@ -184,7 +183,7 @@
 - mySqlConnection.Open 方法调用
 - mySqlConnection.Execute 方法调用
 
-有个很微妙的地方。如果你正在执行“查询”时发生暂时性错误，“SqlConnection”对象不会重试连接操作，因而肯定不会重试你的查询。但是，**SqlConnection** 在发送要执行的查询前会非常快速地检查连接。如果快速检查检测到连接问题，**SqlConnection** 会重试连接操作。如果重试成功，则会发送查询以执行。
+有个很微妙的地方。如果你正在执行“查询”时发生暂时性错误，**SqlConnection** 对象不会重试连接操作，因而肯定不会重试你的查询。但是，**SqlConnection** 在发送要执行的查询前会非常快速地检查连接。如果快速检查检测到连接问题，**SqlConnection** 会重试连接操作。如果重试成功，则会发送查询以执行。
 
 
 #### ConnectRetryCount 是否应结合应用程序重试逻辑？
@@ -211,7 +210,7 @@
 ### 连接：IP 地址
 
 
-必须将 SQL 数据库服务器配置为接受来自托管客户端程序的计算机的通信。为此，可以通过 [Azure 经典管理门户](https://manage.windowsazure.cn)编辑防火墙设置。
+必须将 SQL 数据库服务器配置为接受来自托管客户端程序的计算机 IP 地址的通信。为此，可以通过 [Azure 经典管理门户](https://manage.windowsazure.cn)编辑防火墙设置。
 
 
 如果你忘记了配置 IP 地址，你的程序将失败，并显示简单的错误消息，指出所需的 IP 地址。
@@ -302,7 +301,7 @@ ADO.NET 4.6.1：
 假设你怀疑连接尝试由于端口问题而失败。在你的计算机上，可以运行报告端口配置的实用程序。
 
 
-在 Linux 上以下实用程序可能会有所帮助：
+在 Linux 上，以下实用程序可能很有用：
 
 - `netstat -nap`
 - `nmap -sS -O 127.0.0.1`
@@ -343,7 +342,7 @@ ADO.NET 4.6.1：
 
 Enterprise Library 6 (EntLib60) 提供了 .NET 托管类来帮助进行日志记录：
 
-- [5 - 如同从圆木上掉下来一样简单：使用日志记录应用程序块](http://msdn.microsoft.com/zh-cn/library/dn440731.aspx)
+- [5 - 与写入日志一样简单：使用日志记录应用程序块](http://msdn.microsoft.com/zh-cn/library/dn440731.aspx)
 
 
 <a id="h-diagnostics-examine-logs-errors" name="h-diagnostics-examine-logs-errors"></a>
@@ -356,7 +355,7 @@ Enterprise Library 6 (EntLib60) 提供了 .NET 托管类来帮助进行日志记
 
 | 日志查询 | 说明 |
 | :-- | :-- |
-| `SELECT e.*`<br/>`FROM sys.event_log AS e`<br/>`WHERE e.database_name = 'myDbName'`<br/>`AND e.event_category = 'connectivity'`<br/>`AND 2 >= DateDiff`<br/>&nbsp;&nbsp;`(hour, e.end_time, GetUtcDate())`<br/>`ORDER BY e.event_category,`<br/>&nbsp;&nbsp;`e.event_type, e.end_time;` | [sys.event\_log](http://msdn.microsoft.com/zh-cn/library/dn270018.aspx) 视图提供了单个事件的相关信息，包括可能导致暂时性错误或连接失败的一些事件。<br/><br/>理想的情况下，可以将 **start\_time** 或 **end\_time** 值与有关客户端程序何时遇到问题的信息相关联。<br/><br/>**提示：**必须连接到 **master** 数据库才能运行此操作。 |
+| `SELECT e.*`<br/>`FROM sys.event_log AS e`<br/>`WHERE e.database_name = 'myDbName'`<br/>`AND e.event_category = 'connectivity'`<br/>`AND 2 >= DateDiff`<br/>&nbsp;&nbsp;`(hour, e.end_time, GetUtcDate())`<br/>`ORDER BY e.event_category,`<br/>&nbsp;&nbsp;`e.event_type, e.end_time;` | [sys.event\_log](http://msdn.microsoft.com/zh-cn/library/dn270018.aspx) 视图提供了个别事件的相关信息，包括可能导致暂时性错误或连接失败的一些事件。<br/><br/>理想的情况下，可以将 **start\_time** 或 **end\_time** 值与有关客户端程序何时遇到问题的信息相关联。<br/><br/>**提示：**必须连接到 **master** 数据库才能运行此操作。 |
 | `SELECT c.*`<br/>`FROM sys.database_connection_stats AS c`<br/>`WHERE c.database_name = 'myDbName'`<br/>`AND 24 >= DateDiff`<br/>&nbsp;&nbsp;`(hour, c.end_time, GetUtcDate())`<br/>`ORDER BY c.end_time;` | [sys.database\_connection\_stats](http://msdn.microsoft.com/zh-cn/library/dn269986.aspx) 视图针对其他诊断提供事件类型的聚合计数。<br/><br/>**提示：**必须连接到 **master** 数据库才能运行此操作。 |
 
 <a id="d-search-for-problem-events-in-the-sql-database-log" name="d-search-for-problem-events-in-the-sql-database-log"></a>
@@ -421,7 +420,7 @@ Enterprise Library 6 (EntLib60) 是 .NET 类的框架，可帮助你实施云服
 - [4 - 坚持不懈是一切成功的秘密：使用暂时性故障处理应用程序块](http://msdn.microsoft.com/zh-cn/library/dn440719%28v=pandp.60%29.aspx)
 
 
-> [AZURE.NOTE] EntLib60 的源代码可公开[下载](http://go.microsoft.com/fwlink/p/?LinkID=290898)。Microsoft 不打算对 EntLib 做进一步的功能或维护更新。
+> [AZURE.NOTE] EntLib60 的源代码可公开[下载](http://go.microsoft.com/fwlink/p/?LinkID=290898)。Microsoft 不打算对 EntLib 做进一步的功能更新或维护更新。
 
 <a id="entlib60-classes-for-transient-errors-and-retry" name="entlib60-classes-for-transient-errors-and-retry"></a>
 
@@ -475,8 +474,7 @@ Enterprise Library 6 (EntLib60) 是 .NET 类的框架，可帮助你实施云服
 - 日志记录块可以从日志目标抽象化日志记录功能，使应用程序代码保持一致，无论目标日志记录存储的位置和类型为何。
 
 
-有关详细信息，请参阅：
-[5 - 像滚圆木一样容易：使用日志记录应用程序块](https://msdn.microsoft.com/zh-cn/library/dn440731%28v=pandp.60%29.aspx)
+有关详细信息，请参阅：[5 - 与写入日志一样简单：使用日志记录应用程序块](https://msdn.microsoft.com/zh-cn/library/dn440731%28v=pandp.60%29.aspx)
 
 <a id="entlib60-istransient-method-source-code" name="entlib60-istransient-method-source-code"></a>
 
@@ -564,4 +562,4 @@ Enterprise Library 6 (EntLib60) 是 .NET 类的框架，可帮助你实施云服
 
 - [*重试*是 Apache 2.0 授权的通用重试库，它以 **Python** 编写，可以简化向几乎任何程序添加重试行为的任务。](https://pypi.python.org/pypi/retrying)
 
-<!---HONumber=Mooncake_1010_2016-->
+<!---HONumber=Mooncake_Quality_Review_1202_2016-->

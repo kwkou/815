@@ -13,23 +13,22 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="09/06/2016"
-	wacn.date="10/17/2016"
+	wacn.date="12/19/2016"
 	ms.author="ddove" />  
-
 
 # 弹性数据库作业入门
 
-Azure SQL 数据库的弹性数据库作业（预览版）可让你跨多个数据库可靠执行 T-SQL 脚本，同时自动重试并提供最终完成保证。有关弹性数据库作业功能的详细信息，请参阅[功能概述页](/documentation/articles/sql-database-elastic-jobs-overview/)。
+Azure SQL 数据库的弹性数据库作业（预览）可让你跨多个数据库可靠执行 T-SQL 脚本，同时自动重试并提供最终完成保证。有关弹性数据库作业功能的详细信息，请参阅[功能概述页](/documentation/articles/sql-database-elastic-jobs-overview/)。
 
 本主题对[弹性数据库工具入门](/documentation/articles/sql-database-elastic-scale-get-started/)中的示例做了延伸。完成本主题后，你将学会如何创建和管理用于管理一组相关数据库的作业。无需使用弹性缩放工具即可利用弹性作业的优势。
 
 ## 先决条件
 
-下载并运行[弹性数据库工具示例入门](/documentation/articles/sql-database-elastic-scale-get-started/)。
+下载并运行[弹性数据库工具入门示例](/documentation/articles/sql-database-elastic-scale-get-started/)。
 
-## 使用示例应用程序创建分片映射管理器
+## 使用示例应用创建分片映射管理器
 
-在此处，你将创建分片映射管理器以及多个分片，然后将数据插入分片。如果你的分片中设置了分片数据，则你可以跳过下面的步骤，直接转到下一部分。
+在此处，你将创建分片映射管理器以及多个分片，然后将数据插入分片。如果你的分片中设置了分片数据，你可以跳过以下步骤，直接转到下一部分。
 
 1. 生成并运行**弹性数据库工具入门**示例应用程序。一直执行到[下载和运行示例应用](/documentation/articles/sql-database-elastic-scale-get-started/#Getting-started-with-elastic-database-tools)部分中的步骤 7。在步骤 7 结束时，你将看到以下命令提示符：
 
@@ -37,13 +36,13 @@ Azure SQL 数据库的弹性数据库作业（预览版）可让你跨多个数�
 
 2.  在命令窗口中键入“1”，然后按 **Enter**。这会创建分片映射管理器，并将两个分片添加到服务器。然后键入“3”并按 **Enter**；重复该操作四次。这会在你的分片中插入示例数据行。
 
-3.  [Azure 经典管理门户](https://manage.windowsazure.cn)应会在 v12 服务器中显示三个新的数据库：
+3.  [Azure 经典管理门户](https://manage.windowsazure.cn)应在 v12 服务器中显示三个新的数据库：
 
 	![Visual Studio 确认][2]
 
 	现在，我们将创建一个自定义数据库集合，用于反映分片映射中的所有数据库。这样，我们便可以创建和执行用于跨分片添加新表的作业。
 
-我们通常会使用 **New-AzureSqlJobTarget** cmdlet 来创建分片映射目标。必须将分片映射管理器数据库设置为数据库目标，然后将特定分片映射指定为目标。而我们的做法是枚举服务器中的所有数据库，并将这些数据库添加到 master 数据库除外的其他新自定义集合。
+我们通常会使用 **New-AzureSqlJobTarget** cmdlet 创建分片映射目标。必须将分片映射管理器数据库设置为数据库目标，然后将特定分片映射指定为目标。而我们的做法是枚举服务器中的所有数据库，并将这些数据库添加到 master 数据库除外的其他新自定义集合。
 
 ##创建自定义集合并将服务器中的所有数据库添加到 master 除外的自定义集合目标。
 
@@ -111,7 +110,7 @@ Azure SQL 数据库的弹性数据库作业（预览版）可让你跨多个数�
     $ErrorActionPreference = "Continue"
 }
 	
-## 创建 T-SQL 脚本用于跨数据库执行
+## 创建 T-SQL 脚本以供跨数据库执行
 
 	$scriptName = "NewTable"
 	$scriptCommandText = "
@@ -142,7 +141,7 @@ Azure SQL 数据库的弹性数据库作业（预览版）可让你跨多个数�
 
 ##执行作业 
 
-以下 PowerShell 脚本可以用于执行现有的作业：
+以下 PowerShell 脚本可用于执行现有作业：
 
 更新以下变量以反映要执行的所需作业名称：
 
@@ -152,7 +151,7 @@ Azure SQL 数据库的弹性数据库作业（预览版）可让你跨多个数�
  
 ## 检索单个作业执行的状态
 
-使用相同 **Get-AzureSqlJobExecution** cmdlet 搭配 **IncludeChildren** 参数，以查看子作业执行的状态，还就是针对作为作业目标的每个数据库的每个作业执行的特定状态。
+使用相同 **Get-AzureSqlJobExecution** cmdlet 搭配 **IncludeChildren** 参数，以查看子作业执行的状态，也就是针对作为作业目标的每个数据库的每个作业执行的特定状态。
 
 	$jobExecutionId = "{Job Execution Id}"
 	$jobExecutions = Get-AzureSqlJobExecution -JobExecutionId $jobExecutionId -IncludeChildren
@@ -162,7 +161,7 @@ Azure SQL 数据库的弹性数据库作业（预览版）可让你跨多个数�
 
 **Get-AzureSqlJobExecution** cmdlet 具有多个可选参数，用于显示多个作业执行（已通过提供的参数进行筛选）。下面演示了 Get-AzureSqlJobExecution 的一些可能的用法：
 
-检索所有处于活动状态的顶级作业执行：
+检索所有活动的顶级作业执行：
 
 	Get-AzureSqlJobExecution
 
@@ -211,7 +210,7 @@ Azure SQL 数据库的弹性数据库作业（预览版）可让你跨多个数�
 
 ## 检索作业任务执行内的失败
 
-JobTaskExecution 对象包括任务生命周期的属性以及 Message 属性。如果作业任务执行失败，生命周期属性将设为 *Failed*，且消息属性将设为生成的异常消息及其堆栈。如果作业不成功，必须查看给定操作不成功的作业任务的详细信息。
+JobTaskExecution 对象包括任务生命周期的属性以及消息属性。如果作业任务执行失败，生命周期属性将设为 *Failed*，且消息属性将设为生成的异常消息及其堆栈。如果作业不成功，请务必查看给定作业不成功的作业任务的详细信息。
 
 	$jobExecutionId = "{Job Execution Id}"
 	$jobTaskExecutions = Get-AzureSqlJobTaskExecution -JobExecutionId $jobExecutionId
@@ -240,8 +239,8 @@ JobTaskExecution 对象包括任务生命周期的属性以及 Message 属性。
 * 作业超时：弹性数据库作业取消作业之前的总时间。
 * 初始重试间隔：第一次重试之前等待的间隔。
 * 最大重试间隔：要使用的重试间隔上限。
-* 重试间隔回退系数：用于计算每两次重试的下一个间隔系数。使用以下公式：(初始重试间隔) * Math.pow((间隔回退指数),(重试次数) - 2)。 
-* 最大尝试次数：重试在作业中执行的最大次数。
+* 重试间隔回退系数：用于计算每两次重试的下一个间隔系数。使用以下公式：(初始重试间隔) * Math.pow((间隔回退系数),(重试次数) - 2)。
+* 最大尝试次数：尝试在作业中执行的最大重试次数。
 
 默认的执行策略使用以下值：
 
@@ -282,7 +281,7 @@ JobTaskExecution 对象包括任务生命周期的属性以及 Message 属性。
 
 弹性数据库作业可通过两种不同的方式执行取消：
 
-1. 取消当前正在执行的任务：如果在任务正在执行时检测到取消，将在当前正在执行的任务层面尝试取消。例如：当尝试取消时，如果有某个长时间运行的查询当前正在执行，将尝试取消该查询。
+1. 取消当前正在执行的任务：如果在任务正在运行时检测到取消，将在当前正在执行的任务层面尝试取消。例如：当尝试取消时，如果有长时间运行的查询当前正在执行，将尝试取消该查询。
 2. 取消任务重试：如果控制线程在启动任务执行之前检测到取消，控制线程将避免启动该任务，并将请求声明为已取消。
 
 如果针对父作业请求了作业取消，则会对父作业及其所有子作业执行取消请求。
@@ -292,11 +291,11 @@ JobTaskExecution 对象包括任务生命周期的属性以及 Message 属性。
 	$jobExecutionId = "{Job Execution Id}"
 	Stop-AzureSqlJobExecution -JobExecutionId $jobExecutionId
 
-## 根据名称和作业的历史记录删除作业
+## 按名称和作业的历史记录删除作业
 
-弹性数据库作业支持异步删除作业。可将某个作业标记为待删除，系统将在作业的作业执行都已完成后，删除该作业及其所有作业历史记录。系统不会自动取消处于活动状态的作业执行。
+弹性数据库作业支持异步删除作业。可将某个作业标记为待删除，系统将在作业的作业执行都已完成后，删除该作业及其所有作业历史记录。系统不会自动取消活动的作业执行。
 
-必须调用 Stop-AzureSqlJobExecution 来取消处于活动状态的作业执行。
+必须调用 Stop-AzureSqlJobExecution 来取消活动的作业执行。
 
 若要触发作业删除，请使用 **Remove-AzureSqlJob** cmdlet 并设置 **JobName** 参数。
 
@@ -313,7 +312,7 @@ JobTaskExecution 对象包括任务生命周期的属性以及 Message 属性。
 	New-AzureSqlJobDatabaseTarget -DatabaseName $databaseName -ServerName $databaseServerName 
 
 ## 创建自定义数据库集合目标
-可以自定义数据库集合目标，以跨多个已定义数据库目标执行。创建数据库组之后，数据库可与自定义集合目标相关联。
+可以定义自定义数据库集合目标，以跨多个已定义数据库目标执行。创建数据库组之后，数据库可与自定义集合目标相关联。
 
 设置以下变量以反映所需的自定义集合目标配置：
 
@@ -342,7 +341,7 @@ JobTaskExecution 对象包括任务生命周期的属性以及 Message 属性。
 
 ### 创建作业以跨自定义数据库集合目标执行脚本
 
-使用 **New-AzureSqlJob** cmdlet 可以针对自定义数据库集合目标定义的数据库组创建作业。弹性数据库作业将作业扩展为多个子作业（每个子作业映射到与自定义数据库集合目标关联的数据库），并确保脚本针对每个数据库执行。同样，重要的是脚本具有幂等处理重试的弹性。
+使用 **New-AzureSqlJob** cmdlet 以针对自定义数据库集合目标定义的数据库组创建作业。弹性数据库作业将作业扩展为多个子作业（每个子作业对应于与自定义数据库集合目标关联的数据库），并确保脚本针对每个数据库执行。同样，重要的是脚本具有幂等处理重试的弹性。
 
 	$jobName = "{Job Name}"
 	$scriptName = "{Script Name}"
@@ -354,11 +353,11 @@ JobTaskExecution 对象包括任务生命周期的属性以及 Message 属性。
 
 ## 跨数据库收集数据
 
-**弹性数据库作业**支持跨数据库组执行查询，并将结果发送到指定的数据库表。可以在事实之后查询数据表，以查看每个数据库的查询结果。这提供了跨多个数据库执行查询的异步机制。例如其中一个数据库暂时不可用的失败案例是通过重试自动处理。
+**弹性数据库作业**支持跨数据库组执行查询，并将结果发送到指定的数据库表。可以在事实之后查询该表，以查看每个数据库的查询结果。这提供了跨多个数据库执行查询的异步机制。诸如其中一个数据库暂时不可用的失败案例通过重试自动处理。
 
 如果不存在与返回的结果集架构相符的指定目标表，则自动创建该表。如果脚本执行返回多个结果集，弹性数据库作业只将第一个结果集发送到提供的目标表。
 
-以下 PowerShell 脚本可用于执行脚本，将其结果收集到指定的表。此脚本假设已创建一个可输出单个结果集的 T-SQL 脚本，并且已创建自定义的数据库集合目标。
+以下 PowerShell 脚本可用于执行脚本，将其结果收集到指定表中。此脚本假设已创建一个可输出单个结果集的 T-SQL 脚本，并且已创建自定义数据库集合目标。
 
 设置以下项以反映所需的脚本、凭据和执行目标：
 
@@ -373,7 +372,7 @@ JobTaskExecution 对象包括任务生命周期的属性以及 Message 属性。
 	$destinationTableName = "{Destination Table Name}"
 	$target = Get-AzureSqlJobTarget -CustomCollectionName $customCollectionName
 
-### 创建和启动用于数据库收集方案的作业
+### 创建和启动用于数据收集方案的作业
 	$job = New-AzureSqlJob -JobName $jobName -CredentialName $executionCredentialName -ContentName $scriptName -ResultSetDestinationServerName $destinationServerName -ResultSetDestinationDatabaseName $destinationDatabaseName -ResultSetDestinationSchemaName $destinationSchemaName -ResultSetDestinationTableName $destinationTableName -ResultSetDestinationCredentialName $destinationCredentialName -TargetId $target.TargetId
 	Write-Output $job
 	$jobExecution = Start-AzureSqlJobExecution -JobName $jobName
@@ -381,9 +380,9 @@ JobTaskExecution 对象包括任务生命周期的属性以及 Message 属性。
 
 ## 使用作业触发器创建作业执行计划
 
-以下 PowerShell 脚本可用于创建重复计划。此脚本使用一分钟间隔，但是 New-AzureSqlJobSchedule 也支持 -DayInterval、-HourInterval、-MonthInterval 和 -WeekInterval 参数。可以通过传递 -OneTime 来创建仅执行一次的计划。
+以下 PowerShell 脚本可用于创建重复计划。此脚本使用一分钟间隔，但是 New-AzureSqlJobSchedule 也支持 -DayInterval、-HourInterval、-MonthInterval 和 -WeekInterval 参数。可以通过传递 -OneTime 创建仅执行一次的计划。
 
-创建新计划：
+新建计划：
 
 	$scheduleName = "Every one minute"
 	$minuteInterval = 1
@@ -426,7 +425,7 @@ JobTaskExecution 对象包括任务生命周期的属性以及 Message 属性。
 4. 	在“数据连接向导”中，键入服务器名称和登录凭据。然后，单击“下一步”。
 5. 	在对话框“选择包含所需数据的数据库”中，选择 **ElasticDBQuery** 数据库。
 6. 	在列表视图中选择“客户”表并单击“下一步”。然后单击“完成”。
-7. 	在“导入数据”窗体中的“请选择该数据在工作簿中的显示方式”下，选择“表”，然后单击“确定”。
+7. 	在“导入数据”窗体中的“请选择该数据在工作簿中的显示方式”下、选择“表”，然后单击“确定”。
 
 存储在不同分片中、来自“客户”表的所有行将填入 Excel 工作表。
 
@@ -449,4 +448,4 @@ JobTaskExecution 对象包括任务生命周期的属性以及 Message 属性。
 [5]: ./media/sql-database-elastic-query-getting-started/exel-sources.png
 <!--anchors-->
 
-<!---HONumber=Mooncake_1010_2016-->
+<!---HONumber=Mooncake_Quality_Review_1202_2016-->

@@ -1,5 +1,5 @@
 <properties
-   pageTitle="在迁移到 SQL 数据库之前使用 SQL Server Management Studio 解决 SQL Server 数据库兼容性问题 | Azure"
+   pageTitle="在迁移到 SQL 数据库之前，使用 SQL Server Management Studio 解决 SQL Server 数据库的兼容性问题 | Azure"
    description="Azure SQL 数据库, 数据库迁移, 兼容性, SQL Azure 迁移向导"
    services="sql-database"
    documentationCenter=""
@@ -14,11 +14,11 @@
    ms.tgt_pltfrm="NA"
    ms.workload="sqldb-migrate"
    ms.date="08/24/2016"
-   wacn.date="10/17/2016"
+   wacn.date="12/19/2016"
    ms.author="carlrab"/>  
 
 
-# 在迁移到 SQL 数据库之前使用 SQL Server Management Studio 解决 SQL Server 数据库兼容性问题
+# 在迁移到 SQL 数据库之前，使用 SQL Server Management Studio 解决 SQL Server 数据库的兼容性问题
 
 > [AZURE.SELECTOR]
 - 使用 [SQL Azure 迁移向导](/documentation/articles/sql-database-cloud-migrate-fix-compatibility-issues/)
@@ -28,7 +28,7 @@
 在迁移到 Azure SQL 数据库之前，高级用户可使用 SQL Server Management Studio 解决 SQL Server 数据库的兼容性问题。
 
 
-> [AZURE.IMPORTANT] 建议始终使用最新版本的 Management Studio 以保持与 Azure 和 SQL 数据库的更新同步。[更新 SQL Server Management Studio](https://msdn.microsoft.com/zh-cn/library/mt238290.aspx)。
+> [AZURE.IMPORTANT] 建议始终使用最新版本的 Management Studio 以与 Azure 和 SQL 数据库的更新保持同步。[更新 SQL Server Management Studio](https://msdn.microsoft.com/zh-cn/library/mt238290.aspx)。
 
 
 ## 使用 SQL Server Management Studio
@@ -49,4 +49,4 @@
 - [Transact-SQL 部分支持或不支持的函数](/documentation/articles/sql-database-transact-sql-information/)
 - [使用 SQL Server 迁移助手迁移非 SQL Server 数据库](http://blogs.msdn.com/b/ssma/)
 
-<!---HONumber=Mooncake_1010_2016-->
+<!---HONumber=Mooncake_Quality_Review_1202_2016-->
