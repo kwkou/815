@@ -28,36 +28,31 @@
 
 * 运行以下 Azure CLI 命令，获取 IoT 中心连接字符串：
 
-```bash
-az iot hub show-connection-string --name {my hub name} --resource-group iot-sample
-```
+        az iot hub show-connection-string --name {my hub name} --resource-group iot-sample
 
 `{my hub name}` 是用户在创建 IoT 中心和注册 Pi 时指定的名称。使用 `iot-sample` 作为 `{resource group name}` 的值（如果尚未更改此值）。
 
 * 运行以下命令，获取设备连接字符串：
 
-```bash
-az iot device show-connection-string --hub {my hub name} --device-id myraspberrypi --resource-group iot-sample
-```
+        az iot device show-connection-string --hub {my hub name} --device-id myraspberrypi --resource-group iot-sample
 
 `{my hub name}` 所采用的值与用于前一个命令的值相同。使用 `iot-sample` 作为 `{resource group name}` 的值，使用 `myraspberrypi` 作为 `{device id}` 的值（如果尚未更改此值）。
 
 ## 配置设备连接
 1. 运行以下命令初始化配置文件：
    
-    ```bash
-    npm install
-    gulp init
-    ```
+        npm install
+        gulp init
+
 2. 运行以下命令，在 Visual Studio Code 中打开设备配置文件 `config-raspberrypi.json`：
    
-    ```bash
-    # For Windows command prompt
-    code %USERPROFILE%\.iot-hub-getting-started\config-raspberrypi.json
-   
-    # For macOS or Ubuntu
-    code ~/.iot-hub-getting-started/config-raspberrypi.json
-    ```
+
+        # For Windows command prompt
+        code %USERPROFILE%\.iot-hub-getting-started\config-raspberrypi.json
+       
+        # For macOS or Ubuntu
+        code ~/.iot-hub-getting-started/config-raspberrypi.json
+
    
     ![config.json](./media/iot-hub-raspberry-pi-lessons/lesson3/config.png)  
 
@@ -72,9 +67,7 @@ az iot device show-connection-string --hub {my hub name} --device-id myraspberry
 ## 部署并运行示例应用程序
 运行以下命令，在 Pi 上部署并运行示例应用程序：
 
-```bash
-gulp
-```
+    gulp
 
 > [AZURE.NOTE] 默认 gulp 任务按顺序运行 `install-tools`、`deploy` 和 `run` 任务。[部署 blink 应用](/documentation/articles/iot-hub-raspberry-pi-kit-node-lesson1-deploy-blink-app/)时，是分别运行这些任务的。
 > 
