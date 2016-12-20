@@ -16,7 +16,7 @@
     ms.devlang="java"
     ms.topic="article"
     ms.date="10/19/2016"
-    wacn.date=""
+    wacn.date="12/20/2016"
     ms.author="robmcm" />
 
 # 如何将 Azure 从属插件用于 Jenkins 持续集成
@@ -94,11 +94,9 @@
    
     ![添加新云][cloud-section]  
 
-   
     此时将显示需要在其中输入订阅详细信息的字段。
    
     ![订阅配置][subscription-configuration]  
-
 
     >[AZURE.NOTE] 若要使用“Azure 中国区”，需要单击“...高级”，并将 “https://management.core.windows.net” 替换为 “https://management.core.chinacloudapi.cn” 。
 
@@ -123,7 +121,6 @@
    
     ![添加 Azure 虚拟机模板][add-vm-template]  
 
-   
     Jenkins 将显示一个表单，可在该表单的字段中输入有关所要创建的模板的详细信息。
    
     ![空白常规配置][blank-general-configuration]  

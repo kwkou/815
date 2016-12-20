@@ -14,7 +14,7 @@
     ms.tgt_pltfrm="vm-multiple"
     ms.workload="big-compute"
     ms.date="11/14/2016"
-    wacn.date=""
+    wacn.date="12/20/2016"
     ms.author="danlep" />  
 
 

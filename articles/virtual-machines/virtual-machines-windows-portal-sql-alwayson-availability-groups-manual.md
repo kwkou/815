@@ -16,7 +16,7 @@
     ms.tgt_pltfrm="vm-windows-sql-server"
     ms.workload="infrastructure-services"
     ms.date="10/21/2016"
-    wacn.date=""
+    wacn.date="12/20/2016"
     ms.author="MikeRayMSFT" />  
 
 
@@ -285,7 +285,6 @@ Azure 将创建虚拟机。
     
     ![使用 NSLOOKUP 查找 DC 的 IP 地址](./media/virtual-machines-windows-portal-sql-alwayson-availability-groups-manual/IC664954.png)  
 
-    
     > [AZURE.NOTE]
     设置 DNS 后，可能会断开与成员服务器之间的 RDP 会话。若发生此情况，可在 Azure 门户预览中重启 VM。
     > 
@@ -386,7 +385,6 @@ Azure 将创建虚拟机。
     
     ![使用 NSLOOKUP 查找 DC 的 IP 地址](./media/virtual-machines-windows-portal-sql-alwayson-availability-groups-manual/IC664954.png)  
 
-    
     > [AZURE.NOTE]
     设置 DNS 后，可能会断开与成员服务器之间的 RDP 会话。若发生此情况，可在 Azure 门户预览中重启 VM。
     > 
@@ -630,7 +628,6 @@ Azure 将创建虚拟机。
     
     ![故障转移群集管理器中的 AG](./media/virtual-machines-windows-portal-sql-alwayson-availability-groups-manual/IC665534.png)  
 
-    
     > [AZURE.WARNING]
     请勿尝试从故障转移群集管理器对可用性组进行故障转移。所有故障转移操作都应在 SSMS 中的 **AlwaysOn 仪表板**内进行。有关详细信息，请参阅[将 WSFC 故障转移群集管理器用于可用性组的限制](https://msdn.microsoft.com/zh-cn/library/ff929171.aspx)。
     > 
@@ -707,16 +704,15 @@ Azure 将创建虚拟机。
 8. 为此地址禁用 NetBIOS，然后单击“确定”。
 9. 在当前托管主副本的群集节点上，打开已提升权限的 PowerShell ISE，然后将以下命令粘贴到新脚本中。
    
-    ```
-    $ClusterNetworkName = "<MyClusterNetworkName>" # the cluster network name (Use Get-ClusterNetwork on Windows Server 2012 of higher to find the name)
-    $IPResourceName = "<IPResourceName>" # the IP Address resource name
-    $ILBIP = "<X.X.X.X>" # the IP Address of the Internal Load Balancer (ILB). This is the static IP address for the load balancer you configured in the Azure portal Preview.
-   [int]$ProbePort = <nnnnn> # In this sample we've using 59999 for the probe port. 
-   
-    Import-Module FailoverClusters
-   
-    Get-ClusterResource $IPResourceName | Set-ClusterParameter -Multiple @{"Address"="$ILBIP";"ProbePort"=$ProbePort;"SubnetMask"="255.255.255.255";"Network"="$ClusterNetworkName";"EnableDhcp"=0}
-    ```
+        $ClusterNetworkName = "<MyClusterNetworkName>" # the cluster network name (Use Get-ClusterNetwork on Windows Server 2012 of higher to find the name)
+        $IPResourceName = "<IPResourceName>" # the IP Address resource name
+        $ILBIP = "<X.X.X.X>" # the IP Address of the Internal Load Balancer (ILB). This is the static IP address for the load balancer you configured in the Azure portal Preview.
+        [int]$ProbePort = <nnnnn> # In this sample we've using 59999 for the probe port. 
+    
+        Import-Module FailoverClusters
+    
+        Get-ClusterResource $IPResourceName | Set-ClusterParameter -Multiple @{"Address"="$ILBIP";"ProbePort"=$ProbePort;"SubnetMask"="255.255.255.255";"Network"="$ClusterNetworkName";"EnableDhcp"=0}
+
 10. 更新变量并运行 PowerShell 脚本，以配置新侦听器的 IP 地址和端口。
 11. 在“故障转移群集管理器”中，右键单击可用性组资源，然后单击“属性”。在“依赖性”选项卡上，将资源组设置为依赖于侦听器网络名称。
 12. 将侦听器端口属性设置为 1433。为此，请打开 SQL Server Management Studio，右键单击可用性组侦听器，然后选择“属性”。将“端口”设置为 1433。应使用为 SQL Server 配置的相同端口号。
@@ -728,15 +724,11 @@ Azure 将创建虚拟机。
 1. 通过 RDP 连接到不拥有副本的 SQL Server。
 2. 使用 sqlcmd 实用工具来测试连接。例如，以下脚本通过侦听器与 Windows 身份验证来与主副本建立 sqlcmd 连接：
    
-    ```
-    sqlcmd -S "<listenerName>" -E
-    ```
+        sqlcmd -S "<listenerName>" -E
    
    如果侦听器使用的端口号不是 1433，则需在测试中指定端口号。例如，以下查询使用端口 1435 测试到侦听器名称的连接：
-   
-    ```
-    sqlcmd -S "<listenerName>",1435 -E
-    ```
+
+        sqlcmd -S "<listenerName>",1435 -E
 
 ## 后续步骤
 有关在 Azure 中使用 SQL Server 的其他信息，请参阅 [Azure 虚拟机上的 SQL Server](/documentation/articles/virtual-machines-windows-sql-server-iaas-overview/)。

@@ -18,7 +18,7 @@
     ms.devlang="na"
     ms.topic="support-article"
     ms.date="10/14/2016"
-    wacn.date=""
+    wacn.date="12/20/2016"
     ms.author="iainfou" />
 
 # 排查发送到 Azure 中 Windows VM 的特定 RDP 错误消息

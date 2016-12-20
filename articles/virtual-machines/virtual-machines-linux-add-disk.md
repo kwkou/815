@@ -17,7 +17,7 @@
     ms.tgt_pltfrm="vm-linux"
     ms.devlang="na"
     ms.date="09/06/2016"
-    wacn.date=""
+    wacn.date="12/20/2016"
     ms.author="rclaus" />
 
 # 将磁盘添加到 Linux VM

@@ -16,7 +16,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="11/14/2016"
-    wacn.date=""
+    wacn.date="12/20/2016"
     ms.author="iainfou" />
 
 # 如何将数据磁盘附加到 Linux 虚拟机
