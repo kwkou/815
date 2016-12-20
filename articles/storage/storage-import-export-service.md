@@ -9,7 +9,6 @@
 
 
 <tags
-
     ms.assetid="668f53f2-f5a4-48b5-9369-88ec5ea05eb5"
     ms.service="storage"
     ms.workload="storage"
