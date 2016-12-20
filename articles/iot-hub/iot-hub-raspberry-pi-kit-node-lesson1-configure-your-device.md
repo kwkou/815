@@ -53,9 +53,12 @@
 准备用于安装 Raspbian 映像的 microSD 卡。
 
 1. 下载 Raspbian。
+
    1. [下载](https://www.raspberrypi.org/downloads/raspbian/) Raspbian Jessie with Pixel 的 .zip 文件。
    2. 将 Raspbian 映像解压缩到计算机的某个文件夹中。
+
 2. 将 Raspbian 安装到 microSD 卡。
+
    1. [下载](https://www.etcher.io)并安装 Etcher SD 卡刻录机实用程序。
    2. 运行 Etcher 并选择已在步骤 1 中解压缩的 Raspbian 映像。
    3. 选择 microSD 卡驱动器。请注意，Etcher 可能已选择正确的驱动器。

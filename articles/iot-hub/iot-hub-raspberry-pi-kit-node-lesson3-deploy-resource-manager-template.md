@@ -36,10 +36,8 @@ Azure Functions 是一种解决方案，特别适合在云中运行*函数*（�
 ## 打开示例应用
 通过运行以下命令在 Visual Studio Code 中打开示例项目：
 
-```bash
-cd Lesson3
-code .
-```
+        cd Lesson3
+        code .
 
 ![存储库结构](./media/iot-hub-raspberry-pi-lessons/lesson3/repo_structure.png)  
 
@@ -64,9 +62,7 @@ code .
 
 更新 `arm-template-param.json` 文件后，请运行以下命令，将资源部署到 Azure：
 
-```bash
-az resource group deployment create --template-file-path arm-template.json --parameters-file-path arm-template-param.json -g iot-sample -n mydeployment
-```
+        az resource group deployment create --template-file-path arm-template.json --parameters-file-path arm-template-param.json -g iot-sample -n mydeployment
 
 创建这些资源约需五分钟。在创建这些资源时，用户可以阅读下一篇文章。
 

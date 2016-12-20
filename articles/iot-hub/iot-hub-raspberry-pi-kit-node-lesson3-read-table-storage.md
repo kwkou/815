@@ -31,28 +31,24 @@
 
 1. 运行以下命令，获取连接字符串：
    
-    ```bash
-    az storage account list -g iot-sample --query [].name
-    az storage account show-connection-string -g iot-sample -n {storage name}
-    ```
+        az storage account list -g iot-sample --query [].name
+        az storage account show-connection-string -g iot-sample -n {storage name}
    
     第一个命令检索 `storage name`，后者在第二个命令中用于获取连接字符串。`iot-sample` 是 `{resource group name}` 的默认值。
+    
 2. 运行以下命令，在 Visual Studio Code 中打开配置文件 `config-raspberrypi.json`：
    
-    ```bash
-    # For Windows command prompt
-    code %USERPROFILE%\.iot-hub-getting-started\config-raspberrypi.json
-   
-    # For macOS or Ubuntu
-    code ~/.iot-hub-getting-started/config-raspberrypi.json
-    ```
+        # For Windows command prompt
+        code %USERPROFILE%\.iot-hub-getting-started\config-raspberrypi.json
+       
+        # For macOS or Ubuntu
+        code ~/.iot-hub-getting-started/config-raspberrypi.json
+
 3. 将 `[Azure storage connection string]` 替换为在步骤 1 中获取的连接字符串。
 4. 保存 `config-raspberrypi.json` 文件。
 5. 运行以下命令，再次发送消息并从 Azure 表存储中读取这些消息：
    
-    ```bash
-    gulp run --read-storage
-    ```
+        gulp run --read-storage
    
     从 Azure 表存储进行读取的逻辑位于 `azure-table.js` 文件中。
    

@@ -34,10 +34,8 @@
 ## 将示例应用程序连接到 IoT 中心
 1. 确保位于存储库文件夹 `iot-hub-node-raspberrypi-getting-started` 中。通过运行以下命令在 Visual Studio Code 中打开示例应用程序：
    
-    ```bash
-    cd Lesson4
-    code .
-    ```
+        cd Lesson4
+        code .
    
     请注意 `app` 子文件夹中的 `app.js` 文件。`app.js` 文件是关键的源文件，其中包含的代码用于监视 IoT 中心发出的传入消息。`blinkLED` 函数可使 LED 闪烁。
    
@@ -45,10 +43,8 @@
 
 2. 使用以下命令初始化配置文件：
    
-    ```bash
-    npm install
-    gulp init
-    ```
+        npm install
+        gulp init
    
     如果用户已在此计算机上完成[创建 Azure 函数应用和存储帐户](/documentation/articles/iot-hub-raspberry-pi-kit-node-lesson3-deploy-resource-manager-template/)中的步骤，继承了所有配置，则可跳到用于部署并运行示例应用程序的任务。如果用户在另一计算机上完成了[创建 Azure 函数应用和存储帐户](/documentation/articles/iot-hub-raspberry-pi-kit-node-lesson3-deploy-resource-manager-template/)中的步骤，则需替换 `config-raspberrypi.json` 文件中的占位符。`config-raspberrypi.json` 文件位于主文件夹的子文件夹中。
    
@@ -62,9 +58,7 @@
 ## 部署并运行示例应用程序
 运行以下命令，在 Pi 上部署并运行示例应用程序：
 
-```
-gulp
-```
+        gulp
 
 Gulp 命令首先运行 install-tools 任务，然后将示例应用程序部署到 Pi。最后，它会在 Pi 上运行该应用程序，并在主机上运行单独的任务，以便从 IoT 中心将 20 条闪烁消息发送到 Pi。
 
