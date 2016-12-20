@@ -17,7 +17,7 @@
     ms.tgt_pltfrm="vm-linux"
     ms.workload="infrastructure-services"
     ms.date="11/17/2016"
-    wacn.date=""
+    wacn.date="12/20/2016"
     ms.author="nepeters" />
 
 # 关于虚拟机扩展和功能

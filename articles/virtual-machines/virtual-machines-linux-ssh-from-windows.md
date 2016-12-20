@@ -17,7 +17,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="10/18/2016"
-    wacn.date=""
+    wacn.date="12/20/2016"
     ms.author="rasquill" />
 
 # 如何在 Azure 上的 Windows 中使用 SSH 密钥
@@ -137,7 +137,6 @@ PuTTY 是适用于 Windows 的常用 SSH 客户端。不过，你可以根据需
    
     ![保存 PuTTY 公钥文件](./media/virtual-machines-linux-ssh-from-windows/save-public-key.png)  
 
-   
     以下示例演示在创建 Linux VM 时，如何复制此公钥并将其粘贴到 Azure 门户中。然后，公钥通常存储在新 VM 上的 `~/.ssh/authorized_keys` 中。
    
     ![在 Azure 门户预览中创建 VM 时使用公钥](./media/virtual-machines-linux-ssh-from-windows/use-public-key-azure-portal.png)  
@@ -146,11 +145,10 @@ PuTTY 是适用于 Windows 的常用 SSH 客户端。不过，你可以根据需
    
     ![保存 PuTTY 私钥文件](./media/virtual-machines-linux-ssh-from-windows/save-ppk-file.png)  
 
-   
-   > [AZURE.WARNING]
-   此时将显示一条提示，询问你是否想要继续，且不输入密钥的通行短语。通行短语类似于附加到私钥的密码。即使有人获取了你的私钥，但如果单纯使用该密钥，他们也无法进行身份验证，必须获得通行短语才行。如果有人获取了你的私钥但没有通行短语，他们可以登录到使用该密钥的任何 VM 或服务。我们建议创建一个通行短语。但是，如果你忘记了通行短语，将没有办法恢复它。
-   > 
-   > 
+    > [AZURE.WARNING]
+    此时将显示一条提示，询问你是否想要继续，且不输入密钥的通行短语。通行短语类似于附加到私钥的密码。即使有人获取了你的私钥，但如果单纯使用该密钥，他们也无法进行身份验证，必须获得通行短语才行。如果有人获取了你的私钥但没有通行短语，他们可以登录到使用该密钥的任何 VM 或服务。我们建议创建一个通行短语。但是，如果你忘记了通行短语，将没有办法恢复它。
+    > 
+    > 
    
     如果要输入密码，请单击“否”，在主 PuTTYgen 窗口中输入密码，然后再次单击“保存私钥”。否则，请单击“是”继续而不提供可选密码。
 9. 输入名称和位置，保存 PPK 文件。

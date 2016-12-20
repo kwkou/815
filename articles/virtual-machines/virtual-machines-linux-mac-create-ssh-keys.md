@@ -17,7 +17,7 @@
     ms.devlang="na"
     ms.topic="get-started-article"
     ms.date="11/14/2016"
-    wacn.date=""
+    wacn.date="12/20/2016"
     ms.author="v-livech" />
 
 # 在 Linux 和 Mac 上为 Azure 中的 Linux VM 创建 SSH 密钥

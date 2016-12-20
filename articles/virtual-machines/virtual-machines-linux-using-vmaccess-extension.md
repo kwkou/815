@@ -17,7 +17,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="10/25/2016"
-    wacn.date=""
+    wacn.date="12/20/2016"
     ms.author="v-livech" />
 
 # 管理用户、SSH，并使用 VMAccess 扩展检查或修复 Azure Linux VM 上的磁盘

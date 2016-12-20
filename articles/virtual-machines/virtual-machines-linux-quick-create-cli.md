@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="vm-linux"
     ms.workload="infrastructure"
     ms.date="09/26/2016"
-    wacn.date=""
+    wacn.date="12/20/2016"
     ms.author="rasquill" />  
 
 

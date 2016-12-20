@@ -17,7 +17,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="10/19/2016"
-    wacn.date=""
+    wacn.date="12/20/2016"
     ms.author="drewm" />
 
 # 调整 Windows VM 的大小

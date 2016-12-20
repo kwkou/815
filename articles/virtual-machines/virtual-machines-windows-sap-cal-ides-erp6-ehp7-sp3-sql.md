@@ -18,7 +18,7 @@
     ms.tgt_pltfrm="vm-windows"
     ms.workload="infrastructure-services"
     ms.date="09/16/2016"
-    wacn.date=""
+    wacn.date="12/20/2016"
     ms.author="hermannd" />
 
 # 在 Azure 上为 SAP ERP 6.0 部署 SAP IDE EHP7 SP3

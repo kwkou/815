@@ -15,7 +15,7 @@
     ms.tgt_pltfrm="vm-linux"
     ms.workload="infrastructure"
     ms.date="11/14/2016"
-    wacn.date=""
+    wacn.date="12/20/2016"
     ms.author="iainfou" />
 
 # 通过使用 Azure CLI 将 OS 磁盘附加到恢复 VM 来对 Linux VM 进行故障排除
