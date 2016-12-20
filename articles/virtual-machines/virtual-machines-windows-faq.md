@@ -16,7 +16,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="08/16/2016"
-	wacn.date="12/12/2016"
+	wacn.date="12/20/2016"
 	ms.author="cynthn"/>  
 
 
@@ -139,5 +139,9 @@ Azure 存储帐户可为操作系统磁盘和任何数据磁盘提供存储空�
 		<td style="text-align:center">pass@word1</td><td style="text-align:center">Password!</td><td style="text-align:center">Password1</td><td style="text-align:center">Password22</td><td style="text-align:center">iloveyou!</td>
 	</tr>
 </table>
+
+## 我的 windows 虚拟机为何会被自动重启？
+
+答：通过 Azure 平台部署的 windows 虚拟机，依照最佳实践方案，默认启用了 windows 自动更新，来保证系统的更新和安全。遇到重大更新的时候，虚拟机会自动重启虚拟机，使之生效。如果您不希望自动更新影响到您的在线运行，可以在部署完毕以后，选择自动下载更新但是手动安装。
 
 <!---HONumber=Mooncake_Quality_Review_1118_2016-->
