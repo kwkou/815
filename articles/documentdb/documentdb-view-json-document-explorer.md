@@ -134,7 +134,7 @@
 	![文档资源管理器“刷新”命令的屏幕截图](./media/documentdb-view-JSON-document-explorer/documentexplorerrefresh.png)
 
 
-## 批量添加文档  <a name="BulkAdd"></a>
+## 批量添加文档  <a name="bulk-add-documents"></a>
 
 文档资源管理器支持批量引入一个或多个现有 JSON 文档，每个上传操作最多上传 100 个 JSON 文件。
 
