@@ -14,7 +14,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
    ms.date="02/23/2016"
-   wacn.date="04/25/2016"
+   wacn.date="12/16/2016"
    ms.author="jdial" /> 
 
 
@@ -56,4 +56,4 @@
 - 了解 [Azure 服务配置架构](https://msdn.microsoft.com/zh-cn/library/azure/ee758710)。
 - [使用网络配置文件配置虚拟网络](/documentation/articles/virtual-networks-using-network-configuration-file/)。
 
-<!---HONumber=Mooncake_0418_2016-->
+<!---HONumber=Mooncake_Quality_Review_1202_2016-->

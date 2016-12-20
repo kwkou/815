@@ -1,6 +1,6 @@
 <properties
 	pageTitle="Windows VM 的计划内维护 | Azure"
-	description="了解什么是 Azure 计划内维护以及它如何影响正在 Azure 中运行的 Windows 虚拟机"
+	description="了解什么是 Azure 计划内维护以及它如何影响 Azure 中运行的 Windows 虚拟机"
 	services="virtual-machines-windows"
 	documentationCenter=""
 	authors="drewm"
@@ -15,7 +15,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="04/26/2016"
-	wacn.date="06/13/2016"
+	wacn.date=12/16/2016"
 	ms.author="drewm"/>
 
 # Azure 中虚拟机的计划内维护
@@ -25,7 +25,7 @@
 
 本文提供有关 Azure 计划内维护过程的背景信息。如果你想要排查 VM 重新启动的原因，可以[阅读此博客文章，其中详细说明了如何查看 VM 重新启动日志](https://azure.microsoft.com/blog/viewing-vm-reboot-logs/)。
 
-[AZURE.INCLUDE [了解部署模型](../../includes/learn-about-deployment-models-both-include.md)]
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-both-include.md)]
 
 
 ## Azure 为何要执行计划内维护
@@ -38,4 +38,4 @@ Azure 在全球范围内定期执行更新，以提高虚拟机所基于的主�
 
 [AZURE.INCLUDE [virtual-machines-common-planned-maintenance](../../includes/virtual-machines-common-planned-maintenance.md)]
 
-<!---HONumber=Mooncake_0606_2016-->
+<!---HONumber=Mooncake_Quality_Review_1202_2016-->

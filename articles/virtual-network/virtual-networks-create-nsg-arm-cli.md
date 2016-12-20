@@ -1,5 +1,3 @@
-<!-- ARM: tested -->
-
 <properties 
    pageTitle="如何使用 Azure CLI 在 ARM 模式下创建 NSG | Azure"
    description="了解如何使用 Azure CLI 在 ARM 模式下创建和部署 NSG"
@@ -17,7 +15,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
    ms.date="03/15/2016"
-   wacn.date="06/06/2016"
+   wacn.date="12/16/2016"
    ms.author="jdial" />
 
 # 如何在 Azure CLI 中创建 NSG
@@ -37,7 +35,7 @@
 ## 如何为前端子网创建 NSG
 若要基于上述方案创建名为 *NSG-FrontEnd* 的 NSG，请执行下面的步骤。
 
-1. 如果你从未使用过 Azure CLI，请参阅[安装和配置 Azure CLI](/documentation/articles/xplat-cli-install/)，并按照说明进行操作，直到选择 Azure 帐户和订阅。
+1. 如果你从未使用过 Azure CLI，请参阅 [Install and Configure the Azure CLI](/documentation/articles/xplat-cli-install/)（安装和配置 Azure CLI），并按照说明进行操作，直到选择 Azure 帐户和订阅。
 
 2. 运行 **azure config mode** 命令以切换到资源管理器模式，如下所示。
 
@@ -75,7 +73,7 @@
 
 	参数：
 	- **-g（或 --resource-group）**。要创建 NSG 所在的资源组的名称。对于我们的方案，为 *TestRG*。
-	- **-l（或 --location）**。要创建新 NSG 所在的 Azure 区域。对于我们的方案，为 *chinanorth*。
+	- **-l（或 --location）**。将在其中创建新 NSG 的 Azure 区域。对于我们的方案，为 *chinanorth*。
 	- **-n（或 --name）**。新 NSG 的名称。对于我们的方案，为 *NSG-FrontEnd*。
 
 4. 运行 **azure network nsg rule create** 命令以创建允许从 Internet 访问端口 3389 (RDP) 的规则。
@@ -106,7 +104,7 @@
 
 	参数：
 
-	- **-a（或 --nsg-name）**。要创建规则所在的 NSG 的名称。对于我们的方案，为 *NSG-FrontEnd*。
+	- **-a（或 --nsg-name）**。将在其中创建规则的 NSG 的名称。对于我们的方案，为 *NSG-FrontEnd*。
 	- **-n（或 --name）**。新规则的名称。对于我们的方案，为 *rdp-rule*。
 	- **-c（或 --access）**。规则的访问级别（拒绝或允许）。
 	- **-p（或 --protocol）**。规则的协议（Tcp、Udp 或 *）。
@@ -274,4 +272,4 @@
 		data:    
 		info:    network vnet subnet set command OK
 
-<!---HONumber=74-->
+<!---HONumber=Mooncake_Quality_Review_1202_2016-->

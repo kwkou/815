@@ -17,7 +17,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="08/30/2016"
-    wacn.date="10/24/2016"
+    wacn.date="12/16/2016"
     ms.author="v-livech"
 />  
 
@@ -26,7 +26,7 @@
 
 本文说明如何使用 Azure VMAcesss 扩展检查或修复磁盘、重置用户访问权限、管理用户帐户，或重置 Linux 上的 SSHD 配置。
 
-先决条件包括：[Azure 帐户](/pricing/1rmb-trial/)、[SSH 公钥与私钥](/documentation/articles/virtual-machines-linux-mac-create-ssh-keys/)，Azure CLI 已安装并已使用 `azure config mode arm` 切换到 Resource Manager 模式。
+先决条件包括：[Azure 帐户](/pricing/1rmb-trial/)、[SSH 公钥与私钥](/documentation/articles/virtual-machines-linux-mac-create-ssh-keys/)，Azure CLI 已安装并已使用 `azure config mode arm` 切换到资源管理器模式。
 
 ## 快速命令
 
@@ -53,15 +53,15 @@
 	-n debianexamplevm \
 	-Q Debian
 
-## 重置 root 密码
+## 重置根密码
 
-重置 Root 密码：
+重置根密码：
 
 	azure vm reset-access -g exampleResourceGroup -n exampleVMName -u root -p examplenewPassword
 
 ## SSH 密钥重置
 
-重置非 root 用户的 SSH 密钥：
+重置非根用户的 SSH 密钥：
 
 	azure vm reset-access -g exampleResourceGroup -n exampleVMName -u userexample -M ~/.ssh/id_rsa.pub
 
@@ -85,9 +85,9 @@
 
 ### 定义的 VMAccess：
 
-Linux VM 上的磁盘显示错误。不知道怎样重置 Linux VM 的 root 密码，或者不小心删除了 SSH 私钥。如果在数据中心的时代发生这种情况，则需要开车到那里，然后打开 KVM 访问服务器控制台。请将 Azure VMAccess 扩展想像成该 KVM 交换机，它允许你访问控制台以重置 Linux 访问或执行磁盘级维护。
+Linux VM 上的磁盘显示错误。不知道怎样重置 Linux VM 的根密码，或者不小心删除了 SSH 私钥。如果在数据中心时代发生这种情况，则需要开车到那里，然后打开 KVM 访问服务器控制台。请将 Azure VMAccess 扩展想像成该 KVM 交换机，它允许你访问控制台以重置 Linux 访问或执行磁盘级维护。
 
-在详细演练中，将使用使用原始 JSON 文件的 VMAccess 的长格式。从 Azure 模板也可以调用这些 VMAccess JSON 文件。
+在详细演练中，将采用使用原始 JSON 文件的 VMAccess 的长格式。从 Azure 模板也可以调用这些 VMAccess JSON 文件。
 
 ### 使用 VMAccess 检查或修复 Linux VM 的磁盘
 
@@ -111,9 +111,9 @@ Linux VM 上的磁盘显示错误。不知道怎样重置 Linux VM 的 root 密�
 
 ### 使用 VMAccess 重置 Linux 的用户访问权限
 
-如果已失去 Linux VM 的 root 访问权限，可以启动 VMAccess 脚本重置 root 密码。
+如果已失去 Linux VM 的根访问权限，可以启动 VMAccess 脚本重置根密码。
 
-若要重置 root 密码，请使用此 VMAccess 脚本：
+若要重置根密码，请使用此 VMAccess 脚本：
 
 `reset_root_password.json`  
 
@@ -129,7 +129,7 @@ Linux VM 上的磁盘显示错误。不知道怎样重置 Linux VM 的 root 密�
 	VMAccessForLinux Microsoft.OSTCExtensions * \
 	--private-config-path reset_root_password.json
 
-若要重置非 root 用户的 SSH 密钥，请使用此 VMAccess 脚本：
+若要重置非根用户的 SSH 密钥，请使用此 VMAccess 脚本：
 
 `reset_ssh_key.json`  
 
@@ -147,7 +147,7 @@ Linux VM 上的磁盘显示错误。不知道怎样重置 Linux VM 的 root 密�
 
 ### 使用 VMAccess 管理 Linux 上的用户帐户
 
-VMAccess 是一种 Python 脚本，可用于管理 Linux VM 上的用户，而不需要登录和使用 sudo 或 root 帐户。
+VMAccess 是一种 Python 脚本，可用于管理 Linux VM 上的用户，而不需要登录和使用 sudo 或根帐户。
 
 若要创建用户，请使用此 VMAccess 脚本：
 
@@ -183,7 +183,7 @@ VMAccess 是一种 Python 脚本，可用于管理 Linux VM 上的用户，而�
 
 ### 使用 VMAccess 重置 SSHD 配置
 
-如果你更改了 Linux VM SSHD 配置，并在验证更改之前关闭 SSH 连接，可能无法恢复 SSH 操作。使用 VMAccess 可将 SSHD 配置重置回到已知正常的配置，而无需通过 SSH 登录。
+如果你更改了 Linux VM SSHD 配置，并在验证更改之前关闭了 SSH 连接，则可能无法恢复 SSH 操作。使用 VMAccess 可将 SSHD 配置重置回已知正常的配置，而无需通过 SSH 登录。
 
 使用此 VMAccess 脚本重置 SSHD 配置：
 
@@ -210,4 +210,4 @@ VMAccess 是一种 Python 脚本，可用于管理 Linux VM 上的用户，而�
 
 [在创建期间使用 cloud-init 自定义 Linux VM](/documentation/articles/virtual-machines-linux-using-cloud-init/)
 
-<!---HONumber=Mooncake_1017_2016-->
+<!---HONumber=Mooncake_Quality_Review_1202_2016-->

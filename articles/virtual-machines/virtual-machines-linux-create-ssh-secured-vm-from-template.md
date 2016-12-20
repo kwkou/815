@@ -16,13 +16,13 @@
 	ms.devlang="na"
 	ms.topic="hero-article"
 	ms.date="08/17/2016"
-	wacn.date="10/24/2016"
+	wacn.date="12/16/2016"
 	ms.author="v-livech"/>  
 
 
 # 使用 Azure 模板创建 Linux VM
 
-本文说明如何使用 Azure 模板在 Azure 上快速部署 Linux 虚拟机。本文需要一个 Azure 帐户（[获取试用版](/pricing/1rmb-trial/)]、已通过 (`azure login -e AzureChinaCloud`) 登录 [Azure CLI](/documentation/articles/xplat-cli-install/)，并处于 Resource Manager 模式 (`azure config mode arm`)。也可以使用 [Azure 门户预览](/documentation/articles/virtual-machines-linux-quick-create-portal/)或 [Azure CLI](/documentation/articles/virtual-machines-linux-quick-create-cli/) 快速部署 Linux VM。
+本文说明如何使用 Azure 模板在 Azure 上快速部署 Linux 虚拟机。本文中的操作需要一个 Azure 帐户（[获取试用帐户](/pricing/1rmb-trial/)）、已登录 (`azure login -e AzureChinaCloud`) 且处于资源管理器模式 (`azure config mode arm`) 的 [Azure CLI](/documentation/articles/xplat-cli-install/)。也可以使用 [Azure 门户预览](/documentation/articles/virtual-machines-linux-quick-create-portal/)或 [Azure CLI](/documentation/articles/virtual-machines-linux-quick-create-cli/) 快速部署 Linux VM。
 
 ## 快速命令摘要
 
@@ -67,10 +67,10 @@ Azure Resource Manager 模板是可用于简单一次性任务（例如启动 Ub
 	data:
 	info:    group create command OK
 
-该示例使用 `--template-uri` 参数部署了 VM。还可以在本地下载或创建模板，然后使用 `--template-file` 形式参数并将模板文件的路径作为实际参数来传递该模板。Azure CLI 将提示你输入模板所需的参数。
+该示例使用 `--template-uri` 参数部署了 VM。还可以在本地下载或创建模板，然后使用 `--template-file` 参数并以模板文件路径作为实际参数来传递该模板。Azure CLI 将提示你输入模板所需的参数。
 
 ## 后续步骤
 
 搜索[模板库](https://github.com/Azure/azure-quickstart-templates/)以发现下一步要部署哪些应用框架。
 
-<!---HONumber=Mooncake_1017_2016-->
+<!---HONumber=Mooncake_Quality_Review_1202_2016-->

@@ -16,7 +16,7 @@
 	ms.tgt_pltfrm="vm-windows-sql-server"
 	ms.workload="infrastructure-services"
 	ms.date="10/11/2016"
-	wacn.date="11/28/2016"
+	wacn.date="12/16/2016"
 	ms.author="jroth"/>  
 
 
@@ -94,4 +94,4 @@ Azure VM 可以使用[自动修补](/documentation/articles/virtual-machines-win
 
 其他问题？ 请先参阅 [Azure 虚拟机中的 SQL Server 常见问题解答](/documentation/articles/virtual-machines-windows-sql-server-iaas-faq/)。同时将问题或看法添加到任何 SQL VM 主题的底部，以便与 Azure.cn 和社区互动。
 
-<!---HONumber=Mooncake_1121_2016-->
+<!---HONumber=Mooncake_Quality_Review_1202_2016-->

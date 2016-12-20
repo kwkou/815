@@ -15,7 +15,7 @@
         ms.devlang="na"
         ms.topic="article"
         ms.date="06/14/2016"
-        wacn.date="07/18/2016"
+        wacn.date="12/16/2016"
         ms.author="cynthn"/>
 
 # 如何使用 VMAccess 扩展重置 Linux VM 密码或 SSH 密钥、修复 SSH 配置，以及检查磁盘一致性
@@ -23,7 +23,7 @@
 
 如果因为忘记密码、安全外壳 (SSH) 密钥不正确或 SSH 配置出现问题而不能连接到 Azure 上的 Linux 虚拟机，请使用 VMAccessForLinux 扩展通过 Azure CLI 重置密码或 SSH 密钥、修复 SSH 配置以及检查磁盘一致性。
 
-> [AZURE.IMPORTANT] Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model/)。本文介绍使用经典部署模型。Azure 建议大多数新部署使用资源管理器模型。学习如何[使用资源管理器模型执行这些步骤](https://github.com/Azure/azure-linux-extensions/tree/master/VMAccess)。
+> [AZURE.IMPORTANT] Azure 具有两种不同的部署模型，用于创建和处理资源：[资源管理器模型和经典模型](/documentation/articles/resource-manager-deployment-model/)。本文介绍如何使用经典部署模型。Azure 建议大多数新部署使用资源管理器模型。学习如何[使用资源管理器模型执行这些步骤](https://github.com/Azure/azure-linux-extensions/tree/master/VMAccess)。
 
 借助 Azure CLI，你可以从命令行接口（Bash、终端、命令提示符）使用 **azure vm extension set** 命令来访问各种命令。运行 **azure help vm extension set** 可了解扩展的详细用法。
 
@@ -95,13 +95,13 @@
 
 ## <a name="createnewsudocli"></a>创建新的 sudo 用户帐户
 
-如果忘记了用户名，可以使用 VMAccess 创建一个具有 sudo 授权的新用户帐户。在这种情况下，不会修改现有的用户名和密码。
+如果忘记用户名，可以使用 VMAccess 创建具有 sudo 权限的新用户帐户。在这种情况下，不会修改现有的用户名和密码。
 
 若要创建具有密码访问权限的新 sudo 用户，请使用“[重置密码](#pwresetcli)”中的脚本并指定新用户名。
 
 若要创建具有 SSH 密钥访问权限的新 sudo 用户，请使用“[重置 SSH 密钥](#sshkeyresetcli)”中的脚本并指定新用户名。
 
-你还可以使用“[重置密码和 SSH 密钥](#resetbothcli)”来创建同时具有密码和 SSH 密钥访问权限的新用户。
+你还可以使用“[重置密码和 SSH 密钥](#resetbothcli)”来创建同时具有密码访问权和 SSH 密钥访问权限的新用户。
 
 ## <a name="sshconfigresetcli"></a>重置 SSH 配置
 
@@ -174,8 +174,8 @@
 
 * 如果你要使用 Azure PowerShell cmdlet 或 Azure Resource Manager 模板来重置密码或 SSH 密钥、修复 SSH 配置和检查磁盘一致性，请参阅 [GitHub 上的 VMAccess 扩展文档](https://github.com/Azure/azure-linux-extensions/tree/master/VMAccess)。
 
-* 你也可以使用 [Azure 门户预览](https://portal.azure.cn)来重置部署在经典部署模型中的 Linux VM 的密码或 SSH 密钥。目前你无法使用门户来针对部署在 Resource Manager 部署模型中的 Linux VM 执行上述操作。
+* 你也可以使用 [Azure 门户预览](https://portal.azure.cn)来重置通过经典部署模型部署的 Linux VM 的密码或 SSH 密钥。目前你无法使用门户来针对通过资源管理器部署模型部署的 Linux VM 执行上述操作。
 
 * 有关使用适用于 Azure 虚拟机的 VM 扩展的详细信息，请参阅[关于虚拟机扩展和功能](/documentation/articles/virtual-machines-linux-extensions-features/)。
 
-<!---HONumber=Mooncake_0711_2016-->
+<!---HONumber=Mooncake_Quality_Review_1202_2016-->

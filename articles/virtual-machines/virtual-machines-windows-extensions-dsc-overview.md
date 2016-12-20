@@ -17,7 +17,7 @@
    ms.tgt_pltfrm="vm-windows"
    ms.workload="na"
    ms.date="09/15/2016"
-   wacn.date="11/28/2016"
+   wacn.date="12/16/2016"
    ms.author="zachal"/>  
 
 
@@ -30,11 +30,9 @@ Azure VM 代理和关联的扩展是 Azure 基础结构服务的一部分。VM �
 本文将介绍 Azure PowerShell SDK 中包含的适用于 Azure VM 的 PowerShell Desired State Configuration (DSC) 扩展。使用新 cmdlet 可将 PowerShell DSC 配置上载到 PowerShell DSC 扩展启用的 Azure VM 并应用该配置。PowerShell DSC 扩展可调用 PowerShell DSC，在 VM 上启用收到的 DSC 配置。也可以通过 Azure 门户预览使用此功能。
 
 ## 先决条件 ##
-**本地计算机**
-需要使用 Azure 门户预览或 Azure PowerShell SDK 才能与 Azure VM 扩展交互。
+**本地计算机** 需要使用 Azure 门户预览或 Azure PowerShell SDK 才能与 Azure VM 扩展交互。
 
-**来宾代理**
-要由 DSC 配置进行配置的 Azure VM 必须是支持 Windows Management Framework (WMF) 4.0 或 5.0 的 OS。有关支持的 OS 版本的完整列表，请参阅 [DSC Extension Version History](https://blogs.msdn.microsoft.com/powershell/2014/11/20/release-history-for-the-azure-dsc-extension/)（DSC 扩展版本历史记录）。
+**来宾代理** 要由 DSC 配置进行配置的 Azure VM 必须是支持 Windows Management Framework (WMF) 4.0 或 5.0 的 OS。有关支持的 OS 版本的完整列表，请参阅 [DSC Extension Version History](https://blogs.msdn.microsoft.com/powershell/2014/11/20/release-history-for-the-azure-dsc-extension/)（DSC 扩展版本历史记录）。
 
 ## 术语和概念 ##
 本指南假设你熟悉以下概念：
@@ -147,4 +145,4 @@ C:\\WindowsAzure\\Logs\\Plugins\\Microsoft.Powershell.DSC[Version Number]
 
 有关将敏感参数传入配置的详细信息，请参阅 [Manage credentials securely with the DSC extension handler](/documentation/articles/virtual-machines-windows-extensions-dsc-credentials/)（使用 DSC 扩展处理程序安全管理凭据）。
 
-<!---HONumber=Mooncake_1121_2016-->
+<!---HONumber=Mooncake_Quality_Review_1202_2016-->

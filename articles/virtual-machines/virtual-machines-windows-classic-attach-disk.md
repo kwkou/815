@@ -16,7 +16,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="06/27/2016"
-	wacn.date="11/28/2016"
+	wacn.date="12/16/2016"
 	ms.author="cynthn"/>
 
 # 将数据磁盘附加到使用经典部署模型创建的 Windows 虚拟机
@@ -58,4 +58,4 @@
 
 [logon]: /documentation/articles/virtual-machines-windows-classic-connect-logon/
 
-<!---HONumber=Mooncake_1121_2016-->
+<!---HONumber=Mooncake_Quality_Review_1202_2016-->

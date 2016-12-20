@@ -17,7 +17,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="08/30/2016"
-    wacn.date="10/24/2016"
+    wacn.date="12/16/2016"
     ms.author="v-livech"
 />  
 
@@ -84,7 +84,7 @@ Azure 有三种不同的方法可在部署或启动 Linux VM 时对其进行更�
 - 以命令方式或在 Azure 模板中使用 Azure [VMAccess 扩展](/documentation/articles/virtual-machines-linux-using-vmaccess-extension/)注入脚本
 - Ansible、Salt、Chef 和 Puppet 等配置管理工具。
 
->[AZURE.NOTE]\: VMAccess 扩展以使用 SSH 可以进行的相同方式以 root 身份执行脚本。但是，使用 VM 扩展可以启用 Azure 提供的几项功能，这些功能可以很有用，具体取决于用户的方案。
+>[AZURE.NOTE]VMAccess 扩展以使用 SSH 可以进行的相同方式以根用户身份执行脚本。但是，使用 VM 扩展可以启用 Azure 提供的几项功能，这些功能可以很有用，具体取决于用户的方案。
 
 ### Azure VM 上的 Cloud-init 可用性快速创建映像别名：
 
@@ -96,12 +96,12 @@ Azure 有三种不同的方法可在部署或启动 Linux VM 时对其进行更�
 | openSUSE | SUSE | openSUSE | 13\.2 | 最新 | 否 |
 | UbuntuLTS | Canonical | UbuntuServer | 14\.04.3-LTS | 最新 | 是 |
 
-Microsoft 正在与合作伙伴协作将 cloud-init 包含在用户向 Azure 提供的映像中并让它在其中正常工作。
+Microsoft 正在与合作伙伴合作，将 cloud-init 包含在用户向 Azure 提供的映像中并让它在其中正常工作。
 
 
 ## 详细演练
 
-### 将 cloud-init 脚本添加使用 Azure CLI 创建 VM 的操作中
+### 将 cloud-init 脚本添加到使用 Azure CLI 创建 VM 的操作中
 
 在 Azure 中创建 VM 时，若要启动 cloud-init 脚本，请使用 Azure CLI `--custom-data` 开关来指定 cloud-init 文件。
 
@@ -159,14 +159,14 @@ Microsoft 正在与合作伙伴协作将 cloud-init 包含在用户向 Azure 提
 
 ### 创建 cloud-init 脚本以更新 Linux
 
-为了安全，用户希望 Ubuntu VM 在首次启动时更新。根据所用的 Linux 分发版，我们可以使用 cloud-init 和以下脚本执行此操作。
+为了安全，用户希望 Ubuntu VM 在首次启动时更新。根据所用的 Linux 分发，我们可以使用 cloud-init 和以下脚本执行此操作。
 
 #### 适用于 Debian 系列的示例 cloud-init 脚本 `cloud_config_apt_upgrade.txt`
 
 	#cloud-config
 	apt_upgrade: true
 
-启动 Linux 后，所有已安装的包将通过 `apt-get` 进行更新。
+Linux 启动后，所有已安装的包将通过 `apt-get` 进行更新。
 
 	azure vm create \
 	--resource-group cloudinitexample \
@@ -241,10 +241,10 @@ Linux 启动后，所有列出的用户都已创建并添加到 sudo 组。
 
 ## 后续步骤
 
-Cloud-init 正在成为一种在 Linux VM 启动时对其进行修改的标准方法。Azure 还提供 VM 扩展，使用这些扩展可以在 LinuxVM 启动或运行时对其进行修改。例如，可以使用 Azure VMAccessExtension 在 VM 运行时重置 SSH 或用户信息。使用 cloud-init，需要重新启动才能重置密码。
+Cloud-init 正成为在 Linux VM 启动时对其进行修改的一种标准方法。Azure 还提供 VM 扩展，使用这些扩展可以在 LinuxVM 启动或运行时对其进行修改。例如，可以使用 Azure VMAccessExtension 在 VM 运行时重置 SSH 或用户信息。使用 cloud-init，需要重新启动才能重置密码。
 
 [关于虚拟机扩展和功能](/documentation/articles/virtual-machines-linux-extensions-features/)
 
 [管理用户、SSH，并使用 VMAccess 扩展检查或修复 Azure Linux VM 上的磁盘](/documentation/articles/virtual-machines-linux-using-vmaccess-extension/)
 
-<!---HONumber=Mooncake_1017_2016-->
+<!---HONumber=Mooncake_Quality_Review_1202_2016-->

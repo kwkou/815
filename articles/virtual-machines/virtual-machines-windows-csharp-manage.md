@@ -16,7 +16,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="09/27/2016"
-	wacn.date="11/28/2016"
+	wacn.date="12/16/2016"
 	ms.author="davidmu"/>  
 
 
@@ -39,9 +39,9 @@
 
 3. 在解决方案资源管理器中右键单击项目名称，然后单击“管理 NuGet 包”。
 
-4. 在搜索框中键入 *Active Directory* ，单击“Active Directory 身份验证库”包旁边的“安装”，然后根据说明安装该包。
+4. 在搜索框中键入 *Active Directory*，单击“Active Directory 身份验证库”包旁边的“安装”，然后根据说明安装该包。
 
-5. 在页面顶部，选择“包括预发行版”。在搜索框中键入 *Microsoft.Azure.Management.Compute* ，单击“计算 .NET 库”的“安装”，然后按照说明安装该包。
+5. 在页面顶部，选择“包括预发行版”。在搜索框中键入 *Microsoft.Azure.Management.Compute*，单击“计算 .NET 库”的“安装”，然后按照说明安装该包。
 
 现在，你已准备好开始使用这些库来管理虚拟机。
 
@@ -482,4 +482,4 @@
 
 如果部署出现问题，请参阅[使用 Azure 门户预览排除资源组部署故障](/documentation/articles/resource-manager-troubleshoot-deployments-portal/)
 
-<!---HONumber=Mooncake_1121_2016-->
+<!---HONumber=Mooncake_Quality_Review_1202_2016-->
