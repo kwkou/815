@@ -1,24 +1,24 @@
 <properties
-   pageTitle="在 DocumentDB 中使用多个区域进行开发 | Azure"
-   description="了解如何从 Azure DocumentDB（完全托管的 NoSQL 数据库服务）访问多个区域中的数据。"
-   services="documentdb"
-   documentationCenter=""
-   authors="kiratp"
-   manager="jhubbard"
-   editor=""/>  
-
+    pageTitle="在 DocumentDB 中使用多个区域进行开发 | Azure"
+    description="了解如何从 Azure DocumentDB（完全托管的 NoSQL 数据库服务）访问多个区域中的数据。"
+    services="documentdb"
+    documentationcenter=""
+    author="kiratp"
+    manager="jhubbard"
+    editor="" />  
 
 <tags
-   ms.service="documentdb"
-   ms.devlang="multiple"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="na"
-   ms.date="10/03/2016"
-   ms.author="kipandya"
-   wacn.date="11/28/2016"/>  
+    ms.assetid="d4579378-0b3a-44a5-9f5b-630f1fa4c66d"
+    ms.service="documentdb"
+    ms.devlang="multiple"
+    ms.topic="article"
+    ms.tgt_pltfrm="na"
+    ms.workload="na"
+    ms.date="10/25/2016"
+    wacn.date="12/20/2016"
+    ms.author="kipandya" />  
 
-   
+
 # 使用多区域 DocumentDB 帐户进行开发
 
 > [AZURE.NOTE] DocumentDB 数据库全局分发功能已正式推出，所有新建的 DocumentDB 帐户将自动启用该功能。我们正在努力为所有现有帐户启用全局分发，但在此之前，如果你要为你的帐户启用全局分发，请[与支持部门联系](https://portal.azure.cn/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade)，我们将会帮助你启用。
@@ -37,7 +37,6 @@ SDK 会自动将所有写入请求发送到当前写入区域。
 
 如果未设置 PreferredLocations 属性，则会从当前写入区域为所有请求提供服务。
 
-
 ## .NET SDK
 无需进行任何代码更改即可使用该 SDK。在此情况下，SDK 会自动将读取和写入请求定向到当前写入区域。
 
@@ -47,23 +46,23 @@ SDK 会自动将所有写入请求发送到当前写入区域。
 
 > [AZURE.NOTE] 不应将终结点 URL 视为长期不变的常量。服务随时会更新这些 URL。SDK 会自动处理这种更改。
 
-	// Getting endpoints from application settings or other configuration location
-	Uri accountEndPoint = new Uri(Properties.Settings.Default.GlobalDatabaseUri);
-	string accountKey = Properties.Settings.Default.GlobalDatabaseKey;
+    // Getting endpoints from application settings or other configuration location
+    Uri accountEndPoint = new Uri(Properties.Settings.Default.GlobalDatabaseUri);
+    string accountKey = Properties.Settings.Default.GlobalDatabaseKey;
 
 	//Setting read region selection preference 
 	connectionPolicy.PreferredLocations.Add("West US"); // first preference
 	connectionPolicy.PreferredLocations.Add("East US"); // second preference
 	connectionPolicy.PreferredLocations.Add("North Europe"); // third preference
 
-	// initialize connection
-	DocumentClient docClient = new DocumentClient(
-		accountEndPoint,
-		accountKey,
-		connectionPolicy);
+    // initialize connection
+    DocumentClient docClient = new DocumentClient(
+        accountEndPoint,
+        accountKey,
+        connectionPolicy);
 
-	// connect to DocDB 
-	await docClient.OpenAsync().ConfigureAwait(false);
+    // connect to DocDB
+    await docClient.OpenAsync().ConfigureAwait(false);
 
 
 ## NodeJS、JavaScript 和 Python SDK
@@ -90,7 +89,7 @@ SDK 会自动将所有写入请求发送到当前写入区域。
 	var client = new DocumentDBClient(host, { masterKey: masterKey }, connectionPolicy);
 	
 
-## REST 
+## REST
 数据库帐户在多个区域中可用后，客户端可以通过对以下 URI 执行 GET 请求来查询该帐户的可用性。
 
     https://{databaseaccount}.documents.azure.com/
@@ -130,15 +129,14 @@ SDK 会自动将所有写入请求发送到当前写入区域。
     }
 
 
--	所有 PUT、POST 和 DELETE 请求必须转到指示的写入 URI
--	所有 GET 和其他只读请求（例如查询）可以转到客户端选择的任何终结点
+- 所有 PUT、POST 和 DELETE 请求必须转到指示的写入 URI
+- 所有 GET 和其他只读请求（例如查询）可以转到客户端选择的任何终结点
 
 向只读区域发出的写入请求将会失败并出现 HTTP 错误代码 403（“禁止”）。
 
 如果在客户端初始发现阶段过后写入区域发生更改，则向先前写入区域进行的后续写入将会失败并出现 HTTP 错误代码 403（“禁止”）。然后，客户端应再次对区域列表执行 GET 以获取更新的写入区域。
 
 ## 后续步骤
-
 在以下文章中了解有关使用 DocumentDB 全局分发数据的详细信息：
 
 - [使用 DocumentDB 全局分发数据](/documentation/articles/documentdb-distribute-data-globally/)
@@ -148,4 +146,4 @@ SDK 会自动将所有写入请求发送到当前写入区域。
 
 [regions]: https://azure.microsoft.com/regions/
 
-<!---HONumber=Mooncake_1121_2016-->
+<!---HONumber=Mooncake_1212_2016-->
