@@ -78,7 +78,6 @@ Azure IoT 中心是一项完全托管的服务，有助于在数百万个 IoT �
    > [AZURE.NOTE]如果使用 HTTP（而不使用 MQTT 或 AMQP）作为传输，**DeviceClient** 实例不会经常检查 IoT 中心发来的消息（时间间隔小于 25 分钟）。有关 MQTT、AMQP 和 HTTP 支持之间的差异，以及 IoT 中心限制的详细信息，请参阅 [IoT 中心开发人员指南][IoT Hub Developer Guide - C2D]。
 
 ## 发送云到设备的消息
-
 在本部分中，你将创建一个 Node.js 控制台应用，用于将云到设备的消息发送到模拟设备应用。需要 [IoT 中心入门]教程中所添加的设备 ID。还需要 IoT 中心的连接字符串（位于 [Azure 门户预览]）。
 
 1. 创建名为 **sendcloudtodevicemessage** 的空文件夹。在命令提示符下的 **sendcloudtodevicemessage** 文件夹中，使用以下命令创建 package.json 文件。接受所有默认值：

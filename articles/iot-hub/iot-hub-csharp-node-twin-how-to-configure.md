@@ -42,6 +42,7 @@
 
 [AZURE.INCLUDE [iot-hub-get-started-create-hub](../../includes/iot-hub-get-started-create-hub.md)]
 
+[AZURE.INCLUDE [iot-hub-get-started-create-device-identity](../../includes/iot-hub-get-started-create-device-identity.md)]
 
 ## 创建模拟设备应用
 
@@ -242,6 +243,7 @@
 
 - 通过 [Get started with IoT Hub][lnk-iothub-getstarted]（IoT 中心入门）教程学习如何从设备发送遥测；
 - 通过 [Use jobs to schedule and broadcast device operations][lnk-schedule-jobs]（通过作业计划和广播设备操作）教程学习如何对大型设备集计划或执行操作。
+- 通过 [Use direct methods][lnk-methods-tutorial]（使用直接方法）教程学习如何以交互方式控制设备（例如如何从用户控制的应用打开风扇）。
 
 <!-- images -->
 
@@ -265,6 +267,7 @@
 [lnk-device-management]: /documentation/articles/iot-hub-node-node-device-management-get-started/
 [lnk-gateway-SDK]: /documentation/articles/iot-hub-linux-gateway-sdk-get-started/
 [lnk-iothub-getstarted]: /documentation/articles/iot-hub-node-node-getstarted/
+[lnk-methods-tutorial]: /documentation/articles/iot-hub-node-node-direct-methods/
 
 [lnk-guid]: https://en.wikipedia.org/wiki/Globally_unique_identifier
 

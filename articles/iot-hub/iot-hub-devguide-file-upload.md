@@ -34,6 +34,7 @@ IoT 中心本身不中转消息，而是充当关联 Azure 存储帐户的调度
 ### 使用时机
 使用文件上载功能发送连接的设备间歇性地上载的媒体文件和大型遥测批文件（或者是经过压缩的文件以节省带宽）。
 
+如果在使用报告属性、设备到云消息或文件上载方面有任何疑问，请参阅[设备到云通信指南][lnk-d2c-guidance]。
 
 ## <a name="associate-an-azure-storage-account-with-iot-hub"></a> 将 Azure 存储帐户与 IoT 中心相关联
 若要使用文件上传功能，必须首先将 Azure 存储帐户链接到 IoT 中心。可以通过 [Azure 门户预览][lnk-management-portal]实现此操作，或通过 [IoT 中心资源提供程序 REST API][lnk-resource-provider-apis] 以编程方式实现此操作。将 Azure 存储帐户与 IoT 中心关联后，当设备启动文件上传请求时，此服务将向该设备返回 SAS URI。
