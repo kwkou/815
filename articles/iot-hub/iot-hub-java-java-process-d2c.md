@@ -139,7 +139,6 @@ IoT 中心公开[事件中心][lnk-event-hubs]兼容的终结点来接收设备�
 > [AZURE.NOTE] 本教程使用单个分区服务总线队列来处理所有检索自 IoT 中心的交互式消息。若要深入了解如何使用服务总线队列来满足解决方案的扩展性要求，请参阅 [Azure 服务总线]文档。
 
 ### <a name="provision-an-azure-storage-account-and-a-service-bus-queue"></a> 预配 Azure 存储帐户和服务总线队列
-
 若要使用 EventProcessorHost 类，必须具有 Azure 存储帐户以使该类能记录检查点信息。可使用现有的 Azure 存储帐户，或按照[关于 Azure 存储]中的说明创建新帐户。请记下 Azure 存储帐户连接字符串。
 
 > [AZURE.NOTE] 复制并粘贴 Azure 存储帐户连接字符串时，切勿包含空格。

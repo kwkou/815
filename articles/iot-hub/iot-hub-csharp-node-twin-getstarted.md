@@ -43,6 +43,8 @@
 
 [AZURE.INCLUDE [iot-hub-get-started-create-hub](../../includes/iot-hub-get-started-create-hub.md)]
 
+[AZURE.INCLUDE [iot-hub-get-started-create-device-identity](../../includes/iot-hub-get-started-create-device-identity.md)]
+
 ## 创建服务应用
 在此部分，会创建一个 Node.js 控制台应用，将位置元数据添加到与 **myDeviceId** 关联的设备克隆。该应用随后会选择位于中国的设备来查询存储在中心的设备克隆，然后查询报告手机网络连接的设备克隆。
 
@@ -175,6 +177,7 @@
 
 - 通过 [Get started with IoT Hub][lnk-iothub-getstarted]（IoT 中心入门）教程学习如何从设备发送遥测；
 - 通过[使用所需属性配置设备][lnk-twin-how-to-configure]教程学习如何使用设备克隆的所需属性配置设备，
+- 通过 [Use direct methods][lnk-methods-tutorial]（使用直接方法）教程学习如何以交互方式控制设备（例如如何从用户控制的应用打开风扇）。
 
 <!-- images -->
 
@@ -196,6 +199,7 @@
 [lnk-identity]: /documentation/articles/iot-hub-devguide-identity-registry/
 
 [lnk-iothub-getstarted]: /documentation/articles/iot-hub-node-node-getstarted/
+[lnk-methods-tutorial]: /documentation/articles/iot-hub-node-node-direct-methods/
 [lnk-twin-how-to-configure]: /documentation/articles/iot-hub-csharp-node-twin-how-to-configure/
 
 [lnk-dev-setup]: https://github.com/Azure/azure-iot-sdks/blob/master/doc/get_started/node-devbox-setup.md

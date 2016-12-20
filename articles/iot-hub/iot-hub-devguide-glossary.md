@@ -170,7 +170,7 @@ iothub-explorer 是跨平台的命令行工具。使用该工具可以管理[标
 解决方案后端可以使用[作业](/documentation/articles/iot-hub-devguide-jobs/)计划和跟踪在 IoT 中心注册的一组设备的活动。活动包括更新设备克隆的[所需属性](#desired-properties)、更新设备克隆[标记](#tags)，以及调用[直接方法](#direct-method)。[IoT 中心](#iot-hub)还使用作业在[标识注册表](#identity-registry)中[导入和导出](/documentation/articles/iot-hub-devguide-identity-registry/#import-and-export-device-identities)。
 
 ## 模块
-在 [Azure IoT 网关 SDK](/documentation/articles/iot-hub-linux-gateway-sdk-get-started/) 中，模块是执行特定任务的组件。任务可能包括从设备引入消息、转换消息，或者将消息发送到 IoT 中心。中转站负责在模块之间转发消息。Azure IoT 网关 SDK 包括一组示例模块。用户还可以创建自己的自定义模块。
+在 [Azure IoT 网关 SDK](/documentation/articles/iot-hub-linux-gateway-sdk-get-started/) 中，[模块](/documentation/articles/iot-hub-linux-gateway-sdk-get-started/#azure-iot-gateway-sdk-concepts)是执行特定任务的组件。任务可能包括从设备引入消息、转换消息，或者将消息发送到 IoT 中心。中转站负责在模块之间转发消息。Azure IoT 网关 SDK 包括一组示例模块。用户还可以创建自己的自定义模块。
 
 ## MQTT
 [MQTT](http://mqtt.org/) 是 [IoT 中心](#iot-hub)支持的一种消息传送协议，适用于与设备通信。若要详细了解 IoT Hub 支持的消息传送协议，请参阅 [Send and receive messages with IoT Hub](/documentation/articles/iot-hub-devguide-messaging/)（使用 IoT 中心发送和接收消息）。

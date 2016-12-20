@@ -36,7 +36,7 @@ IoT 中心提供类似于 SQL 的强大语言用于检索有关[设备克隆][ln
             "etag": "AAAAAAAAAAc=",                                              
             "tags": {                                                            
                 "location": {                                                      
-                    "region": "US",                                                  
+                    "region": "CN",                                                  
                     "plant": "Redmond43"                                             
                 }                                                                  
             },                                                                   

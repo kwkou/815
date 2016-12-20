@@ -40,8 +40,9 @@
 
 [AZURE.INCLUDE [iot-hub-get-started-create-hub](../../includes/iot-hub-get-started-create-hub.md)]
 
-## <a name="create-the-simulated-device-app"></a> 创建模拟设备应用
+[AZURE.INCLUDE [iot-hub-get-started-create-device-identity](../../includes/iot-hub-get-started-create-device-identity.md)]
 
+## <a name="create-the-simulated-device-app"></a> 创建模拟设备应用
 在此部分，用户需创建一个 Node.js 控制台应用，该应用可作为 **myDeviceId** 连接到中心并等待所需配置更新，然后针对模拟配置更新过程报告更新。
 
 1. 新建名为 **simulatedeviceconfiguration** 的空文件夹。在命令提示符下的 **simulatedeviceconfiguration** 文件夹中，使用以下命令创建新的 package.json 文件。接受所有默认值：
@@ -239,6 +240,7 @@
 
 - 通过 [Get started with IoT Hub][lnk-iothub-getstarted]（IoT 中心入门）教程学习如何从设备发送遥测；
 - 通过 [Use jobs to schedule and broadcast device operations][lnk-schedule-jobs]（通过作业计划和广播设备操作）教程学习如何对大型设备集计划或执行操作。
+- 通过 [Use direct methods][lnk-methods-tutorial]（使用直接方法）教程学习如何以交互方式控制设备（例如如何从用户控制的应用打开风扇）。
 
 
 <!-- links -->

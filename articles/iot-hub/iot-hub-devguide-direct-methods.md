@@ -31,6 +31,7 @@
 ### 使用时机
 直接方法遵循请求-响应模式，适用于需要立即确认其结果的通信，通常是对设备的交互式控制，例如，要打开风扇。
 
+如果在使用所需属性、直接方法或云到设备消息方面有任何疑问，请参阅[云到设备通信指南][lnk-c2d-guidance]。
 
 ## 方法生命周期
 直接方法在设备上实现，可能需要在方法有效负载中进行 0 次或 0 次以上的输入才能正确地实例化。可以通过面向服务的 URI (`{iot hub}/twins/{device id}/methods/`) 调用直接方法。设备通过特定于设备的 MQTT 主题 (`$iothub/methods/POST/{method name}/`) 接收直接方法。将来可能会支持在更多的设备端网络协议上使用直接方法。
@@ -124,6 +125,9 @@
 
 - [Schedule jobs on multiple devices（在多台设备上计划作业）][lnk-devguide-jobs]
 
+若要尝试本文中介绍的一些概念，可以根据兴趣学习以下 IoT 中心教程：
+
+- [使用直接方法][lnk-methods-tutorial]
 
 <!-- links and images -->
 
