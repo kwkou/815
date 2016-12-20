@@ -113,7 +113,7 @@ ms.service="virtual-machines-windows"
 
 >[AZURE.TIP] 由于客户端计算机未识别头节点上的证书颁发机构，因此可能会出现安全警告。出于测试目的，可忽略此警告并完成证书导入。
 
-## 步骤 3：在群集上运行测试作业
+## <a name="step-3-run-test-jobs-on-the-cluster"></a> 步骤 3：在群集上运行测试作业
 
 若要验证你的配置，可以尝试通过本地计算机在 Azure 中的群集上运行作业。例如，可以使用 HPC Pack GUI 工具或 HPC Pack 命令行命令向群集提交作业。也可以使用基于 Web 的门户来提交作业。
 
