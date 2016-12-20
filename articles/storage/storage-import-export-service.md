@@ -9,15 +9,16 @@
 
 
 <tags
-	ms.service="storage"
-	ms.workload="storage"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="09/21/2016"
-	wacn.date="11/21/2016"
-	ms.author="renash;robinsh"/>  
 
+    ms.assetid="668f53f2-f5a4-48b5-9369-88ec5ea05eb5"
+    ms.service="storage"
+    ms.workload="storage"
+    ms.tgt_pltfrm="na"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.date="10/18/2016"
+    wacn.date="12/20/2016"
+    ms.author="renash" />  
 
 
 # 使用 Azure 导入/导出服务可将数据传输到 Blob 存储中
@@ -111,11 +112,9 @@ Windows 7 Enterprise、Windows 7 Ultimate、Windows 8 Pro、Windows 8 Enterprise
 
 ### 位置
 
-Azure 导入/导出服务支持将数据复制到所有公共 Azure 存储帐户，以及从后者进行复制。你可以将硬盘驱动器寄送到以下位置之一。如果你的存储帐户所在的公共 Azure 位置没有在这里指定，则当你使用经典管理门户或导入/导出 REST API 创建作业时，将会提供备用的寄送位置。
+Azure 导入/导出服务支持将数据复制到中国北部的 Azure 存储帐户，以及从后者进行复制。你可以将硬盘驱动器寄送到以下位置。如果你的存储帐户所在的 Azure 位置没有在这里指定，则当你使用经典管理门户或导入/导出 REST API 创建作业时，将会提供备用的寄送位置。
 
 支持的寄送位置：
-
-- 中国东部
 
 - 中国北部
 
@@ -134,7 +133,7 @@ Azure 导入/导出服务支持将数据复制到所有公共 Azure 存储帐户
 
 创建导入或导出作业时，必须提供回寄地址，以便在你的作业完成后使用该地址将驱动器寄回给你。请确保提供有效的回寄地址，以免延误对你的驱动器的处理。
 
-此外还必须提供有效的 FedEx 或 DHL 快递商帐户号码，以便将驱动器寄回给你。如果你已经有了一个快递商帐户号码，请确保其有效。
+此外还必须提供有效的中国邮政服务帐户号码，以便将驱动器寄回给你。如果你已经有了一个快递商帐户号码，请确保其有效。
 
 寄送你的包裹时，必须遵循 [Azure 服务条款](/support/legal/services-terms/)中的条款。
 
