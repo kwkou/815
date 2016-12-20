@@ -190,7 +190,7 @@
                               
 有关虚拟机的可用大小列表，请参阅 [Sizes for virtual machines in Azure](/documentation/articles/virtual-machines-windows-sizes/)（Azure 中的虚拟机大小）。
 
-## 将数据磁盘添加到虚拟机
+## <a name="add-a-data-disk-to-a-virtual-machine"></a> 将数据磁盘添加到虚拟机
 
 此示例演示了如何将数据磁盘添加到现有的虚拟机。
 
