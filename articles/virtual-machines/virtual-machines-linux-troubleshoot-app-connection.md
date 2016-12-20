@@ -1,6 +1,6 @@
 <properties
-	pageTitle="排查 Linux VM 应用程序访问问题 | Azure"
-	description="使用以下详细故障排除步骤可以查明连接到 Azure 中 Linux 虚拟机上运行的应用程序时遇到的问题。"
+	pageTitle="VM 上的程序打不开或侦听端口受阻 | Azure"
+	description="如果无法启动或使用 Azure VM 上运行的程序，请使用以下步骤来隔离问题根源。"
 	services="virtual-machines-linux"
 	documentationCenter=""
 	authors="iainfoulds"
@@ -17,12 +17,11 @@
 	ms.devlang="na"
 	ms.topic="support-article"
 	ms.date="09/27/2016"
-	wacn.date="11/21/2016"
+	wacn.date="12/16/2016"
 	ms.author="iainfou"/>  
 
-
-# 排查 Linux Azure 虚拟机上的应用程序连接问题
+# 故障排除：无法启动、访问或连接到 Azure 虚拟机上运行的应用程序
 
 [AZURE.INCLUDE [virtual-machines-common-troubleshoot-app-connection](../../includes/virtual-machines-common-troubleshoot-app-connection.md)]
 
-<!---HONumber=Mooncake_1114_2016-->
+<!---HONumber=Mooncake_Quality_Review_1202_2016-->

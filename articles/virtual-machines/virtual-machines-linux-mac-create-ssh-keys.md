@@ -16,7 +16,7 @@
 	ms.devlang="na"
 	ms.topic="get-started-article"
 	ms.date="10/06/2016"
-	wacn.date="11/21/2016"
+	wacn.date="12/16/2016"
 	ms.author="v-livech"/>  
 
 
@@ -30,7 +30,7 @@
 
 	ssh-keygen -t rsa -b 2048 -C "<your_user@yourdomain.com>"
 
-输入要在 `~/.ssh/` 目录中保存的文件的名称：
+输入保存到 `~/.ssh/` 目录中的文件的名称：
 
 	<azure_fedora_id_rsa>
 
@@ -59,7 +59,7 @@
 
 
 
-本文将创建 *ssh-rsa* 格式的密钥文件，它们是 Resource Manager 上的部署建议使用的文件。在[门户](https://portal.azure.cn)上进行经典部署和 Resource Manager 部署时需要 *ssh-rsa* 密钥。
+本文将创建 *ssh-rsa* 格式的密钥文件，建议将这些文件用于资源管理器上的部署。在[门户](https://portal.azure.cn)上进行经典部署和资源管理器部署时需要 *ssh-rsa* 密钥。
 
 
 ## 创建 SSH 密钥
@@ -212,10 +212,10 @@ ssh-keygen -f ~/.ssh/id_rsa.pub -e > ~/.ssh/id_ssh2.pem
 
 ## 后续步骤
 
-下一步是使用新 SSH 公钥创建 Azure Linux VM。使用 SSH 公钥作为登录名创建的 Azure VM 受到的保护优于使用默认登录方法（即密码）创建的 VM。使用 SSH 密钥创建的 Azure VM 默认情况下配置为禁用密码，以避免强力猜测尝试。
+下一步是使用新 SSH 公钥创建 Azure Linux VM。使用 SSH 公钥作为登录名创建的 Azure VM 可以比使用默认登录方法（即密码）创建的 VM 享受更好的保护。使用 SSH 密钥创建的 Azure VM 默认情况下配置为禁用密码，以避免强力猜测尝试。
 
 - [使用 Azure 模板创建安全 Linux VM](/documentation/articles/virtual-machines-linux-create-ssh-secured-vm-from-template/)
 - [使用 Azure 门户预览创建安全 Linux VM](/documentation/articles/virtual-machines-linux-quick-create-portal/)
 - [使用 Azure CLI 创建安全 Linux VM](/documentation/articles/virtual-machines-linux-quick-create-cli/)
 
-<!---HONumber=Mooncake_1114_2016-->
+<!---HONumber=Mooncake_Quality_Review_1202_2016-->

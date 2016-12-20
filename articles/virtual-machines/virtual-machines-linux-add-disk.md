@@ -17,23 +17,22 @@
 	ms.tgt_pltfrm="vm-linux"
 	ms.devlang="na"
 	ms.date="09/06/2016"
-	wacn.date="11/21/2016"
+	wacn.date="12/16/2016"
 	ms.author="rclaus"/>  
-
 
 # 将磁盘添加到 Linux VM
 
-本文介绍如何将持久性磁盘附加到 VM 以保存数据 - 即使 VM 由于维护或调整大小而重新预配。若要添加磁盘，需要在 Resource Manager 模式下配置 [Azure CLI](/documentation/articles/xplat-cli-install/) (`azure config mode arm`)。
+本文介绍如何将持久性磁盘附加到 VM 以保存数据 - 即使 VM 由于维护或调整大小而重新设置。若要添加磁盘，需要在资源管理器模式 (`azure config mode arm`) 下配置 [Azure CLI](/documentation/articles/xplat-cli-install/)。
 
 ## 快速命令
 
 在以下命令示例中，请将 &lt; 与 &gt; 之间的值替换为你自己环境中的值。
-
+	
 	azure vm disk attach-new <myuniquegroupname> <myuniquevmname> <size-in-GB>
 
 ## 附加磁盘
 
-连接新的磁盘很快。键入 `azure vm disk attach-new <myuniquegroupname> <myuniquevmname> <size-in-GB>` 可为 VM 创建和连接新的 GB 磁盘。如果你未显式标识存储帐户，则创建的任何磁盘将位于 OS 磁盘所在的同一个存储帐户中。如下所示：
+附加新的磁盘很快。键入 `azure vm disk attach-new <myuniquegroupname> <myuniquevmname> <size-in-GB>` 即可为 VM 创建和附加新的 GB 磁盘。如果你未显式标识存储帐户，则创建的所有磁盘都将位于 OS 磁盘所在的同一个存储帐户中。你应该会看到类似下面的屏幕：
 
 	azure vm disk attach-new myuniquegroupname myuniquevmname 5
 
@@ -47,7 +46,7 @@
 
 ## <a name="connect-to-the-linux-vm-to-mount-the-new-disk"></a>连接到 Linux VM 以装入新磁盘
 
-> [AZURE.NOTE] 本主题使用用户名和密码连接到 VM。若要使用公钥和私钥对与 VM 通信，请参阅 [How to Use SSH with Linux on Azure](/documentation/articles/virtual-machines-linux-mac-create-ssh-keys/)（如何在 Azure 上的 Linux 中使用 SSH）。你可以通过使用 `azure vm reset-access` 命令完全重置 **SSH** 访问权限、添加或删除用户，或者添加公钥文件以确保安全访问，来修改使用 `azure vm quick-create` 命令创建的 VM 的 **SSH** 连接。
+> [AZURE.NOTE] 本主题介绍如何使用用户名和密码连接到 VM；若要使用公钥和私钥对与 VM 通信，请参阅[如何在 Azure 上将 SSH 用于 Linux](/documentation/articles/virtual-machines-linux-mac-create-ssh-keys/)。你可以通过使用 `azure vm reset-access` 命令完全重置 **SSH** 访问权限、添加或删除用户，或者添加公钥文件以确保安全访问，来修改使用 `azure vm quick-create` 命令创建的 VM 的 **SSH** 连接。
 
 需要使用 SSH 访问 Azure VM 才能分区、格式化和装入新磁盘以供 Linux VM 使用。如果你不熟悉如何使用 **ssh** 进行连接，请注意，该命令采用 `ssh <username>@<FQDNofAzureVM> -p <the ssh port>` 格式，如下所示：
 
@@ -87,7 +86,7 @@
 
 	ops@myuniquevmname:~$
 
-现在，你已连接到 VM，可以连接磁盘了。首先，使用 `dmesg | grep SCSI` 来查找磁盘（用于发现新磁盘的方法可能各不相同）。在本示例中，键入的内容如下所示：
+现在，你已连接到 VM，可以附加磁盘了。首先，使用 `dmesg | grep SCSI` 来查找磁盘（用于发现新磁盘的方法可能各不相同）。在本示例中，键入的内容如下所示：
 
 	dmesg | grep SCSI
 
@@ -99,7 +98,7 @@
 	[    8.079653] sd 3:0:1:0: [sdb] Attached SCSI disk
 	[ 1828.162306] sd 5:0:0:0: [sdc] Attached SCSI disk
 
-而在本主题中，`sdc` 磁盘是我们所需要的。现在使用 `sudo fdisk /dev/sdc` 对磁盘进行分区 -- 假定在你的示例中，磁盘为 `sdc`，则应将其设置为分区 1 中的主磁盘，并接受其他默认设置值。
+而在本主题中，`sdc` 磁盘是我们所需要的。现在使用 `sudo fdisk /dev/sdc` 对磁盘进行分区 -- 假定你需要的磁盘为 `sdc`，则应将其设置为分区 1 中的主磁盘，并接受其他默认设置值。
 
 	sudo fdisk /dev/sdc
 
@@ -123,7 +122,7 @@
 	Last sector, +sectors or +size{K,M,G} (2048-10485759, default 10485759):
 	Using default value 10485759
 
-系统提示时，键入 `p` 即可创建分区：
+系统提示时，键入 `p` 创建分区：
 
 	Command (m for help): p
 
@@ -143,7 +142,7 @@
 	Calling ioctl() to re-read partition table.
 	Syncing disks.
 
-同时，还需将文件系统写入分区，只需使用 **mkfs** 命令指定文件系统类型和设备名称即可。本主题使用上面提供的 `ext4` 和 `/dev/sdc1`：
+另外，通过使用 **mkfs** 命令并指定文件系统类型和设备名称，将文件系统写入分区。在本主题中，我们将使用上面提供的 `ext4` 和 `/dev/sdc1`：
 
 	sudo mkfs -t ext4 /dev/sdc1
 
@@ -174,7 +173,7 @@
 
 	sudo mkdir /datadrive
 
-可使用 `mount` 来装载目录：
+并使用 `mount` 来装载目录：
 
 	sudo mount /dev/sdc1 /datadrive
 
@@ -213,7 +212,7 @@
 
 
 ### Azure 中对 Linux 的 TRIM/UNMAP 支持
-某些 Linux 内核支持 TRIM/UNMAP 操作以放弃磁盘上未使用的块。这主要适用于标准存储，以通知 Azure 已删除的页不再有效，并且可以丢弃。如果创建了较大的文件，然后将其删除，这样可以节省成本。
+某些 Linux 内核将支持 TRIM/UNMAP 操作以放弃磁盘上未使用的块。这主要适用于标准存储，以通知 Azure 已删除的页不再有效，并且可以丢弃。如果创建了较大的文件，然后将其删除，这样可以节省成本。
 
 在 Linux VM 中有两种方法可以启用 TRIM 支持。与往常一样，有关建议的方法，请参阅分发：
 
@@ -238,8 +237,8 @@
 
 ## 后续步骤
 
-- 请记住，除非将该信息写入 [fstab](http://en.wikipedia.org/wiki/Fstab) 文件，否则即使重新启动 VM，新磁盘也无法供 VM 使用。
-- 为确保正确配置 Linux VM，请查看有关[优化 Linux 计算机性能](/documentation/articles/virtual-machines-linux-optimization/)的建议。
-- 可以添加更多的磁盘来扩展存储容量，[配置 RAID](/documentation/articles/virtual-machines-linux-configure-raid/) 来提高性能。
+- 请记住，即使重新启动 VM，你的新磁盘通常也无法供 VM 使用，除非你将该信息写入 [fstab](http://en.wikipedia.org/wiki/Fstab) 文件。
+- 请查看[优化 Linux 计算机性能](/documentation/articles/virtual-machines-linux-optimization/)的建议，以确保 Linux VM 正确配置。
+- 通过添加更多的磁盘来扩展存储容量，并[配置 RAID](/documentation/articles/virtual-machines-linux-configure-raid/) 以提高性能。
 
-<!---HONumber=Mooncake_1114_2016-->
+<!---HONumber=Mooncake_Quality_Review_1202_2016-->

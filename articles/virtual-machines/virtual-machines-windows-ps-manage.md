@@ -16,7 +16,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="09/27/2016"
-	wacn.date="11/28/2016"
+	wacn.date="12/16/2016"
 	ms.author="davidmu"/>  
 
 
@@ -227,4 +227,4 @@
 
 如果部署出现问题，请参阅[使用 Azure 门户预览排除资源组部署故障](/documentation/articles/resource-manager-troubleshoot-deployments-portal/)
 
-<!---HONumber=Mooncake_1121_2016-->
+<!---HONumber=Mooncake_Quality_Review_1202_2016-->

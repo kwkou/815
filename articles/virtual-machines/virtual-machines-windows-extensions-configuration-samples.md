@@ -1,5 +1,3 @@
-<!-- ARM: tested -->
-
 <properties
    pageTitle="Windows VM 扩展的示例配置 | Azure"
    description="使用扩展创作模板的示例配置"
@@ -17,7 +15,7 @@
    ms.tgt_pltfrm="vm-windows"
    ms.workload="infrastructure-services"
    ms.date="03/29/2016"
-   wacn.date="07/11/2016"
+   wacn.date="12/16/2016"
    ms.author="kundanap"/>
 
 # Azure Windows VM 扩展配置示例
@@ -30,14 +28,15 @@
 
 本文提供为 Windows VM 配置 Azure VM 扩展的示例配置。
 
-若要了解有关这些扩展的详细信息，请参阅 [Azure VM 扩展概述。](/documentation/articles/virtual-machines-windows-extensions-features/)
 
-若要了解有关创作扩展模板的详细信息，请参阅[创作扩展模板。](/documentation/articles/virtual-machines-windows-extensions-authoring-templates/)
+若要了解有关这些扩展的详细信息，请参阅 [Azure VM 扩展概述](/documentation/articles/virtual-machines-windows-extensions-features/)。
+
+若要了解有关创作扩展模板的详细信息，请参阅[创作扩展模板](/documentation/articles/virtual-machines-windows-extensions-authoring-templates/)。
 
 本文列出了一些 Windows 扩展的预期配置值。
 
-## 适用于包含 IaaS VM 的 VM 扩展的示例模板代码段。
-部署扩展的模板代码段如下所示：
+## 适用于 IaaS VM 的 VM 扩展的示例模板代码段。
+用于部署扩展的模板代码段如下所示：
 
       {
       "type": "Microsoft.Compute/virtualMachines/extensions",
@@ -57,7 +56,7 @@
       }
       }
 
-## 适用于包含 VM 规模集的 VM 扩展的示例模板代码段。
+## 适用于 VM 规模集的 VM 扩展的示例模板代码段。
 
     {
      "type":"Microsoft.Compute/virtualMachineScaleSets",
@@ -79,11 +78,11 @@
             }
           }
 
-在部署此扩展之前，请检查最新的扩展版本，然后将“typeHandlerVersion”替换为当前最新版本。
+在部署扩展之前，请检查最新的扩展版本，并将“typeHandlerVersion”替换为当前最新版本。
 
-本文剩余部分提供 Windows VM 扩展的示例配置。
+本文的其余部分介绍 Windows VM 扩展的示例配置。
 
-在部署此扩展之前，请检查最新的扩展版本，然后将“typeHandlerVersion”替换为当前最新版本。
+在部署扩展之前，请检查最新的扩展版本，并将“typeHandlerVersion”替换为当前最新版本。
 
 ### CustomScript 扩展 1.4。
 
@@ -105,14 +104,14 @@
 
 #### 参数说明：
 
-- fileUris：通过该扩展将下载到 VM 上的文件的 URL 列表（以逗号分隔）。如果未指定，则不会下载任何文件。如果文件在 Azure 存储空间中，则可以将 fileURL 标记为私有，且相应的 storageAccountName 和 storageAccountKey 可以作为私有参数传递以访问这些文件。
-- commandToExecute：[必需参数]：此为将通过该扩展执行的命令。
-- storageAccountName：[可选参数]：用于访问这些 fileURL 的存储帐户名称（如果它们被标记为私有）。
-- storageAccountKey：[可选参数]：用于访问这些 fileURL 的存储帐户密匙（如果它们被标记为私有）。
+- fileUris：通过该扩展下载到 VM 上的文件的 URL 列表（以逗号分隔）。如果不指定，则不会下载任何文件。如果文件位于 Azure 存储空间中，可以将 fileURL 标记为私有，且相应的 storageAccountName 和 storageAccountKey 可以作为私有参数传递，以访问这些文件。
+- commandToExecute：[必需参数]：这是此扩展要执行的命令。
+- storageAccountName：[可选参数]：访问 fileURL 时使用的存储帐户名称（如果 fileURL 被标记为私有）。
+- storageAccountKey：[可选参数]：访问 fileURL 时使用的存储帐户密匙（如果 fileURL 被标记为私有）。
 
 ### CustomScript 扩展 1.7。
 
-请参考 CustomScript 1.4 版本以了解参数说明。1.7 版本引入了支持将脚本参数 (commandToExecute) 作为 protectedSettings 发送，这种情况下它们将先进行加密，然后再在 settings 或 protectedSettings 中（非两者皆有）指定发送“commandToExecute”参数。
+请参考 CustomScript 1.4 版本，了解参数说明。1.7 版本引入了支持将脚本参数 (commandToExecute) 作为 protectedSettings 发送，这种情况下它们会先加密，然后再发送。“commandToExecute”参数可以在 settings 或 protectedSettings 中指定（但不能同时在两者中指定）。
 
         {
             "publisher": "Microsoft.Compute",
@@ -360,4 +359,4 @@
 
 [Windows VM 上的自定义脚本扩展](https://github.com/Azure/azure-quickstart-templates/blob/b1908e74259da56a92800cace97350af1f1fc32b/201-list-storage-keys-windows-vm/azuredeploy.json/)
 
-<!---HONumber=Mooncake_0509_2016-->
+<!---HONumber=Mooncake_Quality_Review_1202_2016-->

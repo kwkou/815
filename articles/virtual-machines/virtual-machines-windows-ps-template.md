@@ -16,7 +16,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="10/06/2016"
-	wacn.date="11/28/2016"
+	wacn.date="12/16/2016"
 	ms.author="davidmu"/>  
 
 
@@ -173,7 +173,7 @@
           
     >[AZURE.NOTE] 本文创建运行 Windows Server 操作系统版本的虚拟机。若要详细了解如何选择其他映像，请参阅[使用 Windows PowerShell 和 Azure CLI 浏览和选择 Azure 虚拟机映像](/documentation/articles/virtual-machines-linux-cli-ps-findimage/)。
             
-2. 将模板文件保存为 *VirtualMachineTemplate.json* 。
+2. 将模板文件保存为 *VirtualMachineTemplate.json*。
 
 ## 步骤 2：创建参数文件
 
@@ -254,4 +254,4 @@
 - 如果部署出现问题，下一步是参阅[使用 Azure 门户预览排除资源组部署故障](/documentation/articles/resource-manager-troubleshoot-deployments-portal/)
 - 若要了解如何管理刚创建的虚拟机，请参阅[使用 Azure Resource Manager 和 PowerShell 管理虚拟机](/documentation/articles/virtual-machines-windows-ps-manage/)。
 
-<!---HONumber=Mooncake_1121_2016-->
+<!---HONumber=Mooncake_Quality_Review_1202_2016-->

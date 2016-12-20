@@ -1,5 +1,3 @@
-<!-- Ibiza portal: tested -->
-
 <properties
    pageTitle="使用 Azure 门户预览创建虚拟网络 | Microsoft Azure"
    description="了解如何使用 Azure 门户预览创建虚拟网络。"
@@ -17,7 +15,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
    ms.date="03/15/2016"
-   wacn.date="07/28/2016"
+   wacn.date="12/16/2016"
    ms.author="jdial"/>
 
 # 使用 Azure 门户预览创建虚拟网络（经典）
@@ -32,4 +30,4 @@
 
 [AZURE.INCLUDE [virtual-networks-create-vnet-classic-pportal-include](../../includes/virtual-networks-create-vnet-classic-pportal-include.md)]
 
-<!---HONumber=69-->
+<!---HONumber=Mooncake_Quality_Review_1202_2016-->

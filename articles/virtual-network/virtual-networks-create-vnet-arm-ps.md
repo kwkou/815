@@ -1,8 +1,6 @@
-<!-- ARM: tested -->
-
 <properties
    pageTitle="在 ARM 中使用 PowerShell 创建虚拟网络 | Azure"
-   description="了解如何在 ARM |资源管理器中使用 PowerShell 创建虚拟网络。"
+   description="了解如何在 ARM (Resource Manager) 中使用 PowerShell 创建虚拟网络。"
    services="virtual-network"
    documentationCenter=""
    authors="telmosampaio"
@@ -17,7 +15,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
    ms.date="03/15/2016"
-   wacn.date="06/06/2016"
+   wacn.date="12/16/2016"
    ms.author="jdial"/>
 
 # 使用 PowerShell 创建虚拟网络
@@ -36,4 +34,4 @@
 
 [AZURE.INCLUDE [virtual-networks-create-vnet-arm-ps-include](../../includes/virtual-networks-create-vnet-arm-ps-include.md)]
 
-<!---HONumber=Mooncake_1221_2015-->
+<!---HONumber=Mooncake_Quality_Review_1202_2016-->

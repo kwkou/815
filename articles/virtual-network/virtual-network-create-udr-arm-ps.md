@@ -1,8 +1,6 @@
-<!-- ARM: tested -->
-
 <properties 
-   pageTitle="在资源管理器中使用 PowerShell 控制路由和使用虚拟设备 | Azure"
-   description="了解如何使用 PowerShell 在资源管理器中控制路由和使用虚拟设备"
+   pageTitle="使用 PowerShell 在 Resource Manager 中控制路由和使用虚拟设备 | Azure"
+   description="了解如何在 PowerShell 中控制路由和使用虚拟设备"
    services="virtual-network"
    documentationCenter="na"
    authors="telmosampaio"
@@ -17,7 +15,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
    ms.date="02/23/2016"
-   wacn.date="06/06/2016"
+   wacn.date="12/16/2016"
    ms.author="jdial" />
 
 #使用 PowerShell 在资源管理器中创建用户定义的路由 (UDR)
@@ -30,7 +28,7 @@
 
 [AZURE.INCLUDE [virtual-network-create-udr-scenario-include.md](../../includes/virtual-network-create-udr-scenario-include.md)]
 
-下面的示例 PowerShell 命令需要一个已经基于上述方案创建的简单环境。如果你想要运行本文档中所显示的命令，首先通过部署[此模板](http://github.com/telmosampaio/azure-templates/tree/master/IaaS-NSG-UDR-Before)构建测试环境，单击“部署至 Azure”，如有必要替换默认参数值，然后按照门户预览中的说明进行操作。
+下面的示例 PowerShell 命令需要基于上述方案创建的简单环境。若要运行本文档中所显示的命令，请首先通过部署[此模板](http://github.com/telmosampaio/azure-templates/tree/master/IaaS-NSG-UDR-Before)构建测试环境，单击“部署至 Azure”，根据需要替换默认参数值，然后按照门户中的说明进行操作。
 
 [AZURE.INCLUDE [azure-ps-prerequisites-include.md](../../includes/azure-ps-prerequisites-include.md)]
 
@@ -54,7 +52,7 @@
 
 		$vnet = Get-AzureVirtualNetwork -ResourceGroupName TestRG -Name TestVNet
 
-6. 将上面创建的路由表与 **FrontEnd** 子网关联起来。
+6. 将上面创建的路由表关联到 **FrontEnd** 子网。
 		
 		Set-AzureVirtualNetworkSubnetConfig -VirtualNetwork $vnet -Name FrontEnd `
 			-AddressPrefix 192.168.1.0/24 -RouteTable $routeTable
@@ -127,7 +125,7 @@
 		$routeTable = New-AzureRouteTable -ResourceGroupName TestRG -Location chinanorth `
 		    -Name UDR-BackEnd -Route $route
 
-5. 将上面创建的路由表与 **BackEnd** 子网关联起来。
+5. 将上面创建的路由表关联到 **BackEnd** 子网。
 
 		Set-AzureVirtualNetworkSubnetConfig -VirtualNetwork $vnet -Name BackEnd `
 			-AddressPrefix 192.168.2.0/24 -RouteTable $routeTable
@@ -239,4 +237,4 @@
 		NetworkSecurityGroup : null
 		Primary              : True
 
-<!---HONumber=Mooncake_1221_2015-->
+<!---HONumber=Mooncake_Quality_Review_1202_2016-->

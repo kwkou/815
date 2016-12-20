@@ -16,7 +16,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="10/06/2016"
-	wacn.date="11/28/2016"
+	wacn.date="12/16/2016"
 	ms.author="davidmu"/>  
 
 
@@ -42,15 +42,15 @@
 
 3. 在解决方案资源管理器中右键单击项目名称，然后单击“管理 NuGet 包”。
 
-4. 在搜索框中键入 *Active Directory* ，单击“Active Directory 身份验证库”包旁边的“安装”，然后根据说明安装该包。
+4. 在搜索框中键入 *Active Directory*，单击“Active Directory 身份验证库”包旁边的“安装”，然后根据说明安装该包。
 
-5. 在页面顶部，选择“包括预发行版”。在搜索框中键入 *Microsoft.Azure.Management.Compute* ，单击“计算 .NET 库”的“安装”，然后按照说明安装该包。
+5. 在页面顶部，选择“包括预发行版”。在搜索框中键入 *Microsoft.Azure.Management.Compute*，单击“计算 .NET 库”的“安装”，然后按照说明安装该包。
 
-6. 在搜索框中键入 *Microsoft.Azure.Management.Network* ，单击“网络 .NET 库”的“安装”，然后按照说明安装该包。
+6. 在搜索框中键入 *Microsoft.Azure.Management.Network*，单击“网络 .NET 库”的“安装”，然后按照说明安装该包。
 
-7. 在搜索框中键入 *Microsoft.Azure.Management.Storage* ，单击“存储 .NET 库”的“安装”，然后按照说明安装该包。
+7. 在搜索框中键入 *Microsoft.Azure.Management.Storage*，单击“存储 .NET 库”的“安装”，然后按照说明安装该包。
 
-8. 在搜索框中键入 *Microsoft.Azure.Management.ResourceManager* ，并单击“资源管理库”的“安装”。
+8. 在搜索框中键入 *Microsoft.Azure.Management.ResourceManager*，并单击“资源管理库”的“安装”。
 
 现在，你可以开始使用这些库来创建应用程序了。
 
@@ -519,4 +519,4 @@
 - 参考 [Deploy an Azure Virtual Machine using C# and a Resource Manager template](/documentation/articles/virtual-machines-windows-csharp-template/)（使用 C# 和 Resource Manager 模板部署 Azure 虚拟机）中的信息，利用模板创建虚拟机。
 - 若要了解如何管理刚创建的虚拟机，请参阅[使用 Azure Resource Manager 和 PowerShell 管理虚拟机](/documentation/articles/virtual-machines-windows-csharp-manage/)。
 
-<!---HONumber=Mooncake_1121_2016-->
+<!---HONumber=Mooncake_Quality_Review_1202_2016-->

@@ -16,13 +16,13 @@
    ms.tgt_pltfrm="vm-windows"
    ms.workload="infrastructure-services"
    ms.date="09/27/2016"
-   wacn.date="11/28/2016"
+   wacn.date="12/16/2016"
    ms.author="davidmu" />  
 
 
 # 创建和管理 VM 的常用 PowerShell 命令
 
-本文介绍可用于在 Azure 订阅中创建和管理虚拟机的一些 Azure PowerShell 命令。若要获取特定命令行开关和选项的详细帮助，可以使用 **Get-Help** *命令* 。
+本文介绍可用于在 Azure 订阅中创建和管理虚拟机的一些 Azure PowerShell 命令。若要获取特定命令行开关和选项的详细帮助，可以使用 **Get-Help** *命令*。
 
 有关安装最新版本的 Azure PowerShell、选择订阅和登录帐户的信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)。
 
@@ -67,4 +67,4 @@
 
 - 有关创建虚拟机的基本步骤，请参阅[使用 Resource Manager 和 PowerShell 创建 Windows VM](/documentation/articles/virtual-machines-windows-ps-create/)。
 
-<!---HONumber=Mooncake_1121_2016-->
+<!---HONumber=Mooncake_Quality_Review_1202_2016-->

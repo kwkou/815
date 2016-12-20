@@ -16,7 +16,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="10/10/2016"
-	wacn.date="11/28/2016"
+	wacn.date="12/16/2016"
 	ms.author="davidmu"/>  
 
 
@@ -197,7 +197,7 @@
 
 1. 在解决方案资源管理器中，右键单击项目名称，然后单击“添加”>“新建项”。
 
-2. 单击“Web”并选择“JSON 文件”，再在“名称”中输入 *Parameters.json* ，然后单击“添加”。
+2. 单击“Web”并选择“JSON 文件”，再在“名称”中输入 *Parameters.json*，然后单击“添加”。
 
 3. 打开 parameters.json 文件，然后添加以下 JSON 内容：
 
@@ -220,9 +220,9 @@
 
 1. 在解决方案资源管理器中，右键单击项目名称并单击“管理 NuGet 包”，然后单击“浏览”。
 
-2. 在搜索框中键入 *Active Directory* ，单击“Active Directory 身份验证库”包旁边的“安装”，然后根据说明安装该包。
+2. 在搜索框中键入 *Active Directory*，单击“Active Directory 身份验证库”包旁边的“安装”，然后根据说明安装该包。
 
-4. 在页面顶部，选择“包括预发行版”。在搜索框中键入 *Microsoft.Azure.Management.ResourceManager* ，单击“Azure 资源管理库”的“安装”，然后根据说明安装该包。
+4. 在页面顶部，选择“包括预发行版”。在搜索框中键入 *Microsoft.Azure.Management.ResourceManager*，单击“Azure 资源管理库”的“安装”，然后根据说明安装该包。
 
 现在，你可以开始使用这些库来创建应用程序了。
 
@@ -353,4 +353,4 @@ Azure Active Directory 应用程序已创建且安装了身份验证库。现可
 - 如果部署出现问题，请参阅[使用 Azure 门户预览排除资源组部署故障](/documentation/articles/resource-manager-troubleshoot-deployments-portal/)。
 - 若要了解如何管理刚创建的虚拟机，请参阅[使用 Azure Resource Manager 和 PowerShell 管理虚拟机](/documentation/articles/virtual-machines-windows-csharp-manage/)。
 
-<!---HONumber=Mooncake_1121_2016-->
+<!---HONumber=Mooncake_Quality_Review_1202_2016-->

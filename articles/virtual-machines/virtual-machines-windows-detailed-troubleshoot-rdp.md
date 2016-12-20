@@ -17,7 +17,7 @@
 	ms.devlang="na"
 	ms.topic="support-article"
 	ms.date="09/27/2016"
-	wacn.date="11/28/2016"
+	wacn.date="12/16/2016"
 	ms.author="iainfou"/>  
 
 
@@ -212,4 +212,4 @@ PortNumber 属性显示当前端口号。如果需要，可使用此命令将远
 
 [对在 Azure 虚拟机上运行的应用程序的访问进行故障排除](/documentation/articles/virtual-machines-windows-troubleshoot-app-connection/)
 
-<!---HONumber=Mooncake_1121_2016-->
+<!---HONumber=Mooncake_Quality_Review_1202_2016-->

@@ -2,7 +2,7 @@
 
 <properties
 	pageTitle="从 Windows VM 分离数据磁盘 | Azure"
-	description="了解如何从使用 Resource Manager 部署模型的 Azure 中的虚拟机分离磁盘。"
+	description="了解如何从使用资源管理器部署模型的 Azure 中的虚拟机分离磁盘。"
 	services="virtual-machines-windows"
 	documentationCenter=""
 	authors="cynthn"
@@ -17,7 +17,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="09/27/2016"
-	wacn.date="11/21/2016"
+	wacn.date="12/16/2016"
 	ms.author="cynthn"/>
 
 
@@ -25,18 +25,18 @@
 # 如何从 Windows 虚拟机分离数据磁盘
 
 
-当你不再需要附加到虚拟机的数据磁盘时，你可以轻松地分离它。这将从虚拟机中删除磁盘，但不会从存储中删除它。
+当不再需要附加到虚拟机的数据磁盘时，可以轻松地分离它。这将从虚拟机中删除该磁盘，但不会从存储中删除它。
 
-> [AZURE.WARNING] 如果你分离磁盘，它将不会自动删除。如果你订阅了高级存储，则将继续承担该磁盘的存储费用。有关详细信息，请参阅[使用高级存储时的定价和计费方式](/documentation/articles/storage-premium-storage/#pricing-and-billing)。
+> [AZURE.WARNING] 如果用户分离磁盘，它将不会自动删除。如果用户订阅了高级存储，则将继续承担该磁盘的存储费用。有关详细信息，请参阅[使用高级存储时的定价和计费方式](/documentation/articles/storage-premium-storage/#pricing-and-billing)。
 
-若果你希望再次使用磁盘上的现有数据，可以将其重新附加到相同的虚拟机或另一个虚拟机。
+如果希望再次使用该磁盘上的现有数据，可以将其重新附加到相同的虚拟机或另一个虚拟机。
 
 
 ## 使用门户分离数据磁盘
 
 1. 在门户中心中，选择“虚拟机”。
 
-2. 选择具有要分离的数据磁盘的虚拟机，然后单击“所有设置”。
+2. 选择要分离的数据磁盘连接的虚拟机，然后单击“所有设置”。
 
 3. 在“设置”边栏选项卡中，选择“磁盘”。
 
@@ -52,11 +52,11 @@
 
 ## 使用 PowerShell 分离数据磁盘
 
-在此示例中，第一个命令将获取使用 Get-AzureRmVM cmdlet 的 **RG11** 资源组中名为 **MyVM07** 的虚拟机。该命令在 **$VirtualMachine** 变量中存储虚拟机。
+在此示例中，第一个命令使用 Get-AzureRmVM cmdlet 获取 **RG11** 资源组中名为 **MyVM07** 的虚拟机。该命令在 **$VirtualMachine** 变量中存储虚拟机。
 
-第二个命令将从虚拟机中删除名为 DataDisk3 的数据磁盘。
+第二个命令将从该虚拟机中删除名为 DataDisk3 的数据磁盘。
 
-最后一个命令将更新虚拟机的状态以完成数据磁盘删除过程。
+最后一个命令更新虚拟机的状态，以完成删除数据磁盘过程。
 
 	$VirtualMachine = Get-AzureRmVM -ResourceGroupName "RG11" -Name "MyVM07" 
 	Remove-AzureRmVMDataDisk -VM $VirtualMachine -Name "DataDisk3"
@@ -67,6 +67,6 @@
 
 ## 后续步骤
 
-如果你想重新使用数据磁盘，只需将它[附加到另一台 VM](/documentation/articles/virtual-machines-windows-attach-disk-portal/)
+如果想重新使用数据磁盘，只需将它[附加到另一台 VM](/documentation/articles/virtual-machines-windows-attach-disk-portal/)
 
-<!---HONumber=Mooncake_0704_2016-->
+<!---HONumber=Mooncake_Quality_Review_1202_2016-->

@@ -15,14 +15,14 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="10/17/2016" 
-	wacn.date="11/21/2016" 
+	wacn.date="12/16/2016" 
 	ms.author="szark"/>
 
 
 
 #在 Azure 上选择 Linux 的用户名#
 
-[AZURE.INCLUDE [了解部署模型](../../includes/learn-about-deployment-models-both-include.md)]
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-both-include.md)]
 
 当你在 Azure 上预配 Linux 虚拟机时，必须指定非根用户的名称，以便以后使用该用户登录到 VM。你可以选择新用户的名称，或者，如果是通过 Azure 经典管理门户进行预配，则可接受默认名称“azureuser”。
 
@@ -147,4 +147,4 @@
 - whoopsie
 - www-data
 
-<!---HONumber=Mooncake_0808_2016-->
+<!---HONumber=Mooncake_Quality_Review_1202_2016-->

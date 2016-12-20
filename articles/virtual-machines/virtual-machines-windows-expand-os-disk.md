@@ -17,11 +17,11 @@
    ms.tgt_pltfrm="vm-windows"
    ms.workload="infrastructure-services"
    ms.date="06/21/2016"
-   wacn.date="08/23/2016"
+   wacn.date="12/16/2016"
    ms.author="kirpas"/>
 
 # 如何扩展 Azure 资源组中虚拟机的 OS 驱动器
 
 [AZURE.INCLUDE [virtual-machine-common-expand-os-disk](../../includes/virtual-machines-common-expand-os-disk.md)]
 
-<!---HONumber=Mooncake_0425_2016-->
+<!---HONumber=Mooncake_Quality_Review_1202_2016-->

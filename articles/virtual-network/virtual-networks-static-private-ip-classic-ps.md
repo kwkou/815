@@ -15,7 +15,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
    ms.date="02/02/2016"
-   wacn.date="03/28/2016"
+   wacn.date="12/16/2016"
    ms.author="jdial" />
 
 # 如何在 PowerShell 中设置静态专用 IP 地址（经典）
@@ -28,7 +28,7 @@
 
 [AZURE.INCLUDE [virtual-networks-static-ip-scenario-include](../../includes/virtual-networks-static-ip-scenario-include.md)]
 
-下面的示例 PowerShell 命令需要已创建简单的环境。首先需要构建[创建 VNet](/documentation/articles/virtual-networks-create-vnet-classic-netcfg-ps/) 中所述的测试环境。
+下面的示例 PowerShell 命令需要已创建简单的环境。若要运行本文档中所显示的命令，请首先构建[创建 VNet](/documentation/articles/virtual-networks-create-vnet-classic-netcfg-ps) 中所述的测试环境。
 
 ## 如何验证特定 IP 地址是否可用：
 若要验证 IP 地址 *192.168.1.101* 在名为 *TestVnet* 的 VNet 中是否可用，请运行以下 PowerShell 命令并验证 *IsAvailable* 的值：
@@ -128,4 +128,4 @@
 - 了解[实例层级公共 IP (ILPIP)](/documentation/articles/virtual-networks-instance-level-public-ip/) 地址。
 - 查阅[保留 IP REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn722420.aspx)。
 
-<!---HONumber=76-->
+<!---HONumber=Mooncake_Quality_Review_1202_2016-->
