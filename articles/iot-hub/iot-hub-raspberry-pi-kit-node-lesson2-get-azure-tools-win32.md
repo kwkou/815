@@ -44,15 +44,12 @@ Azure CLI 提供适用于 Azure 的多平台命令行体验。可以直接通过
 
 1. 以管理员身份打开“命令提示符”窗口。
 2. 运行以下命令：
-   
-    ```bash
-    pip install azure-cli-core==0.1.0b7 azure-cli-vm==0.1.0b7 azure-cli-storage==0.1.0b7 azure-cli-role==0.1.0b7 azure-cli-resource==0.1.0b7 azure-cli-profile==0.1.0b7 azure-cli-network==0.1.0b7 azure-cli-iot==0.1.0b7 azure-cli-feedback==0.1.0b7 azure-cli-configure==0.1.0b7 azure-cli-component==0.1.0b7 azure-cli==0.1.0b7
-    ```
+
+        pip install azure-cli-core==0.1.0b7 azure-cli-vm==0.1.0b7 azure-cli-storage==0.1.0b7 azure-cli-role==0.1.0b7 azure-cli-resource==0.1.0b7 azure-cli-profile==0.1.0b7 azure-cli-network==0.1.0b7 azure-cli-iot==0.1.0b7 azure-cli-feedback==0.1.0b7 azure-cli-configure==0.1.0b7 azure-cli-component==0.1.0b7 azure-cli==0.1.0b7
+
 3. 运行以下命令，对安装进行验证：
    
-    ```bash
-    az iot -h
-    ```
+        az iot -h
 
 如果安装成功，则会看到以下输出。
 

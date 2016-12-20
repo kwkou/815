@@ -33,9 +33,8 @@
 ### 在 Gulp 任务期间没有响应
 如果在运行 Gulp 任务时遇到问题，可添加 `--verbose` 选项进行调试。请尝试使用 Ctrl + C 终止当前的 Gulp 任务，然后在控制台窗口中运行以下命令，以便查看调试消息。可以在控制台输出中查看详细的错误消息。
 
-```bash
-gulp --verbose
-```
+        gulp --verbose
+
 
 ### 设备发现问题
 如需使用 `devdisco` 命令时的常见问题的疑难解答帮助，请查看[自述文件](https://github.com/Azure/device-discovery-cli/blob/develop/readme.md)。
@@ -43,17 +42,16 @@ gulp --verbose
 ### npm 问题
 请尝试使用以下命令更新 npm 包：
 
-```bash
-npm install -g npm
-```
+        npm install -g npm
+
 
 如果问题仍然存在，请在本文末尾留下你的评论，或者在[示例存储库](https://github.com/Azure-Samples/iot-hub-node-raspberrypi-getting-started)中创建一个 GitHub 问题。
 
 ## 远程调试
 ### 在调试模式下运行示例应用程序
-```bash
-gulp run --debug
-```
+
+        gulp run --debug
+
 
 调试引擎就绪以后，就会在控制台输出中看到```Debugger listening on port 5858```。
 
@@ -62,27 +60,25 @@ gulp run --debug
 2. 单击绿色的“开始调试”(F5) 按钮。Visual Studio Code 打开 launch.json 文件。
 3. 使用以下内容更新 launch.json 文件。将 `[device hostname or IP address]` 替换为实际的设备 IP 地址或主机名。
 
-```json
-{
-    "version": "0.2.0",
-    "configurations": [
         {
-            "name": "Attach",
-            "type": "node",
-            "request": "attach",
-            "port": 5858,
-            "address": "[device hostname or IP address]",
-            "restart": false,
-            "sourceMaps": false,
-            "outDir": null,
-            "localRoot": "${workspaceRoot}",
-            "remoteRoot": null
+            "version": "0.2.0",
+            "configurations": [
+                {
+                    "name": "Attach",
+                    "type": "node",
+                    "request": "attach",
+                    "port": 5858,
+                    "address": "[device hostname or IP address]",
+                    "restart": false,
+                    "sourceMaps": false,
+                    "outDir": null,
+                    "localRoot": "${workspaceRoot}",
+                    "remoteRoot": null
+                }
+            ]
         }
-    ]
-}
-```
 
-![远程调试配置](./media/iot-hub-raspberry-pi-lessons/troubleshooting/remote_debugging_configuration.png)  
+    ![远程调试配置](./media/iot-hub-raspberry-pi-lessons/troubleshooting/remote_debugging_configuration.png)  
 
 
 ### 连接到远程应用程序
@@ -126,17 +122,14 @@ iothub-explorer 是一项示例性的多平台 CLI 工具，用于管理设备�
 
 若要安装最新（预发行）版的 iothub-explorer 工具，请在命令行环境中运行以下命令：
 
-```
-npm install -g iothub-explorer@latest
-```
+        npm install -g iothub-explorer@latest
+
 
 可以使用以下命令获取所有 iothub-explorer 命令及其参数的更多帮助：
 
-```bash
-iothub-explorer help
-```
+        iothub-explorer help
 
-### Azure 门户
+### Azure 门户预览
 完整的 CLI 体验有助于用户创建和管理其所有 Azure 资源。还可能需要借助 [Azure 门户预览](/documentation/articles/azure-portal-overview/)对 Azure 资源进行预配、管理和调试。
 
 ## Azure 存储问题

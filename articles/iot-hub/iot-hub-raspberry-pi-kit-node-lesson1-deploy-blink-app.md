@@ -34,9 +34,7 @@
 ## 获取 Pi 的 IP 地址和主机名
 在 Windows 或者 macOS 或 Ubuntu 的终端中打开命令提示符，然后运行以下命令：
 
-```bash
-devdisco list --eth
-```
+        devdisco list --eth
 
 输出应如下所示：
 
@@ -54,16 +52,15 @@ devdisco list --eth
 
 1. 通过运行以下命令克隆 GitHub 中的示例存储库：
    
-    ```bash
-    git clone https://github.com/Azure-Samples/iot-hub-node-raspberrypi-getting-started.git
-    ```
+        git clone https://github.com/Azure-Samples/iot-hub-node-raspberrypi-getting-started.git
+
 2. 通过运行以下命令在 Visual Studio Code 中打开示例应用程序：
    
-    ```bash
-    cd iot-hub-node-raspberrypi-getting-started
-    cd Lesson1
-    code .
-    ```
+
+        cd iot-hub-node-raspberrypi-getting-started
+        cd Lesson1
+        code .
+
 
 ![存储库结构](./media/iot-hub-raspberry-pi-lessons/lesson1/vscode-blink-mac.png)  
 
@@ -73,29 +70,28 @@ devdisco list --eth
 ### 安装应用程序依赖项
 运行以下命令，安装示例应用程序所需的库和其他模块：
 
-```bash
-npm install
-```
+
+        npm install
+
 
 ## 配置设备连接
 若要配置设备连接，请执行以下步骤：
 
 1. 运行以下命令，生成设备配置文件：
    
-    ```bash
-    gulp init
-    ```
+        gulp init
    
     配置文件 `config-raspberrypi.json` 包含用来登录到 Pi 的用户凭据。为了避免用户凭据泄漏，配置文件在计算机主文件夹的 `.iot-hub-getting-started` 子文件夹中生成。
+    
 2. 运行以下命令，在 Visual Studio Code 中打开设备配置文件：
    
-    ```bash
-    # For Windows command prompt
-    code %USERPROFILE%\.iot-hub-getting-started\config-raspberrypi.json
-   
-    # For macOS or Ubuntu
-    code ~/.iot-hub-getting-started/config-raspberrypi.json
-    ```
+
+        # For Windows command prompt
+        code %USERPROFILE%\.iot-hub-getting-started\config-raspberrypi.json
+       
+        # For macOS or Ubuntu
+        code ~/.iot-hub-getting-started/config-raspberrypi.json
+    
 3. 将占位符 `[device hostname or IP address]` 替换为此前在“获取 Pi 的 IP 地址和主机名”中获得的 IP 地址或主机名。
    
     ![Config.json](./media/iot-hub-raspberry-pi-lessons/lesson1/vscode-config-mac.png)  
@@ -107,18 +103,18 @@ npm install
 ### 在 Pi 上安装 Node.js 和 NPM
 运行以下命令，在 Pi 上安装 Node.js 和 NPM：
 
-```bash
-gulp install-tools
-```
+
+        gulp install-tools
+
 
 此任务在首次运行时可能需要 10 分钟才能完成。
 
 ### 部署并运行示例应用
 运行以下命令，部署并运行示例应用程序：
 
-```bash
-gulp deploy && gulp run
-```
+
+        gulp deploy && gulp run
+
 
 ### 确保应用正常运行
 此时会看到 Pi 上的 LED 每隔两秒闪烁一次。如果看不到 LED 闪烁，请参阅[故障排除指南](/documentation/articles/iot-hub-raspberry-pi-kit-node-troubleshooting/)，了解常见问题的解决方案。![LED 闪烁](./media/iot-hub-raspberry-pi-lessons/lesson1/led_blinking.jpg)
