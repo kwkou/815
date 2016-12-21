@@ -13,8 +13,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="08/08/2016"
-   wacn.date="09/26/2016"
+   ms.date="10/31/2016"
+   wacn.date="12/19/2016"
    ms.author="barbkess;sonyama"/>
 
 # SQL 数据仓库参考主题
@@ -25,8 +25,6 @@
 [Transact-SQL 语句][]
 [Transact-SQL 系统视图][]
 [PowerShell cmdlets][]
-
-
 
 ## 后续步骤
 有关开发信息，请参阅[开发概述][]。
@@ -43,4 +41,4 @@
 
 <!--MSDN references-->
 
-<!---HONumber=Mooncake_0808_2016-->
+<!---HONumber=Mooncake_1212_2016-->

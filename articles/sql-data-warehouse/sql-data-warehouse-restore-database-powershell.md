@@ -14,8 +14,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="09/21/2016"
-   wacn.date="10/31/2016"
+   ms.date="10/31/2016"
+   wacn.date="12/19/2016"
    ms.author="lakshmir;barbkess;sonyama"/>  
 
 
@@ -171,4 +171,4 @@
 [Azure Portal]: https://portal.azure.cn/
 [Microsoft Web 平台安装程序]: https://aka.ms/webpi-azps
 
-<!---HONumber=Mooncake_1024_2016-->
+<!---HONumber=Mooncake_1212_2016-->

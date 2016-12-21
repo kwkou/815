@@ -14,8 +14,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="11/29/2016"
-   wacn.date="12/13/2016"
+   ms.date="10/31/2016"
+   wacn.date="12/19/2016"
    ms.author="nicw;barbkess;sonyama"/>
 
 # 迁移到高级存储的详细信息
@@ -46,8 +46,8 @@ SQL 数据仓库最近推出了[具有更好的性能可预测性的高级存储
 	
 > [AZURE.NOTE] 这些设置不会作为迁移的一部分执行：
 > 
->	-  需要在数据库级别重新启用审核
->	-  需要在**数据库**级别重新添加防火墙规则。  **服务器**级别的防火墙规则不受影响。
+>	-  需要重新启用数据库级别的审核
+>	-  需要重新添加**数据库**级别的防火墙规则。**服务器**级别的防火墙规则不受影响
 
 ###<a name="automatic-migration-schedule"></a> 自动迁移计划
 自动迁移会在下午 6 点 – 上午 6点（每个地区的本地时间）在以下中断计划期间发生。
@@ -166,4 +166,4 @@ ALTER DATABASE CurrentDatabasename MODIFY NAME = NewDatabaseName;
 [具有更好的性能可预测性的高级存储]: https://azure.microsoft.com/zh-CN/blog/azure-sql-data-warehouse-introduces-premium-storage-for-greater-performance/
 [Azure 门户]: https://portal.azure.cn
 
-<!---HONumber=Mooncake_1010_2016-->
+<!---HONumber=Mooncake_1212_2016-->

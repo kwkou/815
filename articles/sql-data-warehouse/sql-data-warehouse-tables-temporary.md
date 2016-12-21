@@ -14,8 +14,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="06/29/2016"
-   wacn.date="12/15/2016"
+   ms.date="10/31/2016"
+   wacn.date="12/19/2016"
    ms.author="jrj;barbkess;sonyama"/>  
 
 
@@ -255,4 +255,4 @@ SQL 数据仓库在实现临时表时确实会施加一些限制。目前，仅�
 
 <!--Other Web references-->
 
-<!---HONumber=Mooncake_0815_2016-->
+<!---HONumber=Mooncake_1212_2016-->

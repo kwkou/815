@@ -15,8 +15,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="08/30/2016"
-   wacn.date="10/17/2016"
+   ms.date="10/31/2016"
+   wacn.date="12/10/2016"
    ms.author="jrj;barbkess;sonyama"/>
 
 # 在 SQL 数据仓库中分布表
@@ -323,4 +323,4 @@ SQL 数据仓库在幕后将数据划分成 60 个数据库。每个数据库称
 
 <!--Other Web references-->
 
-<!---HONumber=Mooncake_1010_2016-->
+<!---HONumber=Mooncake_1212_2016-->

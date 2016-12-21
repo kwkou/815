@@ -14,9 +14,9 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="09/29/2016"
-   wacn.date="10/31/2016"
-   ms.author="lakshmir;barbkess;sonyama"/>  
+   ms.date="10/31/2016"
+   wacn.date="12/19/2016"
+   ms.author="lakshmir;barbkess"/>  
 
 
 
@@ -42,7 +42,6 @@ SQL 数据仓库提供本地和异地还原功能，这是其数据仓库灾难�
 -  [业务连续性概述](/documentation/articles/sql-database-business-continuity/)
 
 ## 数据仓库还原点
-
 使用 Azure 高级存储的好处是，SQL 数据仓库可以使用 Azure 存储 Blob 快照备份主数据仓库。每个快照都有一个还原点，代表启动快照的时间。若要还原数据仓库，请选择一个还原点，然后发出还原命令。
 
 SQL 数据仓库始终将备份还原到新的数据仓库。可以保留还原的数据仓库和当前的数据仓库，也可以删除其中一个。若要将当前的数据仓库替换为还原的数据仓库，将其重命名即可。
@@ -99,4 +98,4 @@ SQL 数据仓库始终将备份还原到新的数据仓库。可以保留还原�
 
 <!--Other Web references-->
 
-<!---HONumber=Mooncake_1024_2016-->
+<!---HONumber=Mooncake_1212_2016-->

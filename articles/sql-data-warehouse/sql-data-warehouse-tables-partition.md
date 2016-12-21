@@ -13,8 +13,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="07/18/2016"
-   wacn.date="08/15/2016"
+   ms.date="10/31/2016"
+   wacn.date="12/19/2016"
    ms.author="jrj;barbkess;sonyama"/>
 
 # 对 SQL 数据仓库中的表进行分区
@@ -26,6 +26,7 @@
 - [索引][]
 - [Partition][]
 - [统计信息][]
+- [临时][]
 
 所有 SQL 数据仓库表类型（包括聚集列存储、聚集索引和堆）都支持分区。所有分布类型（包括哈希分布或轮循机制分布）也都支持分区。你可以通过分区将数据分成较小的数据组，而且在大多数情况下，分区是根据日期列来完成的。
 
@@ -368,6 +369,7 @@ SQL 数据仓库支持分区拆分、合并和切换。这些函数中，每个�
 [Partition]: /documentation/articles/sql-data-warehouse-tables-partition/
 [Statistics]: /documentation/articles/sql-data-warehouse-tables-statistics/
 [统计信息]: /documentation/articles/sql-data-warehouse-tables-statistics/
+[临时]: /documentation/articles/sql-data-warehouse-tables-temporary/
 [工作负荷管理]: /documentation/articles/sql-data-warehouse-develop-concurrency/
 [SQL 数据仓库最佳实践]: /documentation/articles/sql-data-warehouse-best-practices/
 
@@ -381,4 +383,4 @@ SQL 数据仓库支持分区拆分、合并和切换。这些函数中，每个�
 
 <!-- Other web references -->
 
-<!---HONumber=Mooncake_0808_2016-->
+<!---HONumber=Mooncake_1212_2016-->

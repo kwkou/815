@@ -10,17 +10,16 @@
 <tags
    ms.service="sql-data-warehouse"
    ms.devlang="NA"
-   ms.topic="get-started-article"
+   ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="07/25/2016"
-   wacn.date="09/05/2016"
+   ms.date="10/31/2016"
+   wacn.date="12/19/2016"
    ms.author="barbkess;mausher;jrj;sonyama"/>
 
 
 # 数据仓库工作负荷
 数据仓库工作负荷是指所有针对数据仓库所发生的操作。数据仓库工作负荷包括将数据载入仓库、对数据仓库执行分析和报告、管理数据仓库中的数据，以及从数据仓库导出数据的整个过程。这些组件的广度与深度多半与数据仓库的成熟度相当。
-
 
 ## 数据仓库新手？
 数据仓库是从一个或多个数据源加载的数据集合，用于执行报告和数据分析等商业智能任务。
@@ -72,4 +71,4 @@
 
 <!--Other web references-->
 
-<!---HONumber=Mooncake_0829_2016-->
+<!---HONumber=Mooncake_1212_2016-->

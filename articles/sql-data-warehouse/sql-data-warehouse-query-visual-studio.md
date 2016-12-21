@@ -14,8 +14,8 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="06/16/2016"
-   wacn.date="07/18/2016"
+   ms.date="10/31/2016"
+   wacn.date="12/19/2016"
    ms.author="sonyama;barbkess"/>
 
 # 查询 Azure SQL 数据仓库 (Visual Studio)
@@ -31,7 +31,6 @@
 使用 Visual Studio 只需几分钟便可查询 Azure SQL 数据仓库。此方法使用 Visual Studio 中的 SQL Server Data Tools (SSDT) 扩展。
 
 ## 先决条件
-
 要使用本教程，你需要：
 
 + 现有 SQL 数据仓库。若要创建这样一个数据仓库，请参阅[创建 SQL 数据仓库][]。
@@ -90,7 +89,7 @@
 
 <!-- 既然你可以执行连接和查询，接下来请尝试[使用 PowerBI 可视化数据][]。 -->
 
-若要为 Azure Active Directory 配置环境，请参阅 [SQL 数据仓库身份验证][]。
+若要为 Azure Active Directory 身份验证配置环境，请参阅 [SQL 数据仓库身份验证][]。
 
 <!--Arcticles-->
 [连接到 SQL 数据仓库]: /documentation/articles/sql-data-warehouse-connect-overview/
@@ -111,4 +110,4 @@
 [6]: ./media/sql-data-warehouse-query-visual-studio/run-query.png
 [7]: ./media/sql-data-warehouse-query-visual-studio/query-results.png
 
-<!---HONumber=Mooncake_0711_2016-->
+<!---HONumber=Mooncake_1212_2016-->

@@ -13,14 +13,16 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="08/08/2016"
-   wacn.date="09/26/2016"
+   ms.date="10/31/2016"
+   wacn.date="12/19/2016"
    ms.author="barbkess;sonyama"/>
+
 
 # 管理 Azure SQL 数据仓库中的计算能力 (T-SQL)
 
 > [AZURE.SELECTOR]
 - [概述](/documentation/articles/sql-data-warehouse-manage-compute-overview/)
+- [门户](/documentation/articles/sql-data-warehouse-manage-compute-portal/)
 - [PowerShell](/documentation/articles/sql-data-warehouse-manage-compute-powershell/)
 - [REST](/documentation/articles/sql-data-warehouse-manage-compute-rest-api/)
 - [TSQL](/documentation/articles/sql-data-warehouse-manage-compute-tsql/)
@@ -35,17 +37,17 @@
 
 若要暂停或恢复某个数据库，请在本文顶部选择其他平台选项之一。
 
-若要了解相关信息，请参阅[管理计算能力概述][]。
+若要了解相关信息，请参阅[管理计算能力概述][Manage compute power overview]。
 
 <a name="current-dwu-bk"></a>
 
 ## 查看当前的 DWU 设置
-
 若要查看数据库的当前 DWU 设置，请执行以下操作：
 
 1. 在 Visual Studio 2015 中打开“SQL Server 对象资源管理器”。
 2. 连接到与逻辑 SQL 数据库服务器关联的 master 数据库。
-2. 从 sys.database\_service\_objectives 动态管理视图中选择。下面是一个示例：
+3. 从 sys.database\_service\_objectives 动态管理视图中选择。下面是一个示例：
+
 
     	SELECT
     	 db.name [Database],
@@ -60,14 +62,12 @@
 <a name="scale-compute-bk"></a>
 
 ## 缩放计算
-
-[AZURE.INCLUDE [SQL Data Warehouse scale DWUs description（SQL 数据仓库缩放 DWU 说明）](../../includes/sql-data-warehouse-scale-dwus-description)]
+[AZURE.INCLUDE [SQL Data Warehouse scale DWUs description（SQL 数据仓库缩放 DWU 说明）](../../includes/sql-data-warehouse-scale-dwus-description.md)]
 
 若要更改 DWU，请执行以下操作：
 
-
 1. 连接到与逻辑 SQL 数据库服务器关联的 master 数据库。
-2. 使用 [ALTER DATABASE][] TSQL 语句。以下示例将数据库 MySQLDW 的服务级别目标设置为 DW1000。
+2. 使用 [ALTER DATABASE][ALTER DATABASE] TSQL 语句。以下示例将数据库 MySQLDW 的服务级别目标设置为 DW1000。
 
 
     	ALTER DATABASE MySQLDW
@@ -78,15 +78,14 @@
 <a name="next-steps-bk"></a>
 
 ## 后续步骤
-
-有关其他管理任务，请参阅[管理概述][]。
+有关其他管理任务，请参阅[管理概述][Management overview]。
 
 <!--Image references-->
 
 <!--Article references-->
 [Service capacity limits]: /documentation/articles/sql-data-warehouse-service-capacity-limits/
-[管理概述]: /documentation/articles/sql-data-warehouse-overview-manage/
-[管理计算能力概述]: /documentation/articles/sql-data-warehouse-manage-compute-overview/
+[Management overview]: /documentation/articles/sql-data-warehouse-overview-manage/
+[Manage compute power overview]: /documentation/articles/sql-data-warehouse-manage-compute-overview/
 
 <!--MSDN references-->
 
@@ -97,4 +96,4 @@
 
 [Azure portal]: http://portal.azure.cn/
 
-<!---HONumber=Mooncake_0808_2016-->
+<!---HONumber=Mooncake_1212_2016-->

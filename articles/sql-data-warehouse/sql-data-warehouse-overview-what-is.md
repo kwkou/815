@@ -14,8 +14,8 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="09/27/2016"
-   wacn.date="12/15/2016"
+   ms.date="10/31/2016"
+   wacn.date="12/19/2016"
    ms.author="lodipalm;barbkess;mausher;jrj;sonyama;kevin"/>
 
 
@@ -180,4 +180,4 @@ Polybase 可让你使用熟悉的 T-SQL 命令来利用不同源中的数据。P
 [Twitter]: https://twitter.com/hashtag/SQLDW
 [视频]: https://azure.microsoft.com/documentation/videos/index/?services=sql-data-warehouse
 
-<!---HONumber=Mooncake_1024_2016-->
+<!---HONumber=Mooncake_1212_2016-->

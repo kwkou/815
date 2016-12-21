@@ -14,8 +14,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="08/30/2016"
-   wacn.date="10/17/2016"
+   ms.date="10/31/2016"
+   wacn.date="12/19/2016"
    ms.author="sonyama;barbkess"/>
 
 # 排查 Azure SQL 数据仓库问题
@@ -54,7 +54,7 @@
 
 | 问题 | 解决方法 |
 | :----------------------------------| :---------------------------------------------- |
-| 消息 40847：无法执行操作，因为服务器将超过 45000 这一允许的数据库吞吐量单元配额。 | 请减少要尝试创建的数据库的 [DWU][]。|
+| 消息 40847：无法执行操作，因为服务器会超过 45000 这一允许的数据库事务单位配额。 | 请减少要尝试创建的数据库的 [DWU][]。|
 | 调查空间使用率 | 请参阅[表大小][]，了解系统的空间使用率。|
 | 管理表的帮助 | 有关管理表的帮助，请参阅[表概述][Overview]一文。本文还包含指向更详细主题的链接，如[表数据类型][Data types]、[分布表][Distribute]、[为表编制索引][Index]、[将表分区][Partition]、[维护表统计信息][Statistics]和[临时表][Temporary]。|
 
@@ -135,4 +135,4 @@
 [Twitter]: https://twitter.com/hashtag/SQLDW
 [Videos]: https://azure.microsoft.com/documentation/videos/index/?services=sql-data-warehouse
 
-<!---HONumber=Mooncake_1010_2016-->
+<!---HONumber=Mooncake_1212_2016-->

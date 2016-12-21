@@ -1,4 +1,4 @@
-<!-- Remove import/export, solution-partners -->
+<!-- Remove solution-partners -->
 <properties
    pageTitle="将数据载入 Azure SQL 数据仓库 | Azure"
    description="了解将数据载入 SQL 数据仓库的常见方案。这些常见方案包括使用 PolyBase、Azure Blob 存储、平面文件以及磁盘寄送。也可使用第三方工具。"
@@ -14,8 +14,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="07/12/2016"
-   wacn.date="08/15/2016"
+   ms.date="10/31/2016"
+   wacn.date="12/19/2016"
    ms.author="lodipalm;barbkess;sonyama"/>
 
 # 将数据载入 Azure SQL 数据仓库
@@ -30,10 +30,9 @@
 将数据导入 SQL 数据仓库时，最快的方式是使用 PolyBase 从 Azure Blob 存储加载数据。PolyBase 使用 SQL 数据仓库的大规模并行处理 (MPP) 设计以并行方式从 Azure Blob 存储加载数据。若要使用 PolyBase，可以使用 T-SQL 命令或 Azure 数据工厂管道。
 
 ### 1\.使用 PolyBase 和 T-SQL
-
 加载过程摘要：
 
-2. 将数据格式化为 UTF-8，因为 PolyBase 目前不支持 UTF-16。
+1. 将数据格式化为 UTF-8，因为 PolyBase 目前不支持 UTF-16。
 2. 将数据移到 Azure Blob 存储并存储在文本文件中。
 3. 在 SQL 数据仓库中配置外部对象，以便定义数据的位置和格式
 4. 运行 T-SQL 命令，将数据以并行方式载入新的数据库表。
@@ -55,7 +54,7 @@
 1. 修改 Integration Services 包，使之指定 SQL Server 实例作为源，指定 SQL 数据仓库数据库作为目标。
 2. 将架构迁移到 SQL 数据仓库（如果尚未迁移到该处）。
 3. 更改包中的映射方式，仅使用 SQL 数据仓库支持的数据类型。
-3. 计划和运行包。
+4. 计划和运行包。
 
 如需教程，请参阅[《Load data from SQL Server to Azure SQL Data Warehouse (SSIS)》][]（将数据从 SQL Server 加载到 Azure SQL 数据仓库 (SSIS)）。
 
@@ -74,6 +73,7 @@
 如果你的数据量小，则可使用 bcp 将数据直接载入 Azure SQL 数据仓库。
 
 加载过程摘要：
+
 1. 使用 bcp 命令行实用程序将数据从 SQL Server 导出到平面文件。
 2. 使用 bcp 将数据从平面文件直接加载到 SQL 数据仓库。
 
@@ -81,18 +81,18 @@
 
 
 ### 使用导入/导出（建议用于数据量 > 10 TB 的情况）
-如果你的数据大小 > 10 TB 并且你需要将数据移至 Azure，则建议你使用磁盘寄送服务导入/导出。
+如果你的数据大小 > 10 TB 并且你需要将数据移至 Azure，则建议你使用磁盘寄送服务：[导入/导出][Import/Export]。
 
 加载过程摘要
-2. 使用 bcp 命令行实用程序将数据从 SQL Server 导出到可转移磁盘上的平面文件。
-3. 将磁盘寄送到 Microsoft。
-4. Microsoft 将数据载入 SQL 数据仓库
+
+1. 使用 bcp 命令行实用程序将数据从 SQL Server 导出到可转移磁盘上的平面文件。
+2. 将磁盘寄送到 Microsoft。
+3. Microsoft 将数据载入 SQL 数据仓库
 
 ## 从 HDInsight 加载
 SQL 数据仓库支持通过 PolyBase 从 HDInsight 加载数据。该过程和从 Azure Blob 存储加载数据一样 - 使用 PolyBase 连接到 HDInsight 以加载数据。
 
 ### 1\.使用 PolyBase 和 T-SQL
-
 加载过程摘要：
 
 2. 将数据格式化为 UTF-8，因为 PolyBase 目前不支持 UTF-16。
@@ -134,4 +134,4 @@ SQL 数据仓库支持通过 PolyBase 从 HDInsight 加载数据。该过程和�
 <!--Other Web references-->
 [导入/导出]: /documentation/articles/storage-import-export-service/
 
-<!---HONumber=Mooncake_0808_2016-->
+<!---HONumber=Mooncake_1212_2016-->
