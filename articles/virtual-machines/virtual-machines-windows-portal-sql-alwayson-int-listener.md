@@ -8,13 +8,13 @@
    editor="monicar"/>
 
 <tags
-   ms.service="virtual-machines"
+   ms.service="virtual-machines-windows"
    ms.devlang="na"
    ms.topic="article"
    ms.tgt_pltfrm="vm-windows-sql-server"
    ms.workload="infrastructure-services"
    ms.date="07/12/2016"
-   wacn.date="11/21/2016"
+   wacn.date="12/21/2016"
    ms.author="MikeRayMSFT"/>
 
 # 在 Azure 中为 AlwaysOn 可用性组配置内部负载均衡器
