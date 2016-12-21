@@ -134,6 +134,6 @@ Azure 门户预览中的网络安全组如下所示。请注意，NSG 可与子�
 
 <hr>
 
-[步骤 3 - Azure Resource Manager 模板的可用性和缩放](/documentation/articles/virtual-machines-linux-dotnet-core-4-avalibility-scale/)
+[步骤 3 - Azure Resource Manager 模板的可用性和缩放](/documentation/articles/virtual-machines-linux-dotnet-core-4-availability-scale/)
 
 <!---HONumber=Mooncake_1114_2016-->

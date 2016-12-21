@@ -50,7 +50,7 @@ Azure 虚拟机 (VM) 是 Azure 提供的多种[可缩放按需分配计算资源
 如果使用 Azure 创建操作系统磁盘，计算机名称与虚拟机名称相同。如果[上载包含以前配置的操作系统的自有映像](/documentation/articles/virtual-machines-windows-upload-image/)并使用它来创建虚拟机，则名称可以不同。建议在上载自己的映像文件时，使操作系统中的计算机名称与虚拟机名称保持相同。
 
 ### 位置
-在 Azure 中创建的所有资源分布在世界各地的多个[地理区域](https://azure.microsoft.com/regions/)。创建 VM 时，区域通常称为**位置**。位置指定 VM 虚拟硬盘的存储位置。
+创建 VM 时，区域通常称为**位置**。位置指定 VM 虚拟硬盘的存储位置。
 
 下表显示了获取可用位置列表的一些方法。
 
@@ -71,7 +71,7 @@ Azure 根据 VM 的大小和操作系统按[小时价格](/pricing/details/virtu
 ### 操作系统磁盘和映像
 虚拟机使用[虚拟硬盘 (VHD)](/documentation/articles/virtual-machines-windows-about-disks-vhds/) 来存储其操作系统 (OS) 和数据。VHD 还可用于存储映像，你可以选择某个映像来安装 OS。
 
-Azure 提供许多[应用商店映像](https://azure.microsoft.com/marketplace/virtual-machines/)，这些映像可配合各种版本和类型的 Windows Server 操作系统使用。应用商店映像由映像发布者、产品、SKU 和版本（通常指定为最新版本）标识。
+Azure 提供许多应用商店映像，这些映像可配合各种版本和类型的 Windows Server 操作系统使用。应用商店映像由映像发布者、产品、SKU 和版本（通常指定为最新版本）标识。
 
 下表显示了查找映像信息的一些方法。
 

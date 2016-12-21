@@ -19,7 +19,7 @@
 
 # 使用 Azure CLI 2.0（预览版）创建 Linux VM
 
-> [Azure.Note]
+> [AZURE.NOTE]
 在 Azure 中国区使用 Azure CLI 2.0 之前，需要为其设置 Azure 上下文。运行 `az context create --cloud AzureChinaCloud --name AzureChinaCloud` 可以创建 Azure 中国区的 Azure 上下文。运行 `az context switch -n AzureChinaCloud` 可切换到 Azure 中国区环境。如果想要返回全球 Azure，可以运行 `az context switch -n default`
 
 本文说明如何在 Azure CLI 2.0（预览版）中使用 [az vm create](https://docs.microsoft.com/cli/azure/vm#create) 命令在 Azure 上快速部署 Linux 虚拟机 (VM)。

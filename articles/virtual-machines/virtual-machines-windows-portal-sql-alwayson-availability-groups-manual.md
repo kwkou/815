@@ -90,7 +90,7 @@ Azure 将创建资源组，并在门户中固定资源组的快捷方式。
 
 1. 在 Azure 门户预览上，单击新资源组，然后单击“+”号将新项添加到该资源组。Azure 随即打开“全部”边栏选项卡。
    
-   ![新建项](./media/virtual-machines-windows-portal-sql-alwayson-availability-groups-manual/02-newiteminrg.png)  
+    ![新建项](./media/virtual-machines-windows-portal-sql-alwayson-availability-groups-manual/02-newiteminrg.png)  
 
 2. 搜索“虚拟网络”。
    
@@ -103,21 +103,21 @@ Azure 将创建资源组，并在门户中固定资源组的快捷方式。
 
 5. 在“创建虚拟网络”边栏选项卡上配置虚拟网络。
    
-   下表显示了虚拟网络的设置。
+    下表显示了虚拟网络的设置。
    
-   | **字段** | 值 |
-   | --- | --- |
-   | **名称** |autoHAVNET |
-   | **地址空间** |10.0.0.0/16 |
-   | **子网名称** |Subnet-1 |
-   | **子网地址范围** |10.0.0.0/24 |
-   | **订阅** |指定要使用的订阅。如果只有一个订阅，可将此字段留空。|
-   | **位置** |指定 Azure 位置。|
+    | **字段** | 值 |
+    | --- | --- |
+    | **名称** |autoHAVNET |
+    | **地址空间** |10.0.0.0/16 |
+    | **子网名称** |Subnet-1 |
+    | **子网地址范围** |10.0.0.0/24 |
+    | **订阅** |指定要使用的订阅。如果只有一个订阅，可将此字段留空。|
+    | **位置** |指定 Azure 位置。|
    
     地址空间和子网地址范围可能与此表中的不同。 根据具体订阅，Azure 将指定可用的地址空间和相应的子网地址范围。 如果地址空间不足，请使用其他订阅。
 6. 单击“创建”
    
-   ![配置虚拟网络](./media/virtual-machines-windows-portal-sql-alwayson-availability-groups-manual/06-configurevirtualnetwork.png)  
+    ![配置虚拟网络](./media/virtual-machines-windows-portal-sql-alwayson-availability-groups-manual/06-configurevirtualnetwork.png)  
 
 
 Azure 将返回到门户仪表板并在创建新网络时发出通知。
@@ -240,10 +240,10 @@ Azure 将创建虚拟机。
 5. 选择“下一步”，直到你到达“服务器角色”部分。
 6. 选择“Active Directory 域服务”和“DNS 服务器”角色。出现提示时，添加这些角色所需的任何其他功能。
    
-   > [AZURE.NOTE]
-   Windows 会警告你没有静态 IP 地址。如果你要测试配置，请单击“继续”。对于生产方案，请在 Azure 门户中将 IP 地址设置为静态，或[使用 PowerShell 设置域控制器计算机的静态 IP 地址](/documentation/articles/virtual-networks-reserved-private-ip/)。
-   > 
-   > 
+    > [AZURE.NOTE]
+    Windows 会警告你没有静态 IP 地址。如果你要测试配置，请单击“继续”。对于生产方案，请在 Azure 门户中将 IP 地址设置为静态，或[使用 PowerShell 设置域控制器计算机的静态 IP 地址](/documentation/articles/virtual-networks-reserved-private-ip/)。
+    > 
+    > 
    
     ![Add Roles Dialog](./media/virtual-machines-windows-portal-sql-alwayson-availability-groups-manual/IC784624.png)
 7. 单击“下一步”，直到你到达“确认”部分。选中“必要时自动重新启动目标服务器”复选框。
@@ -308,14 +308,14 @@ Azure 将创建虚拟机。
 3. 在“Active Directory 管理中心”的左窗格中，选择“corp (本地)”。
 4. 在右侧的“任务”窗格中，选择“新建”，然后单击“用户”。使用以下设置：
    
-   | 设置 | 值 |
-   | --- | --- |
-   | **名字** |Install |
-   | **用户 SamAccountName** |Install |
-   | **密码** |Contoso!0000 |
-   | **确认密码** |Contoso!0000 |
-   | **其他密码选项** |已选中 |
-   | **密码永不过期** |已选中 |
+    | 设置 | 值 |
+    | --- | --- |
+    | **名字** |Install |
+    | **用户 SamAccountName** |Install |
+    | **密码** |Contoso!0000 |
+    | **确认密码** |Contoso!0000 |
+    | **其他密码选项** |已选中 |
+    | **密码永不过期** |已选中 |
 5. 单击“确定”以创建 **Install** 用户。此帐户将用于配置故障转移群集和可用性组。
 6. 使用相同的步骤创建两个其他用户：**CORP\\SQLSvc1** 和 **CORP\\SQLSvc2**。SQL Server 服务使用这些帐户。接下来，要赋予 **CORP\\Install** 所需权限来配置 Windows Server 故障转移群集 (WSFC)。
 7. 在“Active Directory 管理中心”的左窗格中，选择“corp (本地)”。然后，在右侧的“任务”窗格中，单击“属性”。
@@ -454,13 +454,13 @@ Azure 将创建虚拟机。
 
 4. 在“创建群集向导”中，逐页完成以下设置来创建一个单节点群集：
    
-   | 页面 | 设置 |
-   | --- | --- |
-   | 准备工作 |使用默认值 |
-   | 选择服务器 |在“输入服务器名称”中键入 **sqlserver-0**，然后单击“添加”|
-   | 验证警告 |选择“否。不需要 Microsoft 对该群集的支持，因此不希望运行验证测试。单击‘下一步’时，继续创建群集”。|
-   | 用于管理群集的访问点 |在“群集类型”中键入 **Cluster1** |
-   | 确认 |除非使用的是“存储空间”，否则请使用默认值。请参阅此表后面的备注。|
+    | 页面 | 设置 |
+    | --- | --- |
+    | 准备工作 |使用默认值 |
+    | 选择服务器 |在“输入服务器名称”中键入 **sqlserver-0**，然后单击“添加”|
+    | 验证警告 |选择“否。不需要 Microsoft 对该群集的支持，因此不希望运行验证测试。单击‘下一步’时，继续创建群集”。|
+    | 用于管理群集的访问点 |在“群集类型”中键入 **Cluster1** |
+    | 确认 |除非使用的是“存储空间”，否则请使用默认值。请参阅此表后面的备注。|
 
     >[AZURE.NOTE] 若利用[存储空间](https://technet.microsoft.com/zh-cn/library/hh831739)将多个磁盘组合到存储池中，则必须取消选中“确认”页上的“将所有符合条件的存储添加到群集中”复选框。 如果继续选中，Windows 会在群集过程中分离虚拟磁盘。 由此导致在从群集中删除存储空间并使用 PowerShell 重新附加之前，磁盘管理器或资源管理器中不会显示这些磁盘。
 
@@ -481,10 +481,10 @@ Azure 将创建虚拟机。
 7. 在“验证警告”页上，单击“否”（在生产方案中，你应执行验证测试）。然后，单击“下一步”。
 8. 在“确认”页中，单击“下一步”以添加节点。
    
-   > [AZURE.WARNING]
-   若利用[存储空间](https://technet.microsoft.com/zh-cn/library/hh831739)将多个磁盘组合到存储池中，则必须取消选中“将所有符合条件的存储添加到群集中”复选框。如果继续选中，则将在群集过程中分离虚拟磁盘。因此，这些虚拟磁盘也不会出现在磁盘管理器或资源管理器之中，除非从群集中删除存储空间，并使用 PowerShell 将其重新附加。
-   > 
-   > 
+    > [AZURE.WARNING]
+    若利用[存储空间](https://technet.microsoft.com/zh-cn/library/hh831739)将多个磁盘组合到存储池中，则必须取消选中“将所有符合条件的存储添加到群集中”复选框。如果继续选中，则将在群集过程中分离虚拟磁盘。因此，这些虚拟磁盘也不会出现在磁盘管理器或资源管理器之中，除非从群集中删除存储空间，并使用 PowerShell 将其重新附加。
+    > 
+    > 
 9. 向群集添加节点后，单击“完成”。“故障转移群集管理器”现在应显示你的群集具有三个节点，并将这些节点在“节点”容器中列出。
 10. 从远程桌面会话注销。
 
@@ -726,7 +726,7 @@ Azure 将创建虚拟机。
    
         sqlcmd -S "<listenerName>" -E
    
-   如果侦听器使用的端口号不是 1433，则需在测试中指定端口号。例如，以下查询使用端口 1435 测试到侦听器名称的连接：
+    如果侦听器使用的端口号不是 1433，则需在测试中指定端口号。例如，以下查询使用端口 1435 测试到侦听器名称的连接：
 
         sqlcmd -S "<listenerName>",1435 -E
 

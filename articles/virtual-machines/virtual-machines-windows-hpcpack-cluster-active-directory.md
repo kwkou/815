@@ -100,12 +100,7 @@ HPC Pack 群集与 Azure AD 集成可帮助用户实现以下目标：
         ],
 
 7. 保存文件。然后在门户中，单击“管理清单”>“上载清单”。然后，可以上载编辑的清单。
-8. 单击“用户”，选择用户，然后单击“分配”。将一个可用角色（HpcUsers 或 HpcAdminMirror）分配给用户。对目录中的其他用户重复此步骤。有关群集用户的背景信息，请参阅 [管理群集用户] (https://technet.microsoft.com/zh-cn/library/ff919335(v=ws.11).aspx)。
-
-   > [AZURE.NOTE] 
-   若要管理用户，我们建议使用 [Azure 门户预览](https://portal.azure.cn)中的 Azure Active Directory 预览边栏选项卡。
-   >
-
+8. 单击“用户”，选择用户，然后单击“分配”。将一个可用角色（HpcUsers 或 HpcAdminMirror）分配给用户。对目录中的其他用户重复此步骤。有关群集用户的背景信息，请参阅 [管理群集用户](https://technet.microsoft.com/zh-cn/library/ff919335(v=ws.11).aspx)。
 
 ## 步骤 2：将 HPC 群集客户端注册到 Azure AD 租户
 

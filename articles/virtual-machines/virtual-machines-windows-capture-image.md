@@ -41,7 +41,7 @@
 
         Select-AzureRmSubscription -SubscriptionId "<subscriptionID>"
 
-## 解除分配 VM 并将状态设置为通用化
+## <a name="prepare-the-vm-for-image-capture"></a> 解除分配 VM 并将状态设置为通用化
 1. 解除分配 VM 资源。
 
         Stop-AzureRmVM -ResourceGroupName <resourceGroup> -Name <vmName>

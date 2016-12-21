@@ -60,7 +60,7 @@
 
     Set-AzureRmVirtualNetwork -VirtualNetwork $vnet
 
-## 有关网络安全组的详细信息
+## <a name="more-information-on-network-security-groups"></a> 有关网络安全组的详细信息
 利用此处的快速命令，可以让流向 VM 的流量开始正常运行。网络安全组提供许多出色的功能和粒度来控制资源的访问。请参阅[创建网络安全组和 ACL 规则](/documentation/articles/virtual-networks-create-nsg-arm-ps/)了解更多信息。
 
 可以将网络安全组和 ACL 规则定义为 Azure Resource Manager 模板的一部分。深入了解[使用模板创建网络安全组](/documentation/articles/virtual-networks-create-nsg-arm-template/)。

@@ -50,7 +50,7 @@
 3. 键入 **y** 继续。添加 **-force** 参数即可免除此确认步骤。
 4. 完成该命令后，键入 **exit**。此步骤将关闭 SSH 客户端。
 
-## 步骤 2：捕获 VM
+## <a name="capture-the-vm"></a> 步骤 2：捕获 VM
 使用 Azure CLI 来通用化和捕获 VM。在以下示例中，请将示例参数名称替换为你自己的值。示例参数名称包括 **myResourceGroup**、**myVnet** 和 **myVM**。
 
 1. 从本计算机打开 Azure CLI 并[登录到你的 Azure 订阅](/documentation/articles/xplat-cli-connect/)。

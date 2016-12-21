@@ -42,7 +42,7 @@
 下面逐步讲解如何部署 UbuntuLTS VM，并解释每个步骤的具体操作。
 
 ## VM quick-create 别名
-选择分发的便捷方法是使用映射到最常见 OS 分发的 Azure CLI 别名。下表列出了别名（截止到 Azure 0.10 版）。使用 `quick-create` 的所有部署默认为部署到由固态硬盘 (SSD) 存储提供支持的 VM，这些 VM 提供更快的预配性能和高性能磁盘访问。（这些别名表示 Azure 上的一小部分可用分发。在 Azure 应用商店中查找更多映像（可以[在 PowerShell 中搜索映像](/documentation/articles/virtual-machines-linux-cli-ps-findimage/)，或者[在 Web](https://azure.microsoft.com/marketplace/virtual-machines/) 上搜索），或者[上载自己的自定义映像](/documentation/articles/virtual-machines-linux-create-upload-generic/)。）
+选择分发的便捷方法是使用映射到最常见 OS 分发的 Azure CLI 别名。下表列出了别名（截止到 Azure 0.10 版）。使用 `quick-create` 的所有部署默认为部署到由固态硬盘 (SSD) 存储提供支持的 VM，这些 VM 提供更快的预配性能和高性能磁盘访问。（这些别名表示 Azure 上的一小部分可用分发。在 Azure 应用商店中查找更多映像（可以[在 PowerShell 中搜索映像](/documentation/articles/virtual-machines-linux-cli-ps-findimage/)），或者[上载自己的自定义映像](/documentation/articles/virtual-machines-linux-create-upload-generic/)。）
 
 | 别名 | 发布者 | 产品 | SKU | 版本 |
 |:--- |:--- |:--- |:--- |:--- |
