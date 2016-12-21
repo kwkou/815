@@ -111,7 +111,6 @@ SQL 数据库中的弹性池结合租户隔离与租户数据库之间的资源�
 | 租户隔离与资源共享 | [弹性池](/documentation/articles/sql-database-elastic-pool/)：分配 SQL 数据库资源池，使多个数据库可共享这些资源。此外，单个数据库可以按需要从池提取资源，以应对租户工作负荷变化而造成的容量需求剧增。弹性池本身可根据需要扩展或收缩。弹性池还支持在池级别轻松管理、监视和故障排除。 |
 | 跨数据库简化 DevOps | [弹性池](/documentation/articles/sql-database-elastic-pool/)：如前所述。|
 | [弹性查询](/documentation/articles/sql-database-elastic-query-horizontal-partitioning/)：跨数据库查询，进行报告或跨租户分析。| |
-
 | [弹性事务](/documentation/articles/sql-database-elastic-transactions-overview/)：以原子隔离的方式处理多个数据库的更改。当应用程序在多个数据库操作之间需要保证“全有或全无”时，就需要弹性事务功能。 | |
 | [弹性数据库客户端库](/documentation/articles/sql-database-elastic-database-client-library/)：管理数据分布，将租户映射到数据库。 | |
 
@@ -123,7 +122,6 @@ SQL 数据库中的弹性池结合租户隔离与租户数据库之间的资源�
 | 安全隔离功能 | [行级别安全性](https://msdn.microsoft.com/zh-cn/library/dn765131.aspx) |
 | [数据库架构](https://msdn.microsoft.com/zh-cn/library/dd207005.aspx) | |
 | 跨数据库简化 DevOps | [弹性查询](/documentation/articles/sql-database-elastic-query-horizontal-partitioning/) |
-
 | [弹性事务](/documentation/articles/sql-database-elastic-transactions-overview/) | |
 | [弹性数据库客户端库](/documentation/articles/sql-database-elastic-database-client-library/) | |
 | [弹性数据库拆分/合并](/documentation/articles/sql-database-elastic-scale-overview-split-and-merge/) | |

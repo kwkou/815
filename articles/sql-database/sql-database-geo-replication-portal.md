@@ -1,23 +1,22 @@
-<properties 
-    pageTitle="使用 Azure 门户预览为 Azure SQL 数据库配置异地复制 | Azure" 
-    description="使用 Azure 门户预览为 Azure SQL 数据库配置异地复制" 
-    services="sql-database" 
-    documentationCenter="" 
-    authors="stevestein" 
-    manager="jhubbard" 
-    editor=""/>
+<properties
+    pageTitle="使用 Azure 门户预览为 Azure SQL 数据库配置异地复制 | Azure"
+    description="使用 Azure 门户预览为 Azure SQL 数据库配置异地复制"
+    services="sql-database"
+    documentationcenter=""
+    author="stevestein"
+    manager="jhubbard"
+    editor="" />
+<tags
+    ms.assetid="d0b29822-714f-4633-a5ab-fb1a09d43ced"
+    ms.service="sql-database"
+    ms.devlang="NA"
+    ms.topic="article"
+    ms.tgt_pltfrm="NA"
+    ms.workload="NA"
+    ms.date="10/18/2016"
+    wacn.date="12/19/2016"
+    ms.author="sstein" />
 
-ms.assetid: d0b29822-714f-4633-a5ab-fb1a09d43ced
-ms.service: sql-database
-ms.devlang: NA
-ms.topic: article
-ms.tgt_pltfrm: NA
-ms.workload: NA
-ms.date: 10/18/2016
-wacn.date="12/19/2016"
-ms.author: sstein
-
----
 # 使用 Azure 门户预览为 Azure SQL 数据库配置异地复制
 
 
