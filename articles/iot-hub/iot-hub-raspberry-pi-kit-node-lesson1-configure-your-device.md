@@ -17,7 +17,7 @@
 
 # 配置设备
 ## 执行的操作
-对 Pi 进行首次使用配置，并安装 Raspbian 操作系统。Raspbian 是一种免费的操作系统，已针对 Raspberry Pi 硬件进行优化。如果有问题，可在[故障排除页](/documentation/artilcles/iot-hub-raspberry-pi-kit-node-troubleshooting/)上查找解决方案。
+对 Pi 进行首次使用配置，并安装 Raspbian 操作系统。Raspbian 是一种免费的操作系统，已针对 Raspberry Pi 硬件进行优化。如果有问题，可在[故障排除页](/documentation/articles/iot-hub-raspberry-pi-kit-node-troubleshooting/)上查找解决方案。
 
 ## 你要学习的知识
 本文介绍：

@@ -238,15 +238,15 @@ IoT 解决方案可以扩展已定义的设备管理模式集，或通过使用�
 [lnk-dev-setup]: https://github.com/Azure/azure-iot-sdks/blob/master/doc/get_started/node-devbox-setup.md
 
 [lnk-free-trial]: /pricing/1rmb-trial/
-[lnk-fwupdate]: /documentation/articls/iot-hub-node-node-firmware-update/
+[lnk-fwupdate]: /documentation/articles/iot-hub-node-node-firmware-update/
 [Azure portal]: https://portal.azure.cn/
-[Using resource groups to manage your Azure resources]: /documentation/articls/resource-group-portal/
+[Using resource groups to manage your Azure resources]: /documentation/articles/resource-group-portal/
 [lnk-dm-github]: https://github.com/Azure/azure-iot-device-management
-[lnk-tutorial-jobs]: /documentation/articls/iot-hub-node-node-schedule-jobs/
-[lnk-gateway-SDK]: /documentation/articls/iot-hub-linux-gateway-sdk-get-started/
+[lnk-tutorial-jobs]: /documentation/articles/iot-hub-node-node-schedule-jobs/
+[lnk-gateway-SDK]: /documentation/articles/iot-hub-linux-gateway-sdk-get-started/
 
-[lnk-devtwin]: /documentation/articls/iot-hub-devguide-device-twins/
-[lnk-c2dmethod]: /documentation/articls/iot-hub-devguide-direct-methods/
+[lnk-devtwin]: /documentation/articles/iot-hub-devguide-device-twins/
+[lnk-c2dmethod]: /documentation/articles/iot-hub-devguide-direct-methods/
 [lnk-transient-faults]: https://msdn.microsoft.com/zh-cn/library/hh680901(v=pandp.50).aspx
 [lnk-nuget-service-sdk]: https://www.nuget.org/packages/Microsoft.Azure.Devices/
 
