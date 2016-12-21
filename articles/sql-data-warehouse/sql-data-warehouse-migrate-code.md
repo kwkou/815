@@ -13,8 +13,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="08/02/2016"
-   wacn.date="08/29/2016"
+   ms.date="10/31/2016"
+   wacn.date="12/19/2016"
    ms.author="lodipalm;barbkess;sonyama;jrj"/>
 
 # 将 SQL 代码迁移到 SQL 数据仓库
@@ -142,4 +142,4 @@ SQL 数据仓库不支持递归 CTE。递归 CTE 的迁移过程可能有点复�
 
 <!--Other Web references-->
 
-<!---HONumber=Mooncake_0822_2016-->
+<!---HONumber=Mooncake_1212_2016-->

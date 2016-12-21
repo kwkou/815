@@ -14,8 +14,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="06/29/2016"
-   wacn.date="08/08/2016"
+   ms.date="10/31/2016"
+   wacn.date="12/19/2016"
    ms.author="jrj;barbkess;sonyama"/>
 
 # SQL 数据仓库中表的数据类型
@@ -142,4 +142,4 @@ SQL 数据仓库支持最常用的数据类型。下面是 SQL 数据仓库支�
 [xml]: https://msdn.microsoft.com/zh-cn/library/ms187339.aspx
 [user defined types]: https://msdn.microsoft.com/zh-cn/library/ms131694.aspx
 
-<!---HONumber=Mooncake_0801_2016-->
+<!---HONumber=Mooncake_1212_2016-->

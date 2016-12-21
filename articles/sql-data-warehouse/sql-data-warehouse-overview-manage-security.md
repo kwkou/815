@@ -14,8 +14,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="09/24/2016"
-   wacn.date="10/31/2016"
+   ms.date="10/31/2016"
+   wacn.date="12/19/2016"
    ms.author="rortloff;barbkess;sonyama"/>
 
 # 保护 SQL 数据仓库中的数据库
@@ -29,7 +29,6 @@
 本文逐步讲述有关保护 Azure SQL 数据仓库数据库的基本知识。具体而言，本文将帮助你了解如何使用相应的资源，在数据库中限制访问、保护数据和监视活动。
 
 ## 连接安全性
-
 连接安全性是指如何使用防火墙规则和连接加密来限制和保护数据库连接。
 
 服务器和数据库使用防火墙规则来拒绝源自未明确列入允许列表的 IP 地址的连接企图。若要从应用程序或客户端计算机的公共 IP 地址进行连接，必须先使用 Azure 经典管理门户、REST API 或 PowerShell 创建服务器级防火墙规则。作为最佳实践，应该尽量通过服务器防火墙来限制允许的 IP 地址范围。若要从你的本地计算机访问 Azure SQL 数据仓库，请确保你的网络和本地计算机上的防火墙允许在 TCP 端口 1433 上的传出通信。有关详细信息，请参阅 [Azure SQL 数据库防火墙][]、[sp\_set\_firewall\_rule][] 和 [sp\_set\_database\_firewall\_rule][]。
@@ -37,7 +36,6 @@
 默认加密到 SQL 数据仓库的连接。将忽略通过修改连接设置禁用加密的操作。
 
 ## 身份验证
-
 身份验证是指连接到数据库时如何证明你的身份。SQL 数据仓库当前支持通过用户名和密码进行 SQL Server 身份验证，并支持 Azure Active Directory。
 
 在为数据库创建逻辑服务器时，你已指定一个包含用户名和密码的“服务器管理员”登录名。使用这些凭据，你可以通过 SQL Server 身份验证以数据库所有者（或“dbo”）的身份在该服务器对任何数据库进行验证。
@@ -60,9 +58,7 @@
 
 如果用户需要执行其他操作（例如创建登录名或新数据库），则还需在 master 数据库中为其分配 `Loginmanager` 和 `dbmanager` 角色。如需详细了解这些额外的角色，以及如何在 SQL 数据库上进行身份验证，请参阅[在 Azure SQL 数据库中管理数据库和登录名][]。如需详细了解用于 SQL 数据仓库的 Azure AD，请参阅 [Connecting to SQL Data Warehouse By Using Azure Active Directory Authentication][]（使用 Azure Active Directory 身份验证连接到 SQL 数据仓库）。
 
-
 ## 授权
-
 授权是指你可以在 Azure SQL 数据仓库数据库中执行哪些操作，这由你的用户帐户角色成员身份和权限来控制。作为最佳实践，你应向用户授予所需的最低权限。Azure SQL 数据仓库可让你在 T-SQL 中使用角色方便管理这种权限：
 
 
@@ -112,4 +108,4 @@ Azure SQL 数据仓库透明数据加密 (TDE) 可以对静态数据进行实时
 <!--Other Web references-->
 [Azure 门户中基于角色的访问控制]: /documentation/articles/role-based-access-control-configure/
 
-<!---HONumber=Mooncake_1024_2016-->
+<!---HONumber=Mooncake_1212_2016-->

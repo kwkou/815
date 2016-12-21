@@ -14,8 +14,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="08/22/2016"
-   wacn.date="10/17/2016"
+   ms.date="10/31/2016"
+   wacn.date="12/19/2016"
    ms.author="barbkess;sonyama"/>  
 
 
@@ -246,4 +246,4 @@ SQL 数据仓库公开许多 SQL Server 动态管理视图 (DMV)。在 SQL 数�
 
 <!--Other Web references-->
 
-<!---HONumber=Mooncake_1010_2016-->
+<!---HONumber=Mooncake_1212_2016-->

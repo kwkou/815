@@ -14,8 +14,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="08/25/2016"
-   wacn.date="10/17/2016"
+   ms.date="10/31/2016"
+   wacn.date="12/19/2016"
    ms.author="lodipalm;barbkess;sonyama"/>  
 
 
@@ -187,4 +187,4 @@ PolyBase 还支持名为“递归文件夹遍历”的功能。你可以使用�
 [ADO.NET 目标适配器]: https://msdn.microsoft.com/zh-cn/library/bb934041.aspx
 [SSIS 文档]: https://msdn.microsoft.com/zh-cn/library/ms141026.aspx
 
-<!---HONumber=Mooncake_1010_2016-->
+<!---HONumber=Mooncake_1212_2016-->

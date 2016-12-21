@@ -14,8 +14,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="09/01/2016"
-   wacn.date="10/17/2016"
+   ms.date="10/31/2016"
+   wacn.date="12/19/2016"
    ms.author="sonyama;barbkess;jrj"/>
 
 # SQL 数据仓库容量限制
@@ -26,7 +26,7 @@
 ## 工作负荷管理
 
 | 类别 | 说明 | 最大值 |
-| :------------------ | :------------------------------------------------ | :----------------- |
+|:--- |:--- |:--- |
 | [数据仓库单位 (DWU)][]| 单个 SQL 数据仓库的最大 DWU | 6000 |
 | [数据仓库单位 (DWU)][]| 单个 SQL Server 的最大 DWU | 默认为 6000<br/><br/> 默认情况下，每个 SQL Server（例如 myserver.database.windows.net）的 DTU 配额为 45,000，最多可以允许 6000 DWU。此配额仅仅只是安全限制。若要计算 DTU 需求，可将总 DWU 需求乘以 7.5。您可以在门户中的 SQL server 边栏选项卡中查看您当前的 DTU 消耗量。已暂停和未暂停的数据库都计入 DTU 配额。 |
 | 数据库连接 | 并发打开的会话 | 1024<br/><br/>我们支持最多 1024 个活动连接，每个活动连接可同时将请求提交到 SQL 数据仓库数据库。请注意，实际可并发执行的查询数量是有限制的。当超出并发限制时，请求将进入内部队列等待处理。|
@@ -38,7 +38,7 @@
 ## 数据库对象
 
 | 类别 | 说明 | 最大值 |
-| :---------------- | :------------------------------------------- | :----------------- |
+|:--- |:--- |:--- |
 | 数据库 | 最大大小 | 磁盘上压缩的 240 TB<br/><br/> 此空间与 tempdb 或日志空间无关，因此，此空间专用于永久表。聚集列存储压缩率估计为 5 倍。此压缩率允许数据库在所有表都为聚集列存储（默认表类型）的情况下增长到大约 1 PB。|
 | 表 | 最大大小 | 磁盘上压缩后 60 TB |
 | 表 | 每个数据库的表数 | 20 亿 |
@@ -61,14 +61,12 @@
 ## 加载
 
 | 类别 | 说明 | 最大值 |
-| :---------------- | :------------------------------------------- | :----------------- |
-| Polybase 加载 | 每行的字节数 | 32,768<br/><br/>Polybase 加载限制为加载小于 32K 的行，并且无法加载到 VARCHR(MAX)、NVARCHAR(MAX) 或 VARBINARY(MAX)。虽然此限制目前仍存在，但将很快去除。<br/><br/>
-
+|:--- |:--- |:--- |
+| Polybase 加载 |每行的字节数 |32,768<br/><br/>Polybase 加载限制为加载小于 32K 的行，并且无法加载到 VARCHR(MAX)、NVARCHAR(MAX) 或 VARBINARY(MAX)。虽然此限制目前仍存在，但将很快去除。<br/><br/> |
 
 ## 查询
-
 | 类别 | 说明 | 最大值 |
-| :---------------- | :------------------------------------------- | :----------------- |
+|:--- |:--- |:--- |
 | 查询 | 用户表的排队查询数。 | 1000 |
 | 查询 | 系统视图的并发查询数。 | 100 |
 | 查询 | 系统视图的排队查询数。 | 1000 |
@@ -85,17 +83,16 @@
 ## Metadata
 
 | 系统视图 | 最大行数 |
-| :--------------------------------- | :------------|
-| sys.dm\_pdw\_component\_health\_alerts | 10,000 |
-| sys.dm\_pdw\_dms\_cores | 100 |
-| sys.dm\_pdw\_dms\_workers | 最近 1000 个 SQL 请求的 DMS 辅助角色的总数。 |
-| sys.dm\_pdw\_errors | 10,000 |
-| sys.dm\_pdw\_exec\_requests | 10,000 |
-| sys.dm\_pdw\_exec\_sessions | 10,000 |
-| sys.dm\_pdw\_request\_steps | sys.dm\_pdw\_exec\_requests 中存储的最近 1000 个 SQL 请求的步骤总数。 |
-| sys.dm\_pdw\_os\_event\_logs | 10,000 |
-| sys.dm\_pdw\_sql\_requests | sys.dm\_pdw\_exec\_requests 中存储的最近 1000 个 SQL 请求。 |
-
+|:--- |:--- |
+| sys.dm\_pdw\_component\_health\_alerts |10,000 |
+| sys.dm\_pdw\_dms\_cores |100 |
+| sys.dm\_pdw\_dms\_workers |最近 1000 个 SQL 请求的 DMS 辅助角色的总数。 |
+| sys.dm\_pdw\_errors |10,000 |
+| sys.dm\_pdw\_exec\_requests |10,000 |
+| sys.dm\_pdw\_exec\_sessions |10,000 |
+| sys.dm\_pdw\_request\_steps |sys.dm\_pdw\_exec\_requests 中存储的最近 1000 个 SQL 请求的步骤总数。 |
+| sys.dm\_pdw\_os\_event\_logs |10,000 |
+| sys.dm\_pdw\_sql\_requests |sys.dm\_pdw\_exec\_requests 中存储的最近 1000 个 SQL 请求。 |
 
 ## 后续步骤
 有关更多参考信息，请参阅 [SQL 数据仓库参考概述][]。
@@ -115,4 +112,4 @@
 [Row-Overflow Data Exceeding 8 KB]: https://msdn.microsoft.com/zh-cn/library/ms186981.aspx
 [Internal error: An expression services limit has been reached]: https://support.microsoft.com/kb/913050
 
-<!---HONumber=Mooncake_1010_2016-->
+<!---HONumber=Mooncake_1212_2016-->

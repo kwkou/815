@@ -13,8 +13,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="08/04/2016"
-   wacn.date="09/05/2016"
+   ms.date="10/31/2016"
+   wacn.date="12/19/2016"
    ms.author="sonyama;barbkess;jrj"/>  
 
 
@@ -320,4 +320,4 @@
 
 <!--Other Web references-->
 
-<!---HONumber=Mooncake_0829_2016-->
+<!---HONumber=Mooncake_1212_2016-->
