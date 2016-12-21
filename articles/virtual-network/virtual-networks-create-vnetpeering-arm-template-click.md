@@ -28,7 +28,7 @@
 
 若要使用 Resource Manager 模板创建 VNet 对等互连，请执行以下步骤：
 
-1. 如果你从未使用过 Azure PowerShell，请参阅 [How to Install and Configure Azure PowerShell](/documentation/articles/powershell-install-configure/)（如何安装和配置 Azure PowerShell），并始终按照说明进行操作，以登录到 Azure 并选择你的订阅。
+1. 对于从未使用过 Azure PowerShell 的用户，请参阅 [How to Install and Configure Azure PowerShell](/documentation/articles/powershell-install-configure/)（如何安装和配置 Azure PowerShell），完全按照说明进行操作，登录 Azure 并选择你的订阅。
 
     > [AZURE.NOTE] 用于管理 VNet 对等互连的 PowerShell cmdlet 随附于 [Azure PowerShell 1.6](http://www.powershellgallery.com/packages/Azure/1.6.0)。
 
@@ -60,7 +60,7 @@
         ]
         }
 
-3. 以下部分显示基于上述方案的从 VNet2 到 VNet1 的 VNet 对等互连链接定义。复制以下内容并将其保存到名为 VNetPeeringVNet2.json 的文件中。
+3. 以下部分显示基于上述方案从 VNet2 到 VNet1 的 VNet 对等互连链接定义。复制以下内容并将其保存到名为 VNetPeeringVNet2.json 的文件中。
 
         {
         "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
@@ -302,7 +302,7 @@
         }
 
 
-3. 对等互连建立后，可以参考此[文章](/documentation/articles/virtual-network-create-udr-arm-ps/)来定义用户定义的路由 (UDR)，以便通过虚拟设备重定向 VNet1 流量以使用其功能。在路由中指定下一个跃点地址时，可以在对等 VNet HubVNet 中将其设置为虚拟设备的 IP 地址。
+3. 对等互连建立后，可以参考此[文章](/documentation/articles/virtual-network-create-udr-arm-ps/)来定义用户定义的路由 (UDR)，通过虚拟设备重定向 VNet1 流量，使用其功能。在路由中指定下一个跃点地址时，可以在对等 VNet HubVNet 中将其设置为虚拟设备的 IP 地址。
 
 [AZURE.INCLUDE [virtual-networks-create-vnet-scenario-asmtoarm-include](../../includes/virtual-networks-create-vnetpeering-scenario-asmtoarm-include.md)]
 
