@@ -1,28 +1,27 @@
-<properties
-	pageTitle="部署拆分/合并服务 | Azure"
-	description="使用弹性数据库工具进行拆分与合并"
-	services="sql-database"  
-	documentationCenter=""
-	authors="sidneyh"
-	manager="jhubbard"
-	editor=""/>
+---
+title: 部署拆分/合并服务 | Microsoft Docs
+description: 使用弹性数据库工具拆分和合并
+services: sql-database
+documentationcenter: ''
+author: ddove
+manager: jhubbard
+editor: ''
 
-<tags
-	ms.service="sql-database"
-	ms.workload="sql-database"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="05/27/2016"
-	wacn.date="12/19/2016"
-	ms.author="ddove" />
+ms.assetid: 9a993c0f-7052-46cd-aa59-073bea8d535a
+ms.service: sql-database
+ms.workload: sql-database
+ms.tgt_pltfrm: na
+ms.devlang: na
+ms.topic: article
+ms.date: 10/24/2016
+wacn.date="12/19/2016"
+ms.author: ddove
 
-# 部署拆分/合并服务 
-
+---
+# 部署拆分/合并服务
 可使用拆分/合并工具在分片数据库之间移动数据。请参阅[在扩大云数据库之间移动数据](/documentation/articles/sql-database-elastic-scale-overview-split-and-merge/)
 
 ## 下载拆分/合并包
-
 1. 从 [NuGet](http://docs.nuget.org/docs/start-here/installing-nuget) 下载最新的 NuGet 版本。
 2. 打开命令提示符，然后导航到你下载 nuget.exe 的目录。此下载包括 PowerShell 命令。
 3. 使用以下命令将最新的拆分/合并包下载到当前目录中：
@@ -32,7 +31,7 @@
 
 ## 先决条件
 
-1. 创建将用作拆分/合并状态数据库的 Azure SQL DB。转到 [Azure 经典管理门户](https://manage.windowsazure.cn)。新建  **SQL 数据库**。为数据库指定一个名称，并新建 管理员和密码。确保记录该名称和密码以供日后使用。
+1. 创建将用作拆分/合并状态数据库的 Azure SQL DB。转到 [Azure 门户预览](https://portal.azure.cn)。新建  **SQL 数据库**。为数据库指定一个名称，并新建 管理员和密码。确保记录该名称和密码以供日后使用。
 
 2. 确保你的 Azure SQL DB 服务器允许 Azure 服务与其连接。在门户上的“防火墙设置”中，确保“允许访问 Azure 服务”设置设为“打开”。单击“保存”图标。
 
@@ -64,7 +63,7 @@
         
 ### 配置安全性
 
-有关配置服务安全性的详细说明，请参阅[拆分/合并安全性配置](/documentation/articles/sql-database-elastic-scale-split-merge-security-configuration)。
+有关配置服务安全性的详细说明，请参阅[拆分/合并安全性配置](/documentation/articles/sql-database-elastic-scale-split-merge-security-configuration/)。
 
 为了针对本教程创建一个简单的测试部署，我们将执行少量的配置步骤来使服务正常运行。仅一个计算机/帐户可以执行这些步骤，以便与服务进行通信。
 
@@ -82,7 +81,6 @@
 将要求你提供密码以保护私钥。输入强密码并进行确认。之后，系统将提示你再次输入该密码。在完成后单击“是”，以将证书导入到“受信任的根证书颁发机构”存储中。
 
 ### 创建 PFX 文件
-
 从执行 makecert 的相同窗口中执行以下命令；使用你用于创建证书的相同密码：
 
     pvk2pfx -pvk MyCert.pvk -spc MyCert.cer -pfx MyCert.pfx -pi <password>
@@ -342,4 +340,4 @@
 [5]: ./media/sql-database-elastic-scale-configure-deploy-split-and-merge/storage.png
  
 
-<!---HONumber=Mooncake_Quality_Review_1202_2016-->
+<!---HONumber=Mooncake_1212_2016-->

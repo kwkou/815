@@ -146,16 +146,6 @@
 
 
 
-## 弹性作业
-
-| &nbsp; | 标题 | 说明 |
-| --: | :-- | :-- |
-| 68 | 创建和管理扩大的 Azure SQL 数据库（预览版） | 演练如何创建和管理弹性数据库作业。 |
-| 69 | [弹性数据库作业入门](/documentation/articles/sql-database-elastic-jobs-getting-started/) | 如何使用弹性数据库作业 |
-| 70 | [管理扩大的云数据库](/documentation/articles/sql-database-elastic-jobs-overview/) | 安装弹性数据库作业服务 |
-| 71 | [使用 PowerShell 创建和管理 SQL 数据库弹性数据库作业（预览版）](/documentation/articles/sql-database-elastic-jobs-powershell/) | 使用 PowerShell 管理 Azure SQL 数据库池 |
-| 72 | [安装弹性数据库作业概述](/documentation/articles/sql-database-elastic-jobs-service-installation/) | 演练如何安装弹性作业功能。 |
-| 73 | [卸载弹性数据库作业组件](/documentation/articles/sql-database-elastic-jobs-uninstall/) | 如何卸载弹性数据库作业工具 |
 
 
 

@@ -307,7 +307,6 @@
 ## 后续步骤
 
 - [管理你的池](/documentation/articles/sql-database-elastic-pool-manage-csharp/)
-- [创建弹性作业](/documentation/articles/sql-database-elastic-jobs-overview/)：弹性作业可以根据池中数据库的数目来运行 T-SQL 脚本。
 - [使用 Azure SQL 数据库进行扩展](/documentation/articles/sql-database-elastic-scale-introduction/)：使用弹性数据库工具进行扩展。
 
 ## 其他资源

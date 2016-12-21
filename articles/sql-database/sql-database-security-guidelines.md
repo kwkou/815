@@ -1,43 +1,38 @@
-<properties
-   pageTitle="Azure SQL 数据库安全指导原则和限制 | Azure"
-   description="了解与安全性相关的 Azure SQL 数据库指导原则和限制。"
-   services="sql-database"
-   documentationCenter=""
-   authors="BYHAM"
-   manager="jhubbard"
-   editor=""
-   tags=""/>
+---
+title: Azure SQL 数据库安全指导原则和限制 | Microsoft Docs
+description: 了解与安全性相关的 Azure SQL 数据库指导原则和限制。
+services: sql-database
+documentationcenter: ''
+author: BYHAM
+manager: jhubbard
+editor: ''
+tags: ''
 
-<tags
-   ms.service="sql-database"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="data-management"
-   ms.date="08/02/2016"
-   wacn.date="12/19/2016"
-   ms.author="rickbyh"/>
+ms.assetid: 8e71b04c-bc38-4153-8f83-f2b14faa31d9
+ms.service: sql-database
+ms.devlang: na
+ms.topic: article
+ms.tgt_pltfrm: na
+ms.workload: data-management
+ms.date: 10/18/2016
+wacn.date="12/19/2016"
+ms.author: rickbyh
 
+---
 # Azure SQL 数据库安全指导原则和限制
-
 本主题介绍与安全性相关的 Azure SQL 数据库指导原则和限制。在管理你的 Azure SQL 数据库的安全性时应考虑以下几点：
 
 ## 虚拟 master 数据库的访问权限
-
 通常，只有管理员需要 master 数据库的访问权限。对每个用户数据库的例程访问应通过数据库用户进行，这些用户创建于每个数据库且不包含管理员。使用包含的数据库用户时，不需要在 master 数据库中创建登录名。有关详细信息，请参阅[包含的数据库用户 - 使你的数据库可移植](https://msdn.microsoft.com/zh-cn/library/ff929188.aspx)。
 
-
 ## 防火墙
-
-用于整个 Azure SQL Server 范围的 SQL Server 防火墙通常通过门户进行配置，且应该仅承认管理员使用的 IP 地址。连接到用户数据库，然后使用 [sp\_set\_database\_firewall\_rule](https://msdn.microsoft.com/zh-cn/library/dn270010.aspx) Transact SQL 语句创建数据库范围的防火墙规则，此规则可打开每个数据库必要的 IP 地址范围。
+用于整个 Azure SQL Server 范围的 SQL Server 防火墙通常通过门户进行配置，且应该仅承认管理员使用的 IP 地址。若要创建数据库范围的防火墙规则，此规则可打开每个数据库必要的 IP 地址范围，请连接到用户数据库，然后使用 [sp\_set\_database\_firewall\_rule](https://msdn.microsoft.com/zh-cn/library/dn270010.aspx) Transact-SQL 语句。
 
 只能通过 TCP 端口 1433 使用 Azure SQL 数据库服务。若要从计算机访问 SQL 数据库，请确保客户端计算机防火墙允许 TCP 端口 1433 上的传出 TCP 通信。如果其他应用程序不需要，则阻止 TCP 端口 1433 上的入站连接。
 
 在连接过程中，来自 Azure 虚拟机的连接将重定向到每个辅助角色特有的不同 IP 地址和端口。该端口号在 11000 到 11999 的范围内。有关 TCP 端口的详细信息，请参阅[用于 ADO.NET 4.5 和 SQL 数据库 V12 的非 1433 端口](/documentation/articles/sql-database-develop-direct-route-ports-adonet-v12/)。
 
-
 ## 身份验证
-
 尽可能使用 Active Directory 身份验证（集成安全性）。有关配置 AD 身份验证的信息，请参阅[通过使用 Azure Active Directory 身份验证连接到 SQL 数据库](/documentation/articles/sql-database-aad-authentication/)和 SQL Server 联机丛书中的[选择身份验证模式](https://msdn.microsoft.com/zh-cn/library/ms144284.aspx)。
 
 使用包含的数据库用户可提高可缩放性。有关详细信息，请参阅[包含的数据库用户 - 使你的数据库可移植](https://msdn.microsoft.com/zh-cn/library/ff929188.aspx)、[CREATE USER (Transact-SQL)](https://technet.microsoft.com/zh-cn/library/ms173463.aspx) 和[包含的数据库](https://technet.microsoft.com/zh-cn/library/ff929071.aspx)。
@@ -50,11 +45,9 @@
 
 在 SQL 数据库中管理登录名和用户时，存在一些限制。
 
-
-- 执行``CREATE/ALTER/DROP DATABASE`` 语句时，必须连接到 **master** 数据库。- 不能更改或删除 master 数据库中与服务器级别主体登录名相对应的数据库用户。
+- 执行 ``CREATE/ALTER/DROP DATABASE`` 语句时，必须连接到 **master** 数据库。- 不能更改或删除 master 数据库中与服务器级别主体登录名相对应的数据库用户。
 - 美国英语为服务器级别主体登录名的默认语言。
-- 若要访问 **master** 数据库，每个登录名都必须映射到 **master** 数据库中的某一用户帐户。**master** 数据库不支持包含的数据库用户。
-- 只有服务器级别主体登录名和 **master** 数据库中 **dbmanager** 数据库角色的成员才有权执行 ``CREATE DATABASE`` 和 ``DROP DATABASE`` 语句。
+- 只有管理员（服务器级别主体登录名或 Azure AD 管理员）和 **master** 数据库中 **dbmanager** 数据库角色的成员才有权执行 ``CREATE DATABASE`` 和 ``DROP DATABASE`` 语句。
 - 执行 ``CREATE/ALTER/DROP LOGIN`` 语句时，必须连接到 master 数据库。但不建议使用登录名。改用包含的数据库用户。
 - 若要连接到用户数据库，必须在连接字符串中提供数据库的名称。
 - 只有服务器级别主体登录名和 **master** 数据库中 **loginmanager** 数据库角色的成员才有权执行 ``CREATE LOGIN``、``ALTER LOGIN`` 和 ``DROP LOGIN`` 语句。
@@ -62,11 +55,11 @@
 - 在执行 ``CREATE/ALTER/DROP DATABASE`` 和 ``CREATE/ALTER/DROP LOGIN`` 语句时，上述每个语句都必须是 Transact-SQL 批处理中的唯一语句。否则将会出错。例如，以下 Transact-SQL 将检查该数据库是否存在。如果该数据库存在，则调用 ``DROP DATABASE`` 语句删除该数据库。因为 ``DROP DATABASE`` 语句不是该批处理中的唯一语句，所以执行以下 Transact-SQL 将导致错误。
 
 
-		IF EXISTS (SELECT [name]
-		           FROM   [sys].[databases]
-		           WHERE  [name] = N'database_name')
-		     DROP DATABASE [database_name];
-		GO
+	IF EXISTS (SELECT [name]
+	           FROM   [sys].[databases]
+	           WHERE  [name] = N'database_name')
+	     DROP DATABASE [database_name];
+	GO
 
 
 - 在使用 ``FOR/FROM LOGIN`` 选项执行 ``CREATE USER`` 语句时，该语句必须是 Transact-SQL 批处理中的唯一语句。
@@ -81,10 +74,10 @@
 
 [Azure SQL 数据库防火墙](/documentation/articles/sql-database-firewall-configure/)
 
-[如何：配置防火墙设置（Azure SQL 数据库）](/documentation/articles/sql-database-configure-firewall-settings-powershell/)
+[如何：配置防火墙设置（Azure SQL 数据库）](/documentation/articles/sql-database-configure-firewall-settings/)
 
 [在 Azure SQL 数据库中管理数据库和登录名](/documentation/articles/sql-database-manage-logins/)
 
 [SQL Server 数据库引擎和 Azure SQL 数据库安全中心](https://msdn.microsoft.com/zh-cn/library/bb510589)
 
-<!---HONumber=Mooncake_Quality_Review_1202_2016-->
+<!---HONumber=Mooncake_1212_2016-->

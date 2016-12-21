@@ -51,15 +51,7 @@
 | [更改池的性能设置](/documentation/articles/sql-database-elastic-pool-manage-powershell/#change-performance-settings-of-a-pool) | 在本教程中，你将学习如何调整池的性能和存储限制。 |
 ||||
 
-## 弹性数据库作业
 
-以下教程介绍如何使用[弹性数据库作业](/documentation/articles/sql-database-elastic-jobs-overview/)。
-
-| 教程 | 说明 |
-|---|---|---|
-| [弹性数据库工具入门](/documentation/articles/sql-database-elastic-scale-get-started/) | 在本教程中，你将学习如何使用简单的分片应用程序来使用弹性数据库工具的功能。 |
-| [Azure SQL 数据库弹性作业入门](/documentation/articles/sql-database-elastic-jobs-getting-started/) | 在本教程中，你将学习如何创建和管理用于管理一组相关数据库的作业。 | 
-||||
 
 ## 弹性查询
 

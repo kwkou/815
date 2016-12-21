@@ -1,52 +1,49 @@
-<properties	
-	pageTitle="升级到最新的弹性数据库客户端库 | Azure" 
-	description="使用 Nuget 升级应用程序和库" 
-	services="sql-database" 
-	documentationCenter="" 
-	manager="jhubbard" 
-	authors="ddove"/>
+---
+title: 升级到最新的弹性数据库客户端库 | Microsoft Docs
+description: 使用 Nuget 升级应用和库
+services: sql-database
+documentationcenter: ''
+manager: jhubbard
+author: ddove
 
-<tags 
-	ms.service="sql-database" 
-	ms.workload="sql-database" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="05/27/2016" 
-	wacn.date="07/18/2016" 
-	ms.author="ddove" />
+ms.assetid: 0a546510-76e7-465e-9271-f15ff0cfa959
+ms.service: sql-database
+ms.workload: sql-database
+ms.tgt_pltfrm: na
+ms.devlang: na
+ms.topic: article
+ms.date: 10/24/2016
+wacn.date="12/19/2016"
+ms.author: ddove
 
+---
 # 升级应用以使用最新的弹性数据库客户端库
 
-可通过 NuGetand 和 Visual Studio 中的 NuGetPackage Manager 界面获取[弹性数据库客户端库](/documentation/articles/sql-database-elastic-database-client-library/)的新版本。升级包含客户端库的 bug 修复和新功能支持。
+可通过 Visual Studio 中的 NuGetPackage Manager 界面获取[弹性数据库客户端库](/documentation/articles/sql-database-elastic-database-client-library/)的新版本。升级包含客户端库的 bug 修复和新功能支持。
 
-**要获取最新版本：**请转到 [Microsoft.Azure.SqlDatabase.ElasticScale.Client](https://www.nuget.org/packages/Microsoft.Azure.SqlDatabase.ElasticScale.Client)。
+**获取最新版本：**请转到 [Microsoft.Azure.SqlDatabase.ElasticScale.Client](https://www.nuget.org/packages/Microsoft.Azure.SqlDatabase.ElasticScale.Client)。
 
-使用新库重新生成你的应用程序，以及更改 Azure SQL 数据库中存储的现有分片映射管理器元数据以支持新功能。
+使用新库重新生成应用程序，以及更改存储在 Azure SQL 数据库中的现有分片映射管理器元数据，以支持新的功能。
 
-按顺序执行这些步骤可确保在更新元数据对象时旧版本的客户端库不再存在于你的环境中，这意味着在升级后不会创建旧版本的元数据对象。
+按顺序执行这些步骤可确保在更新元数据对象时，旧版本的客户端库不再存在于环境中，这意味着在升级后不会创建旧版本的元数据对象。
 
 ## 升级步骤
+**1.升级应用程序。** 在 Visual Studio 中，下载最新的客户端库版本并在使用该库的所有开发项目中引用该版本；然后重新生成并部署。
 
-**1.升级你的应用程序。** 在 Visual Studio 中，下载最新的客户端库版本并在使用该库的所有开发项目中引用该版本；然后重新生成并部署。
+* 在 Visual Studio 解决方案中，选择“工具”-->“NuGet 包管理器”-->“管理解决方案的 NuGet 包”。
+* (Visual Studio 2013) 在左侧面板中，选择“更新”，然后选择窗口中显示的包“Azure SQL 数据库弹性扩展客户端库”上的“更新”按钮。
+* (Visual Studio 2015) 将“筛选器”框设置为“可用升级”。选择要更新的包，然后单击“更新”按钮。
+* 生成并部署。
 
- * 在 Visual Studio 解决方案中，选择“工具”“NuGet 包管理器”“管理解决方案的 NuGet 包”。
- * (Visual Studio 2013) 在左面板中，选择“更新”，然后选择窗口中显示的包“Azure SQL 数据库弹性扩展客户端库”上的“更新”按钮。
- * (Visual Studio 2015) 将“筛选器”框设置为“可用升级”。选择要更新的包，然后单击“更新”按钮。
-	
- 
- * 生成并部署。
+**2.升级脚本。** 如果使用 **PowerShell** 脚本来管理分片，请[下载新的库版本](https://www.nuget.org/packages/Microsoft.Azure.SqlDatabase.ElasticScale.Client)并将其复制到从中执行脚本的目录中。
 
-**2.升级你的脚本。** 如果你使用 **PowerShell** 脚本来管理分片，请[下载新的库版本](https://www.nuget.org/packages/Microsoft.Azure.SqlDatabase.ElasticScale.Client)并将其复制到你从其执行脚本的目录中。
+**3.升级拆分/合并服务。** 如果使用弹性数据库拆分/合并工具来重新组织分片数据，请[下载并部署最新版本的工具](https://www.nuget.org/packages/Microsoft.Azure.SqlDatabase.ElasticScale.Service.SplitMerge)。可在[此处](/documentation/articles/sql-database-elastic-scale-overview-split-and-merge/)找到该服务的详细升级步骤。
 
-**3.升级拆分/合并服务。** 如果你使用弹性数据库拆分/合并工具来重新组织分片数据，请[下载并部署最新版本的工具](https://www.nuget.org/packages/Microsoft.Azure.SqlDatabase.ElasticScale.Service.SplitMerge)。可在[此处](/documentation/articles/sql-database-elastic-scale-overview-split-and-merge/)找到该服务的详细升级步骤。
-
-**4.升级分片映射管理器数据库**。升级 Azure SQL 数据库中支持分片映射的元数据。有两种方法可以完成此操作：使用 PowerShell 或 C#。这两个选项在下面说明。
+**4.升级分片映射管理器数据库**。升级 Azure SQL 数据库中支持分片映射的元数据。有两种方法可以完成此操作：使用 PowerShell 或 C#。以下说明了如何使用这两种选项。
 
 ***选项 1：使用 PowerShell 升级元数据***
 
 1. 在[此处](http://nuget.org/nuget.exe)下载 NuGet 的最新命令行实用工具并将其保存到一个文件夹。
-
 2. 打开命令提示符，导航到同一文件夹，并发出命令：
 `nuget install Microsoft.Azure.SqlDatabase.ElasticScale.Client`
 
@@ -72,9 +69,9 @@
 	   smm.UpgradeLocalStore(loc); 
 	} 
 
-这些元数据升级技术可以应用多次而无危害。例如，如果在你已更新后，旧的客户端版本无意中创建了一个分片，你可以对所有分片再次运行升级，以确保最新的元数据版本在整个基础结构中存在。
+可以多次应用这些元数据升级技术，不会造成危害。例如，如果在已更新后，旧的客户端版本无意中创建了一个分片，则可以对所有分片再次运行升级，以确保最新的元数据版本在整个基础结构中存在。
 
-**注意：**到目前为止发布的客户端库的新版本将继续使用 Azure SQL 数据库上早期版本的分片映射管理器元数据，反之亦然。但是，为了利用最新客户端中的一些新功能，需要对元数据进行升级。请注意，元数据升级不会影响任何用户数据或特定于应用程序的数据，只会影响分片映射管理器创建和使用的对象。并且应用程序将继续按照前面所述的升级顺序操作。
+**注意：**到目前为止，发布的客户端库的新版本将继续使用 Azure SQL 数据库上早期版本的分片映射管理器元数据，反之亦然。但是，为了利用最新客户端中的一些新功能，需要对元数据进行升级。请注意，元数据升级不会影响任何用户数据或特定于应用程序的数据，只会影响分片映射管理器创建和使用的对象。并且应用程序将继续按照前面所述的升级顺序进行操作。
 
 ## 弹性数据库客户端版本历史记录 
 
@@ -87,4 +84,5 @@
 <!--Image references-->
 [1]: ./media/sql-database-elastic-scale-upgrade-client-library/nuget-upgrade.png
  
-<!---HONumber=Mooncake_0711_2016-->
+
+<!---HONumber=Mooncake_1212_2016-->

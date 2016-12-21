@@ -194,7 +194,7 @@
 
 RLS 在 T-SQL 中实现：用户定义的函数用于定义访问逻辑，安全策略可将此函数绑定到任意数量的表。对于此项目，该函数只会验证应用程序（而不是其他某个 SQL 用户）是否已连接到数据库，以及存储在 SESSION\_CONTEXT 中的“TenantId”是否与给定行的 TenantId 相匹配。筛选谓词将允许满足这些条件的行通过 SELECT、UPDATE 和 DELETE 查询的筛选；阻止谓词将阻止系统对违反这些条件的行执行 INSERT 或 UPDATE 操作。SESSION\_CONTEXT 在未设置的情况下会返回 NULL，将无法查看或插入任何行。
 
-若要启用 RLS，请使用 Visual Studio (SSDT)、SSMS 或项目中包含的 PowerShell 脚本对所有分片执行以下 T-SQL（或者，如果你正在使用[弹性数据库作业](/documentation/articles/sql-database-elastic-jobs-overview/)，可以使用它来对所有分片自动执行此 T-SQL）：
+若要启用 RLS，请使用 Visual Studio (SSDT)、SSMS 或项目中包含的 PowerShell 脚本对所有分片执行以下 T-SQL：
 
 
 	CREATE SCHEMA rls -- separate schema to organize RLS objects 

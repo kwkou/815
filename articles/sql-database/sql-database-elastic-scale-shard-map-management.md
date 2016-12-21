@@ -1,22 +1,23 @@
-<properties 
-	pageTitle="分片映射管理 | Azure" 
-	description="如何使用弹性数据库客户端库 ShardMapManager" 
-	services="sql-database" 
-	documentationCenter="" 
-	manager="jhubbard" 
-	authors="ddove" 
-	editor=""/>
+---
+title: 分片映射管理 | Microsoft Docs
+description: 如何使用弹性数据库客户端库 ShardMapManager
+services: sql-database
+documentationcenter: ''
+manager: jhubbard
+author: ddove
+editor: ''
 
-<tags 
-	ms.service="sql-database" 
-	ms.workload="sql-database" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="05/25/2016" 
-	wacn.date="12/19/2016" 
-	ms.author="ddove"/>
+ms.assetid: 0e9d647a-9ba9-4875-aa22-662d01283439
+ms.service: sql-database
+ms.workload: sql-database
+ms.tgt_pltfrm: na
+ms.devlang: na
+ms.topic: article
+ms.date: 10/24/2016
+wacn.date="12/19/2016"
+ms.author: ddove
 
+---
 # 使用分片映射管理器扩大数据库
 
 若要轻松地扩大 SQL Azure 上的数据库，请使用分片映射管理器。分片映射管理器是一个特殊的数据库，它维护一个分片集中有关所有分片（数据库）的全局映射信息。元数据允许应用程序基于**分片键**值连接到正确的数据库。此外，集中的每个分片都包含跟踪局部分片数据的映射（称为 **shardlet**）。
@@ -35,12 +36,11 @@
 	3. 列表映射
 	4. 范围映射
  
-对于单租户模型，创建“列表映射”分片映射。单租户模型为每个租户分配一个数据库。这是适用于 SaaS 开发人员的有效模式，因为它可以简化管理。
+对于单租户模型，创建“列表映射”分片映射。单租户模型将每个租户分配给一个数据库。这是适用于 SaaS 开发人员的有效模型，因为它可以简化管理。
 
 ![列表映射][1]
 
-多租户模型将数个租户分配给单一数据库（你可以跨多个数据库分布租户组。）当希望每个租户具有较小数据需求时使用此模型。在此模型中，我们使用“范围映射”将一系列租户分配给数据库。
- 
+多租户模型将多个租户分配给单一数据库（可以跨多个数据库分布租户组）。如果希望每个租户具有较小的数据需求，请使用此模型。在此模型中，我们使用“范围映射”将一系列租户分配给数据库。
 
 ![范围映射][2]
 
@@ -340,4 +340,4 @@
 [2]: ./media/sql-database-elastic-scale-shard-map-management/rangemapping.png
 [3]: ./media/sql-database-elastic-scale-shard-map-management/multipleonsingledb.png
 
-<!---HONumber=Mooncake_Quality_Review_1202_2016-->
+<!---HONumber=Mooncake_1212_2016-->

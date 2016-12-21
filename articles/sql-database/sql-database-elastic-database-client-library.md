@@ -19,7 +19,7 @@
 
 # 构建可缩放的云数据库
 
-使用 Azure SQL 数据库的可缩放工具和功能，可以轻松扩大数据库。特别是，你可以使用**弹性数据库客户端库**来创建和管理扩大的数据库。此功能可让你使用成百上千个 Azure SQL 数据库，轻松地开发分片应用程序。然后，可以使用[弹性作业](/documentation/articles/sql-database-elastic-jobs-powershell/)帮助简化这些数据库的管理。
+使用 Azure SQL 数据库的可缩放工具和功能，可以轻松扩大数据库。特别是，你可以使用**弹性数据库客户端库**来创建和管理扩大的数据库。此功能可让你使用成百上千个 Azure SQL 数据库，轻松地开发分片应用程序。
 
 若要安装该库，请转到 [Microsoft.Azure.SqlDatabase.ElasticScale.Client](https://www.nuget.org/packages/Microsoft.Azure.SqlDatabase.ElasticScale.Client)。
 

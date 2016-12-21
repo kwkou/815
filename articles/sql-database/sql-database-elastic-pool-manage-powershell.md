@@ -273,7 +273,6 @@ Stop- cmdlet 表示取消，而不是暂停。你无法在中途恢复升级，�
 
 ## 后续步骤
 
-- [创建弹性作业](/documentation/articles/sql-database-elastic-jobs-overview/)弹性作业可以根据池中数据库的数目来运行 T-SQL 脚本。
 - 请参阅[使用 Azure SQL 数据库进行扩展](/documentation/articles/sql-database-elastic-scale-introduction/)：使用弹性数据库工具扩展、移动数据、查询或创建事务。
 
 <!---HONumber=Mooncake_0808_2016-->

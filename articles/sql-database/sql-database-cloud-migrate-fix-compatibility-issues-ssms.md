@@ -1,23 +1,23 @@
-<properties
-   pageTitle="在迁移到 SQL 数据库之前，使用 SQL Server Management Studio 解决 SQL Server 数据库的兼容性问题 | Azure"
-   description="Azure SQL 数据库, 数据库迁移, 兼容性, SQL Azure 迁移向导"
-   services="sql-database"
-   documentationCenter=""
-   authors="CarlRabeler"
-   manager="jhubbard"
-   editor=""/>
+---
+title: 在迁移到 SQL 数据库之前使用 SQL Server Managment Studio 修复 SQL Server 数据库的兼容性问题 | Microsoft Docs
+description: Azure SQL 数据库, 数据库迁移, 兼容性, SQL Azure 迁移向导
+services: sql-database
+documentationcenter: ''
+author: CarlRabeler
+manager: jhubbard
+editor: ''
 
-<tags
-   ms.service="sql-database"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="sqldb-migrate"
-   ms.date="08/24/2016"
-   wacn.date="12/19/2016"
-   ms.author="carlrab"/>  
+ms.assetid: 5f7d3544-b07e-415a-a2ae-96e49bf5d756
+ms.service: sql-database
+ms.devlang: NA
+ms.topic: article
+ms.tgt_pltfrm: NA
+ms.workload: sqldb-migrate
+ms.date: 11/08/2016
+wacn.date="12/19/2016"
+ms.author: carlrab
 
-
+---
 # 在迁移到 SQL 数据库之前，使用 SQL Server Management Studio 解决 SQL Server 数据库的兼容性问题
 
 > [AZURE.SELECTOR]
@@ -32,10 +32,7 @@
 
 
 ## 使用 SQL Server Management Studio
-
 使用 SQL Server Management Studio 通过各种 Transact-SQL 命令（如 **ALTER DATABASE**）来修复兼容性问题。该方法主要面向能够在实时数据库上轻松使用 Transact-SQL 的高级用户。如果不是，建议使用 SSDT。
-
-
 
 ## 后续步骤
 
@@ -49,4 +46,4 @@
 - [Transact-SQL 部分支持或不支持的函数](/documentation/articles/sql-database-transact-sql-information/)
 - [使用 SQL Server 迁移助手迁移非 SQL Server 数据库](http://blogs.msdn.com/b/ssma/)
 
-<!---HONumber=Mooncake_Quality_Review_1202_2016-->
+<!---HONumber=Mooncake_1212_2016-->

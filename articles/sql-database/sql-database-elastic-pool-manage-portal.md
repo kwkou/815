@@ -1,24 +1,24 @@
-<properties
-	pageTitle="使用 Azure 门户预览监视和管理弹性数据库池 | Azure"
-	description="了解如何使用 Azure 门户预览和 SQL 数据库的内置智能来管理、监视可缩放的弹性数据库池并正确调整其大小，以优化数据库性能和管理成本。"
-	keywords=""
-	services="sql-database"
-	documentationCenter=""
-	authors="ninarn"
-	manager="jhubbard"
-	editor="cgronlun"/>
+---
+title: 使用 Azure 门户监视和管理弹性数据库池 | Microsoft Docs
+description: 了解如何使用 Azure 门户和 SQL 数据库的内置智能来管理、监视可缩放的弹性数据库池并正确调整其大小，以优化数据库性能和管理成本。
+keywords: ''
+services: sql-database
+documentationcenter: ''
+author: ninarn
+manager: jhubbard
+editor: cgronlun
 
-<tags
-	ms.service="sql-database"
-	ms.devlang="NA"
-	ms.date="06/22/2016"
-	wacn.date="08/15/2016"
-	ms.author="ninarn"
-	ms.workload="data-management"
-	ms.topic="article"
-	ms.tgt_pltfrm="NA"/>
+ms.assetid: 3dc9b7a3-4b10-423a-8e44-9174aca5cf3d
+ms.service: sql-database
+ms.devlang: NA
+ms.date: 11/17/2016
+wacn.date="12/19/2016"
+ms.author: ninarn
+ms.workload: data-management
+ms.topic: article
+ms.tgt_pltfrm: NA
 
-
+---
 # 使用 Azure 门户预览监视和管理弹性数据库池
 
 > [AZURE.SELECTOR]
@@ -28,14 +28,13 @@
 - [T-SQL](/documentation/articles/sql-database-elastic-pool-manage-tsql/)
 
 
-可以使用 Azure 门户预览监视和管理弹性数据库池和池中的数据库。在该门户中，可以监视弹性池和该池中的数据库的利用率。还可以对弹性池进行一组更改，然后同时提交所有更改。这些更改包括添加或删除数据库、更改弹性池设置或更改数据库设置。
+可以使用 Azure 门户预览监视和管理弹性池和池中的数据库。在该门户中，可以监视弹性池和该池中的数据库的利用率。还可以对弹性池进行一组更改，然后同时提交所有更改。这些更改包括添加或删除数据库、更改弹性池设置或更改数据库设置。
 
 下图显示一个示例弹性池。视图包括：
 
 *  监视弹性池以及池中包含的数据库的资源使用率的图表。
-*  用于对弹性池进行更改的“配置”池按钮。
+*  用于对弹性池进行更改的“配置池”按钮。
 *  创建新数据库并将它添加到当前弹性池的“创建数据库”按钮。
-*  弹性作业，通过对列表中的所有数据库运行 Transact SQL 脚本来帮助管理大量数据库。
 
 ![池视图][2]
 
@@ -58,11 +57,12 @@
 
 可以编辑图表和指标边栏选项卡以显示其他指标，如 CPU 百分比、数据 IO 百分比和已用日志 IO 百分比。
  
-2. 在指标边栏选项卡上，单击“编辑”。
+2. 在“指标”边栏选项卡上，单击“编辑”。
 
 	![单击“编辑”][6]
 
 - 在“编辑图表”边栏选项卡中，选择新时间范围（前一个小时、今天或过去一周），或单击“自定义”以选择过去两周中的任何日期范围。选择图表类型（条形图或折线图），然后选择要监视的资源。
+> [AZURE.Note]仅可同时在图表中显示具有相同度量单位的指标。例如，如果选择“eDTU 百分比”，则之后只能选择以百分比为度量单位的其他指标。
 
 	![单击“编辑”](./media/sql-database-elastic-pool-manage-portal/edit-chart.png)
 
@@ -91,7 +91,8 @@
 
 	![单击“自定义”](./media/sql-database-elastic-pool-manage-portal/editchart-date-time.png)
 
-3. 单击“数据库比较依据”下拉列表以选择要在比较数据库时使用的其他指标。
+
+3. 单击“数据库比较依据”下拉列表，选择要在比较数据库时使用的其他指标。
 
 	![编辑图表](./media/sql-database-elastic-pool-manage-portal/edit-comparison-metric.png)
 
@@ -111,13 +112,13 @@
 **向任何资源添加警报：**
 
 1. 单击“资源利用率”图表以打开“指标”边栏选项卡，单击“添加警报”，然后在“添加警报规则”边栏选项卡中填写信息（“资源”会自动设置为所使用的池）。
-2. 键入可标识发送给你和收件人的警报的“名称”和“说明”。
+2. 键入可标识发送给自己和收件人的警报的“名称”和“说明”。
 3. 从列表中选择要发送相关警报的“指标”。
 
     图表会动态显示该指标的资源利用率，以帮助选择阈值。
 
 4. 选择“条件”（大于、小于等）和“阈值”。
-5. 单击**“确定”**。
+5. 单击“确定”。
 
 
 
@@ -138,7 +139,8 @@
 
 	![选择要添加的数据库](./media/sql-database-elastic-pool-manage-portal/add-databases-pool.png)
 
-    “配置池”边栏选项卡现在会列出选择要添加的数据库，其状态设置为“挂起”。
+
+    “配置池”边栏选项卡现在会列出选定要添加的数据库，其状态设置为“挂起”。
 
     ![挂起池添加](./media/sql-database-elastic-pool-manage-portal/pending-additions.png)
 
@@ -156,9 +158,10 @@
 
     ![数据库列出](./media/sql-database-elastic-pool-manage-portal/click-remove.png)
 
-    “配置池”边栏选项卡现在会列出选择要删除的数据库，其状态设置为“挂起”。
-    
-    ![预览数据库添加和删除](./media/sql-database-elastic-pool-manage-portal/pending-removal.png)
+
+    “配置池”边栏选项卡现在会列出选定要删除的数据库，其状态设置为“挂起”。
+
+    ![预览数据库添加和删除](./media/sql-database-elastic-pool-manage-portal/pending-removal.png)  
 
 3. 在“配置池”边栏选项卡中，单击“保存”。
 
@@ -181,18 +184,6 @@
     ![更新池和新的每月成本](./media/sql-database-elastic-pool-manage-portal/pool-change-edtu.png)
 
 
-## 创建和管理弹性作业
-
-弹性作业可以用来根据池中数据库的数目来运行 Transact-SQL 脚本。可以使用门户创建新作业，或管理现有作业。
-
-![创建和管理弹性作业][5]
-
-
-使用作业之前，请安装弹性作业组件并提供凭据。有关详细信息，请参阅[弹性数据库作业概述](/documentation/articles/sql-database-elastic-jobs-overview/)。
-
-请参阅[使用 Azure SQL 数据库进行扩展](/documentation/articles/sql-database-elastic-scale-introduction/)：使用弹性数据库工具扩展、移动数据、查询或创建事务。
-
-
 
 ## 其他资源
 
@@ -204,6 +195,7 @@
 
 
 <!--Image references-->
+
 [1]: ./media/sql-database-elastic-pool-manage-portal/configure-pool.png
 [2]: ./media/sql-database-elastic-pool-manage-portal/basic.png
 [3]: ./media/sql-database-elastic-pool-manage-portal/basic-2.png
@@ -214,4 +206,4 @@
 [8]: ./media/sql-database-elastic-pool-manage-portal/db-utilization.png
 [9]: ./media/sql-database-elastic-pool-manage-portal/metric.png
 
-<!---HONumber=Mooncake_0808_2016-->
+<!---HONumber=Mooncake_1212_2016-->
