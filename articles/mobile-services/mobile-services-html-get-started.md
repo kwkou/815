@@ -151,7 +151,7 @@
 [向应用程序添加身份验证]: /documentation/articles/mobile-services-html-get-started-users/
 
 [Azure 经典管理门户]: https://manage.windowsazure.cn/
-[Microsoft Web 平台安装程序]: http://go.microsoft.com/fwlink/p/?LinkId=286333
+[Microsoft Web 平台安装程序]: https://webgallery.microsoft.com/gallery
 [最新版本的 Python]: http://go.microsoft.com/fwlink/p/?LinkId=286342
 [移动服务 HTML/JavaScript 操作方法概念性参考]: /documentation/articles/mobile-services-html-how-to-use-client-library/
 [Cross-origin resource sharing]: http://msdn.microsoft.com/zh-cn/library/windowsazure/dn155871.aspx

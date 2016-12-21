@@ -102,7 +102,7 @@ POST https://service.chinacloudsites.cn/tables/TodoItem?ZUMO-API-VERSION=2.0.0
 | 客户端平台 | 版本 | 版本标头值 |
 | -------------------               | ------------------------  | -----------------    |
 | 托管客户端（Windows、Xamarin） | [2\.0.0](https://www.nuget.org/packages/Microsoft.Azure.Mobile.Client/2.0.0) | 2\.0.0 |
-| iOS | [3\.0.0](http://go.microsoft.com/fwlink/?LinkID=529823) | 2\.0.0 |
+| iOS | 3\.0.0 | 2\.0.0 |
 | Android | [3\.0.0](http://go.microsoft.com/fwlink/?LinkID=717033&clcid=0x409) | 3\.0.0 |
 
 <!-- TODO: add HTML version when released -->
