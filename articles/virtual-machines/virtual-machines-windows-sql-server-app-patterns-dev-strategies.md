@@ -10,13 +10,13 @@
 
 <tags
     ms.assetid="41863c8d-f3a3-4584-ad86-b95094365e05"
-    ms.service="virtual-machines-sql"
+    ms.service="virtual-machines-windows"
     ms.devlang="na"
     ms.topic="article"
     ms.tgt_pltfrm="vm-windows-sql-server"
     ms.workload="iaas-sql-server"
     ms.date="11/15/2016"
-    wacn.date="12/20/2016"
+    wacn.date="12/21/2016"
     ms.author="lvargas" />  
 
 

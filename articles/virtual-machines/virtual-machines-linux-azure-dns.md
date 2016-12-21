@@ -8,13 +8,13 @@
    editor="tysonn" />  
 
 <tags 
-   ms.service="virtual-machines"
+   ms.service="virtual-machines-linux"
    ms.devlang="na"
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
    ms.date="09/06/2016"
-   wacn.date="10/24/2016"
+   wacn.date="12/21/2016"
    ms.author="rclaus" />  
 
 
