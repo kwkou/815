@@ -1,23 +1,22 @@
----
-title: 使用 PowerShell 管理 Azure SQL 数据库 | Microsoft Docs
-description: 使用 PowerShell 管理 Azure SQL 数据库。
-services: sql-database
-documentationcenter: ''
-author: stevestein
-manager: jhubbard
-editor: monicar
+<properties
+    pageTitle="使用 PowerShell 管理 Azure SQL 数据库 | Azure"
+    description="使用 PowerShell 管理 Azure SQL 数据库。"
+    services="sql-database"
+    documentationcenter=""
+    author="stevestein"
+    manager="jhubbard"
+    editor="monicar" />
+<tags
+    ms.assetid="3f21ad5e-ba99-4010-b244-5e5815074d31"
+    ms.service="sql-database"
+    ms.workload="data-management"
+    ms.tgt_pltfrm="na"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.date="11/15/2016"
+    wacn.date="12/19/2016"
+ms.author="sstein" />
 
-ms.assetid: 3f21ad5e-ba99-4010-b244-5e5815074d31
-ms.service: sql-database
-ms.workload: data-management
-ms.tgt_pltfrm: na
-ms.devlang: na
-ms.topic: article
-ms.date: 11/15/2016
-wacn.date="12/19/2016"
-ms.author: sstein
-
----
 # 使用 PowerShell 管理 Azure SQL 数据库
 
 

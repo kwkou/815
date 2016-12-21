@@ -1,24 +1,23 @@
----
-title: 多租户 SaaS 应用程序与 Azure SQL 数据库的设计模式 | Microsoft Docs
-description: 本文讨论云环境中运行的多租户数据库应用程序需要考虑的要求和常见数据体系结构模式，以及与这些模式相关的各种权衡取舍。此外，还说明了 Azure SQL 数据库及其弹性池与弹性工具如何在不造成损害的情况下满足这些要求。
-keywords: ''
-services: sql-database
-documentationcenter: ''
-author: CarlRabeler
-manager: jhubbard
-editor: ''
+<properties
+    pageTitle="多租户 SaaS 应用程序与 Azure SQL 数据库的设计模式 | Azure"
+    description="本文讨论云环境中运行的多租户数据库应用程序需要考虑的要求和常见数据体系结构模式，以及与这些模式相关的各种权衡取舍。此外，还说明了 Azure SQL 数据库及其弹性池与弹性工具如何在不造成损害的情况下满足这些要求。"
+    keywords=""
+    services="sql-database"
+    documentationcenter=""
+    author="CarlRabeler"
+    manager="jhubbard"
+    editor="" />
+<tags
+    ms.assetid="1dd20c6b-ddbb-40ef-ad34-609d398d008a"
+    ms.service="sql-database"
+    ms.devlang="NA"
+    ms.topic="article"
+    ms.tgt_pltfrm="NA"
+    ms.workload="sqldb-design"
+    ms.date="11/08/2016"
+    wacn.date="12/19/2016"
+ms.author="carlrab" />
 
-ms.assetid: 1dd20c6b-ddbb-40ef-ad34-609d398d008a
-ms.service: sql-database
-ms.devlang: NA
-ms.topic: article
-ms.tgt_pltfrm: NA
-ms.workload: sqldb-design
-ms.date: 11/08/2016
-wacn.date="12/19/2016"
-ms.author: carlrab
-
----
 # 多租户 SaaS 应用程序与 Azure SQL 数据库的设计模式
 可以在本文中了解云环境中运行的多租户软件即服务 (SaaS) 数据库应用程序的要求和通用数据体系结构模式。其中还说明了需要考虑的因素，以及不同设计模式的权衡取舍。借助 Azure SQL 数据库中的弹性池和弹性工具，可以在不影响其他目标的情况下达到特定的要求。
 

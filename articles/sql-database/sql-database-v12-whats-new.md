@@ -1,23 +1,22 @@
----
-title: SQL 数据库 V12 中的新增功能 | Microsoft Docs
-description: 介绍云中使用 Azure SQL 数据库的业务系统在升级到版本 V12 后为何能够受益。
-services: sql-database
-documentationcenter: ''
-author: MightyPen
-manager: jhubbard
-editor: ''
+<properties
+    pageTitle="SQL 数据库 V12 中的新增功能 | Azure"
+    description="介绍云中使用 Azure SQL 数据库的业务系统在升级到版本 V12 后为何能够受益。"
+    services="sql-database"
+    documentationcenter=""
+    author="MightyPen"
+    manager="jhubbard"
+    editor="" />
+<tags
+    ms.assetid="729b25ef-0abb-45eb-aa7e-7600ea3569d1"
+    ms.service="sql-database"
+    ms.workload="data-management"
+    ms.tgt_pltfrm="na"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.date="10/31/2016"
+    wacn.date="12/19/2016"
+ms.author="genemi" />
 
-ms.assetid: 729b25ef-0abb-45eb-aa7e-7600ea3569d1
-ms.service: sql-database
-ms.workload: data-management
-ms.tgt_pltfrm: na
-ms.devlang: na
-ms.topic: article
-ms.date: 10/31/2016
-wacn.date="12/19/2016"
-ms.author: genemi
-
----
 # SQL 数据库 V12 的新增功能
 本主题介绍 Azure SQL 数据库新版本 V12 相比版本 V11 具有的诸多优点。
 

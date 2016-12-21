@@ -1,24 +1,23 @@
----
-title: 'SQL 数据库性能：服务层 | Microsoft Docs'
-description: 比较 SQL 数据库服务层。
-keywords: 数据库选项, 数据库性能
-services: sql-database
-documentationcenter: ''
-author: CarlRabeler
-manager: jhubbard
-editor: CarlRabeler
+<properties
+    pageTitle="SQL 数据库性能：服务层 | Azure"
+    description="比较 SQL 数据库服务层。"
+    keywords="数据库选项, 数据库性能"
+    services="sql-database"
+    documentationcenter=""
+    author="CarlRabeler"
+    manager="jhubbard"
+    editor="CarlRabeler" />
+<tags
+    ms.assetid="f5c5c596-cd1e-451f-92a7-b70d4916e974"
+    ms.service="sql-database"
+    ms.devlang="na"
+    ms.topic="get-started-article"
+    ms.tgt_pltfrm="na"
+    ms.workload="data-management"
+    ms.date="11/15/2016"
+    wacn.date="12/19/2016"
+ms.author="carlrab" />
 
-ms.assetid: f5c5c596-cd1e-451f-92a7-b70d4916e974
-ms.service: sql-database
-ms.devlang: na
-ms.topic: get-started-article
-ms.tgt_pltfrm: na
-ms.workload: data-management
-ms.date: 11/15/2016
-wacn.date="12/19/2016"
-ms.author: carlrab
-
----
 # 单一数据库和弹性数据库池的 SQL 数据库服务层
 [Azure SQL 数据库](/documentation/articles/sql-database-technical-overview/)提供了三个具有多个性能级别的服务层，用来处理不同的工作负荷。更高的性能级别提供不断增加的资源集，旨在递增式提供更高的吞吐量。可以动态更改服务层和性能级别。有关详细信息，请参阅[更改数据库服务层和性能级别](/documentation/articles/sql-database-scale-up/)。
 

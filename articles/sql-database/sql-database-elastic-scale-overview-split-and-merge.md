@@ -1,22 +1,21 @@
----
-title: 在扩大云数据库之间移动数据 | Microsoft Docs
-description: 介绍如何使用弹性数据库 API 通过自托管服务来操作分片和移动数据。
-services: sql-database
-documentationcenter: ''
-manager: jhubbard
-author: ddove
+<properties
+    pageTitle="在扩大云数据库之间移动数据 | Azure"
+    description="介绍如何使用弹性数据库 API 通过自托管服务来操作分片和移动数据。"
+    services="sql-database"
+    documentationcenter=""
+    manager="jhubbard"
+    author="ddove" />
+<tags
+    ms.assetid="204fd902-0397-4185-985a-dea3ed7c7d9f"
+    ms.service="sql-database"
+    ms.workload="sql-database"
+    ms.tgt_pltfrm="na"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.date="10/24/2016"
+    wacn.date="12/19/2016"
+ms.author="ddove" />
 
-ms.assetid: 204fd902-0397-4185-985a-dea3ed7c7d9f
-ms.service: sql-database
-ms.workload: sql-database
-ms.tgt_pltfrm: na
-ms.devlang: na
-ms.topic: article
-ms.date: 10/24/2016
-wacn.date="12/19/2016"
-ms.author: ddove
-
----
 # 在扩大云数据库之间移动数据
 
 如果你是软件即服务开发人员，并且你的应用突然遇到巨大需求，那么你需要适应该需求增长。因此，添加更多数据库（分片）。如何在不破坏数据完整性的情况下将数据重新分配到新数据库？ 使用**拆分/合并工具**将数据从受约束的数据库移到新数据库。

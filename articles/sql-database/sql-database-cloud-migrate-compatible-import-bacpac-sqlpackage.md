@@ -1,23 +1,22 @@
----
-title: 使用 SqlPackage 从 BACPAC 文件导入到 SQL 数据库
-description: Azure SQL 数据库, 数据库迁移, 导入数据库, 导入 BACPAC 文件, sqlpackage
-services: sql-database
-documentationcenter: ''
-author: CarlRabeler
-manager: jhubbard
-editor: ''
+<properties
+    pageTitle="使用 SqlPackage 从 BACPAC 文件导入到 SQL 数据库"
+    description="Azure SQL 数据库, 数据库迁移, 导入数据库, 导入 BACPAC 文件, sqlpackage"
+    services="sql-database"
+    documentationcenter=""
+    author="CarlRabeler"
+    manager="jhubbard"
+    editor="" />
+<tags
+    ms.assetid="424afa27-5f13-4ec3-98f6-99a511a6a2df"
+    ms.service="sql-database"
+    ms.devlang="NA"
+    ms.topic="article"
+    ms.tgt_pltfrm="NA"
+    ms.workload="sqldb-migrate"
+    ms.date="11/08/2016"
+    wacn.date="12/19/2016"
+ms.author="carlrab" />
 
-ms.assetid: 424afa27-5f13-4ec3-98f6-99a511a6a2df
-ms.service: sql-database
-ms.devlang: NA
-ms.topic: article
-ms.tgt_pltfrm: NA
-ms.workload: sqldb-migrate
-ms.date: 11/08/2016
-wacn.date="12/19/2016"
-ms.author: carlrab
-
----
 # 使用 SqlPackage 从 BACPAC 文件导入到 SQL 数据库
 
 > [AZURE.SELECTOR]

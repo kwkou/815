@@ -1,23 +1,22 @@
----
-title: 将 Azure SQL 数据库还原到过去的时间点（Azure 门户） | Microsoft Docs
-description: 将 Azure SQL 数据库还原到过去的时间点。
-services: sql-database
-documentationcenter: ''
-author: stevestein
-manager: jhubbard
-editor: ''
+<properties
+    pageTitle="将 Azure SQL 数据库还原到过去的时间点（Azure 门户） | Azure"
+    description="将 Azure SQL 数据库还原到过去的时间点。"
+    services="sql-database"
+    documentationcenter=""
+    author="stevestein"
+    manager="jhubbard"
+    editor="" />
+<tags
+    ms.assetid="d1822905-a11f-4c42-8940-98c6b81aed20"
+    ms.service="sql-database"
+    ms.devlang="NA"
+    ms.date="10/18/2016"
+    wacn.date="12/19/2016"
+	ms.author="sstein"
+    ms.workload="NA"
+    ms.topic="article"
+    ms.tgt_pltfrm="NA" />
 
-ms.assetid: d1822905-a11f-4c42-8940-98c6b81aed20
-ms.service: sql-database
-ms.devlang: NA
-ms.date: 10/18/2016
-wacn.date="12/19/2016"
-ms.author: sstein
-ms.workload: NA
-ms.topic: article
-ms.tgt_pltfrm: NA
-
----
 # 使用 Azure 门户预览将 Azure SQL 数据库还原到之前的时间点
 
 

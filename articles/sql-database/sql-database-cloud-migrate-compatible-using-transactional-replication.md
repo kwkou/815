@@ -1,23 +1,22 @@
----
-title: 使用事务复制迁移到 SQL 数据库 | Microsoft Docs
-description: Azure SQL 数据库, 数据库迁移, 导入数据库, 事务复制
-services: sql-database
-documentationcenter: ''
-author: CarlRabeler
-manager: jhubbard
-editor: ''
+<properties
+    pageTitle="使用事务复制迁移到 SQL 数据库 | Azure"
+    description="Azure SQL 数据库, 数据库迁移, 导入数据库, 事务复制"
+    services="sql-database"
+    documentationcenter=""
+    author="CarlRabeler"
+    manager="jhubbard"
+    editor="" />
+<tags
+    ms.assetid="eebdd725-833d-4151-9b2b-a0303f39e30f"
+    ms.service="sql-database"
+    ms.devlang="NA"
+    ms.topic="article"
+    ms.tgt_pltfrm="NA"
+    ms.workload="sqldb-migrate"
+    ms.date="11/08/2016"
+    wacn.date="12/19/2016"
+ms.author="carlrab" />
 
-ms.assetid: eebdd725-833d-4151-9b2b-a0303f39e30f
-ms.service: sql-database
-ms.devlang: NA
-ms.topic: article
-ms.tgt_pltfrm: NA
-ms.workload: sqldb-migrate
-ms.date: 11/08/2016
-wacn.date="12/19/2016"
-ms.author: carlrab
-
----
 # 使用事务复制将 SQL Server 数据库迁移到 Azure SQL 数据库
 
 > [AZURE.SELECTOR]

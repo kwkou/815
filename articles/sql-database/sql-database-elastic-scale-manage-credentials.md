@@ -1,23 +1,22 @@
----
-title: 管理弹性数据库客户端库中的凭据 | Microsoft Docs
-description: 如何为弹性数据库应用设置适当的凭据级别：管理员到只读
-services: sql-database
-documentationcenter: ''
-manager: jhubbard
-author: ddove
-editor: ''
+<properties
+    pageTitle="管理弹性数据库客户端库中的凭据 | Azure"
+    description="如何为弹性数据库应用设置适当的凭据级别：管理员到只读"
+    services="sql-database"
+    documentationcenter=""
+    manager="jhubbard"
+    author="ddove"
+    editor="" />
+<tags
+    ms.assetid="72e0edaf-795e-4856-84a5-6594f735fb7e"
+    ms.service="sql-database"
+    ms.workload="sql-database"
+    ms.tgt_pltfrm="na"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.date="10/24/2016"
+    wacn.date="12/19/2016"
+ms.author="ddove" />
 
-ms.assetid: 72e0edaf-795e-4856-84a5-6594f735fb7e
-ms.service: sql-database
-ms.workload: sql-database
-ms.tgt_pltfrm: na
-ms.devlang: na
-ms.topic: article
-ms.date: 10/24/2016
-wacn.date="12/19/2016"
-ms.author: ddove
-
----
 # 用于访问弹性数据库客户端库的凭据
 
 [弹性数据库客户端库](http://www.nuget.org/packages/Microsoft.Azure.SqlDatabase.ElasticScale.Client)使用三种不同的凭据来访问[分片映射管理器](/documentation/articles/sql-database-elastic-scale-shard-map-management/)。使用凭据时，应根据具体需求尽可能采用最低的访问级别。

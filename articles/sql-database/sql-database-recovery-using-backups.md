@@ -1,23 +1,22 @@
----
-title: 云业务连续性 - 还原已删除的数据库 - SQL 数据库 | Microsoft Docs
-description: 了解时间点还原，通过此服务可将 Azure SQL 数据库回滚到之前的时间点（最多 35 天）。
-services: sql-database
-documentationcenter: ''
-author: stevestein
-manager: jhubbard
-editor: monicar
+<properties
+    pageTitle="云业务连续性 - 还原已删除的数据库 - SQL 数据库 | Azure"
+    description="了解时间点还原，通过此服务可将 Azure SQL 数据库回滚到之前的时间点（最多 35 天）。"
+    services="sql-database"
+    documentationcenter=""
+    author="stevestein"
+    manager="jhubbard"
+    editor="monicar" />
+<tags
+    ms.assetid="fd1d334d-a035-4a55-9446-d1cf750d9cf7"
+    ms.service="sql-database"
+    ms.devlang="NA"
+    ms.topic="article"
+    ms.tgt_pltfrm="NA"
+    ms.workload="NA"
+    ms.date="11/11/2016"
+    wacn.date="12/19/2016"
+ms.author="sstein" />
 
-ms.assetid: fd1d334d-a035-4a55-9446-d1cf750d9cf7
-ms.service: sql-database
-ms.devlang: NA
-ms.topic: article
-ms.tgt_pltfrm: NA
-ms.workload: NA
-ms.date: 11/11/2016
-wacn.date="12/19/2016"
-ms.author: sstein
-
----
 # 使用自动数据库备份恢复 Azure SQL 数据库
 SQL 数据库使用 [SQL 数据库自动备份](/documentation/articles/sql-database-automated-backups/)为数据库恢复提供三个选项。你可以在[保留期](/documentation/articles/sql-database-service-tiers/)内从服务启动的备份将数据库还原到：
 

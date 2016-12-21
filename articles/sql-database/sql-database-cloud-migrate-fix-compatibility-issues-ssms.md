@@ -1,23 +1,22 @@
----
-title: 在迁移到 SQL 数据库之前使用 SQL Server Managment Studio 修复 SQL Server 数据库的兼容性问题 | Microsoft Docs
-description: Azure SQL 数据库, 数据库迁移, 兼容性, SQL Azure 迁移向导
-services: sql-database
-documentationcenter: ''
-author: CarlRabeler
-manager: jhubbard
-editor: ''
+<properties
+    pageTitle="在迁移到 SQL 数据库之前使用 SQL Server Managment Studio 修复 SQL Server 数据库的兼容性问题 | Azure"
+    description="Azure SQL 数据库, 数据库迁移, 兼容性, SQL Azure 迁移向导"
+    services="sql-database"
+    documentationcenter=""
+    author="CarlRabeler"
+    manager="jhubbard"
+    editor="" />
+<tags
+    ms.assetid="5f7d3544-b07e-415a-a2ae-96e49bf5d756"
+    ms.service="sql-database"
+    ms.devlang="NA"
+    ms.topic="article"
+    ms.tgt_pltfrm="NA"
+    ms.workload="sqldb-migrate"
+    ms.date="11/08/2016"
+    wacn.date="12/19/2016"
+ms.author="carlrab" />
 
-ms.assetid: 5f7d3544-b07e-415a-a2ae-96e49bf5d756
-ms.service: sql-database
-ms.devlang: NA
-ms.topic: article
-ms.tgt_pltfrm: NA
-ms.workload: sqldb-migrate
-ms.date: 11/08/2016
-wacn.date="12/19/2016"
-ms.author: carlrab
-
----
 # 在迁移到 SQL 数据库之前，使用 SQL Server Management Studio 解决 SQL Server 数据库的兼容性问题
 
 > [AZURE.SELECTOR]

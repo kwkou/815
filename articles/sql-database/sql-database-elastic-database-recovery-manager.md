@@ -1,22 +1,21 @@
----
-title: 使用恢复管理器解决分片映射问题 | Microsoft Docs
-description: 使用 RecoveryManager 类解决分片映射问题
-services: sql-database
-documentationcenter: ''
-manager: jhubbard
-author: ddove
+<properties
+    pageTitle="使用恢复管理器解决分片映射问题 | Azure"
+    description="使用 RecoveryManager 类解决分片映射问题"
+    services="sql-database"
+    documentationcenter=""
+    manager="jhubbard"
+    author="ddove" />
+<tags
+    ms.assetid="45520ca3-6903-4b39-88ba-1d41b22da9fe"
+    ms.service="sql-database"
+    ms.workload="sql-database"
+    ms.tgt_pltfrm="na"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.date="10/24/2016"
+    wacn.date="12/19/2016"
+ms.author="ddove" />
 
-ms.assetid: 45520ca3-6903-4b39-88ba-1d41b22da9fe
-ms.service: sql-database
-ms.workload: sql-database
-ms.tgt_pltfrm: na
-ms.devlang: na
-ms.topic: article
-ms.date: 10/24/2016
-wacn.date="12/19/2016"
-ms.author: ddove
-
----
 # 使用 RecoveryManager 类解决分片映射问题
 
 [RecoveryManager](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.sqldatabase.elasticscale.shardmanagement.recovery.recoverymanager.aspx) 类使 ADO.Net 应用程序能够轻松检测并解决分片数据库环境中全局分片映射 (GSM) 与本地分片映射 (LSM) 中的任何不一致性。

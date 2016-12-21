@@ -1,23 +1,22 @@
----
-title: Azure SQL 数据库 JSON 功能 | Microsoft Docs
-description: 通过 Azure SQL 数据库，可对采用 JavaScript 对象表示法 (JSON) 的数据进行分析、查询和格式设置。
-services: sql-database
-documentationcenter: ''
-author: jovanpop-msft
-manager: jhubbard
-editor: ''
+<properties
+    pageTitle="Azure SQL 数据库 JSON 功能 | Azure"
+    description="通过 Azure SQL 数据库，可对采用 JavaScript 对象表示法 (JSON) 的数据进行分析、查询和格式设置。"
+    services="sql-database"
+    documentationcenter=""
+    author="jovanpop-msft"
+    manager="jhubbard"
+    editor="" />
+<tags
+    ms.assetid="55860105-2f5f-4b10-87a0-99faa32b5653"
+    ms.service="sql-database"
+    ms.devlang="NA"
+    ms.date="11/15/2016"
+    wacn.date="12/19/2016"
+ms.author="jovanpop"
+    ms.workload="NA"
+    ms.topic="article"
+    ms.tgt_pltfrm="NA" />
 
-ms.assetid: 55860105-2f5f-4b10-87a0-99faa32b5653
-ms.service: sql-database
-ms.devlang: NA
-ms.date: 11/15/2016
-wacn.date="12/19/2016"
-ms.author: jovanpop
-ms.workload: NA
-ms.topic: article
-ms.tgt_pltfrm: NA
-
----
 # Azure SQL 数据库中的 JSON 功能入门
 使用 Azure SQL 数据库可以分析和查询以 JavaScript 对象表示法 [(JSON)](http://www.json.org/) 格式表示的数据，然后将关系数据导出为 JSON 文本。
 

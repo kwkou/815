@@ -1,24 +1,23 @@
----
-title: 什么是 SQL 数据库？ SQL 数据库简介 | Microsoft Docs
-description: '获取 SQL 数据库简介：Microsoft 在云中的关系数据库管理系统 (RDBMS) 的技术详细信息和功能。'
-keywords: sql 介绍, sql 简介, 什么是 sql 数据库
-services: sql-database
-documentationcenter: ''
-author: shontnew
-manager: jhubbard
-editor: cgronlun
+<properties
+    pageTitle="什么是 SQL 数据库？ SQL 数据库简介 | Azure"
+    description="获取 SQL 数据库简介：Microsoft 在云中的关系数据库管理系统 (RDBMS) 的技术详细信息和功能。"
+    keywords="sql 介绍, sql 简介, 什么是 sql 数据库"
+    services="sql-database"
+    documentationcenter=""
+    author="shontnew"
+    manager="jhubbard"
+    editor="cgronlun" />
+<tags
+    ms.assetid="c561f600-a292-4e3b-b1d4-8ab89b81db48"
+    ms.service="sql-database"
+    ms.devlang="na"
+    ms.topic="get-started-article"
+    ms.tgt_pltfrm="na"
+    ms.workload="data-management"
+    ms.date="11/08/2016"
+    wacn.date="12/19/2016"
+ms.author="shkurhek" />
 
-ms.assetid: c561f600-a292-4e3b-b1d4-8ab89b81db48
-ms.service: sql-database
-ms.devlang: na
-ms.topic: get-started-article
-ms.tgt_pltfrm: na
-ms.workload: data-management
-ms.date: 11/08/2016
-wacn.date="12/19/2016"
-ms.author: shkurhek
-
----
 # 什么是 SQL 数据库？ SQL 数据库简介
 SQL 数据库是云中的关系数据库服务，它基于行业领先的 Microsoft SQL Server 引擎并提供任务关键型功能。SQL 数据库提供可预测的性能、在不停机的情况下进行缩放、业务连续性和数据保护以及近乎实时的管理功能。你可以将注意力集中在如何快速进行应用开发、加快推向市场，而不是管理虚拟机和基础结构上。由于 SQL 数据库基于 [SQL Server](https://msdn.microsoft.com/zh-cn/library/bb545450.aspx) 引擎，因此可以支持现有的 SQL Server 工具、库和 API，方便迁移和扩展到云中。
 

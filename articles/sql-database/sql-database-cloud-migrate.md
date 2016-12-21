@@ -1,24 +1,23 @@
----
-title: SQL Server 数据库迁移到 SQL 数据库 | Microsoft Docs
-description: 了解如何将本地 SQL Server 数据库迁移到云中的 Azure SQL 数据库。在迁移数据库前，使用数据库迁移工具测试兼容性。
-keywords: 数据库迁移, sql server 数据库迁移, 数据库迁移工具, 迁移数据库, 迁移 sql 数据库
-services: sql-database
-documentationcenter: ''
-author: CarlRabeler
-manager: jhubbard
-editor: ''
+<properties
+    pageTitle="SQL Server 数据库迁移到 SQL 数据库 | Azure"
+    description="了解如何将本地 SQL Server 数据库迁移到云中的 Azure SQL 数据库。在迁移数据库前，使用数据库迁移工具测试兼容性。"
+    keywords="数据库迁移, sql server 数据库迁移, 数据库迁移工具, 迁移数据库, 迁移 sql 数据库"
+    services="sql-database"
+    documentationcenter=""
+    author="CarlRabeler"
+    manager="jhubbard"
+    editor="" />
+<tags
+    ms.assetid="9cf09000-87fc-4589-8543-a89175151bc2"
+    ms.service="sql-database"
+    ms.devlang="NA"
+    ms.topic="article"
+    ms.tgt_pltfrm="NA"
+    ms.workload="sqldb-migrate"
+    ms.date="11/08/2016"
+    wacn.date="12/19/2016"
+ms.author="carlrab" />
 
-ms.assetid: 9cf09000-87fc-4589-8543-a89175151bc2
-ms.service: sql-database
-ms.devlang: NA
-ms.topic: article
-ms.tgt_pltfrm: NA
-ms.workload: sqldb-migrate
-ms.date: 11/08/2016
-wacn.date="12/19/2016"
-ms.author: carlrab
-
----
 # 将 SQL Server 数据库迁移到云中的 SQL 数据库
 
 本文介绍如何将本地 SQL Server 2005 或更高版本的数据库迁移到 Azure SQL 数据库。在此数据库迁移过程中，需从当前环境中的 SQL Server 数据库将架构和数据迁移到 SQL 数据库。为了成功，必须确保现有数据库通过兼容性测试。使用 [SQL 数据库 V12](/documentation/articles/sql-database-v12-whats-new/) 时，除了服务器级别操作和跨数据库操作的相关问题，还有一些兼容性问题。依赖[部分支持或不受支持的函数](/documentation/articles/sql-database-transact-sql-information/)的数据库和应用程序需要进行重新设计来修复这些不兼容性，然后才能迁移 SQL Server 数据库。

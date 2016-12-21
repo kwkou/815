@@ -1,24 +1,24 @@
----
-title: 使用 Azure 门户创建新的弹性池 | Microsoft Docs
-description: 如何将可缩放的弹性数据库池添加到 SQL 数据库配置，以便更轻松地跨多个数据库管理和分享资源。
-keywords: 可缩放数据库, 数据库配置
-services: sql-database
-documentationcenter: ''
-author: ninarn
-manager: jhubbard
-editor: ''
 
-ms.assetid: bf12594b-d258-40e6-a9fc-d8a8710c2d65
-ms.service: sql-database
-ms.devlang: NA
-ms.date: 11/17/2016
-wacn.date="12/19/2016"
-ms.author: ninarn
-ms.workload: data-management
-ms.topic: get-started-article
-ms.tgt_pltfrm: NA
+<properties
+    pageTitle="使用 Azure 门户创建新的弹性池 | Azure"
+    description="如何将可缩放的弹性数据库池添加到 SQL 数据库配置，以便更轻松地跨多个数据库管理和分享资源。"
+    keywords="可缩放数据库, 数据库配置"
+    services="sql-database"
+    documentationcenter=""
+    author="ninarn"
+    manager="jhubbard"
+    editor="" />
+<tags
+    ms.assetid="bf12594b-d258-40e6-a9fc-d8a8710c2d65"
+    ms.service="sql-database"
+    ms.devlang="NA"
+    ms.date="11/17/2016"
+    wacn.date="12/19/2016"
+	ms.author="ninarn"
+    ms.workload="data-management"
+    ms.topic="get-started-article"
+    ms.tgt_pltfrm="NA" />
 
----
 # 使用 Azure 门户预览创建新的弹性数据库池
 
 > [AZURE.SELECTOR]

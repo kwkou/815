@@ -1,23 +1,22 @@
----
-title: Azure SQL 弹性缩放常见问题 | Microsoft Docs
-description: 关 Azure SQL 数据库弹性缩放的常见问题。
-services: sql-database
-documentationcenter: ''
-manager: jhubbard
-author: ddove
-editor: ''
+<properties
+    pageTitle="Azure SQL 弹性缩放常见问题 | Azure"
+    description="关 Azure SQL 数据库弹性缩放的常见问题。"
+    services="sql-database"
+    documentationcenter=""
+    manager="jhubbard"
+    author="ddove"
+    editor="" />
+<tags
+    ms.assetid="e60dde9c-bb7b-4f2f-b52c-bdb506d49fcb"
+    ms.service="sql-database"
+    ms.workload="sql-database"
+    ms.tgt_pltfrm="na"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.date="10/24/2016"
+    wacn.date="12/19/2016"
+ms.author="ddove" />
 
-ms.assetid: e60dde9c-bb7b-4f2f-b52c-bdb506d49fcb
-ms.service: sql-database
-ms.workload: sql-database
-ms.tgt_pltfrm: na
-ms.devlang: na
-ms.topic: article
-ms.date: 10/24/2016
-wacn.date="12/19/2016"
-ms.author: ddove
-
----
 # 弹性数据库工具常见问题
 #### 如果每个分片只有单个租户且没有分片键，该如何为架构信息填充分片键？
 架构信息对象仅用于“拆分/合并”方案。如果某个应用程序本质上是单租户，那么它则不需要“拆分/合并”工具，因此无需填充架构信息对象。
