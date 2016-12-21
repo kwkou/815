@@ -54,8 +54,7 @@
 **运行跨数据库事务。**
 [弹性数据库事务](/documentation/articles/sql-database-elastic-transactions-overview/)可跨 SQL 数据库中的多个数据库运行事务并执行操作（即跨数据库执行财务交易时或更新某数据库的库存或订单时）。
 
-**对多个数据库执行相同操作。**
-[弹性数据库作业](/documentation/articles/sql-database-elastic-jobs-overview/)可跨弹性池的每个数据库执行重建索引或更新架构等管理操作。
+
 
 转到主页以查看 SQL 数据库可提供的其他功能。
 [请查看](/home/features/sql-database/)

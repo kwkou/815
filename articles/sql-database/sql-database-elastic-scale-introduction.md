@@ -24,7 +24,6 @@
 
 * [弹性数据库客户端库](/documentation/articles/sql-database-elastic-database-client-library/)：客户端库是一项功能，可用于创建和维护分片数据库。请参阅[弹性数据库工具入门](/documentation/articles/sql-database-elastic-scale-get-started/)。
 * [弹性数据库拆分/合并工具](/documentation/articles/sql-database-elastic-scale-overview-split-and-merge/)：在分片数据库之间移动数据。这对于将数据从多租户数据库移动到单租户数据库很有用（反之亦然）。请参阅[弹性数据库拆分/合并工具教程](/documentation/articles/sql-database-elastic-scale-configure-deploy-split-and-merge/)。
-* [弹性数据库作业](/documentation/articles/sql-database-elastic-jobs-overview/)（预览版）：使用作业来管理大量的 Azure SQL 数据库。轻松执行管理操作，例如，使用作业更改架构、管理凭据、更新引用数据、收集性能数据，或收集租户（客户）遥测数据。
 * [弹性数据库查询](/documentation/articles/sql-database-elastic-query-overview/)（预览版）：可跨多个数据库运行 Transact-SQL 查询。这样，便可以连接到 Excel、PowerBI、Tableau 等报表工具。
 * [弹性事务](/documentation/articles/sql-database-elastic-transactions-overview/)：使用此功能可在 Azure SQL 数据库中跨多个数据库运行事务。弹性数据库事务适用于使用 ADO .NET 的 .NET 应用程序，并且与熟悉的使用 [System.Transaction](https://msdn.microsoft.com/zh-cn/library/system.transactions.aspx) 类的编程体验相集成。
 

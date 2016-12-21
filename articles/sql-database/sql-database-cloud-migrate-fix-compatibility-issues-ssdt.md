@@ -1,30 +1,29 @@
-<properties
-   pageTitle="在迁移到 SQL 数据库之前，修复 SQL Server 数据库兼容性问题"
-   description="Azure SQL 数据库, 数据库迁移, 兼容性, SQL Azure 迁移向导, SSDT"
-   services="sql-database"
-   documentationCenter=""
-   authors="CarlRabeler"
-   manager="jhubbard"
-   editor=""/>
+---
+title: 在迁移到 SQL 数据库之前修复 SQL Server 数据库的兼容性问题 | Microsoft Docs
+description: Azure SQL 数据库, 数据库迁移, 兼容性, SQL Azure 迁移向导, SSDT
+services: sql-database
+documentationcenter: ''
+author: CarlRabeler
+manager: jhubbard
+editor: ''
 
-<tags
-   ms.service="sql-database"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="sqldb-migrate"
-   ms.date="08/24/2016"
-   wacn.date="12/19/2016"
-   ms.author="carlrab"/>  
+ms.assetid: 7ff52877-5b63-4adc-aa1a-689669a1146e
+ms.service: sql-database
+ms.devlang: NA
+ms.topic: article
+ms.tgt_pltfrm: NA
+ms.workload: sqldb-migrate
+ms.date: 11/08/2016
+wacn.date="12/19/2016"
+ms.author: carlrab
 
-
-# 使用 SQL Server Data Tools for Visual Studio 将 SQL Server 数据库迁移到 Azure SQL 数据库 
+---
+# 使用 SQL Server Data Tools for Visual Studio 将 SQL Server 数据库迁移到 Azure SQL 数据库
 
 > [AZURE.SELECTOR]
 - [SSDT](/documentation/articles/sql-database-cloud-migrate-fix-compatibility-issues-ssdt/)
 - [SqlPackage](/documentation/articles/sql-database-cloud-migrate-determine-compatibility-sqlpackage/)
 - [SSMS](/documentation/articles/sql-database-cloud-migrate-determine-compatibility-ssms/)
-- [升级顾问](http://www.microsoft.com/download/details.aspx?id=48119)
 - [SAMW](/documentation/articles/sql-database-cloud-migrate-fix-compatibility-issues/)
 
 在本文中，你将了解在迁移到 Azure SQL 数据库之前，如何使用 SQL Server Data Tools for Visual Studio 检测并解决 SQL Server 数据库的兼容性问题。
@@ -108,4 +107,4 @@
 - [Transact-SQL 部分支持或不支持的函数](/documentation/articles/sql-database-transact-sql-information/)
 - [使用 SQL Server 迁移助手迁移非 SQL Server 数据库](http://blogs.msdn.com/b/ssma/)
 
-<!---HONumber=Mooncake_Quality_Review_1202_2016-->
+<!---HONumber=Mooncake_1212_2016-->

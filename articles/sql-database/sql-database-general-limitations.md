@@ -30,9 +30,6 @@
 
   - 不支持 SQL Server 2008 SQL Server 浏览器，因为 Azure SQL 数据库没有动态端口，只有端口 1433。
 
-## SQL Server 代理/作业
-
-Azure SQL 数据库不支持 SQL Server 代理，但可以使用弹性作业在一个或多个数据库中运行作业。有关弹性作业的详细信息，请参阅[弹性作业](/documentation/articles/sql-database-elastic-jobs-overview/)。
 
 ## SQL Server 排序规则支持
 

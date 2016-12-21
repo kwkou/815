@@ -1,27 +1,27 @@
-<properties 
-	pageTitle="弹性数据库工具入门" 
-	description="大致介绍 Azure SQL 数据库的弹性数据库工具功能，包括易于使用的示例应用。" 
-	services="sql-database" 
-	documentationCenter="" 
-	manager="jhubbard" 
-	authors="ddove" 
-	editor="sidneyh"/>
+---
+title: 弹性数据库工具入门
+description: 有关 Azure SQL 数据库的弹性数据库工具功能的基本说明，包括易于运行的示例应用。
+services: sql-database
+documentationcenter: ''
+manager: jhubbard
+author: ddove
+editor: CarlRabeler
 
-<tags 
-	ms.service="sql-database" 
-	ms.workload="sql-database" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="05/27/2016" 
-	wacn.date="12/12/2016" 
-	ms.author="ddove"/>
+ms.assetid: b6911f8d-2bae-4d04-9fa8-f79a3db7129d
+ms.service: sql-database
+ms.workload: sql-database
+ms.tgt_pltfrm: na
+ms.devlang: na
+ms.topic: article
+ms.date: 10/24/2016
+wacn.date="12/19/2016"
+ms.author: ddove
 
+---
 #<a name="Getting-started-with-elastic-database-tools"></a> 弹性数据库工具入门
-
 本文介绍开发人员运行示例应用时的体验。此示例将创建一个简单的分片应用程序，并探讨弹性数据库工具的主要功能。此示例演示[弹性数据库客户端库](/documentation/articles/sql-database-elastic-database-client-library/)的功能
 
-若要安装该库，请转到 [Microsoft.Azure.SqlDatabase.ElasticScale.Client](https://www.nuget.org/packages/Microsoft.Azure.SqlDatabase.ElasticScale.Client/)。请注意，该库和下面描述的示例应用程序一起安装。
+若要安装该库，请转到 [Microsoft.Azure.SqlDatabase.ElasticScale.Client](https://www.nuget.org/packages/Microsoft.Azure.SqlDatabase.ElasticScale.Client/)。该库和下述示例应用一起安装。
 
 ## 先决条件
 
@@ -42,17 +42,18 @@
 4. 在搜索框中，键入 **elastic db** 以搜索示例。随后将出现标题 **Azure SQL 弹性数据库工具 - 入门**。
 
     ![搜索框][1]
- 
 5. 选择该示例，选择新项目的名称和位置，然后按“确定”创建该项目。
 6. 在示例项目的解决方案中打开 **app.config** 文件，然后按照该文件中的说明添加 Azure SQL 数据库服务器名称和登录信息（用户名和密码）。
 7. 构建并运行应用程序。出现提示时，请允许 Visual Studio 还原该解决方案的 NuGet 包。这会从 NuGet 下载最新版本的弹性数据库客户端库。
 8. 尝试使用不同的选项，以了解有关客户端库功能的详细信息。请注意应用程序在控制台输出中执行的步骤，并随意浏览后台代码。
-
+   
     ![进度][4]
 
 祝贺 - 你已成功使用弹性数据库池在 Azure SQL 数据库上生成并运行了第一个分片应用程序。通过将 Visual Studio 或 SQL Server Management Studio 连接到 Azure DB 服务器，快速查看该示例创建的分片。你会看到该示例创建的新示例分片数据库和分片映射管理器数据库。
 
-**注意：**如果没有 SQL Server Management Studio，请参阅[使用 SQL Server Management Studio 管理 Azure SQL 数据库](/documentation/articles/sql-database-manage-azure-ssms/)，其中提供了有关获取该工具的说明。
+> [AZURE.IMPORTANT]
+建议始终使用最新版本的 Management Studio 以保持与 Azure 和 SQL 数据库的更新同步。[更新 SQL Server Management Studio](https://msdn.microsoft.com/zh-cn/library/mt238290.aspx)。
+
 
 ### 重要的代码示例片段
 
@@ -81,25 +82,27 @@
 * [弹性数据库工具文档结构图](https://azure.microsoft.com/documentation/learning-paths/sql-database-elastic-scale)
 -    代码示例：
     -    [Azure SQL 弹性数据库 - 入门](http://code.msdn.microsoft.com/Elastic-Scale-with-Azure-a80d8dc6?SRC=VSIDE)
-    -    [Azure SQL 弹性数据库 - 与实体框架集成](http://code.msdn.microsoft.com/Elastic-Scale-with-Azure-bae904ba?SRC=VSIDE)
+    -    [Azure SQL 弹性数据库 - 与 Entity Framework 集成](http://code.msdn.microsoft.com/Elastic-Scale-with-Azure-bae904ba?SRC=VSIDE)
     -    [脚本中心上的分片弹性](https://gallery.technet.microsoft.com/scriptcenter/Elastic-Scale-Shard-c9530cbe)
 -    博客：[弹性缩放公告](https://azure.microsoft.com/blog/2014/10/02/introducing-elastic-scale-preview-for-azure-sql-database)
 -    第 9 频道：[弹性缩放概述视频](http://channel9.msdn.com/Shows/Data-Exposed/Azure-SQL-Database-Elastic-Scale)
 -    论坛：[Azure SQL 数据库论坛](https://social.msdn.microsoft.com/Forums/zh-cn/home?forum=ssdsgetstarted)
--    测量性能：[分片映射管理器的性能计数器](/documentation/articles/sql-database-elastic-database-client-library)
+-    测量性能：[分片映射管理器的性能计数器](/documentation/articles/sql-database-elastic-database-client-library/)
 
 
 <!--Anchors-->
+
 [The Elastic Scale Sample Application]: #The-Elastic-Scale-Sample-Application
 [Download and Run the Sample App]: #Download-and-Run-the-Sample-App
 [Cost]: #Cost
 [Next steps]: #next-steps
 
 <!--Image references-->
+
 [1]: ./media/sql-database-elastic-scale-get-started/newProject.png
 [2]: ./media/sql-database-elastic-scale-get-started/click-online.png
 [3]: ./media/sql-database-elastic-scale-get-started/click-CSharp.png
 [4]: ./media/sql-database-elastic-scale-get-started/output2.png
  
 
-<!---HONumber=Mooncake_Quality_Review_1118_2016-->
+<!---HONumber=Mooncake_1212_2016-->

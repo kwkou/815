@@ -1,21 +1,22 @@
-<properties 
-    pageTitle="在扩大云数据库之间移动数据 | Azure" 
-    description="介绍如何使用弹性数据库 API 通过自托管服务来操作分片和移动数据。" 
-    services="sql-database" 
-    documentationCenter="" 
-    manager="jhubbard" 
-    authors="ddove"/>
+---
+title: 在扩大云数据库之间移动数据 | Microsoft Docs
+description: 介绍如何使用弹性数据库 API 通过自托管服务来操作分片和移动数据。
+services: sql-database
+documentationcenter: ''
+manager: jhubbard
+author: ddove
 
-<tags 
-    ms.service="sql-database" 
-    ms.workload="sql-database" 
-    ms.tgt_pltfrm="na" 
-    ms.devlang="na" 
-    ms.topic="article" 
-    ms.date="05/27/2016" 
-    wacn.date="12/19/2016" 
-    ms.author="ddove" />
+ms.assetid: 204fd902-0397-4185-985a-dea3ed7c7d9f
+ms.service: sql-database
+ms.workload: sql-database
+ms.tgt_pltfrm: na
+ms.devlang: na
+ms.topic: article
+ms.date: 10/24/2016
+wacn.date="12/19/2016"
+ms.author: ddove
 
+---
 # 在扩大云数据库之间移动数据
 
 如果你是软件即服务开发人员，并且你的应用突然遇到巨大需求，那么你需要适应该需求增长。因此，添加更多数据库（分片）。如何在不破坏数据完整性的情况下将数据重新分配到新数据库？ 使用**拆分/合并工具**将数据从受约束的数据库移到新数据库。
@@ -27,7 +28,6 @@
 ## 下载
 [Microsoft.Azure.SqlDatabase.ElasticScale.Service.SplitMerge](http://www.nuget.org/packages/Microsoft.Azure.SqlDatabase.ElasticScale.Service.SplitMerge)
 
-
 ## 文档
 1. [弹性数据库拆分/合并工具教程](/documentation/articles/sql-database-elastic-scale-configure-deploy-split-and-merge/)
 * [拆分合并安全配置](/documentation/articles/sql-database-elastic-scale-split-merge-security-configuration/)
@@ -38,7 +38,6 @@
 * [弹性数据库工具词汇表](/documentation/articles/sql-database-elastic-scale-glossary/)
 
 ## 为什么使用拆分/合并工具？
-
 **灵活性**
 
 应用程序需要灵活伸展到超出单个 Azure SQL DB 数据库的限制。根据需要使用该工具将数据移到新的数据库，同时保留完整性。
@@ -56,7 +55,6 @@
 在一个数据库中具有多个租户情况下，将 shardlet 分配到分片可能导致某些分片上出现容量瓶颈。这就要求重新分配 shardlet 或将工作中的 shardlet 移动到新的或容量使用较少的分片上。
 
 ## 概念和主要功能
-
 **客户托管服务**
 
 拆分/合并将作为客户托管的服务交付。必须在 Azure 订阅中部署和托管该服务。你从 NuGet 下载的程序包将包含一个要使用你的特定部署信息完成的配置模板。有关详细信息，请参阅[拆分/合并教程](/documentation/articles/sql-database-elastic-scale-configure-deploy-split-and-merge/)。由于服务在你的 Azure 订阅中运行，因此你可以控制和配置该服务的大多数安全设置。默认模板包括配置 SSL 的选项、基于证书的客户端身份验证、存储凭据的加密、DoS 防护和 IP 限制。你可以在以下[拆分/合并安全配置](/documentation/articles/sql-database-elastic-scale-split-merge-security-configuration/)文档中找到有关安全方面的详细信息。
@@ -84,9 +82,7 @@
 可从以下方面区分拆分和合并服务：(1) 分片表、(2) 引用表和 (3) 普通表。拆分/合并/移动操作的语义取决于所用表的类型，定义如下：
 
 * **分片表**：拆分、合并与移动操作将 shardlet 从源分片移动到目标分片。成功完成整个请求后，这些 shardlet 将不再显示在源分片上。请注意，目标表需要存在于目标分片上，并且在处理操作之前，目标表中不能包含目标范围中的数据。
-
 * **引用表**：对于引用表，拆分、合并和移动操作会将数据从源分片复制到目标分片。但是，请注意，如果目标分片上的给定表中已存在任何行，则该表在目标分片上不会发生任何更改。要使任何引用表复制操作得到处理，该表必须为空。
-
 * **其他表**：其他表可存在于拆分与合并操作的源或目标上。对于任何数据移动或复制操作，拆分/合并服务都将忽略这些表。但是，请注意，在出现约束的情况下，它们可能会干扰这些操作。
 
 有关引用表和分片表对比的信息可由分片映射上的 **SchemaInfo** API 提供。以下示例说明了如何在给定分片映射管理器对象 smm 上使用这些 API：
@@ -253,4 +249,4 @@
 [3]: ./media/sql-database-elastic-scale-overview-split-and-merge/diagnostics-config.png
  
 
-<!---HONumber=Mooncake_Quality_Review_1202_2016-->
+<!---HONumber=Mooncake_1212_2016-->
