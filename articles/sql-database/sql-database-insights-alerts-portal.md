@@ -47,11 +47,11 @@
 1. 在[门户](https://portal.azure.cn/)中，找到希望监视的资源并选择该资源。
 2. 在“监视”部分下选择“警报”或“警报规则”。对于不同的资源，文本和图标可能稍有不同。
    
-    ![监视](../azure-portal/media/insights-alerts-portal/AlertRulesButton.png)  
+    ![监视](./media/insights-alerts-portal/AlertRulesButton.png)  
 
 3. 选择“添加警报”命令并填写各个字段。
    
-    ![添加警报](../azure-portal/media/insights-alerts-portal/AddAlertOnlyParamsPage.png)  
+    ![添加警报](./media/insights-alerts-portal/AddAlertOnlyParamsPage.png)  
 
 4. 为警报规则**命名**，并选择一个**描述**，描述也将显示在通知电子邮件中。
 5. 选择要监视的**指标**，然后为该指标选择**条件**和**阈值**值。另外，还要选择满足该指标规则必须达到多长**时间**，警报才会触发。例如，如果使用了时间“PT5M”，并且警报监视使用率高于 80% 的 CPU，则当 CPU 的使用率持续高于 80% 达 5 分钟时，该警报将触发。在发生第一次触发后，当 CPU 使用率保持低于 80% 达到 5 分钟时，该触发器将再次触发。CPU 度量每 1 分钟进行一次。

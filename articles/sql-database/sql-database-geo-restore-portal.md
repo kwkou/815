@@ -17,6 +17,8 @@
     ms.topic="article"
     ms.tgt_pltfrm="NA" />
 
+# 使用 Azure 门户预览从异地冗余备份异地还原 Azure SQL 数据库
+
 > [AZURE.SELECTOR]
 - [概述](/documentation/articles/sql-database-recovery-using-backups/#geo-restore)
 - [异地还原：PowerShell](/documentation/articles/sql-database-geo-restore-powershell/)
