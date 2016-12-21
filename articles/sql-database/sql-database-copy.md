@@ -1,22 +1,21 @@
----
-title: 复制 Azure SQL 数据库 | Microsoft Docs
-description: 创建 Azure SQL 数据库的副本
-services: sql-database
-documentationcenter: ''
-author: anosov1960
-manager: jhubbard
-editor: ''
-
-ms.assetid: 5aaf6bcd-3839-49b5-8c77-cbdf786e359b
-ms.service: sql-database
-ms.devlang: NA
-ms.date: 10/24/2016
-ms.author: sstein; sashan
-ms.workload: data-management
-ms.topic: article
-ms.tgt_pltfrm: NA
-
----
+<properties
+    pageTitle="复制 Azure SQL 数据库 | Azure"
+    description="创建 Azure SQL 数据库的副本"
+    services="sql-database"
+    documentationcenter=""
+    author="anosov1960"
+    manager="jhubbard"
+    editor="" />
+<tags
+    ms.assetid="5aaf6bcd-3839-49b5-8c77-cbdf786e359b"
+    ms.service="sql-database"
+    ms.devlang="NA"
+    ms.date="10/24/2016"
+    wacn.date="12/19/2016"
+    ms.author="sstein; sashan"
+    ms.workload="data-management"
+    ms.topic="article"
+    ms.tgt_pltfrm="NA" />
 
 #<a name="copy-your-sql-database"></a> 复制 Azure SQL 数据库
 

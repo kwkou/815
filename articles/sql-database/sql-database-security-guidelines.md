@@ -1,24 +1,23 @@
----
-title: Azure SQL 数据库安全指导原则和限制 | Microsoft Docs
-description: 了解与安全性相关的 Azure SQL 数据库指导原则和限制。
-services: sql-database
-documentationcenter: ''
-author: BYHAM
-manager: jhubbard
-editor: ''
-tags: ''
+<properties
+    pageTitle="Azure SQL 数据库安全指导原则和限制 | Azure"
+    description="了解与安全性相关的 Azure SQL 数据库指导原则和限制。"
+    services="sql-database"
+    documentationcenter=""
+    author="BYHAM"
+    manager="jhubbard"
+    editor=""
+    tags="" />
+<tags
+    ms.assetid="8e71b04c-bc38-4153-8f83-f2b14faa31d9"
+    ms.service="sql-database"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.tgt_pltfrm="na"
+    ms.workload="data-management"
+    ms.date="10/18/2016"
+    wacn.date="12/19/2016"
+ms.author="rickbyh" />
 
-ms.assetid: 8e71b04c-bc38-4153-8f83-f2b14faa31d9
-ms.service: sql-database
-ms.devlang: na
-ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: data-management
-ms.date: 10/18/2016
-wacn.date="12/19/2016"
-ms.author: rickbyh
-
----
 # Azure SQL 数据库安全指导原则和限制
 本主题介绍与安全性相关的 Azure SQL 数据库指导原则和限制。在管理你的 Azure SQL 数据库的安全性时应考虑以下几点：
 

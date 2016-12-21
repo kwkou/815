@@ -1,23 +1,22 @@
----
-title: 使用 SqlPackage.exe 确定 SQL 数据库兼容性 | Microsoft Docs
-description: Azure SQL 数据库, 数据库迁移, SQL 数据库兼容性, SqlPackage
-services: sql-database
-documentationcenter: ''
-author: CarlRabeler
-manager: jhubbard
-editor: ''
+<properties
+    pageTitle="使用 SqlPackage.exe 确定 SQL 数据库兼容性 | Azure"
+    description="Azure SQL 数据库, 数据库迁移, SQL 数据库兼容性, SqlPackage"
+    services="sql-database"
+    documentationcenter=""
+    author="CarlRabeler"
+    manager="jhubbard"
+    editor="" />
+<tags
+    ms.assetid="ebe2cf3e-9561-4ede-8fb9-f3e6ce3fb7a6"
+    ms.service="sql-database"
+    ms.devlang="NA"
+    ms.topic="article"
+    ms.tgt_pltfrm="NA"
+    ms.workload="sqldb-migrate"
+    ms.date="11/08/2016"
+    wacn.date="12/19/2016"
+ms.author="carlrab" />
 
-ms.assetid: ebe2cf3e-9561-4ede-8fb9-f3e6ce3fb7a6
-ms.service: sql-database
-ms.devlang: NA
-ms.topic: article
-ms.tgt_pltfrm: NA
-ms.workload: sqldb-migrate
-ms.date: 11/08/2016
-wacn.date="12/19/2016"
-ms.author: carlrab
-
----
 # 使用 SqlPackage.exe 确定 SQL 数据库兼容性
 
 > [AZURE.SELECTOR]

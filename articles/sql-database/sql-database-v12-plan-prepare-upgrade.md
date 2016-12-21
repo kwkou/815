@@ -1,23 +1,22 @@
----
-title: 规划升级到 SQL 数据库 V12 | Microsoft Docs
-description: 介绍升级到 Azure SQL 数据库 V12 版本所涉及的准备工作和限制。
-services: sql-database
-documentationcenter: ''
-author: MightyPen
-manager: jhubbard
-editor: ''
+<properties
+    pageTitle="规划升级到 SQL 数据库 V12 | Azure"
+    description="介绍升级到 Azure SQL 数据库 V12 版本所涉及的准备工作和限制。"
+    services="sql-database"
+    documentationcenter=""
+    author="MightyPen"
+    manager="jhubbard"
+    editor="" />
+<tags
+    ms.assetid="8020f904-ad27-40c5-8c59-bdf2e690f77d"
+    ms.service="sql-database"
+    ms.workload="data-management"
+    ms.tgt_pltfrm="na"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.date="10/24/2016"
+    wacn.date="12/19/2016"
+ms.author="genemi" />
 
-ms.assetid: 8020f904-ad27-40c5-8c59-bdf2e690f77d
-ms.service: sql-database
-ms.workload: data-management
-ms.tgt_pltfrm: na
-ms.devlang: na
-ms.topic: article
-ms.date: 10/24/2016
-wacn.date="12/19/2016"
-ms.author: genemi
-
----
 # 规划和准备升级到 SQL 数据库 V12
 本主题介绍将 Azure SQL 数据库从 V11 版本升级到 V12 时必须执行的规划和准备工作。
 

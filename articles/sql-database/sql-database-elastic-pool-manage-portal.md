@@ -1,24 +1,24 @@
----
-title: 使用 Azure 门户监视和管理弹性数据库池 | Microsoft Docs
-description: 了解如何使用 Azure 门户和 SQL 数据库的内置智能来管理、监视可缩放的弹性数据库池并正确调整其大小，以优化数据库性能和管理成本。
-keywords: ''
-services: sql-database
-documentationcenter: ''
-author: ninarn
-manager: jhubbard
-editor: cgronlun
 
-ms.assetid: 3dc9b7a3-4b10-423a-8e44-9174aca5cf3d
-ms.service: sql-database
-ms.devlang: NA
-ms.date: 11/17/2016
-wacn.date="12/19/2016"
-ms.author: ninarn
-ms.workload: data-management
-ms.topic: article
-ms.tgt_pltfrm: NA
+<properties
+    pageTitle="使用 Azure 门户监视和管理弹性数据库池 | Azure"
+    description="了解如何使用 Azure 门户和 SQL 数据库的内置智能来管理、监视可缩放的弹性数据库池并正确调整其大小，以优化数据库性能和管理成本。"
+    keywords=""
+    services="sql-database"
+    documentationcenter=""
+    author="ninarn"
+    manager="jhubbard"
+    editor="cgronlun" />
+<tags
+    ms.assetid="3dc9b7a3-4b10-423a-8e44-9174aca5cf3d"
+    ms.service="sql-database"
+    ms.devlang="NA"
+    ms.date="11/17/2016"
+    wacn.date="12/19/2016"
+	ms.author="ninarn"
+    ms.workload="data-management"
+    ms.topic="article"
+    ms.tgt_pltfrm="NA" />
 
----
 # 使用 Azure 门户预览监视和管理弹性数据库池
 
 > [AZURE.SELECTOR]

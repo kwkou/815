@@ -1,23 +1,22 @@
----
-title: '概述: SQL 数据库的管理工具 | Microsoft Docs'
-description: 比较用于管理 Azure SQL 数据库的工具和选项
-services: sql-database
-documentationcenter: ''
-author: stevestein
-manager: jhubbard
-editor: ''
+<properties
+    pageTitle="概述: SQL 数据库的管理工具 | Azure"
+    description="比较用于管理 Azure SQL 数据库的工具和选项"
+    services="sql-database"
+    documentationcenter=""
+    author="stevestein"
+    manager="jhubbard"
+    editor="" />
+<tags
+    ms.assetid="37767380-975f-4dee-a28d-80bc2036dda3"
+    ms.service="sql-database"
+    ms.workload="data-management"
+    ms.tgt_pltfrm="na"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.date="10/24/2016"
+    wacn.date="12/19/2016"
+ms.author="sstein" />
 
-ms.assetid: 37767380-975f-4dee-a28d-80bc2036dda3
-ms.service: sql-database
-ms.workload: data-management
-ms.tgt_pltfrm: na
-ms.devlang: na
-ms.topic: article
-ms.date: 10/24/2016
-wacn.date="12/19/2016"
-ms.author: sstein
-
----
 # 概述：SQL 数据库的管理工具
 本主题探讨并比较用于管理 Azure SQL 数据库的工具和选项，便于用户挑选适合作业、业务以及自身需求的工具。选择合适的工具取决于所管理的数据库数量、任务以及执行任务的频率。
 

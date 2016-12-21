@@ -1,23 +1,22 @@
----
-title: 弹性数据库工具入门
-description: 有关 Azure SQL 数据库的弹性数据库工具功能的基本说明，包括易于运行的示例应用。
-services: sql-database
-documentationcenter: ''
-manager: jhubbard
-author: ddove
-editor: CarlRabeler
+<properties
+    pageTitle="弹性数据库工具入门"
+    description="有关 Azure SQL 数据库的弹性数据库工具功能的基本说明，包括易于运行的示例应用。"
+    services="sql-database"
+    documentationcenter=""
+    manager="jhubbard"
+    author="ddove"
+    editor="CarlRabeler" />
+<tags
+    ms.assetid="b6911f8d-2bae-4d04-9fa8-f79a3db7129d"
+    ms.service="sql-database"
+    ms.workload="sql-database"
+    ms.tgt_pltfrm="na"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.date="10/24/2016"
+    wacn.date="12/19/2016"
+ms.author="ddove" />
 
-ms.assetid: b6911f8d-2bae-4d04-9fa8-f79a3db7129d
-ms.service: sql-database
-ms.workload: sql-database
-ms.tgt_pltfrm: na
-ms.devlang: na
-ms.topic: article
-ms.date: 10/24/2016
-wacn.date="12/19/2016"
-ms.author: ddove
-
----
 #<a name="Getting-started-with-elastic-database-tools"></a> 弹性数据库工具入门
 本文介绍开发人员运行示例应用时的体验。此示例将创建一个简单的分片应用程序，并探讨弹性数据库工具的主要功能。此示例演示[弹性数据库客户端库](/documentation/articles/sql-database-elastic-database-client-library/)的功能
 

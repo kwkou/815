@@ -1,23 +1,22 @@
----
-title: Azure SQL 数据库资源限制 | Microsoft Docs
-description: 本页介绍 Azure SQL 数据库的一些常见资源限制。
-services: sql-database
-documentationcenter: na
-author: CarlRabeler
-manager: jhubbard
-editor: monicar
+<properties
+    pageTitle="Azure SQL 数据库资源限制 | Azure"
+    description="本页介绍 Azure SQL 数据库的一些常见资源限制。"
+    services="sql-database"
+    documentationcenter="na"
+    author="CarlRabeler"
+    manager="jhubbard"
+    editor="monicar" />
+<tags
+    ms.assetid="884e519f-23bb-4b73-a718-00658629646a"
+    ms.service="sql-database"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.tgt_pltfrm="na"
+    ms.workload="data-management"
+    ms.date="11/15/2016"
+    wacn.date="12/19/2016"
+ms.author="carlrab" />
 
-ms.assetid: 884e519f-23bb-4b73-a718-00658629646a
-ms.service: sql-database
-ms.devlang: na
-ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: data-management
-ms.date: 11/15/2016
-wacn.date="12/19/2016"
-ms.author: carlrab
-
----
 # Azure SQL 数据库资源限制
 ## 概述
 Azure SQL 数据库使用两种不同的机制管理可用于数据库的资源：**资源调控**和**强制限制**。本主题介绍了资源管理的这两个主要方面。

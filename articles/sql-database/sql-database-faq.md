@@ -1,23 +1,22 @@
----
-title: Azure SQL 数据库常见问题
-description: 客户询问的有关云数据库和 Azure SQL 数据库、Microsoft 的关系数据库管理系统 (RDBMS) 和在云中作为服务的数据库的常见问题的答案。
-services: sql-database
-documentationcenter: ''
-author: CarlRabeler
-manager: jhubbard
-editor: ''
+<properties
+    pageTitle="Azure SQL 数据库常见问题"
+    description="客户询问的有关云数据库和 Azure SQL 数据库、Microsoft 的关系数据库管理系统 (RDBMS) 和在云中作为服务的数据库的常见问题的答案。"
+    services="sql-database"
+    documentationcenter=""
+    author="CarlRabeler"
+    manager="jhubbard"
+    editor="" />
+<tags
+    ms.assetid="1da12abc-0646-43ba-b564-e3b049a6487f"
+    ms.service="sql-database"
+    ms.devlang="NA"
+    ms.topic="article"
+    ms.tgt_pltfrm="NA"
+    ms.workload="data-management"
+    ms.date="11/08/2016"
+    wacn.date="12/19/2016"
+ms.author="sashan;carlrab" />
 
-ms.assetid: 1da12abc-0646-43ba-b564-e3b049a6487f
-ms.service: sql-database
-ms.devlang: NA
-ms.topic: article
-ms.tgt_pltfrm: NA
-ms.workload: data-management
-ms.date: 11/08/2016
-wacn.date="12/19/2016"
-ms.author: sashan;carlrab
-
----
 # SQL 数据库常见问题
 ## SQL 数据库的使用情况如何体现在我的帐单上？
 SQL 数据库以可预测的每小时费率收费，同时根据服务层 + 单一数据库的性能级别或每一弹性数据库池的 eDTU 数计费。实际使用量是每小时按比例计算的，因此帐单可能会显示小时的小数部分。例如，如果某个数据库在一个月内存在了 12 小时，则帐单将显示 0.5 天的使用量。服务层 + 性能级别和每个池的 eDTU 数在帐单中进行了划分，以便查看单个月份中使用数据库的天数。

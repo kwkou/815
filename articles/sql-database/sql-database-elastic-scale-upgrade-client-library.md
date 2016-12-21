@@ -1,22 +1,21 @@
----
-title: 升级到最新的弹性数据库客户端库 | Microsoft Docs
-description: 使用 Nuget 升级应用和库
-services: sql-database
-documentationcenter: ''
-manager: jhubbard
-author: ddove
+<properties
+    pageTitle="升级到最新的弹性数据库客户端库 | Azure"
+    description="使用 Nuget 升级应用和库"
+    services="sql-database"
+    documentationcenter=""
+    manager="jhubbard"
+    author="ddove" />
+<tags
+    ms.assetid="0a546510-76e7-465e-9271-f15ff0cfa959"
+    ms.service="sql-database"
+    ms.workload="sql-database"
+    ms.tgt_pltfrm="na"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.date="10/24/2016"
+    wacn.date="12/19/2016"
+ms.author="ddove" />
 
-ms.assetid: 0a546510-76e7-465e-9271-f15ff0cfa959
-ms.service: sql-database
-ms.workload: sql-database
-ms.tgt_pltfrm: na
-ms.devlang: na
-ms.topic: article
-ms.date: 10/24/2016
-wacn.date="12/19/2016"
-ms.author: ddove
-
----
 # 升级应用以使用最新的弹性数据库客户端库
 
 可通过 Visual Studio 中的 NuGetPackage Manager 界面获取[弹性数据库客户端库](/documentation/articles/sql-database-elastic-database-client-library/)的新版本。升级包含客户端库的 bug 修复和新功能支持。

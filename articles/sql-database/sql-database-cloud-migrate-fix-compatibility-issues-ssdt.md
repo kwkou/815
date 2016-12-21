@@ -1,23 +1,22 @@
----
-title: 在迁移到 SQL 数据库之前修复 SQL Server 数据库的兼容性问题 | Microsoft Docs
-description: Azure SQL 数据库, 数据库迁移, 兼容性, SQL Azure 迁移向导, SSDT
-services: sql-database
-documentationcenter: ''
-author: CarlRabeler
-manager: jhubbard
-editor: ''
+<properties
+    pageTitle="在迁移到 SQL 数据库之前修复 SQL Server 数据库的兼容性问题 | Azure"
+    description="Azure SQL 数据库, 数据库迁移, 兼容性, SQL Azure 迁移向导, SSDT"
+    services="sql-database"
+    documentationcenter=""
+    author="CarlRabeler"
+    manager="jhubbard"
+    editor="" />
+<tags
+    ms.assetid="7ff52877-5b63-4adc-aa1a-689669a1146e"
+    ms.service="sql-database"
+    ms.devlang="NA"
+    ms.topic="article"
+    ms.tgt_pltfrm="NA"
+    ms.workload="sqldb-migrate"
+    ms.date="11/08/2016"
+    wacn.date="12/19/2016"
+ms.author="carlrab" />
 
-ms.assetid: 7ff52877-5b63-4adc-aa1a-689669a1146e
-ms.service: sql-database
-ms.devlang: NA
-ms.topic: article
-ms.tgt_pltfrm: NA
-ms.workload: sqldb-migrate
-ms.date: 11/08/2016
-wacn.date="12/19/2016"
-ms.author: carlrab
-
----
 # 使用 SQL Server Data Tools for Visual Studio 将 SQL Server 数据库迁移到 Azure SQL 数据库
 
 > [AZURE.SELECTOR]

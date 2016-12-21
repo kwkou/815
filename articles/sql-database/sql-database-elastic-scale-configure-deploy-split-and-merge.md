@@ -1,23 +1,22 @@
----
-title: 部署拆分/合并服务 | Microsoft Docs
-description: 使用弹性数据库工具拆分和合并
-services: sql-database
-documentationcenter: ''
-author: ddove
-manager: jhubbard
-editor: ''
+<properties
+    pageTitle="部署拆分/合并服务 | Azure"
+    description="使用弹性数据库工具拆分和合并"
+    services="sql-database"
+    documentationcenter=""
+    author="ddove"
+    manager="jhubbard"
+    editor="" />
+<tags
+    ms.assetid="9a993c0f-7052-46cd-aa59-073bea8d535a"
+    ms.service="sql-database"
+    ms.workload="sql-database"
+    ms.tgt_pltfrm="na"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.date="10/24/2016"
+    wacn.date="12/19/2016"
+ms.author="ddove" />
 
-ms.assetid: 9a993c0f-7052-46cd-aa59-073bea8d535a
-ms.service: sql-database
-ms.workload: sql-database
-ms.tgt_pltfrm: na
-ms.devlang: na
-ms.topic: article
-ms.date: 10/24/2016
-wacn.date="12/19/2016"
-ms.author: ddove
-
----
 # 部署拆分/合并服务
 可使用拆分/合并工具在分片数据库之间移动数据。请参阅[在扩大云数据库之间移动数据](/documentation/articles/sql-database-elastic-scale-overview-split-and-merge/)
 

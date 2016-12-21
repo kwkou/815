@@ -1,23 +1,22 @@
----
-title: 使用弹性数据库工具添加分片 | Microsoft Docs
-description: 如何使用弹性缩放 API 将新分片添加到分片集。
-services: sql-database
-documentationcenter: ''
-manager: jhubbard
-author: ddove
-editor: ''
+<properties
+    pageTitle="使用弹性数据库工具添加分片 | Azure"
+    description="如何使用弹性缩放 API 将新分片添加到分片集。"
+    services="sql-database"
+    documentationcenter=""
+    manager="jhubbard"
+    author="ddove"
+    editor="" />
+<tags
+    ms.assetid="62a349db-bebe-406f-a120-2f1986f2b286"
+    ms.service="sql-database"
+    ms.workload="sql-database"
+    ms.tgt_pltfrm="na"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.date="10/24/2016"
+    wacn.date="12/19/2016"
+ms.author="ddove" />
 
-ms.assetid: 62a349db-bebe-406f-a120-2f1986f2b286
-ms.service: sql-database
-ms.workload: sql-database
-ms.tgt_pltfrm: na
-ms.devlang: na
-ms.topic: article
-ms.date: 10/24/2016
-wacn.date="12/19/2016"
-ms.author: ddove
-
----
 # 使用弹性数据库工具添加分片
 ## 添加新范围或键的分片
 对于已经存在的分片映射，应用程序通常仅需要添加新分片，以处理预期的新键或键范围数据。例如，由租户 ID 分片的应用程序可能需要为新的租户预配新分片，或者在每个新的月份开始之前，每月分片的数据可能需要预配新分片。

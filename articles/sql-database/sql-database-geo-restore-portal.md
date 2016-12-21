@@ -1,24 +1,21 @@
----
-title: 从自动备份还原 Azure SQL 数据库（Azure 门户） | Microsoft Docs
-description: 从自动备份还原 Azure SQL 数据库（Azure 门户）。
-services: sql-database
-documentationcenter: ''
-author: stevestein
-manager: jhubbard
-editor: ''
-
-ms.assetid: 62d94085-d7e7-4f08-bb83-404cf866a6c1
-ms.service: sql-database
-ms.devlang: NA
-ms.date: 10/18/2016
-wacn.date="12/19/2016"
-ms.author: sstein
-ms.workload: NA
-ms.topic: article
-ms.tgt_pltfrm: NA
-
----
-
+<properties
+    pageTitle="从自动备份还原 Azure SQL 数据库（Azure 门户） | Azure"
+    description="从自动备份还原 Azure SQL 数据库（Azure 门户）。"
+    services="sql-database"
+    documentationcenter=""
+    author="stevestein"
+    manager="jhubbard"
+    editor="" />
+<tags
+    ms.assetid="62d94085-d7e7-4f08-bb83-404cf866a6c1"
+    ms.service="sql-database"
+    ms.devlang="NA"
+    ms.date="10/18/2016"
+    wacn.date="12/19/2016"
+	ms.author="sstein"
+    ms.workload="NA"
+    ms.topic="article"
+    ms.tgt_pltfrm="NA" />
 
 > [AZURE.SELECTOR]
 - [概述](/documentation/articles/sql-database-recovery-using-backups/#geo-restore)
