@@ -26,7 +26,7 @@
 
 如果你对本文中的任何观点存在疑问，可以联系 [MSDN Azure 和 CSDN Azure](/support/forums/) 上的 Azure 专家。或者，也可以提交 Azure 支持事件。请转到 [Azure 支持站点](/support/contact/)并选择“获取支持”。
 
-## <a id="quickfixrdp"></a> 快速故障排除步骤
+## <a id="quickfixrdp" name="quick-troubleshooting-steps"></a> 快速故障排除步骤
 在执行每个故障排除步骤之后，请尝试连接到 VM：
 
 1. 重置远程桌面配置。
@@ -197,14 +197,14 @@
 
 2. **验证云服务终结点**。此故障排除步骤验证云服务中是否存在允许 RDP 流量的终结点。RDP 的默认端口为 TCP 端口 3389。创建 VM 时，可能不会自动创建允许 RDP 流量的规则。
    
-   请在 Azure 门户预览中选择你的 VM。单击“终结点”按钮查看当前为 VM 配置的终结点。验证是否存在允许 TCP 端口 3389 上的 RDP 流量的终结点。
+    请在 Azure 门户预览中选择你的 VM。单击“终结点”按钮查看当前为 VM 配置的终结点。验证是否存在允许 TCP 端口 3389 上的 RDP 流量的终结点。
    
-   以下示例显示了允许 RDP 流量的有效终结点：
+    以下示例显示了允许 RDP 流量的有效终结点：
    
-   ![在 Azure 门户预览中验证云服务终结点](./media/virtual-machines-windows-troubleshoot-rdp-connection/classic-verify-cloud-services-endpoints.png)  
+    ![在 Azure 门户预览中验证云服务终结点](./media/virtual-machines-windows-troubleshoot-rdp-connection/classic-verify-cloud-services-endpoints.png)  
 
    
-   如果不存在允许 RDP 流量的终结点，请[创建一个云服务终结点](/documentation/articles/virtual-machines-windows-classic-setup-endpoints/)。允许使用 TCP 连接到专用端口 3389。
+    如果不存在允许 RDP 流量的终结点，请[创建一个云服务终结点](/documentation/articles/virtual-machines-windows-classic-setup-endpoints/)。允许使用 TCP 连接到专用端口 3389。
 3. **检查 VM 启动诊断**。此故障排除步骤检查 VM 控制台日志，确定 VM 是否报告了问题。并非所有 VM 都已启用启动诊断，因此，此故障排除步骤可能是可选的。
    
     本文未介绍具体的故障排除步骤，而是指出会影响 RDP 连接的更广泛问题。有关查看控制台日志和 VM 屏幕截图的详细信息，请参阅 [Boot Diagnostics for VMs](https://azure.microsoft.com/blog/boot-diagnostics-for-virtual-machines-v2/)（VM 的启动诊断）。

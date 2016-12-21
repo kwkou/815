@@ -153,7 +153,7 @@
    1. 对于映像系列，可以使用两个选项：
       
       * **自定义用户映像** - 此选项要求提供要在其中创建从属节点的同一存储帐户中的自定义图像的 URL。
-      * **映像引用** - 此选项要求指定映像的“发布者”、“产品”和“SKU”，可以在 [Azure 虚拟机应用商店][azure-images]中找到这些信息。
+      * **映像引用** - 此选项要求指定映像的“发布者”、“产品”和“SKU”，可以在 Azure 虚拟机应用商店中找到这些信息。
         
         对于本教程，请选择“映像引用”并使用以下值：
       * **映像发布者**：Canonical
@@ -291,9 +291,8 @@ Jenkins 将使用在上一部分中创建的模板创建一个从属节点，然
 
 [Azure Java 开发人员中心]: /develop/java/
 [Azure 从属插件]: https://github.com/jenkinsci/azure-slave-plugin/
-[订阅配置文件]: http://go.microsoft.com/fwlink/?LinkID=396395
-[azure-images]: https://azure.microsoft.com/marketplace/virtual-machines/all/
-[integrate-apps-with-AAD]: http://msdn.microsoft.com/zh-cn/library/azure/dn132599.aspx
+[订阅配置文件]: https://manage.windowsazure.cn/publishsettings/Index?SchemaVersion=2.0
+[integrate-apps-with-AAD]: /documentation/articles/active-directory-integrating-applications/
 [register-client-app]: http://msdn.microsoft.com/dn877542.aspx
 [windows-slaves-setup]: https://gist.github.com/snallami/5aa9ea2c57836a3b3635
 
