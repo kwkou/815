@@ -26,14 +26,14 @@
 
 [AZURE.INCLUDE [virtual-networks-create-vnet-scenario-basic-include](../../includes/virtual-networks-create-vnetpeering-scenario-basic-include.md)]
 
-若要通过 Azure 门户基于上述方案创建 VNet 对等互连，请执行下面的步骤。
+若要通过 Azure 门户，基于上述方案创建 VNet 对等互连，请执行以下步骤。
 
 1. 从浏览器导航到 http://portal.azure.cn， 如有必要，请使用 Azure 帐户登录。
-2. 若要建立 VNET 对等互连，需要在两个 VNet 之间创建两个链接，每个方向各一个。可先创建 VNET1 到 VNET2 的 VNET 对等互连链接。在门户中，单击“浏览”> 选择“虚拟网络”
+2. 若要建立 VNET 对等互连，需要在两个 VNet 之间创建两个链接，每个方向各一个。可先创建 VNET1 到 VNET2 的 VNET 对等互连链接。在门户中，单击“浏览”> 选择“虚拟网络”。
 
 	![在 Azure 门户中创建 VNet 对等互连](./media/virtual-networks-create-vnetpeering-arm-portal/figure01.png)
 
-3. 在“虚拟网络”边栏选项卡中，选择“VNET1”，再依次单击“对等互连”和“添加”
+3. 在“虚拟网络”边栏选项卡中，选择“VNET1”，再依次单击“对等互连”和“添加”。
 
 	![选择对等互连](./media/virtual-networks-create-vnetpeering-arm-portal/figure02.png)
 
@@ -41,11 +41,11 @@
 
 	![链接到 VNet](./media/virtual-networks-create-vnetpeering-arm-portal/figure03.png)
 
-5. 该 VNET 对等互连链接创建完成后。就可以看到链接状态如下所示：
+5. 该 VNET 对等互连链接创建完成后，就可以看到链接状态如下所示：
 
 	![链接状态](./media/virtual-networks-create-vnetpeering-arm-portal/figure04.png)
 
-6. 接下来创建 VNET2 到 VNET1 的 VNET 对等互连链接。在“虚拟网络”边栏选项卡中，选择“VNET2”，再依次单击“对等互连”和“添加”
+6. 接下来创建 VNET2 到 VNET1 的 VNET 对等互连链接。在“虚拟网络”边栏选项卡中，选择“VNET2”，再依次单击“对等互连”和“添加”。
 
 	![从其他 VNet 对等](./media/virtual-networks-create-vnetpeering-arm-portal/figure05.png)
 
@@ -53,7 +53,7 @@
 
 	![创建虚拟网络磁贴](./media/virtual-networks-create-vnetpeering-arm-portal/figure06.png)
 
-8. 该 VNET 对等互连链接创建完成后。就可以看到链接状态如下所示：
+8. 该 VNET 对等互连链接创建完成后，就可以看到链接状态如下所示：
 
 	![最终链接状态](./media/virtual-networks-create-vnetpeering-arm-portal/figure07.png)
 
@@ -107,16 +107,16 @@ VNet 对等互连中的每个链接都具有上述这组属性。从门户中，
     ![资源 ID 2](./media/virtual-networks-create-vnetpeering-arm-portal/figure13.png)  
 
 
-8. 将建立对等互连，VNet3 中的任意虚拟机应该能够与 VNet5 中的任意虚拟机进行通信
+8. 将建立对等互连，VNet3 中的任意虚拟机应能够与 VNet5 中的任意虚拟机进行通信。
 
 [AZURE.INCLUDE [virtual-networks-create-vnet-scenario-transit-include](../../includes/virtual-networks-create-vnetpeering-scenario-transit-include.md)]
 
-1. 第一步，建立从 HubVnet 到 VNET1 的 VNET 对等互连链接。请注意，没有为该链接选择“允许转发的流量”选项。
+1. 建立从 HubVnet 到 VNET1 的 VNET 对等互连链接。请注意，没有为该链接选择“允许转发的流量”选项。
 
     ![基本对等互连](./media/virtual-networks-create-vnetpeering-arm-portal/figure14.png)  
 
 
-2. 第二步，可以创建从 VNET1 到 HubVnet 的对等互连链接。请注意，要选择“允许转发的流量”选项。
+2. 可以创建从 VNET1 到 HubVnet 的对等互连链接。请注意，要选择“允许转发的流量”选项。
 
     ![基本对等互连](./media/virtual-networks-create-vnetpeering-arm-portal/figure15a.png)  
 
