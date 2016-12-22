@@ -76,7 +76,7 @@
 
 ## 将不同订阅中的虚拟网络连接到线路
 
-此时，无法使用 Azure 门户跨订阅连接虚拟网络。但是，你可以使用 PowerShell 来执行此操作。有关详细信息，请参阅 [PowerShell](/documentation/articles/expressroute-howto-linkvnet-arm//) 一文。
+此时，无法使用 Azure 门户跨订阅连接虚拟网络。但是，你可以使用 PowerShell 来执行此操作。有关详细信息，请参阅 [PowerShell](/documentation/articles/expressroute-howto-linkvnet-arm/) 一文。
 
 ## 后续步骤
 

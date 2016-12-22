@@ -365,12 +365,12 @@
 <!--Link references-->
 [Galera]: http://galeracluster.com/products/
 [MariaDBs]: https://mariadb.org/en/about/
-[Azure CLI]: /zh-cn/documentation/articles/xplat-cli-install/
+[Azure CLI]: /documentation/articles/xplat-cli-install/
 [Azure CLI 命令参考]: /documentation/articles/virtual-machines-command-line-tools/
 [创建用于身份验证的 SSH 密钥]: http://www.jeff.wilcox.name/2013/06/secure-linux-vms-with-ssh-certificates/
-[性能优化策略]: /zh-cn/documentation/articles/virtual-machines-linux-classic-optimize-mysql/
-[优化和测试 Azure Linux VM 上的 MySQL 性能]: /zh-cn/documentation/articles/virtual-machines-linux-classic-optimize-mysql/
+[性能优化策略]: /documentation/articles/virtual-machines-linux-classic-optimize-mysql/
+[优化和测试 Azure Linux VM 上的 MySQL 性能]: /documentation/articles/virtual-machines-linux-classic-optimize-mysql/
 [Azure CLI 工具中的问题 #1268]: https://github.com/Azure/azure-xplat-cli/issues/1268
-[另一种方式在 Linux 上对 MySQL 进行集群]: /zh-cn/documentation/articles/virtual-machines-linux-classic-mysql-cluster/
+[另一种方式在 Linux 上对 MySQL 进行集群]: /documentation/articles/virtual-machines-linux-classic-mysql-cluster/
 
 <!---HONumber=67-->

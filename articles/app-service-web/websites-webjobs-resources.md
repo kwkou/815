@@ -23,7 +23,7 @@
 
 本主题提供了有关如何使用 Azure Web 作业和 Azure WebJobs SDK 的文档资源的链接。通过使用 Azure Web 作业，可以方便地在[应用服务 Web 应用、API 应用或移动应用](/documentation/services/web-sites/)的上下文中将脚本或程序作为后台进程运行。你可以上载和运行可执行文件，例如 cmd、bat、exe (.NET)、ps1、sh、php、py、js 和 jar。这些程序将按计划 (cron) 或者连续地以 Web 作业的形式运行。
 
-[WebJobs SDK](/documentation/articles/websites-webjobs-resources) 可简化针对 Web 作业执行的常见任务（例如，图像处理、队列处理、RSS 聚合、文件维护和发送电子邮件）编写代码。WebJobs SDK 的内置功能使用 Azure 存储空间和 Service Bus，用于计划任务和处理错误，以及用于许多其他常见方案。此外，还可以扩展其设计，且拥有[用于扩展的开源存储库](https://github.com/Azure/azure-webjobs-sdk-extensions/wiki/Binding-Extensions-Overview)。
+[WebJobs SDK](/documentation/articles/websites-webjobs-resources/) 可简化针对 Web 作业执行的常见任务（例如，图像处理、队列处理、RSS 聚合、文件维护和发送电子邮件）编写代码。WebJobs SDK 的内置功能使用 Azure 存储空间和 Service Bus，用于计划任务和处理错误，以及用于许多其他常见方案。此外，还可以扩展其设计，且拥有[用于扩展的开源存储库](https://github.com/Azure/azure-webjobs-sdk-extensions/wiki/Binding-Extensions-Overview)。
 
 使用 Visual Studio 中集成的工具，可以顺利地创建、部署和管理 Web 作业。你可以从模板创建 Web 作业，还可以发布和管理（运行/停止/监视/调试）这些作业。
 

@@ -69,7 +69,7 @@
 
 ## 多分片查询和拆分/合并操作
 
-多分片查询不会验证查询的数据库上的 shardlet 是否参与正在进行的拆分/合并操作。（请参阅[使用弹性数据库拆分/合并工具进行缩放](/documentation/articles/sql-database-elastic-scale-overview-split-and-merge)。） 这可能会导致不一致问题，即为同一多分片查询中的多个数据库显示同一 shardlet 中的行。请注意这些限制并在执行多分片查询时，考虑关闭正在进行的拆分/合并操作以及对分片映射的更改。
+多分片查询不会验证查询的数据库上的 shardlet 是否参与正在进行的拆分/合并操作。（请参阅[使用弹性数据库拆分/合并工具进行缩放](/documentation/articles/sql-database-elastic-scale-overview-split-and-merge/)。） 这可能会导致不一致问题，即为同一多分片查询中的多个数据库显示同一 shardlet 中的行。请注意这些限制并在执行多分片查询时，考虑关闭正在进行的拆分/合并操作以及对分片映射的更改。
 
 [AZURE.INCLUDE [elastic-scale-include](../../includes/elastic-scale-include.md)]
 

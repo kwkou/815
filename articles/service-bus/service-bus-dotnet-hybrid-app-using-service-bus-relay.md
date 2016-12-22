@@ -294,7 +294,7 @@
 
 7. 单击**“确定”**。
 
-8. 现在必须配置新 Web 应用的 Azure 资源。请按照[配置新 Web 应用的 Azure 资源](/documentation/articles/web-sites-dotnet-get-started#configure-azure-resources-for-a-new-web-app)一节中的所有步骤操作。然后，返回到本教程并继续执行下一步。
+8. 现在必须配置新 Web 应用的 Azure 资源。请按照[配置新 Web 应用的 Azure 资源](/documentation/articles/web-sites-dotnet-get-started/#configure-azure-resources-for-a-new-web-app)一节中的所有步骤操作。然后，返回到本教程并继续执行下一步。
 
 5.  在解决方案资源管理器中，右键单击“模型”，再单击“添加”，然后单击“类”。在“名称”框中，键入名称 **Product.cs**。然后单击“添加”。
 

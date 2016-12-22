@@ -30,7 +30,7 @@ Azure Media Hyperlapse 作业接受输入 MP4、MOV 或 WMV 资产文件以及�
 
 ## 将资产进行 Hyperlapse 处理
 
-首先，请将所需的输入文件上传到 Azure 媒体服务。若要深入了解有关上传和管理内容的概念，请阅读[内容管理文章](/documentation/articles/media-services-manage-content#upload)。
+首先，请将所需的输入文件上传到 Azure 媒体服务。若要深入了解有关上传和管理内容的概念，请阅读[内容管理文章](/documentation/articles/media-services-manage-content/#upload)。
 
 ###  <a id="configuration"></a>Hyperlapse 的配置预设
 

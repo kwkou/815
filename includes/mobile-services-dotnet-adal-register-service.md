@@ -36,6 +36,6 @@
 6. 在 [Azure 经典管理门户](https://manage.windowsazure.cn/)中，再次针对应用程序单击“管理清单”，然后单击“上载清单”。浏览到你刚更新的应用程序清单的位置，然后上载该清单。
 
 <!-- URLs. -->
-[如何向 Azure Active Directory 注册]: /zh-cn/documentation/articles/mobile-services-how-to-register-active-directory-authentication/
+[如何向 Azure Active Directory 注册]: /documentation/articles/mobile-services-how-to-register-active-directory-authentication/
 
 <!---HONumber=Mooncake_0118_2016-->

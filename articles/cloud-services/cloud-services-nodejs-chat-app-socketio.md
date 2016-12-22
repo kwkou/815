@@ -132,11 +132,11 @@ Socket.IO 在 node.js 服务器和客户端之间提供实时通信。本教程�
 
 	> [AZURE.IMPORTANT] 确保使用唯一名称，否则发布过程会失败。部署完成后，会打开浏览器并导航到已部署的服务。
 	> 
-	> 如果收到错误消息，指出导入的发布配置文件中不存在提供的订阅名称，则必须先为你的订阅下载和导入发布配置文件，然后再部署到 Azure。请参阅[生成 Node.js 应用程序并将其部署到 Azure 云服务](/documentation/articles/cloud-services-nodejs-develop-deploy-app)中的**将应用程序部署到 Azure**部分
+	> 如果收到错误消息，指出导入的发布配置文件中不存在提供的订阅名称，则必须先为你的订阅下载和导入发布配置文件，然后再部署到 Azure。请参阅[生成 Node.js 应用程序并将其部署到 Azure 云服务](/documentation/articles/cloud-services-nodejs-develop-deploy-app/)中的**将应用程序部署到 Azure**部分
 
     ![显示托管在 Azure 上的服务的浏览器窗口][completed-app]
 
-	> [AZURE.NOTE] 如果收到错误消息，指出导入的发布配置文件中不存在提供的订阅名称，则必须先为你的订阅下载和导入发布配置文件，然后再部署到 Azure。请参阅[生成 Node.js 应用程序并将其部署到 Azure 云服务](/documentation/articles/cloud-services-nodejs-develop-deploy-app)中的**将应用程序部署到 Azure**部分
+	> [AZURE.NOTE] 如果收到错误消息，指出导入的发布配置文件中不存在提供的订阅名称，则必须先为你的订阅下载和导入发布配置文件，然后再部署到 Azure。请参阅[生成 Node.js 应用程序并将其部署到 Azure 云服务](/documentation/articles/cloud-services-nodejs-develop-deploy-app/)中的**将应用程序部署到 Azure**部分
 
 应用程序现在即可在 Azure 上运行，并可使用 Socket.IO 在不同客户端之间中继聊天消息。
 

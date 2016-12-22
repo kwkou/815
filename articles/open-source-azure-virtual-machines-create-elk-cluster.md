@@ -32,7 +32,7 @@ ELK 是 [Elasticsearch](https://www.elastic.co/products/elasticsearch)、[Logsta
 		
 		azure config mode arm
 
-	现在，通过运行以下命令并遵循提示进行 Azure 帐户的交互式登录体验，来使用[工作或学校 ID 登录](/documentation/articles/xplat-cli-connect)： 
+	现在，通过运行以下命令并遵循提示进行 Azure 帐户的交互式登录体验，来使用[工作或学校 ID 登录](/documentation/articles/xplat-cli-connect/)： 
  
 		azure login -e AzureChinaCloud -u <your account>
 

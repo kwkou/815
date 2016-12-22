@@ -21,7 +21,7 @@
 # 使用 SQL 数据库中的活动异地复制功能为云灾难恢复设计应用程序
 
 
-> [AZURE.NOTE] [活动异地复制](/documentation/articles/sql-database-geo-replication-overview) 现在可用于所有层中的所有数据库。
+> [AZURE.NOTE] [活动异地复制](/documentation/articles/sql-database-geo-replication-overview/) 现在可用于所有层中的所有数据库。
 
 
 

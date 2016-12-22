@@ -24,7 +24,7 @@
 
 [AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-sdk-developer-differences.md)]
 
-了解如何使用 [Azure 命令行接口](/documentation/articles/xplat-cli-install)管理 Azure HDInsight 中的 Hadoop 群集。Azure CLI 在 Node.js 中实现。可以在支持 Node.js 的任意平台上使用。
+了解如何使用 [Azure 命令行接口](/documentation/articles/xplat-cli-install/)管理 Azure HDInsight 中的 Hadoop 群集。Azure CLI 在 Node.js 中实现。可以在支持 Node.js 的任意平台上使用。
 
 本文仅介绍如何将 Azure CLI 与 HDInsight 配合使用。有关如何使用 Azure CLI 的常规指南，请参阅[安装和配置 Azure CLI][azure-command-line-tools]。
 

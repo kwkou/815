@@ -33,7 +33,7 @@
 ## 如何为前端子网创建 NSG
 若要基于上述方案创建名为 *NSG-FrontEnd* 的 NSG，请执行下面的步骤：
 
-1. 如果你从未使用过 Azure PowerShell，请参阅 [How to Install and Configure Azure PowerShell](/documentation/articles/powershell-install-configure)（如何安装和配置 Azure PowerShell），并始终按照说明进行操作，以登录到 Azure 并选择你的订阅。
+1. 如果你从未使用过 Azure PowerShell，请参阅 [How to Install and Configure Azure PowerShell](/documentation/articles/powershell-install-configure/)（如何安装和配置 Azure PowerShell），并始终按照说明进行操作，以登录到 Azure 并选择你的订阅。
 
 3. 创建名为 **NSG-FrontEnd** 的网络安全组。
 
