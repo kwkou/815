@@ -1,17 +1,17 @@
 <properties
-                pageTitle="如何将文件打包到云服务包中"
-                description="通过 Visual Studio 将额外的文件打包到 Cloud Services Package"
-                services="cloud-services"
-                documentationCenter=""
-                authors=""
-                manager=""
-                editor=""
-                tags="Visual Studio,Cloud Service,Package"/>
+    pageTitle="如何将文件打包到云服务包中"
+    description="通过 Visual Studio 将额外的文件打包到 Cloud Services Package"
+    services="cloud-services"
+    documentationCenter=""
+    authors=""
+    manager=""
+    editor=""
+    tags="Visual Studio,Cloud Service,Package"/>
 
 <tags
-                ms.service="cloud-services-aog"
-                ms.date="12/16/2016"
-                wacn.date="12/16/2016"/>
+    ms.service="cloud-services-aog"
+    ms.date="12/16/2016"
+    wacn.date="12/16/2016"/>
 
 # 如何将文件打包到云服务包中
 

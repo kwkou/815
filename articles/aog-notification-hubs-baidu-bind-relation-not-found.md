@@ -1,17 +1,17 @@
 <properties
-                pageTitle="百度推送服务绑定关系未找到或不存在"
-                description="通过调用 Baidu Push API 修复 Bind Relation Not Found 错误"
-                services="notification-hubs"
-                documentationCenter=""
-                authors=""
-                manager=""
-                editor=""
-                tags="Notification Hubs,Baidu,Bind Relation"/>
+    pageTitle="百度推送服务绑定关系未找到或不存在"
+    description="通过调用 Baidu Push API 修复 Bind Relation Not Found 错误"
+    services="notification-hubs"
+    documentationCenter=""
+    authors=""
+    manager=""
+    editor=""
+    tags="Notification Hubs,Baidu,Bind Relation"/>
 
 <tags
-                ms.service="notification-hubs-aog"
-                ms.date="12/15/2016"
-                wacn.date="12/15/2016"/>
+    ms.service="notification-hubs-aog"
+    ms.date="12/15/2016"
+    wacn.date="12/15/2016"/>
 
 # 百度推送服务绑定关系未找到或不存在
 
