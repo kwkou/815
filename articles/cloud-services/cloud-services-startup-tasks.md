@@ -129,7 +129,7 @@ EXIT /B 0
 
 静态环境变量使用 [Variable] 元素的 **value** 属性。上面的示例创建了环境变量 **MyVersionNumber**，该变量具有静态值 **1.0.0.0**。另一个示例就是创建 **StagingOrProduction** 环境变量，你可以手动将该变量设置为值 **staging** 或 **production**，以根据 **StagingOrProduction** 环境变量的值执行不同的启动操作。
 
-基于 RoleEnvironment 类成员的环境变量不使用 [Variable] 元素的 **value** 属性。而是使用具有相应 **XPath** 属性值的 [RoleInstanceValue] 子元素，创建基于 [RoleEnvironment] 类的特定成员的环境变量。用于访问各种 [RoleEnvironment] 值的 **XPath** 属性的值可以在[此处](/documentation/articles/cloud-services-role-config-xpath)找到。
+基于 RoleEnvironment 类成员的环境变量不使用 [Variable] 元素的 **value** 属性。而是使用具有相应 **XPath** 属性值的 [RoleInstanceValue] 子元素，创建基于 [RoleEnvironment] 类的特定成员的环境变量。用于访问各种 [RoleEnvironment] 值的 **XPath** 属性的值可以在[此处](/documentation/articles/cloud-services-role-config-xpath/)找到。
 
 
 

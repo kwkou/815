@@ -57,10 +57,10 @@
 
 <!-- URLs. -->
 
-[通知中心入门]: /documentation/articles/notification-hubs-windows-store-dotnet-get-started-wns-push-notification
+[通知中心入门]: /documentation/articles/notification-hubs-windows-store-dotnet-get-started-wns-push-notification/
 [通知中心 REST 接口]: http://msdn.microsoft.com/library/windowsazure/dn223264.aspx
-[Add push notifications for Mobile Apps]: /documentation/articles/app-service-mobile-windows-store-dotnet-get-started-push
-[如何从 Java/PHP 使用通知中心]: /documentation/articles/notification-hubs-java-push-notification-tutorial
+[Add push notifications for Mobile Apps]: /documentation/articles/app-service-mobile-windows-store-dotnet-get-started-push/
+[如何从 Java/PHP 使用通知中心]: /documentation/articles/notification-hubs-java-push-notification-tutorial/
 [Microsoft.Azure.Notification Hubs NuGet 包]: http://www.nuget.org/packages/Microsoft.Azure.NotificationHubs/
 
 <!---HONumber=Mooncake_1205_2016-->

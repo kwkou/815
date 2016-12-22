@@ -25,7 +25,7 @@ Azure 云服务是适合你的选择吗？ Azure 提供了用于运行应用程�
 <a name="tellmecs"></a>
 ## 告诉我有关云服务的信息
 
-云服务是平台即服务 (PaaS) 的一个例子。与[应用服务](/documentation/services/web-sites)一样，这种技术旨在支持可缩放、可靠且运营价格实惠的应用程序。云服务像应用服务一样托管在 VM 中，但用户对相关 VM 具有更高的控制权。可在云服务 VM 上安装自己的软件，也可程接入。
+云服务是平台即服务 (PaaS) 的一个例子。与[应用服务](/documentation/services/web-sites/)一样，这种技术旨在支持可缩放、可靠且运营价格实惠的应用程序。云服务像应用服务一样托管在 VM 中，但用户对相关 VM 具有更高的控制权。可在云服务 VM 上安装自己的软件，也可程接入。
 
 ![cs\_diagram](./media/cloud-services-choose-me/diagram.png)
 
@@ -39,16 +39,16 @@ Azure 云服务是适合你的选择吗？ Azure 提供了用于运行应用程�
   
 * **辅助角色**运行 Windows Server 而不使用 IIS。
 
-例如，简单应用程序可能仅使用 Web 角色，而稍复杂的应用程序可能使用 Web 角色处理来自用户的传入请求，然后将那些请求创建的工作传递给辅助角色进行处理。（此通信可能使用[服务总线](/documentation/articles/service-bus-fundamentals-hybrid-solutions)或 [Azure 队列](/documentation/articles/storage-introduction)。）
+例如，简单应用程序可能仅使用 Web 角色，而稍复杂的应用程序可能使用 Web 角色处理来自用户的传入请求，然后将那些请求创建的工作传递给辅助角色进行处理。（此通信可能使用[服务总线](/documentation/articles/service-bus-fundamentals-hybrid-solutions/)或 [Azure 队列](/documentation/articles/storage-introduction)。）
 
 如上图所示，一个应用程序中的所有 VM 都在同一云服务中运行。因此，用户通过单个公用 IP 地址访问应用程序，将在应用程序的各个 VM 间对请求自动负载均衡。该平台将采用一种能够避免单点硬件故障的方式在云服务应用程序中[缩放和部署](/documentation/articles/cloud-services-how-to-scale) VM。
 
 即使应用程序在虚拟机中运行，理解云服务提供的是 PaaS 而非 IaaS 也很重要。可按以下思路理解这一点：使用 IaaS（如 Azure 虚拟机），首先要创建和配置应用程序将的运行环境，然后将应用程序部署到此环境。你要负责该环境的大部分管理工作，如在每个 VM 中部署操作系统的新修补版本。相反，在 PaaS 中，这样的环境似乎早已存在。只需部署应用程序即可。已为你处理它所运行的平台的管理工作，包括部署操作系统的新版本。
 
 ## 缩放和管理
-使用云服务，无需创建虚拟机。相反，只需提供配置文件，用于告知 Azure 每种角色实例所需的数量（如**三个 Web 角色实例**和**两个辅助角色实例**），该平台将创建这些实例。虽然仍要选择这些后方 VM 的[大小](/documentation/articles/cloud-services-sizes-specs)，但无需亲自显式创建它们。如果应用程序需要处理更大的负载，可以要求增加 VM，Azure 将创建这些实例。如果负载降低，可以关闭这些实例并停止为它们付费。
+使用云服务，无需创建虚拟机。相反，只需提供配置文件，用于告知 Azure 每种角色实例所需的数量（如**三个 Web 角色实例**和**两个辅助角色实例**），该平台将创建这些实例。虽然仍要选择这些后方 VM 的[大小](/documentation/articles/cloud-services-sizes-specs/)，但无需亲自显式创建它们。如果应用程序需要处理更大的负载，可以要求增加 VM，Azure 将创建这些实例。如果负载降低，可以关闭这些实例并停止为它们付费。
 
-通常通过两个步骤就能将云服务应用程序提供给用户。首先，开发人员[将应用程序上传](/documentation/articles/cloud-services-how-to-create-deploy)到平台的暂存区域。开发人员准备好将应用程序上线后，使用 Azure 管理门户请求将其投入生产。[暂存与生产之间的这种切换](/documentation/articles/cloud-services-nodejs-stage-application)无需停机就可完成，这使运行的应用程序可在不打扰其用户的情况下升级到新版本。
+通常通过两个步骤就能将云服务应用程序提供给用户。首先，开发人员[将应用程序上传](/documentation/articles/cloud-services-how-to-create-deploy)到平台的暂存区域。开发人员准备好将应用程序上线后，使用 Azure 管理门户请求将其投入生产。[暂存与生产之间的这种切换](/documentation/articles/cloud-services-nodejs-stage-application/)无需停机就可完成，这使运行的应用程序可在不打扰其用户的情况下升级到新版本。
 
 ## 监视
 云服务还提供监视功能。和 Azure 虚拟机一样，它将检测到发生故障的物理服务器，并在新的计算机上重新启动原先在该服务器上运行的 VM。云服务不仅检测硬件故障，还检测发生故障的 VM 和应用程序。与虚拟机不同，它在每个 Web 角色和辅助角色中都存在代理，因此可在发生故障时启动新的 VM 和应用程序实例。

@@ -34,7 +34,7 @@
 
 此任务使用生产部署；本主题的末尾提供了有关如何使用过渡部署的信息。
 
-如果尚未创建云服务，请首先阅读[此文章](/documentation/articles/cloud-services-how-to-create-deploy-portal)。
+如果尚未创建云服务，请首先阅读[此文章](/documentation/articles/cloud-services-how-to-create-deploy-portal/)。
 
 [AZURE.INCLUDE [websites-cloud-services-css-guided-walkthrough](../../includes/websites-cloud-services-css-guided-walkthrough.md)]
 
@@ -49,7 +49,7 @@
 -   证书的使用者名称必须与用于访问云服务的域匹配。无法从证书颁发机构 (CA) 处获取针对 chinacloudapp.cn 域的 SSL 证书。必须获取在访问服务时要使用的自定义域名。从 CA 处请求证书时，该证书的使用者名称必须与用于访问应用程序的自定义域名匹配。例如，如果自定义域名为 **contoso.com**，则需要从 CA 处请求用于 ****.contoso.com** 或 **www.contoso.com** 的证书。
 -   该证书必须使用至少 2048 位加密。
 
-出于测试目的，可以[创建](/documentation/articles/cloud-services-certs-create)并使用自签名证书。自签名证书不通过 CA 进行身份验证，并且可以使用 chinacloudapp.cn 域作为网站 URL。例如，以下任务使用其公用名 (CN) 为 **sslexample.chinacloudapp.cn** 的自签名证书。
+出于测试目的，可以[创建](/documentation/articles/cloud-services-certs-create/)并使用自签名证书。自签名证书不通过 CA 进行身份验证，并且可以使用 chinacloudapp.cn 域作为网站 URL。例如，以下任务使用其公用名 (CN) 为 **sslexample.chinacloudapp.cn** 的自签名证书。
 
 接下来，必须在服务定义和服务配置文件中包含有关此证书的信息。
 

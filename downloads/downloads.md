@@ -104,7 +104,7 @@
       <li><a href="http://go.microsoft.com/?linkid=9828653&amp;clcid=0x804">Windows 安装</a></li>
       <li><a href="http://go.microsoft.com/fwlink/?linkid=253471&amp;clcid=0x804">Mac 安装</a></li>
       <li><a href="http://go.microsoft.com/fwlink/?linkid=253472&amp;clcid=0x804">Linux 安装</a></li>
-      <li><a href="/zh-cn/documentation/articles/xplat-cli-install/">文档</a></li>
+      <li><a href="/documentation/articles/xplat-cli-install/">文档</a></li>
     </ul>
   </div>
   <div>

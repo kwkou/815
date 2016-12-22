@@ -41,7 +41,7 @@
 <!--Image references-->
 
 <!--Article references-->
-[development overview]: /documentation/articles/sql-data-warehouse-overview-develop
+[development overview]: /documentation/articles/sql-data-warehouse-overview-develop/
 
 <!--MSDN references-->
 [sp_executesql]: https://msdn.microsoft.com/zh-cn/library/ms188001.aspx

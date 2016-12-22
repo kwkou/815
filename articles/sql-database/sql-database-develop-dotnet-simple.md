@@ -29,7 +29,7 @@
 
 ## 步骤 2：创建 SQL 数据库
 
-请参阅[入门页](/documentation/articles/sql-database-get-started)，了解如何创建示例数据库。必须根据指南创建 **AdventureWorks 数据库模板**。下面展示的示例仅适用于 **AdventureWorks 架构**。
+请参阅[入门页](/documentation/articles/sql-database-get-started/)，了解如何创建示例数据库。必须根据指南创建 **AdventureWorks 数据库模板**。下面展示的示例仅适用于 **AdventureWorks 架构**。
 
 ## 步骤 3：获取连接字符串
 
