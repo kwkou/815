@@ -64,8 +64,8 @@ Azure 提供了三种计算模型以运行应用程序：Azure App Service、Azu
    	Node 0.8.4          http://nodertncu.blob.core...   False
 	IISNode 0.1.21      http://nodertncu.blob.core...   True
   	Cache 1.8.0         http://nodertncu.blob.core...   True
-        PHP 5.3.17          http://nodertncu.blob.core...   True
-        PHP 5.4.0           http://nodertncu.blob.core...   False
+	PHP 5.3.17          http://nodertncu.blob.core...   True
+	PHP 5.4.0           http://nodertncu.blob.core...   False
 
 可以将 PHP 运行时版本设置为列出的任意 PHP 版本。例如，若要将 PHP 版本（对于名为 `roleName` 的角色）设置为 5.4.0，请使用以下命令：
 
