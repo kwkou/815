@@ -14,7 +14,7 @@
 	wacn.date="12/19/2016"/>  
 
 
----
+
 # 教程：如何进行固件更新
 [AZURE.INCLUDE [iot-hub-selector-firmware-update](../../includes/iot-hub-selector-firmware-update.md)]
 
