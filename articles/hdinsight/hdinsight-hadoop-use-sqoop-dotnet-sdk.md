@@ -1,6 +1,6 @@
 <properties
 	pageTitle="在 HDInsight 中使用 Hadoop Sqoop | Azure"
-	description="学习如何使用 HDInsight .NET SDK 在 Hadoop 群集和 Azure SQL 数据库之间运行 Sqoop 导入和导出。"
+	description="了解如何使用 HDInsight .NET SDK 在 Hadoop 群集和 Azure SQL 数据库之间运行 Sqoop 导入和导出。"
 	editor="cgronlun"
 	manager="paulettm"
 	services="hdinsight"
@@ -15,18 +15,18 @@
 	ms.devlang="na"
 	ms.topic="article"
    ms.date="09/14/2016"
-   wacn.date="10/25/2016"
+   wacn.date="12/26/2016"
 	ms.author="jgao"/>
 
 #使用 HDInsight 中的 .NET SDK for Hadoop 运行 Sqoop 作业
 
 [AZURE.INCLUDE [sqoop-selector](../../includes/hdinsight-selector-use-sqoop.md)]
 
-了解如何使用 HDInsight .NET SDK 运行 HDInsight 中的 Sqoop 作业，以在 HDInsight 群集和 Azure SQL 数据库或 SQL Server 数据库之间进行导入和导出。
+了解如何使用 HDInsight .NET SDK 在 HDInsight 中运行 Sqoop 作业，以在 HDInsight 群集和 Azure SQL 数据库或 SQL Server 数据库之间进行导入和导出。
 
 ###先决条件
 
-在开始阅读本教程前，你必须具有：
+在开始本教程前，你必须具有以下项：
 
 - **HDInsight 中的 Hadoop 群集**。请参阅[创建群集和 SQL 数据库](/documentation/articles/hdinsight-use-sqoop/#create-cluster-and-sql-database)。
 
@@ -37,7 +37,7 @@ HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 中使用 HDInsi
 **提交 Sqoop 作业**
 
 1. 在 Visual Studio 中创建 C# 控制台应用程序。
-2. 在 Visual Studio 包管理器控制台中，运行以下 Nuget 命令将包导入。
+2. 在 Visual Studio 包管理器控制台中，运行以下 Nuget 命令以导入包。
 
         Install-Package Microsoft.Azure.Management.HDInsight.Job -Pre
         
@@ -108,12 +108,10 @@ HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 中使用 HDInsi
 
 ##后续步骤
 
-现在你已经学习了如何使用 Sqoop。若要了解更多信息，请参阅以下文章：
+现在你已了解如何使用 Sqoop。若要了解详细信息，请参阅以下文章：
 
 - [将 Oozie 与 HDInsight 配合使用](/documentation/articles/hdinsight-use-oozie/)：在 Oozie 工作流中使用 Sqoop 操作。
-- [使用 HDInsight 分析航班延误数据](/documentation/articles/hdinsight-analyze-flight-delay-data/)：使用 Hive 分析航班延误数据，然后使用 Sqoop 将数据导出到 Azure SQL 数据库。
-- [将数据上载到 HDInsight](/documentation/articles/hdinsight-upload-data/)：了解将数据上载到 HDInsight/Azure Blob 存储的其他方法。
+- [使用 HDInsight 分析外部测试版延迟数据](/documentation/articles/hdinsight-analyze-flight-delay-data/)：使用 Hive 分析外部测试版延迟数据，然后使用 Sqoop 将数据导出到 Azure SQL 数据库。
+- [将数据上传到 HDInsight](/documentation/articles/hdinsight-upload-data/)：了解将数据上传到 HDInsight/Azure Blob 存储的其他方法。
 
-
-
-<!---HONumber=Mooncake_0516_2016-->
+<!---HONumber=Mooncake_Quality_Review_1215_2016-->

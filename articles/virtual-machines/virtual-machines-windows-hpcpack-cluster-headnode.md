@@ -1,7 +1,7 @@
 <properties
  pageTitle="在 Azure VM 中创建 HPC Pack 头节点 | Azure"
  description="了解如何使用 Azure 经典管理门户和经典部署模型在 Azure VM 中创建 Microsoft HPC Pack 头节点。"
- services="virtual-machines"
+ services="virtual-machines-windows"
  documentationCenter=""
  authors="dlepow"
  manager="timlt"
@@ -14,8 +14,8 @@ ms.service="virtual-machines-windows"
  ms.tgt_pltfrm="vm-windows"
  ms.workload="big-compute"
  ms.date="08/17/2016"
- wacn.date="10/24/2016"
- ms.author="danlep"/>  
+ wacn.date="12/26/2016"
+ ms.author="danlep"/>
 
 # 在 Azure VM 中使用应用商店映像创建 HPC Pack 群集的头节点
 
@@ -70,13 +70,13 @@ ms.service="virtual-machines-windows"
 
     **注意事项**
 
-    * 如果在 Azure VNet 中使用一个现有域林创建了 VM，则连接到该 VM。然后，使用标准服务器管理器或 Windows PowerShell 工具将其加入到域林。然后重新启动。
+    * 如果使用现有的域林在 Azure 虚拟网络中创建了 VM，请使用标准的 Server Manager 或 Windows PowerShell 工具将 VM 加入到该林。然后重新启动。
 
-    * 如果 VM 不是在 Azure VNet 中创建的，或者 VM 是在 VNet 中没有使用现有域林的情况下创建的，然后将该 VM 提升为域控制器。为此，连接到该 VM，然后使用标准服务器管理器或 Windows PowerShell 工具。有关详细步骤，请参阅[安装新的 Windows Server 2012 Active Directory 林](https://technet.microsoft.com/library/jj574166.aspx)。
+    * 如果在新的虚拟网络中创建了 VM（未使用现有域林），则将该 VM 提升为域控制器。使用标准步骤安装和配置头节点上的 Active Directory 域服务角色。有关详细步骤，请参阅[安装新的 Windows Server 2012 Active Directory 林](https://technet.microsoft.com/zh-cn/library/jj574166.aspx)。
 
-5. VM 运行且加入到 Active Directory 林后，在头节点启动 HPC Pack 服务。为此，请按以下步骤操作：
+5. 在 VM 运行并加入到 Active Directory 林后启动 HPC Pack 服务，如下所示：
 
-    a.使用一个属于本地管理员组的域帐户连接到 VM。例如，你可以使用创建头节点 VM 时设置的管理员帐户。
+    a.使用一个属于本地管理员组的域帐户连接到头节点 VM。例如，使用创建头节点 VM 时设置的管理员帐户。
 
     b.对于默认头节点配置，以管理员身份启动 Windows PowerShell 并键入以下命令：
 
@@ -91,13 +91,12 @@ ms.service="virtual-machines-windows"
 
 ## 后续步骤
 
-* 你现在可以使用 Windows HPC 群集的头节点。例如，你可以启动 HPC 群集管理器，或开始使用 HPC PowerShell cmdlet。
-
-* 向你的群集[添加计算节点 VM](/documentation/articles/virtual-machines-windows-classic-hpcpack-cluster-node-manage/)，或者在云服务中添加 [Azure 突发节点](/documentation/articles/virtual-machines-windows-classic-hpcpack-cluster-node-burst/)。
+* 现在即可使用 HPC Pack 群集的头节点。例如，启动 HPC 群集管理器，并完成[部署待办事项列表](https://technet.microsoft.com/zh-cn/library/jj884141.aspx)。
+* 若要按需提高群集计算容量，可在云服务中添加 [Azure 迸发节点](/documentation/articles/virtual-machines-windows-classic-hpcpack-cluster-node-burst/)。
 
 * 尝试在群集上运行测试工作负荷。例如，请参阅 HPC Pack [入门指南](https://technet.microsoft.com/zh-cn/library/jj884144)。
 
 <!--Image references-->
 [headnode]: ./media/virtual-machines-windows-hpcpack-cluster-headnode/headnode.png
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_Quality_Review_1215_2016-->

@@ -1,5 +1,3 @@
-<!-- Ibiza portal: tested -->
-
 <properties
    pageTitle="排查 Linux VM 部署问题 - RM | Azure"
    description="排查在 Azure 中创建新 Linux 虚拟机时遇到的 Resource Manager 部署问题"
@@ -17,16 +15,16 @@
   ms.devlang="na"
   ms.topic="article"
   ms.date="09/09/2016"
-  wacn.date="10/25/2016"
+  wacn.date="12/26/2016"
   ms.author="cjiang"/>
 
-# 排查在 Azure 中新建 Linux 虚拟机时遇到的 Resource Manager 部署问题
+# 排查在 Azure 中创建新 Linux 虚拟机时遇到的 Resource Manager 部署问题
 
 [AZURE.INCLUDE [virtual-machines-troubleshoot-deployment-new-vm-selectors](../../includes/virtual-machines-linux-troubleshoot-deployment-new-vm-selectors-include.md)]
 
 [AZURE.INCLUDE [virtual-machines-troubleshoot-deployment-new-vm-opening](../../includes/virtual-machines-troubleshoot-deployment-new-vm-opening-include.md)]
 
-> [AZURE.NOTE] Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model/)。本文介绍如何使用 Resource Manager 部署模型。Azure 建议对大多数新的部署使用该模型，而不是经典部署模型。
+> [AZURE.NOTE] Azure 具有两种不同的部署模型，用于创建和处理资源：[Resource Manager 模型和经典模型](/documentation/articles/resource-manager-deployment-model/)。本文介绍如何使用 Resource Manager 部署模型。Azure 建议对大多数新的部署使用该模型，而不是经典部署模型。
 
 [AZURE.INCLUDE [support-disclaimer](../../includes/support-disclaimer.md)]
 
@@ -36,19 +34,19 @@
 
 [使用 Azure 门户预览对资源组部署进行故障排除](/documentation/articles/resource-manager-troubleshoot-deployments-portal/)
 
-[使用资源管理器执行审核操作](/documentation/articles/resource-group-audit/)
+[使用 Resource Manager 执行审核操作](/documentation/articles/resource-group-audit/)
 
 [AZURE.INCLUDE [virtual-machines-troubleshoot-deployment-new-vm-issue1](../../includes/virtual-machines-troubleshoot-deployment-new-vm-issue1-include.md)]
 
 [AZURE.INCLUDE [virtual-machines-linux-troubleshoot-deployment-new-vm-table](../../includes/virtual-machines-linux-troubleshoot-deployment-new-vm-table.md)]
 
-**Y：**如果 OS 是通用的 Linux，并且是使用通用设置上载和/或捕获的，则不会有任何错误。同理，如果 OS 是通用的 Linux，并且是使用专用设置上载和/或捕获的，则不会有任何错误。
+**Y：**如果 OS 是通用的 Linux，并且是使用通用设置上载和/或捕获的，则不会有任何错误。同理，如果 OS 是专用的 Linux，并且是使用专用设置上载和/或捕获的，也不会有任何错误。
 
 **上载错误：**
 
-**N<sup>1</sup>：**如果 OS 是通用的 Linux，但是以专用设置上载的，则会发生预配超时错误，并且 VM 会卡在预配阶段。
+**N<sup>1</sup>：**如果 OS 是通用的 Linux，但是以专用设置上载的，则会发生预配超时错误，因为 VM 会卡在预配阶段。
 
-**N<sup>2</sup>：**如果 OS 是专用的 Linux，但是以专用设置上载的，则会发生预配失败错误，因为新 VM 是以原始计算机名称、用户名和密码运行的。
+**N<sup>2</sup>：**如果 OS 是专用的 Linux，但是以通用设置上载的，则会发生预配失败错误，因为新 VM 是以原始计算机名称、用户名和密码运行的。
 
 **解决方法：**
 
@@ -58,7 +56,7 @@
 
 **N<sup>3</sup>：**如果 OS 是通用的 Linux，但是以专用设置捕获的，则会发生预配超时错误，因为标记为通用的原始 VM 不可用。
 
-**N<sup>4</sup>：**如果 OS 是专用的 Linux，但是以专用设置捕获的，则会发生预配失败错误，因为新 VM 是以原始计算机名称、用户名和密码运行的。此外，标记为专用的原始 VM 不可用。
+**N<sup>4</sup>：**如果 OS 是专用的 Linux，但是以通用设置捕获的，则会发生预配失败错误，因为新 VM 是以原始计算机名称、用户名和密码运行的。此外，标记为专用的原始 VM 不可用。
 
 **解决方法：**
 
@@ -71,9 +69,9 @@
 
 **解决方法 1：**
 
-- 以更小的 VM 大小重试请求。
+- 使用更小的 VM 大小来重试请求。
 - 如果无法更改请求的 VM 大小：
-  - 停止可用性集中的所有 VM。单击“资源组”> 你的资源组 >“资源”> *你的可用性集* >“虚拟机”> *你的虚拟机* >“停止”。
+  - 停止可用性集中的所有 VM。单击“资源组”> *你的资源组* >“资源”> *你的可用性集* >“虚拟机”> *你的虚拟机* >“停止”。
   - 所有 VM 都停止后，创建所需大小的新 VM。
   - 先启动新 VM，选择每个已停止的 VM，然后单击“启动”。
 
@@ -87,6 +85,6 @@
   - 将新 VM 添加到同一虚拟网络。
 
 ## 后续步骤
-如果你在 Azure 中启动已停止的 Linux VM 或调整现有 Linux VM 的大小时遇到问题，请参阅[排查在 Azure 中重新启动现有 Linux 虚拟机或调整其大小时遇到的 Resource Manager 部署问题](/documentation/articles/virtual-machines-linux-restart-resize-error-troubleshooting/)。
+如果你在 Azure 中启动已停止的 Linux VM 或调整现有 Linux VM 的大小时遇到问题，请参阅[排查在 Azure 中重新启动或调整现有 Linux 虚拟机时遇到的 Resource Manager 部署问题](/documentation/articles/virtual-machines-linux-restart-resize-error-troubleshooting/)。
 
-<!---HONumber=Mooncake_0718_2016-->
+<!---HONumber=Mooncake_Quality_Review_1215_2016-->

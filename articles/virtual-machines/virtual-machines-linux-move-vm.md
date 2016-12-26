@@ -16,7 +16,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="08/08/2016"
-	wacn.date="09/12/2016"
+	wacn.date="12/26/2016"
 	ms.author="cynthn"/>
 
 	
@@ -35,7 +35,7 @@
 
 	azure group show <resourceGroupName>
 
-若要将 VM 及其资源移到其他资源组，请使用 **azure resource move** CLI 命令。以下示例说明如何移动 VM 及其所需的大多数通用资源。我们使用 **-i** 参数，并针对要移动的资源传入逗号分隔的 ID 列表（不包含空格）。
+若要将 VM 及其资源移到其他资源组，请使用 **azure resource move** CLI 命令。以下示例说明如何移动 VM 及其所需的大多数通用资源。我们使用 **-i** 参数，并传入要移动的资源的逗号分隔 ID 列表（不包含空格）。
 
 	
     vm=/subscriptions/<sourceSubscriptionID>/resourceGroups/<sourceResourceGroup>/providers/Microsoft.Compute/virtualMachines/<vmName>
@@ -52,13 +52,13 @@
 
 如果从 Windows 计算机上的命令提示符操作，需要在声明变量名称时在其前面添加 **$**。在 Linux 中不需要这样做。
 
-系统将要求确认是否想要移动指定的资源。请键入 **Y** 确认要删除资源。
+系统将要求确认是否想要移动指定的资源。请键入 **Y** 确认要移动资源。
 	
 
 [AZURE.INCLUDE [virtual-machines-common-move-vm](../../includes/virtual-machines-common-move-vm.md)]
 
 ## 后续步骤
 
-可以在资源组和订阅之间移动许多不同类型的资源。有关详细信息，请参阅 [Move resources to new resource group or subscription](/documentation/articles/resource-group-move-resources/)（将资源移到新的资源组或订阅）。
+可以在资源组和订阅之间移动许多不同类型的资源。有关详细信息，请参阅[将资源移到新的资源组或订阅](/documentation/articles/resource-group-move-resources/)。
 
-<!---HONumber=Mooncake_0905_2016-->
+<!---HONumber=Mooncake_Quality_Review_1215_2016-->

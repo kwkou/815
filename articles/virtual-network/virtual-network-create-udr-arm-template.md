@@ -1,5 +1,3 @@
-<!-- ARM: tested -->
-
 <properties 
    pageTitle="在 Resource Manager 中通过模板控制路由和使用虚拟设备 | Azure"
    description="了解如何在 Azure Resource Manager 中通过模板控制路由和使用虚拟设备"
@@ -17,7 +15,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
    ms.date="02/23/2016"
-   wacn.date="07/04/2016"
+   wacn.date="12/26/2016"
    ms.author="jdial" />
 
 #在 Resource Manager 中使用模板创建用户定义的路由 (UDR)
@@ -26,15 +24,15 @@
 
 [AZURE.INCLUDE [virtual-network-create-udr-intro-include.md](../../includes/virtual-network-create-udr-intro-include.md)]
 
-[AZURE.INCLUDE [azure-arm-classic-important-include](../../includes/azure-arm-classic-important-include.md)]本文介绍资源管理器部署模型。
+[AZURE.INCLUDE [azure-arm-classic-important-include](../../includes/azure-arm-classic-important-include.md)]
 
 [AZURE.INCLUDE [virtual-network-create-udr-scenario-include.md](../../includes/virtual-network-create-udr-scenario-include.md)]
 
 ## 模板文件中的 UDR 资源
 
-你可以查看和下载[示例模板](https://github.com/telmosampaio/azure-templates/tree/master/IaaS-NSG-UDR)。
+可查看和下载[示例模板](https://github.com/telmosampaio/azure-templates/tree/master/IaaS-NSG-UDR)。
 
-下面的部分说明如何基于上述方案在 **azuredeploy-vnet-nsg-udr.json** 文件中定义前端 UDR。
+以下部分说明如何基于上述方案在 **azuredeploy-vnet-nsg-udr.json** 文件中定义前端 UDR。
 
 	"apiVersion": "2015-06-15",
 	"type": "Microsoft.Network/routeTables",
@@ -73,7 +71,7 @@
 
 请注意，在模板中对后端 NSG 和后端子网执行相同的操作。
 
-你还需要确保 **FW1** VM 的 IP 转发属性在要用于接收和转发数据包的 NIC 上已启用。下面的部分说明基于上述方案为 azuredeploy-nsg-udr.json 文件中的 FW1 定义 NIC。
+还需要确保 **FW1** VM 在用于接收和转发数据包的 NIC 上启用了 IP 转发属性。以下部分显示了 azuredeploy-nsg-udr.json 文件中 FW1 的 NIC 的定义（基于上述方案）。
 
 	"apiVersion": "2015-06-15",
 	"type": "Microsoft.Network/networkInterfaces",
@@ -115,7 +113,7 @@
 
 [AZURE.INCLUDE [powershell-preview-include.md](../../includes/powershell-preview-include.md)]
 
-1. 如果你从未使用过 Azure PowerShell，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)，并始终按照说明进行操作，以登录到 Azure 并选择你的订阅。
+1. 如果从未使用过 Azure PowerShell，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)，并按照说明逐步完成操作，登录到 Azure 并选择订阅。
 
 2. 运行 `New-AzureRmResourceGroup` cmdlet 以创建资源组。
 
@@ -173,16 +171,16 @@
 
 若要使用 Azure CLI 部署 ARM 模板，请执行下列步骤。
 
-1. 如果你从未使用过 Azure CLI，请参阅[安装和配置 Azure CLI](/documentation/articles/xplat-cli-install/)，并按照说明进行操作，直到选择 Azure 帐户和订阅。
+1. 如果从未使用过 Azure CLI，请参阅[安装和配置 Azure CLI](/documentation/articles/xplat-cli-install/)，并按照说明进行操作，直到选择 Azure 帐户和订阅。
 2. 运行 `azure config mode` 命令以切换到 Resource Manager 模式，如下所示。
 
 		azure config mode arm
 
-	下面是上述命令的预期输出：
+	上述命令的预期输出如下：
 
 		info:    New mode is arm
 
-3. 从浏览器中，导航到 **https://raw.githubusercontent.com/telmosampaio/azure-templates/master/IaaS-NSG-UDR/azuredeploy.parameters.json**，复制 json 文件的内容并粘贴到计算机中的一个新文件。对于此方案，将下面的值复制到名为 **c:\\udr\\azuredeploy.parameters.json** 的文件。
+3. 从浏览器中，导航到 **https://raw.githubusercontent.com/telmosampaio/azure-templates/master/IaaS-NSG-UDR/azuredeploy.parameters.json**，复制 json 文件的内容并粘贴到计算机中的新文件。对于此方案，将下面的值复制到名为 **c:\\udr\\azuredeploy.parameters.json** 的文件。
 
 		{
 		  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
@@ -200,7 +198,7 @@
 		  }
 		}
 
-4. 运行 **azure group create** cmdlet 以使用你在前面下载并修改的模板和参数文件部署新 VNet。在输出后显示的列表说明了所用的参数。
+4. 运行 **azure group create** cmdlet，以使用之前下载并修改的模板和参数文件部署新 VNet。输出后所示列表阐释了所用参数。
 
 		azure group create -n TestRG -l chinanorth --template-uri 'https://raw.githubusercontent.com/telmosampaio/azure-templates/master/IaaS-NSG-UDR/azuredeploy.json' -e 'c:\udr\azuredeploy.parameters.json'
 
@@ -221,11 +219,11 @@
 		data:    
 		info:    group create command OK
 
-5. 运行 **azure group show** 命令查看在新资源组中创建的资源。
+5. 运行 **azure group show** 命令，查看在新资源组中创建的资源。
 
 		azure group show TestRG
 
-	预期的结果
+	预期结果
 		
 		info:    Executing command group show
 		info:    Listing resource groups
@@ -395,4 +393,4 @@
 
 >[AZURE.TIP] 如果看不到所有资源，可运行 `azure group deployment show` 命令以确保部署的预配状态为“成功”。
 
-<!---HONumber=Mooncake_0418_2016-->
+<!---HONumber=Mooncake_Quality_Review_1215_2016-->

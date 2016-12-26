@@ -1,6 +1,6 @@
 <properties
  pageTitle="使用 Maven 开发 Scalding MapReduce 作业 | Azure"
- description="了解如何使用 Maven 创建 Scalding MapReduce 作业，然后在 Hadoop on HDInsight 群集上部署并运行该作业。"
+ description="了解如何使用 Maven 创建 Scalding MapReduce 作业，然后在 HDInsight 群集的 Hadoop 上部署并运行该作业。"
  services="hdinsight"
  documentationCenter=""
  authors="Blackmist"
@@ -14,19 +14,19 @@
  ms.tgt_pltfrm="na"
  ms.workload="big-data"
  ms.date="08/02/2016"
- wacn.date="09/30/2016"
+ wacn.date="12/26/2016"
  ms.author="larryfr"/>
 
-# 使用 Apache Hadoop on HDInsight 开发 Scalding MapReduce 作业
+# 使用 HDInsight 上的 Apache Hadoop 开发 Scalding MapReduce 作业
 
 Scalding 是一种 Scala 库，它可以让你轻松地创建 Hadoop MapReduce 作业。它提供简明的语法以及与 Scala 的紧密集成。
 
-在本文档中，你将学习如何使用 Maven 来创建以 Scalding 编写的单词计数 MapReduce 作业。然后，你将学习如何在 HDInsight 群集上部署并运行此作业。
+在本文档中，你将了解如何使用 Maven 创建以 Scalding 编写的单词计数 MapReduce 作业。然后，你将了解如何在 HDInsight 群集上部署并运行此作业。
 
 ## 先决条件
 
 - **一个 Azure 订阅**。请参阅[获取 Azure 试用版](/pricing/1rmb-trial/)。
-* **HDInsight 群集上基于 Windows 的 Hadoop**。有关详细信息，请参阅[在 HDInsight 上预配基于 Windows 的 Hadoop](/documentation/articles/hdinsight-provision-clusters-v1/)。
+* **HDInsight 群集上基于 Windows 的 Hadoop**。有关详细信息，请参阅[预配 HDInsight 上基于 Windows 的 Hadoop](/documentation/articles/hdinsight-provision-clusters-v1/)。
 
 * **[Maven](http://maven.apache.org/)**
 
@@ -34,11 +34,11 @@ Scalding 是一种 Scala 库，它可以让你轻松地创建 Hadoop MapReduce �
 
 ## 创建和生成项目
 
-1. 输入以下命令来创建新的 Maven 项目：
+1. 使用以下命令新建 Maven 项目：
 
         mvn archetype:generate -DgroupId=com.microsoft.example -DartifactId=scaldingwordcount -DarchetypeGroupId=org.scala-tools.archetypes -DarchetypeArtifactId=scala-archetype-simple -DinteractiveMode=false
 
-    此命令将创建一个名为 **scaldingwordcount** 的新目录，并创建 Scala 应用程序的基架。
+    此命令将新建名为 **scaldingwordcount** 的目录，并创建 Scala 应用程序的基架。
 
 2. 在 **scaldingwordcount** 目录中，打开 **pom.xml** 文件并将其内容替换为以下内容：
 
@@ -138,7 +138,7 @@ Scalding 是一种 Scala 库，它可以让你轻松地创建 Hadoop MapReduce �
 
     * **maven.compiler.source** 和 **maven.compiler.target**：设置此项目的 Java 版本
 
-    * **repositories**：包含此项目使用的依赖文件的存储库
+    * **repositories**：包含此项目使用的相关文件的存储库
 
     * **scalding-core\_2.11** 和 **hadoop-core**：此项目依赖于 Scalding 和 Hadoop 核心程序包
 
@@ -186,7 +186,7 @@ Scalding 是一种 Scala 库，它可以让你轻松地创建 Hadoop MapReduce �
 
 ## 在基于 Windows 的群集上运行作业
 
-> [AZURE.NOTE]以下步骤使用 Windows PowerShell。有关运行 MapReduce 作业的其他方法，请参阅[在 HDInsight 上的 Hadoop 中使用 MapReduce](/documentation/articles/hdinsight-use-mapreduce/)。
+> [AZURE.NOTE] 以下步骤使用 Windows PowerShell。有关运行 MapReduce 作业的其他方法，请参阅[在 HDInsight 上的 Hadoop 中使用 MapReduce](/documentation/articles/hdinsight-use-mapreduce/)。
 
 1. [安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)。
 
@@ -235,7 +235,7 @@ Scalding 是一种 Scala 库，它可以让你轻松地创建 Hadoop MapReduce �
 
 ## 后续步骤
 
-现在，你已学习如何使用 Scalding 来创建适用于 HDInsight 的 MapRedcue 作业，接下来请使用以下链接学习 Azure HDInsight 的其他用法。
+现在，你已了解如何使用 Scalding 创建适用于 HDInsight 的 MapRedcue 作业，请使用以下链接探索 Azure HDInsight 的其他用法。
 
 * [将 Hive 与 HDInsight 配合使用](/documentation/articles/hdinsight-use-hive/)
 
@@ -243,4 +243,4 @@ Scalding 是一种 Scala 库，它可以让你轻松地创建 Hadoop MapReduce �
 
 * [将 MapReduce 作业与 HDInsight 配合使用](/documentation/articles/hdinsight-use-mapreduce/)
 
-<!---HONumber=Mooncake_0104_2016-->
+<!---HONumber=Mooncake_Quality_Review_1215_2016-->

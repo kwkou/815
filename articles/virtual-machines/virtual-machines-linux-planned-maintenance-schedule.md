@@ -15,13 +15,14 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="02/13/2016"
-	wacn.date="05/12/2016"
+	wacn.date="12/26/2016"
 	ms.author="igalf"/>
 
 
 # 如何在 Azure VM 上安排计划内的维护
 
-> [AZURE.IMPORTANT]Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model/)。本文介绍使用经典部署模型。Azure 建议大多数新部署使用资源管理器模型。
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]
 
 [AZURE.INCLUDE [virtual-machines-common-planned-maintenance-schedule](../../includes/virtual-machines-common-planned-maintenance-schedule.md)]
-<!---HONumber=Mooncake_0503_2016-->
+
+<!---HONumber=Mooncake_Quality_Review_1215_2016-->

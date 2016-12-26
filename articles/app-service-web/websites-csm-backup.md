@@ -1,5 +1,5 @@
 <properties
-	pageTitle="使用 REST 备份和还原 App Service 应用"
+	pageTitle="使用 REST 备份和还原应用服务应用"
 	description="了解如何使用 RESTful API 调用在 Azure App Service 中备份和还原应用"
 	services="app-service"
 	documentationCenter=""
@@ -14,9 +14,9 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="08/10/2016"
-	wacn.date="11/25/2016"
+	wacn.date="12/26/2016"
 	ms.author="nicking"/>
-# 使用 REST 备份和还原 App Service 应用
+# 使用 REST 备份和还原应用服务应用
 
 > [AZURE.SELECTOR]
 - [PowerShell](/documentation/articles/app-service-powershell-backup/)
@@ -24,7 +24,7 @@
 
 [AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-sdk-developer-differences.md)]
 
-[应用服务应用](/home/features/app-service/web-apps/)可以备份为 Azure 存储中的 Blob。备份还可以包含该应用的数据库。如果曾经意外地删除了该应用，或者该应用需要还原到以前的版本，则可以从任何以前的备份还原。可随时按需备份，也可以计划以合适的时间间隔备份。
+[应用服务应用](/home/features/app-service/web-apps/)可以备份为 Azure 存储中的 Blob。备份还可以包含该应用的数据库。如果意外地删除了该应用，或者需要将该应用还原到以前的版本，则可以从任何以前的备份还原。可随时按需备份，也可以计划以合适的时间间隔备份。
 
 本文介绍如何使用 RESTful API 请求备份和还原应用。如果要通过 Azure 门户预览以图形方式创建和管理应用备份，请参阅[在 Azure App Service 中备份 Web 应用](/documentation/articles/web-sites-backup/)
 
@@ -95,7 +95,7 @@
 ## <a name="schedule-automatic-backups"></a>计划自动备份
 除了按需备份应用外，还可以计划自动进行的备份。
 
-### 设置新的自动备份计划
+### 设置新自动备份计划
 若要设置备份计划，请向 **https://management.chinacloudapi.cn/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.Web/sites/{name}/config/backup** 发送 **PUT** 请求。
 
 对于我们的示例网站，URL 如下所示。**https://management.chinacloudapi.cn/subscriptions/00001111-2222-3333-4444-555566667777/resourceGroups/Default-Web-ChinaNorth/providers/Microsoft.Web/sites/backuprestoreapiexamples/config/backup**
@@ -197,11 +197,11 @@
 对于我们的示例网站，URL 如下所示。**https://management.chinacloudapi.cn/subscriptions/00001111-2222-3333-4444-555566667777/resourceGroups/Default-Web-ChinaNorth/providers/Microsoft.Web/sites/backuprestoreapiexamples/backups/1**
 
 ## <a name="manage-sas-url"></a>管理备份的 SAS URL
-Azure App Service 将尝试使用在创建备份时提供的 SAS URL 从 Azure 存储中删除备份。如果此 SAS URL 不再有效，则无法通过 REST API 删除备份。但是，可以通过向 URL **https://management.chinacloudapi.cn/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.Web/sites/{name}/backups/{backup-id}/list** 发送 **POST** 请求更新与备份关联的 SAS URL。
+Azure App Service 会尝试使用创建备份时提供的 SAS URL 从 Azure 存储中删除备份。如果此 SAS URL 失效，则无法通过 REST API 删除备份。但是，可以通过向 URL **https://management.chinacloudapi.cn/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.Web/sites/{name}/backups/{backup-id}/list** 发送 **POST** 请求更新与备份关联的 SAS URL。
 
 对于我们的示例网站，URL 如下所示。**https://management.chinacloudapi.cn/subscriptions/00001111-2222-3333-4444-555566667777/resourceGroups/Default-Web-ChinaNorth/providers/Microsoft.Web/sites/backuprestoreapiexamples/backups/1/list**
 
-在请求正文中，发送包含新的 SAS URL 的 JSON 对象。下面是一个示例。
+在请求正文中，发送包含新 SAS URL 的 JSON 对象。下面是一个示例。
 
 	{
     	"properties":
@@ -210,9 +210,9 @@ Azure App Service 将尝试使用在创建备份时提供的 SAS URL 从 Azure �
     	}
 	}
 
->[AZURE.NOTE] 出于安全原因，在为特定备份发送 GET 请求时，将不返回与该备份关联的 SAS URL。如果要查看与备份关联的 SAS URL，请向上述同一 URL 发送 POST 请求。在请求正文中包含空的 JSON 对象。来自服务器的响应包含该备份的所有信息，包括其 SAS URL。
+>[AZURE.NOTE] 出于安全原因，在为特定备份发送 GET 请求时，将不返回与该备份关联的 SAS URL。如果要查看与备份关联的 SAS URL，请向上述同一 URL 发送 POST 请求。在请求正文中包含空 JSON 对象。服务器响应包含该备份的所有信息，包括其 SAS URL。
 
 <!-- IMAGES -->
 [SampleWebsiteInformation]: ./media/websites-csm-backup/01siteconfig.png
 
-<!---HONumber=Mooncake_0919_2016-->
+<!---HONumber=Mooncake_Quality_Review_1215_2016-->

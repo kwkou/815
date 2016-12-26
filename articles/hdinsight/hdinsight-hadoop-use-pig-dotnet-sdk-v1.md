@@ -14,7 +14,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
    ms.date="05/04/2016"
-   wacn.date="11/25/2016"
+   wacn.date="12/26/2016"
    ms.author="larryfr"/>
 
 #使用 HDInsight 中的 .NET SDK for Hadoop 运行 Pig 作业
@@ -25,13 +25,13 @@
 
 本文档提供使用 .NET SDK for Hadoop 将 Pig 作业提交到 HDInsight 上的 Hadoop 群集的示例。
 
-HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 中使用 HDInsight 群集的操作。Pig 可让你通过为一系列数据转换建模，来创建 MapReduce 操作。你将学习如何使用基本 C# 应用程序将 Pig 作业提交到 HDInsight 群集。
+HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 中使用 HDInsight 群集的操作。Pig 可让你通过为一系列数据转换建模，创建 MapReduce 操作。你将了解如何使用基本 C# 应用程序将 Pig 作业提交到 HDInsight 群集。
 
 > [AZURE.IMPORTANT] 目前，Azure 中国区的 HDInsight 只能通过 Azure 服务管理器 (ASM) 进行管理。适用于 HDInsight 的 Azure Resource Manager (ARM) 模型尚不可用。
 
 ## <a id="prereq"></a>先决条件
 
-若要完成本文中的步骤，你将需要：
+若要完成本文中的步骤，你将需要以下各项：
 
 * Azure HDInsight（HDInsight 上的 Hadoop）群集 (Windows) 
 
@@ -39,7 +39,7 @@ HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 中使用 HDInsi
 
 ## <a id="certificate"></a>创建管理证书
 
-若要在 Azure HDInsight 上对应用程序进行身份验证，必须创建自签名证书，将它安装在开发工作站上，同时将它上载到你的 Azure 订阅。
+若要在 Azure HDInsight 上对应用程序进行身份验证，必须创建自签名证书、将它安装在开发工作站上，同时将它上传到你的 Azure 订阅。
 
 有关如何执行此操作的说明，请参阅[创建自签名证书](/documentation/articles/hdinsight-administer-use-management-portal-v1/#cert)。
 
@@ -47,7 +47,7 @@ HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 中使用 HDInsi
 
 ## <a id="subscriptionid"></a>查找你的订阅 ID
 
-每个 Azure 订阅都是以 GUID 值（称为订阅 ID）标识的。请使用以下步骤来查找此值。
+每个 Azure 订阅都以 GUID 值（称为订阅 ID）标识。请使用以下步骤查找此值。
 
 1. 访问 [Azure 管理控制台](https://manage.windowsazure.cn/)。
 
@@ -72,23 +72,23 @@ HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 中使用 HDInsi
 	</tr>
 	<tr>
 	<th>类别</th>
-	<th>模板/Visual C#/Windows</th>
+	<th>Templates/Visual C#/Windows</th>
 	</tr>
 	<tr>
 	<th>模板</th>
-	<th>控制台应用程序</th>
+	<th>Console Application</th>
 	</tr>
 	<tr>
-	<th>Name</th>
+	<th>名称</th>
 	<th>SubmitPigJob</th>
 	</tr>
 	</table>
 
-4. 单击“确定”以创建该项目。
+4. 单击“确定”创建该项目。
 
-5. 从“工具”菜单中选择“库包管理器”或“Nuget 包管理器”，然后选择“包管理器控制台”。
+5. 从“工具”菜单中，选择“库包管理器”或“Nuget 包管理器”，然后选择“包管理器控制台”。
 
-6. 在控制台中运行以下命令，以安装 .NET SDK 包。
+6. 在控制台中运行以下命令，安装 .NET SDK 包。
 
 		Install-Package Microsoft.Azure.Management.HDInsight.Job -Pre
 
@@ -161,4 +161,4 @@ HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 中使用 HDInsi
 
 * [将 MapReduce 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-mapreduce/)
 
-<!---HONumber=Mooncake_0530_2016-->
+<!---HONumber=Mooncake_Quality_Review_1215_2016-->

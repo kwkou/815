@@ -15,12 +15,12 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="08/23/2016"
-	wacn.date="10/25/2016"
+	wacn.date="12/26/2016"
 	ms.author="iainfou"/>
 
 # 如何从 Linux 虚拟机分离磁盘
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]
+> [AZURE.IMPORTANT] Azure 具有两种不同的部署模型，用于创建和处理资源：[Resource Manager 模型和经典模型](/documentation/articles/resource-manager-deployment-model)。本文介绍使用经典部署模型的情况。Azure 建议大多数新部署使用 Resource Manager 模型。
 
 [AZURE.INCLUDE [howto-detach-disk-windows-linux](../../includes/howto-detach-disk-linux.md)]
 
@@ -31,4 +31,4 @@
 
 - [将 Azuer CLI 与经典部署模型搭配使用](/documentation/articles/virtual-machines-command-line-tools/)
 
-<!---HONumber=Mooncake_0704_2016-->
+<!---HONumber=Mooncake_Quality_Review_1215_2016-->

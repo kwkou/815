@@ -15,14 +15,14 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="09/08/2016"
-	wacn.date="10/25/2016"
+	wacn.date="12/26/2016"
 	ms.author="iainfou"/>
 
 # 示例 Azure 基础结构演练
 
 [AZURE.INCLUDE [virtual-machines-linux-infrastructure-guidelines-intro](../../includes/virtual-machines-linux-infrastructure-guidelines-intro.md)]
 
-本文将逐步讲述如何构建示例应用程序基础结构。我们将详细介绍如何设计简单在线商店的基础结构，此在线商店可将关于命名约定、可用性集、虚拟网络及负载均衡器的所有准则和决策聚集在一起；以及如何实际部署你的虚拟机 (VM)。
+本文将逐步讲述如何构建示例应用程序基础结构。我们将详细介绍如何设计简单在线商店的基础结构，该基础结构应全面考虑关于命名约定、可用性集、虚拟网络及负载均衡器的所有准则和决策；还将介绍如何实际部署虚拟机 (VM)。
 
 
 ## 示例工作负荷
@@ -32,7 +32,7 @@ Adventure Works Cycles 想要在 Azure 中生成一个在线商店应用程序�
 - 两个在 Web 层中运行客户端前端的 nginx 服务器
 - 两个在应用程序层中处理数据和订单的 nginx 服务器
 - 包含在分片群集中的两个 MongoDB 服务器，用于在数据库层中存储产品数据和订单
-- 位于身份验证层中、用于客户帐户和供应商的两个 Active Directory 域控制器
+- 身份验证层中用于客户帐户和供应商的两个 Active Directory 域控制器
 - 所有服务器皆位于两个子网中：
 	- Web 服务器位于前端子网中
 	- 应用程序服务器、MongoDB 群集和域控制器位于后端子网中
@@ -53,24 +53,24 @@ Adventure Works Cycles 想要在 Azure 中生成一个在线商店应用程序�
 以上各项都将遵循以下命名约定：
 
 - Adventure Works Cycles 使用 **[IT 工作负荷]-[位置]-[Azure 资源]** 作为前缀
-	- 在本示例中，IT 工作负荷名为 **azos**（Azure On-line Store，Azure 在线商店），位置为 **che**（China East，中国东部）是
+	- 在本示例中，IT 工作负荷名为 **azos**（Azure On-line Store，Azure 在线商店），位置为 **che**（China East，中国东部）
 - 存储帐户使用 adventureazoschesa**[描述]**
-	- 请注意，“adventure”已添加到前缀以提供唯一性，并且存储帐户名称不支持使用连字符。
+	- 请注意，“adventure”已添加到前缀以确保唯一性，并且存储帐户名称不支持使用连字符。
 - 虚拟网络使用 AZOS-CHE-VN**[数字]**
-- 可用性集使用 use azos-che-as-**[角色]**
+- 可用性集使用 azos-che-as-**[角色]**
 - 虚拟机名称使用 azos-che-vm-**[VM 名称]**
 
 
 ## Azure 订阅和帐户
 
-Adventure Works Cycles 使用名为 Adventure Works 企业订阅的企业订阅来提供此 IT 工作负荷的计费。
+Adventure Works Cycles 使用名为“Adventure Works 企业订阅”的企业订阅为此 IT 工作负荷提供计费服务。
 
 
 ## 存储帐户
 
 Adventure Works Cycles 确定他们需要以下两个存储帐户：
 
-- **adventureazoschesawebapp** 用于 Web 服务器、应用程序服务器和域控制器及其数据磁盘的标准存储。
+- **adventureazoschesawebapp** 用于 Web 服务器、应用程序服务器、域控制器及其数据磁盘的标准存储。
 - **adventureazoschesadbclust** 用于 MongoDB 分片群集服务器及其数据磁盘的高级存储。
 
 
@@ -114,11 +114,11 @@ Adventure Works Cycles 决定为其 Azure VM 使用以下名称：
 - **azos-che-vm-dc01** 用于第一个域控制器
 - **azos-che-vm-dc02** 用于第二个域控制器
 
-这是生成的配置。
+以下是生成的配置。
 
 ![在 Azure 中部署的最终应用程序基础结构](./media/virtual-machines-common-infrastructure-service-guidelines/example-config.png)
 
-此配置引入以下项：
+此配置引入了以下项：
 
 - 包含两个子网（FrontEnd 和 BackEnd）的仅限云虚拟网络
 - 两个存储帐户
@@ -133,4 +133,4 @@ Adventure Works Cycles 决定为其 Azure VM 使用以下名称：
 
 [AZURE.INCLUDE [virtual-machines-linux-infrastructure-guidelines-next-steps](../../includes/virtual-machines-linux-infrastructure-guidelines-next-steps.md)]
 
-<!---HONumber=Mooncake_0801_2016-->
+<!---HONumber=Mooncake_Quality_Review_1215_2016-->
