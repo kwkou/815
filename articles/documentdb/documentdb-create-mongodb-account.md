@@ -42,7 +42,7 @@
     ![Azure 门户预览中“MongoDB 的 DocumentDB 协议支持”的“立即注册预览版”边栏选项卡](./media/documentdb-create-mongodb-account/registerforpreview.png)
 6. 接受预览版条款之后，你将返回到“创建”边栏选项卡。在“DocumentDB 帐户”边栏选项卡中，为帐户指定所需的配置。
    
-   ![新建具有 MongoDB 协议支持的 DocumentDB 的边栏选项卡屏幕截图](./media/documentdb-create-mongodb-account/create-documentdb-mongodb-account.png)  
+	![新建具有 MongoDB 协议支持的 DocumentDB 的边栏选项卡屏幕截图](./media/documentdb-create-mongodb-account/create-documentdb-mongodb-account.png)  
 
 
     - 在“ID”框中，输入一个名称用于标识帐户。对“ID”进行验证后，“ID”框中会出现一个绿色的复选标记。该“ID”值将成为 URI 中的主机名。 “ID”只能包含小写字母、数字及“-”字符，且长度必须为 3 到 50 个字符。请注意，*documents.azure.com* 会追加到所选择的终结点名称，其结果将成为帐户终结点。
@@ -56,20 +56,21 @@
     - 选中“固定到仪表板”。如果已固定到仪表板，请执行下面的**第 8 步**来查看新帐户的左侧导航。
 
 
-1. 在配置了新的帐户选项后，单击“创建”。可能需要几分钟来创建帐户。如果固定到仪表板，则可以在启动板上监视预配的进度。 
-![启动板上的“创建”磁贴的屏幕截图 — 在线数据库创建者](./media/documentdb-create-mongodb-account/create-nosql-db-databases-json-tutorial-3.png)
+7. 在配置了新的帐户选项后，单击“创建”。可能需要几分钟来创建帐户。如果固定到仪表板，则可以在启动板上监视预配的进度。 
+
+	![启动板上的“创建”磁贴的屏幕截图 — 在线数据库创建者](./media/documentdb-create-mongodb-account/create-nosql-db-databases-json-tutorial-3.png)
    
-   如果未固定到仪表板，则可以从通知中心监视进度。
+	如果未固定到仪表板，则可以从通知中心监视进度。
    
-   ![快速创建数据库 — 通知中心的屏幕截图，其中显示正在创建 DocumentDB 帐户](./media/documentdb-create-mongodb-account/create-nosql-db-databases-json-tutorial-4.png)  
+	![快速创建数据库 — 通知中心的屏幕截图，其中显示正在创建 DocumentDB 帐户](./media/documentdb-create-mongodb-account/create-nosql-db-databases-json-tutorial-4.png)  
 
    
-   ![通知中心的屏幕截图，其中显示 DocumentDB 帐户已成功创建并且部署到资源组 — 在线数据库创建者通知](./media/documentdb-create-mongodb-account/create-nosql-db-databases-json-tutorial-5.png)  
+	![通知中心的屏幕截图，其中显示 DocumentDB 帐户已成功创建并且部署到资源组 — 在线数据库创建者通知](./media/documentdb-create-mongodb-account/create-nosql-db-databases-json-tutorial-5.png)  
 
-2. 若要访问新帐户，请单击左侧菜单上的“DocumentDB (NoSQL)”。在常规的 DocumentDB 帐户和具有 Mongo 协议支持的 DocumentDB 帐户列表中，单击新帐户的名称。
-3. 现在就可以使用默认设置了。
+8. 若要访问新帐户，请单击左侧菜单上的“DocumentDB (NoSQL)”。在常规的 DocumentDB 帐户和具有 Mongo 协议支持的 DocumentDB 帐户列表中，单击新帐户的名称。
+9. 现在就可以使用默认设置了。
    
-   ![默认帐户边栏选项卡的屏幕截图](./media/documentdb-create-mongodb-account/defaultaccountblades.png)  
+	![默认帐户边栏选项卡的屏幕截图](./media/documentdb-create-mongodb-account/defaultaccountblades.png)  
 
 
 ## 后续步骤
