@@ -15,7 +15,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="09/02/2016"
-	wacn.date="11/25/2016"
+	wacn.date="12/26/2016"
 	ms.author="jgao"/>
 
 # 使用 .NET SDK 管理 HDInsight 中的 Hadoop 群集
@@ -29,7 +29,7 @@
 
 **先决条件**
 
-在开始阅读本文前，你必须具有：
+在开始本文前，你必须具有以下项：
 
 - **一个 Azure 订阅**。请参阅[获取 Azure 试用版](/pricing/1rmb-trial/)。
 
@@ -67,11 +67,11 @@
 		}
 	}
 
-若要使用此代码段，需要创建证书文件并将其上载到 Azure。有关详细信息，请参阅 [Upload an Azure Management API Management Certificate（上载 Azure Management API 管理证书）](/documentation/articles/azure-api-management-certs/)。
+若要使用此代码段，需要创建证书文件并将其上传到 Azure。有关详细信息，请参阅[上传 Azure Management API 管理证书](/documentation/articles/azure-api-management-certs/)。
 
 ##列出群集
 
-以下代码段列出了群集和一些属性：
+以下代码片段列出了群集和一些属性：
 
     var results = _hdinsightClient.ListClusters();
     foreach (var name in results) {
@@ -83,7 +83,7 @@
 
 ##删除群集
 
-使用以下代码段以同步或异步方式删除群集：
+使用以下代码片段以同步或异步方式删除群集：
 
     _hdinsightClient.DeleteCluster("<Cluster Name>");
     _hdinsightClient.DeleteClusterAsync("<Cluster Name>");
@@ -107,9 +107,9 @@ HDInsight 群集提供以下 HTTP Web 服务（所有这些服务都有 REST 样
 
 	_hdinsightClient.EnableHttp(cluster.Name, cluster.Location, "admin","<password>");
 
->[AZURE.NOTE] 授予/撤消访问权限时，你将重设群集用户的用户名和密码。
+>[AZURE.NOTE] 通过授予/撤消访问权限，你将重置群集用户名和密码。
 
-也可以使用经典管理门户完成此操作。请参阅 [Administer HDInsight by using the Azure Portal（使用 Azure 经典管理门户管理 HDInsight）][hdinsight-admin-portal]。
+也可以通过经典管理门户完成此操作。请参阅[使用 Azure 经典管理门户管理 HDInsight][hdinsight-admin-portal]。
 
 ##更新 HTTP 用户凭据
 
@@ -118,7 +118,7 @@ HDInsight 群集提供以下 HTTP Web 服务（所有这些服务都有 REST 样
 
 ##查找默认存储帐户
 
-以下代码段演示如何获取群集的默认存储帐户名称和默认存储帐户密钥。
+以下代码片段演示如何获取群集的默认存储帐户名称和默认存储帐户密钥。
 
 	var cluster = _hdinsightClient.GetCluster("<Cluster Name>");
 	var storageKey = cluster.DefaultStorageAccount.Key;
@@ -128,11 +128,11 @@ HDInsight 群集提供以下 HTTP Web 服务（所有这些服务都有 REST 样
 
 **提交 Hive 作业**
 
-请参阅 [Run Hive queries using .NET SDK（使用 .NET SDK 运行 Hive 查询）](/documentation/articles/hdinsight-hadoop-use-hive-dotnet-sdk/)。
+请参阅[使用 .NET SDK 运行 Hive 查询）](/documentation/articles/hdinsight-hadoop-use-hive-dotnet-sdk/)。
 
 **提交 Pig 作业**
 
-请参阅 [Run Pig jobs using .NET SDK（使用 .NET SDK 运行 Pig 作业）](/documentation/articles/hdinsight-hadoop-use-pig-dotnet-sdk-v1/)。
+请参阅[使用 .NET SDK 运行 Pig 作业](/documentation/articles/hdinsight-hadoop-use-pig-dotnet-sdk-v1/)。
 
 **提交 Sqoop 作业**
 
@@ -142,16 +142,16 @@ HDInsight 群集提供以下 HTTP Web 服务（所有这些服务都有 REST 样
 
 请参阅[在 HDInsight 中将 Oozie 与 Hadoop 配合使用以定义和运行工作流](/documentation/articles/hdinsight-use-oozie/)。
 
-##将数据上载到 Azure Blob 存储
-请参阅[将数据上载到 HDInsight][hdinsight-upload-data]。
+##将数据上传到 Azure Blob 存储
+请参阅[将数据上传到 HDInsight][hdinsight-upload-data]。
 
 
 ## 另请参阅
 * [HDInsight .NET SDK 参考文档](https://msdn.microsoft.com/zh-cn/library/mt271028.aspx)
-* [Administer HDInsight by using the Azure Portal（使用 Azure 经典管理门户管理 HDInsight）][hdinsight-admin-portal]
-* [使用命令行界面管理 HDInsight][hdinsight-admin-cli]
+* [使用 Azure 经典管理门户管理 HDInsight][hdinsight-admin-portal]
+* [使用命令行接口管理 HDInsight][hdinsight-admin-cli]
 * [创建 HDInsight 群集][hdinsight-provision]
-* [将数据上载到 HDInsight][hdinsight-upload-data]
+* [将数据上传到 HDInsight][hdinsight-upload-data]
 * [Azure HDInsight 入门][hdinsight-get-started]
 
 
@@ -172,6 +172,4 @@ HDInsight 群集提供以下 HTTP Web 服务（所有这些服务都有 REST 样
 [hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data/
 [hdinsight-flight]: /documentation/articles/hdinsight-analyze-flight-delay-data/
 
-
-
-<!---HONumber=Mooncake_0530_2016-->
+<!---HONumber=Mooncake_Quality_Review_1215_2016-->

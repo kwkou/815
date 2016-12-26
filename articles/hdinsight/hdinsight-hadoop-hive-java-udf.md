@@ -1,5 +1,5 @@
 <properties
-pageTitle="在 HDInsight 中通过 Hive 使用 Java 用户定义函数 (UDF) |Azure"
+pageTitle="将 Java 用户定义函数 (UDF) 与 HDInsight 中的 Hive 配合使用 |Azure"
 description="了解如何在 HDInsight 的 Hive 中创建并使用 Java 用户定义函数 (UDF)。"
 services="hdinsight"
 documentationCenter=""
@@ -15,13 +15,12 @@ ms.topic="article"
 ms.tgt_pltfrm="na"
 ms.workload="big-data"
 ms.date="09/27/2016"
-wacn.date="11/14/2016"
-ms.author="larryfr"/>  
+wacn.date="12/26/2016"
+ms.author="larryfr"/>
 
+# 将 Java UDF 与 HDInsight 中的 Hive 配合使用
 
-# 在 HDInsight 中通过 Hive 使用 Java UDF
-
-Hive 非常适用于在 HDInsight 中处理数据，但有时你需要一种更通用的语言。Hive 可让你使用各种编程语言创建用户定义的功能 (UDF)。在本文档中，你将学习如何在 Hive 中使用 Java UDF。
+Hive 非常适用于在 HDInsight 中处理数据，但有时你需要一种更通用的语言。Hive 可让你使用各种编程语言创建用户定义的功能 (UDF)。在本文档中，你将了解如何在 Hive 中使用 Java UDF。
 
 ## 要求
 
@@ -37,17 +36,17 @@ Hive 非常适用于在 HDInsight 中处理数据，但有时你需要一种更�
 
 ## 创建示例 UDF
 
-1. 从命令行中，使用以下命令创建新 Maven 项目：
+1. 从命令行中，使用以下命令新建 Maven 项目：
 
         mvn archetype:generate -DgroupId=com.microsoft.examples -DartifactId=ExampleUDF -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
 
     > [AZURE.NOTE] 如果使用 PowerShell，必须将参数用引号引起来。例如，`mvn archetype:generate "-DgroupId=com.microsoft.examples" "-DartifactId=ExampleUDF" "-DarchetypeArtifactId=maven-archetype-quickstart" "-DinteractiveMode=false"`。
 
-    这将创建一个名为 __exampleudf__ 的新目录，其中包含 Maven 项目。
+    这将新建一个名为 __exampleudf__ 的目录，其中包含 Maven 项目。
 
 2. 创建该项目后，删除作为项目的一部分创建的 __exampleudf/src/test__ 目录；该示例中不使用此目录。
 
-3. 打开 __exampleudf/pom.xml__，将现有的 `<dependencies>` 输入替换为以下内容：
+3. 打开 __exampleudf/pom.xml__，将现有的 `<dependencies>` 条目替换为以下内容：
 
         <dependencies>
             <dependency>
@@ -64,9 +63,9 @@ Hive 非常适用于在 HDInsight 中处理数据，但有时你需要一种更�
             </dependency>
         </dependencies>
 
-    这些输入指定了 HDInsight 3.3 和 3.4 群集中包含的 Hadoop 和 Hive 的版本。你可以在[HDInsight 组件版本控制](/documentation/articles/hdinsight-component-versioning-v1/)文档中找到 HDInsight 提供的 Hadoop 和 Hive 的版本信息。
+    这些条目指定了 HDInsight 3.3 和 3.4 群集中包含的 Hadoop 和 Hive 的版本。你可以在 [HDInsight 组件版本控制](/documentation/articles/hdinsight-component-versioning-v1/)文档中找到 HDInsight 提供的 Hadoop 和 Hive 的版本信息。
 
-    在文件末尾的 `</project>` 行前面添加 `<build>` 代码段。该代码段包含以下内容：
+    在文件末尾的 `</project>` 行前面添加 `<build>` 部分。该部分应包含以下内容：
 
         <build>
             <plugins>
@@ -118,13 +117,13 @@ Hive 非常适用于在 HDInsight 中处理数据，但有时你需要一种更�
             </plugins>
         </build>
     
-    这些条目用于定义如何生成项目。具体而言，就是项目使用的 Java 版本以及如何构建部署到群集的 uberjar。
+    这些条目用于定义如何生成项目。具体而言，项目使用的 Java 版本以及如何生成部署到群集的 uberjar。
 
-    一旦进行了更改，请保存该文件。
+    保存发生了更改的文件。
 
 4. 将 __exampleudf/src/main/java/com/microsoft/examples/App.java__ 重命名为 __ExampleUDF.java__，然后在编辑器中打开该文件。
 
-5. 将 __ExampleUDF.java__ 文件的内容替换为以下代码，然后保存该文件。
+5. 将 __ExampleUDF.java__ 文件的内容替换为以下内容，然后保存该文件。
 
         package com.microsoft.examples;
 
@@ -168,7 +167,7 @@ Hive 非常适用于在 HDInsight 中处理数据，但有时你需要一种更�
 
         SELECT tolower(deviceplatform) FROM hivesampletable LIMIT 10;
 
-    上面的代码将从表中选择设备平台（Android、Windows、iOS 等），然后将字符串转换为小写字符串，并显示它们。输出结果如下所示。
+    这将从表中选择设备平台（Android、Windows、iOS 等）、将字符串转换为小写字符串，然后进行显示。输出结果如下所示。
 
         +----------+--+
         |   _c0    |
@@ -187,8 +186,8 @@ Hive 非常适用于在 HDInsight 中处理数据，但有时你需要一种更�
 
 ## 后续步骤
 
-有关使用 Hive 的其他方式，请参阅[在 HDInsight 中使用 Hive](/documentation/articles/hdinsight-use-hive/)。
+有关使用 Hive 的其他方式，请参阅[将 Hive 与 HDInsight 配合使用](/documentation/articles/hdinsight-use-hive/)。
 
-有关 Hive 用户定义函数的详细信息，请参阅 apache.org 网站上的 Hive wiki 的 [Hive Operators and User-Defined Functions](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+UDF)（Hive 运算符和用户定义函数）部分。
+有关 Hive 用户定义函数的详细信息，请参阅 apache.org 网站上的 Hive wiki 的 [Hive 运算符和用户定义函数](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+UDF)部分。
 
-<!---HONumber=Mooncake_1107_2016-->
+<!---HONumber=Mooncake_Quality_Review_1215_2016-->

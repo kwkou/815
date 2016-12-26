@@ -1,5 +1,3 @@
-<!-- ARM: tested -->
-
 <properties
 	pageTitle="在 Linux 虚拟机上部署 LAMP | Azure"
 	description="了解如何在 Linux VM 上安装 LAMP 堆栈"
@@ -17,11 +15,11 @@
 	ms.devlang="NA"
 	ms.topic="article"
 	ms.date="06/07/2016"
-	wacn.date="07/18/2016"
+	wacn.date="12/26/2016"
 	ms.author="jluk"/>
 
 # 在 Azure 上部署 LAMP 堆栈
-本文将指导你完成在 Azure 上部署 Apache web 服务器、MySQL 和 PHP（LAMP 堆栈）。你需要一个 Azure 帐户（[获取试用版](/pricing/1rmb-trial/)）和[连接到 Azure 帐户](/documentation/articles/xplat-cli-connect/)的 [Azure CLI](/documentation/articles/xplat-cli-install/)。
+本文将介绍如何在 Azure 上部署 Apache Web 服务器、MySQL 和 PHP（LAMP 堆栈）。你需要一个 Azure 帐户（[获取试用版](/pricing/1rmb-trial/)）和[连接到 Azure 帐户](/documentation/articles/xplat-cli-connect/)的 [Azure CLI](/documentation/articles/xplat-cli-install/)。
 
 本文介绍了两种方法用于安装所涉及的 LAMP：
 
@@ -41,7 +39,7 @@
 
 ## 在新的 VM 上部署 LAMP 的演练
 
-首先创建一个新的包含 VM 的[资源组](/documentation/articles/resource-group-overview/)：
+首先创建一个包含 VM 的新[资源组](/documentation/articles/resource-group-overview/)：
 
     $ azure group create uniqueResourceGroup chinanorth
     info:    Executing command group create
@@ -94,19 +92,19 @@
     data:    ubuntuOSVersion           String        14.04.2-LTS
     info:    group deployment create command OK
 
-现在你已创建已安装 LAMP 的 Linux VM。如果你想要，可以跳转到 [验证是否已成功安装 LAMP] 来验证此安装。
+现在你已创建已安装 LAMP 的 Linux VM。如有需要，你也可以跳转到 [验证是否已成功安装 LAMP] 来验证此安装。
 
 ## 在现有 VM 上部署 LAMP 的演练
 
-如果你需要有关创建 Linux VM 方面的帮助，可以转到[此处以了解如何创建 Linux VM](/documentation/articles/virtual-machines-linux-quick-create-cli/)。 
-接下来，你需要通过 SSH 登录 Linux VM。如果你需要有关创建 SSH 密钥方面的帮助，可以转到[此处了解如何在 Linux/Mac 上创建 SSH 密钥](/documentation/articles/virtual-machines-linux-mac-create-ssh-keys/)。
+如果你需要有关创建 Linux VM 方面的帮助，可以转到[此处以了解如何创建 Linux VM](/documentation/articles/virtual-machines-linux-quick-create-cli/)。
+接下来，你需要通过 SSH 登录 Linux VM。如果你需要有关创建 SSH 密钥方面的帮助，可以转到[此处以了解如何在 Linux/Mac 上创建 SSH 密钥](/documentation/articles/virtual-machines-linux-mac-create-ssh-keys/)。
 如果你已经有 SSH 密钥，则继续并使用 `ssh username@uniqueDNS` 通过 SSH 登录 Linux VM。
 
-既然你正在使用 Linux VM，我们将指导你如何在基于 Debian 的分发版上安装 LAMP 堆栈。对于其他 Linux 分发版，确切的命令可能会有所不同。
+既然你正在使用 Linux VM，我们将向你介绍如何在基于 Debian 的分发版上安装 LAMP 堆栈。对于其他 Linux 分发版，确切的命令可能会有所不同。
 
 #### 在 Debian/Ubuntu 上安装
 
-你将需要安装以下程序包：`apache2`、`mysql-server`、`php5` 和 `php5-mysql`。您可以通过直接获取这些程序包或使用 Tasksel 进行安装。下面列出了这两种方法的说明。
+你将需要安装以下程序包：`apache2`、`mysql-server`、`php5` 和 `php5-mysql`。你可以通过直接获取这些程序包或使用 Tasksel 进行安装。下面列出了这两种方法的说明。
 在安装之前，需要下载并更新包列表。
 
     user@ubuntu$ sudo apt-get update
@@ -147,7 +145,7 @@
 
 然后保存并退出文本编辑器。
 
-使用此命令重启 Apache 以便所有新安装都生效。
+使用此命令重启 Apache，以便所有新安装都生效。
 
     user@ubuntu$ sudo service apache2 restart
 
@@ -157,7 +155,7 @@
 
 ![][2]
 
-你可以通过转到 http://youruniqueDNS/ 并查看 Apache2 Ubuntu 默认页来检查 Apache 安装。你应看到类似如下的内容。
+你可以通过转到 http://youruniqueDNS/ 并查看 Apache2 Ubuntu 默认页来检查 Apache 安装。你应看到如下内容。
 
 ![][3]
 
@@ -173,4 +171,4 @@
 [2]: ./media/virtual-machines-linux-deploy-lamp-stack/phpsuccesspage.png
 [3]: ./media/virtual-machines-linux-deploy-lamp-stack/apachesuccesspage.png
 
-<!---HONumber=Mooncake_0711_2016-->
+<!---HONumber=Mooncake_Quality_Review_1215_2016-->

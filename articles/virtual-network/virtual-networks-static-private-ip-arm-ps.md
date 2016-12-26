@@ -1,8 +1,6 @@
-<!-- ARM: tested -->
-
 <properties 
-   pageTitle="如何在 Azure 资源管理器中使用 PowerShell 设置静态专用 IP 地址 | Azure"
-   description="了解静态专用 IP 地址以及如何在 Azure 资源管理器中使用 PowerShell 对其进行管理"
+   pageTitle="如何在 ARM 模式下使用 PowerShell 设置静态专用 IP | Azure"
+   description="了解静态 IP (DIP) 以及如何在 ARM 模式下使用 PowerShell 对其进行管理"
    services="virtual-network"
    documentationCenter="na"
    authors="telmosampaio"
@@ -17,7 +15,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
    ms.date="02/23/2016"
-   wacn.date="06/06/2016"
+   wacn.date="12/26/2016"
    ms.author="jdial" />
 
 # 如何在 Azure 资源管理器中使用 PowerShell 设置静态专用 IP 地址
@@ -30,21 +28,21 @@
 
 [AZURE.INCLUDE [virtual-networks-static-ip-scenario-include](../../includes/virtual-networks-static-ip-scenario-include.md)]
 
-下面的示例 PowerShell 命令需要一个已经基于上述方案创建的简单环境。如果你想要运行本文档中所显示的命令，首先需要构建[创建 VNet](/documentation/articles/virtual-networks-create-vnet-arm-ps/) 中所述的测试环境。
+以下示例 PowerShell 命令需要基于以上方案创建的简单环境。若要运行本文档中所显示的命令，首先需要构建[创建 VNet](/documentation/articles/virtual-networks-create-vnet-arm-ps/) 中所述的测试环境。
 
 ## 如何在创建 VM 时指定静态专用 IP 地址
 若要在名为 *TestVNet* 的 VNet 的 *FrontEnd* 子网中使用静态专用 IP *192.168.1.101* 创建名为 *DNS01* 的 VM，请按照以下步骤进行操作：
 
 [AZURE.INCLUDE [powershell-preview-include.md](../../includes/powershell-preview-include.md)]
 
-1. 为要使用的存储帐户、位置、资源组和凭据设置变量。你将需要为 VM 输入用户名和密码。存储帐户和资源组必须已存在。
+1. 为要使用的存储帐户、位置、资源组和凭据设置变量。需要为 VM 输入用户名和密码。存储帐户和资源组必须已存在。
 
 		$stName = "vnetstorage"
 		$locName = "China North"
 		$rgName = "TestRG"
 	    $cred = Get-Credential -Message "Type the name and password of the local administrator account."
 
-3. 检索你要在其中创建 VM 的虚拟网络和子网。
+3. 检索要在其中创建 VM 的虚拟网络和子网。
 
 	    $vnet = Get-AzureVirtualNetwork -ResourceGroupName TestRG -Name TestVNet	
 	    $subnet = $vnet.Subnets[0].Id
@@ -53,7 +51,7 @@
 
 		$pip = New-AzurePublicIpAddress -Name TestPIP -ResourceGroupName $rgName -Location $locName -AllocationMethod Dynamic
 
-5. 使用要分配给 VM 的静态专用 IP 地址创建 NIC。确保 IP 在你要将 VM 添加到的子网范围中。这是本文的主要步骤，在本文中将专用 IP 设为静态。
+5. 使用要分配给 VM 的静态专用 IP 地址创建 NIC。确保 IP 处于要将 VM 添加到的子网范围中。这是本文的主要步骤，其中将专用 IP 设为静态。
 
 		$nic = New-AzureNetworkInterface -Name TestNIC -ResourceGroupName $rgName -Location $locName -SubnetId $vnet.Subnets[0].Id -PublicIpAddressId $pip.Id -PrivateIpAddress 192.168.1.101
 
@@ -195,4 +193,4 @@
 - 了解[实例层级公共 IP (ILPIP)](/documentation/articles/virtual-networks-instance-level-public-ip/) 地址。
 - 查阅[保留 IP REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn722420.aspx)。
 
-<!---HONumber=Mooncake_1221_2015-->
+<!---HONumber=Mooncake_Quality_Review_1215_2016-->

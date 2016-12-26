@@ -15,7 +15,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="09/02/2016"
-	wacn.date="11/25/2016"
+	wacn.date="12/26/2016"
 	ms.author="jgao"/>
 
 # 使用 Bootstrap 自定义 HDInsight 群集
@@ -97,7 +97,7 @@ Bootstrap 的使用方式有 2 种：
 
 ## 另请参阅
 
-- [在 HDInsight 中创建 Hadoop 群集][hdinsight-provision-cluster]说明了如何使用其他自定义选项来创建 HDInsight 群集。
+- [在 HDInsight 中创建 Hadoop 群集][hdinsight-provision-cluster]说明了如何使用其他自定义选项创建 HDInsight 群集。
 - [为 HDInsight 开发脚本操作脚本][hdinsight-write-script]
 - [在 HDInsight 群集上安装并使用 R][hdinsight-install-r]
 - [在 HDInsight 群集上安装并使用 Solr](/documentation/articles/hdinsight-hadoop-solr-install-v1/)
@@ -109,7 +109,7 @@ Bootstrap 的使用方式有 2 种：
 [powershell-install-configure]: /documentation/articles/powershell-install-configure/
 
 
-[img-hdi-cluster-states]: ./media/hdinsight-hadoop-customize-cluster-v1/HDI-Cluster-state.png "群集创建过程中的阶段"
+[img-hdi-cluster-states]: ./media/hdinsight-hadoop-customize-cluster-v1/HDI-Cluster-state.png "群集创建期间的阶段"
 
 ## <a name="appx-a:-powershell-sample"></a> 附录 A：PowerShell 示例
 
@@ -211,4 +211,4 @@ Bootstrap 的使用方式有 2 种：
 
     #endregion
 
-<!---HONumber=Mooncake_0215_2016-->
+<!---HONumber=Mooncake_Quality_Review_1215_2016-->

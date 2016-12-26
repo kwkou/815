@@ -1,6 +1,6 @@
 <properties
-pageTitle="在 HDInsight 上通过 Pig 使用 DataFu"
-description="DataFu 是适用于 Hadoop 的库的集合。了解如何在 HDInsight 群集上通过 Pig 使用 DataFu。"
+pageTitle="在 HDInsight 上将 DataFu 与 pig 配合使用"
+description="DataFu 是适用于 Hadoop 的库的集合。了解如何在 HDInsight 群集上将 DataFu 与 pig 配合使用。"
 services="hdinsight"
 documentationCenter=""
 authors="Blackmist"
@@ -14,12 +14,12 @@ ms.topic="article"
 ms.tgt_pltfrm="na"
 ms.workload="big-data"
 ms.date="08/23/2016"
-wacn.date="10/25/2016"
+wacn.date="12/26/2016"
 ms.author="larryfr"/>
 
-#在 HDInsight 上通过 pig 使用 DataFu
+#在 HDInsight 上将 DataFu 与 pig 配合使用
 
-DataFu 是适用于 Hadoop 的开放源代码库的集合。在本文档中，你将学习如何在 HDInsight 群集上使用 DataFu 以及如何通过 Pig 使用 DataFu 用户定义函数 (UDF)。
+DataFu 是适用于 Hadoop 的开放源代码库的集合。在本文档中，你将了解如何在 HDInsight 群集上使用 DataFu 以及如何通过 Pig 使用 DataFu 用户定义函数 (UDF)。
 
 ##先决条件
 
@@ -29,9 +29,9 @@ DataFu 是适用于 Hadoop 的开放源代码库的集合。在本文档中，�
 
 * 基本熟悉[在 HDInsight 上使用 Pig](/documentation/articles/hdinsight-use-pig/)
 
-##通过 Pig 使用 DataFu
+##将 DataFu 与 Pig 配合使用
 
-本部分中的步骤假定你熟悉在 HDInsight 上使用 Pig，并仅向提供 Pig Latin 语句，而不是如何在群集上使用它们的步骤。有关在 HDInsight 上使用 Pig 的详细信息，请参阅[将 Pig 与 HDInsight 配合使用](/documentation/articles/hdinsight-use-pig/)。
+本部分中的步骤假定你熟悉在 HDInsight 上使用 Pig，并仅提供 Pig Latin 语句，而不是如何在群集上使用它们的步骤。有关将 Pig 与 HDInsight 配合使用的详细信息，请参阅[将 Pig 与 HDInsight 配合使用](/documentation/articles/hdinsight-use-pig/)。
 
 通常，你将为 DataFu 函数定义别名。例如：
 
@@ -81,4 +81,4 @@ DataFu 是适用于 Hadoop 的开放源代码库的集合。在本文档中，�
 
 * [将 Pig 与 HDInsight 配合使用](/documentation/articles/hdinsight-use-pig/)
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_Quality_Review_1215_2016-->

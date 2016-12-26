@@ -1,5 +1,5 @@
 <properties
-   pageTitle="使用 Azure PowerShell 在 HDInsight 中创建基于 Windows 的 Hadoop 群集 | Azure"
+   pageTitle="使用 Azure PowerShell 创建 HDInsight 中基于 Windows 的 Hadoop 群集 | Azure"
    	description="了解如何使用 Azure PowerShell 创建 Azure HDInsight 的群集。"
    services="hdinsight"
    documentationCenter=""
@@ -15,7 +15,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
    ms.date="08/10/2016"
-   wacn.date="11/25/2016"
+   wacn.date="12/26/2016"
    ms.author="jgao"/>
 
 # 使用 Azure PowerShell 在 HDInsight 中创建基于 Windows 的 Hadoop 群集
@@ -31,10 +31,10 @@
 
 [AZURE.INCLUDE [delete-cluster-warning](../../includes/hdinsight-delete-cluster-warning.md)]
 
-在开始按照本文中的说明操作之前，你必须具有以下内容：
+在开始按照本文中的说明操作之前，你必须具有以下各项：
 
-- Azure 订阅创建新存储帐户。请参阅[获取 Azure 试用版](/pricing/1rmb-trial/)。
-- Azure PowerShell。参阅[安装 Azure PowerShell 1.0](/documentation/articles/hdinsight-administer-use-powershell/#install-azure-powershell-10-and-greater)。
+- Azure 订阅。请参阅[获取 Azure 试用版](/pricing/1rmb-trial/)。
+- Azure PowerShell。请参阅[安装 Azure PowerShell 1.0](/documentation/articles/hdinsight-administer-use-powershell/#install-azure-powershell-10-and-greater)。
 
 
 
@@ -80,9 +80,9 @@ Azure PowerShell 是一个功能强大的脚本编写环境，可用于在 Azure
     Write-Host "`nConnecting to your Azure subscription ..." -ForegroundColor Green
     try{Get-AzureContext}
     catch{
-			Clear-AzureProfile
-			Import-AzurePublishSettingsFile -PublishSettingsFile path/to/<subscription name>-<date>-credentials.publishsettings
-		}
+        Clear-AzureProfile
+        Import-AzurePublishSettingsFile -PublishSettingsFile path/to/<subscription name>-<date>-credentials.publishsettings
+    }
     #endregion
 
     ###########################################
@@ -126,8 +126,8 @@ Azure PowerShell 是一个功能强大的脚本编写环境，可用于在 Azure
 
 ##自定义群集
 
-- 参阅[使用 Bootstrap 自定义 HDInsight 群集](/documentation/articles/hdinsight-hadoop-customize-cluster-bootstrap/#use-azure-powershell)。
-- 参阅[使用脚本操作自定义基于 Windows 的 HDInsight 群集](/documentation/articles/hdinsight-hadoop-customize-cluster-v1/#call-scripts-using-azure-powershell)。
+- 请参阅 [Customize HDInsight clusters using Bootstrap](/documentation/articles/hdinsight-hadoop-customize-cluster-bootstrap/#use-azure-powershell)（使用 Bootstrap 自定义 HDInsight 群集）。
+- 请参阅 [Customize Windows-based HDInsight clusters using Script Action](/documentation/articles/hdinsight-hadoop-customize-cluster-v1/#call-scripts-using-azure-powershell)（使用脚本操作自定义基于 Windows 的 HDInsight 群集）。
 
 
 ##后续步骤
@@ -148,4 +148,4 @@ Azure PowerShell 是一个功能强大的脚本编写环境，可用于在 Azure
 [ssisclustercreate]: http://msdn.microsoft.com/zh-cn/library/mt146774(v=sql.120).aspx
 [ssisclusterdelete]: http://msdn.microsoft.com/zh-cn/library/mt146778(v=sql.120).aspx
 
-<!---HONumber=Mooncake_0215_2016-->
+<!---HONumber=Mooncake_Quality_Review_1215_2016-->

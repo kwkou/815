@@ -1,5 +1,3 @@
-<!-- ARM: tested -->
-
 <properties 
    pageTitle="如何使用模板在 ARM 模式下创建 NSG | Azure"
    description="了解如何使用模板在 ARM 下创建和部署 NSG"
@@ -17,7 +15,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
    ms.date="02/02/2016"
-   wacn.date="07/04/2016"
+   wacn.date="12/26/2016"
    ms.author="jdial" />
 
 # 如何使用模板创建 NSG
@@ -34,7 +32,7 @@
 
 若要使用 PowerShell 部署下载的 ARM 模板，请执行以下步骤。
 
-1. 如果你从未使用过 Azure PowerShell，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)，并始终按照说明进行操作，以登录到 Azure 并选择你的订阅。
+1. 如果从未使用过 Azure PowerShell，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)，按照说明逐步完成操作，登录到 Azure 并选择订阅。
 
 3. 运行 **New-AzureRMResourceGroup** cmdlet 以使用模板创建资源组。
 
@@ -82,16 +80,16 @@
 
 若要使用 Azure CLI 部署 ARM 模板，请执行下列步骤。
 
-1. 如果你从未使用过 Azure CLI，请参阅[安装和配置 Azure CLI](/documentation/articles/xplat-cli-install/)，并按照说明进行操作，直到选择 Azure 帐户和订阅。
-2. 运行 **azure config mode** 命令以切换到资源管理器模式，如下所示。
+1. 如果从未使用过 Azure CLI，请参阅[安装和配置 Azure CLI](/documentation/articles/xplat-cli-install/)，按照说明进行操作，直到选择 Azure 帐户和订阅。
+2. 运行 **azure config mode** 命令以切换到 Resource Manager 模式，如下所示。
 
 		azure config mode arm
 
-	下面是上述命令的预期输出：
+	以上命令的预期输出如下：
 
 		info:    New mode is arm
 
-4. 运行 **azure group deployment create** cmdlet 以使用你在前面下载并修改的模板和参数文件部署新 VNet。在输出后显示的列表说明了所用的参数。
+4. 运行 **azure group deployment create** cmdlet 以使用之前下载并修改的模板和参数文件部署新 VNet。输出所示列表阐释了所用参数。
 
 		azure group create -n TestRG -l chinanorth -f 'https://raw.githubusercontent.com/telmosampaio/azure-templates/master/201-IaaS-WebFrontEnd-SQLBackEnd/azuredeploy.json' -e 'https://raw.githubusercontent.com/telmosampaio/azure-templates/master/201-IaaS-WebFrontEnd-SQLBackEnd/azuredeploy.parameters.json'
 
@@ -113,8 +111,8 @@
 		info:    group create command OK
 
 	- **-n（或 --name）**。要创建的资源组的名称。
-	- **-l（或 --location）**。要创建资源组所在的 Azure 区域。
+	- **-l（或 --location）**。要在其中创建资源组的 Azure 区域。
 	- **-f（或 --template-file）**。ARM 模板文件的路径。
 	- **-e（或 --parameters-file）**。ARM 参数文件的路径。
 
-<!---HONumber=79-->
+<!---HONumber=Mooncake_Quality_Review_1215_2016-->

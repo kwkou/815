@@ -15,7 +15,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="08/08/2016"
-	wacn.date="09/12/2016"
+	wacn.date="12/26/2016"
 	ms.author="cynthn"/>  
 
 
@@ -24,7 +24,7 @@
 
 # 将 Windows VM 移到其他 Azure 订阅或资源组 
 
-本文逐步说明如何在资源组或订阅之间移动 Windows VM。如果最初在个人订阅中创建了 VM，现在想要将其移到公司的订阅以继续工作，则在订阅之间移动 VM 可能很方便。
+本文逐步说明如何在资源组或订阅之间移动 Windows VM。如果最初在个人订阅中创建了 VM，现在想要将其移到公司的订阅以继续工作，则在订阅之间移动 VM 会很方便。
 
 > [AZURE.NOTE] 在移动过程中将创建新的资源 ID。移动 VM 后，需要更新工具和脚本以使用新的资源 ID。
 
@@ -54,17 +54,17 @@
 	
 	Move-AzureRmResource -DestinationResourceGroupName $destinationRG -ResourceId $vm.ResourceId, $storageAccount.ResourceId, $diagStorageAccount.ResourceId, $vNet.ResourceId, $nic.ResourceId, $ip.ResourceId, $nsg.ResourceId
 
-若要将资源移到其他订阅，请包含 **-DestinationSubscriptionId** 参数的值。
+若要将资源移到其他订阅，请添加 **-DestinationSubscriptionId** 参数。
 
 	Move-AzureRmResource -DestinationSubscriptionId "<destinationSubscriptionID>" -DestinationResourceGroupName $destinationRG -ResourceId $vm.ResourceId, $storageAccount.ResourceId, $diagStorageAccount.ResourceId, $vNet.ResourceId, $nic.ResourceId, $ip.ResourceId, $nsg.ResourceId
 
 
 
-系统会要求你确认你需要移动指定资源。请键入 **Y** 确认要删除资源。
+系统会要求你确认你需要移动指定资源。请键入 **Y** 确认要移动资源。
 
   
 ## 后续步骤
 
-可以在资源组和订阅之间移动许多不同类型的资源。有关详细信息，请参阅 [Move resources to new resource group or subscription](/documentation/articles/resource-group-move-resources/)（将资源移到新的资源组或订阅）。
+可以在资源组和订阅之间移动许多不同类型的资源。有关详细信息，请参阅[将资源移到新的资源组或订阅](/documentation/articles/resource-group-move-resources/)。
 
-<!---HONumber=Mooncake_0905_2016-->
+<!---HONumber=Mooncake_Quality_Review_1215_2016-->

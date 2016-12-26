@@ -16,7 +16,7 @@
     ms.devlang="dotnet"
     ms.topic="article"
     ms.date="02/29/2016"
-    wacn.date="12/05/2016"
+    wacn.date="12/26/2016"
     ms.author="cephalin" />
 
 # 在 Azure 中创建连接到虚拟机上运行的 MongoDB 的 Web 应用
@@ -24,11 +24,11 @@
 
 
 ## 背景知识
-以下知识对于学习本教程有用但非必需：
+以下知识对学习本教程有帮助（但并非必需）：
 
 * MongoDB 的 C# 驱动程序。有关针对 MongoDB 开发 C# 应用程序的更多信息，请参阅 [MongoDB CSharp 语言中心][MongoC#LangCenter]。
-* ASP .NET Web 应用程序框架。可通过 [ASP.net 网站][ASP.NET]进行全面了解。
-* ASP .NET MVC Web 应用程序框架。可通过 [ASP.NET MVC 网站][MVCWebSite]进行全面了解。
+* ASP .NET Web 应用程序框架。可在 [ASP.net 网站][ASP.NET]全面了解相关知识。
+* ASP .NET MVC Web 应用程序框架。可在 [ASP.NET MVC 网站][MVCWebSite]上全面了解相关知识。
 * Azure。你可以先阅读 [Azure][WindowsAzure] 上的文章。
 
 ## 先决条件
@@ -41,14 +41,14 @@
 <a id="virtualmachine"></a>
 
 ## 创建虚拟机和安装 MongoDB
-本教程假定你已在 Azure 中创建了一个虚拟机。创建虚拟机后，你需要在该虚拟机上安装 MongoDB：
+本教程假定已在 Azure 中创建一个虚拟机。创建虚拟机后，需要在该虚拟机上安装 MongoDB：
 
-* 若要创建 Windows 虚拟机并安装 MongoDB，请参阅 [Install MongoDB on a virtual machine running Windows Server in Azure（在 Azure 中运行 Windows Server 的虚拟机上安装 MongoDB）][InstallMongoOnWindowsVM]。
+* 若要创建 Windows 虚拟机并安装 MongoDB，请参阅[在 Azure 中运行 Windows Server 的虚拟机上安装 MongoDB][InstallMongoOnWindowsVM]。
 
-在 Azure 中创建虚拟机并安装 MongoDB 后，请务必记住该虚拟机的 DNS 名称（例如“testlinuxvm.chinacloudapp.cn”）以及你在终结点中指定的 MongoDB 的外部端口。本教程后面的步骤中将会用到此信息。
+在 Azure 中创建虚拟机并安装 MongoDB 后，请务必记住该虚拟机的 DNS 名称（例如“testlinuxvm.chinacloudapp.cn”）以及在终结点中指定的 MongoDB 的外部端口。本教程后面的步骤中将会用到此信息。
 
 ## <a id="createapp"></a> 创建应用程序
-在本部分中，将使用 Visual Studio 创建一个名为“My Task List”的 ASP.NET 应用程序，并执行到 Azure App Service Web 应用的初始部署。你将在本地运行该应用程序，但其将连接到你在 Azure 上的虚拟机并使用你在此处创建的 MongoDB 实例。
+在本部分中，将使用 Visual Studio 创建一个名为“My Task List”的 ASP.NET 应用程序，并执行到 Azure App Service Web 应用的初始部署。该应用程序在本地运行，但它会连接到 Azure 上的虚拟机，并使用此处创建的 MongoDB 实例。
 
 1. 在 Visual Studio 中，单击“新建项目”。
    
@@ -73,7 +73,7 @@
     将默认的 ASP.NET 应用程序发布到 Azure App Service Web 应用后，将在浏览器中启动该应用程序。
 
 ## 安装 MongoDB C# 驱动程序
-MongoDB 通过驱动程序为 C# 应用程序提供客户端支持，你需要在本地开发计算机上安装此驱动程序。C# 驱动程序通过 NuGet 提供。
+MongoDB 通过驱动程序为 C# 应用程序提供客户端支持，需要在本地开发计算机上安装此驱动程序。C# 驱动程序通过 NuGet 提供。
 
 安装 MongoDB C# 驱动程序的步骤：
 
@@ -413,7 +413,7 @@ MongoDB C# 驱动程序现已安装。对 **MongoDB.Bson**、**MongoDB.Driver** 
 
     private string connectionString = "mongodb://testlinuxvm.chinacloudapp.cn";
 
-如果虚拟机终结点为 MongoDB 指定了不同的外部端口，你可在连接字符串中指定端口：
+如果虚拟机终结点为 MongoDB 指定了不同的外部端口，可在连接字符串中指定端口：
 
      private string connectionString = "mongodb://testlinuxvm.chinacloudapp.cn:12345";
 
@@ -481,4 +481,4 @@ MongoDB C# 驱动程序现已安装。对 **MongoDB.Bson**、**MongoDB.Driver** 
 [Create an Azure web site]: #createwebsite
 [Deploy the ASP.NET application to the web site using Git]: #deployapp
 
-<!---HONumber=Mooncake_1128_2016-->
+<!---HONumber=Mooncake_Quality_Review_1215_2016-->

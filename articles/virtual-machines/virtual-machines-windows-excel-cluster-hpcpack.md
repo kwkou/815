@@ -16,15 +16,14 @@
  ms.tgt_pltfrm="vm-windows"
  ms.workload="big-compute"
  ms.date="08/25/2016"
- wacn.date="10/24/2016"
- ms.author="danlep"/>  
-
+ wacn.date="12/26/2016"
+ ms.author="danlep"/>
 
 # 开始在 Azure 的 HPC Pack 群集上运行 Excel 和 SOA 工作负荷
 
 本文介绍如何使用 Azure 快速入门模板或 Azure PowerShell 部署脚本将 Microsoft HPC Pack 群集部署到 Azure 虚拟机。此群集使用 Azure 应用商店 VM 映像，这些映像根据设计可以通过 HPC Pack 运行 Microsoft Excel 工作负荷或面向服务的体系结构 (SOA) 工作负荷。你可以使用群集从本地客户端计算机运行简单的 Excel HPC 和 SOA 服务。Excel HPC 服务提供 Excel 工作簿卸载和 Excel 用户定义的函数或 UDF。
 
-[AZURE.INCLUDE [了解部署模型](../../includes/learn-about-deployment-models-both-include.md)]
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-both-include.md)]
 
 下图概略性地显示了用户创建的 HPC Pack 群集。
 
@@ -35,20 +34,20 @@
 
 *   **客户端计算机** - 需要一台基于 Windows 的客户端计算机，向群集提交示例性的 Excel 和 SOA 作业。此外还需一台运行 Azure PowerShell 群集部署脚本（如果选择该部署方法）的 Windows 计算机，以及
 
-*   **Azure 订阅** - 如果没有 Azure 订阅，只需几分钟就能创建一个[免费帐户](/pricing/1rmb-trial/)。
+*   **Azure 订阅** - 如果没有 Azure 订阅，只需几分钟即可创建一个[免费帐户](/pricing/1rmb-trial/)。
 
 *   **内核配额** - 可能需要增加内核配额，尤其是在部署多个多核 VM 大小的群集节点的时候。如果使用的是 Azure 快速入门模板，则 Resource Manager 中的内核配额是基于 Azure 区域的。这种情况下，可能需要增加特定区域的配额。请参阅 [Azure 订阅限制、配额和约束](/documentation/articles/azure-subscription-service-limits/)。若要增加配额，可免费[建立联机客户支持请求](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/)。
 
-*   **Microsoft Office 许可证** - 如果使用包含 Microsoft Excel 的 Marketplace HPC Pack VM 映像部署计算节点，将安装 Microsoft Excel 专业增强版 2013 的 30 天评估版。评估期以后，需要提供有效的 Microsoft Office 许可证来激活 Excel，才能继续运行工作负荷。请参阅本文后面部分的 [Excel 激活](#excel-activation)。
+*   **Microsoft Office 许可证** - 如果使用包含 Microsoft Excel 的 Marketplace HPC Pack VM 映像部署计算节点，将安装 Microsoft Excel Professional Plus 2013 的 30 天评估版。评估期以后，需要提供有效的 Microsoft Office 许可证来激活 Excel，才能继续运行工作负荷。请参阅本文后面部分的 [Excel 激活](#excel-activation)。
 
 
-## 步骤 1。在 Azure 中设置 HPC Pack 群集
+## 步骤 1.在 Azure 中设置 HPC Pack 群集
 
 介绍两种设置群集的选项：第一种，使用 Azure 快速入门模板；第二种，使用 Azure PowerShell 部署脚本。
 
 ### 选项 2.使用 HPC Pack IaaS 部署脚本
 
-HPC Pack IaaS 部署脚本提供了另一种通用的方法来部署 HPC Pack 群集。它会在经典部署模型中创建一个群集，该模板使用 Azure Resource Manager 部署模型。此外，该脚本与 Azure 全球或 Azure 中国服务中的订阅兼容。
+HPC Pack IaaS 部署脚本提供了另一种通用的方法来部署 HPC Pack 群集。它会以经典部署模型创建一个群集，而模板则使用 Azure Resource Manager 部署模型。此外，脚本还与 Azure 全球或 Azure 中国服务中的订阅兼容。
 
 **其他先决条件**
 
@@ -58,7 +57,7 @@ HPC Pack IaaS 部署脚本提供了另一种通用的方法来部署 HPC Pack �
 
 **创建配置文件**
 
- HPC Pack IaaS 部署脚本使用描述 HPC 群集基础结构的 XML 配置文件作为输入。若要部署由 1 个头节点和 18 个计算节点（从包含 Microsoft Excel 的计算节点映像创建）组成的群集，请将你环境的值代入下面的示例配置文件。有关配置文件的详细信息，请参阅脚本文件夹中的 Manual.rtf 文件和[使用 HPC Pack IaaS 部署脚本创建 HPC 群集](/documentation/articles/virtual-machines-windows-classic-hpcpack-cluster-powershell-script/)。
+ HPC Pack IaaS 部署脚本使用描述 HPC 群集基础结构的 XML 配置文件作为输入。若要部署由 1 个头节点和 18 个计算节点（从包含 Microsoft Excel 的计算节点映像创建）组成的群集，请将环境的值代入下面的示例配置文件。有关配置文件的详细信息，请参阅脚本文件夹中的 Manual.rtf 文件和[使用 HPC Pack IaaS 部署脚本创建 HPC 群集](/documentation/articles/virtual-machines-windows-classic-hpcpack-cluster-powershell-script/)。
 
 	<?xml version="1.0" encoding="utf-8"?>
 	<IaaSClusterConfig>
@@ -106,7 +105,7 @@ HPC Pack IaaS 部署脚本提供了另一种通用的方法来部署 HPC Pack �
 
 * 请确保指定 **EnableWebPortal**，以便生成头节点证书并将其导出。
 
-* 该文件指定配置后 PowerShell 脚本 PostConfig.ps1，可在头节点上运行。以下示例脚本可配置 Azure 存储连接字符串、从头节点删除计算节点角色，以及在部署所有节点后将这些节点联机。
+* 该文件指定在头节点上运行的配置后 PowerShell 脚本 PostConfig.ps1。以下示例脚本可配置 Azure 存储连接字符串、从头节点删除计算节点角色，以及在部署所有节点后将这些节点联机。
 
 	    # add the HPC Pack powershell cmdlets
 	        Add-PSSnapin Microsoft.HPC
@@ -146,7 +145,7 @@ HPC Pack IaaS 部署脚本提供了另一种通用的方法来部署 HPC Pack �
 
     .\\New-HpcIaaSCluster.ps1 -ConfigFile E:\\HPCDemoConfig.xml -AdminUserName MyAdminName
 
-HPC Pack 部署脚本可运行一段时间。此脚本的一项功能是导出并下载群集证书，然后将其保存到客户端计算机上当前用户的 Documents 文件夹中。此脚本生成如下消息。在下面的步骤中，需在相应的证书存储中导入证书。
+HPC Pack 部署脚本可运行一段时间。此脚本的一项功能是导出并下载群集证书，然后将其保存到客户端计算机上当前用户的 Documents 文件夹中。此脚本将生成类似于下面的消息。在下面的步骤中，需在相应的证书存储中导入证书。
     
     You have enabled REST API or web portal on HPC Pack head node. Please import the following certificate in the Trusted Root Certification Authorities certificate store on the computer where you are submitting job or accessing the HPC web portal:
     C:\Users\hpcuser\Documents\HPCWebComponent_HPCExcelHN004_20150707162011.cer
@@ -157,21 +156,21 @@ HPC Pack 部署脚本可运行一段时间。此脚本的一项功能是导出�
 
 当对生产工作负荷使用 ComputeNodeWithExcel VM 映像时，需要提供有效的 Microsoft Office 许可密钥才能在计算节点上激活 Excel。否则，Excel 评估版将在 30 天后过期，运行 Excel 工作簿会失败并显示 COMException (0x800AC472)。
 
-可通过以下操作让 Excel 再次获得 30 天的评估期：登录到头节点并通过 HPC 群集管理器 clusrun 所有 Excel 计算节点上的 `%ProgramFiles(x86)%\Microsoft Office\Office15\OSPPREARM.exe`。最多可以重置两次。然后，必须提供有效的 Office 许可密钥。
+可通过以下操作让 Excel 重获 30 天的评估期：登录到头节点并通过 HPC 群集管理器 clusrun 所有 Excel 计算节点上的 `%ProgramFiles(x86)%\Microsoft Office\Office15\OSPPREARM.exe`。最多可以重获两次评估期。然后，必须提供有效的 Office 许可密钥。
 
-安装在 VM 映像上的 Office 专业增强版 2013 是使用通用批量许可密钥 (GVLK) 的批量版。可以通过密钥管理服务 (KMS)/基于 Active Directory 的激活 (AD-BA) 或多次激活密钥 (MAK) 激活它。
+安装在 VM 映像上的 Office Professional Plus 2013 是使用通用批量许可密钥 (GVLK) 的批量版。可以通过密钥管理服务 (KMS)/基于 Active Directory 的激活 (AD-BA) 或多次激活密钥 (MAK) 进行激活。
 
     * 若要使用 KMS/AD-BA，请使用现有的 KMS 服务器，或使用 Microsoft Office 2013 批量许可包设置新服务器。（如果你想在头节点上设置服务器。）然后，通过 Internet 或电话激活 KMS 主机密钥。然后运行 clusrun `ospp.vbs` 以设置 KMS 服务器和端口，并激活所有 Excel 计算节点上的 Office。 
     
     * 若要使用 MAK，请先运行 clusrun `ospp.vbs` 以输入密钥，然后通过 Internet 或电话激活所有 Excel 计算节点。 
 
->[AZURE.NOTE]Office 专业增强版 2013 的零售产品密钥不适用于此 VM 映像。如果拥有不属此 Office 专业增强版 2013 批量版的 Office 或 Excel 版本的有效密钥和安装媒体，则也可使用这些版本。请首先卸载此批量版，然后安装所拥有的版本。可捕获重新安装的 Excel 计算节点作为自定义 VM 映像，以便在大规模部署中使用。
+>[AZURE.NOTE]Office Professional Plus 2013 的零售产品密钥不适用于此 VM 映像。如果拥有不属此 Office Professional Plus 2013 批量版的 Office 或 Excel 版本的有效密钥和安装媒体，则也可以使用这些版本。请首先卸载此批量版，然后安装所拥有的版本。可捕获重新安装的 Excel 计算节点作为自定义 VM 映像，以便在大规模部署中使用。
 
 ### 卸载 Excel 工作簿
 
 按照下列步骤卸载 Excel 工作簿，使之能够在 Azure 中的 HPC Pack 群集上运行。为此，必须已在客户端计算机上安装 Excel 2010 或 Excel 2013。
 
-1. 使用步骤 1 中的选项之一通过 Excel 计算节点映像部署 HPC Pack 群集。获取群集证书文件 (.cer) 和群集用户名和密码。
+1. 使用步骤 1 中的选项之一通过 Excel 计算节点映像部署 HPC Pack 群集。获取群集证书文件 (.cer) 和群集用户名及密码。
 
 2. 在客户端计算机上导入 Cert:\\CurrentUser\\Root 下的群集证书。
 
@@ -192,13 +191,11 @@ HPC Pack 部署脚本可运行一段时间。此脚本的一项功能是导出�
 
 7.	打开 Excel 工作簿。在“开发”功能区上，单击“COM 外接程序”并确认 HPC Pack Excel COM 外接程序已成功加载。
 
-    ![HPC Pack 的 Excel 外接程序][addin]  
+    ![HPC Pack 的 Excel 外接程序][addin]
 
+8.	通过更改注释行编辑 Excel 中的 VBA 宏 HPCControlMacros，如下面的脚本中所示。替换为环境中的相应值。
 
-8.	通过更改注释行编辑 Excel 中的 VBA 宏 HPCControlMacros，如下面的脚本中所示。替换为你的环境的相应值。
-
-    ![HPC Pack 的 Excel 宏][macro]  
-
+    ![HPC Pack 的 Excel 宏][macro]
 
 	    'Private Const HPC_ClusterScheduler = "HEADNODE_NAME"
     		Private Const HPC_ClusterScheduler = "hpc01.chinaeast.chinacloudapp.cn"
@@ -223,34 +220,31 @@ HPC Pack 部署脚本可运行一段时间。此脚本的一项功能是导出�
 
 若要运行 Excel UDF，请按照前面的步骤 1 - 3 设置客户端计算机。对于 Excel UDF，不需在计算节点上安装 Excel 应用程序。因此，在创建群集计算节点时，可以选择常规计算节点映像而非使用 Excel 的计算节点映像。
 
->[AZURE.NOTE] 在 Excel 2010 和 Excel 2013 群集连接器对话框中有 34 字符限制。可以使用此对话框指定运行 UDF 的群集。如果完整的群集名称较长（例如 hpcexcelhn01.chinaeast.chinacloudapp.cn），则会在对话框中容纳不下。解决方法是设置一个计算机范围的变量（例如 *CCP\_IAASHN*），其值为群集的长名称。然后，在对话框中输入 *%CCP\_IAASHN%* 作为群集头节点名称。
+>[AZURE.NOTE] Excel 2010 和 Excel 2013 群集连接器对话框有 34 字符限制。使用此对话框指定运行 UDF 的群集。如果完整的群集名称较长（例如 hpcexcelhn01.chinaeast.chinacloudapp.cn），则会在对话框中容纳不下。解决方法是设置一个计算机范围的变量（例如 *CCP\_IAASHN*），其值为群集的长名称。然后，在对话框中输入 *%CCP\_IAASHN%* 作为群集头节点名称。
 
-成功部署群集后，继续使用以下步骤来运行示例内置 Excel UDF。对于自定义 Excel UDF，请参阅这些[资源](http://social.technet.microsoft.com/wiki/contents/articles/1198.windows-hpc-and-microsoft-excel-resources-for-building-cluster-ready-workbooks.aspx)来构建 XLL并将它们部署在 IaaS 群集上。
+成功部署群集后，继续使用以下步骤来运行示例内置 Excel UDF。对于自定义 Excel UDF，请参阅这些[资源](http://social.technet.microsoft.com/wiki/contents/articles/1198.windows-hpc-and-microsoft-excel-resources-for-building-cluster-ready-workbooks.aspx)来构建 XLL 并将它们部署在 IaaS 群集上。
 
-1.	打开一个新的 Excel 工作簿。在**“开发”**功能区上，单击**“外接程序”**。然后，在对话框中单击**“浏览”**，导航到 %CCP\_HOME%Bin\\XLL32 文件夹，并选择示例 ClusterUDF32.xll。如果 ClusterUDF32 未存在于客户端计算机上，请从头节点上的 %CCP\_HOME%Bin\\XLL32 文件夹复制它。
+1.	打开一个新的 Excel 工作簿。在“开发”功能区上，单击“外接程序”。然后，在对话框中单击“浏览”，导航到 %CCP\_HOME%Bin\\XLL32 文件夹，并选择示例 ClusterUDF32.xll。如果 ClusterUDF32 未存在于客户端计算机上，请从头节点上的 %CCP\_HOME%Bin\\XLL32 文件夹进行复制。
 
-    ![选择 UDF][udf]  
+    ![选择 UDF][udf]
 
+2.	单击“文件”>“选项”>“高级”。在“公式”下，选中“允许用户定义的 XLL 函数运行计算群集”。然后，单击“选项”，在“群集头节点名称”中输入完整的群集名称 。（如前所述，此输入框限制为 34 个字符，因此较长的群集名称可能容纳不下。可以在此处使用计算机范围的变量作为群集的长名称。）
 
-2.	单击**“文件”**>**“选项”**>**“高级”**。在“公式”下，选中“允许用户定义的 XLL 函数运行计算群集”。然后，单击**“选项”**，在**“群集头节点名称”**中输入完整的群集名称 。（如前所述，此输入框限制为 34 个字符，因此较长的群集名称可能容纳不下。可以在此处使用计算机范围的变量作为群集的长名称。）
-
-    ![配置 UDF][options]  
-
+    ![配置 UDF][options]
 
 3.	若要在群集上运行 UDF 计算，请单击值为 XllGetComputerNameC() 的单元格，然后按 Enter。该函数只检索运行 UDF 的计算节点的名称。第一次运行时，凭据对话框将提示你输入用于连接到 IaaS 群集的用户名和密码。
 
-    ![运行 UDF][run]  
-
+    ![运行 UDF][run]
 
     当有许多单元格要计算时，按 Alt-Shift-Ctrl + F9 可运行所有单元格上的计算。
 
 ## 步骤 3.从本地客户端运行 SOA 工作负荷
 
-若要在 HPC Pack IaaS 群集上运行常规 SOA 应用程序，首先请使用步骤 1 中的方法之一部署该群集。在此示例中，请指定一个泛型计算节点映像，因为计算节点上不需 Excel。然后，执行以下步骤。
+若要在 HPC Pack IaaS 群集上运行常规 SOA 应用程序，首先请使用步骤 1 中的方法之一部署该群集。在本例中，请指定一个泛型计算节点映像，因为计算节点上不需 Excel。然后，执行以下步骤。
 
-1. 检索群集证书之后，在客户端计算机上的 Cert: \\CurrentUser\\Root 下导入它。
+1. 检索群集证书之后，在客户端计算机上的 Cert: \\CurrentUser\\Root 下导入该证书。
 
-2. 安装 [HPC Pack 2012 R2 Update 3 SDK](http://www.microsoft.com/download/details.aspx?id=49921) 和 [HPC Pack 2012 R2 Update 3 客户端实用工具](https://www.microsoft.com/download/details.aspx?id=49923)。可以使用这些工具开发和运行 SOA 客户端应用程序。
+2. 安装 [HPC Pack 2012 R2 Update 3 SDK](http://www.microsoft.com/download/details.aspx?id=49921) 和 [HPC Pack 2012 R2 Update 3 客户端实用工具](https://www.microsoft.com/download/details.aspx?id=49923)。使用这些工具可以开发和运行 SOA 客户端应用程序。
 
 3. 下载 HelloWorldR2 [示例代码](https://www.microsoft.com/download/details.aspx?id=41633)。在 Visual Studio 2010 或 2012 中打开 HelloWorldR2.sln。
 
@@ -285,7 +279,7 @@ HPC Pack 部署脚本可运行一段时间。此脚本的一项功能是导出�
 		BasicHttpBinding binding = new BasicHttpBinding(BasicHttpSecurityMode.TransportWithMessageCredential);
 		binding.Security.Message.ClientCredentialType = BasicHttpMessageCredentialType.UserName;    binding.Security.Transport.ClientCredentialType = HttpClientCredentialType.None;
 
-* （可选）在 SessionStartInfo 中将 UseAzureQueue 标志设置为 true。如果未设置，则在群集名称具有 Azure 域后缀并且 TransportScheme 为 Http 时，默认情况下它将设置为 true。
+* （可选）在 SessionStartInfo 中将 UseAzureQueue 标志设置为 true。如果未设置，则在群集名称具有 Azure 域后缀并且 TransportScheme 为 Http 的情况下，它将默认设置为 true。
 
     	info.UseAzureQueue = true;
 
@@ -302,10 +296,9 @@ HPC Pack 部署脚本可运行一段时间。此脚本的一项功能是导出�
 
 1. 停止 VM。
 
-2. 分别为会话、代理、代理工作线程和数据服务添加 TCP 端口 9090、9087、9091、9094
+2. 分别为会话、中转站、中转工作线程和数据服务添加 TCP 端口 9090、9087、9091、9094
 
-    ![配置终结点][endpoint]  
-
+    ![配置终结点][endpoint]
 
 3. 启动 VM。
 
@@ -318,7 +311,6 @@ HPC Pack 部署脚本可运行一段时间。此脚本的一项功能是导出�
 * 有关使用 HPC Pack 部署和管理 SOA 服务的详细信息，请参阅[在 Microsoft HPC Pack 中管理 SOA 服务](https://technet.microsoft.com/zh-cn/library/ff919412.aspx)。
 
 <!--Image references-->
-
 [scenario]: ./media/virtual-machines-windows-excel-cluster-hpcpack/scenario.png
 [github]: ./media/virtual-machines-windows-excel-cluster-hpcpack/github.png
 [template]: ./media/virtual-machines-windows-excel-cluster-hpcpack/template.png
@@ -333,4 +325,4 @@ HPC Pack 部署脚本可运行一段时间。此脚本的一项功能是导出�
 [endpoint]: ./media/virtual-machines-windows-excel-cluster-hpcpack/endpoint.png
 [udf]: ./media/virtual-machines-windows-excel-cluster-hpcpack/udf.png
 
-<!---HONumber=Mooncake_1017_2016-->
+<!---HONumber=Mooncake_Quality_Review_1215_2016-->

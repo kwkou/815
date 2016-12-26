@@ -1,8 +1,6 @@
-<!-- ARM: tested -->
-
 <properties 
-   pageTitle="在资源管理器中使用 PowerShell 部署多 NIC VM | Azure"
-   description="了解如何在资源管理器中使用 PowerShell 部署多 NIC VM"
+   pageTitle="在 Resource Manager 中使用 PowerShell 部署多 NIC VM | Azure"
+   description="了解如何在 Resource Manager 中使用 PowerShell 部署多 NIC VM"
    services="virtual-network"
    documentationCenter="na"
    authors="telmosampaio"
@@ -17,7 +15,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
    ms.date="02/02/2016"
-   wacn.date="06/29/2016"
+   wacn.date="12/26/2016"
    ms.author="jdial" />
 
 #使用 PowerShell 部署多 NIC VM
@@ -30,33 +28,33 @@
 
 [AZURE.INCLUDE [virtual-network-deploy-multinic-scenario-include.md](../../includes/virtual-network-deploy-multinic-scenario-include.md)]
 
-由于目前你不能使用具有单个 NIC 的 VM 以及具有同一个资源组中的多个 NIC 的 VM，因此你将在一个资源组中实现后端服务器，而在其他资源组中实现所有其他组件。以下步骤使用名为 *IaaSStory* 的资源组作为主资源组，并在名为 *IaaSStory-BackEnd* 的资源组中实现后端服务器。
+由于目前不能将具有单个 NIC 的 VM 和具有多个 NIC 的 VM 用于同一资源组，因此要在一个资源组中实现后端服务器，在另一资源组中实现所有其他组件。以下步骤使用名为 *IaaSStory* 的资源组作为主资源组，并在名为 *IaaSStory-BackEnd* 的资源组中实现后端服务器。
 
 ## <a name="Prerequisites"></a> 先决条件
 
-在部署后端服务器之前，你需要先使用此方案的所有必需资源部署主资源组。若要部署这些资源，请按照以下步骤操作。
+部署后端服务器之前，需为主资源组部署此方案的所有必需资源。若要部署这些资源，请按照以下步骤操作。
 
 1. 导航到[模板页](https://github.com/Azure/azure-quickstart-templates/tree/master/IaaS-Story/11-MultiNIC)。
 2. 在模板页中“父资源组”的右侧，单击“部署到 Azure”。
 3. 如果需要，更改参数值，然后按照 Azure 门户预览中的步骤部署资源组。
 
-> [AZURE.IMPORTANT]请确保你的存储帐户名称是唯一的。不能在 Azure 中有重复的存储帐户名称。
+> [AZURE.IMPORTANT] 请确保存储帐户名称是唯一的。Azure 中不能存在重复的存储帐户名称。
 
 [AZURE.INCLUDE [azure-ps-prerequisites-include.md](../../includes/azure-ps-prerequisites-include.md)]
 
 ## 部署后端 VM
 
-后端 VM 取决于下面列出的资源的创建。
+后端 VM 取决于下列资源的创建。
 
-- **数据磁盘的存储帐户**。为了提高性能，数据库服务器上的数据磁盘将使用固态驱动器 (SSD) 技术，这需要高级存储帐户。请确保你部署的 Azure 位置支持高级存储。
+- **数据磁盘的存储帐户**。为了提高性能，数据库服务器上的数据磁盘将使用固态驱动器 (SSD) 技术，这需要高级存储帐户。请确保部署到的 Azure 位置支持高级存储。
 - **NIC**。每个 VM 都将具有两个 NIC，一个用于数据库访问，另一个用于管理。
 - **可用性集**。所有数据库服务器都将添加到单个可用性集，以确保在维护期间至少有一个 VM 已启动且正在运行。  
 
 ### 步骤 1 - 启动脚本
 
-你可以在[此处](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/IaaS-Story/11-MultiNIC/arm/virtual-network-deploy-multinic-arm-ps.ps1)下载所用的完整 PowerShell 脚本。请按照以下步骤更改要在你的环境中使用的脚本。
+可在[此处](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/IaaS-Story/11-MultiNIC/arm/virtual-network-deploy-multinic-arm-ps.ps1)下载所用的完整 PowerShell 脚本。按照以下步骤更改脚本，以便用于具体环境。
 
-1. 基于你在上面[先决条件](#Prerequisites)中部署的现有资源组更改以下变量的值。
+1. 根据在上述[先决条件](#Prerequisites)中部署的现有资源组，更改以下变量的值。
 
 		$existingRGName        = "IaaSStory"
 		$location              = "China North"
@@ -65,7 +63,7 @@
 		$remoteAccessNSGName   = "NSG-RemoteAccess"
 		$stdStorageAccountName = "wtestvnetstoragestd"
 
-2. 基于要用于后端部署的值更改以下变量的值。
+2. 根据要用于后端部署的值，更改以下变量的值。
 
 		$backendRGName         = "IaaSStory-Backend"
 		$prmStorageAccountName = "wtestvnetstorageprm"
@@ -83,16 +81,16 @@
 		$ipAddressPrefix       = "192.168.2."
 		$numberOfVMs           = 2
 
-3. 检索你的部署所需的现有资源。
+3. 检索部署所需的现有资源。
 
 		$vnet                  = Get-AzureVirtualNetwork -Name $vnetName -ResourceGroupName $existingRGName
 		$backendSubnet         = $vnet.Subnets|?{$_.Name -eq $backendSubnetName}
 		$remoteAccessNSG       = Get-AzureNetworkSecurityGroup -Name $remoteAccessNSGName -ResourceGroupName $existingRGName
 		$stdStorageAccount     = Get-AzureStorageAccount -Name $stdStorageAccountName -ResourceGroupName $existingRGName
 
-### 步骤 2 - 为你的 VM 创建必要的资源
+### 步骤 2 - 为 VM 创建必要的资源
 
-你需要为数据磁盘创建一个新的资源组和存储帐户，并为所有 VM 创建一个可用性集。你还需要每个 VM 的本地管理员帐户凭据。若要创建这些资源，请执行以下步骤。
+需要创建新的资源组，为数据磁盘创建存储帐户，并为所有 VM 创建可用性集。还需要每个 VM 的本地管理员帐户凭据。若要创建这些资源，请执行以下步骤。
 
 1. 创建新的资源组。
 
@@ -113,9 +111,9 @@
 
 ### 步骤 3 - 创建 NIC 和后端 VM
 
-你需要使用循环来根据需要创建任意多的 VM，并在循环中创建所需的 NIC 和 VM。若要创建 NIC 和 VM，请执行以下步骤。
+需要使用循环创建所需数量的 VM，并在循环中创建所需的 NIC 和 VM。若要创建 NIC 和 VM，请执行以下步骤。
 
-1. 启动 `for` 循环以基于 `$numberOfVMs` 变量的值重复执行命令以根据需要创建任意多次一个 VM 和两个 NIC。
+1. 启动 `for` 循环，基于 `$numberOfVMs` 变量的值重复执行命令，从而以所需次数创建一个 VM 和两个 NIC。
 
 		for ($suffixNumber = 1; $suffixNumber -le $numberOfVMs; $suffixNumber++){
 
@@ -126,7 +124,7 @@
 		    $nic1 = New-AzureNetworkInterface -Name $nic1Name -ResourceGroupName $backendRGName `
 				-Location $location -SubnetId $backendSubnet.Id -PrivateIpAddress $ipAddress1
 
-3. 创建用于远程访问的 NIC。请注意此 NIC 的 NSG 关联到它的方式。
+3. 创建用于远程访问的 NIC。请注意，此 NIC 有关联的 NSG。
 
 		    $nic2Name = $nicNamePrefix + $suffixNumber + "-RA"
 		    $ipAddress2 = $ipAddressPrefix + (53 + $suffixNumber)
@@ -171,9 +169,9 @@
 
 ### 步骤 4 - 运行脚本
 
-现在，你已根据需要下载并更改了脚本，请运行该脚本以创建具有多个 NIC 的后端数据库 VM。
+既已根据需要下载并更改了脚本，可运行该脚本以创建具有多个 NIC 的后端数据库 VM。
 
-1. 保存脚本并从 **PowerShell** 命令提示符或 **PowerShell ISE** 运行它。你将看到最初的输出，如下所示。
+1. 保存脚本并从 **PowerShell** 命令提示符或 **PowerShell ISE** 运行它。最初的输出将如下所示。
 
 		ResourceGroupName : IaaSStory-Backend
 		Location          : chinanorth
@@ -310,4 +308,4 @@
 		RequestId           : xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
 		StatusCode          : OK
 
-<!---HONumber=Mooncake_1221_2015-->
+<!---HONumber=Mooncake_Quality_Review_1215_2016-->

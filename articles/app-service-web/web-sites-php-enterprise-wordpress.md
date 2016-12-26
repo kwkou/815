@@ -15,11 +15,11 @@
     ms.tgt_pltfrm="na"
     ms.workload="web"
     ms.date="10/24/2016"
-    wacn.date="12/05/2016"
+    wacn.date="12/26/2016"
     ms.author="sumuth" />
 
 # Azure App Service 上的企业级 WordPress
-Azure 应用服务为大规模的关键任务 [WordPress][wordpress] 网站提供了一个可扩展、安全且易用的环境。Microsoft 自身在运营 [Office][officeblog] 和 [Bing][bingblog] 博客等企业级网站。本文档说明如何使用 Azure App Service Web Apps 建立和维护一个可以处理大量访客、基于云的企业级 WordPress 网站。
+Azure 应用服务为大规模的关键任务 [WordPress][wordpress] 网站提供了一个可扩展、安全且易用的环境。Microsoft 自身在运营 [Office][officeblog] 和 [Bing][bingblog] 博客等企业级网站。本文档说明如何使用 Azure App Service Web 应用建立和维护一个可以处理大量访客、基于云的企业级 WordPress 网站。
 
 ## <a name="planning"></a>体系结构与规划
 基本的 WordPress 安装有只有两个要求。
@@ -28,10 +28,10 @@ Azure 应用服务为大规模的关键任务 [WordPress][wordpress] 网站提�
 
 * **PHP 5.2.4 或更高版本** - Azure App Service 目前提供 [PHP 5.4、5.5 和 5.6 版本][phpwebsite]。
 
-	> [AZURE.NOTE] 我们建议始终在最新版本的 PHP 上运行，以确保您拥有最新的安全补丁。
+	> [AZURE.NOTE] 我们建议始终在最新版本的 PHP 上运行，以确保拥有最新的安全补丁。
 
 ### 基本部署
-通过只使用基本要求，您可以在一个 Azure 区域中创建一款基本解决方案。
+只使用基本要求，可以在一个 Azure 区域中创建一个基本解决方案。
 
 ![在单个 Azure 区域中托管的 Azure Web 应用和 MySQL 数据库][basic-diagram]  
 
@@ -39,15 +39,15 @@ Azure 应用服务为大规模的关键任务 [WordPress][wordpress] 网站提�
 尽管用户可以通过创建多个 Web 应用实例扩展其应用程序，但所有内容都托管在特定地理区域的数据中心。此区域之外的访客在使用网站时，响应速度可能会很慢，如果此区域的数据中心停机，您的应用也将无法使用。
 
 ### 多区域部署
-通过使用 Azure [流量管理器][trafficmanager]，可以在多个地理地区扩展您的 WordPress 网站，同时仅为访客提供一个 URL。所有访客都通过流量管理器进来，然后基于负载均衡配置被路由到某一区域。
+通过使用 Azure [流量管理器][trafficmanager]，可以在多个地理地区扩展 WordPress 网站，同时仅为访客提供一个 URL。所有访客都通过流量管理器进来，然后基于负载均衡配置被路由到某一区域。
 
 ![一个托管在多个区域中的 Azure Web 应用，使用 MySQL 群集 CGE][multi-region-diagram]
 
-在每个区域中，WordPress 网站仍会扩展到多个 Web Apps 实例，但这种扩展是区域特定的；高流量区域的扩展方式可以与低流量区域不同。
+在每个区域中，WordPress 网站仍会扩展到多个 Web 应用实例，但这种扩展是区域特定的；高流量区域的扩展方式可以与低流量区域不同。
 
-可以使用 [MySQL 群集 CGE][cge]进行复制和路由到多个 MySQL 数据库。
+可以使用 [MySQL 群集 CGE][cge] 进行复制和路由到多个 MySQL 数据库。
 
->[AZURE.NOTE] 对于多区域部署，需要在 IaaS 虚拟机中托管 MySQL 群集。Azure 上的 MySQL 数据库尚不支持多区域部署。
+>[AZURE.NOTE] 对于多区域部署，需要在 IaaS 虚拟机中托管 MySQL 群集。Azure 上的 MySQL 数据库不支持多区域部署。
 
 ### 使用媒体存储和缓存的多区域部署
 如果该网站接受上载或主机媒体文件，请使用 Azure Blob 存储。如果你需要进行缓存，可考虑 [Redis 缓存][rediscache]。
@@ -65,7 +65,7 @@ Azure 应用服务为大规模的关键任务 [WordPress][wordpress] 网站提�
 | **自定义域名** |[在 Azure App Service 中配置自定义域名][customdomain] |
 | **HTTPS** |[在 Azure App Service 中启用 Web 应用的 HTTPS][httpscustomdomain] |
 | **预生产验证** |[在 Azure 应用服务中设置 Web 应用的过渡环境][staging]<p>将 Web 应用从过渡切换到生产也会移动 WordPress 配置。在将过渡应用切换为生产应用之前，您应确保所有设置均针对您生产应用的要求进行了更新。</p> |
-| **监视和故障排除** |[在 Azure App Service 中启用 Web 应用的诊断日志][log]和[在 Azure App Service 中监视 Web Apps][monitor] |
+| **监视和故障排除** |[在 Azure App Service 中启用 Web 应用的诊断日志][log]和[在 Azure App Service 中监视 Web 应用][monitor] |
 | **部署站点** |[在 Azure App Service 中部署 Web 应用][deploy] |
 
 #### 可用性和灾难恢复
@@ -79,7 +79,7 @@ Azure 应用服务为大规模的关键任务 [WordPress][wordpress] 网站提�
 
 | 为此，请执行以下操作... | 使用此方法... |
 | --- | --- |
-| **了解 App Service 实例功能** |[定价详细信息，其中包括应用服务层的功能][websitepricing] |
+| **了解应用服务实例功能** |[定价详细信息，其中包括应用服务层的功能][websitepricing] |
 | **缓存资源** |[Redis 缓存][rediscache] |
 | **扩展您的应用程序** |[在 Azure 应用服务中缩放 Web 应用][websitescale]和 [MySQL 集群 CGE][cge] |
 
@@ -108,7 +108,7 @@ Azure 应用服务为大规模的关键任务 [WordPress][wordpress] 网站提�
 * **导出和导入** - 针对不含大量定制内容的网站，或者只需移动内容的位置。
 * **备份和还原** - 针对包含大量定制内容、您想要移动所有内容的网站。
 
-使用下列部分中的一个迁移您的网站。
+使用下述部分之一迁移你的网站。
 
 #### 导出和导入方法
 1. 使用 [WordPress 导出][export]导出您的现有网站。
@@ -121,42 +121,42 @@ Azure 应用服务为大规模的关键任务 [WordPress][wordpress] 网站提�
 
 导入网站后，您可能需要执行以下步骤，以启用导入文件中不包含的设置。
 
-| 如果您在使用... | 采取的措施： |
+| 如果你在使用... | 采取的措施： |
 | --- | --- |
 | **固定链接** |从新网站的 WordPress 仪表板中，单击**设置** -> **固定链接**，然后更新固定链接结构 |
 | **图像/媒体链接** |若要将链接更新到新位置，请使用搜索和替换工具 [Velvet Blues Update URLs 插件][velvet]，或在您的数据库中手动更新 |
 | **主题** |转到**外观** -> **主题**并根据需要更新网站主题 |
-| **菜单** |如果您的主题支持菜单，那么您主页的链接可能仍有嵌入的旧子目录。转到**外观** -> **菜单**并对其进行更新 |
+| **菜单** |如果主题支持菜单，那么主页的链接可能仍有嵌入的旧子目录。转到**外观** -> **菜单**并对其进行更新 |
 
 #### 备份和恢复方法
 1. 使用 [WordPress 备份][wordpressbackup]上的信息，备份您现有的 WordPress 网站。
 2. 使用[备份您的数据库][wordpressdbbackup]中的信息，备份您现有的数据库。
 3. 创建数据库并恢复备份。
 
-    1.  在“Azure 上的 MySQL 数据库”中创建一个数据库，或者在 [Windows][mysqlwindows] 或 [Linux][mysqllinux] VM 上设置一个 MySQL 数据库。
-    2. 使用 MySQL 客户端，如 [MySQL Workbench][workbench]，连接到新的数据库，然后导入您的 WordPress 数据库。
-    3. 更新数据库，将域条目更改为新的 Azure App Service 域。例如，mywordpress.chinacloudsites.cn。使用[搜索和替换为 WordPress 数据库脚本][searchandreplace]，安全地更改所有实例。
+   1.  在“Azure 上的 MySQL 数据库”中创建一个数据库，或者在 [Windows][mysqlwindows] 或 [Linux][mysqllinux] VM 上设置一个 MySQL 数据库。
+   2. 使用 MySQL 客户端，如 [MySQL Workbench][workbench]，连接到新数据库，然后导入 WordPress 数据库。
+   3. 更新数据库，将域条目更改为新 Azure App Service 域。例如，mywordpress.chinacloudsites.cn。使用[搜索和替换为 WordPress 数据库脚本][searchandreplace]，安全地更改所有实例。
 4. 在 Azure 门户预览中创建 Web 应用并发布 WordPress 备份。
 
-    1. 在 [Azure 门户预览][mgmtportal]中创建带数据库的 Web 应用，方法是： 单击“新建”->“Web + 移动”->“Web 应用”->“创建”。配置所有所需的设置来创建空 Web 应用。
-    2. 在 WordPress 备份中，找到 **wp-config.php** 文件，并在编辑器中打开它。将以下项替换为新的 MySQL 数据库的信息。
+   1. 在 [Azure 门户预览][mgmtportal]中创建带数据库的 Web 应用，方法是： 单击“新建”->“Web + 移动”->“Web 应用”->“创建”。配置所有所需的设置来创建空 Web 应用。
+   2. 在 WordPress 备份中，找到 **wp-config.php** 文件，并在编辑器中打开它。将以下项替换为新 MySQL 数据库的信息。
 
       * **DB\_NAME** - 数据库的用户名称
       * **DB\_USER** - 用来访问数据库的用户名称
       * **DB\_PASSWORD** - 用户密码
 
         更改这些条目之后，保存并关闭 **wp-config.php** 文件。
-    3. 使用[在 Azure App Service 中部署 Web 应用][deploy]信息来启用您想要使用的部署方法，然后将 WordPress 备份部署到 Azure App Service 中的 Web 应用。
-5. 部署 WordPress 网站后，您应该能够使用网站的 *. azurewebsite.net URL（作为 App Service Web 应用）访问新的站点。
+   3. 使用[在 Azure App Service 中部署 Web 应用][deploy]信息来启用您想要使用的部署方法，然后将 WordPress 备份部署到 Azure App Service 中的 Web 应用。
+5. 部署 WordPress 网站后，你应该能够使用网站的 *. azurewebsite.net URL（作为应用服务 Web 应用）访问新站点。
 
-### 配置您的网站
-创建 WordPress 网站或将其迁移之后，可以使用以下信息来改进性能或启用其他功能。
+### 配置网站
+创建 WordPress 网站或将其迁移之后，可以根据以下信息改进性能或启用其他功能。
 
 | 为此，请执行以下操作... | 使用此方法... |
 | --- | --- |
 | **设置 App Service 计划模式、大小和启用缩放** |[在 Azure App Service 中缩放 Web 应用][websitescale] |
 | **启用持久的数据库连接** |默认情况下，WordPress 不使用持久的数据库连接，这可能导致数据库的连接在多次连接后成为限制。若要启用持久连接，请安装（持久连接适配器插件）[https://wordpress.org/plugins/persistent-database-connection-updater/installation/]。 |
-| **提高性能** |<ul><li><p><a href="http://ppe.blogs.msdn.com/b/windowsazure/archive/2013/11/18/disabling-arr-s-instance-affinity-in-windows-azure-web-sites.aspx">禁用 ARR cookie</a> - 在多个 Web Apps 实例上运行 WordPress 时可以提高性能</p></li><li><p>启用缓存。<a href="/documentation/services/redis-cache/">Redis 缓存</a>（预览）可以与 <a href="https://wordpress.org/plugins/redis-object-cache/">Redis 对象缓存 WordPress 插件</a>一起使用，</p></li><li><p><a href="http://ruslany.net/2010/03/make-wordpress-faster-on-iis-with-wincache-1-1/">如何使用 Wincache 提高 WordPress 速度</a> - 对于 Web 应用，Wincache 默认处于启用状态</p></li><li><p>[在 Azure 应用服务中缩放 Web 应用][websitescale]，以及使用 <a href="http://www.mysql.com/products/cluster/">MySQL 群集 CGE</a></p></li></ul> |
+| **提高性能** |<ul><li><p><a href="http://ppe.blogs.msdn.com/b/windowsazure/archive/2013/11/18/disabling-arr-s-instance-affinity-in-windows-azure-web-sites.aspx">禁用 ARR cookie</a> - 在多个 Web Apps 实例上运行 WordPress 时可以提高性能</p></li><li><p>启用缓存。<a href="/documentation/services/redis-cache">Redis 缓存</a>（预览）可以与 <a href="https://wordpress.org/plugins/redis-object-cache/">Redis 对象缓存 WordPress 插件</a>一起使用，</p></li><li><p><a href="http://ruslany.net/2010/03/make-wordpress-faster-on-iis-with-wincache-1-1/">如何使用 Wincache 提高 WordPress 速度</a> - 对于 Web 应用，Wincache 默认处于启用状态</p></li><li><p>[在 Azure 应用服务中缩放 Web 应用][websitescale]，以及使用 <a href="http://www.mysql.com/products/cluster/">MySQL 群集 CGE</a></p></li></ul> |
 | **使用 blob 进行存储处理** |<ol><li><p>[创建 Azure 存储帐户](/documentation/articles/storage-create-storage-account/)</p></li><li><p>了解如何[使用内容分发网络 (CDN) ][cdn]地理分配 Blob 中存储的数据。</p></li><li><p>安装和配置 <a href="https://wordpress.org/plugins/windows-azure-storage/">WordPress 插件的 Azure 存储</a>。</p><p>有关该插件的详细设置和配置信息，请参阅<a href="http://plugins.svn.wordpress.org/windows-azure-storage/trunk/UserGuide.docx">用户指南</a>。</p> </li></ol> |
 | **启用电子邮件** | 安装 WordPress 的 <a href="http://wordpress.org/plugins/sendgrid-email-delivery-simplified">SendGrid 插件</a>。 |
 | **配置自定义域名** |[在 Azure App Service 中配置自定义域名][customdomain] |
@@ -232,4 +232,4 @@ Azure 应用服务为大规模的关键任务 [WordPress][wordpress] 网站提�
 [storesendgrid]: https://azure.microsoft.com/marketplace/partners/sendgrid/sendgrid-azure/
 [cdn]: /documentation/articles/cdn-overview/
 
-<!---HONumber=Mooncake_1128_2016-->
+<!---HONumber=Mooncake_Quality_Review_1215_2016-->

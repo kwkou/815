@@ -16,7 +16,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="big-data"
     ms.date="10/21/2016"
-    wacn.date="12/12/2016"
+    wacn.date="12/26/2016"
     ms.author="jgao" />  
 
 
@@ -76,7 +76,7 @@
 
         {"id":"job_1415651640909_0026"}
 
-1. 要检查作业的状态，请使用以下命令。将 **JOBID** 替换为上一步骤返回的值。例如，如果返回值为 `{"id":"job_1415651640909_0026"}`，则 **JOBID** 将是 `job_1415651640909_0026`。
+1. 若要检查作业的状态，请使用以下命令。将 **JOBID** 替换为上一步骤返回的值。例如，如果返回值为 `{"id":"job_1415651640909_0026"}`，则 **JOBID** 将是 `job_1415651640909_0026`。
    
         curl -G -u USERNAME:PASSWORD -d user.name=USERNAME https://CLUSTERNAME.azurehdinsight.cn/templeton/v1/jobs/JOBID | jq .status.state
    
@@ -92,7 +92,7 @@
    
         azure storage blob list <container-name> example/curl
    
-    要下载文件，请使用以下命令：
+    若要下载文件，请使用以下命令：
    
         azure storage blob download <container-name> <blob-name> <destination-file>
    
@@ -143,4 +143,4 @@
 
 [powershell-here-strings]: http://technet.microsoft.com/zh-cn/library/ee692792.aspx
 
-<!---HONumber=Mooncake_1205_2016-->
+<!---HONumber=Mooncake_Quality_Review_1215_2016-->

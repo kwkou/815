@@ -1,5 +1,3 @@
-<!-- ARM: tested -->
-
 <properties 
    pageTitle="如何在 ARM 模式下使用 CLI 设置静态专用 IP | Azure"
    description="了解静态 IP (DIP) 以及如何在 ARM 模式下使用 CLI 对其进行管理"
@@ -17,7 +15,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
    ms.date="03/15/2016"
-   wacn.date="06/06/2016"
+   wacn.date="12/26/2016"
    ms.author="jdial" />
 
 # 如何在 Azure CLI 中设置静态专用 IP 地址
@@ -30,12 +28,12 @@
 
 [AZURE.INCLUDE [virtual-networks-static-ip-scenario-include](../../includes/virtual-networks-static-ip-scenario-include.md)]
 
-下面的示例 Azure CLI 命令需要已创建简单的环境。如果你想要运行本文档中所显示的命令，首先需要构建[创建 VNet](/documentation/articles/virtual-networks-create-vnet-arm-cli/)中所述的测试环境。
+以下示例 Azure CLI 命令需要已创建的简单环境。若要按本文档所示运行命令，首先需要构建[创建 VNet](/documentation/articles/virtual-networks-create-vnet-arm-cli/) 中所述的测试环境。
 
 ## 如何在创建 VM 时指定静态专用 IP 地址
 若要在名为 *TestVNet* 的 VNet 的 *FrontEnd* 子网中使用静态专用 IP *192.168.1.101* 创建名为 *DNS01* 的 VM，请按照以下步骤进行操作：
 
-1. 如果你从未使用过 Azure CLI，请参阅[安装和配置 Azure CLI](/documentation/articles/xplat-cli-install/)，并按照说明进行操作，直到选择 Azure 帐户和订阅。
+1. 如果从未使用过 Azure CLI，请参阅[安装和配置 Azure CLI](/documentation/articles/xplat-cli-install/)，并按照说明进行操作，直到选择 Azure 帐户和订阅。
 
 2. 运行 **azure config mode** 命令以切换到资源管理器模式，如下所示。
 
@@ -45,7 +43,7 @@
 
 		info:    New mode is arm
 
-3. 运行 **azure network public-ip create** 以为该 VM 创建公共 IP。在输出后显示的列表说明了所用的参数。
+3. 运行 **azure network public-ip create** 以为该 VM 创建公共 IP。输出后显示的列表阐释了所用参数。
 
 		azure network public-ip create -g TestRG -n TestPIP -l centralus
 	
@@ -68,7 +66,7 @@
 	- **-n（或 --name）**。公共 IP 的名称。
 	- **-l（或 --location）**。将在其中创建公共 IP 的 Azure 区域。对于我们的方案，为 *centralus*。
 
-3. 运行 **azure network nic create** 命令以创建具有静态专用 IP 的 NIC。在输出后显示的列表说明了所用的参数。
+3. 运行 **azure network nic create** 命令，创建具有静态专用 IP 的 NIC。输出后显示的列表阐释了所用参数。
 
 		azure network nic create -g TestRG -n TestNIC -l centralus -a 192.168.1.101 -m TestVNet -k FrontEnd
 
@@ -97,7 +95,7 @@
 	- **-m（或 --subnet-vnet-name）**。将在其中创建 NIC 的 VNet 的名称。
 	- **-k（或 --subnet-name）**。将在其中创建 NIC 的子网的名称。
 
-4. 运行 **azure vm create** 命令以使用上面创建的公共 IP 和 NIC 创建 VM。在输出后显示的列表说明了所用的参数。
+4. 运行 **azure vm create** 命令，使用上面创建的公共 IP 和 NIC 创建 VM。输出后显示的列表阐释了所用参数。
 
 		azure vm create -g TestRG -n DNS01 -l centralus -y Windows -f TestNIC -i TestPIP -F TestVNet -j FrontEnd -o vnetstorage -q bd507d3a70934695bc2128e3e5a255ba__RightImage-Windows-2012R2-x64-v14.2 -u adminuser -p AdminP@ssw0rd
 
@@ -182,7 +180,7 @@
 	info:    vm show command OK
 
 ## 如何从 VM 中删除静态专用 IP 地址
-无法在用于资源管理器的 Azure CLI 中删除 NIC 的静态专用 IP 地址。你必须创建使用动态 IP 的新 NIC，从 VM 中删除以前的 NIC，然后将新 NIC 添加到 VM 中。若要更改上述命令使用的 VM 的 NIC，请执行以下步骤。
+无法在用于 Resource Manager 的 Azure CLI 中删除 NIC 的静态专用 IP 地址。必须创建使用动态 IP 的新 NIC，从 VM 删除以前的 NIC，然后将新 NIC 添加到 VM。若要更改上述命令使用的 VM 的 NIC，请执行以下步骤。
 	
 1. 运行 **azure network nic create** 命令以使用动态 IP 分配创建新 NIC。请注意，这次不需要指定 IP 地址。
 
@@ -263,8 +261,8 @@
 
 ## 后续步骤
 
-- 了解[保留公共 IP 地址](/documentation/articles/virtual-networks-reserved-public-ip/)。
+- 了解[保留公共 IP](/documentation/articles/virtual-networks-reserved-public-ip/) 地址。
 - 了解[实例层级公共 IP (ILPIP)](/documentation/articles/virtual-networks-instance-level-public-ip/) 地址。
 - 查阅[保留 IP REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn722420.aspx)。
 
-<!---HONumber=76-->
+<!---HONumber=Mooncake_Quality_Review_1215_2016-->

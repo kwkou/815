@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Linux VM 的常见问题 | Azure"
-	description="回答了通过 Resource Manager 模型创建的 Linux 虚拟机的一些常见问题。"
+	pageTitle="Linux VM 常见问题 | Azure"
+	description="解答有关通过 Resource Manager 模型创建的 Linux 虚拟机的一些常见问题。"
 	services="virtual-machines-linux"
 	documentationCenter=""
 	authors="cynthn"
@@ -16,7 +16,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="08/16/2016"
-	wacn.date="10/24/2016"
+	wacn.date="12/26/2016"
 	ms.author="cynthn"/>  
 
 
@@ -33,7 +33,7 @@
 
 每个数据磁盘的容量高达 1 TB。你可以使用的数据磁盘的数目取决于虚拟机的大小。有关详细信息，请参阅[虚拟机大小](/documentation/articles/virtual-machines-linux-sizes/)。
 
-Azure 存储帐户提供可用于操作系统磁盘和任意数据磁盘的存储。每个磁盘都是一个 .vhd 文件，以页 blob 形式存储。有关定价详细信息，请参阅 [Storage Pricing Details](/pricing/details/storage/)（存储定价详细信息）。
+Azure 存储帐户提供可用于操作系统磁盘和任意数据磁盘的存储。每个磁盘都是一个 .vhd 文件，以页 blob 形式存储。有关定价详细信息，请参阅[存储定价详细信息](/pricing/details/storage/)。
 
 
 ## 如何访问我的虚拟机？
@@ -51,7 +51,7 @@ Azure 存储帐户提供可用于操作系统磁盘和任意数据磁盘的存�
 
 ## 我是否可以复制或克隆现有的 Azure VM？
 
-是的。有关说明，请参阅[如何在 Resource Manager 部署模型中创建 Linux 虚拟机的副本](/documentation/articles/virtual-machines-linux-copy-vm/)。
+可以。有关说明，请参阅[如何在 Resource Manager 部署模型中创建 Linux 虚拟机的副本](/documentation/articles/virtual-machines-linux-copy-vm/)。
 
 ## 创建 VM 后能否向 VM 添加 NIC？
 
@@ -117,4 +117,4 @@ Azure 存储帐户提供可用于操作系统磁盘和任意数据磁盘的存�
 	</tr>
 </table>
 
-<!---HONumber=Mooncake_1017_2016-->
+<!---HONumber=Mooncake_Quality_Review_1215_2016-->
