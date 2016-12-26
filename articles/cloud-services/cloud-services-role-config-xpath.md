@@ -13,14 +13,14 @@ ms.tgt_pltfrm="na"
 ms.devlang="na" 
 ms.topic="article" 
 ms.date="08/10/2016" 
-wacn.date="12/05/2016" 
+wacn.date="12/26/2016" 
 ms.author="adegeo"/>
 
-# 使用 XPath 将角色配置设置公共为环境变量
+# 使用 XPath 将角色配置设置公开为环境变量
 
-在云服务辅助角色或 Web 角色服务定义文件中，你可以将运行时配置值公开为环境变量。支持以下 XPath 值（分别对应于 API 值）。
+在云服务辅助角色或 Web 角色服务定义文件中，可以将运行时配置值公开为环境变量。支持以下 XPath 值（分别对应于 API 值）。
 
-[Microsoft.WindowsAzure.ServiceRuntime](https://msdn.microsoft.com/zh-cn/library/microsoft.windowsazure.serviceruntime.roleenvironment.aspx) 库中也提供了这些 XPath 值。
+也可通过 [Microsoft.WindowsAzure.ServiceRuntime](https://msdn.microsoft.com/zh-cn/library/microsoft.windowsazure.serviceruntime.roleenvironment.aspx) 库提供这些 XPath 值。
 
 ## <a name="app-running-in-emulator"></a> 应用在模拟器中运行
 
@@ -143,7 +143,7 @@ ms.author="adegeo"/>
 
 ## 示例
 
-下面是使用名为 `TestIsEmulated`、设置为 [@emulated xpath value](#app-running-in-emulator) 的环境变量创建启动任务的辅助角色示例。
+以下是使用名为 `TestIsEmulated`，设置为 [@emulated xpath value](#app-running-in-emulator) 的环境变量创建启动任务的辅助角色示例。
 
 ```xml
 <WorkerRole name="Role1">
@@ -190,4 +190,4 @@ ms.author="adegeo"/>
 
 为角色启用[远程桌面](/documentation/articles/cloud-services-role-enable-remote-desktop/)。
 
-<!---HONumber=Mooncake_1128_2016-->
+<!---HONumber=Mooncake_Quality_Review_1215_2016-->
