@@ -14,17 +14,18 @@
 	ms.tgt_pltfrm="mobile-xamarin-ios"
 	ms.devlang="dotnet"
 	ms.topic="article"
-	ms.date="10/01/2016"
-	wacn.date="11/21/2016"
+	ms.date="10/12/2016"
+	wacn.date="12/26/2016"
 	ms.author="adrianha"/>
 
 # 向 Xamarin.iOS 应用添加推送通知
 
 [AZURE.INCLUDE [app-service-mobile-selector-get-started-push](../../includes/app-service-mobile-selector-get-started-push.md)]
 
-##概述
+## 概述
+本教程介绍如何向 [Xamarin.iOS 快速入门](/documentation/articles/app-service-mobile-xamarin-ios-get-started/)项目添加推送通知，以便每次插入一条记录时，向设备发送一条推送通知。
 
-本教程是在必须先完成的 [Xamarin.iOS 快速入门](/documentation/articles/app-service-mobile-xamarin-ios-get-started/)教程的基础之上制作的。将向 Xamarin.iOS 快速入门项目添加推送通知，以便每次插入一条记录时，发送一条推送通知。如果不使用下载的快速入门服务器项目，必须将推送通知扩展包添加到项目。有关服务器扩展包的详细信息，请参阅 [Work with the .NET backend server SDK for Azure Mobile Apps](/documentation/articles/app-service-mobile-dotnet-backend-how-to-use-server-sdk/)（使用适用于 Azure 移动应用的 .NET 后端服务器 SDK）。
+如果不使用下载的快速入门服务器项目，则需要推送通知扩展包。有关详细信息，请参阅[使用适用于 Azure 移动应用的 .NET 后端服务器 SDK](/documentation/articles/app-service-mobile-dotnet-backend-how-to-use-server-sdk/)。
 
 ##先决条件
 
@@ -32,28 +33,13 @@
 
 * 物理 iOS 设备。iOS 模拟器不支持推送通知。
 
-##在 Apple 的开发人员门户上为推送通知注册应用
+## 在 Apple 的开发人员门户上为推送通知注册应用
+[AZURE.INCLUDE [启用 Apple 推送通知](../../includes/enable-apple-push-notifications.md)]
 
-[AZURE.INCLUDE [通知中心：Xamarin 启用 Apple 推送通知](../../includes/notification-hubs-xamarin-enable-apple-push-notifications.md)]
+## 配置移动应用以发送推送通知
+[AZURE.INCLUDE [app-service-mobile-apns-configure-push](../../includes/app-service-mobile-apns-configure-push.md)]
 
-##配置移动应用以发送推送通知
-
-若要将应用配置为发送通知，请创建一个新中心，并针对要使用的平台通知服务配置它。
-
-1. 在 [Azure 门户预览](https://portal.azure.cn/)中，依次单击“浏览”>“移动应用”> 移动应用 >“设置”>“移动”>“推送”>“通知中心”>“+ 通知中心”，提供新通知中心的名称和命名空间，然后单击“确定”按钮。
-
-	![](./media/app-service-mobile-xamarin-ios-get-started-push/mobile-app-configure-notification-hub.png)
-
-2. 在“创建通知中心”边栏选项卡中，单击“创建”。
-
-3. 单击“推送”>“Apple (APNS)”>“上载证书”。上载先前导出的.p12 推送证书文件。如果已创建用于开发和测试的开发推送证书，请务必选择“沙盒”。否则，请选择“生产”。
-
-	![](./media/app-service-mobile-xamarin-ios-get-started-push/mobile-app-upload-apns-cert.png)
-
-现在，服务已配置为在 iOS 上使用通知中心。
-
-##更新服务器项目以发送推送通知
-
+## 更新服务器项目以发送推送通知
 [AZURE.INCLUDE [app-service-mobile-update-server-project-for-push-template](../../includes/app-service-mobile-update-server-project-for-push-template.md)]
 
 ##配置 Xamarin.iOS 项目
@@ -158,4 +144,4 @@
 
 <!-- URLs. -->
 
-<!---HONumber=Mooncake_1114_2016-->
+<!---HONumber=Mooncake_1219_2016-->

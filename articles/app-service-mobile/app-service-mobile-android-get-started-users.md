@@ -5,7 +5,8 @@
 	documentationCenter="android"
 	authors="yuaxu"
 	manager="erikre"
-	editor=""/>
+	editor=""/>  
+
 
 <tags
 	ms.service="app-service-mobile"
@@ -13,8 +14,8 @@
 	ms.tgt_pltfrm="mobile-android"
 	ms.devlang="java"
 	ms.topic="article"
-	ms.date="07/18/2016"
-	wacn.date="11/21/2016"
+	ms.date="10/01/2016"
+	wacn.date="12/26/2016"
 	ms.author="yuaxu"/>
 
 # 将身份验证添加到 Android 应用
@@ -33,11 +34,11 @@
 
 [AZURE.INCLUDE [app-service-mobile-restrict-permissions-dotnet-backend](../../includes/app-service-mobile-restrict-permissions-dotnet-backend.md)]
 
-+ 在 Android Studio 中，打开完成 [Get started with Mobile Apps]（移动应用入门）教程时创建的项目，在“运行”菜单中单击“运行应用”，然后验证在应用程序启动后是否引发状态代码为 401（“未授权”）的未经处理的异常。
+* 在 Android Studio 中，打开通过[移动应用入门]教程完成的项目。从“运行”菜单中单击“运行应用”，然后验证启动该应用后，是否会引发状态代码为 401（“未授权”）的未经处理的异常。
+  
+     发生此异常的原因是应用尝试以未经身份验证的用户身份访问后端，但 *TodoItem* 表现在要求身份验证。
 
-	 发生此异常的原因是应用尝试以未经身份验证的用户身份访问后端，但 _TodoItem_ 表现在要求身份验证。
-
-接下来，需要更新应用程序，以便在从移动应用后端请求资源之前对用户进行身份验证。
+接下来，更新应用程序，以便在从移动应用后端请求资源之前对用户进行身份验证。
 
 ## 向应用程序添加身份验证
 
@@ -51,12 +52,16 @@
 
 完成此基本身份验证教程后，请考虑继续学习以下教程之一：
 
-+ [Enable offline sync for your Android app](/documentation/articles/app-service-mobile-android-get-started-offline-data/)（为 Android 应用启用脱机同步）：
++ [将推送通知添加到 Android 应用](/documentation/articles/app-service-mobile-android-get-started-push/)
+  了解如何将移动应用后端配置为使用 Azure 通知中心发送推送通知。
+
++ [为 Android 应用启用脱机同步](/documentation/articles/app-service-mobile-android-get-started-offline-data/)
   了解如何使用移动应用后端向应用添加脱机支持。脱机同步允许最终用户与移动应用交互（查看、添加或修改数据），即使在没有网络连接时也是如此。
 
 
 
 <!-- Anchors. -->
+
 [Register your app for authentication and configure Mobile Services]: #register
 [Restrict table permissions to authenticated users]: #permissions
 [Add authentication to the app]: #add-authentication
@@ -67,5 +72,6 @@
 
 <!-- URLs. -->
 [Get started with Mobile Apps]: /documentation/articles/app-service-mobile-android-get-started/
+[移动应用入门]: /documentation/articles/app-service-mobile-android-get-started/
 
-<!---HONumber=Mooncake_0919_2016-->
+<!---HONumber=Mooncake_1219_2016-->

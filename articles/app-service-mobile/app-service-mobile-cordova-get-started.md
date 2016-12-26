@@ -7,7 +7,8 @@
     manager="erikre"
     editor=""
     tags=""
-    keywords="cordova,javascript,移动,客户端" />
+    keywords="cordova,javascript,移动,客户端" />  
+
 
 <tags
     ms.service="app-service-mobile"
@@ -16,7 +17,7 @@
     ms.devlang="javascript"
     ms.topic="hero-article"
     ms.date="10/01/2016"
-    wacn.date="11/21/2016"
+    wacn.date="12/26/2016"
     ms.author="adrianha"/>
 
 #创建 Apache Cordova 应用
@@ -40,8 +41,8 @@
 也可以绕过 Visual Studio，直接使用 Apache Cordova 命令行。在 Mac 计算机上学习本教程时，这种做法相当有效。本教程不介绍如何使用命令行编译 Apache Cordova 客户端应用程序。
 
 ## 创建新的 Azure 移动应用后端
-
 [AZURE.INCLUDE [app-service-mobile-dotnet-backend-create-new-service](../../includes/app-service-mobile-dotnet-backend-create-new-service.md)]
+
 
 ## 配置服务器项目
 
@@ -56,10 +57,12 @@
 完成本快速入门教程后，请继续学习下列教程之一：
 
 * 将[身份验证添加]到 Apache Cordova 应用。
+* 将[推送通知添加]到 Apache Cordova 应用。
 
 详细了解 Azure 应用服务的重要概念。
 
 * [身份验证]
+* [推送通知]
 
 了解如何使用 SDK。
 
@@ -76,9 +79,9 @@
 [身份验证添加]: /documentation/articles/app-service-mobile-cordova-get-started-users/
 [推送通知添加]: /documentation/articles/app-service-mobile-cordova-get-started-push/
 [身份验证]: /documentation/articles/app-service-mobile-auth/
-
+[推送通知]: /documentation/articles/notification-hubs-push-notification-overview/
 [Apache Cordova SDK]: /documentation/articles/app-service-mobile-cordova-how-to-use-client-library/
 [ASP.NET Server SDK]: /documentation/articles/app-service-mobile-dotnet-backend-how-to-use-server-sdk/
 [Node.js Server SDK]: /documentation/articles/app-service-mobile-node-backend-how-to-use-server-sdk/
 
-<!---HONumber=Mooncake_0919_2016-->
+<!---HONumber=Mooncake_1219_2016-->
