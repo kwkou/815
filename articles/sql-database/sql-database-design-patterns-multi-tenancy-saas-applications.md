@@ -15,7 +15,7 @@
     ms.tgt_pltfrm="NA"
     ms.workload="sqldb-design"
     ms.date="11/08/2016"
-    wacn.date="12/19/2016"
+    wacn.date="12/26/2016"
 ms.author="carlrab" />
 
 # 多租户 SaaS 应用程序与 Azure SQL 数据库的设计模式
@@ -160,4 +160,4 @@ SQL 数据库中的弹性池结合租户隔离与租户数据库之间的资源�
 
 	
 
-<!---HONumber=Mooncake_1010_2016-->
+<!---HONumber=Mooncake_1212_2016-->

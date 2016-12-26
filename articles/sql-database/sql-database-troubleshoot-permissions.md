@@ -1,6 +1,6 @@
 <properties
 	pageTitle="如何执行管理任务，例如重置管理员密码 | Azure"
-	description="介绍如何在 SQL 数据库中执行常见管理任务。例如，重置管理员密码，授予和删除访问权限。"
+	description="介绍如何在 SQL 数据库中执行常见管理任务。例如重置管理员密码、授予和删除访问权限。"
 	services="sql-database"
 	documentationCenter=""
 	authors="v-shysun"
@@ -15,7 +15,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="09/13/2016"
-	wacn.date="10/17/2016"
+	wacn.date="12/26/2016"
 	ms.author="v-shysun"/>  
 
 
@@ -31,10 +31,10 @@
 
 ## 重置逻辑服务器的管理员密码
 
-- 在 [Azure 经典管理门户](https://manage.windowsazure.cn)中，单击“SQL Server”，从列表中选择服务器，然后单击“重置密码”。
+- 在 [Azure 门户预览](https://portal.azure.cn)中，单击“SQL Server”，从列表中选择服务器，然后单击“重置密码”。
 
 ## 帮助确保只允许经过授权的 IP 地址访问服务器
-- 请参阅[如何：在 SQL 数据库上配置防火墙设置](/documentation/articles/sql-database-configure-firewall-settings-powershell/)。
+- 请参阅[如何：在 SQL 数据库上配置防火墙设置](/documentation/articles/sql-database-configure-firewall-settings/)。
 
 ## 在用户数据库中创建包含的数据库用户
 - 使用 [CREATE USER](https://msdn.microsoft.com/zh-cn/library/ms173463.aspx) 语句，并参阅[包含的数据库用户 - 使你的数据库可移植](https://msdn.microsoft.com/zh-cn/library/ff929188.aspx)。
@@ -45,4 +45,4 @@
 ## 在虚拟 master 数据库中为高权限用户创建其他登录名
 -使用 [CREATE LOGIN](https://msdn.microsoft.com/zh-cn/library/ms189751.aspx) 语句，并参阅[管理 Azure SQL 数据库中的数据库和登录名](/documentation/articles/sql-database-manage-logins/)的“管理登录名”部分以了解详细信息。
 
-<!---HONumber=Mooncake_1010_2016-->
+<!---HONumber=Mooncake_Quality_Review_1215_2016-->

@@ -14,12 +14,13 @@
     ms.tgt_pltfrm="powershell"
     ms.workload="data-management" 
     ms.date="06/22/2016" 
-    wacn.date="11/16/2016"
+    wacn.date="12/26/2016"
     ms.author="srinia"/>
 
 # 使用 PowerShell 监视和管理弹性数据库池 
 
 > [AZURE.SELECTOR]
+- [Azure 门户预览](/documentation/articles/sql-database-elastic-pool-manage-portal/)
 - [PowerShell](/documentation/articles/sql-database-elastic-pool-manage-powershell/)
 - [C#](/documentation/articles/sql-database-elastic-pool-manage-csharp/)
 - [T-SQL](/documentation/articles/sql-database-elastic-pool-manage-tsql/)
@@ -33,7 +34,7 @@
 ## 先决条件
 
 * Azure PowerShell 1.0 或更高版本。有关详细信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)。
-* 弹性数据库池只能在 SQL 数据库 V12 服务器中使用。如果你有一个 SQL 数据库 V11 服务器，可以通过一个步骤[使用 PowerShell 升级到 V12 并创建池](/documentation/articles/sql-database-upgrade-server-powershell/)。
+* 弹性数据库池只能在 SQL 数据库 V12 服务器中使用。如果有一个 SQL 数据库 V11 服务器，可以通过一个步骤[使用 PowerShell 升级到 V12 并创建池](/documentation/articles/sql-database-upgrade-server-portal/)。
 
 
 ##<a name="Move-a-database-into-an-elastic-pool"></a> 将数据库移入弹性池
@@ -51,61 +52,61 @@
 
 ## 获取池操作的状态
 
-创建一个池需要一些时间。你可以使用 [Get-AzureRmSqlElasticPoolActivity](https://msdn.microsoft.com/zh-cn/library/azure/mt603812.aspx) cmdlet 跟踪池操作（包括创建和更新）的状态。
+创建池需要一些时间。可以使用 [Get-AzureRmSqlElasticPoolActivity](https://msdn.microsoft.com/zh-cn/library/azure/mt603812.aspx) cmdlet 跟踪池操作（包括创建和更新）的状态。
 
 	Get-AzureRmSqlElasticPoolActivity –ResourceGroupName “resourcegroup1” –ServerName “server1” –ElasticPoolName “elasticpool1” 
 
 
 ## 获取将弹性数据库移入和移出池的状态
 
-移动数据库需要一些时间。你可以使用 [Get AzureRmSqlDatabaseActivity](https://msdn.microsoft.com/zh-cn/library/azure/mt603687.aspx) cmdlet 跟踪移动状态。
+移动数据库需要一些时间。可以使用 [Get AzureRmSqlDatabaseActivity](https://msdn.microsoft.com/zh-cn/library/azure/mt603687.aspx) cmdlet 跟踪移动状态。
 
 	Get-AzureRmSqlDatabaseActivity -ResourceGroupName "resourcegroup1" -ServerName "server1" -DatabaseName "database1" -ElasticPoolName "elasticpool1"
 
 ## 获取池的资源使用情况数据
 
-可以检索的以资源池限制值百分比形式表示的指标：
+以资源池限制的百分比形式所表示的可以检索的指标：
 
 
 | 指标名称 | 说明 |
 | :-- | :-- |
-| cpu\_percent | 以池的限制百分比形式表示的平均计算使用率。 |
-| physical\_data\_read\_percent | 以基于池的限制的百分比形式表示的平均 I/O 使用率。 |
-| log\_write\_percent | 以池的限制百分比形式表示的平均写入资源使用率。 | 
-| DTU\_consumption\_percent | 以池的 eDTU 限制百分比形式表示的平均 eDTU 使用率 | 
-| storage\_percent | 以池的存储限制百分比形式表示的平均存储使用率。 |  
-| workers\_percent | 以基于池的限制的百分比形式表示的最大并发工作线程（请求）数量。 |  
-| sessions\_percent | 以基于池的限制的百分比形式表示的最大并发会话（请求）数量。 | 
-| eDTU\_limit | 在该时间间隔内该弹性池的当前最大弹性池 DTU 设置。 |
-| storage\_limit | 在该时间间隔内该弹性池的当前最大弹性池存储限制设置（以兆字节为单位）。 |
-| eDTU\_used | 在此时间间隔内池使用的平均 eDTU 数。 |
+| cpu\_percent | 以池限制的百分比形式所表示的平均计算使用率。 |
+| physical\_data\_read\_percent | 以基于池限制的百分比形式所表示的平均 I/O 使用率。 |
+| log\_write\_percent | 以池限制的百分比形式所表示的平均写入资源使用率。 | 
+| DTU\_consumption\_percent | 以池的 eDTU 限制的百分比形式所表示的平均 eDTU 使用率 | 
+| storage\_percent | 以池的存储限制的百分比形式所表示的平均存储使用率。 |  
+| workers\_percent | 以基于池的限制的百分比形式所表示的最大并发辅助角色（请求）数量。 |  
+| sessions\_percent | 以基于池的限制的百分比形式所表示的最大并发会话数量。 | 
+| eDTU\_limit | 在此时间间隔内该弹性池的当前最大弹性池 DTU 设置。 |
+| storage\_limit | 在此时间间隔内该弹性池的当前最大弹性池存储限制设置（以兆字节为单位）。 |
+| eDTU\_used | 在此时间间隔内池使用的平均 eDTU。 |
 | storage\_used | 在此时间间隔内池使用的平均存储空间（以字节为单位） |
 
-**指标粒度/保持期：**
+**指标粒度/保留期：**
 
 * 将以 5 分钟的粒度返回数据。
 * 数据保留期为 35 天。
 
-此 cmdlet 和 API 将能够在一次调用中检索的行数限制为 1000 行（大约 3 天的数据，如果粒度值为 5 分钟的话）。不过，可以使用不同的开始/结束时间间隔来多次调用此命令，以便检索更多数据
+此 cmdlet 和 API 将能够在一次调用中检索的行数限制为 1000 行（以 5 分钟的粒度为准，为大约 3 天的数据）。不过，可以使用不同的开始/结束时间间隔来多次调用此命令，以检索更多数据
 
-要检索指标：
+检索指标：
 
 	$metrics = (Get-AzureRmMetric -ResourceId /subscriptions/<subscriptionId>/resourceGroups/FabrikamData01/providers/Microsoft.Sql/servers/fabrikamsqldb02/elasticPools/franchisepool -TimeGrain ([TimeSpan]::FromMinutes(5)) -StartTime "4/18/2015" -EndTime "4/21/2015")  
 
 
 ##<a name="elastic-database-monitoring"></a> 获取弹性数据库的资源使用情况数据
 
-这些 API 与当前用来监视单独数据库的资源使用情况的 (V12) API 相同，但存在以下语义差异。
+这些 API 与用于监视单独数据库的资源使用情况的当前 (V12) API 相同，但存在以下语义差异。
 
-就此 API 来说，检索的指标表示为为该池设置的单个最大 eDTU（或者 CPU、IO 等基础指标的等效最大值）的百分比。例如，对于任何此类指标来说，50% 的使用率表示特定资源消耗为父池中该资源的每个数据库上限的 50%。
+对于此 API，检索的指标表示为为该池设置的单个最大 eDTU（或者 CPU、IO 等基础指标的等效最大值）的百分比。例如，对于任何此类指标来说，50% 的使用率表示特定资源消耗为父池中该资源的每个数据库上限的 50%。
 
-要检索指标：
+检索指标：
 
     $metrics = (Get-AzureRmMetric -ResourceId /subscriptions/<subscriptionId>/resourceGroups/FabrikamData01/providers/Microsoft.Sql/servers/fabrikamsqldb02/databases/myDB -TimeGrain ([TimeSpan]::FromMinutes(5)) -StartTime "4/18/2015" -EndTime "4/21/2015") 
 
 ##<a name="add-an-alert-to-a-pool-resource"></a> 向池资源添加警报
 
-可以向资源添加警报规则，以便在资源达到你设置的使用阈值时，向 [URL 终结点](https://msdn.microsoft.com/zh-cn/library/mt718036.aspx)发送电子邮件通知或警报字符串。使用 Add-AzureRmMetricAlertRule cmdlet。
+可以向资源添加警报规则，以便在资源达到设置的使用阈值时，向 [URL 终结点](https://msdn.microsoft.com/zh-cn/library/mt718036.aspx)发送电子邮件通知或警报字符串。使用 Add-AzureRmMetricAlertRule cmdlet。
 
 > [AZURE.IMPORTANT]对弹性池资源利用率的监视存在至少 20 分钟的延迟。当前不支持为弹性池设置短于 30 分钟的警报。为弹性池设置的任何时长（PowerShell API 中名为“-WindowSize”的参数）短于 30 分钟的警报可能无法被触发。请确保为弹性池定义的任何警报的时长不短于 30 分钟 (WindowSize)。
 
@@ -170,7 +171,7 @@
 
 ## 在一个订阅的多个池中收集和监视资源使用情况数据
 
-一个订阅中有大量数据库时，单独监视每个弹性池非常麻烦。取而代之的是可以将 SQL 数据库 PowerShell cmdlet 和 T-SQL 查询结合使用，从多个池及其数据库中收集资源使用情况数据，以便监视和分析资源使用情况。可以在 GitHub SQL Server 存储库及有关该存储库是什么和如何使用的文档中找到此 powershell 脚本集合的[示例实现](https://github.com/Microsoft/sql-server-samples/tree/master/samples/manage/azure-sql-db-elastic-pools)。
+当一个订阅中有大量数据库时，单独监视每个弹性池非常麻烦。相反，可以将 SQL 数据库 PowerShell cmdlet 和 T-SQL 查询结合使用，从多个池及其数据库中收集资源使用情况数据，以便监视和分析资源使用情况。可以在 GitHub SQL Server 示例存储库及有关该存储库的作用和如何使用的文档中找到 powershell 脚本集合的[示例实现](https://github.com/Microsoft/sql-server-samples/tree/master/samples/manage/azure-sql-db-elastic-pools)。
 
 要使用此示例实现，请按照下面所列的这些步骤进行操作。
 
@@ -182,15 +183,15 @@
 
 在高级别中，脚本执行以下操作：
 
-*	枚举指定的 Azure 订阅（或指定的服务器列表）中的所有服务器。
-*	为每个服务器运行后台作业。该作业在固定的时间间隔内循环运行，并收集服务器中所有池的遥测数据。然后将收集的数据加载到指定的遥测数据库。
-*	枚举每个池中的数据库列表，以收集数据库资源使用情况数据。然后将收集的数据加载到遥测数据库。
+*	枚举给定的 Azure 订阅（或指定的服务器列表）中的所有服务器。
+*	为每个服务器运行后台作业。该作业在固定的时间间隔内循环运行，并收集服务器中所有池的遥测数据。然后将所收集的数据加载到指定的遥测数据库中。
+*	枚举每个池中的数据库列表，以收集数据库资源使用情况数据。然后将所收集的数据加载到遥测数据库中。
 
-可以对遥测数据库中收集的指标值进行分析，以监视弹性池及其中的数据库的运行状况。该脚本还在遥测数据库中安装预定义的表值函数 (TVF)，以便针对指定的时间窗口汇总指标值。例如，TVF 的结果可用来显示“指定时间窗口内具有最大 eDTU 使用量的前 N 个弹性池”。 或者，使用诸如 Excel 或 Power BI 这样的分析工具对收集的数据进行查询和分析。
+可以对遥测数据库中收集的指标值进行分析，以监视弹性池及其中的数据库的运行状况。该脚本还在遥测数据库中安装预定义的表值函数 (TVF)，以帮助聚合指定时间范围内的指标值。例如，TVF 的结果可用来显示“指定时间范围内具有最大 eDTU 使用量的前 N 个弹性池”。 或者，使用诸如 Excel 或 Power BI 这样的分析工具对收集的数据进行查询和分析。
 
 ## 示例：检索池及其数据库的资源消耗指标值
 
-该示例将检索指定弹性池及其所有数据库的资源消耗指标值。收集的数据被格式化并写入到 .csv 格式文件中。该文件可以使用 Excel 进行浏览。
+该示例将检索给定的弹性池及其所有数据库的资源消耗指标值。所收集的数据被格式化并写入到 .csv 格式文件中。可以使用 Excel 浏览该文件。
 
 	$subscriptionId = '<Azure subscription id>'	      # Azure subscription ID
 	$resourceGroupName = '<resource group name>'             # Resource Group
@@ -253,7 +254,7 @@
 ## 弹性池操作延迟
 
 - 更改每个数据库的最小 eDTU 数或每个数据库的最大 eDTU 数通常可在 5 分钟或更少的时间内完成。
-- 更改每个池的 eDTU 数取决于池中所有数据库使用的空间总量。更改平均起来每 100 GB 需要 90 分钟或更短的时间。例如，如果池中所有数据库使用的总空间为 200 GB，则更改每个池的池 eDTU 时，预计延迟为 3 小时或更短的时间。
+- 更改每个池的 eDTU 数取决于池中所有数据库使用的空间总量。每 100 GB 的更改平均需要 90 分钟或更短的时间。例如，如果池中所有数据库使用的总空间为 200 GB，则更改每个池的池 eDTU 时，预计延迟为 3 小时或更短的时间。
 
 ## 从 V11 服务器迁移到 V12 服务器
 
@@ -269,10 +270,10 @@
 - [Stop-AzureRMSqlServerUpgrade](https://msdn.microsoft.com/zh-cn/library/azure/mt603589.aspx)
 
 
-Stop- cmdlet 表示取消，而不是暂停。你无法在中途恢复升级，而只能从头开始重新升级。Stop- cmdlet 将清理并释放所有相应的资源。
+Stop- cmdlet 表示取消，而不是暂停。无法在中途恢复升级，只能从头开始重新升级。Stop- cmdlet 将清理并释放所有相应的资源。
 
 ## 后续步骤
 
 - 请参阅[使用 Azure SQL 数据库进行扩展](/documentation/articles/sql-database-elastic-scale-introduction/)：使用弹性数据库工具扩展、移动数据、查询或创建事务。
 
-<!---HONumber=Mooncake_0808_2016-->
+<!---HONumber=Mooncake_Quality_Review_1215_2016-->

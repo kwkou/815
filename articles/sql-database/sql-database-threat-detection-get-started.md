@@ -15,9 +15,8 @@
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
    ms.date="07/10/2016"
-   wacn.date="08/22/2016"
+   wacn.date="12/26/2016"
    ms.author="ronmat; ronitr"/>  
-
 
 
 # SQL 数据库威胁检测入门
@@ -26,7 +25,7 @@
 
 威胁检测会检测异常的数据库活动，指出数据库有潜在的安全威胁。威胁检测目前以预览版形式提供，V12 版 Azure SQL 数据库支持此功能。
 
-威胁检测提供新的安全层，在发生异常活动时会提供安全警报，让客户检测潜在威胁并做出响应。用户可以使用 [Azure SQL 数据库审核](/documentation/articles/sql-database-auditing-get-started/)来探查可疑事件，判断这些可疑事件是否是因为有人尝试访问、破坏或利用数据库中的数据而生成的。你不必是安全专家，也不需要管理先进的安全监视系统，就能使用威胁检测轻松解决数据库的潜在威胁。
+威胁检测提供新的安全层，在发生异常活动时会提供安全警报，让客户检测潜在威胁并做出响应。用户可以使用 [Azure SQL 数据库审核](/documentation/articles/sql-database-auditing-get-started/)来探查可疑事件，判断这些可疑事件是否是因为有人尝试访问、破坏或利用数据库中的数据而生成的。无需成为安全专家，也不需要管理先进的安全监视系统，就能使用威胁检测轻松解决数据库的潜在威胁。
 
 威胁检测会检测异常的数据库活动，指出潜在的 SQL 注入企图。SQL 注入是 Internet 上常见的 Web 应用程序安全问题之一，用于攻击数据驱动的应用程序。攻击者利用应用程序漏洞将恶意 SQL 语句注入应用程序入口字段，以破坏或修改数据库中的数据。
 
@@ -35,7 +34,7 @@
 
 1. 启动 Azure 门户预览 ([https://portal.azure.cn](https://portal.azure.cn))。
 
-2. 导航到你要监视的 SQL 数据库的配置边栏选项卡。在“设置”边栏选项卡中，选择“审核和威胁检测”。
+2. 导航到要监视的 SQL 数据库的配置边栏选项卡。在“设置”边栏选项卡中，选择“审核和威胁检测”。
 
 	![导航窗格][1]
 
@@ -72,7 +71,7 @@
 
 	![导航窗格][7]
 
-5. 若要配置“快速合并”设置 - 请在“POWER QUERY”功能区选项卡中，选择“选项”以显示“选项”对话框。选择“隐私”部分，然后选择第二个选项 -“忽略隐私级别并潜在地改善性能”：
+5. 若要配置“快速合并”设置 - 请在“POWER QUERY”功能区选项卡中，选择“选项”以显示“选项”对话框。选择“隐私”部分，然后选择第二个选项 -“忽略隐私级别并可能提升性能”：
 
 	![导航窗格][8]
 
@@ -95,4 +94,4 @@
 [8]: ./media/sql-database-threat-detection-get-started/8_td_excel_fast_combine.png
 [9]: ./media/sql-database-threat-detection-get-started/9_td_excel_parameters.png
 
-<!---HONumber=Mooncake_0815_2016-->
+<!---HONumber=Mooncake_Quality_Review_1215_2016-->

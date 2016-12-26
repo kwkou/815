@@ -1,6 +1,6 @@
 <properties
     pageTitle="使用 PowerShell 创建新的弹性数据库池 | Azure"
-    description="了解如何通过创建可缩放的弹性数据库池，使用 PowerShell 向外缩放 Azure SQL 数据库资源以管理多个数据库。"
+    description="了解如何通过创建可缩放的弹性数据库池，以使用 PowerShell 扩展 Azure SQL 数据库资源以管理多个数据库。"
 	services="sql-database"
     documentationCenter=""
     authors="sidneyh"
@@ -14,12 +14,13 @@
     ms.tgt_pltfrm="powershell"
     ms.workload="data-management"
     ms.date="05/27/2016"
-    wacn.date="08/24/2016"
+    wacn.date="12/26/2016"
     ms.author="srinia"/>
 
 # 使用 PowerShell 创建新的弹性数据库池
 
 > [AZURE.SELECTOR]
+- [Azure 门户预览](/documentation/articles/sql-database-elastic-pool-create-portal/)
 - [PowerShell](/documentation/articles/sql-database-elastic-pool-create-powershell/)
 - [C#](/documentation/articles/sql-database-elastic-pool-create-csharp/)
 
@@ -28,10 +29,10 @@
 
 有关常见的错误代码，请参阅 [SQL 数据库客户端应用程序的 SQL 错误代码：数据库连接错误和其他问题](/documentation/articles/sql-database-develop-error-messages/)。
 
-> [AZURE.NOTE] 弹性数据库池仅适用于 SQL 数据库 V12 服务器。如果你有一个 SQL 数据库 V11 服务器，可以通过一个步骤[使用 PowerShell 升级到 V12 并创建池](/documentation/articles/sql-database-upgrade-server-powershell/)。
+> [AZURE.NOTE] 弹性数据库池目前为预览版，仅适用于 SQL 数据库 V12 服务器。如果有一个 SQL 数据库 V11 服务器，可以通过一个步骤[使用 PowerShell 升级到 V12 并创建池](/documentation/articles/sql-database-upgrade-server-portal/)。
 
 
-你需要运行 Azure PowerShell 1.0 或更高版本。有关详细信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)。
+需要运行 Azure PowerShell 1.0 或更高版本。有关详细信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)。
 
 ## 创建新池
 
@@ -42,11 +43,11 @@
 
 ## 在池中创建新的弹性数据库
 
-使用 [New-AzureRmSqlDatabase](https://msdn.microsoft.com/zh-cn/library/azure/mt619339.aspx) cmdlet 并将 **ElasticPoolName** 参数设置为目标池。要将现有数据库移动到池，请参阅[将数据库移动到弹性池](/documentation/articles/sql-database-elastic-pool-manage-powershell/#Move-a-database-into-an-elastic-pool)。
+使用 [New-AzureRmSqlDatabase](https://msdn.microsoft.com/zh-cn/library/azure/mt619339.aspx) cmdlet 并将 **ElasticPoolName** 参数设置为目标池。若要将现有数据库移到池中，请参阅[将数据库移入弹性池](/documentation/articles/sql-database-elastic-pool-manage-powershell/#Move-a-database-into-an-elastic-pool)。
 
 	New-AzureRmSqlDatabase -ResourceGroupName "resourcegroup1" -ServerName "server1" -DatabaseName "database1" -ElasticPoolName "elasticpool1"
 
-## 创建池，并使用多个新数据库对其进行填充 
+## 创建池，并使用多个新的数据库对其进行填充 
 
 使用门户或每次只能创建一个单一数据库的 PowerShell cmdlet 在池中创建大量数据库可能需要一段时间。若要自动创建到新池中，请参阅 [CreateOrUpdateElasticPoolAndPopulate](https://gist.github.com/billgib/d80c7687b17355d3c2ec8042323819ae)。
 
@@ -77,7 +78,7 @@
 ## 后续步骤
 
 - [管理你的池](/documentation/articles/sql-database-elastic-pool-manage-powershell/)
-- [使用 Azure SQL 数据库扩展](/documentation/articles/sql-database-elastic-scale-introduction/)：使用弹性数据库工具扩展。
+- [使用 Azure SQL 数据库进行扩展](/documentation/articles/sql-database-elastic-scale-introduction/)：使用弹性数据库工具扩展。
 
 
-<!---HONumber=Mooncake_0711_2016-->
+<!---HONumber=Mooncake_Quality_Review_1215_2016-->

@@ -14,7 +14,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="data-management" 
    ms.date="08/08/2016" 
-   wacn.date="09/26/2016"
+   wacn.date="12/26/2016"
    ms.author="sstein"/>
 
 # SQL 数据库定价层建议
@@ -28,7 +28,7 @@
 
 - [更改 SQL 数据库的服务层和性能级别（定价层）](/documentation/articles/sql-database-scale-up/)
 - [将 Azure SQL 服务器升级到 V12](/documentation/articles/sql-database-upgrade-server-portal/)
-- 浏览到 V12 服务器。请参阅 [SQL 数据库定价层建议](/documentation/articles/sql-database-service-tier-advisor/)。
+- 浏览到 V12 服务器。参阅 [SQL 数据库定价层建议](/documentation/articles/sql-database-service-tier-advisor/)。
 - [创建弹性数据库池](/documentation/articles/sql-database-elastic-pool/#elastic-database-pool-pricing-tier-recommendations)
 
 
@@ -57,7 +57,7 @@ SQL 数据库服务会通过评估 SQL 数据库的历史资源使用量，来�
 
 ## 获取定价层建议
 
-可以通过选择现有的 Web 或企业数据库并单击“所有设置”和“定价层(规模 DTU)”来获取定价层建议。（当你[将 Azure SQL 服务器升级到 V12](/documentation/articles/sql-database-upgrade-server-portal/) 时，也可以获取定价层建议。）
+可以通过选择现有的 Web 或企业数据库并单击“所有设置”和“定价层(规模 DTU)”来获取定价层建议。（[将 Azure SQL 服务器升级到 V12](/documentation/articles/sql-database-upgrade-server-portal/) 时，也可以获取定价层建议。）
 
 1. 登录到 [Azure 门户预览](https://portal.azure.cn/)。
 2. 单击“浏览”>“SQL 数据库”。
@@ -68,13 +68,13 @@ SQL 数据库服务会通过评估 SQL 数据库的历史资源使用量，来�
 5. 在数据库边栏选项卡上，选择“所有设置”，然后选择“定价层(规模 DTU)”。
 
 
-7. 此时会打开“建议的定价层”，你可以在其中单击建议的层，然后单击“选择”按钮切换到该层。
+7. 此时会打开“建议的定价层”，可在其中单击建议的层，然后单击“选择”按钮切换到该层。
 
-    ![注册预览版][4]
+    ![注册以便预览][4]
 
-8. （可选）单击“查看使用情况详细信息”打开“定价层建议详细信息”边栏选项卡，你可以在其中查看数据库的建议层、当前层与建议层之间的功能比较，以及历史资源使用量分析图表。
+8. （可选）单击“查看使用情况详细信息”打开“定价层建议详细信息”边栏选项卡，可在其中查看数据库的建议层、当前层与建议层之间的功能比较，以及历史资源使用量分析图表。
 
-    ![注册预览版][5]
+    ![注册以便预览][5]
 
 
 
@@ -86,7 +86,7 @@ SQL 数据库服务会通过评估 SQL 数据库的历史资源使用量，来�
 
 ## 后续步骤
 
-根据具体数据库的详细信息，执行升级或降级通常不会立即发生。当数据库过渡到新层时，门户会提供通知；你也可以通过在 SQL 数据库服务器的 master 数据库中查询 [sys.dm\_operation\_status (Azure SQL 数据库)](https://msdn.microsoft.com/zh-cn/library/dn270022.aspx) 视图，来监视升级状态。
+根据具体数据库的详细信息，执行升级或降级通常不会立即发生。当数据库过渡到新层时，门户会提供通知；也可在 SQL 数据库服务器的 master 数据库中查询 [sys.dm\_operation\_status (Azure SQL 数据库)](https://msdn.microsoft.com/zh-cn/library/dn270022.aspx) 视图，从而监视升级状态。
 
 
 <!--Image references-->
@@ -97,4 +97,4 @@ SQL 数据库服务会通过评估 SQL 数据库的历史资源使用量，来�
 
  
 
-<!---HONumber=Mooncake_0919_2016-->
+<!---HONumber=Mooncake_Quality_Review_1215_2016-->

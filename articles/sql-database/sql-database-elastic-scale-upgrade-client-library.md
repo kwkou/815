@@ -18,7 +18,7 @@ ms.author="ddove" />
 
 # 升级应用以使用最新的弹性数据库客户端库
 
-可通过 Visual Studio 中的 NuGetPackage Manager 界面获取[弹性数据库客户端库](/documentation/articles/sql-database-elastic-database-client-library/)的新版本。升级包含客户端库的 bug 修复和新功能支持。
+可通过 Visual Studio 中的 NuGet 和 NuGet 包管理器界面获取[弹性数据库客户端库](/documentation/articles/sql-database-elastic-database-client-library/)的新版本。升级包含客户端库的 bug 修复和新功能支持。
 
 **获取最新版本：**请转到 [Microsoft.Azure.SqlDatabase.ElasticScale.Client](https://www.nuget.org/packages/Microsoft.Azure.SqlDatabase.ElasticScale.Client)。
 
@@ -46,8 +46,7 @@ ms.author="ddove" />
 2. 打开命令提示符，导航到同一文件夹，并发出命令：
 `nuget install Microsoft.Azure.SqlDatabase.ElasticScale.Client`
 
-3. 导航到包含你刚下载的新客户端 DLL 版本的子文件夹，例如：
-`cd .\Microsoft.Azure.SqlDatabase.ElasticScale.Client.1.0.0\lib\net45`
+3. 导航到包含刚下载的新客户端 DLL 版本的子文件夹，例如：`cd .\Microsoft.Azure.SqlDatabase.ElasticScale.Client.1.0.0\lib\net45`
 
 4. 从[脚本中心](https://gallery.technet.microsoft.com/scriptcenter/Azure-SQL-Database-Elastic-6442e6a9)下载弹性数据库客户端升级 scriptlet，并将其保存到包含 DLL 的同一文件夹中。
 

@@ -15,7 +15,7 @@
 	ms.devlang="dotnet" 
 	ms.topic="article" 
 	ms.date="09/26/2016" 
-	wacn.date="11/14/2016"
+	wacn.date="12/26/2016"
 	ms.author="juliako"/>  
 
 
@@ -71,7 +71,7 @@ CloudMediaContext 具有五个构造函数重载。建议使用以 **MediaServic
 
 使用媒体服务 SDK 进行开发时，可选择不处理令牌，而是由 SDK 代码为你进行管理。不过，将 ACS 令牌完全交由 SDK 管理会导致不必要的令牌请求。请求令牌将耗用一定的时间并消耗客户端和服务器资源。此外，如果速度过快，ACS 服务器还会限制请求。上限为每秒钟 30 条请求，请参阅 [ACS 服务限制](https://msdn.microsoft.com/zh-cn/library/gg185909.aspx)了解更多详细信息。
 
-自媒体服务 SDK 版本 3.0.0.0 起，可以重复使用 ACS 令牌。以 **MediaServicesCredentials** 作为参数的 **CloudMediaContext** 构造函数可实现在多个上下文之间共享 ACS 令牌。MediaServicesCredentials 类中封装有媒体服务凭据。如果 ACS 令牌可用且其过期时间已知，则可以使用该令牌创建一个新的 MediaServicesCredentials 实例并将其传递给 CloudMediaContext 的构造函数。请注意，媒体服务 SDK 将在每次令牌过期时自动刷新令牌。有两种方法可重复使用 ACS 令牌，如以下示例中所示。
+自媒体服务 SDK 版本 3.0.0.0 起，可以重复使用 ACS 令牌。以 **MediaServicesCredentials** 为参数的 **CloudMediaContext** 构造函数可实现在多个上下文之间共享 ACS 令牌。MediaServicesCredentials 类中封装有媒体服务凭据。如果 ACS 令牌可用且其过期时间已知，则可以使用该令牌创建一个新的 MediaServicesCredentials 实例并将其传递给 CloudMediaContext 的构造函数。请注意，媒体服务 SDK 将在每次令牌过期时自动刷新令牌。有两种方法可重复使用 ACS 令牌，如以下示例中所示。
 
 - 你可以在内存中（例如，在静态类变量中）缓存 **MediaServicesCredentials** 对象。然后，将缓存的对象传递给 CloudMediaContext 构造函数。MediaServicesCredentials 对象包含一个 ACS 令牌，如果该令牌仍然有效，则可重复使用。如果该令牌无效，则会使用提供给 MediaServicesCredentials 构造函数的凭据通过媒体服务 SDK 刷新该令牌。
 
@@ -89,9 +89,9 @@ CloudMediaContext 具有五个构造函数重载。建议使用以 **MediaServic
 		
 		CloudMediaContext context = new CloudMediaContext(_cachedCredentials);
 
-- 你也可以缓存 AccessToken 字符串和 TokenExpiration 值。这些值以后可以与缓存的令牌数据一起用于创建一个新的 MediaServicesCredentials 对象。这对于令牌可以在多个进程或多台计算机之间安全共享的方案尤其有用。
+- 你也可以缓存 AccessToken 字符串和 TokenExpiration 值。这些值以后可以与缓存的令牌数据一起用于新建 MediaServicesCredentials 对象。这对于令牌可以在多个进程或多台计算机之间安全共享的方案尤其有用。
 
-	以下代码段调用了未在此示例中定义的 SaveTokenDataToExternalStorage、GetTokenDataFromExternalStorage 和 UpdateTokenDataInExternalStorageIfNeeded 方法。你可以定义这些方法以在外部存储中存储、检索和更新令牌数据。
+	以下代码片段调用了未在此示例中定义的 SaveTokenDataToExternalStorage、GetTokenDataFromExternalStorage 和 UpdateTokenDataInExternalStorageIfNeeded 方法。你可以定义这些方法以在外部存储中存储、检索和更新令牌数据。
 
 		CloudMediaContext context1 = new CloudMediaContext(_mediaServicesAccountName, _mediaServicesAccountKey);
 		
@@ -172,7 +172,7 @@ CloudMediaContext 具有五个构造函数重载。建议使用以 **MediaServic
 
 ## 将连接值存储到配置中
 
-强烈建议你将连接值（特别是敏感值，如你的帐户名和密码）存储到配置中。此外，建议你对敏感的配置数据加密。你可以使用 Windows 加密文件系统 (EFS) 加密整个配置文件。要对某个文件启用 EFS，请右键单击该文件，选择“属性”，然后在“高级”设置选项卡中启用加密。此外，你也可以使用受保护的配置来创建自定义解决方案，以便加密配置文件的所选部分。请参阅[使用受保护的配置来加密配置信息](https://msdn.microsoft.com/zh-cn/library/53tyfkaw.aspx)。
+强烈建议你将连接值（特别是敏感值，如你的帐户名和密码）存储到配置中。此外，建议你对敏感的配置数据加密。你可以使用 Windows 加密文件系统 (EFS) 加密整个配置文件。若要对某个文件启用 EFS，请右键单击该文件、选择“属性”，然后在“高级”设置选项卡中启用加密。此外，你也可以使用受保护的配置创建自定义解决方案，以便加密配置文件的所选部分。请参阅[使用受保护的配置加密配置信息](https://msdn.microsoft.com/zh-cn/library/53tyfkaw.aspx)。
 
 以下 App.config 文件包含了必需的连接值。<appSettings> 元素中的值是你从媒体服务帐户设置过程中获取的必需值。
 
@@ -189,4 +189,4 @@ CloudMediaContext 具有五个构造函数重载。建议使用以 **MediaServic
 	private static readonly string _accountName = ConfigurationManager.AppSettings["MediaServicesAccountName"];
 	private static readonly string _accountKey = ConfigurationManager.AppSettings["MediaServicesAccountKey"];
 
-<!---HONumber=Mooncake_1107_2016-->
+<!---HONumber=Mooncake_Quality_Review_1215_2016-->

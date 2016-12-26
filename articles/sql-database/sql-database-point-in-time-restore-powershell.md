@@ -14,14 +14,14 @@
     ms.tgt_pltfrm="powershell"
     ms.workload="NA"
     ms.date="07/17/2016"
-    wacn.date="09/28/2016"
+    wacn.date="12/26/2016"
     ms.author="sstein"/>
 
 # 使用 PowerShell 将 Azure SQL 数据库还原到之前的时间点
 
 > [AZURE.SELECTOR]
 - [概述](/documentation/articles/sql-database-recovery-using-backups/)
-- [PowerShell](/documentation/articles/sql-database-point-in-time-restore-powershell/)
+- [时间点还原：Azure 门户预览](/documentation/articles/sql-database-point-in-time-restore-portal/)
 
 本文介绍如何将数据库从 [SQL 数据库自动备份](/documentation/articles/sql-database-automated-backups/)还原到以前的时间点。可使用 PowerShell 实现此目的。
 
@@ -51,10 +51,10 @@
 
 ## 后续步骤
 
-- 有关业务连续性概述和应用场景，请参阅[业务连续性概述](/documentation/articles/sql-database-business-continuity/)
-- 若要了解 Azure SQL 数据库的自动备份，请参阅 [SQL 数据库自动备份](/documentation/articles/sql-database-automated-backups/)
+- 有关业务连续性的概述和应用场景，请参阅[业务连续性概述](/documentation/articles/sql-database-business-continuity/)
+- 若要了解 Azure SQL 数据库自动备份，请参阅 [SQL 数据库自动备份](/documentation/articles/sql-database-automated-backups/)
 - 若要了解如何使用自动备份进行恢复，请参阅[从服务启动的备份中还原数据库](/documentation/articles/sql-database-recovery-using-backups/)
 - 若要了解更快的恢复选项，请参阅[活动异地复制](/documentation/articles/sql-database-geo-replication-overview/)
 - 若要了解如何使用自动备份进行存档，请参阅[数据库复制](/documentation/articles/sql-database-copy/)
 
-<!---HONumber=Mooncake_0919_2016-->
+<!---HONumber=Mooncake_Quality_Review_1215_2016-->

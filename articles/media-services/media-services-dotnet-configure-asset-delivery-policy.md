@@ -15,7 +15,7 @@
 	ms.devlang="dotnet" 
 	ms.topic="article" 
 	ms.date="09/19/2016" 
-	wacn.date="11/14/2016"
+	wacn.date="12/26/2016"
 	ms.author="juliako;mingfeiy"/>
 
 
@@ -24,23 +24,23 @@
 
 ##概述
 
-如果你打算传送加密资产，媒体服务内容传送工作流中的步骤之一是为资产配置传送策略。资产传送策略告知媒体服务你希望如何传送资产：应该将资产动态打包成哪种流式处理协议（例如 MPEG DASH、HLS、平滑流或全部），是否要动态加密资产以及如何加密（信封或常用加密）。
+如果你打算传送加密资产，媒体服务内容传送工作流中的步骤之一是为资产配置传送策略。资产传送策略告知媒体服务你希望如何传送资产：应该将资产动态打包成哪种流式处理协议（例如 MPEG DASH、HLS、平滑流式处理或全部），是否要动态加密资产以及如何加密（信封或常用加密）。
 
-本主题介绍为何以及如何创建和配置资产传送策略。
+本主题介绍创建和配置资产传送策略的原因和方式。
 
 >[AZURE.NOTE]若要使用动态打包和动态加密，必须确保至少有一个缩放单位（也称为流式处理单位）。有关详细信息，请参阅[如何缩放媒体服务](/documentation/articles/media-services-manage-origins/#scale_streaming_endpoints)。
 >
->此外，你的资产必须包含一组自适应比特率 MP4 或自适应比特率平滑流文件。
+>此外，你的资产必须包含一组自适应比特率 MP4 或自适应比特率平滑流式处理文件。
 
-可以将不同的策略应用到同一个资产。例如，可以将 PlayReady 加密应用到平滑流，将 AES 信封应用到 MPEG DASH 和 HLS。将阻止流式处理传送策略中未定义的任何协议（例如，添加仅将 HLS 指定为协议的单个策略）。如果你根本没有定义任何传送策略，则情况不是这样。此时，将允许所有明文形式的协议。
+可以将不同的策略应用到同一个资产。例如，可以将 PlayReady 加密应用到平滑流式处理，将 AES 信封应用到 MPEG DASH 和 HLS。将阻止流式处理传送策略中未定义的任何协议（例如，添加仅将 HLS 指定为协议的单个策略）。不定义任何传送策略是例外情况。此时，将允许所有明文形式的协议。
 
-如果要传送存储加密资产，则必须配置资产的传送策略。在流式传输资产之前，流式处理服务器会删除存储加密，然后再使用指定的传送策略流式传输你的内容。例如，若要传送使用高级加密标准 (AES) 信封加密密钥加密的资产，请将策略类型设为 **DynamicEnvelopeEncryption**。若要删除存储加密并以明文的形式流式传输资产，请将策略类型设为 **NoDynamicEncryption**。下面是演示如何配置这些策略类型的示例。
+如果要传送存储加密资产，则必须配置资产的传送策略。在流式传输资产之前，流式处理服务器会删除存储加密，然后再使用指定的传送策略流式传输你的内容。例如，若要传送使用高级加密标准 (AES) 信封加密密钥加密的资产，请将策略类型设置为 **DynamicEnvelopeEncryption**。若要删除存储加密并以明文的形式流式传输资产，请将策略类型设置为 **NoDynamicEncryption**。下面是演示如何配置这些策略类型的示例。
 
 根据配置资产传送策略的方式，你可以动态打包、动态加密和流式传输以下流式处理协议：平滑流式处理、HLS、MPEG DASH 和 HDS 流。
 
 以下列表显示了用于流式传输平滑流、HLS DASH 和 HDS 的格式。
 
-平滑流：
+平滑流式处理：
 
 	{streaming endpoint name-media services account name}.streaming.mediaservices.chinacloudapi.cn/{locator ID}/{filename}.ism/Manifest
 
@@ -56,19 +56,19 @@ HDS
 
 	{streaming endpoint name-media services account name}.streaming.mediaservices.chinacloudapi.cn/{locator ID}/{filename}.ism/Manifest(format=f4m-f4f)
 
-有关如何发布资产和生成流 URL 的说明，请参阅[生成流 URL](/documentation/articles/media-services-deliver-streaming-content/)。
+有关如何发布资产和生成流式处理 URL 的说明，请参阅[生成流式处理 URL](/documentation/articles/media-services-deliver-streaming-content/)。
 
 ##注意事项
 
-- 如果某个资产存在 OnDemand（流式处理）定位符，则不能与该资产关联的 AssetDeliveryPolicy。在删除策略之前，建议先从资产中删除该策略。
-- 如果未设置资产传送策略，则无法在存储加密的资产上创建流式处理定位符。如果资产未经过存储加密，则即使未设置资产传送策略，系统也可让你顺利地创建定位符和流式处理资产。
-- 可将多个资产传送策略关联到单个资产，但只能指定一种方法来处理给定的 AssetDeliveryProtocol。也就是说，如果你尝试链接两个指定 AssetDeliveryProtocol.SmoothStreaming 协议的传送策略，则会导致出错，因为当客户端发出平滑流请求时，系统不知道你要应用哪个策略。
-- 如果你的资产包含现有的流式处理定位符，则不能将新策略链接到该资产（可以取消现有策略与资产的链接，或者更新与该资产关联的传送策略）。必须先删除流式传输定位符，再调整策略，然后重新创建流式传输定位符。在重新创建流式处理定位符时可以使用同一个 locatorId，但应确保该操作不会导致客户端出现问题，因为内容可能已被来源或下游 CDN 缓存。
+- 如果某个资产存在 OnDemand（流式处理）定位符，则不能删除与该资产关联的 AssetDeliveryPolicy。在删除策略之前，建议先从资产中删除该策略。
+- 如果未设置资产传送策略，则无法在存储加密的资产上创建流式处理定位符。如果资产未经过存储加密，则即使未设置资产传送策略，系统也可让你以明文形式创建定位符和流式处理资产。
+- 可将多个资产传送策略关联到单个资产，但只能指定一种方法来处理给定的 AssetDeliveryProtocol。也就是说，如果你尝试链接两个指定 AssetDeliveryProtocol.SmoothStreaming 协议的传送策略，则会导致出错，因为当客户端发出平滑流式处理请求时，系统不知道你要应用哪个策略。
+- 如果你的资产包含现有的流式处理定位符，则不能将新策略链接到该资产（可以取消现有策略与资产的链接，或者更新与该资产关联的传送策略）。必须先删除流式传输定位符、调整策略，然后重新创建流式处理定位符。在重新创建流式处理定位符时可以使用同一个 locatorId，但应确保该操作不会导致客户端出现问题，因为内容可能已由来源或下游 CDN 缓存。
 
 
 ##清除资产传送策略 
 
-以下 **ConfigureClearAssetDeliveryPolicy** 方法会指定不应用动态加密，而是使用以下任一协议传送流：MPEG DASH、HLS 和平滑流。你可能需要对存储加密资产应用此策略。
+以下 **ConfigureClearAssetDeliveryPolicy** 方法会指定不应用动态加密，而是使用以下任一协议传送流：MPEG DASH、HLS 和平滑流式处理协议。你可能需要对存储加密资产应用此策略。
   
 有关创建 AssetDeliveryPolicy 时可以指定哪些值的信息，请参阅[定义 AssetDeliveryPolicy 时使用的类型](#types)部分。
 
@@ -160,7 +160,7 @@ Azure 媒体服务还允许你添加 Widevine 加密。以下示例演示将 Pla
 
 ##DynamicEnvelopeEncryption 资产传送策略 
 
-以下 **CreateAssetDeliveryPolicy** 方法将创建 **AssetDeliveryPolicy**，该策略配置为将动态信封加密 (**DynamicEnvelopeEncryption**) 应用到平滑流式处理、HLS 和 DASH 协议（如果不指定协议，则将阻止对这些协议进行流式处理）。该方法采用以下两种参数：**Asset**（要将传送策略应用到的资产）和 **IContentKey**（**EnvelopeEncryption** 类型的内容密钥。有关详细信息，请参阅：[创建内容密钥](/documentation/articles/media-services-dotnet-create-contentkey/#envelope_contentkey)）。
+以下 **CreateAssetDeliveryPolicy** 方法将创建 **AssetDeliveryPolicy**，该策略配置为将动态信封加密 (**DynamicEnvelopeEncryption**) 应用到平滑流式处理、HLS 和 DASH 协议（如果不指定某些协议，则将阻止对这些协议进行流式处理）。该方法采用以下两种参数：**Asset**（要将传送策略应用到的资产）和 **IContentKey**（**EnvelopeEncryption** 类型的内容密钥。有关详细信息，请参阅：[创建内容密钥](/documentation/articles/media-services-dotnet-create-contentkey/#envelope_contentkey)）。
 
 
 有关创建 AssetDeliveryPolicy 时可以指定哪些值的信息，请参阅[定义 AssetDeliveryPolicy 时使用的类型](#types)部分。
@@ -356,4 +356,4 @@ Azure 媒体服务还允许你添加 Widevine 加密。以下示例演示将 Pla
         WidevineLicenseAcquisitionUrl
     }
 
-<!---HONumber=Mooncake_1107_2016-->
+<!---HONumber=Mooncake_Quality_Review_1215_2016-->

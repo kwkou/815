@@ -15,7 +15,7 @@
 	ms.devlang="dotnet" 
 	ms.topic="article" 
 	ms.date="09/26/2016"  
-	wacn.date="11/21/2016"  
+	wacn.date="12/26/2016"  
 	ms.author="juliako"/>
 
 
@@ -27,7 +27,7 @@
 
 本主题介绍如何在使用媒体服务 REST API 编程时获取与 Azure 媒体服务的编程连接。
 
-访问 Azure 媒体服务时需要以下两项内容：由 Azure 访问控制服务 (ACS) 提供的访问令牌和媒体服务本身的 URI。在创建这些请求时，可以使用任何想要的方法，前提是在调用媒体服务时指定了正确的标头值，并且正确地传入了访问令牌。
+访问 Azure 媒体服务时需要以下两项内容：由 Azure 访问控制服务 (ACS) 提供的访问令牌和媒体服务本身的 URI。在创建这些请求时，可以使用任何所需方法，前提是在调用媒体服务时指定了正确的标头值，并且正确地传入了访问令牌。
 
 以下步骤描述了在使用媒体服务 REST API 连接到媒体服务时运用的最常见工作流：
 
@@ -40,7 +40,7 @@
 
 ##获取访问令牌
 
-若要直接通过 REST API 访问媒体服务，请从 ACS 中检索一个访问令牌，并在向该服务提出每个 HTTP 请求期间使用该令牌。此令牌类似于 ACS 基于 HTTP 请求标头中的访问声明提供的其他令牌，并且使用 OAuth v2 协议。在直接连接到媒体服务之前，你不需要满足任何其他先决条件。
+若要直接通过 REST API 访问媒体服务，请从 ACS 中检索一个访问令牌，并在向该服务发出每个 HTTP 请求期间使用该令牌。此令牌类似于 ACS 基于 HTTP 请求标头中的访问声明提供的其他令牌，并且使用 OAuth v2 协议。在直接连接到媒体服务之前，你不需要满足任何其他先决条件。
 
 以下示例显示了用于检索令牌的 HTTP 请求标头和正文。
 
@@ -57,9 +57,9 @@
 	
 **正文**：
 
-需要在此请求的正文中提供 client\_id 和 client\_secret 值；client\_id 和 client\_secret 分别对应于 AccountName 和 AccountKey 值。在你设置帐户时，媒体服务将提供这些值。
+需要在此请求的正文中提供 client\_id 和 client\_secret 值；client\_id 和 client\_secret 分别对应于 AccountName 和 AccountKey 值。在你设置帐户时，媒体服务将向你提供这些值。
 
-请注意，当用作访问令牌请求中的 client\_secret 值时，你的媒体服务帐户的 AccountKey 必须进行 URL 编码（请参阅[百分号编码](http://tools.ietf.org/html/rfc3986#section-2.1)）。
+请注意，当你的媒体服务帐户的 AccountKey 用作访问令牌请求中的 client\_secret 值时，必须对其进行 URL 编码（请参阅[百分号编码](http://tools.ietf.org/html/rfc3986#section-2.1)）。
 
 	grant_type=client_credentials&client_id=ams_account_name&client_secret=URL_encoded_ams_account_key&scope=urn%3aWindowsAzureMediaServices
 
@@ -97,7 +97,7 @@
 
 ###连接到媒体服务 URI
 
-请注意，请勿在请求中使用任何自动重定向/跟踪逻辑。HTTP 谓词和请求正文将不会转发到新 URI。用于上载和下载资产文件的根 URI 为 https://yourstorageaccount.blob.core.chinacloudapi.cn/ ，其中的存储帐户名为你在媒体服务帐户设置期间使用的同一帐户名。
+请注意，请勿在请求中使用任何自动重定向/跟踪逻辑。HTTP 谓词和请求正文不会转发到新 URI。用于上传和下载资产文件的根 URI 为 https://yourstorageaccount.blob.core.chinacloudapi.cn/ ，其中存储帐户名为你在媒体服务帐户设置期间使用的同一帐户名。
 
 以下示例演示了对上海 DC 媒体服务 URI 发出的 HTTP 请求 (https://wamsshaclus001rest-hs.chinacloudapp.cn/API/)。     
 
@@ -131,4 +131,4 @@
 
 
 
-<!---HONumber=Mooncake_1114_2016-->
+<!---HONumber=Mooncake_Quality_Review_1215_2016-->

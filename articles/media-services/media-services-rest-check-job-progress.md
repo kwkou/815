@@ -15,7 +15,7 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="09/26/2016"   
-	wacn.date="11/21/2016"   
+	wacn.date="12/26/2016"   
 	ms.author="juliako"/>
 
 #如何：检查作业进度
@@ -25,7 +25,7 @@
 - [.NET](/documentation/articles/media-services-check-job-progress/)
 - [REST](/documentation/articles/media-services-rest-check-job-progress/)
 
-当你运行作业时，通常需要采用某种方式来跟踪作业进度。你可以使用作业的 State 属性来查看该作业的状态。有关 State 属性的详细信息，请参阅[作业实体属性](https://msdn.microsoft.com/zh-cn/library/azure/5100ddd7-92ff-4c37-84d2-4f84fee250a7#job_entity_properties)。
+当你运行作业时，通常需要采用某种方式跟踪作业进度。你可以使用作业的 State 属性查看该作业的状态。有关 State 属性的详细信息，请参阅[作业实体属性](https://msdn.microsoft.com/zh-cn/library/azure/5100ddd7-92ff-4c37-84d2-4f84fee250a7#job_entity_properties)。
 
 
 请求：
@@ -57,4 +57,4 @@
 	
 	{"odata.metadata":"https://wamsshaclus001rest-hs.chinacloudapp.cn/api/$metadata#Jobs","value":[{"Id":"nb:jid:UUID:f3c43f94-327f-2347-90bb-3bf79f8559f1","Name":"Encoding BigBuckBunny into to H264 Adaptive Bitrate MP4 Set 720p","Created":"2015-02-11T01:46:08.897","LastModified":"2015-02-11T01:46:08.897","EndTime":null,"Priority":0,"RunningDuration":0.0,"StartTime":"2015-02-11T01:46:16.58","State":2,"TemplateId":null,"JobNotificationSubscriptions":[]}]} 
 
-<!---HONumber=Mooncake_1114_2016-->
+<!---HONumber=Mooncake_Quality_Review_1215_2016-->

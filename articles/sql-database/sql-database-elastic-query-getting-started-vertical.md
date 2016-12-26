@@ -1,5 +1,5 @@
 <properties
-	pageTitle="跨数据库查询（纵向分区）入门 | Azure"	
+	pageTitle="跨数据库查询（垂直分区）入门 | Azure"	
 	description="如何在垂直分区数据库中使用弹性数据库查询"
 	services="sql-database"
 	documentationCenter=""  
@@ -13,20 +13,20 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="05/23/2016"
-	wacn.date="11/16/2016"
+	wacn.date="12/26/2016"
 	ms.author="torsteng" />
 
-# 跨数据库查询（纵向分区）入门（预览）
+# 跨数据库查询（垂直分区）入门（预览）
 
-Azure SQL 数据库弹性数据库查询（预览版）可让你使用单一连接点运行跨多个数据库的 T-SQL 查询。本主题适用于[垂直分区数据库](/documentation/articles/sql-database-elastic-query-vertical-partitioning/)。
+Azure SQL 数据库的弹性数据库查询（预览版）使用户能够使用单一连接点运行跨多个数据库的 T-SQL 查询。本主题适用于[垂直分区数据库](/documentation/articles/sql-database-elastic-query-vertical-partitioning/)。
 
-完成时，你将会：了解如何配置和使用 Azure SQL 数据库执行跨多个相关数据库的查询。
+在学习完本主题后，用户将：了解如何配置和使用 Azure SQL 数据库以执行跨多个相关数据库的查询。
 
 有关弹性数据库查询功能的详细信息，请参阅 [Azure SQL 数据库弹性数据库查询概述](/documentation/articles/sql-database-elastic-query-overview/)。
 
 ## 创建示例数据库
 
-首先，我们需要在相同或不同逻辑服务器中创建两个数据库 **Customers** 和 **Orders**。
+首先，我们需要在相同或不同的逻辑服务器中创建两个数据库：**Customers** 和 **Orders**。
 
 在 **Orders** 数据库中执行以下查询以创建 **OrderInformation** 表并输入示例数据。
 
@@ -87,7 +87,7 @@ Azure SQL 数据库弹性数据库查询（预览版）可让你使用单一连�
 
 ## 执行示例弹性数据库 T-SQL 查询
 
-定义外部数据源和外部表后，现在可以使用 T-SQL 查询外部表。对 Orders 数据库执行以下查询：
+在定义了外部数据源和外部表后，便可以使用 T-SQL 查询外部表。对 Orders 数据库执行以下查询：
 
 	SELECT OrderInformation.CustomerID, OrderInformation.OrderId, CustomerInformation.CustomerName, CustomerInformation.Company 
 	FROM OrderInformation 
@@ -107,4 +107,4 @@ Azure SQL 数据库弹性数据库查询（预览版）可让你使用单一连�
 
 <!--anchors-->
 
-<!---HONumber=Mooncake_0711_2016-->
+<!---HONumber=Mooncake_Quality_Review_1215_2016-->

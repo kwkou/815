@@ -14,7 +14,7 @@
 	ms.devlang="na" 
 	ms.topic="article" 
  	ms.date="09/01/2016" 
- 	wacn.date="10/10/2016"
+ 	wacn.date="12/15/2016"
 	ms.author="juliako;milangada;gtrifonov"/>
 
 
@@ -29,10 +29,8 @@
 
 ##概述
 
-媒体服务帐户与保留单元类型相关联，后者决定了编码作业的处理速度。你可以在以下保留单位类型之间进行选择：S1、S2 或 S3。例如，与“基本”保留单元类型相比，使用“标准”类型时，相同的编码作业运行速度更快。有关详细信息，请参阅 [Milan Gada](https://azure.microsoft.com/blog/high-speed-encoding-with-azure-media-services/) 撰写的“编码保留单位类型”。
-
-除了指定保留单元类型，你还可以指定如何通过媒体保留单元来设置帐户。设置的媒体保留单元数决定了给定帐户中可并发处理的媒体任务数。例如，如果你的帐户具有 5 个保留单元，则只要有任务要处理，就可以同时运行 5 个媒体任务。其余任务将排队等待，运行的任务完成后才选择它们以按顺序进行处理。如果帐户未设置任何保留单元，则按顺序选择任务进行处理。在这种情况下，完成一个任务和开始下一个任务之间的等待时间将取决于系统中资源的可用性。
-
+>[AZURE.IMPORTANT] 请确保查看[概述](/documentation/articles/media-services-scale-media-processing-overview/)主题，获取有关缩放媒体处理主题的详细信息。
+ 
 若要使用 .NET SDK 更改保留单元类型和媒体保留单元数目，请执行以下操作：
 
 	IEncodingReservedUnit encodingS1ReservedUnit = _context.EncodingReservedUnits.FirstOrDefault();
@@ -51,4 +49,4 @@
 
 
 
-<!---HONumber=Mooncake_0926_2016-->
+<!---HONumber=Mooncake_Quality_Review_1215_2016-->

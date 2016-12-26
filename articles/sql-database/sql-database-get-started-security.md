@@ -16,11 +16,11 @@
 	ms.devlang="na"
 	ms.topic="hero-article"
 	ms.date="08/17/2016"
-	wacn.date="10/17/2016"
+	wacn.date="12/26/2016"
 	ms.author="carlrab"/>  
 
 
-# SQL 数据库教程：创建 SQL 数据库用户帐户用于访问和管理数据库
+# SQL 数据库教程：创建 SQL 数据库用户帐户以访问和管理数据库
 
 
 > [AZURE.SELECTOR]
@@ -52,4 +52,4 @@
 ## 后续步骤
 完成本 SQL 数据库教程、创建用户帐户并为该帐户授予 dbo 权限后，便可详细了解 [SQL 数据库安全](/documentation/articles/sql-database-manage-logins/)。
 
-<!---HONumber=Mooncake_1010_2016-->
+<!---HONumber=Mooncake_Quality_Review_1215_2016-->
