@@ -4,7 +4,8 @@
 	documentationCenter="android"
 	authors="yuaxu"
 	manager="erikre"
-	services="app-service\mobile"/>
+	services="app-service\mobile"/>  
+
 
 <tags
 	ms.service="app-service-mobile"
@@ -13,7 +14,7 @@
 	ms.devlang="java"
 	ms.topic="article"
 	ms.date="10/01/2016"
-	wacn.date="11/21/2016"
+	wacn.date="12/26/2016"
 	ms.author="yuaxu"/>
 
 # 为 Android 移动应用启用脱机同步
@@ -79,12 +80,11 @@
 	    }
 
 ## 测试应用程序
-
-在此部分中，你将在启用 WiFi 的情况下测试行为，然后关闭 WiFi 以创建脱机方案。
+此部分在启用 WiFi 的情况下测试行为，然后关闭 WiFi 以创建脱机方案。
 
 添加数据项时，它们保存在本地 SQLite 存储中，但直到按下“刷新”按钮才同步到移动服务。根据数据需要同步的时间，其他应用可能具有不同的要求，但出于演示目的，本教程让用户显式请求它。
 
-按下此按钮之后，将启动新的后台任务，并且先通过使用同步上下文推送对本地存储所做的所有更改，然后将更改的所有数据从 Azure 拉取到本地表。
+按该按钮时，将启动一个新的后台任务。该任务先使用同步上下文推送对本地存储所做的所有更改，然后将所有更改的数据从 Azure 拉取到本地表。
 
 ### 脱机测试
 
@@ -95,7 +95,7 @@
 3. 使用 SQL 工具（如 *SQL Server Management Studio* ）或 REST 客户端（如 *Fiddler* 或 *Postman* ）查看 Azure *TodoItem* 表的内容。验证新项是否_未_同步到服务器
 
    	+ 对于 Node.js 后端，请转到 [Azure 门户预览](https://portal.azure.cn/)，在移动应用后端中单击“简易表”>“TodoItem”，查看 `TodoItem` 表的内容。
-   	+ 对于 .NET 后端，请使用 SQL 工具（如 *SQL Server Management Studio*）或 REST 客户端（如 *Fiddler* 或 *Poistman*）查看表内容。
+   	+ 对于 .NET 后端，请使用 SQL 工具（如 *SQL Server Management Studio* ）或 REST 客户端（如 *Fiddler* 或 *Poistman* ）查看表内容。
 
 4. 在设备或模拟器中打开 WiFi。接下来，按“刷新”按钮。
 
@@ -113,4 +113,4 @@
 
 [Create an Android App]: /documentation/articles/app-service-mobile-android-get-started/
 
-<!---HONumber=Mooncake_0919_2016-->
+<!---HONumber=Mooncake_1219_2016-->

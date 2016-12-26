@@ -15,7 +15,7 @@
 	ms.devlang="objective-c"
 	ms.topic="article"
 	ms.date="10/01/2016"
-	wacn.date="11/21/2016"
+	wacn.date="12/26/2016"
 	ms.author="yuaxu"/>
 
 # 如何使用适用于 Azure 移动应用的 iOS 客户端库
@@ -255,7 +255,7 @@ query.parameters = ["myKey1": "value1", "myKey2": "value2"]
 
 此设置也是数据记录数目，而不是字节大小。
 
-如果要增加客户端页面大小，[还应增加服务器上的页面大小](/documentation/articles/app-service-mobile-dotnet-backend-how-to-use-server-sdk/#_how-to-adjust-the-table-paging-size)。
+如果要增加客户端页面大小，还应增加服务器上的页面大小。有关此操作的步骤，请参阅[“如何调整表分页大小”](/documentation/articles/app-service-mobile-dotnet-backend-how-to-use-server-sdk/)。
 
 **Objective-C**：
 
@@ -548,7 +548,7 @@ if (error.code == MSErrorPreconditionFailed) {
 
 可以借助 Active Directory 身份验证库 (ADAL) 使用 Azure Active Directory 将用户登录到应用程序。使用标识提供者 SDK 的客户端流身份验证优于使用 `loginWithProvider:completion:` 方法。客户端流身份验证提供更自然的 UX 体验，并允许进行额外的自定义。
 
-1. 根据 [How to configure App Service for Active Directory login][7]（如何为 Active Directory 登录配置应用服务）教程的说明，为 AAD 登录配置移动应用。请务必完成注册本机客户端应用程序的可选步骤。对于 iOS，建议重定向 URI 采用 `<app-scheme>://<bundle-id>` 格式。
+1. 根据 [How to configure App Service for Active Directory login][7]（如何为 Active Directory 登录配置应用服务）教程的说明，为 AAD 登录配置移动应用。请务必完成注册本机客户端应用程序的可选步骤。对于 iOS，建议重定向 URI 采用 `<app-scheme>://<bundle-id>` 格式。有关详细信息，请参阅 [ADAL iOS 快速入门][8]。
 
 2. 使用 Cocoapods 安装 ADAL。编辑 Podfile 以包含以下定义，将 **YOUR-PROJECT** 替换为 Xcode 项目的名称：
 
@@ -563,12 +563,10 @@ Pod：
 
 4. 根据使用的语言，将以下代码添加到应用程序。在每一项中，进行以下替换：
 
-* 将 **INSERT-AUTHORITY-HERE** 替换为在其中预配了应用程序的租户的名称。格式应为 https://login.chinacloudapi.cn/contoso.partner.onmschina.cn。可以在 [Azure 经典管理门户] 中 Azure Active Directory 的“域”选项卡中复制此值。
-
+    * 将 **INSERT-AUTHORITY-HERE** 替换为在其中预配应用程序的租户的名称。格式应为 https://login.chinacloudapi.cn/contoso.partner.onmschina.cn。可以在 [Azure 经典管理门户] 中 Azure Active Directory 的“域”选项卡中复制此值。
     * 将 **INSERT-RESOURCE-ID-HERE** 替换移动应用后端的客户端 ID。可以在门户中“Azure Active Directory 设置”下面的“高级”选项卡获取客户端 ID。
-
     * 将 **INSERT-CLIENT-ID-HERE** 替换为从本机客户端应用程序复制的客户端 ID。
-* 将 **INSERT-REDIRECT-URI-HERE** 替换为站点的 _/.auth/login/done_ 终结点（使用 HTTPS 方案）。此值应类似于 \_https://contoso.chinacloudsites.cn/.auth/login/done_。
+    * 将 **INSERT-REDIRECT-URI-HERE** 替换为站点的 _/.auth/login/done_ 终结点（使用 HTTPS 方案）。此值应类似于 \_https://contoso.chinacloudsites.cn/.auth/login/done_。
 
 **Objective-C**：
 
@@ -692,8 +690,8 @@ Pod：
 [5]: http://azure.github.io/azure-mobile-services/iOS/v3/Classes/MSClient.html#//api/name/invokeAPI:data:HTTPMethod:parameters:headers:completion:
 [6]: https://github.com/Azure/azure-mobile-services/blob/master/sdk/iOS/src/MSError.h
 [7]: /documentation/articles/app-service-mobile-how-to-configure-active-directory-authentication/
-
+[8]: /documentation/articles/active-directory-devquickstarts-ios/#em1-determine-what-your-redirect-uri-will-be-for-iosem
 
 [10]: https://developers.facebook.com/docs/ios/getting-started
 
-<!---HONumber=Mooncake_1114_2016-->
+<!---HONumber=Mooncake_1219_2016-->

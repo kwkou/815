@@ -15,7 +15,7 @@
 	ms.devlang="dotnet"
 	ms.topic="article"
 	ms.date="10/01/2016"
-	wacn.date="11/21/2016"
+	wacn.date="12/26/2016"
 	ms.author="adrianha"/>
 
 # 如何使用 Azure 移动应用的托管客户端
@@ -62,7 +62,7 @@ C# 中对应的类型化客户端类型为以下类：
 
 [JsonPropertyAttribute][6] 用于定义客户端类型与表之间的 *PropertyName* 映射。
 
-若要了解如何在移动应用后端中创建表，请参阅 [.NET 服务器 SDK 主题][7]或 [Node.js 服务器 SDK 主题][8]中的信息。如果已在 Azure 门户预览中使用快速入门项目创建移动应用后端，也可以在 [Azure 门户预览]中使用“简易表”设置。
+若要了解如何在移动应用后端中创建表，请参阅 [.NET 服务器 SDK 主题][7]或 [Node.js 服务器 SDK 主题][8]。如果已在 Azure 门户预览中使用快速入门项目创建移动应用后端，也可以在 [Azure 门户预览]中使用“简易表”设置。
 
 ###如何安装托管的客户端 SDK 包
 
@@ -218,14 +218,15 @@ C# 中对应的类型化客户端类型为以下类：
 					.Take(3);
 	List<TodoItem> items = await query.ToListAsync();
 
-[IncludeTotalCount] 方法请求应该返回的_所有_记录的总计数，并忽略指定的任何分页/限制子句：
+[IncludeTotalCount] 方法请求应该返回的*所有*记录的总计数，并忽略指定的任何分页/限制子句：
 
 	query = query.IncludeTotalCount();
 
 在实际应用中，可以搭配页导航控件或类似的 UI 使用类似于上述示例的查询，在页之间导航。
 
 >[AZURE.NOTE]若要替代移动应用后端中的 50 行限制，还必须将 [EnableQueryAttribute] 应用到公共 GET 方法，并指定分页行为。将以下语句应用到该方法后，最大返回行数将设置为 1000：
->[EnableQuery(MaxTop=1000)]
+>
+>    [EnableQuery(MaxTop=1000)]
 
 ### <a name="selecting"></a>如何选择特定的列
 
@@ -473,8 +474,8 @@ C# 中对应的类型化客户端类型为以下类：
 
 2. （可选）若要支持 Windows 设备，请安装以下 SQLite 运行时包之一：
 
-    * **Windows 8.1 运行时：**安装 [SQLite for Windows 8.1][3]。
-    * **Windows Phone 8.1：**安装 [SQLite for Windows Phone 8.1][4]。
+    * **Windows 8.1 运行时:**安装 [SQLite for Windows 8.1][3]。
+    * **Windows Phone 8.1:**安装 [SQLite for Windows Phone 8.1][4]。
     * **通用 Windows 平台** 安装[适用于通用 Windows 平台的 SQLite][5]。
 
 3. （可选）。对于 Windows 设备，单击“引用”>“添加引用...”，展开 **Windows** 文件夹 >“扩展”，然后启用相应的 **SQLite for Windows** SDK 和 **Visual C++ 2013 Runtime for Windows** SDK。每个 Windows 平台的 SQLite SDK 名称略有不同。
@@ -564,13 +565,13 @@ SDK 会在提取记录前执行隐式 `PushAsync()`。
 
 ##<a name="authentication"></a>对用户进行身份验证
 
-移动应用支持使用各种外部标识提供者对应用用户进行身份验证和授权，这些提供者包括：Microsoft 帐户和 Azure Active Directory。你可以在表中设置权限，以便将特定操作的访问权限限制给已经过身份验证的用户。你还可以在服务器脚本中使用已经过身份验证的用户的标识来实施授权规则。有关详细信息，请参阅[向应用程序添加身份验证]教程。
+移动应用支持使用各种外部标识提供者对应用程序用户进行身份验证和授权，这些提供者包括：Microsoft 帐户和 Azure Active Directory。你可以在表中设置权限，以便将特定操作的访问权限限制给已经过身份验证的用户。你还可以在服务器脚本中使用已经过身份验证的用户的标识来实施授权规则。有关详细信息，请参阅[向应用程序添加身份验证]教程。
 
-支持两种身份验证流：_客户端托管_流和_服务器托管_流。服务器流依赖于提供者的 Web 身份验证界面，因此可提供最简便的身份验证体验。客户端流依赖于提供者和设备特定的 SDK，因此允许与设备特定的功能进行更深入的集成。
+支持两种身份验证流： *客户端托管* 流和 *服务器托管* 流。服务器托管流依赖于提供者的 Web 身份验证界面，因此可提供最简便的身份验证体验。客户端托管流依赖于提供者和设备特定的 SDK，因此允许与设备特定的功能进行更深入的集成。
 
 >[AZURE.NOTE] 建议在生产应用中使用客户端托管流。
 
-若要设置身份验证，必须向一个或多个标识提供者注册应用。标识提供者将为应用生成客户端 ID 和客户端机密，然后在后端中进行设置，使用该标识提供者启用 Azure 应用服务身份验证/授权。有关详细信息，请遵循 [Add authentication to your app]（将身份验证添加到应用）教程中的详细说明。
+若要设置身份验证，必须向一个或多个标识提供者注册应用。标识提供者为应用生成客户端 ID 和客户端机密。然后会在后端设置这些值，以便进行 Azure 应用服务身份验证/授权。有关详细信息，请遵循 [Add authentication to your app]（将身份验证添加到应用）教程中的详细说明。
 
 本部分介绍以下主题：
 
@@ -578,9 +579,8 @@ SDK 会在提取记录前执行隐式 `PushAsync()`。
 + [服务器托管的身份验证](#serverflow)
 + [缓存身份验证令牌](#caching)
 
-###<a name="clientflow"></a>客户端托管的身份验证
-
-应用可以独立联系标识提供者，然后在用后端登录期间提供返回的令牌。使用此客户端流可为用户提供单一登录体验，或者从标识提供者中检索其他用户数据。这可能比使用服务器流更有利，因为它提供更直观的 UX 风格，并允许其他自定义。
+### <a name="clientflow"></a>客户端托管的身份验证
+应用可以独立联系标识提供者，然后在用后端登录期间提供返回的令牌。使用此客户端流可为用户提供单一登录体验，或者从标识提供者中检索其他用户数据。客户端流身份验证比使用服务器流更有利，因为标识提供者 SDK 提供更自然的 UX 风格，并允许其他自定义。
 
 提供了以下客户端流身份验证模式的示例：
 
@@ -596,12 +596,10 @@ SDK 会在提取记录前执行隐式 `PushAsync()`。
 3. 根据使用的平台，将以下代码添加到应用程序。在每条代码中进行以下替换：
 
 	* 将 **INSERT-AUTHORITY-HERE** 替换为在其中预配应用程序的租户的名称。格式应为 https://login.chinacloudapi.cn/contoso.partner.onmschina.cn。可以在 [Azure 经典管理门户]中 Azure Active Directory 的“域”选项卡中复制此值。
-	
 	* 将 **INSERT-RESOURCE-ID-HERE** 替换移动应用后端的客户端 ID。可以在门户中“Azure Active Directory 设置”下面的“高级”选项卡获取客户端 ID。
-	
 	* 将 **INSERT-CLIENT-ID-HERE** 替换为从本机客户端应用程序复制的客户端 ID。
 	
-	* 将 **INSERT-REDIRECT-URI-HERE** 替换为站点的 _/.auth/login/done_ 终结点（使用 HTTPS 方案）。此值应类似于 \_https://contoso.chinacloudsites.cn/.auth/login/done_。
+   * 将 **INSERT-REDIRECT-URI-HERE** 替换为站点的 */.auth/login/done* 终结点（使用 HTTPS 方案）。此值应类似于 *https://contoso.chinacloudsites.cn/.auth/login/done* 。
 	
 	每个平台所需的代码如下：
 	
@@ -780,13 +778,11 @@ SDK 会在提取记录前执行隐式 `PushAsync()`。
 
 如果使用的标识提供者不是 Microsoft，请将上述 [MobileServiceAuthenticationProvider] 的值更改为提供者的值。
 
-在服务器流中，Azure 应用服务通过以下方式管理 OAuth 2.0 身份验证流：显示选定提供者的登录页，并在用户成功使用标识提供者登录后生成应用服务身份验证令牌。[LoginAsync 方法]返回 [MobileServiceUser]，后者提供已经过身份验证的用户的 [UserId]，以及 JSON Web 令牌 (JWT) 形式的 [MobileServiceAuthenticationToken]。你可以缓存此令牌，并在它过期之前重复使用。有关详细信息，请参阅[缓存身份验证令牌](#caching)。
 
-###<a name="caching"></a>缓存身份验证令牌
+在服务器流中，Azure 应用服务可以通过显示所选提供者的登录页来管理 OAuth 身份验证。标识提供者返回后，Azure 应用服务会生成一个应用服务身份验证令牌。[LoginAsync 方法]返回 [MobileServiceUser]，后者提供已经过身份验证的用户的 [UserId]，以及 JSON Web 令牌 (JWT) 形式的 [MobileServiceAuthenticationToken]。可以缓存此令牌，并在它过期之前重复使用。有关详细信息，请参阅[缓存身份验证令牌](#caching)。
 
-在某些情况下，使用客户端流程时，存储身份验证令牌甚至来自提供程序的访问令牌可避免在首次成功身份验证后调用登录方法。
-
-Windows 应用商店和 UWP 应用可以使用 [PasswordVault] 在成功登录后缓存当前身份验证令牌，如下所示：
+### <a name="caching"></a>缓存身份验证令牌
+在某些情况下，存储提供者提供的身份验证令牌可避免在首次成功身份验证后调用登录方法。Windows 应用商店和 UWP 应用可以使用 [PasswordVault] 在成功登录后缓存当前身份验证令牌，如下所示：
 
 	await client.LoginAsync(MobileServiceAuthenticationProvider.Microsoft);		
 
@@ -815,7 +811,7 @@ UserId 值存储为凭据的 UserName，令牌存储为 Password。在后续启�
 	client.Logout();
 	vault.Remove(vault.Retrieve("Microsoft", client.currentUser.UserId));
 
-Xamarin 应用使用 [Xamarin.Auth API](https://components.xamarin.com/view/xamarin.auth/) 将证书安全存储在 **Account** 对象中。有关使用这些 API 的示例，请参阅 [ContosoMoments photo sharing sample](https://github.com/azure-appservice-samples/ContosoMoments/tree/dev)（ContosoMoments 照片分享示例）中的 [AuthStore.cs](https://github.com/azure-appservice-samples/ContosoMoments/blob/dev/src/Mobile/ContosoMoments/Helpers/AuthStore.cs) 代码文件。
+Xamarin 应用使用 [Xamarin.Auth API] 将证书安全存储在 **Account** 对象中。有关使用这些 API 的示例，请参阅 [ContosoMoments photo sharing sample](https://github.com/azure-appservice-samples/ContosoMoments)（ContosoMoments 照片分享示例）中的 [AuthStore.cs] 代码文件。
 
 使用客户端托管的身份验证时，也可以缓存从提供程序（例如 Microsoft）获取的访问令牌。可以提供此令牌，从后端请求新的身份验证令牌，如下所示：
 
@@ -835,8 +831,7 @@ Xamarin 应用使用 [Xamarin.Auth API](https://components.xamarin.com/view/xama
 * [获取 Windows 应用商店包 SID](#package-sid)
 * [使用跨平台模板注册](#how-to-register-push-templates-to-send-cross-platform-notifications)
 
-###<a name="register-for-push"></a> 如何注册推送通知
-
+### <a name="register-for-push"></a>如何注册推送通知
 使用移动应用客户端可向 Azure 通知中心注册推送通知。注册时，你将获得从平台特定的推送通知服务 (PNS) 获取的句柄。然后你就可以在创建注册时提供此值以及任何标记。以下代码将用于推送通知的 Windows 应用注册到 Windows 通知服务 (WNS)：
 
     private async void InitNotificationsAsync()
@@ -848,27 +843,27 @@ Xamarin 应用使用 [Xamarin.Auth API](https://components.xamarin.com/view/xama
         await MobileService.GetPush().RegisterNativeAsync(channel.Uri, null);
     }
 
-如果要推送到 WNS，必须获取 Windows 应用商店包 SID（如下所示）。请注意，在此示例中，注册包含两个标记。有关 Windows 应用的详细信息，包括如何注册模板，请参阅 [Add push notifications to your app]（将推送通知添加到应用）。
+如果要推送到 WNS，必须[获取 Windows 应用商店包 SID](#package-sid)。有关 Windows 应用的详细信息，包括如何注册模板，请参阅 [Add push notifications to your app]（将推送通知添加到应用）。
 
-请注意，不支持从客户端请求标记。注册时将静默删除标记请求。如果想要使用标记注册设备，请创建自定义 API，使用通知中心 API 自动执行注册。调用[自定义 API](#customapi) 而不是 `RegisterNativeAsync()` 方法。
+不支持从客户端请求标记。注册时将静默删除标记请求。如果想要使用标记注册设备，请创建自定义 API，使用通知中心 API 自动执行注册。调用[自定义 API](#customapi) 而不是 `RegisterNativeAsync()` 方法。
 
-###<a name="package-sid"></a> 如何获取 Windows 应用商店包 SID
-
-在 Windows 应用商店应用中启用推送通知需有包 SID。包 SID 也可用于其他操作（如 Windows 单一登录）。需要向 Windows 应用商店注册应用程序才能收到包 SID。
+### <a name="package-sid"></a>如何获取 Windows 应用商店包 SID
+在 Windows 应用商店应用中启用推送通知需有包 SID。若要接收包 SID，请向 Windows 应用商店注册应用程序。
 
 若要获取此值，请执行以下操作：
 
 1. 在“Visual Studio 资源管理器”中，右键单击 Windows 应用商店应用项目，单击“应用商店”>“将应用与应用商店关联...”。
 2. 在向导中，单击“下一步”，使用 Microsoft 帐户登录，在“保留新应用名称”中键入应用的名称，然后单击“保留”。
-3. 成功创建应用注册后，选择新应用名称，再依次单击“下一步”和“关联”。这会将所需的 Windows 应用商店注册信息添加到应用程序清单中。
-4. 使用 Microsoft 帐户登录到 [Windows 开发人员中心]。在“我的应用”下面，单击刚刚创建的应用注册。
+3. 成功创建应用注册后，选择应用名称，再依次单击“下一步”和“关联”。
+4. 使用 Microsoft 帐户登录到 [Windows 开发人员中心]。在“我的应用”下面，单击已创建的应用注册。
 5. 单击“应用管理”>“应用标识”，然后向下滚动找到“包 SID”。
 
-包 SID 的许多用法将其视为 URI，在这种情况下，需要使用 _ms-app://_ 作为方案。记下包 SID 的版本，其中串联了此值作为前缀。
+包 SID 的许多用法将其视为 URI，在这种情况下，需要使用 *ms-app://* 作为方案。记下包 SID 的版本，其中串联了此值作为前缀。
 
-Xamarin 应用需要一些额外的代码才能将 iOS 上运行的应用注册到 Apple Push Notification 服务 (APNS)。有关详细信息，请参阅适用于平台的主题：
+Xamarin 应用需要一些额外的代码才能注册 iOS 或 Android 平台上运行的应用。有关详细信息，请参阅适用于平台的主题：
 
-* [Xamarin.iOS](/documentation/articles/app-service-mobile-xamarin-ios-get-started-push/#add-push)
+* [Xamarin.Android](/documentation/articles/app-service-mobile-xamarin-android-get-started-push/#add-push)
+* [Xamarin.iOS](/documentation/articles/app-service-mobile-xamarin-ios-get-started-push/#add-push-notifications-to-your-app)
 
 ###<a name="how-to-register-push-templates-to-send-cross-platform-notifications"></a> 如何注册推送模板以发送跨平台通知
 
@@ -1036,8 +1031,8 @@ Xamarin 应用需要一些额外的代码才能将 iOS 上运行的应用注册�
 [OData v3 文档]: http://www.odata.org/documentation/odata-version-3-0/
 [Fiddler]: http://www.telerik.com/fiddler
 [Json.NET]: http://www.newtonsoft.com/json
-[Xamarin.Auth]: https://components.xamarin.com/view/xamarin.auth/
+[Xamarin.Auth API]: https://components.xamarin.com/view/xamarin.auth/
 [AuthStore.cs]: (https://github.com/azure-appservice-samples/ContosoMoments/blob/dev/src/Mobile/ContosoMoments/Helpers/AuthStore.cs)
 [ContosoMoments photo sharing sample]: https://github.com/azure-appservice-samples/ContosoMoments
 
-<!---HONumber=Mooncake_1114_2016-->
+<!---HONumber=Mooncake_1219_2016-->

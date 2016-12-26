@@ -1,15 +1,13 @@
 
-1. 在 [Azure 门户预览](https://portal.azure.cn/)中，依次单击“浏览”>“应用服务”，找到并单击移动应用程序后端 >“所有设置”，然后在“移动”下，单击“推送”。
+1. 在 [Azure 门户预览](https://portal.azure.cn/)中，单击“浏览全部”>“应用服务”>“移动应用后端”。在“设置”下，单击“应用服务推送”，然后单击通知中心名称。
+2. 转到“Google (GCM)”，输入从 Firebase 控制台获取的 FCM 服务器密钥，然后单击“保存”。
 
-2. 在“推送”通知服务中，单击“Google (GCM)”，输入从前一步骤中从 GCM 获取的“API 密钥”值，然后单击“保存”。
-
-    ![设置门户中的 GCM API 密钥](./media/app-service-mobile-android-configure-push/mobile-push-api-key.png)
-
-移动应用程序后端现已配置为使用 GCM 向在使用通知中心的 Android 设备上运行的应用程序发送推送通知。
+现在，服务已配置为使用 Firebase Cloud Messaging！
 
 <!-- URLs. -->
 
 
+
 <!-- images -->
 
-<!---HONumber=Mooncake_0919_2016-->
+<!---HONumber=Mooncake_1219_2016-->

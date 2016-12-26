@@ -14,8 +14,8 @@
 	ms.tgt_pltfrm="mobile-xamarin"
 	ms.devlang="dotnet"
 	ms.topic="article"
-	ms.date="10/01/2016"
-	wacn.date="11/21/2016"
+	ms.date="10/12/2016"
+	wacn.date="12/26/2016"
 	ms.author="adrianha"/>
 
 # 向 Xamarin.Forms 应用添加推送通知
@@ -23,42 +23,268 @@
 [AZURE.INCLUDE [app-service-mobile-selector-get-started-push](../../includes/app-service-mobile-selector-get-started-push.md)]
 
 ##概述
+在本教程中，用户需向 [Xamarin.Forms 快速入门](/documentation/articles/app-service-mobile-xamarin-forms-get-started/)中生成的所有项目添加推送通知，以便每次插入记录时都能向所有跨平台客户端发送推送通知。
 
-本教程演示如何使用 Azure 服务将推送通知发送到各种本机设备平台（Android、iOS 和 Windows）上运行的 Xamarin.Forms 应用。使用 Azure 通知中心从 Azure 移动应用后端发送推送通知。使用模板注册，这样可以将同一消息发送到使用不同推送通知服务 (PNS) 的所有平台上运行的设备。有关发送跨平台推送通知的详细信息，请参阅 [Azure 通知中心](/documentation/articles/notification-hubs-templates-cross-platform-push-messages/)文档。
+如果不使用下载的快速入门服务器项目，则需要推送通知扩展包。有关详细信息，请参阅[使用适用于 Azure 移动应用的 .NET 后端服务器 SDK](/documentation/articles/app-service-mobile-dotnet-backend-how-to-use-server-sdk/)。
 
-向 Xamarin.Forms 应用支持的每个项目添加推送通知。每次在后端中插入一条记录时，都会发送一条推送通知。
+## 先决条件
+* 对于 iOS，用户需要 [Apple Developer Program 会员资格](https://developer.apple.com/programs/ios/)和物理 iOS 设备，因为 [iOS 模拟器不支持推送通知](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/iOS_Simulator_Guide/TestingontheiOSSimulator.html)。
 
-##先决条件
+## <a name="configure-hub"></a>配置通知中心
+[AZURE.INCLUDE [app-service-mobile-configure-notification-hub](../../includes/app-service-mobile-configure-notification-hub.md)]
 
-为了使本教程达到最佳效果，建议用户先完成[创建 Xamarin.Forms 应用](/documentation/articles/app-service-mobile-xamarin-forms-get-started/)教程。完成此教程后，用户将获得一个 Xamarin.Forms 项目，它是一个多平台 TodoList 应用。
-
-如果不使用下载的快速入门服务器项目，必须将推送通知扩展包添加到项目。有关服务器扩展包的详细信息，请参阅 [Work with the .NET backend server SDK for Azure Mobile Apps](/documentation/articles/app-service-mobile-dotnet-backend-how-to-use-server-sdk/)（使用适用于 Azure 移动应用的 .NET 后端服务器 SDK）。
-
-向 iOS 设备发送推送通知需要 [Apple 开发人员计划成员身份](https://developer.apple.com/programs/ios/)。另外，必须使用物理 iOS 设备，因为 iOS 模拟器不支持推送通知。
-
-##<a name="create-hub"></a>创建通知中心
-
-[AZURE.INCLUDE [app-service-mobile-create-notification-hub](../../includes/app-service-mobile-create-notification-hub.md)]
-
-##更新服务器项目以发送推送通知
-
+## 更新服务器项目以发送推送通知
 [AZURE.INCLUDE [app-service-mobile-update-server-project-for-push-template](../../includes/app-service-mobile-update-server-project-for-push-template.md)]
 
-##（可选）配置和运行 iOS 项目
+## （可选）配置和运行 Android 项目
+完成此部分即可为适用于 Android 的 Xamarin.Forms Droid 项目启用推送通知。
 
+### 启用 Firebase Cloud Messaging (FCM)
+[AZURE.INCLUDE [notification-hubs-enable-firebase-cloud-messaging](../../includes/notification-hubs-enable-firebase-cloud-messaging.md)]
+
+### 配置移动应用后端，使用 FCM 发送推送请求
+[AZURE.INCLUDE [app-service-mobile-android-configure-push](../../includes/app-service-mobile-android-configure-push.md)]
+
+### 向 Android 项目添加推送通知
+为后端配置 FCM 后，即可向客户端添加组件和代码，以便注册到 FCM、通过移动应用后端向 Azure 通知中心注册使用推送通知，以及接收通知。
+
+1. 在 **Droid** 项目中，右键单击 **Components** 文件夹，单击“获取更多组件...”，搜索 **Google Cloud Messaging 客户端**组件，然后将其添加到项目中。此组件支持 Xamarin Android 项目的推送通知。
+2. 打开 MainActivity.cs 项目文件，将以下 using 语句添加到文件顶部：
+   
+        using Gcm.Client;
+3. 调用 **LoadApplication** 后，将以下代码添加到 **OnCreate** 方法：
+   
+        try
+        {
+            // Check to ensure everything's setup right
+            GcmClient.CheckDevice(this);
+            GcmClient.CheckManifest(this);
+   
+            // Register for push notifications
+            System.Diagnostics.Debug.WriteLine("Registering...");
+            GcmClient.Register(this, PushHandlerBroadcastReceiver.SENDER_IDS);
+        }
+        catch (Java.Net.MalformedURLException)
+        {
+            CreateAndShowDialog("There was an error creating the client. Verify the URL.", "Error");
+        }
+        catch (Exception e)
+        {
+            CreateAndShowDialog(e.Message, "Error");
+        }
+4. 添加新的 **CreateAndShowDialog** 帮助器方法，如下所示：
+   
+        private void CreateAndShowDialog(String message, String title)
+        {
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+   
+            builder.SetMessage (message);
+            builder.SetTitle (title);
+            builder.Create().Show ();
+        }
+5. 将以下代码添加到 **MainActivity** 类：
+   
+        // Create a new instance field for this activity.
+        static MainActivity instance = null;
+   
+        // Return the current activity instance.
+        public static MainActivity CurrentActivity
+        {
+            get
+            {
+                return instance;
+            }
+        }
+   
+    这样会公开当前的 **MainActivity** 实例，方便我们在主 UI 线程上执行操作。
+6. 初始化 `instance`（**OnCreate** 方法开头的变量），如下所示。
+   
+        // Set the current instance of MainActivity.
+        instance = this;
+7. 将新的类文件添加到名为 `GcmService.cs` 的 **Droid** 项目，确保以下 **using** 语句存在于文件顶部：
+   
+        using Android.App;
+        using Android.Content;
+        using Android.Media;
+        using Android.Support.V4.App;
+        using Android.Util;
+        using Gcm.Client;
+        using Microsoft.WindowsAzure.MobileServices;
+        using Newtonsoft.Json.Linq;
+        using System;
+        using System.Collections.Generic;
+        using System.Diagnostics;
+        using System.Text;
+8. 在文件顶部（即 **using** 语句后，**namespace** 声明前）添加以下权限请求。
+   
+        [assembly: Permission(Name = "@PACKAGE_NAME@.permission.C2D_MESSAGE")]
+        [assembly: UsesPermission(Name = "@PACKAGE_NAME@.permission.C2D_MESSAGE")]
+        [assembly: UsesPermission(Name = "com.google.android.c2dm.permission.RECEIVE")]
+        [assembly: UsesPermission(Name = "android.permission.INTERNET")]
+        [assembly: UsesPermission(Name = "android.permission.WAKE_LOCK")]
+        //GET_ACCOUNTS is only needed for android versions 4.0.3 and below
+        [assembly: UsesPermission(Name = "android.permission.GET_ACCOUNTS")]
+9. 向命名空间添加以下类定义。
+   
+       [BroadcastReceiver(Permission = Gcm.Client.Constants.PERMISSION_GCM_INTENTS)]
+       [IntentFilter(new string[] { Gcm.Client.Constants.INTENT_FROM_GCM_MESSAGE }, Categories = new string[] { "@PACKAGE_NAME@" })]
+       [IntentFilter(new string[] { Gcm.Client.Constants.INTENT_FROM_GCM_REGISTRATION_CALLBACK }, Categories = new string[] { "@PACKAGE_NAME@" })]
+       [IntentFilter(new string[] { Gcm.Client.Constants.INTENT_FROM_GCM_LIBRARY_RETRY }, Categories = new string[] { "@PACKAGE_NAME@" })]
+       public class PushHandlerBroadcastReceiver : GcmBroadcastReceiverBase<GcmService>
+       {
+           public static string[] SENDER_IDS = new string[] { "<PROJECT_NUMBER>" };
+       }
+   
+   > [!NOTE]
+   > 将 **<PROJECT\_NUMBER>** 替换为此前记下的项目编号。
+   > 
+   > 
+10. 将空的 **GcmService** 类替换为以下代码，使用新的广播接收方：
+    
+         [Service]
+         public class GcmService : GcmServiceBase
+         {
+             public static string RegistrationID { get; private set; }
+    
+             public GcmService()
+                 : base(PushHandlerBroadcastReceiver.SENDER_IDS){}
+         }
+11. 将以下代码添加到 **GcmService** 类，以便重写 **OnRegistered **事件处理程序并实现 **Register** 方法。
+    
+        protected override void OnRegistered(Context context, string registrationId)
+        {
+            Log.Verbose("PushHandlerBroadcastReceiver", "GCM Registered: " + registrationId);
+            RegistrationID = registrationId;
+    
+            var push = TodoItemManager.DefaultManager.CurrentClient.GetPush();
+    
+            MainActivity.CurrentActivity.RunOnUiThread(() => Register(push, null));
+        }
+    
+        public async void Register(Microsoft.WindowsAzure.MobileServices.Push push, IEnumerable<string> tags)
+        {
+            try
+            {
+                const string templateBodyGCM = "{"data":{"message":"$(messageParam)"}}";
+    
+                JObject templates = new JObject();
+                templates["genericMessage"] = new JObject
+                {
+                    {"body", templateBodyGCM}
+                };
+    
+                await push.RegisterAsync(RegistrationID, templates);
+                Log.Info("Push Installation Id", push.InstallationId.ToString());
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine(ex.Message);
+                Debugger.Break();
+            }
+        }
+    
+        Note that this code uses the `messageParam` parameter in the template registration. 
+12. 添加以下代码以实现 **OnMessage**：
+    
+        protected override void OnMessage(Context context, Intent intent)
+        {
+            Log.Info("PushHandlerBroadcastReceiver", "GCM Message Received!");
+    
+            var msg = new StringBuilder();
+    
+            if (intent != null && intent.Extras != null)
+            {
+                foreach (var key in intent.Extras.KeySet())
+                    msg.AppendLine(key + "=" + intent.Extras.Get(key).ToString());
+            }
+    
+            //Store the message
+            var prefs = GetSharedPreferences(context.PackageName, FileCreationMode.Private);
+            var edit = prefs.Edit();
+            edit.PutString("last_msg", msg.ToString());
+            edit.Commit();
+    
+            string message = intent.Extras.GetString("message");
+            if (!string.IsNullOrEmpty(message))
+            {
+                createNotification("New todo item!", "Todo item: " + message);
+                return;
+            }
+    
+            string msg2 = intent.Extras.GetString("msg");
+            if (!string.IsNullOrEmpty(msg2))
+            {
+                createNotification("New hub message!", msg2);
+                return;
+            }
+    
+            createNotification("Unknown message details", msg.ToString());
+        }
+    
+        void createNotification(string title, string desc)
+        {
+            //Create notification
+            var notificationManager = GetSystemService(Context.NotificationService) as NotificationManager;
+    
+            //Create an intent to show ui
+            var uiIntent = new Intent(this, typeof(MainActivity));
+    
+            //Use Notification Builder
+            NotificationCompat.Builder builder = new NotificationCompat.Builder(this);
+    
+            //Create the notification
+            //we use the pending intent, passing our ui intent over which will get called
+            //when the notification is tapped.
+            var notification = builder.SetContentIntent(PendingIntent.GetActivity(this, 0, uiIntent, 0))
+                    .SetSmallIcon(Android.Resource.Drawable.SymActionEmail)
+                    .SetTicker(title)
+                    .SetContentTitle(title)
+                    .SetContentText(desc)
+    
+                    //Set the notification sound
+                    .SetSound(RingtoneManager.GetDefaultUri(RingtoneType.Notification))
+    
+                    //Auto cancel will remove the notification once the user touches it
+                    .SetAutoCancel(true).Build();
+    
+            //Show the notification
+            notificationManager.Notify(1, notification);
+        }
+    
+    这样即可处理传入通知并将其发送到通知管理器进行显示。
+13. **GcmServiceBase** 也需用户实现 **OnUnRegistered** 和 **OnError** 处理程序方法，具体语法如下所示：
+    
+        protected override void OnUnRegistered(Context context, string registrationId)
+        {
+            Log.Error("PushHandlerBroadcastReceiver", "Unregistered RegisterationId : " + registrationId);
+        }
+    
+        protected override void OnError(Context context, string errorId)
+        {
+            Log.Error("PushHandlerBroadcastReceiver", "GCM Error: " + errorId);
+        }
+
+现在可以在 Android 设备或模拟器的运行应用中测试推送通知了。
+
+### 在 Android 应用中测试推送通知
+仅当在模拟器上测试时，才需要前两个步骤。
+
+1. 确保要部署到的虚拟设备或在其上进行调试的虚拟设备已将 Google API 设置为目标，如以下 Android 虚拟设备 (AVD) 管理器所示。
+2. 单击“应用”>“设置”>“添加帐户”将 Google 帐户添加到 Android 设备，然后根据提示将现有 Google 帐户添加到设备，以便创建新的帐户。
+3. 在 Visual Studio 或 Xamarin Studio 中，右键单击 **Droid** 项目，然后单击“设为启动项目”。
+4. 按“运行”按钮生成项目，然后在 Android 设备或模拟器中启动应用。
+5. 在应用中，键入一项任务，然后单击加号 (**+**) 图标。
+6. 确认在添加项目时收到了通知。
+
+## （可选）配置和运行 iOS 项目
 本部分用于运行适用于 iOS 设备的 Xamarin iOS 项目。如果不使用 iOS 设备，可以跳过本部分。
 
-[AZURE.INCLUDE [notification-hubs-xamarin-enable-apple-push-notifications](../../includes/notification-hubs-xamarin-enable-apple-push-notifications.md)]
+[AZURE.INCLUDE [启用 Apple 推送通知](../../includes/enable-apple-push-notifications.md)]
 
+#### 为 APNS 配置通知中心
+[AZURE.INCLUDE [app-service-mobile-apns-configure-push](../../includes/app-service-mobile-apns-configure-push.md)]
 
-####为 APNS 配置通知中心
-
-1. 登录到 [Azure 门户预览](https://portal.azure.cn/)。单击“浏览”>“移动应用”> 移动应用 >“设置”>“推送” >“Apple (APNS)”>“上载证书”。上载先前导出的.p12 推送证书文件。如果已创建用于开发和测试的开发推送证书，请务必选择“沙盒”。否则，请选择“生产”。现在，服务已配置为在 iOS 上使用通知中心。
-
-	![](./media/app-service-mobile-xamarin-ios-get-started-push/mobile-app-upload-apns-cert.png)
-
-
-	接下来，将在 Xamarin Studio 或 Visual Studio 中配置 iOS 项目设置。
+接下来，将在 Xamarin Studio 或 Visual Studio 中配置 iOS 项目设置。
 
 [AZURE.INCLUDE [app-service-mobile-xamarin-ios-configure-project](../../includes/app-service-mobile-xamarin-ios-configure-project.md)]
 
@@ -216,11 +442,8 @@
 
 了解有关推送通知的详细信息：
 
-* [使用适用于 Azure 移动应用的 .NET 后端服务器 SDK](/documentation/articles/app-service-mobile-dotnet-backend-how-to-use-server-sdk/#how-to-add-tags-to-a-device-installation-to-enable-push-to-tags)  
-标记可用于通过推送定位分段客户。了解如何将标记添加到设备安装。
-
 * [诊断推送通知问题](/documentation/articles/notification-hubs-push-notification-fixer/)  
-有多种原因可能导致通知被丢弃或最终未到达设备。本主题演示如何分析和确定推送通知失败的根本原因。
+  有多种原因可能导致通知被丢弃或最终未到达设备。本主题演示如何分析和确定推送通知失败的根本原因。
 
 请考虑继续学习以下教程之一：
 
@@ -237,4 +460,4 @@
 [Xcode]: https://go.microsoft.com/fwLink/?LinkID=266532
 [apns object]: http://go.microsoft.com/fwlink/p/?LinkId=272333
 
-<!---HONumber=Mooncake_1114_2016-->
+<!---HONumber=Mooncake_1219_2016-->
