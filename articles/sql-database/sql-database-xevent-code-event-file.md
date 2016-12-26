@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="SQL 数据库的 XEvent 事件文件代码 | Azure" 
-	description="提供一个双阶段代码示例的 PowerShell 和 Transact-SQL，该示例演示 Azure SQL 数据库的扩展事件中的事件文件目标。完成此方案部分必须用到 Azure 存储空间。" 
+	description="提供一个双阶段代码示例的 PowerShell 和 Transact-SQL，该示例演示 Azure SQL 数据库的扩展事件中的事件文件目标。此方案的一部分要求使用 Azure 存储。" 
 	services="sql-database" 
 	documentationCenter="" 
 	authors="MightyPen" 
@@ -16,7 +16,7 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="08/23/2016" 
-	wacn.date="10/17/2016" 
+	wacn.date="12/26/2016" 
 	ms.author="genemi"/>  
 
 
@@ -25,30 +25,30 @@
 
 [AZURE.INCLUDE [sql-database-xevents-selectors-1-include](../../includes/sql-database-xevents-selectors-1-include.md)]
 
-你需要一个完整的代码示例来可靠捕获和报告扩展事件的信息。
+需要完整的代码示例来可靠捕获和报告扩展事件的信息。
 
 
-在 Microsoft SQL Server 中，[事件文件目标](http://msdn.microsoft.com/zh-cn/library/ff878115.aspx)用于将事件输出存储在本地硬盘驱动器文件中。但是，此类文件并不适用于 Azure SQL 数据库。我们改为使用 Azure 存储空间服务来支持事件文件目标。
+在 Microsoft SQL Server 中，[事件文件目标](http://msdn.microsoft.com/zh-cn/library/ff878115.aspx)用于将事件输出存储在本地硬盘驱动器文件中。但是，此类文件并不适用于 Azure SQL 数据库。我们改为使用 Azure 存储服务来支持事件文件目标。
 
 
 本主题演示了一个两阶段代码示例：
 
 
-- PowerShell：用于在云中创建 Azure 存储空间容器。
+- PowerShell：用于在云中创建 Azure 存储容器。
 
 - Transact-SQL：
- - 将 Azure 存储空间容器分配到事件文件目标。
+ - 将 Azure 存储容器分配到事件文件目标。
  - 创建和启动事件会话，等等。
 
 
 ## 先决条件
 
 
-- Azure 帐户和订阅。你可以注册[试用版](/pricing/1rmb-trial)。
+- Azure 帐户和订阅。可以注册[试用版](/pricing/1rmb-trial)。
 
 
-- 可以在其中创建表的任何数据库。
- - 你可以选择快速[创建一个 **AdventureWorksLT** 演示数据库](/documentation/articles/sql-database-get-started/)。
+- 可在其中创建表的任何数据库。
+ - 可选择快速[创建 **AdventureWorksLT** 演示数据库](/documentation/articles/sql-database-get-started/)。
 
 
 - SQL Server Management Studio (ssms.exe)，最好是每月更新版。
@@ -61,12 +61,12 @@
  - 这些模块提供 **New-AzureStorageAccount** 等命令。
 
 
-## 阶段 1：Azure 存储空间容器的 PowerShell 代码
+## 阶段 1：Azure 存储容器的 PowerShell 代码
 
 
 此 PowerShell 是两阶段代码示例的第 1 阶段。
 
-脚本开头的命令将清除以前可能运行后的结果，并且可重复运行。
+脚本以用于在可能的上次运行后进行清理的命令开头，且可重复运行。
 
 
 
@@ -76,13 +76,13 @@
 
 3. 在提示符下键入 <br/>`Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope CurrentUser`<br/>，然后按 Enter。
 
-4. 在 PowerShell ISE 中打开你的 **.ps1** 文件。运行该脚本。
+4. 在 PowerShell ISE 中打开 **.ps1** 文件。运行该脚本。
 
-5. 该脚本会先启动新的窗口让你登录 Azure。
- - 如果你想要重新运行脚本而不中断会话，可以很方便地选择注释禁止 **Add-AzureAccount** 命令。
+5. 该脚本会先启动新的窗口，可在其中登录 Azure。
+ - 如果想要重新运行脚本而不中断会话，可以方便地选择注释禁止 **Add-AzureAccount** 命令。
 
 
-![在准备运行脚本之前，必须准备好已装有 Azure 模块的 PowerShell ISE。][30_powershell_ise]
+![装有 Azure 模块的 PowerShell ISE，可运行脚本。][30_powershell_ise]
 
 
 			## TODO: Before running, find all 'TODO' and make each edit!
@@ -259,22 +259,22 @@
 		记下 PowerShell 脚本结束时输出的几个命名值。必须将这些值编辑成阶段 2 中使用的 Transact-SQL 脚本。
 
 
-## 阶段 2：使用 Azure 存储空间容器的 Transact-SQL 代码
+## 阶段 2：使用 Azure 存储容器的 Transact-SQL 代码
 
 
 - 在此代码示例的第 1 阶段，已运行 PowerShell 脚本来创建 Azure 存储容器。
 - 接下来在第 2 阶段，以下 Transact-SQL 脚本必须使用该容器。
 
 
-脚本开头的命令将清除以前可能运行后的结果，并且可重复运行。
+脚本以用于在可能的上次运行后进行清理的命令开头，且可重复运行。
 
 
-PowerShell 脚本在结束时输出了几个命名值。你必须编辑 Transact-SQL 脚本以使用这些值。在 Transact-SQL 脚本中查找 **TODO** 以找到编辑点。
+PowerShell 脚本在结束时输出了几个命名值。必须编辑 Transact-SQL 脚本才能使用这些值。在 Transact-SQL 脚本中查找 **TODO** 以找到编辑点。
 
 
 1. 打开 SQL Server Management Studio (ssms.exe)。
 
-2. 连接到你的 Azure SQL 数据库。
+2. 连接到 Azure SQL 数据库。
 
 3. 单击打开新的查询窗格。
 
@@ -285,7 +285,7 @@ PowerShell 脚本在结束时输出了几个命名值。你必须编辑 Transact
 6. 保存然后运行该脚本。
 
 
-> [AZURE.WARNING] 之前 PowerShell 脚本生成的 SAS 密钥值可能以“?”（问号）开头。在以下 T-SQL 脚本中使用 SAS 密钥时，必须*删除前导“?”*。否则，安全性可能会阻止你的操作。
+> [AZURE.WARNING] 前置 PowerShell 脚本生成的 SAS 密钥值可能以“?”（问号）开头。在以下 T-SQL 脚本中使用 SAS 密钥时，必须*删除前导“?”*。否则，可能由于安全原因而阻止操作。
 		---- TODO: First, run the PowerShell portion of this two-part code sample.
 		---- TODO: Second, find every 'TODO' in this Transact-SQL file, and edit each.
 		
@@ -483,7 +483,7 @@ PowerShell 脚本在结束时输出了几个命名值。你必须编辑 Transact
 &nbsp;
 
 
-如果当你运行脚本时无法附加目标，则你必须停止再重新启动事件会话：
+如果运行脚本时无法附加目标，必须停止再重新启动事件会话：
 
 
 	 
@@ -497,7 +497,7 @@ PowerShell 脚本在结束时输出了几个命名值。你必须编辑 Transact
 ## 输出
 
 
-完成 Transact-SQL 脚本后，请单击 **event\_data\_XML** 列标题下的单元格。此时将显示一个 **<event>** 元素，其中显示了一个 UPDATE 语句。
+Transact-SQL 脚本完成后，单击 **event\_data\_XML** 列标题下的单元格。此时将显示一个 **<event>** 元素，其中显示了一个 UPDATE 语句。
 
 下面是测试期间生成的一个 **<event>** 元素：
 
@@ -548,7 +548,7 @@ PowerShell 脚本在结束时输出了几个命名值。你必须编辑 Transact
 - [sys.fn\_xe\_file\_target\_read\_file (Transact-SQL)](http://msdn.microsoft.com/zh-cn/library/cc280743.aspx)
 
 
-用于查看扩展事件数据的高级选项的说明可在此处获取：
+可在以下位置获取用于查看扩展事件数据的高级选项的说明：
 
 - [扩展事件的目标数据的高级视图](http://msdn.microsoft.com/zh-cn/library/mt752502.aspx)
 
@@ -561,7 +561,7 @@ PowerShell 脚本在结束时输出了几个命名值。你必须编辑 Transact
 假设你要在 Microsoft SQL Server 上运行上述 Transact-SQL 示例。
 
 
-- 为了方便，想要将 Azure 存储容器完全替换为一个简单文件（例如 **C:\\myeventdata.xel**）。该文件将写入托管 SQL Server 的计算机的本地硬盘驱动器上。
+- 为简洁起见，请将 Azure 存储容器彻底替换为简单文件（例如 **C:\\myeventdata.xel**）。该文件将写入 SQL Server 所在计算机的本地硬盘驱动器。
 
 
 - 不需要为 **CREATE MASTER KEY** 和 **CREATE CREDENTIAL** 使用任何类型的 Transact-SQL 语句。
@@ -574,7 +574,7 @@ PowerShell 脚本在结束时输出了几个命名值。你必须编辑 Transact
 ## 详细信息
 
 
-有关 Azure 存储空间服务中帐户和容器的详细信息，请参阅：
+有关 Azure 存储服务中帐户和容器的详细信息，请参阅：
 
 - [如何通过 .NET 使用 Blob 存储](/documentation/articles/storage-dotnet-how-to-use-blobs/)
 - [命名和引用容器、Blob 与元数据](http://msdn.microsoft.com/zh-cn/library/azure/dd135715.aspx)
@@ -591,4 +591,4 @@ Image references.
 
 [30_powershell_ise]: ./media/sql-database-xevent-code-event-file/event-file-powershell-ise-b30.png
 
-<!---HONumber=Mooncake_1010_2016-->
+<!---HONumber=Mooncake_Quality_Review_1215_2016-->

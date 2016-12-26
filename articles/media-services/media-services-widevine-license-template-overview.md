@@ -15,16 +15,16 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="09/26/2016"  
-	wacn.date="11/21/2016"  
+	wacn.date="12/26/2016"  
 	ms.author="juliako"/>
 
 #Widevine 许可证模板概述
 
 ##概述
 
-Azure 媒体服务现在允许你配置和请求 Widevine 许可证。当最终用户播放器尝试播放受 Widevine 保护的内容时，将向许可证交付服务发送请求以获取许可证。如果许可证服务批准了该请求，则会颁发该许可证，该许可证将发送到客户端，并可用于解密和播放指定的内容。
+Azure 媒体服务现在允许你配置和请求 Widevine 许可证。当最终用户播放器尝试播放受 Widevine 保护的内容时，将向许可证传递服务发送请求以获取许可证。如果许可证服务批准了该请求，则会颁发该许可证，该许可证将发送到客户端，并可用于解密和播放指定的内容。
 
-Widevine 许可证请求将格式化为 JSON 消息。
+Widevine 许可证请求的格式设置为 JSON 消息。
 
 请注意，你可以选择创建不包含值而只有“{}”的空消息，并创建包含所有默认值的许可证模板。
 
@@ -66,7 +66,7 @@ content_id | Base64 编码的字符串|用于针对每个 content_key_specs.trac
 provider |字符串 |用于查找内容密钥和策略。必需。
 policy_name | 字符串 |以前注册的策略的名称。可选
 allowed_track_types | 枚举 | SD_ONLY 或 SD_HD。控制许可证应该包含的内容密钥
-content_key_specs | JSON 结构的数组，请参阅下面的**内容密钥规范** | 更精细地控制要返回的内容密钥。有关详细信息，请参阅以下的“内容密钥规范”。只能指定 allowed_track_types 和 content_key_specs 中的一个。 
+content_key_specs | JSON 结构的数组，请参阅下面的**内容密钥规范** | 更精细地控制要返回的内容密钥。有关详细信息，请参阅下面的“内容密钥规范”。只能指定 allowed_track_types 和 content_key_specs 中的一个。 
 use_policy_overrides_exclusively | 布尔值。true 或 false | 使用 policy_overrides 所指定的策略属性，并省略以前存储的所有策略。
 policy_overrides | JSON 结构，请参阅下面的**策略重写** | 此许可证的策略设置。如果此资产具有预定义的策略，将使用这些指定的值。 
 session_init | JSON 结构，请参阅下面的**会话初始化** | 传递给许可证的可选数据。
@@ -93,25 +93,25 @@ content_key_specs.key_id| Base64 编码的二进制字符串，16 字节 | 密�
 
 名称 | 值 | 说明
 ---|---|---
-policy_overrides. can_play | 布尔值。true 或 false | 指示允许播放内容。默认值为 false。
-policy_overrides. can_persist | 布尔值。true 或 false |指示可以将许可证保存到非易失性存储器供脱机使用。默认值为 false。
-policy_overrides. can_renew | 布尔值。true 或 false |指示允许续订此许可证。如果为 true，则可以通过检测信号延长许可证期限。默认值为 false。 
-policy_overrides. license_duration_seconds | int64 | 指示此特定许可证的时限。值 0 表示期限没有限制。默认值为 0。 
-policy_overrides. rental_duration_seconds | int64 | 指示允许播放的时期。值 0 表示期限没有限制。默认值为 0。 
-policy_overrides. playback_duration_seconds | int64 | 在许可证期限内开始播放后的观看时限。值 0 表示期限没有限制。默认值为 0。 
-policy_overrides. renewal_server_url |字符串 | 应将此许可证的所有检测信号（续订）请求定向到指定的 URL。仅当 can_renew 为 true 时才使用此字段。
-policy_overrides. renewal_delay_seconds |int64 |license_start_time 之后经过几秒才尝试首次续订。仅当 can_renew 为 true 时才使用此字段。默认值为 0 
-policy_overrides. renewal_retry_interval_seconds | int64 | 指定在发生失败时，每两次发出后续许可证更新请求所要经历的延迟秒数。仅当 can_renew 为 true 时才使用此字段。 
-policy_overrides. renewal_recovery_duration_seconds | int64 | 在此时限尝试进行续订时允许继续播放，不过因为许可证服务器发生后端问题而未成功。值 0 表示期限没有限制。仅当 can_renew 为 true 时才使用此字段。
-policy_overrides. renew_with_usage | 布尔值。true 或 false |指示开始使用时应该发送许可证以进行续订。仅当 can_renew 为 true 时才使用此字段。 
+policy\_overrides. can\_play | 布尔值。true 或 false | 指示允许播放内容。默认值为 false。
+policy\_overrides. can\_persist | 布尔值。true 或 false |指示可以将许可证保存到非易失性存储器供脱机使用。默认值为 false。
+policy\_overrides. can\_renew | 布尔值。true 或 false |指示允许续订此许可证。如果为 true，则可以通过检测信号延长许可证期限。默认值为 false。 
+policy\_overrides. license\_duration\_seconds | int64 | 指示此特定许可证的时间范围。值 0 表示期限没有限制。默认值为 0。 
+policy\_overrides. rental\_duration\_seconds | int64 | 指示允许播放的时间范围。值 0 表示期限没有限制。默认值为 0。 
+policy\_overrides. playback\_duration\_seconds | int64 | 在许可证期限内开始播放后的观看时间范围。值 0 表示期限没有限制。默认值为 0。 
+policy\_overrides. renewal\_server\_url |字符串 | 应将此许可证的所有检测信号（续订）请求定向到指定的 URL。仅当 can\_renew 为 true 时才使用此字段。
+policy\_overrides. renewal\_delay\_seconds |int64 |license\_start\_time 之后经过几秒才尝试首次续订。仅当 can\_renew 为 true 时才使用此字段。默认值为 0 
+policy\_overrides. renewal\_retry\_interval\_seconds | int64 | 指定在发生失败时，每两次发出后续许可证更新请求所要经历的延迟秒数。仅当 can\_renew 为 true 时才使用此字段。 
+policy\_overrides. renewal\_recovery\_duration\_seconds | int64 | 在此时间范围尝试进行续订时允许继续播放，不过因为许可证服务器发生后端问题而未成功。值 0 表示期限没有限制。仅当 can\_renew 为 true 时才使用此字段。
+policy\_overrides. renew\_with\_usage | 布尔值。true 或 false |指示开始使用时应该发送许可证以进行续订。仅当 can\_renew 为 true 时才使用此字段。 
 
 ##会话初始化
 
 名称 | 值 | 说明
 ---|---|---
-provider_session_token | Base64 编码的字符串 |此会话令牌将传回到许可证，并存在于后续的续订中。会话令牌不在会话之外保存。 
-provider_client_token | Base64 编码的字符串 | 要在许可证响应中返回的客户端令牌。如果许可证请求包含客户端令牌，则忽略此值。客户端令牌将在许可证会话之外保存。
-override_provider_client_token | 布尔值。true 或 false |如果为 false 并且许可证请求包含客户端令牌，请使用来自请求的令牌，即使此结构中已指定客户端令牌。如果为 true，则始终使用此结构中指定的令牌。
+provider\_session\_token | Base64 编码的字符串 |此会话令牌将传回到许可证，并存在于后续续订中。会话令牌不在会话之外保存。 
+provider\_client\_token | Base64 编码的字符串 | 要在许可证响应中返回的客户端令牌。如果许可证请求包含客户端令牌，则忽略此值。客户端令牌将在许可证会话之外保存。
+override\_provider\_client\_token | 布尔值。true 或 false |如果为 false 并且许可证请求包含客户端令牌，请使用来自请求的令牌，即使此结构中已指定客户端令牌。如果为 true，则始终使用此结构中指定的令牌。
 
 ##使用 .NET 类型配置 Widevine 许可证
 
@@ -170,7 +170,7 @@ override_provider_client_token | 布尔值。true 或 false |如果为 false 并
 
 ###示例
 
-以下示例演示如何使用 .NET API 来配置简单的 Widevine 许可证。
+以下示例演示如何使用 .NET API 配置简单的 Widevine 许可证。
 
     private static string ConfigureWidevineLicenseTemplate()
     {
@@ -204,4 +204,4 @@ override_provider_client_token | 布尔值。true 或 false |如果为 false 并
 
 [使用 PlayReady 和/或 Widevine DRM 动态通用加密](/documentation/articles/media-services-protect-with-drm/)
 
-<!---HONumber=Mooncake_1114_2016-->
+<!---HONumber=Mooncake_Quality_Review_1215_2016-->

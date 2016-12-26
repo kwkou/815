@@ -15,13 +15,13 @@
     ms.tgt_pltfrm="csharp"
     ms.workload="data-management"
     ms.date="10/04/2016"
-    wacn.date="10/31/2016"
+    wacn.date="12/26/2016"
     ms.author="sstein"/>  
 
-
-# 使用 C&#x23; 监视和管理弹性数据库池 
+# 使用 C# 监视和管理弹性数据库池 
 
 > [AZURE.SELECTOR]
+- [Azure 门户预览](/documentation/articles/sql-database-elastic-pool-manage-portal/)
 - [PowerShell](/documentation/articles/sql-database-elastic-pool-manage-powershell/)
 - [C#](/documentation/articles/sql-database-elastic-pool-manage-csharp/)
 - [T-SQL](/documentation/articles/sql-database-elastic-pool-manage-tsql/)
@@ -29,17 +29,17 @@
 
 了解如何使用 C#; 管理[弹性数据库池](/documentation/articles/sql-database-elastic-pool/)。
 
->[AZURE.NOTE] SQL 数据库的许多新功能仅在使用 [Azure Resource Manager 部署模型](/documentation/articles/resource-group-overview/)时才可用，因此，始终应该使用最新版本的**用于 .NET 的 Azure SQL 数据库管理库（[文档](https://msdn.microsoft.com/zh-cn/library/azure/mt349017.aspx) | [NuGet 包](https://www.nuget.org/packages/Microsoft.Azure.Management.Sql)）**。以前的[基于经典部署模型的库](https://www.nuget.org/packages/Microsoft.WindowsAzure.Management.Sql)只是为了向后兼容而受到支持，因此，建议使用较新的基于 Resource Manager 的库。
+>[AZURE.NOTE] SQL 数据库的许多新功能仅在使用 [Azure Resource Manager 部署模型](/documentation/articles/resource-group-overview/)时才可用，因此，应始终使用最新版本的**用于 .NET 的 Azure SQL 数据库管理库（[Docs](https://msdn.microsoft.com/zh-cn/library/azure/mt349017.aspx) | [NuGet 包](https://www.nuget.org/packages/Microsoft.Azure.Management.Sql)）**。以前的[基于经典部署模型的库](https://www.nuget.org/packages/Microsoft.WindowsAzure.Management.Sql)只是为了向后兼容而受到支持，因此，建议使用较新的基于 Resource Manager 的库。
 
 若要完成本文中的步骤，需要准备好以下项：
 
-- 弹性池（想要管理的池）。若要创建池，请参阅 [Create an elastic database pool with C#](/documentation/articles/sql-database-elastic-pool-create-csharp/)（使用 C# 创建弹性数据库池）。
+- 弹性池（想要管理的池）。若要创建池，请参阅[使用 C# 创建弹性数据库池](/documentation/articles/sql-database-elastic-pool-create-csharp/)。
 - Visual Studio。如需 Visual Studio 的免费副本，请参阅 [Visual Studio 下载](https://www.visualstudio.com/downloads/download-visual-studio-vs)页。
 
 
 ## 将数据库移入弹性池
 
-你可将独立的数据库移入或移出池。
+可将独立的数据库移入或移出池。
 
     // Retrieve current database properties.
 
@@ -64,7 +64,7 @@
 
 ## 列出弹性池中的数据库
 
-若要在池中检索所有数据库，可调用 [ListDatabases](https://msdn.microsoft.com/zh-cn/library/microsoft.azure.management.sql.elasticpooloperationsextensions.listdatabases) 方法。
+若要在池中检索所有的数据库，可调用 [ListDatabases](https://msdn.microsoft.com/zh-cn/library/microsoft.azure.management.sql.elasticpooloperationsextensions.listdatabases) 方法。
 
     //List databases in the elastic pool
     DatabaseListResponse dbListInPool = sqlClient.ElasticPools.ListDatabases("resourcegroup-name", "server-name", "ElasticPool1");
@@ -100,7 +100,7 @@
 ## 弹性池操作延迟
 
 - 更改每个数据库的最小 eDTU 数或每个数据库的最大 eDTU 数通常可在五分钟或更少的时间内完成。
-- 更改池大小 (eDTU) 所需的时间取决于池中所有数据库的总大小。更改平均起来每 100 GB 需要 90 分钟或更短的时间。例如，如果池中所有数据库的总空间为 200 GB，则更改每个池的池 eDTU 时，预计延迟为 3 小时或更短的时间。
+- 更改池大小 (eDTU) 所需的时间取决于池中所有数据库的总大小。每 100 GB 的更改平均需要 90 分钟或更短的时间。例如，如果池中所有数据库的总空间为 200 GB，则更改每个池的池 eDTU 时，预计延迟为 3 小时或更短的时间。
 
 
 
@@ -114,4 +114,4 @@
 - [何时使用弹性数据库池？](/documentation/articles/sql-database-elastic-pool-guidance/)
 - 请参阅[使用 Azure SQL 数据库进行扩展](/documentation/articles/sql-database-elastic-scale-introduction/)：使用弹性数据库工具扩展、移动数据、查询或创建事务。
 
-<!---HONumber=Mooncake_1024_2016-->
+<!---HONumber=Mooncake_Quality_Review_1215_2016-->

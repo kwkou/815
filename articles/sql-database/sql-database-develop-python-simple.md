@@ -16,7 +16,7 @@
 	ms.devlang="python"
 	ms.topic="article"
 	ms.date="10/05/2016"
-	wacn.date="10/31/2016"
+	wacn.date="12/26/2016"
 	ms.author="meetb"/>  
 
 
@@ -33,7 +33,7 @@
 
 ## 步骤 1：创建 SQL 数据库
 
-请参阅[入门页](/documentation/articles/sql-database-get-started/)，以了解如何创建示例数据库。必须根据指南创建 **AdventureWorks 数据库模板**。下面所示的示例只适用于 **AdventureWorks 架构**。创建数据库后，请确保根据[入门页](/documentation/articles/sql-database-get-started/)中所述，通过启用防火墙规则来启用对 IP 地址的访问
+请参阅[入门页](/documentation/articles/sql-database-get-started/)，以了解如何创建示例数据库。务必根据指南创建 **AdventureWorks 数据库模板**。下面所示的示例只适用于 **AdventureWorks 架构**。创建数据库后，请确保根据[入门页](/documentation/articles/sql-database-get-started/)中所述，通过启用防火墙规则来启用对 IP 地址的访问
 
 ## 步骤 2：配置开发环境
 
@@ -47,7 +47,7 @@
 
 ### **Linux (Ubuntu)**
 
-打开终端并导航到你要在其中创建 python 脚本的目录。输入以下命令以安装 **FreeTDS** 和 **pymssql**。pymssql 使用 FreeTDS 连接到 SQL 数据库。
+打开终端并导航到要在其中创建 python 脚本的目录。输入以下命令以安装 **FreeTDS** 和 **pymssql**。pymssql 使用 FreeTDS 连接到 SQL 数据库。
 
 	sudo apt-get --assume-yes update
 	sudo apt-get --assume-yes install freetds-dev freetds-bin
@@ -68,7 +68,7 @@
 
 ## 步骤 3：运行示例代码
 
-创建名为 **sql\_sample.py** 的文件并在其中粘贴以下代码。可以在从命令行中使用以下命令运行此操作：
+创建名为 **sql\_sample.py** 的文件并在其中粘贴以下代码。可以从命令行中使用以下命令运行此操作：
 	
 	python sql_sample.py
 
@@ -113,7 +113,7 @@
 ### 事务
 
 
-此代码示例演示了你可以在其中执行以下操作的事务的用法：
+此代码示例演示了可以在其中执行以下操作的事务的用法：
 
 * 开始一个事务
 * 插入一行数据
@@ -130,7 +130,7 @@
 
 ## 后续步骤
 
-* 参阅 [SQL Database Development Overview（SQL 数据库开发概述）](/documentation/articles/sql-database-develop-overview/)
+* 参阅 [SQL 数据库开发概述](/documentation/articles/sql-database-develop-overview/)
 * 有关 [Microsoft Python Driver for SQL Server](https://msdn.microsoft.com/zh-cn/library/mt652092.aspx) 的详细信息
 * 访问 [Python 开发人员中心](/develop/python/)。
 
@@ -139,4 +139,4 @@
 * [包含 Azure SQL 数据库的多租户 SaaS 应用程序的设计模式](/documentation/articles/sql-database-design-patterns-multi-tenancy-saas-applications/)
 * 浏览所有 [SQL 数据库功能](/home/features/sql-database/)
 
-<!---HONumber=Mooncake_1024_2016-->
+<!---HONumber=Mooncake_Quality_Review_1215_2016-->

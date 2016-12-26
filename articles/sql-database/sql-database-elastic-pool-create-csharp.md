@@ -15,26 +15,26 @@
     ms.tgt_pltfrm="csharp"
     ms.workload="data-management"
     ms.date="10/04/2016"
-    wacn.date="10/31/2016"
+    wacn.date="12/26/2016"
     ms.author="sstein"/>  
 
-
-# 使用 C&#x23; 创建弹性数据库池
+# 使用 C# 创建弹性数据库池
 
 > [AZURE.SELECTOR]
+- [Azure 门户预览](/documentation/sql-database-elastic-pool-create-portal)
 - [PowerShell](/documentation/articles/sql-database-elastic-pool-create-powershell/)
 - [C#](/documentation/articles/sql-database-elastic-pool-create-csharp/)
 
 
-本文说明如何使用 C# 通过[用于 .NET 的 Azure SQL 数据库库](https://www.nuget.org/packages/Microsoft.Azure.Management.Sql)创建 Azure SQL 数据库弹性数据库池。若要创建独立 SQL 数据库，请参阅 [Use C# to create a SQL database with the SQL Database Library for .NET](/documentation/articles/sql-database-get-started-csharp/)（使用 C# 通过用于.NET 的 Azure SQL 数据库库创建 SQL 数据库）。
+本文说明如何使用 C# 通过[用于 .NET 的 Azure SQL 数据库库](https://www.nuget.org/packages/Microsoft.Azure.Management.Sql)创建 Azure SQL 弹性数据库池。若要创建独立 SQL 数据库，请参阅[使用 C# 通过用于.NET 的 SQL 数据库库创建 SQL 数据库](/documentation/articles/sql-database-get-started-csharp/)。
 
-适用于 .NET 的 Azure SQL 数据库库提供了基于 [Azure 资源管理器](/documentation/articles/resource-group-overview/)的 API，用于包装[基于资源管理器的 SQL 数据库 REST API](https://msdn.microsoft.com/zh-cn/library/azure/mt163571.aspx)。
+用于 .NET 的 Azure SQL 数据库库提供了基于 [Azure Resource Manager](/documentation/articles/resource-group-overview/) 的 API，用于包装[基于 Resource Manager 的 SQL 数据库 REST API](https://msdn.microsoft.com/zh-cn/library/azure/mt163571.aspx)。
 
->[AZURE.NOTE] SQL 数据库的许多新功能仅在使用 [Azure Resource Manager 部署模型](/documentation/articles/resource-group-overview/)时才可用，因此，始终应该使用最新版本的**用于 .NET 的 Azure SQL 数据库管理库（[文档](https://msdn.microsoft.com/zh-cn/library/azure/mt349017.aspx) | [NuGet 包](https://www.nuget.org/packages/Microsoft.Azure.Management.Sql)）**。以前的[基于经典部署模型的库](https://www.nuget.org/packages/Microsoft.WindowsAzure.Management.Sql)只是为了向后兼容而受到支持，因此，建议使用较新的基于 Resource Manager 的库。
+>[AZURE.NOTE] SQL 数据库的许多新功能仅在使用 [Azure Resource Manager 部署模型](/documentation/articles/resource-group-overview/)时才可用，因此，应始终使用最新版本的**用于 .NET 的 Azure SQL 数据库管理库（[Docs](https://msdn.microsoft.com/zh-cn/library/azure/mt349017.aspx) | [NuGet 包](https://www.nuget.org/packages/Microsoft.Azure.Management.Sql)）**。以前的[基于经典部署模型的库](https://www.nuget.org/packages/Microsoft.WindowsAzure.Management.Sql)只是为了向后兼容而受到支持，因此，建议使用较新的基于 Resource Manager 的库。
 
 若要完成本文中的步骤，需要做好以下准备：
 
-- Azure 订阅。如果你需要 Azure 订阅，只需单击本页右上角的“申请试用”，然后再回来完成本文的相关操作即可。
+- Azure 订阅。如果需要 Azure 订阅，只需单击本页顶部的“试用”，然后再回来完成本文的相关操作即可。
 - Visual Studio。如需 Visual Studio 的免费副本，请参阅 [Visual Studio 下载](https://www.visualstudio.com/downloads/download-visual-studio-vs)页。
 
 
@@ -47,14 +47,14 @@
 
 若要使用 C# 创建 SQL 数据库，请加载所需的管理库（使用[包管理器控制台](http://docs.nuget.org/Consume/Package-Manager-Console)）：
 
-1. 单击“工具”->“NuGet 包管理器”->“包管理器控制台”。
+1. 单击“工具”>“NuGet 包管理器”>“包管理器控制台”。
 2. 键入 `Install-Package Microsoft.Azure.Management.Sql –Pre` 安装 [Microsoft Azure SQL 管理库](https://www.nuget.org/packages/Microsoft.Azure.Management.Sql)。
 3. 键入 `Install-Package Microsoft.Azure.Management.ResourceManager –Pre` 安装 [Microsoft Azure Resource Manager 库](https://www.nuget.org/packages/Microsoft.Azure.Management.ResourceManager)。
-4. 键入 `Install-Package Microsoft.Azure.Common.Authentication –Pre` 安装 [Microsoft Azure 通用身份验证库](https://www.nuget.org/packages/Microsoft.Azure.Common.Authentication)。
+4. 键入 `Install-Package Microsoft.Azure.Common.Authentication –Pre` 安装 [Microsoft Azure 常用身份验证库](https://www.nuget.org/packages/Microsoft.Azure.Common.Authentication)。
 
 
 
-> [AZURE.NOTE] 本文中的示例使用每个 API 请求的同步形式，并会一直阻塞，直到对基础服务的 REST 调用完成。有可用的异步方法。
+> [AZURE.NOTE] 本文中的示例使用每个 API 请求的同步形式，并会一直阻塞，直到对基础服务的 REST 调用完成为止。有可用的异步方法。
 
 
 ## 创建 SQL 弹性数据库池 - C# 示例
@@ -260,7 +260,7 @@
 
 ##<a id="create-a-service-principal-to-access-resources"></a>创建用于访问资源的服务主体
 
-以下 PowerShell 脚本创建 Active Directory (AD) 应用程序，以及对 C# 应用进行身份验证时所需的服务主体。该脚本将输出前面 C# 示例所需的值。有关详细信息，请参阅 [Use Azure PowerShell to create a service principal to access resources](/documentation/articles/resource-group-authenticate-service-principal/)（使用 Azure PowerShell 创建用于访问资源的服务主体）。
+以下 PowerShell 脚本创建 Active Directory (AD) 应用程序，以及对 C# 应用进行身份验证时所需的服务主体。该脚本将输出前面 C# 示例所需的值。有关详细信息，请参阅[使用 Azure PowerShell 创建用于访问资源的服务主体](/documentation/articles/resource-group-authenticate-service-principal/)。
 
    
     # Sign in to Azure.
@@ -314,4 +314,4 @@
 - [SQL 数据库](/documentation/services/sql-databases/)
 - [Azure 资源管理 API](https://msdn.microsoft.com/zh-cn/library/azure/dn948464.aspx)
 
-<!---HONumber=Mooncake_1024_2016-->
+<!---HONumber=Mooncake_Quality_Review_1215_2016-->

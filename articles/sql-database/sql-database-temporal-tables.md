@@ -14,27 +14,27 @@
    ms.tgt_pltfrm="NA"
    ms.workload="sql-database"
    ms.date="08/29/2016"
-   wacn.date="10/17/2016"
+   wacn.date="12/26/2016"
    ms.author="carlrab"/>  
 
 
 #Azure SQL 数据库中的临时表入门
 
-临时表是 Azure SQL 数据库中新的可编程功能，可让你跟踪和分析数据更改的完整历史记录，而无需编写自定义代码。临时表保存与时间上下文密切相关的数据，因此，只有特定时段内的存储事实才会解译为有效。临时表的这种属性可让用户执行基于时间的有效分析，并从数据演变中获得见解。
+临时表是 Azure SQL 数据库中新的可编程功能，可用于跟踪和分析数据更改的完整历史记录，而无需编写自定义代码。临时表保存与时间上下文密切相关的数据，因此，只有特定时段内的存储事实才会解译为有效。利用临时表的这种属性，可执行基于时间的有效分析，并从数据演变中获得见解。
 
 ##临时表方案
 
-本文演示了在应用程序方案中使用临时表的步骤。假设你想要从头开始跟踪开发中的新网站上的用户活动，或跟踪你要使用用户活动分析扩展的现有网站上的用户活动。在这个简化的示例中，我们假设一段时间内浏览过的网页数是需要在托管于 Azure SQL 数据库上的网站数据库中捕获和监视的指标。用户活动历史分析的目标是获取有关重新设计网站的意见，并为访客提供更好的体验。
+本文演示了在应用程序方案中使用临时表的步骤。假设要跟踪从头开始开发的新网站上的用户活动，或要通过用户活动分析扩展的现有网站上的用户活动。在这个简化的示例中，我们假设一段时间内浏览过的网页数是需要在托管于 Azure SQL 数据库上的网站数据库中捕获和监视的指标。用户活动历史分析的目标是获取有关重新设计网站的意见，并为访客提供更好的体验。
 
-此方案的数据库模型非常简单：用户活动指标以一个整数字段 **PageVisited** 表示，并与用户配置文件中的基本信息一起捕获。此外，对于基于时间的分析，你需要为每个用户保留一系列的行，其中每行代表特定时间段内特定用户访问过的网页数。
+此方案的数据库模型非常简单：用户活动指标以一个整数字段 **PageVisited** 表示，并与用户配置文件中的基本信息一起捕获。此外，对于基于时间的分析，需要为每个用户保留一系列的行，其中每行代表特定用户在特定时间段内访问过的网页数。
 
 ![架构](./media/sql-database-temporal-tables/AzureTemporal1.png)
 
-幸运的是，你无需在应用上花费过多的精力就能维护此活动信息。可以使用临时表将过程自动化：使你在网站设计过程中保有完全的弹性并节省更多的时间，从而将重心放在数据分析本身。你唯一要做的事就是确保将 **WebSiteInfo** 表配置为[版本由系统控制的临时表](https://msdn.microsoft.com/zh-cn/library/dn935015.aspx#Anchor_0)。下面描述了在此方案中使用临时表的确切步骤。
+幸运的是，无需对应用进行任何操作即可维护此活动信息。可以使用临时表将过程自动化：使你在网站设计过程中保有完全的弹性并节省更多的时间，从而将重心放在数据分析本身。只需确保将 **WebSiteInfo** 表配置为[版本由系统控制的临时表](https://msdn.microsoft.com/zh-cn/library/dn935015.aspx#Anchor_0)即可。下面描述了在此方案中使用临时表的确切步骤。
 
 ##步骤 1：将表配置为临时表
 
-根据是要开始新的开发工作，还是升级现有的应用程序，你可以创建临时表，或者通过添加临时属性来修改现有表。在一般情况下，你的方案可能混用了这两个选项。使用 [SQL Server Management Studio](https://msdn.microsoft.com/zh-cn/library/mt238290.aspx) (SSMS)、[SQL Server Data Tools](https://msdn.microsoft.com/zh-cn/library/mt204009.aspx) (SSDT) 或其他任何 Transact-SQL 开发工具执行以下操作。
+根据是要开始新的开发工作，还是升级现有的应用程序，可以创建临时表，或者通过添加临时属性来修改现有表。一般情况下，用户方案可能混用了这两个选项。使用 [SQL Server Management Studio](https://msdn.microsoft.com/zh-cn/library/mt238290.aspx) (SSMS)、[SQL Server Data Tools](https://msdn.microsoft.com/zh-cn/library/mt204009.aspx) (SSDT) 或其他任何 Transact-SQL 开发工具执行以下操作。
 
 
 > [AZURE.IMPORTANT] 建议始终使用最新版本的 Management Studio 以保持与 Azure 和 SQL 数据库的更新同步。[更新 SQL Server Management Studio](https://msdn.microsoft.com/zh-cn/library/mt238290.aspx)。
@@ -88,7 +88,7 @@
 
 ###将现有表更改为临时表
 
-让我们探讨替代方案，其中 WebsiteUserInfo 表已存在，但不是针对保留更改历史记录而设计的。在此情况下，你只需扩展现有表，使其成为临时表，如以下示例中所示：
+下面探讨替代方案，其中 WebsiteUserInfo 表已存在，但不是针对保留更改历史记录而设计的。在这种情况下，只需将现有表扩展为临时表即可，如以下示例中所示：
 
 
 	ALTER TABLE WebsiteUserInfo 
@@ -110,7 +110,7 @@
 
 ##步骤 2：定期运行工作负荷
 
-临时表的主要优点是不需要以任何方式更改或调整网站就可以执行更改跟踪。创建临时表后，每当你对数据进行修改时，会自动保存以前的行版本。
+临时表的主要优点是，不需要以任何方式更改或调整网站就可以执行更改跟踪。创建临时表后，每当对数据进行修改时，都将自动保存以前的行版本。
 
 若要为此特定方案使用自动更改跟踪功能，只需在每次用户结束网站上的会话时更新列 **PagesVisited**：
 
@@ -136,7 +136,7 @@
 	ORDER BY PagesVisited DESC
 
 
-你可以轻松修改此查询，以分析一天前、一个月前或所需的任何过去时间点的站点访问记录。
+可轻松修改此查询，以分析一天前、一个月前或所需的任何过去时间点的站点访问记录。
 
 若要执行前一天的基本统计分析，请使用以下示例：
 
@@ -169,7 +169,7 @@
 
 ##不断演变的表架构
 
-通常，你需要在开发应用时更改临时表架构。为此，你只需运行正则 ALTER TABLE 语句，Azure SQL 数据库就能正确传播历史记录表的更改。以下脚本演示如何添加要跟踪的其他属性：
+通常，开发应用时需要更改临时表架构。为此，只需运行常规 ALTER TABLE 语句，Azure SQL 数据库就会正确传播历史记录表的更改。以下脚本演示如何添加要跟踪的其他属性：
 
 
 	/*Add new column for tracking source IP address*/
@@ -177,7 +177,7 @@
 	ADD  [IPAddress] varchar(128) NOT NULL CONSTRAINT DF_Address DEFAULT 'N/A';
 
 
-同样，你可以在工作负荷处于活动状态时更改列定义：
+同样，可在工作负荷处于活动状态时更改列定义：
 
 
 	/*Increase the length of name column*/
@@ -185,7 +185,7 @@
 	    ALTER COLUMN  UserName nvarchar(256) NOT NULL;
 
 
-最后，你可以删除不再需要的列。
+最后，可删除不再需要的列。
 
 
 	/*Drop unnecessary column */
@@ -193,7 +193,7 @@
 	    DROP COLUMN TemporaryColumn; 
 
     
-或者，在已连接到数据库（联机模式）或正在开发数据库项目（脱机模式）时，使用最新的 [SSDT](https://msdn.microsoft.com/zh-cn/library/mt204009.aspx) 来更改临时表架构。
+或者，在连接到数据库（联机模式）或开发数据库项目（脱机模式）时，使用最新 [SSDT](https://msdn.microsoft.com/zh-cn/library/mt204009.aspx) 更改临时表架构。
 
 ##控制历史数据的保留期
 
@@ -205,6 +205,6 @@
 ##后续步骤
 
 有关临时表的详细信息，请参阅 [MSDN 文档](https://msdn.microsoft.com/zh-cn/library/dn935015.aspx)。
-访问第 9 频道收听[客户实施临时表的真实成功案例](https://channel9.msdn.com/Blogs/jsturtevant/Azure-SQL-Temporal-Tables-with-RockStep-Solutions)，并观看[临时表现场演示](https://channel9.msdn.com/Shows/Data-Exposed/Temporal-in-SQL-Server-2016)。
+访问第 9 频道收听[客户实施临时表的真实成功案例](https://channel9.msdn.com/Blogs/jsturtevant/Azure-SQL-Temporal-Tables-with-RockStep-Solutions)，观看[临时表现场演示](https://channel9.msdn.com/Shows/Data-Exposed/Temporal-in-SQL-Server-2016)。
 
-<!---HONumber=Mooncake_1010_2016-->
+<!---HONumber=Mooncake_Quality_Review_1215_2016-->

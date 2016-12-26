@@ -1,6 +1,6 @@
 ﻿<properties
     pageTitle="创建 blob 的只读快照 | Azure"
-    description="了解如何在指定时刻及时创建 blob 的快照以备份 blob 数据。了解如何对快照计费，以及如何使用快照来最大程度地减少容量费用。"
+    description="了解如何在指定时刻及时创建 blob 的快照以备份 blob 数据。了解如何对快照计费，以及如何使用快照最大程度地减少容量费用。"
     services="storage"
     documentationcenter=""
     author="tamram"
@@ -15,7 +15,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="11/16/2016"
-    wacn.date="12/05/2016"
+    wacn.date="12/26/2016"
     ms.author="tamram" />  
 
 
@@ -29,12 +29,12 @@ Blob 的快照与其基本 Blob 相同，不过，Blob URI 的后面追加了一
 
 一个 Blob 可以有任意数目的快照。除非显式删除，否则快照会一直保留。快照的生存期不能长于其基本 Blob。你可以枚举与基本 Blob 关联的快照，以跟踪当前快照。
 
-创建 Blob 的快照时，会将该 Blob 的系统属性复制到具有相同值的快照。基本 Blob 的元数据也会复制到快照，除非创建快照时为其指定了不同的元数据。
+创建 Blob 的快照时，会将该 Blob 的系统属性复制到具有相同值的快照。基本 Blob 的元数据也会复制到快照，除非创建快照时为其指定了单独的元数据。
 
 任何与基本 Blob 关联的租约都不会影响快照。无法获取快照上的租约。
 
 ## 创建快照
-以下代码示例演示如何在 .NET 中创建快照。本示例在创建快照时为其指定了不同的元数据。
+以下代码示例演示如何在 .NET 中创建快照。本示例在创建快照时为其指定了单独的元数据。
 
     private static async Task CreateBlockBlobSnapshot(CloudBlobContainer container)
     {
@@ -71,7 +71,7 @@ Blob 的快照与其基本 Blob 相同，不过，Blob URI 的后面追加了一
 ## 复制快照
 涉及 Blob 和快照的复制操作遵循以下规则：
 
-* 可以将快照复制到其基本 Blob 上。通过将快照提升到基本 Blob 的位置，可还原早期版本的 Blob。快照将保留，但基本 Blob 将被快照的可写副本覆盖。
+* 可以将快照复制到其基本 Blob 上。通过将快照提升到基本 Blob 的位置，可还原早期版本的 Blob。快照将保留，但基本 Blob 将由快照的可写副本覆盖。
 * 你可将快照复制到具有不同名称的目标 Blob。生成的目标 Blob 是可写 Blob，而不是快照。
 * 复制源 Blob 时，不会将该源 Blob 的任何快照复制到目标。使用副本覆盖目标 Blob 时，与原始目标 Blob 关联的所有快照将保持不变。
 * 创建块 Blob 的快照时，也会将该 Blob 的已提交块列表复制到快照。不会复制任何未提交的块。
@@ -122,21 +122,21 @@ Blob 的快照与其基本 Blob 相同，不过，Blob URI 的后面追加了一
 以下列表包含创建快照时要考虑的要点。
 
 * 不管唯一的块或页是在 Blob 还是快照中，存储帐户都会产生费用。在更新快照所基于的 Blob 之前，你的帐户将不会就与 Blob 关联的快照产生额外费用。更新基本 Blob 后，它与其快照分离。发生这种情况时，你需要支付每个 Blob 或快照中唯一块或页的费用。
-* 在替换块 Blob 中的某个块后，会将该块作为唯一块进行收费。即使该块具有的块 ID 和数据与它在快照中所具有的 ID 和数据相同也是如此。重新提交块后，它将偏离它在任何快照中的对应部分，并且你将就其数据支付费用。对于使用相同的数据更新的页 Blob 中的页面，也是如此。
+* 在替换块 Blob 中的某个块后，会将该块作为唯一块进行收费。即使该块具有的块 ID 和数据与它在快照中所具有的 ID 和数据相同也是如此。重新提交块后，它将偏离它在任何快照中的对应部分，并且你将就其数据支付费用。对于使用相同数据更新的页 Blob 中的页面也是如此。
 * 通过调用 **UploadFile**、**UploadText**、**UploadStream** 或 **UploadByteArray** 方法替换块 Blob 可替换该 Blob 中的所有块。如果你有与该 Blob 关联的快照，则基本 Blob 和快照中的所有块现在将发生偏离，并且你需为这两个 Blob 中的所有块支付费用。即使基本 Blob 和快照中的数据保持相同也是如此。
-* Azure BLOB 服务无法确定这两个块是否包含相同的数据。每个上载和提交的块均被视为唯一的快，即使它具有相同的数据和块 ID 也是如此。由于唯一的块会产生费用，因此考虑到更新具有快照的 Blob 将导致产生其他唯一块和额外费用这一点很重要。
+* Azure Blob 服务无法确定这两个块是否包含相同的数据。每个上传和提交的块均被视为唯一的快，即使它具有相同的数据和块 ID 也是如此。由于唯一的块会产生费用，因此考虑到更新具有快照的 Blob 将导致产生其他唯一块和额外费用这一点很重要。
 
 > [AZURE.NOTE] 最佳实践要求你仔细管理快照以避免额外费用。建议你通过以下方式管理快照：
 
 > - 除非你的应用程序设计需要保留与 Blob 关联的快照，否则请在更新 Blob 时删除并重新创建这些快照，即使你使用相同的数据进行更新也是如此。通过删除并重新创建 Blob 的快照，可以确保 Blob 和快照不会发生偏离。
 
-> - 如果要保留 Blob 的快照，请避免调用 **UploadFile**、**UploadText**、**UploadStream** 或 **UploadByteArray** 来更新 Blob。这些方法将替换 Blob 中的所有块，因此基本 Blob 和快照将发生明显偏离。相反，请使用 **PutBlock** 和 **PutBlockList** 方法更新尽可能少的块。
+> - 如果要保留 Blob 的快照，请避免调用 **UploadFile**、**UploadText**、**UploadStream** 或 **UploadByteArray** 更新 Blob。这些方法将替换 Blob 中的所有块，因此基本 Blob 和快照将发生明显偏离。相反，请使用 **PutBlock** 和 **PutBlockList** 方法更新尽可能少的块。
 
 
 ### 快照计费方案
 下列方案说明了块 Blob 及其快照将如何产生费用。
 
-在方案 1 中，基本 Blob 自创建快照后未进行更新，因此仅唯一块 1、2、3 会产生费用。
+在方案 1 中，基本 Blob 自创建快照后未进行更新，因此仅唯一块 1、2 和 3 会产生费用。
 
 ![Azure 存储资源](./media/storage-blob-snapshots/storage-blob-snapshots-billing-scenario-1.png)  
 
@@ -153,4 +153,4 @@ Blob 的快照与其基本 Blob 相同，不过，Blob URI 的后面追加了一
 
 ![Azure 存储资源](./media/storage-blob-snapshots/storage-blob-snapshots-billing-scenario-4.png)
 
-<!---HONumber=Mooncake_1128_2016-->
+<!---HONumber=Mooncake_Quality_Review_1215_2016-->

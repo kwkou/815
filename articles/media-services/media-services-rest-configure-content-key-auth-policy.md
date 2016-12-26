@@ -15,7 +15,7 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="09/19/2016"  
-	wacn.date="11/21/2016"  
+	wacn.date="12/26/2016"  
 	ms.author="juliako"/>
 
 
@@ -28,14 +28,14 @@
 
 借助 Azure 媒体服务，你可以传送使用高级加密标准 (AES)（使用 128 位加密密钥）和 PlayReady 或 Widevine DRM 加密的内容。媒体服务还提供了用于向已授权客户端传送密钥和 PlayReady/Widevine 许可证的服务。
 
-如果你需要媒体服务来加密资产，则需要将加密密钥（**CommonEncryption** 或 **EnvelopeEncryption**）与资产相关联（如[此处](/documentation/articles/media-services-rest-create-contentkey/)所述），并且配置密钥的授权策略（如本文所述）。
+如果你需要媒体服务来加密资产，则需要将加密密钥（**CommonEncryption** 或 **EnvelopeEncryption**）与资产相关联（如[此处](/documentation/articles/media-services-rest-create-contentkey/)所述），同时配置密钥的授权策略（如本文所述）。
 
 
-当播放器请求流时，媒体服务将使用指定的密钥通过 AES 或 PlayReady 加密来动态加密你的内容。为了解密流，播放器将从密钥传送服务请求密钥。为了确定用户是否有权获取密钥，服务将评估为密钥指定的授权策略。
+当播放器请求流时，媒体服务将使用指定的密钥通过 AES 或 PlayReady 加密动态加密你的内容。为了解密流，播放器将从密钥传送服务请求密钥。为了确定用户是否有权获取密钥，服务将评估为密钥指定的授权策略。
 
-媒体服务支持通过多种方式对发出密钥请求的用户进行身份验证。内容密钥授权策略可能受到一种或多种授权限制：**开放**或**令牌**限制。令牌限制策略必须附带由安全令牌服务 (STS) 颁发的令牌。媒体服务支持采用简单的“Web 令牌”([SWT](https://msdn.microsoft.com/zh-cn/library/gg185950.aspx#BKMK_2)) 格式和“JSON Web 令牌”(JWT) 格式的令牌。
+媒体服务支持通过多种方式对发出密钥请求的用户进行身份验证。内容密钥授权策略可能受到一种或多种授权限制：**开放**或**令牌**限制。令牌限制策略必须随附由安全令牌服务 (STS) 颁发的令牌。媒体服务支持采用“简单的Web 令牌”([SWT](https://msdn.microsoft.com/zh-cn/library/gg185950.aspx#BKMK_2)) 格式和“JSON Web 令牌”(JWT) 格式的令牌。
 
-媒体服务不提供安全令牌服务。你可以创建自定义 STS 或利用 Azure ACS 来颁发令牌。必须将 STS 配置为创建令牌，该令牌使用指定密钥以及你在令牌限制配置中指定的颁发声明进行签名（如本文所述）。如果令牌有效，而且令牌中的声明与为内容密钥配置的声明相匹配，则媒体服务密钥传送服务会将加密密钥返回到客户端。
+媒体服务不提供安全令牌服务。你可以创建自定义 STS 或利用 Azure ACS 颁发令牌。必须将 STS 配置为创建令牌，该令牌使用指定密钥以及你在令牌限制配置中指定的颁发声明进行签名（如本文所述）。如果令牌有效，而且令牌中的声明与为内容密钥配置的声明相匹配，则媒体服务密钥传送服务会将加密密钥返回到客户端。
 
 有关详细信息，请参阅
 
@@ -48,12 +48,12 @@
 ###请注意以下事项：
 
 - 为了能够使用动态打包和动态加密，必须确保至少有一个流式处理保留单位。有关详细信息，请参阅[如何缩放媒体服务](/documentation/articles/media-services-manage-origins/#scale_streaming_endpoints)。
-- 你的资产必须包含一组自适应比特率 MP4 或自适应比特率平滑流文件。有关详细信息，请参阅[对资产进行编码](/documentation/articles/media-services-encode-asset/)。
-- 使用 **AssetCreationOptions.StorageEncrypted** 选项上载资产并对其进行编码。
+- 你的资产必须包含一组自适应比特率 MP4 或自适应比特率平滑流式处理文件。有关详细信息，请参阅[对资产进行编码](/documentation/articles/media-services-encode-asset/)。
+- 使用 **AssetCreationOptions.StorageEncrypted** 选项上传资产并对其进行编码。
 - 如果你打算创建需要相同策略配置的多个内容密钥，我们强烈建议你创建单个授权策略，并将其重复用于多个内容密钥。
 - 密钥传送服务将 ContentKeyAuthorizationPolicy 及其相关对象（策略选项和限制）缓存 15 分钟。如果你创建 ContentKeyAuthorizationPolicy 并指定使用“令牌”限制，然后对其进行测试，再将策略更新为“开放”限制，则现有策略切换到“开放”版本的策略需要大约 15 分钟。
 - 如果你添加或更新资产的传送策略，则必须删除现有定位符（如果有）并创建新定位符。
-- 目前，无法加密 HDS 流格式或渐进式下载。
+- 目前，无法加密 HDS 流式处理格式或渐进式下载。
 
 
 ##AES-128 动态加密
@@ -193,7 +193,7 @@
 
 本部分介绍如何创建内容密钥授权策略，以及如何将其与内容密钥相关联。授权策略描述了必须达到什么授权要求才能确定用户是否有权接收密钥（例如，“验证密钥”列表是否包含令牌签名时使用的密钥）。
 
-若要配置令牌限制选项，你需要使用 XML 来描述令牌的授权要求。令牌限制配置 XML 必须符合以下 XML 架构。
+若要配置令牌限制选项，你需要使用 XML 描述令牌的授权要求。令牌限制配置 XML 必须符合以下 XML 架构。
 
 ####<a id="schema"></a>令牌限制架构
 	
@@ -244,7 +244,7 @@
 	  <xs:element name="SymmetricVerificationKey" nillable="true" type="tns:SymmetricVerificationKey" />
 	</xs:schema>
 
-在配置**令牌**限制策略时，必须指定主**验证密钥**、**颁发者**和**受众**参数。**主验证密钥**包含用来为令牌签名的密钥，**颁发者**是颁发令牌的安全令牌服务。**受众**（有时称为**范围**）描述该令牌的意图，或者令牌授权访问的资源。媒体服务密钥交付服务将验证令牌中的这些值是否与模板中的值匹配。
+在配置**令牌**限制策略时，必须指定主**验证密钥**、**颁发者**和**受众**参数。**主验证密钥**包含令牌签名时使用的密钥，**颁发者**是颁发令牌的安全令牌服务。**受众**（有时称为**范围**）描述该令牌的意图，或者令牌授权访问的资源。媒体服务密钥传送服务将验证令牌中的这些值是否与模板中的值匹配。
 
 以下示例创建包含令牌限制的授权策略。在此示例中，客户端必须出示令牌，其中包含：签名密钥 (VerificationKey)、令牌颁发者和必需的声明。
 	
@@ -397,7 +397,7 @@
 
 ###令牌限制
 
-若要配置令牌限制选项，你需要使用 XML 来描述令牌的授权要求。令牌限制配置 XML 必须符合[此](#schema)部分中所示的 XML 架构。
+若要配置令牌限制选项，你需要使用 XML 描述令牌的授权要求。令牌限制配置 XML 必须符合[此](#schema)部分中所示的 XML 架构。
 	
 ####创建 ContentKeyAuthorizationPolicies
 	
@@ -475,8 +475,8 @@
 
 
 ##后续步骤
-在配置内容密钥的授权策略后，请转到[如何配置资产传送策略](/documentation/articles/media-services-rest-configure-asset-delivery-policy/)主题。
+现在已配置内容密钥的授权策略，请转到[如何配置资产传送策略](/documentation/articles/media-services-rest-configure-asset-delivery-policy/)主题。
 
  
 
-<!---HONumber=Mooncake_1114_2016-->
+<!---HONumber=Mooncake_Quality_Review_1215_2016-->

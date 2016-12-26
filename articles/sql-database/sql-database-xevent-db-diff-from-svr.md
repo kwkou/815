@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="SQL 数据库中的扩展事件 | Azure" 
-	description="介绍 Azure SQL 数据库中的扩展事件 (XEvents)，以及这些事件会话与 Microsoft SQL Server 中的事件会话有怎样的细微差别。" 
+	description="介绍 Azure SQL 数据库中的扩展事件 (XEvents)，以及这些事件会话与 Microsoft SQL Server 中的事件会话的细微差别。"
 	services="sql-database" 
 	documentationCenter="" 
 	authors="MightyPen" 
@@ -16,7 +16,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="08/23/2016"
-	wacn.date="10/17/2016"
+	wacn.date="12/26/2016"
 	ms.author="genemi"/>  
 
 
@@ -25,21 +25,21 @@
 
 [AZURE.INCLUDE [sql-database-xevents-selectors-1-include](../../includes/sql-database-xevents-selectors-1-include.md)]
 
-本主题说明 Azure SQL 数据库中的扩展事件与 Microsoft SQL server 中的扩展事件在实现方式上有怎样的细微差别。
+本主题说明 Azure SQL 数据库中的扩展事件与 Microsoft SQL server 中的扩展事件在实现方式上的细微差别。
 
 
-- SQL 数据库 V12 在 2015 年下半年度推出了扩展事件功能。
-- SQL Server 自 2008 年开始即已推出扩展事件。
+- SQL 数据库 V12 在 2015 年下半年推出了扩展事件功能。
+- SQL Server 自 2008 年即已推出扩展事件。
 - SQL 数据库上的扩展事件功能集是强大的 SQL Server 功能子集。
 
 
-*XEvents* 是不正式的别名，有时在博客或其他非正式场合表示“扩展的事件”。
+*XEvents* 不是正式名称，有时在博客或其他非正式场合表示“扩展的事件”。
 
 
-> [AZURE.NOTE] 从 2015 年 10 月开始，扩展事件会话功能已在 Azure SQL 数据库的预览级激活。正式版 (GA) 的推出日期尚未确定。
+> [AZURE.NOTE] 从 2015 年 10 月开始，扩展事件会话功能已在 Azure SQL 数据库的预览级激活。正式发布 (GA) 日期尚未确定。
 
 
-针对 Azure SQL 数据库和 Microsoft SQL Server 的扩展事件的其他相关信息位于：
+下面提供了 Azure SQL 数据库和 Microsoft SQL Server 的扩展事件的其他相关信息：
 
 - [快速入门：SQL Server 中的扩展事件](http://msdn.microsoft.com/zh-cn/library/mt733217.aspx)
 - [扩展事件](http://msdn.microsoft.com/zh-cn/library/bb630282.aspx)
@@ -48,7 +48,7 @@
 ## 先决条件
 
 
-本主题假设读者有以下方面的经验：
+本主题假设读者了解以下内容：
 
 
 - [Azure SQL 数据库服务](/home/features/sql-database/)。
@@ -58,7 +58,7 @@
  - 有关扩展事件的许多文档都适用于 SQL Server 和 SQL 数据库。
 
 
-当你选择事件文件作为[目标](#AzureXEventsTargets)时，事先熟悉以下产品会很有帮助：
+选择事件文件作为[目标](#AzureXEventsTargets)时，事先了解以下项目会很有帮助：
 
 
 - [Azure 存储服务](/home/features/storage/)
@@ -76,7 +76,7 @@
 
 - [SQL 数据库中扩展事件的环形缓冲区目标代码](/documentation/articles/sql-database-xevent-code-ring-buffer/)
  - 简短的 Transact-SQL 脚本。
- - 代码示例主题中强调，当完成环形缓冲区目标时，应该通过执行 alter-drop `ALTER EVENT SESSION ... ON DATABASE DROP TARGET ...;` 语句释放其资源。然后可以通过 `ALTER EVENT SESSION ... ON DATABASE ADD TARGET ...` 添加环形缓冲区的另一个实例。
+ - 代码示例主题中强调，用完环形缓冲区目标时，应通过执行 alter-drop `ALTER EVENT SESSION ... ON DATABASE DROP TARGET ...;` 语句释放其资源。然后可以通过 `ALTER EVENT SESSION ... ON DATABASE ADD TARGET ...` 添加环形缓冲区的另一个实例。
 
 
 - [SQL 数据库中扩展事件的事件文件目标代码](/documentation/articles/sql-database-xevent-code-event-file/)
@@ -87,7 +87,7 @@
 ## Transact-SQL 的差异
 
 
-- 当你在 SQL Server 上执行 [CREATE EVENT SESSION](http://msdn.microsoft.com/zh-cn/library/bb677289.aspx) 命令时，请使用 **ON SERVER** 子句。但在 SQL 数据库上，应改为使用 **ON DATABASE** 子句。
+- 在 SQL Server 上执行 [CREATE EVENT SESSION](http://msdn.microsoft.com/zh-cn/library/bb677289.aspx) 命令时，请使用 **ON SERVER** 子句。但在 SQL 数据库上，应改用 **ON DATABASE** 子句。
 
 
 - **ON DATABASE** 子句也适用于 [ALTER EVENT SESSION](http://msdn.microsoft.com/zh-cn/library/bb630368.aspx) 和 [DROP EVENT SESSION](http://msdn.microsoft.com/zh-cn/library/bb630257.aspx) Transact-SQL 命令。
@@ -100,7 +100,7 @@
 ## 新的目录视图
 
 
-扩展事件功能受多个[目录视图](http://msdn.microsoft.com/zh-cn/library/ms174365.aspx)的支持。目录视图告诉你有关当前数据库中用户创建的事件会话的*元数据或定义*的信息。视图不会返回有关活动事件会话的实例的信息。
+扩展事件功能受多个[目录视图](http://msdn.microsoft.com/zh-cn/library/ms174365.aspx)的支持。目录视图将显示有关当前数据库中用户创建的事件会话的*元数据或定义*的信息。视图不会返回有关活动事件会话的实例的信息。
 
 
 | 目录<br/>视图的名称 | 说明 |
@@ -118,7 +118,7 @@
 ## 新的动态管理视图 [(DMV)](http://msdn.microsoft.com/zh-cn/library/ms188754.aspx)
 
 
-Azure SQL 数据库具有支持扩展事件的[动态管理视图 (DMV)](http://msdn.microsoft.com/zh-cn/library/bb677293.aspx)。DMV 告诉你有关*活动*事件会话的信息。
+Azure SQL 数据库具有支持扩展事件的[动态管理视图 (DMV)](http://msdn.microsoft.com/zh-cn/library/bb677293.aspx)。DMV 显示有关*活动*事件会话的信息。
 
 
 | DMV 的名称 | 说明 |
@@ -154,7 +154,7 @@ Azure SQL 数据库具有支持扩展事件的[动态管理视图 (DMV)](http://
 ## 查找可用的扩展事件、操作和目标
 
 
-你可以运行一个简单的 SQL **SELECT** 来获取可用事件、操作和目标的列表。
+可运行简单的 SQL **SELECT** 来获取可用事件、操作和目标的列表。
 
 
 
@@ -186,7 +186,7 @@ Azure SQL 数据库具有支持扩展事件的[动态管理视图 (DMV)](http://
 ## SQL 数据库事件会话的目标
 
 
-以下是可以从 SQL 数据库上的事件会话捕获结果的目标：
+可从 SQL 数据库上的事件会话捕获结果的目标如下：
 
 
 - [环形缓冲区目标](http://msdn.microsoft.com/zh-cn/library/ff878182.aspx) - 在内存中短暂保存事件数据。
@@ -205,13 +205,13 @@ Azure SQL 数据库具有支持扩展事件的[动态管理视图 (DMV)](http://
 
 - 扩展事件在单租户隔离模型中构建。一个数据库中的事件会话无法访问另一个数据库中的数据或事件。
 
-- 你无法在 **master** 数据库的上下文中发出 **CREATE EVENT SESSION** 语句。
+- 无法在 **master** 数据库的上下文中发出 **CREATE EVENT SESSION** 语句。
 
 
 ## 权限模型
 
 
-你必须拥有数据库的**控制**权限才能发出 **CREATE EVENT SESSION** 语句。数据库所有者 (dbo) 拥有**控制**权限。
+必须拥有数据库的**控制**权限才能发出 **CREATE EVENT SESSION** 语句。数据库所有者 (dbo) 拥有**控制**权限。
 
 
 ### 存储容器授权
@@ -228,13 +228,13 @@ Azure SQL 数据库具有支持扩展事件的[动态管理视图 (DMV)](http://
 ## 性能注意事项
 
 
-在某些情况下，大量使用扩展事件可能会累积过多的活动内存，使整个系统变得不太正常。因此，Azure SQL 数据库系统会动态设置和调整事件会话可以累积的活动内存量限制。动态计算会考虑许多因素。
+在某些情况下，大量使用扩展事件可能累积过多的活动内存，使整个系统无法正常运行。因此，Azure SQL 数据库系统会动态设置和调整事件会话可以累积的活动内存量限制。动态计算会考虑许多因素。
 
 
-如果你收到错误消息，指出已强制实施内存最大值，则你可以采取以下一些纠正措施：
+如果收到错误消息，指出已强制实施内存最大值，可采取以下纠正措施：
 
 
-- 运行更少的并发事件会话。
+- 减少运行的并发事件会话。
 
 
 - 通过对事件会话执行 **CREATE** 和 **ALTER** 语句，减少在 **MAX\_MEMORY** 子句中指定的内存量。
@@ -266,7 +266,7 @@ Azure SQL 数据库具有支持扩展事件的[动态管理视图 (DMV)](http://
 - [Jonathan Kehayias 撰写的有关 Microsoft SQL Server 中扩展事件的博客文章](http://www.sqlskills.com/blogs/jonathan/category/extended-events)
 
 
-可通过以下链接访问有关扩展事件的其他代码示例主题。不过，你必须定期检查所有示例，以确定这些示例是针对 Microsoft SQL Server 还是 Azure SQL 数据库。然后，你可以在运行示例时确定是否要做出细微的更改。
+可通过以下链接访问有关扩展事件的其他代码示例主题。不过，必须定期检查所有示例，以确定这些示例是针对 Microsoft SQL Server 还是 Azure SQL 数据库。然后，你可以在运行示例时确定是否要做出细微的更改。
 
 
 <!--
@@ -276,4 +276,4 @@ Azure SQL 数据库具有支持扩展事件的[动态管理视图 (DMV)](http://
 - Code sample for SQL Server: [Find the Objects That Have the Most Locks Taken on Them](http://msdn.microsoft.com/zh-cn/library/bb630355.aspx)
 -->
 
-<!---HONumber=Mooncake_1010_2016-->
+<!---HONumber=Mooncake_Quality_Review_1215_2016-->

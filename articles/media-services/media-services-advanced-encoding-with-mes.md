@@ -15,12 +15,12 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="09/25/2016"
-    wacn.date="12/12/2016"
+    wacn.date="12/26/2016"
     ms.author="juliako" />
 
 # 使用 Media Encoder Standard 进行高级编码
 ## 概述
-本主题演示如何使用媒体编码器标准版执行高级编码任务。本主题演示[如何使用 .NET 创建编码任务和执行此任务的作业](/documentation/articles/media-services-advanced-encoding-with-mes/#encoding_with_dotnet)。此外，还说明如何向编码任务提供自定义预设。有关预设所用元素的说明，请参阅[此文档](https://msdn.microsoft.com/zh-cn/library/mt269962.aspx)。
+本主题演示如何使用 Media Encoder Standard 执行高级编码任务。本主题演示[如何使用 .NET 创建编码任务和执行此任务的作业](/documentation/articles/media-services-advanced-encoding-with-mes/#encoding_with_dotnet)。此外，还说明如何向编码任务提供自定义预设。有关预设所用元素的说明，请参阅[此文档](https://msdn.microsoft.com/zh-cn/library/mt269962.aspx)。
 
 下面演示了执行以下编码任务的自定义预设：
 
@@ -262,7 +262,7 @@
 	
 ##<a id="thumbnails"></a>生成缩略图
 
-本部分说明如何自定义生成缩略图的预设。下面定义的预设包含有关如何将文件编码的信息，以及生成缩略图时所需的信息。可使用[此处](https://msdn.microsoft.com/zh-cn/library/mt269960.aspx)所述的任何 MES 预设，并添加生成缩略图的代码。
+本部分说明如何自定义生成缩略图的预设。下面定义的预设包含有关如何将文件编码的信息，以及生成缩略图时所需的信息。你可以使用[此处](https://msdn.microsoft.com/zh-cn/library/mt269960.aspx)所述的任何 MES 预设，以及添加生成缩略图的代码。
 
 >[AZURE.NOTE]如果要编码为单比特率视频，以下预设中的 **SceneChangeDetection** 设置只能设置为 true。如果要编码为多比特率视频并将 **SceneChangeDetection** 设置为 true，则编码器将返回错误。
 
@@ -466,9 +466,8 @@
 	- 默认值：Start:{Best}
 - 需要显式提供每个图像格式的输出格式：Jpg/Png/BmpFormat。MES 会将 JpgVideo（如果已指定）与 JpgFormat 进行匹配，依此类推。OutputFormat 引入了新的图像编解码器特定宏 {Index}，需要为图像输出格式提供该宏一次（且只需一次）。
 
-##<a id="trim_video"></a>剪裁视频（剪辑）
-
-本部分说明如何修改编码器预设，以裁剪或修剪其输入为所谓的夹层文件或按需文件的输入视频。也可以使用编码器来剪辑或剪裁从实时流捕获或存档的资产 — [此博客](https://azure.microsoft.com/blog/sub-clipping-and-live-archive-extraction-with-media-encoder-standard/)提供了详细信息。
+## <a id="trim_video"></a>修剪视频（裁剪）
+本部分说明如何修改编码器预设，以裁剪或修剪其输入为所谓的夹层文件或按需文件的输入视频。也可以使用编码器来剪切或剪裁从实时流捕获或存档的资产 – [此博客](https://azure.microsoft.com/blog/sub-clipping-and-live-archive-extraction-with-media-encoder-standard/)提供了详细信息。
 
 若要剪裁视频，可以使用[此处](https://msdn.microsoft.com/zh-cn/library/mt269960.aspx)所述的任何 MES 预设，并修改 **Sources** 元素（如下所示）。StartTime 的值需与输入视频的绝对时间戳匹配。例如，如果输入视频第一帧的时间戳为 12:00:10.000，则 StartTime 应大于或等于 12:00:10.000。在以下示例中，假设输入视频的起始时间戳为零。**Sources** 应位于预设的开始处。
  
@@ -594,7 +593,7 @@
 
 ###XML 预设
 	
-若要剪裁视频，可以使用[此处](https://msdn.microsoft.com/zh-cn/library/mt269960.aspx)所述的任何 MES 预设，并修改 **Sources** 元素（如下所示）。
+若要修剪视频，可以使用[此处](https://msdn.microsoft.com/zh-cn/library/mt269960.aspx)所述的任何 MES 预设并修改 **Sources** 元素（如下所示）。
 
 	<?xml version="1.0" encoding="utf-16"?>
 	<Preset xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="1.0" xmlns="http://www.windowsazure.com/media/encoding/Preset/2014/03">
@@ -873,7 +872,7 @@ Media Encoder Standard 允许在现有视频上覆盖图像。目前支持以下
 
 若要强制编码器在输入不包含音频时生成包含静音曲目的资产，请指定“InsertSilenceIfNoAudio”值。
 
-可使用[此处](https://msdn.microsoft.com/zh-cn/library/mt269960.aspx)所述的任何 MES 预设，并进行以下修改：
+你可以使用[此处](https://msdn.microsoft.com/zh-cn/library/mt269960.aspx)所述的任何 MES 预设，并进行以下修改：
 
 ###JSON 预设
 
@@ -1173,4 +1172,4 @@ Media Encoder Standard 允许在现有视频上覆盖图像。目前支持以下
 ## 另请参阅
 [媒体服务编码概述](/documentation/articles/media-services-encode-asset/)
 
-<!---HONumber=Mooncake_1205_2016-->
+<!---HONumber=Mooncake_Quality_Review_1215_2016-->

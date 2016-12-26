@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="如何使用媒体编码器标准通过 .NET 来生成缩略图" 
-	description="本主题介绍如何使用 .NET 通过媒体编码器标准同时对资产进行编码和生成缩略图。" 
+	pageTitle="如何使用 Media Encoder Standard 通过 .NET 生成缩略图" 
+	description="本主题介绍如何使用 .NET 通过 Media Encoder Standard 对资产进行编码和生成缩略图。" 
 	services="media-services" 
 	documentationCenter="" 
 	authors="juliako" 
@@ -15,13 +15,13 @@
 	ms.devlang="na" 
 	ms.topic="article" 
  	ms.date="10/10/2016" 
- 	wacn.date="11/14/2016"
+ 	wacn.date="12/26/2016"
 	ms.author="juliako"/>
 
 
-#如何使用媒体编码器标准通过 .NET 来生成缩略图
+#如何使用 Media Encoder Standard 通过 .NET 生成缩略图
 
-本主题介绍如何使用媒体服务 .NET SDK 通过媒体编码器标准来对资产进行编码和生成缩略图。本主题定义了 XML 和 JSON 缩略图预设，可用于创建同时执行编码和生成缩略图的任务。[此文档](https://msdn.microsoft.com/zh-cn/library/mt269962.aspx)包含这些预设所用的元素的说明。
+本主题介绍如何使用媒体服务 .NET SDK 通过 Media Encoder Standard 对资产进行编码和生成缩略图。本主题定义了 XML 和 JSON 缩略图预设，可用于创建同时执行编码和生成缩略图的任务。[本](https://msdn.microsoft.com/zh-cn/library/mt269962.aspx)文档包含这些预设所用的元素的说明。
 
 请务必仔细阅读[注意事项](/documentation/articles/media-services-dotnet-generate-thumbnail-with-mes/#considerations)部分。
 
@@ -30,8 +30,8 @@
 以下代码示例使用媒体服务 .NET SDK 执行下列任务：
 
 - 创建编码作业。
-- 获取对媒体编码器标准版编码器的引用。
-- 加载预设 [XML](/documentation/articles/media-services-dotnet-generate-thumbnail-with-mes/#xml) 或 [JSON](/documentation/articles/media-services-dotnet-generate-thumbnail-with-mes/#json)，其中包含生成缩略图所需的编码预设和信息。可以在一个文件中保存此 [XML](/documentation/articles/media-services-dotnet-generate-thumbnail-with-mes/#xml) 或 [JSON](/documentation/articles/media-services-dotnet-generate-thumbnail-with-mes/#json)，并使用以下代码来加载该文件。
+- 获取对 Media Encoder Standard 编码器的引用。
+- 加载预设 [XML](/documentation/articles/media-services-dotnet-generate-thumbnail-with-mes/#xml) 或 [JSON](/documentation/articles/media-services-dotnet-generate-thumbnail-with-mes/#json)，其中包含生成缩略图所需的编码预设和信息。可以在一个文件中保存此 [XML](/documentation/articles/media-services-dotnet-generate-thumbnail-with-mes/#xml) 或 [JSON](/documentation/articles/media-services-dotnet-generate-thumbnail-with-mes/#json)，并使用以下代码加载该文件。
 
 			// Load the XML (or JSON) from the local file.
 		    string configuration = File.ReadAllText(fileName);  
@@ -189,7 +189,7 @@
 
 ##<a id="json"></a>缩略图 JSON 预设
 
-有关架构的信息，请参阅[此主题](https://msdn.microsoft.com/zh-cn/library/mt269962.aspx)。
+有关架构的信息，请参阅[此](https://msdn.microsoft.com/zh-cn/library/mt269962.aspx)主题。
 
 	{
 	  "Version": 1.0,
@@ -292,7 +292,7 @@
 
 ##<a id="xml"></a>缩略图 XML 预设
 
-有关架构的信息，请参阅[此主题](https://msdn.microsoft.com/zh-cn/library/mt269962.aspx)。
+有关架构的信息，请参阅[此](https://msdn.microsoft.com/zh-cn/library/mt269962.aspx)主题。
 	
 	<?xml version="1.0" encoding="utf-16"?>
 	<Preset xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="1.0" xmlns="http://www.windowsazure.com/media/encoding/Preset/2014/03">
@@ -382,11 +382,11 @@
 	此外，Start 还支持特殊的宏 {Best}，它会尝试判断第一个“有意义”的内容帧。注意：（Start 设置为 {Best} 时，将忽略 Step 与 Range）
 	
 	- 默认值：Start:{Best}
-- 需要显式提供每个图像格式的输出格式：Jpg/Png/BmpFormat。MES 会将 JpgVideo（如果已指定）与 JpgFormat 进行匹配，依此类推。OutputFormat 引入了新的图像编解码器特定宏 {Index}，需要为图像输出格式提供该宏一次（且只需一次）。
+- 需要显式提供每个图像格式的输出格式：Jpg/Png/BmpFormat。MES 会将 JpgVideo（如果已提供）与 JpgFormat 进行匹配，依此类推。OutputFormat 引入了新的图像编解码器特定 Macro: {Index}，需要为图像输出格式提供该宏一次（且只需一次）。
 
 
 ##另请参阅 
 
 [媒体服务编码概述](/documentation/articles/media-services-encode-asset/)
 
-<!---HONumber=Mooncake_1107_2016-->
+<!---HONumber=Mooncake_Quality_Review_1215_2016-->

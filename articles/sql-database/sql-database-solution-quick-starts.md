@@ -14,13 +14,13 @@
    ms.tgt_pltfrm="NA"
    ms.workload="sqldb-quickstart"
    ms.date="09/06/2016"
-   wacn.date="10/17/2016"
+   wacn.date="12/26/2016"
    ms.author="carlrab"/>  
 
 
 # 浏览 Azure SQL 数据库解决方案快速入门
 
-本文包含了对 Azure SQL 数据库解决方案快速入门的概述。这些快速入门在 GitHub SQL Server 示例存储库中提供，根据实际方案演示 SQL 数据库在整个解决方案中的用法。有关演示特定 SQL 数据库功能用法的简单分步教程，请参阅 [Explore Azure SQL Database tutorials](/documentation/articles/sql-database-explore-tutorials/)（浏览 Azure SQL 数据库教程）。
+本文包含了对 Azure SQL 数据库解决方案快速入门的概述。这些快速入门在 GitHub SQL Server 示例存储库中提供，根据实际方案演示 SQL 数据库在整个解决方案中的用法。有关演示特定 SQL 数据库功能用法的简单分步教程，请参阅[浏览 Azure SQL 数据库教程](/documentation/articles/sql-database-explore-tutorials/)。
 
 ## 尝试 WingTipTickets 演示和动手实验
 
@@ -37,15 +37,15 @@
 
 ## 在 SaaS 方案中开始使用弹性数据库
 
- [Solution Quick Start: Elastic Pool custom dashboard for SaaS](https://github.com/Microsoft/sql-server-samples/tree/master/samples/manage/azure-sql-db-elastic-pools-custom-dashboard)（解决方案快速入门：适用于 SaaS 的弹性池自定义仪表板）为软件即解决方案 (SaaS) 方案提供可使用 SQL 数据库的弹性数据库功能提供符合成本效益且可调整的 SaaS 应用程序数据库后端的解决方案。
+ [Solution Quick Start: Elastic Pool custom dashboard for SaaS](https://github.com/Microsoft/sql-server-samples/tree/master/samples/manage/azure-sql-db-elastic-pools-custom-dashboard)（解决方案快速入门：适用于 SaaS 的弹性池自定义仪表板）提供了适用于软件即解决方案 (SaaS) 场景的解决方案，可利用 SQL 数据库的弹性数据库功能，为 SaaS 应用程序提供符合成本效益且可缩放的数据库后端。
 
-在此解决方案中，将逐步完成 Web 应用的实现。使用此 Web 应用能可视化由使用可补充 Azure 门户的自定义仪表板的负载生成器在弹性数据库上创建的负载。
+在此解决方案中，你将逐步完成 Web 应用的实现。使用此 Web 应用，可对由使用用于补充 Azure 门户的自定义仪表板的负载生成器在弹性数据库上创建的负载进行可视化，
 
 此快速入门提供负载生成器和监视 Web 应用，以及描述应用用途和用法的文档。
 
 ## 使用 Code First 开发和 Entity Framework 创建 Azure SQL 数据库
 
-[新数据库 Code First](https://msdn.microsoft.com/zh-cn/data/jj193542.aspx) 中的视频和示例提供以新数据库为目标的 Code First 开发介绍。此方案以尚不存在、但 Code First 将会创建的数据库为目标。或者，该方案创建空数据库，让 Code First 添加新表。
+[新数据库 Code First](https://msdn.microsoft.com/zh-cn/data/jj193542.aspx) 中的视频和示例介绍以新数据库为目标的 Code First 开发。此方案以尚不存在、但 Code First 将会创建的数据库为目标。或者，该方案创建空数据库，Code First 向其中添加新表。
 
 Code First 允许使用 C# 或 Visual Basic .NET 类定义模型。可以在类和属性中使用特性或使用 Fluent API 执行其他可选配置。
 
@@ -74,4 +74,4 @@ Code First 允许使用 C# 或 Visual Basic .NET 类定义模型。可以在类�
 
 [浏览 Azure SQL 数据库教程](/documentation/articles/sql-database-explore-tutorials/)
 
-<!---HONumber=Mooncake_1010_2016-->
+<!---HONumber=Mooncake_Quality_Review_1215_2016-->

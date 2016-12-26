@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="在 Azure 经典管理门户中启用存储度量值 | Azure" 
+	pageTitle="在 Azure 门户预览中启用存储度量值 | Azure" 
 	description="如何为 Blob、队列、表和文件服务启用存储度量值" 
 	services="storage" 
 	documentationCenter="" 
@@ -14,7 +14,7 @@
 	ms.devlang="dotnet" 
 	ms.topic="article" 
 	ms.date="08/03/2016" 
-	wacn.date="09/05/2016" 
+	wacn.date="12/26/2016" 
 	ms.author="fryu;robinsh"/>
 
 # 启用存储度量值并查看度量值数据
@@ -35,9 +35,9 @@
 
 - 最小 - 存储度量值收集为 Blob、表和队列服务聚合的一组基本度量值，如传入/传出、可用性、延迟和成功百分比。
 
-- 详细 - 除了收集服务级度量值，存储度量值还收集全套度量值，其中包括对每个存储 API 操作都相同的度量值。通过详细监视度量值可对应用程序运行期间出现的问题进行进一步分析。
+- 详细 - 除了收集服务级度量值，存储度量值还收集全套度量值，其中包括对每个存储 API 操作都相同的度量值。通过详细度量值可对应用程序运行期间出现的问题进行进一步分析。
 
-请注意，Azure 经典管理门户目前不允许你在存储帐户中配置分钟度量值；你必须通过 PowerShell 或编程方式启用分钟度量值。
+请注意，Azure 经典管理门户目前不允许你在存储帐户中配置分钟度量值；你必须通过 PowerShell 或以编程方式启用分钟度量值。
 
 
 ## 如何使用 PowerShell 启用存储度量值
@@ -48,7 +48,7 @@
 
 - MetricsType，可能值是 Hour 和 Minute。
 
-- ServiceType 的可能值为 Blob、Queue 和 Table。
+- ServiceType，可能值是 Blob、Queue 和 Table。
 
 - MetricsLevel，可能值是 None（相当于 Azure 经典管理门户中的“关”）、Service（相当于 Azure 经典管理门户中的“最小”）和 ServiceAndApi（相当于 Azure 经典管理门户中的“详细”）。
 
@@ -60,7 +60,7 @@
 
 `Get-AzureStorageServiceMetricsProperty -MetricsType Hour -ServiceType Blob`
 
-若要了解如何配置 Azure PowerShell cmdlet 以使用 Azure 订阅以及如何选择要使用的默认存储帐户，请参阅：[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)。
+有关如何配置 Azure PowerShell cmdlet 以使用 Azure 订阅以及如何选择要使用的默认存储帐户的信息，请参阅：[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)。
 
 ## 如何以编程方式启用存储度量值
 
@@ -110,7 +110,7 @@
 - 配置电子邮件警报，以在特定度量值达到某值时通知你。
 
 
-如果你要为长期存储下载度量值或在本地分析这些度量值，则需要使用工具或编写一些代码来读取表。你必须下载分析用的分钟度量值。如果你在存储帐户中列出所有表，则这些表不会显示，但你可以按名称直接访问它们。很多第三方存储浏览工具都识别这些表，并允许你直接查看它们（有关可用工具的列表，请参阅博客文章 [Azure 存储资源管理器](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/03/11/windows-azure-storage-explorers-2014.aspx)）。
+如果你要为长期存储下载度量值或在本地分析这些度量值，则需要使用工具或编写一些代码来读取表。你必须下载分钟度量值以供分析。如果你在存储帐户中列出所有表，则这些表不会显示，但你可以按名称直接访问它们。很多第三方存储浏览工具都识别这些表，并允许你直接查看它们（有关可用工具的列表，请参阅博客文章 [Azure 存储资源管理器](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/03/11/windows-azure-storage-explorers-2014.aspx)）。
 
 ### 每小时度量值
 - $MetricsHourPrimaryTransactionsBlob
@@ -127,7 +127,7 @@
 
 你可以在[存储分析度量值表架构](https://msdn.microsoft.com/zh-cn/library/azure/hh343264.aspx)上为这些表找到完整的架构详细信息。以下示例行仅显示一部分可用列，但也说明了存储度量值在采用相应方式保存这些度量值时展现的一些重要功能：
 
-| PartitionKey | RowKey | Timestamp | TotalRequests | TotalBillableRequests | TotalIngress | TotalEgress | 可用性 | AverageE2ELatency | AverageServerLatency | PercentSuccess |
+| PartitionKey | RowKey | Timestamp | TotalRequests | TotalBillableRequests | TotalIngress | TotalEgress | Availability | AverageE2ELatency | AverageServerLatency | PercentSuccess |
 |---------------|:------------------:|-----------------------------:|---------------|-----------------------|--------------|-------------|--------------|-------------------|----------------------|----------------|
 | 20140522T1100 | user;All | 2014-05-22T11:01:16.7650250Z | 7 | 7 | 4003 | 46801 | 100 | 104\.4286 | 6\.857143 | 100 |
 | 20140522T1100 | user;QueryEntities | 2014-05-22T11:01:16.7640250Z | 5 | 5 | 2694 | 45951 | 100 | 143\.8 | 7\.8 | 100 |
@@ -141,9 +141,9 @@
 - 请求类型是 all（在这种情况下是摘要行）或可识别的特定 API，如 QueryEntity 或 UpdateEntity。
 
 
-上面的示例数据显示一分钟的所有记录（从上午 11:00 开始），因此，QueryEntities 请求数加 QueryEntity 请求数再加 UpdateEntity 请求数的和为 7，这是显示在 user:All 行上的总数。同样，通过计算 ((143.8 * 5) + 3 + 9)/7，可以在 user:All 行得到平均端到端延迟为 104.4286。
+上面的示例数据显示一分钟的所有记录（从上午 11:00 开始），因此 QueryEntities 请求数加 QueryEntity 请求数再加 UpdateEntity 请求数的和为 7，这是显示在 user:All 行上的总数。同样，通过计算 ((143.8 * 5) + 3 + 9)/7，可以在 user:All 行得到平均端到端延迟为 104.4286。
 
-你应该考虑在 Azure 经典管理门户中的“监视”页上设置警报，以便存储度量值自动通知你存储服务行为中发生的任何重要更改。如果你使用存储资源管理器工具下载这种采用分隔格式的度量值数据，则可以使用 Microsoft Excel 分析该数据。有关可用存储资源管理器工具的列表，请参阅博客文章 [Azure 存储资源管理器](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/03/11/windows-azure-storage-explorers-2014.aspx)。
+你应该考虑在 Azure 经典管理门户中的“监视”页上设置警报，以便存储度量值自动通知你存储服务行为中发生的任何重要更改。如果使用存储资源管理器工具下载这种采用分隔格式的度量值数据，则可以使用 Microsoft Excel 分析该数据。有关可用存储资源管理器工具的列表，请参阅博客文章 [Azure 存储资源管理器](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/03/11/windows-azure-storage-explorers-2014.aspx)。
 
 
 
@@ -199,7 +199,7 @@
 
 为度量值创建表实体的写入请求，按适用于所有 Azure 存储操作的标准费率收费。
 
-客户端针对度量值数据的读取和删除请求也按标准费率收费。如果你已配置数据保留策略，则当 Azure 存储空间删除旧的度量值数据时，你不用付费。但是，如果你删除分析数据，则会针对删除操作向你的帐户收费。
+客户端针对度量值数据的读取和删除请求也按标准费率收费。如果你已配置数据保留策略，则当 Azure 存储删除旧的度量值数据时，你不用付费。但是，如果你删除分析数据，则会针对删除操作向你的帐户收费。
 
 度量值表使用的容量也要付费：你可以依据以下内容估算用于存储度量值数据的容量：
 
@@ -207,10 +207,10 @@
 
 - 如果某个服务每小时都会利用每个服务的每个 API，则在仅启用服务级别摘要后，每小时约有 12KB 的数据存储在度量值事务表中。
 
-- Blob 的容量表每天添加两行（如果用户已为日志选择加入）：这表示，此表的大小每天最多以约 300 字节的幅度增加。
+- Blob 的容量表每天添加两行（如果用户已为日志选择加入）：这表示，此表的大小每天最多以约 300 个字节的幅度增加。
 
 ## 后续步骤：
 [启用存储分析日志记录和访问日志数据](https://msdn.microsoft.com/zh-cn/library/dn782840.aspx)
  
 
-<!---HONumber=Mooncake_0829_2016-->
+<!---HONumber=Mooncake_Quality_Review_1215_2016-->
