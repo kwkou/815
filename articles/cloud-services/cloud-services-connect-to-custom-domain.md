@@ -15,13 +15,13 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="10/21/2016"
-    wacn.date="12/05/2016"
+    wacn.date="12/26/2016"
     ms.author="adegeo"/>
 
 
 # 将 Azure 云服务角色连接到 Azure 中托管的自定义 AD 域控制器
 
-我们先在 Azure 中设置一个虚拟网络 (VNET)。然后将 Active Directory 域控制器（托管在 Azure 虚拟机上）添加该 VNET。接下来，将现有云服务角色添加预先创建的 VNET，然后将它们连接到域控制器。
+首先，在 Azure 中建立一个虚拟网络 (VNET)。然后，将 Active Directory 域控制器（托管在 Azure 虚拟机上）添加该 VNET。接下来，将现有云服务角色添加预先创建的 VNET，随后将它们连接到域控制器。
 
 在开始之前，请特别注意以下几点：
 
@@ -29,7 +29,7 @@
 
 2.	AD 域控制器和 Web/辅助角色实例需要在 VNET 中。
 
-请遵循以下分步指南，如果你遇到任何问题，请在下面留言。我们将回复你（没错，我们真的会阅读留言）。
+按照以下分步指南操作，如果遇到任何问题，请在下面留言。我们将回复你（没错，我们真的会阅读留言）。
 
 1. 云服务引用的网络<mark>必须是</mark>**经典虚拟网络**。
 
@@ -64,7 +64,7 @@
 
 ## 创建虚拟机
 
-完成虚拟网络的设置后，需要创建 AD 域控制器。在本教程中，我们将在 Azure 虚拟机上设置 AD 域控制器。
+完成虚拟网络设置后，需要创建 AD 域控制器。在本教程中，将在 Azure 虚拟机上设置 AD 域控制器。
 
 为此，请使用以下命令通过 Powershell 创建虚拟机。
 
@@ -85,9 +85,9 @@
 
 
 ## 将虚拟机提升为域控制器
-若要将虚拟机配置为 AD 域控制器，需要登录 VM 并对其进行配置。
+若要将虚拟机配置为 AD 域控制器，需要登录到 VM 并对其进行配置。
 
-若要登录 VM，你可以通过 Powershell 获取 RDP 文件；请使用以下命令。
+若要登录到 VM，可使用以下命令通过 Powershell 获取 RDP 文件。
 
 # 获取 RDP 文件
 	Get-AzureRemoteDesktopFile -ServiceName $vmsvc1 -Name $vm1 -LocalPath <rdp-file-path>
@@ -96,7 +96,7 @@
 
 ## 将云服务添加到虚拟网络
 
-接下来，你需要将云服务部署添加到刚刚创建的 VNET。为此，请使用 Visual Studio 或选择的编辑器将相关节添加到 cscfg，以修改云服务 cscfg。
+接下来，需要将云服务部署添加到刚刚创建的 VNET。为此，请使用 Visual Studio 或选择的编辑器将相关节添加到 cscfg，以修改云服务 cscfg。
 
     <ServiceConfiguration serviceName="[hosted-service-name]" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceConfiguration" osFamily="[os-family]" osVersion="*">
         <Role name="[role-name]">
@@ -125,7 +125,7 @@
       </NetworkConfiguration>
     </ServiceConfiguration>
 
-接下来，请生成云服务项目并将它部署到 Azure。有关将云服务包部署到 Azure 的帮助，请参阅[如何创建和部署云服务](/documentation/articles/cloud-services-how-to-create-deploy/#deploy)
+接下来，请生成云服务项目并将其部署到 Azure。有关将云服务包部署到 Azure 的帮助，请参阅[如何创建和部署云服务](/documentation/articles/cloud-services-how-to-create-deploy/#deploy)
 
 ## 将 Web/辅助角色连接到域
 
@@ -151,4 +151,4 @@
     help New-AzureServiceADDomainExtensionConfig
 
 
-<!---HONumber=Mooncake_1128_2016-->
+<!---HONumber=Mooncake_Quality_Review_1215_2016-->
