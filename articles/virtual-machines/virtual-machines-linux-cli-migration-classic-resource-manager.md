@@ -40,7 +40,7 @@
 
 登录到帐户。
 	
-	azure login
+	azure login -e AzureChinaCloud
 
 使用以下命令选择 Azure 订阅。
 

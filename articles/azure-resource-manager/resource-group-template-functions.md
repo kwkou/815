@@ -470,7 +470,7 @@
 
 <a id="string" /></a>
 
-### 字符串
+### string
 **string(valueToConvert)**
 
 将指定的值转换为字符串。
