@@ -88,6 +88,6 @@
 
 ## 后续步骤
 * 有关存储的常规信息，请参阅 [Azure 存储空间简介](/documentation/articles/storage-introduction/)。
-* 有关在虚拟机中使用新存储帐户的示例模板，请参阅[部署简单的 Linux VM](https://github.com/Azure/azure-quickstart-templates/tree/master/101-vm-simple-linux/) 或[部署简单的 Windows VM](https://github.com/Azure/azure-quickstart-templates/tree/master/101-vm-simple-windows /)。
+* 有关在虚拟机中使用新存储帐户的示例模板，请参阅[部署简单的 Linux VM](https://github.com/Azure/azure-quickstart-templates/tree/master/101-vm-simple-linux/) 或[部署简单的 Windows VM](https://github.com/Azure/azure-quickstart-templates/tree/master/101-vm-simple-windows/)。
 
 <!---HONumber=Mooncake_1219_2016-->
