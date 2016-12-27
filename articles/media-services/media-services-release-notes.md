@@ -15,7 +15,7 @@
 	ms.devlang="dotnet" 
 	ms.topic="article" 
 	ms.date="09/19/2016"
-	wacn.date="12/16/2016"
+	wacn.date="12/27/2016"
 	ms.author="juliako"/>
 
 
@@ -215,7 +215,7 @@ Azure 媒体服务 .NET SDK 当前版本为 3.2.0.0。
 
 ### 媒体服务一般更新
 
-- 媒体服务现在提供 Azure CDN 集成。为了支持集成，将 **CdnEnabled** 属性添加到了 **StreamingEndpoint**。**CdnEnabled** 可用于从版本 2.9 开始的 REST API（有关详细信息，请参阅 [StreamingEndpoint](https://msdn.microsoft.com/zh-cn/library/azure/dn783468.aspx)）。**CdnEnabled** 可用于从版本 3.1.0.2 开始的 NET SDK（有关详细信息，请参阅 [StreamingEndpoint]）https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.mediaservices.client.istreamingendpoint(v=azure.10).aspx))。
+- 媒体服务现在提供 Azure CDN 集成。为了支持集成，将 **CdnEnabled** 属性添加到了 **StreamingEndpoint**。**CdnEnabled** 可用于从版本 2.9 开始的 REST API（有关详细信息，请参阅 [StreamingEndpoint](https://docs.microsoft.com/zh-cn/rest/api/media/operations/streamingendpoint)）。**CdnEnabled** 可用于从版本 3.1.0.2 开始的 NET SDK（有关详细信息，请参阅 [StreamingEndpoint]）https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.mediaservices.client.istreamingendpoint(v=azure.10).aspx))。
  
 
 
@@ -223,7 +223,7 @@ Azure 媒体服务 .NET SDK 当前版本为 3.2.0.0。
 
 ### 媒体服务一般更新
 
-媒体服务 REST API 当前版本为 2.9。自此版本起，可以通过流式处理终结点启用 Azure CDN 集成。有关详细信息，请参阅 [StreamingEndpoint](https://msdn.microsoft.com/zh-cn/library/dn783468.aspx)。
+媒体服务 REST API 当前版本为 2.9。自此版本起，可以通过流式处理终结点启用 Azure CDN 集成。有关详细信息，请参阅 [StreamingEndpoint](https://docs.microsoft.com/zh-cn/rest/api/media/operations/streamingendpoint)。
 
 ##<a id="january_changes_15"></a>2015 年 1 月版本
 
@@ -245,10 +245,10 @@ Azure 媒体服务 .NET SDK 当前版本为 3.1.0.1。
 ###媒体服务一般更新
 
 - Azure 媒体索引器处理器增加了一些更新和新功能。有关详细信息，请参阅 [Azure 媒体索引器版本 1.1.6.7 发行说明](https://azure.microsoft.com/blog/2014/12/03/azure-media-indexer-version-1-1-6-7-release-notes/)。
-- 增加了一个新的 REST API，可用于更新编码保留单位：[REST 的 EncodingReservedUnitType](http://msdn.microsoft.com/zh-cn/library/azure/dn859236.aspx)。
+- 增加了一个新的 REST API，可用于更新编码保留单位：[REST 的 EncodingReservedUnitType](https://docs.microsoft.com/zh-cn/rest/api/media/operations/encodingreservedunittype)。
 - 增加了对密钥传递服务的 CORS 支持。
 - 改进了查询授权策略选项的性能。
-- 在中国数据中心，现按客户提供[密钥传递 URL](http://msdn.microsoft.com/zh-cn/library/azure/ef4dfeeb-48ae-4596-ab28-44d6b36d8769#get_delivery_service_url)（与其他数据中心相同）。
+- 在中国数据中心，现按客户提供[密钥传递 URL](https://docs.microsoft.com/zh-cn/rest/api/media/operations/contentkey#a-namegetdeliveryserviceurla-get-key-delivery-url)（与其他数据中心相同）。
 - 增加了 HLS 自动目标持续时间。进行实时流式传输时，HLS 始终是动态打包的。默认情况下，媒体服务根据从实时编码器收到的关键帧间隔 (KeyFrameInterval)（也称图片组 - GOP）自动计算 HLS 段打包率 (FragmentsPerSegment)。有关详细信息，请参阅[使用 Azure 媒体服务实时传送视频流]。
  
 ###媒体服务 .NET SDK 更新
@@ -610,14 +610,14 @@ Azure 媒体服务 .NET SDK 扩展是一组扩展方法和帮助器函数，可�
 <!--- URLs. --->
 
 [Azure 媒体服务 MSDN 论坛]: http://social.msdn.microsoft.com/forums/azure/home?forum=MediaServices
-[Azure 媒体服务 REST API 参考]: http://msdn.microsoft.com/zh-cn/library/azure/hh973617.aspx
+[Azure 媒体服务 REST API 参考]: https://docs.microsoft.com/zh-cn/rest/api/media/mediaservice
 [媒体服务定价详细信息]: /pricing/details/media-services/
 [输入元数据]: http://msdn.microsoft.com/zh-cn/library/azure/dn783120.aspx
 [输出元数据]: http://msdn.microsoft.com/zh-cn/library/azure/dn783217.aspx
 [交付内容]: /documentation/articles/media-services-deliver-content-overview/
 [使用 Azure 媒体索引器对媒体文件进行索引]: /documentation/articles/media-services-index-content/
-[StreamingEndpoint]: http://msdn.microsoft.com/zh-cn/library/azure/dn783468.aspx
-[StreamingEndpont]: http://msdn.microsoft.com/zh-cn/library/azure/dn783468.aspx
+[StreamingEndpoint]: https://docs.microsoft.com/zh-cn/rest/api/media/operations/streamingendpoint
+[StreamingEndpont]: https://docs.microsoft.com/zh-cn/rest/api/media/operations/streamingendpoint
 [使用 Azure 媒体服务实时传送视频流]: /documentation/articles/media-services-manage-channels-overview/
 [使用 AES-128 动态加密和密钥传递服务]: /documentation/articles/media-services-protect-with-aes128/
 [使用 PlayReady 动态加密和许可证传递服务]: /documentation/articles/media-services-protect-with-drm/
@@ -625,7 +625,7 @@ Azure 媒体服务 .NET SDK 扩展是一组扩展方法和帮助器函数，可�
 [流式处理存储加密内容]: /documentation/articles/media-services-dotnet-configure-asset-delivery-policy/
 [Azure Management Portal]: https://manage.windowsazure.cn
 [动态打包]: /documentation/articles/media-services-dynamic-packaging-overview/
-[Nick Drouin 的博客]: http://blog-ndrouin.chinacloudsites.cn/hls-v3-new-old-thing/
+[Nick Drouin 的博客]: http://blog-ndrouin.azurewebsites.net/hls-v3-new-old-thing/
 [使用 PlayReady 保护平滑流]: /documentation/articles/media-services-static-packaging/
 [适用于 .NET 的媒体服务 SDK 中的重试逻辑]: http://msdn.microsoft.com/zh-cn/library/azure/dn745650.aspx
 [Grass Valley Announces EDIUS 7 Streaming Through the Cloud]: http://www.streamingmedia.com/Producer/Articles/ReadArticle.aspx?ArticleID=96351&utm_source=dlvr.it&utm_medium=twitter

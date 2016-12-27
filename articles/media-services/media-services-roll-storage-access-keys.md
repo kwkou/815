@@ -15,7 +15,7 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="09/26/2016" 
-	wacn.date="12/16/2016" 
+	wacn.date="12/27/2016" 
 	ms.author="milangada;cenkdin;juliako"/>
 
 #如何：轮转存储访问密钥后更新媒体服务
@@ -41,7 +41,7 @@
 
 - 使用媒体服务管理 REST API。
 
-以下代码示例演示了如何构造 https://endpoint/*subscriptionId*/services/mediaservices/Accounts/*accountName*/StorageAccounts/*storageAccountName*/Key 请求，以便将指定的存储密钥与媒体服务同步。在本例中，使用辅助存储密钥值。有关详细信息，请参阅[如何：使用媒体服务管理 REST API](http://msdn.microsoft.com/zh-cn/library/azure/dn167656.aspx)。
+以下代码示例演示了如何构造 https://endpoint/*subscriptionId*/services/mediaservices/Accounts/*accountName*/StorageAccounts/*storageAccountName*/Key 请求，以便将指定的存储密钥与媒体服务同步。在本例中，使用辅助存储密钥值。有关详细信息，请参阅[如何：使用媒体服务管理 REST API](https://docs.microsoft.com/zh-cn/rest/api/media/management/how-to-use-media-services-management-rest-api)。
  
 		public void UpdateMediaServicesWithStorageAccountKey(string mediaServicesAccount, string storageAccountName, string storageAccountKey)
 		{

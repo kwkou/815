@@ -25,7 +25,7 @@
  - [.NET](/documentation/articles/media-services-dotnet-upload-files/)
  - [REST](/documentation/articles/media-services-rest-upload-files/)
 
-在媒体服务中，可以将数字文件上传到资产中。[资产](https://msdn.microsoft.com/zh-cn/library/azure/hh974277.aspx)实体可以包含视频、音频、图像、缩略图集合、图文轨迹和隐藏式字幕文件（以及有关这些文件的元数据。） 将文件上传到资产后，相关内容即安全地存储在云中供后续处理和流式处理。
+在媒体服务中，可以将数字文件上传到资产中。[资产](https://docs.microsoft.com/zh-cn/rest/api/media/operations/asset)实体可以包含视频、音频、图像、缩略图集合、图文轨迹和隐藏式字幕文件（以及有关这些文件的元数据。） 将文件上传到资产后，相关内容即安全地存储在云中供后续处理和流式处理。
 
 >[AZURE.NOTE]选择资产文件名时需考虑下列事项：
 >
@@ -117,7 +117,7 @@ AMS 还可用于批量上传资产。有关详细信息，请参阅[此](/docume
 	
 ###创建 AssetFile
 
-[AssetFile](http://msdn.microsoft.com/zh-cn/library/azure/hh974275.aspx) 实体表示 blob 容器中存储的视频或音频文件。一个资产文件始终与一个资产关联，而一个资产则可能包含一个或多个资产文件。如果资产文件对象未与 BLOB 容器中的数字文件关联，则媒体服务 Encoder 任务将失败。
+[AssetFile](https://docs.microsoft.com/zh-cn/rest/api/media/operations/assetfile) 实体表示 blob 容器中存储的视频或音频文件。一个资产文件始终与一个资产关联，而一个资产则可能包含一个或多个资产文件。如果资产文件对象未与 BLOB 容器中的数字文件关联，则媒体服务 Encoder 任务将失败。
 
 请注意，**AssetFile** 实例和实际媒体文件是两个不同的对象。AssetFile 实例包含有关媒体文件的元数据，而媒体文件包含实际媒体内容。
 
@@ -182,7 +182,7 @@ AMS 还可用于批量上传资产。有关详细信息，请参阅[此](/docume
 
 ### 创建具有写入权限的 AccessPolicy。 
 
-将任何文件上传到 blob 存储之前，请设置用于对资产执行写入操作的访问策略权限。为此，请向 AccessPolicy 实体集发送一个 HTTP POST 请求。请在执行创建操作时定义 DurationInMinutes 值，否则会在响应中收到 500 内部服务器错误消息。有关 AccessPolicies 的详细信息，请参阅 [AccessPolicy](http://msdn.microsoft.com/zh-cn/library/azure/hh974297.aspx)。
+将任何文件上传到 blob 存储之前，请设置用于对资产执行写入操作的访问策略权限。为此，请向 AccessPolicy 实体集发送一个 HTTP POST 请求。请在执行创建操作时定义 DurationInMinutes 值，否则会在响应中收到 500 内部服务器错误消息。有关 AccessPolicies 的详细信息，请参阅 [AccessPolicy](https://docs.microsoft.com/zh-cn/rest/api/media/operations/accesspolicy)。
 
 以下示例说明了如何创建 AccessPolicy：
 		
@@ -229,7 +229,7 @@ AMS 还可用于批量上传资产。有关详细信息，请参阅[此](/docume
 
 ###获取上传 URL
 
-若要检索实际上传 URL，请创建一个 SAS 定位符。定位符为希望访问资产中文件的客户端定义连接终结点的开始时间和类型。可以为给定 AccessPolicy 和资产对创建多个定位符实体，以处理不同的客户端请求和需求。这其中的任一定位符都可使用 AccessPolicy 的 StartTime 值和 DurationInMinutes 值来确定可以使用某 URL 的时间长度。有关详细信息，请参阅[定位符](http://msdn.microsoft.com/zh-cn/library/azure/hh974308.aspx)。
+若要检索实际上传 URL，请创建一个 SAS 定位符。定位符为希望访问资产中文件的客户端定义连接终结点的开始时间和类型。可以为给定 AccessPolicy 和资产对创建多个定位符实体，以处理不同的客户端请求和需求。这其中的任一定位符都可使用 AccessPolicy 的 StartTime 值和 DurationInMinutes 值来确定可以使用某 URL 的时间长度。有关详细信息，请参阅[定位符](https://docs.microsoft.com/zh-cn/rest/api/media/operations/locator)。
 
 
 SAS URL 采用以下格式：
@@ -457,7 +457,7 @@ IngestManifestFile 代表将作为批量引入资产的一部分上载的实际�
 
 ###监视批量引入进度
 
-可以通过轮询 IngestManifest 的 Statistics 属性来监视 IngestManifest 的批量引入操作的进度。该属性为复杂类型，即 [IngestManifestStatistics](https://msdn.microsoft.com/zh-cn/library/azure/jj853027.aspx)。若要轮询 Statistics 属性，请提交一个传递 IngestManifest ID 的 HTTP GET 请求。
+可以通过轮询 IngestManifest 的 Statistics 属性来监视 IngestManifest 的批量引入操作的进度。该属性为复杂类型，即 [IngestManifestStatistics](https://docs.microsoft.com/zh-cn/rest/api/media/operations/ingestmanifeststatistics)。若要轮询 Statistics 属性，请提交一个传递 IngestManifest ID 的 HTTP GET 请求。
  
 
 ##创建用于加密的 ContentKey

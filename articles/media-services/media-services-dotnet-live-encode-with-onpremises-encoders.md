@@ -14,14 +14,14 @@
 	ms.devlang="ne" 
 	ms.topic="article" 
  	ms.date="08/31/2016" 
- 	wacn.date="12/16/2016"  
+ 	wacn.date="12/27/2016"  
 	ms.author="cenkdin;juliako"/>
 
 #如何使用 .NET 通过本地编码器执行实时传送视频流
 
 > [AZURE.SELECTOR]
 - [.NET](/documentation/articles/media-services-dotnet-live-encode-with-onpremises-encoders/)
-- [REST](https://msdn.microsoft.com/zh-cn/library/azure/dn783458.aspx)
+- [REST](https://docs.microsoft.com/zh-cn/rest/api/media/operations/channel)
 
 本教程将逐步演示如何使用 Azure 媒体服务 .NET SDK 创建为实现直通传送而配置的**频道**。
 

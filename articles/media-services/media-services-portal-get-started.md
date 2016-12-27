@@ -11,7 +11,7 @@
 <tags
 	ms.service="media-services"
 	ms.date="06/22/2016"
-	wacn.date="08/22/2016"/>
+	wacn.date="12/27/2016"/>
 
 
 
@@ -187,7 +187,7 @@ SAS URL 采用以下格式。
 
 >[AZURE.NOTE] 如果使用门户在 2015 年 3 月之前创建了定位符，则会创建到期日期在两年后的定位符。
 
-若要更新定位符的到期日期，请使用 [REST](http://msdn.microsoft.com/zh-cn/library/azure/hh974308.aspx#update_a_locator) 或 [.NET](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.mediaservices.client.ilocator.update(v=azure.10).aspx) API。请注意，更新 SAS 定位符的到期日期时，URL 会发生变化。
+若要更新定位符的到期日期，请使用 [REST](https://docs.microsoft.com/zh-cn/rest/api/media/operations/locator) 或 [.NET](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.mediaservices.client.ilocator.update(v=azure.10).aspx) API。请注意，更新 SAS 定位符的到期日期时，URL 会发生变化。
 
 ### 发布
 

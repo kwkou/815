@@ -15,7 +15,7 @@
 	ms.tgt_pltfrm="na"
 	ms.workload="storage-backup-recovery" 
 	ms.date="10/13/2016" 
-	wacn.date="11/14/2016"	
+	wacn.date="12/27/2016"	
 	ms.author="rajanaki"/>  
 
 	
@@ -154,7 +154,7 @@ ASR 中的每个操作都被审核，可在“作业”选项卡下面跟踪。�
 -   [如何为已故障转移或迁移到 Azure 的受保护虚拟机保留驱动器号](http://support.microsoft.com/zh-cn/kb/3031135)
 -   [如何管理本地到 Azure 保护的网络带宽用量](https://support.microsoft.com/zh-cn/kb/3056159)
 -   [ASR：尝试为虚拟机启用保护时发生“找不到群集资源”错误](http://support.microsoft.com/zh-cn/kb/3010979)
--   [了解 Hyper-V 副本及其故障排除指南](http://www.microsoft.com/en-in/download/details.aspx?id=29016)
+-   [了解 Hyper-V 副本及其故障排除指南](http://social.technet.microsoft.com/wiki/contents/articles/21948.hyper-v-replica-troubleshooting-guide.aspx)
 
 ##<a id="common-asr-errors-and-their-resolutions"></a> 常见 ASR 错误及其解决方法	
 

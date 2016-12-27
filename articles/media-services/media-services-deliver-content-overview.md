@@ -15,7 +15,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="09/19/2016"
-	wacn.date="11/14/2016"
+	wacn.date="12/27/2016"
 	ms.author="juliako"/>  
 
 
@@ -66,7 +66,7 @@
 
 >[AZURE.NOTE] 如果在 2015 年 3 月之前使用 Azure 门户创建定位符，这些定位符设置为两年后过期。
 
-若要更新定位符的过期日期，请使用 [REST](http://msdn.microsoft.com/zh-cn/library/azure/hh974308.aspx#update_a_locator) 或 [.NET] (https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.mediaservices.client.ilocator.update(v=azure.10).aspx) API。请注意，当你更新 SAS 定位符的过期日期时，URL 会发生变化。
+若要更新定位符的过期日期，请使用 [REST](https://docs.microsoft.com/zh-cn/rest/api/media/operations/locator#a-nameupdatealocatora-update-a-locator) 或 [.NET] (https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.mediaservices.client.ilocator.update(v=azure.10).aspx) API。请注意，当你更新 SAS 定位符的过期日期时，URL 会发生变化。
  
 定位符不用于管理按用户的访问控制。通过数字版权管理 (DRM) 解决方案，可以为不同的用户提供不同的访问权限。有关详细信息，请参阅[保护媒体](http://msdn.microsoft.com/zh-cn/library/azure/dn282272.aspx)。
 

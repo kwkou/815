@@ -15,7 +15,7 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="10/03/2016"
-	wacn.date="11/21/2016"
+	wacn.date="12/27/2016"
 	ms.author="juliako"/>  
 
 
@@ -25,7 +25,7 @@
 > [AZURE.SELECTOR]
 - [门户](/documentation/articles/media-services-create-account/)
 - [PowerShell](/documentation/articles/media-services-manage-with-powershell/)
-- [REST](http://msdn.microsoft.com/zh-cn/library/azure/dn194267.aspx)
+- [REST](https://docs.microsoft.com/zh-cn/rest/api/media/management/create-media-services-account)
 
 > [AZURE.NOTE] 若要创建 Azure 媒体服务帐户，你必须有一个 Azure 帐户。如果你没有帐户，可以创建一个试用帐户，只需几分钟即可完成。有关详细信息，请参阅 <a href="/pricing/1rmb-trial/?WT.mc_id=A8A8397B5" target="_blank">Azure 试用</a>。
 

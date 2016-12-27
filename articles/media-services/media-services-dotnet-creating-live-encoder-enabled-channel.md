@@ -15,7 +15,7 @@
 	ms.devlang="na" 
 	ms.topic="get-started-article"
 	ms.date="10/12/2016"
-	wacn.date="12/12/2016"
+	wacn.date="12/27/2016"
 	ms.author="juliako;anilmur"/>  
 
 
@@ -25,7 +25,7 @@
 > [AZURE.SELECTOR]
 - [门户](/documentation/articles/media-services-portal-creating-live-encoder-enabled-channel/)
 - [.NET](/documentation/articles/media-services-dotnet-creating-live-encoder-enabled-channel/)
-- [REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn783458.aspx)
+- [REST API](https://docs.microsoft.com/zh-cn/rest/api/media/operations/channel)
 
 >[AZURE.NOTE]
 若要完成本教程，你需要一个 Azure 帐户。有关详细信息，请参阅 [Azure 试用](/pricing/1rmb-trial/?WT.mc_id=A261C142F)。

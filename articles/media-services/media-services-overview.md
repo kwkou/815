@@ -15,7 +15,7 @@
 	ms.devlang="na" 
 	ms.topic="hero-article" 
 	ms.date="10/12/2016"
-	wacn.date="11/21/2016"
+	wacn.date="12/27/2016"
 	ms.author="juliako;anilmur"/>
 
 
@@ -31,7 +31,7 @@ Azure 媒体服务是一个可扩展的基于云的平台，使开发人员能�
 
 若要构建媒体服务解决方案，可以使用：
 
-- [媒体服务 REST API](https://msdn.microsoft.com/zh-cn/library/azure/hh973617.aspx)
+- [媒体服务 REST API](https://docs.microsoft.com/zh-cn/rest/api/media/mediaservice)
 - 可用的客户端 SDK 之一：
 	- [适用于 .NET 的 Azure 媒体服务 SDK](https://github.com/Azure/azure-sdk-for-media-services)、
 	- [Azure SDK for Java](https://github.com/Azure/azure-sdk-for-java)，

@@ -15,7 +15,7 @@
 	ms.devlang="ne" 
 	ms.topic="article" 
 	ms.date="09/26/2016"  
-	wacn.date="12/16/2016"  
+	wacn.date="12/27/2016"  
 	ms.author="juliako;cenkdin"/>
 
 #使用 Azure 媒体服务 REST API 创建筛选器
@@ -35,10 +35,10 @@
 
 创建筛选器时使用以下类型：
 
-- [Filter](http://msdn.microsoft.com/zh-cn/library/azure/mt149056.aspx)
-- [AssetFilter](http://msdn.microsoft.com/zh-cn/library/azure/mt149053.aspx)
-- [PresentationTimeRange](http://msdn.microsoft.com/zh-cn/library/azure/mt149052.aspx)
-- [FilterTrackSelect 和 FilterTrackPropertyCondition](http://msdn.microsoft.com/zh-cn/library/azure/mt149055.aspx)
+- [Filter](https://docs.microsoft.com/zh-cn/rest/api/media/operations/filter)
+- [AssetFilter](https://docs.microsoft.com/zh-cn/rest/api/media/operations/assetfilter)
+- [PresentationTimeRange](https://docs.microsoft.com/zh-cn/rest/api/media/operations/presentationtimerange)
+- [FilterTrackSelect 和 FilterTrackPropertyCondition](https://docs.microsoft.com/zh-cn/rest/api/media/operations/filtertrackselect)
 
 
 

@@ -87,7 +87,7 @@ Hyper-V 副本使用恢复服务器上的少量内存来使存储操作数量最
 ![副本影响结果](./media/site-recovery-performance-and-scaling-testing-on-premises-to-on-premises/IC744921.png)
 
 ### 结束语
-我们的结果清晰地表明，与 Hyper-V 副本配合使用的 Azure Site Recovery 可以针对大型群集以最小的开销很好地进行扩展。Azure Site Recovery 提供了简单的部署、复制、管理和监视。Hyper-V 副本为成功进行复制扩展提供了必要的基础结构。为规划最佳的部署，建议你下载 [Hyper-V 副本容量规划器](https://www.microsoft.com/zh-CN/download/details.aspx?id=39057)。
+我们的结果清晰地表明，与 Hyper-V 副本配合使用的 Azure Site Recovery 可以针对大型群集以最小的开销很好地进行扩展。Azure Site Recovery 提供了简单的部署、复制、管理和监视。Hyper-V 副本为成功进行复制扩展提供了必要的基础结构。为规划最佳的部署，建议你下载 [Hyper-V 副本容量规划器](https://www.microsoft.com/en-us/download/details.aspx?id=39057)。
 
 ## 测试环境详细信息
 ### 主站点

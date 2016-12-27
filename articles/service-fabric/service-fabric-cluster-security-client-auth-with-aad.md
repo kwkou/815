@@ -11,7 +11,7 @@
 <tags
    ms.service="service-fabric"
    ms.date="06/13/2016"
-   wacn.date="07/04/2016"/>
+   wacn.date="12/27/2016"/>
 
 # 创建使用 Azure Active Directory 进行客户端身份验证的 Service Fabric 群集
 
@@ -144,7 +144,7 @@ clusterApplication 表示在上一部分创建的 Web 应用程序。你可以�
 
 <!-- Links -->
 [sf-aad-ps-script-download]: http://servicefabricsdkstorage.blob.core.windows.net/publicrelease/MicrosoftAzureServiceFabric-AADHelpers.zip
-[secure-cluster-arm-template]: https://github.com/Azure/azure-quickstart-templates/tree/master/service-fabric-secure-cluster-5-node-1-nodetype-wad
+[secure-cluster-arm-template]: https://github.com/Azure/azure-quickstart-templates/tree/master/service-fabric-secure-cluster-5-node-1-nodetype
 [aad-graph-api-docs]: https://msdn.microsoft.com/zh-cn/library/azure/ad/graph/api/api-catalog
 [azure-management-portal]: https://manage.windowsazure.cn
 

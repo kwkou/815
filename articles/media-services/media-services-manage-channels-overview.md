@@ -15,7 +15,7 @@
     ms.devlang="ne"
     ms.topic="article"
     ms.date="10/17/2016"
-    wacn.date="12/12/2016"
+    wacn.date="12/27/2016"
     ms.author="juliako" />  
 
 
@@ -97,7 +97,7 @@
 
 ###<a name="channel_input"></a>频道
 
-在媒体服务中，[频道](https://msdn.microsoft.com/zh-cn/library/azure/dn783458.aspx)负责处理实时流内容。频道提供输入终结点（引入 URL），然后将该终结点提供给实时转码器。频道从实时转码器接收实时输入流，并通过一个或多个 StreamingEndpoints 使其可用于流式处理。频道还提供可用于预览的预览终结点（预览 URL），并在进一步处理和传递流之前对流进行验证。
+在媒体服务中，[频道](https://docs.microsoft.com/zh-cn/rest/api/media/operations/channel)负责处理实时流内容。频道提供输入终结点（引入 URL），然后将该终结点提供给实时转码器。频道从实时转码器接收实时输入流，并通过一个或多个 StreamingEndpoints 使其可用于流式处理。频道还提供可用于预览的预览终结点（预览 URL），并在进一步处理和传递流之前对流进行验证。
 
 可以在创建频道时获取引入 URL 和预览 URL。若要获取这些 URL，频道不一定要处于已启动状态。准备好开始将数据从实时转码器推送到频道时，频道必须已启动。实时转码器开始引入数据后，你可以预览流。
 
@@ -106,7 +106,7 @@
 
 ###节目 
 
-[节目](https://msdn.microsoft.com/zh-cn/library/azure/dn783463.aspx)用于控制实时流中片段的发布和存储。频道管理节目。频道和节目的关系非常类似于传统媒体，频道具有恒定的内容流，而节目的范围限定为该频道上的一些定时事件。
+[节目](https://docs.microsoft.com/zh-cn/rest/api/media/operations/program)用于控制实时流中片段的发布和存储。频道管理节目。频道和节目的关系非常类似于传统媒体，频道具有恒定的内容流，而节目的范围限定为该频道上的一些定时事件。
 你可以通过设置 **ArchiveWindowLength** 属性，指定你希望保留多少小时的节目录制内容。此值的设置范围是最短 5 分钟，最长 25 小时。
 
 ArchiveWindowLength 还决定了客户端能够从当前实时位置按时间向后搜索的最长时间。超出指定时间长度后，节目也能够运行，但落在时段长度后面的内容将全部被丢弃。此属性值还决定了客户端清单能够增加多长时间。

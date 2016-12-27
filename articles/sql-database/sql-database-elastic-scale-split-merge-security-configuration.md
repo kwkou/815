@@ -14,7 +14,7 @@
     ms.devlang="na" 
     ms.topic="article" 
     ms.date="05/27/2016" 
-    wacn.date="12/19/2016" 
+    wacn.date="12/27/2016" 
     ms.author="torsteng" />
 
 
@@ -79,7 +79,7 @@
 
 ### 颁发新的自签名客户端证书
 1.    [创建自签名证书颁发机构](#Create-a-Self-Signed-Certification-Authority)
-2.    [将 CA 证书上传到云服务](#Upload-CA-Certificate-to-Cloud-Service)
+2.    [将 CA 证书上传到云服务](#Upload-CA-certificate-to-cloud-service)
 3.    [在服务配置文件中更新 CA 证书](#Update-CA-Certificate-in-Service-Configuration-File)
 4.    [颁发客户端证书](#Issue-Client-Certificates)
 5.    [为客户端证书创建 PFX 文件](#Create-PFX-files-for-Client-Certificates)
@@ -293,7 +293,7 @@
     * 包括证书路径中的所有证书（如果可能）。
     * 导出所有扩展属性。
 
-##<a name="Upload-CA-Certificate-to-Cloud-Service"></a> 将 CA 证书上传到云服务
+##<a name="Upload-CA-certificate-to-cloud-service"></a> 将 CA 证书上传到云服务
 
 使用带有 CA 公钥的现有或生成的 .CER 文件上传证书。
 

@@ -15,7 +15,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="11/07/2016"
-    wacn.date="12/12/2016"
+    wacn.date="12/27/2016"
     ms.author="juliako" />
 
 #开始使用 REST 传送点播内容 
@@ -255,7 +255,7 @@
 	
 ### 创建 AssetFile
 
-[AssetFile](http://msdn.microsoft.com/zh-cn/library/azure/hh974275.aspx) 实体表示 blob 容器中存储的视频或音频文件。一个资产文件始终与一个资产关联，而一个资产则可能包含一个或多个 AssetFiles。如果资产文件对象未与 Blob 容器中的数字文件关联，则媒体服务编码器任务将失败。
+[AssetFile](https://docs.microsoft.com/zh-cn/rest/api/media/operations/assetfile) 实体表示 blob 容器中存储的视频或音频文件。一个资产文件始终与一个资产关联，而一个资产则可能包含一个或多个 AssetFiles。如果资产文件对象未与 Blob 容器中的数字文件关联，则媒体服务编码器任务将失败。
 
 将数字媒体文件上传到 blob 容器中后，需要使用 **MERGE** HTTP 请求来更新 AssetFile 中有关媒体文件的信息（如本主题稍后所述）。
 
@@ -318,7 +318,7 @@
 
 ### 创建具有写入权限的 AccessPolicy。 
 
-将任何文件上传到 blob 存储之前，请设置用于对资产执行写入操作的访问策略权限。为此，请向 AccessPolicy 实体集发送一个 HTTP POST 请求。请在执行创建操作时定义 DurationInMinutes 值，否则会在响应中收到 500 内部服务器错误消息。有关 AccessPolicies 的详细信息，请参阅 [AccessPolicy](http://msdn.microsoft.com/zh-cn/library/azure/hh974297.aspx)。
+将任何文件上传到 blob 存储之前，请设置用于对资产执行写入操作的访问策略权限。为此，请向 AccessPolicy 实体集发送一个 HTTP POST 请求。请在执行创建操作时定义 DurationInMinutes 值，否则会在响应中收到 500 内部服务器错误消息。有关 AccessPolicies 的详细信息，请参阅 [AccessPolicy](https://docs.microsoft.com/zh-cn/rest/api/media/operations/accesspolicy)。
 
 以下示例说明了如何创建 AccessPolicy：
 		
@@ -367,7 +367,7 @@
 
 ### 获取上传 URL
 
-若要检索实际上传 URL，请创建一个 SAS 定位符。定位符为希望访问资产中文件的客户端定义连接终结点的开始时间和类型。可以为给定 AccessPolicy 和资产对创建多个定位符实体，以处理不同的客户端请求和需求。这其中的任一定位符都可使用 AccessPolicy 的 StartTime 值和 DurationInMinutes 值来确定可以使用某 URL 的时间长度。有关详细信息，请参阅[定位符](http://msdn.microsoft.com/zh-cn/library/azure/hh974308.aspx)。
+若要检索实际上传 URL，请创建一个 SAS 定位符。定位符为希望访问资产中文件的客户端定义连接终结点的开始时间和类型。可以为给定 AccessPolicy 和资产对创建多个定位符实体，以处理不同的客户端请求和需求。这其中的任一定位符都可使用 AccessPolicy 的 StartTime 值和 DurationInMinutes 值来确定可以使用某 URL 的时间长度。有关详细信息，请参阅[定位符](https://docs.microsoft.com/zh-cn/rest/api/media/operations/locator)。
 
 
 SAS URL 采用以下格式：
@@ -634,7 +634,7 @@ SAS URL 采用以下格式：
 
 ## <a id="encode"></a>将源文件编码为一组自适应比特率 MP4 文件
 
-将资产引入媒体服务后，即可对媒体进行编码、传输复用、打水印等处理，然后将其传送至客户端。将根据多个后台角色实例调度和运行这些活动，以确保高性能和高可用性。这些活动称为作业，每个[作业](http://msdn.microsoft.com/zh-cn/library/azure/hh974289.aspx)由原子任务构成，这些原子任务将在资产文件上执行具体的工作。
+将资产引入媒体服务后，即可对媒体进行编码、传输复用、打水印等处理，然后将其传送至客户端。将根据多个后台角色实例调度和运行这些活动，以确保高性能和高可用性。这些活动称为作业，每个[作业](https://docs.microsoft.com/zh-cn/rest/api/media/operations/job)由原子任务构成，这些原子任务将在资产文件上执行具体的工作。
 
 如前所述，使用 Azure 媒体服务最常见的方案之一是将自适应比特率流传送至客户端。媒体服务可以将一组自适应比特率 MP4 文件动态打包为以下其中一种格式：HTTP 实时流式处理 (HLS)、平滑流式处理、MPEG DASH 和 HDS（仅适用于 Adobe PrimeTime/Access 许可证持有人）。
 
@@ -963,7 +963,7 @@ MPEG DASH 的流 URL 采用以下格式：
 
 ###创建具有读取权限的 AccessPolicy
 
-在下载或传输任何媒体内容之前，请首先定义一个具有读取权限的 AccessPolicy，然后创建相应的定位符实体，以便指定将要为客户端启用的传送机制类型。有关可用属性的详细信息，请参阅 [AccessPolicy 实体属性](https://msdn.microsoft.com/zh-cn/library/azure/hh974297.aspx#accesspolicy_properties)。
+在下载或传输任何媒体内容之前，请首先定义一个具有读取权限的 AccessPolicy，然后创建相应的定位符实体，以便指定将要为客户端启用的传送机制类型。有关可用属性的详细信息，请参阅 [AccessPolicy 实体属性](https://docs.microsoft.com/zh-cn/rest/api/media/operations/accesspolicy#a-nameaccesspolicypropertiesa-accesspolicy-entity-properties)。
 
 以下示例说明如何为给定资产指定具有读取权限的 AccessPolicy。
 

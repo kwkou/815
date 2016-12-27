@@ -15,7 +15,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="10/17/2016"
-    wacn.date="12/12/2016"
+    wacn.date="12/27/2016"
     ms.author="juliako;anilmur" />  
 
 
@@ -456,7 +456,7 @@
 > [AZURE.SELECTOR]
 - [门户](/documentation/articles/media-services-portal-creating-live-encoder-enabled-channel/)
 - [.NET SDK](/documentation/articles/media-services-dotnet-creating-live-encoder-enabled-channel/)
-- [REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn783458.aspx)
+- [REST API](https://docs.microsoft.com/zh-cn/rest/api/media/operations/channel)
 
 
 
