@@ -40,26 +40,22 @@ Azure PowerShell 是一个脚本编写环境，可用于控制和自动执行 Az
 
 下面说明如何在 PowerShell 脚本中实现这些步骤：
 
-```powershell
-
-try
-{
-    # IMPORTANT: Make sure to reference the latest version of Microsoft.ServiceBus.dll
-    Write-Output "Adding the [Microsoft.ServiceBus.dll] assembly to the script..."
-    $scriptPath = Split-Path (Get-Variable MyInvocation -Scope 0).Value.MyCommand.Path
-    $packagesFolder = (Split-Path $scriptPath -Parent) + "\packages"
-    $assembly = Get-ChildItem $packagesFolder -Include "Microsoft.ServiceBus.dll" -Recurse
-    Add-Type -Path $assembly.FullName
-
-    Write-Output "The [Microsoft.ServiceBus.dll] assembly has been successfully added to the script."
-}
-
-catch [System.Exception]
-{
-    Write-Error("Could not add the Microsoft.ServiceBus.dll assembly to the script. Make sure you build the solution before running the provisioning script.")
-}
-
-```
+        try
+        {
+            # IMPORTANT: Make sure to reference the latest version of Microsoft.ServiceBus.dll
+            Write-Output "Adding the [Microsoft.ServiceBus.dll] assembly to the script..."
+            $scriptPath = Split-Path (Get-Variable MyInvocation -Scope 0).Value.MyCommand.Path
+            $packagesFolder = (Split-Path $scriptPath -Parent) + "\packages"
+            $assembly = Get-ChildItem $packagesFolder -Include "Microsoft.ServiceBus.dll" -Recurse
+            Add-Type -Path $assembly.FullName
+        
+            Write-Output "The [Microsoft.ServiceBus.dll] assembly has been successfully added to the script."
+        }
+        
+        catch [System.Exception]
+        {
+            Write-Error("Could not add the Microsoft.ServiceBus.dll assembly to the script. Make sure you build the solution before running the provisioning script.")
+        }
 
 ## 设置 Service Bus 命名空间
 

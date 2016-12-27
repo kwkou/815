@@ -97,7 +97,7 @@ Message: The maximum entity size has been reached or exceeded for Topic: ‘xxx-
 每个事件中心最多只能有 20 个使用者组。当你尝试创建更多组时，会收到 [QuotaExceededException](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.quotaexceededexception.aspx)。
 
 ## TimeoutException
-[TimeoutException](https://msdn.microsoft.com/library/system.timeoutexception.aspx) 指示用户启动的操作所用的时间超过操作超时值。
+[TimeoutException](https://msdn.microsoft.com/zh-cn/library/system.timeoutexception.aspx) 指示用户启动的操作所用的时间超过操作超时值。
 
 应检查 [ServicePointManager.DefaultConnectionLimit](https://msdn.microsoft.com/zh-cn/library/system.net.servicepointmanager.defaultconnectionlimit) 属性的值，因为达到此限制也会导致 [TimeoutException](https://msdn.microsoft.com/zh-cn/library/system.timeoutexception.aspx) 异常。
 
