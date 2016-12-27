@@ -85,9 +85,8 @@ Azure 注册的三种常见模式为：
 基架的第一个支柱是命名标准。使用妥善设计的命名标准，可以在门户、帐单和脚本中识别资源。企业很可能已针对本地基础结构制定了命名标准。将 Azure 添加到环境时，应该将这些命名标准扩展到 Azure 资源。命名标准有助于在所有级别提高环境管理的效率。
 
 > [AZURE.TIP]
-> * 如果可能，请审阅并采纳[模式与实践指南](/documentation/articles/guidance-naming-conventions/)。可以借助此指南来确定一套有意义的命名标准。
-> * 对资源名称使用骆驼拼写法（例如，myResourceGroup 和 vnetNetworkName）。注意：某些资源，例如存储帐户，只允许使用小写字母（不能包括其他特殊字符）。
-> * 考虑使用 Azure Resource Manager 策略（下一部分将会介绍）强制实施命名标准。
+><p> * 对资源名称使用骆驼拼写法（例如，myResourceGroup 和 vnetNetworkName）。注意：某些资源，例如存储帐户，只允许使用小写字母（不能包括其他特殊字符）。
+><p> * 考虑使用 Azure Resource Manager 策略（下一部分将会介绍）强制实施命名标准。
 > 
 > 
 
@@ -156,16 +155,13 @@ Azure Resource Manager 策略是 Azure 工具包中的一个强大工具。使�
 
 ![标记](./media/resource-manager-subscription-governance/resource-group-tagging.png)  
 
-
-有关标记的更多示例，请参阅 [Recommended naming conventions for Azure resources](/documentation/articles/guidance-naming-conventions/)（Azure 资源的建议命名约定）。
-
 > [AZURE.TIP]
 创建标记策略，规定业务、财务、安全、风险管理和综合环境管理部门需要各个订阅中的哪些元数据。考虑制定强制要求对以下各项使用标记的策略：
-> 
-> * 资源组
-> * 存储
-> * 虚拟机
-> * 应用程序服务环境/Web 服务器
+><p> 
+><p> * 资源组
+><p> * 存储
+><p> * 虚拟机
+><p> * 应用程序服务环境/Web 服务器
 > 
 > 
 
@@ -244,7 +240,7 @@ Azure 在最初发布时，对订阅的访问控制非常直接：只允许管�
 ## Azure 安全中心
 在采用云的过程中，最大的阻碍之一也许是安全忧虑。IT 风险管理人员和安全部门需确保 Azure 中资源的安全。
 
-[Azure 安全中心](/documentation/articles/security-center-intro/)在一个中心视图中提供订阅中资源的安全状态，并提供建议帮助避免资源泄密。它支持更精细的策略（例如，向特定的资源组应用策略，使企业能够根据面临的风险调整立场）。最后，Azure 安全中心是一个开放式平台，允许 Microsoft 合作伙伴和独立软件供应商创建可与 Azure 安全中心对接的软件来增强其功能。
+Azure 安全中心在一个中心视图中提供订阅中资源的安全状态，并提供建议帮助避免资源泄密。它支持更精细的策略（例如，向特定的资源组应用策略，使企业能够根据面临的风险调整立场）。最后，Azure 安全中心是一个开放式平台，允许 Microsoft 合作伙伴和独立软件供应商创建可与 Azure 安全中心对接的软件来增强其功能。
 
 > [AZURE.TIP]
 Azure 安全中心默认已在每个订阅中启用。但是，必须通过虚拟机启用数据收集，才能允许 Azure 安全中心安装其代理并开始收集数据。

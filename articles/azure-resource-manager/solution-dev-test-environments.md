@@ -53,7 +53,7 @@ Azure 资源管理器模板定义应用程序使用的所有 Azure 资源。你�
     * **Resources** 部分：此部分定义此模板创建的 Azure 资源的类型。在其他资源类型中，此模板将创建 [Azure Web 应用](/documentation/articles/app-service-web-overview/)和 [Azure SQL 数据库](/documentation/articles/sql-database-technical-overview/)资源。如果偏好在虚拟机中运行和管理 Web 与 SQL 服务器，可以使用"[iis-2vm-sql-1vm](https://github.com/Azure/azure-quickstart-templates/tree/master/iis-2vm-sql-1vm)"或"[lamp-app](https://github.com/Azure/azure-quickstart-templates/tree/master/lamp-app)"模板；但本文中的说明基于 [201-web-app-sql-database](https://github.com/Azure/azure-quickstart-templates/tree/3f24f7b7e1e377538d1d548eaa6eab2851a21810/201-web-app-sql-database) 模板。
    * **Parameters** 部分：此部分定义可用于配置每个资源的参数。在模板中指定的一些参数带有“defaultValue”属性，而其他一些参数则没有该属性。使用模板部署 Azure 资源时，必须将值提供给模板中所有未指定 defaultValue 属性的参数。如果未向带有 defaultValue 属性的参数提供值，则会使用模板中为 defaultValue 参数指定的值。
 
-模板定义所创建的 Azure 资源，以及可用来配置每个资源的参数。你可以阅读[设计 Azure 资源管理器模板的最佳实践](/documentation/articles/best-practices-resource-manager-design-templates/)一文，以进一步了解模板及如何设计自己的模板。
+模板定义所创建的 Azure 资源，以及可用来配置每个资源的参数。
 
 ## 下载和自定义现有参数文件
 尽管可能希望在每个环境中创建 *相同的* Azure 资源，但也可能希望在每个环境中设置 *不同的* 资源配置。这就是参数文件的作用。完成以下步骤，在每个环境中创建包含唯一值的参数文件。
@@ -136,7 +136,7 @@ Azure 资源管理器模板定义应用程序使用的所有 Azure 资源。你�
 | **requestedServiceObjectiveName** |S0 |S1 |
 
 ## 创建环境
-所有 Azure 资源必须在 [Azure 资源组](/documentation/articles/resource-group-overview/)中创建。资源组可让你将 Azure 资源分组，以便可以统一管理这些资源。[权限](/documentation/articles/role-based-access-built-in-roles/)可以分配给资源组，使组织中的特定人员可以创建、修改、删除或查看这些组及其包含的资源。可以在 [Azure 门户预览](https://portal.azure.cn)中查看资源组中资源的警报和计费信息。资源组在 Azure [区域](/regions/)中创建。在本文中，所有资源都在中国东部区域创建。开始创建实际环境时，请选择最符合要求的区域。
+所有 Azure 资源必须在 [Azure 资源组](/documentation/articles/resource-group-overview/)中创建。资源组可让你将 Azure 资源分组，以便可以统一管理这些资源。[权限](/documentation/articles/role-based-access-built-in-roles/)可以分配给资源组，使组织中的特定人员可以创建、修改、删除或查看这些组及其包含的资源。可以在 [Azure 门户预览](https://portal.azure.cn)中查看资源组中资源的警报和计费信息。资源组在 Azure 区域中创建。在本文中，所有资源都在中国东部区域创建。开始创建实际环境时，请选择最符合要求的区域。
 
 使用以下方法之一为每个环境创建资源组。所有方法都可实现相同的结果。
 

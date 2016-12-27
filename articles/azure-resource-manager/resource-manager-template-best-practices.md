@@ -28,7 +28,7 @@
 2. 不需要唯一的资源名称，不过，提供的名称应可帮助识别上下文。
 3. 通用的资源名称。
 
-有关建立命名约定的帮助，请参阅 [Infrastructure naming guidelines](/documentation/articles/virtual-machines-windows-infrastructure-naming-guidelines/)（基础结构命名指南）。有关资源名称限制的信息，请参阅 [Recommended naming conventions for Azure resources](/documentation/articles/guidance-naming-conventions/)（Azure 资源的建议命名约定）。
+有关建立命名约定的帮助，请参阅 [Infrastructure naming guidelines](/documentation/articles/virtual-machines-windows-infrastructure-naming-guidelines/)（基础结构命名指南）。
 
 ### 唯一的资源名称
 对于具有数据访问终结点的任何资源类型，必须提供唯一的资源名称。需要唯一名称的一些常见类型包括：
@@ -230,7 +230,6 @@
    
      有关连接到虚拟机的详细信息，请参阅：
    
-    * [Running VMs for an N-tier architecture on Azure（在 Azure 上运行 N 层体系结构所用的 VM）](/documentation/articles/guidance-compute-n-tier-vm/)
     * [为 Azure Resource Manager 中的虚拟机设置 WinRM 访问权限](/documentation/articles/virtual-machines-windows-winrm/)
     * [使用 Azure 门户预览实现对 VM 的外部访问](/documentation/articles/virtual-machines-windows-nsg-quickstart-portal/)
     * [使用 PowerShell 对 VM 实现外部访问](/documentation/articles/virtual-machines-windows-nsg-quickstart-powershell/)
@@ -291,7 +290,7 @@
 1. 可将解决方案分解为目标组件
 2. 可在不同的主模板中重复使用嵌套模板
 
-如果确定要将模板设计分解为多个嵌套模板，可通过以下指导将设计标准化。这些指导以 [patterns for designing Azure Resource Manager templates](/documentation/articles/best-practices-resource-manager-design-templates/)（设计 Azure Resource Manager模板的模式）文档为基础。建议的设计包括以下模板：
+如果确定要将模板设计分解为多个嵌套模板，可通过以下指导将设计标准化。建议的设计包括以下模板：
 
 * **主模板** (azuredeploy.json)。用于输入参数。
 * **共享的资源模板**。部署其他所有资源使用的共享资源（例如虚拟网络、可用性集）。表达式 dependsOn 强制在其他模板之前部署此模板。
@@ -340,7 +339,6 @@
 2. 另外，一个不错的想法是设置 JSON 的格式以以提高可读性。可以为本地编辑器使用 JSON 格式化程序包。在 Visual Studio 中，使用 **Ctrl+K、Ctrl+D** 设置文档的格式。在 VS Code 中，使用 **Alt+Shift+F**。如果你的本地编辑器无法设置文档格式，你可以使用[联机格式化程序](https://www.bing.com/search?q=json+formatter)。
 
 ## 后续步骤
-* 有关为虚拟机构建解决方案的指导，请参阅 [Running a Windows VM on Azure](/documentation/articles/guidance-compute-single-vm/)（在 Azure 上运行 Windows VM）和 [Running a Linux VM on Azure](/documentation/articles/guidance-compute-single-vm-linux/)（在 Azure 上运行 Linux VM）。
 * 有关设置存储帐户的指导，请参阅 [Azure Storage Performance and Scalability Checklist](/documentation/articles/storage-performance-checklist/)（Azure 存储空间的性能和可缩放性清单）。
 * 有关虚拟网络的帮助，请参阅 [Networking infrastructure guidelines](/documentation/articles/virtual-machines-windows-infrastructure-networking-guidelines/)（网络基础结构指南）。
 * 如需了解企业如何使用 Resource Manager 对订阅进行有效管理，请参阅 [Azure 企业机架 - 规范性订阅管理](/documentation/articles/resource-manager-subscription-governance/)。

@@ -29,7 +29,7 @@
 
 本主题说明如何将 [Azure 门户预览](https://portal.azure.cn)与 [Azure Resource Manager](/documentation/articles/resource-group-overview/) 配合使用来管理 Azure 资源。若要了解如何通过门户部署资源，请参阅 [Deploy resources with Resource Manager templates and Azure portal preview](/documentation/articles/resource-group-template-deploy-portal/)（使用 Resource Manager 模板和 Azure 门户预览部署资源）。
 
-目前，并非每种服务都支持门户或资源管理器。对于这些服务，需要使用[经典门户](https://manage.windowsazure.cn)。若要了解每种服务的状态，请参阅 [Azure 门户预览可用性图表](/home/features/azure-portal/availability/)。
+目前，并非每种服务都支持门户或资源管理器。对于这些服务，需要使用[经典门户](https://manage.windowsazure.cn)。
 
 ## <a name="create-resource-group-and-resources"></a> 管理资源组
 1. 若要查看订阅中的所有资源组，请选择“资源组”。
