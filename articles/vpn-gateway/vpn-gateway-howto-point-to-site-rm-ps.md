@@ -66,7 +66,7 @@
 * **VpnType：RouteBased**
 
 ## 开始之前
-* 确保你拥有 Azure 订阅。如果你还没有 Azure 订阅，可以激活 [MSDN 订户权益](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details)或注册获取[免费帐户](https://azure.microsoft.com/pricing/1rmb-trial)。
+* 确保你拥有 Azure 订阅。如果你还没有 Azure 订阅，可以注册获取[1元帐户](/pricing/1rmb-trial)。
 * 安装最新版本的 Azure Resource Manager PowerShell cmdlet。有关安装 PowerShell cmdlet 的详细信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)。使用 PowerShell 进行此配置时，请确保以管理员身份运行。
 
 ## <a name="declare"></a>第 1 部分 - 登录并设置变量

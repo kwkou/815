@@ -226,11 +226,6 @@ IP 配置在创建 NIC 时关联到 NIC，NIC 在创建 VM 时附加到 VM。本
 
 1. 打开 Azure CLI，在单个 CLI 会话中完成本部分的剩余步骤。如果还没有安装和配置 Azure CLI，请完成[安装和配置 Azure CLI](/documentation/articles/xplat-cli-install/) 一文中的步骤，并登录 Azure 帐户。
 
-2. 若要注册预览版，请向[多个 IP](mailto:MultipleIPsPreview@microsoft.com?subject=Request%20to%20enable%20subscription%20%3csubscription%20id%3e) 发送电子邮件，其中包含订阅 ID 和目标用途。如果要尝试完成剩余步骤，需要满足以下条件：
-	- 收到告知允许使用预览版的电子邮件
-	- 遵守收到的电子邮件中的说明
-
-
 3. 根据要求，完成以下任一部分中的步骤：
 
 	**添加专用 IP 地址**
