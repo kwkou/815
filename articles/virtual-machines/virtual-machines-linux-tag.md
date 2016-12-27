@@ -48,7 +48,7 @@
 ## 后续步骤
 
 * 若要详细了解如何标记 Azure 资源，请参阅 [Azure Resource Manager Overview][]（Azure Resource Manager 概述）和 [Using Tags to organize your Azure Resources][]（使用标记来组织 Azure 资源）。
-* 若要了解标记如何帮助你管理 Azure 资源的使用，请参阅 [Understanding your Azure Bill][]（了解你的 Azure 帐单）和 [Gain insights into your Azure resource consumption][]（深入了解你的 Azure 资源消耗）。
+* 若要了解标记如何帮助你管理 Azure 资源的使用，请参阅 [Understanding your Azure Bill][]（了解你的 Azure 帐单）。
 
 
 
@@ -58,6 +58,5 @@
 [Azure Resource Manager Overview]: /documentation/articles/resource-group-overview/
 [Using Tags to organize your Azure Resources]: /documentation/articles/resource-group-using-tags/
 [Understanding your Azure Bill]: /documentation/articles/billing-understand-your-bill/
-[Gain insights into your Azure resource consumption]: /documentation/articles/billing-usage-rate-card-overview/
 
 <!---HONumber=Mooncake_Quality_Review_1215_2016-->

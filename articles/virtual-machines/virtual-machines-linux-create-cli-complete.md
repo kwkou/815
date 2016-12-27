@@ -212,7 +212,7 @@
 
 在以下示例中，请将示例参数名称替换为你自己的值。示例参数名称包括 `myResourceGroup`、`mystorageaccount` 和 `myVM`。
 
-## 创建资源组并选择部署位置
+## <a name="create-resource-groups-and-choose-deployment-locations"></a> 创建资源组并选择部署位置
 Azure 资源组是逻辑部署实体，包含用于启用资源部署逻辑管理的配置信息和元数据。以下示例在 `westeurope` 位置创建名为 `myResourceGroup` 的资源组：
 
     azure group create --name myResourceGroup --location westeurope
@@ -231,7 +231,7 @@ Azure 资源组是逻辑部署实体，包含用于启用资源部署逻辑管�
     data:
     info:    group create command OK
 
-## 创建存储帐户
+## <a name="create-a-storage-account"></a> 创建存储帐户
 需要为 VM 磁盘和要添加的任何其他数据磁盘创建存储帐户。创建资源组后，应立即创建存储帐户。
 
 此处，使用 `azure storage account create` 命令传递帐户的位置、控制该帐户的资源组，以及所需的存储支持类型。以下示例创建名为 `mystorageaccount` 的存储帐户：
@@ -299,7 +299,7 @@ Azure 资源组是逻辑部署实体，包含用于启用资源部署逻辑管�
     data:    vhds  Off            Sun, 27 Sep 2015 19:03:54 GMT
     info:    storage container list command OK
 
-## 创建虚拟网络和子网
+## <a name="create-a-virtual-network-and-subnet"></a> 创建虚拟网络和子网
 接下来，需要创建在 Azure 中运行的虚拟网络，以及可在其中创建 VM 的子网。以下示例创建名为 `myVnet`、地址前缀为 `192.168.0.0/16` 的虚拟网络：
 
     azure network vnet create --resource-group myResourceGroup --location westeurope \
@@ -946,7 +946,7 @@ Azure 资源组是逻辑部署实体，包含用于启用资源部署逻辑管�
 
 有关详细信息，请阅读[管理 VM 可用性](/documentation/articles/virtual-machines-linux-manage-availability/)。
 
-## 创建 Linux VM
+## <a name="create-the-linux-vms"></a> 创建 Linux VM
 已经创建存储和网络资源，支持可访问 Internet 的 VM。现在，创建 VM 并使用不含密码的 SSH 密钥保护其安全。在此情况下，我们需要基于最新的 LTS 创建 Ubuntu VM。我们将根据 [finding Azure VM images](/documentation/articles/virtual-machines-linux-cli-ps-findimage/)（查找 Azure VM 映像）中所述，使用 `azure vm image list` 来查找该映像信息。
 
 我们使用命令 `azure vm image list westeurope canonical | grep LTS` 选择了映像。在此示例中，使用 `canonical:UbuntuServer:16.04.0-LTS:16.04.201608150`。对于最后一个字段，我们将传递 `latest`，以便将来可随时获取最新的内部版本。（使用的字符串是 `canonical:UbuntuServer:16.04.0-LTS:16.04.201608150`）。
