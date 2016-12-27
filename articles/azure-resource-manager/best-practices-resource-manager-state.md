@@ -22,7 +22,7 @@
 # 在 Azure 资源管理器模板中共享状态
 本主题介绍有关在模板中管理和共享状态的最佳实践。本主题中所示的参数和变量是用户为了方便组织部署要求而可以定义的对象类型的示例。通过这些示例，你可以使用适合环境的属性值实现自己的对象。
 
-本主题是包含更多内容的白皮书的一部分。若要阅读完整的白皮书，请下载[一流的 Resource Manager 模板注意事项和成熟的做法]（http://download.microsoft.com/download/8/E/1/8E1DBEFA-CECE-4DC9-A813-93520A5D7CFE/World Class ARM Templates - Considerations and Proven Practices.pdf）。
+本主题是包含更多内容的白皮书的一部分。若要阅读完整的白皮书，请下载[一流的 Resource Manager 模板注意事项和成熟的做法](http://download.microsoft.com/download/8/E/1/8E1DBEFA-CECE-4DC9-A813-93520A5D7CFE/World%20Class%20ARM%20Templates%20-%20Considerations%20and%20Proven%20Practices.pdf)。
 
 ## 提供标准配置设置
 通常会提供已知配置供用户选择，而不是提供一个过于灵活可变的模板。实际上，用户可以选择标准 T 恤尺寸，例如沙盒、小、中、大。T 恤尺寸的其他示例包括产品，例如社区版本或企业版本。在其他情况下，这可能是某种技术的工作负荷特定配置，例如，映射化简或 No SQL。

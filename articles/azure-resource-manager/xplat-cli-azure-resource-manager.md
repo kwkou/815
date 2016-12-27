@@ -87,7 +87,7 @@ Azure 命令行接口 (Azure CLI) 是可以配合 Resource Manager 部署和管�
 ## 控制对资源的访问
 可以使用 Azure CLI 来创建和管理策略，控制对 Azure 资源的访问。有关策略定义以及将策略分配给资源的背景信息，请参阅 [Use policy to manage resources and control access](/documentation/articles/resource-manager-policy/)（使用策略来管理资源和控制访问）。
 
-例如，定义以下策略来拒绝所有位置不在美国西部或美国中北部的请求，并将该策略保存到策略定义文件 policy.json 中：
+例如，定义以下策略来拒绝所有位置不在中国东部或中国北部的请求，并将该策略保存到策略定义文件 policy.json 中：
 
     {
     "if" : {
