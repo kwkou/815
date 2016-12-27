@@ -152,8 +152,7 @@ Resource Manager 处理模板的方式与处理其他任何请求一样（请参
 
 ![层模板](./media/resource-group-overview/tier-templates.png)  
 
-
-有关设计模板的更多建议，请参阅[用于设计 Azure Resource Manager 模板的模式](/documentation/articles/best-practices-resource-manager-design-templates/)。有关嵌套模板的信息，请参阅[将链接的模板与 Azure Resource Manager 配合使用](/documentation/articles/resource-group-linked-templates/)。
+有关嵌套模板的信息，请参阅[将链接的模板与 Azure Resource Manager 配合使用](/documentation/articles/resource-group-linked-templates/)。
 
 有关自动化部署的四部分系列教程，请参阅[将应用程序自动部署到 Azure 虚拟机](/documentation/articles/virtual-machines-windows-dotnet-core-1-landing/)。此系列教程介绍了应用程序体系结构、访问与安全性、可用性与伸缩性，以及应用程序部署。
 

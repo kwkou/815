@@ -30,9 +30,6 @@
 
 您不能更改该资源的位置。移动资源仅能够将其移动到新的资源组。新的资源组可能有不同的位置，但这不会更改该资源的位置。
 
-> [AZURE.NOTE]
-本文介绍如何在现有 Azure 帐户产品/服务中移动资源。如果确实想要更改 Azure 帐户产品/服务（如从即用即付升级到预付）并继续使用现有资源，请参阅 [Switch your Azure subscription to another offer](/documentation/articles/billing-how-to-switch-azure-offer/)（将 Azure 订阅切换到其他产品）。
-
 ## 移动资源前需查看的清单
 移动资源之前需执行的一些重要步骤。验证这些条件可以避免错误。
 

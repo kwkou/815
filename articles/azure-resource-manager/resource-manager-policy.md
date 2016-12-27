@@ -42,7 +42,7 @@ RBAC 着重于**用户**在不同的范围可执行的操作。例如，将特�
 使用策略可轻松实现这些方案。
 
 ## 策略定义结构
-策略定义是使用 JSON 创建的。它包含定义操作和效果的一个或多个条件/逻辑运算符，告诉你满足条件时产生的效果。该架构在 [http://schema.management.chinacloudapi.cn/schemas/2015-10-01-preview/policyDefinition.json](http://schema.management.chinacloudapi.cn/schemas/2015-10-01-preview/policyDefinition.json) 中发布。
+策略定义是使用 JSON 创建的。它包含定义操作和效果的一个或多个条件/逻辑运算符，告诉你满足条件时产生的效果。该架构在 [http://schema.management.windows.net/schemas/2015-10-01-preview/policyDefinition.json](http://schema.management.windows.net/schemas/2015-10-01-preview/policyDefinition.json) 中发布。
 
 简单而言，策略包含以下元素：
 
