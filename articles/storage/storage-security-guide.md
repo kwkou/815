@@ -115,10 +115,6 @@ Azure 存储提供一套完善的安全功能，这些功能相辅相成，让�
 
     此文介绍了 Resource Manager 部署和经典部署模型，并说明使用 Resource Manager 和资源组的优点
 
--   [Azure Resource Manager 中的 Azure 计算、网络和存储提供程序](/documentation/articles/virtual-machines-windows-compare-deployment-models/)
-
-    本文介绍了 Azure 计算、网络和存储提供程序在 Resource Manager 模式下的工作方式。
-
 -   [使用 REST API 管理基于角色的访问控制](/documentation/articles/role-based-access-control-manage-access-rest/)
 
 	此文说明如何使用 REST API 来管理 RBAC。
