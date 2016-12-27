@@ -1,22 +1,23 @@
-<properties 
-	pageTitle="DocumentDB 的 SQL 语法和 SQL 查询 | Azure" 
-	description="了解 DocumentDB（一种 NoSQL 数据库）的 SQL 语法、数据库概念和 SQL 查询。SQL 可在 DocumentDB 中作为 JSON 查询语言使用。" 
-	keywords="sql 语法, sql 查询, sql 查询, json 查询语言, 数据库概念和 sql 查询, 聚合函数"
-	services="documentdb" 
-	documentationCenter="" 
-	authors="arramac" 
-	manager="jhubbard" 
-	editor="monicar"/>
+<properties
+    pageTitle="DocumentDB 的 SQL 语法和 SQL 查询 | Azure"
+    description="了解 DocumentDB（一种 NoSQL 数据库）的 SQL 语法、数据库概念和 SQL 查询。SQL 可在 DocumentDB 中作为 JSON 查询语言使用。"
+    keywords="sql 语法, sql 查询, sql 查询, json 查询语言, 数据库概念和 sql 查询, 聚合函数"
+    services="documentdb"
+    documentationcenter=""
+    author="arramac"
+    manager="jhubbard"
+    editor="monicar" />  
 
-<tags 
-	ms.service="documentdb" 
-	ms.workload="data-services" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="08/22/2016" 
-	wacn.date="11/30/2016" 
-	ms.author="arramac"/>  
+<tags
+    ms.assetid="a73b4ab3-0786-42fd-b59b-555fce09db6e"
+    ms.service="documentdb"
+    ms.workload="data-services"
+    ms.tgt_pltfrm="na"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.date="11/01/2016"
+    wacn.date="12/27/2016"
+    ms.author="arramac" />  
 
 
 # DocumentDB 中的 SQL 查询和 SQL 语法
@@ -24,8 +25,8 @@ Azure DocumentDB 通过将 SQL（结构化查询语言）用作 JSON 查询语�
 
 在设计 DocumentDB 的查询语言时，我们有两个目标：
 
--	我们希望支持 SQL，而不是发明一种新的 JSON 查询语言。SQL 是最常见和最常用的查询语言之一。DocumentDB SQL 提供了一种正式的编程模型，用于对 JSON 文档进行丰富查询。
--	由于 JSON 文档数据库能够在数据库引擎中直接执行 JavaScript，我们希望将 JavaScript 的编程模型用作我们的查询语言的基础。DocumentDB SQL 植根于 JavaScript 的类型系统、表达式计算和函数调用中。而这反过来为关系投影、跨 JSON 文档的分层导航、自联接、空间查询以及调用完全采用 JavaScript 编写的用户定义的函数 (UDF) 和其他功能提供了自然编程模型。
+- 我们希望支持 SQL，而不是发明一种新的 JSON 查询语言。SQL 是最常见和最常用的查询语言之一。DocumentDB SQL 提供了一种正式的编程模型，用于对 JSON 文档进行丰富查询。
+- 由于 JSON 文档数据库能够在数据库引擎中直接执行 JavaScript，我们希望将 JavaScript 的编程模型用作我们的查询语言的基础。DocumentDB SQL 植根于 JavaScript 的类型系统、表达式计算和函数调用中。而这反过来为关系投影、跨 JSON 文档的分层导航、自联接、空间查询以及调用完全采用 JavaScript 编写的用户定义的函数 (UDF) 和其他功能提供了自然编程模型。
 
 我们相信这些功能是减少应用程序和数据库之间冲突的关键，并且对于开发人员的工作效率来说是至关重要的。
 
@@ -40,55 +41,55 @@ Azure DocumentDB 通过将 SQL（结构化查询语言）用作 JSON 查询语�
 
 **文档**
 
-	{
-	    "id": "AndersenFamily",
-	    "lastName": "Andersen",
-	    "parents": [
-	       { "firstName": "Thomas" },
-	       { "firstName": "Mary Kay"}
-	    ],
-	    "children": [
-	       {
-	           "firstName": "Henriette Thaulow", "gender": "female", "grade": 5,
-	           "pets": [{ "givenName": "Fluffy" }]
-	       }
-	    ],
-	    "address": { "state": "WA", "county": "King", "city": "seattle" },
-	    "creationDate": 1431620472,
-	    "isRegistered": true
-	}
+    {
+        "id": "AndersenFamily",
+        "lastName": "Andersen",
+        "parents": [
+           { "firstName": "Thomas" },
+           { "firstName": "Mary Kay"}
+        ],
+        "children": [
+           {
+               "firstName": "Henriette Thaulow", "gender": "female", "grade": 5,
+               "pets": [{ "givenName": "Fluffy" }]
+           }
+        ],
+        "address": { "state": "WA", "county": "King", "city": "seattle" },
+        "creationDate": 1431620472,
+        "isRegistered": true
+    }
 
 
-下面是另一个有着细微差异的文档 - 其中使用了 `givenName` 和 `familyName`，取代了 `firstName` 和 `lastName`。
+下面是另一个有着细微差异的文档 — 使用了 `givenName` 和 `familyName`，而不是 `firstName` 和 `lastName`。
 
 **文档**
 
-	{
-	    "id": "WakefieldFamily",
-	    "parents": [
-	        { "familyName": "Wakefield", "givenName": "Robin" },
-	        { "familyName": "Miller", "givenName": "Ben" }
-	    ],
-	    "children": [
-	        {
-	            "familyName": "Merriam", 
-	            "givenName": "Jesse", 
-	            "gender": "female", "grade": 1,
-	            "pets": [
-	                { "givenName": "Goofy" },
-	                { "givenName": "Shadow" }
-	            ]
-	        },
-	        { 
-	            "familyName": "Miller", 
-	             "givenName": "Lisa", 
-	             "gender": "female", 
-	             "grade": 8 }
-	    ],
-	    "address": { "state": "NY", "county": "Manhattan", "city": "NY" },
-	    "creationDate": 1431620462,
-	    "isRegistered": false
-	}
+    {
+        "id": "WakefieldFamily",
+        "parents": [
+            { "familyName": "Wakefield", "givenName": "Robin" },
+            { "familyName": "Miller", "givenName": "Ben" }
+        ],
+        "children": [
+            {
+                "familyName": "Merriam", 
+                "givenName": "Jesse", 
+                "gender": "female", "grade": 1,
+                "pets": [
+                    { "givenName": "Goofy" },
+                    { "givenName": "Shadow" }
+                ]
+            },
+            { 
+                "familyName": "Miller", 
+                 "givenName": "Lisa", 
+                 "gender": "female", 
+                 "grade": 8 }
+        ],
+        "address": { "state": "NY", "county": "Manhattan", "city": "NY" },
+        "creationDate": 1431620462,
+        "isRegistered": false
+    }
 
 
 
@@ -96,98 +97,92 @@ Azure DocumentDB 通过将 SQL（结构化查询语言）用作 JSON 查询语�
 
 **查询**
 
-	SELECT * 
-	FROM Families f 
-	WHERE f.id = "AndersenFamily"
+    SELECT * 
+    FROM Families f 
+    WHERE f.id = "AndersenFamily"
 
 **结果**
 
-	[{
-	    "id": "AndersenFamily",
-	    "lastName": "Andersen",
-	    "parents": [
-	       { "firstName": "Thomas" },
-	       { "firstName": "Mary Kay"}
-	    ],
-	    "children": [
-	       {
-	           "firstName": "Henriette Thaulow", "gender": "female", "grade": 5,
-	           "pets": [{ "givenName": "Fluffy" }]
-	       }
-	    ],
-	    "address": { "state": "WA", "county": "King", "city": "seattle" },
-	    "creationDate": 1431620472,
-	    "isRegistered": true
-	}]
+    [{
+        "id": "AndersenFamily",
+        "lastName": "Andersen",
+        "parents": [
+           { "firstName": "Thomas" },
+           { "firstName": "Mary Kay"}
+        ],
+        "children": [
+           {
+               "firstName": "Henriette Thaulow", "gender": "female", "grade": 5,
+               "pets": [{ "givenName": "Fluffy" }]
+           }
+        ],
+        "address": { "state": "WA", "county": "King", "city": "seattle" },
+        "creationDate": 1431620472,
+        "isRegistered": true
+    }]
 
 
 现在，考虑我们需要将 JSON 输出的格式重新设置为一种不同的形式。当地址的城市名称与省/自治区名称相同时，此查询使用两个选定的字段 Name 和 City 表示新的 JSON 对象。在这种情况下，“NY, NY”匹配。
 
 **查询**
 
-	SELECT {"Name":f.id, "City":f.address.city} AS Family 
-	FROM Families f 
-	WHERE f.address.city = f.address.state
+    SELECT {"Name":f.id, "City":f.address.city} AS Family 
+    FROM Families f 
+    WHERE f.address.city = f.address.state
 
 **结果**
 
-	[{
-	    "Family": {
-	        "Name": "WakefieldFamily", 
-	        "City": "NY"
-	    }
-	}]
+    [{
+        "Family": {
+            "Name": "WakefieldFamily", 
+            "City": "NY"
+        }
+    }]
 
 
 下一个查询返回其 ID与按居住城市排序的 `WakefieldFamily` 匹配的家庭中所有子女的给定名称。
 
 **查询**
 
-	SELECT c.givenName 
-	FROM Families f 
-	JOIN c IN f.children 
-	WHERE f.id = 'WakefieldFamily'
-	ORDER BY f.address.city ASC
+    SELECT c.givenName 
+    FROM Families f 
+    JOIN c IN f.children 
+    WHERE f.id = 'WakefieldFamily'
+    ORDER BY f.address.city ASC
 
 **结果**
 
-	[
-	  { "givenName": "Jesse" }, 
-	  { "givenName": "Lisa"}
-	]
+    [
+      { "givenName": "Jesse" }, 
+      { "givenName": "Lisa"}
+    ]
 
 
 我们希望通过我们目前已看到的示例让你注意到 DocumentDB 查询语言一些值得注意的方面：
- 
--	由于 DocumentDB SQL 适用于 JSON 值，因此它可以处理三种形式的实体，而不是行和列。因此，该语言可让你在任意深度引用树的节点，如 `Node1.Node2.Node3…..Nodem`，这类似于引用 `<table>.<column>` 的两个部分引用的关系 SQL。
--	结构化查询语言适用于无架构的数据。因此，需要动态绑定类型系统。相同的表达式在不同文档上可能会产生不同的类型。查询的结果是一个有效的 JSON 值，但不保证它为固定的架构。
--	DocumentDB 仅支持严格的 JSON 文档。这意味着类型系统和表达式仅限于处理 JSON 类型。有关更多详细信息，请参阅 [JSON specification（JSON 规范）](http://www.json.org/)。
--	DocumentDB 集合是 JSON 文档的一个无构架容器。集合中，文档内和跨文档的数据实体的关系是按包含关系隐式捕获的，而不是按主键和外键关系。考虑到稍后将在本文中讨论文档内联接，因此这是一个值得注意的重要方面。
+
+- 由于 DocumentDB SQL 适用于 JSON 值，因此它可以处理三种形式的实体，而不是行和列。因此，该语言可让你在任意深度引用树的节点，如 `Node1.Node2.Node3…..Nodem`，这类似于引用 `<table>.<column>` 的两个部分引用的关系 SQL。
+- 结构化查询语言适用于无架构的数据。因此，需要动态绑定类型系统。相同的表达式在不同文档上可能会产生不同的类型。查询的结果是一个有效的 JSON 值，但不保证它为固定的架构。
+- DocumentDB 仅支持严格的 JSON 文档。这意味着类型系统和表达式仅限于处理 JSON 类型。有关更多详细信息，请参阅 [JSON specification（JSON 规范）](http://www.json.org/)。
+- DocumentDB 集合是 JSON 文档的一个无构架容器。集合中，文档内和跨文档的数据实体的关系是按包含关系隐式捕获的，而不是按主键和外键关系。考虑到稍后将在本文中讨论文档内联接，因此这是一个值得注意的重要方面。
 
 ## DocumentDB 索引
-
 在我们开始了解 DocumentDB SQL 语法前，值得先探索一下 DocumentDB 中的索引设计。
 
 数据库索引的目的是在提供良好的吞吐量和低延迟的同时，以最小的资源消耗（如 CPU 和输入/输出）提供各种形式的查询。通常，为查询数据库选择正确的索引需要大量的计划和试验。此方法对数据不符合严格的架构并且快速发展的无架构数据库来说是一个挑战。
 
 因此，在我们设计 DocumentDB 索引子系统时，我们设定了以下目标：
 
--	在无需架构的情况下索引文档：索引子系统不需要任何架构信息或对文档的架构做出任何假设。
-
--	支持高效、层次丰富的关系型查询：索引高效地支持 DocumentDB 查询语言，包括支持分层和关系投影。
-
--	在持续大量写入时支持一致的查询：对于使用一致的查询的高写入吞吐量工作负荷，在持续大量写入时可逐步、高效地联机更新索引。一致的索引更新对在用户配置文档服务的一致性级别进行查询来说是至关重要的。
-
--	支持多租户：在为跨租户的资源调控给定基于保留的模型的情况下，可以在为每个副本分配的系统资源（CPU、内存和每秒的输入/输出操作）的预算内执行索引更新。
-
--	存储效率：就成本效益而言，在磁盘上存储索引的开销是有限的，并且是可预测的。这一点非常重要，因为 DocumentDB 允许开发人员在索引开销与查询性能之间做出基于成本的权衡。
+- 在无需架构的情况下索引文档：索引子系统不需要任何架构信息或对文档的架构做出任何假设。
+- 支持高效、层次丰富的关系型查询：索引高效地支持 DocumentDB 查询语言，包括支持分层和关系投影。
+- 在持续大量写入时支持一致的查询：对于使用一致的查询的高写入吞吐量工作负荷，在持续大量写入时可逐步、高效地联机更新索引。一致的索引更新对在用户配置文档服务的一致性级别进行查询来说是至关重要的。
+- 支持多租户：在为跨租户的资源调控给定基于保留的模型的情况下，可以在为每个副本分配的系统资源（CPU、内存和每秒的输入/输出操作）的预算内执行索引更新。
+- 存储效率：就成本效益而言，在磁盘上存储索引的开销是有限的，并且是可预测的。这一点非常重要，因为 DocumentDB 允许开发人员在索引开销与查询性能之间做出基于成本的权衡。
 
 有关演示如何为集合配置索引策略的示例，请参阅 MSDN 上的 [DocumentDB samples（DocumentDB 示例）](https://github.com/Azure/azure-documentdb-net)。现在，让我们开始详细了解 DocumentDB SQL 语法。
 
-
 ## DocumentDB SQL 查询的基础知识
 每个查询按 ANSI-SQL 标准由 SELECT 子句和可选的 FROM 和 WHERE 子句组成。通常，对于每个查询，已枚举 FROM 子句中的源。然后将 WHERE 子句中的筛选器应用到源以检索 JSON 文档的子集。最后，使用 SELECT 子句以投影选择列表中请求的 JSON 值。
-    
+
     SELECT [TOP <top_expression>] <select_list> 
     [FROM <from_specification>] 
     [WHERE <filter_condition>]
@@ -199,63 +194,61 @@ Azure DocumentDB 通过将 SQL（结构化查询语言）用作 JSON 查询语�
 一个类似 `SELECT * FROM Families` 的查询指示整个家庭集合是要枚举的源。特殊标识符 ROOT 可以用来表示集合，而不使用集合名称来表示。以下列表包含每个查询需要强制执行的规则：
 
 - 集合可以使用别名，如 `SELECT f.id FROM Families AS f` 或只需为 `SELECT f.id FROM Families f`。这里的 `f` 等效于 `Families`。`AS` 是可选的关键字，用于为标识符取别名。
+- 请注意，一旦有了别名，则无法绑定原始的源。例如，由于再也无法解析标识符“Families”，因此 `SELECT Families.id FROM Families f` 在语法上无效。
+- 所有需要引用的属性都必须是完全限定的。在没有遵循严格架构的情况下，会强制性地执行这一点以避免任何不确定的绑定。因此，由于未绑定 `id` 属性，因此 `SELECT id FROM Families f` 在语法上无效。
 
--	请注意，一旦有了别名，则无法绑定原始的源。例如，由于再也无法解析标识符“Families”，因此 `SELECT Families.id FROM Families f` 在语法上无效。
-
--	所有需要引用的属性都必须是完全限定的。在没有遵循严格架构的情况下，会强制性地执行这一点以避免任何不确定的绑定。因此，由于未绑定 `id` 属性，因此 `SELECT id FROM Families f` 在语法上无效。
-	
 ### 子文档
 也可以将源缩小为更小的子集。例如，要在每个文档中仅枚举子树，则子根可能变成源，如下例所示。
 
 **查询**
 
-	SELECT * 
-	FROM Families.children
+    SELECT * 
+    FROM Families.children
 
 **结果**
 
-	[
-	  [
-	    {
-	        "firstName": "Henriette Thaulow",
-	        "gender": "female",
-	        "grade": 5,
-	        "pets": [
-	          {
-	              "givenName": "Fluffy"
-	          }
-	        ]
-	    }
-	  ],
-	  [
-	    {
-	        "familyName": "Merriam",
-	        "givenName": "Jesse",
-	        "gender": "female",
-	        "grade": 1
-	    },
-	    {
-	        "familyName": "Miller",
-	        "givenName": "Lisa",
-	        "gender": "female",
-	        "grade": 8
-	    }
-	  ]
-	]
+    [
+      [
+        {
+            "firstName": "Henriette Thaulow",
+            "gender": "female",
+            "grade": 5,
+            "pets": [
+              {
+                  "givenName": "Fluffy"
+              }
+            ]
+        }
+      ],
+      [
+        {
+            "familyName": "Merriam",
+            "givenName": "Jesse",
+            "gender": "female",
+            "grade": 1
+        },
+        {
+            "familyName": "Miller",
+            "givenName": "Lisa",
+            "gender": "female",
+            "grade": 8
+        }
+      ]
+    ]
 
 虽然上面的示例中使用数组作为源，但也可以使用对象作为源，如下例所示。在源中可以找到的任何有效的 JSON 值（不是未定义的）都将被视为包含在查询的结果中。如果一些家庭没有 `address.state` 值，则会将他们排除在查询结果之外。
 
 **查询**
 
-	SELECT * 
-	FROM Families.address.state
+    SELECT * 
+    FROM Families.address.state
 
 **结果**
 
-	[
-	  "WA", 
-	  "NY"
-	]
+    [
+      "WA", 
+      "NY"
+    ]
 
 
 
@@ -266,71 +259,73 @@ WHERE 子句（**`WHERE <filter_condition>`**）是可选的。它指定由源�
 
 **查询**
 
-	SELECT f.address
-	FROM Families f 
-	WHERE f.id = "AndersenFamily"
+    SELECT f.address
+    FROM Families f 
+    WHERE f.id = "AndersenFamily"
 
 **结果**
 
-	[{
-	  "address": {
-	    "state": "WA", 
-	    "county": "King", 
-	    "city": "seattle"
-	  }
-	}]
+    [{
+      "address": {
+        "state": "WA", 
+        "county": "King", 
+        "city": "seattle"
+      }
+    }]
 
 
 上面的示例演示了一个简单的等式查询。DocumentDB SQL 还支持各种标量表达式。最常使用的是二进制和一元表达式。来自源 JSON 对象的属性引用也是有效的表达式。
 
 当前支持以下二进制运算符，它们可在查询中使用，如下例所示：
+
 <table>
 <tr>
-<td>算术</td>	
+<td>算术</td>    
 <td>+,-,*,/,%</td>
 </tr>
 <tr>
-<td>位</td>	
-<td>|、&amp;、^、&lt;&lt;、>>、>>>（补零右移） </td>
+<td>位</td>    
+<td>|、&amp;、^、&lt;&lt;、>>、>>>（补零右移）</td>
 </tr>
 <tr>
 <td>逻辑</td>
 <td>AND、OR、NOT</td>
 </tr>
 <tr>
-<td>比较</td>	
+<td>比较</td>    
 <td>=、!=、&lt;、>、&lt;=、>=、&lt;></td>
 </tr>
 <tr>
-<td>字符串</td>	
+<td>字符串</td>    
 <td>||（连接）</td>
 </tr>
 </table>  
 
+
 让我们查看一些使用二进制运算符的查询。
 
-	SELECT * 
-	FROM Families.children[0] c
-	WHERE c.grade % 2 = 1     -- matching grades == 5, 1
-	
-	SELECT * 
-	FROM Families.children[0] c
-	WHERE c.grade ^ 4 = 1    -- matching grades == 5
-	
-	SELECT *
-	FROM Families.children[0] c
-	WHERE c.grade >= 5     -- matching grades == 5
+    SELECT * 
+    FROM Families.children[0] c
+    WHERE c.grade % 2 = 1     -- matching grades == 5, 1
+
+    SELECT * 
+    FROM Families.children[0] c
+    WHERE c.grade ^ 4 = 1    -- matching grades == 5
+
+    SELECT *
+    FROM Families.children[0] c
+    WHERE c.grade >= 5     -- matching grades == 5
 
 
 也支持一元运算符 +、-、~ 和 NOT，它们可在查询中使用，如下例所示：
 
-	SELECT *
-	FROM Families.children[0] c
-	WHERE NOT(c.grade = 5)  -- matching grades == 1
-	
-	SELECT *
-	FROM Families.children[0] c
-	WHERE (-c.grade = -5)  -- matching grades == 5
+    SELECT *
+    FROM Families.children[0] c
+    WHERE NOT(c.grade = 5)  -- matching grades == 1
+
+    SELECT *
+    FROM Families.children[0] c
+    WHERE (-c.grade = -5)  -- matching grades == 5
 
 
 
@@ -338,6 +333,7 @@ WHERE 子句（**`WHERE <filter_condition>`**）是可选的。它指定由源�
 
 ### 等式和比较运算符
 下表显示了 DocumentDB SQL 中任意两个 JSON 类型之间等式比较的结果。
+
 <table style = "width:300px">
    <tbody>
       <tr>
@@ -351,7 +347,7 @@ WHERE 子句（**`WHERE <filter_condition>`**）是可选的。它指定由源�
             <strong>Null</strong>
          </td>
          <td valign="top">
-            <strong>布尔</strong>
+            <strong>Boolean</strong>
          </td>
          <td valign="top">
             <strong>Number</strong>
@@ -360,7 +356,7 @@ WHERE 子句（**`WHERE <filter_condition>`**）是可选的。它指定由源�
             <strong>String</strong>
          </td>
          <td valign="top">
-            <strong>对象</strong>
+            <strong>Object</strong>
          </td>
          <td valign="top">
             <strong>Array</strong>
@@ -400,7 +396,7 @@ WHERE 子句（**`WHERE <filter_condition>`**）是可选的。它指定由源�
             Undefined
          </td>
          <td valign="top">
-            <strong>确定</strong>
+            <strong>OK</strong>
          </td>
          <td valign="top">
             Undefined
@@ -429,7 +425,7 @@ WHERE 子句（**`WHERE <filter_condition>`**）是可选的。它指定由源�
             Undefined
          </td>
          <td valign="top">
-            <strong>确定</strong>
+            <strong>OK</strong>
          </td>
          <td valign="top">
             Undefined
@@ -458,7 +454,7 @@ WHERE 子句（**`WHERE <filter_condition>`**）是可选的。它指定由源�
             Undefined
          </td>
          <td valign="top">
-            <strong>确定</strong>
+            <strong>OK</strong>
          </td>
          <td valign="top">
             Undefined
@@ -487,7 +483,7 @@ WHERE 子句（**`WHERE <filter_condition>`**）是可选的。它指定由源�
             Undefined
          </td>
          <td valign="top">
-            <strong>确定</strong>
+            <strong>OK</strong>
          </td>
          <td valign="top">
             Undefined
@@ -516,7 +512,7 @@ WHERE 子句（**`WHERE <filter_condition>`**）是可选的。它指定由源�
             Undefined
          </td>
          <td valign="top">
-            <strong>确定</strong>
+            <strong>OK</strong>
          </td>
          <td valign="top">
             Undefined
@@ -545,7 +541,7 @@ WHERE 子句（**`WHERE <filter_condition>`**）是可选的。它指定由源�
             Undefined
          </td>
          <td valign="top">
-            <strong>确定</strong>
+            <strong>OK</strong>
          </td>
       </tr>
    </tbody>
@@ -553,8 +549,8 @@ WHERE 子句（**`WHERE <filter_condition>`**）是可选的。它指定由源�
 
 对于其他比较运算符（如 >、>=、!=、< 和 <=），以下规则适用：
 
--	跨类型比较结果为 Undefined。
--	两个对象或两个数组之间比较结果为 Undefined。
+- 跨类型比较结果为 Undefined。
+- 两个对象或两个数组之间比较结果为 Undefined。
 
 如果筛选器中标量表达式的结果为 Undefined，则相应的文档不会包含在结果中，因为 Undefined 在逻辑上不等于“True”。
 
@@ -574,32 +570,32 @@ WHERE 子句（**`WHERE <filter_condition>`**）是可选的。它指定由源�
 
 了更快地执行查询，请记得创建索引策略，该策略对在 BETWEEN 子句中筛选的任何数值属性/路径使用范围索引类型。
 
-在 DocumentDB 与在 ANSI SQL 中使用 BETWEEN 的主要不同之处在于你可以对混合类型的属性执行快速范围查询 - 例如，你可以在某些文档中将“grade”设置为数字 (5)，并在其他文档中将其设置为字符串（“grade4”）。在这些情况下（如在 JavaScript 中），在两种不同类型之间进行比较的结果为“undefined”，将会跳过文档。
+在 DocumentDB 与 ANSI SQL 中使用 BETWEEN 的主要不同之处在于是否可以对混合类型的属性执行快速的范围查询 — 例如，在某些文档中将“grade”设置为数字 (5)，而在其他文档中将其设置为字符串（“grade4”）。在这些情况下（如在 JavaScript 中），在两种不同类型之间进行比较的结果为“undefined”，将会跳过文档。
 
 ### 逻辑（AND、OR 和 NOT）运算符
 逻辑运算符对布尔值进行运算。下表显示了这些运算符的逻辑真值表。
 
-或|True|False|Undefined
----|---|---|---
-True|True|True|True
-False|True|False|Undefined
-Undefined|True|Undefined|Undefined
+| 或 | True | False | Undefined |
+| --- | --- | --- | --- |
+| True |True |True |True |
+| False |True |False |Undefined |
+| Undefined |True |Undefined |Undefined |
 
-AND|True|False|Undefined
----|---|---|---
-True|True|False|Undefined
-False|False|False|False
-Undefined|Undefined|False|Undefined
+| AND | True | False | Undefined |
+| --- | --- | --- | --- |
+| True |True |False |Undefined |
+| False |False |False |False |
+| Undefined |Undefined |False |Undefined |
 
-NOT| |
----|---
-True|False
-False|True
-Undefined|Undefined
+| NOT | |
+| --- | --- |
+| True |False |
+| False |True |
+| Undefined |Undefined |
 
 ### IN 关键字
 IN 关键字可用于检查指定的值是否与列表中的任意值匹配。例如，此查询返回 ID 为“WakefieldFamily”或“AndersenFamily”的所有家庭文档。
- 
+
     SELECT *
     FROM Families 
     WHERE Families.id IN ('AndersenFamily', 'WakefieldFamily')
@@ -614,12 +610,12 @@ IN 关键字可用于检查指定的值是否与列表中的任意值匹配。�
 三元和联合运算符可以用于生成条件表达式，类似于常用的编程语言（如 C# 和 JavaScript）。
 
 当动态构建新的 JSON 属性时，使用三元 (?) 运算符会非常方便。例如，现在你可以写入查询以将类级别（初学者/中级/高级）分类到用户可读的表单中，如下面所示。
- 
+
      SELECT (c.grade < 5)? "elementary": "other" AS gradeLevel 
      FROM Families.children[0] c
 
 你也可以将调用嵌套到运算符，如以下查询中所示。
- 
+
     SELECT (c.grade < 5)? "elementary": ((c.grade < 9)? "junior": "high")  AS gradeLevel 
     FROM Families.children[0] c
 
@@ -645,19 +641,19 @@ SELECT 子句 (**`SELECT <select_list>`**) 是强制性的，用于指定要从�
 
 **查询**
 
-	SELECT f.address
-	FROM Families f 
-	WHERE f.id = "AndersenFamily"
+    SELECT f.address
+    FROM Families f 
+    WHERE f.id = "AndersenFamily"
 
 **结果**
 
-	[{
-	  "address": {
-	    "state": "WA", 
-	    "county": "King", 
-	    "city": "seattle"
-	  }
-	}]
+    [{
+      "address": {
+        "state": "WA", 
+        "county": "King", 
+        "city": "seattle"
+      }
+    }]
 
 
 ### 嵌套属性
@@ -665,57 +661,57 @@ SELECT 子句 (**`SELECT <select_list>`**) 是强制性的，用于指定要从�
 
 **查询**
 
-	SELECT f.address.state, f.address.city
-	FROM Families f 
-	WHERE f.id = "AndersenFamily"
+    SELECT f.address.state, f.address.city
+    FROM Families f 
+    WHERE f.id = "AndersenFamily"
 
 **结果**
 
-	[{
-	  "state": "WA", 
-	  "city": "seattle"
-	}]
+    [{
+      "state": "WA", 
+      "city": "seattle"
+    }]
 
 
 投影也支持 JSON 表达式，如下例所示。
 
 **查询**
 
-	SELECT { "state": f.address.state, "city": f.address.city, "name": f.id }
-	FROM Families f 
-	WHERE f.id = "AndersenFamily"
+    SELECT { "state": f.address.state, "city": f.address.city, "name": f.id }
+    FROM Families f 
+    WHERE f.id = "AndersenFamily"
 
 **结果**
 
-	[{
-	  "$1": {
-	    "state": "WA", 
-	    "city": "seattle", 
-	    "name": "AndersenFamily"
-	  }
-	}]
+    [{
+      "$1": {
+        "state": "WA", 
+        "city": "seattle", 
+        "name": "AndersenFamily"
+      }
+    }]
 
 
 让我们看看此处的 `$1` 角色。`SELECT` 子句需要创建 JSON 对象，并且由于没有提供任何密钥，因此我们使用以 `$1` 开头的隐式参数变量名。例如，此查询返回了两个隐式参数变量，标为 `$1` 和 `$2`。
 
 **查询**
 
-	SELECT { "state": f.address.state, "city": f.address.city }, 
-	       { "name": f.id }
-	FROM Families f 
-	WHERE f.id = "AndersenFamily"
+    SELECT { "state": f.address.state, "city": f.address.city }, 
+           { "name": f.id }
+    FROM Families f 
+    WHERE f.id = "AndersenFamily"
 
 **结果**
 
-	[{
-	  "$1": {
-	    "state": "WA", 
-	    "city": "seattle"
-	  }, 
-	  "$2": {
-	    "name": "AndersenFamily"
-	  }
-	}]
+    [{
+      "$1": {
+        "state": "WA", 
+        "city": "seattle"
+      }, 
+      "$2": {
+        "name": "AndersenFamily"
+      }
+    }]
 
 
 ### 别名
@@ -725,23 +721,23 @@ SELECT 子句 (**`SELECT <select_list>`**) 是强制性的，用于指定要从�
 
 **查询**
 
-	SELECT 
-	       { "state": f.address.state, "city": f.address.city } AS AddressInfo, 
-	       { "name": f.id } NameInfo
-	FROM Families f 
-	WHERE f.id = "AndersenFamily"
+    SELECT 
+           { "state": f.address.state, "city": f.address.city } AS AddressInfo, 
+           { "name": f.id } NameInfo
+    FROM Families f 
+    WHERE f.id = "AndersenFamily"
 
 **结果**
 
-	[{
-	  "AddressInfo": {
-	    "state": "WA", 
-	    "city": "seattle"
-	  }, 
-	  "NameInfo": {
-	    "name": "AndersenFamily"
-	  }
-	}]
+    [{
+      "AddressInfo": {
+        "state": "WA", 
+        "city": "seattle"
+      }, 
+      "NameInfo": {
+        "name": "AndersenFamily"
+      }
+    }]
 
 
 ### 标量表达式
@@ -749,45 +745,45 @@ SELECT 子句 (**`SELECT <select_list>`**) 是强制性的，用于指定要从�
 
 **查询**
 
-	SELECT "Hello World"
+    SELECT "Hello World"
 
 **结果**
 
-	[{
-	  "$1": "Hello World"
-	}]
+    [{
+      "$1": "Hello World"
+    }]
 
 
 以下是一个使用标量表达式的更复杂的示例。
 
 **查询**
 
-	SELECT ((2 + 11 % 7)-2)/3	
+    SELECT ((2 + 11 % 7)-2)/3    
 
 **结果**
 
-	[{
-	  "$1": 1.33333
-	}]
+    [{
+      "$1": 1.33333
+    }]
 
 
 在下面的示例中，标量表达式的结果是布尔。
 
 **查询**
 
-	SELECT f.address.city = f.address.state AS AreFromSameCityState
-	FROM Families f	
+    SELECT f.address.city = f.address.state AS AreFromSameCityState
+    FROM Families f    
 
 **结果**
 
-	[
-	  {
-	    "AreFromSameCityState": false
-	  }, 
-	  {
-	    "AreFromSameCityState": true
-	  }
-	]
+    [
+      {
+        "AreFromSameCityState": false
+      }, 
+      {
+        "AreFromSameCityState": true
+      }
+    ]
 
 
 ### 对象和数组创建
@@ -795,134 +791,132 @@ DocumentDB SQL 的另一个重要功能是数组/对象创建。请注意，在�
 
 **查询**
 
-	SELECT [f.address.city, f.address.state] AS CityState 
-	FROM Families f	
+    SELECT [f.address.city, f.address.state] AS CityState 
+    FROM Families f    
 
 **结果**
 
-	[
-	  {
-	    "CityState": [
-	      "seattle", 
-	      "WA"
-	    ]
-	  }, 
-	  {
-	    "CityState": [
-	      "NY", 
-	      "NY"
-	    ]
-	  }
-	]
+    [
+      {
+        "CityState": [
+          "seattle", 
+          "WA"
+        ]
+      }, 
+      {
+        "CityState": [
+          "NY", 
+          "NY"
+        ]
+      }
+    ]
 
 ### VALUE 关键字
 **VALUE** 关键字提供一种返回 JSON 值的方法。例如，下面所示的查询返回标量 `"Hello World"`，而不是 `{$1: "Hello World"}`。
 
 **查询**
 
-	SELECT VALUE "Hello World"
+    SELECT VALUE "Hello World"
 
 **结果**
 
-	[
-	  "Hello World"
-	]
+    [
+      "Hello World"
+    ]
 
 
 下面的查询在结果中返回不带 `"address"` 标签的 JSON 值。
 
 **查询**
 
-	SELECT VALUE f.address
-	FROM Families f	
+    SELECT VALUE f.address
+    FROM Families f    
 
 **结果**
 
-	[
-	  {
-	    "state": "WA", 
-	    "county": "King", 
-	    "city": "seattle"
-	  }, 
-	  {
-	    "state": "NY", 
-	    "county": "Manhattan", 
-	    "city": "NY"
-	  }
-	]
+    [
+      {
+        "state": "WA", 
+        "county": "King", 
+        "city": "seattle"
+      }, 
+      {
+        "state": "NY", 
+        "county": "Manhattan", 
+        "city": "NY"
+      }
+    ]
 
 下面的示例对此进行了扩展，以演示如何返回 JSON 基元值（JSON 树的叶级别）。
 
 **查询**
 
-	SELECT VALUE f.address.state
-	FROM Families f	
+    SELECT VALUE f.address.state
+    FROM Families f    
 
 **结果**
 
-	[
-	  "WA",
-	  "NY"
-	]
+    [
+      "WA",
+      "NY"
+    ]
 
 
-###*运算符：
-支持使用特殊运算符 (*) 按原样投影文档。在使用时，它必须仅为投影的字段。当类似 `SELECT * FROM Families f` 的查询有效时，`SELECT VALUE * FROM Families f ` 和 `SELECT *, f.id FROM Families f ` 无效。
+### *运算符：支持使用特殊运算符 (*) 按原样投影文档。在使用时，它必须仅为投影的字段。当类似 `SELECT * FROM Families f` 的查询有效时，`SELECT VALUE * FROM Families f ` 和 `SELECT *, f.id FROM Families f ` 无效。
 
 **查询**
 
-	SELECT * 
-	FROM Families f 
-	WHERE f.id = "AndersenFamily"
+    SELECT * 
+    FROM Families f 
+    WHERE f.id = "AndersenFamily"
 
 **结果**
 
-	[{
-	    "id": "AndersenFamily",
-	    "lastName": "Andersen",
-	    "parents": [
-	       { "firstName": "Thomas" },
-	       { "firstName": "Mary Kay"}
-	    ],
-	    "children": [
-	       {
-	           "firstName": "Henriette Thaulow", "gender": "female", "grade": 5,
-	           "pets": [{ "givenName": "Fluffy" }]
-	       }
-	    ],
-	    "address": { "state": "WA", "county": "King", "city": "seattle" },
-	    "creationDate": 1431620472,
-	    "isRegistered": true
-	}]
+    [{
+        "id": "AndersenFamily",
+        "lastName": "Andersen",
+        "parents": [
+           { "firstName": "Thomas" },
+           { "firstName": "Mary Kay"}
+        ],
+        "children": [
+           {
+               "firstName": "Henriette Thaulow", "gender": "female", "grade": 5,
+               "pets": [{ "givenName": "Fluffy" }]
+           }
+        ],
+        "address": { "state": "WA", "county": "King", "city": "seattle" },
+        "creationDate": 1431620472,
+        "isRegistered": true
+    }]
 
-###TOP 运算符
+### TOP 运算符
 TOP 关键字可用于限制来自查询中的值的数量。当 TOP 与 ORDER BY 子句配合使用时，结果集被限制为有序值的前 N 个数；否则，它会返回未定义排序的结果中的前 N 数。在 SELECT 语句中，最佳做法始终使用带有 TOP 子句的 ORDER BY 子句。这是可预测指示受 TOP 影响的行的唯一方法。
 
-
 **查询**
 
-	SELECT TOP 1 * 
-	FROM Families f 
+    SELECT TOP 1 * 
+    FROM Families f 
 
 **结果**
 
-	[{
-	    "id": "AndersenFamily",
-	    "lastName": "Andersen",
-	    "parents": [
-	       { "firstName": "Thomas" },
-	       { "firstName": "Mary Kay"}
-	    ],
-	    "children": [
-	       {
-	           "firstName": "Henriette Thaulow", "gender": "female", "grade": 5,
-	           "pets": [{ "givenName": "Fluffy" }]
-	       }
-	    ],
-	    "address": { "state": "WA", "county": "King", "city": "seattle" },
-	    "creationDate": 1431620472,
-	    "isRegistered": true
-	}]
+    [{
+        "id": "AndersenFamily",
+        "lastName": "Andersen",
+        "parents": [
+           { "firstName": "Thomas" },
+           { "firstName": "Mary Kay"}
+        ],
+        "children": [
+           {
+               "firstName": "Henriette Thaulow", "gender": "female", "grade": 5,
+               "pets": [{ "givenName": "Fluffy" }]
+           }
+        ],
+        "address": { "state": "WA", "county": "King", "city": "seattle" },
+        "creationDate": 1431620472,
+        "isRegistered": true
+    }]
 
 可将 TOP 与常量值（如以上所示）或使用参数化查询的变量值配合使用。有关更多详细信息，请参阅下面的参数化查询。
 
@@ -933,123 +927,123 @@ TOP 关键字可用于限制来自查询中的值的数量。当 TOP 与 ORDER B
 
 **查询**
 
-	SELECT f.id, f.address.city
-	FROM Families f 
-	ORDER BY f.address.city
-	
+    SELECT f.id, f.address.city
+    FROM Families f 
+    ORDER BY f.address.city
+
 **结果**
-	
-	[
-	  {
-	    "id": "WakefieldFamily",
-	    "city": "NY"
-	  },
-	  {
-	    "id": "AndersenFamily",
-	    "city": "Seattle"	
-	  }
-	]
+
+    [
+      {
+        "id": "WakefieldFamily",
+        "city": "NY"
+      },
+      {
+        "id": "AndersenFamily",
+        "city": "Seattle"    
+      }
+    ]
 
 下面的查询按创建日期检索家庭，该创建日期存储为表示纪元时间的数字，即，自 1970 年 1 月 1 日起经过的时间（秒）。
 
 **查询**
 
-	SELECT f.id, f.creationDate
-	FROM Families f 
-	ORDER BY f.creationDate DESC
-	
+    SELECT f.id, f.creationDate
+    FROM Families f 
+    ORDER BY f.creationDate DESC
+
 **结果**
-	
-	[
-	  {
-	    "id": "WakefieldFamily",
-	    "creationDate": 1431620462
-	  },
-	  {
-	    "id": "AndersenFamily",
-	    "creationDate": 1431620472	
-	  }
-	]
-	
+
+    [
+      {
+        "id": "WakefieldFamily",
+        "creationDate": 1431620462
+      },
+      {
+        "id": "AndersenFamily",
+        "creationDate": 1431620472    
+      }
+    ]
+
 ## 高级数据库概念和 SQL 查询
 ### 迭代
 在 DocumentDB SQL 中通过 **IN** 关键字添加了一个新的构造，以便为遍历 JSON 数组提供支持。FROM 源为迭代提供支持。让我们从下面的示例开始：
 
 **查询**
 
-	SELECT * 
-	FROM Families.children
+    SELECT * 
+    FROM Families.children
 
 **结果**
 
-	[
-	  [
-	    {
-	      "firstName": "Henriette Thaulow", 
-	      "gender": "female", 
-	      "grade": 5, 
-	      "pets": [{ "givenName": "Fluffy"}]
-	    }
-	  ], 
-	  [
-	    {
-	        "familyName": "Merriam", 
-	        "givenName": "Jesse", 
-	        "gender": "female", 
-	        "grade": 1
-	    }, 
-	    {
-	        "familyName": "Miller", 
-	        "givenName": "Lisa", 
-	        "gender": "female", 
-	        "grade": 8
-	    }
-	  ]
-	]
+    [
+      [
+        {
+          "firstName": "Henriette Thaulow", 
+          "gender": "female", 
+          "grade": 5, 
+          "pets": [{ "givenName": "Fluffy"}]
+        }
+      ], 
+      [
+        {
+            "familyName": "Merriam", 
+            "givenName": "Jesse", 
+            "gender": "female", 
+            "grade": 1
+        }, 
+        {
+            "familyName": "Miller", 
+            "givenName": "Lisa", 
+            "gender": "female", 
+            "grade": 8
+        }
+      ]
+    ]
 
 现在，让我们来看看对集合中的子女执行遍历的另一个查询。请注意输出数组中的差异。此示例拆分 `children` 并将结果合并为一个数组。
 
 **查询**
 
-	SELECT * 
-	FROM c IN Families.children
+    SELECT * 
+    FROM c IN Families.children
 
 **结果**
 
-	[
-	  {
-	      "firstName": "Henriette Thaulow",
-	      "gender": "female",
-	      "grade": 5,
-	      "pets": [{ "givenName": "Fluffy" }]
-	  },
-	  {
-	      "familyName": "Merriam",
-	      "givenName": "Jesse",
-	      "gender": "female",
-	      "grade": 1
-	  },
-	  {
-	      "familyName": "Miller",
-	      "givenName": "Lisa",
-	      "gender": "female",
-	      "grade": 8
-	  }
-	]
+    [
+      {
+          "firstName": "Henriette Thaulow",
+          "gender": "female",
+          "grade": 5,
+          "pets": [{ "givenName": "Fluffy" }]
+      },
+      {
+          "familyName": "Merriam",
+          "givenName": "Jesse",
+          "gender": "female",
+          "grade": 1
+      },
+      {
+          "familyName": "Miller",
+          "givenName": "Lisa",
+          "gender": "female",
+          "grade": 8
+      }
+    ]
 
 这可用于对数组的单个实体执行进一步筛选，如下例所示。
 
 **查询**
 
-	SELECT c.givenName
-	FROM c IN Families.children
-	WHERE c.grade = 8
+    SELECT c.givenName
+    FROM c IN Families.children
+    WHERE c.grade = 8
 
 **结果**
 
-	[{
-	  "givenName": "Lisa"
-	}]
+    [{
+      "givenName": "Lisa"
+    }]
 
 ### 联接
 在关系数据库中，跨表联接的要求是非常重要的。设计规范化的架构是一项逻辑要求。与此相反，DocumentDB 则处理无架构文档的非规范化数据模型。这在逻辑上等效于“自联接”。
@@ -1060,65 +1054,65 @@ TOP 关键字可用于限制来自查询中的值的数量。当 TOP 与 ORDER B
 
 **查询**
 
-	SELECT f.id
-	FROM Families f
-	JOIN f.NonExistent
+    SELECT f.id
+    FROM Families f
+    JOIN f.NonExistent
 
 **结果**
 
-	[{
-	}]
+    [{
+    }]
 
 
 在下面的示例中，联接位于文档根和 `children` 子根之间。这是两个 JSON 对象之间的叉积。子女是一个数组的事实在 JOIN 中无效，因为我们正在处理的是子女数组的单一根。因此，由于每个带有数组的文档的叉积仅生成一个文档，因此结果仅包含两个结果。
 
 **查询**
 
-	SELECT f.id
-	FROM Families f
-	JOIN f.children
- 
+    SELECT f.id
+    FROM Families f
+    JOIN f.children
+
 **结果**
 
-	[
-	  {
-	    "id": "AndersenFamily"
-	  }, 
-	  {
-	    "id": "WakefieldFamily"
-	  }
-	]
+    [
+      {
+        "id": "AndersenFamily"
+      }, 
+      {
+        "id": "WakefieldFamily"
+      }
+    ]
 
 
 下面的示例演示了更传统的联接：
 
 **查询**
 
-	SELECT f.id
-	FROM Families f
-	JOIN c IN f.children 
+    SELECT f.id
+    FROM Families f
+    JOIN c IN f.children 
 
 **结果**
 
-	[
-	  {
-	    "id": "AndersenFamily"
-	  }, 
-	  {
-	    "id": "WakefieldFamily"
-	  }, 
-	  {
-	    "id": "WakefieldFamily"
-	  }
-	]
+    [
+      {
+        "id": "AndersenFamily"
+      }, 
+      {
+        "id": "WakefieldFamily"
+      }, 
+      {
+        "id": "WakefieldFamily"
+      }
+    ]
 
 
 
 首先要注意的是 **JOIN** 子句的 `from_source` 是迭代器。因此，在此示例中的流程如下：
 
--	在数组中扩展每个子元素 **c**。
--	应用具有文档 **f** 的根的叉积，这些文档具有已在第一步中合并的每个子元素 **c**。
--	最后，单独投影根对象 **f** 名称属性。
+- 在数组中扩展每个子元素 **c**。
+- 应用具有文档 **f** 的根的叉积，这些文档具有已在第一步中合并的每个子元素 **c**。
+- 最后，单独投影根对象 **f** 名称属性。
 
 第一个文档 (`AndersenFamily`) 仅包含一个子元素，因此结果集仅包含与此文档对应的单个对象。第二个文档 (`WakefieldFamily`) 包含两个子元素。因此，叉积会为每个子女生成单独的对象，从而产生两个对象，每个对象分别与此文档对应。请注意，这两个文档中的根字段将会是相同的，就如你在叉积中所预期的一样。
 
@@ -1126,52 +1120,52 @@ JOIN 真正实用的地方通过以其他方式难以投影的形式基于叉积
 
 **查询**
 
-	SELECT 
-		f.id AS familyName,
-		c.givenName AS childGivenName,
-		c.firstName AS childFirstName,
-		p.givenName AS petName 
-	FROM Families f 
-	JOIN c IN f.children 
-	JOIN p IN c.pets
- 
+    SELECT 
+        f.id AS familyName,
+        c.givenName AS childGivenName,
+        c.firstName AS childFirstName,
+        p.givenName AS petName 
+    FROM Families f 
+    JOIN c IN f.children 
+    JOIN p IN c.pets
+
 **结果**
 
-	[
-	  {
-	    "familyName": "AndersenFamily", 
-	    "childFirstName": "Henriette Thaulow", 
-	    "petName": "Fluffy"
-	  }, 
-	  {
-	    "familyName": "WakefieldFamily", 
-	    "childGivenName": "Jesse", 
-	    "petName": "Goofy"
-	  }, 
-	  {
-	   "familyName": "WakefieldFamily", 
-	   "childGivenName": "Jesse", 
-	   "petName": "Shadow"
-	  }
-	]
+    [
+      {
+        "familyName": "AndersenFamily", 
+        "childFirstName": "Henriette Thaulow", 
+        "petName": "Fluffy"
+      }, 
+      {
+        "familyName": "WakefieldFamily", 
+        "childGivenName": "Jesse", 
+        "petName": "Goofy"
+      }, 
+      {
+       "familyName": "WakefieldFamily", 
+       "childGivenName": "Jesse", 
+       "petName": "Shadow"
+      }
+    ]
 
 
 
 此示例是前面示例的自然扩展，且执行双联接。因此，可将叉积视为下面的伪代码。
 
-	for-each(Family f in Families)
-	{	
-		for-each(Child c in f.children)
-		{
-			for-each(Pet p in c.pets)
-			{
-				return (Tuple(f.id AS familyName, 
-	              c.givenName AS childGivenName, 
-	              c.firstName AS childFirstName,
-	              p.givenName AS petName));
-			}
-		}
-	}
+    for-each(Family f in Families)
+    {    
+        for-each(Child c in f.children)
+        {
+            for-each(Pet p in c.pets)
+            {
+                return (Tuple(f.id AS familyName, 
+                  c.givenName AS childGivenName, 
+                  c.firstName AS childFirstName,
+                  p.givenName AS petName));
+            }
+        }
+    }
 
 `AndersenFamily` 有一个拥有一只宠物的孩子。因此，叉积从此家庭中生成一行 (1*1*1)。尽管 WakefieldFamily 有两个孩子，但只有一个孩子“Jesse”拥有宠物。Jesse 拥有 2 只宠物。因此叉积从此家庭中生成 1*1*2 = 2 行。
 
@@ -1179,55 +1173,53 @@ JOIN 真正实用的地方通过以其他方式难以投影的形式基于叉积
 
 **查询**
 
-	SELECT 
-		f.id AS familyName,
-		c.givenName AS childGivenName,
-		c.firstName AS childFirstName,
-		p.givenName AS petName 
-	FROM Families f 
-	JOIN c IN f.children 
-	JOIN p IN c.pets
-	WHERE p.givenName = "Shadow"
+    SELECT 
+        f.id AS familyName,
+        c.givenName AS childGivenName,
+        c.firstName AS childFirstName,
+        p.givenName AS petName 
+    FROM Families f 
+    JOIN c IN f.children 
+    JOIN p IN c.pets
+    WHERE p.givenName = "Shadow"
 
 **结果**
 
-	[
-	  {
-	   "familyName": "WakefieldFamily", 
-	   "childGivenName": "Jesse", 
-	   "petName": "Shadow"
-	  }
-	]
+    [
+      {
+       "familyName": "WakefieldFamily", 
+       "childGivenName": "Jesse", 
+       "petName": "Shadow"
+      }
+    ]
 
 
 ## JavaScript 集成
 DocumentDB 根据存储过程和触发器，为对集合直接执行基于 JavaScript 的应用程序逻辑提供编程模型。这允许以下两种情况：
 
--	借助直接在数据库引擎内深度集成 JavaScript 运行时，能够对集合中的文档执行高性能事务性 CRUD 操作和查询。
--	控制流、变量范围和分配的自然建模和将异常处理基元与数据库事务集成。有关 DocumentDB 对 JavaScript 集成的支持的更多详细信息，请参阅《JavaScript 服务器端可编程性》文档。
+- 借助直接在数据库引擎内深度集成 JavaScript 运行时，能够对集合中的文档执行高性能事务性 CRUD 操作和查询。
+- 控制流、变量范围和分配的自然建模和将异常处理基元与数据库事务集成。有关 DocumentDB 对 JavaScript 集成的支持的更多详细信息，请参阅《JavaScript 服务器端可编程性》文档。
 
-###用户定义的函数 (UDF)
+### 用户定义的函数 (UDF)
 除了本文中已定义的类型外，DocumentDB SQL 也对用户定义的函数 (UDF) 提供支持。具体而言，支持标量 UDF，开发人员可在其中传入零个或许多参数并返回单个参数结果。检查每个参数是否是合法的 JSON 值。
 
 扩展 DocumentDB SQL 语法以支持使用这些用户定义的函数的自定义应用程序逻辑。可使用 DocumentDB 注册 UDF，然后作为 SQL 查询的一部分引用这些函数。事实上，UDF 经过精心设计，可由查询调用。作为此选择的必然结果，UDF 不能访问其他 JavaScript 类型（存储过程和触发器）所拥有的上下文对象。由于查询以只读方式执行，因此它们可以在主要或次要副本上运行。因此，UDF 设计为在次要副本上运行，这与其他 JavaScript 类型不同。
 
 以下是如何在 DocumentDB 数据库中（特别是在文档集合下）注册 UDF 的示例。
 
-   
-	   UserDefinedFunction regexMatchUdf = new UserDefinedFunction
-	   {
-	       Id = "REGEX_MATCH",
-	       Body = @"function (input, pattern) { 
-	                   return input.match(pattern) !== null;
-	               };",
-	   };
-	   
-	   UserDefinedFunction createdUdf = client.CreateUserDefinedFunctionAsync(
-	       UriFactory.CreateDocumentCollectionUri("testdb", "families"), 
-	       regexMatchUdf).Result;  
-                                                                             
-之前的示例创建了名称为 `REGEX_MATCH` 的 UDF。它接受两个 JSON 字符串值 `input` 和 `pattern`，并且使用 JavaScript 的 string.match() 函数检查第一个值是否与第二个值中指定的模式匹配。
+       UserDefinedFunction regexMatchUdf = new UserDefinedFunction
+       {
+           Id = "REGEX_MATCH",
+           Body = @"function (input, pattern) { 
+                       return input.match(pattern) !== null;
+                   };",
+       };
 
+       UserDefinedFunction createdUdf = client.CreateUserDefinedFunctionAsync(
+           UriFactory.CreateDocumentCollectionUri("testdb", "families"), 
+           regexMatchUdf).Result;  
+
+之前的示例创建了名称为 `REGEX_MATCH` 的 UDF。它接受两个 JSON 字符串值 `input` 和 `pattern`，并且使用 JavaScript 的 string.match() 函数检查第一个值是否与第二个值中指定的模式匹配。
 
 现在，我们可以在投影中的查询中使用此 UDF。在从查询内调用时，必须用区分大小写的前缀“udf.”限定 UDF。
 
@@ -1235,80 +1227,80 @@ DocumentDB 根据存储过程和触发器，为对集合直接执行基于 JavaS
 
 **查询**
 
-	SELECT udf.REGEX_MATCH(Families.address.city, ".*eattle")
-	FROM Families
+    SELECT udf.REGEX_MATCH(Families.address.city, ".*eattle")
+    FROM Families
 
 **结果**
 
-	[
-	  {
-	    "$1": true
-	  }, 
-	  {
-	    "$1": false
-	  }
-	]
+    [
+      {
+        "$1": true
+      }, 
+      {
+        "$1": false
+      }
+    ]
 
 也可在 UDF 中使用筛选器，这同样要使用“udf.”前缀进行限定，如下例所示：
 
 **查询**
 
-	SELECT Families.id, Families.address.city
-	FROM Families
-	WHERE udf.REGEX_MATCH(Families.address.city, ".*eattle")
+    SELECT Families.id, Families.address.city
+    FROM Families
+    WHERE udf.REGEX_MATCH(Families.address.city, ".*eattle")
 
 **结果**
 
-	[{
-	    "id": "AndersenFamily",
-	    "city": "Seattle"
-	}]
+    [{
+        "id": "AndersenFamily",
+        "city": "Seattle"
+    }]
 
 
 从本质上来说，UDF 是有效的标量表达式且可在投影和筛选器中使用。
 
 要扩展 UDF 的功能，让我们看看有关使用条件逻辑的一个示例：
 
-	   UserDefinedFunction seaLevelUdf = new UserDefinedFunction()
-	   {
-	       Id = "SEALEVEL",
-	       Body = @"function(city) {
-	       		switch (city) {
-	       		    case 'seattle':
-	       		        return 520;
-	       		    case 'NY':
-	       		        return 410;
-	       		    case 'Chicago':
-	       		        return 673;
-	       		    default:
-	       		        return -1;
-	                }"
+       UserDefinedFunction seaLevelUdf = new UserDefinedFunction()
+       {
+           Id = "SEALEVEL",
+           Body = @"function(city) {
+                   switch (city) {
+                       case 'seattle':
+                           return 520;
+                       case 'NY':
+                           return 410;
+                       case 'Chicago':
+                           return 673;
+                       default:
+                           return -1;
+                    }"
             };
 
             UserDefinedFunction createdUdf = await client.CreateUserDefinedFunctionAsync(
                 UriFactory.CreateDocumentCollectionUri("testdb", "families"), 
                 seaLevelUdf);
-	
-	
+
+
 以下是使用 UDF 的一个示例。
 
 **查询**
 
-	SELECT f.address.city, udf.SEALEVEL(f.address.city) AS seaLevel
-	FROM Families f	
+    SELECT f.address.city, udf.SEALEVEL(f.address.city) AS seaLevel
+    FROM Families f    
 
 **结果**
 
-	 [
-	  {
-	    "city": "seattle", 
-	    "seaLevel": 520
-	  }, 
-	  {
-	    "city": "NY", 
-	    "seaLevel": 410
-	  }
-	]
+     [
+      {
+        "city": "seattle", 
+        "seaLevel": 520
+      }, 
+      {
+        "city": "NY", 
+        "seaLevel": 410
+      }
+    ]
 
 
 如之前的示例所的，UDF 使用 DocumentDB SQL 集成 JavaScript 语言的功能以通过丰富的可编程接口执行复杂的过程，并在内置 JavaScript 运行时功能的帮助下，执行条件逻辑。
@@ -1354,137 +1346,48 @@ DocumentDB 支持使用带有常用的 @ 表示法的参数进行查询。参数
 
 参数值可以为任何有效的 JSON（字符串、数字、布尔、null，甚至是数组或嵌套的 JSON）。此外，由于 DocumentDB 是无架构的，因此未针对任何类型对参数进行验证。
 
-##内置函数
+## 内置函数
 DocumentDB 还支持使用许多内置函数进行常见操作，这些函数可以在查询（如用户定义的函数 (UDF)）中使用。
 
-<table>
-<tr>
-<td>数学函数</td>	
-<td>ABS、CEILING、EXP、FLOOR、LOG、LOG10、POWER、ROUND、SIGN、SQRT、SQUARE、TRUNC、ACOS、ASIN、ATAN、ATN2、COS、COT、DEGREES、PI、RADIANS、SIN 和 TAN</td>
-</tr>
-<tr>
-<td>类型检查函数</td>	
-<td>IS_ARRAY、IS_BOOL、IS_NULL、IS_NUMBER、IS_OBJECT、IS_STRING、IS_DEFINED 和 IS_PRIMITIVE</td>
-</tr>
-<tr>
-<td>字符串函数</td>	
-<td>CONCAT、CONTAINS、ENDSWITH、INDEX_OF、LEFT、LENGTH、LOWER、LTRIM、REPLACE、REPLICATE、REVERSE、RIGHT、RTRIM、STARTSWITH、SUBSTRING 和 UPPER</td>
-</tr>
-<tr>
-<td>数组函数</td>	
-<td>ARRAY_CONCAT、ARRAY_CONTAINS、ARRAY_LENGTH 和 ARRAY_SLICE</td>
-</tr>
-<tr>
-<td>空间函数</td>	
-<td>ST_DISTANCE、ST_WITHIN、ST_ISVALID 和 ST_ISVALIDDETAILED</td>
-</tr>
-</table>  
+| 函数组 | 操作 |
+|-------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|
+| 数学函数 | ABS、CEILING、EXP、FLOOR、LOG、LOG10、POWER、ROUND、SIGN、SQRT、SQUARE、TRUNC、ACOS、ASIN、ATAN、ATN2、COS、COT、DEGREES、PI、RADIANS、SIN 和 TAN |
+| 类型检查函数 | IS\_ARRAY、IS\_BOOL、IS\_NULL、IS\_NUMBER、IS\_OBJECT、IS\_STRING、IS\_DEFINED 和 IS\_PRIMITIVE |
+| 字符串函数 | CONCAT、CONTAINS、ENDSWITH、INDEX\_OF、LEFT、LENGTH、LOWER、LTRIM、REPLACE、REPLICATE、REVERSE、RIGHT、RTRIM、STARTSWITH、SUBSTRING 和 UPPER |
+| 数组函数 | ARRAY\_CONCAT、ARRAY\_CONTAINS、ARRAY\_LENGTH 和 ARRAY\_SLICE |
+| 空间函数 | ST\_DISTANCE、ST\_WITHIN、ST\_INTERSECTS、ST\_ISVALID 和 ST\_ISVALIDDETAILED | 
 
 如果你当前正使用内置函数适用的用户定义的函数 (UDF)，那么应使用相应的内置函数，因为它会更快更有效地运行。
 
 ### 数学函数
 每个数学函数均执行一个计算，通常基于作为参数提供的输出值，并返回数值。以下是受支持的内置数学函数表。
 
-<table>
-<tr>
-<td><strong>使用情况</strong></td>
-<td><strong>说明</strong></td>
-</tr>
-<tr>
-<td><a href="https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_abs">ABS (num_expr)</a></td>	
-<td>返回指定数值表达式的绝对（正）值。</td>
-</tr>
-<tr>
-<td><a href="https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_ceiling">CEILING (num_expr)</a></td>	
-<td>返回大于或等于指定数值表达式的最小整数值。</td>
-</tr>
-<tr>
-<td><a href="https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_floor">FLOOR (num_expr)</a></td>	
-<td>返回小于或等于指定数值表达式的最大整数。</td>
-</tr>
-<tr>
-<td><a href="https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_exp">EXP (num_expr)</a></td>	
-<td>返回指定数值表达式的指数。</td>
-</tr>
-<tr>
-<td><a href="https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_log">LOG (num_expr [,base])</a></td>	
-<td>返回指定数值表达式的自然对数，或使用指定底数的对数</td>
-</tr>
-<tr>
-<td><a href="https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_log10">LOG10 (num_expr)</a></td>	
-<td>返回指定数值表达式以 10 为底的对数值。</td>
-</tr>
-<tr>
-<td><a href="https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_round">ROUND (num_expr)</a></td>	
-<td>返回一个数值，四舍五入到最接近的整数值。</td>
-</tr>
-<tr>
-<td><a href="https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_trunc">TRUNC (num_expr)</a></td>	
-<td>返回一个数值，截断到最接近的整数值。</td>
-</tr>
-<tr>
-<td><a href="https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_sqrt">SQRT (num_expr)</a></td>	
-<td>返回指定数值表达式的平方根。</td>
-</tr>
-<tr>
-<td><a href="https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_square">SQUARE (num_expr)</a></td>	
-<td>返回指定数值表达式的平方。</td>
-</tr>
-<tr>
-<td><a href="https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_power">POWER (num_expr, num_expr)</a></td>	
-<td>返回指定数值表达式相对指定值的幂。</td>
-</tr>
-<tr>
-<td><a href="https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_sign">SIGN (num_expr)</a></td>	
-<td>返回指定数值表达式的符号值 (-1, 0, 1)。</td>
-</tr>
-<tr>
-<tr>
-<td><a href="https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_acos">ACOS (num_expr)</a></td>	
-<td>返回角度（弧度），其余弦是指定的数值表达式；也被称为反余弦。</td>
-</tr>
-<tr>
-<td><a href="https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_asin">ASIN (num_expr)</a></td>	
-<td>返回角度（弧度），其正弦是指定的数值表达式。也被称为反正弦。</td>
-</tr>
-<tr>
-<td><a href="https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_atan">ATAN (num_expr)</a></td>	
-<td>返回角度（弧度），其正切是指定的数值表达式。这也被称为反正切。</td>
-</tr>
-<tr>
-<td><a href="https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_atn2">ATN2 (num_expr)</a></td>	
-<td>返回正 x 轴与射线（原点到点 (y, x)）之间的角度（弧度），其中 x 和 y 是两个指定的浮点表达式的值。</td>
-</tr>
-<tr>
-<td><a href="https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_cos">COS (num_expr)</a></td>	
-<td>返回指定表达式中指定角度的三角余弦（弧度）。</td>
-</tr>
-<tr>
-<td><a href="https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_cot">COT (num_expr)</a></td>	
-<td>返回指定数值表达式中指定角度的三角余切。</td>
-</tr>
-<tr>
-<td><a href="https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_degrees">DEGREES (num_expr)</a></td>	
-<td>返回指定角度（弧度）的相应角度（度）。</td>
-</tr>
-<tr>
-<td><a href="https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_pi">PI ()</a></td>	
-<td>返回 PI 的常数值。</td>
-</tr>
-<tr>
-<td><a href="https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_radians">RADIANS (num_expr)</a></td>	
-<td>返回输入的数值表达式（度）的弧度。</td>
-</tr>
-<tr>
-<td><a href="https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_sin">SIN (num_expr)</a></td>	
-<td>返回指定表达式中指定角度的三角正弦（弧度）。</td>
-</tr>
-<tr>
-<td><a href="https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_tan">TAN (num_expr)</a></td>	
-<td>返回指定表达式中输入表达式的正切。</td>
-</tr>
 
-</table> 
+| 使用情况 | 说明 |
+|----------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ABS (num\_expr) | 返回指定数值表达式的绝对（正）值。 |
+| CEILING (num\_expr) | 返回大于或等于指定数值表达式的最小整数值。 |
+| FLOOR (num\_expr) | 返回小于或等于指定数值表达式的最大整数。 |
+| EXP (num\_expr) | 返回指定数值表达式的指数。 |
+| LOG (num\_expr [,base]) | 返回指定数值表达式的自然对数，或使用指定底数的对数 |
+| LOG10 (num\_expr) | 返回指定数值表达式以 10 为底的对数值。 |
+| ROUND (num\_expr) | 返回一个数值，四舍五入到最接近的整数值。 |
+| TRUNC (num\_expr) | 返回一个数值，截断到最接近的整数值。 |
+| SQRT (num\_expr) | 返回指定数值表达式的平方根。 |
+| SQUARE (num\_expr) | 返回指定数值表达式的平方。 |
+| POWER (num\_expr, num\_expr) | 返回指定数值表达式相对指定值的幂。 |
+| SIGN (num\_expr) | 返回指定数值表达式的符号值 (-1, 0, 1)。 |
+| ACOS (num\_expr) | 返回角度（弧度），其余弦是指定的数值表达式；也被称为反余弦。 |
+| ASIN (num\_expr) | 返回角度（弧度），其正弦是指定的数值表达式。也被称为反正弦。 |
+| ATAN (num\_expr) | 返回角度（弧度），其正切是指定的数值表达式。这也被称为反正切。 |
+| ATN2 (num\_expr) | 返回正 x 轴与射线（原点到点 (y, x)）之间的角度（弧度），其中 x 和 y 是两个指定的浮点表达式的值。 |
+| COS (num\_expr)  | 返回指定表达式中指定角度的三角余弦（弧度）。 |
+| COT (num\_expr)  | 返回指定数值表达式中指定角度的三角余切。 |
+| DEGREES (num\_expr) | 返回指定角度（弧度）的相应角度（度）。 |
+| PI () | 返回 PI 的常数值。 |
+| RADIANS (num\_expr) | 返回输入的数值表达式（度）的弧度。 |
+| SIN (num\_expr) | 返回指定表达式中指定角度的三角正弦（弧度）。 |
+| TAN (num\_expr) | 返回指定表达式中输入表达式的正切。 |
 
 例如，你现在可以运行以下查询：
 
@@ -1554,24 +1457,24 @@ DocumentDB 还支持使用许多内置函数进行常见操作，这些函数可
 ### 字符串函数
 下面的标量函数对字符串输入值执行操作，并返回字符串、数值或布尔值。以下是内置字符串函数表：
 
-使用情况|说明
----|---
-[LENGTH (str\_expr)](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_length)|返回指定字符串的字符数
-[CONCAT (str\_expr, str\_expr [, str\_expr])](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_concat)|返回一个字符串，该字符串是连接两个或多个字符串值的结果。
-[SUBSTRING (str\_expr, num\_expr, num\_expr)](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_substring)|返回部分字符串表达式。
-[STARTSWITH (str\_expr, str\_expr)](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_startswith)|返回一个布尔值，该值指示第一个字符串表达式是否以第二个字符串表达式结尾
-[ENDSWITH (str\_expr, str\_expr)](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_endswith)|返回一个布尔值，该值指示第一个字符串表达式是否以第二个字符串表达式结尾
-[CONTAINS (str\_expr, str\_expr)](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_contains)|返回一个布尔值，该值指示第一个字符串表达式是否包含第二个字符串表达式。
-[INDEX\_OF (str\_expr, str\_expr)](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_index_of)|返回第一个指定的字符串表达式中第一次出现第二个字符串表达式的起始位置，如果未找到字符串，则返回 -1。
-[LEFT (str\_expr, num\_expr)](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_left)|返回具有指定字符数的字符串的左侧部分。
-[RIGHT (str\_expr, num\_expr)](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_right)|返回具有指定字符数的字符串的右侧部分。
-[LTRIM (str\_expr)](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_ltrim)|返回删除前导空格后的字符串表达式。
-[RTRIM (str\_expr)](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_rtrim)|返回截断所有尾随空格后的字符串表达式。
-[LOWER (str\_expr)](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_lower)|返回在将大写字符数据转换为小写后的字符串表达式。
-[UPPER (str\_expr)](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_upper)|返回在将小写字符数据转换为大写后的字符串表达式。
-[REPLACE (str\_expr, str\_expr, str\_expr)](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_replace)|将出现的所有指定字符串值替换为另一个字符串值。
-[REPLICATE (str\_expr, num\_expr)](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_replicate)|将一个字符串值重复指定的次数。
-[REVERSE (str\_expr)](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_reverse)|返回字符串值的逆序排序形式。
+| 使用情况 | 说明 |
+| --- | --- |
+| [LENGTH (str\_expr)](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_length) |返回指定字符串的字符数 |
+| [CONCAT (str\_expr, str\_expr [, str\_expr])](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_concat) |返回一个字符串，该字符串是连接两个或多个字符串值的结果。 |
+| [SUBSTRING (str\_expr, num\_expr, num\_expr)](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_substring) |返回部分字符串表达式。 |
+| [STARTSWITH (str\_expr, str\_expr)](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_startswith) |返回一个布尔值，该值指示第一个字符串表达式是否以第二个字符串表达式结尾 |
+| [ENDSWITH (str\_expr, str\_expr)](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_endswith) |返回一个布尔值，该值指示第一个字符串表达式是否以第二个字符串表达式结尾 |
+| [CONTAINS (str\_expr, str\_expr)](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_contains) |返回一个布尔值，该值指示第一个字符串表达式是否包含第二个字符串表达式。 |
+| [INDEX\_OF (str\_expr, str\_expr)](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_index_of) |返回第一个指定的字符串表达式中第一次出现第二个字符串表达式的起始位置，如果未找到字符串，则返回 -1。 |
+| [LEFT (str\_expr, num\_expr)](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_left) |返回具有指定字符数的字符串的左侧部分。 |
+| [RIGHT (str\_expr, num\_expr)](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_right) |返回具有指定字符数的字符串的右侧部分。 |
+| [LTRIM (str\_expr)](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_ltrim) |返回删除前导空格后的字符串表达式。 |
+| [RTRIM (str\_expr)](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_rtrim) |返回截断所有尾随空格后的字符串表达式。 |
+| [LOWER (str\_expr)](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_lower) |返回在将大写字符数据转换为小写后的字符串表达式。 |
+| [UPPER (str\_expr)](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_upper) |返回在将小写字符数据转换为大写后的字符串表达式。 |
+| [REPLACE (str\_expr, str\_expr, str\_expr)](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_replace) |将出现的所有指定字符串值替换为另一个字符串值。 |
+| [REPLICATE (str\_expr, num\_expr)](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_replicate) |将一个字符串值重复指定的次数。 |
+| [REVERSE (str\_expr)](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_reverse) |返回字符串值的逆序排序形式。 |
 
 使用这些函数，你现在可以运行以下查询。例如，你可以返回大写形式的家庭名称，如下所示：
 
@@ -1624,12 +1527,12 @@ DocumentDB 还支持使用许多内置函数进行常见操作，这些函数可
 ### 数组函数
 下面的标量函数对数组输入值执行操作，并返回数值、布尔值或数组值。以下是内置数组函数表：
 
-使用情况|说明
----|---
-[ARRAY\_LENGTH (arr\_expr)](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_array_length)|返回指定数组表达式的元素数。
-[ARRAY\_CONCAT (arr\_expr, arr\_expr [, arr\_expr])](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_array_concat)|返回一个数组，该数组是连接两个或更多数组值的结果。
-[ARRAY\_CONTAINS (arr\_expr, expr)](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_array_contains)|返回一个布尔，它指示数组是否包含指定的值。
-[ARRAY\_SLICE (arr\_expr, num\_expr [, num\_expr])](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_array_slice)|返回部分数组表达式。
+| 使用情况 | 说明 |
+| --- | --- |
+| [ARRAY\_LENGTH (arr\_expr)](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_array_length) |返回指定数组表达式的元素数。 |
+| [ARRAY\_CONCAT (arr\_expr, arr\_expr [, arr\_expr])](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_array_concat) |返回一个数组，该数组是连接两个或更多数组值的结果。 |
+| [ARRAY\_CONTAINS (arr\_expr, expr)](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_array_contains) |返回一个布尔，它指示数组是否包含指定的值。 |
+| [ARRAY\_SLICE (arr\_expr, num\_expr [, num\_expr])](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx#bk_array_slice) |返回部分数组表达式。 |
 
 数组函数可用于在 JSON 内操纵数组。例如，下面的查询返回其中一位父母是“Robin Wakefield”的所有文档。
 
@@ -1664,8 +1567,7 @@ DocumentDB 还支持使用许多内置函数进行常见操作，这些函数可
     }]
 
 ### 空间函数
-
-DocumentDB 支持以下用于查询地理空间的开放地理空间信息联盟 (OGC) 内置函数。有关 DocumentDB 中地理支持的更多详细信息，请参阅 [Working with geospatial data in Azure DocumentDB](/documentation/articles/documentdb-geospatial/)（在 Azure DocumentDB 中使用地理数据）。
+DocumentDB 支持以下用于查询地理空间的开放地理空间信息联盟 (OGC) 内置函数。
 
 <table>
 <tr>
@@ -1674,19 +1576,23 @@ DocumentDB 支持以下用于查询地理空间的开放地理空间信息联盟
 </tr>
 <tr>
   <td>ST_DISTANCE (point_expr、point_expr)</td>
-  <td>返回两个 GeoJSON 点表达式之间的距离。</td>
+  <td>返回两个 GeoJSON 点、多边形或 LineString 表达式之间的距离。</td>
 </tr>
-<tr><a name="built-in-functions"></a>
+<tr>
   <td>ST_WITHIN (point_expr、polygon_expr)</td>
-  <td>返回布尔表达式，该表达式指示第一个参数中指定的 GeoJSON 点是否位于第二个参数中的 GeoJSON 多边形内。</td>
+  <td>返回一个布尔表达式，该表达式指示第一个 GeoJSON 对象（点、多边形或 LineString）是否在第二个 GeoJSON 对象（点、多边形或 LineString）里面。</td>
+</tr>
+<tr>
+  <td>ST_INTERSECTS (spatial_expr, spatial_expr)</td>
+  <td>返回一个布尔表达式，该表达式指示两个指定的 GeoJSON 对象（点、多边形或 LineString）是否相交。</td>
 </tr>
 <tr>
   <td>ST_ISVALID</td>
-  <td>返回一个布尔值，该值指示指定的 GeoJSON 点或多边形表达式是否有效。</td>
+  <td>返回一个布尔值，该值指示指定的 GeoJSON 点、多边形或 LineString 表达式是否有效。</td>
 </tr>
 <tr>
   <td>ST_ISVALIDDETAILED</td>
-  <td>如果指定的 GeoJSON 点或多边形表达式有效，则返回包含布尔值的 JSON 值；如果无效，则额外加上作为字符串值的原因。</td>
+  <td>如果指定的 GeoJSON 点、多边形或 LineString 表达式有效，则返回包含布尔值的 JSON 值；如果无效，则额外加上作为字符串值的原因。</td>
 </tr>
 </table>
 
@@ -1704,59 +1610,7 @@ DocumentDB 支持以下用于查询地理空间的开放地理空间信息联盟
       "id": "WakefieldFamily"
     }]
 
-如果在你的索引策略中包含空间索引，则将通过索引有效地进行“距离查询”。有关空间索引的更多详细信息，请参阅以下章节。如果你没有指定路径的空间索引，仍然可以通过指定 `x-ms-documentdb-query-enable-scan` 请求标头（其值设置为“true”）执行空间查询。在 .NET 中，可以通过将可选的 **FeedOptions** 参数传递到 [EnableScanInQuery](https://msdn.microsoft.com/zh-cn/library/microsoft.azure.documents.client.feedoptions.enablescaninquery.aspx#P:Microsoft.Azure.Documents.Client.FeedOptions.EnableScanInQuery) 设置为 true 的查询来完成此操作。
-
-ST\_WITHIN 可用于检查点是否在多边形内。多边形通常用来表示边界，例如邮政编码、省/自治区边界或自然构成物。再次说明，如果在你的索引策略中包含空间索引，则将通过索引有效地进行“within”查询。
-
-ST\_WITHIN 中的多边形参数只能包含单个环形，也就是说，多边形本身不能包含洞。有关 ST\_WITHIN 查询的多边形中允许的点数目上限，请查看 [DocumentDB 限制](/documentation/articles/documentdb-limits/)。
-
-**查询**
-
-    SELECT * 
-    FROM Families f 
-    WHERE ST_WITHIN(f.location, {
-    	'type':'Polygon', 
-    	'coordinates': [[[31.8, -5], [32, -5], [32, -4.7], [31.8, -4.7], [31.8, -5]]]
-    })
-
-**结果**
-
-    [{
-      "id": "WakefieldFamily",
-    }]
-    
->[AZURE.NOTE] 与 DocumentDB 查询中不匹配类型的工作方式类似，如果任一参数中指定的位置值格式不正确或无效，则会评估为**未定义**，并且会在查询结果中跳过已评估的文档。如果你的查询没有返回任何结果，请运行 ST\_ISVALIDDETAILED 进行调试，以了解空间类型无效的原因。
-
-ST\_ISVALID 和 ST\_ISVALIDDETAILED 可用来检查空间对象是否有效。例如，下列查询检查纬度值 (-132.8) 超出范围的点的有效性。ST\_ISVALID 仅返回一个布尔值，ST\_ISVALIDDETAILED 则返回布尔值和字符串，字符串中包含被视为无效的原因。
-
-**查询**
-
-    SELECT ST_ISVALID({ "type": "Point", "coordinates": [31.9, -132.8] })
-
-**结果**
-
-    [{
-      "$1": false
-    }]
-
-这些函数也可以用来验证多边形。例如，在这里我们使用 ST\_ISVALIDDETAILED 来验证未闭合的多边形。
-
-**查询**
-
-    SELECT ST_ISVALIDDETAILED({ "type": "Polygon", "coordinates": [[ 
-    	[ 31.8, -5 ], [ 31.8, -4.7 ], [ 32, -4.7 ], [ 32, -5 ] 
-    	]]})
-
-**结果**
-
-    [{
-       "$1": { 
-      	  "valid": false, 
-      	  "reason": "The Polygon input is not valid because the start and end points of the ring number 1 are not the same. Each ring of a polygon must have the same start and end points." 
-      	}
-    }]
-    
-这会完成空间函数和 DocumentDB 的 SQL 语法。现在，让我们来看看 LINQ 查询的工作方式，以及它如何与我们目前为止所看到的语法进行交互。
+有关 DocumentDB 中地理支持的更多详细信息，请参阅 [Working with geospatial data in Azure DocumentDB](/documentation/articles/documentdb-geospatial/)（在 Azure DocumentDB 中使用地理数据）。这会完成空间函数和 DocumentDB 的 SQL 语法。现在，让我们来看看 LINQ 查询的工作方式，以及它如何与我们目前为止所看到的语法进行交互。
 
 ## LINQ 到 DocumentDB SQL
 LINQ 是一个 .NET 编程模型，它将计算表示为对对象流的查询。DocumentDB 提供一个客户端库，通过促进 JSON 与 .NET 对象之间的转换，以及从 LINQ 查询的子集到 DocumentDB 查询的映射，来与 LINQ 进行交互。
@@ -1764,136 +1618,129 @@ LINQ 是一个 .NET 编程模型，它将计算表示为对对象流的查询。
 下面的图片展示了使用 DocumentDB 支持 LINQ 查询的体系结构。使用 DocumentDB 客户端，开发人员可以创建直接查询 DocumentDB 查询提供程序的 **IQueryable** 对象，该提供程序随后会将 LINQ 查询转换为 DocumentDB 查询。该查询会被传递到 DocumentDB 服务器以检索一组 JSON 格式的结果。在客户端上，返回的结果会反序列化为 .NET 对象的流。
 
 ![支持使用 DocumentDB 的 LINQ 查询的体系结构 - SQL语法、JSON 查询语言、数据库概念和 SQL 查询][1]
- 
-
 
 ### .NET 和 JSON 映射
 .NET 对象与 JSON 文档之间的映射是自然的 - 每个数据成员字段映射到 JSON 对象，其中字段名称映射到对象的“key”部分，并且"value"部分以递归方式映射到该对象的值部分。请考虑以下示例。创建的 Family 对象会映射到 JSON 文档，如下所示。反之亦然，JSON 文档会映射回 .NET 对象。
 
 **C# 类**
 
-	public class Family
-	{
-	    [JsonProperty(PropertyName="id")]
-	    public string Id;
-	    public Parent[] parents;
-	    public Child[] children;
-	    public bool isRegistered;
-	};
-	
-	public struct Parent
-	{
-	    public string familyName;
-	    public string givenName;
-	};
-	
-	public class Child
-	{
-	    public string familyName;
-	    public string givenName;
-	    public string gender;
-	    public int grade;
-	    public List<Pet> pets;
-	};
-	
-	public class Pet
-	{
-	    public string givenName;
-	};
-	
-	public class Address
-	{
-	    public string state;
-	    public string county;
-	    public string city;
-	};
-	
-	// Create a Family object.
-	Parent mother = new Parent { familyName= "Wakefield", givenName="Robin" };
-	Parent father = new Parent { familyName = "Miller", givenName = "Ben" };
-	Child child = new Child { familyName="Merriam", givenName="Jesse", gender="female", grade=1 };
-	Pet pet = new Pet { givenName = "Fluffy" };
-	Address address = new Address { state = "NY", county = "Manhattan", city = "NY" };
-	Family family = new Family { Id = "WakefieldFamily", parents = new Parent [] { mother, father}, children = new Child[] { child }, isRegistered = false };
+    public class Family
+    {
+        [JsonProperty(PropertyName="id")]
+        public string Id;
+        public Parent[] parents;
+        public Child[] children;
+        public bool isRegistered;
+    };
+
+    public struct Parent
+    {
+        public string familyName;
+        public string givenName;
+    };
+
+    public class Child
+    {
+        public string familyName;
+        public string givenName;
+        public string gender;
+        public int grade;
+        public List<Pet> pets;
+    };
+
+    public class Pet
+    {
+        public string givenName;
+    };
+
+    public class Address
+    {
+        public string state;
+        public string county;
+        public string city;
+    };
+
+    // Create a Family object.
+    Parent mother = new Parent { familyName= "Wakefield", givenName="Robin" };
+    Parent father = new Parent { familyName = "Miller", givenName = "Ben" };
+    Child child = new Child { familyName="Merriam", givenName="Jesse", gender="female", grade=1 };
+    Pet pet = new Pet { givenName = "Fluffy" };
+    Address address = new Address { state = "NY", county = "Manhattan", city = "NY" };
+    Family family = new Family { Id = "WakefieldFamily", parents = new Parent [] { mother, father}, children = new Child[] { child }, isRegistered = false };
 
 
 **JSON**
 
-	{
-	    "id": "WakefieldFamily",
-	    "parents": [
-	        { "familyName": "Wakefield", "givenName": "Robin" },
-	        { "familyName": "Miller", "givenName": "Ben" }
-	    ],
-	    "children": [
-	        {
-	            "familyName": "Merriam", 
-	            "givenName": "Jesse", 
-	            "gender": "female", 
-	            "grade": 1,
-	            "pets": [
-	                { "givenName": "Goofy" },
-	                { "givenName": "Shadow" }
-	            ]
-	        },
-	        { 
-	          "familyName": "Miller", 
-	          "givenName": "Lisa", 
-	          "gender": "female", 
-	          "grade": 8 
-	        }
-	    ],
-	    "address": { "state": "NY", "county": "Manhattan", "city": "NY" },
-	    "isRegistered": false
-	};
+    {
+        "id": "WakefieldFamily",
+        "parents": [
+            { "familyName": "Wakefield", "givenName": "Robin" },
+            { "familyName": "Miller", "givenName": "Ben" }
+        ],
+        "children": [
+            {
+                "familyName": "Merriam", 
+                "givenName": "Jesse", 
+                "gender": "female", 
+                "grade": 1,
+                "pets": [
+                    { "givenName": "Goofy" },
+                    { "givenName": "Shadow" }
+                ]
+            },
+            { 
+              "familyName": "Miller", 
+              "givenName": "Lisa", 
+              "gender": "female", 
+              "grade": 8 
+            }
+        ],
+        "address": { "state": "NY", "county": "Manhattan", "city": "NY" },
+        "isRegistered": false
+    };
 
 
 
 ### LINQ 到 SQL 转换
 DocumentDB 查询提供程序执行从 LINQ 查询到 DocumentDB SQL 查询的最有效映射。在以下描述中，我们假设读者对 LINQ 已经有了一个基本的了解。
 
-首先，对于类型系统，我们支持所有 JSON 基元类型 - 数值类型、布尔、字符串和 null。仅支持这些 JSON 类型。支持以下的标量表达式。
+首先，对于类型系统，我们支持所有 JSON 基元类型 — 数值类型、布尔、字符串和 null。仅支持这些 JSON 类型。支持以下的标量表达式。
 
--	常量值 - 这些包含评估查询时基元数据类型的常量值。
-
--	属性/数组索引表达式 - 这些表达式引用对象或数组元素的属性。
-
-		family.Id;
-		family.children[0].familyName;
-		family.children[0].grade;
-		family.children[n].grade; //n is an int variable
-
--	算术表达式 - 这些表达式包含数值和布尔值上的常用算术表达式。有关完整列表，请参阅 SQL 规范。
-
-		2 * family.children[0].grade;
-		x + y;
-
--	字符串比较表达式 - 这些表达式包含字符串值与某些常量字符串值的比较。
- 
-		mother.familyName == "Smith";
-		child.givenName == s; //s is a string variable
-
--	对象/数组创建表达式 - 这些表达式返回复合值类型或匿名类型的对象，或此类对象组成的数组。可以嵌套这些值。
-
-		new Parent { familyName = "Smith", givenName = "Joe" };
-		new { first = 1, second = 2 }; //an anonymous type with 2 fields              
-		new int[] { 3, child.grade, 5 };
+- 常量值 — 包含计算查询时基元数据类型的常量值。
+- 属性/数组索引表达式 — 这些表达式引用对象或数组元素的属性。
+  
+     family.Id; 
+     family.children[0].familyName; 
+     family.children[0].grade; 
+     family.children[n].grade; //n 是一个整数变量
+- 算术表达式 - 这些表达式包含数值和布尔值上的常用算术表达式。有关完整列表，请参阅 SQL 规范。
+  
+     2 * family.children[0].grade; x + y;
+- 字符串比较表达式 - 这些表达式包含字符串值与某些常量字符串值的比较。
+  
+     mother.familyName == "Smith"; 
+     child.givenName == s; //s 是一个字符串变量
+- 对象/数组创建表达式 - 这些表达式返回复合值类型或匿名类型的对象，或此类对象组成的数组。可以嵌套这些值。
+  
+     new Parent { familyName = "Smith", givenName = "Joe" }; 
+     new { first = 1, second = 2 }; //具有 2 个字段的匿名类型 
+     new int { 3, child.grade, 5 };
 
 ### 支持的 LINQ 运算符列表
 以下是 DocumentDB .NET SDK 中包含的 LINQ 提供程序支持的 LINQ 运算符列表。
 
--	**Select**：投影转换为 SQL SELECT（包括对象构造）
--	**Where**：筛选器转换为 SQL WHERE，且支持 &&、|| 和 ! 与 SQL 运算符之间的转换
--	**SelectMany**：允许将数组展开到 SQL JOIN 子句。可以用于链/嵌套表达式以对数组元素进行筛选
--	**OrderBy 和 OrderByDescending**：转换为 ORDER BY 升序/降序：
--	**CompareTo**：转换为范围比较。通常用于字符串，因为它们在 .NET 中不可进行比较
--	**Take**：转换为 SQL TOP，用于限制查询中的结果
--	**数学函数**：支持从 .NET 的 Abs、Acos、Asin、Atan、Ceiling、Cos、Exp、Floor、Log、Log10、Pow、Round、Sign、Sin、Sqrt、Tan 和 Truncate 转换为等效的 SQL 内置函数。
--	**字符串函数**：支持从 .NET 的 Concat、Contains、EndsWith、IndexOf、Count、ToLower、TrimStart、Replace、Reverse、TrimEnd、StartsWith、SubString 和 ToUpper 转换为等效的 SQL 内置函数。
--	**数组函数**：支持从 .NET 的 Concat、Contains 和 Count 转换为等效的 SQL 内置函数。
--	**地理空间扩展函数**：支持从 stub 方法 Distance、Within、IsValid 和 IsValidDetailed 转换为等效的 SQL 内置函数。
--	**用户定义的函数扩展函数**：支持从 stub 方法 UserDefinedFunctionProvider.Invoke 转换为相应的用户的定义函数。
--	**其他**：支持联合与条件运算符的转换。可以根据上下文将 Contains 转换为字符串 CONTAINS、ARRAY\_CONTAINS 或 SQL IN。
+- **Select**：投影转换为 SQL SELECT（包括对象构造）
+- **Where**：筛选器转换为 SQL WHERE，且支持 &&、|| 和 ! 与 SQL 运算符之间的转换
+- **SelectMany**：允许将数组展开到 SQL JOIN 子句。可以用于链/嵌套表达式以对数组元素进行筛选
+- **OrderBy 和 OrderByDescending**：转换为 ORDER BY 升序/降序：
+- **CompareTo**：转换为范围比较。通常用于字符串，因为它们在 .NET 中不可进行比较
+- **Take**：转换为 SQL TOP，用于限制查询中的结果
+- **数学函数**：支持从 .NET 的 Abs、Acos、Asin、Atan、Ceiling、Cos、Exp、Floor、Log、Log10、Pow、Round、Sign、Sin、Sqrt、Tan 和 Truncate 转换为等效的 SQL 内置函数。
+- **字符串函数**：支持从 .NET 的 Concat、Contains、EndsWith、IndexOf、Count、ToLower、TrimStart、Replace、Reverse、TrimEnd、StartsWith、SubString 和 ToUpper 转换为等效的 SQL 内置函数。
+- **数组函数**：支持从 .NET 的 Concat、Contains 和 Count 转换为等效的 SQL 内置函数。
+- **地理空间扩展函数**：支持从 stub 方法 Distance、Within、IsValid 和 IsValidDetailed 转换为等效的 SQL 内置函数。
+- **用户定义的函数扩展函数**：支持从 stub 方法 UserDefinedFunctionProvider.Invoke 转换为相应的用户的定义函数。
+- **其他**：支持联合与条件运算符的转换。可以根据上下文将 Contains 转换为字符串 CONTAINS、ARRAY\_CONTAINS 或 SQL IN。
 
 ### SQL 查询运算符
 以下示例演示了一些标准 LINQ 查询运算符是如何转换为 DocumentDB 查询的。
@@ -1903,41 +1750,41 @@ DocumentDB 查询提供程序执行从 LINQ 查询到 DocumentDB SQL 查询的�
 
 **LINQ Lambda 表达式**
 
-	input.Select(family => family.parents[0].familyName);
+    input.Select(family => family.parents[0].familyName);
 
 **SQL**
 
-	SELECT VALUE f.parents[0].familyName
-	FROM Families f
+    SELECT VALUE f.parents[0].familyName
+    FROM Families f
 
 
 
 **LINQ Lambda 表达式**
 
-	input.Select(family => family.children[0].grade + c); // c is an int variable
+    input.Select(family => family.children[0].grade + c); // c is an int variable
 
 
 **SQL**
 
-	SELECT VALUE f.children[0].grade + c
-	FROM Families f 
+    SELECT VALUE f.children[0].grade + c
+    FROM Families f 
 
 
 
 **LINQ Lambda 表达式**
 
-	input.Select(family => new
-	{
-	    name = family.children[0].familyName,
-	    grade = family.children[0].grade + 3
-	});
+    input.Select(family => new
+    {
+        name = family.children[0].familyName,
+        grade = family.children[0].grade + 3
+    });
 
 
 **SQL**
 
-	SELECT VALUE {"name":f.children[0].familyName, 
-	              "grade": f.children[0].grade + 3 }
-	FROM Families f
+    SELECT VALUE {"name":f.children[0].familyName, 
+                  "grade": f.children[0].grade + 3 }
+    FROM Families f
 
 
 
@@ -1946,12 +1793,12 @@ DocumentDB 查询提供程序执行从 LINQ 查询到 DocumentDB SQL 查询的�
 
 **LINQ Lambda 表达式**
 
-	input.SelectMany(family => family.children);
+    input.SelectMany(family => family.children);
 
 **SQL**
 
-	SELECT VALUE child
-	FROM child IN Families.children
+    SELECT VALUE child
+    FROM child IN Families.children
 
 
 
@@ -1960,133 +1807,130 @@ DocumentDB 查询提供程序执行从 LINQ 查询到 DocumentDB SQL 查询的�
 
 **LINQ Lambda 表达式**
 
-	input.Where(family=> family.parents[0].familyName == "Smith");
+    input.Where(family=> family.parents[0].familyName == "Smith");
 
 **SQL**
 
-	SELECT *
-	FROM Families f
-	WHERE f.parents[0].familyName = "Smith" 
+    SELECT *
+    FROM Families f
+    WHERE f.parents[0].familyName = "Smith" 
 
 
 
 **LINQ Lambda 表达式**
 
-	input.Where(
-	    family => family.parents[0].familyName == "Smith" && 
-	    family.children[0].grade < 3);
+    input.Where(
+        family => family.parents[0].familyName == "Smith" && 
+        family.children[0].grade < 3);
 
 **SQL**
 
-	SELECT *
-	FROM Families f
-	WHERE f.parents[0].familyName = "Smith"
-	AND f.children[0].grade < 3
+    SELECT *
+    FROM Families f
+    WHERE f.parents[0].familyName = "Smith"
+    AND f.children[0].grade < 3
 
 
 ### 复合 SQL 查询
 可以将以上运算符组合在一起，形成功能更强大的查询。由于 DocumentDB 支持嵌套的集合，因此可以连接或嵌套运算符组合。
 
-#### 串联 
-
+#### 串联
 语法为 `input(.|.SelectMany())(.Select()|.Where())*`。串联的查询可以可选的 `SelectMany` 查询开始，后接多个 `Select` 或 `Where` 运算符。
 
-
 **LINQ Lambda 表达式**
 
-	input.Select(family=>family.parents[0])
-	    .Where(familyName == "Smith");
+    input.Select(family=>family.parents[0])
+        .Where(familyName == "Smith");
 
 **SQL**
 
-	SELECT *
-	FROM Families f
-	WHERE f.parents[0].familyName = "Smith"
-
-
-
-**LINQ Lambda 表达式**
-
-	input.Where(family => family.children[0].grade > 3)
-	    .Select(family => family.parents[0].familyName);
-
-**SQL**
-
-	SELECT VALUE f.parents[0].familyName
-	FROM Families f
-	WHERE f.children[0].grade > 3
+    SELECT *
+    FROM Families f
+    WHERE f.parents[0].familyName = "Smith"
 
 
 
 **LINQ Lambda 表达式**
 
-	input.Select(family => new { grade=family.children[0].grade}).
-	    Where(anon=> anon.grade < 3);
-            
+    input.Where(family => family.children[0].grade > 3)
+        .Select(family => family.parents[0].familyName);
+
 **SQL**
 
-	SELECT *
-	FROM Families f
-	WHERE ({grade: f.children[0].grade}.grade > 3)
+    SELECT VALUE f.parents[0].familyName
+    FROM Families f
+    WHERE f.children[0].grade > 3
 
 
 
 **LINQ Lambda 表达式**
 
-	input.SelectMany(family => family.parents)
-	    .Where(parent => parents.familyName == "Smith");
+    input.Select(family => new { grade=family.children[0].grade}).
+        Where(anon=> anon.grade < 3);
 
 **SQL**
 
-	SELECT *
-	FROM p IN Families.parents
-	WHERE p.familyName = "Smith"
+    SELECT *
+    FROM Families f
+    WHERE ({grade: f.children[0].grade}.grade > 3)
+
+
+
+**LINQ Lambda 表达式**
+
+    input.SelectMany(family => family.parents)
+        .Where(parent => parents.familyName == "Smith");
+
+**SQL**
+
+    SELECT *
+    FROM p IN Families.parents
+    WHERE p.familyName = "Smith"
 
 
 
 #### 嵌套
-
 语法为 `input.SelectMany(x=>x.Q())`，其中 Q 是 `Select`、`SelectMany` 或 `Where` 运算符。
 
 在嵌套查询中，内部查询应用到外部集合的每个元素。一个重要的功能是内部查询可以引用外部集合（如自联接）中元素的字段。
 
 **LINQ Lambda 表达式**
 
-	input.SelectMany(family=> 
-	    family.parents.Select(p => p.familyName));
+    input.SelectMany(family=> 
+        family.parents.Select(p => p.familyName));
 
 **SQL**
 
-	SELECT VALUE p.familyName
-	FROM Families f
-	JOIN p IN f.parents
+    SELECT VALUE p.familyName
+    FROM Families f
+    JOIN p IN f.parents
 
 
 **LINQ Lambda 表达式**
 
-	input.SelectMany(family => 
-	    family.children.Where(child => child.familyName == "Jeff"));
-            
+    input.SelectMany(family => 
+        family.children.Where(child => child.familyName == "Jeff"));
+
 **SQL**
 
-	SELECT *
-	FROM Families f
-	JOIN c IN f.children
-	WHERE c.familyName = "Jeff"
+    SELECT *
+    FROM Families f
+    JOIN c IN f.children
+    WHERE c.familyName = "Jeff"
 
 
 
 **LINQ Lambda 表达式**
-            
-	input.SelectMany(family => family.children.Where(
-	    child => child.familyName == family.parents[0].familyName));
+
+    input.SelectMany(family => family.children.Where(
+        child => child.familyName == family.parents[0].familyName));
 
 **SQL**
 
-	SELECT *
-	FROM Families f
-	JOIN c IN f.children
-	WHERE c.familyName = f.parents[0].familyName
+    SELECT *
+    FROM Families f
+    JOIN c IN f.children
+    WHERE c.familyName = f.parents[0].familyName
 
 ## 执行 SQL 查询  <a name="executing-sql-queries"></a>
 DocumentDB 通过一个 REST API 来公开资源，任何可以发出 HTTP/HTTPS 请求的语言都可以调用该 REST API。此外，DocumentDB 还为多种常用语言（如 .NET、Node.js、JavaScript 和 Python）提供编程库。REST API 和各种库均支持通过 SQL 进行查询。除了 SQL 之外，.NET SDK 还支持 LINQ 查询。
@@ -2100,13 +1944,12 @@ DocumentDB 通过 HTTP 提供开放的 RESTful 编程模型。可以使用 Azure
 
 以下示例演示了针对包含我们目前看到的两个示例文档的集合，使用 POST 进行 DocumentDB 查询。查询对 JSON 名称属性进行简单的筛选。请注意，使用 `x-ms-documentdb-isquery` 和 Content-Type: `application/query+json` 标头表示该操作是一个查询。
 
-
 **请求**
 
-	POST https://<REST URI>/docs HTTP/1.1
-	...
-	x-ms-documentdb-isquery: True
-	Content-Type: application/query+json
+    POST https://<REST URI>/docs HTTP/1.1
+    ...
+    x-ms-documentdb-isquery: True
+    Content-Type: application/query+json
 
     {      
         "query": "SELECT * FROM Families f WHERE f.id = @familyId",     
@@ -2114,111 +1957,111 @@ DocumentDB 通过 HTTP 提供开放的 RESTful 编程模型。可以使用 Azure
             {"name": "@familyId", "value": "AndersenFamily"}         
         ] 
     }
-	
+
 
 **结果**
 
-	HTTP/1.1 200 Ok
-	x-ms-activity-id: 8b4678fa-a947-47d3-8dd3-549a40da6eed
-	x-ms-item-count: 1
-	x-ms-request-charge: 0.32
-	
-	<indented for readability, results highlighted>
-	
-	{  
-	   "_rid":"u1NXANcKogE=",
-	   "Documents":[  
-	      {  
-	         "id":"AndersenFamily",
-	         "lastName":"Andersen",
-	         "parents":[  
-	            {  
-	               "firstName":"Thomas"
-	            },
-	            {  
-	               "firstName":"Mary Kay"
-	            }
-	         ],
-	         "children":[  
-	            {  
-	               "firstName":"Henriette Thaulow",
-	               "gender":"female",
-	               "grade":5,
-	               "pets":[  
-	                  {  
-	                     "givenName":"Fluffy"
-	                  }
-	               ]
-	            }
-	         ],
-	         "address":{  
-	            "state":"WA",
-	            "county":"King",
-	            "city":"seattle"
-	         },
-	         "_rid":"u1NXANcKogEcAAAAAAAAAA==",
-	         "_ts":1407691744,
-	         "_self":"dbs\/u1NXAA==\/colls\/u1NXANcKogE=\/docs\/u1NXANcKogEcAAAAAAAAAA==\/",
-	         "_etag":"00002b00-0000-0000-0000-53e7abe00000",
-	         "_attachments":"_attachments\/"
-	      }
-	   ],
-	   "count":1
-	}
+    HTTP/1.1 200 Ok
+    x-ms-activity-id: 8b4678fa-a947-47d3-8dd3-549a40da6eed
+    x-ms-item-count: 1
+    x-ms-request-charge: 0.32
+
+    <indented for readability, results highlighted>
+
+    {  
+       "_rid":"u1NXANcKogE=",
+       "Documents":[  
+          {  
+             "id":"AndersenFamily",
+             "lastName":"Andersen",
+             "parents":[  
+                {  
+                   "firstName":"Thomas"
+                },
+                {  
+                   "firstName":"Mary Kay"
+                }
+             ],
+             "children":[  
+                {  
+                   "firstName":"Henriette Thaulow",
+                   "gender":"female",
+                   "grade":5,
+                   "pets":[  
+                      {  
+                         "givenName":"Fluffy"
+                      }
+                   ]
+                }
+             ],
+             "address":{  
+                "state":"WA",
+                "county":"King",
+                "city":"seattle"
+             },
+             "_rid":"u1NXANcKogEcAAAAAAAAAA==",
+             "_ts":1407691744,
+             "_self":"dbs\/u1NXAA==\/colls\/u1NXANcKogE=\/docs\/u1NXANcKogEcAAAAAAAAAA==\/",
+             "_etag":"00002b00-0000-0000-0000-53e7abe00000",
+             "_attachments":"_attachments\/"
+          }
+       ],
+       "count":1
+    }
 
 
 第二个示例演示了从联接中返回多个结果的更复杂的查询。
 
 **请求**
 
-	POST https://<REST URI>/docs HTTP/1.1
-	...
-	x-ms-documentdb-isquery: True
-	Content-Type: application/query+json
-	
+    POST https://<REST URI>/docs HTTP/1.1
+    ...
+    x-ms-documentdb-isquery: True
+    Content-Type: application/query+json
+
     {      
         "query": "SELECT 
-				     f.id AS familyName, 
-				     c.givenName AS childGivenName, 
-				     c.firstName AS childFirstName, 
-				     p.givenName AS petName 
-				  FROM Families f 
-				  JOIN c IN f.children 
-				  JOIN p in c.pets",     
+                     f.id AS familyName, 
+                     c.givenName AS childGivenName, 
+                     c.firstName AS childFirstName, 
+                     p.givenName AS petName 
+                  FROM Families f 
+                  JOIN c IN f.children 
+                  JOIN p in c.pets",     
         "parameters": [] 
     }
 
 
 **结果**
 
-	HTTP/1.1 200 Ok
-	x-ms-activity-id: 568f34e3-5695-44d3-9b7d-62f8b83e509d
-	x-ms-item-count: 1
-	x-ms-request-charge: 7.84
-	
-	<indented for readability, results highlighted>
-	
-	{  
-	   "_rid":"u1NXANcKogE=",
-	   "Documents":[  
-	      {  
-	         "familyName":"AndersenFamily",
-	         "childFirstName":"Henriette Thaulow",
-	         "petName":"Fluffy"
-	      },
-	      {  
-	         "familyName":"WakefieldFamily",
-	         "childGivenName":"Jesse",
-	         "petName":"Goofy"
-	      },
-	      {  
-	         "familyName":"WakefieldFamily",
-	         "childGivenName":"Jesse",
-	         "petName":"Shadow"
-	      }
-	   ],
-	   "count":3
-	}
+    HTTP/1.1 200 Ok
+    x-ms-activity-id: 568f34e3-5695-44d3-9b7d-62f8b83e509d
+    x-ms-item-count: 1
+    x-ms-request-charge: 7.84
+
+    <indented for readability, results highlighted>
+
+    {  
+       "_rid":"u1NXANcKogE=",
+       "Documents":[  
+          {  
+             "familyName":"AndersenFamily",
+             "childFirstName":"Henriette Thaulow",
+             "petName":"Fluffy"
+          },
+          {  
+             "familyName":"WakefieldFamily",
+             "childGivenName":"Jesse",
+             "petName":"Goofy"
+          },
+          {  
+             "familyName":"WakefieldFamily",
+             "childGivenName":"Jesse",
+             "petName":"Shadow"
+          }
+       ],
+       "count":3
+    }
 
 
 如果查询的结果无法包含在一页内，那么 REST API 通过 `x-ms-continuation-token` 响应标头返回继续标记。客户端可以通过在后续结果中包含该标头对结果进行分页。可以通过 `x-ms-max-item-count` 数量标头控制每页的结果数。
@@ -2230,13 +2073,12 @@ DocumentDB 通过 HTTP 提供开放的 RESTful 编程模型。可以使用 Azure
 ### C# (.NET) SDK
 .NET SDK 支持 LINQ 和 SQL 查询。以下示例演示了如何执行本文档之前介绍的简单筛选查询。
 
+    foreach (var family in client.CreateDocumentQuery(collectionLink, 
+        "SELECT * FROM Families f WHERE f.id = "AndersenFamily""))
+    {
+        Console.WriteLine("\tRead {0} from SQL", family);
+    }
 
-	foreach (var family in client.CreateDocumentQuery(collectionLink, 
-	    "SELECT * FROM Families f WHERE f.id = "AndersenFamily""))
-	{
-	    Console.WriteLine("\tRead {0} from SQL", family);
-	}
-	
     SqlQuerySpec query = new SqlQuerySpec("SELECT * FROM Families f WHERE f.id = @familyId");
     query.Parameters = new SqlParameterCollection();
     query.Parameters.Add(new SqlParameter("@familyId", "AndersenFamily"));
@@ -2246,72 +2088,70 @@ DocumentDB 通过 HTTP 提供开放的 RESTful 编程模型。可以使用 Azure
         Console.WriteLine("\tRead {0} from parameterized SQL", family);
     }
 
-	foreach (var family in (
-	    from f in client.CreateDocumentQuery(collectionLink)
-	    where f.Id == "AndersenFamily"
-	    select f))
-	{
-	    Console.WriteLine("\tRead {0} from LINQ query", family);
-	}
-	
-	foreach (var family in client.CreateDocumentQuery(collectionLink)
-	    .Where(f => f.Id == "AndersenFamily")
-	    .Select(f => f))
-	{
-	    Console.WriteLine("\tRead {0} from LINQ lambda", family);
-	}
+    foreach (var family in (
+        from f in client.CreateDocumentQuery(collectionLink)
+        where f.Id == "AndersenFamily"
+        select f))
+    {
+        Console.WriteLine("\tRead {0} from LINQ query", family);
+    }
+
+    foreach (var family in client.CreateDocumentQuery(collectionLink)
+        .Where(f => f.Id == "AndersenFamily")
+        .Select(f => f))
+    {
+        Console.WriteLine("\tRead {0} from LINQ lambda", family);
+    }
 
 
 此示例比较了每个文档内等式的两个属性，并使用匿名投影。
 
+    foreach (var family in client.CreateDocumentQuery(collectionLink,
+        @"SELECT {""Name"": f.id, ""City"":f.address.city} AS Family 
+        FROM Families f 
+        WHERE f.address.city = f.address.state"))
+    {
+        Console.WriteLine("\tRead {0} from SQL", family);
+    }
 
-	foreach (var family in client.CreateDocumentQuery(collectionLink,
-	    @"SELECT {""Name"": f.id, ""City"":f.address.city} AS Family 
-	    FROM Families f 
-	    WHERE f.address.city = f.address.state"))
-	{
-	    Console.WriteLine("\tRead {0} from SQL", family);
-	}
-	
-	foreach (var family in (
-	    from f in client.CreateDocumentQuery<Family>(collectionLink)
-	    where f.address.city == f.address.state
-	    select new { Name = f.Id, City = f.address.city }))
-	{
-	    Console.WriteLine("\tRead {0} from LINQ query", family);
-	}
-	
-	foreach (var family in
-	    client.CreateDocumentQuery<Family>(collectionLink)
-	    .Where(f => f.address.city == f.address.state)
-	    .Select(f => new { Name = f.Id, City = f.address.city }))
-	{
-	    Console.WriteLine("\tRead {0} from LINQ lambda", family);
-	}
+    foreach (var family in (
+        from f in client.CreateDocumentQuery<Family>(collectionLink)
+        where f.address.city == f.address.state
+        select new { Name = f.Id, City = f.address.city }))
+    {
+        Console.WriteLine("\tRead {0} from LINQ query", family);
+    }
+
+    foreach (var family in
+        client.CreateDocumentQuery<Family>(collectionLink)
+        .Where(f => f.address.city == f.address.state)
+        .Select(f => new { Name = f.Id, City = f.address.city }))
+    {
+        Console.WriteLine("\tRead {0} from LINQ lambda", family);
+    }
 
 
 下面的示例中演示了通过 LINQ SelectMany 进行快递的联接。
 
+    foreach (var pet in client.CreateDocumentQuery(collectionLink,
+          @"SELECT p
+            FROM Families f 
+                 JOIN c IN f.children 
+                 JOIN p in c.pets 
+            WHERE p.givenName = ""Shadow"""))
+    {
+        Console.WriteLine("\tRead {0} from SQL", pet);
+    }
 
-	foreach (var pet in client.CreateDocumentQuery(collectionLink,
-	      @"SELECT p
-	        FROM Families f 
-	             JOIN c IN f.children 
-	             JOIN p in c.pets 
-	        WHERE p.givenName = ""Shadow"""))
-	{
-	    Console.WriteLine("\tRead {0} from SQL", pet);
-	}
-	
-	// Equivalent in Lambda expressions
-	foreach (var pet in
-	    client.CreateDocumentQuery<Family>(collectionLink)
-	    .SelectMany(f => f.children)
-	    .SelectMany(c => c.pets)
-	    .Where(p => p.givenName == "Shadow"))
-	{
-	    Console.WriteLine("\tRead {0} from LINQ lambda", pet);
-	}
+    // Equivalent in Lambda expressions
+    foreach (var pet in
+        client.CreateDocumentQuery<Family>(collectionLink)
+        .SelectMany(f => f.children)
+        .SelectMany(c => c.pets)
+        .Where(p => p.givenName == "Shadow"))
+    {
+        Console.WriteLine("\tRead {0} from LINQ lambda", pet);
+    }
 
 
 
@@ -2321,44 +2161,42 @@ DocumentDB 通过 HTTP 提供开放的 RESTful 编程模型。可以使用 Azure
 
 有关包含查询的更多示例，请参阅 [DocumentDB .NET samples](https://github.com/Azure/azure-documentdb-net)（DocumentDB .NET 示例）。
 
-### JavaScript 服务器端 API 
+### JavaScript 服务器端 API
 DocumentDB 使用存储过程和触发器，为对集合直接执行基于 JavaScript 的应用程序逻辑提供编程模型。在集合级别上注册的 JavaScript 逻辑稍后可以对针对给定集合的文档的操作发出数据库操作。这些操作包装在环境 ACID 事务中。
 
 以下示例演示了如何在 JavaScript 服务器 API 中使用 queryDocuments 来从存储过程和触发器内部进行查询。
 
+    function businessLogic(name, author) {
+        var context = getContext();
+        var collectionManager = context.getCollection();
+        var collectionLink = collectionManager.getSelfLink()
 
-	function businessLogic(name, author) {
-	    var context = getContext();
-	    var collectionManager = context.getCollection();
-	    var collectionLink = collectionManager.getSelfLink()
-	
-	    // create a new document.
-	    collectionManager.createDocument(collectionLink,
-	        { name: name, author: author },
-	        function (err, documentCreated) {
-	            if (err) throw new Error(err.message);
-	
-	            // filter documents by author
-	            var filterQuery = "SELECT * from root r WHERE r.author = 'George R.'";
-	            collectionManager.queryDocuments(collectionLink,
-	                filterQuery,
-	                function (err, matchingDocuments) {
-	                    if (err) throw new Error(err.message);
-	context.getResponse().setBody(matchingDocuments.length);
-	
-	                    // Replace the author name for all documents that satisfied the query.
-	                    for (var i = 0; i < matchingDocuments.length; i++) {
-	                        matchingDocuments[i].author = "George R. R. Martin";
-	                        // we don't need to execute a callback because they are in parallel
-	                        collectionManager.replaceDocument(matchingDocuments[i]._self,
-	                            matchingDocuments[i]);
-	                    }
-	                })
-	        });
-	}
+        // create a new document.
+        collectionManager.createDocument(collectionLink,
+            { name: name, author: author },
+            function (err, documentCreated) {
+                if (err) throw new Error(err.message);
+
+                // filter documents by author
+                var filterQuery = "SELECT * from root r WHERE r.author = 'George R.'";
+                collectionManager.queryDocuments(collectionLink,
+                    filterQuery,
+                    function (err, matchingDocuments) {
+                        if (err) throw new Error(err.message);
+    context.getResponse().setBody(matchingDocuments.length);
+
+                        // Replace the author name for all documents that satisfied the query.
+                        for (var i = 0; i < matchingDocuments.length; i++) {
+                            matchingDocuments[i].author = "George R. R. Martin";
+                            // we don't need to execute a callback because they are in parallel
+                            collectionManager.replaceDocument(matchingDocuments[i]._self,
+                                matchingDocuments[i]);
+                        }
+                    })
+            });
+    }
 
 ## 聚合函数
-
 对聚合函数的本机支持已在计划中，但如果同时需要 count 或 sum 功能，可以使用其他方法实现相同的结果。
 
 在读取路径上：
@@ -2370,25 +2208,23 @@ DocumentDB 使用存储过程和触发器，为对集合直接执行基于 JavaS
 
 - 另一种常见模式是在“写入”路径上预先聚合结果。当“读取”请求的量高于“写入”请求的量时，这特别有用。预先聚合后，单点读取请求可提供结果。在 DocumentDB 中预先聚合的最佳方法是设置在每次“写入”时调用的触发器和更新包含已具体化查询的最新结果的元数据文档。例如，请查看 [UpdateaMetadata.js](https://github.com/Azure/azure-documentdb-js-server/blob/master/samples/triggers/UpdateMetadata.js) 示例，该示例更新集合的元数据文档的 minSize、maxSize 和 totalSize。可以扩展该示例以更新计数器、合计等。
 
-##参考
-1.	[Azure DocumentDB 简介][introduction]
-2.	[DocumentDB SQL specification（DocumentDB SQL 规范）](http://go.microsoft.com/fwlink/p/?LinkID=510612)
-3.	[DocumentDB .NET samples（DocumentDB .NET 示例）](https://github.com/Azure/azure-documentdb-net)
-4.	[DocumentDB Consistency Levels（DocumentDB 一致性级别）][consistency-levels]
-5.	ANSI SQL 2011 [http://www.iso.org/iso/iso\_catalogue/catalogue\_tc/catalogue\_detail.htm?csnumber=53681](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=53681)
-6.	JSON [http://json.org/](http://json.org/)
-7.	Javascript 规范 [http://www.ecma-international.org/publications/standards/Ecma-262.htm](http://www.ecma-international.org/publications/standards/Ecma-262.htm)
-8.	LINQ [http://msdn.microsoft.com/zh-cn/library/bb308959.aspx](http://msdn.microsoft.com/zh-cn/library/bb308959.aspx)
-9.	针对大型数据库的查询评估技术 [http://dl.acm.org/citation.cfm?id=152611](http://dl.acm.org/citation.cfm?id=152611)
-10.	Query Processing in Parallel Relational Database Systems, IEEE Computer Society Press, 1994
-11.	Lu, Ooi, Tan, Query Processing in Parallel Relational Database Systems, IEEE Computer Society Press, 1994.
-12.	Christopher Olston, Benjamin Reed, Utkarsh Srivastava, Ravi Kumar, Andrew Tomkins: Pig Latin: A Not-So-Foreign Language for Data Processing, SIGMOD 2008.
-13.     G.Graefe.The Cascades framework for query optimization.IEEE Data Eng.Bull., 18(3): 1995.
-
+## 参考
+1. [Azure DocumentDB 简介][introduction]
+2. [DocumentDB SQL specification（DocumentDB SQL 规范）](http://go.microsoft.com/fwlink/p/?LinkID=510612)
+3. [DocumentDB .NET samples（DocumentDB .NET 示例）](https://github.com/Azure/azure-documentdb-net)
+4. [DocumentDB Consistency Levels（DocumentDB 一致性级别）][consistency-levels]
+5. ANSI SQL 2011 [http://www.iso.org/iso/iso\_catalogue/catalogue\_tc/catalogue\_detail.htm?csnumber=53681](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=53681)
+6. JSON [http://json.org/](http://json.org/)
+7. Javascript 规范 [http://www.ecma-international.org/publications/standards/Ecma-262.htm](http://www.ecma-international.org/publications/standards/Ecma-262.htm)
+8. LINQ [http://msdn.microsoft.com/zh-cn/library/bb308959.aspx](http://msdn.microsoft.com/zh-cn/library/bb308959.aspx)
+9. 针对大型数据库的查询评估技术 [http://dl.acm.org/citation.cfm?id=152611](http://dl.acm.org/citation.cfm?id=152611)
+10. Query Processing in Parallel Relational Database Systems, IEEE Computer Society Press, 1994
+11. Lu, Ooi, Tan, Query Processing in Parallel Relational Database Systems, IEEE Computer Society Press, 1994.
+12. Christopher Olston, Benjamin Reed, Utkarsh Srivastava, Ravi Kumar, Andrew Tomkins: Pig Latin: A Not-So-Foreign Language for Data Processing, SIGMOD 2008.
+13. G.Graefe.The Cascades framework for query optimization.IEEE Data Eng.Bull., 18(3): 1995.
 
 [1]: ./media/documentdb-sql-query/sql-query1.png
 [introduction]: /documentation/articles/documentdb-introduction/
 [consistency-levels]: /documentation/articles/documentdb-consistency-levels/
- 
 
-<!---HONumber=Mooncake_1010_2016-->
+<!---HONumber=Mooncake_1219_2016-->
