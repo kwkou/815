@@ -13,7 +13,7 @@
 <tags
 	ms.service="virtual-machines-linux"
 	ms.date="07/18/2016"
-	wacn.date=""/>
+	wacn.date="12/27/2016"/>
 
 # 有关平台支持的从经典部署模型到 Azure Resource Manager 的迁移的技术深入探讨
 

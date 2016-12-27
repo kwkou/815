@@ -18,7 +18,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="07/19/2016"
-	wacn.date=""
+	wacn.date="12/27/2016"
 	ms.author="cynthn"/>
 
 # 使用 Azure CLI 将 IaaS 资源从经典部署模型迁移到 Azure Resource Manager 部署模型

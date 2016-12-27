@@ -17,7 +17,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="08/22/2016"
-    wacn.date=""
+    wacn.date="12/27/2016"
     ms.author="kasing" />
 
 # 平台支持的从经典部署模型到 Azure Resource Manager 的 IaaS 资源迁移

@@ -17,7 +17,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="10/13/2016"
-    wacn.date=""
+    wacn.date="12/27/2016"
     ms.author="singhkay" />
 
 # 从经典迁移到 Azure Resource Manager 期间的常见错误
@@ -26,7 +26,7 @@
 ## 错误列表
 | 错误字符串 | 缓解措施 |
 | --- | --- |
-| 内部服务器错误 |在某些情况下，这是重试时消失的暂时性错误。如果此错误仍然存在， 请[联系 Azure 支持人员](/documentation/articles/how-to-create-azure-support-request/)，因为需要调查平台日志。<br><br> **注意：**由支持团队跟踪事件后，请不要尝试任何自我缓解措施，因为这可能会对你的环境产生意想不到的后果。 |
+| 内部服务器错误 |在某些情况下，这是重试时消失的暂时性错误。如果此错误仍然存在， 请[联系 Azure 支持人员](/support/contact/)，因为需要调查平台日志。<br><br> **注意：**由支持团队跟踪事件后，请不要尝试任何自我缓解措施，因为这可能会对你的环境产生意想不到的后果。 |
 | 托管服务 {hosted-service-name} 中的部署 {deployment-name} 不支持迁移，因为它是 PaaS 部署（Web/辅助角色）。 |当部署包含 Web/辅助角色时，将发生这种情况。由于仅虚拟机支持迁移，请从部署中删除 Web/辅助角色，然后重试迁移。 |
 | 模板 {template-name} 部署失败。CorrelationId={guid} |在迁移服务的后端，我们将使用 Azure Resource Manager 模板在 Azure Resource Manager 堆栈中创建资源。由于模板是幂等的，通常你可以安全地重试迁移操作，以忽略此错误。如果此错误仍然存在，请[联系 Azure 支持人员](/documentation/articles/how-to-create-azure-support-request/)并向他们提供 CorrelationId。<br><br> **注意：**由支持团队跟踪事件后，请不要尝试任何自我缓解措施，因为这可能会对你的环境产生意想不到的后果。 |
 | 虚拟网络 {virtual-network-name} 不存在。 |如果在新的 Azure 门户中创建虚拟网络，可能会发生这种情况。实际的虚拟网络名称遵循模式“Group * <VNET 名称>” |
