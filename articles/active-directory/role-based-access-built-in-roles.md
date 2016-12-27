@@ -141,7 +141,7 @@ Azure 基于角色的访问控制 (RBAC) 附带以下可分配到用户、组和
 | Microsoft.Support/* | 创建和管理支持票证 |
 | successbricks.cleardb/databases/* | 创建和管理 ClearDB MySQL 数据库 |
 
-### 参与者
+### <a name="contributor"></a> 参与者
 可管理除访问权限以外的一切内容
 
 | **操作** ||
@@ -304,7 +304,7 @@ Azure 基于角色的访问控制 (RBAC) 附带以下可分配到用户、组和
 | Microsoft.Search/searchServices/* | 创建和管理搜索服务 |
 | Microsoft.Support/* | 创建和管理支持票证 |
 
-### 安全管理器
+### <a name="security-manager"></a> 安全管理器
 可管理安全组件、安全策略和虚拟机
 
 | **操作** ||

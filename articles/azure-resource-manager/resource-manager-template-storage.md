@@ -83,11 +83,11 @@
 * [简单部署 Linux VM](https://github.com/Azure/azure-quickstart-templates/tree/master/101-vm-simple-linux)
 * [创建 CDN 配置文件，以及创建使用存储帐户作为来源的 CDN 终结点](https://github.com/Azure/azure-quickstart-templates/tree/master/201-cdn-with-storage-account)
 * [使用 Powershell DSC 扩展创建包含 9 个 VM 的高可用性 SharePoint 场](https://github.com/Azure/azure-quickstart-templates/tree/master/sharepoint-server-farm-ha)
-* [简单部署已启用 WAD 的 5 节点安全 Service Fabric 群集](https://github.com/Azure/azure-quickstart-templates/tree/master/service-fabric-secure-cluster-5-node-1-nodetype-wad)
+* [简单部署已启用 WAD 的 5 节点安全 Service Fabric 群集](https://github.com/Azure/azure-quickstart-templates/tree/master/service-fabric-secure-cluster-5-node-1-nodetype)
 * [从 Windows 映像创建包含 4 个空数据磁盘的虚拟机](https://github.com/Azure/azure-quickstart-templates/tree/master/101-vm-multiple-data-disk)
 
 ## 后续步骤
 * 有关存储的常规信息，请参阅 [Azure 存储空间简介](/documentation/articles/storage-introduction/)。
-* 有关在虚拟机中使用新存储帐户的示例模板，请参阅[部署简单的 Linux VM](https://github.com/Azure/azure-quickstart-templates/tree/master/101-simple-linux-vm/) 或[部署简单的 Windows VM](https://github.com/Azure/azure-quickstart-templates/tree/master/101-simple-windows-vm/)。
+* 有关在虚拟机中使用新存储帐户的示例模板，请参阅[部署简单的 Linux VM](https://github.com/Azure/azure-quickstart-templates/tree/master/101-vm-simple-linux/) 或[部署简单的 Windows VM](https://github.com/Azure/azure-quickstart-templates/tree/master/101-vm-simple-windows /)。
 
 <!---HONumber=Mooncake_1219_2016-->

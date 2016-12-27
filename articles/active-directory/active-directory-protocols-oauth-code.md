@@ -35,7 +35,7 @@ Azure Active Directory (Azure AD) 使用 OAuth 2.0，使你能够授权访问 Az
 ![OAuth 授权代码流](./media/active-directory-protocols-oauth-code/active-directory-oauth-code-flow-native-app.png)
 
 
-## 请求授权代码
+## <a name="request-an-authorization-code"></a> 请求授权代码
 
 授权代码流始于客户端将用户定向到的 `/authorize` 终结点。在此请求中，客户端指示必须向用户获取的权限。可以在 Azure 经典管理门户的应用程序页中，通过底部抽屉中的“查看终结点”按钮获取 OAuth 2.0 终结点。
 
@@ -114,7 +114,7 @@ Azure Active Directory (Azure AD) 使用 OAuth 2.0，使你能够授权访问 Az
 | temporarily\_unavailable | 服务器暂时繁忙，无法处理请求。 | 重试请求。客户端应用程序可以向用户说明，其响应由于临时状态而延迟。 |
 | invalid\_resource |目标资源无效，原因是它不存在，Azure AD 找不到它，或者未正确配置。| 这表示未在租户中配置该资源（如果存在）。应用程序可以提示用户，并说明如何安装应用程序并将其添加到 Azure AD。 |
 
-## 使用授权代码请求访问令牌
+## <a name="use-the-authorization-code-to-request-an-access-token"></a> 使用授权代码请求访问令牌
 
 你已获取授权代码并获得用户授权，现在可以通过将 POST 请求发送到 `/token` 终结点，使用该代码兑换所需资源的访问令牌：
 
@@ -178,7 +178,7 @@ Azure Active Directory (Azure AD) 使用 OAuth 2.0，使你能够授权访问 Az
 | refresh\_token | OAuth 2.0 刷新令牌。应用程序可以使用此令牌，在当前的访问令牌过期之后获取其他访问令牌。刷新令牌的生存期很长，而且可以用于延长保留资源访问权限的时间。 |
 | id\_token | 无符号 JSON Web 令牌 (JWT)。应用程序可以 base64Url 解码此令牌的段，以请求已登录用户的相关信息。应用程序可以缓存并显示值，但不应依赖于这些值来获取任何授权或安全边界。 |
 
-### JWT 令牌声明
+### <a name="jwt-token-claims"></a> JWT 令牌声明
 `id_token` 参数值中的 JWT 令牌可以解码为以下声明：
 
 
@@ -314,7 +314,7 @@ RFC 6750 规范为在响应中使用 WWW-Authenticate 标头和持有者方案�
 | 403 | insufficient\_scope | 访问令牌不包含访问资源所需的模拟权限。 | 将新的授权请求发送到授权终结点。如果响应包含 scope 参数，则在对资源的请求中使用 scope 值。 |
 | 403 | insufficient\_access | 令牌的使用者没有访问该资源所需的权限。 | 提示用户使用其他帐户或请求对指定资源的权限。 |
 
-## 刷新访问令牌
+## <a name="refreshing-the-access-tokens"></a> 刷新访问令牌
 
 访问令牌的生存期很短，必须在其过期后刷新才能继续访问资源。若要刷新 `access_token`，可以向 `/token` 终结点提交另一个 `POST` 请求，但这次要提供 `refresh_token` 而不是 `code`。
 

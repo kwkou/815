@@ -358,7 +358,7 @@
 ### <a name="authorization-failed"></a> 授权失败
 你可能在部署期间收到错误，因为尝试部署资源的帐户或服务主体没有执行这些操作的访问权限。Azure Active Directory 可让你或你的系统管理员非常精确地控制哪些标识可以访问哪些资源。例如，如果你的帐户已分配到“读取者”角色，则无法创建资源。在此情况下，将会出现一条错误消息，指出授权失败。
 
-有关基于角色的访问控制的详细信息，请参阅 [Azure 基于角色的访问控制](/documentation/articles/active-directory/role-based-access-control-configure/)。
+有关基于角色的访问控制的详细信息，请参阅 [Azure 基于角色的访问控制](/documentation/articles/role-based-access-control-configure/)。
 
 除了基于角色的访问控制以外，部署操作可能还受限于订阅的策略。通过策略，管理员可以对订阅中所有资源部署强制实施约定。例如，管理员可以要求为某个资源类型提供特定的标记值。如果不满足策略要求，部署期间将出现错误。有关策略的详细信息，请参阅[使用策略来管理资源和控制访问](/documentation/articles/resource-manager-policy/)。
 
@@ -422,13 +422,9 @@
 | 服务 | 文章 |
 | --- | --- |
 | 自动化 |[Azure 自动化中常见错误的疑难解答提示](/documentation/articles/automation-troubleshooting-automation-errors/) |
-| Azure Stack |[Azure Stack 故障排除](/documentation/articles/azure-stack-troubleshooting/) |
-| Azure Stack |[Web Apps 和 Azure Stack](/documentation/articles/azure-stack-webapps-troubleshoot-known-issues/) |
-| Data Factory |[排查数据工厂问题](/documentation/articles/data-factory-troubleshoot/) |
 | Service Fabric |[排查在 Azure Service Fabric 上部署服务时遇到的常见问题](/documentation/articles/service-fabric-diagnostics-troubleshoot-common-scenarios/) |
 | 站点恢复 |[监视虚拟机和物理服务器的保护及其故障排除](/documentation/articles/site-recovery-monitoring-and-troubleshooting/) |
 | 存储 |[监视、诊断和排查 Azure 存储空间问题](/documentation/articles/storage-monitoring-diagnosing-troubleshooting/) |
-| StorSimple |[排查 StorSimple 设备部署问题](/documentation/articles/storsimple-troubleshoot-deployment/) |
 | SQL 数据库 |[排查 Azure SQL 数据库的连接问题](/documentation/articles/sql-database-troubleshoot-common-connection-issues/) |
 | SQL 数据仓库 |[排查 Azure SQL 数据仓库问题](/documentation/articles/sql-data-warehouse-troubleshoot/) |
 

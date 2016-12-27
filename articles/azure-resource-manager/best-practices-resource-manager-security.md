@@ -24,7 +24,7 @@
 
 本主题假定用户熟悉 Azure Resource Manager 中基于角色的访问控制 (RBAC)。有关详细信息，请参阅 [Azure 基于角色的访问控制](/documentation/articles/role-based-access-control-configure/)。
 
-本主题是包含更多内容的白皮书的一部分。若要阅读完整的白皮书，请下载 [一流的 ARM 模板注意事项和成熟的做法](http://download.microsoft.com/download/8/E/1/8E1DBEFA-CECE-4DC9-A813-93520A5D7CFE/World Class ARM Templates - Considerations and Proven Practices.pdf) 。
+本主题是包含更多内容的白皮书的一部分。若要阅读完整的白皮书，请下载 [一流的 ARM 模板注意事项和成熟的做法](http://download.microsoft.com/download/8/E/1/8E1DBEFA-CECE-4DC9-A813-93520A5D7CFE/World%20Class%20ARM%20Templates%20-%20Considerations%20and%20Proven%20Practices.pdf)。
 
 ## 机密和证书
 将 Azure 虚拟机、Azure 资源管理器和 Azure 密钥保管库完全集成后，即可提供相关支持，以便安全地处理将要在 VM 中部署的证书。最好是将 Azure 密钥保管库与资源管理器一起使用，以便管理和存储 VM 机密和证书。这样做有以下好处：

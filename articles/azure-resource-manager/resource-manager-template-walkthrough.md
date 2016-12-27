@@ -547,7 +547,6 @@
 你可以使用部署存储帐户时使用的相同命令，重新部署该模板。在重新部署前无需删除存储帐户，因为 Resource Manager 将跳过重新创建已存在且未发生更改的资源。
 
 ## 后续步骤
-* [Azure Resource Manager 模板可视化工具](http://armviz.io/#/)是个强大的工具，可直观地显示 Resource Manager 模板，因为这些模板只从 json 文件读取可能会变得太大而无法了解。
 * 若要详细了解模板的结构，请参阅 [Authoring Azure Resource Manager templates](/documentation/articles/resource-group-authoring-templates/)（创作 Azure Resource Manager 模板）。
 * 若要了解如何部署模板，请参阅[使用 Azure Resource Manager 模板部署资源组](/documentation/articles/resource-group-template-deploy/)
 * 有关自动化部署的四部分系列教程，请参阅[将应用程序自动部署到 Azure 虚拟机](/documentation/articles/virtual-machines-windows-dotnet-core-1-landing/)。此系列教程介绍了应用程序体系结构、访问与安全性、可用性与缩放性，以及应用程序部署。

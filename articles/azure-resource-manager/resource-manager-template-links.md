@@ -125,10 +125,6 @@
 
 * [使用逻辑应用发出队列警报](https://github.com/Azure/azure-quickstart-templates/tree/master/201-alert-to-queue-with-logic-app)
 * [使用逻辑应用发出 Slack 警报](https://github.com/Azure/azure-quickstart-templates/tree/master/201-alert-to-slack-with-logic-app)
-* [使用现有网关预配 API 应用](https://github.com/Azure/azure-quickstart-templates/tree/master/201-api-app-gateway-existing)
-* [使用新网关预配 API 应用](https://github.com/Azure/azure-quickstart-templates/tree/master/201-api-app-gateway-new)
-* [使用模板创建逻辑应用和 API 应用](https://github.com/Azure/azure-quickstart-templates/tree/master/201-logic-app-api-app-create)
-* [触发警报时发送文本消息的逻辑应用](https://github.com/Azure/azure-quickstart-templates/tree/master/201-alert-to-text-message-with-logic-app)
 
 ## 后续步骤
 * 有关模板结构的信息，请参阅[创作 Azure 资源管理器模板](/documentation/articles/resource-group-authoring-templates/)。
