@@ -229,9 +229,6 @@ IP 配置在创建 NIC 时关联到 NIC，NIC 在创建 VM 时附加到 VM。本
 完成以下步骤，可将其他专用和公共 IP 地址添加到现有 NIC。示例根据本文所述的[方案](#Scenario)生成。
 
 1. 打开 PowerShell 命令提示符，在单个 PowerShell 会话中完成本部分余下的步骤。如果尚未安装并配置 PowerShell，请先完成[How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure/)（如何安装和配置 Azure PowerShell）一文中所述的步骤。
-2. 若要注册预览版，请向[多个 IP](mailto:MultipleIPsPreview@microsoft.com?subject=Request%20to%20enable%20subscription%20%3csubscription%20id%3e) 发送电子邮件，其中包含订阅 ID 和目标用途。如果要尝试完成剩余步骤，需要满足以下条件：
-	- 收到告知允许使用预览版的电子邮件
-	- 遵守收到的电子邮件中的说明
 3. 将以下 $Variable 的“值”更改为要向其添加 IP 地址的 NIC 的名称，以及 NIC 所在的资源组和位置：
 
         $NICname         = "myNIC"

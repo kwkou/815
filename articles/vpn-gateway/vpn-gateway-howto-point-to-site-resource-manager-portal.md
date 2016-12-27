@@ -60,7 +60,7 @@
 * **客户端地址池：172.16.201.0/24**<br>使用此点到站点连接连接到 VNet 的 VPN 客户端接收来自客户端地址池的 IP 地址。
 
 ## 开始之前
-* 确保你拥有 Azure 订阅。如果你还没有 Azure 订阅，可以激活 [MSDN 订户权益](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details)或注册获取[免费帐户](https://azure.microsoft.com/pricing/1rmb-trial)。
+* 确保你拥有 Azure 订阅。如果你还没有 Azure 订阅，可以注册获取[1元帐户](/pricing/1rmb-trial)。
 
 ## <a name="createvnet"></a>第 1 部分 - 创建虚拟网络
 如果要练习创建此配置，可以引用[示例值](#example)。

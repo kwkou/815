@@ -193,7 +193,7 @@ Azure 具有两种不同的部署模型，用于创建和处理资源：[Resourc
 6. 如果列出了任何子网，请单击子网，并按照[取消 NSG 与子网之间的关联](#Dissociate-an-NSG-from-a-subnet)中的步骤 2 和步骤 3 进行操作。
 7. 向左滚动到“NSG-FrontEnd”边栏选项卡，然后单击“删除”>“是”。
 
-	[Azure 门户预览 - NSG](./media/virtual-network-manage-nsg-arm-portal/figure16.png)
+	![Azure 门户预览 - NSG](./media/virtual-network-manage-nsg-arm-portal/figure16.png)
 
 ## 后续步骤
 * 为 NSG [启用日志记录](/documentation/articles/virtual-network-nsg-manage-log/)。
