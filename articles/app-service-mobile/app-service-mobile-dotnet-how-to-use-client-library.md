@@ -862,7 +862,6 @@ Xamarin 应用使用 [Xamarin.Auth API] 将证书安全存储在 **Account** 对
 
 Xamarin 应用需要一些额外的代码才能注册 iOS 或 Android 平台上运行的应用。有关详细信息，请参阅适用于平台的主题：
 
-* [Xamarin.Android](/documentation/articles/app-service-mobile-xamarin-android-get-started-push/#add-push)
 * [Xamarin.iOS](/documentation/articles/app-service-mobile-xamarin-ios-get-started-push/#add-push-notifications-to-your-app)
 
 ###<a name="how-to-register-push-templates-to-send-cross-platform-notifications"></a> 如何注册推送模板以发送跨平台通知

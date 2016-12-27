@@ -57,7 +57,6 @@
 完成本快速入门教程后，请继续学习下列教程之一：
 
 * 将[身份验证添加]到 Apache Cordova 应用。
-* 将[推送通知添加]到 Apache Cordova 应用。
 
 详细了解 Azure 应用服务的重要概念。
 
@@ -75,9 +74,8 @@
 <!-- URLs -->
 [Azure portal]: https://portal.azure.cn/
 [Visual Studio Community 2015]: http://www.visualstudio.com/
-[用于 Apache Cordova 的 Visual Studio 工具]: https://www.visualstudio.com/features/cordova-vs.aspx
+[用于 Apache Cordova 的 Visual Studio 工具]: https://www.visualstudio.com/vs/cordova/
 [身份验证添加]: /documentation/articles/app-service-mobile-cordova-get-started-users/
-[推送通知添加]: /documentation/articles/app-service-mobile-cordova-get-started-push/
 [身份验证]: /documentation/articles/app-service-mobile-auth/
 [推送通知]: /documentation/articles/notification-hubs-push-notification-overview/
 [Apache Cordova SDK]: /documentation/articles/app-service-mobile-cordova-how-to-use-client-library/
