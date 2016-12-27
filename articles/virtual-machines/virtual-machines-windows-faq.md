@@ -72,7 +72,7 @@ Azure 存储帐户可为操作系统磁盘和任何数据磁盘提供存储空�
 
 ## 可否复制或克隆现有的 Azure VM？
 
-可以。有关说明，请参阅 [How to create a copy of a Windows virtual machine in the Resource Manager deployment model](/documentation/articles/virtual-machines-windows-specialized-image/)（如何在 Resource Manager 部署模型中创建 Windows 虚拟机副本）。
+可以。有关说明，请参阅 [How to create a copy of a Windows virtual machine in the Resource Manager deployment model](/documentation/articles/virtual-machines-windows-vhd-copy/)（如何在 Resource Manager 部署模型中创建 Windows 虚拟机副本）。
 
 ## Azure 可否支持 Linux VM？
 
