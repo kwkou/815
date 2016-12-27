@@ -16,12 +16,11 @@
     ms.workload="na"
     ms.date="04/15/2016"
     ms.author="sethm;shvija"
-    wacn.date="11/28/2016"/>  
+    wacn.date="12/26/2016"/>  
 
 
 # 使用 Azure Resource Manager 模板创建服务总线命名空间
-
-本文介绍如何使用 Azure Resource Manager 模板，该模板用于创建包含标准/基本 SKU 的类型为 **Messaging** 的服务总线命名空间。本文还定义了为执行部署指定的参数。可将此模板用于自己的部署，或自定义此模板以满足要求。
+本文介绍如何使用 Azure Resource Manager 模板创建包含标准/基本 SKU 的类型为 **Messaging** 的服务总线命名空间。本文还定义了为执行部署指定的参数。可将此模板用于自己的部署，或自定义此模板以满足要求。
 
 有关创建模板的详细信息，请参阅[创作 Azure Resource Manager 模板][]。
 
@@ -29,10 +28,10 @@
 
 >[AZURE.NOTE] 以下 Azure Resource Manager 模板可供下载和部署。
 >
->-    [创建包含事件中心和使用者组的事件中心命名空间](/documentation/articles/event-hubs-resource-manager-namespace-event-hub/)
->-    [创建包含队列的服务总线命名空间](/documentation/articles/service-bus-resource-manager-namespace-queue/)
->-    [创建包含主题和订阅的服务总线命名空间](/documentation/articles/service-bus-resource-manager-namespace-topic/)
->-    [创建包含队列和授权规则的服务总线命名空间](/documentation/articles/service-bus-resource-manager-namespace-auth-rule/)
+> - [创建包含队列的服务总线命名空间](/documentation/articles/service-bus-resource-manager-namespace-queue/)
+> - [创建包含主题和订阅的服务总线命名空间](/documentation/articles/service-bus-resource-manager-namespace-topic/)
+> - [创建包含队列和授权规则的服务总线命名空间](/documentation/articles/service-bus-resource-manager-namespace-auth-rule/)
+> - [创建包含主题、订阅和规则的服务总线命名空间](/documentation/articles/service-bus-resource-manager-namespace-topic-with-rule/)
 >
 >若要检查最新模板，请访问 [Azure 快速启动模板][]库并搜索服务总线。
 
@@ -142,10 +141,8 @@ azure group deployment create <my-resource-group> <my-deployment-name> --templat
 ```
 
 ## 后续步骤
+现在，已使用 Azure Resource Manager 创建并部署了资源，请阅读以下文章了解如何管理这些资源：
 
-现在，你已使用 Azure Resource Manager 创建并部署了资源，请通过查看以下文章了解如何管理这些资源：
-
-- [使用 Azure 自动化管理 Azure Service Bus](/documentation/articles/service-bus-automation-manage/)
 - [使用 PowerShell 管理服务总线](/documentation/articles/service-bus-powershell-how-to-provision/)
 - [使用服务总线资源管理器管理服务总线资源](https://code.msdn.microsoft.com/Service-Bus-Explorer-f2abca5a)
 
@@ -156,4 +153,4 @@ azure group deployment create <my-resource-group> <my-deployment-name> --templat
   [Using Azure PowerShell with Azure Resource Manager]: /documentation/articles/powershell-azure-resource-manager/
   [Using the Azure CLI for Mac, Linux, and Windows with Azure Resource Management]: /documentation/articles/xplat-cli-azure-resource-manager/
 
-<!---HONumber=Mooncake_1121_2016-->
+<!---HONumber=Mooncake_1219_2016-->

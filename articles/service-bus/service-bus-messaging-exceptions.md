@@ -15,7 +15,7 @@
     ms.workload="na"
     ms.date="09/02/2016"
     ms.author="sethm"
-    wacn.date="10/24/2016" />  
+    wacn.date="12/26/2016" />  
 
 # 服务总线消息传送异常
 
@@ -96,13 +96,8 @@ Message: The maximum entity size has been reached or exceeded for Topic: ‘xxx-
 
 每个事件中心最多只能有 20 个使用者组。当你尝试创建更多组时，会收到 [QuotaExceededException](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.quotaexceededexception.aspx)。
 
-### 中继
-
-对于服务总线中继，此异常包含 [System.ServiceModel.QuotaExceededException](https://msdn.microsoft.com/zh-cn/library/system.servicemodel.quotaexceededexception.aspx)，指示已超过此终结点的最大侦听器数目。这会以异常消息的 **MaximumListenersPerEndpoint** 值表示。
-
-## TimeoutException 
-
-[TimeoutException](https://msdn.microsoft.com/zh-cn/library/system.timeoutexception.aspx) 指示用户启动的操作所用的时间超过操作超时值。
+## TimeoutException
+[TimeoutException](https://msdn.microsoft.com/library/system.timeoutexception.aspx) 指示用户启动的操作所用的时间超过操作超时值。
 
 应检查 [ServicePointManager.DefaultConnectionLimit](https://msdn.microsoft.com/zh-cn/library/system.net.servicepointmanager.defaultconnectionlimit) 属性的值，因为达到此限制也会导致 [TimeoutException](https://msdn.microsoft.com/zh-cn/library/system.timeoutexception.aspx) 异常。
 
@@ -113,19 +108,6 @@ Message: The maximum entity size has been reached or exceeded for Topic: ‘xxx-
 ### 事件中心
 
 对于事件中心，超时作为连接字符串的一部分指定，或通过 [ServiceBusConnectionStringBuilder](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.servicebusconnectionstringbuilder.aspx) 指定。错误消息本身可能会有所不同，但它始终包含当前操作的指定超时值。
-
-### 中继
-
-对于服务总线中继，你可能会在第一次打开中继发送器连接时收到超时异常。此异常有两个常见的原因：
-
-1. [OpenTimeout](https://msdn.microsoft.com/zh-cn/library/wcf.opentimeout.aspx) 值可能太小（甚至几分之一秒）。
-2. 本地中继侦听器可能无响应（或者可能遇到禁止侦听器接受新客户端连接的防火墙规则问题），而 [OpenTimeout](https://msdn.microsoft.com/zh-cn/library/wcf.opentimeout.aspx) 值约小于 20 秒。
-
-例如：
-
-```
-'System.TimeoutException’: The operation did not complete within the allotted timeout of 00:00:10. The time allotted to this operation may have been a portion of a longer timeout.
-```
 
 ### 常见原因
 
@@ -147,4 +129,4 @@ Message: The maximum entity size has been reached or exceeded for Topic: ‘xxx-
 - [服务总线基础知识](/documentation/articles/service-bus-fundamentals-hybrid-solutions/)
 - [服务总线体系结构](/documentation/articles/service-bus-architecture/)
 
-<!---HONumber=Mooncake_0307_2016-->
+<!---HONumber=Mooncake_1219_2016-->

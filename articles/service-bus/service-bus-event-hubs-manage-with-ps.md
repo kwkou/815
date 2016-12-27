@@ -10,8 +10,8 @@
 
 <tags
    ms.service="service-bus"
-    ms.date="06/24/2016"
-   wacn.date="11/28/2016"/>  
+   ms.date="10/04/2016"
+   wacn.date="12/26/2016"/>  
 
 # 使用 PowerShell 管理 Service Bus 和事件中心资源
 
@@ -245,8 +245,7 @@ catch [System.Exception]
 	}
 
 ## 后续步骤
-
-本文提供使用 PowerShell 预配服务总线实体的基本概述。尽管通过引用 Microsoft.ServiceBus.dll 程序集有有限数量的 PowerShell cmdlet 可用于管理 Service Bus 消息实体，但可以使用 .NET 客户端库执行的任何操作几乎也可以在 PowerShell 脚本中执行。
+本文介绍使用 PowerShell 预配服务总线实体的基本工作流。尽管通过引用 Microsoft.ServiceBus.dll 程序集有有限数量的 PowerShell cmdlet 可用于管理 Service Bus 消息实体，但可以使用 .NET 客户端库执行的任何操作几乎也可以在 PowerShell 脚本中执行。
 
 以下博客文章提供了更多详细示例：
 
@@ -269,4 +268,4 @@ catch [System.Exception]
 [.NET API for Service Bus]: https://msdn.microsoft.com/zh-cn/library/azure/mt419900.aspx
 [安装和配置 Azure PowerShell]: /documentation/articles/powershell-install-configure/
 
-<!---HONumber=Mooncake_1121_2016-->
+<!---HONumber=Mooncake_1219_2016-->
