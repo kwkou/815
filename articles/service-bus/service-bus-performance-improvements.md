@@ -153,7 +153,7 @@ Express 实体可实现高吞吐量同时减少延迟的情况。使用快速实
 ## 开发和测试功能
 服务总线有一个专门用于开发的功能，此功能**切不可用于生产配置**。
 
-[TopicDescription.EnableFilteringMessagesBeforePublishing](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.topicdescription.enablefilteringmessagesbeforepublishing.aspx)
+[TopicDescription.EnableFilteringMessagesBeforePublishing](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.topicdescription.enablefilteringmessagesbeforepublishing.aspx)
 
 * 当将新的规则或筛选器添加到主题时，EnableFilteringMessagesBeforePublishing 可用于验证新的筛选器表达式是否按预期工作。
 
