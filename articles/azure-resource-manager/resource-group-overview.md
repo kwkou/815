@@ -296,10 +296,6 @@ Azure SDK 适用于多种语言和平台。每种语言实现可通过其生态�
 * [管理 Azure 资源和资源组](https://azure.microsoft.com/documentation/samples/resource-manager-ruby-resources-and-groups/)
 * [使用模板部署启用 SSH 的 VM](https://azure.microsoft.com/documentation/samples/resource-manager-ruby-template-deployment/)
 
-除了这些示例，还可以通过库模板搜索示例。
-
-[.NET](https://azure.microsoft.com/documentation/samples/?service=azure-resource-manager&platform=dotnet) | [Java](https://azure.microsoft.com/documentation/samples/?service=azure-resource-manager&platform=java) | [Node.js](https://azure.microsoft.com/documentation/samples/?service=azure-resource-manager&platform=nodejs) | [Python](https://azure.microsoft.com/documentation/samples/?service=azure-resource-manager&platform=python) | [Ruby](https://azure.microsoft.com/documentation/samples/?service=azure-resource-manager&platform=ruby)
-
 ## 后续步骤
 * 有关使用模板的简单介绍，请参阅 [Export an Azure Resource Manager template from existing resources](/documentation/articles/resource-manager-export-template/)（从现有资源导出 Azure Resource Manager 模板）。
 * 有关创建模板的更全面演练，请参阅 [Resource Manager Template Walkthrough](/documentation/articles/resource-manager-template-walkthrough/)（Resource Manager 模板演练）。

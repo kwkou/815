@@ -25,10 +25,10 @@
 * [Azure CLI](/documentation/articles/resource-group-authenticate-service-principal-cli/)
 * [门户](/documentation/articles/resource-group-create-service-principal-portal/)
 
-当应用程序需要访问或修改资源时，必须设置 Active Directory (AD) 应用程序，并为其分配所需的权限。本主题演示如何通过门户执行这些步骤。目前，必须使用经典门户来创建一个新的 Active Directory 应用程序，然后切换到 Azure 门户预览，以便为该应用程序分配角色。
+当应用程序需要访问或修改资源时，必须设置 Active Directory (AD) 应用程序，并为其分配所需的权限。本主题演示如何通过门户执行这些步骤。目前，必须使用经典管理门户来创建一个新的 Active Directory 应用程序，然后切换到 Azure 门户预览，以便为该应用程序分配角色。
 
 > [AZURE.NOTE]
-本主题中的步骤仅适用于使用**经典门户**创建 AD 应用程序的情况。**如果使用 Azure 门户预览创建 AD 应用程序，这些步骤不会成功。**
+本主题中的步骤仅适用于使用**经典管理门户**创建 AD 应用程序的情况。**如果使用 Azure 门户预览创建 AD 应用程序，这些步骤不会成功。**
 ><p>
 > 通过 [PowerShell](/documentation/articles/resource-group-authenticate-service-principal/) 或 [Azure CLI](/documentation/articles/resource-group-authenticate-service-principal-cli/) 设置 AD 应用程序和服务主体可能会更方便，尤其是要使用证书进行身份验证时。本主题不会介绍如何使用证书。
 >
@@ -39,7 +39,7 @@
 有关将应用程序集成到 Azure 以管理资源的详细步骤，请参阅 [Developer's guide to authorization with the Azure Resource Manager API](/documentation/articles/resource-manager-api-authentication/)（使用 Azure Resource Manager API 进行授权的开发人员指南）。
 
 ## 创建 Active Directory 应用程序
-1. 通过[经典门户](https://manage.windowsazure.cn/)登录到 Azure 帐户。
+1. 通过[经典管理门户](https://manage.windowsazure.cn/)登录到 Azure 帐户。
 2. 请确保你了解订阅的默认 Active Directory。只能为与订阅在同一目录中的应用程序授予访问权限。选择“设置”并查找与订阅关联的目录名称。有关详细信息，请参阅 [Azure 订阅与 Azure Active Directory 的关联方式](/documentation/articles/active-directory-how-subscriptions-associated-directory/)。
 
      ![查找默认目录](./media/resource-group-create-service-principal-portal/show-default-directory.png)  
@@ -133,7 +133,7 @@
 
 可将作用域设置为订阅、资源组或资源级别。较低级别的作用域将继承权限。例如，将某个应用程序添加到资源组的“读取者”角色意味着该应用程序可以读取该资源组及其包含的所有资源。
 
-1. 若要将应用程序分配到角色，请从经典门户切换到 [Azure 门户预览](https://portal.azure.cn)。
+1. 若要将应用程序分配到角色，请从经典管理门户切换到 [Azure 门户预览](https://portal.azure.cn)。
 2. 检查权限以确保可以将服务主体分配到角色。为帐户选择“我的权限”。
 
     ![选择我的权限](./media/resource-group-create-service-principal-portal/my-permissions.png)  

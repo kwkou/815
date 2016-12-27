@@ -185,7 +185,7 @@
 
 ARM 模板的部署与调用其他 API 的方式并没有太大差别。其中一个重要方面就是模板部署需要相当长的时间（根据模板的内容而定），而 API 调用只会返回，开发人员需负责查询部署状态以了解何时完成了部署。
 
-在本示例中，我们会使用 [GitHub](https://github.com/Azure/azure-quickstart-templates) 上提供的公开 ARM 模板。我们要使用的模板会将 Linux VM 部署到美国西部区域。尽管此模板将在公共存储库（如 GitHub）中提供，但你也可以选择传递整个模板作为请求的一部分。请注意，我们将提供参数值作为请求的一部分，这些参数值将在所用的模板中使用。
+在本示例中，我们会使用 [GitHub](https://github.com/Azure/azure-quickstart-templates) 上提供的公开 ARM 模板。我们要使用的模板会将 Linux VM 部署到中国东部区域。尽管此模板将在公共存储库（如 GitHub）中提供，但你也可以选择传递整个模板作为请求的一部分。请注意，我们将提供参数值作为请求的一部分，这些参数值将在所用的模板中使用。
 
 （将 SUBSCRIPTION\_ID、RESOURCE\_GROUP\_NAME、DEPLOYMENT\_NAME、YOUR\_ACCESS\_TOKEN、GLOBALY\_UNIQUE\_STORAGE\_ACCOUNT\_NAME、ADMIN\_USER\_NAME、ADMIN\_PASSWORD 和 DNS\_NAME\_FOR\_PUBLIC\_IP 替换为请求适用的值）
 
