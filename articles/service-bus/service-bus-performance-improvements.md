@@ -12,9 +12,9 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="na"
-    ms.date="10/14/2016"
+    ms.date="10/25/2016"
     ms.author="sethm"
-    wacn.date="11/28/2016"/>  
+    wacn.date="12/26/2016"/>  
 
 
 # 使用服务总线消息传送改进性能的最佳实践
@@ -26,10 +26,13 @@
 以下几部分介绍服务总线用以帮助提高性能的几个概念。
 
 ## 协议
+服务总线支持客户端通过三种协议发送和接收消息
 
-服务总线使客户端能够通过两个协议发送和接收消息：服务总线客户端协议和 HTTP (REST)。服务总线客户端协议更高效，因为只要消息工厂存在，该协议就会始终保持与服务总线服务的连接。它还实现批处理和预提取。服务总线客户端协议可用于使用 .NET ApI 的 .NET 应用程序。
+1. 高级消息队列协议 (AMQP)
+2. 服务总线消息传送协议 (SBMP)
+3. HTTP
 
-除非明确指出，否则本主题中的所有内容都假定使用服务总线客户端协议。
+AMQP 和 SBMP 都很高效，因为只要存在消息工厂，就可以保持与服务总线的连接。它还实现批处理和预提取。除非明确指出，否则本主题中的所有内容都假定使用 AMQP 或 SBMP 协议。
 
 ## 重用工厂和客户端
 
@@ -41,39 +44,37 @@
 
 -   **异步操作**：客户端通过执行异步操作来计划操作。前一个请求完成之前便启动下一个请求。以下是异步发送操作的示例：
 
-	```
-	BrokeredMessage m1 = new BrokeredMessage(body);
-	BrokeredMessage m2 = new BrokeredMessage(body);
+			BrokeredMessage m1 = new BrokeredMessage(body);
+			BrokeredMessage m2 = new BrokeredMessage(body);
 	
-	Task send1 = queueClient.SendAsync(m1).ContinueWith((t) => 
-	  {
-	    Console.WriteLine("Sent message #1");
-	  });
-	Task send2 = queueClient.SendAsync(m2).ContinueWith((t) => 
-	  {
-	    Console.WriteLine("Sent message #2");
-	  });
-	Task.WaitAll(send1, send2);
-	Console.WriteLine("All messages sent");
-	```
+			Task send1 = queueClient.SendAsync(m1).ContinueWith((t) => 
+			  {
+			    Console.WriteLine("Sent message #1");
+			  });
+			Task send2 = queueClient.SendAsync(m2).ContinueWith((t) => 
+			  {
+			    Console.WriteLine("Sent message #2");
+			  });
+			Task.WaitAll(send1, send2);
+			Console.WriteLine("All messages sent");
+			```
 
-	这是异步接收操作的示例：
+			这是异步接收操作的示例：
 	
-	```
-	Task receive1 = queueClient.ReceiveAsync().ContinueWith(ProcessReceivedMessage);
-	Task receive2 = queueClient.ReceiveAsync().ContinueWith(ProcessReceivedMessage);
+			```
+			Task receive1 = queueClient.ReceiveAsync().ContinueWith(ProcessReceivedMessage);
+			Task receive2 = queueClient.ReceiveAsync().ContinueWith(ProcessReceivedMessage);
 	
-	Task.WaitAll(receive1, receive2);
-	Console.WriteLine("All messages received");
+			Task.WaitAll(receive1, receive2);
+			Console.WriteLine("All messages received");
 	
-	async void ProcessReceivedMessage(Task<BrokeredMessage> t)
-	{
-	  BrokeredMessage m = t.Result;
-	  Console.WriteLine("{0} received", m.Label);
-	  await m.CompleteAsync();
-	  Console.WriteLine("{0} complete", m.Label);
-	}
-	```
+			async void ProcessReceivedMessage(Task<BrokeredMessage> t)
+			{
+			  BrokeredMessage m = t.Result;
+			  Console.WriteLine("{0} received", m.Label);
+			  await m.CompleteAsync();
+			  Console.WriteLine("{0} complete", m.Label);
+			}
 
 -   **多个工厂**：由同一工厂创建的所有客户端（发送方和接收方）共享一个 TCP 连接。最大消息吞吐量受可通过此 TCP 连接的操作的数目限制。单个工厂可获得的吞吐量因 TCP 往返时间和消息大小不同而大有差异。若要获得更高的吞吐速率，应使用多个消息工厂。
 
@@ -93,12 +94,10 @@
 
 要禁用批处理，则将 [BatchFlushInterval][] 属性设置为 **TimeSpan.Zero**。例如：
 
-```
-MessagingFactorySettings mfs = new MessagingFactorySettings();
-mfs.TokenProvider = tokenProvider;
-mfs.NetMessagingTransportSettings.BatchFlushInterval = TimeSpan.FromSeconds(0.05);
-MessagingFactory messagingFactory = MessagingFactory.Create(namespaceUri, mfs);
-```
+		MessagingFactorySettings mfs = new MessagingFactorySettings();
+		mfs.TokenProvider = tokenProvider;
+		mfs.NetMessagingTransportSettings.BatchFlushInterval = TimeSpan.FromSeconds(0.05);
+		MessagingFactory messagingFactory = MessagingFactory.Create(namespaceUri, mfs);
 
 批处理不会影响可计费的消息操作的数目，且仅适用于服务总线客户端协议。HTTP 协议不支持批处理。
 
@@ -108,11 +107,9 @@ MessagingFactory messagingFactory = MessagingFactory.Create(namespaceUri, mfs);
 
 创建新队列、主题或订阅时，将默认启用批量存储访问。若要禁用批量存储访问，则在创建实体之前将 [EnableBatchedOperations][] 属性设置为 **false**。例如：
 
-```
-QueueDescription qd = new QueueDescription();
-qd.EnableBatchedOperations = false;
-Queue q = namespaceManager.CreateQueue(qd);
-```
+		QueueDescription qd = new QueueDescription();
+		qd.EnableBatchedOperations = false;
+		Queue q = namespaceManager.CreateQueue(qd);
 
 批量存储访问不影响可计费的消息操作的数目，并且是队列、主题或订阅的一个属性。它不依赖于接收模式以及客户端和服务总线服务之间所使用的协议。
 
@@ -134,11 +131,9 @@ Queue q = namespaceManager.CreateQueue(qd);
 
 Express 实体可实现高吞吐量同时减少延迟的情况。使用快速实体时，如果向队列或主题发送消息，消息不会立即存储在消息存储中。而是在内存中进行缓存。如果消息在队列中留存的时间超过数秒钟，则会自动写入到稳定的存储区内，以避免其因中断而丢失。将消息写入到内存缓存内会增加吞吐量，减少延迟，因为在消息发送时不存在对稳定存储区的访问。将在几秒钟内使用的消息不会写入到消息存储中。以下示例会创建一个快速主题。
 
-```
-TopicDescription td = new TopicDescription(TopicName);
-td.EnableExpress = true;
-namespaceManager.CreateTopic(td);
-```
+		TopicDescription td = new TopicDescription(TopicName);
+		td.EnableExpress = true;
+		namespaceManager.CreateTopic(td);
 
 如果要将包含了必不可失的关键信息的消息发送到 express 实体，则发送方可以通过将 [ForcePersistence][] 属性设置为 **true**，强制服务总线立即将消息保留至稳定的存储区内。
 
@@ -146,16 +141,21 @@ namespaceManager.CreateTopic(td);
 
 在内部，服务总线使用相同的节点和消息存储来处理和存储消息传送实体（队列或主题）的所有消息。另一方面，分区队列或主题将分布在多个节点和消息存储上。分区队列和主题不仅会生成比常规队列和主题更高的吞吐量，还表现出极高的可用性。若要生成分区的实体，则如以下示例所示，将 [EnablePartitioning][] 属性设置为 **true**。有关分区实体的详细信息，请参阅[分区消息实体][]。
 
-```
-// Create partitioned queue.
-QueueDescription qd = new QueueDescription(QueueName);
-qd.EnablePartitioning = true;
-namespaceManager.CreateQueue(qd);
-```
+		// Create partitioned queue.
+		QueueDescription qd = new QueueDescription(QueueName);
+		qd.EnablePartitioning = true;
+		namespaceManager.CreateQueue(qd);
 
 ## 使用多个队列
 
 如果不能使用分区队列或主题，或不能由单个分区队列或主题处理预期负载，则必须使用多个消息传送实体。在使用多个实体时，为每个实体创建专用客户端，而不是针对所有实体使用同一个客户端。
+
+## 开发和测试功能
+服务总线有一个专门用于开发的功能，此功能**切不可用于生产配置**。
+
+[TopicDescription.EnableFilteringMessagesBeforePublishing](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.topicdescription.enablefilteringmessagesbeforepublishing.aspx)
+
+* 当将新的规则或筛选器添加到主题时，EnableFilteringMessagesBeforePublishing 可用于验证新的筛选器表达式是否按预期工作。
 
 ## 方案
 
@@ -293,4 +293,4 @@ namespaceManager.CreateQueue(qd);
   [分区消息实体]: /documentation/articles/service-bus-partitioning/
   
 
-<!---HONumber=Mooncake_1121_2016-->
+<!---HONumber=Mooncake_1219_2016-->
