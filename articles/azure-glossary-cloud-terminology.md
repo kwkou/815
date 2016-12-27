@@ -39,7 +39,7 @@ Azure 术语以及上述两份参考文档提供了适用于 Azure 和云行业�
 另请参阅 [How Azure subscriptions are associated with Azure Active Directory（Azure 订阅与 Azure Active Directory 的关联方式）](/documentation/articles/active-directory-how-subscriptions-associated-directory/)
 
 
-### <a name="availabilityset"></a>可用性集  
+### <a name="availabilityset" id="availability-set"></a>可用性集  
 可一起管理的、用于提供应用程序冗余和可靠性的虚拟机集合。使用可用性集可确保在计划内或计划外维护事件期间，至少有一个虚拟机可用。  
 另请参阅 [Manage the availability of Windows virtual machines（管理 Windows 虚拟机的可用性）](/documentation/articles/virtual-machines-windows-manage-availability/)或 [Manage the availability of Linux virtual machines（管理 Linux 虚拟机的可用性）](/documentation/articles/virtual-machines-linux-manage-availability/)
 

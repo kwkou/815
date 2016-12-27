@@ -28,7 +28,7 @@
 
 > [AZURE.NOTE]如果想要提高**默认限制**之上的限制，可以[打开免费的联机客户支持请求](/support/support-ticket-form/)。无法将这些限制提高到超过下表中的**最大限制**值。如果没有任何**最大限制**列，则指定的资源不具有可调整的限制。
 
-## 限制和 Azure 资源管理器
+## <a name="limits-and-the-azure-resource-manager"></a> 限制和 Azure 资源管理器
 
 现在可以将多个 Azure 资源合并到单个 Azure 资源组中。在使用资源组时，以前针对全局的限制会通过 Azure 资源管理器在区域级别进行管理。有关 Azure 资源组的详细信息，请参阅[使用资源组管理 Azure 资源](/documentation/articles/resource-group-portal/)。
 
