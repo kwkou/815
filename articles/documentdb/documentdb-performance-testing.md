@@ -1,22 +1,23 @@
-<properties 
-	pageTitle="DocumentDB 规模和性能测试 | Azure" 
-	description="了解如何使用 Azure DocumentDB 执行规模和性能测试"
-	keywords="性能测试"
-	services="documentdb" 
-	authors="arramac" 
-	manager="jhubbard" 
-	editor="" 
-	documentationCenter=""/>
+<properties
+    pageTitle="DocumentDB 规模和性能测试 | Azure"
+    description="了解如何使用 Azure DocumentDB 执行规模和性能测试"
+    keywords="性能测试"
+    services="documentdb"
+    author="arramac"
+    manager="jhubbard"
+    editor=""
+    documentationcenter="" />  
 
-<tags 
-	ms.service="documentdb" 
-	ms.workload="data-services" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="07/21/2016" 
-	wacn.date="10/18/2016" 
-	ms.author="arramac"/>  
+<tags
+    ms.assetid="f4c96ebd-f53c-427d-a500-3f28fe7b11d0"
+    ms.service="documentdb"
+    ms.workload="data-services"
+    ms.tgt_pltfrm="na"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.date="10/27/2016"
+    wacn.date="12/27/2016"
+    ms.author="arramac" />  
 
 
 # 使用 Azure DocumentDB 进行性能和规模测试
@@ -46,48 +47,48 @@
 
 **步骤 3：**从命令行编译并运行控制台应用。你应会看到如下输出：
 
-	Summary:
-	---------------------------------------------------------------------
-	Endpoint: https://docdb-scale-demo.documents.azure.com:443/
-	Collection : db.testdata at 50000 request units per second
-	Document Template*: Player.json
-	Degree of parallelism*: 500
-	---------------------------------------------------------------------
+    Summary:
+    ---------------------------------------------------------------------
+    Endpoint: https://docdb-scale-demo.documents.azure.com:443/
+    Collection : db.testdata at 50000 request units per second
+    Document Template*: Player.json
+    Degree of parallelism*: 500
+    ---------------------------------------------------------------------
 
-	DocumentDBBenchmark starting...
-	Creating database db
-	Creating collection testdata
-	Creating metric collection metrics
-	Retrying after sleeping for 00:03:34.1720000
-	Starting Inserts with 500 tasks
-	Inserted 661 docs @ 656 writes/s, 6860 RU/s (18B max monthly 1KB reads)
-	Inserted 6505 docs @ 2668 writes/s, 27962 RU/s (72B max monthly 1KB reads)
-	Inserted 11756 docs @ 3240 writes/s, 33957 RU/s (88B max monthly 1KB reads)
-	Inserted 17076 docs @ 3590 writes/s, 37627 RU/s (98B max monthly 1KB reads)
-	Inserted 22106 docs @ 3748 writes/s, 39281 RU/s (102B max monthly 1KB reads)
-	Inserted 28430 docs @ 3902 writes/s, 40897 RU/s (106B max monthly 1KB reads)
-	Inserted 33492 docs @ 3928 writes/s, 41168 RU/s (107B max monthly 1KB reads)
-	Inserted 38392 docs @ 3963 writes/s, 41528 RU/s (108B max monthly 1KB reads)
-	Inserted 43371 docs @ 4012 writes/s, 42051 RU/s (109B max monthly 1KB reads)
-	Inserted 48477 docs @ 4035 writes/s, 42282 RU/s (110B max monthly 1KB reads)
-	Inserted 53845 docs @ 4088 writes/s, 42845 RU/s (111B max monthly 1KB reads)
-	Inserted 59267 docs @ 4138 writes/s, 43364 RU/s (112B max monthly 1KB reads)
-	Inserted 64703 docs @ 4197 writes/s, 43981 RU/s (114B max monthly 1KB reads)
-	Inserted 70428 docs @ 4216 writes/s, 44181 RU/s (115B max monthly 1KB reads)
-	Inserted 75868 docs @ 4247 writes/s, 44505 RU/s (115B max monthly 1KB reads)
-	Inserted 81571 docs @ 4280 writes/s, 44852 RU/s (116B max monthly 1KB reads)
-	Inserted 86271 docs @ 4273 writes/s, 44783 RU/s (116B max monthly 1KB reads)
-	Inserted 91993 docs @ 4299 writes/s, 45056 RU/s (117B max monthly 1KB reads)
-	Inserted 97469 docs @ 4292 writes/s, 44984 RU/s (117B max monthly 1KB reads)
-	Inserted 99736 docs @ 4192 writes/s, 43930 RU/s (114B max monthly 1KB reads)
-	Inserted 99997 docs @ 4013 writes/s, 42051 RU/s (109B max monthly 1KB reads)
-	Inserted 100000 docs @ 3846 writes/s, 40304 RU/s (104B max monthly 1KB reads)
+    DocumentDBBenchmark starting...
+    Creating database db
+    Creating collection testdata
+    Creating metric collection metrics
+    Retrying after sleeping for 00:03:34.1720000
+    Starting Inserts with 500 tasks
+    Inserted 661 docs @ 656 writes/s, 6860 RU/s (18B max monthly 1KB reads)
+    Inserted 6505 docs @ 2668 writes/s, 27962 RU/s (72B max monthly 1KB reads)
+    Inserted 11756 docs @ 3240 writes/s, 33957 RU/s (88B max monthly 1KB reads)
+    Inserted 17076 docs @ 3590 writes/s, 37627 RU/s (98B max monthly 1KB reads)
+    Inserted 22106 docs @ 3748 writes/s, 39281 RU/s (102B max monthly 1KB reads)
+    Inserted 28430 docs @ 3902 writes/s, 40897 RU/s (106B max monthly 1KB reads)
+    Inserted 33492 docs @ 3928 writes/s, 41168 RU/s (107B max monthly 1KB reads)
+    Inserted 38392 docs @ 3963 writes/s, 41528 RU/s (108B max monthly 1KB reads)
+    Inserted 43371 docs @ 4012 writes/s, 42051 RU/s (109B max monthly 1KB reads)
+    Inserted 48477 docs @ 4035 writes/s, 42282 RU/s (110B max monthly 1KB reads)
+    Inserted 53845 docs @ 4088 writes/s, 42845 RU/s (111B max monthly 1KB reads)
+    Inserted 59267 docs @ 4138 writes/s, 43364 RU/s (112B max monthly 1KB reads)
+    Inserted 64703 docs @ 4197 writes/s, 43981 RU/s (114B max monthly 1KB reads)
+    Inserted 70428 docs @ 4216 writes/s, 44181 RU/s (115B max monthly 1KB reads)
+    Inserted 75868 docs @ 4247 writes/s, 44505 RU/s (115B max monthly 1KB reads)
+    Inserted 81571 docs @ 4280 writes/s, 44852 RU/s (116B max monthly 1KB reads)
+    Inserted 86271 docs @ 4273 writes/s, 44783 RU/s (116B max monthly 1KB reads)
+    Inserted 91993 docs @ 4299 writes/s, 45056 RU/s (117B max monthly 1KB reads)
+    Inserted 97469 docs @ 4292 writes/s, 44984 RU/s (117B max monthly 1KB reads)
+    Inserted 99736 docs @ 4192 writes/s, 43930 RU/s (114B max monthly 1KB reads)
+    Inserted 99997 docs @ 4013 writes/s, 42051 RU/s (109B max monthly 1KB reads)
+    Inserted 100000 docs @ 3846 writes/s, 40304 RU/s (104B max monthly 1KB reads)
 
-	Summary:
-	---------------------------------------------------------------------
-	Inserted 100000 docs @ 3834 writes/s, 40180 RU/s (104B max monthly 1KB reads)
-	---------------------------------------------------------------------
-	DocumentDBBenchmark completed successfully.
+    Summary:
+    ---------------------------------------------------------------------
+    Inserted 100000 docs @ 3834 writes/s, 40180 RU/s (104B max monthly 1KB reads)
+    ---------------------------------------------------------------------
+    DocumentDBBenchmark completed successfully.
 
 
 **步骤 4（如有必要）：**工具报告的吞吐量（RU/秒）应该等于或大于预配的集合吞吐量。如果情况并非如此，以较小的增量提高 DegreeOfParallelism 可帮助达到该限制。如果客户端应用的吞吐量达到持平状态，则在相同或不同计算机上启动多个应用程序实例可帮助在各个不同的实例中达到预配的限制。如果需要此步骤的帮助，请撰写电子邮件并将其发送到 askdocdb@microsoft.com 或填写支持票证。
@@ -97,12 +98,12 @@
 ## 后续步骤
 本文介绍了如何使用 .NET 控制台应用对 DocumentDB 执行性能和规模测试。有关使用 DocumentDB 的其他信息，请参阅下面的链接。
 
-* [DocumentDB performance testing sample（DocumentDB 性能测试示例）](https://github.com/Azure/azure-documentdb-dotnet/tree/master/samples/documentdb-benchmark)
-* [用于提高 DocumentDB 性能的客户端配置选项](/documentation/articles/documentdb-performance-tips/)
-* [Server-side partitioning in DocumentDB（DocumentDB 中的服务器端分区）](/documentation/articles/documentdb-partition-data/)
-* [DocumentDB 集合和性能级别](/documentation/articles/documentdb-performance-levels/)
-* [MSDN 上的 DocumentDB .NET SDK 文档](https://msdn.microsoft.com/zh-cn/library/azure/dn948556.aspx)
-* [DocumentDB .NET samples（DocumentDB .NET 示例）](https://github.com/Azure/azure-documentdb-net)
-* [DocumentDB 性能提示博客](https://azure.microsoft.com/blog/2015/01/20/performance-tips-for-azure-documentdb-part-1-2/)
+- [DocumentDB performance testing sample（DocumentDB 性能测试示例）](https://github.com/Azure/azure-documentdb-dotnet/tree/master/samples/documentdb-benchmark)
+- [用于提高 DocumentDB 性能的客户端配置选项](/documentation/articles/documentdb-performance-tips/)
+- [Server-side partitioning in DocumentDB（DocumentDB 中的服务器端分区）](/documentation/articles/documentdb-partition-data/)
+- [DocumentDB 集合和性能级别](/documentation/articles/documentdb-performance-levels/)
+- [MSDN 上的 DocumentDB .NET SDK 文档](https://msdn.microsoft.com/zh-cn/library/azure/dn948556.aspx)
+- [DocumentDB .NET samples（DocumentDB .NET 示例）](https://github.com/Azure/azure-documentdb-net)
+- [DocumentDB 性能提示博客](https://azure.microsoft.com/blog/2015/01/20/performance-tips-for-azure-documentdb-part-1-2/)
 
-<!---HONumber=Mooncake_1010_2016-->
+<!---HONumber=Mooncake_1219_2016-->

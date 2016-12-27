@@ -1,21 +1,22 @@
-<properties 
-	pageTitle="DocumentDB 简介 - 一个 Azure NoSQL 数据库 | Azure" 
-	description="下载 David Chappell 撰写的关于 DocumentDB（Azure 上一个托管 NoSQL 数据库）的白皮书。" 
-	services="documentdb" 
-	documentationCenter="" 
-	authors="mimig1" 
-	manager="jhubbard" 
-	editor=""/>
+<properties
+    pageTitle="DocumentDB 简介 - 一个 Azure NoSQL 数据库 | Azure"
+    description="下载 David Chappell 撰写的关于 DocumentDB（Azure 上一个托管 NoSQL 数据库）的白皮书。"
+    services="documentdb"
+    documentationcenter=""
+    author="mimig1"
+    manager="jhubbard"
+    editor="" />  
 
-<tags 
-	ms.service="documentdb" 
-	ms.workload="data-services" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="07/29/2016" 
-	wacn.date="10/18/2016" 
-	ms.author="mimig"/>  
+<tags
+    ms.assetid="61079e82-5b81-41de-81ff-1f963ff55d65"
+    ms.service="documentdb"
+    ms.workload="data-services"
+    ms.tgt_pltfrm="na"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.date="10/27/2016"
+    wacn.date="12/27/2016"
+    ms.author="mimig" />  
 
 
 # DocumentDB 简介 - 一个 Azure NoSQL 数据库 
@@ -26,13 +27,12 @@
 
 本白皮书还介绍了以下内容：
 
- - 使用 DocumentDB 数据模型将 JSON 数据存储到数据库内的文档和集合中。
- - 通过使用客户端库、RESTful 访问方法或 DocumentDB SQL 处理数据。
- - 通过编写存储过程 (sprocs)、触发器或用户定义的函数 (UDF) 并将其存储在集合中，从数据库本身运行逻辑。
- - 选择一致性选项以满足应用程序的可靠性和性能需求。
- - 根据吞吐量需求选择定价选项。
+- 使用 DocumentDB 数据模型将 JSON 数据存储到数据库内的文档和集合中。
+- 通过使用客户端库、RESTful 访问方法或 DocumentDB SQL 处理数据。
+- 通过编写存储过程 (sprocs)、触发器或用户定义的函数 (UDF) 并将其存储在集合中，从数据库本身运行逻辑。
+- 选择一致性选项以满足应用程序的可靠性和性能需求。
+- 根据吞吐量需求选择定价选项。
 
 **PDF 下载：**[DocumentDB 简介 - 一个 Azure NoSQL 数据库](http://go.microsoft.com/fwlink/?LinkId=511318)
- 
 
-<!---HONumber=Mooncake_1010_2016-->
+<!---HONumber=Mooncake_1219_2016-->
