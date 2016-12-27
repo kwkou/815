@@ -15,7 +15,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="10/25/2016"
-    wacn.date="12/12/2016"
+    wacn.date="12/27/2016"
     ms.author="juliako" />  
 
 
@@ -30,13 +30,13 @@
   
   > [AZURE.NOTE]如果使用 .NET 或 Java SDK 连接到媒体服务，则无论何时尝试并执行针对媒体服务的操作，都会指定 API 版本。
 
-* 指定了未定义的属性。错误消息中提供属性名称。仅可指定身份是给定实体的成员的那些属性。有关实体及其属性的列表，请参阅 [Azure 媒体服务 REST API 参考](http://msdn.microsoft.com/zh-cn/library/azure/hh973617.aspx)。
+* 指定了未定义的属性。错误消息中提供属性名称。仅可指定身份是给定实体的成员的那些属性。有关实体及其属性的列表，请参阅 [Azure 媒体服务 REST API 参考](https://docs.microsoft.com/zh-cn/rest/api/media/mediaservice)。
 * 指定了无效的属性值。错误消息中提供属性名称。请参阅上一个链接，了解有效的属性类型及其值。
 * 缺少必需的属性值。
 * 指定的 URL 中包含错误的值。
 * 尝试更新 WriteOnce 属性。
 * 尝试创建输入资产中有未指定的或无法确定的主 AssetFile 的作业。
-* 尝试更新 SAS 定位符。只能创建或删除 SAS 定位符。可以更新流式处理定位符。有关详细信息，请参阅[定位符](http://msdn.microsoft.com/zh-cn/library/azure/hh974308.aspx)。
+* 尝试更新 SAS 定位符。只能创建或删除 SAS 定位符。可以更新流式处理定位符。有关详细信息，请参阅[定位符](https://docs.microsoft.com/zh-cn/rest/api/media/operations/locator)。
 * 提交了不受支持的操作或查询。
 
 ## 401 未授权

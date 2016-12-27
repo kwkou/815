@@ -14,7 +14,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="08/29/2016"
-	wacn.date="10/10/2016"
+	wacn.date="12/27/2016"
 	ms.author="juliako"/>
 
 
@@ -62,7 +62,7 @@
 
 > [AZURE.SELECTOR]
 - [.NET](/documentation/articles/media-services-dotnet-encoding-units/)
-- [REST](https://msdn.microsoft.com/zh-cn/library/azure/dn859236.aspx)
+- [REST](https://docs.microsoft.com/zh-cn/rest/api/media/operations/encodingreservedunittype)
 - [Java](https://github.com/southworkscom/azure-sdk-for-media-services-java-samples)
 - [PHP](https://github.com/Azure/azure-sdk-for-php/tree/master/examples/MediaServices)
 

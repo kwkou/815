@@ -15,7 +15,7 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="09/26/2016"   
-	wacn.date="12/26/2016"   
+	wacn.date="12/27/2016"   
 	ms.author="juliako"/>
 
 #如何：检查作业进度
@@ -25,7 +25,7 @@
 - [.NET](/documentation/articles/media-services-check-job-progress/)
 - [REST](/documentation/articles/media-services-rest-check-job-progress/)
 
-当你运行作业时，通常需要采用某种方式跟踪作业进度。你可以使用作业的 State 属性查看该作业的状态。有关 State 属性的详细信息，请参阅[作业实体属性](https://msdn.microsoft.com/zh-cn/library/azure/5100ddd7-92ff-4c37-84d2-4f84fee250a7#job_entity_properties)。
+当你运行作业时，通常需要采用某种方式跟踪作业进度。你可以使用作业的 State 属性查看该作业的状态。有关 State 属性的详细信息，请参阅[作业实体属性](https://docs.microsoft.com/zh-cn/rest/api/media/operations/job#a-namejobentitypropertiesa-job-entity-properties)。
 
 
 请求：

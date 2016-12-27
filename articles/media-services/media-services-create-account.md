@@ -10,7 +10,7 @@
 <tags
 	ms.service="media-services"
 	ms.date="06/22/2016"
-	wacn.date="12/12/2016"/>
+	wacn.date="12/27/2016"/>
 
 
 # 创建 Azure 媒体服务帐户
@@ -18,7 +18,7 @@
 > [AZURE.SELECTOR]
 - [门户](/documentation/articles/media-services-create-account/)
 - [PowerShell](/documentation/articles/media-services-manage-with-powershell/)
-- [REST](http://msdn.microsoft.com/zh-cn/library/azure/dn194267.aspx)
+- [REST](https://docs.microsoft.com/zh-cn/rest/api/media/management/create-media-services-account)
 
 
 > [AZURE.NOTE] 若要完成本教程，你需要一个 Azure 帐户。有关详细信息，请参阅 [ 1 元试用](/pricing/1rmb-trial/?WT.mc_id=A261C142F)。

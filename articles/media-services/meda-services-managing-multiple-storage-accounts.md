@@ -15,7 +15,7 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="09/26/2016" 
-	wacn.date="12/16/2016"    
+	wacn.date="12/27/2016"    
 	ms.author="juliako"/>  
 
 
@@ -43,7 +43,7 @@
 
 ##使用 Azure 服务管理 REST API 附加存储帐户
 
-目前，只能使用 [Azure 服务管理 REST API](http://msdn.microsoft.com/zh-cn/library/azure/dn167014.aspx) 附加多个存储帐户。[如何：使用媒体服务管理 REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn167656.aspx) 主题中的代码示例定义了将存储帐户附加到指定媒体服务帐户的 **AttachStorageAccountToMediaServiceAccount** 方法。此主题中的代码定义了列出已附加到指定媒体服务帐户的所有存储帐户的 **ListStorageAccountDetails** 方法。
+目前，只能使用 [Azure 服务管理 REST API](https://docs.microsoft.com/zh-cn/rest/api/media/operations/azure-media-services-rest-api-reference) 附加多个存储帐户。[如何：使用媒体服务管理 REST API](https://docs.microsoft.com/zh-cn/rest/api/media/management/how-to-use-media-services-management-rest-api) 主题中的代码示例定义了将存储帐户附加到指定媒体服务帐户的 **AttachStorageAccountToMediaServiceAccount** 方法。此主题中的代码定义了列出已附加到指定媒体服务帐户的所有存储帐户的 **ListStorageAccountDetails** 方法。
 
 
 ##跨多个存储帐户管理媒体服务资产

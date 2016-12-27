@@ -23,7 +23,7 @@
 > [AZURE.SELECTOR]
 - [门户](/documentation/articles/media-services-create-account/)
 - [PowerShell](/documentation/articles/media-services-manage-with-powershell/)
-- [REST](https://msdn.microsoft.com/zh-cn/library/azure/dn167014.aspx) 
+- [REST](https://docs.microsoft.com/zh-cn/rest/api/media/operations/azure-media-services-rest-api-reference) 
 <a id="create_account"></a>
 
 以下步骤描述使用 Azure 媒体服务进行开发所要满足的先决条件。

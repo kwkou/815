@@ -15,7 +15,7 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="09/19/2016" 
-	wacn.date="11/14/2016" 
+	wacn.date="12/27/2016" 
 	ms.author="juliako"/>  
 
 
@@ -205,7 +205,7 @@ Windows Media 音频|否|是
 
 ##错误代码  
 
-下表列出了在执行编码任务期间发生错误的情况下可能返回的错误代码。若要获取 .NET 代码中的错误详细信息，请使用 [ErrorDetails](https://msdn.microsoft.com/zh-cn/library/microsoft.windowsazure.mediaservices.client.errordetail.aspx) 类。若要获取 REST 代码中的错误详细信息，请使用 [ErrorDetail](https://msdn.microsoft.com/zh-cn/library/jj853026.aspx) REST API。
+下表列出了在执行编码任务期间发生错误的情况下可能返回的错误代码。若要获取 .NET 代码中的错误详细信息，请使用 [ErrorDetails](https://msdn.microsoft.com/zh-cn/library/microsoft.windowsazure.mediaservices.client.errordetail.aspx) 类。若要获取 REST 代码中的错误详细信息，请使用 [ErrorDetail](https://docs.microsoft.com/zh-cn/rest/api/media/operations/errordetail) REST API。
 
 ErrorDetail.Code|出错的可能原因
 -----|-----------------------

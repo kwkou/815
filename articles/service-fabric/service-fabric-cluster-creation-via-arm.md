@@ -15,7 +15,7 @@
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
    ms.date="09/25/2016"
-   wacn.date="11/28/2016"
+   wacn.date="12/27/2016"
    ms.author="vturecek"/>  
 
 
@@ -550,7 +550,7 @@ FabricClient 和 FabricGateway 执行相互身份验证。使用 AAD 身份验�
 [service-fabric-manage-application-in-visual-studio]: /documentation/articles/service-fabric-manage-application-in-visual-studio/
 [sf-aad-ps-script-download]: http://servicefabricsdkstorage.blob.core.windows.net/publicrelease/MicrosoftAzureServiceFabric-AADHelpers.zip
 [azure-quickstart-templates]: https://github.com/Azure/azure-quickstart-templates
-[service-fabric-secure-cluster-5-node-1-nodetype-wad]: https://github.com/Azure/azure-quickstart-templates/blob/master/service-fabric-secure-cluster-5-node-1-nodetype-wad/
+[service-fabric-secure-cluster-5-node-1-nodetype-wad]: https://github.com/Azure/azure-quickstart-templates/tree/master/service-fabric-secure-cluster-5-node-1-nodetype
 [resource-group-template-deploy]: /documentation/articles/resource-group-template-deploy/
 [x509-certificates-and-service-fabric]: /documentation/articles/service-fabric-cluster-security/#x509-certificates-and-service-fabric
 

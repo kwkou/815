@@ -14,7 +14,7 @@
 	ms.devlang="ne" 
 	ms.topic="article" 
 	ms.date="07/18/2016" 
-	wacn.date="12/16/2016"
+	wacn.date="12/27/2016"
 	ms.author="juliako;cenkdin"/>
 
 
@@ -37,10 +37,10 @@
 
 创建筛选器时使用以下类型：
 
-- **IStreamingFilter**。此类型基于以下 REST API [Filter](http://msdn.microsoft.com/zh-cn/library/azure/mt149056.aspx)
-- **IStreamingAssetFilter**。此类型基于以下 REST API [AssetFilter](http://msdn.microsoft.com/zh-cn/library/azure/mt149053.aspx)
-- **PresentationTimeRange**此类型基于以下 REST API [PresentationTimeRange](http://msdn.microsoft.com/zh-cn/library/azure/mt149052.aspx)
-- **FilterTrackSelectStatement** 和 **IFilterTrackPropertyCondition**。这些类型基于以下 REST API [FilterTrackSelect 和 FilterTrackPropertyCondition](http://msdn.microsoft.com/zh-cn/library/azure/mt149055.aspx)
+- **IStreamingFilter**。此类型基于以下 REST API [Filter](https://docs.microsoft.com/zh-cn/rest/api/media/operations/filter)
+- **IStreamingAssetFilter**。此类型基于以下 REST API [AssetFilter](https://docs.microsoft.com/zh-cn/rest/api/media/operations/assetfilter)
+- **PresentationTimeRange**此类型基于以下 REST API [PresentationTimeRange](https://docs.microsoft.com/zh-cn/rest/api/media/operations/presentationtimerange)
+- **FilterTrackSelectStatement** 和 **IFilterTrackPropertyCondition**。这些类型基于以下 REST API [FilterTrackSelect 和 FilterTrackPropertyCondition](https://docs.microsoft.com/zh-cn/rest/api/media/operations/filtertrackselect)
 
 
 ##创建/更新/读取/删除全局筛选器

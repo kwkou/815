@@ -13,7 +13,7 @@
     ms.service="sql-database"
     ms.devlang="NA"
     ms.date="11/17/2016"
-    wacn.date="12/19/2016"
+    wacn.date="12/27/2016"
 	ms.author="ninarn"
     ms.workload="data-management"
     ms.topic="article"
@@ -167,7 +167,7 @@
 
     ![点击“保存”(Save)](./media/sql-database-elastic-pool-manage-portal/click-save.png)
 
-## 更改池的性能设置
+##<a name="change-performance-settings-of-a-pool"></a> 更改池的性能设置
 
 监视池的资源利用率时，你可能会发现需要进行一些调整。池可能需要在性能或存储限制方面进行更改。你可能要更改池中的数据库设置。可以随时更改池的设置以获得性能和成本的最佳平衡。有关详细信息，请参阅[何时使用弹性数据库池？](/documentation/articles/sql-database-elastic-pool-guidance/)。
 

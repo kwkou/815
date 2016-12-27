@@ -15,7 +15,7 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="09/26/2016"
-	wacn.date="11/21/2016"
+	wacn.date="12/27/2016"
 	ms.author="juliako"/>
 
 
@@ -58,7 +58,7 @@ AMS 存储空间加密将 **AES-CTR** 模式加密应用于整个文件。AES-CT
 1. 对于存储空间加密，随机生成一个 32 字节的 AES 密钥。
 
 	这将成为你资产的内容密钥，这意味着该资产的所有关联文件在解密过程中需要使用同一内容密钥。
-2.	调用 [GetProtectionKeyId](https://msdn.microsoft.com/zh-cn/library/azure/jj683097.aspx#getprotectionkeyid) 和 [GetProtectionKey](https://msdn.microsoft.com/zh-cn/library/azure/jj683097.aspx#getprotectionkey) 方法来获取正确的 X.509 证书，必须使用该证书加密你的内容密钥。
+2.	调用 [GetProtectionKeyId](https://docs.microsoft.com/zh-cn/rest/api/media/operations/rest-api-functions#a-namegetprotectionkeyida-getprotectionkeyid) 和 [GetProtectionKey](https://docs.microsoft.com/zh-cn/rest/api/media/operations/rest-api-functions#a-namegetprotectionkeya-getprotectionkey) 方法来获取正确的 X.509 证书，必须使用该证书加密你的内容密钥。
 3.	使用 X.509 证书的公钥来加密你的内容密钥。
 
 	媒体服务 .NET SDK 在加密时使用 RSA 和 OAEP。你可以参阅 [EncryptSymmetricKeyData 函数](https://github.com/Azure/azure-sdk-for-media-services/blob/dev/src/net/Client/Common/Common.FileEncryption/EncryptionUtils.cs)中的 .NET 示例。
@@ -311,7 +311,7 @@ AMS 存储空间加密将 **AES-CTR** 模式加密应用于整个文件。AES-CT
 
 ##创建 AssetFile
 
-[AssetFile](http://msdn.microsoft.com/zh-cn/library/azure/hh974275.aspx) 实体表示 blob 容器中存储的视频或音频文件。一个资产文件始终与一个资产关联，而一个资产则可能包含一个或多个资产文件。如果资产文件对象未与 BLOB 容器中的数字文件关联，则媒体服务 Encoder 任务将失败。
+[AssetFile](https://docs.microsoft.com/zh-cn/rest/api/media/operations/assetfile) 实体表示 blob 容器中存储的视频或音频文件。一个资产文件始终与一个资产关联，而一个资产则可能包含一个或多个资产文件。如果资产文件对象未与 BLOB 容器中的数字文件关联，则媒体服务 Encoder 任务将失败。
 
 请注意，**AssetFile** 实例和实际媒体文件是两个不同的对象。AssetFile 实例包含有关媒体文件的元数据，而媒体文件包含实际媒体内容。
 

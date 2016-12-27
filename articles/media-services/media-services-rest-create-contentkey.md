@@ -15,7 +15,7 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="09/26/2016"  
-	wacn.date="12/16/2016"  
+	wacn.date="12/27/2016"  
 	ms.author="juliako"/>
 
 
@@ -40,7 +40,7 @@
 1. 随机生成一个 16 字节 AES 密钥（用于常规和信封加密）或 32 字节 AES 密钥（用于存储加密）。
 
 	它将成为资产的内容密钥，这意味着该资产的所有关联文件在解密过程中需要使用同一内容密钥。
-2.	调用 [GetProtectionKeyId](https://msdn.microsoft.com/zh-cn/library/azure/jj683097.aspx#getprotectionkeyid) 和 [GetProtectionKey](https://msdn.microsoft.com/zh-cn/library/azure/jj683097.aspx#getprotectionkey) 方法来获取加密内容密钥所必须使用的正确的 X.509 证书。
+2.	调用 [GetProtectionKeyId](https://docs.microsoft.com/zh-cn/rest/api/media/operations/rest-api-functions#a-namegetprotectionkeyida-getprotectionkeyid) 和 [GetProtectionKey](https://docs.microsoft.com/zh-cn/rest/api/media/operations/rest-api-functions#a-namegetprotectionkeya-getprotectionkey) 方法来获取加密内容密钥所必须使用的正确的 X.509 证书。
 3.	使用 X.509 证书的公钥来加密内容密钥。
 
 	媒体服务 .NET SDK 在加密时使用 RSA 和 OAEP。可在 [EncryptSymmetricKeyData 函数](https://github.com/Azure/azure-sdk-for-media-services/blob/dev/src/net/Client/Common/Common.FileEncryption/EncryptionUtils.cs)中查看示例。
