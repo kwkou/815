@@ -33,7 +33,7 @@
 Microsoft 建议迁移 Azure 移动服务来利用 Azure 应用服务的各项功能，其中包括：
 
   *  新的主机功能，包括 [Web 作业]和[自定义域名]。
-  *  除了混合连接以外，还可使用 [VNet] 连接到本地资源。
+  *  除了混合连接以外，还可使用 VNet 连接到本地资源。
   *  使用 New Relic 进行监视和故障排除。
   *  内置的 DevOps 工具，包括[过渡槽]、回滚和生产环境内测试。
   *  [自动缩放]、负载均衡和[性能监视]。
@@ -276,7 +276,7 @@ PublishSettings 文件将下载到计算机。此文件通常名为 _站点名�
 
 不能再使用 _azure mobile_ 命令管理 Azure 移动服务站点。有许多函数已由 _azure site_ 命令取代。使用下表查找常用命令的等效项：
 
-| _Azure 移动_命令 | 等效的 _Azure 站点_命令 |
+| *Azure 移动* 命令 | 等效的 *Azure 站点* 命令 |
 | :----------------------------------------- | :----------------------------------------- |
 | mobile locations | site location list |
 | mobile list | site list |
@@ -395,7 +395,6 @@ Azure 应用服务中通常会禁用诊断日志记录。若要启用诊断日�
 [Postman]: http://www.getpostman.com/
 [备份移动服务]: /documentation/articles/mobile-services-disaster-recovery/
 [过渡槽]: /documentation/articles/web-sites-staged-publishing/
-[VNet]: /documentation/articles/web-sites-integrate-with-vnet/
 [Web 作业]: /documentation/articles/websites-webjobs-resources/
 [XDT Transform Samples]: https://github.com/projectkudu/kudu/wiki/Xdt-transform-samples
 

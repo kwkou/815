@@ -325,8 +325,6 @@
 
 完成此基本身份验证教程后，请考虑继续学习以下教程之一：
 
-+ [向应用添加推送通知](/documentation/articles/app-service-mobile-xamarin-forms-get-started-push/)  
-  了解如何为应用添加推送通知支持，以及如何将移动应用后端配置为使用 Azure 通知中心发送推送通知。
 
 + [为应用启用脱机同步](/documentation/articles/app-service-mobile-xamarin-forms-get-started-offline-data/)  
   了解如何使用移动应用后端向应用添加脱机支持。脱机同步允许最终用户与移动应用交互（查看、添加或修改数据），即使在没有网络连接时也是如此。
