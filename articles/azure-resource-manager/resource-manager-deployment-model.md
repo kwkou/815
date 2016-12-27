@@ -97,7 +97,7 @@ Azure 在 2014 年引入了 Resource Manager，增加了资源组这一概念。
     ![Web 应用](./media/resource-manager-deployment-model/resource-manager-type.png)  
 
 
-## 经典部署的特性
+## <a name="classic-deployment-characteristics"></a> 经典部署的特性
 您也可能知道经典部署模型就是服务管理模型。
 
 在经典部署模型中创建的资源具有以下共同特性：

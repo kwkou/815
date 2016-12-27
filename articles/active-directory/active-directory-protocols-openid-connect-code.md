@@ -33,7 +33,7 @@
 ![OpenID Connect 身份验证流](./media/active-directory-protocols-openid-connect-code/active-directory-oauth-code-flow-web-app.png)
 
 
-## 发送登录请求
+## <a name="send-the-sign-in-request"></a> 发送登录请求
 
 当 Web 应用程序需要对用户进行身份验证时，必须将用户定向到 `/authorize` 终结点。此请求类似于 [OAuth 2.0 授权代码流](/documentation/articles/active-directory-protocols-oauth-code/)的第一个阶段，不过有几个重要的区别：
 

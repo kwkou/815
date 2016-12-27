@@ -3,7 +3,7 @@
 在 Azure 中使用映像来提供包含操作系统的新虚拟机。一个映像也可能包含一个或多个数据磁盘。映像可从多个源获取：
 
 -	Azure 在应用商店和库中提供映像。可以找到最新的 Windows Server 和 Linux 操作系统分发版。一些映像还包含应用程序，如 SQL Server。MSDN 权益和 MSDN 即付即用订户有权访问其他映像。
--	开源社区通过 [VM 仓库](http://vmdepot.msopentech.com/List/Index)提供映像。
+-	开源社区通过 VM 仓库提供映像。
 -	你还可以通过捕获现有的 Azure 虚拟机用作映像或上载映像来在 Azure 中存储和使用自己的映像。
 
 ## 关于 VM 映像和 OS 映像

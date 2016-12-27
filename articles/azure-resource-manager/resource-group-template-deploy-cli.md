@@ -145,7 +145,7 @@
 
 有关将 SAS 令牌与链接模板配合使用的示例，请参阅[将已链接的模版与 Azure Resource Manager 配合使用](/documentation/articles/resource-group-linked-templates/)。
 
-## 参数
+## <a name="parameters"></a> 参数
 
 可以使用以下选项提供参数值：
    
