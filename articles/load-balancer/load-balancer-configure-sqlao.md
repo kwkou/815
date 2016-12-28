@@ -3,9 +3,8 @@
    description="介绍如何将负载均衡器配置为与 SQL AlwaysOn 配合工作，以及如何利用 powershell 为 SQL 实现创建负载均衡器"
    services="load-balancer"
    documentationCenter="na"
-   author: sdwheeler
-   manager: carmonm />  
-
+   author="sdwheeler"
+   manager="carmonm" />  
 <tags 
    ms.service="load-balancer"
    ms.devlang="na"
