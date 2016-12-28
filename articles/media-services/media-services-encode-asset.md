@@ -32,7 +32,7 @@ Azure 媒体服务提供了多个用于在云中对媒体进行编码的选项�
 若要使用[动态打包](/documentation/articles/media-services-dynamic-packaging-overview/)，必须执行下列操作：
 
 - 将夹层（源）文件编码成一组自适应比特率 MP4 文件或自适应比特率平滑流文件（本教程稍后将演示编码步骤）。
-- 针对你要传送内容的流式处理终结点，获取至少一个按需流式处理单位。有关详细信息，请参阅[如何缩放按需流式处理保留单位](/documentation/articles/media-services-manage-origins/#scale_streaming_endpoints)。
+- 针对你要传送内容的流式处理终结点，获取至少一个按需流式处理单位。有关详细信息，请参阅[如何缩放按需流式处理保留单元](/documentation/articles/media-services-manage-origins/#scale_streaming_endpoints)。
 
 媒体服务支持将在本文中介绍的以下按需编码器：
 
@@ -40,7 +40,7 @@ Azure 媒体服务提供了多个用于在云中对媒体进行编码的选项�
 
 本文简要概述了按需媒体编码器，并提供了指向介绍更多详细信息的文章的链接。本主题还提供编码器的比较。
 
-请注意，默认情况下每个媒体服务帐户同时只能有一个活动的编码任务。你可以保留编码单元，使用它们可以同时运行多个编码任务，你购买的每个编码保留单位对应一个任务。有关信息，请参阅[缩放编码单位](/documentation/articles/media-services-portal-encoding-units/)。
+请注意，默认情况下每个媒体服务帐户同时只能有一个活动的编码任务。你可以保留编码单元，使用它们可以同时运行多个编码任务，你购买的每个编码保留单元对应一个任务。有关信息，请参阅[缩放编码单位](/documentation/articles/media-services-portal-encoding-units/)。
 
 ##<a name="media-encoder-standard"></a>媒体编码器标准版
 

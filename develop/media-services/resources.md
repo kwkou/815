@@ -56,4 +56,4 @@
 <p>了解如何使用 Azure 媒体服务 iOS 媒体播放器框架生成支持 HLS 的 iOS 视频应用程序。</p>-->
 <h2 id="header-5">调整规模</h2>
 <h3>如何： <a href="/documentation/articles/media-services-how-to-scale/">改变媒体服务规模</a></h3>
-<p>本主题介绍如何更改希望帐户使用的按需流式处理保留单位和编码保留单位的数目。</p>
+<p>本主题介绍如何更改希望帐户使用的按需流式处理保留单元和编码保留单元的数目。</p>

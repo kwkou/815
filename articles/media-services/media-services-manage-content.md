@@ -95,11 +95,11 @@
 若要使用动态打包，必须执行下列操作：
 
 - 将夹层（源）文件编码成一组自适应比特率 MP4 文件或自适应比特率平滑流文件（本教程稍后将演示编码步骤）。
-- 针对你要传送内容的流式处理终结点，获取至少一个按需流式处理单位。有关详细信息，请参阅[如何缩放按需流式处理保留单位](/documentation/articles/media-services-manage-origins/#scale_streaming_endpoints)。
+- 针对你要传送内容的流式处理终结点，获取至少一个按需流式处理单位。有关详细信息，请参阅[如何缩放按需流式处理保留单元](/documentation/articles/media-services-manage-origins/#scale_streaming_endpoints)。
 
 通过动态打包，只需要存储及支付一种存储格式的文件，媒体服务就会根据客户端的要求创建并提供适当的响应。
 
-除了能够使用动态打包功能以外，按需流式处理保留单元还提供了可按照 200 Mbps 的增量购买的专用出口容量。默认情况下，按需流式处理在共享实例模型中配置，该模型的服务器资源（例如计算、出口容量）与所有其他用户共享。若要增加按需流式处理吞吐量，建议购买按需流式处理保留单位。
+除了能够使用动态打包功能以外，按需流式处理保留单元还提供了可按照 200 Mbps 的增量购买的专用出口容量。默认情况下，按需流式处理在共享实例模型中配置，该模型的服务器资源（例如计算、出口容量）与所有其他用户共享。若要增加按需流式处理吞吐量，建议购买按需流式处理保留单元。
 
 本部分介绍通过 Azure 经典管理门户使用媒体编码器标准版为内容编码时可以执行的步骤。
 
@@ -131,7 +131,7 @@
 如果希望媒体服务采用 AES 密钥或 PlayReady DRM 动态加密资产，请确保执行以下操作：
 
 - 将夹层（源）文件编码成一组自适应比特率 MP4 文件或自适应比特率平滑流式处理文件（编码步骤将在[编码](#encode)部分演示）。
-- 针对要传送内容的流式处理终结点，获取至少一个按需流式处理单位。有关详细信息，请参阅[如何缩放按需流式处理保留单位](/documentation/articles/media-services-manage-origins/#scale_streaming_endpoints)。
+- 针对要传送内容的流式处理终结点，获取至少一个按需流式处理单位。有关详细信息，请参阅[如何缩放按需流式处理保留单元](/documentation/articles/media-services-manage-origins/#scale_streaming_endpoints)。
 - 配置“默认 aes 明文密钥服务策略”或“默认 playready 许可证服务策略”。有关详细信息，请参阅[配置内容密钥授权策略](/documentation/articles/media-services-portal-configure-content-key-auth-policy/)。
 
 

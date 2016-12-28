@@ -44,7 +44,7 @@ Azure 媒体服务允许传送通过高级加密标准 (AES)（使用 128 位加
 
 ###请注意以下事项：
 
-- 为了能够使用动态打包和动态加密，必须确保至少有一个流式处理保留单位。有关详细信息，请参阅[如何缩放媒体服务](/documentation/articles/media-services-manage-origins/#scale_streaming_endpoints)。
+- 为了能够使用动态打包和动态加密，必须确保至少有一个流式处理保留单元。有关详细信息，请参阅[如何缩放媒体服务](/documentation/articles/media-services-manage-origins/#scale_streaming_endpoints)。
 - 资产必须包含一组自适应比特率 MP4 或自适应比特率平滑流文件。有关详细信息，请参阅[对资产进行编码](/documentation/articles/media-services-encode-asset/)。
 - 密钥传送服务将 ContentKeyAuthorizationPolicy 及其相关对象（策略选项和限制）缓存 15 分钟。如果创建 ContentKeyAuthorizationPolicy 并指定使用“令牌”限制，然后对其进行测试，再将策略更新为“开放”限制，则现有策略切换到“开放”版本的策略需要大约 15 分钟。
 
