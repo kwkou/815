@@ -1,33 +1,33 @@
 <properties
-   pageTitle="使用 MongoDB 部署 Node.js 应用程序 | Azure"
-   description="演练如何打包多个来宾可执行文件以部署到 Azure Service Fabric 群集"
-   services="service-fabric"
-   documentationCenter=".net"
-   authors="bmscholl"
-   manager=""
-   editor=""/>
-
+    pageTitle="部署使用 MongoDB 的 Node.js 应用程序 | Azure"
+    description="演示如何打包多个来宾可执行文件以部署到 Azure Service Fabric 群集"
+    services="service-fabric"
+    documentationcenter=".net"
+    author="msfussell"
+    manager="timlt"
+    editor="" />
 <tags
-   ms.service="service-fabric"
-   ms.devlang="dotnet"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="NA"
-   ms.date="06/20/2016"
-   wacn.date="07/04/2016"
-   ms.author="bscholl;mikhegn"/>
-
+    ms.assetid="b76bb756-c1ba-49f9-9666-e9807cf8f92f"
+    ms.service="service-fabric"
+    ms.devlang="dotnet"
+    ms.topic="article"
+    ms.tgt_pltfrm="NA"
+    ms.workload="NA"
+    ms.date="10/22/2016"
+    wacn.date="12/26/2016"
+    ms.author="msfussell;mikhegn" />
 
 # 部署多个来宾可执行文件
-
-本文说明如何使用 Azure Service Fabric 打包工具预览版（可从 [http://aka.ms/servicefabricpacktool](http://aka.ms/servicefabricpacktool) 获得）将多个来宾可执行文件打包并部署到 Azure Service Fabric。
-
-若要手动生成 Service Fabric 包，请参阅如何[将来宾可执行文件部署到 Service Fabric](/documentation/articles/service-fabric-deploy-existing-app/)。
+本文介绍如何打包多个来宾可执行文件并部署到 Azure Service Fabric。若要生成和部署单个 Service Fabric 包，请参阅如何[将来宾可执行文件部署到 Service Fabric](/documentation/articles/service-fabric-deploy-existing-app/)。
 
 虽然本演练演示的是如何部署将 MongoDB 用作数据存储并具有 Node.js 前端的应用程序，但是你可以将这些步骤套用于任何与另一个应用程序具有依赖关系的应用程序。
 
-## 打包 Node.js 应用程序
+可使用 Visual Studio 生成包含多个来宾可执行文件的应用程序包。请参阅[使用 Visual Studio 打包现有应用程序](/documentation/articles/service-fabric-deploy-existing-app/#use-visual-studio-to-package-an-existing-executable)。添加第一个来宾可执行文件后，右键单击应用程序项目，然后选择“添加”>“新建 Service Fabric 服务”，将第二个来宾可执行项目添加到解决方案中。注意：如果选择在 Visual Studio 项目中链接源，则生成 Visual Studio 解决方案可确保应用程序包能够与源中的更改保持同步。
 
+## 手动打包多个来宾可执行文件应用程序
+或者可以手动打包来宾可执行文件。对于手动打包，本文使用 Service Fabric 打包工具，它位于 [http://aka.ms/servicefabricpacktool](http://aka.ms/servicefabricpacktool)。
+
+### 打包 Node.js 应用程序
 本文假设 Service Fabric 群集中的节点上未安装 Node.js。因此，你需要在打包之前，先将 Node.exe 添加到节点应用程序的根目录中。Node.js 应用程序（使用 Express Web 框架和 Jade 模板引擎）的目录结构看起来应该与以下类似：
 
 
@@ -68,7 +68,6 @@
 - **/ma** 定义要用来启动可执行文件的参数。由于未安装 Node.js，因此 Service Fabric 需要执行 `node.exe bin/www` 来启动 Node.js Web 服务器。`/ma:'bin/www'` 会指示打包工具使用 `bin/ma` 作为 node.exe 的参数。
 - **/AppType** 定义 Service Fabric 应用程序类型名称。
 
->[AZURE.NOTE] 可以使用 Visual Studio 来生成应用程序包，以用作应用程序项目的一部分。如果选择在 Visual Studio 项目中链接源，则生成 Visual Studio 解决方案可确保应用程序包能够与源中的更改保持同步。[使用 Visual Studio 打包现有应用程序](/documentation/articles/service-fabric-deploy-existing-app/#using-visual-studio-to-package-an-existing-application)
 
 如果浏览到 /target 参数中指定的目录，则可以看到工具已创建完全正常运行的 Service Fabric 包，如下所示：
 
@@ -112,6 +111,7 @@
       	</Endpoints>
 	</Resources>
 
+### 打包 MongoDB 应用程序
 既然你已打包 Node.js 应用程序，你可以继续打包 MongoDB。如前文所述，你现在进行的步骤并非特定于 Node.js 和 MongoDB 的步骤。事实上，它们适用于所有要打包在一起以作为一个 Service Fabric 应用程序的应用程序。
 
 为了打包 MongoDB，你会想要确定你打包 Mongod.exe 和 Mongo.exe。这两个二进制文件都位于 MongoDB 安装目录的 `bin` 目录中。目录结构类似于下面的结构。
@@ -123,7 +123,7 @@
         	|-- mongo.exe
         	|-- anybinary.exe
 
-Service Fabric 需要使用类似于下面的命令来启动 MongoDB，因此打包 MongoDB 时，你需要使用 `/ma` 参数。
+Service Fabric 需要使用类似于下面的命令来启动 MongoDB，因此打包 MongoDB 时，需要使用 `/ma` 参数。
 
 
 	mongod.exe --dbpath [path to data]
@@ -137,8 +137,6 @@ Service Fabric 需要使用类似于下面的命令来启动 MongoDB，因此打
 
 
 为了将 MongoDB 添加到你的 Service Fabric 应用程序包，你必须确定 /target 参数指向已经包含应用程序清单及 Node.js 应用程序的同一个目录。此外，还需要确定你使用的是相同的 ApplicationType 名称。
-
->[AZURE.NOTE] 可以使用 Visual Studio 来生成应用程序包，以用作应用程序项目的一部分。如果选择在 Visual Studio 项目中链接源，则生成 Visual Studio 解决方案可确保应用程序包能够与源中的更改保持同步。[使用 Visual Studio 打包现有应用程序](/documentation/articles/service-fabric-deploy-existing-app/#using-visual-studio-to-package-an-existing-application)
 
 让我们浏览到该目录并检查已创建的工具。
 
@@ -181,6 +179,7 @@ Service Fabric 需要使用类似于下面的命令来启动 MongoDB，因此打
 	</ApplicationManifest>  
 
 
+### 发布应用程序
 最后一个步骤是要使用以下 PowerShell 脚本，将应用程序发布到本地 Service Fabric 群集：
 
 
@@ -195,9 +194,7 @@ Service Fabric 需要使用类似于下面的命令来启动 MongoDB，因此打
 	New-ServiceFabricApplication -ApplicationName 'fabric:/NodeApp' -ApplicationTypeName 'NodeAppType' -ApplicationTypeVersion 1.0  
 
 
->[AZURE.NOTE] 使用 Visual Studio，可以通过调试 (F5) 或使用发布向导在本地发布应用程序。
-
-将应用程序成功发布到本地群集之后，你便可以通过我们在 Node.js 应用程序的服务清单中输入的端口（例如 http://localhost:3000）访问 Node.js 应用程序。
+将应用程序成功发布到本地群集之后，可以通过我们在 Node.js 应用程序的服务清单中输入的端口（例如 http://localhost:3000）访问 Node.js 应用程序。
 
 在本教程中，你学习了如何轻松地将两个现有应用程序打包成一个 Service Fabric 应用程序。你也了解了如何将其部署到 Service Fabric，以便让它能够从一些 Service Fabric 功能（例如高可用性和运行状况系统整合）中获益。
 
@@ -205,4 +202,4 @@ Service Fabric 需要使用类似于下面的命令来启动 MongoDB，因此打
 
 - 了解如何[手动打包来宾应用程序](/documentation/articles/service-fabric-deploy-existing-app/)。
 
-<!---HONumber=Mooncake_0627_2016-->
+<!---HONumber=Mooncake_1219_2016-->

@@ -1,28 +1,26 @@
 <properties
-   pageTitle="引发的常见 FabricClient 异常 | Azure"
-   description="描述在执行应用程序和群集管理操作时，FabricClient API 可能会引发的常见异常和错误。"
-   services="service-fabric"
-   documentationCenter=".net"
-   authors="rwike77"
-   manager="timlt"
-   editor=""/>  
-
-
+    pageTitle="引发的常见 FabricClient 异常 | Azure"
+    description="介绍执行应用程序和群集管理操作时，FabricClient API 可能会引发的常见异常和错误。"
+    services="service-fabric"
+    documentationcenter=".net"
+    author="rwike77"
+    manager="timlt"
+    editor="" />
 <tags
-   ms.service="service-fabric"
-   ms.devlang="dotnet"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="NA"
-   ms.date="08/25/2016"
-   wacn.date="10/24/2016"
-   ms.author="ryanwi"/>  
-
+    ms.assetid="bb821313-b221-479f-b08e-36cf07e60a07"
+    ms.service="service-fabric"
+    ms.devlang="dotnet"
+    ms.topic="article"
+    ms.tgt_pltfrm="NA"
+    ms.workload="NA"
+    ms.date="11/14/2016"
+    wacn.date="12/26/2016"
+    ms.author="ryanwi" />
 
 # 使用 FabricClient API 时常见的异常和错误
-[FabricClient](https://msdn.microsoft.com/zh-cn/library/system.fabric.fabricclient.aspx) API 可让群集和应用程序管理员对 Service Fabric 造应用程序、服务或群集执行管理任务。例如，部署、升级和删除应用程序、检查群集的运行状况或测试服务。应用程序开发人员和群集管理员可以使用 FabricClient API 来开发用于管理 Service Fabric 群集和应用程序的工具。
+[FabricClient](https://docs.microsoft.com/dotnet/api/system.fabric.fabricclient#System_Fabric_FabricClient) API 可让群集和应用程序管理员对 Service Fabric 造应用程序、服务或群集执行管理任务。例如，部署、升级和删除应用程序、检查群集的运行状况或测试服务。应用程序开发人员和群集管理员可以使用 FabricClient API 来开发用于管理 Service Fabric 群集和应用程序的工具。
 
-使用 FabricClient 可以执行许多不同类型的操作。由于输入错误、运行时错误或暂时性基础结构问题，每种方法可能会引发异常或错误。请参阅 API 参考文档，以查找特定的方法会引发哪些异常。但是，某些异常可能会由许多不同的 [FabricClient](https://msdn.microsoft.com/zh-cn/library/system.fabric.fabricclient.aspx) API 引发。下表列出了在 FabricClient API 之间很常见的异常。
+使用 FabricClient 可以执行许多不同类型的操作。由于输入错误、运行时错误或暂时性基础结构问题，每种方法可能会引发异常或错误。请参阅 API 参考文档，以查找特定的方法会引发哪些异常。但是，某些异常可能会由许多不同的 [FabricClient](https://docs.microsoft.com/dotnet/api/system.fabric.fabricclient#System_Fabric_FabricClient) API 引发。下表列出 FabricClient API 中常见的异常。
 
 |异常| 引发时机|
 |---------|:-----------|
@@ -47,4 +45,4 @@
 |InvalidSubjectName|使用者名称无效。|
 |InvalidAllowedCommonNameList|公用名字符串列表的格式无效。应为逗号分隔的列表。|
 
-<!---HONumber=Mooncake_1017_2016-->
+<!---HONumber=Mooncake_1219_2016-->

@@ -1,21 +1,21 @@
 <properties
-   pageTitle="Reliable Actors 计时程序和提醒程序 | Azure"
-   description="Service Fabric Reliable Actors 的计时器和提醒简介。"
-   services="service-fabric"
-   documentationCenter=".net"
-   authors="vturecek"
-   manager="timlt"
-   editor=""/>
-
+    pageTitle="Reliable Actors 计时器和提醒 | Azure"
+    description="Service Fabric Reliable Actors 的计时器和提醒简介。"
+    services="service-fabric"
+    documentationcenter=".net"
+    author="vturecek"
+    manager="timlt"
+    editor="amanbha" />
 <tags
-   ms.service="service-fabric"
-   ms.devlang="dotnet"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="NA"
-   ms.date="07/06/2016"
-   wacn.date="08/08/2016"
-   ms.author="vturecek"/>
+    ms.assetid="00c48716-569e-4a64-bd6c-25234c85ff4f"
+    ms.service="service-fabric"
+    ms.devlang="dotnet"
+    ms.topic="article"
+    ms.tgt_pltfrm="NA"
+    ms.workload="NA"
+    ms.date="10/19/2016"
+    wacn.date="12/26/2016"
+    ms.author="vturecek" />
 
 # 执行组件计时器和提醒
 执行组件可通过注册计时器或提醒来计划自身的定期工作。本文演示如何使用计时器和提醒，并说明它们之间的差异。
@@ -23,12 +23,16 @@
 ## 执行组件计时器
 执行组件计时器围绕 .NET 计时器提供一个简单包装器，确保回叫方法采用执行组件运行时提供的基于轮次的并发保证。
 
-执行组件可以对其基类使用 `RegisterTimer` 和 `UnregisterTimer` 方法以注册和注销其计时器。下面的示例演示了如何使用计时器 API。这些 API 非常类似于 .NET 计时器。在本示例中，当计时器运行结束时，执行组件运行时将调用 `MoveObject` 方法。可保证该方法遵循基于轮次的并发。这意味着，任何其他执行组件方法或计时器/提醒回调将一直进行，直到此回调完成执行为止。
+执行组件可以对其基类使用 `RegisterTimer` 和 `UnregisterTimer` 方法以注册和注销其计时器。下面的示例演示了如何使用计时器 API。这些 API 非常类似于 .NET 计时器。在本示例中，计时器运行结束时，执行组件运行时会调用 `MoveObject` 方法。可保证该方法遵循基于轮次的并发。这意味着，任何其他执行组件方法或计时器/提醒回调将一直进行，直到此回调完成执行为止。
 
 
 	class VisualObjectActor : Actor, IVisualObject
 	{
 	    private IActorTimer _updateTimer;
+	    public VisualObjectActor(ActorService actorService, ActorId actorId)
+	        : base(actorService, actorId)
+	    {
+	    }
 
 	    protected override Task OnActivateAsync()
 	    {
@@ -70,7 +74,7 @@
 ## 执行组件提醒
 提醒是一种机制，用于在指定时间对执行组件触发持久回调。其功能类似于计时器。但与计时器不同的是，提醒会在所有情况下触发，直到执行组件显式注销提醒或显式删除执行组件。具体而言，提醒会在执行组件停用和故障转移间触发，因为 执行组件运行时会保持有关执行组件提醒的信息。
 
-为了注册提醒，执行组件将调用基类上提供的 `RegisterReminderAsync` 方法，如以下示例中所示：
+为了注册提醒，执行组件会调用基类上提供的 `RegisterReminderAsync` 方法，如以下示例中所示：
 
 
 	protected override async Task OnActivateAsync()
@@ -86,13 +90,17 @@
 	}
 
 
-在本例中，`"Pay cell phone bill"` 是提醒名称。这是执行组件用来唯一标识提醒的字符串。`BitConverter.GetBytes(amountInDollars)` 是与提醒关联的上下文。它会作为提醒回调的参数（即 `IRemindable.ReceiveReminderAsync`）传递回执行组件。
+在本示例中，`"Pay cell phone bill"` 是提醒名称。这是执行组件用来唯一标识提醒的字符串。`BitConverter.GetBytes(amountInDollars)` 是与提醒关联的上下文。它会作为提醒回调的参数（即 `IRemindable.ReceiveReminderAsync`）传递回执行组件。
 
 使用提醒的执行组件必须实现 `IRemindable` 接口，如以下示例中所示。
 
 
 	public class ToDoListActor : Actor, IToDoListActor, IRemindable
 	{
+	    public ToDoListActor(ActorService actorService, ActorId actorId)
+	        : base(actorService, actorId)
+	    {
+	    }
 	    public Task ReceiveReminderAsync(string reminderName, byte[] context, TimeSpan dueTime, TimeSpan period)
 	    {
 	        if (reminderName.Equals("Pay cell phone bill"))
@@ -105,18 +113,18 @@
 	}
 
 
-触发提醒时，Reliable Actors 运行时将对执行组件调用 `ReceiveReminderAsync` 方法。一个执行组件可以注册多个提醒，而 `ReceiveReminderAsync` 方法将在触发其中任一提醒时调用。执行组件可以使用传入给 `ReceiveReminderAsync` 方法的提醒名称来找出触发的提醒。
+触发提醒时，Reliable Actors 运行时会对执行组件调用 `ReceiveReminderAsync` 方法。一个执行组件可以注册多个提醒，而 `ReceiveReminderAsync` 方法会在触发其中任一提醒时调用。执行组件可以使用传入给 `ReceiveReminderAsync` 方法的提醒名称来找出触发的提醒。
 
-执行组件运行时将在 `ReceiveReminderAsync` 调用完成时保存执行组件的状态。如果在保存状态时发生错误，则会停用该执行组件对象并激活一个新实例。
+执行组件运行时会在 `ReceiveReminderAsync` 调用完成时保存执行组件的状态。如果在保存状态时发生错误，则会停用该执行组件对象并激活一个新实例。
 
-为了注销提醒，执行组件将调用 `UnregisterReminder` 方法，如以下示例中所示。
+为了注销提醒，执行组件会调用 `UnregisterReminderAsync` 方法，如以下示例中所示。
 
 
 	IActorReminder reminder = GetReminder("Pay cell phone bill");
-	Task reminderUnregistration = UnregisterReminder(reminder);
+	Task reminderUnregistration = UnregisterReminderAsync(reminder);
 
 
-如上所示，`UnregisterReminder` 方法接受 `IActorReminder` 接口。执行组件基类支持 `GetReminder` 方法，该方法可以用于通过传入提醒名称来检索 `IActorReminder` 接口。这十分方便，因为参与者无需保存从 `RegisterReminder` 方法调用返回的 `IActorReminder` 接口。
+如上所示，`UnregisterReminderAsync` 方法接受 `IActorReminder` 接口。执行组件基类支持 `GetReminder` 方法，该方法可以用于通过传入提醒名称来检索 `IActorReminder` 接口。这十分方便，因为参与者无需保存从 `RegisterReminder` 方法调用返回的 `IActorReminder` 接口。
 
 ## 后续步骤
  - [执行组件事件](/documentation/articles/service-fabric-reliable-actors-events/)
@@ -125,4 +133,4 @@
  - [执行组件 API 参考文档](https://msdn.microsoft.com/zh-cn/library/azure/dn971626.aspx)
  - [代码示例](https://github.com/Azure/servicefabric-samples)
 
-<!---HONumber=Mooncake_0801_2016-->
+<!---HONumber=Mooncake_1219_2016-->

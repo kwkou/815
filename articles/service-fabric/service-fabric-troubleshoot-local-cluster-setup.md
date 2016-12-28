@@ -1,21 +1,21 @@
 <properties
-   pageTitle="对本地 Service Fabric 群集设置进行故障排除 | Azure"
-   description="本文就本地开发群集的故障介绍一些建议"
-   services="service-fabric"
-   documentationCenter=".net"
-   authors="seanmck"
-   manager="timlt"
-   editor=""/>
-
+    pageTitle="对本地 Service Fabric 群集设置进行故障排除 | Azure"
+    description="本文就本地开发群集的故障排除提供一些建议"
+    services="service-fabric"
+    documentationcenter=".net"
+    author="seanmck"
+    manager="timlt"
+    editor="" />
 <tags
-   ms.service="service-fabric"
-   ms.devlang="dotNet"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="NA"
-   ms.date="07/08/2016"
-   wacn.date="08/08/2016"
-   ms.author="seanmck"/>
+    ms.assetid="97f4feaa-bba0-47af-8fdd-07f811fe2202"
+    ms.service="service-fabric"
+    ms.devlang="dotNet"
+    ms.topic="article"
+    ms.tgt_pltfrm="NA"
+    ms.workload="NA"
+    ms.date="10/29/2016"
+    wacn.date="12/26/2016"
+    ms.author="seanmck" />
 
 # 排除本地开发群集安装的故障
 
@@ -100,4 +100,4 @@
 - [使用系统运行状况报告了解群集并排除故障](/documentation/articles/service-fabric-understand-and-troubleshoot-with-system-health-reports/)
 - [使用 Service Fabric 资源管理器可视化群集](/documentation/articles/service-fabric-visualizing-your-cluster/)
 
-<!---HONumber=Mooncake_0801_2016-->
+<!---HONumber=Mooncake_1219_2016-->

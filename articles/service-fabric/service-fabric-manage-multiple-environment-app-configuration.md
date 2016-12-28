@@ -1,21 +1,21 @@
 <properties
-   pageTitle="在 Service Fabric 中管理多个环境 | Azure"
-   description="Service Fabric 应用程序可以在规模为一台计算机到数千台计算机的群集上运行。在某些情况下，你需要以不同的方式针对各种环境配置你的应用程序。本文介绍如何为每个环境定义不同的应用程序参数。"
-   services="service-fabric"
-   documentationCenter=".net"
-   authors="seanmck"
-   manager="timlt"
-   editor=""/>
-
+    pageTitle="在 Service Fabric 中管理多个环境 | Azure"
+    description="Service Fabric 应用程序可以在规模为一台计算机到数千台计算机的群集上运行。在某些情况下，你需要以不同的方式针对各种环境配置你的应用程序。本文介绍如何为每个环境定义不同的应用程序参数。"
+    services="service-fabric"
+    documentationcenter=".net"
+    author="seanmck"
+    manager="timlt"
+    editor="" />
 <tags
-   ms.service="service-fabric"
-   ms.devlang="dotNet"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="NA"
-   ms.date="07/19/2016"
-   wacn.date="08/29/2016"
-   ms.author="seanmck"/>
+    ms.assetid="f406eac9-7271-4c37-a0d3-0a2957b60537"
+    ms.service="service-fabric"
+    ms.devlang="dotNet"
+    ms.topic="article"
+    ms.tgt_pltfrm="NA"
+    ms.workload="NA"
+    ms.date="11/01/2016"
+    wacn.date="12/26/2016"
+    ms.author="seanmck" />
 
 # 管理多个环境的应用程序参数
 
@@ -23,7 +23,7 @@
 
 你可以在任何位置，使用任意数量的计算机（从一台到数千台）来创建 Service Fabric 群集。尽管无需针对各种环境进行修改即可运行应用程序二进制文件，但你通常会根据所要部署的计算机数目，以不同的方式配置应用程序。
 
-举个简单的例子，假设某个无状态服务有 `InstanceCount` 参数。当你在 Azure 中运行应用程序时，通常要将此参数设置为特殊值“-1”。这可确保服务在群集中的每个节点上运行。但是，此配置并不适用于单计算机群集，因为不能有多个进程在单计算机的同一终结点上侦听。在这种情况下，你通常会将 `InstanceCount` 设置为“1”。
+举个简单的例子，假设某个无状态服务有 `InstanceCount` 参数。当你在 Azure 中运行应用程序时，通常要将此参数设置为特殊值“-1”。这可确保服务在群集中的每个节点上运行（或在节点类型中的每个节点上运行，如果已设置放置约束）。但是，此配置并不适用于单计算机群集，因为不能有多个进程在单计算机的同一终结点上侦听。在这种情况下，你通常会将 `InstanceCount` 设置为“1”。
 
 ## 指定特定于环境的参数
 
@@ -104,7 +104,7 @@ Service Fabric 应用程序项目可以包含一个或多个应用程序参数�
         </Parameters>
     </Application>
 
-默认情况下，新应用程序包含两个应用程序参数文件，分别名为 Local.xml 和 Cloud.xml：
+默认情况下，新应用程序包含三个应用程序参数文件，分别名为 Local.1Node.xml、Local.5Node.xml 和 Cloud.xml：
 
 ![解决方案资源管理器中的应用程序参数文件][app-parameters-solution-explorer]  
 
@@ -138,4 +138,4 @@ Service Fabric 应用程序项目可以包含一个或多个应用程序参数�
 [publishdialog]: ./media/service-fabric-manage-multiple-environment-app-configuration/publish-dialog-choose-app-config.png
 [app-parameters-solution-explorer]: ./media/service-fabric-manage-multiple-environment-app-configuration/app-parameters-in-solution-explorer.png
 
-<!---HONumber=Mooncake_0822_2016-->
+<!---HONumber=Mooncake_1219_2016-->

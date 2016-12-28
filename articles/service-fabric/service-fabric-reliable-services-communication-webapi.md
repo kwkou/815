@@ -1,22 +1,21 @@
 <properties
-   pageTitle="使用 ASP.NET Web API 来与服务通信 | Azure"
-   description="了解如何在 Reliable Services API 中将 ASP.NET Web API 与 OWIN 自托管配合使用来实现服务通信。"
-   services="service-fabric"
-   documentationCenter=".net"
-   authors="vturecek"
-   manager="timlt"
-   editor=""/>
-
+    pageTitle="使用 ASP.NET Web API 进行服务通信 | Azure"
+    description="了解如何在 Reliable Services API 中将 ASP.NET Web API 与 OWIN 自托管配合使用来实现服务通信。"
+    services="service-fabric"
+    documentationcenter=".net"
+    author="vturecek"
+    manager="timlt"
+    editor="" />
 <tags
-   ms.service="service-fabric"
-   ms.devlang="dotnet"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="required"
-   ms.date="07/29/2016"
-   wacn.date="08/29/2016"
-   ms.author="vturecek"/>
-
+    ms.assetid="8aa4668d-cbb6-4225-bd2d-ab5925a868f2"
+    ms.service="service-fabric"
+    ms.devlang="dotnet"
+    ms.topic="article"
+    ms.tgt_pltfrm="na"
+    ms.workload="required"
+    ms.date="10/19/2016"
+    wacn.date="12/26/2016"
+    ms.author="vturecek" />
 
 # 入门：Service Fabric Web API 服务与 OWIN 自托管
 
@@ -205,7 +204,7 @@ Web 服务器（以及可能在将来使用的任何其他通信堆栈，如 Web
 
 	namespace WebService
 	{
-	    public class OwinCommunicationListener : ICommunicationListener
+	    internal class OwinCommunicationListener : ICommunicationListener
 	    {
 	        public void Abort()
 	        {
@@ -231,7 +230,7 @@ ICommunicationListener 接口提供了三个方法来为服务管理通信侦听
 若要开始操作，请为侦听器运行所需的项目添加私有类成员。这些成员会通过构造函数初始化，并在后面设置侦听 URL 时使用。
 
 
-	public class OwinCommunicationListener : ICommunicationListener
+	internal class OwinCommunicationListener : ICommunicationListener
 	{
 	    private readonly ServiceEventSource eventSource;
 	    private readonly Action<IAppBuilder> startup;
@@ -411,11 +410,11 @@ OpenAsync 实现是为何以 ICommunicationListener 形式实现 Web 服务器�
 
 	private void StopWebServer()
 	{
-	    if (this.serverHandle != null)
+	    if (this.webApp != null)
 	    {
 	        try
 	        {
-	            this.serverHandle.Dispose();
+	            this.webApp.Dispose();
 	        }
 	        catch (ObjectDisposedException)
 	        {
@@ -428,8 +427,7 @@ OpenAsync 实现是为何以 ICommunicationListener 形式实现 Web 服务器�
 在此实现示例中，CloseAsync 和 Abort 都只是停止 Web 服务器。你可以选择在 CloseAsync 中运行更妥善协调的 Web 服务器关机。例如，关机可以等待正在进行的请求在返回之前完成。
 
 ## 启动 Web 服务器
-
-你现在已准备好创建并返回 OwinCommunicationListener 的实例以启动 Web 服务器。返回到 Service 类 (Service.cs) 中，重写 `CreateServiceInstanceListeners()` 方法：
+你现在已准备好创建并返回 OwinCommunicationListener 的实例以启动 Web 服务器。返回到 Service 类 (WebService.cs) 中，替代 `CreateServiceInstanceListeners()` 方法：
 
 
 	protected override IEnumerable<ServiceInstanceListener> CreateServiceInstanceListeners()
@@ -443,10 +441,9 @@ OpenAsync 实现是为何以 ICommunicationListener 形式实现 Web 服务器�
 	}
 
 
-这是 Web API *应用程序*和 OWIN *主机*最后相会之处。为主机 (OwinCommunicationListener) 指定*应用程序*实例（通过 startup 的 Web API）。然后，Service Fabric 将管理其生命周期。通常任何通信堆栈都可以遵循这一相同模式。
+这是 Web API *应用程序*和 OWIN *主机*最后相会之处。通过 Startup 类为主机 (OwinCommunicationListener) 指定*应用程序*实例 (Web API)。然后，Service Fabric 将管理其生命周期。通常任何通信堆栈都可以遵循这一相同模式。
 
 ## 将其放在一起
-
 在此示例中，你无需在 `RunAsync()` 方法中执行任何操作，从而可以简单地删除重写。
 
 最终的服务实现应该非常简单。它只需创建通信侦听器：
@@ -686,4 +683,4 @@ OpenAsync 实现是为何以 ICommunicationListener 形式实现 Web 服务器�
 
 [使用 Visual Studio 调试 Service Fabric 应用程序](/documentation/articles/service-fabric-debugging-your-application/)
 
-<!---HONumber=Mooncake_0822_2016-->
+<!---HONumber=Mooncake_1219_2016-->

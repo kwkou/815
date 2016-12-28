@@ -1,24 +1,27 @@
 <properties
-   pageTitle="Reliable Services 入门 | Azure"
-   description="介绍如何创建具有无状态服务和有状态服务的 Microsoft Azure Service Fabric 应用程序。"
-   services="service-fabric"
-   documentationCenter=".net"
-   authors="vturecek"
-   manager="timlt"
-   editor=""/>
-
+    pageTitle="Reliable Services 入门 | Azure"
+    description="介绍如何创建具有无状态服务和有状态服务的 Microsoft Azure Service Fabric 应用程序。"
+    services="service-fabric"
+    documentationcenter=".net"
+    author="vturecek"
+    manager="timlt"
+    editor="" />
 <tags
-   ms.service="service-fabric"
-   ms.devlang="dotnet"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="na"
-   ms.date="09/25/2016"
-   wacn.date="11/28/2016"
-   ms.author="vturecek"/>
-
+    ms.assetid="d9b44d75-e905-468e-b867-2190ce97379a"
+    ms.service="service-fabric"
+    ms.devlang="dotnet"
+    ms.topic="article"
+    ms.tgt_pltfrm="na"
+    ms.workload="na"
+    ms.date="10/28/2016"
+    wacn.date="12/26/2016"
+    ms.author="vturecek" />
 
 # Reliable Services 入门
+
+> [AZURE.SELECTOR]
+- [Windows 上的 C#](/documentation/articles/service-fabric-reliable-services-quick-start/)
+- [Linux 上的 Java](/documentation/articles/service-fabric-reliable-services-quick-start-java/)
 
 Azure Service Fabric 应用程序包含一个或多个运行你的代码的服务。本指南说明如何使用 [Reliable Services](/documentation/articles/service-fabric-reliable-services-introduction/) 同时创建无状态与有状态的 Service Fabric 应用程序。
 
@@ -34,7 +37,6 @@ Azure Service Fabric 应用程序包含一个或多个运行你的代码的服�
  - **服务注册**：通过注册可将所有对象融合在一起。只有将服务类型注册到服务宿主中的 Service Fabric 运行时后，Service Fabric 才能创建该类型的可运行实例。
 
 ## 创建无状态服务
-
 无状态服务是目前在云应用程序中作为基准的服务类型。该服务之所以被视为无状态，是因为它本身不包含需要可靠存储或高度可用的数据。如果无状态服务的实例关闭，其所有内部状态都会丢失。在这种类型的服务中，必须将状态保存到外部存储（如 Azure 表或 SQL 数据库），才能实现高可用性和可靠性。
 
 以管理员身份启动 Visual Studio 2015，并新建一个名为 *HelloWorld* 的 Service Fabric 应用程序项目：
@@ -52,9 +54,7 @@ Azure Service Fabric 应用程序包含一个或多个运行你的代码的服�
  - *HelloWorld*。这是包含*服务*的*应用程序*项目。它还包含应用程序清单，用于描述该应用程序以及一些帮助你部署应用程序的 PowerShell 脚本。
  - *HelloWorldStateless*。这是服务项目。其中包含无状态服务实现。
 
-
 ## 实现服务
-
 打开服务项目中的 **HelloWorldStateless.cs** 文件。在 Service Fabric 中，服务可以运行任一业务逻辑。服务 API 为你的代码提供两个入口点：
 
  - 名为 *RunAsync* 的开放式入口点方法，可在其中开始执行任何工作负荷，包括长时间运行的计算工作负荷。
@@ -110,12 +110,13 @@ Azure Service Fabric 应用程序包含一个或多个运行你的代码的服�
 
 系统将管理此业务流程，以便保持服务的高度可用和适当平衡。
 
-`RunAsync()` 在其自身的任务中执行。请注意，在上述代码片段中，我们直接跳到了 *while* 循环。不需要为工作负荷计划独立的任务。取消工作负荷是一项由所提供的取消标记协调的协同操作。系统会等你的任务结束后（成功完成、取消或出现故障）再执行下一步操作。当系统请求取消时，请务必接受取消标记，完成所有任务，然后尽快退出 `RunAsync()`。
+`RunAsync()` 不应以同步方式阻止。RunAsync 实现应返回 Task，或等待任何长时间运行的或阻止的操作，让运行时能够继续执行 - 请注意，在之前示例的 `while(true)` 循环中，使用了返回 `await Task.Delay()` 的 Task。如果必须以同步方式阻止工作负荷，应在 `RunAsync` 实现中使用 `Task.Run()` 安排新的 Task。
+
+取消工作负荷是一项由所提供的取消标记协调的协同操作。系统会等你的任务结束后（成功完成、取消或出现故障）再执行下一步操作。当系统请求取消时，请务必接受取消标记，完成所有任务，然后尽快退出 `RunAsync()`。
 
 在此无状态服务示例中，计数存储在本地变量中。不过，由于这是无状态服务，因此，所存储的值仅在其所在服务实例的当前生命周期中存在。当服务移动或重新启动时，值就会丢失。
 
 ## 创建有状态服务
-
 Service Fabric 引入了一种新的有状态服务。有状态服务能够可靠地在服务本身内部保持状态，并与使用它的代码共置。Service Fabric 无需将状态保存到外部存储，便可实现状态的高可用性。
 
 若要将计数器值从无状态转换为即使在服务移动或重新启动时仍高度可用并持久存在，你需要有状态服务。
@@ -231,4 +232,4 @@ Service Fabric 引入了一种新的有状态服务。有状态服务能够可�
 
 [Reliable Services 的开发人员参考](https://msdn.microsoft.com/zh-cn/library/azure/dn706529.aspx)
 
-<!---HONumber=Mooncake_1121_2016-->
+<!---HONumber=Mooncake_1219_2016-->

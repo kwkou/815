@@ -1,22 +1,22 @@
 <properties
-   pageTitle="将 Web 角色和辅助角色转换成 Service Fabric 无状态服务的指南 | Azure"
-   description="本指南将云服务 Web 角色和辅助角色与 Service Fabric 无状态服务进行比较，以帮助你从云服务迁移到 Service Fabric。"
-   services="service-fabric"
-   documentationCenter=".net"
-   authors="vturecek"
-   manager="timlt"
-   editor=""/>
-
+    pageTitle="将 Web 角色和辅助角色转换为 Service Fabric 无状态服务的指南 | Azure"
+    description="本指南对云服务的 Web 角色和辅助角色与 Service Fabric 无状态服务进行比较以帮助从云服务迁移到 Service Fabric。"
+    services="service-fabric"
+    documentationcenter=".net"
+    author="vturecek"
+    manager="timlt"
+    editor="" />
 <tags
-   ms.service="service-fabric"
-   ms.devlang="dotNet"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="NA"
-   ms.date="07/06/2016"
-   wacn.date="08/08/2016"
-   ms.author="vturecek"/>
- 
+    ms.assetid="5880ebb3-8b54-4be8-af4b-95a1bc082603"
+    ms.service="service-fabric"
+    ms.devlang="dotNet"
+    ms.topic="article"
+    ms.tgt_pltfrm="NA"
+    ms.workload="NA"
+    ms.date="10/19/2016"
+    wacn.date="12/26/2016"
+    ms.author="vturecek" />
+
 # 将 Web 角色和辅助角色转换成 Service Fabric 无状态服务的指南
 
 [AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-sdk-developer-differences.md)]
@@ -24,7 +24,6 @@
 本文说明如何将云服务的 Web 角色和辅助角色迁移到 Service Fabric 无状态服务。对于整体体系结构大致保持相同的应用程序来说，这是最简单的云服务到 Service Fabric 迁移路径。
 
 ## 云服务项目到 Service Fabric 应用程序项目
- 
  云服务项目和 Service Fabric 应用程序项目结构类似，两者都可代表应用程序的部署单位，也就是说，两者各自定义可在部署后运行应用程序的完整包。云服务项目包含一个或多个 Web 角色和辅助角色。同理，Service Fabric 应用程序项目包含一个或多个服务。
 
 两者的差别在于，云服务项目结合应用程序部署与 VM 部署，因此其中包含 VM 配置设置，而 Service Fabric 应用程序项目只定义将要部署到 Service Fabric 群集中一组现有 VM 的应用程序。Service Fabric 群集本身只可通过 ARM 模板或 Azure 门户部署一次，但可在群集中部署多个 Service Fabric 应用程序。
@@ -41,23 +40,22 @@
 
 与辅助角色类似，Web 角色也代表无状态的工作负荷，因此在概念上也能映射到 Service Fabric 无状态服务。不过，与 Web 角色不同的是，Service Fabric 不支持 IIS。若要将 Web 应用程序从 Web 角色迁移到无状态服务，需要先移动到可以自我托管且不依赖 IIS 或 System.Web 的 Web 框架（例如 ASP.NET Core 1）。
 
-**应用程序** | **支持** | **迁移路径**
---- | --- | ---
-ASP.NET Web 窗体 | 否 | 转换为 ASP.NET Core 1 MVC
-ASP.NET MVC | 使用迁移 | 升级到 ASP.NET Core 1
-ASP.NET Web API | 使用迁移 | 使用自托管服务器或 ASP.NET Core 1
-ASP.NET Core 1 | 是 | 不适用
+| **应用程序** | **支持** | **迁移路径** |
+| --- | --- | --- |
+| ASP.NET Web 窗体 |否 |转换为 ASP.NET Core 1 MVC |
+| ASP.NET MVC |使用迁移 |升级到 ASP.NET Core 1 MVC |
+| ASP.NET Web API |使用迁移 |使用自托管服务器或 ASP.NET Core 1 |
+| ASP.NET Core 1 |是 |不适用 |
 
 ## 入口点 API 和生命周期
-
 辅助角色和 Service Fabric 服务 API 提供类似的入口点：
 
-**入口点** | **辅助角色** | **Service Fabric 服务**
---- | --- | ---
-正在处理 | `Run()` | `RunAsync()`
-VM 启动 | `OnStart()` | 不适用
-VM 停止 | `OnStop()` | 不适用
-为客户端请求打开侦听器 | 不适用 | <ul><li> `CreateServiceInstanceListener()`（适用于无状态）</li><li>`CreateServiceReplicaListener()`（适用于有状态）</li></ul>
+| **入口点** | **辅助角色** | **Service Fabric 服务** |
+| --- | --- | --- |
+| 正在处理 |`Run()` |`RunAsync()` |
+| VM 启动 |`OnStart()` |不适用 |
+| VM 停止 |`OnStop()` |不适用 |
+| 为客户端请求打开侦听器 |不适用 |<ul><li> `CreateServiceInstanceListener()`（适用于无状态）</li><li>`CreateServiceReplicaListener()`（适用于有状态）</li></ul> |
 
 ### 辅助角色
 
@@ -111,18 +109,17 @@ VM 停止 | `OnStop()` | 不适用
 
 
 
-两者都有可从中开始处理的主要“Run”重写。Service Fabric 服务将 `Run`、`Start` 和 `Stop` 合并为单一入口点 `RunAsync`。当 `RunAsync` 启动时，服务应开始工作；发出 `RunAsync` 方法的 CancellationToken 信号时，应停止工作。
+两者都有可从中开始处理的主要“Run”重写。Service Fabric 服务将 `Run`、`Start` 和 `Stop` 合并到一个入口点 `RunAsync`。当 `RunAsync` 启动时，服务应开始工作；发出 `RunAsync` 方法的 CancellationToken 信号时，应停止工作。
 
 辅助角色和 Service Fabric 服务的生命周期与生存期之间有几个主要差异：
 
  - **生命周期：**最大的差异为辅助角色是 VM，因此其生命周期绑定到 VM，且包含 VM 启动和停止时的事件。Service Fabric 服务的生命周期与 VM 的生命周期不同，因此不包含主机 VM 或计算机启动和停止时的事件，因为它们彼此不相关。
 
- - **生存期：**如果 `Run` 方法退出，辅助角色实例将回收。但是，Service Fabric 服务中的 `RunAsync` 方法可以运行到完成为止，服务实例将保持运行状态。
+ - **生存期：**如果 `Run` 方法退出，将回收辅助角色实例。但是，Service Fabric 服务中的 `RunAsync` 方法可以运行到完成为止，服务实例将保持运行状态。
 
 Service Fabric 为侦听客户端请求的服务提供可选的通信设置入口点。RunAsync 和通信入口点都是 Service Fabric 服务中的可选重写（服务可选择只侦听客户端请求和/或只运行处理循环），这就是 RunAsync 方法无需重新启动服务实例就可退出的原因，因为它可以继续侦听客户端请求。
 
 ## 应用程序 API 和环境
-
 云服务环境 API 提供当前 VM 实例的信息和功能，以及有关其他 VM 角色实例的信息。Service Fabric 提供有关其运行时的信息，以及有关服务当前运行所在的节点的某些信息。
 
 **环境任务** | **云服务** | **Service Fabric**
@@ -143,10 +140,8 @@ Service Fabric 为侦听客户端请求的服务提供可选的通信设置入�
 
 其中每个包可独立设置版本和进行升级。与云服务类似，可通过 API 以编程方式访问配置包。发生配置包更改时，系统会提供事件来通知服务。Settings.xml 文件可用于键-值配置和编程访问，这与 App.config 文件的应用设置部分类似。但是，与云服务不同的是，Service Fabric 配置包可以包含任何格式的任何配置文件，不管是 XML、JSON、YAML 还是自定义的二进制格式。
 
-
 ### 访问配置
 #### 云服务
-
 可通过 `RoleEnvironment` 访问 ServiceConfiguration.*.cscfg 中的配置设置。这些设置可全局提供给同一云服务部署中的所有角色实例使用。
 
 
@@ -180,8 +175,7 @@ Service Fabric 为侦听客户端请求的服务提供可选的通信设置入�
 
 ### 配置更新事件
 #### 云服务
-
-当环境中发生更改（例如配置更改）时，将使用 `RoleEnvironment.Changed` 事件来通知所有角色实例。通过此事件可以使用配置更新，却无需回收角色实例或重新启动辅助角色进程。
+当环境中发生更改（例如配置更改）时，使用 `RoleEnvironment.Changed` 事件来通知所有角色实例。通过此事件可以使用配置更新，却无需回收角色实例或重新启动辅助角色进程。
 
 
 
@@ -219,17 +213,16 @@ Service Fabric 为侦听客户端请求的服务提供可选的通信设置入�
 
 
 ## 启动任务
-
 启动任务是应用程序启动前执行的操作。启动任务通常用于以提升的权限运行设置脚本。云服务和 Service Fabric 均支持启动任务。两者的主要差异是，云服务中的启动任务绑定到 VM，因为 VM 是角色实例的一部分；而 Service Fabric 中的启动任务则绑定到服务，而不绑定到任何特定 VM。
 
- | 云服务 | Service Fabric
---- | --- | ---
-配置位置 | ServiceDefinition.csdef | ServiceManifest.xml
-特权 | “受限”或“提升” | 任何用户或计算机帐户
-序列 | “简单”、“后台”、“前台” | 在启动服务之前，启动任务的执行必须成功。
+| 云服务 | Service Fabric |
+| --- | --- | --- |
+| 配置位置 |ServiceDefinition.csdef |
+| 特权 |“受限”或“提升” |
+| 序列 |“简单”、“后台”、“前台” |
 
 ### 云服务
-云服务中的启动入口点是在 ServiceDefintion.csdef 中针对每个角色配置的。
+在云服务中，在 ServiceDefintion.csdef 中针对每个角色配置了启动入口点。
 
 
 
@@ -247,7 +240,6 @@ Service Fabric 为侦听客户端请求的服务提供可选的通信设置入�
 
 
 ### Service Fabric
-
 Service Fabric 中的启动入口点是在 ServiceManifest.xml 中针对每个服务配置的。
 
 
@@ -265,7 +257,6 @@ Service Fabric 中的启动入口点是在 ServiceManifest.xml 中针对每个�
 
 
 ## 有关开发环境的说明
-
 云服务和 Service Fabric 都使用项目模板来与 Visual Studio 集成，并支持在本地和 Azure 中调试、配置及部署。此外，云服务和 Service Fabric 都提供本地开发运行时环境。差别在于，云服务的开发运行时模拟其运行所在的 Azure 环境，Service Fabric 不使用模拟器，而是使用完整的 Service Fabric 运行时。在本地开发计算机运行的 Service Fabric 环境就是在生产时运行的同一环境。
 
 ##后续步骤
@@ -277,7 +268,8 @@ Service Fabric 中的启动入口点是在 ServiceManifest.xml 中针对每个�
  - [云服务与 Service Fabric 之间差异的概念指南](/documentation/articles/service-fabric-cloud-services-migration-differences/)
  
 <!--Image references-->
+
 [3]: ./media/service-fabric-cloud-services-migration-worker-role-stateless-service/service-fabric-cloud-service-projects.png
 [4]: ./media/service-fabric-cloud-services-migration-worker-role-stateless-service/worker-role-to-stateless-service.png
 
-<!---HONumber=Mooncake_0801_2016-->
+<!---HONumber=Mooncake_1219_2016-->

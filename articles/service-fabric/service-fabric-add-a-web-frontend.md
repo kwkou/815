@@ -1,6 +1,6 @@
 <properties
    pageTitle="使用 ASP.NET Core 创建应用程序的 Web 前端 | Azure"
-   description="使用 ASP.NET Core Web API 项目和服务间通信，通过 ServiceProxy 将 Service Fabric 应用程序公开到 Web。"
+   description="使用 ASP.NET Core Web API 项目和通过服务代理进行的服务间通信向 Web 公开 Service Fabric 应用。"
    services="service-fabric"
    documentationCenter=".net"
    authors="seanmck"
@@ -14,8 +14,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="08/11/2016"
-   wacn.date="10/24/2016"
+   ms.date="10/29/2016"
+   wacn.date="12/26/2016"
    ms.author="seanmck"/>  
 
 
@@ -192,7 +192,7 @@ ASP.NET Core 是轻量跨平台的 Web 开发框架，可用于创建现代 Web 
 	    public async Task<IEnumerable<string>> Get()
 	    {
 	        ICounter counter =
-	            ServiceProxy.Create<ICounter>(0, new Uri("fabric:/MyApplication/MyStatefulService"));
+            		ServiceProxy.Create<ICounter>(new Uri("fabric:/MyApplication/MyStatefulService"), new ServicePartitionKey(0));
 	
 	        long count = await counter.GetCountAsync();
 	
@@ -239,7 +239,7 @@ ASP.NET Core 是轻量跨平台的 Web 开发框架，可用于创建现代 Web 
 
 ## 后续步骤
 
-
+- [在 Azure 中创建群集以便将应用程序部署到云中](/documentation/articles/service-fabric-cluster-creation-via-portal/)
 - [详细了解如何与服务通信](/documentation/articles/service-fabric-connect-and-communicate-with-services/)
 - [详细了解如何为有状态服务分区](/documentation/articles/service-fabric-concepts-partitioning/)
 
@@ -261,4 +261,4 @@ ASP.NET Core 是轻量跨平台的 Web 开发框架，可用于创建现代 Web 
 <!-- external links -->
 [dotnetcore-install]: https://www.microsoft.com/net/core#windows
 
-<!---HONumber=Mooncake_1017_2016-->
+<!---HONumber=Mooncake_1219_2016-->

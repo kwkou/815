@@ -1,7 +1,7 @@
 
 <properties
    pageTitle="应用程序升级：升级参数 | Azure"
-   description="介绍与升级 Service Fabric 应用程序相关的参数，包括要执行的运行状况检查，以及用于自动撤消升级的策略。"
+   description="描述与升级 Service Fabric 应用程序有关的参数，包括要执行的运行状况检查和用于自动撤消升级的策略。"
    services="service-fabric"
    documentationCenter=".net"
    authors="mani-ramaswamy"
@@ -15,43 +15,35 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="09/14/2016"
-   wacn.date="10/24/2016"
+   ms.date="11/15/2016"
+   wacn.date="12/26/2016"
    ms.author="subramar"/>  
 
 
 
 
 # 应用程序升级参数
-
 本文介绍 Azure Service Fabric 应用程序升级期间应用的各种参数。参数包括应用程序的名称和版本。它们可用于控制升级期间应用的超时和运行状况检查，还可指定在升级失败时必须应用的策略。
-
 
 <br>
 
 | 参数 | 说明 |
 | --- | --- |
-| ApplicationName | 正在升级的应用程序的名称。示例：fabric:/VisualObjects、fabric:/ClusterMonitor |
-| TargetApplicationTypeVersion | 作为升级目标的应用程序类型版本。 |
-| FailureAction | 升级失败时 Service Fabric 要执行的操作。可将应用程序回滚到更新前的版本（回滚），或者在当前升级域中停止升级。对于后者，升级模式还会更改为“手动”。允许的值为“Rollback”和“Manual”。 |
-| HealthCheckWaitDurationSec | 完成升级域的升级后，在 Service Fabric 评估应用程序的运行状况之前需要等待的时间（以秒为单位）。也可将此持续时间视为应用程序应先运行多长时间才可被视为正常运行。如果运行状况检查通过，升级过程将转到下一个升级域。如果运行状况检查失败，则在再次重试运行状况检查之前，Service Fabric 会等待一定的时间间隔 (UpgradeHealthCheckInterval)，直到达到 HealthCheckRetryTimeout。建议的默认值为 0 秒。 |
-| HealthCheckRetryTimeoutSec | 声明升级失败之前，Service Fabric 继续执行运行状况评估的持续时间（以秒为单位）。默认为 600 秒。此持续时间在达到 HealthCheckWaitDuration 后开始。在此 HealthCheckRetryTimeout 期间，Service Fabric 可能会对应用程序运行状况执行多次运行状况检查。默认值为 10 分钟，应该针对应用程序相应地自定义该值。 |
-| HealthCheckStableDurationSec | 在转到下一个升级域或完成升级之前，为了验证应用程序是否稳定而要等待的持续时间（以秒为单位）。此等待持续时间用于防止在执行了运行状况检查后，未检测到运行状况更改。默认值为 120 秒，应该针对应用程序相应地自定义该值。 |
-| UpgradeDomainTimeoutSec | 升级单个升级域的最长时间（以秒为单位）。如果达到了此超时，升级将会停止，然后根据 UpgradeFailureAction 的设置继续下一步。默认值为 never（无期限），应该针对应用程序相应地自定义该值。 |
-| UpgradeTimeout | 应用于整个升级的超时（以秒为单位）。如果达到了此超时，则升级将停止，并将触发 UpgradeFailureAction。默认值为 never（无期限），应该针对应用程序相应地自定义该值。 |
-| UpgradeHealthCheckInterval | 检查运行状况的频率。_群集__清单_的 ClusterManager 节中指定了参数，无法使用 upgrade cmdlet 指定此参数。默认值为 60 秒。 |
-
-
-
-
-
+| ApplicationName |正在升级的应用程序的名称。示例：fabric:/VisualObjects、fabric:/ClusterMonitor |
+| TargetApplicationTypeVersion |作为升级目标的应用程序类型版本。 |
+| FailureAction |升级失败时 Service Fabric 要执行的操作。可将应用程序回滚到更新前的版本（回滚），或者在当前升级域中停止升级。对于后者，升级模式还会更改为“手动”。允许的值为“Rollback”和“Manual”。 |
+| HealthCheckWaitDurationSec |完成升级域的升级后，在 Service Fabric 评估应用程序的运行状况之前需要等待的时间（以秒为单位）。也可将此持续时间视为应用程序应先运行多长时间才可被视为正常运行。如果运行状况检查通过，升级过程将转到下一个升级域。如果运行状况检查失败，则在再次重试运行状况检查之前，Service Fabric 会等待一定的时间间隔 (UpgradeHealthCheckInterval)，直到达到 HealthCheckRetryTimeout。建议的默认值为 0 秒。 |
+| HealthCheckRetryTimeoutSec |声明升级失败之前，Service Fabric 继续执行运行状况评估的持续时间（以秒为单位）。默认为 600 秒。此持续时间在达到 HealthCheckWaitDuration 后开始。在此 HealthCheckRetryTimeout 期间，Service Fabric 可能会对应用程序运行状况执行多次运行状况检查。默认值为 10 分钟，应该针对应用程序相应地自定义该值。 |
+| HealthCheckStableDurationSec |在转到下一个升级域或完成升级之前，为了验证应用程序是否稳定而要等待的持续时间（以秒为单位）。此等待持续时间用于防止在执行了运行状况检查后，未检测到运行状况更改。默认值为 120 秒，应该针对应用程序相应地自定义该值。 |
+| UpgradeDomainTimeoutSec |升级单个升级域的最长时间（以秒为单位）。如果达到了此超时，升级将会停止，然后根据 UpgradeFailureAction 的设置继续下一步。默认值为 never（无期限），应该针对应用程序相应地自定义该值。 |
+| UpgradeTimeout |应用于整个升级的超时（以秒为单位）。如果达到了此超时，则升级将停止，并将触发 UpgradeFailureAction。默认值为 never（无期限），应该针对应用程序相应地自定义该值。 |
+| UpgradeHealthCheckInterval |检查运行状况的频率。*群集**清单*的 ClusterManager 节中指定了参数，无法使用 upgrade cmdlet 指定此参数。默认值为 60 秒。 |
 
 <br>
-## 应用程序升级期间的服务运行状况评估
 
+## 应用程序升级期间的服务运行状况评估
 <br>
 运行状况评估条件为可选条件。如果在启动升级时未指定运行状况评估条件，则 Service Fabric 将使用应用程序实例的 ApplicationManifest.xml 中指定的应用程序运行状况策略。
-
 
 <br>  
 
@@ -83,4 +75,4 @@ MaxPercentUnhealthyServices、MaxPercentUnhealthyPartitionsPerService 和 MaxPer
 参考[对应用程序升级进行故障排除](/documentation/articles/service-fabric-application-upgrade-troubleshooting/)中的步骤来解决应用程序升级时的常见问题。
  
 
-<!---HONumber=Mooncake_1017_2016-->
+<!---HONumber=Mooncake_1219_2016-->

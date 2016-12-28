@@ -1,7 +1,7 @@
 
 <properties
-   pageTitle="管理 Service Fabric 应用程序中的机密 | Azure"
-   description="本文介绍如何保护 Service Fabric 应用程序中的机密值。"
+   pageTitle="管理 Service Fabric 应用程序中的密码 | Azure"
+   description="本文介绍如何保护 Service Fabric 应用程序中的密码。"
    services="service-fabric"
    documentationCenter=".net"
    authors="vturecek"
@@ -15,19 +15,17 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="08/19/2016"
-   wacn.date="10/24/2016"
+   ms.date="10/19/2016"
+   wacn.date="12/26/2016"
    ms.author="vturecek"/>  
 
 
 # 管理 Service Fabric 应用程序中的机密
-
 本指南逐步讲解管理 Service Fabric 应用程序中的机密的步骤。机密可以是任何敏感信息，例如存储连接字符串、密码或其他不应以明文形式处理的值。
 
 本指南使用 Azure 密钥保管库来管理密钥和机密。但是，在应用程序中*使用*机密的方式不区分云平台，因此可让应用程序部署到托管在任何位置的群集。
 
 ## 概述
-
 建议通过[服务配置包][config-package]来管理服务配置设置。可以通过包含运行状况验证和自动回滚的托管滚动升级机制来控制配置包版本以及对其进行更新。这比全局配置更有优势，因为可以减少全局服务中断的可能性。加密的机密也不例外。通过 Service Fabric 的内置功能，可以使用证书加密来加密和解密配置包 Settings.xml 文件中的值。
 
 下图演示了 Service Fabric 应用程序中机密管理的基本流程：
@@ -45,7 +43,6 @@
 [Azure 密钥保管库][key-vault-get-started]在此处用作证书的安全存储位置，可用于将证书安装在 Azure 中的 Service Fabric 群集上。如果不部署到 Azure，则不需要使用密钥保管库来管理 Service Fabric 应用程序中的机密。
 
 ## 数据加密证书
-
 数据加密证书只用于加密和解密服务 Settings.xml 中的配置值，而不用于身份验证。该证书必须满足以下要求：
 
  - 证书必须包含私钥。
@@ -58,13 +55,10 @@
 	New-SelfSignedCertificate -Type DocumentEncryptionCert -KeyUsage DataEncipherment -Subject mydataenciphermentcert -Provider 'Microsoft Enhanced Cryptographic Provider v1.0'
 
 
-
 ## 在群集中安装证书
-
 必须在群集中的每个节点上安装此证书。在运行时，将使用此证书解密服务的 Settings.xml 中存储的值。有关设置说明，请参阅 [how to create a cluster using Azure Resource Manager][service-fabric-cluster-creation-via-arm]（如何使用 Azure Resource Manager 创建群集）。
 
 ## 加密应用程序机密
-
 Service Fabric SDK 提供内置的机密加密和解密函数。可以在生成时加密机密值，在服务代码中以编程方式解密和读取机密值。
 
 以下 PowerShell 命令用于加密机密。若要生成机密值的密文，必须使用群集中安装的同一个加密证书：
@@ -149,7 +143,6 @@ Settings.xml 配置文件允许使用可在创建应用程序时提供的可重�
 
 
 ## 解密服务代码中的机密
-
 在 Windows 上，Service Fabric 中的服务默认在“网络服务”下运行，如果未提供额外的设置，它们无权访问节点上安装的证书。
 
 使用数据加密证书时，需确保“网络服务”或运行服务的任何用户帐户可以访问该证书的私钥。如果提供了相应的配置，Service Fabric 可自动处理服务授权。可以通过在 ApplicationManifest.xml 中定义用户和证书安全策略来完成此配置。在以下示例中，已授予“网络服务”帐户对某个按指纹定义的证书的读取访问权限：
@@ -197,4 +190,4 @@ Settings.xml 配置文件允许使用可在创建应用程序时提供的可重�
 
 [overview]: ./media/service-fabric-application-secret-management/overview.png
 
-<!---HONumber=Mooncake_1017_2016-->
+<!---HONumber=Mooncake_1219_2016-->
