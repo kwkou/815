@@ -26,11 +26,11 @@
 
 问：如何缩放索引？
 
-答：编码任务和索引任务的保留单位相同。请遵循[如何缩放编码保留单位](/documentation/articles/media-services-scale-media-processing-overview/)中的说明。**请注意**，保留单位类型不影响索引器性能。
+答：编码任务和索引任务的保留单元相同。请遵循[如何缩放编码保留单元](/documentation/articles/media-services-scale-media-processing-overview/)中的说明。**请注意**，保留单元类型不影响索引器性能。
 
 问：我已经上传、编码并发布了视频。为什么在尝试对视频进行流式处理时，它不播放？
 
-答：最常见的原因之一是，你没有在尝试播放的流式处理终结点上分配至少一个保留流式处理单位。请遵循[如何缩放流式处理保留单位](/documentation/articles/media-services-how-to-scale/)中的说明。
+答：最常见的原因之一是，你没有在尝试播放的流式处理终结点上分配至少一个保留流式处理单位。请遵循[如何缩放流式处理保留单元](/documentation/articles/media-services-how-to-scale/)中的说明。
 
 问：是否可以在实时流上进行合成操作？
 

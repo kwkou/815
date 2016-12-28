@@ -89,9 +89,9 @@ Azure 媒体服务现允许通过 Apple FairPlay 动态加密 HTTP Live Streamin
 
 ##<a id="jan_changes_16"></a>2016 年 1 月版本
 
-编码保留单位已重命名，以减少与编码器名称的混淆。
+编码保留单元已重命名，以减少与编码器名称的混淆。
 
-基本、标准和高级编码保留单位已分别重命名为 S1、S2 和 S3 保留单位。目前使用基本编码保留单位的客户在 Azure 门户（和帐单中）将看到 S1 的标签，标准和高级客户将分别看到 S2 和 S3 的标签。
+基本、标准和高级编码保留单元已分别重命名为 S1、S2 和 S3 保留单元。目前使用基本编码保留单元的客户在 Azure 门户（和帐单中）将看到 S1 的标签，标准和高级客户将分别看到 S2 和 S3 的标签。
 
 ##<a id="dec_changes_15"></a>2015 年 12 月版本
 
@@ -103,7 +103,7 @@ Azure SDK 团队已发布新版 [Azure SDK for PHP](http://github.com/Azure/azur
 - 以下[代码示例](http://github.com/Azure/azure-sdk-for-php/tree/master/examples/MediaServices)可帮助你快速入门：
 	- **vodworkflow\_aes.php**：这是一个 PHP 文件，演示如何使用 AES-128 动态加密和密钥传递服务。该文件基于[此文](/documentation/articles/media-services-protect-with-aes128/)中所述的 .NET 示例。
 	- **vodworkflow\_aes.php**：这是一个 PHP 文件，演示如何使用 PlayReady 动态加密和许可证传递服务。该文件基于[此文](/documentation/articles/media-services-protect-with-drm/)中所述的 .NET 示例。
-	- **scale\_encoding\_units.php**：这是一个 PHP 文件，演示如何缩放编码保留单位。
+	- **scale\_encoding\_units.php**：这是一个 PHP 文件，演示如何缩放编码保留单元。
 
 
 ##<a id="nov_changes_15"></a>2015 年 11 月版本
@@ -114,7 +114,7 @@ Azure SDK 团队已发布新版 [Azure SDK for PHP](http://github.com/Azure/azur
 
 ##<a id="oct_changes_15"></a>2015 年 10 月版本
 
-Azure 媒体服务 (AMS) 现已在以下数据中心推出：巴西南部、印度西部、印度南部和印度中部。现可使用 Azure 经典管理门户[创建媒体服务帐户](/documentation/articles/media-services-create-account/#create-a-media-services-account-using-quick-create)，并执行[此处](/documentation/services/media-services/)所述的各项任务。不过，这些数据中心未启用实时编码。此外，这些数据中心并非提供所有类型的编码保留单位。
+Azure 媒体服务 (AMS) 现已在以下数据中心推出：巴西南部、印度西部、印度南部和印度中部。现可使用 Azure 经典管理门户[创建媒体服务帐户](/documentation/articles/media-services-create-account/#create-a-media-services-account-using-quick-create)，并执行[此处](/documentation/services/media-services/)所述的各项任务。不过，这些数据中心未启用实时编码。此外，这些数据中心并非提供所有类型的编码保留单元。
 
 
 
@@ -153,7 +153,7 @@ Azure 媒体服务 (AMS) 现已在以下数据中心推出：巴西南部、印�
 
 - 宣布媒体编码器标准版公开上市。有关详细信息，请参阅[此博客文章](http://azure.microsoft.com/blog/2015/07/16/announcing-the-general-availability-of-media-encoder-standard/)。
 
-	媒体编码器标准版使用[本](https://msdn.microsoft.com/zh-cn/library/azure/mt269960.aspx)部分中所述的预设值。注意，当使用预设值进行 4K 编码时，应获取“高级版”保留单位类型。有关详细信息，请参阅[如何缩放编码](/documentation/articles/media-services-portal-encoding-units/)。
+	媒体编码器标准版使用[本](https://msdn.microsoft.com/zh-cn/library/azure/mt269960.aspx)部分中所述的预设值。注意，当使用预设值进行 4K 编码时，应获取“高级版”保留单元类型。有关详细信息，请参阅[如何缩放编码](/documentation/articles/media-services-portal-encoding-units/)。
 - Azure 媒体服务和播放器的实时标题。有关详细信息，请参阅[此博客文章](https://azure.microsoft.com/blog/2015/07/08/live-real-time-captions-with-azure-media-services-and-player/)
 
 ###媒体服务 .NET SDK 更新
@@ -245,7 +245,7 @@ Azure 媒体服务 .NET SDK 当前版本为 3.1.0.1。
 ###媒体服务一般更新
 
 - Azure 媒体索引器处理器增加了一些更新和新功能。有关详细信息，请参阅 [Azure 媒体索引器版本 1.1.6.7 发行说明](https://azure.microsoft.com/blog/2014/12/03/azure-media-indexer-version-1-1-6-7-release-notes/)。
-- 增加了一个新的 REST API，可用于更新编码保留单位：[REST 的 EncodingReservedUnitType](https://docs.microsoft.com/zh-cn/rest/api/media/operations/encodingreservedunittype)。
+- 增加了一个新的 REST API，可用于更新编码保留单元：[REST 的 EncodingReservedUnitType](https://docs.microsoft.com/zh-cn/rest/api/media/operations/encodingreservedunittype)。
 - 增加了对密钥传递服务的 CORS 支持。
 - 改进了查询授权策略选项的性能。
 - 在中国数据中心，现按客户提供[密钥传递 URL](https://docs.microsoft.com/zh-cn/rest/api/media/operations/contentkey#a-namegetdeliveryserviceurla-get-key-delivery-url)（与其他数据中心相同）。
@@ -255,7 +255,7 @@ Azure 媒体服务 .NET SDK 当前版本为 3.1.0.1。
 
 - [Azure 媒体服务 .NET SDK](http://www.nuget.org/packages/windowsazure.mediaservices/) 当前版本为 3.1.0.0。
 - 将 .Net SDK 依赖项升级到了 .NET 4.5 Framework。
-- 增加了一个新的 API，可用于更新编码保留单位。有关详细信息，请参阅[使用 .NET 更新保留单位类型和增加编码保留单位 (RU)](/documentation/articles/media-services-dotnet-encoding-units/)。
+- 增加了一个新的 API，可用于更新编码保留单元。有关详细信息，请参阅[使用 .NET 更新保留单元类型和增加编码保留单元 (RU)](/documentation/articles/media-services-dotnet-encoding-units/)。
 - 增加了对令牌身份验证的 JWT（JSON Web 令牌）支持。有关详细信息，请参阅 [Azure 媒体服务和动态加密中的 JWT 令牌身份验证](http://www.gtrifonov.com/2015/01/03/jwt-token-authentication-in-azure-media-services-and-dynamic-encryption/)。
 - 增加了 PlayReady 许可证模板中 BeginDate 和 ExpirationDate 的相对偏移量。
 

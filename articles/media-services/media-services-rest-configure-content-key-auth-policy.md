@@ -47,7 +47,7 @@
 
 ###请注意以下事项：
 
-- 为了能够使用动态打包和动态加密，必须确保至少有一个流式处理保留单位。有关详细信息，请参阅[如何缩放媒体服务](/documentation/articles/media-services-manage-origins/#scale_streaming_endpoints)。
+- 为了能够使用动态打包和动态加密，必须确保至少有一个流式处理保留单元。有关详细信息，请参阅[如何缩放媒体服务](/documentation/articles/media-services-manage-origins/#scale_streaming_endpoints)。
 - 你的资产必须包含一组自适应比特率 MP4 或自适应比特率平滑流式处理文件。有关详细信息，请参阅[对资产进行编码](/documentation/articles/media-services-encode-asset/)。
 - 使用 **AssetCreationOptions.StorageEncrypted** 选项上传资产并对其进行编码。
 - 如果你打算创建需要相同策略配置的多个内容密钥，我们强烈建议你创建单个授权策略，并将其重复用于多个内容密钥。
