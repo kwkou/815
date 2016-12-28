@@ -32,9 +32,7 @@
 
 1.  发布服务时，只需将 **-Slot** 参数传递到 **Publish-AzureServiceProject** cmdlet。
 
-    ```powershell
-    Publish-AzureServiceProject -Slot staging
-    ```
+        Publish-AzureServiceProject -Slot staging
 
 2.  登录到 [Azure 经典管理门户]，然后选择“云服务”。创建云服务并将“过渡”列状态更新为“正在运行”后，单击服务名称。
 
