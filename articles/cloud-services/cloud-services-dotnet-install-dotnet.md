@@ -170,13 +170,12 @@
 
 若要配置诊断，请打开 *diagnostics.wadcfgx*，并在 **Directories** 节点下添加以下内容：
 
-```xml 
-<DataSources>
- <DirectoryConfiguration containerName="netfx-install">
-  <LocalResource name="NETFXInstall" relativePath="log"/>
- </DirectoryConfiguration>
-</DataSources>
-```
+
+        <DataSources>
+         <DirectoryConfiguration containerName="netfx-install">
+          <LocalResource name="NETFXInstall" relativePath="log"/>
+         </DirectoryConfiguration>
+        </DataSources>
 
 这会将 Azure 诊断配置为将 *NETFXInstall* 资源下的 *log* 目录中的所有文件传输到 *netfx-install* Blob 容器中的诊断存储帐户。
 

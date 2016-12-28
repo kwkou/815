@@ -145,42 +145,40 @@ ms.author="adegeo"/>
 
 以下是使用名为 `TestIsEmulated`，设置为 [@emulated xpath value](#app-running-in-emulator) 的环境变量创建启动任务的辅助角色示例。
 
-```xml
-<WorkerRole name="Role1">
-    <ConfigurationSettings>
-      <Setting name="Setting1" />
-    </ConfigurationSettings>
-    <LocalResources>
-      <LocalStorage name="LocalStore1" sizeInMB="1024"/>
-    </LocalResources>
-    <Endpoints>
-      <InternalEndpoint name="Endpoint1" protocol="tcp" />
-    </Endpoints>
-    <Startup>
-      <Task commandLine="example.cmd inputParm">
-        <Environment>
-          <Variable name="TestConstant" value="Constant"/>
-          <Variable name="TestEmptyValue" value=""/>
-          <Variable name="TestIsEmulated">
-            <RoleInstanceValue xpath="/RoleEnvironment/Deployment/@emulated"/>
-          </Variable>
-          ...
-        </Environment>
-      </Task>
-    </Startup>
-    <Runtime>
-      <Environment>
-        <Variable name="TestConstant" value="Constant"/>
-        <Variable name="TestEmptyValue" value=""/>
-        <Variable name="TestIsEmulated">
-          <RoleInstanceValue xpath="/RoleEnvironment/Deployment/@emulated"/>
-        </Variable>
-        ...
-      </Environment>
-    </Runtime>
-    ...
-</WorkerRole>
-```
+        <WorkerRole name="Role1">
+            <ConfigurationSettings>
+              <Setting name="Setting1" />
+            </ConfigurationSettings>
+            <LocalResources>
+              <LocalStorage name="LocalStore1" sizeInMB="1024"/>
+            </LocalResources>
+            <Endpoints>
+              <InternalEndpoint name="Endpoint1" protocol="tcp" />
+            </Endpoints>
+            <Startup>
+              <Task commandLine="example.cmd inputParm">
+                <Environment>
+                  <Variable name="TestConstant" value="Constant"/>
+                  <Variable name="TestEmptyValue" value=""/>
+                  <Variable name="TestIsEmulated">
+                    <RoleInstanceValue xpath="/RoleEnvironment/Deployment/@emulated"/>
+                  </Variable>
+                  ...
+                </Environment>
+              </Task>
+            </Startup>
+            <Runtime>
+              <Environment>
+                <Variable name="TestConstant" value="Constant"/>
+                <Variable name="TestEmptyValue" value=""/>
+                <Variable name="TestIsEmulated">
+                  <RoleInstanceValue xpath="/RoleEnvironment/Deployment/@emulated"/>
+                </Variable>
+                ...
+              </Environment>
+            </Runtime>
+            ...
+        </WorkerRole>
 
 ## 后续步骤
 

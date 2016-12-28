@@ -43,14 +43,14 @@ Azure 提供了一部分适用于 Windows Server、IIS 和 ASP.NET 堆栈的性�
 
 |计数器类别：对象（实例）|计数器名称 |引用|
 |---|---|---|
-|.NET CLR Exceptions(_Global_)|引发的异常数/秒 |异常性能计数器|
-|.NET CLR Memory(_Global_) |GC 中的时间百分比 |内存性能计数器|
+|.NET CLR Exceptions(*Global*)|引发的异常数/秒 |异常性能计数器|
+|.NET CLR Memory(*Global*) |GC 中的时间百分比 |内存性能计数器|
 |ASP.NET |应用程序重新启动 |ASP.NET 性能计数器|
 |ASP.NET |请求执行时间 |ASP.NET 性能计数器|
 |ASP.NET |断开连接的请求数 |ASP.NET 性能计数器|
 |ASP.NET |工作进程重新启动 |ASP.NET 性能计数器|
-|ASP.NET Applications(__Total__)|请求总数 |ASP.NET 性能计数器|
-|ASP.NET Applications(__Total__)|请求数/秒 |ASP.NET 性能计数器|
+|ASP.NET Applications(**Total**)|请求总数 |ASP.NET 性能计数器|
+|ASP.NET Applications(**Total**)|请求数/秒 |ASP.NET 性能计数器|
 |ASP.NET v4.0.30319 |请求执行时间 |ASP.NET 性能计数器|
 |ASP.NET v4.0.30319 |请求等待时间 |ASP.NET 性能计数器|
 |ASP.NET v4.0.30319 |当前请求 |ASP.NET 性能计数器|
