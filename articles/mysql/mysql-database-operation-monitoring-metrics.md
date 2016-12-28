@@ -1,6 +1,6 @@
 <properties linkid="" urlDisplayName="" pageTitle="监视MySQL 数据库 on Azure数据库 - Azure 微软云" metaKeywords="Azure 云,技术文档,文档与资源,MySQL,数据库,监视,性能指标,Azure MySQL, MySQL PaaS,Azure MySQL PaaS, Azure MySQL Service, Azure RDS" description="MySQL 数据库 on Azure 为用户提供核心性能指标的监控,您可以通过Azure管理门户的仪表盘进行查看。" metaCanonical="" services="MySQL" documentationCenter="Services" title="" authors="" solutions="" manager="" editor="" />
 
-<tags ms.service="mysql" ms.date="11/25/2016" wacn.date="11/25/2016" wacn.lang="cn" />
+<tags ms.service="mysql" ms.date="12/28/2016" wacn.date="12/28/2016" wacn.lang="cn" />
 
 > [AZURE.LANGUAGE]
 - [中文](/documentation/articles/mysql-database-operation-monitoring-metrics/)
@@ -11,7 +11,8 @@
 
 | 性能指标 | 描述 |
 | ------------- | ------------- |
-| CPU Utilization | CPU使用量的峰值 |
+| CPU Utilization | CPU使用量的平均值 |
+| Peak CPU Utilization | CPU使用量的峰值 |
 | Query Per Second | 每秒查询数量的平均值 |
 | Peak Query Per Second | 每秒查询数量的峰值 |
 | Select Per Second | 每秒Select查询数量的平均值 |
