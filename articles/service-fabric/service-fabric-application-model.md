@@ -1,6 +1,6 @@
 <properties
    pageTitle="Service Fabric 应用程序模型 | Azure"
-   description="如何在 Service Fabric 中建模和描述应用程序。"
+   description="如何对 Service Fabric 中的应用程序和服务进行建模和描述。"
    services="service-fabric"
    documentationCenter=".net"
    authors="rwike77"
@@ -13,20 +13,17 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="08/10/2016"
-   wacn.date="11/17/2016"   
+   ms.date="10/29/2016"
+   wacn.date="12/26/2016"   
    ms.author="seanmck"/>
 
 # 在 Service Fabric 中对应用程序建模
-
 本文提供 Azure Service Fabric 应用程序模型的概述。同时介绍如何通过清单文件定义应用程序和服务以及如何打包应用程序并准备好进行部署。
 
 ## 了解应用程序模型
-
 应用程序是由执行一个或多个特定功能的成分服务组成的集合。服务执行完整且独立的功能（它们可以独立于其他服务启动和运行），并由代码、配置和数据组成。对于每个服务，代码由可执行二进制文件组成，配置由可在运行时加载的服务设置组成，数据则由可供该服务使用的任意静态数据组成。可对此层次应用程序模型中的每个组件进行独立的版本控制和升级。
 
 ![Service Fabric 应用程序模型][appmodel-diagram]
-
 
 应用程序类型是一个应用程序分类，包含大量服务类型。服务类型是一个服务分类。该分类可以具有不同的设置和配置，但核心功能保持相同。服务实例是相同服务类型的不同服务配置变体。
 
@@ -48,7 +45,6 @@
 >[AZURE.TIP] 可以使用 http://&lt;yourclusteraddress&gt;:19080/Explorer 上提供的 Service Fabric Explorer 工具查看群集中应用程序的布局。有关详细信息，请参阅[使用 Service Fabric Explorer 可视化群集](/documentation/articles/service-fabric-visualizing-your-cluster/)。
 
 ## 描述服务
-
 服务清单以声明方式定义服务类型和版本。它指定服务元数据，例如服务类型、运行状况属性、负载均衡度量值、服务二进制文件和配置文件。换言之，它描述了组成一个服务包以支持一个或多个服务类型的代码、配置和数据包。下面是服务清单的简单示例：
 
 ~~~
@@ -251,8 +247,9 @@ PS D:\temp>
 [vs-package-command]: ./media/service-fabric-application-model/vs-package-command.png
 
 <!--Link references--In actual articles, you only need a single period before the slash-->
+
 [10]: /documentation/articles/service-fabric-deploy-remove-applications/
 [11]: /documentation/articles/service-fabric-manage-multiple-environment-app-configuration/
 [12]: /documentation/articles/service-fabric-application-runas-security/
 
-<!---HONumber=Mooncake_0822_2016-->
+<!---HONumber=Mooncake_1219_2016-->

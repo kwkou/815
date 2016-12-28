@@ -1,6 +1,6 @@
 <properties
    pageTitle="Service Fabric 中的应用程序生命周期 | Azure" 
-   description="介绍如何开发、部署、测试、升级、维护和删除 Service Fabric 应用程序。" 
+   description="介绍开发、部署、测试、升级、维护和删除 Service Fabric 应用程序。" 
    services="service-fabric" 
    documentationCenter=".net" 
    authors="rwike77" 
@@ -14,8 +14,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="08/25/2016"
-   wacn.date="10/24/2016"
+   ms.date="11/14/2016"
+   wacn.date="12/26/2016"
    ms.author="ryanwi"/>  
 
 
@@ -46,22 +46,22 @@
 ## 部署
 1. *应用程序管理员*通过在应用程序清单中指定相应的 **ApplicationType** 元素的参数，将定制应用程序类型定制为将被部署到 Service Fabric 群集的特定应用程序。
 
-2. *操作员*使用 [**CopyApplicationPackage** 方法](https://msdn.microsoft.com/zh-cn/library/azure/system.fabric.fabricclient.applicationmanagementclient.copyapplicationpackage.aspx)或 [**Copy-ServiceFabricApplicationPackage** cmdlet](https://msdn.microsoft.com/zh-cn/library/azure/mt125905.aspx)，将应用程序包上载到群集映像存储中。应用程序包包含应用程序清单和服务包集合。Service Fabric 部署存储在映像存储（可能是 Azure Blob 存储或 Service Fabric 系统服务）中的应用程序包中的应用程序。
+2. *操作员*使用 [**CopyApplicationPackage** 方法](https://docs.microsoft.com/dotnet/api/system.fabric.fabricclient.applicationmanagementclient#System_Fabric_FabricClient_ApplicationManagementClient_CopyApplicationPackage_System_String_System_String_System_String_)或 [**Copy-ServiceFabricApplicationPackage** cmdlet](https://docs.microsoft.com/powershell/servicefabric/vlatest/copy-servicefabricapplicationpackage)，将应用程序包上载到群集映像存储中。应用程序包包含应用程序清单和服务包集合。Service Fabric 部署存储在映像存储（可能是 Azure Blob 存储或 Service Fabric 系统服务）中的应用程序包中的应用程序。
 
-3. 然后，*操作员*使用 [**ProvisionApplicationAsync** 方法](https://msdn.microsoft.com/zh-cn/library/azure/system.fabric.fabricclient.applicationmanagementclient.provisionapplicationasync.aspx)、[**Register-ServiceFabricApplicationType** cmdlet](https://msdn.microsoft.com/zh-cn/library/azure/mt125958.aspx) 或[**预配应用程序** REST 操作](https://msdn.microsoft.com/zh-cn/library/azure/dn707672.aspx)预配从已上载的应用程序包的目标群集中的应用程序类型。
+3. 然后，*操作员*使用 [**ProvisionApplicationAsync** 方法](https://docs.microsoft.com/dotnet/api/system.fabric.fabricclient.applicationmanagementclient#System_Fabric_FabricClient_ApplicationManagementClient_ProvisionApplicationAsync_System_String_System_TimeSpan_System_Threading_CancellationToken_)、[**Register-ServiceFabricApplicationType** cmdlet](https://docs.microsoft.com/powershell/servicefabric/vlatest/register-servicefabricapplicationtype) 或[**预配应用程序** REST 操作](https://docs.microsoft.com/rest/api/servicefabric/provision-an-application)预配从已上载的应用程序包的目标群集中的应用程序类型。
 
-4. 预配该应用程序后，*操作员*使用由*应用程序管理员*通过 [**CreateApplicationAsync** 方法](https://msdn.microsoft.com/zh-cn/library/azure/system.fabric.fabricclient.applicationmanagementclient.createapplicationasync.aspx)、[**New-ServiceFabricApplication** cmdlet](https://msdn.microsoft.com/zh-cn/library/azure/mt125913.aspx) 或[**创建应用程序** REST 操作](https://msdn.microsoft.com/zh-cn/library/azure/dn707676.aspx)所提供的参数，来启动该应用程序。
+4. 预配该应用程序后，*操作员*使用由*应用程序管理员*通过 [**CreateApplicationAsync** 方法](https://docs.microsoft.com/dotnet/api/system.fabric.fabricclient.applicationmanagementclient#System_Fabric_FabricClient_ApplicationManagementClient_CreateApplicationAsync_System_Fabric_Description_ApplicationDescription_System_TimeSpan_System_Threading_CancellationToken_)、[**New-ServiceFabricApplication** cmdlet](https://docs.microsoft.com/powershell/servicefabric/vlatest/new-servicefabricapplication) 或[**创建应用程序** REST 操作](https://docs.microsoft.com/rest/api/servicefabric/create-an-application)所提供的参数，来启动该应用程序。
 
-5. 部署应用程序后，*操作员*使用 [**CreateServiceAsync** 方法](https://msdn.microsoft.com/zh-cn/library/azure/system.fabric.fabricclient.servicemanagementclient.createserviceasync.aspx)、[**New-ServiceFabricService** cmdlet ](https://msdn.microsoft.com/zh-cn/library/azure/mt125874.aspx)或[**创建服务** REST 操作](https://msdn.microsoft.com/zh-cn/library/azure/dn707657.aspx)，来基于可用的服务类型为应用程序创建新的服务实例。
+5. 部署应用程序后，*操作员*使用 [**CreateServiceAsync** 方法](https://docs.microsoft.com/dotnet/api/system.fabric.fabricclient.servicemanagementclient#System_Fabric_FabricClient_ServiceManagementClient_CreateServiceAsync_System_Fabric_Description_ServiceDescription_System_TimeSpan_System_Threading_CancellationToken_)、[**New-ServiceFabricService** cmdlet ](https://docs.microsoft.com/powershell/servicefabric/vlatest/new-servicefabricservice)或[**创建服务** REST 操作](https://docs.microsoft.com/rest/api/servicefabric/create-a-service)，来基于可用的服务类型为应用程序创建新的服务实例。
 
 6. 该应用程序现在在 Service Fabric 群集中运行。
 
 有关示例，请参阅[部署应用程序](/documentation/articles/service-fabric-deploy-remove-applications/)。
 
 ## 测试
-1. 部署到本地开发群集或测试群集后，*服务开发人员*使用 [**FailoverTestScenarioParameters**](https://msdn.microsoft.com/zh-cn/library/azure/system.fabric.testability.scenario.failovertestscenarioparameters.aspx) 和 [**FailoverTestScenario**](https://msdn.microsoft.com/zh-cn/library/azure/system.fabric.testability.scenario.failovertestscenario.aspx) 类或 [**Invoke ServiceFabricFailoverTestScenario** cmdlet](https://msdn.microsoft.com/zh-cn/library/azure/mt644783.aspx) 运行内置的故障转移测试方案。故障转移测试方案在重要转换和故障转移中运行指定的服务，以确保其仍然可用并正在工作。
+1. 部署到本地开发群集或测试群集后，*服务开发人员*使用 [**FailoverTestScenarioParameters**](https://docs.microsoft.com/dotnet/api/system.fabric.testability.scenario.failovertestscenarioparameters#System_Fabric_Testability_Scenario_FailoverTestScenarioParameters) 和 [**FailoverTestScenario**](https://docs.microsoft.com/dotnet/api/system.fabric.testability.scenario.failovertestscenario#System_Fabric_Testability_Scenario_FailoverTestScenario) 类或 [**Invoke ServiceFabricFailoverTestScenario** cmdlet](https://docs.microsoft.com/powershell/servicefabric/vlatest/invoke-servicefabricfailovertestscenario) 运行内置的故障转移测试方案。故障转移测试方案在重要转换和故障转移中运行指定的服务，以确保其仍然可用并正在工作。
 
-2. 然后，*服务开发人员*使用 [**ChaosTestScenarioParameters**](https://msdn.microsoft.com/zh-cn/library/azure/system.fabric.testability.scenario.chaostestscenarioparameters.aspx) 和 [**ChaosTestScenario**](https://msdn.microsoft.com/zh-cn/library/azure/system.fabric.testability.scenario.chaostestscenario.aspx) 类，或 [**Invoke ServiceFabricChaosTestScenario** cmdlet](https://msdn.microsoft.com/zh-cn/library/azure/mt644774.aspx) 运行内置的混乱测试方案。任意混合测试方案会将多个节点、代码包和副本错误包括到群集中。
+2. 然后，*服务开发人员*使用 [**ChaosTestScenarioParameters**](https://docs.microsoft.com/dotnet/api/system.fabric.testability.scenario.chaostestscenarioparameters#System_Fabric_Testability_Scenario_ChaosTestScenarioParameters) 和 [**ChaosTestScenario**](https://docs.microsoft.com/dotnet/api/system.fabric.testability.scenario.chaostestscenario#System_Fabric_Testability_Scenario_ChaosTestScenario) 类，或 [**Invoke ServiceFabricChaosTestScenario** cmdlet](https://docs.microsoft.com/powershell/servicefabric/vlatest/invoke-servicefabricchaostestscenario) 运行内置的混乱测试方案。任意混合测试方案会将多个节点、代码包和副本错误包括到群集中。
 
 3. *服务开发人员*通过创建围绕群集移动主副本的测试方案，来[测试服务之间的通信](/documentation/articles/service-fabric-testability-scenarios-service-communication/)。
 
@@ -74,17 +74,17 @@
 
 3. *应用程序管理员*通过更新相应参数，将应用程序类型的新版本合并到目标应用程序中。
 
-4. *操作员*使用 [**CopyApplicationPackage** 方法](https://msdn.microsoft.com/zh-cn/library/azure/system.fabric.fabricclient.applicationmanagementclient.copyapplicationpackage.aspx)或 [**Copy-ServiceFabricApplicationPackage** cmdlet](https://msdn.microsoft.com/zh-cn/library/azure/mt125905.aspx)，将更新的应用程序包上载到群集映像存储中。应用程序包包含应用程序清单和服务包集合。
+4. *操作员*使用 [**CopyApplicationPackage** 方法](https://docs.microsoft.com/dotnet/api/system.fabric.fabricclient.applicationmanagementclient#System_Fabric_FabricClient_ApplicationManagementClient_CopyApplicationPackage_System_String_System_String_System_String_)或 [**Copy-ServiceFabricApplicationPackage** cmdlet](https://docs.microsoft.com/powershell/servicefabric/vlatest/copy-servicefabricapplicationpackage)，将更新的应用程序包上载到群集映像存储中。应用程序包包含应用程序清单和服务包集合。
 
-5. *操作员*使用 [**ProvisionApplicationAsync** 方法](https://msdn.microsoft.com/zh-cn/library/azure/system.fabric.fabricclient.applicationmanagementclient.provisionapplicationasync.aspx)、[**Register-ServiceFabricApplicationType** cmdlet](https://msdn.microsoft.com/zh-cn/library/azure/mt125958.aspx) 或[**预配应用程序 **REST 操作](https://msdn.microsoft.com/zh-cn/library/azure/dn707672.aspx)，在目标群集中预配应用程序的新版本。
+5. *操作员*使用 [**ProvisionApplicationAsync** 方法](https://docs.microsoft.com/dotnet/api/system.fabric.fabricclient.applicationmanagementclient#System_Fabric_FabricClient_ApplicationManagementClient_ProvisionApplicationAsync_System_String_System_TimeSpan_System_Threading_CancellationToken_)、[**Register-ServiceFabricApplicationType** cmdlet](https://docs.microsoft.com/powershell/servicefabric/vlatest/register-servicefabricapplicationtype) 或[**预配应用程序 **REST 操作](https://docs.microsoft.com/rest/api/servicefabric/provision-an-application)，在目标群集中预配应用程序的新版本。
 
-6. *操作员*使用 [**UpgradeApplicationAsync** 方法](https://msdn.microsoft.com/zh-cn/library/azure/system.fabric.fabricclient.applicationmanagementclient.upgradeapplicationasync.aspx)、[**Start-ServiceFabricApplicationUpgrade** cmdlet](https://msdn.microsoft.com/zh-cn/library/azure/mt125975.aspx) 或[**升级应用程序** REST 操作](https://msdn.microsoft.com/zh-cn/library/azure/dn707633.aspx)将目标应用程序升级到新版本。
+6. *操作员*使用 [**UpgradeApplicationAsync** 方法](https://docs.microsoft.com/dotnet/api/system.fabric.fabricclient.applicationmanagementclient#System_Fabric_FabricClient_ApplicationManagementClient_UpgradeApplicationAsync_System_Fabric_Description_ApplicationUpgradeDescription_System_TimeSpan_System_Threading_CancellationToken_)、[**Start-ServiceFabricApplicationUpgrade** cmdlet](https://docs.microsoft.com/powershell/servicefabric/vlatest/start-servicefabricapplicationupgrade) 或[**升级应用程序** REST 操作](https://docs.microsoft.com/rest/api/servicefabric/upgrade-an-application)将目标应用程序升级到新版本。
 
-7. *操作员*使用 [**GetApplicationUpgradeProgressAsync** 方法](https://msdn.microsoft.com/zh-cn/library/azure/system.fabric.fabricclient.applicationmanagementclient.getapplicationupgradeprogressasync.aspx)、[**Get ServiceFabricApplicationUpgrade** cmdlet](https://msdn.microsoft.com/zh-cn/library/azure/mt125988.aspx) 或[**获取应用程序升级进度** REST 操作](https://msdn.microsoft.com/zh-cn/library/azure/dn707631.aspx)，来检查升级进度。
+7. *操作员*使用 [**GetApplicationUpgradeProgressAsync** 方法](https://docs.microsoft.com/dotnet/api/system.fabric.fabricclient.applicationmanagementclient#System_Fabric_FabricClient_ApplicationManagementClient_GetApplicationUpgradeProgressAsync_System_Uri_System_TimeSpan_System_Threading_CancellationToken_)、[**Get ServiceFabricApplicationUpgrade** cmdlet](https://docs.microsoft.com/powershell/servicefabric/vlatest/get-servicefabricapplicationupgrade) 或[**获取应用程序升级进度** REST 操作](https://docs.microsoft.com/rest/api/servicefabric/get-the-progress-of-an-application-upgrade1)，来检查升级进度。
 
-8. 如有必要，*操作员*将使用 [**UpdateApplicationUpgradeAsync** 方法](https://msdn.microsoft.com/zh-cn/library/azure/system.fabric.fabricclient.applicationmanagementclient.updateapplicationupgradeasync.aspx)、[**Update-ServiceFabricApplicationUpgrade** cmdlet](https://msdn.microsoft.com/zh-cn/library/azure/mt126030.aspx) 或[**更新应用程序升级** REST 操作](https://msdn.microsoft.com/zh-cn/library/azure/mt628489.aspx)，来修改并重新应用当前应用程序升级参数。
+8. 如有必要，*操作员*将使用 [**UpdateApplicationUpgradeAsync** 方法](https://docs.microsoft.com/dotnet/api/system.fabric.fabricclient.applicationmanagementclient#System_Fabric_FabricClient_ApplicationManagementClient_UpdateApplicationUpgradeAsync_System_Fabric_Description_ApplicationUpgradeUpdateDescription_System_TimeSpan_System_Threading_CancellationToken_)、[**Update-ServiceFabricApplicationUpgrade** cmdlet](https://docs.microsoft.com/powershell/servicefabric/vlatest/update-servicefabricapplicationupgrade) 或[**更新应用程序升级** REST 操作](https://docs.microsoft.com/rest/api/servicefabric/update-an-application-upgrade)，来修改并重新应用当前应用程序升级参数。
 
-9. 如有必要，*操作员*将使用 [**RollbackApplicationUpgradeAsync** 方法](https://msdn.microsoft.com/zh-cn/library/azure/system.fabric.fabricclient.applicationmanagementclient.rollbackapplicationupgradeasync.aspx)、[**Start-ServiceFabricApplicationRollback** cmdlet](https://msdn.microsoft.com/zh-cn/library/azure/mt125833.aspx) 或[**回滚应用程序升级** REST 操作](https://msdn.microsoft.com/zh-cn/library/azure/mt628494.aspx)，来回滚当前的应用程序升级。
+9. 如有必要，*操作员*将使用 [**RollbackApplicationUpgradeAsync** 方法](https://docs.microsoft.com/dotnet/api/system.fabric.fabricclient.applicationmanagementclient#System_Fabric_FabricClient_ApplicationManagementClient_RollbackApplicationUpgradeAsync_System_Uri_System_TimeSpan_System_Threading_CancellationToken_)、[**Start-ServiceFabricApplicationRollback** cmdlet](https://docs.microsoft.com/powershell/servicefabric/vlatest/start-servicefabricapplicationrollback) 或[**回滚应用程序升级** REST 操作](https://docs.microsoft.com/rest/api/servicefabric/rollback-an-application-upgrade)，来回滚当前的应用程序升级。
 
 10. Service Fabric 对在群集中运行的目标应用程序进行升级，并且不会丢失其任何构成服务的可用性。
 
@@ -102,18 +102,17 @@
 5. 当新节点被添加到群集中或从群集中删除现有节点时，Service Fabric 自动负载均衡正在群集中的所有节点上运行的应用程序，以获得最佳性能。
 
 ## 删除
-1. *操作员*可以使用 [**DeleteServiceAsync** 方法](https://msdn.microsoft.com/zh-cn/library/azure/system.fabric.fabricclient.servicemanagementclient.deleteserviceasync.aspx)、[**Remove-ServiceFabricService** cmdlet](https://msdn.microsoft.com/zh-cn/library/azure/mt126033.aspx) 或[**删除服务** REST 操作](https://msdn.microsoft.com/zh-cn/library/azure/dn707687.aspx)来删除群集中正在运行的服务的特定实例，并且不会删除整个应用程序。
+1. *操作员*可以使用 [**DeleteServiceAsync** 方法](https://docs.microsoft.com/dotnet/api/system.fabric.fabricclient.servicemanagementclient#System_Fabric_FabricClient_ServiceManagementClient_DeleteServiceAsync_System_Fabric_Description_DeleteServiceDescription_System_TimeSpan_System_Threading_CancellationToken_)、[**Remove-ServiceFabricService** cmdlet](https://docs.microsoft.com/powershell/servicefabric/vlatest/remove-servicefabricservice) 或[**删除服务** REST 操作](https://docs.microsoft.com/rest/api/servicefabric/delete-a-service)来删除群集中正在运行的服务的特定实例，并且不会删除整个应用程序。
 
-2. *操作员*还可以使用 [**DeleteApplicationAsync** 方法](https://msdn.microsoft.com/zh-cn/library/azure/system.fabric.fabricclient.applicationmanagementclient.deleteapplicationasync.aspx)、[**Remove-ServiceFabricApplication** cmdlet](https://msdn.microsoft.com/zh-cn/library/azure/mt125914.aspx)，或[**删除应用程序** REST 操作](https://msdn.microsoft.com/zh-cn/library/azure/dn707651.aspx)，来删除应用程序实例及其所有服务。
+2. *操作员*还可以使用 [**DeleteApplicationAsync** 方法](https://docs.microsoft.com/dotnet/api/system.fabric.fabricclient.applicationmanagementclient#System_Fabric_FabricClient_ApplicationManagementClient_DeleteApplicationAsync_System_Fabric_Description_DeleteApplicationDescription_System_TimeSpan_System_Threading_CancellationToken_)、[**Remove-ServiceFabricApplication** cmdlet](https://docs.microsoft.com/powershell/servicefabric/vlatest/remove-servicefabricapplication)，或[**删除应用程序** REST 操作](https://docs.microsoft.com/rest/api/servicefabric/delete-an-application)，来删除应用程序实例及其所有服务。
 
-3. 应用程序和服务停止后，*操作员*可以使用 [**UnprovisionApplicationAsync** 方法](https://msdn.microsoft.com/zh-cn/library/azure/system.fabric.fabricclient.applicationmanagementclient.unprovisionapplicationasync.aspx)、[**Unregister-ServiceFabricApplicationType** cmdlet](https://msdn.microsoft.com/zh-cn/library/azure/mt125885.aspx)，或[**取消预配应用程序** REST 操作](https://msdn.microsoft.com/zh-cn/library/azure/dn707671.aspx)，来取消预配应用程序类型。取消预配应用程序类型不会从 ImageStore 删除应用程序包。你必须手动删除应用程序包。
+3. 应用程序和服务停止后，*操作员*可以使用 [**UnprovisionApplicationAsync** 方法](https://docs.microsoft.com/dotnet/api/system.fabric.fabricclient.applicationmanagementclient#System_Fabric_FabricClient_ApplicationManagementClient_UnprovisionApplicationAsync_System_String_System_String_System_TimeSpan_System_Threading_CancellationToken_)、[**Unregister-ServiceFabricApplicationType** cmdlet](https://docs.microsoft.com/powershell/servicefabric/vlatest/unregister-servicefabricapplicationtype)，或[**取消预配应用程序** REST 操作](https://docs.microsoft.com/rest/api/servicefabric/unprovision-an-application)，来取消预配应用程序类型。取消预配应用程序类型不会从 ImageStore 删除应用程序包。你必须手动删除应用程序包。
 
-4. *操作员*使用 [**RemoveApplicationPackage** 方法](https://msdn.microsoft.com/zh-cn/library/azure/system.fabric.fabricclient.applicationmanagementclient.removeapplicationpackage.aspx)或 [**Remove-ServiceFabricApplicationPackage** cmdlet](https://msdn.microsoft.com/zh-cn/library/azure/mt163532.aspx) 从 ImageStore 中删除应用程序包。
+4. *操作员*使用 [**RemoveApplicationPackage** 方法](https://docs.microsoft.com/dotnet/api/system.fabric.fabricclient.applicationmanagementclient#System_Fabric_FabricClient_ApplicationManagementClient_RemoveApplicationPackage_System_String_System_String_)或 [**Remove-ServiceFabricApplicationPackage** cmdlet](https://docs.microsoft.com/powershell/servicefabric/vlatest/remove-servicefabricapplicationpackage) 从 ImageStore 中删除应用程序包。
 
 有关示例，请参阅[部署应用程序](/documentation/articles/service-fabric-deploy-remove-applications/)。
 
 ## 后续步骤
-
 有关开发、测试和管理 Service Fabric 应用程序与服务的详细信息，请参阅：
 
 - [Reliable Actors](/documentation/articles/service-fabric-reliable-actors-introduction/)
@@ -123,4 +122,4 @@
 - [可测试性概述](/documentation/articles/service-fabric-testability-overview/)
 - [基于 REST 的应用程序生命周期示例](/documentation/articles/service-fabric-rest-based-application-lifecycle-sample/)
 
-<!---HONumber=Mooncake_1017_2016-->
+<!---HONumber=Mooncake_1219_2016-->

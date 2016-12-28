@@ -1,32 +1,33 @@
 <properties
-   pageTitle="Service Fabric 服务分区 | Azure"
-   description="介绍如何对 Service Fabric 服务进行分区"
-   services="service-fabric"
-   documentationCenter=".net"
-   authors="appi101"
-   manager="timlt"
-   editor=""/>
-
+    pageTitle="Service Fabric 服务分区 | Azure"
+    description="介绍如何对 Service Fabric 有状态服务进行分区。分区启用了本地计算机上的数据存储，因此可以将数据和计算一起缩放。"
+    services="service-fabric"
+    documentationcenter=".net"
+    author="msfussell"
+    manager="timlt"
+    editor="" />
 <tags
-   ms.service="service-fabric"
-   ms.devlang="dotnet"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="NA"
-   ms.date="06/20/2016"
-   wacn.date="07/04/2016"
-   ms.author="bscholl"/>
+    ms.assetid="3b7248c8-ea92-4964-85e7-6f1291b5cc7b"
+    ms.service="service-fabric"
+    ms.devlang="dotnet"
+    ms.topic="article"
+    ms.tgt_pltfrm="NA"
+    ms.workload="NA"
+    ms.date="10/22/2016"
+    wacn.date="12/26/2016"
+    ms.author="msfussell" />
+
 # Service Fabric Reliable Services 分区
 本文介绍 Azure Service Fabric Reliable Services 分区的基本概念。本文中使用的源代码也可以在 [GitHub](https://github.com/Azure-Samples/service-fabric-dotnet-getting-started/tree/master/Services/AlphabetPartitions) 上获取。
 
 ## 分区
 分区并不是 Service Fabric 所独有的。事实上，它是构建可缩放服务的核心模式。从更广泛的意义来说，我们可以将分区视为将状态（数据）和计算划分为更小的可访问单元，以提高可伸缩性和性能的一种概念。一种众所周知的分区形式是[数据分区][wikipartition]，也称为分片。
 
-
 ### Service Fabric 无状态服务分区
 对于无状态服务，可以将分区视为包含服务的一个或多个实例的逻辑单元。图 1 显示一个无状态服务，其五个实例使用一个分区在群集中分布。
 
 ![无状态服务](./media/service-fabric-concepts-partitioning/statelessinstances.png)
+
 
 实际上有两种类型的无状态服务解决方案。第一种是在外部（例如在 Azure SQL 数据库中）保持其状态的服务（如存储会话信息和数据的网站）。第二种是不管理任何持久状态的仅计算服务（如计算器或图像缩略）。
 
@@ -37,7 +38,7 @@
 本演练的其余部分侧重于有状态服务。
 
 ### 对 Service Fabric 有状态服务进行分区
-通过 Service Fabric 可以提供到一流的状态（数据）分区方式，从而方便地开发可缩放有状态服务。从概念上讲，可以将有状态服务的分区视为通过在群集中的节点间进行分布和平衡的[副本](/documentation/articles/service-fabric-availability-services/)而高度可用的缩放单位。
+通过 Service Fabric 可以提供到一流的状态（数据）分区方式，从而方便地开发可缩放有状态服务。从概念上讲，可以将有状态服务的分区视为使用在群集中的节点间进行分布和平衡的[副本](/documentation/articles/service-fabric-availability-services/)而具有高度可靠性的缩放单位。
 
 在 Service Fabric 有状态服务的上下文中进行分区是指确定特定服务分区负责服务完整状态的某个部分的过程。（如前所述，分区是一组[副本](/documentation/articles/service-fabric-availability-services/)）。Service Fabric 的一大优点是它将分区置于不同节点上。这使它们可以按照节点的资源限制来增长。随着数据需求的增长，分区也会增长，Service Fabric 会在节点间重新平衡分区。这可确保硬件资源的持续高效使用。
 
@@ -46,6 +47,7 @@
 图 2 显示缩放群集之前和之后的 10 个分区的分布。
 
 ![有状态服务](./media/service-fabric-concepts-partitioning/partitions.png)
+
 
 这样，便因为来自客户端的请求在计算机间进行分布而实现了扩大，提高了应用程序的整体性能，并减少了对数据区块的访问争用。
 
@@ -99,16 +101,15 @@ Service Fabric 提供了三个分区方案可供选择：
 
 ![范围分区](./media/service-fabric-concepts-partitioning/range-partitioning.png)
 
-一种常见方法是基于数据集中的唯一键创建哈希。一些常见的键示例有：车辆识别号 (VIN)、员工 ID 或唯一字符串。随后使用此唯一键生成一个哈希代码（键范围取模）以用作你的键。可以指定所允许键范围的上限和下限。
 
+一种常见方法是基于数据集中的唯一键创建哈希。一些常见的键示例有：车辆识别号 (VIN)、员工 ID 或唯一字符串。随后使用此唯一键生成一个哈希代码（键范围取模）以用作你的键。可以指定所允许键范围的上限和下限。
 
 ### 选择哈希算法
 哈希法的重要部分是选择哈希算法。一个考虑事项是：目标是否是对相邻的类似键进行分组（局部敏感哈希法）— 或者活动是否应广泛分布在所有分区上（分发哈希法，这更加常见）。
 
-良好的分发哈希算法的特征是易于计算，几乎没有冲突，并且均匀地分发键。高效哈希算法的一个良好示例是 [FNV-1](https://en.wikipedia.org/wiki/Fowler%E2%80%93Noll%E2%80%93Vo_hash_function) 哈希算法。
+良好的分发哈希算法的特征是易于计算，几乎没有冲突，并且均匀地分发键。高效的哈希算法的一个很好示例是 [FNV-1](https://en.wikipedia.org/wiki/Fowler%E2%80%93Noll%E2%80%93Vo_hash_function) 哈希算法。
 
-
-有关选择常规哈希代码算法的良好资源是[哈希函数的维基百科网页](http://en.wikipedia.org/wiki/Hash_function)。
+有关选择常规哈希代码算法的很好的资源是[哈希函数的维基百科网页](http://en.wikipedia.org/wiki/Hash_function)。
 
 ## 构建具有多个分区的有状态服务
 我们来创建具有多个分区的第一个可靠有状态服务。在此示例中，你会构建一个非常简单的应用程序，在其中你要将以相同字母开头的所有姓氏存储在相同分区中。
@@ -119,12 +120,12 @@ Service Fabric 提供了三个分区方案可供选择：
 >[AZURE.NOTE] 这是简化方案，因为在现实情况下分布是不均匀的。以字母“S”或“M”开头的姓氏比以“X”或“Y”开头的姓氏更常见。
 
 
-1. 打开 Visual Studio >“文件”>“新建”>“项目”。
+1. 打开“Visual Studio”>“文件”>“新建”>“项目”。
 2. 在“新建项目”对话框中，选择 Service Fabric 应用程序。
 3. 将项目命名为“AlphabetPartitions”。
-4. 在“创建服务”对话框中，选择“有状态”服务并将它称为“Alphabet.Processing”，如下图所示。
-
-    ![有状态服务屏幕截图](./media/service-fabric-concepts-partitioning/createstateful.png)
+4. 在“创建服务”对话框中，选择“有状态”服务并将它命名为“Alphabet.Processing”，如下图所示。
+   
+    ![有状态服务屏幕截图](./media/service-fabric-concepts-partitioning/createstateful.png)  
 
 5. 设置分区数。打开 AlphabetPartitions 项目的 ApplicationPackageRoot 文件夹中的 Applicationmanifest.xml 文件，然后将参数 Processing\_PartitionCount 更新为 26，如下所示。
 
@@ -149,9 +150,9 @@ Service Fabric 提供了三个分区方案可供选择：
 
 7. 接下来，需要重写 Processing 类的 `CreateServiceReplicaListeners()` 方法。
 
-    >[AZURE.NOTE] 对于此示例，我们假定你使用一个简单 HttpCommunicationListener。有关 Reliable Service 通信的详细信息，请参阅 [Reliable Service 通信模型](/documentation/articles/service-fabric-reliable-services-communication/)。
+    >[AZURE.NOTE] 对于此示例，我们假定你使用一个简单 HttpCommunicationListener。有关 Reliable Service 通信的详细信息，请参阅 [Reliable Service 通信方式](/documentation/articles/service-fabric-reliable-services-communication/)。
 
-8. 副本所侦听的 URL 的建议模式是以下格式：`{scheme}://{nodeIp}:{port}/{partitionid}/{replicaid}/{guid}`。因此，你要将通信侦听器配置为侦听正确的终结点以及使用此模式。
+8. 副本所侦听的 URL 的建议格式为以下格式：`{scheme}://{nodeIp}:{port}/{partitionid}/{replicaid}/{guid}`。因此，你要将通信侦听器配置为侦听正确的终结点以及使用此模式。
 
     可以在同一台计算机上承载此服务的多个副本，因此此地址需要是副本独有的。这就是 URL 中包含分区 ID 和副本 ID 的原因。HttpListener 可以在同一端口上侦听多个地址，只要 URL 前缀是唯一的。
 
@@ -226,13 +227,13 @@ Service Fabric 提供了三个分区方案可供选择：
     	}
 
 
-    `ProcessInternalRequest` 会读取用于调用分区的查询字符串参数值，并调用 `AddUserAsync` 以将姓氏添加到可靠字典 `dictionary`。
+    `ProcessInternalRequest` 读取用于调用分区的查询字符串参数值，并调用 `AddUserAsync` 以将姓氏添加到可靠字典 `dictionary`。
 
 10. 我们来将一个无状态服务添加到项目，以查看如何调用特定分区。
 
     此服务可用作简单 Web 界面，它接受姓氏作为查询字符串参数，确定分区键，然后将它发送到 Alphabet.Processing 服务进行处理。
     
-11. 在“创建服务”对话框中，选择“无状态”服务并将它称为“Alphabet.Web”，如下所示。
+11. 在“创建服务”对话框中，选择“无状态”服务并将它命名为“Alphabet.Web”，如下所示。
     
     ![无状态服务屏幕截图](./media/service-fabric-concepts-partitioning/createnewstateless.png)。
 
@@ -305,7 +306,7 @@ Service Fabric 提供了三个分区方案可供选择：
     	}
     
 
-    让我们逐步演练其步骤。代码将查询字符串参数 `lastname` 的第一个字母为读入到一个字符中。随后，它通过从姓氏第一个字母的十六进制值减去 `A` 的十六进制值，来确定字母的分区键。
+    让我们逐步演练其步骤。此代码将查询字符串参数 `lastname` 的第一个字母读入一个字符中。随后，从姓氏第一个字母的十六进制值减去 `A` 的十六进制值，以确定此字母的分区键。
 
     
     	string lastname = context.Request.QueryString["lastname"];
@@ -313,13 +314,13 @@ Service Fabric 提供了三个分区方案可供选择：
     	ServicePartitionKey partitionKey = new ServicePartitionKey(Char.ToUpper(firstLetterOfLastName) - 'A');
     
 
-    请记住，对于此示例，我们在使用 26 个分区，其中每个分区有一个分区键。接下来，我们通过对 `servicePartitionResolver` 对象使用 `ResolveAsync` 方法，来获取此键的服务分区 `partition`。`servicePartitionResolver` 定义为
+    请记住，对于此示例，我们在使用 26 个分区，其中每个分区有一个分区键。接下来，通过对 `servicePartitionResolver` 对象使用 `ResolveAsync` 方法，获取此键的服务分区 `partition`。`servicePartitionResolver` 定义为
 
     
     	private readonly ServicePartitionResolver servicePartitionResolver = ServicePartitionResolver.GetDefault();
     
 
-    `ResolveAsync` 方法采用服务 URI、分区键和取消标记作为参数。处理服务的服务 URI 是 `fabric:/AlphabetPartitions/Processing`。接下来，我们会获取分区的终结点。
+    `ResolveAsync` 方法采用服务 URI、分区键和取消标记作为参数。处理服务的服务 URI 为 `fabric:/AlphabetPartitions/Processing`。接下来，我们会获取分区的终结点。
 
     
     	ResolvedServiceEndpoint ep = partition.GetEndpoint()
@@ -339,7 +340,7 @@ Service Fabric 提供了三个分区方案可供选择：
 
     处理完成之后，我们会将输出写回。
 
-15. 最后一步是测试服务。Visual Studio 将应用程序参数用于本地和云部署。要在本地测试具有 26 个分区服务，需要在 AlphabetPartitions 项目的 ApplicationParameters 文件夹中更新 `Local.xml` 文件，如下所示：
+15. 最后一步是测试服务。Visual Studio 将应用程序参数用于本地和云部署。要在本地测试具有 26 个分区的服务，需要在 AlphabetPartitions 项目的 ApplicationParameters 文件夹中更新 `Local.xml` 文件，如下所示：
 
 		<Parameters>
 			<Parameter Name="Processing_PartitionCount" Value="26" />
@@ -351,7 +352,7 @@ Service Fabric 提供了三个分区方案可供选择：
     
     ![Service Fabric 资源管理器屏幕截图](./media/service-fabric-concepts-partitioning/sfxpartitions.png)
     
-17. 在浏览器中，可以通过输入 `http://localhost:8081/?lastname=somename` 来测试分区逻辑。你会看到以相同字母开头的每个姓氏都存储在相同区域中。
+17. 在浏览器中，可以输入 `http://localhost:8081/?lastname=somename` 来测试分区逻辑。你会看到以相同字母开头的每个姓氏都存储在相同区域中。
     
     ![浏览器屏幕截图](./media/service-fabric-concepts-partitioning/samplerunning.png)
 
@@ -369,4 +370,4 @@ Service Fabric 提供了三个分区方案可供选择：
 
 [wikipartition]: https://en.wikipedia.org/wiki/Partition_(database)
 
-<!---HONumber=Mooncake_0627_2016-->
+<!---HONumber=Mooncake_1219_2016-->

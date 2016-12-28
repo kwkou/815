@@ -1,23 +1,23 @@
 <properties
-   pageTitle="配置 Service Fabric 应用程序的升级 | Azure"
-   description="了解如何使用 Microsoft Visual Studio 来配置 Service Fabric 应用程序的升级设置。"
-   services="service-fabric"
-   documentationCenter="na"
-   authors="cawaMS"
-   manager="paulyuk"
-   editor="tglee" />
+    pageTitle="配置 Service Fabric 应用程序的升级 | Azure"
+    description="了解如何使用 Microsoft Visual Studio 来配置 Service Fabric 应用程序的升级设置。"
+    services="service-fabric"
+    documentationcenter="na"
+    author="cawaMS"
+    manager="paulyuk"
+    editor="tglee" />
 <tags
-   ms.service="service-fabric"
-   ms.devlang="dotnet"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="multiple"
-   ms.date="07/29/2016"
-   wacn.date="08/29/2016"
-   ms.author="cawa" />
+    ms.assetid="1757ba85-0b7b-4f16-8a23-2ddaa61c86c6"
+    ms.service="service-fabric"
+    ms.devlang="dotnet"
+    ms.topic="article"
+    ms.tgt_pltfrm="na"
+    ms.workload="multiple"
+    ms.date="11/18/2016"
+    wacn.date="12/26/2016"
+    ms.author="cawa" />
 
 # 在 Visual Studio 中配置 Service Fabric 应用程序的升级
-
 Azure Service Fabric 的 Visual Studio 工具提供发布到本地或远程群集的升级支持。在测试和调试期间将应用程序升级到较新的版本而不是替换应用程序有两个优点：
 
 - 应用程序数据不在升级期间丢失。
@@ -95,4 +95,4 @@ Service Fabric 应用程序中的每个服务可能有自身的运行状况策�
 ## 后续步骤
 有关部署应用程序的详细信息，请参阅[在 Azure Service Fabric 中部署现有应用程序](/documentation/articles/service-fabric-deploy-existing-app/)。
 
-<!---HONumber=Mooncake_0822_2016-->
+<!---HONumber=Mooncake_1219_2016-->

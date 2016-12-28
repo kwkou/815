@@ -1,21 +1,21 @@
 <properties
-   pageTitle="Reliable Services 通信概述 | Azure"
-   description="概述 Reliable Services 通信模型，包括在服务上打开侦听器、解析终结点，以及在服务之间进行通信。"
-   services="service-fabric"
-   documentationCenter=".net"
-   authors="vturecek"
-   manager="timlt"
-   editor="BharatNarasimman"/>
-
+    pageTitle="Reliable Services 通信概述 | Azure"
+    description="概述 Reliable Services 通信模型，包括在服务上打开侦听器、解析终结点，以及在服务之间进行通信。"
+    services="service-fabric"
+    documentationcenter=".net"
+    author="vturecek"
+    manager="timlt"
+    editor="BharatNarasimman" />
 <tags
-   ms.service="service-fabric"
-   ms.devlang="dotnet"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="required"
-   ms.date="07/06/2016"
-   wacn.date="08/08/2016"
-   ms.author="vturecek"/>
+    ms.assetid="36217988-420e-409d-b0a4-e0e875b6eac8"
+    ms.service="service-fabric"
+    ms.devlang="dotnet"
+    ms.topic="article"
+    ms.tgt_pltfrm="na"
+    ms.workload="required"
+    ms.date="10/19/2016"
+    wacn.date="12/26/2016"
+    ms.author="vturecek" />
 
 # 如何使用 Reliable Services 通信 API
 
@@ -66,7 +66,7 @@ Reliable Services API 为服务通信使用一个简单的接口。若要打开�
 	}
 
 
-在这两种情况下，都将返回侦听器的集合。这可让你的服务通过多个侦听器，可能使用不同的协议在多个终结点上侦听。例如，你可能有一个 HTTP 侦听器和一个单独的 WebSocket 侦听器。当客户端请求服务实例或分区的侦听地址时，每个侦听器将获取一个名称，生成的“名称 : 地址”对集合以 JSON 对象形式表示。
+在这两种情况下，都将返回侦听器的集合。这可让你的服务通过多个侦听器，可能使用不同的协议在多个终结点上侦听。例如，你可能有一个 HTTP 侦听器和一个单独的 WebSocket 侦听器。客户端请求服务实例或分区的侦听地址时，每个侦听器会获取一个名称，生成的*名称 : 地址*对集合以 JSON 对象的形式表示。
 
 在无状态服务中，重写将返回 ServiceInstanceListeners 的集合。ServiceInstanceListener 包含一个用于创建 ICommunicationListener 并为其命名的函数。对于有状态服务，重写将返回 ServiceReplicaListeners 集合。这与它的无状态对应项稍有不同，因为 ServiceReplicaListener 可以选择在辅助副本上打开 ICommunicationListener。你不仅可以在服务中使用多个通信侦听器，而且还可以指定哪些侦听器要在辅助副本上接受请求，以及哪些侦听器只能在主副本上进行侦听。
 
@@ -92,7 +92,7 @@ Reliable Services API 为服务通信使用一个简单的接口。若要打开�
 
 > [AZURE.NOTE] 为一个服务创建多个侦听器时，**必须**为每个侦听器指定一个唯一名称。
 
-最后，在[服务清单](/documentation/articles/service-fabric-application-model/)中有关终结点的节下面描述服务所需的终结点。
+最后，在[服务清单](/documentation/articles/service-fabric-application-model/)中有关终结点的部分下面描述服务所需的终结点。
 
 
 	<Resources>
@@ -115,8 +115,7 @@ Reliable Services API 为服务通信使用一个简单的接口。若要打开�
 > [AZURE.NOTE] 终结点资源对于整个服务包是通用的，由 Service Fabric 在激活服务包时分配。托管在同一 ServiceHost 中的多个服务副本可能共享同一个端口。这意味着通信侦听器应支持端口共享。实现此目标的一种推荐方法是通信侦听器在生成侦听地址时使用分区 ID 和副本/实例 ID。
 
 ### 服务地址注册
-
-名为命名服务的系统服务在 Service Fabric 群集上运行。命名服务是服务及其地址（服务的每个实例或副本正在其上侦听）的注册机构。当 `ICommunicationListener` 的 `OpenAsync` 方法完成时，它的返回值会在命名服务中注册。这个在命名服务中发布的返回值是一个字符串，其值完全可以是任何内容。此字符串值是客户端向命名服务请求服务的地址时将看到的内容。
+名为*命名服务*的系统服务在 Service Fabric 群集上运行。命名服务是服务及其地址（服务的每个实例或副本正在其上侦听）的注册机构。`ICommunicationListener` 的 `OpenAsync` 方法完成时，它的返回值会在命名服务中注册。这个在命名服务中发布的返回值是一个字符串，其值完全可以是任何内容。此字符串值是客户端向命名服务请求服务的地址时将看到的内容。
 
 
 	public Task<string> OpenAsync(CancellationToken cancellationToken)
@@ -146,7 +145,7 @@ Service Fabric 提供了许多 API，使客户端和其他服务随后可以通�
 Reliable Services API 提供以下库来编写与服务通信的客户端。
 
 ### 服务终结点解析
-与服务通信的第一步是解析你想要通信的服务的分区或实例的终结点地址。`ServicePartitionResolver` 实用工具类是一个基本基元，可帮助客户端在运行时确定服务的终结点。确定服务终结点的过程在 Service Fabric 术语中称为服务终结点解析。
+与服务通信的第一步是解析你想要通信的服务的分区或实例的终结点地址。`ServicePartitionResolver` 实用工具类是一个基本基元，可帮助客户端在运行时确定服务的终结点。确定服务终结点的过程在 Service Fabric 术语中称为*服务终结点解析*。
 
 若要连接到群集内的服务，可使用默认设置创建 `ServicePartitionResolver`。这是针对大多数情况的建议用法：
 
@@ -154,7 +153,7 @@ Reliable Services API 提供以下库来编写与服务通信的客户端。
 	ServicePartitionResolver resolver = ServicePartitionResolver.GetDefault();
 
 
-若要连接到不同群集中的服务，可利用一组群集网关终结点来创建 `ServicePartitionResolver`。请注意，网关终结点只是可用来连接到相同群集的不同终结点。例如：
+若要连接到其他群集中的服务，可利用一组群集网关终结点来创建 `ServicePartitionResolver`。请注意，网关终结点只是可用来连接到相同群集的不同终结点。例如：
 
 
 	ServicePartitionResolver resolver = new  ServicePartitionResolver("mycluster.chinacloudapp.cn:19000", "mycluster.chinacloudapp.cn:19001");
@@ -166,7 +165,7 @@ Reliable Services API 提供以下库来编写与服务通信的客户端。
 	public delegate FabricClient CreateFabricClientDelegate();
 
 
-`FabricClient` 是用于与 Service Fabric 群集通信以便在群集上实现各种管理操作的对象。当你想要更好地控制 `ServicePartitionResolver` 与群集交互的方式时，这非常有用。`FabricClient` 会在内部执行缓存，但创建成本通常很高，因此一定要尽可能重复使用 `FabricClient` 实例。
+`FabricClient` 是用于与 Service Fabric 群集通信，以便在群集上实现各种管理操作的对象。想要更好地控制 `ServicePartitionResolver` 与群集交互的方式时，这非常有用。`FabricClient` 会在内部执行缓存，但创建成本通常很高，因此一定要尽可能重复使用 `FabricClient` 实例。
 
 
 	ServicePartitionResolver resolver = new  ServicePartitionResolver(() => CreateMyFabricClient());
@@ -181,12 +180,11 @@ Reliable Services API 提供以下库来编写与服务通信的客户端。
 	    await resolver.ResolveAsync(new Uri("fabric:/MyApp/MyService"), new ServicePartitionKey(), cancellationToken);
 
 
-服务地址可以使用 `ServicePartitionResolver` 轻松解析，但需要执行更多操作，才能确保解析的地址可正确使用。你的客户端必须检测连接尝试是因暂时性错误而失败且可重试（例如，服务已移动或暂时不可用），还是因永久错误而失败（例如，已删除服务或请求的资源不再存在）。服务实例或副本可出于多种原因随时在节点之间移动。通过 `ServicePartitionResolver` 解析的服务地址可能会在客户端代码尝试连接之前过时。再回到这种情况，客户端必须重新解析地址。如果提供先前的 `ResolvedServicePartition`，则表示解析程序需要再试一次，而不只是检索缓存的地址。
+可以使用 `ServicePartitionResolver` 轻松解析服务地址，但需要执行更多操作，才能确保可以正确使用解析的地址。你的客户端必须检测连接尝试是因暂时性错误而失败且可重试（例如，服务已移动或暂时不可用），还是因永久错误而失败（例如，已删除服务或请求的资源不再存在）。服务实例或副本可出于多种原因随时在节点之间移动。通过 `ServicePartitionResolver` 解析的服务地址可能会在客户端代码尝试连接之前过时。再回到这种情况，客户端必须重新解析地址。如果提供先前的 `ResolvedServicePartition`，则表示解析程序需要重试，而不只是检索缓存的地址。
 
 客户端代码通常不需要直接处理 `ServicePartitionResolver`。它在创建后即会传递给 Reliable Services API 中的通信客户端工厂。这些工厂会在内部使用解析程序来生成可用来与服务通信的客户端对象。
 
 ### 通信客户端和工厂
-
 通信工厂库可实现典型的错误处理重试模式，从而可以更轻松地重试连接已解析服务终结点。尽管你提供错误处理程序，工厂库还是会提供重试机制。
 
 `ICommunicationClientFactory` 定义由通信客户端工厂实现的基接口，该通信客户端工厂生成可与 Service Fabric 服务通信的客户端。CommunicationClientFactory 的实现将取决于客户端要与之进行通信的 Service Fabric 服务所使用的通信堆栈。Reliable Services API 提供 `CommunicationClientFactoryBase<TCommunicationClient>`。这提供了 `ICommunicationClientFactory` 接口的基实现，并可执行所有通信堆栈共有的任务。（这些任务包括使用 `ServicePartitionResolver` 来确定服务终结点）。客户端通常实现抽象 CommunicationClientFactoryBase 类来处理通信堆栈特定的逻辑。
@@ -234,7 +232,7 @@ Reliable Services API 提供以下库来编写与服务通信的客户端。
   - **暂时性**异常是只会重试而不会重新解析服务终结点地址的异常。这类异常包括暂时性网络问题或服务错误响应，但不包括指出服务终结点地址不存在的异常。
   - **非暂时性**异常是需要重新解析服务终结点地址的异常。这类异常包括指出无法访问服务终结点（表示服务已移至其他节点）的异常。
 
-`TryHandleException` 针对给定异常做出决定。如果它**不知道**要对异常做出哪些决定，则应返回 **false**。如果它**知道**如何做决定，则应该相应地设置结果并返回 **true**。
+`TryHandleException` 针对给定异常做出决定。如果它**不知道**要对异常做出哪些决定，则应返回 **false**。如果它**知道**要做出哪些决定，则应该相应地设置结果并返回 **true**。
  
 
 	class MyExceptionHandler : IExceptionHandler
@@ -257,7 +255,7 @@ Reliable Services API 提供以下库来编写与服务通信的客户端。
 	}
 
 ### 汇总
-使用以通信协议生成的 `ICommunicationClient`、`ICommunicationClientFactory` 和 `IExceptionHandler`，`ServicePartitionClient` 会将它全部包装在一起，并为这些组件提供错误处理和服务分区地址解析循环。
+使用根据通信协议生成的 `ICommunicationClient`、`ICommunicationClientFactory` 和 `IExceptionHandler` 时，`ServicePartitionClient` 会将它全部包装在一起，并为这些组件提供错误处理和服务分区地址解析循环。
 
 
 	private MyCommunicationClientFactory myCommunicationClientFactory;
@@ -285,4 +283,4 @@ Reliable Services API 提供以下库来编写与服务通信的客户端。
 
  - [使用 Reliable Services 的 WCF 通信](/documentation/articles/service-fabric-reliable-services-communication-wcf/)
 
-<!---HONumber=Mooncake_0801_2016-->
+<!---HONumber=Mooncake_1219_2016-->

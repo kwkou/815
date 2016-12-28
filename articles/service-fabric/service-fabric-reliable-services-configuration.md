@@ -1,33 +1,32 @@
 <properties
-   pageTitle="Azure Service Fabric Reliable Services 配置概述 | Azure"
-   description="了解如何在 Azure Service Fabric 中配置有状态 Reliable Services。"
-   services="Service-Fabric"
-   documentationCenter=".net"
-   authors="sumukhs"
-   manager="timlt"
-   editor="vturecek"/>
-
+    pageTitle="Azure Service Fabric Reliable Services 配置概述 | Azure"
+    description="了解如何在 Azure Service Fabric 中配置有状态 Reliable Services。"
+    services="Service-Fabric"
+    documentationcenter=".net"
+    author="sumukhs"
+    manager="timlt"
+    editor="vturecek" />
 <tags
-   ms.service="Service-Fabric"
-   ms.devlang="dotnet"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="NA"
-   ms.date="09/20/2016"
-   wacn.date="11/28/2016"
-   ms.author="sumukhs"/>
-# 配置有状态 Reliable Services
+    ms.assetid="9f72373d-31dd-41e3-8504-6e0320a11f0e"
+    ms.service="Service-Fabric"
+    ms.devlang="dotnet"
+    ms.topic="article"
+    ms.tgt_pltfrm="NA"
+    ms.workload="NA"
+    ms.date="10/18/2016"
+    wacn.date="12/26/2016"
+    ms.author="sumukhs" />
 
+# 配置有状态 Reliable Services
 有两组配置设置可供 Reliable Services 使用。一组适用于群集中的所有 Reliable Services，而另一组特定于特定的 Reliable Services。
 
 ## 全局配置
-
 全局可靠服务配置在群集的群集清单中的 KtlLogger 节下面指定。它可配置共享日志位置和大小，以及记录器所使用的全局内存限制。群集清单是单个 XML 文件，可保留适用于群集中所有节点和服务的设置与配置。此文件通常称为 ClusterManifest.xml。你可以使用 Get-ServiceFabricClusterManifest powershell 命令查看群集的群集清单。
 
 ### 配置名称
 
 |Name|计价单位|默认值|备注|
-|----|----|-------------|-------|
+| --- | --- | --- | --- |
 |WriteBufferMemoryPoolMinimumInKB|千字节|8388608|以内核模式分配给记录器写入缓冲区内存池的最小 KB 数。此内存池用于在将状态信息写入磁盘之前缓存这些信息。|
 |WriteBufferMemoryPoolMaximumInKB|千字节|无限制|记录器写入缓冲区内存池可以增长到的大小上限。|
 |SharedLogId|GUID|""|指定用来标识默认共享日志文件的唯一 GUID，该文件用于群集中所有节点上的所有 Reliable Services（不会在其服务特定配置中指定 SharedLogId）。如果指定了 SharedLogId，则也必须指定 SharedLogPath。|
@@ -51,7 +50,6 @@
 SharedLogId 和 SharedLogPath 设置始终一起使用，用于定义群集中所有节点的默认共享日志的 GUID 和位置。默认共享日志可用于不在特定服务 settings.xml 中指定设置的所有 Reliable Services。为了获得最佳性能，共享日志文件应置于仅用于共享日志文件的磁盘上，以便减少争用。
 
 SharedLogSizeInMB 指定要预先分配给所有节点上的默认共享日志的磁盘空间数量。若要指定 SharedLogSizeInMB，不需要指定 SharedLogId 和 SharedLogPath。
-
 
 ## 服务特定配置
 可以通过使用配置包（配置）或服务实现（代码）来修改有状态 Reliable Services 的默认配置。
@@ -84,13 +82,17 @@ ReplicatorConfig
 
 ### 配置名称
 |Name|计价单位|默认值|备注|
-|----|----|-------------|-------|
+| --- | --- | --- | --- |
 |BatchAcknowledgementInterval|秒|0\.015|收到操作后，在向主要复制器送回确认之前，辅助复制器等待的时间段。为在此间隔内处理的操作发送的任何其他确认都作为响应发送。|
 |ReplicatorEndpoint|不适用|无默认值--必选参数|主要/辅助复制器用于与副本集中其他复制器通信的 IP 地址和端口。这应该引用服务清单中的 TCP 资源终结点。若要了解有关在服务清单中定义终结点资源的详细信息，请参阅[服务清单资源](/documentation/articles/service-fabric-service-manifest-resources/)。 |
 |MaxPrimaryReplicationQueueSize|操作的数量|8192|主要队列中的操作的最大数目。主复制器接收到来自所有辅助复制器的确认之后，将释放一个操作。此值必须大于 64 和 2 的幂。|
 |MaxSecondaryReplicationQueueSize|操作的数量|16384|辅助队列中的操作的最大数目。将在使操作的状态在暂留期间高度可用后释放该操作。此值必须大于 64 和 2 的幂。|
 |CheckpointThresholdInMB|MB|50|创建状态检查点后的日志文件空间量。|
 |MaxRecordSizeInKB|KB|1024|复制器可以在日志中写入的最大记录大小。此值必须是 4 的倍数，且大于 16。|
+| MinLogSizeInMB |MB |0（系统确定） |事务日志的最小大小。不允许将日志截断为低于此设置的大小。0 表示复制器会确定最小日志大小。增加此值会提高执行部分复制和增量备份的可能性，因为这会降低截断相关日志记录的可能性。 |
+| TruncationThresholdFactor |因子 |2 |确定会触发截断的日志的大小。截断阈值由 MinLogSizeInMB 乘以 TruncationThresholdFactor 确定。TruncationThresholdFactor 必须大于 1。MinLogSizeInMB * TruncationThresholdFactor 必须小于 MaxStreamSizeInMB。 |
+| ThrottlingThresholdFactor |因子 |4 |确定副本会开始受到限制的日志的大小。限制阈值 (MB) 由 Max((MinLogSizeInMB * ThrottlingThresholdFactor),(CheckpointThresholdInMB * ThrottlingThresholdFactor)) 确定。限制阈值 (MB) 必须大于截断阈值 (MB)。截断阈值 (MB) 必须小于 MaxStreamSizeInMB。 |
+| MaxAccumulatedBackupLogSizeInMB |MB |800 |给定备份日志链中备份日志的最大累积大小 (MB)。如果增量备份会生成导致累积备份日志的备份日志，增量备份请求会失败，因为相关完整备份会大于此大小。在这种情况下，用户需要执行完整备份。 |
 |SharedLogId|GUID|""|指定要用于标识与此副本一起使用的共享日志文件的唯一 GUID。通常情况下，服务不应使用此设置。但是如果指定了 SharedLogId，则也必须指定 SharedLogPath。|
 |SharedLogPath|完全限定的路径名|""|指定将在其中创建此副本共享日志文件的完全限定路径。通常情况下，服务不应使用此设置。但是如果指定了 SharedLogPath，则也必须指定 SharedLogId。|
 |SlowApiMonitoringDuration|秒|300|设置托管 API 调用的监视间隔。示例：用户提供的备份回调函数。此间隔时间过去后，将向运行状况管理器发送一个警告运行状况报告。|
@@ -162,4 +164,4 @@ SharedLogId 和 SharedLogPath 设置始终一起使用，使服务可以使用�
  - [在 Visual Studio 中调试 Service Fabric 应用程序](/documentation/articles/service-fabric-debugging-your-application/)
  - [Reliable Services 的开发人员参考](https://msdn.microsoft.com/zh-cn/library/azure/dn706529.aspx)
 
-<!---HONumber=Mooncake_1121_2016-->
+<!---HONumber=Mooncake_1219_2016-->

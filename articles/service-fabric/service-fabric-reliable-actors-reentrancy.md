@@ -1,26 +1,24 @@
 <properties
-   pageTitle="Reliable Actors 可重入性 | Azure"
-   description="Service Fabric Reliable Actors 的可重入性简介"
-   services="service-fabric"
-   documentationCenter=".net"
-   authors="vturecek"
-   manager="timlt"
-   editor="amanbha"/>
-
+    pageTitle="Reliable Actors 可重入性 | Azure"
+    description="Service Fabric Reliable Actors 的可重入性简介"
+    services="service-fabric"
+    documentationcenter=".net"
+    author="vturecek"
+    manager="timlt"
+    editor="amanbha" />
 <tags
-   ms.service="service-fabric"
-   ms.devlang="dotnet"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="NA"
-   ms.date="07/06/2016"
-   wacn.date="08/08/2016"
-   ms.author="vturecek"/>
-
+    ms.assetid="be23464a-0eea-4eca-ae5a-2e1b650d365e"
+    ms.service="service-fabric"
+    ms.devlang="dotnet"
+    ms.topic="article"
+    ms.tgt_pltfrm="NA"
+    ms.workload="NA"
+    ms.date="10/19/2016"
+    wacn.date="12/26/2016"
+    ms.author="vturecek" />
 
 # Reliable Actors 可重入性
 默认情况下，Reliable Actors 运行时允许基于逻辑调用上下文的可重入性。这使执行组件在处于相同调用上下文链中时可重入。例如，如果执行组件 A 将消息发送给执行组件 B，而后者将消息发送给执行组件 C。在处理消息的过程中，如果执行组件 C 调用执行组件 A，则允许消息可重入。属于不同调用上下文的任何其他消息会在执行组件 A 上受阻，直到它完成处理。
-
 
 有两个选项可用于 `ActorReentrancyMode` 枚举中定义的执行组件重新进入：
 
@@ -75,4 +73,4 @@
  - [执行组件 API 参考文档](https://msdn.microsoft.com/zh-cn/library/azure/dn971626.aspx)
  - [代码示例](https://github.com/Azure/servicefabric-samples)
 
-<!---HONumber=Mooncake_0801_2016-->
+<!---HONumber=Mooncake_1219_2016-->

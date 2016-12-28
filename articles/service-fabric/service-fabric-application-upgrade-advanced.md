@@ -1,6 +1,6 @@
 <properties
    pageTitle="应用程序升级：高级主题 | Azure"
-   description="本文介绍有关升级 Service Fabric 应用程序的一些高级主题。"
+   description="本文涵盖了有关升级 Service Fabric 应用程序的一些高级主题。"
    services="service-fabric"
    documentationCenter=".net"
    authors="mani-ramaswamy"
@@ -14,15 +14,13 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="09/14/2016"
-   wacn.date="10/24/2016"
+   ms.date="11/15/2016"
+   wacn.date="12/26/2016"
    ms.author="subramar"/>  
 
 
 # Service Fabric 应用程序升级：高级主题
-
 ## 在升级应用程序期间添加或删除服务
-
 如果将新服务添加到已部署的应用程序，并将其作为升级项发布，则该新服务将添加到部署的应用程序。此类升级不会影响到已属于应用程序一部分的任何服务。但是，若要激活新服务，必须启动已添加的服务的实例（使用 `New-ServiceFabricService` cmdlet）。
 
 还可以在升级期间从应用程序中删除服务。但是，在继续升级之前，必须停止要删除的服务的所有当前实例（使用 `Remove-ServiceFabricService` cmdlet）。
@@ -43,7 +41,6 @@ Azure Service Fabric 提供了多个升级模式，可支持开发和生产群�
 **手动** - 在当前 UD 停止应用程序升级，并将升级模式更改为不受监视的手动模式。管理员需要手动调用 **MoveNextApplicationUpgradeDomainAsync**，以继续进行升级或通过启动新升级触发回滚。升级进入到“手动”模式后，就会保持为“手动”模式，直到启动新的升级。**GetApplicationUpgradeProgressAsync** 命令将返回 FABRIC\\APPLICATION\\UPGRADE\\STATE\\ROLLING\\FORWARD\\PENDING。
 
 ## 使用差异包升级
-
 Service Fabric 应用程序可以通过预配一个完整且独立的应用程序包进行升级。此外，还可以通过使用一个仅包含已更新应用程序文件、已更新应用程序清单和服务清单文件的差异包对应用程序进行升级。
 
 完整的应用程序包中包含启动和运行 Service Fabric 应用程序所需的所有文件。差异包仅包含在最后一次设置与当前升级之间更改的文件，以及完整的应用程序清单和服务清单文件。如果应用程序清单或服务清单中存在任何无法在生成布局中找到的引用，系统将在映像存储中搜索这些引用。
@@ -103,4 +100,4 @@ Service Fabric 应用程序可以通过预配一个完整且独立的应用程�
 参考 [Troubleshooting Application Upgrades](/documentation/articles/service-fabric-application-upgrade-troubleshooting/)（对应用程序升级进行故障排除）中的步骤来解决应用程序升级时的常见问题。
  
 
-<!---HONumber=Mooncake_1017_2016-->
+<!---HONumber=Mooncake_1219_2016-->

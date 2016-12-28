@@ -1,34 +1,31 @@
 <properties
-   pageTitle="Azure Service Fabric 灾难恢复 | Azure"
-   description="Azure Service Fabric 提供所需的功能用于应对各种灾难。本文介绍可能发生的灾难类型，以及如何应对这些灾难。"
-   services="service-fabric"
-   documentationCenter=".net"
-   authors="seanmck"
-   manager="timlt"
-   editor=""/>
-
+    pageTitle="Azure Service Fabric 灾难恢复 | Azure"
+    description="Azure Service Fabric 提供应对各种灾难所需的功能。本文介绍可能发生的灾难类型，以及如何应对这些灾难。"
+    services="service-fabric"
+    documentationcenter=".net"
+    author="seanmck"
+    manager="timlt"
+    editor="" />
 <tags
-   ms.service="service-fabric"
-   ms.devlang="dotNet"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="NA"
-   ms.date="08/10/2016"
-   wacn.date="08/29/2016"
-   ms.author="seanmck"/>
+    ms.assetid="ab49c4b9-74a8-4907-b75b-8d2ee84c6d90"
+    ms.service="service-fabric"
+    ms.devlang="dotNet"
+    ms.topic="article"
+    ms.tgt_pltfrm="NA"
+    ms.workload="NA"
+    ms.date="10/29/2016"
+    wacn.date="12/26/2016"
+    ms.author="seanmck" />
 
 # Azure Service Fabric 中的灾难恢复
-
 提供高可用性云应用程序的关键是确保它可以从各种故障中生存下来，包括那些不受控制的故障。本文说明在潜在灾难环境中 Azure Service Fabric 群集的物理布局，并提供有关如何应对此类灾难以便限制或消除停机时间或数据丢失风险的指导。
 
 ## Azure 中 Service Fabric 群集的物理布局
-
 若要了解不同类型的故障造成的风险，知道 Azure 中群集的物理布局方式会很有帮助。
 
 在 Azure 中创建 Service Fabric 群集时，需要选择用于托管该群集的区域。然后，Azure 基础结构将在区域中为该群集预配资源，最重要的是请求的虚拟机 (VM) 数目。让我们更深入了解这些 VM 的预配方式和位置。
 
 ### 容错域
-
 默认情况下，群集中的 VM 平均分散在名为容错域 (FD) 的逻辑组中，逻辑组根据主机硬件中的潜在故障将计算机分段。具体而言，如果你有两个 VM 位于两个不同的 FD 中，则可以确保它们不会共享相同的电源或网络交换机。因此，影响一个 VM 的局域网或电源故障不会影响到另一个 VM，使 Service Fabric 能够重新平衡群集中无响应计算机的工作负荷。
 
 可以使用 [Service Fabric Explorer](/documentation/articles/service-fabric-visualizing-your-cluster/) 中提供的群集映射将各容错域中群集的布局可视化：
@@ -42,21 +39,17 @@
 目前中国有 2 个 Azure 区域：中国东部和中国北部。根据需求和适当位置的可用性（还有其他因素），单个区域可以包含一个或多个物理数据中心。但请注意，即使在包含多个物理数据中心的区域中，也不能保证群集的 VM 平均分散在这些物理位置。实际上，给定群集的所有 VM 目前都预配在单个物理站点中。
 
 ## 应对故障
-
 有多种类型的故障可能会影响群集，而每种类型都有其自身的缓解方式。我们将按照发生故障的可能性大小进行探讨。
 
 ### 单个计算机故障
-
 如前所述，单个计算机故障（在 VM 中或在容错域内托管计算机的硬件或软件中）本身不造成风险。Service Fabric 通常可在几秒内检测到故障，并根据群集的状态做出响应。例如，如果节点托管某个分区的主要副本，则会从该分区的次要副本中选择新的主要副本。当 Azure 恢复有故障的计算机后，该计算机将自动重新加入群集并再次接管自身的工作负荷。
 
 ### 多个并发计算机故障
-
 尽管容错域可大幅减少并发计算机故障的风险，但是多个随机故障始终有可能同时关闭群集中的多台计算机。
 
 一般而言，只要大多数节点保持可用，群集就会继续运行，不过，在容量较低时，有状态副本将打包到少量的一组计算机中，并提供较少的无状态实例用于分散负载。
 
 #### 仲裁丢失
-
 如果有状态服务分区的大多数副本关闭，则该分区将进入所谓的“仲裁丢失”状态。 此时，Service Fabric 会停止允许写入该分区，以确保其状态保持一致且可靠。实际上，我们会选择接受一段不可用的时间，以确保客户端不被告知其数据已保存（但事实并非如此）。请注意，如果选择允许从该有状态服务的辅助副本读取，可以在此状态下继续执行读取操作。分区保持仲裁丢失的状态，直到恢复足量的副本，或群集管理员强迫系统继续使用 [Repair-ServiceFabricPartition API][repair-partition-ps] 为止。
 
 >[AZURE.WARNING] 在主要副本关闭时执行修复操作将导致数据丢失。
@@ -81,23 +74,20 @@
 	protected virtual Task<bool> OnDataLoss(CancellationToken cancellationToken)
 	{
 	  ServiceEventSource.Current.ServiceMessage(this, "OnDataLoss event received.");
-	  return Task.FromResult(true);
+	  return Task.FromResult(false);
 	}
 
 
 
 ### 软件故障和其他数据丢失根源
-
 在数据丢失的原因中，服务的代码缺陷、人为操作失误和安全违规比大范围的数据中心故障更为常见。但是，在所有情况下，恢复策略都一样：定期备份所有的有状态服务并运用还原该状态的能力。
 
 ## 后续步骤
-
 - 了解如何使用[可测试性框架](/documentation/articles/service-fabric-testability-overview/)模拟各种故障
 - 阅读有关灾难恢复和高可用性的其他资源。Microsoft 已发布大量有关这些主题的指导。尽管其中有些文档提到其他产品中使用的特定技术，但也包含了许多可在 Service Fabric 上下文中应用的一般性最佳实践：
  - [可用性核对清单](/documentation/articles/best-practices-availability-checklist/)
  - [执行灾难恢复演练](/documentation/articles/sql-database-disaster-recovery-drills/)
  - [Azure 应用程序的灾难恢复和高可用性][dr-ha-guide]
-
 
 <!-- External links -->
 
@@ -109,6 +99,7 @@
 
 <!-- Images -->
 
+
 [sfx-cluster-map]: ./media/service-fabric-disaster-recovery/sfx-clustermap.png
 
-<!---HONumber=Mooncake_0822_2016-->
+<!---HONumber=Mooncake_1219_2016-->

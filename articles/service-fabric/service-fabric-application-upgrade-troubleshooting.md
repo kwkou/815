@@ -1,6 +1,6 @@
 <properties
-   pageTitle="排查应用程序升级问题 | Azure"
-   description="本文介绍一些围绕升级 Service Fabric 应用程序的常见问题以及这些问题的解决方法。"
+   pageTitle="应用程序升级故障排除 | Azure"
+   description="本文涵盖了有关升级 Service Fabric 应用程序的一些常见问题以及如何解决这些问题。"
    services="service-fabric"
    documentationCenter=".net"
    authors="mani-ramaswamy"
@@ -14,17 +14,15 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="09/14/2016"
-   wacn.date="10/24/2016"
+   ms.date="11/15/2016"
+   wacn.date="12/26/2016"
    ms.author="subramar"/>  
 
 
 # 应用程序升级故障排除
-
 本文介绍一些围绕升级 Azure Service Fabric 应用程序的常见问题以及这些问题的解决方法。
 
 ## 失败的应用程序升级故障排除
-
 当升级失败时，**Get-ServiceFabricApplicationUpgrade** 命令的输出将包含用于调试失败的附加信息。以下列表指定如何使用这些附加信息：
 
 1. 识别失败类型。
@@ -34,7 +32,6 @@
 当 Service Fabric 检测到失败时，就会提供这些信息，而无论 **FailureAction** 是回滚升级还是挂起升级。
 
 ### 确定失败类型
-
 在 **Get-ServiceFabricApplicationUpgrade** 的输出中，**FailureTimestampUtc** 标识 Service Fabric 检测到升级失败以及触发 **FailureAction** 时的时间戳 (UTC)。**FailureReason** 识别失败的三个可能的高级别原因之一：
 
 1. UpgradeDomainTimeout - 指示特定的升级域花费了太长时间才完成，并且 **UpgradeDomainTimeout** 过期。
@@ -44,7 +41,6 @@
 仅当升级失败并开始回滚时，才会在输出中显示这些项。将根据失败类型显示进一步的信息。
 
 ### 调查升级超时
-
 升级超时失败通常由服务可用性问题引起。当服务副本或实例未能在新代码版本中启动时，此段落后面的输出是升级的典型输出。**UpgradeDomainProgressAtFailure** 字段捕获失败时所有挂起的升级工作的快照。
 
 ~~~
@@ -90,7 +86,6 @@ UpgradeReplicaSetCheckTimeout  : 00:00:00
 当前 **UpgradeState** 为 *RollingBackCompleted*，因此必须已使用回滚 **FailureAction**（将在失败时自动回滚升级）执行原始升级。如果已使用手动 **FailureAction** 执行了原始升级，则升级将改为处于挂起状态，以允许对应用程序进行实时调试。
 
 ### 调查运行状况检查失败
-
 运行状况检查失败可能由各种其他问题触发，这些问题可能发生在升级域中所有节点完成升级、通过所有安全检查之后。此段落后面的输出是升级因运行状况检查失败而失败时的典型输出。**UnhealthyEvaluations** 字段根据指定的[运行状况策略](/documentation/articles/service-fabric-health-introduction/)，捕获升级失败时失败的运行状况检查的快照。
 
 ~~~
@@ -150,7 +145,6 @@ ServiceTypeHealthPolicyMap              :
 升级因为启动升级时手动指定 **FailureAction** 失败而暂停。此模式允许我们在采取其他任何措施之前，在失败状态下调查实时系统。
 
 ### 从挂起的升级恢复
-
 使用回滚 **FailureAction** 时，无需任何恢复，因为在升级失败时会自动回滚。使用手动 **FailureAction** 时，有以下几个恢复选项：
 
 1. 手动触发回滚
@@ -188,12 +182,10 @@ PS D:\temp>
 升级将从上次挂起的升级域继续，并使用与以前相同的升级参数和运行状况策略。如果需要，在继续进行升级时，可使用同一命令更改上面的输出中显示的任何升级参数和运行状况策略。在本示例中，升级以监视模式继续，参数和运行状况策略保持不变。
 
 ## 进一步的故障排除
-
 ### Service Fabric 没有遵循指定的运行状况策略
-
 可能的原因 1：
 
-Service Fabric 将所有百分比转换为实际实体（如副本、分区和服务）数，以进行运行状况评估，并且此数目将始终调高到实体整数。例如，如果最大值 _MaxPercentUnhealthyReplicasPerPartition_ 是 21% 且有 5 个副本，则 Service Fabric 允许最多 2 个运行状况不正常的副本（即 `Math.Ceiling (5*0.21)）。因此，设置运行状况策略时应考虑到这一点。
+Service Fabric 将所有百分比转换为实际实体（如副本、分区和服务）数，以进行运行状况评估，并且此数目将始终调高到实体整数。例如，如果最大值 *MaxPercentUnhealthyReplicasPerPartition* 是 21% 且有 5 个副本，则 Service Fabric 允许最多 2 个运行状况不正常的副本（即 `Math.Ceiling (5*0.21)）。因此，设置运行状况策略时应考虑到这一点。
 
 可能的原因 2：
 
@@ -202,15 +194,12 @@ Service Fabric 将所有百分比转换为实际实体（如副本、分区和�
 但在升级期间，D 可能变为正常，而 C 变为不正常。升级仍会成功，因为只有 25% 的服务运行状况不正常。但是，这可能导致非预期错误，因为 C 意外地变为不正常，而 D 变为正常。在此情况下，应将 D 建模为不同于 A、B 和 C 的服务类型。由于可根据服务类型指定运行状况策略，因此可将不同的运行状况百分比阈值应用到不同的服务。
 
 ### 我没有为应用程序升级指定运行状况策略，但升级仍因我从未指定的一些超时而失败
-
 当未向升级请求提供运行状况策略时，将使用当前应用程序版本的 *ApplicationManifest.xml* 中的策略。例如，如果要将应用程序 X 从版本 1.0 升级到版本 2.0，将使用版本 1.0 中指定的应用程序运行状况策略。如果应对升级使用不同的运行状况策略，则需将该策略指定为应用程序升级 API 调用的一部分。指定为 API 调用一部分的策略只会在升级期间应用。升级完成后，将使用 *ApplicationManifest.xml* 中指定的策略。
 
 ### 指定了错误的超时值
-
 用户可能要知道当超时设置不一致时会发生什么情况。例如，*UpgradeTimeout* 小于 *UpgradeDomainTimeout*。答案是将返回错误。返回错误的情况包括：*UpgradeDomainTimeout* 小于 *HealthCheckWaitDuration* 和 *HealthCheckRetryTimeout* 的总和，或者 *UpgradeDomainTimeout* 小于 *HealthCheckWaitDuration* 和 *HealthCheckStableDuration* 的总和。
 
 ### 我升级花费的时间过长
-
 完成升级所需的时间取决于运行状况检查和指定的超时。运行状况检查和超时取决于花费多少时间来复制、部署和稳定应用程序。超时过短可能意味着会出现更多的失败升级，因此建议在开始时保守地使用较长超时。
 
 让我们快速回顾一下超时如何与升级时间相互作用：
@@ -236,4 +225,4 @@ Service Fabric 将所有百分比转换为实际实体（如副本、分区和�
 参考 [Troubleshooting Application Upgrades](/documentation/articles/service-fabric-application-upgrade-troubleshooting/)（对应用程序升级进行故障排除）中的步骤来解决应用程序升级时的常见问题。
  
 
-<!---HONumber=Mooncake_1017_2016-->
+<!---HONumber=Mooncake_1219_2016-->

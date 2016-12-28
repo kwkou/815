@@ -1,22 +1,21 @@
 <properties
-   pageTitle="Service Fabric 应用程序部署 | Azure"
-   description="如何在 Service Fabric 中部署和删除应用程序"
-   services="service-fabric"
-   documentationCenter=".net"
-   authors="rwike77"
-   manager="timlt"
-   editor=""/>  
-
-
+    pageTitle="Service Fabric 应用程序部署 | Azure"
+    description="如何部署和删除 Service Fabric 中的应用程序。"
+    services="service-fabric"
+    documentationcenter=".net"
+    author="rwike77"
+    manager="timlt"
+    editor="" />
 <tags
-   ms.service="service-fabric"
-   ms.devlang="dotnet"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="NA"
-   ms.date="08/25/2016"
-   wacn.date="11/17/2016"
-   ms.author="ryanwi"/>
+    ms.assetid="b120ffbf-f1e3-4b26-a492-347c29f8f66b"
+    ms.service="service-fabric"
+    ms.devlang="dotnet"
+    ms.topic="article"
+    ms.tgt_pltfrm="NA"
+    ms.workload="NA"
+    ms.date="11/14/2016"
+    wacn.date="12/26/2016"
+    ms.author="ryanwi" />
 
 #<a name="deploy-an-application"></a> 部署和删除使用 PowerShell 的应用程序
 
@@ -29,10 +28,9 @@
 >[AZURE.NOTE] 如果使用 Visual Studio 来部署和调试本地开发群集上的应用程序，则将通过在应用程序项目的 Scripts 文件夹中找到的 PowerShell 脚本自动处理以下步骤。本文提供有关这些脚本正在执行什么操作的背景，以便你可以在 Visual Studio 外部执行相同的操作。
 
 ## 上载应用程序包
+上载应用程序包会将其放在一个可由内部 Service Fabric 组件访问的位置。你可以使用 PowerShell 执行上载。在运行本文中的任何 PowerShell 命令之前，请始终先使用 [Connect-ServiceFabricCluster](https://docs.microsoft.com/powershell/servicefabric/vlatest/connect-servicefabriccluster) 连接到 Service Fabric 群集。
 
-上载应用程序包会将其放在一个可由内部 Service Fabric 组件访问的位置。你可以使用 PowerShell 执行上载。在运行本文中的任何 PowerShell 命令之前，请始终先使用 [Connect-ServiceFabricCluster](https://msdn.microsoft.com/zh-cn/library/mt125938.aspx) 连接到 Service Fabric 群集。
-
-假设您有一个名为 *MyApplicationType* 的文件夹，其中包含必要的应用程序清单、服务清单以及代码/配置/数据包。[Copy-ServiceFabricApplicationPackage](https://msdn.microsoft.com/zh-cn/library/mt125905.aspx) 命令可将包上传到群集映像存储。Service Fabric SDK PowerShell 模块中包含的 **Get-ImageStoreConnectionStringFromClusterManifest** cmdlet 用于获取映像存储连接字符串。要导入 SDK 模块，请运行：
+假设您有一个名为 *MyApplicationType* 的文件夹，其中包含必要的应用程序清单、服务清单以及代码/配置/数据包。[Copy-ServiceFabricApplicationPackage](https://docs.microsoft.com/powershell/servicefabric/vlatest/copy-servicefabricapplicationpackage) 命令可将包上传到群集映像存储。Service Fabric SDK PowerShell 模块中包含的 **Get-ImageStoreConnectionStringFromClusterManifest** cmdlet 用于获取映像存储连接字符串。要导入 SDK 模块，请运行：
 
 
 	Import-Module "$ENV:ProgramFiles\Microsoft SDKs\Service Fabric\Tools\PSModule\ServiceFabricSDK\ServiceFabricSDK.psm1"
@@ -88,8 +86,7 @@ PS D:\temp>
 ~~~
 
 ## 注册应用程序包
-
-注册应用程序包，使应用程序清单中声明的应用程序类型和版本可供使用。系统将读取上一步中上传的程序包，验证此包（等效于本地运行 [Test-ServiceFabricApplicationPackage](https://msdn.microsoft.com/zh-cn/library/mt125950.aspx)），处理包的内容，并将已处理的包复制到内部系统位置。
+注册应用程序包，使应用程序清单中声明的应用程序类型和版本可供使用。系统将读取上一步中上传的程序包，验证此包（等效于本地运行 [Test-ServiceFabricApplicationPackage](https://docs.microsoft.com/powershell/servicefabric/vlatest/test-servicefabricapplicationpackage)），处理包的内容，并将已处理的包复制到内部系统位置。
 
 ~~~
 PS D:\temp> Register-ServiceFabricApplicationType MyApplicationType
@@ -104,13 +101,12 @@ DefaultParameters      : {}
 PS D:\temp>
 ~~~
 
-[Register-ServiceFabricApplicationType](https://msdn.microsoft.com/zh-cn/library/mt125958.aspx) 命令将仅在系统成功复制应用程序包后返回。此操作花费的时间取决于应用程序包的内容。如有需要，**-TimeoutSec** 参数可用来提供较长的超时时间。（默认超时值为 60 秒。）
+[Register-ServiceFabricApplicationType](https://docs.microsoft.com/powershell/servicefabric/vlatest/register-servicefabricapplicationtype) 命令将仅在系统成功复制应用程序包后返回。此操作花费的时间取决于应用程序包的内容。如有需要，**-TimeoutSec** 参数可用来提供较长的超时时间。（默认超时值为 60 秒。）
 
-[Get-ServiceFabricApplicationType](https://msdn.microsoft.com/zh-cn/library/mt125871.aspx) 命令将列出已成功注册的所有应用程序类型版本。
+[Get-ServiceFabricApplicationType](https://docs.microsoft.com/powershell/servicefabric/vlatest/get-servicefabricapplicationtype) 命令将列出已成功注册的所有应用程序类型版本。
 
 ## 创建应用程序
-
-可以使用已通过 [New-ServiceFabricApplication](https://msdn.microsoft.com/zh-cn/library/mt125913.aspx) 命令成功注册的任何应用程序类型版本来实例化应用程序。每个应用程序的名称必须以 *fabric:* 方案开头，并且对每个应用程序实例是唯一的。此时将创建目标应用程序类型的应用程序清单中定义的任何默认服务。
+可以使用已通过 [New-ServiceFabricApplication](https://docs.microsoft.com/powershell/servicefabric/vlatest/new-servicefabricapplication) 命令成功注册的任何应用程序类型版本来实例化应用程序。每个应用程序的名称必须以 *fabric:* 方案开头，并且对每个应用程序实例是唯一的。此时将创建目标应用程序类型的应用程序清单中定义的任何默认服务。
 
 ~~~
 PS D:\temp> New-ServiceFabricApplication fabric:/MyApp MyApplicationType AppManifestVersion1
@@ -142,15 +138,14 @@ HealthState            : Ok
 PS D:\temp>
 ~~~
 
-[Get-ServiceFabricApplication](https://msdn.microsoft.com/zh-cn/library/mt163515.aspx) 命令将列出已成功创建的所有应用程序实例及其整体状态。
+[Get-ServiceFabricApplication](https://docs.microsoft.com/powershell/servicefabric/vlatest/get-servicefabricapplication) 命令将列出已成功创建的所有应用程序实例及其整体状态。
 
-[Get-ServiceFabricService](https://msdn.microsoft.com/zh-cn/library/mt125889.aspx) 命令将列出在给定的应用程序实例中成功创建的所有服务实例。在此处列出默认服务（如果有）。
+[Get-ServiceFabricService](https://docs.microsoft.com/powershell/servicefabric/vlatest/get-servicefabricservice) 命令将列出在给定的应用程序实例中成功创建的所有服务实例。在此处列出默认服务（如果有）。
 
 可以为已注册应用程序类型的任何给定版本创建多个应用程序实例。每个应用程序实例都将隔离运行，具有其自己的工作目录和进程。
 
 ## 删除应用程序
-
-不再需要某个应用程序实例时，可以使用 [Remove-ServiceFabricApplication](https://msdn.microsoft.com/zh-cn/library/mt125914.aspx) 命令将其永久删除。此命令也将自动删除属于该应用程序的所有服务，永久删除所有服务状态。此操作无法撤消，并且无法恢复应用程序状态。
+不再需要某个应用程序实例时，可以使用 [Remove-ServiceFabricApplication](https://docs.microsoft.com/powershell/servicefabric/vlatest/remove-servicefabricapplication) 命令将其永久删除。此命令也将自动删除属于该应用程序的所有服务，永久删除所有服务状态。此操作无法撤消，并且无法恢复应用程序状态。
 
 ~~~
 PS D:\temp> Remove-ServiceFabricApplication fabric:/MyApp
@@ -164,7 +159,7 @@ PS D:\temp> Get-ServiceFabricApplication
 PS D:\temp>
 ~~~
 
-不再需要应用程序类型的某个特定版本时，应使用 [Unregister-ServiceFabricApplicationType](https://msdn.microsoft.com/zh-cn/library/mt125885.aspx) 命令将其注销。注销未使用的类型将在映像存储中释放该类型的应用程序包内容所使用的存储空间。只要没有针对其实例化的应用程序或引用它的挂起应用程序升级，就可以注销应用程序类型。
+不再需要应用程序类型的某个特定版本时，应使用 [Unregister-ServiceFabricApplicationType](https://docs.microsoft.com/powershell/servicefabric/vlatest/unregister-servicefabricapplicationtype) 命令将其注销。注销未使用的类型将在映像存储中释放该类型的应用程序包内容所使用的存储空间。只要没有针对其实例化的应用程序或引用它的挂起应用程序升级，就可以注销应用程序类型。
 
 ~~~
 PS D:\temp> Get-ServiceFabricApplicationType
@@ -198,10 +193,8 @@ PS D:\temp>
 ~~~
 
 ## 故障排除
-
 ### Copy-ServiceFabricApplicationPackage 请求 ImageStoreConnectionString
-
-Service Fabric SDK 环境应该已经设置了正确的默认设置。若有需要，所有命令的 ImageStoreConnectionString 都应匹配 Service Fabric 群集正在使用的值。可以在通过 [Get-ServiceFabricClusterManifest](https://msdn.microsoft.com/zh-cn/library/mt126024.aspx) 命令检索到的群集清单中找到此值：
+Service Fabric SDK 环境应该已经设置了正确的默认设置。若有需要，所有命令的 ImageStoreConnectionString 都应匹配 Service Fabric 群集正在使用的值。可以在通过 [Get-ServiceFabricClusterManifest](https://docs.microsoft.com/powershell/servicefabric/vlatest/get-servicefabricclustermanifest) 命令检索到的群集清单中找到此值：
 
 ~~~
 PS D:\temp> Copy-ServiceFabricApplicationPackage .\MyApplicationType
@@ -242,4 +235,4 @@ PS D:\temp>
 [11]: /documentation/articles/service-fabric-application-upgrade/
  
 
-<!---HONumber=Mooncake_1017_2016-->
+<!---HONumber=Mooncake_1219_2016-->

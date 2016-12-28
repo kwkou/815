@@ -1,26 +1,32 @@
 <properties
-   pageTitle="设置开发环境 | Azure"
-   description="安装运行时、SDK 和工具并创建本地开发群集。完成此设置后，你就可以开始生成应用程序。"
-   services="service-fabric"
-   documentationCenter=".net"
-   authors="rwike77"
-   manager="timlt"
-   editor=""/>  
-
-
+    pageTitle="设置开发环境 | Azure"
+    description="安装运行时、SDK 和工具，并创建本地开发群集。完成此设置后，即可开始生成应用程序。"
+    services="service-fabric"
+    documentationcenter=".net"
+    author="rwike77"
+    manager="timlt"
+    editor="" />
 <tags
-   ms.service="service-fabric"
-   ms.devlang="dotNet"
-   ms.topic="get-started-article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="NA"
-   ms.date="09/13/2016"
-   wacn.date="11/17/2016"
-   ms.author="ryanwi"/>
+    ms.assetid="b94e2d2e-435c-474a-ae34-4adecd0e6f8f"
+    ms.service="service-fabric"
+    ms.devlang="dotNet"
+    ms.topic="get-started-article"
+    ms.tgt_pltfrm="NA"
+    ms.workload="NA"
+    ms.date="10/26/2016"
+    wacn.date="12/26/2016"
+    ms.author="ryanwi" />
 
 # 准备开发环境
 
 [AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-sdk-developer-differences.md)]
+
+>[AZURE.SELECTOR]
+- [Windows](/documentation/articles/service-fabric-get-started/)
+- [Linux](/documentation/articles/service-fabric-get-started-linux/)
+- [OSX](/documentation/articles/service-fabric-get-started-mac/)
+
+
 
  若要在开发计算机上生成并运行 [Azure Service Fabric 应用程序][1]，请安装运行时、SDK 和工具。此外，还需执行 SDK 中包含的 Windows PowerShell 脚本。
 
@@ -36,7 +42,6 @@
 >[AZURE.NOTE] 默认情况下，Windows 7 仅包含 Windows PowerShell 2.0。Service Fabric PowerShell cmdlet 需要 PowerShell 3.0 或更高版本。可以从 Microsoft 下载中心[下载 Windows PowerShell 5.0][powershell5-download]。
 
 ## 安装运行时、SDK 和工具
-
 Web 平台安装程序为 Service Fabric 开发提供两种配置：
 
 - [安装适用于 Visual Studio 2015 的 Service Fabric 运行时、SDK 和工具（需要 Visual Studio 2015 Update 2 或更高版本）][full-bundle-vs2015]
@@ -66,4 +71,4 @@ Service Fabric 使用 Windows PowerShell 脚本创建本地开发群集和部署
 [core-sdk]: http://www.microsoft.com/web/handlers/webpi.ashx?command=getinstallerredirect&appid=MicrosoftAzure-ServiceFabric-CoreSDK "Core SDK WebPI 链接"
 [powershell5-download]: https://www.microsoft.com/en-us/download/details.aspx?id=50395
 
-<!---HONumber=Mooncake_1017_2016-->
+<!---HONumber=Mooncake_1219_2016-->
