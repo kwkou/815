@@ -26,7 +26,7 @@
 | --- | --- |
 | 内部服务器错误 |在某些情况下，这是重试时消失的暂时性错误。如果此错误仍然存在， 请[联系 Azure 支持人员](/support/contact/)，因为需要调查平台日志。<br><br> **注意：**由支持团队跟踪事件后，请不要尝试任何自我缓解措施，因为这可能会对你的环境产生意想不到的后果。 |
 | 托管服务 {hosted-service-name} 中的部署 {deployment-name} 不支持迁移，因为它是 PaaS 部署（Web/辅助角色）。 |当部署包含 Web/辅助角色时，将发生这种情况。由于仅虚拟机支持迁移，请从部署中删除 Web/辅助角色，然后重试迁移。 |
-| 模板 {template-name} 部署失败。CorrelationId={guid} |在迁移服务的后端，我们将使用 Azure Resource Manager 模板在 Azure Resource Manager 堆栈中创建资源。由于模板是幂等的，通常你可以安全地重试迁移操作，以忽略此错误。如果此错误仍然存在，请[联系 Azure 支持人员](/documentation/articles/how-to-create-azure-support-request/)并向他们提供 CorrelationId。<br><br> **注意：**由支持团队跟踪事件后，请不要尝试任何自我缓解措施，因为这可能会对你的环境产生意想不到的后果。 |
+| 模板 {template-name} 部署失败。CorrelationId={guid} |在迁移服务的后端，我们将使用 Azure Resource Manager 模板在 Azure Resource Manager 堆栈中创建资源。由于模板是幂等的，通常你可以安全地重试迁移操作，以忽略此错误。如果此错误仍然存在，请[联系 Azure 支持人员](/support/contact/)并向他们提供 CorrelationId。<br><br> **注意：**由支持团队跟踪事件后，请不要尝试任何自我缓解措施，因为这可能会对你的环境产生意想不到的后果。 |
 | 虚拟网络 {virtual-network-name} 不存在。 |如果在新的 Azure 门户中创建虚拟网络，可能会发生这种情况。实际的虚拟网络名称遵循模式“Group * <VNET 名称>” |
 | 托管服务 {hosted-service-name} 中的 VM {vm-name} 包含 Azure Resource Manager 不支持的扩展 {extension-name}。建议先从 VM 中卸载该扩展，然后再继续进行迁移。 |Azure Resource Manager 不支持 XML 扩展（例如 BGInfo 1.*）。因此，无法迁移这些扩展。如果将这些扩展保留安装在虚拟机上，则在完成迁移之前会自动将其卸载。 |
 | 托管服务 {hosted-service-name} 中的 VM {vm-name} 包含迁移当前不支持的扩展 VMSnapshot/VMSnapshotLinux。请从 VM 中卸载该扩展，在迁移完成后再使用 Azure Resource Manager 重新添加它 |这是为 Azure 备份配置虚拟机的方案。由于这当前是不受支持的方案，请按照 https://aka.ms/vmbackupmigration 中的解决方法操作 |
