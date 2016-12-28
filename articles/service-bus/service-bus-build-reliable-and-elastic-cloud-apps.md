@@ -25,7 +25,6 @@
  
 ## 构建
 - [如何使用 Service Bus 队列](/documentation/articles/service-bus-dotnet-get-started-with-queues/)
-- [服务总线中转消息传送中的死信（2011 年 10 月 21 日博客文章）](http://geekswithblogs.net/asmith/articles/147398.aspx)
 - [使服务总线应用程序免受服务总线服务中断和灾难影响的最佳实践](/documentation/articles/service-bus-outages-disasters/)
 - [中转消息传送：请求响应示例](https://code.msdn.microsoft.com/Brokered-Messaging-Request-0ce8fcaf) 
 - [使用 Azure 服务总线的多层应用程序](/documentation/articles/service-bus-dotnet-multi-tier-app-using-service-bus-queues/)

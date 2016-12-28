@@ -290,7 +290,6 @@ Azure 队列和服务总线队列都是 Azure 目前提供的消息队列服务�
 - [如何使用队列存储服务](/documentation/articles/storage-dotnet-how-to-use-queues/)
 - [使用 Service Bus 中转消息传递改善性能的最佳实践](/documentation/articles/service-bus-performance-improvements/)
 - [Azure 服务总线中的队列和主题简介](http://www.code-magazine.com/article.aspx?quickid=1112041)
-- [服务总线开发人员指南](http://www.cloudcasts.net/devguide/)
 - [Azure 存储体系结构](http://blogs.msdn.com/b/windowsazurestorage/archive/2011/11/20/windows-azure-storage-a-highly-available-cloud-storage-service-with-strong-consistency.aspx)
 - [在 Azure 中使用队列服务](http://www.developerfusion.com/article/120197/using-the-queuing-service-in-windows-azure/)
 - [了解 Azure 存储计费 - 带宽、事务和容量](http://blogs.msdn.com/b/windowsazurestorage/archive/2010/07/09/understanding-windows-azure-storage-billing-bandwidth-transactions-and-capacity.aspx)
