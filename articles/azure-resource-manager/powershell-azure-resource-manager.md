@@ -70,7 +70,7 @@ Azure Resource Manager 采用现代方法来控制 Azure 资源生命周期。�
 ## 登录到你的 Azure 帐户
 在处理解决方案之前，你必须登录到你的帐户。
 
-若要登录到 Azure 帐户，请使用 **Add-AzureRmAccount -EnvironmentName AzureChinaCloud** cmdlet。
+若要登录到 Azure 帐户，请使用 **Add-AzureRmAccount** cmdlet。
 
     Add-AzureRmAccount -EnvironmentName AzureChinaCloud
 

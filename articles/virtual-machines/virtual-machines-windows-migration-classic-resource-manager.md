@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties
     pageTitle="平台支持的从经典部署模型到 Azure Resource Manager 的 IaaS 资源迁移 | Azure"
     description="本文逐步讲解如何对资源进行平台支持的从经典部署模型到 Azure Resource Manager 的迁移"

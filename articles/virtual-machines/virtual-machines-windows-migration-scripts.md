@@ -1,6 +1,3 @@
-<!-- not suitable for Mooncake -->
-
-
 <properties
 	pageTitle="适用于从 Azure 服务管理到 Azure Resource Manager 的迁移的社区工具"
 	description="本文编录了社区提供的工具，这些工具适用于将 IaaS 资源从 Azure 服务管理迁移到 Azure Resource Manager 堆栈。"

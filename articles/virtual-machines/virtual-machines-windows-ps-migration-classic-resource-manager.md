@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties
     pageTitle="通过 PowerShell 迁移到 Resource Manager | Azure"
     description="本文详述了如何在支持的平台上使用 Azure PowerShell 命令将 IaaS 资源从经典部署模型迁移到 Azure Resource Manager 部署模型"
