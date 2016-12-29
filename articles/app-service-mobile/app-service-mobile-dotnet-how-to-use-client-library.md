@@ -1029,7 +1029,7 @@ Xamarin 应用需要一些额外的代码才能注册 iOS 或 Android 平台上�
 [Fiddler]: http://www.telerik.com/fiddler
 [Json.NET]: http://www.newtonsoft.com/json
 [Xamarin.Auth API]: https://components.xamarin.com/view/xamarin.auth/
-[AuthStore.cs]: (https://github.com/azure-appservice-samples/ContosoMoments/blob/dev/src/Mobile/ContosoMoments/Helpers/AuthStore.cs)
+[AuthStore.cs]: https://github.com/azure-appservice-samples/ContosoMoments/blob/dev/src/Mobile/ContosoMoments/Helpers/AuthStore.cs
 [ContosoMoments photo sharing sample]: https://github.com/azure-appservice-samples/ContosoMoments
 
 <!---HONumber=Mooncake_1219_2016-->
