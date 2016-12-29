@@ -45,7 +45,7 @@ Azure 检测到问题节点并因此将角色实例移到新节点时，系统�
 1. 在 Azure 门户预览中，单击云服务的部署。
 2. 在 Azure 门户预览的“属性”窗格中查看相关信息，并确定观察到角色回收期间是否进行了服务修复。
 
-在主机 OS 和来宾 OS 更新期间，角色也会差不多每月回收一次。有关详细信息，请参阅博客文章[因 OS 升级导致的角色实例重启](http://blogs.msdn.com/b/kwill/archive/2012/09/19/role-instance-restarts-due-to-os-upgrades.aspx)
+在主机 OS 和来宾 OS 更新期间，角色也会差不多每月回收一次。
 
 ## 问题：无法进行 VIP 交换并收到错误
 
@@ -65,7 +65,7 @@ Azure 检测到问题节点并因此将角色实例移到新节点时，系统�
 
 这种情况可能指示应用程序代码、程序包或配置文件存在问题。在这种情况下，应能看到状态每隔几分钟更改一次，而 Azure 门户则可能会显示“正在回收”、“忙”或“正在初始化”之类的内容。这表示应用程序存在问题，导致角色实例无法运行。
 
-有关如何解决此问题的详细信息，请参阅博客文章 [Azure PaaS 计算诊断数据](http://blogs.msdn.com/b/kwill/archive/2013/08/09/windows-azure-paas-compute-diagnostics-data.aspx)和[导致角色回收的常见问题](/documentation/articles/cloud-services-troubleshoot-common-issues-which-cause-roles-recycle/)。
+有关如何解决此问题的详细信息，请参阅[导致角色回收的常见问题](/documentation/articles/cloud-services-troubleshoot-common-issues-which-cause-roles-recycle/)。
 
 ## 问题：应用程序停止工作
 
@@ -73,14 +73,8 @@ Azure 检测到问题节点并因此将角色实例移到新节点时，系统�
 2. 在 Azure 门户预览的“属性”窗格中，考虑是否存在以下情况，以便解决问题：
    * 如果角色实例最近停止过（可查看“中止计数”的值），则可能是因为部署正在进行更新。等待，看角色实例是否会自行恢复运行。
    * 如果角色实例处于“忙”状态，请检查应用程序代码，看是否已处理 [StatusCheck](https://msdn.microsoft.com/zh-cn/library/microsoft.windowsazure.serviceruntime.roleenvironment.statuscheck) 事件。可能需要添加或修复处理此事件的某些代码。
-   * 浏览博客文章 [Azure PaaS 计算诊断数据](http://blogs.msdn.com/b/kwill/archive/2013/08/09/windows-azure-paas-compute-diagnostics-data.aspx)中的诊断数据和故障排除方案。
 
 >[AZURE.WARNING] 如果回收云服务，请重置部署的属性，以便有效清除有关原始问题的信息。
 
-## 后续步骤
-
-
-
-若要了解如何使用 Azure PaaS 计算机诊断数据对云服务角色问题进行故障排除，请参阅 [Kevin Williamson 博客系列](http://blogs.msdn.com/b/kwill/archive/2013/08/09/windows-azure-paas-compute-diagnostics-data.aspx)。
 
 <!---HONumber=Mooncake_Quality_Review_1202_2016-->
