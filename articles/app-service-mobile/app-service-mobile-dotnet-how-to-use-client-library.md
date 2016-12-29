@@ -860,9 +860,7 @@ Xamarin 应用使用 [Xamarin.Auth API] 将证书安全存储在 **Account** 对
 
 包 SID 的许多用法将其视为 URI，在这种情况下，需要使用 *ms-app://* 作为方案。记下包 SID 的版本，其中串联了此值作为前缀。
 
-Xamarin 应用需要一些额外的代码才能注册 iOS 或 Android 平台上运行的应用。有关详细信息，请参阅适用于平台的主题：
-
-* [Xamarin.iOS](/documentation/articles/app-service-mobile-xamarin-ios-get-started-push/#add-push-notifications-to-your-app)
+Xamarin 应用需要一些额外的代码才能注册 iOS 或 Android 平台上运行的应用。
 
 ###<a name="how-to-register-push-templates-to-send-cross-platform-notifications"></a> 如何注册推送模板以发送跨平台通知
 
