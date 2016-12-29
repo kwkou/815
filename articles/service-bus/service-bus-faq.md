@@ -72,7 +72,7 @@
 
 -   快速实体
 
-## 服务总线定价
+## <a name="service-bus-pricing"></a> 服务总线定价
 
 本部分回答了一些关于服务总线定价结构的常见问题。你还可以访问 [Azure 支持常见问题](http://go.microsoft.com/fwlink/?LinkID=185083)了解一般的 Azure 定价信息。有关服务总线定价的完整信息，请参阅[服务总线定价](/pricing/details/messaging/)。
 
