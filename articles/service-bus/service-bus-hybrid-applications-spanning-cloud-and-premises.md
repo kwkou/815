@@ -27,8 +27,7 @@
 - [如何使用服务总线中继（视频和代码示例）](http://appfabricdemos.codeplex.com/releases/view/67597)
 - [如何通过服务总线中继将 Azure 网站和 LOB 应用集成](https://code.msdn.microsoft.com/How-to-integrate-a-Windows-f1fedff8) 
 - [使用服务总线中继消息进行异地复制](http://code.msdn.microsoft.com/Geo-replication-with-16dbfecd)
-- [如何将移动服务与 REST 服务总线中继服务集成](http://blogs.msdn.com/b/paolos/archive/2013/07/09/how-to-integrate-a-mobile-service-with-a-rest-service-bus-relay-service.aspx)
- 
+
 ## 热门
 - [服务总线定价信息](/pricing/details/messaging/)
 - [服务总线常见问题解答](/documentation/articles/service-bus-faq/)
