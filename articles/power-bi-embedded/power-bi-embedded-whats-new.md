@@ -15,7 +15,7 @@
    ms.workload="powerbi"
    ms.date="07/06/2016"
    ms.author="mblythe"
-   wacn.date=""/>  
+   wacn.date="12/29/2016"/>  
 
 
 # Power BI Embedded 中的新增功能

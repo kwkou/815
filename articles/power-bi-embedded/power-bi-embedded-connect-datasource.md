@@ -7,6 +7,7 @@
    manager="NA"
    editor=""
    tags=""/>
+
 <tags
    ms.service="power-bi-embedded"
    ms.devlang="NA"
@@ -15,7 +16,7 @@
    ms.workload="powerbi"
    ms.date="07/05/2016"
    ms.author="mblythe"
-   wacn.date=""/>  
+   wacn.date="12/29/2016"/>  
 
 
 # 连接到数据源
@@ -46,9 +47,9 @@
    -	不能更改某列的数据类型。
    -	默认情况下，将对度量值中允许使用的 DAX 表达式加以限制。请参阅 [DirectQuery 和度量值](#measures)。
 
-<a name="measures"/>  
 
-## DirectQuery 和度量值
+
+## DirectQuery 和度量值 <a name="measures"/>  
 
 为了确保发送到基础数据源的查询具有可接受的性能，针对度量值施加了一些限制。使用 **Power BI Desktop** 时，高级用户可以通过选择“文件”>“选项和设置”>“选项”来选择绕过此限制。在“选项”对话框中，选择“DirectQuery”，然后选择“允许 DirectQuery 模式下的度量值不受限制”选项。选中该选项后，可以使用对度量值有效的任何 DAX 表达式。但是用户必须知道，在导入数据时性能非常好的某些表达式在 **DirectQuery** 模式下可能会导致对后端源的查询非常缓慢。
 

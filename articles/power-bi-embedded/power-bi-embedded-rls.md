@@ -15,7 +15,7 @@
    ms.workload="powerbi"
    ms.date="07/05/2016"
    ms.author="mblythe"
-   wacn.date=""/>  
+   wacn.date="12/29/2016"/>  
 
 
 # Power BI Embedded 的行级别安全性
@@ -64,7 +64,7 @@ RLS 是在 Power BI Desktop 中编写的。打开数据集和报表时，可以�
 1.	在“建模”选项卡中，单击“管理角色”。
 ![](./media/power-bi-embedded-rls/pbi-embedded-rls-modeling-tab-5.png)
 
-2.	创建名为“经理”的新角色。
+2.	创建名为“管理员”的新角色。
 ![](./media/power-bi-embedded-rls/pbi-embedded-rls-manager-role-6.png)
 
 3.	在“区域”表中输入以下 DAX 表达式：**[District Manager] = USERNAME()**

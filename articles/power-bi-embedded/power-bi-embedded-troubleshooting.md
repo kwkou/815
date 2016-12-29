@@ -15,14 +15,13 @@
    ms.workload="powerbi"
    ms.date="06/29/2016"
    ms.author="mblythe"
-   wacn.date=""/>  
+   wacn.date="12/29/2016"/>  
 
 
 # Microsoft Power BI Embedded 预览版疑难解答
 本文提供了有关如何解决 **Power BI Embedded** 问题的信息。
 
-<a name="connection-string"/>
-## 设置 SQL Server 连接字符串
+## 设置 SQL Server 连接字符串 <a name="connection-string"/>
 若要设置 SQL Server 连接字符串，请遵循以下特定格式。下面列举了一个 SQL Server 连接字符串的示例。
 
 
@@ -34,8 +33,8 @@
 -	[SQL Server Connection Strings（SQL Server 连接字符串）](https://msdn.microsoft.com/zh-cn/library/jj653752.aspx)
 -	[SqlConnection.ConnectionString](https://msdn.microsoft.com/zh-cn/library/system.data.sqlclient.sqlconnection.connectionstring.aspx)
 
-<a name="credentials"/>
-## 设置凭据
+
+## 设置凭据 <a name="credentials"/>
 如果你具有用于开发或过渡环境的凭据（例如用户名和密码），建议更新此凭据，以匹配生产解决方案。
 
 ## 另请参阅
