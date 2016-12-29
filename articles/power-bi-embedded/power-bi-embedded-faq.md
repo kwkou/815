@@ -7,6 +7,7 @@
    manager="NA"
    editor=""
    tags=""/>
+
 <tags
    ms.service="power-bi-embedded"
    ms.devlang="NA"
@@ -15,7 +16,7 @@
    ms.workload="powerbi"
    ms.date="07/05/2016"
    ms.author="mblythe"
-   wacn.date=""/>  
+   wacn.date="12/29/2016"/>  
 
 
 # Power BI Embedded 常见问题解答

@@ -7,6 +7,7 @@
    manager="NA"
    editor=""
    tags=""/>
+
 <tags
    ms.service="power-bi-embedded"
    ms.devlang="NA"
@@ -15,7 +16,7 @@
    ms.workload="powerbi"
    ms.date="07/05/2016"
    ms.author="mblythe"
-   wacn.date=""/>  
+   wacn.date="12/29/2016"/>  
 
 
 # Microsoft Power BI Embedded 入门
@@ -57,9 +58,9 @@
 
 “创建”边栏选项卡包含调用创建工作区并向其部署内容的 API 所需的信息。
 
-<a name="view-access-keys"/>  
 
-## 查看 Power BI API 访问密钥
+
+## 查看 Power BI API 访问密钥 <a name="view-access-keys"></a>
 
 调用 Power BI REST API 所需的最重要信息之一是**访问密钥**。这些访问密钥用于生成对 API 请求进行身份验证的**应用令牌**。要查看**访问密钥**，请单击“设置”边栏选项卡上的“访问密钥”。若要了解关于**应用令牌**的详细信息，请参阅[通过 Power BI Embedded 进行身份验证和授权](/documentation/articles/power-bi-embedded-app-token-flow/)。
 
