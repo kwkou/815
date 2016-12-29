@@ -63,7 +63,7 @@ IoT 带来了一系列独特的设备管理难题，每个企业级解决方案�
 
 - **配置**：在保持正常运行和安全性的同时便于对设备进行批量配置更改和固件更新。使用所需属性或通过直接方法和广播作业成批执行这些设备管理操作。
 
-    *其他阅读材料*：使用直接方法、[对设备调用直接方法][lnk-methods-devguide]、[如何使用克隆属性][lnk-twin-properties]、[计划和广播作业][lnk-jobs]、[在多台设备上计划作业][lnk-jobs-devguide]
+    *其他阅读材料*：使用直接方法、[对设备调用直接方法][lnk-methods-devguide]、[如何使用克隆属性][lnk-twin-properties]、[在多台设备上计划作业][lnk-jobs-devguide]
 
 - **监视**：监视总体设备集合运行状况、正在进行的操作的状态并针对可能需要操作员注意的问题向操作员发出警报。应用设备克隆以允许设备报告实时操作情况和更新操作的状态。使用设备克隆查询生成显示最直接问题的功能强大的仪表板报告。
 
@@ -125,7 +125,6 @@ IoT 中心启用以下设备管理模式集。
 [lnk-query-language]: /documentation/articles/iot-hub-devguide-query-language/
 [lnk-c2d-methods]: /documentation/articles/iot-hub-node-node-direct-methods/
 [lnk-methods-devguide]: /documentation/articles/iot-hub-devguide-direct-methods/
-[lnk-jobs]: /documentation/articles/iot-hub-schedule-jobs/
 [lnk-jobs-devguide]: /documentation/articles/iot-hub-devguide-jobs/
 
 <!---HONumber=Mooncake_1205_2016-->

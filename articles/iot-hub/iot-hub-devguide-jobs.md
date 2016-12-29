@@ -142,10 +142,6 @@
 - [设备克隆、方法和作业的 IoT 中心查询语言][lnk-query]介绍从 IoT 中心检索有关设备克隆、方法和作业的信息时可以使用的查询语言。
 - [IoT 中心 MQTT 支持][lnk-devguide-mqtt]提供有关 IoT 中心对 MQTT 协议的支持的详细信息。
 
-## 后续步骤
-如果要尝试本文中介绍的一些概念，你可能对以下 IoT 中心教程感兴趣：
-
-- [计划和广播作业][lnk-jobs-tutorial]
 
 <!-- links and images -->
 
@@ -155,7 +151,6 @@
 [lnk-sdks]: /documentation/articles/iot-hub-devguide-sdks/
 [lnk-query]: /documentation/articles/iot-hub-devguide-query-language/
 [lnk-devguide-mqtt]: /documentation/articles/iot-hub-mqtt-support/
-[lnk-jobs-tutorial]: /documentation/articles/iot-hub-schedule-jobs/
 [lnk-c2d-methods]: /documentation/articles/iot-hub-node-node-direct-methods/
 [lnk-dev-methods]: /documentation/articles/iot-hub-devguide-direct-methods/
 [lnk-get-started-twin]: /documentation/articles/iot-hub-node-node-twin-getstarted/
