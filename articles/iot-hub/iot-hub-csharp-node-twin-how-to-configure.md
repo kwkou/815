@@ -242,7 +242,6 @@
 充分利用以下资源：
 
 - 通过 [Get started with IoT Hub][lnk-iothub-getstarted]（IoT 中心入门）教程学习如何从设备发送遥测；
-- 通过 [Use jobs to schedule and broadcast device operations][lnk-schedule-jobs]（通过作业计划和广播设备操作）教程学习如何对大型设备集计划或执行操作。
 - 通过 [Use direct methods][lnk-methods-tutorial]（使用直接方法）教程学习如何以交互方式控制设备（例如如何从用户控制的应用打开风扇）。
 
 <!-- images -->
@@ -261,7 +260,6 @@
 [lnk-d2c]: /documentation/articles/iot-hub-devguide-messaging/#device-to-cloud-messages
 [lnk-methods]: /documentation/articles/iot-hub-devguide-direct-methods/
 [lnk-twin-tutorial]: /documentation/articles/iot-hub-node-node-twin-getstarted/
-[lnk-schedule-jobs]: /documentation/articles/iot-hub-schedule-jobs/
 [lnk-dev-setup]: https://github.com/Azure/azure-iot-sdks/blob/master/doc/get_started/node-devbox-setup.md
 [lnk-connect-device]: /develop/iot/
 [lnk-device-management]: /documentation/articles/iot-hub-node-node-device-management-get-started/
