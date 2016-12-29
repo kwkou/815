@@ -60,7 +60,7 @@
 ## 调试 Service Fabric C# 应用程序
 
 
-多个框架可用于在 Linux 上跟踪 CoreCLR 应用程序。有关详细信息，请参阅 [GitHub：日志记录](http:/github.com/aspnet/logging)。C# 开发人员对 EventSource 十分熟悉，因此，本文使用 EventSource 在 Linux 上跟踪 CoreCLR 示例。
+多个框架可用于在 Linux 上跟踪 CoreCLR 应用程序。有关详细信息，请参阅 [GitHub：日志记录](http://github.com/aspnet/logging)。C# 开发人员对 EventSource 十分熟悉，因此，本文使用 EventSource 在 Linux 上跟踪 CoreCLR 示例。
 
 首先需要包括 System.Diagnostics.Tracing，以便将日志写入内存、输出流或控制台文件。若要使用 EventSource 进行日志记录，请将以下项目添加到 project.json：
 
