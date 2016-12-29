@@ -548,7 +548,7 @@ if (error.code == MSErrorPreconditionFailed) {
 
 可以借助 Active Directory 身份验证库 (ADAL) 使用 Azure Active Directory 将用户登录到应用程序。使用标识提供者 SDK 的客户端流身份验证优于使用 `loginWithProvider:completion:` 方法。客户端流身份验证提供更自然的 UX 体验，并允许进行额外的自定义。
 
-1. 根据 [How to configure App Service for Active Directory login][7]（如何为 Active Directory 登录配置应用服务）教程的说明，为 AAD 登录配置移动应用。请务必完成注册本机客户端应用程序的可选步骤。对于 iOS，建议重定向 URI 采用 `<app-scheme>://<bundle-id>` 格式。有关详细信息，请参阅 [ADAL iOS 快速入门][8]。
+1. 根据 [How to configure App Service for Active Directory login][7]（如何为 Active Directory 登录配置应用服务）教程的说明，为 AAD 登录配置移动应用。请务必完成注册本机客户端应用程序的可选步骤。对于 iOS，建议重定向 URI 采用 `<app-scheme>://<bundle-id>` 格式。
 
 2. 使用 Cocoapods 安装 ADAL。编辑 Podfile 以包含以下定义，将 **YOUR-PROJECT** 替换为 Xcode 项目的名称：
 
@@ -690,7 +690,7 @@ Pod：
 [5]: http://azure.github.io/azure-mobile-services/iOS/v3/Classes/MSClient.html#//api/name/invokeAPI:data:HTTPMethod:parameters:headers:completion:
 [6]: https://github.com/Azure/azure-mobile-services/blob/master/sdk/iOS/src/MSError.h
 [7]: /documentation/articles/app-service-mobile-how-to-configure-active-directory-authentication/
-[8]: /documentation/articles/active-directory-devquickstarts-ios/#em1-determine-what-your-redirect-uri-will-be-for-iosem
+
 
 [10]: https://developers.facebook.com/docs/ios/getting-started
 
