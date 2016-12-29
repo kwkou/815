@@ -34,15 +34,15 @@
 <table>  
 
 
-<tr><td>**SDK 下载**</td><td>[Maven](http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22com.microsoft.azure%22%20AND%20a%3A%22azure-documentdb%22)</td></tr>
+<tr><td>**SDK 下载**</td><td><a href="http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22com.microsoft.azure%22%20AND%20a%3A%22azure-documentdb%22">Maven</a></td></tr>
 
-<tr><td>**API 文档**</td><td>[Java API 参考文档](http://azure.github.io/azure-documentdb-java/)</td></tr>
+<tr><td>**API 文档**</td><td><a href="http://azure.github.io/azure-documentdb-java/">Java API 参考文档</a></td></tr>
 
-<tr><td>**参与 SDK**</td><td>[GitHub](https://github.com/Azure/azure-documentdb-java/)</td></tr>
+<tr><td>**参与 SDK**</td><td><a href="https://github.com/Azure/azure-documentdb-java/">GitHub</a></td></tr>
 
-<tr><td>**入门**</td><td>[Java SDK 入门](/documentation/articles/documentdb-java-application/)</td></tr>
+<tr><td>**入门**</td><td><a href="/documentation/articles/documentdb-java-application/">Java SDK 入门</a></td></tr>
 
-<tr><td>**当前受支持的运行时**</td><td>[JDK 7](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html)</td></tr>
+<tr><td>**当前受支持的运行时**</td><td><a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html">JDK 7</a></td></tr>
 </table>
 
 ## 发行说明

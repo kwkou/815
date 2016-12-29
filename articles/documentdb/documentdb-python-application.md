@@ -256,86 +256,86 @@ Python
 3. 重复步骤 1 和步骤 2，以创建另外两个 HTML 文件：results.html 和 vote.html。
 4. 将以下代码添加到 `<body>` 元素中的 **create.html**。它将显示一条消息，说明我们创建了新的数据库、集合和文档。
 
-html
+	html
 
-	{% extends "layout.html" %}
-	{% block content %}
-	<h2>{{ title }}.</h2>
-	<h3>{{ message }}</h3>
-	<p><a href="{{ url_for('vote') }}" class="btn btn-primary btn-large">Vote &raquo;</a></p>
-	{% endblock %}
+		{% extends "layout.html" %}
+		{% block content %}
+		<h2>{{ title }}.</h2>
+		<h3>{{ message }}</h3>
+		<p><a href="{{ url_for('vote') }}" class="btn btn-primary btn-large">Vote &raquo;</a></p>
+		{% endblock %}
 	
 
-5. 将以下代码添加到 `<body`> 元素中的 **results.html**。它将显示轮询结果。
+5. 将以下代码添加到 `<body>` 元素中的 **results.html**。它将显示轮询结果。
 
-html
+	html
 
-	{% extends "layout.html" %}
-	{% block content %}
-	<h2>Results of the vote</h2>
-		<br />
-		
-	{% for choice in vote_object.choices %}
-	<div class="row">
-		<div class="col-sm-5">{{choice}}</div>
-	        <div class="col-sm-5">
-	        	<div class="progress">
-	        		<div class="progress-bar" role="progressbar" aria-valuenow="{{vote_object.choices[choice]}}" aria-valuemin="0" aria-valuemax="{{vote_object.total_votes}}" style="width: {{(vote_object.choices[choice]/vote_object.total_votes)*100}}%;">
-	                    		{{vote_object.choices[choice]}}
+		{% extends "layout.html" %}
+		{% block content %}
+		<h2>Results of the vote</h2>
+			<br />
+			
+		{% for choice in vote_object.choices %}
+		<div class="row">
+			<div class="col-sm-5">{{choice}}</div>
+		        <div class="col-sm-5">
+		        	<div class="progress">
+		        		<div class="progress-bar" role="progressbar" aria-valuenow="{{vote_object.choices[choice]}}" aria-valuemin="0" aria-valuemax="{{vote_object.total_votes}}" style="width: {{(vote_object.choices[choice]/vote_object.total_votes)*100}}%;">
+		                    		{{vote_object.choices[choice]}}
+					</div>
 				</div>
-			</div>
-	        </div>
-	</div>
-	{% endfor %}
+		        </div>
+		</div>
+		{% endfor %}
+		
+		<br />
+		<a class="btn btn-primary" href="{{ url_for('vote') }}">Vote again?</a>
+		{% endblock %}
 	
-	<br />
-	<a class="btn btn-primary" href="{{ url_for('vote') }}">Vote again?</a>
-	{% endblock %}
-	
 
-6. 将以下代码添加到 `<body`> 元素中的 **vote.html**。它将显示轮询并接受投票。注册投票时，控件权将传递到 views.py 中，我们将在该位置识别投票并相应地追加文档。
+6. 将以下代码添加到 `<body>` 元素中的 **vote.html**。它将显示轮询并接受投票。注册投票时，控件权将传递到 views.py 中，我们将在该位置识别投票并相应地追加文档。
 
-html
+	html
 
-	{% extends "layout.html" %}
-	{% block content %}
-	<h2>What is your favorite way to host an application on Azure?</h2>
-	<form action="" method="post" name="vote">
-		{{form.hidden_tag()}}
-	        {{form.deploy_preference}}
-	        <button class="btn btn-primary" type="submit">Vote</button>
-	</form>
-	{% endblock %}
+		{% extends "layout.html" %}
+		{% block content %}
+		<h2>What is your favorite way to host an application on Azure?</h2>
+		<form action="" method="post" name="vote">
+			{{form.hidden_tag()}}
+		        {{form.deploy_preference}}
+		        <button class="btn btn-primary" type="submit">Vote</button>
+		</form>
+		{% endblock %}
 	
 
 7. 在 **templates** 文件夹中，将 **index.html** 的内容替换为以下内容。这将作为你的应用程序的登录页。
 	
-html
+	html
 
-	{% extends "layout.html" %}
-	{% block content %}
-	<h2>Python + DocumentDB Voting Application.</h2>
-	<h3>This is a sample DocumentDB voting application using PyDocumentDB</h3>
-	<p><a href="{{ url_for('create') }}" class="btn btn-primary btn-large">Create/Clear the Voting Database &raquo;</a></p>
-	<p><a href="{{ url_for('vote') }}" class="btn btn-primary btn-large">Vote &raquo;</a></p>
-	{% endblock %}
+		{% extends "layout.html" %}
+		{% block content %}
+		<h2>Python + DocumentDB Voting Application.</h2>
+		<h3>This is a sample DocumentDB voting application using PyDocumentDB</h3>
+		<p><a href="{{ url_for('create') }}" class="btn btn-primary btn-large">Create/Clear the Voting Database &raquo;</a></p>
+		<p><a href="{{ url_for('vote') }}" class="btn btn-primary btn-large">Vote &raquo;</a></p>
+		{% endblock %}
 	
 
 ### 添加配置文件并更改 \_\_init\_\_.py
 1. 在“解决方案资源管理器”中，右键单击 **tutorial** 项目，单击“添加”，再单击“新建项”，选择“空 Python 文件”，然后将该文件命名为 **config.py**。Flask 中的窗体需要此配置文件。也可将其用于提供密钥。但此教程不需要此密钥。
 2. 将以下代码添加到 config.py，需要在下一步更改 **DOCUMENTDB\_HOST** 和 **DOCUMENTDB\_KEY** 的值。
 
-Python
+	Python
 
-	CSRF_ENABLED = True
-	SECRET_KEY = 'you-will-never-guess'
-	
-	DOCUMENTDB_HOST = 'https://YOUR_DOCUMENTDB_NAME.documents.azure.com:443/'
-	DOCUMENTDB_KEY = 'YOUR_SECRET_KEY_ENDING_IN_=='
-	
-	DOCUMENTDB_DATABASE = 'voting database'
-	DOCUMENTDB_COLLECTION = 'voting collection'
-	DOCUMENTDB_DOCUMENT = 'voting document'
+		CSRF_ENABLED = True
+		SECRET_KEY = 'you-will-never-guess'
+		
+		DOCUMENTDB_HOST = 'https://YOUR_DOCUMENTDB_NAME.documents.azure.com:443/'
+		DOCUMENTDB_KEY = 'YOUR_SECRET_KEY_ENDING_IN_=='
+		
+		DOCUMENTDB_DATABASE = 'voting database'
+		DOCUMENTDB_COLLECTION = 'voting collection'
+		DOCUMENTDB_DOCUMENT = 'voting document'
 	
 
 3. 在 [Azure 门户预览](https://portal.azure.cn/)中，单击“浏览”、“DocumentDB 帐户”导航到“密钥”边栏选项卡，双击要使用的帐户名，然后单击 **Essentials** 区域的“密钥”按钮。在“密钥”边栏选项卡中，复制 **URI** 值并将其粘贴到 **config.py** 文件中，作为 **DOCUMENTDB\_HOST** 属性的值。
@@ -346,12 +346,12 @@ Python
    
     因此，该文件的内容应为：
 
-Python
+	Python
 
-	from flask import Flask
-	app = Flask(__name__)
-	app.config.from_object('config')
-	import tutorial.views
+		from flask import Flask
+		app = Flask(__name__)
+		app.config.from_object('config')
+		import tutorial.views
 	
 
 6. 添加所有文件后，解决方案资源管理器应如下所示：
