@@ -40,8 +40,7 @@
 2. 在云服务的 ServiceConfiguration.cscfg 文件中未显式指定 osFamily 的值。目前，在这种情况下，系统使用默认值“1”。
 3. Azure 经典管理门户将来宾操作系统系列值列为“Windows Server 2008”。
 
-若要了解哪些云服务正在运行哪个 OS 系列，可以在 Azure PowerShell 中运行以下脚本，但必须首先[设置 Azure PowerShell](/documentation/articles/powershell-install-configure/)。有关该脚本的更多详细信息，请参阅 [Azure 来宾 OS 系列 1 生命周期终结：2014 年 6 月](http://blogs.msdn.com/b/ryberry/archive/2014/04/02/azure-guest-os-family-1-end-of-life-june-2014.aspx)。
-
+若要了解哪些云服务正在运行哪个 OS 系列，可以在 Azure PowerShell 中运行以下脚本，但必须首先[设置 Azure PowerShell](/documentation/articles/powershell-install-configure/)。
 	Powershell
 	foreach($subscription in Get-AzureSubscription) {
 	    Select-AzureSubscription -SubscriptionName $subscription.SubscriptionName 
