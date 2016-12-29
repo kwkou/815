@@ -1,6 +1,6 @@
 <properties linkid="" urlDisplayName="" pageTitle="MySQL服务问题 - Azure 微软云" metaKeywords="Azure 云,技术文档,文档与资源,MySQL,数据库,常见问题,Azure MySQL, MySQL PaaS,Azure MySQL PaaS, Azure MySQL Service, Azure RDS,FAQ" description="针对用户在使用MySQL 数据库 on Azure中遇到的一些常见技术问题,提供快速解答。如果您仍存有疑问,欢迎联系技术支持。" metaCanonical="" services="MySQL" documentationCenter="Services" title="" authors="" solutions="" manager="" editor="" />
 
-<tags ms.service="mysql" ms.date="10/10/2016" wacn.date="10/10/2016" wacn.lang="cn" />
+<tags ms.service="mysql" ms.date="12/29/2016" wacn.date="12/29/2016" wacn.lang="cn" />
 
 #全部常见问题
 
@@ -179,9 +179,57 @@ mysql.exe命令行工具连接MySQL Database on Azure数据库后，若使用sta
 目前我们暂不支持一键升级，替代办法是用户可以通过mysqldump将数据从源5.5实例中导出，创建新的5.6数据库服务器实例，再将数据进行导入，测试兼容性通过后，可将应用迁移至5.6实例。
 如果用户的源数据库是生产环境或不能接受任何停机时间，可以在源数据库上手动创建快照，恢复到全新实例后，以恢复后的实例进行迁移升级，以减少对源数据库的影响。
 
+## 关于Emoji的支持问题：
+###如何让新建的数据库支持Emoji表情符号？
+在MySQL Database on Azure上创建数据库时，如无特殊指定，则创建的数据库默认采用UTF8字符集。由于MySQL上的UTF8字符集最多支持3字节编码，因此采用4字节编码的Emoji表情符号数据无法插入表中。为了让新建立的数据库支持Emoji表情符号，请按以下步骤操作：
+
+**1. 更改MySQL Server端的配置**
+
+在管理门户中，进入MySQL Database on Azure的“配置”页面，将character_set_server配置为utf8mb4，并保存。
+
+![更改MySQL Server端的配置][5]
+
+**2. 创建字符集为utf8mb4的数据库**
+
+在数据库页面创建数据库时，选择“utf8mb4”作为该数据库的字符集。
+
+![创建字符集为utf8mb4的数据库][6]
+
+###如何让已有数据库支持Emoji表情符号？
+针对已有字符集为非utf8mb4的数据库，无法通过将字符集设为utf8mb4直接实现Emoji的支持，但可以采用创建新表并将原表数据导入新表的方式间接实现对Emoji的支持，具体步骤如下（省略命令行）：
+
+**1. 更改MySQL Server端的配置（同上文）**
+
+**2. 更改已有数据库的字符集设置**
+
+选中该数据库，单击页面下方的“编辑”按钮，然后选择utf8mb4为其字符集。
+
+![更改已有数据库的字符集设置][7]
+
+**3. 创建新表**
+
+推荐使用DBMS工具（比如workbench）创建新表，假设新表名为table_b（原表名为table_a），注意table_b表结构必须与table_a完全一致。
+
+**4. 转移原表数据至新表**
+
+推荐使用MySQL语句：`INSERT INTO table_b (…) SELECT … FROM table_a;`
+
+**5. DROP原表**
+
+推荐使用MySQL语句：`DROP TABLE table_a;`
+
+**6. 重命名新表为原表名称**
+
+推荐使用MySQL语句：`RENAME table_b TO table_a;`
+
+至此，无需对应用进行改动，便实现了数据库中某一张表的Emoji支持。
+
 <!--Image references-->
 
 [1]: ./media/mysql-database-compatibilityinquiry/SSL.png
 [2]: ./media/mysql-database-serviceinquiry/mysql57.png
 [3]: ./media/mysql-database-otherinquiry/statusbug1.png
 [4]: ./media/mysql-database-otherinquiry/statusbug2.png
+[5]: ./media/mysql-database-otherinquiry/emoji1.png
+[6]: ./media/mysql-database-otherinquiry/emoji2.png
+[7]: ./media/mysql-database-otherinquiry/emoji3.png
