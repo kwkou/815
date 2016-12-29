@@ -162,6 +162,7 @@ CSV 文件源导入程序选项可用于导入一个或多个 CSV 文件。添�
 
 
 请注意 DomainInfo.Domain\_Name 和 RedirectInfo.Redirecting 等别名。通过指定嵌套分隔符“.”，导入工具会在导入过程中创建 DomainInfo 和 RedirectInfo 子文档。下面是在 DocumentDB 中生成文档的示例︰
+
 *{
   "DomainInfo": {
     "Domain_Name": "ACUS.GOV",
@@ -492,7 +493,7 @@ DocumentDB - 顺序记录导入程序具有下列高级附加选项︰
 
 然后，选择是记录所有、关键还是无错误消息。最后，根据进度决定更新屏幕传输消息的频率。
 
-    ![Screenshot of Advanced configuration screen](./media/documentdb-import-data/AdvancedConfiguration.png)
+  ![Screenshot of Advanced configuration screen](./media/documentdb-import-data/AdvancedConfiguration.png)
 
 ## 确认导入设置并查看命令行
 1. 在指定源信息、目标信息以及高级配置后，查看迁移摘要，并可选择查看/复制生成的迁移命令（复制命令对于自动执行导入操作非常有用）︰
