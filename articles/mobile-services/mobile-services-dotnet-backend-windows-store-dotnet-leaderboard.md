@@ -229,7 +229,7 @@ DTO 是定义如何通过网络发送数据的对象。如果你希望有线格�
 
 请注意 JSON 负载现在包含玩家姓名。
 
-除了使用 LINQ Select 语句以外，另一种做法是使用 AutoMapper。这种做法需要使用其他设置代码，但可启用从域实体到 DTO 的自动映射。有关详细信息，请参阅[使用 AutoMapper 在 .NET 后端中的数据库类型与客户端类型之间映射](http://blogs.msdn.com/b/azuremobile/archive/2014/05/19/mapping-between-database-types-and-client-type-in-the-net-backend-using-automapper.aspx)。
+除了使用 LINQ Select 语句以外，另一种做法是使用 AutoMapper。这种做法需要使用其他设置代码，但可启用从域实体到 DTO 的自动映射。
 
 ## 定义自定义 API 来提交分数
 

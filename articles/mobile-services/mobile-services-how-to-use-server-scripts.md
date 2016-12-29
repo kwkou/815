@@ -751,7 +751,6 @@ Helper 函数也可以只定义一次，然后在服务器脚本之间共享。�
 		insertItems(); 
 
 
-可以在此[博客文章](http://blogs.msdn.com/b/jpsanders/archive/2013/03/20/server-script-to-insert-table-items-in-windows-azure-mobile-services.aspx)中找到整个代码示例和相关的讨论。如果使用此代码，你可以根据你的具体情况对它进行改写，并全面进行测试。
 
 ### <a name="JSON-types"></a>如何：将 JSON 类型映射到数据库类型
 
