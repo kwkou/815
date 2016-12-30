@@ -270,6 +270,7 @@ Azure 导入/导出服务支持将数据复制到中国北部的 Azure 存储帐
     更多内容请参考 [准备 dataset CSV 文件](/documentation/articles/storage-import-export-tool-preparing-hard-drives-import/#prepare-the-dataset-csv-file)。
     
     **记住**: 数据默认是以块 blob 的形式导入的。你可以通过 BlobType 字段将数据导入成页 blob。例如，如果你要导入的是 Azure 虚拟机磁盘的 VHD 文件，你必须将他们导入成页 blob。
+    
     **Driveset CSV 文件**
 
     driveset 标志的值是一个包含驱动器盘符映射的磁盘列表，使工具能够根据磁盘列表正确的选取需要准备的磁盘。

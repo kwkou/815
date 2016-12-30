@@ -45,11 +45,8 @@
 |源文件或目录|目标 Blob 或虚拟目录|
 |------------------------------|-------------------------------------------|
 |H:\Video|https://mystorageaccount.blob.core.chinacloudapi.cn/video|
-
 |H:\Photo|https://mystorageaccount.blob.core.chinacloudapi.cn/photo|
-
 |K:\Temp\FavoriteVideo.ISO|https://mystorageaccount.blob.core.chinacloudapi.cn/favorite/FavoriteVideo.ISO|
-
 |\\\myshare\john\music|https://mystorageaccount.blob.core.chinacloudapi.cn/music|
 
 
@@ -136,8 +133,8 @@
 |----------------------------|-----------------|
 |**/srcdir:**<SourceDirectory>|`Required.` 包含要复制到目标驱动器中的文件的源目录。目录路径必须是绝对路径（而非相对路径）。|
 |**/dstdir:**<DestinationBlobVirtualDirectory>|<p>`Required.` Azure 存储帐户中的目标虚拟目录的路径。虚拟目录可能存在，也可能不存在。</p><p> 可以指定容器或 Blob 前缀（如 `music/70s/`）。目标目录必须以容器名称开头，后接正斜杠“/”，并且可以选择包含以“/”结尾的虚拟 Blob 目录。</p><p> 当目标容器为根容器时，必须显式指定包含正斜杠的根容器（如 `$root/`）。由于根容器下的 Blob 的名称中不能包含“/”，因此当目标目录为根容器时，将不会复制源目录中的任何子目录。</p><p> 在指定目标虚拟目录或 Blob 时，请确保使用有效的容器名称。请记住，容器名称必须是小写的。有关容器命名规则，请参阅 [Naming and Referencing Containers, Blobs, and Metadata](https://docs.microsoft.com/rest/api/storageservices/fileservices/naming-and-referencing-containers--blobs--and-metadata)（命名和引用容器、Blob 与元数据）。</p>|
-|**/Disposition:**<rename|no-overwrite|overwrite>|<p>`Optional.` 指定存在带指定地址的 Blob 时的行为。此参数的有效值为：`rename`、`no-overwrite` 和 `overwrite`。请注意，这些值区分大小写。如果未指定任何值，将使用默认值 `rename`。</p><p> 为此参数指定的值会影响 `/srcdir` 参数指定的目录中的所有文件。</p>|
-|**/BlobType:**<BlockBlob|PageBlob>|<p>`Optional.` 指定目标 Blob 的 Blob 类型。有效值为：`BlockBlob` 和 `PageBlob`。请注意，这些值区分大小写。如果未指定任何值，将使用默认值 `BlockBlob`。</p><p> 在大多数情况下，建议使用 `BlockBlob`。如果指定 `PageBlob`，目录中每个文件的长度必须是 512 的倍数（即页 Blob 的页面大小）。</p>|
+|**/Disposition:**<rename\|no-overwrite\|overwrite>|<p>`Optional.` 指定存在带指定地址的 Blob 时的行为。此参数的有效值为：`rename`、`no-overwrite` 和 `overwrite`。请注意，这些值区分大小写。如果未指定任何值，将使用默认值 `rename`。</p><p> 为此参数指定的值会影响 `/srcdir` 参数指定的目录中的所有文件。</p>|
+|**/BlobType:**<BlockBlob\|PageBlob>|<p>`Optional.` 指定目标 Blob 的 Blob 类型。有效值为：`BlockBlob` 和 `PageBlob`。请注意，这些值区分大小写。如果未指定任何值，将使用默认值 `BlockBlob`。</p><p> 在大多数情况下，建议使用 `BlockBlob`。如果指定 `PageBlob`，目录中每个文件的长度必须是 512 的倍数（即页 Blob 的页面大小）。</p>|
 |**/PropertyFile:**<PropertyFile>|`Optional.` 目标 Blob 的属性文件的路径。有关详细信息，请参阅[导入/导出服务元数据和属性文件格式](/documentation/articles/storage-import-export-file-format-metadata-and-properties/)。|
 |**/MetadataFile:**<MetadataFile>|`Optional.` 目标 Blob 的元数据文件的路径。有关详细信息，请参阅[导入/导出服务元数据和属性文件格式](/documentation/articles/storage-import-export-file-format-metadata-and-properties/)。|
 
@@ -148,8 +145,8 @@
 |----------------------------|-----------------|
 |**/srcfile:**<SourceFile>|`Required.` 要复制的文件的完整路径。目录路径必须是绝对路径（而非相对路径）。|
 |**/dstblob:**<DestinationBlobPath>|<p>`Required.` Azure 存储帐户中的目标 Blob 的路径。该 Blob 可能存在，也可能不存在。<p/><p> 指定以容器名称开头的 Blob 名称。Blob 名称不能以“/”或存储帐户名称开头。有关 Blob 命名规则，请参阅 [Naming and Referencing Containers, Blobs, and Metadata](https://docs.microsoft.com/rest/api/storageservices/fileservices/naming-and-referencing-containers--blobs--and-metadata)（命名和引用容器、Blob 与元数据）。<p/><p> 当目标容器为根容器时，必须显式将 `$root` 指定为容器，如 `$root/sample.txt`。请注意，根容器下的 Blob 的名称不能包含“/”。</p>|
-|**/Disposition:**<rename|no-overwrite|overwrite>|`Optional.` 指定存在带指定地址的 Blob 时的行为。此参数的有效值为：`rename`、`no-overwrite` 和 `overwrite`。请注意，这些值区分大小写。如果未指定任何值，将使用默认值 `rename`。|
-|**/BlobType:**<BlockBlob|PageBlob>|<p>`Optional.` 指定目标 Blob 的 Blob 类型。有效值为：`BlockBlob` 和 `PageBlob`。请注意，这些值区分大小写。如果未指定任何值，将使用默认值 `BlockBlob`。</p><p> 在大多数情况下，建议使用 `BlockBlob`。如果指定 `PageBlob`，目录中每个文件的长度必须是 512 的倍数（即页 Blob 的页面大小）。</p>|
+|**/Disposition:**<rename\|no-overwrite\|overwrite>|`Optional.` 指定存在带指定地址的 Blob 时的行为。此参数的有效值为：`rename`、`no-overwrite` 和 `overwrite`。请注意，这些值区分大小写。如果未指定任何值，将使用默认值 `rename`。|
+|**/BlobType:**<BlockBlob\|PageBlob>|<p>`Optional.` 指定目标 Blob 的 Blob 类型。有效值为：`BlockBlob` 和 `PageBlob`。请注意，这些值区分大小写。如果未指定任何值，将使用默认值 `BlockBlob`。</p><p> 在大多数情况下，建议使用 `BlockBlob`。如果指定 `PageBlob`，目录中每个文件的长度必须是 512 的倍数（即页 Blob 的页面大小）。</p>|
 |**/PropertyFile:**<PropertyFile>|`Optional.` 目标 Blob 的属性文件的路径。有关详细信息，请参阅[导入/导出服务元数据和属性文件格式](/documentation/articles/storage-import-export-file-format-metadata-and-properties/)。|
 |**/MetadataFile:**<MetadataFile>|`Optional.` 目标 Blob 的元数据文件的路径。有关详细信息，请参阅[导入/导出服务元数据和属性文件格式](/documentation/articles/storage-import-export-file-format-metadata-and-properties/)。|
 

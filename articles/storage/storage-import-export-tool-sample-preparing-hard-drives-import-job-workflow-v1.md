@@ -35,12 +35,9 @@
   
 |源|目标虚拟目录或 Blob|  
 |------------|-------------------------------------------|  
-|H:\\Video|https://mystorageaccount.blob.core.chinacloudapi.cn/video|  
-  
-|H:\\Photo|https://mystorageaccount.blob.core.chinacloudapi.cn/photo|  
-  
-|K:\\Temp\\FavoriteMovie.ISO|https://mystorageaccount.blob.core.chinacloudapi.cn/favorite/FavoriteMovies.ISO|  
-  
+|H:\\Video|https://mystorageaccount.blob.core.chinacloudapi.cn/video|
+|H:\\Photo|https://mystorageaccount.blob.core.chinacloudapi.cn/photo|
+|K:\\Temp\\FavoriteMovie.ISO|https://mystorageaccount.blob.core.chinacloudapi.cn/favorite/FavoriteMovies.ISO|
 |\\\bigshare\\john\\music|https://mystorageaccount.blob.core.chinacloudapi.cn/music|  
   
   
@@ -55,14 +52,10 @@
   
 |位置|大小|目标虚拟目录或 Blob|  
 |--------------|----------|-------------------------------------------|  
-|H:\\Video1|2\.5TB|https://mystorageaccount.blob.core.chinacloudapi.cn/video|  
-  
-|H:\\Video2|2\.5TB|https://mystorageaccount.blob.core.chinacloudapi.cn/video|  
-  
-|H:\\Photo|30GB|https://mystorageaccount.blob.core.chinacloudapi.cn/photo|  
-  
-|K:\\Temp\\FavoriteMovies.ISO|25GB|https://mystorageaccount.blob.core.chinacloudapi.cn/favorite/FavoriteMovies.ISO|  
-  
+|H:\\Video1|2\.5TB|https://mystorageaccount.blob.core.chinacloudapi.cn/video|
+|H:\\Video2|2\.5TB|https://mystorageaccount.blob.core.chinacloudapi.cn/video|
+|H:\\Photo|30GB|https://mystorageaccount.blob.core.chinacloudapi.cn/photo|
+|K:\\Temp\\FavoriteMovies.ISO|25GB|https://mystorageaccount.blob.core.chinacloudapi.cn/favorite/FavoriteMovies.ISO|
 |\\\bigshare\\john\\music|10GB|https://mystorageaccount.blob.core.chinacloudapi.cn/music|  
   
   

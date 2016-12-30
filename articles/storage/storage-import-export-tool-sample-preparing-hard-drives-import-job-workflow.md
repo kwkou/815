@@ -8,7 +8,7 @@
     documentationcenter="" />  
 
 <tags
-    ms.assetid="ms.service: storage"
+    ms.service="storage"
     ms.workload="storage"
     ms.tgt_pltfrm="na"
     ms.devlang="na"
@@ -27,7 +27,7 @@
 本示例将以下数据导入到名为 `mystorageaccount` 的 Azure 存储帐户：
 
 |位置|说明|数据大小|
-|--------------|-----------------|-----|
+|---|---|---|
 |H:\\Video|视频集合|12 TB|
 |H:\\Photo|照片集合|30 GB|
 |K:\\Temp\\FavoriteMovie.ISO|Blu-Ray™ 磁盘映像|25 GB|
@@ -39,12 +39,9 @@
 
 |源|目标虚拟目录或 Blob|
 |------------|-------------------------------------------|
-|H:\\Video|https://mystorageaccount.blob.core.chinacloudapi.cn/video|  
-
-|H:\\Photo|https://mystorageaccount.blob.core.chinacloudapi.cn/photo|  
-
-|K:\\Temp\\FavoriteMovie.ISO|https://mystorageaccount.blob.core.chinacloudapi.cn/favorite/FavoriteMovies.ISO|  
-
+|H:\\Video|https://mystorageaccount.blob.core.chinacloudapi.cn/video|
+|H:\\Photo|https://mystorageaccount.blob.core.chinacloudapi.cn/photo|
+|K:\\Temp\\FavoriteMovie.ISO|https://mystorageaccount.blob.core.chinacloudapi.cn/favorite/FavoriteMovies.ISO|
 |\\\bigshare\\john\\music|https://mystorageaccount.blob.core.chinacloudapi.cn/music|  
 
 
