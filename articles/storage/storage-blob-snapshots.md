@@ -3,8 +3,8 @@
     description="了解如何在指定时刻及时创建 blob 的快照以备份 blob 数据。了解如何对快照计费，以及如何使用快照最大程度地减少容量费用。"
     services="storage"
     documentationcenter=""
-    author="tamram"
-    manager="carmonm"
+    author="mmacy"
+    manager="timlt"
     editor="tysonn" />  
 
 <tags
@@ -14,9 +14,9 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="11/16/2016"
-    wacn.date="12/26/2016"
-    ms.author="tamram" />  
+    ms.date="12/07/2016"
+    wacn.date="12/29/2016"
+    ms.author="marsma" />  
 
 
 # 创建 Blob 快照
@@ -91,7 +91,6 @@ Blob 的快照与其基本 Blob 相同，不过，Blob URI 的后面追加了一
 
 * 高级存储帐户中每个页 Blob 的快照数上限为 100。如果超出该限制，快照 Blob 操作将返回错误代码 409 (**SnapshotCountExceeded**)。
 * 可以每隔 10 分钟在高级存储帐户中创建页 Blob 快照一次。如果超出该速率，快照 Blob 操作将返回错误代码 409 (**SnaphotOperationRateExceeded**)。
-* 无法调用“获取 Blob”来读取高级存储帐户中页 Blob 的快照。对高级存储帐户中的快照调用“获取 Blob”将返回错误代码 400 (**InvalidOperation**)。但是，可以对高级存储帐户中的快照调用“获取 Blob 属性”和“获取 Blob 元数据”。
 * 若要读取快照，你可以使用“复制 Blob”操作将快照复制到帐户中的另一个页 Blob。复制操作的目标 Blob 不能包含任何现有快照。如果目标 Blob 确实包含快照，则“复制 Blob”操作将返回错误代码 409 (**SnapshotsPresent**)。
 
 ## 返回快照的绝对 URI
@@ -138,8 +137,7 @@ Blob 的快照与其基本 Blob 相同，不过，Blob URI 的后面追加了一
 
 在方案 1 中，基本 Blob 自创建快照后未进行更新，因此仅唯一块 1、2 和 3 会产生费用。
 
-![Azure 存储资源](./media/storage-blob-snapshots/storage-blob-snapshots-billing-scenario-1.png)  
-
+![Azure 存储资源](./media/storage-blob-snapshots/storage-blob-snapshots-billing-scenario-1.png)
 
 在方案 2 中，已更新基本 Blob，但未更新快照。已更新块 3，即使它包含相同的数据和 ID，它也与快照中的块 3 不同。因此，帐户需要为四个块支付费用。
 
@@ -153,4 +151,4 @@ Blob 的快照与其基本 Blob 相同，不过，Blob URI 的后面追加了一
 
 ![Azure 存储资源](./media/storage-blob-snapshots/storage-blob-snapshots-billing-scenario-4.png)
 
-<!---HONumber=Mooncake_Quality_Review_1215_2016-->
+<!---HONumber=Mooncake_1226_2016-->

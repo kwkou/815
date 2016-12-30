@@ -8,7 +8,7 @@
 ### 共享密钥
 共享密钥身份验证意味着你的应用程序将使用帐户名和帐户密钥访问存储服务。为了快速说明如何使用此库，我们将在此入门指南中使用共享密钥身份验证。
 
-> [AZURE.WARNING] 为关联的存储帐户提供完全读/写访问权限的帐户名和帐户密钥将分发给下载你的应用的每个人。这**不**是好的做法，因为你会面临向不受信任的客户端泄露密钥的风险。
+> [AZURE.WARNING]**请只将共享密钥身份验证用于测试目的！** 为关联的存储帐户提供完全读/写访问权限的帐户名和帐户密钥将分发给下载你的应用的每个人。这**不**是好的做法，因为你会面临向不受信任的客户端泄露密钥的风险。
 
 使用共享密钥身份验证时，将创建一个[连接字符串](/documentation/articles/storage-configure-connection-string/)。连接字符串由以下部分组成：
 
@@ -38,4 +38,4 @@
 
 可以看到，使用 SAS 时，不会在应用程序中公开帐户密钥。可以查阅 [Shared Access Signature s: Understanding the SAS model](/documentation/articles/storage-dotnet-shared-access-signature-part-1/)（共享访问签名：了解 SAS 模型）了解有关 SAS 和使用 SAS 的最佳实践的详细信息。
 
-<!---HONumber=Mooncake_0926_2016-->
+<!---HONumber=Mooncake_1226_2016-->

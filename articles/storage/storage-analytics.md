@@ -1,29 +1,28 @@
-<properties 
-	pageTitle="使用存储分析收集日志和指标数据 | Azure"
-	description="使用存储分析，可以跟踪所有存储服务的指标数据，还可针对 Blob、队列和表存储收集日志。"
-	services="storage"
-	documentationCenter=""
-	authors="robinsh"
-	manager="carmonm"
-	editor="tysonn"/>
+<properties
+    pageTitle="使用存储分析收集日志和指标数据 | Azure"
+    description="使用存储分析，可以跟踪所有存储服务的指标数据，还可针对 Blob、队列和表存储收集日志。"
+    services="storage"
+    documentationcenter=""
+    author="robinsh"
+    manager="timlt"
+    editor="tysonn" />  
 
 <tags
-	ms.service="storage"
-	ms.workload="storage"
-	ms.tgt_pltfrm="na"
-	ms.devlang="dotnet"
-	ms.topic="article"
-	ms.date="08/03/2016"
-	wacn.date="12/19/2016"
-	ms.author="fryu;robinsh"/>
+    ms.assetid="7894993b-ca42-4125-8f17-8f6dfe3dca76"
+    ms.service="storage"
+    ms.workload="storage"
+    ms.tgt_pltfrm="na"
+    ms.devlang="dotnet"
+    ms.topic="article"
+    ms.date="12/08/2016"
+    wacn.date="12/29/2016"
+    ms.author="robinsh" />
 
 # 存储分析
-
 ## 概述
-
 Azure 存储分析执行日志记录并为存储帐户提供指标数据。可以使用此数据为存储帐户跟踪请求、分析使用趋势和诊断问题。
 
-若要使用存储分析，必须为每个要监视的服务单独启用它。可以从 [Azure 门户预览](https://portal.azure.cn/)中启用它。有关详细信息，请参阅[在 Azure 门户中监视存储帐户](/documentation/articles/storage-monitor-storage-account/)。还可以通过 REST API 或客户端库以编程方式启用存储分析。使用[获取 Blob 服务属性](https://msdn.microsoft.com/zh-cn/library/hh452239.aspx)、[获取队列服务属性](https://msdn.microsoft.com/zh-cn/library/hh452243.aspx)、[获取表服务属性](https://msdn.microsoft.com/zh-cn/library/hh452238.aspx)和[获取文件服务属性](https://msdn.microsoft.com/zh-cn/library/mt427369.aspx)操作来为每个服务启用存储分析。
+若要使用存储分析，必须为每个要监视的服务单独启用它。可以从 [Azure 门户预览](https://portal.azure.cn/)中启用它。有关详细信息，请参阅[在 Azure 门户预览中监视存储帐户](/documentation/articles/storage-monitor-storage-account/)。还可以通过 REST API 或客户端库以编程方式启用存储分析。使用[获取 Blob 服务属性](https://msdn.microsoft.com/zh-cn/library/hh452239.aspx)、[获取队列服务属性](https://msdn.microsoft.com/zh-cn/library/hh452243.aspx)、[获取表服务属性](https://msdn.microsoft.com/zh-cn/library/hh452238.aspx)和[获取文件服务属性](https://msdn.microsoft.com/zh-cn/library/mt427369.aspx)操作来为每个服务启用存储分析。
 
 聚合数据存储在已知 Blob（对于日志记录）和已知表（对于指标）中，可以使用 Blob 服务和表服务 API 对其进行访问。
 
@@ -31,9 +30,7 @@ Azure 存储分析执行日志记录并为存储帐户提供指标数据。可�
 
 有关使用存储分析及其他工具来识别、诊断和排查 Azure 存储相关问题的深入指导，请参阅[监视、诊断和排查 Azure 存储问题](/documentation/articles/storage-monitoring-diagnosing-troubleshooting/)。
 
-
 ## 关于存储分析日志记录
-
 存储分析记录有关成功和失败的存储服务请求的详细信息。可以使用该信息监视各个请求和诊断存储服务问题。将尽量记录请求。
 
 仅当存在存储服务活动时，才会创建日志条目。例如，如果存储帐户的 Blob 服务中存在活动，而表或队列服务中没有活动，则仅创建与 Blob 服务有关的日志。
@@ -41,7 +38,6 @@ Azure 存储分析执行日志记录并为存储帐户提供指标数据。可�
 存储分析日志记录不可用于 Azure 文件服务。
 
 ### 记录经过身份验证的请求
-
 将记录以下类型的已经过身份验证的请求：
 
 - 成功的请求。
@@ -82,14 +78,14 @@ Azure 存储分析执行日志记录并为存储帐户提供指标数据。可�
 下表说明了日志名称中的每个属性。
 
 | 属性 | 说明 |
-|----------------	|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	|
-| <service-name> | 存储服务的名称例如：blob、table 或 queue。 |
-| YYYY | 用四位数表示的日志年份。例如：2011。 |
-| MM | 用两位数表示的日志月份。例如：07。 |
-| DD | 用两位数表示的日志月份。例如：07。 |
-| hh | 用两位数表示的日志起始小时，采用 24 小时 UTC 格式。例如：18。 |
-| mm | 用两位数表示的日志起始分钟。存储分析最新版中不支持此值，其值始终为 00。 |
-| <counter> | 从零开始的计数器，用六位数字表示 1 小时内为存储服务生成的日志 Blob 数。此计数器从 000000 开始。例如：000001。 |
+| --- | --- |
+| <service-name> |存储服务的名称例如：blob、table 或 queue。 |
+| YYYY |用四位数表示的日志年份。例如：2011。 |
+| MM |用两位数表示的日志月份。例如：07。 |
+| DD |用两位数表示的日志月份。例如：07。 |
+| hh |用两位数表示的日志起始小时，采用 24 小时 UTC 格式。例如：18。 |
+| mm |用两位数表示的日志起始分钟。存储分析最新版中不支持此值，其值始终为 00。 |
+| <counter> |从零开始的计数器，用六位数字表示 1 小时内为存储服务生成的日志 Blob 数。此计数器从 000000 开始。例如：000001。 |
 
 可使用以下完整示例日志名称组合前述示例。
 
@@ -105,11 +101,11 @@ Azure 存储分析执行日志记录并为存储帐户提供指标数据。可�
 所有日志 Blob 与可用于确定 Blob 包含哪些日志记录数据的元数据一起存储。下表说明了每个元数据属性。
 
 | 属性 | 说明 |
-|------------	|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	|
-| LogType | 描述日志是否包含与读取、写入或删除操作有关的信息。该值可能包含一种类型，也可能包含所有三种类型的组合并用逗号隔开。示例 1：write；示例 2：read,write；示例 3：read,write,delete。 |
-| StartTime | 日志中的项的最早时间，采用 YYYY-MM-DDThh:mm:ssZ 形式。例如：2011-07-31T18:21:46Z。 |
-| EndTime | 日志中的项的最晚时间，采用 YYYY-MM-DDThh:mm:ssZ 形式。例如：2011-07-31T18:22:09Z。 |
-| LogVersion | 日志格式的版本。目前唯一支持的值是 1.0。 |
+| --- | --- |
+| LogType |描述日志是否包含与读取、写入或删除操作有关的信息。该值可能包含一种类型，也可能包含所有三种类型的组合并用逗号隔开。示例 1：write；示例 2：read,write；示例 3：read,write,delete。 |
+| StartTime |日志中的项的最早时间，采用 YYYY-MM-DDThh:mm:ssZ 形式。例如：2011-07-31T18:21:46Z。 |
+| EndTime |日志中的项的最晚时间，采用 YYYY-MM-DDThh:mm:ssZ 形式。例如：2011-07-31T18:22:09Z。 |
+| LogVersion |日志格式的版本。目前唯一支持的值是 1.0。 |
 
 下表显示了使用前述示例的完整示例元数据。
 
@@ -129,7 +125,7 @@ Azure 存储分析执行日志记录并为存储帐户提供指标数据。可�
 
 存储分析可存储一些指标，这些指标包括有关存储服务请求的聚合事务统计信息和容量数据。在 API 操作级别以及存储服务级别报告事务，并在存储服务级别报告容量。指标数据可用于分析存储服务使用情况，诊断对存储服务所发出请求的问题，提高使用服务的应用程序的性能。
 
-若要使用存储分析，必须为每个要监视的服务单独启用它。可以从 [Azure 门户预览](https://portal.azure.cn/)中启用它。有关详细信息，请参阅[在 Azure 门户中监视存储帐户](/documentation/articles/storage-monitor-storage-account/)。还可以通过 REST API 或客户端库以编程方式启用存储分析。使用**获取服务属性**操作为每项服务启用存储分析。
+若要使用存储分析，必须为每个要监视的服务单独启用它。可以从 [Azure 门户预览](https://portal.azure.cn/)中启用它。有关详细信息，请参阅[在 Azure 门户预览中监视存储帐户](/documentation/articles/storage-monitor-storage-account/)。还可以通过 REST API 或客户端库以编程方式启用存储分析。使用**获取服务属性**操作为每项服务启用存储分析。
 
 ### 事务指标
 
@@ -156,27 +152,24 @@ Azure 存储分析执行日志记录并为存储帐户提供指标数据。可�
 有关容量指标的详细信息，请参阅[存储分析指标表架构](https://msdn.microsoft.com/zh-cn/library/hh343264.aspx)。
 
 ### 如何存储指标
-
 每个存储服务的所有度量数据都存储在为该服务保留的三个表中：一个表存储事务信息，一个表存储分钟事务信息，还有一个表存储容量信息。事务和分钟事务信息由请求和响应数据组成，而容量信息由存储使用情况数据组成。存储帐户的 Blob 服务的小时指标、分钟指标和容量可在下表所述名称的表中访问。
 
 | 指标级别 | 表名 | 支持的版本 |
-|------------------------------------	|-----------------------------------------------------------------------------------------------------------------------------	|----------------------------------------------------------------------------------------------------------------------------------------------	|
-| 小时指标，主位置 | $MetricsTransactionsBlob <br/>$MetricsTransactionsTable <br/> $MetricsTransactionsQueue | 仅限 2013-08-15 之前的版本。虽然仍然支持这些名称，但还是建议你改为使用下面列出的表。 |
-| 小时指标，主位置 | $MetricsHourPrimaryTransactionsBlob <br/>$MetricsHourPrimaryTransactionsTable <br/>$MetricsHourPrimaryTransactionsQueue | 所有版本，包括 2013-08-15。 |
-| 分钟指标，主位置 | $MetricsMinutePrimaryTransactionsBlob <br/>$MetricsMinutePrimaryTransactionsTable <br/>$MetricsMinutePrimaryTransactionsQueue | 所有版本，包括 2013-08-15。 |
-| 小时指标，辅助位置 | $MetricsHourSecondaryTransactionsBlob <br/>$MetricsHourSecondaryTransactionsTable <br/>$MetricsHourSecondaryTransactionsQueue | 所有版本，包括 2013-08-15。必须启用读访问的地域冗余复制。 |
-| 分钟指标，辅助位置 | $MetricsMinuteSecondaryTransactionsBlob <br/>$MetricsMinuteSecondaryTransactionsTable <br/>$MetricsMinuteSecondaryTransactionsQueue | 所有版本，包括 2013-08-15。必须启用读访问的地域冗余复制。 |
-| 容量（仅限 Blob 服务） | $MetricsCapacityBlob | 所有版本，包括 2013-08-15。 |
+| --- | --- | --- |
+| 小时指标，主位置 |$MetricsTransactionsBlob <br/>$MetricsTransactionsTable <br/> $MetricsTransactionsQueue |仅限 2013-08-15 之前的版本。虽然仍然支持这些名称，但还是建议你改为使用下面列出的表。 |
+| 小时指标，主位置 |$MetricsHourPrimaryTransactionsBlob <br/>$MetricsHourPrimaryTransactionsTable <br/>$MetricsHourPrimaryTransactionsQueue |所有版本，包括 2013-08-15。 |
+| 分钟指标，主位置 |$MetricsMinutePrimaryTransactionsBlob <br/>$MetricsMinutePrimaryTransactionsTable <br/>$MetricsMinutePrimaryTransactionsQueue |所有版本，包括 2013-08-15。 |
+| 小时指标，辅助位置 |$MetricsHourSecondaryTransactionsBlob <br/>$MetricsHourSecondaryTransactionsTable <br/>$MetricsHourSecondaryTransactionsQueue |所有版本，包括 2013-08-15。必须启用读访问的地域冗余复制。 |
+| 分钟指标，辅助位置 |$MetricsMinuteSecondaryTransactionsBlob <br/>$MetricsMinuteSecondaryTransactionsTable <br/>$MetricsMinuteSecondaryTransactionsQueue |所有版本，包括 2013-08-15。必须启用读访问的地域冗余复制。 |
+| 容量（仅限 Blob 服务） |$MetricsCapacityBlob |所有版本，包括 2013-08-15。 |
 
 
 为存储帐户启用存储分析时，将自动创建这些表。这些表通过存储帐户的命名空间进行访问，例如：`https://<accountname>.table.core.chinacloudapi.cn/Tables("$MetricsTransactionsBlob")`
 
 ### 访问指标数据
-
 指标表中的所有数据都可以使用表服务 API 进行访问，包括 Azure 托管库提供的 .NET API。存储帐户管理员可以读取和删除表中条目，但不能创建或更新表中条目。
 
 ## 存储分析计费
-
 存储分析由存储帐户所有者启用，并非默认启用。所有度量数据是由存储帐户服务写入的。因此，存储分析执行的每个写入操作都是计费的。此外，度量数据使用的存储量也是计费的。
 
 存储分析执行的以下操作都是计费的：
@@ -209,4 +202,4 @@ Azure 存储分析执行日志记录并为存储帐户提供指标数据。可�
 - [存储分析指标表架构](https://msdn.microsoft.com/zh-cn/library/hh343264.aspx)
 - [存储分析记录的操作和状态消息](https://msdn.microsoft.com/zh-cn/library/hh343260.aspx)
 
-<!---HONumber=Mooncake_Quality_Review_1202_2016-->
+<!---HONumber=Mooncake_1226_2016-->
