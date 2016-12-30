@@ -3,8 +3,8 @@
     description="了解如何在 Azure 经典门户中将自定义用户域映射到 Azure 存储帐户的 Blob 存储终结点。"
     services="storage"
     documentationcenter=""
-    author="tamram"
-    manager="carmonm"
+    author="mmacy"
+    manager="timlt"
     editor="tysonn" />  
 
 <tags
@@ -14,13 +14,13 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="11/17/2016"
-    wacn.date="12/05/2016"
-    ms.author="tamram" />
+    ms.date="12/08/2016"
+    wacn.date="12/29/2016"
+    ms.author="marsma" />
 
 # 为 Blob 存储终结点配置自定义域名
 ## 概述
-你可以配置自定义域以便访问 Azure 存储帐户中的 Blob 数据。Blob 存储的默认终结点是 `<storage-account-name>.blob.core.chinacloudapi.cn`。如果你将自定义域和子域（例如 **www.contoso.com** ）映射到你的存储帐户的 Blob 终结点，则你的用户也可以使用该域访问你的存储帐户中的 Blob 数据。
+你可以配置自定义域以便访问 Azure 存储帐户中的 Blob 数据。Blob 存储的默认终结点是 `<storage-account-name>.blob.core.chinacloudapi.cn`。如果你将自定义域和子域（例如 **www.contoso.com**）映射到你的存储帐户的 Blob 终结点，则你的用户也可以使用该域访问你的存储帐户中的 Blob 数据。
 
 >[AZURE.IMPORTANT] Azure 存储空间尚不支持对自定义域使用 HTTPS。我们已注意到客户对这项功能感兴趣，会在将来的版本中添加。
 
@@ -28,7 +28,7 @@
 
 但是，将你的自定义域映射到 Blob 终结点的过程会导致域在你在 [Azure 经典管理门户](https://manage.windowsazure.cn)中注册域时出现短暂的停机时间。如果你的自定义域目前所支持的应用程序的服务级别协议 (SLA) 要求不能有停机时间，则可以使用 Azure **asverify** 子域提供中间注册步骤，以便用户在 DNS 映射进行时能够访问你的域。
 
-下表显示了用于访问名为 **mystorageaccount** 的存储帐户中的 Blob 数据的示例 URL。为存储帐户注册的自定义域是 **www.contoso.com** ：
+下表显示了用于访问名为 **mystorageaccount** 的存储帐户中的 Blob 数据的示例 URL。为存储帐户注册的自定义域是 **www.contoso.com**：
 
 资源类型|URL 格式
 ---|---
@@ -52,7 +52,7 @@ Blob|**默认 URL**：http://mystorageaccount.blob.core.chinacloudapi.cn/myconta
 5. 登录到您的 DNS 注册机构的网站，然后转至用于管理 DNS 的页面。可能会在“域名”、“DNS”或“名称服务器管理”等部分中找到此页。
 6. 找到用于管理 CNAME 的部分。你可能需要转至高级设置页面，并查找“CNAME”、“别名”或“子域”字样。
 7. 创建一个新的 CNAME 记录，并且提供子域别名，例如 **www** 或 **photos**。然后以 **mystorageaccount.blob.core.chinacloudapi.cn** 格式（其中，**mystorageaccount** 是你的存储帐户的名称）提供主机名，这是你的 Blob 服务终结点。在“管理自定义域”对话框的文本中为你提供了要使用的主机名。
-8. 在创建该 CNAME 记录后，返回到“管理自定义域”对话框，并且在“自定义域名”字段中输入你的自定义域（包括子域）的名称。例如，如果你的域是 **contoso.com** 并且你的子域是 **www** ，则输入 **www.contoso.com** ；如果你的子域是 **photos**，则输入 **photos.contoso.com**。请注意，子域是必需的。
+8. 在创建该 CNAME 记录后，返回到“管理自定义域”对话框，并且在“自定义域名”字段中输入你的自定义域（包括子域）的名称。例如，如果你的域是 **contoso.com** 并且你的子域是 **www**，则输入 **www.contoso.com**；如果你的子域是 **photos**，则输入 **photos.contoso.com**。请注意，子域是必需的。
 9. 单击“注册”按钮以注册你的自定义域。
    
 如果注册成功，你将看到消息**你的自定义域处于活动状态**。用户现在可以查看你的自定义域上的 Blob 数据，只要用户具有适当的权限。
@@ -106,11 +106,8 @@ Blob|**默认 URL**：http://mystorageaccount.blob.core.chinacloudapi.cn/myconta
 1. 登录到 [Azure 经典管理门户](https://manage.windowsazure.cn)。
 
 2. 在导航窗格中，单击“存储”。
-
 3. 在“存储”页中，单击存储帐户的名称以显示仪表板。
+4. 在功能区中，单击“管理域”。
+5. 在“管理自定义域”对话框中，单击“取消注册”。
 
-5. 在功能区中，单击“管理域”。
-
-6. 在“管理自定义域”对话框中，单击“取消注册”。
-
-<!---HONumber=Mooncake_1128_2016-->
+<!---HONumber=Mooncake_1226_2016-->

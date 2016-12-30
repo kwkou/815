@@ -15,8 +15,8 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="10/18/2016"
-    wacn.date="12/26/2016"
+    ms.date="11/21/2016"
+    wacn.date="12/29/2016"
     ms.author="genli" />  
 
 
@@ -27,6 +27,7 @@
 
 * 当用户删除 VM 时，磁盘和 VHD 未自动删除。这可能是存储帐户删除失败的原因。我们不会删除磁盘，以便你可以使用该磁盘装入另一个 VM。
 * 磁盘或者与磁盘关联的 Blob 上仍有租约。
+* 仍有一个 VM 映像使用 Blob、容器或存储帐户。
 
 
 ## 症状
@@ -62,31 +63,61 @@
 
 *未能删除存储容器 <container name>。错误：目前容器上有租约，但请求中未指定任何租约 ID*。
 
+或
+
+“以下虚拟机磁盘使用了此容器中的 Blob，因此无法删除该容器: VirtualMachineDiskName1、VirtualMachineDiskName2...”
+
 ### 应用场景 3：无法删除 VHD
 删除 VM 并随后尝试删除与 VHD 关联的 blob 后，可能会收到以下消息：
 
 *未能删除 blob“path/XXXXXX-XXXXXX-os-1447379084699.vhd”。错误：目前 Blob 上有租约，但请求中未指定任何租约 ID*。
 
+或
+
+Blob ‘BlobName.vhd’ 已用作虚拟机磁盘 ‘VirtualMachineDiskName’，因此无法删除该 Blob。
+
 ## 解决方案
 若要解决最常见的问题，请尝试以下方法：
 
-### 步骤 1：删除任何阻止删除存储帐户、容器或 VHD 的 OS 磁盘
+### 步骤 1：删除所有阻止删除存储帐户、容器或 VHD 的磁盘
 1. 切换到 [Azure 经典管理门户](https://manage.windowsazure.cn/)。
 2. 选择“虚拟机”>“磁盘”。
-   
+
     ![Azure 经典门户中的虚拟机上的磁盘映像。](./media/storage-cannot-delete-storage-account-container-vhd/VMUI.png)
 3. 找到与你想要删除的存储帐户、容器或 VHD 关联的磁盘。在检查磁盘的位置时，你将会找到关联的存储帐户、容器或 VHD。
-   
-    ![显示 Azure 经典门户中的磁盘位置信息的映像](./media/storage-cannot-delete-storage-account-container-vhd/DiskLocation.png)
-4. 确认没有任何 VM 列于磁盘的“附加到”字段，然后删除磁盘。
-   
+
+    ![显示 Azure 经典门户中的磁盘位置信息的映像](./media/storage-cannot-delete-storage-account-container-vhd/DiskLocation.png)  
+
+4. 使用以下方法之一删除磁盘：
+
+  - 如果磁盘的“附加到”字段中未列出任何 VM，则可以直接删除该磁盘。
+
+  - 如果该磁盘是数据磁盘，请遵循以下步骤：
+
+    1. 检查该磁盘已附加到的 VM 的名称。
+    2. 转到“虚拟机”>“实例”，然后找到该 VM。
+    3. 确保没有任何组件正在使用该磁盘。
+    4. 选择门户底部的“分离磁盘”来分离磁盘。
+    5. 转到“虚拟机”>“磁盘”，等到“附加到”字段变为空白。这表示已成功从 VM 分离磁盘。
+    6. 在“虚拟机”>“磁盘”的底部选择“删除”以删除该磁盘。
+
+  - 如果该磁盘是 OS 磁盘（“包含 OS”字段中出现诸如“Windows”的值）并已附加到 VM，请遵循以下步骤删除 VM。OS 磁盘无法分离，因此，只有删除 VM 才能释放租约。
+
+    1. 检查数据磁盘附加到的虚拟机的名称。
+    2. 转到“虚拟机”>“实例”，然后选择磁盘附加到的 VM。
+    3. 确保没有任何组件正在使用该虚拟机，并确认你不再需要该虚拟机。
+    4. 选择磁盘附加到的 VM，然后选择“删除”>“删除附加的磁盘”。
+    5. 转到“虚拟机”>“磁盘”，等到该磁盘消失。磁盘可能需要几分钟才能消失，并且可能需要刷新页面。
+    6. 如果磁盘未消失，请等到“附加到”字段变为空白。这表示已从 VM 分离磁盘。然后，选择该磁盘，在页面底部选择“删除”以删除该磁盘。
+
+
    > [AZURE.NOTE]如果磁盘附加到 VM，则无法将其删除。以异步方式从已删除 VM 分离磁盘。删除 VM 后可能需要几分钟来清除此字段。
 
 
 ### 步骤 2：删除任何阻止删除存储帐户或容器的 VM 映像
 1. 切换到 [Azure 经典管理门户](https://manage.windowsazure.CN/)。
 2. 选择“虚拟机”>“映像”，然后删除与存储帐户、容器或 VHD 关联的映像。
-   
+
     之后，再次尝试删除存储帐户、容器或 VHD。
 
 > [AZURE.WARNING]请在删除帐户之前务必备份你想要保存的任何内容。无法恢复已删除的存储帐户，也无法检索删除之前该存储帐户包含的任何内容。对于帐户中的任务资源也是如此：一旦删除 VHD、Blob、表、队列或文件，它将永久删除。确保该资源未使用。
@@ -109,4 +140,4 @@
 - [删除存储帐户](/documentation/articles/storage-create-storage-account/#delete-a-storage-account)
 - [如何在 Azure（PowerShell）中中断 Blob 存储的锁定租约](https://gallery.technet.microsoft.com/scriptcenter/How-to-break-the-locked-c2cd6492)
 
-<!---HONumber=Mooncake_Quality_Review_1215_2016-->
+<!---HONumber=Mooncake_1226_2016-->

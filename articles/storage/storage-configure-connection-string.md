@@ -3,8 +3,8 @@
     description="配置 Azure 存储帐户的连接字符串。连接字符串包含在运行时从应用程序访问 Azure 存储帐户所需的身份验证信息。"
     services="storage"
     documentationcenter=""
-    author="tamram"
-    manager="carmonm"
+    author="mmacy"
+    manager="timlt"
     editor="tysonn" />  
 
 <tags
@@ -14,9 +14,9 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="11/16/2016"
-    wacn.date="12/05/2016"
-    ms.author="tamram" />
+    ms.date="12/12/2016"
+    wacn.date="12/29/2016"
+    ms.author="marsma" />
 
 # 配置 Azure 存储空间连接字符串
 ## 概述
@@ -117,4 +117,4 @@
 * [Azure 存储资源管理器](/documentation/articles/storage-explorers/)
 * [使用共享访问签名 (SAS)](/documentation/articles/storage-dotnet-shared-access-signature-part-1/)
 
-<!---HONumber=Mooncake_1128_2016-->
+<!---HONumber=Mooncake_1226_2016-->

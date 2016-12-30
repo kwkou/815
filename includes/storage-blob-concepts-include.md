@@ -1,20 +1,21 @@
 ## 什么是 Blob 存储
 
-Azure Blob 存储是用于存储大量非结构化数据（例如文本或二进制数据）的服务，这些数据可通过 HTTP 或 HTTPS 从世界各地进行访问。你可以使用 Blob 存储向外公开数据，或者私下存储应用程序数据。
+Azure Blob 存储是用于存储大量非结构化对象数据（例如文本或二进制数据）的服务，这些数据可通过 HTTP 或 HTTPS 从世界各地进行访问。你可以使用 Blob 存储向外公开数据，或者私下存储应用程序数据。
 
 Blob 存储的常见用途包括：
 
--   直接向浏览器提供图像或文档
--   存储文件以供分布式访问
--   对视频和音频进行流式处理
+- 直接向浏览器提供图像或文档
+- 存储文件以供分布式访问
+- 对视频和音频进行流式处理
 - 存储数据以用于备份和还原、灾难恢复及存档
--   存储数据以供本地或 Azure 托管服务执行分析
+- 存储数据以供本地或 Azure 托管服务执行分析
 
 ##<a name="blob-service-concepts"></a> Blob 服务概念
 
 Blob 服务包含以下组件：
 
-![Blob1][Blob1]
+![Blob 体系结构](./media/storage-blob-concepts-include/blob1.png)  
+
 
 - **存储帐户：**对 Azure 存储服务的所有访问都要通过存储帐户来完成。此存储帐户可以是**常规用途存储帐户**，也可以是专用于存储对象/Blob 的 **Blob 存储帐户**。有关存储帐户的详细信息，请参阅 [Azure 存储帐户](/documentation/articles/storage-create-storage-account/)。
 
@@ -28,7 +29,4 @@ Blob 服务包含以下组件：
 
 	有关命名容器和 Blob 的详细信息，请参阅[命名和引用容器、Blob 和元数据](https://msdn.microsoft.com/zh-cn/library/azure/dd135715.aspx)。
 
-
-[Blob1]: ./media/storage-blob-concepts-include/blob1.jpg
-
-<!---HONumber=Mooncake_0530_2016-->
+<!---HONumber=Mooncake_1226_2016-->
