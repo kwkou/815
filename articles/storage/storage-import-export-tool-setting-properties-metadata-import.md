@@ -8,7 +8,7 @@
     documentationcenter="" />  
 
 <tags
-    ms.assetid="ms.service: storage"
+    ms.service="storage"
     ms.workload="storage"
     ms.tgt_pltfrm="na"
     ms.devlang="na"
