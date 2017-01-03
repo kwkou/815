@@ -15,7 +15,8 @@
 	ms.devlang="Java" 
 	ms.topic="article" 
 	ms.date="11/01/2016" 
-	ms.author="robmcm"/>  
+	ms.author="robmcm"
+    wacn.date="12/30/2016"/>  
 
 
 # 下载 Azure SDK for Java

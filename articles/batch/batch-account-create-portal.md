@@ -14,8 +14,8 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="get-started-article"
-	ms.date="08/26/2016"
-	wacn.date="11/30/2016"
+	ms.date="12/19/2016"
+	wacn.date="12/30/2016"
 	ms.author="marsma"/>  
 
 

@@ -14,8 +14,8 @@
 	ms.tgt_pltfrm="multiple"
 	ms.devlang="Java"
 	ms.topic="article"
-	ms.date="07/07/2016"
-	wacn.date="09/28/2016" 
+	ms.date="09/20/2016"
+	wacn.date="12/30/2016" 
 	ms.author="robmcm;asirveda"/>
 
 
