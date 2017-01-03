@@ -14,8 +14,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="03/26/2016"
-   wacn.date="07/08/2016"
+   ms.date="07/13/2016"
+   wacn.date="12/30/2016"
    ms.author="masashin"/>
 
 # 可伸缩性清单
