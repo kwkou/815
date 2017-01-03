@@ -12,8 +12,8 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="04/04/2016"
-    wacn.date="12/26/2016"
+    ms.date="04/27/2016"
+    wacn.date="12/30/2016"
     ms.author="torsteng" />
 
 # Azure SQL 数据库弹性数据库查询概述（预览版）
