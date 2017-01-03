@@ -15,8 +15,8 @@
 	ms.tgt_pltfrm="vm-windows"
 	ms.devlang="na"
 	ms.topic="hero-article"
-	ms.date="09/06/2016"
-	wacn.date="12/12/2016"
+	ms.date="11/16/2016"
+	wacn.date="12/30/2016"
 	ms.author="cynthn"/>  
 
 

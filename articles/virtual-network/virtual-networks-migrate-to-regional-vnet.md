@@ -12,8 +12,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="12/12/2016"
-   wacn.date="04/26/2016"
+   ms.date="03/15/2016"
+   wacn.date="12/12/2016"
    ms.author="jdial" />
 
 # 如何从地缘组迁移到区域虚拟网络 (VNet)

@@ -16,8 +16,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="vm-windows"
    ms.workload="infrastructure-services"
-   ms.date="06/21/2016"
-   wacn.date="12/16/2016"
+   ms.date="10/18/2016"
+   wacn.date="12/30/2016"
    ms.author="kirpas"/>
 
 # 如何扩展 Azure 资源组中虚拟机的 OS 驱动器

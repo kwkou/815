@@ -13,8 +13,8 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="vm-windows-sql-server"
 	ms.workload="infrastructure-services"
-	ms.date="07/15/2016"
-	wacn.date="12/26/2016"
+	ms.date="10/25/2016"
+	wacn.date="12/30/2016"
 	ms.author="jroth"/>
 
 # 使用 Azure PowerShell 预配 SQL Server 虚拟机 (Resource Manager)

@@ -12,8 +12,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"   
-   ms.date="06/10/2016"   
-   wacn.date="07/28/2016"
+   ms.date="10/18/2016"   
+   wacn.date="12/30/2016"
    ms.author="sewhee" />
 
 # 禁用、启用或删除配置文件

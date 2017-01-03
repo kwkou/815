@@ -13,8 +13,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="vm-linux"
    ms.workload="infrastructure-services"
-   ms.date="08/09/2016"
-   wacn.date="09/30/2016"
+   ms.date="10/27/2016"
+   wacn.date="12/30/2016"
    ms.author="iainfou"/>
 
 # Resource Manager 中的经典终结点

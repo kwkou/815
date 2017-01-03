@@ -14,8 +14,8 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="vm-windows-sql-server"
 	ms.workload="infrastructure-services"
-	ms.date="09/13/2016"
-	wacn.date="12/26/2016"
+	ms.date="11/15/2016"
+	wacn.date="12/30/2016"
 	ms.author="v-shysun"/>
 
 # Azure 虚拟机中的 SQL Server 常见问题
