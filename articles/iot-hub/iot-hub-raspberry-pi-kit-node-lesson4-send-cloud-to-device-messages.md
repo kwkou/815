@@ -11,7 +11,7 @@
 
 <tags
 	ms.service="iot-hub"
-	ms.date="11/28/2016"
+	ms.date="10/21/2016"
 	wacn.date="12/26/2016"/>
 
 

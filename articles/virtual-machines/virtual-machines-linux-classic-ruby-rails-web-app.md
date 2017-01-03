@@ -15,8 +15,8 @@
 	ms.tgt_pltfrm="vm-linux"
 	ms.devlang="ruby"
 	ms.topic="article"
-	ms.date="08/11/2016"
-	wacn.date="12/20/2016"
+	ms.date="11/01/2016"
+	wacn.date="12/30/2016"
 	ms.author="robmcm"/>  
 
 
