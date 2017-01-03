@@ -13,8 +13,8 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="dotnet"
 	ms.topic="article"
-	ms.date="07/30/2016"
-	wacn.date="12/16/2016"
+	ms.date="11/18/2016"
+	wacn.date="01/03/2017"
 	ms.author="tarcher"/>
 
 
@@ -572,4 +572,4 @@
   [5]: ./media/cloud-services-dotnet-continuous-delivery/common-task-tfs-05.png
   [6]: ./media/cloud-services-dotnet-continuous-delivery/common-task-tfs-06.png
 
-<!---HONumber=Mooncake_1128_2016-->
+<!---HONumber=Mooncake_1226_2016-->

@@ -12,8 +12,8 @@ ms.workload="tbd"
 ms.tgt_pltfrm="na" 
 ms.devlang="na" 
 ms.topic="article" 
-ms.date="11/15/2016" 
-wacn.date="12/05/2015" 
+ms.date="11/22/2016" 
+wacn.date="01/03/2017" 
 ms.author="saurabh"/>
 
 # 为 Azure 云服务中的角色设置远程桌面连接
@@ -26,19 +26,16 @@ ms.author="saurabh"/>
 
 你可以在开发过程中通过在服务定义中加入远程桌面模块来在角色中启用远程桌面连接，也可以通过远程桌面扩展选择启用远程桌面。首选方法是使用远程桌面扩展，因为即使在部署应用程序后，也能启用远程桌面，而不必重新部署应用程序。
 
-
-## 从经典管理门户配置远程桌面
-门户使用远程桌面扩展方法，即使在部署应用程序之后，也能启用远程桌面。使用云服务的“配置”页，可以启用远程桌面、更改用于连接虚拟机的本地 Administrator 帐户、身份验证使用的证书，以及设置到期日期。
-
+## 从 Azure 经典管理门户配置远程桌面
+Azure 经典管理门户使用远程桌面扩展方法，即使在部署应用程序之后，也能启用远程桌面。使用云服务的“配置”页，可以启用远程桌面、更改用于连接虚拟机的本地 Administrator 帐户、身份验证使用的证书，以及设置到期日期。
 
 1. 单击“云服务”，单击云服务的名称，然后单击“配置”。
+2. 单击底部的“远程”按钮。
 
-2. 单击“远程”。
-    
     ![云服务远程](./media/cloud-services-role-enable-remote-desktop/CloudServices_Remote.png)  
 
     
-    > [AZURE.WARNING] 首次启用远程桌面并单击“确定”（复选标记）时，所有角色实例会重新启动。为避免重新启动，必须在角色上安装用于对密码进行加密的证书。若要避免重新启动，请[上载云服务的证书](/documentation/articles/cloud-services-how-to-create-deploy/#how-to-upload-a-certificate-for-a-cloud-service)，然后返回到此对话框。
+    > [AZURE.WARNING] 首次启用远程桌面并单击“确定”（复选标记）时，所有角色实例会重新启动。为避免重新启动，必须在角色上安装用于对密码进行加密的证书。若要避免重新启动，请[上载云服务的证书](/documentation/articles/cloud-services-configure-ssl-certificate/#step-3-upload-a-certificate)，然后返回到此对话框。
     
 
 3. 在“角色”中，选择要更新的角色，或选择“全部”以选择所有角色。
@@ -73,7 +70,7 @@ ms.author="saurabh"/>
 
 在 Visual Studio 的“服务器资源管理器”中：
 
-1. 展开“Azure\\云服务\\[云服务名称]”节点。
+1. 展开“Azure”>“云服务”>“[云服务名称]”节点。
 2. 展开“暂存”或“生产”。
 3. 展开各个角色。
 4. 右键单击某一角色实例，单击“使用远程桌面连接...”，然后输入用户名和密码。
@@ -145,4 +142,4 @@ ms.author="saurabh"/>
 
 [如何配置云服务](/documentation/articles/cloud-services-how-to-configure/)
 
-<!---HONumber=Mooncake_1128_2016-->
+<!---HONumber=Mooncake_1226_2016-->

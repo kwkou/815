@@ -83,7 +83,7 @@ Internet 上有许多关于如何使用 IIS 实现此操作的信息。[此页�
 
 ## 后续步骤
 
-[上载服务证书到 Azure 经典管理门户](/documentation/articles/cloud-services-configure-ssl-certificate/)（或 [Azure 门户预览](/documentation/articles/cloud-services-configure-ssl-certificate-portal/)）。
+[上载服务证书到 Azure 经典管理门户](/documentation/articles/cloud-services-configure-ssl-certificate/)。
 
 将[管理 API 证书](/documentation/articles/azure-api-management-certs/)上载到 Azure 经典管理门户。
 

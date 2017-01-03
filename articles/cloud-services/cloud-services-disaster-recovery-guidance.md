@@ -44,7 +44,7 @@ Azure 已在平台中内置多种功能，用于支持高度可用的应用程�
 
 如果你具有原始代码，则可以仅仅将应用程序、关联配置和关联资源重新部署到新区域中新的云服务。
 
-有关如何创建和部署云服务应用程序的详细信息，请参阅[如何创建和部署云服务](/documentation/articles/cloud-services-how-to-create-deploy-portal/)。
+有关如何创建和部署云服务应用程序的详细信息，请参阅[如何创建和部署云服务](/documentation/articles/cloud-services-how-to-create-deploy/)。
 
 根据应用程序数据源，你可能需要检查应用程序数据源的恢复过程。
   * 有关 Azure 存储空间数据源，请参阅[Azure 存储空间复制](/documentation/articles/storage-redundancy/#read-access-geo-redundant-storage/)以了解基于所选复制模型而可用于应用程序的选项。

@@ -12,8 +12,8 @@ ms.workload="tbd"
 ms.tgt_pltfrm="na" 
 ms.devlang="na" 
 ms.topic="article" 
-ms.date="09/06/2016" 
-wacn.date="12/26/2016" 
+ms.date="12/14/2015" 
+wacn.date="01/03/2017" 
 ms.author="adegeo"/>
 
 # 为 Azure 中的角色实例启用通信

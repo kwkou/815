@@ -14,7 +14,7 @@
 	ms.devlang="nodejs" 
 	ms.topic="article" 
 	ms.date="11/01/2016" 
-	wacn.date="12/16/2016" 
+	wacn.date="01/03/2017" 
 	ms.author="robmcm"/>
 
 # 在 Azure 中启用远程桌面

@@ -4,7 +4,7 @@
    services="cloud-services" 
    documentationCenter="na" 
    authors="raiye" 
-   manager="markkie" 
+   manager="timlt" 
    editor=""/>  
 
 
@@ -14,14 +14,39 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="tbd" 
-   ms.date="10/31/2016"
+   ms.date="12/01/2016"
    ms.author="raiye"
-   wacn.date="12/26/2016"/>  
+   wacn.date="01/03/2017"/>  
 
 
 # Azure 来宾 OS 
 
 下表显示了适用于 Azure 来宾 OS 的 Microsoft 安全响应中心 (MSRC) 更新。搜索本文以确定特定更新是否适用于使用的来宾 OS。引入这些更新的特定[系列][family-explain]始终会包含这些更新。
+
+## 11 月来宾 OS
+| 公告 ID | 上层知识库文章 | 漏洞描述 | 来宾 OS | 首次引入日期 |
+| --- | --- | --- | --- | --- |
+| MS16-129 |[3199057] |Microsoft Edge 的累积安全更新 |5\.3 |2016 年 11 月 8 日 |
+| MS16-130 |[3199172] |Microsoft Windows 的安全更新 |5\.3、4.38、3.45、2.57 |2016 年 11 月 8 日 |
+| MS16-131 |[3199151] |Microsoft Video Control 的安全更新 |5\.3、4.38、3.45、2.57 |2016 年 11 月 8 日 |
+| MS16-132 |[3199120] |Microsoft 组件的安全更新 |5\.3、4.38、3.45、2.57 |2016 年 11 月 8 日 |
+| MS16-134 |[3193706] |公用日志文件系统驱动程序的安全更新 |5\.3、4.38、3.45、2.57 |2016 年 11 月 8 日 |
+| MS16-135 |[3199135] |内核模式驱动程序的安全更新 |5\.3、4.38、3.45、2.57 |2016 年 11 月 8 日 |
+| MS16-137 |[3199173] |Windows 身份验证方法的安全更新 |5\.3、4.38、3.45、2.57 |2016 年 11 月 8 日 |
+| MS16-138 |[3199647] |Microsoft 虚拟硬盘驱动器的安全更新 |5\.3、4.38、3.45 |2016 年 11 月 8 日 |
+| MS16-139 |[3199720] |Windows 内核的安全更新 |2\.57 |2016 年 11 月 8 日 |
+| MS16-140 |[3193479] |引导管理器的安全更新 |5\.3、4.38、3.45 |2016 年 11 月 8 日 |
+| MS16-142 |[3198467] |Internet Explorer 的累积安全更新 |2\.57、4.38、5.3 |2016 年 11 月 8 日 |
+| 不适用 |[3192321] |土耳其结束了 DST 规则 |5\.3、4.38、3.45、2.57 |2016 年 11 月 8 日 |
+| 不适用 |[3185330] |2016 年 10 月 Windows 7 SP1 和 Windows Server 2008 R2 SP1 安全质量月度汇总更新 |2\.57 |2016 年 11 月 8 日 |
+| 不适用 |[3192403] |2016 年 10 月 Windows 7 SP1 和 Windows Server 2008 R2 SP1 质量月度汇总预览 |2\.57 |2016 年 11 月 8 日 |
+| 不适用 |[3177467] |2016 年 9 月 20 日 Windows 7 SP1 和 Windows Server 2008 R2 SP1 的服务堆栈更新 |2\.57 |2016 年 11 月 8 日 |
+| 不适用 |[3185332] |2016 年 10 月 Windows Server 2012 安全质量月度汇总更新 |3\.45 |2016 年 11 月 8 日 |
+| 不适用 |[3192406] |2016 年 10 月 Windows Server 2012 质量月度汇总预览 |3\.45 |2016 年 11 月 8 日 |
+| 不适用 |[3185331] |2016 年 10 月 Windows 8.1 和 Windows Server 2012 R2 安全质量月度汇总更新 |4\.38 |2016 年 11 月 8 日 |
+| 不适用 |[3192404] |2016 年 10 月 Windows 8.1 和 Windows Server 2012 R2 质量月度汇总预览 |4\.38 |2016 年 11 月 8 日 |
+| 不适用 |[3199986] |2016 年 10 月 27 日 Windows 10 版本 1607 的服务堆栈更新 |5\.3 |2016 年 11 月 8 日 |
+| 不适用 |[3197954] |2016 年 10 月 27 日 Windows 10 版本 1607 和 Windows Server 2016 的累积更新 |5\.3 |2016 年 11 月 8 日 |
 
 ## 10 月来宾 OS
 | 公告 ID | 上层知识库文章 | 漏洞描述 | 来宾 OS | 首次引入日期 |
@@ -354,6 +379,27 @@
 | 不适用 |[2999802] |在 Windows 中打印时，虚线变成实线 |4\.15、3.22、2.34 |2015 年 1 月 13 日 |
 | 不适用 |[2896881] |在 Windows 中登录期间使用 AddPrinterConnection VBScript 命令映射用户的打印机时，登录时间过长 |4\.15、3.22、2.34 |2015 年 1 月 13 日 |
 
+[3199057]: http://support.microsoft.com/zh-cn/kb/3199057
+[3199172]: http://support.microsoft.com/zh-cn/kb/3199172
+[3199151]: http://support.microsoft.com/zh-cn/kb/3199151
+[3193706]: http://support.microsoft.com/zh-cn/kb/3193706
+[3199120]: http://support.microsoft.com/zh-cn/kb/3199120
+[3199135]: http://support.microsoft.com/zh-cn/kb/3199135
+[3199173]: http://support.microsoft.com/zh-cn/kb/3199173
+[3199647]: http://support.microsoft.com/zh-cn/kb/3199647
+[3199720]: http://support.microsoft.com/zh-cn/kb/3199720
+[3193479]: http://support.microsoft.com/zh-cn/kb/3193479
+[3198467]: http://support.microsoft.com/zh-cn/kb/3198467
+[3192321]: http://support.microsoft.com/zh-cn/kb/3192321
+[3185330]: http://support.microsoft.com/zh-cn/kb/3185330
+[3192403]: http://support.microsoft.com/zh-cn/kb/3192403
+[3177467]: http://support.microsoft.com/zh-cn/kb/3177467
+[3185332]: http://support.microsoft.com/zh-cn/kb/3185332
+[3192406]: http://support.microsoft.com/zh-cn/kb/3192406
+[3185331]: http://support.microsoft.com/zh-cn/kb/3185331
+[3192404]: http://support.microsoft.com/zh-cn/kb/3192404
+[3199986]: http://support.microsoft.com/zh-cn/kb/3199986
+[3197954]: http://support.microsoft.com/zh-cn/kb/3197954
 [3192887]: http://support.microsoft.com/zh-cn/kb/3192887
 [3192884]: http://support.microsoft.com/zh-cn/kb/3192884
 [3192892]: http://support.microsoft.com/zh-cn/kb/3192892
@@ -628,4 +674,4 @@
 [family-explain]: /documentation/articles/cloud-services-guestos-update-matrix/#guest-os-family-version-and-release-explanation
  
 
-<!---HONumber=Mooncake_Quality_Review_1215_2016-->
+<!---HONumber=Mooncake_1226_2016-->

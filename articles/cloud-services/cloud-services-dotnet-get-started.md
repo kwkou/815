@@ -15,7 +15,7 @@
 	ms.devlang="dotnet"
 	ms.topic="hero-article"
 	ms.date="11/16/2016"
-	wacn.date="12/12/2016"
+	wacn.date="01/03/2017"
 	ms.author="adegeo"/>
 
 # Azure 云服务和 ASP.NET 入门
@@ -815,4 +815,4 @@ Contoso 广告应用程序有意保持入门教程的简单性。例如，它没
 * [如何管理云服务](/documentation/articles/cloud-services-how-to-manage/)
 * [Azure 存储空间](/documentation/services/storage/)
 
-<!---HONumber=Mooncake_1128_2016-->
+<!---HONumber=Mooncake_1226_2016-->

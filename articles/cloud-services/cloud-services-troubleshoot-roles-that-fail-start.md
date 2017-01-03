@@ -14,7 +14,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="tbd"
    ms.date="11/14/2016"
-   wacn.date="12/16/2016"
+   wacn.date="01/03/2017"
    ms.author="v-six" />
 
 # 对无法启动的云服务角色进行故障排除

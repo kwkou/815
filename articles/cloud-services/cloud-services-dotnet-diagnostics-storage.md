@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.workload="na"
 	ms.date="08/01/2016"
-	wacn.date="12/26/2016"
+	wacn.date="01/03/2017"
 	ms.author="robb" />
 
 # 在 Azure 存储中存储和查看诊断数据
@@ -25,11 +25,9 @@
 指定要在 ServiceConfiguration.cscfg 文件中使用的存储帐户。将帐户信息定义为配置设置中的连接字符串。下例显示在 Visual Studio 中针对新的云服务项目创建的默认连接字符串：
 
 
-```
-	<ConfigurationSettings>
-	   <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="UseDevelopmentStorage=true" />
-	</ConfigurationSettings>
-```
+		<ConfigurationSettings>
+		   <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="UseDevelopmentStorage=true" />
+		</ConfigurationSettings>
 
 可以更改此连接字符串，为 Azure 存储帐户提供帐户信息。
 
@@ -91,7 +89,6 @@
 - [Azure Management Studio](http://www.cerebrata.com/products/azure-management-studio/introduction) 随附 Azure 诊断管理器，可用于查看、下载和管理 Azure 中运行的应用程序收集的诊断数据。
 
 ## 后续步骤
-
 [使用 Azure 诊断跟踪云服务应用程序中的流](/documentation/articles/cloud-services-dotnet-diagnostics-trace-flow/)
 
-<!---HONumber=Mooncake_Quality_Review_1215_2016-->
+<!---HONumber=Mooncake_1226_2016-->

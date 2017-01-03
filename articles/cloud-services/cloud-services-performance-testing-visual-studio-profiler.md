@@ -15,8 +15,8 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="multiple" 
 	ms.topic="article" 
-	ms.date="07/30/2016" 
-	wacn.date="12/26/2016" 
+	ms.date="11/18/2016" 
+	wacn.date="01/03/2017" 
 	ms.author="tarcher"/>
 
 # 在 Azure 计算模拟器中使用 Visual Studio 探查器本地测试云服务的性能
