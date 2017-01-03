@@ -16,7 +16,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="10/18/2016"
-    wacn.date="12/29/2016"
+    wacn.date="01/03/2016"
     ms.author="renash" />  
 
 
@@ -161,7 +161,7 @@ Azure 导入/导出服务支持将数据复制到中国北部的 Azure 存储帐
 
 ###<a name="viewing-your-job-status"></a> 查看作业和驱动器状态
 
-你可以从 Azure 门户预览跟踪导入或导出作业的状态。导航到经典门户中的存储帐户，然后单击“导入/导出”选项卡。你的作业的列表将出现在该页上。你可以根据作业状态、作业名称、作业类型或跟踪号码筛选该列表。
+你可以从 Azure 门户预览跟踪导入或导出作业的状态。单击“导入/导出”选项卡。你的作业的列表将出现在该页上。你可以根据作业状态、作业名称、作业类型或跟踪号码筛选该列表。
 
 ![View Job State](./media/storage-import-export-service/jobstate.png)
 
