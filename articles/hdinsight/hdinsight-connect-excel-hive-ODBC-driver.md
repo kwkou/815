@@ -14,8 +14,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
-   ms.date="07/25/2016"
-   wacn.date="12/12/2016"
+   ms.date="10/19/2016"
+   wacn.date="12/30/2016"
    ms.author="jgao"/>
 
 # 使用 Microsoft Hive ODBC 驱动程序将 Excel 连接到 Hadoop

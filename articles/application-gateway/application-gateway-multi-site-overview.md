@@ -12,8 +12,8 @@
    ms.topic="hero-article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="10/04/2016"
-   wacn.date="11/21/2016"
+   ms.date="10/25/2016"
+   wacn.date="12/30/2016"
    ms.author="amsriva"/>
 
 # 应用程序网关的多站点托管功能

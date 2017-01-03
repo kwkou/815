@@ -13,8 +13,8 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="07/23/2016"
-	wacn.date="11/25/2016"
+	ms.date="10/28/2016"
+	wacn.date="12/30/2016"
 	ms.author="dariagrigoriu"/>
     
 # 连续部署到 Azure App Service

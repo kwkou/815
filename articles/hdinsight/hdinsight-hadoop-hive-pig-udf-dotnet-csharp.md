@@ -14,8 +14,8 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="dotnet"
 	ms.topic="article"
-	ms.date="09/27/2016"
-	wacn.date="12/16/2016"
+	ms.date="10/28/2016"
+	wacn.date="12/30/2016"
 	ms.author="larryfr"/>
 
 

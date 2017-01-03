@@ -13,8 +13,8 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="nodejs" 
 	ms.topic="article" 
-	ms.date="08/11/2016" 
-	wacn.date="09/30/2016"
+	ms.date="11/01/2016" 
+	wacn.date="12/30/2016"
 	ms.author="robmcm" />
 
 #如何将 io.js 与 Azure App Service Web 应用配合使用

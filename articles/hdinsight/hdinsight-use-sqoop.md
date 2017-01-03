@@ -14,8 +14,8 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/02/2016"
-	wacn.date="12/12/2016"
+	ms.date="11/15/2016"
+	wacn.date="12/30/2016"
 	ms.author="jgao"/>
 
 #将 Sqoop 与 HDInsight 中的 Hadoop 配合使用

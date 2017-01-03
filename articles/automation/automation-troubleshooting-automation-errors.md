@@ -14,8 +14,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="07/06/2016"
-   wacn.date="11/07/2016"
+   ms.date="11/21/2016"
+   wacn.date="12/30/2016"
    ms.author="sngun; v-reagie"/>
 
 # 常见 Azure 自动化错误的错误处理提示

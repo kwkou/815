@@ -14,8 +14,8 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="07/25/2016"
-	wacn.date="12/12/2016"
+	ms.date="10/21/2016"
+	wacn.date="12/30/2016"
 	ms.author="jgao"/>
 
 #在基于 Windows 的 HDInsight 中运行 Hadoop MapReduce 示例

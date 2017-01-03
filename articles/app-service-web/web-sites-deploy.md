@@ -13,8 +13,8 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/06/2016"
-	wacn.date="12/12/2016"
+	ms.date="10/19/2016"
+	wacn.date="12/30/2016"
 	ms.author="cephalin;dariac"/>  
     
 # 将应用部署到 Azure App Service

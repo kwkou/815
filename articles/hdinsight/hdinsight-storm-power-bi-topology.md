@@ -14,8 +14,8 @@
  ms.topic="article"
  ms.tgt_pltfrm="na"
  ms.workload="big-data"
- ms.date="08/16/2016"
- wacn.date="12/16/2016"
+ ms.date="10/27/2016"
+ wacn.date="12/30/2016"
  ms.author="larryfr"/>
 
 # 使用 Power BI 直观显示 Apache Storm 拓扑中的数据

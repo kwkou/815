@@ -13,8 +13,8 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="nodejs"
 	ms.topic="hero-article"
-	ms.date="08/11/2016"
-	wacn.date="09/26/2016"
+	ms.date="11/01/2016"
+	wacn.date="12/30/2016"
 	ms.author="robmcm"/>
 
 # 在 Azure App Service 中创建 Node.js Web 应用
