@@ -9,9 +9,9 @@
 	keywords=""/>  
 
 <tags
-	ms.service: iot-hub"
-	ms.date: 10/21/2016"
-	wacn.date="12/19/2016"/>
+	ms.service="iot-hub"
+	ms.date="11/28/2016"
+	wacn.date="12/26/2016"/>
 
 # 运行示例应用程序，以便发送从设备到云的消息
 ## 执行的操作

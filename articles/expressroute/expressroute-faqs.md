@@ -12,8 +12,8 @@
    ms.topic="article" 
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="09/19/2016"
-   wacn.date="10/31/2016"
+   ms.date="11/21/2016"
+   wacn.date="12/26/2016"
    ms.author="cherylmc"/>
 
 # ExpressRoute 常见问题
