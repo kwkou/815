@@ -15,7 +15,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="09/15/2016"
-    wacn.date="12/26/2016"
+    wacn.date="01/03/2017"
     ms.author="tomfitz" />  
 
 
@@ -69,7 +69,7 @@
     ![添加资源](./media/resource-group-template-deploy-portal/add-resource.png)  
 
 
-## 从自定义模板部署资源
+## <a name="deploy-resources-from-custom-template"></a> 从自定义模板部署资源
 如果想要执行部署，但不使用应用商店中的任何模板，可以创建自定义模板来针对你的解决方案定义基础结构。若要了解有关创建模板的信息，请参阅[创作 Azure 资源管理器模板](/documentation/articles/resource-group-authoring-templates/)。
 
 1. 若要通过门户部署自定义模板，请选择“新建”，并开始搜索“模板部署”，直至可以从选项中选择它。

@@ -15,7 +15,7 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="08/23/2016" 
-	wacn.date="10/18/2016" 
+	wacn.date="01/03/2017" 
 	ms.author="anhoh"/>  
 
 
@@ -23,7 +23,7 @@
 
 了解如何使用标准 MongoDB 连接字符串 URI 格式连接到具有 MongoDB 协议支持的 Azure DocumentDB 帐户。
 
-## 获取帐户的连接字符串信息
+## <a name="a-idgetcustomconnectiona-get-the-mongodb-connection-string-to-customize"></a> 获取帐户的连接字符串信息
 
 1. 在新窗口中，登录到 [Azure 门户](https://portal.azure.cn)。
 2. 在“帐户”边栏选项卡的**左导航**栏中，单击“连接字符串”。若要导航到“帐户”边栏选项卡，请在跳转栏上单击“更多服务”，单击“DocumentDB (NoSQL)”，然后选择具有 MongoDB 协议支持的 DocumentDB 帐户。
@@ -35,7 +35,7 @@
 
 	![连接字符串边栏选项卡的屏幕截图](./media/documentdb-connect-mongodb-account/ConnectionStringBlade.png)
 
-## 连接字符串要求
+## <a name="connection-string-requirements"></a> 连接字符串要求
 
 请务必注意，DocumentDB 支持标准 MongoDB 连接字符串 URI 格式，但要满足几个具体的要求：DocumentDB 帐户需要通过 SSL 进行身份验证和安全通信。因此，连接字符串格式为：
 

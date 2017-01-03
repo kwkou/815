@@ -15,7 +15,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="na"
     ms.date="11/16/2016"
-    wacn.date="12/26/2016"
+    wacn.date="01/03/2017"
     ms.author="tomfitz" />  
 
 
@@ -46,7 +46,7 @@
 
 [AZURE.INCLUDE [resource-manager-deployments](../../includes/resource-manager-deployments.md)]
 
-## 部署
+## <a name="deploy"></a> 部署
 如果你以前没有对资源管理器使用过 Azure CLI，请参阅[将适用于 Mac、Linux 和 Windows 的 Azure CLI 与 Azure 资源管理配合使用](/documentation/articles/xplat-cli-azure-resource-manager/)。
 
 1. 登录到你的 Azure 帐户。提供凭据后，该命令将返回你的登录结果。

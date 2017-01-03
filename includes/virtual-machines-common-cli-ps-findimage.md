@@ -1,6 +1,6 @@
 
 
-## Azure CLI
+## <a name="azure-cli"></a> Azure CLI
 
 > [AZURE.NOTE] 本文介绍如何使用最近安装的 Azure CLI 或 Azure PowerShell 来导航和选择虚拟机映像。首先，你必须切换到资源管理器模式。使用 Azure CLI 时，键入 `azure config mode arm` 即可进入该模式。
 
@@ -114,7 +114,7 @@
 
 现在，你可以确切地选择想要使用的映像。若要使用刚刚找到的 URN 信息快速创建虚拟机，或要使用包含该 URN 信息的模板，请参阅[将适用于 Mac、Linux 和 Windows 的 Azure CLI 与 Azure Resource Manager 配合使用](/documentation/articles/xplat-cli-azure-resource-manager/)。
 
-## PowerShell
+## <a name="powershell"></a> PowerShell
 
 > [AZURE.NOTE] 下载并配置[最新的 Azure PowerShell](/documentation/articles/powershell-install-configure/)。如果使用低于 1.0 版本的 Azure PowerShell 模块，则仍使用以下命令，但必须先执行 `Switch-AzureMode AzureResourceManager`。
 

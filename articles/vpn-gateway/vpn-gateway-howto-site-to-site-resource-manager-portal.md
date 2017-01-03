@@ -16,7 +16,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="infrastructure-services"
     ms.date="10/14/2016"
-    wacn.date="12/26/2016"
+    wacn.date="01/03/2017"
     ms.author="cherylmc" />  
 
 
@@ -51,22 +51,22 @@
 ### <a name="values"></a>本练习的示例配置值
 练习这些步骤时，可以使用示例配置值：
 
-* **VNet 名称：**TestVNet1
-* **地址空间：**10.11.0.0/16 和 10.12.0.0/16
+* **VNet 名称**：TestVNet1
+* **地址空间**：10.11.0.0/16 和 10.12.0.0/16
 * **子网：**
   * FrontEnd：10.11.0.0/24
   * BackEnd：10.12.0.0/24
   * GatewaySubnet：10.12.255.0/27
-* **资源组：**TestRG1
-* **位置：**中国东部
-* **DNS 服务器：**8.8.8.8
-* **网关名称：**VNet1GW
-* **公共 IP：**VNet1GWIP
-* **VPN 类型：**基于路由
-* **连接类型：**站点到站点 (IPsec)
-* **网关类型：**VPN
-* **本地网络网关名称：**Site2
-* **连接名称：**VNet1toSite2
+* **资源组**：TestRG1
+* **位置**：中国东部
+* **DNS 服务器**：8.8.8.8
+* **网关名称**：VNet1GW
+* **公共 IP**：VNet1GWIP
+* **VPN 类型**：基于路由
+* **连接类型**：站点到站点 (IPsec)
+* **网关类型**：VPN
+* **本地网络网关名称**：Site2
+* **连接名称**：VNet1toSite2
 
 ## <a name="CreatVNet"></a>1.创建虚拟网络
 如果已有一个 VNet，请检查其设置是否与 VPN 网关设计兼容。请特别留意可能与其他网络重叠的任何子网。如果有重叠的子网，连接将无法正常工作。如果为 VNet 配置了正确的设置，可以开始执行[指定 DNS 服务器](#dns)部分中的步骤。
@@ -122,7 +122,7 @@
 [AZURE.INCLUDE [vpn-gateway-verify-connection-rm](../../includes/vpn-gateway-verify-connection-rm-include.md)]
 
 ## 后续步骤
-* 连接完成后，即可将虚拟机添加到虚拟网络。
-* 有关 BGP 的信息，请参阅 [BGP 概述](/documentation/articles/vpn-gateway-bgp-overview/)和[如何配置 BGP](/documentation/articles/vpn-gateway-bgp-resource-manager-ps/)。
+*  连接完成后，即可将虚拟机添加到虚拟网络。有关详细信息，请参阅[虚拟机](/documentation/services/virtual-machines/)。
+*  有关 BGP 的信息，请参阅 [BGP 概述](/documentation/articles/vpn-gateway-bgp-overview/)和[如何配置 BGP](/documentation/articles/vpn-gateway-bgp-resource-manager-ps/)。
 
-<!---HONumber=Mooncake_1219_2016-->
+<!---HONumber=Mooncake_1226_2016-->
