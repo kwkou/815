@@ -16,6 +16,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="data-management"
    ms.date="10/04/2016"
+   wacn.date="10/31/2016"
    ms.author="rick.byham@microsoft.com"/>
 
 # SQL 数据库和 SQL 数据仓库针对 Azure AD MFA 的 SSMS 支持
