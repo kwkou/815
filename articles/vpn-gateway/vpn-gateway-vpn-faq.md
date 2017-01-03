@@ -14,7 +14,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
    ms.date="03/10/2016"
-   wacn.date="10/17/2016"
+   wacn.date="01/03/2017"
    ms.author="yushwang" />  
 
 
@@ -282,4 +282,4 @@ VPN 网关基本上是一个多宿主设备，其中一个 NIC 进入客户专�
 请在[虚拟网络常见问题](/documentation/articles/virtual-networks-faq/)中查看更多虚拟网络信息。
  
 
-<!---HONumber=Mooncake_1010_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

@@ -14,7 +14,7 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="09/15/2016" 
-	wacn.date="11/28/2016" 
+	wacn.date="01/03/2017" 
 	ms.author="sdanie"/>
 
 # 如何使用 Azure 命令行界面 (Azure CLI) 创建和管理 Azure Redis 缓存
@@ -272,4 +272,4 @@ Azure CLI 是从任何平台管理 Azure 基础结构的好办法。本文演示
 	help:
 	help:    Current Mode: arm (Azure Resource Management)
 
-<!---HONumber=Mooncake_0104_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

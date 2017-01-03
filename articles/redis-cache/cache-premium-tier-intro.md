@@ -15,7 +15,7 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="09/15/2016" 
-	wacn.date="11/21/2016" 
+	wacn.date="01/03/2017" 
 	ms.author="sdanie"/>  
 
 
@@ -92,4 +92,4 @@ Azure Redis 缓存是一种分布式托管缓存，可通过提供对数据的�
 -	[如何在 Azure Redis 缓存中导入和导出数据](/documentation/articles/cache-how-to-import-export-data/)
 -	[如何管理 Azure Redis 缓存](/documentation/articles/cache-administration/)
 
-<!---HONumber=Mooncake_1114_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

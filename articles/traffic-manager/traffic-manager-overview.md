@@ -15,7 +15,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="infrastructure-services"
     ms.date="10/11/2016"
-    wacn.date="11/07/2016"
+    wacn.date="01/03/2017"
     ms.author="sewhee"
 />  
 
@@ -62,4 +62,4 @@
 
 - [创建流量管理器配置文件](/documentation/articles/traffic-manager-manage-profiles/)。
 
-<!---HONumber=Mooncake_1031_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

@@ -13,7 +13,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services" 
    ms.date="11/16/2016" 
-   wacn.date="12/30/2016"
+   wacn.date="01/03/2017"
    ms.author="gwallace"/>
 
 # 创建具有内部负载均衡器 (ILB) 的应用程序网关
@@ -55,7 +55,7 @@
 
 **若要验证**是否已创建网关，可以使用 `Get-AzureApplicationGateway` cmdlet。
 
-在此示例中， *Description*、 *InstanceCount* 和 *GatewaySize* 是可选参数。*InstanceCount* 的默认值为 2，最大值为 10。*GatewaySize* 的默认值为 Medium。其他可用值为 Small 和 Large。*Vip* 和 *DnsName* 显示为空白，因为网关尚未启动。这些值将在网关进入运行状态后立即创建。
+在此示例中，*Description*、*InstanceCount* 和 *GatewaySize* 是可选参数。*InstanceCount* 的默认值为 2，最大值为 10。*GatewaySize* 的默认值为 Medium。其他可用值为 Small 和 Large。*Vip* 和 *DnsName* 显示为空白，因为网关尚未启动。这些值将在网关进入运行状态后立即创建。
 
 	PS C:\> Get-AzureApplicationGateway AppGwTest
 
@@ -83,10 +83,9 @@
 - **后端服务器池设置：**每个池具有端口、协议和基于 Cookie 的相关性等设置。这些设置绑定到池，并会应用到池中的所有服务器。
 - **前端端口：**此端口是应用程序网关上打开的公共端口。流量将抵达此端口，然后重定向到后端服务器之一。
 - **侦听器：**侦听器具有前端端口、协议（Http 或 Https，区分大小写）和 SSL 证书名称（如果要配置 SSL 卸载）。 
-- **规则：**规则将会绑定侦听器和后端服务器池，并定义当流量抵达特定侦听器时应定向到的后端服务器池。目前仅支持 *基本* 规则。 *基本* 规则是一种轮循负载分发模式。
+- **规则：**规则将会绑定侦听器和后端服务器池，并定义当流量抵达特定侦听器时应定向到的后端服务器池。目前仅支持*基本*规则。*基本*规则是一种轮循负载分发模式。
 
-可以通过创建配置对象或使用配置 XML 文件来构造配置。
-若要使用配置 XML 文件构造配置，请使用以下示例。
+可以通过创建配置对象或使用配置 XML 文件来构造配置。若要使用配置 XML 文件构造配置，请使用以下示例。
 
 
 
@@ -213,4 +212,4 @@
 - [Azure 负载均衡器](/documentation/services/load-balancer/)
 - [Azure 流量管理器](/documentation/services/traffic-manager/)
 
-<!---HONumber=Mooncake_0307_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

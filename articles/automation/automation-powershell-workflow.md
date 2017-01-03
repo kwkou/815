@@ -144,7 +144,7 @@ InlineScript 使用如下所示的语法。
 有关使用 InlineScript 的进一步信息，请参阅[在工作流中运行 Windows PowerShell 命令](http://technet.microsoft.com/zh-cn/library/jj574197.aspx)和 [about\_InlineScript](http://technet.microsoft.com/zh-cn/library/jj649082.aspx)。
 
 
-## <a name="parallel-processing" id="parallel-execution"></a> 并行处理
+##<a name="parallel-processing" id="parallel-execution"></a> 并行处理
 
 Windows PowerShell 工作流的一个优点是能够与典型脚本一样并行而不是按顺序执行一组命令。
 
@@ -236,7 +236,7 @@ Windows PowerShell 工作流的一个优点是能够与典型脚本一样并行�
 		Write-Output "All files copied."
 	}
 
-由于在调用 [Suspend-Workflow](https://technet.microsoft.com/zh-cn/library/jj733586.aspx) 活动或最后一个检查点之后，将不保留用户名凭据，你需要在调用 **Suspend-Workflow** 或检查点后将凭据设置为 null，然后再从资产存储重新检索凭据。否则，可能会收到以下错误消息：_无法继续执行工作流作业，因为无法完整保存持久性数据或保存的持久性数据已损坏。你必须重新启动工作流。_
+由于在调用 [Suspend-Workflow](https://technet.microsoft.com/zh-cn/library/jj733586.aspx) 活动或最后一个检查点之后，将不保留用户名凭据，你需要在调用 **Suspend-Workflow** 或检查点后将凭据设置为 null，然后再从资产存储重新检索凭据。否则，可能会收到以下错误消息：*无法继续执行工作流作业，因为无法完整保存持久性数据或保存的持久性数据已损坏。你必须重新启动工作流。*
 
 下面的相同代码演示如何在 PowerShell 工作流 Runbook 中处理此问题。
 
@@ -271,6 +271,6 @@ Windows PowerShell 工作流的一个优点是能够与典型脚本一样并行�
 
 ## 后续步骤
 
-- 若要开始使用 PowerShell 工作流 Runbook，请参阅 [My first PowerShell workflow runbook（我的第一个 PowerShell 工作流 Runbook）](/documentation/articles/automation-first-runbook-textual/)
+- 若要开始使用 PowerShell 工作流 Runbook，请参阅 [My first PowerShell workflow runbook](/documentation/articles/automation-first-runbook-textual/)（我的第一个 PowerShell 工作流 Runbook）
 
-<!---HONumber=Mooncake_0725_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

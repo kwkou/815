@@ -15,7 +15,7 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="10/18/2016" 
-	wacn.date="12/30/2016" 
+	wacn.date="01/03/2017" 
 	ms.author="sdanie"/>  
 
 
@@ -331,8 +331,7 @@ Redis 服务器不能现成地支持 SSL，但 Azure Redis 缓存可提供此支
 
     redis-benchmark.exe -h **yourcache**.redis.cache.chinacloudapi.cn -a **yourAccesskey** -t SET -n 1000000 -d 1024 -P 50
 	
--	使用 1 k 有效负载测试管道 GET 请求。
-	注意：首先运行上面显示的 SET 测试以填充缓存
+-	使用 1 k 有效负载测试管道 GET 请求。注意：首先运行上面显示的 SET 测试以填充缓存
 	
     redis-benchmark.exe -h **yourcache**.redis.cache.chinacloudapi.cn -a **yourAccesskey** -t GET -n 1000000 -d 1024 -P 50
 
@@ -466,4 +465,4 @@ Redis 取得成功的另一个重要方面是围绕它构建了健康而充满�
 
 [“minIoThreads”配置设置]: https://msdn.microsoft.com/zh-cn/library/vstudio/7w2sway1(v=vs.100).aspx
 
-<!---HONumber=Mooncake_0822_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

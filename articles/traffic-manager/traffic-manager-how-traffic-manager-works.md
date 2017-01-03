@@ -15,7 +15,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="infrastructure-services"
     ms.date="10/11/2016"
-    wacn.date="11/14/2016"
+    wacn.date="01/03/2017"
     ms.author="sewhee"
 />  
 
@@ -126,4 +126,4 @@ Contoso Corp 开发了一个新的合作伙伴门户。此门户的 URL 为 http
 [1]: ./media/traffic-manager-how-traffic-manager-works/dns-configuration.png
 [2]: ./media/traffic-manager-how-traffic-manager-works/flow.png
 
-<!---HONumber=Mooncake_1031_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

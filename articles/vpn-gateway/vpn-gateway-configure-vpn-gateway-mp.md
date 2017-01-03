@@ -15,7 +15,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
    ms.date="08/11/2016"
-   wacn.date="08/29/2016"
+   wacn.date="01/03/2017"
    ms.author="cherylmc" />
 
 # 配置经典部署模型的 VPN 网关
@@ -170,4 +170,4 @@
 
  
 
-<!---HONumber=Mooncake_0822_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

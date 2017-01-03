@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="cache-redis"
 	ms.workload="tbd"
 	ms.date="10/25/2016"
-	wacn.date="12/30/2016"
+	wacn.date="01/03/2017"
 	ms.author="sdanie"/>
 
 # 如何将 Azure Redis 缓存与 Node.js 配合使用
@@ -87,4 +87,4 @@ Azure Redis 缓存允许访问 Microsoft 管理的、专用安全的 Redis 缓�
 - [启用缓存诊断](/documentation/articles/cache-how-to-monitor/#enable-cache-diagnostics)，以便可以[监视](/documentation/articles/cache-how-to-monitor/)缓存的运行状况。
 - 阅读官方 [Redis 文档](http://redis.io/documentation)。
 
-<!---HONumber=Mooncake_1010_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

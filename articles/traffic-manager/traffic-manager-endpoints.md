@@ -13,7 +13,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
    ms.date="03/17/2016"
-   wacn.date="04/26/2016"
+   wacn.date="01/03/2017"
    ms.author="sewhee" />
 
 # 添加、禁用、启用或删除终结点
@@ -76,4 +76,4 @@
 
 [流量管理器上的操作（REST API 参考）](https://msdn.microsoft.com/zh-CN/library/hh758255.aspx)
 
-<!---HONumber=Mooncake_1221_2015-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

@@ -14,7 +14,7 @@
 	ms.devlang="na"
 	ms.topic="get-started-article" 
 	ms.date="05/10/2016" 
-	wacn.date="08/11/2016"
+	wacn.date="01/03/2017"
 	ms.author="magoedte;bwren"/>
 
 # Azure 自动化概述
@@ -31,8 +31,7 @@ Runbook 是 Azure 自动化中执行某些自动化过程的一组任务。它�
 
 ## Runbook 可以自动化哪些任务？
 
-在 Azure 自动化中的 Runbook 均基于 Windows PowerShell 工作流，因此它们能够执行 PowerShell 可以完成的任何工作。如果应用程序或服务具有一个 API，Runbook 可以使用它。如果你有一个用于该应用程序的 PowerShell 模块，可以将该模块加载到 Azure 自动化中，并在 Runbook 中包括这些 cmdlet。Azure 自动化 Runbook 在 Azure 云中运行，因此可以访问任何云资源或者那些可从云中访问的外部资源。
-
+Azure 自动化中的 Runbook 基于 Windows PowerShell 工作流，因此它们能够执行 PowerShell 可以完成的任何工作。如果应用程序或服务具有一个 API，Runbook 可以使用它。如果你有一个用于该应用程序的 PowerShell 模块，可以将该模块加载到 Azure 自动化中，并在 Runbook 中包括这些 cmdlet。Azure 自动化 Runbook 在 Azure 云中运行，因此可以访问任何云资源或者那些可从云中访问的外部资源。
 
 ## 从社区获取 Runbook
 
@@ -77,9 +76,8 @@ Runbook 是 Azure 自动化中执行某些自动化过程的一组任务。它�
 * [自动化论坛](https://social.msdn.microsoft.com/Forums/azure/zh-cn/home?forum=azureautomation)允许您提出有关 Azure 自动化的问题，并将由 Microsoft 和自动化社区提供解答。
 * [Azure 自动化 Cmdlet](https://msdn.microsoft.com/zh-cn/library/dn690262.aspx) 提供有关管理任务自动化的信息。它包含的 cmdlet 可用于管理自动化帐户、资产、Runbook。
 
-
 ## 我是否可以提供反馈？ 
 
 **欢迎提供反馈！** 如果您正在寻找 Azure 自动化 Runbook 解决方案或集成模块，请在脚本中心发布脚本请求。如果您有关于 Azure 自动化的反馈或功能请求，请将其发布在[用户之声](/product-feedback)。谢谢！
 
-<!---HONumber=Mooncake_0725_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

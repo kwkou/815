@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.workload="infrastructure-services"
 	ms.date="07/06/2016"
-	wacn.date="10/31/2016"
+	wacn.date="01/03/2017"
 	ms.author="bwren" />  
 
 
@@ -58,7 +58,7 @@ Runbook 需要以下资产，你必须创建这些资产并在其中填充适当
 
 ## <a id="using-the-scenario" name="using-the-solution"></a> 使用方案
 
-### 参数
+### Parameters
 
 每个 Runbook 具有以下参数。必需参数必须提供值，其他参数则可根据要求选择性地提供值。
 
@@ -107,7 +107,7 @@ Runbook 需要以下资产，你必须创建这些资产并在其中填充适当
 
 下面是此方案中 Runbook 的明细。你可以使用此信息来自定义 Runbook，或只是从中学习如何创作自己的自动化方案。
 
-### 参数
+### Parameters
 
     param (
         [Parameter(Mandatory=$false)] 
@@ -137,8 +137,7 @@ Runbook 需要以下资产，你必须创建这些资产并在其中填充适当
 	$SubId = Get-AutomationVariable -Name $AzureSubscriptionIdAssetName
     $null = Select-AzureSubscription -SubscriptionId $SubId -ErrorAction Stop
 
-后续行设置将要用于 Runbook 的剩余部分的凭据和 Azure 订阅。
-首先，我们使用 **Get-AutomationPSCredential** 来获取用于存储凭据的资产，这些凭据具有相应的访问权限，可用于启动和停止 Azure 订阅中的虚拟机。**Add-AzureAccount -Environment AzureChinaCloud** 然后就会使用此资产来设置凭据。该输出已分配给一个虚拟变量，因此不会包括在 Runbook 输出中。
+后续行设置将要用于 Runbook 的剩余部分的凭据和 Azure 订阅。首先，我们使用 **Get-AutomationPSCredential** 来获取用于存储凭据的资产，这些凭据具有相应的访问权限，可用于启动和停止 Azure 订阅中的虚拟机。**Add-AzureAccount -Environment AzureChinaCloud** 然后就会使用此资产来设置凭据。该输出已分配给一个虚拟变量，因此不会包括在 Runbook 输出中。
 
 然后会使用 **Get-AutomationVariable** 来检索包含订阅 ID 的变量资产，并使用 **Select-AzureSubscription** 来设置订阅。
 
@@ -193,4 +192,4 @@ Runbook 需要以下资产，你必须创建这些资产并在其中填充适当
 - 若要了解有关使用子 Runbook 的详细信息，请参阅 [Child runbooks in Azure Automation](/documentation/articles/automation-child-runbooks/)（Azure 自动化中的子 Runbook）
 - 若要详细了解执行 Runbook 期间的输出消息和日志记录以帮助进行故障排除，请参阅 [Runbook output and messages in Azure Automation](/documentation/articles/automation-runbook-output-and-messages/)（Azure 自动化中的 Runbook 输出和消息）
 
-<!---HONumber=Mooncake_1024_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

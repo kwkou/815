@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="cache-redis"
 	ms.workload="tbd"
 	ms.date="08/24/2016"
-	wacn.date="11/25/2016"
+	wacn.date="01/03/2017"
 	ms.author="sdanie"/>
 
 # 如何将 Azure Redis 缓存与 Java 配合使用
@@ -82,4 +82,4 @@ Azure Redis 缓存可让你访问 Azure.cn 管理的、专用安全的 Redis 缓
 - [启用缓存诊断](/documentation/articles/cache-how-to-monitor/#EnableDiagnostics)，以便可以[监视](/documentation/articles/cache-how-to-monitor/)缓存的运行状况。
 - 阅读官方 [Redis 文档](http://redis.io/documentation)。
 
-<!---HONumber=Mooncake_0829_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

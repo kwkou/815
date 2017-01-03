@@ -15,7 +15,7 @@
 	ms.devlang="na" 
 	ms.topic="hero-article" 
 	ms.date="10/11/2016" 
-	wacn.date="11/25/2016" 
+	wacn.date="01/03/2017" 
 	ms.author="sdanie"/>
 
 # 如何使用 Redis 缓存创建 Web 应用
@@ -873,4 +873,4 @@
 [cache-delete-resource-group]: ./media/cache-web-app-howto/cache-delete-resource-group.png
 [cache-delete-confirm]: ./media/cache-web-app-howto/cache-delete-confirm.png
 
-<!---HONumber=Mooncake_1114_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

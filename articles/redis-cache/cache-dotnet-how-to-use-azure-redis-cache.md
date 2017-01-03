@@ -14,7 +14,7 @@
 	ms.devlang="dotnet" 
 	ms.topic="hero-article" 
 	ms.date="08/25/2016" 
-	wacn.date="11/25/2016" 
+	wacn.date="01/03/2017" 
 	ms.author="sdanie"/>
 
 # 如何使用 Azure Redis Cache
@@ -278,4 +278,4 @@ Azure Redis 缓存可以缓存 .NET 对象以及基元数据类型，但在缓�
 
 [应用程序字符串和连接字符串的工作原理]: http://azure.microsoft.com/blog/2013/07/17/windows-azure-web-sites-how-application-strings-and-connection-strings-work/
 
-<!---HONumber=Mooncake_0822_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

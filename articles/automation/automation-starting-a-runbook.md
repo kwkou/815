@@ -14,7 +14,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
    ms.date="10/08/2016"
-   wacn.date="11/21/2016"
+   wacn.date="01/03/2017"
    ms.author="magoedte;bwren"/>  
 
 
@@ -79,7 +79,7 @@ Azure 自动化 Web 服务将为使用特定数据类型的参数提供特殊功
 
 ### 命名值
 
-如果参数的数据类型为 [object]，则可以使用以下 JSON 格式向它发送命名值列表： *{Name1:'Value1', Name2:'Value2', Name3:'Value3'}* 。这些值必须使用简单类型。Runbook 将以 [PSCustomObject](https://msdn.microsoft.com/zh-cn/library/system.management.automation.pscustomobject%28v=vs.85%29.aspx) 的形式接收参数，该对象的属性对应于每个命名值。
+如果参数的数据类型为 [object]，则可以使用以下 JSON 格式向它发送命名值列表：*{Name1:'Value1', Name2:'Value2', Name3:'Value3'}*。这些值必须使用简单类型。Runbook 将以 [PSCustomObject](https://msdn.microsoft.com/zh-cn/library/system.management.automation.pscustomobject%28v=vs.85%29.aspx) 的形式接收参数，该对象的属性对应于每个命名值。
 
 请考虑以下接受名为 user 的参数的测试 Runbook。
 
@@ -110,7 +110,7 @@ Azure 自动化 Web 服务将为使用特定数据类型的参数提供特殊功
 
 ### 数组
 
-如果参数是数组（如 array 或 string），则你可以使用以下 JSON 格式向它发送值列表： *[Value1,Value2,Value3]* 。这些值必须使用简单类型。
+如果参数是数组（如 array 或 string），则你可以使用以下 JSON 格式向它发送值列表：*[Value1,Value2,Value3]*。这些值必须使用简单类型。
 
 请考虑以下接受名为 *user* 的参数的测试 Runbook。
 
@@ -156,7 +156,7 @@ Azure 自动化 Web 服务将为使用特定数据类型的参数提供特殊功
 
 	My Credential
 
-假设凭据中的用户名为 *jsmith* ，则会导致生成以下输出。
+假设凭据中的用户名为 *jsmith*，则会导致生成以下输出。
 
 	jsmith
 
@@ -164,4 +164,4 @@ Azure 自动化 Web 服务将为使用特定数据类型的参数提供特殊功
 
 -	若要详细了解如何创建模块化 Runbook，以供其他 Runbook 用于特定或常用函数，请参阅[子 Runbook](/documentation/articles/automation-child-runbooks/)。
 
-<!---HONumber=Mooncake_1010_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

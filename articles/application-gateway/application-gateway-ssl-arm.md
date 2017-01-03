@@ -15,7 +15,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="infrastructure-services"
     ms.date="11/16/2016"
-    wacn.date="12/05/2016"
+    wacn.date="01/03/2017"
     ms.author="gwallace" />
 
 # 使用 Azure Resource Manager 配置应用程序网关以进行 SSL 卸载
@@ -38,7 +38,7 @@
 * **后端服务器池设置：**每个池都有一些设置，例如端口、协议和基于 Cookie 的关联性。这些设置绑定到池，并会应用到池中的所有服务器。
 * **前端端口：**此端口是应用程序网关上打开的公共端口。流量将抵达此端口，然后重定向到后端服务器之一。
 * **侦听器：**侦听器具有前端端口、协议（Http 或 Https，这些设置区分大小写）和 SSL 证书名称（如果要配置 SSL 卸载）。
-* **规则：**规则将会绑定侦听器和后端服务器池，并定义当流量抵达特定侦听器时应定向到的后端服务器池。目前仅支持 *基本* 规则。*基本* 规则是一种轮循负载分发模式。
+* **规则：**规则将会绑定侦听器和后端服务器池，并定义当流量抵达特定侦听器时应定向到的后端服务器池。目前仅支持*基本*规则。*基本*规则是一种轮循负载分发模式。
 
 **其他配置说明**
 
@@ -217,11 +217,11 @@ Azure 资源管理器要求所有资源组指定一个位置。此设置用作�
 
 ## 后续步骤
 
-如果要将应用程序网关配置为与内部负载均衡器 (ILB) 配合使用，请参阅 [Create an application gateway with an internal load balancer (ILB)（创建具有内部负载均衡器 (ILB) 的应用程序网关）](/documentation/articles/application-gateway-ilb/)。
+如果要将应用程序网关配置为与内部负载均衡器 (ILB) 配合使用，请参阅 [Create an application gateway with an internal load balancer (ILB)](/documentation/articles/application-gateway-ilb/)（创建具有内部负载均衡器 (ILB) 的应用程序网关）。
 
 如需负载均衡选项的其他常规信息，请参阅：
 
 * [Azure Load Balancer](/documentation/services/load-balancer/)
 * [Azure 流量管理器](/documentation/services/traffic-manager/)
 
-<!---HONumber=Mooncake_1128_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->
