@@ -8,7 +8,7 @@
     tags="azure-resource-manager" />  
 
 <tags
-    ms.assetid="ms.service: virtual-network"
+    ms.service="virtual-network"
     ms.devlang="na"
     ms.topic="article"
     ms.tgt_pltfrm="na"

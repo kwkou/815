@@ -208,6 +208,6 @@ VPN 客户端包中包含用于配置 Windows 内置 VPN 客户端软件的信�
 可以在“点到站点配置”边栏选项卡上管理已吊销客户端证书的列表。此边栏选项卡用于[上载受信任的根证书](#uploadfile)。
 
 ## 后续步骤
-连接完成后，即可将虚拟机添加到虚拟网络。有关详细信息，请参阅[虚拟机](https://docs.microsoft.com/azure/#pivot=services&panel=Compute)。
+连接完成后，即可将虚拟机添加到虚拟网络。有关详细信息，请参阅[虚拟机](/documentation/services/virtual-machines/)。
 
 <!---HONumber=Mooncake_1219_2016-->

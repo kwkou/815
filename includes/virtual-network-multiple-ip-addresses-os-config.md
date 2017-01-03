@@ -28,16 +28,16 @@
 
 3. 更新网络接口（假设为“eth0”）的配置文件。
 
-	* 保留 dhcp 的现有行项。主 IP 地址会保留之前的配置。
-	* 使用以下命令添加其他静态 IP 地址的配置：
+    * 保留 dhcp 的现有行项。主 IP 地址会保留之前的配置。
+    * 使用以下命令添加其他静态 IP 地址的配置：
 
             cd /etc/network/interfaces.d/
             ls
 
-应会看到一个 .cfg 文件。
+    应会看到一个 .cfg 文件。
 4. 打开该文件：vi *文件名*。
 
-	该文件的末尾应会显示以下命令行：
+    该文件的末尾应会显示以下命令行：
 
         auto eth0
         iface eth0 inet dhcp
@@ -55,9 +55,9 @@
 
         sudo ifdown eth0 && sudo ifup eth0
 
-> [AZURE.IMPORTANT]
-	> 如果使用远程连接，请在同一行中同时运行 ifdown 和 ifup。
-	>
+    > [AZURE.IMPORTANT]
+    > 如果使用远程连接，请在同一行中同时运行 ifdown 和 ifup。
+    >
 
 8. 使用以下命令验证 IP 地址是否已添加到网络接口：
 
@@ -80,7 +80,7 @@
 
         ls ifcfg-*
 
-应会看到其中一个文件是 *ifcfg-eth0*。
+    应会看到其中一个文件是 *ifcfg-eth0*。
 
 5. 使用以下命令复制 *ifcfg-eth0* 文件并将它命名为 *ifcfg-eth0:0*：
 
