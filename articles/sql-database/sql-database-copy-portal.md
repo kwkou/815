@@ -10,8 +10,8 @@
 <tags
 	ms.service="sql-database"
 	ms.devlang="NA"
-	ms.date="06/16/2016"
-	wacn.date="11/15/2016"
+	ms.date="09/19/2016"
+	wacn.date="10/31/2016"
 	ms.author="sstein"
 	ms.workload="data-management"
 	ms.topic="article"
@@ -29,32 +29,35 @@
 
 以下步骤说明如何使用 [Azure 门户预览](https://portal.azure.cn)将 SQL 数据库复制到同一服务器或其他服务器。
 
-若要复制 SQL 数据库，需要做好以下准备：
+若要复制 SQL 数据库，需要做好以下项：
 
 - Azure 订阅。如果你需要 Azure 订阅，只需单击本页顶部的“免费试用”，然后再回来完成本文的相关操作即可。
-- 要复制的 SQL 数据库。如果你没有 SQL 数据库，请按照[创建你的第一个 Azure SQL 数据库](/documentation/articles/sql-database-get-started/)文章中的步骤创建一个。
+- 要复制的 SQL 数据库。如果你没有 SQL 数据库，请按照[创建你的第一个 Azure SQL 数据库](/documentation/articles/sql-database-get-started/)一文中的步骤创建一个。
 
 
 ## 复制 SQL 数据库
 
-打开要复制的数据库对应的 SQL 数据库边栏选项卡：
+打开要复制的数据库对应的 SQL 数据库页：
 
 1.	转到 [Azure 门户预览](https://portal.azure.cn)。
-2.	转到要复制的数据库：“浏览”>“SQL 数据库”
-3.	在 SQL 数据库边栏选项卡中，单击“复制”以打开“复制”边栏选项卡：
+2.	单击“更多服务”>“SQL 数据库”，然后单击所需的数据库。
+3.	在 SQL 数据库页上，单击“复制”：
 
-    ![复制数据库](./media/sql-database-copy-portal/sql-database-copy.png)
+    ![SQL 数据库](./media/sql-database-copy-portal/sql-database-copy.png)  
 
-1.  输入数据库副本的名称。系统会提供默认名称，但你可以根据需要更改。
-2.  选择**目标服务器**。目标服务器是要在其中创建数据库副本的位置。你可以创建新的服务器，或者从列表中选择现有的服务器。
+
+1.  在“复制”页上，提供了一个默认的数据库名称。根据需要键入不同的名称（服务器上的所有数据库必须具有唯一的名称）。
+2.  选择**目标服务器**。目标服务器是要在其中创建数据库副本的位置。可以将数据库复制到相同或不同的服务器。可以创建新的服务器，或者从列表中选择现有的服务器。
+3.  选择**目标服务器**后，将启用“弹性数据库池”和“定价层”选项。如果服务器包含一个池，可以将数据库复制到该池中。
 3.  单击“确定”开始复制过程。
 
-    ![数据库名称和服务器](./media/sql-database-copy-portal/copy-page.png)
+    ![SQL 数据库](./media/sql-database-copy-portal/copy-page.png)  
+
 
 
 ## 监视复制操作的进度
 
-- 开始复制后，单击门户通知以了解详细信息。
+- 开始复制后，单击门户通知了解详细信息。
 
     ![通知][3]
  
@@ -63,7 +66,7 @@
 
 ## 验证数据库位于服务器上
 
-- 单击“浏览”>“SQL 数据库”并检查新数据库是否处于“联机”状态。
+- 单击“更多服务”>“SQL 数据库”并检查新数据库是否处于“联机”状态。
 
 
 ## 解析登录名
@@ -92,10 +95,10 @@
 
 
 <!--Image references-->
+
 [1]: ./media/sql-database-copy-portal/copy.png
 [2]: ./media/sql-database-copy-portal/copy-ok.png
 [3]: ./media/sql-database-copy-portal/copy-notification.png
 [4]: ./media/sql-database-copy-portal/monitor-copy.png
 
-
-<!---HONumber=Mooncake_0704_2016-->
+<!---HONumber=Mooncake_1024_2016-->

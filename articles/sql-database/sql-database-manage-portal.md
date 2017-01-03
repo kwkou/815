@@ -13,7 +13,7 @@
 	ms.workload="data-management"
 	ms.topic="article"
 	ms.tgt_pltfrm="NA"
-	ms.date="09/14/2016"
+	ms.date="09/19/2016"
 	wacn.date="12/19/2016"
 	ms.author="sstein"/>  
 
@@ -25,7 +25,7 @@
 > [AZURE.SELECTOR]
 - [Azure 门户预览](/documentation/articles/sql-database-manage-portal/)
 - [SSMS](/documentation/articles/sql-database-manage-azure-ssms/)
-- [PowerShell](/documentation/articles/sql-database-command-line-tools/)
+- [PowerShell](/documentation/articles/sql-database-manage-powershell/)
 
 在 [Azure 门户预览](https://portal.azure.cn)中，可以创建、监视和管理 Azure SQL 数据库与服务器。本文提供更多常见任务的快速说明和详细信息的链接。
 

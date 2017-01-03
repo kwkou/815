@@ -14,8 +14,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-management"
-   ms.date="07/19/2016"
-   wacn.date="09/19/2016"
+   ms.date="10/13/2016"
+   wacn.date="10/31/2016"
    ms.author="carlrab"/>
 
 # 使用具有隔离和效率的 Azure SQL 数据库构建多租户应用
@@ -65,8 +65,8 @@
 
 ## 其他资源
 
-浏览所有 [SQL 数据库功能](/home/features/sql-database/)。
+浏览所有 [SQL 数据库的功能](/home/features/sql-database/)。
  
 查看 [SQL 数据库技术概述](/documentation/articles/sql-database-technical-overview/)。
 
-<!---HONumber=Mooncake_0912_2016-->
+<!---HONumber=Mooncake_1024_2016-->
