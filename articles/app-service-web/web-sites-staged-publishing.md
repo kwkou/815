@@ -21,7 +21,7 @@
 
 
 # 设置 Azure App Service 中的过渡环境
-<a name="Overview">
+<a name="Overview"></a>
 
 将 Web 应用、移动后端和 API 应用部署到[应用服务](/documentation/articles/app-service-changes-existing-services/)时，如果应用在“标准”或“高级”应用服务计划模式下运行，则可以部署到单独的部署槽而不是默认的生产槽。部署槽实际上是具有自身主机名的实时应用。两个部署槽（包括生产槽）之间的应用内容与配置元素可以交换。将应用程序部署到部署槽具有以下优点：
 

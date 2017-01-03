@@ -35,7 +35,7 @@ Azure 自动化中的安全资产包括凭据、证书、连接和加密的变�
 |:---|:---|
 |[Get-AzureAutomationCertificate](https://msdn.microsoft.com/zh-cn/library/dn913765.aspx)|检索有关证书的信息。只能从 Get-AzureAutomationCertificate 活动中检索证书本身。|
 |[New-AzureAutomationCertificate](https://msdn.microsoft.com/zh-cn/library/dn913764.aspx)|将新证书创建到 Azure 自动化中。|
-[Remove-AzureAutomationCertificate](https://msdn.microsoft.com/zh-cn/library/dn913773.aspx)|从 Azure自动化中删除证书。|
+|[Remove-AzureAutomationCertificate](https://msdn.microsoft.com/zh-cn/library/dn913773.aspx)|从 Azure自动化中删除证书。|
 |[Set-AzureAutomationCertificate](https://msdn.microsoft.com/zh-cn/library/dn913763.aspx)|设置现有证书的属性，包括上载证书文件和设置 .pfx 的密码。|
 |[Add-AzureCertificate](https://msdn.microsoft.com/zh-cn/library/azure/dn495214.aspx)|为指定的云服务上载服务证书。|
 
