@@ -23,9 +23,6 @@
 
 # 如何管理云服务
 
-> [AZURE.SELECTOR]
-- [Azure 门户预览](/documentation/articles/cloud-services-how-to-manage-portal/)
-- [Azure 经典管理门户](/documentation/articles/cloud-services-how-to-manage/)
 
 在 Azure 经典管理门户的“云服务”区域中，可以更新服务角色或部署、将预留部署升级到生产环境、将资源链接到云服务，以便查看资源依赖关系并对资源进行整体缩放，以及删除云服务或部署。
 
@@ -110,7 +107,7 @@
 
 4. 单击“创建新资源”或“链接现有资源”。
 
-5. 选择要链接的资源类型。在 [Azure 经典管理门户](http://manage.windowsazure.cn)中，单击“SQL 数据库”。（预览版 Azure 经典管理门户不支持将存储帐户链接到云服务。）
+5. 选择要链接的资源类型。在 [Azure 经典管理门户](http://manage.windowsazure.cn)中，单击“SQL 数据库”。
 
 6. 若要完成数据库配置，请按照 Azure 经典管理门户的“SQL 数据库”区域的帮助中的说明操作。
 

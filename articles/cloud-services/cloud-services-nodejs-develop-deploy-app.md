@@ -15,7 +15,7 @@
 	ms.devlang="nodejs"
 	ms.topic="hero-article"
 	ms.date="11/01/2016" 
-	wacn.date="12/12/2016" 
+	wacn.date="01/03/2017" 
 	ms.author="robmcm"/>
 
 # 生成 Node.js 应用程序并将其部署到 Azure 云服务
@@ -87,7 +87,8 @@ Node.js 应用在 **server.js** 文件中定义，该文件位于 Web 角色（�
 
 ## 将应用程序部署到 Azure
 
-[AZURE.INCLUDE [create-account-note](../../includes/create-account-note.md)]
+> [AZURE.NOTE]
+要完成本教程，需要一个 Azure 帐户。[注册以获取免费帐户](/pricing/1rmb-trial/)。
 
 ### 下载 Azure 发布设置
 
@@ -126,7 +127,7 @@ Node.js 应用在 **server.js** 文件中定义，该文件位于 Web 角色（�
 ![Publish-AzureService 命令的输出][The output of the Publish-AzureService command]
 
 > [AZURE.NOTE]
-> 首次发布后应用程序后，它可能需要几分钟才能部署完成并可供使用。
+首次发布后应用程序后，它可能需要几分钟才能部署完成并可供使用。
 
 部署完成后，系统将打开浏览器窗口并导航到云服务。
 
@@ -194,4 +195,4 @@ Node.js 应用在 **server.js** 文件中定义，该文件位于 Web 角色（�
 [The status of the Stop-AzureService command]: ./media/cloud-services-nodejs-develop-deploy-app/node48.png
 [The status of the Remove-AzureService command]: ./media/cloud-services-nodejs-develop-deploy-app/node49.png
 
-<!---HONumber=Mooncake_1128_2016-->
+<!---HONumber=Mooncake_1226_2016-->

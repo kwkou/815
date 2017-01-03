@@ -3,7 +3,7 @@
    description="介绍有关 Microsoft 对云服务使用的 Azure 来宾 OS 提供的支持的信息。" 
    services="cloud-services" 
    documentationCenter="na" 
-   authors="yuemlu" 
+   authors="raiye" 
    manager="timlt" 
    editor=""/>  
 
@@ -15,7 +15,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="tbd" 
    ms.date="10/24/2016" 
-   wacn.date="12/26/2016"
+   wacn.date="01/03/2017"
    ms.author="raiye"/>
 
 
@@ -93,4 +93,4 @@ Microsoft 将继续推出合并了最新 MSRC 更新的新来宾 OS 版本，直
 ## 后续步骤
 查看最新的[来宾 OS 版本](/documentation/articles/cloud-services-guestos-update-matrix/)。
 
-<!---HONumber=Mooncake_Quality_Review_1215_2016-->
+<!---HONumber=Mooncake_1226_2016-->

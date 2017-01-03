@@ -6,15 +6,16 @@
    authors="simonxjx"
    manager="felixwu"
    editor=""
-   tags="top-support-issue"/>
+   tags="top-support-issue"/>  
+
 <tags
    ms.service="cloud-services"
    ms.devlang="na"
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="tbd"
-   ms.date="09/02/2016"
-   wacn.date="12/16/2016"
+   ms.date="11/30/2016"
+   wacn.date="01/03/2019"
    ms.author="v-six" />
 
 # 导致角色回收的常见问题
@@ -76,4 +77,4 @@ Azure 是一个 64 位的环境。因此，针对 32 位目标编译的 .NET 程
 [OnStop]: https://msdn.microsoft.com/zh-cn/library/microsoft.windowsazure.serviceruntime.roleentrypoint.onstop.aspx
 [Run]: https://msdn.microsoft.com/zh-cn/library/microsoft.windowsazure.serviceruntime.roleentrypoint.run.aspx
 
-<!---HONumber=Mooncake_Quality_Review_1202_2016-->
+<!---HONumber=Mooncake_1226_2016-->

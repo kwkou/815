@@ -14,12 +14,12 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="tbd" 
-   ms.date="11/20/2016"
-   wacn.date="12/12/2016"
+   ms.date="12/14/2016"
+   wacn.date="01/03/2017"
    ms.author="raiye"/>
 
 # Azure 来宾 OS 版本和 SDK 兼容性对照表
-提供适用于云服务的最新 Azure 来宾 OS 版本的最新信息。此信息将帮助你在来宾 OS 停用之前规划升级路径。如果根据 [Azure 来宾 OS 更新设置][]中所述将角色配置为使用自动进行来宾 OS 更新，则不一定要阅读本页面。
+提供适用于云服务的最新 Azure 来宾 OS 版本的最新信息。此信息将帮助你在来宾 OS 停用之前规划升级路径。如果根据 [Azure 来宾 OS 更新设置][Azure Guest OS Update Settings]中所述将角色配置为使用自动进行来宾 OS 更新，则不一定要阅读本页面。
 
 > [AZURE.IMPORTANT] 本页面适用于在来宾 OS 顶层运行的云服务 Web 角色和辅助角色，而不适用于 IaaS 虚拟机。
 
@@ -31,6 +31,9 @@
 不太确定什么是来宾 OS 或者来宾 OS 的工作原理？ 请阅读[此部分](#how-it-works)。
 
 ## 新闻更新
+###### **2016 年 12 月 14 日**
+12 月版来宾 OS 从 2016 年 12 月 14 日开始推出，预计于 2017 年 1 月 13 日正式发行。
+
 ###### **2016 年 11 月 20 日**
 11 月版来宾 OS 从 2016 年 11 月 8 日开始推出，预计于 2016 年 12 月 8 日正式发行。
 
@@ -74,14 +77,15 @@ Windows Server 2016 于 2016 年 11 月 1 日作为 OS 系列 5 发布，并提�
 支持 .NET 4.0、4.5、4.5.1、4.5.2、4.6、4.6.1、4.6.2
 
 > [!注意]
-> 标有 * 的日期随时可能更改。
-> OS 系列 5 的 RDP 密码至少必须有 10 个字符。
+标有 * 的日期随时可能更改。
+OS 系列 5 的 RDP 密码至少必须有 10 个字符。
 > 
 >
 
 | 配置字符串 | 发行日期 | 停用日期 | 失效日期 |
 | --- | --- | --- | --- |
-| WA-GUEST-OS-5.2\_201610-02 |2016 年 11 月 1 日 |2017 年 1 月 30 日 |TBD |
+| WA-GUEST-OS-5.3\_201611-01 |2016 年 12 月 14 日 |5\.5 发行后 |TBD |
+| WA-GUEST-OS-5.2\_201610-02 |2016 年 11 月 1 日 |5\.4 发行后 |TBD |
 
 ## 系列 4 发行版本
 **Windows Server 2012 R2**
@@ -92,9 +96,10 @@ Windows Server 2016 于 2016 年 11 月 1 日作为 OS 系列 5 发布，并提�
 
 | 配置字符串 | 发行日期 | 停用日期 | 失效日期 |
 | --- | --- | --- | --- |
+| WA-GUEST-OS-4.38\_201611-01 |2016 年 12 月 14 日 |4\.4 发行后 |TBD |
 | WA-GUEST-OS-4.37\_201610-02 |2016 年 11 月 16 日 |4\.39 发行后 |TBD |
 | WA-GUEST-OS-4.36\_201609-01 |2016 年 10 月 13 日 |4\.38 发行后 |TBD |
-| WA-GUEST-OS-4.35\_201608-01 |2016 年 9 月 13 日 |4\.37 发行后 |TBD |
+| WA-GUEST-OS-4.35\_201608-01 |2016 年 9 月 13 日 |2016 年 12 月 16 日 |TBD |
 | WA-GUEST-OS-4.34\_201607-01 |2016 年 8 月 8 日 |2016 年 11 月 13 日 |TBD |
 | WA-GUEST-OS-4.33\_201606-01 |2016 年 7 月 13 日 |2016 年 10 月 13 日 |TBD |
 | WA-GUEST-OS-4.32\_201605-01 |2016 年 6 月 10 日 |2016 年 9 月 8 日 |TBD |
@@ -122,9 +127,10 @@ Windows Server 2016 于 2016 年 11 月 1 日作为 OS 系列 5 发布，并提�
 
 | 配置字符串 | 发行日期 | 停用日期 | 失效日期 |
 | --- | --- | --- | --- |
+| WA-GUEST-OS-3.45\_201611-01 |2016 年 12 月 14 日 |3\.47 发行后 |TBD |
 | WA-GUEST-OS-3.44\_201610-01 |2016 年 11 月 16 日 |3\.46 发行后 |TBD |
 | WA-GUEST-OS-3.43\_201609-01 |2016 年 10 月 13 日 |3\.45 发行后 |TBD |
-| WA-GUEST-OS-3.42\_201608-01 |2016 年 9 月 13 日 |3\.44 发行后 |TBD |
+| WA-GUEST-OS-3.42\_201608-01 |2016 年 9 月 13 日 |2016 年 12 月 16 日 |TBD |
 | WA-GUEST-OS-3.41\_201607-01 |2016 年 8 月 8 日 |2016 年 11 月 13 日 |TBD |
 | WA-GUEST-OS-3.40\_201606-01 |2016 年 7 月 13 日 |2016 年 10 月 13 日 |TBD |
 | WA-GUEST-OS-3.39\_201605-01 |2016 年 6 月 10 日 |2016 年 9 月 8 日 |TBD |
@@ -154,9 +160,10 @@ Windows Server 2016 于 2016 年 11 月 1 日作为 OS 系列 5 发布，并提�
 
 | 配置字符串 | 发行日期 | 停用日期 | 失效日期 |
 | --- | --- | --- | --- |
+| WA-GUEST-OS-2.57\_201611-01 |2016 年 12 月 14 日 |2\.59 发行后 |TBD |
 | WA-GUEST-OS-2.56\_201610-01 |2016 年 11 月 16 日 |2\.58 发行后 |TBD |
 | WA-GUEST-OS-2.55\_201609-01 |2016 年 10 月 13 日 |2\.57 发行后 |TBD |
-| WA-GUEST-OS-2.54\_201608-01 |2016 年 9 月 13 日 |2\.56 发行后 |TBD |
+| WA-GUEST-OS-2.54\_201608-01 |2016 年 9 月 13 日 |2016 年 12 月 16 日 |TBD |
 | WA-GUEST-OS-2.53\_201607-01 |2016 年 8 月 8 日 |2016 年 11 月 13 日 |TBD |
 | WA-GUEST-OS-2.52\_201606-01 |2016 年 7 月 13 日 |2016 年 10 月 13 日 |TBD |
 | WA-GUEST-OS-2.51\_201605-01 |2016 年 6 月 10 日 |2016 年 9 月 8 日 |TBD |
@@ -199,16 +206,13 @@ Windows Server 2016 于 2016 年 11 月 1 日作为 OS 系列 5 发布，并提�
 ## <a name = "guest-os-family-version-and-release-explanation"></a> 来宾 OS 系列版本解释
 来宾 OS 系列基于发布的 Microsoft Windows Server 版本。来宾 OS 是运行 Azure 云服务的基本操作系统。每个来宾 OS 都具有系列、版本和版本号。
 
-- **来宾 OS 系列**：  
-来宾 OS 所基于的 Windows Server 操作系统发行版。例如，*系列 3* 基于 Windows Server 2012。
+- **来宾 OS 系列**：来宾 OS 所基于的 Windows Server 操作系统发行版。例如，*系列 3* 基于 Windows Server 2012。
 
-- **来宾 OS 版本**  
-是指来宾 OS 系列映像加上在生成新的来宾 OS 版本时提供的相关 [Microsoft 安全响应中心 (MSRC)][msrc] 修补程序。并非提供了所有修补程序。
+- **来宾 OS 版本**是指来宾 OS 系列映像加上在生成新的来宾 OS 版本时提供的相关 [Microsoft 安全响应中心 (MSRC)][msrc] 修补程序。并非提供了所有修补程序。
 
     版本号从 0 开始，并在每次添加新的一组更新时增加 1。仅在比较重要时，才会显示尾随零。即，2.10 版是与 2.1 版不同的版本，并且比它晚得多。
 
-- **来宾 OS 发行版**：  
-来宾 OS 版本的再发行版。如果 Microsoft 在测试期间发现需要更改的问题，就会出现再发行版。最新的发行版始终会取代任何以前的发行版（无论是否公开）。Azure 经典门户将只允许用户选取给定版本的最新发行版。通常，不会对运行在以前版本上的部署进行强制升级，具体取决于 Bug 的严重性。
+- **来宾 OS 发行版**：来宾 OS 版本的再发行版。如果 Microsoft 在测试期间发现需要更改的问题，就会出现再发行版。最新的发行版始终会取代任何以前的发行版（无论是否公开）。Azure 经典门户将只允许用户选取给定版本的最新发行版。通常，不会对运行在以前版本上的部署进行强制升级，具体取决于 Bug 的严重性。
 
 在下面的示例中，2 是系列，12 是版本，而“rel2”是发行版本。
 
@@ -234,7 +238,7 @@ Azure 不断地发布更新。来宾 OS 只不过是此类更新的其中一种�
 [此处][retirepolicy]解释了来宾 OS 可支持性和停用策略。
 
 [Install .NET on a Cloud Service Role]: /documentation/articles/cloud-services-dotnet-install-dotnet/?WT.mc_id=azurebg_email_Trans_963_RevisedNET_Update
-[Azure 来宾 OS 更新设置]: /documentation/articles/cloud-services-how-to-configure/
+[Azure Guest OS Update Settings]: /documentation/articles/cloud-services-how-to-configure/
 [rss]: http://sxp.microsoft.com/feeds/3.0/msdntn/WindowsAzureOSUpdates
 [ssl3 announcement]: http://azure.microsoft.com/blog/2014/12/09/azure-security-ssl-3-0-update/
 [Microsoft Security Advisory 3009008]: https://technet.microsoft.com/zh-cn/library/security/3009008.aspx
@@ -254,4 +258,4 @@ Azure 不断地发布更新。来宾 OS 只不过是此类更新的其中一种�
 [fam1retire]: /documentation/articles/cloud-services-guestos-family1-retirement/
  
 
-<!---HONumber=Mooncake_1128_2016-->
+<!---HONumber=Mooncake_1226_2016-->

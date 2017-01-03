@@ -499,7 +499,7 @@ ServiceDefinition.cmd：
 
 详细了解[任务](/documentation/articles/cloud-services-startup-tasks/)的工作方式。
 
-[创建和部署](/documentation/articles/cloud-services-how-to-create-deploy-portal/)云服务包。
+[创建和部署](/documentation/articles/cloud-services-how-to-create-deploy/)云服务包。
 
 
 [ServiceDefinition.csdef]: /documentation/articles/cloud-services-model-and-package/#csdef

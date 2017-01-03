@@ -21,9 +21,6 @@
 
 # 如何自动缩放云服务
 
-> [AZURE.SELECTOR]
-- [Azure 门户预览](/documentation/articles/cloud-services-how-to-scale-portal/)
-- [Azure 经典管理门户](/documentation/articles/cloud-services-how-to-scale/)
 
 在 Azure 经典管理门户的“缩放”页中，你可以手动缩放 Web 角色或辅助角色，或者根据 CPU 负载或消息队列启用自动缩放。
 
