@@ -14,8 +14,8 @@
  ms.topic="article"
  ms.tgt_pltfrm="na"
  ms.workload="big-data"
- ms.date="08/23/2016"
- wacn.date="12/12/2016"
+ ms.date="11/08/2016"
+ wacn.date="12/30/2016"
  ms.author="larryfr"/>
 
 # Apache Storm on HDInsight 的示例 Storm 拓扑和组件

@@ -14,8 +14,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
-   ms.date="08/23/2016"
-   wacn.date="12/26/2016"
+   ms.date="11/08/2016"
+   wacn.date="12/30/2016"
    ms.author="larryfr"/>
 
 #使用 Curl 通过 HDInsight 上的 Hadoop 运行 Pig 作业

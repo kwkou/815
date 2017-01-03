@@ -14,8 +14,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
-   ms.date="10/17/2016"
-   wacn.date="12/12/2016"
+   ms.date="11/17/2016"
+   wacn.date="12/30/2016"
    ms.author="larryfr"/>
 
 # 使用 Hadoop Tools for Visual Studio 开发 Apache Storm on HDInsight 的 C# 拓扑

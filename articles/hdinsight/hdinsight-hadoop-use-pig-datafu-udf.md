@@ -13,8 +13,8 @@ ms.devlang="na"
 ms.topic="article"
 ms.tgt_pltfrm="na"
 ms.workload="big-data"
-ms.date="08/23/2016"
-wacn.date="12/26/2016"
+ms.date="11/08/2016"
+wacn.date="12/30/2016"
 ms.author="larryfr"/>
 
 #在 HDInsight 上将 DataFu 与 pig 配合使用

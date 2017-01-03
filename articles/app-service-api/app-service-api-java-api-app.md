@@ -13,8 +13,8 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="java"
 	ms.topic="get-started-article"
-	ms.date="08/31/2016"
-	wacn.date="11/25/2016"
+	ms.date="10/19/2016"
+	wacn.date="12/30/2016"
 	ms.author="rachelap"/>
 
 # 在 Azure 应用服务中生成和部署 Java API 应用

@@ -14,8 +14,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
-   ms.date="08/10/2016"
-   wacn.date="12/26/2016"
+   ms.date="11/15/2016"
+   wacn.date="12/30/2016"
    ms.author="jgao"/>
 
 # 使用 Azure PowerShell 在 HDInsight 中创建基于 Windows 的 Hadoop 群集

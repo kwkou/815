@@ -12,8 +12,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="05/02/2016"
-   wacn.date="08/11/2016"
+   ms.date="10/31/2016"
+   wacn.date="12/30/2016"
    ms.author="bwren;sngun" />
 
 # 管理 Azure 自动化数据

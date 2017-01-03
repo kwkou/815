@@ -14,8 +14,8 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="07/25/2016"
-	wacn.date="12/16/2016"
+	ms.date="10/19/2016"
+	wacn.date="12/30/2016"
 	ms.author="jgao"/>
 
 # 为 HDInsight 开发脚本操作脚本

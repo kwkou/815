@@ -14,8 +14,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="08/09/2016"
-   wacn.date="09/19/2016"
+   ms.date="11/16/2016"
+   wacn.date="12/30/2016"
    ms.author="gwallace" />
 
 # 使用 PowerShell 创建 Azure 应用程序网关（经典）的自定义探测
