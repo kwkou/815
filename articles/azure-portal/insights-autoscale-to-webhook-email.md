@@ -13,8 +13,8 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="03/30/2016"
-	wacn.date="07/18/2016"
+	ms.date="07/19/2016"
+	wacn.date="12/26/2016"
 	ms.author="ashwink"/>
 
 # 使用自动缩放操作在 Azure Insights 中发送电子邮件和 webhook 警报通知
