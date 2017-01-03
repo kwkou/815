@@ -13,8 +13,8 @@
 	ms.topic="hero-article"
 	ms.tgt_pltfrm="cache-redis"
 	ms.workload="tbd"
-	ms.date="08/16/2016"
-	wacn.date="11/25/2016"
+	ms.date="10/25/2016"
+	wacn.date="12/30/2016"
 	ms.author="sdanie"/>
 
 # 如何将 Azure Redis 缓存与 Node.js 配合使用

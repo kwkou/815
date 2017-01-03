@@ -15,8 +15,8 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="vm-windows-sql-server"
 	ms.workload="infrastructure-services"
-	ms.date="09/26/2016"
-	wacn.date="12/26/2016"
+	ms.date="10/27/2016"
+	wacn.date="12/30/2016"
 	ms.author="jroth"/>
 
 # 适用于 SQL Server VM 的 SQL Server 代理扩展（经典）

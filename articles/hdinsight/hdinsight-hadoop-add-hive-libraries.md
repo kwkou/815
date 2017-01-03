@@ -14,7 +14,7 @@ ms.topic="article"
 ms.tgt_pltfrm="na"
 ms.workload="big-data"
 ms.date="09/20/2016"
-wacn.date=""
+wacn.date="12/26/2016"
 ms.author="larryfr"/>
 
 #在 HDInsight 群集创建过程中添加 Hive 库

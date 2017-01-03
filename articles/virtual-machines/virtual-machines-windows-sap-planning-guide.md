@@ -15,8 +15,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="vm-windows"
    ms.workload="infrastructure-services"
-   ms.date="08/18/2016"
-   wacn.date="11/14/2016"
+   ms.date="11/08/2016"
+   wacn.date="12/30/2016"
    ms.author="sedusch"/>  
 
 

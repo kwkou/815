@@ -12,8 +12,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="03/17/2016"
-   wacn.date="04/26/2016"
+   ms.date="10/18/2016"
+   wacn.date="12/30/2016"
    ms.author="sewhee" />
 
 # 配置轮循机制路由方法

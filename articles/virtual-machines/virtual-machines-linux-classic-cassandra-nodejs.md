@@ -14,8 +14,8 @@
 	ms.tgt_pltfrm="vm-linux" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="08/11/2016" 
-	wacn.date="09/30/2016" 
+	ms.date="11/01/2016" 
+	wacn.date="12/30/2016" 
 	ms.author="hanuk;robmcm"/>
 
 # 在 Azure 上将 Cassandra 与 Linux 一起运行以及通过 Node.js 对其进行访问 

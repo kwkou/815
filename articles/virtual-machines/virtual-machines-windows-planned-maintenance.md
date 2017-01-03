@@ -15,7 +15,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="04/26/2016"
-	wacn.date=12/16/2016"
+	wacn.date="12/16/2016"
 	ms.author="drewm"/>
 
 # Azure 中虚拟机的计划内维护
