@@ -1,5 +1,5 @@
 <properties
-	pageTitle="针对 Azure 度量值警报配置 webhook | Azure"
+	pageTitle="针对 Azure 指标警报配置 webhook | Azure"
 	description="将 Azure 警报重新路由到其他非 Azure 系统。"
 	authors="kamathashwin"
 	manager=""
@@ -15,7 +15,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="09/15/2016"
-	wacn.date="10/17/2016"
+	wacn.date="01/03/2017"
 	ms.author="ashwink"/>  
 
 
@@ -45,38 +45,36 @@ Webhook 可以使用以下任一方法进行身份验证：
 
 POST 操作对于所有基于度量值的警报包含以下 JSON 有效负载和架构。
 
-```
-{
-"status": "Activated",
-"context": {
-            "timestamp": "2015-08-14T22:26:41.9975398Z",
-            "id": "/subscriptions/s1/resourceGroups/useast/providers/microsoft.insights/alertrules/ruleName1",
-            "name": "ruleName1",
-            "description": "some description",
-            "conditionType": "Metric",
-            "condition": {
-                        "metricName": "Requests",
-                        "metricUnit": "Count",
-                        "metricValue": "10",
-                        "threshold": "10",
-                        "windowSize": "15",
-                        "timeAggregation": "Average",
-                        "operator": "GreaterThanOrEqual"
-                },
-            "subscriptionId": "s1",
-            "resourceGroupName": "useast",                                
-            "resourceName": "mysite1",
-            "resourceType": "microsoft.foo/sites",
-            "resourceId": "/subscriptions/s1/resourceGroups/useast/providers/microsoft.foo/sites/mysite1",
-            "resourceRegion": "chinanorth",
-            "portalLink": "https://portal.azure.cn/#resource/subscriptions/s1/resourceGroups/useast/providers/microsoft.foo/sites/mysite1"
-},
-"properties": {
-              "key1": "value1",
-              "key2": "value2"
-              }
-}
-```
+		{
+		"status": "Activated",
+		"context": {
+		            "timestamp": "2015-08-14T22:26:41.9975398Z",
+		            "id": "/subscriptions/s1/resourceGroups/useast/providers/microsoft.insights/alertrules/ruleName1",
+		            "name": "ruleName1",
+		            "description": "some description",
+		            "conditionType": "Metric",
+		            "condition": {
+		                        "metricName": "Requests",
+		                        "metricUnit": "Count",
+		                        "metricValue": "10",
+		                        "threshold": "10",
+		                        "windowSize": "15",
+		                        "timeAggregation": "Average",
+		                        "operator": "GreaterThanOrEqual"
+		                },
+		            "subscriptionId": "s1",
+		            "resourceGroupName": "useast",                                
+		            "resourceName": "mysite1",
+		            "resourceType": "microsoft.foo/sites",
+		            "resourceId": "/subscriptions/s1/resourceGroups/useast/providers/microsoft.foo/sites/mysite1",
+		            "resourceRegion": "chinanorth",
+		            "portalLink": "https://portal.azure.cn/#resource/subscriptions/s1/resourceGroups/useast/providers/microsoft.foo/sites/mysite1"
+		},
+		"properties": {
+		              "key1": "value1",
+		              "key2": "value2"
+		              }
+		}
 
 
 | 字段 | 必需 | 一组固定的值 | 说明 |
@@ -106,7 +104,7 @@ POST 操作对于所有基于度量值的警报包含以下 JSON 有效负载和
 |properties |N |可选 |一组包含事件详细信息的 `<Key, Value>` 对（即 `Dictionary<String, String>`）。properties 字段是可选的。在自定义 UI 或基于逻辑应用的工作流中，用户可以输入键/值，该键/值可通过有效负载传递。将自定义属性传递回 webhook 的替代方法是通过 webhook URI 本身（作为查询参数）|
 
 
->[AZURE.NOTE] 仅可以使用 [Insights REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn933805.aspx) 设置属性字段。
+>[AZURE.NOTE] 只能使用 [Azure Monitor REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn933805.aspx) 设置属性字段。
 
 ## 后续步骤
 
@@ -115,4 +113,4 @@ POST 操作对于所有基于度量值的警报包含以下 JSON 有效负载和
 - [使用逻辑应用从 Azure 警报发送 Slack 消息](https://github.com/Azure/azure-quickstart-templates/tree/master/201-alert-to-slack-with-logic-app)
 - [使用逻辑应用从 Azure 警报将消息发送到 Azure 队列](https://github.com/Azure/azure-quickstart-templates/tree/master/201-alert-to-queue-with-logic-app)
 
-<!---HONumber=Mooncake_1010_2016-->
+<!---HONumber=Mooncake_1226_2016-->

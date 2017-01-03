@@ -13,8 +13,8 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/03/2016"
-	wacn.date="12/02/2016"
+	ms.date="11/28/2016"
+	wacn.date="01/03/2017"
 	ms.author="johnkem"/>  
 
 
@@ -28,8 +28,9 @@
 - **生成自定义遥测和日志记录平台** – 如果已经有一个自定义生成的遥测平台，或者正想生成一个，则可利用事件中心高度可缩放的发布-订阅功能，灵活地引入活动日志。
 
 ## 启用活动日志的流式传输
-可以通过编程方式或门户预览启用活动日志的流式传输。不管使用哪种方式，都可以选取一个服务总线命名空间（如果该空间不存在，则创建一个）。选择的命名空间是创建事件中心的地方（如果这是用户第一次流式传输活动日志），或者是将活动日志流式传输到事件中心的地方（如果用户此前已将活动日志流式传输到该命名空间），而策略则定义流式传输机制所具有的权限。目前，流式传输到事件中心需要“管理”、“读取”和“发送”权限。在经典管理门户中针对服务总线命名空间的“配置”选项卡下，可以创建或修改服务总线命名空间的共享访问策略。若要更新活动日志的日志配置文件，使之包括流式传输，则必须在服务总线授权规则中让客户端拥有 ListKey 权限。
+可以通过编程方式或门户预览启用活动日志的流式传输。无论采用哪种方法，均需选取一个服务总线命名空间和该命名空间的共享访问策略，并且当第一个新活动日志事件发生时，将在该命名空间中创建一个事件中心。如果没有服务总线命名空间，需先创建一个。如果以前已将活动日志事件流式传输到此服务总线命名空间，则将重复使用以前创建的事件中心。共享访问策略定义流式处理机制具有的权限。目前，流式传输到事件中心需要“管理”、“发送”和“侦听”权限。在经典门户中针对服务总线命名空间的“配置”选项卡下，可以创建或修改服务总线命名空间的共享访问策略。若要更新活动日志的日志配置文件，使之包括流式传输，则执行更改的用户必须在服务总线授权规则中拥有 ListKey 权限。
 
+只要配置设置的用户同时拥有两个订阅的相应 RBAC 访问权限，服务总线或事件中心命名空间就不必与订阅发出日志位于同一订阅中。
 ### 通过 Azure 门户预览 
 1. 使用门户预览左侧的菜单导航到“活动日志”边栏选项卡。
 
@@ -53,9 +54,7 @@
 2. 如果存在，使用 `Remove-AzureRmLogProfile` 将其删除。
 3. 使用 `Set-AzureRmLogProfile` 创建配置文件：
 
-```
-Add-AzureRmLogProfile -Name my_log_profile -StorageAccountId /subscriptions/s1/resourceGroups/myrg1/providers/Microsoft.Storage/storageAccounts/my_storage -serviceBusRuleId /subscriptions/s1/resourceGroups/Default-ServiceBus-chinaeast/providers/Microsoft.ServiceBus/namespaces/mytestSB/authorizationrules/RootManageSharedAccessKey -Locations chinaeast,chinanorth -RetentionInDays 90 -Categories Write,Delete,Action
-```
+		Add-AzureRmLogProfile -Name my_log_profile -StorageAccountId /subscriptions/s1/resourceGroups/myrg1/providers/Microsoft.Storage/storageAccounts/my_storage -serviceBusRuleId /subscriptions/s1/resourceGroups/Default-ServiceBus-chinaeast/providers/Microsoft.ServiceBus/namespaces/mytestSB/authorizationrules/RootManageSharedAccessKey -Locations chinaeast,chinanorth -RetentionInDays 90 -Categories Write,Delete,Action
 
 服务总线规则 ID 是特定格式的字符串，例如：{服务总线资源 ID}/authorizationrules/{密钥名称}
 
@@ -66,9 +65,7 @@ Add-AzureRmLogProfile -Name my_log_profile -StorageAccountId /subscriptions/s1/r
 2. 如果存在，使用 `azure insights logprofile delete` 将其删除。
 3. 使用 `azure insights logprofile add` 创建配置文件：
 
-```
-azure insights logprofile add --name my_log_profile --storageId /subscriptions/s1/resourceGroups/insights-integration/providers/Microsoft.Storage/storageAccounts/my_storage --serviceBusRuleId /subscriptions/s1/resourceGroups/Default-ServiceBus-chinaeast/providers/Microsoft.ServiceBus/namespaces/mytestSB/authorizationrules/RootManageSharedAccessKey --locations chinaeast,chinanorth --retentionInDays 90 –categories Write,Delete,Action
-```
+		azure insights logprofile add --name my_log_profile --storageId /subscriptions/s1/resourceGroups/insights-integration/providers/Microsoft.Storage/storageAccounts/my_storage --serviceBusRuleId /subscriptions/s1/resourceGroups/Default-ServiceBus-chinaeast/providers/Microsoft.ServiceBus/namespaces/mytestSB/authorizationrules/RootManageSharedAccessKey --locations chinaeast,chinanorth --retentionInDays 90 –categories Write,Delete,Action
 
 服务总线规则 ID 是以下格式的字符串：`{service bus resource ID}/authorizationrules/{key name}`。
  
