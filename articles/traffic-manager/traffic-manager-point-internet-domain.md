@@ -15,7 +15,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="infrastructure-services"
     ms.date="10/11/2016"
-    wacn.date="11/07/2016"
+    wacn.date="01/03/2017"
     ms.author="sewhee"
 />  
 
@@ -28,9 +28,9 @@
 
     www.contoso.com IN CNAME contoso.trafficmanager.cn
 
-对 *www.contoso.com* 发出的所有流量请求将定向到 *contoso.trafficmanager.cn* 。
+对 *www.contoso.com* 发出的所有流量请求将定向到 *contoso.trafficmanager.cn*。
 
->[AZURE.IMPORTANT] 无法将第二级域（例如 *contoso.com* ）指向流量管理器域。DNS 协议标准不允许对二级域名使用 CNAME 记录。
+>[AZURE.IMPORTANT] 无法将第二级域（例如 *contoso.com*）指向流量管理器域。DNS 协议标准不允许对二级域名使用 CNAME 记录。
 
 ## 后续步骤
 
@@ -40,4 +40,4 @@
 
 [流量管理器 - 禁用或启用终结点](/documentation/articles/disable-or-enable-an-endpoint/)
 
-<!---HONumber=Mooncake_1031_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

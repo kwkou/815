@@ -15,7 +15,7 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="09/15/2016" 
-	wacn.date="11/21/2016" 
+	wacn.date="01/03/2017" 
 	ms.author="sdanie"/>  
 
 
@@ -167,4 +167,4 @@ Azure Redis 缓存提供的 Redis 群集与[在 Redis 中实施](http://redis.io
 
 [redis-cache-redis-cluster-size]: ./media/cache-how-to-premium-clustering/redis-cache-redis-cluster-size.png
 
-<!---HONumber=Mooncake_1114_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

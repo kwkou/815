@@ -14,7 +14,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
    ms.date="11/16/2016"
-   wacn.date="12/30/2016"
+   wacn.date="01/03/2017"
    ms.author="gwallace"/>
 
 
@@ -92,7 +92,7 @@ Azure 资源管理器要求所有资源组指定一个位置。此位置将用�
 在上面的示例中，我们在位置“中国北部”创建了名为“appgw-RG”的资源组。
 
 > [AZURE.NOTE]
-如果你需要为应用程序网关配置自定义探测，请参阅 [Create an application gateway with custom probes by using PowerShell（使用 PowerShell 创建带自定义探测的应用程序网关）](/documentation/articles/application-gateway-create-probe-ps/)。有关详细信息，请查看 [custom probes and health monitoring（自定义探测和运行状况监视）](/documentation/articles/application-gateway-probe-overview/)。
+如果你需要为应用程序网关配置自定义探测，请参阅 [Create an application gateway with custom probes by using PowerShell](/documentation/articles/application-gateway-create-probe-ps/)（使用 PowerShell 创建带自定义探测的应用程序网关）。有关详细信息，请查看 [custom probes and health monitoring](/documentation/articles/application-gateway-probe-overview/)（自定义探测和运行状况监视）。
 > 
 > 
 
@@ -252,13 +252,13 @@ Azure 资源管理器要求所有资源组指定一个位置。此位置将用�
 
 ## 后续步骤
 
-如果你要配置 SSL 卸载，请参阅 [Configure an application gateway for SSL offload（配置应用程序网关以进行 SSL 卸载）](/documentation/articles/application-gateway-ssl/)。
+如果你要配置 SSL 卸载，请参阅 [Configure an application gateway for SSL offload](/documentation/articles/application-gateway-ssl/)（配置应用程序网关以进行 SSL 卸载）。
 
-如果你想要将应用程序网关配置为与内部负载均衡器配合使用，请参阅 [Create an application gateway with an internal load balancer (ILB)（创建具有内部负载均衡器 (ILB) 的应用程序网关）](/documentation/articles/application-gateway-ilb/)。
+如果你想要将应用程序网关配置为与内部负载均衡器配合使用，请参阅 [Create an application gateway with an internal load balancer (ILB)](/documentation/articles/application-gateway-ilb/)（创建具有内部负载均衡器 (ILB) 的应用程序网关）。
 
 如需负载均衡选项的其他常规信息，请参阅：
 
 * [Azure Load Balancer](/documentation/services/load-balancer/)
 * [Azure 流量管理器](/documentation/services/traffic-manager/)
 
-<!---HONumber=Mooncake_1128_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

@@ -15,7 +15,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
    ms.date="08/22/2016"
-   wacn.date="10/17/2016"
+   wacn.date="01/03/2017"
    ms.author="cherylmc" />
 
 # 为点到站点连接使用自签名证书
@@ -120,4 +120,4 @@ Makecert 是创建自签名证书的方式之一。以下步骤将演示如何�
 - 有关 **Resource Manager** 部署模型步骤，请参阅 [Configure a Point-to-Site connection to a VNet using PowerShell](/documentation/articles/vpn-gateway-howto-point-to-site-rm-ps/)（使用 PowerShell 配置与 VNet 的点到站点连接）。
 - 有关**经典**部署模型步骤，请参阅 [Configure a Point-to-Site VPN connection to a VNet using the Classic Management Portal](/documentation/articles/vpn-gateway-point-to-site-create/)（使用经典管理门户配置与 VNet 的点到站点 VPN 连接）。
 
-<!---HONumber=Mooncake_1010_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

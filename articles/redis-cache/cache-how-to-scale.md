@@ -14,7 +14,7 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="09/07/2016" 
-	wacn.date="11/14/2016" 
+	wacn.date="01/03/2017" 
 	ms.author="sdanie"/>
 
 # 如何缩放 Azure Redis 缓存
@@ -201,4 +201,4 @@ Azure Redis 缓存具有不同的缓存产品/服务，使缓存大小和功能�
 
 [redis-cache-scaling]: ./media/cache-how-to-scale/redis-cache-scaling.png
 
-<!---HONumber=Mooncake_0829_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

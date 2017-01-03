@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.workload="infrastructure-services"
 	ms.date="09/18/2016"
-	wacn.date="10/25/2016"
+	wacn.date="01/03/2017"
 	ms.author="magoedte;bwren" />
 
 
@@ -23,9 +23,9 @@
 
 可以从 [Runbook 库](#runbooks-in-runbook-gallery)获取 Runbook。你还可以通过共享开发的方案来为社区做出贡献。
 
-## <a name="runbooks-in-runbook-gallery"></a> Runbook 库中的 Runbook
+##<a name="runbooks-in-runbook-gallery"></a> Runbook 库中的 Runbook
 
-[Runbook 库](http://gallery.technet.microsoft.com/scriptcenter/site/search?f[0].Type=RootCategory&f[0].Value=WindowsAzure&f[1].Type=SubCategory&f[1].Value=WindowsAzure_automation&f[1].Text=Automation)提供各种来自 Microsoft 的 Runbook，以及可导入 Azure 自动化中的社区。你可以从 [TechNet 脚本中心](http://gallery.technet.microsoft.com)托管的库下载 Runbook，或者在 Azure 经典管理门户中直接从该库导入 Runbook。
+[Runbook 库](http://gallery.technet.microsoft.com/scriptcenter/site/search?f[0].Type=RootCategory&f[0].Value=WindowsAzure&f[1].Type=SubCategory&f[1].Value=WindowsAzure_automation&f[1].Text=Automation)提供各种来自 Microsoft 的 Runbook，以及可导入 Azure 自动化中的社区。你可以从 [TechNet 脚本中心](http://gallery.technet.microsoft.com/)托管的库下载 Runbook，或者在 Azure 经典管理门户中直接从该库导入 Runbook。
 
 直接从 Runbook 库导入只能使用 Azure 经典管理门户来完成，而不能使用 Windows PowerShell 执行此功能。
 
@@ -43,11 +43,11 @@
 5. 该 Runbook 将出现在自动化帐户的“Runbook”选项卡中。
 
 
-### <a name="AddRunbook"></a> 将 Runbook 添加到 Runbook 库
+###<a name="AddRunbook"></a> 将 Runbook 添加到 Runbook 库
 
 Azure 建议你将 Runbook 添加到你认为对其他客户有用的 Runbook 库中。你可以通过连同以下详细信息[将 Runbook 上载到脚本中心](http://gallery.technet.microsoft.com/site/upload)，来添加 Runbook。
 
-- 你必须为向导中要显示的 Runbook 指定“Azure”作为“类别”，指定“自动化”作为“子类别”。
+- 必须为向导中要显示的 Runbook 指定“Azure”作为“类别”，指定“自动化”作为“子类别”。
 
 - 上载内容必须是单个 .ps1 文件。如果 Runbook 需要任何模块、子 Runbook 或资产，则你应该在提交内容的说明和 Runbook 的注释部分列出这些内容。如果你的方案需要多个 Runbook，请单独上载每个 Runbook 并在各自的说明中列出相关 Runbook 的名称。请确保使用相同的标记，以便它们在同一类别中显示。用户阅读说明后才会知道，方案要正常工作需要其他 Runbook。
 
@@ -81,4 +81,4 @@ Azure 建议你将 Runbook 添加到你认为对其他客户有用的 Runbook �
 - 若要开始使用 Runbook，请参阅[在 Azure 自动化中创建或导入 Runbook](/documentation/articles/automation-creating-importing-runbook/)
 - [了解 PowerShell 工作流](/documentation/articles/automation-powershell-workflow/)
 
-<!---HONumber=Mooncake_0725_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="cache-redis"
 	ms.workload="tbd"
 	ms.date="08/16/2016"
-	wacn.date="11/25/2016"
+	wacn.date="01/03/2017"
 	ms.author="sdanie"/>  
 
 
@@ -72,4 +72,4 @@
 [1]: ./media/cache-python-get-started/redis-cache-new-cache-menu.png
 [2]: ./media/cache-python-get-started/redis-cache-cache-create.png
 
-<!---HONumber=Mooncake_0829_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

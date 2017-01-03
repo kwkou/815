@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.workload="infrastructure-services"
 	ms.date="09/12/2016"
-	wacn.date="10/25/2016"
+	wacn.date="01/03/2017"
 	ms.author="magoedte;bwren" />
 
 # 在 Azure 自动化中创建或导入 Runbook
@@ -41,7 +41,7 @@
 
     $automationAccountName = "MyAutomationAccount"
     $runbookName = "Sample-TestRunbook"
-    New-AzureAutomationRunbook –AutomationAccountName $automationAccountName –Name $runbookName
+    New-AzureAutomationRunbook -AutomationAccountName $automationAccountName -Name $runbookName
 
 ## <a name="ImportRunbook"></a> 将 Runbook 从文件导入 Azure 自动化
 
@@ -50,6 +50,7 @@
 如果该文件包含多个 PowerShell 工作流，导入将失败。必须将每个工作流保存到各自的文件中，并分别导入每个工作流。
 
 ### 使用 Azure 经典管理门户从文件导入 Runbook
+
 可通过以下过程将脚本文件导入 Azure 自动化。请注意，你只能通过此门户将 .ps1 文件导入 PowerShell 工作流 Runbook。
 
 1. 在 Azure 经典管理门户中，选择“自动化”，然后选择一个自动化帐户。
@@ -65,7 +66,7 @@
 
 可以使用 [Set-AzureAutomationRunbookDefinition](https://msdn.microsoft.com/zh-cn/library/dn690267.aspx) cmdlet 将脚本文件导入到现有 Runbook 的草稿版本中。脚本文件必须包含单个 Windows PowerShell 工作流。如果 Runbook 已有草稿版本，则除非你使用 Overwrite 参数，否则导入将失败。导入 Runbook 后，可以使用 [Publish-AzureAutomationRunbook](https://msdn.microsoft.com/zh-cn/library/dn690266.aspx) 来发布它。
 
-下面的示例命令演示了如何将脚本文件导入到现有 Runbook 中，然后将其发布。
+下面的示例命令演示了如何将脚本文件导入到 Runbook 中。
 
     $automationAccountName = "AutomationAccount"
     $runbookName = "Sample-TestRunbook"
@@ -95,9 +96,8 @@
     Publish-AzureAutomationRunbook -AutomationAccountName $automationAccountName -Name $runbookName
 
 
-
 ## 后续步骤
-- 若要了解你可以如何从 Runbook 和 PowerShell 模块库中受益，请参阅 [Azure 自动化的 Runbook 和模块库](/documentation/articles/automation-runbook-gallery/)
-- 若要了解有关使用文本编辑器编辑 PowerShell 和 PowerShell 工作流 Runbook 的详细信息，请参阅[编辑 Azure 自动化中的文本 Runbook](/documentation/articles/automation-edit-textual-runbook/)
+- 若要了解你可以如何从 Runbook 和 PowerShell 模块库中受益，请参阅 [Runbook and module galleries for Azure Automation](/documentation/articles/automation-runbook-gallery/)（Azure 自动化的 Runbook 和模块库）
+- 若要了解有关使用文本编辑器编辑 PowerShell 和 PowerShell 工作流 Runbook 的详细信息，请参阅 [Editing textual runbooks in Azure Automation](/documentation/articles/automation-edit-textual-runbook/)（编辑 Azure 自动化中的文本 Runbook）
 
-<!---HONumber=Mooncake_0725_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

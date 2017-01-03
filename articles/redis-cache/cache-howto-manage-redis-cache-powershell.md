@@ -15,7 +15,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="10/25/2016"
-    wacn.date="12/12/2016"
+    wacn.date="01/03/2017"
     ms.author="sdanie" />  
 
 
@@ -35,7 +35,7 @@
 
     Get-Module azure | format-table version
 
-[AZURE.INCLUDE [powershell-preview](../../includes/powershell-preview-inline-include.md)]
+[AZURE.INCLUDE [powershell 预览](../../includes/powershell-preview-inline-include.md)]
 
 首先，必须使用以下命令登录到 Azure。
 
@@ -277,7 +277,7 @@
 ><p>*不能从较高的定价层缩放到较低的定价层。
 <p>*不能从**高级**缓存向下缩放到**标准**或**基本**缓存。
 <p>*不能从**标准**缓存向下缩放到**基本**缓存。
-<p>*可从**基本**缓存缩放为**标准**缓存，但不能同时更改大小。如果你需要不同大小，则可以执行后续缩放操作以缩放为所需大小。
+<p>*可以从**基本**缓存缩放为**标准**缓存，但不能同时更改大小。如果你需要不同大小，则可以执行后续缩放操作以缩放为所需大小。
 <p>*不能从**基本**缓存直接缩放到**高级**缓存。必须在一个缩放操作中从**基本**缩放到**标准**，然后在后续的缩放操作中从**标准**缩放到**高级**。
 <p>*不能从较大的大小减小为 **C0 (250 MB)**。
 ><p> 
@@ -318,7 +318,7 @@
     TenantSettings     : {}
     ShardCount         :
 
-缩放操作完成后，`ProvisioningState` 将更改为 `Succeeded`。如果需要进行后续的缩放操作，例如先从基本缓存更改为标准缓存，然后再更改大小，则必须等到前面操作完成，否则会收到类似于下面的错误。
+缩放操作完成后，`ProvisioningState` 将更改为 `Succeeded`。如果你需要进行后续的缩放操作，例如先从基本缓存更改为标准缓存，然后再更改大小，则必须等到前面操作完成，否则会收到类似于下面的错误。
 
     Set-AzureRmRedisCache : Conflict: The resource '...' is not in a stable state, and is currently unable to accept the update request.
 
@@ -657,7 +657,7 @@
         -Container "https://mystorageaccount.blob.core.chinacloudapi.cn/mycontainer?sv=2015-04-05&sr=c&sig=HezZtBZ3DURmEGDduauE7
         pvETY4kqlPI8JCNa8ATmaw%3D&st=2016-05-27T00%3A00%3A00Z&se=2016-05-28T00%3A00%3A00Z&sp=rwdl"
 
-## <a name="to-reboot-a-redis-cache"></a>重启 Redis 缓存
+## <a name="to-reboot-a-redis-cache"></a>重新启动 Redis 缓存
 你可以使用 `Reset-AzureRmRedisCache` cmdlet 重新启动 Azure Redis 缓存实例。
 
 > [AZURE.IMPORTANT]
@@ -728,4 +728,4 @@
 * [Windows PowerShell 博客](http://blogs.msdn.com/powershell)：了解 Windows PowerShell 中的新功能。
 * [“你好，脚本编写专家！” 博客](http://blogs.technet.com/b/heyscriptingguy/)：从 Windows PowerShell 社区获取实用提示和技巧。
 
-<!---HONumber=Mooncake_1205_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

@@ -15,7 +15,7 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="09/30/2016" 
-	wacn.date="11/21/2016" 
+	wacn.date="01/03/2017" 
 	ms.author="sdanie"/>
 
 # 如何为高级 Azure Redis 缓存配置数据暂留
@@ -124,4 +124,4 @@ Azure Redis 缓存使用 [RDB 模型](http://redis.io/topics/persistence)提供�
 
 [redis-cache-settings]: ./media/cache-how-to-premium-persistence/redis-cache-settings.png
 
-<!---HONumber=Mooncake_1114_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

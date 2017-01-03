@@ -16,7 +16,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="infrastructure-services"
     ms.date="10/17/2016"
-    wacn.date="12/26/2016"
+    wacn.date="01/03/2017"
     ms.author="cherylmc" />  
 
 
@@ -284,14 +284,13 @@ Azure 使用证书对点到站点 VPN 的 VPN 客户端进行身份验证。从�
 
 1. 从吊销的客户端证书指纹列表中删除指纹。
    
-       Remove-AzureRmVpnClientRevokedCertificate -VpnClientRevokedCertificateName $RevokedClientCert1 `
-       -VirtualNetworkGatewayName $GWName -ResourceGroupName $RG -Thumbprint $RevokedThumbprint1
+        Remove-AzureRmVpnClientRevokedCertificate -VpnClientRevokedCertificateName $RevokedClientCert1 `
+        -VirtualNetworkGatewayName $GWName -ResourceGroupName $RG -Thumbprint $RevokedThumbprint1
 2. 检查指纹是否已从吊销列表中删除。
-
    
         Get-AzureRmVpnClientRevokedCertificate -VirtualNetworkGatewayName $GWName -ResourceGroupName $RG
 
 ## 后续步骤
 连接完成后，即可将虚拟机添加到虚拟网络。有关详细信息，请参阅[虚拟机](/documentation/services/virtual-machines/)。
 
-<!---HONumber=Mooncake_1219_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

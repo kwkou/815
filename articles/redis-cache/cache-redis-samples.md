@@ -14,7 +14,7 @@
 	ms.devlang="multiple" 
 	ms.topic="article" 
 	ms.date="08/30/2016" 
-	wacn.date="10/25/2016" 
+	wacn.date="01/03/2017" 
 	ms.author="sdanie"/>
 
 # Azure Redis Cache 示例 
@@ -75,4 +75,4 @@
 
 [带宽监视器](https://github.com/JonCole/SampleCode/tree/master/BandWidthMonitor)示例允许你监视客户端上使用的带宽。若要测量带宽、请在缓存客户端计算机上运行该示例，对缓存执行调用，然后观察带宽监视器示例报告的带宽。
 
-<!---HONumber=Mooncake_0718_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

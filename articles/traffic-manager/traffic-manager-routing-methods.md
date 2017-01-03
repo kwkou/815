@@ -15,7 +15,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="infrastructure-services"
     ms.date="10/11/2016"
-    wacn.date="11/14/2016"
+    wacn.date="01/03/2017"
     ms.author="sewhee"
 />  
 
@@ -126,4 +126,4 @@ Azure 门户预览支持加权流量路由的配置。无法在经典管理门�
 [2]: ./media/traffic-manager-routing-methods/weighted.png
 [3]: ./media/traffic-manager-routing-methods/performance.png
 
-<!---HONumber=Mooncake_1031_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

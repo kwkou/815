@@ -15,7 +15,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="infrastructure-services"
     ms.date="11/16/2016"
-    wacn.date="12/05/2016"
+    wacn.date="01/03/2017"
     ms.author="gwallace" />  
 
 
@@ -34,7 +34,7 @@ Azure 应用程序网关是第 7 层负载均衡器。它在不同服务器之�
 ## 开始之前
 
 1. 使用 Web 平台安装程序安装最新版本的 Azure PowerShell cmdlet。可以从“下载”页的“Windows PowerShell”部分下载并安装最新版本。[](/downloads/)
-2. 如果你有现有的虚拟网络，请选择现有一个空子网，或者在现有虚拟网络中创建一个新子网，专门供应用程序网关使用。<!--应用程序网关部署到的虚拟网络必须与要部署在应用程序网关后面的资源相同，除非使用 vnet 对等互连。若要了解更多信息，请访问 [Vnet 对等互连](/documentation/articles/virtual-network-peering-overview/)-->
+2. 如果你有现有的虚拟网络，请选择现有一个空子网，或者在现有虚拟网络中创建一个新子网，专门供应用程序网关使用。应用程序网关部署到的虚拟网络必须与要部署在应用程序网关后面的资源相同，除非使用 vnet 对等互连。若要了解更多信息，请访问 [Vnet 对等互连](/documentation/articles/virtual-network-peering-overview/)
 3. 请确认你已创建包含有效子网、可正常运行的虚拟网络。请确保没有虚拟机或云部署正在使用子网。应用程序网关必须单独位于虚拟网络子网中。
 4. 必须存在配置为使用应用程序网关的服务器，或者必须在虚拟网络中为其创建终结点，或者必须为其分配公共 IP/VIP。
 
@@ -58,7 +58,7 @@ Azure 应用程序网关是第 7 层负载均衡器。它在不同服务器之�
 3. 将配置提交到新建的应用程序网关资源。
 
 > [AZURE.NOTE]
-> 如果你需要为应用程序网关配置自定义探测，请参阅 [Create an application gateway with custom probes by using PowerShell](/documentation/articles/application-gateway-create-probe-classic-ps/)（使用 PowerShell 创建带自定义探测的应用程序网关）。有关详细信息，请查看 [custom probes and health monitoring](/documentation/articles/application-gateway-probe-overview/)（自定义探测和运行状况监视）。
+如果你需要为应用程序网关配置自定义探测，请参阅 [Create an application gateway with custom probes by using PowerShell](/documentation/articles/application-gateway-create-probe-classic-ps/)（使用 PowerShell 创建带自定义探测的应用程序网关）。有关详细信息，请查看 [custom probes and health monitoring](/documentation/articles/application-gateway-probe-overview/)（自定义探测和运行状况监视）。
 > 
 > 
 
@@ -73,7 +73,7 @@ Azure 应用程序网关是第 7 层负载均衡器。它在不同服务器之�
 
     New-AzureApplicationGateway -Name AppGwTest -VnetName testvnet1 -Subnets @("Subnet-1")
 
-*Description*、 *InstanceCount* 和 *GatewaySize* 是可选参数。
+*Description*、*InstanceCount* 和 *GatewaySize* 是可选参数。
 
 若要验证是否已创建网关，可以使用 `Get-AzureApplicationGateway` cmdlet。
 
@@ -320,7 +320,7 @@ Azure 应用程序网关是第 7 层负载均衡器。它在不同服务器之�
 配置网关后，使用 `Start-AzureApplicationGateway` cmdlet 来启动网关。成功启动网关后，将开始计收应用程序网关的费用。
 
 > [AZURE.NOTE]
-> `Start-AzureApplicationGateway` cmdlet 最多可能需要 15 到 20 分钟才能完成。
+`Start-AzureApplicationGateway` cmdlet 最多可能需要 15 到 20 分钟才能完成。
 > 
 > 
 
@@ -398,9 +398,9 @@ Azure 应用程序网关是第 7 层负载均衡器。它在不同服务器之�
 
 ## 后续步骤
 
-如果你要配置 SSL 卸载，请参阅 [Configure an application gateway for SSL offload（配置应用程序网关以进行 SSL 卸载）](/documentation/articles/application-gateway-ssl/)。
+如果你要配置 SSL 卸载，请参阅 [Configure an application gateway for SSL offload](/documentation/articles/application-gateway-ssl/)（配置应用程序网关以进行 SSL 卸载）。
 
-如果你想要将应用程序网关配置为与内部负载均衡器配合使用，请参阅 [Create an application gateway with an internal load balancer (ILB)（创建具有内部负载均衡器 (ILB) 的应用程序网关）](/documentation/articles/application-gateway-ilb/)。
+如果你想要将应用程序网关配置为与内部负载均衡器配合使用，请参阅 [Create an application gateway with an internal load balancer (ILB)](/documentation/articles/application-gateway-ilb/)（创建具有内部负载均衡器 (ILB) 的应用程序网关）。
 
 如需负载均衡选项的其他常规信息，请参阅：
 
@@ -409,4 +409,4 @@ Azure 应用程序网关是第 7 层负载均衡器。它在不同服务器之�
 
 [scenario]: ./media/application-gateway-create-gateway/scenario.png
 
-<!---HONumber=Mooncake_1128_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

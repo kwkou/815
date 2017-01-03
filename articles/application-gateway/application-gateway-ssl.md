@@ -13,7 +13,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
    ms.date="11/16/2016"
-   wacn.date="12/30/2016"
+   wacn.date="01/03/2017"
    ms.author="gwallace"/>
 
 # 使用经典部署模型配置应用程序网关以进行 SSL 卸载
@@ -58,7 +58,7 @@
 
 若要验证是否已创建网关，可以使用 **Get-AzureApplicationGateway** cmdlet。
 
-在此示例中， *Description* 、 *InstanceCount* 和 *GatewaySize* 是可选参数。 *InstanceCount* 的默认值为 2，最大值为 10。 *GatewaySize* 的默认值为 Medium。其他可用值为 Small 和 Large。 *VirtualIPs* 和 *DnsName* 显示为空白，因为网关尚未启动。这些值在网关进入运行状态后立即创建。
+在此示例中，*Description*、*InstanceCount* 和 *GatewaySize* 是可选参数。*InstanceCount* 的默认值为 2，最大值为 10。*GatewaySize* 的默认值为 Medium。其他可用值为 Small 和 Large。*VirtualIPs* 和 *DnsName* 显示为空白，因为网关尚未启动。这些值在网关进入运行状态后立即创建。
 
 此示例在第一行显示 cmdlet，接着显示输出。
 
@@ -118,18 +118,17 @@
 - **后端服务器池设置：**每个池都有一些设置，例如端口、协议和基于 Cookie 的关联性。这些设置绑定到池，并会应用到池中的所有服务器。
 - **前端端口：**此端口是应用程序网关上打开的公共端口。流量将抵达此端口，然后重定向到后端服务器之一。
 - **侦听器：**侦听器具有前端端口、协议（Http 或 Https，区分大小写）和 SSL 证书名称（如果要配置 SSL 卸载）。
-- **规则：**规则将会绑定侦听器和后端服务器池，并定义当流量抵达特定侦听器时应定向到的后端服务器池。目前仅支持 *基本* 规则。 *基本* 规则是一种轮循负载分发模式。
+- **规则：**规则将会绑定侦听器和后端服务器池，并定义当流量抵达特定侦听器时应定向到的后端服务器池。目前仅支持*基本*规则。*基本*规则是一种轮循负载分发模式。
 
 **其他配置说明**
 
-对于 SSL 证书配置，**HttpListener** 中的协议应更改为 *Https* （区分大小写）。需要将 **SslCert** 元素添加到 **HttpListener**，其值设置为前面上载 SSL 证书部分中使用的名称。前端端口应更新为 443。
+对于 SSL 证书配置，**HttpListener** 中的协议应更改为 *Https*（区分大小写）。需要将 **SslCert** 元素添加到 **HttpListener**，其值设置为前面上载 SSL 证书部分中使用的名称。前端端口应更新为 443。
 
 **启用基于 Cookie 的相关性**：可以配置应用程序网关，确保来自客户端会话的请求始终定向到 Web 场中的同一 VM。这是通过注入允许网关适当定向流量的会话 Cookie 来实现的。若要启用基于 Cookie 的相关性，请在 **BackendHttpSettings** 元素中将 **CookieBasedAffinity** 设置为 *Enabled*。
 
 
 
-可以通过创建配置对象或使用配置 XML 文件来构造配置。
-若要使用配置 XML 文件构造配置，请使用以下示例。
+可以通过创建配置对象或使用配置 XML 文件来构造配置。若要使用配置 XML 文件构造配置，请使用以下示例。
 
 **配置 XML 示例**
 
@@ -212,7 +211,7 @@
 
 ## <a name="verify-the-gateway-status"></a> 验证网关状态
 
-使用 **Get-AzureApplicationGateway** cmdlet 检查网关的状态。如果前一步骤中的 **Start-AzureApplicationGateway** 成功，则 *State* 应为 Running， *VirtualIPs* 和 *DnsName* 应包含有效的条目。
+使用 **Get-AzureApplicationGateway** cmdlet 检查网关的状态。如果前一步骤中的 **Start-AzureApplicationGateway** 成功，则 *State* 应为 Running，*VirtualIPs* 和 *DnsName* 应包含有效的条目。
 
 此示例演示了一个正常运行并已准备好接收流量的应用程序网关。
 
@@ -236,4 +235,4 @@
 
 - [Azure 流量管理器](/documentation/services/traffic-manager/)
 
-<!---HONumber=Mooncake_0912_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

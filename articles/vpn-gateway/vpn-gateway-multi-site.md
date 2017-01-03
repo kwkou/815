@@ -16,7 +16,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
    ms.date="05/11/2016"
-   wacn.date="11/07/2016"
+   wacn.date="01/03/2017"
    ms.author="yushwang" />  
 
 
@@ -181,7 +181,7 @@
 
 	Get-AzureVNetGatewayKey -VNetName "VNet1" -LocalNetworkSiteName "Site2"
 
-如果需要，也可以使用 *获取虚拟网络网关共享密钥* REST API 来获取预共享密钥。
+如果需要，也可以使用*获取虚拟网络网关共享密钥* REST API 来获取预共享密钥。
 
 ## 7\.验证连接
 
@@ -217,4 +217,4 @@
 
 若要了解有关 VPN 网关的详细信息，请参阅[关于 VPN 网关](/documentation/articles/vpn-gateway-about-vpngateways/)。
 
-<!---HONumber=Mooncake_1031_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

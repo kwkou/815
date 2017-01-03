@@ -16,7 +16,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="infrastructure-services"
     ms.date="08/31/2016"
-    wacn.date="12/26/2016"
+    wacn.date="01/03/2017"
     ms.author="cherylmc" />  
 
 
@@ -429,4 +429,4 @@
 * 连接完成后，即可将虚拟机添加到虚拟网络。有关详细信息，请参阅[虚拟机文档](/documentation/services/virtual-machines/)。
 * 有关 BGP 的信息，请参阅 [BGP 概述](/documentation/articles/vpn-gateway-bgp-overview/)和[如何配置 BGP](/documentation/articles/vpn-gateway-bgp-resource-manager-ps/)。
 
-<!---HONumber=Mooncake_1219_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

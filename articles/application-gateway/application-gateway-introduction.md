@@ -15,7 +15,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="infrastructure-services"
     ms.date="11/16/2016"
-    wacn.date="12/05/2016"
+    wacn.date="01/03/2017"
     ms.author="gwallace" />
 
 # 应用程序网关概述
@@ -50,7 +50,7 @@ Azure 应用程序网关以服务形式提供应用程序传送控制器 (ADC)�
 * 支持 WebSocket 流量的应用程序
 * 保护 Web 应用程序，使其免受常见 Web 攻击的威胁，例如 SQL 注入、跨站点脚本攻击和会话劫持。
 
-Azure 托管服务形式的应用程序网关负载均衡允许在 Azure 软件负载均衡器的后面预配第 7 层负载均衡器。流量管理器可以用于完成该方案，如下图所示，其中，流量管理器可将流量重定向并提供到不同区域的多个应用程序网关资源，而应用程序网关则提供跨区域的第 7 层负载均衡。<!--如需此方案的示例，可参阅：[在 Azure 云中使用负载均衡服务](/documentation/articles/traffic-manager-load-balancing-azure/)-->
+Azure 托管服务形式的应用程序网关负载均衡允许在 Azure 软件负载均衡器的后面预配第 7 层负载均衡器。流量管理器可以用于完成该方案，如下图所示，其中，流量管理器可将流量重定向并提供到不同区域的多个应用程序网关资源，而应用程序网关则提供跨区域的第 7 层负载均衡。如需此方案的示例，可参阅：[在 Azure 云中使用负载均衡服务](/documentation/articles/traffic-manager-load-balancing-azure/)
 
 ![流量管理器和应用程序网关方案](./media/application-gateway-introduction/tm-lb-ag-scenario.png)  
 
@@ -93,4 +93,4 @@ Azure 应用程序网关会通过基本或自定义运行状况探测，自动�
 
 若要详细了解如何使用基于 URL 的内容路由创建应用程序网关，请转到[使用基于 URL 的路由创建应用程序网关](/documentation/articles/application-gateway-create-url-route-arm-ps/)。
 
-<!---HONumber=Mooncake_1128_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

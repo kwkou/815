@@ -15,7 +15,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="infrastructure-services"
     ms.date="10/11/2016"
-    wacn.date="11/07/2016"
+    wacn.date="01/03/2017"
     ms.author="sewhee"
 />  
 
@@ -119,7 +119,7 @@ Azure 流量管理器包括内置的终结点监视和终结点自动故障转�
 
 有关详细信息，请参阅[流量管理器流量路由方法](/documentation/articles/traffic-manager-routing-methods/)。
 
->[AZURE.NOTE] 当所有符合条件的终结点处于降级状态时，正常的流量路由行为会发生一种例外情况。流量管理器“尽最大努力”尝试， *其响应就好像所有处于“已降级”状态的终结点实际上处于联机状态一样* 。这种行为要优于替代方法，后者不会在 DNS 响应中返回任何终结点。已禁用或已停止的终结点不受监视，因此，认为它们不符合接收流量的条件。
+>[AZURE.NOTE] 当所有符合条件的终结点处于降级状态时，正常的流量路由行为会发生一种例外情况。流量管理器“尽最大努力”尝试，*其响应就好像所有处于“已降级”状态的终结点实际上处于联机状态一样*。这种行为要优于替代方法，后者不会在 DNS 响应中返回任何终结点。已禁用或已停止的终结点不受监视，因此，认为它们不符合接收流量的条件。
 
 >这种状态通常是服务配置不当造成的，例如：
 
@@ -203,4 +203,4 @@ Azure 不提供有关过去终结点运行状况的历史信息，也不提供�
 
 流量管理器终结点上的[降级状态故障排除](/documentation/articles/traffic-manager-troubleshooting-degraded/)
 
-<!---HONumber=Mooncake_1031_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

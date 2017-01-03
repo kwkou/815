@@ -15,7 +15,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="11/21/2016"
-    wacn.date="12/12/2016"
+    wacn.date="01/03/2017"
     ms.author="sdanie" />
 
 # 如何为高级 Azure Redis 缓存配置虚拟网络支持
@@ -142,7 +142,7 @@ Azure Redis 缓存同时支持经典 VNet 和 ARM VNet。
 虽然由于性能原因，从本地应用程序使用 ExpressRoute 连接到 Azure Redis 缓存实例不是典型使用方案（为了获得最佳性能，Azure Redis 缓存客户端应与 Azure Redis 缓存在同一区域中），但在此方案中出站网络路径不能经过内部公司代理，也不能使用强制隧道发送到本地。否则会更改来自 Azure Redis 缓存的出站网络流量的有效 NAT 地址。更改 Azure Redis 缓存实例的出站网络流量的 NAT 地址会导致上述众多终结点的连接失败。这会导致创建 Azure Redis 缓存尝试失败。
 
 >[AZURE.IMPORTANT] 
-UDR 中定义的路由**必须**足够明确，以便优先于 ExpressRoute 配置所播发的任何路由。以下示例使用广泛 0.0.0.0/0 地址范围，因此使用更明确的地址范围，有可能意外地被路由播发重写。
+UDR 中定义的路由**必须**足够明确，这样才能优先于 ExpressRoute 配置所播发的任何路由。以下示例使用广泛 0.0.0.0/0 地址范围，因此使用更明确的地址范围，有可能意外地被路由播发重写。
 
 >[AZURE.WARNING]  
 **未正确交叉播发从公共对等路径到专用对等路径的路由**的 ExpressRoute 配置不支持 Azure Redis 缓存。已配置公共对等互连的 ExpressRoute 配置将收到来自 Microsoft 的大量 Microsoft Azure IP 地址范围的路由播发。如果这些地址范围在专用对等路径上未正确交叉播发，最后的结果是来自 Azure Redis 缓存实例子网的所有出站网络数据包都不会正确地使用强制隧道发送到客户的本地网络基础结构。此网络流将破坏 Azure Redis 缓存。此问题的解决方法是停止从公共对等路径到专用对等路径的交叉播发路由。
@@ -166,4 +166,4 @@ UDR 中定义的路由**必须**足够明确，以便优先于 ExpressRoute 配�
 
 [redis-cache-vnet-info]: ./media/cache-how-to-premium-vnet/redis-cache-vnet-info.png
 
-<!---HONumber=Mooncake_1205_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

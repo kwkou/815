@@ -14,7 +14,7 @@
     ms.devlang="na"
     ms.topic="get-started-article"
     ms.date="07/19/2016"
-    wacn.date="09/30/2016"
+    wacn.date="01/03/2017"
     ms.author="magoedte;bwren"/>
 
 # 我的第一个 PowerShell 工作流 Runbook
@@ -25,7 +25,7 @@
 
 为了完成本教程，你需要满足以下条件。
 
-- Azure 订阅创建新存储帐户。如果你没有订阅，可以[注册试用版](/pricing/1rmb-trial)。
+- Azure 订阅创建新存储帐户。如果你没有订阅，可以[注册帐户](/pricing/1rmb-trial)。
 - [自动化帐户](/documentation/articles/automation-security-overview/)，用来保存 Runbook 以及向 Azure 资源进行身份验证。此帐户必须有权启动和停止虚拟机。
 - Azure 虚拟机。我们将停止并启动该计算机，因此其不应为生产用计算机。
 
@@ -33,10 +33,10 @@
 
 我们首先创建一个输出文本 *Hello World* 的简单 Runbook 。
 
-1. 在 Azure 经典管理门户中，单击“新建”>“应用程序服务”>“自动化”>“RUNBOOK”>“快速创建”。
+1. 在 Azure 经典管理门户中，单击“新建”>“应用程序服务”>“自动化”>“RUNBOOK”>“快速创建”
 2. 输入 **RUNBOOK 名称**和**说明**，然后选择一个**自动化帐户**。如果你没有自动化帐户，可以通过选择“创建新的自动化帐户”并输入**帐户名**来创建一个
 3. 创建 Runbook 后，可在自动化帐户的“RUNBOOK”磁贴下找到该 Runbook。
-4. 单击 Runbook 的“创作”磁贴以启用文本编辑器。
+4. 单击 Runbook 的“创作”磁贴，以启用文本编辑器。
 
 ## 步骤 2 - 将代码添加到 Runbook
 
@@ -55,7 +55,7 @@
 	      Write-Output "Hello World"
 	    }
 
-3.	通过单击“保存”来保存该 Runbook。
+3.	通过单击“保存”来保存 Runbook。
 
 ## 步骤 3 - 测试 Runbook
 
@@ -144,4 +144,4 @@
 6.	单击“启动”以启动 Runbook。键入要启动的虚拟机的 **VMName** 和 **ResourceGroupName**。
 7.	一旦 Runbook 完成后，检查已启动的虚拟机。
 
-<!---HONumber=Mooncake_0725_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->
