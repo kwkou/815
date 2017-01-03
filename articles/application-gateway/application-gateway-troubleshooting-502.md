@@ -15,9 +15,9 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="infrastructure-services"
-    ms.date="11/16/2016"
-    wacn.date="12/05/2016"
-    ms.author="amitsriva" />  
+    ms.date="12/16/2016"
+    wacn.date="01/03/2017"
+    ms.author="amsriva" />  
 
 
 # 排查应用程序网关中的网关无效错误
@@ -46,7 +46,7 @@
 
 上述 cmdlet 的输出应包含非空后端地址池。以下示例中返回了两个池，其中配置了后端 VM 的 FQDN 或 IP 地址。BackendAddressPool 的预配状态必须是 'Succeeded'。
 
-BackendAddressPoolsText：
+BackendAddressPoolsText:
 
     [{
         "BackendAddresses": [{
@@ -56,7 +56,7 @@ BackendAddressPoolsText：
         "BackendIpConfigurations": [],
         "ProvisioningState": "Succeeded",
         "Name": "Pool01",
-        "Etag": "W/"00000000-0000-0000-0000-000000000000"",
+        "Etag": "W/\"00000000-0000-0000-0000-000000000000\"",
         "Id": "/subscriptions/<subscription id>/resourceGroups/<resource group name>/providers/Microsoft.Network/applicationGateways/<application gateway name>/backendAddressPools/pool01"
     }, {
         "BackendAddresses": [{
@@ -66,7 +66,7 @@ BackendAddressPoolsText：
         "BackendIpConfigurations": [],
         "ProvisioningState": "Succeeded",
         "Name": "Pool02",
-        "Etag": "W/"00000000-0000-0000-0000-000000000000"",
+        "Etag": "W/\"00000000-0000-0000-0000-000000000000\"",
         "Id": "/subscriptions/<subscription id>/resourceGroups/<resource group name>/providers/Microsoft.Network/applicationGateways/<application gateway name>/backendAddressPools/pool02"
     }]
 
@@ -90,7 +90,7 @@ BackendAddressPoolsText：
 | --- | --- | --- |
 | 探测 URL |http://127.0.0.1/  
  |URL 路径 |
-| 时间间隔 |30 |探测间隔（秒） |
+| 间隔 |30 |探测间隔（秒） |
 | 超时 |30 |探测超时（秒） |
 | 不正常阈值 |3 |探测重试计数。连续探测失败计数达到不正常阈值后，将后端服务器标记为故障。 |
 
@@ -142,6 +142,6 @@ BackendAddressPoolsText：
 
 ## 后续步骤
 
-如果上述步骤无法解决问题，请在线[提交工单](/support/contact/)。
+如果上述步骤无法解决问题，请开具[支持票证](/support/contact/)。
 
-<!---HONumber=Mooncake_1128_2016-->
+<!---HONumber=Mooncake_1226_2016-->

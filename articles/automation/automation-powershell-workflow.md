@@ -13,7 +13,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
    ms.date="09/12/2016"
-   wacn.date="10/25/2016"
+   wacn.date="01/03/2017"
    ms.author="bwren" />
 
 # 学习 Windows PowerShell 工作流
@@ -206,7 +206,7 @@ Windows PowerShell 工作流的一个优点是能够与典型脚本一样并行�
 > [AZURE.NOTE]  我们不建议并行运行子 Runbook，这是由于这已被证实将导致不可靠的结果。来自子 Runbook 的输出有时将不会显示，一个子 Runbook 中的设置可能会影响其他并行子 Runbook
 
 
-## <a name="Checkpoints"></a> 检查点
+## <a name="Checkpoints" id="checkpoints"></a> 检查点
 
 “检查点”是工作流变量的当前状态的快照，包括变量的当前值以及到该点为止生成的任何输出。如果工作流以错误结束或暂停，则其下次运行时将从其上一个检查点开始，而不是从工作流的起点开始。您可以使用 **Checkpoint-Workflow** 活动在工作流中设置一个检查点。
 

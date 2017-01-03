@@ -15,7 +15,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="09/12/2016"
-    wacn.date="12/26/2016"
+    wacn.date="01/03/2017"
     ms.author="tomfitz" />  
 
 
@@ -97,7 +97,7 @@
    
      若要了解如何使用仪表板，请参阅 [Creating and sharing dashboards in the Azure portal preview](/documentation/articles/azure-portal-dashboards/)（在 Azure 门户预览中创建和共享仪表板）。
 
-## 管理资源
+## <a name="manage-resources"></a> 管理资源
 在某个资源的边栏选项卡中，可看到用于管理该资源的选项。门户提供了用于该特定资源类型的管理选项。在资源边栏选项卡的顶部和左侧可看到管理命令。
 
 ![管理资源](./media/resource-group-portal/manage-resources.png)  

@@ -4,7 +4,7 @@
     services="application-gateway"
     documentationcenter="na"
     author="georgewallace"
-    manager="carmonm"
+    manager="timlt"
     editor=""
     tags="azure-resource-manager" />  
 
@@ -15,8 +15,8 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="infrastructure-services"
-    ms.date="11/16/2016"
-    wacn.date="12/05/2016"
+    ms.date="12/12/2016"
+    wacn.date="01/03/2017"
     ms.author="gwallace" />
 
 # 使用门户创建应用程序网关
@@ -44,7 +44,7 @@ Azure 应用程序网关是第 7 层负载均衡器。它在不同服务器之�
 
 
 > [AZURE.IMPORTANT]
-> 针对应用程序网关进行的其他配置（包括自定义运行状况探测、后端池地址以及其他规则）是在对应用程序网关配置以后配置的，不是在初始部署期间配置的。
+针对应用程序网关进行的其他配置（包括自定义运行状况探测、后端池地址以及其他规则）是在对应用程序网关配置以后配置的，不是在初始部署期间配置的。
 > 
 > 
 
@@ -68,7 +68,7 @@ Azure 应用程序网关需要自己的子网。在创建虚拟网络时，请�
 基本设置需要的信息如下：
 
 * **Name** - 应用程序网关的名称。
-* **层** - 这是应用程序网关的层。可以使用两个层，即 **WAF** 层和**标准**层。WAF 启用 Web 应用程序防火墙功能。
+* **层** - 此设置是应用程序网关的层。可以使用两个层，即 **WAF** 层和**标准**层。WAF 启用 Web 应用程序防火墙功能。
 * **SKU 大小** - 此设置是指应用程序网关的大小，可用选项包括**小型**、**中型**和**大型**。选择 WAF 层时，小型不可用。
 * **实例计数** - 实例的数目。此值应该是 2 到 10 之间的数字。
 * **资源组** - 用于保存应用程序网关的资源组，可以是现有资源组，也可以是新的资源组。
@@ -78,7 +78,7 @@ Azure 应用程序网关需要自己的子网。在创建虚拟网络时，请�
 
 
 > [AZURE.NOTE]
-> 进行测试时，可以选择 1 作为实例计数。必须知道的是，2 以下的实例计数不受 SLA 支持，因此不建议使用。小型网关用于开发/测试，不用于生产。
+进行测试时，可以选择 1 作为实例计数。必须知道的是，2 以下的实例计数不受 SLA 支持，因此不建议使用。小型网关用于开发/测试，不用于生产。
 > 
 > 
 
@@ -127,7 +127,7 @@ Azure 应用程序网关需要自己的子网。在创建虚拟网络时，请�
 
 创建应用程序网关时，需要配置的最后一个设置是侦听器配置。如果使用的是 **http**，不需进行任何配置，单击“确定”即可。若要使用 **https**，需要进一步配置。
 
-若要使用 **https**，需要提供证书。需要提供证书的私钥，因此需要提供证书的 .pfx 导出结果以及密码。
+若要使用 **https**，需要提供证书。由于需要证书的私钥，请提供证书的 .pfx 导出结果以及密码。
 
 ### 步骤 10
 
@@ -150,9 +150,29 @@ Azure 应用程序网关需要自己的子网。在创建虚拟网络时，请�
 
 这些步骤会创建基本的应用程序网关，提供侦听器、后端池、后端 http 设置以及规则的默认设置。预配成功后，即可根据部署修改这些设置。
 
+## 将服务器添加到后端池
+
+创建应用程序网关后，仍需将系统（托管着将进行负载均衡的应用程序）添加到应用程序网关。这些服务器的 IP 地址 或 FQDN 值已添加到后端地址池。
+
+### 步骤 1
+
+单击创建的应用程序网关，单击“后端池”，然后选择当前后端池。
+
+![应用程序网关后端池][11]  
+
+
+### 步骤 2
+
+在文本框中添加 IP 地址或 FQDN 值，然后单击“保存”
+
+![向应用程序网关后端池添加值][12]  
+
+
+此操作会将值保存到后端池。更新应用程序网关后，进入应用程序网关的流量将路由到在此步骤中添加的后端地址。
+
 ## 后续步骤
 
-此方案创建默认应用程序网关。后续步骤是通过添加池成员、修改设置以及调整网关中的规则来配置应用程序网关，让它正常工作。
+此方案创建默认应用程序网关。后续步骤是通过修改设置以及调整网关中的规则，配置应用程序网关。通过访问以下文章，可找到这些步骤：
 
 访问[创建自定义运行状况探测](/documentation/articles/application-gateway-create-probe-portal/)，了解如何创建自定义运行状况探测
 
@@ -172,6 +192,8 @@ Azure 应用程序网关需要自己的子网。在创建虚拟网络时，请�
 [8]: ./media/application-gateway-create-gateway-portal/figure8.png
 [9]: ./media/application-gateway-create-gateway-portal/figure9.png
 [10]: ./media/application-gateway-create-gateway-portal/figure10.png
+[11]: ./media/application-gateway-create-gateway-portal/figure11.png
+[12]: ./media/application-gateway-create-gateway-portal/figure12.png
 [scenario]: ./media/application-gateway-create-gateway-portal/scenario.png
 
-<!---HONumber=Mooncake_1128_2016-->
+<!---HONumber=Mooncake_1226_2016-->

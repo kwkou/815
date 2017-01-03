@@ -1,52 +1,57 @@
-<properties 
-	pageTitle="设置使用 SQL 数据库的 Web 应用" 
-	description="使用 Azure 资源管理器模板来部署包含 SQL 数据库的 Web 应用。" 
-	services="app-service" 
-	documentationCenter="" 
-	authors="cephalin" 
-	manager="wpickett" 
-	editor=""/>
+<properties
+    pageTitle="设置使用 SQL 数据库的 Web 应用"
+    description="使用 Azure 资源管理器模板来部署包含 SQL 数据库的 Web 应用。"
+    services="app-service"
+    documentationcenter=""
+    author="cephalin"
+    manager="wpickett"
+    editor="" />  
 
-<tags 
-	ms.service="app-service" 
-	ms.workload="na" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="04/27/2016" 
-	wacn.date="11/25/2016" 
-	ms.author="cephalin"/>
+<tags
+    ms.assetid="fb9648e1-9bf2-4537-bc4a-ab8d4953168c"
+    ms.service="app-service"
+    ms.workload="na"
+    ms.tgt_pltfrm="na"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.date="04/27/2016"
+    wacn.date="01/03/2017"
+    ms.author="cephalin" />  
+
 
 # 设置使用 SQL 数据库的 Web 应用
 
 [AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-sdk-developer-differences.md)]
 
-在本主题中，你将学习如何创建用于部署 Web 应用和 SQL 数据库的 Azure 资源管理器模板。你将了解如何定义要部署的资源以及如何定义执行部署时指定的参数。可将此模板用于自己的部署，或自定义此模板以满足要求。
+在本主题中，会学习如何创建用于部署 Web 应用和 SQL 数据库的 Azure Resource Manager 模板。你将了解如何定义要部署的资源以及如何定义执行部署时指定的参数。可将此模板用于自己的部署，或自定义此模板以满足要求。
 
 有关创建模板的详细信息，请参阅[创作 Azure 资源管理器模板](/documentation/articles/resource-group-authoring-templates/)。
 
-有关部署应用的详细信息，请参阅[按可预见的方式在 Azure 中部署复杂应用程序](/documentation/articles/app-service-deploy-complex-application-predictably/).
+有关部署应用的详细信息，请参阅[通过可预测的方式在 Azure 中部署复杂应用程序](/documentation/articles/app-service-deploy-complex-application-predictably/)。
 
 有关完整的模板，请参阅[使用 SQL 数据库的 Web 应用的模板](https://github.com/Azure/azure-quickstart-templates/blob/master/201-web-app-sql-database/azuredeploy.json)。
 
-[AZURE.INCLUDE [app-service-web-to-api-and-mobile](../../includes/app-service-web-to-api-and-mobile.md)] 
+[AZURE.INCLUDE [app-service-web-to-api-and-mobile](../../includes/app-service-web-to-api-and-mobile.md)]
 
 ## 将部署的内容
-
 在此模板中，你将部署：
 
-- Web 应用
-- SQL 数据库服务器
-- SQL 数据库
-- 自动缩放设置
-- 警报规则
+* Web 应用
+* SQL 数据库服务器
+* SQL 数据库
+* 自动缩放设置
+* 警报规则
+
+若要自动运行部署，请单击以下按钮：
+
+[![部署到 Azure](./media/app-service-web-arm-with-sql-database-provision/deploybutton.png)](https://portal.azure.cn/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F201-web-app-sql-database%2Fazuredeploy.json)
+
+>[AZURE.NOTE] 必须修改从 GitHub 存储库“azure-quickstart-templates”部署的模板，以适应 Azure 中国云环境。例如，替换某些终结点 -- 将“blob.core.windows.net”替换为“blob.core.chinacloudapi.cn”，将“cloudapp.azure.com”替换为“chinacloudapp.cn”。
 
 ## 要指定的参数
-
 [AZURE.INCLUDE [app-service-web-deploy-web-parameters](../../includes/app-service-web-deploy-web-parameters.md)]
 
 ### administratorLogin
-
 要用于数据库服务器管理员的帐户名称。
 
     "administratorLogin": {
@@ -54,7 +59,6 @@
     }
 
 ### administratorLoginPassword
-
 要用于数据库服务器管理员的密码。
 
     "administratorLoginPassword": {
@@ -62,7 +66,6 @@
     }
 
 ### databaseName
-
 要创建的新数据库的名称。
 
     "databaseName": {
@@ -71,7 +74,6 @@
     }
 
 ### collation
-
 要用于管理字符的正确使用的数据库排序规则。
 
     "collation": {
@@ -80,7 +82,6 @@
     }
 
 ### edition
-
 要创建的数据库类型。
 
     "edition": {
@@ -97,7 +98,6 @@
     }
 
 ### maxSizeBytes
-
 数据库的最大大小（以字节为单位）。
 
     "maxSizeBytes": {
@@ -106,7 +106,6 @@
     }
 
 ### requestedServiceObjectiveName
-
 版本的性能级别所对应的名称。
 
     "requestedServiceObjectiveName": {
@@ -127,7 +126,6 @@
     }
 
 ## 名称变量
-
 此模板包含构造模板中使用的名称的变量。变量值使用 **uniqueString** 函数从资源组 ID 生成名称。
 
     "variables": {
@@ -138,9 +136,7 @@
 
 
 ## 要部署的资源
-
 ### SQL Server 和数据库
-
 创建一个新的 SQL Server 和数据库。在 **serverName** 参数中指定服务器的名称，在 **serverLocation** 参数中指定其位置。在创建新服务器时，必须提供数据库服务器管理员的登录名和密码。
 
     {
@@ -192,9 +188,7 @@
 
 [AZURE.INCLUDE [app-service-web-deploy-web-host](../../includes/app-service-web-deploy-web-host.md)]
 
-
 ### Web 应用
-
     {
       "apiVersion": "2015-08-01",
       "name": "[variables('webSiteName')]",
@@ -231,7 +225,6 @@
 
 
 ### 自动缩放
-
     {
       "apiVersion": "2014-04-01",
       "name": "[concat(variables('hostingPlanName'), '-', resourceGroup().name)]",
@@ -300,8 +293,7 @@
     },
 
 
-### 状态代码 403 和 500 的警报规则、高 CPU 及 HTTP 队列长度 
-
+### 状态代码 403 和 500 的警报规则、高 CPU 及 HTTP 队列长度
     {
       "apiVersion": "2014-04-01",
       "name": "[concat('ServerErrors ', variables('webSiteName'))]",
@@ -440,18 +432,25 @@
     },
 
 ## 运行部署的命令
-
 [AZURE.INCLUDE [app-service-deploy-commands](../../includes/app-service-deploy-commands.md)]
 
 ### PowerShell
-
     New-AzureRmResourceGroupDeployment -TemplateFile path/to/azuredeploy.json
 
 ### Azure CLI
 
-    azure group deployment create --template-file path/to/azuredeploy.json
+    azure config mode arm
+    azure group deployment create -g {resource-group-name} --template-file path/to/azuredeploy.json
 
+### Azure CLI 2.0（预览版）
 
- 
+[AZURE.INCLUDE [azure-cli-2-azurechinacloud-environment-parameter](../../includes/azure-cli-2-azurechinacloud-environment-parameter.md)]
 
-<!---HONumber=Mooncake_0523_2016-->
+    az resource group deployment create -g {resource-group-name} --template-file path/to/azuredeploy.json --parameters '@azuredeploy.parameters.json'
+
+> [AZURE.NOTE]
+有关参数 JSON 文件的内容，请参阅 [azuredeploy.parameters.json](https://github.com/Azure/azure-quickstart-templates/blob/master/201-web-app-sql-database/azuredeploy.parameters.json)。
+>
+>
+
+<!---HONumber=Mooncake_1226_2016-->

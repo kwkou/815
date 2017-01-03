@@ -119,7 +119,7 @@ Azure 存储帐户可为操作系统磁盘和任何数据磁盘提供存储空�
 	</tr>
 </table>
 
-## 创建 VM 时，密码有什么要求？
+## <a name="what-are-the-password-requirements-when-creating-a-vm"></a> 创建 VM 时，密码有什么要求？
 
 密码的长度必须为 8 到 123 个字符，并满足以下 4 个复杂性要求中的 3 个要求：
 

@@ -14,8 +14,8 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="infrastructure-services"
-    ms.date="11/16/2016"
-    wacn.date="12/05/2016"
+    ms.date="12/12/2016"
+    wacn.date="01/03/2017"
     ms.author="amsriva" />
 
 # 创建托管多个 Web 应用程序的应用程序网关
@@ -32,16 +32,16 @@
 ![imageURLroute](./media/application-gateway-create-multisite-azureresourcemanager-powershell/multisite.png)  
 
 
-## 开始之前
+## 准备阶段
 
-1. 使用 Web 平台安装程序安装最新版本的 Azure PowerShell cmdlet。可以从“[下载](/downloads/)”页的“Windows PowerShell”部分下载并安装最新版本。
+1. 使用 Web 平台安装程序安装最新版本的 Azure PowerShell cmdlet。可以从“下载”页的“Windows PowerShell”部分下载并安装最新版本。[](/downloads/)
 2. 为使用应用程序网关而添加到后端池的服务器必须存在，或者在单独子网的虚拟网络中为其创建终结点，或者为其分配公共 IP/VIP。
 
 ## 要求
 
 * **后端服务器池：**后端服务器的 IP 地址列表。列出的 IP 地址应属于虚拟网络子网，或者是公共 IP/VIP。也可使用 FQDN。
 * **后端服务器池设置：**每个池都有一些设置，例如端口、协议和基于 Cookie 的关联性。这些设置绑定到池，并会应用到池中的所有服务器。
-* **前端端口：**此端口是应用程序网关上打开的公共端口。流量将抵达此端口，然后重定向到后端服务器之一。
+* **前端端口：**此端口是应用程序网关上打开的公共端口。流量将抵达此端口，然后重定向到其中一个后端服务器。
 * **侦听器：**侦听器具有前端端口、协议（Http 或 Https，这些值区分大小写）和 SSL 证书名称（如果要配置 SSL 卸载）。对于启用了多个站点的应用程序网关，还会添加主机名和 SNI 指示器。
 * **规则：**规则将会绑定侦听器和后端服务器池，并定义流量抵达特定侦听器时应定向到的后端服务器池。
 
@@ -54,13 +54,13 @@
 3. 创建应用程序网关配置对象。
 4. 创建应用程序网关资源。
 
-## 创建资源管理器的资源组
+## 创建 Resource Manager 的资源组
 
 确保使用最新版本的 Azure PowerShell。[将 Windows PowerShell 与 Resource Manager 配合使用](/documentation/articles/powershell-azure-resource-manager/)中提供详细信息。
 
 ### 步骤 1
 
-登录 Azure
+登录到 Azure
 
     Login-AzureRmAccount -EnvironmentName AzureChinaCloud
 
@@ -68,7 +68,7 @@
 
 ### 步骤 2
 
-检查该帐户的订阅。
+检查帐户的订阅。
 
     Get-AzureRmSubscription
 
@@ -76,7 +76,7 @@
 
 选择要使用的 Azure 订阅。
 
-    Select-AzureRmSubscription -SubscriptionName "Name of subscription"
+    Select-AzureRmSubscription -Subscriptionid "GUID of subscription"
 
 ### 步骤 4
 
@@ -93,9 +93,7 @@ Azure 资源管理器要求所有资源组指定一个位置。此位置将用�
 在上面的示例中，我们创建了名为“appgw-RG”的资源组，位置为“中国北部”。
 
 > [AZURE.NOTE]
-如果你需要为应用程序网关配置自定义探测，请参阅 [Create an application gateway with custom probes by using PowerShell（使用 PowerShell 创建带自定义探测的应用程序网关）](/documentation/articles/application-gateway-create-probe-ps/)。有关详细信息，请参阅[自定义探测和运行状况监视](/documentation/articles/application-gateway-probe-overview/)。
-> 
-> 
+如果你需要为应用程序网关配置自定义探测，请参阅 [Create an application gateway with custom probes by using PowerShell](/documentation/articles/application-gateway-create-probe-ps/)（使用 PowerShell 创建带自定义探测的应用程序网关）。有关详细信息，请参阅[自定义探测和运行状况监视](/documentation/articles/application-gateway-probe-overview/)。
 
 ## 创建虚拟网络和子网
 
@@ -132,11 +130,11 @@ Azure 资源管理器要求所有资源组指定一个位置。此位置将用�
 
     $publicip = New-AzureRmPublicIpAddress -ResourceGroupName appgw-RG -name publicIP01 -location "China North" -AllocationMethod Dynamic
 
-服务启动时，一个 IP 地址会分配到应用程序网关。
+服务启动时，会将一个 IP 地址分配到应用程序网关。
 
 ## 创建应用程序网关配置
 
-在创建应用程序网关前，必须设置所有配置项。以下步骤将创建应用程序网关资源所需的配置项。
+创建应用程序网关之前，必须设置所有配置项目。以下步骤将创建应用程序网关资源所需的配置项目。
 
 ### 步骤 1
 
@@ -151,7 +149,7 @@ Azure 资源管理器要求所有资源组指定一个位置。此位置将用�
     $pool1 = New-AzureRmApplicationGatewayBackendAddressPool -Name pool01 -BackendIPAddresses 10.0.1.100, 10.0.1.101, 10.0.1.102
     $pool2 = New-AzureRmApplicationGatewayBackendAddressPool -Name pool02 -BackendIPAddresses 10.0.1.103, 10.0.1.104, 10.0.1.105
 
-在本示例中，会有两个后端池根据请求的站点路由网络流量。一个池接收来自站点“contoso.com”的流量，另一个池接收来自站点“fabrikam.com”的流量。必须替换上述 IP 地址，添加自己的应用程序 IP 地址终结点。对于后端实例，也可以使用公共 IP 地址、FQDN 或 VM 的 NIC 来替换内部 IP 地址。在 PowerShell 中使用“-BackendFQDNs”参数来指定 FQDN 而非 IP。
+在本示例中，会有两个后端池根据请求的站点路由网络流量。一个池接收来自站点“contoso.com”的流量，另一个池接收来自站点“fabrikam.com”的流量。必须替换上述 IP 地址，添加自己的应用程序 IP 地址终结点。对于后端实例，也可以使用公共 IP 地址、FQDN 或 VM 的 NIC 来替换内部 IP 地址。若要指定 FQDN 而非 IP，请在 PowerShell 中使用“-BackendFQDNs”参数。
 
 ### 步骤 3
 
@@ -176,7 +174,7 @@ Azure 资源管理器要求所有资源组指定一个位置。此位置将用�
 
 为此示例中需要提供支持的两个网站配置两个 SSL 证书。一个证书用于 contoso.com 流量，另一个证书用于 fabrikam.com 流量。这些证书应该是证书颁发机构针对网站颁发的证书。支持自签名证书，但不建议将其用于生产流量。
 
-    $cert01 = New-AzureRmApplicationGatewaySslCertificate -Name  contosocert -CertificateFile <file path> -Password <password>
+    $cert01 = New-AzureRmApplicationGatewaySslCertificate -Name contosocert -CertificateFile <file path> -Password <password>
     $cert02 = New-AzureRmApplicationGatewaySslCertificate -Name fabrikamcert -CertificateFile <file path> -Password <password>
 
 ### 步骤 7
@@ -212,16 +210,15 @@ Azure 资源管理器要求所有资源组指定一个位置。此位置将用�
 
 ## 获取应用程序网关 DNS 名称
 
-创建网关后，下一步是配置用于通信的前端。使用公共 IP 时，应用程序网关需要动态分配的 DNS 名称，这会造成不方便。若要确保最终用户能够访问应用程序网关，可以使用指向应用程序网关的公共终结点的 CNAME 记录。[在 Azure 中配置自定义域名](/documentation/articles/cloud-services-custom-domain-name-portal/)。为此，可使用附加到应用程序网关的 PublicIPAddress 元素检索应用程序网关及其关联的 IP/DNS 名称的详细信息。应使用应用程序网关的 DNS 名称来创建 CNAME 记录，使两个 Web 应用程序都指向此 DNS 名称。不建议使用 A 记录，因为重新启动应用程序网关后 VIP 可能会变化。
+创建网关后，下一步是配置用于通信的前端。使用公共 IP 时，应用程序网关需要动态分配的 DNS 名称，这会造成不方便。若要确保最终用户能够访问应用程序网关，可以使用 CNAME 记录指向应用程序网关的公共终结点。[在 Azure 中配置自定义域名](/documentation/articles/cloud-services-custom-domain-name-portal/)。为此，可使用附加到应用程序网关的 PublicIPAddress 元素检索应用程序网关及其关联的 IP/DNS 名称的详细信息。应使用应用程序网关的 DNS 名称来创建 CNAME 记录，使两个 Web 应用程序都指向此 DNS 名称。不建议使用 A 记录，因为重新启动应用程序网关后 VIP 可能会变化。
 
-    Get-AzureRmPublicIpAddress -ResourceGroupName appgw-RG -name publicIP01
+    Get-AzureRmPublicIpAddress -ResourceGroupName appgw-RG -Name publicIP01
 
-<br/>  
-
+<br/>
 
     Name                     : publicIP01
     ResourceGroupName        : appgw-RG
-    Location                 : chinaeast
+    Location                 : chinanorth
     Id                       : /subscriptions/<subscription_id>/resourceGroups/appgw-RG/providers/Microsoft.Network/publicIPAddresses/publicIP01
     Etag                     : W/"00000d5b-54ed-4907-bae8-99bd5766d0e5"
     ResourceGuid             : 00000000-0000-0000-0000-000000000000
@@ -232,15 +229,15 @@ Azure 资源管理器要求所有资源组指定一个位置。此位置将用�
     PublicIpAddressVersion   : IPv4
     IdleTimeoutInMinutes     : 4
     IpConfiguration          : {
-                                 "Id": "/subscriptions/<subscription_id>/resourceGroups/appgw-RG/providers/Microsoft.Network/applicationGateways/appgwtest/frontendIP
-                               Configurations/frontend1"
-                               }
+                                    "Id": "/subscriptions/<subscription_id>/resourceGroups/appgw-RG/providers/Microsoft.Network/applicationGateways/appgwtest/frontendIP
+                                Configurations/frontend1"
+                                }
     DnsSettings              : {
-                                 "Fqdn": "00000000-0000-xxxx-xxxx-xxxxxxxxxxxx.chinacloudapp.cn"
-                               }
+                                    "Fqdn": "00000000-0000-xxxx-xxxx-xxxxxxxxxxxx.chinacloudapp.cn"
+                                }
 
 ## 后续步骤
 
 通过[应用程序网关 - Web 应用程序防火墙](/documentation/articles/application-gateway-webapplicationfirewall-overview/)了解如何保护网站
 
-<!---HONumber=Mooncake_1128_2016-->
+<!---HONumber=Mooncake_1226_2016-->

@@ -16,7 +16,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="infrastructure-services"
     ms.date="10/18/2016"
-    wacn.date="12/26/2016"
+    wacn.date="01/03/2017"
     ms.author="cherylmc" />  
 
 
@@ -53,7 +53,7 @@ VPN 网关连接需依赖于多个具有特定设置的资源。大多数资源�
 
 使用图示和描述来帮助选择符合要求的连接拓扑。这些图示显示主要基准拓扑，但也可以使用这些图示作为指导来构建更复杂的配置。
 
-## <a name="site-to-site-and-multi-site"></a> 站点到站点和多站点
+## 站点到站点和多站点
 ### 站点到站点
 站点到站点 (S2S) VPN 网关连接是通过 IPsec/IKE（IKEv1 或 IKEv2）VPN 隧道建立的连接。这种类型的连接要求 VPN 设备位于本地，并且分配有公共 IP 地址，不在 NAT 的后面。S2S 连接可用于跨界和混合配置。
 
@@ -83,6 +83,9 @@ VPN 网关连接需依赖于多个具有特定设置的资源。大多数资源�
 
 #### 部署模型之间的连接
 Azure 当前具有两个部署模型：经典模型和 Resource Manager 模型。如果 Azure 已经使用了一段时间，则您的 Azure VM 和实例角色可能是在经典 VNet 上运行。而较新的 VM 和角色实例可能是在 Resource Manager 中创建的 VNet 上运行。可以在 Vnet 之间创建连接，使其中一个 VNet 中的资源能够直接与另一个 VNet 中的资源通信。
+
+#### VNet 对等互连
+只要虚拟网络符合特定要求，就能使用 VNet 对等互连来创建连接。VNet 对等互连不使用虚拟网络网关。有关详细信息，请参阅 [VNet 对等互连](/documentation/articles/virtual-network-peering-overview/)。
 
 ### VNet 到 VNet 的部署模型和方法
 [AZURE.INCLUDE [vpn-gateway-table-vnet-to-vnet](../../includes/vpn-gateway-table-vnet-to-vnet-include.md)]
@@ -115,4 +118,4 @@ ExpressRoute 可以从 WAN 与 Microsoft 服务（包括 Azure）直接建立专
 ## 后续步骤
 规划 VPN 网关配置。请参阅 [VPN Gateway Planning and Design](/documentation/articles/vpn-gateway-plan-design/)（VPN 网关规划和设计）。
 
-<!---HONumber=Mooncake_1219_2016-->
+<!---HONumber=Mooncake_1226_2016-->

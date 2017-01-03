@@ -16,7 +16,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="infrastructure-services"
     ms.date="10/14/2016"
-    wacn.date="12/26/2016"
+    wacn.date="01/03/2017"
     ms.author="cherylmc" />  
 
 
@@ -47,7 +47,7 @@
 * 一台兼容的 VPN 设备和能够对其进行配置的人员。请参阅[关于 VPN 设备](/documentation/articles/vpn-gateway-about-vpn-devices/)。如果不熟悉 VPN 设备的配置，或者不熟悉本地网络配置中的 IP 地址范围，请咨询能够提供此类详细信息的人员。
 * 一个用于 VPN 设备的面向外部的公共 IP 地址。此 IP 地址不得位于 NAT 之后。
 * Azure 订阅。如果你还没有 Azure 订阅，你可以注册一个[试用版](/pricing/1rmb-trial)。
-* 最新版本的 Azure Resource Manager PowerShell cmdlet。有关安装 PowerShell cmdlet 的详细信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)。
+* 最新版本的 Azure Resource Manager PowerShell cmdlet。有关安装 PowerShell cmdlet 的详细信息，请参阅[如何安装和配置 Azure PowerShell](https://docs.microsoft.com/powershell/azureps-cmdlets-docs)。
 
 ## <a name="Login"></a>1.连接到订阅
 确保切换到 PowerShell 模式，以便使用资源管理器 cmdlet。有关详细信息，请参阅[将 Windows PowerShell 与资源管理器配合使用](/documentation/articles/powershell-azure-resource-manager/)。
@@ -80,7 +80,7 @@
 
 接下来，创建您的虚拟网络。请验证你指定的地址空间不与本地网络的任一个地址空间相重叠。
 
-以下示例创建一个名为 *testvnet* 的虚拟网络和两个子网，其中一个名为 *GatewaySubnet*，另一个名为 *Subnet1*。特意创建一个名为 *GatewaySubnet* 的子网非常重要。如果您以其他名称为其命名，则您的连接配置将会失败。
+以下示例创建一个名为 *testvnet* 的虚拟网络和两个子网，其中一个名为 *GatewaySubnet* ，另一个名为 *Subnet1* 。特意创建一个名为 *GatewaySubnet* 的子网非常重要。如果您以其他名称为其命名，则您的连接配置将会失败。
 
 设置变量。
 
@@ -153,9 +153,9 @@ Resource Manager 部署模型的 Azure VPN 网关目前使用动态分配方法�
 
 使用以下值：
 
-* 站点到站点配置的 *-GatewayType* 为 *Vpn*。网关类型永远是你要实现的配置的特定类型。例如，其他网关配置可能需要 -GatewayType ExpressRoute。
-* *-VpnType* 可以是 *RouteBased*（在某些文档中称为动态网关）或 *PolicyBased*（在某些文档中称为静态网关）。有关 VPN 网关类型的详细信息，请参阅[关于 VPN 网关](/documentation/articles/vpn-gateway-about-vpngateways/)。
-* *-GatewaySku* 可以是 *Basic*、*Standard* 或 *HighPerformance*。
+* 站点到站点配置的 *-GatewayType* 为 *Vpn* 。网关类型永远是你要实现的配置的特定类型。例如，其他网关配置可能需要 -GatewayType ExpressRoute。
+* *-VpnType* 可以是 *RouteBased* （在某些文档中称为动态网关）或 *PolicyBased* （在某些文档中称为静态网关）。有关 VPN 网关类型的详细信息，请参阅[关于 VPN 网关](/documentation/articles/vpn-gateway-about-vpngateways/)。
+* *-GatewaySku* 可以是 *Basic* 、 *Standard* 或 *HighPerformance* 。
 
         New-AzureRmVirtualNetworkGateway -Name vnetgw1 -ResourceGroupName testrg `
         -Location 'China North' -IpConfigurations $gwipconfig -GatewayType Vpn `
@@ -169,7 +169,7 @@ Resource Manager 部署模型的 Azure VPN 网关目前使用动态分配方法�
     Get-AzureRmPublicIpAddress -Name gwpip -ResourceGroupName testrg
 
 ## <a name="CreateConnection"></a>8.创建 VPN 连接
-接下来，将在虚拟网络网关和 VPN 设备之间创建站点到站点 VPN 连接。请务必替换为你自己的值。共享密钥必须与你用于 VPN 设备配置的值匹配。请注意，站点到站点的 `-ConnectionType` 为 *IPsec*。
+接下来，将在虚拟网络网关和 VPN 设备之间创建站点到站点 VPN 连接。请务必替换为你自己的值。共享密钥必须与你用于 VPN 设备配置的值匹配。请注意，站点到站点的 `-ConnectionType` 为 *IPsec* 。
 
 设置变量。
 
@@ -198,7 +198,7 @@ VPN 连接有几种不同的验证方式。
 [AZURE.INCLUDE [vpn-gateway-modify-lng-gateway-ip-rm](../../includes/vpn-gateway-modify-lng-gateway-ip-rm-include.md)]
 
 ## 后续步骤
-* 你可以将虚拟机添加到虚拟网络。请参阅[创建虚拟机](/documentation/articles/virtual-machines-windows-hero-tutorial/)以获取相关步骤。
+*  连接完成后，即可将虚拟机添加到虚拟网络。有关详细信息，请参阅[虚拟机](https://docs.microsoft.com/azure/#pivot=services&panel=Compute)。
 * 有关 BGP 的信息，请参阅 [BGP 概述](/documentation/articles/vpn-gateway-bgp-overview/)和[如何配置 BGP](/documentation/articles/vpn-gateway-bgp-resource-manager-ps/)。
 
-<!---HONumber=Mooncake_1219_2016-->
+<!---HONumber=Mooncake_1226_2016-->

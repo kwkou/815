@@ -14,8 +14,8 @@
     ms.topic="hero-article"
     ms.tgt_pltfrm="na"
     ms.workload="infrastructure-services"
-    ms.date="11/16/2016"
-    wacn.date="12/05/2016"
+    ms.date="12/16/2016"
+    wacn.date="01/03/2017"
     ms.author="amsriva" />  
 
 
@@ -45,7 +45,7 @@ Web 应用程序防火墙 (WAF) 是 Azure 应用程序网关的功能，用于�
 * 防止 HTTP 协议违反行为
 * 防止 HTTP 协议异常行为，例如缺少主机用户代理和接受标头
 * 防止自动程序、爬网程序和扫描程序
-* 检测常见应用程序错误配置（即 Apache、IIS 等）
+* 检测常见应用程序配置错误（即 Apache、IIS 等）
 
 ## WAF 模式
 
@@ -87,4 +87,4 @@ Web 应用程序防火墙 (WAF) 是 Azure 应用程序网关的功能，用于�
 
 深入了解 WAF 的功能后，请参阅[如何在应用程序网关上配置 Web 应用程序防火墙](/documentation/articles/application-gateway-web-application-firewall-portal/)。
 
-<!---HONumber=Mooncake_1128_2016-->
+<!---HONumber=Mooncake_1226_2016-->
