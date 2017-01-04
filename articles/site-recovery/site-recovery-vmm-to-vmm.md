@@ -14,8 +14,8 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="11/14/2016"
-    wacn.date="12/12/2016"
+    ms.date="11/23/2016"
+    wacn.date="01/03/2017"
     ms.author="raynew" />
 
 # 将 VMM 云中的 Hyper-V 虚拟机复制到辅助 VMM 站点
@@ -323,4 +323,4 @@
 ## 后续步骤
 设置并运行部署后，请[详细了解](/documentation/articles/site-recovery-failover/)不同类型的故障转移。
 
-<!---HONumber=Mooncake_1205_2016-->
+<!---HONumber=Mooncake_1226_2016-->
