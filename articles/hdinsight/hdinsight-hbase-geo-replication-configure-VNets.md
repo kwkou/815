@@ -54,8 +54,7 @@ Azure 虚拟网络站点到站点连接使用 VPN 网关通过 Ipsec/IKE 提供�
 
 	运行 PowerShell 脚本前，确保已使用以下 cmdlet 连接到 Azure 订阅：
 
-		Clear-AzureProfile
-		Import-AzurePublishSettingsFile -PublishSettingsFile path/to/<subscription name>-<date>-credentials.publishsettings
+		Add-AzureAccount -Environment AzureChinaCloud
 
 	如果有多个 Azure 订阅，请使用以下 cmdlet 设置当前订阅：
 

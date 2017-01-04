@@ -57,8 +57,7 @@
     Write-Host "`nConnecting to your Azure subscription ..." -ForegroundColor Green
     try{Get-AzureSubscription}
     catch{
-        Clear-AzureProfile
-        Import-AzurePublishSettingsFile -PublishSettingsFile path/to/<subscription name>-<date>-credentials.publishsettings
+        Add-AzureAccount -Environment AzureChinaCloud
     }
     #endregion
         
