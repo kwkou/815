@@ -59,7 +59,7 @@ Azure PowerShell 1.0 已在 2015 年 10 月发布。此版本在 0.9.8 版本的
 
     	PS C:\> New-AzureRmRecoveryServicesVault -Name "testvault" -ResourceGroupName " test-rg" -Location "China North"
 
-4. 指定要使用的存储冗余类型；你可以使用[本地冗余存储 (LRS)](/documentation/articles/storage-redundancy/#locally-redundant-storage/) 或[异地冗余存储 (GRS)](/documentation/articles/storage-redundancy/#geo-redundant-storage/)。以下示例显示，testVault 的 -BackupStorageRedundancy 选项设置为 GeoRedundant。
+4. 指定要使用的存储冗余类型；可以使用[本地冗余存储 (LRS)](/documentation/articles/storage-redundancy/#locally-redundant-storage/) 或[异地冗余存储 (GRS)](/documentation/articles/storage-redundancy/#geo-redundant-storage/)。以下示例显示，testVault 的 -BackupStorageRedundancy 选项设置为 GeoRedundant。
 
     > [AZURE.TIP] 许多 Azure 备份 cmdlet 要求使用恢复服务保管库对象作为输入。出于此原因，在变量中存储备份恢复服务保管库对象可提供方便。
 
@@ -104,8 +104,16 @@ Azure PowerShell 1.0 已在 2015 年 10 月发布。此版本在 0.9.8 版本的
 
 | 选项 | 详细信息 | 默认 |
 | ---- | ----- | ----- |
-| /q | 静默安装 | - | | /p:"location" | Azure 备份代理的安装文件夹路径。| C:\\Program Files\\Azure Recovery Services Agent | | /s:"location" | Azure 备份代理的缓存文件夹路径。| C:\\Program Files\\Azure Recovery Services Agent\\Scratch | | /m | 选择启用 Microsoft 更新 | - | | /nu | 安装完成后不要检查更新 | - | | /d | 卸载 Azure 恢复服务代理 | - | | /ph | 代理主机地址 | - | | /po | 代理主机端口号 | - | | /pu | 代理主机用户名 | - | | /pw | 代理密码 | - |
-
+| /q | 静默安装 | - | 
+| /p:"location" | Azure 备份代理的安装文件夹路径。| C:\\Program Files\\Microsoft Azure Recovery Services Agent | 
+| /s:"location" | Azure 备份代理的快取文件夹路径。| C:\\Program Files\\Microsoft Azure Recovery Services Agent\\Scratch | 
+| /m | 选择启用 Microsoft Update | - | 
+| /nu | 安装完成后不要检查更新 | - | 
+| /d | 卸载 Azure 恢复服务代理 | - | 
+| /ph | 代理主机地址 | - | 
+| /po | 代理主机端口号 | - | 
+| /pu | 代理主机用户名 | - | 
+| /pw | 代理密码 | - |
 
 ## 将 Windows Server 或 Windows 客户端计算机注册到恢复服务保管库
 

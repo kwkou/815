@@ -391,9 +391,13 @@
 
 1. 将下列方法添加到 **DocumentDBRepository** 类。
    
-       public static async Task<Document> CreateItemAsync(T item) { return await client.CreateDocumentAsync(UriFactory.CreateDocumentCollectionUri(DatabaseId, CollectionId), item); }
-   
-   此方法只接受传递给它的对象，并将对象保留在 DocumentDB 中。
+		public static async Task<Document> CreateItemAsync(T item)
+		{
+			return await client.CreateDocumentAsync(UriFactory.CreateDocumentCollectionUri(DatabaseId, CollectionId), item);
+		}
+
+	此方法只接受传递给它的对象，并将对象保留在 DocumentDB 中。
+
 2. 打开 ItemController.cs 文件，并在类中添加下列代码段。这是 ASP.NET MVC 得知如何执行**创建**操作的方式。在此情况下，只需呈现先前创建的关联 Create.cshtml 视图。
    
         [ActionName("Create")]
@@ -402,7 +406,8 @@
             return View();
         }
    
-    现在此控制器需要更多代码，以接受“创建”视图所提交的数据。
+	现在此控制器需要更多代码，以接受“创建”视图所提交的数据。
+
 3. 将下一个代码块添加到 ItemController.cs 类，以告诉 ASP.NET MVC 如何使用窗体 POST 来执行此控制器的操作。
    
         [HttpPost]

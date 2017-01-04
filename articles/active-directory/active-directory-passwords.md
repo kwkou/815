@@ -49,7 +49,7 @@
 | 新发布的功能 | [最新服务更新](#recent-service-updates) |
 | 其他文档的链接 | [密码重置文档的链接](#links-to-password-reset-documentation) |
 
-### Azure AD 密码重置有何用途？
+### Azure AD 密码重置有何用途？ <a name="what-is-possible-with-azure-ad-password-reset"></a>
 以下是使用 Azure AD 密码管理功能可实现的某些目的。
 
 - **自助密码更改**：可让最终用户或管理员就可以更改过期的或未过期的密码，而无需请求管理员或帮助台提供支持。
