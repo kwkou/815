@@ -1,23 +1,22 @@
-<properties 
-	pageTitle="Site Recovery：常见问题 | Azure" 
-	description="本文讨论了有关 Azure Site Recovery 的常见问题。" 
-	services="site-recovery" 
-	documentationCenter=""
-	authors="rayne-wiselman"
-	manager="cfreeman"
-	editor=""/>  
-
+<properties
+    pageTitle="Azure Site Recovery：常见问题 | Azure"
+    description="本文讨论了有关 Azure Site Recovery 的常见问题。"
+    services="site-recovery"
+    documentationcenter=""
+    author="rayne-wiselman"
+    manager="cfreeman"
+    editor="" />  
 
 <tags
-	ms.service="site-recovery"
-	ms.devlang="na"
-	ms.topic="get-started-article"
-	ms.tgt_pltfrm="na"
-	ms.workload="storage-backup-recovery"
-	ms.date="10/10/2016"
-	wacn.date="11/17/2016"
-	ms.author="raynew"/>  
-
+    ms.assetid="5cdc4bcd-b4fe-48c7-8be1-1db39bd9c078"
+    ms.service="get-started-article"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.tgt_pltfrm="na"
+    ms.workload="storage-backup-recovery"
+    ms.date="12/13/2016"
+    wacn.date="01/03/2017"
+    ms.author="raynew" />  
 
 
 # Azure Site Recovery：常见问题 (FAQ)
@@ -95,10 +94,15 @@
 
 ## 复制
 
+### 能否通过站点到站点 VPN 复制到 Azure？
+Azure Site Recovery 通过公共终结点将数据复制到 Azure 存储帐户。因此，不能通过站点到站点 VPN 进行复制。可以通过 Azure 虚拟网络创建站点到站点 VPN，且不会干扰 ASR 复制。
+
+### 能否使用 ExpressRoute 将虚拟机复制到 Azure？
+能，可以使用 ExpressRoute 将虚拟机复制到 Azure。Azure Site Recovery 通过公共终结点将数据复制到 Azure 存储帐户。需要设置[公共对等互连](/documentation/articles/expressroute-circuit-peerings/#public-peering)才能将 ExpressRoute 用于 ASR 复制。将虚拟机故障转移到 Azure 虚拟网络以后，即可使用通过 Azure 虚拟网络设置的[专用对等互连](/documentation/articles/expressroute-circuit-peerings/#private-peering)对其进行访问。
 
 ### 将虚拟机复制到 Azure 需要满足任何先决条件吗？
 
-要复制到 Azure 的虚拟机应符合 [Azure 要求](/documentation/articles/site-recovery-best-practices/#azure-virtual-machine-requirements)。
+要复制到 Azure 的虚拟机应符合 [Azure 要求](/documentation/articles/site-recovery-best-practices/#virtual-machines)。
 
 ### 我可以将 Hyper-V 第 2 代虚拟机复制到 Azure 吗？
 
@@ -119,7 +123,7 @@
 
 ### 如果要复制到 Azure，我需要哪种存储帐户？
 
-**Azure 经典管理门户**：如果要在 Azure 经典管理门户中部署站点恢复，需要一个[标准异地冗余存储帐户](/documentation/articles/storage-redundancy/#geo-redundant-storage)。当前不支持高级存储。该帐户必须位于与站点恢复保管库相同的区域中。
+**Azure 经典管理门户**：若要在 Azure 经典管理门户中部署站点恢复，需要一个[标准异地冗余存储帐户](/documentation/articles/storage-redundancy/#geo-redundant-storage)。当前不支持高级存储。该帐户必须位于与站点恢复保管库相同的区域中。
 
 ### 我可以多久复制数据一次？
 
@@ -143,8 +147,10 @@
 复制 Hyper-V 虚拟机时，支持使用动态磁盘。
 
 ### 可以限制针对 Hyper-V 复制流量分配的带宽吗？
-
+是的。你可以从以下部署文章中阅读更多有关限制带宽的信息：
 是的。
+- [复制 VMM 云中的 Hyper-V VM 的容量规划](/documentation/articles/site-recovery-vmm-to-azure/#step-5-capacity-planning)
+- [复制无 VMM 的 Hyper-V VM 的容量规划](/documentation/articles/site-recovery-hyper-v-site-to-azure/#step-5-capacity-planning)
 
 ## 故障转移
 
@@ -221,4 +227,4 @@ Azure 具有复原能力。站点恢复已经能够根据需要故障转移到�
 - 阅读 [Site Recovery 概述](/documentation/articles/site-recovery-overview/)
 - 了解有关 [Site Recovery 体系结构](/documentation/articles/site-recovery-components/)的信息
 
-<!---HONumber=Mooncake_1107_2016-->
+<!---HONumber=Mooncake_1226_2016-->

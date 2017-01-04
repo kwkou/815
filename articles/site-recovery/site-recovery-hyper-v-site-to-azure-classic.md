@@ -1,43 +1,56 @@
 <properties
-	pageTitle="使用 Site Recovery 在本地 Hyper-V 虚拟机和 Azure（不使用 VMM）之间复制 | Azure"
-	description="本文介绍当计算机不在 VMM 云中托管时，如何使用 Azure Site Recovery 将 Hyper-V 虚拟机复制到 Azure。"
-	services="site-recovery"
-	documentationCenter=""
-	authors="rayne-wiselman"
-	manager="jwhit"
-	editor=""/>  
-
+    pageTitle="使用 Site Recovery 在本地 Hyper-V 虚拟机和 Azure（不使用 VMM）之间复制 | Azure"
+    description="本文介绍当计算机不在 VMM 云中托管时，如何使用 Azure Site Recovery 将 Hyper-V 虚拟机复制到 Azure。"
+    services="site-recovery"
+    documentationcenter=""
+    author="rayne-wiselman"
+    manager="jwhit"
+    editor="" />  
 
 <tags
-	ms.service="site-recovery"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="storage-backup-recovery"
-	ms.date="09/19/2016"
-	wacn.date="11/14/2016"
-	ms.author="raynew"/>  
-
+    ms.assetid="3f4c4483-e3dd-495a-bd02-c16e9e28c88d"
+    ms.service="site-recovery"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.tgt_pltfrm="na"
+    ms.workload="storage-backup-recovery"
+    ms.date="11/23/2016"
+    wacn.date="01/03/2016"
+    ms.author="raynew" />  
 
 
 # 使用 Azure Site Recovery 在本地 Hyper-V 虚拟机与 Azure 之间复制（不使用 VMM）
 
+> [AZURE.SELECTOR]
+- [Azure 门户](/documentation/articles/site-recovery-hyper-v-site-to-azure/)
+- [经典门户](/documentation/articles/site-recovery-hyper-v-site-to-azure-classic/)
 
-阅读本文以了解如何部署 Site Recovery，以便当 Hyper-V 主机未在 System Center Virtual Machine Manager (VMM) 云中托管时，将 Hyper-V 虚拟机复制到 Azure。
+欢迎使用 Azure Site Recovery 服务！
 
-本文汇总了部署先决条件，并帮助你配置复制设置，以及为虚拟机启用保护。本文最后指导你测试故障转移，以确保一切都按预期进行。
+Site Recovery 是能够帮助实现业务连续性和灾难恢复 (BCDR) 策略的 Azure 服务。Site Recovery 可以协调从本地物理服务器和虚拟机到云 (Azure) 或辅助数据中心的复制。当主要位置发生故障时，你可以故障转移到辅助位置，使应用和工作负荷保持可用。当主要位置恢复正常时，你可以故障回复到主要位置。在[什么是 Azure Site Recovery？](/documentation/articles/site-recovery-overview/)中了解详细信息
+
+本文介绍如何在 Azure 门户中使用 Azure Site Recovery 将本地 Hyper-V 虚拟机复制到 Azure。在此方案中，Hyper-V 服务器不在 VMM 云中托管。
 
 阅读本文后，请将任何评论或问题发布到底部，或者发布到 [Azure 恢复服务论坛](https://social.msdn.microsoft.com/Forums/zh-cn/home?forum=hypervrecovmgr)。
 
 
-## 概述
 
-组织需要制定业务连续性和灾难恢复 (BCDR) 策略来确定应用、工作负荷和数据如何在计划和非计划停机期间保持运行和可用，并尽快恢复正常运行情况。BCDR 策略的重点在于，发生灾难时提供确保业务数据的安全性和可恢复性以及工作负荷的持续可用性的解决方案。
 
-站点恢复是一项 Azure 服务，可以通过协调从本地物理服务器和虚拟机到云 (Azure) 或辅助数据中心的的复制，来为 BCDR 策略提供辅助。当主要位置发生故障时，你可以故障转移到辅助站点，使应用和工作负荷保持可用。当主要位置恢复正常时，你可以故障转移回到主要位置。
 
-站点恢复可用于许多方案，并可保护许多工作负荷。在[什么是 Azure Site Recovery？](/documentation/articles/site-recovery-overview/)中了解详细信息
+## Azure 门户中的 Site Recovery
 
+Azure 提供用于创建和处理资源的两个不同的[部署模型](/documentation/articles/resource-manager-deployment-model/) – Azure Resource Manager 模型和经典模型。Azure 还提供两个门户 – Azure 经典管理门户和 Azure 门户预览。
+
+本文介绍如何在经典管理门户中部署。经典管理门户可以用于维护现有的保管库。无法使用经典管理门户创建新的保管库。
+
+## 企业中的 Site Recovery
+
+组织需要制定 BCDR 策略来确定应用和数据如何在计划和非计划停机期间保持运行和可用，并尽快恢复正常运行情况。Site Recovery 的作用如下：
+
+* 在 Hyper-V VM 上运行的企业应用的异地保护。
+* 提供单个位置用于设置、管理与监视复制、故障转移以及恢复。
+* 轻松故障转移到 Azure，以及从 Azure 故障回复（还原）到本地站点中的 Hyper-V 主机服务器。
+* 包含多个 VM 的恢复计划，使分层的应用程序工作负荷能够一起故障转移。
 
 ## Azure 先决条件
 
@@ -47,7 +60,7 @@
 
 ## Hyper-V 先决条件
 
-- 源本地站点中需要一台或多台运行 Windows Server 2012 R2 且装有 Hyper-V 角色的服务器。此服务器应该：
+- 源本地站点中需要一台或多台运行 **Windows Server 2012 R2** 且装有 Hyper-V 角色的服务器，或运行 **Microsoft Hyper-V Server 2012 R2** 的服务器。此服务器应该：
 - 包含一个或多个虚拟机。
 - 直接或通过代理连接到 Internet。
 - 正在运行知识库文章 [2961977](https://support.microsoft.com/zh-cn/kb/2961977 "KB2961977") 中所述的修复程序。
@@ -66,8 +79,9 @@
 	- *.hypervrecoverymanager.windowsazure.cn
 	- *.accesscontrol.chinacloudapi.cn
 	- *.backup.windowsazure.cn
+  	- *.hypervrecoverymanager.windowsazure.cn
+  	- *.store.core.chinacloudapi.cn
 	- *.blob.core.chinacloudapi.cn
-	- *.store.core.chinacloudapi.cn
 	
 
 
@@ -187,8 +201,8 @@
 
 	![创建存储帐户](./media/site-recovery-hyper-v-site-to-azure-classic/create-resources.png)  
 
->[AZURE.NOTE] 我们不支持跨资源组移动使用[新 Azure 门户](/documentation/articles/storage-create-storage-account/)创建的存储帐户。
 
+>[AZURE.NOTE] <p>1.我们不支持跨资源组移动使用[新 Azure 门户](/documentation/articles/storage-create-storage-account/)创建的存储帐户。<p>2.对于用于部署 Site Recovery 的存储帐户，不支持在同一订阅中跨资源组[迁移](/documentation/articles/resource-group-move-resources/)，或者跨订阅迁移。
 
 ## 步骤 5：创建并配置保护组
 
@@ -248,6 +262,8 @@
 		- **Azure 网络**：指定虚拟机应故障转移到的网络。如果虚拟机有多个网络适配器，所有适配器应连接到同一个 Azure 网络。
 		- **子网**：对于虚拟机上的每个网络适配器，请在 Azure 网络中选择故障转移后计算机应连接到的子网。
 		- **目标 IP 地址**：如果源虚拟机的网络适配器配置为使用静态 IP 地址，则可以指定目标虚拟机的 IP 地址，确保计算机在故障转移后具有相同的 IP 地址。如果不指定 IP 地址，将在故障转移时分配任何可用的地址。如果指定了正在使用的地址，故障转移将会失败。
+		
+        > [AZURE.NOTE] [Migration of networks](/documentation/articles/resource-group-move-resources/)用于部署 Site Recovery 的网络不可在同一订阅的不同资源组之间或者跨订阅进行。
 
 		![配置虚拟机属性](./media/site-recovery-hyper-v-site-to-azure-classic/multiple-nic.png)  
 
@@ -296,7 +312,7 @@
 	- 单击“测试故障转移已完成”。清理测试环境以自动关闭电源，并删除测试虚拟机。
 	- 单击“说明”以记录并保存与测试故障转移相关联的任何观测结果。
 7. 当故障转移达到“完成测试”阶段时，请按如下所述完成验证：
-	1. 在 Azure 门户中查看副本虚拟机。验证虚拟机是否启动成功。
+	1. 在 Azure 门户中查看副本虚拟机。验证虚拟机是否成功启动。
 	2. 如果你已设置为从本地网络访问虚拟机，则可以启动与虚拟机的远程桌面连接。
 	3. 单击“完成测试”以完成测试。
 	4. 单击“说明”以记录并保存与测试故障转移相关联的任何观测结果。
@@ -306,4 +322,4 @@
 
 设置并运行部署以后，请[详细了解](/documentation/articles/site-recovery-failover/)故障转移。
 
-<!---HONumber=Mooncake_1107_2016-->
+<!---HONumber=Mooncake_1226_2016-->
