@@ -21,6 +21,7 @@
 # 使用 PowerShell 创建和修改 ExpressRoute 线路的路由
 
 > [AZURE.SELECTOR]
+[Azure Portal - Resource Manager](/documentation/articles/expressroute-howto-routing-portal-resource-manager/)
 [PowerShell - Resource Manager](/documentation/articles/expressroute-howto-routing-arm/)
 [PowerShell - Classic](/documentation/articles/expressroute-howto-routing-classic/)
 
@@ -235,4 +236,4 @@
 -  有关工作流的详细信息，请参阅 [ExpressRoute 工作流](/documentation/articles/expressroute-workflows/)。
 -  有关线路对等互连的详细信息，请参阅 [ExpressRoute 线路和路由域](/documentation/articles/expressroute-circuit-peerings/)。
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

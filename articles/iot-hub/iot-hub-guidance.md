@@ -15,7 +15,7 @@
  ms.workload="na"
  ms.date="07/19/2016"
  ms.author="dobett"
- wacn.date="10/10/2016"/>
+ wacn.date="01/04/2017"/>
 
 # 设计你的解决方案
 
@@ -36,11 +36,11 @@ IoT 解决方案存储有关单个设备的数据，例如：
 - 软件版本和功能
 - 设备命令历史记录
 
-给定的 IoT 解决方案存储的设备数据取决于该解决方案的特定要求。但是，解决方案必须至少存储设备标识和身份验证密钥。Azure IoT 中心包含标识注册表，可以存储每个设备的值，例如 ID、身份验证密钥和状态代码。解决方案可以使用其他 Azure 服务（例如表、Blob 或 Azure DocumentDB）来存储任何其他设备数据。
+给定的 IoT 解决方案存储的设备数据取决于该解决方案的特定要求。但是，解决方案必须至少存储设备标识和身份验证密钥。Azure IoT 中心包含[标识注册表][lnk-devguide-identityregistry]，可以存储每个设备的值，例如 ID、身份验证密钥和状态代码。解决方案可以使用其他 Azure 服务（例如表、Blob 或 Azure DocumentDB）来存储任何其他设备数据。
 
-*设备预配* 是将初始设备数据添加到解决方案中存储中的过程。若要使新设备能够连接到中心，必须将新设备 ID 和密钥添加到 IoT 中心标识注册表。在预配过程中，你可能需要初始化其他解决方案存储中的设备特定数据。
+*设备预配*是将初始设备数据添加到解决方案中存储中的过程。若要使新设备能够连接到中心，必须将新设备 ID 和密钥添加到 [IoT 中心标识注册表][lnk-devguide-identityregistry]。在预配过程中，你可能需要初始化其他解决方案存储中的设备特定数据。
 
-IoT 中心标识注册表 API 可让你将 IoT 中心集成到预配过程。
+[IoT 中心标识注册表 API][lnk-devguide-identityregistry] 可让你将 IoT 中心集成到预配过程。
 
 ## 现场网关
 
@@ -61,7 +61,7 @@ IoT 中心标识注册表 API 可让你将 IoT 中心集成到预配过程。
 
 ## <a name="customauth"></a> 自定义设备身份验证
 
-可以使用 IoT 中心设备标识注册表来使用[令牌][lnk-sas-token]配置每个设备的安全凭据和访问控制。如果 IoT 解决方案已经大幅投资自定义设备标识注册表和/或身份验证方案，可以通过创建*令牌服务*，将此现有基础结构与 IoT 中心集成。这样，便可以在解决方案中使用其他 IoT 功能。
+可以使用 IoT 中心[设备标识注册表][lnk-devguide-identityregistry]来使用[令牌][lnk-sas-token]配置每个设备的安全凭据和访问控制。如果 IoT 解决方案已经大幅投资自定义设备标识注册表和/或身份验证方案，可以通过创建*令牌服务*，将此现有基础结构与 IoT 中心集成。这样，便可以在解决方案中使用其他 IoT 功能。
 
 令牌服务是自定义云服务。它使用包含 **DeviceConnect** 权限的 IoT 中心*共享访问策略* 创建*设备范围的* 令牌。这些令牌可让设备连接到 IoT 中心。
 
@@ -69,16 +69,16 @@ IoT 中心标识注册表 API 可让你将 IoT 中心集成到预配过程。
 
 下面是令牌服务模式的主要步骤：
 
-1. 为 IoT 中心创建包含 DeviceConnect 权限的 **IoT 中心共享访问策略**。可以在 [Azure 门户预览][lnk-portal]中或以编程方式创建此策略。令牌服务使用此策略为它创建的令牌签名。
+1. 为 IoT 中心创建包含 [DeviceConnect][lnk-devguide-security] 权限的 **IoT 中心共享访问策略**。可以在 [Azure 门户][lnk-portal]中或以编程方式创建此策略。令牌服务使用此策略为它创建的令牌签名。
 2. 当设备需要访问 IoT 中心时，将向令牌服务请求已签名的令牌。设备可以使用自定义设备标识注册表/身份验证方案来进行身份验证，以确定令牌服务用来创建令牌的设备标识。
-3. 令牌服务返回令牌。使用 `/devices/{deviceId}` 作为 `resourceURI`（其中 `deviceId` 是要身份验证的设备），并根据 IoT 中心开发人员指南的安全部分创建令牌。令牌服务使用共享访问策略来构造令牌。
+3. 令牌服务返回令牌。使用 `/devices/{deviceId}` 作为 `resourceURI`（其中 `deviceId` 是要身份验证的设备），并根据 [IoT 中心开发人员指南的安全部分][lnk-devguide-security]创建令牌。令牌服务使用共享访问策略来构造令牌。
 4. 设备直接通过 IoT 中心使用令牌。
 
 > [AZURE.NOTE] 可以使用 .NET 类 [SharedAccessSignatureBuilder][lnk-dotnet-sas] 或 Java 类 [IotHubServiceSasToken][lnk-java-sas] 在令牌服务中创建令牌。
 
 令牌服务可以根据需要设置令牌过期日期。令牌过期时，IoT 中心将断开设备连接。然后，设备必须向令牌服务请求新令牌。如果使用过短的过期时间，会增加设备与令牌服务上的负载。
 
-为了让设备连接到中心，你仍必须将它添加 IoT 中心设备标识注册表，即使设备使用令牌而不是设备密钥来连接。因此，你可以在设备使用令牌身份验证时，通过在 设备标识注册表中启用或禁用设备标识，来继续使用基于设备的访问控制。这可以减轻使用较长过期时间令牌的风险。
+为了让设备连接到中心，你仍必须将它添加 IoT 中心设备标识注册表，即使设备使用令牌而不是设备密钥来连接。因此，你可以在设备使用令牌身份验证时，通过在 [IoT 中心识别注册表][lnk-devguide-identityregistry]中启用或禁用设备标识，来继续使用基于设备的访问控制。这可以减轻使用较长过期时间令牌的风险。
 
 ### 与自定义网关的比较
 
@@ -86,13 +86,13 @@ IoT 中心标识注册表 API 可让你将 IoT 中心集成到预配过程。
 
 ## 设备检测信号 <a id="heartbeat"></a>
 
-设备标识注册表包含名为 **connectionState** 的字段。你只应在开发和调试期间使用 **connectionState** 字段，IoT 解决方案不应在运行时查询该字段（例如，为了检查设备是否已连接以确定是否要发送云到设备的消息或短信）。如果 IoT 解决方案需要知道设备是否已连接（在运行时，或在比 **connectionState** 属性提供的值更精确时），解决方案应该实施 *检测信号模式*。
+[IoT 中心标识注册表][lnk-devguide-identityregistry]包含名为 **connectionState** 的字段。你只应在开发和调试期间使用 **connectionState** 字段，IoT 解决方案不应在运行时查询该字段（例如，为了检查设备是否已连接以确定是否要发送云到设备的消息或短信）。如果 IoT 解决方案需要知道设备是否已连接（在运行时，或在比 **connectionState** 属性提供的值更精确时），解决方案应该实施*检测信号模式*。
 
 在检测信号模式下，设备每隔固定时间至少发送一次设备到云的消息（例如，每小时至少一次）。这意味着，即使设备没有任何要发送的数据，仍会发送空的设备到云的消息（通常具有可供识别其属于检测信号的属性）。在服务端，解决方案维护一份图表，其中包含每个设备所收到的最后一次检测信号，并假设如果设备没有在预期时间内收到检测信号消息，即表示设备有问题。
 
-更复杂的实现可包含来自[操作监视][lnk-devguide-opmon]的信息，以便识别尝试连接或通信但失败的设备。
+更复杂的实现可包含来自[操作监视][lnk-devguide-opmon]的信息，以便识别尝试连接或通信但失败的设备。实施检测信号模式时，请务必查看 [IoT 中心配额与限制][]。
 
-> [AZURE.NOTE] 如果 IoT 解决方案只根据设备连接状态来决定是否发送云到设备的消息，并且没有把消息广播到大量设备，则可以考虑使用更简单的模式，即使用较短的到期时间。它达到的效果与使用检测信号模式维护设备连接状态达到的效果一样，而且更加有效。IoT 中心还可以通过请求消息确认来通知哪些设备可以接收消息、哪些设备脱机或不能接收消息。
+> [AZURE.NOTE] 如果 IoT 解决方案只根据设备连接状态来决定是否发送云到设备的消息，并且没有把消息广播到大量设备，则可以考虑使用更简单的模式，即使用较短的到期时间。它达到的效果与使用检测信号模式维护设备连接状态达到的效果一样，而且更加有效。IoT 中心还可以通过请求消息确认来通知哪些设备可以接收消息、哪些设备脱机或不能接收消息。有关 C2D 消息的详细信息，请参阅 [IoT 中心开发人员指南][lnk-devguide-messaging]。
 
 ## 后续步骤
 
@@ -112,13 +112,17 @@ IoT 中心标识注册表 API 可让你将 IoT 中心集成到预配过程。
 
 [img-tokenservice]: ./media/iot-hub-guidance/tokenservice.png
 
+[lnk-devguide-identityregistry]: /documentation/articles/iot-hub-devguide-identity-registry
 [lnk-devguide-opmon]: /documentation/articles/iot-hub-operations-monitoring/
 
+[lnk-devguide-security]: /documentation/articles/iot-hub-devguide-security/
 [lnk-tls-psk]: https://tools.ietf.org/html/rfc4279
 
 [lnk-portal]: https://portal.azure.cn
+[lnk-devguide-messaging]: /documentation/articles/iot-hub-devguide-messaging/
 [lnk-dotnet-sas]: https://msdn.microsoft.com/zh-cn/library/microsoft.azure.devices.common.security.sharedaccesssignaturebuilder.aspx
 [lnk-java-sas]: http://azure.github.io/azure-iot-sdks/java/service/api_reference/com/microsoft/azure/iot/service/auth/IotHubServiceSasToken.html
+[IoT 中心配额与限制]: /documentation/articles/iot-hub-devguide-quotas-throttling/
 [lnk-gateway-sdk]: https://github.com/Azure/azure-iot-gateway-sdk
 [lnk-mqtt]: /documentation/articles/iot-hub-mqtt-support/
 [lnk-devices]: /documentation/articles/iot-hub-tested-configurations/
@@ -131,4 +135,4 @@ IoT 中心标识注册表 API 可让你将 IoT 中心集成到预配过程。
 [lnk-sas-token]: /documentation/articles/iot-hub-sas-tokens/
 [lnk-securing]: /documentation/articles/iot-hub-security-ground-up/
 
-<!---HONumber=Mooncake_0307_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

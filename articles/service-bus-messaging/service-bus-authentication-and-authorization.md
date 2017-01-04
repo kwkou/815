@@ -8,8 +8,8 @@
    editor="tysonn" />
 <tags 
    ms.service="service-bus"
-   ms.date="10/03/2016"
-   wacn.date="12/02/2016" />
+   ms.date="12/09/2016"
+   wacn.date="01/04/2017" />
 
 # 服务总线身份验证和授权
 
@@ -69,4 +69,4 @@ Azure.NET SDK 2.0 版和更高版本支持服务总线的 ACS 身份验证。此
 
 可在以下位置找到有关 ACS 令牌的详细信息：[如何：通过 OAuth WRAP 协议从 ACS 请求令牌](https://msdn.microsoft.com/zh-cn/library/hh674475.aspx)。
 
-<!---HONumber=Mooncake_0104_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

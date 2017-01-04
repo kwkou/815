@@ -14,7 +14,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="na"
     ms.date="10/03/2016"
-    wacn.date="12/26/2016" />
+    wacn.date="01/04/2017" />
 
 # 使用 AMQP 1.0 通过 .NET 使用服务总线
 
@@ -139,4 +139,4 @@ AMQP 1.0 支持在服务总线 SDK 2.1 版或更高版本中提供。为确保�
 [针对服务总线分区队列和主题的 AMQP 1.0 支持]: /documentation/articles/service-bus-partitioned-queues-and-topics-amqp-overview/
 [适用于 Windows Server 的服务总线中的 AMQP]: https://msdn.microsoft.com/zh-cn/library/dn574799.aspx
 
-<!---HONumber=Mooncake_1219_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

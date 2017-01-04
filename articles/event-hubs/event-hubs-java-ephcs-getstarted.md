@@ -15,7 +15,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="09/27/2016"
-	wacn.date="11/08/2016"
+	wacn.date="01/04/2017"
 	ms.author="jotaub;sethm"/>  
 
 
@@ -35,7 +35,7 @@
 
 + Java 开发环境。对于本教程，我们将采用 Eclipse。
 
-+ [Microsoft Visual Studio](https://www.visualstudio.com)
++ [Microsoft Visual Studio](http://visualstudio.com)
 
 + 有效的 Azure 帐户。<br/>如果你没有帐户，只需花费几分钟就能创建一个试用帐户。有关详细信息，请参阅 <a href="/pricing/1rmb-trial/" target="_blank">Azure 试用</a>。
 
@@ -80,4 +80,4 @@
 [使用事件中心扩大事件处理]: https://code.msdn.microsoft.com/Service-Bus-Event-Hub-45f43fc3
  
 
-<!---HONumber=Mooncake_1031_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

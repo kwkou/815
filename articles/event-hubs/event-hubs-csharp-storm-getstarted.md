@@ -15,7 +15,7 @@
 	ms.devlang="na"
 	ms.topic="article" 
 	ms.date="09/06/2016" 
-	wacn.date="11/08/2016"
+	wacn.date="01/04/2017"
 	ms.author="jotaub;sethm"/>  
 
 
@@ -33,7 +33,7 @@
 
 为了完成本教程，你将需要以下内容：
 
-+ [Microsoft Visual Studio](https://www.visualstudio.com/)
++ [Microsoft Visual Studio](http://visualstudio.com)
 
 + 一个 Java 开发环境，配置为运行 [Maven](http://maven.apache.org/)。对于本教程，我们将采用 [Eclipse](https://www.eclipse.org/)。
 
@@ -74,4 +74,4 @@
 [使用事件中心扩大事件处理]: https://code.msdn.microsoft.com/windowsazure/Service-Bus-Event-Hub-45f43fc3
  
 
-<!---HONumber=Mooncake_1031_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

@@ -54,4 +54,4 @@
 - 有关 ExpressRoute 的详细信息，请参阅 [ExpressRoute 常见问题](/documentation/articles/expressroute-faqs/)。
 - 确保符合所有先决条件。请参阅 [ExpressRoute 先决条件](/documentation/articles/expressroute-prerequisites/)。
 
-<!---HONumber=Mooncake_0104_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

@@ -14,7 +14,7 @@
  ms.tgt_pltfrm="na"
  ms.workload="na"
  ms.date="02/03/2016"
- wacn.date="11/07/2016"
+ wacn.date="01/04/2017"
  ms.author="elioda"/>
 
 # IoT 中心高可用性和灾难恢复
@@ -60,4 +60,4 @@ IoT 解决方案中部署拓扑的完整处理已超出本文的范围，但为�
 [lnk-get-started]: /documentation/articles/iot-hub-csharp-csharp-getstarted/
 [Azure IoT 中心是什么？]: /documentation/articles/iot-hub-what-is-iot-hub/
 
-<!---HONumber=Mooncake_0307_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

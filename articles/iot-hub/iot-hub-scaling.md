@@ -15,7 +15,7 @@
  ms.tgt_pltfrm="na"
  ms.workload="na"
  ms.date="09/19/2016"
- wacn.date="11/07/2016"
+ wacn.date="01/04/2017"
  ms.author="elioda"/>  
 
 
@@ -66,4 +66,4 @@ Azure IoT 中心可支持多达一百万台设备同时连接。有关详细信�
 [lnk-devguide]: /documentation/articles/iot-hub-devguide/
 [lnk-gateway]: /documentation/articles/iot-hub-linux-gateway-sdk-simulated-device/
 
-<!---HONumber=Mooncake_0307_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

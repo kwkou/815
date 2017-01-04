@@ -16,7 +16,7 @@
 	ms.topic="article"
 	ms.date="10/04/2016"
 	ms.author="sethm"
-	wacn.date="11/28/2016"/>  
+	wacn.date="01/04/2017"/>  
 
 
 # 如何使用 Service Bus 队列
@@ -91,13 +91,11 @@ Service Bus 队列是一种可用于各种应用场景的通用技术：
 
 将以下 `import` 语句添加到 Java 文件顶部：
 
-```
-// Include the following imports to use Service Bus APIs
-import com.microsoft.windowsazure.services.servicebus.*;
-import com.microsoft.windowsazure.services.servicebus.models.*;
-import com.microsoft.windowsazure.core.*;
-import javax.xml.datatype.*;
-```
+		// Include the following imports to use Service Bus APIs
+		import com.microsoft.windowsazure.services.servicebus.*;
+		import com.microsoft.windowsazure.services.servicebus.models.*;
+		import com.microsoft.windowsazure.core.*;
+		import javax.xml.datatype.*;
 
 ## 创建队列
 
@@ -247,4 +245,4 @@ Service Bus 提供了相关功能来帮助你轻松地从应用程序错误或�
   [队列、主题和订阅]: /documentation/articles/service-bus-queues-topics-subscriptions/
   [BrokeredMessage]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.aspx
 
-<!---HONumber=Mooncake_1121_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

@@ -16,7 +16,7 @@
 	ms.topic="get-started-article"
 	ms.date="09/27/2016"
 	ms.author="sethm"
-	wacn.date="11/28/2016"/>  
+	wacn.date="01/04/2017"/>  
 
 
 
@@ -56,4 +56,4 @@ Azure 服务总线是一项可靠的信息传送服务。此服务的目的是�
 - [如何使用 Service Bus 队列](/documentation/articles/service-bus-dotnet-get-started-with-queues/)
 - [如何使用服务总线主题和订阅](/documentation/articles/service-bus-dotnet-how-to-use-topics-subscriptions/)
 
-<!---HONumber=Mooncake_1121_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

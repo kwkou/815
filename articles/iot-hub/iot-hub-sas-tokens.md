@@ -10,7 +10,7 @@
 <tags
  ms.service="iot-hub"
  ms.date="06/07/2016"
-wacn.date="08/29/2016"/>
+wacn.date="01/04/2017"/>
 
 # 使用 IoT 中心安全令牌
 
@@ -31,7 +31,7 @@ IoT 中心还允许设备使用 X.509 证书向 IoT 中心进行身份验证。I
 ## <a name="security-token-structure"></a> 安全令牌结构
 可以使用安全令牌向设备和服务授予限时访问 IoT 中心特定功能的权限。为确保只有经过授权的设备和服务能够连接，安全令牌必须使用共享访问策略密钥或存储在标识注册表中并带有设备标识的对称密钥进行签名。
 
-使用共享访问策略密钥进行签名的令牌可以授权访问与共享访问策略权限相关的所有功能。另一方面，使用设备标识的对称密钥进行签名的令牌只能向相关设备标识授予 **DeviceConnect** 权限。
+使用共享访问策略密钥进行签名的令牌可以授权访问与共享访问策略权限相关的所有功能。请参阅 [IoT 中心开发人员指南的安全性部分][lnk-devguide-security]。另一方面，使用设备标识的对称密钥进行签名的令牌只能向相关设备标识授予 **DeviceConnect** 权限。
 
 安全令牌采用以下格式：
 
@@ -143,6 +143,7 @@ IoT 中心还允许设备使用 X.509 证书向 IoT 中心进行身份验证。I
 使用共享访问策略访问设备功能的两个主要方案是：
 
 * [云协议网关][lnk-azure-protocol-gateway]，
+* 用于实现自定义身份验证方案的[令牌服务][lnk-devguide-security]。
 
 由于共享访问策略可潜在授权访问任何连接设备的权限，因此创建安全令牌时必须使用正确的资源 URI。这对令牌服务尤其重要，它必须使用资源 URI 将令牌的范围限定到特定设备。这一点与协议网关的关系不大，因为协议网关是对所有设备的通信进行调节。
 
@@ -169,7 +170,7 @@ IoT 中心还允许设备使用 X.509 证书向 IoT 中心进行身份验证。I
 
 ## <a name="using-security-tokens-from-service-components"></a> 使用服务组件提供的安全令牌
 
-服务组件只能使用共享访问策略生成安全令牌，授予适当权限。
+如 [IoT 中心开发人员指南的安全性部分][lnk-devguide-security]所述，服务组件只能使用共享访问策略生成安全令牌，授予适当权限。
 
 以下是终结点上显示的服务功能：
 
@@ -187,13 +188,9 @@ IoT 中心还允许设备使用 X.509 证书向 IoT 中心进行身份验证。I
 * 策略名称：`registryRead`；
 * 任何过期时间。
 
-```
-    var endpoint ="myhub.azure-devices.cn/devices";
-    var policyName = 'device';
-    var policyKey = '...';
+    var 终结点为“myhub.azure-devices.cn/devices”；var 策略名称为“device”；var 策略密钥为“...”；
 
-    var token = generateSasToken(endpoint, policyKey, policyName, 60);
-```
+    var 令牌为 generateSasToken(终结点, 策略密钥, 策略名称, 60)；
 
 授权读取所有设备标识权限的安全令牌是：
 
@@ -223,20 +220,20 @@ IoT 中心还允许设备使用 X.509 证书向 IoT 中心进行身份验证。I
 
 下面是使用 X.509 客户端证书注册设备的示例 C# 代码片段：
 
-```
-var device = new Device(deviceId)
-{
-  Authentication = new AuthenticationMechanism()
-  {
-    X509Thumbprint = new X509Thumbprint()
-    {
-      PrimaryThumbprint = "921BC9694ADEB8929D4F7FE4B9A3A6DE58B0790B"
-    }
-  }
-};
-RegistryManager registryManager = RegistryManager.CreateFromConnectionString(deviceGatewayConnectionString);
-await registryManager.AddDeviceAsync(device);
-```
+
+		var device = new Device(deviceId)
+		{
+		  Authentication = new AuthenticationMechanism()
+		  {
+		    X509Thumbprint = new X509Thumbprint()
+		    {
+		      PrimaryThumbprint = "921BC9694ADEB8929D4F7FE4B9A3A6DE58B0790B"
+		    }
+		  }
+		};
+		RegistryManager registryManager = RegistryManager.CreateFromConnectionString(deviceGatewayConnectionString);
+		await registryManager.AddDeviceAsync(device);
+
 
 ## 在运行时操作期间使用 X.509 客户端证书
 
@@ -248,14 +245,15 @@ await registryManager.AddDeviceAsync(device);
 
 下面是示例代码片段：
 
-```
-var authMethod = new DeviceAuthenticationWithX509Certificate("<device id>", x509Certificate);
 
-var deviceClient = DeviceClient.Create("<IotHub DNS HostName>", authMethod);
-```
+		var authMethod = new DeviceAuthenticationWithX509Certificate("<device id>", x509Certificate);
+
+		var deviceClient = DeviceClient.Create("<IotHub DNS HostName>", authMethod);
+
 
 [lnk-apis-sdks]: https://github.com/Azure/azure-iot-sdks/blob/master/readme.md
 [lnk-guidance-security]: /documentation/articles/iot-hub-guidance/#customauth
+[lnk-devguide-security]: /documentation/articles/iot-hub/iot-hub-devguide-security/
 [lnk-azure-protocol-gateway]: /documentation/articles/iot-hub-protocol-gateway/
 [lnk-device-explorer]: https://github.com/Azure/azure-iot-sdks/blob/master/tools/DeviceExplorer/doc/how_to_use_device_explorer.md
 
@@ -264,4 +262,4 @@ var deviceClient = DeviceClient.Create("<IotHub DNS HostName>", authMethod);
 [lnk-service-sdk]: https://github.com/Azure/azure-iot-sdks/tree/master/csharp/service
 [lnk-client-sdk]: https://github.com/Azure/azure-iot-sdks/tree/master/csharp/device
 
-<!---HONumber=Mooncake_0627_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

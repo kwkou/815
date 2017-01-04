@@ -10,7 +10,7 @@
 <tags
 	ms.service="service-bus"
 	ms.date="09/16/2016"
-	wacn.date="10/24/2016"/>
+	wacn.date="01/04/2017"/>
 
 
 # 如何使用 Azure 服务总线中继服务
@@ -50,7 +50,7 @@
 
 5.  在确保命名空间名称可用后，选择应承载您的命名空间的国家或地区（确保使用在其中部署计算资源的同一国家/地区）。
 
-	> [AZURE.IMPORTANT] 选取要选择用于部署应用程序的“相同区域”。这将为您提供最佳性能。
+	> [AZURE.IMPORTANT] 选取要选择用于部署应用程序的*相同区域*。这将为您提供最佳性能。
 
 6.	将对话框中的其他字段保留为其默认值（“消息传送”和“标准”层），然后单击复选标记。系统现已创建命名空间并已将其启用。您可能需要等待几分钟，因为系统将为您的帐户配置资源。
 
@@ -107,55 +107,55 @@
 
 协定定义用于添加两个数字并返回相应结果的单个操作 `AddNumbers`。`IProblemSolverChannel` 接口使客户端能够更轻松地管理代理生存期。创建这样一个接口被认为是最佳实践。最好将此协定定义放入单独的文件中，以便可从你的“客户端”和“服务”两个项目中引用该文件，但也可以将代码复制到这两个项目中。
 
-```
-using System.ServiceModel;
 
-[ServiceContract(Namespace = "urn:ps")]
-interface IProblemSolver
-{
-    [OperationContract]
-    int AddNumbers(int a, int b);
-}
+		using System.ServiceModel;
 
-interface IProblemSolverChannel : IProblemSolver, IClientChannel {}
-```
+		[ServiceContract(Namespace = "urn:ps")]
+		interface IProblemSolver
+		{
+		    [OperationContract]
+		    int AddNumbers(int a, int b);
+		}
+
+		interface IProblemSolverChannel : IProblemSolver, IClientChannel {}
+
 
 协定到位后，实施起来就很简单了。
 
-```
-class ProblemSolver : IProblemSolver
-{
-    public int AddNumbers(int a, int b)
-    {
-        return a + b;
-    }
-}
-```
+
+		class ProblemSolver : IProblemSolver
+		{
+		    public int AddNumbers(int a, int b)
+		    {
+		        return a + b;
+		    }
+		}
+
 
 ### 以编程方式配置服务主机
 
 协定和实施完成后，你现在就可以托管服务了。托管发生在 [System.ServiceModel.ServiceHost](https://msdn.microsoft.com/zh-cn/library/azure/system.servicemodel.servicehost.aspx) 对象内，该对象负责管理服务实例并托管侦听消息的终结点。以下代码使用常规的本地终结点和服务总线终结点来配置服务，以便并列展示内部和外部终结点的外观。将字符串 *namespace* 替换为你的命名空间名称，并将 *yourKey* 替换为你在前面的设置步骤中获取的 SAS 密钥。
 
-```
-ServiceHost sh = new ServiceHost(typeof(ProblemSolver));
 
-sh.AddServiceEndpoint(
-   typeof (IProblemSolver), new NetTcpBinding(),
-   "net.tcp://localhost:9358/solver");
+		ServiceHost sh = new ServiceHost(typeof(ProblemSolver));
 
-sh.AddServiceEndpoint(
-   typeof(IProblemSolver), new NetTcpRelayBinding(),
-   ServiceBusEnvironment.CreateServiceUri("sb", "namespace", "solver"))
-    .Behaviors.Add(new TransportClientEndpointBehavior {
-          TokenProvider = TokenProvider.CreateSharedAccessSignatureTokenProvider("RootManageSharedAccessKey", "yourKey")});
+		sh.AddServiceEndpoint(
+		   typeof (IProblemSolver), new NetTcpBinding(),
+		   "net.tcp://localhost:9358/solver");
 
-sh.Open();
+		sh.AddServiceEndpoint(
+		   typeof(IProblemSolver), new NetTcpRelayBinding(),
+		   ServiceBusEnvironment.CreateServiceUri("sb", "namespace", "solver"))
+		    .Behaviors.Add(new TransportClientEndpointBehavior {
+		          TokenProvider = TokenProvider.CreateSharedAccessSignatureTokenProvider("RootManageSharedAccessKey", "yourKey")});
 
-Console.WriteLine("Press ENTER to close");
-Console.ReadLine();
+		sh.Open();
 
-sh.Close();
-```
+		Console.WriteLine("Press ENTER to close");
+		Console.ReadLine();
+
+		sh.Close();
+
 
 在本示例中，你将创建两个位于同一协定实施中的终结点。一个是本地的，一个通过服务总线进行投影。两者之间的主要区别是绑定；本地终结点使用 [NetTcpBinding](https://msdn.microsoft.com/zh-cn/library/azure/system.servicemodel.nettcpbinding.aspx)，而服务总线终结点和地址使用 [NetTcpRelayBinding](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.nettcprelaybinding.aspx)。本地终结点有一个使用不同端口的本地网络地址。服务总线终结点有一个由字符串 `sb`、你的命名空间名称、路径“solver”组成的终结点地址。 这将生成 URI `sb://[serviceNamespace].servicebus.chinacloudapi.cn/solver`，将服务终结点标识为具有完全限定的外部 DNS 名称的服务总线 TCP 终结点。如果将替换上述占位符的代码放入**服务**应用程序的 `Main` 函数中，你将会获得一个可正常运行的服务。如果你希望你的服务专门侦听服务总线，请删除本地终结点声明。
 
@@ -163,40 +163,40 @@ sh.Close();
 
 你还可以使用 App.config 文件配置主机。在此情况下，服务托管代码如以下示例所示。
 
-```
-ServiceHost sh = new ServiceHost(typeof(ProblemSolver));
-sh.Open();
-Console.WriteLine("Press ENTER to close");
-Console.ReadLine();
-sh.Close();
-```
+
+		ServiceHost sh = new ServiceHost(typeof(ProblemSolver));
+		sh.Open();
+		Console.WriteLine("Press ENTER to close");
+		Console.ReadLine();
+		sh.Close();
+
 
 终结点定义将移到 App.config 文件中。请注意，NuGet 包已向 App.config 文件添加一系列定义，这些定义是服务总线必需的配置扩展。以下示例（与前面的代码完全等效）应该紧靠在 **system.serviceModel** 元素的下面。此代码示例假设你的项目 C# 命名空间名为“Service”。将占位符替换为你的服务总线服务命名空间和密钥。
 
-```
-<services>
-    <service name="Service.ProblemSolver">
-        <endpoint contract="Service.IProblemSolver"
-                  binding="netTcpBinding"
-                  address="net.tcp://localhost:9358/solver"/>
-        <endpoint contract="Service.IProblemSolver"
-                  binding="netTcpRelayBinding"
-                  address="sb://namespace.servicebus.chinacloudapi.cn/solver"
-                  behaviorConfiguration="sbTokenProvider"/>
-    </service>
-</services>
-<behaviors>
-    <endpointBehaviors>
-        <behavior name="sbTokenProvider">
-            <transportClientEndpointBehavior>
-                <tokenProvider>
-                    <sharedAccessSignature keyName="RootManageSharedAccessKey" key="yourKey" />
-                </tokenProvider>
-            </transportClientEndpointBehavior>
-        </behavior>
-    </endpointBehaviors>
-</behaviors>
-```
+
+		<services>
+		    <service name="Service.ProblemSolver">
+		        <endpoint contract="Service.IProblemSolver"
+		                  binding="netTcpBinding"
+		                  address="net.tcp://localhost:9358/solver"/>
+		        <endpoint contract="Service.IProblemSolver"
+		                  binding="netTcpRelayBinding"
+		                  address="sb://namespace.servicebus.chinacloudapi.cn/solver"
+		                  behaviorConfiguration="sbTokenProvider"/>
+		    </service>
+		</services>
+		<behaviors>
+		    <endpointBehaviors>
+		        <behavior name="sbTokenProvider">
+		            <transportClientEndpointBehavior>
+		                <tokenProvider>
+		                    <sharedAccessSignature keyName="RootManageSharedAccessKey" key="yourKey" />
+		                </tokenProvider>
+		            </transportClientEndpointBehavior>
+		        </behavior>
+		    </endpointBehaviors>
+		</behaviors>
+
 
 进行这些更改后，该服务将像以前一样启动，但具有两个活动终结点：一个位于本地，一个在云中侦听。
 
@@ -210,19 +210,19 @@ sh.Close();
 
 然后，替换客户端的 `Main` 方法中的代码，再次将占位符文本替换为服务总线命名空间和 SAS 密钥。
 
-```
-var cf = new ChannelFactory<IProblemSolverChannel>(
-    new NetTcpRelayBinding(),
-    new EndpointAddress(ServiceBusEnvironment.CreateServiceUri("sb", "namespace", "solver")));
 
-cf.Endpoint.Behaviors.Add(new TransportClientEndpointBehavior
-            { TokenProvider = TokenProvider.CreateSharedAccessSignatureTokenProvider("RootManageSharedAccessKey","yourKey") });
+		var cf = new ChannelFactory<IProblemSolverChannel>(
+		    new NetTcpRelayBinding(),
+		    new EndpointAddress(ServiceBusEnvironment.CreateServiceUri("sb", "namespace", "solver")));
 
-using (var ch = cf.CreateChannel())
-{
-    Console.WriteLine(ch.AddNumbers(4, 5));
-}
-```
+		cf.Endpoint.Behaviors.Add(new TransportClientEndpointBehavior
+		            { TokenProvider = TokenProvider.CreateSharedAccessSignatureTokenProvider("RootManageSharedAccessKey","yourKey") });
+
+		using (var ch = cf.CreateChannel())
+		{
+		    Console.WriteLine(ch.AddNumbers(4, 5));
+		}
+
 
 现在你可以生成客户端和服务，运行它们（首先运行服务），客户端将调用该服务并输出 **9**。 你可以在不同计算机上，甚至跨网络运行客户端和服务器，通信仍将进行。客户端代码还可以在云中或在本地运行。
 
@@ -230,35 +230,35 @@ using (var ch = cf.CreateChannel())
 
 以下代码介绍了如何使用 App.config 文件配置客户端。
 
-```
-var cf = new ChannelFactory<IProblemSolverChannel>("solver");
-using (var ch = cf.CreateChannel())
-{
-    Console.WriteLine(ch.AddNumbers(4, 5));
-}
-```
+
+		var cf = new ChannelFactory<IProblemSolverChannel>("solver");
+		using (var ch = cf.CreateChannel())
+		{
+		    Console.WriteLine(ch.AddNumbers(4, 5));
+		}
+
 
 终结点定义将移到 App.config 文件中。以下示例（与前面列出的代码相同）应该紧靠在 **system.serviceModel** 元素的下面。在此，与之前一样，你必须将占位符替换为服务总线命名空间和 SAS 密钥。
 
-```
-<client>
-    <endpoint name="solver" contract="Service.IProblemSolver"
-              binding="netTcpRelayBinding"
-              address="sb://namespace.servicebus.chinacloudapi.cn/solver"
-              behaviorConfiguration="sbTokenProvider"/>
-</client>
-<behaviors>
-    <endpointBehaviors>
-        <behavior name="sbTokenProvider">
-            <transportClientEndpointBehavior>
-                <tokenProvider>
-                    <sharedAccessSignature keyName="RootManageSharedAccessKey" key="yourKey" />
-                </tokenProvider>
-            </transportClientEndpointBehavior>
-        </behavior>
-    </endpointBehaviors>
-</behaviors>
-```
+
+		<client>
+		    <endpoint name="solver" contract="Service.IProblemSolver"
+		              binding="netTcpRelayBinding"
+		              address="sb://namespace.servicebus.chinacloudapi.cn/solver"
+		              behaviorConfiguration="sbTokenProvider"/>
+		</client>
+		<behaviors>
+		    <endpointBehaviors>
+		        <behavior name="sbTokenProvider">
+		            <transportClientEndpointBehavior>
+		                <tokenProvider>
+		                    <sharedAccessSignature keyName="RootManageSharedAccessKey" key="yourKey" />
+		                </tokenProvider>
+		            </transportClientEndpointBehavior>
+		        </behavior>
+		    </endpointBehaviors>
+		</behaviors>
+
 
 ## 后续步骤
 
@@ -273,4 +273,4 @@ using (var ch = cf.CreateChannel())
   [Azure 示例]: https://code.msdn.microsoft.com/site/search?query=service%20bus&f%5B0%5D.Value=service%20bus&f%5B0%5D.Type=SearchText&ac=2
   [服务总线示例概述]: /documentation/articles/service-bus-samples/
 
-<!---HONumber=Mooncake_0104_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

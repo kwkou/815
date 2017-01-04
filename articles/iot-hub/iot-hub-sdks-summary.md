@@ -10,7 +10,7 @@
 <tags
  ms.service="iot-hub"
  ms.date="09/13/2016"
- wacn.date="10/10/2016"/>
+ wacn.date="01/04/2017"/>
 
 # IoT 中心 SDK
 
@@ -91,4 +91,4 @@ Azure IoT 服务 SDK 包含的代码可帮助构建直接与 IoT 中心进行交
 [lnk-gateway]: /documentation/articles/iot-hub-linux-gateway-sdk-simulated-device/
 [lnk-portal]: /documentation/articles/iot-hub-manage-through-portal/
 
-<!---HONumber=Mooncake_0523_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

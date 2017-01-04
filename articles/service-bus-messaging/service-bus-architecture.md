@@ -9,7 +9,7 @@
 <tags 
    ms.service="service-bus"
     ms.date="07/11/2016"
-   wacn.date="08/15/2016" />
+   wacn.date="01/04/2017" />
 
 # 服务总线体系结构
 
@@ -17,7 +17,7 @@
 
 ## 服务总线缩放单位
 
-服务总线按缩放单位进行组织。缩放单位是部署单位，包含运行服务所需的全部组件。每个区域部署一个或多个服务总线缩放单位。
+服务总线按 *缩放单位* 进行组织。缩放单位是部署单位，包含运行服务所需的全部组件。每个区域部署一个或多个服务总线缩放单位。
 
 一个服务总线命名空间映射到一个缩放单位。缩放单位处理所有类型的服务总线实体：中继和中转消息实体（队列、主题、订阅）。服务总线缩放单位由以下组件构成：
 
@@ -55,4 +55,4 @@
 - [服务总线基础知识](/documentation/articles/service-bus-fundamentals-hybrid-solutions/)
 - [使用服务总线队列的队列消息解决方案](/documentation/articles/service-bus-dotnet-multi-tier-app-using-service-bus-queues/)
 
-<!---HONumber=Mooncake_1207_2015-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

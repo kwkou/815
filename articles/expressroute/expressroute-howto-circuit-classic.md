@@ -14,7 +14,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
    ms.date="10/10/2016"
-   wacn.date="10/31/2016"
+   wacn.date="01/04/2017"
    ms.author="ganesr;cherylmc"/>
 
 # 创建和修改 ExpressRoute 线路
@@ -344,4 +344,4 @@ ExpressRoute 线路处于以下状态时，你才能使用它：
 - [创建和修改 ExpressRoute 线路的路由](/documentation/articles/expressroute-howto-routing-classic/)
 - [将虚拟网络链接到 ExpressRoute 线路](/documentation/articles/expressroute-howto-linkvnet-classic/)
 
-<!---HONumber=Mooncake_0104_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

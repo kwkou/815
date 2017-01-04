@@ -13,12 +13,11 @@
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
    ms.date="10/10/2016"
-   wacn.date="10/31/2016"
+   wacn.date="01/04/2017"
    ms.author="cherylmc"/>
 
 
-
-# ExpressRoute 先决条件  
+# ExpressRoute 先决条件和清单  
 
 若要使用 ExpressRoute 连接到 Azure 服务，你需要确认是否符合以下部分中所列的要求。
 
@@ -56,4 +55,4 @@
 	- [将 VNet 链接到 ExpressRoute 线路](/documentation/articles/expressroute-howto-linkvnet-classic/)
  
 
-<!---HONumber=Mooncake_0104_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

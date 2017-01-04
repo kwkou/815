@@ -10,7 +10,7 @@
 <tags 
 	ms.service="service-bus" 
 	ms.date="10/04/2016" 
-	wacn.date="12/02/2016"/>
+	wacn.date="01/04/2017"/>
 
 # 如何使用服务总线主题和订阅
 
@@ -26,34 +26,34 @@
 
 可以通过 **ServiceBusService** 对象处理主题。将以下代码添加到任何 Python 文件的顶部附近，你希望在其中以编程方式访问服务总线：
 
-```
-from azure.servicebus import ServiceBusService, Message, Topic, Rule, DEFAULT_RULE_NAME
-```
+
+		from azure.servicebus import ServiceBusService, Message, Topic, Rule, DEFAULT_RULE_NAME
+
 
 以下代码创建 **ServiceBusService** 对象。将 `mynamespace`、`sharedaccesskeyname` 和 `sharedaccesskey` 替换为实际的命名空间、共享访问签名 (SAS) 密钥名称和密钥值。
 
-```
-bus_service = ServiceBusService(
-	service_namespace='mynamespace',
-	shared_access_key_name='sharedaccesskeyname',
-	shared_access_key_value='sharedaccesskey')
-```
+
+		bus_service = ServiceBusService(
+			service_namespace='mynamespace',
+			shared_access_key_name='sharedaccesskeyname',
+			shared_access_key_value='sharedaccesskey')
+
 
 你可以从 [Azure 经典管理门户][]中的“连接信息”窗口获得 SAS 密钥名称和值。
 
-```
-bus_service.create_topic('mytopic')
-```
+
+		bus_service.create_topic('mytopic')
+
 
 **create\_topic** 还支持其他选项，以允许你重写默认主题设置，例如消息生存时间或最大主题大小。以下示例将最大主题大小设置为 5 GB，将生存时间 (TTL) 值设置为 1 分钟：
 
-```
-topic_options = Topic()
-topic_options.max_size_in_megabytes = '5120'
-topic_options.default_message_time_to_live = 'PT1M'
 
-bus_service.create_topic('mytopic', topic_options)
-```
+		topic_options = Topic()
+		topic_options.max_size_in_megabytes = '5120'
+		topic_options.default_message_time_to_live = 'PT1M'
+
+		bus_service.create_topic('mytopic', topic_options)
+
 
 ## 创建订阅
 
@@ -65,9 +65,9 @@ bus_service.create_topic('mytopic', topic_options)
 
 **MatchAll** 筛选器是默认筛选器，在创建新订阅时未指定筛选器的情况下使用。使用 **MatchAll** 筛选器时，发布到主题的所有消息都将置于订阅的虚拟队列中。以下示例创建名为“AllMessages”的订阅，并使用默认的 **MatchAll** 筛选器。
 
-```
-bus_service.create_subscription('mytopic', 'AllMessages')
-```
+
+		bus_service.create_subscription('mytopic', 'AllMessages')
+
 
 ### 创建具有筛选器的订阅
 
@@ -81,29 +81,29 @@ bus_service.create_subscription('mytopic', 'AllMessages')
 
 以下示例创建了一个名为 `HighMessages` 的订阅（带有只选择自定义 **messagenumber** 属性大于 3 的消息的 **SqlFilter**）：
 
-```
-bus_service.create_subscription('mytopic', 'HighMessages')
 
-rule = Rule()
-rule.filter_type = 'SqlFilter'
-rule.filter_expression = 'messagenumber > 3'
+		bus_service.create_subscription('mytopic', 'HighMessages')
 
-bus_service.create_rule('mytopic', 'HighMessages', 'HighMessageFilter', rule)
-bus_service.delete_rule('mytopic', 'HighMessages', DEFAULT_RULE_NAME)
-```
+		rule = Rule()
+		rule.filter_type = 'SqlFilter'
+		rule.filter_expression = 'messagenumber > 3'
+
+		bus_service.create_rule('mytopic', 'HighMessages', 'HighMessageFilter', rule)
+		bus_service.delete_rule('mytopic', 'HighMessages', DEFAULT_RULE_NAME)
+
 
 类似地，以下示例创建一个名为 `LowMessages` 的订阅，其 **SqlFilter** 只选择 **messagenumber** 属性小于或等于 3 的消息：
 
-```
-bus_service.create_subscription('mytopic', 'LowMessages')
 
-rule = Rule()
-rule.filter_type = 'SqlFilter'
-rule.filter_expression = 'messagenumber <= 3'
+		bus_service.create_subscription('mytopic', 'LowMessages')
 
-bus_service.create_rule('mytopic', 'LowMessages', 'LowMessageFilter', rule)
-bus_service.delete_rule('mytopic', 'LowMessages', DEFAULT_RULE_NAME)
-```
+		rule = Rule()
+		rule.filter_type = 'SqlFilter'
+		rule.filter_expression = 'messagenumber <= 3'
+
+		bus_service.create_rule('mytopic', 'LowMessages', 'LowMessageFilter', rule)
+		bus_service.delete_rule('mytopic', 'LowMessages', DEFAULT_RULE_NAME)
+
 
 现在，当消息发送到 `mytopic` 时，始终会将它传送到订阅了 **AllMessages** 主题订阅的接收方，并选择性地传送到订阅了 **HighMessages** 和 **LowMessages** 主题订阅的接收方（具体取决于消息内容）。
 
@@ -113,11 +113,11 @@ bus_service.delete_rule('mytopic', 'LowMessages', DEFAULT_RULE_NAME)
 
 以下示例演示如何向 `mytopic` 发送五条测试消息。请注意，每条消息的 **messagenumber** 属性值因循环迭代而异（这将确定哪些订阅接收它）：
 
-```
-for i in range(5):
-	msg = Message('Msg {0}'.format(i).encode('utf-8'), custom_properties={'messagenumber':i})
-	bus_service.send_topic_message('mytopic', msg)
-```
+
+		for i in range(5):
+			msg = Message('Msg {0}'.format(i).encode('utf-8'), custom_properties={'messagenumber':i})
+			bus_service.send_topic_message('mytopic', msg)
+
 
 服务总线主题在标准层中支持的最大消息大小为 256 KB。标头最大为 64 KB，其中包括标准和自定义应用程序属性。一个主题中包含的消息数量不受限制，但消息的总大小受限制。此主题大小是在创建时定义的，上限为 5 GB。有关配额的详细信息，请参阅[服务总线配额][]。
 
@@ -125,10 +125,10 @@ for i in range(5):
 
 对 **ServiceBusService** 对象使用 **receive\_subscription\_message** 方法可从订阅接收消息：
 
-```
-msg = bus_service.receive_subscription_message('mytopic', 'LowMessages', peek_lock=False)
-print(msg.body)
-```
+
+		msg = bus_service.receive_subscription_message('mytopic', 'LowMessages', peek_lock=False)
+		print(msg.body)
+
 
 当 **peek‑lock** 参数设置为 **False** 时，将在读取消息后将其从订阅中删除。通过将参数 **peek\_lock** 设置为 **True**，你可以读取（扫视）并锁定消息而不会从队列中删除它。
 
@@ -136,12 +136,12 @@ print(msg.body)
 
 如果将 **peek\_lock** 参数设置为 **True**，则接收将变成一个两阶段操作，这样就可以支持无法容忍遗漏消息的应用程序。当 Service Bus 收到请求时，它会查找下一条要使用的消息，锁定该消息以防其他使用者接收，然后将该消息返回到应用程序。在应用程序处理完消息（或安全存储该消息以供将来处理）后，它会通过对 **Message** 对象调用 **delete** 方法来完成接收过程的第二个阶段。**delete** 方法会将消息标记为已使用，并从订阅中删除它。
 
-```
-msg = bus_service.receive_subscription_message('mytopic', 'LowMessages', peek_lock=True)
-print(msg.body)
 
-msg.delete()
-```
+		msg = bus_service.receive_subscription_message('mytopic', 'LowMessages', peek_lock=True)
+		print(msg.body)
+
+		msg.delete()
+
 
 ## 如何处理应用程序崩溃和不可读消息
 
@@ -155,15 +155,15 @@ Service Bus 提供了相关功能来帮助你轻松地从应用程序错误或�
 
 主题和订阅具有持久性，必须通过 [Azure 经典管理门户][]或以编程方式显式删除。以下示例演示如何删除名为 `mytopic` 的主题：
 
-```
-bus_service.delete_topic('mytopic')
-```
+
+		bus_service.delete_topic('mytopic')
+
 
 删除某个主题也会删除向该主题注册的所有订阅。也可以单独删除订阅。以下代码演示如何从 `mytopic` 主题中删除名为 `HighMessages` 的订阅：
 
-```
-bus_service.delete_subscription('mytopic', 'HighMessages')
-```
+
+		bus_service.delete_subscription('mytopic', 'HighMessages')
+
 
 ## <a name="next-steps"></a> 后续步骤
 
@@ -178,4 +178,4 @@ bus_service.delete_subscription('mytopic', 'HighMessages')
 [SqlFilter.SqlExpression]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.sqlfilter.sqlexpression.aspx
 [服务总线配额]: /documentation/articles/service-bus-quotas/
 
-<!---HONumber=Mooncake_0104_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

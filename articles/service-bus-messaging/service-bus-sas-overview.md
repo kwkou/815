@@ -10,11 +10,11 @@
 <tags
    ms.service="service-bus"
     ms.date="10/02/2016"
-   wacn.date="12/02/2016"/>
+   wacn.date="01/04/2017"/>
 
 # 共享访问签名
 
-*共享访问签名* (SAS) 是服务总线的主要安全机制，包括事件中心、中转消息传送（队列和主题）和中继消息传送。本文介绍共享访问签名、其工作原理以及如何以平台无关的方式使用它们。
+“共享访问签名”(SAS) 是服务总线的主要安全机制，包括事件中心、中转消息传送（队列和主题）和中继消息传送。本文介绍共享访问签名、其工作原理以及如何以平台无关的方式使用它们。
 
 ## SAS 概述
 
@@ -40,17 +40,17 @@
 
 策略本身不是服务总线的访问令牌。它是使用主密钥或辅助密钥生成访问令牌时所依据的对象。令牌是通过采用以下格式妥善编写一个字符串而生成的：
 
-```
-SharedAccessSignature sig=<signature-string>&se=<expiry>&skn=<keyName>&sr=<URL-encoded-resourceURI>
-```
+
+		SharedAccessSignature sig=<signature-string>&se=<expiry>&skn=<keyName>&sr=<URL-encoded-resourceURI>
+
 
 其中，`signature-string` 是令牌范围的 SHA-256 哈希（前一部分已介绍**范围**），后面附加了 CRLF 和过期时间（自纪元算起，以秒为单位：1970 年 1 月 1 日 `00:00:00 UTC`）。
 
 哈希类似于以下虚构代码，它返回 32 个字节。
 
-```
-SHA-256('https://<yournamespace>.servicebus.chinacloudapi.cn/'+'\n'+ 1438205742)
-```
+
+		SHA-256('https://<yournamespace>.servicebus.chinacloudapi.cn/'+'\n'+ 1438205742)
+
 
 非哈希值位于 **SharedAccessSignature** 字符串中，这样，接收方便可以使用相同的参数计算哈希，以确保它返回相同的结果。URI 指定范围，而密钥名称标识要用于计算哈希的策略。从安全性的立场来看，这非常重要。如果签名与接收方（服务总线）的计算结果不符，则拒绝访问。此时，我们可以确保发送方可访问密钥，并且应该被授予策略中指定的权限。
 
@@ -60,117 +60,117 @@ SHA-256('https://<yournamespace>.servicebus.chinacloudapi.cn/'+'\n'+ 1438205742)
 
 ### NodeJS
 
-```
-function createSharedAccessToken(uri, saName, saKey) { 
-    if (!uri || !saName || !saKey) { 
-            throw "Missing required parameter"; 
-        } 
-    var encoded = encodeURIComponent(uri); 
-    var now = new Date(); 
-    var week = 60*60*24*7;
-    var ttl = Math.round(now.getTime() / 1000) + week;
-    var signature = encoded + '\n' + ttl; 
-    var signatureUTF8 = utf8.encode(signature); 
-    var hash = crypto.createHmac('sha256', saKey).update(signatureUTF8).digest('base64'); 
-    return 'SharedAccessSignature sr=' + encoded + '&sig=' +  
-        encodeURIComponent(hash) + '&se=' + ttl + '&skn=' + saName; 
-}
-``` 
+
+		function createSharedAccessToken(uri, saName, saKey) { 
+		    if (!uri || !saName || !saKey) { 
+		            throw "Missing required parameter"; 
+		        } 
+		    var encoded = encodeURIComponent(uri); 
+		    var now = new Date(); 
+		    var week = 60*60*24*7;
+		    var ttl = Math.round(now.getTime() / 1000) + week;
+		    var signature = encoded + '\n' + ttl; 
+		    var signatureUTF8 = utf8.encode(signature); 
+		    var hash = crypto.createHmac('sha256', saKey).update(signatureUTF8).digest('base64'); 
+		    return 'SharedAccessSignature sr=' + encoded + '&sig=' +  
+		        encodeURIComponent(hash) + '&se=' + ttl + '&skn=' + saName; 
+		}
+ 
 
 ### Java
 
-```
-private static String GetSASToken(String resourceUri, String keyName, String key)
-  {
-      long epoch = System.currentTimeMillis()/1000L;
-      int week = 60*60*24*7;
-      String expiry = Long.toString(epoch + week);
 
-      String sasToken = null;
-      try {
-          String stringToSign = URLEncoder.encode(resourceUri, "UTF-8") + "\n" + expiry;
-          String signature = getHMAC256(key, stringToSign);
-          sasToken = "SharedAccessSignature sr=" + URLEncoder.encode(resourceUri, "UTF-8") +"&sig=" +
-                  URLEncoder.encode(signature, "UTF-8") + "&se=" + expiry + "&skn=" + keyName;
-      } catch (UnsupportedEncodingException e) {
+		private static String GetSASToken(String resourceUri, String keyName, String key)
+		  {
+		      long epoch = System.currentTimeMillis()/1000L;
+		      int week = 60*60*24*7;
+		      String expiry = Long.toString(epoch + week);
 
-          e.printStackTrace();
-      }
+		      String sasToken = null;
+		      try {
+		          String stringToSign = URLEncoder.encode(resourceUri, "UTF-8") + "\n" + expiry;
+		          String signature = getHMAC256(key, stringToSign);
+		          sasToken = "SharedAccessSignature sr=" + URLEncoder.encode(resourceUri, "UTF-8") +"&sig=" +
+		                  URLEncoder.encode(signature, "UTF-8") + "&se=" + expiry + "&skn=" + keyName;
+		      } catch (UnsupportedEncodingException e) {
 
-      return sasToken;
-  }
+		          e.printStackTrace();
+		      }
+
+		      return sasToken;
+		  }
 
 
-public static String getHMAC256(String key, String input) {
-    Mac sha256_HMAC = null;
-    String hash = null;
-    try {
-        sha256_HMAC = Mac.getInstance("HmacSHA256");
-        SecretKeySpec secret_key = new SecretKeySpec(key.getBytes(), "HmacSHA256");
-        sha256_HMAC.init(secret_key);
-        Encoder encoder = Base64.getEncoder();
+		public static String getHMAC256(String key, String input) {
+		    Mac sha256_HMAC = null;
+		    String hash = null;
+		    try {
+		        sha256_HMAC = Mac.getInstance("HmacSHA256");
+		        SecretKeySpec secret_key = new SecretKeySpec(key.getBytes(), "HmacSHA256");
+		        sha256_HMAC.init(secret_key);
+		        Encoder encoder = Base64.getEncoder();
 
-        hash = new String(encoder.encode(sha256_HMAC.doFinal(input.getBytes("UTF-8"))));
+		        hash = new String(encoder.encode(sha256_HMAC.doFinal(input.getBytes("UTF-8"))));
 
-    } catch (InvalidKeyException e) {
-        e.printStackTrace();
-    } catch (NoSuchAlgorithmException e) {
-        e.printStackTrace();
-   } catch (IllegalStateException e) {
-        e.printStackTrace();
-    } catch (UnsupportedEncodingException e) {
-        e.printStackTrace();
-    }
+		    } catch (InvalidKeyException e) {
+		        e.printStackTrace();
+		    } catch (NoSuchAlgorithmException e) {
+		        e.printStackTrace();
+		   } catch (IllegalStateException e) {
+		        e.printStackTrace();
+		    } catch (UnsupportedEncodingException e) {
+		        e.printStackTrace();
+		    }
 
-    return hash;
-}
-```
+		    return hash;
+		}
+
 
 ### PHP
 
-```
-function generateSasToken($uri, $sasKeyName, $sasKeyValue) 
-{ 
-$targetUri = strtolower(rawurlencode(strtolower($uri))); 
-$expires = time(); 	
-$expiresInMins = 60; 
-$week = 60*60*24*7;
-$expires = $expires + $week; 
-$toSign = $targetUri . "\n" . $expires; 
-$signature = rawurlencode(base64_encode(hash_hmac('sha256', 			
- $toSign, $sasKeyValue, TRUE))); 
 
-$token = "SharedAccessSignature sr=" . $targetUri . "&sig=" . $signature . "&se=" . $expires . 		"&skn=" . $sasKeyName; 
-return $token; 
-}
-```
+		function generateSasToken($uri, $sasKeyName, $sasKeyValue) 
+		{ 
+		$targetUri = strtolower(rawurlencode(strtolower($uri))); 
+		$expires = time(); 	
+		$expiresInMins = 60; 
+		$week = 60*60*24*7;
+		$expires = $expires + $week; 
+		$toSign = $targetUri . "\n" . $expires; 
+		$signature = rawurlencode(base64_encode(hash_hmac('sha256', 			
+		 $toSign, $sasKeyValue, TRUE))); 
+
+		$token = "SharedAccessSignature sr=" . $targetUri . "&sig=" . $signature . "&se=" . $expires . 		"&skn=" . $sasKeyName; 
+		return $token; 
+		}
+
  
 ### C&#35;
 
-```
-private static string createToken(string resourceUri, string keyName, string key)
-{
-    TimeSpan sinceEpoch = DateTime.UtcNow - new DateTime(1970, 1, 1);
-    var week = 60 * 60 * 24 * 7;
-    var expiry = Convert.ToString((int)sinceEpoch.TotalSeconds + week);
-    string stringToSign = HttpUtility.UrlEncode(resourceUri) + "\n" + expiry;
-    HMACSHA256 hmac = new HMACSHA256(Encoding.UTF8.GetBytes(key));
-    var signature = Convert.ToBase64String(hmac.ComputeHash(Encoding.UTF8.GetBytes(stringToSign)));
-    var sasToken = String.Format(CultureInfo.InvariantCulture, "SharedAccessSignature sr={0}&sig={1}&se={2}&skn={3}", HttpUtility.UrlEncode(resourceUri), HttpUtility.UrlEncode(signature), expiry, keyName);
-    return sasToken;
-}
-```
+
+		private static string createToken(string resourceUri, string keyName, string key)
+		{
+		    TimeSpan sinceEpoch = DateTime.UtcNow - new DateTime(1970, 1, 1);
+		    var week = 60 * 60 * 24 * 7;
+		    var expiry = Convert.ToString((int)sinceEpoch.TotalSeconds + week);
+		    string stringToSign = HttpUtility.UrlEncode(resourceUri) + "\n" + expiry;
+		    HMACSHA256 hmac = new HMACSHA256(Encoding.UTF8.GetBytes(key));
+		    var signature = Convert.ToBase64String(hmac.ComputeHash(Encoding.UTF8.GetBytes(stringToSign)));
+		    var sasToken = String.Format(CultureInfo.InvariantCulture, "SharedAccessSignature sr={0}&sig={1}&se={2}&skn={3}", HttpUtility.UrlEncode(resourceUri), HttpUtility.UrlEncode(signature), expiry, keyName);
+		    return sasToken;
+		}
+
 
 ## 使用共享访问签名（在 HTTP 级别）
  
 在了解如何为服务总线中的任何实体创建共享访问签名后，便可以执行 HTTP POST 了：
 
-```
-POST https://<yournamespace>.servicebus.chinacloudapi.cn/<yourentity>/messages
-Content-Type: application/json
-Authorization: SharedAccessSignature sr=https%3A%2F%2F<yournamespace>.servicebus.chinacloudapi.cn%2F<yourentity>&sig=<yoursignature from code above>&se=1438205742&skn=KeyName
-ContentType: application/atom+xml;type=entry;charset=utf-8
-``` 
+
+		POST https://<yournamespace>.servicebus.chinacloudapi.cn/<yourentity>/messages
+		Content-Type: application/json
+		Authorization: SharedAccessSignature sr=https%3A%2F%2F<yournamespace>.servicebus.chinacloudapi.cn%2F<yourentity>&sig=<yoursignature from code above>&se=1438205742&skn=KeyName
+		ContentType: application/atom+xml;type=entry;charset=utf-8
+ 
 	
 请记住，这适用于所有情况。你可以为队列、主题、订阅、事件中心或中继创建 SAS。如果对事件中心使用按发布者标识，只需附加 `/publishers/< publisherid>`。
 
@@ -186,64 +186,64 @@ ContentType: application/atom+xml;type=entry;charset=utf-8
 
 ### C&#35;
 
-```
-/// <summary>
-/// Send Claim Based Security (CBS) token
-/// </summary>
-/// <param name="shareAccessSignature">Shared access signature (token) to send</param>
-private bool PutCbsToken(Connection connection, string sasToken)
-{
-    bool result = true;
-    Session session = new Session(connection);
 
-    string cbsClientAddress = "cbs-client-reply-to";
-    var cbsSender = new SenderLink(session, "cbs-sender", "$cbs");
-    var cbsReceiver = new ReceiverLink(session, cbsClientAddress, "$cbs");
+		/// <summary>
+		/// Send Claim Based Security (CBS) token
+		/// </summary>
+		/// <param name="shareAccessSignature">Shared access signature (token) to send</param>
+		private bool PutCbsToken(Connection connection, string sasToken)
+		{
+		    bool result = true;
+		    Session session = new Session(connection);
 
-    // construct the put-token message
-    var request = new Message(sasToken);
-    request.Properties = new Properties();
-    request.Properties.MessageId = Guid.NewGuid().ToString();
-    request.Properties.ReplyTo = cbsClientAddress;
-    request.ApplicationProperties = new ApplicationProperties();
-    request.ApplicationProperties["operation"] = "put-token";
-    request.ApplicationProperties["type"] = "servicebus.chinacloudapi.cn:sastoken";
-    request.ApplicationProperties["name"] = Fx.Format("amqp://{0}/{1}", sbNamespace, entity);
-    cbsSender.Send(request);
+		    string cbsClientAddress = "cbs-client-reply-to";
+		    var cbsSender = new SenderLink(session, "cbs-sender", "$cbs");
+		    var cbsReceiver = new ReceiverLink(session, cbsClientAddress, "$cbs");
 
-    // receive the response
-    var response = cbsReceiver.Receive();
-    if (response == null || response.Properties == null || response.ApplicationProperties == null)
-    {
-        result = false;
-    }
-    else
-    {
-        int statusCode = (int)response.ApplicationProperties["status-code"];
-        if (statusCode != (int)HttpStatusCode.Accepted && statusCode != (int)HttpStatusCode.OK)
-        {
-            result = false;
-        }
-    }
+		    // construct the put-token message
+		    var request = new Message(sasToken);
+		    request.Properties = new Properties();
+		    request.Properties.MessageId = Guid.NewGuid().ToString();
+		    request.Properties.ReplyTo = cbsClientAddress;
+		    request.ApplicationProperties = new ApplicationProperties();
+		    request.ApplicationProperties["operation"] = "put-token";
+		    request.ApplicationProperties["type"] = "servicebus.chinacloudapi.cn:sastoken";
+		    request.ApplicationProperties["name"] = Fx.Format("amqp://{0}/{1}", sbNamespace, entity);
+		    cbsSender.Send(request);
 
-    // the sender/receiver may be kept open for refreshing tokens
-    cbsSender.Close();
-    cbsReceiver.Close();
-    session.Close();
+		    // receive the response
+		    var response = cbsReceiver.Receive();
+		    if (response == null || response.Properties == null || response.ApplicationProperties == null)
+		    {
+		        result = false;
+		    }
+		    else
+		    {
+		        int statusCode = (int)response.ApplicationProperties["status-code"];
+		        if (statusCode != (int)HttpStatusCode.Accepted && statusCode != (int)HttpStatusCode.OK)
+		        {
+		            result = false;
+		        }
+		    }
 
-    return result;
-}
-```
+		    // the sender/receiver may be kept open for refreshing tokens
+		    cbsSender.Close();
+		    cbsReceiver.Close();
+		    session.Close();
 
-`PutCbsToken()` 方法接收代表服务的 TCP 连接的 connection（[AMQP .NET Lite 库](https://github.com/Azure/amqpnetlite)提供的 AMQP Connection 类实例），以及表示要发送的 SAS 令牌的 sasToken 参数。
+		    return result;
+		}
+
+
+`PutCbsToken()` 方法接收代表服务的 TCP 连接的 *connection*（[AMQP .NET Lite 库](https://github.com/Azure/amqpnetlite)提供的 AMQP Connection 类实例），以及表示要发送的 SAS 令牌的 *sasToken* 参数。
 
 > [AZURE.NOTE] 请务必在 **SASL 身份验证机制设置为 EXTERNAL** 的情况下创建连接（而不是在不需要发送 SAS 令牌时使用的包含用户名与密码的默认 PLAIN）。
 
-接下来，发布者创建两个 AMQP 链接来发送 SAS 令牌并接收来自服务的回复（令牌验证结果）。
+接下来，发布者将创建两个 AMQP 链接来发送 SAS 令牌和接收来自服务的回复（此令牌验证结果）。
 
 AMQP 消息包含一组属性，比简单消息包含更多信息。SAS 令牌是消息的正文（使用其构造函数）。**"ReplyTo"** 属性设置为用于在接收方链接上接收验证结果的节点名称（可以根据需要更改其名称，该节点将由服务动态创建）。服务使用最后三个应用程序/自定义属性来指示它需要执行哪种类型的操作。如 CBS 草案规范中所述，这些属性必须是**操作名称** ("put-token")、**令牌类型**（在此例中为“servicebus.chinacloudapi.cn:sastoken”），以及要应用令牌的**受众的“名称”**（整个实体）。
 
-在发送方链接上发送 SAS 令牌后，发布者需要在接收者链接上读取回复。回复是一个简单的 AMQP 消息，其中包含名为 **"status-code"** 的应用程序属性，这些属性可以包含与 HTTP 状态代码相同的值。
+在发送方链接上发送 SAS 令牌后，发布者必须在接收方链接上读取回复。回复是一个简单的 AMQP 消息，其中包含一个名为 **"status-code"** 的应用程序属性，该属性可以包含与 HTTP 状态代码相同的值。
 
 ## 后续步骤
 
@@ -255,4 +255,4 @@ AMQP 消息包含一组属性，比简单消息包含更多信息。SAS 令牌�
 
 [Azure 经典管理门户]: http://manage.windowsazure.cn
 
-<!---HONumber=Mooncake_0104_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

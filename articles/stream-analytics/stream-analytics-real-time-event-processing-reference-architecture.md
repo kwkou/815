@@ -16,7 +16,7 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="09/26/2016" 
-	wacn.date="11/14/2016" 
+	wacn.date="01/04/2017" 
 	ms.author="jeffstok"/>  
 
 
@@ -66,4 +66,4 @@ Azure 提供了各种类别的分析技术，支持一系列不同的解决方�
 
  
 
-<!---HONumber=Mooncake_1107_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->
