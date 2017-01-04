@@ -81,7 +81,7 @@ DirSync 支持以下配置更改，并且将会升级：
 - 你当前正在使用完全版 SQL Server - 本地或远程
 - 要同步的对象超过 50,000 个
 
-## 就地升级
+## 就地升级 <a name="in-place-upgrade"></a>
 
 1. 启动 Azure AD Connect 安装程序 (MSI)。
 2. 查看并同意许可条款和隐私声明。![欢迎使用 Azure](./media/active-directory-aadconnect-dirsync-upgrade-get-started/Welcome.png)
@@ -95,7 +95,7 @@ DirSync 支持以下配置更改，并且将会升级：
 7. 你现在可以开始配置。单击“升级”后，会卸载 DirSync 并配置 Azure AD Connect，然后开始同步。![已准备好配置](./media/active-directory-aadconnect-dirsync-upgrade-get-started/ReadyToConfigure.png)
 8. 安装完成后，请注销并再次登录到 Windows，然后即可使用同步服务管理器或同步规则编辑器，或者尝试进行其他任何配置更改。
 
-## 并行部署
+## 并行部署 <a name="parallel-deployment"></a>
 
 ### 导出 DirSync 配置
 **对象数超过 50,000 时执行并行部署**

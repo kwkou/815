@@ -23,7 +23,7 @@
 # 在 Azure 中计划 VM 备份基础结构
 本文提供性能和资源建议，帮助用户规划 VM 备份基础结构。此外还定义了备份服务的关键因素；这些因素在确定体系结构、容量规划和计划方面可能很关键。如果已[准备好环境](/documentation/articles/backup-azure-vms-prepare/)，则可执行此操作，然后开始[备份 VM](/documentation/articles/backup-azure-vms/)。如果你需要有关 Azure 虚拟机的详细信息，请参阅[虚拟机文档](/documentation/services/virtual-machines/)。
 
-## Azure 虚拟机备份原理
+## Azure 虚拟机备份原理 <a name="how-does-azure-back-up-virtual-machines"></a>
 Azure 备份服务在计划的时间启动备份作业时，将触发备份扩展拍摄时间点快照。拍摄此快照时，将借助卷影复制服务 (VSS) 来获取虚拟机中磁盘的一致性快照，不必关闭该虚拟机。
 
 拍摄快照后，数据将由 Azure 备份服务传输到备份保管库中。为了使备份过程更加高效，服务只标识并传输自上次备份后已更改的数据块。
