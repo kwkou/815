@@ -77,7 +77,7 @@ Microsoft Azure IoT 服务 SDK 包含的代码可帮助构建直接与 IoT 中�
 此 IoT 中心开发人员指南中的其他参考主题包括：
 
 - [IoT 中心终结点][lnk-devguide-endpoints]
-- [设备克隆、方法和作业的 IoT 中心查询语言][lnk-devguide-query]
+- [设备孪生、方法和作业的 IoT 中心查询语言][lnk-devguide-query]
 - [配额和限制][lnk-devguide-quotas]
 - [IoT 中心 MQTT 支持][lnk-devguide-mqtt]
 

@@ -124,7 +124,7 @@ IoT 中心标识注册表包含名为 **connectionState** 的字段。你只应�
 - [IoT 中心终结点][lnk-endpoints]，说明了每个 IoT 中心针对运行时和管理操作公开的各种终结点。
 - [限制和配额][lnk-quotas]，说明了适用于 IoT 中心服务的配额，以及使用服务时预期会碰到的限制行为。
 - [IoT 中心设备和服务 SDK][lnk-sdks]，列出了在开发与 IoT 中心交互的设备和服务应用程序时可以使用的各种语言 SDK。
-- [设备克隆、方法和作业的 IoT 中心查询语言][lnk-query]介绍从 IoT 中心检索有关设备克隆、方法和作业的信息时可以使用的查询语言。
+- [设备孪生、方法和作业的 IoT 中心查询语言][lnk-query]介绍从 IoT 中心检索有关设备孪生、方法和作业的信息时可以使用的查询语言。
 - [IoT 中心 MQTT 支持][lnk-devguide-mqtt]提供有关 IoT 中心对 MQTT 协议的支持的详细信息。
 
 ## 后续步骤
@@ -132,7 +132,7 @@ IoT 中心标识注册表包含名为 **connectionState** 的字段。你只应�
 现在已了解如何使用 IoT 中心设备标识注册表，你可能对以下开发人员指南主题感兴趣：
 
 - [控制 IoT 中心的访问权限][lnk-devguide-security]
-- [使用设备克隆同步状态和配置][lnk-devguide-device-twins]
+- [使用设备孪生同步状态和配置][lnk-devguide-device-twins]
 - [在设备上调用直接方法][lnk-devguide-directmethods]
 - [Schedule jobs on multiple devices（在多台设备上计划作业）][lnk-devguide-jobs]
 

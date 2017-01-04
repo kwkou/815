@@ -1,6 +1,6 @@
 <properties
-	pageTitle="克隆入门 | Microsoft Azure"
-	description="本教程介绍如何使用克隆"
+	pageTitle="设备孪生入门 | Azure"
+	description="本教程介绍如何使用设备孪生"
 	services="iot-hub"
 	documentationCenter="node"
 	authors="fsautomata"
@@ -19,13 +19,13 @@
      ms.author="elioda"/>  
 
 
-# 教程：设备克隆入门（预览版）
+# 教程：设备孪生入门（预览版）
 
 [AZURE.INCLUDE [iot-hub-selector-twin-get-started](../../includes/iot-hub-selector-twin-get-started.md)]
 
 在本教程结束时，用户将有一个 .NET 控制台应用程序，以及一个 Node.js 控制台应用程序：
 
-* **AddTagsAndQuery.sln**，一个旨在从后端运行的 .NET 应用，用于添加标记并查询设备克隆。
+* **AddTagsAndQuery.sln**，一个旨在从后端运行的 .NET 应用，用于添加标记并查询设备孪生。
 * **TwinSimulatedDevice.js**，一个 Node.js 应用，可模拟使用早前创建的设备标识连接到 IoT 中心的设备，并报告其连接状况。
 
 > [AZURE.NOTE]
@@ -46,7 +46,7 @@
 [AZURE.INCLUDE [iot-hub-get-started-create-device-identity](../../includes/iot-hub-get-started-create-device-identity.md)]
 
 ## 创建服务应用
-在此部分，会创建一个 Node.js 控制台应用，将位置元数据添加到与 **myDeviceId** 关联的设备克隆。该应用随后会选择位于中国的设备来查询存储在中心的设备克隆，然后查询报告手机网络连接的设备克隆。
+在此部分，会创建一个 Node.js 控制台应用，将位置元数据添加到与 **myDeviceId** 关联的设备孪生。该应用随后会选择位于中国的设备来查询存储在中心的设备孪生，然后查询报告手机网络连接的设备孪生。
 
 1. 在 Visual Studio 中，使用“控制台应用程序”项目模板将 Visual C# Windows 经典桌面项目添加到当前解决方案。将项目命名为 **AddTagsAndQuery**。
    
@@ -89,11 +89,11 @@
             Console.WriteLine("Devices in Redmond43 using cellular network: {0}", string.Join(", ", twinsInRedmond43UsingCellular.Select(t => t.DeviceId)));
         }
    
-    **RegistryManager** 类会公开从服务与设备克隆进行交互所需的所有方法。上面的代码首先初始化 **registryManager** 对象，然后检索 **myDeviceId** 的设备克隆，最后使用所需位置信息更新其标记。
+    **RegistryManager** 类会公开从服务与设备孪生进行交互所需的所有方法。上面的代码首先初始化 **registryManager** 对象，然后检索 **myDeviceId** 的设备孪生，最后使用所需位置信息更新其标记。
    
-    更新后，该代码将执行两个查询：第一个只选择位于 **Redmond43** 工厂中的设备的设备克隆，第二个会优化查询，只选择也通过手机网络连接的设备。
+    更新后，该代码将执行两个查询：第一个只选择位于 **Redmond43** 工厂中的设备的设备孪生，第二个会优化查询，只选择也通过手机网络连接的设备。
    
-    请注意，前面的代码在创建 **query** 对象时会指定最大返回文档数。**query** 对象包含 **HasMoreResults** 布尔属性，可以用于多次调用 **GetNextAsTwinAsync** 方法以检索所有结果。名为 **GetNextAsJson** 的方法可用于不是设备克隆的结果（例如聚合查询的结果）。
+    请注意，前面的代码在创建 **query** 对象时会指定最大返回文档数。**query** 对象包含 **HasMoreResults** 布尔属性，可以用于多次调用 **GetNextAsTwinAsync** 方法以检索所有结果。名为 **GetNextAsJson** 的方法可用于不是设备孪生的结果（例如聚合查询的结果）。
 7. 最后，在 **Main** 方法中添加以下行：
    
         registryManager = RegistryManager.CreateFromConnectionString(connectionString);
@@ -108,7 +108,7 @@
 在下一部分，用户创建的设备应用会报告连接信息并更改上一部分中查询的结果。
 
 ## 创建设备应用
-在此部分，会创建一个 Node.js 控制台应用作为 **myDeviceId** 连接到中心，然后更新其设备克隆的报告属性，说明它是使用手机网络进行连接的。
+在此部分，会创建一个 Node.js 控制台应用作为 **myDeviceId** 连接到中心，然后更新其设备孪生的报告属性，说明它是使用手机网络进行连接的。
 
 1. 新建名为 **reportconnectivity** 的空文件夹。在命令提示符下的 **reportconnectivity** 文件夹中，使用以下命令创建新的 package.json 文件。接受所有默认值：
    
@@ -159,7 +159,7 @@
         }
         });
    
-    **Client** 对象会公开从设备与设备克隆进行交互所需的所有方法。前面的代码在初始化 **Client** 对象后会检索 **myDeviceId** 的设备克隆，并使用连接信息更新其报告属性。
+    **Client** 对象会公开从设备与设备孪生进行交互所需的所有方法。前面的代码在初始化 **Client** 对象后会检索 **myDeviceId** 的设备孪生，并使用连接信息更新其报告属性。
 5. 运行设备应用
    
         node ReportConnectivity.js
@@ -171,12 +171,12 @@
 
 
 ## 后续步骤
-在本教程中，在 Azure 门户中配置了新的 IoT 中心，然后在中心的标识注册表中创建了设备标识。已从后端应用程序以标记形式添加了设备元数据，并编写了模拟的设备应用，用于报告设备克隆中的设备连接信息。你还学习了如何使用 IoT 中心的类似 SQL 的查询语言来查询此信息。
+在本教程中，在 Azure 门户中配置了新的 IoT 中心，然后在中心的标识注册表中创建了设备标识。已从后端应用程序以标记形式添加了设备元数据，并编写了模拟的设备应用，用于报告设备孪生中的设备连接信息。你还学习了如何使用 IoT 中心的类似 SQL 的查询语言来查询此信息。
 
 充分利用以下资源：
 
 - 通过 [Get started with IoT Hub][lnk-iothub-getstarted]（IoT 中心入门）教程学习如何从设备发送遥测；
-- 通过[使用所需属性配置设备][lnk-twin-how-to-configure]教程学习如何使用设备克隆的所需属性配置设备，
+- 通过[使用所需属性配置设备][lnk-twin-how-to-configure]教程学习如何使用设备孪生的所需属性配置设备，
 - 通过 [Use direct methods][lnk-methods-tutorial]（使用直接方法）教程学习如何以交互方式控制设备（例如如何从用户控制的应用打开风扇）。
 
 <!-- images -->

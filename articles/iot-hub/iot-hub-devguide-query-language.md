@@ -1,6 +1,6 @@
 <properties
  pageTitle="开发人员指南 - 查询语言 | Azure"
- description="Azure IoT 中心开发人员指南 - 用于从 IoT 中心检索克隆、方法和作业相关信息的查询语言的说明"
+ description="Azure IoT 中心开发人员指南 - 用于从 IoT 中心检索设备孪生、方法和作业相关信息的查询语言的说明"
  services="iot-hub"
  documentationCenter=".net"
  authors="fsautomata"
@@ -19,17 +19,17 @@
  ms.author="elioda"/>  
 
 
-# 参考 - 设备克隆和作业的查询语言
+# 参考 - 设备孪生和作业的查询语言
 
 ## 概述
 
-IoT 中心提供类似于 SQL 的强大语言用于检索有关[设备克隆][lnk-twins]和[作业][lnk-jobs]的信息。本文内容：
+IoT 中心提供类似于 SQL 的强大语言用于检索有关[设备孪生][lnk-twins]和[作业][lnk-jobs]的信息。本文内容：
 
 * IoT 中心查询语言的主要功能简介，以及
 * 语言的详细说明。
 
-## <a name="getting-started-with-twin-queries"></a> 克隆查询入门
-[设备克隆][lnk-twins]可以包含标记和属性形式的任意 JSON 对象。IoT 中心允许以包含所有设备克隆信息的单个 JSON 文档的形式查询设备克隆。例如，假设 IoT 中心设备克隆采用以下结构：
+## <a name="getting-started-with-twin-queries"></a> 设备孪生查询入门
+[设备孪生][lnk-twins]可以包含标记和属性形式的任意 JSON 对象。IoT 中心允许以包含所有设备孪生信息的单个 JSON 文档的形式查询设备孪生。例如，假设 IoT 中心设备孪生采用以下结构：
 
         {                                                                      
             "deviceId": "myDeviceId",                                            
@@ -68,35 +68,35 @@ IoT 中心提供类似于 SQL 的强大语言用于检索有关[设备克隆][ln
             }                                                                    
         }
 
-IoT 中心将设备克隆公开为名为**设备**的文档集合。因此，以下查询将检索设备克隆的整个集：
+IoT 中心将设备孪生公开为名为**设备**的文档集合。因此，以下查询将检索设备孪生的整个集：
 
         SELECT * FROM devices
 
 > [AZURE.NOTE] [Azure IoT SDKs][lnk-hub-sdks] 支持将大量结果分页：
 
-IoT 中心允许使用任意条件检索设备克隆筛选结果。例如，
+IoT 中心允许使用任意条件检索设备孪生筛选结果。例如，
 
         SELECT * FROM devices
         WHERE tags.location.region = 'CN'
 
-检索 **location.region** 标记设置为 **CN** 的设备克隆。
+检索 **location.region** 标记设置为 **CN** 的设备孪生。
 也支持布尔运算符和算术比较，例如
 
         SELECT * FROM devices
         WHERE tags.location.region = 'CN'
             AND properties.reported.telemetryConfig.sendFrequencyInSecs >= 60
 
-检索位于中国、配置为以小于一分钟的频率发送遥测数据的所有设备克隆。此外，还可以方便地将数组常量与 **IN** 和 **NIN**（不在）运算符结合使用。例如，
+检索位于中国、配置为以小于一分钟的频率发送遥测数据的所有设备孪生。此外，还可以方便地将数组常量与 **IN** 和 **NIN**（不在）运算符结合使用。例如，
 
         SELECT * FROM devices
         WHERE property.reported.connectivity IN ['wired', 'wifi']
 
-检索报告了 WiFi 或有线连接的所有设备克隆。通常需要它才能识别包含特定属性的所有设备克隆。为此，IoT 中心支持函数 `is_defined()`。例如，
+检索报告了 WiFi 或有线连接的所有设备孪生。通常需要它才能识别包含特定属性的所有设备孪生。为此，IoT 中心支持函数 `is_defined()`。例如，
 
         SELECT * FROM devices
         WHERE is_defined(property.reported.connectivity)
 
-检索定义 `connectivity` 报告属性的所有设备克隆。有关筛选功能的完整参考，请参阅 [WHERE 子句][lnk-query-where]部分。
+检索定义 `connectivity` 报告属性的所有设备孪生。有关筛选功能的完整参考，请参阅 [WHERE 子句][lnk-query-where]部分。
 
 此外还支持分组与聚合。例如，
 
@@ -168,7 +168,7 @@ IoT 中心允许使用任意条件检索设备克隆筛选结果。例如，
 
 ## 作业查询入门
 
-使用[作业][lnk-jobs]可对一组设备执行操作。每个设备克隆包含名为**作业**的集合中该设备参与的作业的信息。从逻辑上讲，
+使用[作业][lnk-jobs]可对一组设备执行操作。每个设备孪生包含名为**作业**的集合中该设备参与的作业的信息。从逻辑上讲，
 
         {                                                                      
             "deviceId": "myDeviceId",                                            
@@ -200,7 +200,7 @@ IoT 中心允许使用任意条件检索设备克隆筛选结果。例如，
 目前，可以使用 IoT 中心查询语言以 **devices.jobs** 形式查询此集合。
 
 > [AZURE.IMPORTANT]
-目前，查询设备克隆（即包含“FROM devices”的查询）时不会返回作业属性。它仅可使用 `FROM devices.jobs` 通过查询直接访问。
+目前，查询设备孪生（即包含“FROM devices”的查询）时不会返回作业属性。它仅可使用 `FROM devices.jobs` 通过查询直接访问。
 >
 >
 
@@ -217,7 +217,7 @@ IoT 中心允许使用任意条件检索设备克隆筛选结果。例如，
             AND devices.jobs.status = 'completed'
             AND devices.jobs.createdTimeUtc > '2016-09-01'
 
-检索 2016 年 9 月后为设备 **myDeviceId** 创建的所有已完成设备克隆更新作业。
+检索 2016 年 9 月后为设备 **myDeviceId** 创建的所有已完成设备孪生更新作业。
 
 还可以检索单个作业在每个设备上的结果。
 
@@ -228,11 +228,11 @@ IoT 中心允许使用任意条件检索设备克隆筛选结果。例如，
 目前，对 **devices.jobs** 的查询不支持：
 
 * 投影，因此只能使用 `SELECT *`；
-* 引用设备克隆以及作业属性的条件，如上所示；
+* 引用设备孪生以及作业属性的条件，如上所示；
 * 执行聚合，例如 count、avg、group by。
 
 ## IoT 中心查询基础知识
-每个 IoT 中心查询包括 SELECT 和 FROM 子句，以及可选的 WHERE 和 GROUP BY 子句。每个查询针对 JSON 文档的集合（例如，设备克隆）运行。FROM 子句指示要迭代的文档集合（**devices** 或 **devices.jobs**）。然后，应用 WHERE 子句中的筛选器。使用聚合时，根据 GROUP BY 子句中的指定将此步骤的结果分组，对于每个组，将根据 SELECT 子句中的指定生成一行。
+每个 IoT 中心查询包括 SELECT 和 FROM 子句，以及可选的 WHERE 和 GROUP BY 子句。每个查询针对 JSON 文档的集合（例如，设备孪生）运行。FROM 子句指示要迭代的文档集合（**devices** 或 **devices.jobs**）。然后，应用 WHERE 子句中的筛选器。使用聚合时，根据 GROUP BY 子句中的指定将此步骤的结果分组，对于每个组，将根据 SELECT 子句中的指定生成一行。
 
         SELECT <select_list>
         FROM <from_specification>
@@ -241,7 +241,7 @@ IoT 中心允许使用任意条件检索设备克隆筛选结果。例如，
 
 ## FROM 子句
 
-**FROM <from\_specification>** 子句只能采用两个值：**FROM devices** - 查询设备克隆；**FROM devices.jobs** - 查询每个设备上的作业详细信息。
+**FROM <from\_specification>** 子句只能采用两个值：**FROM devices** - 查询设备孪生；**FROM devices.jobs** - 查询每个设备上的作业详细信息。
 
 ## <a name="where-clause"></a> WHERE 子句
 
@@ -274,9 +274,9 @@ SELECT 子句 (**SELECT <select_list>**) 是必需的，指定要从查询中检
             | min(<projection_element>)
             | max(<projection_element>)
 
-其中，**attribute\_name** 引用 FROM 集合中 JSON 文档的任一属性。在[设备克隆查询入门][lnk-query-getstarted]部分中可以找到 SELECT 子句的一些示例。
+其中，**attribute\_name** 引用 FROM 集合中 JSON 文档的任一属性。在[设备孪生查询入门][lnk-query-getstarted]部分中可以找到 SELECT 子句的一些示例。
 
-目前，仅支持在针对设备克隆执行的聚合查询中使用除 **SELECT *** 以外的选择子句。
+目前，仅支持在针对设备孪生执行的聚合查询中使用除 **SELECT *** 以外的选择子句。
 
 ## GROUP BY 子句
 **GROUP BY <group\_specification>** 子句是可选步骤，可在 WHERE 子句中指定的筛选器之后、在 SELECT 中指定的投影之前执行该子句。它根据属性值来分组文档。这些组用于生成 SELECT 子句中指定的聚合值。
@@ -297,7 +297,7 @@ GROUP BY 的正式语法为：
 
 其中，**attribute\_name** 引用 FROM 集合中 JSON 文档的任一属性。
 
-目前，仅在查询设备克隆时才支持使用 GROUP BY 子句。
+目前，仅在查询设备孪生时才支持使用 GROUP BY 子句。
 
 ## <a name="expressions-and-conditions"></a> 表达式和条件
 
