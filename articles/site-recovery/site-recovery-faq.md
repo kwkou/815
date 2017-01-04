@@ -9,9 +9,9 @@
 
 <tags
     ms.assetid="5cdc4bcd-b4fe-48c7-8be1-1db39bd9c078"
-    ms.service="get-started-article"
+    ms.service="site-recovery"
     ms.devlang="na"
-    ms.topic="article"
+    ms.topic="get-started-article"
     ms.tgt_pltfrm="na"
     ms.workload="storage-backup-recovery"
     ms.date="12/13/2016"
