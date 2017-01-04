@@ -14,8 +14,8 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="storage-backup-recovery"
-    ms.date="11/14/2016"
-    wacn.date="12/12/2016"
+    ms.date="12/01/2016"
+    wacn.date="01/03/2017"
     ms.author="raynew" />  
 
 
@@ -67,17 +67,17 @@ Hyper-V 主机 | 应运行 Windows Server 2012 R2 | 如果操作系统不受支�
 iSCSI 磁盘 | 不支持 | 如果不支持，先决条件检查将会失败
 共享 VHD | 不支持 | 如果不支持，先决条件检查将会失败
 FC 磁盘 | 不支持 | 如果不支持，先决条件检查将会失败
-硬盘格式| VHD <br/><br/> VHDX | 尽管 Azure 当前不支持 VHDX，但当你故障转移到 Azure 时，站点恢复会自动将 VHDX 转换为 VHD。当你故障回复到本地时，虚拟机将继续使用 VHDX 格式。
+硬盘格式| VHD <br/><br/> VHDX | 尽管 Azure 目前不支持 VHDX，但当你故障转移到 Azure 时，站点恢复会自动将 VHDX 转换为 VHD。当你故障回复到本地时，虚拟机将继续使用 VHDX 格式。
 Bitlocker | 不支持 | 保护虚拟机之前，必须先禁用 Bitlocker。
 虚拟机名称| 介于 1 和 63 个字符之间。限制为字母、数字和连字符。应以字母或数字开头和结尾 | 在 Site Recovery 中更新虚拟机属性中的值
 虚拟机类型 | <p>第 1 代</p> <p>第 2 代 - Windows</p> | OS 磁盘类型为“基本”的第 2 代 VM，其中包括一个或两个格式化为 VHDX 的数据卷，并且支持的大小小于 300 GB。<br/><br/> 不支持 Linux 第 2 代 VM。[了解详细信息](https://azure.microsoft.com/blog/2015/04/28/disaster-recovery-to-azure-enhanced-and-were-listening/)
 
-## 优化部署
+## 部署优化
 
 使用以下提示来优化和缩放部署。
 
 - **操作系统卷大小**：将虚拟机复制到 Azure 时，操作系统卷必须小于 1TB。如果你的卷容量超过此值，可以在开始部署之前，手动将卷容量转移到另一个磁盘。
-- **数据磁盘大小**：如果要复制到 Azure，一个虚拟机中最多可以包含 32 个数据磁盘，每个磁盘的最大大小为 1 TB。可以有效地复制和故障转移约 32 TB 的虚拟机。
+- **数据磁盘大小**：如果要复制到 Azure，一台虚拟机中最多可以包含 64 个数据磁盘，每个磁盘的最大大小为 1 TB。可以有效地复制和故障转移约 64 TB 的虚拟机。
 - **恢复计划限制**：Site Recovery 可以扩展到数千个虚拟机。恢复计划旨在用作应一起故障转移的应用程序的模型，因此，我们可以将一个恢复计划中的计算机数目限制为 50。
 - **Azure 服务限制**：每个 Azure 订阅在核心、云服务等方面附带了一组默认限制。建议运行测试故障转移，验证订阅中资源的可用性。可以通过 Azure 支持人员修改这些限制。
 - **容量规划**：阅读站点恢复的[容量规划](/documentation/articles/site-recovery-capacity-planner/)相关信息。
@@ -88,19 +88,6 @@ Bitlocker | 不支持 | 保护虚拟机之前，必须先禁用 Bitlocker。
 - **RTO**：若要度量使用 Site Recovery 时预期的恢复时间目标 (RTO)，我们建议运行测试故障转移并查看 Site Recovery 作业，分析完成操作所花费的时间。如果你要故障转移到 Azure，为实现最佳 RTO，我们建议你通过与 Azure 自动化和恢复计划集成来自动化所有手动操作。
 - **RPO**：当你复制到 Azure 时，Site Recovery 支持近乎同步的恢复点目标 (RPO)。这假设数据中心和 Azure 之间有足够的带宽。
 
-## 服务 URL
-确保可通过以下服务器访问 URL
-
-
-**URL** | **VMM 到 VMM** | **VMM 到 Azure** | **Hyper-V 站点到 Azure** 
----|---|---|---
- *.accesscontrol.chinacloudapi.cn | 需要访问权限 | 需要访问权限 | 需要访问权限 
- *.backup.windowsazure.cn | | 需要访问权限 | 需要访问权限 
- *.hypervrecoverymanager.windowsazure.cn | 需要访问权限 | 需要访问权限 | 需要访问权限 
- *.store.core.chinacloudapi.cn | 需要访问权限 | 需要访问权限 | 需要访问权限 
- *.blob.core.chinacloudapi.cn | | 需要访问权限 | 需要访问权限 
- https://www.msftncsi.com/ncsi.txt | 需要访问权限 | 需要访问权限 | 需要访问权限 
- https://dev.mysql.com/get/archives/mysql-5.5/mysql-5.5.37-win32.msi | | | 
 
 
 ## 后续步骤
@@ -111,7 +98,6 @@ Bitlocker | 不支持 | 保护虚拟机之前，必须先禁用 Bitlocker。
 - [将 VMM 云中的 Hyper-V 服务器复制到 Azure](/documentation/articles/site-recovery-vmm-to-azure/)
 - [将 Hyper-V 虚拟机（不使用 VMM）复制到 Azure](/documentation/articles/site-recovery-hyper-v-site-to-azure/)
 - [将 Hyper-V VM 复制到辅助站点](/documentation/articles/site-recovery-vmm-to-vmm/)
-- [使用 SAN 将 Hyper-V VM 复制到辅助站点](/documentation/articles/site-recovery-vmm-san/)
-- [复制 Hyper-V VM（带单个 VMM 服务器）](/documentation/articles/site-recovery-single-vmm/)
+- [使用单个 VMM 服务器复制 Hyper-V VM](/documentation/articles/site-recovery-single-vmm/)
 
-<!---HONumber=Mooncake_1205_2016-->
+<!---HONumber=Mooncake_1226_2016-->

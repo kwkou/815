@@ -13,7 +13,7 @@
  ms.devlang="dotnet"
  ms.topic="hero-article"
  ms.date="08/10/2016"
- wacn.date="10/11/2016"
+ wacn.date="01/03/2017"
  ms.author="deli"/>
 
 # Azure 门户预览中的 Azure 计划程序入门
@@ -186,4 +186,4 @@ Azure 基于角色的访问控制 (RBAC) 可用于对 Azure 计划程序进行�
 [14]: ./media/scheduler-get-started-portal/scheduler-get-started-portal014.png
 [15]: ./media/scheduler-get-started-portal/scheduler-get-started-portal015.png
 
-<!---HONumber=Mooncake_0822_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

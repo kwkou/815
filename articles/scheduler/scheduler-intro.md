@@ -13,7 +13,7 @@
  ms.devlang="dotnet"
  ms.topic="hero-article"
  ms.date="08/18/2016"
- wacn.date="10/10/2016"
+ wacn.date="01/03/2017"
  ms.author="deli"/>  
 
 
@@ -21,7 +21,7 @@
 
 Azure 计划程序允许你以声明方式描述要在云中运行的操作。然后，它自动计划并运行这些操作。计划程序使用 [Azure 门户](/documentation/articles/scheduler-get-started-portal/)、代码、[REST API](https://msdn.microsoft.com/zh-cn/library/mt629143.aspx) 或 Azure PowerShell 执行此操作。
 
-计划程序创建、维护并调用计划的工作。计划程序不托管任何工作负荷或运行任何代码。它仅_调用_别处（在 Azure 中、本地）托管的代码或与其他提供程序一起托管。它通过 HTTP、HTTPS 或存储队列调用。
+计划程序创建、维护并调用计划的工作。计划程序不托管任何工作负荷或运行任何代码。它仅_调用_别处（在 Azure 中、本地）托管的代码或与其他提供程序一起托管。它通过 HTTP、HTTPS、存储队列、服务总线队列或服务总线主题进行调用。
 
 计划程序计划[作业](/documentation/articles/scheduler-concepts-terms/)、保留用户可以查看的作业执行结果历史记录，并确切可靠地计划要运行的工作负荷。Azure WebJobs（Azure App Service 中的 Web Apps 功能的一部分）及其他 Azure 计划​​功能在后台使用计划程序。[计划程序 REST API](https://msdn.microsoft.com/zh-cn/library/mt629143.aspx) 可帮助管理这些操作的通信。因此，计划程序轻松地支持[复杂的计划以及高级重复执行](/documentation/articles/scheduler-advanced-complexity/)。
 
@@ -53,4 +53,4 @@ Azure 计划程序允许你以声明方式描述要在云中运行的操作。�
  
  
 
-<!---HONumber=Mooncake_0926_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

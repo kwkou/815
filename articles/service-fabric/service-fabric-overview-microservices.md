@@ -15,7 +15,7 @@
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
    ms.date="09/20/2016"
-   wacn.date="11/28/2016"
+   wacn.date="01/03/2017"
    ms.author="mfussell"/>
 
 
@@ -154,4 +154,4 @@ Service Fabric 的目标是将使用微服务方法构建应用程序时的复�
 [Image1]: ./media/service-fabric-overview-microservices/monolithic-vs-micro.png
 [Image2]: ./media/service-fabric-overview-microservices/statemonolithic-vs-micro.png
 
-<!---HONumber=Mooncake_1121_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

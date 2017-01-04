@@ -1,6 +1,6 @@
 <properties
     pageTitle="使用 Azure 门户将 VMM 云中的 Hyper-V 虚拟机复制到 Azure | Azure"
-    description="介绍如何部署 Azure Site Recovery，以便使用 Azure 门户来协调 VMM 云中 Hyper-V VM 到 Azure 的复制、故障转移和恢复"
+    description="介绍如何部署 Site Recovery，以便协调 VMM 云中 Hyper-V VM 到 Azure 的复制、故障转移和恢复。"
     services="site-recovery"
     documentationcenter=""
     author="rayne-wiselman"
@@ -14,8 +14,8 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="hero-article"
-    ms.date="10/31/2016"
-    wacn.date="12/12/2016"
+    ms.date="11/23/2016"
+    wacn.date="01/03/2017"
     ms.author="raynew" />  
 
 #  将 VMM 云中的 Hyper-V 虚拟机复制到 Azure
@@ -26,7 +26,7 @@
 
 欢迎使用 Azure Site Recovery 服务！
 
-Site Recovery 是能够帮助实现业务连续性和灾难恢复 (BCDR) 策略的 Azure 服务。Site Recovery 可以协调从本地物理服务器和虚拟机到云 (Azure) 或辅助数据中心的复制。当主要位置发生故障时，你可以故障转移到辅助位置，使应用和工作负荷保持可用。当主要位置恢复正常时，你可以故障转移回到主要位置。在[什么是 Azure Site Recovery？](/documentation/articles/site-recovery-overview/)中了解详细信息
+Site Recovery 是能够帮助实现业务连续性和灾难恢复 (BCDR) 策略的 Azure 服务。Site Recovery 可以协调从本地物理服务器和虚拟机到云 (Azure) 或辅助数据中心的复制。当主要位置发生故障时，你可以故障转移到辅助位置，使应用和工作负荷保持可用。当主要位置恢复正常时，你可以故障回复到主要位置。在[什么是 Azure Site Recovery？](/documentation/articles/site-recovery-overview/)中了解详细信息
 
 本文介绍如何在 Azure 门户中使用 Azure Site Recovery 将 System Center VMM 云中管理的本地 Hyper-V 虚拟机复制到 Azure。
 
@@ -388,7 +388,6 @@ Site Recovery 是一项 Azure 服务，可通过协调从本地物理服务器�
 
 
 ## 后续步骤
-
 设置并运行部署后，请[详细了解](/documentation/articles/site-recovery-failover/)不同类型的故障转移。
 
-<!---HONumber=Mooncake_1205_2016-->
+<!---HONumber=Mooncake_1226_2016-->

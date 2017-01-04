@@ -14,7 +14,7 @@
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
    ms.date="07/18/2016"
-   wacn.date="08/29/2016"
+   wacn.date="01/03/2017"
    ms.author="seanmck"/>
 
 # Service Fabric 编程模型概述
@@ -35,7 +35,7 @@ Reliable Services 可以是无状态的，类似于大多数服务平台，例�
 
 Reliable Services 也可以是有状态的，专门用于 Service Fabric，其状态使用 Reliable Collections 直接保存在服务中。通过复制使状态具有高可用性，以及通过分区来分布状态，所有状态由 Service Fabric 自动管理。
 
-[了解有关 Reliable Services 的详细信息](/documentation/articles/service-fabric-reliable-services-introduction/)或者通过[编写第一个 Reliable Service](/documentation/articles/service-fabric-reliable-services-quick-start/) 帮助你入门
+[了解有关 Reliable Services 的详细信息](/documentation/articles/service-fabric-reliable-services-introduction/)或者通过[编写第一个 Reliable Service](/documentation/articles/service-fabric-reliable-services-quick-start/) 帮助您入门。
 
 ## Reliable Actors
 
@@ -44,6 +44,6 @@ Reliable Actor 框架在 Reliable Services 的基础上构建，是根据执行�
 由于 Reliable Actors 自身是在 Reliable Services 基础上构建的应用程序框架，所以它完全与 Service Fabric 平台集成，并且获益于平台所提供的完整功能集。
 
 ## 后续步骤
-[了解有关 Reliable Actors 的详细信息](/documentation/articles/service-fabric-reliable-actors-introduction/)或通过[编写第一个 Reliable Actor 服务](/documentation/articles/service-fabric-reliable-actors-get-started/)帮助你入门
+[了解有关 Reliable Actors 的详细信息](/documentation/articles/service-fabric-reliable-actors-introduction/)或通过[编写第一个 Reliable Actor 服务](/documentation/articles/service-fabric-reliable-actors-get-started/)帮助您入门
 
-<!---HONumber=Mooncake_0822_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

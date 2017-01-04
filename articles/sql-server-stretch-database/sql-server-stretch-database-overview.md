@@ -15,7 +15,7 @@
 	ms.devlang="na"
 	ms.topic="get-started-article"
 	ms.date="06/27/2016"
-	wacn.date="08/25/2016"
+	wacn.date="01/03/2017"
 	ms.author="douglasl"/>
 
 # SQL Server Stretch Database 概述
@@ -80,4 +80,4 @@ Stretch Database 面向的事务数据库中存有大量历史数据，这些数
 [StretchOverviewImage2]: ./media/sql-server-stretch-database-overview/StretchDBOverview1.png
 [StretchOverviewImage3]: ./media/sql-server-stretch-database-overview/StretchDBOverview2.png
 
-<!---HONumber=Mooncake_0801_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

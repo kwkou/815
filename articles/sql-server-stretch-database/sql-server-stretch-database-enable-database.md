@@ -14,7 +14,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="08/05/2016"
-	wacn.date="09/05/2016"
+	wacn.date="01/03/2017"
 	ms.author="douglasl"/>
 
 # 为数据库启用延伸数据库
@@ -136,4 +136,4 @@
 
 [FirewallRule]: ./media/sql-server-stretch-database-enable-database/firewall.png
 
-<!---HONumber=Mooncake_0829_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

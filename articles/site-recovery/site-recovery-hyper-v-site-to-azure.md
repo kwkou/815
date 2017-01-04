@@ -1,22 +1,23 @@
 <properties
-	pageTitle="在 Azure 门户中使用 Azure Site Recovery 将 Hyper-V 虚拟机（不使用 VMM）复制到 Azure | Azure"
-	description="介绍如何部署 Azure Site Recovery，以便使用 Azure 门户来协调不受 VMM 管理的本地 Hyper-V VM 到 Azure 的复制、故障转移和恢复"
-	services="site-recovery"
-	documentationCenter=""
-	authors="rayne-wiselman"
-	manager="jwhit"
-	editor=""/>  
+    pageTitle="在 Azure 门户中使用 Azure Site Recovery 将 Hyper-V 虚拟机（不包含 VMM）复制到 Azure | Azure"
+    description="介绍如何部署 Azure Site Recovery，以便使用 Azure 门户协调不受 VMM 管理的本地 Hyper-V VM 到 Azure 的复制、故障转移和恢复"
+    services="site-recovery"
+    documentationcenter=""
+    author="rayne-wiselman"
+    manager="jwhit"
+    editor="" />  
 
 
 <tags
-	ms.service="site-recovery"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="storage-backup-recovery"
-	ms.date="09/19/2016"
-	wacn.date="11/17/2016"
-	ms.author="raynew"/>  
+    ms.assetid="1777e0eb-accb-42b5-a747-11272e131a52"
+    ms.service="site-recovery"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.tgt_pltfrm="na"
+    ms.workload="storage-backup-recovery"
+    ms.date="11/23/2016"
+    wacn.date="01/03/2016"
+    ms.author="raynew" />  
 
 
 
@@ -304,4 +305,4 @@
 设置并运行部署以后，请[详细了解](/documentation/articles/site-recovery-failover/)故障转移。
 
 
-<!---HONumber=Mooncake_1107_2016-->
+<!---HONumber=Mooncake_1226_2016-->

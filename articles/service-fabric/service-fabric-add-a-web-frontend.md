@@ -15,19 +15,17 @@
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
    ms.date="10/29/2016"
-   wacn.date="12/26/2016"
+   wacn.date="01/03/2017"
    ms.author="seanmck"/>  
 
 
 
 # 使用 ASP.NET Core 生成应用程序的 Web 服务前端
-
 默认情况下，Azure Service Fabric 服务不提供用于访问 Web 的公共接口。若要向 HTTP 客户端公开应用程序的功能，需要创建一个 Web 项目作为入口点，然后从该处与单个服务进行通信。
 
 在本教程中，我们将弥补[在 Visual Studio 中创建第一个应用程序](/documentation/articles/service-fabric-create-your-first-application-in-visual-studio/)教程中遗留的内容，在有状态计数器服务的前面添加一个 Web 服务。如果你尚未学习上述教程，应该返回并逐步完成该教程中的步骤。
 
 ## 将 ASP.NET Core 服务添加到应用程序
-
 ASP.NET Core 是轻量跨平台的 Web 开发框架，可用于创建现代 Web UI 和 Web API。让我们将 ASP.NET Web API 项目添加到现有的应用程序。
 
 >[AZURE.NOTE] 若要完成本教程，需要[安装 .NET Core 1.0][dotnetcore-install]。
@@ -261,4 +259,4 @@ ASP.NET Core 是轻量跨平台的 Web 开发框架，可用于创建现代 Web 
 <!-- external links -->
 [dotnetcore-install]: https://www.microsoft.com/net/core#windows
 
-<!---HONumber=Mooncake_1219_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->
