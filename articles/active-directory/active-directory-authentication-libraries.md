@@ -14,8 +14,8 @@
    ms.tgt_pltfrm="na"
    ms.workload="identity"
    ms.date="10/11/2016"
-   wacn.date="10/31/2016"
-   ms.author="mbaldwin" />
+   ms.author="mbaldwin" 
+   wacn.date="01/03/2017"/>
 
 # Azure Active Directory 身份验证库
 
@@ -66,4 +66,4 @@
 
 [Azure Active Directory 代码示例](/documentation/articles/active-directory-code-samples/)
 
-<!---HONumber=Mooncake_1024_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

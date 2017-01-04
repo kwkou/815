@@ -16,8 +16,8 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="08/26/2016"
-	wacn.date="10/26/2016"
-	ms.author="trinadhk; jimpark; markgal;"/>  
+	ms.author="trinadhk; jimpark; markgal;"
+   	wacn.date="01/04/2017"/>  
 
 
 
@@ -59,8 +59,7 @@
 
 备份保管库是存储所有按时间创建的备份和恢复点的实体。备份保管库还包含将应用到要备份的虚拟机的备份策略。
 
-下图显示了各种 Azure 备份实体之间的关系：
-    ![Azure 备份实体和关系](./media/backup-azure-vms-prepare/vault-policy-vm.png)
+下图显示了各种 Azure 备份实体之间的关系：![Azure 备份实体和关系](./media/backup-azure-vms-prepare/vault-policy-vm.png)
 
 创建备份保管库的步骤：
 
@@ -82,7 +81,7 @@
     ![创建保管库 toast 通知](./media/backup-azure-vms-prepare/creating-vault.png)  
 
 
-7. 一条消息将确认已成功创建保管库。该保管库将在“恢复服务”页中以“活动”状态列出。确保在创建保管库后立即选择适当的存储冗余选项。阅读有关[在备份保管库中设置存储冗余选项](/documentation/articles/backup-configure-vault/)的更多内容。
+7. 一条消息将确认已成功创建保管库。该保管库将在“恢复服务”页中以“活动”状态列出。确保在创建保管库后立即选择适当的存储冗余选项。阅读有关[在备份保管库中设置存储冗余选项](/documentation/articles/backup-configure-vault/#azure-backup---storage-redundancy-options/)的更多内容。
 
     ![备份保管库列表](./media/backup-azure-vms-prepare/backup_vaultslist.png)  
 
@@ -237,4 +236,4 @@ VM 代理已存在于从 Azure 库创建的 VM 中。但是，从本地数据中
 - [计划 VM 备份基础结构](/documentation/articles/backup-azure-vms-introduction/)
 - [管理虚拟机备份](/documentation/articles/backup-azure-manage-vms-classic/)
 
-<!---HONumber=Mooncake_1017_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

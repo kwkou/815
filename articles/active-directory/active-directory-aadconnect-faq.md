@@ -13,9 +13,10 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="08/08/2016"
-	wacn.date="08/29/2016"
-	ms.author="billmath"/>
+	ms.date="08/08/2016"	
+	ms.author="billmath"
+	wacn.date="01/03/2017"/>
+
 
 # Azure AD Connect 常见问题
 
@@ -55,10 +56,9 @@
 ## 自定义配置
 **问：在哪里可以找到 Azure AD Connect 的 PowerShell cmdlet 介绍？** 仅支持客户使用本站点上介绍的 cmdlet，而不支持使用 Azure AD Connect 中的其他 PowerShell cmdlet。
 
-**问：我是否可以使用 *Synchronization Service Manager* 中的“服务器导出/服务器导入”在服务器之间移动配置？** 不可以。此选项不会检索所有配置设置，因此不应使用。应该改用向导在第二台服务器上创建基础配置，并使用同步规则编辑器生成 PowerShell 脚本，如此即可在服务器之间移动任何自定义规则。请参阅[将自定义配置从活动服务器移到暂存服务器](/documentation/articles/active-directory-aadconnect-upgrade-previous-version/#move-custom-configuration-from-active-to-staging-server)。
+**问：我是否可以使用 *Synchronization Service Manager* 中的“服务器导出/服务器导入”在服务器之间移动配置？** 不可以。此选项不会检索所有配置设置，因此不应使用。应该改用向导在第二台服务器上创建基础配置，并使用同步规则编辑器生成 PowerShell 脚本，如此即可在服务器之间移动任何自定义规则。请参阅[将自定义配置从活动服务器移到暂存服务器](/documentation/articles/active-directory-aadconnect-upgrade-previous-version/#move-custom-configuration-from-active-to-staging-server/)。
 
 ## 故障排除
-
 **问：如何获取有关 Azure AD Connect 的帮助？**
 
 [搜索 Microsoft 知识库 (KB)](https://www.microsoft.com/zh-cn/Search/result.aspx?q=azure%20active%20directory%20connect&form=mssupport)
@@ -69,9 +69,8 @@
 
 - 单击[此处](https://social.msdn.microsoft.com/Forums/azure/zh-cn/newthread?category=windowsazureplatform&forum=WindowsAzureAD&prof=required)，在社区中搜索和浏览技术问题与答案，或提出自己的问题。
 
-
 [Azure AD Connect 客户支持](https://manage.windowsazure.cn/?getsupport=true)
 
 - 使用此链接，以便通过 Azure 经典门户获取支持。
 
-<!---HONumber=Mooncake_0822_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

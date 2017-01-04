@@ -16,7 +16,7 @@
     ms.devlang="dotnet"
     ms.topic="hero-article"
     ms.date="11/16/2016"
-    wacn.date="12/20/2016"
+    wacn.date="01/04/2017"
     ms.author="syamk" />
 
 # <a name="_Toc395809351"></a>ASP.NET MVC 教程：使用 DocumentDB 开发 Web 应用程序
@@ -55,8 +55,7 @@
 
 [AZURE.INCLUDE [documentdb-keys](../../includes/documentdb-keys.md)]
 
-<br/> 
-现在，我们将演练如何从头开始创建新的 ASP.NET MVC 应用程序。
+<br/> 现在，我们将演练如何从头开始创建新的 ASP.NET MVC 应用程序。
 
 ## <a name="_Toc395637762"></a>步骤 2：创建新的 ASP.NET MVC 应用程序
 现在你已有帐户，我们可以开始创建新的 ASP.NET 项目。
@@ -392,10 +391,7 @@
 
 1. 将下列方法添加到 **DocumentDBRepository** 类。
    
-       public static async Task<Document> CreateItemAsync(T item)
-       {
-           return await client.CreateDocumentAsync(UriFactory.CreateDocumentCollectionUri(DatabaseId, CollectionId), item);
-       }
+       public static async Task<Document> CreateItemAsync(T item) { return await client.CreateDocumentAsync(UriFactory.CreateDocumentCollectionUri(DatabaseId, CollectionId), item); }
    
    此方法只接受传递给它的对象，并将对象保留在 DocumentDB 中。
 2. 打开 ItemController.cs 文件，并在类中添加下列代码段。这是 ASP.NET MVC 得知如何执行**创建**操作的方式。在此情况下，只需呈现先前创建的关联 Create.cshtml 视图。
@@ -541,7 +537,7 @@
 
 在几秒钟内，Visual Studio 将完成 Web 应用程序发布并启动浏览器，你可从中查看在 Azure 中运行的简单作品！
 
-## <a name="troubleshooting"></a>故障排除
+## <a name="Troubleshooting"></a>故障排除
 
 如果尝试部署 Web 应用时收到“处理请求时发生错误”消息，请执行以下操作：
 
@@ -572,4 +568,4 @@
 [Basic CRUD Operations in ASP.NET MVC]: http://go.microsoft.com/fwlink/?LinkId=317598
 [GitHub]: https://github.com/Azure-Samples/documentdb-net-todo-app
 
-<!---HONumber=Mooncake_1212_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

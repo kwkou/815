@@ -15,34 +15,34 @@
    ms.tgt_pltfrm="na"
    ms.workload="identity"
    ms.date="09/16/2016"
-   wacn.date="11/30/2016"
-   ms.author="mbaldwin"/>
+   ms.author="mbaldwin"
+   wacn.date="01/03/2017"/>
 
 # Azure AD 的身份验证方案
 
 Azure Active Directory (Azure AD) 通过以下方式简化了对开发人员的身份验证：将标识提供为一项服务、支持行业标准协议（例如 OAuth 2.0 和 OpenID Connect），并提供用于不同平台的开源库来帮助你快速开始编码。本文档将帮助你了解 Azure AD 支持的各种方案并演示如何入门。具体内容划为以下几部分：
 
-- Azure AD 中的身份验证基本知识
+- [Azure AD 中的身份验证基本知识](#basics-of-authentication-in-azure-ad)
 
-- Azure AD 安全令牌中的声明
+- [Azure AD 安全令牌中的声明](#claims-in-azure-ad-security-tokens)
 
-- 在 Azure AD 中注册应用程序的基本知识
+- [在 Azure AD 中注册应用程序的基本知识](#basics-of-registering-an-application-in-azure-ad)
 
-- 应用程序类型和方案
+- [应用程序类型和方案](#application-types-and-scenarios)
 
-  - Web 浏览器到 Web 应用程序
+  - [Web 浏览器到 Web 应用程序](#web-browser-to-web-application)
 
-  - 单页面应用程序 (SPA)
+  - [单页面应用程序 (SPA)](#single-page-application-spa)
 
-  - 本机应用程序到 Web API
+  - [本机应用程序到 Web API](#native-application-to-web-api)
 
-  - Web 应用程序到 Web API
+  - [Web 应用程序到 Web API](#web-application-to-web-api)
 
-  - 后台或服务器应用程序到 Web API
+  - [后台或服务器应用程序到 Web API](#daemon-or-server-application-to-web-api)
 
 
 
-## Azure AD 中的身份验证基本知识
+## Azure AD 中的身份验证基本知识 <a name="basics-of-authentication-in-azure-ad"></a>
 
 如果你不熟悉 Azure AD 中的身份验证基本概念，请阅读本部分。否则，你可能希望跳到[应用程序类型和方案](#application-types-and-scenarios)。
 
@@ -69,13 +69,13 @@ Azure Active Directory (Azure AD) 通过以下方式简化了对开发人员的�
 
 • 身份验证过程的请求和响应流是由所使用的身份验证协议（例如 OAuth 2.0、OpenID Connect、WS-Federation 或 SAML 2.0）决定的。[Azure Active Directory 身份验证协议](/documentation/articles/active-directory-authentication-protocols/)主题和下面的部分中更详细地讨论了这些协议。
 
-> [AZURE.NOTE] Azure AD 支持 OAuth 2.0 和 OpenID Connect 标准，这些标准广泛使用持有者令牌，包括表示为 JWT 的持有者令牌。持有者令牌是一种轻型安全令牌，它授予对受保护资源的"持有者"访问权限。从这个意义上来说，"持有者"是可以提供令牌的任何一方。虽然某一方必须首先通过 Azure AD 的身份验证才能收到持有者令牌，但如果不采取必要的步骤在传输过程和存储中对令牌进行保护，令牌可能会被意外的某一方拦截并使用。虽然某些安全令牌具有内置机制来防止未经授权方使用它们，但是持有者令牌没有这一机制，因此必须在安全的通道（例如传输层安全 (HTTPS)）中进行传输。如果持有者令牌以明文传输，则恶意方可以利用中间人攻击来获得令牌并使用它来对受保护资源进行未经授权的访问。当存储或缓存持有者令牌供以后使用时，也应遵循同样的安全原则。请始终确保你的应用程序以安全的方式传输和存储持有者令牌。有关持有者令牌的更多安全注意事项，请参阅 [RFC 6750 第 5 部分](http://tools.ietf.org/html/rfc6750)。
+> [AZURE.NOTE] Azure AD 支持 OAuth 2.0 和 OpenID Connect 标准，这些标准广泛使用持有者令牌，包括表示为 JWT 的持有者令牌。持有者令牌是一种轻型安全令牌，它授予对受保护资源的“持有者”访问权限。从这个意义上来说，“持有者”是可以提供令牌的任何一方。虽然某一方必须首先通过 Azure AD 的身份验证才能收到持有者令牌，但如果不采取必要的步骤在传输过程和存储中对令牌进行保护，令牌可能会被意外的某一方拦截并使用。虽然某些安全令牌具有内置机制来防止未经授权方使用它们，但是持有者令牌没有这一机制，因此必须在安全的通道（例如传输层安全 (HTTPS)）中进行传输。如果持有者令牌以明文传输，则恶意方可以利用中间人攻击来获得令牌并使用它来对受保护资源进行未经授权的访问。当存储或缓存持有者令牌供以后使用时，也应遵循同样的安全原则。请始终确保你的应用程序以安全的方式传输和存储持有者令牌。有关持有者令牌的更多安全注意事项，请参阅 [RFC 6750 第 5 部分](http://tools.ietf.org/html/rfc6750)。
 
 
 现在你已概要了解了基本知识，请阅读下面几部分来了解在 Azure AD 中如何进行设置，以及 Azure AD 支持的常见方案。
 
 
-## Azure AD 安全令牌中的声明
+## Azure AD 安全令牌中的声明 <a name="claims-in-azure-ad-security-tokens"></a>
 
 Azure AD 颁发的安全令牌包含与经过授权的使用者有关的信息的声明或断言。应用程序可将这些声明用于各种任务。例如，它们可以用于验证令牌、标识使用者的目录租户、显示用户信息、确定使用者的授权等等。任何给定安全令牌中存在的声明都依赖于令牌的类型、用于验证用户身份的凭据的类型和应用程序配置。下表提供了由 Azure AD 发出的每种声明的简要说明。有关详细信息，请参阅[支持的令牌和声明类型](/documentation/articles/active-directory-token-and-claims/)。
 
@@ -104,7 +104,7 @@ Azure AD 颁发的安全令牌包含与经过授权的使用者有关的信息�
 | 版本 | 包含令牌的版本号。 |
 
 
-## 在 Azure AD 中注册应用程序的基本知识
+## 在 Azure AD 中注册应用程序的基本知识 <a name="basics-of-registering-an-application-in-azure-ad"></a>
 
 将身份验证外包给 Azure AD 的任何应用程序都必须在目录中进行注册。此步骤涉及告诉 Azure AD 关于你的应用程序的情况，包括应用程序所在的 URL、在进行身份验证后要将回复发送到的 URL、用以标识你的应用程序的 URI，以及其他信息。该信息是必需的，有以下几个重要原因：
 
@@ -129,9 +129,9 @@ Azure AD 颁发的安全令牌包含与经过授权的使用者有关的信息�
 - 单租户应用程序：单租户应用程序预定在单个组织中使用。它们通常是由企业开发人员编写的业务线 (LoB) 应用程序。单租户应用程序只需要供单个目录中的用户进行访问，因此，只需要将其设置在单个目录中。这些应用程序通常由组织中的开发人员进行注册。
 
 
-- 多租户应用程序：多租户应用程序预定在许多组织中使用，而不仅是在单个组织中使用。它们通常是由独立软件供应商 (ISV) 编写的软件即服务 (SaaS) 应用程序。多租户应用程序需要设置在将使用它们的每个目录中，需要经过用户或管理员许可才能注册它们。当在目录中注册应用程序并向其授予对 Graph API 或者另一可能的 Web API 的访问权限时，此许可过程即已开始。当其他组织的用户或管理员注册使用应用程序时，会向他们显示一个对话框，其中显示了应用程序要求的权限。然后，用户或管理员可以许可应用程序的要求，这将向应用程序授予对指定数据的访问权限，并最终在其目录中注册该应用程序。有关详细信息，请参阅[许可框架概述](/documentation/articles/active-directory-integrating-applications/)。
+- 多租户应用程序：多租户应用程序预定在许多组织中使用，而不仅是在单个组织中使用。它们通常是由独立软件供应商 (ISV) 编写的软件即服务 (SaaS) 应用程序。多租户应用程序需要设置在将使用它们的每个目录中，需要经过用户或管理员许可才能注册它们。当在目录中注册应用程序并向其授予对 Graph API 或者另一可能的 Web API 的访问权限时，此许可过程即已开始。当其他组织的用户或管理员注册使用应用程序时，会向他们显示一个对话框，其中显示了应用程序要求的权限。然后，用户或管理员可以许可应用程序的要求，这将向应用程序授予对指定数据的访问权限，并最终在其目录中注册该应用程序。有关详细信息，请参阅[许可框架概述](/documentation/articles/active-directory-integrating-applications/#overview-of-the-consent-framework/)。
 
-与开发单租户应用程序相比，当开发多租户应用程序时，会出现一些额外的注意事项。例如，如果要使你的应用程序可供多个目录中的用户使用，你需要一种机制来确定用户在哪个租户中。单租户应用程序只需要在其自己的目录中查找用户，而多租户应用程序需要从 Azure AD 中的所有目录来识别特定用户。为此，Azure AD 提供了一个任何多租户应用程序都可以在其中对登录请求进行定向的通用身份验证终结点，而不是提供特定于租户的终结点。对于 Azure AD 中的所有目录，该终结点都是 https://login.microsoftonline.com/common， 而特定于租户的终结点可能是 https://login.microsoftonline.com/contoso.partner.onmschina.cn。 在开发应用程序时考虑通用终结点尤为重要，因为在登录、注销和令牌验证期间你将需要必要的逻辑来处理多租户。
+与开发单租户应用程序相比，当开发多租户应用程序时，会出现一些额外的注意事项。例如，如果要使你的应用程序可供多个目录中的用户使用，你需要一种机制来确定用户在哪个租户中。单租户应用程序只需要在其自己的目录中查找用户，而多租户应用程序需要从 Azure AD 中的所有目录来识别特定用户。为此，Azure AD 提供了一个任何多租户应用程序都可以在其中对登录请求进行定向的通用身份验证终结点，而不是提供特定于租户的终结点。对于 Azure AD 中的所有目录，该终结点都是 https://login.microsoftonline.com/common，而特定于租户的终结点可能是 https://login.microsoftonline.com/contoso.partner.onmschina.cn。在开发应用程序时考虑通用终结点尤为重要，因为在登录、注销和令牌验证期间你将需要必要的逻辑来处理多租户。
 
 如果你当前在开发单租户应用程序但希望使其可供许多组织使用，可以轻松地在 Azure AD 中更改该应用程序及其配置以使其支持多租户。此外，无论你是在单租户应用程序中还是在多租户应用程序中提供身份验证，Azure AD 都将为所有目录中的所有令牌使用相同的签名密钥。
 
@@ -182,7 +182,7 @@ Azure AD 颁发的安全令牌包含与经过授权的使用者有关的信息�
 #### 代码示例
 
 
-请参阅 Web 浏览器到 Web 应用程序方案的代码示例。另外，请经常回来查看 - 我们会不时地添加新示例。[Web 浏览器到 Web 应用程序](/documentation/articles/active-directory-code-samples/)。
+请参阅 Web 浏览器到 Web 应用程序方案的代码示例。另外，请经常回来查看 - 我们会不时地添加新示例。[Web 浏览器到 Web 应用程序](/documentation/articles/active-directory-code-samples/#web-browser-to-web-application/)。
 
 
 #### 注册
@@ -237,7 +237,7 @@ Azure AD 颁发的安全令牌包含与经过授权的使用者有关的信息�
 #### 代码示例
 
 
-请参阅单页面应用程序 (SPA) 方案的代码示例。请经常回来查看 - 我们会不时地添加新示例。[单页面应用程序 (SPA)](/documentation/articles/active-directory-code-samples/)。
+请参阅单页面应用程序 (SPA) 方案的代码示例。请经常回来查看 - 我们会不时地添加新示例。[单页面应用程序 (SPA)](/documentation/articles/active-directory-code-samples/#single-page-application-spa/)。
 
 
 #### 注册
@@ -248,7 +248,7 @@ Azure AD 颁发的安全令牌包含与经过授权的使用者有关的信息�
 
 - 多租户：如果你在构建可以由组织外部用户使用的应用程序，则必须在你公司的目录中注册该应用程序，并且还必须在要使用该应用程序的每个组织的目录中注册该应用程序。若要使你的应用程序在客户的目录中可用，你可以提供一个供客户使用的注册流程，让客户许可你的应用程序的要求。当他们针对你的应用程序进行注册时，系统会向他们显示一个对话框，其中显示了应用程序要求的权限，之后是表示许可的选项。可能会要求其他组织中的管理员表示许可，具体取决于所需的权限。当用户或管理员表示许可后，将在其目录中注册该应用程序。有关详细信息，请参阅[将应用程序与 Azure Active Directory 集成](/documentation/articles/active-directory-integrating-applications/)。
 
-注册应用程序之后，必须将其配置为使用 OAuth 2.0 隐式授予协议。默认情况下，应用程序禁用此协议。若要为你的应用程序启用 OAuth2 隐式授予协议，从 Azure 管理门户中下载该协议的应用程序清单，将"oauth2AllowImplicitFlow"值设置为 true，然后将该清单上载回到门户。有关详细说明，请参阅[为单页面应用程序启用 OAuth 2.0 隐式授权](/documentation/articles/active-directory-integrating-applications/)。
+注册应用程序之后，必须将其配置为使用 OAuth 2.0 隐式授予协议。默认情况下，应用程序禁用此协议。若要为你的应用程序启用 OAuth2 隐式授予协议，从 Azure 管理门户中下载该协议的应用程序清单，将“oauth2AllowImplicitFlow”值设置为 true，然后将该清单上载回到门户。有关详细说明，请参阅[为单页面应用程序启用 OAuth 2.0 隐式授权](/documentation/articles/active-directory-integrating-applications/)。
 
 
 #### 令牌过期
@@ -283,7 +283,7 @@ Azure AD 颁发的安全令牌包含与经过授权的使用者有关的信息�
 4. Azure AD 对授权代码和关于客户端应用程序和 Web API 的信息进行验证。当验证成功时，Azure AD 返回两个令牌：一个 JWT 访问令牌和一个 JWT 刷新令牌。此外，Azure AD 还将返回关于用户的基本信息，例如其显示名称和租户 ID。
 
 
-5. 通过 HTTPS，客户端应用程序使用返回的 JWT 访问令牌在发往 Web API 的请求的 Authorization 标头中添加一个具有"Bearer"限定符的 JWT 字符串。然后，Web API 对 JWT 令牌进行验证，并且如果验证成功，则返回所需的资源。
+5. 通过 HTTPS，客户端应用程序使用返回的 JWT 访问令牌在发往 Web API 的请求的 Authorization 标头中添加一个具有“Bearer”限定符的 JWT 字符串。然后，Web API 对 JWT 令牌进行验证，并且如果验证成功，则返回所需的资源。
 
 
 6. 当访问令牌过期时，客户端应用程序将收到一个错误，指出用户需要重新进行身份验证。如果应用程序具有有效的刷新令牌，则可以使用它来获取新的访问令牌，系统不会提示用户重新登录。如果刷新令牌过期，则应用程序将再次需要以交互方式对用户进行身份验证。
@@ -295,13 +295,13 @@ Azure AD 颁发的安全令牌包含与经过授权的使用者有关的信息�
 #### 代码示例
 
 
-请参阅本机应用程序到 Web API 方案的代码示例。另外，请经常回来查看 - 我们会不时地添加新示例。[本机应用程序到 Web API](/documentation/articles/active-directory-code-samples/)。
+请参阅本机应用程序到 Web API 方案的代码示例。另外，请经常回来查看 - 我们会不时地添加新示例。[本机应用程序到 Web API](/documentation/articles/active-directory-code-samples/#native-application-to-web-api/)。
 
 
 #### 注册
 
 
-- 单租户：本机应用程序和 Web API 必须在 Azure AD 的同一个目录中进行注册。可以对 Web API 进行配置以公开一组权限，然后使用这些权限来限制本机应用程序对其资源的访问。然后，客户端应用程序在 Azure 管理门户的"对其他应用程序的权限"下拉菜单中选择所需的权限。
+- 单租户：本机应用程序和 Web API 必须在 Azure AD 的同一个目录中进行注册。可以对 Web API 进行配置以公开一组权限，然后使用这些权限来限制本机应用程序对其资源的访问。然后，客户端应用程序在 Azure 管理门户的“对其他应用程序的权限”下拉菜单中选择所需的权限。
 
 
 - 多租户：首先，本机应用程序只在开发人员或发布者的目录中进行注册。其次，本机应用程序在配置后会指示它在正常运行时所需的权限。当目标目录中的用户或管理员表示许可应用程序的要求时（这将使应用程序可供其组织使用），此必需权限列表将显示在一个对话框中。某些应用程序只需要用户级权限，组织中的任何用户都可以表示许可。另外一些应用程序需要管理员级权限，组织中的用户无法表示许可。只有目录管理员可以对需要此级别的权限的应用程序表示许可。当用户或管理员表示许可后，才会在其目录中注册该 Web API。有关详细信息，请参阅[将应用程序与 Azure Active Directory 集成](/documentation/articles/active-directory-integrating-applications/)。
@@ -321,9 +321,9 @@ Azure AD 颁发的安全令牌包含与经过授权的使用者有关的信息�
 
 本部分介绍了需要从 Web API 获取资源的 Web 应用程序。在此方案中，Web 应用程序可以使用两种标识类型进行身份验证并调用 Web API：应用程序标识或委托用户标识。
 
-*应用程序标识：* 此方案使用 OAuth 2.0 客户端凭据授予作为应用程序进行身份验证并访问 Web API。当使用应用程序标识时，Web API 只能检测到 Web 应用程序在调用它，因为 Web API 不会收到关于用户的任何信息。如果应用程序收到关于用户的信息，则该信息将通过应用程序协议发送，并且 Azure AD 不会对其进行签名。Web API 相信 Web 应用程序已对用户进行了身份验证。因此，此模式称为受信任的子系统。
+*应用程序标识：*此方案使用 OAuth 2.0 客户端凭据授予作为应用程序进行身份验证并访问 Web API。当使用应用程序标识时，Web API 只能检测到 Web 应用程序在调用它，因为 Web API 不会收到关于用户的任何信息。如果应用程序收到关于用户的信息，则该信息将通过应用程序协议发送，并且 Azure AD 不会对其进行签名。Web API 相信 Web 应用程序已对用户进行了身份验证。因此，此模式称为受信任的子系统。
 
-*委派的用户标识：* 此方案可以通过两种方式完成：OpenID Connect 和带有机密客户端的 OAuth 2.0 代码授权。Web 应用程序为用户获取访问令牌，该令牌将向 Web API 证明用户已成功通过了 Web 应用程序的身份验证并且 Web 应用程序能够获取委托用户标识来调用 Web API。然后会在请求中将此访问令牌发送到 Web API，后者对用户进行授权并返回所需的资源。
+*委派的用户标识：*此方案可以通过两种方式完成：OpenID Connect 和带有机密客户端的 OAuth 2.0 代码授权。Web 应用程序为用户获取访问令牌，该令牌将向 Web API 证明用户已成功通过了 Web 应用程序的身份验证并且 Web 应用程序能够获取委托用户标识来调用 Web API。然后会在请求中将此访问令牌发送到 Web API，后者对用户进行授权并返回所需的资源。
 
 #### 图表
 
@@ -346,7 +346,7 @@ Azure AD 颁发的安全令牌包含与经过授权的使用者有关的信息�
 3. Azure AD 对应用程序进行身份验证并返回用来调用 Web API 的 JWT 访问令牌。
 
 
-4. 通过 HTTPS，Web 应用程序使用返回的 JWT 访问令牌在发往 Web API 的请求的 Authorization 标头中添加一个具有"Bearer"限定符的 JWT 字符串。然后，Web API 对 JWT 令牌进行验证，并且如果验证成功，则返回所需的资源。
+4. 通过 HTTPS，Web 应用程序使用返回的 JWT 访问令牌在发往 Web API 的请求的 Authorization 标头中添加一个具有“Bearer”限定符的 JWT 字符串。然后，Web API 对 JWT 令牌进行验证，并且如果验证成功，则返回所需的资源。
 
 ##### 采用 OpenID Connect 的委托用户标识
 
@@ -359,7 +359,7 @@ Azure AD 颁发的安全令牌包含与经过授权的使用者有关的信息�
 3. Azure AD 对授权代码和关于 Web 应用程序和 Web API 的信息进行验证。当验证成功时，Azure AD 返回两个令牌：一个 JWT 访问令牌和一个 JWT 刷新令牌。
 
 
-4. 通过 HTTPS，Web 应用程序使用返回的 JWT 访问令牌在发往 Web API 的请求的 Authorization 标头中添加一个具有"Bearer"限定符的 JWT 字符串。然后，Web API 对 JWT 令牌进行验证，并且如果验证成功，则返回所需的资源。
+4. 通过 HTTPS，Web 应用程序使用返回的 JWT 访问令牌在发往 Web API 的请求的 Authorization 标头中添加一个具有“Bearer”限定符的 JWT 字符串。然后，Web API 对 JWT 令牌进行验证，并且如果验证成功，则返回所需的资源。
 
 ##### 采用 OAuth 2.0 授权代码授权的委托用户标识
 
@@ -381,16 +381,16 @@ Azure AD 颁发的安全令牌包含与经过授权的使用者有关的信息�
 6. Azure AD 对授权代码和关于 Web 应用程序和 Web API 的信息进行验证。当验证成功时，Azure AD 返回两个令牌：一个 JWT 访问令牌和一个 JWT 刷新令牌。
 
 
-7. 通过 HTTPS，Web 应用程序使用返回的 JWT 访问令牌在发往 Web API 的请求的 Authorization 标头中添加一个具有"Bearer"限定符的 JWT 字符串。然后，Web API 对 JWT 令牌进行验证，并且如果验证成功，则返回所需的资源。
+7. 通过 HTTPS，Web 应用程序使用返回的 JWT 访问令牌在发往 Web API 的请求的 Authorization 标头中添加一个具有“Bearer”限定符的 JWT 字符串。然后，Web API 对 JWT 令牌进行验证，并且如果验证成功，则返回所需的资源。
 
 #### 代码示例
 
-请参阅 Web 应用程序到 Web API 方案的代码示例。另外，请经常回来查看 - 我们会不时地添加新示例。Web [应用程序到 Web API](/documentation/articles/active-directory-code-samples/)。
+请参阅 Web 应用程序到 Web API 方案的代码示例。另外，请经常回来查看 - 我们会不时地添加新示例。Web [应用程序到 Web API](/documentation/articles/active-directory-code-samples/#web-application-to-web-api/)。
 
 
 #### 注册
 
-- 单租户：对于应用程序标识和委托用户标识这两种情况，Web 应用程序和 Web API 都必须在 Azure AD 的同一个目录中进行注册。可以对 Web API 进行配置以公开一组权限，然后使用这些权限来限制 Web 应用程序对其资源的访问。如果使用的是委托用户标识类型，则 Web 应用程序需要从 Azure 管理门户的"对其他应用程序的权限"下拉菜单中选择所需的权限。如果使用的是应用程序标识类型，则不需要此步骤。
+- 单租户：对于应用程序标识和委托用户标识这两种情况，Web 应用程序和 Web API 都必须在 Azure AD 的同一个目录中进行注册。可以对 Web API 进行配置以公开一组权限，然后使用这些权限来限制 Web 应用程序对其资源的访问。如果使用的是委托用户标识类型，则 Web 应用程序需要从 Azure 管理门户的“对其他应用程序的权限”下拉菜单中选择所需的权限。如果使用的是应用程序标识类型，则不需要此步骤。
 
 
 - 多租户：首先，Web 应用程序在配置后会指示它在正常运行时所需的权限。当目标目录中的用户或管理员表示许可应用程序的要求时（这将使应用程序可供其组织使用），此必需权限列表将显示在一个对话框中。某些应用程序只需要用户级权限，组织中的任何用户都可以表示许可。另外一些应用程序需要管理员级权限，组织中的用户无法表示许可。只有目录管理员可以对需要此级别的权限的应用程序表示许可。当用户或管理员表示许可后，将在其目录中注册 Web 应用程序和 Web API。
@@ -422,7 +422,7 @@ Azure AD 颁发的安全令牌包含与经过授权的使用者有关的信息�
 2. Azure AD 对应用程序进行身份验证并返回用来调用 Web API 的 JWT 访问令牌。
 
 
-3. 通过 HTTPS，Web 应用程序使用返回的 JWT 访问令牌在发往 Web API 的请求的 Authorization 标头中添加一个具有"Bearer"限定符的 JWT 字符串。然后，Web API 对 JWT 令牌进行验证，并且如果验证成功，则返回所需的资源。
+3. 通过 HTTPS，Web 应用程序使用返回的 JWT 访问令牌在发往 Web API 的请求的 Authorization 标头中添加一个具有“Bearer”限定符的 JWT 字符串。然后，Web API 对 JWT 令牌进行验证，并且如果验证成功，则返回所需的资源。
 
 
 ##### 采用 OAuth 2.0 On-Behalf-Of 草案规范的委托用户标识
@@ -442,11 +442,11 @@ Azure AD 颁发的安全令牌包含与经过授权的使用者有关的信息�
 
 #### 代码示例
 
-请参阅后台或服务器应用程序到 Web API 方案的代码示例。另外，请经常回来查看 - 我们会不时地添加新示例。[服务器或守护程序应用程序到 Web API](/documentation/articles/active-directory-code-samples/)
+请参阅后台或服务器应用程序到 Web API 方案的代码示例。另外，请经常回来查看 - 我们会不时地添加新示例。[服务器或守护程序应用程序到 Web API](/documentation/articles/active-directory-code-samples/#server-or-daemon-application-to-web-api/)
 
 #### 注册
 
-- 单租户：对于应用程序标识和委托用户标识这两种情况，后台或服务器应用程序都必须在 Azure AD 的同一个目录中进行注册。可以对 Web API 进行配置以公开一组权限，然后使用这些权限来限制后台或服务器对其资源的访问。如果使用的是委托用户标识类型，则服务器应用程序需要从 Azure 管理门户的"对其他应用程序的权限"下拉菜单中选择所需的权限。如果使用的是应用程序标识类型，则不需要此步骤。
+- 单租户：对于应用程序标识和委托用户标识这两种情况，后台或服务器应用程序都必须在 Azure AD 的同一个目录中进行注册。可以对 Web API 进行配置以公开一组权限，然后使用这些权限来限制后台或服务器对其资源的访问。如果使用的是委托用户标识类型，则服务器应用程序需要从 Azure 管理门户的“对其他应用程序的权限”下拉菜单中选择所需的权限。如果使用的是应用程序标识类型，则不需要此步骤。
 
 
 - 多租户：首先，后台或服务器应用程序在配置后会指示它在正常运行时所需的权限。当目标目录中的用户或管理员表示许可应用程序的要求时（这将使应用程序可供其组织使用），此必需权限列表将显示在一个对话框中。某些应用程序只需要用户级权限，组织中的任何用户都可以表示许可。另外一些应用程序需要管理员级权限，组织中的用户无法表示许可。只有目录管理员可以对需要此级别的权限的应用程序表示许可。当用户或管理员表示许可后，将在其目录中注册这两个 Web API。
@@ -465,4 +465,4 @@ Azure AD 颁发的安全令牌包含与经过授权的使用者有关的信息�
 
 [Azure AD 中的 OAuth 2.0](/documentation/articles/active-directory-protocols-oauth-code/)
 
-<!---HONumber=Mooncake_0926_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

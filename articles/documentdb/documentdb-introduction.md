@@ -16,7 +16,7 @@
     ms.devlang="na"
     ms.topic="get-started-article"
     ms.date="11/16/2016"
-    wacn.date="12/27/2016"
+    wacn.date="01/04/2017"
     ms.author="mimig" />  
 
 
@@ -95,4 +95,4 @@ DocumentDB 中的 JavaScript 执行是在关系型数据库系统所支持的概
 
 [1]: ./media/documentdb-introduction/json-database-resources1.png
 
-<!---HONumber=Mooncake_1219_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

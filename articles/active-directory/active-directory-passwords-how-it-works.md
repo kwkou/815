@@ -7,6 +7,7 @@
 	manager="femila"
 	editor="curtand"/>  
 
+
 <tags
 	ms.service="active-directory"
 	ms.workload="identity"
@@ -14,8 +15,10 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="07/12/2016"
-	wacn.date="08/22/2016"
+	wacn.date="01/03/2017"
 	ms.author="asteen"/>
+
+
 
 # 密码管理的工作原理
 
@@ -23,10 +26,11 @@
 
 Azure Active Directory 中的密码管理包含如下所述的几个逻辑组件。请单击每个链接以了解有关该组件的详细信息。
 
-- [**密码管理配置门户**](#password-management-configuration-portal) – 管理员可以通过导航到 [Azure 经典管理门户](https://manage.windowsazure.cn)中其目录的“配置”选项卡来控制如何在其租户中管理密码的不同方面。
-- [**用户注册门户**](#user-registration-portal) – 用户可以通过此网络门户自行注册以进行密码重置。
-- [**用户密码重置门户**](#user-password-reset-portal) – 用户可以使用一系列符合管理员控制的密码重置策略的质询来重置其自己的密码
-- [**用户密码更改门户**](#user-password-change-portal) – 用户可以通过使用此网络门户输入旧密码并选择一个新密码来随时更改其自己的密码
+- [**密码管理配置门户**](#password-management-configuration-portal) - 管理员可以通过导航到 [Azure 经典管理门户](https://manage.windowsazure.cn)中其目录的“配置”选项卡来控制如何在其租户中管理密码的不同方面。
+- [**用户注册门户**](#user-registration-portal) - 用户可以通过此网络门户自行注册以进行密码重置。
+- [**用户密码重置门户**](#user-password-reset-portal) - 用户可以使用一系列符合管理员控制的密码重置策略的质询来重置其自己的密码
+- [**用户密码更改门户**](#user-password-change-portal) - 用户可以通过使用此网络门户输入旧密码并选择一个新密码来随时更改其自己的密码
+- [**密码管理报告**](#password-management-reports) - 管理员可以通过导航到 [Azure 管理门户](https://manage.windowsazure.cn)中其目录的“报告”选项卡的“活动报告”部分来查看和分析其租户中的密码重置和注册活动
 - [**Azure AD Connect 的密码写回组件**](#password-writeback-component-of-azure-ad-connect) - 管理员可以选择在安装 Azure AD Connect 时启用“密码写回”功能，以便从云中管理联合或密码同步用户的密码。
 
 ## <a name="password-management-configuration-portal"></a>密码管理配置门户
@@ -64,9 +68,10 @@ Azure Active Directory 中的密码管理包含如下所述的几个逻辑组件
 有关详细信息，请参阅[入门：Azure AD 密码管理](/documentation/articles/active-directory-passwords-getting-started/)和[最佳实践：Azure AD 密码管理](/documentation/articles/active-directory-passwords-best-practices/)。
 
 ## <a name="user-password-reset-portal"></a> 用户密码重置门户
-一旦启用了自助密码重置、设置了你所在组织的自助密码重置策略并确保了你的用户在目录中具有适当的联系人数据，你所在组织中的用户将可以从使用工作或学校帐户进行登录的任何网页（如 [portal.microsoftonline.com](https://portal.partner.microsoftonline.cn)）自动重置他们自己的密码。在这些网页上，用户将看到“无法访问你的帐户?”链接。
+一旦启用了自助密码重置、设置了你所在组织的自助密码重置策略并确保了你的用户在目录中具有适当的联系人数据，你所在组织中的用户将可以从使用工作或学校帐户进行登录的任何网页（如 [portal.partner.microsoftonline.cn](https://portal.partner.microsoftonline.cn)）自动重置他们自己的密码。在这些网页上，用户将看到“无法访问你的帐户?”链接。
 
-  ![][002]
+  ![][002]  
+
 
 单击此链接将启动自助服务密码重置向导。
 
@@ -77,20 +82,30 @@ Azure Active Directory 中的密码管理包含如下所述的几个逻辑组件
 ## <a name="user-password-change-portal"></a>用户密码更改门户
 如果用户想要更改其密码，可以随时使用密码更改门户实现此目的。用户可以通过访问面板配置文件页来访问密码更改门户，也可以通过单击 Office 365 应用程序内的“更改密码”链接进行访问。如果用户的密码过期，用户登录时会自动收到更改其密码的请求。
 
-  ![][004]
+  ![][004]  
+
 
 在这两种情况下，如果已启用密码写回且用户为联合用户或密码同步用户，这些更改的密码都将写回到你的本地 Active Directory。密码更改门户的外观如下：
 
-  ![][005]
+  ![][005]  
+
 
 若要详细了解有关用户如何更改自己的本地 Active Directory 密码的信息，请参阅[入门：Azure AD 密码管理](/documentation/articles/active-directory-passwords-getting-started/)。
 
-## <a name="password-writeback-component-of-azure-ad-connect"></a>Azure AD Connect 的密码写回组件
+##密码管理报告 <a name="password-management-reports"></a>
+导航到“报告”选项卡并在“活动日志”部分下查找，将看到两个密码管理报告：“密码重置活动”和“密码重置注册活动”。使用这两个报告，可以查看在你的组织中注册和使用密码重置的用户。[Azure 管理门户](https://manage.windowsazure.cn)中的这些报告外观如下：
+
+  ![][006]  
+
+
+有关详细信息，请参阅[深入分析：Azure AD 密码管理报告](/documentation/articles/active-directory-passwords-get-insights/)。
+
+##Azure AD Connect 的密码写回组件 <a name="password-writeback-component-of-azure-ad-connect"></a>
 如果你所在组织中的用户密码源自你的本地环境（通过联合或密码同步），你可以安装 Azure AD Connect 的最新版本以便直接从云中更新这些密码。这意味着，当你的用户忘记或要修改其 AD 密码时，他们可以直接从 Web 执行此操作。密码写回在 Azure AD Connect 安装向导中的位置如下：
 
   ![][007]
 
-有关 Azure AD Connect 的详细信息，请参阅[入门：Azure AD Connect](/documentation/articles/active-directory-aadconnect/)。有关“密码写回”功能的详细信息，请参阅[入门：Azure AD 密码管理](/documentation/articles/active-directory-passwords-getting-started/)。
+有关 Azure AD Connect 的详细信息，请参阅[入门：Azure AD Connect](/documentation/articles/active-directory-aadconnect/)。有关密码写回的详细信息，请参阅[入门：Azure AD 密码管理](/documentation/articles/active-directory-passwords-getting-started/)。
 
 
 <br/> <br/> <br/>
@@ -98,14 +113,14 @@ Azure Active Directory 中的密码管理包含如下所述的几个逻辑组件
 ## 密码重置文档的链接
 以下是所有 Azure AD 密码重置文档页面的链接：
 
-* **你是否因登录时遇到问题而浏览至此？** 如果是这样，[可按以下方式更改和重置你的密码](/documentation/articles/active-directory-passwords-update-your-own-password/)。
-* [**入门**](/documentation/articles/active-directory-passwords-getting-started/) - 了解如何让用户重置及更改云密码或本地密码
-* [**自定义**](/documentation/articles/active-directory-passwords-customize/) - 了解如何根据组织的需求自定义服务的外观和行为
-* [**最佳实践**](/documentation/articles/active-directory-passwords-best-practices/) - 了解如何快速部署且有效管理组织的密码
-* [**深入分析**](/documentation/articles/active-directory-passwords-get-insights/) - 了解集成式报告功能
-* [**常见问题**](/documentation/articles/active-directory-passwords-faq/) - 获取常见问题的解答
-* [**故障排除**](/documentation/articles/active-directory-passwords-troubleshoot/) - 了解如何快速排查服务的问题
-* [**了解更多**](/documentation/articles/active-directory-passwords-learn-more/) - 深入探索服务工作原理的技术细节
+- **你是否因登录时遇到问题而浏览至此？** 如果是这样，[可按以下方式更改和重置你的密码](/documentation/articles/active-directory-passwords-update-your-own-password/)。
+- [**入门**](/documentation/articles/active-directory-passwords-getting-started/) - 了解如何让用户重置及更改云密码或本地密码
+- [**自定义**](/documentation/articles/active-directory-passwords-customize/) - 了解如何根据组织的需求自定义服务的外观和行为
+- [**最佳实践**](/documentation/articles/active-directory-passwords-best-practices/) - 了解如何快速部署且有效管理组织的密码
+- [**深入分析**](/documentation/articles/active-directory-passwords-get-insights/) - 了解集成式报告功能
+- [**常见问题**](/documentation/articles/active-directory-passwords-faq/) - 获取常见问题的解答
+- [**故障排除**](/documentation/articles/active-directory-passwords-troubleshoot/) - 了解如何快速排查服务的问题
+- [**了解更多**](/documentation/articles/active-directory-passwords-learn-more/) - 深入探索服务工作原理的技术细节
 
 
 
@@ -118,4 +133,4 @@ Azure Active Directory 中的密码管理包含如下所述的几个逻辑组件
 [007]: ./media/active-directory-passwords-how-it-works/007.jpg "Image_007.jpg"
  
 
-<!---HONumber=Mooncake_0815_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

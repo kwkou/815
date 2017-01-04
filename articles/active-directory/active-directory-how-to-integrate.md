@@ -5,7 +5,8 @@
    documentationCenter="dev-center-name"
    authors="msmbaldwin"
    manager="mbaldwin"
-   editor=""/>
+   editor=""/>  
+
 
 <tags
    ms.service="active-directory"
@@ -14,8 +15,8 @@
    ms.tgt_pltfrm="na"
    ms.workload="identity"
    ms.date="09/16/2016"
-   wacn.date="10/17/2016"
-   ms.author="mbaldwin"/>  
+   ms.author="mbaldwin"
+   wacn.date="01/03/2017"/>  
 
 
 # 与 Azure Active Directory 集成
@@ -47,6 +48,12 @@ Azure Active Directory 为组织的云应用程序提供企业级标识管理。
 ### 获取对用户配置文件、日历、电子邮件、联系人、文件等的访问权限
 
 **Azure AD 是 Office 365 和其他 Microsoft 业务服务的授权服务器。** 如果你支持使用 Azure AD 登录到你的应用程序，或者支持将当前用户帐户链接到使用 OAuth 2.0 的 Azure AD 用户帐户，则你可以请求对用户配置文件、日历、电子邮件、联系人、文件和其他信息的读取和写入访问权限。你可以顺利地将事件写入用户日历，以及在其 OneDrive 中读取或写入文件。了解有关[访问 Office 365 API](https://msdn.microsoft.com/office/office365/howto/platform-development-overview) 的详细信息。
+
+### 在 Azure 和 Office 365 应用商店中推广应用程序
+
+**向数百万个已在使用 Azure AD 的组织推广应用程序。** 搜索和浏览这些应用商店的用户已在使用一个或多个云服务，这让他们成为合格的云服务客户。了解有关在 [Azure 应用商店](https://azure.microsoft.com/marketplace/partner-program/)中推广应用程序的详细信息。
+
+**用户注册应用程序后，它将出现在他们的 Azure AD 访问面板和 Office 365 应用启动器中。** 之后，用户将能够快速轻松地返回应用程序，可提高用户参与度。
 
 ### 保护设备与服务之间以及服务与服务之间的通信
 
@@ -86,4 +93,4 @@ Azure Active Directory 为组织的云应用程序提供企业级标识管理。
 
 [使用 Azure AD 登录用户](/documentation/articles/active-directory-authentication-scenarios/)
 
-<!---HONumber=Mooncake_1010_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

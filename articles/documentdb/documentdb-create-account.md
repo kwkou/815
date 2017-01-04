@@ -16,7 +16,7 @@
     ms.devlang="na"
     ms.topic="get-started-article"
     ms.date="11/16/2016"
-    wacn.date="12/20/2016"
+    wacn.date="01/04/2017"
     ms.author="mimig" />  
 
 
@@ -35,7 +35,7 @@
 1. 登录到 [Azure 门户预览](https://portal.azure.cn/)。
 2. 在跳转栏中，依次单击“新建”、“数据库”、“DocumentDB (NoSQL)”。
 
-   ![Azure 门户预览的屏幕截图，其中突出显示“更多服务”和 DocumentDB (NoSQL)](./media/documentdb-create-account/create-nosql-db-databases-json-tutorial-1.png)  
+   ![屏幕截图：Azure 门户预览，其中突出显示“更多服务”和 DocumentDB (NoSQL)](./media/documentdb-create-account/create-nosql-db-databases-json-tutorial-1.png)  
 
 3. 在“新建帐户”边栏选项卡中，为 DocumentDB 帐户指定所需的配置。
 
@@ -72,7 +72,7 @@
 ## 后续步骤
 创建 DocumentDB 帐户后，下一步是创建 DocumentDB 集合与数据库。
 
-可以使用以下方法之一新建集合与数据库：
+可以使用以下方法之一创建新的集合和数据库：
 
 - Azure 门户预览。请参阅[使用 Azure 门户预览创建 DocumentDB 集合](/documentation/articles/documentdb-create-collection/)。
 - 包含示例数据的全面教程：[.NET](/documentation/articles/documentdb-get-started/)、[.NET MVC](/documentation/articles/documentdb-dotnet-application/)、[Java](/documentation/articles/documentdb-java-application/)、[Node.js](/documentation/articles/documentdb-nodejs-application/) 或 [Python](/documentation/articles/documentdb-python-application/)。
@@ -88,4 +88,4 @@
 
 - [DocumentDB 分层资源模型和概念](/documentation/articles/documentdb-resources/)
 
-<!---HONumber=Mooncake_1212_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

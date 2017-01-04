@@ -5,7 +5,8 @@
    documentationCenter=""
    authors="msmbaldwin"
    manager="mbaldwin"
-   editor="mbaldwin" />
+   editor="mbaldwin" />  
+
 <tags
    ms.service="active-directory"
    ms.devlang="na"
@@ -13,8 +14,8 @@
    ms.tgt_pltfrm="na"
    ms.workload="identity"
    ms.date="09/16/2016"
-   wacn.date="10/17/2016"
-   ms.author="mbaldwin" />  
+   ms.author="mbaldwin" 
+   wacn.date="01/03/2017"/>  
 
 
 # Azure Active Directory 图形 API
@@ -75,4 +76,4 @@ Azure Active Directory 图形 API 通过 REST API 终结点提供对 Azure AD �
 
 [Azure Active Directory 开发人员指南](/documentation/articles/active-directory-developers-guide/)
 
-<!---HONumber=Mooncake_1010_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

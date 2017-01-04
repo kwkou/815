@@ -15,8 +15,8 @@
     ms.workload="identity"
     ms.topic="article"
     ms.date="11/01/2016"
-    ms.author="billmath"
-    wacn.date="12/13/2016" />  
+    ms.author="billmath" 
+    wacn.date="01/03/2017" />  
 
 
 # Azure AD Connect 的拓扑
@@ -198,4 +198,4 @@ Azure AD 租户在设计上是隔离的。
 
 了解有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect/)的详细信息。
 
-<!---HONumber=Mooncake_1128_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

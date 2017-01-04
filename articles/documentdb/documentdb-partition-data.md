@@ -16,7 +16,7 @@
 	ms.topic="article" 
 	ms.date="09/20/2016" 
 	ms.author="arramac" 
-	wacn.date="11/30/2016"/>  
+	wacn.date="01/04/2017"/>  
 
 
 # Azure DocumentDB 中的分区和缩放
@@ -346,4 +346,4 @@ DocumentDB 最常见的使用案例之一是记录和遥测。选取适当的分
 
  
 
-<!---HONumber=Mooncake_1121_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

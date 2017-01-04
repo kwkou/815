@@ -16,7 +16,7 @@
     ms.topic="article"
     ms.date="11/16/2016"
     ms.author="curtand" 
-    wacn.date="12/09/2016"/>  
+    wacn.date="01/03/2017"/>  
 
 
 # Azure Active Directory 版本
@@ -199,7 +199,7 @@ Office 365 订阅包括以下比较表中所述的其他 Azure Active Directory 
 
 - [服务级别协议](/support/legal/sla/)
 
-## Premium 功能 
+## Premium 功能
 
 
 #### <a name="self-service-group"></a>自助组和应用管理/自助应用程序添加/动态组
@@ -311,8 +311,7 @@ Microsoft 标识管理器服务器软件权限随 Windows Server 许可证（任
 
 **可用的预览功能：**
 
-- [管理单元](/documentation/articles/active-directory-administrative-units-mana
-- gement/)
+- [管理单元](/documentation/articles/active-directory-administrative-units-management/)
 - [iOS 上基于证书的身份验证](/documentation/articles/active-directory-certificate-based-authentication-ios/)
 - [Android 上基于证书的身份验证](/documentation/articles/active-directory-certificate-based-authentication-android/)
 
@@ -323,4 +322,4 @@ Microsoft 标识管理器服务器软件权限随 Windows Server 许可证（任
 
 [12]: ./media/active-directory-editions/ic195031.png
 
-<!---HONumber=Mooncake_1128_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

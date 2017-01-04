@@ -6,7 +6,8 @@
 	authors="mimig1" 
 	manager="jhubbard" 
 	editor="cgronlun" 
-	documentationCenter=""/>
+	documentationCenter=""/>  
+
 
 <tags 
 	ms.service="documentdb" 
@@ -15,8 +16,8 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="08/18/2016" 
-	wacn.date="11/30/2016" 
-	ms.author="syamk"/>  
+	ms.author="mimig"
+   	wacn.date="01/04/2017"/>  
 
 
 # 了解 DocumentDB 中的存储和可预测性能的预配信息
@@ -126,7 +127,7 @@ DocumentDB 自动将集合分区到一个或多个物理服务器。创建集合
 ## 设置的文档存储和索引开销 <a name="IndexOverhead"></a>
 DocumentDB 支持创建单个分区和已分区的集合。DocumentDB 中的每个分区支持高达 10 GB 的 SSD 支持的存储空间。10 GB 文档存储空间包含文档和索引的存储。默认情况下，DocumentDB 集合配置为自动为所有文档创建索引，且没有明确要求任何二级索引或架构。根据使用 DocumentDB 的应用程序，索引开销通常介于 2-20%。DocumentDB 使用的索引技术可以确保无论属性值是多少，索引开销都不会超过具有默认设置的文档大小的 80% 以上。
 
-默认情况下，DocumentDB 为所有文档自动创建索引。但是，如果要精细调整索引开销，则可以在插入或替换文档时选择不对某些文档创建索引，如 [DocumentDB 索引策略](/documentation/articles/documentdb-indexing-policies/)中所述。你可以将 DocumentDB 集合配置为不对集合中的所有文档创建索引。还可以将 DocumentDB 集合配置为有选择地只对 JSON 文档的某些具有通配符的属性或路径创建索引，如[配置集合的索引策略](/documentation/articles/documentdb-indexing-policies/)中所述。不对某些属性或文档创建索引还可以提高写入吞吐量 - 这意味着将消耗更少的请求单位。
+默认情况下，DocumentDB 为所有文档自动创建索引。但是，如果要精细调整索引开销，则可以在插入或替换文档时选择不对某些文档创建索引，如 [DocumentDB 索引策略](/documentation/articles/documentdb-indexing-policies/)中所述。你可以将 DocumentDB 集合配置为不对集合中的所有文档创建索引。还可以将 DocumentDB 集合配置为有选择地只对 JSON 文档的某些具有通配符的属性或路径创建索引，如[配置集合的索引策略](/documentation/articles/documentdb-indexing-policies/#configuring-the-indexing-policy-of-a-collection/)中所述。不对某些属性或文档创建索引还可以提高写入吞吐量 - 这意味着将消耗更少的请求单位。
 
 ## 后续步骤
 
@@ -135,4 +136,4 @@ DocumentDB 支持创建单个分区和已分区的集合。DocumentDB 中的每�
 有关在 Azure 门户预览中监视性能级别的说明，请参阅[监视 DocumentDB 帐户](/documentation/articles/documentdb-monitor-accounts/)。有关选择集合的性能级别的详细信息，请参阅 [DocumentDB 中的性能级别](/documentation/articles/documentdb-performance-levels/)。
  
 
-<!---HONumber=Mooncake_1010_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

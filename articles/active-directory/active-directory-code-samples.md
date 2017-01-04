@@ -14,9 +14,8 @@
    ms.tgt_pltfrm="na"
    ms.workload="identity"
    ms.date="09/16/2016"
-   wacn.date="10/11/2016"
-   ms.author="mbaldwin"/>
-
+   ms.author="mbaldwin"
+   wacn.date="01/03/2017"/>
 
 # Azure Active Directory 代码示例
 
@@ -24,7 +23,7 @@
 
 可以使用 Azure Active Directory (Azure AD) 向 Web 应用程序和 Web API 添加身份验证与授权。本部分提供了指向代码示例的链接，这些代码示例将向你展示它的工作原理以及你可以在你的应用程序中使用的代码片段。在代码示例页上，可以找到在要求、安装和设置方面提供帮助的详细自述主题。并且代码带有注释，可以帮助你理解关键部分。
 
-若要了解每个示例类型的基本方案，请参阅"Azure AD 的身份验证方案"。
+若要了解每个示例类型的基本方案，请参阅“Azure AD 的身份验证方案”。
 
 为 GitHub 上的示例做出补充：[Azure Active Directory 示例和文档](https://github.com/Azure-Samples?page=3&query=active-directory)。
 
@@ -153,4 +152,4 @@ PHP | [Azure AD 图形 API 的 PHP 示例应用](http://code.msdn.microsoft.com/
 
 [Azure AD Graph API 帮助程序库](https://www.nuget.org/packages/Microsoft.Azure.ActiveDirectory.GraphClient)
 
-<!---HONumber=Mooncake_0926_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

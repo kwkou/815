@@ -15,8 +15,8 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="09/01/2016"
-	wacn.date="10/26/2016"
-	ms.author="jimpark; anuragm;trinadhk;markgal"/>  
+	ms.author="jimpark; anuragm;trinadhk;markgal"
+	wacn.date="01/04/2017"/>  
 
 
 
@@ -34,7 +34,7 @@
 
 在可以使用 PowerShell 管理 Data Protection Manager 的 Azure 备份之前，需要在 PowerShell 中设置适当的环境。在 PowerShell 会话开始时，请确保运行以下命令，以便导入正确的模块以及正确引用 DPM cmdlet：
 
-	PS C:> & "C:\Program Files\Microsoft System Center 2012 R2\DPM\DPM\bin\DpmCliInitScript.ps1"
+	PS C:\> & "C:\Program Files\Microsoft System Center 2012 R2\DPM\DPM\bin\DpmCliInitScript.ps1"
 
 	Welcome to the DPM Management Shell!
 
@@ -67,22 +67,22 @@
 
 1. 如果是首次使用 Azure 备份，则必须使用 **Register-AzureRMResourceProvider** cmdlet 将 Azure 恢复服务提供程序注册到订阅。
 
-	PS C:\> Register-AzureRmResourceProvider -ProviderNamespace "Microsoft.RecoveryServices"
+	    PS C:\> Register-AzureRmResourceProvider -ProviderNamespace "Microsoft.RecoveryServices"
 
 2. 恢复服务保管库是一种 ARM 资源，因此需要将它放在资源组中。可以使用现有资源组，也可以创建新组。创建新的资源组时，请指定资源组的名称和位置。
 
-	PS C:\> New-AzureRmResourceGroup -Name "test-rg" -Location "China North"
+	    PS C:\> New-AzureRmResourceGroup -Name "test-rg" -Location "China North"
 
 3. 使用 **New-AzureRmRecoveryServicesVault** cmdlet 创建新的保管库。确保为保管库指定的位置与用于资源组的位置是相同的。
 
-	PS C:\> New-AzureRmRecoveryServicesVault -Name "testvault" -ResourceGroupName " test-rg" -Location "China North"
+	    PS C:\> New-AzureRmRecoveryServicesVault -Name "testvault" -ResourceGroupName " test-rg" -Location "China North"
 
 4. 指定要使用的存储冗余类型；你可以使用[本地冗余存储 (LRS)](/documentation/articles/storage-redundancy/#locally-redundant-storage/) 或[异地冗余存储 (GRS)](/documentation/articles/storage-redundancy/#geo-redundant-storage/)。以下示例显示，testVault 的 -BackupStorageRedundancy 选项设置为 GeoRedundant。
 
     > [AZURE.TIP] 许多 Azure 备份 cmdlet 要求使用恢复服务保管库对象作为输入。出于此原因，在变量中存储备份恢复服务保管库对象可提供方便。
 
-	PS C:\> $vault1 = Get-AzureRmRecoveryServicesVault -Name "testVault"
-	PS C:\> Set-AzureRmRecoveryServicesBackupProperties  -vault $vault1 -BackupStorageRedundancy GeoRedundant
+	    PS C:\> $vault1 = Get-AzureRmRecoveryServicesVault -Name "testVault"
+	    PS C:\> Set-AzureRmRecoveryServicesBackupProperties  -vault $vault1 -BackupStorageRedundancy GeoRedundant
 
 
 
@@ -225,7 +225,7 @@ DPM 服务器在注册到恢复服务保管库后，会使用默认的订阅设�
 
 现在使用 [Get-DPMDatasource](https://technet.microsoft.com/zh-cn/library/hh881605) cmdlet 获取 ```$server``` 上的数据源列表。在本示例中，我们将筛选要为备份配置的卷 *D:*。然后，使用 [Add-DPMChildDatasource](https://technet.microsoft.com/zh-cn/library/hh881732) cmdlet 将此数据源添加到保护组。请记得使用 *modifiable* 保护组对象 ```$MPG``` 来完成添加。
 
-	PS C:\> $DS = Get-Datasource -ProductionServer $server -Inquire | where { $_.Name -contains "D:\" }
+	PS C:\> $DS = Get-Datasource -ProductionServer $server -Inquire | where { $_.Name -contains "D:" }
 
 	PS C:\> Add-DPMChildDatasource -ProtectionGroup $MPG -ChildDatasource $DS
 
@@ -316,4 +316,4 @@ DPM 服务器在注册到恢复服务保管库后，会使用默认的订阅设�
 
 你可以针对任何数据源类型轻松扩展这些命令。
 
-<!---HONumber=Mooncake_1017_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

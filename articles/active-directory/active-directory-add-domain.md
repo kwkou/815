@@ -15,8 +15,8 @@
 	ms.devlang="na"
 	ms.topic="get-started-article"
 	ms.date="09/30/2016"
-	wacn.date="10/31/2016"
-	ms.author="curtand;jeffsta"/>  
+	ms.author="curtand;jeffsta"
+	wacn.date="01/03/2017"/>  
 
 
 # 将自定义域名添加到 Azure Active Directory
@@ -94,4 +94,4 @@
 -   [在用户登录时显示公司的品牌](/documentation/articles/active-directory-add-company-branding/)
 -   [使用 PowerShell 管理 Azure AD 中的域名](https://msdn.microsoft.com/zh-cn/library/azure/e1ef403f-3347-4409-8f46-d72dafa116e0#BKMK_ManageDomains)
 
-<!---HONumber=Mooncake_1024_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->
