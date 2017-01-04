@@ -30,7 +30,7 @@ Azure Web 应用除了使用默认的共享目录存放 Web 应用内容，用�
 >[AZURE.NOTE]
 >Azure Web 应用日志会自动写入本地缓存中，并定期同步到远程的共享目录。
 
->[AZURE.IMPORTENT]
+>[AZURE.IMPORTANT]
 >若用户的日志很重要，不建议写入到本地缓存中，可以将其保存到 Azure 存储中。
 
 关于如何将日志保存到 Azure 存储中请参考：[在 Azure 存储中存储和查看诊断数据](/documentation/articles/cloud-services-dotnet-diagnostics-storage/)。
