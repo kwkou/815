@@ -15,7 +15,7 @@
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
    ms.date="10/31/2016"
-   wacn.date="12/19/2016"
+   wacn.date="01/03/2016"
    ms.author="barbkess;jrj;sonyama"/>  
 
 
@@ -24,7 +24,7 @@ SQL 数据仓库是一种分布式数据库系统，可根据你的需要弹性�
 
 此外必须记住，SQL 数据仓库是基于 Azure 的平台。因此，迁移过程很有可能需将数据传输到云中。数据传输本身是一个话题，应予以谨慎考虑，尤其是随着卷增大时。数据传输和数据加载是不同的主题。
 
-## 迁移指导
+## 迁移指南
 在开始迁移之前，请务必通读这些文章，确保了解一些产品差异和基本概念。
 
 - [迁移架构][]
@@ -33,7 +33,7 @@ SQL 数据仓库是一种分布式数据库系统，可根据你的需要弹性�
 
 ## 后续步骤
 
-CAT（客户顾问团队）也有一些很好的通过博客发布的 SQL 数据仓库指南。请参阅他们的 [Migrating data to Azure SQL Data Warehouse in practice][]（在实践中将数据迁移到 Azure SQL 数据仓库）一文，了解有关迁移的更多指南。
+CAT（客户顾问团队）也有一些很好的通过博客发布的 SQL 数据仓库指南。有关迁移的其他指南，请参阅他们的 [Migrating data to Azure SQL Data Warehouse in practice][]（在实践中将数据迁移到 Azure SQL 数据仓库）一文，了解有关迁移的更多指南。
 
 <!--Image references-->
 
@@ -48,7 +48,6 @@ CAT（客户顾问团队）也有一些很好的通过博客发布的 SQL 数据
 
 
 <!--Other Web references-->
-
 [Migrating data to Azure SQL Data Warehouse in practice]: https://blogs.msdn.microsoft.com/sqlcat/2016/08/18/migrating-data-to-azure-sql-data-warehouse-in-practice/
 
-<!---HONumber=Mooncake_1212_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

@@ -17,7 +17,7 @@
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
    ms.date="10/31/2016"
-   wacn.date="12/12/2016"
+   wacn.date="01/03/2017"
    ms.author="lodipalm;barbkess;sonyama"/>  
 
 
@@ -83,4 +83,4 @@
 [Azure 试用版]: /pricing/1rmb-trial/
 [MSDN Azure 信用额度]: /pricing/member-offers/
 
-<!---HONumber=Mooncake_1205_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

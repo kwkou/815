@@ -15,7 +15,7 @@
 	ms.tgt_pltfrm="na"
 	ms.workload="storage-backup-recovery"
 	ms.date="10/10/2016"
-	wacn.date="12/14/2016"
+	wacn.date="01/03/2017"
 	ms.author="raynew"/>  
 
 
@@ -152,4 +152,4 @@ Azure Site Recovery 可通过以下方式帮助保护 Dynamics AX ERP 解决方�
 
 [准备](/documentation/articles/site-recovery-best-practices/)站点恢复部署
 
-<!---HONumber=Mooncake_1107_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

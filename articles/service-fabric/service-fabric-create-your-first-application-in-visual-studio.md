@@ -14,12 +14,17 @@
     ms.tgt_pltfrm="NA"
     ms.workload="NA"
     ms.date="10/26/2016"
-    wacn.date="12/26/2016"
+    wacn.date="01/03/2017"
     ms.author="ryanwi" />
 
 # 创建第一个 Azure Service Fabric 应用程序
 
 [AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-sdk-developer-differences.md)]
+
+> [AZURE.SELECTOR]
+- [C# - Windows](/documentation/articles/service-fabric-create-your-first-application-in-visual-studio/)
+- [Java - Linux](/documentation/articles/service-fabric-create-your-first-linux-application-with-java/)
+- [C# - Linux](/documentation/articles/service-fabric-create-your-first-linux-application-with-csharp/)
 
 Service Fabric SDK 包含一个用于 Visual Studio 的外接程序，它可提供用于创建、部署和调试 Service Fabric 应用程序的模板和工具。本主题会指导您完成在 Visual Studio 中创建您的第一个应用程序的过程。
 
@@ -147,4 +152,4 @@ Service Fabric 应用程序可以包含一个或多个服务，每个服务都�
 [sfe-delete-application]: ./media/service-fabric-create-your-first-application-in-visual-studio/sfe-delete-application.png
 [switch-cluster-mode]: ./media/service-fabric-create-your-first-application-in-visual-studio/switch-cluster-mode.png
 
-<!---HONumber=Mooncake_1219_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

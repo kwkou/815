@@ -13,7 +13,7 @@
  ms.devlang="dotnet"
  ms.topic="article"
  ms.date="08/16/2016"
- wacn.date="10/10/2016"
+ wacn.date="01/03/2017"
  ms.author="deli"/>
 
 
@@ -57,7 +57,7 @@ Azure 计划程序允许你配置重试策略。默认情况下，如果某个�
 
 ![][2]
 
-请注意，相同的重试策略适用于原始操作和备用错误操作。备用错误操作的操作类型还可以不同于主要操作的操作类型。例如，虽然主要操作可能调用 HTTP 终结点，但错误操作可能是存储队列操作执行错误日志记录。
+请注意，相同的重试策略适用于原始操作和备用错误操作。备用错误操作的操作类型还可以不同于主要操作的操作类型。例如，虽然主要操作可能调用 HTTP 终结点，但错误操作可能是执行错误日志记录的存储队列、服务总线队列或服务总线主题操作。
 
 若要了解如何配置备用终结点，请参阅 [errorAction](/documentation/articles/scheduler-concepts-terms/#action-and-erroraction)。
 
@@ -86,4 +86,4 @@ Azure 计划程序允许你配置重试策略。默认情况下，如果某个�
 
 [2]: ./media/scheduler-high-availability-reliability/scheduler-high-availability-reliability-image2.png
 
-<!---HONumber=Mooncake_0926_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

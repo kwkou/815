@@ -14,7 +14,7 @@
     ms.tgt_pltfrm="NA"
     ms.workload="NA"
     ms.date="10/26/2016"
-    wacn.date="12/26/2016"
+    wacn.date="01/03/2017"
     ms.author="ryanwi" />
 
 # 准备开发环境
@@ -71,4 +71,4 @@ Service Fabric 使用 Windows PowerShell 脚本创建本地开发群集和部署
 [core-sdk]: http://www.microsoft.com/web/handlers/webpi.ashx?command=getinstallerredirect&appid=MicrosoftAzure-ServiceFabric-CoreSDK "Core SDK WebPI 链接"
 [powershell5-download]: https://www.microsoft.com/en-us/download/details.aspx?id=50395
 
-<!---HONumber=Mooncake_1219_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

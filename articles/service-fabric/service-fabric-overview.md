@@ -14,7 +14,7 @@
     ms.tgt_pltfrm="NA"
     ms.workload="NA"
     ms.date="10/22/2016"
-    wacn.date="12/26/2016"
+    wacn.date="01/03/2017"
     ms.author="mfussell" />
 
 # Azure Service Fabric 概述
@@ -97,4 +97,4 @@ Service Fabric 为云应用程序的完整应用程序生命周期管理提供�
 
 [Image1]: ./media/service-fabric-overview/Service-Fabric-Overview.png
 
-<!---HONumber=Mooncake_1219_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

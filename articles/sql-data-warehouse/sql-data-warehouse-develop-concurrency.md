@@ -15,7 +15,7 @@
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
    ms.date="10/31/2016"
-   wacn.date="12/12/2016"
+   wacn.date="01/03/2017"
    ms.author="sonyama;barbkess;jrj"/>  
 
 
@@ -23,6 +23,7 @@
 若要大规模提供可预测性能，可以通过 Azure SQL 数据仓库控制并发级别和资源分配（例如内存和 CPU 优先级）。本文将介绍并发性和工作负荷管理的概念，说明如何实现这两种功能，以及如何在数据仓库中控制它们。SQL 数据仓库工作负荷管理旨在协助你提供多用户环境支持。它不适用于多租户工作负荷。
 
 ## 并发限制
+
 SQL 数据仓库允许多达 1,024 个并发连接。所有 1,024 个连接都可以通过并发方式提交查询。但是，为了优化吞吐量，SQL 数据仓库可能会让某些查询排队，确保每个查询都能收到系统授予的最小内存。在执行查询时会让查询排队。SQL 数据仓库可以在达到并发限制时让查询排队，以便确保活动查询能够访问迫切需要的内存资源，从而提高总吞吐量。
 
 影响并发限制的有两个概念：*并发查询*和*并发槽*。执行查询时，必须符合查询并发限制和并发槽分配要求。
@@ -413,7 +414,6 @@ SQL 数据仓库具有以下等待类型：
 <!--Article references-->
 [Secure a database in SQL Data Warehouse]: /documentation/articles/sql-data-warehouse-overview-manage-security/
 [重新生成索引以提高段质量]: /documentation/articles/sql-data-warehouse-tables-index/#rebuilding-indexes-to-improve-segment-quality
-[Secure a database in SQL Data Warehouse]: /documentation/articles/sql-data-warehouse-overview-manage-security/
 [保护 SQL 数据仓库中的数据库]: /documentation/articles/sql-data-warehouse-overview-manage-security/
 
 <!--MSDN references-->
@@ -421,4 +421,4 @@ SQL 数据仓库具有以下等待类型：
 
 <!--Other Web references-->
 
-<!---HONumber=Mooncake_1205_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

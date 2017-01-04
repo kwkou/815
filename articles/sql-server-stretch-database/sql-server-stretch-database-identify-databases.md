@@ -13,7 +13,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="06/14/2016"
-	wacn.date="07/25/2016"
+	wacn.date="01/03/2017"
 	ms.author="douglasl"/>
 
 # 通过运行SQL Server Stretch Database顾问来识别符合SQL Server Stretch Database条件的数据库和表
@@ -65,4 +65,4 @@
 [为数据库启用SQL Server Stretch Database](/documentation/articles/sql-server-stretch-database-enable-database/)
 [为表启用SQL Server Stretch Database](/documentation/articles/sql-server-stretch-database-enable-table/)
 
-<!---HONumber=Mooncake_0307_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

@@ -14,8 +14,8 @@
  ms.devlang="dotnet"
  ms.topic="get-started-article"
  ms.date="08/18/2016"
- wacn.date="10/10/2016"
- ms.author="deli"/>  
+ wacn.date="01/03/2017"
+ ms.author="krisragh"/>  
 
 
 # 计划程序的概念、术语和实体层次结构
@@ -250,4 +250,4 @@
  [Azure 计划程序出站身份验证](/documentation/articles/scheduler-outbound-authentication/)
  
 
-<!---HONumber=Mooncake_0926_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

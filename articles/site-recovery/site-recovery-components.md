@@ -7,6 +7,7 @@
     manager="jwhit"
     editor="" />  
 
+
 <tags
     ms.assetid="c413efcd-d750-4b22-b34b-15bcaa03934a"
     ms.service="site-recovery"
@@ -15,7 +16,7 @@
     ms.devlang="na"
     ms.topic="get-started-article"
     ms.date="11/14/2016"
-    wacn.date="12/12/2016"
+    wacn.date="01/03/2017"
     ms.author="raynew" />  
 
 
@@ -25,9 +26,12 @@
 
 请将任何评论或问题发布到本文底部，或者发布到 [Azure 恢复服务论坛](https://social.msdn.microsoft.com/Forums/zh-cn/home?forum=hypervrecovmgr)。
 
+
+## 概述
+
 组织需要制定 BCDR 策略来确定应用、工作负荷和数据如何在计划和非计划停机期间保持运行和可用，并尽快恢复正常运行情况。BCDR 策略应保持业务数据的安全性和可恢复性，并确保在发生灾难时工作负荷持续可用。
 
-站点恢复是一项 Azure 服务，可通过协调从本地物理服务器和虚拟机到云 (Azure) 或辅助数据中心的的复制，为 BCDR 策略提供辅助。当主要位置发生故障时，你可以故障转移到辅助位置，使应用和工作负荷保持可用。当主要位置恢复正常时，你可以故障转移回到主要位置。有关详细信息，请参阅[什么是 Site Recovery？](/documentation/articles/site-recovery-overview/)
+站点恢复是一项 Azure 服务，可以通过协调从本地物理服务器和虚拟机到云 (Azure) 或辅助数据中心的的复制，来为 BCDR 策略提供辅助。当主要位置发生故障时，你可以故障转移到辅助位置，使应用和工作负荷保持可用。当主要位置恢复正常时，你可以故障转移回到主要位置。有关详细信息，请参阅[什么是 Site Recovery？](/documentation/articles/site-recovery-overview/)
 
 ## 部署方案
 
@@ -176,4 +180,4 @@ Site Recovery 可以复制这些 VM 和物理服务器上运行的大多数应�
 
 [准备部署](/documentation/articles/site-recovery-best-practices/)。
 
-<!---HONumber=Mooncake_1205_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->
