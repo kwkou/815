@@ -19,16 +19,16 @@
 [AZURE.INCLUDE [iot-hub-selector-firmware-update](../../includes/iot-hub-selector-firmware-update.md)]
 
 ## 介绍
-在[设备管理入门][lnk-dm-getstarted]教程中，了解了如何使用[设备克隆][lnk-devtwin]和[云到设备 (C2D) 方法][lnk-c2dmethod]基元来远程重新启动设备。本教程使用相同的 IoT 中心基元，介绍如何进行端到端模拟固件更新。
+在[设备管理入门][lnk-dm-getstarted]教程中，了解了如何使用[设备孪生][lnk-devtwin]和[云到设备 (C2D) 方法][lnk-c2dmethod]基元来远程重新启动设备。本教程使用相同的 IoT 中心基元，介绍如何进行端到端模拟固件更新。
 
 本教程演示如何：
 
 * 创建一个控制台应用，通过 IoT 中心在模拟设备上调用 firmwareUpdate 直接方法。
-* 创建一个模拟设备，它实现的 firmwareUpdate 直接方法会执行等待下载固件映像、下载固件映像以及最后应用固件映像的多阶段过程。在执行每个阶段时，设备都使用设备克隆报告的属性更新进度。
+* 创建一个模拟设备，它实现的 firmwareUpdate 直接方法会执行等待下载固件映像、下载固件映像以及最后应用固件映像的多阶段过程。在执行每个阶段时，设备都使用设备孪生报告的属性更新进度。
 
 本教程结束时，用户会有一个 Node.js 控制台设备应用，以及一个 .NET (C#) 控制台后端应用：
 
-**dmpatterns\_fwupdate\_service.js**，它在模拟设备上调用直接方法、显示响应以及定期（每 500 毫秒）显示更新的设备克隆报告属性。
+**dmpatterns\_fwupdate\_service.js**，它在模拟设备上调用直接方法、显示响应以及定期（每 500 毫秒）显示更新的设备孪生报告属性。
 
 **TriggerFWUpdate**：使用早前创建的设备标识连接到 IoT 中心、接收 firmwareUpdate 直接方法、运行一个多状态过程以模拟固件更新，包括：等待映像下载、下载新映像以及最后应用映像。
 
@@ -45,7 +45,7 @@
 [AZURE.INCLUDE [iot-hub-get-started-create-device-identity](../../includes/iot-hub-get-started-create-device-identity.md)]
 
 ## 使用直接方法在设备上触发远程固件更新
-在此部分中，会创建一个 .NET 控制台应用（使用 C#），它使用直接方法在设备上启动远程固件更新，并使用设备克隆查询定期获取该设备上活动固件更新的状态。
+在此部分中，会创建一个 .NET 控制台应用（使用 C#），它使用直接方法在设备上启动远程固件更新，并使用设备孪生查询定期获取该设备上活动固件更新的状态。
 
 1. 在 Visual Studio 中，使用“控制台应用程序”项目模板将 Visual C# Windows 经典桌面项目添加到当前解决方案。将项目命名为 **TriggerFWUpdate**。
 
@@ -109,7 +109,7 @@
 
   - 创建一个 Node.js 控制台应用，用于响应通过云调用的直接方法
   - 触发模拟的固件更新
-  - 使用设备克隆报告的属性，允许通过设备克隆查询标识设备及其上次完成固件更新的时间
+  - 使用设备孪生报告的属性，允许通过设备孪生查询标识设备及其上次完成固件更新的时间
 
 
 
@@ -138,7 +138,7 @@
     var connectionString = 'HostName={youriothostname};DeviceId=myDeviceId;SharedAccessKey={yourdevicekey}';
     var client = Client.fromConnectionString(connectionString, Protocol);
     ```
-6. 添加用于更新设备克隆报告属性的以下函数
+6. 添加用于更新设备孪生报告属性的以下函数
    
     ```
     var reportFWUpdateThroughTwin = function(twin, firmwareUpdateValue) {
@@ -176,7 +176,7 @@
       callback(error);
     }
     ```
-8. 添加以下函数，通过设备克隆报告属性将固件更新状态更新为正在等待下载。通常，设备会收到有关可用更新的通知，并且管理员定义的策略会使设备开始下载和应用更新。这是用于启用该策略的逻辑运行的位置。为简单起见，我们会延迟 4 秒，然后继续下载固件映像。
+8. 添加以下函数，通过设备孪生报告属性将固件更新状态更新为正在等待下载。通常，设备会收到有关可用更新的通知，并且管理员定义的策略会使设备开始下载和应用更新。这是用于启用该策略的逻辑运行的位置。为简单起见，我们会延迟 4 秒，然后继续下载固件映像。
    
     ```
     var waitToDownload = function(twin, fwPackageUriVal, callback) {
@@ -191,7 +191,7 @@
       setTimeout(callback, 4000);
     };
     ```
-9. 添加以下函数，通过设备克隆报告属性将固件更新状态更新为正在下载固件映像。它会追踪模拟固件下载，最后更新固件更新状态以告知下载成功或失败。
+9. 添加以下函数，通过设备孪生报告属性将固件更新状态更新为正在下载固件映像。它会追踪模拟固件下载，最后更新固件更新状态以告知下载成功或失败。
    
     ```
     var downloadImage = function(twin, fwPackageUriVal, callback) {
@@ -228,7 +228,7 @@
       }, 4000);
     }
     ```
-10. 添加以下函数，通过设备克隆报告属性将固件更新状态更新为正在应用固件映像。它会追踪模拟固件映像的应用，最后更新固件更新状态以告知应用成功或失败。
+10. 添加以下函数，通过设备孪生报告属性将固件更新状态更新为正在应用固件映像。它会追踪模拟固件映像的应用，最后更新固件更新状态以告知应用成功或失败。
     
     ```
     var applyImage = function(twin, imageData, callback) {
@@ -332,7 +332,7 @@
 3. 可以在控制台中看到设备对直接方法的响应。
 
 ## 后续步骤
-在本教程中，使用了直接方法在设备上触发远程固件更新，并定期使用设备克隆报告属性了解固件更新过程的进度。
+在本教程中，使用了直接方法在设备上触发远程固件更新，并定期使用设备孪生报告属性了解固件更新过程的进度。
 
 若要了解如何扩展 IoT 解决方案并在多个设备上计划方法调用，请参阅 [Schedule and broadcast jobs][lnk-tutorial-jobs]（计划和广播作业）教程。
 
