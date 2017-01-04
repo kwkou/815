@@ -1,4 +1,3 @@
-<!-- Remove hdinsight link -->
 <properties
 	pageTitle="使用 Apache Storm 通过 Java 使用事件中心入门 | Azure"
 	description="遵循本教程开始使用 Azure 事件中心，以通过 Java 发送事件，并在 Apache Storm 群集中接收这些事件。"
@@ -15,7 +14,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="09/06/2016"
-	wacn.date="10/10/2016"
+	wacn.date="01/04/2017"
 	ms.author="sethm"/>  
 
 
@@ -77,4 +76,4 @@
 [使用 SCP.NET 和 C# 在 Storm 和 HDInsight 上开发流式数据处理应用程序]: /documentation/articles/hdinsight-hadoop-storm-scpdotnet-csharp-develop-streaming-data-processing-application/
  
 
-<!---HONumber=Mooncake_0926_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

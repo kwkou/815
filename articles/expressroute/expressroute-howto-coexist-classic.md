@@ -14,7 +14,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
    ms.date="10/10/2016"
-   wacn.date="10/31/2016"
+   wacn.date="01/04/2017"
    ms.author="charwen"/>  
 
 
@@ -227,4 +227,4 @@
 
 有关 ExpressRoute 的详细信息，请参阅 [ExpressRoute 常见问题](/documentation/articles/expressroute-faqs/)。
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

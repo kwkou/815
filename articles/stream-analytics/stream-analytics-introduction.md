@@ -16,7 +16,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.workload="data-services" 
 	ms.date="09/26/2016" 
-	wacn.date="11/14/2016" 
+	wacn.date="01/04/2017" 
 	ms.author="jeffstok"/>  
 
 
@@ -35,7 +35,7 @@ Azure 流分析是完全托管的、经济高效的实时事件处理引擎，�
 ## 主要功能和优点
 -   **易用性：**流分析支持简单的声明性查询模型，用于描述各种转换。为了优化易用性，流分析使用 T-SQL 变量，客户不再需要与技术上复杂的流处理系统打交道。使用浏览器内查询编辑器中的[流分析查询语言](https://msdn.microsoft.com/zh-cn/library/azure/dn834998.aspx)，可获得 intelli-sense auto-complete，它可帮助便捷地实现时序查询（包括临时联接、窗口化聚合、临时筛选器）以及其他常见的操作（例如联接、聚合、投影和筛选）。此外，依据示例数据文件进行浏览器内查询测试还可实现快速、迭代的开发。
 
--   **可伸缩性：** 流分析具有很强的事件吞吐量处理能力，最大吞吐量为 1GB/秒。与 [Azure 事件中心](/documentation/services/event-hubs/)集成以后，该解决方案就可以每秒引入数百万来自已连接设备、点击流、日志文件等的事件。为此，流分析利用了事件中心的分区功能，每个分区产生的吞吐量为 1MB/秒。用户可以在查询定义中将计算分成多个逻辑步骤，每个步骤都可以进一步细分，以提高可伸缩性。
+-   **可伸缩性：** 流分析具有很强的事件吞吐量处理能力，最大吞吐量为 1GB/秒。与 [Azure 事件中心](/documentation/services/event-hubs/)和 [Azure IoT 中心](/documentation/services/iot-hub/)集成后，该解决方案就可以每秒引入数百万个来自已连接设备、点击流、日志文件等的事件。为此，流分析利用了事件中心的分区功能，每个分区产生的吞吐量为 1MB/秒。用户可以在查询定义中将计算分成多个逻辑步骤，每个步骤都可以进一步细分，以提高可伸缩性。
 
 -   **可靠性、可重复性和快速恢复：**流分析是云中的托管服务，可用于在出现故障的情况下，通过内置的恢复功能防止数据丢失并确保业务连续性。由于能够在内部维持相关状态，因此服务提供的可重复结果确保可以对事件进行存档并在未来重新处理，始终获得相同的结果。由此，当客户进行根原分析和假设情况分析等时便可以及时回去调查计算结果。
 
@@ -43,7 +43,7 @@ Azure 流分析是完全托管的、经济高效的实时事件处理引擎，�
 
 -   **引用数据：**用户可以通过流分析来指定和使用引用数据。这些引用数据可以是历史数据，也可以只是在一段时间内更改次数较少的非流式处理数据。系统简化了引用数据的使用，将其视同其他传入事件流，可以与其他实时引入的事件流进行联接以执行各种转换。
 
--   **连接性：**流分析会直接连接到 Azure 事件中心以引入流，并会连接到 Azure Blob 服务以引入历史数据。结果可以从流分析写入 Azure 存储 Blob 或表、Azure SQL 数据库、事件中心、Azure 服务总线主题或队列和 Power BI，然后从中可以对结果进行可视化，用工作流进行进一步处理，通过 [Azure HDInsight](/documentation/services/hdinsight/) 用于批量分析或者作为一系列事件再次处理。使用事件中心时，可以将多个流分析与其他数据源和处理引擎组合在一起，而不会失去计算的流处理本质。
+-   **连接性：**流分析会直接连接到 Azure 事件中心和 Azure IoT 中心以引入流，并会连接到 Azure Blob 服务以引入历史数据。结果可以从流分析写入 Azure 存储 Blob 或表、Azure SQL 数据库、事件中心、Azure 服务总线主题或队列，以及 Power BI，然后从中可以对结果进行可视化，用工作流进行进一步处理，通过 [Azure HDInsight](/documentation/services/hdinsight/) 用于批量分析或者作为一系列事件再次处理。使用事件中心时，可以将多个流分析与其他数据源和处理引擎组合在一起，而不会失去计算的流处理本质。
 
 ## 获取帮助
 如需进一步的帮助，请尝试我们的 [Azure 流分析论坛](https://social.msdn.microsoft.com/Forums/zh-cn/home?forum=AzureStreamAnalytics)
@@ -56,4 +56,4 @@ Azure 流分析是完全托管的、经济高效的实时事件处理引擎，�
 - [Azure 流分析查询语言参考](https://msdn.microsoft.com/zh-cn/library/azure/dn834998.aspx)
 - [Azure 流分析管理 REST API 参考](https://msdn.microsoft.com/zh-cn/library/azure/dn835031.aspx)
 
-<!---HONumber=Mooncake_1107_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

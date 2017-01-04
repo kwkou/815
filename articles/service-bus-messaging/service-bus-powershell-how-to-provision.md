@@ -16,7 +16,7 @@
 	ms.topic="article"
 	ms.date="10/03/2016"
 	ms.author="sethm"
-	wacn.date="11/28/2016"/>  
+	wacn.date="01/04/2017"/>  
 
 
 # 使用 PowerShell 管理服务总线
@@ -48,24 +48,24 @@ Azure PowerShell 是一个脚本编写环境，可用于在 Azure 中控制和�
 
 下面说明如何在 PowerShell 脚本中实现这些步骤：
 
-```
-try
-{
-    # WARNING: Make sure to reference the latest version of Microsoft.ServiceBus.dll
-    Write-Output "Adding the [Microsoft.ServiceBus.dll] assembly to the script..."
-    $scriptPath = Split-Path (Get-Variable MyInvocation -Scope 0).Value.MyCommand.Path
-    $packagesFolder = (Split-Path $scriptPath -Parent) + "\packages"
-    $assembly = Get-ChildItem $packagesFolder -Include "Microsoft.ServiceBus.dll" -Recurse
-    Add-Type -Path $assembly.FullName
 
-    Write-Output "The [Microsoft.ServiceBus.dll] assembly has been successfully added to the script."
-}
+		try
+		{
+		    # WARNING: Make sure to reference the latest version of Microsoft.ServiceBus.dll
+		    Write-Output "Adding the [Microsoft.ServiceBus.dll] assembly to the script..."
+		    $scriptPath = Split-Path (Get-Variable MyInvocation -Scope 0).Value.MyCommand.Path
+		    $packagesFolder = (Split-Path $scriptPath -Parent) + "\packages"
+		    $assembly = Get-ChildItem $packagesFolder -Include "Microsoft.ServiceBus.dll" -Recurse
+		    Add-Type -Path $assembly.FullName
 
-catch [System.Exception]
-{
-    Write-Error "Could not add the Microsoft.ServiceBus.dll assembly to the script. Make sure you build the solution before running the provisioning script."
-}
-```
+		    Write-Output "The [Microsoft.ServiceBus.dll] assembly has been successfully added to the script."
+		}
+
+		catch [System.Exception]
+		{
+		    Write-Error "Could not add the Microsoft.ServiceBus.dll assembly to the script. Make sure you build the solution before running the provisioning script."
+		}
+
 
 ## 设置 Service Bus 命名空间
 
@@ -162,16 +162,16 @@ catch [System.Exception]
 
 通过运行以下顺序的命令，可在 Azure 订阅之间移动命名空间。若要执行此操作，命名空间必须已经处于活动状态，而且运行 PowerShell 命令的用户必须既是源订阅又是目标订阅的管理员。
 
-```
-# Create a new resource group in target subscription
-Select-AzureRmSubscription -SubscriptionId 'ffffffff-ffff-ffff-ffff-ffffffffffff'
-New-AzureRmResourceGroup -Name 'targetRG' -Location 'China East'
 
-# Move namespace from source subscription to target subscription
-Select-AzureRmSubscription -SubscriptionId 'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa'
-$res = Find-AzureRmResource -ResourceNameContains mynamespace -ResourceType 'Microsoft.ServiceBus/namespaces'
-Move-AzureRmResource -DestinationResourceGroupName 'targetRG' -DestinationSubscriptionId 'ffffffff-ffff-ffff-ffff-ffffffffffff' -ResourceId $res.ResourceId
-```
+		# Create a new resource group in target subscription
+		Select-AzureRmSubscription -SubscriptionId 'ffffffff-ffff-ffff-ffff-ffffffffffff'
+		New-AzureRmResourceGroup -Name 'targetRG' -Location 'China East'
+
+		# Move namespace from source subscription to target subscription
+		Select-AzureRmSubscription -SubscriptionId 'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa'
+		$res = Find-AzureRmResource -ResourceNameContains mynamespace -ResourceType 'Microsoft.ServiceBus/namespaces'
+		Move-AzureRmResource -DestinationResourceGroupName 'targetRG' -DestinationSubscriptionId 'ffffffff-ffff-ffff-ffff-ffffffffffff' -ResourceId $res.ResourceId
+
 
 ## 后续步骤
 
@@ -198,4 +198,4 @@ Move-AzureRmResource -DestinationResourceGroupName 'targetRG' -DestinationSubscr
 [适用于服务总线的 .NET API]: https://msdn.microsoft.com/zh-cn/library/microsoft.servicebus.aspx
 [NamespaceManager]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.namespacemanager.aspx
 
-<!---HONumber=Mooncake_1121_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

@@ -13,7 +13,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
    ms.date="10/10/2016"
-   wacn.date="11/16/2016"
+   wacn.date="01/04/2017"
    ms.author="cherylmc"/>
 
 # ExpressRoute 线路预配工作流和线路状态
@@ -34,7 +34,7 @@
 	-  启用 Azure 专用对等互连 - 只有启用此对等互连才能连接到部署在虚拟网络中的 VM/云服务。
 	-  启用 Azure 公共对等互连 - 如果你想要连接到托管在公共 IP 地址上的 Azure 服务，则必须启用 Azure 公共对等互连。如果你已选择为 Azure 专用对等互连启用默认路由并想要访问 Azure 资源，则必须执行上述操作。
 
-	![](./media/expressroute-workflows/expressroute-routing-workflow.png)
+	![](./media/expressroute-workflows/routing-workflow.png)
 
 5. 将虚拟网络链接到 ExpressRoute 线路 - 可以将虚拟网络链接到 ExpressRoute 线路。请按照说明[将 VNet 链接](/documentation/articles/expressroute-howto-linkvnet-arm/)到你的线路。这些 VNet 可以位于 ExpressRoute 线路所在的同一 Azure 订阅中，也可以位于不同的订阅中。
 
@@ -99,7 +99,7 @@ BGP 预配状态可让你知道  Azure 边缘是否已启用 BGP 会话。必须
 
 必须特意检查  Azure 对等互连的 BGP 会话状态。除了 BGP 预配状态，还有另一个状态称为*播发的公共前缀状态*。播发的公共前缀状态必须是*已配置*状态，BGP 会话才能启动，才能进行端到端的路由。
 
-如果播发的公共前缀状态设置为需要验证状态，则不会启用 BGP 会话，因为播发的前缀不符合任何路由注册表中的 AS 编号。
+如果播发的公共前缀状态设置为*需要验证*状态，则不会启用 BGP 会话，因为播发的前缀不符合任何路由注册表中的 AS 编号。
 
 >[AZURE.IMPORTANT] 如果播发的公共前缀状态是*手动验证*状态，则你必须[在线申请支持](/support/support-ticket-form/?l=zh-cn)创建工单，并提供拥有播发 IP 地址的证明以及相关的自治系统编号。
 
@@ -111,4 +111,4 @@ BGP 预配状态可让你知道  Azure 边缘是否已启用 BGP 会话。必须
 	- [配置路由](/documentation/articles/expressroute-howto-routing-arm/)
 	- [将 VNet 链接到 ExpressRoute 线路](/documentation/articles/expressroute-howto-linkvnet-arm/)
 
-<!---HONumber=Mooncake_0104_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

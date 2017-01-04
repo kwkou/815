@@ -9,7 +9,7 @@
 <tags 
    ms.service="service-bus"
     ms.date="09/23/2016"
-   wacn.date="12/02/2016"/>
+   wacn.date="01/04/2017"/>
 
 # Azure 队列和服务总线队列 - 比较与对照
 
@@ -296,4 +296,4 @@ Azure 队列和服务总线队列都是 Azure 目前提供的消息队列服务�
 [Azure 经典管理门户]: http://manage.windowsazure.cn
  
 
-<!---HONumber=Mooncake_0104_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

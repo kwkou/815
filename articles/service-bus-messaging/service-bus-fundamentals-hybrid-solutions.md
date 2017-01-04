@@ -16,7 +16,7 @@
 	ms.topic="get-started-article" 
 	ms.date="08/31/2016" 
 	ms.author="sethm"
-	wacn.date="10/24/2016"/>  
+	wacn.date="01/04/2017"/>  
 
 # Azure 服务总线
 
@@ -122,4 +122,4 @@
 [3]: ./media/service-bus-fundamentals-hybrid-solutions/SvcBus_03_topicsandsubscriptions.png
 [4]: ./media/service-bus-fundamentals-hybrid-solutions/SvcBus_04_relay.png
 
-<!---HONumber=Mooncake_0104_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

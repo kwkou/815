@@ -15,7 +15,7 @@
 	ms.devlang="na"
 	ms.topic="hero-article"
 	ms.date="09/02/2016"
-	wacn.date="11/08/2016"
+	wacn.date="01/04/2017"
 	ms.author="jotaub;sethm"/>  
 
 
@@ -31,7 +31,7 @@
 
 若要完成本教程，你需要以下各项：
 
-+ [Microsoft Visual Studio](https://www.visualstudio.com/)
++ [Microsoft Visual Studio](http://visualstudio.com)
 
 + 有效的 Azure 帐户。如果没有帐户，只需几分钟时间就可以创建一个免费帐户。有关详细信息，请参阅 [Azure 免费试用](https://azure.microsoft.com/free/)。
 
@@ -96,9 +96,9 @@
 [Azure Classic Portal]: https://manage.windowsazure.cn/
 [事件处理程序主机]: https://www.nuget.org/packages/Microsoft.Azure.ServiceBus.EventProcessorHost
 [事件中心概述]: /documentation/articles/event-hubs-overview/
-[使用事件中心的完整示例应用程序]: https://code.msdn.microsoft.com/windowsazure/Service-Bus-Event-Hub-286fd097
-[使用事件中心扩大事件处理]: https://code.msdn.microsoft.com/windowsazure/Service-Bus-Event-Hub-45f43fc3
-[队列消息解决方案]: /documentation/articles/service-bus-dotnet-multi-tier-app-using-service-bus-queues/
+[使用事件中心的完整示例应用程序]: https://code.msdn.microsoft.com/Service-Bus-Event-Hub-286fd097
+[使用事件中心扩大事件处理]: https://code.msdn.microsoft.com/Service-Bus-Event-Hub-45f43fc3
+[queued messaging solution]: /documentation/articles/service-bus-dotnet-multi-tier-app-using-service-bus-queues/
  
 
-<!---HONumber=Mooncake_1031_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

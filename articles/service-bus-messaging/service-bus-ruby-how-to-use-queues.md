@@ -16,7 +16,7 @@
 	ms.topic="article"
 	ms.date="10/04/2016"
 	ms.author="sethm"
-	wacn.date="11/28/2016"/>  
+	wacn.date="01/04/2017"/>  
 
 
 # 如何使用 Service Bus 队列
@@ -27,7 +27,7 @@
 
 ## 什么是 Service Bus 队列？
 
-Service Bus 队列支持*中转消息*通信模型。在使用队列时，分布式应用程序的组件不会直接相互通信，而是通过充当中介的队列交换消息。消息创建方（发送方）将消息传送到队列，然后继续对其进行处理。消息使用方（接收方）以异步方式从队列中提取消息并处理它。创建方不必等待使用方的答复即可继续处理并发送更多消息。队列为一个或多个竞争使用方提供**先入先出 (FIFO)** 消息传递方式。也就是说，接收方通常会按照消息添加到队列中的顺序来接收并处理消息，并且每条消息仅由一个消息使用方接收并处理。
+Service Bus 队列支持 *中转消息* 通信模型。在使用队列时，分布式应用程序的组件不会直接相互通信，而是通过充当中介的队列交换消息。消息创建方（发送方）将消息传送到队列，然后继续对其进行处理。消息使用方（接收方）以异步方式从队列中提取消息并处理它。创建方不必等待使用方的答复即可继续处理并发送更多消息。队列为一个或多个竞争使用方提供**先入先出 (FIFO)** 消息传递方式。也就是说，接收方通常会按照消息添加到队列中的顺序来接收并处理消息，并且每条消息仅由一个消息使用方接收并处理。
 
 ![QueueConcepts](./media/service-bus-ruby-how-to-use-queues/sb-queues-08.png)
 
@@ -49,7 +49,7 @@ Service Bus 队列是一种可用于各种应用场景的通用技术：
 
 2. 键入以下命令以创建服务总线命名空间。提供你自己的命名空间值，并指定与应用程序相同的区域。
 
-    New-AzureSBNamespace -Name 'yourexamplenamespace' -Location 'China East' -NamespaceType 'Messaging' -CreateACSNamespace $true
+	    New-AzureSBNamespace -Name 'yourexamplenamespace' -Location 'China East' -NamespaceType 'Messaging' -CreateACSNamespace $true
 
     ![创建命名空间](./media/service-bus-ruby-how-to-use-queues/showcmdcreate.png)
 
@@ -154,4 +154,4 @@ Service Bus 提供了相关功能来帮助你轻松地从应用程序错误或�
 
 有关本文中讨论的 Azure 服务总线队列与[如何通过 Ruby 使用队列存储](/documentation/articles/storage-ruby-how-to-use-queue-storage/)一文中讨论的 Azure 队列的比较，请参阅 [Azure 队列和 Azure 服务总线队列 - 比较与对照](/documentation/articles/service-bus-azure-and-service-bus-queues-compared-contrasted/)
 
-<!---HONumber=Mooncake_1121_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

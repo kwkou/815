@@ -10,15 +10,13 @@
 <tags
 	ms.service="service-bus"
 	ms.date="09/01/2016"
-	wacn.date="10/24/2016"/>
+	wacn.date="01/04/2017"/>
 
 # 使用 Azure 服务总线队列创建 .NET 多层应用程序
 
-[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-sdk-developer-differences.md)]
-
 ## 介绍
 
-使用 Visual Studio 和免费的 Azure SDK for .NET，可以轻松针对 Azure 进行开发。本教程将指导你完成创建使用在本地环境中运行的多个 Azure 资源的应用程序的步骤。这些步骤假设你之前未使用过 Azure。
+使用 Visual Studio 和免费的用于 .NET 的 Azure SDK，可以轻松针对 Azure 进行开发。本教程将指导你完成创建使用在本地环境中运行的多个 Azure 资源的应用程序的步骤。这些步骤假设你之前未使用过 Azure。
 
 你将学习以下技能：
 
@@ -61,7 +59,7 @@
 
 在开始开发 Azure 应用程序之前，需要获取工具并设置开发环境。
 
-1.  在[获取工具和 SDK][] 安装 Azure SDK for .NET
+1.  在[获取工具和 SDK][] 安装用于 .NET 的 Azure SDK
 
 2. 	单击你正在使用的 Visual Studio 版本的“安装 SDK”。本教程中的步骤使用 Visual Studio 2015。
 
@@ -149,7 +147,7 @@
 
     ![][13]
 
-8.  请注意，现已引用所需的客户端程序集并已添加部分新代码文件。
+	请注意，现已引用所需的客户端程序集并已添加部分新代码文件。
 
 9.  在“解决方案资源管理器”中，右键单击“模型”，然后依次单击“添加”和“类”。在“名称”框中，键入名称 **OnlineOrder.cs**。然后单击“添加”。
 
@@ -483,4 +481,5 @@
   [sbwacomqhowto]: /documentation/articles/service-bus-dotnet-get-started-with-queues/  
   [mutitierstorage]: https://code.msdn.microsoft.com/Windows-Azure-Multi-Tier-eadceb36
   
-<!---HONumber=Mooncake_0516_2016-->
+
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

@@ -16,7 +16,7 @@
 	ms.topic="article" 
 	ms.date="10/04/2016" 
 	ms.author="sethm"
-	wacn.date="11/28/2016"/>  
+	wacn.date="01/04/2017"/>  
 
 
 
@@ -42,7 +42,7 @@
 
 2.  在命令窗口中键入 **npm install azure**，这应会生成以下输出：
 
-	```
+	
     	azure@0.7.5 node_modules\azure
 	├── dateformat@1.0.2-1.2.3
 	├── xmlbuilder@0.4.2
@@ -54,7 +54,7 @@
 	├── wns@0.5.3
 	├── xml2js@0.2.7 (sax@0.5.2)
 	└── request@2.21.0 (json-stringify-safe@4.0.0, forever-agent@0.5.0, aws-sign@0.3.0, tunnel-agent@0.3.0, oauth-sign@0.3.0, qs@0.6.5, cookie-jar@0.3.0, node-uuid@1.4.0, http-signature@0.9.11, form-data@0.0.8, hawk@0.13.1)
-	```
+	
 
 3.  可以手动运行 **ls** 命令来验证是否创建了 **node\_modules** 文件夹。在该文件夹中，找到 **azure** 程序包，其中包含访问服务总线主题所需的库。
 
@@ -62,9 +62,9 @@
 
 使用记事本或其他文本编辑器将以下内容添加到应用程序的 **server.js** 文件的顶部：
 
-```
-var azure = require('azure');
-```
+
+		var azure = require('azure');
+
 
 ### 设置服务总线连接
 
@@ -78,49 +78,49 @@ Azure 模块将读取环境变量 AZURE\_SERVICEBUS\_NAMESPACE 和 AZURE\_SERVIC
 
 可以通过 **ServiceBusService** 对象处理主题。以下代码创建 **ServiceBusService** 对象。将它添加到靠近 **server.js** 文件顶部、用于导入 azure 模块的语句之后的位置：
 
-```
-var serviceBusService = azure.createServiceBusService();
-```
+
+		var serviceBusService = azure.createServiceBusService();
+
 
 通过对 **ServiceBusService** 对象调用 **createTopicIfNotExists**，将返回指定的主题（如果存在），否则将使用指定名称创建新主题。以下代码使用 **createTopicIfNotExists** 创建或连接到名为“MyTopic”的主题：
 
-```
-serviceBusService.createTopicIfNotExists('MyTopic',function(error){
-    if(!error){
-        // Topic was created or exists
-        console.log('topic created or exists.');
-    }
-});
-```
+
+		serviceBusService.createTopicIfNotExists('MyTopic',function(error){
+		    if(!error){
+		        // Topic was created or exists
+		        console.log('topic created or exists.');
+		    }
+		});
+
 
 **createServiceBusService** 还支持其他选项，以允许重写默认主题设置，如消息生存时间或最大主题大小。以下示例将最大主题大小设置为 5GB，将生存时间设置为 1 分钟：
 
-```
-var topicOptions = {
-        MaxSizeInMegabytes: '5120',
-        DefaultMessageTimeToLive: 'PT1M'
-    };
 
-serviceBusService.createTopicIfNotExists('MyTopic', topicOptions, function(error){
-    if(!error){
-        // topic was created or exists
-    }
-});
-```
+		var topicOptions = {
+		        MaxSizeInMegabytes: '5120',
+		        DefaultMessageTimeToLive: 'PT1M'
+		    };
+
+		serviceBusService.createTopicIfNotExists('MyTopic', topicOptions, function(error){
+		    if(!error){
+		        // topic was created or exists
+		    }
+		});
+
 
 ### 筛选器
 
 可选的筛选操作可应用于使用 **ServiceBusService** 执行的操作。筛选操作可包括日志记录、自动重试等。筛选器是实现具有签名的方法的对象：
 
-```
-function handle (requestOptions, next)
-```
+
+		function handle (requestOptions, next)
+
 
 在对请求选项执行预处理后，该方法将调用 `next` 并传递具有以下签名的回调：
 
-```
-function (returnObject, finalCallback, next)
-```
+
+		function (returnObject, finalCallback, next)
+
 
 在此回叫中并且在处理 **returnObject**（来自对服务器请求的响应）后，回叫需要调用 next（如果存在）以便继续处理其他筛选器，或者只调用 **finalCallback** 以便结束服务调用。
 
@@ -139,13 +139,13 @@ Azure SDK for Node.js 中附带了两个实现了重试逻辑的筛选器，分�
 
 **MatchAll** 筛选器是默认筛选器，在创建新订阅时未指定筛选器的情况下使用。使用 **MatchAll** 筛选器时，发布到主题的所有消息都将置于订阅的虚拟队列中。以下示例创建名为“AllMessages”的订阅，并使用默认的 **MatchAll** 筛选器。
 
-```
-serviceBusService.createSubscription('MyTopic','AllMessages',function(error){
-    if(!error){
-        // subscription created
-    }
-});
-```
+
+		serviceBusService.createSubscription('MyTopic','AllMessages',function(error){
+		    if(!error){
+		        // subscription created
+		    }
+		});
+
 
 ### 创建具有筛选器的订阅
 
@@ -159,73 +159,73 @@ serviceBusService.createSubscription('MyTopic','AllMessages',function(error){
 
 以下示例创建了一个名为 `HighMessages` 的订阅，其 **SqlFilter** 只选择自定义 **messagenumber** 属性大于 3 的消息：
 
-```
-serviceBusService.createSubscription('MyTopic', 'HighMessages', function (error){
-    if(!error){
-        // subscription created
-        rule.create();
-    }
-});
-var rule={
-    deleteDefault: function(){
-        serviceBusService.deleteRule('MyTopic',
-            'HighMessages', 
-            azure.Constants.ServiceBusConstants.DEFAULT_RULE_NAME, 
-            rule.handleError);
-    },
-    create: function(){
-        var ruleOptions = {
-            sqlExpressionFilter: 'messagenumber > 3'
-        };
-        rule.deleteDefault();
-        serviceBusService.createRule('MyTopic', 
-            'HighMessages', 
-            'HighMessageFilter', 
-            ruleOptions, 
-            rule.handleError);
-    },
-    handleError: function(error){
-        if(error){
-            console.log(error)
-        }
-    }
-}
-```
+
+		serviceBusService.createSubscription('MyTopic', 'HighMessages', function (error){
+		    if(!error){
+		        // subscription created
+		        rule.create();
+		    }
+		});
+		var rule={
+		    deleteDefault: function(){
+		        serviceBusService.deleteRule('MyTopic',
+		            'HighMessages', 
+		            azure.Constants.ServiceBusConstants.DEFAULT_RULE_NAME, 
+		            rule.handleError);
+		    },
+		    create: function(){
+		        var ruleOptions = {
+		            sqlExpressionFilter: 'messagenumber > 3'
+		        };
+		        rule.deleteDefault();
+		        serviceBusService.createRule('MyTopic', 
+		            'HighMessages', 
+		            'HighMessageFilter', 
+		            ruleOptions, 
+		            rule.handleError);
+		    },
+		    handleError: function(error){
+		        if(error){
+		            console.log(error)
+		        }
+		    }
+		}
+
 
 类似地，以下示例创建一个名为 `LowMessages` 的订阅，其 **SqlFilter** 只选择 **messagenumber** 属性小于或等于 3 的消息：
 
-```
-serviceBusService.createSubscription('MyTopic', 'LowMessages', function (error){
-    if(!error){
-        // subscription created
-        rule.create();
-    }
-});
-var rule={
-    deleteDefault: function(){
-        serviceBusService.deleteRule('MyTopic',
-            'LowMessages', 
-            azure.Constants.ServiceBusConstants.DEFAULT_RULE_NAME, 
-            rule.handleError);
-    },
-    create: function(){
-        var ruleOptions = {
-            sqlExpressionFilter: 'messagenumber <= 3'
-        };
-        rule.deleteDefault();
-        serviceBusService.createRule('MyTopic', 
-            'LowMessages', 
-            'LowMessageFilter', 
-            ruleOptions, 
-            rule.handleError);
-    },
-    handleError: function(error){
-        if(error){
-            console.log(error)
-        }
-    }
-}
-```
+
+		serviceBusService.createSubscription('MyTopic', 'LowMessages', function (error){
+		    if(!error){
+		        // subscription created
+		        rule.create();
+		    }
+		});
+		var rule={
+		    deleteDefault: function(){
+		        serviceBusService.deleteRule('MyTopic',
+		            'LowMessages', 
+		            azure.Constants.ServiceBusConstants.DEFAULT_RULE_NAME, 
+		            rule.handleError);
+		    },
+		    create: function(){
+		        var ruleOptions = {
+		            sqlExpressionFilter: 'messagenumber <= 3'
+		        };
+		        rule.deleteDefault();
+		        serviceBusService.createRule('MyTopic', 
+		            'LowMessages', 
+		            'LowMessageFilter', 
+		            ruleOptions, 
+		            rule.handleError);
+		    },
+		    handleError: function(error){
+		        if(error){
+		            console.log(error)
+		        }
+		    }
+		}
+
 
 现在，当消息发送到 `MyTopic` 时，它始终会传送给订阅了 `AllMessages` 主题订阅的接收者，并且选择性地传送给订阅了 `HighMessages` 和 `LowMessages` 主题订阅的接收者（具体取决于消息内容）。
 
@@ -235,24 +235,24 @@ var rule={
 
 下面的示例演示如何向“MyTopic”发送五条测试消息。请注意，每条消息的 **messagenumber** 属性值因循环迭代而异（这将确定由哪些订阅接收它）：
 
-```
-var message = {
-    body: '',
-    customProperties: {
-        messagenumber: 0
-    }
-}
 
-for (i = 0;i < 5;i++) {
-    message.customProperties.messagenumber=i;
-    message.body='This is Message #'+i;
-    serviceBusService.sendTopicMessage(topic, message, function(error) {
-      if (error) {
-        console.log(error);
-      }
-    });
-}
-```
+		var message = {
+		    body: '',
+		    customProperties: {
+		        messagenumber: 0
+		    }
+		}
+
+		for (i = 0;i < 5;i++) {
+		    message.customProperties.messagenumber=i;
+		    message.body='This is Message #'+i;
+		    serviceBusService.sendTopicMessage(topic, message, function(error) {
+		      if (error) {
+		        console.log(error);
+		      }
+		    });
+		}
+
 
 服务总线主题在标准层中支持的最大消息大小为 256 KB。标头最大为 64 KB，其中包括标准和自定义应用程序属性。一个主题中包含的消息数量不受限制，但消息的总大小受限制。此主题大小是在创建时定义的，上限为 5 GB。
 
@@ -266,24 +266,24 @@ for (i = 0;i < 5;i++) {
 
 以下示例演示如何使用 **receiveSubscriptionMessage** 接收和处理消息。该示例先从“LowMessages”订阅接收并删除一条消息，然后使用设置为 true 的 **isPeekLock** 从“HighMessages”订阅接收一条消息。最后使用 **deleteMessage** 删除该消息：
 
-    serviceBusService.receiveSubscriptionMessage('MyTopic', 'LowMessages', function(error, receivedMessage){
-        if(!error){
-            // Message received and deleted
-            console.log(receivedMessage);
-        }
-    });
-    serviceBusService.receiveSubscriptionMessage('MyTopic', 'HighMessages', { isPeekLock: true }, function(error, lockedMessage){
-        if(!error){
-            // Message received and locked
-            console.log(lockedMessage);
-            serviceBusService.deleteMessage(lockedMessage, function (deleteError){
-                if(!deleteError){
-                    // Message deleted
-                    console.log('message has been deleted.');
-                }
-            }
-        }
-    });
+	    serviceBusService.receiveSubscriptionMessage('MyTopic', 'LowMessages', function(error, receivedMessage){
+	        if(!error){
+	            // Message received and deleted
+	            console.log(receivedMessage);
+	        }
+	    });
+	    serviceBusService.receiveSubscriptionMessage('MyTopic', 'HighMessages', { isPeekLock: true }, function(error, lockedMessage){
+	        if(!error){
+	            // Message received and locked
+	            console.log(lockedMessage);
+	            serviceBusService.deleteMessage(lockedMessage, function (deleteError){
+	                if(!deleteError){
+	                    // Message deleted
+	                    console.log('message has been deleted.');
+	                }
+	            }
+	        }
+	    });
 
 ## 如何处理应用程序崩溃和不可读消息
 
@@ -297,19 +297,19 @@ Service Bus 提供了相关功能来帮助你轻松地从应用程序错误或�
 
 主题和订阅具有持久性，必须通过 [Azure 经典管理门户][]或以编程方式显式删除。以下示例演示了如何删除名为 `MyTopic` 的主题：
 
-    serviceBusService.deleteTopic('MyTopic', function (error) {
-        if (error) {
-            console.log(error);
-        }
-    });
+	    serviceBusService.deleteTopic('MyTopic', function (error) {
+	        if (error) {
+	            console.log(error);
+	        }
+	    });
 
 删除某个主题也会删除向该主题注册的所有订阅。也可以单独删除订阅。以下示例演示了如何从 `MyTopic` 主题中删除名为 `HighMessages` 的订阅：
 
-    serviceBusService.deleteSubscription('MyTopic', 'HighMessages', function (error) {
-        if(error) {
-            console.log(error);
-        }
-    });
+	    serviceBusService.deleteSubscription('MyTopic', 'HighMessages', function (error) {
+	        if(error) {
+	            console.log(error);
+	        }
+	    });
 
 ## <a name="next-steps"></a> 后续步骤
 
@@ -331,4 +331,4 @@ Service Bus 提供了相关功能来帮助你轻松地从应用程序错误或�
   [使用存储构建 Node.js Web 应用程序]: /documentation/articles/storage-nodejs-use-table-storage-cloud-service-app/
  
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

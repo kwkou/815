@@ -10,7 +10,7 @@
 <tags
     ms.service="service-bus"
     ms.date="05/09/2016"
-    wacn.date="06/21/2016"/>
+    wacn.date="01/04/2017"/>
 
 # 如何使用 Service Bus 队列
 
@@ -25,8 +25,6 @@
 ## 添加服务总线 NuGet 包
 
 [服务总线 NuGet 包](https://www.nuget.org/packages/WindowsAzure.ServiceBus)是获取服务总线 API 并为应用程序配置所有服务总线依赖项的最简单的方法。要在你的应用程序中安装 NuGet 包，请执行以下操作：
-
-要在你的应用程序中安装 NuGet 包，请执行以下操作：
 
 1.  在解决方案资源管理器中，右键单击“引用”，然后单击“管理 NuGet 包”。
 2.  搜索“服务总线”并选择“Azure 服务总线”项。单击“安装”以完成安装，然后关闭此对话框。
@@ -48,31 +46,31 @@
 
 利用该服务配置机制，你可以从 [Azure 经典管理门户][]动态更改配置设置，而无需重新部署应用程序。例如，向服务定义 (.csdef) 文件中添加 `Setting` 标签，如以下示例所示。
 
-```
-<ServiceDefinition name="Azure1">
-...
-    <WebRole name="MyRole" vmsize="Small">
-        <ConfigurationSettings>
-            <Setting name="Microsoft.ServiceBus.ConnectionString" />
-        </ConfigurationSettings>
-    </WebRole>
-...
-</ServiceDefinition>
-```
+
+		<ServiceDefinition name="Azure1">
+		...
+		    <WebRole name="MyRole" vmsize="Small">
+		        <ConfigurationSettings>
+		            <Setting name="Microsoft.ServiceBus.ConnectionString" />
+		        </ConfigurationSettings>
+		    </WebRole>
+		...
+		</ServiceDefinition>
+
 然后在服务配置 (.cscfg) 文件中指定值，如以下示例所示。
 
-```
-<ServiceConfiguration serviceName="Azure1">
-...
-    <Role name="MyRole">
-        <ConfigurationSettings>
-            <Setting name="Microsoft.ServiceBus.ConnectionString"
-                     value="Endpoint=sb://yourServiceNamespace.servicebus.chinacloudapi.cn/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=yourKey" />
-        </ConfigurationSettings>
-    </Role>
-...
-</ServiceConfiguration>
-```
+
+		<ServiceConfiguration serviceName="Azure1">
+		...
+		    <Role name="MyRole">
+		        <ConfigurationSettings>
+		            <Setting name="Microsoft.ServiceBus.ConnectionString"
+		                     value="Endpoint=sb://yourServiceNamespace.servicebus.chinacloudapi.cn/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=yourKey" />
+		        </ConfigurationSettings>
+		    </Role>
+		...
+		</ServiceConfiguration>
+
 
 使用从 Azure 经典管理门户检索到的共享访问签名 (SAS) 密钥名称和密钥值，如上一部分中所述。
 
@@ -80,14 +78,14 @@
 
 在使用网站或虚拟机时，建议你使用 .NET 配置系统（如 **Web.config**）。你可以使用 `<appSettings>` 元素存储连接字符串：
 
-```
-<configuration>
-    <appSettings>
-        <add key="Microsoft.ServiceBus.ConnectionString"
-             value="Endpoint=sb://yourServiceNamespace.servicebus.chinacloudapi.cn/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=yourKey" />
-    </appSettings>
-</configuration>
-```
+
+		<configuration>
+		    <appSettings>
+		        <add key="Microsoft.ServiceBus.ConnectionString"
+		             value="Endpoint=sb://yourServiceNamespace.servicebus.chinacloudapi.cn/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=yourKey" />
+		    </appSettings>
+		</configuration>
+
 
 使用从 Azure 经典管理门户检索到的 SAS 名称和密钥值，如上一部分中所述。
 
@@ -97,46 +95,46 @@
 
 此示例使用带连接字符串的 Azure [CloudConfigurationManager][] 类构造 [NamespaceManager][] 对象，此连接字符串包含服务总线服务命名空间的基址和有权管理该命名空间的相应 SAS 凭据。此连接字符串的格式如以下示例所示。
 
-````
-Endpoint=sb://yourServiceNamespace.servicebus.chinacloudapi.cn/;SharedAccessKeyName=RootManageSharedAccessKey;SharedSecretValue=yourKey
-````
+`
+		Endpoint=sb://yourServiceNamespace.servicebus.chinacloudapi.cn/;SharedAccessKeyName=RootManageSharedAccessKey;SharedSecretValue=yourKey
+`
 
 使用以下示例，考虑上一节中的配置设置。
 
-```
-// Create the queue if it does not exist already.
-string connectionString =
-    CloudConfigurationManager.GetSetting("Microsoft.ServiceBus.ConnectionString");
 
-var namespaceManager =
-    NamespaceManager.CreateFromConnectionString(connectionString);
+		// Create the queue if it does not exist already.
+		string connectionString =
+		    CloudConfigurationManager.GetSetting("Microsoft.ServiceBus.ConnectionString");
 
-if (!namespaceManager.QueueExists("TestQueue"))
-{
-    namespaceManager.CreateQueue("TestQueue");
-}
-```
+		var namespaceManager =
+		    NamespaceManager.CreateFromConnectionString(connectionString);
+
+		if (!namespaceManager.QueueExists("TestQueue"))
+		{
+		    namespaceManager.CreateQueue("TestQueue");
+		}
+
 
 这里使用了 [CreateQueue](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.namespacemanager.createqueue.aspx) 方法的重载，以允许你调整队列属性（例如，为了将默认的生存时间 (TTL) 值设置为应用于发送到队列的消息）。使用 [QueueDescription](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.queuedescription.aspx) 类应用这些设置。以下示例演示如何创建名为 `TestQueue`、最大大小为 5 GB、默认消息 TTL 为 1 分钟的队列。
 
-```
-// Configure queue settings.
-QueueDescription qd = new QueueDescription("TestQueue");
-qd.MaxSizeInMegabytes = 5120;
-qd.DefaultMessageTimeToLive = new TimeSpan(0, 1, 0);
 
-// Create a new queue with custom settings.
-string connectionString =
-    CloudConfigurationManager.GetSetting("Microsoft.ServiceBus.ConnectionString");
+		// Configure queue settings.
+		QueueDescription qd = new QueueDescription("TestQueue");
+		qd.MaxSizeInMegabytes = 5120;
+		qd.DefaultMessageTimeToLive = new TimeSpan(0, 1, 0);
 
-var namespaceManager =
-    NamespaceManager.CreateFromConnectionString(connectionString);
+		// Create a new queue with custom settings.
+		string connectionString =
+		    CloudConfigurationManager.GetSetting("Microsoft.ServiceBus.ConnectionString");
 
-if (!namespaceManager.QueueExists("TestQueue"))
-{
-    namespaceManager.CreateQueue(qd);
-}
-```
+		var namespaceManager =
+		    NamespaceManager.CreateFromConnectionString(connectionString);
+
+		if (!namespaceManager.QueueExists("TestQueue"))
+		{
+		    namespaceManager.CreateQueue(qd);
+		}
+
 
 > [AZURE.NOTE]你可以对 [NamespaceManager][] 对象使用 [QueueExists](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.namespacemanager.queueexists.aspx) 方法，以检查具有指定名称的队列是否已存在于某个服务命名空间中。
 
@@ -146,34 +144,34 @@ if (!namespaceManager.QueueExists("TestQueue"))
 
 以下代码演示如何使用 [CreateFromConnectionString](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.queueclient.createfromconnectionstring.aspx) API 调用为刚创建的 `TestQueue` 队列创建 [QueueClient][] 对象。
 
-```
-string connectionString =
-    CloudConfigurationManager.GetSetting("Microsoft.ServiceBus.ConnectionString");
 
-QueueClient Client =
-    QueueClient.CreateFromConnectionString(connectionString, "TestQueue");
+		string connectionString =
+		    CloudConfigurationManager.GetSetting("Microsoft.ServiceBus.ConnectionString");
 
-Client.Send(new BrokeredMessage());
-```
+		QueueClient Client =
+		    QueueClient.CreateFromConnectionString(connectionString, "TestQueue");
+
+		Client.Send(new BrokeredMessage());
+
 
 在服务总线队列中发送和接收的消息是 [BrokeredMessage][] 类的实例。[BrokeredMessage][] 对象包含一组标准属性（如 [Label](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.label.aspx) 和 [TimeToLive](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.timetolive.aspx)）、一个用来保存自定义应用程序特定属性的词典以及大量随机应用程序数据。应用程序可通过将任何可序列化对象传入到 [BrokeredMessage][] 对象的构造函数中来设置消息的正文，然后将使用适当的 **DataContractSerializer** 序列化对象。或者，你可以提供 **System.IO.Stream** 对象。
 
 以下示例演示了如何将五条测试消息发送到在前面的代码示例中获取的 `TestQueue` [QueueClient][] 对象。
 
-```
-for (int i=0; i<5; i++)
-{
-  // Create message, passing a string message for the body.
-  BrokeredMessage message = new BrokeredMessage("Test message " + i);
 
-  // Set some addtional custom app-specific properties.
-  message.Properties["TestProperty"] = "TestValue";
-  message.Properties["Message number"] = i;
+		for (int i=0; i<5; i++)
+		{
+		  // Create message, passing a string message for the body.
+		  BrokeredMessage message = new BrokeredMessage("Test message " + i);
 
-  // Send message to the queue.
-  Client.Send(message);
-}
-```
+		  // Set some addtional custom app-specific properties.
+		  message.Properties["TestProperty"] = "TestValue";
+		  message.Properties["Message number"] = i;
+
+		  // Send message to the queue.
+		  Client.Send(message);
+		}
+
 
 服务总线队列支持[最大为 256 Kb 的消息](/documentation/articles/service-bus-azure-and-service-bus-queues-compared-contrasted/#capacity-and-quotas)（标头最大为 64 KB，其中包括标准和自定义应用程序属性）。一个队列可包含的消息数不受限制，但消息的总大小受限。此队列大小是在创建时定义的，上限为 5 GB。如果启用了分区，则上限更高。有关详细信息，请参阅[分区消息传送实体](/documentation/articles/service-bus-partitioning/)。
 
@@ -187,38 +185,38 @@ for (int i=0; i<5; i++)
 
 以下示例演示如何使用默认的 **PeekLock** 模式接收和处理消息。若要指定不同的 [ReceiveMode](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.receivemode.aspx) 值，可以使用 [CreateFromConnectionString](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.queueclient.createfromconnectionstring.aspx) 的另一个重载。此示例使用 [OnMessage](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.queueclient.onmessage.aspx) 回调来处理传入 `TestQueue` 的消息。
 
-```
-string connectionString =
-  CloudConfigurationManager.GetSetting("Microsoft.ServiceBus.ConnectionString");
-QueueClient Client =
-  QueueClient.CreateFromConnectionString(connectionString, "TestQueue");
 
-// Configure the callback options.
-OnMessageOptions options = new OnMessageOptions();
-options.AutoComplete = false;
-options.AutoRenewTimeout = TimeSpan.FromMinutes(1);
+		string connectionString =
+		  CloudConfigurationManager.GetSetting("Microsoft.ServiceBus.ConnectionString");
+		QueueClient Client =
+		  QueueClient.CreateFromConnectionString(connectionString, "TestQueue");
 
-// Callback to handle received messages.
-Client.OnMessage((message) =>
-{
-    try
-    {
-        // Process message from queue.
-        Console.WriteLine("Body: " + message.GetBody<string>());
-        Console.WriteLine("MessageID: " + message.MessageId);
-        Console.WriteLine("Test Property: " +
-        message.Properties["TestProperty"]);
+		// Configure the callback options.
+		OnMessageOptions options = new OnMessageOptions();
+		options.AutoComplete = false;
+		options.AutoRenewTimeout = TimeSpan.FromMinutes(1);
 
-        // Remove message from queue.
-        message.Complete();
-    }
-    catch (Exception)
-    {
-        // Indicates a problem, unlock message in queue.
-        message.Abandon();
-    }
-}, options);
-```
+		// Callback to handle received messages.
+		Client.OnMessage((message) =>
+		{
+		    try
+		    {
+		        // Process message from queue.
+		        Console.WriteLine("Body: " + message.GetBody<string>());
+		        Console.WriteLine("MessageID: " + message.MessageId);
+		        Console.WriteLine("Test Property: " +
+		        message.Properties["TestProperty"]);
+
+		        // Remove message from queue.
+		        message.Complete();
+		    }
+		    catch (Exception)
+		    {
+		        // Indicates a problem, unlock message in queue.
+		        message.Abandon();
+		    }
+		}, options);
+
 
 此示例使用 [OnMessageOptions](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.onmessageoptions.aspx) 对象配置 [OnMessage](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.queueclient.onmessage.aspx) 回调。将 [AutoComplete](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.onmessageoptions.autocomplete.aspx) 设置为 **false** 以允许手动控制何时对收到的消息调用 [Complete][]。将 [AutoRenewTimeout](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.onmessageoptions.autorenewtimeout.aspx) 设置为 1 分钟，这会导致客户端最多等待消息一分钟，然后调用会超时并且客户端将发出新的调用以检查是否有消息。此属性值会减少客户端无法检索消息时产生的应计费调用次数。
 
@@ -251,4 +249,4 @@ Client.OnMessage((message) =>
   [QueueClient]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.queueclient.aspx
   [Complete]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.complete.aspx
 
-<!---HONumber=Mooncake_0104_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

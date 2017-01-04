@@ -15,7 +15,7 @@
     ms.workload="na"
     ms.date="09/29/2016"
     ms.author="sethm"
-    wacn.date="11/28/2016"/>  
+    wacn.date="01/04/2017"/>  
 
 
 # 使用 AMQP 1.0 通过 Java 使用 Service Bus
@@ -448,4 +448,4 @@ JMS 消息支持以下类型的应用程序属性：**boolean**、**byte**、**s
 [服务总线 AMQP 概述]: /documentation/articles/service-bus-amqp-overview/
 [Azure 经典管理门户]: http://manage.windowsazure.cn
 
-<!---HONumber=Mooncake_1121_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

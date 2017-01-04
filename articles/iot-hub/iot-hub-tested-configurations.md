@@ -14,12 +14,12 @@
      ms.tgt_pltfrm="na"
      ms.workload="na"
      ms.date="10/04/2016"
-     wacn.date="11/07/2016"
+     wacn.date="01/04/2017"
      ms.author="hegate"/>
 
 # OS 平台和硬件与设备 SDK 的兼容性
 
-本文档介绍了 SDK 与不同 OS 平台的兼容性。如果你不确定要使用的设备，请查看本文中的 [OS 平台和库](#os-platforms)兼容性部分。
+本文档介绍了 SDK 与不同 OS 平台的兼容性。如果你不确定要使用的设备，请查看 [OS 平台和库](#os-platforms)兼容性部分。
 
 
 
@@ -158,4 +158,4 @@ Azure IoT 库在以下操作系统平台上进行了测试：
 [lnk-gateway]: /documentation/articles/iot-hub-linux-gateway-sdk-simulated-device/
 [lnk-portal]: /documentation/articles/iot-hub-manage-through-portal/
 
-<!---HONumber=Mooncake_0725_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

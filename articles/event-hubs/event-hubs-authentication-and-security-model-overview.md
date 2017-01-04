@@ -1,4 +1,3 @@
-<!-- OK -->
 <properties 
     pageTitle="事件中心身份验证和安全模型概述 | Azure"
     description="事件中心身份验证和安全模型概述。"
@@ -15,7 +14,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="na"
     ms.date="08/16/2016"
-    wacn.date="11/08/2016"
+    wacn.date="01/03/2017"
     ms.author="sethm;clemensv" />
 
 # 事件中心身份验证和安全模型概述
@@ -44,45 +43,44 @@
 
 在创建事件中心时，以下示例将创建一个仅限发送的密钥：
 
-```
-// Create namespace manager.
-string serviceNamespace = "YOUR_NAMESPACE";
-string namespaceManageKeyName = "RootManageSharedAccessKey";
-string namespaceManageKey = "YOUR_ROOT_MANAGE_SHARED_ACCESS_KEY";
-Uri uri = ServiceBusEnvironment.CreateServiceUri("sb", serviceNamespace, string.Empty);
-TokenProvider td = TokenProvider.CreateSharedAccessSignatureTokenProvider(namespaceManageKeyName, namespaceManageKey);
-NamespaceManager nm = new NamespaceManager(namespaceUri, namespaceManageTokenProvider);
 
-// Create Event Hub with a SAS rule that enables sending to that Event Hub
-EventHubDescription ed = new EventHubDescription("MY_EVENT_HUB") { PartitionCount = 32 };
-string eventHubSendKeyName = "EventHubSendKey";
-string eventHubSendKey = SharedAccessAuthorizationRule.GenerateRandomKey();
-SharedAccessAuthorizationRule eventHubSendRule = new SharedAccessAuthorizationRule(eventHubSendKeyName, eventHubSendKey, new[] { AccessRights.Send });
-ed.Authorization.Add(eventHubSendRule); 
-nm.CreateEventHub(ed);
-```
+		// Create namespace manager.
+		string serviceNamespace = "YOUR_NAMESPACE";
+		string namespaceManageKeyName = "RootManageSharedAccessKey";
+		string namespaceManageKey = "YOUR_ROOT_MANAGE_SHARED_ACCESS_KEY";
+		Uri uri = ServiceBusEnvironment.CreateServiceUri("sb", serviceNamespace, string.Empty);
+		TokenProvider td = TokenProvider.CreateSharedAccessSignatureTokenProvider(namespaceManageKeyName, namespaceManageKey);
+		NamespaceManager nm = new NamespaceManager(namespaceUri, namespaceManageTokenProvider);
+
+		// Create Event Hub with a SAS rule that enables sending to that Event Hub
+		EventHubDescription ed = new EventHubDescription("MY_EVENT_HUB") { PartitionCount = 32 };
+		string eventHubSendKeyName = "EventHubSendKey";
+		string eventHubSendKey = SharedAccessAuthorizationRule.GenerateRandomKey();
+		SharedAccessAuthorizationRule eventHubSendRule = new SharedAccessAuthorizationRule(eventHubSendKeyName, eventHubSendKey, new[] { AccessRights.Send });
+		ed.Authorization.Add(eventHubSendRule); 
+		nm.CreateEventHub(ed);
+
 
 ### 生成令牌
 
 可以使用 SAS 密钥生成令牌。对于每个设备，只能生成一个令牌。然后，可以使用以下方法生成令牌。所有令牌都使用 **EventHubSendKey** 密钥生成。将为每个令牌分配一个唯一 URI。
 
-```
-public static string SharedAccessSignatureTokenProvider.GetSharedAccessSignature(string keyName, string sharedAccessKey, string resource, TimeSpan tokenTimeToLive)
-```
+
+		public static string SharedAccessSignatureTokenProvider.GetSharedAccessSignature(string keyName, string sharedAccessKey, string resource, TimeSpan tokenTimeToLive)
+
 
 调用此方法时，应将 URI 指定为 `//<NAMESPACE>.servicebus.chinacloudapi.cn/<EVENT_HUB_NAME>/publishers/<PUBLISHER_NAME>`。所有令牌的 URI 都是相同的，但每个令牌的 `PUBLISHER_NAME` 应该不同。`PUBLISHER_NAME` 最好是表示要接收该令牌的设备的 ID。
 
 此方法将生成具有以下结构的令牌：
 
-```
-SharedAccessSignature sr={URI}&sig={HMAC_SHA256_SIGNATURE}&se={EXPIRATION_TIME}&skn={KEY_NAME}
-```
+
+		SharedAccessSignature sr={URI}&sig={HMAC_SHA256_SIGNATURE}&se={EXPIRATION_TIME}&skn={KEY_NAME}
+
 
 令牌过期时间以从 1970 年 1 月 1 日开始算起的秒数指定。下面是一个令牌示例：
 
-```
-SharedAccessSignature sr=contoso&sig=nPzdNN%2Gli0ifrfJwaK4mkK0RqAB%2byJUlt%2bGFmBHG77A%3d&se=1403130337&skn=RootManageSharedAccessKey
-```
+		SharedAccessSignature sr=contoso&sig=nPzdNN%2Gli0ifrfJwaK4mkK0RqAB%2byJUlt%2bGFmBHG77A%3d&se=1403130337&skn=RootManageSharedAccessKey
+
 
 通常，令牌的使用期限相当于或长于设备的使用期限。如果设备能够获取新令牌，可以使用使用期限较短的令牌。
 
@@ -117,4 +115,4 @@ SharedAccessSignature sr=contoso&sig=nPzdNN%2Gli0ifrfJwaK4mkK0RqAB%2byJUlt%2bGFm
 [队列消息解决方案]: /documentation/articles/service-bus-dotnet-multi-tier-app-using-service-bus-queues/
  
 
-<!---HONumber=Mooncake_1031_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

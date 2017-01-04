@@ -14,7 +14,7 @@
     ms.workload="na"
     ms.date="10/07/2016"
     ms.author="sethm"  
-    wacn.date="11/28/2016" />
+    wacn.date="01/04/2017" />
 
 # 服务总线消息传送示例
 
@@ -49,9 +49,7 @@
 
 1. 运行以下 Azure Powershell cmdlet：
 
-	```
 	get-sbClientConfiguration
-	```
 
 2. 将连接字符串粘贴到示例的 App.config 文件中。
 
@@ -106,4 +104,4 @@
 - [服务总线体系结构](/documentation/articles/service-bus-architecture/)
 - [服务总线基础知识](/documentation/articles/service-bus-fundamentals-hybrid-solutions/)
 
-<!---HONumber=Mooncake_0307_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

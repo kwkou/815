@@ -14,7 +14,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="na"
     ms.date="08/16/2016"
-    wacn.date="11/08/2016"
+    wacn.date="01/04/2017"
     ms.author="sethm" />  
 
 
@@ -171,4 +171,4 @@ Azure 事件中心提供缩放性超高的事件与遥测处理服务，可用�
 [事件中心教程]: /documentation/articles/event-hubs-csharp-ephcs-getstarted/
 [使用事件中心的完整示例应用程序]: https://github.com/Azure-Samples/
 
-<!---HONumber=Mooncake_1031_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

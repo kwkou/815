@@ -10,7 +10,7 @@
 <tags 
 	ms.service="event-hubs" 
 	ms.date="07/11/2016" 
-	wacn.date="08/15/2016"/>
+	wacn.date="01/04/2017"/>
 
 # 大规模引入遥测数据和应用程序事件
  
@@ -36,4 +36,4 @@
 - [HDInsight](/documentation/services/hdinsight/)
  
 
-<!---HONumber=Mooncake_0808_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

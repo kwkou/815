@@ -10,7 +10,7 @@
 <tags 
 	ms.service="service-bus" 
 	ms.date="09/29/2016" 
-	wacn.date="12/02/2016"/>
+	wacn.date="01/04/2017"/>
 
 
 
@@ -57,7 +57,7 @@ AMQP 1.0 是一种国际标准，已通过 ISO 和 IEC 的认证，认证编号�
 *    随时可找到知识渊博的工作人员
 *    风险较低且可控
 
-## AMQP 1.0 和服务总线
+## AMQP 1.0 和 Service Bus
 
 Azure 服务总线中对 AMQP 1.0 的支持意味着现在可以通过一系列使用有效的二进制协议的平台利用队列和发布/订阅中转消息传送功能。此外，你还可以生成由结合使用多个语言、框架和操作系统构建的组件组成的应用程序。
 
@@ -103,4 +103,4 @@ Azure 服务总线中对 AMQP 1.0 的支持意味着现在可以通过一系列�
 [在 Azure Linux VM 上安装 Apache Qpid Proton-C]: /documentation/articles/service-bus-amqp-apache/
 [适用于 Windows Server 的服务总线中的 AMQP]: https://msdn.microsoft.com/zh-cn/library/dn574799.aspx
 
-<!---HONumber=Mooncake_0104_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

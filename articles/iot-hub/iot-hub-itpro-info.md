@@ -15,7 +15,7 @@
  ms.workload="na"
  ms.date="08/09/2016"
  ms.author="dobett"
- wacn.date="10/10/2016"/>
+ wacn.date="01/04/2017"/>
 
 # 配置和管理对 IoT 中心的访问权限
 
@@ -58,4 +58,4 @@
 [lnk-gateway]: /documentation/articles/iot-hub-linux-gateway-sdk-simulated-device/
 [lnk-tokens]: /documentation/articles/iot-hub-sas-tokens/
 
-<!---HONumber=Mooncake_0307_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

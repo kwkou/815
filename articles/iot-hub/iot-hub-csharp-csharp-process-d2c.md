@@ -15,7 +15,7 @@
      ms.tgt_pltfrm="na"
      ms.workload="na"
      ms.date="10/05/2016"
-     wacn.date="12/12/2016"
+     wacn.date="01/04/2017"
      ms.author="dobett"/>
 
 # 教程：如何使用 .Net 处理 IoT 中心设备到云的消息
@@ -66,23 +66,23 @@ IoT 中心公开[事件中心][lnk-event-hubs]兼容的终结点来接收设备�
 
 1. 在 Visual Studio 的 **SimulatedDevice** 项目内，将以下方法添加到 **Program** 类。
 
-    ```
-    private static async void SendDeviceToCloudInteractiveMessagesAsync()
-    {
-      while (true)
-      {
-        var interactiveMessageString = "Alert message!";
-        var interactiveMessage = new Message(Encoding.ASCII.GetBytes(interactiveMessageString));
-        interactiveMessage.Properties["messageType"] = "interactive";
-        interactiveMessage.MessageId = Guid.NewGuid().ToString();
+    
+	    private static async void SendDeviceToCloudInteractiveMessagesAsync()
+	    {
+	      while (true)
+	      {
+	        var interactiveMessageString = "Alert message!";
+	        var interactiveMessage = new Message(Encoding.ASCII.GetBytes(interactiveMessageString));
+	        interactiveMessage.Properties["messageType"] = "interactive";
+	        interactiveMessage.MessageId = Guid.NewGuid().ToString();
 
-        await deviceClient.SendEventAsync(interactiveMessage);
-        Console.WriteLine("{0} > Sending interactive message: {1}", DateTime.Now, interactiveMessageString);
+	        await deviceClient.SendEventAsync(interactiveMessage);
+	        Console.WriteLine("{0} > Sending interactive message: {1}", DateTime.Now, interactiveMessageString);
 
-        Task.Delay(10000).Wait();
-      }
-    }
-    ```
+	        Task.Delay(10000).Wait();
+	      }
+	    }
+    
 
     此方法类似于 **SimulatedDevice** 项目中的 **SendDeviceToCloudMessagesAsync** 方法。唯一的区别在于现在设置 **MessageId** 系统属性和 **messageType** 用户属性。
     代码将向 **MessageId** 属性分配全局唯一标识符 (GUID)。服务总线可使用此标识符来删除收到的重复消息。本示例使用 **messageType** 属性来区分交互式消息和数据点消息。应用程序将在消息属性而不是在消息正文中传递此信息，因此事件处理器不需要反序列化消息来执行消息路由。
@@ -91,9 +91,9 @@ IoT 中心公开[事件中心][lnk-event-hubs]兼容的终结点来接收设备�
 
 2. 将以下方法添加到 **Main** 方法的 `Console.ReadLine()` 行的前面：
 
-    ````
-    SendDeviceToCloudInteractiveMessagesAsync();
-    ````
+    `
+	    SendDeviceToCloudInteractiveMessagesAsync();
+    `
 
     > [AZURE.NOTE] 为简单起见，本教程不实现任何重试策略。在生产代码中，应按 MSDN 文章 [Transient Fault Handling]（暂时性故障处理）中所述实施指数退让等重试策略。
 
@@ -107,7 +107,7 @@ IoT 中心公开[事件中心][lnk-event-hubs]兼容的终结点来接收设备�
 
 事件处理器使用事件中心消息偏移作为块 ID。借助此机制，事件处理器可在向存储空间提交新块之前执行重复数据删除检查，处理提交块和检查点之间可能发生的崩溃。
 
-> [AZURE.NOTE] 本教程使用单个 Azure 存储帐户写入从 IoT 中心检索的所有消息。若要确定解决方案中是否需使用多个 Azure 存储帐户，请参阅 [Azure 存储可缩放性指导原则]。
+> [AZURE.NOTE] 本教程使用单个存储帐户来写入从 IoT 中心检索的所有消息。若要确定解决方案中是否需使用多个 Azure 存储帐户，请参阅 [Azure 存储可缩放性指导原则]。
 
 应用程序利用服务总线重复数据删除功能，在处理交互式消息时避免重复项。模拟的设备向每个交互式消息标记唯一的 **MessageId**。借助这些 ID，服务总线可确保在指定的重复数据删除时间范围内，仅向接收方发送一条带相同 **MessageId** 的消息。此重复数据删除功能和服务总线队列所提供的每一消息完成语义，使其能够很容易地实现可靠的交互消息处理。
 
@@ -118,7 +118,7 @@ IoT 中心公开[事件中心][lnk-event-hubs]兼容的终结点来接收设备�
 ### 预配 Azure 存储帐户和服务总线队列
 若要使用 [EventProcessorHost] 类，必须具有 Azure 存储帐户以使该类能记录检查点信息。可使用现有的存储帐户，或按照[关于 About Azure 存储]中的说明来创建新帐户。请记下存储帐户连接字符串。
 
-> [AZURE.NOTE] 复制并粘贴 Azure 存储帐户连接字符串时，切勿包含空格。
+> [AZURE.NOTE] 复制和粘贴存储帐户连接字符串时，请务必不要包含空格。
 
 你还需要服务总线队列来可靠处理交互式消息。可在 1 小时的重复数据删除时间范围内，以编程方式创建队列，如[如何使用服务总线队列][Service Bus queue]中所述。还可按以下步骤使用 [Azure 经典管理门户][lnk-classic-portal]：
 
@@ -150,150 +150,150 @@ IoT 中心公开[事件中心][lnk-event-hubs]兼容的终结点来接收设备�
 
 6. 在 StoreEventProcessor.cs 文件的顶部添加以下语句：
 
-    ```
-    using System.IO;
-    using System.Diagnostics;
-    using System.Security.Cryptography;
-    using Microsoft.ServiceBus.Messaging;
-    using Microsoft.WindowsAzure.Storage;
-    using Microsoft.WindowsAzure.Storage.Blob;
-    ```
+    
+	    using System.IO;
+	    using System.Diagnostics;
+	    using System.Security.Cryptography;
+	    using Microsoft.ServiceBus.Messaging;
+	    using Microsoft.WindowsAzure.Storage;
+	    using Microsoft.WindowsAzure.Storage.Blob;
+    
 
 7. 用以下代码替换该类的正文：
 
-    ```
-    class StoreEventProcessor : IEventProcessor
-    {
-      private const int MAX_BLOCK_SIZE = 4 * 1024 * 1024;
-      public static string StorageConnectionString;
-      public static string ServiceBusConnectionString;
+    
+	    class StoreEventProcessor : IEventProcessor
+	    {
+	      private const int MAX_BLOCK_SIZE = 4 * 1024 * 1024;
+	      public static string StorageConnectionString;
+	      public static string ServiceBusConnectionString;
 
-      private CloudBlobClient blobClient;
-      private CloudBlobContainer blobContainer;
-      private QueueClient queueClient;
+	      private CloudBlobClient blobClient;
+	      private CloudBlobContainer blobContainer;
+	      private QueueClient queueClient;
 
-      private long currentBlockInitOffset;
-      private MemoryStream toAppend = new MemoryStream(MAX_BLOCK_SIZE);
+	      private long currentBlockInitOffset;
+	      private MemoryStream toAppend = new MemoryStream(MAX_BLOCK_SIZE);
 
-      private Stopwatch stopwatch;
-      private TimeSpan MAX_CHECKPOINT_TIME = TimeSpan.FromHours(1);
+	      private Stopwatch stopwatch;
+	      private TimeSpan MAX_CHECKPOINT_TIME = TimeSpan.FromHours(1);
 
-      public StoreEventProcessor()
-      {
-        var storageAccount = CloudStorageAccount.Parse(StorageConnectionString);
-        blobClient = storageAccount.CreateCloudBlobClient();
-        blobContainer = blobClient.GetContainerReference("d2ctutorial");
-        blobContainer.CreateIfNotExists();
-        queueClient = QueueClient.CreateFromConnectionString(ServiceBusConnectionString);
-      }
+	      public StoreEventProcessor()
+	      {
+	        var storageAccount = CloudStorageAccount.Parse(StorageConnectionString);
+	        blobClient = storageAccount.CreateCloudBlobClient();
+	        blobContainer = blobClient.GetContainerReference("d2ctutorial");
+	        blobContainer.CreateIfNotExists();
+	        queueClient = QueueClient.CreateFromConnectionString(ServiceBusConnectionString);
+	      }
 
-      Task IEventProcessor.CloseAsync(PartitionContext context, CloseReason reason)
-      {
-        Console.WriteLine("Processor Shutting Down. Partition '{0}', Reason: '{1}'.", context.Lease.PartitionId, reason);
-        return Task.FromResult<object>(null);
-      }
+	      Task IEventProcessor.CloseAsync(PartitionContext context, CloseReason reason)
+	      {
+	        Console.WriteLine("Processor Shutting Down. Partition '{0}', Reason: '{1}'.", context.Lease.PartitionId, reason);
+	        return Task.FromResult<object>(null);
+	      }
 
-      Task IEventProcessor.OpenAsync(PartitionContext context)
-      {
-        Console.WriteLine("StoreEventProcessor initialized.  Partition: '{0}', Offset: '{1}'", context.Lease.PartitionId, context.Lease.Offset);
+	      Task IEventProcessor.OpenAsync(PartitionContext context)
+	      {
+	        Console.WriteLine("StoreEventProcessor initialized.  Partition: '{0}', Offset: '{1}'", context.Lease.PartitionId, context.Lease.Offset);
 
-        if (!long.TryParse(context.Lease.Offset, out currentBlockInitOffset))
-        {
-          currentBlockInitOffset = 0;
-        }
-        stopwatch = new Stopwatch();
-        stopwatch.Start();
+	        if (!long.TryParse(context.Lease.Offset, out currentBlockInitOffset))
+	        {
+	          currentBlockInitOffset = 0;
+	        }
+	        stopwatch = new Stopwatch();
+	        stopwatch.Start();
 
-        return Task.FromResult<object>(null);
-      }
+	        return Task.FromResult<object>(null);
+	      }
 
-      async Task IEventProcessor.ProcessEventsAsync(PartitionContext context, IEnumerable<EventData> messages)
-      {
-        foreach (EventData eventData in messages)
-        {
-          byte[] data = eventData.GetBytes();
+	      async Task IEventProcessor.ProcessEventsAsync(PartitionContext context, IEnumerable<EventData> messages)
+	      {
+	        foreach (EventData eventData in messages)
+	        {
+	          byte[] data = eventData.GetBytes();
 
-          if (eventData.Properties.ContainsKey("messageType") && (string) eventData.Properties["messageType"] == "interactive")
-          {
-            var messageId = (string) eventData.SystemProperties["message-id"];
+	          if (eventData.Properties.ContainsKey("messageType") && (string) eventData.Properties["messageType"] == "interactive")
+	          {
+	            var messageId = (string) eventData.SystemProperties["message-id"];
 
-            var queueMessage = new BrokeredMessage(new MemoryStream(data));
-            queueMessage.MessageId = messageId;
-            queueMessage.Properties["messageType"] = "interactive";
-            await queueClient.SendAsync(queueMessage);
+	            var queueMessage = new BrokeredMessage(new MemoryStream(data));
+	            queueMessage.MessageId = messageId;
+	            queueMessage.Properties["messageType"] = "interactive";
+	            await queueClient.SendAsync(queueMessage);
 
-            WriteHighlightedMessage(string.Format("Received interactive message: {0}", messageId));
-            continue;
-          }
+	            WriteHighlightedMessage(string.Format("Received interactive message: {0}", messageId));
+	            continue;
+	          }
 
-          if (toAppend.Length + data.Length > MAX_BLOCK_SIZE || stopwatch.Elapsed > MAX_CHECKPOINT_TIME)
-          {
-            await AppendAndCheckpoint(context);
-          }
-          await toAppend.WriteAsync(data, 0, data.Length);
+	          if (toAppend.Length + data.Length > MAX_BLOCK_SIZE || stopwatch.Elapsed > MAX_CHECKPOINT_TIME)
+	          {
+	            await AppendAndCheckpoint(context);
+	          }
+	          await toAppend.WriteAsync(data, 0, data.Length);
 
-          Console.WriteLine(string.Format("Message received.  Partition: '{0}', Data: '{1}'",
-            context.Lease.PartitionId, Encoding.UTF8.GetString(data)));
-        }
-      }
+	          Console.WriteLine(string.Format("Message received.  Partition: '{0}', Data: '{1}'",
+	            context.Lease.PartitionId, Encoding.UTF8.GetString(data)));
+	        }
+	      }
 
-      private async Task AppendAndCheckpoint(PartitionContext context)
-      {
-        var blockIdString = String.Format("startSeq:{0}", currentBlockInitOffset.ToString("0000000000000000000000000"));
-        var blockId = Convert.ToBase64String(ASCIIEncoding.ASCII.GetBytes(blockIdString));
-        toAppend.Seek(0, SeekOrigin.Begin);
-        byte[] md5 = MD5.Create().ComputeHash(toAppend);
-        toAppend.Seek(0, SeekOrigin.Begin);
+	      private async Task AppendAndCheckpoint(PartitionContext context)
+	      {
+	        var blockIdString = String.Format("startSeq:{0}", currentBlockInitOffset.ToString("0000000000000000000000000"));
+	        var blockId = Convert.ToBase64String(ASCIIEncoding.ASCII.GetBytes(blockIdString));
+	        toAppend.Seek(0, SeekOrigin.Begin);
+	        byte[] md5 = MD5.Create().ComputeHash(toAppend);
+	        toAppend.Seek(0, SeekOrigin.Begin);
 
-        var blobName = String.Format("iothubd2c_{0}", context.Lease.PartitionId);
-        var currentBlob = blobContainer.GetBlockBlobReference(blobName);
+	        var blobName = String.Format("iothubd2c_{0}", context.Lease.PartitionId);
+	        var currentBlob = blobContainer.GetBlockBlobReference(blobName);
 
-        if (await currentBlob.ExistsAsync())
-        {
-          await currentBlob.PutBlockAsync(blockId, toAppend, Convert.ToBase64String(md5));
-          var blockList = await currentBlob.DownloadBlockListAsync();
-          var newBlockList = new List<string>(blockList.Select(b => b.Name));
+	        if (await currentBlob.ExistsAsync())
+	        {
+	          await currentBlob.PutBlockAsync(blockId, toAppend, Convert.ToBase64String(md5));
+	          var blockList = await currentBlob.DownloadBlockListAsync();
+	          var newBlockList = new List<string>(blockList.Select(b => b.Name));
 
-          if (newBlockList.Count() > 0 && newBlockList.Last() != blockId)
-          {
-            newBlockList.Add(blockId);
-            WriteHighlightedMessage(String.Format("Appending block id: {0} to blob: {1}", blockIdString, currentBlob.Name));
-          }
-          else
-          {
-            WriteHighlightedMessage(String.Format("Overwriting block id: {0}", blockIdString));
-          }
-          await currentBlob.PutBlockListAsync(newBlockList);
-        }
-        else
-        {
-          await currentBlob.PutBlockAsync(blockId, toAppend, Convert.ToBase64String(md5));
-          var newBlockList = new List<string>();
-          newBlockList.Add(blockId);
-          await currentBlob.PutBlockListAsync(newBlockList);
+	          if (newBlockList.Count() > 0 && newBlockList.Last() != blockId)
+	          {
+	            newBlockList.Add(blockId);
+	            WriteHighlightedMessage(String.Format("Appending block id: {0} to blob: {1}", blockIdString, currentBlob.Name));
+	          }
+	          else
+	          {
+	            WriteHighlightedMessage(String.Format("Overwriting block id: {0}", blockIdString));
+	          }
+	          await currentBlob.PutBlockListAsync(newBlockList);
+	        }
+	        else
+	        {
+	          await currentBlob.PutBlockAsync(blockId, toAppend, Convert.ToBase64String(md5));
+	          var newBlockList = new List<string>();
+	          newBlockList.Add(blockId);
+	          await currentBlob.PutBlockListAsync(newBlockList);
 
-          WriteHighlightedMessage(String.Format("Created new blob", currentBlob.Name));
-        }
+	          WriteHighlightedMessage(String.Format("Created new blob", currentBlob.Name));
+	        }
 
-        toAppend.Dispose();
-        toAppend = new MemoryStream(MAX_BLOCK_SIZE);
+	        toAppend.Dispose();
+	        toAppend = new MemoryStream(MAX_BLOCK_SIZE);
 
-        // checkpoint.
-        await context.CheckpointAsync();
-        WriteHighlightedMessage(String.Format("Checkpointed partition: {0}", context.Lease.PartitionId));
+	        // checkpoint.
+	        await context.CheckpointAsync();
+	        WriteHighlightedMessage(String.Format("Checkpointed partition: {0}", context.Lease.PartitionId));
 
-        currentBlockInitOffset = long.Parse(context.Lease.Offset);
-        stopwatch.Restart();
-      }
+	        currentBlockInitOffset = long.Parse(context.Lease.Offset);
+	        stopwatch.Restart();
+	      }
 
-      private void WriteHighlightedMessage(string message)
-      {
-        Console.ForegroundColor = ConsoleColor.Yellow;
-        Console.WriteLine(message);
-        Console.ResetColor();
-      }
-    }
-    ```
+	      private void WriteHighlightedMessage(string message)
+	      {
+	        Console.ForegroundColor = ConsoleColor.Yellow;
+	        Console.WriteLine(message);
+	        Console.ResetColor();
+	      }
+	    }
+    
 
     **EventProcessorHost** 类调用此类以处理从 IoT 中心收到的设备到云消息。此类中的代码实现逻辑，以在 Blob 容器中可靠地存储消息，并将交互式消息转送到服务总线队列。
 
@@ -303,34 +303,34 @@ IoT 中心公开[事件中心][lnk-event-hubs]兼容的终结点来接收设备�
 
     **AppendAndCheckpoint** 方法先为要附加的块生成 blockId。Azure 存储要求所有块 ID 的长度均相同，以便此方法用前置零填补偏移 - `currentBlockInitOffset.ToString("0000000000000000000000000")`。如果具有此 ID 的块已在 Blob 中，此方法将使用缓冲区的当前内容将它覆盖。
 
-    > [AZURE.NOTE] 为了简化代码，本教程在每个分区使用单个 blob 文件来存储消息。实际上，会在某段时间后或在文件达到特定大小后创建其他文件，从而实现文件滚动。请记住，Azure 块 blob 最多可容纳 195 GB 的数据。
+    > [AZURE.NOTE] 为了简化代码，本教程使用了每个分区的单个 Blob 文件来存储消息。实际上，会在某段时间后或在文件达到特定大小后创建其他文件，从而实现文件滚动。请记住，Azure 块 blob 最多可容纳 195 GB 的数据。
 
 8. 在 **Program** 类的顶部添加以下 **using** 语句：
 
-    ```
-    using Microsoft.ServiceBus.Messaging;
-    ```
+    
+	    using Microsoft.ServiceBus.Messaging;
+    
 
 9. 如下所示修改 **Program** 类中的 **Main** 方法。将 **{iot hub connection string}** 替换为 [IoT 中心入门]教程中提供的 **iothubowner** 连接字符串。将存储连接字符串替换为在本部分开始时记录的连接字符串。将带“发送”权限的服务总线连接字符串替换为在本部分开始时记录的 **d2ctutorial** 队列：
 
-    ```
-    static void Main(string[] args)
-    {
-      string iotHubConnectionString = "{iot hub connection string}";
-      string iotHubD2cEndpoint = "messages/events";
-      StoreEventProcessor.StorageConnectionString = "{storage connection string}";
-      StoreEventProcessor.ServiceBusConnectionString = "{service bus send connection string}";
+    
+	    static void Main(string[] args)
+	    {
+	      string iotHubConnectionString = "{iot hub connection string}";
+	      string iotHubD2cEndpoint = "messages/events";
+	      StoreEventProcessor.StorageConnectionString = "{storage connection string}";
+	      StoreEventProcessor.ServiceBusConnectionString = "{service bus send connection string}";
 
-      string eventProcessorHostName = Guid.NewGuid().ToString();
-      EventProcessorHost eventProcessorHost = new EventProcessorHost(eventProcessorHostName, iotHubD2cEndpoint, EventHubConsumerGroup.DefaultGroupName, iotHubConnectionString, StoreEventProcessor.StorageConnectionString, "messages-events");
-      Console.WriteLine("Registering EventProcessor...");
-      eventProcessorHost.RegisterEventProcessorAsync<StoreEventProcessor>().Wait();
+	      string eventProcessorHostName = Guid.NewGuid().ToString();
+	      EventProcessorHost eventProcessorHost = new EventProcessorHost(eventProcessorHostName, iotHubD2cEndpoint, EventHubConsumerGroup.DefaultGroupName, iotHubConnectionString, StoreEventProcessor.StorageConnectionString, "messages-events");
+	      Console.WriteLine("Registering EventProcessor...");
+	      eventProcessorHost.RegisterEventProcessorAsync<StoreEventProcessor>().Wait();
 
-      Console.WriteLine("Receiving. Press enter key to stop worker.");
-      Console.ReadLine();
-      eventProcessorHost.UnregisterEventProcessorAsync().Wait();
-    }
-    ```
+	      Console.WriteLine("Receiving. Press enter key to stop worker.");
+	      Console.ReadLine();
+	      eventProcessorHost.UnregisterEventProcessorAsync().Wait();
+	    }
+    
 
     > [AZURE.NOTE] 为简单起见，本教程使用 [EventProcessorHost] 类的单个实例。有关详细信息，请参阅 [Event Hubs Programming Guide]（事件中心编程指南）。
 
@@ -345,45 +345,45 @@ IoT 中心公开[事件中心][lnk-event-hubs]兼容的终结点来接收设备�
 
 4. 在 **Program.cs** 文件的顶部添加以下 **using** 语句：
 
-    ```
-    using System.IO;
-    using Microsoft.ServiceBus.Messaging;
-    ```
+    
+	    using System.IO;
+	    using Microsoft.ServiceBus.Messaging;
+    
 
 5. 最后，在 **Main** 方法中添加以下行。将连接字符串替换为 **d2ctutorial** 队列的“侦听”权限：
 
-    ```
-    Console.WriteLine("Process D2C Interactive Messages app\n");
+    
+	    Console.WriteLine("Process D2C Interactive Messages app\n");
 
-    string connectionString = "{service bus listen connection string}";
-    QueueClient Client = QueueClient.CreateFromConnectionString(connectionString);
+	    string connectionString = "{service bus listen connection string}";
+	    QueueClient Client = QueueClient.CreateFromConnectionString(connectionString);
 
-    OnMessageOptions options = new OnMessageOptions();
-    options.AutoComplete = false;
-    options.AutoRenewTimeout = TimeSpan.FromMinutes(1);
+	    OnMessageOptions options = new OnMessageOptions();
+	    options.AutoComplete = false;
+	    options.AutoRenewTimeout = TimeSpan.FromMinutes(1);
 
-    Client.OnMessage((message) =>
-    {
-      try
-      {
-        var bodyStream = message.GetBody<Stream>();
-        bodyStream.Position = 0;
-        var bodyAsString = new StreamReader(bodyStream, Encoding.ASCII).ReadToEnd();
+	    Client.OnMessage((message) =>
+	    {
+	      try
+	      {
+	        var bodyStream = message.GetBody<Stream>();
+	        bodyStream.Position = 0;
+	        var bodyAsString = new StreamReader(bodyStream, Encoding.ASCII).ReadToEnd();
 
-        Console.WriteLine("Received message: {0} messageId: {1}", bodyAsString, message.MessageId);
+	        Console.WriteLine("Received message: {0} messageId: {1}", bodyAsString, message.MessageId);
 
-        message.Complete();
-      }
-      catch (Exception)
-      {
-        message.Abandon();
-      }
-    }, options);
+	        message.Complete();
+	      }
+	      catch (Exception)
+	      {
+	        message.Abandon();
+	      }
+	    }, options);
 
-    Console.WriteLine("Receiving interactive messages from SB queue...");
-    Console.WriteLine("Press any key to exit.");
-    Console.ReadLine();
-    ```
+	    Console.WriteLine("Receiving interactive messages from SB queue...");
+	    Console.WriteLine("Press any key to exit.");
+	    Console.ReadLine();
+    
 
 ## 运行应用程序
 
@@ -453,4 +453,4 @@ IoT 中心公开[事件中心][lnk-event-hubs]兼容的终结点来接收设备�
 [lnk-c2d]: /documentation/articles/iot-hub-csharp-csharp-process-d2c/
 [lnk-suite]: /documentation/services/iot-suite/
 
-<!---HONumber=Mooncake_1205_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

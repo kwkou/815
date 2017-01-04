@@ -15,7 +15,7 @@
  ms.tgt_pltfrm="na"
  ms.workload="na"
  ms.date="09/30/2016"
- wacn.date="12/12/2016" 
+ wacn.date="01/04/2017" 
  ms.author="dobett"/>
 
 # Azure IoT 中心开发人员指南
@@ -25,9 +25,10 @@ Azure IoT 中心是一项完全托管的服务，有助于在数百万个 IoT �
 Azure IoT 中心提供：
 
 * 使用每个设备的安全凭据和访问控制来保护通信安全。
-* 多个设备到云和云到设备的超大规模通信选项。
-* 每个设备的状态信息和元数据的可查询存储。
+* 提供可靠的设备到云和云到设备的超大规模消息传送。
 * 通过最流行语言和平台的设备库来方便建立设备连接。
+
+## 后续步骤
 
 本 IoT 中心开发人员指南包括以下文章：
 
@@ -65,4 +66,4 @@ Azure IoT 中心提供：
 [lnk-c2d-guidance]: /documentation/articles/iot-hub-devguide-c2d-guidance/
 [lnk-d2c-guidance]: /documentation/articles/iot-hub-devguide-d2c-guidance/
 
-<!---HONumber=Mooncake_1205_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

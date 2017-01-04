@@ -16,7 +16,7 @@
 	ms.tgt_pltfrm="na"
 	ms.workload="data-services"
 	ms.date="09/26/2016"
-	wacn.date="11/14/2016"
+	wacn.date="01/04/2017"
 	ms.author="jeffstok" />  
 
 
@@ -68,6 +68,9 @@
     **注意**：Windows 可能会阻止下载的 zip 文件。请右键单击该文件并选择“属性”。如果显示消息“此文件来自其他计算机，可能被阻止以帮助保护该计算机。”，则勾选“取消阻止”框，并对该 zip 文件单击“应用”。
 
 2.	将 **telcodatagen.exe.config** 中的 Microsoft.ServiceBus.ConnectionString 和 EventHubName 值替换为事件中心的连接字符串和名称。
+
+    **注意**：从 Azure 门户复制的连接字符串会将连接名称放在末尾。请务必从 add key= field 中删除“;EntityPath=<value>”。
+
 3.	启动应用程序。用法如下：
 
    telcodatagen.exe [#NumCDRsPerHour] [SIM Card Fraud Probability] [#DurationHours]
@@ -266,4 +269,4 @@
 - [Azure 流分析查询语言参考](https://msdn.microsoft.com/zh-cn/library/azure/dn834998.aspx)
 - [Azure 流分析管理 REST API 参考](https://msdn.microsoft.com/zh-cn/library/azure/dn835031.aspx)
 
-<!---HONumber=Mooncake_1107_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

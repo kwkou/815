@@ -16,7 +16,7 @@
 	ms.tgt_pltfrm="na"
 	ms.workload="big-data"
 	ms.date="09/26/2016"
-	wacn.date="11/14/2016"
+	wacn.date="01/04/2017"
 	ms.author="jeffstok"/>  
 
 
@@ -273,7 +273,7 @@ Azure 流分析中的查询采用类似 SQL 的查询语言来表述，该语言
 
 **输出**：
 
-| 牌照 | 制造商 | 时间 |
+| LicensePlate | 制造商 | 时间 |
 | --- | --- | --- |
 | DXE 5291 | Honda | 2015-07-27T00:00:05.0000000Z |
 | QYF 9358 | Honda | 2015-07-27T00:12:02.0000000Z |
@@ -291,7 +291,7 @@ Azure 流分析中的查询采用类似 SQL 的查询语言来表述，该语言
 
 现在，我们来变一下这个问题，查找每 10 分钟时间间隔内特定制造商的第一辆车。
 
-| 牌照 | 制造商 | 时间 |
+| LicensePlate | 制造商 | 时间 |
 | --- | --- | --- |
 | DXE 5291 | Honda | 2015-07-27T00:00:05.0000000Z |
 | YZK 5704 | Ford | 2015-07-27T00:02:17.0000000Z |
@@ -315,7 +315,7 @@ Azure 流分析中的查询采用类似 SQL 的查询语言来表述，该语言
 
 **输入**：
 
-| 牌照 | 制造商 | 时间 |
+| LicensePlate | 制造商 | 时间 |
 | --- | --- | --- |
 | DXE 5291 | Honda | 2015-07-27T00:00:05.0000000Z |
 | YZK 5704 | Ford | 2015-07-27T00:02:17.0000000Z |
@@ -327,7 +327,7 @@ Azure 流分析中的查询采用类似 SQL 的查询语言来表述，该语言
 
 **输出**：
 
-| 牌照 | 制造商 | 时间 |
+| LicensePlate | 制造商 | 时间 |
 | --- | --- | --- |
 | VFE 1616 | Toyota | 2015-07-27T00:09:31.0000000Z |
 | MDR 6128 | BMW | 2015-07-27T00:13:45.0000000Z |
@@ -360,7 +360,7 @@ Azure 流分析中的查询采用类似 SQL 的查询语言来表述，该语言
 
 **输入**：
 
-| 制造商 | 牌照 | 时间 |
+| 制造商 | LicensePlate | 时间 |
 | --- | --- | --- |
 | Honda | ABC-123 | 2015-01-01T00:00:01.0000000Z |
 | Honda | AAA-999 | 2015-01-01T00:00:02.0000000Z |
@@ -386,8 +386,7 @@ Azure 流分析中的查询采用类似 SQL 的查询语言来表述，该语言
 	WHERE
 	    LAG(Make, 1) OVER (LIMIT DURATION(second, 90)) = Make
 
-**说明**：
-使用 LAG 来查看后退一个事件之后的输入流，然后即可获得“制造商”字段的值。然后，将其与当前事件的“制造商”字段进行比较，如果二者相同，则输出该事件，并使用 LAG 来获取有关前一辆车的数据。
+**说明**：使用 LAG 来查看后退一个事件之后的输入流，然后即可获得“制造商”字段的值。然后，将其与当前事件的“制造商”字段进行比较，如果二者相同，则输出该事件，并使用 LAG 来获取有关前一辆车的数据。
 
 ## 查询示例：检测事件间的持续时间
 **说明**：查找给定事件的持续时间。例如，给定 Web 点击流可以确定在某功能上所花费的时间。
@@ -408,13 +407,11 @@ Azure 流分析中的查询采用类似 SQL 的查询语言来表述，该语言
 
 **解决方案**
 
-````
-    SELECT
-    	[user], feature, DATEDIFF(second, LAST(Time) OVER (PARTITION BY [user], feature LIMIT DURATION(hour, 1) WHEN Event = 'start'), Time) as duration
-    FROM input TIMESTAMP BY Time
-    WHERE
-    	Event = 'end'
-````
+	    SELECT
+	    	[user], feature, DATEDIFF(second, LAST(Time) OVER (PARTITION BY [user], feature LIMIT DURATION(hour, 1) WHEN Event = 'start'), Time) as duration
+	    FROM input TIMESTAMP BY Time
+	    WHERE
+	    	Event = 'end'
 
 **解释**：使用 LAST 函数检索上次事件类型为“开始”时的时间值。请注意，LAST 函数使用 PARTITION BY [user] 指示结果应按唯一用户计算。该查询在“开始”和“停止”事件之间有 1 小时的最大时差阈值，但也可按需配置 (LIMIT DURATION(hour, 1)。
 
@@ -519,4 +516,4 @@ Azure 流分析中的查询采用类似 SQL 的查询语言来表述，该语言
 - [Azure 流分析管理 REST API 参考](https://msdn.microsoft.com/zh-cn/library/azure/dn835031.aspx)
  
 
-<!---HONumber=Mooncake_1107_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->
