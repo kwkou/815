@@ -286,8 +286,7 @@ HDInsight 使用 Azure Blob 存储进行数据存储。wasbs:// 是 Microsoft �
 1. 打开 Windows PowerShell ISE（在 Windows 8“开始”屏幕上，键入 **PowerShell_ISE**，然后单击“Windows PowerShell ISE”。有关详细信息，请参阅[在 Windows 8 和 Windows 上启动 Windows PowerShell][powershell-start]。
 2. 在底部窗格中，运行以下命令连接到 Azure 订阅：
 
-		Clear-AzureProfile
-		Import-AzurePublishSettingsFile -PublishSettingsFile path/to/<subscription name>-<date>-credentials.publishsettings
+		Add-AzureAccount -Environment AzureChinaCloud
 
 	系统将提示输入 Azure 帐户凭据。添加订阅连接的此方法会超时，12 小时后必须重新运行 cmdlet。
 

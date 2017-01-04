@@ -39,8 +39,7 @@
 
 	在运行 Azure PowerShell 脚本之前，请确保已使用以下 cmdlet 连接到 Azure 订阅：
 
-		Clear-AzureProfile
-		Import-AzurePublishSettingsFile -PublishSettingsFile path/to/<subscription name>-<date>-credentials.publishsettings
+		Add-AzureAccount -Environment AzureChinaCloud
 
 	如果有多个 Azure 订阅，请使用以下 cmdlet 设置当前订阅：
 

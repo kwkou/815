@@ -72,10 +72,7 @@ HDInsight 群集要求在 Azure 存储帐户中创建 Blob 容器：
 
 [AZURE.INCLUDE [automation-azurechinacloud-environment-parameter](../../includes/automation-azurechinacloud-environment-parameter.md)]
 
-	Get-AzurePublishSettingsFile -Environment AzureChinaCloud
-    Clear-AzureProfile
-
-	Import-AzurePublishSettingsFile -PublishSettingsFile path/to/<subscription name>-<date>-credentials.publishsettings
+	Add-AzureAccount -Environment AzureChinaCloud
 
 如果你有多个 Azure 订阅，可以调用 **Select-AzureSubscription**。
 

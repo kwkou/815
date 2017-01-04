@@ -39,10 +39,9 @@
 - 使用以下命令**连接到 Azure**：
 
 		azure config mode asm
-		azure account clear
-		azure account download -e AzureChinaCloud
+        azure login -e AzureChinaCloud
 
-		azure account import path/to/<subscription name>-<date>-credentials.publishsettings
+    > [AZURE.NOTE] 如果想用 Azure CLI 管理 Azure 中国的 HDInsight 群集，请安装 Azure CLI 0.9.x，而不是最新的 0.10.x.
 
 要获取帮助，请使用 **-h** 开关。例如：
 

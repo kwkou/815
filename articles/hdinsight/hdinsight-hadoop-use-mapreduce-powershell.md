@@ -64,8 +64,7 @@ Azure PowerShell 提供 *cmdlet*，可让你在 HDInsight 上远程运行 MapRed
         $sub = Get-AzureSubscription -ErrorAction SilentlyContinue
         if(-not($sub))
         {
-            Clear-AzureProfile
-            Import-AzurePublishSettingsFile -PublishSettingsFile path/to/<subscription name>-<date>-credentials.publishsettings
+            Add-AzureAccount -Environment AzureChinaCloud
         }
 
         #Specify the cluster name
@@ -132,8 +131,7 @@ MapReduce 作业已将操作结果存储到 Azure Blob 存储（位于指定为�
         $sub = Get-AzureSubscription -ErrorAction SilentlyContinue
         if(-not($sub))
         {
-            Clear-AzureProfile
-            Import-AzurePublishSettingsFile -PublishSettingsFile path/to/<subscription name>-<date>-credentials.publishsettings
+            Add-AzureAccount -Environment AzureChinaCloud
         }
 
         #Specify the cluster name

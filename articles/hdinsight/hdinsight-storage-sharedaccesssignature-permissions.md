@@ -152,8 +152,7 @@ HDInsight 使用 Azure 存储 Blob 存储数据。HDInsight 必须对用作群�
 
 2. 在提示符下，使用以下命令对 Azure 订阅进行身份验证：
 
-        Clear-AzureProfile
-		Import-AzurePublishSettingsFile -PublishSettingsFile path/to/<subscription name>-<date>-credentials.publishsettings
+        Add-AzureAccount -Environment AzureChinaCloud
 
     出现提示时，请使用 Azure 订阅帐户登录。
     

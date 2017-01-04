@@ -129,8 +129,7 @@ Blob 存储可用于结构化和非结构化数据。Blob 存储容器将数据�
 
 	# Connect to your Azure account and selec the current subscription
 	
-	Clear-AzureProfile
-	Import-AzurePublishSettingsFile -PublishSettingsFile path/to/<subscription name>-<date>-credentials.publishsettings
+	Add-AzureAccount -Environment AzureChinaCloud
 
 	Select-AzureSubscription $subscriptionName #only required if you have multiple subscriptions
 
