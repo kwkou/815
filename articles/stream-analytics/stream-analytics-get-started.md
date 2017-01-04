@@ -73,7 +73,7 @@
 
 3.	启动应用程序。用法如下：
 
-   telcodatagen.exe [#NumCDRsPerHour] [SIM Card Fraud Probability] [#DurationHours]
+        telcodatagen.exe [#NumCDRsPerHour] [SIM Card Fraud Probability] [#DurationHours]
 
 以下示例将生成 1000 个事件，在为时 2 小时的过程中，有 20% 的可能性会出现欺诈行为。
 
