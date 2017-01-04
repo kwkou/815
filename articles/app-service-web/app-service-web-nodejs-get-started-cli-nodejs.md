@@ -49,12 +49,12 @@
    
     出现提示时选择以下选项：
    
-    `? Would you like to create a new directory for your project?` **Yes**  
-    `? Enter directory name` **{appname}**  
-    `? Select a version to install:` **MVC**  
-    `? Select a view engine to use:` **Jade**  
-    `? Select a css preprocessor to use (Sass Requires Ruby):` **None**  
-    `? Select a database to use:` **None**  
+    `? Would you like to create a new directory for your project?` **Yes**<br/>
+    `? Enter directory name` **{appname}**<br/>
+    `? Select a version to install:` **MVC**<br/>
+    `? Select a view engine to use:` **Jade**<br/>
+    `? Select a css preprocessor to use (Sass Requires Ruby):` **None**<br/>
+    `? Select a database to use:` **None**<br/>
     `? Select a build tool to use:` **Grunt**
 3. 通过 `CD` 进入新应用的根目录，并将它启动以确保它在开发环境中运行：
    
