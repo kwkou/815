@@ -31,10 +31,10 @@
 
 4. 配置路由域。如果连接服务提供商管理第 3 层，则他们将为你的线路配置路由。如果连接服务提供商只提供第 2 层服务，则你必须根据[路由要求](/documentation/articles/expressroute-routing/)和[路由配置](/documentation/articles/expressroute-howto-routing-classic/)页中所述的指导原则来配置路由。
 
-	-  启用 Azure 专用对等互连 - 只有启用此对等互连才能连接到部署在虚拟网络中的 VM/云服务。
-	-  启用 Azure 公共对等互连 - 如果你想要连接到托管在公共 IP 地址上的 Azure 服务，则必须启用 Azure 公共对等互连。如果你已选择为 Azure 专用对等互连启用默认路由并想要访问 Azure 资源，则必须执行上述操作。
+-  启用 Azure 专用对等互连 - 只有启用此对等互连才能连接到部署在虚拟网络中的 VM/云服务。
+-  启用 Azure 公共对等互连 - 如果你想要连接到托管在公共 IP 地址上的 Azure 服务，则必须启用 Azure 公共对等互连。如果你已选择为 Azure 专用对等互连启用默认路由并想要访问 Azure 资源，则必须执行上述操作。
 
-	![](./media/expressroute-workflows/routing-workflow.png)
+    ![](./media/expressroute-workflows/routing-workflow.png)
 
 5. 将虚拟网络链接到 ExpressRoute 线路 - 可以将虚拟网络链接到 ExpressRoute 线路。请按照说明[将 VNet 链接](/documentation/articles/expressroute-howto-linkvnet-arm/)到你的线路。这些 VNet 可以位于 ExpressRoute 线路所在的同一 Azure 订阅中，也可以位于不同的订阅中。
 

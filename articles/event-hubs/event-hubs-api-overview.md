@@ -176,7 +176,7 @@
 - [什么是 Azure 事件中心？](/documentation/articles/event-hubs-what-is-event-hubs/)
 - [事件中心概述](/documentation/articles/event-hubs-overview/)
 - [事件中心编程指南](/documentation/articles/event-hubs-programming-guide/)
-- [事件中心代码示例](http://code.msdn.microsoft.com/site/search?query=event hub&f[0].Value=event hubs&f[0].Type=SearchText&ac=5)
+
 
 下面提供了 .NET API 参考：
 

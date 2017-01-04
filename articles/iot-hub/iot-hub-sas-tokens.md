@@ -253,7 +253,7 @@ IoT 中心还允许设备使用 X.509 证书向 IoT 中心进行身份验证。I
 
 [lnk-apis-sdks]: https://github.com/Azure/azure-iot-sdks/blob/master/readme.md
 [lnk-guidance-security]: /documentation/articles/iot-hub-guidance/#customauth
-[lnk-devguide-security]: /documentation/articles/iot-hub/iot-hub-devguide-security/
+[lnk-devguide-security]: /documentation/articles/iot-hub-devguide-security/
 [lnk-azure-protocol-gateway]: /documentation/articles/iot-hub-protocol-gateway/
 [lnk-device-explorer]: https://github.com/Azure/azure-iot-sdks/blob/master/tools/DeviceExplorer/doc/how_to_use_device_explorer.md
 

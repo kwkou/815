@@ -4,9 +4,9 @@
 
 若要使用 [EventProcessorHost][]，必须拥有 [Azure 存储帐户][]：
 
-1. 登录到 [Azure 经典管理门户][]，然后单击屏幕左上角的“新建”。
+1. 登录到 [Azure 门户预览][]，然后单击屏幕左上角的“新建”。
 
-2. 单击“数据 + 存储”，然后单击“存储帐户”。
+2. 单击“存储”，然后单击“存储帐户”。
 
     ![](./media/service-bus-event-hubs-getstarted-receive-ephcs/create-storage1.png)  
 
