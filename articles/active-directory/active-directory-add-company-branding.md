@@ -15,8 +15,8 @@
 	ms.devlang="na"
 	ms.topic="get-started-article"
 	ms.date="09/30/2016"
-	wacn.date="10/31/2016"
-	ms.author="curtand"/>  
+	ms.author="curtand"
+	wacn.date="01/03/2017"/>  
 
 
 # 在登录页和访问面板页中添加公司品牌
@@ -31,9 +31,9 @@
 本主题说明如何自定义登录页和访问面板页。
 
 > [AZURE.NOTE]
-><p>
-><p>- 只有在升级到 Azure Active Directory 高级或基本版（或者成为 Office 365 用户）后，才可以使用公司品牌这一功能。有关详细信息，请参阅 [Azure Active Directory 版本](/documentation/articles/active-directory-editions/)。
-><p>- 在中国，使用 Azure Active Directory 全球实例的客户可以使用 Azure Active Directory 高级和基本版。由中国的 21Vianet 运营的 Azure 服务目前不支持 Azure Active Directory高级和基本版。有关详细信息，请在 [Azure Active Directory 论坛](https://feedback.azure.com/forums/169401-azure-active-directory/)与我们联系。
+>
+- 只有在升级到 Azure Active Directory 高级或基本版（或者成为 Office 365 用户）后，才可以使用公司品牌这一功能。有关详细信息，请参阅 [Azure Active Directory 版本](/documentation/articles/active-directory-editions/)。
+- 在中国，使用 Azure Active Directory 全球实例的客户可以使用 Azure Active Directory 高级和基本版。由中国的 21Vianet 运营的 Azure 服务目前不支持 Azure Active Directory高级和基本版。有关详细信息，请在 [Azure Active Directory 论坛](https://feedback.azure.com/forums/169401-azure-active-directory/)与我们联系。
 
 
 
@@ -48,9 +48,9 @@
 当你使用非租户特定的 URL（例如 https://mail.office365.com）访问服务时，将出现没有品牌的登录页。在此情况下，输入你的用户 ID 或选择用户磁贴之后，品牌就会出现。
 
 > [AZURE.NOTE]
-><p>
-><p>- 在已配置品牌的 Azure 经典管理门户的“Active Directory”>“目录”>“域”部分中，域名必须显示为“活动”。
-><p>- 登录页品牌不会带到 Microsoft 的使用者登录页。如果你使用个人 Microsoft 帐户登录，则可以看到 Azure AD 呈现的经过品牌打造的用户磁贴列表，但你组织的品牌将不会应用于 Microsoft 帐户登录页。
+>
+- 在已配置品牌的 Azure 经典管理门户的“Active Directory”>“目录”>“域”部分中，域名必须显示为“活动”。
+- 登录页品牌不会带到 Microsoft 的使用者登录页。如果你使用个人 Microsoft 帐户登录，则可以看到 Azure AD 呈现的经过品牌打造的用户磁贴列表，但你组织的品牌将不会应用于 Microsoft 帐户登录页。
 
 
 如果你要在此页上显示你公司的品牌、颜色和其他可自定义元素，请参阅下图以了解两种体验之间的差异。
@@ -221,7 +221,8 @@ Azure AD 中的某些可自定义的元素具有多个用例。只需为每个�
 	------------- | ------------- | ------------- | -------------
 横幅徽标 | 横幅徽标将显示在登录页和“访问”面板上。 | <p>JPG 或 PNG</p><p>60x280 像素</p><p>10 KB</p> | <p>使用组织的完整徽标（包括象形图和标识）</p><p>使其高度保持在 30 像素以下，以免在移动设备上产生滚动条</p><p>使其大小保持在 4 KB 以下</p><p>使用透明的 PNG（不要想当然地认为登录页的背景始终为白色）</p>
 磁贴徽标 | （目前未在登录页中使用）在将来，可能会使用此文本替换不同体验位置的通用“工作或学校帐户”象形图。 | <p>JPG 或 PNG</p><p>120x120 像素</p><p>10 KB</p> | <p>使其保持简单（没有小文本），因为可能会将此图像的大小调整至 50%
-</p> |
+</p>  
+ |
 登录页用户名标签 | （目前未在登录页中使用）在将来，可能会使用此文本替换不同体验位置的通用“工作或学校帐户”字符串。你可以将它设置为“Contoso 帐户”或“Contoso ID”等内容。 | <p>Unicode 文本，最多 50 个字符</p><p>仅纯文本（没有链接或 HTML 标记）</p> | <p>使其保持简单扼要</p><p>询问用户他们通常如何引用你为他们提供的工作或学校帐户。</p>
 登录页文本 | 此“样本”文字显示在登录页表单下方，可用于告知其他说明或获取帮助和支持的位置。 | <p>Unicode 文本，最多 256 个字符</p><p>仅纯文本（没有链接或 HTML 标记）</p> | 使其保持在 250 个字符以下（大约 3 行文本）
 登录页插图 | 此插图是显示在登录页表单左侧登录页上的大图像。 | <p>JPG 或 PNG</p><p>1420x1200</p><p>500 KB</p> | <p>1420x1200 像素</p><p>重要说明：使其保持尽可能小，最好在 200 KB 以下。如果此图像太大，则在未缓存该图像时，登录页的性能会受到影响</p><p>通常会裁剪此图像，使之适应不同的屏幕比率。请将主要视觉元素保留在左上角（RTL 语言为右上角），因为当浏览器窗口缩小时，调整大小将从底部/右下角向顶部/左上角进行。</p>
@@ -240,4 +241,4 @@ Azure AD 中的某些可自定义的元素具有多个用例。只需为每个�
 [8]: ./media/active-directory-add-company-branding/APBranding.png
 [9]: ./media/active-directory-add-company-branding/hidekmsi.png
 
-<!---HONumber=Mooncake_1024_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

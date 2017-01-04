@@ -16,7 +16,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="11/16/2016"
-    wacn.date="12/27/2016"
+    wacn.date="01/04/2017"
     ms.author="anhoh" />  
 
 
@@ -127,20 +127,7 @@ DocumentDB 数据迁移工具是一个开源解决方案，它将数据从多个
 
 请注意 Address.AddressType 和 Address.Location.StateProvinceName 等别名。通过指定嵌套分隔符“.”，导入工具会在导入过程中创建 Address 和 Address.Location 子文档。下面是在 DocumentDB 中生成文档的示例︰
 
-*{
-  "id": "956",
-  "Name": "Finer Sales and Service",
-  "Address": {
-    "AddressType": "Main Office",
-    "AddressLine1": "#500-75 O'Connor Street",
-    "Location": {
-      "City": "Ottawa",
-      "StateProvinceName": "Ontario"
-    },
-    "PostalCode": "K4B 1S2",
-    "CountryRegionName": "Canada"
-  }
-}*
+*{ "id": "956", "Name": "Finer Sales and Service", "Address": { "AddressType": "Main Office", "AddressLine1": "#500-75 O'Connor Street", "Location": { "City": "Ottawa", "StateProvinceName": "Ontario" }, "PostalCode": "K4B 1S2", "CountryRegionName": "Canada" } }*
 
 下面是一些从 SQL Server 中导入的命令行示例︰
 
@@ -163,18 +150,7 @@ CSV 文件源导入程序选项可用于导入一个或多个 CSV 文件。添�
 
 请注意 DomainInfo.Domain\_Name 和 RedirectInfo.Redirecting 等别名。通过指定嵌套分隔符“.”，导入工具会在导入过程中创建 DomainInfo 和 RedirectInfo 子文档。下面是在 DocumentDB 中生成文档的示例︰
 
-*{
-  "DomainInfo": {
-    "Domain_Name": "ACUS.GOV",
-    "Domain_Name_Address": "http://www.ACUS.GOV"
-  },
-  "Federal Agency": "Administrative Conference of the United States",
-  "RedirectInfo": {
-    "Redirecting": "0",
-    "Redirect_Destination": ""
-  },
-  "id": "9cc565c5-ebcd-1c03-ebd3-cc3e2ecd814d"
-}*
+*{ "DomainInfo": { "Domain\_Name": "ACUS.GOV", "Domain\_Name\_Address": "http://www.ACUS.GOV" }, "Federal Agency": "Administrative Conference of the United States", "RedirectInfo": { "Redirecting": "0", "Redirect\_Destination": "" }, "id": "9cc565c5-ebcd-1c03-ebd3-cc3e2ecd814d" }*
 
 导入工具将尝试针对 CSV 文件中不带引号的值推断类型信息（带引号的值始终作为字符串处理）。按以下顺序标识类型︰数值、日期时间、布尔值。
 
@@ -352,11 +328,7 @@ DocumentDB 帐户连接字符串可从 Azure 门户预览的“密钥”边栏�
 
 - 字符串：保持字符串值
 - Epoch：保持 Epoch 数字值
-- 两者：保持字符串和 Epoch 数字值。此选项将创建一个子文档，例如：
-  "date_joined": {
-  "Value": "2013-10-21T21:17:25.2410000Z",
-  "Epoch": 1382390245
-  }
+- 两者：保持字符串和 Epoch 数字值。此选项将创建一个子文档，例如："date\_joined": { "Value": "2013-10-21T21:17:25.2410000Z", "Epoch": 1382390245 }
 
 DocumentDB 批量导入程序具有下列高级附加选项︰
 
@@ -409,11 +381,7 @@ DocumentDB 帐户连接字符串可从 Azure 门户预览的“密钥”边栏�
 
 - 字符串：保持字符串值
 - Epoch：保持 Epoch 数字值
-- 两者：保持字符串和 Epoch 数字值。此选项将创建一个子文档，例如：
-  "date_joined": {
-  "Value": "2013-10-21T21:17:25.2410000Z",
-  "Epoch": 1382390245
-  }
+- 两者：保持字符串和 Epoch 数字值。此选项将创建一个子文档，例如："date\_joined": { "Value": "2013-10-21T21:17:25.2410000Z", "Epoch": 1382390245 }
 
 DocumentDB - 顺序记录导入程序具有下列高级附加选项︰
 
@@ -493,7 +461,7 @@ DocumentDB - 顺序记录导入程序具有下列高级附加选项︰
 
 然后，选择是记录所有、关键还是无错误消息。最后，根据进度决定更新屏幕传输消息的频率。
 
-  ![Screenshot of Advanced configuration screen](./media/documentdb-import-data/AdvancedConfiguration.png)
+    ![Screenshot of Advanced configuration screen](./media/documentdb-import-data/AdvancedConfiguration.png)
 
 ## 确认导入设置并查看命令行
 1. 在指定源信息、目标信息以及高级配置后，查看迁移摘要，并可选择查看/复制生成的迁移命令（复制命令对于自动执行导入操作非常有用）︰
@@ -508,4 +476,4 @@ DocumentDB - 顺序记录导入程序具有下列高级附加选项︰
    
     ![DocumentDB JSON 导出选项的屏幕截图](./media/documentdb-import-data/newimport.png)  
 
-<!---HONumber=Mooncake_1219_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

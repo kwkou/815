@@ -15,8 +15,8 @@
 	ms.devlang="na"
 	ms.topic="get-started-article"
 	ms.date="09/22/2016"
-	wacn.date="12/16/2016"
-	ms.author="curtand"/>  
+	ms.author="curtand"
+	wacn.date="01/03/2017"/>  
 
 
 # 向 Azure Active Directory 添加新用户或具有 Microsoft 帐户的用户
@@ -89,4 +89,4 @@
 [1]: ./media/active-directory-create-users/RBACDirConfigTab.png
 [2]: ./media/active-directory-create-users/RBACGuestAccessControls.png
 
-<!---HONumber=Mooncake_1024_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

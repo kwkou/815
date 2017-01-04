@@ -16,7 +16,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="10/28/2016"
-    wacn.date="12/27/2016"
+    wacn.date="01/04/2017"
     ms.author="anhoh" />  
 
 
@@ -36,8 +36,7 @@ DocumentDB 管理的数据库实体被称为**资源**。每个资源都通过�
 
 >[AZURE.NOTE] DocumentDB 提供了高效的 TCP 协议，该协议在其通信模型中也是 RESTful，可通过 [.NET 客户端 SDK](https://msdn.microsoft.com/zh-cn/library/azure/dn781482.aspx) 获得。
 
-![DocumentDB 分层资源模型][1]
-**分层资源模型**
+![DocumentDB 分层资源模型][1]**分层资源模型**
 
 若要开始使用资源，必须使用 Azure 订阅[创建 DocumentDB 数据库帐户](/documentation/articles/documentdb-create-account/)。数据库帐户可以包含的一组**数据库**、每个数据库都包含多个**集合**，每个集合又包含**存储过程、触发器、UDF、文档**及相关**附件**（预览功能）。数据库也有关联的**用户**，每个用户都有一组**权限**，用于访问集合、存储过程、触发器、UDF、文档或附件。而数据库、用户、权限和集合就是系统定义的资源，其中已知的架构、文档和附件包含用户定义的任意 JSON 内容。
 
@@ -61,35 +60,17 @@ DocumentDB 管理的数据库实体被称为**资源**。每个资源都通过�
 
 <table>
     <tbody>
-        <tr>
-            <td valign="top"><p><strong>属性</strong></p></td>
-            <td valign="top"><p><strong>是用户设置的还是系统生成的？</strong></p></td>
-            <td valign="top"><p><strong>目的</strong></p></td>
+        <tr><td valign="top"><p><strong>属性</strong></p></td><td valign="top"><p><strong>是用户设置的还是系统生成的？</strong></p></td><td valign="top"><p><strong>目的</strong></p></td>
         </tr>
-        <tr>
-            <td valign="top"><p>_rid</p></td>
-	    <td valign="top"><p>系统生成的</p></td>
-	    <td valign="top"><p>系统生成的、资源的唯一分层标识符</p></td>
+        <tr><td valign="top"><p>_rid</p></td><td valign="top"><p>系统生成的</p></td><td valign="top"><p>系统生成的、资源的唯一分层标识符</p></td>
         </tr>
-        <tr>
-            <td valign="top"><p>_etag</p></td>
-	    <td valign="top"><p>系统生成的</p></td>
-	    <td valign="top"><p>乐观并发控制所需的资源的 ETag</p></td>
+        <tr><td valign="top"><p>_etag</p></td><td valign="top"><p>系统生成的</p></td><td valign="top"><p>乐观并发控制所需的资源的 ETag</p></td>
         </tr>
-        <tr>
-            <td valign="top"><p>_ts</p></td>
-	    <td valign="top"><p>系统生成的</p></td>
-	    <td valign="top"><p>资源上次更新的时间戳</p></td>
+        <tr><td valign="top"><p>_ts</p></td><td valign="top"><p>系统生成的</p></td><td valign="top"><p>资源上次更新的时间戳</p></td>
         </tr>
-        <tr>
-            <td valign="top"><p>_self</p></td>
-	    <td valign="top"><p>系统生成的</p></td>
-	    <td valign="top"><p>资源的唯一可寻址 URI</p></td>
+        <tr><td valign="top"><p>_self</p></td><td valign="top"><p>系统生成的</p></td><td valign="top"><p>资源的唯一可寻址 URI</p></td>
         </tr>
-        <tr>
-            <td valign="top"><p>id</p></td>
-	    <td valign="top"><p>系统生成的</p></td>
-	    <td valign="top"><p>资源的用户定义的唯一名称（具有相同分区键值）。如果用户未指定 ID，系统将生成 ID</p></td>
+        <tr><td valign="top"><p>id</p></td><td valign="top"><p>系统生成的</p></td><td valign="top"><p>资源的用户定义的唯一名称（具有相同分区键值）。如果用户未指定 ID，系统将生成 ID</p></td>
         </tr>
     </tbody>
 </table>
@@ -129,17 +110,11 @@ DocumentDB REST API 支持资源寻址和由 ID 和 \_rid 属性提出的请求�
 
 <table border="0" cellspacing="0" cellpadding="0">
     <tbody>
-        <tr>
-            <td valign="top"><p><strong>属性名称</strong></p></td>
-	    <td valign="top"><p><strong>说明</strong></p></td>
+        <tr><td valign="top"><p><strong>属性名称</strong></p></td><td valign="top"><p><strong>说明</strong></p></td>
         </tr>
-        <tr>
-            <td valign="top"><p>一致性策略</p></td>
-	    <td valign="top"><p>设置此属性来配置数据库帐户下的所有集合的默认一致性级别。你可以使用 [x-ms-consistency-level] 请求标头重写基于每个请求的一致性级别。<p><p>请注意，此属性仅适用于<i>用户定义的资源</i>。所有系统定义的资源都配置为支持具有高度一致性的读取/查询。</p></td>
+        <tr><td valign="top"><p>一致性策略</p></td><td valign="top"><p>设置此属性来配置数据库帐户下的所有集合的默认一致性级别。你可以使用 [x-ms-consistency-level] 请求标头重写基于每个请求的一致性级别。<p><p>请注意，此属性仅适用于<i>用户定义的资源</i>。所有系统定义的资源都配置为支持具有高度一致性的读取/查询。</p></td>
         </tr>
-        <tr>
-            <td valign="top"><p>授权密钥</p></td>
-	    <td valign="top"><p>这些是提供对所有数据库帐户下的资源的管理访问权限的主要、次要和只读密钥。</p></td>
+        <tr><td valign="top"><p>授权密钥</p></td><td valign="top"><p>这些是提供对所有数据库帐户下的资源的管理访问权限的主要、次要和只读密钥。</p></td>
         </tr>
     </tbody>
 </table>
@@ -149,8 +124,7 @@ DocumentDB REST API 支持资源寻址和由 ID 和 \_rid 属性提出的请求�
 ## 数据库 <a name="databases"></a>
 DocumentDB 数据库是一个或多个集合和用户的逻辑容器，如下面的关系图中所示。你可以使用 DocumentDB 数据库帐户创建任意数量的数据库（取决于产品/服务限制）。
 
-![数据库帐户和集合分层模型][2]
-**数据库是用户和集合的逻辑容器**
+![数据库帐户和集合分层模型][2]**数据库是用户和集合的逻辑容器**
 
 数据库几乎可以包含由集合分区的无限文档存储，从而形成其中所包含的文档的事务域。
 
@@ -453,4 +427,4 @@ DocumentDB 用户是指对权限进行分组的逻辑命名空间。DocumentDB �
 [2]: ./media/documentdb-resources/resources2.png
 [3]: ./media/documentdb-resources/resources3.png
 
-<!---HONumber=Mooncake_1219_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

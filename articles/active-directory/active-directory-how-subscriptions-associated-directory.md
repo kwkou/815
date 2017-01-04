@@ -16,7 +16,7 @@
     ms.topic="get-started-article"
     ms.date="11/01/2016"
     ms.author="curtand" 
-    wacn.date="12/09/2016"/>  
+    wacn.date="01/03/2017"/>  
 
 
 # Azure 订阅与 Azure Active Directory 的关联方式
@@ -32,7 +32,7 @@
 | 使用者创建其自己的 Microsoft 帐户（例如，在注册电子邮件时） |公司和组织创建并管理其自己的工作或学校帐户 |
 | 创建标识并将其存储在 Microsoft 帐户系统中 |使用 Azure 或其他服务（例如 Office 365）创建标识，并将其存储在分配给组织的 Azure AD 实例中 |
 
-尽管 Azure 最初只允许 Microsoft 帐户用户的访问，但现在它允许来自 *两个* 系统的用户的访问。这种变化是通过以下方式实现的：让所有 Azure 属性信任 Azure AD 执行身份验证，让 Azure AD 对组织用户进行身份验证，并创建一种联合关系，在这种关系中，Azure AD 将信任 Microsoft 帐户使用者标识系统对使用者用户执行身份验证。因此，Azure AD 能够对“来宾”Microsoft 帐户以及“本机”Azure AD 帐户进行身份验证。
+尽管 Azure 最初只允许 Microsoft 帐户用户的访问，但现在它允许来自*两个*系统的用户的访问。这种变化是通过以下方式实现的：让所有 Azure 属性信任 Azure AD 执行身份验证，让 Azure AD 对组织用户进行身份验证，并创建一种联合关系，在这种关系中，Azure AD 将信任 Microsoft 帐户使用者标识系统对使用者用户执行身份验证。因此，Azure AD 能够对“来宾”Microsoft 帐户以及“本机”Azure AD 帐户进行身份验证。
 
 例如，下面这个具有 Microsoft 帐户的用户想要登录 Azure 经典管理门户。
 
@@ -89,7 +89,7 @@ Azure AD 提供一组不同的管理角色，用于管理目录和标识相关�
 ![][3]  
 
 
-你有两个同名的用户帐户，一个在 Azure AD 中，而另一个在 Microsoft 使用者帐户系统中。应该选取与要使用的 Azure 订阅关联的帐户。如果出现错误，指明此用户不存在订阅，则可能是你选择了错误的选项。请注销后重试。有关可能会阻止登录的错误的详细信息，请参阅[Troubleshooting "We were unable to find any subscriptions associated with your account" errors](https://social.msdn.microsoft.com/Forums/zh-cn/f952f398-f700-41a1-8729-be49599dd7e2/troubleshooting-we-were-unable-to-find-any-subscriptions-associated-with-your-account-errors-in?forum=windowsazuremanagement)（排查“找不到任何与你的帐户关联的订阅”错误）。
+你有两个同名的用户帐户，一个在 Azure AD 中，而另一个在 Microsoft 使用者帐户系统中。应该选取与要使用的 Azure 订阅关联的帐户。如果出现错误，指明此用户不存在订阅，则可能是你选择了错误的选项。请注销后重试。有关可能会阻止登录的错误的详细信息，请参阅[Troubleshooting "We were unable to find any subscriptions associated with your account" errors](https://social.msdn.microsoft.com/Forums/en-US/f952f398-f700-41a1-8729-be49599dd7e2/troubleshooting-we-were-unable-to-find-any-subscriptions-associated-with-your-account-errors-in?forum=windowsazuremanagement)（排查“找不到任何与你的帐户关联的订阅”错误）。
 
 ## 在 Azure 中管理 Office 365 订阅的目录 <a name="manage-the-directory-for-your-office-365-subscription-in-azure"></a>
 假设你在注册 Azure 之前注册了 Office 365。假设你要在 Azure 经典管理门户中管理 Office 365 订阅的目录。可以通过两种方式进行管理，具体取决于你是否注册了 Azure。
@@ -125,4 +125,4 @@ Azure AD 提供一组不同的管理角色，用于管理目录和标识相关�
 [2]: ./media/active-directory-how-subscriptions-associated-directory/WAAD_OrgAccountSubscription.png
 [3]: ./media/active-directory-how-subscriptions-associated-directory/WAAD_SignInDisambiguation.PNG
 
-<!---HONumber=Mooncake_1128_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

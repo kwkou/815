@@ -16,8 +16,8 @@
 	ms.devlang="na"
 	ms.topic="get-started-article"
 	ms.date="10/10/2016"
-	wacn.date="11/30/2016"
-	ms.author="markvi"/>  
+	ms.author="markvi"
+	wacn.date="01/03/2017"/>  
 
 
 # 管理 Azure AD 目录
@@ -151,4 +151,4 @@ Azure AD 要求删除目录之前必须符合特定的条件。这可以降低�
 [1]: ./media/active-directory-administer/aad_portals.png
 [2]: ./media/active-directory-administer/azure_tenants.png
 
-<!---HONumber=Mooncake_1024_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

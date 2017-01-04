@@ -1,7 +1,7 @@
 <properties
     pageTitle="DocumentDB 中的一致性级别 | Azure"
-    description="DocumentDB 提供四种一致性级别来帮助你在最终一致性、可用性和延迟之间做出取舍。"
-    keywords="最终一致性, documentdb, azure, Azure"
+    description="DocumentDB 提供四种一致性级别来帮助在最终一致性、可用性和延迟之间做出取舍。"
+    keywords="最终一致性、documentdb、azure、Azure"
     services="documentdb"
     author="syamkmsft"
     manager="jhubbard"
@@ -16,19 +16,19 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="11/16/2016"
-    wacn.date="12/20/2016"
+    wacn.date="01/04/2017"
     ms.author="syamk" />
 
 # DocumentDB 中的一致性级别
-Azure DocumentDB 是从无到有开发出来的，其设计考虑到了全局分发。它旨在提供可预测的低延迟保证、99.99%的可用性 SLA，以及多个完善定义的宽松一致性模型。目前，DocumentDB 提供四种一致性级别：非常一致性、受限停滞一致性、会话一致性和最终级别。除了其他 NoSQL 数据库通常会提供的**强一致性**和**最终一致性**模型以外，DocumentDB 还提供两个经过谨慎编码和操作化的一致性模型 - **有限过期**模型和**会话**模型，并已根据真实用例验证它们的有效性。总而言之，这四个一致性级别可让你在一致性、可用性和延迟之间做出合理的取舍。
+Azure DocumentDB 是从无到有开发出来的，其设计考虑到了全局分发。它旨在提供可预测的低延迟保证、99.99% 的可用性 SLA，以及多个定义完好的宽松一致性模型。目前，DocumentDB 提供四种一致性级别：非常一致性、受限停滞一致性、会话一致性和最终级别。除了其他 NoSQL 数据库通常会提供的**强一致性**和**最终一致性**模型以外，DocumentDB 还提供两个经过谨慎编码和操作化的一致性模型 - **有限过期**模型和**会话**模型，并已根据真实用例验证它们的有效性。总而言之，这四个一致性级别可让你在一致性、可用性和延迟之间做出合理的取舍。
 
 ## 一致性的范围
-一致性的粒度归并为单个用户请求。写入请求可以对应于插入、替换、更新插入或删除事务（执行或不执行关联的前置或后置触发器）。或者，写入请求可以对应于针对某个分区中的多个文档运行的 JavaScript 存储过程的事务执行。与写入操作一样，读取/查询事务也归并为单个用户请求。用户可能需要在跨越多个分区的大型结果集中分页，但每个读取事务归并为单个页面，并从单个分区内部进行。
+一致性的粒度归并为单个用户请求。写入请求可对应于插入、替换、更新插入或删除事务（执行或不执行关联的前置或后置触发器）。或者，写入请求可对应于针对某个分区中的多个文档运行的 JavaScript 存储过程的事务执行。与写入操作一样，读取/查询事务也归并为单个用户请求。用户可能需要在跨越多个分区的大型结果集中分页，但每个读取事务归并为单个页面，并从单个分区内部进行。
 
 ## 一致性级别
-你可以配置数据库帐户的默认一致性级别，以应用于数据库帐户下的所有集合（跨所有数据库）。所有对用户定义的资源发出的读取和查询，默认都会使用数据库帐户上指定的默认一致性级别。不过，可以指定 [[x-ms-consistency-level]](https://msdn.microsoft.com/zh-cn/library/azure/mt632096.aspx) 请求标头，来放宽特定读取/查询请求的一致性级别。如下所述，DocumentDB 复制协议支持四种类型的一致性级别，这些级别可在特定的一致性保证与性能之间提供明确的折衷。
+可以配置数据库帐户的默认一致性级别，以应用于数据库帐户下的所有集合（跨所有数据库）。所有针对用户定义的资源发出的读取和查询，默认都会使用数据库帐户上指定的默认一致性级别。不过，可以指定 [[x-ms-consistency-level]](https://msdn.microsoft.com/zh-cn/library/azure/mt632096.aspx) 请求标头，来放宽特定读取/查询请求的一致性级别。如下所述，DocumentDB 复制协议支持四种类型的一致性级别，这些级别可在特定的一致性保证与性能之间提供明确的折衷。
 
-![DocumentDB 提供多个妥善定义的（宽松）一致性模型供你选择][1]
+![DocumentDB 提供多个定义完好的（宽松）一致性模型以供选择][1]
 
 **非常一致性**：
 
@@ -39,12 +39,12 @@ Azure DocumentDB 是从无到有开发出来的，其设计考虑到了全局分
 
 **受限停滞一致性**：
 
-- 受限停滞一致性保证读取操作滞后于写入操作最多 *K* 个文档版本或前缀或 *t* 个时间间隔。
+- 受限停滞一致性保证读取操作滞后于写入操作最多 *K* 个文档版本或前缀或 *t* 时间间隔。
 - 因此，如果选择受限停滞，则可以通过两种方式配置“停滞”：
   - 读取操作比写入操作滞后的文档版本 *K* 数
   - 时间间隔 *t*
 - 受限停滞提供全局整体顺序，但在“停滞窗口”中除外。请注意，“停滞窗口”内部和外部的区域中提供单调读取保证。
-- 与会话或最终一致性相比，受限停滞一致性提供更强的一致性保证。对于全球分布式应用程序，如果你想要获得非常一致性，同时希望获得 99.99% 的可用性和低延迟，则我们建议你使用受限停滞。
+- 与会话或最终一致性相比，受限停滞一致性提供更强的一致性保证。对于全局分发式应用程序，如果想要获得非常一致性，同时希望获得 99.99% 的可用性和低延迟，则建议使用受限停滞。
 - 配置了受限停滞一致性的 DocumentDB 帐户可将任意数量的 Azure 区域与其 DocumentDB 帐户相关联。
 - 具有受限停滞一致性的读取操作的开销（从消耗的 RU 来讲）高于会话一致性和最终一致性，但与非常一致性相同。
 
@@ -67,11 +67,11 @@ Azure DocumentDB 是从无到有开发出来的，其设计考虑到了全局分
 ## 一致性保证
 下表列出了对应于四种一致性级别的不同一致性保证。
 
-| 保证 | 强 | 有限过期性 | 会话 | 最终 |
+| 保证 | 非常一致性 | 受限停滞一致性 | 会话一致性 | 最终一致性 |
 | --- | --- | --- | --- | --- |
 | **全局整体顺序** |是 |是，在“停滞窗口”外部 |否，部分“会话”顺序 |否 |
 | **一致前缀保证** |是 |是 |是 |是 |
-| **单调读取** |是 |是，在停滞窗口外部的区域之间以及区域内部，始终都可保证 |是，针对给定的会话 |否 |
+| **单调读取** |是 |是，在停滞窗口外部的区域之间以及区域内部始终单调读取 |是，针对给定的会话 |否 |
 | **单调写入** |是 |是 |是 |是 |
 | **读取自己的写入** |是 |是 |是（在写入区域中） |否 |
 
@@ -89,7 +89,7 @@ Azure DocumentDB 是从无到有开发出来的，其设计考虑到了全局分
 
 
 ## 查询的一致性级别
-默认情况下，对于用户定义的资源，查询的一致性级别与读取的一致性级别相同。默认情况下，每次在集合中插入、替换或删除文档时同步更新索引。这个行为让查询能够使用与文档读取相同的一致性级别。虽然 DocumentDB 针对写入进行了优化，且支持文档写入，以及同步索引维护和提供一致的查询服务，但你也可以配置某些集合，使其索引延迟更新。延迟索引编制可大大提高写入性能，非常适合工作负荷主要具有大量读取操作的批量引入方案。
+默认情况下，对于用户定义的资源，查询的一致性级别与读取的一致性级别相同。默认情况下，每次在集合中插入、替换或删除文档时同步更新索引。这个行为让查询能够使用与文档读取相同的一致性级别。虽然 DocumentDB 针对写入进行了优化，且支持文档写入，以及同步索引维护和提供一致的查询服务，但仍也可以配置某些集合，使其索引延迟更新。延迟索引编制可大大提高写入性能，非常适合工作负荷主要具有大量读取操作的批量引入方案。
 
 | 索引模式 | 读取 | 查询 |
 | --- | --- | --- |
@@ -100,19 +100,14 @@ Azure DocumentDB 是从无到有开发出来的，其设计考虑到了全局分
 与读取请求一样，可以指定 [x-ms-consistency-level](https://msdn.microsoft.com/zh-cn/library/azure/mt632096.aspx) 请求标头，来降低特定查询请求的一致性级别。
 
 ## 后续步骤
-如果你想详细了解一致性级别和平衡方案，建议参阅下列资源：
+如果想详细了解一致性级别和权衡方案，建议参阅下列资源：
 
--	Doug Terry。Replicated Data Consistency explained through baseball（借助棒球解释重复数据一致性）。
-[http://research.microsoft.com/pubs/157411/ConsistencyAndBaseballReport.pdf](http://research.microsoft.com/pubs/157411/ConsistencyAndBaseballReport.pdf)
--	Doug Terry。Session Guarantees for Weakly Consistent Replicated Data（弱一致性重复数据的会话保证）。
-[http://dl.acm.org/citation.cfm?id=383631](http://dl.acm.org/citation.cfm?id=383631)
--	Daniel Abadi。Consistency Tradeoffs in Modern Distributed Database Systems Design: CAP is only part of the story”（现代分布式数据库系统设计中的一致性平衡方案：CAP 只是冰山一角）。
-[http://computer.org/csdl/mags/co/2012/02/mco2012020037-abs.html](http://computer.org/csdl/mags/co/2012/02/mco2012020037-abs.html)
--	Peter Bailis、Shivaram Venkataraman、Michael J. Franklin、Joseph M. Hellerstein、Ion Stoica。Probabilistic Bounded Staleness (PBS) for Practical Partial Quorums（实用部分仲裁的概率性有限过期性 (PBS)）。
-[http://vldb.org/pvldb/vol5/p776\_peterbailis\_vldb2012.pdf](http://vldb.org/pvldb/vol5/p776_peterbailis_vldb2012.pdf)
--	Werner Vogels。Eventual Consistent - Revisited（最终一致 - 重新访问）。
-[http://allthingsdistributed.com/2008/12/eventually\_consistent.html](http://allthingsdistributed.com/2008/12/eventually_consistent.html)
+-	Doug Terry。Replicated Data Consistency explained through baseball（借助棒球解释重复数据一致性）。[http://research.microsoft.com/pubs/157411/ConsistencyAndBaseballReport.pdf](http://research.microsoft.com/pubs/157411/ConsistencyAndBaseballReport.pdf)
+-	Doug Terry。Session Guarantees for Weakly Consistent Replicated Data（弱一致性重复数据的会话保证）。[http://dl.acm.org/citation.cfm?id=383631](http://dl.acm.org/citation.cfm?id=383631)
+-	Daniel Abadi。Consistency Tradeoffs in Modern Distributed Database Systems Design: CAP is only part of the story”（现代分布式数据库系统设计中的一致性平衡方案：CAP 只是冰山一角）。[http://computer.org/csdl/mags/co/2012/02/mco2012020037-abs.html](http://computer.org/csdl/mags/co/2012/02/mco2012020037-abs.html)
+-	Peter Bailis、Shivaram Venkataraman、Michael J. Franklin、Joseph M. Hellerstein、Ion Stoica。Probabilistic Bounded Staleness (PBS) for Practical Partial Quorums（实用部分仲裁的概率性有限过期性 (PBS)）。[http://vldb.org/pvldb/vol5/p776\_peterbailis\_vldb2012.pdf](http://vldb.org/pvldb/vol5/p776_peterbailis_vldb2012.pdf)
+-	Werner Vogels。Eventual Consistent - Revisited（最终一致 - 重新访问）。[http://allthingsdistributed.com/2008/12/eventually\_consistent.html](http://allthingsdistributed.com/2008/12/eventually_consistent.html)
 
 [1]: ./media/documentdb-consistency-levels/consistency-tradeoffs.png
 
-<!---HONumber=Mooncake_1212_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

@@ -16,7 +16,7 @@
     ms.devlang="na"
     ms.topic="get-started-article"
     ms.date="10/31/2016"
-    wacn.date="12/21/2016"
+    wacn.date="01/04/2017"
     ms.author="jimpark; trinadhk" />
 
 # 什么是 Azure 备份？
@@ -107,10 +107,14 @@ Azure 备份可保护高级存储 VM。Azure 高级存储是基于固态硬盘 (
 | 功能 | Azure 备份代理 | System Center DPM | Azure 备份服务器 | Azure IaaS VM 备份 |
 | --- | --- | --- | --- | --- |
 | Azure 备份保管库 |![是][green] |![是][green] |![是][green] |![是][green] |
-| 磁盘存储 | |![是][green] |![是][green] | |
-| 表存储 | |![是][green] | | |
-| 压缩<br/>（在备份保管库中） |![是][green] |![是][green] |![是][green] | |
-| 增量备份 |![是][green] |![是][green] |![是][green] |![是][green] |
+| 磁盘存储 | |![是][green]  
+ |![是][green] | |
+| 表存储 | |![是][green]  
+ | | |
+| 压缩<br/>（在备份保管库中） |![是][green]  
+ |![是][green] |![是][green] | |
+| 增量备份 |![是][green] |![是][green] |![是][green] |![是][green]  
+ |
 | 磁盘重复数据删除 | |![部分][yellow] |![部分][yellow] | |
 
 ![表键](./media/backup-introduction-to-azure-backup/table-key.png)
@@ -129,11 +133,14 @@ Azure 备份可保护高级存储 VM。Azure 高级存储是基于固态硬盘 (
 > [AZURE.NOTE]
 重复数据删除不一定适用于 Azure 中的所有备份组件。如果 System Center DPM 和备份服务器部署在 Azure 中，则附加到 VM 的存储磁盘无法进行重复数据删除。
 
-### “安全”
+### 安全
 | 功能 | Azure 备份代理 | System Center DPM | Azure 备份服务器 | Azure IaaS VM 备份 |
 | --- | --- | --- | --- | --- |
-| 网络安全性<br/>（到 Azure） |![是][green] |![是][green] |![是][green] |![部分][yellow] |
-| 数据安全性<br/>（Azure 中） |![是][green] |![是][green] |![是][green] |![部分][yellow] |
+| 网络安全性<br/>（到 Azure） |![是][green]  
+ |![是][green] |![是][green] |![部分][yellow]  
+ |
+| 数据安全性<br/>（Azure 中） |![是][green]  
+ |![是][green] |![是][green] |![部分][yellow] |
 
 ![表键](./media/backup-introduction-to-azure-backup/table-key.png)  
 
@@ -152,8 +159,12 @@ Azure 备份可保护高级存储 VM。Azure 高级存储是基于固态硬盘 (
 ### 网络
 | 功能 | Azure 备份代理 | System Center DPM | Azure 备份服务器 | Azure IaaS VM 备份 |
 | --- | --- | --- | --- | --- |
-| 网络压缩<br/>（到**备份服务器**） | |![是][green] |![是][green] | |
-| 网络压缩<br/>（到**备份保管库**） |![是][green] |![是][green] |![是][green] | |
+| 网络压缩<br/>（到**备份服务器**） | |![是][green]  
+ |![是][green]  
+ | |
+| 网络压缩<br/>（到**备份保管库**） |![是][green]  
+ |![是][green] |![是][green]  
+ | |
 | 网络协议<br/>（到**备份服务器**） | |TCP |TCP | |
 | 网络协议<br/>（到**备份保管库**） |HTTPS |HTTPS |HTTPS |HTTPS |
 
@@ -170,7 +181,7 @@ Azure 备份代理提供网络限制功能，可用于控制数据传输期间�
 ### 备份和保留
 | | Azure 备份代理 | System Center DPM | Azure 备份服务器 | Azure IaaS VM 备份 |
 | --- | --- | --- | --- | --- |
-| 备份频率<br/>（到备份保管库） |每天三次备份 |每天两次备份 |每天两次备份 |每天一次备份 |
+| 备份频率<br/>（到备份保管库） |每天三次备份 |每天备份两次 |每天备份两次 |每天一次备份 |
 | 备份频率<br/>（到磁盘） |不适用 |<li>SQL Server 每 15 分钟一次<li>其他工作负荷每小时一次 |<li>SQL Server 每 15 分钟一次<li>其他工作负荷每小时一次</p> |不适用 |
 | 保留期选项 |每日、每周、每月、每年 |每日、每周、每月、每年 |每日、每周、每月、每年 |每日、每周、每月、每年 |
 | 保留期 |最长 99 年 |最长 99 年 |最长 99 年 |最长 99 年 |
@@ -210,4 +221,4 @@ Azure 备份保护本地和云中的数据。Azure Site Recovery 可以协调虚
 [yellow]: ./media/backup-introduction-to-azure-backup/yellow.png
 [red]: ./media/backup-introduction-to-azure-backup/red.png
 
-<!---HONumber=Mooncake_1212_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

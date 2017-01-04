@@ -15,8 +15,8 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="09/01/2016"
-	wacn.date="10/26/2016"
-	ms.author="saurabhsensharma;markgal;jimpark;nkolli;trinadhk"/>  
+	ms.author="saurabhsensharma;markgal;jimpark;nkolli;trinadhk"
+   	wacn.date="01/04/2017"/>  
 
 
 
@@ -63,8 +63,8 @@ Azure PowerShell 1.0 已在 2015 年 10 月发布。此版本在 0.9.8 版本的
 
     > [AZURE.TIP] 许多 Azure 备份 cmdlet 要求使用恢复服务保管库对象作为输入。出于此原因，在变量中存储备份恢复服务保管库对象可提供方便。
 
-	PS C:\> $vault1 = Get-AzureRmRecoveryServicesVault -Name "testVault"
-	PS C:\> Set-AzureRmRecoveryServicesBackupProperties  -vault $vault1 -BackupStorageRedundancy GeoRedundant
+	    PS C:\> $vault1 = Get-AzureRmRecoveryServicesVault -Name "testVault"
+	    PS C:\> Set-AzureRmRecoveryServicesBackupProperties  -vault $vault1 -BackupStorageRedundancy GeoRedundant
 
 ## 在订阅中查看保管库
 使用 **Get-AzureRmRecoveryServicesVault** 查看当前订阅中所有保管库的列表。可以使用此命令来查看是否创建了新的保管库，或者查看订阅中的可用保管库。
@@ -104,16 +104,7 @@ Azure PowerShell 1.0 已在 2015 年 10 月发布。此版本在 0.9.8 版本的
 
 | 选项 | 详细信息 | 默认 |
 | ---- | ----- | ----- |
-| /q | 静默安装 | - | 
-| /p:"location" | Azure 备份代理的安装文件夹路径。| C:\\Program Files\\Microsoft Azure Recovery Services Agent | 
-| /s:"location" | Azure 备份代理的快取文件夹路径。| C:\\Program Files\\Microsoft Azure Recovery Services Agent\\Scratch | 
-| /m | 选择启用 Microsoft Update | - | 
-| /nu | 安装完成后不要检查更新 | - | 
-| /d | 卸载 Azure 恢复服务代理 | - | 
-| /ph | 代理主机地址 | - | 
-| /po | 代理主机端口号 | - | 
-| /pu | 代理主机用户名 | - | 
-| /pw | 代理密码 | - |
+| /q | 静默安装 | - | | /p:"location" | Azure 备份代理的安装文件夹路径。| C:\\Program Files\\Azure Recovery Services Agent | | /s:"location" | Azure 备份代理的缓存文件夹路径。| C:\\Program Files\\Azure Recovery Services Agent\\Scratch | | /m | 选择启用 Microsoft 更新 | - | | /nu | 安装完成后不要检查更新 | - | | /d | 卸载 Azure 恢复服务代理 | - | | /ph | 代理主机地址 | - | | /po | 代理主机端口号 | - | | /pu | 代理主机用户名 | - | | /pw | 代理密码 | - |
 
 
 ## 将 Windows Server 或 Windows 客户端计算机注册到恢复服务保管库
@@ -182,7 +173,7 @@ Azure PowerShell 1.0 已在 2015 年 10 月发布。此版本在 0.9.8 版本的
 
 备份计划需要与策略相关联，这可以使用 [Set-OBSchedule](https://technet.microsoft.com/zh-cn/library/hh770407) cmdlet 来实现。
 
-	PS C:> Set-OBSchedule -Policy $newpolicy -Schedule $sched
+	PS C:\> Set-OBSchedule -Policy $newpolicy -Schedule $sched
 	BackupSchedule : 4:00 PM Saturday, Sunday, Every 1 week(s) DsList : PolicyName : RetentionPolicy : State : New PolicyState : Valid
 
 ### 配置保留策略
@@ -224,7 +215,7 @@ Azure PowerShell 1.0 已在 2015 年 10 月发布。此版本在 0.9.8 版本的
 
 在以下示例中，我们要备份卷 C: 和 D:，并排除 Windows 文件夹和任何临时文件夹中的操作系统二进制文件。为此，我们将使用 [New-OBFileSpec](https://technet.microsoft.com/zh-cn/library/hh770408) cmdlet 创建两个文件规范 - 一个用于包含，一个用于排除。创建文件规范后，使用 [Add-OBFileSpec](https://technet.microsoft.com/zh-cn/library/hh770424) cmdlet 将它们与策略相关联。
 
-	PS C:\> $inclusions = New-OBFileSpec -FileSpec @("C:\", "D:\")
+	PS C:\> $inclusions = New-OBFileSpec -FileSpec @("C:", "D:")
 
 	PS C:\> $exclusions = New-OBFileSpec -FileSpec @("C:\windows", "C:\temp") -Exclude
 
@@ -314,12 +305,12 @@ Azure PowerShell 1.0 已在 2015 年 10 月发布。此版本在 0.9.8 版本的
 ### 应用策略
 现在已完成策略对象，并且具有关联的备份计划、保留策略及文件包含/排除列表。现在可以提交此策略以供 Azure 备份使用。应用新建策略之前，请使用 [Remove-OBPolicy](https://technet.microsoft.com/zh-cn/library/hh770415) cmdlet 确保没有任何现有备份策略与服务器相关联。删除策略时，系统会提示你确认。若要跳过确认，请在 cmdlet 中请使用 ```-Confirm:$false``` 标志。
 
-	PS C:> Get-OBPolicy | Remove-OBPolicy
+	PS C:\> Get-OBPolicy | Remove-OBPolicy
 	Azure Backup Are you sure you want to remove this backup policy? This will delete all the backed up data. [Y] Yes [A] Yes to All [N] No [L] No to All [S] Suspend [?] Help (default is "Y"):
 
 使用 [Set-OBPolicy](https://technet.microsoft.com/zh-cn/library/hh770421) cmdlet 可以提交策略对象。系统将提示你确认。若要跳过确认，请在 cmdlet 中请使用 ```-Confirm:$false``` 标志。
 
-	PS C:> Set-OBPolicy -Policy $newpolicy
+	PS C:\> Set-OBPolicy -Policy $newpolicy
 	Azure Backup Do you want to save this backup policy ? [Y] Yes [A] Yes to All [N] No [L] No to All [S] Suspend [?] Help (default is "Y"):
 	BackupSchedule : 4:00 PM Saturday, Sunday, Every 1 week(s)
 	DsList : {DataSource
@@ -362,18 +353,18 @@ Azure PowerShell 1.0 已在 2015 年 10 月发布。此版本在 0.9.8 版本的
 
 可以使用 [Get-OBPolicy](https://technet.microsoft.com/zh-cn/library/hh770406) cmdlet 来查看现有备份策略的详细信息。可以使用 [Get-OBSchedule](https://technet.microsoft.com/zh-cn/library/hh770423) cmdlet（适用于备份计划）和 [Get-OBRetentionPolicy](https://technet.microsoft.com/zh-cn/library/hh770427) cmdlet（适用于保留策略）向下钻取
 
-	PS C:> Get-OBPolicy | Get-OBSchedule
+	PS C:\> Get-OBPolicy | Get-OBSchedule
 	SchedulePolicyName : 71944081-9950-4f7e-841d-32f0a0a1359a
 	ScheduleRunDays : {Saturday, Sunday}
 	ScheduleRunTimes : {16:00:00}
 	State : Existing
 
-	PS C:> Get-OBPolicy | Get-OBRetentionPolicy
+	PS C:\> Get-OBPolicy | Get-OBRetentionPolicy
 	RetentionDays : 7
 	RetentionPolicyName : ca3574ec-8331-46fd-a605-c01743a5265e
 	State : Existing
 
-	PS C:> Get-OBPolicy | Get-OBFileSpec
+	PS C:\> Get-OBPolicy | Get-OBFileSpec
 	FileName : *
 	FilePath : \?\Volume{b835d359-a1dd-11e2-be72-2016d8d89f0f}\
 	FileSpec : D:\
@@ -401,7 +392,7 @@ Azure PowerShell 1.0 已在 2015 年 10 月发布。此版本在 0.9.8 版本的
 ### 执行即席备份
 设置备份策略之后，将会根据计划进行备份。你也可以使用 [Start-OBBackup](https://technet.microsoft.com/zh-cn/library/hh770426) cmdlet 来触发即席备份：
 
-	PS C:> Get-OBPolicy | Start-OBBackup
+	PS C:\> Get-OBPolicy | Start-OBBackup
 	Taking snapshot of volumes...
 	Preparing storage...
 	Estimating size of backup items...
@@ -422,8 +413,8 @@ Azure PowerShell 1.0 已在 2015 年 10 月发布。此版本在 0.9.8 版本的
 ### 选取源卷
 若要从 Azure 备份还原某个项，需要先识别该项的源。由于我们要在 Windows Server 或 Windows 客户端的上下文中执行命令，因此已识别了计算机。识别源的下一步是识别它所在的卷。运行 [Get-OBRecoverableSource](https://technet.microsoft.com/zh-cn/library/hh770410) cmdlet 可以检索正在从此计算机备份的卷或源的列表。此命令将返回从此服务器/客户端备份的所有源的数组。
 
-	PS C:> $source = Get-OBRecoverableSource
-	PS C:> $source
+	PS C:\> $source = Get-OBRecoverableSource
+	PS C:\> $source
 	FriendlyName : C:\
 	RecoverySourceName : C:\
 	ServerName : myserver.microsoft.com
@@ -435,7 +426,7 @@ Azure PowerShell 1.0 已在 2015 年 10 月发布。此版本在 0.9.8 版本的
 ### 选择要还原的备份点
 结合适当的参数运行 [Get-OBRecoverableItem](https://technet.microsoft.com/zh-cn/library/hh770399.aspx) cmdlet 可以检索备份点列表。在本示例中，我们将选择源卷 *D:* 的最新备份点，并使用它来恢复特定的文件。
 
-	PS C:> $rps = Get-OBRecoverableItem -Source $source[1]
+	PS C:\> $rps = Get-OBRecoverableItem -Source $source[1]
 	IsDir : False
 	ItemNameFriendly : D:\
 	ItemNameGuid : \?\Volume{b835d359-a1dd-11e2-be72-2016d8d89f0f}\
@@ -465,8 +456,8 @@ Azure PowerShell 1.0 已在 2015 年 10 月发布。此版本在 0.9.8 版本的
 
 在本示例中，如果我们要还原文件 *finances.xls*，可以使用对象 ```$filesFolders[1]``` 来引用该文件。
 
-	PS C:> $filesFolders = Get-OBRecoverableItem $rps[0]
-	PS C:> $filesFolders
+	PS C:\> $filesFolders = Get-OBRecoverableItem $rps[0]
+	PS C:\> $filesFolders
 	IsDir : True
 	ItemNameFriendly : D:\MyData\
 	ItemNameGuid : \?\Volume{b835d359-a1dd-11e2-be72-2016d8d89f0f}\MyData\
@@ -478,8 +469,8 @@ Azure PowerShell 1.0 已在 2015 年 10 月发布。此版本在 0.9.8 版本的
 	ItemSize :
 	ItemLastModifiedTime : 15-Jun-15 8:49:29 AM
 
-	PS C:> $filesFolders = Get-OBRecoverableItem $filesFolders[0]
-	PS C:> $filesFolders
+	PS C:\> $filesFolders = Get-OBRecoverableItem $filesFolders[0]
+	PS C:\> $filesFolders
 	IsDir : False
 	ItemNameFriendly : D:\MyData\screenshot.oxps
 	ItemNameGuid : \?\Volume{b835d359-a1dd-11e2-be72-2016d8d89f0f}\MyData\screenshot.oxps
@@ -571,4 +562,4 @@ Azure PowerShell 1.0 已在 2015 年 10 月发布。此版本在 0.9.8 版本的
 - [Azure 备份简介](/documentation/articles/backup-introduction-to-azure-backup/)
 - [备份 Windows Server](/documentation/articles/backup-configure-vault/)
 
-<!---HONumber=Mooncake_1017_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

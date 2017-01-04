@@ -16,7 +16,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="storage-backup-recovery"
     ms.date="11/01/2016"
-    wacn.date="12/21/2016"
+    wacn.date="01/04/2017"
     ms.author="markgal; trinadhk" />
 
 # 使用 PowerShell 部署和管理资源管理器部署型 VM 的备份
@@ -27,24 +27,23 @@
 
 本文说明如何使用 Azure PowerShell cmdlet 从恢复服务保管库备份和恢复 Azure 虚拟机 (VM)。恢复服务保管库是一种 Azure资源管理器资源，用于保护 Azure 备份和 Azure Site Recovery 服务中的数据与资产。可以使用恢复服务保管库来保护 Azure Service Manager 部署型 VM 以及 Azure资源管理器部署型 VM。
 
->[AZURE.NOTE] Azure 有两种用于创建和使用资源的部署模型：[资源管理器部署模型和经典部署模型](/documentation/articles/resource-manager-deployment-model/)。本文的内容与使用资源管理器模型创建的 VM 有关。
+>[AZURE.NOTE] Azure 有两种用于创建和使用资源的部署模型：[资源管理器部署模型和经典部署模型](/documentation/articles/resource-manager-deployment-model/)。本文针对使用资源管理器模型创建的 VM。
 
-本文将逐步指导你使用 PowerShell 来保护 VM，以及从恢复点还原数据。
+本文将逐步指导用户使用 PowerShell 来保护 VM，以及从恢复点还原数据。
 
 ## 概念
-如果你不熟悉 Azure 备份服务，请查看[什么是 Azure 备份？](/documentation/articles/backup-introduction-to-azure-backup/)，即可大致了解该服务。 在开始之前，请确保你已掌握与系统必备组件相关的基础知识（这些必备组件是使用 Azure 备份所必需的），并了解当前 VM 备份解决方案的限制。
+如果不熟悉 Azure 备份服务，可查看[什么是 Azure 备份？](/documentation/articles/backup-introduction-to-azure-backup/)大致了解该服务。 开始之前，请务必掌握与系统必备组件相关的基础知识（这些必备组件是使用 Azure 备份所必需的），并了解当前 VM 备份解决方案的限制。
 
-为了提高 PowerShell 使用效率，必须了解对象的层次结构以及从何处开始。
+为提高 PowerShell 使用效率，必须了解对象的层次结构以及着手点。
 
 ![恢复服务对象层次结构](./media/backup-azure-vms-arm-automation/recovery-services-object-hierarchy.png)
 
-若要查看 AzureRmRecoveryServicesBackup PowerShell cmdlet 参考，请参阅 Azure 库中的 [Azure Backup - Recovery Services Cmdlets](https://msdn.microsoft.com/zh-cn/library/mt723320.aspx)（Azure 备份 - 恢复服务 Cmdlet）。
-若要查看 AzureRmRecoveryServicesVault PowerShell cmdlet 参考，请参阅 [Azure Recovery Service Cmdlets](https://msdn.microsoft.com/zh-cn/library/mt643905.aspx)（Azure 恢复服务 Cmdlet）。
+若要查看 AzureRmRecoveryServicesBackup PowerShell cmdlet 参考，请参阅 Azure 库中的 [Azure 备份 - 恢复服务 Cmdlet](https://msdn.microsoft.com/zh-cn/library/mt723320.aspx)。若要查看 AzureRmRecoveryServicesVault PowerShell cmdlet 参考，请参阅 [Azure 恢复服务 Cmdlet](https://msdn.microsoft.com/zh-cn/library/mt643905.aspx)。
 
 ## 设置和注册
 开始时，请执行以下操作：
 
-1. [下载最新版本的 PowerShell](https://github.com/Azure/azure-powershell/releases)（所需的最低版本：1.4.0）
+1. [下载最新版 PowerShell](https://github.com/Azure/azure-powershell/releases)（所需的最低版本：1.4.0）
 2. 键入以下命令查找可用的 Azure 备份 PowerShell cmdlet：
 
 
@@ -92,13 +91,13 @@
 
 ## <a name="create-a-recovery-services-vault"></a>创建恢复服务保管库
 
-以下步骤引导你创建恢复服务保管库。恢复服务保管库不同于备份保管库。
+以下步骤将引导用户创建恢复服务保管库。恢复服务保管库不同于备份保管库。
 
-1. 如果你是首次使用 Azure 备份，则必须使用 **[Register-AzureRMResourceProvider](https://msdn.microsoft.com/zh-cn/library/mt679020.aspx)** cmdlet 注册用于订阅的 Azure 恢复服务提供程序。
+1. 如果是首次使用 Azure 备份，则必须使用 **[Register-AzureRMResourceProvider](https://msdn.microsoft.com/zh-cn/library/mt679020.aspx)** cmdlet 为订阅注册 Azure 恢复服务提供程序。
 
 		PS C:\> Register-AzureRmResourceProvider -ProviderNamespace "Microsoft.RecoveryServices"
 
-2. 恢复服务保管库是一种资源管理器资源，因此需要将它放在资源组中。你可以使用现有的资源组，也可以使用 **[New-AzureRmResourceGroup](https://msdn.microsoft.com/zh-cn/library/mt678985.aspx)** cmdlet 创建新的资源组。创建新的资源组时，请指定资源组的名称和位置。
+2. 恢复服务保管库是一种资源管理器资源，因此需要将它放在资源组中。可使用现有资源组，也可以使用 **[New-AzureRmResourceGroup](https://msdn.microsoft.com/zh-cn/library/mt678985.aspx)** cmdlet 创建新的资源组。创建新的资源组时，请指定资源组的名称和位置。
 
 		PS C:\> New-AzureRmResourceGroup -Name "test-rg" -Location "China North"
 
@@ -111,7 +110,7 @@
 		PS C:\> $vault1 = Get-AzureRmRecoveryServicesVault -Name "testVault"
 		PS C:\> Set-AzureRmRecoveryServicesBackupProperties  -Vault $vault1 -BackupStorageRedundancy GeoRedundant
 
-	> [AZURE.TIP] 许多 Azure 备份 cmdlet 要求使用恢复服务保管库对象作为输入。出于此原因，在变量中存储备份恢复服务保管库对象可提供方便。
+	> [AZURE.TIP] 许多 Azure 备份 cmdlet 要求使用恢复服务保管库对象作为输入。因此，在变量中存储备份恢复服务保管库对象可提供方便。
 
 ## 在订阅中查看保管库
 使用 **[Get-AzureRmRecoveryServicesVault](https://msdn.microsoft.com/zh-cn/library/mt643907.aspx)** 查看当前订阅中所有保管库的列表。可以使用此命令来查看是否创建了新的保管库，或者查看订阅中的可用保管库。
@@ -129,14 +128,14 @@
 
 
 ## <a name="backup-azure-vms"></a>备份 Azure VM
-现在，你已经创建了恢复服务保管库，因此可以使用它来保护虚拟机。但是，在应用保护之前，必须设置保管库上下文，并且需验证保护策略。保管库上下文定义了保管库中受保护的数据类型。保护策略是指对备份作业的运行时间以及每个备份快照的保留时长进行计划。
+既已经创建恢复服务保管库，可以使用它来保护虚拟机。但是，在应用保护之前，必须设置保管库上下文，并且需验证保护策略。保管库上下文定义了保管库中受保护的数据类型。保护策略是指对备份作业的运行时间以及每个备份快照的保留时长进行计划。
 
 在 VM 上启用保护之前，必须设置保管库上下文。该上下文将应用到所有后续 cmdlet。
 
 	PS C:\> Get-AzureRmRecoveryServicesVault -Name testvault | Set-AzureRmRecoveryServicesVaultContext
 
 ### 创建保护策略
-当你创建新保管库时，它附带了一个默认策略。此策略会在每天的指定时间触发备份作业。根据默认策略，备份快照将保留 30 天。可以使用默认策略快速保护你的 VM，以后再使用不同的详细信息编辑该策略。
+创建的新保管库附带默认策略。此策略会在每天的指定时间触发备份作业。根据默认策略，备份快照将保留 30 天。可以使用默认策略快速保护 VM，以后再为该策略编辑其他详细信息。
 
 若要查看保管库中的可用策略列表，请使用 **[Get-AzureRmRecoveryServicesBackupProtectionPolicy](https://msdn.microsoft.com/zh-cn/library/mt723300.aspx)**：
 
@@ -217,7 +216,7 @@
 
 ## <a name="restore-an-azure-vm"></a> 还原 Azure VM
 
-如果使用 PowerShell，则当你从恢复点创建磁盘和配置信息时，还原操作即完成。还原操作不会创建虚拟机。我们提供了从磁盘创建虚拟机的说明。但是，若要完全还原 VM，需要完成以下步骤：
+如果使用 PowerShell，从恢复点创建磁盘和配置信息即可完成还原操作。还原操作不会创建虚拟机。我们提供了从磁盘创建虚拟机的说明。但是，若要完全还原 VM，需要完成以下步骤：
 
 - 选择 VM
 - 选择恢复点
@@ -237,7 +236,7 @@
 	PS C:\> $backupitem = Get-AzureRmRecoveryServicesBackupItem -Container $namedContainer  -WorkloadType "AzureVM"
 
 ### 选择恢复点
-使用 **[Get-AzureRmRecoveryServicesBackupRecoveryPoint](https://msdn.microsoft.com/zh-cn/library/mt723308.aspx)** cmdlet 列出备份项的所有恢复点。然后选择要还原的恢复点。如果你不确定要使用哪个恢复点，则最好是选择列表中 RecoveryPointType = AppConsistent 的最新恢复点。
+使用 **[Get-AzureRmRecoveryServicesBackupRecoveryPoint](https://msdn.microsoft.com/zh-cn/library/mt723308.aspx)** cmdlet 列出备份项的所有恢复点。然后选择要还原的恢复点。如果不确定要使用的恢复点，最好选择列表中最新的 RecoveryPointType = AppConsistent 恢复点。
 
 在以下脚本中，变量 **$rp** 是一个数组，其中包含所选备份项的恢复点。该数组按时间进行反向排序，以最新的恢复点作为索引 0。使用标准 PowerShell 数组索引选取恢复点。例如：$rp[0] 将选择最新的恢复点。
 
@@ -297,25 +296,25 @@
 
 3. 使用 JSON 配置文件来创建 VM 配置。
 
-		PS C:\> $vm = New-AzureRmVMConfig -VMSize $obj.HardwareProfile.VirtualMachineSize -VMName "testrestore"
+	PS C:\> $vm = New-AzureRmVMConfig -VMSize $obj.HardwareProfile.VirtualMachineSize -VMName "testrestore"
 
 4. 附加 OS 磁盘和数据磁盘。
    
       对于非加密型 VM，
 	    
-		PS C:\> Set-AzureRmVMOSDisk -VM $vm -Name "osdisk" -VhdUri $obj.StorageProfile.OSDisk.VirtualHardDisk.Uri -CreateOption "Attach"
-		PS C:\> $vm.StorageProfile.OsDisk.OsType = $obj.StorageProfile.OSDisk.OperatingSystemType foreach($dd in $obj.StorageProfile.DataDisks)
-		{
-			$vm = Add-AzureRmVMDataDisk -VM $vm -Name "datadisk1" -VhdUri $dd.VirtualHardDisk.Uri -DiskSizeInGB 127 -Lun $dd.Lun -CreateOption Attach
-		}
+	       PS C:\> Set-AzureRmVMOSDisk -VM $vm -Name "osdisk" -VhdUri $obj.StorageProfile.OSDisk.VirtualHardDisk.Uri -CreateOption "Attach"
+	       PS C:\> $vm.StorageProfile.OsDisk.OsType = $obj.StorageProfile.OSDisk.OperatingSystemType foreach($dd in $obj.StorageProfile.DataDisks)
+	       {
+	       $vm = Add-AzureRmVMDataDisk -VM $vm -Name "datadisk1" -VhdUri $dd.VirtualHardDisk.Uri -DiskSizeInGB 127 -Lun $dd.Lun -CreateOption Attach
+	       }
 
       对于加密型 VM，需在附加磁盘前指定[密钥保管库信息](https://msdn.microsoft.com/zh-cn/library/dn868052.aspx)。
       
-		PS C:\> Set-AzureRmVMOSDisk -VM $vm -Name "osdisk" -VhdUri $obj.StorageProfile.OSDisk.VirtualHardDisk.Uri -DiskEncryptionKeyUrl "https://ContosoKeyVault.vault.chinacloudapi.cn:443/secrets/ContosoSecret007" -DiskEncryptionKeyVaultId "/subscriptions/abcdedf007-4xyz-1a2b-0000-12a2b345675c/resourceGroups/ContosoRG108/providers/Microsoft.KeyVault/vaults/ContosoKeyVault" -KeyEncryptionKeyUrl "https://ContosoKeyVault.vault.chinacloudapi.cn:443/keys/ContosoKey007" -KeyEncryptionKeyVaultId "subscriptions/abcdedf007-4xyz-1a2b-0000-12a2b345675c/resourceGroups/ContosoRG108/providers/Microsoft.KeyVault/vaults/ContosoKeyVault" -CreateOption "Attach" -Windows
-		PS C:\> $vm.StorageProfile.OsDisk.OsType = $obj.StorageProfile.OSDisk.OperatingSystemType foreach($dd in $obj.StorageProfile.DataDisks)
-		{
-			$vm = Add-AzureRmVMDataDisk -VM $vm -Name "datadisk1" -VhdUri $dd.VirtualHardDisk.Uri -DiskSizeInGB 127 -Lun $dd.Lun -CreateOption Attach
-		}
+	      PS C:\> Set-AzureRmVMOSDisk -VM $vm -Name "osdisk" -VhdUri $obj.StorageProfile.OSDisk.VirtualHardDisk.Uri -DiskEncryptionKeyUrl "https://ContosoKeyVault.vault.chinacloudapi.cn:443/secrets/ContosoSecret007" -DiskEncryptionKeyVaultId "/subscriptions/abcdedf007-4xyz-1a2b-0000-12a2b345675c/resourceGroups/ContosoRG108/providers/Microsoft.KeyVault/vaults/ContosoKeyVault" -KeyEncryptionKeyUrl "https://ContosoKeyVault.vault.chinacloudapi.cn:443/keys/ContosoKey007" -KeyEncryptionKeyVaultId "subscriptions/abcdedf007-4xyz-1a2b-0000-12a2b345675c/resourceGroups/ContosoRG108/providers/Microsoft.KeyVault/vaults/ContosoKeyVault" -CreateOption "Attach" -Windows
+	      PS C:\> $vm.StorageProfile.OsDisk.OsType = $obj.StorageProfile.OSDisk.OperatingSystemType foreach($dd in $obj.StorageProfile.DataDisks)
+	       {
+	       $vm = Add-AzureRmVMDataDisk -VM $vm -Name "datadisk1" -VhdUri $dd.VirtualHardDisk.Uri -DiskSizeInGB 127 -Lun $dd.Lun -CreateOption Attach
+	       }
 
 5. 设置网络设置。
 
@@ -331,6 +330,6 @@
 	    PS C:\> New-AzureRmVM -ResourceGroupName "test" -Location "ChinaNorth" -VM $vm
 
 ## 后续步骤
-如果你更愿意使用 PowerShell 来处理 Azure 资源，则请查看有关如何保护 Windows Server 的 PowerShell 文章：[为 Windows Server 部署和管理备份](/documentation/articles/backup-client-automation/)。此外还有一篇有关如何管理 DPM 备份的 PowerShell 文章：[为 DPM 部署和管理备份](/documentation/articles/backup-dpm-automation/)。这两篇文章都为资源管理器部署和经典部署提供了一个版本。
+如果愿意使用 PowerShell 来处理 Azure 资源，请参阅有关保护 Windows Server 的 PowerShell 文章：[为 Windows Server 部署和管理备份](/documentation/articles/backup-client-automation/)。此外还有一篇有关如何管理 DPM 备份的 PowerShell 文章：[为 DPM 部署和管理备份](/documentation/articles/backup-dpm-automation/)。这两篇文章都为资源管理器部署和经典部署提供了一个版本。
 
-<!---HONumber=Mooncake_1212_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

@@ -16,7 +16,7 @@
     ms.topic="article"
     ms.date="11/01/2016"
     ms.author="robmcm" 
-    wacn.date="12/09/2016"/>
+    wacn.date="01/03/2017"/>
 
 # 如何使用 Eclipse 在 Azure Access Control 服务上对 Web 用户进行身份验证
 本指南将说明如何在 Azure Toolkit for Eclipse 中使用 Azure 访问控制服务 (ACS)。有关 ACS 的详细信息，请参阅[后续步骤](#next_steps)部分。
@@ -230,7 +230,7 @@ Windows Live ID 现已作为你的 ACS 命名空间的 IP 启用。紧接着，�
     ![用于生产部署的 Azure ACS 筛选器设置][add_acs_filter_lib_production]
 13. 单击“完成”关闭“编辑库”对话框。
 14. 单击“确定”关闭“MyACSHelloWorld 的属性”对话框。
-15. 在 Eclipse 中，单击“发布到 Azure 云”按钮。像在[在 Eclipse 中创建 Azure 的 Hello World 应用程序](/documentation/articles/azure-toolkit-for-eclipse-creating-a-hello-world-application/)主题的**将应用程序部署到 Azure**部分中一样对提示进行响应。 
+15. 在 Eclipse 中，单击“发布到 Azure 云”按钮。像在[在 Eclipse 中创建 Azure 的 Hello World 应用程序](/documentation/articles/azure-toolkit-for-eclipse-creating-a-hello-world-application/)主题的**将应用程序部署到 Azure**部分中一样对提示进行响应。
 
 部署 Web 应用程序后，关闭任何打开的浏览器会话，运行你的 Web 应用程序，系统将提示你使用 Windows Live ID 凭据登录，然后将这些凭据发送到信赖方应用程序的返回 URL。
 
@@ -297,4 +297,4 @@ Windows Live ID 现已作为你的 ACS 命名空间的 IP 启用。紧接着，�
 [create_acs_hello_world]: ./media/active-directory-java-authenticate-users-access-control-eclipse/CreateACSHelloWorld.png
 [add_token_signing_cert]: ./media/active-directory-java-authenticate-users-access-control-eclipse/AddTokenSigningCertificate.png
 
-<!---HONumber=Mooncake_1128_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->

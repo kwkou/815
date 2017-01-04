@@ -5,7 +5,8 @@
 	documentationCenter="nodejs"
 	authors="brandwe"
 	manager="mbaldwin"
-	editor=""/>
+	editor=""/>  
+
 
 <tags
 	ms.service="active-directory"
@@ -14,8 +15,8 @@
 	ms.devlang="javascript"
 	ms.topic="article"
 	ms.date="09/16/2016"
-	wacn.date="10/17/2016"
-	ms.author="brandwe"/>  
+	ms.author="brandwe"
+	wacn.date="01/03/2017"/>  
 
 
 # 节点 WEB API 入门
@@ -182,19 +183,9 @@ Restify 提供强大的机制来使用 DTrace 跟踪 REST 调用。但是，许�
 `npm install passport-azure-ad`  
 
 
-	
-	passport-azure-ad@1.0.0 node\_modules/passport-azure-ad
-	├── xtend@4.0.0 
-	├── xmldom@0.1.19 
-	├── passport-http-bearer@1.0.1 (passport-strategy@1.0.0) 
-	├── underscore@1.8.3 
-	├── async@1.3.0 
-	├── jsonwebtoken@5.0.2 
-	├── xml-crypto@0.5.27 (xpath.js@1.0.6) 
-	├── ursa@0.8.5 (bindings@1.2.1, nan@1.8.4) 
-	├── jws@3.0.0 (jwa@1.0.1, base64url@1.0.4) 
-	├── request@2.58.0 (caseless@0.10.0, aws-sign2@0.5.0, forever-agent@0.6.1, stringstream@0.0.4, tunnel-agent@0.4.1, oauth-sign@0.8.0, isstream@0.1.2, extend@2.0.1, json-stringify-safe@5.0.1, node-uuid@1.4.3, qs@3.1.0, combined-stream@1.0.5, mime-types@2.0.14, form-data@1.0.0-rc1, http-signature@0.11.0, bl@0.9.4, tough-cookie@2.0.0, hawk@2.3.1, har-validator@1.8.0)
-	└── xml2js@0.4.9 (sax@0.6.1, xmlbuilder@2.6.4)
+该命令的输出应如下所示：
+
+`` passport-azure-ad@1.0.0 node\_modules/passport-azure-ad ├── xtend@4.0.0 ├── xmldom@0.1.19 ├── passport-http-bearer@1.0.1 (passport-strategy@1.0.0) ├── underscore@1.8.3 ├── async@1.3.0 ├── jsonwebtoken@5.0.2 ├── xml-crypto@0.5.27 (xpath.js@1.0.6) ├── ursa@0.8.5 (bindings@1.2.1, nan@1.8.4) ├── jws@3.0.0 (jwa@1.0.1, base64url@1.0.4) ├── request@2.58.0 (caseless@0.10.0, aws-sign2@0.5.0, forever-agent@0.6.1, stringstream@0.0.4, tunnel-agent@0.4.1, oauth-sign@0.8.0, isstream@0.1.2, extend@2.0.1, json-stringify-safe@5.0.1, node-uuid@1.4.3, qs@3.1.0, combined-stream@1.0.5, mime-types@2.0.14, form-data@1.0.0-rc1, http-signature@0.11.0, bl@0.9.4, tough-cookie@2.0.0, hawk@2.3.1, har-validator@1.8.0) └── xml2js@0.4.9 (sax@0.6.1, xmlbuilder@2.6.4)
 
 
 ## 8\.将 MongoDB 模块添加到 Web API
@@ -202,7 +193,7 @@ Restify 提供强大的机制来使用 DTrace 跟踪 REST 调用。但是，许�
 我们将使用 MongoDB 作为数据存储。为此，我们需要安装这两个广泛使用的插件来管理模型和称为 Mongoose 的架构，以及 MongoDB 的数据库驱动程序（也称为 MongoDB）。
 
 
-* `npm install mongoose`  
+- `npm install mongoose`  
 
 
 ## 9\.安装其他模块
@@ -218,10 +209,10 @@ Restify 提供强大的机制来使用 DTrace 跟踪 REST 调用。但是，许�
 
 输入以下命令，以在 node\_modules 目录中安装以下模块：
 
-* `npm install assert-plus`  
+- `npm install assert-plus`  
 
-* `npm install bunyan`
-* `npm update`  
+- `npm install bunyan`
+- `npm update`  
 
 
 
@@ -759,6 +750,7 @@ Javascript
 
 
 Shell
+
 	HTTP/1.1 200 OK
 	Connection: close
 	Content-Type: application/json
@@ -937,12 +929,12 @@ Javascript
 
 然后，切换到目录并开始运行。
 
-  $ cd azuread
-  $ node server.js
+  $ cd azuread $ node server.js
 
 试用基本 POST：
 
 `$ curl -isS -X POST http://127.0.0.1:8080/tasks/brandon/Hello`  
+
 
 Shell
 		
@@ -972,4 +964,4 @@ Shell
 
 [AZURE.INCLUDE [active-directory-devquickstarts-additional-resources](../../includes/active-directory-devquickstarts-additional-resources.md)]
 
-<!---HONumber=Mooncake_1010_2016-->
+<!---HONumber=Mooncake_Quality_Review_1230_2016-->
