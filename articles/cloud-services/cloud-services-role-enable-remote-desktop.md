@@ -101,47 +101,44 @@ ms.author="saurabh"/>
 
 服务定义文件应类似于下面的示例，并添加 `<Imports>` 元素。
 
-```xml
-<ServiceDefinition name="<name-of-cloud-service>" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceDefinition" schemaVersion="2013-03.2.0">
-    <WebRole name="WebRole1" vmsize="Small">
-        <Sites>
-            <Site name="Web">
-                <Bindings>
-                    <Binding name="Endpoint1" endpointName="Endpoint1" />
-                </Bindings>
-            </Site>
-        </Sites>
-        <Endpoints>
-            <InputEndpoint name="Endpoint1" protocol="http" port="80" />
-        </Endpoints>
-        <Imports>
-            <Import moduleName="Diagnostics" />
-            <Import moduleName="RemoteAccess" />
-            <Import moduleName="RemoteForwarder" />
-        </Imports>
-    </WebRole>
-</ServiceDefinition>
-```
+        <ServiceDefinition name="<name-of-cloud-service>" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceDefinition" schemaVersion="2013-03.2.0">
+            <WebRole name="WebRole1" vmsize="Small">
+                <Sites>
+                    <Site name="Web">
+                        <Bindings>
+                            <Binding name="Endpoint1" endpointName="Endpoint1" />
+                        </Bindings>
+                    </Site>
+                </Sites>
+                <Endpoints>
+                    <InputEndpoint name="Endpoint1" protocol="http" port="80" />
+                </Endpoints>
+                <Imports>
+                    <Import moduleName="Diagnostics" />
+                    <Import moduleName="RemoteAccess" />
+                    <Import moduleName="RemoteForwarder" />
+                </Imports>
+            </WebRole>
+        </ServiceDefinition>
 [ServiceConfiguration.cscfg](/documentation/articles/cloud-services-model-and-package/#cscfg) 文件应类似于下面的示例，请注意 `<ConfigurationSettings>` 和 `<Certificates>` 元素。指定的证书必须 [已上载到云服务](/documentation/articles/cloud-services-how-to-create-deploy/#how-to-upload-a-certificate-for-a-cloud-service)。
 
-```xml
-<?xml version="1.0" encoding="utf-8"?>
-<ServiceConfiguration serviceName="<name-of-cloud-service>" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceConfiguration" osFamily="3" osVersion="*" schemaVersion="2013-03.2.0">
-    <Role name="WebRole1">
-        <Instances count="2" />
-        <ConfigurationSettings>
-            <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.Enabled" value="true" />
-            <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountUsername" value="[name-of-user-account]" />
-            <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountEncryptedPassword" value="[base-64-encrypted-user-password]" />
-            <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountExpiration" value="[certificate-expiration]" />
-            <Setting name="Microsoft.WindowsAzure.Plugins.RemoteForwarder.Enabled" value="true" />
-        </ConfigurationSettings>
-        <Certificates>
-            <Certificate name="Microsoft.WindowsAzure.Plugins.RemoteAccess.PasswordEncryption" thumbprint="[certificate-thumbprint]" thumbprintAlgorithm="sha1" />
-        </Certificates>
-    </Role>
-</ServiceConfiguration>
-```
+
+        <?xml version="1.0" encoding="utf-8"?>
+        <ServiceConfiguration serviceName="<name-of-cloud-service>" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceConfiguration" osFamily="3" osVersion="*" schemaVersion="2013-03.2.0">
+            <Role name="WebRole1">
+                <Instances count="2" />
+                <ConfigurationSettings>
+                    <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.Enabled" value="true" />
+                    <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountUsername" value="[name-of-user-account]" />
+                    <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountEncryptedPassword" value="[base-64-encrypted-user-password]" />
+                    <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountExpiration" value="[certificate-expiration]" />
+                    <Setting name="Microsoft.WindowsAzure.Plugins.RemoteForwarder.Enabled" value="true" />
+                </ConfigurationSettings>
+                <Certificates>
+                    <Certificate name="Microsoft.WindowsAzure.Plugins.RemoteAccess.PasswordEncryption" thumbprint="[certificate-thumbprint]" thumbprintAlgorithm="sha1" />
+                </Certificates>
+            </Role>
+        </ServiceConfiguration>
 
 
 ## 其他资源
