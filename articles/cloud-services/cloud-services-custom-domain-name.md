@@ -64,19 +64,19 @@ A 记录将域（例如 **contoso.com** 或 **www.contoso.com**）*或通配符�
 
 1. 使用下列方法之一找到分配给你的云服务的 **.chinacloudapp.cn** 域名。
 
-    * 登录到 [Azure 经典管理门户]，依次选择云服务、“仪表板”，然后在“速览”部分中查找“站点 URL”条目。
+   * 登录到 [Azure 经典管理门户]，依次选择云服务、“仪表板”，然后在“速览”部分中查找“站点 URL”条目。
     
-        ![显示站点 URL 的速览部分][csurl]
+       ![显示站点 URL 的速览部分][csurl]
     
-        **或者**
+       **或者**
     
-    * 安装并配置 [Azure Powershell](/documentation/articles/powershell-install-configure/)，然后使用以下命令：
+   * 安装并配置 [Azure Powershell](/documentation/articles/powershell-install-configure/)，然后使用以下命令：
         
-        ```powershell
+
         Get-AzureDeployment -ServiceName yourservicename | Select Url
-        ```
+
     
-    保存任一方法返回的 URL 中所使用的域名，因为创建 CNAME 记录时需要它。
+     保存任一方法返回的 URL 中所使用的域名，因为创建 CNAME 记录时需要它。
 
 1.  登录到 DNS 注册机构的网站，并转到用于管理 DNS 的页面。查找标为**域名**、**DNS** 或**名称服务器管理**的站点的链接或区域。
 
@@ -104,17 +104,15 @@ A 记录将域（例如 **contoso.com** 或 **www.contoso.com**）*或通配符�
 
 1. 使用以下方法之一来获取云服务的 IP 地址。
     
-    * 登录到 [Azure 经典管理门户]，依次选择云服务、“仪表板”，然后在“速览”部分中查找“公共虚拟 IP (VIP)地址”条目。
+   * 登录到 [Azure 经典管理门户]，依次选择云服务、“仪表板”，然后在“速览”部分中查找“公共虚拟 IP (VIP)地址”条目。
     
-        ![显示 VIP 的速览部分][vip]
+       ![显示 VIP 的速览部分][vip]
     
-        **或者**
+       **或者**
     
-    * 安装并配置 [Azure Powershell](/documentation/articles/powershell-install-configure/)，然后使用以下命令：
+   * 安装并配置 [Azure Powershell](/documentation/articles/powershell-install-configure/)，然后使用以下命令：
     
-        ```powershell
         get-azurevm -servicename yourservicename | get-azureendpoint -VM {$_.VM} | select Vip
-        ```
     
     如果有多个终结点与云服务相关联，将收到包含 IP 地址的多个行，但所有行都显示相同地址。
     

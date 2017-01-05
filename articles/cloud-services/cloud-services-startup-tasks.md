@@ -66,22 +66,22 @@ ms.author="adegeo"/>
 
 **ServiceDefinition.csdef**：
 
-```xml
-<Startup>
-    <Task commandLine="Startup.cmd" executionContext="limited" taskType="simple" >
-        <Environment>
-            <Variable name="MyVersionNumber" value="1.0.0.0" />
-        </Environment>
-    </Task>
-</Startup>
-```
+
+        <Startup>
+            <Task commandLine="Startup.cmd" executionContext="limited" taskType="simple" >
+                <Environment>
+                    <Variable name="MyVersionNumber" value="1.0.0.0" />
+                </Environment>
+            </Task>
+        </Startup>
+
 
 在下面的示例中，**Startup.cmd** 批处理文件会将行“当前版本是 1.0.0.0”写入到由 TEMP 环境变量指定的目录下的 StartupLog.txt 文件中。`EXIT /B 0` 行确保启动任务以为零的 **errorlevel** 结尾。
 
-```cmd
-ECHO The current version is %MyVersionNumber% >> "%TEMP%\StartupLog.txt" 2>&1
-EXIT /B 0
-```
+
+        ECHO The current version is %MyVersionNumber% >> "%TEMP%\StartupLog.txt" 2>&1
+        EXIT /B 0
+
 
 > [AZURE.NOTE] 在 Visual Studio 中，启动批处理文件的“复制到输出目录”属性应设为“始终复制”，以确保将启动批处理文件正确地部署到 Azure 上的项目（对于 Web 角色，为 **approot\\bin**；对于辅助角色，为 **approot**）。
 
@@ -136,22 +136,22 @@ EXIT /B 0
 例如，若要创建这样一个环境变量（当实例在计算模拟器中运行时为**“true”**，在云中运行时为**“false”**），请使用以下 [Variable] 和 [RoleInstanceValue] 元素：
 
 
-	<Startup>
-	    <Task commandLine="Startup.cmd" executionContext="limited" taskType="simple">
-	        <Environment>
-	    
-	            <!-- Create the environment variable that informs the startup task whether it is running
-	                in the Compute Emulator or in the cloud. "%ComputeEmulatorRunning%"=="true" when
-	                running in the Compute Emulator, "%ComputeEmulatorRunning%"=="false" when running
-	                in the cloud. -->
-	    
-	            <Variable name="ComputeEmulatorRunning">
-	                <RoleInstanceValue xpath="/RoleEnvironment/Deployment/@emulated" />
-	            </Variable>
-	    
-	        </Environment>
-	    </Task>
-	</Startup>
+    	<Startup>
+    	    <Task commandLine="Startup.cmd" executionContext="limited" taskType="simple">
+    	        <Environment>
+    	    
+    	            <!-- Create the environment variable that informs the startup task whether it is running
+    	                in the Compute Emulator or in the cloud. "%ComputeEmulatorRunning%"=="true" when
+    	                running in the Compute Emulator, "%ComputeEmulatorRunning%"=="false" when running
+    	                in the cloud. -->
+    	    
+    	            <Variable name="ComputeEmulatorRunning">
+    	                <RoleInstanceValue xpath="/RoleEnvironment/Deployment/@emulated" />
+    	            </Variable>
+    	    
+    	        </Environment>
+    	    </Task>
+    	</Startup>
 
 
 ## 后续步骤
