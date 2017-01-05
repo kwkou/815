@@ -115,7 +115,7 @@ IoT 中心使用安全令牌对设备和服务进行身份验证，以避免在�
 
 IoT 中心还允许设备使用 [X.509 证书][lnk-x509]向 IoT 中心进行身份验证。
 
-### 安全令牌结构
+### <a name="security-token-structure"></a> 安全令牌结构
 可以使用安全令牌向设备和服务授予限时访问 IoT 中心特定功能的权限。若要确保只有经过授权的设备和服务能够连接，安全令牌必须使用共享访问密钥或存储在标识注册表中并带有设备标识的对称密钥进行签名。
 
 使用共享访问策略密钥进行签名的令牌可以授权访问与共享访问策略权限相关的所有功能。另一方面，使用设备标识的对称密钥进行签名的令牌只能向相关设备标识授予 **DeviceConnect** 权限。
@@ -185,7 +185,7 @@ IoT 中心还允许设备使用 [X.509 证书][lnk-x509]向 IoT 中心进行身�
 
 > [AZURE.NOTE] 由于 IoT 中心计算机会验证令牌的有效期，因此生成令牌的计算机的时间偏差必须很小。
 
-### <a name="using-sas-tokens-as-a-device"></a> 在设备客户端中使用 SAS 令牌
+### <a name="use-sas-tokens-in-a-device-app"></a> 在设备客户端中使用 SAS 令牌
 
 有两种方法可以使用安全令牌来获取 IoT 中心的 **DeviceConnect** 权限：使用[设备标识注册表中的对称设备密钥](#use-a-symmetric-key-in-the-identity-registry)，或者使用[共享访问密钥](#use-a-shared-access-policy)。
 
@@ -256,7 +256,7 @@ IoT 中心还允许设备使用 [X.509 证书][lnk-x509]向 IoT 中心进行身�
 
 协议网关可以对所有设备使用相同的令牌，只需将资源 URI 设置为 `myhub.azure-devices.cn/devices`。
 
-### 使用服务组件提供的安全令牌
+### <a name="use-security-tokens-from-service-components"></a> 使用服务组件提供的安全令牌
 
 如前所述，服务组件使用共享访问策略只能生成安全令牌，授予适当权限。
 
