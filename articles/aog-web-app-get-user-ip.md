@@ -1,7 +1,7 @@
 <properties
 	pageTitle="应用程序网关中如何获取访问者源 IP"
 	description="介绍如何在应用程序网关中获取访问者源 IP。"
-	services="app-service-web"
+	services="application-gateway"
 	documentationCenter=""
 	authors=""
 	manager=""
@@ -9,7 +9,7 @@
 	tags=""/>
 
 <tags
-	ms.service="app-service-web-aog"
+	ms.service="application-gateway-aog"
 	ms.date="10/27/2016"
 	wacn.date="11/03/2016"/>
 
