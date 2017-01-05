@@ -149,7 +149,7 @@ VMAccess 扩展在虚拟机上运行两个命令：
 
 [Azure VM 扩展和功能](/documentation/articles/virtual-machines-windows-extensions-features/)
 
-[使用 RDP 或 SSH 连接到 Azure 虚拟机](/documentation/articles/virtual-machines-linux-about/)
+[使用 RDP 或 SSH 连接到 Azure 虚拟机](/documentation/articles/virtual-machines-linux-azure-overview/)
 
 [对与基于 Windows 的 Azure 虚拟机的远程桌面连接进行故障排除](/documentation/articles/virtual-machines-windows-troubleshoot-rdp-connection/)
 

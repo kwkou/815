@@ -77,6 +77,6 @@ As the figure illustrates, the Cloud Services VMs run in a separate cloud servic
 
 * [比较](/documentation/articles/choose-web-site-cloud-service-vm/) App Service、云服务和虚拟机
 * 了解有关[云服务](/documentation/services/cloud-services/)的详细信息
-* 了解有关[虚拟机](/documentation/articles/virtual-machines-linux-about/)的详细信息 
+* 了解有关[虚拟机](/documentation/articles/virtual-machines-linux-azure-overview/)的详细信息 
 
 <!---HONumber=74-->

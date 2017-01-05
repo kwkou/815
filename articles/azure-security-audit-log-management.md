@@ -104,7 +104,7 @@ Azure 诊断使您能够从云服务辅助角色或 Web 角色，或者从 Azure
 
 ![][1]
 
-Azure 诊断将日志从客户云服务应用程序和 [Azure 虚拟机](/documentation/articles/virtual-machines-linux-about/)移动到 Azure 存储空间。基于一种日志格式将一部分数据存储在 Azure 表中，另一部分存储在 blob 中。使用 Azure 存储空间客户端库将在 [Azure 存储空间](/documentation/articles/storage-introduction/)中收集的数据下载到本地 SIEM 系统，以便进行监视和分析。
+Azure 诊断将日志从客户云服务应用程序和 [Azure 虚拟机](/documentation/articles/virtual-machines-linux-azure-overview/)移动到 Azure 存储空间。基于一种日志格式将一部分数据存储在 Azure 表中，另一部分存储在 blob 中。使用 Azure 存储空间客户端库将在 [Azure 存储空间](/documentation/articles/storage-introduction/)中收集的数据下载到本地 SIEM 系统，以便进行监视和分析。
 
 此外，HDInsight 可以用于进一步分析云中的数据。以下是一些使用 Azure 诊断的安全数据收集示例。
 

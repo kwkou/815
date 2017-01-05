@@ -69,7 +69,7 @@ Azure 提供用于创建和处理资源的两种部署模型：[Resource Manager
 >
 
 ### 虚拟机
-将公共 IP 地址分配到其**网络接口**，可将其与 [Windows](/documentation/articles/virtual-machines-windows-about/) 或 [Linux](/documentation/articles/virtual-machines-linux-about/) VM 相关联。对于具有多个网络接口的 VM，只能将它分配给 *主要* 网络接口。可以向 VM 分配动态或静态公共 IP 地址。
+将公共 IP 地址分配到其**网络接口**，可将其与 [Windows](/documentation/articles/virtual-machines-windows-about/) 或 [Linux](/documentation/articles/virtual-machines-linux-azure-overview/) VM 相关联。对于具有多个网络接口的 VM，只能将它分配给 *主要* 网络接口。可以向 VM 分配动态或静态公共 IP 地址。
 
 ### 面向 Internet 的负载均衡器
 将公共 IP 地址分配给负载均衡器**前端**配置，可将其与 [Azure Load Balancer](/documentation/articles/load-balancer-overview/) 相关联。此公共 IP 地址充当负载均衡型虚拟 IP 地址 (VIP)。可以向负载均衡器前端分配动态或静态公共 IP 地址。还可以向负载均衡器前端分配多个公共 IP 地址，这样做可实现[多 VIP](/documentation/articles/load-balancer-multivip/) 方案，例如包含基于 SSL 的网站的多租户环境。
@@ -113,7 +113,7 @@ Azure 提供用于创建和处理资源的两种部署模型：[Resource Manager
 * 其他应用/资源通过 IP 地址访问的资源。
 
 ### 虚拟机
-可将专用 IP 地址分配到 [Windows](/documentation/articles/virtual-machines-windows-about/) 或 [Linux](/documentation/articles/virtual-machines-linux-about/) VM 的**网络接口**。对于多网络接口 VM，将为每个接口分配一个专用 IP 地址。可将网络接口的分配方法指定为动态或静态。
+可将专用 IP 地址分配到 [Windows](/documentation/articles/virtual-machines-windows-about/) 或 [Linux](/documentation/articles/virtual-machines-linux-azure-overview/) VM 的**网络接口**。对于多网络接口 VM，将为每个接口分配一个专用 IP 地址。可将网络接口的分配方法指定为动态或静态。
 
 #### 内部 DNS 主机名解析（针对 VM）
 所有 Azure VM 都默认配置了 [Azure 托管的 DNS 服务器](/documentation/articles/virtual-networks-name-resolution-for-vms-and-role-instances/#azure-provided-name-resolution)（除非显式配置自定义 DNS 服务器）。这些 DNS 服务器为驻留在同一个 VNet 内的 VM 提供内部名称解析。
