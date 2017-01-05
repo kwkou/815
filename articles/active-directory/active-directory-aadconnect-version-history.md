@@ -1,10 +1,9 @@
-
 <properties
     pageTitle="Azure AD Connect：版本发布历史记录 | Azure"
     description="本主题列出 Azure AD Connect 和 Azure AD Sync 的所有版本"
     services="active-directory"
     documentationcenter=""
-    author="AndKjell"
+    author="billmath"
     manager="femila"
     editor="" />  
 
@@ -15,9 +14,9 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="identity"
-    ms.date="11/01/2016"
-    ms.author="billmath" 
-    wacn.date="12/09/2016"/>
+    ms.date="12/07/2016"
+    wacn.date="01/05/2017"
+    ms.author="billmath" />
 
 # Azure AD Connect：版本发布历史记录
 Azure Active Directory 团队会定期更新 Azure AD Sync 的新特性和功能。并非所有的新增内容都适用于所有受众。
@@ -26,11 +25,34 @@ Azure Active Directory 团队会定期更新 Azure AD Sync 的新特性和功能
 
 下面是相关主题的列表：
 
-| 主题 |
-| --- | --- |
-| 从 Azure AD Connect 升级的步骤 |
-| 所需的权限 |
-| 下载 |
+
+主题 |  
+--------- | --------- |
+从 Azure AD Connect 升级的步骤 | [从旧版升级到最新版](/documentation/articles/active-directory-aadconnect-upgrade-previous-version/) Azure AD Connect 的不同方法。
+所需的权限 | 有关应用更新时所需的权限，请参阅[帐户和权限](/documentation/articles/active-directory-aadconnect-accounts-permissions/#upgrade/)
+下载| [下载 Azure AD Connect](http://go.microsoft.com/fwlink/?LinkId=615771)
+
+## 1\.1.371.0
+发布日期：2016 年 12 月
+
+**修复的问题：**
+
+- 如果未打开用于出站连接的端口 9090，Azure AD Connect 安装或升级将失败。
+
+## 1\.1.370.0
+发布日期：2016 年 12 月
+
+**新功能：**
+
+- 直通身份验证（预览）。
+
+
+**已知问题：**
+
+- 必须打开用于出站连接的端口 9090 才能完成安装。
+
+>[AZURE.NOTE]
+不通过 Azure AD Connect 自动升级功能向客户提供此内部版本。
 
 ## 1\.1.343.0
 发布日期：2016 年 11 月
@@ -45,7 +67,6 @@ Azure Active Directory 团队会定期更新 Azure AD Sync 的新特性和功能
 
 - 添加了在 Windows Server 2016 标准版或更高版本上安装 Azure AD Connect 的支持。
 - 添加了将 SQL Server 2016 用作 Azure AD Connect 远程数据库的支持。
-- 添加了使用 Azure AD Connect 管理 AD FS 2016 的支持。
 
 ## 1\.1.281.0
 发布日期：2016 年 8 月
@@ -213,7 +234,7 @@ Azure Active Directory 团队会定期更新 Azure AD Sync 的新特性和功能
 
 **已删除的预览功能：**
 
-- 根据预览版客户的反馈，已暂时删除[“用户写回”](/documentation/articles/active-directory-aadconnect-feature-preview/#user-writeback/)预览功能。今后在解决所提供的反馈意见后，我们将重新添加此功能。
+- 根据预览版客户的反馈，已暂时删除“用户写回”预览功能。[](/documentation/articles/active-directory-aadconnect-feature-preview/#user-writeback/)今后在解决所提供的反馈意见后，我们将重新添加此功能。
 
 ## 1\.0.8641.0
 发布日期：2015 年 6 月
@@ -327,4 +348,4 @@ Azure Active Directory 团队会定期更新 Azure AD Sync 的新特性和功能
 ## 后续步骤
 了解有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect/)的详细信息。
 
-<!---HONumber=Mooncake_1128_2016-->
+<!---HONumber=Mooncake_1226_2016-->

@@ -17,7 +17,7 @@
     ms.topic="get-started-article"
     ms.date="12/06/2016"
     ms.author="billmath" 
-    wacn.date="01/03/2017"/>  
+    wacn.date="01/05/2017"/>  
 
 
 # Azure AD Connect 的自定义安装
@@ -28,11 +28,10 @@
 如果自定义的设置不匹配拓扑，例如，升级 DirSync，请参阅 [相关文档](#related-documentation)，了解其他情况。
 
 ## Azure AD Connect 的自定义设置安装
-
 ### 快速设置
 在此页面上，单击“自定义”，开始自定义的设置安装。
 
-### 安装所需的组件  <a name="install-required-components"></a>
+### 安装所需的组件 <a name="install-required-components"></a>
 安装同步服务时，可以将可选配置部分保留未选中状态，Azure AD Connect 会自动完成所有设置。这会设置 SQL Server 2012 Express LocalDB 实例、创建相应的组并分配权限。如果想要更改默认设置，可以使用下表来了解可用的可选配置选项。
 
 ![所需的组件](./media/active-directory-aadconnect-get-started-custom/requiredcomponents.png)
@@ -55,6 +54,8 @@
 |直通身份验证（预览）|用户能够用在其本地网络中使用的相同密码登录到 Microsoft 云服务，例如 Office 365。将用户密码传递到本地 Active Directory 控制器进行验证。 
 | 使用 AD FS 进行联合身份验证 |用户能够用在其本地网络中使用的相同密码登录到 Microsoft 云服务，例如 Office 365。用户被重定向到他们的本地 AD FS 实例以进行登录，并在本地完成身份验证。 |
 | 不配置 |不安装和配置任一功能。如果已有第三方联合服务器或部署了另一个现有解决方案，请选择此选项。 |
+|启用单一登录|此选项可用于密码同步和直通身份验证，并为公司网络中的桌面用户提供单一登录体验。有关详细信息，请参阅[单一登录](/documentation/articles/active-directory-aadconnect-sso/)。</br>请注意，对于 AD FS 客户此选项不可用，因为 AD FS 已提供相同级别的单一登录。</br>（如果未同时释放 PTA）
+|登录选项|此选项可用于密码同步客户，并为公司网络中的桌面用户提供单一登录体验。</br>有关详细信息，请参阅[单一登录](/documentation/articles/active-directory-aadconnect-sso/)。</br>请注意，对于 AD FS 客户此选项不可用，因为 AD FS 已提供相同级别的单一登录。
 
 
 ### 连接到 Azure AD
@@ -140,6 +141,40 @@
 | 密码写回 |通过启用密码写回，源自 Azure AD 的密码更改将写回到本地目录。若要了解详细信息，请参阅[密码管理入门](/documentation/articles/active-directory-passwords-getting-started/)。 |
 | 组写回 |如果你使用了“Office 365 组”功能，则可以在本地 Active Directory 中呈现这些组。仅当本地 Active Directory 中存在 Exchange 时，才可以使用此选项。若要了解详细信息，请参阅[组写回](/documentation/articles/active-directory-aadconnect-feature-preview/#group-writeback/)。 |
 | 目录扩展属性同步 |通过启用目录扩展属性同步，可将指定的属性同步到 Azure AD。若要了解详细信息，请参阅[目录扩展](/documentation/articles/active-directory-aadconnectsync-feature-directory-extensions/)。 |
+
+### 启用单一登录 (SSO)
+配置单一登录以将其用于密码同步或直通身份验证是一个简单的过程，只需为要同步到 Azure AD 的每个林完成一次即可。配置过程包括以下两个步骤：
+
+1.	在本地 Active Directory 中创建必需的计算机帐户。
+2.	配置客户端计算机的 Intranet 区域来支持单一登录。
+
+#### 在 Active Directory 中创建计算机帐户
+对于已通过 AAD Connect 工具添加的每个林，需要提供域管理员凭据，以便可以在每个林中创建计算机帐户。该凭据仅用于创建帐户，并不存储或用于任何其他操作。只需在 AAD Connect 向导的“启用单一登录”页面上添加此凭据，如下所示：
+
+![启用单一登录](./media/active-directory-aadconnect-get-started-custom/enablesso.png)  
+
+
+>[AZURE.NOTE]
+如果不想在某个特定林中使用单一登录，则可以选择跳过此林。
+
+#### 配置客户端计算机的 Intranet 区域
+若要确保客户端在 Intranet 区域中自动登录，需要确保要访问的 URL 是 Intranet 区域的一部分。这样可以确保加入域的桌面计算机在连接到公司网络时自动向其发送 Kerberos 票证。在安装了组策略管理工具的计算机上执行以下操作。
+
+1.	打开组策略管理工具
+2.	编辑将应用于所有用户的组策略。例如，默认域策略。
+3.	导航到“当前用户\\管理模板\\Windows 组件\\Internet Explorer\\Internet 控制面板\\安全性”页面，并选择“区域分配列表的站点”，如下图所示。
+4.	启用策略，并在对话框中输入以下两项。
+   
+		Value: https://autologon.microsoftazuread-sso.com
+		Data: 1
+		Value: https://aadg.chinacloudapi.cn.nsatc.net 
+		Data: 1
+
+5.	结果如下图所示：
+![Intranet 区域](./media/active-directory-aadconnect-get-started-custom/sitezone.png)
+
+6.	单击两次“确定”。
+
 
 ### Azure AD 应用程序和属性筛选
 如果想要限制同步到 Azure AD 的属性，请通过选择正在使用的服务来启动。如果在此页面上进行配置更改，必须通过重新运行安装向导来明确选择新的服务。
@@ -272,12 +307,11 @@ AD Connect 尝试在配置阶段验证域。如果继续进行配置但未添加
 了解有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect/)的详细信息。
 
 ## 相关文档
-
-主题 |  
---------- | ---------
-Azure AD Connect 概述 | [将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect/)
-使用快速设置安装 | [Azure AD Connect 的快速安装](/documentation/articles/active-directory-aadconnect-get-started-express/)
-从 DirSync 升级 | [从 Azure AD 同步工具 (DirSync) 升级](/documentation/articles/active-directory-aadconnect-dirsync-upgrade-get-started/)
-用于安装的帐户 | [有关 Azure AD Connect 帐户和权限的详细信息](/documentation/articles/active-directory-aadconnect-accounts-permissions/)
+| 主题 |
+| --- | --- |
+| Azure AD Connect 概述 |
+| 使用快速设置安装 |
+| 从 DirSync 升级 |
+| 用于安装的帐户 |
 
 <!---HONumber=Mooncake_1226_2016-->
