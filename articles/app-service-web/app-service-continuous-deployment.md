@@ -14,7 +14,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="10/28/2016"
-	wacn.date="12/30/2016"
+	wacn.date="01/05/2017"
 	ms.author="dariagrigoriu"/>
     
 # 连续部署到 Azure App Service

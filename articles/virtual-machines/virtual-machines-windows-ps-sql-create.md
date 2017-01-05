@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="vm-windows-sql-server"
 	ms.workload="infrastructure-services"
 	ms.date="10/25/2016"
-	wacn.date="12/30/2016"
+	wacn.date="01/05/2017"
 	ms.author="jroth"/>
 
 # 使用 Azure PowerShell 预配 SQL Server 虚拟机 (Resource Manager)

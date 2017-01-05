@@ -15,7 +15,7 @@
 	ms.devlang="python"
 	ms.topic="article"
 	ms.date="09/07/2016"
-	wacn.date="12/12/2016" 
+	wacn.date="01/05/2017" 
 	ms.author="larryfr"/>
 
 #在 HDInsight 中将 Python 与 Hive 和 Pig 配合使用

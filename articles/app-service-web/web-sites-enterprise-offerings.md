@@ -14,7 +14,7 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="07/29/2016" 
-	wacn.date="12/16/2016" 
+	wacn.date="01/05/2017" 
 	ms.author="anwestg"/>
 
 # 适用于企业的 Azure App Service Web Apps 产品白皮书 #

@@ -16,7 +16,7 @@
  ms.tgt_pltfrm="vm-windows"
  ms.workload="big-compute"
  ms.date="08/25/2016"
- wacn.date="12/26/2016"
+ wacn.date="01/05/2017"
  ms.author="danlep"/>
 
 # 开始在 Azure 的 HPC Pack 群集上运行 Excel 和 SOA 工作负荷

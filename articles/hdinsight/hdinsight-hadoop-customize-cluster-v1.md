@@ -14,7 +14,7 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="05/17/2016" 
-	wacn.date="12/12/2016" 
+	wacn.date="01/05/2017" 
 	ms.author="nitinme"/> 
 
 # 使用脚本操作自定义 HDInsight 群集

@@ -15,7 +15,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="10/11/2016"
-	wacn.date="12/12/2016"
+	wacn.date="01/05/2017"
 	ms.author="larryfr"/>
 
 #将 Apache Mahout 与 HDInsight 中的 Hadoop 配合使用以生成电影推荐

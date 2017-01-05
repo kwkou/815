@@ -15,7 +15,7 @@
 	ms.tgt_pltfrm="vm-windows-sql-server"
 	ms.workload="infrastructure-services"
 	ms.date="09/26/2016"
-	wacn.date="12/26/2016"
+	wacn.date="01/05/2017"
 	ms.author="jroth" />
 
 # Azure 虚拟机中 SQL Server 的自动备份（经典）

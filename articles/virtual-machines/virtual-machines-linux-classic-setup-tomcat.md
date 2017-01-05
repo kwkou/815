@@ -15,7 +15,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="12/15/2015"
-	wacn.date="01/29/2016"
+	wacn.date="01/05/2017"
 	ms.author="ningk"/>
 
 # 如何使用 Azure 在 Linux 虚拟机上设置 Tomcat7 

@@ -15,7 +15,7 @@
    ms.tgt_pltfrm="vm-linux"
    ms.workload="infrastructure-services"
    ms.date="08/29/2016"
-   wacn.date="10/25/2016"
+   wacn.date="01/05/2017"
    ms.author="kyliel"/>
 
 # 创建 FreeBSD VHD 并将其上载到 Azure

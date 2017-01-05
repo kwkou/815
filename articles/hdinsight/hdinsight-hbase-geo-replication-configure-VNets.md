@@ -14,7 +14,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="big-data" 
    ms.date="06/28/2016" 
-   wacn.date="12/16/2016"
+   wacn.date="01/05/2017"
    ms.author="jgao"/>
 
 # 在两个 Azure 虚拟网络之间配置 VPN 连接  

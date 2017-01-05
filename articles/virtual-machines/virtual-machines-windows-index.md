@@ -15,7 +15,7 @@
    ms.tgt_pltfrm="vm-windows"
    ms.workload="infrastructure-services"
    ms.date="08/05/2016"
-   wacn.date="12/12/2016"
+   wacn.date="01/05/2017"
    ms.author="cynthn"/>
 
 # 适用于经典部署模型中 Windows VM 的技术文章

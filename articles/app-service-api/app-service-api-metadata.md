@@ -14,7 +14,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="08/30/2016"
-	wacn.date="11/21/2016"
+	wacn.date="01/05/2017"
 	ms.author="rachelap"/>
 
 # 用于 API 恢复和代码生成的应用服务 API 应用元数据 

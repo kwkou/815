@@ -15,7 +15,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
    ms.date="09/23/2016"
-   wacn.date="11/07/2016"
+   wacn.date="01/05/2017"
    ms.author="cherylmc" />
 
 # 使用 PowerShell 从不同的部署模型连接虚拟网络

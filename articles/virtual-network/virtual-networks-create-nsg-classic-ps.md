@@ -15,7 +15,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
    ms.date="02/02/2016"
-   wacn.date="12/12/2016"
+   wacn.date="01/05/2017"
    ms.author="jdial" />
 
 # 如何在 PowerShell 中创建 NSG（经典）

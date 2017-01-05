@@ -16,7 +16,7 @@
 	ms.tgt_pltfrm="na"
 	ms.workload="big-data"
 	ms.date="09/19/2016"
-	wacn.date="12/12/2016"
+	wacn.date="01/05/2017"
 	ms.author="larryfr"/>
 
 # 将 Hive 和 HiveQL 与 HDInsight 中的 Hadoop 配合使用以分析示例 Apache log4j 文件

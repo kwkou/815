@@ -18,7 +18,7 @@
     ms.devlang="na"
     ms.topic="support-article"
     ms.date="10/26/2016"
-    wacn.date="12/20/2016"
+    wacn.date="01/05/2017"
     ms.author="iainfou" />
 
 # 排查 Azure 虚拟机的远程桌面连接问题

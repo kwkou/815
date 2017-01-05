@@ -15,7 +15,7 @@
    ms.tgt_pltfrm="vm-windows"
    ms.workload="infrastructure-services"
    ms.date="10/12/2016"
-   wacn.date="11/21/2016"
+   wacn.date="01/05/2017"
    ms.author="kasing"/>
 
 # 使用 Azure PowerShell 管理虚拟机

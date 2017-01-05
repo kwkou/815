@@ -15,7 +15,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
    ms.date="10/11/2016"
-   wacn.date="12/12/2016"
+   wacn.date="01/05/2017"
    ms.author="larryfr"/>
 
 #Apache Storm on HDInsight 简介：面向 Hadoop 的实时分析

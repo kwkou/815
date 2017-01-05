@@ -14,7 +14,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="04/14/2015"
-	wacn.date="01/21/2016"
+	wacn.date="01/05/2017"
 	ms.author="jparrel"/>
 
 # 使用负载均衡集群集化 Linux 上的 MySQL

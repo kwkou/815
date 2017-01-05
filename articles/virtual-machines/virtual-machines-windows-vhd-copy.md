@@ -17,7 +17,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="10/20/2016"
-    wacn.date="12/20/2016"
+    wacn.date="01/05/2017"
     ms.author="cynthn" />
 
 # 为 Azure 中运行的专用 Windows VM 创建副本

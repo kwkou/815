@@ -15,7 +15,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
    ms.date="09/14/2016"
-   wacn.date="12/12/2016"
+   wacn.date="01/05/2017"
    ms.author="larryfr"/>
 
 # 将 Pig 与 HDInsight 上的 Hadoop 配合使用

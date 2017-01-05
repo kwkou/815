@@ -17,7 +17,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="10/20/2016"
-    wacn.date="12/20/2016"
+    wacn.date="01/05/2017"
     ms.author="cynthn" />
 
 # 如何从通用化 Azure VM 捕获 VM 映像
