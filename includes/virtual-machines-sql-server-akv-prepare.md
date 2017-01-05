@@ -8,7 +8,7 @@
 以下各节描述了这些先决条件，以及稍后运行 PowerShell cmdlet 需要收集的信息。
 
 ### <a name="install-azure-powershell"></a> 安装 Azure PowerShell
-请确保已安装最新的 Azure PowerShell SDK。有关详细信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)。
+请确保已安装最新的 Azure PowerShell SDK。有关详细信息，请参阅[如何安装和配置 Azure PowerShell](https://docs.microsoft.com/powershell/azureps-cmdlets-docs)。
 
 ### <a name="create-an-azure-active-directory"></a> 创建 Azure Active Directory
 首先，你的订阅中需要具有 [Azure Active Directory](/pricing/1rmb-trial/) (AAD)。其优点之一是允许你为特定用户和应用程序授予对密钥保管库的权限。

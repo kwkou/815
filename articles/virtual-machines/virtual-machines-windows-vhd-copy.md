@@ -30,7 +30,7 @@
 请确保：
 
 * 获取有关**源和目标存储帐户**的信息。对于源 VM，需要获取存储帐户和容器名称。通常，容器名称为 **vhds**。还需要获取目标存储帐户。如果没有存储帐户，可以使用门户（“更多服务”>“存储帐户”>“添加”）或 [New-AzureRmStorageAccount](https://msdn.microsoft.com/zh-cn/library/mt607148.aspx) cmdlet 创建一个存储帐户。
-* 已安装 Azure [PowerShell 1.0](/documentation/articles/powershell-install-configure/)（或更高版本）。
+* 已安装 Azure [PowerShell 1.0](https://docs.microsoft.com/powershell/azureps-cmdlets-docs)（或更高版本）。
 * 已下载并安装 [AzCopy 工具](/documentation/articles/storage-use-azcopy/)。
 
 ## 解除分配 VM

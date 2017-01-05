@@ -85,7 +85,7 @@
 
 - 已配置虚拟网络。
 
-- 最新版本的 Azure PowerShell cmdlet。有关安装 PowerShell cmdlet 的详细信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)。
+- 最新版本的 Azure PowerShell cmdlet。有关安装 PowerShell cmdlet 的详细信息，请参阅[如何安装和配置 Azure PowerShell](https://docs.microsoft.com/powershell/azureps-cmdlets-docs)。
 
 
 ## 配置强制隧道

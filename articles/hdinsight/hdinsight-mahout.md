@@ -491,7 +491,7 @@ Mahout 作业如果使用以下类，则从 Windows PowerShell 中使用这些�
 * [MapReduce 和 HDInsight](/documentation/articles/hdinsight-use-mapreduce/)
 
 [build]: http://mahout.apache.org/developers/buildingmahout.html
-[aps]: /documentation/articles/powershell-install-configure/
+[aps]: https://docs.microsoft.com/powershell/azureps-cmdlets-docs
 [movielens]: http://grouplens.org/datasets/movielens/
 [100k]: http://files.grouplens.org/datasets/movielens/ml-100k.zip
 [getstarted]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1/

@@ -247,6 +247,6 @@ __解决方法__：使用符合以下条件的密码：
 
 * [将 MapReduce 与 HDInsight 配合使用](/documentation/articles/hdinsight-use-mapreduce/)
 
-[powershell]: /documentation/articles/powershell-install-configure/
+[powershell]: https://docs.microsoft.com/powershell/azureps-cmdlets-docs
 
 <!---HONumber=Mooncake_Quality_Review_1215_2016-->

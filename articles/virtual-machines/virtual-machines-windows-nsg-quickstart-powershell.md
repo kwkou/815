@@ -23,7 +23,7 @@
 [AZURE.INCLUDE [virtual-machines-common-nsg-quickstart](../../includes/virtual-machines-common-nsg-quickstart.md)]
 
 ## 快速命令
-若要创建网络安全组和 ACL 规则，需要[安装最新版本的 Azure PowerShell](/documentation/articles/powershell-install-configure/)。用户也可以[使用 Azure 门户预览执行这些步骤](/documentation/articles/virtual-machines-windows-nsg-quickstart-portal/)。
+若要创建网络安全组和 ACL 规则，需要[安装最新版本的 Azure PowerShell](https://docs.microsoft.com/powershell/azureps-cmdlets-docs)。用户也可以[使用 Azure 门户预览执行这些步骤](/documentation/articles/virtual-machines-windows-nsg-quickstart-portal/)。
 
 登录 Azure 帐户：
 

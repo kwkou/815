@@ -407,7 +407,7 @@ DNS 服务器是可选的，但在某些情况下又是必需的。[在两个 Az
 [twitter-statuses-filter]: https://dev.twitter.com/docs/api/1.1/post/statuses/filter
 
 
-[powershell-install]: /documentation/articles/powershell-install-configure/
+[powershell-install]: https://docs.microsoft.com/powershell/azureps-cmdlets-docs
 [hdinsight-customize-cluster]: /documentation/articles/hdinsight-hadoop-customize-cluster-v1/
 [hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1/
 [hdinsight-get-started]: /documentation/articles/hdinsight-get-started/

@@ -39,7 +39,7 @@
 
 [免费帐户](/pricing/1rmb-trial/)
  
-[安装 Azure PowerShell](/documentation/articles/powershell-install-configure/)
+[安装 Azure PowerShell](https://docs.microsoft.com/powershell/azureps-cmdlets-docs)
 
 [安装 Azure CLI](/documentation/articles/xplat-cli-install/)
 

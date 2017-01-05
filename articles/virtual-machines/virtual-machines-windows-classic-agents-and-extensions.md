@@ -22,6 +22,8 @@
 
 [AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]
 
+更多关于资源管理器的 VM 代理和扩展，请点击[这里](/documentation/articles/virtual-machines-windows-extensions-features/)。
+
 [AZURE.INCLUDE [virtual-machines-common-classic-agents-and-extensions](../../includes/virtual-machines-common-classic-agents-and-extensions.md)]
 
 <!---HONumber=Mooncake_0215_2016-->

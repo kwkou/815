@@ -580,7 +580,7 @@ PowerShell 示例将执行以下步骤：
 [sqldatabase-create-configue]: /documentation/articles/sql-database-get-started/
 
 [powershell-start]: http://technet.microsoft.com/zh-cn/library/hh847889.aspx
-[powershell-install]: /documentation/articles/powershell-install-configure/
+[powershell-install]: https://docs.microsoft.com/powershell/azureps-cmdlets-docs
 [powershell-script]: https://technet.microsoft.com/zh-cn/library/dn425048.aspx
 
 [sqoop-user-guide-1.4.4]: https://sqoop.apache.org/docs/1.4.4/SqoopUserGuide.html

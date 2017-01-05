@@ -305,7 +305,7 @@ Name | 脚本
 [hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1/
 [hdinsight-cluster-customize]: /documentation/articles/hdinsight-hadoop-customize-cluster-v1/
 [hdinsight-r-scripts]: /documentation/articles/hdinsight-hadoop-r-scripts/
-[powershell-install-configure]: /documentation/articles/powershell-install-configure/
+[powershell-install-configure]: https://docs.microsoft.com/powershell/azureps-cmdlets-docs
 
 <!--Reference links in article-->
 [1]: https://msdn.microsoft.com/zh-cn/library/96xafkes(v=vs.110).aspx

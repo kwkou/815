@@ -38,7 +38,7 @@ Azure Resource Manager 采用现代方法来控制 Azure 资源生命周期。�
 * Web 配置 - 用于存储数据库的连接字符串
 * 警报规则 - 用于监视性能和错误
 
-若要获取 Azure PowerShell，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)。
+若要获取 Azure PowerShell，请参阅[如何安装和配置 Azure PowerShell](https://docs.microsoft.com/powershell/azureps-cmdlets-docs)。
 
 ## 获取有关 cmdlet 的帮助
 若要获得您在此教程中看到的任何 cmdlet 的详细帮助，请使用 Get-Help cmdlet。

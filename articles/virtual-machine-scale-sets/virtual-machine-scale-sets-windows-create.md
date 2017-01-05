@@ -26,7 +26,7 @@
 执行本文中的步骤大约需要 30 分钟时间。
 
 ## 步骤 1：安装 Azure PowerShell
-有关安装最新版本的 Azure PowerShell、选择订阅和登录帐户的信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)。
+有关安装最新版本的 Azure PowerShell、选择订阅和登录帐户的信息，请参阅[如何安装和配置 Azure PowerShell](https://docs.microsoft.com/powershell/azureps-cmdlets-docs)。
 
 ## 步骤 2：创建资源
 创建新规模集所需的资源。

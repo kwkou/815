@@ -39,7 +39,7 @@ Azure 当前具有两个管理模型：经典模型和 Resource Manager (RM) 模
 
 [AZURE.INCLUDE [vpn-gateway-table-vnet-vnet](../../includes/vpn-gateway-table-vnet-to-vnet-include.md)]
 
-#### VNet 对等互连
+**VNet 对等互连**
 
 [AZURE.INCLUDE [vpn-gateway-vnetpeeringlink](../../includes/vpn-gateway-vnetpeeringlink-include.md)]
 
@@ -53,7 +53,7 @@ Azure 当前具有两个管理模型：经典模型和 Resource Manager (RM) 模
 
  - 已创建了两个 VNet。
  - 两个 VNet 的地址范围不相互重叠，也不与网关可能连接到的其他连接的任何范围重叠。
- - 已安装最新的 PowerShell cmdlet（1.0.2 或更高版本）。有关详细信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)。请确保安装服务管理 (SM) 和 Resource Manager (RM) cmdlet。
+ - 已安装最新的 PowerShell cmdlet（1.0.2 或更高版本）。有关详细信息，请参阅[如何安装和配置 Azure PowerShell](https://docs.microsoft.com/powershell/azureps-cmdlets-docs)。请确保安装服务管理 (SM) 和 Resource Manager (RM) cmdlet。
 
 ### <a name="values"></a>示例设置
 

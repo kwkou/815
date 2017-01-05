@@ -134,7 +134,7 @@
 
 9. 从源 VM 的 OS 磁盘创建一个 VM：
 
-    - 使用[此 Azure Resource Manager 模板](https://github.com/Azure/azure-quickstart-templates/tree/master/201-vm-from-specialized-vhd)从专用的 VHD 创建一个 VM。单击 `Deploy to Azure` 按钮打开 Azure 门户预览，其中填充了模板化详细信息。
+    - 使用[此 Azure Resource Manager 模板](https://github.com/Azure/azure-quickstart-templates/tree/master/201-vm-specialized-vhd)从专用的 VHD 创建一个 VM。单击 `Deploy to Azure` 按钮打开 Azure 门户预览，其中填充了模板化详细信息。
     - 如果想要保留 VM 的所有先前设置，请选择“编辑模板”，提供现有的 VNet、子网、网络适配器或公共 IP。
     - 在 `OSDISKVHDURI` 参数文本框中，粘贴在上一步骤中获取的源 VHD 的 URI：
 

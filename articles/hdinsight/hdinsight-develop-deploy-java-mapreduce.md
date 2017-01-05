@@ -596,7 +596,7 @@ Azure HDInsight 将 Azure Blob 存储用于数据存储。设置 HDInsight 群�
 [hdinsight-power-query]: /documentation/articles/hdinsight-connect-excel-power-query/
 
 [powershell-PSCredential]: http://social.technet.microsoft.com/wiki/contents/articles/4546.working-with-passwords-secure-strings-and-credentials-in-windows-powershell.aspx
-[Powershell-install-configure]: /documentation/articles/powershell-install-configure/
+[Powershell-install-configure]: https://docs.microsoft.com/powershell/azureps-cmdlets-docs
 
 
 

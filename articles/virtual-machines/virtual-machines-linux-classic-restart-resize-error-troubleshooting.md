@@ -28,6 +28,8 @@
 
 [AZURE.INCLUDE [了解部署模型](../../includes/learn-about-deployment-models-classic-include.md)]
 
+更多关于资源管理器模型，请点击[这里](/documentation/articles/virtual-machines-linux-restart-resize-error-troubleshooting/)。
+
 [AZURE.INCLUDE [support-disclaimer](../../includes/support-disclaimer.md)]
 
 ## 收集审核日志

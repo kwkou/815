@@ -59,7 +59,7 @@ BGP 是通常在 Internet 上使用的，用于在两个或更多网络之间交
 
 - 确保你拥有 Azure 订阅。如果你还没有 Azure 订阅，你可以注册一个[试用版](/pricing/1rmb-trial)。
 	
-- 你需要安装 Azure 资源管理器 PowerShell cmdlet。有关安装 PowerShell cmdlet 的详细信息，请参阅 [How to install and configure Azure PowerShell（如何安装和配置 Azure PowerShell）](/documentation/articles/powershell-install-configure/)。
+- 你需要安装 Azure 资源管理器 PowerShell cmdlet。有关安装 PowerShell cmdlet 的详细信息，请参阅 [How to install and configure Azure PowerShell（如何安装和配置 Azure PowerShell）](https://docs.microsoft.com/powershell/azureps-cmdlets-docs)。
 
 ### 步骤 1 - 创建并配置 VNet1 
 

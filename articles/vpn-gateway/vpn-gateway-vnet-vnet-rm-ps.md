@@ -38,11 +38,14 @@
 
 [AZURE.INCLUDE [vpn-gateway-table-vnet-vnet](../../includes/vpn-gateway-table-vnet-to-vnet-include.md)]
 
+**VNet 对等互连**
+
+[AZURE.INCLUDE [vpn-gateway-vnetpeeringlink](../../includes/vpn-gateway-vnetpeeringlink-include.md)]
+
 ## 关于 VNet 到 VNet 的连接
 将虚拟网络连接到虚拟网络（VNet 到 VNet）类似于将 VNet 连接到本地站点位置。这两种连接类型都使用 Azure VPN 网关来提供使用 IPsec/IKE 的安全隧道。你连接的 VNet 可位于不同的区域中。或者位于不同的订阅中。你甚至可以将 VNet 到 VNet 通信与多站点配置组合使用。这样，便可以建立将跨界连接与虚拟网络间连接相结合的网络拓扑，如下图所示：
 
 ![关于连接](./media/vpn-gateway-vnet-vnet-rm-ps/aboutconnections.png)  
-
 
 ### 为什么要连接虚拟网络？
 你可能会出于以下原因而连接虚拟网络：
@@ -71,7 +74,7 @@
 
 
 ### 开始之前
-在开始之前，需要安装 Azure Resource Manager PowerShell cmdlet。有关安装 PowerShell cmdlet 的详细信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)。
+在开始之前，需要安装 Azure Resource Manager PowerShell cmdlet。有关安装 PowerShell cmdlet 的详细信息，请参阅[如何安装和配置 Azure PowerShell](https://docs.microsoft.com/powershell/azureps-cmdlets-docs)。
 
 ### <a name="Step1"></a>步骤 1 - 规划 IP 地址范围
 以下步骤将创建两个虚拟网络，以及它们各自的网关子网和配置。然后，在两个 VNet 之间配置 VPN 连接。必须规划好网络配置的 IP 地址范围。请记住，必须确保没有任何 VNet 范围或本地网络范围存在任何形式的重叠。

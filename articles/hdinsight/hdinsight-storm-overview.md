@@ -52,7 +52,7 @@ Apache Storm on HDInsight 是集成到 Azure 环境中的托管群集。它提�
 
 可在分钟数设置好新的 Storm on HDInsight 群集。指定群集名称、大小、管理员帐户和存储帐户。Azure 将创建该群集，包括示例拓扑和 Web 管理仪表板。
 
-> [AZURE.NOTE] 也可使用 [Azure CLI](/documentation/articles/xplat-cli-install/) 或 [Azure PowerShell](/documentation/articles/powershell-install-configure/) 预配 Storm 群集。
+> [AZURE.NOTE] 也可使用 [Azure CLI](/documentation/articles/xplat-cli-install/) 或 [Azure PowerShell](https://docs.microsoft.com/powershell/azureps-cmdlets-docs) 预配 Storm 群集。
 
 提交请求后 15 分钟内，即可运行新的 Storm 群集，并可建立第一个实时分析管道。
 

@@ -29,7 +29,7 @@
 
 ## 使用 Azure PowerShell
 
-请确保已在计算机上安装最新的 Azure PowerShell 1.x。有关详细信息，请阅读[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)。
+请确保已在计算机上安装最新的 Azure PowerShell 1.x。有关详细信息，请阅读[如何安装和配置 Azure PowerShell](https://docs.microsoft.com/powershell/azureps-cmdlets-docs)。
 
 请使用以下 Azure PowerShell 命令来重新部署虚拟机：
 

@@ -75,7 +75,9 @@
 
 #### 虚拟机属性字段
 
-下表描述了可在策略定义中用作字段的虚拟机属性。
+下表描述了可在策略定义中用作字段的虚拟机属性。有关策略字段的详细信息，请参阅以下文章：
+
+* [字段和源](/documentation/articles/resource-manager-policy#conditions)
 
 | 字段名称 | 说明 |
 |----------------|----------------------------------------------------|
@@ -86,10 +88,14 @@
 
 ## 创建策略
 
-可以直接使用 REST API 或 PowerShell cmdlet 轻松创建策略。
+可以直接使用 REST API 或 PowerShell cmdlet 轻松创建策略。有关创建策略的信息，请参阅以下文章：
+
+* [创建策略](/documentation/articles/resource-manager-policy#create-and-assign-a-policy)
 
 ## 应用策略
 
-创建策略后，需要根据定义的范围来应用它。范围可以是订阅、资源组甚至资源。
+创建策略后，需要根据定义的范围来应用它。范围可以是订阅、资源组甚至资源。有关应用策略的信息，请参阅以下文章：
+
+* [创建策略](/documentation/articles/resource-manager-policy#create-and-assign-a-policy)
 
 <!---HONumber=Mooncake_0425_2016-->

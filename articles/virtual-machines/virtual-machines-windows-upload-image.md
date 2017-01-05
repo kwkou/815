@@ -43,7 +43,7 @@
 
 ## 登录到 Azure
 
-如果尚未安装 Azure PowerShell 1.4 版或更高版本，请阅读[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)。
+如果尚未安装 Azure PowerShell 1.4 版或更高版本，请阅读[如何安装和配置 Azure PowerShell](https://docs.microsoft.com/powershell/azureps-cmdlets-docs)。
 
 1. 打开 Azure PowerShell 并登录到 Azure 帐户。将打开一个弹出窗口，可以输入 Azure 帐户凭据。
 

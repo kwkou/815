@@ -31,7 +31,7 @@
 
 1. 如果你没有 Azure 帐户，请访问 [Azure 试用](/pricing/1rmb-trial/)。
 
-2. [下载和安装最新 Azure PowerShell 命令](/documentation/articles/powershell-install-configure/)。
+2. [下载和安装最新 Azure PowerShell 命令](https://docs.microsoft.com/powershell/azureps-cmdlets-docs)。
 
 3. 启动 Windows PowerShell，并通过 **Add-AzureAccount** 命令将其连接到 Azure 订阅。
 

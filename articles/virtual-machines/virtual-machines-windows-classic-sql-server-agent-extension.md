@@ -56,7 +56,7 @@ SQL Server IaaS 代理扩展支持以下管理任务：
 
 ### Azure PowerShell：
 
-[下载并配置最新 Azure PowerShell 命令](/documentation/articles/powershell-install-configure/)。
+[下载并配置最新 Azure PowerShell 命令](https://docs.microsoft.com/powershell/azureps-cmdlets-docs)。
 
 启动 Windows PowerShell，并通过 **Add-AzureAccount** 命令将其连接到 Azure 订阅。
 

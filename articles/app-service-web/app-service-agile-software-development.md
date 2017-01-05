@@ -285,7 +285,7 @@
 -	[ARMClient - 设置从 GitHub 到站点的发布](https://github.com/projectKudu/ARMClient/wiki/Setup-GitHub-publishing-to-Site)
 -	[Git 分支 - 基本分支和合并](http://www.git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging)
 -	[David Ebbo 的博客](http://blog.davidebbo.com/)
--	[Azure PowerShell](/documentation/articles/powershell-install-configure/)
+-	[Azure PowerShell](https://docs.microsoft.com/powershell/azureps-cmdlets-docs)
 -	[Azure 跨平台命令行工具](/documentation/articles/xplat-cli-install/)
 -	[在 Azure AD 中创建或编辑用户](/documentation/articles/active-directory-create-users/)
 -	[项目 Kudu Wiki](https://github.com/projectkudu/kudu/wiki)

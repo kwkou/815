@@ -22,6 +22,8 @@
 
 [AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]
 
+想发布使用 Java 8 和 Tomcat 的 Web 应用，请查看这个[资源管理器模板](https://github.com/Azure/azure-quickstart-templates/tree/master/201-web-app-java-tomcat/).
+
 通过 Azure，你可使用虚拟机提供服务器功能。例如，在 Azure 上运行的虚拟机可配置为托管 Java 应用程序服务器，如 Apache Tomcat。完成本指南之后，你将会了解如何创建在 Azure 上运行的虚拟机并将其配置为运行 Java 应用程序服务器。
 
 你将学习以下内容：

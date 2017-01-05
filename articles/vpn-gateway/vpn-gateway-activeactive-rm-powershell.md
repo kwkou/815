@@ -55,7 +55,7 @@
 
 ### 开始之前
 * 确保你拥有 Azure 订阅。如果还没有 Azure 订阅，可以注册一个[帐户](/pricing/1rmb-trial/)。
-* 你需要安装 Azure Resource Manager PowerShell cmdlet。有关安装 PowerShell cmdlet 的详细信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)。
+* 你需要安装 Azure Resource Manager PowerShell cmdlet。有关安装 PowerShell cmdlet 的详细信息，请参阅[如何安装和配置 Azure PowerShell](https://docs.microsoft.com/powershell/azureps-cmdlets-docs)。
 
 ### 步骤 1 - 创建并配置 VNet1
 #### 1\.声明变量

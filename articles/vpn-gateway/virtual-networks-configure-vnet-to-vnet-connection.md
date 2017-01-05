@@ -170,7 +170,7 @@
 2. 在“指定地址空间”页上，单击右下角的复选标记，但不要进行任何更改。
 
 ## 步骤 7 - 创建 VPN 连接
-完成前面的所有步骤后，请设置 IPsec/IKE 预共享密钥并创建连接。这一组步骤使用 PowerShell，不能在门户中配置。有关安装 Azure PowerShell cmdlet 的详细信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)。请确保下载最新版本的服务管理 (SM) cmdlet。
+完成前面的所有步骤后，请设置 IPsec/IKE 预共享密钥并创建连接。这一组步骤使用 PowerShell，不能在门户中配置。有关安装 Azure PowerShell cmdlet 的详细信息，请参阅[如何安装和配置 Azure PowerShell](https://docs.microsoft.com/powershell/azureps-cmdlets-docs)。请确保下载最新版本的服务管理 (SM) cmdlet。
 
 1. 打开 Windows PowerShell，然后登录。
    

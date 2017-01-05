@@ -26,7 +26,7 @@
 
 在执行大多数涉及到在规模集中管理虚拟机的任务时，需要知道要管理的虚拟机的实例 ID。
 
-有关安装最新版本的 Azure PowerShell、选择订阅和登录帐户的信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)。
+有关安装最新版本的 Azure PowerShell、选择订阅和登录帐户的信息，请参阅[如何安装和配置 Azure PowerShell](https://docs.microsoft.com/powershell/azureps-cmdlets-docs)。
 
 ## 显示有关规模集的信息
 

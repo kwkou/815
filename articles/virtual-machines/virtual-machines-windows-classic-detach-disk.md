@@ -24,6 +24,8 @@
 
 [AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]
 
+关于在资源管理器模型分离磁盘，请点击[这里](/documentation/articles/virtual-machines-windows-detach-disk/)。
+
 [AZURE.INCLUDE [howto-detach-disk-windows-linux](../../includes/howto-detach-disk-windows-linux.md)]
 
 ## 其他资源

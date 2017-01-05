@@ -113,7 +113,7 @@
 如果仍遇到 RDP 问题，可以[开具支持请求](/support/contact/)或阅读[更详细的 RDP 故障排除概念和步骤](/documentation/articles/virtual-machines-windows-detailed-troubleshoot-rdp/)。
 
 ## <a name="using-azure-powershell"></a> 使用 Azure PowerShell 进行故障排除
-如果尚未执行该操作，请[安装并配置最新的 Azure PowerShell](/documentation/articles/powershell-install-configure/)。
+如果尚未执行该操作，请[安装并配置最新的 Azure PowerShell](https://docs.microsoft.com/powershell/azureps-cmdlets-docs)。
 
 以下示例使用 `myResourceGroup`、`myVM` 和 `myVMAccessExtension` 等变量。请将这些变量名称和位置替换为自己的值。
 

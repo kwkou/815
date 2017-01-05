@@ -24,7 +24,7 @@
 
 [AZURE.INCLUDE [了解部署模型](../../includes/learn-about-deployment-models-both-include.md)]
 
-如果无法连接到 Windows 虚拟机 (VM)，可以重置本地管理员密码或重置远程桌面服务配置。你可以使用 Azure 门户预览或 Azure PowerShell 中的 VM 访问扩展重置密码。如果使用 PowerShell，请确保在工作计算机上安装最新的 PowerShell 模块，并登录到 Azure 订阅。有关详细步骤，请阅读 [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure/)（如何安装和配置 Azure PowerShell）。
+如果无法连接到 Windows 虚拟机 (VM)，可以重置本地管理员密码或重置远程桌面服务配置。你可以使用 Azure 门户预览或 Azure PowerShell 中的 VM 访问扩展重置密码。如果使用 PowerShell，请确保在工作计算机上安装最新的 PowerShell 模块，并登录到 Azure 订阅。有关详细步骤，请阅读 [How to install and configure Azure PowerShell](https://docs.microsoft.com/powershell/azureps-cmdlets-docs)（如何安装和配置 Azure PowerShell）。
 
 > [AZURE.TIP] 可以使用 `Import-Module Azure, AzureRM; Get-Module Azure, AzureRM | Format-Table Name, Version` 检查安装的 PowerShell 版本
 

@@ -981,7 +981,7 @@ wc.cs 文件中的化简器代码使用 [StreamReader][streamreader] 对象从 c
 [hdinsight-introduction]: /documentation/articles/hdinsight-hadoop-introduction/
 
 
-[powershell-install-configure]: /documentation/articles/powershell-install-configure/
+[powershell-install-configure]: https://docs.microsoft.com/powershell/azureps-cmdlets-docs
 
 [hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1/
 

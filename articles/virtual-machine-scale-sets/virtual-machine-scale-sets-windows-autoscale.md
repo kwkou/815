@@ -40,7 +40,7 @@
 有关 Resource Manager 资源的详细信息，请参阅 [Azure Resource Manager vs. classic deployment](/documentation/articles/resource-manager-deployment-model/)（Azure Resource Manager 与经典部署）。
 
 ## 步骤 1：安装 Azure PowerShell
-有关安装最新版本的 Azure PowerShell、选择订阅和登录 Azure 的信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)。
+有关安装最新版本的 Azure PowerShell、选择订阅和登录 Azure 的信息，请参阅[如何安装和配置 Azure PowerShell](https://docs.microsoft.com/powershell/azureps-cmdlets-docs)。
 
 ## 步骤 2：创建资源组和存储帐户
 1. **创建资源组** - 所有资源都必须部署到资源组。使用 [New-AzureRmResourceGroup](https://msdn.microsoft.com/zh-cn/library/mt603739.aspx) 创建名为 **vmsstestrg1** 的资源组。

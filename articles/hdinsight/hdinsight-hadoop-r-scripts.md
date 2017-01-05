@@ -105,7 +105,7 @@ R 与 Azure Blob 存储 (WASB) 兼容，这样，存储在此的数据可以在 
 - [在 HDInsight 群集上安装 Giraph](/documentation/articles/hdinsight-hadoop-giraph-install-v1/)：有关如何安装 Giraph 的脚本操作示例
 - [在 HDInsight 群集上安装 Solr](/documentation/articles/hdinsight-hadoop-solr-install-v1/)：有关如何安装 Solr 的脚本操作示例。
 
-[powershell-install-configure]: /documentation/articles/powershell-install-configure/
+[powershell-install-configure]: https://docs.microsoft.com/powershell/azureps-cmdlets-docs
 [hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1/
 [hdinsight-cluster-customize]: /documentation/articles/hdinsight-hadoop-customize-cluster-v1/
 

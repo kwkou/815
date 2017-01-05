@@ -88,7 +88,7 @@
 [Azure 门户预览]: https://portal.azure.cn
 [VSTS Portal]: https://www.visualstudio.com/products/visual-studio-team-services-vs.aspx
 [Installing Git]: http://git-scm.com/book/zh/v2/%E8%B5%B7%E6%AD%A5-%E5%AE%89%E8%A3%85-Git
-[如何使用适用于 Azure 的 PowerShell]: /documentation/articles/powershell-install-configure/
+[如何使用适用于 Azure 的 PowerShell]: https://docs.microsoft.com/powershell/azureps-cmdlets-docs
 [如何使用针对 Mac 和 Linux 的 Azure 命令行工具]: /documentation/articles/xplat-cli-install/
 [Git 文档]: http://git-scm.com/documentation
 

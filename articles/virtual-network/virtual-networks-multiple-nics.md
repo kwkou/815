@@ -76,7 +76,7 @@ Azure 具有两种不同的部署模型，用于创建和处理资源：[Resourc
 
 * Azure 订阅。
 * 已配置虚拟网络。有关 VNet 的详细信息，请参阅[虚拟网络概述](/documentation/articles/virtual-networks-overview/)。
-* 已下载和安装最新版本的 Azure PowerShell。请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)。
+* 已下载和安装最新版本的 Azure PowerShell。请参阅[如何安装和配置 Azure PowerShell](https://docs.microsoft.com/powershell/azureps-cmdlets-docs)。
 
 若要创建具有多个 NIC 的 VM，请通过在单个 PowerShell 会话中输入每个命令来完成以下步骤：
 

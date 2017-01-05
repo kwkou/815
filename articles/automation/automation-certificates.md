@@ -29,7 +29,7 @@ Azure 自动化中的安全资产包括凭据、证书、连接和加密的变�
 
 ## Windows PowerShell Cmdlet
 
-下表中的 cmdlet 用于通过 Windows PowerShell 创建和管理自动化证书资产。可在自动化 Runbook 中使用的 [Azure PowerShell 模块](/documentation/articles/powershell-install-configure/)已随附了这些 cmdlet。
+下表中的 cmdlet 用于通过 Windows PowerShell 创建和管理自动化证书资产。可在自动化 Runbook 中使用的 [Azure PowerShell 模块](https://docs.microsoft.com/powershell/azureps-cmdlets-docs)已随附了这些 cmdlet。
 
 |Cmdlet|说明|
 |:---|:---|

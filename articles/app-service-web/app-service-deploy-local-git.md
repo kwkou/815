@@ -162,7 +162,7 @@
 * [Git 文档](http://git-scm.com/documentation)
 * [项目 Kudu 文档](https://github.com/projectkudu/kudu/wiki)
 * [连续部署到 Azure App Service](/documentation/articles/app-service-continuous-deployment/)
-* [如何使用适用于 Azure 的 PowerShell](/documentation/articles/powershell-install-configure/)
+* [如何使用适用于 Azure 的 PowerShell](https://docs.microsoft.com/powershell/azureps-cmdlets-docs)
 * [如何使用 Azure 命令行界面](/documentation/articles/xplat-cli-install/)
 
 [Azure App Service]: /documentation/articles/app-service-changes-existing-services/

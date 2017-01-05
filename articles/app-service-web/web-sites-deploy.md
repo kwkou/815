@@ -1,5 +1,5 @@
 <properties
-	pageTitle="将应用部署到 Azure App Service"
+	pageTitle="将应用部署到 Azure App Service | Azure"
 	description="了解如何将你的应用部署到 Azure App Service。"
 	services="app-service"
 	documentationCenter=""
@@ -182,7 +182,7 @@ Visual Studio 支持所有这三种部署过程（FTP、Git 和 Web 部署），
 
 有关详细信息，请参阅以下资源：
 
-* [Azure 命令行工具](/downloads/#cmd-line-tools)。Azure.com 中有关命令行工具信息的门户页面。
+* [Azure 命令行工具](/downloads/)。Azure.com 中有关命令行工具信息的门户页面。
 
 ###<a name="webdeploy"></a>从 Web 部署命令行进行部署
 

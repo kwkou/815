@@ -57,7 +57,8 @@ VHD 使用的 URI 采用以下格式：https://**mystorageaccount**.blob.core.ch
 
 		$location = "China North"
 		$vnetName = "myVnet"
-		$vnet = New-AzureRmVirtualNetwork -Name $vnetName -ResourceGroupName $rgName -Location $location -AddressPrefix 10.0.0.0/16 -Subnet $singleSubnet
+		$vnet = New-AzureRmVirtualNetwork -Name $vnetName -ResourceGroupName $rgName -Location $location `
+		    -AddressPrefix 10.0.0.0/16 -Subnet $singleSubnet
        
 ## 创建公共 IP 地址和网络接口
 
@@ -66,12 +67,14 @@ VHD 使用的 URI 采用以下格式：https://**mystorageaccount**.blob.core.ch
 1. 创建公共 IP 地址。此示例创建名为 **myPip** 的公共 IP 地址。
 
 		$ipName = "myPip"
-		$pip = New-AzureRmPublicIpAddress -Name $ipName -ResourceGroupName $rgName -Location $location -AllocationMethod Dynamic
+		$pip = New-AzureRmPublicIpAddress -Name $ipName -ResourceGroupName $rgName -Location $location `
+		    -AllocationMethod Dynamic
 
 2. 创建 NIC。此示例创建名为 **myNic** 的 NIC。
 
 		$nicName = "myNic"
-		$nic = New-AzureRmNetworkInterface -Name $nicName -ResourceGroupName $rgName -Location $location -SubnetId $vnet.Subnets[0].Id -PublicIpAddressId $pip.Id
+		$nic = New-AzureRmNetworkInterface -Name $nicName -ResourceGroupName $rgName -Location $location `
+		    -SubnetId $vnet.Subnets[0].Id -PublicIpAddressId $pip.Id
 
 ## 创建网络安全组和 RDP 规则
 
@@ -127,7 +130,9 @@ VHD 使用的 URI 采用以下格式：https://**mystorageaccount**.blob.core.ch
 	$osDiskName = "myOsDisk"
 	
 	# Assign a SKU name. This example sets the SKU name as "Standard_LRS"
-	# Valid values for -SkuName are: Standard_LRS - locally redundant storage, Standard_ZRS - zone redundant storage, Standard_GRS - geo redundant storage, Standard_RAGRS - read access geo redundant storage, Premium_LRS - premium locally redundant storage. 
+	# Valid values for -SkuName are: Standard_LRS - locally redundant storage, Standard_ZRS - zone redundant
+    # storage, Standard_GRS - geo redundant storage, Standard_RAGRS - read access geo redundant storage,
+    # Premium_LRS - premium locally redundant storage. 
 	$skuName = "Standard_LRS"
 	
 	# Get the storage account where the uploaded image is stored
@@ -137,16 +142,18 @@ VHD 使用的 URI 采用以下格式：https://**mystorageaccount**.blob.core.ch
 	$vmConfig = New-AzureRmVMConfig -VMName $vmName -VMSize $vmSize
 
 	#Set the Windows operating system configuration and add the NIC
-	$vm = Set-AzureRmVMOperatingSystem -VM $vmConfig -Windows -ComputerName $computerName -Credential $cred -ProvisionVMAgent -EnableAutoUpdate
-
+	$vm = Set-AzureRmVMOperatingSystem -VM $vmConfig -Windows -ComputerName $computerName `
+	    -Credential $cred -ProvisionVMAgent -EnableAutoUpdate
 	$vm = Add-AzureRmVMNetworkInterface -VM $vm -Id $nic.Id
 
 	# Create the OS disk URI
-	$osDiskUri = '{0}vhds/{1}-{2}.vhd' -f $storageAcc.PrimaryEndpoints.Blob.ToString(), $vmName.ToLower(), $osDiskName
+	$osDiskUri = '{0}vhds/{1}-{2}.vhd' `
+	    -f $storageAcc.PrimaryEndpoints.Blob.ToString(), $vmName.ToLower(), $osDiskName
 
 	# Configure the OS disk to be created from the existing VHD image (-CreateOption fromImage).
 
-	$vm = Set-AzureRmVMOSDisk -VM $vm -Name $osDiskName -VhdUri $osDiskUri -CreateOption fromImage -SourceImageUri $imageURI -Windows
+	$vm = Set-AzureRmVMOSDisk -VM $vm -Name $osDiskName -VhdUri $osDiskUri `
+	    -CreateOption fromImage -SourceImageUri $imageURI -Windows
 
 	# Create the new VM
 	New-AzureRmVM -ResourceGroupName $rgName -Location $location -VM $vm

@@ -30,6 +30,8 @@
 
 [AZURE.INCLUDE [了解部署模型](../../includes/learn-about-deployment-models-classic-include.md)]
 
+关于登录到资源管理器模型的 VM，请点击[这里](/documentation/articles/virtual-machines-windows-connect-logon/).
+
 ## 连接到虚拟机
 
 1. 登录到 Azure 经典管理门户。

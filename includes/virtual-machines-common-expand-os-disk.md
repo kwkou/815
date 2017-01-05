@@ -7,7 +7,7 @@
 >[AZURE.IMPORTANT]Azure 具有用于创建和处理资源的两个不同的部署模型：Resource Manager 和经典。本文介绍如何使用 Resource Manager 模型。Azure 建议大多数新部署使用资源管理器模型。
 
 ## 调整 OS 驱动器的大小
-在本文中，我们将使用 [Azure Powershell](/documentation/articles/powershell-install-configure/) 的 Resource Manager 模块，完成调整 OS 驱动器大小的任务。在管理模式下打开 Powershell ISE 或 Powershell 窗口，并遵循以下步骤：
+在本文中，我们将使用 [Azure Powershell](https://docs.microsoft.com/powershell/azureps-cmdlets-docs) 的 Resource Manager 模块，完成调整 OS 驱动器大小的任务。在管理模式下打开 Powershell ISE 或 Powershell 窗口，并遵循以下步骤：
 
 1.  在资源管理模式下登录你的 Azure 帐户，然后选择你的订阅，如下所示：
 

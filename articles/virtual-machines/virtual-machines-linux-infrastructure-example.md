@@ -1,5 +1,5 @@
 <properties
-	pageTitle="示例基础结构演练 | Azure"
+	pageTitle="示例 Azure 基础结构演练 | Azure"
 	description="了解用于在 Azure 中部署示例基础结构的关键设计和实施准则。"
 	documentationCenter=""
 	services="virtual-machines-linux"

@@ -25,6 +25,8 @@
 
 [AZURE.INCLUDE [virtual-machines-common-classic-about-images](../../includes/virtual-machines-common-classic-about-images.md)]
 
+想查看更多关于资源管理器模型的信息，请点击[这里](/documentation/articles/virtual-machines-linux-cli-ps-findimage/)。
+
 ## 使用映像
 
 可以使用适用于 Mac、Linux 和 Windows 的 Azure 命令行接口 (CLI) 模块管理可供 Azure 订阅使用的映像。也可以使用 Azure 经典管理门户完成某些映像任务，但命令行提供更多选项。

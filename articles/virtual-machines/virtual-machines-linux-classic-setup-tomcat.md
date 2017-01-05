@@ -24,6 +24,8 @@ Apache Tomcat（或简称 Tomcat，以前也称为 Jakarta Tomcat）是由 Apach
 
 [AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]
 
+在 Ubuntu 安装 Open JDK 和 Tomcate 的资源管理器模板，请点击[这里](https://github.com/Azure/azure-quickstart-templates/tree/master/openjdk-tomcat-ubuntu-vm/).
+
 在本指南中，将在 Linux 映像上安装 tomcat7，并将其部署在 Azure 中。
 
 你将学习以下内容：

@@ -37,24 +37,24 @@
 
 - **Ubuntu**
 
-		# sudo apt-get update
-		# sudo apt-get install mdadm
+		sudo apt-get update
+		sudo apt-get install mdadm
 
 - **CentOS 和 Oracle Linux**
 
-		# sudo yum install mdadm
+		sudo yum install mdadm
 
 - **SLES 和 openSUSE**
 
-		# zypper install mdadm
+		zypper install mdadm
 
 
 ## 创建磁盘分区
 在此示例中，我们将在 /dev/sdc 上创建单个磁盘分区。然后，将该新磁盘分区命名为 /dev/sdc1。
 
-- 启动 fdisk，以开始创建分区
+- 启动 `fdisk`，以开始创建分区
 
-		# sudo fdisk /dev/sdc
+		sudo fdisk /dev/sdc
 		Device contains neither a valid DOS partition table, nor Sun, SGI or OSF disklabel
 		Building a new DOS disklabel with disk identifier 0xa34cb70c.
 		Changes will remain in memory only, until you decide to write them.
@@ -73,7 +73,6 @@
 		Command action
 			e   extended
 			p   primary partition (1-4)
-		p
 
 - 按 1 键，以选择分区号 1：
 
@@ -105,7 +104,7 @@
 
 1. 以下示例为位于三个不同数据磁盘 (sdc1, sdd1, sde1) 上的三个分区设置带区（RAID 级别 0）：
 
-		# sudo mdadm --create /dev/md127 --level 0 --raid-devices 3 \
+		sudo mdadm --create /dev/md127 --level 0 --raid-devices 3 \
 		  /dev/sdc1 /dev/sdd1 /dev/sde1
 
 在此示例中，运行此命令后将创建一个名为 **/dev/md127** 的新 RAID 设备。另请注意，如果这些数据磁盘之前属于另一失效的 RAID 阵列，则可能需要将 `--force` 参数添加到 `mdadm` 命令。
@@ -113,33 +112,34 @@
 
 2. 在新 RAID 设备上创建文件系统
 
-	**CentOS、Oracle Linux、SLES 12、openSUSE 和 Ubuntu**
+	a. **CentOS、Oracle Linux、SLES 12、openSUSE 和 Ubuntu**
 
-		# sudo mkfs -t ext4 /dev/md127
+		sudo mkfs -t ext4 /dev/md127
 
-	**SLES 11**
+	b. **SLES 11**
 
-		# sudo mkfs -t ext3 /dev/md127
+		sudo mkfs -t ext3 /dev/md127
 
-3. **SLES 11 和 openSUSE** - 启用 boot.md 并创建 mdadm.conf
+	c. **SLES 11 和 openSUSE** - 启用 boot.md 并创建 mdadm.conf
 
-		# sudo -i chkconfig --add boot.md
-		# sudo echo 'DEVICE /dev/sd*[0-9]' >> /etc/mdadm.conf
+		sudo -i chkconfig --add boot.md
+		sudo echo 'DEVICE /dev/sd*[0-9]' >> /etc/mdadm.conf
 
 	>[AZURE.NOTE] 在 SUSE 系统中进行这些更改后，可能需要重新启动。在 SLES 12 中，*不*需要执行此步骤。
 
 
 ## 将新文件系统添加到 /etc/fstab
 
-**警告：**编辑 /etc/fstab 文件不正确，可能会导致系统无法启动。如果不确定，请参阅发行版文档，了解有关如何正确编辑该文件的信息。另外，建议在编辑前备份 /etc/fstab 文件。
+> [AZURE.IMPORTANT]
+> 编辑 /etc/fstab 文件不正确，可能会导致系统无法启动。如果不确定，请参阅发行版文档，了解有关如何正确编辑该文件的信息。另外，建议在编辑前备份 /etc/fstab 文件。
 
 1. 为新文件系统创建所需的安装点，例如：
 
-		# sudo mkdir /data
+		sudo mkdir /data
 
 2. 编辑 /etc/fstab 文件时，使用 **UUID** 引用文件系统，而非设备名称。使用 `blkid` 实用程序确定新文件系统的 UUID：
 
-		# sudo /sbin/blkid
+		sudo /sbin/blkid
 		...........
 		/dev/md127: UUID="aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee" TYPE="ext4"
 
@@ -155,13 +155,13 @@
 
 4. 测试该 /etc/fstab 条目是否正确：
 
-		# sudo mount -a
+		sudo mount -a
 
 	如果此命令导致错误消息，请检查 /etc/fstab 文件中的语法。
 
 	接下来，运行 `mount` 命令以确保文件系统已安装：
 
-		# mount
+		mount
 		.................
 		/dev/md127 on /data type ext4 (rw)
 

@@ -21,6 +21,8 @@
 
 [AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]
 
+发布 MySQL 群集的资源管理器模板，请点击[这里](https://github.com/Azure/azure-quickstart-templates/tree/master/mysql-replication/)。
+
 ## 介绍
 
 本文旨在探索并说明可用于在 Azure 上部署基于 Linux 的高度可用服务的不同方法，并作为入门书探索 MySQL Server 的高可用性。

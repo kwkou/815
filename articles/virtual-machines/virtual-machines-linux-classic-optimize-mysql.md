@@ -24,6 +24,8 @@
 
 [AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]
 
+想查看更多关于在资源管理器模型优化 Linux VM 的信息，请点击[这里](/documentation/articles/virtual-machines-linux-optimization/)。
+
 ##利用 Azure 虚拟机上的 RAID
 存储是影响云环境中的数据库性能的关键因素。与单个磁盘相比，RAID 可以通过并发访问提供更快的访问速度。有关更多详细信息，请参阅[标准 RAID 级别](http://en.wikipedia.org/wiki/Standard_RAID_levels)。
 

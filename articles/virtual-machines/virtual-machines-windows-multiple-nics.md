@@ -28,7 +28,7 @@
 > 
 
 ## 创建核心资源
-确保[已安装并配置最新的 Azure PowerShell](/documentation/articles/powershell-install-configure/)。登录 Azure 帐户：
+确保[已安装并配置最新的 Azure PowerShell](https://docs.microsoft.com/powershell/azureps-cmdlets-docs)。登录 Azure 帐户：
 
     Login-AzureRmAccount -EnvironmentName AzureChinaCloud
 

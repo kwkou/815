@@ -55,7 +55,7 @@ Azure 具有两种不同的部署模型，用于创建和处理资源：[Resourc
 
 ## 管理保留 VIP
 
-通过完成[安装和配置 PowerShell](/documentation/articles/powershell-install-configure/) 文章中的步骤确保已安装和配置 PowerShell。
+通过完成[安装和配置 PowerShell](https://docs.microsoft.com/powershell/azureps-cmdlets-docs) 文章中的步骤确保已安装和配置 PowerShell。
 
 在使用保留 IP 之前，必须先将其添加到订阅。若要从 *中国北部* 位置中提供的公共 IP 地址池创建保留 IP，请运行以下命令：
 

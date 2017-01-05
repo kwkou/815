@@ -93,7 +93,7 @@
 ## 使用 PowerShell 部署 ARM 模板
 若要使用 PowerShell 部署下载的 ARM 模板，请执行以下步骤。
 
-1. 如果从未使用过 Azure PowerShell，请按照[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/) 一文中的说明进行安装和配置。
+1. 如果从未使用过 Azure PowerShell，请按照[如何安装和配置 Azure PowerShell](https://docs.microsoft.com/powershell/azureps-cmdlets-docs) 一文中的说明进行安装和配置。
 2. 运行 **`New-AzureRmResourceGroup`** cmdlet，使用模板创建资源组。
 
         New-AzureRmResourceGroup -Name TestRG -Location chinanorth `

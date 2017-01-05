@@ -26,11 +26,9 @@
 
 [AZURE.INCLUDE [了解部署模型](../../includes/learn-about-deployment-models-both-include.md)]
 
-> [AZURE.NOTE] 如果有时间，请参加这个有关体验的[快速调查](https://aka.ms/linuxdocsurvey)，帮助我们改进 Azure Linux VM 文档。每个回答都将帮助我们帮助你完成工作。
-
 ## 操作系统磁盘
 
-每个虚拟机都附加了一个操作系统磁盘。默认情况下，它注册为 SATA 驱动器并标为 C: 盘。此磁盘的最大容量为 1023 GB。
+每个虚拟机都附加了一个操作系统磁盘。默认情况下，它注册为 SATA 驱动器并标为 /dev/sda。此磁盘的最大容量为 1023 GB。
 
 ##临时磁盘
 
