@@ -14,9 +14,9 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="identity"
-    ms.date="11/15/2016"
-    ms.author="skwan;bryanla" 
-    wacn.date="12/12/2016"/>  
+    ms.date="11/29/2016"
+    wacn.date="01/05/2017"
+    ms.author="skwan;bryanla" />  
 
 
 # Azure Active Directory v2.0 身份验证库
@@ -106,11 +106,6 @@ Azure AD v2.0 适用于两类库：
 [ClientLib-NET-Sample]: /documentation/articles/active-directory-v2-devquickstarts-wpf/
 [ClientLib-Node-Lib]: https://www.npmjs.com/package/passport-azure-ad
 [ClientLib-Node-Repo]: https://github.com/AzureAD/passport-azure-ad
-[ClientLib-Node-Sample]: [ClientLib-Iosmac-Lib]:
-[ClientLib-Iosmac-Repo]: [ClientLib-Iosmac-Sample]:
-[ClientLib-Android-Lib]: [ClientLib-Android-Repo]:
-[ClientLib-Android-Sample]: [ClientLib-Js-Lib]:
-[ClientLib-Js-Repo]: [ClientLib-Js-Sample]:
 
 [Microsoft-SDL]: http://www.microsoft.com/sdl/default.aspx
 [ServerLib-Net4-Owin-Oidc-Lib]: https://www.nuget.org/packages/Microsoft.Owin.Security.OpenIdConnect/
@@ -132,4 +127,4 @@ Azure AD v2.0 适用于两类库：
 [ServerLib-Node-Repo]: https://github.com/AzureAD/passport-azure-ad/
 [ServerLib-Node-Sample]: /documentation/articles/active-directory-v2-devquickstarts-node-web/
 
-<!---HONumber=Mooncake_1205_2016-->
+<!---HONumber=Mooncake_1226_2016-->

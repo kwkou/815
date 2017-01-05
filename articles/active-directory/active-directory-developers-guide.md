@@ -15,7 +15,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="identity"
     ms.date="12/09/2016"
-    wacn.date="01/03/2017"
+    wacn.date="01/05/2017"
     ms.author="mbaldwin" />  
 
 
@@ -57,6 +57,7 @@
 
 - [获取 Azure AD 租户](/documentation/articles/active-directory-howto-tenant/)
 - [通过多租户应用程序模式使 Azure AD 用户登录](/documentation/articles/active-directory-devhowto-multi-tenant-overview/)
+- [对使用证书的服务/后台应用程序进行身份验证](https://github.com/Azure-Samples/active-directory-dotnet-daemon-certificate-credential/)
 - 使用 ADAL 在 [Android](/documentation/articles/active-directory-sso-android/) 和 [iOS](/documentation/articles/active-directory-sso-ios/) 设备上实现跨应用 SSO
 - [针对 Azure AD 认证 AppSource 应用程序](/documentation/articles/active-directory-devhowto-appsource-certified/)
 - [列出 Azure AD 应用程序库中的应用程序](/documentation/articles/active-directory-app-gallery-listing/)

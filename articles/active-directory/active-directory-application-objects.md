@@ -14,9 +14,9 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="identity"
-    ms.date="11/15/2016"
-    ms.author="bryanla;mbaldwin" 
-    wacn.date="12/09/2016"/>
+    ms.date="11/29/2016"
+    wacn.date="01/05/2017"
+    ms.author="bryanla;mbaldwin" />
 
 # Azure Active Directory 中的应用程序对象和服务主体对象
 Azure Active Directory (Azure AD) 中的术语“应用程序”有时很容易造成误解，尤其是缺少支持上下文时。本文旨在更加明确地阐明其含义，澄清 Azure AD 应用程序集成的概念和具体层面，然后演示如何注册和同意[多租户应用程序](/documentation/articles/active-directory-dev-glossary/#multi-tenant-application/)。
@@ -28,14 +28,14 @@ Azure AD 应用程序远远不只是一套软件。它是一个概念性的术�
 在 [Azure 经典管理门户][AZURE-Classic-Portal]中注册应用程序时，将在 Azure AD 租户中创建两个对象：应用程序对象和服务主体对象。
 
 #### 应用程序对象
-Azure AD 应用程序由其唯一一个应用程序对象来 *定义*，该对象位于应用程序注册到的 Azure AD 租户（称为应用程序的“宿主”租户）中。应用程序对象为应用程序提供标识相关信息，并且是 *派生* 其对应服务主体对象（在运行时使用）的模板。
+Azure AD 应用程序由其唯一一个应用程序对象来*定义*，该对象位于应用程序注册到的 Azure AD 租户（称为应用程序的“宿主”租户）中。应用程序对象为应用程序提供标识相关信息，并且是*派生*其对应服务主体对象（在运行时使用）的模板。
 
-可以将应用程序对象视为应用程序的 *全局* 表示形式（供所有租户使用），将服务主体视为*本地*表示形式（在特定租户中使用）。Azure AD Graph [Application 实体][AAD-Graph-App-Entity]定义应用程序对象的架构。因此，应用程序对象与软件应用程序之间存在 1:1 的关系，而与其对应的  *n* 个服务主体对象存在 1: *n* 的关系。
+可以将应用程序对象视为应用程序的*全局*表示形式（供所有租户使用），将服务主体视为*本地*表示形式（在特定租户中使用）。Azure AD Graph [Application 实体][AAD-Graph-App-Entity]定义应用程序对象的架构。因此，应用程序对象与软件应用程序之间存在 1:1 的关系，而与其对应的 *n* 个服务主体对象存在 1:*n* 的关系。
 
 #### 服务主体对象
 服务主体对象定义应用程序的策略和权限，为安全主体提供了基础，使其能够在运行时访问资源时代表应用程序。Azure AD Graph [ServicePrincipal 实体][AAD-Graph-Sp-Entity]定义服务主体对象的架构。
 
-在应用程序的用法实例必须代表的每个租户中，必须存在一个服务主体，这样才能安全访问该租户中的用户拥有的资源。单租户应用程序只有一个服务主体（在其宿主租户中）。多租户 [Web 应用程序](/documentation/articles/active-directory-dev-glossary/#web-client/)的每个租户中也有一个服务主体，但另外在租户的管理员或用户已同意该应用程序的每个租户上，拥有一个用于访问其资源的服务主体。在同意之后，将来的授权请求将参考服务主体对象。
+必须先在给定租户中创建服务主体，Azure AD 租户才会允许应用程序访问其保护的资源。服务主体为 Azure AD 提供相关基础，让它能够保护应用程序从该租户访问用户所有的资源的权限。单租户应用程序只有一个服务主体（在其宿主租户中）。多租户 [Web 应用程序](/documentation/articles/active-directory-dev-glossary/#web-client/)的每个租户中也有一个服务主体，但另外在租户的管理员或用户已同意该应用程序的每个租户上，拥有一个用于访问其资源的服务主体。在同意之后，将来的授权请求将参考服务主体对象。
 
 > [AZURE.NOTE] 对应用程序对象所做的任何更改也只反映在该对象在应用程序宿主租户（其注册所在的租户）的服务主体对象中。对于多租户应用程序，在使用者租户删除该访问权限并重新授予访问权限之前，对应用程序对象所做的更改不会反映在任何使用者租户的服务主体对象中。
 
@@ -66,4 +66,4 @@ Azure AD 应用程序由其唯一一个应用程序对象来 *定义*，该对�
 [AAD-Graph-Sp-Entity]: https://msdn.microsoft.com/Library/Azure/Ad/Graph/api/entity-and-complex-type-reference#serviceprincipal-entity
 [AZURE-Classic-Portal]: https://manage.windowsazure.cn
 
-<!---HONumber=Mooncake_1128_2016-->
+<!---HONumber=Mooncake_1226_2016-->
