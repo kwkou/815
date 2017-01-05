@@ -258,7 +258,7 @@ VNet 网关使用共享密钥对虚拟网络之间的连接进行身份验证。
 [azure-portal]: http://manage.windowsazure.cn
 
 
-[powershell-install]: /documentation/articles/powershell-install-configure/
+[powershell-install]: https://docs.microsoft.com/powershell/azureps-cmdlets-docs
 
 
 

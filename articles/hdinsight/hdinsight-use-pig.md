@@ -137,7 +137,7 @@ HDInsight 可以使用各种方法来运行 Pig Latin 作业。使用下表来�
 [hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1/
 [hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically/#mapreduce-sdk
 
-[Powershell-install-configure]: /documentation/articles/powershell-install-configure/
+[Powershell-install-configure]: https://docs.microsoft.com/powershell/azureps-cmdlets-docs
 
 [powershell-start]: http://technet.microsoft.com/zh-cn/library/hh847889.aspx
 

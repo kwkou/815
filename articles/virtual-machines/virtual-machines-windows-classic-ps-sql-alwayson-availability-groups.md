@@ -47,7 +47,7 @@ Azure 虚拟机 (VM) 可帮助数据库管理员降低高可用性 SQL Server �
 
 - 你已有一个用于虚拟机订阅的 Azure 帐户。
 
-- 已安装 [Azure PowerShell cmdlet](/documentation/articles/powershell-install-configure/)。
+- 已安装 [Azure PowerShell cmdlet](https://docs.microsoft.com/powershell/azureps-cmdlets-docs)。
 
 - 你已深入了解本地解决方案的 AlwaysOn 可用性组。有关详细信息，请参阅 [AlwaysOn 可用性组 (SQL Server)](https://msdn.microsoft.com/zh-cn/library/hh510230.aspx)。
 

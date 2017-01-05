@@ -23,6 +23,8 @@
 
 [AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]
 
+关于在资源管理器模型使用 VM 扩展，请点击[这里](/documentation/articles/virtual-machines-windows-extensions-features/)。
+
 [AZURE.INCLUDE [virtual-machines-common-classic-manage-extensions](../../includes/virtual-machines-common-classic-manage-extensions.md)]
 
 <!---HONumber=Mooncake_0118_2016-->

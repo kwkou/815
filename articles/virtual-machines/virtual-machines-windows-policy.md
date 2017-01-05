@@ -36,50 +36,48 @@
 企业中常用的一种方案可能是，只允许其用户在经测试可与 LOB 应用程序兼容的特定操作系统中创建虚拟机。使用 Azure Resource Manager 策略可以通过几个步骤完成此任务。
 在此策略示例中，我们将只允许创建 Windows Server 2012 R2 数据中心虚拟机。策略定义如下所示
 
-```
-"if": {
-  "allOf": [
-    {
-      "field": "type",
-      "equals": "Microsoft.Compute/virtualMachines"
-    },
-    {
-      "not": {
-        "allOf": [
-          {
-            "field": "Microsoft.Compute/virtualMachines/imagePublisher",
-            "equals": "MicrosoftWindowsServer"
-          },
-          {
-            "field": "Microsoft.Compute/virtualMachines/imageOffer",
-            "equals": "WindowsServer"
-          },
-          {
-            "field": "Microsoft.Compute/virtualMachines/imageSku",
-            "equals": "2012-R2-Datacenter"
+    "if": {
+      "allOf": [
+        {
+          "field": "type",
+          "equals": "Microsoft.Compute/virtualMachines"
+        },
+        {
+          "not": {
+            "allOf": [
+              {
+                "field": "Microsoft.Compute/virtualMachines/imagePublisher",
+                "equals": "MicrosoftWindowsServer"
+              },
+              {
+                "field": "Microsoft.Compute/virtualMachines/imageOffer",
+                "equals": "WindowsServer"
+              },
+              {
+                "field": "Microsoft.Compute/virtualMachines/imageSku",
+                "equals": "2012-R2-Datacenter"
+              }
+            ]
           }
-        ]
-      }
+        }
+      ]
+    },
+    "then": {
+      "effect": "deny"
     }
-  ]
-},
-"then": {
-  "effect": "deny"
-}
-```
 
 可以轻松修改上述策略，以允许在虚拟机部署中使用经过以下更改的任何 Windows Server Datacenter 映像
 
-```
-{
-  "field": "Microsoft.Compute/virtualMachines/imageSku",
-  "like": "*Datacenter"
-}
-```
+    {
+      "field": "Microsoft.Compute/virtualMachines/imageSku",
+      "like": "*Datacenter"
+    }
 
 #### 虚拟机属性字段
 
-下表描述了可在策略定义中用作字段的虚拟机属性。
+下表描述了可在策略定义中用作字段的虚拟机属性。有关策略字段的详细信息，请参阅以下文章：
+
+* [字段和源](/documentation/articles/resource-manager-policy/#conditions)
 
 | 字段名称 | 说明 |
 |----------------|----------------------------------------------------|
@@ -90,10 +88,14 @@
 
 ## 创建策略
 
-可以直接使用 REST API 或 PowerShell cmdlet 轻松创建策略。
+可以直接使用 REST API 或 PowerShell cmdlet 轻松创建策略。有关创建策略的信息，请参阅以下文章：
+
+* [创建策略](/documentation/articles/resource-manager-policy/#create-and-assign-a-policy)
 
 ## 应用策略
 
-创建策略后，需要根据定义的范围来应用它。范围可以是订阅、资源组甚至资源。
+创建策略后，需要根据定义的范围来应用它。范围可以是订阅、资源组甚至资源。有关应用策略的信息，请参阅以下文章：
+
+* [创建策略](/documentation/articles/resource-manager-policy/#create-and-assign-a-policy)
 
 <!---HONumber=Mooncake_0425_2016-->

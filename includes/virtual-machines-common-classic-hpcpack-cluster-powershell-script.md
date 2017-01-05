@@ -14,7 +14,7 @@
 * **Azure 订阅** - 你可以使用 Azure 全球或 Azure 中国服务中的订阅。你的订阅限制只会影响你可以部署的群集节点数量和类型。有关信息，请参阅 [Azure 订阅和服务限制、配额与约束](/documentation/articles/azure-subscription-service-limits/)。
 
 
-* **安装并配置了 Azure PowerShell 0.8.7 或更高版本的 Windows 客户端计算机** - 有关安装说明和用于连接到 Azure 订阅的步骤，请参阅[安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)。
+* **安装并配置了 Azure PowerShell 0.8.7 或更高版本的 Windows 客户端计算机** - 有关安装说明和用于连接到 Azure 订阅的步骤，请参阅[安装和配置 Azure PowerShell](https://docs.microsoft.com/powershell/azureps-cmdlets-docs)。
 
 
 * **HPC Pack IaaS 部署脚本** - 从 [Microsoft 下载中心](https://www.microsoft.com/download/details.aspx?id=44949)下载并解压缩最新版本的脚本。通过运行 `New-HPCIaaSCluster.ps1 -Version` 检查脚本的版本。本文基于版本 4.4.1 的脚本。

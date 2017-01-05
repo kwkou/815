@@ -145,7 +145,7 @@ Hive 命令提供了一种简单的方法，可以交互方式在 HDInsight 群�
 [hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data/
 [hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1/
 
-[Powershell-install-configure]: /documentation/articles/powershell-install-configure/
+[Powershell-install-configure]: https://docs.microsoft.com/powershell/azureps-cmdlets-docs
 [powershell-here-strings]: http://technet.microsoft.com/zh-cn/library/ee692792.aspx
 
 <!---HONumber=Mooncake_Quality_Review_1202_2016-->

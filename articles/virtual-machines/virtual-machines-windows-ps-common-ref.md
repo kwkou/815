@@ -24,7 +24,7 @@
 
 本文介绍可用于在 Azure 订阅中创建和管理虚拟机的一些 Azure PowerShell 命令。若要获取特定命令行开关和选项的详细帮助，可以使用 **Get-Help** *命令*。
 
-有关安装最新版本的 Azure PowerShell、选择订阅和登录帐户的信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)。
+有关安装最新版本的 Azure PowerShell、选择订阅和登录帐户的信息，请参阅[如何安装和配置 Azure PowerShell](https://docs.microsoft.com/powershell/azureps-cmdlets-docs)。
 
 ## 创建 VM
 

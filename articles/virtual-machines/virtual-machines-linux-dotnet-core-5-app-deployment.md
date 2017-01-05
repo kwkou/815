@@ -34,6 +34,10 @@
 
 有关如何在 Linux 上托管 .Net Core 应用程序的详细信息，请参阅 [Publish to a Linux Production Environment](https://docs.asp.net/en/latest/publishing/linuxproduction.html)（发布到 Linux 生产环境）。
 
+> 这个示例只用于展示。
+>
+>
+
     #!/bin/bash
 
     # install dotnet core

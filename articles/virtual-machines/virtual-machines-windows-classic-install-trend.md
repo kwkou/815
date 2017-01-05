@@ -50,7 +50,7 @@
 
 若要在现有 VM 上安装代理，需满足以下先决条件：
 
-- 在本地计算机上安装 Azure PowerShell 模块 0.8.2 版或更高版本。可以使用 **Get-Module azure | format-table version** 命令查看已安装的 Azure PowerShell 的版本。有关说明以及指向最新版本的链接，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)。使用 `Add-AzureAccount` 登录到 Azure 订阅。
+- 在本地计算机上安装 Azure PowerShell 模块 0.8.2 版或更高版本。可以使用 **Get-Module azure | format-table version** 命令查看已安装的 Azure PowerShell 的版本。有关说明以及指向最新版本的链接，请参阅[如何安装和配置 Azure PowerShell](https://docs.microsoft.com/powershell/azureps-cmdlets-docs)。使用 `Add-AzureAccount` 登录到 Azure 订阅。
 
 - 在目标虚拟机上安装 VM 代理。
 

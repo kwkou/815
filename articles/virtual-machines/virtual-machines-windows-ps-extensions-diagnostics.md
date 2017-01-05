@@ -24,7 +24,7 @@
 
 [AZURE.INCLUDE [了解部署模型](../../includes/learn-about-deployment-models-both-include.md)]
 
-你可以使用 Azure 诊断扩展从运行 Windows 的 Azure 虚拟机收集诊断数据（例如应用程序日志、性能计数器等）。本文介绍如何使用 PowerShell 为虚拟机启用 Azure 诊断扩展。有关本文所需的先决条件，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)。
+你可以使用 Azure 诊断扩展从运行 Windows 的 Azure 虚拟机收集诊断数据（例如应用程序日志、性能计数器等）。本文介绍如何使用 PowerShell 为虚拟机启用 Azure 诊断扩展。有关本文所需的先决条件，请参阅[如何安装和配置 Azure PowerShell](https://docs.microsoft.com/powershell/azureps-cmdlets-docs)。
 
 ## 使用资源管理器部署模型在虚拟机上启用 Azure 诊断扩展
 

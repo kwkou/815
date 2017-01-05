@@ -26,7 +26,7 @@
 创建虚拟机需要执行本文中的所有步骤，需要大约 30 分钟。将命令中的示例参数值替换为对环境有意义的名称。
 
 ## 步骤 1：安装 Azure PowerShell
-有关安装最新版本的 Azure PowerShell、选择订阅和登录帐户的信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)。
+有关安装最新版本的 Azure PowerShell、选择订阅和登录帐户的信息，请参阅[如何安装和配置 Azure PowerShell](https://docs.microsoft.com/powershell/azureps-cmdlets-docs)。
 
 ## 步骤 2：创建资源组
 所有资源都必须包含在资源组中，因此让我们先创建资源组。
@@ -111,14 +111,14 @@
 
         $myVM = Add-AzureRmVMNetworkInterface -VM $myVM -Id $myNIC.Id
 
-6. 定义 VM 硬盘的名称和位置。虚拟硬盘文件存储在容器中。此命令在已创建的存储帐户的名为 **vhds/WindowsVMosDisk.vhd** 的容器中创建磁盘。
+6. 定义 VM 硬盘的名称和位置。虚拟硬盘文件存储在容器中。此命令在已创建的存储帐户的名为 **vhds/myOsDisk1.vhd** 的容器中创建磁盘。
 
         $blobPath = "vhds/myOsDisk1.vhd"
         $osDiskUri = $myStorageAccount.PrimaryEndpoints.Blob.ToString() + $blobPath
 
 7. 将操作系统磁盘信息添加到 VM 配置。将 **$diskName** 的值替换为操作系统磁盘的名称。创建变量并将磁盘信息添加到配置。
 
-        $vm = Set-AzureRmVMOSDisk -VM $myVM -Name "myOsDisk1" -VhdUri $osDiskUri -CreateOption fromImage
+        $myVM = Set-AzureRmVMOSDisk -VM $myVM -Name "myOsDisk1" -VhdUri $osDiskUri -CreateOption fromImage
 
 8. 最后，创建虚拟机。
 

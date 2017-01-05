@@ -23,7 +23,7 @@
 
 [AZURE.INCLUDE [virtual-machines-common-portal-create-fqdn](../../includes/virtual-machines-common-portal-create-fqdn.md)]
 
-你现在可以使用此 DNS 名称远程连接至 VM，例如用于 `ssh adminuser@testdnslabel.centralus.chinacloudapp.cn`。
+你现在可以使用此 DNS 名称远程连接至 VM，例如用于 `ssh ops@mydns.chinanorth.chinacloudapp.cn`。
 
 ## 后续步骤
 你的 VM 已经有公共 IP 和 DNS 名称，现在可以部署通用应用程序框架或服务，例如 nginx、MongoDB、Docker 等等。

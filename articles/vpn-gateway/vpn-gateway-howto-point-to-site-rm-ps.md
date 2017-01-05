@@ -67,7 +67,7 @@
 
 ## 开始之前
 * 确保你拥有 Azure 订阅。如果你还没有 Azure 订阅，可以注册获取[1元帐户](/pricing/1rmb-trial)。
-* 安装最新版本的 Azure Resource Manager PowerShell cmdlet。有关安装 PowerShell cmdlet 的详细信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)。使用 PowerShell 进行此配置时，请确保以管理员身份运行。
+* 安装最新版本的 Azure Resource Manager PowerShell cmdlet。有关安装 PowerShell cmdlet 的详细信息，请参阅[如何安装和配置 Azure PowerShell](https://docs.microsoft.com/powershell/azureps-cmdlets-docs)。使用 PowerShell 进行此配置时，请确保以管理员身份运行。
 
 ## <a name="declare"></a>第 1 部分 - 登录并设置变量
 在本部分，可以登录并声明用于此配置的值。声明的值将在示例脚本中使用。根据自己的环境更改值。或者，可以使用声明的值，以练习的形式逐步执行每个步骤。

@@ -59,7 +59,7 @@
 
 #### 使用 Azure Resource Manager工具配置 CORS
 
-也可以使用 [Azure PowerShell](/documentation/articles/powershell-install-configure/) 和 [Azure CLI](/documentation/articles/xplat-cli-install/) 等命令行工具中的 [Azure Resource Manager 模板](/documentation/articles/resource-group-authoring-templates/)来配置 API 应用的 CORS。
+也可以使用 [Azure PowerShell](https://docs.microsoft.com/powershell/azureps-cmdlets-docs) 和 [Azure CLI](/documentation/articles/xplat-cli-install/) 等命令行工具中的 [Azure Resource Manager 模板](/documentation/articles/resource-group-authoring-templates/)来配置 API 应用的 CORS。
 
 有关可设置 CORS 属性的 Azure Resource Manager 模板的示例，请打开[本教程的示例应用程序存储库中的 azuredeploy.json 文件](https://github.com/azure-samples/app-service-api-dotnet-todo-list/blob/master/azuredeploy.json)。找到如以下示例中所示的模板部分：
 

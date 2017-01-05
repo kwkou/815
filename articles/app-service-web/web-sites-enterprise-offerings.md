@@ -39,7 +39,7 @@ IT 环境正在快速变化，从在资本成本高、前置时间长的传统�
 
 开发团队正在寻求提供即时业务利益，频繁地推出新功能。它们正在寻找一种集成其现有工具和实践（开发、测试、发布）的经济高效、可靠的平台；而且正在与 IT 部门合作实现部署、管理和警报过程的自动化，以期实现零故障时间的目标。
 
-##<a name="highlevel"></a> 高级别的解决方案 ##
+## <a name="highlevel" id="high-level-solution"></a> 高级别的解决方案 ##
 
 Web 平台和框架越来越多地被用于开发、测试和托管业务线应用程序。就典型的业务线应用程序而言（例如内部员工支出系统），通常仅包含一个带有用于存储与应用程序相关数据的支持数据库的 Web 应用。
 
@@ -80,7 +80,7 @@ App Service Web Apps 提供了一个稳定、可靠的平台，后者已被证�
 
 Azure 平台支持基于角色的身份验证控制，从而支持对 Web 应用内的资源进行企业级控制。RBAC 支持企业在 Azure 环境中为其所有资产实施自己的访问管理策略，将用户分配到组并反过来根据 Web 应用等资产将所需的权限分配给这些组。关于 Azure 中 RBAC 的详细信息，请参阅 [http://aka.ms/azurerbac](/documentation/articles/role-based-access-control-configure/)。通过利用 Web Apps，你可以确保将 Web 应用程序部署在安全可靠的环境中，并完全地控制要将资产部署到的区域。
 
-通过支持往回连接到你的内部资源（如数据仓库或 SharePoint 环境），应用服务 Web 应用还能够充分利用你的本地投资。如之前在[高级别的解决方案](#highlevel)中所讨论的，用户可以使用混合连接和虚拟网络连接建立到本地基础结构和服务的连接。
+通过支持往回连接到你的内部资源（如数据仓库或 SharePoint 环境），应用服务 Web 应用还能够充分利用你的本地投资。如之前在[高级别的解决方案](#high-level-solution)中所讨论的，用户可以使用混合连接和虚拟网络连接建立到本地基础结构和服务的连接。
 
 ## 解决方案详细信息 ##
 
@@ -109,7 +109,7 @@ Azure 平台提供了一些替代方法，可以将 Azure SQL 数据库用作 We
 App Service Web Apps 提供了一款灵活、经济高效、响应迅速的解决方案在快速发展的环境中满足企业不断变化的需求。Web Apps 帮助企业利用托管平台以及现代化的 DevOps 功能和减少的人工管理提高了生产力和效率，同时提供企业扩展功能、弹性、安全性以及与本地资产的集成。
 
 ## 行动号召 ##
-有关 Azure App Service Web Apps 服务的详细信息，请访问 [http://aka.ms/enterprisewebsites](/home/features/app-service/web-apps/)，在这里你可以查看更多信息；并登录 [http://aka.ms/azuretrial](/pricing/1rmb-trial/) 立即注册试用版，评估该服务并发现为你企业带来的优势。
+有关 Azure App Service Web Apps 服务的详细信息，请访问 [http://aka.ms/enterprisewebsites](/home/features/app-service/web-apps/)，在这里你可以查看更多信息；并登录 [https://www.azure.cn/pricing/1rmb-trial/](/pricing/1rmb-trial/) 立即注册试用版，评估该服务并发现为你企业带来的优势。
 
 [AZURE.INCLUDE [app-service-web-whats-changed](../../includes/app-service-web-whats-changed.md)]
 

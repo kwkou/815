@@ -54,7 +54,7 @@
 
 若要查看应用到网络接口的聚合路由，请完成以下步骤：
 
-1.  启动 Azure PowerShell 会话并登录到 Azure。如果不熟悉 Azure PowerShell，请阅读 [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure/)（如何安装和配置 Azure PowerShell）一文。
+1.  启动 Azure PowerShell 会话并登录到 Azure。如果不熟悉 Azure PowerShell，请阅读 [How to install and configure Azure PowerShell](https://docs.microsoft.com/powershell/azureps-cmdlets-docs)（如何安装和配置 Azure PowerShell）一文。
 
 2.  以下命令返回对资源组 *RG1* 中名为 *VM1-NIC1* 的网络接口应用的所有路由：
 

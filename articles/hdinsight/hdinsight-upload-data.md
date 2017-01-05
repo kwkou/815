@@ -97,13 +97,13 @@ Azure CLI 是一个跨平台工具，可用于管理 Azure 服务。使用以下
 >
 
 ### <a id="powershell"></a>Azure PowerShell
-Azure PowerShell 是一个脚本编写环境，可用于在 Azure 中控制和自动执行工作负荷的部署和管理。有关配置工作站以运行 Azure PowerShell 的信息，请参阅[安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)。
+Azure PowerShell 是一个脚本编写环境，可用于在 Azure 中控制和自动执行工作负荷的部署和管理。有关配置工作站以运行 Azure PowerShell 的信息，请参阅[安装和配置 Azure PowerShell](https://docs.microsoft.com/powershell/azureps-cmdlets-docs)。
 
 [AZURE.INCLUDE [use-latest-version](../../includes/hdinsight-use-latest-powershell.md)]
 
 **将本地文件上传到 Azure Blob 存储**
 
-1. 根据[安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/) 中的说明打开 Azure PowerShell 控制台。
+1. 根据[安装和配置 Azure PowerShell](https://docs.microsoft.com/powershell/azureps-cmdlets-docs) 中的说明打开 Azure PowerShell 控制台。
 2. 设置以下脚本中前五个变量的值：
 
         $resourceGroupName = "<AzureResourceGroupName>"
@@ -277,7 +277,7 @@ Sqoop 是一种专用于在 Hadoop 和关系数据库之间传输数据的工具
 
 [apache-sqoop-guide]: http://sqoop.apache.org/docs/1.4.4/SqoopUserGuide.html
 
-[Powershell-install-configure]: /documentation/articles/powershell-install-configure/
+[Powershell-install-configure]: https://docs.microsoft.com/powershell/azureps-cmdlets-docs
 
 [azurecli]: /documentation/articles/xplat-cli-install/
 

@@ -24,7 +24,7 @@
 
 [AZURE.INCLUDE [virtual-machines-common-classic-about-images](../../includes/virtual-machines-common-classic-about-images.md)]
 
-
+更多关于在资源管理器模型查找镜像，请点击[这里](/documentation/articles/virtual-machines-windows-cli-ps-findimage/)。
 
 ## 使用映像
 

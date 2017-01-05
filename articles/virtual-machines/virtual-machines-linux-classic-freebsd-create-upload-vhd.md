@@ -24,6 +24,7 @@
 
 [AZURE.INCLUDE [了解部署模型](../../includes/learn-about-deployment-models-classic-include.md)]
 
+想查看更多关于使用资源管理器模型上传 VHD，请点击[这里](/documentation/articles/virtual-machines-linux-upload-vhd/)。
 
 ## 先决条件
 本文假定你拥有以下项目：
@@ -195,7 +196,7 @@
 
    有关详细信息，请参阅 [Azure cmdlet 入门](http://msdn.microsoft.com/zh-cn/library/azure/jj554332.aspx)。
 
-   有关安装和配置 PowerShell 的详细信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)。
+   有关安装和配置 PowerShell 的详细信息，请参阅[如何安装和配置 Azure PowerShell](https://docs.microsoft.com/powershell/azureps-cmdlets-docs)。
 
 ## 步骤 4：上载 .vhd 文件
 

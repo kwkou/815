@@ -183,7 +183,7 @@ Web 应用 Memcache 填充码可以与任何应用程序一起使用，前提是
 [1]: http://bit.ly/1t0KxBQ
 [2]: http://manage.windowsazure.cn
 [3]: http://portal.azure.cn
-[4]: /documentation/articles/powershell-install-configure/
+[4]: https://docs.microsoft.com/powershell/azureps-cmdlets-docs
 [5]: /downloads
 [6]: http://pecl.php.net
 [7]: http://pecl.php.net/package/memcache

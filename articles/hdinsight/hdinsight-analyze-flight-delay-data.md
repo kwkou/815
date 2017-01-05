@@ -817,7 +817,7 @@ HiveQL 脚本将执行以下操作：
 
 
 [rita-website]: http://www.transtats.bts.gov/DL_SelectFields.asp?Table_ID=236&DB_Short_Name=On-Time
-[powershell-install-configure]: /documentation/articles/powershell-install-configure/
+[powershell-install-configure]: https://docs.microsoft.com/powershell/azureps-cmdlets-docs
 
 [hdinsight-use-oozie]: /documentation/articles/hdinsight-use-oozie/
 [hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive/

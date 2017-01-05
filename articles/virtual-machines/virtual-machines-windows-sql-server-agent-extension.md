@@ -55,7 +55,7 @@ SQL Server IaaS 代理扩展支持以下管理任务：
 
 **Azure PowerShell**：
 
-- [下载和配置最新 Azure PowerShell 命令](/documentation/articles/powershell-install-configure/)
+- [下载和配置最新 Azure PowerShell 命令](https://docs.microsoft.com/powershell/azureps-cmdlets-docs)
 
 ## 安装
 

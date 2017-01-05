@@ -300,7 +300,7 @@ URI 方案提供了使用 *wasb:* 前缀的未加密访问和使用 *wasbs* 的 
 * [使用 Azure 存储空间共享访问签名来限制使用 HDInsight 访问数据][hdinsight-use-sas]
 
 [hdinsight-use-sas]: /documentation/articles/hdinsight-storage-sharedaccesssignature-permissions/
-[powershell-install]: /documentation/articles/powershell-install-configure/
+[powershell-install]: https://docs.microsoft.com/powershell/azureps-cmdlets-docs
 [hdinsight-creation]: /documentation/articles/hdinsight-provision-clusters-v1/
 [hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1/
 [hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data/

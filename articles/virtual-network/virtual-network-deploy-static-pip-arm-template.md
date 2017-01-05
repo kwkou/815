@@ -104,7 +104,7 @@ Azure 具有两种不同的部署模型，用于创建和处理资源：[Resourc
 
 若要使用 PowerShell 部署下载的模板，请执行以下步骤。
 
-1. 如果从未使用过 Azure PowerShell，请完成[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/) 一文中的步骤。
+1. 如果从未使用过 Azure PowerShell，请完成[如何安装和配置 Azure PowerShell](https://docs.microsoft.com/powershell/azureps-cmdlets-docs) 一文中的步骤。
 2. 在 PowerShell 控制台中，根据需要运行 `New-AzureRmResourceGroup` cmdlet，创建新资源组。如果已创建资源组，请转到步骤 3。
 
         New-AzureRmResourceGroup -Name PIPTEST -Location chinanorth

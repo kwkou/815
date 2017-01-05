@@ -61,7 +61,7 @@ Azure VPN 网关会将以下路由播发到本地 BGP 设备：
 
 ### 能否在 ExpressRoute/S2S VPN 共存配置中对 S2S VPN 使用 BGP？
 
-现在不行。
+可以的。
 
 ### Azure VPN 网关将哪个地址用于 BGP 对等节点 IP？
 

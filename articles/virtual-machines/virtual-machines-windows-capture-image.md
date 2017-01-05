@@ -25,7 +25,7 @@
 
 ## 先决条件
 * 必须已[通用化 VM](/documentation/articles/virtual-machines-windows-generalize-vhd/)。通用化 VM 时将删除所有个人帐户信息及其他某些数据，并准备好要用作映像的计算机。
-* 需要安装 Azure PowerShell 1.0.x 版或更新版本。如果尚未安装 PowerShell，请参阅 [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure/)（如何安装和配置 Azure PowerShell）了解安装步骤。
+* 需要安装 Azure PowerShell 1.0.x 版或更新版本。如果尚未安装 PowerShell，请参阅 [How to install and configure Azure PowerShell](https://docs.microsoft.com/powershell/azureps-cmdlets-docs)（如何安装和配置 Azure PowerShell）了解安装步骤。
 
 ## 登录到 Azure PowerShell
 1. 打开 Azure PowerShell 并登录到 Azure 帐户。

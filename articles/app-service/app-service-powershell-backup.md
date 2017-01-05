@@ -46,7 +46,7 @@
 
 ## 安装 Azure PowerShell 1.3.2 或更高版本
 
-有关安装和使用 Azure PowerShell 的说明，请参阅 [Using Azure PowerShell with Azure Resource Manager](/documentation/articles/powershell-install-configure/)（将 Azure PowerShell 与 Azure Resource Manager 配合使用）。
+有关安装和使用 Azure PowerShell 的说明，请参阅 [Using Azure PowerShell with Azure Resource Manager](https://docs.microsoft.com/powershell/azureps-cmdlets-docs)（将 Azure PowerShell 与 Azure Resource Manager 配合使用）。
 
 ## 创建备份
 

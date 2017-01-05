@@ -38,22 +38,22 @@ LVM 可用于将多个物理磁盘合并成单个存储卷。默认情况下，L
 
 - **Ubuntu**
 
-		# sudo apt-get update
-		# sudo apt-get install lvm2
+		sudo apt-get update
+		sudo apt-get install lvm2
 
 - **RHEL、CentOS 和 Oracle Linux**
 
-		# sudo yum install lvm2
+		sudo yum install lvm2
 
 - **SLES 12 和 openSUSE**
 
-		# sudo zypper install lvm2
+		sudo zypper install lvm2
 
 - **SLES 11**
 
-		# sudo zypper install lvm2
+		sudo zypper install lvm2
 
-	在 SLES11 上，还必须编辑 /etc/sysconfig/lvm 并将 `LVM_ACTIVATED_ON_DISCOVERED` 设置为“enable”：
+	在 SLES11 上，还必须编辑 `/etc/sysconfig/lvm` 并将 `LVM_ACTIVATED_ON_DISCOVERED` 设置为“enable”：
 
 		LVM_ACTIVATED_ON_DISCOVERED="enable" 
 
@@ -63,71 +63,72 @@ LVM 可用于将多个物理磁盘合并成单个存储卷。默认情况下，L
 
 1. 准备物理卷：
 
-		# sudo pvcreate /dev/sd[cde]
-		  Physical volume "/dev/sdc" successfully created
-		  Physical volume "/dev/sdd" successfully created
-		  Physical volume "/dev/sde" successfully created
+		sudo pvcreate /dev/sd[cde]
+		Physical volume "/dev/sdc" successfully created
+		Physical volume "/dev/sdd" successfully created
+		Physical volume "/dev/sde" successfully created
 
 
-2.  创建卷组。在本例中，我们将调用卷组“data-vg01”：
+2.  创建卷组。在本例中，我们将调用卷组 `data-vg01`：
 
-		# sudo vgcreate data-vg01 /dev/sd[cde]
-		  Volume group "data-vg01" successfully created
+		sudo vgcreate data-vg01 /dev/sd[cde]
+		Volume group "data-vg01" successfully created
 
 
-3. 创建一个或多个逻辑卷。以下命令将创建跨整个卷组的名为“data-lv01”的单个逻辑卷，但请注意，在卷组中创建多个逻辑卷也是可行的。
+3. 创建一个或多个逻辑卷。以下命令将创建跨整个卷组的名为 `data-lv01` 的单个逻辑卷，但请注意，在卷组中创建多个逻辑卷也是可行的。
 
-		# sudo lvcreate --extents 100%FREE --stripes 3 --name data-lv01 data-vg01
-		  Logical volume "data-lv01" created.
+		sudo lvcreate --extents 100%FREE --stripes 3 --name data-lv01 data-vg01
+		Logical volume "data-lv01" created.
 
 
 4. 格式化逻辑卷
 
-		# sudo mkfs -t ext4 /dev/data-vg01/data-lv01
+		sudo mkfs -t ext4 /dev/data-vg01/data-lv01
 
-  >[AZURE.NOTE] 在 SLES11 上，请使用“-t ext3”而不是 ext4。SLES11 仅支持对 ext4 文件系统进行只读访问。
+  >[AZURE.NOTE] 在 SLES11 上，请使用 `-t ext3` 而不是 ext4。SLES11 仅支持对 ext4 文件系统进行只读访问。
 
 
 ## 将新文件系统添加到 /etc/fstab
 
-**警告：**错误地编辑 /etc/fstab 文件可能会导致系统无法引导。如果没有把握，请参考分发的文档来获取有关如何正确编辑该文件的信息。另外，建议在编辑之前创建 /etc/fstab 文件的备份。
+> [AZURE.IMPORTANT]
+> 错误地编辑 `/etc/fstab` 文件可能会导致系统无法引导。如果没有把握，请参考分发的文档来获取有关如何正确编辑该文件的信息。另外，建议在编辑之前创建 `/etc/fstab` 文件的备份。
 
 1. 为新文件系统创建所需的装入点，例如：
 
-		# sudo mkdir /data
+		sudo mkdir /data
 
 
 2. 查找逻辑卷路径
 
-		# lvdisplay
+		lvdisplay
 		--- Logical volume ---
 		LV Path                /dev/data-vg01/data-lv01
 		....
 
 
-3. 在文本编辑器中打开 /etc/fstab 并为新文件系统添加新条目，例如：
+3. 在文本编辑器中打开 `/etc/fstab` 并为新文件系统添加新条目，例如：
 
 		/dev/data-vg01/data-lv01  /data  ext4  defaults  0  2
 
-	然后，保存并关闭 /etc/fstab。
+	然后，保存并关闭 `/etc/fstab`。
 
 
-4. 测试该 /etc/fstab 条目是否正确：
+4. 测试该 `/etc/fstab` 条目是否正确：
 
-		# sudo mount -a
+		sudo mount -a
 
-	如果此命令导致错误消息，请检查 /etc/fstab 文件中的语法。
+	如果此命令导致错误消息，请检查 `/etc/fstab` 文件中的语法。
 
 	接下来，运行 `mount` 命令以确保文件系统已装入：
 
-		# mount
+		mount
 		......
 		/dev/mapper/data--vg01-data--lv01 on /data type ext4 (rw)
 
 
-5. （可选）/etc/fstab 中的防故障引导参数
+5. （可选）`/etc/fstab` 中的防故障引导参数
 
-	许多分发版包括 `nobootwait` 或 `nofail` 装入参数，这些参数可以添加到 /etc/fstab 文件中。这些参数允许装入某特定文件系统时失败，并且允许 Linux 系统继续引导，即使它无法正确装入 RAID 文件系统也无妨。请参阅你的分发的文档，了解有关这些参数的详细信息。
+	许多分发版包括 `nobootwait` 或 `nofail` 装入参数，这些参数可以添加到 `/etc/fstab` 文件中。这些参数允许装入某特定文件系统时失败，并且允许 Linux 系统继续引导，即使它无法正确装入 RAID 文件系统也无妨。请参阅你的分发的文档，了解有关这些参数的详细信息。
 
 	示例 (Ubuntu)：
 

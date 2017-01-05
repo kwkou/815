@@ -24,7 +24,7 @@
 
 如果希望创建虚拟机，需要创建[虚拟网络](/documentation/articles/virtual-networks-overview/)或对能够添加 VM 的现有虚拟网络比较了解。通常情况下，创建 VM 时，还需考虑创建本文所述资源。
 
-有关安装最新版本的 Azure PowerShell、选择订阅和登录帐户的信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)。
+有关安装最新版本的 Azure PowerShell、选择订阅和登录帐户的信息，请参阅[如何安装和配置 Azure PowerShell](https://docs.microsoft.com/powershell/azureps-cmdlets-docs)。
 
 ## 创建网络资源
 

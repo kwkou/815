@@ -25,7 +25,7 @@
 * [Azure CLI](/documentation/articles/resource-group-authenticate-service-principal-cli/)
 * [门户](/documentation/articles/resource-group-create-service-principal-portal/)
 
-如果应用程序或脚本需要访问资源，用户在多数情况下不想要使用自己的凭据来运行此过程。用户可能有几种不同的权限可用于应用程序，如果用户职责改变，则不想要应用程序继续使用此凭据。与上述方法不同，也可以为应用程序创建一个标识，其中包括身份验证凭据和角色分配情况。每次应用运行时，将使用这些凭据对其自身进行身份验证。本主题介绍如何通过 [Azure PowerShell](/documentation/articles/powershell-install-configure/) 为应用程序进行一切所需设置，使之能够使用自己的凭据和标识运行。
+如果应用程序或脚本需要访问资源，用户在多数情况下不想要使用自己的凭据来运行此过程。用户可能有几种不同的权限可用于应用程序，如果用户职责改变，则不想要应用程序继续使用此凭据。与上述方法不同，也可以为应用程序创建一个标识，其中包括身份验证凭据和角色分配情况。每次应用运行时，将使用这些凭据对其自身进行身份验证。本主题介绍如何通过 [Azure PowerShell](https://docs.microsoft.com/powershell/azureps-cmdlets-docs) 为应用程序进行一切所需设置，使之能够使用自己的凭据和标识运行。
 
 使用 PowerShell 时，可以通过两个选项进行 AD 应用程序身份验证：
 

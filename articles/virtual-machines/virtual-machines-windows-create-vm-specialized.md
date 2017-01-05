@@ -40,7 +40,8 @@
 
 		$location = "China North"
 		$vnetName = "myVnetName"
-		$vnet = New-AzureRmVirtualNetwork -Name $vnetName -ResourceGroupName $rgName -Location $location -AddressPrefix 10.0.0.0/16 -Subnet $singleSubnet
+		$vnet = New-AzureRmVirtualNetwork -Name $vnetName -ResourceGroupName $rgName -Location $location `
+		    -AddressPrefix 10.0.0.0/16 -Subnet $singleSubnet
 
 ## 创建公共 IP 地址和 NIC
 
@@ -49,12 +50,14 @@
 1. 创建公共 IP。在此示例中，公共 IP 地址名称设置为 **myIP**。
 
 		$ipName = "myIP"
-		$pip = New-AzureRmPublicIpAddress -Name $ipName -ResourceGroupName $rgName -Location $location -AllocationMethod Dynamic
+		$pip = New-AzureRmPublicIpAddress -Name $ipName -ResourceGroupName $rgName -Location $location `
+		    -AllocationMethod Dynamic
 
 2. 创建 NIC。在此示例中，NIC 名称设置为 **myNicName**。
 
 		$nicName = "myNicName"
-		$nic = New-AzureRmNetworkInterface -Name $nicName -ResourceGroupName $rgName -Location $location -SubnetId $vnet.Subnets[0].Id -PublicIpAddressId $pip.Id
+		$nic = New-AzureRmNetworkInterface -Name $nicName -ResourceGroupName $rgName -Location $location `
+		    -SubnetId $vnet.Subnets[0].Id -PublicIpAddressId $pip.Id
 
 ## 创建网络安全组和 RDP 规则
 
@@ -78,23 +81,27 @@
 
 设置 VM 配置，以便将复制的 VHD 附加为 OS VHD。
 
-	# Set the URI for the VHD that you want to use. In this example, the VHD file named "myOsDisk.vhd" is kept in a storage account named "myStorageAccount" in a container named "myContainer".
+	# Set the URI for the VHD that you want to use. In this example, the VHD file named "myOsDisk.vhd" is kept
+	# in a storage account named "myStorageAccount" in a container named "myContainer".
 	$osDiskUri = "https://myStorageAccount.blob.core.chinacloudapi.cn/myContainer/myOsDisk.vhd"
 	
-	#Set the VM name and size. This example sets the VM name to "myVM" and the VM size to "Standard_A2".
+	# Set the VM name and size. This example sets the VM name to "myVM" and the VM size to "Standard_A2".
 	$vmName = "myVM"
 	$vmConfig = New-AzureRmVMConfig -VMName $vmName -VMSize "Standard_A2"
 
-	#Add the NIC
+	# Add the NIC
 	$vm = Add-AzureRmVMNetworkInterface -VM $vmConfig -Id $nic.Id
 
-	#Add the OS disk by using the URL of the copied OS VHD. In this example, when the OS disk is created, the term "osDisk" is appened to the VM name to create the OS disk name. This example also specifies that this Windows-based VHD should be attached to the VM as the OS disk.
+	# Add the OS disk by using the URL of the copied OS VHD. In this example, when the OS disk is created, the
+	# term "osDisk" is appened to the VM name to create the OS disk name. This example also specifies that this
+	# Windows-based VHD should be attached to the VM as the OS disk.
 	$osDiskName = $vmName + "osDisk"
 	$vm = Set-AzureRmVMOSDisk -VM $vm -Name $osDiskName -VhdUri $osDiskUri -CreateOption attach -Windows
 
 如果需要将数据磁盘附加到 VM，还应该添加以下代码：
 
-	# Optional: Add data disks by using the URLs of the copied data VHDs at the appropriate Logical Unit Number (Lun).
+	# Optional: Add data disks by using the URLs of the copied data VHDs at the appropriate Logical Unit
+	# Number (Lun).
 	$dataDiskName = $vmName + "dataDisk"
 	$vm = Add-AzureRmVMDataDisk -VM $vm -Name $dataDiskName -VhdUri $dataDiskUri -Lun 0 -CreateOption attach
 

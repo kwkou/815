@@ -50,7 +50,7 @@
 
 **Azure PowerShell**：
 
-- [安装最新的 Azure PowerShell 命令](/documentation/articles/powershell-install-configure/)。
+- [安装最新的 Azure PowerShell 命令](https://docs.microsoft.com/powershell/azureps-cmdlets-docs)。
 
 **SQL Server IaaS 扩展**：
 

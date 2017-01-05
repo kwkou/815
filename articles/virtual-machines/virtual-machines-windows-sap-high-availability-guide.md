@@ -22,60 +22,60 @@
 
 # Windows 虚拟机 (VM) 上的 SAP NetWeaver - 高可用性指南
 
-[767598]: https://service.sap.com/sap/support/notes/767598
-[773830]: https://service.sap.com/sap/support/notes/773830
-[826037]: https://service.sap.com/sap/support/notes/826037
-[965908]: https://service.sap.com/sap/support/notes/965908
-[1031096]: https://service.sap.com/sap/support/notes/1031096
-[1139904]: https://service.sap.com/sap/support/notes/1139904
-[1173395]: https://service.sap.com/sap/support/notes/1173395
-[1245200]: https://service.sap.com/sap/support/notes/1245200
-[1409604]: https://service.sap.com/sap/support/notes/1409604
-[1558958]: https://service.sap.com/sap/support/notes/1558958
-[1585981]: https://service.sap.com/sap/support/notes/1585981
-[1588316]: https://service.sap.com/sap/support/notes/1588316
-[1590719]: https://service.sap.com/sap/support/notes/1590719
-[1597355]: https://service.sap.com/sap/support/notes/1597355
-[1605680]: https://service.sap.com/sap/support/notes/1605680
-[1619720]: https://service.sap.com/sap/support/notes/1619720
-[1619726]: https://service.sap.com/sap/support/notes/1619726
-[1619967]: https://service.sap.com/sap/support/notes/1619967
-[1750510]: https://service.sap.com/sap/support/notes/1750510
-[1752266]: https://service.sap.com/sap/support/notes/1752266
-[1757924]: https://service.sap.com/sap/support/notes/1757924
-[1757928]: https://service.sap.com/sap/support/notes/1757928
-[1758182]: https://service.sap.com/sap/support/notes/1758182
-[1758496]: https://service.sap.com/sap/support/notes/1758496
-[1772688]: https://service.sap.com/sap/support/notes/1772688
-[1814258]: https://service.sap.com/sap/support/notes/1814258
-[1882376]: https://service.sap.com/sap/support/notes/1882376
-[1909114]: https://service.sap.com/sap/support/notes/1909114
-[1922555]: https://service.sap.com/sap/support/notes/1922555
-[1928533]: https://service.sap.com/sap/support/notes/1928533
-[1941500]: https://service.sap.com/sap/support/notes/1941500
-[1956005]: https://service.sap.com/sap/support/notes/1956005
-[1973241]: https://service.sap.com/sap/support/notes/1973241
-[1984787]: https://service.sap.com/sap/support/notes/1984787
-[1999351]: https://service.sap.com/sap/support/notes/1999351
-[2002167]: https://service.sap.com/sap/support/notes/2002167
-[2015553]: https://service.sap.com/sap/support/notes/2015553
-[2039619]: https://service.sap.com/sap/support/notes/2039619
-[2121797]: https://service.sap.com/sap/support/notes/2121797
-[2134316]: https://service.sap.com/sap/support/notes/2134316
-[2178632]: https://service.sap.com/sap/support/notes/2178632
-[2191498]: https://service.sap.com/sap/support/notes/2191498
-[2233094]: https://service.sap.com/sap/support/notes/2233094
-[2243692]: https://service.sap.com/sap/support/notes/2243692
+[767598]: https://launchpad.support.sap.com/#/notes/767598
+[773830]: https://launchpad.support.sap.com/#/notes/773830
+[826037]: https://launchpad.support.sap.com/#/notes/826037
+[965908]: https://launchpad.support.sap.com/#/notes/965908
+[1031096]: https://launchpad.support.sap.com/#/notes/1031096
+[1139904]: https://launchpad.support.sap.com/#/notes/1139904
+[1173395]: https://launchpad.support.sap.com/#/notes/1173395
+[1245200]: https://launchpad.support.sap.com/#/notes/1245200
+[1409604]: https://launchpad.support.sap.com/#/notes/1409604
+[1558958]: https://launchpad.support.sap.com/#/notes/1558958
+[1585981]: https://launchpad.support.sap.com/#/notes/1585981
+[1588316]: https://launchpad.support.sap.com/#/notes/1588316
+[1590719]: https://launchpad.support.sap.com/#/notes/1590719
+[1597355]: https://launchpad.support.sap.com/#/notes/1597355
+[1605680]: https://launchpad.support.sap.com/#/notes/1605680
+[1619720]: https://launchpad.support.sap.com/#/notes/1619720
+[1619726]: https://launchpad.support.sap.com/#/notes/1619726
+[1619967]: https://launchpad.support.sap.com/#/notes/1619967
+[1750510]: https://launchpad.support.sap.com/#/notes/1750510
+[1752266]: https://launchpad.support.sap.com/#/notes/1752266
+[1757924]: https://launchpad.support.sap.com/#/notes/1757924
+[1757928]: https://launchpad.support.sap.com/#/notes/1757928
+[1758182]: https://launchpad.support.sap.com/#/notes/1758182
+[1758496]: https://launchpad.support.sap.com/#/notes/1758496
+[1772688]: https://launchpad.support.sap.com/#/notes/1772688
+[1814258]: https://launchpad.support.sap.com/#/notes/1814258
+[1882376]: https://launchpad.support.sap.com/#/notes/1882376
+[1909114]: https://launchpad.support.sap.com/#/notes/1909114
+[1922555]: https://launchpad.support.sap.com/#/notes/1922555
+[1928533]: https://launchpad.support.sap.com/#/notes/1928533
+[1941500]: https://launchpad.support.sap.com/#/notes/1941500
+[1956005]: https://launchpad.support.sap.com/#/notes/1956005
+[1973241]: https://launchpad.support.sap.com/#/notes/1973241
+[1984787]: https://launchpad.support.sap.com/#/notes/1984787
+[1999351]: https://launchpad.support.sap.com/#/notes/1999351
+[2002167]: https://launchpad.support.sap.com/#/notes/2002167
+[2015553]: https://launchpad.support.sap.com/#/notes/2015553
+[2039619]: https://launchpad.support.sap.com/#/notes/2039619
+[2121797]: https://launchpad.support.sap.com/#/notes/2121797
+[2134316]: https://launchpad.support.sap.com/#/notes/2134316
+[2178632]: https://launchpad.support.sap.com/#/notes/2178632
+[2191498]: https://launchpad.support.sap.com/#/notes/2191498
+[2233094]: https://launchpad.support.sap.com/#/notes/2233094
+[2243692]: https://launchpad.support.sap.com/#/notes/2243692
 
 [sap-installation-guides]: http://service.sap.com/instguides
 
 [azure-cli]: /documentation/articles/xplat-cli-install/
 [azure-portal]: https://portal.azure.cn
-[azure-ps]: /documentation/articles/powershell-install-configure/
+[azure-ps]: https://docs.microsoft.com/powershell/azureps-cmdlets-docs
 [azure-quickstart-templates-github]: https://github.com/Azure/azure-quickstart-templates
 [azure-script-ps]: https://go.microsoft.com/fwlink/p/?LinkID=395017
 [azure-subscription-service-limits]: /documentation/articles/azure-subscription-service-limits/
-[azure-subscription-service-limits-subscription]: /documentation/articles/azure-subscription-service-limits/#subscription
+[azure-subscription-service-limits-subscription]: /documentation/articles/azure-subscription-service-limits/
 
 [dbms-guide]: /documentation/articles/virtual-machines-windows-sap-dbms-guide/ "SAP NetWeaver on Windows virtual machines (VMs) - DBMS Deployment Guide（Windows 虚拟机 (VM) 上的 SAP NetWeaver - DBMS 部署指南）"
 [dbms-guide-2.1]: /documentation/articles/virtual-machines-windows-sap-dbms-guide/#c7abf1f0-c927-4a7c-9c1d-c7b5b3b7212f "VM 和 VHD 的缓存"
@@ -354,7 +354,7 @@
 [sap-ha-guide-figure-5003]: ./media/virtual-machines-shared-sap-high-availability-guide/5003-sios-replicating-local-volume-b-to-a.png
 
 
-[powershell-install-configure]: /documentation/articles/powershell-install-configure/
+[powershell-install-configure]: https://docs.microsoft.com/powershell/azureps-cmdlets-docs
 [resource-group-authoring-templates]: /documentation/articles/resource-group-authoring-templates/
 [resource-group-overview]: /documentation/articles/resource-group-overview/
 [resource-groups-networking]: /documentation/articles/resource-groups-networking/
@@ -377,8 +377,8 @@
 [templates-101-vm-from-user-image]: https://github.com/Azure/azure-quickstart-templates/tree/master/101-vm-from-user-image
 [virtual-machines-linux-attach-disk-portal]: /documentation/articles/virtual-machines-linux-attach-disk-portal/
 [virtual-machines-windows-attach-disk-portal]: /documentation/articles/virtual-machines-windows-attach-disk-portal/
-[virtual-machines-azure-resource-manager-architecture]: /documentation/articles/resource-manager-deployment-model/
-[virtual-machines-azure-resource-manager-architecture-benefits-arm]: /documentation/articles/resource-manager-deployment-model/
+[virtual-machines-azure-resource-manager-architecture]: /documentation/articles/resource-group-overview/
+[virtual-machines-azure-resource-manager-architecture-benefits-arm]: /documentation/articles/resource-group-overview/#the-benefits-of-using-resource-manager
 [virtual-machines-windows-classic-configure-oracle-data-guard]: /documentation/articles/virtual-machines-windows-classic-configure-oracle-data-guard/
 [virtual-machines-linux-cli-deploy-templates]: virtual-machines-linux-cli-deploy-templates.md "使用 Azure 资源管理器模板和 Azure CLI 部署和管理虚拟机"
 [virtual-machines-deploy-rmtemplates-powershell]: virtual-machines-windows-ps-manage.md "使用 Azure 资源管理器与 PowerShell 来管理虚拟机"

@@ -23,7 +23,7 @@
 
 # 创建运行 Linux 的自定义虚拟机
 
-> [AZURE.IMPORTANT] Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model/)。本文介绍使用经典部署模型。Azure 建议大多数新部署使用资源管理器模型。有关使用新 Azure 门户预览创建 Linux 虚拟机的信息，请参阅[使用门户在 Azure 上创建 Linux VM](/documentation/articles/virtual-machines-linux-quick-create-portal/)。
+> [AZURE.IMPORTANT] Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model/)。本文介绍使用经典部署模型。Azure 建议大多数新部署使用资源管理器模型。有关使用资源管理器模型创建 Linux VM 的信息，请参阅[使用门户在 Azure 上创建 Linux VM](/documentation/articles/virtual-machines-linux-quick-create-portal/)。
 
 
 

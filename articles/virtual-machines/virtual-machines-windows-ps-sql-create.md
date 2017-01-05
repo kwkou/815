@@ -32,7 +32,7 @@
 在本教程中，你需要：
 
 - 在开始之前，你需要有 Azure 帐户和订阅。如果没有，请注册[试用版](/pricing/1rmb-trial/)。
-- [Azure PowerShell](/documentation/articles/powershell-install-configure/)，最低版本 1.0.0 或以上（本教程使用 1.0.4 版编写）。
+- [Azure PowerShell](https://docs.microsoft.com/powershell/azureps-cmdlets-docs)，最低版本 1.0.0 或以上（本教程使用 1.0.4 版编写）。
     - 若要检索你的版本，请键入 **Get-Module Azure -ListAvailable**。
 
 ## 配置订阅
@@ -58,7 +58,7 @@
 
 根据需要修改并执行以下 cmdlet，以初始化这些变量。
 
-	$Location = "SouthCentralUS"
+	$Location = "ChinaEast"
     $ResourceGroupName = "sqlvm1"
 
 ### 存储属性
@@ -102,8 +102,8 @@
 根据需要修改并执行以下 cmdlet，以初始化这些变量。
 
     $PublisherName = "MicrosoftSQLServer"
-    $OfferName = "SQL2016RC3-WS2012R2"
-    $Sku = "Evaluation"
+    $OfferName = "SQL2016-WS2016"
+    $Sku = "Enterprise"
     $Version = "latest"
 
 请注意，可以使用 Get-AzureRmVMImageOffer 命令来获取 SQL Server 映像产品的完整列表：
@@ -276,8 +276,8 @@
 
     ##Image
     $PublisherName = "MicrosoftSQLServer"
-    $OfferName = "SQL2016RC3-WS2012R2"
-    $Sku = "Evaluation"
+    $OfferName = "SQL2016-WS2016"
+    $Sku = "Enterprise"
     $Version = "latest"
 
     # Resource Group

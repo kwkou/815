@@ -168,7 +168,7 @@ Azure 资源管理器模板定义应用程序使用的所有 Azure 资源。你�
     azure group create "TestApp1-Pre-Production" "China North"
 
 ### PowerShell
-确保已按[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/) 一文中的详述，在 Windows 计算机上安装了 PowerShell 1.01 或更高版本，并且已将 [Azure AD 帐户](/documentation/articles/active-directory-how-subscriptions-associated-directory/)（也称为工作帐户或学校帐户）连接到订阅。在 PowerShell 命令提示符下，键入以下命令以创建开发环境的资源组。
+确保已按[如何安装和配置 Azure PowerShell](https://docs.microsoft.com/powershell/azureps-cmdlets-docs) 一文中的详述，在 Windows 计算机上安装了 PowerShell 1.01 或更高版本，并且已将 [Azure AD 帐户](/documentation/articles/active-directory-how-subscriptions-associated-directory/)（也称为工作帐户或学校帐户）连接到订阅。在 PowerShell 命令提示符下，键入以下命令以创建开发环境的资源组。
 
     New-AzureRmResourceGroup -Name TestApp1-Development -Location "China North"
 

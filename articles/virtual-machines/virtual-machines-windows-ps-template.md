@@ -196,7 +196,7 @@
 
 ## 步骤 3：安装 Azure PowerShell
 
-有关安装最新版本的 Azure PowerShell、选择订阅和登录帐户的信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)。
+有关安装最新版本的 Azure PowerShell、选择订阅和登录帐户的信息，请参阅[如何安装和配置 Azure PowerShell](https://docs.microsoft.com/powershell/azureps-cmdlets-docs)。
 
 ## 步骤 4：创建资源组
 
@@ -229,7 +229,8 @@
 
         $templateFile = "template file"
         $parameterFile = "parameter file"
-        New-AzureRmResourceGroupDeployment -ResourceGroupName $rgName -TemplateFile $templateFile -TemplateParameterFile $parameterFile
+        New-AzureRmResourceGroupDeployment -ResourceGroupName $rgName -TemplateFile $templateFile `
+          -TemplateParameterFile $parameterFile
 
     You will see something like this:
 

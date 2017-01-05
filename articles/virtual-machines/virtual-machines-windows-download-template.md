@@ -41,7 +41,7 @@
 	- parameters.json
 	- template.json
 
-.json 文件是模板。
+template.json 文件是模板。
 	
 ## 使用 PowerShell 下载模板
 

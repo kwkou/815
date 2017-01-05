@@ -53,7 +53,7 @@ Azure 流量管理器是使用名为流量管理器配置文件的一系列设�
 
 本部分中的说明使用 Azure PowerShell。以下文章介绍了如何安装和配置 Azure PowerShell。
 
-- [如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)
+- [如何安装和配置 Azure PowerShell](https://docs.microsoft.com/powershell/azureps-cmdlets-docs)
 
 本文中的示例假设已有一个资源组。可以使用以下命令创建资源组：
 

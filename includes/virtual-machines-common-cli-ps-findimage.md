@@ -8,6 +8,7 @@
 
     azure vm image list chinanorth canonical ubuntuserver
 	info:    Executing command vm image list
+	warn:    The parameter --sku if specified will be ignored
 	+ Getting virtual machine image skus (Publisher:"canonical" Offer:"ubuntuserver" Location:"chinanorth")
 	data:    Publisher  Offer         Sku          OS     Version          Location    Urn
 	data:    ---------  ------------  -----------  -----  ---------------  ----------  --------------------------------------------------
@@ -116,7 +117,7 @@
 
 ## <a name="powershell"></a> PowerShell
 
-> [AZURE.NOTE] 下载并配置[最新的 Azure PowerShell](/documentation/articles/powershell-install-configure/)。如果使用低于 1.0 版本的 Azure PowerShell 模块，则仍使用以下命令，但必须先执行 `Switch-AzureMode AzureResourceManager`。
+> [AZURE.NOTE] 下载并配置[最新的 Azure PowerShell](https://docs.microsoft.com/powershell/azureps-cmdlets-docs)。如果使用低于 1.0 版本的 Azure PowerShell 模块，则仍使用以下命令，但必须先执行 `Switch-AzureMode AzureResourceManager`。
 
 使用 Azure 资源管理器创建新的虚拟机时，在某些情况下，你需要使用以下映像属性组合来指定映像：
 

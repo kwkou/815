@@ -32,7 +32,7 @@
 
 - **Azure 订阅** - 如果没有，可以[建立一个 Azure 帐户](/pricing/1rmb-trial/?WT.mc_id=A261C142F)。
 
-- **[Azure PowerShell](/documentation/articles/powershell-install-configure/)** - 已安装 Azure PowerShell 模块并将其配置为使用用户的订阅。
+- **[Azure PowerShell](https://docs.microsoft.com/powershell/azureps-cmdlets-docs)** - 已安装 Azure PowerShell 模块并将其配置为使用用户的订阅。
 
 - **.VHD 文件** - 存储在 .vhd 文件中并附加到虚拟机的受支持 Windows 操作系统。还应该检查 sysprep 是否支持 VHD 上运行的服务器角色。有关详细信息，请参阅 [Sysprep Support for Server Roles](https://msdn.microsoft.com/windows/hardware/commercialize/manufacture/desktop/sysprep-support-for-server-roles)（Sysprep 对服务器角色的支持）。
 
