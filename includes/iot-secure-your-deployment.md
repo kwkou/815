@@ -1,5 +1,4 @@
-# 保护 IoT 部署
-
+# 保护你的 IoT 部署
 本文提供保护基于 Azure IoT 的物联网 (IoT) 基础结构的进一步详细信息。它链接到配置和部署每个组件的实现级别详细信息。还提供多种竞争方式间的比较和选择。
 
 保护 Azure IoT 部署可分为以下三个安全区域：
@@ -11,7 +10,6 @@
 ![三个安全区域][img-overview]
 
 ## 安全的设备预配和身份验证
-
 Azure IoT 套件通过以下两种方式保护 IoT 设备：
 
 - 为每个设备提供唯一标识密钥（安全令牌），设备可使用该密钥与 IoT 中心通信。
@@ -29,17 +27,15 @@ IoT 中心使用安全令牌对设备和服务进行身份验证，以避免在�
 -   [安全令牌结构][lnk-security-tokens]
 -   [将 SAS 令牌当做设备使用][lnk-sas-tokens]
 
-每个 IoT 中心都有一个设备标识注册表，可用于在服务中创建各设备的资源（例如包含即时云到设备消息的队列），以及允许访问面向设备的终结点。IoT 中心标识注册表针对解决方案为设备标识和安全密钥提供安全存储。可将单个或一组设备标识添加到允许列表或方块列表，以便完全控制设备访问。以下文章提供有关设备标识注册表的结构和受支持操作的详细信息。
+每个 IoT 中心都有一个[标识注册表][lnk-identity-registry]，用于在服务中创建各设备的资源（例如包含即时云到设备消息的队列），以及允许访问面向设备的终结点。IoT 中心标识注册表针对解决方案为设备标识和安全密钥提供安全存储。可将单个或一组设备标识添加到允许列表或方块列表，以便完全控制设备访问。以下文章提供有关标识注册表的结构和受支持操作的详细信息。
 
-IoT 中心支持 AMQP、MQTT 和 HTTPS 等协议。每个协议使用 IoT 设备到 IoT 中心的安全令牌的方式不同：
+[IoT 中心支持 MQTT、AMQP 和 HTTP 等协议][lnk-protocols]。每个协议使用 IoT 设备到 IoT 中心的安全令牌的方式不同：
 
-- AMQP：基于 SASL PLAIN 和 AMQP 声明的安全性（若是中心级别令牌，则为 {policyName}@sas.root.{iothubName}；若是设备范围令牌，则为 {deviceId}）。
+* AMQP：基于 SASL PLAIN 和 AMQP 声明的安全性（若是 IoT 中心级令牌，则为 {policyName}@sas.root.{iothubName}；若是设备范围令牌，则为 {deviceId}）。
+* MQTT：CONNECT 包将 {deviceId} 用作 {ClientId}，“用户名”字段中为 {IoThubhostname}/{deviceId}；在“密码”字段中为 SAS 令牌。
+* HTTP：有效令牌位于授权请求标头中。
 
-- MQTT：CONNECT 包将 {deviceId} 用作 {ClientId}，“用户名”字段中为 {IoThubhostname}/{deviceId}；在“密码”字段中为 SAS 令牌。
-
-- HTTP：有效令牌位于授权请求标头中。
-
-IoT 中心设备标识注册表可用于配置每个设备的安全凭据和访问控制。如果 IoT 解决方案已大幅投资于[自定义设备标识注册表和/或身份验证方案][lnk-custom-auth]中具有，则可通过创建令牌服务，将该解决方案集成到具有 IoT 中心的现有基础结构中。
+IoT 中心标识注册表可用于配置每个设备的安全凭据和访问控制。如果 IoT 解决方案已大幅投资于[自定义设备标识注册表和/或身份验证方案][lnk-custom-auth]中具有，则可通过创建令牌服务，将该解决方案集成到具有 IoT 中心的现有基础结构中。
 
 ### 基于 X.509 证书的设备身份验证
 
@@ -49,9 +45,8 @@ IoT 中心设备标识注册表可用于配置每个设备的安全凭据和访�
 
 - 将标识符关联到物理设备 - 设备制造或调试过程中将设备标识和/或 X.509 证书关联到设备。
 
-- 在 IoT 中心创建对应的标识条目 - IoT 中心设备注册表中的设备标识和关联的设备信息。
-
-- 将 X.509 证书指纹安全存储在 IoT 中心设备注册表中。
+* 在 IoT 中心创建对应的标识条目 - IoT 中心标识注册表中的设备标识和关联的设备信息。
+* 将 X.509 证书指纹安全存储在 IoT 中心标识注册表中。
 
 ### 设备上的根证书
 
@@ -79,29 +74,26 @@ Azure IoT 套件支持以下密码套件（按此顺序）。
 
 ## 保护云的安全
 
-Azure IoT 中心允许为每个安全密钥定义访问控制策略。它使用以下一组权限向每个 IoT 中心的终结点授予访问权限。权限可根据功能限制对 IoT 中心的访问。
+Azure IoT 中心允许为每个安全密钥定义[访问控制策略][lnk-protocols]。它使用以下一组权限向每个 IoT 中心的终结点授予访问权限。权限可根据功能限制对 IoT 中心的访问。
 
-- **RegistryRead**。授予对设备标识注册表的读取访问权限。
+* **RegistryRead**。授予对标识注册表的读取访问权限。有关详细信息，请参阅 [identity registry][lnk-identity-registry]（标识注册表）。
+* **RegistryReadWrite**。授予对标识注册表的读取和写入访问权限。有关详细信息，请参阅 [identity registry][lnk-identity-registry]（标识注册表）。
+* **ServiceConnect**。授予对面向云服务的通信和监视终结点的访问权限。例如，它授权后端云服务接收设备到云的消息、发送云到设备的消息，以及检索对应的传送确认。
+* **DeviceConnect**。授予对面向设备的终结点的访问权限。例如，它授予发送设备到云的消息和接收云到设备的消息的权限。此权限由设备使用。
 
-- **RegistryReadWrite**。授予对设备标识注册表的读取和写入访问权限。
-
-- **ServiceConnect**。授予对面向云服务的通信和监视终结点的访问权限。例如，它授权后端云服务接收设备到云的消息、发送云到设备的消息，以及检索对应的传送确认。
-
-- **DeviceConnect**。授予对面向设备的通信终结点的访问权限。例如，它授予发送设备到云的消息和接收云到设备的消息的权限。此权限由设备使用。
-
-有两种方法可以使用[安全令牌][lnk-sas-tokens]来获取 IoT 中心的 **DeviceConnect** 权限：使用设备标识密钥，或者使用共享访问策略密钥。此外，必须注意的是，可从设备访问的所有功能都故意显示在前缀为 `/devices/{deviceId}` 的终结点上。
+有两种方法可以使用[安全令牌][lnk-sas-tokens]来获取 IoT 中心的 **DeviceConnect** 权限：使用设备标识密钥，或者使用共享访问密钥。此外，必须注意的是，可从设备访问的所有功能都故意显示在前缀为 `/devices/{deviceId}` 的终结点上。
 
 [服务组件使用共享访问策略只能生成安全令牌][lnk-service-tokens]，授予适当权限。
 
 Azure IoT 中心和其他可能是解决方案的一部分的服务允许使用 Azure Active Directory 管理用户。
 
-Azure IoT 中心引入的数据可供多种服务（例如 Azure 流分析、Blob 存储等）使用。这些服务允许管理访问权限。了解以下有关这些服务和可用选项的详细信息：
+Azure IoT 中心引入的数据可供多种服务（例如 Azure 流分析和 Azure Blob 存储）使用。这些服务允许管理访问权限。了解以下有关这些服务和可用选项的详细信息：
 
 - [Azure DocumentDB][lnk-docdb]：适用于半结构化数据的可缩放且已完全编制索引的数据库服务，可管理预配的设备的元数据，例如，属性、配置和安全属性。DocumentDB 提供高性能和高吞吐量处理、架构不可知的数据索引，以及丰富的 SQL 查询接口。
 
 - [Azure 流分析][lnk-asa]：云中处理的实时流允许快速开发和部署低成本分析解决方案，以便从设备、传感器、基础结构和应用程序实时获取深入了解。来自这种完全托管服务的数据可缩放为任何数量，同时保持高吞吐量、低延迟和复原能力。
-
-- [Blob 存储][lnk-blob]：可靠且符合经济效益的云存储，适用于设备要发送到云的数据。
+- [Azure App Services][lnk-appservices]：一个云平台，用于构建能够连接到任何地方（在云中或本地）的数据的功能强大的 Web 和移动应用。构建具有吸引力的 iOS、Android 和 Windows 移动应用。与软件即服务 (SaaS) 和企业应用程序相集成，这些应用程序一经使用便可直接连接到数十种基于云的服务和企业应用程序。使用偏好的语言（.NET、Node.js、PHP、Python 或 Java）在 IDE 中编写代码，快速构建 Web 应用和 API。
+- [Azure Blob 存储][lnk-blob]：可靠且符合经济效益的云存储，适用于设备要发送到云的数据。
 
 ## 结束语
 
@@ -110,16 +102,18 @@ Azure IoT 中心引入的数据可供多种服务（例如 Azure 流分析、Blo
 [img-overview]: ./media/iot-secure-your-deployment/overview.png
 
 [lnk-security-tokens]: /documentation/articles/iot-hub-sas-tokens/#security-token-structure
-[lnk-sas-tokens]: /documentation/articles/iot-hub-sas-tokens/#use-sas-tokens-as-a-device
-[lnk-custom-auth]: /documentation/articles/iot-hub-guidance/#customauth
+[lnk-sas-tokens]: /documentation/articles/iot-hub-devguide-security/#use-sas-tokens-in-a-device-app
+[lnk-identity-registry]: /documentation/articles/iot-hub-devguide-identity-registry/
+[lnk-protocols]: /documentation/articles/iot-hub-devguide-security
+[lnk-custom-auth]: /documentation/articles/iot-hub-devguide-security/#custom-device-authentication
 [lnk-x509]: http://www.itu.int/rec/T-REC-X.509-201210-I/en
-[lnk-use-x509]: /documentation/articles/iot-hub-sas-tokens/
+[lnk-use-x509]: /documentation/articles/iot-hub-devguide-security/
 [lnk-tls12]: https://tools.ietf.org/html/rfc5246
-[lnk-service-tokens]: /documentation/articles/iot-hub-sas-tokens/#using-security-tokens-from-service-components
+[lnk-service-tokens]: /documentation/articles/iot-hub-devguide-security/#use-security-tokens-from-service-components
 [lnk-docdb]: /documentation/services/documentdb/
 [lnk-asa]: /documentation/services/stream-analytics/
 [lnk-appservices]: /documentation/services/app-service/
 [lnk-logicapps]: /documentation/services/app-service/logic/
 [lnk-blob]: /documentation/services/storage/
 
-<!---HONumber=Mooncake_0822_2016-->
+<!---HONumber=Mooncake_1226_2016-->
