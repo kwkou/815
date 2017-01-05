@@ -71,7 +71,7 @@ Azure 拥有用于创建和使用资源的两个不同的部署模型：[资源�
 > 
 
 ### IaaS VM 和 PasS 角色实例
-可以将公共 IP 地址直接分配到云服务内的 IaaS [VM](/documentation/articles/virtual-machines-linux-about/) 或 PaaS 角色实例。此类 IP 地址称为实例层级公共 IP 地址 ([ILPIP](/documentation/articles/virtual-networks-instance-level-public-ip/))。此公共 IP 地址只能是动态的。
+可以将公共 IP 地址直接分配到云服务内的 IaaS [VM](/documentation/articles/virtual-machines-linux-azure-overview/) 或 PaaS 角色实例。此类 IP 地址称为实例层级公共 IP 地址 ([ILPIP](/documentation/articles/virtual-networks-instance-level-public-ip/))。此公共 IP 地址只能是动态的。
 
 > [AZURE.NOTE]
 它与云服务的 VIP（IaaS VM 或 PaaS 角色实例的容器）不同，因为云服务可包含多个 IaaS VM 或 PaaS 角色实例，通过同一云服务 VIP 公开。

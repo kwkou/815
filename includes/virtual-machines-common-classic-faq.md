@@ -145,7 +145,7 @@ Azure 根据 VM 的大小和操作系统按小时价格进行计费。对于不�
 
 ## 其他资源
 
-关于 [Windows](/documentation/articles/virtual-machines-windows-about/) 或 [Linux](/documentation/articles/virtual-machines-linux-about/) 虚拟机
+关于 [Windows](/documentation/articles/virtual-machines-windows-about/) 或 [Linux](/documentation/articles/virtual-machines-linux-azure-overview/) 虚拟机
 
 [创建 Linux 虚拟机的不同方式](/documentation/articles/virtual-machines-linux-creation-choices/)
 

@@ -25,7 +25,7 @@
 
 Azure 虚拟机是 Azure 提供的按需分配可缩放的计算资源之一。通常情况下，如果你对于计算环境所需的控制权比其他选择可提供的还要多，你会选择虚拟机。
 
-Azure 虚拟机让你能够灵活地进行虚拟化，而无需购买和维护运行虚拟机的物理硬件。不过，你仍然需要维护虚拟机 — 配置、修补和维护操作系统，以及在虚拟机上运行的其他任何软件。你也可以学习 [关于 Azure 中的 Linux 虚拟机](/documentation/articles/virtual-machines-linux-about/).
+Azure 虚拟机让你能够灵活地进行虚拟化，而无需购买和维护运行虚拟机的物理硬件。不过，你仍然需要维护虚拟机 — 配置、修补和维护操作系统，以及在虚拟机上运行的其他任何软件。你也可以学习 [关于 Azure 中的 Linux 虚拟机](/documentation/articles/virtual-machines-linux-azure-overview/).
 
 此表可帮助你比较由 Azure 提供的选择。
 
