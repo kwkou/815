@@ -9,7 +9,7 @@
                 tags="Azure VM,HA,Azure LB,DRBD,MariaDB,Corosync,Pacemaker,PowerShell"/>
 
 <tags
-                ms.service="virtual-machines-aog"
+                ms.service="virtual-machines-linux-aog"
                 ms.date="12/23/2016"
                 wacn.date="12/23/2016"/>
 
