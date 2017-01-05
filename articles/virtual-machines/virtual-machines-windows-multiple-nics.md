@@ -16,7 +16,7 @@
     ms.tgt_pltfrm="vm-windows"
     ms.workload="infrastructure"
     ms.date="10/27/2016"
-    wacn.date="12/20/2016"
+    wacn.date="01/05/2017"
     ms.author="iainfou" />
 
 # 创建具有多个 NIC 的 Windows VM

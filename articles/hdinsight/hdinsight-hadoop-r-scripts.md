@@ -15,7 +15,7 @@
 	ms.devlang="na"
 	ms.topic="article"
     ms.date="11/15/2016"
-    wacn.date="12/30/2016"
+    wacn.date="01/05/2017"
 	ms.author="jgao"/>
 
 # 在 HDInsight Hadoop 群集上安装并使用 R

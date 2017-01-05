@@ -16,7 +16,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="11/15/2016"
-    wacn.date="12/12/2016"
+    wacn.date="01/05/2017"
     ms.author="jgao" />
 
 # 在 HDInsight 中上传 Hadoop 作业的数据

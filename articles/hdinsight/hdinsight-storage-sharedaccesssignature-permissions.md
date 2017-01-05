@@ -14,7 +14,7 @@ ms.topic="article"
 ms.tgt_pltfrm="na"
 ms.workload="big-data"
 ms.date="10/11/2016"
-wacn.date="12/26/2016"
+wacn.date="01/05/2017"
 ms.author="larryfr"/>
 
 #使用 Azure 存储共享访问签名限制 HDInsight 访问数据

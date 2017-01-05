@@ -15,7 +15,7 @@
  ms.tgt_pltfrm="vm-linux"
  ms.workload="infrastructure-services"
  ms.date="08/23/2016"
- wacn.date="10/25/2016"
+ wacn.date="01/05/2017"
  ms.author="rasquill"/>
 
 #关于虚拟机代理和扩展

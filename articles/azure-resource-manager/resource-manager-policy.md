@@ -15,7 +15,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="na"
     ms.date="10/30/2016"
-    wacn.date="12/26/2016"
+    wacn.date="01/05/2017"
     ms.author="gauravbh;tomfitz" />
 
 # 使用策略来管理资源和控制访问

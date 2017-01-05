@@ -16,7 +16,7 @@
     ms.tgt_pltfrm="vm-windows"
     ms.workload="infrastructure-services"
     ms.date="10/27/2016"
-    wacn.date="12/20/2016"
+    wacn.date="01/05/2017"
     ms.author="iainfou" />
 
 # 使用 PowerShell 打开 Azure 中 VM 的端口和终结点

@@ -13,7 +13,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
    ms.date="11/11/2016"
-   wacn.date="12/30/2016"
+   wacn.date="01/05/2017"
    ms.author="bwren" />
 
 # Azure 自动化中的凭据资产

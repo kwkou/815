@@ -14,7 +14,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="09/13/2016"
-	wacn.date="11/21/2016"
+	wacn.date="01/05/2017"
 	ms.author="guybo"/>
 
 #使用适用于 Linux 的 Azure CustomScript 扩展部署 LAMP 应用程序#

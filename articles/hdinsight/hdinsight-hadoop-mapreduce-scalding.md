@@ -14,7 +14,7 @@
  ms.tgt_pltfrm="na"
  ms.workload="big-data"
  ms.date="10/18/2016"
- wacn.date="12/30/2016"
+ wacn.date="01/05/2017"
  ms.author="larryfr"/>
 
 # 使用 HDInsight 上的 Apache Hadoop 开发 Scalding MapReduce 作业

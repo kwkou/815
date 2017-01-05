@@ -15,7 +15,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="07/28/2016"
-	wacn.date="09/05/2016"
+	wacn.date="01/05/2017"
 	ms.author="cynthn"/>
 
 # 创建在 Azure 上运行的 Linux 虚拟机副本

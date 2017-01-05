@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="vm-windows-sql-server"
 	ms.workload="infrastructure-services"
 	ms.date="08/19/2016"
-	wacn.date="11/21/2016"
+	wacn.date="01/05/2017"
 	ms.author="jroth" />
 
 # Azure 虚拟机中 SQL Server 的自动修补 (Resource Manager)

@@ -17,7 +17,7 @@
     ms.devlang="na"
     ms.topic="get-started-article"
     ms.date="10/21/2016"
-    wacn.date="12/20/2016"
+    wacn.date="01/05/2017"
     ms.author="davidmu" />
 
 # 使用 Resource Manager 和 PowerShell 创建 Windows VM

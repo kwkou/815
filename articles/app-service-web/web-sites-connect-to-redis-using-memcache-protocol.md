@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="windows"
 	ms.workload="na"
 	ms.date="02/29/2016"
-	wacn.date="12/12/2016"
+	wacn.date="01/05/2017"
 	ms.author="cfowler"/>
 
 # 通过 Memcache 协议将 Azure App Service 中的 Web 应用连接到 Redis 缓存

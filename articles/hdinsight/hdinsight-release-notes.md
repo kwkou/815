@@ -16,7 +16,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="11/17/2016"
-    wacn.date="12/12/2016"
+    wacn.date="01/05/2017"
     ms.author="nitinme" />
 
 # Azure HDInsight 上的 Hadoop 组件发行说明

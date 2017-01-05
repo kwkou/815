@@ -14,7 +14,7 @@
    ms.tgt_pltfrm="vm-linux"
    ms.workload="required"
    ms.date="09/20/2016"
-   wacn.date="12/26/2016"
+   wacn.date="01/05/2017"
    ms.devlang="na"
    ms.author="delhan"/>
 

@@ -15,7 +15,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="10/19/2016"
-    wacn.date="12/27/2016"
+    wacn.date="01/05/2017"
     ms.author="cynthn" />
 
 # 使用 Azure PowerShell 将 IaaS 资源从经典部署模型迁移到 Azure Resource Manager

@@ -15,7 +15,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
    ms.date="11/15/2016"
-   wacn.date="12/30/2016"
+   wacn.date="01/05/2017"
    ms.author="larryfr"/>
 
 # 在 HDInsight 上的 Hadoop 中使用 MapReduce

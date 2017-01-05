@@ -15,7 +15,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="09/02/2016"
-	wacn.date="12/26/2016"
+	wacn.date="01/05/2017"
 	ms.author="jgao"/>
 
 # 使用 Bootstrap 自定义 HDInsight 群集

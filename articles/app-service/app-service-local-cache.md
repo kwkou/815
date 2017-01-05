@@ -16,7 +16,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="na"
    ms.date="03/04/2016"
-   wacn.date="09/26/2016"
+   wacn.date="01/05/2017"
    ms.author="cfowler"/>
 
 # Azure 应用服务本地缓存概述

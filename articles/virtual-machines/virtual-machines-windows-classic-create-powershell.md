@@ -15,7 +15,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="09/27/2016"
-	wacn.date="12/12/2016"
+	wacn.date="01/05/2017"
 	ms.author="cynthn"/>
 
 # 使用 Powershell 和经典部署模型创建 Windows 虚拟机 

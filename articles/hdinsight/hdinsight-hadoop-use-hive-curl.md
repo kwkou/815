@@ -15,7 +15,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
    ms.date="09/07/2016"
-   wacn.date="12/16/2016"
+   wacn.date="01/05/2017"
    ms.author="larryfr"/>
 
 #使用 Curl 在 HDInsight 中以 Hadoop 运行 Hive 查询

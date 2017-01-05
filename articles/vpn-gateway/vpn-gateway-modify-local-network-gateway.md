@@ -15,7 +15,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
    ms.date="08/08/2016"
-   wacn.date="08/29/2016"
+   wacn.date="01/05/2017"
    ms.author="cherylmc"/>
 
 # 使用 PowerShell 修改本地网络网关设置

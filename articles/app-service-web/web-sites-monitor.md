@@ -14,7 +14,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="09/07/2016"
-	wacn.date="12/12/2016"
+	wacn.date="01/05/2017"
 	ms.author="byvinyal"/>
 
 # <a name="howtomonitor"></a>在 Azure 中监视 Web Apps

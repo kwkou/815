@@ -14,7 +14,7 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="05/17/2016" 
-	wacn.date="12/16/2016" 
+	wacn.date="01/05/2017" 
 	ms.author="nitinme"/>
 
 # 在 HDInsight Hadoop 群集上安装 Giraph 并使用 Giraph 处理大型图形
