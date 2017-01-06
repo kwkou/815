@@ -79,7 +79,7 @@ Visual Studio 解决方案包含三个项目：
 	可以单击“下载 ZIP”按钮，或克隆本地计算机上的存储库。
 
 2. 在 Visual Studio 2015 或 2013 中打开 ToDoList 解决方案。
-   1. 需要信任每个解决方案。![安全警告](./media/app-service-api-dotnet-get-started/securitywarning.png)
+    1. 需要信任每个解决方案。![安全警告](./media/app-service-api-dotnet-get-started/securitywarning.png)
 
 3. 生成解决方案 (CTRL + SHIFT + B) 以还原 NuGet 包。
 

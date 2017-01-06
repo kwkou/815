@@ -147,7 +147,7 @@
     	
 	        setenforce 0
     
-       然后编辑 `/etc/selinux/config` 以设置 `SELINUX=permissive`
+        然后编辑 `/etc/selinux/config` 以设置 `SELINUX=permissive`
        
 6. 验证 MySQL 是否运行
 

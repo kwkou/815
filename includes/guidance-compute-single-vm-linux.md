@@ -135,15 +135,15 @@ RBAC 不限制已登录到 VM 的用户可以执行的操作。这些权限由�
 可通过多种方法部署此参考体系结构。最简单方法是按照以下步骤操作：
 
 1. 右键单击下面的按钮，然后选择“在新选项卡中打开链接”或“在新窗口中打开链接”。  
-   [![部署到 Azure](./media/guidance-compute-single-vm-linux/deploybutton.png)](https://portal.azure.cn/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fmspnp%2Freference-architectures%2Fmaster%2Fguidance-compute-single-vm%2Fazuredeploy.json)
+    [![部署到 Azure](./media/guidance-compute-single-vm-linux/deploybutton.png)](https://portal.azure.cn/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fmspnp%2Freference-architectures%2Fmaster%2Fguidance-compute-single-vm%2Fazuredeploy.json)
 2. 链接在 Azure 门户中打开后，必须输入某些设置的值：
    
-   * 参数文件中已定义了“资源组”名称，因此选择“新建”并在文本框中输入 `ra-single-vm-rg`。
-   * 从“位置”下拉框中选择区域。
-   * 请勿编辑“模板根 URI”或“参数根 URI”文本框。
-   * 从下拉框中选择“OS 类型”，完后选择“Linux”。
-   * 查看条款和条件，然后单击“我同意上述条款和条件”复选框。
-   * 单击“购买”按钮。
+    * 参数文件中已定义了“资源组”名称，因此选择“新建”并在文本框中输入 `ra-single-vm-rg`。
+    * 从“位置”下拉框中选择区域。
+    * 请勿编辑“模板根 URI”或“参数根 URI”文本框。
+    * 从下拉框中选择“OS 类型”，完后选择“Linux”。
+    * 查看条款和条件，然后单击“我同意上述条款和条件”复选框。
+    * 单击“购买”按钮。
 3. 等待部署完成。
 4. 参数文件包括硬编码的管理员用户名和密码，强烈建议立即更改它们。在 Azure 门户中单击名为 `ra-single-vm0 ` 的 VM。然后，单击“支持 + 疑难解答”部分中的“重置密码”。在“模式”下拉框中选择“重置密码”，然后选择新的“用户名”和“密码”。单击“更新”按钮来持久保存新的用户名和密码。
 

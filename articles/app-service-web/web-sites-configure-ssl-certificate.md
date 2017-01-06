@@ -161,7 +161,7 @@
 
 		Please enter the following 'extra' attributes to be sent with your certificate request
 
-       	A challenge password []:
+        A challenge password []:
 
 	完成后，工作目录中应有两个文件：**myserver.key** 和 **server.csr**。**Server.csr** 包含 CSR，稍后会需要 **myserver.key**。
 
@@ -410,7 +410,7 @@
 
     ![插入 SSL 绑定的图像](./media/web-sites-configure-ssl-certificate/sslbindings.png)
 
-       • 基于 IP 的 SSL 通过将服务器的专用公共 IP 地址映射到域名，将证书与域名相关联。这要求与你的服务相关联的每个域名（contoso.com、fabricam.com 等）都具有专用 IP 地址。这是将 SSL 证书与某一 Web 服务器相关联的传统方法。• 基于 SNI 的 SSL 是对 SSL 和**[传输层安全性](http://zh.wikipedia.org/wiki/Transport_Layer_Security)** (TLS) 的扩展，它允许多个域共享相同的 IP 地址，并且对于每个域都有单独的安全证书。当前常用的大多数浏览器（包括 Internet Explorer、Chrome、Firefox 和 Opera）都支持 SNI，但是，较旧的浏览器可能不支持 SNI。有关 SNI 的详细信息，请参阅 Wikipedia 上的文章 **[Server Name Indication](http://en.wikipedia.org/wiki/Server_Name_Indication)**（服务器名称指示）。
+    • 基于 IP 的 SSL 通过将服务器的专用公共 IP 地址映射到域名，将证书与域名相关联。这要求与你的服务相关联的每个域名（contoso.com、fabricam.com 等）都具有专用 IP 地址。这是将 SSL 证书与某一 Web 服务器相关联的传统方法。• 基于 SNI 的 SSL 是对 SSL 和**[传输层安全性](http://zh.wikipedia.org/wiki/Transport_Layer_Security)** (TLS) 的扩展，它允许多个域共享相同的 IP 地址，并且对于每个域都有单独的安全证书。当前常用的大多数浏览器（包括 Internet Explorer、Chrome、Firefox 和 Opera）都支持 SNI，但是，较旧的浏览器可能不支持 SNI。有关 SNI 的详细信息，请参阅 Wikipedia 上的文章 **[Server Name Indication](http://en.wikipedia.org/wiki/Server_Name_Indication)**（服务器名称指示）。
      
 9. 单击“添加绑定”保存更改并启用 SSL。
 

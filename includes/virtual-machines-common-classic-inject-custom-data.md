@@ -23,7 +23,7 @@
 
 + 如果你的 Azure VM 是基于 Windows 的 VM，则自定义数据文件将保存到 `%SYSTEMDRIVE%\AzureData\CustomData.bin`。虽然它已进行 Base64 编码，以便从本地计算机传输到新 VM，但它将自动解码并可以立即打开或使用。
 
-   > [AZURE.NOTE] 如果该文件存在，它将被覆盖。目录的安全性已设为 **System:Full Control** 和 **Administrators:Full Control**。
+    > [AZURE.NOTE] 如果该文件存在，它将被覆盖。目录的安全性已设为 **System:Full Control** 和 **Administrators:Full Control**。
 
 + 如果你的 Azure VM 是基于 Linux 的 VM，则自定义数据文件将位于下列其中一个位置，具体取决于你的分发版。数据可能采用 base64 编码，因此可能需要先解码数据：
 

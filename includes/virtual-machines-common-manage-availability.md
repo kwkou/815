@@ -23,7 +23,7 @@
 容错域定义一组共用一个通用电源和网络交换机的虚拟机。默认情况下，在可用性集中配置的虚拟机隔离在资源管理器部署的最多三个容错域（经典部署的两个容错域）中。虽然将虚拟机置于可用性集中并不能让你的应用程序免受特定于操作系统或应用程序的故障的影响，但可以限制潜在物理硬件故障、网络中断或电源中断的影响。
 
 <!--Image reference-->
-   ![更新域和容错域配置的概念图](./media/virtual-machines-common-manage-availability/ud-fd-configuration.png)
+    ![更新域和容错域配置的概念图](./media/virtual-machines-common-manage-availability/ud-fd-configuration.png)
 
 
 ### <a name="configure-each-application-tier-into-separate-availability-sets"></a> 将每个应用程序层配置到不同的可用性集中
@@ -33,7 +33,7 @@
 例如，你可以将运行 IIS、Apache、Nginx 等服务器的应用程序前端的所有虚拟机置于单个可用性集中。请确保仅将前端虚拟机置于同一可用性集中。同样，请确保仅将数据层虚拟机置于其自身的可用性集中，例如已复制的 SQL Server 虚拟机或 MySQL 虚拟机。
 
 <!--Image reference-->
-   ![应用程序层](./media/virtual-machines-common-manage-availability/application-tiers.png)
+    ![应用程序层](./media/virtual-machines-common-manage-availability/application-tiers.png)
 
 
 ### <a name="combine-the-load-balancer-with-availability-sets"></a> 将负载均衡器与可用性集组合在一起

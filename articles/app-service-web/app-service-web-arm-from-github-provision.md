@@ -51,6 +51,8 @@
         "defaultValue": "https://github.com/davidebbo-test/Mvc52Application.git"
     }
 
+> [AZURE.NOTE] 这个示例 GitHub 存储库无法正确的在 Azure 中国发布，原因是 Nuget 的 Jquery 包无法正确下载。用户可自行创建一个可用的项目，然后推送到 GitHub。
+
 ### branch
 部署应用程序时要使用的存储库的分支。默认值为 master，但也可输入你想要部署的存储库中任何分支的名称。
 

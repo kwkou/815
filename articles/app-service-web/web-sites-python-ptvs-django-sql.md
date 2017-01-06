@@ -84,7 +84,7 @@
 5. 单击“配置防火墙”。
 6. 在“防火墙设置”边栏选项卡中，添加“起始 IP”和“结束 IP”已设置为开发计算机的公共 IP 地址的防火墙规则。单击“保存”。
 
-   这样即可从开发计算机连接到数据库服务器。
+    这样即可从开发计算机连接到数据库服务器。
 7. 返回数据库边栏选项卡，然后依次单击“属性”和“显示数据库连接字符串”。
 8. 使用复制按钮将 **ADO.NET** 的值复制到剪贴板上。
 
@@ -93,7 +93,7 @@
 
 1. 在 Visual Studio 中，打开“项目名称” 文件夹中的 **settings.py**。暂时将连接字符串粘贴在编辑器中。连接字符串是按以下格式：
 
-       Server=<ServerName>,<ServerPort>;Database=<DatabaseName>;User ID=<UserName>;Password={your\_password\_here};Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;
+        Server=<ServerName>,<ServerPort>;Database=<DatabaseName>;User ID=<UserName>;Password={your\_password\_here};Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;
 
 编辑 `DATABASES` 的定义，使用上面的值。
 
@@ -122,7 +122,7 @@
 
 4. 在“解决方案资源管理器”中，右键单击项目节点，选择“Python”，然后选择“Django 迁移”。然后选择“Django 创建超级用户”。
 
-   这将创建我们在上一节中创建的 SQL 数据库的表。按照提示操作以创建用户，不一定要匹配第一节中创建的 sqlite 数据库中的用户。
+    这将创建我们在上一节中创建的 SQL 数据库的表。按照提示操作以创建用户，不一定要匹配第一节中创建的 sqlite 数据库中的用户。
 5. 使用 `F5` 运行应用程序。使用“创建样本轮询”创建的轮询以及通过投票提交的数据会在 SQL 数据库中进行序列化。
 
 ## 将 Web 应用发布到 Azure App Service
