@@ -16,7 +16,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="11/16/2016"
-    wacn.date="12/27/2016"
+    wacn.date="01/06/2017"
     ms.author="mimig" />
 
 # DocumentDB 性能提示
@@ -24,9 +24,9 @@ Azure DocumentDB 是一个快速、弹性的分布式数据库，可以在提供
 
 如果你有“如何改善数据库性能”的疑问，请考虑以下选项：
 
-## 联网 <a id="direct-connection"></a>
+## 联网 <a id="networking"></a> 
 
-1. **连接策略：使用直接连接模式**
+1. **连接策略：使用直接连接模式** <a id="direct-connection"></a> 
 
     客户端连接到 Azure DocumentDB 的方式对性能有重大影响（尤其对观察到的客户端延迟而言）。有两个重要配置设置可用于配置客户端连接策略 - 连接*模式*和连接*协议*。两种可用模式：
 

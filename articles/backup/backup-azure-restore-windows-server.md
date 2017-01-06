@@ -16,7 +16,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="11/01/2016"
-    wacn.date="01/04/2017"
+    wacn.date="01/06/2017"
     ms.author="trinadhk; jimpark; markgal;" />  
 
 
@@ -67,7 +67,7 @@
    - 强烈建议保留要恢复的文件相关 ACL 的还原默认选项。
 8. 提供这些输入后，单击“下一步”。将文件还原到此计算机的恢复工作流将会开始。
 
-## 恢复到备用计算机
+## 恢复到备用计算机 <a name="recover-to-an-alternate-machine"></a>
 如果整个服务器断开连接，仍可将 Azure 备份中的数据恢复到另一台计算机。下面的步骤演示了工作流。
 
 这些步骤中使用的术语包括：

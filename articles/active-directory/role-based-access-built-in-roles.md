@@ -15,7 +15,7 @@
 	ms.tgt_pltfrm="na"
 	ms.workload="identity"
 	ms.date="08/25/2016"
-	wacn.date="12/15/2016"
+	wacn.date="01/06/2017"
 	ms.author="kgremban"/>  
 
 
@@ -433,7 +433,7 @@ Azure 基于角色的访问控制 (RBAC) 附带以下可分配到用户、组和
 | Microsoft.Authorization/* | 管理授权 |
 | Microsoft.Support/* | 创建和管理支持票证 |
 
-### 经典虚拟机参与者
+### 经典虚拟机参与者 <a name="classic-virtual-machine-contributor"></a>
 可管理经典虚拟机，但不包括与其连接的虚拟网络或存储帐户
 
 | **操作** ||

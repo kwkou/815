@@ -16,7 +16,7 @@
     ms.workload="identity"
     ms.date="10/29/2016"
     ms.author="mbaldwin;bryanla" 
-    wacn.date="12/09/2016"/>  
+    wacn.date="01/06/2017"/>  
 
 
 # 将应用程序与 Azure Active Directory 集成
@@ -51,7 +51,7 @@
 
 有关如何在 Azure AD 中进行身份验证的详细信息，请参阅 [Azure AD 的身份验证方案](/documentation/articles/active-directory-authentication-scenarios/)。
 
-### 同意框架概述
+### 同意框架概述 <a name="overview-of-the-consent-framework"></a>
 使用 Azure AD 的同意架构可以轻松开发需要访问 Azure AD 租户保护的多租户 Web API 的 Web 应用程序和本机客户端应用程序（不同于注册客户端应用程序的框架）。这些 Web API 包括图形 API、Office 365 和其他 Microsoft 服务，以及你自己的 Web API。该框架基于某个用户或管理员，该用户或管理员允许某个应用程序在其目录中注册，这可能涉及到访问目录数据。
 
 例如，如果某个 Web 客户端应用程序需要调用 Office 365 Web API/资源应用程序以读取有关用户的日历信息，则该用户需要同意该客户端应用程序。同意后，该客户端应用程序能够代表该用户调用 Office 365 Web API，并根据需要使用日历信息。

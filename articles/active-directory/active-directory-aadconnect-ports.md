@@ -15,7 +15,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="12/06/2016"
-    wacn.date="01/05/2017"
+    wacn.date="01/06/2017"
     ms.author="billmath" />
 
 # 混合标识所需的端口和协议
@@ -35,7 +35,7 @@
 | LDAP/SSL |636 (TCP/UDP) |用于从 AD 导入数据。数据传输经过签名和加密。仅当你使用 SSL 时才使用该端口。 |
 | RPC |49152-65535（随机高 RPC 端口）(TCP/UDP) |该端口绑定到 AD 林后，将在初始配置 Azure AD Connect 期间使用。有关详细信息，请参阅 [KB929851](https://support.microsoft.com/zh-cn/kb/929851)、[KB832017](https://support.microsoft.com/zh-cn/kb/832017) 和 [KB224196](https://support.microsoft.com/zh-cn/kb/224196)。 |
 
-## 表 2 - Azure AD Connect 和 Azure AD
+## 表 2 - Azure AD Connect 和 Azure AD 
 此表描述了 Azure AD Connect 服务器与 Azure AD 之间通信所需的端口和协议。
 
 | 协议 | 端口 | 说明 |
@@ -45,7 +45,7 @@
 
 有关需要在防火墙中打开的 URL 和 IP 地址列表，请参阅 [Office 365 URLs and IP address ranges](https://support.office.com/article/Office-365-URLs-and-IP-address-ranges-8548a211-3fe7-47cb-abb1-355ea5aa88a2)（Office 365 URL 和 IP 地址范围）。
 
-## 表 3 - Azure AD Connect 和 AD FS 联合身份验证服务器/WAP
+## 表 3 - Azure AD Connect 和 AD FS 联合身份验证服务器/WAP <a name="table-3---azure-ad-connect-and-ad-fs-federation-serverswap"></a>
 此表描述了 Azure AD Connect 服务器与 AD FS 联合身份验证服务器/WAP 服务器之间通信所需的端口和协议。
 
 | 协议 | 端口 | 说明 |

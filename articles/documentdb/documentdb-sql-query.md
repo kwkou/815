@@ -16,7 +16,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="11/01/2016"
-    wacn.date="12/27/2016"
+    wacn.date="01/06/2017"
     ms.author="arramac" />  
 
 
@@ -1566,7 +1566,7 @@ DocumentDB 还支持使用许多内置函数进行常见操作，这些函数可
       "numberOfChildren": 1
     }]
 
-### 空间函数
+### 空间函数 <a name="built-in-functions"></a>
 DocumentDB 支持以下用于查询地理空间的开放地理空间信息联盟 (OGC) 内置函数。
 
 <table>

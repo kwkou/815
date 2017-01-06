@@ -17,7 +17,7 @@
     ms.topic="get-started-article"
     ms.date="12/06/2016"
     ms.author="billmath" 
-    wacn.date="01/05/2017"/>  
+    wacn.date="01/06/2017"/>  
 
 
 # Azure AD Connect 的自定义安装
@@ -176,7 +176,7 @@
 6.	单击两次“确定”。
 
 
-### Azure AD 应用程序和属性筛选
+### Azure AD 应用程序和属性筛选 <a name="azure-ad-app-and-attribute-filtering"></a>
 如果想要限制同步到 Azure AD 的属性，请通过选择正在使用的服务来启动。如果在此页面上进行配置更改，必须通过重新运行安装向导来明确选择新的服务。
 
 ![可选功能 - 应用](./media/active-directory-aadconnect-get-started-custom/azureadapps2.png)
@@ -306,7 +306,7 @@ AD Connect 尝试在配置阶段验证域。如果继续进行配置但未添加
 
 了解有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect/)的详细信息。
 
-## 相关文档
+## 相关文档 <a name="related-documentation"></a>
 | 主题 |
 | --- | --- |
 | Azure AD Connect 概述 |

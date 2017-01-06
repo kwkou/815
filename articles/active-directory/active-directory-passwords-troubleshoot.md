@@ -14,7 +14,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="08/12/2016"
-	wacn.date="09/05/2016"
+	wacn.date="01/06/2017"
 	ms.author="asteen"/>  
 
 # 如何排查密码管理问题
@@ -124,7 +124,7 @@
           </tr>
         </tbody></table>
 
-## 在 Azure 经典管理门户中排查密码管理报告问题
+## 在 Azure 经典管理门户中排查密码管理报告问题 <a name="troubleshoot-password-management-reports-in-the-azure-management-portal"></a>
 如果在使用密码管理报告时遇到错误，可以通过执行以下故障排除步骤来解决错误：
 
 <table>
@@ -171,7 +171,7 @@
           </tr>
         </tbody></table>
 
-## <a name="troubleshoot-password-writeback"></a>排查密码重置注册门户问题
+## <a name="troubleshoot-the-password-reset-registration-portal"></a>排查密码重置注册门户问题
 如果你在针对密码重置注册用户时遇到错误，也许能够通过执行以下故障排除步骤来解决错误：
 
 <table>

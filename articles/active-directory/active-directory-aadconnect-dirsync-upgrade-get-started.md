@@ -15,7 +15,7 @@
    ms.topic="get-started-article"
    ms.date="08/19/2016"
    ms.author="andkjell;shoatman;billmath"
-   wacn.date="01/03/2017"/>  
+   wacn.date="01/06/2017"/>  
 
 
 # Azure AD Connect：从 DirSync 升级
@@ -128,7 +128,7 @@ DirSync 支持以下配置更改，并且将会升级：
 
 成功导出设置后，可以退出 DirSync 服务器上的 Azure AD Connect 向导。继续执行下一步，以[在不同的服务器上安装 Azure AD Connect](#installation-of-azure-ad-connect-on-separate-server)
 
-### 在不同的服务器上安装 Azure AD Connect
+### 在不同的服务器上安装 Azure AD Connect <a name="installation-of-azure-ad-connect-on-separate-server"></a>
 
 在新的服务器上安装 Azure AD Connect 时，会假设用户想要运行 Azure AD Connect 的全新安装。由于要使用 DirSync 配置，因此还需要执行一些额外的步骤：
 
@@ -206,7 +206,7 @@ Azure AD Connect 现为你的活动服务器。
 
 了解有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect/)的详细信息。
 
-## 相关文档
+## 相关文档 <a name="related-documentation"></a>
 
 主题 |  
 --------- | ---------

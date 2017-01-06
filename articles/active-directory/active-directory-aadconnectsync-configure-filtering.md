@@ -14,7 +14,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="09/13/2016"
-	wacn.date="10/11/2016"
+	wacn.date="01/06/2017"
 	ms.author="andkjell;markvi"/>
 
 
@@ -82,7 +82,7 @@ Azure AD Connect 只删除其曾经认为在范围中的对象。如果 Azure AD
 
 可以同时使用多个筛选选项。例如，可以使用基于组织单位的筛选以便只包含某个 OU 中的对象，同时使用基于属性的筛选进一步筛选这些对象。使用多个筛选方法时，筛选器之间使用逻辑 AND。
 
-## 基于域的筛选
+## 基于域的筛选 <a name="domain-based-filtering"></a>
 本部分提供配置域筛选器时需要执行的步骤。如果安装 Azure AD Connect 之后在林中添加或删除域，则也必须更新筛选配置。
 
 更改基于域的筛选的首选方法是运行安装向导并更改[域和 OU 筛选](/documentation/articles/active-directory-aadconnect-get-started-custom/)。使用安装向导可以自动执行本主题中所述的所有任务。

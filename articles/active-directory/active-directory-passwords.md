@@ -16,7 +16,7 @@
 	ms.topic="article"
 	ms.date="10/13/2016"
 	ms.author="asteen"
-	wacn.date="01/03/2017"/>  
+	wacn.date="01/06/2017"/>  
 
 
 
@@ -124,7 +124,7 @@ Azure AD 密码重置根据用户使用的订阅提供 3 个级别：
 | 通过 API 可获取哪种密码重置报告信息？ | [报告 API 提供的密码重置和注册事件](https://msdn.microsoft.com/Library/Azure/Ad/Graph/howto/azure-ad-reports-and-events-preview#SsprActivityEvent) |
 
 
-## <a name="users-how-to-manage-your-own-password"></a>管理用户的密码
+## <a name="manage-your-users-passwords"></a>管理用户的密码
 | 主题 | |
 | --------- | --------- |
 | 如何从 O365 经典管理门户重置用户的密码？ | [在 Office 365 中重置用户的密码](https://support.office.com/article/Reset-a-user-s-password-7A5D073B-7FAE-4AA5-8F96-9ECD041ABA9C) |
@@ -157,7 +157,7 @@ Azure AD 密码重置根据用户使用的订阅提供 3 个级别：
 | --------- | --------- |
 | 我想要阅读关于密码重置注册的常见问题 | [密码重置注册常见问题](/documentation/articles/active-directory-passwords-faq/#password-reset-registration/) |
 | 我想要阅读关于密码重置的常见问题 | [密码重置常见问题](/documentation/articles/active-directory-passwords-faq/#password-reset/) |
-| 我想要阅读关于密码重置报告的常见问题 | [密码管理报告常见问题](/documentation/articles/active-directory-passwords-faq/#password-management-reports/) |
+| 我想要阅读关于密码重置报告的常见问题 | [密码管理报告常见问题](/documentation/articles/active-directory-passwords-faq/) |
 | 我想要阅读关于密码写回的常见问题 | [密码写回常见问题](/documentation/articles/active-directory-passwords-faq/#password-writeback/) |
 
 

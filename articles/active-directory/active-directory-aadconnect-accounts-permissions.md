@@ -15,7 +15,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="10/04/2016"
-    wacn.date="01/05/2017"
+    wacn.date="01/06/2017"
     ms.author="billmath" />
 
 # Azure AD Connect：帐户和权限
@@ -62,7 +62,7 @@ Azure AD Connect 安装向导提供提供两种不同的路径：
 | 读取/写入所有联系人属性 |导入和执行 Exchange 混合部署 |
 | 重置密码 |准备启用密码写回 |
 
-## 自定义设置安装
+## 自定义设置安装 <a name="custom-settings-installation"></a>
 使用自定义设置时，必须在安装之前创建用于连接 Active Directory 的帐户。授予此帐户的权限可在[创建 AD DS 帐户](#create-the-ad-ds-account)中找到。
 
 | 向导页 | 收集的凭据 | 所需的权限 | 用途 |

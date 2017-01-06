@@ -16,7 +16,7 @@
 	ms.topic="get-started-article"
 	ms.date="09/13/2016"
 	ms.author="billmath;andkjell"
-	wacn.date="01/03/2017"/>  
+	wacn.date="01/06/2017"/>  
 
 
 # 通过快速设置开始使用 Azure AD Connect
@@ -50,7 +50,7 @@
 
 了解有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect/)的详细信息。
 
-## 相关文档
+## 相关文档 <a name="related-documentation"></a>
 
 主题 |  
 --------- | ---------

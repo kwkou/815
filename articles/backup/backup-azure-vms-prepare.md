@@ -17,7 +17,7 @@
 	ms.topic="article"
 	ms.date="08/26/2016"
 	ms.author="trinadhk; jimpark; markgal;"
-   	wacn.date="01/04/2017"/>  
+   	wacn.date="01/06/2017"/>  
 
 
 
@@ -81,7 +81,7 @@
     ![创建保管库 toast 通知](./media/backup-azure-vms-prepare/creating-vault.png)  
 
 
-7. 一条消息将确认已成功创建保管库。该保管库将在“恢复服务”页中以“活动”状态列出。确保在创建保管库后立即选择适当的存储冗余选项。阅读有关[在备份保管库中设置存储冗余选项](/documentation/articles/backup-configure-vault/#azure-backup---storage-redundancy-options/)的更多内容。
+7. 一条消息将确认已成功创建保管库。该保管库将在“恢复服务”页中以“活动”状态列出。确保在创建保管库后立即选择适当的存储冗余选项。阅读有关[在备份保管库中设置存储冗余选项](/documentation/articles/backup-configure-vault/)的更多内容。
 
     ![备份保管库列表](./media/backup-azure-vms-prepare/backup_vaultslist.png)  
 
@@ -92,7 +92,7 @@
 
 
 
-## 网络连接
+## 网络连接 <a name="2-network-connectivity"></a>
 
 为了管理 VM 快照，备份扩展需要连接 Azure 公共 IP 地址。如果未建立适当的 Internet 连接，虚拟机的 HTTP 请求将会超时，并且备份操作将会失败。如果你的部署中配置了访问限制（如通过网络安全组 (NSG)），请选择其中一个选项来提供备份流量的明确路径：
 
@@ -110,7 +110,7 @@
 
 若要将 Azure 数据中心 IP 范围加入白名单，请参阅 [Azure 网站](http://www.microsoft.com/en-us/download/details.aspx?id=41653)以获取有关 IP 范围的详细信息和说明。
 
-### 使用 HTTP 代理进行 VM 备份
+### 使用 HTTP 代理进行 VM 备份 <a name="using-an-http-proxy-for-vm-backups"></a>
 备份 VM 时，VM 上的备份扩展会使用 HTTPS API 将快照管理命令发送到 Azure 存储空间。将通过 HTTP 代理路由备份扩展流量，因为它是为了访问公共 Internet 而配置的唯一组件。
 
 >[AZURE.NOTE] 至于应该使用何种代理软件，我们不提供任何建议。请确保你选取的代理可以进行下述配置步骤。

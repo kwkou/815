@@ -15,7 +15,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="12/06/2016"
-    wacn.date="01/05/2017"
+    wacn.date="01/06/2017"
     ms.author="billmath" />  
 
 
@@ -104,7 +104,7 @@ Azure AD Connect 向导将使用 userPrincipalName 属性，或让你指定要�
 
 Azure Active Directory 中的每个目录随附内置域名，格式为 contoso.partner.onmschina.cn，可让你开始使用 Azure 或其他 Microsoft 服务。你可以使用自定义域来改善和简化登录体验。有关 Azure AD 中的自定义域名以及如何验证域的信息，请阅读 [Add your custom domain name to Azure Active Directory](/documentation/articles/active-directory-add-domain/#add-a-custom-domain-name-to-your-directory/)（将自定义域名添加到 Azure Active Directory）
 
-## Azure AD 登录配置
+## Azure AD 登录配置 <a name="azure-ad-sign-in-configuration"></a>
 ### 使用 Azure AD Connect 配置 Azure AD 登录
 Azure AD 登录体验取决于 Azure AD是否能够匹配要同步到 Azure AD 目录中已验证的某个自定义域的用户的用户主体名后缀。Azure AD Connect 在配置 Azure AD 登录设置时将提供帮助，以便用户在云中的登录体验类似于本地体验。Azure AD Connect 将列出针对域定义的 UPN 后缀，尝试将它们与 Azure AD 中的自定义域进行匹配，并帮助你根据需要采取的相应操作。Azure AD 的登录页列出了针对本地 Active directory 定义的 UPN 后缀，并根据每个后缀显示相应的状态。状态值可以是下列其中一项：
 

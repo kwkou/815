@@ -15,7 +15,7 @@
     ms.devlang="cpp"
     ms.topic="hero-article"
     ms.date="11/02/2016"
-    wacn.date="12/20/2016"
+    wacn.date="01/06/2017"
     ms.author="aasthan" />  
 
 
@@ -55,7 +55,7 @@
 - [Visual Studio](https://www.visualstudio.com/downloads/)，安装了 C++ 语言组件。
 
 ## 第 1 步：创建 DocumentDB 帐户
-让我们创建一个 DocumentDB 帐户。如果已经有想要使用的帐户，可以跳到[安装 C++ 应用程序](#SetupNode)。
+让我们创建一个 DocumentDB 帐户。如果已经有想要使用的帐户，可以跳到[安装 C++ 应用程序](#SetupC++)。
 
 [AZURE.INCLUDE [documentdb-create-dbaccount](../../includes/documentdb-create-dbaccount.md)]
 

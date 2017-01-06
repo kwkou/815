@@ -15,7 +15,7 @@
    ms.workload="storage-backup-recovery"
    ms.date="08/16/2016"
    ms.author="jimpark;saurabhsensharma;nkolli;trinadhk"
-   wacn.date="12/01/2016"/>  
+   wacn.date="01/06/2017"/>  
 
 
 # Azure 备份中的脱机备份工作流
@@ -47,7 +47,7 @@ Azure 备份的脱机种子设定与 [Azure 导入/导出服务](/documentation/
 - 准备一个暂存位置，可以是网络共享或计算机上的其他驱动器。暂存位置是暂时性的存储，在执行此工作流期间暂时使用。确保临时位置具有足够的磁盘空间来保存你的初始副本。例如，如果尝试备份 500 GB 文件服务器，请确保暂存区域至少有 500 GB 空间。（由于压缩，实际使用量更少）。
 - 确定使用受支持的驱动器。只支持对 3.5 英寸 SATA II/III 硬盘驱动器使用导入/导出服务。不支持大于 8 TB 的硬盘驱动器。可以使用 SATA II/III USB 适配器在外部将 SATA II/III 磁盘连接到大多数计算机。查看 Azure 导入/导出文档，了解服务支持的最新驱动器集。
 - 在 SATA 驱动器写入器连接到的计算机上启用 BitLocker。
-- 将 [Azure 导入/导出工具下载](http://go.microsoft.com/fwlink/?LinkID=301900&clcid=0x409)到 SATA 驱动器写入器连接到的计算机上。如果已下载并安装 Azure 备份 2016 年 8 月更新版（或更高版本），则不需要执行此步骤。
+- 将 Azure 导入/导出工具下载到 SATA 驱动器写入器连接到的计算机上。如果已下载并安装 Azure 备份 2016 年 8 月更新版（或更高版本），则不需要执行此步骤。
 
 
 ## 工作流
@@ -146,7 +146,7 @@ Azure 磁盘准备工具可在恢复服务代理（2016 年 8 月更新版和更
 
 ### 准备 SATA 驱动器
 
-1. 将 [Azure 导入/导出工具](http://go.microsoft.com/fwlink/?linkid=301900&clcid=0x409)下载到副本计算机。请确保暂存位置可从打算运行下一组命令的计算机进行访问。必要时，副本计算机可与源计算机相同。
+1. 将 Azure 导入/导出工具下载到副本计算机。请确保暂存位置可从打算运行下一组命令的计算机进行访问。必要时，副本计算机可与源计算机相同。
 
 2. 解压缩 WAImportExport.zip 文件。运行 WAImportExport 工具，它将格式化 SATA 驱动器，将备份数据写入到 SATA 驱动器并对其进行加密。在运行以下命令之前，请确保在计算机上启用了 BitLocker。<br/>
 
