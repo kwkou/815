@@ -15,12 +15,12 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="05/25/2015"
-    wacn.date="12/29/2016"
+    wacn.date="01/06/2016"
     ms.author="renash" />  
 
 
 # 使用复制日志文件查看作业状态
-Azure 导入/导出服务在处理与某个导入或导出作业关联的驱动器时，会将日志文件写入到要在其中导入或导出 Blob 的存储帐户。该日志文件包含与已导入或导出的每个文件相关的详细状态。查询某个已完成作业的状态时，将返回每个复制日志文件的 URL；有关详细信息，请参阅 [Get Job](https://docs.microsoft.com/rest/api/storageservices`Get-Job3)（获取作业）。
+Azure 导入/导出服务在处理与某个导入或导出作业关联的驱动器时，会将日志文件写入到要在其中导入或导出 Blob 的存储帐户。该日志文件包含与已导入或导出的每个文件相关的详细状态。查询某个已完成作业的状态时，将返回每个复制日志文件的 URL；有关详细信息，请参阅 [Get Job](https://docs.microsoft.com/en-us/rest/api/storageimportexport/jobs#Jobs_Get)（获取作业）。
   
  下面是包含两个驱动器的导入作业的复制日志文件的示例 URL：
   

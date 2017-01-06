@@ -157,7 +157,7 @@
 | 74 | [什么是 Azure 弹性数据库池？](/documentation/articles/sql-database-elastic-pool/) | 使用池管理成百上千个数据库可通过池分发一组性能单位的价格。可随心所欲地移入或移出数据。 |
 | 75 | [使用 C# 创建新的弹性数据库池](/documentation/articles/sql-database-elastic-pool-create-csharp/) | 使用 C# 数据库开发技术在 Azure SQL 数据库中创建可缩放的弹性数据库池，以便可以在多个数据库之间共享资源。 |
 | 76 | [使用 PowerShell 创建新的弹性数据库池](/documentation/articles/sql-database-elastic-pool-create-powershell/) | 了解如何通过创建可缩放的弹性数据库池，使用 PowerShell 向外缩放 Azure SQL 数据库资源以管理多个数据库。 |
-| 77 | [C# 数据库开发：为 SQL 数据库创建和配置弹性数据库池](/documentation/articles/sql-database-elastic-pool-csharp/) | 使用 C# 数据库开发技术创建 Azure SQL 数据库弹性数据库池，以便可以在多个数据库之间共享资源。 |
+| 77 | [C# 数据库开发：为 SQL 数据库创建和配置弹性数据库池](/documentation/articles/sql-database-elastic-pool-create-csharp/) | 使用 C# 数据库开发技术创建 Azure SQL 数据库弹性数据库池，以便可以在多个数据库之间共享资源。 |
 | 78 | [用于识别适用于弹性数据库池的数据库的 PowerShell 脚本](/documentation/articles/sql-database-elastic-pool-database-assessment-powershell/) | 弹性数据库池是由一组弹性数据库共享的可用资源集合。本文档提供 Powershell 脚本来帮助你评估是否适合对一组数据库使用弹性数据库池。 |
 | 79 | [使用 C# 监视和管理弹性数据库池](/documentation/articles/sql-database-elastic-pool-manage-csharp/) | 使用 C# 数据库开发技术来管理 Azure SQL 数据库弹性数据库池。 |
 | 80 | [使用 Azure 门户预览监视和管理弹性数据库池](/documentation/articles/sql-database-elastic-pool-manage-portal/) | 了解如何使用 Azure 门户和 SQL 数据库的内置智能来管理、监视可缩放的弹性数据库池并正确调整其大小，以优化数据库性能和管理成本。 |

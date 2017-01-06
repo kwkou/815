@@ -15,7 +15,7 @@
    ms.tgt_pltfrm="NA"
    ms.workload="data-management"
    ms.date="08/24/2016"
-   wacn.date="12/26/2016"
+   wacn.date="01/06/2017"
    ms.author="carlrab"/>  
 
    
@@ -84,7 +84,7 @@
 |---|---|---|
 | [使用 SQL Server Data Tools for Visual Studio 检测兼容性问题](/documentation/articles/sql-database-cloud-migrate-fix-compatibility-issues-ssdt/#detecting-compatibility-issues-using-sql-server-data-tools-for-visual-studio) | 本教程介绍如何使用 SQL Server Data Tools for Visual Studio 确定 Azure SQL 数据库的兼容性。 |
 | [使用 SQL Server Data Tools for Visual Studio 解决兼容性问题](/documentation/articles/sql-database-cloud-migrate-fix-compatibility-issues-ssdt/#fixing-compatibility-issues-using-sql-server-data-tools-for-visual-studio) | 本教程介绍如何使用 SQL Server Data Tools for Visual Studio 修复 Azure SQL 数据库的兼容性问题。 |
-| [使用 SqlPackage.exe 确定 SQL 数据库兼容性](/documentation/articles/ql-database-cloud-migrate-determine-compatibility-sqlpackage/#using-sqlpackageexe) | 本教程介绍如何使用 SQLPackage.exe 命令行实用工具确定 Azure SQL 数据库的兼容性。|
+| [使用 SqlPackage.exe 确定 SQL 数据库兼容性](/documentation/articles/sql-database-cloud-migrate-determine-compatibility-sqlpackage/#using-sqlpackageexe) | 本教程介绍如何使用 SQLPackage.exe 命令行实用工具确定 Azure SQL 数据库的兼容性。|
 | [使用 SSMS 确定 SQL 数据库兼容性](/documentation/articles/sql-database-cloud-migrate-determine-compatibility-ssms/#using-sql-server-management-studio) |本教程介绍如何使用 SQL Server Management Studio 确定 Azure SQL 数据库的兼容性。|
 | [使用“将数据库部署到 Azure 数据库向导”将 SQL Server 数据库迁移到 SQL 数据库](/documentation/articles/sql-database-cloud-migrate-compatible-using-ssms-migration-wizard/#use-the-deploy-database-to-microsoft-azure-database-wizard) | 本教程介绍如何在 SQL Server Management Studio 中使用“将数据库部署到 Azure 数据库向导”将兼容的 SQL Server 数据库迁移到 Azure SQL 数据库。
 | [使用 SSMS 将 SQL Server 数据库导出到 BACPAC 文件](/documentation/articles/sql-database-cloud-migrate-compatible-export-bacpac-ssms/) | 本教程介绍如何在 SQL Server Management Studio 中使用“导出数据层应用程序向导”将兼容的 SQL Server 数据库导出到 BACPAC 文件。|

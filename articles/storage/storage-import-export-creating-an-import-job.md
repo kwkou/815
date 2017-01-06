@@ -15,7 +15,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="12/16/2016"
-    wacn.date="12/29/2016"
+    wacn.date="01/06/2016"
     ms.author="renash" />  
 
 
@@ -100,7 +100,7 @@
 > [AZURE.NOTE]必须通过支持的、可提供包裹跟踪号的承运人寄送驱动器。
 
 ## 使用寄送信息更新导入作业
-获取跟踪号后，请调用[更新作业属性](https://docs.microsoft.com/zh-CN/api/storageimportexport/jobs#Jobs_Update)操作更新承运人名称、作业跟踪号以及运送回邮的承运人帐号。可以选择性地指定驱动器数量和寄送日期。
+获取跟踪号后，请调用[更新作业属性](https://docs.microsoft.com/zh-CN/rest/api/storageimportexport/jobs#Jobs_Update)操作更新承运人名称、作业跟踪号以及运送回邮的承运人帐号。可以选择性地指定驱动器数量和寄送日期。
 
 ## 另请参阅
 [使用导入/导出服务 REST API](/documentation/articles/storage-import-export-using-the-rest-api/)
