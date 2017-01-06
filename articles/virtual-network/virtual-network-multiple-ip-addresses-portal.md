@@ -65,10 +65,10 @@
 
 1. 接下来，若要添加 IP 配置，可在网络接口的“IP 配置”部分下，单击“+添加”。
 
-   > [AZURE.NOTE]
-   最多可为一个 NIC 分配 250 个专用 IP 地址。可在一个订阅中使用的公共 IP 地址数有限制。有关详细信息，请阅读 [Azure limits](/documentation/articles/azure-subscription-service-limits/#limits-and-the-azure-resource-manager)（Azure 限制）一文。
-   >
-   >
+    > [AZURE.NOTE]
+    最多可为一个 NIC 分配 250 个专用 IP 地址。可在一个订阅中使用的公共 IP 地址数有限制。有关详细信息，请阅读 [Azure limits](/documentation/articles/azure-subscription-service-limits/#limits-and-the-azure-resource-manager)（Azure 限制）一文。
+    >
+    >
 2. 在“添加 IP 配置”边栏选项卡中，为 IP 配置命名。此处为 **IPConfig-2**。为“分配”选择“静态”，输入想要的 IP 地址。在此方案中，为 10.0.0.5。然后，单击“确定”。保存配置后，会在列表中看到 IP 配置。
 
     ![Alt 图像文本](./media/virtual-network-multiple-ip-addresses-portal/02-portal.PNG)  
@@ -88,13 +88,13 @@
 4. 双击“Internet 协议版本 4 (IPv4)”
 5. 单击“使用下面的 IP 地址”并输入以下值：
 
-   * **IP 地址**：输入 *Primary* 专用 IP 地址
-   * **子网掩码**：根据子网设置此值。例如，如果子网为 /24 子网，则子网掩码为 255.255.255.0。
-   * **默认网关**：子网中的第一个 IP 地址。如果子网为 10.0.0.0/24，则网关 IP 地址为 10.0.0.1。
-   * 单击“使用下面的 DNS 服务器地址”并输入以下值：
-     * **首选 DNS 服务器**：如果不使用自己的 DNS 服务器，请输入 168.63.129.16。否则请输入 DNS 服务器的 IP 地址。
-   * 单击“高级”按钮，然后添加其他 IP 地址。使用为主 IP 地址指定的相同子网，为 NIC 添加步骤 8 中列出的每个辅助专用 IP 地址。
-   * 单击“确定”关闭“TCP/IP 设置”，然后再次单击“确定”关闭适配器设置。随后将重新建立 RDP 连接。
+    * **IP 地址**：输入 *Primary* 专用 IP 地址
+    * **子网掩码**：根据子网设置此值。例如，如果子网为 /24 子网，则子网掩码为 255.255.255.0。
+    * **默认网关**：子网中的第一个 IP 地址。如果子网为 10.0.0.0/24，则网关 IP 地址为 10.0.0.1。
+    * 单击“使用下面的 DNS 服务器地址”并输入以下值：
+      * **首选 DNS 服务器**：如果不使用自己的 DNS 服务器，请输入 168.63.129.16。否则请输入 DNS 服务器的 IP 地址。
+    * 单击“高级”按钮，然后添加其他 IP 地址。使用为主 IP 地址指定的相同子网，为 NIC 添加步骤 8 中列出的每个辅助专用 IP 地址。
+    * 单击“确定”关闭“TCP/IP 设置”，然后再次单击“确定”关闭适配器设置。随后将重新建立 RDP 连接。
 6. 在命令提示符下键入 *ipconfig /all* 。此时将显示添加的所有 IP 地址，DHCP 已关闭。
 
 **Linux (Ubuntu)**
@@ -105,8 +105,8 @@
             sudo -i
 3. 更新网络接口（假设为“eth0”）的配置文件。
 
-   * 保留 dhcp 的现有行项。这会像前面一样配置主 IP 地址。
-   * 使用以下命令添加其他静态 IP 地址的配置：
+    * 保留 dhcp 的现有行项。这会像前面一样配置主 IP 地址。
+    * 使用以下命令添加其他静态 IP 地址的配置：
 
                cd /etc/network/interfaces.d/
                ls
@@ -129,10 +129,10 @@
 
            sudo ifdown eth0 && sudo ifup eth0
 
-   > [AZURE.IMPORTANT]
-   如果使用远程连接，请在同一行中同时运行 ifdown 和 ifup。
-   >
-   >
+    > [AZURE.IMPORTANT]
+    如果使用远程连接，请在同一行中同时运行 ifdown 和 ifup。
+    >
+    >
 8. 使用以下命令验证 IP 地址是否已添加到网络接口：
 
             ip addr list eth0

@@ -83,13 +83,13 @@
      ![项目调试设置](./media/web-sites-python-ptvs-bottle-table-storage/PollsBottleAzureTableStorageProjectDebugSettings.png)
 2. 在**调试服务器命令**、**环境**中设置应用程序所需的环境变量的值。
    
-       REPOSITORY\_NAME=azuretablestorage
-       STORAGE\_NAME=<存储帐户名称>
-       STORAGE\_KEY=<主访问密钥>
+        REPOSITORY\_NAME=azuretablestorage
+        STORAGE\_NAME=<存储帐户名称>
+        STORAGE\_KEY=<主访问密钥>
    
-   当您**开始调试**时，这便会设置环境变量。如果想在**启动但不调试**时设置变量，请在**运行服务器命令**下设置相同的值。
+    当您**开始调试**时，这便会设置环境变量。如果想在**启动但不调试**时设置变量，请在**运行服务器命令**下设置相同的值。
    
-   还可以使用 Windows 控制面板来定义环境变量。如果不想将凭据存储在源代码中/项目文件中，这是更好的选择。请注意，需要重新启动 Visual Studio 以使新环境值可用于应用程序。
+    还可以使用 Windows 控制面板来定义环境变量。如果不想将凭据存储在源代码中/项目文件中，这是更好的选择。请注意，需要重新启动 Visual Studio 以使新环境值可用于应用程序。
 3. 实施 Azure 表存储库的代码位于 **models/azuretablestorage.py** 中。请参阅[文档]以了解如何从 Python 使用表服务的更多信息。
 4. 使用 `F5` 运行应用程序。使用“创建样本轮询”创建的轮询以及通过投票提交的数据会在 Azure 表存储中进行序列化。
    

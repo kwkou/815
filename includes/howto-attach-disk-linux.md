@@ -63,13 +63,13 @@
         uploaded successfully
         info:    vm disk create command OK
 
-   你也可以使用 `azure vm disk upload` 将 VHD 上载到特定存储帐户中。详细阅读命令，以管理你[在这里](/documentation/articles/virtual-machines-command-line-tools/#commands-to-manage-your-azure-virtual-machine-data-disks)的 Azure 虚拟机数据磁盘。
+    你也可以使用 `azure vm disk upload` 将 VHD 上载到特定存储帐户中。详细阅读命令，以管理你[在这里](/documentation/articles/virtual-machines-command-line-tools/#commands-to-manage-your-azure-virtual-machine-data-disks)的 Azure 虚拟机数据磁盘。
 
 4. 现在将所需 VHD 附加到虚拟机：
 
         azure vm disk attach myVM myVhd
 
-   请确保将 *myVM* 替换为你的虚拟机名称，并将 *myVHD* 替换为你所需的 VHD。
+    请确保将 *myVM* 替换为你的虚拟机名称，并将 *myVHD* 替换为你所需的 VHD。
 
 5. 可以使用 `azure vm disk list <virtual-machine-name>` 验证磁盘是否已附加到虚拟机：
 

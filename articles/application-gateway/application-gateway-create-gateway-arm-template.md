@@ -75,7 +75,7 @@ Azure 应用程序网关是第 7 层负载均衡器。它在不同服务器之�
 
     * **type**。模板创建的资源的类型。在这种情况下，类型为 `Microsoft.Network/applicationGateways`，它表示应用程序网关。
     * **name**。资源的名称。请注意 `[parameters('applicationGatewayName')]` 的使用，这意味着该名称是在部署过程中由用户或参数文件作为输入提供的。
-   * **properties**。资源的属性列表。此模板在应用程序网关创建过程中，使用虚拟网络与公共 IP 地址。
+    * **properties**。资源的属性列表。此模板在应用程序网关创建过程中，使用虚拟网络与公共 IP 地址。
 
 7. 导航回到 [https://github.com/Azure/azure-quickstart-templates/blob/master/101-application-gateway-create/](https://github.com/Azure/azure-quickstart-templates/blob/master/101-application-gateway-create)。
 8. 单击 **azuredeploy-paremeters.json**，然后单击 **RAW**。

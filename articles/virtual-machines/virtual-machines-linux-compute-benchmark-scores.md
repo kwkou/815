@@ -36,6 +36,7 @@ Standard_D11_v2 | 2 | 1 | Intel Xeon E5-2673 v3 @ 2.4 GHz | 125 | 28,598 | 1,510
 Standard_D12_v2 | 4 | 1 | Intel Xeon E5-2673 v3 @ 2.4 GHz | 131 | 55,673 | 1,418
 Standard_D13_v2 | 8 | 1 | Intel Xeon E5-2673 v3 @ 2.4 GHz | 140 | 107,986 | 3,089
 Standard_D14_v2 | 16 | 2 | Intel Xeon E5-2673 v3 @ 2.4 GHz | 140 | 208,186 | 8,839
+Standard_D15_v2 | 20 | 2 | Intel Xeon E5-2673 v3 @ 2.4 GHz | 28 | 268,560 | 4,667
 
 ## F 系列
 

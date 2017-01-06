@@ -487,7 +487,7 @@
 * Azure 门户预览 - 当前使用门户可获取有限数量的信息。
 * Azure CLI - 使用此命令可获取一些信息：
   
-       azure resource show -n vmsstest1 -r Microsoft.Compute/virtualMachineScaleSets -o 2015-06-15 -g vmsstestrg1
+        azure resource show -n vmsstest1 -r Microsoft.Compute/virtualMachineScaleSets -o 2015-06-15 -g vmsstestrg1
 * 就像连接任何其他虚拟机一样连接到 jumpbox 虚拟机，然后可以远程访问规模集中的虚拟机，以监视单个进程。
 
 > [AZURE.NOTE]

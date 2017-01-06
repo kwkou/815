@@ -39,7 +39,7 @@ App Service 将以下现有 Azure 服务 - [网站](/home/features/app-service/w
 
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th align="left", style="width:10%">现有的 App Service</th>
 <th align="left", style="width:10%">Azure App Service</th>
 <th align="left", style="width:80%">更改内容</th>

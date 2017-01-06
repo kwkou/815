@@ -412,17 +412,17 @@ Azure 在进行配置时需要用 PEM 或 DER 编码的 X509 公钥。按照如�
 
 * 编辑 $CASS\_HOME/conf/cassandra-rackdc.properties 以指定数据中心和机架属性：
       
-       dc =CHINAEAST, rack =rack1
+        dc =CHINAEAST, rack =rack1
 
 * 编辑 cassandra.yaml，将种子节点配置如下：
      
-       Seeds: "10.1.2.4,10.1.2.6,10.1.2.8,10.1.2.10"
+        Seeds: "10.1.2.4,10.1.2.6,10.1.2.8,10.1.2.10"
 
 **步骤 4：启动 VM 并测试群集**
 
 登录到其中一个节点（例如 hk-c1-china-north），然后运行以下命令以查看群集的状态：
        
-       nodetool -h 10.1.2.4 -p 7199 status 
+        nodetool -h 10.1.2.4 -p 7199 status 
 
 对于 8 节点群集，你所看到的显示内容将如下所示：
 

@@ -84,7 +84,7 @@
 
 4. 在执行部署前，可以验证部署设置。使用 **Test-AzureRmResourceGroupDeployment** cmdlet 可以在创建实际资源之前找出问题。下面的示例演示如何验证部署。
 
-       Test-AzureRmResourceGroupDeployment -ResourceGroupName ExampleResourceGroup -TemplateFile <PathToTemplate>
+        Test-AzureRmResourceGroupDeployment -ResourceGroupName ExampleResourceGroup -TemplateFile <PathToTemplate>
 
 5. 若要将资源部署到资源组，请运行 **New-AzureRmResourceGroupDeployment** 命令并提供所需的参数。参数包括部署的名称、资源组的名称、模板的路径或 URL，以及方案所需的任何其他参数。如果未指定 **Mode** 参数，将使用 **Incremental** 的默认值。若要运行完整部署，请将 **Mode** 设置为 **Complete**。使用完整模式时要小心，因为可能会无意中删除不在模板中的资源。
    

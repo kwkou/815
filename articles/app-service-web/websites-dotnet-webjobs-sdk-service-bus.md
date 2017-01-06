@@ -29,15 +29,15 @@
 
 代码段只显示函数，不同于创建 `JobHost` 对象的代码（如以下示例所示）：
 
-	public class Program
-	{
-   		public static void Main()
-   		{
-      			JobHostConfiguration config = new JobHostConfiguration();
-      			config.UseServiceBus();
-      			JobHost host = new JobHost(config);
-      			host.RunAndBlock();
-   		}
+	 public class Program
+	 {
+     	public static void Main()
+      	{
+       			JobHostConfiguration config = new JobHostConfiguration();
+       			config.UseServiceBus();
+       			JobHost host = new JobHost(config);
+       			host.RunAndBlock();
+    		}
 	}
 
 在 GitHub.com 上的 azure-webjobs-sdk-samples 存储库中有[完整的服务总线代码示例](https://github.com/Azure/azure-webjobs-sdk-samples/blob/master/BasicSamples/ServiceBus/Program.cs)。

@@ -71,11 +71,11 @@ PHP 5.5 和 PHP 5.6 也可用，但它们在默认情况下不启用。若要更
 >
 >
 
-[AZURE.INCLUDE [azure-cli-2-azurechinacloud-environment-parameter](../../includes/azure-cli-2-azurechinacloud-environment-parameter.md)]
-
     az login
     az appservice web config update --php-version {5.5 | 5.6 | 7.0} -g {resource-group-name} -n {app-name}
     az appservice web config show -g {resource-group-name} -n {app-name}
+
+[AZURE.INCLUDE [azure-cli-2-azurechinacloud-environment-parameter](../../includes/azure-cli-2-azurechinacloud-environment-parameter.md)]
 
 ## 如何：更改内置 PHP 配置
 对于任何内置 PHP 运行时，你都可以通过执行以下步骤更改任何配置选项。（有关 php.ini 指令的信息，请参阅 [php.ini 指令的列表]。）

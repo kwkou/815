@@ -482,11 +482,11 @@
 * Azure 门户预览 - 当前使用门户可获取有限数量的信息。
 * Azure PowerShell - 使用此命令可获取一些信息：
   
-       Get-AzureRmVmss -ResourceGroupName "resource group name" -VMScaleSetName "scale set name"
+        Get-AzureRmVmss -ResourceGroupName "resource group name" -VMScaleSetName "scale set name"
   
     或
   
-       Get-AzureRmVmss -ResourceGroupName "resource group name" -VMScaleSetName "scale set name" -InstanceView
+        Get-AzureRmVmss -ResourceGroupName "resource group name" -VMScaleSetName "scale set name" -InstanceView
 * 就像连接到任何其他计算机一样连接到单独的虚拟机，然后可以远程访问规模集中的虚拟机以监视单个进程。
 
 > [AZURE.NOTE]

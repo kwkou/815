@@ -61,11 +61,11 @@
     5. **.NET** - 可用于部署该模板的 .NET 类。
     6. **Ruby** - 可用于部署模板的 Ruby 类。
       
-      可通过边栏选项卡上的链接获取这些文件。默认情况下，边栏选项卡将显示模板。
+    可通过边栏选项卡上的链接获取这些文件。默认情况下，边栏选项卡将显示模板。
       
-       ![查看模板](./media/resource-manager-export-template/view-template.png)
+    ![查看模板](./media/resource-manager-export-template/view-template.png)
       
-      让我们特别注意该模板。你的模板的外观应类似于：
+    让我们特别注意该模板。你的模板的外观应类似于：
       
         {
       

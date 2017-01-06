@@ -17,7 +17,6 @@
 	wacn.date="01/05/2017"
 	ms.author="cephalin"/>
 
-
 # 使用 Azure App Service 进行敏捷软件开发 #
 
 [AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-sdk-developer-differences.md)]
@@ -166,7 +165,7 @@
 
 >[AZURE.NOTE] 有多位开发人员处理新的更新时，只要执行以下操作，每一位都可以轻松创建分支和专用开发环境：
 ><p>1.	在 GitHub 中创建其在存储库中的专属分叉（请参阅[分叉存储库](https://help.github.com/articles/fork-a-repo/)）。
-><p>2.	克隆其本地计算机上的分叉 <
+><p>2.	克隆其本地计算机上的分叉。
 ><p>3.	运行相同的命令，以创建其自身的开发分支和环境。
 
 完成后，GitHub 分叉应有三个分支：
@@ -205,9 +204,7 @@
  
 	这些 git 命令与另一个源代码管理系统（例如 TFS）中的“签入你的代码”类似。运行 `git push` 时，新的提交将触发自动将代码推送到 Azure，然后重建应用程序，以反映开发环境中的更改。
 
-4.	若要验证是否已将此代码推送到开发环境，请转到开发环境的 Web 应用边栏选项卡，查看“部署”部分。你应该可以在这里看到最新提交消息。
-
-	![](./media/app-service-agile-software-development/commit-2-deployed.png)
+4.	若要验证是否已将此代码推送到开发环境，请登录到[经典管理门户](https://www.windowsazure.cn)，转到开发环境的 Web 应用，查看“部署”页面。你应该可以在这里看到最新提交消息。
 
 5.	在这里，单击“浏览”以查看 Azure 中实时应用程序中的新更改。
 
