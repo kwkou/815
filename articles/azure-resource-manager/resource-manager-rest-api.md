@@ -15,7 +15,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="na"
     ms.date="06/23/2016"
-    wacn.date="12/26/2016"
+    wacn.date="01/06/2016"
     ms.author="navale;tomfitz;" />  
 
 
@@ -86,7 +86,7 @@
 （将 YOUR\_ACCESS\_TOKEN 替换为实际访问令牌。）
 
     GET /subscriptions?api-version=2015-01-01 HTTP/1.1
-    Host: management.azure.com
+    Host: management.chinacloudapi.cn
     Authorization: Bearer YOUR_ACCESS_TOKEN
     Content-Type: application/json
 
@@ -115,7 +115,7 @@
 （将 YOUR\_ACCESS\_TOKEN 和 SUBSCRIPTION\_ID 替换为实际的访问令牌和订阅 ID）
 
     GET /subscriptions/SUBSCRIPTION_ID/resourcegroups?api-version=2015-01-01 HTTP/1.1
-    Host: management.azure.com
+    Host: management.chinacloudapi.cn
     Authorization: Bearer YOUR_ACCESS_TOKEN
     Content-Type: application/json
 
@@ -153,7 +153,7 @@
 （将 YOUR\_ACCESS\_TOKEN、SUBSCRIPTION\_ID、RESOURCE\_GROUP\_NAME 替换为实际的访问令牌、订阅 ID 和要创建的资源组名称）
 
     PUT /subscriptions/SUBSCRIPTION_ID/resourcegroups/RESOURCE_GROUP_NAME?api-version=2015-01-01 HTTP/1.1
-    Host: management.azure.com
+    Host: management.chinacloudapi.cn
     Authorization: Bearer YOUR_ACCESS_TOKEN
     Content-Type: application/json
 
@@ -190,7 +190,7 @@ ARM 模板的部署与调用其他 API 的方式并没有太大差别。其中�
 （将 SUBSCRIPTION\_ID、RESOURCE\_GROUP\_NAME、DEPLOYMENT\_NAME、YOUR\_ACCESS\_TOKEN、GLOBALY\_UNIQUE\_STORAGE\_ACCOUNT\_NAME、ADMIN\_USER\_NAME、ADMIN\_PASSWORD 和 DNS\_NAME\_FOR\_PUBLIC\_IP 替换为请求适用的值）
 
     PUT /subscriptions/SUBSCRIPTION_ID/resourcegroups/RESOURCE_GROUP_NAME/providers/microsoft.resources/deployments/DEPLOYMENT_NAME?api-version=2015-01-01 HTTP/1.1
-    Host: management.azure.com
+    Host: management.chinacloudapi.cn
     Authorization: Bearer YOUR_ACCESS_TOKEN
     Content-Type: application/json
 
