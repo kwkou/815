@@ -16,7 +16,7 @@
 	ms.topic="article"
 	ms.date="08/26/2016"
 	ms.author="trinadhk;jimpark;"
-	wacn.date="01/04/2017"/>
+	wacn.date="01/06/2017"/>
 
 
 # Azure 虚拟机备份疑难解答
@@ -27,7 +27,7 @@
 
 你可以参考下表中所列的信息，排查使用 Azure 备份时遇到的错误。
 
-## 备份
+## 备份 <a name="restore"></a>
 
 | 备份操作 | 错误详细信息 | 解决方法 |
 | -------- | -------- | -------|
@@ -76,7 +76,7 @@
 | 创建策略 | 无法创建策略 - 请减少保留选项数，以便继续进行策略配置。 | 无 |
 
 
-## VM 代理
+## VM 代理 <a name="vm-agent"></a>
 
 ### 设置 VM 代理
 通常，VM 代理已存在于从 Azure 库创建的 VM 中。但是，从本地数据中心迁移的虚拟机上未安装 VM 代理。对于此类 VM，必须显式安装 VM 代理。阅读有关[在现有 VM 上安装 VM 代理](http://blogs.msdn.com/b/mast/archive/2014/04/08/install-the-vm-agent-on-an-existing-azure-vm.aspx)的详细信息。
@@ -102,7 +102,7 @@
 - 按照[更新 Linux VM 代理](/documentation/articles/virtual-machines-linux-update-agent/)上的说明进行操作。
 
 
-### 验证 VM 代理安装
+### 验证 VM 代理安装 <a name="validating-vm-agent-installation"></a>
 如何检查 Windows VM 上的 VM 代理版本：
 
 1. 登录 Azure 虚拟机并导航到 *C:\\WindowsAzure\\Packages* 文件夹。你应会发现 WaAppAgent.exe 文件已存在。

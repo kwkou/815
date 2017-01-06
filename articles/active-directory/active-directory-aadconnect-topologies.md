@@ -16,7 +16,7 @@
     ms.topic="article"
     ms.date="11/01/2016"
     ms.author="billmath" 
-    wacn.date="01/03/2017" />  
+    wacn.date="01/06/2017" />  
 
 
 # Azure AD Connect 的拓扑
@@ -48,7 +48,7 @@
 
 不支持多个 Azure AD Connect 同步服务器连接到同一个 Azure AD 租户（[暂存服务器](#staging-server)除外）。即使配置为同步一组互斥对象，也不支持。如果你无法从单个服务器连接到林中的所有域，或者将负载分散到多个服务器，你可能已经考虑过这种情形。
 
-## 多个林，单个 Azure AD 租户
+## 多个林，单个 Azure AD 租户 <a name="multiple-forests-single-azure-ad-tenant"></a>
 ![多林单租户](./media/active-directory-aadconnect-topologies/MultiForestSingleDirectory.png)  
 
 

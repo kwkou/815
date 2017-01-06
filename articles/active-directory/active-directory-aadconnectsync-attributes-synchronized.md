@@ -14,7 +14,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="09/13/2016"
-	wacn.date="10/11/2016"
+	wacn.date="01/06/2017"
 	ms.author="markvi;andkjell"/>
 
 
@@ -22,7 +22,7 @@
 本主题列出通过 Azure AD Connect 同步进行同步的属性。  
 属性按照相关的 Azure AD 应用进行分组。
 
-## 要同步的属性
+## 要同步的属性 <a name="attributes-to-synchronize"></a>
 常见的问题是最少要同步的属性列表是什么。默认的（也是建议的）方法是保留默认属性，以便可以在云中构造完整的 GAL（全局地址列表），并获取 Office 365 工作负荷中的所有功能。在某些情况下，组织并不想要将某些属性同步到云中，因为这些属性包含敏感数据或 PII（个人身份信息），如以下示例中所示：  
 ![错误的属性](./media/active-directory-aadconnectsync-attributes-synchronized/badextensionattribute.png)
 
@@ -418,7 +418,7 @@
 | domainFQDN| X| 也称为 dnsDomainName。例如 contoso.com。|
 | domainNetBios| X| 也称为 netBiosName。例如 CONTOSO。|
 
-## Exchange 混合写回
+## Exchange 混合写回 <a name="exchange-hybrid-writeback"></a>
 选择启用 **Exchange 混合**部署时，这些属性将从 Azure AD 写回到本地 Active Directory。根据你的 Exchange 版本，可能会同步更少的属性。
 
 | 属性名称| 用户| 联系人| 组| 注释 |

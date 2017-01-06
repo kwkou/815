@@ -15,7 +15,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="07/12/2016"
-	wacn.date="01/03/2017"
+	wacn.date="01/06/2017"
 	ms.author="asteen"/>
 
 
@@ -108,7 +108,7 @@ Azure Active Directory 中的密码管理包含如下所述的几个逻辑组件
 有关 Azure AD Connect 的详细信息，请参阅[入门：Azure AD Connect](/documentation/articles/active-directory-aadconnect/)。有关密码写回的详细信息，请参阅[入门：Azure AD 密码管理](/documentation/articles/active-directory-passwords-getting-started/)。
 
 
-<br/> <br/> <br/>
+ 
 
 ## 密码重置文档的链接
 以下是所有 Azure AD 密码重置文档页面的链接：

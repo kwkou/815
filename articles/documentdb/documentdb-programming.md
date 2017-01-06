@@ -16,7 +16,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="11/11/2016"
-    wacn.date="12/27/2016"
+    wacn.date="01/06/2017"
     ms.author="andrl" />  
 
 
@@ -797,7 +797,6 @@ JavaScript 存储过程和触发器经过沙盒处理，以使一个脚本的效
 - [DocumentDB Studio](https://github.com/mingaliu/DocumentDBStudio/releases)
 - [JSON](http://www.json.org/)
 - [JavaScript ECMA-262](http://www.ecma-international.org/publications/standards/Ecma-262.htm)
-- [JavaScript - JSON 类型系统](http://www.json.org/js.html)
 - [安全和可移植的数据库扩展性](http://dl.acm.org/citation.cfm?id=276339)
 - [面向服务的数据库体系结构](http://dl.acm.org/citation.cfm?id=1066267&coll=Portal&dl=GUIDE)
 - [在 Microsoft SQL 服务器中托管 .NET 运行时](http://dl.acm.org/citation.cfm?id=1007669)

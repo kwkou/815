@@ -14,7 +14,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="08/08/2016"
-	wacn.date="09/05/2016"
+	wacn.date="01/06/2017"
 	ms.author="markgal;trinadhk;jimpark" />
 
 
@@ -102,7 +102,7 @@
 
 	PS C:\> $registerjob = Register-AzureRmBackupContainer -Vault $backupvault -Name "testvm" -ServiceName "testvm"
 
-## 备份 Azure VM
+## 备份 Azure VM <a name="restore-an-azure-vm"></a>
 
 ### 创建保护策略
 不必创建新的保护策略即可开始 VM 的备份。使用保管库附带的“默认策略”，你可以快速启用保护功能，稍后再使用适当的详细信息对该策略进行编辑。你可以使用 **Get-AzureRmBackupProtectionPolicy cmdlet** 获取保管库中提供的策略的列表：

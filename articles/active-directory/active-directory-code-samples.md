@@ -15,7 +15,7 @@
    ms.workload="identity"
    ms.date="09/16/2016"
    ms.author="mbaldwin"
-   wacn.date="01/03/2017"/>
+   wacn.date="01/06/2017"/>
 
 # Azure Active Directory 代码示例
 
@@ -27,7 +27,7 @@
 
 为 GitHub 上的示例做出补充：[Azure Active Directory 示例和文档](https://github.com/Azure-Samples?page=3&query=active-directory)。
 
-## Web 浏览器到 Web 应用程序
+## Web 浏览器到 Web 应用程序 <a name="web-browser-to-web-application"></a>
 
 这些示例展示了如何编写 web 应用程序来对用户的浏览器进行定向以使用户登录到 Azure AD。
 
@@ -44,7 +44,7 @@
 
 
 
-## 单页面应用程序 (SPA)
+## 单页面应用程序 (SPA) <a name="single-page-application-spa"></a>
 
 此示例展示了如何编写受 Azure AD 保护的单页面应用程序。
 
@@ -53,7 +53,7 @@
 | JavaScript、C#/.NET | [SinglePageApp-DotNet](https://github.com/Azure-Samples/active-directory-angularjs-singlepageapp) | 使用适用于 JavaScript 的 ADAL 和 Azure AD 保护基于 AngularJS 且实施了 ASP.NET Web API 后端的单页面应用程序。
 
 
-## 本机应用程序到 Web API
+## 本机应用程序到 Web API <a name="native-application-to-web-api"></a>
 
 这些代码示例展示了如何构建本机应用程序来调用受 Azure AD 保护的 web API。它们使用 [Azure AD 身份验证库 (ADAL)](/documentation/articles/active-directory-authentication-libraries/) 和 [Azure AD 中的 OAuth 2.0](/documentation/articles/active-directory-protocols-oauth-code/)。
 
@@ -74,7 +74,7 @@
 
 
 
-## Web 应用程序到 Web API
+## Web 应用程序到 Web API <a name="web-application-to-web-api"></a>
 
 这些代码示例展示了如何使用 [Azure AD 中的 OAuth 2.0](/documentation/articles/active-directory-protocols-oauth-code/) 构建 web 应用程序来调用由 Azure AD 保护的 Web API。
 
@@ -86,7 +86,7 @@
 | JavaScript | [WebAPI-Nodejs](https://github.com/Azure-Samples/active-directory-node-webapi) | 设置一个与 Azure AD 集成的 REST API 服务以提供 API 保护。使用 Web API 包括一个 Node.js 服务器。
 | C#/.NET | [WebApp-WebAPI-MultiTenant-OpenIdConnect-DotNet](https://github.com/Azure-Samples/active-directory-dotnet-webapp-webapi-multitenant-openidconnect) | 一个多租户 MVC Web 应用程序，使用 OpenID Connect（ASP.Net OpenID Connect OWIN 中间件）从 Azure AD 租户对用户进行身份验证。使用授权代码来调用 Graph API。
 
-## 服务器或守护程序应用程序到 Web API
+## 服务器或守护程序应用程序到 Web API <a name="server-or-daemon-application-to-web-api"></a>
 
 这些代码示例展示了如何构建守护程序或服务器应用程序来使用 [Azure AD 身份验证库 (ADAL)](/documentation/articles/active-directory-authentication-libraries/) 和 [Azure AD 中的 OAuth 2.0](/documentation/articles/active-directory-protocols-oauth-code/) 通过一个 Web API 获取资源。
 
