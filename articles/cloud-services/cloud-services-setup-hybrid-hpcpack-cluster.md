@@ -43,7 +43,7 @@
 
 	* 确认安装了重要更新和关键更新。
 
-* **HPC Pack 2012 R2** - 免费[下载](http://go.microsoft.com/fwlink/p/?linkid=328024)最新版本的安装包，并将文件复制到头节点计算机或网络位置。选择语言与你所安装的 Windows Server 的语言相同的安装文件。
+* **HPC Pack 2012 R2** - 免费[下载](https://www.microsoft.com/en-us/download/details.aspx?id=49922)最新版本的安装包，并将文件复制到头节点计算机或网络位置。选择语言与你所安装的 Windows Server 的语言相同的安装文件。
 
 * **域帐户** - 必须为此帐户配置头节点上的本地管理员权限，才能安装 HPC Pack。
 
