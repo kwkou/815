@@ -5,8 +5,7 @@
     documentationcenter="na"
     author="ravbhatnagar"
     manager="timlt"
-    editor="tysonn" />  
-
+    editor="tysonn" />
 <tags
     ms.assetid="abde0f73-c0fe-4e6d-a1ee-32a6fce52a2d"
     ms.service="azure-resource-manager"
@@ -14,12 +13,12 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="na"
-    ms.date="10/30/2016"
-    wacn.date="01/05/2017"
+    ms.date="12/07/2016"
+    wacn.date="01/06/2017"
     ms.author="gauravbh;tomfitz" />
 
 # 使用策略来管理资源和控制访问
-Azure 资源管理器现在可让你通过自定义策略来控制访问。使用策略可以防止组织中的用户违反管理组织资源所需的惯例。
+借助 Azure Resource Manager，可通过自定义策略控制访问。使用策略可以防止组织中的用户违反管理组织资源所需的惯例。
 
 你可以创建策略定义来描述会明确遭到拒绝的操作或资源。可以在所需范围（例如订阅、资源组或是单个资源）分配这些策略定义。策略由所有子资源继承。因此，如果将策略应用到资源组，则其适用于该资源组中的所有资源。
 
@@ -44,11 +43,43 @@ RBAC 着重于**用户**在不同的范围可执行的操作。例如，将特�
 ## 策略定义结构
 策略定义是使用 JSON 创建的。它包含定义操作和效果的一个或多个条件/逻辑运算符，告诉你满足条件时产生的效果。该架构在 [http://schema.management.azure.com/schemas/2015-10-01-preview/policyDefinition.json](http://schema.management.azure.com/schemas/2015-10-01-preview/policyDefinition.json) 中发布。
 
-简单而言，策略包含以下元素：
+以下示例说明可用于限制资源部署位置的策略：
 
-**条件/逻辑运算符:** 可通过一组逻辑运算符操作的条件集。
+    {
+      "properties": {
+        "parameters": {
+          "listOfAllowedLocations": {
+            "type": "array",
+            "metadata": {
+              "description": "An array of permitted locations for resources.",
+              "strongType": "location",
+              "displayName": "List of locations"
+            }
+          }
+        },
+        "displayName": "Geo-compliance policy template",
+        "description": "This policy enables you to restrict the locations your organization can specify when deploying resources. Use to enforce your geo-compliance requirements.",
+        "policyRule": {
+          "if": {
+            "not": {
+              "field": "location",
+              "in": "[parameters('listOfAllowedLocations')]"
+            }
+          },
+          "then": {
+            "effect": "deny"
+          }
+        }
+      }
+    }
 
-**效果:** 条件满足时会发生的情况 - 拒绝或审核。审核效果会发出警告事件服务日志。例如，管理员可以创建策略，即使有人创建大型 VM，此策略也会引发审核事件，然后管理员可以审查日志。
+基本而言，策略包含以下部分：
+
+**参数**：分配策略时指定的值。
+
+**条件/逻辑运算符**:可通过一组逻辑运算符操作的条件集。
+
+**影响**：条件满足时会发生的情况 – 拒绝或审核。审核效果会发出警告事件服务日志。例如，管理员可以创建策略，即使有人创建大型 VM，此策略也会引发审核事件，然后管理员可以审查日志。
 
     {
       "if" : {
@@ -66,6 +97,30 @@ RBAC 着重于**用户**在不同的范围可执行的操作。例如，将特�
 当前，策略不对不支持标记、种类和位置的资源类型进行评估，例如 Microsoft.Resources/deployments 资源类型。将来会添加此支持。若要避免向后兼容问题，创作策略时应显式指定类型。例如，未指定类型的标记策略应用于所有类型。在此情况下，如果有嵌套资源不支持标记，并且部署资源类型已添加到策略评估中，则模板部署可能会失败。
 > 
 > 
+
+## 参数
+从 API 版本 2016-12-01 开始，可在策略定义中使用参数。使用参数可减少策略定义的数量，有助于简化策略管理。在分配策略时向参数提供值。
+
+在创建策略定义时声明参数。
+
+    "parameters": {
+      "listOfLocations": {
+        "type": "array",
+        "metadata": {
+          "description": "An array of permitted locations for resources.",
+          "displayName": "List Of Locations"
+        }
+      }
+    }
+
+参数类型可以是字符串，也可以是数组。Azure 门户预览等工具使用元数据属性显示用户友好信息。
+
+在策略规则中，可按照与模板类似的方式引用参数。例如：
+        
+    { 
+        "field" : "location",
+        "in" : "[parameters(listOfLocations)]"
+    }
 
 ## 逻辑运算符
 支持的逻辑运算符和语法包括：
@@ -136,6 +191,8 @@ RBAC 着重于**用户**在不同的范围可执行的操作。例如，将特�
 | Microsoft.Compute/virtualMachines/imageOffer | |
 | Microsoft.Compute/virtualMachines/imageSku | |
 | Microsoft.Compute/virtualMachines/imageVersion | |
+| Microsoft.Storage/storageAccounts/accessTier | |
+| Microsoft.Storage/storageAccounts/enableBlobEncryption | |
 | Microsoft.Cache/Redis/enableNonSslPort | |
 | Microsoft.Cache/Redis/shardCount | |
 | Microsoft.SQL/servers/version | |
@@ -146,7 +203,6 @@ RBAC 着重于**用户**在不同的范围可执行的操作。例如，将特�
 | Microsoft.SQL/servers/elasticPools/dtu | |
 | Microsoft.SQL/servers/elasticPools/edition | |
 
-目前，策略仅适用于 PUT 请求。
 
 ## 效果
 策略支持三种类型的效果 - **deny**、**audit** 和 **append**。
@@ -157,7 +213,6 @@ RBAC 着重于**用户**在不同的范围可执行的操作。例如，将特�
 
 对于 **append**，必须提供以下详细信息：
 
-    ....
     "effect": "append",
     "details": [
       {
@@ -167,6 +222,7 @@ RBAC 着重于**用户**在不同的范围可执行的操作。例如，将特�
     ]
 
 值可以是字符串或 JSON 格式对象。
+
 
 ## 策略定义示例
 现在，让我们看看如何定义策略以实现前述方案。
@@ -233,7 +289,7 @@ RBAC 着重于**用户**在不同的范围可执行的操作。例如，将特�
 
 
 ### 遵循地区：确保资源位置
-以下示例显示的策略拒绝位置不是北欧或西欧的请求。
+以下示例中的策略拒绝位置不是中国北部或西欧的请求。
 
     {
       "if" : {
@@ -248,7 +304,7 @@ RBAC 着重于**用户**在不同的范围可执行的操作。例如，将特�
     }
 
 ### 服务策展：选择服务目录
-以下示例显示的策略只允许对 Microsoft.Resources/*、Microsoft.Compute/\*、Microsoft.Storage/\*、Microsoft.Network/\* 类型的服务执行操作。其他类型的服务都会被拒绝。
+以下示例显示的策略只允许对 Microsoft.Resources/\*、Microsoft.Compute/\*、Microsoft.Storage/\*、Microsoft.Network/\* 类型的服务执行操作。其他类型的服务都会被拒绝。
 
     {
       "if" : {
@@ -354,25 +410,34 @@ RBAC 着重于**用户**在不同的范围可执行的操作。例如，将特�
 
     PUT https://management.chinacloudapi.cn/subscriptions/{subscription-id}/providers/Microsoft.authorization/policydefinitions/{policyDefinitionName}?api-version={api-version}
 
-对于 api-version，请使用 *2016-04-01* 。包括类似于以下示例的请求正文：
+对于 api-version，请使用 *2016-04-01* 或 *2016-12-01* 。包括类似于以下示例的请求正文：
 
     {
-      "properties":{
-        "policyType":"Custom",
-        "description":"Test Policy",
-        "policyRule":{
-          "if" : {
-            "not" : {
-              "field" : "tags",
-              "containsKey" : "costCenter"
+      "properties": {
+        "parameters": {
+          "listOfAllowedLocations": {
+            "type": "array",
+            "metadata": {
+              "description": "An array of permitted locations for resources.",
+              "strongType": "location",
+              "displayName": "List Of Locations"
+            }
+          }
+        },
+        "displayName": "Geo-compliance policy template",
+        "description": "This policy enables you to restrict the locations your organization can specify when deploying resources. Use to enforce your geo-compliance requirements.",
+        "policyRule": {
+          "if": {
+            "not": {
+              "field": "location",
+              "in": "[parameters('listOfAllowedLocations')]"
             }
           },
-          "then" : {
-            "effect" : "deny"
+          "then": {
+            "effect": "deny"
           }
         }
-      },
-      "name":"testdefinition"
+      }
     }
 
 可以通过[用于策略分配的 REST API](https://docs.microsoft.com/rest/api/resources/policyassignments)，在所需范围内应用策略定义。REST API 可让你创建和删除策略分配，以及获取现有分配的信息。
@@ -381,21 +446,24 @@ RBAC 着重于**用户**在不同的范围可执行的操作。例如，将特�
 
     PUT https://management.chinacloudapi.cn /subscriptions/{subscription-id}/providers/Microsoft.authorization/policyassignments/{policyAssignmentName}?api-version={api-version}
 
-{policy-assignment} 是策略分配的名称。对于 api-version，请使用 *2016-04-01*。
+{policy-assignment} 是策略分配的名称。对于 api-version，请使用 *2016-04-01* 或 *2016-12-01* （用于参数）。
 
 使用类似于以下示例的请求正文：
 
     {
       "properties":{
-        "displayName":"VM_Policy_Assignment",
+        "displayName":"China North only policy assignment on the subscription ",
+        "description":"Resources can only be provisioned in China North regions",
+        "parameters": {
+             "listOfAllowedLocations": { "value": ["China North", "China North 2"] }
+         },
         "policyDefinitionId":"/subscriptions/########/providers/Microsoft.Authorization/policyDefinitions/testdefinition",
         "scope":"/subscriptions/########-####-####-####-############"
       },
-      "name":"VMPolicyAssignment"
     }
 
 ### PowerShell
-可以使用 New-AzureRmPolicyDefinition cmdlet 创建策略定义。以下示例将创建一个策略，只允许北欧和西欧的资源。
+可以使用 New-AzureRmPolicyDefinition cmdlet 创建策略定义。以下示例创建只允许使用中国北部和西欧资源的策略。
 
     $policy = New-AzureRmPolicyDefinition -Name regionPolicyDefinition -Description "Policy to allow resource creation only in certain regions" -Policy '{    
       "if" : {
@@ -428,7 +496,7 @@ RBAC 着重于**用户**在不同的范围可执行的操作。例如，将特�
 同样地，可以分别通过 Get-AzureRmPolicyAssignment、Set-AzureRmPolicyAssignment 和 Remove-AzureRmPolicyAssignment cmdlet 获取、更改或删除策略分配。
 
 ### Azure CLI
-可以将 Azure CLI 与策略定义命令配合使用，创建策略定义。以下示例将创建一个策略，只允许北欧和西欧的资源。
+可以将 Azure CLI 与策略定义命令配合使用，创建策略定义。以下示例创建只允许使用中国北部和西欧资源的策略。
 
     azure policy definition create --name regionPolicyDefinition --description "Policy to allow resource creation only in certain regions" --policy-string '{    
       "if" : {
@@ -505,4 +573,4 @@ RBAC 着重于**用户**在不同的范围可执行的操作。例如，将特�
 ## 后续步骤
 * 如需了解企业如何使用 Resource Manager 对订阅进行有效管理，请参阅 [Azure 企业机架 - 规范性订阅管理](/documentation/articles/resource-manager-subscription-governance/)。
 
-<!---HONumber=Mooncake_1219_2016-->
+<!---HONumber=Mooncake_0103_2017-->

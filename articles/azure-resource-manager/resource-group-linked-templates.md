@@ -5,8 +5,7 @@
     documentationcenter="na"
     author="tfitzmac"
     manager="timlt"
-    editor="tysonn" />  
-
+    editor="tysonn" />
 <tags
     ms.assetid="27d8c4b2-1e24-45fe-88fd-8cf98a6bb2d2"
     ms.service="azure-resource-manager"
@@ -14,8 +13,8 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="na"
-    ms.date="09/02/2016"
-    wacn.date="12/26/2016"
+    ms.date="11/28/2016"
+    wacn.date="01/06/2017"
     ms.author="tomfitz" />
 
 # 将已链接的模版与 Azure 资源管理器配合使用
@@ -28,23 +27,27 @@
 
     "resources": [ 
       { 
-         "apiVersion": "2015-01-01", 
-         "name": "linkedTemplate", 
-         "type": "Microsoft.Resources/deployments", 
-         "properties": { 
-           "mode": "incremental", 
-           "templateLink": {
+          "apiVersion": "2015-01-01", 
+          "name": "linkedTemplate", 
+          "type": "Microsoft.Resources/deployments", 
+          "properties": { 
+            "mode": "incremental", 
+            "templateLink": {
               "uri": "https://www.contoso.com/AzureTemplates/newStorageAccount.json",
               "contentVersion": "1.0.0.0"
-           }, 
-           "parameters": { 
+            }, 
+            "parameters": { 
               "StorageAccountName":{"value": "[parameters('StorageAccountName')]"} 
-           } 
-         } 
+            } 
+          } 
       } 
     ] 
 
-Resource Manager 服务必须能够访问链接的模板。无法为链接的模板指定本地文件或者只能在本地网络中访问的文件。只能提供包含 **http** 或 **https** 的 URI 值。一种做法是将链接模板放在存储帐户中并对该项使用 URI，如以下示例中所示。
+链接模板与其他资源类型相似，也可在它与其他资源之间设置依赖关系。因此，如有其他资源需要来自链接模板的输出值，你可以确保在部署这些资源之前部署链接模板。如果链接模板依赖于其他资源，你也可以确保在部署链接模板前部署其他资源。可使用以下语法检索链接模板中的值：
+
+    "[reference('linkedTemplate').outputs.exampleProperty]"
+
+Resource Manager 服务必须能够访问链接的模板。无法为链接的模板指定本地文件或者只能在本地网络中访问的文件。只能提供包含 **http** 或 **https** 的 URI 值。一个选项是将链接模板置于存储帐户中，并使用该项目的 URI，如以下示例所示：
 
     "templateLink": {
         "uri": "http://mystorageaccount.blob.core.chinacloudapi.cn/templates/template.json",
@@ -74,6 +77,11 @@ Resource Manager 服务必须能够访问链接的模板。无法为链接的模
     ],
 
 即使令牌作为安全字符串传入，链接模板的 URI（包括 SAS 令牌）也将记录在该资源组的部署操作中。若要限制公开，请设置令牌的到期时间。
+
+Resource Manager 会将每个链接模板作为单独的部署来处理。在资源组的部署历史记录中，可看到父模板和嵌套模板的分别部署。
+
+![部署历史记录](./media/resource-group-linked-templates/linked-deployment-history.png)  
+
 
 ## 链接到参数文件
 以下示例使用 **parametersLink** 属性链接到参数文件。
@@ -107,20 +115,7 @@ Resource Manager 服务必须能够访问链接的模板。无法为链接的模
     "variables": {
         "templateBaseUrl": "https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/postgresql-on-ubuntu/",
         "sharedTemplateUrl": "[concat(variables('templateBaseUrl'), 'shared-resources.json')]",
-        "tshirtSizeSmall": {
-            "vmSize": "Standard_A1",
-            "diskSize": 1023,
-            "vmTemplate": "[concat(variables('templateBaseUrl'), 'database-2disk-resources.json')]",
-            "vmCount": 2,
-            "slaveCount": 1,
-            "storage": {
-                "name": "[parameters('storageAccountNamePrefix')]",
-                "count": 1,
-                "pool": "db",
-                "map": [0,0],
-                "jumpbox": 0
-            }
-        }
+        "vmTemplateUrl": "[concat(variables('templateBaseUrl'), 'database-2disk-resources.json')]"
     }
 
 你还可以使用 [deployment()](/documentation/articles/resource-group-template-functions/#deployment) 获取当前模板的基 URL，并使用该 URL 来获取同一位置其他模板的 URL。如果模板位置发生变化（原因可能是改版）或者想要避免对模板文件中的 URL 进行硬编码，则此方法非常有用。
@@ -130,7 +125,7 @@ Resource Manager 服务必须能够访问链接的模板。无法为链接的模
     }
 
 ## 按条件链接到模板
-可以通过传入用于构造链接模板 URI 的参数值链接到不同的模板。如果在部署期间需指定要使用的链接模板，则此方法很有效。例如，可为现有存储帐户指定一个要使用的模板，为新的存储帐户指定另一个要使用的模板。
+可以通过传入用于构造链接模板 URI 的参数值链接到不同的模板。如需在部署过程中指定要使用的链接模板，此方法也适用。例如，可为现有存储帐户指定一个要使用的模板，为新的存储帐户指定另一个要使用的模板。
 
 以下示例显示了存储帐户名的参数，以及用于指定存储帐户是新帐户还是现有帐户的参数。
 
@@ -296,4 +291,4 @@ URI 将解析成名为 **existingStorageAccount.json** 或 **newStorageAccount.j
 * 若要了解如何为资源定义部署顺序，请参阅 [Defining dependencies in Azure Resource Manager templates](/documentation/articles/resource-group-define-dependencies/)（在 Azure Resource Manager 模板中定义依赖关系）
 * 若要了解如何定义一个资源而创建多个实例，请参阅 [Create multiple instances of resources in Azure Resource Manager](/documentation/articles/resource-group-create-multiple/)（在 Azure Resource Manager 中创建多个资源实例）
 
-<!---HONumber=Mooncake_1219_2016-->
+<!---HONumber=Mooncake_0103_2017-->

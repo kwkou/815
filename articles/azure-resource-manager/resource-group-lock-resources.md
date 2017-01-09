@@ -5,8 +5,7 @@
     documentationcenter=""
     author="tfitzmac"
     manager="timlt"
-    editor="tysonn" />  
-
+    editor="tysonn" />
 <tags
     ms.assetid="53c57e8f-741c-4026-80e0-f4c02638c98b"
     ms.service="azure-resource-manager"
@@ -14,25 +13,27 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="08/15/2016"
-    wacn.date="12/26/2016"
+    ms.date="12/14/2016"
+    wacn.date="01/06/2017"
     ms.author="tomfitz" />  
 
 
 # 使用 Azure 资源管理器锁定资源
 作为管理员，你可能需要锁定订阅、资源组或资源，以防止组织中的其他用户意外删除或修改关键资源。可以将锁定级别设置为 **CanNotDelete** 或 **ReadOnly**。
 
-* **CanNotDelete** 表示经过授权的用户仍可以读取和修改资源，但不能删除资源。
-* **ReadOnly** 表示经过授权的用户可以读取资源，但不能删除资源，也不能对资源执行任何操作。对资源的权限限制为**读者**角色。
+* **CanNotDelete** 味着经授权的用户仍可读取和修改资源，但不能删除资源。
+* **ReadOnly** 意味着经授权的用户可以读取资源，但不能删除或更新资源。应用此锁类似于将所有经授权的用户限制于“读者”角色授予的权限。
+
+Resource Manager 锁仅适用于管理平面内发生的操作，包括发送到 `https://management.chinacloudapi.cn` 的操作。锁不会限制资源如何执行各自的函数。资源更改将受到限制，但资源操作不受限制。例如，SQL 数据库上的 ReadOnly 锁将阻止删除或修改该数据库，但不会阻止创建、更新或删除该数据库中的数据。允许数据事务，因为这些操作不会发送到 `https://management.chinacloudapi.cn`。
 
 应用 **ReadOnly** 可能会导致意外结果，因为看起来好像读取操作的某些操作实际上需要其他操作。例如，在存储帐户上放置 **ReadOnly** 锁将阻止所有用户列出密钥。列出密钥操作通过 POST 请求进行处理，因为返回的密钥可用于写入操作。另举一例，在应用服务资源上放置 **ReadOnly** 锁将阻止 Visual Studio 服务器资源管理器显示资源文件，因为该交互需要写访问权限。
 
 与基于角色的访问控制不同，你可以使用管理锁来对所有用户和角色应用限制。若要了解如何为用户和角色设置权限，请参阅 [Azure 基于角色的访问控制](/documentation/articles/role-based-access-control-configure/)。
 
-在父作用域应用锁时，所有子资源将继承同一个锁。即使是之后添加的资源也会从父作用域继承该锁。继承中限制性最强的锁优先执行。
+在父范围应用锁时，该范围内所有资源都将继承相同的锁。即使是之后添加的资源也会从父作用域继承该锁。继承中限制性最强的锁优先执行。
 
 ## 谁可以在组织中创建或删除锁
-若要创建或删除管理锁，你必须有权访问 **Microsoft.Authorization/*** 或 **Microsoft.Authorization/locks/*** 操作。在内置角色中，只有**所有者**和**用户访问管理员**有权执行这些操作。
+若要创建或删除管理锁，必须有权执行 `Microsoft.Authorization/*` 或 `Microsoft.Authorization/locks/*` 操作。在内置角色中，只有**所有者**和**用户访问管理员**有权执行这些操作。
 
 ## 通过门户创建锁
 [AZURE.INCLUDE [resource-manager-lock-resources](../../includes/resource-manager-lock-resources.md)]
@@ -43,7 +44,7 @@
 提供的类型特定于资源类型。对于存储，将类型设置为“Microsoft.Storage/storageaccounts/providers/locks”。
 
     {
-      "$schema": "https://schema.management.chinacloudapi.cn/schemas/2015-01-01/deploymentTemplate.json#",
+      "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
       "contentVersion": "1.0.0.0",
       "parameters": {
         "lockedResource": {
@@ -95,4 +96,4 @@ Azure PowerShell 提供了其他用于使用锁的命令，如 **Set-AzureRmReso
 * 可以使用自定义策略对订阅应用限制和约定。有关详细信息，请参阅[使用策略来管理资源和控制访问](/documentation/articles/resource-manager-policy/)。
 * 如需了解企业如何使用 Resource Manager 对订阅进行有效管理，请参阅 [Azure 企业机架 - 规范性订阅管理](/documentation/articles/resource-manager-subscription-governance/)。
 
-<!---HONumber=Mooncake_1219_2016-->
+<!---HONumber=Mooncake_0103_2017-->
