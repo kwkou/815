@@ -11,7 +11,7 @@
     ms.date="09/29/2016"
    wacn.date="01/09/2017" />
 
-# 使用集成了 AMQP 1.0 的 Python 中的服务总线。
+# 使用集成了 AMQP 1.0 的 Python 中的服务总线
 
 [AZURE.INCLUDE [service-bus-selector-amqp](../../includes/service-bus-selector-amqp.md)]
 
