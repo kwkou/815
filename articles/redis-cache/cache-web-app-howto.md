@@ -632,12 +632,12 @@
 
 [![部署到 Azure][deploybutton]](https://portal.azure.cn/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F201-web-app-redis-cache-sql-database%2Fazuredeploy.json)
 
->[AZURE.NOTE] 必须修改从 GitHub 存储库“azure-quickstart-templates”部署的模板，以适应 Azure 中国云环境。例如，替换某些终结点 -- 将“blob.core.windows.net”替换为“blob.core.chinacloudapi.cn”，将“cloudapp.azure.com”替换为“chinacloudapp.cn”。
+>[AZURE.NOTE] 必须修改从 GitHub 存储库“azure-quickstart-templates”部署的模板，以适应 Azure 中国云环境。例如，替换某些终结点 -- 将“redis.cache.windows.net”替换为“redis.cache.chinacloudapi.cn”，将“cloudapp.azure.com”替换为“chinacloudapp.cn”。
 
 此“部署到 Azure”按钮使用“创建 Web 应用、Redis 缓存和 SQL 数据库”[Azure 快速入门](https://github.com/Azure/azure-quickstart-templates)模板来预配这些服务，设置 SQL 数据库的连接字符串，以及 Azure Redis 缓存连接字符串的应用程序设置。[](https://github.com/Azure/azure-quickstart-templates/tree/master/201-web-app-redis-cache-sql-database)
 
 > [AZURE.NOTE]
-如果你没有 Azure 帐户，只需花费几分钟的时间就能[创建一个免费的 Azure 帐户](/pricing/1rmb-trial/?WT.mc_id=redis_cache_hero)。
+如果你没有 Azure 帐户，只需花费几分钟的时间就能[创建一个 1 元试用 Azure 帐户](/pricing/1rmb-trial/?WT.mc_id=redis_cache_hero)。
 > 
 > 
 

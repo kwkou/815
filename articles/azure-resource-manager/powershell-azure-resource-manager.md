@@ -145,19 +145,19 @@
 
 * 若要按名称获取资源，请提供 **ResourceNameContains** 参数：
 
-      Find-AzureRmResource -ResourceNameContains mystoragename
+        Find-AzureRmResource -ResourceNameContains mystoragename
 
 * 若要获取资源组中的所有资源，请提供 **ResourceGroupNameContains** 参数：
 
-      Find-AzureRmResource -ResourceGroupNameContains TestRG1
+        Find-AzureRmResource -ResourceGroupNameContains TestRG1
 
 * 若要获取具有某个标记名称和值的所有资源，请提供 **TagName** 和 **TagValue** 参数：
 
-      Find-AzureRmResource -TagName Dept -TagValue IT
+        Find-AzureRmResource -TagName Dept -TagValue IT
 
 * 若要获取具有特定资源类型的所有资源，请提供 **ResourceType** 参数：
 
-      Find-AzureRmResource -ResourceType Microsoft.Storage/storageAccounts
+        Find-AzureRmResource -ResourceType Microsoft.Storage/storageAccounts
 
 ## 锁定资源
 
@@ -197,11 +197,11 @@
 
 * 若要从资源组中删除资源，请使用 **Remove-AzureRmResource** cmdlet。此 cmdlet 将删除该资源，但不会删除该资源组。
 
-      Remove-AzureRmResource -ResourceName mystoragename -ResourceType Microsoft.Storage/storageAccounts -ResourceGroupName TestRG1
+        Remove-AzureRmResource -ResourceName mystoragename -ResourceType Microsoft.Storage/storageAccounts -ResourceGroupName TestRG1
 
 * 若要删除资源组及其所有资源，请使用 **Remove-AzureRmResourceGroup** cmdlet。
 
-      Remove-AzureRmResourceGroup -Name TestRG1
+        Remove-AzureRmResourceGroup -Name TestRG1
 
 使用这两个 cmdlet，都会要求你确认要删除的资源或资源组。如果操作成功删除资源或资源组，将返回 **True**。
 
