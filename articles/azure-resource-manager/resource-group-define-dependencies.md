@@ -5,8 +5,7 @@
     documentationcenter="na"
     author="tfitzmac"
     manager="timlt"
-    editor="" />  
-
+    editor="" />
 <tags
     ms.assetid="34ebaf1e-480c-4b4d-9bf6-251bd3f8f2cf"
     ms.service="azure-resource-manager"
@@ -14,15 +13,15 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="na"
-    ms.date="09/12/2016"
-    wacn.date="12/26/2016"
+    ms.date="11/28/2016"
+    wacn.date="01/06/2017"
     ms.author="tomfitz" />  
 
 
 # 在 Azure 资源管理器模板中定义依赖关系
 对于给定的资源，可能有部署资源之前必须存在的其他资源。例如，SQL Server 必须存在，才能尝试部署 SQL 数据库。可通过将一个资源标记为依赖于其他资源来定义此关系。通常会使用 **dependsOn** 元素来定义依赖关系，但也可以通过 **reference** 函数来定义。
 
-Resource Manager 将评估资源之间的依赖关系，并根据其依赖顺序进行部署。如果资源互不依赖，Resource Manager 将并行部署资源。
+Resource Manager 将评估资源之间的依赖关系，并根据其依赖顺序进行部署。如果资源互不依赖，Resource Manager 将并行部署资源。只需为部署在同一模板中的资源定义依赖关系。
 
 ## dependsOn
 在模板中，dependsOn 元素可让你将一个资源定义为与一个或多个资源相依赖。它的值可以是一个资源名称间采用逗号进行分隔的列表。
@@ -39,13 +38,20 @@ Resource Manager 将评估资源之间的依赖关系，并根据其依赖顺序
       },
       "dependsOn": [
         "storageLoop",
-        "[concat('Microsoft.Network/loadBalancers/', variables('loadBalancerName'))]",
-        "[concat('Microsoft.Network/virtualNetworks/', variables('virtualNetworkName'))]"
+        "[variables('loadBalancerName')]",
+        "[variables('virtualNetworkName')]"
       ],
       ...
     }
 
-若要在某个资源与通过 copy 循环创建的资源之间创建依赖关系，可将 dependsOn 元素设置为该循环的名称。有关示例，请参阅[在 Azure 资源管理器中创建多个资源实例](/documentation/articles/resource-group-create-multiple/)。
+在前面的示例中，通过复制名为 **storageLoop** 的循环创建的资源包含依赖关系。有关示例，请参阅[在 Azure 资源管理器中创建多个资源实例](/documentation/articles/resource-group-create-multiple/)。
+
+定义依赖关系时，可以包含资源提供程序命名空间和资源类型，以避免多义性。例如，为明确表示可能与其他资源同名的负载均衡器和虚拟网络，可使用以下格式：
+
+    "dependsOn": [
+      "[concat('Microsoft.Network/loadBalancers/', variables('loadBalancerName'))]",
+      "[concat('Microsoft.Network/virtualNetworks/', variables('virtualNetworkName'))]"
+    ] 
 
 尽管你可能倾向使用 dependsOn 来映射资源之间的关系，但请务必了解这么做的理由，因为它会影响部署性能。例如，若要记录资源的互连方式，那么，dependsOn 方法并不合适。部署之后，无法查询 dependsOn 元素中定义的资源。通过使用 dependsOn，可以影响部署时间，因为 Resource Manager 不会并行部署两个具有依赖关系的资源。若要记录资源之间的关系，请改为使用[资源链接](/documentation/articles/resource-group-link-resources/)。
 
@@ -106,4 +112,4 @@ Resource Manager 将评估资源之间的依赖关系，并根据其依赖顺序
 * 若要了解有关创建 Azure 资源管理器模板的信息，请参阅[创作模板](/documentation/articles/resource-group-authoring-templates/)。
 * 有关模板的可用函数列表，请参阅[模板函数](/documentation/articles/resource-group-template-functions/)。
 
-<!---HONumber=Mooncake_1219_2016-->
+<!---HONumber=Mooncake_0103_2017-->

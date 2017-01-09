@@ -5,8 +5,7 @@
     documentationcenter=""
     author="tfitzmac"
     manager="timlt"
-    editor="tysonn" />  
-
+    editor="tysonn" />
 <tags
     ms.assetid="0725bbf2-5913-4c07-af6e-24e11d957fbc"
     ms.service="azure-resource-manager"
@@ -14,24 +13,28 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="09/12/2016"
-    wacn.date="01/03/2017"
+    ms.date="12/19/2016"
+    wacn.date="01/06/2017"
     ms.author="tomfitz" />  
 
 
 # 通过门户管理 Azure 资源
 > [AZURE.SELECTOR]
-* [Azure PowerShell](/documentation/articles/powershell-azure-resource-manager/)
-* [Azure CLI](/documentation/articles/xplat-cli-azure-resource-manager/)
-* [门户](/documentation/articles/resource-group-portal/)
-* [REST API](/documentation/articles/resource-manager-rest-api/)
+- [Azure PowerShell](/documentation/articles/powershell-azure-resource-manager/)
+- [Azure CLI](/documentation/articles/xplat-cli-azure-resource-manager/)
+- [门户](/documentation/articles/resource-group-portal/)
+- [REST API](/documentation/articles/resource-manager-rest-api/)
 
+本主题演示如何使用 [Azure 门户预览](https://portal.azure.cn)和 [Azure Resource Manager](/documentation/articles/resource-group-overview/) 管理 Azure 资源。若要了解如何通过门户部署资源，请参阅[使用 Resource Manager 模板和 Azure 门户预览部署资源](/documentation/articles/resource-group-template-deploy-portal/)。
 
-本主题说明如何将 [Azure 门户预览](https://portal.azure.cn)与 [Azure Resource Manager](/documentation/articles/resource-group-overview/) 配合使用来管理 Azure 资源。若要了解如何通过门户部署资源，请参阅 [Deploy resources with Resource Manager templates and Azure portal preview](/documentation/articles/resource-group-template-deploy-portal/)（使用 Resource Manager 模板和 Azure 门户预览部署资源）。
-
-目前，并非每种服务都支持门户或资源管理器。对于这些服务，需要使用[经典管理门户](https://manage.windowsazure.cn)。
+目前，并非每种服务都支持门户或资源管理器。要使用这些服务，需使用[经典管理门户](https://manage.windowsazure.cn)。
 
 ## <a name="create-resource-group-and-resources"></a> 管理资源组
+
+资源组是用于保存 Azure 解决方案相关资源的容器。资源组可以包含解决方案的所有资源，也可以只包含想要作为组来管理的资源。根据对组织有利的原则，决定如何将资源分配到资源组。通常可将共享相同生命周期的资源添加到同一资源组，以便将其作为一个组轻松部署、更新和删除。
+
+资源组存储与资源有关的元数据。因此，在指定资源组的位置时，你是在指定元数据的存储位置。出于合规性原因，可能需要确保你的数据存储在某一特定区域。
+
 1. 若要查看订阅中的所有资源组，请选择“资源组”。
    
     ![浏览资源组](./media/resource-group-portal/browse-groups.png)  
@@ -56,7 +59,7 @@
    
     ![添加列](./media/resource-group-portal/add-columns.png)  
 
-7. 若要了解如何将资源部署到新资源组，请参阅 [Deploy resources with Resource Manager templates and Azure portal preview](/documentation/articles/resource-group-template-deploy-portal/)（使用 Resource Manager 模板和 Azure 门户预览部署资源）。
+7. 若要了解有关将资源部署到新资源组的信息，请参阅[使用 Resource Manager 模板和 Azure 门户预览部署资源](/documentation/articles/resource-group-template-deploy-portal/)。
 8. 为了快速访问资源组，可以将边栏选项卡固定到仪表板上。
    
     ![固定资源组](./media/resource-group-portal/pin-group.png)  
@@ -95,7 +98,7 @@
     ![仪表板](./media/resource-group-portal/create-dashboard.png)  
 
    
-     若要了解如何使用仪表板，请参阅 [Creating and sharing dashboards in the Azure portal preview](/documentation/articles/azure-portal-dashboards/)（在 Azure 门户预览中创建和共享仪表板）。
+     若要了解如何使用仪表板，请参阅[在 Azure 门户预览中创建和共享仪表板](/documentation/articles/azure-portal-dashboards/)。
 
 ## <a name="manage-resources"></a> 管理资源
 在某个资源的边栏选项卡中，可看到用于管理该资源的选项。门户提供了用于该特定资源类型的管理选项。在资源边栏选项卡的顶部和左侧可看到管理命令。
@@ -144,10 +147,10 @@
 
 
 ## 后续步骤
-* 若要查看审核日志，请参阅 [Audit operations with Resource Manager](/documentation/articles/resource-group-audit/)（使用 Resource Manager 进行审核操作）。
+* 若要查看活动日志，请参阅[使用 Resource Manager 进行审核操作](/documentation/articles/resource-group-audit/)。
 * 若要排查部署错误，请参阅[使用 Azure 门户预览对资源组部署进行故障排除](/documentation/articles/resource-manager-troubleshoot-deployments-portal/)。
-* 若要通过门户部署资源，请参阅 [Deploy resources with Resource Manager templates and Azure portal preview](/documentation/articles/resource-group-template-deploy-portal/)（使用 Resource Manager 模板和 Azure 门户预览部署资源）。
+* 若要通过门户部署资源，请参阅[使用 Resource Manager 模板和 Azure 门户预览部署资源](/documentation/articles/resource-group-template-deploy-portal/)。
 * 若要管理对资源的访问，请参阅 [Use role assignments to manage access to your Azure subscription resources](/documentation/articles/role-based-access-control-configure/)（使用角色分配来管理对 Azure 订阅资源的访问）。
 * 如需了解企业如何使用 Resource Manager 对订阅进行有效管理，请参阅 [Azure 企业机架 - 规范性订阅管理](/documentation/articles/resource-manager-subscription-governance/)。
 
-<!---HONumber=Mooncake_1219_2016-->
+<!---HONumber=Mooncake_0103_2017-->
