@@ -9,7 +9,7 @@
 <tags 
    ms.service="service-bus"
    ms.date="10/04/2016"
-   wacn.date="12/02/2016" />
+   wacn.date="01/09/2017" />
 
 # 配对命名空间实现详细信息和成本影响
 
@@ -125,4 +125,4 @@
   [1]: ./media/service-bus-paired-namespaces/IC673406.png
   [2]: ./media/service-bus-paired-namespaces/IC673407.png
 
-<!---HONumber=Mooncake_0215_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

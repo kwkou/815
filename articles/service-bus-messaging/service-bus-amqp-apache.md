@@ -9,7 +9,7 @@
 <tags 
    ms.service="service-bus"
     ms.date="09/29/2016"
-   wacn.date="12/02/2016" />
+   wacn.date="01/09/2017" />
 
 # 在 Azure Linux VM 上安装 Apache Qpid Proton-C
 
@@ -111,4 +111,4 @@
 
 [Azure 经典管理门户]: http://manage.windowsazure.cn
 
-<!---HONumber=Mooncake_0104_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

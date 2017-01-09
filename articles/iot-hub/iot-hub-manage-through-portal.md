@@ -10,7 +10,7 @@
 <tags
 	 ms.service="iot-hub"
 	 ms.date="08/11/2016"
-	 wacn.date="08/29/2016"/>
+	 wacn.date="01/09/2017"/>
 
 # 通过 Azure 门户管理 IoT 中心
 
@@ -187,4 +187,4 @@ Azure IoT 中心自动显示用户帐户所链接的订阅列表。可以在此�
 [lnk-devguide]: /documentation/articles/iot-hub-devguide/
 [lnk-gateway]: /documentation/articles/iot-hub-linux-gateway-sdk-simulated-device/
 [lnk-securing]: /documentation/articles/iot-hub-security-ground-up/
-<!---HONumber=Mooncake_0418_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

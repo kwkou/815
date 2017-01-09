@@ -16,7 +16,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.workload="data-services" 
 	ms.date="11/11/2016"
-	wacn.date="12/05/2016"
+	wacn.date="01/09/2017"
 	ms.author="jeffstok"/>  
 
 
@@ -246,4 +246,4 @@ Azure 流分析目前不允许在作业运行时替换输入/输出上的凭据�
 [graphic42]: ./media/stream-analytics-login-credentials-inputs-outputs/42-stream-analytics-login-credentials-inputs-outputs.png
 [graphic43]: ./media/stream-analytics-login-credentials-inputs-outputs/43-stream-analytics-login-credentials-inputs-outputs.png
 
-<!---HONumber=Mooncake_1128_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

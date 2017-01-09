@@ -15,7 +15,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services" 
    ms.date="11/21/2016" 
-   wacn.date="01/03/2017"
+   wacn.date="01/09/2017"
    ms.author="charwen"/>
 
 
@@ -45,4 +45,4 @@
 
 创建 VNet 网关之后，可以将 VNet 链接到 ExpressRoute 线路。请参阅[将虚拟网络链接到 ExpressRoute 线路](/documentation/articles/expressroute-howto-linkvnet-arm/)。
 
-<!---HONumber=Mooncake_0328_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

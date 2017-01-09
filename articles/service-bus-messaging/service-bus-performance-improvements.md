@@ -14,7 +14,7 @@
     ms.workload="na"
     ms.date="10/25/2016"
     ms.author="sethm"
-    wacn.date="12/26/2016"/>  
+    wacn.date="01/09/2017"/>  
 
 
 # 使用服务总线消息传送改进性能的最佳实践
@@ -57,11 +57,11 @@ AMQP 和 SBMP 都很高效，因为只要存在消息工厂，就可以保持与
 			  });
 			Task.WaitAll(send1, send2);
 			Console.WriteLine("All messages sent");
-			```
 
-			这是异步接收操作的示例：
+
+    这是异步接收操作的示例：
 	
-			```
+
 			Task receive1 = queueClient.ReceiveAsync().ContinueWith(ProcessReceivedMessage);
 			Task receive2 = queueClient.ReceiveAsync().ContinueWith(ProcessReceivedMessage);
 	

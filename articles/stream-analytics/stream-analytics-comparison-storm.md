@@ -16,7 +16,7 @@
 	ms.tgt_pltfrm="na"
 	ms.workload="big-data"
 	ms.date="09/26/2016"
-	wacn.date="11/14/2016"
+	wacn.date="01/09/2017"
 	ms.author="jeffstok"/>  
 
 
@@ -591,4 +591,4 @@
     </tbody>
 </table>
 
-<!---HONumber=Mooncake_1107_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

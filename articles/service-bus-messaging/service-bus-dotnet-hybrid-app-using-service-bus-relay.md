@@ -10,13 +10,11 @@
 <tags
 	ms.service="service-bus"
 	ms.date="09/16/2016"
-	wacn.date="10/25/2016"/>
+	wacn.date="01/09/2017"/>
 
 # 使用 Azure 服务总线中继创建 .NET 本地/云混合应用程序
 
-[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-sdk-developer-differences.md)]
-
-##介绍
+## 介绍
 
 本文说明如何使用 Azure 和 Visual Studio 生成混合云应用程序。本教程假定你之前未使用过 Azure。在不到 30 分钟的时间内，你就能让使用多个 Azure 资源的应用程序在云中启动并运行。
 
@@ -51,7 +49,7 @@
 
 在开始开发 Azure 应用程序之前，需要获取工具并设置开发环境。
 
-1.  在[获取工具和 SDK][] 安装 Azure SDK for .NET
+1.  在[获取工具和 SDK][] 安装用于 .NET 的 Azure SDK
 
 2. 	单击你正在使用的 Visual Studio 版本的“安装 SDK”。本教程中的步骤使用 Visual Studio 2015。
 
@@ -80,7 +78,7 @@
 
 5.  在确保命名空间名称可用后，选择应承载您的命名空间的国家或地区（确保使用在其中部署计算资源的同一国家/地区）。
 
-    > [AZURE.IMPORTANT] 选取要选择用于部署应用程序的相同区域。这将为你提供最佳性能。
+    > [AZURE.IMPORTANT] 选取要选择用于部署应用程序的*相同区域*。这将为你提供最佳性能。
 
 6.	将对话框中的其他字段保留为其默认值，然后单击“确定”复选标记。系统将创建并启用命名空间。您可能需要等待几分钟，因为系统将为您的帐户配置资源。
 
@@ -142,125 +140,125 @@
 
 11. 在“ProductsContract.cs”中，将命名空间定义替换为以下代码，以定义服务的协定。
 
-        namespace ProductsServer
-        {
-            using System.Collections.Generic;
-            using System.Runtime.Serialization;
-            using System.ServiceModel;
+	        namespace ProductsServer
+	        {
+	            using System.Collections.Generic;
+	            using System.Runtime.Serialization;
+	            using System.ServiceModel;
 
-            // Define the data contract for the service
-            [DataContract]
-            // Declare the serializable properties.
-            public class ProductData
-            {
-                [DataMember]
-                public string Id { get; set; }
-                [DataMember]
-                public string Name { get; set; }
-                [DataMember]
-                public string Quantity { get; set; }
-            }
+	            // Define the data contract for the service
+	            [DataContract]
+	            // Declare the serializable properties.
+	            public class ProductData
+	            {
+	                [DataMember]
+	                public string Id { get; set; }
+	                [DataMember]
+	                public string Name { get; set; }
+	                [DataMember]
+	                public string Quantity { get; set; }
+	            }
 
-            // Define the service contract.
-            [ServiceContract]
-            interface IProducts
-            {
-                [OperationContract]
-                IList<ProductData> GetProducts();
+	            // Define the service contract.
+	            [ServiceContract]
+	            interface IProducts
+	            {
+	                [OperationContract]
+	                IList<ProductData> GetProducts();
 
-            }
+	            }
 
-            interface IProductsChannel : IProducts, IClientChannel
-            {
-            }
-        }
+	            interface IProductsChannel : IProducts, IClientChannel
+	            {
+	            }
+	        }
 
 14. 在 Program.cs 中，将命名空间定义替换为以下代码，以为其添加配置文件服务和主机。
 
-        namespace ProductsServer
-        {
-            using System;
-            using System.Linq;
-            using System.Collections.Generic;
-            using System.ServiceModel;
+	        namespace ProductsServer
+	        {
+	            using System;
+	            using System.Linq;
+	            using System.Collections.Generic;
+	            using System.ServiceModel;
 
-            // Implement the IProducts interface.
-            class ProductsService : IProducts
-            {
+	            // Implement the IProducts interface.
+	            class ProductsService : IProducts
+	            {
 
-                // Populate array of products for display on website.
-                ProductData[] products =
-                    new []
-                        {
-                            new ProductData{ Id = "1", Name = "Rock",
-                                             Quantity = "1"},
-                            new ProductData{ Id = "2", Name = "Paper",
-                                             Quantity = "3"},
-                            new ProductData{ Id = "3", Name = "Scissors",
-                                             Quantity = "5"},
-                            new ProductData{ Id = "4", Name = "Well",
-                                             Quantity = "2500"},
-                        };
+	                // Populate array of products for display on website.
+	                ProductData[] products =
+	                    new []
+	                        {
+	                            new ProductData{ Id = "1", Name = "Rock",
+	                                             Quantity = "1"},
+	                            new ProductData{ Id = "2", Name = "Paper",
+	                                             Quantity = "3"},
+	                            new ProductData{ Id = "3", Name = "Scissors",
+	                                             Quantity = "5"},
+	                            new ProductData{ Id = "4", Name = "Well",
+	                                             Quantity = "2500"},
+	                        };
 
-                // Display a message in the service console application
-                // when the list of products is retrieved.
-                public IList<ProductData> GetProducts()
-                {
-                    Console.WriteLine("GetProducts called.");
-                    return products;
-                }
+	                // Display a message in the service console application
+	                // when the list of products is retrieved.
+	                public IList<ProductData> GetProducts()
+	                {
+	                    Console.WriteLine("GetProducts called.");
+	                    return products;
+	                }
 
-            }
+	            }
 
-            class Program
-            {
-                // Define the Main() function in the service application.
-                static void Main(string[] args)
-                {
-                    var sh = new ServiceHost(typeof(ProductsService));
-                    sh.Open();
+	            class Program
+	            {
+	                // Define the Main() function in the service application.
+	                static void Main(string[] args)
+	                {
+	                    var sh = new ServiceHost(typeof(ProductsService));
+	                    sh.Open();
 
-                    Console.WriteLine("Press ENTER to close");
-                    Console.ReadLine();
+	                    Console.WriteLine("Press ENTER to close");
+	                    Console.ReadLine();
 
-                    sh.Close();
-                }
-            }
-        }
+	                    sh.Close();
+	                }
+	            }
+	        }
 
 
-13. 在解决方案资源管理器中，双击“App.config”文件以在 Visual Studio 编辑器中将其打开。在 **&lt;system.ServiceModel&gt;** 元素的底部（但仍在 &lt;system.ServiceModel&gt; 内），添加以下 XML 代码。确保将 yourServiceNamespace 替换为命名空间的名称，并将 yourKey 替换为之前从门户中检索到的 SAS 密钥：
+13. 在解决方案资源管理器中，双击“App.config”文件以在 Visual Studio 编辑器中将其打开。在 **&lt;system.ServiceModel&gt;** 元素的底部（但仍在 &lt;system.ServiceModel&gt; 内），添加以下 XML 代码。确保将 *yourServiceNamespace* 替换为命名空间的名称，并将 *yourKey* 替换为之前从门户中检索到的 SAS 密钥：
 
-    ```
-    <system.serviceModel>
-	...
-      <services>
-         <service name="ProductsServer.ProductsService">
-           <endpoint address="sb://yourServiceNamespace.servicebus.chinacloudapi.cn/products" binding="netTcpRelayBinding" contract="ProductsServer.IProducts" behaviorConfiguration="products"/>
-         </service>
-      </services>
-      <behaviors>
-         <endpointBehaviors>
-           <behavior name="products">
-             <transportClientEndpointBehavior>
-                <tokenProvider>
-                   <sharedAccessSignature keyName="RootManageSharedAccessKey" key="yourKey" />
-                </tokenProvider>
-             </transportClientEndpointBehavior>
-           </behavior>
-         </endpointBehaviors>
-      </behaviors>
-    </system.serviceModel>
-    ```
+    
+	    <system.serviceModel>
+		...
+	      <services>
+	         <service name="ProductsServer.ProductsService">
+	           <endpoint address="sb://yourServiceNamespace.servicebus.chinacloudapi.cn/products" binding="netTcpRelayBinding" contract="ProductsServer.IProducts" behaviorConfiguration="products"/>
+	         </service>
+	      </services>
+	      <behaviors>
+	         <endpointBehaviors>
+	           <behavior name="products">
+	             <transportClientEndpointBehavior>
+	                <tokenProvider>
+	                   <sharedAccessSignature keyName="RootManageSharedAccessKey" key="yourKey" />
+	                </tokenProvider>
+	             </transportClientEndpointBehavior>
+	           </behavior>
+	         </endpointBehaviors>
+	      </behaviors>
+	    </system.serviceModel>
+    
 14. 仍在 App.config 中，将 **&lt;appSettings&gt;** 元素中的连接字符串值替换为之前从门户获取的连接字符串。
 
-	```
-	<appSettings>
-   	<!-- Service Bus specific app settings for messaging connections -->
-   	<add key="Microsoft.ServiceBus.ConnectionString"
-	       value="Endpoint=sb://yourNamespace.servicebus.chinacloudapi.cn/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=yourKey"/>
-	</appSettings>
-	```
+	
+		<appSettings>
+	   	<!-- Service Bus specific app settings for messaging connections -->
+	   	<add key="Microsoft.ServiceBus.ConnectionString"
+		       value="Endpoint=sb://yourNamespace.servicebus.chinacloudapi.cn/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=yourKey"/>
+		</appSettings>
+	
 
 14. 按 **Ctrl+Shift+B** 或从“生成”菜单中单击“生成解决方案”生成应用程序，并验证到目前为止操作的准确性。
 
@@ -304,39 +302,39 @@
 
 1.  在 Visual Studio 的 Product.cs 文件中将现有命名空间定义替换为以下代码。
 
-        // Declare properties for the products inventory.
-        namespace ProductsWeb.Models
-        {
-            public class Product
-            {
-                public string Id { get; set; }
-                public string Name { get; set; }
-                public string Quantity { get; set; }
-            }
-        }
+	        // Declare properties for the products inventory.
+	        namespace ProductsWeb.Models
+	        {
+	            public class Product
+	            {
+	                public string Id { get; set; }
+	                public string Name { get; set; }
+	                public string Quantity { get; set; }
+	            }
+	        }
 
 2.  在解决方案资源管理器中，展开“Controllers”文件夹，然后双击“HomeController.cs”文件以在 Visual Studio 中将其打开。
 
 3. 在 **HomeController.cs** 中，将现有命名空间定义替换为以下代码。
 
-        namespace ProductsWeb.Controllers
-        {
-            using System.Collections.Generic;
-            using System.Web.Mvc;
-            using Models;
+	        namespace ProductsWeb.Controllers
+	        {
+	            using System.Collections.Generic;
+	            using System.Web.Mvc;
+	            using Models;
 
-            public class HomeController : Controller
-            {
-                // Return a view of the products inventory.
-                public ActionResult Index(string Identifier, string ProductName)
-                {
-                    var products = new List<Product>
-                        {new Product {Id = Identifier, Name = ProductName}};
-                    return View(products);
-                }
+	            public class HomeController : Controller
+	            {
+	                // Return a view of the products inventory.
+	                public ActionResult Index(string Identifier, string ProductName)
+	                {
+	                    var products = new List<Product>
+	                        {new Product {Id = Identifier, Name = ProductName}};
+	                    return View(products);
+	                }
 
-            }
-        }
+	            }
+	        }
 
 
 3.  在解决方案资源管理器中，展开 Views\\Shared 文件夹，然后双击“\_Layout.cshtml”以在 Visual Studio 编辑器中将其打开。
@@ -349,39 +347,39 @@
 
 7.  在解决方案资源管理器中，展开 Views\\Home 文件夹，然后双击“Index.cshtml”以在 Visual Studio 编辑器中将其打开。将文件的全部内容替换为以下代码。
 
-	```
-	@model IEnumerable<ProductsWeb.Models.Product>
 	
-	@{
-	 		ViewBag.Title = "Index";
-	}
+		@model IEnumerable<ProductsWeb.Models.Product>
 	
-	<h2>Prod Inventory</h2>
+		@{
+		 		ViewBag.Title = "Index";
+		}
 	
-	<table>
-	  		<tr>
-	      		<th>
-	          		@Html.DisplayNameFor(model => model.Name)
-	      		</th>
-	              <th></th>
-	      		<th>
-	          		@Html.DisplayNameFor(model => model.Quantity)
-	      		</th>
-	  		</tr>
+		<h2>Prod Inventory</h2>
 	
-	@foreach (var item in Model) {
-	  		<tr>
-	      		<td>
-	          		@Html.DisplayFor(modelItem => item.Name)
-	      		</td>
-	      		<td>
-	          		@Html.DisplayFor(modelItem => item.Quantity)
-	      		</td>
-	  		</tr>
-	}
+		<table>
+		  		<tr>
+		      		<th>
+		          		@Html.DisplayNameFor(model => model.Name)
+		      		</th>
+		              <th></th>
+		      		<th>
+		          		@Html.DisplayNameFor(model => model.Quantity)
+		      		</th>
+		  		</tr>
 	
-	</table>
-	```
+		@foreach (var item in Model) {
+		  		<tr>
+		      		<td>
+		          		@Html.DisplayFor(modelItem => item.Name)
+		      		</td>
+		      		<td>
+		          		@Html.DisplayFor(modelItem => item.Quantity)
+		      		</td>
+		  		</tr>
+		}
+	
+		</table>
+	
 
 9.  若要验证到目前为止操作的准确性，可以按 **Ctrl+Shift+B** 生成项目。
 
@@ -565,5 +563,4 @@
   [sbwacom]: /documentation/services/service-bus/
   [sbwacomqhowto]: /documentation/articles/service-bus-dotnet-get-started-with-queues/
 
-
-<!---HONumber=Mooncake_0104_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->
