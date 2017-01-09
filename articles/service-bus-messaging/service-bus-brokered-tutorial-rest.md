@@ -15,7 +15,7 @@
     ms.workload="na"
     ms.date="09/27/2016"
     ms.author="sethm"
-    wacn.date="11/28/2016"/>  
+    wacn.date="01/09/2017"/>  
 
 
 # 服务总线中转消息传送 REST 教程
@@ -66,98 +66,98 @@
 
 3. 在 Program.cs 中，确保 `using` 语句如下所示：
 
-	```
-	using System;
-	using System.Globalization;
-	using System.IO;
-	using System.Net;
-	using System.Security.Cryptography;
-	using System.Text;
-	using System.Xml;
-	```
+	
+		using System;
+		using System.Globalization;
+		using System.IO;
+		using System.Net;
+		using System.Security.Cryptography;
+		using System.Text;
+		using System.Xml;
+	
 
 4. 如有需要，将该程序的命名空间从 Visual Studio 默认值重命名为 `Microsoft.ServiceBus.Samples`。
 
 5. 在 `Program` 类中，添加以下全局变量：
 	
-	```
-	static string serviceNamespace;
-	static string baseAddress;
-	static string token;
-	const string sbHostName = "servicebus.chinacloudapi.cn";
-	```
+	
+		static string serviceNamespace;
+		static string baseAddress;
+		static string token;
+		const string sbHostName = "servicebus.chinacloudapi.cn";
+	
 
 6. 在 `Main()` 中，粘贴以下代码：
 
-	```
-	Console.Write("Enter your service namespace: ");
-	serviceNamespace = Console.ReadLine();
 	
-	Console.Write("Enter your SAS key: ");
-	string SASKey = Console.ReadLine();
+		Console.Write("Enter your service namespace: ");
+		serviceNamespace = Console.ReadLine();
 	
-	baseAddress = "https://" + serviceNamespace + "." + sbHostName + "/";
-	try
-	{
-	    token = GetSASToken("RootManageSharedAccessKey", SASKey);
+		Console.Write("Enter your SAS key: ");
+		string SASKey = Console.ReadLine();
 	
-	    string queueName = "Queue" + Guid.NewGuid().ToString();
+		baseAddress = "https://" + serviceNamespace + "." + sbHostName + "/";
+		try
+		{
+		    token = GetSASToken("RootManageSharedAccessKey", SASKey);
 	
-	    // Create and put a message in the queue
-	    CreateQueue(queueName, token);
-	    SendMessage(queueName, "msg1");
-	    string msg = ReceiveAndDeleteMessage(queueName);
+		    string queueName = "Queue" + Guid.NewGuid().ToString();
 	
-	    string topicName = "Topic" + Guid.NewGuid().ToString();
-	    string subscriptionName = "Subscription" + Guid.NewGuid().ToString();
-	    CreateTopic(topicName);
-	    CreateSubscription(topicName, subscriptionName);
-	    SendMessage(topicName, "msg2");
+		    // Create and put a message in the queue
+		    CreateQueue(queueName, token);
+		    SendMessage(queueName, "msg1");
+		    string msg = ReceiveAndDeleteMessage(queueName);
 	
-	    Console.WriteLine(ReceiveAndDeleteMessage(topicName + "/Subscriptions/" + subscriptionName));
+		    string topicName = "Topic" + Guid.NewGuid().ToString();
+		    string subscriptionName = "Subscription" + Guid.NewGuid().ToString();
+		    CreateTopic(topicName);
+		    CreateSubscription(topicName, subscriptionName);
+		    SendMessage(topicName, "msg2");
 	
-	    // Get an Atom feed with all the queues in the namespace
-	    Console.WriteLine(GetResources("$Resources/Queues"));
+		    Console.WriteLine(ReceiveAndDeleteMessage(topicName + "/Subscriptions/" + subscriptionName));
 	
-	    // Get an Atom feed with all the topics in the namespace
-	    Console.WriteLine(GetResources("$Resources/Topics"));
+		    // Get an Atom feed with all the queues in the namespace
+		    Console.WriteLine(GetResources("$Resources/Queues"));
 	
-	    // Get an Atom feed with all the subscriptions for the topic we just created
-	    Console.WriteLine(GetResources(topicName + "/Subscriptions"));
+		    // Get an Atom feed with all the topics in the namespace
+		    Console.WriteLine(GetResources("$Resources/Topics"));
 	
-	    // Get an Atom feed with all the rules for the topic and subscription we just created
-	    Console.WriteLine(GetResources(topicName + "/Subscriptions/" + subscriptionName + "/Rules"));
+		    // Get an Atom feed with all the subscriptions for the topic we just created
+		    Console.WriteLine(GetResources(topicName + "/Subscriptions"));
 	
-	    // Delete the queue we created
-	    DeleteResource(queueName);
+		    // Get an Atom feed with all the rules for the topic and subscription we just created
+		    Console.WriteLine(GetResources(topicName + "/Subscriptions/" + subscriptionName + "/Rules"));
 	
-	    // Delete the topic we created
-	    DeleteResource(topicName);
+		    // Delete the queue we created
+		    DeleteResource(queueName);
 	
-	    // Get an Atom feed with all the topics in the namespace, it shouldn't have the one we created now
-	    Console.WriteLine(GetResources("$Resources/Topics"));
+		    // Delete the topic we created
+		    DeleteResource(topicName);
 	
-	    // Get an Atom feed with all the queues in the namespace, it shouldn't have the one we created now
-	    Console.WriteLine(GetResources("$Resources/Queues"));
-	}
-	catch (WebException we)
-	{
-	    using (HttpWebResponse response = we.Response as HttpWebResponse)
-	    {
-	        if (response != null)
-	        {
-	            Console.WriteLine(new StreamReader(response.GetResponseStream()).ReadToEnd());
-	        }
-	        else
-	        {
-	            Console.WriteLine(we.ToString());
-	        }
-	    }
-	}
+		    // Get an Atom feed with all the topics in the namespace, it shouldn't have the one we created now
+		    Console.WriteLine(GetResources("$Resources/Topics"));
 	
-	Console.WriteLine("\nPress ENTER to exit.");
-	Console.ReadLine();
-	```
+		    // Get an Atom feed with all the queues in the namespace, it shouldn't have the one we created now
+		    Console.WriteLine(GetResources("$Resources/Queues"));
+		}
+		catch (WebException we)
+		{
+		    using (HttpWebResponse response = we.Response as HttpWebResponse)
+		    {
+		        if (response != null)
+		        {
+		            Console.WriteLine(new StreamReader(response.GetResponseStream()).ReadToEnd());
+		        }
+		        else
+		        {
+		            Console.WriteLine(we.ToString());
+		        }
+		    }
+		}
+	
+		Console.WriteLine("\nPress ENTER to exit.");
+		Console.ReadLine();
+	
 
 ## 创建管理凭据
 
@@ -167,48 +167,48 @@
 
 在 `Main()` 方法后面的 `Program` 类中粘贴以下代码：
 
-```
-private static string GetSASToken(string SASKeyName, string SASKeyValue)
-{
-  TimeSpan fromEpochStart = DateTime.UtcNow - new DateTime(1970, 1, 1);
-  string expiry = Convert.ToString((int)fromEpochStart.TotalSeconds + 3600);
-  string stringToSign = WebUtility.UrlEncode(baseAddress) + "\n" + expiry;
-  HMACSHA256 hmac = new HMACSHA256(Encoding.UTF8.GetBytes(SASKeyValue));
 
-  string signature = Convert.ToBase64String(hmac.ComputeHash(Encoding.UTF8.GetBytes(stringToSign)));
-  string sasToken = String.Format(CultureInfo.InvariantCulture, "SharedAccessSignature sr={0}&sig={1}&se={2}&skn={3}",
-      WebUtility.UrlEncode(baseAddress), WebUtility.UrlEncode(signature), expiry, SASKeyName);
-  return sasToken;
-}
-```
+		private static string GetSASToken(string SASKeyName, string SASKeyValue)
+		{
+		  TimeSpan fromEpochStart = DateTime.UtcNow - new DateTime(1970, 1, 1);
+		  string expiry = Convert.ToString((int)fromEpochStart.TotalSeconds + 3600);
+		  string stringToSign = WebUtility.UrlEncode(baseAddress) + "\n" + expiry;
+		  HMACSHA256 hmac = new HMACSHA256(Encoding.UTF8.GetBytes(SASKeyValue));
+
+		  string signature = Convert.ToBase64String(hmac.ComputeHash(Encoding.UTF8.GetBytes(stringToSign)));
+		  string sasToken = String.Format(CultureInfo.InvariantCulture, "SharedAccessSignature sr={0}&sig={1}&se={2}&skn={3}",
+		      WebUtility.UrlEncode(baseAddress), WebUtility.UrlEncode(signature), expiry, SASKeyName);
+		  return sasToken;
+		}
+
 ## 创建队列
 
 下一步是编写使用 REST 样式的 HTTP PUT 命令来创建队列的方法。
 
 在上一步中添加的 `GetSASToken()` 代码后直接粘贴以下代码：
 
-```
-// Uses HTTP PUT to create the queue
-private static string CreateQueue(string queueName, string token)
-{
-    // Create the URI of the new queue, note that this uses the HTTPS scheme
-    string queueAddress = baseAddress + queueName;
-    WebClient webClient = new WebClient();
-    webClient.Headers[HttpRequestHeader.Authorization] = token;
 
-    Console.WriteLine("\nCreating queue {0}", queueAddress);
-    // Prepare the body of the create queue request
-    var putData = @"<entry xmlns=""http://www.w3.org/2005/Atom"">
-                          <title type=""text"">" + queueName + @"</title>
-                          <content type=""application/xml"">
-                            <QueueDescription xmlns:i=""http://www.w3.org/2001/XMLSchema-instance"" xmlns=""http://schemas.microsoft.com/netservices/2010/10/servicebus/connect"" />
-                          </content>
-                        </entry>";
+		// Uses HTTP PUT to create the queue
+		private static string CreateQueue(string queueName, string token)
+		{
+		    // Create the URI of the new queue, note that this uses the HTTPS scheme
+		    string queueAddress = baseAddress + queueName;
+		    WebClient webClient = new WebClient();
+		    webClient.Headers[HttpRequestHeader.Authorization] = token;
 
-    byte[] response = webClient.UploadData(queueAddress, "PUT", Encoding.UTF8.GetBytes(putData));
-    return Encoding.UTF8.GetString(response);
-}
-```
+		    Console.WriteLine("\nCreating queue {0}", queueAddress);
+		    // Prepare the body of the create queue request
+		    var putData = @"<entry xmlns=""http://www.w3.org/2005/Atom"">
+		                          <title type=""text"">" + queueName + @"</title>
+		                          <content type=""application/xml"">
+		                            <QueueDescription xmlns:i=""http://www.w3.org/2001/XMLSchema-instance"" xmlns=""http://schemas.microsoft.com/netservices/2010/10/servicebus/connect"" />
+		                          </content>
+		                        </entry>";
+
+		    byte[] response = webClient.UploadData(queueAddress, "PUT", Encoding.UTF8.GetBytes(putData));
+		    return Encoding.UTF8.GetString(response);
+		}
+
 
 ## 向队列发送消息
 
@@ -216,36 +216,36 @@ private static string CreateQueue(string queueName, string token)
 
 1. 在上一步中添加的 `CreateQueue()` 代码后直接粘贴以下代码：
 
-	```
-	// Sends a message to the "queueName" queue, given the name and the value to enqueue
-	// Uses an HTTP POST request.
-	private static void SendMessage(string queueName, string body)
-	{
-	    string fullAddress = baseAddress + queueName + "/messages" + "?timeout=60&api-version=2013-08 ";
-	    Console.WriteLine("\nSending message {0} - to address {1}", body, fullAddress);
-	    WebClient webClient = new WebClient();
-	    webClient.Headers[HttpRequestHeader.Authorization] = token;
 	
-	    webClient.UploadData(fullAddress, "POST", Encoding.UTF8.GetBytes(body));
-	}
-	```
+		// Sends a message to the "queueName" queue, given the name and the value to enqueue
+		// Uses an HTTP POST request.
+		private static void SendMessage(string queueName, string body)
+		{
+		    string fullAddress = baseAddress + queueName + "/messages" + "?timeout=60&api-version=2013-08 ";
+		    Console.WriteLine("\nSending message {0} - to address {1}", body, fullAddress);
+		    WebClient webClient = new WebClient();
+		    webClient.Headers[HttpRequestHeader.Authorization] = token;
+	
+		    webClient.UploadData(fullAddress, "POST", Encoding.UTF8.GetBytes(body));
+		}
+	
 
 2. 标准中转消息属性位于 `BrokerProperties` HTTP 标头中。中转站属性必须以 JSON 格式序列化。若要指定 30 秒的 **TimeToLive** 值并向消息添加消息标签“M1”，请在前面的示例所示的 `webClient.UploadData()` 调用之前添加以下代码：
 
-	```
-	// Add brokered message properties "TimeToLive" and "Label"
-	webClient.Headers.Add("BrokerProperties", "{ "TimeToLive":30, "Label":"M1"}");
-	```
+	
+		// Add brokered message properties "TimeToLive" and "Label"
+		webClient.Headers.Add("BrokerProperties", "{ "TimeToLive":30, "Label":"M1"}");
+	
 
 	请注意，已添加并将继续添加中转消息属性。因此，发送请求必须指定支持属于请求一部分的所有中转消息属性的 API 版本。如果指定的 API 版本不支持中转消息属性，则忽略该属性。
 
 3. 自定义消息属性被定义为一组键值对。每个自定义属性都存储在其自身的 TPPT 标头中。若要添加自定义属性“Priority”和“Customer”，请在前面的示例所示的 `webClient.UploadData()` 调用之前直接添加以下代码：
 
-	```
-	// Add custom properties "Priority" and "Customer".
-	webClient.Headers.Add("Priority", "High");
-	webClient.Headers.Add("Customer", "12345");
-	```
+	
+		// Add custom properties "Priority" and "Customer".
+		webClient.Headers.Add("Priority", "High");
+		webClient.Headers.Add("Customer", "12345");
+	
 
 ## 从队列接收并删除消息
 
@@ -253,23 +253,23 @@ private static string CreateQueue(string queueName, string token)
 
 在上一步中添加的 `SendMessage()` 代码后直接粘贴以下代码：
 
-```
-// Receives and deletes the next message from the given resource (queue, topic, or subscription)
-// using the resourceName and an HTTP DELETE request
-private static string ReceiveAndDeleteMessage(string resourceName)
-{
-    string fullAddress = baseAddress + resourceName + "/messages/head" + "?timeout=60";
-    Console.WriteLine("\nRetrieving message from {0}", fullAddress);
-    WebClient webClient = new WebClient();
-    webClient.Headers[HttpRequestHeader.Authorization] = token;
 
-    byte[] response = webClient.UploadData(fullAddress, "DELETE", newbyte[0]);
-    string responseStr = Encoding.UTF8.GetString(response);
+		// Receives and deletes the next message from the given resource (queue, topic, or subscription)
+		// using the resourceName and an HTTP DELETE request
+		private static string ReceiveAndDeleteMessage(string resourceName)
+		{
+		    string fullAddress = baseAddress + resourceName + "/messages/head" + "?timeout=60";
+		    Console.WriteLine("\nRetrieving message from {0}", fullAddress);
+		    WebClient webClient = new WebClient();
+		    webClient.Headers[HttpRequestHeader.Authorization] = token;
 
-    Console.WriteLine(responseStr);
-    return responseStr;
-}
-```
+		    byte[] response = webClient.UploadData(fullAddress, "DELETE", newbyte[0]);
+		    string responseStr = Encoding.UTF8.GetString(response);
+
+		    Console.WriteLine(responseStr);
+		    return responseStr;
+		}
+
 
 ## 创建主题和订阅
 
@@ -279,52 +279,52 @@ private static string ReceiveAndDeleteMessage(string resourceName)
 
 在上一步中添加的 `ReceiveAndDeleteMessage()` 代码后直接粘贴以下代码：
 
-```
-// Using an HTTP PUT request.
-private static string CreateTopic(string topicName)
-{
-    var topicAddress = baseAddress + topicName;
-    WebClient webClient = new WebClient();
-    webClient.Headers[HttpRequestHeader.Authorization] = token;
 
-    Console.WriteLine("\nCreating topic {0}", topicAddress);
-    // Prepare the body of the create queue request
-    var putData = @"<entry xmlns=""http://www.w3.org/2005/Atom"">
-                                  <title type=""text"">" + topicName + @"</title>
-                                  <content type=""application/xml"">
-                                    <TopicDescription xmlns:i=""http://www.w3.org/2001/XMLSchema-instance"" xmlns=""http://schemas.microsoft.com/netservices/2010/10/servicebus/connect"" />
-                                  </content>
-                                </entry>";
+		// Using an HTTP PUT request.
+		private static string CreateTopic(string topicName)
+		{
+		    var topicAddress = baseAddress + topicName;
+		    WebClient webClient = new WebClient();
+		    webClient.Headers[HttpRequestHeader.Authorization] = token;
 
-    byte[] response = webClient.UploadData(topicAddress, "PUT", Encoding.UTF8.GetBytes(putData));
-    return Encoding.UTF8.GetString(response);
-}
-```
+		    Console.WriteLine("\nCreating topic {0}", topicAddress);
+		    // Prepare the body of the create queue request
+		    var putData = @"<entry xmlns=""http://www.w3.org/2005/Atom"">
+		                                  <title type=""text"">" + topicName + @"</title>
+		                                  <content type=""application/xml"">
+		                                    <TopicDescription xmlns:i=""http://www.w3.org/2001/XMLSchema-instance"" xmlns=""http://schemas.microsoft.com/netservices/2010/10/servicebus/connect"" />
+		                                  </content>
+		                                </entry>";
+
+		    byte[] response = webClient.UploadData(topicAddress, "PUT", Encoding.UTF8.GetBytes(putData));
+		    return Encoding.UTF8.GetString(response);
+		}
+
 
 ### 创建订阅
 
 以下代码将创建对上一步中创建的主题的订阅。在 `CreateTopic()` 定义后直接添加以下代码：
 
-```
-private static string CreateSubscription(string topicName, string subscriptionName)
-{
-    var subscriptionAddress = baseAddress + topicName + "/Subscriptions/" + subscriptionName;
-    WebClient webClient = new WebClient();
-    webClient.Headers[HttpRequestHeader.Authorization] = token;
 
-    Console.WriteLine("\nCreating subscription {0}", subscriptionAddress);
-    // Prepare the body of the create queue request
-    var putData = @"<entry xmlns=""http://www.w3.org/2005/Atom"">
-                                  <title type=""text"">" + subscriptionName + @"</title>
-                                  <content type=""application/xml"">
-                                    <SubscriptionDescription xmlns:i=""http://www.w3.org/2001/XMLSchema-instance"" xmlns=""http://schemas.microsoft.com/netservices/2010/10/servicebus/connect"" />
-                                  </content>
-                                </entry>";
+		private static string CreateSubscription(string topicName, string subscriptionName)
+		{
+		    var subscriptionAddress = baseAddress + topicName + "/Subscriptions/" + subscriptionName;
+		    WebClient webClient = new WebClient();
+		    webClient.Headers[HttpRequestHeader.Authorization] = token;
 
-    byte[] response = webClient.UploadData(subscriptionAddress, "PUT", Encoding.UTF8.GetBytes(putData));
-    return Encoding.UTF8.GetString(response);
-}
-```
+		    Console.WriteLine("\nCreating subscription {0}", subscriptionAddress);
+		    // Prepare the body of the create queue request
+		    var putData = @"<entry xmlns=""http://www.w3.org/2005/Atom"">
+		                                  <title type=""text"">" + subscriptionName + @"</title>
+		                                  <content type=""application/xml"">
+		                                    <SubscriptionDescription xmlns:i=""http://www.w3.org/2001/XMLSchema-instance"" xmlns=""http://schemas.microsoft.com/netservices/2010/10/servicebus/connect"" />
+		                                  </content>
+		                                </entry>";
+
+		    byte[] response = webClient.UploadData(subscriptionAddress, "PUT", Encoding.UTF8.GetBytes(putData));
+		    return Encoding.UTF8.GetString(response);
+		}
+
 
 ## 检索消息资源
 
@@ -334,55 +334,55 @@ private static string CreateSubscription(string topicName, string subscriptionNa
 
 在上一步中添加的 `CreateSubscription()` 方法后直接添加以下代码：
 
-```
-private static string GetResources(string resourceAddress)
-{
-    string fullAddress = baseAddress + resourceAddress;
-    WebClient webClient = new WebClient();
-    webClient.Headers[HttpRequestHeader.Authorization] = token;
-    Console.WriteLine("\nGetting resources from {0}", fullAddress);
-    return FormatXml(webClient.DownloadString(fullAddress));
-}
-```
+
+		private static string GetResources(string resourceAddress)
+		{
+		    string fullAddress = baseAddress + resourceAddress;
+		    WebClient webClient = new WebClient();
+		    webClient.Headers[HttpRequestHeader.Authorization] = token;
+		    Console.WriteLine("\nGetting resources from {0}", fullAddress);
+		    return FormatXml(webClient.DownloadString(fullAddress));
+		}
+
 
 ### 删除消息传送实体
 
 在上一步中添加的代码后直接添加以下代码：
 
-```
-private static string DeleteResource(string resourceName)
-{
-    string fullAddress = baseAddress + resourceName;
-    WebClient webClient = new WebClient();
-    webClient.Headers[HttpRequestHeader.Authorization] = token;
 
-    Console.WriteLine("\nDeleting resource at {0}", fullAddress);
-    byte[] response = webClient.UploadData(fullAddress, "DELETE", newbyte[0]);
-    return Encoding.UTF8.GetString(response);
-}
-```
+		private static string DeleteResource(string resourceName)
+		{
+		    string fullAddress = baseAddress + resourceName;
+		    WebClient webClient = new WebClient();
+		    webClient.Headers[HttpRequestHeader.Authorization] = token;
+
+		    Console.WriteLine("\nDeleting resource at {0}", fullAddress);
+		    byte[] response = webClient.UploadData(fullAddress, "DELETE", newbyte[0]);
+		    return Encoding.UTF8.GetString(response);
+		}
+
 
 ### 格式化 Atom 馈送
 
 `GetResources()` 方法包含对 `FormatXml()` 方法的调用，用于对检索到的 Atom 馈送进行再次格式化，以增强其可读性。以下是 `FormatXml()` 的定义；请在在上一部分中添加的 `DeleteResource()` 代码后直接添加它：
 
-```
-// Formats the XML string to be more human-readable; intended for display purposes
-private static string FormatXml(string inputXml)
-{
-    XmlDocument document = new XmlDocument();
-    document.Load(new StringReader(inputXml));
 
-    StringBuilder builder = new StringBuilder();
-    using (XmlTextWriter writer = new XmlTextWriter(new StringWriter(builder)))
-    {
-        writer.Formatting = Formatting.Indented;
-        document.Save(writer);
-    }
+		// Formats the XML string to be more human-readable; intended for display purposes
+		private static string FormatXml(string inputXml)
+		{
+		    XmlDocument document = new XmlDocument();
+		    document.Load(new StringReader(inputXml));
 
-    return builder.ToString();
-}
-```
+		    StringBuilder builder = new StringBuilder();
+		    using (XmlTextWriter writer = new XmlTextWriter(new StringWriter(builder)))
+		    {
+		        writer.Formatting = Formatting.Indented;
+		        document.Save(writer);
+		    }
+
+		    return builder.ToString();
+		}
+
 
 ## 构建并运行应用程序
 
@@ -396,239 +396,239 @@ private static string FormatXml(string inputXml)
 
 下例为完整的代码，它是遵循本教程中所有步骤之后的预期结果。
 
-```
-using System;
-using System.Globalization;
-using System.IO;
-using System.Net;
-using System.Security.Cryptography;
-using System.Text;
-using System.Xml;
 
-namespace Microsoft.ServiceBus.Samples
-{
-    class Program
-    {
-        static string serviceNamespace;
-        static string baseAddress;
-        static string token;
-        const string sbHostName = "servicebus.chinacloudapi.cn";
+		using System;
+		using System.Globalization;
+		using System.IO;
+		using System.Net;
+		using System.Security.Cryptography;
+		using System.Text;
+		using System.Xml;
 
-        static void Main(string[] args)
-        {
-            Console.Write("Enter your service namespace: ");
-            serviceNamespace = Console.ReadLine();
+		namespace Microsoft.ServiceBus.Samples
+		{
+		    class Program
+		    {
+		        static string serviceNamespace;
+		        static string baseAddress;
+		        static string token;
+		        const string sbHostName = "servicebus.chinacloudapi.cn";
 
-            Console.Write("Enter your SAS key: ");
-            string SASKey = Console.ReadLine();
+		        static void Main(string[] args)
+		        {
+		            Console.Write("Enter your service namespace: ");
+		            serviceNamespace = Console.ReadLine();
 
-            baseAddress = "https://" + serviceNamespace + "." + sbHostName + "/";
-            try
-            {
-                token = GetSASToken("RootManageSharedAccessKey", SASKey);
+		            Console.Write("Enter your SAS key: ");
+		            string SASKey = Console.ReadLine();
 
-                string queueName = "Queue" + Guid.NewGuid().ToString();
+		            baseAddress = "https://" + serviceNamespace + "." + sbHostName + "/";
+		            try
+		            {
+		                token = GetSASToken("RootManageSharedAccessKey", SASKey);
 
-                // Create and put a message in the queue
-                CreateQueue(queueName, token);
-                SendMessage(queueName, "msg1");
-                string msg = ReceiveAndDeleteMessage(queueName);
+		                string queueName = "Queue" + Guid.NewGuid().ToString();
 
-                string topicName = "Topic" + Guid.NewGuid().ToString();
-                string subscriptionName = "Subscription" + Guid.NewGuid().ToString();
-                CreateTopic(topicName);
-                CreateSubscription(topicName, subscriptionName);
-                SendMessage(topicName, "msg2");
+		                // Create and put a message in the queue
+		                CreateQueue(queueName, token);
+		                SendMessage(queueName, "msg1");
+		                string msg = ReceiveAndDeleteMessage(queueName);
 
-                Console.WriteLine(ReceiveAndDeleteMessage(topicName + "/Subscriptions/" + subscriptionName));
+		                string topicName = "Topic" + Guid.NewGuid().ToString();
+		                string subscriptionName = "Subscription" + Guid.NewGuid().ToString();
+		                CreateTopic(topicName);
+		                CreateSubscription(topicName, subscriptionName);
+		                SendMessage(topicName, "msg2");
 
-                // Get an Atom feed with all the queues in the namespace
-                Console.WriteLine(GetResources("$Resources/Queues"));
+		                Console.WriteLine(ReceiveAndDeleteMessage(topicName + "/Subscriptions/" + subscriptionName));
 
-                // Get an Atom feed with all the topics in the namespace
-                Console.WriteLine(GetResources("$Resources/Topics"));
+		                // Get an Atom feed with all the queues in the namespace
+		                Console.WriteLine(GetResources("$Resources/Queues"));
 
-                // Get an Atom feed with all the subscriptions for the topic we just created
-                Console.WriteLine(GetResources(topicName + "/Subscriptions"));
+		                // Get an Atom feed with all the topics in the namespace
+		                Console.WriteLine(GetResources("$Resources/Topics"));
 
-                // Get an Atom feed with all the rules for the topic and subscription we just created
-                Console.WriteLine(GetResources(topicName + "/Subscriptions/" + subscriptionName + "/Rules"));
+		                // Get an Atom feed with all the subscriptions for the topic we just created
+		                Console.WriteLine(GetResources(topicName + "/Subscriptions"));
 
-                // Delete the queue we created
-                DeleteResource(queueName);
+		                // Get an Atom feed with all the rules for the topic and subscription we just created
+		                Console.WriteLine(GetResources(topicName + "/Subscriptions/" + subscriptionName + "/Rules"));
 
-                // Delete the topic we created
-                DeleteResource(topicName);
+		                // Delete the queue we created
+		                DeleteResource(queueName);
 
-                // Get an Atom feed with all the topics in the namespace, it shouldn't have the one we created now
-                Console.WriteLine(GetResources("$Resources/Topics"));
+		                // Delete the topic we created
+		                DeleteResource(topicName);
 
-                // Get an Atom feed with all the queues in the namespace, it shouldn't have the one we created now
-                Console.WriteLine(GetResources("$Resources/Queues"));
-            }
-            catch (WebException we)
-            {
-                using (HttpWebResponse response = we.Response as HttpWebResponse)
-                {
-                    if (response != null)
-                    {
-                        Console.WriteLine(new StreamReader(response.GetResponseStream()).ReadToEnd());
-                    }
-                    else
-                    {
-                        Console.WriteLine(we.ToString());
-                    }
-                }
-            }
+		                // Get an Atom feed with all the topics in the namespace, it shouldn't have the one we created now
+		                Console.WriteLine(GetResources("$Resources/Topics"));
 
-            Console.WriteLine("\nPress ENTER to exit.");
-            Console.ReadLine();
-        }
+		                // Get an Atom feed with all the queues in the namespace, it shouldn't have the one we created now
+		                Console.WriteLine(GetResources("$Resources/Queues"));
+		            }
+		            catch (WebException we)
+		            {
+		                using (HttpWebResponse response = we.Response as HttpWebResponse)
+		                {
+		                    if (response != null)
+		                    {
+		                        Console.WriteLine(new StreamReader(response.GetResponseStream()).ReadToEnd());
+		                    }
+		                    else
+		                    {
+		                        Console.WriteLine(we.ToString());
+		                    }
+		                }
+		            }
 
-        private static string GetSASToken(string SASKeyName, string SASKeyValue)
-        {
-            TimeSpan fromEpochStart = DateTime.UtcNow - new DateTime(1970, 1, 1);
-            string expiry = Convert.ToString((int)fromEpochStart.TotalSeconds + 3600);
-            string stringToSign = WebUtility.UrlEncode(baseAddress) + "\n" + expiry;
-            HMACSHA256 hmac = new HMACSHA256(Encoding.UTF8.GetBytes(SASKeyValue));
+		            Console.WriteLine("\nPress ENTER to exit.");
+		            Console.ReadLine();
+		        }
 
-            string signature = Convert.ToBase64String(hmac.ComputeHash(Encoding.UTF8.GetBytes(stringToSign)));
-            string sasToken = String.Format(CultureInfo.InvariantCulture, "SharedAccessSignature sr={0}&sig={1}&se={2}&skn={3}",
-                WebUtility.UrlEncode(baseAddress), WebUtility.UrlEncode(signature), expiry, SASKeyName);
-            return sasToken;
-        }
+		        private static string GetSASToken(string SASKeyName, string SASKeyValue)
+		        {
+		            TimeSpan fromEpochStart = DateTime.UtcNow - new DateTime(1970, 1, 1);
+		            string expiry = Convert.ToString((int)fromEpochStart.TotalSeconds + 3600);
+		            string stringToSign = WebUtility.UrlEncode(baseAddress) + "\n" + expiry;
+		            HMACSHA256 hmac = new HMACSHA256(Encoding.UTF8.GetBytes(SASKeyValue));
 
-        // Uses HTTP PUT to create the queue
-        private static string CreateQueue(string queueName, string token)
-        {
-            // Create the URI of the new queue, note that this uses the HTTPS scheme
-            string queueAddress = baseAddress + queueName;
-            WebClient webClient = new WebClient();
-            webClient.Headers[HttpRequestHeader.Authorization] = token;
+		            string signature = Convert.ToBase64String(hmac.ComputeHash(Encoding.UTF8.GetBytes(stringToSign)));
+		            string sasToken = String.Format(CultureInfo.InvariantCulture, "SharedAccessSignature sr={0}&sig={1}&se={2}&skn={3}",
+		                WebUtility.UrlEncode(baseAddress), WebUtility.UrlEncode(signature), expiry, SASKeyName);
+		            return sasToken;
+		        }
 
-            Console.WriteLine("\nCreating queue {0}", queueAddress);
-            // Prepare the body of the create queue request
-            var putData = @"<entry xmlns=""http://www.w3.org/2005/Atom"">
-                                  <title type=""text"">" + queueName + @"</title>
-                                  <content type=""application/xml"">
-                                    <QueueDescription xmlns:i=""http://www.w3.org/2001/XMLSchema-instance"" xmlns=""http://schemas.microsoft.com/netservices/2010/10/servicebus/connect"" />
-                                  </content>
-                                </entry>";
+		        // Uses HTTP PUT to create the queue
+		        private static string CreateQueue(string queueName, string token)
+		        {
+		            // Create the URI of the new queue, note that this uses the HTTPS scheme
+		            string queueAddress = baseAddress + queueName;
+		            WebClient webClient = new WebClient();
+		            webClient.Headers[HttpRequestHeader.Authorization] = token;
 
-            byte[] response = webClient.UploadData(queueAddress, "PUT", Encoding.UTF8.GetBytes(putData));
-            return Encoding.UTF8.GetString(response);
-        }
+		            Console.WriteLine("\nCreating queue {0}", queueAddress);
+		            // Prepare the body of the create queue request
+		            var putData = @"<entry xmlns=""http://www.w3.org/2005/Atom"">
+		                                  <title type=""text"">" + queueName + @"</title>
+		                                  <content type=""application/xml"">
+		                                    <QueueDescription xmlns:i=""http://www.w3.org/2001/XMLSchema-instance"" xmlns=""http://schemas.microsoft.com/netservices/2010/10/servicebus/connect"" />
+		                                  </content>
+		                                </entry>";
 
-        // Sends a message to the "queueName" queue, given the name and the value to enqueue
-        // Uses an HTTP POST request.
-        private static void SendMessage(string queueName, string body)
-        {
-            string fullAddress = baseAddress + queueName + "/messages" + "?timeout=60&api-version=2013-08 ";
-            Console.WriteLine("\nSending message {0} - to address {1}", body, fullAddress);
-            WebClient webClient = new WebClient();
-            webClient.Headers[HttpRequestHeader.Authorization] = token;
-            // Add brokered message properties “TimeToLive” and “Label”.
-            webClient.Headers.Add("BrokerProperties", "{ "TimeToLive":30, "Label":"M1"}");
-            // Add custom properties “Priority” and “Customer”.
-            webClient.Headers.Add("Priority", "High");
-            webClient.Headers.Add("Customer", "12345");
-            webClient.UploadData(fullAddress, "POST", Encoding.UTF8.GetBytes(body));
+		            byte[] response = webClient.UploadData(queueAddress, "PUT", Encoding.UTF8.GetBytes(putData));
+		            return Encoding.UTF8.GetString(response);
+		        }
 
-        }
+		        // Sends a message to the "queueName" queue, given the name and the value to enqueue
+		        // Uses an HTTP POST request.
+		        private static void SendMessage(string queueName, string body)
+		        {
+		            string fullAddress = baseAddress + queueName + "/messages" + "?timeout=60&api-version=2013-08 ";
+		            Console.WriteLine("\nSending message {0} - to address {1}", body, fullAddress);
+		            WebClient webClient = new WebClient();
+		            webClient.Headers[HttpRequestHeader.Authorization] = token;
+		            // Add brokered message properties “TimeToLive” and “Label”.
+		            webClient.Headers.Add("BrokerProperties", "{ "TimeToLive":30, "Label":"M1"}");
+		            // Add custom properties “Priority” and “Customer”.
+		            webClient.Headers.Add("Priority", "High");
+		            webClient.Headers.Add("Customer", "12345");
+		            webClient.UploadData(fullAddress, "POST", Encoding.UTF8.GetBytes(body));
 
-        // Receives and deletes the next message from the given resource (queue, topic, or subscription)
-        // using the resourceName and an HTTP DELETE request.
-        private static string ReceiveAndDeleteMessage(string resourceName)
-        {
-            string fullAddress = baseAddress + resourceName + "/messages/head" + "?timeout=60";
-            Console.WriteLine("\nRetrieving message from {0}", fullAddress);
-            WebClient webClient = new WebClient();
-            webClient.Headers[HttpRequestHeader.Authorization] = token;
+		        }
 
-            byte[] response = webClient.UploadData(fullAddress, "DELETE", new byte[0]);
-            string responseStr = Encoding.UTF8.GetString(response);
+		        // Receives and deletes the next message from the given resource (queue, topic, or subscription)
+		        // using the resourceName and an HTTP DELETE request.
+		        private static string ReceiveAndDeleteMessage(string resourceName)
+		        {
+		            string fullAddress = baseAddress + resourceName + "/messages/head" + "?timeout=60";
+		            Console.WriteLine("\nRetrieving message from {0}", fullAddress);
+		            WebClient webClient = new WebClient();
+		            webClient.Headers[HttpRequestHeader.Authorization] = token;
 
-            Console.WriteLine(responseStr);
-            return responseStr;
-        }
+		            byte[] response = webClient.UploadData(fullAddress, "DELETE", new byte[0]);
+		            string responseStr = Encoding.UTF8.GetString(response);
 
-        // Using an HTTP PUT request.
-        private static string CreateTopic(string topicName)
-        {
-            var topicAddress = baseAddress + topicName;
-            WebClient webClient = new WebClient();
-            webClient.Headers[HttpRequestHeader.Authorization] = token;
+		            Console.WriteLine(responseStr);
+		            return responseStr;
+		        }
 
-            Console.WriteLine("\nCreating topic {0}", topicAddress);
-            // Prepare the body of the create queue request
-            var putData = @"<entry xmlns=""http://www.w3.org/2005/Atom"">
-                                  <title type=""text"">" + topicName + @"</title>
-                                  <content type=""application/xml"">
-                                    <TopicDescription xmlns:i=""http://www.w3.org/2001/XMLSchema-instance"" xmlns=""http://schemas.microsoft.com/netservices/2010/10/servicebus/connect"" />
-                                  </content>
-                                </entry>";
+		        // Using an HTTP PUT request.
+		        private static string CreateTopic(string topicName)
+		        {
+		            var topicAddress = baseAddress + topicName;
+		            WebClient webClient = new WebClient();
+		            webClient.Headers[HttpRequestHeader.Authorization] = token;
 
-            byte[] response = webClient.UploadData(topicAddress, "PUT", Encoding.UTF8.GetBytes(putData));
-            return Encoding.UTF8.GetString(response);
-        }
+		            Console.WriteLine("\nCreating topic {0}", topicAddress);
+		            // Prepare the body of the create queue request
+		            var putData = @"<entry xmlns=""http://www.w3.org/2005/Atom"">
+		                                  <title type=""text"">" + topicName + @"</title>
+		                                  <content type=""application/xml"">
+		                                    <TopicDescription xmlns:i=""http://www.w3.org/2001/XMLSchema-instance"" xmlns=""http://schemas.microsoft.com/netservices/2010/10/servicebus/connect"" />
+		                                  </content>
+		                                </entry>";
 
-        private static string CreateSubscription(string topicName, string subscriptionName)
-        {
-            var subscriptionAddress = baseAddress + topicName + "/Subscriptions/" + subscriptionName;
-            WebClient webClient = new WebClient();
-            webClient.Headers[HttpRequestHeader.Authorization] = token;
+		            byte[] response = webClient.UploadData(topicAddress, "PUT", Encoding.UTF8.GetBytes(putData));
+		            return Encoding.UTF8.GetString(response);
+		        }
 
-            Console.WriteLine("\nCreating subscription {0}", subscriptionAddress);
-            // Prepare the body of the create queue request
-            var putData = @"<entry xmlns=""http://www.w3.org/2005/Atom"">
-                                  <title type=""text"">" + subscriptionName + @"</title>
-                                  <content type=""application/xml"">
-                                    <SubscriptionDescription xmlns:i=""http://www.w3.org/2001/XMLSchema-instance"" xmlns=""http://schemas.microsoft.com/netservices/2010/10/servicebus/connect"" />
-                                  </content>
-                                </entry>";
+		        private static string CreateSubscription(string topicName, string subscriptionName)
+		        {
+		            var subscriptionAddress = baseAddress + topicName + "/Subscriptions/" + subscriptionName;
+		            WebClient webClient = new WebClient();
+		            webClient.Headers[HttpRequestHeader.Authorization] = token;
 
-            byte[] response = webClient.UploadData(subscriptionAddress, "PUT", Encoding.UTF8.GetBytes(putData));
-            return Encoding.UTF8.GetString(response);
-        }
+		            Console.WriteLine("\nCreating subscription {0}", subscriptionAddress);
+		            // Prepare the body of the create queue request
+		            var putData = @"<entry xmlns=""http://www.w3.org/2005/Atom"">
+		                                  <title type=""text"">" + subscriptionName + @"</title>
+		                                  <content type=""application/xml"">
+		                                    <SubscriptionDescription xmlns:i=""http://www.w3.org/2001/XMLSchema-instance"" xmlns=""http://schemas.microsoft.com/netservices/2010/10/servicebus/connect"" />
+		                                  </content>
+		                                </entry>";
 
-        private static string GetResources(string resourceAddress)
-        {
-            string fullAddress = baseAddress + resourceAddress;
-            WebClient webClient = new WebClient();
-            webClient.Headers[HttpRequestHeader.Authorization] = token;
-            Console.WriteLine("\nGetting resources from {0}", fullAddress);
-            return FormatXml(webClient.DownloadString(fullAddress));
-        }
+		            byte[] response = webClient.UploadData(subscriptionAddress, "PUT", Encoding.UTF8.GetBytes(putData));
+		            return Encoding.UTF8.GetString(response);
+		        }
 
-        private static string DeleteResource(string resourceName)
-        {
-            string fullAddress = baseAddress + resourceName;
-            WebClient webClient = new WebClient();
-            webClient.Headers[HttpRequestHeader.Authorization] = token;
+		        private static string GetResources(string resourceAddress)
+		        {
+		            string fullAddress = baseAddress + resourceAddress;
+		            WebClient webClient = new WebClient();
+		            webClient.Headers[HttpRequestHeader.Authorization] = token;
+		            Console.WriteLine("\nGetting resources from {0}", fullAddress);
+		            return FormatXml(webClient.DownloadString(fullAddress));
+		        }
 
-            Console.WriteLine("\nDeleting resource at {0}", fullAddress);
-            byte[] response = webClient.UploadData(fullAddress, "DELETE", new byte[0]);
-            return Encoding.UTF8.GetString(response);
-        }
+		        private static string DeleteResource(string resourceName)
+		        {
+		            string fullAddress = baseAddress + resourceName;
+		            WebClient webClient = new WebClient();
+		            webClient.Headers[HttpRequestHeader.Authorization] = token;
 
-        // Formats the XML string to be more human-readable; intended for display purposes
-        private static string FormatXml(string inputXml)
-        {
-            XmlDocument document = new XmlDocument();
-            document.Load(new StringReader(inputXml));
+		            Console.WriteLine("\nDeleting resource at {0}", fullAddress);
+		            byte[] response = webClient.UploadData(fullAddress, "DELETE", new byte[0]);
+		            return Encoding.UTF8.GetString(response);
+		        }
 
-            StringBuilder builder = new StringBuilder();
-            using (XmlTextWriter writer = new XmlTextWriter(new StringWriter(builder)))
-            {
-                writer.Formatting = Formatting.Indented;
-                document.Save(writer);
-            }
+		        // Formats the XML string to be more human-readable; intended for display purposes
+		        private static string FormatXml(string inputXml)
+		        {
+		            XmlDocument document = new XmlDocument();
+		            document.Load(new StringReader(inputXml));
 
-            return builder.ToString();
-        }
-    }
-}
-```
+		            StringBuilder builder = new StringBuilder();
+		            using (XmlTextWriter writer = new XmlTextWriter(new StringWriter(builder)))
+		            {
+		                writer.Formatting = Formatting.Indented;
+		                document.Save(writer);
+		            }
+
+		            return builder.ToString();
+		        }
+		    }
+		}
+
 
 ## 后续步骤
 
@@ -638,8 +638,4 @@ namespace Microsoft.ServiceBus.Samples
 - [Azure 服务总线基础知识](/documentation/articles/service-bus-fundamentals-hybrid-solutions/)
 - [服务总线中继 REST 教程](/documentation/articles/service-bus-relay-rest-tutorial/)
 
-
-
-[Azure 经典管理门户]: http://manage.windowsazure.cn
-
-<!---HONumber=Mooncake_0104_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

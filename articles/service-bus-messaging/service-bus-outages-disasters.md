@@ -15,7 +15,7 @@
     ms.workload="na"
     ms.date="09/02/2016"
     ms.author="sethm"
-    wacn.date="10/24/2016"/>  
+    wacn.date="01/09/2017"/>  
 
 # 使应用程序免受服务总线中断和灾难影响的最佳实践
 
@@ -57,7 +57,7 @@
 
 ## 保护队列和主题免受数据中心中断或灾难的影响
 
-为了在使用中转消息传送时实现针对数据中心中断的恢复，服务总线支持两种方法：主动和被动复制。对于每一种方法，如果必须在数据中心中断的情况下仍可访问给定的队列或主题，你可以将其创建在两个命名空间中。两个实体可以具有相同的名称。例如，可在 **contosoPrimary.servicebus.chinacloudapi.cn/myQueue** 下访问主要队列，而在 **contosoSecondary.servicebus.chinacloudapi.cn/myQueue** 下访问其辅助副本。
+为了在使用中转消息传送时实现针对数据中心中断的恢复，服务总线支持两种方法：主动和被动复制。对于每一种方法，如果必须在数据中心中断的情况下仍可访问给定的队列或主题，可以在两个命名空间中创建。两个实体可以具有相同的名称。例如，可在 **contosoPrimary.servicebus.chinacloudapi.cn/myQueue** 下访问主要队列，而在 **contosoSecondary.servicebus.chinacloudapi.cn/myQueue** 下访问其辅助副本。
 
 如果应用程序不需要发送方到接收方的持续通信，则该应用程序可实施一个用于防止消息丢失的持久客户端队列，从而保护发送方免受任何暂时性服务总线故障的影响。
 
@@ -103,4 +103,4 @@
   [使用服务总线中转消息进行异地复制]: http://code.msdn.microsoft.com/Geo-replication-with-f5688664
   [Azure SQL 数据库业务连续性]: /documentation/articles/sql-database-business-continuity/
 
-<!---HONumber=74-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

@@ -9,7 +9,7 @@
 <tags 
    ms.service="service-bus"
    ms.date="10/05/2016"
-   wacn.date="12/02/2016"/>
+   wacn.date="01/09/2017"/>
 
 # 服务总线配额
 
@@ -19,4 +19,4 @@
 
 [AZURE.INCLUDE [service-bus-quotas-table](../../includes/service-bus-quotas-table.md)]
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

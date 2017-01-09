@@ -15,7 +15,7 @@
 	ms.devlang="java"
 	ms.topic="article"
 	ms.date="08/16/2016"
-	wacn.date="11/08/2016"
+	wacn.date="01/09/2017"
 	ms.author="jotaub;sethm"/>  
 
 
@@ -33,7 +33,7 @@
 
 若要完成本教程，需要满足以下条件：
 
-+ C 语言开发环境。对于本教程，我们假设 gcc 堆栈位于使用 Ubuntu 14.04 的 [Azure Linux VM](/documentation/articles/virtual-machines-linux-quick-create-portal/) 上。有关其他环境的说明，将在外部链接中提供。
++ C 语言开发环境。对于本教程，我们假设 gcc 堆栈位于使用 Ubuntu 14.04 的 [Azure Linux VM](/documentation/articles/virtual-machines-linux-quick-create-cli/) 上。有关其他环境的说明，将在外部链接中提供。
 
 + 一个 Java 开发环境，配置为运行 [Maven](http://maven.apache.org/)。对于本教程，我们将采用 [Eclipse](https://www.eclipse.org/)。
 
@@ -78,4 +78,4 @@
 [使用 SCP.NET 和 C# 在 Storm 和 HDInsight 上开发流式数据处理应用程序]: /documentation/articles/hdinsight-storm-develop-csharp-visual-studio-topology/
  
 
-<!---HONumber=Mooncake_1031_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

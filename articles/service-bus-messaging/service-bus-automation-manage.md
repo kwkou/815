@@ -10,7 +10,7 @@
 <tags
 	ms.service="service-bus"
 	ms.date="07/29/2016"
-	wacn.date="09/19/2016"/>
+	wacn.date="01/09/2017"/>
 
 
 
@@ -44,4 +44,4 @@ Azure 自动化提供了具有高可靠性和高可用性的工作流执行引�
 * 了解如何[使用 PowerShell 管理服务总线](/documentation/articles/service-bus-powershell-how-to-provision/)
  
 
-<!---HONumber=Mooncake_0104_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

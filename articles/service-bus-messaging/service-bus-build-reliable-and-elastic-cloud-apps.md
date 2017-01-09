@@ -10,7 +10,7 @@
 <tags 
 	ms.service="service-bus" 
 	ms.date="05/10/2016" 
-	wacn.date="07/25/2016"/>
+	wacn.date="01/09/2017"/>
 
 # 使用消息传送构建可靠弹性的云应用 
  
@@ -37,4 +37,4 @@
 ## 相关服务
 - [云服务](/home/features/cloud-services/)
 
-<!---HONumber=82-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

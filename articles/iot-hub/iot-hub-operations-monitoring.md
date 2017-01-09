@@ -15,7 +15,7 @@
  ms.tgt_pltfrm="na"
  ms.workload="na"
  ms.date="08/11/2016"
- wacn.date="12/12/2016"
+ wacn.date="01/09/2017"
  ms.author="nberdy"/>
 
 
@@ -156,4 +156,4 @@ IoT 中心监视 5 种类别的事件：
 [lnk-devguide]: /documentation/articles/iot-hub-devguide/
 [lnk-gateway]: /documentation/articles/iot-hub-linux-gateway-sdk-simulated-device/
 
-<!---HONumber=Mooncake_1205_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

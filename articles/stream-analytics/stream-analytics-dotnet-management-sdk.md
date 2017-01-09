@@ -16,7 +16,7 @@
 	ms.tgt_pltfrm="na"
 	ms.workload="data-services"
 	ms.date="09/26/2016"
-	wacn.date="11/14/2016"
+	wacn.date="01/09/2017"
 	ms.author="jeffstok"/>  
 
 
@@ -154,7 +154,7 @@ Azure 流分析是一种完全托管的服务，可以在云中通过流式数�
 
 **resourceGroupName** 变量的值应该与你在先决条件步骤中创建或选取的资源组的名称相同。
 
-若要自动执行凭据演示方面的作业创建，请参阅[通过 Azure 资源管理器对服务主体进行身份验证](/documentation/articles/resource-group-authenticate-service-principal/)。
+若要自动执行凭据演示方面的作业创建，请参阅[通过 Azure Resource Manager 对服务主体进行身份验证](/documentation/articles/resource-group-authenticate-service-principal/)。
 
 本文的剩余部分假定此代码位于 **Main** 方法的开头。
 
@@ -371,4 +371,4 @@ Azure 流分析是一种完全托管的服务，可以在云中通过流式数�
 [stream.analytics.query.language.reference]: http://go.microsoft.com/fwlink/?LinkID=513299
 [stream.analytics.rest.api.reference]: http://go.microsoft.com/fwlink/?LinkId=517301
 
-<!---HONumber=Mooncake_1107_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

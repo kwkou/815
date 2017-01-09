@@ -1,15 +1,15 @@
 <properties 
-   pageTitle="服务总线定价常见问题 | Azure"
-   description="回答了一些关于服务总线定价结构的常见问题。"
-   services="service-bus"
-   documentationCenter="na"
-   authors="sethmanheim"
-   manager="timlt"
-   editor="" />
+    pageTitle="服务总线定价常见问题解答 | Azure"
+    description="回答了一些关于服务总线定价结构的常见问题。"
+    services="service-bus"
+    documentationCenter="na"
+    authors="sethmanheim"
+    manager="timlt"
+    editor="" />
 <tags 
    ms.service="service-bus"
    ms.date="03/16/2016"
-   wacn.date="07/25/2016" />
+   wacn.date="01/09/2017" />
 
 # 服务总线定价常见问题解答
 
@@ -33,7 +33,6 @@
 ## <a name="what-usage-of-service-bus-is-subject-to-data-transfer-what-is-not"></a> 服务总线的哪些使用情况受数据传输限制？ 哪些不受其限制？
 
 在给定的 Azure 区域内的任何数据传输均不收费。
-
 ## <a name="what-exactly-is-a-service-bus-quotrelayquot"></a> 服务总线的“中继”具体指什么？
 
 中继是指中继客户端和 Web 服务之间的消息的服务总线实体。中继提供持久性访问、可发现的服务总线地址、可靠的连接（具有防火墙/NAT 遍历功能）和其他功能（例如自动负载均衡）。每当启用了中继的 WCF 服务（即“中继侦听器”）第一次连接到给定服务总线地址（命名空间 URL）时，中继将隐式实例化并在该地址中打开。应用程序使用服务总线 .NET API 创建中继侦听器，API 可提供启用了特殊中继的标准 WCF 绑定版本。
@@ -109,4 +108,4 @@
 - [如何使用 Service Bus 队列](/documentation/articles/service-bus-dotnet-get-started-with-queues/)
 [Azure 经典管理门户]: http://manage.windowsazure.cn
 
-<!---HONumber=Mooncake_0215_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->
