@@ -137,13 +137,13 @@
 ### 检索证书颁发机构列表
 检索当前存储在 Azure Active Directory 中的租户的证书颁发机构：
 
-        Get-AzureADTrustedCertificateAuthority 
+	Get-AzureADTrustedCertificateAuthority 
 
 
 ### 删除证书颁发机构
 1. 检索证书颁发机构：
    
-     $c=Get-AzureADTrustedCertificateAuthority
+     	$c=Get-AzureADTrustedCertificateAuthority
 2. 删除证书颁发机构的证书：
    
         Remove-AzureADTrustedCertificateAuthority -CertificateAuthorityInformation $c[2] 
@@ -151,7 +151,7 @@
 ### 修改证书颁发机构
 1. 检索证书颁发机构：
    
-     $c=Get-AzureADTrustedCertificateAuthority
+     	$c=Get-AzureADTrustedCertificateAuthority
 2. 修改证书颁发机构上的属性：
    
         $c[0].AuthorityType=1 
@@ -198,11 +198,11 @@
         connect-msolservice -credential $msolcred 
 2. 检索用户的当前 StsRefreshTokensValidFrom 值：
    
-     $user = Get-MsolUser -UserPrincipalName test@yourdomain.com` 
-     $user.StsRefreshTokensValidFrom
+     	$user = Get-MsolUser -UserPrincipalName test@yourdomain.com` 
+     	$user.StsRefreshTokensValidFrom
 3. 将用户的新 StsRefreshTokensValidFrom 值配置为等于当前时间戳：
    
-     Set-MsolUser -UserPrincipalName test@yourdomain.com -StsRefreshTokensValidFrom ("03/05/2016")
+     	Set-MsolUser -UserPrincipalName test@yourdomain.com -StsRefreshTokensValidFrom ("03/05/2016")
 
 所设日期必须属于将来。如果日期不属于将来，则不会设置 **StsRefreshTokensValidFrom** 属性。如果日期属于将来，**StsRefreshTokensValidFrom** 会设置为当前时间（而不是由 Set-MsolUser 命令指示的日期）。
 
