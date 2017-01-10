@@ -15,9 +15,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="12/16/2016"
-    wacn.date="01/05/2017"
-    ms.author="curtand" />  
-
+    wacn.date="01/10/2017"/>
 
 ## 如何入门？
 

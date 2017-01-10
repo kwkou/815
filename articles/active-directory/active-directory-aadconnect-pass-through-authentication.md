@@ -7,8 +7,7 @@
     author="billmath"
     manager="femila"/>  
 
-    
-<tag    
+<tag
     ms.assetid="9f994aca-6088-40f5-b2cc-c753a4f41da7"
     ms.service="active-directory"
     ms.workload="identity"
@@ -17,7 +16,7 @@
     ms.topic="article"
     ms.date="12/06/2016"
     ms.author="billmath" 
-    wacn.date="01/05/2017"/>
+    wacn.date="01/05/2017" />
 
 # 什么是 Azure AD 直通身份验证
 使用相同的凭据（用户名和密码）访问公司资源和基于云的服务可确保用户不需要记住不同的凭据，并减少他们忘记如何登录的可能性。此方法还具有减少针对密码重置事件的技术支持的好处。
@@ -125,7 +124,7 @@ Azure AD 直通身份验证为这些客户提供了一个简单的解决方案�
 
 可以通过启动命令提示符并运行以下命令来获取错误的详细信息。（将“1328”替换为请求中的错误号。）
 
-Net helpmsg 1328
+	Net helpmsg 1328
 
 结果如下所示。
 

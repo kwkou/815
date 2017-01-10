@@ -5,10 +5,9 @@
     keywords="什么是 Azure AD Connect, 安装 Active Directory, Azure AD 所需的组件, SSO, 单一登录"
     documentationcenter=""
     author="billmath"
-    manager="femila"/>  
+    manager="femila"/>
 
-    
-<tag    
+<tag
     ms.assetid="9f994aca-6088-40f5-b2cc-c753a4f41da7"
     ms.service="active-directory"
     ms.workload="identity"
@@ -16,8 +15,8 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="12/06/2016"
-    ms.author="billmath" 
-    wacn.date="01/05/2017"/>
+    ms.author="billmath"
+    wacn.date="01/05/2017" />
 
 # 什么是单一登录 (SSO)（预览）
 单一登录是可以在 Azure Active Directory Connect 中启用的用于[密码哈希同步](/documentation/articles/active-directory-aadconnectsync-implement-password-synchronization/)或[直通身份验证](/documentation/articles/active-directory-aadconnect-pass-through-authentication/)的选项。如果启用了该选项，那么当用户使用其公司的计算机并连接到公司网络时不需要输入密码即可登录到 Azure Active Directory (Azure AD) 或其他云服务。
