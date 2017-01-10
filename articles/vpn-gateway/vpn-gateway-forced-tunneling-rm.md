@@ -14,7 +14,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
    ms.date="08/10/2016"
-   wacn.date="01/05/2017"
+   wacn.date="01/09/2017"
    ms.author="cherylmc" />  
 
 
@@ -157,4 +157,4 @@
 		Get-AzureRmVirtualNetworkGatewayConnection -Name "Connection1" -ResourceGroupName "ForcedTunneling"
 		
 
-<!---HONumber=Mooncake_0822_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

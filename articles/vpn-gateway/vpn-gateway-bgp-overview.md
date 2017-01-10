@@ -15,7 +15,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
    ms.date="06/16/2016"
-   wacn.date="07/25/2016"
+   wacn.date="01/09/2017"
    ms.author="yushwang"/>
 
 # Azure VPN 网关的 BGP 概述
@@ -28,7 +28,7 @@ BGP 是通常在 Internet 上使用的，用于在两个或更多网络之间交
  
 ### 为什么使用 BGP？
 
-BGP 是可用于 Azure 基于路由的 VPN 网关的可选功能。在启用此功能之前，你还应确保本地 VPN 设备支持 BGP。你可以继续使用不带 BGP 的 Azure VPN 网关和本地 VPN 设备。它等效于在你的网络与 Azure 之间使用静态路由（不带 BGP）与使用带 BGP 的动态路由。
+BGP 是可用于 Azure 基于路由的 VPN 网关的可选功能。在启用此功能之前，你还应确保本地 VPN 设备支持 BGP。你可以继续使用不带 BGP 的 Azure VPN 网关和本地 VPN 设备。它等效于在你的网络与 Azure 之间使用静态路由（不带 BGP）*与*使用带 BGP 的动态路由。
 
 使用 BGP 有几个优点和新功能：
 
@@ -68,5 +68,4 @@ BGP 使多个网关可以从不同网络获知和传播前缀，而无论它们�
 
 有关为跨界连接和 VNet 到 VNet 连接配置 BGP 的步骤，请参阅[在 Azure VPN 网关上使用 BGP 入门](/documentation/articles/vpn-gateway-bgp-resource-manager-ps/)。
 
-
-<!---HONumber=Mooncake_0718_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

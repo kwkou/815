@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.workload="infrastructure-services"
 	ms.date="02/23/2016"
-	wacn.date="08/11/2016"
+	wacn.date="01/09/2017"
 	ms.author="magoedte;bwren" />
 
 # 在 Azure 自动化中编辑文本 Runbook
@@ -105,4 +105,4 @@ Azure 自动化中的每个 Runbook 都有两个版本：草稿版和已发布�
 - [计划](/documentation/articles/automation-schedules/)
 - [变量](/documentation/articles/automation-variables/)
 
-<!---HONumber=Mooncake_0725_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

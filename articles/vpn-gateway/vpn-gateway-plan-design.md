@@ -16,7 +16,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="infrastructure-services"
     ms.date="10/18/2016"
-    wacn.date="12/26/2016"
+    wacn.date="01/09/2017"
     ms.author="cherylmc" />  
 
 
@@ -128,4 +128,4 @@ VPN 网关需要一个特定的子网，称为网关子网。所有网关子网�
 
 有关特定网关设置的详细信息，请参阅 [About VPN Gateway Settings](/documentation/articles/vpn-gateway-about-vpn-gateway-settings/)（关于 VPN 网关设置）。
 
-<!---HONumber=Mooncake_1219_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="cache-redis"
 	ms.workload="tbd"
 	ms.date="09/01/2016"
-	wacn.date="11/25/2016"
+	wacn.date="01/09/2017"
 	ms.author="sdanie" />
 
 # Azure Redis 缓存的 ASP.NET 会话状态提供程序
@@ -110,4 +110,4 @@ NuGet 程序包会下载并添加所需的程序集引用，并将以下部分�
 
 了解 [Azure Redis 缓存的 ASP.NET 输出缓存提供程序](/documentation/articles/cache-aspnet-output-cache-provider/)。
 
-<!---HONumber=Mooncake_0829_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

@@ -16,7 +16,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="infrastructure-services"
     ms.date="11/11/2016"
-    wacn.date="12/05/2016"
+    wacn.date="01/09/2017"
     ms.author="magoedte" />
 
 # Azure 自动化安全性
@@ -40,4 +40,4 @@ Azure 自动化可让你自动针对 Azure 和本地中的资源执行任务。�
 | Azure 运行方式帐户 |Azure 资源管理器 |无 |
 | Azure 经典运行方式帐户 |Azure 服务管理 |使用 Azure 运行方式帐户进行 Runbook 身份验证 |
 
-<!---HONumber=Mooncake_1128_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

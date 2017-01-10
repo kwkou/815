@@ -16,7 +16,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="infrastructure-services"
     ms.date="10/14/2016"
-    wacn.date="01/03/2017"
+    wacn.date="01/09/2017"
     ms.author="cherylmc" />  
 
 
@@ -80,7 +80,7 @@
 
 接下来，创建您的虚拟网络。请验证你指定的地址空间不与本地网络的任一个地址空间相重叠。
 
-以下示例创建一个名为 *testvnet* 的虚拟网络和两个子网，其中一个名为 *GatewaySubnet* ，另一个名为 *Subnet1* 。特意创建一个名为 *GatewaySubnet* 的子网非常重要。如果您以其他名称为其命名，则您的连接配置将会失败。
+以下示例创建一个名为 *testvnet* 的虚拟网络和两个子网，其中一个名为 *GatewaySubnet*，另一个名为 *Subnet1*。特意创建一个名为 *GatewaySubnet* 的子网非常重要。如果您以其他名称为其命名，则您的连接配置将会失败。
 
 设置变量。
 
@@ -153,9 +153,9 @@ Resource Manager 部署模型的 Azure VPN 网关目前使用动态分配方法�
 
 使用以下值：
 
-* 站点到站点配置的 *-GatewayType* 为 *Vpn* 。网关类型永远是你要实现的配置的特定类型。例如，其他网关配置可能需要 -GatewayType ExpressRoute。
-* *-VpnType* 可以是 *RouteBased* （在某些文档中称为动态网关）或 *PolicyBased* （在某些文档中称为静态网关）。有关 VPN 网关类型的详细信息，请参阅[关于 VPN 网关](/documentation/articles/vpn-gateway-about-vpngateways/)。
-* *-GatewaySku* 可以是 *Basic* 、 *Standard* 或 *HighPerformance* 。
+* 站点到站点配置的 *-GatewayType* 为 *Vpn*。网关类型永远是你要实现的配置的特定类型。例如，其他网关配置可能需要 -GatewayType ExpressRoute。
+* *-VpnType* 可以是 *RouteBased*（在某些文档中称为动态网关）或 *PolicyBased*（在某些文档中称为静态网关）。有关 VPN 网关类型的详细信息，请参阅[关于 VPN 网关](/documentation/articles/vpn-gateway-about-vpngateways/)。
+* *-GatewaySku* 可以是 *Basic*、*Standard* 或 *HighPerformance*。
 
         New-AzureRmVirtualNetworkGateway -Name vnetgw1 -ResourceGroupName testrg `
         -Location 'China North' -IpConfigurations $gwipconfig -GatewayType Vpn `
@@ -169,7 +169,7 @@ Resource Manager 部署模型的 Azure VPN 网关目前使用动态分配方法�
     Get-AzureRmPublicIpAddress -Name gwpip -ResourceGroupName testrg
 
 ## <a name="CreateConnection"></a>8.创建 VPN 连接
-接下来，将在虚拟网络网关和 VPN 设备之间创建站点到站点 VPN 连接。请务必替换为你自己的值。共享密钥必须与你用于 VPN 设备配置的值匹配。请注意，站点到站点的 `-ConnectionType` 为 *IPsec* 。
+接下来，将在虚拟网络网关和 VPN 设备之间创建站点到站点 VPN 连接。请务必替换为你自己的值。共享密钥必须与你用于 VPN 设备配置的值匹配。请注意，站点到站点的 `-ConnectionType` 为 *IPsec*。
 
 设置变量。
 
@@ -201,4 +201,4 @@ VPN 连接有几种不同的验证方式。
 *  连接完成后，即可将虚拟机添加到虚拟网络。有关详细信息，请参阅[虚拟机](/documentation/services/virtual-machines/)。
 * 有关 BGP 的信息，请参阅 [BGP 概述](/documentation/articles/vpn-gateway-bgp-overview/)和[如何配置 BGP](/documentation/articles/vpn-gateway-bgp-resource-manager-ps/)。
 
-<!---HONumber=Mooncake_1226_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

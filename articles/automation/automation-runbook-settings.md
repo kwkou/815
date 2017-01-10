@@ -15,7 +15,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="infrastructure-services"
     ms.date="11/11/2016"
-    wacn.date="12/05/2016"
+    wacn.date="01/09/2017"
     ms.author="bwren" />  
 
 
@@ -57,4 +57,4 @@ Azure 自动化中的每个 Runbook 都提供了多个设置用于帮助标识�
 * 若要学习如何创建输出和错误消息以及从 Runbook 检索此类消息，请参阅 [Runbook 输出和消息](/documentation/articles/automation-runbook-output-and-messages/)
 * 若要了解如何添加已由社区或其他源开发的 Runbook，或创建自己的 Runbook，请参阅[创建或导入 Runbook](/documentation/articles/automation-creating-importing-runbook/)
 
-<!---HONumber=Mooncake_1128_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

@@ -15,7 +15,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="infrastructure-services"
     ms.date="11/14/2016"
-    wacn.date="01/05/2017"
+    wacn.date="01/09/2017"
     ms.author="magoedte;bwren" />  
 
 
@@ -155,4 +155,4 @@ Azure 自动化中的安全资产包括凭据、证书、连接和加密的变�
        }
     }
 
-<!---HONumber=Mooncake_1128_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

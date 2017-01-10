@@ -15,7 +15,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="infrastructure-services"
     ms.date="11/02/2016"
-    wacn.date="12/05/2016"
+    wacn.date="01/09/2017"
     ms.author="bwren" />  
 
 
@@ -97,4 +97,4 @@ Runbook 仪表板显示单个 Runbook 的摘要。摘要图表显示在给定的
 ## 后续步骤
 * 若要详细了解可用于在 Azure 自动化中启动 Runbook 的不同方法，请参阅[在 Azure 自动化中启动 Runbook](/documentation/articles/automation-starting-a-runbook/)
 
-<!---HONumber=Mooncake_1128_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

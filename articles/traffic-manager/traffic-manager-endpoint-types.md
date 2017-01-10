@@ -15,7 +15,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="infrastructure-services"
     ms.date="10/11/2016"
-    wacn.date="11/14/2016"
+    wacn.date="01/09/2017"
     ms.author="sewhee"
 />
 
@@ -129,4 +129,4 @@ PublicIPAddress 资源属于 Azure Resource Manager 资源。经典部署模型�
 - 了解流量管理器[终结点监视和自动故障转移](/documentation/articles/traffic-manager-monitoring/)。
 - 了解流量管理器[流量路由方法](/documentation/articles/traffic-manager-routing-methods/)。
 
-<!---HONumber=Mooncake_1031_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

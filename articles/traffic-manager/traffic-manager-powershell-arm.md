@@ -15,7 +15,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="infrastructure-services"
     ms.date="10/11/2016"
-    wacn.date="01/05/2017"
+    wacn.date="01/09/2017"
     ms.author="sewhee"
 />  
 
@@ -324,4 +324,4 @@ Disable-AzureRmTrafficManagerProfile cmdlet 将提示确认。可以使用使用
 
 [流量管理器性能注意事项](/documentation/articles/traffic-manager-performance-considerations/)
 
-<!---HONumber=Mooncake_1031_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

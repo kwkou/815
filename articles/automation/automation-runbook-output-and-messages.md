@@ -14,7 +14,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
    ms.date="11/11/2016"
-   wacn.date="12/30/2016"
+   wacn.date="01/09/2017"
    ms.author="magoedte;bwren" />  
 
 
@@ -184,4 +184,4 @@ Windows PowerShell 使用 [preference 变量](http://technet.microsoft.com/zh-cn
 - 若要详细了解 Runbook 执行方式、如何监视 Runbook 作业和其他技术详细信息，请参阅 [Track a runbook job](/documentation/articles/automation-runbook-execution/)（跟踪 Runbook 作业）
 - 若要了解如何设计和使用子 Runbook，请参阅 [Azure 自动化中的子 Runbook](/documentation/articles/automation-child-runbooks/)
 
-<!---HONumber=Mooncake_1010_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->
