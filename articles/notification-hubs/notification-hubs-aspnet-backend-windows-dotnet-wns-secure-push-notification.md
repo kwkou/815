@@ -14,7 +14,7 @@
 	ms.devlang="dotnet"
 	ms.topic="article"
 	ms.date="06/29/2016"
-	wacn.date="08/08/2016"
+	wacn.date="01/09/2017"
 	ms.author="wesmc"/>
 
 #Azure 通知中心安全推送
@@ -26,7 +26,7 @@
 
 ##概述
 
-利用 Microsoft Azure 中的推送通知支持，你可以访问易于使用且横向扩展的多平台推送基础结构，这大大简化了为移动平台的使用者应用程序和企业应用程序实现推送通知的过程。
+利用 Azure 中的推送通知支持，你可以访问易于使用且横向扩展的多平台推送基础结构，这大大简化了为移动平台的使用者应用程序和企业应用程序实现推送通知的过程。
 
 由于法规或安全约束，有时应用程序可能想要在通知中包含某些无法通过标准推送通知基础结构传输的内容。本教程介绍如何通过客户端设备和应用后端之间安全且经过验证的连接发送敏感信息，以便获得相同的体验。
 
@@ -187,4 +187,4 @@
 [12]: ./media/notification-hubs-aspnet-backend-windows-dotnet-secure-push/notification-hubs-secure-push12.png
 [13]: ./media/notification-hubs-aspnet-backend-windows-dotnet-secure-push/notification-hubs-secure-push13.png
 
-<!---HONumber=Mooncake_0801_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

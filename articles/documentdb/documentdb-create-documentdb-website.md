@@ -1,11 +1,12 @@
 <properties 
-	pageTitle="使用 Azure Resource Manager 模板部署 DocumentDB 和 Azure App Service Web Apps | Azure" 
-	description="了解如何使用 Azure Resource Manager 模板部署 DocumentDB 帐户、Azure App Service Web Apps 以及示例 Web 应用程序。" 
+	pageTitle="使用 Azure 资源管理器模板部署 DocumentDB 和 Azure App Service Web Apps | Azure" 
+	description="了解如何使用 Azure 资源管理器模板部署 DocumentDB 帐户、Azure App Service Web Apps 以及示例 Web 应用程序。" 
 	services="documentdb, app-service\web" 
 	authors="stephbaron" 
 	manager="jhubbard" 
 	editor="monicar" 
-	documentationCenter=""/>
+	documentationCenter=""/>  
+
 
 <tags 
 	ms.service="documentdb" 
@@ -14,23 +15,24 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="08/02/2016" 
-	wacn.date="11/21/2016" 
-	ms.author="hawong"/>  
+	ms.author="stbaro"
+   	wacn.date="01/10/2017"/>  
 
 
-# 使用 Azure Resource Manager 模板部署 DocumentDB 和 Azure App Service Web Apps
+# 使用 Azure 资源管理器模板部署 DocumentDB 和 Azure App Service Web Apps
 
-本教程说明如何使用 Azure Resource Manager 模板来部署和集成 [Azure DocumentDB](/home/features/documentdb/)、[Azure 应用服务](/documentation/articles/app-service-changes-existing-services/) Web 应用以及示例 Web 应用程序。
+本教程说明如何使用 Azure 资源管理器模板来部署和集成 [Azure DocumentDB](/home/features/documentdb/)、[Azure 应用服务](/documentation/articles/app-service-changes-existing-services/) Web 应用以及示例 Web 应用程序。
 
-使用 Azure Resource Manager 模板，你可以轻松自动化 Azure 资源的部署和配置。本教程演示如何部署 Web 应用程序，以及自动配置 DocumentDB 帐户的连接信息。
+使用 Azure 资源管理器模板，你可以轻松自动化 Azure 资源的部署和配置。本教程演示如何部署 Web 应用程序，以及自动配置 DocumentDB 帐户的连接信息。
 
 完成本教程后，你将能够回答以下问题：
 
--	如何使用 Azure Resource Manager 模板来部署和集成 DocumentDB 帐户与 Azure App Service 中的 Web 应用？
--	如何使用 Azure Resource Manager 模板来部署和集成 DocumentDB 帐户、App Service Web Apps 中的 Web 应用以及 Webdeploy 应用程序？
+-	如何使用 Azure 资源管理器模板来部署和集成 DocumentDB 帐户与 Azure App Service 中的 Web 应用？
+-	如何使用 Azure 资源管理器模板来部署和集成 DocumentDB 帐户、App Service Web Apps 中的 Web 应用以及 Webdeploy 应用程序？
+
 
 ## 先决条件
-> [AZURE.TIP] 虽然本教程不会假设先前有使用 Azure Resource Manager 模板或 JSON 的经验，但是，如果你想修改引用的模板或部署选项，则需要有其中每个领域的知识。
+> [AZURE.TIP] 虽然本教程不会假设先前有使用 Azure 资源管理器模板或 JSON 的经验，但是，如果你想修改引用的模板或部署选项，则需要有其中每个领域的知识。
 
 在按照本教程中的说明操作之前，请确保已有下列各项：
 
@@ -141,14 +143,14 @@
 
 	
 	
-<a name="NextSteps"></a>
-## 后续步骤
 
-祝贺你！ 你已使用 Azure Resource Manager 模板部署了 DocumentDB、App Service Web 应用以及示例 Web 应用程序。
+## 后续步骤 <a name="NextSteps"></a>
+
+祝贺你！ 你已使用 Azure 资源管理器模板部署了 DocumentDB、App Service Web 应用以及示例 Web 应用程序。
 
 - 若要了解有关 DocumentDB 的详细信息，请单击[此处](/documentation/services/documentdb/)。
 - 若要了解有关 Azure 应用服务 Web 应用的详细信息，请单击[此处](/documentation/services/web-sites/)。
-- 若要了解有关 Azure Resource Manager 模板的详细信息，请单击[此处](https://msdn.microsoft.com/zh-cn/library/azure/dn790549.aspx)。
+- 若要了解有关 Azure 资源管理器模板的详细信息，请单击[此处](https://msdn.microsoft.com/zh-cn/library/azure/dn790549.aspx)。
 
 
 ## 发生的更改
@@ -158,4 +160,4 @@
 
  
 
-<!---HONumber=Mooncake_1010_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

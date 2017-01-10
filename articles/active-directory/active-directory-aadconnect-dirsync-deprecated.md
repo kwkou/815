@@ -14,12 +14,13 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="06/27/2016"
-	wacn.date="08/01/2016"
+	wacn.date="01/09/2017"
 	ms.author="billmath"/>
 
 
-# 升级 Microsoft Azure Active Directory Sync (DirSync) 和 Azure Active Directory Sync (Azure AD Sync)
-Azure AD Connect 是连接本地目录与 Azure AD 和 Office 365 的最佳方式。这是将 Azure AD Connect 从 Microsoft Azure Active Directory Sync (DirSync) 或 Azure AD Sync 升级的最佳时机，由于这些工具现在已弃用，并在 2017 年 4 月 13 日结束支持。
+
+# 升级 Azure Active Directory Sync (DirSync) 和 Azure Active Directory Sync (Azure AD Sync)
+Azure AD Connect 是连接本地目录与 Azure AD 和 Office 365 的最佳方式。这是将 Azure AD Connect 从 Azure Active Directory Sync (DirSync) 或 Azure AD Sync 升级的最佳时机，由于这些工具现在已弃用，并在 2017 年 4 月 13 日结束支持。
 
 已弃用的两个标识同步工具提供给单一林客户 (DirSync)，以及多林和其他高级客户 (Azure AD Sync)。这些较旧的工具已经替换为适用于所有方案的单一解决方案：Azure AD Connect。它提供新的功能、增强功能和新方案的支持。若要能够继续同步本地标识数据到 Azure AD 和 Office 365，强烈建议升级到 Azure AD Connect。
 
@@ -32,7 +33,7 @@ Azure AD Connect 是 DirSync 和 Azure AD Sync 的后继产品。它结合了两
 
 日期 | 注释
  --- | ---
-2016 年 4 月 13 日 | Microsoft Azure Active Directory Sync (DirSync) 和 Azure Active Directory Sync (Azure AD Sync) 已宣布弃用。
+2016 年 4 月 13 日 | Azure Active Directory Sync (DirSync) 和 Azure Active Directory Sync (Azure AD Sync) 已宣布弃用。
 2017 年 4 月 13 日 | 结束支持。客户必须先升级到 Azure AD Connect 才能建立支持案例。
 
 ## 如何过渡到 Azure AD Connect
@@ -66,4 +67,4 @@ Azure AD Connect 是 DirSync 和 Azure AD Sync 的后继产品。它结合了两
 
 * [将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect/)
 
-<!---HONumber=Mooncake_0725_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

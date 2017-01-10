@@ -14,8 +14,8 @@
 	ms.devlang="javascript"
 	ms.topic="article"
 	ms.date="09/16/2016"
-	wacn.date="11/21/2016"
-	ms.author="vittorib"/>  
+	ms.author="vittorib"
+	wacn.date="01/09/2017"/>  
 
 
 # 将 Azure AD Apache Cordova 应用程序集成
@@ -69,14 +69,14 @@ Apache Cordova 可让你开发能够在移动设备上运行的完全成熟的 H
 	-   [ios sim](https://www.npmjs.org/package/ios-sim) - 用于通过命令行在 iOS 模拟器中启动 iOS 应用程序（可以通过终端轻松安装：`npm install -g ios-sim`）
 
 - 生成并运行适用于 Android 的应用程序
-	- 安装 Java 开发工具包 (JDK) 7 或更高版本。请确保根据 JDK 安装路径（例如 C:\\Program Files\\Java\\jdk1.7.0\_75）正确设置 `JAVA_HOME`（环境变量）。
+	- 安装 [Java 开发工具包 (JDK) 7](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html) 或更高版本。请确保根据 JDK 安装路径（例如 C:\\Program Files\\Java\\jdk1.7.0\_75）正确设置 `JAVA_HOME`（环境变量）。
 	- 安装 [Android SDK](http://developer.android.com/sdk/installing/index.html?pkg=tools) 并将 `<android-sdk-location>\tools` 位置（例如 C:\\tools\\Android\\android-sdk\\tools）添加到 `PATH` 环境变量。
 	- 打开 Android SDK Manager（例如，通过终端：`android`）并安装
     - *Android 5.0.1 (API 21)* 平台 SDK
     - *Android SDK Build-tools* 19.1.0 或更高版本
     - *Android 支持存储库* (Extras)
 
-  Android SDK 不提供任何默认模拟器实例。如果你要在模拟器上运行 Android 应用程序，请从终端运行 `android avd`，然后选择"创建..."，以创建一个新实例。建议的"API 级别"为 19 或更高。有关 Android 模拟器和创建选项的详细信息，请参阅 [AVD Manager](http://developer.android.com/tools/help/avd-manager.html)。
+  Android SDK 不提供任何默认模拟器实例。如果你要在模拟器上运行 Android 应用程序，请从终端运行 `android avd`，然后选择“创建...”，以创建一个新实例。建议的“API 级别”为 19 或更高。有关 Android 模拟器和创建选项的详细信息，请参阅 [AVD Manager](http://developer.android.com/tools/help/avd-manager.html)。
 
 
 ## *1.将一个应用程序注册到 Azure AD*
@@ -86,17 +86,17 @@ Apache Cordova 可让你开发能够在移动设备上运行的完全成熟的 H
 Azure AD 只会向已知的应用程序颁发令牌。在从应用程序使用 Azure AD 之前，你需要在租户中为该应用程序创建一个条目。在租户中注册新的应用程序：
 
 -	登录到 [Azure 管理门户](https://manage.windowsazure.cn)
--	在左侧的导航栏中单击"Active Directory"
+-	在左侧的导航栏中单击“Active Directory”
 -	选择你要在其中注册应用程序的租户。
--	单击"应用程序"选项卡，然后在底部抽屉中单击"添加"。
+-	单击“应用程序”选项卡，然后在底部抽屉中单击“添加”。
 -	按提示操作，并创建新的**本机客户端应用程序**（尽管 Cordova 应用以 HTML 为基础，我们仍在此创建本机客户端应用程序，因此必须选择`Native Client Application`选项，否则应用程序无法运行）。
-    -	应用程序的"名称"向最终用户描述你的应用程序
-    -	"重定向 URI"是用于向应用返回令牌的 URI。输入 `http://MyDirectorySearcherApp`。
+    -	应用程序的“名称”向最终用户描述你的应用程序
+    -	“重定向 URI”是用于向应用返回令牌的 URI。输入 `http://MyDirectorySearcherApp`。
 
-完成注册后，AAD 将为应用程序分配唯一的客户端标识符。在学习后面的部分时，你需要用到此值：可以在新建应用的"配置"选项卡中找到此值。
+完成注册后，AAD 将为应用程序分配唯一的客户端标识符。在学习后面的部分时，你需要用到此值：可以在新建应用的“配置”选项卡中找到此值。
 
 若要运行 `DirSearchClient Sample`，请向新建应用授予查询 _Azure AD 图形 API_ 的权限：
--	在"配置"选项卡中，找到"针对其他应用程序的权限"部分。对于"Azure Active Directory"应用程序，在"委托的权限"下添加"以已登录用户的身份访问目录"权限。这样，你的应用程序便可以在 Graph API 中查询用户。
+-	在“配置”选项卡中，找到“针对其他应用程序的权限”部分。对于“Azure Active Directory”应用程序，在“委托的权限”下添加“以已登录用户的身份访问目录”权限。这样，你的应用程序便可以在 Graph API 中查询用户。
 
 ## *2.克隆教程所需的示例应用存储库*
 
@@ -146,7 +146,7 @@ javascript
     graphApiVersion = "2013-11-08";
 
 
-`redirectUri` 和 `clientId` 值应与 AAD 中用于描述应用程序的值匹配。如本教程前面步骤 1 中所述，你可以在 Azure 门户的"配置"选项卡中找到这些值。
+`redirectUri` 和 `clientId` 值应与 AAD 中用于描述应用程序的值匹配。如本教程前面步骤 1 中所述，你可以在 Azure 门户预览的"配置"选项卡中找到这些值。
 注意：如果你选择不在自己的租户中注册新应用程序，则只需按原样粘贴上述预配置值 - 这样你便可以看到示例的运行情况，不过，在生产环境中，你始终要为应用程序创建自己的条目。
 
 接下来，需要添加实际的令牌请求代码。在 `search `和 `renderdata `定义之间插入以下代码段。
@@ -176,8 +176,8 @@ javascript
     },
 
 让我们通过将它分解成两个主要部分来检查运行情况。
-此示例应适用于任何租户，而不只是与某个特定租户相关。它使用了"/common"终结点，因此，用户在身份验证时可以输入任何帐户，并可将请求定向到它所属的租户。
-该方法的第一部分将检查 ADAL 缓存，以确定是否已有一个存储的令牌 - 如果有，则使用该令牌的来源租户重新初始化 ADAL。要避免额外的提示，必须执行此操作，因为使用"/common"总会导致要求用户输入新帐户。
+此示例应适用于任何租户，而不只是与某个特定租户相关。它使用了“/common”终结点，因此，用户在身份验证时可以输入任何帐户，并可将请求定向到它所属的租户。
+该方法的第一部分将检查 ADAL 缓存，以确定是否已有一个存储的令牌 - 如果有，则使用该令牌的来源租户重新初始化 ADAL。要避免额外的提示，必须执行此操作，因为使用“/common”总会导致要求用户输入新帐户。
 
 javascript
 
@@ -267,7 +267,7 @@ javascript
 
    在默认的模拟器上运行：`cordova emulate android`
 
-   __注意__：请确保根据"先决条件"部分中所示，使用 *AVD Manager* 创建模拟器实例。
+   __注意__：请确保根据“先决条件”部分中所示，使用 *AVD Manager* 创建模拟器实例。
 
    使用 `cordova run android --list` 可查看所有可用目标，使用 `cordova run android --target=<target_name>` 可在特定的设备或模拟器上运行应用程序（例如 `cordova run android --target="Nexus4_emulator"`）。
 
@@ -277,7 +277,7 @@ javascript
 
    在默认的模拟器上运行：`cordova emulate ios`
 
-   __注意__：请确保安装 `ios-sim` 包以在模拟器上运行。有关详细信息，请参阅"先决条件"部分。
+   __注意__：请确保安装 `ios-sim` 包以在模拟器上运行。有关详细信息，请参阅“先决条件”部分。
 
     Use `cordova run ios --list` to see all available targets and `cordova run ios --target=<target_name>` to run application on specific device or emulator (for example,  `cordova run android --target="iPhone-6"`).
 
@@ -289,4 +289,4 @@ javascript
 
 [AZURE.INCLUDE [active-directory-devquickstarts-additional-resources](../../includes/active-directory-devquickstarts-additional-resources.md)]
 
-<!---HONumber=Mooncake_0926_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

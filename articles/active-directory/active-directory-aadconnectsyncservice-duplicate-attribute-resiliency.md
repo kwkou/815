@@ -15,8 +15,8 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="09/29/2016"
-	wacn.date="10/31/2016"
-	ms.author="markusvi"/>
+	ms.author="markusvi"
+	wacn.date="01/09/2017"/>
 
 
 
@@ -76,20 +76,20 @@ Azure Active Directory 并不是完全无法预配或更新具有重复属性的
 
 然后，使用以下 cmdlet 和运算符以不同的方式查看错误：
 
-1. 查看全部
+1. [查看全部](#see-all)
 
-2. 按属性类型
+2. [按属性类型](#by-property-type)
 
-3. 按冲突值
+3. [按冲突值](#by-conflicting-value)
 
-4. 使用字符串搜索
+4. [使用字符串搜索](#using-a-string-search)
 
 5. 已排序
 
-6. 以有限的数量或全部
+6. [以有限的数量或全部](#in-a-limited-quantity-or-all)
 
 
-#### 查看全部
+#### 查看全部 <a name="see-all"></a>
 连接后，若要查看租户中属性预配错误的常规列表，请运行：
 
 `Get-MsolDirSyncProvisioningError -ErrorCategory PropertyConflict`
@@ -98,7 +98,7 @@ Azure Active Directory 并不是完全无法预配或更新具有重复属性的
 ![Get-MsolDirSyncProvisioningError](./media/active-directory-aadconnectsyncservice-duplicate-attribute-resiliency/1.png "Get-MsolDirSyncProvisioningError")
 
 
-#### 按属性类型
+#### 按属性类型 <a name="by-property-type"></a>
 若要按属性类型查看错误，请添加带有 **UserPrincipalName** 或 **ProxyAddresses** 参数的 **-PropertyName** 标志：
 
 `Get-MsolDirSyncProvisioningError -ErrorCategory PropertyConflict -PropertyName UserPrincipalName`
@@ -107,19 +107,19 @@ Azure Active Directory 并不是完全无法预配或更新具有重复属性的
 
 `Get-MsolDirSyncProvisioningError -ErrorCategory PropertyConflict -PropertyName ProxyAddresses`
 
-#### 按冲突值
+#### 按冲突值 <a name="by-conflicting-value"></a>
 若要查看与特定属性相关的错误，请添加 **-PropertyValue** 标志（添加此标志时也必须使用 **-PropertyName**）：
 
 `Get-MsolDirSyncProvisioningError -ErrorCategory PropertyConflict -PropertyValue User@domain.com -PropertyName UserPrincipalName`
 
 
-#### 使用字符串搜索
+#### 使用字符串搜索 <a name="using-a-string-search"></a>
 若要进行广泛的字符串搜索，请使用 **-SearchString** 标志。此标志可以独立于上述所有标志使用，但 **-ErrorCategory PropertyConflict** 除外（此标志始终是必需的）：
 
 `Get-MsolDirSyncProvisioningError -ErrorCategory PropertyConflict -SearchString User`  
 
 
-#### 以有限的数量或全部
+#### 以有限的数量或全部 <a name="in-a-limited-quantity-or-all"></a>
 1. **MaxResults <Int>** 可用于将查询限制为特定数目的值。
 
 2. **All** 可用于确保在有大量错误的情况下检索所有结果。
@@ -195,4 +195,4 @@ ProxyAddress 冲突的电子邮件通知示例如下所示：
 
 - [Identify directory synchronization errors in Office 365（识别 Office 365 中的目录同步错误）](https://support.office.com/zh-cn/article/Identify-directory-synchronization-errors-in-Office-365-b4fc07a5-97ea-4ca6-9692-108acab74067)
 
-<!---HONumber=Mooncake_1024_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

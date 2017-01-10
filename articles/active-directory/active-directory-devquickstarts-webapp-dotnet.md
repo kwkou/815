@@ -5,7 +5,8 @@
 	documentationCenter=".net"
 	authors="dstrockis"
 	manager="mbaldwin"
-	editor=""/>
+	editor=""/>  
+
 
 <tags
 	ms.service="active-directory"
@@ -14,8 +15,8 @@
 	ms.devlang="dotnet"
 	ms.topic="article"
 	ms.date="09/16/2016"
-	wacn.date="10/17/2016"
-	ms.author="dastrock"/>
+	ms.author="dastrock"
+	wacn.date="01/09/2017"/>
 
 # 使用 Azure AD 执行 Web 应用登录和注销
 
@@ -94,7 +95,7 @@ C#
 
 
 -	最后，打开位于项目根目录中的 `web.config` 文件，并在 `<appSettings>` 节中输入你的配置值。
-    -	应用程序的 `ida:ClientId` 是你在执行步骤 1 时从 Azure 门户复制的 Guid。
+    -	应用程序的 `ida:ClientId` 是你在执行步骤 1 时从 Azure 门户预览复制的 Guid。
     -	`ida:Tenant` 是 Azure AD 租户的名称，例如“contoso.partner.onmschina.cn”。
     -	`ida:PostLogoutRedirectUri` 向 Azure AD 指示在成功完成注销请求后，要将用户重定向到哪个位置。
 
@@ -186,4 +187,4 @@ C#
 [AZURE.INCLUDE [active-directory-devquickstarts-additional-resources](../../includes/active-directory-devquickstarts-additional-resources.md)]
  
 
-<!---HONumber=Mooncake_1010_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

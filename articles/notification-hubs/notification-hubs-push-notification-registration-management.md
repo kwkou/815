@@ -14,7 +14,7 @@
 	ms.devlang="dotnet"
 	ms.topic="article"
 	ms.date="06/29/2016"
-	wacn.date="11/15/2016"
+	wacn.date="01/10/2017"
 	ms.author="wesmc"/>
 
 # 注册管理
@@ -40,7 +40,7 @@
 * 安装模型可让你轻松地执行每次推送（以特定设备为目标）。每次执行基于安装的注册时，都会自动添加一个系统标记 **"$InstallationId:[installationId]"**。因此，你无需编写任何额外的代码，就能对此标记调用 send 以针对特定的设备。
 * 使用安装还能执行部分注册更新。可以使用 [JSON-Patch standard](https://tools.ietf.org/html/rfc6902) 以 PATCH 方法来请求部分安装更新。当你想要更新注册中的标记时，此方法特别有用。你不需要删除整个注册，然后重新发送前面的所有标记。
 
-安装可以包含以下属性。有关完整的安装属性列表，请参阅[使用 REST API 创建或覆盖安装](https://msdn.microsoft.com/library/azure/mt621153.aspx)或[安装属性](https://msdn.microsoft.com/library/azure/microsoft.azure.notificationhubs.installation_properties.aspx)。
+安装可以包含以下属性。有关完整的安装属性列表，请参阅[使用 REST API 创建或覆盖安装](https://msdn.microsoft.com/zh-cn/library/azure/mt621153.aspx)或[安装属性](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.notificationhubs.installation_properties.aspx)。
 
 	// Example installation format to show some supported properties
 	{
@@ -86,7 +86,7 @@
 
 如果你使用[模板](/documentation/articles/notification-hubs-templates-cross-platform-push-messages/)，则设备安装还会保存与设备关联的、采用 JSON 格式的所有模板（请参阅上面的示例）。模板名称有助于将目标指向相同设备的不同模板。
 
-请注意，每个模板名称将映射到一个模板主体和一组可选的标记。此外，每个平台可能有附加的模板属性。对于 Windows 应用商店（使用 WNS）和 Windows Phone 8（使用 MPNS），模板中还可能会有一组附加标头。对于 APNs，可以将过期属性设为常量或模板表达式。有关完整的安装属性列表，请参阅[使用 REST 创建或覆盖安装](https://msdn.microsoft.com/library/azure/mt621153.aspx)主题。
+请注意，每个模板名称将映射到一个模板主体和一组可选的标记。此外，每个平台可能有附加的模板属性。对于 Windows 应用商店（使用 WNS）和 Windows Phone 8（使用 MPNS），模板中还可能会有一组附加标头。对于 APNs，可以将过期属性设为常量或模板表达式。有关完整的安装属性列表，请参阅[使用 REST 创建或覆盖安装](https://msdn.microsoft.com/zh-cn/library/azure/mt621153.aspx)主题。
 
 #### Windows 应用商店应用的辅助磁贴
 
@@ -112,7 +112,7 @@ SecondaryTiles 字典使用的 TileId 与在 Windows 应用商店应用中创建
 
 #### 使用安装从设备向通知中心注册的示例代码 
 
-此时，仅支持使用[通知中心 REST API](https://msdn.microsoft.com/library/mt621153.aspx) 执行此操作。
+此时，仅支持使用[通知中心 REST API](https://msdn.microsoft.com/zh-cn/library/mt621153.aspx) 执行此操作。
 
 你也可以使用 [JSON-Patch standard](https://tools.ietf.org/html/rfc6902) 以 PATCH 方法更新安装。
 
@@ -130,7 +130,7 @@ SecondaryTiles 字典使用的 TileId 与在 Windows 应用商店应用中创建
         if (deviceInstallation.installationId == null)
             return HttpStatusCode.BadRequest;
 
-        // Parse connection string (https://msdn.microsoft.com/library/azure/dn495627.aspx)
+        // Parse connection string (https://msdn.microsoft.com/zh-cn/library/azure/dn495627.aspx)
         ConnectionStringUtility connectionSaSUtil = new ConnectionStringUtility(listenConnectionString);
         string hubResource = "installations/" + deviceInstallation.installationId + "?";
         string apiVersion = "api-version=2015-04";
@@ -139,7 +139,7 @@ SecondaryTiles 字典使用的 TileId 与在 Windows 应用商店应用中创建
         string uri = connectionSaSUtil.Endpoint + hubName + "/" + hubResource + apiVersion;
 
         //=== Generate SaS Security Token for Authorization header ===
-		// See, https://msdn.microsoft.com/library/azure/dn495627.aspx
+		// See, https://msdn.microsoft.com/zh-cn/library/azure/dn495627.aspx
         string SasToken = connectionSaSUtil.getSaSToken(uri, 60);
 
         using (var httpClient = new HttpClient())
@@ -248,8 +248,8 @@ SecondaryTiles 字典使用的 TileId 与在 Windows 应用商店应用中创建
 		settings.Remove("__NHRegistrationId");
 	}
 
-<a name="registration-management-from-a-backend"></a>
-## 从后端管理注册
+
+## 从后端管理注册 <a name="registration-management-from-a-backend"></a>
 
 从后端管理注册需要编写附加代码。每次设备中的应用启动时，该应用都必须为后端提供已更新的 PNS 句柄（以及标记和模板），然后后端必须在通知中心上更新此句柄。下图演示了此设计。
 
@@ -333,4 +333,4 @@ SecondaryTiles 字典使用的 TileId 与在 Windows 应用商店应用中创建
 
 后端必须处理注册更新之间的并发性。服务总线为注册管理提供了乐观并发控制。在 HTTP 级别，这是通过对注册管理操作使用 ETag 来实现的。Microsoft SDK 以透明方式使用此功能，如果由于并发原因拒绝了更新，则会引发异常。应用后端负责处理这些异常并在需要时重试更新。
 
-<!---HONumber=Mooncake_0808_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

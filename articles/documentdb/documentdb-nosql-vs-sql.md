@@ -16,7 +16,7 @@
     ms.devlang="dotnet"
     ms.topic="article"
     ms.date="11/02/2016"
-    wacn.date="12/27/2016"
+    wacn.date="01/10/2017"
     ms.author="mimig" />  
 
 
@@ -114,7 +114,7 @@ Microsoft 提供了五种 SQL 产品/服务：
 
 ## <a name="next-steps"></a>后续步骤
 
-我们邀请你通过免费试用 SQL 和 NoSQL，了解有关二者的详细信息。
+我们邀请你通过试用 SQL 和 NoSQL，了解有关二者的详细信息。
 
 - 对于所有 Azure 服务，可以注册一个[1元试用](/pricing/1rmb-trial/)的版本。
   
@@ -129,4 +129,4 @@ Microsoft 提供了五种 SQL 产品/服务：
   - [SQL Server](https://www.microsoft.com/server-cloud/products/sql-server-2016/)
   - [Azure 虚拟机中的 SQL Server](/home/features/virtual-machines#SQL/)
 
-<!---HONumber=Mooncake_1219_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

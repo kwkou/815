@@ -17,7 +17,7 @@
 	ms.topic="article" 
 	ms.date="09/28/2016" 
 	ms.author="mimig"
-	wacn.date="11/28/2016"/>  
+	wacn.date="01/10/2017"/>  
 
 
 # 使用 Azure CLI 和 Azure 资源管理器模板自动创建 DocumentDB 帐户 
@@ -457,8 +457,7 @@ DocumentDB 能够跨不同的 Azure 区域[在全球分发数据][distribute-glo
 
 在此命令返回之后，在帐户更改为“联机”状态以准备好可供使用之前，该帐户将会进入“正在创建”状态数分钟的时间。可以在 [Azure 门户预览](https://portal.azure.cn)中的“DocumentDB 帐户”边栏选项卡上检查帐户的状态。
 
-<a name="troubleshooting"></a>
-## 故障排除
+## 故障排除 <a name="troubleshooting"></a>
 
 如果在创建资源组或数据库帐户时收到错误（例如 `Deployment provisioning state was not successful`），有几个故障排除选项可供使用。
 
@@ -505,4 +504,4 @@ DocumentDB 能够跨不同的 Azure 区域[在全球分发数据][distribute-glo
 [distribute-globally]: /documentation/articles/documentdb-distribute-data-globally/
 [scaling-globally]: /documentation/articles/documentdb-distribute-data-globally/#scaling-across-the-planet/
 
-<!---HONumber=Mooncake_1121_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

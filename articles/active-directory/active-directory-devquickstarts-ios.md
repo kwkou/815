@@ -5,7 +5,8 @@
 	documentationCenter="ios"
 	authors="brandwe"
 	manager="mbaldwin"
-	editor=""/>
+	editor=""/>  
+
 
 <tags
 	ms.service="active-directory"
@@ -14,8 +15,8 @@
 	ms.devlang="objective-c"
 	ms.topic="article"
 	ms.date="09/16/2016"
-	wacn.date="10/17/2016"
-	ms.author="brandwe"/>
+	ms.author="brandwe"
+	wacn.date="01/09/2017"/>
 
 # 将 Azure AD 集成到 iOS 应用程序中
 
@@ -89,7 +90,7 @@
 	$ open QuickStart.xcworkspace
 
 
--	在快速入门项目中，打开 plist 文件 `settings.plist`。替换节中的元素值，以反映你在 Azure 门户中输入的值。只要使用 ADAL，你的代码就会引用这些值。
+-	在快速入门项目中，打开 plist 文件 `settings.plist`。替换节中的元素值，以反映你在 Azure 门户预览中输入的值。只要使用 ADAL，你的代码就会引用这些值。
     -	`tenant` 是 Azure AD 租户的域，例如 contoso.partner.onmschina.cn
     -	`clientId` 是从门户复制的应用程序 clientId。
     -	`redirectUri` 是在门户中注册的 URL。
@@ -232,4 +233,4 @@ ObjC
 
 [AZURE.INCLUDE [active-directory-devquickstarts-additional-resources](../../includes/active-directory-devquickstarts-additional-resources.md)]
 
-<!---HONumber=Mooncake_1010_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

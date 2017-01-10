@@ -2,7 +2,7 @@
 	pageTitle="使用通知中心针对 Xamarin 应用发送 iOS 推送通知 | Azure"
 	description="在本教程中，你将了解如何使用 Azure 通知中心将推送通知发送到 Xamarin iOS 应用程序。"
 	services="notification-hubs"
-	keywords="ios 推送通知, 推送消息, 推送通知, 推送消息"
+    keywords="ios 推送通知, 推送消息, 推送通知, 推送消息"
 	documentationCenter="xamarin"
 	authors="wesmc7777"
 	manager="erikre"
@@ -15,7 +15,7 @@
 	ms.devlang="dotnet"
 	ms.topic="hero-article"
 	ms.date="06/29/2016"
-	wacn.date="11/22/2016"
+	wacn.date="01/10/2017"
 	ms.author="wesmc"/>
 
 # 使用通知中心针对 Xamarin 应用发送 iOS 推送通知
@@ -23,7 +23,7 @@
 [AZURE.INCLUDE [notification-hubs-selector-get-started](../../includes/notification-hubs-selector-get-started.md)]
 
 ##概述
-> [AZURE.IMPORTANT] 若要完成本教程，你必须有一个有效的 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个免费试用帐户。有关详细信息，请参阅 [Azure 免费试用](/pricing/free-trial/)。
+> [AZURE.IMPORTANT] 若要完成本教程，你必须有一个有效的 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个试用帐户。有关详细信息，请参阅 [Azure 试用](/pricing/1rmb-trial/)。
 
 本教程演示如何使用 Azure 通知中心将推送通知发送到 iOS 应用程序。
 你将创建一个空白 Xamarin.iOS 应用，它使用 [Apple Push Notification 服务 APNs 接收推送通知。完成后，你将能够使用通知中心将推送通知广播到运行你的应用的所有设备。NotificationHubs 应用程序示例中提供了完成的代码。
@@ -186,7 +186,7 @@
 ## 发送推送通知
 
 
-在 [Azure 门户]中通过“通知中心”页面上“故障排除”工具集中的“测试发送”功能来发送通知，可以在应用中测试推送通知的接收情况，如以下屏幕中所示。
+在 [Azure 门户预览]中通过“通知中心”页面上“故障排除”工具集中的“测试发送”功能来发送通知，可以在应用中测试推送通知的接收情况，如以下屏幕中所示。
 
 ![](./media/notification-hubs-ios-get-started/notification-hubs-test-send.png)
 
@@ -194,9 +194,9 @@
 
 在本教程中，为了保持内容的简单性，我们只会演示如何在控制台应用程序（而不是后端服务）中，使用通知中心的 .NET SDK 发送通知，以此测试你的客户端应用。建议你接下来学习[使用通知中心向用户推送通知](/documentation/articles/notification-hubs-aspnet-backend-ios-apple-apns-notification/)教程，以了解如何从 ASP.NET 后端发送通知。不过，可以使用以下方法来发送通知：
 
-* **REST 接口**：可以使用 [REST 接口](http://msdn.microsoft.com/library/windowsazure/dn223264.aspx)在任何后端平台上支持推送通知。
+- **REST 接口**：可以使用 [REST 接口](http://msdn.microsoft.com/zh-cn/library/windowsazure/dn223264.aspx)在任何后端平台上支持推送通知。
 
-* **Microsoft Azure 通知中心 .NET SDK**：在 Visual Studio 的 Nuget 包管理器中，运行 [Install-Package Microsoft.Azure.NotificationHubs](https://www.nuget.org/packages/Microsoft.Azure.NotificationHubs/)。
+* ** Azure 通知中心 .NET SDK**：在 Visual Studio 的 Nuget 包管理器中，运行 [Install-Package Microsoft.Azure.NotificationHubs](https://www.nuget.org/packages/Microsoft.Azure.NotificationHubs/)。
 
 * **Node.js**：[如何通过 Node.js 使用通知中心](/documentation/articles/notification-hubs-nodejs-push-notification-tutorial/)。
 
@@ -266,7 +266,7 @@
 
 4. 创建作业时，单击该作业名称。然后单击顶部栏上的“脚本”选项卡。
 
-5. 在你的计划程序函数中插入以下脚本。确保将占位符替换为你先前获取的通知中心名称和 DefaultFullSharedAccessSignature 的连接字符串。单击“保存”。
+5. 在你的计划程序函数中插入以下脚本。确保将占位符替换为你先前获取的通知中心名称和 *DefaultFullSharedAccessSignature* 的连接字符串。单击“保存”。
 
 		var azure = require('azure');
 		var notificationHubService = azure.createNotificationHubService('<Hubname>', '<SAS Full access >');
@@ -324,6 +324,6 @@
 
 [Azure Mobile Services Component]: http://components.xamarin.com/view/azure-mobile-services/
 [Xamarin Studio]: http://xamarin.com/download
-[Azure 门户]: https://portal.azure.cn
+[Azure 门户预览]: https://portal.azure.cn
 
-<!---HONumber=Mooncake_0815_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

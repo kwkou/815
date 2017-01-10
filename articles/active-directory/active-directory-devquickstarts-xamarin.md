@@ -14,8 +14,8 @@
 	ms.devlang="dotnet"
 	ms.topic="article"
 	ms.date="09/16/2016"
-	wacn.date="10/17/2016"
-	ms.author="dastrock"/>  
+	ms.author="dastrock"
+   	wacn.date="01/09/2017"/>  
 
 
 
@@ -86,7 +86,7 @@ PM> Install-Package Microsoft.IdentityModel.Clients.ActiveDirectory -ProjectName
 
 - 你应会发现，每个项目中添加了两个库 - ADAL 的 PCL 部分，和特定于平台的部分。
 
--	在 DirectorySearcherLib 项目中，打开 `DirectorySearcher.cs`。更改类成员值以反映你在 Azure 门户中输入的值。只要使用 ADAL，你的代码就会引用这些值。
+-	在 DirectorySearcherLib 项目中，打开 `DirectorySearcher.cs`。更改类成员值以反映你在 Azure 门户预览中输入的值。只要使用 ADAL，你的代码就会引用这些值。
     -	`tenant` 是 Azure AD 租户的域，例如 contoso.partner.onmschina.cn
     -	`clientId` 是从门户复制的应用程序 clientId。
     - `returnUri` 是你在门户中输入的 redirectUri，例如 `http://DirectorySearcher`。
@@ -96,28 +96,28 @@ PM> Install-Package Microsoft.IdentityModel.Clients.ActiveDirectory -ProjectName
 
 - 首先打开 `DirectorySearcher.cs`，然后将一个新参数添加到 `SearchByAlias(...)` 方法。`IPlatformParameters` 是上下文参数，用于封装 ADAL 需要对其执行身份验证的特定于平台的对象。
 
-C#
+	C#
 		
 		public static async Task<List<User>> SearchByAlias(string alias, IPlatformParameters parent)
 		{
 		
 
-		-	接下来，初始化 `AuthenticationContext`（ADAL 的主类）。你将在此处传递 ADAL 与 Azure AD 通信时所需的坐标。然后调用 `AcquireTokenAsync(...)`，该类将会接受 `IPlatformParameters` 对象，并调用所需的身份验证流来向应用程序返回令牌。
+- 接下来，初始化 `AuthenticationContext`（ADAL 的主类）。你将在此处传递 ADAL 与 Azure AD 通信时所需的坐标。然后调用 `AcquireTokenAsync(...)`，该类将会接受 `IPlatformParameters` 对象，并调用所需的身份验证流来向应用程序返回令牌。
 
-C#
+	C#
 
 		...
-		    AuthenticationResult authResult = null;
-		    try
-		    {
-		        AuthenticationContext authContext = new AuthenticationContext(authority);
-		        authResult = await authContext.AcquireTokenAsync(graphResourceUri, clientId, returnUri, parent);
-		    }
-		    catch (Exception ee)
-		    {
-		        results.Add(new User { error = ee.Message });
-		        return results;
-		    }
+		AuthenticationResult authResult = null;
+		try
+		{
+			AuthenticationContext authContext = new AuthenticationContext(authority);
+			authResult = await authContext.AcquireTokenAsync(graphResourceUri, clientId, returnUri, parent);
+		}
+		catch (Exception ee)
+		{
+			results.Add(new User { error = ee.Message });
+			return results;
+		}
 		...
 
 - `AcquireTokenAsync(...)` 首先会尝试返回请求资源（在本例中为 Graph API）的令牌，而不提示用户输入其凭据（通过缓存或刷新旧令牌）。仅在必要时，它才会在获取请求的令牌之前，向用户显示 Azure AD 登录页。
@@ -125,11 +125,11 @@ C#
 
 - 然后，你可以在 Authorization 标头中将访问令牌附加到 Graph API 请求：
 
-C#
+	C#
 		
-	...
-	    request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", authResult.AccessToken);
-	...
+		...
+		    request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", authResult.AccessToken);
+		...
 
 
 这就是需要针对 `DirectorySearcher` PCL 和应用程序标识相关代码执行的所有操作。余下的操作是在每个平台的视图中调用 `SearchByAlias(...)` 方法，并根据需要添加代码来正确处理 UI 生命周期。
@@ -137,51 +137,51 @@ C#
 ####Android：
 - 在 `MainActivity.cs` 中，在按钮单击处理程序中添加对 `SearchByAlias(...)` 的调用：
 
-C#
+	C#
 
-	List<User> results = await DirectorySearcher.SearchByAlias(searchTermText.Text, new PlatformParameters(this));
+		List<User> results = await DirectorySearcher.SearchByAlias(searchTermText.Text, new PlatformParameters(this));
 
 - 还需要重写 `OnActivityResult` 生命周期方法，以将任何身份验证重定向转发回到相应的方法。ADAL 在 Android 中为此提供了帮助器方法：
 
-C#
+	C#
 		
-	...
-	protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
-	{
-	    base.OnActivityResult(requestCode, resultCode, data);
-	    AuthenticationAgentContinuationHelper.SetAuthenticationAgentContinuationEventArgs(requestCode, resultCode, data);
-	}
-	...
+		...
+		protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
+		{
+		    base.OnActivityResult(requestCode, resultCode, data);
+		    AuthenticationAgentContinuationHelper.SetAuthenticationAgentContinuationEventArgs(requestCode, resultCode, data);
+		}
+		...
 
 
 ####Windows 桌面：
 - 在 `MainWindow.xaml.cs` 中，只需调用 `SearchByAlias(...)`，并在桌面的 `PlatformParameters` 对象中传递 `WindowInteropHelper`：
 
-C#
+	C#
 		
-	List<User> results = await DirectorySearcher.SearchByAlias(
-	  SearchTermText.Text,
-	  new PlatformParameters(PromptBehavior.Auto, this.Handle));
+		List<User> results = await DirectorySearcher.SearchByAlias(
+		  SearchTermText.Text,
+		  new PlatformParameters(PromptBehavior.Auto, this.Handle));
 
 
 ####iOS：
 - 在 `DirSearchClient_iOSViewController.cs` 中，iOS `PlatformParameters` 对象只会引用视图控制器：
 
-C#
+	C#
 		
-	List<User> results = await DirectorySearcher.SearchByAlias(
-	  SearchTermText.Text,
-	  new PlatformParameters(PromptBehavior.Auto, this.Handle));
+		List<User> results = await DirectorySearcher.SearchByAlias(
+		  SearchTermText.Text,
+		  new PlatformParameters(PromptBehavior.Auto, this.Handle));
 
 
 ####Windows 通用：
 - 在 Windows 通用中，打开 `MainPage.xaml.cs` 并实现 `Search` 方法，该方法会根据需要，使用共享项目中的帮助器方法来更新 UI。
 
-C#
+	C#
 
-	...
-	    List<User> results = await DirectorySearcherLib.DirectorySearcher.SearchByAlias(SearchTermText.Text, new PlatformParameters(PromptBehavior.Auto, false));
-	...
+		...
+		    List<User> results = await DirectorySearcherLib.DirectorySearcher.SearchByAlias(SearchTermText.Text, new PlatformParameters(PromptBehavior.Auto, false));
+		...
 
 
 祝贺你！ 现在，你已创建一个有效的 Xamarin 应用程序，它可以对用户进行身份验证，并使用 OAuth 2.0 在五个不同的平台上安全调用 Web API。如果你尚未这样做，可以在租户中填充一些用户。运行你的 DirectorySearcher 应用程序，并使用这些用户之一进行登录。根据用户的 UPN 搜索其他用户。
@@ -194,4 +194,4 @@ C#
 
 [AZURE.INCLUDE [active-directory-devquickstarts-additional-resources](../../includes/active-directory-devquickstarts-additional-resources.md)]
 
-<!---HONumber=Mooncake_1010_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

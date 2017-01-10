@@ -14,8 +14,8 @@
 	ms.devlang="dotnet"
 	ms.topic="article"
 	ms.date="09/16/2016"
-	wacn.date="10/11/2016"
-	ms.author="dastrock"/>  
+	ms.author="dastrock"
+	wacn.date="01/09/2017"/>  
 
 
 
@@ -45,14 +45,14 @@
 若要让应用程序获取令牌，首先需要在 Azure AD 租户中注册该应用程序，并授予它访问 Azure AD Graph API 的权限：
 
 -	登录到 Azure 管理门户
--	在左侧的导航栏中单击"Active Directory"
+-	在左侧的导航栏中单击“Active Directory”
 -	选择要在其中注册应用程序的租户。
--	单击"应用程序"选项卡，然后在底部抽屉中单击"添加"。
--	根据提示创建一个新的"本机客户端应用程序"。
-    -	应用程序的"名称"向最终用户描述你的应用程序
-    -	"重定向 URI"是 Azure AD 要用来返回令牌响应的方案与字符串组合。输入特定于应用程序的值，例如 `http://DirectorySearcher`。
--	完成注册后，AAD 将为应用程序分配唯一的客户端标识符。在后面的部分中将会用到此值，因此，请从"配置"选项卡复制此值。
-- 另外，请在"配置"选项卡中，找到"针对其他应用程序的权限"部分。对于"Azure Active Directory"应用程序，在"委托的权限"下添加"访问组织的目录"权限。这样，你的应用程序便可以在 Graph API 中查询用户。
+-	单击“应用程序”选项卡，然后在底部抽屉中单击“添加”。
+-	根据提示创建一个新的“本机客户端应用程序”。
+    -	应用程序的“名称”向最终用户描述你的应用程序
+    -	“重定向 URI”是 Azure AD 要用来返回令牌响应的方案与字符串组合。输入特定于应用程序的值，例如 `http://DirectorySearcher`。
+-	完成注册后，AAD 将为应用程序分配唯一的客户端标识符。在后面的部分中将会用到此值，因此，请从“配置”选项卡复制此值。
+- 另外，请在“配置”选项卡中，找到“针对其他应用程序的权限”部分。对于“Azure Active Directory”应用程序，在“委托的权限”下添加“访问组织的目录”权限。这样，你的应用程序便可以在 Graph API 中查询用户。
 
 ## *2.安装并配置 ADAL*
 将应用程序注册到 Azure AD 后，可以安装 ADAL 并编写标识相关的代码。为了使 ADAL 能够与 Azure AD 通信，需要为 ADAL 提供一些有关应用程序的注册信息。
@@ -62,7 +62,7 @@
 		PM> Install-Package Microsoft.IdentityModel.Clients.ActiveDirectory
 
 
--	在 DirectorySearcher 项目中，打开 `app.config`。替换 `<appSettings>` 中的元素值，以反映你在 Azure 门户中输入的值。只要使用 ADAL，你的代码就会引用这些值。
+-	在 DirectorySearcher 项目中，打开 `app.config`。替换 `<appSettings>` 中的元素值，以反映你在 Azure 门户预览中输入的值。只要使用 ADAL，你的代码就会引用这些值。
     -	`ida:Tenant` 是 Azure AD 租户的域，例如 contoso.partner.onmschina.cn
     -	`ida:ClientId` 是从门户复制的应用程序 clientId。
     -	`ida:RedirectUri` 是在门户中注册的 URL。
@@ -84,7 +84,7 @@ C#
 		}
 
 
-- 现在查找 `Search(...)` 方法，当用户在应用程序的 UI 中单击"搜索"按钮时，将调用该方法。此方法将向 Azure AD Graph API 发出 GET 请求，以查询其 UPN 以给定搜索词开头的用户。但是，若要查询 Graph API，你需要在请求的 `Authorization` 标头中包含 access\_token - 这是 ADAL 传入的位置。
+- 现在查找 `Search(...)` 方法，当用户在应用程序的 UI 中单击“搜索”按钮时，将调用该方法。此方法将向 Azure AD Graph API 发出 GET 请求，以查询其 UPN 以给定搜索词开头的用户。但是，若要查询 Graph API，你需要在请求的 `Authorization` 标头中包含 access\_token - 这是 ADAL 传入的位置。
 
 C#
 		
@@ -120,7 +120,7 @@ C#
 - 当应用程序通过调用 `AcquireTokenAsync(...)` 请求令牌时，ADAL 将尝试返回一个令牌，而不要求用户输入凭据。如果 ADAL 确定用户需要登录以获取令牌，将显示登录对话框，收集用户的凭据，并在身份验证成功后返回令牌。如果 ADAL 出于任何原因无法返回令牌，则会引发 `AdalException`。
 - 请注意，`AuthenticationResult` 对象包含 `UserInfo` 对象，后者可用于收集应用程序可能需要的信息。在 DirectorySearcher 中，`UserInfo` 用于使用用户 ID 自定义应用程序的 UI。
 
-- 当用户单击"注销"按钮时，我们希望确保 `AcquireTokenAsync(...)` 的后续调用要求用户登录。使用 ADAL 时，只需清除令牌缓存即可：
+- 当用户单击“注销”按钮时，我们希望确保 `AcquireTokenAsync(...)` 的后续调用要求用户登录。使用 ADAL 时，只需清除令牌缓存即可：
 
 C#
 		
@@ -133,7 +133,7 @@ C#
 		}
 
 
-- 但是，如果用户未单击"注销"按钮，则你需要保留用户下次运行 DirectorySearcher 时的会话。当应用程序启动时，你可以检查现有令牌的 ADAL 令牌缓存，并相应地更新 UI。在 `CheckForCachedToken()` 方法中，再次调用 `AcquireTokenAsync(...)`，不过，这一次请传入 `PromptBehavior.Never` 参数。`PromptBehavior.Never` 将告知 ADAL 不应提示用户登录；如果 ADAL 无法返回令牌，则应引发异常。
+- 但是，如果用户未单击“注销”按钮，则你需要保留用户下次运行 DirectorySearcher 时的会话。当应用程序启动时，你可以检查现有令牌的 ADAL 令牌缓存，并相应地更新 UI。在 `CheckForCachedToken()` 方法中，再次调用 `AcquireTokenAsync(...)`，不过，这一次请传入 `PromptBehavior.Never` 参数。`PromptBehavior.Never` 将告知 ADAL 不应提示用户登录；如果 ADAL 无法返回令牌，则应引发异常。
 
 C#
 		
@@ -174,4 +174,4 @@ C#
 [AZURE.INCLUDE [active-directory-devquickstarts-additional-resources](../../includes/active-directory-devquickstarts-additional-resources.md)]
  
 
-<!---HONumber=Mooncake_0926_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

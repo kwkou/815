@@ -15,12 +15,12 @@
 	ms.devlang="dotnet"
 	ms.topic="hero-article"
 	ms.date="05/31/2016"
-	wacn.date="07/12/2016"
+	wacn.date="01/09/2017"
 	ms.author="dendeli"/>
     
 # 使用 Azure 通知中心和必应空间数据发送地域隔离的推送通知
  
- > [AZURE.NOTE] 若要完成本教程，你必须有一个有效的 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个免费试用帐户。有关详细信息，请参阅 [Azure 试用](/pricing/free-trial/?WT.mc_id=A0E0E5C02)。
+ > [AZURE.NOTE] 若要完成本教程，你必须有一个有效的 Azure 帐户。如果你没有帐户，只需花费几分钟就能创建一个试用帐户。有关详细信息，请参阅 [Azure 试用](/pricing/1rmb-trial/?WT.mc_id=A0E0E5C02/)。
 
 在本教程中，你将学习如何从通用 Windows 平台应用程序，使用 Azure 通知中心和必应空间数据来传送基于位置的推送通知。
 
@@ -150,7 +150,7 @@
         }
     }
 
-若想详细了解如何在 UWP 应用中获取用户位置，请参阅官方 [MSDN 文档](https://msdn.microsoft.com/library/windows/apps/mt219698.aspx)。
+若想详细了解如何在 UWP 应用中获取用户位置，请参阅官方 [MSDN 文档](https://msdn.microsoft.com/zh-cn/library/windows/apps/mt219698.aspx)。
 
 若要检查是否确实能够获取位置，请打开主页的代码端 (`MainPage.xaml.cs`)。在 `MainPage` 构造函数中为 `Loaded` 事件创建新的事件处理程序：
 
@@ -209,7 +209,7 @@
 
 项目已配置为将推送通知发送到目标设备，因此我们只需要做两件事：换出通知中心的适当连接字符串，并添加边界标识以便仅当用户位于地域隔离区内时才发送通知。
 
-若要配置连接字符串，请打开 `Models` 文件夹中的 `Notifications.cs`。`NotificationHubClient.CreateClientFromConnectionString` 函数应该包含可在 [Azure 门户](https://portal.azure.cn)中获取的通知中心的相关信息（查看“设置”中的“访问策略”边栏选项卡）。保存更新的配置文件。
+若要配置连接字符串，请打开 `Models` 文件夹中的 `Notifications.cs`。`NotificationHubClient.CreateClientFromConnectionString` 函数应该包含可在 [Azure 门户预览](https://portal.azure.cn)中获取的通知中心的相关信息（查看“设置”中的“访问策略”边栏选项卡）。保存更新的配置文件。
 
 现在，我们需要为必应地图 API 结果创建模型。执行此操作的最简单方法是右键单击 `Models` 文件夹，然后选择“添加”>“类”。将它命名为 `GeofenceBoundary.cs`。完成后，通过我们在第一部分中所述的 API 响应复制 JSON，然后在 Visual Studio 中使用“编辑”>“选择性粘贴”>“将 JSON 粘贴为类”。
 
@@ -341,7 +341,7 @@
 
 单击“保存”。
 
-在“解决方案资源管理器”中右键单击“引用”，然后选择“管理 NuGet 包”。我们需要添加对 **Microsoft Azure 服务总线托管库**的引用 – 只需搜索 `WindowsAzure.Messaging.Managed` 并将它添加到项目即可。
+在“解决方案资源管理器”中右键单击“引用”，然后选择“管理 NuGet 包”。我们需要添加对 **Azure 服务总线托管库**的引用 - 只需搜索 `WindowsAzure.Messaging.Managed` 并将它添加到项目即可。
 
 ![](./media/notification-hubs-geofence/vs-nuget.png)
 
@@ -372,7 +372,7 @@
 
 除了上述步骤外，你可能还需要遵循几个步骤来确保解决方案可用于生产环境。
 
-首先，你可能需要确保地域隔离区是动态的。需要对必应 API 进行一些额外的处理，才能在现有数据源内上载新边界。有关该主题的详细信息，请参阅[必应空间数据服务 API 文档](https://msdn.microsoft.com/library/ff701734.aspx)。
+首先，你可能需要确保地域隔离区是动态的。需要对必应 API 进行一些额外的处理，才能在现有数据源内上载新边界。有关该主题的详细信息，请参阅[必应空间数据服务 API 文档](https://msdn.microsoft.com/zh-cn/library/ff701734.aspx)。
 
 其次，由于你要确保向正确的参与者执行传送，因此可以通过[标记](/documentation/articles/notification-hubs-tags-segment-push-message/)来锁定这些人。
 
@@ -380,4 +380,4 @@
 
 有关通知中心功能的详细信息，请访问我们的[文档门户](/documentation/services/notification-hubs/)。
 
-<!---HONumber=Mooncake_0704_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

@@ -14,8 +14,8 @@
    ms.tgt_pltfrm="na"
    ms.workload="identity"
    ms.date="08/24/2016"
-   wacn.date="10/11/2016"
-   ms.author="billmath"/>
+   ms.author="andkjell"
+   wacn.date="01/09/2017"/>
 
 # Azure AD Connect：自动升级
 此功能是随内部版本 1.1.105.0（于 2016 年 2 月发布）一起推出的。
@@ -38,7 +38,7 @@ Enabled | 自动升级已启用。
 已挂起 | 只能由系统设置。系统不再能够接收自动升级。
 已禁用 | 自动升级已禁用。
 
-可以使用 `Set-ADSyncAutoUpgrade` 在"已启用"与"已禁用"之间切换。应该只有系统才能设置"暂停"状态。
+可以使用 `Set-ADSyncAutoUpgrade` 在“已启用”与“已禁用”之间切换。应该只有系统才能设置“暂停”状态。
 
 自动升级使用 Azure AD Connect Health 作为升级基础结构。为使自动升级正常工作，请确保根据 [Office 365 URL 和 IP 地址范围](https://support.office.com/article/Office-365-URLs-and-IP-address-ranges-8548a211-3fe7-47cb-abb1-355ea5aa88a2)中所述，在代理服务器中打开 **Azure AD Connect Health** 的 URL。
 
@@ -87,11 +87,11 @@ UpgradeNotSupportedInvalidPersistedState | 安装不是快速设置或 DirSync �
 UpgradeNotSupportedMetaverseSizeExceeeded | Metaverse 中的对象超过 100,000 个。
 UpgradeNotSupportedMultiForestSetup | 你正在连接到多个林。快速安装只会连接到一个林。
 UpgradeNotSupportedNonLocalDbInstall | 你使用的不是 SQL Server Express LocalDB 数据库。
-UpgradeNotSupportedNonMsolAccount | [AD 连接器帐户](/documentation/articles/active-directory-aadconnect-accounts-permissions/)不再是默认的 MSOL\_ 帐户。
-UpgradeNotSupportedStagingModeEnabled | 服务器已设置为[过渡模式](/documentation/articles/active-directory-aadconnectsync-operations/)。
+UpgradeNotSupportedNonMsolAccount | [AD 连接器帐户](/documentation/articles/active-directory-aadconnect-accounts-permissions/#active-directory-account/)不再是默认的 MSOL\_ 帐户。
+UpgradeNotSupportedStagingModeEnabled | 服务器已设置为[过渡模式](/documentation/articles/active-directory-aadconnectsync-operations/#staging-mode/)。
 UpgradeNotSupportedUserWritebackEnabled | 你已启用[用户写回](/documentation/articles/active-directory-aadconnect-feature-preview/#user-writeback/)功能。
 
 ## 后续步骤
 了解有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect/)的详细信息。
 
-<!---HONumber=Mooncake_0926_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

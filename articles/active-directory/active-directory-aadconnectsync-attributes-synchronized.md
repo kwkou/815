@@ -14,8 +14,8 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="09/13/2016"
-	wacn.date="01/06/2017"
-	ms.author="markvi;andkjell"/>
+	ms.author="markvi;andkjell"
+	wacn.date="01/09/2017"/>
 
 
 # Azure AD Connect 同步：与 Azure Active Directory 同步的属性
@@ -26,7 +26,7 @@
 常见的问题是最少要同步的属性列表是什么。默认的（也是建议的）方法是保留默认属性，以便可以在云中构造完整的 GAL（全局地址列表），并获取 Office 365 工作负荷中的所有功能。在某些情况下，组织并不想要将某些属性同步到云中，因为这些属性包含敏感数据或 PII（个人身份信息），如以下示例中所示：  
 ![错误的属性](./media/active-directory-aadconnectsync-attributes-synchronized/badextensionattribute.png)
 
-在此情况下，请从本主题中的属性列表着手，并识别包含敏感数据或 PII 数据、因而不能同步的属性。然后在安装期间使用 [Azure AD 应用程序和属性筛选](/documentation/articles/active-directory-aadconnect-get-started-custom/)取消选择这些属性。
+在此情况下，请从本主题中的属性列表着手，并识别包含敏感数据或 PII 数据、因而不能同步的属性。然后在安装期间使用 [Azure AD 应用程序和属性筛选](/documentation/articles/active-directory-aadconnect-get-started-custom/#azure-ad-app-and-attribute-filtering/)取消选择这些属性。
 
 >[AZURE.WARNING] 取消选择属性时，应该小心，只取消选择那些绝对不能同步的属性。取消选择其他属性可能会对功能造成负面影响。
 
@@ -463,4 +463,4 @@
 
 了解有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect/)的详细信息。
 
-<!---HONumber=Mooncake_0926_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

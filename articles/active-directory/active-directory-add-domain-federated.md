@@ -15,8 +15,8 @@
 	ms.devlang="na"
 	ms.topic="get-started-article"
 	ms.date="10/04/2016"
-	wacn.date="11/21/2016"
-	ms.author="curtand;jeffsta"/>  
+	ms.author="curtand;jeffsta"
+	wacn.date="01/09/2017"/>  
 
 
 # 将自定义域名添加到 Azure Active Directory
@@ -37,7 +37,7 @@
 
 5. 选择“添加”。
 
-运行 Azure AD Connect 工具以获取 Azure AD 用来验证域的 DNS 条目。可以在向导中的“Azure AD 域”步骤内看到该 DNS 条目。[这些说明](/documentation/articles/active-directory-aadconnect-get-started-custom/)中示范了向导中该步骤的大致情形。如果你没有 Azure AD Connect 工具，可以[在此处下载](http://go.microsoft.com/fwlink/?LinkId=615771)。
+运行 Azure AD Connect 工具以获取 Azure AD 用来验证域的 DNS 条目。可以在向导中的“Azure AD 域”步骤内看到该 DNS 条目。[这些说明](/documentation/articles/active-directory-aadconnect-get-started-custom/#verify-the-azure-ad-domain-selected-for-federation/)中示范了向导中该步骤的大致情形。如果你没有 Azure AD Connect 工具，可以[在此处下载](http://go.microsoft.com/fwlink/?LinkId=615771)。
 
 ## 在域名注册机构中为域添加 DNS 条目
 
@@ -78,4 +78,4 @@
 -   [在用户登录时显示公司的品牌](/documentation/articles/active-directory-add-company-branding/)
 -   [使用 PowerShell 管理 Azure AD 中的域名](https://msdn.microsoft.com/zh-cn/library/azure/e1ef403f-3347-4409-8f46-d72dafa116e0#BKMK_ManageDomains)
 
-<!---HONumber=Mooncake_1024_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->
