@@ -1,160 +1,216 @@
 <properties
-	pageTitle="开始使用队列存储和 Visual Studio 连接服务 (ASP.NET) | Azure"
-	description="在使用 Visual Studio 连接服务连接到存储帐户后，如何开始在 Visual Studio 的 ASP.NET 项目中使用 Azure 队列存储"
-	services="storage"
-	documentationCenter=""
-	authors="TomArcher"
-	manager="douge"
-	editor=""/>
-
+    pageTitle="开始使用 Azure 队列存储和 Visual Studio 连接服务 (ASP.NET) | Azure"
+    description="在使用 Visual Studio 连接服务连接到存储帐户后，如何开始在 Visual Studio 的 ASP.NET 项目中使用 Azure 队列存储"
+    services="storage"
+    documentationcenter=""
+    author="TomArcher"
+    manager="douge"
+    editor="" />
 <tags
-	ms.service="storage"
-	ms.workload="web"
-	ms.tgt_pltfrm="vs-getting-started"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="08/15/2016"
-	wacn.date="09/12/2016"
-	ms.author="tarcher"/>
+    ms.assetid="94ca3413-5497-433f-abbe-836f83a9de72"
+    ms.service="storage"
+    ms.workload="web"
+    ms.tgt_pltfrm="vs-getting-started"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.date="12/02/2016"
+    wacn.date="01/06/2017"
+    ms.author="tarcher" />  
 
-# 开始使用 Azure 队列存储和 Visual Studio 连接服务
+
+# 开始使用 Azure 队列存储和 Visual Studio 连接服务 (ASP.NET)
 
 ## 概述
 
-本文介绍通过使用 Visual Studio 中的“添加连接服务”对话框在 ASP.NET 项目中已创建或引用 Azure 存储帐户之后，如何开始在 Visual Studio 中使用 Azure 队列存储。
+Azure 队列存储是一项存储大量非结构化数据的服务，用户可通过 HTTP 或 HTTPS 访问这些数据。一条队列消息的大小最多可为 64 KB，一个队列可以包含无数条消息，直至达到存储帐户的总容量限值。
 
-我们将向你展示如何在存储帐户中创建和访问 Azure 队列。此外，我们将展示如何执行基本的队列操作，例如添加、修改、读取和删除队列消息。示例是用 C# 代码编写的，并使用了 [Azure .NET 存储客户端库](https://msdn.microsoft.com/zh-cn/library/azure/dn261237.aspx)。有关 ASP.NET 的详细信息，请参阅 [ASP.NET](http://www.asp.net)。
+本文介绍如何以编程方式管理 Azure 队列存储实体，执行常见任务，例如创建 Azure 队列，以及添加、修改、读取和删除队列消息。
 
-Azure 队列存储是一项可存储大量消息的服务，用户可以通过经验证的呼叫，使用 HTTP 或 HTTPS 从世界任何地方访问这些消息。一条队列消息的大小可达 64 KB，一个队列中可以包含数百万条消息，直至达到存储帐户的总容量限值。
+> [AZURE.NOTE]
+> 
+> 本文的代码部分假定用户已使用连接服务连接到 Azure 存储帐户。连接服务的配置方法是：打开 Visual Studio 解决方案资源管理器，右键单击项目，然后从上下文菜单中选择“添加”->“连接服务”选项。在该处按照对话框的说明连接到所需的 Azure 存储帐户。
 
-## 使用代码访问队列
+## 创建队列
 
-若要在 ASP.NET 项目中访问队列，需要在访问 Azure 队列存储的任何 C# 源文件中包含以下项。
+以下步骤演示了如何以编程方式创建队列。在 ASP.NET MVC 应用中，该代码会置于控制器中。
 
-1. 请确保 C# 文件顶部的命名空间声明包括这些 **using** 语句。
+1. 添加以下 *using* 指令：
+   
+        using Microsoft.Azure;
+        using Microsoft.WindowsAzure.Storage;
+        using Microsoft.WindowsAzure.Storage.Queue;
 
-		using Microsoft.Framework.Configuration;
-		using Microsoft.WindowsAzure.Storage;
-		using Microsoft.WindowsAzure.Storage.Queue;
+2. 获取表示存储帐户信息的 **CloudStorageAccount** 对象。使用下面的代码获取存储连接字符串和 Azure 服务配置中的存储帐户信息。（将 *<storage-account-name>* 更改为要访问的 Azure 存储帐户的名称。）
 
-2. 获取表示存储帐户信息的 **CloudStorageAccount** 对象。使用下面的代码获取存储连接字符串和 Azure 服务配置中的存储帐户信息。
+         CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
+           CloudConfigurationManager.GetSetting("<storage-account-name>_AzureStorageConnectionString"));
 
-		 CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
-		   CloudConfigurationManager.GetSetting("<storage-account-name>_AzureStorageConnectionString"));
+3. 获取表示队列服务客户端的 **CloudQueueClient** 对象。
 
-3. 获取 **CloudQueueClient** 对象，以引用存储帐户中的队列对象。
+        CloudQueueClient queueClient = storageAccount.CreateCloudQueueClient();
 
-	    // Create the CloudQueueClient object for this storage account.
-    	CloudQueueClient queueClient = storageAccount.CreateCloudQueueClient();
+4. 获取表示所需队列名称引用的 **CloudQueue** 对象。（将 *<queue-name>* 更改为要创建的队列的名称。）
 
-4. 获取 **CloudQueue** 对象，以引用特定队列。
+        CloudQueue queue = queueClient.GetQueueReference(<queue-name>);
 
-    	// Get a reference to a queue named "messageQueue"
-	    CloudQueue messageQueue = queueClient.GetQueueReference("messageQueue");
+5. 如果队列不存在，则调用 **CloudQueue.CreateIfNotExists** 方法来创建队列。
 
+	    queue.CreateIfNotExists();
 
-**注意** 在下列示例中，在代码的前面使用上述全部代码。
-
-## 使用代码创建队列
-
-若要在代码中创建 Azure 队列，只需在上面的代码中添加对 **CreateIfNotExists** 的调用。
-
-	// Create the messageQueue if it does not exist
-	messageQueue.CreateIfNotExists();
 
 ## 向队列添加消息
 
-若要在现有队列中插入消息，请创建新的 **CloudQueueMessage** 对象，然后调用 **AddMessage** 方法。
+以下步骤演示了如何以编程方式向队列添加消息。在 ASP.NET MVC 应用中，该代码会置于控制器中。
 
-可从字符串（UTF-8 格式）或字节数组创建 **CloudQueueMessage** 对象。
+1. 添加以下 *using* 指令：
+   
+        using Microsoft.Azure;
+        using Microsoft.WindowsAzure.Storage;
+        using Microsoft.WindowsAzure.Storage.Queue;
 
-以下示例插入了消息“Hello, World”。
+2. 获取表示存储帐户信息的 **CloudStorageAccount** 对象。使用下面的代码获取存储连接字符串和 Azure 服务配置中的存储帐户信息。（将 *<storage-account-name>* 更改为要访问的 Azure 存储帐户的名称。）
 
-	// Create a message and add it to the queue.
-	CloudQueueMessage message = new CloudQueueMessage("Hello, World");
-	messageQueue.AddMessage(message);
+         CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
+           CloudConfigurationManager.GetSetting("<storage-account-name>_AzureStorageConnectionString"));
 
-## 读取队列中的消息
+3. 获取表示队列服务客户端的 **CloudQueueClient** 对象。
 
-通过调用 PeekMessage() 方法，可以查看队列前面的消息，而不必从队列中将其删除。
+        CloudQueueClient queueClient = storageAccount.CreateCloudQueueClient();
 
-	// Peek at the next message
-    CloudQueueMessage peekedMessage = messageQueue.PeekMessage();
+4. 获取表示所需队列名称引用的 **CloudQueue** 对象。（将 *<queue-name>* 更改为要向其添加消息的队列的名称。）
+
+        CloudQueue queue = queueClient.GetQueueReference(<queue-name>);
+
+5. 创建表示要添加到队列的消息的 **CloudQueueMessage** 对象。可从字符串（UTF-8 格式）或字节数组创建 **CloudQueueMessage** 对象。（将 *<queue-message>* 更改为要添加的消息。）
+
+		CloudQueueMessage message = new CloudQueueMessage(<queue-message>);
+
+6. 调用向队列添加消息的 **CloudQueue.AddMessage** 方法。
+
+    	queue.AddMessage(message);
+
+## 从队列中读取一条消息，不删除它
+
+以下步骤演示了如何以编程方式查看排队的消息（读取第一条消息，不删除它）。在 ASP.NET MVC 应用中，该代码会置于控制器中。
+
+1. 添加以下 *using* 指令：
+   
+        using Microsoft.Azure;
+        using Microsoft.WindowsAzure.Storage;
+        using Microsoft.WindowsAzure.Storage.Queue;
+
+2. 获取表示存储帐户信息的 **CloudStorageAccount** 对象。使用下面的代码获取存储连接字符串和 Azure 服务配置中的存储帐户信息。（将 *<storage-account-name>* 更改为要访问的 Azure 存储帐户的名称。）
+
+         CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
+           CloudConfigurationManager.GetSetting("<storage-account-name>_AzureStorageConnectionString"));
+
+3. 获取表示队列服务客户端的 **CloudQueueClient** 对象。
+
+        CloudQueueClient queueClient = storageAccount.CreateCloudQueueClient();
+
+4. 获取表示队列引用的 **CloudQueue** 对象。（将 *<queue-name>* 更改为要从其读取消息的队列的名称。）
+
+        CloudQueue queue = queueClient.GetQueueReference(<queue-name>);
+
+5. 调用 **CloudQueue.PeekMessage** 方法读取队列前面的消息，不从队列中将其删除。
+
+    	CloudQueueMessage message = queue.PeekMessage();
+
+6. 通过 **CloudQueueMessage.AsBytes** 或 **CloudQueueMessage.AsString** 属性访问 **CloudQueueMessage** 对象的值。
+
+		string messageAsString = message.AsString;
+		byte[] messageAsBytes = message.AsBytes;
 
 ## 读取和删除队列中的消息
 
-您的代码分两步从队列中删除消息（取消对消息的排队）。
-1. 调用 GetMessage() 以获取队列中的下一条消息。从 GetMessage() 返回的消息变得对从此队列读取消息的任何其他代码不可见。默认情况下，此消息将持续 30 秒不可见。
-2.	若要完成从队列中删除消息，请调用 **DeleteMessage**。
+以下步骤演示了如何以编程方式读取排队的消息，然后将其删除。在 ASP.NET MVC 应用中，该代码会置于控制器中。
 
-此删除消息的两步过程可确保，如果你的代码因硬件或软件故障而无法处理消息，则你的代码的其他实例可以获取相同消息并重试。以下代码将在处理消息后立即调用 **DeleteMessage**。
+1. 添加以下 *using* 指令：
+   
+        using Microsoft.Azure;
+        using Microsoft.WindowsAzure.Storage;
+        using Microsoft.WindowsAzure.Storage.Queue;
 
-	// Get the next message in the queue.
-	CloudQueueMessage retrievedMessage = messageQueue.GetMessage();
+2. 获取表示存储帐户信息的 **CloudStorageAccount** 对象。使用下面的代码获取存储连接字符串和 Azure 服务配置中的存储帐户信息。（将 *<storage-account-name>* 更改为要访问的 Azure 存储帐户的名称。）
 
-	// Process the message in less than 30 seconds
+         CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
+           CloudConfigurationManager.GetSetting("<storage-account-name>_AzureStorageConnectionString"));
 
-	// Then delete the message.
-	await messageQueue.DeleteMessage(retrievedMessage);
+3. 获取表示队列服务客户端的 **CloudQueueClient** 对象。
 
+        CloudQueueClient queueClient = storageAccount.CreateCloudQueueClient();
 
-## 使用其他选项来取消对消息的排队
+4. 获取表示队列引用的 **CloudQueue** 对象。（将 *<queue-name>* 更改为要从其读取消息的队列的名称。）
 
-你可以通过两种方式自定义队列中的消息检索。首先，你可以获取一批消息（最多 32 个）。其次，你可以设置更长或更短的不可见超时时间，从而允许你的代码使用更多或更少时间来完全处理每个消息。以下代码示例使用 **GetMessages** 方法在一次调用中获取 20 条消息。然后，它使用 **foreach** 循环处理每条消息。它还将每条消息的不可见超时时间设置为 5 分钟。请注意，5 分钟超时时间对于所有消息都是同时开始的，因此在调用 **GetMessages** 5 分钟后，尚未删除的任何消息都将再次变得可见。
+        CloudQueue queue = queueClient.GetQueueReference(<queue-name>);
 
-    // Create the queue client.
-    CloudQueueClient queueClient = storageAccount.CreateCloudQueueClient();
+5. 调用 **CloudQueue.GetMessage** 方法读取队列中的第一条消息。**CloudQueue.GetMessage** 方法可以让消息对任何其他读取消息的代码不可见 30 秒（默认），因此当用户正在处理消息时，其他代码无法修改或删除该消息。若要更改消息不可见的时间，请修改传递给 **CloudQueue.GetMessage** 方法的 **visibilityTimeout** 参数。
 
-    // Retrieve a reference to a queue.
-    CloudQueue queue = queueClient.GetQueueReference("myqueue");
+		// This message will be invisible to other code for 30 seconds.
+		CloudQueueMessage message = queue.GetMessage();     
 
-    foreach (CloudQueueMessage message in queue.GetMessages(20, TimeSpan.FromMinutes(5)))
-    {
-        // Process all messages in less than 5 minutes, deleting each message after processing.
-        queue.DeleteMessage(message);
-    }
+6. 调用从队列中删除消息的 **CloudQueueMessage.Delete** 方法。
+
+	    queue.DeleteMessage(message);
 
 ## 获取队列长度
 
-你可以获取队列中消息的估计数。使用 **FetchAttributes** 方法可请求 queueservice 检索队列属性，包括消息计数。**ApproximateMethodCount** 属性返回 **FetchAttributes** 方法检索到的最后一个值，而不会调用 queueservice。
+以下步骤演示了如何以编程方式获取队列长度（消息数）。在 ASP.NET MVC 应用中，该代码会置于控制器中。
 
-	// Fetch the queue attributes.
-	messageQueue.FetchAttributes();
+1. 添加以下 *using* 指令：
+   
+        using Microsoft.Azure;
+        using Microsoft.WindowsAzure.Storage;
+        using Microsoft.WindowsAzure.Storage.Queue;
 
-    // Retrieve the cached approximate message count.
-    int? cachedMessageCount = messageQueue.ApproximateMessageCount;
+2. 获取表示存储帐户信息的 **CloudStorageAccount** 对象。使用下面的代码获取存储连接字符串和 Azure 服务配置中的存储帐户信息。（将 *<storage-account-name>* 更改为要访问的 Azure 存储帐户的名称。）
 
-	// Display number of messages.
-	Console.WriteLine("Number of messages in queue: " + cachedMessageCount);
+         CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
+           CloudConfigurationManager.GetSetting("<storage-account-name>_AzureStorageConnectionString"));
 
-## 共同使用 Async-Await 模式和公用队列 API
+3. 获取表示队列服务客户端的 **CloudQueueClient** 对象。
 
-此示例演示如何共同使用 Async-Await 模式和公用队列 API。示例代码会调用每个给定方法的异步版本，这可以通过每个方法的 Async 后修补程序体现。使用异步方法时，async-await 模式将暂停本地执行，直到调用完成。此行为允许当前的线程执行其他工作，这有助于避免性能瓶颈并提高应用程序的整体响应能力。有关在.NET 中使用 Async-Await 模式的详细信息，请参阅 [Async 和 Await（C# 和 Visual Basic）](https://msdn.microsoft.com/zh-cn/library/hh191443.aspx)
+        CloudQueueClient queueClient = storageAccount.CreateCloudQueueClient();
 
-    // Create a message to put in the queue
-    CloudQueueMessage cloudQueueMessage = new CloudQueueMessage("My message");
+4. 获取表示队列引用的 **CloudQueue** 对象。（将 *<queue-name>* 更改为要查询其长度的队列的名称。）
 
-    // Async enqueue the message
-    await messageQueue.AddMessageAsync(cloudQueueMessage);
-    Console.WriteLine("Message added");
+        CloudQueue queue = queueClient.GetQueueReference(<queue-name>);
 
-    // Async dequeue the message
-    CloudQueueMessage retrievedMessage = await messageQueue.GetMessageAsync();
-    Console.WriteLine("Retrieved message with content '{0}'", retrievedMessage.AsString);
+5. 调用检索队列的属性（包括其长度）的 **CloudQueue.FetchAttributes** 方法。
 
-    // Async delete the message
-    await messageQueue.DeleteMessageAsync(retrievedMessage);
-    Console.WriteLine("Deleted message");
+		queue.FetchAttributes();
+
+6. 访问 **CloudQueue.ApproximateMessageCount** 属性以获取队列的长度。
+ 
+		int? nMessages = queue.ApproximateMessageCount;
 
 ## 删除队列
+以下步骤演示了如何以编程方式删除队列。
 
-若要删除队列及其包含的所有消息，请对队列对象调用 **Delete** 方法。
+1. 添加以下 *using* 指令：
+   
+        using Microsoft.Azure;
+        using Microsoft.WindowsAzure.Storage;
+        using Microsoft.WindowsAzure.Storage.Queue;
 
-    // Delete the queue.
-    messageQueue.Delete();
+2. 获取表示存储帐户信息的 **CloudStorageAccount** 对象。使用下面的代码获取存储连接字符串和 Azure 服务配置中的存储帐户信息。（将 *<storage-account-name>* 更改为要访问的 Azure 存储帐户的名称。）
+
+         CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
+           CloudConfigurationManager.GetSetting("<storage-account-name>_AzureStorageConnectionString"));
+
+3. 获取表示队列服务客户端的 **CloudQueueClient** 对象。
+
+        CloudQueueClient queueClient = storageAccount.CreateCloudQueueClient();
+
+4. 获取表示队列引用的 **CloudQueue** 对象。（将 *<queue-name>* 更改为要查询其长度的队列的名称。）
+
+        CloudQueue queue = queueClient.GetQueueReference(<queue-name>);
+
+5. 调用 **CloudQueue.Delete** 方法，删除 **CloudQueue** 对象代表的队列。
+
+	    messageQueue.Delete();
 
 ## 后续步骤
-
 [AZURE.INCLUDE [vs-storage-dotnet-queues-next-steps](../../includes/vs-storage-dotnet-queues-next-steps.md)]
 
-<!---HONumber=Mooncake_0905_2016-->
+<!---HONumber=Mooncake_0103_2017-->

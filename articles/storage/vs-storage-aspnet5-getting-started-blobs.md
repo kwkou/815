@@ -1,21 +1,22 @@
 <properties
-	pageTitle="Blob 存储和 Visual Studio 连接服务入门 (ASP.NET 5) | Azure"
-	description="在使用 Visual Studio 连接服务创建存储帐户后，如何开始在 Visual Studio ASP.NET 5 项目中使用 Azure Blob 存储"
-	services="storage"
-	documentationCenter=""
-	authors="TomArcher"
-	manager="douge"
-	editor=""/>  
-
+    pageTitle="Blob 存储和 Visual Studio 连接服务入门 (ASP.NET 5) | Azure"
+    description="在使用 Visual Studio 连接服务创建存储帐户后，如何开始在 Visual Studio ASP.NET 5 项目中使用 Azure Blob 存储"
+    services="storage"
+    documentationcenter=""
+    author="TomArcher"
+    manager="douge"
+    editor="" />
 <tags
-	ms.service="storage"
-	ms.workload="web"
-	ms.tgt_pltfrm="vs-getting-started"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="07/18/2016"
-	wacn.date="09/12/2016"
-	ms.author="tarcher"/>
+    ms.assetid="094b596a-c92c-40c4-a0f5-86407ae79672"
+    ms.service="storage"
+    ms.workload="web"
+    ms.tgt_pltfrm="vs-getting-started"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.date="12/02/2016"
+    wacn.date="01/06/2017"
+    ms.author="tarcher" />  
+
 
 # 开始使用 Azure Blob 存储和 Visual Studio 连接服务 (ASP.NET 5)
 
@@ -25,7 +26,7 @@
 
 Azure Blob 存储是一项可存储大量非结构化数据的服务，用户可在世界任何地方通过 HTTP 或 HTTPS 访问这些数据。单个 Blob 可以是任意大小。Blob 可以是图像、音频和视频文件、原始数据以及文档文件等。本文介绍通过使用 Visual Studio 中的“添加连接服务”对话框在 ASP.NET 5 项目中已创建 Azure 存储帐户之后，如何开始使用 blob 存储。
 
-正如文件位于文件夹中一样，存储 Blob 位于容器中。创建存储账号后，可以在存储账号中创建一个或多个容器。例如，在名为“Scrapbook”的存储空间中，可以在名为“images”的存储空间中创建容器，用于存储图片，还可以在名为“audio”的存储空间中创建另一个容器，用于存储音频文件。创建这些容器后，您可以向它们上载单独的 Blob 文件。有关以编程方式操作 blob 的详细信息，请参阅[通过 .NET 开始使用 Azure Blob 存储](/documentation/articles/storage-dotnet-how-to-use-blobs/)。
+正如文件位于文件夹中一样，存储 Blob 位于容器中。创建存储账号后，可以在存储账号中创建一个或多个容器。例如，在名为“Scrapbook”的存储空间中，可以在名为“images”的存储空间中创建容器，用于存储图片，还可以在名为“audio”的存储空间中创建另一个容器，用于存储音频文件。创建这些容器后，您可以向它们上载单独的 Blob 文件。有关以编程方式操作 Blob 的详细信息，请参阅[通过 .NET 开始使用 Azure Blob 存储](/documentation/articles/storage-dotnet-how-to-use-blobs/)。
 
 ##使用代码访问 blob 容器
 
@@ -156,4 +157,4 @@ Azure Blob 存储是一项可存储大量非结构化数据的服务，用户可
 
 [AZURE.INCLUDE [vs-storage-dotnet-blobs-next-steps](../../includes/vs-storage-dotnet-blobs-next-steps.md)]
 
-<!---HONumber=Mooncake_0905_2016-->
+<!---HONumber=Mooncake_0103_2017-->

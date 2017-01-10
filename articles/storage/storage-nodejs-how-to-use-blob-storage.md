@@ -3,10 +3,9 @@
     description="使用 Azure Blob 存储（对象存储）将非结构化数据存储在云中。"
     services="storage"
     documentationcenter="nodejs"
-    author="tamram"
-    manager="carmonm"
-    editor="tysonn" />  
-
+    author="mmacy"
+    manager="timlt"
+    editor="tysonn" />
 <tags
     ms.assetid="8b0df222-1ca8-4967-8248-6d6d720947b8"
     ms.service="storage"
@@ -14,9 +13,9 @@
     ms.tgt_pltfrm="na"
     ms.devlang="nodejs"
     ms.topic="article"
-    ms.date="11/18/2016"
-    wacn.date="12/05/2016"
-    ms.author="tamram" />
+    ms.date="12/08/2016"
+    wacn.date="01/06/2017"
+    ms.author="marsma" />
 
 # 如何通过 Node.js 使用 Blob 存储
 [AZURE.INCLUDE [storage-selector-blob-include](../../includes/storage-selector-blob-include.md)]
@@ -373,4 +372,4 @@ ACL 是使用一组访问策略实施的，每个策略都有一个关联的 ID�
 [Azure Storage SDK for Node API Reference]: http://azure.github.io/azure-storage-node/
  
 
-<!---HONumber=Mooncake_1128_2016-->
+<!---HONumber=Mooncake_0103_2017-->

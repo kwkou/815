@@ -3,10 +3,9 @@
     description="了解使用共享访问签名 (SAS) 委派对 Azure 存储空间资源（包括 Blob、队列、表和文件）的访问权限。"
     services="storage"
     documentationcenter=""
-    author="tamram"
-    manager="carmonm"
-    editor="tysonn" />  
-
+    author="mmacy"
+    manager="timlt"
+    editor="tysonn" />
 <tags
     ms.assetid="46fd99d7-36b3-4283-81e3-f214b29f1152"
     ms.service="storage"
@@ -14,9 +13,9 @@
     ms.tgt_pltfrm="na"
     ms.devlang="dotnet"
     ms.topic="article"
-    ms.date="10/17/2016"
-    wacn.date="12/05/2016"
-    ms.author="tamram" />
+    ms.date="12/08/2016"
+    wacn.date="01/06/2017"
+    ms.author="marsma" />
 
 # 使用共享访问签名 (SAS)
 ## 概述
@@ -138,11 +137,11 @@ IP 范围|sip=168.1.5.60-168.1.5.70|将从中接受请求的 IP 地址范围。
 
 >[AZURE.NOTE] 目前，帐户 SAS 必须是一个临时 SAS。帐户 SAS 尚不支持存储访问策略。
 
-这两种形式之间的差异对于一个关键情形而言十分重要：吊销。一个 SAS 就是一个 URL，因此，获取该 SAS 的任何人都可以使用它，而与是谁请求它以便开始的无关。如果某一 SAS 是公开发布的，则世界上的任何人都可以使用它。在发生以下四种情况之一前分发的 SAS 是有效的：
+这两种形式之间的差异对于一个关键情形而言十分重要：吊销。SAS 就是 URL，因此获取该 SAS 的任何人都可以使用它，而与谁请求它开始操作无关。如果 SAS 是公开发布的，则世界上的任何人都可以使用它。在发生以下四种情况之一前分发的 SAS 有效：
 
 1. 达到了对该 SAS 指定的到期时间。
-2. 达到了对该 SAS 引用的存储访问策略指定的到期时间（如果引用某一存储访问策略并且该存储访问策略指定一个到期时间）。这可能是因为经过了该间隔而发生，或者是因为你修改了该存储访问策略以使到期时间已经是过去时间而发生（这是用于吊销该 SAS 的一种方法）。
-3. 删除了该 SAS 引用的存储访问策略，这是用于吊销 SAS 的另一种方法。请注意，如果你使用完全相同的名称重新创建该存储访问策略，则根据与该存储访问策略相关联的权限，所有现有 SAS 标记都将再次有效（假定尚未经过该 SAS 的到期时间）。如果你想要吊销该 SAS，请确保使用不同时间（如果你使用将来的到期时间重新创建该访问策略）。
+2. 达到了对该 SAS 引用的存储访问策略指定的到期时间（如果引用存储访问策略并且该存储访问策略指定一个到期时间）。这可能是因为经过了该间隔而发生，或者是因为你修改了该存储访问策略以使到期时间已经是过去时间而发生（这是用于吊销该 SAS 的一种方法）。
+3. 删除了该 SAS 引用的存储访问策略，这是用于吊销 SAS 的另一种方法。请注意，如果你使用完全相同的名称重新创建该存储访问策略，则根据与该存储访问策略相关联的权限，所有现有 SAS 令牌都将再次有效（假定尚未经过该 SAS 的到期时间）。如果你想要吊销 SAS，请确保使用不同名称（如果你使用将来的到期时间重新创建该访问策略）。
 4. 将重新生成用于创建 SAS 的帐户密钥。请注意，这样做将导致使用该帐户密钥的所有应用程序组件身份验证失败，直到这些组件更新为使用其他有效帐户密钥或者重新生成的新帐户密钥。
 
 >[AZURE.IMPORTANT] 共享访问签名 URI 与用于创建签名的帐户密钥和关联的存储访问策略（如果有）相关联。如果未指定存储访问策略，则吊销共享访问签名的唯一方法是更改帐户密钥。
@@ -209,7 +208,7 @@ IP 范围|sip=168.1.5.60-168.1.5.70|将从中接受请求的 IP 地址范围。
 1. **始终使用 HTTPS** 创建 SAS 或分发 SAS。如果某一 SAS 通过 HTTP 传递并且被截取，则执行中间人攻击的攻击者将能够读取 SAS、然后使用它，就像目标用户可能具有一样，这可能会暴露敏感数据或者使恶意用户能够损坏数据。
 2. **尽可能参照存储访问策略。** 存储访问策略使你可以选择撤消权限而不必重新生成存储帐户密钥。将针对 SAS 的到期时间设置为非常长的时间（或者无限远），并且确保定期对其进行更新以便将到期时间移到将来的更远时间。
 3. **对临时 SAS 使用近期的到期时间。** 这样，即使某一 SAS 不知不觉地泄露，它也只是短期有效。如果你无法参照某一存储访问策略，该行为尤其重要。该行为还通过限制可用于上载到它的时间，帮助限制可以写入 Blob 的数据量。
-4. **如果需要，让客户端自动续订 SAS。** 客户端应在预期到期时间之前很久就续订 SAS，这样，即使提供 SAS 的服务不可用，客户端也有时间重试。如果你的 SAS 旨在用于少量即时的、短期操作，这些操作应该在给定的到期时间内完成，则上述做法可能是不必要的，因为不应续订 SAS。但是，如果你的客户端定期通过 SAS 发出请求，则有效期可能就会起作用。需要考虑的主要方面就是在以下两者间进行权衡：要短期的 SAS 的需要（如上所述）以及确保客户端尽早续订以免在成功续订前因 SAS 到期而中断。
+4. **如果需要，让客户端自动续订 SAS。** 客户端应在到期时间之前很久就续订 SAS，这样，即使提供 SAS 的服务不可用，客户端也有时间重试。如果 SAS 旨在用于少量即时的短期操作，这些操作应在到期时间内完成，则上述做法可能是不必要的，因为不应续订 SAS。但是，如果你的客户端定期通过 SAS 发出请求，则有效期可能就会起作用。需要考虑的主要方面就是在以下两者间进行权衡：要短期的 SAS 的需要（如上所述）以及确保客户端尽早续订以免在成功续订前因 SAS 到期而中断。
 5. **要注意 SAS 开始时间。** 如果你将 SAS 的开始时间设置为“现在”，则由于时钟偏移（根据不同计算机，当前时间中的差异），在前几分钟将会暂时观察到失败。通常，将开始时间设置为至少 15 分钟前，或者根本不设置，这会使它在所有情况下都立即生效。同样原则也适用于到期时间 – 请记住，对于任何请求，在任一方向你可能会观察到最多 15 分钟的时钟偏移。请注意，对于使用 2012-02-12 之前的 REST 版本的客户端，对于未参照某一存储访问策略的 SAS 的最大持续时间是 1 小时，指定超过 1 小时的更长期间的任何策略都将失败。
 6. **对要访问的资源要具体。** 一个典型的安全性最佳实践是向用户提供所需最小权限。如果某一用户仅需要对单个实体的读取访问权限，则向该用户授予对该单个实体的读取访问权限，而不要授予针对所有实体的读取/写入/删除访问权限。这也有助于化解泄露 SAS 的威胁，因为在攻击者手中掌握的 SAS 的权限较为有限。
 7. **了解对任何使用都将向你的帐户收费，包括使用 SAS 所做的工作。** 如果向你提供了针对某一 Blob 的写访问权限，用户可以选择上载 200GB Blob。如果你还向用户提供了对 Blob 的读访问权限，他们可能会选择下载 Blob 10 次，对你产生 2TB 的传出费用。此外，提供受限权限，帮助降低恶意用户的潜在威胁。使用短期 SAS 以便减少这一威胁（但要注意结束时间上的时钟偏移）。
@@ -289,7 +288,6 @@ IP 范围|sip=168.1.5.60-168.1.5.70|将从中接受请求的 IP 地址范围。
     }
 
 ### 示例：创建存储访问策略
-
 下面的代码在容器上创建存储访问策略。可以使用访问策略指定对容器或其 Blob 上的服务 SAS 的约束。
 
     private static async Task CreateSharedAccessPolicyAsync(CloudBlobContainer container, string policyName)
@@ -314,7 +312,6 @@ IP 范围|sip=168.1.5.60-168.1.5.70|将从中接受请求的 IP 地址范围。
     }
 
 ### 示例：在容器上创建服务 SAS
-
 下面的代码在容器上创建 SAS。如果提供现有存储访问策略的名称，则该策略与 SAS 关联。如果未提供存储访问策略，则代码会在容器上创建一个临时 SAS。
 
     private static string GetContainerSasUri(CloudBlobContainer container, string storedPolicyName = null)
@@ -357,7 +354,6 @@ IP 范围|sip=168.1.5.60-168.1.5.70|将从中接受请求的 IP 地址范围。
 
 
 ### 示例：在 Blob 上创建服务 SAS
-
 下面的代码在 Blob 上创建 SAS。如果提供现有存储访问策略的名称，则该策略与 SAS 关联。如果未提供存储访问策略，则代码会在 Blob 上创建一个临时 SAS。
 
     private static string GetBlobSasUri(CloudBlobContainer container, string blobName, string policyName = null)
@@ -411,10 +407,11 @@ IP 范围|sip=168.1.5.60-168.1.5.70|将从中接受请求的 IP 地址范围。
 - [管理对容器和 blob 的匿名读取访问](/documentation/articles/storage-manage-access-to-resources/)
 - [使用共享的访问签名委托访问](http://msdn.microsoft.com/zh-cn/library/azure/ee395415.aspx)
 - [介绍表和队列 SAS](http://blogs.msdn.com/b/windowsazurestorage/archive/2012/06/12/introducing-table-sas-shared-access-signature-queue-sas-and-update-to-blob-sas.aspx)
+
 [sas-storage-fe-proxy-service]: ./media/storage-dotnet-shared-access-signature-part-1/sas-storage-fe-proxy-service.png
 [sas-storage-provider-service]: ./media/storage-dotnet-shared-access-signature-part-1/sas-storage-provider-service.png
 [sas-storage-uri]: ./media/storage-dotnet-shared-access-signature-part-1/sas-storage-uri.png
 
  
 
-<!---HONumber=Mooncake_1128_2016-->
+<!---HONumber=Mooncake_0103_2017-->

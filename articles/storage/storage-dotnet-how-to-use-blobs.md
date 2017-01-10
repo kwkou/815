@@ -3,10 +3,9 @@
     description="使用 Azure Blob 存储（对象存储）将非结构化数据存储在云中。"
     services="storage"
     documentationcenter=".net"
-    author="tamram"
-    manager="carmonm"
-    editor="tysonn" />  
-
+    author="mmacy"
+    manager="timlt"
+    editor="tysonn" />
 <tags
     ms.assetid="d18a8fc8-97cb-4d37-a408-a6f8107ea8b3"
     ms.service="storage"
@@ -14,12 +13,11 @@
     ms.tgt_pltfrm="na"
     ms.devlang="dotnet"
     ms.topic="hero-article"
-    ms.date="11/17/2016"
-    wacn.date="12/05/2016"
-    ms.author="tamram" />
+    ms.date="12/08/2016"
+    wacn.date="01/06/2017"
+    ms.author="marsma" />
 
 # 通过 .NET 开始使用 Azure Blob 存储
-
 [AZURE.INCLUDE [storage-selector-blob-include](../../includes/storage-selector-blob-include.md)]
 
 ## 概述
@@ -88,7 +86,7 @@ Internet 中的所有人都可以查看公共容器中的 blob，但是，仅在
 ## 将 Blob 上载到容器中
 Azure Blob 存储支持块 Blob 和页 Blob。大多数情况下，推荐使用块 Blob。
 
-若要将文件上载到块 Blob，请获取容器引用，并使用它获取块 Blob 引用。获取 Blob 引用后，可以通过调用 **UploadFromStream** 方法，将任何数据流上载到该 Blob。如果之前不存在 Blob，此操作将创建一个；如果存在 Blob，此操作将覆盖它。
+若要将文件上载到块 Blob，请获取容器引用，并使用它获取块 Blob 引用。获取 Blob 引用后，可以通过调用 **UploadFromStream** 方法，将任何数据流上传到该 Blob。如果之前不存在 Blob，此操作将创建一个；如果存在 Blob，此操作将覆盖它。
 
 下面的示例演示了如何将 Blob 上载到容器中，并假定已创建容器。
 
@@ -351,7 +349,7 @@ Azure Blob 存储支持块 Blob 和页 Blob。大多数情况下，推荐使用�
 ### 加密 Blob 数据
 Azure 存储空间支持在客户端和服务器上加密 Blob 数据：
 
-- **客户端加密**：用于 .NET 的存储客户端库支持在上传到 Azure 存储空间之前加密客户端应用程序中的数据，以及在下载到客户端时解密数据。此库还支持与 Azure 密钥保管库集成，以便管理存储帐户密钥。有关详细信息，请参阅 [Azure 存储空间的使用 .NET 客户端加密](/documentation/articles/storage-client-side-encryption/)。另请参阅[教程：在 Azure 存储空间中使用 Azure 密钥保管库加密和解密 Blob](/documentation/articles/storage-encrypt-decrypt-blobs-key-vault/)。
+- **客户端加密**：用于 .NET 的存储客户端库支持在上传到 Azure 存储空间之前加密客户端应用程序中的数据，以及在下载到客户端时解密数据。此库还支持与 Azure 密钥保管库集成，以便管理存储帐户密钥。有关详细信息，请参阅 [Azure 存储空间的使用 .NET 客户端加密](/documentation/articles/storage-client-side-encryption/)。另请参阅[教程：在 Azure 存储空间中使用 Azure 密钥保管库加密和解密 blob](/documentation/articles/storage-encrypt-decrypt-blobs-key-vault/)。
 - **服务器端加密**：Azure 存储空间现在支持服务器端加密。请参阅[静态数据的 Azure 存储空间服务加密（预览版）](/documentation/articles/storage-service-encryption/)。
 
 ## 后续步骤
@@ -380,4 +378,4 @@ Azure 存储空间支持在客户端和服务器上加密 Blob 数据：
   [REST API 参考]: http://msdn.microsoft.com/zh-cn/library/azure/dd179355
  
 
-<!---HONumber=Mooncake_1128_2016-->
+<!---HONumber=Mooncake_0103_2017-->

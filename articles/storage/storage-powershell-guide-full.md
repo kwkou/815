@@ -1,21 +1,20 @@
 <properties
-	pageTitle="对 Azure 存储空间使用 Azure PowerShell | Azure"
-	description="了解如何使用 Azure 存储的 Azure PowerShell cmdlet 来创建和管理存储帐户；使用 Blob、表、队列和文件；配置和查询存储分析并创建共享访问签名。"
-	services="storage"
-	documentationCenter="na"
-	authors="robinsh"
-	manager="carmonm"/>  
-
-
+    pageTitle="对 Azure 存储使用 Azure PowerShell | Azure"
+    description="了解如何使用 Azure 存储的 Azure PowerShell cmdlet 来创建和管理存储帐户；使用 Blob、表、队列和文件；配置和查询存储分析并创建共享访问签名。"
+    services="storage"
+    documentationcenter="na"
+    author="robinsh"
+    manager="timlt" />
 <tags
-	ms.service="storage"
-	ms.workload="storage"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="08/03/2016"
-	wacn.date="12/12/2016"
-	ms.author="micurd;robinsh"/>
+    ms.assetid="f4704f58-abc6-4f89-8b6d-1b1659746f5a"
+    ms.service="storage"
+    ms.workload="storage"
+    ms.tgt_pltfrm="na"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.date="12/06/2016"
+    wacn.date="01/06/2017"
+    ms.author="robinsh" />
 
 # 对 Azure 存储 使用 Azure PowerShell
 
@@ -23,9 +22,9 @@
 
 Azure PowerShell 是一个模块，提供用于通过 Windows PowerShell 管理 Azure 的 cmdlet。它是一种基于任务的命令行 shell 和脚本语言，专门用于系统管理。使用 PowerShell，可以轻松控制和自动化 Azure 服务与应用程序的管理。例如，可以使用这些 cmdlet 执行在 [Azure 门户预览](https://portal.azure.cn)中可以执行的相同任务。
 
-在本指南中，将探讨如何使用[Azure 存储服务 Cmdlet](https://msdn.microsoft.com/zh-cn/library/azure/mt269418.aspx)，以通过 Azure 存储执行各种开发和管理任务。
+在本指南中，将探讨如何使用[Azure 存储 Cmdlet](https://msdn.microsoft.com/zh-cn/library/azure/mt269418.aspx)，以通过 Azure 存储执行各种开发和管理任务。
 
-本指南假设用户具有使用 [Azure 存储服务](/documentation/services/storage/)和 [Windows PowerShell](http://technet.microsoft.com/zh-cn/library/bb978526.aspx) 的经验。本指南提供了大量的脚本，用于演示 PowerShell 与 Azure 存储的用法。在运行每个脚本之前，应该根据配置更新脚本变量。
+本指南假设用户具有使用 [Azure 存储](/documentation/services/storage/)和 [Windows PowerShell](http://technet.microsoft.com/zh-cn/library/bb978526.aspx) 的经验。本指南提供了大量的脚本，用于演示 PowerShell 与 Azure 存储的用法。在运行每个脚本之前，应该根据配置更新脚本变量。
 
 本指南的第一部分提供 Azure 存储和 PowerShell 的概览。有关详细信息和说明，请先了解[对 Azure 存储使用 Azure PowerShell 的先决条件](#prerequisites-for-using-azure-powershell-with-azure-storage)。
 
@@ -101,7 +100,7 @@ Azure PowerShell 是一个模块，提供用于通过 Windows PowerShell 管理 
 
 6.	现在，需要基于配置设置更新脚本变量。必须根据自己的订阅更新 **$SubscriptionName** 变量。可以保留脚本中指定的其他变量，或根据需要更新。
 
-	- **$SubscriptionName：**必须根据自己的订阅更新此变量。请按照以下三种方法之一查找订阅的名称：
+	- **$SubscriptionName：** 必须根据自己的订阅更新此变量。请按照以下三种方法之一查找订阅的名称：
 
 		a.在“Windows PowerShell ISE”中，单击“文件”>“新建”以创建新的脚本文件。将以下脚本复制到新脚本文件，然后单击“调试”>“运行”。以下脚本会先请求用户提供 Azure 帐户凭据以将用户的 Azure 帐户添加到本地 PowerShell 环境，然后显示已连接到本地 PowerShell 会话的所有订阅。记下在学习本教程时要使用的订阅名称：
 		
@@ -110,11 +109,11 @@ Azure PowerShell 是一个模块，提供用于通过 Windows PowerShell 管理 
 
 		b.若要在 [Azure 门户预览](https://portal.azure.cn)中找到并复制订阅名称，请在左侧“中心”菜单中单击“订阅”。复制在运行本指南中的脚本时要使用的订阅名称。
 
-		![Azure 门户][Image2]
+     		![Azure portal](./media/storage-powershell-guide-full/Subscription_Previewportal.png)
 
 		c.若要在 [Azure 经典管理门户](https://manage.windowsazure.cn/)中找到并复制订阅名称，请向下滚动并单击门户左侧的“设置”。单击“订阅”查看订阅列表。复制在运行本指南中指定的脚本时要使用的订阅名称。
 
-		![Azure 经典门户][Image1]
+     		![Azure Classic Portal](./media/storage-powershell-guide-full/Subscription_currentportal.png)
 
 	- **$StorageAccountName：**使用脚本中给定的名称，或输入存储帐户的新名称。**重要提示：**在 Azure 中，存储帐户的名称必须是唯一的。它还必须为小写！
 
@@ -130,7 +129,7 @@ Azure PowerShell 是一个模块，提供用于通过 Windows PowerShell 管理 
 
 运行脚本后，应会创建包含已下载图像文件的本地目标文件夹。以下屏幕截图显示了示例输出：
 
-![下载 Blob][Image3]
+![下载 Blob](./media/storage-powershell-guide-full/Blobdownload.png)
 
 
 > [AZURE.NOTE] “在 5 分钟内开始使用 Azure 存储和 PowerShell”部分提供了有关如何对 Azure 存储使用 Azure PowerShell 的简介。有关详细信息和说明，建议阅读以下部分。
@@ -143,6 +142,8 @@ Azure PowerShell 是一个模块，提供用于通过 Windows PowerShell 管理 
 可以在标准的 Windows PowerShell 控制台或 Windows PowerShell 集成脚本环境 (ISE) 中运行 cmdlet。例如，若要打开 **Windows PowerShell ISE**，请转到“开始”菜单，键入“管理工具”，然后单击以运行它。在“管理工具”窗口中，右键单击“Windows PowerShell ISE”，然后单击“以管理员身份运行”。
 
 ## 如何管理 Azure 中的存储帐户
+
+让我们看看如何在 Azure 中使用 PowerShell 管理存储帐户
 
 ### 如何设置默认的 Azure 订阅
 若要使用 Azure PowerShell 管理 Azure 存储，需要通过 Azure Active Directory 身份验证或基于证书的身份验证在 Azure 中对客户端环境进行身份验证。有关详细信息，请参阅[如何安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/)教程。本指南使用 Azure Active Directory 身份验证。
@@ -226,7 +227,7 @@ Azure 存储上下文是 PowerShell 中用于封装存储凭据的对象。运�
     	$sasToken = New-AzureStorageContainerSASToken -Container abc -Permission rl
     	$Ctx = New-AzureStorageContext -Environment AzureChinaCloud -StorageAccountName $StorageAccountName -SasToken $sasToken
 
-	有关详细信息，请参阅 [New-AzureStorageContainerSASToken](http://msdn.microsoft.com/zh-cn/library/azure/dn806416.aspx) 和[共享访问签名，第 1 部分：了解 SAS 模型](/documentation/articles/storage-dotnet-shared-access-signature-part-1/)。
+	有关详细信息，请参阅 [New-AzureStorageContainerSASToken](http://msdn.microsoft.com/zh-cn/library/azure/dn806416.aspx) 和[使用共享访问签名 (SAS)](/documentation/articles/storage-dotnet-shared-access-signature-part-1/)。
 
 - 在某些情况下，可能想要在创建新的存储上下文时指定服务终结点。如果已将存储帐户的自定义域名注册到 Blob 服务，或者想要使用共享访问签名来访问存储资源，则可能需要进行这种指定。在连接字符串中设置服务终结点，并使用它来创建新的存储上下文，如下所示：
 
@@ -393,12 +394,12 @@ Azure 允许创建 Blob 的快照。快照是在某一时间点拍摄的只读�
 在已了解了如何使用 Azure PowerShell 管理 Azure blob 和 blob 快照后，可转到下一节，了解如何管理表、队列和文件。
 
 ## 如何管理 Azure 表和表实体
-Azure 表存储服务是一种 NoSQL 数据存储，可用于存储和查询大量的结构化非关系型数据。该服务的主要组件包括表、实体和属性。表是实体的集合。实体是一组属性。每个实体最多可以有 252 个属性（都是一些名称-值对）。本部分假设你已熟悉 Azure 表存储服务的概念。有关详细信息，请参阅[了解表服务数据模型](http://msdn.microsoft.com/zh-cn/library/azure/dd179338.aspx)和[通过 .NET 开始使用 Azure 表存储](/documentation/articles/storage-dotnet-how-to-use-tables/)。
+Azure 表存储服务是一种 NoSQL 数据存储，可用于存储和查询大量的结构化非关系型数据。该服务的主要组件包括表、实体和属性。表是实体的集合。实体是一组属性。每个实体最多可以有 252 个属性（都是一些名称-值对）。本部分假设用户已熟悉 Azure 表存储服务的概念。有关详细信息，请参阅[了解表服务数据模型](http://msdn.microsoft.com/zh-cn/library/azure/dd179338.aspx)和[通过 .NET 开始使用 Azure 表存储](/documentation/articles/storage-dotnet-how-to-use-tables/)。
 
-在以下小节中，你将了解如何使用 Azure PowerShell 管理 Azure 表存储服务。涉及的情景包括“创建”、“删除”和“检索”表，以及“添加”、“查询”和“删除”表实体。
+以下小节中将介绍如何使用 Azure PowerShell 管理 Azure 表存储服务。涉及的情景包括“创建”、“删除”和“检索”**表**，以及“添加”、“查询”和“删除”表实体。
 
 ### 如何创建表
-每个表必须驻留在 Azure 存储帐户中。以下示例演示如何在 Azure 存储空间中创建一个表。该示例首先使用存储帐户上下文（包括存储帐户名称及其访问密钥）与 Azure 存储空间建立连接。接下来，它将使用 [New-AzureStorageTable](http://msdn.microsoft.com/zh-cn/library/azure/dn806417.aspx) cmdlet 在 Azure 存储空间中创建表。
+每个表必须驻留在 Azure 存储帐户中。以下示例演示如何在 Azure 存储中创建一个表。该示例首先使用存储帐户上下文（包括存储帐户名称及其访问密钥）与 Azure 存储建立连接。接下来，它将使用 [New-AzureStorageTable](http://msdn.microsoft.com/zh-cn/library/azure/dn806417.aspx) cmdlet 在 Azure 存储中创建表。
 
     #Define the storage account and context.
     $StorageAccountName = "yourstorageaccount"
@@ -410,7 +411,7 @@ Azure 表存储服务是一种 NoSQL 数据存储，可用于存储和查询大�
     New-AzureStorageTable –Name $tabName –Context $Ctx
 
 ### 如何检索表
-你可以查询和检索存储帐户中的一个或所有表。以下示例演示如何使用 [Get-AzureStorageTable](http://msdn.microsoft.com/zh-cn/library/azure/dn806411.aspx) cmdlet 检索给定的表。
+可以查询和检索存储帐户中的一个或所有表。以下示例演示如何使用 [Get-AzureStorageTable](http://msdn.microsoft.com/zh-cn/library/azure/dn806411.aspx) cmdlet 检索给定的表。
 
     #Retrieve a table.
     $tabName = "yourtablename"
@@ -616,7 +617,7 @@ Azure 文件存储使用标准 SMB 协议为应用程序提供共享存储。Azu
 有关 Azure 文件存储的详细信息，请参阅[在 Windows 上开始使用 Azure 文件存储](/documentation/articles/storage-dotnet-how-to-use-files/)和[文件服务 REST API](http://msdn.microsoft.com/zh-cn/library/azure/dn167006.aspx)。
 
 ## 如何设置和查询存储分析
-可使用 [Azure 存储分析](/documentation/articles/storage-analytics/)从 Azure 存储帐户收集度量值，并记录与发送到存储帐户的请求有关的数据。可以使用存储度量值监视存储帐户的运行状况，并使用存储日志记录诊断和解决与存储帐户有关的问题。对于存储服务，默认情况下不启用存储度量值。可以使用 Azure 门户预览或 Windows PowerShell 启用监视，也可以使用存储客户端库以编程方式启用监视。存储日志记录在服务器端执行，可用于在存储帐户中记录成功和失败请求的相关详细信息。使用这些日志，可以查看针对表、队列和 Blob 的读取、写入和删除操作的详细信息，以及请求失败的原因。
+可使用 [Azure 存储分析](/documentation/articles/storage-analytics/)从 Azure 存储帐户收集度量值，并记录与发送到存储帐户的请求有关的数据。可以使用存储度量值监视存储帐户的运行状况，并使用存储日志记录诊断和解决与存储帐户有关的问题。对于存储服务，默认情况下不启用存储指标。可以使用 Azure 门户预览或 Windows PowerShell 启用监视，也可以使用存储客户端库以编程方式启用监视。存储日志记录在服务器端执行，可用于在存储帐户中记录成功和失败请求的相关详细信息。使用这些日志，可以查看针对表、队列和 Blob 的读取、写入和删除操作的详细信息，以及请求失败的原因。
 
 若要了解如何使用 PowerShell 启用和查看存储度量值数据，请参阅[如何使用 PowerShell 启用存储度量值](http://msdn.microsoft.com/zh-cn/library/azure/dn782843.aspx#HowtoenableStorageMetricsusingPowerShell)。
 
@@ -645,7 +646,7 @@ Azure 文件存储使用标准 SMB 协议为应用程序提供共享存储。Azu
     New-AzureStorageTableStoredAccessPolicy -Name $tableName -Policy $policy -Permission "rd" -StartTime "2015-01-01" -ExpiryTime "2016-01-01" -Context $Ctx
     New-AzureStorageTableSASToken -Name $tableName -Policy $policy -Context $Ctx
 
-### 如何创建临时（不可吊销的）共享访问签名令牌
+### 如何创建临时（不可吊销）共享访问签名令牌
 使用 [New-AzureStorageTableSASToken](http://msdn.microsoft.com/zh-cn/library/azure/dn806400.aspx) cmdlet 为 Azure 存储表创建新的临时（不可吊销的）共享访问签名令牌：
 
     New-AzureStorageTableSASToken -Name $tableName -Permission "rqud" -StartTime "2015-01-01" -ExpiryTime "2015-02-01" -Context $Ctx
@@ -738,4 +739,4 @@ Azure 环境的部署独立于 Azure，例如[中国世纪互联运营的 AzureC
 [如何在美国政府部门和 Azure 中国区使用 Azure 存储空间]: #gov
 [后续步骤]: #next
 
-<!---HONumber=Mooncake_Quality_Review_1118_2016-->
+<!---HONumber=Mooncake_0103_2017-->

@@ -1,21 +1,22 @@
 <properties
-	pageTitle="Blob 存储和 Visual Studio 连接服务（云服务）入门 | Azure"
-	description="在使用 Visual Studio 连接服务连接到存储帐户后，如何开始在 Visual Studio 的云服务项目中使用 Azure Blob 存储"
-	services="storage"
-	documentationCenter=""
-	authors="TomArcher"
-	manager="douge"
-	editor=""/>
-
+    pageTitle="Blob 存储和 Visual Studio 连接服务（云服务）入门 | Azure"
+    description="在使用 Visual Studio 连接服务连接到存储帐户后，如何开始在 Visual Studio 的云服务项目中使用 Azure Blob 存储"
+    services="storage"
+    documentationcenter=""
+    author="TomArcher"
+    manager="douge"
+    editor="" />
 <tags
-	ms.service="storage"
-	ms.workload="web"
-	ms.tgt_pltfrm="vs-getting-started"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="07/18/2016"
-	wacn.date="09/12/2016"
-	ms.author="tarcher"/>
+    ms.assetid="1144a958-f75a-4466-bb21-320b7ae8f304"
+    ms.service="storage"
+    ms.workload="web"
+    ms.tgt_pltfrm="vs-getting-started"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.date="12/02/2016"
+    wacn.date="01/06/2017"
+    ms.author="tarcher" />  
+
 
 # 开始使用 Azure Blob 存储和 Visual Studio 连接服务（云服务项目）
 
@@ -27,7 +28,7 @@ Azure Blob 存储是一项可存储大量非结构化数据的服务，用户可
 
 正如文件位于文件夹中一样，存储 Blob 位于容器中。创建存储空间后，可以在存储空间中创建一个或多个容器。例如，在名为“Scrapbook”的存储空间中，可以在名为“images”的存储空间中创建容器，用于存储图片，还可以在名为“audio”的存储空间中创建另一个容器，用于存储音频文件。创建这些容器后，您可以向它们上载单独的 Blob 文件。
 
-- 有关以编程方式操作 blob 的详细信息，请参阅[通过 .NET 开始使用 Azure Blob 存储](/documentation/articles/storage-dotnet-how-to-use-blobs/)。
+- 有关以编程方式操作 Blob 的详细信息，请参阅[通过 .NET 开始使用 Azure Blob 存储](/documentation/articles/storage-dotnet-how-to-use-blobs/)。
 - 有关 Azure 存储空间的常规信息，请参阅[存储空间文档](/documentation/services/storage/)。
 - 有关 Azure 云服务的常规信息，请参阅[云服务文档](/documentation/services/cloud-services/)。
 - 有关对 ASP.NET 应用程序进行编程的详细信息，请参阅 [ASP.NET](http://www.asp.net)。
@@ -59,7 +60,7 @@ Azure Blob 存储是一项可存储大量非结构化数据的服务，用户可
         // Get a reference to a container named “mycontainer.”
         CloudBlobContainer container = blobClient.GetContainerReference("mycontainer");
 
-> [AZURE.NOTE]在接下来的部分中，将在代码的前面使用先前过程中显示的全部代码。
+> [AZURE.NOTE] 在接下来的部分中，将在代码的前面使用先前过程中显示的全部代码。
 
 ## 使用代码创建容器
 
@@ -241,4 +242,4 @@ Azure 存储支持块 Blob 和页 Blob。大多数情况下，推荐使用块 Bl
 
 [AZURE.INCLUDE [vs-storage-dotnet-blobs-next-steps](../../includes/vs-storage-dotnet-blobs-next-steps.md)]
 
-<!---HONumber=Mooncake_0905_2016-->
+<!---HONumber=Mooncake_0103_2017-->

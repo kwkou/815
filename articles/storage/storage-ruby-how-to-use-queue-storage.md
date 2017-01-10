@@ -4,9 +4,8 @@
     services="storage"
     documentationcenter="ruby"
     author="robinsh"
-    manager="carmonm"
-    editor="" />  
-
+    manager="timlt"
+    editor="tysonn" />
 <tags
     ms.assetid="59c2d81b-db9c-46ee-ade2-2f0caae6b1e6"
     ms.service="storage"
@@ -14,8 +13,8 @@
     ms.tgt_pltfrm="na"
     ms.devlang="ruby"
     ms.topic="article"
-    ms.date="10/18/2016"
-    wacn.date="12/05/2016"
+    ms.date="12/08/2016"
+    wacn.date="01/06/2017"
     ms.author="robinsh" />  
 
 
@@ -94,7 +93,7 @@ Azure 模块将读取环境变量 **AZURE\_STORAGE\_ACCOUNT** 和 **AZURE\_STORA
 ## 如何：取消对下一条消息的排队
 可通过两个步骤从队列中删除消息。
 
-1. 在调用 **list_messages()** 时，默认情况下会获取队列中的下一条消息。也可以指定要获取的消息数。从 **list_messages()** 返回的消息变得对从此队列读取消息的任何其他代码不可见。你将传递以秒为单位的可见性超时值作为参数。
+1. 在调用 **list\_messages()** 时，默认情况下会获取队列中的下一条消息。也可以指定要获取的消息数。从 **list\_messages()** 返回的消息变得对从此队列读取消息的任何其他代码不可见。以参数形式传入可见性超时秒数。
 2. 若要从队列中删除消息，还必须调用 **delete\_message()**。
 
 此删除消息的两步过程可确保当代码因硬件或软件故障而无法处理消息时，其他代码实例可以获取同一消息并重试。代码处理消息后会立即调用 **delete\_message()**。
@@ -145,4 +144,4 @@ Azure 模块将读取环境变量 **AZURE\_STORAGE\_ACCOUNT** 和 **AZURE\_STORA
 有关本文中讨论的 Azure 队列服务与[如何使用服务总线队列](/documentation/articles/service-bus-ruby-how-to-use-queues/)一文中讨论的 Azure 服务总线队列的比较，请参阅 [Azure 队列和服务总线队列 - 比较与对照](/documentation/articles/service-bus-azure-and-service-bus-queues-compared-contrasted/)
  
 
-<!---HONumber=Mooncake_1128_2016-->
+<!---HONumber=Mooncake_0103_2017-->

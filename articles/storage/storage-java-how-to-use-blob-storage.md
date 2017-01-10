@@ -3,10 +3,9 @@
     description="使用 Azure Blob 存储（对象存储）将非结构化数据存储在云中。"
     services="storage"
     documentationcenter="java"
-    author="tamram"
-    manager="carmonm"
-    editor="tysonn" />  
-
+    author="mmacy"
+    manager="timlt"
+    editor="tysonn" />
 <tags
     ms.assetid="2e223b38-92de-4c2f-9254-346374545d32"
     ms.service="storage"
@@ -14,9 +13,9 @@
     ms.tgt_pltfrm="na"
     ms.devlang="java"
     ms.topic="article"
-    ms.date="11/17/2016"
-    wacn.date="12/05/2016"
-    ms.author="tamram" />
+    ms.date="12/08/2016"
+    wacn.date="01/06/2017"
+    ms.author="marsma" />
 
 # 如何通过 Java 使用 Blob 存储
 [AZURE.INCLUDE [storage-selector-blob-include](../../includes/storage-selector-blob-include.md)]
@@ -225,7 +224,6 @@ Azure 存储客户端使用存储连接字符串来存储用于访问数据管�
     }
 
 ## 删除 Blob 容器
-
 最后，若要删除 Blob 容器，请获取 Blob 容器引用，然后调用 **deleteIfExists**。
 
     try
@@ -267,4 +265,4 @@ Azure 存储客户端使用存储连接字符串来存储用于访问数据管�
 [Azure Storage REST API]: https://msdn.microsoft.com/zh-cn/library/azure/dd179355.aspx
 [Azure Storage Team Blog]: http://blogs.msdn.com/b/windowsazurestorage/
 
-<!---HONumber=Mooncake_1128_2016-->
+<!---HONumber=Mooncake_0103_2017-->

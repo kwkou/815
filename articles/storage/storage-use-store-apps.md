@@ -3,10 +3,9 @@
     description="了解如何创建使用 Azure Blob、队列、表或文件存储的 Windows 应用商店应用。"
     services="storage"
     documentationcenter=""
-    author="tamram"
-    manager="carmonm"
-    editor="tysonn" />  
-
+    author="mmacy"
+    manager="timlt"
+    editor="tysonn" />
 <tags
     ms.assetid="63c4b29d-b2f2-4d7c-b164-a0d38f4d14f6"
     ms.service="storage"
@@ -14,9 +13,9 @@
     ms.tgt_pltfrm="mobile-windows-store"
     ms.devlang="dotnet"
     ms.topic="article"
-    ms.date="10/18/2016"
-    wacn.date="12/05/2016"
-    ms.author="tamram" />
+    ms.date="12/08/2016"
+    wacn.date="01/06/2017"
+    ms.author="marsma" />
 
 # 如何在 Windows 应用商店应用中使用 Azure 存储
 ## 概述
@@ -83,4 +82,4 @@
 [store-apps-storage-package-manager]: ./media/storage-use-store-apps/store-apps-storage-package-manager.png
  
 
-<!---HONumber=Mooncake_1128_2016-->
+<!---HONumber=Mooncake_0103_2017-->

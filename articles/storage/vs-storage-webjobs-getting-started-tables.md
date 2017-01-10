@@ -1,21 +1,22 @@
-<properties 
-	pageTitle="开始使用 Azure 存储空间和 Visual Studio 连接服务（WebJob 项目）"
-	description="在使用 Visual Studio 连接服务连接到存储帐户后，如何开始在 Visual Studio 的 Azure WebJobs 项目中使用 Azure 表存储"
-	services="storage"
-	documentationCenter=""
-	authors="TomArcher"
-	manager="douge"
-	editor=""/>
-
+<properties
+    pageTitle="开始使用 Azure 存储空间和 Visual Studio 连接服务（WebJob 项目）"
+    description="在使用 Visual Studio 连接服务连接到存储帐户后，如何开始在 Visual Studio 的 Azure WebJobs 项目中使用 Azure 表存储"
+    services="storage"
+    documentationcenter=""
+    author="TomArcher"
+    manager="douge"
+    editor="" />
 <tags
-	ms.service="storage"
-	ms.workload="web"
-	ms.tgt_pltfrm="vs-getting-started"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="07/18/2016"
-	wacn.date="09/12/2016"
-	ms.author="tarcher"/>
+    ms.assetid="061a6c46-0592-4e5d-aced-ab7498481cde"
+    ms.service="storage"
+    ms.workload="web"
+    ms.tgt_pltfrm="vs-getting-started"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.date="12/02/2016"
+    wacn.date="01/06/2017"
+    ms.author="tarcher" />  
+
 
 # Azure 存储入门（Azure WebJob 项目）
 
@@ -74,7 +75,7 @@ Azure 表存储服务使用户可以存储大量结构化数据。该服务是�
 
 ![Ingress 函数正在运行](./media/vs-storage-webjobs-getting-started-tables/ingressprogress.png)
 
-该函数完成时，**调用详细信息**页会报告写入的行数。
+该函数完成时，“调用详细信息”页会报告写入的行数。
 
 ![Ingress 函数已完成](./media/vs-storage-webjobs-getting-started-tables/ingresssuccess.png)
 
@@ -155,4 +156,4 @@ Azure 表存储服务使用户可以存储大量结构化数据。该服务是�
 本文章提供了代码示例，演示如何处理用于操作 Azure 表的常见方案。有关如何使用 Azure WebJobs 和 WebJobs SDK 的详细信息，请参阅 [Azure WebJobs 文档资源](/documentation/articles/websites-webjobs-resources/)。
  
 
-<!---HONumber=Mooncake_0905_2016-->
+<!---HONumber=Mooncake_0103_2017-->

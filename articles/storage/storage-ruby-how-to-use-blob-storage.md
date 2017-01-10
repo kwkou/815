@@ -3,10 +3,9 @@
     description="使用 Azure Blob 存储（对象存储）将非结构化数据存储在云中。"
     services="storage"
     documentationcenter="ruby"
-    author="tamram"
-    manager="carmonm"
-    editor="tysonn" />  
-
+    author="mmacy"
+    manager="timlt"
+    editor="tysonn" />
 <tags
     ms.assetid="e2fe4c45-27b0-4d15-b3fb-e7eb574db717"
     ms.service="storage"
@@ -14,9 +13,9 @@
     ms.tgt_pltfrm="na"
     ms.devlang="ruby"
     ms.topic="article"
-    ms.date="10/31/2016"
-    wacn.date="12/05/2016"
-    ms.author="tamram" />
+    ms.date="12/08/2016"
+    wacn.date="01/06/2017"
+    ms.author="marsma" />
 
 # 如何通过 Ruby 使用 Blob 存储
 [AZURE.INCLUDE [storage-selector-blob-include](../../includes/storage-selector-blob-include.md)]
@@ -66,7 +65,7 @@ Azure 模块将读取环境变量 **AZURE\_STORAGE\_ACCOUNT** 和 **AZURE\_STORA
 1. 登录到[Azure 经典管理门户](https://manage.windowsazure.cn/)。
 2. 导航到要使用的存储帐户。
 3. 单击导航窗格底部的“管理访问密钥”。
-4. 在弹出对话框中，可看到存储帐户名称、主访问密钥和辅助访问密钥。对于访问密钥，可以使用主访问密钥，也可以使用辅助访问密钥。
+4. 在弹出对话框中，将会看到存储帐户名称、主访问密钥和辅助访问密钥。对于访问密钥，可以使用主访问密钥，也可以使用辅助访问密钥。
 5. 单击复制图标以将键复制到剪贴板。
 
 ## 创建容器
@@ -145,4 +144,4 @@ Azure 模块将读取环境变量 **AZURE\_STORAGE\_ACCOUNT** 和 **AZURE\_STORA
 - GitHub 上的 [Azure SDK for Ruby](https://github.com/WindowsAzure/azure-sdk-for-ruby) 存储库
 - [使用 AzCopy 命令行实用程序传输数据](/documentation/articles/storage-use-azcopy/)
 
-<!---HONumber=Mooncake_1128_2016-->
+<!---HONumber=Mooncake_0103_2017-->

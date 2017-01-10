@@ -1,24 +1,23 @@
 <properties
-	pageTitle="如何监视存储帐户 | Azure"
-	description="了解如何使用 Azure 门户预览在 Azure 中监视存储帐户。"
-	services="storage"
-	documentationCenter=""
-	authors="robinsh"
-	manager="carmonm"
-	editor="tysonn"/>
-
+    pageTitle="如何监视存储帐户 | Azure"
+    description="了解如何使用 Azure 门户在 Azure 中监视存储帐户。"
+    services="storage"
+    documentationcenter=""
+    author="robinsh"
+    manager="timlt"
+    editor="tysonn" />
 <tags
-	ms.service="storage"
-	ms.workload="storage"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="08/03/2016"
-	wacn.date="12/19/2016"
-	ms.author="fryu;robinsh"/>
+    ms.assetid="b83cba7b-4627-4ba7-b5d0-f1039fe30e78"
+    ms.service="storage"
+    ms.workload="storage"
+    ms.tgt_pltfrm="na"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.date="12/08/2016"
+    wacn.date="01/06/2017"
+    ms.author="robinsh" />
 
 # 在 Azure 门户预览中监视存储帐户
-
 ## 概述
 
 可在 [Azure 门户预览](https://portal.azure.cn)中监视存储帐户。配置存储帐户以便通过门户进行监视时，Azure 存储使用[存储分析](http://msdn.microsoft.com/zh-cn/library/azure/hh343270.aspx)跟踪帐户和日志请求数据的指标。
@@ -44,7 +43,7 @@
 
       **最低** - 收集经过汇总的有关 Blob、表和队列服务的入口/出口、可用性、延迟及成功百分比等指标。
 
-      **详细** – 除最低监视指标外，在 Azure 存储服务 API 中为每项存储操作收集一组相同的指标。通过详细监视指标，可对应用程序运行期间出现的问题进行进一步分析。
+      **详细** – 除最低监视指标外，在 Azure 存储服务 API 中为每项存储操作收集一组相同的指标。通过详细监视度量值可对应用程序运行期间出现的问题进行进一步分析。
 
       **关闭** - 关闭监视。现有监视数据将一直保留到保留期结束。
 
@@ -158,4 +157,4 @@
 
 诊断日志保存在存储帐户下名为 $logs 的 Blob 容器中。有关访问 $logs 容器的信息，请参阅[关于存储分析日志记录](http://msdn.microsoft.com/zh-cn/library/azure/hh343262.aspx)。
 
-<!---HONumber=Mooncake_Quality_Review_1202_2016-->
+<!---HONumber=Mooncake_0103_2017-->

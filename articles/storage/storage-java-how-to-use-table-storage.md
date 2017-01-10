@@ -3,10 +3,9 @@
     description="使用 Azure 表存储（一种 NoSQL 数据存储）将结构化数据存储在云中。"
     services="storage"
     documentationcenter="java"
-    author="tamram"
-    manager="carmonm"
-    editor="tysonn" />  
-
+    author="mmacy"
+    manager="timlt"
+    editor="tysonn" />
 <tags
     ms.assetid="45145189-e67f-4ca6-b15d-43af7bfd3f97"
     ms.service="storage"
@@ -14,9 +13,9 @@
     ms.tgt_pltfrm="na"
     ms.devlang="Java"
     ms.topic="article"
-    ms.date="11/17/2016"
-    wacn.date="12/05/2016"
-    ms.author="tamram" />
+    ms.date="12/08/2016"
+    wacn.date="01/06/2017"
+    ms.author="marsma" />
 
 # 如何通过 Java 使用表存储
 [AZURE.INCLUDE [storage-selector-table-include](../../includes/storage-selector-table-include.md)]
@@ -402,7 +401,7 @@ Azure 存储客户端使用存储连接字符串来存储用于访问数据管�
 
 ## 如何：查询实体属性子集
 
-对表的查询可以只检索实体中的少数几个属性。此方法称为“投影”，可减少带宽并提高查询性能，尤其适用于大型实体。以下代码中的查询使用 **select** 方法，仅返回表中实体的电子邮件地址。返回结果在 **EntityResolver**（用于对从服务器返回的实体执行类型转换）的帮助下投影到一个 **String** 集合中。你可以在 [Azure 表：Upsert 和查询投影简介][Azure Tables: Introducing Upsert and Query Projection]中更加详细地了解投影。请注意，本地存储模拟器不支持投影，因此，此代码仅在使用表服务中的帐户时才能运行。
+对表的查询可以只检索实体中的少数几个属性。此方法称为“投影”，可减少带宽并提高查询性能，尤其适用于大型实体。以下代码中的查询使用 **select** 方法，仅返回表中实体的电子邮件地址。返回结果在 **EntityResolver**（用于对从服务器返回的实体执行类型转换）的帮助下投影到一个 **String** 集合中。可以在 [Azure 表：Upsert 和查询投影简介][Azure Tables: Introducing Upsert and Query Projection]中更加详细地了解投影。请注意，本地存储模拟器不支持投影，因此，此代码仅在使用表服务中的帐户时才能运行。
 
     try
     {
@@ -443,7 +442,7 @@ Azure 存储客户端使用存储连接字符串来存储用于访问数据管�
 
 ## 如何：插入或替换实体
 
-经常需要将某个实体添加到表中，但又不知道该实体是否已存在于表中。利用插入或替换操作，可以提出一个以下形式的请求：如果实体不存在，则插入一个实体；如果实体存在，则将其替换为现有实体。以下代码基于前面的示例针对“Walter Harp”插入或替换实体。创建新实体后，此代码调用 **TableOperation.insertOrReplace** 方法。此代码随后使用表和插入或替换表操作作为参数对 **CloudTable** 对象调用 **execute**。若要只更新实体的一部分，则可以改用 **TableOperation.insertOrMerge** 方法。请注意，本地存储仿真程序不支持插入或替换，因此，此代码仅在使用表服务中的帐户时才能运行。你可以在此 [Azure 表：Upsert 和查询投影简介][Azure Tables: Introducing Upsert and Query Projection]中更加详细地了插入或替换和插入或合并。
+经常需要将某个实体添加到表中，但又不知道该实体是否已存在于表中。利用插入或替换操作，可以提出一个以下形式的请求：如果实体不存在，则插入一个实体；如果实体存在，则将其替换为现有实体。以下代码基于前面的示例针对“Walter Harp”插入或替换实体。创建新实体后，此代码调用 **TableOperation.insertOrReplace** 方法。此代码随后使用表和插入或替换表操作作为参数对 **CloudTable** 对象调用 **execute**。若要只更新实体的一部分，则可以改用 **TableOperation.insertOrMerge** 方法。请注意，本地存储模拟器不支持插入或替换，因此，此代码仅在使用表服务中的帐户时才能运行。可以在此 [Azure 表：Upsert 和查询投影简介][Azure Tables: Introducing Upsert and Query Projection]中更加详细地了插入或替换和插入或合并。
 
     try
     {
@@ -521,7 +520,7 @@ Azure 存储客户端使用存储连接字符串来存储用于访问数据管�
         CloudTableClient tableClient = storageAccount.createCloudTableClient();
 
         // Delete the table and all its data if it exists.
-        CloudTable cloudTable = new CloudTable("people",tableClient);
+    	CloudTable cloudTable = tableClient.getTableReference("people");
         cloudTable.deleteIfExists();
     }
     catch (Exception e)
@@ -551,4 +550,4 @@ Azure 存储客户端使用存储连接字符串来存储用于访问数据管�
 [Azure Storage Team Blog]: http://blogs.msdn.com/b/windowsazurestorage/
 [Azure Tables: Introducing Upsert and Query Projection]: http://blogs.msdn.com/b/windowsazurestorage/archive/2011/09/15/windows-azure-tables-introducing-upsert-and-query-projection.aspx
 
-<!---HONumber=Mooncake_1128_2016-->
+<!---HONumber=Mooncake_0103_2017-->

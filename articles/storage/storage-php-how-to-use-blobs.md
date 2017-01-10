@@ -3,10 +3,9 @@
     description="使用 Azure Blob 存储（对象存储）将非结构化数据存储在云中。"
     documentationcenter="php"
     services="storage"
-    author="tamram"
-    manager="carmonm"
-    editor="tysonn" />  
-
+    author="mmacy"
+    manager="timlt"
+    editor="tysonn" />
 <tags
     ms.assetid="1af56b59-b3f0-4b46-8441-aab463ae088e"
     ms.service="storage"
@@ -14,9 +13,9 @@
     ms.tgt_pltfrm="na"
     ms.devlang="PHP"
     ms.topic="article"
-    ms.date="10/18/2016"
-    wacn.date="12/05/2016"
-    ms.author="tamram" />
+    ms.date="12/08/2016"
+    wacn.date="01/06/2017"
+    ms.author="marsma" />
 
 # 如何通过 PHP 使用 Blob 存储
 [AZURE.INCLUDE [storage-selector-blob-include](../../includes/storage-selector-blob-include.md)]
@@ -39,7 +38,7 @@ Azure Blob 存储是一种将非结构化数据作为对象/Blob 存储在云中
 
 [AZURE.INCLUDE [get-client-libraries](../../includes/get-client-libraries.md)]
 
-##<a id="ConfigureStorage"></a>配置你的应用程序以访问 Blob 服务
+##<a id="ConfigureStorage"></a>配置应用程序以访问 Blob 服务
 
 若要使用 Azure Blob 服务 API，需要：
 
@@ -141,7 +140,7 @@ Azure Blob 存储是一种将非结构化数据作为对象/Blob 存储在云中
 
 有关 Blob 服务错误代码的详细信息，请参阅 [Blob 服务错误代码][error-codes]。
 
-##<a id="UploadBlob"></a>将 Blob 上载到容器中
+##<a id="UploadBlob"></a>将 Blob 上传到容器中
 
 若要将文件作为 Blob 上传，请使用 **BlobRestProxy->createBlockBlob** 方法。此操作将创建 Blob（如果该 Blob 不存在），或者覆盖它（如果该 Blob 存在）。下面的代码示例假定已创建了容器，并使用 [fopen][fopen] 将文件作为流打开。
 
@@ -305,4 +304,4 @@ Azure Blob 存储是一种将非结构化数据作为对象/Blob 存储在云中
 [fopen]: http://www.php.net/fopen
 [stream-get-contents]: http://www.php.net/stream_get_contents
 
-<!---HONumber=Mooncake_1128_2016-->
+<!---HONumber=Mooncake_0103_2017-->

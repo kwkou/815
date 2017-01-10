@@ -1,22 +1,21 @@
 <properties
-	pageTitle="如何通过 Node.js 使用队列存储 | Azure"
-	description="了解如何使用 Azure 队列服务创建和删除队列，以及插入、获取和删除消息。相关示例是使用 Node.js 编写的。"
-	services="storage"
-	documentationCenter="nodejs"
-	authors="rmcmurray"
-	manager="wpickett"
-	editor=""/>
-
+    pageTitle="如何通过 Node.js 使用队列存储 | Azure"
+    description="了解如何使用 Azure 队列服务创建和删除队列，以及插入、获取和删除消息。相关示例是使用 Node.js 编写的。"
+    services="storage"
+    documentationcenter="nodejs"
+    author="robinsh"
+    manager="timlt"
+    editor="tysonn" />
 <tags
-	ms.service="storage"
-	ms.workload="storage"
-	ms.tgt_pltfrm="na"
-	ms.devlang="nodejs"
-	ms.topic="article"
-	ms.date="08/11/2016"
-	wacn.date="12/12/2016"
-	ms.author="cbrooks;robmcm"/>
-
+    ms.assetid="a8a92db0-4333-43dd-a116-28b3147ea401"
+    ms.service="storage"
+    ms.workload="storage"
+    ms.tgt_pltfrm="na"
+    ms.devlang="nodejs"
+    ms.topic="article"
+    ms.date="12/08/2016"
+    wacn.date="01/06/2017"
+    ms.author="robinsh" />
 
 # 如何通过 Node.js 使用队列存储
 
@@ -31,11 +30,9 @@
 [AZURE.INCLUDE [storage-create-account-include](../../includes/storage-create-account-include.md)]
 
 ## 创建 Node.js 应用程序
-
 创建一个空的 Node.js 应用程序。有关创建 Node.js 应用程序的说明，请参阅[在 Azure App Service 中创建 Node.js Web 应用]、[使用 Windows PowerShell 生成 Node.js 应用程序并将其部署到 Azure 云服务]或[使用 Web Matrix 生成 Node.js Web 应用并将其部署到 Azure]。
 
 ## 配置应用程序以访问存储
-
 若要使用 Azure 存储，需要 Azure Storage SDK for Node.js，其中包括一组便于与存储 REST 服务进行通信的库。
 
 ### 使用 Node 包管理器 (NPM) 可获取包
@@ -326,4 +323,4 @@ ACL 是使用一组访问策略实施的，每个策略都有一个关联的 ID�
   [Azure 存储团队博客]: http://blogs.msdn.com/b/windowsazurestorage/
   [使用 Web Matrix 生成 Node.js Web 应用并将其部署到 Azure]: /documentation/articles/web-sites-nodejs-use-webmatrix/
 
-<!---HONumber=Mooncake_Quality_Review_1118_2016-->
+<!---HONumber=Mooncake_0103_2017-->

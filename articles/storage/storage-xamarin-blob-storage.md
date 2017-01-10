@@ -1,22 +1,21 @@
 <properties
-	pageTitle="如何通过 Xamarin 使用 Blob 存储 | Azure"
-	description="通过用于 Xamarin 的 Azure 存储客户端库，开发人员可以使用其本机用户界面创建 iOS、Android 和 Windows 应用商店应用。本教程演示了如何通过 Xamarin 来创建使用 Azure Blob 存储的应用程序。"
-	services="storage"
-	documentationCenter="xamarin"
-	authors="micurd"
-	manager="jahogg"
-	editor="tysonn"/>  
-
-
+    pageTitle="如何通过 Xamarin 使用 Blob 存储 | Azure"
+    description="通过用于 Xamarin 的 Azure 存储客户端库，开发人员可以使用其本机用户界面创建 iOS、Android 和 Windows 应用商店应用。本教程演示了如何通过 Xamarin 来创建使用 Azure Blob 存储的应用程序。"
+    services="storage"
+    documentationcenter="xamarin"
+    author="micurd"
+    manager="jahogg"
+    editor="tysonn" />
 <tags
-	ms.service="storage"
-	ms.workload="storage"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="10/08/2016"
-	wacn.date="12/19/2016"
-	ms.author="micurd;tamram"/>
+    ms.assetid="44cb845d-cf78-4942-95b8-952da4f9a2c2"
+    ms.service="storage"
+    ms.workload="storage"
+    ms.tgt_pltfrm="na"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.date="11/28/2016"
+    wacn.date="01/06/2017"
+    ms.author="micurd" />
 
 # 如何通过 Xamarin 使用 Blob 存储
 
@@ -217,4 +216,4 @@ Xamarin 使开发人员能够通过共享的 C# 代码库来使用其本机用�
 - [通过 .NET 开始使用 Azure 队列存储](/documentation/articles/storage-dotnet-how-to-use-queues/)
 - [在 Windows 上开始使用 Azure 文件存储](/documentation/articles/storage-dotnet-how-to-use-files/)
 
-<!---HONumber=Mooncake_Quality_Review_1202_2016-->
+<!---HONumber=Mooncake_0103_2017-->

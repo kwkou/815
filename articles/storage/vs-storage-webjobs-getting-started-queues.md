@@ -1,26 +1,26 @@
-<properties 
-	pageTitle="队列存储和 Visual Studio 连接服务（Web 作业项目）入门 | Azure"
-	description="在使用 Visual Studio 连接服务连接到存储帐户后，如何开始使用 WebJob 项目中的 Azure 队列存储"
-	services="storage"
-	documentationCenter=""
-	authors="TomArcher"
-	manager="douge"
-	editor=""/>
-
+<properties
+    pageTitle="队列存储和 Visual Studio 连接服务（Web 作业项目）入门 | Azure"
+    description="在使用 Visual Studio 连接服务连接到存储帐户后，如何开始使用 WebJob 项目中的 Azure 队列存储"
+    services="storage"
+    documentationcenter=""
+    author="TomArcher"
+    manager="douge"
+    editor="" />
 <tags
-	ms.service="storage"
-	ms.workload="web"
-	ms.tgt_pltfrm="vs-getting-started"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="07/18/2016"
-	wacn.date="11/16/2016"
-	ms.author="tarcher"/>
+    ms.assetid="5c3ef267-2a67-44e9-ab4a-1edd7015034f"
+    ms.service="storage"
+    ms.workload="web"
+    ms.tgt_pltfrm="vs-getting-started"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.date="12/02/2016"
+    wacn.date="01/06/2017"
+    ms.author="tarcher" />  
+
 
 # 开始使用 Azure 队列存储和 Visual Studio 连接服务（WebJob 项目）
 
 ## 概述
-
 本文介绍通过使用 Visual Studio 中的“添加连接服务”对话框创建或引用 Azure 存储帐户之后，如何开始在 Visual Studio Azure WebJob 项目中使用 Azure 队列存储。当你使用 Visual Studio“添加连接服务”对话框将存储帐户添加到 WebJob 项目中时，会安装相应的 Azure 存储 NuGet 包，相应的.NET 引用会添加到项目中，并会在 App.config 文件中更新存储帐户的连接字符串。
 
 本文提供了 C# 代码示例，用于演示如何在 Azure 队列存储服务中使用 Azure WebJobs SDK 版本 1.x。
@@ -54,7 +54,7 @@ Azure 队列存储是一项可存储大量消息的服务，用户可以通过�
 		    logger.WriteLine("Queue message refers to blob: " + blobInfo.BlobName);
 		}
 
-SDK 使用 [Newtonsoft.Json NuGet 包](http://www.nuget.org/packages/Newtonsoft.Json)序列化和反序列化消息。如果你在不使用 WebJobs SDK 的程序中创建队列消息，则可以如以下示例所示编写代码，以创建 SDK 可以分析的 POCO 队列消息。
+SDK 使用 [Newtonsoft.Json NuGet 包](http://www.nuget.org/packages/Newtonsoft.Json)序列化和反序列化消息。如果在不使用 WebJobs SDK 的程序中创建队列消息，可以如以下示例所示编写代码，以创建 SDK 可以分析的 POCO 队列消息。
 
 		BlobInformation blobInfo = new BlobInformation() { BlobName = "log.txt" };
 		var queueMessage = new CloudQueueMessage(JsonConvert.SerializeObject(blobInfo));
@@ -101,7 +101,7 @@ SDK 实现了随机指数退让算法，以降低空闲队列轮询对存储事�
 
 如果有多个函数在侦听不同的队列，SDK 将在同时接收消息时并行调用这些函数。
 
-接收单个队列的多个消息时，也是如此。默认情况下，SDK 每次获取包含 16 个队列消息的批，然后并行执行处理这些消息的函数。[批大小是可配置的](#how-to-set-configuration-options)。当处理的数量达到批大小的一半时，SDK 将获取另一个批，并开始处理这些消息。因此，每个函数处理的最大并发消息数是批大小的 1.5 倍。此限制分别应用于各个包含 **QueueTrigger** 属性的函数。如果不希望在收到一个队列的消息时并行执行，请将批大小设置为 1。
+接收单个队列的多个消息时，也是如此。默认情况下，SDK 每次获取包含 16 个队列消息的批处理，然后并行执行处理这些消息的函数。[可以配置批处理大小](#how-to-set-configuration-options)。当处理的数量达到批处理大小的一半时，SDK 将获取另一个批处理，并开始处理这些消息。因此，每个函数处理的最大并发消息数是批大小的 1.5 倍。此限制分别应用于各个包含 **QueueTrigger** 属性的函数。如果不希望在收到一个队列的消息时并行执行，请将批大小设置为 1。
 
 ##<a id="get-queue-or-queue-message-metadata"></a> 获取队列或队列消息元数据
 
@@ -160,7 +160,7 @@ SDK 实现了随机指数退让算法，以降低空闲队列轮询对存储事�
 
 在连续的 WebJob 中运行的函数可以接受 **CancellationToken** 参数，以使操作系统能够在 WebJob 即将终止时通知该函数。你可以使用此通知来确保该函数不会意外终止，导致数据处于不一致状态。
 
-下面的示例演示了如何在函数中检查即将发生的 Web 作业终止。
+下述示例演示了如何在函数中检查即将发生的 Web 作业终止。
 
 	public static void GracefulShutdownDemo(
 	            [QueueTrigger("inputqueue")] string inputText,
@@ -179,7 +179,7 @@ SDK 实现了随机指数退让算法，以降低空闲队列轮询对存储事�
 	    }
 	}
 
-**注意**：仪表板可能会错误显示已关闭函数的的状态和输出。
+**注意**：仪表板可能会错误显示已关闭函数的状态和输出。
 
 有关详细信息，请参阅 [WebJobs 正常关闭](http://blog.amitapple.com/post/2014/05/webjobs-graceful-shutdown/#.VCt1GXl0wpR)。
 
@@ -189,7 +189,7 @@ SDK 实现了随机指数退让算法，以降低空闲队列轮询对存储事�
 
 ### 字符串队列消息
 
-下面的非异步代码示例在名为“outputqueue”的队列中创建新的队列消息，该消息的内容与名为“inputqueue”的队列中收到的队列消息相同。（对于异步函数，请按照本部分稍后将介绍的方法使用 **IAsyncCollector<T>** 。）
+下面的非异步代码示例在名为“outputqueue”的队列中创建新的队列消息，该消息的内容与名为“inputqueue”的队列中收到的队列消息相同。（对于异步函数，请按照本部分稍后将介绍的方法使用 **IAsyncCollector<T>**。）
 
 
 		public static void CreateQueueMessage(
@@ -329,7 +329,7 @@ SDK 使用 [Newtonsoft.Json NuGet 包](http://www.nuget.org/packages/Newtonsoft.
 
 ##如何处理有害消息
 
-内容导致函数失败的消息称为*有害消息*。当函数失败时，将不删除并最终再次选择队列消息，从而导致周期重复。在达到限制的迭代次数后，SDK 可自动中断周期，你也可以手动中断。
+内容导致函数失败的消息称为*有害消息*。如果函数失败，将不删除并最终再次选择队列消息，从而导致周期重复。在达到限制的迭代次数后，SDK 可自动中断周期，也可以手动中断。
 
 ### 自动处理有害消息
 
@@ -412,7 +412,7 @@ SDK 在处理一个队列消息时最多会调用某个函数 5 次。如果第�
 
 你可以配置以下用于处理队列消息的设置：
 
-- 同时选择的、要并行执行的最大队列消息数（默认值为 16）。
+- 同时选择并要并行执行的最大队列消息数（默认值为 16）。
 - 在将队列消息发送到有害队列之前要重试的最大次数（默认值为 5）。
 - 当队列为空时，再次轮询之前要等待的最长时间（默认值为 1 分钟）。
 
@@ -492,13 +492,14 @@ SDK 在处理一个队列消息时最多会调用某个函数 5 次。如果第�
 
 ![WebJob 页中的日志](./media/vs-storage-webjobs-getting-started-queues/dashboardapplogs.png)
 
-![函数调用页中的日志](./media/vs-storage-webjobs-getting-started-queues/dashboardlogs.png)
+![函数调用页中的日志](./media/vs-storage-webjobs-getting-started-queues/dashboardlogs.png)  
+
 
 在函数或 **Main()** 方法中调用的控制台方法的输出在 Web 作业的仪表板页面上显示，而不是在特定方法调用页面上显示。从方法签名的参数中获取的 TextWriter 对象的输出在方法调用的仪表板页中显示。
 
-无法将控制台输出链接到特定的方法调用，因为控制台是单线程的，而许多作业函数可能同时运行。正因如此，SDK 为每个函数调用提供了自身唯一的日志写入器对象。
+无法将控制台输出链接到特定方法调用，因为控制台是单线程，而许多作业函数可能同时运行。正因如此，SDK 为每个函数调用提供了自身唯一的日志写入器对象。
 
-若要写入应用程序跟踪日志，请使用 **Console.Out**（创建标记为 INFO 的日志）和 **Console.Error**（创建标记为 ERROR 的日志）。或者，您可以使用 [Trace 或 TraceSource](http://blogs.msdn.com/b/mcsuksoldev/archive/2014/09/04/adding-trace-to-azure-web-sites-and-web-jobs.aspx)，它除了提供“信息”和“错误”外，还提供“详细”、“警告”和“严重级别”。应用程序跟踪日志在 Web 应用日志文件、Azure 表或 Azure blob 中显示，具体取决于配置 Azure Web 应用的方式。与所有控制台输出一样，最近的 100 条应用程序日志也会显示在 Web 作业的仪表板页中，而不是显示在函数调用的页中。
+若要写入[应用程序跟踪日志](/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/#logsoverview)，请使用 **Console.Out**（创建标记为 INFO 的日志）和 **Console.Error**（创建标记为 ERROR 的日志）。或者，您可以使用 [Trace 或 TraceSource](http://blogs.msdn.com/b/mcsuksoldev/archive/2014/09/04/adding-trace-to-azure-web-sites-and-web-jobs.aspx)，它除了提供“信息”和“错误”外，还提供“详细”、“警告”和“严重级别”。应用程序跟踪日志在 Web 应用日志文件、Azure 表或 Azure blob 中显示，具体取决于配置 Azure Web 应用的方式。与所有控制台输出一样，最近的 100 条应用程序日志也会显示在 Web 作业的仪表板页中，而不是显示在函数调用的页中。
 
 仅当程序在 Azure Web 作业中运行（而不是在本地运行或者在其他某个环境中运行）时，控制台输出才显示在仪表板中。
 
@@ -549,4 +550,4 @@ SDK 在处理一个队列消息时最多会调用某个函数 5 次。如果第�
 本文章提供了代码示例，演示如何处理用于操作 Azure 队列的常见方案。有关如何使用 Azure WebJobs 和 WebJobs SDK 的详细信息，请参阅 [Azure WebJobs 文档资源](/documentation/articles/websites-webjobs-resources/)。
  
 
-<!---HONumber=Mooncake_0905_2016-->
+<!---HONumber=Mooncake_0103_2017-->

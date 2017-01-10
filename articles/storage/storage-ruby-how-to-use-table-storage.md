@@ -3,10 +3,9 @@
     description="使用 Azure 表存储（一种 NoSQL 数据存储）将结构化数据存储在云中。"
     services="storage"
     documentationcenter="ruby"
-    author="tamram"
-    manager="carmonm"
-    editor="" />  
-
+    author="mmacy"
+    manager="timlt"
+    editor="" />
 <tags
     ms.assetid="047cd9ff-17d3-4c15-9284-1b5cc61a3224"
     ms.service="storage"
@@ -14,17 +13,16 @@
     ms.tgt_pltfrm="na"
     ms.devlang="ruby"
     ms.topic="article"
-    ms.date="10/18/2016"
-    wacn.date="12/05/2016"
-    ms.author="tamram" />
+    ms.date="12/08/2016"
+    wacn.date="01/06/2017"
+    ms.author="marsma" />
 
 # 如何通过 Ruby 使用 Azure 表存储
 
 [AZURE.INCLUDE [storage-selector-table-include](../../includes/storage-selector-table-include.md)]
 
 ## 概述
-
-本指南演示如何使用 Azure 表服务执行常见任务。相关示例是使用 Ruby API 编写的。涉及的情景包括创建和删除表、在表中插入和查询实体。
+本指南演示如何使用 Azure 表服务执行常见任务。相关示例是使用 Ruby API 编写的。涉及的情景包括创建和删除表、在表中插入和查询条目。
 
 [AZURE.INCLUDE [storage-table-concepts-include](../../includes/storage-table-concepts-include.md)]
 
@@ -71,7 +69,7 @@ Azure 模块将读取环境变量 **AZURE\_STORAGE\_ACCOUNT** 和 **AZURE\_STORA
 
 ## 创建表
 
-使用 **Azure::TableService** 对象可以对表和实体进行操作。若要创建表，请使用 **create_table()** 方法。以下示例将创建一个表或输出存在的错误。
+使用 **Azure::TableService** 对象可用于处理表和条目。若要创建表，请使用 **create\_table()** 方法。以下示例将创建表或输出存在的错误。
 
 	azure_table_service = Azure::TableService.new
 	begin
@@ -80,34 +78,33 @@ Azure 模块将读取环境变量 **AZURE\_STORAGE\_ACCOUNT** 和 **AZURE\_STORA
 	  puts $!
 	end
 
-## 将实体添加到表
-
-若要添加实体，应首先创建定义实体属性的哈希对象。请注意，必须为每个实体指定 **PartitionKey** 和 **RowKey**。这些值是实体的唯一标识符，查询它们比查询其他属性快很多。Azure 存储使用 **PartitionKey** 将表中实体自动分发到多个存储节点。具有相同 **PartitionKey** 的实体存储在同一个节点上。**RowKey** 是实体在其所属分区内的唯一 ID。
+## 向表中添加条目
+若要添加条目，应首先创建定义条目属性的哈希对象。请注意，必须为每个条目指定 **PartitionKey** 和 **RowKey**。这些值是条目的唯一标识符，查询它们比查询其他属性快很多。Azure 存储使用 **PartitionKey** 将表中条目自动分发到多个存储节点。具有相同 **PartitionKey** 的条目存储在同一个节点上。**RowKey** 是条目在其所属分区内的唯一 ID。
 
 	entity = { "content" => "test entity",
 	  :PartitionKey => "test-partition-key", :RowKey => "1" }
 	azure_table_service.insert_entity("testtable", entity)
 
-## 更新实体
+## 更新条目
 
-可使用多种方法来更新现有实体：
+可使用多种方法来更新现有条目：
 
-* **update_entity()：**通过替换更新现有实体。
-* **merge_entity()：**通过新属性值来更新现有实体。
-* **insert_or_merge_entity()：**通过替换更新现有实体。如果不存在实体，则插入新实体。
-* **insert_or_replace_entity()：**通过并入新属性值来更新现有实体。如果不存在实体，则插入新实体。
+* **update\_entity()：** 通过替换更新现有条目。
+* **merge\_entity()：** 通过并入新属性值来更新现有条目。
+* **insert\_or\_merge\_entity()：** 通过替换更新现有条目。如果不存在条目，则插入新条目：
+* **insert\_or\_replace\_entity()：** 通过并入新属性值来更新现有条目。如果不存在条目，则插入新条目。
 
-以下示例演示如何使用 **update_entity()** 更新实体：
+以下示例演示如何使用 **update\_entity()** 更新条目：
 
 	entity = { "content" => "test entity with updated content",
 	  :PartitionKey => "test-partition-key", :RowKey => "1" }
 	azure_table_service.update_entity("testtable", entity)
 
-对于 **update_entity()** 和 **merge_entity()**，如果要更新的实体不存在，则更新操作将失败。因此，如果希望存储某个实体而不考虑它是否已存在，应改用 **insert_or_replace_entity()** 或 **insert_or_merge_entity()**。
+对于 **update\_entity()** 和 **merge\_entity()**，如果要更新的条目不存在，更新操作将失败。因此，如果希望存储某个条目而不考虑它是否已存在，应改用 **insert\_or\_replace\_entity()** 或 **insert\_or\_merge\_entity()**。
 
-## 使用实体组
+## 处理条目组
 
-有时，有必要成批地同时提交多项操作以确保通过服务器进行原子处理。若要完成此操作，首先要创建一个 **Batch** 对象，然后对 **TableService** 使用 **execute_batch()** 方法。以下示例演示在一个批次中提交 RowKey 为 2 和 3 的两个实体。请注意，此操作仅适用于具有相同 PartitionKey 的实体。
+有时，有必要成批地同时提交多项操作以确保通过服务器进行原子处理。若要完成此操作，首先要创建一个 **Batch** 对象，然后对 **TableService** 使用 **execute\_batch()** 方法。以下示例演示在一个批次中提交 RowKey 为 2 和 3 的两个条目。请注意，此操作仅适用于具有相同 PartitionKey 的条目。
 
 	azure_table_service = Azure::TableService.new
 	batch = Azure::Storage::Table::Batch.new("testtable",
@@ -117,39 +114,38 @@ Azure 模块将读取环境变量 **AZURE\_STORAGE\_ACCOUNT** 和 **AZURE\_STORA
 	end
 	results = azure_table_service.execute_batch(batch)
 
-## 查询实体
+## 查询条目
 
-若要查询表中实体，请使用 **get_entity()** 方法并传递表名称 **PartitionKey** 和 **RowKey**。
+若要查询表中条目，请使用 **get\_entity()** 方法并传递表名称、**PartitionKey** 和 **RowKey**。
 
 	result = azure_table_service.get_entity("testtable", "test-partition-key",
 	  "1")
 
-## 查询实体集
+## 查询一组条目
 
-若要查询表中的实体集，请创建查询哈希对象并使用 **query_entities()** 方法。以下示例演示如何获取具有相同 **PartitionKey** 的所有实体：
+若要查询表中的一组条目，请创建查询哈希对象并使用 **query\_entities()** 方法。以下示例演示如何获取具有相同 **PartitionKey** 的所有条目：
 
 	query = { :filter => "PartitionKey eq 'test-partition-key'" }
 	result, token = azure_table_service.query_entities("testtable", query)
 
 > [AZURE.NOTE] 如果结果集太大，一个查询无法全部返回，将会返回一个继续标记，你可以使用该标记检索后续页面。
 
-## 查询一部分实体属性
-
-对表的查询可以只检索实体中的少数几个属性。此方法称为“投影”，可减少带宽并提高查询性能，尤其适用于大型实体。请使用 select 子句并传递你希望显示给客户端的属性的名称。
+## 查询条目属性的子集
+对表的查询可以只检索条目的几个属性。这种技术称为“投影”，可减少带宽并提高查询性能，尤其适用于大型条目。请使用 select 子句并传递你希望显示给客户端的属性的名称。
 
 	query = { :filter => "PartitionKey eq 'test-partition-key'",
 	  :select => ["content"] }
 	result, token = azure_table_service.query_entities("testtable", query)
 
-## <a id="how-to-delete-an-entity"></a>删除实体
+## <a id="how-to-delete-an-entity"></a>删除条目
 
-若要删除实体，请使用 **delete_entity()** 方法。你需要传入包含该实体的表的名称、实体的 PartitionKey 和 RowKey。
+若要删除条目，请使用 **delete\_entity()** 方法。需要传入包含该条目的表的名称、条目的 PartitionKey 和 RowKey。
 
 		azure_table_service.delete_entity("testtable", "test-partition-key", "1")
 
 ## <a id="how-to-delete-a-table"></a>删除表
 
-若要删除表，请使用 **delete_table()** 方法并传入要删除的表的名称。
+若要删除表，请使用 **delete\_table()** 方法并传入要删除的表的名称。
 
 		azure_table_service.delete_table("testtable")
 
@@ -160,4 +156,4 @@ Azure 模块将读取环境变量 **AZURE\_STORAGE\_ACCOUNT** 和 **AZURE\_STORA
 - [Azure 存储团队博客](http://blogs.msdn.com/b/windowsazurestorage/)
 - GitHub 上的 [Azure SDK for Ruby](http://github.com/WindowsAzure/azure-sdk-for-ruby) 存储库
 
-<!---HONumber=Mooncake_1128_2016-->
+<!---HONumber=Mooncake_0103_2017-->

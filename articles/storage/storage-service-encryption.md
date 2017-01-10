@@ -1,25 +1,23 @@
 <properties
-	pageTitle="静态数据的 Azure 存储空间服务加密（预览版）| Azure"
-	description="使用 Azure 存储空间服务加密功能可在存储数据时在服务端加密 Azure Blob 存储，并在检索数据时解密数据。"
-	services="storage"
-	documentationCenter=".net"
-	authors="robinsh"
-	manager="carmonm"
-	editor="tysonn"/>  
-
-
+    pageTitle="静态数据的 Azure 存储服务加密 | Azure"
+    description="使用 Azure 存储空间服务加密功能可在存储数据时在服务端加密 Azure Blob 存储，并在检索数据时解密数据。"
+    services="storage"
+    documentationcenter=".net"
+    author="robinsh"
+    manager="timlt"
+    editor="tysonn" />
 <tags
-	ms.service="storage"
-	ms.workload="storage"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="09/16/2016"
-	wacn.date="11/16/2016"
-	ms.author="lakasa;robinsh"/>
+    ms.assetid="edabe3ee-688b-41e0-b34f-613ac9c3fdfd"
+    ms.service="storage"
+    ms.workload="storage"
+    ms.tgt_pltfrm="na"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.date="12/08/2016"
+    wacn.date="01/06/2017"
+    ms.author="robinsh" />
 
 # 静态数据的 Azure 存储空间服务加密
-
 静态数据的 Azure 存储空间服务加密 (SSE) 可帮助你保护数据，使你的组织能够信守在安全性与合规性方面所做的承诺。使用此功能，Azure 存储空间可以先自动加密数据，再将数据保存到存储空间，并在检索之前解密数据。加密、解密和密钥管理对于用户而言是完全透明的。
 
 以下部分提供有关如何使用存储服务加密功能的详细指导，以及支持的方案和用户体验。
@@ -46,8 +44,7 @@ SSE 的工作方式是在数据写入到 Azure 存储时对其加密，可用于
 
 ![显示加密属性的门户截图](./media/storage-service-encryption/image2.png)
 
-##加密方案
-
+## 加密方案
 可以在存储帐户级别启用存储服务加密。它支持以下客户方案：
 
 -   块 Blob、追加 Blob 和页 Blob 的加密。
@@ -89,25 +86,21 @@ AzCopy 是一个 Windows 命令行实用工具，专用于将数据复制到 Azu
 有关详细信息，请参阅[使用 AzCopy 命令行实用工具传输数据](/documentation/articles/storage-use-azcopy/)。
 
 #### 使用存储客户端库
-
 可以使用我们丰富的存储客户端库集，包括 .NET、C++、Java、Android、Node.js、PHP、Python 和 Ruby，在 Blob 存储或存储账户之间相互复制 blob 数据。
 
 有关详细信息，请访问[使用 .NET 的 Azure Blob 存储入门](/documentation/articles/storage-dotnet-how-to-use-blobs/)。
 
 #### 使用存储空间资源管理器
-
 可以使用存储资源管理器创建存储帐户、上传和下载数据、查看 Blob 内容，以及浏览目录。可以使用其中一个存储空间资源管理器将 Blob 上载到已启用加密的存储帐户。使用某些存储资源管理器，还可以将现有 Blob 存储中的数据复制到存储账户中的不同容器或已启用 SSE 的新存储帐户。
 
 有关详细信息，请访问 [Azure 存储空间资源管理器](/documentation/articles/storage-explorers/)。
 
-###步骤 4：查询加密数据的状态
-
+### 步骤 4：查询加密数据的状态
 已部署存储客户端库的更高版本，可让你查询对象的状态，从而判断其是否已加密。不久即会向此文档中添加示例。
 
-在此同时，你可以调用“获取帐户属性”来验证存储帐户是否已启用加密，或者在 Azure 门户预览中查看存储帐户属性。[](https://msdn.microsoft.com/zh-cn/library/azure/mt163553.aspx)
+在此同时，你可以调用[“获取帐户属性”](https://msdn.microsoft.com/zh-cn/library/azure/mt163553.aspx)来验证存储帐户是否已启用加密，或者在 Azure 门户预览中查看存储帐户属性。
 
-##加密和解密工作流
-
+## 加密和解密工作流
 下面是加密/解密工作流的简要描述：
 
 -   客户对存储帐户启用加密。
@@ -120,8 +113,7 @@ AzCopy 是一个 Windows 命令行实用工具，专用于将数据复制到 Azu
 
 -   所有加密密钥将由 Azure 存储、加密和管理。
 
-##有关静态数据存储服务加密的常见问题
-
+## 有关静态数据存储服务加密的常见问题
 **问：我有一个现有的经典存储帐户。可以在其上启用 SSE 吗？**
 
 答：不可以，只有 Resource Manager 存储帐户支持 SSE。
@@ -195,4 +187,4 @@ AzCopy 是一个 Windows 命令行实用工具，专用于将数据复制到 Azu
 
 Azure 存储空间提供配套的安全性功能，这些功能相辅相成，可让开发人员共同构建安全的应用程序。有关详细信息，请访问[存储安全指南](/documentation/articles/storage-security-guide/)。
 
-<!---HONumber=Mooncake_1031_2016-->
+<!---HONumber=Mooncake_0103_2017-->
