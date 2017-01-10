@@ -14,13 +14,13 @@
 	ms.devlang="php" 
 	ms.topic="article" 
 	ms.date="06/07/2016" 
-	wacn.date="07/12/2016" 
+	wacn.date="01/09/2017" 
 	ms.author="wesmc"/>
 
 # 如何通过 PHP 使用通知中心
 [AZURE.INCLUDE [notification-hubs-backend-how-to-selector](../../includes/notification-hubs-backend-how-to-selector.md)]
 
-如 MSDN 主题[通知中心 REST API](http://msdn.microsoft.com/library/dn223264.aspx) 中所述，你可以使用通知中心 REST 接口从 Java/PHP/Ruby 后端访问所有通知中心功能。
+如 MSDN 主题[通知中心 REST API](http://msdn.microsoft.com/zh-cn/library/dn223264.aspx) 中所述，你可以使用通知中心 REST 接口从 Java/PHP/Ruby 后端访问所有通知中心功能。
 
 本主题中，我们将向你介绍如何：
 
@@ -28,7 +28,7 @@
 * 请按照你选定的移动平台的[入门教程](/documentation/articles/notification-hubs-ios-apple-push-notification-apns-get-started/)以 PHP 实现后端部分。
 
 ## 客户端接口
-主要的客户端接口可提供 [.NET 通知中心 SDK](http://msdn.microsoft.com/library/jj933431.aspx) 中提供的相同方法，这将允许你直接翻译当前此站点上提供的所有教程和示例，这些内容均来自 Internet 上的社区。
+主要的客户端接口可提供 [.NET 通知中心 SDK](http://msdn.microsoft.com/zh-cn/library/jj933431.aspx) 中提供的相同方法，这将允许你直接翻译当前此站点上提供的所有教程和示例，这些内容均来自 Internet 上的社区。
 
 你可以在 [PHP REST 包装器示例]中找到提供的所有代码。
 
@@ -44,7 +44,7 @@
 ## 实现
 如果你尚未实现，请按照我们的[入门教程]学至最后一节，其中你必须实现后端。此外，如果你希望可以使用 [PHP REST 包装器示例]中的代码并直接转到[完成本教程](#complete-tutorial)部分。
 
-有关实现完整 REST 包装器的所有详细信息，请访问 [MSDN](http://msdn.microsoft.com/library/dn530746.aspx)。在本部分中，我们将向你介绍访问通知中心 REST 终结点所需的主要步骤的 PHP 实现：
+有关实现完整 REST 包装器的所有详细信息，请访问 [MSDN](http://msdn.microsoft.com/zh-cn/library/dn530746.aspx)。在本部分中，我们将向你介绍访问通知中心 REST 终结点所需的主要步骤的 PHP 实现：
 
 1. 解析连接字符串
 2. 生成授权令牌
@@ -131,7 +131,7 @@
 
 此类是一个容器，其中包含本机通知正文或一组模板通知上的属性，以及一组包含格式（本机平台或模板）和平台特定属性（如 Apple 过期属性和 WNS 标头）的标头。
 
-请参阅[通知中心 REST API 文档](http://msdn.microsoft.com/library/dn495827.aspx)和具体的通知平台格式以了解所有可用选项。
+请参阅[通知中心 REST API 文档](http://msdn.microsoft.com/zh-cn/library/dn495827.aspx)和具体的通知平台格式以了解所有可用选项。
 
 具备了此类后，我们现在可以在 **NotificationHub** 类中编写发送通知方法了。
 
@@ -256,4 +256,4 @@
 [入门教程]: /documentation/articles/notification-hubs-ios-apple-push-notification-apns-get-started/
  
 
-<!---HONumber=Mooncake_0704_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

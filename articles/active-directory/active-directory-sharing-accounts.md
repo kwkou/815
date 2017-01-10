@@ -14,8 +14,9 @@
  	ms.devlang="na"
  	ms.topic="article"
  	ms.date="02/09/2016"
- 	wacn.date="06/27/2016"  
+ 	wacn.date="01/09/2017"  
  	ms.author="stevenpo"/>
+
 
 # 使用 Azure AD 共享帐户
 
@@ -32,14 +33,14 @@
 - 要使所有人都能访问新的应用程序，需要向他们分发凭据。
 - 每个共享的应用程序可能都需要唯一的一组共享凭据，而用户必须记住多组凭据。如果用户必须记住许多凭据，他们将采取有风险的做法（例如写下密码），因此增加了风险。
 - 你不知道谁有权访问应用程序。
-- 你不知道谁访问了应用程序。
+- 你不知道谁*访问了*应用程序。
 - 当你需要删除某个应用程序的访问权限时，必须更新凭据，并将凭据重新分发给需要访问该应用程序的所有人。
 
 ## Azure Active Directory 帐户共享
 
 Azure AD 提供使用共享帐户的新方法，从而可以消除这些缺点。
 
-通过使用访问面板并选择最适合该应用程序的单一登录类型，Azure AD 管理员可以配置用户可访问的应用程序。在这些类型中，基于密码的单一登录可在登录该应用的过程中，让 Azure AD 充当某种“代理”。
+通过使用访问面板并选择最适合该应用程序的单一登录类型，Azure AD 管理员可以配置用户可访问的应用程序。在这些类型中，*基于密码的单一登录*可在登录该应用的过程中，让 Azure AD 充当某种“代理”。
 
 用户使用他们的组织帐户登录一次即可。这与他们平时用来访问桌面或电子邮件的帐户相同。他们只能发现和访问分配给他们的那些应用程序。使用共享帐户时，此应用程序列表可以包含任意数目的共享凭据。最终用户不需要记住或写下他们可能要使用的多个帐户。
 
@@ -49,7 +50,7 @@ Azure AD 支持任何 Enterprise Mobility Suite (EMS)、高级或基本许可用
 
 支持帐户共享的 Azure AD 功能包括：
 
-- [密码单一登录](/documentation/articles/active-directory-appssoaccess-whatis/#password-based-single-sign-on)
+- [密码单一登录](/documentation/articles/active-directory-appssoaccess-whatis/#password-based-single-sign-on/)
 - 密码单一登录代理
 
 
@@ -60,11 +61,11 @@ Azure AD 支持任何 Enterprise Mobility Suite (EMS)、高级或基本许可用
 - 使用基于组的分配，并选择输入共享凭据的选项
 - 可选：在某些应用程序（例如 Facebook、Twitter 或 LinkedIn）中，你可以启用 [Azure AD 自动轮换密码](http://blogs.technet.com/b/ad/archive/2015/02/20/azure-ad-automated-password-roll-over-for-facebook-twitter-and-linkedin-now-in-preview.aspx)的选项
 
-你还可以使用 Multi-Factor Authentication (MFA) 提高共享帐户的安全性（了解有关[使用 Azure AD 保护应用程序](/documentation/articles/multi-factor-authentication-get-started-cloud/)的信息），并可以使用Azure AD 自助服务组管理来委派有关谁有权访问应用程序的管理权。
+你还可以使用多重身份验证(MFA) 提高共享帐户的安全性（了解有关[使用 Azure AD 保护应用程序](/documentation/articles/multi-factor-authentication-get-started-cloud/)的信息），并可以使用 Azure AD 自助服务组管理来委派有关谁有权访问应用程序的管理权。
 
 ## 相关文章
 
 - [有关 Azure Active Directory 中应用程序管理的文章索引](/documentation/articles/active-directory-apps-index/)
 
 
-<!---HONumber=Mooncake_0620_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="如何使用访问控制 (.NET) | Microsoft Azure"
+	pageTitle="如何使用访问控制 (.NET) | Azure"
 	description="了解当用户尝试获取对网站的访问权限时，如何在 Azure 应用程序中使用访问控制服务 (ACS) 对用户进行身份验证。" 
 	services="active-directory" 
 	documentationCenter=".net" 
@@ -10,7 +10,7 @@
 <tags 
 	ms.service="active-directory" 
 	ms.date="12/05/2015" 
-	wacn.date="04/28/2016"/>
+	wacn.date="01/09/2017"/>
 
 
 # 如何使用 Azure Active Directory 访问控制对 Web 用户进行身份验证
@@ -83,7 +83,7 @@ ACS 在基于声明的标识主体的基础上构建，它是一种创建针对�
     
 2.  单击“Active Directory”。
 
-    ![][1]
+	![][1]
 
 3.  要创建新的访问控制命名空间，请单击“新建”。这将选中“应用程序服务”和“访问控制”。单击“快速创建”。
 
@@ -109,7 +109,7 @@ Azure 将创建并激活该命名空间。
 
 4. 在“名称”中键入 **MvcACS**，然后单击“确定”。
 5. 在下一个对话框中，选择“Internet 应用程序”，然后单击“确定”。
-6. 编辑 Views\\Shared\_LoginPartial.cshtml 文件，并将内容替换为下列代码：
+6. 编辑 *Views\\Shared\_LoginPartial.cshtml* 文件，并将内容替换为下列代码：
 
         @if (Request.IsAuthenticated)
         {
@@ -199,11 +199,11 @@ Azure 将创建并激活该命名空间。
 
 在本节中，我们将修改应用程序以查看 ACS 发送的声明。身份验证和访问工具已创建一个将 IP 中的所有声明传递给应用程序的规则组。请注意，不同的标识提供程序会发送不同的声明。
 
-1. 打开 Controllers\\HomeController.cs 文件。为 **System.Threading** 添加 **using** 语句：
+1. 打开 *Controllers\\HomeController.cs* 文件。为 **System.Threading** 添加 **using** 语句：
 
  	using System.Threading;
 
-1. 在 HomeController 类中，添加 Claims 方法：
+1. 在 HomeController 类中，添加 *Claims* 方法：
 
     public ActionResult Claims()
     {
@@ -214,13 +214,13 @@ Azure 将创建并激活该命名空间。
         return View();
     }
 
-1. 右键单击 Claims 方法，然后选择“添加视图”。
+1. 右键单击 *Claims* 方法，然后选择“添加视图”。
 
 ![][66]
 
 1. 单击**“添加”**。
 
-1. 将 Views\\Home\\Claims.cshtml 文件的内容替换为下列代码：
+1. 将 *Views\\Home\\Claims.cshtml* 文件的内容替换为下列代码：
 
         @{
             ViewBag.Title = "Claims";
@@ -270,7 +270,7 @@ Azure 将创建并激活该命名空间。
         }
         </table>
 
-1. 运行应用程序并导航到 Claims 方法：
+1. 运行应用程序并导航到 *Claims* 方法：
 
 ![][666]
 
@@ -284,7 +284,7 @@ Visual Studio 中的身份验证和访问工具会自动将您的应用程序与
 
 您可以在 ACS 经典管理门户中检查和更改这些配置设置。使用下列步骤可查看门户中的更改。
 
-1.	登录到 [Microsoft Azure 经典管理门户](http://manage.windowsazure.cn)。
+1.	登录到 [Azure 经典管理门户](http://manage.windowsazure.cn)。
 
 2.	单击“Active Directory”。
 
@@ -396,4 +396,4 @@ Visual Studio 中的身份验证和访问工具会自动将您的应用程序与
   [19]: ./media/active-directory-dotnet-how-to-use-access-control/acsShowKey.png
   [20]: ./media/active-directory-dotnet-how-to-use-access-control/acsConfigAcsNamespace2.png
 
-<!---HONumber=Mooncake_0418_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

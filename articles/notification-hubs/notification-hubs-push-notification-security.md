@@ -14,7 +14,7 @@
 	ms.devlang="multiple"
 	ms.topic="article"
 	ms.date="06/29/2016"
-	wacn.date="11/15/2016"
+	wacn.date="01/09/2017"
 	ms.author="wesmc"/>
 
 #安全
@@ -46,6 +46,6 @@
 | 管理 | 通知中心的 CRUD（包括更新 PNS 凭据和安全密钥），以及基于标记读取注册。 | 创建/更新/读取/删除通知中心<br><br>按标记读取注册 |
 
 
-通知中心接受 Microsoft Azure 访问控制令牌所授予的声明，并接受签名令牌（使用在通知中心直接配置的共享密钥生成）所授予的声明。
+通知中心接受 Azure 访问控制令牌所授予的声明，并接受签名令牌（使用在通知中心直接配置的共享密钥生成）所授予的声明。
 
-<!---HONumber=Mooncake_0808_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

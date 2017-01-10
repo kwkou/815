@@ -15,21 +15,20 @@
     ms.tgt_pltfrm="na"
     ms.workload="identity"
     ms.date="08/23/2016"
-    wacn.date="12/16/2016"
-    ms.author="curtand"/>  
+    ms.author="curtand"
+    wacn.date="01/09/2017"/>  
 
 
 # 什么是 Azure Active Directory 许可？
 
 ##说明
-Azure Active Directory (Azure AD) 是 Microsoft 的标识即服务 (IDaaS) 解决方案与平台。Azure AD 提供许多功能与技术版本，从可配合任何 Microsoft 服务（例如 Office 365、Dynamics、Microsoft Intune 和 Azure）使用的 Azure AD 免费版（Azure AD 在此模式中不产生任何使用费），到许多 Azure AD 付费版，例如 Enterprise Mobility Suite (EMS)、Azure AD Premium 与 Basic，以及 Azure Multi-Factor Authentication (MFA)。与许多 Microsoft 联机服务（如 Office 365、Microsoft Intune 和 Azure AD）一样，大多数 Azure AD 付费版都是通过向每位用户授权来提供。在这些情况下，购买的服务以一个或多个订阅来表示，每个订阅在租户中包含预先购买数目的许可证。基于用户的权利是通过许可证分配、在用户与产品之间创建关联、为用户启用服务组件并占用一个预付费许可证来实现的。
+Azure Active Directory (Azure AD) 是 Microsoft 的标识即服务 (IDaaS) 解决方案与平台。Azure AD 提供许多功能与技术版本，从可配合任何 Microsoft 服务（例如 Office 365、Dynamics、Microsoft Intune 和 Azure）使用的 Azure AD 免费版（Azure AD 在此模式中不产生任何使用费），到许多 Azure AD 付费版，例如 Enterprise Mobility Suite (EMS)、Azure AD Premium 与 Basic，以及 Azure 多重身份验证(MFA)。与许多 Microsoft 联机服务（如 Office 365、Microsoft Intune 和 Azure AD）一样，大多数 Azure AD 付费版都是通过向每位用户授权来提供。在这些情况下，购买的服务以一个或多个订阅来表示，每个订阅在租户中包含预先购买数目的许可证。基于用户的权利是通过许可证分配、在用户与产品之间创建关联、为用户启用服务组件并占用一个预付费许可证来实现的。
 
 [立即试用 Azure AD 高级版。](https://portal.office.com/Signup/Signup.aspx?OfferId=01824d11-5ad8-447f-8523-666b0848b381&ali=1#0)
 
 > [AZURE.NOTE] Azure AD 经典管理门户是 Azure 经典管理门户的一部分。尽管使用 Azure AD 无需购买任何 Azure，但访问此门户需要有效的 Azure 订阅或 [Azure 试用版订阅](/pricing/1rmb-trial/)。
 
-有关 Azure AD 服务功能的一般概述，请参阅[什么是 Azure AD](/documentation/articles/active-directory-whatis/)。
-[了解有关 Azure AD 服务级别的详细信息](/support/legal/sla/)
+有关 Azure AD 服务功能的一般概述，请参阅[什么是 Azure AD](/documentation/articles/active-directory-whatis/)。[了解有关 Azure AD 服务级别的详细信息](/support/legal/sla/)
 
 > [AZURE.NOTE]  Azure 即付即用订阅则不相同：尽管也在目录中显示，但是这些订阅可以创建 Azure 资源并将资源映射到付款方式。在这种情况下，不存在与订阅关联的许可证计数。用户与订阅的关联就是用户管理订阅资源的访问权限，是通过授予用户权限，使他们能够操作已映射到订阅的 Azure 资源来实现的。
 
@@ -52,7 +51,7 @@ Azure Active Directory (Azure AD) 是 Microsoft 的标识即服务 (IDaaS) 解�
 - 基于组的应用程序分配，可在你管理的特定应用程序下启用。
 - 目录配置下或特定组内提供高级和自助式组管理功能。
 - 高级安全报告位于“报告”选项卡上
-- 云应用程序发现在 Azure 门户的“标识”下显示。
+- 云应用程序发现在 Azure 门户预览的“标识”下显示。
 
 ###分配许可证
 只要获取了订阅，就能配置付费功能；但是，要使用 Azure AD 付费功能，就必须将许可证分发给适当的个人。一般而言，应访问 Azure AD 付费功能或者通过 Azure AD 付费功能管理的人员都必须被分配许可证。许可证分配是用户与购买的服务（例如 Azure AD Premium、Basic 或 Enterprise Mobility Suite）之间的映射。
@@ -140,4 +139,4 @@ Azure AD 很容易入门；你始终可以在注册免费 Azure 试用版过程�
 - [Azure Multi-Factor Authentication](/documentation/articles/multi-factor-authentication/)
 
 
-<!---HONumber=Mooncake_1010_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

@@ -14,8 +14,8 @@
 	ms.devlang="javascript"
 	ms.topic="article"
 	ms.date="09/16/2016"
-	wacn.date="10/11/2016"
-	ms.author="dastrock"/>
+	ms.author="dastrock"
+	wacn.date="01/09/2017"/>
 
 
 # 如何使用 Azure AD 保护 AngularJS 单页面应用程序
@@ -45,17 +45,17 @@
 若要使应用程序对用户进行身份验证并获取令牌，首先需要在 Azure AD 租户中注册该应用程序：
 
 -	登录到 [Azure 管理门户](https://manage.windowsazure.cn)
--	在左侧的导航栏中单击"Active Directory"
+-	在左侧的导航栏中单击“Active Directory”
 -	选择要在其中注册应用程序的租户。
--	单击"应用程序"选项卡，然后在底部抽屉中单击"添加"。
+-	单击“应用程序”选项卡，然后在底部抽屉中单击“添加”。
 -	根据提示创建一个新的 **Web 应用程序和/或 WebAPI**。
-    -	应用程序的"名称"向最终用户描述你的应用程序。
-    -	"重定向 URI"是 AAD 要将令牌返回到的位置。本示例的默认位置是 `https://localhost:44326/`
--	完成注册后，AAD 将为应用程序分配唯一的**客户端 ID**。在后面的部分中将会用到此值，因此，请从"配置"选项卡复制此值。
+    -	应用程序的“名称”向最终用户描述你的应用程序。
+    -	“重定向 URI”是 AAD 要将令牌返回到的位置。本示例的默认位置是 `https://localhost:44326/`
+-	完成注册后，AAD 将为应用程序分配唯一的**客户端 ID**。在后面的部分中将会用到此值，因此，请从“配置”选项卡复制此值。
 - Adal.js 使用 OAuth 隐式流来与 Azure AD 通信。你必须通过执行以下操作，为应用程序启用隐式流：
-    - 单击"管理清单"下载应用程序清单。
+    - 单击“管理清单”下载应用程序清单。
     - 打开清单，然后找到 `oauth2AllowImplicitFlow` 属性。将其值设置为 `true`。
-    - 再次单击"管理清单"，以保存并上载应用程序清单。
+    - 再次单击“管理清单”，以保存并上载应用程序清单。
 
 ## *2.安装 ADAL 并配置 SPA*
 将应用程序注册到 Azure AD 后，可以安装 adal.js 并编写标识相关的代码。
@@ -73,7 +73,7 @@ js
 		...
 
 
--	要使 SPA 后端待办事项列表 API 接受来自浏览器的令牌，后端需要有关应用程序注册的配置信息。在 TodoSPA 项目中，打开 `web.config`。替换 `<appSettings>` 中的元素值，以反映你在 Azure 门户中输入的值。只要使用 ADAL，你的代码就会引用这些值。
+-	要使 SPA 后端待办事项列表 API 接受来自浏览器的令牌，后端需要有关应用程序注册的配置信息。在 TodoSPA 项目中，打开 `web.config`。替换 `<appSettings>` 中的元素值，以反映你在 Azure 门户预览中输入的值。只要使用 ADAL，你的代码就会引用这些值。
     -	`ida:Tenant` 是 Azure AD 租户的域，例如 contoso.partner.onmschina.cn
     -	`ida:Audience` 必须是从门户复制的应用程序的**客户端 ID**。
 
@@ -141,7 +141,7 @@ js
 		...
 
 
-- 另外，在许多情况下，你想要知道用户是否已登录。你也可以使用 `userInfo` 对象来收集此信息。例如，在 `index.html` 中，可以根据身份验证状态显示"登录"或"注销"按钮：
+- 另外，在许多情况下，你想要知道用户是否已登录。你也可以使用 `userInfo` 对象来收集此信息。例如，在 `index.html` 中，可以根据身份验证状态显示“登录”或“注销”按钮：
 
 js
 		
@@ -159,4 +159,4 @@ js
 
 [AZURE.INCLUDE [active-directory-devquickstarts-additional-resources](../../includes/active-directory-devquickstarts-additional-resources.md)]
 
-<!---HONumber=Mooncake_0926_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

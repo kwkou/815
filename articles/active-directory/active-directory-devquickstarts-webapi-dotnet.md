@@ -14,8 +14,8 @@
 	ms.devlang="dotnet"
 	ms.topic="article"
 	ms.date="09/16/2016"
-	wacn.date="10/17/2016"
-	ms.author="dastrock"/>  
+	ms.author="dastrock"
+	wacn.date="01/09/2017"/>  
 
 
 
@@ -121,7 +121,7 @@ C#
 
 -	最后，打开位于 TodoListService 项目根目录中的 `web.config` 文件，并在 `<appSettings>` 节中输入你的配置值。
   -	`ida:Tenant` 是 Azure AD 租户的名称，例如“contoso.partner.onmschina.cn”。
-  -	`ida:Audience` 是你在 Azure 门户中为应用程序输入的应用程序 ID URI。
+  -	`ida:Audience` 是你在 Azure 门户预览中为应用程序输入的应用程序 ID URI。
 
 ## *3.配置客户端应用程序并运行服务*
 需要先配置待办事项列表客户端，使它能够从 AAD 获取令牌并可调用服务，然后，你才能看到待办事项服务的运行情况。
@@ -136,8 +136,8 @@ C#
 
 - 在 Visual Studio 中，打开 TodoListClient 项目中的 `App.config`，然后在 `<appSettings>` 节中输入你的配置值。
   -	`ida:Tenant` 是 Azure AD 租户的名称，例如“contoso.partner.onmschina.cn”。
-  -	`ida:ClientId` 是从 Azure 门户复制的。
-  -	`todo:TodoListResourceId` 是你在 Azure 门户中为待办事项列表服务应用程序输入的应用程序 ID URI。
+  -	`ida:ClientId` 是从 Azure 门户预览复制的。
+  -	`todo:TodoListResourceId` 是你在 Azure 门户预览中为待办事项列表服务应用程序输入的应用程序 ID URI。
 
 最后，清理、生成并运行每个项目！ 如果你尚未这样做，现在可以使用 *.partner.onmschina.cn 域在租户中创建一个新的用户。使用该用户登录到待办事项列表客户端，并向用户的待办事项列表添加一些任务。
 
@@ -145,4 +145,4 @@ C#
 
 [AZURE.INCLUDE [active-directory-devquickstarts-additional-resources](../../includes/active-directory-devquickstarts-additional-resources.md)]
 
-<!---HONumber=Mooncake_1010_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

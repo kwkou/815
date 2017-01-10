@@ -14,8 +14,8 @@
 	ms.devlang="java"
 	ms.topic="article"
 	ms.date="09/16/2016"
-	wacn.date="10/11/2016"
-	ms.author="brandwe"/>
+	ms.author="brandwe"
+	wacn.date="01/09/2017"/>
 
 # 将 Azure AD 集成到 Android 应用程序中
 
@@ -39,7 +39,7 @@
 
 有关如何设置的信息，请访问我们的现有示例：
 
-* [适用于 Node.js 的 Azure Active Directory 示例 REST API 服务](/documentation/articles/active-directory-devquickstarts-webapi-nodejs/)
+- [适用于 Node.js 的 Azure Active Directory 示例 REST API 服务](/documentation/articles/active-directory-devquickstarts-webapi-nodejs/)
 
 ## 步骤 2：向 Azure AD 租户注册 Web API
 
@@ -52,16 +52,16 @@
 向 Azure AD 注册 Web API 的步骤
 
 1. 登录到 [Azure 管理门户](https://manage.windowsazure.cn)。
-2. 在左侧的导航栏中单击"Active Directory"。
+2. 在左侧的导航栏中单击“Active Directory”。
 3. 单击你要在其中注册示例应用程序的目录租户。
-4. 单击"应用程序"选项卡。
-5. 在抽屉中，单击"添加"。
-6. 单击"添加我的组织正在开发的应用程序"。
-7. 为应用程序输入一个友好的名称，例如"TodoListService"，选择"Web 应用程序和/或 Web API"，然后单击"下一步"。
-8. 对于登录 URL，请输入示例的基 URL，默认情况下为 `https://localhost:8080`
-9. 对于应用程序 ID URI，请输入 `https://<your_tenant_name>/TodoListService` 并将 `<your_tenant_name>` 替换为你的 Azure AD 租户的名称。单击"确定"完成注册。
-10. 仍然在 Azure 门户中，单击你的应用程序的"配置"选项卡。
-11. **查找"客户端 ID"值并将它复制到某个位置**，稍后配置应用程序时需要用到它。
+4. 单击“应用程序”选项卡。
+5. 在抽屉中，单击“添加”。
+6. 单击“添加我的组织正在开发的应用程序”。
+7. 为应用程序输入一个友好的名称，例如“TodoListService”，选择“Web 应用程序和/或 Web API”，然后单击“下一步”。
+8. 对于登录 URL，请输入示例的基 URL，默认情况下为 `https://localhost:8080`。
+9. 对于应用程序 ID URI，请输入 `https://<your_tenant_name>/TodoListService`，并将 `<your_tenant_name>` 替换为你的 Azure AD 租户的名称。单击“确定”完成注册。
+10. 仍然在 Azure 门户预览中，单击你的应用程序的“配置”选项卡。
+11. **查找“客户端 ID”值并将它复制到某个位置**，稍后配置应用程序时需要用到它。
 
 ## 步骤 3：注册示例 Android 本机客户端应用程序
 
@@ -78,33 +78,33 @@
 *如你可能猜到的那样，你可以生成一个从其他租户访问 Azure Active Directory 中注册的外部 API 的应用程序。如果你这样做，系统将提示你的客户许可使用该应用程序中的 API。令人欣慰的是，适用于 iOS 的 Active Directory 身份验证库将负责为你处理此许可！ 在了解更高级的功能后，你将发现，这是从 Azure 和 Office 以及任何其他服务提供程序访问 Microsoft API 套件所需工作的重要部分。现在，由于你已将 Web API 和应用程序注册到同一个租户下，因此，你不会看到任何许可提示。如果你只是在为自己的公司开发要使用的应用程序，则通常就是这种情况。*
 
 1. 登录到 [Azure 管理门户](https://manage.windowsazure.cn)。
-2. 在左侧的导航栏中单击"Active Directory"。
+2. 在左侧的导航栏中单击“Active Directory”。
 3. 单击你要在其中注册示例应用程序的目录租户。
-4. 单击"应用程序"选项卡。
-5. 在抽屉中，单击"添加"。
-6. 单击"添加我的组织正在开发的应用程序"。
-7. 为应用程序输入一个友好的名称，例如"TodoListClient-Android"，选择"本机客户端应用程序"，然后单击"下一步"。
-8. 对于"重定向 URI"，请输入 `http://TodoListClient` 单击"完成"。
-9. 单击应用程序的"配置"选项卡。
-10. 查找"客户端 ID"值并将它复制到某个位置，稍后配置应用程序时需要用到它。
-11. 在"针对其他应用程序的权限"中，单击"添加应用程序"。 在"显示"下拉列表中选择"其他"，然后单击上方的复选标记。找到并单击"TodoListService"，然后单击底部的复选标记以添加该应用程序。从"委托的权限"下拉列表中选择"访问 TodoListService"，然后保存配置。
+4. 单击“应用程序”选项卡。
+5. 在抽屉中，单击“添加”。
+6. 单击“添加我的组织正在开发的应用程序”。
+7. 为应用程序输入一个友好的名称，例如“TodoListClient-Android”，选择“本机客户端应用程序”，然后单击“下一步”。
+8. 对于“重定向 URI”，请输入 `http://TodoListClient`。单击“完成”。
+9. 单击应用程序的“配置”选项卡。
+10. 查找“客户端 ID”值并将它复制到某个位置，稍后配置应用程序时需要用到它。
+11. 在“针对其他应用程序的权限”中，单击“添加应用程序”。 在“显示”下拉列表中选择“其他”，然后单击上方的复选标记。找到并单击“TodoListService”，然后单击底部的复选标记以添加该应用程序。从“委托的权限”下拉列表中选择“访问 TodoListService”，然后保存配置。
 
 
 
 若要使用 Maven 生成，你可以在顶层使用 pom.xml
 
-  * 将此存储库克隆到所选的目录：
+  - 将此存储库克隆到所选的目录：
 
   `$ git clone git@github.com:AzureADSamples/NativeClient-Android.git`
 
-  * 根据["先决条件"部分中的步骤针对 Android 设置 Maven](https://github.com/MSOpenTech/azure-activedirectory-library-for-android/wiki/Setting-up-maven-environment-for-Android)
-  * 使用 SDK 19 设置模拟器
-  * 转到存储库克隆到的根文件夹
-  * 运行命令：mvn clean install
-  * 将目录切换到快速入门项目示例：cd samples\\hello
-  * 运行命令：mvn android:deploy android:run
-  * 你应会看到应用程序正在启动
-  * 输入测试用户凭据以尝试启动！
+  - 根据[“先决条件”部分中的步骤针对 Android 设置 Maven](https://github.com/MSOpenTech/azure-activedirectory-library-for-android/wiki/Setting-up-maven-environment-for-Android)
+  - 使用 SDK 19 设置模拟器
+  - 转到存储库克隆到的根文件夹
+  - 运行命令：mvn clean install
+  - 将目录切换到快速入门项目示例：cd samples\\hello
+  - 运行命令：mvn android:deploy android:run
+  - 你应会看到应用程序正在启动
+  - 输入测试用户凭据以尝试启动！
 
 除了 aar 包以外，还将提交 Jar 包。
 
@@ -286,7 +286,7 @@ Java
      AuthenticationSettings.Instance.setSkipBroker(true);
     
 
- 开发人员需要注册特殊的 redirectUri 供代理使用。RedirectUri 的格式为 msauth://packagename/Base64UrlencodedSignature。你可以使用脚本"brokerRedirectPrint.ps1"或使用 API 调用 mContext.getBrokerRedirectUri 获取应用程序的 redirecturi。签名与签名证书相关。
+ 开发人员需要注册特殊的 redirectUri 供代理使用。RedirectUri 的格式为 msauth://packagename/Base64UrlencodedSignature。你可以使用脚本“brokerRedirectPrint.ps1”或使用 API 调用 mContext.getBrokerRedirectUri 获取应用程序的 redirecturi。签名与签名证书相关。
 
  当前代理模型针对一个用户。AuthenticationContext 提供用于获取代理用户的 API 方法。
 
@@ -313,7 +313,7 @@ Java
 
 ### 代理
 
-代理组件将随 Microsoft Intune 的公司门户应用一起提供。帐户将在帐户管理器中创建。帐户类型为"com.microsoft.workaccount"。它只允许单个 SSO 帐户。在完成一个应用的设备质询后，它将为此用户创建 SSO Cookie。
+代理组件将随 Microsoft Intune 的公司门户应用一起提供。帐户将在帐户管理器中创建。帐户类型为“com.microsoft.workaccount”。它只允许单个 SSO 帐户。在完成一个应用的设备质询后，它将为此用户创建 SSO Cookie。
 
 ### 机构 URL 和 ADFS
 
@@ -386,14 +386,14 @@ Java
 Java
 
 	private syncronized void writeToLogFile(Context ctx, String msg) {
-		       File directory = ctx.getDir(ctx.getPackageName(), Context.MODE_PRIVATE);
-		       File logFile = new File(directory, "logfile");
-		       FileOutputStream outputStream = new FileOutputStream(logFile, true);
-		       OutputStreamWriter osw = new OutputStreamWriter(outputStream);
-		       osw.write(msg);
-		       osw.flush();
-		       osw.close();
-		}
+		File directory = ctx.getDir(ctx.getPackageName(), Context.MODE_PRIVATE);
+		File logFile = new File(directory, "logfile");
+		FileOutputStream outputStream = new FileOutputStream(logFile, true);
+		OutputStreamWriter osw = new OutputStreamWriter(outputStream);
+		osw.write(msg);
+		osw.flush();
+		osw.close();
+	}
 
 
 ##### 日志记录级别
@@ -477,4 +477,4 @@ ADAL 版本 1.1.0 支持通过 WebViewClient 中的 onReceivedHttpAuthRequest �
 
 [AZURE.INCLUDE [active-directory-devquickstarts-additional-resources](../../includes/active-directory-devquickstarts-additional-resources.md)]
 
-<!---HONumber=Mooncake_0926_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

@@ -5,7 +5,8 @@
 	documentationCenter=""
 	authors="asteen"
 	manager="femila"
-	editor="curtand"/>
+	editor="curtand"/>  
+
 
 <tags
 	ms.service="active-directory"
@@ -14,18 +15,18 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="08/30/2016"
-	wacn.date="11/30/2016"
-	ms.author="asteen"/>
+	ms.author="asteen"
+   	wacn.date="01/09/2017"/>
 
 # 如何更新自己的密码
 如果不确定如何管理自己的工作或学校帐户密码，来这里就对了！ 请阅读以下内容，了解如何执行常见的步骤，例如更改密码、重置密码或注册密码重置。
 
-* **不要失去对帐户的访问权限！**
-* **如何从 Office 365 更改密码**
-* **如何从访问面板更改密码**
-* **如何重置密码** 
-* **如何解锁帐户** 
-* **常见问题及其解决方法** 
+- [**不要失去对帐户的访问权限！**](#dont-lose-access-to-your-account)
+- [**如何从 Office 365 更改密码**](#how-to-change-your-password-from-o365)
+- [**如何从访问面板更改密码**](#how-to-change-your-password-from-the-access-panel)
+- [**如何重置密码**](#how-to-reset-your-password)
+- [**如何解锁帐户**](#how-to-unlock-your-account)
+- [**常见问题及其解决方法**](#common-problems-and-their-solutions)
 
 ## 不要失去对帐户的访问权限！
 
@@ -270,4 +271,4 @@
 [014]: ./media/active-directory-passwords-update-your-own-password/014.jpg "Image_014.jpg"
 [015]: ./media/active-directory-passwords-update-your-own-password/015.jpg "Image_015.jpg"
 
-<!---HONumber=Mooncake_1010_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

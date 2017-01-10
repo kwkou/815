@@ -15,7 +15,7 @@
    ms.workload="storage-backup-recovery"
    ms.date="08/16/2016"
    ms.author="jimpark;saurabhsensharma;nkolli;trinadhk"
-   wacn.date="01/06/2017"/>  
+   wacn.date="01/09/2017"/>  
 
 
 # Azure 备份中的脱机备份工作流
@@ -71,9 +71,9 @@ Azure 备份的脱机种子设定与 [Azure 导入/导出服务](/documentation/
     - **Azure 存储帐户**：提供的 Azure 订阅中与 Azure 导入作业关联的经典类型存储帐户。
     - **Azure 存储容器**：Azure 存储帐户中导入此作业数据的目标存储 Blob 的名称。
 
-    > [AZURE.NOTE] 如果已通过 [Azure 门户](https://portal.azure.cn)在 Azure 恢复服务保管库中为备份注册了服务器，并且不是在云解决方案提供商 (CSP) 订阅上，则仍可以通过 Azure 门户创建经典类型的存储帐户，然后将它用于脱机备份工作流。
+    > [AZURE.NOTE] 如果已通过 [Azure 门户预览](https://portal.azure.cn)在 Azure 恢复服务保管库中为备份注册了服务器，并且不是在云解决方案提供商 (CSP) 订阅上，则仍可以通过 Azure 门户预览创建经典类型的存储帐户，然后将它用于脱机备份工作流。
 
-    请保存所有这些信息，因为在后续步骤中需要再次输入这些信息。如果使用 Azure 磁盘准备工具来准备磁盘，则只需要 *暂存位置* 。
+    请保存所有这些信息，因为在后续步骤中需要再次输入这些信息。如果使用 Azure 磁盘准备工具来准备磁盘，则只需要*暂存位置*。
 
 
 2. 完成工作流，然后在 Azure 备份管理控制台中选择“立即备份”，启动脱机备份复制。初始备份写入到临时区域作为此步骤的一部分。
@@ -102,7 +102,7 @@ Azure 磁盘准备工具可在恢复服务代理（2016 年 8 月更新版和更
 
       - 已在计算机上启用 BitLocker。
 
-      - 计算机可以访问 Azure 门户。
+      - 计算机可以访问 Azure 门户预览。
 
       必要时，副本计算机可与源计算机相同。
 
@@ -171,10 +171,10 @@ Azure 磁盘准备工具可在恢复服务代理（2016 年 8 月更新版和更
   ![PowerShell 输出](./media/backup-azure-backup-import-export/psoutput.png)  
 
 
-### 在 Azure 门户中创建导入作业
+### 在 Azure 门户预览中创建导入作业
 1. 在 [Azure 经典管理门户](https://manage.windowsazure.cn/)中转到存储帐户，单击“导入/导出”，然后单击任务窗格中的“创建导入作业”。
 
-    ![Azure 门户中的导入/导出选项卡](./media/backup-azure-backup-import-export/azureportal.png)  
+    ![Azure 门户预览中的导入/导出选项卡](./media/backup-azure-backup-import-export/azureportal.png)  
 
 
 2. 在向导的步骤 1 中，指示已准备好了驱动器并且具有可用的驱动器日志文件。
@@ -200,4 +200,4 @@ Azure 磁盘准备工具可在恢复服务代理（2016 年 8 月更新版和更
 - 如有任何关于 Azure 导入/导出工作流的问题，请参阅 [Use the Azure Import/Export service to transfer data to Blob storage](/documentation/articles/storage-import-export-service/)（使用 Azure 导入/导出服务可将数据传输到 Blob 存储中）。
 - 如有工作流方面的任何问题，请参阅 Azure 备份 [FAQ](/documentation/articles/backup-azure-backup-faq/)（常见问题）的“脱机备份”部分。
 
-<!---HONumber=Mooncake_1017_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

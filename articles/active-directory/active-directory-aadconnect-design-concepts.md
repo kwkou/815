@@ -9,27 +9,26 @@
 
 <tags
    ms.service="active-directory"
-   ms.custom = "azure-ad-connect"
    ms.devlang="na"
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="Identity"
    ms.date="09/13/2016"
-   wacn.date="01/06/2017"
-   ms.author="billmath"/>
+   ms.author="andkjell"
+   wacn.date="01/09/2017"/>
 
 # Azure AD Connect：设计概念
 本主题旨在说明 Azure AD Connect 实现设计期间必须考虑到的各个方面。本主题是特定领域的深入探讨，其他主题中也简要描述了这些概念。
 
 ## sourceAnchor <a name="sourceanchor"></a>
-sourceAnchor 属性定义为 *在对象生存期内不会变化的属性* 。它可将对象唯一标识为本地和 Azure AD 中的相同对象。该属性也称为 **immutableId**，这两个名称可以换用。
+sourceAnchor 属性定义为*在对象生存期内不会变化的属性*。它可将对象唯一标识为本地和 Azure AD 中的相同对象。该属性也称为 **immutableId**，这两个名称可以换用。
 
-在本主题中，"不可变"（即无法更改）一词非常重要。由于此属性的值在设置之后就无法更改，因此请务必挑选可支持方案的设计。
+在本主题中，“不可变”（即无法更改）一词非常重要。由于此属性的值在设置之后就无法更改，因此请务必挑选可支持方案的设计。
 
 该属性用于以下方案︰
 
 - 构建新的同步引擎服务器，或者在灾难恢复方案后进行重建时，此属性会将 Azure AD 中的现有对象链接到本地对象。
-- 如果从仅限云的标识转移到已同步的标识模型，则此属性可让对象将 Azure AD 中的现有对象与本地对象进行"硬匹配"。
+- 如果从仅限云的标识转移到已同步的标识模型，则此属性可让对象将 Azure AD 中的现有对象与本地对象进行“硬匹配”。
 - 如果使用联合，此属性将与 **userPrincipalName** 一起在声明中使用，以唯一标识用户。
 
 本主题只讨论与用户相关的 sourceAnchor。相同的规则适用于所有对象类型，但只有用户才需要考虑这个问题。
@@ -48,7 +47,7 @@ sourceAnchor 属性定义为 *在对象生存期内不会变化的属性* 。它
 
 如果选定的 sourceAnchor 不是字符串类型，Azure AD Connect 会将此属性值进行 Base64Encode 处理，确保不会出现特殊字符。如果使用除 ADFS 以外的其他联合服务器，请确保服务器也能将此属性进行 Base64Encode 处理。
 
-sourceAnchor 属性区分大小写。"JohnDoe"与"johndoe"是不同的值。但是，两个对象的不同之处不能只是大小写不同。
+sourceAnchor 属性区分大小写。“JohnDoe”与“johndoe”是不同的值。但是，两个对象的不同之处不能只是大小写不同。
 
 如果有单个本地林，应使用属性 **objectGUID**。这也是在 Azure AD Connect 中使用快速设置时所用的属性，而且也是 DirSync 所用的属性。
 
@@ -76,7 +75,7 @@ sourceAnchor 属性区分大小写。"JohnDoe"与"johndoe"是不同的值。但�
 - 属性值符合 UPN 语法 (RFC 822)，其格式应为 username@domain
 - 这些值的后缀符合 Azure AD 中其中一个已验证的自定义域
 
-在快速设置中，属性的假设选择是 userPrincipalName。如果 userPrincipalName 属性不包含希望用户用于登录 Azure 的值，则必须选择"自定义安装"。
+在快速设置中，属性的假设选择是 userPrincipalName。如果 userPrincipalName 属性不包含希望用户用于登录 Azure 的值，则必须选择“自定义安装”。
 
 ### 自定义域状态和 UPN
 必须确保 UPN 后缀包含已验证的域。
@@ -93,4 +92,4 @@ Azure AD Connect 将检测你是否在不可路由的域环境中运行，并在
 ## 后续步骤
 了解有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect/)的详细信息。
 
-<!---HONumber=Mooncake_0926_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->
