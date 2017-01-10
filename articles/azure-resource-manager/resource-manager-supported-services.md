@@ -30,13 +30,11 @@ Azure 资源管理器为你提供了一种新的方式来部署和管理构成�
 | 服务 | 已启用资源管理器 | REST API | 架构 | 快速入门模板 |
 | --- | --- | --- | --- | --- |
 | 批处理 |是 |[Batch REST](https://docs.microsoft.com/rest/api/batchservice) |[批处理架构](https://github.com/Azure/azure-resource-manager-schemas/blob/master/schemas/2015-12-01/Microsoft.Batch.json) | |
-| 容器 |是 |[容器服务 REST](https://docs.microsoft.com/rest/api/containerregistry) |[容器架构](https://github.com/Azure/azure-resource-manager-schemas/blob/master/schemas/2016-03-30/Microsoft.ContainerService.json) |[Microsoft.ContainerService](https://github.com/Azure/azure-quickstart-templates) |
 | 动态生命周期服务 |是 | | | |
 | 规模集 |是 |[规模集 REST](https://docs.microsoft.com/rest/api/compute/virtualmachinescalesets) |[规模集架构](https://github.com/Azure/azure-resource-manager-schemas/blob/master/schemas/2015-08-01/Microsoft.Compute.json) |[virtualMachineScaleSets](https://github.com/Azure/azure-quickstart-templates) |
 | Service Fabric |是 |[Service Fabric Rest](https://docs.microsoft.com/rest/api/servicefabric) | [Service Fabric 架构](https://github.com/Azure/azure-resource-manager-schemas/blob/master/schemas/2016-09-01/Microsoft.ServiceFabric.json) |[Microsoft.ServiceFabric](https://github.com/Azure/azure-quickstart-templates) |
 | 虚拟机 |是 |[VM REST](https://docs.microsoft.com/rest/api/compute/virtualmachines) |[VM 架构](https://github.com/Azure/azure-resource-manager-schemas/blob/master/schemas/2015-08-01/Microsoft.Compute.json) |[virtualMachines](https://github.com/Azure/azure-quickstart-templates) |
 | 虚拟机（经典）|有限制 |- |- |- |
-| 远程应用 |否 |- |- |- |
 | 云服务（经典）|有限制（参阅下文）|- |- |- |
 
 虚拟机（经典）是指已通过经典部署模型部署的资源，而不是通过资源管理器部署模型部署的资源。一般而言，这些资源不支持资源管理器操作，但已启用某些操作。有关这些部署模型的详细信息，请参阅[了解资源管理器部署和经典部署](/documentation/articles/resource-manager-deployment-model/)。
@@ -47,7 +45,6 @@ Azure 资源管理器为你提供了一种新的方式来部署和管理构成�
 | 服务 | 已启用资源管理器 | REST API | 架构 | 快速入门模板 |
 | --- | --- | --- | --- | --- |
 | 应用程序网关 |是 |[应用程序网关 REST](https://msdn.microsoft.com/zh-cn/library/azure/mt684939.aspx) | |[applicationGateways](https://github.com/Azure/azure-quickstart-templates) |
-| DNS |是 |[DNS REST](https://docs.microsoft.com/rest/api/dns) |[DNS 架构](https://github.com/Azure/azure-resource-manager-schemas/blob/master/schemas/2016-04-01/Microsoft.Network.json) |[dnsZones](https://github.com/Azure/azure-quickstart-templates) |
 | ExpressRoute |是 |[ExpressRoute REST](https://msdn.microsoft.com/zh-cn/library/azure/mt586720.aspx) | |[expressRouteCircuits](https://github.com/Azure/azure-quickstart-templates) |
 | 负载均衡器 |是 |[负载均衡器 REST](https://msdn.microsoft.com/zh-cn/library/azure/mt163651.aspx) |[负载均衡器架构](https://github.com/Azure/azure-resource-manager-schemas/blob/master/schemas/2015-08-01/Microsoft.Network.json) |[loadBalancers](https://github.com/Azure/azure-quickstart-templates) |
 | 流量管理器 |是 |[流量管理器 REST](https://msdn.microsoft.com/zh-cn/library/azure/mt163667.aspx) |[流量管理器架构](https://github.com/Azure/azure-resource-manager-schemas/blob/master/schemas/2015-11-01/Microsoft.Network.json) |[trafficmanagerprofiles](https://github.com/Azure/azure-quickstart-templates) |
@@ -58,7 +55,6 @@ Azure 资源管理器为你提供了一种新的方式来部署和管理构成�
 | 服务 | 已启用资源管理器 | REST API | 架构 | 快速入门模板 |
 | --- | --- | --- | --- | --- |
 | 存储 |是 |[存储 REST](https://docs.microsoft.com/rest/api/storagerp) |[存储帐户](/documentation/articles/resource-manager-template-storage/) |[Microsoft.Storage](https://github.com/Azure/azure-quickstart-templates) |
-| StorSimple |是 | | | |
 
 ## 数据库
 | 服务 | 已启用资源管理器 | REST API | 架构 | 快速入门模板 |
@@ -84,14 +80,8 @@ Azure 资源管理器为你提供了一种新的方式来部署和管理构成�
 ## 智能 + 分析
 | 服务 | 已启用资源管理器 | REST API | 架构 | 快速入门模板 |
 | --- | --- | --- | --- | --- |
-| Analysis Services | 是 | [Analysis Services REST](https://docs.microsoft.com/rest/api/analysisservices) | [Analysis Services 架构](https://github.com/Azure/azure-resource-manager-schemas/blob/master/schemas/2016-05-16/Microsoft.AnalysisServices.json) | |
 | 认知服务 |是 | [认知服务 REST](https://docs.microsoft.com/rest/api/cognitiveservices) |[认知服务架构](https://github.com/Azure/azure-resource-manager-schemas/blob/master/schemas/2016-02-01-preview/Microsoft.CognitiveServices.json) | |
-| 数据目录 |是 |[数据目录 REST](https://docs.microsoft.com/rest/api/datacatalog) |[数据目录架构](https://github.com/Azure/azure-resource-manager-schemas/blob/master/schemas/2016-03-30/Microsoft.DataCatalog.json) | |
-| Data Factory |是 |[数据工厂 REST](https://docs.microsoft.com/rest/api/datafactory) | |[Microsoft.DataFactory](https://github.com/Azure/azure-quickstart-templates) |
-| 数据湖分析 |是 | [Data Lake REST](https://docs.microsoft.com/rest/api/datalakeanalytics) |[Data Lake 架构](https://github.com/Azure/azure-resource-manager-schemas/blob/master/schemas/2015-10-01-preview/Microsoft.DataLakeAnalytics.json) |[Microsoft.DataLakeAnalytics](https://github.com/Azure/azure-quickstart-templates) |
-| 数据湖存储 |是 |[Data Lake Store REST](https://docs.microsoft.com/rest/api/datalakestore) |[Data Lake 架构](https://github.com/Azure/azure-resource-manager-schemas/blob/master/schemas/2015-10-01-preview/Microsoft.DataLakeAnalytics.json) |[Microsoft.DataLakeStore](https://github.com/Azure/azure-quickstart-templates) |
-| HDInsights |是 |[HDInsights REST](https://docs.microsoft.com/rest/api/hdinsight) | |[Microsoft.HDInsight](https://github.com/Azure/azure-quickstart-templates) |
-| 机器学习 |是 |[机器学习 REST](https://docs.microsoft.com/rest/api/machinelearning) |[机器学习架构](https://github.com/Azure/azure-resource-manager-schemas/blob/master/schemas/2016-05-01-preview/Microsoft.MachineLearning.json) | |
+| HDInsights |否 | | | |
 | 流分析 |是 |[流分析 REST](https://docs.microsoft.com/rest/api/streamanalytics) | | |
 | Power BI |是 |[Power BI Embedded REST](https://docs.microsoft.com/rest/api/powerbiembedded) |[Power BI 架构](https://github.com/Azure/azure-resource-manager-schemas/blob/master/schemas/2016-01-29/Microsoft.PowerBI.json) | |
 
@@ -112,7 +102,6 @@ Azure 资源管理器为你提供了一种新的方式来部署和管理构成�
 ## 混合集成
 | 服务 | 已启用资源管理器 | REST API | 架构 | 快速入门模板 |
 | --- | --- | --- | --- | --- |
-| BizTalk 服务 |是 | |[BizTalk 架构](https://github.com/Azure/azure-resource-manager-schemas/blob/master/schemas/2014-04-01/Microsoft.BizTalkServices.json) | |
 | 恢复服务 |是 |[恢复服务 REST](https://docs.microsoft.com/rest/api/recoveryservices) |[恢复服务架构](https://github.com/Azure/azure-resource-manager-schemas/blob/master/schemas/2016-06-01/Microsoft.RecoveryServices.json) |[Microsoft.RecoveryServices](https://github.com/Azure/azure-quickstart-templates) |
 | 服务总线 |是 |[服务总线 REST](https://docs.microsoft.com/rest/api/servicebus) |[服务总线架构](https://github.com/Azure/azure-resource-manager-schemas/blob/master/schemas/2015-08-01/Microsoft.ServiceBus.json) |[Microsoft.ServiceBus](https://github.com/Azure/azure-quickstart-templates) |
 
@@ -123,16 +112,12 @@ Azure Active Directory 可以使用 Resource Manager 为订阅启用基于角色
 | 服务 | 已启用资源管理器 | REST API | 架构 | 快速入门模板 |
 | --- | --- | --- | --- | --- |
 | 监视 |是 |[监视器 REST](https://docs.microsoft.com/rest/api/monitor) |[Insights 架构](https://github.com/Azure/azure-resource-manager-schemas/blob/master/schemas/2014-04-01/Microsoft.Insights.json) |[Microsoft.insights](https://github.com/Azure/azure-quickstart-templates) |
-| 必应地图 |是 | | | |
-| DevTest Labs |是 | [DevTest REST](https://docs.microsoft.com/rest/api/dtl) |[DevTest Lab 架构](https://github.com/Azure/azure-resource-manager-schemas/blob/master/schemas/2016-05-15/Microsoft.DevTestLab.json) |[Microsoft.DevTestLab](https://github.com/Azure/azure-quickstart-templates) |
-| Visual Studio 帐户 |是 | |[Visual Studio 架构](https://github.com/Azure/azure-resource-manager-schemas/blob/master/schemas/2014-02-26/microsoft.visualstudio.json) | |
 
 ## 管理和安全性
 | 服务 | 已启用资源管理器 | REST API | 架构 | 快速入门模板 |
 | --- | --- | --- | --- | --- |
-| 自动化 |是 |[自动化 REST](https://msdn.microsoft.com/zh-cn/library/azure/mt662285.aspx) |[自动化架构](https://github.com/Azure/azure-resource-manager-schemas/blob/master/schemas/2015-10-31/Microsoft.Automation.json) |[Microsoft.Automation](https://github.com/Azure/azure-quickstart-templates) |
+| 自动化 |否 | | | |
 | 密钥保管库 |是 |[密钥保管库 REST](https://docs.microsoft.com/rest/api/keyvault) |[密钥保管库](/documentation/articles/resource-manager-template-keyvault/)<br />[密钥保管库机密](/documentation/articles/resource-manager-template-keyvault-secret/) |[Microsoft.KeyVault](https://github.com/Azure/azure-quickstart-templates) |
-| 操作见解 |是 | | | |
 | 计划程序 |是 |[计划程序 REST](https://docs.microsoft.com/rest/api/scheduler) |[计划程序架构](https://github.com/Azure/azure-resource-manager-schemas/blob/master/schemas/2016-03-01/Microsoft.Scheduler.json) |[Microsoft.Scheduler](https://github.com/Azure/azure-quickstart-templates) |
 | 安全性（预览版） |是 |[安全 REST](https://msdn.microsoft.com/zh-cn/library/azure/mt704034.aspx) | |[Microsoft.Security](https://github.com/Azure/azure-quickstart-templates) |
 

@@ -174,7 +174,7 @@
 | --- | --- | --- |
 | location |Azure 区域的约束列表中的字符串 |资源的部署位置。 |
 | storageAccountNamePrefix |String |在其中放置 VM 磁盘的存储帐户的唯一 DNS 名称 |
-| domainName |String |可公开访问的 jumpbox VM 的域名采用的格式：**{domainName}.{location}.cloudapp.com** 例如：**mydomainname.chinanorth.chinacloudapp.cn** |
+| domainName |String |可公开访问的 jumpbox VM 的域名采用的格式：**{domainName}.{location}.chinacloudapp.cn** 例如：**mydomainname.chinanorth.chinacloudapp.cn** |
 | adminUsername |String |VM 的用户名 |
 | adminPassword |String |VM 的密码 |
 | tshirtSize |所提供 T 恤尺寸的约束列表中的字符串 |要预配的指定的缩放单位大小。例如，“小”、“中”、“大” |
