@@ -1,6 +1,6 @@
 <properties
-   pageTitle="如何使用 Azure 资源管理器 和 PowerShell 在 Azure VPN 网关上配置 BGP | Azure"
-   description="本文指导你完成使用 Azure 资源管理器 和 PowerShell 通过 Azure VPN 网关配置 BGP。"
+   pageTitle="如何使用 Azure Resource Manager 和 PowerShell 在 Azure VPN 网关上配置 BGP | Azure"
+   description="本文指导你完成使用 Azure Resource Manager 和 PowerShell 通过 Azure VPN 网关配置 BGP。"
    services="vpn-gateway"
    documentationCenter="na"
    authors="yushwang"
@@ -15,12 +15,12 @@
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
    ms.date="04/15/2016"
-   wacn.date="01/05/2017"
+   wacn.date="01/09/2017"
    ms.author="yushwang"/>
 
-# 如何使用 Azure 资源管理器 和 PowerShell 在 Azure VPN 网关上配置 BGP
+# 如何使用 Azure Resource Manager 和 PowerShell 在 Azure VPN 网关上配置 BGP
 
-本文将指导你完成使用资源管理器 部署模型和 PowerShell 在跨界站点到站点 (S2S) VPN 连接和 VNet 到 VNet 连接上启用 BGP 的步骤。
+本文将指导你完成使用 Resource Manager 部署模型和 PowerShell 在跨界站点到站点 (S2S) VPN 连接和 VNet 到 VNet 连接上启用 BGP 的步骤。
 
 
 **关于 Azure 部署模型**
@@ -301,5 +301,4 @@ BGP 是通常在 Internet 上使用的，用于在两个或更多网络之间交
 
 连接完成后，即可将虚拟机添加到虚拟网络。请参阅[创建虚拟机](/documentation/articles/virtual-machines-windows-creation-choices/)以获取相关步骤。
 
-
-<!---HONumber=Mooncake_0613_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

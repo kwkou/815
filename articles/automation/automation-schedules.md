@@ -14,7 +14,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
    ms.date="10/10/2016"
-   wacn.date="01/05/2017"
+   wacn.date="01/09/2017"
    ms.author="mgoedtel" />  
 
 
@@ -117,4 +117,4 @@
 
 - 若要在 Azure 自动化中开始使用 Runbook，请参阅 [Starting a Runbook in Azure Automation](/documentation/articles/automation-starting-a-runbook/)（在 Azure 自动化中启动 Runbook）
 
-<!---HONumber=Mooncake_1024_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

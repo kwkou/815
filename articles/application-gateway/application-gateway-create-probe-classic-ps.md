@@ -16,10 +16,11 @@
     ms.tgt_pltfrm="na"
     ms.workload="infrastructure-services"
     ms.date="12/13/2016"
-    wacn.date="01/03/2017"
+    wacn.date="01/09/2017"
     ms.author="gwallace" />
 
 # 使用 PowerShell 创建 Azure 应用程序网关（经典）的自定义探测
+
 > [AZURE.SELECTOR]
 - [Azure 门户预览](/documentation/articles/application-gateway-create-probe-portal/)
 - [Azure Resource Manager PowerShell](/documentation/articles/application-gateway-create-probe-ps/)
@@ -27,8 +28,7 @@
 
 [AZURE.INCLUDE [azure-probe-intro-include](../../includes/application-gateway-create-probe-intro-include.md)]
 
-> [AZURE.IMPORTANT]
-Azure 提供两个不同的部署模型用于创建和处理资源：[Resource Manager 模型和经典模型](/documentation/articles/resource-manager-deployment-model/)。本文介绍如何使用经典部署模型。Azure 建议大多数新部署使用 Resource Manager 模型。了解如何[使用 Resource Manager 模型执行这些步骤](/documentation/articles/application-gateway-create-probe-ps/)。
+> [AZURE.IMPORTANT] Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model/)。本文介绍使用经典部署模型。Azure 建议大多数新部署使用 Resource Manager 模型。了解如何[使用 Resource Manager 模型执行这些步骤](/documentation/articles/application-gateway-create-probe-ps/)。
 
 [AZURE.INCLUDE [azure-ps-prerequisites-include.md](../../includes/azure-ps-prerequisites-include.md)]
 
@@ -42,7 +42,7 @@ Azure 提供两个不同的部署模型用于创建和处理资源：[Resource M
 
 ### 创建应用程序网关资源
 
-若要创建网关，请使用 `New-AzureApplicationGateway` cmdlet，并将值替换为你自己的值。此时不会开始计收网关的费用。计费将在后面成功启动网关时开始。
+若要创建网关，请使用 `New-AzureApplicationGateway` cmdlet，并将值替换为你自己的值。此时不会开始计收网关的费用。计费将在后面已成功启动网关时开始。
 
 以下示例使用名为“testvnet1”的虚拟网络和名为“subnet-1”的子网创建应用程序网关。
 
@@ -118,7 +118,7 @@ Azure 提供两个不同的部署模型用于创建和处理资源：[Resource M
         <HttpListener>
             <Name>listener1</Name>
             <FrontendIP>fip1</FrontendIP>
-        <FrontendPort>port1</FrontendPort>
+	    <FrontendPort>port1</FrontendPort>
             <Protocol>Http</Protocol>
         </HttpListener>
     </HttpListeners>
@@ -133,12 +133,11 @@ Azure 提供两个不同的部署模型用于创建和处理资源：[Resource M
     </HttpLoadBalancingRules>
     </ApplicationGatewayConfiguration>
 
-编辑配置项目的括号之间的值。使用扩展名 .xml 保存文件。
+编辑配置项的括号之间的值。使用扩展名 .xml 保存文件。
 
-以下示例演示如何使用配置文件设置应用程序网关负载均衡公共端口 80 上的 HTTP 流量，然后使用自定义探测将网络流量发送到 2 个 IP 地址之间的后端端口 80。
+以下示例演示如何使用配置文件设置应用程序网关以负载均衡公共端口 80 上的 HTTP 流量，然后使用自定义探测将网络流量发送到两个 IP 地址之间的后端端口 80。
 
-> [AZURE.IMPORTANT]
-协议项 Http 或 Https 区分大小写。
+>[AZURE.IMPORTANT] 协议项 Http 或 Https 区分大小写。
 
 已添加用于配置自定义探测的新配置项 <Probe>。
 
@@ -159,7 +158,7 @@ Azure 提供两个不同的部署模型用于创建和处理资源：[Resource M
 
 ### 步骤 1
 
-使用 `Get-AzureApplicationGatewayConfig` 获取 XML 文件。此 cmdlet 会导出要修改的配置 XML 以添加探测设置。
+使用 Get-AzureApplicationGatewayConfig 获取 XML 文件。这会导出要修改的配置 XML 以添加探测设置。
 
     Get-AzureApplicationGatewayConfig -Name "<application gateway name>" -Exporttofile "<path to file>"
 
@@ -194,7 +193,7 @@ Azure 提供两个不同的部署模型用于创建和处理资源：[Resource M
 
 ### 步骤 3
 
-通过 `Set-AzureApplicationGatewayConfig` 使用新的 XML 文件更新应用程序网关配置。此 cmdlet 使用新配置更新应用程序网关。
+使用 `Set-AzureApplicationGatewayConfig` 在新的 XML 文件中更新应用程序网关配置。这将以新的配置更新应用程序网关。
 
     Set-AzureApplicationGatewayConfig -Name "<application gateway name>" -Configfile "<path to file>"
 
@@ -204,4 +203,4 @@ Azure 提供两个不同的部署模型用于创建和处理资源：[Resource M
 
 如果你想要将应用程序网关配置为与内部负载均衡器配合使用，请参阅 [Create an application gateway with an internal load balancer (ILB)](/documentation/articles/application-gateway-ilb/)（创建具有内部负载均衡器 (ILB) 的应用程序网关）。
 
-<!---HONumber=Mooncake_1226_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

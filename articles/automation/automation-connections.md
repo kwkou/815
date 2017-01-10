@@ -13,7 +13,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
    ms.date="01/27/2016"
-   wacn.date="01/05/2017"
+   wacn.date="01/09/2017"
    ms.author="bwren" />
 
 # Azure 自动化中的连接资产
@@ -43,7 +43,7 @@
 |---|---|
 |Get-AutomationConnection|获取要使用的连接。返回包括该连接属性的哈希表。|
 
->[AZURE.NOTE] 应避免在 **Get- AutomationConnection** 的 –Name 参数中使用变量，因为这可能会使设计时发现 Runbook 与连接资产之间的依赖关系变得复杂化。
+>[AZURE.NOTE] 应避免在 **Get- AutomationConnection** 的 –Name 参数中使用变量，因为这可能会使设计时发现 Runbook 与凭据资产之间的依赖关系变得复杂化。
 
 ## 创建新连接
 
@@ -92,4 +92,4 @@
 
  
 
-<!---HONumber=Mooncake_0725_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

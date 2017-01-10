@@ -16,7 +16,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="infrastructure-services"
     ms.date="11/16/2016"
-    wacn.date="12/05/2016"
+    wacn.date="01/09/2017"
     ms.author="gwallace" />
 
 # 使用适用于 Azure 资源管理器的 PowerShell 创建 Azure 应用程序网关的自定义探测
@@ -155,7 +155,7 @@ Azure 资源管理器要求所有资源组指定一个位置。此位置将用�
 
 
 > [AZURE.NOTE]
-> **InstanceCount** 的默认值为 2，最大值为 10。**GatewaySize** 的默认值为 Medium。可以在 **Standard\_Small**、**Standard\_Medium** 和 **Standard\_Large** 之间进行选择。
+**InstanceCount** 的默认值为 2，最大值为 10。**GatewaySize** 的默认值为 Medium。可以在 **Standard\_Small**、**Standard\_Medium** 和 **Standard\_Large** 之间进行选择。
 > 
 > 
 
@@ -258,4 +258,4 @@ Azure 资源管理器要求所有资源组指定一个位置。此位置将用�
 
 访问[配置 SSL 卸载](/documentation/articles/application-gateway-ssl-arm/)，了解如何配置 SSL 卸载
 
-<!---HONumber=Mooncake_1128_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

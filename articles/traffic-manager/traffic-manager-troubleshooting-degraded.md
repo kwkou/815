@@ -15,7 +15,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="infrastructure-services"
     ms.date="10/11/2016"
-    wacn.date="11/07/2016"
+    wacn.date="01/09/2017"
     ms.author="sewhee"
 />  
 
@@ -51,7 +51,7 @@
 
 也可以在 Internet Explorer 中使用“F12 调试工具”的“网络”标签页查看 HTTP 响应。
 
-在本示例中，我们想要查看探测 URL 返回的响应：http://watestsdp2008r2.chinacloudapp.cn:80/Probe。 以下 PowerShell 示例演示了该问题。
+在本示例中，我们想要查看探测 URL 返回的响应：http://watestsdp2008r2.chinacloudapp.cn:80/Probe。以下 PowerShell 示例演示了该问题。
 
     Invoke-WebRequest 'http://watestsdp2008r2.chinacloudapp.cn/Probe' -MaximumRedirection 0 -ErrorAction SilentlyContinue | Select-Object StatusCode,StatusDescription
 
@@ -94,4 +94,4 @@
 
 [1]: https://msdn.microsoft.com/zh-cn/library/mt125941(v=azure.200).aspx
 
-<!---HONumber=Mooncake_1031_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

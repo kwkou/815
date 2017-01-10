@@ -13,7 +13,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
    ms.date="11/11/2016"
-   wacn.date="01/05/2017"
+   wacn.date="01/09/2017"
    ms.author="bwren" />
 
 # Azure 自动化中的凭据资产
@@ -54,10 +54,6 @@
 2. 在“凭据类型”下拉列表中，选择“PowerShell 凭据”。
 1. 完成向导并单击复选框以保存新凭据。
 
-
-
-
-
 ### 使用 Windows PowerShell 创建新的凭据资产
 
 以下示例命令演示了如何创建新的自动化凭据。首先创建了一个具有名称和密码的 PSCredential 对象，然后使用该对象创建凭据资产。或者，可以使用 **Get-Credential** cmdlet，会提示您键入名称和密码。
@@ -83,4 +79,4 @@
 
 
  
-<!---HONumber=Mooncake_0725_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

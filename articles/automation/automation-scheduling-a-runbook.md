@@ -13,7 +13,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
    ms.date="08/05/2016"
-   wacn.date="09/30/2016"
+   wacn.date="01/09/2017"
    ms.author="bwren" />
 
 # 在 Azure 自动化中计划 Runbook
@@ -96,7 +96,7 @@
 
 ## 后续步骤
 
-- 若要了解有关使用计划的详细信息，请参阅[在 Azure 自动化中计划资产](/documentation/articles/automation-schedules/)
-- 若要在 Azure 自动化中开始使用 Runbook，请参阅[在 Azure 自动化中启动 Runbook](/documentation/articles/automation-starting-a-runbook/)
+- 若要了解有关使用计划的详细信息，请参阅 [Schedule Assets in Azure Automation](/documentation/articles/automation-schedules/)（在 Azure 自动化中计划资产）
+- 若要在 Azure 自动化中开始使用 Runbook，请参阅 [Starting a Runbook in Azure Automation](/documentation/articles/automation-starting-a-runbook/)（在 Azure 自动化中启动 Runbook）
 
-<!---HONumber=Mooncake_0725_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

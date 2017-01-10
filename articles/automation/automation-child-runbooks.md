@@ -13,7 +13,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
    ms.date="08/17/2016"
-   wacn.date="10/25/2016"
+   wacn.date="01/09/2017"
    ms.author="magoedte;bwren" />
 
 # Azure 自动化中的子 Runbook
@@ -42,7 +42,7 @@
 
 可以根据[使用 Windows PowerShell 启动 Runbook](/documentation/articles/automation-starting-a-runbook/#starting-a-runbook-with-windows-powershell) 中所述，使用 [Start-AzureAutomationRunbook](http://msdn.microsoft.com/zh-cn/library/dn690259.aspx) cmdlet 来启动 Runbook。当你从 cmdlet 启动子 Runbook 时，为该子 Runbook 创建作业后，父 Runbook 将立即转移到下一行。如果需要从 Runbook 中检索任何输出，则需要使用 [Get-AzureAutomationJobOutput](http://msdn.microsoft.com/zh-cn/library/dn690268.aspx) 访问作业。
 
-使用 cmdlet 启动的子 Runbook 的作业将在父 Runbook 的某个独立作业中运行。这会导致比调用内联 Runbook 更多的作业，并使这些作业更难以跟踪。不过，父级可以启动多个子 Runbook，而无需等待每个子 Runbook 完成。对于调用内嵌子 Runbook 的同一种并行执行，父 Runbook 需要使用[并行关键字](/documentation/articles/automation-powershell-workflow/#parallel-processing)。
+使用 cmdlet 启动的子 Runbook 的作业将在父 Runbook 的某个独立作业中运行。这会导致比调用内联 Runbook 更多的作业，并使这些作业更难以跟踪。不过，父级可以异步启动多个子 Runbook，而无需等待每个子 Runbook 完成。对于调用内嵌子 Runbook 的同一种并行执行，父 Runbook 需要使用[并行关键字](/documentation/articles/automation-powershell-workflow/#parallel-processing)。
 
 使用 cmdlet 启动的子 Runbook 的参数以哈希表形式提供，如 [Runbook 参数](/documentation/articles/automation-starting-a-runbook/#runbook-parameters)中所述。只能使用简单数据类型。如果 Runbook 的参数使用复杂数据类型，则必须内联调用该 Runbook。
 
@@ -82,4 +82,4 @@
 - [在 Azure 自动化中启动 Runbook](/documentation/articles/automation-starting-a-runbook/)
 - [Azure 自动化中的 Runbook 输出和消息](/documentation/articles/automation-runbook-output-and-messages/)
 
-<!---HONumber=Mooncake_0725_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

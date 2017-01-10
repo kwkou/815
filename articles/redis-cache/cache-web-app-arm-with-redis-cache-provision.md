@@ -14,7 +14,7 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="10/25/2016" 
-	wacn.date="12/30/2016" 
+	wacn.date="01/09/2017" 
 	ms.author="sdanie"/>
 
 # 使用模板创建 Web 应用和 Redis 缓存
@@ -129,6 +129,4 @@
 
     azure group deployment create --template-uri https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-web-app-with-redis-cache/azuredeploy.json -g ExampleDeployGroup
 
-
-
-<!---HONumber=Mooncake_0523_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

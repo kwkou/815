@@ -13,7 +13,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
    ms.date="10/31/2016"
-   wacn.date="12/30/2016"
+   wacn.date="01/09/2017"
    ms.author="bwren;sngun" />
 
 # 管理 Azure 自动化数据
@@ -75,4 +75,4 @@ Azure 自动化帐户中标配的异地复制可将帐户数据备份到其他�
 
 如果主要区域发生数据丢失（这种情况很少见），Azure 将尝试恢复数据。如果无法恢复主数据，则执行异地故障转移，并通过受影响用户的订阅向其通知此项操作。
 
-<!---HONumber=Mooncake_0725_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

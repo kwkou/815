@@ -13,7 +13,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
    ms.date="10/18/2016"
-   wacn.date="12/30/2016"
+   wacn.date="01/09/2017"
    ms.author="sewhee" />
 
 # 配置性能流量路由方法
@@ -50,4 +50,4 @@
 [流量管理器 - 禁用或启用终结点](/documentation/articles/disable-or-enable-an-endpoint/)
  
 
-<!---HONumber=Mooncake_1221_2015-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->
