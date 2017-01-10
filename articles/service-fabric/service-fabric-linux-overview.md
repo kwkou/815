@@ -15,7 +15,7 @@
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
    ms.date="09/26/2016"
-   wacn.date="11/28/2016"
+   wacn.date="01/04/2017"
    ms.author="SubramaR"/>  
 
 
@@ -37,4 +37,4 @@ Linux 上的 Service Fabric 在概念上等同于 Windows 上的 Service Fabric�
 
 熟悉 [Reliable Actors](/documentation/articles/service-fabric-reliable-actors-introduction/) 和 [Reliable Services](/documentation/articles/service-fabric-reliable-services-introduction/) 编程框架。
 
-<!---HONumber=Mooncake_1121_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

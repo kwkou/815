@@ -14,7 +14,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="08/21/2016"
-	wacn.date="10/10/2016"
+	wacn.date="01/04/2017"
 	ms.author="raynew"/>
 
 #  使用 Azure Site Recovery 在 Azure 区域之间迁移 Azure IaaS 虚拟机
@@ -62,4 +62,4 @@
 
 若要详细了解其他复制方案，请参阅[什么是 Azure Site Recovery？](/documentation/articles/site-recovery-overview/)
 
-<!---HONumber=Mooncake_0926_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

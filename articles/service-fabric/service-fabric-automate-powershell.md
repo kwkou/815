@@ -14,7 +14,7 @@
     ms.devlang="dotnet"
     ms.topic="article"
     ms.date="11/14/2016"
-    wacn.date="12/26/2016"
+    wacn.date="01/04/2017"
     ms.author="ryanwi" />
 
 # 使用 PowerShell 自动化应用程序生命周期
@@ -168,4 +168,4 @@ WordCount v1 应用程序已准备好升级。如果以管理员身份打开 Pow
 
 [Azure Service Fabric cmdlet](https://docs.microsoft.com/powershell/servicefabric/vlatest/servicefabric)
 
-<!---HONumber=Mooncake_1219_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

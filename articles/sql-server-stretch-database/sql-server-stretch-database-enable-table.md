@@ -14,7 +14,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="08/05/2016"
-	wacn.date="09/05/2016"
+	wacn.date="01/04/2017"
 	ms.author="douglasl"/>
 
 # 为表启用延伸数据库
@@ -129,4 +129,4 @@
 
 [CREATE TABLE (Transact-SQL)](https://msdn.microsoft.com/zh-cn/library/ms174979.aspx)
 
-<!---HONumber=Mooncake_0829_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

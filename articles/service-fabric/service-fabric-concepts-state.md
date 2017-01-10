@@ -14,7 +14,7 @@
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
    ms.date="08/10/2016"
-   wacn.date="08/29/2016"
+   wacn.date="01/04/2017"
    ms.author="aprameyr"/>
 
 # 服务状态
@@ -42,4 +42,4 @@
 - [Service Fabric 服务分区](/documentation/articles/service-fabric-concepts-partitioning/)
  
 
-<!---HONumber=Mooncake_0822_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

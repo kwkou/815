@@ -13,8 +13,8 @@
  ms.devlang="dotnet"
  ms.topic="article"
  ms.date="08/18/2016"
- wacn.date="10/10/2016"
- ms.author="deli"/>
+ wacn.date="01/04/2017"
+ ms.author="krisragh"/>
 
 # 计划程序 PowerShell Cmdlet 参考
 
@@ -75,4 +75,4 @@ Cmdlet|Cmdlet 说明
  [Azure 计划程序出站身份验证](/documentation/articles/scheduler-outbound-authentication/)
   
 
-<!---HONumber=Mooncake_0926_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

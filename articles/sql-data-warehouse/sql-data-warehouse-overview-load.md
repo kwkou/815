@@ -15,7 +15,7 @@
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
    ms.date="10/31/2016"
-   wacn.date="12/19/2016"
+   wacn.date="01/04/2017"
    ms.author="lodipalm;barbkess;sonyama"/>
 
 # 将数据载入 Azure SQL 数据仓库
@@ -95,7 +95,7 @@ SQL 数据仓库支持通过 PolyBase 从 HDInsight 加载数据。该过程和�
 ### 1\.使用 PolyBase 和 T-SQL
 加载过程摘要：
 
-2. 将数据格式化为 UTF-8，因为 PolyBase 目前不支持 UTF-16。
+1. 将数据格式化为 UTF-8，因为 PolyBase 目前不支持 UTF-16。
 2. 将数据移到 HDInsight，并将其存储为文本文件、ORC 或 Parquet 格式。
 3. 在 SQL 数据仓库中配置外部对象，以便定义数据的位置和格式。
 4. 运行 T-SQL 命令，将数据以并行方式载入新的数据库表。
@@ -134,4 +134,4 @@ SQL 数据仓库支持通过 PolyBase 从 HDInsight 加载数据。该过程和�
 <!--Other Web references-->
 [导入/导出]: /documentation/articles/storage-import-export-service/
 
-<!---HONumber=Mooncake_1212_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

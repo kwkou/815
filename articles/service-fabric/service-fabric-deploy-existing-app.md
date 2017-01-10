@@ -14,7 +14,7 @@
     ms.tgt_pltfrm="NA"
     ms.workload="na"
     ms.date="10/22/2016"
-    wacn.date="12/26/2016"
+    wacn.date="01/04/2017"
     ms.author="msfussell;mikhegn" />
 
 # 将来宾可执行文件部署到 Service Fabric
@@ -183,7 +183,7 @@ SetupEntryPoint 元素用于指定在启动服务代码之前应执行的任何�
 
 在上面的示例中，SetupEntrypoint 运行一个名为 `LaunchConfig.cmd` 的批处理文件，该文件位于 code 目录的 `scripts` 子目录中（假设 WorkingFolder 元素设置为 CodeBase）。
 
-#### 更新 Entrypoint
+#### 更新 EntryPoint
 
 	<EntryPoint>
 	  <ExeHost>
@@ -319,4 +319,4 @@ Service Fabric 服务可以采用各种“配置”进行部署。 例如，可�
 - [部署多个来宾可执行文件](/documentation/articles/service-fabric-deploy-multiple-apps/)
 - [使用 Visual Studio 创建第一个 Service Fabric 应用程序](/documentation/articles/service-fabric-create-your-first-application-in-visual-studio/)
 
-<!---HONumber=Mooncake_1219_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

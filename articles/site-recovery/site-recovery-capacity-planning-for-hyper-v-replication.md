@@ -15,7 +15,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="storage-backup-recovery"
     ms.date="11/15/2016"
-    wacn.date="12/12/2016"
+    wacn.date="01/04/2017"
     ms.author="nisoneji" />  
 
 
@@ -142,4 +142,4 @@
 - [使用 SAN 在 VMM 站点之间复制 Hyper-V VM](/documentation/articles/site-recovery-vmm-san/)
 - [在单个 VMM 服务器上复制 hyper-V VM](/documentation/articles/site-recovery-single-vmm/)
 
-<!---HONumber=Mooncake_1205_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

@@ -15,7 +15,7 @@
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
    ms.date="10/06/2016"
-   wacn.date="11/28/2016"
+   wacn.date="01/04/2017"
    ms.author="karolz@microsoft.com"/>  
 
 
@@ -32,7 +32,7 @@
 
 可以为此项目创建新的 Visual Studio 解决方案，或将它添加到现有解决方案。
 
->[AZURE.NOTE] 如果在“云”节点下面看不到 Azure 资源组项目，表示尚未安装 Azure SDK。启动 Web 平台安装程序（如果尚未安装，[现在请安装](http://www.microsoft.com/web/downloads/platform.aspx)），然后搜索“Azure SDK for .NET”并安装与 Visual Studio 版本兼容的版本。
+>[AZURE.NOTE] 如果在“云”节点下面看不到 Azure 资源组项目，表示尚未安装 Azure SDK。启动 Web 平台安装程序（如果尚未安装，[现在请安装](http://www.microsoft.com/web/downloads/platform.aspx)），然后搜索“用于 .NET 的 Azure SDK”并安装与 Visual Studio 版本兼容的版本。
 
 按“确定”按钮后，Visual Studio 将要求你选择想要创建的 Resource Manager 模板：
 
@@ -66,7 +66,7 @@ Visual Studio Service Fabric Resource Manager 模板将创建一个受证书保�
 		"loadBalancedAppPort1": "80"
 	
 
-2. 一个探测，用于定义 Azure 负载均衡器在故障转移到另一个节点之前，尝试使用特定 Service Fabric 节点的频率和时间长短。探测是负载均衡器资源的一部分。下面是第一个默认应用程序端口的探测定义：
+2. 一个*探测*，用于定义 Azure 负载均衡器在故障转移到另一个节点之前，尝试使用特定 Service Fabric 节点的频率和时间长短。探测是负载均衡器资源的一部分。下面是第一个默认应用程序端口的探测定义：
 
 
 		{
@@ -137,4 +137,4 @@ Visual Studio Service Fabric Resource Manager 模板将创建一个受证书保�
 [2]: ./media/service-fabric-cluster-creation-via-visual-studio/selecting-azure-template.png
 [3]: ./media/service-fabric-cluster-creation-via-visual-studio/deploy-to-azure.png
 
-<!---HONumber=Mooncake_1121_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

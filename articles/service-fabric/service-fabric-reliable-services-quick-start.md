@@ -14,7 +14,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="na"
     ms.date="10/28/2016"
-    wacn.date="12/26/2016"
+    wacn.date="01/04/2017"
     ms.author="vturecek" />
 
 # Reliable Services 入门
@@ -85,17 +85,17 @@ Azure Service Fabric 应用程序包含一个或多个运行你的代码的服�
 
 	protected override async Task RunAsync(CancellationToken cancellationToken)
 	{
-	    // TODO: Replace the following sample code with your own logic 
+	    // TODO: Replace the following sample code with your own logic
 	    //       or remove this RunAsync override if it's not needed in your service.
-	
+
 	    long iterations = 0;
-	
+
 	    while (true)
 	    {
 	        cancellationToken.ThrowIfCancellationRequested();
-	
+
 	        ServiceEventSource.Current.ServiceMessage(this, "Working-{0}", ++iterations);
-	
+
 	        await Task.Delay(TimeSpan.FromSeconds(1), cancellationToken);
 	    }
 	}
@@ -140,35 +140,34 @@ Service Fabric 引入了一种新的有状态服务。有状态服务能够可�
 
 	protected override async Task RunAsync(CancellationToken cancellationToken)
 	{
-	    // TODO: Replace the following sample code with your own logic 
+	    // TODO: Replace the following sample code with your own logic
 	    //       or remove this RunAsync override if it's not needed in your service.
-	
+
 	    var myDictionary = await this.StateManager.GetOrAddAsync<IReliableDictionary<string, long>>("myDictionary");
-	
+
 	    while (true)
 	    {
 	        cancellationToken.ThrowIfCancellationRequested();
-	
+
 	        using (var tx = this.StateManager.CreateTransaction())
 	        {
 	            var result = await myDictionary.TryGetValueAsync(tx, "Counter");
-	
+
 	            ServiceEventSource.Current.ServiceMessage(this, "Current Counter Value: {0}",
 	                result.HasValue ? result.Value.ToString() : "Value does not exist.");
-	
+
 	            await myDictionary.AddOrUpdateAsync(tx, "Counter", 0, (key, value) => ++value);
-	
+
 	            // If an exception is thrown before calling CommitAsync, the transaction aborts, all changes are 
 	            // discarded, and nothing is saved to the secondary replicas.
 	            await tx.CommitAsync();
 	        }
-	
+
 	        await Task.Delay(TimeSpan.FromSeconds(1), cancellationToken);
 	    }
 
 
 ### RunAsync
-
 `RunAsync()` 在有状态服务和无状态服务中的运行方式类似。只不过在有状态服务中，平台将先代表你执行额外的工作，然后再执行 `RunAsync()`。这项工作可能包括确保可靠状态管理器和可靠集合随时可供使用。
 
 ### 可靠集合与可靠状态管理器
@@ -195,9 +194,9 @@ Service Fabric 引入了一种新的有状态服务。有状态服务能够可�
 	using (ITransaction tx = this.StateManager.CreateTransaction())
 	{
 	    var result = await myDictionary.TryGetValueAsync(tx, "Counter-1");
-	
+
 	    await myDictionary.AddOrUpdateAsync(tx, "Counter-1", 0, (k, v) => ++v);
-	
+
 	    await tx.CommitAsync();
 	}
 
@@ -207,7 +206,6 @@ Service Fabric 引入了一种新的有状态服务。有状态服务能够可�
 可靠集合操作是*事务性的*，因此可以跨多个可靠集合和操作保持状态的一致。例如，你可以在单个事务中，将工作项从 Reliable Queue 取消排队、对其执行操作并将结果保存在 Reliable Dictionary 中。这被视为原子操作，它可以保证整个操作要么成功，要么回滚。如果将项取消排队之后、保存结果之前发生错误，则会回滚整个事务，并且项将保留在队列中以供处理。
 
 ## 运行应用程序
-
 现在，我们返回到 *HelloWorld* 应用程序。现在，你可以生成并部署你的服务。按 **F5** 即可生成应用程序并部署到本地群集。
 
 服务开始运行之后，可以在“诊断事件”窗口中查看生成的 Windows 事件跟踪 (ETW) 事件。请注意，应用程序中会同时显示无状态服务和有状态服务的事件。可以通过单击“暂停”按钮来暂停流。然后，可以通过展开该消息来检查消息的详细信息。
@@ -217,9 +215,7 @@ Service Fabric 引入了一种新的有状态服务。有状态服务能够可�
 ![在 Visual Studio 中查看诊断事件](./media/service-fabric-reliable-services-quick-start/hello-stateful-Output.png)  
 
 
-
 ## 后续步骤
-
 [在 Visual Studio 中调试 Service Fabric 应用程序](/documentation/articles/service-fabric-debugging-your-application/)
 
 [入门：Service Fabric Web API 服务与 OWIN 自托管 | Azure](/documentation/articles/service-fabric-reliable-services-communication-webapi/)
@@ -232,4 +228,4 @@ Service Fabric 引入了一种新的有状态服务。有状态服务能够可�
 
 [Reliable Services 的开发人员参考](https://msdn.microsoft.com/zh-cn/library/azure/dn706529.aspx)
 
-<!---HONumber=Mooncake_1219_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

@@ -15,7 +15,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="10/26/2016"
-	wacn.date="12/05/2016"
+	wacn.date="01/04/2017"
 	ms.author="douglasl"/>
 
 
@@ -73,4 +73,4 @@
 
 [为表启用延伸数据库](/documentation/articles/sql-server-stretch-database-enable-table/)
 
-<!---HONumber=Mooncake_1128_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

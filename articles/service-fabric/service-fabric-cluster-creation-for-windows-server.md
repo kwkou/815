@@ -15,7 +15,7 @@
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
    ms.date="09/26/2016"
-   wacn.date="11/28/2016"
+   wacn.date="01/04/2017"
    ms.author="dkshir;chackdan"/>
 
 
@@ -251,4 +251,4 @@ TestConfiguration 脚本可测试 cluster.json 中定义的基础结构，确保
 
 [Trusted Zone]: ./media/service-fabric-cluster-creation-for-windows-server/TrustedZone.png
 
-<!---HONumber=Mooncake_1121_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

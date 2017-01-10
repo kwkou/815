@@ -15,7 +15,7 @@
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
    ms.date="09/25/2016"
-   wacn.date="12/27/2016"
+   wacn.date="01/04/2017"
    ms.author="vturecek"/>  
 
 
@@ -564,4 +564,4 @@ FabricClient 和 FabricGateway 执行相互身份验证。使用 AAD 身份验�
 [sfx-reply-address-not-match]: ./media/service-fabric-cluster-creation-via-arm/sfx-reply-address-not-match.png
 [web-application-reply-url]: ./media/service-fabric-cluster-creation-via-arm/web-application-reply-url.png
 
-<!---HONumber=Mooncake_1121_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

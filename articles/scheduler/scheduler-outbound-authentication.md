@@ -13,7 +13,7 @@
  ms.devlang="dotnet"
  ms.topic="article"
  ms.date="08/15/2016"
- wacn.date="08/29/2016"
+ wacn.date="01/04/2017"
  ms.author="deli"/>
  
 # 计划程序出站身份验证
@@ -388,7 +388,7 @@
 
 
 ## 另请参阅
- 
+
 
  [计划程序是什么？](/documentation/articles/scheduler-intro/)
  
@@ -412,4 +412,4 @@
  
   
 
-<!---HONumber=Mooncake_0822_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

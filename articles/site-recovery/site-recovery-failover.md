@@ -15,7 +15,7 @@
 	ms.tgt_pltfrm="na"
 	ms.workload="storage-backup-recovery" 
 	ms.date="10/05/2016" 
-	wacn.date="11/17/2016" 
+	wacn.date="01/04/2017" 
 	ms.author="raynew"/>  
 
 
@@ -258,4 +258,4 @@ Azure 到 Hyper-V 站点 | 不支持 | 支持 | 不支持
 	>[AZURE.NOTE] 如果在“数据同步”步骤中取消故障回复作业，则本地 VM 将处于损坏状态。这是因为数据同步将 Azure VM 磁盘中的最新数据复制到本地数据磁盘上，在同步完成之前，磁盘数据并不处于一致状态。如果在取消数据同步后启动本地 VM，则可能无法启动。重新触发故障转移以完成数据同步。
  
 
-<!---HONumber=Mooncake_1107_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

@@ -15,7 +15,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="storage-backup-recovery"
     ms.date="12/19/2016"
-    wacn.date="01/03/2016"
+    wacn.date="01/04/2016"
     ms.author="raynew" />  
 
 
@@ -228,4 +228,4 @@ Azure Site Recovery 服务有助于实现业务连续性和灾难恢复 (BCDR) �
 	    $replicationService = Get-WmiObject -Namespace "root\virtualization\v2"  -Query "Select * From Msvm_ReplicationService"
 	    $replicationService.RemoveReplicationRelationship($vm.__PATH)
 
-<!---HONumber=Mooncake_1226_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

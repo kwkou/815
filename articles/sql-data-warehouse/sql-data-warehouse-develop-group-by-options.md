@@ -15,7 +15,7 @@
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
    ms.date="10/31/2016"
-   wacn.date="12/12/2016"
+   wacn.date="01/04/2017"
    ms.author="jrj;barbkess;sonyama"/>
 
 # SQL 数据仓库中的 Group By 选项
@@ -193,4 +193,4 @@ CTAS 的结果如下所示：
 
 <!--Other Web references-->
 
-<!---HONumber=Mooncake_1205_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

@@ -15,7 +15,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="12/19/2016"
-    wacn.date="01/03/2017"
+    wacn.date="01/04/2017"
     ms.author="raynew" />
 
 # 使用 SQL Server 灾难恢复和 Azure Site Recovery 来保护 SQL Server
@@ -342,4 +342,4 @@ SQL Server（任何版本） | Enterprise 或 Standard | 故障转移群集实�
 ## 后续步骤
 [详细了解](/documentation/articles/site-recovery-best-practices/)如何准备开始部署 Site Recovery。
 
-<!---HONumber=Mooncake_1226_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

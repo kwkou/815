@@ -13,7 +13,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="multiple"
    ms.date="08/01/2016"
-   wacn.date="08/29/2016"
+   wacn.date="01/04/2017"
    ms.author="mthalman" />
 
 # 使用 Visual Studio Team Services 为 Service Fabric 应用程序设置持续集成
@@ -134,4 +134,4 @@ Team Services 发布定义所描述的工作流由一系列按顺序执行的任
  - [Team Services 中的生成管理](https://www.visualstudio.com/docs/build/overview)
  - [Team Services 中的发布管理](https://www.visualstudio.com/docs/release/overview)
 
-<!---HONumber=Mooncake_0822_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

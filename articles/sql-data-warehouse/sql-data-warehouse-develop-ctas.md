@@ -15,7 +15,7 @@
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
    ms.date="10/31/2016"
-   wacn.date="12/12/2016"
+   wacn.date="01/04/2017"
    ms.author="jrj;barbkess;sonyama"/>
 
 
@@ -434,4 +434,4 @@ Create Table As Select (`CTAS`) 是所提供的最重要的 T-SQL 功能之一�
 
 <!--Other Web references-->
 
-<!---HONumber=Mooncake_1205_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

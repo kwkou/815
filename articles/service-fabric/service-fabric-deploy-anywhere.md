@@ -15,7 +15,7 @@
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
    ms.date="09/22/2016"
-   wacn.date="11/28/2016"
+   wacn.date="01/04/2017"
    ms.author="chackdan"/>  
 
 
@@ -75,4 +75,4 @@ Service Fabric 提供一个安装包，用于在本地或者与任何云提供�
 
 在运行 Linux 的 VM 或计算机上创建群集：[Linux 上的 Service Fabric](/documentation/articles/service-fabric-linux-overview/)
 
-<!---HONumber=Mooncake_1121_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

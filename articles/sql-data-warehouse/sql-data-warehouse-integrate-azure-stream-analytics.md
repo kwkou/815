@@ -15,7 +15,7 @@
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
    ms.date="10/31/2016"
-   wacn.date="12/12/2016"
+   wacn.date="01/04/2017"
    ms.author="kevin;barbkess;sonyama"/>  
 
 
@@ -95,4 +95,4 @@ Azure 流分析是一种完全托管的服务，可以在云中通过流式数�
 
 [Azure Stream Analytics documentation]: /documentation/services/stream-analytics/
 
-<!---HONumber=Mooncake_1205_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->
