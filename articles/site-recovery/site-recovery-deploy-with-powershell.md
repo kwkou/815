@@ -15,7 +15,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="09/27/2016"
-	wacn.date="11/17/2016"
+	wacn.date="01/04/2017"
 	ms.author="bsiva"/>  
 
 
@@ -444,4 +444,4 @@ Azure Site Recovery 可在许多部署方案中安排虚拟机的复制、故障
 
 [详细了解](https://msdn.microsoft.com/zh-cn/library/dn850420.aspx) Azure Site Recovery PowerShell cmdlet</a>。
 
-<!---HONumber=Mooncake_1107_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

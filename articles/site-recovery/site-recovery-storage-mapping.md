@@ -15,7 +15,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="storage-backup-recovery"
     ms.date="11/01/2016"
-    wacn.date="12/12/2016"
+    wacn.date="01/04/2017"
     ms.author="raynew" />  
 
 
@@ -98,4 +98,4 @@ VM5 | C:\ClusterStorage\SourceVolume3 | 不适用 | 无映射，因此将使用 
 ## 后续步骤
 现在，你已经对存储映射有了更好的了解，因此可以[准备部署 Azure Site Recovery](/documentation/articles/site-recovery-best-practices/) 了。
 
-<!---HONumber=Mooncake_1205_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

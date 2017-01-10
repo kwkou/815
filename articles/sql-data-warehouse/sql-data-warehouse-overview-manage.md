@@ -15,7 +15,7 @@
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
    ms.date="10/31/2016"
-   wacn.date="12/19/2016"
+   wacn.date="01/04/2017"
    ms.author="barbkess;sonyama;"/>  
 
 
@@ -121,4 +121,4 @@ DMV 是管理 SQL 数据仓库的必备工具。在门户中显示的所有信�
 
 [Azure 门户预览]: https://portal.azure.cn
 
-<!---HONumber=Mooncake_1212_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

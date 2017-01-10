@@ -15,7 +15,7 @@
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
    ms.date="08/25/2016"
-   wacn.date="11/15/2016"
+   wacn.date="01/04/2017"
    ms.author="ryanwi"/>  
 
 
@@ -94,4 +94,4 @@ Service Fabric 是一种分布式系统平台，可让你轻松打包、部署�
 - [为什么通过微服务的方法构建应用程序？](/documentation/articles/service-fabric-overview-microservices/)
 - [应用程序方案](/documentation/articles/service-fabric-application-scenarios/)
 
-<!---HONumber=Mooncake_1017_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

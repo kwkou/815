@@ -17,7 +17,7 @@
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
    ms.date="09/21/2016"
-   wacn.date="11/28/2016"
+   wacn.date="01/04/2017"
    ms.author="vturecek"/>  
 
 
@@ -350,4 +350,4 @@ Service Fabric 使用 X.509 证书保护群集。Azure 密钥保管库用于管�
 [ClusterDashboard]: ./media/service-fabric-cluster-creation-via-portal/ClusterDashboard.png
 [cluster-security-cert-installation]: ./media/service-fabric-cluster-creation-via-arm/cluster-security-cert-installation.png
 
-<!---HONumber=Mooncake_1121_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

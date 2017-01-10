@@ -14,7 +14,7 @@
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
    ms.date="10/31/2016"
-   wacn.date="12/19/2016"
+   wacn.date="01/04/2017"
    ms.author="lodipalm;barbkess;sonyama"/>
 
 
@@ -64,4 +64,4 @@
 <!--Other Web references--> 
 [下载迁移实用程序]: https://migrhoststorage.blob.core.windows.net/sqldwsample/DataWarehouseMigrationUtility.zip
 
-<!---HONumber=Mooncake_1212_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

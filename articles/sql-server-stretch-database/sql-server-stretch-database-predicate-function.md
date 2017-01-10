@@ -14,7 +14,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="06/28/2016"
-	wacn.date="08/08/2016"
+	wacn.date="01/04/2017"
 	ms.author="douglasl"/>
 
 # 使用筛选器函数来选择要迁移的行 (Stretch Database)
@@ -565,6 +565,7 @@ Stretch Database 使用 CROSS APPLY 运算符对表应用筛选器函数并确�
 -   创建并应用这样的表值函数：可以推导出该用户已被显式拒绝读取访问的表的内容。
 
 ## 另请参阅
+
 [ALTER TABLE (Transact-SQL)](https://msdn.microsoft.com/zh-cn/library/ms190273.aspx)
 
-<!---HONumber=Mooncake_0801_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

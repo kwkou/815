@@ -14,7 +14,7 @@
     ms.tgt_pltfrm="NA"
     ms.workload="NA"
     ms.date="10/19/2016"
-    wacn.date="12/26/2016"
+    wacn.date="01/04/2017"
     ms.author="vturecek" />
 
 # Service Fabric Reliable Actors 简介
@@ -150,8 +150,9 @@ Reliable Actors 运行时提供简单的基于轮次的访问模型用于访问�
  - [执行组件诊断和性能监视](/documentation/articles/service-fabric-reliable-actors-diagnostics/)
 
 <!--Image references-->
+
 [1]: ./media/service-fabric-reliable-actors-introduction/concurrency.png
 [2]: ./media/service-fabric-reliable-actors-introduction/distribution.png
 [3]: ./media/service-fabric-reliable-actors-introduction/actor-communication.png
 
-<!---HONumber=Mooncake_1219_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

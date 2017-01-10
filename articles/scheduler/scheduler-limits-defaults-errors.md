@@ -13,8 +13,8 @@
  ms.devlang="dotnet"
  ms.topic="article"
  ms.date="08/18/2016"
- wacn.date="10/10/2016"
- ms.author="deli"/>
+ wacn.date="01/04/2017"
+ ms.author="krisragh"/>
 
 # 计划程序限制和默认值
 
@@ -26,7 +26,7 @@
 
 对计划程序服务的每个请求都会返回一个名为 **x-ms-request-id** 的响应标头。此响应标头包含一个唯一标识此请求的不透明值。
 
-如果请求总是失败，并且你验证了请求格式正确，可以使用此值向 Microsoft 报告错误。请在报告中包含 x-ms-request-id 值，发出请求的大概时间，订阅、作业集合和/或作业的标识符，以及请求尝试进行的操作类型。
+如果请求总是失败，并且你验证了请求格式正确，可以使用此值向 Microsoft 报告错误。在报表中包含 x-ms-request-id 值，发出请求的大概时间，订阅、作业集合和/或作业的标识符，以及请求尝试进行的操作类型。
 
 ## 另请参阅
 
@@ -49,4 +49,4 @@
 
  
 
-<!---HONumber=Mooncake_0926_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

@@ -15,7 +15,7 @@
     ms.topic="article"
     ms.workload="required"
     ms.date="10/23/2016"
-    wacn.date="12/12/2016"
+    wacn.date="01/04/2017"
     ms.author="ruturajd@microsoft.com" />
 
 # 将 Azure 自动化 Runbook 添加到恢复计划
@@ -313,4 +313,4 @@ CloudServiceName | 要在其下创建虚拟机的 Azure 云服务名称。
 
 [Azure 自动化示例脚本](http://gallery.technet.microsoft.com/scriptcenter/site/search?f[0].Type=User&f[0].Value=SC%20Automation%20Product%20Team&f[0].Text=SC%20Automation%20Product%20Team "Azure 自动化示例脚本")
 
-<!---HONumber=Mooncake_1205_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

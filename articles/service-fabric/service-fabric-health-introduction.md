@@ -15,7 +15,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="na"
    ms.date="09/28/2016"
-   wacn.date="11/28/2016"
+   wacn.date="01/04/2017"
    ms.author="oanapl"/>  
 
 
@@ -347,4 +347,4 @@ Service Fabric 使用三种运行状况状态来说明实体是否正常：“�
 [Service Fabric 应用程序升级](/documentation/articles/service-fabric-application-upgrade/)
  
 
-<!---HONumber=Mooncake_1121_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

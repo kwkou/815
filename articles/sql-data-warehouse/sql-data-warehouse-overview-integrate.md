@@ -14,7 +14,7 @@
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
    ms.date="10/31/2016"
-   wacn.date="12/19/2016"
+   wacn.date="01/04/2017"
    ms.author="lodipalm;barbkess;sonyama"/>
 
 #在 SQL 数据仓库中利用其他服务
@@ -46,4 +46,4 @@ Azure 流分析是复杂、完全托管的基础结构，用于处理和使用�
 
 <!--Other Web references-->
 
-<!---HONumber=Mooncake_1212_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

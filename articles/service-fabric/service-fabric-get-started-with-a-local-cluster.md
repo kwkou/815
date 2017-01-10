@@ -15,7 +15,7 @@
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
    ms.date="09/09/2016"
-   wacn.date="11/28/2016"
+   wacn.date="01/04/2017"
    ms.author="ryanwi;mikhegn"/>
 
 # 在本地群集上部署和升级应用程序入门
@@ -254,4 +254,4 @@ Service Fabric 在应用程序推出于群集时监视其运行状况，从而�
 [cluster-setup-success-1-node]: ./media/service-fabric-get-started-with-a-local-cluster/cluster-setup-success-1-node.png
 [switch-cluster-mode]: ./media/service-fabric-get-started-with-a-local-cluster/switch-cluster-mode.png
 
-<!---HONumber=Mooncake_1121_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

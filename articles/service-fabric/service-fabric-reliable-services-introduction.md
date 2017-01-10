@@ -14,7 +14,7 @@
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
    ms.date="03/25/2016"
-   wacn.date="07/04/2016"
+   wacn.date="01/04/2017"
    ms.author="masnider;vturecek"/>
 
 # Reliable Services 概述
@@ -141,4 +141,4 @@ Service Fabric 中常见的无状态服务使用示例是作为前端，它公�
 + [Reliable Actors 编程模型](/documentation/articles/service-fabric-reliable-actors-introduction/)
  
 
-<!---HONumber=Mooncake_0503_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

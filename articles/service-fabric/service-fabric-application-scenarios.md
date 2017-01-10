@@ -14,7 +14,7 @@
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
    ms.date="10/22/2016"
-   wacn.date="12/26/2016"
+   wacn.date="01/04/2017"
    ms.author="mfussell"/>
 
 # Service Fabric 应用程序方案
@@ -62,4 +62,4 @@ Azure 中的 Service Fabric 平台非常适合以下类别的应用程序和服�
 [Image1]: ./media/service-fabric-application-scenarios/AppwithStatelessServices.jpg
 [Image2]: ./media/service-fabric-application-scenarios/AppwithStatefulServices.jpg
 
-<!---HONumber=Mooncake_1219_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

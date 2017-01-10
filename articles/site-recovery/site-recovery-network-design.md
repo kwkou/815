@@ -15,7 +15,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="storage-backup-recovery"
     ms.date="12/19/2016"
-    wacn.date="01/03/2016"
+    wacn.date="01/04/2016"
     ms.author="pratshar" />  
 
 
@@ -181,4 +181,4 @@ Woodgrove 决定将来自 IP 地址范围（172.16.1.0/24、172.16.2.0/24）的 
 
 [了解](/documentation/articles/site-recovery-network-mapping/)当 VMM 服务器用于管理主站点时，Site Recovery 如何映射源和目标网络。
 
-<!---HONumber=Mooncake_1226_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

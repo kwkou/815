@@ -14,7 +14,7 @@
 	ms.devlang="na"
 	ms.topic="hero-article"
 	ms.date="08/05/2016"
-	wacn.date="09/05/2016"
+	wacn.date="01/04/2017"
 	ms.author="douglasl"/>
 
 # 通过运行“为数据库启用延伸向导”开始操作
@@ -198,4 +198,4 @@
 [StretchWizardImage8]: ./media/sql-server-stretch-database-wizard/stretchwiz8.png
 [StretchWizardImage9]: ./media/sql-server-stretch-database-wizard/stretchwiz9.png
 
-<!---HONumber=Mooncake_0829_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

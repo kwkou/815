@@ -15,7 +15,7 @@
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
    ms.date="10/31/2016"
-   wacn.date="12/12/2016"
+   wacn.date="01/04/2017"
    ms.author="mausher;barbkess;sonyama"/>  
 
 
@@ -193,4 +193,4 @@ Azure SQL 数据仓库尚不支持自动创建或自动更新统计信息。为�
 
 [Microsoft 下载中心]: https://www.microsoft.com/download/details.aspx?id=36433
 
-<!---HONumber=Mooncake_1205_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

@@ -15,7 +15,7 @@
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
    ms.date="09/06/2016"
-   wacn.date="10/24/2016"
+   wacn.date="01/04/2017"
    ms.author="toddabel"/>  
 
 
@@ -63,4 +63,4 @@ Service Fabric Visual Studio 项目模板包含示例代码。该代码演示如
 * [如何使用 Azure 诊断收集日志](/documentation/articles/service-fabric-diagnostics-how-to-setup-wad/)
 * [Using ElasticSearch as a Service Fabric application trace store（将 ElasticSearch 用作 Service Fabric 应用程序跟踪存储）](/documentation/articles/service-fabric-diagnostic-how-to-use-elasticsearch/)
 
-<!---HONumber=Mooncake_1017_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

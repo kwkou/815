@@ -14,7 +14,7 @@
     ms.tgt_pltfrm="NA"
     ms.workload="NA"
     ms.date="11/14/2016"
-    wacn.date="12/26/2016"
+    wacn.date="01/04/2017"
     ms.author="ryanwi" />
 
 #<a name="deploy-an-application"></a> 部署和删除使用 PowerShell 的应用程序
@@ -235,4 +235,4 @@ PS D:\temp>
 [11]: /documentation/articles/service-fabric-application-upgrade/
  
 
-<!---HONumber=Mooncake_1219_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

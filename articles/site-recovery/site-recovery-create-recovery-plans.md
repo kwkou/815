@@ -15,7 +15,7 @@
 	ms.tgt_pltfrm="na"
 	ms.workload="storage-backup-recovery" 
 	ms.date="10/05/2016" 
-	wacn.date="11/17/2016"
+	wacn.date="01/04/2017"
 	ms.author="raynew"/>  
 
 
@@ -129,4 +129,4 @@ Azure Site Recovery 服务有助于业务连续性和灾难恢复 (BCDR) 策略�
 
  
 
-<!---HONumber=Mooncake_1107_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

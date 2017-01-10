@@ -15,7 +15,7 @@
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
    ms.date="10/31/2016"
-   wacn.date="12/19/2016"
+   wacn.date="01/04/2017"
    ms.author="jrj;barbkess;sonyama"/>  
 
 
@@ -54,4 +54,4 @@ SQL 数据仓库支持常见的业务数据类型。请参阅[数据类型][]一
 
 <!--Other Web references-->
 
-<!---HONumber=Mooncake_1212_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

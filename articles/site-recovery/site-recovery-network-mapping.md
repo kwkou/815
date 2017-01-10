@@ -15,7 +15,7 @@
 	ms.tgt_pltfrm="na"
 	ms.workload="storage-backup-recovery"
 	ms.date="10/05/2016"
-	wacn.date="11/14/2016"
+	wacn.date="01/04/2017"
 	ms.author="raynew"/>  
 
 
@@ -126,4 +126,4 @@ VMNetwork1-Shanghai 的网络映射已更改 | VM-1 将连接到现映射到 VMN
 
 现在，你已经对网络映射有了更好的了解，因此可以[开始 Site Recovery 部署](/documentation/articles/site-recovery-best-practices/)了。
 
-<!---HONumber=Mooncake_1107_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

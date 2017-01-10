@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.workload="storage-backup-recovery"
 	ms.date="09/12/2016"
-	wacn.date="10/10/2016"
+	wacn.date="01/04/2017"
 	ms.author="rajanaki"/>
  
 
@@ -82,4 +82,4 @@ Hyper-V 副本复制跟踪器是 Hyper-V 副本复制引擎的一部分，以 Hy
 - [联系 Microsoft 技术](/documentation/articles/site-recovery-monitoring-and-troubleshooting/#reaching-out-for-microsoft-support)
 - [常见 ASR 错误及其解决方法](/documentation/articles/site-recovery-monitoring-and-troubleshooting/#common-asr-errors-and-their-resolutions)
 
-<!---HONumber=Mooncake_0926_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

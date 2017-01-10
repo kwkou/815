@@ -15,7 +15,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="10/14/2016"
-	wacn.date="12/05/2016"
+	wacn.date="01/04/2017"
 	ms.author="douglasl"/>
 
 
@@ -63,4 +63,4 @@ Azure 数据库备份存储在异地冗余的 Azure 存储空间 (RA-GRS) 中，
 
 [备份和还原 SQL Server 数据库](https://msdn.microsoft.com/zh-cn/library/ms187048.aspx)
 
-<!---HONumber=Mooncake_1128_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

@@ -14,7 +14,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="06/14/2016"
-	wacn.date="07/11/2016"
+	wacn.date="01/04/2017"
 	ms.author="douglasl"/>
 
 # 数据迁移的监视和故障排除（SQL Server Stretch Database）
@@ -60,4 +60,4 @@
 <!--Image references-->
 [StretchMonitorImage1]: ./media/sql-server-stretch-database-monitor/StretchDBMonitor.png
 
-<!---HONumber=Mooncake_0704_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

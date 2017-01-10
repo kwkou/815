@@ -14,7 +14,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="06/14/2016"
-	wacn.date="12/30/2016"
+	wacn.date="01/04/2017"
 	ms.author="douglasl"/>
 
 # 暂停和恢复数据迁移（SQL Server Stretch Database）
@@ -59,4 +59,4 @@ ALTER TABLE <table name>
 ## 另请参阅
 [ALTER TABLE (Transact-SQL)](https://msdn.microsoft.com/zh-cn/library/ms190273.aspx)
 
-<!---HONumber=Mooncake_0307_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

@@ -15,7 +15,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="storage-backup-recovery"
     ms.date="11/01/2016"
-    wacn.date="12/12/2016"
+    wacn.date="01/04/2017"
     ms.author="raynew" />  
 
 
@@ -172,4 +172,4 @@ Hyper-V 副本使用恢复服务器上的少量内存来使存储操作数量最
 ## 后续步骤
 - [设置两个本地 VMM 站点之间的保护](/documentation/articles/site-recovery-vmm-to-vmm/)
 
-<!---HONumber=Mooncake_1205_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

@@ -15,7 +15,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="backup-recovery"
     ms.date="11/01/2016"
-    wacn.date="12/12/2016"
+    wacn.date="01/04/2017"
     ms.author="raynew" />  
 
 
@@ -71,4 +71,4 @@
 
 若要详细了解其他复制方案，请参阅[什么是 Azure Site Recovery？](/documentation/articles/site-recovery-overview/)
 
-<!---HONumber=Mooncake_1205_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->

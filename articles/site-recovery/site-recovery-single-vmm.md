@@ -16,7 +16,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="backup-recovery"
     ms.date="11/14/2016"
-    wacn.date="12/12/2016"
+    wacn.date="01/04/2017"
     ms.author="raynew" />
 
 # 复制单个 VMM 服务器上的 Hyper-V 虚拟机
@@ -86,4 +86,4 @@
 
 [详细了解](/documentation/articles/site-recovery-vmm-to-vmm/)有关 VMM 到 VMM 复制的站点恢复部署信息。
 
-<!---HONumber=Mooncake_1205_2016-->
+<!---HONumber=Mooncake_Quality_Review_0104_2017-->
