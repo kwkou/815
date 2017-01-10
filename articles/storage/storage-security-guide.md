@@ -1,21 +1,21 @@
 <properties
-	pageTitle="Azure 存储安全指南 | Azure"
-	description="详细介绍保护 Azure 存储的多种方法，包括但不限于 RBAC、存储服务加密、客户端加密、SMB 3.0 和 Azure 磁盘加密。"
-	services="storage"
-	documentationCenter=".net"
-	authors="robinsh"
-	manager="carmonm"
-	editor="tysonn"/>
-
+    pageTitle="Azure 存储安全指南 | Azure"
+    description="详细介绍保护 Azure 存储的多种方法，包括但不限于 RBAC、存储服务加密、客户端加密、SMB 3.0 和 Azure 磁盘加密。"
+    services="storage"
+    documentationcenter=".net"
+    author="robinsh"
+    manager="timlt"
+    editor="tysonn" />
 <tags
-	ms.service="storage"
-	ms.workload="storage"
-	ms.tgt_pltfrm="na"
-	ms.devlang="dotnet"
-	ms.topic="article"
-	ms.date="09/08/2016"
-	wacn.date="12/19/2016"
-	ms.author="robinsh"/>
+    ms.assetid="6f931d94-ef5a-44c6-b1d9-8a3c9c327fb2"
+    ms.service="storage"
+    ms.workload="storage"
+    ms.tgt_pltfrm="na"
+    ms.devlang="dotnet"
+    ms.topic="article"
+    ms.date="12/08/2016"
+    wacn.date="01/06/2017"
+    ms.author="robinsh" />
 
 #Azure 存储安全指南
 
@@ -114,6 +114,7 @@ Azure 存储提供一套完善的安全功能，这些功能相辅相成，让�
 -   [了解资源管理器部署和经典部署](/documentation/articles/resource-manager-deployment-model/)
 
     此文介绍了 Resource Manager 部署和经典部署模型，并说明使用 Resource Manager 和资源组的优点
+
 
 -   [使用 REST API 管理基于角色的访问控制](/documentation/articles/role-based-access-control-manage-access-rest/)
 
@@ -287,14 +288,11 @@ Azure 存储提供一套完善的安全功能，这些功能相辅相成，让�
 
 -   这些是使用 .NET 客户端库来创建共享访问签名和存储访问策略的教程。
 
-    -	[共享访问签名，第 1 部分：了解 SAS 模型](/documentation/articles/storage-dotnet-shared-access-signature-part-1/)
-
-        此文包含 SAS 模型的说明、共享访问签名的示例，以及 SAS 用法最佳实践的建议。还介绍了如何撤销授予的权限。
-
+    -	[使用共享访问签名 (SAS)](/documentation/articles/storage-dotnet-shared-access-signature-part-1/)
     -	[共享访问签名，第 2 部分：创建 SAS 并将 SAS 用于 Blob 服务](/documentation/articles/storage-dotnet-shared-access-signature-part-2/)
 
-        此文介绍如何使用 .NET 存储客户端库生成 SAS URI。
-
+        此文包含 SAS 模型的说明、共享访问签名的示例，以及 SAS 用法最佳实践的建议。还介绍了如何撤销授予的权限。
+	
 -   按 IP 地址限制访问 (IP ACL)
 
     -	[什么是终结点访问控制列表 (ACL)？](/documentation/articles/virtual-networks-acl/)
@@ -605,4 +603,4 @@ Azure 存储允许启用 CORS – 跨域资源共享。对于每个存储帐户�
 
 	此文介绍如何在较旧的 Windows 计算机中使用 FIPS 模式。
 
-<!---HONumber=Mooncake_Quality_Review_1202_2016-->
+<!---HONumber=Mooncake_0103_2017-->

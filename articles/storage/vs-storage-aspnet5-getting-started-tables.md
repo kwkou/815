@@ -1,21 +1,23 @@
-<properties 
-	pageTitle="表存储和 Visual Studio 连接服务入门 (ASP.NET 5) | Azure"
-	description="在使用 Visual Studio 连接服务连接到存储帐户后，如何开始在 Visual Studio 的 ASP.NET 5 项目中使用 Azure 表存储"
-	services="storage"
-	documentationCenter=""
-	authors="TomArcher"
-	manager="douge"
-	editor=""/>
-
+<properties
+    pageTitle="表存储和 Visual Studio 连接服务入门 (ASP.NET 5) | Azure"
+    description="在使用 Visual Studio 连接服务连接到存储帐户后，如何开始在 Visual Studio 的 ASP.NET 5 项目中使用 Azure 表存储"
+    services="storage"
+    documentationcenter=""
+    author="TomArcher"
+    manager="douge"
+    editor="" />
 <tags
-	ms.service="storage"
-	ms.workload="web"
-	ms.tgt_pltfrm="vs-getting-started"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="07/18/2016"
-	wacn.date="09/12/2016"
-	ms.author="tarcher"/>
+    ms.assetid="c3c451d1-71ff-4222-a348-c41c98a02b85"
+    ms.service="storage"
+    ms.workload="web"
+    ms.tgt_pltfrm="vs-getting-started"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.date="12/02/2016"
+    wacn.date="01/06/2017"
+    ms.author="tarcher" />  
+
+
 # 如何开始使用 Azure 表存储和 Visual Studio 连接服务
 
 ## 概述
@@ -189,4 +191,4 @@ Azure 表存储服务使用户可以存储大量结构化数据。该服务是�
 
 [AZURE.INCLUDE [vs-storage-dotnet-tables-next-steps](../../includes/vs-storage-dotnet-tables-next-steps.md)]
 
-<!---HONumber=Mooncake_0905_2016-->
+<!---HONumber=Mooncake_0103_2017-->

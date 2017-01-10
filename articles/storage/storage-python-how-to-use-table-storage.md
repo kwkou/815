@@ -3,10 +3,9 @@
     description="使用 Azure 表存储（一种 NoSQL 数据存储）将结构化数据存储在云中。"
     services="storage"
     documentationcenter="python"
-    author="tamram"
-    manager="carmonm"
-    editor="tysonn" />  
-
+    author="mmacy"
+    manager="timlt"
+    editor="tysonn" />
 <tags
     ms.assetid="7ddb9f3e-4e6d-4103-96e6-f0351d69a17b"
     ms.service="storage"
@@ -14,9 +13,9 @@
     ms.tgt_pltfrm="na"
     ms.devlang="python"
     ms.topic="article"
-    ms.date="10/18/2016"
-    wacn.date="12/05/2016"
-    ms.author="tamram" />
+    ms.date="12/08/2016"
+    wacn.date="01/06/2017"
+    ms.author="marsma" />
 
 # 如何通过 Python 使用表存储
 [AZURE.INCLUDE [storage-selector-table-include](../../includes/storage-selector-table-include.md)]
@@ -138,4 +137,4 @@
 [Azure 存储团队博客]: http://blogs.msdn.com/b/windowsazurestorage/
 [Azure Storage SDK for Python]: https://github.com/Azure/azure-storage-python
 
-<!---HONumber=Mooncake_1128_2016-->
+<!---HONumber=Mooncake_0103_2017-->

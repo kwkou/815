@@ -3,10 +3,9 @@
     description="本教程演示如何创建共享访问签名以用于 Blob 存储，以及如何从客户端应用程序使用这些签名。"
     services="storage"
     documentationcenter=""
-    author="tamram"
-    manager="carmonm"
-    editor="tysonn" />  
-
+    author="mmacy"
+    manager="timlt"
+    editor="tysonn" />
 <tags
     ms.assetid="491e0b3c-76d4-4149-9a80-bbbd683b1f3e"
     ms.service="storage"
@@ -14,9 +13,9 @@
     ms.tgt_pltfrm="na"
     ms.devlang="dotnet"
     ms.topic="article"
-    ms.date="10/18/2016"
-    wacn.date="12/05/2016"
-    ms.author="tamram" />
+    ms.date="12/08/2016"
+    wacn.date="01/06/2017"
+    ms.author="marsma" />
 
 # 共享访问签名，第 2 部分：创建 SAS 并将 SAS 用于 Blob 存储
 ## 概述
@@ -544,4 +543,4 @@
 [sas-console-output-1]: ./media/storage-dotnet-shared-access-signature-part-2/sas-console-output-1.PNG
 [sas-console-output-2]: ./media/storage-dotnet-shared-access-signature-part-2/sas-console-output-2.PNG
 
-<!---HONumber=Mooncake_1128_2016-->
+<!---HONumber=Mooncake_0103_2017-->

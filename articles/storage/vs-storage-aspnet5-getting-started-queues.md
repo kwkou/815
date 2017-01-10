@@ -1,21 +1,22 @@
 <properties
-	pageTitle="队列存储和 Visual Studio 连接服务入门 (ASP.NET 5) | Azure"
-	description="如何开始在 Visual Studio 中的 ASP.NET 5 项目中使用 Azure 队列存储"
-	services="storage"
-	documentationCenter=""
-	authors="TomArcher"
-	manager="douge"
-	editor=""/>
-
+    pageTitle="队列存储和 Visual Studio 连接服务入门 (ASP.NET 5) | Azure"
+    description="如何开始在 Visual Studio 中的 ASP.NET 5 项目中使用 Azure 队列存储"
+    services="storage"
+    documentationcenter=""
+    author="TomArcher"
+    manager="douge"
+    editor="" />
 <tags
-	ms.service="storage"
-	ms.workload="web"
-	ms.tgt_pltfrm="vs-getting-started"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="07/18/2016"
-	wacn.date="09/12/2016"
-	ms.author="tarcher"/>
+    ms.assetid="04977069-5b2d-4cba-84ae-9fb2f5eb1006"
+    ms.service="storage"
+    ms.workload="web"
+    ms.tgt_pltfrm="vs-getting-started"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.date="12/02/2016"
+    wacn.date="01/06/2017"
+    ms.author="tarcher" />  
+
 
 # 开始使用队列存储和 Visual Studio 连接服务 (ASP.NET 5)
 
@@ -113,7 +114,7 @@ Azure 队列存储是一项可存储大量消息的服务，用户可以通过�
 
 ## 使用其他方法取消对消息的排队
 
-你可以通过两种方式自定义队列中的消息检索。首先，你可以获取一批消息（最多 32 个）。其次，你可以设置更长或更短的不可见超时时间，从而允许你的代码使用更多或更少时间来完全处理每个消息。以下代码示例使用 **GetMessages** 方法在一次调用中获取 20 条消息。然后，它使用 **foreach** 循环处理每条消息。它还将每条消息的不可见超时时间设置为 5 分钟。请注意，5 分钟超时时间对于所有消息都是同时开始的，因此在调用 **GetMessages** 5 分钟后，尚未删除的任何消息都将再次变得可见。
+你可以通过两种方式自定义队列中的消息检索。首先，可获取一批消息（最多 32 条）。其次，你可以设置更长或更短的不可见超时时间，从而允许你的代码使用更多或更少时间来完全处理每个消息。以下代码示例使用 **GetMessages** 方法在一次调用中获取 20 条消息。然后，它使用 **foreach** 循环处理每条消息。它还将每条消息的不可见超时时间设置为 5 分钟。请注意，5 分钟超时时间对于所有消息都是同时开始的，因此在调用 **GetMessages** 5 分钟后，尚未删除的任何消息都将再次变得可见。
 
     // Retrieve 20 messages at a time, keeping those messages invisible for 5 minutes, 
     //   delete each message after processing.
@@ -167,4 +168,4 @@ Azure 队列存储是一项可存储大量消息的服务，用户可以通过�
 
 [AZURE.INCLUDE [vs-storage-dotnet-queues-next-steps](../../includes/vs-storage-dotnet-queues-next-steps.md)]
 
-<!---HONumber=Mooncake_0905_2016-->
+<!---HONumber=Mooncake_0103_2017-->

@@ -3,10 +3,9 @@
     description="使用 Azure 表存储（一种 NoSQL 数据存储）将结构化数据存储在云中。"
     services="storage"
     documentationcenter=".net"
-    author="tamram"
-    manager="carmonm"
-    editor="tysonn" />  
-
+    author="mmacy"
+    manager="timlt"
+    editor="tysonn" />
 <tags
     ms.assetid="fe46d883-7bed-49dd-980e-5c71df36adb3"
     ms.service="storage"
@@ -14,16 +13,15 @@
     ms.tgt_pltfrm="na"
     ms.devlang="dotnet"
     ms.topic="hero-article"
-    ms.date="11/17/2016"
-    wacn.date="12/05/2016"
-    ms.author="tamram" />  
+    ms.date="12/08/2016"
+    wacn.date="01/06/2017"
+    ms.author="marsma" />  
 
 
 # 通过 .NET 开始使用 Azure 表存储
 [AZURE.INCLUDE [storage-selector-table-include](../../includes/storage-selector-table-include.md)]
 
 ## 概述
-
 Azure 表存储是一种将结构化的 NoSQL 数据存储在云中的服务。表存储是采用无架构设计的键/属性存储。因为表存储无架构，因此可以很容易地随着你的应用程序需求的发展使数据适应存储。对于所有类型的应用程序，都可以快速并经济高效地访问数据。对于相似的数据量，表存储的成本通常显著低于传统的 SQL。
 
 你可以使用表存储来存储灵活的数据集，例如 Web 应用程序的用户数据、通讯簿、设备信息，以及你的服务需要的任何其他类型的元数据。可以在表中存储任意数量的实体，并且一个存储帐户可以包含任意数量的表，直至达到存储帐户的容量极限。
@@ -452,4 +450,4 @@ Azure 表存储是一种将结构化的 NoSQL 数据存储在云中的服务。�
   [空间]: http://nuget.org/packages/System.Spatial/5.0.2
   [How to: Programmatically access Table storage]: #tablestorage
 
-<!---HONumber=Mooncake_1128_2016-->
+<!---HONumber=Mooncake_0103_2017-->

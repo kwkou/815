@@ -1,22 +1,21 @@
 <properties
-	pageTitle="如何通过 Python 使用 Azure 文件存储 | Azure"
-	description="了解如何通过 Python 使用 Azure 文件存储上传、列出、下载和删除文件。"
-	services="storage"
-	documentationCenter="python"
-	authors="robinsh"
-	manager="carmonm"
-	editor="tysonn"/>  
-
-
+    pageTitle="如何通过 Python 使用 Azure 文件存储 | Azure"
+    description="了解如何通过 Python 使用 Azure 文件存储上传、列出、下载和删除文件。"
+    services="storage"
+    documentationcenter="python"
+    author="robinsh"
+    manager="timlt"
+    editor="tysonn" />
 <tags
-	ms.service="storage"
-	ms.workload="storage"
-	ms.tgt_pltfrm="na"
-	ms.devlang="python"
-	ms.topic="article"
-	ms.date="09/20/2016"
-	wacn.date="12/12/2016"
-	ms.author="minet;robinsh"/>
+    ms.assetid="297f3a14-6b3a-48b0-9da4-db5907827fb5"
+    ms.service="storage"
+    ms.workload="storage"
+    ms.tgt_pltfrm="na"
+    ms.devlang="python"
+    ms.topic="article"
+    ms.date="12/08/2016"
+    wacn.date="01/06/2017"
+    ms.author="robinsh" />
 
 # 如何通过 Python 使用 Azure 文件存储
 
@@ -31,7 +30,6 @@
 [AZURE.INCLUDE [storage-create-account-include](../../includes/storage-create-account-include.md)]
 
 ## 创建共享
-
 通过 **FileService** 对象，可使用共享、目录和文件。以下代码创建 **FileService** 对象。在要在其中以编程方式访问 Azure 存储的 Python 文件中，在顶部附近添加以下内容：
 
 	from azure.storage.file import FileService
@@ -102,4 +100,4 @@ Azure 文件存储共享至少包含文件所在的根目录。本部分介绍�
 [Azure 存储团队博客]: http://blogs.msdn.com/b/windowsazurestorage/
 [Azure Storage SDK for Python]: https://github.com/Azure/azure-storage-python
 
-<!---HONumber=Mooncake_Quality_Review_1202_2016-->
+<!---HONumber=Mooncake_0103_2017-->

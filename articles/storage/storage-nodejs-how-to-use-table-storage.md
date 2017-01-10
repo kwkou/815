@@ -3,10 +3,9 @@
     description="使用 Azure 表存储（一种 NoSQL 数据存储）将结构化数据存储在云中。"
     services="storage"
     documentationcenter="nodejs"
-    author="tamram"
-    manager="carmonm"
-    editor="tysonn" />  
-
+    author="mmacy"
+    manager="timlt"
+    editor="tysonn" />
 <tags
     ms.assetid="fc2e33d2-c5da-4861-8503-53fdc25750de"
     ms.service="storage"
@@ -14,9 +13,9 @@
     ms.tgt_pltfrm="na"
     ms.devlang="nodejs"
     ms.topic="article"
-    ms.date="10/31/2016"
-    wacn.date="12/05/2016"
-    ms.author="tamram" />
+    ms.date="12/08/2016"
+    wacn.date="01/06/2017"
+    ms.author="marsma" />
 
 # 如何通过 Node.js 使用 Azure 表存储
 [AZURE.INCLUDE [storage-selector-table-include](../../includes/storage-selector-table-include.md)]
@@ -53,7 +52,7 @@
 		+-- xml2js@0.2.7 (sax@0.5.2)
 		+-- request@2.57.0 (caseless@0.10.0, aws-sign2@0.5.0, forever-agent@0.6.1, stringstream@0.0.4, oauth-sign@0.8.0, tunnel-agent@0.4.1, isstream@0.1.2, json-stringify-safe@5.0.1, bl@0.9.4, combined-stream@1.0.5, qs@3.1.0, mime-types@2.0.14, form-data@0.2.0, http-signature@0.11.0, tough-cookie@2.0.0, hawk@2.3.1, har-validator@1.8.0)
 
-3.  可以手动运行 **ls** 命令来验证是否创建了 **node_modules** 文件夹。在该文件夹中，您将找到 **azure-storage** 包，其中包含访问存储所需的库。
+3.  可以手动运行 **ls** 命令来验证是否创建了 **node_modules** 文件夹。在该文件夹中将找到 **azure-storage** 包，其中包含访问存储所需的库。
 
 ### 导入包
 将以下代码添加到应用程序中的 **server.js** 文件的顶部：
@@ -407,4 +406,4 @@ ACL 是使用一组访问策略实施的，每个策略都有一个关联的 ID�
   [使用 Azure 表服务的 Node.js Web 应用]: /documentation/articles/storage-nodejs-use-table-storage-web-site/
   [Create and deploy a Node.js application to an Azure website]: /documentation/articles/web-sites-nodejs-develop-deploy-mac/
 
-<!---HONumber=Mooncake_1128_2016-->
+<!---HONumber=Mooncake_0103_2017-->

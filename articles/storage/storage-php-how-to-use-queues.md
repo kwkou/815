@@ -1,22 +1,21 @@
 <properties
-	pageTitle="如何通过 PHP 使用队列存储 | Azure"
-	description="了解如何使用 Azure 队列存储服务创建和删除队列，以及插入、获取和删除消息。示例用 PHP 编写。"
-	documentationCenter="php"
-	services="storage"
-	authors="rmcmurray"
-	manager="wpickett"
-	editor=""/>  
-
-
+    pageTitle="如何通过 PHP 使用队列存储 | Azure"
+    description="了解如何使用 Azure 队列存储服务创建和删除队列，以及插入、获取和删除消息。示例用 PHP 编写。"
+    documentationcenter="php"
+    services="storage"
+    author="robinsh"
+    manager="timlt"
+    editor="tysonn" />
 <tags
-	ms.service="storage"
-	ms.workload="storage"
-	ms.tgt_pltfrm="na"
-	ms.devlang="PHP"
-	ms.topic="article"
-	ms.date="08/11/2016"
-	wacn.date="12/12/2016"
-	ms.author="cbrooks;robmcm"/>
+    ms.assetid="7582b208-4851-4489-a74a-bb952569f55b"
+    ms.service="storage"
+    ms.workload="storage"
+    ms.tgt_pltfrm="na"
+    ms.devlang="PHP"
+    ms.topic="article"
+    ms.date="12/08/2016"
+    wacn.date="01/06/2017"
+    ms.author="robinsh" />
 
 # 如何通过 PHP 使用队列存储
 
@@ -386,4 +385,4 @@
 [require\_once]: http://www.php.net/manual/en/function.require-once.php
 [Azure Portal]: https://portal.azure.cn
 
-<!---HONumber=Mooncake_Quality_Review_1202_2016-->
+<!---HONumber=Mooncake_0103_2017-->

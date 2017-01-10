@@ -1,22 +1,21 @@
 <properties
-	pageTitle="通过 .NET 开始使用 Azure 队列存储 | Azure"
-	description="Azure 队列用于在应用程序组件之间进行可靠的异步消息传送。应用程序组件可以利用云消息传送进行独立缩放。"
-	services="storage"
-	documentationCenter=".net"
-	authors="robinsh"
-	manager="carmonm"
-	editor="tysonn"/>  
-
-
+    pageTitle="通过 .NET 开始使用 Azure 队列存储 | Azure"
+    description="Azure 队列用于在应用程序组件之间进行可靠的异步消息传送。应用程序组件可以利用云消息传送进行独立缩放。"
+    services="storage"
+    documentationcenter=".net"
+    author="robinsh"
+    manager="timlt"
+    editor="tysonn" />
 <tags
-	ms.service="storage"
-	ms.workload="storage"
-	ms.tgt_pltfrm="na"
-	ms.devlang="dotnet"
-	ms.topic="hero-article"
-	ms.date="10/12/2016"
-	wacn.date="12/12/2016"
-	ms.author="cbrooks;robinsh"/>  
+    ms.assetid="c0f82537-a613-4f01-b2ed-fc82e5eea2a7"
+    ms.service="storage"
+    ms.workload="storage"
+    ms.tgt_pltfrm="na"
+    ms.devlang="dotnet"
+    ms.topic="hero-article"
+    ms.date="12/08/2016"
+    wacn.date="01/06/2017"
+    ms.author="robinsh" />  
 
 
 # 通过 .NET 开始使用 Azure 队列存储
@@ -28,7 +27,6 @@
 Azure 队列存储用于在应用程序组件之间进行云消息传送。在设计应用程序以实现可伸缩性时，通常要将各个应用程序组件分离，使其可以独立地进行伸缩。队列存储提供的异步消息传送适用于在应用程序组件之间进行通信，无论这些应用程序组件是运行在云中、桌面上、本地服务器上还是移动设备上。队列存储还支持管理异步任务以及构建过程工作流。
 
 ### 关于本教程
-
 本教程演示如何针对使用 Azure 队列存储一些常见情形编写 .NET 代码。涉及的方案包括创建和删除队列、添加、读取和删除队列消息。
 
 **估计完成时间：**45 分钟
@@ -50,7 +48,6 @@ Azure 队列存储用于在应用程序组件之间进行云消息传送。在�
 [AZURE.INCLUDE [storage-development-environment-include](../../includes/storage-development-environment-include.md)]
 
 ### 添加命名空间声明
-
 将下列 `using` 语句添加到 `program.cs` 文件顶部：
 
 	using Microsoft.Azure; // Namespace for CloudConfigurationManager 
@@ -129,7 +126,7 @@ Azure 队列存储用于在应用程序组件之间进行云消息传送。在�
 
 ##<a name="change-the-contents-of-a-queued-message"></a> 更改已排队消息的内容
 
-你可以更改队列中现有消息的内容。如果消息表示工作任务，则你可以使用此功能来更新该工作任务的状态。以下代码使用新内容更新队列消息，并将可见性超时设置为再延长 60 秒。这将保存与消息关联的工作的状态，并额外为客户端提供一分钟的时间来继续处理消息。可使用此方法跟踪队列消息上的多步骤工作流，即使处理步骤因硬件或软件故障而失败，也无需从头开始操作。通常，你还可以保留重试计数，如果某条消息的重试次数超过 *n*，你将删除此消息。这可避免每次处理某条消息时都触发应用程序错误。
+你可以更改队列中现有消息的内容。如果消息表示工作任务，可使用此功能来更新该工作任务的状态。以下代码使用新内容更新队列消息，并将可见性超时设置为再延长 60 秒。这将保存与消息关联的工作的状态，并额外为客户端提供一分钟的时间来继续处理消息。可使用此方法跟踪队列消息上的多步骤工作流，即使处理步骤因硬件或软件故障而失败，也无需从头开始操作。通常，你还可以保留重试计数，如果某条消息的重试次数超过 *n*，你将删除此消息。这可避免每次处理某条消息时都触发应用程序错误。
 
     // Retrieve storage account from connection string.
     CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
@@ -199,7 +196,7 @@ Azure 队列存储用于在应用程序组件之间进行云消息传送。在�
 
 ## 使用其他方法取消对消息的排队
 
-你可以通过两种方式自定义队列中的消息检索。首先，可以获取一批消息（最多 32 个）。其次，你可以设置更长或更短的不可见超时时间，从而允许你的代码使用更多或更少时间来完全处理每个消息。以下代码示例使用 **GetMessages** 方法在一次调用中获取 20 条消息。然后，它使用 **foreach** 循环处理每条消息。它还将每条消息的不可见超时时间设置为 5 分钟。请注意，5 分钟超时时间对于所有消息都是同时开始的，因此在调用 **GetMessages** 5 分钟后，尚未删除的任何消息都将再次变得可见。
+你可以通过两种方式自定义队列中的消息检索。首先，可获取一批消息（最多 32 条）。其次，你可以设置更长或更短的不可见超时时间，从而允许你的代码使用更多或更少时间来完全处理每个消息。以下代码示例使用 **GetMessages** 方法在一次调用中获取 20 条消息。然后，它使用 **foreach** 循环处理每条消息。它还将每条消息的不可见超时时间设置为 5 分钟。请注意，5 分钟超时时间对于所有消息都是同时开始的，因此在调用 **GetMessages** 5 分钟后，尚未删除的任何消息都将再次变得可见。
 
     // Retrieve storage account from connection string.
     CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
@@ -279,4 +276,4 @@ Azure 队列存储用于在应用程序组件之间进行云消息传送。在�
   [Spatial]: http://nuget.org/packages/System.Spatial/5.0.2
  
 
-<!---HONumber=Mooncake_Quality_Review_1118_2016-->
+<!---HONumber=Mooncake_0103_2017-->

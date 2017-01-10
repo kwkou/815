@@ -3,10 +3,9 @@
     description="在 Azure 存储中存储对象的自定义元数据，并设置和检索系统属性。"
     services="storage"
     documentationcenter=""
-    author="tamram"
-    manager="carmonm"
-    editor="tysonn" />  
-
+    author="mmacy"
+    manager="timlt"
+    editor="tysonn" />
 <tags
     ms.assetid="036f9006-273e-400b-844b-3329045e9e1f"
     ms.service="storage"
@@ -14,9 +13,9 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="10/18/2016"
-    wacn.date="12/05/2016"
-    ms.author="tamram" />
+    ms.date="12/08/2016"
+    wacn.date="01/06/2017"
+    ms.author="marsma" />
 
 # 设置和检索属性与元数据
 ## 概述
@@ -93,4 +92,4 @@ Azure 存储中的对象支持系统属性和用户定义的元数据，及其�
 - [适用于 .NET 的 Azure 存储客户端库参考](http://msdn.microsoft.com/zh-cn/library/azure/wa_storage_30_reference_home.aspx)
 - [适用于 .NET 的 Azure 存储客户端库包](https://www.nuget.org/packages/WindowsAzure.Storage/)
 
-<!---HONumber=Mooncake_1128_2016-->
+<!---HONumber=Mooncake_0103_2017-->

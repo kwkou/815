@@ -3,10 +3,9 @@
     description="使用 Azure Blob 存储（对象存储）将非结构化数据存储在云中。"
     services="storage"
     documentationcenter="python"
-    author="tamram"
-    manager="carmonm"
-    editor="tysonn" />  
-
+    author="mmacy"
+    manager="timlt"
+    editor="tysonn" />
 <tags
     ms.assetid="0348e360-b24d-41fa-bb12-b8f18990d8bc"
     ms.service="storage"
@@ -14,9 +13,9 @@
     ms.tgt_pltfrm="na"
     ms.devlang="python"
     ms.topic="article"
-    ms.date="10/18/2016"
-    wacn.date="12/05/2016"
-    ms.author="tamram" />
+    ms.date="12/08/2016"
+    wacn.date="01/06/2017"
+    ms.author="marsma" />
 
 # 如何通过 Python 使用 Azure Blob 存储
 [AZURE.INCLUDE [storage-selector-blob-include](../../includes/storage-selector-blob-include.md)]
@@ -91,7 +90,7 @@ Azure Blob 存储是一种将非结构化数据作为对象/Blob 存储在云中
 	block_blob_service.delete_blob('mycontainer', 'myblockblob')
 
 ## 写入追加 Blob
-追加 Blob 针对追加操作（例如日志记录）进行了优化。类似于块 Blob，追加 Blob 由块组成，但是在将新的块添加到追加 Blob 时，始终追加到该 Blob 的末尾。不能更新或删除追加 Blob 中现有的块。追加 Blob 的块 ID 不公开，因为它们是用于一个块 Blob 的。
+追加 Blob 针对追加操作（例如日志记录）进行了优化。类似于块 Blob，追加 Blob 由块组成，但是当你将新的块添加到追加 Blob 时，始终追加到该 Blob 的末尾。你不能更新或删除追加 Blob 中现有的块。追加 Blob 的块 ID 不公开，因为它们是用于一个块 Blob 的。
 
 追加 Blob 中的每个块可以有不同的大小，最大为 4 MB，并且追加 Blob 最多可包含 50000 个块。因此，追加 Blob 的最大大小稍微大于 195 GB（4 MB X 50000 块）。
 
@@ -120,4 +119,4 @@ Azure Blob 存储是一种将非结构化数据作为对象/Blob 存储在云中
 [Azure 存储团队博客]: http://blogs.msdn.com/b/windowsazurestorage/
 [Microsoft Azure Storage SDK for Python]: https://github.com/Azure/azure-storage-python
 
-<!---HONumber=Mooncake_1128_2016-->
+<!---HONumber=Mooncake_0103_2017-->

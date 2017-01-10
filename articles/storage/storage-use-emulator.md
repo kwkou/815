@@ -3,10 +3,9 @@
     description="Azure 存储模拟器为针对 Azure 存储的开发和测试提供了免费的本地开发环境。了解有关存储模拟器的信息，包括如何对请求进行身份验证、如何从应用程序连接到模拟器和如何使用命令行工具。"
     services="storage"
     documentationcenter=""
-    author="tamram"
-    manager="carmonm"
-    editor="tysonn" />  
-
+    author="mmacy"
+    manager="timlt"
+    editor="tysonn" />
 <tags
     ms.assetid="f480b059-df8a-4a63-b05a-7f2f5d1f5c2a"
     ms.service="storage"
@@ -14,9 +13,9 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="10/31/2016"
-    wacn.date="12/05/2016"
-    ms.author="tamram" />
+    ms.date="12/08/2016"
+    wacn.date="01/06/2017"
+    ms.author="marsma" />
 
 # 使用 Azure 存储模拟器进行开发和测试
 ## 概述
@@ -214,7 +213,7 @@ Azure 存储模拟器提供了一个模拟 Azure Blob、队列和表服务以进
 * 修复了在并发合并操作期间发生争用情况下导致表实体数据不正确的错误。
 
 ### 版本 4.0
-* 存储模拟器可执行文件已重命名为 *AzureStorageEmulator.exe* 。
+* 存储模拟器可执行文件已重命名为 *AzureStorageEmulator.exe*。
 
 ### 版本 3.2
 - 存储模拟器现在支持 Blob、队列和表服务终结点上的 2014-02-14 版本的存储服务。请注意，文件服务终结点目前在存储模拟器中不受支持。请参阅 [Azure 存储服务的版本控制](https://msdn.microsoft.com/zh-cn/library/azure/dd894041.aspx)以了解有关 2014-02-14 版本的详细信息。
@@ -227,4 +226,4 @@ Azure 存储模拟器提供了一个模拟 Azure Blob、队列和表服务以进
 * 为支持可编脚本的命令行接口，已弃用存储模拟器图形用户界面。有关命令行接口的详细信息，请参阅“存储模拟器命令行工具参考”。图形界面将继续存在于 3.0 版中，但仅在安装了计算模拟器的情况下通过右键单击系统托盘图标并选择“显示存储模拟器用户界面”来访问。
 * 现在完全支持版本 2013年-08-15 的 Azure 存储服务。（以前仅存储模拟器 2.2.1 预览版本支持此版本。）
 
-<!---HONumber=Mooncake_1128_2016-->
+<!---HONumber=Mooncake_0103_2017-->

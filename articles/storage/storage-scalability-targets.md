@@ -1,20 +1,21 @@
 <properties
-	pageTitle="Azure 存储可伸缩性和性能目标 |Azure"
-	description="了解有关 Azure 存储帐户的可伸缩性和性能目标的信息，包括标准和高级存储账户的容量、请求速率以及入站和出站带宽。了解每个 Azure 存储服务中各分区的性能目标。"
-	services="storage"
-	documentationCenter="na"
-	authors="tamram"
-	manager="na"
-	editor="na" />
+    pageTitle="Azure 存储可伸缩性和性能目标 |Azure"
+    description="了解有关 Azure 存储帐户的可伸缩性和性能目标的信息，包括标准和高级存储账户的容量、请求速率以及入站和出站带宽。了解每个 Azure 存储服务中各分区的性能目标。"
+    services="storage"
+    documentationcenter="na"
+    author="robinsh"
+    manager="timlt"
+    editor="tysonn" />
 <tags
-	ms.service="storage"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="storage"
-	ms.date="08/03/2016"
-	wacn.date="12/12/2016"
-	ms.author="jahogg;robinsh" />
+    ms.assetid="be721bd3-159f-40a1-88c1-96418537fe75"
+    ms.service="storage"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.tgt_pltfrm="na"
+    ms.workload="storage"
+    ms.date="12/08/2016"
+    wacn.date="01/06/2017"
+    ms.author="robinsh" />
 
 # Azure 存储可伸缩性和性能目标
 
@@ -84,4 +85,4 @@
 - [Azure 存储性能和可伸缩性清单](/documentation/articles/storage-performance-checklist/)
 - [Azure 存储：具有高度一致性的高可用云存储服务](http://blogs.msdn.com/b/windowsazurestorage/archive/2011/11/20/windows-azure-storage-a-highly-available-cloud-storage-service-with-strong-consistency.aspx)
 
-<!---HONumber=Mooncake_Quality_Review_1118_2016-->
+<!---HONumber=Mooncake_0103_2017-->

@@ -1,23 +1,22 @@
-<properties 
-	pageTitle="使用 Azure 存储度量值和日志记录、AzCopy 和 Message Analyzer 进行端到端故障排除 | Azure" 
-	description="本教程演示如何使用 Azure 存储分析、AzCopy 和 Microsoft Message Analyzer 进行端到端故障排除" 
-	services="storage" 
-	documentationCenter="dotnet" 
-	authors="robinsh" 
-	manager="carmonm"/>
+<properties
+    pageTitle="使用 Azure 存储度量值和日志记录、AzCopy 和 Message Analyzer 进行端到端故障排除 | Azure"
+    description="本教程演示如何使用 Azure 存储分析、AzCopy 和 Microsoft Message Analyzer 进行端到端故障排除"
+    services="storage"
+    documentationcenter="dotnet"
+    author="robinsh"
+    manager="timlt" />
+<tags
+    ms.assetid="6b23cba5-0d53-439e-870b-de8e406107d8"
+    ms.service="storage"
+    ms.workload="storage"
+    ms.tgt_pltfrm="na"
+    ms.devlang="dotnet"
+    ms.topic="article"
+    ms.date="12/08/2016"
+    wacn.date="01/06/2017"
+    ms.author="robinsh" />
 
-<tags 
-	ms.service="storage" 
-	ms.workload="storage" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="dotnet" 
-	ms.topic="article" 
-	ms.date="08/03/2016" 
-	wacn.date="12/26/2016" 
-	ms.author="jahogg;robinsh"/>
-
-# 使用 Azure 存储度量值和日志记录、AzCopy 和 Message Analyzer 进行端到端故障排除 
-
+# 使用 Azure 存储度量值和日志记录、AzCopy 和 Message Analyzer 进行端到端故障排除
 [AZURE.INCLUDE [storage-selector-portal-e2e-troubleshooting](../../includes/storage-selector-portal-e2e-troubleshooting.md)]
 
 ## 概述
@@ -56,7 +55,6 @@ Azure 存储操作可能返回 HTTP 状态代码大于 299 作为其正常功能
 对于我们的示例方案，一旦我们建立了成功率度量值低于 100%，我们将检查日志以查找与度量值相关的错误，并使用它们找出导致较低成功率的原因。我们将专门介绍 400 范围内的错误。然后，我们将更细致地调查 404（未找到）错误。
 
 ### 400 范围错误的某些原因
-
 以下示例中显示了对 Azure Blob 存储发出请求后返回的某些 400 范围错误示例和可能的原因。其中的任何错误以及 300 范围和 500 范围内的错误都可能会导致低成功率。
 
 请注意，以下列表远远算不上完整。有关一般性 Azure 存储错误以及特定于每个存储服务的错误的详细信息，请参阅[状态和错误代码](http://msdn.microsoft.com/zh-cn/library/azure/dd179382.aspx)。
@@ -80,7 +78,6 @@ Azure 存储操作可能返回 HTTP 状态代码大于 299 作为其正常功能
 - 当指定的租约 ID 与容器或 Blob 上的租约 ID 不匹配时发生。
 
 ## 生成日志文件以供分析
-
 在本教程中，我们将使用 Message Analyzer 处理三种不同类型的日志文件，不过，你可以选择要处理的类型之一：
 
 - **服务器日志**，这是在启用 Azure 存储日志记录时创建的。服务器日志包含有关针对 Azure 存储服务（Blob、队列、表和文件）之一调用的每个操作的数据。服务器日志将指示调用的操作、返回的状态代码，以及有关请求和响应的其他详细信息。
@@ -143,8 +140,8 @@ Azure 存储操作可能返回 HTTP 状态代码大于 299 作为其正常功能
 
 1. 安装 [Fiddler](http://www.telerik.com/download/fiddler)。
 2. 启动 Fiddler。
-2. 选择**“工具”| Fiddler Options**.
-3. 在“选项”对话框中，确保“捕获 HTTPS 连接”和“解密 HTTPS 通信”都已选中，如下所示。
+3. 选择**“工具”| Fiddler Options**.
+4. 在“选项”对话框中，确保“捕获 HTTPS 连接”和“解密 HTTPS 通信”都已选中，如下所示。
 
 ![配置 Fiddler 选项](./media/storage-e2e-troubleshooting-classic-portal/fiddler-options-1.png)
 
@@ -204,7 +201,6 @@ Microsoft Message Analyzer 是在故障排除和诊断方案中用于捕获、�
 Message Analyzer 包括 Azure 存储的资产，可帮助你分析服务器、客户端和网络日志。在本部分中，我们将讨论如何使用这些工具，解决存储日志中低成功率的问题。
 
 ### 下载并安装 Message Analyzer 和 Azure 存储资产
-
 1. 从 Microsoft 下载中心下载 [Message Analyzer](http://www.microsoft.com/download/details.aspx?id=44226)，并运行安装程序。
 2. 启动 Message Analyzer。
 3. 从“工具”菜单中，选择“资产管理器”。在“资产管理器”对话框中，选择“下载”，然后筛选“Azure 存储”。你将会看到 Azure 存储资产，如下图中所示。
@@ -221,7 +217,6 @@ Message Analyzer 包括 Azure 存储的资产，可帮助你分析服务器、�
 > [AZURE.NOTE] 对于本教程，请安装显示的所有 Azure 存储资产。
 
 ### 将日志文件导入 Message Analyzer
-
 可以将所有已保存的日志文件（服务器端、客户端和网络）导入到 Microsoft Message Analyzer 的单个会话中以供分析。
 
 1. 在 Microsoft Message Analyzer 中的“文件”菜单上，单击“新建会话”，然后单击“空白会话”。在“新建会话”对话框中，输入分析会话的名称。在“会话详细信息”面板中，单击“文件”按钮。
@@ -267,7 +262,6 @@ Message Analyzer 的存储资产包括 Azure 存储视图布局，它们是预�
 除了使用 Azure 存储视图布局以外，还可以定义并保存自己的视图布局。可以选择其他所需字段来分组数据，并将分组另存为自定义布局的一部分。
 
 ### 将颜色规则应用到分析网格
-
 存储资产还包括颜色规则，用于以直观方式在分析网格中标识不同类型的错误。预定义的颜色规则将应用到 HTTP 错误，因此它们仅对服务器日志和网络跟踪显示。
 
 若要应用颜色规则，请从工具栏功能区中选择“颜色规则”。你将在菜单中看到 Azure 存储颜色规则。对于本教程，请选择“客户端错误(介于 400 和 499 之间的状态代码)”，如下图中所示。
@@ -277,7 +271,6 @@ Message Analyzer 的存储资产包括 Azure 存储视图布局，它们是预�
 除了使用 Azure 存储颜色规则以外，还可以定义并保存自己的颜色规则。
 
 ### 分组并筛选日志数据以查找 400 范围错误
-
 接下来，我们将分组并筛选日志数据，以查找 400 范围内的所有错误。
 
 1. 在分析网格中找到 **StatusCode** 列，右键单击列标题，然后选择“分组”。
@@ -315,7 +308,6 @@ Message Analyzer 的存储资产包括 Azure 存储视图布局，它们是预�
 ![Azure 存储视图布局](./media/storage-e2e-troubleshooting-classic-portal/404-filtered-errors1.png)
 
 ### 分析日志数据
-
 现在，你已分组并筛选数据，接下来可以检查生成 404 错误的各个请求的详细信息。在当前视图布局中，分别按客户端请求 ID 和日志源分组数据。由于我们要筛选“StatusCode”字段包含 404 的请求，因此我们只能看到服务器和网络跟踪数据，而看不到客户端日志数据。
 
 下图显示了由于 Get Blob 不存在，导致 Get Blob 操作生成 404 的特定请求。请注意，为了显示相关数据，某些列已从标准视图中删除。
@@ -374,4 +366,4 @@ Message Analyzer 将查找并选择搜索条件与客户端请求 ID 匹配的�
  
  
 
-<!---HONumber=Mooncake_Quality_Review_1215_2016-->
+<!---HONumber=Mooncake_0103_2017-->

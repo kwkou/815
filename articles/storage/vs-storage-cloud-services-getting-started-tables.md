@@ -1,21 +1,22 @@
 <properties
     pageTitle="表存储和 Visual Studio 连接服务（云服务）入门 | Azure"
-	description="在使用 Visual Studio 连接服务连接到存储帐户后，如何开始在 Visual Studio 的云服务项目中使用 Azure 表存储"
-	services="storage"
-	documentationCenter=""
-	authors="TomArcher"
-	manager="douge"
-	editor=""/>
-
+    description="在使用 Visual Studio 连接服务连接到存储帐户后，如何开始在 Visual Studio 的云服务项目中使用 Azure 表存储"
+    services="storage"
+    documentationcenter=""
+    author="TomArcher"
+    manager="douge"
+    editor="" />
 <tags
-	ms.service="storage"
-	ms.workload="web"
-	ms.tgt_pltfrm="vs-getting-started"
-	ms.devlang="na"
-	ms.topic="article"
-    ms.date="07/18/2016"
-    wacn.date="09/12/2016"
-	ms.author="tarcher"/>
+    ms.assetid="a3a11ed8-ba7f-4193-912b-e555f5b72184"
+    ms.service="storage"
+    ms.workload="web"
+    ms.tgt_pltfrm="vs-getting-started"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.date="12/02/2016"
+    wacn.date="01/06/2017"
+    ms.author="tarcher" />  
+
 
 # 开始使用 Azure 表存储和 Visual Studio 连接服务（云服务项目）
 
@@ -51,7 +52,7 @@ Azure 表存储服务使用户可以存储大量结构化数据。该服务是�
 		 CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
 		   CloudConfigurationManager.GetSetting("<storage account name>
          _AzureStorageConnectionString"));
-> [AZURE.NOTE]在下列示例中，在代码的前面使用上述全部代码。
+> [AZURE.NOTE]  在下列示例中，在代码的前面使用上述全部代码。
 
 3. 获取 **CloudTableClient** 对象，以引用存储帐户中的表对象。
 
@@ -198,4 +199,4 @@ Azure 表存储服务使用户可以存储大量结构化数据。该服务是�
 
 [AZURE.INCLUDE [vs-storage-dotnet-tables-next-steps](../../includes/vs-storage-dotnet-tables-next-steps.md)]
 
-<!---HONumber=Mooncake_0905_2016-->
+<!---HONumber=Mooncake_0103_2017-->

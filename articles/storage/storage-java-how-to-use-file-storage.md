@@ -1,21 +1,22 @@
 <properties
-	pageTitle="如何通过 Java 使用文件存储 | Azure" 
-	description="了解如何使用 Azure 文件服务上载、下载、列出和删除文件。用 Java 编写的示例。"
-	services="storage"
-	documentationCenter="java"
-	authors="rmcmurray"
-	manager="wpickett"
-	editor="" />  
-
+    pageTitle="如何通过 Java 使用文件存储 | Azure"
+    description="了解如何使用 Azure 文件服务上载、下载、列出和删除文件。用 Java 编写的示例。"
+    services="storage"
+    documentationcenter="java"
+    author="robinsh"
+    manager="timlt"
+    editor="tysonn" />
 <tags
-	ms.service="storage"
-	ms.workload="storage"
-	ms.tgt_pltfrm="na"
-	ms.devlang="Java"
-	ms.topic="article"
-	ms.date="08/11/2016"
-	wacn.date="09/05/2016"
-	ms.author="minet;robmcm"/>
+    ms.assetid="3bfbfa7f-d378-4fb4-8df3-e0b6fcea5b27"
+    ms.service="storage"
+    ms.workload="storage"
+    ms.tgt_pltfrm="na"
+    ms.devlang="Java"
+    ms.topic="article"
+    ms.date="12/08/2016"
+    wacn.date="01/06/2017"
+    ms.author="robinsh" />  
+
 
 # 如何通过 Java 使用文件存储
 
@@ -52,7 +53,7 @@
 	    "AccountKey=your_storage_account_key;" +
 	    "EndpointSuffix=core.Chinacloudapi.cn";
 
-> [AZURE.NOTE]将 your_storage_account_name 和 your_storage_account_key 替换为你的存储帐户的实际值。
+> [AZURE.NOTE] 将 your\_storage\_account\_name 和 your\_storage\_account\_key 替换为你的存储帐户的实际值。
 
 ## 连接到 Azure 存储帐户
 
@@ -214,8 +215,8 @@ Azure 文件存储共享至少包含文件所在的根目录。在本部分，�
 - [Azure Storage SDK for Java](https://github.com/azure/azure-storage-java)
 - [Azure Storage SDK for Android](https://github.com/azure/azure-storage-android)
 - [Azure 存储客户端 SDK 参考](http://azure.github.io/azure-storage-java/)
-- [Azure 存储空间服务 REST API](https://msdn.microsoft.com/zh-cn/library/azure/dd179355.aspx)
+- [Azure 存储服务 REST API](https://msdn.microsoft.com/zh-cn/library/azure/dd179355.aspx)
 - [Azure 存储团队博客](http://blogs.msdn.com/b/windowsazurestorage/)
 - [使用 AzCopy 命令行实用程序传输数据](/documentation/articles/storage-use-azcopy/)
 
-<!---HONumber=Mooncake_Quality_Review_1118_2016-->
+<!---HONumber=Mooncake_0103_2017-->

@@ -1,20 +1,20 @@
-<properties 
-	pageTitle="使用 Azure 存储指标和日志记录、AzCopy 及 Message Analyzer 进行点对点故障排除 | Azure" 
-	description="本教程演示如何使用 Azure 存储分析、AzCopy 和 Microsoft Message Analyzer 进行点对点故障排除"
-	services="storage"
-	documentationCenter="dotnet"
-	authors="robinsh"
-	manager="carmonm"/>  
-
+<properties
+    pageTitle="使用 Azure 存储度量值和日志记录、AzCopy 和 Message Analyzer 进行端到端故障排除 | Azure"
+    description="本教程演示如何使用 Azure 存储分析、AzCopy 和 Microsoft Message Analyzer 进行端到端故障排除"
+    services="storage"
+    documentationcenter="dotnet"
+    author="robinsh"
+    manager="timlt" />
 <tags
-	ms.service="storage"
-	ms.workload="storage"
-	ms.tgt_pltfrm="na"
-	ms.devlang="dotnet"
-	ms.topic="article"
-	ms.date="08/03/2016"
-	wacn.date="12/19/2016"
-	ms.author="jahogg;robinsh"/>
+    ms.assetid="643372a3-1c07-4e88-b4ef-042512a43086"
+    ms.service="storage"
+    ms.workload="storage"
+    ms.tgt_pltfrm="na"
+    ms.devlang="dotnet"
+    ms.topic="article"
+    ms.date="12/08/2016"
+    wacn.date="01/06/2017"
+    ms.author="robinsh" />
 
 # 使用 Azure 存储指标和日志记录、AzCopy 及 Message Analyzer 进行点对点故障排除
 
@@ -365,4 +365,4 @@ Message Analyzer 将查找并选择搜索条件匹配客户端请求 ID 的第�
 - [Microsoft Message Analyzer 操作指南](http://technet.microsoft.com/zh-cn/library/jj649776.aspx)
  
 
-<!---HONumber=Mooncake_Quality_Review_1202_2016-->
+<!---HONumber=Mooncake_0103_2017-->

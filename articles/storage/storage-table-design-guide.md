@@ -1,23 +1,21 @@
 <properties
-	pageTitle="Azure 存储表设计指南 | Azure"
-	description="在 Azure 表存储中设计可伸缩的高性能表"
-	services="storage"
-	documentationCenter="na"
-	authors="jasonnewyork" 
-	manager="tadb"
-	editor="tysonn"/>  
-
-
+    pageTitle="Azure 存储表设计指南 | Azure"
+    description="在 Azure 表存储中设计可伸缩的高性能表"
+    services="storage"
+    documentationcenter="na"
+    author="jasonnewyork"
+    manager="tadb"
+    editor="tysonn" />
 <tags
-	ms.service="storage"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="storage"
-	ms.date="09/22/2016"
-	wacn.date="12/12/2016"
-	ms.author="jahogg;tamram"/>  
-
+    ms.assetid="8e228b0c-2998-4462-8101-9f16517393ca"
+    ms.service="storage"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.tgt_pltfrm="na"
+    ms.workload="storage"
+    ms.date="11/28/2016"
+    wacn.date="01/06/2017"
+    ms.author="jahogg" />
 
 # Azure 存储表设计指南：设计可伸缩的高性能表
 
@@ -123,7 +121,7 @@
 </table>
 
 
-到目前为止，这看起来非常类似于关系数据库中的表，主要区别是有必需的列，以及能够在同一个表中存储多种实体类型。此外，每个用户定义的属性（如 **FirstName** 或 **Age**）还具有数据类型（如 integer 或 string），就像关系数据库中的列一样。虽然与关系数据库中不同，表服务的架构灵活性质意味着每个实体的属性不需要具有相同的数据类型。若要在单个属性中存储复杂数据类型，必须使用序列化格式（例如，JSON 或 XML）。有关表服务的详细信息（例如支持的数据类型、支持的日期范围、命名规则和大小限制），请参阅 MSDN 上的[了解表服务数据模型](http://msdn.microsoft.com/zh-cn/library/azure/dd179338.aspx)。
+到目前为止，这看起来非常类似于关系数据库中的表，主要区别是有必需的列，以及能够在同一个表中存储多种实体类型。此外，每个用户定义的属性（如 **FirstName** 或 **Age**）还具有数据类型（如 integer 或 string），就像关系数据库中的列一样。虽然与关系数据库中不同，表服务的架构灵活性质意味着每个实体的属性不需要具有相同的数据类型。若要在单个属性中存储复杂数据类型，必须使用序列化格式（例如，JSON 或 XML）。有关表服务的详细信息（例如支持的数据类型、支持的日期范围、命名规则和大小限制），请参阅 [了解表服务数据模型](http://msdn.microsoft.com/zh-cn/library/azure/dd179338.aspx)。
 
 正如你将看到的，你所选的 **PartitionKey** 和 **RowKey** 是良好的表设计的基础。存储在表中的每个实体都必须具有唯一的 **PartitionKey** 和 **RowKey**。与关系数据库表中的键一样，将对 **PartitionKey** 和 **RowKey** 值进行索引，以创建聚集索引，从而实现快速查找；但是，表服务不创建任何辅助索引，因此，这两个属性是仅有的两个编制索引的属性（后面所述的一些模式将显示如何解决这种明显的限制）。
 
@@ -181,7 +179,7 @@ EGT 还为你引入了潜在的权衡以便在设计中进行评估：使用更�
 在阅读本指南时，你将会看到将所有这些原则付诸实践的示例。
 
 ##<a id="design-for-querying"></a> 针对查询的设计  
-表服务解决方案可能需要进行大量读取操作和/或大量写入操作。本部分重点介绍在将表服务设计为支持高效读取操作时需要牢记的事项。通常，支持高效读取操作的设计对于写入操作来说也是高效的。但是，在设计以支持写入操作时还有一些其他注意事项需要牢记，这些注意事项将在下一部分[针对数据修改的设计](#design-for-data-modification)中进行讨论。
+表服务解决方案可能需要进行大量读取操作和/或大量写入操作。本部分重点介绍在将表服务设计为支持高效读取操作时需要牢记的事项。通常，支持高效读取操作的设计对于写入操作来说也是高效的。但是，在设计以支持写入操作时还有一些其他注意事项需要牢记，这些注意事项在下一部分[针对数据修改的设计](#design-for-data-modification)中进行讨论。
 
 将表服务解决方案设计为能够高效读取数据的良好起点是问“我的应用程序将需要执行哪些查询来从表服务中检索它所需的数据？”
 
@@ -191,8 +189,8 @@ EGT 还为你引入了潜在的权衡以便在设计中进行评估：使用更�
 
 - [所选的 PartitionKey 和 RowKey 如何影响查询性能](#how-your-choice-of-partitionkey-and-rowkey-impacts-query-performance)
 - [选择适当的 PartitionKey](#choosing-an-appropriate-partitionkey)
-- [使用表服务的键值存储优化查询](#optimizing-queries-with-a-key-value-store-for-the-table-service)
-- [对表服务的键值存储中的数据进行排序](#sorting-data-in-a-key-value-store-in-the-table-service)
+- [针对表服务优化查询](#optimizing-queries-with-a-key-value-store-for-the-table-service)
+- [对表服务中的数据进行排序](#sorting-data-in-a-key-value-store-in-the-table-service)
 
 ###<a id="how-your-choice-of-partitionkey-and-rowkey-impacts-query-performance"></a> 所选的 PartitionKey 和 RowKey 如何影响查询性能  
 
@@ -246,7 +244,7 @@ EGT 还为你引入了潜在的权衡以便在设计中进行评估：使用更�
 许多设计必须满足要求，才能允许根据多个条件查找实体。例如，根据电子邮件、员工 ID 或姓氏查找员工实体。[表设计模式](#table-design-patterns)这部分中的以下模式满足这些类型的要求，并说明了解决表服务不提供辅助索引这一事实的方法：
 
 -	[内分区的第二索引模式](#intra-partition-secondary-index-pattern) - 存储使用不同 **RowKey** 值（在同一分区中）的各个实体的多个副本，以实现快速高效的查找，并通过使用不同 **RowKey** 值来替换排序顺序。  
--	[分区间的第二索引模式](#inter-partition-secondary-index-pattern) - 存储使用不同 RowKey 值（在同一分区中）的各个实体的多个副本，以实现快速高效的查找，并通过使用不同 **RowKey** 值来替换排序顺序。  
+-	[内分区的第二索引模式](#inter-partition-secondary-index-pattern) - 存储使用不同 RowKey 值（在同一分区中）的各个实体的多个副本，以实现快速高效的查找，并通过使用不同 **RowKey** 值来替换排序顺序。  
 -	[索引实体模式](#index-entities-pattern) - 维护索引实体以启用返回实体列表的高效搜索。  
 
 ###<a id="sorting-data-in-a-key-value-store-in-the-table-service"></a> 对表服务中的数据进行排序  
@@ -301,7 +299,7 @@ EGT 还为你引入了潜在的权衡以便在设计中进行评估：使用更�
      
 .NET Azure 存储客户端库支持对插入和替换操作的字符串实体属性进行加密。加密的字符串作为二进制属性存储在服务中，并在解密之后转换回字符串。
 
-对于表，除了加密策略以外，用户还必须指定要加密的属性。可以通过指定 [EncryptProperty] 特性（适用于从 TableEntity 派生的 POCO 实体）或在请求选项中指定加密解析程序来完成此操作。加密解析程序是一个委托，它接受分区键、行键和属性名称并返回一个布尔值以指示是否应加密该属性。在加密过程中，客户端库将使用此信息来确定是否应在写入到网络时加密属性。该委托还可以围绕如何加密属性来实现逻辑的可能性。（例如，如果 X，则加密属性 A，否则加密属性 A 和 B。） 请注意，在读取或查询实体时，不需要提供此信息。
+对于表，除了加密策略以外，用户还必须指定要加密的属性。可以通过指定 [EncryptProperty] 特性（适用于从 TableEntity 派生的 POCO 实体）或在请求选项中指定加密解析程序来完成此操作。加密解析程序是一个委托，它接受分区键、行键和属性名称并返回一个布尔值以指示是否应加密该属性。在加密过程中，客户端库将使用此信息来确定是否应在写入到网络时加密属性。该委托还可以围绕如何加密属性实现逻辑的可能性。（例如，如果 X，则加密属性 A，否则加密属性 A 和 B。） 请注意，在读取或查询实体时，不需要提供此信息。
 
 请注意，当前不支持合并。由于属性的子集可能以前已使用不同的密钥加密，因此只合并新属性和更新元数据将导致数据丢失。合并需要进行额外的服务调用以从服务中读取预先存在的实体，或者需要为属性使用一个新密钥，由于性能方面的原因，这两种方案都不适用。
 
@@ -1574,4 +1572,4 @@ Storage Analytics 在内部缓存日志消息，然后定期更新相应的 blob
 [29]: ./media/storage-table-design-guide/storage-table-design-IMAGE29.png
  
 
-<!---HONumber=Mooncake_Quality_Review_1118_2016-->
+<!---HONumber=Mooncake_0103_2017-->

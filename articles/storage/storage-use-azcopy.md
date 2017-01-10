@@ -5,8 +5,7 @@
     documentationcenter=""
     author="micurd"
     manager="jahogg"
-    editor="tysonn" />  
-
+    editor="tysonn" />
 <tags
     ms.assetid="aa155738-7c69-4a83-94f8-b97af4461274"
     ms.service="storage"
@@ -14,13 +13,13 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="10/31/2016"
-    wacn.date="12/05/2016"
+    ms.date="11/28/2016"
+    wacn.date="01/06/2017"
     ms.author="micurd" />
 
 # 使用 AzCopy 命令行实用程序传输数据
 ## 概述
-AzCopy 是一个 Windows 命令行实用程序，专用于使用具有优化性能的简单命令将数据复制到 Azure Blob、文件和表存储以及从这些位置复制数据。可在存储帐户中将一个对象数据从复制到另一个对象，或者在存储帐户之间复制。
+AzCopy 是一个 Windows 命令行实用程序，专用于使用具有优化性能的简单命令将数据复制到 Azure Blob、文件和表存储以及从这些位置复制数据。可在存储帐户中将数据从一个对象复制到另一个对象，或者在存储帐户之间复制。
 
 
 > [AZURE.NOTE] 本指南假定用户已熟悉了 [Azure 存储](/home/features/storage/)。如果不熟悉，阅读 [Azure 存储简介](/documentation/articles/storage-introduction/)文档将有所帮助。最重要的是，需要[创建一个存储帐户](/documentation/articles/storage-create-storage-account/#create-a-storage-account)以开始使用 AzCopy。
@@ -106,7 +105,7 @@ AzCopy 命令的基本语法是：
 
 	AzCopy /Source:https://myaccount.blob.core.chinacloudapi.cn/mycontainer /Dest:C:\myfolder /SourceKey:key /MT /XO
 
-##<a name="blob-upload"></a> Blob：上载
+##<a name="blob-upload"></a> Blob：上传
 
 ### 上传单个文件
 
@@ -858,4 +857,4 @@ AzCopy 旨在最大程度上利用计算机资源来加快数据传输，如果�
 - [AzCopy：使用跨帐户复制 Blob](http://blogs.msdn.com/b/windowsazurestorage/archive/2013/04/01/azcopy-using-cross-account-copy-blob.aspx)
 - [AzCopy：为 Azure Blob 上传/下载文件](http://blogs.msdn.com/b/windowsazurestorage/archive/2012/12/03/azcopy-uploading-downloading-files-for-windows-azure-blobs.aspx)
 
-<!---HONumber=Mooncake_1128_2016-->
+<!---HONumber=Mooncake_0103_2017-->

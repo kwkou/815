@@ -1,21 +1,21 @@
 <properties
-	pageTitle="如何通过 Java 使用队列存储 | Azure" 
-	description="了解如何使用 Azure 队列服务创建和删除队列，以及插入、获取和删除消息。用 Java 编写的示例。"
-	services="storage"
-	documentationCenter="java"
-	authors="rmcmurray"
-	manager="wpickett"
-	editor=""/>
-
+    pageTitle="如何通过 Java 使用队列存储 | Azure"
+    description="了解如何使用 Azure 队列服务创建和删除队列，以及插入、获取和删除消息。用 Java 编写的示例。"
+    services="storage"
+    documentationcenter="java"
+    author="robinsh"
+    manager="timlt"
+    editor="tysonn" />
 <tags
-	ms.service="storage"
-	ms.workload="storage"
-	ms.tgt_pltfrm="na"
-	ms.devlang="Java"
-	ms.topic="article"
-	ms.date="08/11/2016"
-	wacn.date="12/12/2016"
-	ms.author="cbrooks;robmcm"/>
+    ms.assetid="68cecc8e-38c9-4a24-99e8-cb722bc63cf9"
+    ms.service="storage"
+    ms.workload="storage"
+    ms.tgt_pltfrm="na"
+    ms.devlang="Java"
+    ms.topic="article"
+    ms.date="12/08/2016"
+    wacn.date="01/06/2017"
+    ms.author="robinsh" />
 
 # 如何通过 Java 使用队列存储
 
@@ -35,7 +35,7 @@
 
 在本指南中，将使用存储功能，这些功能可在本地 Java 应用程序中运行，或在 Azure 的 Web 角色或辅助角色中通过运行的代码来运行。
 
-为此，需要安装 Java 开发工具包 (JDK)，并在 Azure 订阅中创建一个 Azure 存储帐户。完成此操作后，你将需要验证开发系统满足最低要求和 GitHub 上的 [Azure Storage SDK for Java][] 存储库中列出的依赖项。如果系统满足这些要求，可以按照说明下载和安装系统中该存储库的 Azure Storage Libraries for Java。完成这些任务后，您将能够创建一个 Java 应用程序，以便使用本文中的示例。
+为此，需要安装 Java 开发工具包 (JDK)，并在 Azure 订阅中创建一个 Azure 存储帐户。完成此操作后，需要验证开发系统是否满足最低要求和 GitHub 上的 [Azure Storage SDK for Java][] 存储库中列出的依赖项。如果系统满足这些要求，可以按照说明下载和安装系统中该存储库的 Azure Storage Libraries for Java。完成这些任务后，您将能够创建一个 Java 应用程序，以便使用本文中的示例。
 
 ## 配置应用程序以访问队列存储
 
@@ -153,7 +153,7 @@ Azure 存储客户端使用存储连接字符串来存储用于访问数据管�
 
 ## 如何：更改已排队消息的内容
 
-你可以更改队列中现有消息的内容。如果消息表示工作任务，则你可以使用此功能来更新该工作任务的状态。以下代码使用新内容更新队列消息，并将可见性超时设置为再延长 60 秒。这将保存与消息关联的工作的状态，并额外为客户端提供一分钟的时间来继续处理消息。可使用此方法跟踪队列消息上的多步骤工作流，即使处理步骤因硬件或软件故障而失败，也无需从头开始操作。通常，你还可以保留重试计数，如果某条消息的重试次数超过 *n*，你将删除此消息。这可避免每次处理某条消息时都触发应用程序错误。
+可更改队列中现有消息的内容。如果消息表示工作任务，可使用此功能来更新该工作任务的状态。以下代码使用新内容更新队列消息，并将可见性超时设置为再延长 60 秒。这将保存与消息关联的工作的状态，并额外为客户端提供一分钟的时间来继续处理消息。可使用此方法跟踪队列消息上的多步骤工作流，即使处理步骤因硬件或软件故障而失败，也无需从头开始操作。通常，你还可以保留重试计数，如果某条消息的重试次数超过 *n*，你将删除此消息。这可避免每次处理某条消息时都触发应用程序错误。
 
 下面的代码示例将搜索队列中的消息，查找内容中第一个与“Hello, World”匹配的消息，然后对消息内容进行修改并退出。
 
@@ -296,7 +296,7 @@ Azure 存储客户端使用存储连接字符串来存储用于访问数据管�
 
 ## 用于取消对消息进行排队的其他选项
 
-你可以通过两种方式自定义队列中的消息检索。首先，可以获取一批消息（最多 32 个）。其次，你可以设置更长或更短的不可见超时时间，从而允许你的代码使用更多或更少时间来完全处理每个消息。
+你可以通过两种方式自定义队列中的消息检索。首先，可获取一批消息（最多 32 条）。其次，你可以设置更长或更短的不可见超时时间，从而允许你的代码使用更多或更少时间来完全处理每个消息。
 
 下面的代码示例使用 **retrieveMessages** 方法以在一次调用中获取 20 条消息。然后，它会使用 **for** 循环处理每条消息。它还将每条消息的不可见超时设置为五分钟（300 秒）。请注意，这五分钟超时对于所有消息都是同时开始的，因此在调用 **retrieveMessages** 五分钟后，尚未删除的任何消息都将再次变得可见。
 
@@ -394,4 +394,4 @@ Azure 存储客户端使用存储连接字符串来存储用于访问数据管�
 [Azure 存储 REST API]: https://msdn.microsoft.com/zh-cn/library/azure/dd179355.aspx
 [Azure 存储团队博客]: http://blogs.msdn.com/b/windowsazurestorage/
 
-<!---HONumber=Mooncake_Quality_Review_1118_2016-->
+<!---HONumber=Mooncake_0103_2017-->

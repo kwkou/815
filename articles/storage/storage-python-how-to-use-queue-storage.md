@@ -1,22 +1,21 @@
 <properties
-	pageTitle="如何通过 Python 使用队列存储 | Azure"
-	description="了解如何通过 Python 使用 Azure 队列服务创建和删除队列，以及插入、获取和删除消息。"
-	services="storage"
-	documentationCenter="python"
-	authors="robinsh"
-	manager="carmonm"
-	editor="tysonn"/>  
-
-
+    pageTitle="如何通过 Python 使用队列存储 | Azure"
+    description="了解如何通过 Python 使用 Azure 队列服务创建和删除队列，以及插入、获取和删除消息。"
+    services="storage"
+    documentationcenter="python"
+    author="robinsh"
+    manager="timlt"
+    editor="tysonn" />
 <tags
-	ms.service="storage"
-	ms.workload="storage"
-	ms.tgt_pltfrm="na"
-	ms.devlang="python"
-	ms.topic="article"
-	ms.date="09/20/2016"
-	wacn.date="12/12/2016"
-	ms.author="cbrooks;robinsh"/>  
+    ms.assetid="cc0d2da2-379a-4b58-a234-8852b4e3d99d"
+    ms.service="storage"
+    ms.workload="storage"
+    ms.tgt_pltfrm="na"
+    ms.devlang="python"
+    ms.topic="article"
+    ms.date="12/08/2016"
+    wacn.date="01/06/2017"
+    ms.author="robinsh" />
 
 
 # 如何通过 Python 使用队列存储
@@ -69,7 +68,7 @@
 		print(message.content)
 		queue_service.delete_message('taskqueue', message.id, message.pop_receipt)
 
-可以通过两种方式自定义队列中的消息检索。首先，可以获取一批消息（最多 32 个）。其次，可以设置更长或更短的不可见超时时间，从而允许代码使用更多或更少时间来完全处理每个消息。以下代码示例使用 **get\_messages** 方法来在一次调用中获取 16 条消息。然后，它会使用 for 循环处理每条消息。它还将每条消息的不可见超时时间设置为 5 分钟。
+可以通过两种方式自定义队列中的消息检索。首先，可获取一批消息（最多 32 条）。其次，可以设置更长或更短的不可见超时时间，从而允许代码使用更多或更少时间来完全处理每个消息。以下代码示例使用 **get\_messages** 方法来在一次调用中获取 16 条消息。然后，它会使用 for 循环处理每条消息。它还将每条消息的不可见超时时间设置为 5 分钟。
 
 	messages = queue_service.get_messages('taskqueue', num_messages=16, visibility_timeout=5*60)
 	for message in messages:
@@ -110,4 +109,4 @@
 [Azure 存储团队博客]: http://blogs.msdn.com/b/windowsazurestorage/
 [Azure Storage SDK for Python]: https://github.com/Azure/azure-storage-python
 
-<!---HONumber=Mooncake_Quality_Review_1118_2016-->
+<!---HONumber=Mooncake_0103_2017-->

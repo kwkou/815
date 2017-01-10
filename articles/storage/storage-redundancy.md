@@ -1,12 +1,11 @@
 <properties
     pageTitle="Azure 存储复制 | Azure"
-    description="复制 Azure 存储帐户中的数据，实现持久性和高可用性。复制选项包括本地冗余存储 (LRS)、异地冗余存储 (GRS) 和读取访问异地冗余存储 (RA-GRS)。"
+    description="复制 Azure 存储帐户中的数据以实现持久性和高可用性。复制选项包括本地冗余存储 (LRS)、异地冗余存储 (GRS) 和读取访问异地冗余存储 (RA-GRS)。"
     services="storage"
     documentationcenter=""
-    author="tamram"
-    manager="carmonm"
-    editor="tysonn" />  
-
+    author="mmacy"
+    manager="timlt"
+    editor="tysonn" />
 <tags
     ms.assetid="86bdb6d4-da59-4337-8375-2527b6bdf73f"
     ms.service="storage"
@@ -14,9 +13,9 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="10/25/2016"
-    wacn.date="12/05/2016"
-    ms.author="tamram" />
+    ms.date="12/08/2016"
+    wacn.date="01/06/2017"
+    ms.author="marsma" />
 
 # Azure 存储复制
 始终复制 Azure 存储帐户中的数据，确保持久性和高可用性。根据所选的复制选项，复制操作将在同一数据中心内复制数据或将其复制到辅助数据中心。发生临时硬件故障时，复制会保护数据，并保证应用程序继续正常运行。如果将数据复制到辅助数据中心，主位置发生灾难性故障时，这也可保护数据。
@@ -79,9 +78,9 @@ LRS 的成本最低，与其他选项相比，存储的持久性最小。如果�
  
 ##<a id="read-access-geo-redundant-storage"></a> 读取访问异地冗余存储
 
-除了 GRS 所提供的在两个区域之间进行复制外，读取访问异地冗余存储 (RA-GRS) 还提供对辅助位置中的数据的只读访问权限，从而在最大程度上提高存储帐户的可用性。
+除了在 GRS 所提供的两个区域之间进行复制外，读取访问异地冗余存储 (RA-GRS) 还提供对辅助位置中的数据的只读访问权限，从而在最大程度上提高存储帐户的可用性。
 
-当启用对辅助区域中的数据的只读访问权限时，除了存储帐户的主终结点外，还可以在辅助终结点上获取数据。辅助终结点与主终结点类似，但会在帐户名称后面追加后缀`-secondary`。例如，如果 Blob 服务的主终结点是  `myaccount.blob.core.chinacloudapi.cn`，则辅助终结点是  `myaccount-secondary.blob.core.chinacloudapi.cn`。存储帐户的访问密钥对于主终结点和辅助终结点是相同的。
+当启用对辅助区域中的数据的只读访问权限时，除了存储帐户的主终结点外，还可以在辅助终结点上获取数据。辅助终结点与主终结点类似，但会在帐户名称后面追加后缀`-secondary`。例如，如果 Blob 服务的主终结点是  `myaccount.blob.core.chinacloudapi.cn`，辅助终结点则是  `myaccount-secondary.blob.core.chinacloudapi.cn`。存储帐户的访问密钥对于主终结点和辅助终结点是相同的。
 
 注意事项：
 
@@ -96,4 +95,4 @@ LRS 的成本最低，与其他选项相比，存储的持久性最小。如果�
 - [SOSP 论文 - Azure 存储空间：具有高度一致性的高可用云存储服务](http://blogs.msdn.com/b/windowsazurestorage/archive/2011/11/20/windows-azure-storage-a-highly-available-cloud-storage-service-with-strong-consistency.aspx)
  
 
-<!---HONumber=Mooncake_1128_2016-->
+<!---HONumber=Mooncake_0103_2017-->

@@ -3,10 +3,9 @@
     description="了解如何使容器和 blob 可供匿名访问，以及如何对其进行程序式访问。"
     services="storage"
     documentationcenter=""
-    author="tamram"
-    manager="carmonm"
-    editor="tysonn" />  
-
+    author="mmacy"
+    manager="timlt"
+    editor="tysonn" />
 <tags
     ms.assetid="a2cffee6-3224-4f2a-8183-66ca23b2d2d7"
     ms.service="storage"
@@ -14,9 +13,9 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="11/18/2016"
-    wacn.date="12/05/2016"
-    ms.author="tamram" />
+    ms.date="12/08/2016"
+    wacn.date="01/06/2017"
+    ms.author="marsma" />
 
 # 管理对容器和 Blob 的匿名读取访问
 ## 概述
@@ -144,4 +143,4 @@
 - [使用共享访问签名 (SAS)](/documentation/articles/storage-dotnet-shared-access-signature-part-1/)
 - [使用共享的访问签名委托访问](https://msdn.microsoft.com/zh-cn/library/azure/ee395415.aspx)
 
-<!---HONumber=Mooncake_1128_2016-->
+<!---HONumber=Mooncake_0103_2017-->
