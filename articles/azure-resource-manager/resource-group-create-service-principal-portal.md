@@ -127,11 +127,9 @@
 
      ![保存密钥](./media/resource-group-create-service-principal-portal/save-key.png)  
 
-
      保存密钥后, 将显示密钥的值。复制此值，因为稍后不能检索密钥。提供密钥值及应用程序 ID 登录为该应用程序。将密钥值存储在应用程序可检索的位置。
 
      ![保存的密钥](./media/resource-group-create-service-principal-portal/copy-key.png)  
-
 
 ## 获取租户 ID
 以编程方式登录时，需要随身份验证请求传递租户 ID。
