@@ -15,7 +15,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="storage-backup-recovery"
     ms.date="12/04/2016"
-    wacn.date="01/03/2017"
+    wacn.date="01/11/2017"
     ms.author="raynew" />
 
 # Azure Site Recovery 支持矩阵
@@ -54,7 +54,7 @@ Windows Server 2016、Windows Server 2012 R2（含最新更新）<br/><br/> 目�
 vCenter 5.5 版或 6.0 版（仅支持 5.5 版功能）<br/><br/>具有最新更新的 vSphere 6.0 版、5.5 版或 5.1 版 | Windows Server 2016、Windows Server 2012 R2 或 Windows Server 2012（含最新更新）。<br/><br/> Windows Server 2016 主机应由运行 System Center 2016 的 VMM 托管。<br/><br/> 目前不支持混合使用 Windows Server 2016 和更低版主机的 VMM 2016 云。
 
 
-## 复制的计算机支持
+##<a name="support-for-replicated-machines"></a> 复制的计算机支持
 
 ### 计算机（复制到 Azure）
 

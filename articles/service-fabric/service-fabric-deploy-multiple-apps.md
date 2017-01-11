@@ -14,7 +14,7 @@
     ms.tgt_pltfrm="NA"
     ms.workload="NA"
     ms.date="10/22/2016"
-    wacn.date="12/26/2016"
+    wacn.date="01/11/2016"
     ms.author="msfussell;mikhegn" />
 
 # 部署多个来宾可执行文件
@@ -22,7 +22,7 @@
 
 虽然本演练演示的是如何部署将 MongoDB 用作数据存储并具有 Node.js 前端的应用程序，但是你可以将这些步骤套用于任何与另一个应用程序具有依赖关系的应用程序。
 
-可使用 Visual Studio 生成包含多个来宾可执行文件的应用程序包。请参阅[使用 Visual Studio 打包现有应用程序](/documentation/articles/service-fabric-deploy-existing-app/#use-visual-studio-to-package-an-existing-executable)。添加第一个来宾可执行文件后，右键单击应用程序项目，然后选择“添加”>“新建 Service Fabric 服务”，将第二个来宾可执行项目添加到解决方案中。注意：如果选择在 Visual Studio 项目中链接源，则生成 Visual Studio 解决方案可确保应用程序包能够与源中的更改保持同步。
+可使用 Visual Studio 生成包含多个来宾可执行文件的应用程序包。请参阅[使用 Visual Studio 打包现有应用程序](/documentation/articles/service-fabric-deploy-existing-app/#using-visual-studio-to-package-an-existing-executable)。添加第一个来宾可执行文件后，右键单击应用程序项目，然后选择“添加”>“新建 Service Fabric 服务”，将第二个来宾可执行项目添加到解决方案中。注意：如果选择在 Visual Studio 项目中链接源，则生成 Visual Studio 解决方案可确保应用程序包能够与源中的更改保持同步。
 
 ## 手动打包多个来宾可执行文件应用程序
 或者可以手动打包来宾可执行文件。对于手动打包，本文使用 Service Fabric 打包工具，它位于 [http://aka.ms/servicefabricpacktool](http://aka.ms/servicefabricpacktool)。

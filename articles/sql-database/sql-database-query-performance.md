@@ -14,7 +14,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="data-management" 
    ms.date="08/09/2016" 
-   wacn.date="12/26/2016"
+   wacn.date="01/11/2017"
    ms.author="sstein"/>
 
 # Azure SQL 数据库 Query Performance Insight
@@ -56,7 +56,7 @@ Query Performance Insight 非常易于使用：
 
 
 
-## 查看 DTU 消耗量靠前的查询
+##<a name="review-top-cpu-consuming-queries"></a> 查看 DTU 消耗量靠前的查询
 
 在[门户](http://portal.azure.cn)中执行以下操作：
 
@@ -86,7 +86,7 @@ Query Performance Insight 非常易于使用：
 
     ![设置](./media/sql-database-query-performance/settings.png)
 
-## 查看单个查询的详细信息
+##<a name="viewing-individual-query-details"></a> 查看单个查询的详细信息
 
 若要查看查询详细信息，请执行以下操作：
 

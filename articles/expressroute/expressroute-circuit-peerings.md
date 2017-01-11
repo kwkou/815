@@ -13,7 +13,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services" 
    ms.date="10/10/2016" 
-   wacn.date="01/04/2017"
+   wacn.date="01/11/2017"
    ms.author="cherylmc"/>
 
 # ExpressRoute 线路和路由域
@@ -44,13 +44,13 @@ ExpressRoute 线路最多可以有两个独立的对等互连：Azure 公共和A
 ![](./media/expressroute-circuit-peerings/expressroute-peerings.png)
 
 
-### 专用对等互连
+###<a name="private-peering"></a> 专用对等互连
 
 可以通过专用对等域来连接虚拟网络内部署的 Azure 计算服务（即虚拟机 (IaaS) 和云服务 (PaaS)）。专用对等域被视为进入 Azure 的核心网络的受信任扩展。可以在核心网络和 Azure 虚拟网络 (VNet) 之间设置双向连接。这样，你便可以使用专用 IP 地址直接连接到虚拟机和云服务。
 
 可以将多个虚拟网络连接到专用对等域。有关限制和局限性的信息请查看[常见问题页](/documentation/articles/expressroute-faqs/)。有关限制的最新信息，请访问 [Azure Subscription and Service Limits, Quotas, and Constraints](/documentation/articles/azure-subscription-service-limits/)（Azure 订阅和服务限制、配额与约束）。有关路由配置的详细信息，请参阅 [Routing](/documentation/articles/expressroute-routing/)（路由）页。
 
-### 公共对等互连
+###<a name="public-peering"></a> 公共对等互连
 
 Azure 存储空间、SQL 数据库和网站等服务是使用公共 IP 地址提供的。你可以通过公共对等路由域私下连接到公共 IP 地址（包括云服务的 VIP）上托管的服务。可以将公共对等域连接到外围网络，并从 WAN 连接到公共 IP 地址上的所有 Azure 服务，而无需通过 Internet 连接。
 

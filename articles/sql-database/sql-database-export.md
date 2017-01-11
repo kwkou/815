@@ -11,7 +11,7 @@
 	ms.service="sql-database"
 	ms.devlang="NA"
 	ms.date="08/15/2016"
-	wacn.date="12/19/2016"
+	wacn.date="01/11/2017"
 	ms.author="sstein"
 	ms.workload="data-management"
 	ms.topic="article"
@@ -47,7 +47,7 @@
 - Azure SQL 数据库。
 - [Azure 标准存储帐户](/documentation/articles/storage-create-storage-account/)，具有可在标准存储中存储 BACPAC 的 blob 容器。
 
-## 导出数据库
+##<a name="export-your-database"></a> 导出数据库
 
 打开要导出的数据库对应的 SQL 数据库边栏选项卡。
 

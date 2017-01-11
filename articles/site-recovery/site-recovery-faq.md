@@ -15,7 +15,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="storage-backup-recovery"
     ms.date="12/13/2016"
-    wacn.date="01/04/2017"
+    wacn.date="01/11/2017"
     ms.author="raynew" />  
 
 
@@ -149,8 +149,8 @@ Azure Site Recovery 通过公共终结点将数据复制到 Azure 存储帐户�
 ### 可以限制针对 Hyper-V 复制流量分配的带宽吗？
 是的。你可以从以下部署文章中阅读更多有关限制带宽的信息：
 
-- [复制 VMM 云中的 Hyper-V VM 的容量规划](/documentation/articles/site-recovery-vmm-to-azure/#step-5-capacity-planning)
-- [复制无 VMM 的 Hyper-V VM 的容量规划](/documentation/articles/site-recovery-hyper-v-site-to-azure/#step-5-capacity-planning)
+- [复制 VMM 云中的 Hyper-V VM 的容量规划](/documentation/articles/site-recovery-vmm-to-azure/)
+- [复制无 VMM 的 Hyper-V VM 的容量规划](/documentation/articles/site-recovery-hyper-v-site-to-azure/)
 
 ## 故障转移
 

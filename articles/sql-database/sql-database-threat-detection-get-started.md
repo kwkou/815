@@ -15,7 +15,7 @@
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
    ms.date="07/10/2016"
-   wacn.date="12/26/2016"
+   wacn.date="01/11/2017"
    ms.author="ronmat; ronitr"/>  
 
 
@@ -30,7 +30,7 @@
 威胁检测会检测异常的数据库活动，指出潜在的 SQL 注入企图。SQL 注入是 Internet 上常见的 Web 应用程序安全问题之一，用于攻击数据驱动的应用程序。攻击者利用应用程序漏洞将恶意 SQL 语句注入应用程序入口字段，以破坏或修改数据库中的数据。
 
 
-## 为数据库设置威胁检测
+##<a name="set-up-threat-detection-for-your-database"></a> 为数据库设置威胁检测
 
 1. 启动 Azure 门户预览 ([https://portal.azure.cn](https://portal.azure.cn))。
 

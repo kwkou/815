@@ -14,7 +14,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="data-management" 
    ms.date="07/19/2016" 
-   wacn.date="09/26/2016"
+   wacn.date="01/11/2017"
    ms.author="sstein"/>
 
 # SQL 数据库性能见解
@@ -30,7 +30,7 @@ Azure SQL 数据库提供的性能工具通过提供智能优化操作和建议�
 
 
 
-## 性能概述
+##<a name="performance-overview"></a> 性能概述
 
 单击“概述”磁贴或“性能”磁贴可转到数据库的性能仪表板。此视图提供了数据库性能摘要，有助于你进行性能优化和故障排除。
 
