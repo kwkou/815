@@ -59,7 +59,7 @@
 
 ## 后续步骤
 
-以下资源可用于开发集成事件中心和 Storm 的应用程序。
+以下资源可用于开发集成事件中心和 Storm 的应用程序：
 
 - [用 Storm 和 HDInsight 分析传感器数据][]是一个完整方案教程，它用到了事件中心、Storm 和 HBase，以在 Hadoop 群集中引入传感器数据。
 - [使用 SCP.NET 和 C# 在 Storm 和 HDInsight 上开发流式数据处理应用程序][]是有关使用 C# 编写 Storm 管道的教程。

@@ -34,7 +34,7 @@
 
 + 一个 Java 开发环境，配置为运行 [Maven](http://maven.apache.org/)。对于本教程，我们将采用 [Eclipse](https://www.eclipse.org/)。
 
-+ 有效的 Azure 帐户。<br/>如果你没有帐户，只需花费几分钟就能创建一个试用帐户。有关详细信息，请参阅 <a href="/pricing/1rmb-trial/" target="_blank">Azure 免费试用</a>。
++ 有效的 Azure 帐户。<br/>如果你没有帐户，只需花费几分钟就能创建一个试用帐户。有关详细信息，请参阅 <a href="/pricing/1rmb-trial/" target="_blank">Azure 试用</a>。
 
 [AZURE.INCLUDE [event-hubs-create-event-hub](../../includes/event-hubs-create-event-hub.md)]
 
@@ -57,7 +57,7 @@
 
 ## 后续步骤
 
-以下资源可用于开发集成事件中心和 Storm 的应用程序。
+以下资源可用于开发集成事件中心和 Storm 的应用程序：
 
 - [用 Storm 和 HDInsight 分析传感器数据]是一个完整方案教程，它用到了事件中心、Storm 和 HBase，以在 Hadoop 群集中引入传感器数据。
 <!-- - [使用 SCP.NET 和 C# 在 Storm 和 HDInsight 上开发流式数据处理应用程序][]是有关使用 C# 编写 Storm 管道的教程。 -->

@@ -90,8 +90,8 @@
 
 若要了解有关事件中心的详细信息，请参阅以下文章：
 
-- [事件中心概述][]。
-- [使用事件中心的完整示例应用程序][]。
+- [事件中心概述][]
+- [使用事件中心的完整示例应用程序][]
 
 [事件中心概述]: /documentation/articles/event-hubs-overview/
 [使用事件中心的完整示例应用程序]: https://code.msdn.microsoft.com/Service-Bus-Event-Hub-286fd097
