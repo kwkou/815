@@ -15,7 +15,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="storage-backup-recovery"
     ms.date="12/04/2016"
-    wacn.date="01/03/2017"
+    wacn.date="01/11/2017"
     ms.author="raynew" />  
 
 
@@ -111,7 +111,7 @@ Azure 提供两种不同的[部署模型](/documentation/articles/resource-manag
 
 
 
-## URL 访问要求
+##<a name="requirements-for-url-access"></a> URL 访问要求
 
 这些 URL 应该在 VMM 和 Hyper-V 主机服务器中提供。
 

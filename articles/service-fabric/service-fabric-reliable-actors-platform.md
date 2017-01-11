@@ -14,7 +14,7 @@
     ms.tgt_pltfrm="NA"
     ms.workload="NA"
     ms.date="10/19/2016"
-    wacn.date="12/26/2016"
+    wacn.date="01/11/2016"
     ms.author="vturecek" />
 
 # Reliable Actors 如何使用 Service Fabric 平台
@@ -192,7 +192,7 @@
 
 
 
-##<a name="service-fabric-application-model-concepts-for-actors"></a> 应用程序模型
+##<a name="service-fabric-application-model-concepts-for-actors"></a><a name="application-model"></a> 应用程序模型
 
 执行组件服务都是 Reliable Services，因此服务的应用程序模型是相同的。但是，执行组件框架生成工具为你生成了很多应用程序模型文件。
 

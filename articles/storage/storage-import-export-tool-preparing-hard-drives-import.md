@@ -14,7 +14,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="12/16/2016"
-    wacn.date="01/06/2016"
+    wacn.date="01/11/2016"
     ms.author="renash" />  
 
 
@@ -53,7 +53,7 @@ WAImportExport 工具是可与 [Azure 导入/导出服务](/documentation/articl
 
 下一个任务是创建 CSV 文件。
 
-## 准备数据集 CSV 文件
+##<a name="prepare-the-dataset-csv-file"></a> 准备数据集 CSV 文件
 
 ### 什么是数据集 CSV
 
@@ -89,7 +89,7 @@ WAImportExport 工具是可与 [Azure 导入/导出服务](/documentation/articl
 | MetadataFile | <p>**[可选]**</p><p>此字段的值是用户需要保留对象的元数据或者提供自定义元数据时可提供的元数据文件。目标 Blob 的元数据文件的路径。有关详细信息，请参阅[导入/导出服务元数据和属性文件格式](/documentation/articles/storage-import-export-file-format-metadata-and-properties/)</p> |
 | PropertiesFile | <p>**[可选]**</p><p>目标 Blob 的属性文件的路径。有关详细信息，请参阅[导入/导出服务元数据和属性文件格式](https://docs.microsoft.com/zh-CN/rest/api/storageservices/importexport/import-export-service-metadata-and-properties-file-format)。</p> |
 
-## 准备 InitialDriveSet 或 AdditionalDriveSet CSV 文件
+##<a name="prepare-initialdriveset-or-additionaldriveset-csv-file"></a> 准备 InitialDriveSet 或 AdditionalDriveSet CSV 文件
 
 ### 什么是驱动器集 CSV
 

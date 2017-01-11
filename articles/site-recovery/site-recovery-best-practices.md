@@ -15,7 +15,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="storage-backup-recovery"
     ms.date="12/01/2016"
-    wacn.date="01/03/2017"
+    wacn.date="01/11/2017"
     ms.author="raynew" />  
 
 
@@ -49,7 +49,7 @@
 
 
 
-##<a id="azure-virtual-machine-requirements"></a>Azure 虚拟机要求
+##<a id="azure-virtual-machine-requirements"></a><a name="virtual-machines"></a>Azure 虚拟机要求
 
 可以部署站点恢复以复制运行受 Azure 支持的任何操作系统的虚拟机和物理服务器。这包括大多数的 Windows 和 Linux 版本。要复制的本地虚拟机必须符合 Azure 要求。
 

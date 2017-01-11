@@ -13,7 +13,7 @@
     ms.service="sql-database"
     ms.devlang="NA"
     ms.date="11/17/2016"
-    wacn.date="12/27/2016"
+    wacn.date="01/11/2017"
 	ms.author="ninarn"
     ms.workload="data-management"
     ms.topic="article"
@@ -40,7 +40,7 @@
 
 若要演练本文中的步骤，你需要位于 Azure 中并且至少具有一个数据库的 SQL Server 和弹性池。如果没有弹性池，请参阅[创建池](/documentation/articles/sql-database-elastic-pool-create-portal/)；如果没有数据库，请参阅 [SQL 数据库教程](/documentation/articles/sql-database-get-started/)。
 
-## 弹性池监视
+##<a name="elastic-database-monitoring"></a> 弹性池监视
 
 可以转到特定池以查看其资源利用率。默认情况下，池配置为显示最近一小时的存储和 eDTU 使用率。图表可以配置为按各种时间范围显示不同指标。
 
@@ -103,7 +103,7 @@
 ![搜索要监视的数据库][7]
   
 
-## 向池资源添加警报
+##<a name="add-an-alert-to-a-pool-resource"></a> 向池资源添加警报
 
 可以向资源添加规则，以便在资源达到设置的利用率阈值时，向人员发送电子邮件或是向 URL 终结点发送警报字符串。
 
@@ -122,7 +122,7 @@
 
 
 
-## 将数据库移入弹性池
+##<a name="move-a-database-into-an-elastic-pool"></a> 将数据库移入弹性池
 
 可以对现有池添加或删除数据库。数据库可以位于其他池中。但是，只能添加位于相同逻辑服务器上的数据库。
 
@@ -148,7 +148,7 @@
 
     ![点击“保存”(Save)](./media/sql-database-elastic-pool-manage-portal/click-save.png)
 
-## 将数据库移出弹性池
+##<a name="move-a-database-out-of-an-elastic-pool"></a> 将数据库移出弹性池
 
 1. 在“配置池”边栏选项卡中，选择要删除的一个或多个数据库。
 

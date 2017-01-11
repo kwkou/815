@@ -14,7 +14,7 @@
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
    ms.date="07/10/2016"
-   wacn.date="12/19/2016"
+   wacn.date="01/11/2017"
    ms.author="ronitr; ronmat; v-romcal; sstein"/>
 
 
@@ -63,7 +63,7 @@ Azure 数据库管理员、服务器管理员或安全主管角色可以配置�
 
 DDM 建议引擎会将数据库中的某些字段标记为可能的敏感字段，可以考虑对这些字段进行掩码。在门户的“动态数据掩码”边栏选项卡中，你会看到针对你的数据库建议的列。你只需针对一个或多个列单击“添加掩码”，然后单击“保存”，即可对这些字段应用进行掩码。
 
-## 使用 Azure 门户预览为数据库设置动态数据掩码
+##<a name="set-up-dynamic-data-masking-for-your-database-using-the-azure-portal"></a> 使用 Azure 门户预览为数据库设置动态数据掩码
 
 1. 启动 Azure 门户预览 ([https://portal.azure.cn](https://portal.azure.cn))。
 

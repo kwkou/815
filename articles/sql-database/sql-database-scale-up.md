@@ -11,7 +11,7 @@
 	ms.service="sql-database"
 	ms.devlang="NA"
 	ms.date="10/12/2016"
-	wacn.date="12/19/2016"
+	wacn.date="01/11/2017"
 	ms.author="sstein"
 	ms.workload="data-management"
 	ms.topic="article"
@@ -49,7 +49,7 @@
 - Azure SQL 数据库。如果你没有 SQL 数据库，请按照[创建你的第一个 Azure SQL 数据库](/documentation/articles/sql-database-get-started/)一文中的步骤创建一个。
 
 
-## 更改数据库的服务层和性能级别
+##<a name="change-the-service-tier-and-performance-level-of-your-database"></a> 更改数据库的服务层和性能级别
 
 
 打开要增加或减少的数据库的 SQL 数据库边栏选项卡：
