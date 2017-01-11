@@ -137,7 +137,7 @@ Blob 容器是由 Blob 和文件夹组成的嵌套式层次结构。以下步骤
 
 1. 运行该应用程序，然后选择“创建 Blob 容器”。此时会出现类似于以下屏幕快照所示的结果。
   
-	![创建 Blob 容器](./media/vs-storage-aspnet-getting-started-blobs/results.png)  
+	![创建 Blob 容器](./media/vs-storage-aspnet-getting-started-blobs/results.PNG)  
 
 
 	如前所述，**CloudBlobContainer.CreateIfNotExists** 方法返回 **true** 的前提是容器原本不存在，是新建的。因此，如果在容器存在的情况下运行该应用，此方法会返回 **false**。若要多次运行应用，必须在再次运行应用之前删除容器。可通过 **CloudBlobContainer.Delete** 方法删除容器。也可通过 [Azure 门户](http://go.microsoft.com/fwlink/p/?LinkID=525040)删除容器。
