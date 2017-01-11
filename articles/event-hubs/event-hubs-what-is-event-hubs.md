@@ -40,8 +40,8 @@
 - [事件中心概述](/documentation/articles/event-hubs-overview/)
 - [事件中心编程指南](/documentation/articles/event-hubs-programming-guide/)
 - [事件中心可用性和支持常见问题](/documentation/articles/event-hubs-availability-and-support-faq/)
-- 使用[事件中心教程]入门。
-- [使用事件中心的完整示例应用程序]。
+- 使用[事件中心教程]入门
+- [使用事件中心的完整示例应用程序]
 
 [事件中心教程]: /documentation/articles/event-hubs-csharp-ephcs-getstarted/
 [使用事件中心的完整示例应用程序]: https://github.com/Azure-Samples/

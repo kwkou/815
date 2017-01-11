@@ -128,5 +128,6 @@
 [Azure 存储帐户]: /documentation/articles/storage-create-storage-account/
 [EventProcessorHost]: http://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.eventprocessorhost(v=azure.95).aspx
 [Azure 经典管理门户]: http://manage.windowsazure.cn
+[Azure 门户预览]: http://portal.azure.cn/
 
 <!---HONumber=Mooncake_1121_2016-->

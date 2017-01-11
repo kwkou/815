@@ -164,8 +164,8 @@ Azure 事件中心提供缩放性超高的事件与遥测处理服务，可用�
 
 在了解事件中心的相关概念后，你可以继续学习以下主题：
 
-- 使用[事件中心教程]入门。
-- [使用事件中心的完整示例应用程序]。
+- 使用[事件中心教程]入门
+- [使用事件中心的完整示例应用程序]
 
 [Azure 经典管理门户]: http://manage.windowsazure.cn
 [事件中心教程]: /documentation/articles/event-hubs-csharp-ephcs-getstarted/

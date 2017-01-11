@@ -48,7 +48,7 @@
 3. 若要授予对事件中心的访问权限，需创建共享访问策略。单击事件中心的“配置”选项卡。
 4. 在“共享访问策略”下，使用**管理**权限创建一个新策略。
 
-   ![共享访问策略：你可以在其中使用管理权限创建策略。](./media/stream-analytics-real-time-fraud-detection/stream-ananlytics-shared-access-policies.png)  
+    ![共享访问策略：你可以在其中使用管理权限创建策略。](./media/stream-analytics-real-time-fraud-detection/stream-ananlytics-shared-access-policies.png)  
 
 5. 单击页面底部的“保存”。
 6. 转到“仪表板”，单击页面底部的“连接信息”，然后复制并保存连接信息。
@@ -173,7 +173,8 @@
 
 	此查询使用 **Timestamp By** 关键字在要用于临时计算的负载中指定时间戳字段。如果未指定此字段，则会根据每个事件到达事件中心的时间执行窗口化操作。请参阅[流分析查询语言参考中的“到达时间与应用程序时间”](https://msdn.microsoft.com/zh-cn/library/azure/dn834998.aspx)。
 
-   请注意，你可以使用 **System.Timestamp** 属性访问每个窗口结束时的时间戳。
+    请注意，你可以使用 **System.Timestamp** 属性访问每个窗口结束时的时间戳。
+    
 2. 单击查询编辑器下的**“重新运行”**以查看查询结果。
 
    ![Timestand By 的查询结果](./media/stream-analytics-real-time-fraud-detection/stream-ananlytics-query-editor-rerun.png)

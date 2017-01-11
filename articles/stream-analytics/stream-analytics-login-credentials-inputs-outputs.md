@@ -140,14 +140,14 @@ Azure 流分析目前不允许在作业运行时替换输入/输出上的凭据�
 ### Power BI
 1. 单击“续订授权”：
 
-   ![graphic35][graphic35]  
+    ![graphic35][graphic35]  
 
 2. 你将获得以下确认：
 
-   ![graphic36][graphic36]  
+    ![graphic36][graphic36]  
 
 3. 单击“保存”命令，然后确认你将保存所做的更改：  
-   ![graphic37][graphic37]
+    ![graphic37][graphic37]
 4. 当你保存所做的更改时，连接测试将自动启动，请确保连接测试成功通过。
 5. 转到第 4 部分。
 

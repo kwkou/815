@@ -137,7 +137,7 @@
 
 下载并保存 [TollApp](http://download.microsoft.com/download/D/4/A/D4A3C379-65E8-494F-A8C5-79303FD43B0A/TollApp.zip) 支持文件夹和文件。
 
-_以管理员身份_打开“Azure PowerShell”窗口。如果还没有 Azure PowerShell，请根据[安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/) 中的说明进行安装。
+*以管理员身份* 打开“Azure PowerShell”窗口。如果还没有 Azure PowerShell，请根据[安装和配置 Azure PowerShell](/documentation/articles/powershell-install-configure/) 中的说明进行安装。
 
 Windows 会自动阻止 .ps1、.dll 和 .exe 文件，因此需要在运行该脚本之前设置执行策略。确保*以管理员身份*运行 Azure PowerShell 窗口。运行 **Set-ExecutionPolicy unrestricted**。出现提示时键入 **Y**。
 
@@ -175,27 +175,27 @@ Windows 会自动阻止 .ps1、.dll 和 .exe 文件，因此需要在运行该�
 ![“发送事件中心数据”的屏幕截图](./media/stream-analytics-build-an-iot-solution-using-stream-analytics/image7.png)  
 
 
-现在，Azure 门户预览中应会显示资源。转到 <https://portal.azure.cn>，使用帐户凭据登录。请注意，当前某些功能会使用经典门户。相关步骤将清晰标出。
+现在，Azure 门户预览中应会显示资源。转到 <https://portal.azure.cn>，使用帐户凭据登录。请注意，当前某些功能会使用经典管理门户，相关步骤将清晰标出。
 
 ### Azure 事件中心
-在 Azure 门户预览的左侧管理窗格底部，单击“更多服务” 。在提供的字段中键入**事件中心**，然后单击“事件中心”。这将启动新的浏览器窗口，显示 **经典门户**的**服务总线**区域。可在此处查看由 Setup.ps1 脚本创建的事件中心。
+在 Azure 经典管理门户的左侧管理窗格底部，单击“更多服务” 。在提供的字段中键入**事件中心**，然后单击“事件中心”。这将启动新的浏览器窗口，显示 **经典管理门户**的**服务总线**区域。可在此处查看由 Setup.ps1 脚本创建的事件中心。
 
 ![服务总线](./media/stream-analytics-build-an-iot-solution-using-stream-analytics/image8.png)  
 
 
 单击以 *tolldata* 开头的项。单击“事件中心”选项卡。你将在此命名空间中看到 2 个已创建的事件中心，分别名为 *entry* 和 *exit*。
 
-![Azure 门户中的“事件中心”选项卡](./media/stream-analytics-build-an-iot-solution-using-stream-analytics/image9.png)  
+![Azure 经典管理门户中的“事件中心”选项卡](./media/stream-analytics-build-an-iot-solution-using-stream-analytics/image9.png)  
 
 
 ### Azure 存储容器
-1. 返回到浏览器中打开指向 Azure 门户的选项卡。单击 Azure 门户左侧的“存储”，查看本教程中使用的 Azure 存储容器。
+1. 返回到浏览器中打开指向 Azure 经典管理门户的选项卡。单击 Azure 经典管理门户左侧的“存储”，查看本教程中使用的 Azure 存储容器。
    
 	![存储菜单项](./media/stream-analytics-build-an-iot-solution-using-stream-analytics/image11.png)  
 
 2. 单击开头为 *tolldata* 的项（在本例中为 tolldata4637388511）。单击“容器”选项卡，查看创建的容器。
    
-	![Azure 门户中的“容器”选项卡](./media/stream-analytics-build-an-iot-solution-using-stream-analytics/image10.png)  
+	![Azure 经典管理门户中的“容器”选项卡](./media/stream-analytics-build-an-iot-solution-using-stream-analytics/image10.png)  
 
 3. 单击“tolldata”容器，查看已上传的、包含车辆登记数据的 JSON 文件。
    
@@ -203,7 +203,7 @@ Windows 会自动阻止 .ps1、.dll 和 .exe 文件，因此需要在运行该�
 
 
 ### Azure SQL 数据库
-1. 返回在浏览器中打开的第一个选项卡上的 Azure 门户。单击 Azure 门户左侧的“SQL 数据库”，查看要在本教程中使用的 SQL 数据库，然后单击“tolldatadb”。
+1. 返回在浏览器中打开的第一个选项卡上的 Azure 门户预览。单击 Azure 门户预览左侧的“SQL 数据库”，查看要在本教程中使用的 SQL 数据库，然后单击“tolldatadb”。
    
     ![已创建的 SQL 数据库的屏幕截图](./media/stream-analytics-build-an-iot-solution-using-stream-analytics/image15.png)  
 
@@ -220,7 +220,7 @@ Windows 会自动阻止 .ps1、.dll 和 .exe 文件，因此需要在运行该�
    
 	![“更改数据源”对话框](./media/stream-analytics-build-an-iot-solution-using-stream-analytics/image16.png)  
 
-3. 在“服务器名称”字段中，粘贴在上一部分从 Azure 门户复制的名称（即，*servername*.database.chinacloudapi.cn）。
+3. 在“服务器名称”字段中，粘贴在上一部分从 Azure 经典管理门户复制的名称（即，*servername*.database.chinacloudapi.cn）。
 4. 单击“使用 SQL Server 身份验证”。
 5. 在“用户名”字段中输入 **tolladmin**，在“密码”字段中输入 **123toll!**。
 6. 单击“选择或输入数据库名称”，然后选择“TollDataDB”作为数据库。
@@ -240,13 +240,13 @@ Windows 会自动阻止 .ps1、.dll 和 .exe 文件，因此需要在运行该�
 ## 事件生成器：TollApp 示例项目
 PowerShell 脚本使用 TollApp 示例应用程序自动开始发送事件。你不需要执行任何附加步骤。
 
-但是，如果对实现的细节有兴趣，可以在 GitHub [samples/TollApp](https://aka.ms/azure-stream-analytics-toll-source) 中找到 TollApp 应用程序的源代码。
+但是，如果对实现的细节有兴趣，可以在 GitHub [samples/TollApp](https://github.com/Azure/azure-stream-analytics/tree/master/Samples/TollApp) 中找到 TollApp 应用程序的源代码。
 
 ![在 Visual Studio 中显示的示例代码的屏幕截图](./media/stream-analytics-build-an-iot-solution-using-stream-analytics/image20.png)  
 
 
 ## 创建流分析作业
-1. 在 Azure 门户中，单击页面左上角的绿色加号，创建新的流分析作业。选择“智能+分析”，然后单击“流分析作业”。
+1. 在 Azure 门户预览中，单击页面左上角的绿色加号，创建新的流分析作业。选择“智能+分析”，然后单击“流分析作业”。
    
 	![新建按钮](./media/stream-analytics-build-an-iot-solution-using-stream-analytics/image21.png)  
 
@@ -289,10 +289,11 @@ PowerShell 脚本使用 TollApp 示例应用程序自动开始发送事件。你
     
     已定义两个输入流：
     
-    ![Azure 门户中定义的输入流](./media/stream-analytics-build-an-iot-solution-using-stream-analytics/image32.png)  
+    ![Azure 门户预览中定义的输入流](./media/stream-analytics-build-an-iot-solution-using-stream-analytics/image32.png)  
 
     
     接下来，为包含车辆登记数据的 blob 文件添加参考数据输入。
+    
 11. 单击“添加”，然后执行与流输入相同的过程，但不同的是要选择“引用数据”而不是“数据流”，并且**输入别名**是**注册**。
 
 12. 存储帐户以 **tolldata** 开头。容器名称应为 **tolldata**，**路径模式**应为 **registration.json**。此文件名区分大小写且应为**小写**。
@@ -353,7 +354,8 @@ PowerShell 脚本使用 TollApp 示例应用程序自动开始发送事件。你
 * Registration.json
 
 ## 问题 1：进入某个收费亭的车辆数目
-1. 打开 Azure 门户，转到创建的 Azure 流分析作业。单击“查询”选项卡，粘贴前一部分中的查询。
+
+1. 打开 Azure 门户预览，转到创建的 Azure 流分析作业。单击“查询”选项卡，粘贴前一部分中的查询。
 
 2. 若要根据示例数据验证此查询，请单击 ... 符号，再选择“上传文件中的示例数据”，将数据上传到 EntryStream 输入。
 
@@ -464,7 +466,7 @@ Azure 流分析设计为能够弹性缩放，以便处理大量数据。Azure �
 尽管本教程提供详细的简介，但它绝对不是完整的说明。有关使用 SAQL 语言的更多查询模式，可在[常用流分析使用模式的查询示例](/documentation/articles/stream-analytics-stream-analytics-query-patterns/)中找到。若要了解有关 Azure 流分析的详细信息，请参阅[联机文档](https://azure.microsoft.com/documentation/services/stream-analytics/)。
 
 ## 清理 Azure 帐户
-1. 在 Azure 门户中停止流分析作业。
+1. 在 Azure 门户预览中停止流分析作业。
    
     Setup.ps1 脚本创建两个事件中心以及一个 SQL 数据库。以下说明帮助在本教程结束时清理资源。
 2. 在 PowerShell 窗口中键入 **.\\Cleanup.ps1**，启动用于删除本教程所用资源的脚本。
