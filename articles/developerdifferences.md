@@ -452,7 +452,7 @@ Azure 诊断通过使用开发计算机上的本地存储或中国区 Azure 存�
 	var sqlManagementService = azure.createSqlManagementService(subscriptionId, authentication, hostOptions);
  
 
-#<a name="appendix"></a>附录：Azure 的内容库
+##<a name="appendix"></a>附录：Azure 的内容库
 
 
 以下列出了 Azure 当前可用的所有内容资产，并指明该资产是否专门针对中国区 Azure。
