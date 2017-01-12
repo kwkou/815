@@ -64,7 +64,7 @@ Azure CLI 是一个跨平台工具，可用于管理 Azure 服务。使用以下
 1. [安装和配置适用于 Mac、Linux 和 Windows 的 Azure CLI](/documentation/articles/xplat-cli-install/)。
 2. 打开命令提示符、bash 或其他 shell，然后使用以下方法对 Azure 订阅进行身份验证。
 
-		azure config mode asm
+        azure config mode asm
         azure login -e AzureChinaCloud
 
     > [AZURE.NOTE] 如果想用 Azure CLI 管理 Azure 中国的 HDInsight 群集，请安装 Azure CLI 0.9.x，而不是最新的 0.10.x.

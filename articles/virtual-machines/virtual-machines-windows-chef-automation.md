@@ -8,7 +8,9 @@
    tags="azure-service-management,azure-resource-manager"
    editor=""/>
 
-<tags ms.service="virtual-machines-windows" ms.workload="infrastructure-services"
+<tags
+ms.service="virtual-machines-windows"
+ms.workload="infrastructure-services"
 ms.tgt_pltfrm="vm-multiple"
 ms.devlang="na"
 ms.topic="article"

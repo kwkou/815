@@ -270,8 +270,8 @@ PowerShell 示例将执行以下步骤：
 
     try{Get-AzureSubscription}
 	catch{
-			Add-AzureAccount -Environment AzureChinaCloud
-		}
+            Add-AzureAccount -Environment AzureChinaCloud
+        }
 	#endregion
 	
 	#region - Create Azure resouce group

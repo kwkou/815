@@ -39,7 +39,7 @@
 
 使用以下命令连接到 Azure：
 
-		azure config mode asm
+        azure config mode asm
         azure login -e AzureChinaCloud
 
     > [AZURE.NOTE] 如果想用 Azure CLI 管理 Azure 中国的 HDInsight 群集，请安装 Azure CLI 0.9.x，而不是最新的 0.10.x.

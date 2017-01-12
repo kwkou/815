@@ -145,9 +145,9 @@
 
 5. [SELinux 会干扰群集操作](http://galeracluster.com/documentation-webpages/configuration.html#selinux)，所以在当前会话中有必要将其禁用（直到兼容版本出现）。编辑 `/etc/selinux/config` 以禁止其后续重新启动：
     	
-	        setenforce 0
+        setenforce 0
     
-        然后编辑 `/etc/selinux/config` 以设置 `SELINUX=permissive`
+    然后编辑 `/etc/selinux/config` 以设置 `SELINUX=permissive`
        
 6. 验证 MySQL 是否运行
 

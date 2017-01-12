@@ -19,12 +19,12 @@
 
 # Azure Load Balancer 概述
 
-Azure Load Balancer 可提高应用程序的可用性和网络性能。它是第 4 层（TCP、UDP）类型的负载均衡器，可在负载平衡集中定义的运行状况良好的服务实例之间分配传入流量。
+Azure Load Balancer 可提高应用程序的可用性和网络性能。它是第 4 层（TCP、UDP）类型的负载均衡器，可在负载均衡集中定义的运行状况良好的服务实例之间分配传入流量。
 
 可以将 Azure Load Balancer 配置为：
 
-- 对传入到虚拟机的 Internet 流量进行负载均衡。此配置称为[面向 Internet 的负载均衡](/documentation/articles/load-balancer-internet-overview/)。
-- 对虚拟网络中虚拟机之间的流量、云服务中虚拟机之间的流量或本地计算机和跨界虚拟网络中虚拟机之间的流量进行负载均衡。此配置称为[负载均衡](/documentation/articles/load-balancer-internal-overview/)。
+* 对传入到虚拟机的 Internet 流量进行负载均衡。此配置称为[面向 Internet 的负载均衡](/documentation/articles/load-balancer-internet-overview/)。
+* 对虚拟网络中虚拟机之间的流量、云服务中虚拟机之间的流量或本地计算机和跨界虚拟网络中虚拟机之间的流量进行负载均衡。此配置称为[负载均衡](/documentation/articles/load-balancer-internal-overview/)。
 * 将外部流量转发到特定的虚拟机。
 
 云中的所有资源都需要通过公共 IP 地址从 Internet 进行访问。Azure 中的云基础结构对其资源使用不可路由的 IP 地址。为了与 Internet 通信，Azure 对公共 IP 地址使用网络地址转换 (NAT)。
@@ -35,9 +35,9 @@ Azure Load Balancer 可提高应用程序的可用性和网络性能。它是第
 
 ### Azure 经典部署模型
 
-部署在云服务边界内的虚拟机可组合起来使用一个负载均衡器。在此模型中，为云服务分配了一个公共 IP 地址和一个完全限定域名 FQDN。负载均衡器使用云服务的公共 IP 地址进行端口转换以及对网络流量进行负载平衡。
+部署在云服务边界内的虚拟机可组合起来使用一个负载均衡器。在此模型中，为云服务分配了一个公共 IP 地址和一个完全限定域名 FQDN。负载均衡器使用云服务的公共 IP 地址进行端口转换以及对网络流量进行负载均衡。
 
-负载平衡的流量由终结点定义。端口转换终结点在公共 IP 地址的公共分配端口与分配到特定虚拟机上的服务的本地端口之间存在一对一的关系。负载平衡终结点在公共 IP 地址与分配到云服务中虚拟机上的服务的本地端口之间存在一对多的关系。
+负载均衡的流量由终结点定义。端口转换终结点在公共 IP 地址的公共分配端口与分配到特定虚拟机上的服务的本地端口之间存在一对一的关系。负载均衡终结点在公共 IP 地址与分配到云服务中虚拟机上的服务的本地端口之间存在一对多的关系。
 
 ![经典部署模型中的 Azure Load Balancer](./media/load-balancer-overview/asm-lb.png)  
 
@@ -50,9 +50,9 @@ Azure Load Balancer 可提高应用程序的可用性和网络性能。它是第
 
 在 Resource Manager 部署模型中，无需创建云服务。创建负载均衡器以在多个虚拟机之间显式路由流量。
 
-公共 IP 地址是具有域标签（DNS 名称）的单个资源。公共 IP 地址与负载均衡器资源关联。对于接收负载平衡的网络流量的资源，负载均衡器规则和入站 NAT 规则使用公共 IP 地址作为 Internet 终结点。
+公共 IP 地址是具有域标签（DNS 名称）的单个资源。公共 IP 地址与负载均衡器资源关联。对于接收负载均衡的网络流量的资源，负载均衡器规则和入站 NAT 规则使用公共 IP 地址作为 Internet 终结点。
 
-将专用或公共 IP 地址分配给附加到虚拟机的网络接口资源。将网络接口添加到负载均衡器的后端 IP 地址池后，负载均衡器就可以根据所创建的负载平衡规则发送负载平衡的网络流量。
+将专用或公共 IP 地址分配给附加到虚拟机的网络接口资源。将网络接口添加到负载均衡器的后端 IP 地址池后，负载均衡器就可以根据所创建的负载均衡规则发送负载均衡的网络流量。
 
 下图显示此模型中的 Azure Load Balancer：
 
@@ -61,13 +61,13 @@ Azure Load Balancer 可提高应用程序的可用性和网络性能。它是第
 
 图 2 — Resource Manager 中的 Azure Load Balancer
 
-负载均衡器可以通过基于 Resource Manager 的 API 和工具进行管理。若要了解有关 Resource Manager 的详细信息，请参阅 [Resource Manager overview](/documentation/articles/resource-group-overview/)（Resource Manager 概述）。
+负载均衡器可以通过基于 Resource Manager 的模板、API 和工具进行管理。若要了解有关 Resource Manager 的详细信息，请参阅 [Resource Manager overview](/documentation/articles/resource-group-overview/)（Resource Manager 概述）。
 
 ## <a name="load-balancer-features"></a> 负载均衡器的功能
 
 * 基于哈希的分发
 
-    Azure Load Balancer 使用基于哈希的分发算法。默认情况下，它使用 5 元组哈希（包括源 IP、源端口、目标 IP、目标端口和协议类型）将流量映射到可用服务器。它仅在传输会话 *内* 提供粘性。同一 TCP 或 UDP 会话中的数据包将会定向到负载平衡的终结点后面的同一实例。当客户端关闭连接后再重新将其打开，或者从同一源 IP 启动新的会话时，源端口将会变化。这可能会导致流量转到其他数据中心的其他终结点。
+    Azure Load Balancer 使用基于哈希的分发算法。默认情况下，它使用 5 元组哈希（包括源 IP、源端口、目标 IP、目标端口和协议类型）将流量映射到可用服务器。它仅在传输会话 *内* 提供粘性。同一 TCP 或 UDP 会话中的数据包将会定向到负载均衡的终结点后面的同一实例。当客户端关闭连接后再重新将其打开，或者从同一源 IP 启动新的会话时，源端口将会变化。这可能会导致流量转到其他数据中心的其他终结点。
 
 有关详细信息，请参阅[负载均衡器分发模式](/documentation/articles/load-balancer-distribution-mode/)。下图显示了基于哈希的分发：
 
@@ -85,7 +85,7 @@ Azure Load Balancer 可提高应用程序的可用性和网络性能。它是第
 
 * 自动重新配置
 
-    增加或减少实例时，Azure Load Balancer 会立即自行重新配置。例如，增加云服务中 Web 角色/辅助角色的实例计数时，或者向同一负载平衡集中添加更多虚拟机时，会发生这样的重新配置。
+    增加或减少实例时，Azure Load Balancer 会立即自行重新配置。例如，增加云服务中 Web 角色/辅助角色的实例计数时，或者向同一负载均衡集中添加更多虚拟机时，会发生这样的重新配置。
 
 * 服务监视
 
@@ -112,8 +112,8 @@ Azure Load Balancer 可提高应用程序的可用性和网络性能。它是第
 
     VIP 或实例层级公共 IP (PIP) 可以使用的最大端口数为 64,000。这属于 TCP 标准限制。
 
-### 支持为虚拟机提供多个负载平衡的 IP 地址
-可将多个负载平衡的公共 IP 地址分配给一组虚拟机。可以通过此功能在同一组虚拟机上托管多个 SSL 网站和/或多个 SQL Server AlwaysOn 可用性组侦听器。有关详细信息，请参阅[每个云服务的多 VIP](/documentation/articles/load-balancer-multivip/)。
+### 支持为虚拟机提供多个负载均衡的 IP 地址
+可将多个负载均衡的公共 IP 地址分配给一组虚拟机。可以通过此功能在同一组虚拟机上托管多个 SSL 网站和/或多个 SQL Server AlwaysOn 可用性组侦听器。有关详细信息，请参阅[每个云服务的多 VIP](/documentation/articles/load-balancer-multivip/)。
 
 [AZURE.INCLUDE [load-balancer-compare-tm-ag-lb-include.md](../../includes/load-balancer-compare-tm-ag-lb-include.md)]
 

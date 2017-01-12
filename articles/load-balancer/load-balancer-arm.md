@@ -29,7 +29,7 @@ Azure Resource Manager 是 Azure 中的首选服务管理框架。Azure Load Bal
 
 * 前端 IP 配置 – 单个负载均衡器可包含一个或多个前端 IP 地址（也称为虚拟 IP，即 VIP）。这些 IP 地址充当流量的入口。
 * 后端地址池 – 即指与虚拟机网络接口卡 (NIC) 关联且要分配有负载的 IP 地址。
-* 负载平衡规则 – 规则属性将给定的前端 IP 和端口组合映射到一组后端 IP 地址和端口组合。单个负载均衡器可拥有多个负载平衡规则。每个规则都包含前端 IP 和端口，以及与 VM 关联的后端 IP 和端口。
+* 负载均衡规则 – 规则属性将给定的前端 IP 和端口组合映射到一组后端 IP 地址和端口组合。单个负载均衡器可拥有多个负载均衡规则。每个规则都包含前端 IP 和端口，以及与 VM 关联的后端 IP 和端口。
 * 探测 – 使用探测可以跟踪 VM 实例的运行状况。如果运行状况探测失败，VM 实例将自动从轮转列表中删除。
 * 入站 NAT 规则 – NAT 规则定义流过前端 IP 并分配到后端 IP 的入站流量。
 
@@ -49,9 +49,9 @@ Azure Resource Manager 可让你使用声明性模板预配应用程序。在单
 
 模板示例：
 
-- [负载均衡器中的 2 个 VM 和负载均衡规则](https://github.com/Azure/azure-quickstart-templates/tree/master/201-2-vms-loadbalancer-lbrules)
-- [VNET 中包含负载均衡器和负载均衡规则的 2 个 VM](https://github.com/Azure/azure-quickstart-templates/tree/master/201-2-vms-internal-load-balancer)
-- [负载均衡器中的 2 个 VM，在 LB 上配置 NAT 规则](https://github.com/Azure/azure-quickstart-templates/tree/master/201-2-vms-loadbalancer-natrules)
+* [负载均衡器中的 2 个 VM 和负载均衡规则](https://github.com/Azure/azure-quickstart-templates/tree/master/201-2-vms-loadbalancer-lbrules)
+* [VNET 中包含负载均衡器和负载均衡规则的 2 个 VM](https://github.com/Azure/azure-quickstart-templates/tree/master/201-2-vms-internal-load-balancer)
+* [负载均衡器中的 2 个 VM，在 LB 上配置 NAT 规则](https://github.com/Azure/azure-quickstart-templates/tree/master/201-2-vms-loadbalancer-natrules)
 
 ## 使用 PowerShell 或 CLI 设置 Azure Load Balancer
 

@@ -45,8 +45,8 @@
 
 另一种使用方案是媒体上传，此时通过 UDP 上传数据，但通过 TCP 实现控制平面：
 
-* 客户端首先与负载平衡的公共地址发起 TCP 会话，然后定向到特定 DIP，此通道将保持活动状态以监视连接运行状况
-* 来自同一客户端计算机的新 UDP 会话在同一个负载平衡公共终结点中发起，我们希望此连接像以前的 TCP 连接一样被定向到同一个 DIP 终结点，以便能够以高吞吐量执行媒体上载，同时通过 TCP 维护控制通道。
+* 客户端首先与负载均衡的公共地址发起 TCP 会话，然后定向到特定 DIP，此通道将保持活动状态以监视连接运行状况
+* 来自同一客户端计算机的新 UDP 会话在同一个负载均衡公共终结点中发起，我们希望此连接像以前的 TCP 连接一样被定向到同一个 DIP 终结点，以便能够以高吞吐量执行媒体上载，同时通过 TCP 维护控制通道。
 
 
 > 如果负载均衡集发生更改（删除或添加虚拟机），则会重新计算客户端请求的分发。无法确保现有客户端的新连接最终都会抵达同一台服务器。此外，使用源 IP 关联分发模式可能导致流量的不均衡分发。在代理后面运行的客户端可被视为唯一的客户端应用程序。
@@ -59,7 +59,7 @@
 
 	Get-AzureVM -ServiceName mySvc -Name MyVM1 | Add-AzureEndpoint -Name HttpIn -Protocol TCP -PublicPort 80 -LocalPort 8080 –LoadBalancerDistribution sourceIP | Update-AzureVM
 
->[AZURE.NOTE] LoadBalancerDistribution 可以设置为 sourceIP（用于 2 元组（源 IP、目标 IP）负载平衡）、sourceIPProtocol（用于 3 元组（源 IP、目标 IP、协议）负载平衡）或 none（如果想要使用 5 元组负载平衡的默认行为）。
+>[AZURE.NOTE] LoadBalancerDistribution 可以设置为 sourceIP（用于 2 元组（源 IP、目标 IP）负载均衡）、sourceIPProtocol（用于 3 元组（源 IP、目标 IP、协议）负载均衡）或 none（如果想要使用 5 元组负载均衡的默认行为）。
 
 使用以下命令检索终结点负载均衡器分发模式配置：
 
@@ -85,9 +85,9 @@
 
 如果 LoadBalancerDistribution 元素不存在，则 Azure Load balancer 使用默认的 5 元组算法。
 
-### 在负载平衡终结点集上设置分发模式
+### 在负载均衡终结点集上设置分发模式
 
-如果终结点是负载平衡终结点集的一部分，则必须在负载平衡终结点集上设置分发模式：
+如果终结点是负载均衡终结点集的一部分，则必须在负载均衡终结点集上设置分发模式：
 
 	Set-AzureLoadBalancedEndpoint -ServiceName MyService -LBSetName LBSet1 -Protocol TCP -LocalPort 80 -ProbeProtocol TCP -ProbePort 8080 –LoadBalancerDistribution sourceIP
 
@@ -116,7 +116,7 @@
 
 可使用服务管理 API 配置负载均衡器分发。确保添加设置为版本 `2014-09-01` 或更高版本的 `x-ms-version` 标头。
 
-### 更新部署中指定的负载平衡集配置
+### 更新部署中指定的负载均衡集配置
 
 #### 请求示例
 

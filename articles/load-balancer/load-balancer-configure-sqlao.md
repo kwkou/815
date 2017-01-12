@@ -21,7 +21,7 @@ SQL Server AlwaysOn 可用性组现在可与 ILB 配合运行。可用性组是 
 
 侦听器 (DNS) 名称会映射到经过负载均衡的 IP 地址，Azure 的负载均衡器只会将传入流量定向到副本集中的主服务器。
 
-你可以使用 SQL Server AlwaysOn（侦听器）终结点的 ILB 支持。现在，你可以控制侦听器的可访问性，并可以从虚拟网络 (VNet) 中的特定子网内选择负载平衡的 IP 地址。
+你可以使用 SQL Server AlwaysOn（侦听器）终结点的 ILB 支持。现在，你可以控制侦听器的可访问性，并可以从虚拟网络 (VNet) 中的特定子网内选择负载均衡的 IP 地址。
 
 如果在侦听器上使用 ILB，只有以下项可以访问 SQL Server 终结点（例如 Server=tcp:ListenerName,1433;Database=DatabaseName）：
 
@@ -40,7 +40,7 @@ SQL Server AlwaysOn 可用性组现在可与 ILB 配合运行。可用性组是 
 
 	    Add-AzureInternalLoadBalancer -InternalLoadBalancerName ILB\_SQL\_AO -SubnetName Subnet-1 -ServiceName SqlSvc
 
-2. 为每个 VM 上的 ILB 添加负载平衡终结点
+2. 为每个 VM 上的 ILB 添加负载均衡终结点
 
 	    Get-AzureVM -ServiceName SqlSvc -Name sqlsvc1 | Add-AzureEndpoint -Name "LisEUep" -LBSetName "ILBSet1" -Protocol tcp -LocalPort 1433 -PublicPort 1433 -ProbePort 59999 -ProbeProtocol tcp -ProbeIntervalInSeconds 10 – DirectServerReturn $true -InternalLoadBalancerName ILB\_SQL\_AO | Update-AzureVM
 

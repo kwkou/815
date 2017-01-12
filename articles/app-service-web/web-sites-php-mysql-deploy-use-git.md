@@ -263,7 +263,7 @@
 
     **已安装扩展**边栏选项卡将不会显示编辑器扩展。
 
-	![查看编辑器扩展插件][composer-extension-view]
+    ![查看编辑器扩展插件][composer-extension-view]
     
 4. 现在，如上一节所示，执行 `git add`、`git commit` 和 `git push`。现在将看到编辑器正在安装在 composer.json 中定义的依赖项。
 

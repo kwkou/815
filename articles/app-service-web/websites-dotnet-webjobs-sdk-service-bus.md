@@ -29,16 +29,16 @@
 
 代码段只显示函数，不同于创建 `JobHost` 对象的代码（如以下示例所示）：
 
-	 public class Program
-	 {
-     	public static void Main()
-      	{
-       			JobHostConfiguration config = new JobHostConfiguration();
-       			config.UseServiceBus();
-       			JobHost host = new JobHost(config);
-       			host.RunAndBlock();
-    		}
-	}
+    public class Program
+    {
+           public static void Main()
+           {
+                  JobHostConfiguration config = new JobHostConfiguration();
+                  config.UseServiceBus();
+                  JobHost host = new JobHost(config);
+                  host.RunAndBlock();
+           }
+    }
 
 在 GitHub.com 上的 azure-webjobs-sdk-samples 存储库中有[完整的服务总线代码示例](https://github.com/Azure/azure-webjobs-sdk-samples/blob/master/BasicSamples/ServiceBus/Program.cs)。
 
@@ -48,11 +48,11 @@
 
 你还必须设置 AzureWebJobsServiceBus 连接字符串，以及存储连接字符串。你可以在 App.config 文件的 `connectionStrings` 部分中执行此操作，如以下示例所示：
 
-		<connectionStrings>
-		    <add name="AzureWebJobsDashboard" connectionString="DefaultEndpointsProtocol=https;AccountName=[accountname];AccountKey=[accesskey]"/>
-		    <add name="AzureWebJobsStorage" connectionString="DefaultEndpointsProtocol=https;AccountName=[accountname];AccountKey=[accesskey]"/>
-		    <add name="AzureWebJobsServiceBus" connectionString="Endpoint=sb://[yourServiceNamespace].servicebus.chinacloudapi.cn/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=[yourKey]"/>
-		</connectionStrings>
+        <connectionStrings>
+            <add name="AzureWebJobsDashboard" connectionString="DefaultEndpointsProtocol=https;AccountName=[accountname];AccountKey=[accesskey]"/>
+            <add name="AzureWebJobsStorage" connectionString="DefaultEndpointsProtocol=https;AccountName=[accountname];AccountKey=[accesskey]"/>
+            <add name="AzureWebJobsServiceBus" connectionString="Endpoint=sb://[yourServiceNamespace].servicebus.chinacloudapi.cn/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=[yourKey]"/>
+        </connectionStrings>
 
 有关在 App.config 文件中包含服务总线连接字符串设置的示例项目，请参阅[服务总线示例](https://github.com/Azure/azure-webjobs-sdk-samples/tree/master/BasicSamples/ServiceBus)。
 
@@ -72,11 +72,11 @@ SDK 接收 `PeekLock` 模式的消息。如果函数成功完成，则对此消�
 
 以下代码示例读取包含字符串的队列消息，并将字符串写入 WebJobs SDK 仪表板。
 
-		public static void ProcessQueueMessage([ServiceBusTrigger("inputqueue")] string message, 
-		    TextWriter logger)
-		{
-		    logger.WriteLine(message);
-		}
+        public static void ProcessQueueMessage([ServiceBusTrigger("inputqueue")] string message, 
+            TextWriter logger)
+        {
+            logger.WriteLine(message);
+        }
 
 **注意：**如果你在未使用 WebJobs SDK 的应用程序中创建队列消息，请务必将 [BrokeredMessage.ContentType](http://msdn.microsoft.com/zh-cn/library/microsoft.servicebus.messaging.brokeredmessage.contenttype.aspx) 设置为 “text/plain”。
 
@@ -84,20 +84,20 @@ SDK 接收 `PeekLock` 模式的消息。如果函数成功完成，则对此消�
 
 SDK 会自动反序列化包含 POCO[（普通旧 CLR 对象](http://en.wikipedia.org/wiki/Plain_Old_CLR_Object)）类型 JSON 的队列消息。以下代码示例读取包含 `BlobInformation` 对象（具有 `BlobName` 属性）的队列消息：
 
-		public static void WriteLogPOCO([ServiceBusTrigger("inputqueue")] BlobInformation blobInfo,
-		    TextWriter logger)
-		{
-		    logger.WriteLine("Queue message refers to blob: " + blobInfo.BlobName);
-		}
+        public static void WriteLogPOCO([ServiceBusTrigger("inputqueue")] BlobInformation blobInfo,
+            TextWriter logger)
+        {
+            logger.WriteLine("Queue message refers to blob: " + blobInfo.BlobName);
+        }
 
 有关展示如何使用 POCO 属性在同一函数中处理 blob 和表的代码示例，请参阅[这篇文章的存储队列版本](/documentation/articles/websites-dotnet-webjobs-sdk-storage-queues-how-to/#pocoblobs)。
 
 如果创建队列消息的代码不使用 WebJobs SDK，请使用类似于以下示例的代码：
 
-		var client = QueueClient.CreateFromConnectionString(ConfigurationManager.ConnectionStrings["AzureWebJobsServiceBus"].ConnectionString, "blobadded");
-		BlobInformation blobInformation = new BlobInformation () ;
-		var message = new BrokeredMessage(blobInformation);
-		client.Send(message);
+        var client = QueueClient.CreateFromConnectionString(ConfigurationManager.ConnectionStrings["AzureWebJobsServiceBus"].ConnectionString, "blobadded");
+        BlobInformation blobInformation = new BlobInformation () ;
+        var message = new BrokeredMessage(blobInformation);
+        client.Send(message);
 
 ### ServiceBusTrigger 适用的类型
 
@@ -112,12 +112,12 @@ SDK 会自动反序列化包含 POCO[（普通旧 CLR 对象](http://en.wikipedi
 
 以下代码示例使用输出参数在名为“outputqueue”的队列中创建新的消息，该消息的内容与名为“inputqueue”的队列中收到的队列消息相同。
 
-		public static void CreateQueueMessage(
-		    [ServiceBusTrigger("inputqueue")] string queueMessage,
-		    [ServiceBus("outputqueue")] out string outputQueueMessage)
-		{
-		    outputQueueMessage = queueMessage;
-		}
+        public static void CreateQueueMessage(
+            [ServiceBusTrigger("inputqueue")] string queueMessage,
+            [ServiceBus("outputqueue")] out string outputQueueMessage)
+        {
+            outputQueueMessage = queueMessage;
+        }
 
 用于创建单个队列消息的输出参数可以是以下任何类型：
 
@@ -132,15 +132,15 @@ SDK 会自动反序列化包含 POCO[（普通旧 CLR 对象](http://en.wikipedi
 
 若要创建多个消息，请使用包含 `ICollector<T>` 或 `IAsyncCollector<T>` 的 `ServiceBus` 属性，如以下代码示例所示：
 
-		public static void CreateQueueMessages(
-		    [ServiceBusTrigger("inputqueue")] string queueMessage,
-		    [ServiceBus("outputqueue")] ICollector<string> outputQueueMessage,
-		    TextWriter logger)
-		{
-		    logger.WriteLine("Creating 2 messages in outputqueue");
-		    outputQueueMessage.Add(queueMessage + "1");
-		    outputQueueMessage.Add(queueMessage + "2");
-		}
+        public static void CreateQueueMessages(
+            [ServiceBusTrigger("inputqueue")] string queueMessage,
+            [ServiceBus("outputqueue")] ICollector<string> outputQueueMessage,
+            TextWriter logger)
+        {
+            logger.WriteLine("Creating 2 messages in outputqueue");
+            outputQueueMessage.Add(queueMessage + "1");
+            outputQueueMessage.Add(queueMessage + "2");
+        }
 
 调用 `Add` 方法时，将立即创建每个队列消息。
 
@@ -148,11 +148,11 @@ SDK 会自动反序列化包含 POCO[（普通旧 CLR 对象](http://en.wikipedi
 
 若要编写 SDK 在收到服务总线主题消息时调用的函数，请使用 `ServiceBusTrigger` 属性以及捕获主题名称和订阅名称的构造函数，如以下代码示例所示：
 
-		public static void WriteLog([ServiceBusTrigger("outputtopic","subscription1")] string message,
-		    TextWriter logger)
-		{
-		    logger.WriteLine("Topic message: " + message);
-		}
+        public static void WriteLog([ServiceBusTrigger("outputtopic","subscription1")] string message,
+            TextWriter logger)
+        {
+            logger.WriteLine("Topic message: " + message);
+        }
 
 若要创建某主题的消息，请使用 `ServiceBus` 属性和主题名称，过程与使用此属性和队列名称一样。
 
