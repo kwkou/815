@@ -280,6 +280,8 @@ Web API CORS 支持比应用服务 CORS 支持更有弹性。例如，在代码�
 
 * 如果同时在应用程序代码和 Azure 应用服务中配置 CORS，请注意应用服务的 CORS 设置会覆盖在应用程序代码中编写的任何内容。
 
+有关可简化故障排除过程的 Visual Studio 功能的详细信息，请参阅 [Troubleshooting Azure App Service apps in Visual Studio](/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/)（在 Visual Studio 中对 Azure 应用服务应用进行故障排除）。
+
 ## <a name="next-steps"></a>后续步骤 
 
 本文介绍了如何启用应用服务 CORS 支持，使客户端 JavaScript 代码可以调用不同域中的 API。有关 API 应用的详细信息，请阅读 [introduction to authentication in App Service](/documentation/articles/app-service-authentication-overview/)（应用服务中的身份验证简介），然后转到 [user authentication for API apps](/documentation/articles/app-service-api-dotnet-user-principal-auth/)（API 应用的用户身份验证）教程。

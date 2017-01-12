@@ -120,12 +120,6 @@
         "outputs": {}
     }
 
-## 快速入门模板
-以下快速入门模板将使用链接部署资源。
-
-* [使用逻辑应用发出队列警报](https://github.com/Azure/azure-quickstart-templates/tree/master/201-alert-to-queue-with-logic-app)
-* [使用逻辑应用发出 Slack 警报](https://github.com/Azure/azure-quickstart-templates/tree/master/201-alert-to-slack-with-logic-app)
-
 ## 后续步骤
 * 有关模板结构的信息，请参阅[创作 Azure 资源管理器模板](/documentation/articles/resource-group-authoring-templates/)。
 

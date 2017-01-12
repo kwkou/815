@@ -60,13 +60,13 @@ NuGet 包会下载并添加所需的程序集引用，并将以下部分添加�
 
 注释部分提供了属性及每个属性的示例设置的一个示例。
 
-你可以通过 Azure PowerShell 配置 Redis 缓存。有关访问缓存属性的说明，请参阅[使用 Azure PowerShell 管理 Azure Redis 缓存](/documentation/articles/cache-howto-manage-redis-cache-powershell/)。
+在 Azure 门户预览中使用缓存边栏选项卡中的值配置属性，并根据需要配置其他值。有关访问缓存属性的说明，请参阅[配置 Redis 缓存设置](/documentation/articles/cache-configure#configure-redis-cache-settings)。
 
 -	**host** - 指定缓存终结点。
 -	**port** - 使用非 SSL 端口或 SSL 端口，具体取决于 SSL 设置。
 -	**accessKey** - 使用缓存的主密钥或辅助密钥。
 -	**ssl** - 如果要使用 ssl 保护缓存/客户端通信，则为 true；否则为 false。请务必指定正确的端口。
-	-	默认情况下，将为新缓存禁用非 SSL 端口。为此设置指定 true 可使用 SSL 端口。
+	-	默认情况下，将为新缓存禁用非 SSL 端口。为此设置指定 true 可使用 SSL 端口。有关启用非 SSL 端口的详细信息，请参阅[配置缓存](/documentation/articles/cache-configure/)主题中的[访问端口](/documentation/articles/cache-configure/#access-ports)部分。
 -	**databaseId** - 指定要用于缓存输出数据的数据库。如果未指定，则使用默认值 0。
 -	**applicationName** - 密钥存储在 redis 中作为 <AppName>\_<SessionId>\_Data。这使多个应用程序可以共享同一密钥。此参数是可选的，如果未提供它，则使用默认值。
 -	**connectionTimeoutInMilliseconds** - 此设置允许你覆盖 StackExchange.Redis 客户端中的 connectTimeout 设置。如果未指定，则使用默认 connectTimeout 设置 5000。有关详细信息，请参阅 [StackExchange.Redis 配置模型](http://go.microsoft.com/fwlink/?LinkId=398705)。

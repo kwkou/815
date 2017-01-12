@@ -88,11 +88,11 @@ VNet 包含以下属性。
 
 ### 基于角色的访问控制 (RBAC)
 
-你可以使用 Azure RBAC 来控制不同用户可能对 Azure 中的不同资源具有的访问级别。这样就可以根据团队的需要分隔团队完成的工作。
+你可以使用 [Azure RBAC](/documentation/articles/role-based-access-built-in-roles) 来控制不同用户可能对 Azure 中的不同资源具有的访问级别。这样就可以根据团队的需要分隔团队完成的工作。
 
 就虚拟网络而言，具有**网络参与者**角色的用户可以完全控制 Azure Resource Manager 虚拟网络资源。同样，具有**经典网络参与者**角色的用户可以完全控制经典虚拟网络资源。
 
->[AZURE.NOTE] 你还可以创建自己的角色来分离管理需求。
+>[AZURE.NOTE] 你还可以[创建自己的角色](/documentation/articles/role-based-access-control-configure)来分离管理需求。
 
 ## 设计
 
