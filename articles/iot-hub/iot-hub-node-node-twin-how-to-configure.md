@@ -47,14 +47,14 @@
 
 1. 新建名为 **simulatedeviceconfiguration** 的空文件夹。在命令提示符下的 **simulatedeviceconfiguration** 文件夹中，使用以下命令创建新的 package.json 文件。接受所有默认值：
    
-    ```
-    npm init
-    ```
+    
+        npm init
+    
 2. 在 **simulatedeviceconfiguration** 文件夹的命令提示符处，运行下述命令以安装 **azure-iot-device** 和 **azure-iot-device-mqtt** 包：
    
-    ```
-    npm install azure-iot-device azure-iot-device-mqtt --save
-    ```
+    
+        npm install azure-iot-device azure-iot-device-mqtt --save
+    
 3. 在 **simulatedeviceconfiguration** 文件夹中使用文本编辑器新建 **SimulateDeviceConfiguration.js** 文件。
 4. 将以下代码添加到 **SimulateDeviceConfiguration.js** 文件，并将 **{device connection string}** 占位符替换为在创建 **myDeviceId** 设备标识时复制的连接字符串：
    
@@ -154,14 +154,14 @@
 
 1. 新建名为 **setdesiredandqueryapp** 的空文件夹。在命令提示符下的 **setdesiredandqueryapp** 文件夹中，使用以下命令创建新的 package.json 文件。接受所有默认值：
    
-    ```
-    npm init
-    ```
+    
+        npm init
+    
 2. 在命令提示符下的 **setdesiredandqueryapp** 文件夹中，运行以下命令以安装 **azure-iothub** 包：
    
-    ```
-    npm install azure-iothub node-uuid --save
-    ```
+    
+        npm install azure-iothub node-uuid --save
+    
 3. 在 **addtagsandqueryapp** 文件夹中使用文本编辑器新建 **SetDesiredAndQuery.js** 文件。
 4. 将以下代码添加到 **SetDesiredAndQuery.js** 文件，并将 **{service connection string}** 占位符替换为在创建中心时复制的连接字符串：
    

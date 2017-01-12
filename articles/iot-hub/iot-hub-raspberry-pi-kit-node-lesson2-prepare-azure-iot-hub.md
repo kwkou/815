@@ -52,7 +52,7 @@ Azure IoT 中心用于连接、监视并管理数百万 IoT 资产。若要创�
    
     必须先注册提供程序，然后才能部署该提供程序提供的 Azure 资源。
    
-     > [AZURE.NOTE] Azure 门户或正在使用的 Azure CLI 会自动注册大多数提供程序，但非全部。有关提供程序的详细信息，请参阅[排查使用 Azure Resource Manager 时的常见 Azure 部署错误](/documentation/articles/resource-manager-common-deployment-errors/)。
+    > [AZURE.NOTE] Azure 门户或正在使用的 Azure CLI 会自动注册大多数提供程序，但非全部。有关提供程序的详细信息，请参阅[排查使用 Azure Resource Manager 时的常见 Azure 部署错误](/documentation/articles/resource-manager-common-deployment-errors/)。
    > 
    > 
    

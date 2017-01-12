@@ -43,61 +43,61 @@
 ## 用于执行直接方法的作业
 下面是使用作业在一组设备上执行[直接方法][lnk-dev-methods]的 HTTP 1.1 请求详细信息：
 
-    ```
-    PUT /jobs/v2/<jobId>?api-version=2016-09-30-preview
-
-    Authorization: <config.sharedAccessSignature>
-    Content-Type: application/json; charset=utf-8
-    Request-Id: <guid>
-    User-Agent: <sdk-name>/<sdk-version>
-
-    {
-        jobId: '<jobId>',
-        type: 'scheduleDirectRequest', 
-        cloudToDeviceMethod: {
-            methodName: '<methodName>',
-            payload: <payload>,                 
-            timeoutInSeconds: methodTimeoutInSeconds 
-        },
-        queryCondition: '<queryOrDevices>', // if the queryOrDevices parameter is a string
-        deviceIds: '<queryOrDevices>',      // if the queryOrDevices parameter is an array
-        startTime: <jobStartTime>,          // as an ISO-8601 date string
-        maxExecutionTimeInSeconds: <maxExecutionTimeInSeconds>        
-    }
-    ```
+    
+        PUT /jobs/v2/<jobId>?api-version=2016-09-30-preview
+    
+        Authorization: <config.sharedAccessSignature>
+        Content-Type: application/json; charset=utf-8
+        Request-Id: <guid>
+        User-Agent: <sdk-name>/<sdk-version>
+    
+        {
+            jobId: '<jobId>',
+            type: 'scheduleDirectRequest', 
+            cloudToDeviceMethod: {
+                methodName: '<methodName>',
+                payload: <payload>,                 
+                timeoutInSeconds: methodTimeoutInSeconds 
+            },
+            queryCondition: '<queryOrDevices>', // if the queryOrDevices parameter is a string
+            deviceIds: '<queryOrDevices>',      // if the queryOrDevices parameter is an array
+            startTime: <jobStartTime>,          // as an ISO-8601 date string
+            maxExecutionTimeInSeconds: <maxExecutionTimeInSeconds>        
+        }
+    
 
 ## 用于更新设备孪生属性的作业
 下面是使用作业更新设备孪生属性的 HTTP 1.1 请求详细信息：
 
-    ```
-    PUT /jobs/v2/<jobId>?api-version=2016-09-30-preview
-    Authorization: <config.sharedAccessSignature>
-    Content-Type: application/json; charset=utf-8
-    Request-Id: <guid>
-    User-Agent: <sdk-name>/<sdk-version>
-
-    {
-        jobId: '<jobId>',
-        type: 'scheduleTwinUpdate', 
-        updateTwin: <patch>                 // Valid JSON object
-        queryCondition: '<queryOrDevices>', // if the queryOrDevices parameter is a string
-        deviceIds: '<queryOrDevices>',      // if the queryOrDevices parameter is an array
-        startTime: <jobStartTime>,          // as an ISO-8601 date string
-        maxExecutionTimeInSeconds: <maxExecutionTimeInSeconds>        // format TBD
-    }
-    ```
+    
+        PUT /jobs/v2/<jobId>?api-version=2016-09-30-preview
+        Authorization: <config.sharedAccessSignature>
+        Content-Type: application/json; charset=utf-8
+        Request-Id: <guid>
+        User-Agent: <sdk-name>/<sdk-version>
+    
+        {
+            jobId: '<jobId>',
+            type: 'scheduleTwinUpdate', 
+            updateTwin: <patch>                 // Valid JSON object
+            queryCondition: '<queryOrDevices>', // if the queryOrDevices parameter is a string
+            deviceIds: '<queryOrDevices>',      // if the queryOrDevices parameter is an array
+            startTime: <jobStartTime>,          // as an ISO-8601 date string
+            maxExecutionTimeInSeconds: <maxExecutionTimeInSeconds>        // format TBD
+        }
+    
 
 ## 查询作业的进度
 下面是用于[查询作业][lnk-query]的 HTTP 1.1 请求详细信息：
 
-    ```
-    GET /jobs/v2/query?api-version=2016-09-30-preview[&jobType=<jobType>][&jobStatus=<jobStatus>][&pageSize=<pageSize>][&continuationToken=<continuationToken>]
-
-    Authorization: <config.sharedAccessSignature>
-    Content-Type: application/json; charset=utf-8
-    Request-Id: <guid>
-    User-Agent: <sdk-name>/<sdk-version>
-    ```
+    
+        GET /jobs/v2/query?api-version=2016-09-30-preview[&jobType=<jobType>][&jobStatus=<jobStatus>][&pageSize=<pageSize>][&continuationToken=<continuationToken>]
+    
+        Authorization: <config.sharedAccessSignature>
+        Content-Type: application/json; charset=utf-8
+        Request-Id: <guid>
+        User-Agent: <sdk-name>/<sdk-version>
+    
 
 从响应提供 continuationToken。
 

@@ -30,13 +30,13 @@
 
         az iot hub show-connection-string --name {my hub name} --resource-group iot-sample
 
-`{my hub name}` 是用户在创建 IoT 中心和注册 Pi 时指定的名称。使用 `iot-sample` 作为 `{resource group name}` 的值（如果尚未更改此值）。
+ `{my hub name}` 是用户在创建 IoT 中心和注册 Pi 时指定的名称。使用 `iot-sample` 作为 `{resource group name}` 的值（如果尚未更改此值）。
 
 * 运行以下命令，获取设备连接字符串：
 
         az iot device show-connection-string --hub {my hub name} --device-id myraspberrypi --resource-group iot-sample
 
-`{my hub name}` 所采用的值与用于前一个命令的值相同。使用 `iot-sample` 作为 `{resource group name}` 的值，使用 `myraspberrypi` 作为 `{device id}` 的值（如果尚未更改此值）。
+ `{my hub name}` 所采用的值与用于前一个命令的值相同。使用 `iot-sample` 作为 `{resource group name}` 的值，使用 `myraspberrypi` 作为 `{device id}` 的值（如果尚未更改此值）。
 
 ## 配置设备连接
 1. 运行以下命令初始化配置文件：

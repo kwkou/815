@@ -35,9 +35,9 @@ IoT 中心提供三个选项，允许设备应用向后端公开功能：
 
 在以下教程中学习如何使用直接方法、所需属性以及从云到设备的消息：
 
-* [使用直接方法][lnk-methods-tutorial]：针对直接方法；
-* [使用所需属性配置设备][lnk-twin-properties]：针对设备孪生的所需属性；
-* [发送从云到设备的消息][lnk-c2d-tutorial]：针对从云到设备的消息。
+* [使用直接方法][lnk-methods-tutorial]：针对直接方法
+* [使用所需属性配置设备][lnk-twin-properties]：针对设备孪生的所需属性
+* [发送从云到设备的消息][lnk-c2d-tutorial]：针对从云到设备的消息
 
 [lnk-twins]: /documentation/articles/iot-hub-devguide-device-twins/
 [lnk-quotas]: /documentation/articles/iot-hub-devguide-quotas-throttling/

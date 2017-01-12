@@ -45,23 +45,23 @@ IoT 中心本身不中转消息，而是充当关联 Azure 存储帐户的调度
 
 IoT 中心有一个终结点，专供设备在上载文件时请求用于存储的 SAS URI。设备可以使用以下 JSON 正文向 IoT 中心的 `{iot hub}.azure-devices.cn/devices/{deviceId}/files` 发送 POST，从而启动文件上载过程：
 
-```
-{
-    "blobName": "{name of the file for which a SAS URI will be generated}"
-}
-```
+
+        {
+            "blobName": "{name of the file for which a SAS URI will be generated}"
+        }
+
 
 IoT 中心返回以下内容，供设备用来上载文件：
 
-```
-{
-    "correlationId": "somecorrelationid",
-    "hostname": "contoso.azure-devices.cn",
-    "containerName": "testcontainer",
-    "blobName": "test-device1/image.jpg",
-    "sasToken": "1234asdfSAStoken"
-}
-```
+
+        {
+            "correlationId": "somecorrelationid",
+            "hostname": "contoso.azure-devices.cn",
+            "containerName": "testcontainer",
+            "blobName": "test-device1/image.jpg",
+            "sasToken": "1234asdfSAStoken"
+        }
+
 
 ### 已弃用：使用 GET 初始化文件上载
 
@@ -73,14 +73,14 @@ IoT 中心有两个 REST 终结点支持文件上传，一个用于获取存储�
 
 设备负责使用 Azure 存储 SDK 将文件上传到存储空间。上载完成后，设备会使用以下 JSON 正文向 IoT 中心的 `{iot hub}.azure-devices.cn/devices/{deviceId}/files/notifications` 发送 POST：
 
-```
-{
-    "correlationId": "{correlation ID received from the initial request}",
-    "isSuccess": bool,
-    "statusCode": XXX,
-    "statusDescription": "Description of status"
-}
-```
+
+        {
+            "correlationId": "{correlation ID received from the initial request}",
+            "isSuccess": bool,
+            "statusCode": XXX,
+            "statusDescription": "Description of status"
+        }
+
 
 `isSuccess` 的值为布尔值，表示文件是否上载成功。`statusCode` 的状态代码表示将文件上载到存储时的状态，`statusDescription` 对应于 `statusCode`。
 
@@ -105,16 +105,16 @@ IoT 中心有两个 REST 终结点支持文件上传，一个用于获取存储�
 
 **示例**。这是文件上传通知消息的示例正文。
 
-```
-{
-	"deviceId":"mydevice",
-	"blobUri":"https://{storage account}.blob.core.chinacloudapi.cn/{container name}/mydevice/myfile.jpg",
-	"blobName":"mydevice/myfile.jpg",
-	"lastUpdatedTime":"2016-06-01T21:22:41+00:00",
-	"blobSizeInBytes":1234,
-	"enqueuedTimeUtc":"2016-06-01T21:22:43.7996883Z"
-}
-```
+
+        {
+        	"deviceId":"mydevice",
+        	"blobUri":"https://{storage account}.blob.core.chinacloudapi.cn/{container name}/mydevice/myfile.jpg",
+        	"blobName":"mydevice/myfile.jpg",
+        	"lastUpdatedTime":"2016-06-01T21:22:41+00:00",
+        	"blobSizeInBytes":1234,
+        	"enqueuedTimeUtc":"2016-06-01T21:22:43.7996883Z"
+        }
+
 
 ## 文件上载通知配置选项
 每个 IoT 中心都为文件上传通知公开以下配置选项：

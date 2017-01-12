@@ -57,27 +57,27 @@ Azure IoT 中心是一项完全托管的服务，有助于在数百万个 IoT �
 
 2. 在 **App** 类中添加以下 **MessageCallback** 类作为嵌套类。设备从 IoT 中心接收消息时，将调用 **execute** 方法。在本示例中，设备始终通知中心它已完成消息：
 
-    ```
-    private static class MessageCallback implements
-    com.microsoft.azure.iothub.MessageCallback {
-      public IotHubMessageResult execute(Message msg, Object context) {
-        System.out.println("Received message from hub: "
-          + new String(msg.getBytes(), Message.DEFAULT_IOTHUB_MESSAGE_CHARSET));
-
-        return IotHubMessageResult.COMPLETE;
-      }
-    }
-    ```
+    
+        private static class MessageCallback implements
+        com.microsoft.azure.iothub.MessageCallback {
+          public IotHubMessageResult execute(Message msg, Object context) {
+            System.out.println("Received message from hub: "
+              + new String(msg.getBytes(), Message.DEFAULT_IOTHUB_MESSAGE_CHARSET));
+    
+            return IotHubMessageResult.COMPLETE;
+          }
+        }
+    
 
 3. 修改 **main** 方法以创建 **MessageCallback** 实例，并在打开客户端之前调用 **setMessageCallback**，如下所示：
 
-    ```
-    client = new DeviceClient(connString, protocol);
-
-    MessageCallback callback = new MessageCallback();
-    client.setMessageCallback(callback, null);
-    client.open();
-    ```
+    
+        client = new DeviceClient(connString, protocol);
+    
+        MessageCallback callback = new MessageCallback();
+        client.setMessageCallback(callback, null);
+        client.open();
+    
 
    > [AZURE.NOTE] 如果使用 HTTP（而不使用 MQTT 或 AMQP）作为传输，**DeviceClient** 实例不会经常检查 IoT 中心发来的消息（时间间隔小于 25 分钟）。有关 MQTT、AMQP 和 HTTP 支持之间的差异，以及 IoT 中心限制的详细信息，请参阅 [IoT 中心开发人员指南][IoT Hub Developer Guide - C2D]。
 
@@ -87,21 +87,21 @@ Azure IoT 中心是一项完全托管的服务，有助于在数百万个 IoT �
 
 1. 在命令提示符处使用以下命令，创建名为 **send-c2d-messages** 的 Maven 项目。请注意，这是一条很长的命令：
 
-    ```
-    mvn archetype:generate -DgroupId=com.mycompany.app -DartifactId=send-c2d-messages -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
-    ```
+    
+        mvn archetype:generate -DgroupId=com.mycompany.app -DartifactId=send-c2d-messages -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+    
 
 2. 在命令提示符下，导航到新的 send-c2d-messages 文件夹。
 
 3. 使用文本编辑器，打开 send-c2d-messages 文件夹中的 pom.xml 文件，并在 **dependencies** 节点中添加以下依赖项。这样即可使用应用程序中的 **iothub-java-service-client** 包来与 IoT 中心服务通信：
 
-    ```
-    <dependency>
-      <groupId>com.microsoft.azure.iothub-java-client</groupId>
-      <artifactId>iothub-java-service-client</artifactId>
-      <version>1.0.7</version>
-    </dependency>
-    ```
+    
+        <dependency>
+          <groupId>com.microsoft.azure.iothub-java-client</groupId>
+          <artifactId>iothub-java-service-client</artifactId>
+          <version>1.0.7</version>
+        </dependency>
+    
 
 4. 保存并关闭 pom.xml 文件。
 
@@ -109,51 +109,51 @@ Azure IoT 中心是一项完全托管的服务，有助于在数百万个 IoT �
 
 6. 在该文件中添加以下 **import** 语句：
 
-    ```
-    import com.microsoft.azure.iot.service.sdk.*;
-    import java.io.IOException;
-    import java.net.URISyntaxException;
-    ```
+    
+        import com.microsoft.azure.iot.service.sdk.*;
+        import java.io.IOException;
+        import java.net.URISyntaxException;
+    
 
 7. 将以下类级变量添加到 **App** 类，并将 **{yourhubconnectionstring}** 和 **{yourdeviceid}** 替换为前面记下的值：
 
-    ```
-    private static final String connectionString = "{yourhubconnectionstring}";
-    private static final String deviceId = "{yourdeviceid}";
-    private static final IotHubServiceClientProtocol protocol = IotHubServiceClientProtocol.AMQP;
-    ```
+    
+        private static final String connectionString = "{yourhubconnectionstring}";
+        private static final String deviceId = "{yourdeviceid}";
+        private static final IotHubServiceClientProtocol protocol = IotHubServiceClientProtocol.AMQP;
+    
     
 8. 将 **main** 方法替换为以下用于连接到 IoT 中心的代码，将消息发送到设备，然后等待设备已接收并处理消息的通知：
 
-    ```
-    public static void main(String[] args) throws IOException,
-        URISyntaxException, Exception {
-      ServiceClient serviceClient = ServiceClient.createFromConnectionString(
-        connectionString, protocol);
-      
-      if (serviceClient != null) {
-        serviceClient.open();
-        FeedbackReceiver feedbackReceiver = serviceClient
-          .getFeedbackReceiver(deviceId);
-        if (feedbackReceiver != null) feedbackReceiver.open();
-
-        Message messageToSend = new Message("Cloud to device message.");
-        messageToSend.setDeliveryAcknowledgement(DeliveryAcknowledgement.Full);
-
-        serviceClient.send(deviceId, messageToSend);
-        System.out.println("Message sent to device");
-
-        FeedbackBatch feedbackBatch = feedbackReceiver.receive(10000);
-        if (feedbackBatch != null) {
-          System.out.println("Message feedback received, feedback time: "
-            + feedbackBatch.getEnqueuedTimeUtc().toString());
+    
+        public static void main(String[] args) throws IOException,
+            URISyntaxException, Exception {
+          ServiceClient serviceClient = ServiceClient.createFromConnectionString(
+            connectionString, protocol);
+          
+          if (serviceClient != null) {
+            serviceClient.open();
+            FeedbackReceiver feedbackReceiver = serviceClient
+              .getFeedbackReceiver(deviceId);
+            if (feedbackReceiver != null) feedbackReceiver.open();
+    
+            Message messageToSend = new Message("Cloud to device message.");
+            messageToSend.setDeliveryAcknowledgement(DeliveryAcknowledgement.Full);
+    
+            serviceClient.send(deviceId, messageToSend);
+            System.out.println("Message sent to device");
+    
+            FeedbackBatch feedbackBatch = feedbackReceiver.receive(10000);
+            if (feedbackBatch != null) {
+              System.out.println("Message feedback received, feedback time: "
+                + feedbackBatch.getEnqueuedTimeUtc().toString());
+            }
+    
+            if (feedbackReceiver != null) feedbackReceiver.close();
+            serviceClient.close();
+          }
         }
-
-        if (feedbackReceiver != null) feedbackReceiver.close();
-        serviceClient.close();
-      }
-    }
-    ```
+    
 
     > [AZURE.NOTE] 为简单起见，本教程不实现任何重试策略。在生产代码中，应按 MSDN 文章 [Transient Fault Handling]（暂时性故障处理）中所述实施重试策略（例如指数性的回退）。
 
@@ -163,17 +163,17 @@ Azure IoT 中心是一项完全托管的服务，有助于在数百万个 IoT �
 
 1. 在模拟设备文件夹的命令提示符处，运行以下命令以发送遥测数据至 IoT 中心并侦听中心发出的云到设备消息：
 
-    ```
-    mvn exec:java -Dexec.mainClass="com.mycompany.app.App" 
-    ```
+    
+        mvn exec:java -Dexec.mainClass="com.mycompany.app.App" 
+    
 
     ![运行模拟设备应用][img-simulated-device]
 
 2. 在 send-c2d-messages 文件夹中的命令提示符下，运行以下命令以发送云到设备的消息并等待反馈确认：
 
-    ```
-    mvn exec:java -Dexec.mainClass="com.mycompany.app.App"
-    ```
+    
+        mvn exec:java -Dexec.mainClass="com.mycompany.app.App"
+    
 
     ![运行命令以发送云到设备的消息][img-send-command]
 

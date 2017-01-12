@@ -147,58 +147,58 @@ Azure IoT 中心是一项完全托管的服务，允许后端应用创建和跟�
 
 1. 新建名为 **simDevice** 的空文件夹。在 **simDevice** 文件夹的命令提示符处，使用以下命令创建 package.json 文件。接受所有默认值：
    
-    ```
-    npm init
-    ```
+    
+        npm init
+    
 2. 在 **simDevice** 文件夹的命令提示符处，运行下述命令以安装 **azure-iot-device** 设备 SDK 包和 **azure-iot-device-mqtt** 包：
    
-    ```
-    npm install azure-iot-device azure-iot-device-mqtt --save
-    ```
+    
+        npm install azure-iot-device azure-iot-device-mqtt --save
+    
 3. 在 **simDevice** 文件夹中，利用文本编辑器创建新的 **simDevice.js** 文件。
 4. 在 **simDevice.js** 文件的开头添加以下“require”语句：
    
-    ```
-    'use strict';
-   
-    var Client = require('azure-iot-device').Client;
-    var Protocol = require('azure-iot-device-mqtt').Mqtt;
-    ```
+    
+        'use strict';
+       
+        var Client = require('azure-iot-device').Client;
+        var Protocol = require('azure-iot-device-mqtt').Mqtt;
+    
 5. 添加 **connectionString** 变量，并用其创建设备客户端。
    
-    ```
-    var connectionString = 'HostName={youriothostname};DeviceId={yourdeviceid};SharedAccessKey={yourdevicekey}';
-    var client = Client.fromConnectionString(connectionString, Protocol);
-    ```
+    
+        var connectionString = 'HostName={youriothostname};DeviceId={yourdeviceid};SharedAccessKey={yourdevicekey}';
+        var client = Client.fromConnectionString(connectionString, Protocol);
+    
 6. 添加以下函数以处理 **lockDoor** 方法。
    
-    ```
-    var onLockDoor = function(request, response) {
-   
-        // Respond the cloud app for the direct method
-        response.send(200, function(err) {
-            if (!err) {
-                console.error('An error occured when sending a method response:\n' + err.toString());
-            } else {
-                console.log('Response to method \'' + request.methodName + '\' sent successfully.');
-            }
-        });
-   
-        console.log('Locking Door!');
-    };
-    ```
+    
+        var onLockDoor = function(request, response) {
+       
+            // Respond the cloud app for the direct method
+            response.send(200, function(err) {
+                if (!err) {
+                    console.error('An error occured when sending a method response:\n' + err.toString());
+                } else {
+                    console.log('Response to method \'' + request.methodName + '\' sent successfully.');
+                }
+            });
+       
+            console.log('Locking Door!');
+        };
+    
 7. 添加以下代码以注册 **lockDoor** 方法的处理程序。
    
-    ```
-    client.open(function(err) {
-        if (err) {
-            console.error('Could not connect to IotHub client.');
-        }  else {
-            console.log('Client connected to IoT Hub.  Waiting for reboot direct method.');
-            client.onDeviceMethod('lockDoor', onLockDoor);
-        }
-    });
-    ```
+    
+        client.open(function(err) {
+            if (err) {
+                console.error('Could not connect to IotHub client.');
+            }  else {
+                console.log('Client connected to IoT Hub.  Waiting for reboot direct method.');
+                client.onDeviceMethod('lockDoor', onLockDoor);
+            }
+        });
+    
 8. 保存并关闭 **simDevice.js** 文件。
 
 > [AZURE.NOTE]
@@ -211,9 +211,9 @@ Azure IoT 中心是一项完全托管的服务，允许后端应用创建和跟�
 
 1. 在 **simDevice** 文件夹的命令提示符处，运行以下命令以开始侦听重新启动直接方法。
    
-    ```
-    node simDevice.js
-    ```
+    
+        node simDevice.js
+    
 2. 运行 C# 控制台应用 **ScheduleJob** - 右键单击 **ScheduleJob** 项目，选择“调试”和“启动新实例”。
 
 3. 此时会看到来自设备和后端应用的输出。

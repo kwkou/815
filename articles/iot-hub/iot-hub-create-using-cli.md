@@ -103,7 +103,7 @@
 
 若要进一步探索 IoT 中心的功能，请参阅：
 
-- [使用 Azure 门户管理 IoT 中心][lnk-portal]
+- [使用 Azure 门户预览管理 IoT 中心][lnk-portal]
 
 <!-- Links -->
 
