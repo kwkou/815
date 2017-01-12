@@ -95,94 +95,94 @@ IoT 套件远程监视[预配置解决方案][lnk-preconfigured-solutions]是适
 
 **作业 1：设备信息**会筛选来自传入消息流的设备信息消息，并将它们发送到事件中心终结点。设备会在启动时发送设备信息消息，并且响应 **SendDeviceInfo** 命令。此作业使用以下查询定义来识别**设备信息**消息：
 
-```
-SELECT * FROM DeviceDataStream Partition By PartitionId WHERE  ObjectType = 'DeviceInfo'
-```
+
+        SELECT * FROM DeviceDataStream Partition By PartitionId WHERE  ObjectType = 'DeviceInfo'
+
 
 此作业将其输出发送到事件中心做进一步处理。
 
 **作业 2：规则**会针对每个设备的阈值评估传入温度和湿度遥测值。阈值在解决方案仪表板上的规则编辑器中设置。每个设备/值对按照时间戳存储在 Blob 中，流分析将读入该对作为**参考数据**。该作业会针对设备的设置阈值比较任何非空值。如果超过“>”条件，该作业将输出**警报**事件，表示已超过阈值，并且提供设备、值和时间戳值。此作业使用以下查询定义来识别应触发警报的遥测消息：
 	
-	WITH AlarmsData AS 
-	(
-	SELECT
-     	     Stream.IoTHub.ConnectionDeviceId AS DeviceId,
-	     'Temperature' as ReadingType,
-	     Stream.Temperature as Reading,
-	     Ref.Temperature as Threshold,
-	     Ref.TemperatureRuleOutput as RuleOutput,
-	     Stream.EventEnqueuedUtcTime AS [Time]
-	FROM IoTTelemetryStream Stream
-	JOIN DeviceRulesBlob Ref ON Stream.IoTHub.ConnectionDeviceId = Ref.DeviceID
-	WHERE
-	     Ref.Temperature IS NOT null AND Stream.Temperature > Ref.Temperature
-	
-	UNION ALL
-	
-	SELECT
-	     Stream.IoTHub.ConnectionDeviceId AS DeviceId,
-	     'Humidity' as ReadingType,
-	     Stream.Humidity as Reading,
-	     Ref.Humidity as Threshold,
-	     Ref.HumidityRuleOutput as RuleOutput,
-	     Stream.EventEnqueuedUtcTime AS [Time]
-	FROM IoTTelemetryStream Stream
-	JOIN DeviceRulesBlob Ref ON Stream.IoTHub.ConnectionDeviceId = Ref.DeviceID
-	WHERE
-	     Ref.Humidity IS NOT null AND Stream.Humidity > Ref.Humidity
-	)
-	
-	SELECT *
-	INTO DeviceRulesMonitoring
-	FROM AlarmsData
-	
-	SELECT *
-	INTO DeviceRulesHub
-	FROM AlarmsData
+    	WITH AlarmsData AS 
+    	(
+    	SELECT
+         	     Stream.IoTHub.ConnectionDeviceId AS DeviceId,
+    	     'Temperature' as ReadingType,
+    	     Stream.Temperature as Reading,
+    	     Ref.Temperature as Threshold,
+    	     Ref.TemperatureRuleOutput as RuleOutput,
+    	     Stream.EventEnqueuedUtcTime AS [Time]
+    	FROM IoTTelemetryStream Stream
+    	JOIN DeviceRulesBlob Ref ON Stream.IoTHub.ConnectionDeviceId = Ref.DeviceID
+    	WHERE
+    	     Ref.Temperature IS NOT null AND Stream.Temperature > Ref.Temperature
+    	
+    	UNION ALL
+    	
+    	SELECT
+    	     Stream.IoTHub.ConnectionDeviceId AS DeviceId,
+    	     'Humidity' as ReadingType,
+    	     Stream.Humidity as Reading,
+    	     Ref.Humidity as Threshold,
+    	     Ref.HumidityRuleOutput as RuleOutput,
+    	     Stream.EventEnqueuedUtcTime AS [Time]
+    	FROM IoTTelemetryStream Stream
+    	JOIN DeviceRulesBlob Ref ON Stream.IoTHub.ConnectionDeviceId = Ref.DeviceID
+    	WHERE
+    	     Ref.Humidity IS NOT null AND Stream.Humidity > Ref.Humidity
+    	)
+    	
+    	SELECT *
+    	INTO DeviceRulesMonitoring
+    	FROM AlarmsData
+    	
+    	SELECT *
+    	INTO DeviceRulesHub
+    	FROM AlarmsData
 
 该作业将其输出发送到事件中心做进一步处理，并将每个警报的详细信息保存到 Blob 存储，解决方案仪表板可从该位置读取警报信息。
 
 **作业 3：遥测**会通过两种方法来操作传入设备遥测流。第一种方法会将设备的所有遥测消息发送到永久性 Blob 存储以进行长期存储。第二种方法会通过五分钟滑动窗口计算平均、最小和最大湿度值，并将此数据发送到 Blob 存储。解决方案仪表板从 Blob 存储读取遥测数据来填充图表。此作业使用下列查询定义：
 
 	
-	WITH 
-	    [StreamData]
-	AS (
-	    SELECT
-	        *
-	    FROM [IoTHubStream]
-	    WHERE
-	        [ObjectType] IS NULL -- Filter out device info and command responses
-	) 
-	
-	SELECT
-	    IoTHub.ConnectionDeviceId AS DeviceId,
-	    Temperature,
-	    Humidity,
-	    ExternalTemperature,
-	    EventProcessedUtcTime,
-	    PartitionId,
-	    EventEnqueuedUtcTime,
-	    *
-	INTO
-	    [Telemetry]
-	FROM
-	    [StreamData]
-	
-	SELECT
-	    IoTHub.ConnectionDeviceId AS DeviceId,
-	    AVG (Humidity) AS [AverageHumidity], 
-	    MIN(Humidity) AS [MinimumHumidity], 
-	    MAX(Humidity) AS [MaxHumidity], 
-	    5.0 AS TimeframeMinutes 
-	INTO
-	    [TelemetrySummary]
-	FROM [StreamData]
-	WHERE
-	    [Humidity] IS NOT NULL
-	GROUP BY
-	    IoTHub.ConnectionDeviceId,
-	    SlidingWindow (mi, 5)
+    	WITH 
+    	    [StreamData]
+    	AS (
+    	    SELECT
+    	        *
+    	    FROM [IoTHubStream]
+    	    WHERE
+    	        [ObjectType] IS NULL -- Filter out device info and command responses
+    	) 
+    	
+    	SELECT
+    	    IoTHub.ConnectionDeviceId AS DeviceId,
+    	    Temperature,
+    	    Humidity,
+    	    ExternalTemperature,
+    	    EventProcessedUtcTime,
+    	    PartitionId,
+    	    EventEnqueuedUtcTime,
+    	    *
+    	INTO
+    	    [Telemetry]
+    	FROM
+    	    [StreamData]
+    	
+    	SELECT
+    	    IoTHub.ConnectionDeviceId AS DeviceId,
+    	    AVG (Humidity) AS [AverageHumidity], 
+    	    MIN(Humidity) AS [MinimumHumidity], 
+    	    MAX(Humidity) AS [MaxHumidity], 
+    	    5.0 AS TimeframeMinutes 
+    	INTO
+    	    [TelemetrySummary]
+    	FROM [StreamData]
+    	WHERE
+    	    [Humidity] IS NOT NULL
+    	GROUP BY
+    	    IoTHub.ConnectionDeviceId,
+    	    SlidingWindow (mi, 5)
 
 ## 事件中心
 
