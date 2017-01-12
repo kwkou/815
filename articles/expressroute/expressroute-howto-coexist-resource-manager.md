@@ -123,7 +123,7 @@
 		$ckt = Get-AzureRmExpressRouteCircuit -Name "YourCircuit" -ResourceGroupName "YourCircuitResourceGroup"
 		New-AzureRmVirtualNetworkGatewayConnection -Name "ERConnection" -ResourceGroupName $resgrp.ResourceGroupName -Location $location -VirtualNetworkGateway1 $gw -PeerId $ckt.Id -ConnectionType ExpressRoute
 
-6. <a name="vpngw"></a>接下来，创建站点到站点 VPN 网关。有关 VPN 网关配置的详细信息，请参阅[使用站点到站点连接配置 VNet](/documentation/articles/vpn-gateway-create-site-to-site-rm-powershell/)。GatewaySKU 必须是 *Standard*、*HighPerformance* 或 *UltraPerformance*。VpnType 必须为 *RouteBased*。
+6. <a name="vpngw"></a>接下来，创建站点到站点 VPN 网关。有关 VPN 网关配置的详细信息，请参阅[使用站点到站点连接配置 VNet](/documentation/articles/vpn-gateway-create-site-to-site-rm-powershell/)。GatewaySKU 必须是 *Standard* 或 *HighPerformance* 。 VpnType 必须为 *RouteBased*。
 
 		$gwSubnet = Get-AzureRmVirtualNetworkSubnetConfig -Name "GatewaySubnet" -VirtualNetwork $vnet
 		$gwIP = New-AzureRmPublicIpAddress -Name "VPNGatewayIP" -ResourceGroupName $resgrp.ResourceGroupName -Location $location -AllocationMethod Dynamic

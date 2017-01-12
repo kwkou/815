@@ -72,8 +72,6 @@
 
 这里有许多[网关 SKU](/documentation/articles/expressroute-about-virtual-network-gateways/)。你可以使用以下命令随时更改网关 SKU。
 
->[AZURE.IMPORTANT] 此命令对 UltraPerformance 网关不起作用。若要将网关更改为 UltraPerformance 网关，首先要删除现有的 ExpressRoute 网关，然后创建新的 UltraPerformance 网关。若要将网关从 UltraPerformance 网关降级，首先要删除 UltraPerformance 网关，然后创建新网关。
-
 	$gw = Get-AzureRmVirtualNetworkGateway -Name $GWName -ResourceGroupName $RG
 	Resize-AzureRmVirtualNetworkGateway -VirtualNetworkGateway $gw -GatewaySku HighPerformance
 
