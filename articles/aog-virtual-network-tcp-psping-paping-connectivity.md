@@ -17,7 +17,7 @@
 
 ### PsPing & PaPing 介绍 ###
 
-通常，我们测试数据包能否通过 IP 协议到达特定主机时，都习惯使用 ping 命令。工作时 ping 向目标主机发送一个 IMCP Echo 请求的数据包，并等待接收 Echo 响应数据包，通过响应时间和成功响应的次数来估算丢包率和网络时延。但是在 Azure 中，ICMP 包无法通过防火墙和负载平衡器，所以不能直接使用 ping 来测试 Azure 中的虚拟机和服务的连通性（VPN 和 Express Route 通道中的流量不经过负载平衡器，所以只要链路上的防火墙允许 ICMP 包传递，ping 依然可用）。
+通常，我们测试数据包能否通过 IP 协议到达特定主机时，都习惯使用 ping 命令。工作时 ping 向目标主机发送一个 IMCP Echo 请求的数据包，并等待接收 Echo 响应数据包，通过响应时间和成功响应的次数来估算丢包率和网络时延。但是在 Azure 中，ICMP 包无法通过防火墙和负载均衡器，所以不能直接使用 ping 来测试 Azure 中的虚拟机和服务的连通性（VPN 和 Express Route 通道中的流量不经过负载均衡器，所以只要链路上的防火墙允许 ICMP 包传递，ping 依然可用）。
 
 为了在 Azure 中进行连通性测试，例如测试 RDP、SSH 端口可用性，或者 HTTP、HTTPS 服务稳定性，甚至测试从 Azure 向外部服务的连接，我们都推荐使用 PsPing 或 PaPing。PsPing 是微软 PSTools 工具套件中的其中一个命令。除了ICMP ping 测试，它主要用来测试 TCP 端口的连通性，还可以测试 TCP/UDP 网络时延和带宽。不过， PsPing 只能在 Windows 中运行。如果您需要在 Linux 中发起 TCP 端口连通性和网路时延的测试，可以使用 PaPing 。PaPing 是一个跨平台的开源工具。它的功能相对 PsPing 而言更简单，只支持 TCP 端口的相关测试，不支持 UDP 端口的测试。
 

@@ -154,8 +154,8 @@ Bootstrap 的使用方式有 2 种：
     Write-Host "`nConnecting to your Azure subscription ..." -ForegroundColor Green
     try{Get-AzureContext}
     catch{
-			Add-AzureAccount -Environment AzureChinaCloud
-		}
+        Add-AzureAccount -Environment AzureChinaCloud
+    }
     #endregion
 
     Write-Host "Creating the default storage account and default blob container ..."  -ForegroundColor Green

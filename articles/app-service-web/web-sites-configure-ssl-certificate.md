@@ -161,7 +161,7 @@
 
 		Please enter the following 'extra' attributes to be sent with your certificate request
 
-        A challenge password []:
+       	A challenge password []:
 
 	完成后，工作目录中应有两个文件：**myserver.key** 和 **server.csr**。**Server.csr** 包含 CSR，稍后会需要 **myserver.key**。
 

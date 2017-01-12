@@ -70,9 +70,9 @@ IdleTimeoutInMinutes 为可选。在未设置的情况下，默认超时为 4 �
 	InternalLoadBalancerName :
 	IdleTimeoutInMinutes : 15
  
-## 在负载平衡的终结点集上设置 TCP 超时
+## 在负载均衡的终结点集上设置 TCP 超时
 
-如果终结点是负载平衡的终结点集的一部分，则必须在负载平衡的终结点集上设置 TCP 超时。例如：
+如果终结点是负载均衡的终结点集的一部分，则必须在负载均衡的终结点集上设置 TCP 超时。例如：
 
 	Set-AzureLoadBalancedEndpoint -ServiceName "MyService" -LBSetName "LBSet1" -Protocol tcp -LocalPort 80 -ProbeProtocolTCP -ProbePort 8080 -IdleTimeoutInMinutes 15
 
@@ -103,7 +103,7 @@ IdleTimeoutInMinutes 为可选。在未设置的情况下，默认超时为 4 �
 
 ## REST API 示例
 
-可以通过使用服务管理 API 配置 TCP 空闲超时。请确保 `x-ms-version` 标头设置为版本 `2014-06-01` 或更高版本。通过一次部署，在所有虚拟机上更新指定的负载平衡的输入终结点的配置。
+可以通过使用服务管理 API 配置 TCP 空闲超时。请确保 `x-ms-version` 标头设置为版本 `2014-06-01` 或更高版本。通过一次部署，在所有虚拟机上更新指定的负载均衡的输入终结点的配置。
 
 ### 请求
 

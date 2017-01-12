@@ -71,7 +71,7 @@
 3. 打开参数文件，选择其内容，然后将其保存到计算机上的文件中。对于本示例，我们将参数文件保存到 *parameters.json* 。
 4. 运行 **azure group deployment create** 命令以使用你在前面下载并修改的模板和参数文件部署新的内部负载均衡器。在输出后显示的列表说明了所用的参数。
 
-		azure group create -n TestRG -l chinaeast --template-uri 'c:\lb\azuredeploy.json' -e 'c:\lb\azuredeploy.parameters.json'
+		azure group create -n TestRG -l chinaeast --template-file 'c:\lb\azuredeploy.json' -e 'c:\lb\azuredeploy.parameters.json'
 
 
 ## 后续步骤
