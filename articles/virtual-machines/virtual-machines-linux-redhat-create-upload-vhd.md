@@ -300,7 +300,8 @@ Azure Linux 代理可使用在 Azure 上预配 VM 后附加到 VM 的本地资�
 10. 将 Hyper-V 模块添加到 initramfs 中：
 
     编辑 `/etc/dracut.conf` 并添加以下内容：
-	add\_drivers+="hv\_vmbus hv\_netvsc hv\_storvsc"
+
+        add_drivers+="hv_vmbus hv_netvsc hv_storvsc"
 
     重新生成 initramfs：
 

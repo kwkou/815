@@ -378,7 +378,25 @@ Azure 门户预览中的“用户”部分对基于角色的访问控制 (RBAC) 
 
 ## <a name="redis-console"></a>Redis 控制台
 
-此功能在 Azure 中国还不支持。你可以使用 [redis-cli](http://redis.io/topics/rediscli)
+可以使用 **Redis 控制台**向 Azure Redis 缓存实例安全地发布命令，此操作适用于标准缓存和高级缓存。
+
+>[AZURE.IMPORTANT] Redis 控制台无法使用 VNET、群集和数据库（数据库 0 除外）。
+><p>
+><p>-	[VNET](/documentation/articles/cache-how-to-premium-vnet/) - 如果缓存是 VNET 的一部分，则只有 VNET 中的客户端可以访问缓存。Redis 控制台使用的 redis cli.exe 客户端承载于不属于 VNET 的 VM 上，因此该控制台无法连接到你的缓存。
+><p>-	[群集](/documentation/articles/cache-how-to-premium-clustering/) - Redis 控制台使用目前不支持群集的 redis-cli.exe 客户端。GitHub 上 Redis 存储库的[不稳定](http://redis.io/download)分支中的 redis-cli 实用程序在使用 `-c` 开关启动时，会实现基本支持。有关详细信息，请参阅 [http://redis.io](http://redis.io) 上的 [Redis 群集教程](http://redis.io/topics/cluster-tutorial)中的[操作群集](http://redis.io/topics/cluster-tutorial#playing-with-the-cluster)。
+><p>-	每次提交命令时，Redis 控制台都会新建一个与数据库 0 的连接。不能使用 `SELECT` 命令选择其他数据库，因为每当有命令时数据库都将重置为 0。有关运行 Redis 命令（包括更改为不同的数据库）的信息，请参阅 [如何运行 Redis 命令？](/documentation/articles/cache-faq/#how-can-i-run-redis-commands)
+
+要访问 Redis 控制台，则从“Redis 缓存”边栏选项卡单击“控制台”。
+
+![Redis 控制台](./media/cache-configure/redis-console-menu.png)  
+
+
+要发布针对缓存实例的命令，只需将所需命令键入到控制台即可。
+
+![Redis 控制台](./media/cache-configure/redis-console.png)  
+
+
+有关为 Azure Redis 缓存禁用的 Redis 命令列表，请参阅之前的 [Azure Redis 缓存中不支持的 Redis 命令](#redis-commands-not-supported-in-azure-redis-cache)部分。有关 Redis 命令的详细信息，请参阅 [http://redis.io/commands](http://redis.io/commands)。
 
 ## 将缓存移动到新的订阅
 

@@ -31,6 +31,12 @@
 3. 创建策略
 4. 应用策略
 
+## Azure Resource Manager 策略 101
+
+若要开始使用 Azure Resource Manager 策略，我们建议你先阅读以下文章，然后继续执行本文中的步骤。以下文章介绍了策略的基本定义和结构以及如何评估策略，并提供了策略定义的各种示例。
+
+* [使用策略来管理资源和控制访问](/documentation/articles/resource-manager-policy)
+
 ## 为虚拟机定义策略
 
 企业中常用的一种方案可能是，只允许其用户在经测试可与 LOB 应用程序兼容的特定操作系统中创建虚拟机。使用 Azure Resource Manager 策略可以通过几个步骤完成此任务。

@@ -286,5 +286,6 @@ NODE.exe 内有名为 NODE\_PENDING\_PIPE\_INSTANCES 的设置。默认情况下
 * [将 Node.js 模块与 Azure 应用程序一起使用](/documentation/articles/nodejs-use-node-modules-azure-apps/)
 * [Azure App Service Web Apps: Node.js](https://blogs.msdn.microsoft.com/silverlining/2012/06/14/windows-azure-websites-node-js/)
 * [Node.js 开发人员中心](/documentation/articles/nodejs-use-node-modules-azure-apps/)
+* [探索神秘无比的 Kudu 调试控制台](/documentation/articles/aog-web-app-diagnostics-kudu/)
 
 <!---HONumber=Mooncake_0815_2016-->

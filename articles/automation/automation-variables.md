@@ -1,6 +1,6 @@
 <properties
     pageTitle="Azure 自动化中的变量资产 | Azure"
-    description="变量资产是可供 Azure 自动化中的所有 Runbook 使用的值。本文介绍了变量的详细信息，以及如何在文本和图形创作中使用变量。"
+    description="变量资产是可供 Azure 自动化中的所有 Runbook 使用的值。本文介绍了变量的详细信息，以及如何在文本创作中使用变量。"
     services="automation"
     documentationcenter=""
     author="mgoedtel"

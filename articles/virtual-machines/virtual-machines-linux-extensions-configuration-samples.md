@@ -62,6 +62,32 @@
 	      }
       }
 
+## 适用于包含 VM 缩放集的 VM 扩展的示例模板代码段。
+
+          {
+           "type":"Microsoft.Compute/virtualMachineScaleSets",
+          ....
+                 "extensionProfile":{
+                 "extensions":[
+                   {
+                     "name":"extension Name",
+                     "properties":{
+                       "publisher":"Publisher Namespace",
+                       "type":"extension Name",
+                       "typeHandlerVersion":"extension version",
+                       "autoUpgradeMinorVersion":true,
+                       "settings":{
+                       // Extension specific configuration goes in here.
+                       }
+                     }
+                    }
+                  }
+                }
+
+在部署此扩展之前，请检查最新的扩展版本，然后将“typeHandlerVersion”替换为当前最新版本。
+
+本文剩余部分提供 Linux VM 扩展的示例配置。
+
 ### CloudLink SecureVM 代理
           {
             "publisher": "CloudLinkEMC.SecureVM",

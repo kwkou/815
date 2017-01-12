@@ -42,7 +42,7 @@
         $location = "chinaeast".
         $myResourceGroup = "contosofabrikam"
 
-有关详细信息，请参阅[创建资源组](/documentation/articles/virtual-machines-windows-ps-create/)的第 2 步。
+    有关详细信息，请参阅[创建资源组](/documentation/articles/virtual-machines-windows-ps-create/)的第 2 步。
 
 3. [创建用于包含 VM 的可用性集](/documentation/articles/virtual-machines-windows-create-availability-set/)。对于此场景，请使用以下命令：
 
@@ -53,7 +53,7 @@
         $availset = Get-AzureRmAvailabilitySet -ResourceGroupName "contosofabrikam" -Name "myAvailset"
         New-AzureRmVMConfig -VMName "VM1" -VMSize "Standard_DS1_v2" -AvailabilitySetId $availset.Id
 
-然后完成[创建 Windows VM](/documentation/articles/virtual-machines-windows-ps-create/) 的步骤 6.3 至 6.8。
+    然后完成[创建 Windows VM](/documentation/articles/virtual-machines-windows-ps-create/) 的步骤 6.3 至 6.8。
 
 5. 向每个 VM 中添加另一个 IP 配置。按照[将多个 IP 地址分配给虚拟机](/documentation/articles/virtual-network-multiple-ip-addresses-powershell#add)文章中的说明执行操作。请使用以下配置设置：
 
@@ -63,7 +63,7 @@
         $IPConfigName4 = "VM1-ipconfig2"
         $Subnet1 = Get-AzureRmVirtualNetworkSubnetConfig -Name "mySubnet" -VirtualNetwork $myVnet
 
-在本文中无需将辅助 IP 配置与公共 IP 关联。请编辑此命令以删除公共 IP 关联部分。
+    在本文中无需将辅助 IP 配置与公共 IP 关联。请编辑此命令以删除公共 IP 关联部分。
 
 6. 针对 VM2 再次完成本文的步骤 4 到 6。执行此操作时务必将 VM 名称替换为 VM2。请注意，无需为第二个 VM 创建虚拟网络。用户可以根据自己的用例创建或不创建新的子网。
 
