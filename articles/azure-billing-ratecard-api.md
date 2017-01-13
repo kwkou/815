@@ -22,24 +22,24 @@
 
 您可以查询订阅中所用的资源/仪表元数据以及相关的价格，按照以下参数查询：
 
-• 提供项 ID（标识）
-• 货币
-• 地域文化
-• 地区
+- 提供项 ID（标识）
+- 货币
+- 地域文化
+- 地区
 
 >[AZURE.IMPORTANT]与计费表有关的元数据，包括但不限于服务名称、类型、资源、计量单位和地区等，可能随时在未经通知的情况下变更。如果您打算以自动方式使用这些计费数据，请使用计费表 GUID（全局唯一标识符）识别每项可计费项目。如果由于采用新的计费模式而计划变更计费表 GUID，会提前通知您。
 
 ##请求
-请见“[Resource RateCard（资源价格表）（预览）](https://msdn.microsoft.com/zh-cn/library/azure/mt219005.aspx)”中的“**通用参数和头信息**”小节，了解与 Resource RateCard API（应用程序编程接口）有关的所有请求使用的头信息和参数。
+请见 [Resource RateCard（资源价格表）（预览）](https://msdn.microsoft.com/zh-cn/library/azure/mt219005.aspx) 中的**通用参数和头信息**小节，了解与 Resource RateCard API（应用程序编程接口）有关的所有请求使用的头信息和参数。
 
 **方法** |**请求 URI（统一资源标识符）**
 ---|---
 GET | `https://https://management.chinacloudapi.cn/subscriptions/{subscription-Id}/providers/Microsoft.Commerce/RateCard?api-version={api-version}&$filter=OfferDurableId eq '{OfferDurableId}' and Currency eq '{Currency}' and Locale eq '{Locale}' and RegionInfoeq '{RegionInfo}'`
 
-• 把 {OfferDurableId}（提供项持久 ID）设定为一个有效的提供项 ID 代码（例如 MS-MC-AZR-33P）。请见 “[Azure优惠项目详情](/support/legal/offer-rate-plans/)”了解关于可用提供项 ID、国家/地区可用性和计费货币的更多信息。提供项 ID 参数包括 “MS-AZR-” 前缀再加上提供项 ID 编号。
-• 把 {Currency}（货币）设定为用于表示资源价格的货币。
-• 把 {Locale}（地域文化）设定为资源元数据需要面向的地域文化。
-• 把 {RegionInfo}（地区信息）设定为提供项购买地区的双字母 ISO（国际标准化组织）代码。
+- 把 {OfferDurableId}（提供项持久 ID）设定为一个有效的提供项 ID 代码（例如 MS-MC-AZR-33P）。请见 [Azure 优惠项目详情](/support/legal/offer-rate-plans/)了解关于可用提供项 ID、国家/地区可用性和计费货币的更多信息。提供项 ID 参数包括 “MS-AZR-” 前缀再加上提供项 ID 编号。
+- 把 {Currency}（货币）设定为用于表示资源价格的货币。
+- 把 {Locale}（地域文化）设定为资源元数据需要面向的地域文化。
+- 把 {RegionInfo}（地区信息）设定为提供项购买地区的双字母 ISO（国际标准化组织）代码。
 
 >[AZURE.NOTE]请注意，需要全部 4 个查询参数。另外，$filter（过滤器）查询选项此时仅支持‘等于’和‘与’逻辑运算符。没有请求体。
 
@@ -51,7 +51,7 @@ GET | `https://https://management.chinacloudapi.cn/subscriptions/{subscription-I
 
 下面的例子显示了“随收随付”提供项查询，其中**提供项持久ID = MS-MC-AZR-0033P，用于中国地区，价格用人民币表示，元数据面向美国英语（en-US）地域文化。**
 
-    https://management.chinacloudapi.cn/subscriptions/{subscription-Id}/providers/Microsoft.Commerce/RateCard?api-version=2015-06-01-preview&$filter=OfferDurableId eq ’MS-MC-AZR-0033P’ and Currency eq ’CNY’ and Locale eq ’en-US’ and RegionInfoeq ’CN’
+    https://management.chinacloudapi.cn/subscriptions/{subscription-Id}/providers/Microsoft.Commerce/RateCard?api-version=2015-06-01-preview&$filter=OfferDurableId eq 'MS-MC-AZR-0033P' and Currency eq 'CNY' and Locale eq 'en-US' and RegionInfoeq 'CN'
 
 JSON
 
