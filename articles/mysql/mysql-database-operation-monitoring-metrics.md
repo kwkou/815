@@ -1,6 +1,6 @@
 <properties linkid="" urlDisplayName="" pageTitle="监视MySQL 数据库 on Azure数据库 - Azure 微软云" metaKeywords="Azure 云,技术文档,文档与资源,MySQL,数据库,监视,性能指标,Azure MySQL, MySQL PaaS,Azure MySQL PaaS, Azure MySQL Service, Azure RDS" description="MySQL 数据库 on Azure 为用户提供核心性能指标的监控,您可以通过Azure管理门户的仪表盘进行查看。" metaCanonical="" services="MySQL" documentationCenter="Services" title="" authors="" solutions="" manager="" editor="" />
 
-<tags ms.service="mysql" ms.date="12/28/2016" wacn.date="12/28/2016" wacn.lang="cn" />
+<tags ms.service="mysql" ms.date="1/13/2016" wacn.date="1/13/2016" wacn.lang="cn" />
 
 > [AZURE.LANGUAGE]
 - [中文](/documentation/articles/mysql-database-operation-monitoring-metrics/)
@@ -34,7 +34,7 @@
 | Storage | 占用的存储空间 |
 | Replication Lag In Seconds | 复制延迟（秒） |
 | Faild Connections | 5分钟或1小时内的失败连接数 |
-| Concurrent Connections | 5分钟或1小时内的同时连接数 |
+| Threads Connected | 5分钟或1小时内的同时连接数 |
 
 监视器提供1小时、24小时、7天等三种时间范围选项。以Query Per Second（每秒查询数量的平均值）为例：
 
