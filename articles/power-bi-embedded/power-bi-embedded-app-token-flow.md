@@ -16,7 +16,7 @@
    ms.workload="powerbi"
    ms.date="07/26/2016"
    ms.author="mblythe"
-   wacn.date="12/29/2016"/>  
+   wacn.date="01/13/2017"/>  
 
 
 # 通过 Power BI Embedded 进行身份验证和授权
@@ -25,7 +25,7 @@ Power BI Embedded 服务使用**密钥**和**应用令牌**进行身份验证和
 
 ## 进行身份验证的两种方式
 
-**密钥** - 对于所有 Power BI Embedded REST API 调用，可以使用密钥。在 **Azure 门户**中，可以通过依次单击“所有设置”和“访问密钥”来找到密钥。请始终像对待密码一样对待密钥。这些密钥有权在特定的工作区集合上执行任何 REST API 调用。
+**密钥** - 对于所有 Power BI Embedded REST API 调用，可以使用密钥。在 **Azure 门户预览**中，可以通过依次单击“所有设置”和“访问密钥”来找到密钥。请始终像对待密码一样对待密钥。这些密钥有权在特定的工作区集合上执行任何 REST API 调用。
 
 若要在 REST 调用中使用密钥，请添加以下授权标头：
 
@@ -65,7 +65,7 @@ Power BI Embedded 服务使用**密钥**和**应用令牌**进行身份验证和
 
 ## 下面是流的工作原理
 
-1. 将 API 密钥复制到应用程序中。可以在 **Azure 门户**中获取密钥。
+1. 将 API 密钥复制到应用程序中。可以在 **Azure 门户预览**中获取密钥。
 
     ![](./media/powerbi-embedded-get-started-sample/azure-portal.png)  
 
@@ -101,8 +101,8 @@ Power BI Embedded 服务使用**密钥**和**应用令牌**进行身份验证和
 
 
 ## 另请参阅
-- [Microsoft Power BI Embedded 示例入门](/documentation/articles/power-bi-embedded-get-started-sample/)
-- [常见 Microsoft Power BI Embedded 方案](/documentation/articles/power-bi-embedded-scenarios/)
-- [Microsoft Power BI Embedded 入门](/documentation/articles/power-bi-embedded-get-started/)
+- [Power BI Embedded 示例入门](/documentation/articles/power-bi-embedded-get-started-sample/)
+- [常见 Power BI Embedded 方案](/documentation/articles/power-bi-embedded-scenarios/)
+- [Power BI Embedded 入门](/documentation/articles/power-bi-embedded-get-started/)
 
 <!---HONumber=Mooncake_1010_2016-->

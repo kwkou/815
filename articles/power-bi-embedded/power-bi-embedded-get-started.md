@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Microsoft Power BI Embedded 入门"
+   pageTitle="Power BI Embedded 入门"
    description="Power BI Embedded，将交互式 Power BI 报表添加到商业智能应用程序"
    services="power-bi-embedded"
    documentationCenter=""
@@ -16,14 +16,14 @@
    ms.workload="powerbi"
    ms.date="07/05/2016"
    ms.author="mblythe"
-   wacn.date="12/29/2016"/>  
+   wacn.date="01/13/2017"/>  
 
 
-# Microsoft Power BI Embedded 入门
+# Power BI Embedded 入门
 
 **Power BI Embedded** 是一项 Azure 服务，应用程序开发人员可通过它将交互式 Power BI 报表添加到自己的应用程序中。**Power BI Embedded** 可以用于现有应用程序，不需要重新设计或更改用户的登录方式。
 
-**Microsoft Power BI Embedded** 的资源是通过 [Azure ARM API](https://msdn.microsoft.com/zh-cn/library/mt712306.aspx) 进行预配的。在此示例中，预配的资源是一个 **Power BI 工作区集合**。
+**Power BI Embedded** 的资源是通过 [Azure ARM API](https://msdn.microsoft.com/zh-cn/library/mt712306.aspx) 进行预配的。在此示例中，预配的资源是一个 **Power BI 工作区集合**。
 
 ![](./media/power-bi-embedded-get-started/introduction.png)  
 
@@ -31,12 +31,12 @@
 ## 创建工作区集合
 **工作区集合**是顶层的 Azure 资源，是要嵌入到应用程序中的内容的容器。可采用两种方式创建**工作区集合**：
 
-   -	使用 Azure 门户手动创建
-   -	使用 Azure Resource Manager (ARM) API 以编程方式创建
+   -	使用 Azure 门户预览手动创建
+   -	使用 Azure资源管理器(ARM) API 以编程方式创建
 
-接下来将完成使用 Azure 门户构建**工作区集合**的步骤。
+接下来将完成使用 Azure 门户预览构建**工作区集合**的步骤。
 
-   1.	打开并登录到 **Azure 门户**：[http://portal.azure.cn](http://portal.azure.cn)。
+   1.	打开并登录到 **Azure 门户预览**：[http://portal.azure.cn](http://portal.azure.cn)。
 
    2.	在顶部面板上单击“+ 新建”。
 
@@ -80,7 +80,7 @@
 
 ## 创建要嵌入到应用程序中的 Power BI 数据集和报表
 
-在创建应用程序的 Power BI 实例并具有**访问密钥**后，将需要创建要嵌入的 Power BI 数据集和报表。可以使用 **Power BI Desktop** 创建数据集和报表。可以下载 [Power BI Desktop](https://powerbi.microsoft.com/documentation/powerbi-desktop-get-the-desktop/) 进行免费试用。或者，若要快速开始使用，可以下载[零售分析示例 PBIX](http://go.microsoft.com/fwlink/?LinkID=780547)。若要了解有关如何使用 **Power BI Desktop** 的详细信息，请参阅 [Power BI Desktop 入门](https://powerbi.microsoft.com/zh-CN/guided-learning/powerbi-learning-0-2-get-started-power-bi-desktop)。
+在创建应用程序的 Power BI 实例并具有**访问密钥**后，将需要创建要嵌入的 Power BI 数据集和报表。可以使用 **Power BI Desktop** 创建数据集和报表。可以下载 [Power BI Desktop](https://powerbi.microsoft.com/documentation/powerbi-desktop-get-the-desktop/) 进行试用。或者，若要快速开始使用，可以下载[零售分析示例 PBIX](http://go.microsoft.com/fwlink/?LinkID=780547)。若要了解有关如何使用 **Power BI Desktop** 的详细信息，请参阅 [Power BI Desktop 入门](https://powerbi.microsoft.com/zh-cn/guided-learning/powerbi-learning-0-2-get-started-power-bi-desktop)。
 
 在 **Power BI Desktop** 中，可以通过将数据的副本导入 **Power BI Desktop** 来连接数据源，或者使用 **DirectQuery** 直接连接数据源。
 

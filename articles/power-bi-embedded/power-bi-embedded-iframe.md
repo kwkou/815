@@ -15,7 +15,7 @@
    ms.workload="powerbi"
    ms.date="08/02/2016"
    ms.author="mblythe"
-   wacn.date="12/29/2016"/>  
+   wacn.date="01/13/2017"/>  
 
 
 # 如何将 Power BI Embedded 与 REST 配合使用
@@ -37,14 +37,14 @@ ISV 应用程序也可以提供自身的身份验证方法，例如窗体身份�
 可以配合 Power BI Embedded，使用 .NET (C#) 或 Node.js SDK 轻松构建应用程序。但是，本文将不使用 SDK 来解释 Power BI 的 HTTP 流（包括 AuthN）。了解此流后，可以**使用任何编程语言**构建应用程序，详细了解 Power BI Embedded 的本质。
 
 ## 创建 Power BI 工作区集合并获取访问密钥（预配）
-Power BI Embedded 是一项 Azure 服务。只有使用 Azure 门户的 ISV 需要支付使用费（根据每小时用户会话计费），查看报表的用户不需要付费，甚至不需要 Azure 订阅。在开始开发应用程序之前，必须使用 Azure 门户创建 **Power BI 工作区集合**。
+Power BI Embedded 是一项 Azure 服务。只有使用 Azure 门户预览的 ISV 需要支付使用费（根据每小时用户会话计费），查看报表的用户不需要付费，甚至不需要 Azure 订阅。在开始开发应用程序之前，必须使用 Azure 门户预览创建 **Power BI 工作区集合**。
 
 Power BI Embedded 的每个工作区是每位客户（租户）的工作区，可以在每个工作区集合中添加多个工作区。每个工作区集合使用相同的访问密钥。实际上，工作区集合是 Power BI Embedded 的安全边界。
 
 ![](./media/power-bi-embedded-iframe/create-workspace.png)  
 
 
-创建完工作区集合之后，请从 Azure 门户复制访问密钥。
+创建完工作区集合之后，请从 Azure 门户预览复制访问密钥。
 
 ![](./media/power-bi-embedded-iframe/copy-access-key.png)  
 

@@ -1,6 +1,6 @@
 <properties
-   pageTitle="Microsoft Power BI Embedded 预览版疑难解答"
-   description="Microsoft Power BI Embedded 预览版疑难解答"
+   pageTitle="Power BI Embedded 预览版疑难解答"
+   description="Power BI Embedded 预览版疑难解答"
    services="power-bi-embedded"
    documentationCenter=""
    authors="mgblythe"
@@ -15,10 +15,10 @@
    ms.workload="powerbi"
    ms.date="06/29/2016"
    ms.author="mblythe"
-   wacn.date="12/29/2016"/>  
+   wacn.date="01/13/2017"/>  
 
 
-# Microsoft Power BI Embedded 预览版疑难解答
+# Power BI Embedded 预览版疑难解答
 本文提供了有关如何解决 **Power BI Embedded** 问题的信息。
 
 ## 设置 SQL Server 连接字符串 <a name="connection-string"/>

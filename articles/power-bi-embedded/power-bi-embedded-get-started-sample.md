@@ -20,7 +20,7 @@
 
 # Power BI Embedded 示例入门
 
-通过 **Microsoft Power BI Embedded**，可以将 Power BI 报表集成到 web 或移动应用程序。本文介绍了 **Power BI Embedded** 入门示例。
+通过 **Power BI Embedded**，可以将 Power BI 报表集成到 web 或移动应用程序。本文介绍了 **Power BI Embedded** 入门示例。
 
 在继续之前，可能需要保存以下资源。在将 Power BI 报表集成到示例应用和自己的应用中时，这些资源都可以提供帮助。
 
@@ -29,7 +29,7 @@
 
 
 
-> [AZURE.NOTE] 需要先在 Azure 订阅中创建至少一个**工作区集合**才能配置和运行 Power BI Embedded 入门示例。若要了解如何在 Azure 门户中创建**工作区集合**，请参阅 [Power BI Embedded 入门](/documentation/articles/power-bi-embedded-get-started/)。
+> [AZURE.NOTE] 需要先在 Azure 订阅中创建至少一个**工作区集合**才能配置和运行 Power BI Embedded 入门示例。若要了解如何在 Azure 门户预览中创建**工作区集合**，请参阅 [Power BI Embedded 入门](/documentation/articles/power-bi-embedded-get-started/)。
 
 ## 配置示例应用
 
@@ -48,12 +48,12 @@
     ![](./media/powerbi-embedded-get-started-sample/console-option-5.png)  
 
 
-6. 输入**工作区集合**名称和**访问密钥**。可以通过 **Azure 门户**获取这些信息。若要了解有关如何获取**访问密钥**的信息，请参阅“Microsoft Power BI Embedded 入门”中的[查看 Power BI API 访问密钥](/documentation/articles/power-bi-embedded-get-started-sample/#view-access-keys/)。
+6. 输入**工作区集合**名称和**访问密钥**。可以通过 **Azure 门户预览**获取这些信息。若要了解有关如何获取**访问密钥**的信息，请参阅“Power BI Embedded 入门”中的[查看 Power BI API 访问密钥](/documentation/articles/power-bi-embedded-get-started-sample/#view-access-keys/)。
 
     ![](./media/powerbi-embedded-get-started-sample/azure-portal.png)  
 
 
-7. 复制并保存新创建的**工作区 ID** 以便在本文后面部分使用。创建**工作区 ID** 之后，可以在 **Azure 门户**中找到该数据。
+7. 复制并保存新创建的**工作区 ID** 以便在本文后面部分使用。创建**工作区 ID** 之后，可以在 **Azure 门户预览**中找到该数据。
 
     ![](./media/powerbi-embedded-get-started-sample/workspace-id.png)  
 
@@ -102,9 +102,9 @@ Web 应用示例是一个示例仪表板，用于呈现**工作区**中导入的
 
 
 ## 探索示例代码
-**Microsoft Power BI Embedded** 示例是一个 Web 应用示例仪表板，演示了如何将 **Power BI** 报表集成到应用中。它采用模型-视图-控制器 (MVC) 设计模式来演示最佳做法。本节重点介绍了可以在 **PowerBI Embedded** Web 应用解决方案中浏览的示例代码。模型-视图-控制器 (MVC) 模式根据用户输入的三个单独的类（模型、视图和控件）对域、演示文稿和操作分开进行建模。若要了解关于 MVC 的详细信息，请参阅 [Learn About ASP.NET](http://www.asp.net/mvc)（了解 ASP.NET）。
+**Power BI Embedded** 示例是一个 Web 应用示例仪表板，演示了如何将 **Power BI** 报表集成到应用中。它采用模型-视图-控制器 (MVC) 设计模式来演示最佳做法。本节重点介绍了可以在 **PowerBI Embedded** Web 应用解决方案中浏览的示例代码。模型-视图-控制器 (MVC) 模式根据用户输入的三个单独的类（模型、视图和控件）对域、演示文稿和操作分开进行建模。若要了解关于 MVC 的详细信息，请参阅 [Learn About ASP.NET](http://www.asp.net/mvc)（了解 ASP.NET）。
 
-**Microsoft Power BI Embedded** 示例代码分隔方式如下所示。每个部分在 PowerBI embedded.sln 解决方案中都包括了文件名称，以便轻松查找示例中的代码。
+**Power BI Embedded** 示例代码分隔方式如下所示。每个部分在 PowerBI embedded.sln 解决方案中都包括了文件名称，以便轻松查找示例中的代码。
 
 > [AZURE.NOTE] 本节总结了演示如何编写代码的示例代码。若要查看完整的示例，请加载 Visual Studio 中的 PowerBI embedded.sln 解决方案。
 
@@ -228,7 +228,7 @@ Report.cshtml：为 **PowerBIReportFor** 设置 **Model.AccessToken** 和 Lambda
 
 ### 将报表集成到应用中
 
-拥有**报表**后，可以使用 **IFrame** 嵌入 Power BI **报表**。以下是来自 **Microsoft Power BI Embedded** 示例中的 powerbi.js 代码片段。
+拥有**报表**后，可以使用 **IFrame** 嵌入 Power BI **报表**。以下是来自 **Power BI Embedded** 示例中的 powerbi.js 代码片段。
 
 ![](./media/powerbi-embedded-get-started-sample/power-bi-embedded-iframe-code.png)  
 
@@ -249,7 +249,7 @@ Report.cshtml：为 **PowerBIReportFor** 设置 **Model.AccessToken** 和 Lambda
 
 ## 另请参阅
 
-- [常见 Microsoft Power BI Embedded 方案](/documentation/articles/power-bi-embedded-scenarios/)
+- [常见 Power BI Embedded 方案](/documentation/articles/power-bi-embedded-scenarios/)
 - [在 Power BI Embedded 中进行身份验证和授权](/documentation/articles/power-bi-embedded-app-token-flow/)
 
 <!---HONumber=Mooncake_1010_2016-->
