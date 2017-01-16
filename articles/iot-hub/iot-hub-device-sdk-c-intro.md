@@ -1,33 +1,31 @@
 <properties
-	pageTitle="使用适用于 C 语言的 Azure IoT 设备 SDK | Azure"
-	description="了解并开始使用适用于 C 语言的 Azure IoT 设备 SDK 中的示例代码。"
-	services="iot-hub"
-	documentationCenter=""
-	authors="olivierbloch"
-	manager="timlt"
-	editor=""/>
-
+    pageTitle="适用于 C 语言的 Azure IoT 设备 SDK | Azure"
+    description="开始使用适用于 C 语言的 Azure IoT 设备 SDK，并了解如何创建与 IoT 中心通信的设备应用。"
+    services="iot-hub"
+    documentationcenter=""
+    author="olivierbloch"
+    manager="timlt"
+    editor="" />
 <tags
-     ms.service="iot-hub"
-     ms.devlang="cpp"
-     ms.topic="article"
-     ms.tgt_pltfrm="na"
-     ms.workload="na"
-     ms.date="09/06/2016"
-     wacn.date="01/04/2017"
-     ms.author="obloch"/>
+    ms.assetid="e448b061-6bdd-470a-a527-15ec03cca7b9"
+    ms.service="iot-hub"
+    ms.devlang="cpp"
+    ms.topic="article"
+    ms.tgt_pltfrm="na"
+    ms.workload="na"
+    ms.date="09/06/2016"
+    wacn.date="01/13/2017"
+    ms.author="obloch" />  
 
-# 适用于 C 语言的 Azure IoT 设备 SDK 简介
 
+# 适用于 C 的 Azure IoT 设备 SDK
 **Azure IoT 设备 SDK** 是一个库集，旨在简化从 **Azure IoT 中心**服务发送事件和接收消息的过程。有各种不同的 SDK，每个 SDK 都以特定的平台为目标，而本文说明的是**适用于 C 语言的 Azure IoT 设备 SDK**。
 
 适用于 C 语言的 Azure IoT 设备 SDK 以 ANSI C (C99) 编写，以获得最大可移植性。如此就很适合在一些平台和设备上运行 - 尤其是在以将磁盘和内存占用量降到最低作为优先考虑的情况下。
 
-许多平台已对 SDK 进行了测试（有关详细信息，请参阅[平台和兼容性列表](/documentation/articles/iot-hub-tested-configurations/)）。尽管本文包含的是在 Windows 平台上运行的示例代码演示，但请记住，本文所述的代码在各种支持的平台上都完全相同。
+SDK 已在许多平台上进行了测试（有关详细信息，请参阅[平台和兼容性列表](/documentation/articles/iot-hub-tested-configurations/)）。尽管本文包含的是在 Windows 平台上运行的示例代码演示，但请记住，本文所述的代码在各种支持的平台上都完全相同。
 
 本文将介绍适用于 C 语言的 Azure IoT 设备 SDK 的体系结构。我们将演示如何初始化设备库，将事件发送到 IoT 中心，以及从 IoT 中心接收消息。本文中的信息应足以让你开始使用 SDK，但同时也提供了有关库的其他信息的链接。
-
-
 
 ## SDK 体系结构
 
@@ -41,8 +39,8 @@
 
   ![](./media/iot-hub-device-sdk-c-intro/02-CFolder.PNG)
 
-* 此 SDK 的核心实现可在 **iothub\_client** 文件夹中找到，此文件夹包含 SDK 的最低 API 层的实现：**IoTHubClient** 库。此 **IoTHubClient** 库包含实现原始消息传送的 API，即将消息发送到 IoT 中心以及从 IoT 中心接收消息。如果你使用此库，就需负责实现消息序列化（最终使用下面描述的序列化程序示例），但与 IoT 中心通信的其他细节则由系统为你处理。
-* **serializer** 文件夹包含帮助器函数和示例代码，演示了使用客户端库向 Azure IoT 中心发送消息之前如何序列化数据。请注意使用序列化程序不是必需的，仅为了提供便利。如果你使用**序列化程序**库，首先需要定义一个模型，以指定要发送到 IoT 中心的事件以及预期要从 IoT 中心接收的消息。定义此模型后，SDK 将提供一个 API 界面，让你轻松处理事件和消息，而无需担心序列化细节。此库依赖于其他使用一些协议（AMQP、MQTT）实现传输的开放源代码库。
+* 此 SDK 的核心实现可在 **iothub\_client** 文件夹中找到，此文件夹包含 SDK 的最低 API 层的实现：**IoTHubClient** 库。此 **IoTHubClient** 库包含实现原始消息传送的 API，即将消息发送到 IoT 中心以及从 IoT 中心接收消息。如果你使用此库，就需负责实现消息序列化（最终使用下面描述的序列化程序示例），但与 IoT 中心通信的其他细节则由系统进行处理。
+* **serializer** 文件夹包含帮助器函数和示例代码，演示了使用客户端库向 Azure IoT 中心发送消息之前如何序列化数据。请注意，使用序列化程序不是必需的，仅为了提供便利。如果你使用**序列化程序**库，首先需要定义一个模型，以指定要发送到 IoT 中心的事件以及预期要从 IoT 中心接收的消息。定义此模型后，SDK 将提供一个 API 图面，让你轻松处理事件和消息，而无需担心序列化细节。库依赖使用多个协议（MQTT、AMQP）实现传输的其他开放源代码库。
 * **IoTHubClient** 库依赖于其他开放源代码库：
    * [Azure C 共享实用程序](https://github.com/Azure/azure-c-shared-utility)库，其常用功能用于很多 Azure 相关的 C SDK 中所需的基本任务（如字符串、列表操作、IO 等）
    * [Azure uAMQP](https://github.com/Azure/azure-uamqp-c) 库，此库是针对资源约束设备的 AMQP 的客户端实现的优化。
@@ -91,20 +89,21 @@ SDK 中包含的自述文件提供了有关准备开发环境和获取设备凭�
 
 
 ### 获取设备凭据
+现在你已设置好开发环境，下一步要做的就是获取一组设备凭据。若要使设备能够访问 IoT 中心，必须先将该设备添加到 IoT 中心标识注册表。添加设备时，你将获取一组所需的设备凭据，以便设备能够连接到 IoT 中心。下一部分所述示例应用程序的预期凭据格式为**设备连接字符串**。
 
-现在你已设置好开发环境，下一步要做的就是获取一组设备凭据。若要使设备能够访问 IoT 中心，必须先将该设备添加到 IoT 中心设备注册表。添加设备时，你将获取一组所需的设备凭据，以便设备能够连接到 IoT 中心。下一部分所述示例应用程序的预期凭据格式为**设备连接字符串**。
+SDK 开放源代码存储库中提供了两个工具用来帮助管理 IoT 中心。一个是称为*设备资源管理器*的 Windows 应用程序，另一个是称为 *iothub-explorer* 的基于 node.js 的跨平台 CLI 工具。你可以在[此处](https://github.com/Azure/azure-iot-sdks/blob/master/doc/manage_iot_hub.md)了解更多有关这两种工具的信息。
 
 SDK 开放源代码存储库中提供了两个工具用来帮助管理 IoT 中心。一个是称为设备资源管理器的 Windows 应用程序，另一个是称为 iothub-explorer 的基于 node.js 的跨平台 CLI 工具。
 
 本文中所述的在 Windows 上运行这些示例时使用的是设备资源管理器工具。但是，如果你更喜欢 CLI 工具，也可以使用 iothub-explorer。
 
-设备资源管理器工具使用 Azure IoT 服务库在 IoT 中心执行各种功能（包括添加设备）。如果你使用设备资源管理器来添加设备，将会获得相应的连接字符串。需要此连接字符串才能运行示例应用程序。
+设备资源管理器工具使用 Azure IoT 服务库在 IoT 中心执行各种功能（包括添加设备）。若使用设备资源管理器工具添加设备，会获得相应的连接字符串。需要此连接字符串才能运行示例应用程序。
 
-如果你不熟悉上述过程，以下过程描述了如何使用设备资源管理器来添加设备和获取设备连接字符串。
+如果不熟悉上述过程，请参阅件以下过程，了解如何使用设备资源管理器工具来添加设备和获取设备连接字符串。
 
 你可以在 [SDK 发布页面](https://github.com/Azure/azure-iot-sdks/releases)中找到设备资源管理器工具的 Windows 安装程序。但是也可以直接从其代码运行该工具，方法是在 **Visual Studio 2015** 中打开 **DeviceExplorer.sln**，然后生成解决方案。
 
-运行该程序时，你将看到此界面：
+运行该程序时，可看到此界面：
 
   ![](./media/iot-hub-device-sdk-c-intro/03-DeviceExplorer.PNG)
 
@@ -114,7 +113,7 @@ SDK 开放源代码存储库中提供了两个工具用来帮助管理 IoT 中�
 
   ![](./media/iot-hub-device-sdk-c-intro/04-ManagementTab.PNG)
 
-你将在其中管理已注册到 IoT 中心的设备。
+其中可管理已注册到 IoT 中心的设备。
 
 单击“创建”按钮即可创建设备。将显示一个已预先填充一组密钥（主密钥和辅助密钥）的对话框。你只需要输入**设备 ID**，然后单击“创建”。
 
@@ -124,7 +123,8 @@ SDK 开放源代码存储库中提供了两个工具用来帮助管理 IoT 中�
 
   ![](./media/iot-hub-device-sdk-c-intro/06-RightClickDevice.PNG)
 
-如果你选择“复制所选设备的连接字符串”选项，设备的连接字符串将复制到剪贴板。请保留连接字符串的副本。在运行后续部分中所述的示例应用程序时，将要用到它。
+
+如果选择“复制所选设备的连接字符串”选项，会将设备的连接字符串复制到剪贴板。请保留设备连接字符串的副本。在运行后续部分中所述的示例应用程序时，将要用到它。
 
 完成上述步骤后，可以开始运行一些代码。两个示例的主源文件顶部都有一个常量，此常量可让你输入连接字符串。例如，**iothub\_client\_sample\_amqp** 应用程序中的相应行如下所示。
 
@@ -166,7 +166,7 @@ Windows 版本的 **iothub\_client\_sample\_ampq** 应用程序包含以下 Visu
 		iotHubClientHandle = IoTHubClient_CreateFromConnectionString(connectionString, AMQP_Protocol);
 
 
-请注意，我们要将设备连接字符串副本（从设备资源管理器获取的连接字符串）传递给此函数。我们还需指定要使用的协议。本示例使用 AMQP，但也可以选择 MQTT 和 HTTP。
+请注意，将向此函数传递设备连接字符串的副本（即从设备资源管理器工具获取的字符串）。我们还需指定要使用的协议。本示例使用 AMQP，但也可以选择 MQTT 和 HTTP。
 
 获取有效的 **IOTHUB\_CLIENT\_HANDLE** 后，可以开始调用 API 来发送事件以及从 IoT 中心接收消息。接下来我们将介绍这种操作。
 
@@ -465,19 +465,19 @@ WITH_ACTION(SetAirResistance, int, Position)
 
 本文介绍了有关使用**适用于 C 语言的 Azure IoT 设备 SDK** 中的库的基本知识。其中提供了足够的信息来让你了解 SDK 中包含哪些组件及其体系结构，以及如何开始使用 Windows 示例。下一篇文章通过讲解[有关 IoTHubClient 库的详细信息](/documentation/articles/iot-hub-device-sdk-c-iothubclient/)来继续介绍该 SDK。
 
+若要详细了解如何针对 IoT 中心进行开发，请参阅 [Azure IoT SDK][lnk-sdks]。
+
 若要进一步探索 IoT 中心的功能，请参阅：
 
-- [设计你的解决方案][lnk-design]
 - [使用 IoT 网关 SDK 模拟设备][lnk-gateway]
-- [使用 Azure 门户管理 IoT 中心][lnk-portal]
+
 
 [lnk-file upload]: /documentation/articles/iot-hub-csharp-csharp-file-upload/
 [lnk-create-hub]: /documentation/articles/iot-hub-rm-template-powershell/
 [lnk-c-sdk]: /documentation/articles/iot-hub-device-sdk-c-intro/
 [lnk-sdks]: /documentation/articles/iot-hub-devguide-sdks/
 
-[lnk-design]: /documentation/articles/iot-hub-guidance/
 [lnk-gateway]: /documentation/articles/iot-hub-linux-gateway-sdk-simulated-device/
-[lnk-portal]: /documentation/articles/iot-hub-manage-through-portal/
 
-<!---HONumber=Mooncake_Quality_Review_1230_2016-->
+<!---HONumber=Mooncake_0109_2017-->
+<!--Update_Description:update wording and link references-->

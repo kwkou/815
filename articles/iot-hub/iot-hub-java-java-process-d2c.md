@@ -693,7 +693,7 @@ IoT 中心公开[事件中心][lnk-event-hubs]兼容的终结点来接收设备�
 [lnk-service-fabric]: /documentation/services/service-fabric/
 [lnk-stream-analytics]: /documentation/services/stream-analytics/
 [lnk-event-hubs]: /documentation/services/event-hubs/
-[Transient Fault Handling]: https://msdn.microsoft.com/zh-cn/library/hh675232.aspx
+
 
 <!-- Links -->
 [关于 Azure 存储]: /documentation/articles/storage-create-storage-account/#create-a-storage-account

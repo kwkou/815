@@ -1,13 +1,11 @@
 <properties
-	pageTitle="通过网关 SDK 使用实际设备 | Azure"
-	description="Azure IoT 中心网关 SDK 演练使用 Texas Instruments SensorTag 通过 Intel Edison 计算模块上运行的网关将数据发送到 IoT 中心"
-	services="iot-hub"
-	documentationCenter=""
-	authors="chipalost"
-	manager="timlt"
-	editor=""/>  
-
-
+    pageTitle="将物理设备与 Azure IoT 网关 SDK 配合使用 | Azure"
+    description="如何使用 Texas Instruments SensorTag 设备通过 Raspberry Pi 3 设备上运行的网管将数据发送到 IoT 中心。该网关使用 Azure IoT 网关 SDK 生成。"
+    services="iot-hub"
+    documentationcenter=""
+    author="chipalost"
+    manager="timlt"
+    editor="" />
 <tags
      ms.service="iot-hub"
      ms.devlang="cpp"
@@ -22,7 +20,9 @@
 
 # Azure IoT 网关 SDK - 使用 Linux 通过实际设备发送设备到云消息
 
-本演练的蓝牙低功耗示例演示如何使用 [Microsoft Azure IoT 网关 SDK][lnk-sdk] 从物理设备将设备到云遥测转发到 IoT 中心以及如何从 IoT 中心将命令路由到物理设备。
+
+# 使用 Azure IoT 网关 SDK，通过物理设备发送设备到云的消息 \(Linux\)
+[蓝牙低功耗示例][lnk-ble-samplecode]演练展示了如何使用 [Azure IoT 网关 SDK][lnk-sdk] 将设备到云的遥测从物理设备转发到 IoT 中心，并介绍了如何将命令从 IoT 中心路由到物理设备。
 
 本文介绍的内容包括：
 
@@ -50,7 +50,7 @@
 
 ### 数据如何流经网关
 
-以下块图说明了遥测上载数据流管道：
+以下块图说明了遥测上传数据流管道：
 
 ![](./media/iot-hub-gateway-sdk-physical-device/gateway_ble_upload_data_flow.png)  
 
@@ -247,7 +247,7 @@ BLE 模块通过 BlueZ 堆栈与蓝牙硬件通信。需要 BlueZ 5.37 版才能
 Raspberry Pi 3 上有 IoT 网关 SDK 存储库的完整副本时，可以从包含该 SDK 的文件夹使用以下命令生成它：
 
 
-        ./tools/build.sh --skip-unittests --skip-e2e-tests
+./tools/build.sh --skip-unittests
 
 
 ### 在 Raspberry Pi 3 上配置和运行 BLE 示例
@@ -495,10 +495,11 @@ BLE 模块还支持从 Azure IoT 中心将指令发送到设备。可使用 Azur
 
 若要进一步探索 IoT 中心的功能，请参阅：
 
-- [开发人员指南][lnk-devguide]
+- [IoT 中心开发人员指南][lnk-devguide]
 
 <!-- Links -->
 
+[lnk-ble-samplecode]: https://github.com/Azure/azure-iot-gateway-sdk/tree/master/samples/ble_gateway
 [lnk-free-trial]: /pricing/1rmb-trial/
 
 [lnk-sdk]: https://github.com/Azure/azure-iot-gateway-sdk/
@@ -509,4 +510,5 @@ BLE 模块还支持从 Azure IoT 中心将指令发送到设备。可使用 Azur
 [lnk-devguide]: /documentation/articles/iot-hub-devguide/
 [lnk-create-hub]: /documentation/articles/iot-hub-create-through-portal/
 
-<!---HONumber=Mooncake_Quality_Review_0117_2017-->
+<!---HONumber=Mooncake_0109_2017-->
+<!--Update_Description:update wording and link references-->

@@ -1,47 +1,51 @@
 <properties
-	pageTitle="如何安排作业"
-	description="本教程演示如何安排作业"
-	services="iot-hub"
-	documentationcenter=".net"
-	author="uanjperez"
-	manager="timlt"
-	editor=""/>  
-
-
+    pageTitle="通过 Azure IoT 中心安排作业 (Node) | Azure"
+    description="如何安排 Azure IoT 中心作业实现多台设备上的直接方法调用。使用 Azure IoT SDK for Node.js 实现模拟设备应用以及用于运行作业的服务应用。"
+    services="iot-hub"
+    documentationcenter=".net"
+    author="juanjperez"
+    manager="timlt"
+    editor="" />
 <tags
-	ms.service="iot-hub"
-	ms.date="09/30/2016"
-	wacn.date="12/19/2016"/>  
+    ms.assetid="2233356e-b005-4765-ae41-3a4872bda943"
+    ms.service="iot-hub"
+    ms.devlang="multiple"
+    ms.topic="article"
+    ms.tgt_pltfrm="na"
+    ms.workload="na"
+    ms.date="09/30/2016"
+    wacn.date="01/13/2017"
+    ms.author="juanpere" />  
 
 
-# 教程：计划和广播作业
+# 计划和广播作业 \(Node\)
 
 ## 介绍
-Azure IoT 中心是一个完全托管的服务，使应用程序后端可以创建和跟踪用于安排和更新数百万个设备的作业。作业可以用于以下操作：
+Azure IoT 中心是一项完全托管的服务，允许后端应用创建和跟踪用于计划和更新数百万台设备的作业。作业可以用于以下操作：
 
-* 更新设备孪生所需属性
-* 更新设备孪生标记
+* 更新所需属性
+* 更新标记
 * 调用直接方法
 
-从概念上讲，作业包装这些操作之一，并跟踪针对一组设备执行（由设备孪生查询定义）的进度。例如，通过使用作业，应用程序后端可以对 10,000 个设备调用重新启动方法（由设备孪生查询指定并安排在将来执行）。该应用程序随后可以在其中每个设备接收和执行重新启动方法时跟踪进度。
+从概念上讲，作业包装这些操作之一，并跟踪针对一组设备执行（由设备孪生查询定义）的进度。例如，后端应用可使用作业重启 10,000 台设备（由设备孪生查询指定并计划在将来执行）。该应用程序随后可以在其中每个设备接收和执行重新启动方法时跟踪进度。
 
 可在以下文章中了解有关所有这些功能的详细信息：
 
 * 设备孪生和属性：[设备孪生入门][lnk-get-started-twin]和[教程：如何使用设备孪生属性][lnk-twin-props]
-* 直接方法：[开发人员指南 - 直接方法][lnk-dev-methods]和[教程：直接方法][lnk-c2d-methods]
+* 直接方法：[IoT 中心开发人员指南 - 直接方法][lnk-dev-methods]和[教程：直接方法][lnk-c2d-methods]
 
 本教程演示如何：
 
-* 创建一个模拟设备，它具有实现可以由应用程序后端调用的 **lockDoor** 的直接方法。
-* 创建一个控制台应用程序，它使用作业对模拟设备调用 **lockDoor** 直接方法，并使用设备作业更新设备孪生所需属性。
+* 创建一个模拟设备应用，该应用具有可由解决方法后端调用来实现 **lockDoor** 的直接方法。
+* 创建一个 Node.js 控制台应用，该应用使用作业调用模拟设备应用中的 **lockDoor** 直接方法，并使用设备作业更新所需属性。
 
-在本教程结束时，用户有两个 Node.js 控制台应用程序：
+在本教程结束时，你将拥有两个 Node.js 控制台应用：
 
 **simDevice.js**：使用设备标识连接到 IoT 中心，并接收 **lockDoor** 直接方法。
 
-**scheduleJobService.js**：对模拟设备调用直接方法，并使用作业更新设备孪生的所需属性。
+**scheduleJobService.js**：调用模拟设备应用中的直接方法，并使用作业更新设备孪生的所需属性。
 
-若要完成本教程，您需要以下各项：
+要完成本教程，需要具备以下先决条件：
 
 * Node.js 版本 0.12.x 或更高版本，<br/>
 * 有效的 Azure 帐户。（如果没有帐户，只需花费几分钟就能创建一个[帐户][lnk-free-trial]。）
@@ -51,7 +55,7 @@ Azure IoT 中心是一个完全托管的服务，使应用程序后端可以创�
 [AZURE.INCLUDE [iot-hub-get-started-create-device-identity](../../includes/iot-hub-get-started-create-device-identity.md)]
 
 ## 创建模拟设备应用程序
-在此部分中，会创建一个 Node.js 控制台应用，它响应云调用的直接方法，这会触发模拟设备重新启动，并使用设备孪生报告属性使设备孪生查询可以识别设备以及它们上次重新启动的时间。
+在本部分中，创建响应云调用的直接方法的 Node.js 控制台应用，这将触发模拟的设备重新启动并使用报告属性启用设备孪生查询，以标识设备和及其上次重新启动的时间。
 
 1. 新建名为 **simDevice** 的空文件夹。在 **simDevice** 文件夹的命令提示符处，使用以下命令创建 package.json 文件。接受所有默认值：
    
@@ -263,4 +267,5 @@ Azure IoT 中心是一个完全托管的服务，使应用程序后端可以创�
 [lnk-free-trial]: /pricing/1rmb-trial/
 [lnk-transient-faults]: https://msdn.microsoft.com/zh-cn/library/hh680901(v=pandp.50).aspx
 
-<!---HONumber=Mooncake_1212_2016-->
+<!---HONumber=Mooncake_0109_2017-->
+<!--Update_Description:update wording-->

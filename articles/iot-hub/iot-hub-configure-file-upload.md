@@ -1,28 +1,25 @@
 <properties
-	 pageTitle="使用 Azure 门户配置文件上载 | Azure"
-	 description="使用 Azure 门户配置文件上载概述"
-	 services="iot-hub"
-	 documentationCenter=""
-	 authors="dominicbetts"
-	 manager="timlt"
-	 editor=""/>  
-
-
+    pageTitle="使用 Azure 门户配置文件上载 | Azure"
+    description="如何使用 Azure 门户配置 IoT 中心，以便从连接的设备上传文件。包括有关配置目标 Azure 存储帐户的信息。"
+    services="iot-hub"
+    documentationcenter=""
+    author="dominicbetts"
+    manager="timlt"
+    editor="" />
 <tags
-	 ms.service="iot-hub"
-	 ms.devlang="na"
-	 ms.topic="article"
-	 ms.tgt_pltfrm="na"
-	 ms.workload="na"
-	 ms.date="09/30/2016"
-	 wacn.date="12/12/2016"
-	 ms.author="dobett"/>  
+    ms.assetid="915f1597-272d-4fd4-8c5b-a0ccb1df0d91"
+    ms.service="iot-hub"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.tgt_pltfrm="na"
+    ms.workload="na"
+    ms.date="09/30/2016"
+    wacn.date="01/13/2017"
+    ms.author="dobett" />  
 
 
-# 通过 Azure 门户预览配置文件上载
-
+# 使用 Azure 门户预览配置 IoT 中心文件上传
 ## 文件上载
-
 若要使用 [IoT 中心的文件上载功能][lnk-upload]，必须先将 Azure 存储帐户与中心关联。选择“文件上传”设置，即可显示正在修改的 IoT 中心的文件上传属性列表。
 
 ![][13]  
@@ -44,18 +41,18 @@
 
 
 ## 后续步骤
-如需详细了解 IoT 中心的文件上载功能，请参阅开发人员指南中的 [Upload files from a device][lnk-upload]（从设备上载文件）。
+有关 IoT 中心文件上传功能的详细信息，请参阅 IoT 中心开发人员指南中的[从设备上传文件][lnk-upload]。
 
 若要了解有关如何管理 Azure IoT 中心的详细信息，请参阅以下链接：
 
-- [批量管理 IoT 设备][lnk-bulk]
-- [使用指标][lnk-metrics]
-- [操作监视][lnk-monitor]
+* [批量管理 IoT 设备][lnk-bulk]
+* [IoT 中心指标][lnk-metrics]
+* [操作监视][lnk-monitor]
 
 若要进一步探索 IoT 中心的功能，请参阅：
 
-- [开发人员指南][lnk-devguide]
-- [使用 IoT 网关 SDK 模拟设备][lnk-gateway]
+* [IoT 中心开发人员指南][lnk-devguide]
+* [使用 IoT 网关 SDK 模拟设备][lnk-gateway]
 
 
   [13]: ./media/iot-hub-configure-file-upload/file-upload-settings.png
@@ -71,4 +68,5 @@
 [lnk-devguide]: /documentation/articles/iot-hub-devguide/
 [lnk-gateway]: /documentation/articles/iot-hub-linux-gateway-sdk-simulated-device/
 
-<!---HONumber=Mooncake_1205_2016-->
+<!---HONumber=Mooncake_0109_2017-->
+<!--Update_Description:update wording-->

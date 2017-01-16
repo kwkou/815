@@ -1,6 +1,6 @@
 <properties
 	pageTitle="使用网关 SDK 模拟设备 | Azure"
-	description="使用 Windows 的 Azure IoT 中心网关 SDK 演练，说明如何使用 Azure IoT 中心网关 SDK 从模拟设备发送遥测数据。"
+	description="如何在 Windows 上使用 Azure IoT 网关 SDK 创建模拟设备，从而将遥测数据通过网关发送到 IoT 中心"
 	services="iot-hub"
 	documentationCenter=""
 	authors="chipalost"
@@ -15,12 +15,12 @@
      ms.tgt_pltfrm="na"
      ms.workload="na"
      ms.date="08/29/2016"
-     wacn.date="12/12/2016"
+     wacn.date="01/13/2017"
      ms.author="andbuc"/>  
 
 
 
-# Azure IoT 网关 SDK - 使用 Windows 通过模拟设备发送设备到云消息
+# 使用 Azure IoT 网关 SDK，通过模拟设备发送设备到云消息 \(Windows\)
 
 [AZURE.INCLUDE [iot-hub-gateway-sdk-simulated-selector](../../includes/iot-hub-gateway-sdk-simulated-selector.md)]
 
@@ -48,7 +48,6 @@
 - **Logger** 模块将网关活动记录到一个文件中。
 - 如下所示的 **module path** 值假设已将 IoT 网关 SDK 存储库克隆到 **C:** 盘的根目录。如果将该存储库下载到其他位置，则需要相应地调整 **module path** 值。
 - JSON 文件的底部的 **links** 数组将 **BLE1** 和 **BLE2** 模块连接到 **mapping** 模块，并将 **mapping** 模块连接到 **IoTHub** 模块。它还确保 **Logger** 模块记录所有消息。
-
 
         {
             "modules" :
@@ -149,12 +148,12 @@
 ## 后续步骤
 如果想要深入了解 IoT 网关 SDK 并尝试一些代码示例，请访问以下开发人员教程和资源：
 
-- [使用 IoT 网关 SDK 从实际设备发送设备到云消息][lnk-physical-device]
+- [使用 IoT 网关 SDK 从物理设备发送设备到云的消息][lnk-physical-device]
 - [Azure IoT 网关 SDK][lnk-gateway-sdk]
 
 若要进一步探索 IoT 中心的功能，请参阅：
 
-- [开发人员指南][lnk-devguide]
+- [IoT 中心开发人员指南][lnk-devguide]
 
 <!-- Links -->
 
@@ -170,3 +169,4 @@
 [lnk-create-hub]: /documentation/articles/iot-hub-create-through-portal/
 
 <!---HONumber=Mooncake_1205_2016-->
+<!--Update_Description:update wording-->

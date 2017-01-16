@@ -1,18 +1,22 @@
 <properties
-	pageTitle="获取工具 (Ubuntu 16.04)"
-	description="下载并安装适用于 Ubuntu 上 Pi 的第一个示例应用程序的必需工具和软件。"
-	services="iot-hub"
-	documentationcenter=""
-	author="shizn"
-	manager="timlt"
-	tags=""
-	keywords=""/>  
-
-
+    pageTitle="获取工具 (Ubuntu 16.04) | Azure"
+    description="下载并安装适用于 Ubuntu 上 Pi 的第一个示例应用程序的必需工具和软件。"
+    services="iot-hub"
+    documentationcenter=""
+    author="shizn"
+    manager="timlt"
+    tags=""
+    keywords="iot 开发, iot 软件, 物联网软件, 在 ubuntu 上安装 git, gulp 运行, 安装 node js ubuntu" />
 <tags
-	ms.service="iot-hub"
-	ms.date="10/21/2016"
-	wacn.date="12/19/2016"/>  
+    ms.assetid="4d5e45c0-1db9-4662-a039-99ba26333085"
+    ms.service="iot-hub"
+    ms.devlang="node"
+    ms.topic="article"
+    ms.tgt_pltfrm="na"
+    ms.workload="na"
+    ms.date="11/28/2016"
+    wacn.date="01/13/2017"
+    ms.author="xshi" />  
 
 # 获取工具 (Ubuntu 16.04)
 > [AZURE.SELECTOR]
@@ -66,4 +70,5 @@
 ## 后续步骤
 [创建和部署 blink 示例应用程序](/documentation/articles/iot-hub-raspberry-pi-kit-node-lesson1-deploy-blink-app/)
 
-<!---HONumber=Mooncake_1212_2016-->
+<!---HONumber=Mooncake_0109_2017-->
+<!--Update_Description:update meta properties-->

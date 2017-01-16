@@ -1,23 +1,24 @@
 <properties
-	pageTitle="适用于 C 语言的 Azure IoT 设备 SDK - 序列化程序 | Azure"
-	description="了解如何使用适用于 C 语言的 Azure IoT 设备 SDK 中的序列化程序库"
-	services="iot-hub"
-	documentationCenter=""
-	authors="olivierbloch"
-	manager="timlt"
-	editor=""/>
-
+    pageTitle="适用于 C 语言的 Azure IoT 设备 SDK - 序列化程序 | Azure"
+    description="如何使用 Azure IoT 设备 SDK 中面向 C 语言的序列化程序库创建与 IoT 中心通信的设备应用。"
+    services="iot-hub"
+    documentationcenter=""
+    author="olivierbloch"
+    manager="timlt"
+    editor="" />
 <tags
-     ms.service="iot-hub"
-     ms.devlang="cpp"
-     ms.topic="article"
-     ms.tgt_pltfrm="na"
-     ms.workload="na"
-     ms.date="09/06/2016"
-     wacn.date="01/17/2017"
-     ms.author="obloch"/>
+    ms.assetid="defbed34-de73-429c-8592-cd863a38e4dd"
+    ms.service="iot-hub"
+    ms.devlang="cpp"
+    ms.topic="article"
+    ms.tgt_pltfrm="na"
+    ms.workload="na"
+    ms.date="09/06/2016"
+    wacn.date="01/13/2017"
+    ms.author="obloch" />  
 
-# 适用于 C 语言的 Azure IoT 设备 SDK – 有关序列化程序的详细信息
+
+# 适用于 C 语言的 Azure IoT 设备 SDK - 有关序列化程序的详细信息
 
 本系列教程的[第一篇文章](/documentation/articles/iot-hub-device-sdk-c-intro/)介绍了**适用于 C 语言的 Azure IoT 设备 SDK**。下一篇文章提供 [**IoTHubClient**](/documentation/articles/iot-hub-device-sdk-c-iothubclient/) 的更详细介绍。本文最后的部分将提供该 SDK 的剩余组件**序列化程序**库的更详细说明。
 
@@ -573,7 +574,7 @@
         );
 
 
-如前所述，**DECLARE\_MODEL** 只是一个 C 宏。模型的名称和 **WITH\_DATA** 语句（另一个宏）是 **DECLARE\_MODEL** 的参数。**nMacroParameters** 定义可在 **DECLARE\_MODEL** 中包含多少参数。实际上，这定义了你可以指定的数据事件和操作声明数目。因此，使用默认限制 124 时，你可以定义由大约 60 个操作和事件数据组成的模型。如果你试图超过此限制，将收到如下所示的编译器错误：
+如前所述，**DECLARE\_MODEL** 只是一个 C 宏。模型的名称和 **WITH\_DATA** 语句（另一个宏）是 **DECLARE\_MODEL** 的参数。**nMacroParameters** 定义可在 **DECLARE\_MODEL** 中包含的参数个数。实际上，这定义了你可以指定的数据事件和操作声明数目。因此，使用默认限制 124 时，你可以定义由大约 60 个操作和事件数据组成的模型。如果你试图超过此限制，将收到如下所示的编译器错误：
 
   ![](./media/iot-hub-device-sdk-c-serializer/02-nMacroParametersCompilerErrors.PNG)
 
@@ -603,9 +604,9 @@
 
 ## 较低级别 API
 
-本文着重介绍的示例应用程序为 **simplesample\_amqp**。此示例使用较高级别（非“LL”）API 来发送事件和接收消息。如果你使用这些 API，将运行后台线程来处理事件发送和消息接收。不过，你可以使用较低级别 (LL) API 来消除此后台线程的使用，并掌握发送事件或从云接收消息时的明确控制权。
+本文着重介绍的示例应用程序为 **simplesample\_amqp**。此示例使用较高级别（非“LL”）API 来发送事件和接收消息。如果你使用这些 API，将运行后台线程来处理事件发送和消息接收。但是，通过较低级别 \(LL\) API，可消除此后台线程的使用并明确掌控何时发送事件或从云中接收消息。
 
-如[前一篇文章](/documentation/articles/iot-hub-device-sdk-c-iothubclient/)中所述，有一组由较高级别 API 组成的函数：
+如[前一篇文章](/documentation/articles/iot-hub-device-sdk-c-iothubclient/)中所述，有一组由较高级别 API 构成的函数：
 
 -   IoTHubClient\_CreateFromConnectionString
 
@@ -669,18 +670,16 @@
 
 本文也是通过**适用于 C 语言的 Azure IoT 设备 SDK** 开发应用程序这一系列教程（由三部分组成）的最后一部分。这些信息应该不仅足以让你入门，还能让你彻底了解 API 的工作原理。请了解其他信息，因为还有一些 SDK 中的示例未涵盖在本文中。除此之外，[SDK 文档](https://github.com/Azure/azure-iot-sdks)是获取其他信息的绝佳资源。
 
-
-若要详细了解如何针对 IoT 中心进行开发，请参阅 [IoT 中心 SDK][lnk-sdks]。
+若要详细了解如何针对 IoT 中心进行开发，请参阅 [Azure IoT SDK][lnk-sdks]。
 
 若要进一步探索 IoT 中心的功能，请参阅：
 
-- [使用网关 SDK 模拟设备][lnk-gateway]
+- [使用 IoT 网关 SDK 模拟设备][lnk-gateway]
 - [使用 Azure 门户管理 IoT 中心][lnk-portal]
 
 [lnk-sdks]: /documentation/articles/iot-hub-devguide-sdks/
 
-[lnk-design]: /documentation/articles/iot-hub-guidance/
 [lnk-gateway]: /documentation/articles/iot-hub-linux-gateway-sdk-simulated-device/
-[lnk-portal]: /documentation/articles/iot-hub-manage-through-portal/
 
-<!---HONumber=Mooncake_Quality_Review_0117_2017-->
+<!---HONumber=Mooncake_0109_2017-->
+<!--Update_Description:update wording-->

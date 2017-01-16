@@ -1,42 +1,39 @@
 <properties
- pageTitle="导入和导出 IoT 中心设备标识 | Azure"
- description="有关批量管理 IoT 中心设备标识的概念和 .NET 代码段"
- services="iot-hub"
- documentationCenter=".net"
- authors="dominicbetts"
- manager="timlt"
- editor=""/>  
-
-
+    pageTitle="导入和导出 Azure IoT 中心设备标识 | Azure"
+    description="如何使用 Azure IoT 服务 SDK 针对标识注册表执行批量操作，以导入和导出设备标识。借助导入操作，可批量创建、更新和删除设备标识。"
+    services="iot-hub"
+    documentationcenter=".net"
+    author="dominicbetts"
+    manager="timlt"
+    editor="" />
 <tags
- ms.service="iot-hub"
- ms.devlang="na"
- ms.topic="article"
- ms.tgt_pltfrm="na"
- ms.workload="na"
- ms.date="10/05/2016"
- wacn.date="01/04/2017"
- ms.author="dobett"/>  
+    ms.assetid="2ade1494-45ea-46a7-ade7-cf6e11ce62da"
+    ms.service="iot-hub"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.tgt_pltfrm="na"
+    ms.workload="na"
+    ms.date="10/05/2016"
+    wacn.date="01/13/2017"
+    ms.author="dobett" />  
 
 
-# 批量管理 IoT 中心的设备标识
-
-每个 IoT 中心都有一个设备标识注册表，用于在服务中创建各设备的资源（例如包含即时云到设备消息的队列）。设备标识注册表还可用于控制对面向设备的终结点的访问。本文说明如何在设备标识注册表中批量导入和导出设备标识。
+# 批量管理 IoT 中心设备标识
+每个 IoT 中心都有一个标识注册表，可用于在服务中创建每个设备的资源（例如包含即时云到设备消息的队列）。标识注册表还可用于控制对面向设备的终结点的访问。本文介绍如何从标识注册表批量导入和导出设备标识。
 
 导入和导出操作在*作业*的上下文中进行，可让用户对 IoT 中心执行批量服务操作。
 
-**RegistryManager** 类包含使用**作业**框架的 **ExportDevicesAsync** 和 **ImportDevicesAsync** 方法。这些方法可让你导出、导入和同步整个 IoT 中心设备注册表。
+**RegistryManager** 类包含使用**作业**框架的 **ExportDevicesAsync** 和 **ImportDevicesAsync** 方法。这些方法可以导出、导入和同步整个 IoT 中心标识注册表。
 
 ## 什么是作业？
+标识注册表操作使用**作业**系统的前提是操作符合以下条件：
 
-设备标识注册表操作使用**作业**系统的前提是操作符合以下条件：
+* 相较标准运行时操作，其执行时间可能很长，或
+* 向用户返回大量数据。
 
-*  相比于标准运行时操作，其运行时间可能很长，或者，
-*  向用户返回大量数据。
+在这些情况下，操作不会让单个 API 调用在返回操作结果后等待或阻塞，而是以异步方式创建该 IoT 中心的**作业**，然后立即返回 **JobProperties** 对象。
 
-在这些情况下，操作将不会让单个 API 调用在返回操作结果后等待或阻塞，而是以异步方式创建该 IoT 中心的**作业**，然后立即返回 **JobProperties** 对象。
-
-以下 C# 代码段演示如何创建导出作业：
+以下 C# 代码片段演示如何创建导出作业：
 
 
 		// Call an export job on the IoT Hub to retrieve all devices
@@ -45,7 +42,7 @@
 
 然后可以使用 **RegistryManager** 类来查询使用所返回 **JobProperties** 元数据的**作业**的状态。
 
-以下 C# 代码段演示如何每隔五秒轮询一次以查看作业是否已完成执行：
+以下 C# 代码片段演示如何每隔五秒轮询一次以查看作业是否已完成执行：
 
 
 		// Wait until job is finished
@@ -66,7 +63,7 @@
 
 ## 导出设备
 
-使用 **ExportDevicesAsync** 方法将整个 IoT 中心设备注册表导出到使用[共享访问签名](https://msdn.microsoft.com/zh-cn/library/ee395415.aspx)的 [Azure 存储](/documentation/services/storage/) Blob 容器。
+使用 **ExportDevicesAsync** 方法将整个 IoT 中心标识注册表导出到使用[共享访问签名](https://msdn.microsoft.com/zh-cn/library/ee395415.aspx)的 [Azure 存储](/documentation/services/storage/) Blob 容器。
 
 此方法可让你在所控制的 Blob 容器中创建可靠的设备信息备份。
 
@@ -80,7 +77,7 @@
 
 *  指示你是否要在导出数据中排除身份验证密钥的*布尔值*。如果为 **false**，则身份验证密钥将包含在导出输出中；否则像为 **null** 时一样导出密钥。
 
-下面的 C# 代码段演示了如何启动在导出数据中包含设备身份验证密钥的导出作业，然后对完成情况进行轮询：
+下面的 C# 代码片段演示了如何启动在导出数据中包含设备身份验证密钥的导出作业，然后对完成情况进行轮询：
 
 
 		// Call an export job on the IoT Hub to retrieve all devices
@@ -114,7 +111,7 @@
 		{"id":"Device5","eTag":"MA==","status":"enabled","authentication":{"symmetricKey":{"primaryKey":"abc=","secondaryKey":"def="}}}
 
 
-如果你需要访问代码中的此数据，可以使用 **ExportImportDevice** 类轻松将此数据反序列化。以下 C# 代码段演示如何读取前面导出到块 Blob 的设备信息：
+如果你需要访问代码中的此数据，可以使用 **ExportImportDevice** 类轻松将此数据反序列化。以下 C# 代码片段演示如何读取前面导出到块 Blob 的设备信息：
 
 
 		var exportedDevices = new List<ExportImportDevice>();
@@ -134,11 +131,14 @@
 
 ## 导入设备
 
-**RegistryManager** 类中的 **ImportDevicesAsync** 方法可让你在 IoT 中心设备注册表中执行批量导入和同步操作。与 **ExportDevicesAsync** 方法一样，**ImportDevicesAsync** 方法也使用**作业**框架。
+借助 **RegistryManager** 类中的 **ImportDevicesAsync** 方法，可在 IoT 中心标识注册表中执行批量导入和同步操作。与 **ExportDevicesAsync** 方法一样，**ImportDevicesAsync** 方法也使用**作业**框架。
 
-请谨慎使用 **ImportDevicesAsync** 方法，因为除了在设备标识注册表中预配新设备以外，此方法也会更新和删除现有设备。
+请谨慎使用 **ImportDevicesAsync** 方法，因为除了在标识注册表中预配新设备外，此方法还会更新和删除现有设备。
 
-> [AZURE.WARNING]  导入操作不可撤消。请始终先使用 **ExportDevicesAsync** 方法将现有数据备份到另一个 Blob 容器，再对设备标识注册表进行批量更改。
+> [AZURE.WARNING]
+导入操作不可撤消。请始终先使用 **ExportDevicesAsync** 方法将现有数据备份到其他 Blob 容器，然后再对标识注册表进行批量更改。
+> 
+> 
 
 **ImportDevicesAsync** 方法有两个参数：
 
@@ -169,7 +169,7 @@
 -   批量注册新设备
 -   批量删除现有设备
 -   批量更改状态（启用或禁用设备）
--   批量分配新的设备身份验证密钥
+-   批量分配新设备身份验证密钥
 -   批量自动重新生成设备身份验证密钥
 
 可以在单个 **ImportDevicesAsync** 调用中执行上述操作的任意组合。例如，可以同时注册新设备并删除或更新现有设备。配合 **ExportDevicesAsync** 方法一起使用时，可以将某个 IoT 中心内的所有设备迁移到另一个 IoT 中心。
@@ -194,7 +194,7 @@
 
 - 包括身份验证密钥。
 - 将该设备信息写入块 blob。
-- 将设备导入设备标识注册表。
+- 将设备导入标识注册表。
 
 
 		// Provision 1,000 more devices
@@ -222,7 +222,7 @@
 		  serializedDevices.Add(JsonConvert.SerializeObject(deviceToAdd));
 		}
 
-		// Write this list to the Azure storage blob
+		// Write this list to the blob
 		var sb = new StringBuilder();
 		serializedDevices.ForEach(serializedDevice => sb.AppendLine(serializedDevice));
 		await blob.DeleteIfExistsAsync();
@@ -237,7 +237,7 @@
 		  }
 		}
 
-		// Call import using the same storage blob to add new devices!
+		// Call import using the same blob to add new devices!
 		// This normally takes 1 minute per 100 devices the normal way
 		JobProperties importJob = await registryManager.ImportDevicesAsync(containerSasUri, containerSasUri);
 
@@ -288,7 +288,7 @@
 		  }
 		}
 
-		// Step 3: Call import using the same storage blob to delete all devices!
+		// Step 3: Call import using the same blob to delete all devices!
 		importJob = await registryManager.ImportDevicesAsync(containerSasUri, containerSasUri);
 
 		// Wait until job is finished
@@ -338,16 +338,15 @@
 
 
 ## 后续步骤
+在本文中，已学习如何对 IoT 中心内的标识注册表执行批量操作。若要了解有关如何管理 Azure IoT 中心的详细信息，请参阅以下链接：
 
-在本文中，你已学习如何对 IoT 中心内的设备标识注册表执行批量操作。若要了解有关如何管理 Azure IoT 中心的详细信息，请参阅以下链接：
-
-- [使用指标][lnk-metrics]
-- [操作监视][lnk-monitor]
+* [IoT 中心指标][lnk-metrics]
+* [操作监视][lnk-monitor]
 
 若要进一步探索 IoT 中心的功能，请参阅：
 
-- [开发人员指南][lnk-devguide]
-- [使用网关 SDK 模拟设备][lnk-gateway]
+* [IoT 中心开发人员指南][lnk-devguide]
+* [使用 IoT 网关 SDK 模拟设备][lnk-gateway]
 
 [lnk-metrics]: /documentation/articles/iot-hub-metrics/
 [lnk-monitor]: /documentation/articles/iot-hub-operations-monitoring/
@@ -355,4 +354,5 @@
 [lnk-devguide]: /documentation/articles/iot-hub-devguide/
 [lnk-gateway]: /documentation/articles/iot-hub-linux-gateway-sdk-simulated-device/
 
-<!---HONumber=Mooncake_Quality_Review_1230_2016-->
+<!---HONumber=Mooncake_0109_2017-->
+<!--Update_Description:update wording-->

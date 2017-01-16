@@ -1,21 +1,30 @@
 <properties
-	pageTitle="Raspberry Pi 3 入门"
-	description="开始使用 Raspberry Pi 3，创建 Azure IoT 中心，并将 Pi 连接到 IoT 中心。"
-	services="iot-hub"
-	documentationcenter=""
-	author="shizn"
-	manager="timlt"
-	tags=""
-	keywords=""/>  
-
-
+    pageTitle="将 Raspberry Pi 3 连接到 Azure IoT 中心 | Azure"
+    description="开始使用 Raspberry Pi 3 设备、创建 Azure IoT 中心，并将 Pi 连接到 IoT 中心。"
+    services="iot-hub"
+    documentationcenter=""
+    author="shizn"
+    manager="timlt"
+    tags=""
+    keywords="azure iot 中心, 物联网入门, iot 工具包"
+    experimental="true"
+    experiment_id="xshi-happypathemu-20161202" />
 <tags
-	ms.service="iot-hub"
-	ms.date="10/21/2016"
-	wacn.date="12/19/2016"/>  
+    ms.assetid="b0e14bfa-8e64-440a-a6ec-e507ca0f76ba"
+    ms.service="iot-hub"
+    ms.devlang="node"
+    ms.topic="article"
+    ms.tgt_pltfrm="na"
+    ms.workload="na"
+    ms.date="11/28/2016"
+    wacn.date="01/13/2017"
+    ms.author="xshi" />  
 
 
-# Raspberry Pi 3 入门
+# Raspberry Pi 3 入门 (Node.js)
+[AUZRE.SELECTOR]
+- [Node.JS](/documentation/articles/iot-hub-raspberry-pi-kit-node-get-started/)
+- [C](/documentation/articles/iot-hub-raspberry-pi-kit-c-get-started/)
 在本教程中，用户将开始学习基础知识，了解如何使用运行 Raspbian 的 Raspberry Pi 3，然后学习如何使用 [Azure IoT 中心](/documentation/articles/iot-hub-what-is-iot-hub/)将设备无缝连接到云。有关 Windows 10 IoT Core 的示例，请访问 [Windows 开发人员中心](http://www.windowsondevices.com/)。
 
 还没有工具包？ 从[此处](/develop/iot/iot-starter-kits)开始。
@@ -123,4 +132,5 @@
 ## 故障排除
 如果在课程中碰到问题，可参阅[故障排除](/documentation/articles/iot-hub-raspberry-pi-kit-node-troubleshooting/)一文以获取解决方案。
 
-<!---HONumber=Mooncake_1212_2016-->
+<!---HONumber=Mooncake_0109_2017-->
+<!--Update_Description: add AZURE.SELECTOR-->

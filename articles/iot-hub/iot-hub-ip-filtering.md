@@ -1,21 +1,24 @@
 <properties
-	pageTitle="IoT 中心 - IP 筛选器"
-	description="本教程介绍如何针对 Azure IoT 中心将某些 IP 地址列入方块列表或允许列表。"
-	services="iot-hub"
-	documentationcenter=""
-	author="BeatriceOltean"
-	manager="timlt"
-	editor=""/>  
-
-
+    pageTitle="Azure IoT 中心 IP 筛选器 | Azure"
+    description="如何使用 IP 筛选阻止特定 IP 地址到 Azure IoT 中心的连接。可阻止来自单独 IP 地址或 IP 地址范围的连接。"
+    services="iot-hub"
+    documentationcenter=""
+    author="BeatriceOltean"
+    manager="timlt"
+    editor="" />
 <tags
-	ms.service="iot-hub"
-	ms.date="11/14/2016"
-	wacn.date="12/19/2016"/>  
+    ms.assetid="f833eac3-5b5f-46a7-a47b-f4f6fc927f3f"
+    ms.service="iot-hub"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.tgt_pltfrm="na"
+    ms.workload="na"
+    ms.date="11/14/2016"
+    wacn.date="01/13/2017"
+    ms.author="boltean" />  
 
 
-
-# IP 筛选器
+# 使用 IP 筛选器
 
 安全是任何基于 Azure IoT 中心的 IoT 解决方案的重要部分。有时候，在进行安全配置时，需将某些 IP 地址列入方块列表或允许列表。 *IP 筛选器* 功能用于配置相关规则，以便拒绝或接受来自特定 IPv4 地址的流量。
 
@@ -28,7 +31,7 @@
 
 ## 如何应用筛选器规则
 
-在 IoT 中心服务级别应用 IP 筛选器规则。因此，IP 筛选器规则适用于使用任意受支持协议的设备和后端应用程序发出的所有连接。
+在 IoT 中心服务级别应用 IP 筛选器规则。因此，IP 筛选器规则适用于使用任意受支持协议和从设备和后端应用发出的所有连接。
 
 与 IoT 中心的拒绝 IP 规则匹配的 IP 地址发出的任何连接尝试都会收到“未授权”401 状态代码和说明。响应消息不提及 IP 规则。
 
@@ -103,4 +106,5 @@ IP 筛选器规则按顺序应用，与 IP 地址匹配的第一条规则决定�
 [lnk-monitor]: /documentation/articles/iot-hub-operations-monitoring/
 [lnk-metrics]: /documentation/articles/iot-hub-metrics/
 
-<!---HONumber=Mooncake_1212_2016-->
+<!---HONumber=Mooncake_0109_2017-->
+<!--Update_Description:update wording-->

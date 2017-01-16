@@ -1,18 +1,23 @@
 <properties
-	pageTitle="读取保存在 Azure 存储中的消息"
-	description="在将从设备到云的消息写入 Azure 表存储时，对其进行监视。"
-	services="iot-hub"
-	documentationcenter=""
-	author="shizn"
-	manager="timlt"
-	tags=""
-	keywords=""/>  
-
-
+    pageTitle="读取保存在 Azure 存储中的消息 | Azure"
+    description="在将从设备到云的消息写入 Azure 表存储时，对其进行监视。"
+    services="iot-hub"
+    documentationcenter=""
+    author="shizn"
+    manager="timlt"
+    tags=""
+    keywords="从云中检索数据, iot 云服务" />
 <tags
-	ms.service="iot-hub"
-	ms.date="10/21/2016"
-	wacn.date="12/19/2016"/>  
+    ms.assetid="9965bd54-61da-479b-aaad-5604850a2be5"
+    ms.service="iot-hub"
+    ms.devlang="node"
+    ms.topic="article"
+    ms.tgt_pltfrm="na"
+    ms.workload="na"
+    ms.date="11/28/2016"
+    wacn.date="01/13/2017"
+    ms.author="xshi" />  
+
 
 # 读取保存在 Azure 存储中的消息
 ## 执行的操作
@@ -34,8 +39,7 @@
         az storage account list -g iot-sample --query [].name
         az storage account show-connection-string -g iot-sample -n {storage name}
    
-    第一个命令检索 `storage name`，后者在第二个命令中用于获取连接字符串。`iot-sample` 是 `{resource group name}` 的默认值。
-    
+   第一个命令检索 `storage name`，后者在第二个命令中用于获取连接字符串。使用 `iot-sample` 作为 `{resource group name}` 的值（如果尚未更改此值）。
 2. 运行以下命令，在 Visual Studio Code 中打开配置文件 `config-raspberrypi.json`：
    
         # For Windows command prompt
@@ -59,6 +63,7 @@
 用户已成功地将 Pi 连接到云中的 IoT 中心，并已使用 blink 示例应用程序发送从设备到云的消息。用户还使用 Azure 函数应用将传入的 IoT 中心消息存储到 Azure 表存储中。用户现在可以将从云到设备的消息从 IoT 中心发送到 Pi。
 
 ## 后续步骤
-[发送云到设备的消息](/documentation/articles/iot-hub-raspberry-pi-kit-node-lesson4-send-cloud-to-device-messages/)
+[运行示例应用程序，接收从云到设备的消息](/documentation/articles/iot-hub-raspberry-pi-kit-node-lesson4-send-cloud-to-device-messages/)
 
-<!---HONumber=Mooncake_1212_2016-->
+<!---HONumber=Mooncake_0109_2017-->
+<!--Update_Description:update wording and code-->
