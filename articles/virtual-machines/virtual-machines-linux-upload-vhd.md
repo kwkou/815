@@ -56,7 +56,7 @@
 	azure storage blob upload --blobtype page --account-name mystorageaccount \
 		--account-key key1 --container myimages /path/to/disk/mydisk.vhd
 
-现在，可以[使用 Resource Manager 模板](https://github.com/Azure/azure-quickstart-templates/tree/master/201-vm-from-specialized-vhd)从上载的虚拟磁盘创建 VM。也可以使用 CLI 指定磁盘的 URI (`--image-urn`)。以下示例使用前面上载的虚拟磁盘创建一个名为 `myVM` 的 VM：
+现在，可以[使用 Resource Manager 模板](https://github.com/Azure/azure-quickstart-templates/tree/master/201-vm-specialized-vhd)从上载的虚拟磁盘创建 VM。也可以使用 CLI 指定磁盘的 URI (`--image-urn`)。以下示例使用前面上载的虚拟磁盘创建一个名为 `myVM` 的 VM：
 
 	azure vm create myVM -l "ChinaNorth" --resource-group myResourceGroup \
 		--image-urn https://mystorageaccount.blob.core.chinacloudapi.cn/myimages/mydisk.vhd

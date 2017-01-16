@@ -1,14 +1,14 @@
 <!-- need to be verified -->
 
 
-本文概述了在 Azure 上运行 Windows 虚拟机 (VM) 的一套经过验证的做法，这些做法注重可扩展性、可用性、可管理性和安全性。
+本文概述了在 Azure 上运行 Windows 虚拟机 \(VM\) 的一套经过验证的做法，这些做法注重可扩展性、可用性、可管理性和安全性。
 
 > [AZURE.NOTE]
 Azure 有两个不同的部署模型：[Azure Resource Manager][resource-manager-overview] 和经典模型。本文使用 Resource Manager，Azure 建议将它用于新部署。
 > 
 > 
 
-建议不要对生产工作负荷使用单个 VM，因为 Azure 上的单个 VM 没有正常运行时间服务级别协议 (SLA)。若要获取 SLA，必须在[可用性集][availability-set]中部署多个 VM。
+建议不要对生产工作负荷使用单个 VM，因为 Azure 上的单个 VM 没有正常运行时间服务级别协议 \(SLA\)。若要获取 SLA，必须在[可用性集][availability-set]中部署多个 VM。
 
 ## 体系结构关系图
 
@@ -21,28 +21,28 @@ Azure 有两个不同的部署模型：[Azure Resource Manager][resource-manager
 ![[0]][0]  
 
 
-* **资源组。** [ *资源组* ][resource-manager-overview]是一个容器，包含相关资源。创建资源组以保存此 VM 的资源。
-* **VM**。可以基于已发布的映像列表或上载到 Azure Blob 存储的虚拟硬盘 (VHD) 文件预配 VM。
+* **资源组。** [*资源组*][resource-manager-overview]是一个容器，包含相关资源。创建资源组以保存此 VM 的资源。
+* **VM**。可以基于已发布的映像列表或上载到 Azure Blob 存储的虚拟硬盘 \(VHD\) 文件预配 VM。
 * **OS 磁盘。** OS 磁盘是存储在 [Azure 存储空间][azure-storage]中的一个 VHD。这意味着它一直存在，即使主机出现故障，也是如此。
-* **临时磁盘。** 使用临时磁盘（Windows 上的 `D:` 驱动器）创建 VM。此磁盘存储在主机的物理驱动器上。它 *不* 保存在 Azure 存储空间中，并且可能会在重新启动和其他 VM 生命周期事件过程中被删除。只使用此磁盘存储临时数据，如页面文件或交换文件。
+* **临时磁盘。** 使用临时磁盘（Windows 上的 `D:` 驱动器）创建 VM。此磁盘存储在主机的物理驱动器上。它*不*保存在 Azure 存储空间中，并且可能会在重新启动和其他 VM 生命周期事件过程中被删除。只使用此磁盘存储临时数据，如页面文件或交换文件。
 * **数据磁盘。** [数据磁盘][data-disk]是用于应用程序数据的持久性 VHD。数据磁盘像 OS 磁盘一样，存储在 Azure 存储空间中。
-* **虚拟网络 (VNet) 和子网。** Azure 中的每个 VM 都部署在 VNet 中，后者进一步划分为多个子网。
-* **公共 IP 地址。** 公共 IP 地址需要与 VM（例如，通过远程桌面 (RDP)）进行通信。
-* **网络接口 (NIC)**。NIC 使 VM 能够与虚拟网络进行通信。
-* **网络安全组 (NSG)**。[NSG][nsg] 用于允许/拒绝到子网的网络流量。可以将 NSG 与单个 NIC 或与子网相关联。如果将 NSG 与一个子网相关联，则 NSG 规则适用于该子网中的所有 VM。
+* **虚拟网络 \(VNet\) 和子网。** Azure 中的每个 VM 都部署在 VNet 中，后者进一步划分为多个子网。
+* **公共 IP 地址。** 公共 IP 地址需要与 VM（例如，通过远程桌面 \(RDP\)）进行通信。
+* **网络接口 \(NIC\)**。NIC 使 VM 能够与虚拟网络进行通信。
+* **网络安全组 \(NSG\)**。[NSG][nsg] 用于允许/拒绝到子网的网络流量。可以将 NSG 与单个 NIC 或与子网相关联。如果将 NSG 与一个子网相关联，则 NSG 规则适用于该子网中的所有 VM。
 * **诊断。** 诊断日志记录对于 VM 管理和故障排除至关重要。
 
 ## 建议
 
-Azure 提供了各种资源和资源类型，可通过多种方法部署此参考体系结构。若要如上图所示部署此体系结构，请参阅本文档末尾的[解决方案部署](#solution-deployment)部分以了解详细信息。如果选择创建自己的参考体系结构，应遵循这些建议，除非有建议不满足的特定要求。
+以下建议适用于大多数情况。请遵循这些建议，除非有更优先的特定要求。
 
 ### VM 建议
 
 Azure 可提供多种虚拟机大小，但建议使用 DS 和 GS 系列，因为相关计算机大小支持[高级存储][premium-storage]。请选择其中一个计算机大小，除非存在专用工作负荷（如高性能计算）。有关详细信息，请参阅 [virtual machine sizes][virtual-machine-sizes]（虚拟机大小）。
 
-如果要将现有工作负荷移到 Azure，最开始使用与本地服务器最接近的 VM 大小。然后测量与 CPU、内存和每秒磁盘输入/输出操作次数 (IOPS) 有关的实际工作负荷的性能，并根据需要调整大小。如果 VM 需要多个 NIC，请注意可用 NIC 的最大数量是 [VM 大小][vm-size-tables]的函数。
+如果要将现有工作负荷移到 Azure，最开始使用与本地服务器最接近的 VM 大小。然后测量与 CPU、内存和每秒磁盘输入/输出操作次数 \(IOPS\) 有关的实际工作负荷的性能，并根据需要调整大小。如果 VM 需要多个 NIC，请注意 NIC 的最大数量是 [VM 大小][vm-size-tables]的函数。
 
-当你预配 VM 和其他资源时，必须指定位置。通常，选择离你的内部用户或客户最近的位置。但是，并非所有 VM 大小都可在所有位置中使用。有关详细信息，请参阅 [services by region][services-by-region]（按区域列出的服务）。若要查看给定位置中可用的 VM 大小的列表，请运行以下 Azure 命令行接口 (CLI) 命令：
+预配 VM 和其他资源时，必须指定区域。通常应选择离内部用户或客户最近的区域。但是，并非所有 VM 大小都可在所有区域中使用。有关详细信息，请参阅 [services by region][services-by-region]（按区域列出的服务）。若要查看给定区域中的可用 VM 大小列表，请运行以下 Azure 命令行接口 \(CLI\) 命令：
 
     azure vm sizes --location <location>
 
@@ -50,22 +50,22 @@ Azure 可提供多种虚拟机大小，但建议使用 DS 和 GS 系列，因为
 
 ### 磁盘和存储建议
 
-为获得最佳磁盘 I/O 性能，建议使用[高级存储][premium-storage]，它在固态硬盘 (SSD) 上存储数据。成本取决于预配磁盘的大小。IOPS 和吞吐量也取决于磁盘大小，因此，在预配磁盘时，请考虑所有三个因素（容量、IOPS 和吞吐量）。
+为获得最佳磁盘 I/O 性能，建议使用[高级存储][premium-storage]，它在固态硬盘 \(SSD\) 上存储数据。成本取决于预配磁盘的大小。IOPS 和吞吐量也取决于磁盘大小，因此，在预配磁盘时，请考虑所有三个因素（容量、IOPS 和吞吐量）。
 
-请针对要部署的 VM 数量设置足够的存储帐户。每个 VM 都需要一个 OS 磁盘和一个临时磁盘，根据[存储帐户磁盘限制][storage-account-limits]，一个高级存储帐户可以支持 1 到 20 个 VM。如果选择向 VM 添加数据磁盘，请注意创建时并未对其进行格式化。若要对任何数据磁盘进行格式化，必须登录到 VM。
+为每个 VM 创建单独的 Azure 存储帐户，用于存放虚拟硬盘 \(VHD\)，从而避免存储帐户达到 IOPS 限制。
 
-如果你有大量数据磁盘，请注意存储帐户的总 I/O 限制。有关详细信息，请参阅 [virtual machine disk limits][vm-disk-limits]（虚拟机磁盘限制）。
-
-为获得最佳性能，请创建单独的存储帐户来存储诊断日志。标准的本地冗余存储 (LRS) 帐户足以存储诊断日志。
+添加一个或多个数据磁盘。在创建新 VHD 时，它未设置格式。登录到 VM 对磁盘进行格式化。如果你有大量数据磁盘，请注意存储帐户的总 I/O 限制。有关详细信息，请参阅 [virtual machine disk limits][vm-disk-limits]（虚拟机磁盘限制）。
 
 如果可能，请将应用程序安装在数据磁盘上，而不是 OS 磁盘上。但是，某些旧版应用程序可能需要将组件安装在 C: 驱动器上。在这种情况下，你可以使用 PowerShell [调整 OS 磁盘的大小][resize-os-disk]。
+
+为获得最佳性能，请创建单独的存储帐户来存储诊断日志。标准的本地冗余存储 \(LRS\) 帐户足以存储诊断日志。
 
 ### 网络建议
 
 公共 IP 地址可以是动态的或静态的。默认是动态的。
 
 * 如果需要不会更改的固定 IP 地址（例如，如果需要在 DNS 中创建 A 记录，或者需要将 IP 地址添加到安全列表），请保留[静态 IP 地址][static-ip]。
-* 你还可以为 IP 地址创建完全限定域名 (FQDN)。然后，可以在 DNS 中注册指向 FQDN 的 [CNAME 记录][cname-record]。有关详细信息，请参阅 [create a fully qualified domain name in the Azure portal][fqdn]（在 Azure 门户中创建完全限定的域名）。
+* 你还可以为 IP 地址创建完全限定域名 \(FQDN\)。然后，可以在 DNS 中注册指向 FQDN 的 [CNAME 记录][cname-record]。有关详细信息，请参阅[在 Azure 门户预览中创建完全限定域名][fqdn]。
 
 所有 NSG 都包含一组[默认规则][nsg-default-rules]，其中包括阻止所有入站 Internet 流量的规则。无法删除默认规则，但其他规则可以覆盖它们。若要启用 Internet 流量，请创建允许特定端口（例如，将端口 80 用于 HTTP）的入站流量的规则。
 
@@ -95,13 +95,13 @@ VHD 存储在 [Azure 存储空间][azure-storage]中，Azure 存储空间将进�
 
     azure vm enable-diag <resource-group> <vm-name>
 
-**停止 VM。** Azure 对“已停止”和“已解除分配”状态进行了区分。当 VM 状态为“已停止”时，将向你收费。已解除分配 VM 时，不会对你收费。
+**停止 VM。** Azure 对“已停止”和“已解除分配”状态进行了区分。VM 状态为“已停止”时，将计费，但 VM 为“已解除分配”状态时，则不计费。
 
 使用以下 CLI 命令可解除分配 VM：
 
     azure vm deallocate <resource-group> <vm-name>
 
-Azure 门户中的“停止”按钮也会解除分配 VM。但是，如果在已登录时通过 OS 关闭，VM 将停止，但*不*会解除分配，因此仍将向你收费。
+在 Azure 门户预览中，“停止”按钮将解除分配 VM。但是，如果在已登录时通过 OS 关闭，VM 将停止，但*不*会解除分配，因此仍将向你收费。
 
 **删除 VM。** 如果你删除 VM，则不会删除 VHD。这意味着你可以安全地删除 VM，而不会丢失数据。但是，仍将向你收取存储费用。若要删除 VHD，请从 [Blob 存储][blob-storage]中删除相应文件。
 
@@ -109,16 +109,13 @@ Azure 门户中的“停止”按钮也会解除分配 VM。但是，如果在�
 
 ## 安全注意事项
 
-使用 [Azure 安全中心][security-center]，可获得 Azure 资源的安全状态的核心概况。安全中心监视潜在的安全问题，如系统更新、反恶意软件，并全面描述了你的部署的安全运行状况。
-
-* 安全中心针对每个 Azure 订阅进行配置。
-* 启用数据收集后，安全中心将自动扫描该订阅下创建的所有 VM。
+使用 [Azure 安全中心][security-center]，可获得 Azure 资源的安全状态的核心概况。安全中心监视潜在的安全问题，并全面描述了你的部署的安全运行状况。安全中心针对每个 Azure 订阅进行配置。
 
 **修补程序管理。** 如果启用，安全中心将检查是否缺少安全更新和关键更新。使用 VM 上的[组策略设置][group-policy]可启用自动系统更新。
 
-**反恶意软件。** 如果启用，安全中心将检查是否已安装反恶意软件。还可以使用安全中心从 Azure 门户内安装反恶意软件。
+**反恶意软件。** 如果启用，安全中心将检查是否已安装反恶意软件。还可使用安全中心从 Azure 门户预览内安装反恶意软件。
 
-使用[基于角色的访问控制][rbac] (RBAC) 来控制对你部署的 Azure 资源的访问权限。RBAC 允许你将授权角色分配给开发运营团队的成员。例如，“读者”角色可以查看 Azure 资源，但不能创建、管理或删除这些资源。某些角色特定于特定的 Azure 资源类型。例如，“虚拟机参与者”角色可以执行重启或解除分配 VM、重置管理员密码、创建新的 VM 等操作。可能对此参考体系结构有用的其他[内置 RBAC 角色][rbac-roles]包括 [DevTest Lab 用户][rbac-devtest]和[网络参与者][rbac-network]。可将用户分配给多个角色，并且可以创建自定义角色以实现更细化的权限。
+**操作。** 使用[基于角色的访问控制][rbac] \(RBAC\) 来控制对你部署的 Azure 资源的访问权限。RBAC 允许你将授权角色分配给开发运营团队的成员。例如，“读者”角色可以查看 Azure 资源，但不能创建、管理或删除这些资源。某些角色特定于特定的 Azure 资源类型。例如，“虚拟机参与者”角色可以执行重启或解除分配 VM、重置管理员密码、创建新的 VM 等操作。可能对此参考体系结构有用的其他[内置 RBAC 角色][rbac-roles]包括 [DevTest Lab 用户][rbac-devtest]和[网络参与者][rbac-network]。可将用户分配给多个角色，并且可以创建自定义角色以实现更细化的权限。
 
 > [AZURE.NOTE]
 RBAC 不限制已登录到 VM 的用户可以执行的操作。这些权限由来宾 OS 上的帐户类型决定。
@@ -133,13 +130,10 @@ RBAC 不限制已登录到 VM 的用户可以执行的操作。这些权限由�
 
 ## <a name="solution-deployment"></a> 解决方案部署
 
-提供有实现这些最佳做法的参考体系结构的[部署][github-folder]。此参考体系结构包括虚拟网络 (VNet)、网络安全组 (NSG) 和单个虚拟机 (VM)。
+[GitHub][github-folder] 中提供了此参考体系结构的部署。它包括 VNet、NSG 和单个 VM。若要部署体系结构，请遵循以下步骤：
 
-可通过多种方法部署此参考体系结构。最简单方法是按照以下步骤操作：
-
-1. 右键单击下面的按钮，然后选择“在新选项卡中打开链接”或“在新窗口中打开链接”。  
-    [![部署到 Azure](./media/guidance-compute-single-vm-linux/deploybutton.png)](https://portal.azure.cn/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fmspnp%2Freference-architectures%2Fmaster%2Fguidance-compute-single-vm%2Fazuredeploy.json)
-2. 链接在 Azure 门户中打开后，必须输入某些设置的值：
+1. 右键单击下面的按钮，然后选择“在新选项卡中打开链接”或“在新窗口中打开链接”。[![部署到 Azure](./media/guidance-compute-single-vm-windows/deploybutton.png)](https://portal.azure.cn/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fmspnp%2Freference-architectures%2Fmaster%2Fguidance-compute-single-vm%2Fazuredeploy.json)
+2. 链接在 Azure 门户预览中打开后，必须输入某些设置的值：
    
     * 参数文件中已定义了“资源组”名称，因此选择“新建”并在文本框中输入 `ra-single-vm-rg`。
     * 从“位置”下拉框中选择区域。
@@ -148,9 +142,9 @@ RBAC 不限制已登录到 VM 的用户可以执行的操作。这些权限由�
     * 查看条款和条件，然后单击“我同意上述条款和条件”复选框。
     * 单击“购买”按钮。
 3. 等待部署完成。
-4. 参数文件包括硬编码管理员用户名和密码，强烈建议你立即更改它们。在 Azure 门户中单击名为 `ra-single-vm0 ` 的 VM。然后，单击“支持 + 疑难解答”边栏选项卡中的“重置密码”。在“模式”下拉框中选择“重置密码”，然后选择新的“用户名”和“密码”。单击“更新”按钮来持久保存新的用户名和密码。
+4. 参数文件包括硬编码管理员用户名和密码，强烈建议你立即更改它们。在 Azure 门户预览中，单击名为 `ra-single-vm0 ` 的 VM。然后，单击“支持 + 疑难解答”边栏选项卡中的“重置密码”。在“模式”下拉框中选择“重置密码”，然后选择新的“用户名”和“密码”。单击“更新”按钮来持久保存新的用户名和密码。
 
-有关部署此参考体系结构的其他方式的信息，请参阅 [guidance-single-vm][github-folder]] Github 文件夹中的自述文件。
+有关部署此参考体系结构的其他方式的信息，请参阅 [guidance-single-vm][github-folder] Github 文件夹中的自述文件。
 
 ## 自定义部署
 如果需要更改部署以满足你的需求，请按照 [readme][github-folder] 中的说明操作。
@@ -205,4 +199,4 @@ RBAC 不限制已登录到 VM 的用户可以执行的操作。这些权限由�
 [readme]: https://github.com/mspnp/reference-architectures/blob/master/guidance-compute-single-vm
 [blocks]: https://github.com/mspnp/template-building-blocks
 
-<!---HONumber=Mooncake_1212_2016-->
+<!---HONumber=Mooncake_0109_2017-->

@@ -1,22 +1,20 @@
-<properties 
-   pageTitle="配置负载均衡器的 TCP 空闲超时 | Azure"
-   description="配置负载均衡器的 TCP 空闲超时"
-   services="load-balancer"
-   documentationCenter="na"
-   authors="joaoma"
-   manager="carmonm"
-   editor="tysonn" />  
-
-<tags 
-   ms.service="load-balancer"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
-   ms.date="10/24/2016"
-   wacn.date="12/05/2016"
-   ms.author="sewhee" />
-
+<properties
+    pageTitle="配置负载均衡器的 TCP 空闲超时 | Azure"
+    description="配置负载均衡器的 TCP 空闲超时"
+    services="load-balancer"
+    documentationcenter="na"
+    author="kumudd"
+    manager="timlt" />
+<tags
+    ms.assetid="4625c6a8-5725-47ce-81db-4fa3bd055891"
+    ms.service="load-balancer"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.tgt_pltfrm="na"
+    ms.workload="infrastructure-services"
+    ms.date="10/24/2016"
+    wacn.date="01/13/2017"
+    ms.author="kumud" />  
 
 
 # 为 Azure Load Balancer 配置 TCP 空闲超时设置
@@ -38,43 +36,41 @@ TCP 保持连接状态非常适用于不受电池寿命限制的情况。不建�
 
 ## 将实例级公共 IP 的 TCP 超时值配置为 15 分钟
 
+    Set-AzurePublicIP -PublicIPName webip -VM MyVM -IdleTimeoutInMinutes 15
 
-	Set-AzurePublicIP -PublicIPName webip -VM MyVM -IdleTimeoutInMinutes 15
-
-IdleTimeoutInMinutes 为可选。在未设置的情况下，默认超时为 4 分钟。
-
+`IdleTimeoutInMinutes` 是可选项。如果未设置，默认超时为 4 分钟。可接受的超时范围为 4 到 30 分钟。
 
 ## 在虚拟机上创建 Azure 终结点时设置空闲超时
 
 若要更改终结点的超时设置，请执行以下命令：
 
-	Get-AzureVM -ServiceName "mySvc" -Name "MyVM1" | Add-AzureEndpoint -Name "HttpIn" -Protocol "tcp" -PublicPort 80 -LocalPort 8080 -IdleTimeoutInMinutes 15| Update-AzureVM
- 
+    Get-AzureVM -ServiceName "mySvc" -Name "MyVM1" | Add-AzureEndpoint -Name "HttpIn" -Protocol "tcp" -PublicPort 80 -LocalPort 8080 -IdleTimeoutInMinutes 15| Update-AzureVM
+
 若要检索空闲超时配置，请执行以下命令：
 
-	PS C:\> Get-AzureVM –ServiceName “MyService” –Name “MyVM” | Get-AzureEndpoint
-	VERBOSE: 6:43:50 PM - Completed Operation: Get Deployment
-	LBSetName : MyLoadBalancedSet
-	LocalPort : 80
-	Name : HTTP
-	Port : 80
-	Protocol : tcp
-	Vip : 65.52.xxx.xxx
-	ProbePath :
-	ProbePort : 80
-	ProbeProtocol : tcp
-	ProbeIntervalInSeconds : 15
-	ProbeTimeoutInSeconds : 31
-	EnableDirectServerReturn : False
-	Acl : {}
-	InternalLoadBalancerName :
-	IdleTimeoutInMinutes : 15
- 
+    PS C:\> Get-AzureVM -ServiceName "MyService" -Name "MyVM" | Get-AzureEndpoint
+    VERBOSE: 6:43:50 PM - Completed Operation: Get Deployment
+    LBSetName : MyLoadBalancedSet
+    LocalPort : 80
+    Name : HTTP
+    Port : 80
+    Protocol : tcp
+    Vip : 65.52.xxx.xxx
+    ProbePath :
+    ProbePort : 80
+    ProbeProtocol : tcp
+    ProbeIntervalInSeconds : 15
+    ProbeTimeoutInSeconds : 31
+    EnableDirectServerReturn : False
+    Acl : {}
+    InternalLoadBalancerName :
+    IdleTimeoutInMinutes : 15
+
 ## 在负载均衡的终结点集上设置 TCP 超时
 
 如果终结点是负载均衡的终结点集的一部分，则必须在负载均衡的终结点集上设置 TCP 超时。例如：
 
-	Set-AzureLoadBalancedEndpoint -ServiceName "MyService" -LBSetName "LBSet1" -Protocol tcp -LocalPort 80 -ProbeProtocolTCP -ProbePort 8080 -IdleTimeoutInMinutes 15
+    Set-AzureLoadBalancedEndpoint -ServiceName "MyService" -LBSetName "LBSet1" -Protocol tcp -LocalPort 80 -ProbeProtocolTCP -ProbePort 8080 -IdleTimeoutInMinutes 15
 
 ## 更改云服务的超时设置
 
@@ -82,24 +78,24 @@ IdleTimeoutInMinutes 为可选。在未设置的情况下，默认超时为 4 �
 
 终结点设置的 .csdef 更改如下：
 
-	<WorkerRole name="worker-role-name" vmsize="worker-role-size" enableNativeCodeExecution="[true|false]">
-	  <Endpoints>
-    <InputEndpoint name="input-endpoint-name" protocol="[http|https|tcp|udp]" localPort="local-port-number" port="port-number" certificate="certificate-name" loadBalancerProbe="load-balancer-probe-name" idleTimeoutInMinutes="tcp-timeout" />
-	  </Endpoints>
-	</WorkerRole>
+    <WorkerRole name="worker-role-name" vmsize="worker-role-size" enableNativeCodeExecution="[true|false]">
+        <Endpoints>
+        <InputEndpoint name="input-endpoint-name" protocol="[http|https|tcp|udp]" localPort="local-port-number" port="port-number" certificate="certificate-name" loadBalancerProbe="load-balancer-probe-name" idleTimeoutInMinutes="tcp-timeout" />
+        </Endpoints>
+    </WorkerRole>
 
 进行公共 IP 的超时设置时，.cscfg 更改如下：
 
-	<NetworkConfiguration>
- 	 <VirtualNetworkSite name="VNet"/>
- 	 <AddressAssignments>
-    <InstanceAddress roleName="VMRolePersisted">
-      <PublicIPs>
-        <PublicIP name="public-ip-name" idleTimeoutInMinutes="timeout-in-minutes"/>
-      </PublicIPs>
-    </InstanceAddress>
- 	 </AddressAssignments>
-	</NetworkConfiguration>
+    <NetworkConfiguration>
+        <VirtualNetworkSite name="VNet"/>
+        <AddressAssignments>
+        <InstanceAddress roleName="VMRolePersisted">
+        <PublicIPs>
+            <PublicIP name="public-ip-name" idleTimeoutInMinutes="timeout-in-minutes"/>
+        </PublicIPs>
+        </InstanceAddress>
+        </AddressAssignments>
+    </NetworkConfiguration>
 
 ## REST API 示例
 
@@ -107,39 +103,38 @@ IdleTimeoutInMinutes 为可选。在未设置的情况下，默认超时为 4 �
 
 ### 请求
 
-	POST https://management.core.chinacloudapi.cn/<subscription-id>/services/hostedservices/<cloudservice-name>/deployments/<deployment-name>
+    POST https://management.core.chinacloudapi.cn/<subscription-id>/services/hostedservices/<cloudservice-name>/deployments/<deployment-name>
 
 ### 响应
 
-
-	<LoadBalancedEndpointList xmlns="http://schemas.microsoft.com/windowsazure" xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
-	<InputEndpoint>
-	<LoadBalancedEndpointSetName>endpoint-set-name</LoadBalancedEndpointSetName>
-	<LocalPort>local-port-number</LocalPort>
-	<Port>external-port-number</Port>
-	<LoadBalancerProbe>
-	<Path>path-of-probe</Path>
-	<Port>port-assigned-to-probe</Port>
-	<Protocol>probe-protocol</Protocol>
-	<IntervalInSeconds>interval-of-probe</IntervalInSeconds>
-	<TimeoutInSeconds>timeout-for-probe</TimeoutInSeconds>
-	</LoadBalancerProbe>
-	<LoadBalancerName>name-of-internal-loadbalancer</LoadBalancerName>
-	<Protocol>endpoint-protocol</Protocol>
-	<IdleTimeoutInMinutes>15</IdleTimeoutInMinutes>
-	<EnableDirectServerReturn>enable-direct-server-return</EnableDirectServerReturn>
-	<EndpointACL>
-	<Rules>
-	<Rule>
-	<Order>priority-of-the-rule</Order>
-	<Action>permit-rule</Action>
-	<RemoteSubnet>subnet-of-the-rule</RemoteSubnet>
-	<Description>description-of-the-rule</Description>
-	</Rule>
-	</Rules>
-	</EndpointACL>
-	</InputEndpoint>
-	</LoadBalancedEndpointList>
+    <LoadBalancedEndpointList xmlns="http://schemas.microsoft.com/windowsazure" xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+        <InputEndpoint>
+        <LoadBalancedEndpointSetName>endpoint-set-name</LoadBalancedEndpointSetName>
+        <LocalPort>local-port-number</LocalPort>
+        <Port>external-port-number</Port>
+        <LoadBalancerProbe>
+            <Path>path-of-probe</Path>
+            <Port>port-assigned-to-probe</Port>
+            <Protocol>probe-protocol</Protocol>
+            <IntervalInSeconds>interval-of-probe</IntervalInSeconds>
+            <TimeoutInSeconds>timeout-for-probe</TimeoutInSeconds>
+        </LoadBalancerProbe>
+        <LoadBalancerName>name-of-internal-loadbalancer</LoadBalancerName>
+        <Protocol>endpoint-protocol</Protocol>
+        <IdleTimeoutInMinutes>15</IdleTimeoutInMinutes>
+        <EnableDirectServerReturn>enable-direct-server-return</EnableDirectServerReturn>
+        <EndpointACL>
+            <Rules>
+            <Rule>
+                <Order>priority-of-the-rule</Order>
+                <Action>permit-rule</Action>
+                <RemoteSubnet>subnet-of-the-rule</RemoteSubnet>
+                <Description>description-of-the-rule</Description>
+            </Rule>
+            </Rules>
+        </EndpointACL>
+        </InputEndpoint>
+    </LoadBalancedEndpointList>
 
 ## 后续步骤
 
@@ -149,4 +144,4 @@ IdleTimeoutInMinutes 为可选。在未设置的情况下，默认超时为 4 �
 
 [配置负载均衡器分发模式](/documentation/articles/load-balancer-distribution-mode/)
 
-<!---HONumber=Mooncake_1128_2016-->
+<!---HONumber=Mooncake_0109_2017-->
