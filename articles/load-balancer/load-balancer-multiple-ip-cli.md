@@ -10,7 +10,8 @@
     editor=""
     tags="azure-resource-manager" />
 <tags
-    ms.assetid="ms.service: load-balancer"
+    ms.assetid=""
+    ms.service="load-balancer"
     ms.devlang="na"
     ms.topic="article"
     ms.tgt_pltfrm="na"

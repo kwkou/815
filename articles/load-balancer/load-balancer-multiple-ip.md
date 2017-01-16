@@ -124,3 +124,4 @@
 13. 最后，必须将 DNS 资源记录配置为指向各自的负载均衡器的前端 IP 地址。
 
 <!---HONumber=Mooncake_0109_2017-->
+<!--Update_Description: update meta properties & wording update & update link references & update code-->

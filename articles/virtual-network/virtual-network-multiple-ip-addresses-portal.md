@@ -140,3 +140,4 @@
 [AZURE.INCLUDE [virtual-network-multiple-ip-addresses-os-config.md](../../includes/virtual-network-multiple-ip-addresses-os-config.md)]
 
 <!---HONumber=Mooncake_0109_2017-->
+<!--Update_Description: Move multiple ip intro, scenario, and OS Config into include files, add details to "add ip addresses to VM"-->

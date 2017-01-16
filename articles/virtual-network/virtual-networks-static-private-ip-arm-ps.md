@@ -186,3 +186,4 @@ Azure 有两个部署模型：Azure Resource Manager 和经典模型。Azure 建
 * 查阅[保留 IP REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn722420.aspx)。
 
 <!---HONumber=Mooncake_0109_2017-->
+<!--Update_Description: update meta properties & wording update & update link references & update code-->
