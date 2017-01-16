@@ -41,7 +41,7 @@
 按照以下步骤来实现本文所概述的场景：
 
 1. 按链接的文章中的步骤[安装和配置 Azure CLI](/documentation/articles/xplat-cli-install/)，并登录 Azure 帐户。
-2. [创建资源组](/documentation/articles/virtual-machines-linux-create-cli-complete/#create-resource-groups-and-choose-deployment-locations) contosofabrikam，。
+2. [创建资源组](/documentation/articles/virtual-machines-linux-create-cli-complete/#create-resource-groups-and-choose-deployment-locations) contosofabrikam。
 
         azure group create contosofabrikam chinaeast
 

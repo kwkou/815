@@ -42,7 +42,7 @@ Azure 可提供多种虚拟机大小，但建议使用 DS 和 GS 系列，因为
 
 如果要将现有工作负荷移到 Azure，最开始使用与本地服务器最接近的 VM 大小。然后测量与 CPU、内存和每秒磁盘输入/输出操作次数 \(IOPS\) 有关的实际工作负荷的性能，并根据需要调整大小。如果 VM 需要多个 NIC，请注意 NIC 的最大数量是 [VM 大小][vm-size-tables]的函数。
 
-预配 VM 和其他资源时，必须指定区域。通常应选择离内部用户或客户最近的区域。但是，并非所有 VM 大小都可在所有区域中使用。有关详细信息，请参阅 [services by region][services-by-region]（按区域列出的服务）。若要查看给定区域中的可用 VM 大小列表，请运行以下 Azure 命令行接口 \(CLI\) 命令：
+预配 VM 和其他资源时，必须指定区域。通常应选择离内部用户或客户最近的区域。但是，并非所有 VM 大小都可在所有区域中使用。若要查看给定区域中的可用 VM 大小列表，请运行以下 Azure 命令行接口 \(CLI\) 命令：
 
     azure vm sizes --location <location>
 
@@ -108,8 +108,6 @@ VHD 存储在 [Azure 存储空间][azure-storage]中，Azure 存储空间将进�
 若要防止意外删除，请使用[资源锁][resource-lock]锁定整个资源组或锁定单个资源（如 VM）。
 
 ## 安全注意事项
-
-使用 [Azure 安全中心][security-center]，可获得 Azure 资源的安全状态的核心概况。安全中心监视潜在的安全问题，并全面描述了你的部署的安全运行状况。安全中心针对每个 Azure 订阅进行配置。
 
 **修补程序管理。** 如果启用，安全中心将检查是否缺少安全更新和关键更新。使用 VM 上的[组策略设置][group-policy]可启用自动系统更新。
 
@@ -183,7 +181,6 @@ RBAC 不限制已登录到 VM 的用户可以执行的操作。这些权限由�
 [Resize virtual machines]: https://azure.microsoft.com/blog/resize-virtual-machines/
 [resource-lock]: /documentation/articles/resource-group-lock-resources/
 [resource-manager-overview]: /documentation/articles/resource-group-overview
-[security-center]: https://azure.microsoft.com/services/security-center/
 [select-vm-image]: /documentation/articles/virtual-machines-windows-cli-ps-findimage/
 [services-by-region]: https://azure.microsoft.com/regions/#services
 [static-ip]: /documentation/articles/virtual-networks-reserved-public-ip/
