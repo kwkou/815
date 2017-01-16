@@ -13,8 +13,6 @@
 
 • Linux VM -- [Azure 认可发行版中的 Linux](/documentation/articles/virtual-machines-linux-endorsed-distros/)
 
-对于 Windows 客户端映像，某些版本的 Windows 7 和 Windows 8.1 可供 MSDN Azure 权益订户及 MSDN 开发和测试即用即付订户，用于开发和测试任务。有关详细信息（包括说明和限制），请参阅 [Windows Client images for MSDN subscribers（适用于 MSDN 订户的 Windows 客户端映像）](https://azure.microsoft.com/blog/2014/05/29/windows-client-images-on-azure/)。
-
 ## 为什么要弃用地缘组？
 地缘组是一个旧概念，指的是在 Azure 中客户的云服务部署和存储帐户的地理分组。在早期的 Azure 网络设计中，它们最初用于改进 VM 到 VM 的网络性能。它们还支持仅限于使用一个区域中的一小部分硬件的虚拟网络 \(VNet\) 的初始版本。
 

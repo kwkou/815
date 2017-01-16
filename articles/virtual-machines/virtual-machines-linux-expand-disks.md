@@ -36,7 +36,7 @@
 
         azure vm deallocate --resource-group myResourceGroup --name myVM
 
-> [AZURE.NOTE]
+    > [AZURE.NOTE]
     > `azure vm stop` 不会释放计算资源。若要释放计算资源，请使用 `azure vm deallocate`。若要扩展虚拟硬盘，必须解除分配 VM。
 
 2. 使用 `azure vm set` 命令更新 OS 磁盘的大小。以下示例将名为 `myResourceGroup` 的资源组中名为 `myVM` 的 VM 更新为 `50` GB：

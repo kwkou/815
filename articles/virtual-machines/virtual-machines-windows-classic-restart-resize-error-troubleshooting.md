@@ -81,4 +81,4 @@ Azure 具有两种不同的部署模型，用于创建和处理资源：[Resourc
 如果在 Azure 中创建新的 Windows VM 时遇到问题，请参阅[排查在 Azure 中新建 Windows 虚拟机时遇到的部署问题](/documentation/articles/virtual-machines-windows-troubleshoot-deployment-new-vm/)。
 
 <!---HONumber=Mooncake_0109_2017-->
-<!--Update_Description: update meta properties & wording update->
+<!--Update_Description: update meta properties & wording update-->
