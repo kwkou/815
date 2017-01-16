@@ -5,11 +5,17 @@
 
     azure config mode arm
 
-现在，使用 `azure vmss quick-create` 命令创建规模集。以下示例在名为 `myResourceGroup` 的资源组中创建具有 5 个 VM 实例的名为 `myVMSS` 的规模集：
+现在，使用 `azure vmss quick-create` 命令创建规模集。以下示例在名为 `myResourceGroup` 的资源组中创建具有 5 个 VM 实例的 Linux 规模集 `myVMSS`：
 
     azure vmss quick-create -n myVMSS -g myResourceGroup -l chinanorth \
         -u ops -p P@ssw0rd! \
-        -C 5 -Q Canonical:UbuntuServer:14.04.3-LTS:latest
+        -C 5 -Q Canonical:UbuntuServer:16.04.0-LTS:latest
+
+以下示例创建具有相同配置的 Windows 规模集：
+
+    azure vmss quick-create -n myVMSS -g myResourceGroup -l chinanorth \
+        -u ops -p P@ssw0rd! \
+        -C 5 -Q MicrosoftWindowsServer:WindowsServer:2016-Datacenter:latest
 
 如果想要自定义位置或 image-urn，请查看命令 `azure location list` 和 `azure vm image {list-publishers|list-offers|list-skus|list|show}`。
 
@@ -53,4 +59,4 @@
     # example to connct via ssh into VM "0":
     ssh -p 50000 negat@$FQDN
 
-<!---HONumber=Mooncake_1212_2016-->
+<!---HONumber=Mooncake_0109_2017-->

@@ -413,7 +413,7 @@ Azure 资源组是逻辑部署实体，包含用于启用资源部署逻辑管�
       "location": "westeurope"
     }
 
-## 创建公共 IP 地址 (PIP)
+## <a name="create-a-public-ip-address"></a> 创建公共 IP 地址 (PIP)
 现在，需要创建分配给负载均衡器的公共 IP 地址 (PIP)。使用该地址可以通过 `azure network public-ip create` 命令从 Internet 连接到 VM。由于默认地址是动态的，因此可使用 `--domain-name-label` 选项在 **chinacloudapp.cn** 域中创建一个命名的 DNS 条目。以下示例创建名为 `myPublicIP`、DNS 名称为 `mypublicdns` 的公共 IP。由于 DNS 名称必须唯一，因此，请提供自己的唯一 DNS 名称：
 
     azure network public-ip create --resource-group myResourceGroup \
@@ -505,7 +505,7 @@ Azure 资源组是逻辑部署实体，包含用于启用资源部署逻辑管�
     "location": "westeurope"
     }
 
-## 创建负载均衡器和 IP 池
+## <a name="create-a-load-balancer-and-ip-pools"></a> 创建负载均衡器和 IP 池
 创建负载均衡器时，可以将流量分散到多个 VM。负载均衡器还可以在执行维护或承受重负载时运行多个 VM 来响应用户请求，为应用程序提供冗余。以下示例创建名为 `myLoadBalancer` 的负载均衡器：
 
     azure network lb create --resource-group myResourceGroup --location westeurope \
@@ -658,7 +658,7 @@ Azure 资源组是逻辑部署实体，包含用于启用资源部署逻辑管�
     data:    Backend address pool id         : /subscriptions/guid/resourceGroups/myResourceGroup/providers/Microsoft.Network/loadBalancers/myLoadBalancer/backendAddressPools/myBackEndPool
     info:    network lb rule create command OK
 
-## 创建负载均衡器运行状况探测
+## <a name="create-a-load-balancer-health-probe"></a> 创建负载均衡器运行状况探测
 运行状况探测定期检查受负载均衡器后面的 VM，以确保它们可以根据定义操作和响应请求。否则，将从操作中删除这些 VM，确保不会将用户定向到它们。可以针对运行状况探测定义自定义检查，以及间隔和超时值。有关运行状况探测的详细信息，请参阅 [Load Balancer probes](/documentation/articles/load-balancer-custom-probe-overview/)（负载均衡器探测）。以下示例创建名为 `myHealthProbe` 的 TCP 运行状况探测：
 
     azure network lb probe create --resource-group myResourceGroup \
@@ -681,7 +681,7 @@ Azure 资源组是逻辑部署实体，包含用于启用资源部署逻辑管�
 
 此处我们指定了 15 秒的运行状况检查间隔。在负载均衡器将该主机视为不再正常运行之前，我们最多可能会错过四个探测（1 分钟）。
 
-## 验证负载均衡器
+## <a name="verify-the-load-balancer"></a> 验证负载均衡器
 现已完成负载均衡器配置。以下是执行的步骤：
 
 1. 首先，创建了负载均衡器。
@@ -809,7 +809,7 @@ Azure 资源组是逻辑部署实体，包含用于启用资源部署逻辑管�
       ]
     }
 
-## 创建用于 Linux VM 的 NIC
+## <a name="create-an-nic-to-use-with-the-linux-vm"></a> 创建用于 Linux VM 的 NIC
 由于可以对 NIC 使用应用规则，因此能以编程方式使用 NIC。可以创建多个规则。在下面的 `azure network nic create` 命令中，要将 NIC 挂接到负载后端 IP 池，并与 NAT 规则关联以允许 SSH 流量。
 
 请将 `#####-###-###` 节替换为自己的 Azure 订阅 ID。检查所创建的资源时，订阅 ID 不会记录在 `jq` 的输出中。也可以使用 `azure account list` 查看订阅 ID。
@@ -934,7 +934,7 @@ Azure 资源组是逻辑部署实体，包含用于启用资源部署逻辑管�
     azure network nic set --resource-group myResourceGroup --name myNic2 \
       --network-security-group-name myNetworkSecurityGroup
 
-## 创建可用性集
+## <a name="create-an-availability-set"></a> 创建可用性集
 可用性集有助于将 VM 分散到容错域和升级域。让我们为 VM 创建一个可用性集。以下示例创建名为 `myAvailabilitySet` 的可用性集：
 
     azure availset create --resource-group myResourceGroup --location westeurope
