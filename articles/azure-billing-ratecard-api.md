@@ -116,20 +116,20 @@ JSON
 <p>EffectiveDate</p><p>生效日期</p> | 仪表价格或提供项条款从此日起生效。
 <p>ExcludedMeterIds</p><p>排除的仪表ID</p> | 从提供项条款中排除的仪表 ID。
 <p>IncludedQuantity</p><p>包含的数量</p> | 提供项中包含的免费资源数量。超出此数量会收费。
-<p>IsTaxIncluded</p><p>是否含税</p> | 所有价格均为税前价格，因此返回的数值始终为“假”。
+<p>IsTaxIncluded</p><p>是否含税</p> | 所有价格均为税前价格，因此返回的数值始终为“false”。
 <p>Locale</p><p>地域文化</p> | 资源信息面向的地域文化。
-<p>MeterCategory</p><p>仪表类别</p> | 仪表的类别，例如“云服务”、“联网”等。
+<p>MeterCategory</p><p>仪表类别</p> | 仪表的类别，例如“云服务”、“网络”等。
 <p>MeterId</p><p>仪表 ID</p> | 资源的唯一标识符。
 <p>MeterName</p><p>仪表名称</p> | 仪表的名称，在给定的仪表类别内。
 <p>MeterRates</p><p>仪表价格</p> | 仪表价格的键值对列表，采用“键”:“值”格式，其中键 = 仪表数量，值 = 对应的价格。
 <p>MeterRegion</p><p>仪表地区</p> |	Azure 服务的可用地区。
-<p>MeterSubCategory</p><p>仪表次级类别</p> | 仪表的次级类别，例如 “A6 云服务”、“ExpressRoute（特快路由）（IXP）”等。
-<p>MeterStatus</p><p>仪表状态</p> |	仪表 ID 是“在用”还是“降级”。
+<p>MeterSubCategory</p><p>仪表次级类别</p> | 仪表的次级类别，例如 “A6 云服务”、“ExpressRoute IXP” 等。
+<p>MeterStatus</p><p>仪表状态</p> |	仪表 ID 是“在用”还是“废弃”。
 <p>Name</p><p>名称</p> | Azure 提供项条款的名称，例如“货币信用”。
 <p>ServiceRegion</p><p>服务地区</p> | Azure 服务的可用地区。
 <p>Tags</p><p>标签</p> | <p>提供更多的仪表数据。</p><p>“第三方”表示无折扣的仪表。空白表示第一方。</p>
 <p>TieredDiscount</p><p>分级折扣</p> | 分级仪表价格的键值对列表，采用“键”:“值”格式，其中键 = 价格，值 = 对应的折扣比例。此域仅供“货币承诺”类提供项条款使用。
-<p>Unit</p><p>单位</p> | 仪表消费的计量单位，例如“小时”、“吉字节”等。
+<p>Unit</p><p>单位</p> | 仪表消费的计量单位，例如“小时”、“GB” 等。
 
 ## 响应代码
 **HTTP 状态代码** |	**错误代码** | **说明**
