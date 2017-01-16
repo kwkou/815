@@ -66,3 +66,4 @@
 如果应用程序需要始终保持对负载均衡器后面的服务器的连接，你可以详细了解[负载均衡器的空闲 TCP 超时设置](/documentation/articles/load-balancer-tcp-idle-timeout/)。该文章将有助于你了解使用 Azure Load Balancer 时的空闲连接行为。
 
 <!---HONumber=Mooncake_0109_2017-->
+<!--Update_Description: update meta properties & wording update & update link references-->

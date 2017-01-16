@@ -8,7 +8,8 @@
     editor=""
     tags="azure-resource-manager" />
 <tags
-    ms.assetid="ms.service: virtual-machines-linux"
+    ms.assetid=""
+    ms.service="virtual-machines-linux"
     ms.workload="infrastructure"
     ms.tgt_pltfrm="vm-linux"
     ms.devlang="na"

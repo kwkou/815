@@ -1116,3 +1116,4 @@ Azure 资源组是逻辑部署实体，包含用于启用资源部署逻辑管�
 现在，已准备好开始使用多个网络组件和 VM。可以使用本文介绍的核心组件，通过此示例环境构建应用程序。
 
 <!---HONumber=Mooncake_0109_2017-->
+<!--Update_Description: Rename from virtual-machines-linux-create-cli-complete.md-->

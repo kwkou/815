@@ -8,7 +8,8 @@
     editor=""
     tags="azure-resource-manager" />
 <tags
-    ms.assetid="ms.service: virtual-network"
+    ms.assetid=""
+    ms.service="virtual-network"
     ms.devlang="na"
     ms.topic="article"
     ms.tgt_pltfrm="na"
@@ -164,3 +165,4 @@
 [AZURE.INCLUDE [virtual-network-multiple-ip-addresses-os-config.md](../../includes/virtual-network-multiple-ip-addresses-os-config.md)]
 
 <!---HONumber=Mooncake_0109_2017-->
+<!--Update_Description: Move multiple ip intro, scenario, and OS Config into include files-->

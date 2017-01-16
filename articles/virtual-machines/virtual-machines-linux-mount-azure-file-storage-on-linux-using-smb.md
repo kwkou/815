@@ -7,7 +7,8 @@
     manager="timlt"
     editor="" />
 <tags
-    ms.assetid="ms.service: virtual-machines-linux"
+    ms.assetid=""
+    ms.service="virtual-machines-linux"
     ms.devlang="NA"
     ms.topic="article"
     ms.tgt_pltfrm="vm-linux"
