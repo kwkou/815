@@ -4,9 +4,8 @@
     services="documentdb"
     documentationcenter=""
     author="aliuy"
-    manager="johnmac"
-    editor="mimig" />  
-
+    manager="jhubbard"
+    editor="mimig" />
 <tags
     ms.assetid="cfdf15da-3ddc-43a1-af64-789eea5f6ddd"
     ms.service="documentdb"
@@ -14,8 +13,8 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="data-services"
-    ms.date="11/21/2016"
-    wacn.date="12/20/2016"
+    ms.date="12/13/2016"
+    wacn.date="01/16/2017"
     ms.author="andrl" />  
 
 
@@ -44,7 +43,7 @@ DoQmentDB 是一个以 Node.js Promise 为基础的客户端，可在 DocumentDB
 
 在 [Github](https://github.com/a8m/doqmentdb) 和 [npm](https://www.npmjs.com/package/doqmentdb) 上了解相关信息。
 
-### DocumentDB 的 Swagger REST API
+### DocumentDB Swagger REST API
 *作者：Howard Edidin*
 
 可以轻松部署为 API 应用的 DocumentDB REST API Swagger 文件。
@@ -65,29 +64,29 @@ fluent-plugin-documentdb 是用于输出到 Azure DocumentDB 的 Fluentd 插件�
 
 **社区贴文：**
 
-- [**A Journey to Social**](https://medium.com/@Ealsur/a-journey-to-social-c47636bf25c9#.an669sx41)（社交之旅）- *作者：Matías Quaranta*
-- [**Azure DocumentDB protocol support for MongoDB in Preview, my test with Sitecore**](https://alwaysupalwayson.blogspot.ca/2016/05/azure-documentdb-protocol-support-for.html)（Azure DocumentDB 的 MongoDB 协议支持预览版（使用 Sitecore 进行测试））- *作者：Mathieu Benoit*
-- [**Going Social with DocumentDB**](https://blogs.msdn.microsoft.com/mvpawardprogram/2016/03/15/going-social-with-documentdb/)（使用 DocumentDB 展开社交）- *作者：Matías Quaranta*
-- [**UWP, Azure App Services, and DocumentDB Soup: A photo-sharing app**](https://blogs.windows.com/buildingapps/2016/03/17/uwp-azure-app-services-and-documentdb-soup-a-photo-sharing-app/)（UWP、Azure App Service 和 DocumentDB Soup：一个照片分享应用）- *作者：Eric Langland*
-- [**Notifications for new or changed DocumentDB resources using Logic Apps**](/documentation/articles/documentdb-change-notification/)（使用逻辑应用的新的或更改后的 DocumentDB 资源通知）- *作者：Howard Edidin*
-- [**Collecting logs in to Azure DocumentDB using fluent-plugin-documentdb**](http://unofficialism.info/posts/collecting-logs-into-azure-documentdb-using-fluent-plugin-documentdb/)（使用 fluent-plugin-documentdb 将日志收集到 Azure DocumentDB）- *作者：Yoichi Kawasaki*
-- [**DocumentDB revisited Part 1/2 - The theory**](https://peterintheazuresky.wordpress.com/2016/02/19/documentdb-revisited-part-12-the-theory/)（重新访问的 DocumentDB 第 1 部分（共 2 部分）- 理论）- *作者：Peter Mannerhult*
-- [**What to love and hate about Azure’s DocumentDB**](http://blog.falafel.com/4-what-to-love-and-hate-about-azures-documentdb/)（令人又爱又恨的 Azure 的 DocumentDB）- *作者：George Saadeh*
-- [**Azure DocumentDB Server-Side Scripting**](https://www.simple-talk.com/cloud/cloud-data/azure-documentdb-server-side-scripting/)（Azure DocumentDB 服务器端脚本）- *作者：Robert Sheldon*
+- [**社交之旅**](https://medium.com/@Ealsur/a-journey-to-social-c47636bf25c9#.an669sx41) - *作者：Matías Quaranta*
+- [**预览版中 MongoDB 的 Azure DocumentDB 协议支持（使用 Sitecore 进行测试）**](https://alwaysupalwayson.blogspot.ca/2016/05/azure-documentdb-protocol-support-for.html)- *作者：Mathieu Benoit*
+- [**使用 DocumentDB 展开社交**](https://blogs.msdn.microsoft.com/mvpawardprogram/2016/03/15/going-social-with-documentdb/) - *作者：Matías Quaranta*
+- [**UWP、Azure 应用服务和 DocumentDB Soup：一个照片分享应用**](https://blogs.windows.com/buildingapps/2016/03/17/uwp-azure-app-services-and-documentdb-soup-a-photo-sharing-app/) - *作者：Eric Langland*
+- [**使用逻辑应用的新的或更改后的 DocumentDB 资源通知**](/documentation/articles/documentdb-change-notification/) - *作者：Howard Edidin*
+- [**使用 fluent-plugin-documentdb 将日志收集到 Azure DocumentDB**](http://unofficialism.info/posts/collecting-logs-into-azure-documentdb-using-fluent-plugin-documentdb/) - *作者：Yoichi Kawasaki*
+- [**重新访问的 DocumentDB 第 1 部分（共 2 部分）- 理论**](https://peterintheazuresky.wordpress.com/2016/02/19/documentdb-revisited-part-12-the-theory/) - *作者：Peter Mannerhult*
+- [**令人又爱又恨的 Azure 的 DocumentDB**](http://blog.falafel.com/4-what-to-love-and-hate-about-azures-documentdb/) - *作者：George Saadeh*
+- [**Azure DocumentDB 服务器端脚本**](https://www.simple-talk.com/cloud/cloud-data/azure-documentdb-server-side-scripting/) - *作者：Robert Sheldon*
 
-- **Azure DocumentDB in production!** - *作者：Alexandre Walsh 和 Marc-Olivier Duval*
-- [**Azure Search Indexers - DocumentDB Queries (Spanish)**](http://www.ealsur.com.ar/wp/index.php/2015/11/19/azure-search-indexers-documentdb-queries/)（Azure 搜索索引器 - DocumentDB 查询）（西班牙语）- *作者：Matthias Quaranta*
-- [**Azure DocumentDB SQL query basics (Japanese)**](http://beachside.hatenablog.com/entry/2015/12/06/000045)（Azure DocumentDB SQL 查询基础知识）（日语）- *作者 Atsushi Yokohama*
-- [**Data Points - Aurelia Meets DocumentDB: A Matchmaker’s Journey**](https://msdn.microsoft.com/magazine/mt620011.aspx)（数据点 - Aurelia 遇见 DocumentDB：匹配生成器之旅）- *作者：Julie Lerman*
-- [**Infrastructure as Code and Continuous Deployment of a Node.js + Azure DocumentDB Solution**](http://www.talmeida.net/blog/2015/10/26/infrastructure-as-code-and-continuous-deployment-of-a-nodejs-azure-documentdb-solution)（基础结构即代码和 Node.js + Azure DocumentDB 解决方案的连续部署）- *作者：Thiago Almedia*
-- [**Why DocumentDb Makes Good Business Sense for Some Projects**](http://www.iquestllc.com/blogs/read/405/why-documentdb-makes-good-business-sense-for-some-projects)（为什么 DocumentDB 对于某些项目具有重要商业意义）- *作者：Samuel Uresin*
-- [**Azure DocumentDB development moving forward - development of the Client class (1 of 2) (Japanese)**](http://beachside.hatenablog.com/entry/2015/10/01/202734)（Azure DocumentDB 开发向前推进 - 开发客户端类）(1/2)（日语）- *作者：Atsushi Yokohama*
-- [**Things you need to know when using Azure DocumentDB**](http://beachside.hatenablog.com/entry/2015/10/01/202734)（使用 Azure DocumentDB 时需要了解的内容）（日语）- *作者：Atsushi Yokohama*
-- [**Dealing with RequestRateTooLarge errors in Azure DocumentDB and testing performance**](http://blogs.msdn.com/b/bigdatasupport/archive/2015/09/02/dealing-with-requestratetoolarge-errors-in-azure-documentdb-and-testing-documentdb-performance.aspx)（在 Azure DocumentDB 中处理 RequestRateTooLarge 错误并测试性能）- *作者：Azim Uddin*
-- [**Data Points - An Overview of Azure DocumentDB**](https://msdn.microsoft.com/magazine/mt147238.aspx)（数据点 - Azure DocumentDB 概述）- *作者：Julie Lerman*
-- [**Using DocumentDB With F#**](https://jamessdixon.wordpress.com/2014/12/30/using-documentdb-with-f/)（配合 F# 使用 DocumentDB）- *作者：Jamie Dixon*
-- [**Analysing Application Logs with DocumentDB**](http://vincentlauzon.com/2015/09/06/analysing-application-logs-with-documentdb/)（使用 DocumentDB 分析应用程序日志）- *作者：Vincent-Philippe Lauzon*
-- [**Azure DocumentDB - Point in time Backups**](http://softwarejuancarlos.com/2015/09/06/azure-documentdb-point-in-time-backups/)（Azure DocumentDB - 时间点备份）- *作者：Juan Carlos Sanchez*
+- **生产环境中的 Azure DocumentDB！**- *作者：Alexandre Walsh 和 Marc-Olivier Duval*
+- [**Azure 搜索索引器 - DocumentDB 查询（西班牙语）**](http://www.ealsur.com.ar/wp/index.php/2015/11/19/azure-search-indexers-documentdb-queries/)- *作者：Matthias Quaranta*
+- [**Azure DocumentDB SQL 查询基础知识（日语）**](http://beachside.hatenablog.com/entry/2015/12/06/000045)- *作者：Atsushi Yokohama*
+- [**数据点 - Aurelia 遇见 DocumentDB：匹配生成器之旅**](https://msdn.microsoft.com/magazine/mt620011.aspx) - *作者：Julie Lerman*
+- [**基础结构即代码和 Node.js + Azure DocumentDB 解决方案的连续部署**](http://www.talmeida.net/blog/2015/10/26/infrastructure-as-code-and-continuous-deployment-of-a-nodejs-azure-documentdb-solution) - *作者：Thiago Almedia*
+- [**为什么 DocumentDB 对于某些项目具有重要商业意义**](http://www.iquestllc.com/blogs/read/405/why-documentdb-makes-good-business-sense-for-some-projects) - *作者：Samuel Uresin*
+- [**Azure DocumentDB 开发向前推进 - 开发客户端类）\(1/2\)（日语）**](http://beachside.hatenablog.com/entry/2015/10/01/202734)- *作者：Atsushi Yokohama*
+- [**使用 Azure DocumentDB 时需要了解的内容）（日语）**](http://beachside.hatenablog.com/entry/2015/10/01/202734)- *作者：Atsushi Yokohama*
+- [**在 Azure DocumentDB 中处理 RequestRateTooLarge 错误并测试性能**](http://blogs.msdn.com/b/bigdatasupport/archive/2015/09/02/dealing-with-requestratetoolarge-errors-in-azure-documentdb-and-testing-documentdb-performance.aspx) - *作者：Azim Uddin*
+- [**数据点 - Azure DocumentDB 概述**](https://msdn.microsoft.com/magazine/mt147238.aspx) - *作者：Julie Lerman*
+- [**配合 F\# 使用 DocumentDB**](https://jamessdixon.wordpress.com/2014/12/30/using-documentdb-with-f/) - *作者：Jamie Dixon*
+- [**使用 DocumentDB 分析应用程序日志**](http://vincentlauzon.com/2015/09/06/analysing-application-logs-with-documentdb/) - *作者：Vincent-Philippe Lauzon*
+- [**Azure DocumentDB - 时间点备份**](http://softwarejuancarlos.com/2015/09/06/azure-documentdb-point-in-time-backups/) - *作者：Juan Carlos Sanchez*
 
 *有想要分享的博客文章、代码示例或案例研究吗？ [请告诉我们](mailto:askdocdb@microsoft.com)！*
 
@@ -96,7 +95,7 @@ fluent-plugin-documentdb 是用于输出到 Azure DocumentDB 的 Fluentd 插件�
 ### 在线课程
 | 学习合作伙伴 | 说明 |
 | --- | --- |
-| [![Microsoft 虚拟大学](./media/documentdb-community/mva.png)](https://mva.microsoft.com/training-courses/deploying-web-apps-to-azure-app-service-16629) |[**Microsoft Virtual Academy**](https://mva.microsoft.com/en-US/training-courses/deploying-web-apps-to-azure-app-service-16629) 向你提供培训，这些培训来自那些帮助构建 Azure DocumentDB 的人士。 |
+| [![Microsoft 虚拟大学](./media/documentdb-community/mva.png)](https://mva.microsoft.com/training-courses/deploying-web-apps-to-azure-app-service-16629) |[**Microsoft Virtual Academy**](https://mva.microsoft.com/training-courses/deploying-web-apps-to-azure-app-service-16629) 向你提供培训，这些培训来自那些帮助构建 Azure DocumentDB 的人士。 |
 | [![Pluralsight](./media/documentdb-community/pluralsight.png)](http://www.pluralsight.com/courses/azure-documentdb-introduction) |[**Pluralsight**](http://www.pluralsight.com/courses/azure-documentdb-introduction) 是提供 Azure 培训的重要 Microsoft 合作伙伴。如果你是一名 MSDN 订户，请使用你访问 Azure 培训的权益。 |
 | [![OpsGility](./media/documentdb-community/opsgility.png)](https://www.opsgility.com/courses/player/introduction_to_azure_documentdb) |[**OpsGility**](https://www.opsgility.com/courses/player/introduction_to_azure_documentdb) 提供有关 Azure 的深层次技术培训。在现场或通过远程教室获得由业内认可的培训师指导的培训。 |
 
@@ -134,4 +133,4 @@ DocumentDB 奇才是社区领导者，他们是帮助其他人充分利用他们
 
 想要成为 DocumentDB 奇才？ 由于是否能成为 DocumentDB 奇才并没有任何评判基准，因此我们会针对部分条件来评估，包括被提名人对在线论坛（例如 StackOverflow 和 MSDN；Wiki 和在线内容；会议和用户组；播客；网站；博客和社交媒体；以及文章与书籍）的贡献所产生的影响。如果想提名自己或其他人，[请向我们发送电子邮件](mailto:askdocdb@microsoft.com)。
 
-<!---HONumber=Mooncake_1212_2016-->
+<!---HONumber=Mooncake_0109_2017-->

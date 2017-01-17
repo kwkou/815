@@ -5,8 +5,7 @@
     documentationcenter=""
     author="kiratp"
     manager="jhubbard"
-    editor="" />  
-
+    editor="" />
 <tags
     ms.assetid="d4579378-0b3a-44a5-9f5b-630f1fa4c66d"
     ms.service="documentdb"
@@ -14,14 +13,16 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="na"
-    ms.date="10/25/2016"
-    wacn.date="12/20/2016"
+    ms.date="12/09/2016"
+    wacn.date="01/16/2017"
     ms.author="kipandya" />  
 
 
 # 使用多区域 DocumentDB 帐户进行开发
-
-> [AZURE.NOTE] DocumentDB 数据库全局分发功能已正式推出，所有新建的 DocumentDB 帐户将自动启用该功能。我们正在努力为所有现有帐户启用全局分发，但在此之前，如果你要为你的帐户启用全局分发，请[与支持部门联系](https://portal.azure.cn/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade)，我们将会帮助你启用。
+> [AZURE.NOTE]
+DocumentDB 数据库全局分发功能已正式推出，所有新建的 DocumentDB 帐户将自动启用该功能。我们正在努力为所有现有帐户启用全局分发，但在此之前，如果你要为你的帐户启用全局分发，请[与支持部门联系](https://portal.azure.cn/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade)，我们将会帮助你启用。
+>
+>
 
 为了利用[全局分发](/documentation/articles/documentdb-distribute-data-globally/)，客户端应用程序可以指定要用于执行文档操作的区域优先顺序列表。可通过设置连接策略来实现此目的。SDK 将会根据 DocumentDB 帐户配置、当前区域可用性和指定的优先顺序列表，选择最佳的终结点来执行写入和读取操作。
 
@@ -44,16 +45,21 @@ SDK 会自动将所有写入请求发送到当前写入区域。
 
 当前写入终结点和读取终结点分别在 DocumentClient.WriteEndpoint 和 DocumentClient.ReadEndpoint 中提供。
 
-> [AZURE.NOTE] 不应将终结点 URL 视为长期不变的常量。服务随时会更新这些 URL。SDK 会自动处理这种更改。
+> [AZURE.NOTE]
+不应将终结点 URL 视为长期不变的常量。服务随时会更新这些 URL。SDK 会自动处理这种更改。
+>
+>
 
     // Getting endpoints from application settings or other configuration location
     Uri accountEndPoint = new Uri(Properties.Settings.Default.GlobalDatabaseUri);
     string accountKey = Properties.Settings.Default.GlobalDatabaseKey;
+    
+    ConnectionPolicy connectionPolicy = new ConnectionPolicy();
 
-	//Setting read region selection preference 
-	connectionPolicy.PreferredLocations.Add("West US"); // first preference
-	connectionPolicy.PreferredLocations.Add("East US"); // second preference
-	connectionPolicy.PreferredLocations.Add("North Europe"); // third preference
+    //Setting read region selection preference
+    connectionPolicy.PreferredLocations.Add(LocationNames.WestUS); // first preference
+    connectionPolicy.PreferredLocations.Add(LocationNames.EastUS); // second preference
+    connectionPolicy.PreferredLocations.Add(LocationNames.NorthEurope); // third preference
 
     // initialize connection
     DocumentClient docClient = new DocumentClient(
@@ -72,7 +78,10 @@ SDK 会自动将所有写入请求发送到当前写入区域。
 
 当前写入终结点和读取终结点分别在 DocumentClient.getWriteEndpoint 和 DocumentClient.getReadEndpoint 中提供。
 
-> [AZURE.NOTE] 不应将终结点 URL 视为长期不变的常量。服务随时会更新这些 URL。SDK 会自动处理这种更改。
+> [AZURE.NOTE]
+不应将终结点 URL 视为长期不变的常量。服务随时会更新这些 URL。SDK 会自动处理这种更改。
+>
+>
 
 下面是 NodeJS/Javascript 的代码示例。Python 和 Java 将遵循相同的模式。
 	
@@ -146,4 +155,4 @@ SDK 会自动将所有写入请求发送到当前写入区域。
 
 [regions]: https://azure.microsoft.com/regions/
 
-<!---HONumber=Mooncake_1212_2016-->
+<!---HONumber=Mooncake_0109_2017-->

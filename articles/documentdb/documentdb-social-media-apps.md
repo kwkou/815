@@ -1,27 +1,25 @@
-<properties 
-	pageTitle="DocumentDB 设计模式：社交媒体应用 | Azure" 
-	description="利用 DocumentDB 的存储灵活性和其他 Azure 服务了解社交网络的设计模式。" 
-	keywords="社交媒体应用"
-	services="documentdb" 
-	authors="ealsur" 
-	manager="" 
-	editor="" 
-	documentationCenter=""/>  
-
-
-<tags 
-	ms.service="documentdb" 
-	ms.workload="data-services" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="09/27/2016" 
-	ms.author="mimig"
-	wacn.date="11/28/2016"/>  
+<properties
+    pageTitle="DocumentDB 设计模式：社交媒体应用 | Azure"
+    description="利用 DocumentDB 的存储灵活性和其他 Azure 服务了解社交网络的设计模式。"
+    keywords="社交媒体应用"
+    services="documentdb"
+    author="ealsur"
+    manager="jhubbard"
+    editor=""
+    documentationcenter="" />
+<tags
+    ms.assetid="2dbf83a7-512a-4993-bf1b-ea7d72e095d9"
+    ms.service="documentdb"
+    ms.workload="data-services"
+    ms.tgt_pltfrm="na"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.date="12/09/2016"
+    wacn.date="01/16/2017"
+    ms.author="mimig" />  
 
 
 # 使用 DocumentDB 进行社交
-
 生活在大规模互连的社会，这意味着有时候你也会成为**社交网络**中的一部分。我们使用社交网络与朋友、同事和家人保持联系，有时还会与有共同兴趣的人分享我们的激情。
 
 作为工程师或开发人员，我们可能想知道这些网络如何存储数据以及如何将这些数据相互联系起来，甚至有可能被要求自行为特定的间隙市场创建或构建新的社交网络。这时就会产生一个大问题：所有这些数据是如何存储的？
@@ -38,12 +36,11 @@
 
 请不要误会我的意思，我的一生都在与 SQL 数据库打交道，它们的确很不错，但就像每一种模式、每一次实践以及每一个软件平台一样，并非对每一种方案都适用。
 
-为什么在此方案中 SQL 不是最佳选择？ 我们来看一下单个帖子的结构，如果我想在某个网站或应用程序中显示该帖子，我必须通过 8 个表联接 (!) 执行查询而只为显示单个帖子，现在，描绘一种动态加载并显示在屏幕上的帖子流，你就会了解我要说的内容。
+为什么在此方案中 SQL 不是最佳选择？ 我们来看一下单个帖子的结构，如果我想在某个网站或应用程序中显示该帖子，我必须通过 8 个表联接 \(!\) 执行查询而只为显示单个帖子，现在，描绘一种动态加载并显示在屏幕上的帖子流，你就会了解我要说的内容。
 
 当然，我们也可以使用一个功能足够强大的超大 SQL 实例来解决数以千计的查询，其中可以使用许多这些连接来为我们提供内容，但当已经有一个更简单的解决方案存在时，我们为什么还要选择这种呢？
 
 ## NoSQL 加载
-
 有许多特殊图形数据库可以[在 Azure 上运行](http://neo4j.com/developer/guide-cloud-deployment/#_windows_azure)，但它们成本较高且需要 IaaS 服务（基础结构即服务，主要是虚拟机）和维护。本文介绍的成本更低的解决方案适用于在 Azure 的 NoSQL 数据库 [DocumentDB](/home/features/documentdb/) 上运行的大多数方案。使用 [NoSQL](https://zh.wikipedia.org/wiki/NoSQL) 方法以 JSON 格式存储数据并应用[非规范化](https://en.wikipedia.org/wiki/Denormalization)，就可以将我们以前的复杂帖子转换为单个[文档](https://en.wikipedia.org/wiki/Document-oriented_database)：
 
     {
@@ -109,35 +106,34 @@ Azure DocumentDB 可确保所有属性通过其[自动索引](/documentation/art
 
 通过使用这种相同的技术创建最终一致性环境还可以以延迟方式处理评分和点赞。
 
-至于关注者，则需要有更多的技巧来处理。DocumentDB 的文档大小限制为 512Kb，因此你可以考虑使用以下结构，以文档形式存储关注者：
+至于关注者，则需要有更多的技巧来处理。DocumentDB 具有文档大小上限，而且读取/写入大型文档会影响应用程序的可伸缩性。因此，可考虑使用以下结构，以文档形式存储关注者：
 
     {
-    	"id":"234d-sd23-rrf2-552d",
-    	"followersOf": "dse4-qwe2-ert4-aad2",
-    	"followers":[
-    		"ewr5-232d-tyrg-iuo2",
-    		"qejh-2345-sdf1-ytg5",
-    		//...
-    		"uie0-4tyg-3456-rwjh"
-    	]
+        "id":"234d-sd23-rrf2-552d",
+        "followersOf": "dse4-qwe2-ert4-aad2",
+        "followers":[
+            "ewr5-232d-tyrg-iuo2",
+            "qejh-2345-sdf1-ytg5",
+            //...
+            "uie0-4tyg-3456-rwjh"
+        ]
     }
 
-这可能适用于有数千位关注者的用户，但是，如果有一些名人添加我们的行列，此处理方法最终将达到文档大小上限。
+这对于拥有数千位关注者的用户可能有用，但如果有名人加入我们的排名，此方法会生成大型文档，并可能最终达到文档大小上限。
 
 为了解决此问题，我们可以使用一种混合方法。我们可以在用户统计信息文档中存储关注者人数：
 
     {
-    	"id":"234d-sd23-rrf2-552d",
-    	"user": "dse4-qwe2-ert4-aad2",
-    	"followers":55230,
-    	"totalPosts":452,
-    	"totalPoints":11342
+        "id":"234d-sd23-rrf2-552d",
+        "user": "dse4-qwe2-ert4-aad2",
+        "followers":55230,
+        "totalPosts":452,
+        "totalPoints":11342
     }
 
 然后使用一个[扩展](https://github.com/richorama/AzureStorageExtensions#azuregraphstore)，将实际的关注者图形存储在 Azure 存储表中，以允许进行简单的“A 关注 B”存储和检索。这样，我们就可以将确切的关注者列表的检索过程（当我们需要它时）委托给 Azure 存储表，但为了快速查找数字，我们仍继续使用 DocumentDB。
 
 ## “阶梯”模式和数据重复
-
 你可能已注意到，在引用帖子的 JSON 文档中，某个用户出现了多次。而且你猜得没错，这意味着如果应用此非规范化，则表示用户的这一信息可以显示在多个地方。
 
 为了允许更快速地查询，我们引发了数据重复。此负面影响的问题在于，如果通过一些操作，用户的数据发生更改，那么我们需要查找该用户曾经执行过的所有活动并对这些活动全部进行更新。听上去不太实用，对不对？
@@ -159,7 +155,7 @@ Azure DocumentDB 可确保所有属性通过其[自动索引](/documentation/art
         "totalPoints":100,
         "totalPosts":24
     }
-    
+
 通过查看此信息，我们可以快速检测出哪些是重要的信息，哪些不是，从而就会创建一个“阶梯”：
 
 ![阶梯模式关系图](./media/documentdb-social-media-apps/social-media-apps-ladder.png)
@@ -188,15 +184,14 @@ Azure DocumentDB 可确保所有属性通过其[自动索引](/documentation/art
         "title":"Awesome post!",
         "date":"2016-01-02",
         "createdBy":{
-        	"id":"dse4-qwe2-ert4-aad2",
-    		"username":"johndoe"
+            "id":"dse4-qwe2-ert4-aad2",
+            "username":"johndoe"
         }
     }
 
-在区块的其中一个属性受到影响的情况下进行编辑时，通过使用指向已编制索引的属性 (SELECT * FROM posts p WHERE p.createdBy.id == “edited\_user\_id”) 的查询，然后更新这些区块，可以很容易找的受影响的文档。
+在区块的其中一个属性受到影响的情况下进行编辑时，通过使用指向已编制索引的属性 \(SELECT \* FROM posts p WHERE p.createdBy.id == “edited\_user\_id”\) 的查询，然后更新这些区块，可以很容易找的受影响的文档。
 
 ## 搜索框
-
 幸运的是，用户将生成大量内容。并且我们应能够提供搜索和查找可能在其内容流中不直接显示的内容的能力，也许是由于我们未关注创建者，或者也许是因为我们只是想要尽力找到 6 个月之前我们发布的旧帖子。
 
 好在我们使用的是 Azure DocumentDB，因此，可以使用 Azure 搜索在几分钟内轻松实现搜索引擎，而无需键入一行代码（显然，搜索过程和 UI 除外）。
@@ -208,7 +203,6 @@ Azure 搜索可实现它们称之为[索引器](https://msdn.microsoft.com/zh-cn
 有关 Azure 搜索的详细信息，请访问 [Hitchhiker’s Guide to Search](https://blogs.msdn.microsoft.com/mvpawardprogram/2016/02/02/a-hitchhikers-guide-to-search/)（搜索漫游指南）。
 
 ## 基础知识
-
 存储所有此内容（每天会不断增加）后，我们可能会思考这样一个问题：我可以使用所有来自用户的此信息流做些什么？
 
 答案非常简单：将其投入使用并从中进行学习。
@@ -217,10 +211,11 @@ Azure 搜索可实现它们称之为[索引器](https://msdn.microsoft.com/zh-cn
 
 由于想要深入了解，你可能会认为自己需要更多数学科学方面的知识才能提取出简单数据库和文件之外的这些模式和信息，其实不然。
 
+[Cortana Intelligence 套件](https://www.microsoft.com/en/server-cloud/cortana-analytics-suite/overview.aspx)的一部分，是完全托管的云服务，让用户可以在简单的拖放界面中使用算法创建工作流、使用 [R](https://zh.wikipedia.org/wiki/R_(programming_language)) 对自己的算法编码，或使用部分已生成的和现有的 API（例如 [文本分析](https://gallery.cortanaanalytics.com/MachineLearningAPI/Text-Analytics-2)、[内容审查器](https://www.microsoft.com/moderator)或[建议](https://gallery.cortanaanalytics.com/MachineLearningAPI/Recommendations-2)）。
 
+另一种可行的做法是使用 [Microsoft 认知服务](https://www.microsoft.com/cognitive-services)分析用户内容；我们不仅可以更好地了解用户（通常分析他们使用[文本分析 API](https://www.microsoft.com/cognitive-services/zh-cn/text-analytics-api) 编写的内容），而且还能检测有害内容或成人内容，并使用[计算机视觉 API](https://www.microsoft.com/cognitive-services/zh-cn/computer-vision-api) 采取相应的措施。认知服务包含大量现成的解决方案，不需要拥有机器学习方面的知识就能使用这些解决方案。
 
 ## 结束语
-
 本文尝试说明一种完全在 Azure 上创建具有低成本服务社交网络，并可通过鼓励使用多层存储解决方案和称为“阶梯”的数据分布得到良好结果的替代方法。
 
 ![社交网络中各 Azure 服务之间的交互关系图](./media/documentdb-social-media-apps/social-media-apps-azure-solution.png)
@@ -228,7 +223,6 @@ Azure 搜索可实现它们称之为[索引器](https://msdn.microsoft.com/zh-cn
 事实上，对于此类方案并没有万能方法，而需结合各种卓越的服务共同创建，才能提供绝佳的体验：Azure DocumentDB 的速度和自由性，可用于提供绝佳的社交应用程序；一流搜索解决方案后的智能操作，Azure 搜索；Azure App Service 的灵活性，不仅可以托管与语言无关的应用程序，甚至还可以托管功能强大的后台处理程序；Azure 存储空间和 Azure SQL 数据库的可扩展性，可用于存储大量数据；Azure 机器学习的分析功能，可创建能够为我们的进程提供反馈，并且有助于我们向合适的用户提供合适的内容的知识和智能。
 
 ## 后续步骤
-
 阅读 [Modeling data in DocumentDB](/documentation/articles/documentdb-modeling-data/)（为 DocumentDB 中的数据建模）一文，了解有关数据建模的详细信息。如需了解 DocumentDB 其他用例信息，请参阅 [Common DocumentDB use cases](/documentation/articles/documentdb-use-cases/)（DocumentDB 的常见用例）。
 
-<!---HONumber=Mooncake_1121_2016-->
+<!---HONumber=Mooncake_0109_2017-->
