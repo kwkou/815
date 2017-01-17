@@ -5,8 +5,7 @@
     documentationcenter=""
     author="Juliako"
     manager="erikre"
-    editor="" />  
-
+    editor="" />
 <tags
     ms.assetid="fb63502e-914d-4c1f-853c-4a7831bb08e8"
     ms.service="media-services"
@@ -14,8 +13,8 @@
     ms.tgt_pltfrm="na"
     ms.devlang="ne"
     ms.topic="article"
-    ms.date="10/17/2016"
-    wacn.date="12/27/2016"
+    ms.date="12/07/2016"
+    wacn.date="01/13/2017"
     ms.author="juliako" />  
 
 
@@ -28,19 +27,19 @@
 - 一个用于广播事件的相机。
 - 一个将信号从相机转换为发送至实时流式处理服务的流的实时视频编码器。
 
-	（可选）多个实时同步编码器。对于某些需要高可用性与优质体验的重要实时事件，建议使用带时间同步功能的主动-主动冗余编码器，以实现无缝故障转移，且不会丢失数据。
-- 实时流式处理服务允许执行以下操作：
-	
-	- 使用多种实时流式处理协议（例如 RTMP 或平滑流式处理）引入实时内容
-	- （可选）将流编码为自适应比特率流
-	- 预览实时流，
-	- 记录和存储引入的内容，以便稍后进行流式处理（视频点播）
-	- 直接通过常用流式处理协议（例如 MPEG DASH、Smooth、HLS、HDS）将内容传递给客户，或传递至内容传送网络 (CDN) 以供进一步分发。
+    （可选）多个实时同步编码器。对于某些需要高可用性与优质体验的重要实时事件，建议使用带时间同步功能的主动-主动冗余编码器，以实现无缝故障转移，且不会丢失数据。
+* 实时流式处理服务允许执行以下操作：
+
+  * 使用多种实时流式处理协议（例如 RTMP 或平滑流式处理）引入实时内容
+  * （可选）将流编码为自适应比特率流
+  * 预览实时流，
+  * 记录和存储引入的内容，以便稍后进行流式处理（视频点播）
+  * 直接通过常用流式传输协议（例如 MPEG DASH、平滑流式处理、HLS）将内容传递给客户，或传递至内容交付网络 \(CDN\) 以供进一步分发。
 
 
 **Azure 媒体服务** (AMS) 提供了引入、编码、预览、存储和传送实时流式处理内容的功能。
 
-将内容传送给客户时，目标是将优质视频传递到处于不同网络条件下的各种设备。为此，可使用实时编码器将流编码为多比特率（自适应比特率）视频流。为满足不同设备的流式处理要求，使用媒体服务[动态打包](/documentation/articles/media-services-dynamic-packaging-overview/)将流动态地重新打包为不同的协议。媒体服务支持传送以下自适应比特率流式处理技术：HTTP 实时流式处理 (HLS)、平滑流式处理、MPEG DASH 和 HDS（仅适用于 Adobe PrimeTime/Access 许可证持有人）。
+将内容传送给客户时，目标是将优质视频传递到处于不同网络条件下的各种设备。为此，可使用实时编码器将流编码为多比特率（自适应比特率）视频流。为满足不同设备的流式处理要求，使用媒体服务[动态打包](/documentation/articles/media-services-dynamic-packaging-overview/)将流动态地重新打包为不同的协议。媒体服务支持传送以下自适应比特率流式处理技术：HTTP Live Streaming \(HLS\)、平滑流式处理、MPEG DASH。
 
 在 Azure 媒体服务中，**频道**、**节目**和**流式处理终结点**处理所有实时流式处理功能，包括引入、格式化、DVR、安全性、缩放性和冗余。
 
@@ -59,8 +58,7 @@
 
 - **标准** - 如果计划使用媒体服务将单比特率实时流编码为多比特率流，请选择此值。若要针对不频繁发生的事件快速地向上缩放，此方法可以节省资金。请注意，实时编码会影响计费，应记住，将实时编码通道保持为“正在运行”状态会产生费用。建议在实时流式处理事件完成之后立即停止正在运行的通道，以避免产生额外的小时费用。
 
-##通道类型的比较
-
+## 通道类型的比较
 可通过下表来了解媒体服务中支持的两种通道类型的比较情况
 
 功能|直通通道|标准通道
@@ -146,8 +144,7 @@ ArchiveWindowLength 还决定了客户端能够从当前实时位置按时间向
 
 
 
-##相关主题
-
+## 相关主题
 [Azure 媒体服务分片 MP4 实时引入规范](/documentation/articles/media-services-fmp4-live-ingest-overview/)
 
 [通过 Azure 媒体服务使用能够执行实时编码的通道](/documentation/articles/media-services-manage-live-encoder-enabled-channels/)
@@ -158,4 +155,5 @@ ArchiveWindowLength 还决定了客户端能够从当前实时位置按时间向
 
 [媒体服务概念](/documentation/articles/media-services-concepts/)
 
-<!---HONumber=Mooncake_1205_2016-->
+<!---HONumber=Mooncake_0109_2017-->
+<!--Update_Description: remove HDS related content-->

@@ -1,22 +1,21 @@
 <properties
-	pageTitle="使用 PlayReady 和/或 Widevine 动态通用加密 | Azure"
-	description="Azure 媒体服务允许传送受 Microsoft PlayReady DRM 保护的 MPEG-DASH 流、平滑流式处理流和 HTTP 实时流式处理 (HLS) 流。它还允许传送通过 Widevine DRM 加密的 DASH。本主题说明如何使用 PlayReady 和 Widevine DRM 动态加密。"
-	services="media-services"
-	documentationCenter=""
-	authors="juliako"
-	manager="erikre"
-	editor=""/>  
-
-
+    pageTitle="使用 PlayReady 和/或 Widevine 动态通用加密 | Azure"
+    description="Azure 媒体服务允许传送受 Microsoft PlayReady DRM 保护的 MPEG-DASH 流、平滑流式处理流和 HTTP 实时流式处理 (HLS) 流。它还允许你传送通过 Widevine DRM 加密的 DASH。本主题说明如何使用 PlayReady 和 Widevine DRM 动态加密。"
+    services="media-services"
+    documentationcenter=""
+    author="juliako"
+    manager="erikre"
+    editor="" />
 <tags
-	ms.service="media-services"
-	ms.workload="media"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="get-started-article" 
-	ms.date="09/27/2016"
-	wacn.date="11/21/2016"
-	ms.author="juliako"/>  
+    ms.assetid="548d1a12-e2cb-45fe-9307-4ec0320567a2"
+    ms.service="media-services"
+    ms.workload="media"
+    ms.tgt_pltfrm="na"
+    ms.devlang="na"
+    ms.topic="get-started-article"
+    ms.date="12/11/2016"
+    wacn.date="01/13/2017"
+    ms.author="juliako" />  
 
 
 
@@ -57,7 +56,7 @@ Azure 媒体服务允许传送受 [Microsoft PlayReady DRM](https://www.microsof
 1. 配置内容密钥授权策略。必须配置内容密钥授权策略，并且客户端必须遵守该策略，才能将内容密钥传送到客户端。
 
 在创建内容密钥授权策略时，需要指定以下信息：传送方法（PlayReady 或 Widevine）、限制（开放或令牌），以及用于定义如何将密钥传送到客户端的密钥传送类型的具体信息（[PlayReady](/documentation/articles/media-services-playready-license-template-overview/) 或 [Widevine](/documentation/articles/media-services-widevine-license-template-overview/) 许可证模板）。
-1. 为资产配置传送策略。传送策略配置包括：传送协议（例如 MPEG DASH、HLS、HDS、平滑流式处理或全部）、动态加密类型（例如常用加密）、PlayReady 或 Widevine 许可证获取 URL。
+1. 为资产配置传送策略。传送策略配置包括：传送协议（例如 MPEG DASH、HLS、平滑流式处理或全部）、动态加密类型（例如常用加密）、PlayReady 或 Widevine 许可证获取 URL。
 
 可将不同的策略应用到同一资产上的每个协议。例如，可以将 PlayReady 加密应用到平滑流/DASH，并将 AES 信封应用到 HLS。将阻止流式处理传送策略中未定义的任何协议（例如，添加仅将 HLS 指定为协议的单个策略）。如果你根本没有定义任何传送策略，则情况不是这样。此时，将允许所有明文形式的协议。
 1. 创建 OnDemand 定位符以获取流式处理 URL。
@@ -87,7 +86,7 @@ Azure 媒体服务允许传送受 [Microsoft PlayReady DRM](https://www.microsof
 使用动态加密时，只需创建包含一组多码率 MP4 文件或多码率平滑流源文件的资产。然后，按需流式处理服务器会确保你以选定的协议按清单和分段请求中的指定格式接收流。因此，只需以单一存储格式存储文件并为其付费，然后媒体服务服务就会基于客户端的请求构建并提供相应响应。有关详细信息，请参阅[动态打包概述](/documentation/articles/media-services-dynamic-packaging-overview/)主题。
 
 有关如何编码的说明，请参阅[如何使用 Media Encoder Standard 对资产进行编码](/documentation/articles/media-services-dotnet-encode-with-media-encoder-standard/)。
-	
+
 
 ##<a id="create_contentkey"></a>创建内容密钥并将其与编码资产相关联
 
@@ -106,9 +105,9 @@ Azure 媒体服务允许传送受 [Microsoft PlayReady DRM](https://www.microsof
 
 为资产配置传送策略。资产传送策略配置包括：
 
-- DRM 许可证获取 URL。
-- 资产传送协议（例如 MPEG DASH、HLS、HDS、平滑流式处理或全部）。
-- 动态加密类型（在本示例中为“常用加密”）。
+* DRM 许可证获取 URL。
+* 资产传送协议（例如 MPEG DASH、HLS、平滑流式处理或全部）。
+* 动态加密类型（在本示例中为“常用加密”）。
 
 有关详细信息，请参阅[配置资产传送策略](/documentation/articles/media-services-rest-configure-asset-delivery-policy/)。
 
@@ -636,4 +635,5 @@ Azure 媒体服务允许传送受 [Microsoft PlayReady DRM](https://www.microsof
 [使用 AMS 配置 Widevine 打包](http://mingfeiy.com/how-to-configure-widevine-packaging-with-azure-media-services)
 
 
-<!---HONumber=Mooncake_1114_2016-->
+<!---HONumber=Mooncake_0109_2017-->
+<!--Update_Description: remove HDS related content-->

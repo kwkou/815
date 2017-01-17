@@ -1,12 +1,11 @@
 <properties
-    pageTitle="使用 Media Encoder Standard 进行高级编码"
-    description="本主题说明如何通过自定义 Media Encoder Standard 任务预设执行高级编码。本主题说明如何使用媒体服务 .NET SDK 创建编码任务和作业。此外，还说明如何向编码作业提供自定义预设。"
+    pageTitle="通过自定义 MES 预设执行高级编码 | Azure"
+    description="本主题说明如何通过自定义 Media Encoder Standard 任务预设执行高级编码。"
     services="media-services"
     documentationcenter=""
     author="juliako"
     manager="erikre"
-    editor="" />  
-
+    editor="" />
 <tags
     ms.assetid="2a4ade25-e600-4bce-a66e-e29cf4a38369"
     ms.service="media-services"
@@ -14,241 +13,33 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="09/25/2016"
-    wacn.date="12/26/2016"
-    ms.author="juliako" />
+    ms.date="11/28/2016"
+    wacn.date="01/13/2017"
+    ms.author="juliako" />  
 
-# 使用 Media Encoder Standard 进行高级编码
+
+# 通过自定义 MES 预设执行高级编码 
+
 ## 概述
-本主题演示如何使用 Media Encoder Standard 执行高级编码任务。本主题演示[如何使用 .NET 创建编码任务和执行此任务的作业](/documentation/articles/media-services-advanced-encoding-with-mes/#encoding_with_dotnet)。此外，还说明如何向编码任务提供自定义预设。有关预设所用元素的说明，请参阅[此文档](https://msdn.microsoft.com/zh-cn/library/mt269962.aspx)。
 
-下面演示了执行以下编码任务的自定义预设：
+本主题演示如何自定义 Media Encoder Standard 预设。[通过使用自定义预设的 Media Encoder Standard 进行编码](/documentation/articles/media-services-custom-mes-presets-with-dotnet/)主题演示如何使用 .NET 创建编码任务和执行此任务的作业。自定义预设后，请将其提供给编码任务。
 
-- [生成缩略图](/documentation/articles/media-services-advanced-encoding-with-mes/#thumbnails)
-- [修剪视频（裁剪）](/documentation/articles/media-services-advanced-encoding-with-mes/#trim_video)
-- [创建覆盖层](/documentation/articles/media-services-advanced-encoding-with-mes/#overlay)
-- [在输入不包含音频时插入静音曲目](/documentation/articles/media-services-advanced-encoding-with-mes/#silent_audio)
-- [禁用自动取消隔行扫描](/documentation/articles/media-services-advanced-encoding-with-mes/#deinterlacing)
-- [仅音频预设](/documentation/articles/media-services-advanced-encoding-with-mes/#audio_only)
-- [连接两个或更多个视频文件](/documentation/articles/media-services-advanced-encoding-with-mes/#concatenate)
-- [使用媒体编码器标准版裁剪视频](/documentation/articles/media-services-advanced-encoding-with-mes/#crop)
-- [在输入不包含视频时插入视频轨迹](/documentation/articles/media-services-advanced-encoding-with-mes/#no_video)
-* [旋转视频](#rotate_video)
+本主题演示了执行以下编码任务的自定义预设：
 
-## <a id="encoding_with_dotnet"></a>使用媒体服务 .NET SDK 进行编码
-以下代码示例使用媒体服务 .NET SDK 执行下列任务：
+- [生成缩略图](#thumbnails)
+- [修剪视频（裁剪）](#trim_video)
+- [创建覆盖层](#overlay)
+- [在输入不包含音频时插入静音曲目](#silent_audio)
+- [禁用自动取消隔行扫描](#deinterlacing)
+- [仅音频预设](#audio_only)
+- [连接两个或更多个视频文件](#concatenate)
+- [使用媒体编码器标准版裁剪视频](#crop)
+- [在输入不包含视频时插入视频轨迹](#no_video)
+- [旋转视频](#rotate_video)
 
-- 创建编码作业。
-- 获取对 Media Encoder Standard 编码器的引用。
-- 加载自定义 XML 或 JSON 预设。可以在某个文件中保存 XML 或 JSON（例如 [XML](/documentation/articles/media-services-advanced-encoding-with-mes/#xml) 或 [JSON](/documentation/articles/media-services-advanced-encoding-with-mes/#json)），然后使用以下代码加载该文件。
+## 支持相对大小
 
-		// Load the XML (or JSON) from the local file.
-	    string configuration = File.ReadAllText(fileName);  
-- 将编码任务添加到作业。
-- 指定要编码的输入资产。
-- 创建包含所编码资产的输出资产。
-- 添加事件处理程序以检查作业进度。
-- 提交作业。
-	
-		using System;
-		using System.Collections.Generic;
-		using System.Configuration;
-		using System.IO;
-		using System.Linq;
-		using System.Net;
-		using System.Security.Cryptography;
-		using System.Text;
-		using System.Threading.Tasks;
-		using Microsoft.WindowsAzure.MediaServices.Client;
-		using Newtonsoft.Json.Linq;
-		using System.Threading;
-		using Microsoft.WindowsAzure.MediaServices.Client.ContentKeyAuthorization;
-		using Microsoft.WindowsAzure.MediaServices.Client.DynamicEncryption;
-		using System.Web;
-		using System.Globalization;
-		
-		namespace CustomizeMESPresests
-		{
-		    class Program
-		    {
-		        // Read values from the App.config file.
-		        private static readonly string _mediaServicesAccountName =
-		            ConfigurationManager.AppSettings["MediaServicesAccountName"];
-		        private static readonly string _mediaServicesAccountKey =
-		            ConfigurationManager.AppSettings["MediaServicesAccountKey"];
-
-						private static readonly String _defaultScope = "urn:WindowsAzureMediaServices";
-		
-		        // Field for service context.
-		        private static CloudMediaContext _context = null;
-		        private static MediaServicesCredentials _cachedCredentials = null;
-						private static Uri _apiServer = null;
-		
-		        private static readonly string _mediaFiles =
-		            Path.GetFullPath(@"../..\Media");
-		
-		        private static readonly string _singleMP4File =
-		            Path.Combine(_mediaFiles, @"BigBuckBunny.mp4");
-		
-		        static void Main(string[] args)
-		        {
-		            // Create and cache the Media Services credentials in a static class variable.
-                _cachedCredentials = new MediaServicesCredentials(
-                                _mediaServicesAccountName,
-                                _mediaServicesAccountKey,
-								_defaultScope,
-								_chinaAcsBaseAddressUrl);
-
-								// Create the API server Uri
-								_apiServer = new Uri(_chinaApiServerUrl);
-
-                // Used the chached credentials to create CloudMediaContext.
-                _context = new CloudMediaContext(_apiServer, _cachedCredentials);
-		
-		            // Get an uploaded asset.
-		            var asset = _context.Assets.FirstOrDefault();
-		
-		            // Encode and generate the output using custom presets.
-		            EncodeToAdaptiveBitrateMP4Set(asset);
-		
-		            Console.ReadLine();
-		        }
-		
-		        static public IAsset EncodeToAdaptiveBitrateMP4Set(IAsset asset)
-				{
-				    // Declare a new job.
-				    IJob job = _context.Jobs.Create("Media Encoder Standard Job");
-				    // Get a media processor reference, and pass to it the name of the 
-				    // processor to use for the specific task.
-				    IMediaProcessor processor = GetLatestMediaProcessorByName("Media Encoder Standard");
-				
-		
-				    // Load the XML (or JSON) from the local file.
-				    string configuration = File.ReadAllText("CustomPreset_JSON.json");
-				
-				    // Create a task
-		            ITask task = job.Tasks.AddNew("Media Encoder Standard encoding task",
-		                processor,
-		                configuration,
-		                TaskOptions.None);
-				
-				    // Specify the input asset to be encoded.
-				    task.InputAssets.Add(asset);
-				    // Add an output asset to contain the results of the job. 
-				    // This output is specified as AssetCreationOptions.None, which 
-				    // means the output asset is not encrypted. 
-				    task.OutputAssets.AddNew("Output asset",
-				        AssetCreationOptions.None);
-				
-				    job.StateChanged += new EventHandler<JobStateChangedEventArgs>(JobStateChanged);
-				    job.Submit();
-				    job.GetExecutionProgressTask(CancellationToken.None).Wait();
-				
-				    return job.OutputMediaAssets[0];
-				}
-		
-		        static public IAsset UploadMediaFilesFromFolder(string folderPath)
-		        {
-		            IAsset asset = _context.Assets.CreateFromFolder(folderPath, AssetCreationOptions.None);
-		
-		            foreach (var af in asset.AssetFiles)
-		            {
-		                // The following code assumes 
-		                // you have an input folder with one MP4 and one overlay image file.
-		                if (af.Name.Contains(".mp4"))
-		                    af.IsPrimary = true;
-		                else
-		                    af.IsPrimary = false;
-		
-		                af.Update();
-		            }
-		
-		            return asset;
-		        }
-		
-		
-		        static public IAsset EncodeWithOverlay(IAsset assetSource, string customPresetFileName)
-		        {
-		            // Declare a new job.
-		            IJob job = _context.Jobs.Create("Media Encoder Standard Job");
-		            // Get a media processor reference, and pass to it the name of the 
-		            // processor to use for the specific task.
-		            IMediaProcessor processor = GetLatestMediaProcessorByName("Media Encoder Standard");
-		
-		            // Load the XML (or JSON) from the local file.
-		            string configuration = File.ReadAllText(customPresetFileName);
-		
-		            // Create a task
-		            ITask task = job.Tasks.AddNew("Media Encoder Standard encoding task",
-		                processor,
-		                configuration,
-		                TaskOptions.None);
-		
-		            // Specify the input assets to be encoded.
-		            // This asset contains a source file and an overlay file.
-		            task.InputAssets.Add(assetSource);
-		
-		            // Add an output asset to contain the results of the job. 
-		            task.OutputAssets.AddNew("Output asset",
-		                AssetCreationOptions.None);
-		
-		            job.StateChanged += new EventHandler<JobStateChangedEventArgs>(JobStateChanged);
-		            job.Submit();
-		            job.GetExecutionProgressTask(CancellationToken.None).Wait();
-		
-		            return job.OutputMediaAssets[0];
-		        }
-		
-
-		        private static void JobStateChanged(object sender, JobStateChangedEventArgs e)
-		        {
-		            Console.WriteLine("Job state changed event:");
-		            Console.WriteLine("  Previous state: " + e.PreviousState);
-		            Console.WriteLine("  Current state: " + e.CurrentState);
-		            switch (e.CurrentState)
-		            {
-		                case JobState.Finished:
-		                    Console.WriteLine();
-		                    Console.WriteLine("Job is finished. Please wait while local tasks or downloads complete...");
-		                    break;
-		                case JobState.Canceling:
-		                case JobState.Queued:
-		                case JobState.Scheduled:
-		                case JobState.Processing:
-		                    Console.WriteLine("Please wait...\n");
-		                    break;
-		                case JobState.Canceled:
-		                case JobState.Error:
-		
-		                    // Cast sender as a job.
-		                    IJob job = (IJob)sender;
-		
-		                    // Display or log error details as needed.
-		                    break;
-		                default:
-		                    break;
-		            }
-		        }
-		
-		
-		        private static IMediaProcessor GetLatestMediaProcessorByName(string mediaProcessorName)
-		        {
-		            var processor = _context.MediaProcessors.Where(p => p.Name == mediaProcessorName).
-		            ToList().OrderBy(p => new Version(p.Version)).LastOrDefault();
-		
-		            if (processor == null)
-		                throw new ArgumentException(string.Format("Unknown media processor", mediaProcessorName));
-		
-		            return processor;
-		        }
-		
-		    }
-		}
-
-
-##支持相对大小
-
-生成它的缩略图时，不需始终以像素为单位指定输出宽度和高度。你可以以百分比的方式在 [1%, …, 100%] 范围内对其进行指定。
+生成缩略图时，不需始终以像素为单位指定输出宽度和高度。你可以以百分比的方式在 \[1%, …, 100%\] 范围内对其进行指定。
 
 ###JSON 预设 
 	
@@ -262,14 +53,15 @@
 	
 ##<a id="thumbnails"></a>生成缩略图
 
-本部分说明如何自定义生成缩略图的预设。下面定义的预设包含有关如何将文件编码的信息，以及生成缩略图时所需的信息。你可以使用[此处](https://msdn.microsoft.com/zh-cn/library/mt269960.aspx)所述的任何 MES 预设，以及添加生成缩略图的代码。
+本部分说明如何自定义生成缩略图的预设。下面定义的预设包含有关如何将文件编码的信息，以及生成缩略图时所需的信息。可使用[此部分](/documentation/articles/media-services-mes-presets-overview/)所述的任何 MES 预设，并添加生成缩略图的代码。
 
 >[AZURE.NOTE]如果要编码为单比特率视频，以下预设中的 **SceneChangeDetection** 设置只能设置为 true。如果要编码为多比特率视频并将 **SceneChangeDetection** 设置为 true，则编码器将返回错误。
 
 
-有关架构的信息，请参阅[此主题](https://msdn.microsoft.com/zh-cn/library/mt269962.aspx)。
 
-请务必仔细阅读[注意事项](/documentation/articles/media-services-advanced-encoding-with-mes/#considerations)部分。
+有关架构的信息，请参阅[此主题](/documentation/articles/media-services-mes-schema/)。
+
+请务必仔细阅读[注意事项](#considerations)部分。
 
 ###<a id="json"></a>JSON 预设
 
@@ -469,7 +261,7 @@
 ## <a id="trim_video"></a>修剪视频（裁剪）
 本部分说明如何修改编码器预设，以裁剪或修剪其输入为所谓的夹层文件或按需文件的输入视频。也可以使用编码器来剪切或剪裁从实时流捕获或存档的资产 – [此博客](https://azure.microsoft.com/blog/sub-clipping-and-live-archive-extraction-with-media-encoder-standard/)提供了详细信息。
 
-若要剪裁视频，可以使用[此处](https://msdn.microsoft.com/zh-cn/library/mt269960.aspx)所述的任何 MES 预设，并修改 **Sources** 元素（如下所示）。StartTime 的值需与输入视频的绝对时间戳匹配。例如，如果输入视频第一帧的时间戳为 12:00:10.000，则 StartTime 应大于或等于 12:00:10.000。在以下示例中，假设输入视频的起始时间戳为零。**Sources** 应位于预设的开始处。
+若要裁剪视频，可以使用[此部分](/documentation/articles/media-services-mes-presets-overview/)所述的任何 MES 预设，并修改 **Sources** 元素（如下所示）。StartTime 的值需与输入视频的绝对时间戳匹配。例如，如果输入视频第一帧的时间戳为 12:00:10.000，则 StartTime 应大于或等于 12:00:10.000。在以下示例中，假设输入视频的起始时间戳为零。**Sources** 应位于预设的开始处。
  
 ###<a id="json"></a>JSON 预设
 	
@@ -593,7 +385,7 @@
 
 ###XML 预设
 	
-若要修剪视频，可以使用[此处](https://msdn.microsoft.com/zh-cn/library/mt269960.aspx)所述的任何 MES 预设并修改 **Sources** 元素（如下所示）。
+若要修剪视频，可以使用[此处](/documentation/articles/media-services-mes-presets-overview/)所述的任何 MES 预设并修改 **Sources** 元素（如下所示）。
 
 	<?xml version="1.0" encoding="utf-16"?>
 	<Preset xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="1.0" xmlns="http://www.windowsazure.com/media/encoding/Preset/2014/03">
@@ -716,9 +508,63 @@ Media Encoder Standard 允许在现有视频上覆盖图像。目前支持以下
 
 除了定义预设文件外，还必须让媒体服务知道资产中的哪个文件是覆盖层图像，哪个文件是要在其上覆盖图像的源视频。视频文件必须是**主**文件。
 
-上面的 .NET 示例定义了两个函数：**UploadMediaFilesFromFolder** 和 **EncodeWithOverlay**。UploadMediaFilesFromFolder 函数从文件夹上传文件（例如 BigBuckBunny.mp4 和 Image001.png），并将 mp4 文件设置为资产中的主文件。**EncodeWithOverlay** 函数使用传递给它的自定义预设文件（例如，下面的预设）来创建编码任务。
+如果使用 .NET，请将以下两个函数添加到[此主题](/documentation/articles/media-services-custom-mes-presets-with-dotnet/#encoding_with_dotnet)中定义的 .NET 示例。**UploadMediaFilesFromFolder** 函数从文件夹上传文件（例如 BigBuckBunny.mp4 和 Image001.png），并将 mp4 文件设置为资产中的主文件。**EncodeWithOverlay** 函数使用传递给它的自定义预设文件（例如，下面的预设）来创建编码任务。
 
->[AZURE.NOTE]当前限制：
+
+	static public IAsset UploadMediaFilesFromFolder(string folderPath)
+	{
+	    IAsset asset = _context.Assets.CreateFromFolder(folderPath, AssetCreationOptions.None);
+	
+	    foreach (var af in asset.AssetFiles)
+	    {
+	        // The following code assumes 
+	        // you have an input folder with one MP4 and one overlay image file.
+	        if (af.Name.Contains(".mp4"))
+	            af.IsPrimary = true;
+	        else
+	            af.IsPrimary = false;
+	
+	        af.Update();
+	    }
+	
+	    return asset;
+	}
+
+    static public IAsset EncodeWithOverlay(IAsset assetSource, string customPresetFileName)
+    {
+        // Declare a new job.
+        IJob job = _context.Jobs.Create("Media Encoder Standard Job");
+        // Get a media processor reference, and pass to it the name of the 
+        // processor to use for the specific task.
+        IMediaProcessor processor = GetLatestMediaProcessorByName("Media Encoder Standard");
+
+        // Load the XML (or JSON) from the local file.
+        string configuration = File.ReadAllText(customPresetFileName);
+
+        // Create a task
+        ITask task = job.Tasks.AddNew("Media Encoder Standard encoding task",
+            processor,
+            configuration,
+            TaskOptions.None);
+
+        // Specify the input assets to be encoded.
+        // This asset contains a source file and an overlay file.
+        task.InputAssets.Add(assetSource);
+
+        // Add an output asset to contain the results of the job. 
+        task.OutputAssets.AddNew("Output asset",
+            AssetCreationOptions.None);
+
+        job.StateChanged += new EventHandler<JobStateChangedEventArgs>(JobStateChanged);
+        job.Submit();
+        job.GetExecutionProgressTask(CancellationToken.None).Wait();
+
+        return job.OutputMediaAssets[0];
+    }
+
+
+> [AZURE.NOTE]
+当前限制：
 >
 >不支持覆盖层不透明度设置。
 >
@@ -872,7 +718,7 @@ Media Encoder Standard 允许在现有视频上覆盖图像。目前支持以下
 
 若要强制编码器在输入不包含音频时生成包含静音曲目的资产，请指定“InsertSilenceIfNoAudio”值。
 
-你可以使用[此处](https://msdn.microsoft.com/zh-cn/library/mt269960.aspx)所述的任何 MES 预设，并进行以下修改：
+可使用[此部分](/documentation/articles/media-services-mes-presets-overview/)中所述的任何 MES 预设，并进行以下修改：
 
 ###JSON 预设
 
@@ -1096,7 +942,7 @@ Media Encoder Standard 允许在现有视频上覆盖图像。目前支持以下
 
 假设要使用多比特率编码预设（如[“H264 多比特率 720p”](https://msdn.microsoft.com/zh-cn/library/mt269960.aspx)）对整个输入目录进行编码以实现流式处理，且输入目录中混合了视频文件和仅音频文件。在此方案中，如果输入不包含视频，用户可能想要强制编码器仅以最低比特率插入单色视频轨迹，而不是按每个输出比特率插入视频。要实现此目的，需要指定“InsertBlackIfNoVideoBottomLayerOnly”标志。
 
-可使用[此处](https://msdn.microsoft.com/zh-cn/library/mt269960.aspx)所述的任何 MES 预设，并进行以下修改：
+可使用[此部分](/documentation/articles/media-services-mes-presets-overview/)中所述的任何 MES 预设，并进行以下修改：
 
 #### JSON 预设
 
@@ -1117,9 +963,9 @@ Media Encoder Standard 允许在现有视频上覆盖图像。目前支持以下
 
 ### 按所有输出比特率插入视频
 
-假设要使用多比特率编码预设（如[“H264 多比特率 720p”](https://msdn.microsoft.com/zh-cn/library/mt269960.aspx)）对整个输入目录进行编码以实现流式处理，且输入目录中混合了视频文件和仅音频文件。在此方案中，如果输入不包含视频，用户可能想要强制编码器按所有输出比特率插入单色视频轨迹。这可确保对于视频轨迹和音频曲目的数目，输出资产都是同源的。要实现此目的，需要指定“InsertBlackIfNoVideo”标志。
+假设要使用多比特率编码预设（如[“H264 多比特率 720p”](/documentation/articles/media-services-mes-preset-H264-Multiple-Bitrate-720p/)）对整个输入目录进行编码以实现流式处理，且输入目录中混合了视频文件和仅音频文件。在此方案中，如果输入不包含视频，用户可能想要强制编码器按所有输出比特率插入单色视频轨迹。这可确保对于视频轨迹和音频曲目的数目，输出资产都是同源的。要实现此目的，需要指定“InsertBlackIfNoVideo”标志。
 
-可使用[此处](https://msdn.microsoft.com/zh-cn/library/mt269960.aspx)所述的任何 MES 预设，并进行以下修改：
+可使用[此部分](/documentation/articles/media-services-mes-presets-overview/)中所述的任何 MES 预设，并进行以下修改：
 
 #### JSON 预设
 
@@ -1139,7 +985,7 @@ Media Encoder Standard 允许在现有视频上覆盖图像。目前支持以下
 	<Condition>InsertBlackIfNoVideo</Condition>
 
 ## <a id="rotate_video"></a>旋转视频
-[Media Encoder Standard](/documentation/articles/media-services-dotnet-encode-with-media-encoder-standard/) 支持的旋转角度为 0/90/180/270。默认行为是“自动”，即尝试在传入的视频文件中检测旋转元数据并对其进行补偿。包含[此处](http://msdn.microsoft.com/zh-cn/library/azure/mt269960.aspx)定义的预设之一的以下 **Sources** 元素：
+[Media Encoder Standard](/documentation/articles/media-services-dotnet-encode-with-media-encoder-standard/) 支持的旋转角度为 0/90/180/270。默认行为是“自动”，即尝试在传入的视频文件中检测旋转元数据并对其进行补偿。包含[此部分](/documentation/articles/media-services-mes-presets-overview/)中定义的预设之一的以下 **Sources** 元素：
 
 ### JSON 预设
     "Sources": [
@@ -1163,7 +1009,7 @@ Media Encoder Standard 允许在现有视频上覆盖图像。目前支持以下
         </Source>
     </Sources>
 
-另请参阅[此](https://msdn.microsoft.com/zh-cn/library/azure/mt269962.aspx#PreserveResolutionAfterRotation)主题，了解有关编码器如何在触发旋转补偿后解释预设中的宽度和高度设置的详细信息。
+另请参阅[此](/documentation/articles/media-services-mes-schema/#PreserveResolutionAfterRotation)主题，了解有关编码器如何在触发旋转补偿后解释预设中的宽度和高度设置的详细信息。
 
 可以使用值“0”指示编码器忽略输入视频中的旋转元数据（如果存在）。
 
@@ -1172,4 +1018,5 @@ Media Encoder Standard 允许在现有视频上覆盖图像。目前支持以下
 ## 另请参阅
 [媒体服务编码概述](/documentation/articles/media-services-encode-asset/)
 
-<!---HONumber=Mooncake_Quality_Review_1215_2016-->
+<!---HONumber=Mooncake_0109_2017-->
+<!--Description_Update: remove "创建编码作业" code; Update MSDN links to A.cn links; Add code sample for "创建覆盖层"-->

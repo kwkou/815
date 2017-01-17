@@ -1,12 +1,11 @@
 <properties
     pageTitle="使用 Azure 媒体服务执行实时流式处理以创建多比特率流 | Azure"
-    description="本主题介绍如何设置通道，以从本地编码器接收单比特率实时流，然后使用媒体服务执行实时编码以将其转换为自适应比特率流。然后，该流可以使用以下自适应流式处理协议之一通过一个或多个流式处理终结点传递给客户端播放应用程序：HLS、平滑流、MPEG DASH、HDS。"
+    description="本主题介绍如何设置通道，以从本地编码器接收单比特率实时流，然后使用媒体服务执行实时编码以将其转换为自适应比特率流。然后，该流可使用以下自适应流式传输协议之一，通过一个或多个流式传输终结点传送给客户端播放应用程序：HLS、平滑流、MPEG DASH。"
     services="media-services"
     documentationcenter=""
     author="anilmur"
     manager="erikre"
-    editor="" />  
-
+    editor="" />
 <tags
     ms.assetid="30ce6556-b0ff-46d8-a15d-5f10e4c360e2"
     ms.service="media-services"
@@ -14,8 +13,8 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="10/17/2016"
-    wacn.date="12/27/2016"
+    ms.date="12/11/2016"
+    wacn.date="01/13/2017"
     ms.author="juliako;anilmur" />  
 
 
@@ -99,8 +98,8 @@
 
 1. 检索通道引入 URL。
 
-	实时编码器使用引入 URL 将流发送到通道。
-1. 检索通道预览 URL。
+	实时编码器使用引入 URL 将流发送到频道。
+1. 检索频道预览 URL。
 
 	使用此 URL 来验证通道是否正常接收实时流。
 
@@ -253,7 +252,7 @@
 
 通道开始摄取数据后，可以预览流。
 
->[AZURE.NOTE]当前，不管指定了哪种输入类型，都只能以分片 MP4（平滑流）格式来传送预览流。可以使用 [http://smf.cloudapp.net/healthmonitor](http://smf.cloudapp.net/healthmonitor) 播放器来测试平滑流。还可以使用 Azure 经典管理门户中承载的播放器来查看流。
+>[AZURE.NOTE]当前，不管指定了哪种输入类型，都只能以分片 MP4（平滑流）格式来传送预览流。可以使用 [http://smf.cloudapp.net/healthmonitor](http://smf.cloudapp.net/healthmonitor) 播放器来测试平滑流。还可以使用 Azure 经典管理门户中承载的播放器查看流。
 
 ###允许的 IP 地址
 
@@ -470,4 +469,5 @@
 
 [live-overview]: ./media/media-services-manage-live-encoder-enabled-channels/media-services-live-streaming-new.png
 
-<!---HONumber=Mooncake_1205_2016-->
+<!---HONumber=Mooncake_0109_2017-->
+<!--Update_Description: wording update-->

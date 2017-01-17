@@ -1,28 +1,27 @@
-<properties 
-	pageTitle="媒体服务 REST API 概述 | Azure" 
-	description="媒体服务 REST API 概述" 
-	services="media-services" 
-	documentationCenter="" 
-	authors="Juliako" 
-	manager="erikre" 
-	editor=""/>  
+<properties
+    pageTitle="媒体服务操作 REST API 概述 | Azure"
+    description="媒体服务 REST API 概述"
+    services="media-services"
+    documentationcenter=""
+    author="Juliako"
+    manager="erikre"
+    editor="" />
+<tags
+    ms.assetid="a5f1c5e7-ec52-4e26-9a44-d9ea699f68d9"
+    ms.service="media-services"
+    ms.workload="media"
+    ms.tgt_pltfrm="na"
+    ms.devlang="dotnet"
+    ms.topic="article"
+    ms.date="11/29/2016"
+    wacn.date="01/13/2017"
+    ms.author="juliako" />  
 
 
-<tags 
-	ms.service="media-services" 
-	ms.workload="media" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="dotnet" 
-	ms.topic="article" 
-	ms.date="10/12/2016"
-	wacn.date="11/21/2016"
-	ms.author="juliako"/>
-
-
-
-# 媒体服务 REST API 概述 
-
+# 媒体服务操作 REST API 概述
 [AZURE.INCLUDE [media-services-selector-setup](../../includes/media-services-selector-setup.md)]
+
+**媒体服务操作 REST** API 用于在媒体服务帐户中创建作业、资产、访问策略和其他对象操作。有关详细信息，请参阅 [Media Services Operations REST API reference](https://docs.microsoft.com/rest/api/media/operations/azure-media-services-rest-api-reference)（媒体服务操作 REST API 参考）。
 
 Azure 媒体服务是一项服务，该服务接受基于 OData 的 HTTP 请求并能够以详细的 JSON 或 atom+pub 做出响应。由于媒体服务遵循 Azure 设计准则，因此在连接到媒体服务时，每个客户端必须使用一组必需的 HTTP 标头，以及一组可用的可选标头。以下部分介绍创建请求和接收来自媒体服务的响应时可以使用的标头和 HTTP 谓词。
 
@@ -125,4 +124,5 @@ HEAD|为 GET 响应返回对象的元数据。
 
  
 
-<!---HONumber=Mooncake_1114_2016-->
+<!---HONumber=Mooncake_0109_2017-->
+<!--Update_Description: add media services rest api reference link-->

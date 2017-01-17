@@ -1,25 +1,24 @@
-<properties 
-	pageTitle="Azure 媒体服务概述和常见方案" 
-	description="本部分提供 Azure 媒体服务的概述" 
-	services="media-services" 
-	documentationCenter="" 
-	authors="Juliako" 
-	manager="erikre" 
-	editor=""/>  
+<properties
+    pageTitle="Azure 媒体服务概述和常见方案 | Azure"
+    description="本部分提供 Azure 媒体服务的概述"
+    services="media-services"
+    documentationcenter=""
+    author="Juliako"
+    manager="erikre"
+    editor="" />
+<tags
+    ms.assetid="7a5e9723-c379-446b-b4d6-d0e41bd7d31f"
+    ms.service="media-services"
+    ms.workload="media"
+    ms.tgt_pltfrm="na"
+    ms.devlang="na"
+    ms.topic="hero-article"
+    ms.date="12/14/2016"
+    wacn.date="01/13/2017"
+    ms.author="juliako;anilmur" />  
 
 
-<tags 
-	ms.service="media-services" 
-	ms.workload="media" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="hero-article" 
-	ms.date="10/12/2016"
-	wacn.date="12/27/2016"
-	ms.author="juliako;anilmur"/>
-
-
-#Azure 媒体服务概述和常见应用场景
+# Azure 媒体服务概述和常见应用场景
 
 Azure 媒体服务是一个可扩展的基于云的平台，使开发人员能够生成可缩放的媒体管理和传送应用程序。媒体服务基于 REST API，可以使用这些 API 安全地上传、存储、编码和打包视频或音频内容，以供点播和以实时流形式传送到各种客户端（例如，电视、电脑和移动设备）。
 
@@ -41,12 +40,23 @@ Azure 媒体服务是一个可扩展的基于云的平台，使开发人员能�
 	- [Azure 经典管理门户](http://manage.windowsazure.cn/) 
 	- [Azure-Media-Services-Explorer](https://github.com/Azure/Azure-Media-Services-Explorer)（Azure 媒体服务资源管理器 (AMSE) 是适用于 Windows 的 Winforms/C# 应用程序）
 
-##先决条件
+针对媒体服务 OData 模型进行开发时，以下图像将显示某些最常用的对象。
+
+单击图像查看其完整大小。
+
+<a href="./media/media-services-overview/media-services-overview-object-model.png" target="_blank"><img src="./media/media-services-overview/media-services-overview-object-model-small.png"></a>
+
+
+可在[此处](https://media.windows.net/API/$metadata?api-version=2.14)查看完整模型。
+
+
+
+## 先决条件
 
 若要开始使用 Azure 媒体服务，应该具备以下条件：
  
 3. 一个 Azure 帐户。如果没有帐户，可以创建一个试用帐户，只需几分钟即可完成。有关详细信息，请参阅 [Azure 试用](/pricing/1rmb-trial/)。
-2. Azure 媒体服务帐户。使用 Azure 经典管理门户、.NET 或 REST API 来创建 Azure 媒体服务帐户。有关详细信息，请参阅[创建帐户](/documentation/articles/media-services-create-account/)。
+2. Azure 媒体服务帐户。使用 Azure 经典管理门户、.NET 或 REST API 创建 Azure 媒体服务帐户。有关详细信息，请参阅[创建帐户](/documentation/articles/media-services-create-account/)。
 3. （可选）设置开发环境。为开发环境选择“.NET”或“REST API”。有关详细信息，请参阅[设置环境](/documentation/articles/media-services-dotnet-how-to-use/)。
 
 	此外，请学习如何以编程方式进行[连接](/documentation/articles/media-services-dotnet-connect-programmatically/)。
@@ -79,7 +89,7 @@ Azure 媒体服务是一个可扩展的基于云的平台，使开发人员能�
 	
 	如果资产已经过存储加密，则**必须**配置资产传送策略。
 
-1. 通过创建 OnDemand 定位符来发布资产。
+1. 通过创建 OnDemand 定位符发布资产。
 
 	确保要从中以流形式传输内容的流式传输终结点上至少有一个串流保留单元。
 
@@ -94,24 +104,24 @@ Azure 媒体服务是一个可扩展的基于云的平台，使开发人员能�
 1. 为播放期间想要动态加密的资产创建加密内容密钥。
 2. 配置内容密钥授权策略。
 1. 配置资产传送策略（由动态打包和动态加密使用）。
-1. 通过创建 OnDemand 定位符来发布资产。
+1. 通过创建 OnDemand 定位符发布资产。
 1. 流式传输已发布的内容。
 
 ###使用媒体分析从视频中汲取可操作的见解 
 
-媒体分析是语音和视觉组件的集合，便于组织和企业从视频文件中汲取可操作的见解。
+媒体分析是语音和视觉组件的集合，便于组织和企业从视频文件中汲取可操作的见解。有关详细信息，请参阅 [Azure 媒体服务分析概述](/documentation/articles/media-services-analytics-overview/)。
 
 1. 将优质夹层文件上传到资产中。
 2. 使用下述媒体分析服务之一来处理视频：
 	
 
 	- **Hyperlapse** – [Hyperlapse 媒体文件与 Azure Media Hyperlapse](/documentation/articles/media-services-hyperlapse-content/)
-
+	- **动作检测** – [Azure 媒体分析的动作检测](/documentation/articles/media-services-motion-detection/)。
+	- **面部检测和面部情绪** – [Azure 媒体分析的面部和情绪检测](/documentation/articles/media-services-face-and-emotion-detection/)。
+	- **视频摘要** – [使用 Azure 媒体视频缩略图创建视频摘要](/documentation/articles/media-services-video-summarization/)
 3. 媒体分析媒体处理器会生成 MP4 文件或 JSON 文件。如果媒体处理器生成了 MP4 文件，可采用渐进方式下载该文件。如果媒体处理器生成了 JSON 文件，可从 Azure Blob 存储下载该文件。
 
-
-###提供渐进式下载 
-
+### 提供渐进式下载
 1. 将优质夹层文件上传到资产中。
 1. 编码为单个 MP4 文件。
 1. 通过创建 OnDemand 或 SAS 定位符来发布资产。
@@ -136,14 +146,14 @@ Azure 媒体服务是一个可扩展的基于云的平台，使开发人员能�
 - （可选）将流编码为自适应比特率流
 - 预览实时流，
 - 记录和存储引入的内容，以便稍后进行流式处理（视频点播）
-- 直接通过常用流式处理协议（例如 MPEG DASH、Smooth、HLS、HDS）将内容传递给客户，或传递至内容传送网络 (CDN) 以供进一步分发。
+- 直接通过常用流式传输协议（例如 MPEG DASH、平滑流式处理、HLS）将内容传递给客户，或传递至内容交付网络 \(CDN\) 以供进一步分发。
 
 
 **Azure 媒体服务** (AMS) 提供了引入、编码、预览、存储和传送实时流式处理内容的功能。
 
-将内容传送给客户时，目标是将优质视频传递到处于不同网络条件下的各种设备。为了满足质量和网络条件的要求，使用实时编码器将流编码为多比特率（自适应比特率）视频流。为满足不同设备的流式处理要求，使用媒体服务[动态打包](/documentation/articles/media-services-dynamic-packaging-overview/)将流动态地重新打包为不同的协议。媒体服务支持传送以下自适应比特率流式处理技术：HTTP 实时流式处理 (HLS)、平滑流式处理、MPEG DASH 和 HDS（仅适用于 Adobe PrimeTime/Access 许可证持有人）。
+将内容传送给客户时，目标是将优质视频传递到处于不同网络条件下的各种设备。为了满足质量和网络条件的要求，使用实时编码器将流编码为多比特率（自适应比特率）视频流。为满足不同设备的流式处理要求，使用媒体服务[动态打包](/documentation/articles/media-services-dynamic-packaging-overview/)将流动态地重新打包为不同的协议。媒体服务支持传送以下自适应比特率流式处理技术：HTTP Live Streaming \(HLS\)、平滑流式处理、MPEG DASH。
 
-在 Azure 媒体服务中，**通道**、**程序**和**流式处理终结点**处理所有实时流式处理功能，包括引入、格式化、DVR、安全性、缩放性和冗余。
+在 Azure 媒体服务中，**频道**、**节目**和**流式处理终结点**处理所有实时流式处理功能，包括引入、格式化、DVR、安全性、缩放性和冗余。
 
 **通道**表示用于处理实时流内容的管道。通道可以通过以下方式接收实时输入流：
 
@@ -151,7 +161,7 @@ Azure 媒体服务是一个可扩展的基于云的平台，使开发人员能�
 
 >[AZURE.NOTE] 需要长时间处理多个事件，并且已经在本地编码器上进行了投入时，可以使用直通这种最经济的方法来实时传送视频流。请参阅[定价](/pricing/details/media-services/)详细信息。
 
-- 本地实时编码器（采用以下格式之一：RTP (MPEG-TS)、RTMP 或平滑流式处理 （分片 MP4））将单比特率流发送至能够使用媒体服务执行实时编码的通道。然后，通道将对传入的单比特率流执行实时编码，使之转换为多比特率（自适应）视频流。收到请求时，媒体服务会将该流传送给客户。
+- 本地实时编码器（采用以下格式之一：RTP \(MPEG-TS\)、RTMP 或平滑流式处理 （分片 MP4））将单比特率流发送至能够使用媒体服务执行实时编码的通道。然后，频道将对传入的单比特率流执行实时编码，使之转换为多比特率（自适应）视频流。收到请求时，媒体服务会将该流传送给客户。
 
 
 ###使用从本地编码器（直通）接收多比特率实时流的通道
@@ -165,10 +175,9 @@ Azure 媒体服务是一个可扩展的基于云的平台，使开发人员能�
 
 ###使用能够通过 Azure 媒体服务执行实时编码的通道
 
-下图显示的是实时流式处理工作流中所涉及的 AMS 平台的主要组成部分，该工作流中的通道能够通过媒体服务执行实时编码。
+下图显示的是实时流式处理工作流中涉及的 AMS 平台的主要组成部分，该工作流中的频道能够通过媒体服务执行实时编码。
 
 ![实时工作流][live-overview1]  
-
 
 有关详细信息，请参阅[使用能够通过 Azure 媒体服务执行实时编码的频道](/documentation/articles/media-services-manage-live-encoder-enabled-channels/)。
 
@@ -215,4 +224,5 @@ Azure 媒体服务提供所需的工具，以便创建适用于大多数平台�
 [live-overview2]: ./media/media-services-live-streaming-workflow/media-services-live-streaming-current.png
  
 
-<!---HONumber=Mooncake_1114_2016-->
+<!---HONumber=Mooncake_0109_2017-->
+<!--Update_Description: remove HDS ralated content; add references links of Media Service analytics features; add introduction of Media Service Odata model-->

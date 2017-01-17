@@ -1,24 +1,24 @@
 <properties
-    pageTitle="使用 Azure 媒体分析进行面部修订 | Azure"
-    description="本主题演示如何使用 Azure 媒体分析检测面部。"
+    pageTitle="使用 Azure 媒体分析进行面部修订演练 | Azure"
+    description="本主题提供分步指导，引导用户使用 Azure 媒体服务资源管理器 (AMSE) 和 Azure Media Redactor Visualizer（开源工具）运行完整修正工作流。"
     services="media-services"
     documentationcenter=""
     author="Lichard"
     manager="erikre"
-    editor="" />  
-
+    editor="" />
 <tags
-    ms.assetid="5b6d8b8c-5f4d-4fef-b3d6-dc22c6b5a0f5"
+    ms.assetid="d6fa21b8-d80a-41b7-80c1-ff1761bc68f2"
     ms.service="media-services"
     ms.workload="media"
     ms.tgt_pltfrm="na"
     ms.devlang="dotnet"
     ms.topic="article"
-    ms.date="11/17/2016"
-    wacn.date="12/12/2016"
-    ms.author="rli; juliako;" />
+    ms.date="11/30/2016"
+    wacn.date="01/13/2017"
+    ms.author="rli; juliako;" />  
 
-# 使用 Azure 媒体分析进行面部修订
+
+# 使用 Azure 媒体分析进行面部修订演练
 
 ## 概述
 
@@ -70,7 +70,7 @@
 	![面部修正](./media/media-services-redactor-walkthrough/media-services-redactor-walkthrough005.png)  
 
 
-2. （可选）上传“idlist.txt”文件，它包含要修正的 ID 的换行符分隔列表。
+2. （可选）上传“Dance\_idlist.txt”文件，它包含要修订的 ID 的换行符分隔列表。
 
 	![面部修正](./media/media-services-redactor-walkthrough/media-services-redactor-walkthrough006.png)  
 
@@ -134,4 +134,5 @@
 
 [Azure 媒体分析演示](http://azuremedialabs.azurewebsites.net/demos/Analytics.html)
 
-<!---HONumber=Mooncake_1205_2016-->
+<!---HONumber=Mooncake_0109_2017-->
+<!--Update_Description: wording update-->
