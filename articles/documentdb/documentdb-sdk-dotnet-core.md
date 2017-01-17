@@ -5,8 +5,7 @@
     documentationcenter=".net"
     author="rnagpal"
     manager="jhubbard"
-    editor="cgronlun" />  
-
+    editor="cgronlun" />
 <tags
     ms.assetid="f899b314-26ac-4ddb-86b2-bfdf05c2abf2"
     ms.service="documentdb"
@@ -14,8 +13,8 @@
     ms.tgt_pltfrm="na"
     ms.devlang="dotnet"
     ms.topic="article"
-    ms.date="11/16/2016"
-    wacn.date="12/20/2016"
+    ms.date="11/23/2016"
+    wacn.date="01/16/2017"
     ms.author="rnagpal" />
 
 # DocumentDB API 和 SDK
@@ -48,9 +47,9 @@
 
 ## 发行说明
 
-### <a name="0.1.0-preview"/>[0\.1.0-preview](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB.Core/0.1.0-preview)
+### <a name="0.1.0-preview"/>[0.1.0-preview](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB.Core/0.1.0-preview)
 
-通过 DocumentDB .NET Core 预览版 SDK，可构建能在 Windows、Mac 和 Linux 上运行快速运行的跨平台 [ASP.NET Core](https://www.asp.net/core) 和 [.NET Core](https://www.microsoft.com/net/core#windows) 应用，还可创建 [通用 Windows 平台 (UWP)](https://www.visualstudio.com/vs/universal-windows-platform/) 应用。
+借助 DocumentDB .NET Core 预览版 SDK，可生成能在 Windows、Mac 和 Linux 上运行的快速、跨平台 [ASP.NET Core](https://www.asp.net/core) 和 [.NET Core](https://www.microsoft.com/net/core#windows) 应用。
 
 DocumentDB .NET Core 预览版 SDK 与最新版 [DocumentDB.NET SDK](/documentation/articles/documentdb-sdk-dotnet/) 功能相同，并支持以下内容：
 - 所有[连接模式](/documentation/articles/documentdb-performance-tips/#networking/)：网关模式、Direct TCP 和 Direct HTTPs。
@@ -64,9 +63,9 @@ DocumentDB .NET Core 预览版 SDK 与最新版 [DocumentDB.NET SDK](/documentat
 
 | 版本 | 发布日期 | 停用日期 |
 | --- | --- | --- |
-| [0\.1.0-preview](#0.1.0-preview) |2016 年 11 月 15 日|--- |
+| [0.1.0-preview](#0.1.0-preview) |2016 年 11 月 15 日|--- |
 
 ## 另请参阅
 若要了解有关 DocumentDB 的详细信息，请参阅 [Azure DocumentDB](/home/features/documentdb/) 服务页。
 
-<!---HONumber=Mooncake_1212_2016-->
+<!---HONumber=Mooncake_0109_2017-->

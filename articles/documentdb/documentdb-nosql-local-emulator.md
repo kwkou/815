@@ -6,8 +6,7 @@
     keywords="DocumentDB 模拟器"
     author="arramac"
     manager="jhubbard"
-    editor="" />  
-
+    editor="" />
 <tags
     ms.assetid="90b379a6-426b-4915-9635-822f1a138656"
     ms.service="documentdb"
@@ -15,8 +14,8 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="na"
-    ms.date="11/17/2016"
-    wacn.date="12/20/2016"
+    ms.date="11/29/2016"
+    wacn.date="01/16/2017"
     ms.author="arramac" />  
 
 
@@ -78,6 +77,13 @@ DocumentDB 模拟器支持的主密钥仅用于模拟器。不能在 DocumentDB 
 
 默认情况下，DocumentDB 模拟器安装到 `C:\Program Files\Azure DocumentDB Emulator` 目录。你还可以从命令行启动和停止模拟器。有关详细信息，请参阅[命令行工具参考](#command-line)。
 
+## 启动本地模拟器数据资源管理器
+
+本地模拟器启动时，会自动在浏览器中打开 DocumentDB 数据资源管理器。地址会显示为 https://localhost:8081/_explorer/index.html。如果关闭浏览器并想要稍后重新打开，可在浏览器中打开 URL 或从 Windows 任务栏图标中的 DocumentDB 模拟器中启动，如下所示。
+
+![DocumentDB 本地模拟器数据资源管理器启动器](./media/documentdb-nosql-local-emulator/azure-documentdb-database-local-emulator-data-explorer-launcher.png)  
+
+
 ## 使用 DocumentDB 模拟器进行开发
 在桌面上运行 DocumentDB 模拟器之后，可以使用任何支持的 [DocumentDB SDK](/documentation/articles/documentdb-sdk-dotnet/) 或 [DocumentDB REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn781481.aspx) 与模拟器进行交互。DocumentDB 模拟器还包括内置的数据资源管理器，可用于创建集合、查看和编辑文档，而无需编写任何代码。
 
@@ -96,14 +102,25 @@ DocumentDB 模拟器支持的主密钥仅用于模拟器。不能在 DocumentDB 
 
 可以使用现有工具如 [DocumentDB Studio](https://github.com/mingaliu/DocumentDBStudio) 连接到 DocumentDB 模拟器。用户还可以使用 [DocumentDB 数据迁移工具](https://github.com/azure/azure-documentdb-datamigrationtool)在 DocumentDB 模拟器和 Azure DocumentDB 服务之间迁移数据。
 
+## 导出 DocumentDB 模拟器 SSL 证书
+
+.NET 语言和运行时使用 Windows 证书存储来安全地连接到 DocumentDB 本地模拟器。其他语言拥有自己的证书管理和使用方法。Java 使用自己的[证书存储](https://docs.oracle.com/cd/E19830-01/819-4712/ablqw/index.html)，而 Python 则使用[套接字包装器](https://docs.python.org/2/library/ssl.html)。
+
+若要获取与不集成到 Windows 证书存储中的语言和运行时配合使用的证书，需要使用 Windows 证书管理器进行导出。可通过运行 certlm.msc 进行启动，也可按照[导出 DocumentDB 模拟器证书](/documentation/articles/documentdb-nosql-local-emulator-export-ssl-certificates/)中的分步说明进行操作。证书管理器开始运行后，如下所示打开个人证书，然后将友好名称为“DocumentDBEmulatorCertificate”的证书作为 BASE-64 编码的 X.509 \(.cer\) 文件导出。
+
+![DocumentDB 本地模拟器 SSL 证书](./media/documentdb-nosql-local-emulator/azure-documentdb-database-local-emulator-ssl_certificate.png)  
+
+
+可按照[将证书添加到 Java CA 证书存储](/documentation/articles/java-add-certificate-ca-store/)中的说明，将 X.509 证书导入 Java 证书存储。证书导入 cacerts 存储后，Java 和 MongoDB 应用程序即能够连接到 DocumentDB 模拟器。
+
 ## <a id="command-line"></a>DocumentDB 模拟器命令行工具参考
 从安装位置中，可以使用命令行启动和停止模拟器、配置选项，和执行其他操作。
 
 ### 命令行语法
 
-    DocumentDB.LocalEmulator.exe [/shutdown] [/datapath] [/port] [/mongoport] [/directports] [/key] [/?]
+    DocumentDB.Emulator.exe [/shutdown] [/datapath] [/port] [/mongoport] [/directports] [/key] [/?]
 
-若要查看选项列表，请在命令提示符下键入 `DocumentDB.LocalEmulator.exe /?`。
+若要查看选项列表，请在命令提示符下键入 `DocumentDB.Emulator.exe /?`。
 
 <table>
 <tr>
@@ -115,61 +132,73 @@ DocumentDB 模拟器支持的主密钥仅用于模拟器。不能在 DocumentDB 
 <tr>
   <td>[无参数]</td>
   <td>使用默认设置启动 DocumentDB 模拟器</td>
-  <td>DocumentDB.LocalEmulator.exe</td>
+  <td>DocumentDB.Emulator.exe</td>
   <td></td>
 </tr>
 <tr>
   <td>Shutdown</td>
   <td>关闭 DocumentDB 模拟器</td>
-  <td>DocumentDB.LocalEmulator.exe /Shutdown</td>
+  <td>DocumentDB.Emulator.exe /Shutdown</td>
   <td></td>
 </tr>
 <tr>
   <td>帮助</td>
-  <td>显示命令行参数的列表</td>
-  <td>DocumentDB.LocalEmulator.exe /?</td>
+  <td>显示命令行参数列表</td>
+  <td>DocumentDB.Emulator.exe /?</td>
   <td></td>
 </tr>
 <tr>
   <td>Datapath</td>
   <td>指定要在其中存储数据文件的路径</td>
-  <td>DocumentDB.LocalEmulator.exe /datapath=&lt;datapath></td>
+  <td>DocumentDB.Emulator.exe /datapath=&lt;datapath></td>
   <td>&lt;datapath>：可访问的路径</td>
 </tr>
 <tr>
   <td>端口</td>
   <td>指定用于模拟器的端口号。默认值为 8081</td>
-  <td>DocumentDB.LocalEmulator.exe /port=&lt;port></td>
+  <td>DocumentDB.Emulator.exe /port=&lt;port></td>
   <td>&lt;port>：单个端口号</td>
 </tr>
 <tr>
   <td>MongoPort</td>
   <td>指定用于 MongoDB 兼容性 API 的端口号。默认值为 10250。</td>
-  <td>DocumentDB.LocalEmulator.exe /mongoport=&lt;mongoport></td>
+  <td>DocumentDB.Emulator.exe /mongoport=&lt;mongoport></td>
   <td>&lt;mongoport>：单个端口号</td>
 </tr>
 <tr>
   <td>DirectPorts</td>
   <td>指定用于直接连接的端口。默认值为 10251、10252、10253、10254</td>
-  <td>DocumentDB.LocalEmulator.exe /directports:&lt;directports></td>
-  <td>&lt;directports>：以逗号分隔的 4 个端口的列表</td>
+  <td>DocumentDB.Emulator.exe /directports:&lt;directports></td>
+  <td>&lt;directports>：4 个端口的逗号分隔列表</td>
 </tr>
 <tr>
   <td>键</td>
   <td>模拟器的授权密钥。密钥必须是 64 字节向量的 base 64 编码</td>
-  <td>DocumentDB.LocalEmulator.exe /key:&lt;key></td>
+  <td>DocumentDB.Emulator.exe /key:&lt;key></td>
   <td>&lt;key>：密钥必须是 64 字节向量的 base 64 编码</td>
 </tr>
 <tr>
   <td>EnableThrottling</td>
   <td>指定启用了请求限制行为</td>
-  <td>DocumentDB.LocalEmulator.exe /enablethrottling</td>
+  <td>DocumentDB.Emulator.exe /enablethrottling</td>
   <td></td>
 </tr>
 <tr>
   <td>DisableThrottling</td>
   <td>指定禁用了请求限制行为</td>
-  <td>DocumentDB.LocalEmulator.exe /disablethrottling</td>
+  <td>DocumentDB.Emulator.exe /disablethrottling</td>
+  <td></td>
+</tr>
+<tr>
+  <td>NoUi</td>
+  <td>不显示模拟器用户界面。</td>
+  <td>DocumentDB.LocalEmulator.exe /noui</td>
+  <td></td>
+</tr>
+<tr>
+  <td>NoExplorer</td>
+  <td>不在启动时显示文档资源管理器。</td>
+  <td>DocumentDB.LocalEmulator.exe /noexplorer</td>
   <td></td>
 </tr>
 </table>
@@ -188,4 +217,4 @@ DocumentDB 模拟器支持的主密钥仅用于模拟器。不能在 DocumentDB 
 - 若要了解有关 DocumentDB 的详细信息，请参阅 [Azure DocumentDB 简介](/documentation/articles/documentdb-introduction/)。
 - 若要开始使用 DocumentDB 模拟器进行开发，请下载一个[支持的 DocumentDB SDK](/documentation/articles/documentdb-sdk-dotnet/)。
 
-<!---HONumber=Mooncake_1212_2016-->
+<!---HONumber=Mooncake_0109_2017-->
