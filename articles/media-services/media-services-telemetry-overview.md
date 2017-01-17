@@ -5,17 +5,16 @@
     documentationcenter=""
     author="Juliako"
     manager="erikre"
-    editor="" />  
-
+    editor="" />
 <tags
-    ms.assetid="4e4a9ec3-8ddb-4938-aec1-d7172d3db858"
+    ms.assetid="95c20ec4-c782-4063-8042-b79f95741d28"
     ms.service="media-services"
     ms.workload="media"
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="11/17/2016"
-    wacn.date="12/12/2016"
+    ms.date="12/07/2016"
+    wacn.date="01/13/2017"
     ms.author="juliako" />  
 
 
@@ -214,4 +213,5 @@ Healthy|如果 FragmentDiscardedCount == 0 && ArchiveAcquisitionError == False�
 
 遥测系统不提供数据保留期管理，也不会自动删除旧记录。因此，请在存储表中手动管理和删除旧记录。可参阅存储 SDK 以了解如何执行此操作。
 
-<!---HONumber=Mooncake_1205_2016-->
+<!---HONumber=Mooncake_0109_2017-->
+<!--Update_Description: update meta properties-->

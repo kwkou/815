@@ -1,25 +1,24 @@
-<properties 
-	pageTitle="Azure 媒体服务概念" 
-	description="本部分概述 Azure 媒体服务的概念。" 
-	services="media-services" 
-	documentationCenter="" 
-	authors="Juliako" 
-	manager="dwrede" 
-	editor=""/>
+<properties
+    pageTitle="Azure 媒体服务概念 | Azure"
+    description="本部分概述 Azure 媒体服务的概念。"
+    services="media-services"
+    documentationcenter=""
+    author="Juliako"
+    manager="erikre"
+    editor="" />
+<tags
+    ms.assetid="dcefc8bc-e2ea-4b38-a643-9010f4436fb5"
+    ms.service="media-services"
+    ms.workload="media"
+    ms.tgt_pltfrm="na"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.date="12/07/2016"
+    wacn.date="01/13/2017"
+    ms.author="juliako" />  
 
 
-<tags 
-	ms.service="media-services" 
-	ms.workload="media" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="09/19/2016" 
-	wacn.date="12/27/2016"
-	ms.author="juliako"/>  
-
-#Azure 媒体服务概念 
-
+# Azure 媒体服务概念
 本部分概述最重要的媒体服务概念。
 
 ##<a id="assets"></a>资产和存储
@@ -87,13 +86,13 @@
 
 作业包含有关要执行的处理的元数据。每个作业包含一个或多个[任务](https://docs.microsoft.com/zh-cn/rest/api/media/operations/task)，这些任务指定一个原子处理任务、该任务的输入资产和输出资产、一个媒体处理器及其关联的设置。作业中的各个任务可连接在一起，其中一个任务的输出资产指定为下一任务的输入资产。因此，一个作业可以包含播放媒体所必需的全部处理过程。
 
-##<a id="encoding"></a>编码 
+##<a id="encoding"></a>编码
 
 Azure 媒体服务提供了多个用于在云中对媒体进行编码的选项。
 
 开始使用媒体服务时，了解编解码器与文件格式之间的区别很重要。编解码器是实现压缩/解压缩算法的软件，而文件格式是用于保存压缩视频的容器。
 
-媒体服务所提供的动态打包允许以媒体服务支持的流格式（MPEG DASH、HLS、Smooth Streaming、HDS）传送自适应比特率 MP4 或平滑流编码内容，而无须重新打包成这些流格式。
+媒体服务所提供的动态打包允许以媒体服务支持的流格式（MPEG DASH、HLS、平滑流式处理）传送自适应比特率 MP4 或平滑流式处理编码内容，而无须重新打包成这些流格式。
 
 若要使用[动态打包](/documentation/articles/media-services-dynamic-packaging-overview/)，必须执行下列操作：
 
@@ -125,7 +124,7 @@ Azure 媒体服务提供了多个用于在云中对媒体进行编码的选项�
 每个媒体服务帐户均可包含多个频道、多个节目以及多个 StreamingEndpoint。根据带宽和安全性需求，StreamingEndpoint 服务可专用于一个或多个频道。任何 StreamingEndpoint 都可以从任何频道拉取。
 
 
-###节目 
+###节目
 
 [节目](https://docs.microsoft.com/zh-cn/rest/api/media/operations/program)用于控制实时流中片段的发布和存储。频道管理节目。频道和节目的关系非常类似于传统媒体，频道具有恒定的内容流，而节目的范围限定为该频道上的一些定时事件。
 你可以通过设置 **ArchiveWindowLength** 属性，指定你希望保留多少小时的节目录制内容。此值的设置范围是最短 5 分钟，最长 25 小时。
@@ -134,7 +133,7 @@ ArchiveWindowLength 还决定了客户端能够从当前实时位置按时间向
 
 每个节目都与资产关联。若要发布节目，必须为关联的资产创建定位符。创建此定位符后，可以生成提供给客户端的流式处理 URL。
 
-一个频道最多支持三个同时运行的节目，因此可为同一传入流创建多个存档。这样，便可以根据需要发布和存档事件的不同部分。例如，业务要求是存档 6 小时的节目，但只广播过去 10 分钟的内容。若要实现此目的，需要创建两个同时运行的节目。一个节目设置为存档 6 小时的事件但不发布该节目。另一个节目设置为存档 10 分钟的事件，并且要发布该节目。
+一个频道最多支持三个同时运行的节目，因此可为同一传入流创建多个存档。这样，你便可以根据需要发布和存档事件的不同部分。例如，你的业务要求是存档 6 小时的节目，但只广播过去 10 分钟的内容。为了实现此目的，你需要创建两个同时运行的节目。一个节目设置为存档 6 小时的事件但不发布该节目。另一个节目设置为存档 10 分钟的事件，并且要发布该节目。
 
 
 有关详细信息，请参阅：
@@ -149,7 +148,7 @@ ArchiveWindowLength 还决定了客户端能够从当前实时位置按时间向
 
 使用 Azure 媒体服务，可以在媒体从离开计算机到存储、处理和传送的整个过程中确保其安全。借助媒体服务，可以传送使用高级加密标准（AES，使用 128 位加密密钥）和通用加密（CENC，使用 PlayReady 和/或 Widevine DRM）进行动态加密的内容。媒体服务还提供了用于向已授权客户端传送 AES 密钥和 PlayReady 许可证的服务。
 
-当前可以加密以下流格式：HLS、MPEG DASH 和平滑流。无法加密 HDS 流格式或渐进式下载。
+当前可以加密以下流格式：HLS、MPEG DASH 和平滑流。无法加密渐进式下载。
 
 如果需要媒体服务来加密资产，则需要将加密密钥（CommonEncryption 或 EnvelopeEncryption）与资产关联，并配置密钥的授权策略。
 
@@ -193,7 +192,7 @@ StreamingEndpoint 表示一个流服务，该服务可以直接将内容传送�
 
 如果有存储加密的资产，在流式传输资产之前，流式处理服务器会删除存储加密，然后再使用指定的传送策略流式传输内容。例如，若要传送使用高级加密标准 (AES) 加密密钥加密的资产，请将策略类型设为 DynamicEnvelopeEncryption。若要删除存储加密并以明文的形式流式传输资产，请将策略类型设为 NoDynamicEncryption。
 
-###渐进式下载 
+###渐进式下载
 
 渐进式下载可在下载完整个文件之前开始播放媒体。只能渐进式下载 MP4 文件。
 
@@ -242,10 +241,5 @@ StreamingEndpoint 表示一个流服务，该服务可以直接将内容传送�
 
 		http://testendpoint-testaccount.streaming.mediaservices.chinacloudapi.cn/fecebb23-46f6-490d-8b70-203e86b0df58/BigBuckBunny.ism/Manifest(format=m3u8-aapl-v3)
 
-- HDS（仅适用于 Adobe PrimeTime/Access 许可证持有人）
-
-	{流式处理终结点名称-媒体服务帐户名称}.streaming.mediaservices.chinacloudapi.cn/{定位符 ID}/{文件名}.ism/Manifest(format=f4m-f4f)
-
-		http://testendpoint-testaccount.streaming.mediaservices.chinacloudapi.cn/fecebb23-46f6-490d-8b70-203e86b0df58/BigBuckBunny.ism/Manifest(format=f4m-f4f) 
-
-<!---HONumber=Mooncake_Quality_Review_1202_2016-->
+<!---HONumber=Mooncake_0109_2017-->
+<!--Update_Description: remove HDS related content-->

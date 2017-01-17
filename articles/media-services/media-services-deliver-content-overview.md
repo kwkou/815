@@ -1,22 +1,21 @@
-<properties 
-	pageTitle="向客户传送内容 | Azure"
-	description="本主题概述使用 Azure 媒体服务传送内容所涉及的操作。" 
-	services="media-services" 
-	documentationCenter="" 
-	authors="Juliako" 
-	manager="erikre" 
-	editor=""/>  
-
-
+<properties
+    pageTitle="向客户传送内容 | Azure"
+    description="本主题概述使用 Azure 媒体服务传送内容所涉及的操作。"
+    services="media-services"
+    documentationcenter=""
+    author="Juliako"
+    manager="erikre"
+    editor="" />
 <tags
-	ms.service="media-services"
-	ms.workload="media"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="09/19/2016"
-	wacn.date="12/27/2016"
-	ms.author="juliako"/>  
+    ms.assetid="89ede54a-6a9c-4814-9858-dcfbb5f4fed5"
+    ms.service="media-services"
+    ms.workload="media"
+    ms.tgt_pltfrm="na"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.date="12/07/2016"
+    wacn.date="01/13/2017"
+    ms.author="juliako" />  
 
 
 
@@ -26,7 +25,7 @@
 若要实现此目标，可以：
 
 - 将流编码为多比特率（自适应比特率）视频流。此操作可负责处理质量和网络条件问题。
-- 使用 Azure 媒体服务[动态打包](/documentation/articles/media-services-dynamic-packaging-overview/)功能将流动态地重新打包为不同的协议。此操作可负责处理不同设备上的流式处理问题。媒体服务支持通过以下自适应比特率流式处理技术传送：HTTP Live Streaming (HLS)、平滑流式处理、MPEG-DASH 和 HDS（仅适用于 Adobe PrimeTime/Access 许可证持有人）。
+- 使用 Azure 媒体服务[动态打包](/documentation/articles/media-services-dynamic-packaging-overview/)功能将流动态地重新打包为不同的协议。此操作可负责处理不同设备上的流式处理问题。媒体服务支持传送以下自适应比特率流式处理技术：HTTP Live Streaming \(HLS\)、平滑流式处理和 MPEG-DASH。
 
 本文概述重要的内容传送概念。
 
@@ -34,7 +33,7 @@
 
 ## 动态打包
 
-借助媒体服务提供的动态打包功能，可采用媒体服务支持的流式处理格式（MPEG-DASH、HLS、平滑流式处理、HDS）传送自适应比特率 MP4 或平滑流式处理编码内容，而无须重新打包成这些流式处理格式。我们建议使用动态打包功能传送内容。
+借助媒体服务提供的动态打包功能，可采用媒体服务支持的流式传输格式（MPEG-DASH、HLS、平滑流式处理）传送自适应比特率 MP4 或平滑流式处理编码内容，而无须重新打包成这些流式传输格式。我们建议使用动态打包功能传送内容。
 
 若要使用动态打包，必须执行下列操作：
 
@@ -48,13 +47,11 @@
 有关详细信息，请参阅[动态打包](/documentation/articles/media-services-dynamic-packaging-overview/)。
 
 ## 筛选器和动态清单
-
-借助媒体服务，可为资产定义筛选器。这些筛选器是服务器端规则，可帮助客户完成类似如下的操作：播放视频的特定部分，或指定客户设备可以处理的音频和视频呈现形式（而非与该资产相关的所有呈现形式）的子集。通过客户请求根据一个或多个指定的筛选器流式传输视频时创建的*动态清单*，可实现此筛选操作。
+借助媒体服务，可为资产定义筛选器。这些筛选器是服务器端规则，可帮助客户完成类似如下的操作：播放视频的特定部分，或指定客户设备可以处理的音频和视频呈现形式（而非与该资产相关的所有呈现形式）的子集。通过客户请求根据一个或多个指定的筛选器流式传输视频时创建的 *动态清单* ，可实现此筛选操作。
 
 有关详细信息，请参阅[筛选器和动态清单](/documentation/articles/media-services-dynamic-manifest-overview/)。
 
 ## 定位符
-
 若要为用户提供一个可用于流式传输内容或下载内容的 URL，首先需要通过创建定位符来发布资产。定位符提供访问资产中所含文件的入口点。媒体服务支持两种类型的定位符：
 
 - OnDemandOrigin 定位符。这些定位符用于流媒体（例如，MPEG-DASH、HLS 或平滑流式处理）或渐进式下载文件。
@@ -72,20 +69,16 @@
 
 创建定位符时，可能会由于 Azure 存储中所需存储和传播进程的影响，出现 30 秒的延迟。
 
-
 ## 自适应流
+自适应比特率技术允许视频播放器应用程序确定网络条件并从多个比特率中选择。网络通信质量下降时，客户端可以选择较低的比特率，以便能够以较低的视频质量继续播放视频。网络条件改善时，客户端可以切换到较高的比特率，提高视频质量。Azure 媒体服务支持以下自适应比特率技术：HTTP Live Streaming \(HLS\)、平滑流式处理和 MPEG-DASH。
 
-自适应比特率技术允许视频播放器应用程序确定网络条件并从多个比特率中选择。网络通信质量下降时，客户端可以选择较低的比特率，以便能够以较低的视频质量继续播放视频。网络条件改善时，客户端可以切换到较高的比特率，提高视频质量。Azure 媒体服务支持以下自适应比特率技术：HTTP Live Streaming (HLS)、平滑流式处理、MPEG-DASH 和 HDS。
-
-若要为用户提供流 URL，必须先创建一个 OnDemandOrigin 定位符。通过创建定位符，可获得包含要流式传输的内容的资产的基本路径。但是，为了能够流式传输此内容，需要进一步修改此路径。若要构造流式处理清单文件的完整 URL，必须将定位符的 path 值与清单 (filename.ism) 文件名连接起来。然后，向定位符路径追加 **/Manifest** 和相应的格式（如果需要）。
+若要为用户提供流式处理 URL，必须先创建一个 OnDemandOrigin 定位符。通过创建定位符，可获得包含要流式传输的内容的资产的基本路径。但是，为了能够流式传输此内容，需要进一步修改此路径。若要构造流式处理清单文件的完整 URL，必须将定位符的 path 值与清单 \(filename.ism\) 文件名连接起来。然后，向定位符路径追加 **/Manifest** 和相应的格式（如果需要）。
 
 >[AZURE.NOTE]你也可以通过 SSL 连接流式传输内容。为此，请确保流 URL 以 HTTPS 开头。
 
 仅当要从中传送内容的流式处理终结点是在 2014 年 9 月 10 日之后创建的情况下，才可以通过 SSL 流式传输内容。如果流式处理 URL 基于 2014 年 9 月 10 日之后创建的流式处理终结点，则 URL 会包含“streaming.mediaservices.chinacloudapi.cn”。 包含“origin.mediaservices.chinacloudapi.cn”（旧格式）的流 URL 不支持 SSL。如果你的 URL 采用旧格式，并且你希望能够通过 SSL 流式传输内容，请创建新的流式处理终结点。使用基于新流式处理终结点的 URL 通过 SSL 流式传输内容。
 
-
 ## 流 URL 格式
-
 ### MPEG-DASH 格式
 
 {流式处理终结点名称-媒体服务帐户名称}.streaming.mediaservices.chinacloudapi.cn/{定位符 ID}/{文件名}.ism/Manifest(format=mpd-time-csf)
@@ -131,15 +124,8 @@
 
 	http://testendpoint-testaccount.streaming.mediaservices.chinacloudapi.cn/fecebb23-46f6-490d-8b70-203e86b0df58/BigBuckBunny.ism/Manifest(format=fmp4-v20)
 
-###HDS（仅适用于 Adobe PrimeTime/Access 许可证持有人）
-
-{流式处理终结点名称-媒体服务帐户名称}.streaming.mediaservices.chinacloudapi.cn/{定位符 ID}/{文件名}.ism/Manifest(format=f4m-f4f)
-
-	http://testendpoint-testaccount.streaming.mediaservices.chinacloudapi.cn/fecebb23-46f6-490d-8b70-203e86b0df58/BigBuckBunny.ism/Manifest(format=f4m-f4f)
-
-##渐进式下载 
-
-通过渐进式下载，可在下载完整个文件之前开始播放媒体。无法渐进式下载 .ism*（ismv、isma、ismt 或 ismc）文件。
+## 渐进式下载
+通过渐进式下载，可在下载完整个文件之前开始播放媒体。无法渐进式下载 .ism\*（ismv、isma、ismt 或 ismc）文件。
 
 若要渐进式下载内容，请使用 OnDemandOrigin 类型的定位符。以下示例演示了基于 OnDemandOrigin 类型的定位符的 URL：
 
@@ -200,4 +186,5 @@
 [轮转存储密钥后更新媒体服务定位符](/documentation/articles/media-services-roll-storage-access-keys/)
  
 
-<!---HONumber=Mooncake_Quality_Review_1118_2016-->
+<!---HONumber=Mooncake_0109_2017-->
+<!--Update_Description: remove HDS related content-->

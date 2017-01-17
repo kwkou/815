@@ -5,8 +5,7 @@
     documentationcenter=""
     author="Juliako"
     manager="erikre"
-    editor="" />  
-
+    editor="" />
 <tags
     ms.assetid="88194b59-e479-43ac-b179-af4f295e3780"
     ms.service="media-services"
@@ -14,12 +13,11 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="11/07/2016"
-    wacn.date="12/27/2016"
+    ms.date="12/14/2016"
+    wacn.date="01/13/2017"
     ms.author="juliako" />
 
-#开始使用 REST 传送点播内容 
-
+# 开始使用 REST 传送点播内容
 [AZURE.INCLUDE [media-services-selector-get-started](../../includes/media-services-selector-get-started.md)]
 
 
@@ -30,6 +28,13 @@
 本快速入门介绍了使用 Azure 媒体服务 (AMS) REST API 实现视频点播 (VoD) 内容传送应用程序的步骤。
 
 本教程介绍了基本的媒体服务工作流，以及进行媒体服务开发需要用到的最常见编程对象和任务。完成本教程后，就可以流式传输或渐进下载已上传、编码和下载的示例媒体文件。
+
+开发针对媒体服务 OData 模型的 VoD 应用程序时，以下图像将显示某些最常用的对象。
+
+单击图像查看其完整大小。
+
+<a href="./media/media-services-rest-get-started/media-services-overview-object-model.png" target="_blank"><img src="./media/media-services-rest-get-started/media-services-overview-object-model-small.png"></a>
+ 
 
 ## 先决条件
 以下是开始使用媒体服务和 REST API 进行开发所要满足的先决条件。
@@ -47,6 +52,7 @@
 1.  使用 REST API 发布资产并获取流式处理和渐进式下载 URL。
 1.  播放内容。
 
+有关此主题中使用的 AMS REST 实体的详细信息，请参阅 [Azure 媒体服务 REST API 参考](https://docs.microsoft.com/en-us/rest/api/media/mediaservice)。另请参阅 [Azure 媒体服务概念](/documentation/articles/media-services-concepts/)。
 
 ## <a id="create_ams"></a>使用门户创建媒体服务帐户
 
@@ -140,7 +146,7 @@
 	}
 	
 
->[AZURE.NOTE]建议在外部存储中缓存“access_token”和“expires_in”值。以后可以从存储中检索令牌数据，并在你的媒体服务 REST API 调用中重新使用。这对于令牌可以在多个进程或多台计算机之间安全共享的方案尤其有用。
+>[AZURE.NOTE]建议在外部存储中缓存“access_token”和“expires_in”值。以后可以从存储中检索令牌数据，并在媒体服务 REST API 调用中重新使用。这对于令牌可以在多个进程或多台计算机之间安全共享的方案尤其有用。
 
 确保监视访问令牌的“expires_in”值，并在必要时使用新令牌更新你的 REST API 调用。
 
@@ -151,7 +157,7 @@
 - 上海 DC URI：https://wamsshaclus001rest-hs.chinacloudapp.cn/API/ 
 - 北京 DC URI： https://wamsbjbclus001rest-hs.chinacloudapp.cn/API/
 
-请注意，用于上传和下载资产文件的根 URI 为 https://yourstorageaccount.blob.core.chinacloudapi.cn/ ，其中的存储帐户名为你在媒体服务帐户设置期间使用的同一帐户名。
+用于上传和下载资产文件的根 URI 为 https://yourstorageaccount.blob.core.chinacloudapi.cn/ ，其中存储帐户名为媒体服务帐户设置期间使用的同一帐户名。
 
 以下示例演示了对上海 DC 媒体服务 URI 发出的 HTTP 请求 (https://wamsshaclus001rest-hs.chinacloudapp.cn/API/)。 
 
@@ -380,6 +386,8 @@ SAS URL 采用以下格式：
 - 如果需要立即上传文件，应将 StartTime 值设置为当前时间前五分钟。这是因为你的客户端计算机与媒体服务之间可能存在时钟偏差。此外，StartTime 值必须采用以下 DateTime 格式：YYYY-MM-DDTHH:mm:ssZ（例如，“2014-05-23T17:53:50Z”）。
 - 定位符从创建到可用可能会有 30-40 秒的延迟。SAS URL 和源定位符都会出现这个问题。
 
+有关 SAS 定位符的详细信息，请参阅[此博客](http://southworks.com/blog/2015/05/27/reusing-azure-media-services-locators-to-avoid-facing-the-5-shared-access-policy-limitation/)。
+
 以下示例说明了如何创建 SAS URL 定位符，如请求正文中的 Type 属性定义（“1”表示 SAS 定位符，“2”表示按需来源定位符）。返回的 **Path** 属性包含上传文件时必须使用的 URL。
 	
 **HTTP 请求**
@@ -515,9 +523,9 @@ SAS URL 采用以下格式：
  
 ## <a id="configure_streaming_units"></a>使用 REST API 配置流式处理单位
 
-使用 Azure 媒体服务最常见的方案之一是将自适应比特率流传送至客户端。通过自适应比特率流，客户端可以在视频显示时，根据当前网络带宽、CPU 利用率和其他因素，切换至较高或较低的比特率流。媒体服务支持以下自适应比特率流式处理技术：HTTP 实时流式处理 (HLS)、平滑流式处理、MPEG DASH 和 HDS（仅适用于 Adobe PrimeTime/Access 许可证持有人）。
+使用 Azure 媒体服务最常见的方案之一是将自适应比特率流传送至客户端。通过自适应比特率流，客户端可以在视频显示时，根据当前网络带宽、CPU 利用率和其他因素，切换至较高或较低的比特率流。媒体服务支持以下自适应比特率流式处理技术：HTTP Live Streaming \(HLS\)、平滑流式处理和 MPEG DASH。
 
-使用媒体服务提供的动态打包，可采用媒体服务支持的流格式（MPEG DASH、HLS、Smooth Streaming、HDS）传送自适应比特率 MP4 或平滑流式处理编码内容，而无须重新打包成这些流式处理格式。
+使用媒体服务提供的动态打包，可采用媒体服务支持的流格式（MPEG DASH、HLS、平滑流式处理）传送自适应比特率 MP4 或平滑流式处理编码内容，而无须重新打包成这些流式处理格式。
 
 若要使用动态打包，必须执行下列操作：
 
@@ -634,9 +642,9 @@ SAS URL 采用以下格式：
 
 ## <a id="encode"></a>将源文件编码为一组自适应比特率 MP4 文件
 
-将资产引入媒体服务后，即可对媒体进行编码、传输复用、打水印等处理，然后将其传送至客户端。将根据多个后台角色实例调度和运行这些活动，以确保高性能和高可用性。这些活动称为作业，每个[作业](https://docs.microsoft.com/zh-cn/rest/api/media/operations/job)由原子任务构成，这些原子任务将在资产文件上执行具体的工作。
+将资产引入媒体服务后，即可对媒体进行编码、传输复用、打水印等处理，然后将其传送至客户端。将根据多个后台角色实例调度和运行这些活动，以确保高性能和高可用性。这些活动称为作业，每个作业由原子任务构成，这些原子任务将在资产文件上执行具体的工作。有关详细信息，请参阅[Job](https://docs.microsoft.com/zh-CN/rest/api/media/operations/job)（作业）、[Task](https://docs.microsoft.com/zh-CN/rest/api/media/operations/task)（任务）说明。
 
-如前所述，使用 Azure 媒体服务最常见的方案之一是将自适应比特率流传送至客户端。媒体服务可以将一组自适应比特率 MP4 文件动态打包为以下其中一种格式：HTTP 实时流式处理 (HLS)、平滑流式处理、MPEG DASH 和 HDS（仅适用于 Adobe PrimeTime/Access 许可证持有人）。
+如前所述，使用 Azure 媒体服务最常见的方案之一是将自适应比特率流传送至客户端。媒体服务可将一组自适应比特率 MP4 文件动态打包为以下格式之一：HTTP Live Streaming \(HLS\)、平滑流式处理、MPEG DASH。
 
 若要使用动态打包，必须执行下列操作：
 
@@ -933,7 +941,7 @@ SAS URL 采用以下格式：
 
 ## <a id="publish_get_urls"></a>使用 REST API 发布资产并获取流式处理和渐进式下载 URL
 
-若要流处理或下载资产，必须先创建定位符来“发布”资产。定位符提供对资产中所含文件的访问权限。媒体服务支持两种类型的定位符：用于流媒体（例如 MPEG DASH、HLS 或平滑流式处理）的 OnDemandOrigin 定位符，以及用于下载媒体文件的访问签名 (SAS) 定位符。
+若要流处理或下载资产，必须先创建定位符来“发布”资产。定位符提供对资产中所含文件的访问权限。媒体服务支持两种类型的定位符：用于流媒体（例如 MPEG DASH、HLS 或平滑流式处理）的 OnDemandOrigin 定位符，以及用于下载媒体文件的访问签名 \(SAS\) 定位符。有关 SAS 定位符的详细信息，请参阅[此博客](http://southworks.com/blog/2015/05/27/reusing-azure-media-services-locators-to-avoid-facing-the-5-shared-access-policy-limitation/)。
 
 创建定位符后，可以创建用来流式处理或下载文件的 URL。
 
@@ -1158,4 +1166,5 @@ MPEG DASH 的流 URL 采用以下格式：
 
 若要测试渐进式下载，请将 URL 粘贴到浏览器（例如 IE、Chrome、Safari）中。
 
-<!---HONumber=Mooncake_1205_2016-->
+<!---HONumber=Mooncake_0109_2017-->
+<!--Update_Description: add SAS locator blog link; remove HDS related content; update media service rest api link reference-->

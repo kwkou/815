@@ -1,40 +1,37 @@
 <properties
-	pageTitle="使用 Azure 媒体分析进行面部修订 | Azure"
-	description="本主题演示如何使用 Azure 媒体分析检测面部。"
-	services="media-services"
-	documentationCenter=""
-	authors="juliako"
-	manager="erikre"
-	editor=""/>
-
+    pageTitle="使用 Azure 媒体分析进行面部修订 | Azure"
+    description="本主题演示如何使用 Azure 媒体分析检测面部。"
+    services="media-services"
+    documentationcenter=""
+    author="juliako"
+    manager="erikre"
+    editor="" />
 <tags
-	ms.service="media-services"
-	ms.workload="media"
-	ms.tgt_pltfrm="na"
-	ms.devlang="dotnet"
-	ms.topic="article"
-	ms.date="09/12/2016"   
-	wacn.date="10/10/2016"
-	ms.author="juliako;"/>
- 
-#使用 Azure 媒体分析进行面部修订
+    ms.assetid="5b6d8b8c-5f4d-4fef-b3d6-dc22c6b5a0f5"
+    ms.service="media-services"
+    ms.workload="media"
+    ms.tgt_pltfrm="na"
+    ms.devlang="dotnet"
+    ms.topic="article"
+    ms.date="11/30/2016"
+    wacn.date="01/13/2017"
+    ms.author="juliako;" />  
 
-##概述
 
-**Azure 媒体修订器**是一种 [Azure 媒体分析](/documentation/articles/media-services-analytics-overview/)媒体处理器 (MP)，可用于在云中进行可缩放的面部修订。使用面部修订，可对视频进行修改，使所选个人的面部模糊显示。用户可能想要在公共安全和新闻媒体场景中使用面部修订服务。对于时长仅几分钟但包含多张面孔的镜头，进行手动面部修订可能需要几个小时，但使用此服务仅需几个简单步骤即可完成该过程。有关详细信息，请参阅[此](https://azure.microsoft.com/blog/azure-media-redactor/)博客。
+# 使用 Azure 媒体分析进行面部修订
+## 概述
+**Azure 媒体修订器**是一种 [Azure 媒体分析](/documentation/articles/media-services-analytics-overview/)媒体处理器 \(MP\)，可用于在云中进行可缩放的面部修订。使用面部修订，可对视频进行修改，使所选个人的面部模糊显示。用户可能想要在公共安全和新闻媒体场景中使用面部修订服务。对于时长仅几分钟但包含多张面孔的镜头，进行手动面部修订可能需要几个小时，但使用此服务仅需几个简单步骤即可完成该过程。有关详细信息，请参阅[此](https://azure.microsoft.com/blog/azure-media-redactor/)博客。
 
 本主题提供有关 **Azure 媒体修订器**的详细信息，并演示如何通过适用于 .NET 的媒体服务 SDK 使用它。
 
-**Azure 媒体修订器** MP 目前以预览版提供。
+**Azure 媒体修订器** MP 目前以预览版提供。当前，此预览版免费。在当前版本中，已处理视频长度的限制为 10 分钟。
 
 ## 面部修订模式
-
 面部修订的工作方式是：检测每一帧视频中的面部，并跟踪之前和之后的面部对象，以便同一个人在其他角度也模糊显示。自动修订过程非常复杂，并且无法始终产生 100% 符合要求的输出，因此，媒体分析提供了几种修改最终输出的方式。
 
 除了完全自动模式外，还可使用双步工作流通过 ID 列表选择/取消选找到的面部。此外，为了对每一帧进行任意调整，MP 使用 JSON 格式的元数据文件。此工作流拆分为“分析”和“修订”模式。可将这两个模式组合为在一个作业中运行两项任务的单个过程；此模式称为“组合”。
 
-###组合模式
-
+### 组合模式
 这将自动生成经过修订的 mp4，而无需任何手动输入。
 
 阶段|文件名|说明
@@ -134,12 +131,11 @@
 以下程序演示如何：
 
 1. 创建资产并将媒体文件上传到资产。
-1. 基于包含以下 json 预设的配置文件创建含有面部修订任务的作业。
-					
-		{'version':'1.0', 'options': {'mode':'combined'}}
-
-1. 下载输出 JSON 文件。
-		 
+2. 基于包含以下 json 预设的配置文件创建含有面部修订任务的作业。
+   
+        {'version':'1.0', 'options': {'mode':'combined'}}
+3. 下载输出 JSON 文件。
+   
         using System;
 		using System.Configuration;
 		using System.IO;
@@ -324,4 +320,5 @@
 
 [Azure 媒体分析演示](http://azuremedialabs.azurewebsites.net/demos/Analytics.html)
 
-<!---HONumber=Mooncake_0926_2016-->
+<!---HONumber=Mooncake_0109_2017-->
+<!--Update_Description: update -->

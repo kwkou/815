@@ -5,8 +5,7 @@
     documentationcenter=""
     author="Juliako"
     manager="erikre"
-    editor="" />  
-
+    editor="" />
 <tags
     ms.assetid="388b8928-9aa9-46b1-b60a-a918da75bd7b"
     ms.service="media-services"
@@ -14,8 +13,8 @@
     ms.tgt_pltfrm="na"
     ms.devlang="dotnet"
     ms.topic="hero-article"
-    ms.date="11/07/2016"
-    wacn.date="12/12/2016"
+    ms.date="12/15/2016"
+    wacn.date="01/13/2017"
     ms.author="juliako" />
 
 # 使用 .NET SDK 开始传送点播内容
@@ -29,7 +28,17 @@
 ## 概述
 本教程将引导你完成使用用于 .NET 的 Azure 媒体服务 (AMS) SDK 实施视频点播 (VoD) 内容传送应用程序的步骤。
 
-本教程介绍了基本的媒体服务工作流，以及进行媒体服务开发需要用到的最常见编程对象和任务。完成本教程后，你就能够流式传输或渐进下载你已上载、编码和下载的示例媒体文件。
+本教程介绍了基本的媒体服务工作流，以及进行媒体服务开发需要用到的最常见编程对象和任务。完成本教程后，就可以流式传输或渐进下载已上传、编码和下载的示例媒体文件。
+
+### AMS 模型
+
+开发针对媒体服务 OData 模型的 VoD 应用程序时，以下图像将显示某些最常用的对象。
+
+单击图像查看其完整大小。
+
+<a href="./media/media-services-dotnet-get-started/media-services-overview-object-model.png" target="_blank"><img src="./media/media-services-dotnet-get-started/media-services-overview-object-model-small.png"></a>
+
+可在[此处](https://media.windows.net/API/$metadata?api-version=2.14)查看完整模型。
 
 ## 学习内容
 本教程说明如何完成以下任务：
@@ -150,7 +159,7 @@
 		using Microsoft.WindowsAzure.MediaServices.Client;
 		
 
-6. 在 projects 目录下创建新的文件夹，然后复制你要编码和流处理或渐进式下载的 .mp4 或 .wmv 文件。在此示例中，我们使用了“C:\\VideoFiles”路径。
+6. 创建新的文件夹（文件夹可位于本地驱动器上任意位置），然后复制要编码和流式传输或渐进式下载的 .mp4 文件。在此示例中，我们使用了“C:\\VideoFiles”路径。
 
 ## 连接到媒体服务帐户
 
@@ -158,6 +167,7 @@
 
 使用以下代码覆盖默认程序类。该代码演示如何从 App.config 文件中读取连接值，以及如何创建 **CloudMediaContext** 对象以连接到媒体服务。有关连接到媒体服务的详细信息，请参阅[使用适用于 .NET 的媒体服务 SDK 连接到媒体服务](/documentation/articles/media-services-dotnet-connect-programmatically/)。
 
+请确保将文件名和路径更新为媒体文件所在位置。
 
 **Main** 函数调用将在本部分中进一步定义的方法。
 
@@ -200,7 +210,7 @@
                 _context = new CloudMediaContext(_apiServer, _cachedCredentials);
 
                 // Add calls to methods defined in this section.
-
+		// Make sure to update the file name and path to where you have your media file.
                 IAsset inputAsset =
                     UploadFile(@"C:\VideoFiles\BigBuckBunny.mp4", AssetCreationOptions.None);
 
@@ -263,7 +273,7 @@
 
 将资产引入媒体服务后，即可对媒体进行编码、传输复用、打水印等处理，然后将其传送至客户端。将根据多个后台角色实例调度把那个运行这些活动，以确保较高的性能和可用性。这些活动称为作业，每个作业由原子任务构成，这些原子任务在资产文件上完成具体的工作。
 
-如前所述，使用 Azure 媒体服务时最常见的方案之一是将自适应比特率流传送至你的客户端。媒体服务可以将一组自适应比特率 MP4 文件动态打包为以下其中一种格式：HTTP 实时流式处理 (HLS)、平滑流式处理、MPEG DASH 和 HDS（仅适用于 Adobe PrimeTime/Access 许可证持有人）。
+如前所述，使用 Azure 媒体服务时最常见的方案之一是将自适应比特率流传送至你的客户端。媒体服务可将一组自适应比特率 MP4 文件动态打包为以下格式之一：HTTP Live Streaming \(HLS\)、平滑流式处理和 MPEG DASH。
 
 若要使用动态打包，必须执行下列操作：
 
@@ -272,8 +282,8 @@
 
 以下代码演示如何提交编码作业。该作业所包含的一项任务会指定要使用 **Media Encoder Standard** 将夹层文件转码成一组自适应比特率 MP4。代码会提交作业，并等待作业完成。
 
-作业完成后，你即可流式处理资产，或渐进式下载转码后所创建的 MP4 文件。请注意，你不需要拥有超过 0 个流式处理单位才能渐进式下载 MP4 文件。
-
+编码作业完成后，即可发布资产，然后流式传输或渐进式下载 MP4 文件。
+ 
 将以下方法添加到 Program 类。
 
 	static public IAsset EncodeToAdaptiveBitrateMP4s(IAsset asset, AssetCreationOptions options)
@@ -314,19 +324,21 @@
 
 若要流处理或下载资产，你必须先创建定位符来“发布”资产。定位符提供对资产中所含文件的访问权限。媒体服务支持两种类型的定位符：用于流媒体（例如 MPEG DASH、HLS 或平滑流式处理）的 OnDemandOrigin 定位符，以及用于下载媒体文件的访问签名 (SAS) 定位符（有关 SAS 定位符的详细信息，请参阅[此](http://southworks.com/blog/2015/05/27/reusing-azure-media-services-locators-to-avoid-facing-the-5-shared-access-policy-limitation/)博客）。
 
-创建定位符后，可以创建用来流式处理或下载文件的 URL。
+### 有关 URL 格式的一些详细信息
 
-平滑流式处理的流 URL 采用以下格式：
+创建定位符后，可以创建用于流式传输或下载文件的 URL。本教程中的示例将输出一些 URL，可将其粘贴到适当的浏览器中。本部分仅提供显示格式不同之处的简短示例。
 
-	 {streaming endpoint name-media services account name}.streaming.mediaservices.chinacloudapi.cn/{locator ID}/{filename}.ism/Manifest
+#### MPEG DASH 的流 URL 采用以下格式：
 
-HLS 的流 URL 采用以下格式：
+	 {streaming endpoint name-media services account name}.streaming.mediaservices.chinacloudapi.cn/{locator ID}/{filename}.ism/Manifest**(format=mpd-time-csf)**
 
-	 {streaming endpoint name-media services account name}.streaming.mediaservices.chinacloudapi.cn/{locator ID}/{filename}.ism/Manifest(format=m3u8-aapl)
+#### HLS 的流 URL 采用以下格式：
 
-MPEG DASH 的流 URL 采用以下格式：
+	 {streaming endpoint name-media services account name}.streaming.mediaservices.chinacloudapi.cn/{locator ID}/{filename}.ism/Manifest**(format=m3u8-aapl)**
 
-	{streaming endpoint name-media services account name}.streaming.mediaservices.chinacloudapi.cn/{locator ID}/{filename}.ism/Manifest(format=mpd-time-csf)
+#### 平滑流式处理的流式处理 URL 采用以下格式：
+
+	{streaming endpoint name-media services account name}.streaming.mediaservices.chinacloudapi.cn/{locator ID}/{filename}.ism/Manifest
 
 用于下载文件的 SAS URL 采用以下格式：
 
@@ -439,11 +451,15 @@ MPEG DASH
 	https://storagetestaccount001.blob.core.chinacloudapi.cn/asset-38058602-a4b8-4b33-b9f0-6880dc1490ea/BigBuckBunny_AAC_und_ch2_56kbps.mp4?sv=2012-02-12&sr=c&si=166d5154-b801-410b-a226-ee2f8eac1929&sig=P2iNZJAvAWpp%2Bj9yV6TQjoz5DIIaj7ve8ARynmEM6Xk%3D&se=2015-02-14T01:13:05Z
 
 
-若要流式处理视频，请使用 [Azure 媒体服务播放器](http://amsplayer.azurewebsites.net/azuremediaplayer.html)。
+若要流式传输视频，请将 URL 粘贴到 [Azure 媒体服务播放器](http://amsplayer.azurewebsites.net/azuremediaplayer.html)的“URL”文本框中。
 
 若要测试渐进式下载，请将 URL 粘贴到浏览器（例如 Internet Explorer、Chrome 或 Safari）中。
 
+有关详细信息，请参阅以下主题：
 
+- [使用现有播放器播放内容](/documentation/articles/media-services-playback-content-with-existing-players/)
+- [开发视频播放器应用程序](/documentation/articles/media-services-develop-video-players/)
+- [使用 DASH.js 在 HTML5 应用程序中嵌入 MPEG-DASH 自适应流式处理视频](/documentation/articles/media-services-embed-mpeg-dash-in-html5/)
 
 
 
@@ -457,4 +473,5 @@ MPEG DASH
   [Web Platform Installer]: http://go.microsoft.com/fwlink/?linkid=255386
   [Portal]: http://manage.windowsazure.cn/
 
-<!---HONumber=Mooncake_1205_2016-->
+<!---HONumber=Mooncake_0109_2017-->
+<!--Update_Description:add AMS sub-section; update steaming urls-->

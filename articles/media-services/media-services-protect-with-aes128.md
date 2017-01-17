@@ -5,8 +5,7 @@
     documentationcenter=""
     author="Juliako"
     manager="erikre"
-    editor="" />  
-
+    editor="" />
 <tags
     ms.assetid="4d2c10af-9ee0-408f-899b-33fa4c1d89b9"
     ms.service="media-services"
@@ -14,8 +13,8 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="10/24/2016"
-    wacn.date="12/12/2016"
+    ms.date="12/11/2016"
+    wacn.date="01/13/2017"
     ms.author="juliako" />  
 
 
@@ -28,7 +27,7 @@
 
 ##概述
 
-借助 Azure 媒体服务，可以传送使用高级加密标准 (AES) 加密的 Http 实时流式处理 (HLS) 和平滑流（使用 128 位加密密钥）。媒体服务还提供密钥传送服务，将加密密钥传送给已授权的用户。如果需要媒体服务来加密资产，则需要将加密密钥与资产相关联，并配置密钥的授权策略。当播放器请求流时，媒体服务将使用指定的密钥通过 AES 加密来动态加密内容。为了解密流，播放器将从密钥传送服务请求密钥。为了确定用户是否有权获取密钥，该服务会评估为密钥指定的授权策略。
+借助 Azure 媒体服务，可以传送使用高级加密标准 (AES) 加密的 Http 实时流式处理 (HLS) 和平滑流（使用 128 位加密密钥）。媒体服务还提供密钥传送服务，将加密密钥传送给已授权的用户。如果需要媒体服务来加密资产，则需要将加密密钥与资产相关联，并配置密钥的授权策略。当播放器请求流时，媒体服务将使用指定的密钥通过 AES 加密来动态加密内容。为了解密流，播放器将从密钥传送服务请求密钥。为了确定用户是否有权获取密钥，服务将评估为密钥指定的授权策略。
 
 媒体服务支持通过多种方式对发出密钥请求的用户进行身份验证。内容密钥授权策略可能受到一种或多种授权限制：开放或令牌限制。令牌限制策略必须附带由安全令牌服务 (STS) 颁发的令牌。媒体服务支持采用[简单 Web 令牌](https://msdn.microsoft.com/zh-cn/library/gg185950.aspx#BKMK_2) (SWT) 格式和 [JSON Web 令牌](https://msdn.microsoft.com/zh-cn/library/gg185950.aspx#BKMK_3) (JWT) 格式的令牌。有关详细信息，请参阅[配置内容密钥授权策略](/documentation/articles/media-services-protect-with-aes128/#configure_key_auth_policy)。
 
@@ -45,7 +44,7 @@
 1. [将包含文件的资产编码为自适应比特率 MP4 集](/documentation/articles/media-services-protect-with-aes128/#encode_asset)。
 1. [创建内容密钥并将其与编码资产相关联](/documentation/articles/media-services-protect-with-aes128/#create_contentkey)。在媒体服务中，内容密钥包含资产的加密密钥。
 1. [配置内容密钥授权策略](/documentation/articles/media-services-protect-with-aes128/#configure_key_auth_policy)。必须配置内容密钥授权策略，并且客户端必须遵守该策略，才能将内容密钥传送到客户端。
-1. [为资产配置传送策略](/documentation/articles/media-services-protect-with-aes128/#configure_asset_delivery_policy)。传送策略配置包括：密钥获取 URL 和初始化向量 (IV)（进行加密和解密时，AES 128 要求提供同一个初始化向量）、传送协议（例如 MPEG DASH、HLS、HDS、平滑流或全部）、动态加密类型（例如信封或无动态加密）。
+1. [为资产配置传送策略](/documentation/articles/media-services-protect-with-aes128/#configure_asset_delivery_policy)。传送策略配置包括：密钥获取 URL 和初始化向量 \(IV\)（进行加密和解密时，AES 128 要求提供同一个初始化向量）、传送协议（例如 MPEG DASH、HLS、平滑流式处理或全部）、动态加密类型（例如信封或无动态加密）。
 
 可将不同的策略应用到同一资产上的每个协议。例如，可以将 PlayReady 加密应用到平滑流/DASH，并将 AES 信封应用到 HLS。将阻止流式处理传送策略中未定义的任何协议（例如，添加仅将 HLS 指定为协议的单个策略）。不定义任何传送策略是例外情况。此时，将允许所有明文形式的协议。
 
@@ -93,10 +92,10 @@
 
 为资产配置传送策略。资产传送策略配置包括：
 
-- 密钥获取 URL。
-- 用于信封加密的初始化向量 (IV)。进行加密和解密时，AES - 128 要求提供同一个 IV。
-- 资产传送协议（例如 MPEG DASH、HLS、HDS、平滑流式处理或全部）。
-- 动态加密类型（例如 AES 信封）或无动态加密。
+* 密钥获取 URL。
+* 用于信封加密的初始化向量 \(IV\)。进行加密和解密时，AES - 128 要求提供同一个 IV。
+* 资产传送协议（例如 MPEG DASH、HLS、平滑流式处理或全部）。
+* 动态加密类型（例如 AES 信封）或无动态加密。
 
 有关详细信息，请参阅[配置资产传送策略](/documentation/articles/media-services-rest-configure-asset-delivery-policy/)。
 
@@ -219,8 +218,8 @@
 ##<a id="example"></a>示例
 
 1. 创建新的控制台项目。
-1. 使用 NuGet 安装和添加 Azure 媒体服务.NET SDK 扩展。安装此包也会安装适用于 .NET 的媒体服务 SDK 并添加所有其他必需的依赖项。
-2. 添加包含帐户名称和密钥信息的配置文件：
+2. 使用 NuGet 安装和添加 Azure 媒体服务.NET SDK 扩展。安装此包也会安装适用于 .NET 的媒体服务 SDK 并添加所有其他必需的依赖项。
+3. 添加包含帐户名称和密钥信息的配置文件：
 
 	
 		<?xml version="1.0" encoding="utf-8"?>
@@ -636,4 +635,5 @@
 		    }
 		}
 
-<!---HONumber=Mooncake_1205_2016-->
+<!---HONumber=Mooncake_0109_2017-->
+<!--Update_Description: remove HDS related content-->

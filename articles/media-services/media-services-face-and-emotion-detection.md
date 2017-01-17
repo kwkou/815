@@ -5,8 +5,7 @@
     documentationcenter=""
     author="juliako"
     manager="erikre"
-    editor="" />  
-
+    editor="" />
 <tags
     ms.assetid="5ca4692c-23f1-451d-9d82-cbc8bf0fd707"
     ms.service="media-services"
@@ -14,16 +13,14 @@
     ms.tgt_pltfrm="na"
     ms.devlang="dotnet"
     ms.topic="article"
-    ms.date="11/17/2016"
-    wacn.date="12/12/2016"
+    ms.date="11/29/2016"
+    wacn.date="01/13/2017"
     ms.author="milanga;juliako;" />  
 
- 
-#使用 Azure 媒体分析检测面部和情绪
 
-##概述
-
-**Azure 媒体面部检测器**媒体处理器 (MP) 可让你通过面部表情来统计、跟踪动作，甚至计量受众的参与和反应。此服务包含两项功能：
+# 使用 Azure 媒体分析检测面部和情绪
+## 概述
+**Azure 媒体面部检测器**媒体处理器 \(MP\) 可让你通过面部表情来统计、跟踪动作，甚至计量受众的参与和反应。此服务包含两项功能：
 
 - **面部检测**
 
@@ -39,18 +36,15 @@
 
 本主题提供有关 **Azure Media Face Detector** 的详细信息，并说明如何将其与用于 .NET 的媒体服务 SDK 搭配使用。
 
-##面部检测器输入文件
-
+## 面部检测器输入文件
 视频文件。目前支持以下格式：MP4、MOV 和 WMV。
 
-##面部检测器输出文件
-
+## 面部检测器输出文件
 面部检测器和跟踪 API 可提供高精确度的面部位置检测和跟踪功能，并在单个视频中检测到最多 64 个人脸。正面的面部可提供最佳效果，而侧面的面部和较小的面部（小于或等于 24x24 像素）可能就无法获得相同的精确度。
 
 已检测到并已跟踪的面部将在坐标（左侧、顶部、宽度和高度）中返回，其中会在以像素为单位的图像中指明面部的位置，以及表示正在跟踪该人员的面部 ID 编号。在正面面部长时间于帧中消失或重叠的情况下，面部 ID 编号很容易重置，导致某些人员被分配多个 ID。
 
-###<a id="output_elements"></a>输出 JSON 文件中的元素
-
+### <a id="output_elements"></a>输出 JSON 文件中的元素
 对于面部检测和跟踪操作，输出结果以 JSON 格式包含给定文件中面部的元数据。
 
 面部检测和跟踪 JSON 包括以下属性：
@@ -80,14 +74,12 @@ facesDetected|位于 JSON 结果的末尾，汇总在生成视频期间算法所
 ### 输入视频
 [输入视频](http://ampdemo.azureedge.net/azuremediaplayer.html?url=https%3A%2F%2Freferencestream-samplestream.streaming.mediaservices.windows.net%2Fc8834d9f-0b49-4b38-bcaf-ece2746f1972%2FMicrosoft%20Convergence%202015%20%20Keynote%20Highlights.ism%2Fmanifest&amp;autoplay=false)
 
-###任务配置（预设）
-
+### 任务配置（预设）
 在使用 **Azure 媒体面部检测器**创建任务时，必须指定配置预设。以下配置预设仅适用于面部检测。
 
-	{"version":"1.0"}
+    {"version":"1.0"}
 
-###JSON 输出
-
+### JSON 输出
 下面是 JSON 输出被截断的示例。
 
 	{
@@ -137,15 +129,11 @@ facesDetected|位于 JSON 结果的末尾，汇总在生成视频期间算法所
 
 		. . . 
 
-##情绪检测输入和输出示例
-
-
-###输入视频
-
+## 情绪检测输入和输出示例
+### 输入视频
 [输入视频](http://ampdemo.azureedge.net/azuremediaplayer.html?url=https%3A%2F%2Freferencestream-samplestream.streaming.mediaservices.windows.net%2Fc8834d9f-0b49-4b38-bcaf-ece2746f1972%2FMicrosoft%20Convergence%202015%20%20Keynote%20Highlights.ism%2Fmanifest&amp;autoplay=false)
 
-###任务配置（预设）
-
+### 任务配置（预设）
 在使用 **Azure 媒体面部检测器**创建任务时，必须指定配置预设。以下配置预设指定基于情绪检测创建 JSON。
  	
 	{
@@ -170,10 +158,10 @@ AggregateEmotionIntervalMs|在已选择 AggregateEmotion 模式时使用。指�
 
 下面是聚合窗口和间隔设置的建议值。AggregateEmotionWindowMs 应该超过 AggregateEmotionIntervalMs。
 
-| 默认值 | 最大值 | 最小值 |
-| --- | --- | --- | --- |
-| AggregateEmotionWindowMs |0\.5 |2 |
-| AggregateEmotionIntervalMs |0\.5 |1 |
+| 默认值 | 最小值 | 最大值 |
+| --- | --- | --- |
+| AggregateEmotionWindowMs |0.5 |2 |
+| AggregateEmotionIntervalMs |0.5 |1 |
 
 ###JSON 输出
 
@@ -332,27 +320,23 @@ AggregateEmotionIntervalMs|在已选择 AggregateEmotion 模式时使用。指�
 	             "fear": 0,
 
 
-##限制
-
-- 支持的输入视频格式包括 MP4、MOV 和 WMV。
-- 可检测的面部大小范围为 24x24 到 2048x2048 像素。无法检测此范围以外的面部。
-- 对于每个视频，返回的面部数上限为 64。
-- 某些面部可能因技术难题而无法检测，例如非常大的面部角度（头部姿势），以及较大的阻挡物。正面和接近正面的面部可提供最佳效果。
-
+## 限制
+* 支持的输入视频格式包括 MP4、MOV 和 WMV。
+* 可检测的面部大小范围为 24x24 到 2048x2048 像素。无法检测此范围以外的面部。
+* 对于每个视频，返回的面部数上限为 64。
+* 某些面部可能因技术难题而无法检测，例如非常大的面部角度（头部姿势），以及较大的阻挡物。正面和接近正面的面部可提供最佳效果。
 
 ## 代码示例
-
 以下程序演示如何：
 
 1. 创建资产并将媒体文件上传到资产。
-1. 使用基于包含以下 json 预设值的配置文件的面部检测任务创建一个作业。
-					
-		{
-		    "version": "1.0"
-		}
-
-1. 下载输出 JSON 文件。
-		 
+2. 使用基于包含以下 json 预设值的配置文件的面部检测任务创建一个作业。
+   
+        {
+            "version": "1.0"
+        }
+3. 下载输出 JSON 文件。
+   
         using System;
 		using System.Configuration;
 		using System.IO;
@@ -537,4 +521,5 @@ AggregateEmotionIntervalMs|在已选择 AggregateEmotion 模式时使用。指�
 
 [Azure Media Analytics demos（Azure 媒体分析演示）](http://azuremedialabs.azurewebsites.net/demos/Analytics.html)
 
-<!---HONumber=Mooncake_1205_2016-->
+<!---HONumber=Mooncake_0109_2017-->
+<!--Update_Description: update aggregate defaults table-->

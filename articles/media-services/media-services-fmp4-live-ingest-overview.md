@@ -1,26 +1,24 @@
-<properties 
-	pageTitle="Azure 媒体服务分片 MP4 实时引入规范 | Azure" 
-	description="本规范描述基于分片 MP4 的实时流引入协议和格式（适用于 Azure 媒体服务）。Azure 媒体服务提供实时流服务，支持客户使用 Azure 作为云平台来实时流式传输实时事件和广播内容。本文档还介绍了有关构建高度冗余和稳健的实时引入机制的最佳实践。" 
-	services="media-services" 
-	documentationCenter="" 
-	authors="cenkdin" 
-	manager="erikre" 
-	editor=""/>  
+<properties
+    pageTitle="Azure 媒体服务分片 MP4 实时引入规范 | Azure"
+    description="本规范描述基于分片 MP4 的实时流引入协议和格式（适用于 Azure 媒体服务）。Azure 媒体服务提供实时传送视频流服务，支持客户使用 Azure 作为云平台来实时流式传输实时事件和广播内容。本文档还介绍了有关构建高度冗余和稳健的实时引入机制的最佳实践。"
+    services="media-services"
+    documentationcenter=""
+    author="cenkdin"
+    manager="erikre"
+    editor="" />
+<tags
+    ms.assetid="43fac263-a5ea-44af-8dd5-cc88e423b4de"
+    ms.service="media-services"
+    ms.workload="media"
+    ms.tgt_pltfrm="na"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.date="12/07/2016"
+    wacn.date="01/13/2017"
+    ms.author="cenkd;juliako" />  
 
 
-<tags 
-	ms.service="media-services" 
-	ms.workload="media" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="09/26/2016"     
-	wacn.date="12/27/2016"     
-	ms.author="cenkdin;juliako"/>
-
-
-#Azure 媒体服务分片 MP4 实时引入规范
-
+# Azure 媒体服务分片 MP4 实时引入规范
 本规范描述基于分片 MP4 的实时流引入协议和格式（适用于 Azure 媒体服务）。Azure 媒体服务提供实时流服务，支持客户使用 Azure 作为云平台来实时流式传输实时事件和广播内容。本文档还介绍了有关构建高度冗余和稳健的实时引入机制的最佳实践。
 
 
@@ -32,10 +30,10 @@
 
 下图显示 Azure 媒体服务中实时流服务的高级体系结构：
 
-1.	实时编码器将实时源推送到通过 Azure 媒体服务 SDK 创建并设置的通道。
-2.	Azure 媒体服务中的频道、节目与流式处理终结点处理所有的实时流功能，包括引入、格式化、云 DVR、安全性、缩放性和冗余。
-3.	（可选）客户可以选择在流式处理终结点与客户端终结点之间部署 CDN 层。
-4.	客户端使用 HTTP 自适应流协议（例如平滑流、DASH、HDS 或 HLS）从流终结点开始流式传输。
+1. 实时编码器将实时源推送到通过 Azure 媒体服务 SDK 创建并设置的通道。
+2. Azure 媒体服务中的频道、节目与流式处理终结点处理所有的实时流功能，包括引入、格式化、云 DVR、安全性、缩放性和冗余。
+3. （可选）客户可以选择在流式处理终结点与客户端终结点之间部署 CDN 层。
+4. 客户端终结点使用 HTTP 自适应流协议（例如平滑流式处理、DASH 或 HLS）从流式处理终结点开始流式传输。
 
 ![image1][image1]
 
@@ -223,4 +221,5 @@ Azure 媒体服务的 ISO 分片 MP4 实时引入使用长时间运行的标准 
 
  
 
-<!---HONumber=Mooncake_Quality_Review_1202_2016-->
+<!---HONumber=Mooncake_0109_2017-->
+<!--Update_Description: remove HDS related content-->
