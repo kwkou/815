@@ -290,7 +290,7 @@ Azure Active Directory 应用程序已创建且安装了身份验证库。现可
             Template = File.ReadAllText("..\\..\\VirtualMachineTemplate.json"),
             Parameters = File.ReadAllText("..\\..\\Parameters.json")
           };
-          var resourceManagementClient = new ResourceManagementClient(credential) 
+          var resourceManagementClient = new ResourceManagementClient(new Uri("https://management.chinacloudapi.cn/"), credential) 
             { SubscriptionId = subscriptionId };
           return await resourceManagementClient.Deployments.CreateOrUpdateAsync(
             groupName,
@@ -322,7 +322,7 @@ Azure Active Directory 应用程序已创建且安装了身份验证库。现可
           string subscriptionId)
         {
           Console.WriteLine("Deleting resource group...");
-          var resourceManagementClient = new ResourceManagementClient(credential)
+          var resourceManagementClient = new ResourceManagementClient(new Uri("https://management.chinacloudapi.cn/"), credential)
             { SubscriptionId = subscriptionId };
           await resourceManagementClient.ResourceGroups.DeleteAsync(groupName);
         }
