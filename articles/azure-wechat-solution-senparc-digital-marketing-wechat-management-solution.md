@@ -62,23 +62,23 @@
 	
     1) 接口权限申请
 
-        ![7](./media/azure-wechat-solution-senparc-digital-marketing-wechat-management-solution/7.png)
+    ![7](./media/azure-wechat-solution-senparc-digital-marketing-wechat-management-solution/7.png)
 			 
     2) 域名配置
 
-        ![8](./media/azure-wechat-solution-senparc-digital-marketing-wechat-management-solution/8.png)
+    ![8](./media/azure-wechat-solution-senparc-digital-marketing-wechat-management-solution/8.png)
 			 
     3) 业务域名配置
 
-        ![9](./media/azure-wechat-solution-senparc-digital-marketing-wechat-management-solution/9.png)
+    ![9](./media/azure-wechat-solution-senparc-digital-marketing-wechat-management-solution/9.png)
  
     4) JS 接口安全域名配置
 
-        ![10](./media/azure-wechat-solution-senparc-digital-marketing-wechat-management-solution/10.png)
+    ![10](./media/azure-wechat-solution-senparc-digital-marketing-wechat-management-solution/10.png)
  
     5) 网页授权域名配置
 
-        ![11](./media/azure-wechat-solution-senparc-digital-marketing-wechat-management-solution/11.png)
+    ![11](./media/azure-wechat-solution-senparc-digital-marketing-wechat-management-solution/11.png)
  
 				
 
