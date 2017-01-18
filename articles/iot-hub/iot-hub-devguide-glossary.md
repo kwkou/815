@@ -95,7 +95,7 @@
 设备资源管理器是一个在 Windows 上运行的工具，用户可使用该工具管理[标识注册表](#identity-registry)中的设备，以及发送和接收设备的消息。
 
 ## 设备标识 REST API
-通过[设备标识 REST API](https://docs.microsoft.com/rest/api/iothub/device-identities-rest) 可使用 REST API管理在[标识注册表](#identity-registry)中注册的设备。通常情况下，使用 IoT 中心教程中演示的一种较高级别的[服务 SDK](#azure-iot-service-sdks)。
+通过设备标识 REST API 可使用 REST API管理在[标识注册表](#identity-registry)中注册的设备。通常情况下，使用 IoT 中心教程中演示的一种较高级别的[服务 SDK](#azure-iot-service-sdks)。
 
 ## <a name="device-identity"></a> 设备标识
 设备标识是分配给在[标识注册表](#identity-registry)中注册的每个设备的唯一标识符。
@@ -107,7 +107,7 @@
 [IoT 中心](#iot-hub)支持常见的设备管理模式，包括重新启动、执行恢复出厂设置，以及执行设备的固件更新。
 
 ## 设备消息传送 REST API
-可以在设备上使用[设备消息传送 REST API](https://docs.microsoft.com/rest/api/iothub/device-messaging-rest-apis)，以便将设备到云消息发送到 IoT 中心，以及从 IoT 中心接收[云到设备](#cloud-to-device)消息。通常情况下，使用 IoT 中心教程中演示的一种较高级别的[设备 SDK](#azure-iot-device-sdks)。
+可以在设备上使用设备消息传送 REST API，以便将设备到云消息发送到 IoT 中心，以及从 IoT 中心接收[云到设备](#cloud-to-device)消息。通常情况下，使用 IoT 中心教程中演示的一种较高级别的[设备 SDK](#azure-iot-device-sdks)。
 
 ## 设备预配
 设备预配是将初始[设备数据](#device-data)添加到解决方案中的存储的过程。若要使新设备能够连接到中心，必须将新设备 ID 和密钥添加到 IoT 中心的[标识注册表](#identity-registry)。在预配过程中，你可能需要初始化其他解决方案存储中的设备特定数据。
