@@ -123,7 +123,7 @@
 	            Console.WriteLine("Token acquired. Expires on:" + _token.ExpiresOn);
 
 	            // Instantiate management clients:
-	            _resourceMgmtClient = new ResourceManagementClient(new Microsoft.Rest.TokenCredentials(_token.AccessToken));
+	            _resourceMgmtClient = new ResourceManagementClient(new Uri("https://management.chinacloudapi.cn/"), new Microsoft.Rest.TokenCredentials(_token.AccessToken));
 	            _sqlMgmtClient = new SqlManagementClient(new TokenCloudCredentials(_subscriptionId, _token.AccessToken));
 
 
