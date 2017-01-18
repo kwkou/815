@@ -13,7 +13,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"   
    ms.date="10/18/2016"   
-   wacn.date="12/30/2016"
+   wacn.date="01/18/2017"
    ms.author="sewhee" />
 
 # 禁用、启用或删除配置文件
@@ -55,4 +55,6 @@
 
 [流量管理器降级状态疑难解答](/documentation/articles/traffic-manager-troubleshooting-degraded/)
 
-<!---HONumber=Mooncake_1221_2015-->
+<!---HONumber=Mooncake_Quality_Review_0116_2017-->
+
+<!---HONumber=Mooncake_Quality_Review_0117_2017-->

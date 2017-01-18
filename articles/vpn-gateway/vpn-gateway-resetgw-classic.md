@@ -16,7 +16,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
    ms.date="09/23/2016"
-   wacn.date="11/07/2016"
+   wacn.date="01/18/2017"
    ms.author="cherylmc"/>  
 
 
@@ -72,4 +72,4 @@
 	
 有关详细信息，请参阅 [PowerShell Service Management cmdlet reference](https://msdn.microsoft.com/zh-cn/library/azure/mt617104.aspx)（PowerShell 服务管理 cmdlet 参考）和 [PowerShell Resource Manager cmdlet reference](http://go.microsoft.com/fwlink/?LinkId=828732)（PowerShell Resource Manager cmdlet 参考）。
 
-<!---HONumber=Mooncake_1031_2016-->
+<!---HONumber=Mooncake_Quality_Review_0117_2017-->

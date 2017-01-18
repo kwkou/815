@@ -15,7 +15,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="infrastructure-services"
     ms.date="10/11/2016"
-    wacn.date="11/14/2016"
+    wacn.date="01/18/2017"
     ms.author="sewhee"
 />  
 
@@ -89,4 +89,4 @@ DNS 名称解析速度将会加快，结果将被缓存。初始 DNS 查找速�
 
 [Azure 流量管理器 Cmdlet](https://msdn.microsoft.com/zh-cn/library/dn690250.aspx)
 
-<!---HONumber=Mooncake_1031_2016-->
+<!---HONumber=Mooncake_Quality_Review_0117_2017-->
