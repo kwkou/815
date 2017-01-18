@@ -13,13 +13,13 @@
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
    ms.date="10/10/2016"
-   wacn.date="10/31/2016"
+   wacn.date="01/17/2017"
    ms.author="ganesr"/>
 
 
 # 将 ExpressRoute 线路从经典部署模型转移到 Resource Manager 部署模型
 
-本文概述将 ExpressRoute 线路从经典部署模型转移到 Resource Manager 部署模型的效果。
+本文概述将 Azure ExpressRoute 线路从经典部署模型转移到 Azure Resource Manager 部署模型的效果。
 
 [AZURE.INCLUDE [vpn-gateway-sm-rm](../../includes/vpn-gateway-classic-rm-include.md)]
 
@@ -75,9 +75,10 @@
 ExpressRoute 线路相当于经典部署模型与 Resource Manager 部署模型之间的桥梁。经典部署模型的虚拟网络中的虚拟机与 Resource Manager 部署模型的虚拟网络中的虚拟机之间的流量将流经 ExpressRoute，前提是这两个虚拟网络链接到相同的 ExpressRoute 线路。
 
 聚合吞吐量受限于虚拟网络网关的吞吐容量。在这种情况下，流量不进入连接服务提供商的网络或你的网络。虚拟网络之间的流量完全包含在 Microsoft 网络中。
-## 对 Azure 公共互连资源的访问权限
 
-你可以继续访问通常可通过 Azure 公共互连访问的资源，而不会出现任何中断。
+## 对 Azure 公共对等互连资源的访问权限
+
+你可以继续访问通常可通过 Azure 公共对等互连访问的资源，而不会出现任何中断。
 
 ## 支持的操作
 
@@ -111,4 +112,4 @@ ExpressRoute 线路相当于经典部署模型与 Resource Manager 部署模型�
 	- [配置路由](/documentation/articles/expressroute-howto-routing-arm/)
 	- [将虚拟网络链接到 ExpressRoute 线路](/documentation/articles/expressroute-howto-linkvnet-arm/)
 
-<!---HONumber=Mooncake_0509_2016-->
+<!---HONumber=Mooncake_Quality_Review_0117_2017-->

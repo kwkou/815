@@ -14,7 +14,7 @@
      ms.tgt_pltfrm="na"
      ms.workload="na"
      ms.date="09/06/2016"
-     wacn.date="11/07/2016"
+     wacn.date="01/17/2017"
      ms.author="obloch"/>
 
 # 适用于 C 语言的 Azure IoT 设备 SDK – 有关序列化程序的详细信息
@@ -683,4 +683,4 @@
 [lnk-gateway]: /documentation/articles/iot-hub-linux-gateway-sdk-simulated-device/
 [lnk-portal]: /documentation/articles/iot-hub-manage-through-portal/
 
-<!---HONumber=Mooncake_0725_2016-->
+<!---HONumber=Mooncake_Quality_Review_0117_2017-->

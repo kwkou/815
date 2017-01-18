@@ -14,7 +14,7 @@
      ms.tgt_pltfrm="na"
      ms.workload="na"
      ms.date="08/29/2016"
-     wacn.date="12/12/2016"
+     wacn.date="01/17/2017"
      ms.author="andbuc"/>  
 
 
@@ -180,4 +180,4 @@
 [lnk-devguide]: /documentation/articles/iot-hub-devguide/
 [lnk-create-hub]: /documentation/articles/iot-hub-create-through-portal/
 
-<!---HONumber=Mooncake_1205_2016-->
+<!---HONumber=Mooncake_Quality_Review_0117_2017-->

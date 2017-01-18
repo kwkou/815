@@ -14,7 +14,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
    ms.date="12/13/2016"
-   wacn.date="01/03/2017"
+   wacn.date="01/17/2017"
    ms.author="cherylmc"/>
 
 
@@ -115,13 +115,12 @@
 
 2. 配置线路的 Azure 公共对等互连。在继续执行后续步骤之前，请确保已准备好以下各项：
 
-    -  主链路的 /30 子网。 
-    -  辅助链路的 /30 子网。 
-    -  用于设置此对等互连的所有 IP 地址必须都是有效的公共 IPv4 地址。
-    -  用于建立此对等互连的有效 VLAN ID。请确保线路中没有其他对等互连使用同一个 VLAN ID。
-    -  对等互连的 AS 编号。可以使用 2 字节和 4 字节 AS 编号。
-    -  MD5 哈希（如果选择使用）。**这是可选的**。
-
+	- 主链路的 /30 子网。
+	- 辅助链路的 /30 子网。
+	- 用于设置此对等互连的所有 IP 地址必须都是有效的公共 IPv4 地址。
+	- 用于建立此对等互连的有效 VLAN ID。请确保线路中没有其他对等互连使用同一个 VLAN ID。
+	- 对等互连的 AS 编号。可以使用 2 字节和 4 字节 AS 编号。
+	- MD5 哈希（如果选择使用）。**这是可选的**。
 
 3. 选择 Azure 公共对等互连行，如下所示。
 	
@@ -171,5 +170,4 @@
 
 -  有关使用虚拟网络的详细信息，请参阅[虚拟网络概述](/documentation/articles/virtual-networks-overview/)。
 
-
-<!---HONumber=Mooncake_0509_2016-->
+<!---HONumber=Mooncake_Quality_Review_0117_2017-->
