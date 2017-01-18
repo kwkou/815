@@ -15,7 +15,7 @@
      ms.tgt_pltfrm="na"
      ms.workload="na"
      ms.date="11/14/2016"
-     wacn.date="12/12/2016"
+     wacn.date="01/17/2017"
      ms.author="andbuc"/>
 
 
@@ -509,4 +509,4 @@ BLE 模块还支持从 Azure IoT 中心将指令发送到设备。可使用 Azur
 [lnk-devguide]: /documentation/articles/iot-hub-devguide/
 [lnk-create-hub]: /documentation/articles/iot-hub-create-through-portal/
 
-<!---HONumber=Mooncake_1205_2016-->
+<!---HONumber=Mooncake_Quality_Review_0117_2017-->

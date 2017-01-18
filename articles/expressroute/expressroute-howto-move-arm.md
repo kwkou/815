@@ -37,7 +37,7 @@
 
 首先需要收集有关 ExpressRoute 线路的信息。
 
-登录到 Azure 经典环境并收集服务密钥。使用以下 PowerShell 代码段来收集信息：
+登录到 Azure 经典环境并收集服务密钥。可以使用以下 PowerShell 代码段来收集信息：
 
 	# Sign in to your Azure account
 	Add-AzureAccount -Environment AzureChinaCloud
@@ -52,7 +52,7 @@
 	# Get the service keys of all your ExpressRoute circuits
 	Get-AzureDedicatedCircuit
 
-复制要转移到 Resource Manager 部署模型的线路的**服务密钥**。
+复制你要转移到 Resource Manager 部署模型的线路的**服务密钥**。
 
 ### 步骤 2：登录到 Resource Manager 环境并创建新的资源组
 
@@ -65,17 +65,17 @@
 	Get-AzureRmSubscription -SubscriptionName "<Enter Subscription Name here>" | Select-AzureRmSubscription
 
 	#Create a new resource group if you don't already have one
-	New-AzureRmResourceGroup -Name "DemoRG" -Location "China East"
+	New-AzureRmResourceGroup -Name "DemoRG" -Location "chinaeast"
 
 你也可以使用现有的资源组（如果有）。
 
 ### 步骤 3：将 ExpressRoute 线路转移到 Resource Manager 部署模型
 
-现在可以将 ExpressRoute 线路从经典部署模型转移到 Resource Manager 部署模型。在继续下一步之前，请先参阅[将 ExpressRoute 线路从经典部署模型转移到 Resource Manager 部署模型](/documentation/articles/expressroute-move/)中提供的信息。
+现在，你可以将 ExpressRoute 线路从经典部署模型转移到 Resource Manager 部署模型。在继续下一步之前，请先参阅[将 ExpressRoute 线路从经典部署模型转移到 Resource Manager 部署模型](/documentation/articles/expressroute-move/)中提供的信息。
 
-可以运行以下代码段来实现：
+可以运行以下代码段来实现此目的：
 
-	Move-AzureRmExpressRouteCircuit -Name "MyCircuit" -ResourceGroupName "DemoRG" -Location "China East" -ServiceKey "<Service-key>"
+	Move-AzureRmExpressRouteCircuit -Name "MyCircuit" -ResourceGroupName "DemoRG" -Location "chinaeast" -ServiceKey "<Service-key>"
 
 >[AZURE.NOTE] 转移完成之后，列在前一个 cmdlet 中的新名称用于处理资源。线路实质上已重命名。
 
@@ -102,8 +102,8 @@
 
 服务密钥必须已列出。现在，你可以通过适用于经典 VNet 的标准经典部署模型命令以及适用于 ARM VNET 的标准 ARM 命令来管理到 ExpressRoute 线路的链接。以下文章将引导你了解如何管理 ExpressRoute 线路的链接：
 
-- [在 Resource Manager 部署模型中将虚拟网络链接到 ExpressRoute 线路](/documentation/articles/expressroute-howto-linkvnet-arm/)
-- [在经典部署模型中将虚拟网络链接到 ExpressRoute 线路](/documentation/articles/expressroute-howto-linkvnet-classic/)
+- [Link your virtual network to your ExpressRoute circuit in the Resource Manager deployment model](/documentation/articles/expressroute-howto-linkvnet-arm)（在 Resource Manager 部署模型中将虚拟网络链接到 ExpressRoute 线路）
+- [Link your virtual network to your ExpressRoute circuit in the classic deployment model](/documentation/articles/expressroute-howto-linkvnet-classic)（在经典部署模型中将虚拟网络链接到 ExpressRoute 线路）
 
 
 ## 在经典部署模型中禁用 ExpressRoute 线路
@@ -119,13 +119,13 @@
     # Update circuit
     Set-AzureRmExpressRouteCircuit -ExpressRouteCircuit $ckt
 
-成功完成此操作后，你无法在经典部署模型中查看线路。
+成功完成此操作后，你将无法在经典部署模型中查看线路。
 
 ## 后续步骤
 
-创建线路后，请确保执行以下操作：
+创建你的线路后，请确保执行以下操作：
 
 - [创建和修改 ExpressRoute 线路的路由](/documentation/articles/expressroute-howto-routing-arm/)
 - [将虚拟网络链接到 ExpressRoute 线路](/documentation/articles/expressroute-howto-linkvnet-arm/)
 
-<!---HONumber=Mooncake_0509_2016-->
+<!---HONumber=Mooncake_Quality_Review_0117_2017-->

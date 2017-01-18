@@ -42,4 +42,4 @@
 
 创建 VNet 网关之后，可以将 VNet 链接到 ExpressRoute 线路。请参阅[将虚拟网络链接到 ExpressRoute 线路](/documentation/articles/expressroute-howto-linkvnet-classic/)。
 
-<!---HONumber=Mooncake_0509_2016-->
+<!---HONumber=Mooncake_Quality_Review_0117_2017-->

@@ -16,7 +16,7 @@
  ms.workload="na"
  ms.date="10/03/2016"
  ms.author="bzurcher"
- wacn.date="12/16/2016"/>  
+ wacn.date="01/17/2017"/>  
 
 
 # IoT 中心设备管理概述
@@ -74,7 +74,7 @@ IoT 带来了一系列独特的设备管理难题，每个企业级解决方案�
     *其他阅读材料*：[如何使用设备孪生属性][lnk-twin-properties]、[管理设备标识][lnk-identity-registry]
 
 ## 设备管理模式
-IoT 中心启用以下设备管理模式集。
+IoT 中心启用以下设备管理模式集。[设备管理教程][lnk-get-started]更详细地介绍如何扩展这些模式以适合具体方案，以及如何基于这些核心模板设计新模式。
 
 - **重新启动** - 后端应用程序通过直接方法通知设备它已启动重新启动。设备使用设备孪生报告属性来更新设备的重新启动状态。
 
@@ -104,6 +104,7 @@ IoT 中心启用以下设备管理模式集。
 ## 后续步骤
 可以使用 IoT 中心为设备管理提供的功能、模式和代码库，在每个设备生命周期阶段创建满足企业 IoT 操作员需求的 IoT 应用程序。
 
+若要继续了解 IoT 中心的设备管理功能，请参阅[设备管理入门][lnk-get-started]教程。
 
 <!-- Images and links -->
 
@@ -127,4 +128,4 @@ IoT 中心启用以下设备管理模式集。
 [lnk-methods-devguide]: /documentation/articles/iot-hub-devguide-direct-methods/
 [lnk-jobs-devguide]: /documentation/articles/iot-hub-devguide-jobs/
 
-<!---HONumber=Mooncake_1205_2016-->
+<!---HONumber=Mooncake_Quality_Review_0117_2017-->

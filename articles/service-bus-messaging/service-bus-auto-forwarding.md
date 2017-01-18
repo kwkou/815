@@ -9,11 +9,11 @@
 <tags 
     ms.service="service-bus"
     ms.date="09/29/2016"
-    wacn.date="12/02/2016" />
+    wacn.date="01/17/2017" />
 
 # 使用自动转发链接服务总线实体
 
-通过自动转发功能，你可以将队列或订阅链接到属于同一命名空间的另一个队列或主题。启用自动转发后，服务总线将自动删除第一个队列或订阅（源）中的消息，并将其置于第二个队列或主题（目标）中。请注意，仍可将消息直接发送到目标实体。另外，不能将子队列（如死信队列）链接到其他队列或主题。
+通过*自动转发*功能，你可以将队列或订阅链接到属于同一命名空间的另一个队列或主题。启用自动转发后，服务总线将自动删除第一个队列或订阅（源）中的消息，并将其置于第二个队列或主题（目标）中。请注意，仍可将消息直接发送到目标实体。另外，不能将子队列（如死信队列）链接到其他队列或主题。
 
 ## 使用自动转发
 
@@ -64,4 +64,4 @@ namespaceManager.CreateSubscription(srcSubscription));
   [0]: ./media/service-bus-auto-forwarding/IC628631.gif
   [1]: ./media/service-bus-auto-forwarding/IC628632.gif
   [分区消息实体]: /documentation/articles/service-bus-partitioning/
-<!---HONumber=Mooncake_0620_2016-->
+<!---HONumber=Mooncake_Quality_Review_0117_2017-->

@@ -15,7 +15,7 @@
      ms.tgt_pltfrm="na"
      ms.workload="na"
      ms.date="09/13/2016"
-     wacn.date="12/12/2016"
+     wacn.date="01/17/2017"
      ms.author="dobett"/>
 
 # 教程：如何使用 IoT 中心和 Java 发送云到设备的消息
@@ -202,4 +202,4 @@ Azure IoT 中心是一项完全托管的服务，有助于在数百万个 IoT �
 [Azure 门户预览]: https://portal.azure.cn
 [Azure IoT Suite]: /documentation/services/iot-suite/
 
-<!---HONumber=Mooncake_1205_2016-->
+<!---HONumber=Mooncake_Quality_Review_0117_2017-->
