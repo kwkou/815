@@ -11,7 +11,7 @@
 <tags
 	ms.service="application-gateway-aog"
 	ms.date="12/05/2016"
-	wacn.date="12/05/2016"/>
+	wacn.date="01/18/2017"/>
 # 如何解决当 Web 应用绑定了主机名而无法使用应用程序网关的问题 #
 
 ### 问题描述 ###
@@ -75,6 +75,7 @@ Azure 应用程序网关会通过探测机制去了解后端服务器的健康�
 		       <Host>www.contoso.com</Host>
 		       <Path>/</Path>
 		       <Interval>15</Interval>
+		       <Timeout>15</Timeout>
 		       <UnhealthyThreshold>5</UnhealthyThreshold>
 		   </Probe>
 		</Probes>
