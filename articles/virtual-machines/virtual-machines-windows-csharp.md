@@ -126,7 +126,7 @@
           string subscriptionId,
           string location)
         {
-          var resourceManagementClient = new ResourceManagementClient(credential)
+          var resourceManagementClient = new ResourceManagementClient(new Uri("https://management.chinacloudapi.cn/"), credential)
             { SubscriptionId = subscriptionId };
             
           Console.WriteLine("Registering the providers...");
@@ -488,7 +488,7 @@
           string subscriptionId)
         {
           Console.WriteLine("Deleting resource group...");
-          var resourceManagementClient = new ResourceManagementClient(credential)
+          var resourceManagementClient = new ResourceManagementClient(new Uri("https://management.chinacloudapi.cn/"), credential)
             { SubscriptionId = subscriptionId };
           await resourceManagementClient.ResourceGroups.DeleteAsync(groupName);
         }
