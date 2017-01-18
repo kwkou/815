@@ -16,7 +16,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="infrastructure-services"
     ms.date="11/14/2016"
-    wacn.date="12/05/2016"
+    wacn.date="01/18/2017"
     ms.author="magoedte" />  
 
 
@@ -62,4 +62,4 @@
 
 应该在 Runbook 中任何[检查点](http://technet.microsoft.com/zh-cn/library/dn469257.aspx#bk_Checkpoints)的后面重复这些行。如果 Runbook 已挂起，然后在另一个工作线程上恢复，则它需要再次执行身份验证。
 
-<!---HONumber=Mooncake_1128_2016-->
+<!---HONumber=Mooncake_Quality_Review_0117_2017-->

@@ -14,7 +14,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
    ms.date="10/11/2016"
-   wacn.date="10/31/2016"
+   wacn.date="01/18/2017"
    ms.author="sngun"/>  
 
 
@@ -170,4 +170,4 @@ Runbook 有多种启动方式：通过 Azure 经典管理门户、webhook、Powe
 - 有关以不同方式启动 Runbook 的详细信息，请参阅 [Starting a runbook](/documentation/articles/automation-starting-a-runbook/)（启动 Runbook）。
 - 若要编辑文本 Runbook，请参阅 [Editing textual runbooks](/documentation/articles/automation-edit-textual-runbook/)（编辑文本 Runbook）。
 
-<!---HONumber=Mooncake_1024_2016-->
+<!---HONumber=Mooncake_Quality_Review_0117_2017-->

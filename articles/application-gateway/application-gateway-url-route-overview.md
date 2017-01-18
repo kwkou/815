@@ -13,7 +13,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
    ms.date="11/16/2016"
-   wacn.date="12/30/2016"
+   wacn.date="01/18/2017"
    ms.author="gwallace"/>
 
 # 基于 URL 路径的路由概述
@@ -88,4 +88,4 @@ PathBasedRouting 类型的 RequestRoutingRule 可用于将侦听器绑定到 url
 
 了解基于 URL 的内容路由之后，请转到[使用基于 URL 的路由创建应用程序网关](/documentation/articles/application-gateway-create-url-route-arm-ps/)，以使用 URL 路由规则创建应用程序网关。
 
-<!---HONumber=Mooncake_0328_2016-->
+<!---HONumber=Mooncake_Quality_Review_0117_2017-->

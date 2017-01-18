@@ -14,7 +14,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
    ms.date="08/10/2016"
-   wacn.date="01/05/2017"
+   wacn.date="01/18/2017"
    ms.author="cherylmc" />  
 
 
@@ -186,4 +186,4 @@
 
 	Remove-AzureVnetGatewayDefaultSite -VNetName <virtualNetworkName>
 
-<!---HONumber=Mooncake_0822_2016-->
+<!---HONumber=Mooncake_Quality_Review_0117_2017-->
