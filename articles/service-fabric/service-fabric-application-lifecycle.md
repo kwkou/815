@@ -15,7 +15,7 @@
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
    ms.date="11/14/2016"
-   wacn.date="12/26/2016"
+   wacn.date="01/17/2017"
    ms.author="ryanwi"/>  
 
 
@@ -122,4 +122,4 @@
 - [可测试性概述](/documentation/articles/service-fabric-testability-overview/)
 - [基于 REST 的应用程序生命周期示例](/documentation/articles/service-fabric-rest-based-application-lifecycle-sample/)
 
-<!---HONumber=Mooncake_1219_2016-->
+<!---HONumber=Mooncake_Quality_Review_0117_2017-->

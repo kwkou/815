@@ -14,7 +14,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="required"
     ms.date="10/18/2016"
-    wacn.date="12/26/2016"
+    wacn.date="01/17/2017"
     ms.author="mcoskun" />
 
 # Azure Service Fabric 有状态服务中的可靠集合简介
@@ -124,4 +124,4 @@ Reliable Dictionary 对所有单个实体操作使用行级别锁定。Reliable 
 - [Reliable Services 编程模型的高级用法](/documentation/articles/service-fabric-reliable-services-advanced-usage/)
 - [Reliable Collections 的开发人员参考](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicefabric.data.collections.aspx)
 
-<!---HONumber=Mooncake_1219_2016-->
+<!---HONumber=Mooncake_Quality_Review_0117_2017-->

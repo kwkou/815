@@ -14,7 +14,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="required"
     ms.date="10/19/2016"
-    wacn.date="12/26/2016"
+    wacn.date="01/17/2017"
     ms.author="vturecek" />
 
 # 如何使用 Reliable Services 通信 API
@@ -283,4 +283,4 @@ Reliable Services API 提供以下库来编写与服务通信的客户端。
 
  - [使用 Reliable Services 的 WCF 通信](/documentation/articles/service-fabric-reliable-services-communication-wcf/)
 
-<!---HONumber=Mooncake_1219_2016-->
+<!---HONumber=Mooncake_Quality_Review_0117_2017-->

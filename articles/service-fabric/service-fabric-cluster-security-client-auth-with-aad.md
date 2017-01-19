@@ -11,7 +11,7 @@
 <tags
    ms.service="service-fabric"
    ms.date="06/13/2016"
-   wacn.date="12/27/2016"/>
+   wacn.date="01/17/2017"/>
 
 # 创建使用 Azure Active Directory 进行客户端身份验证的 Service Fabric 群集
 
@@ -154,4 +154,4 @@ clusterApplication 表示在上一部分创建的 Web 应用程序。你可以�
 [setupapp-script-output]: ./media/service-fabric-cluster-security-client-auth-with-aad/setupapp-script-arm-json-output.png
 [vs-publish-aad-login]: ./media/service-fabric-cluster-security-client-auth-with-aad/vs-login-prompt.png
 
-<!---HONumber=Mooncake_0627_2016-->
+<!---HONumber=Mooncake_Quality_Review_0117_2017-->

@@ -17,7 +17,7 @@
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
    ms.date="09/09/2016"
-   wacn.date="11/17/2016"
+   wacn.date="01/17/2017"
    ms.author="chackdan"/>  
 
 
@@ -143,4 +143,4 @@
 [NATRules]: ./media/service-fabric-cluster-nodetypes/NATRules.png
 [RDP]: ./media/service-fabric-cluster-nodetypes/RDP.png
 
-<!---HONumber=Mooncake_1017_2016-->
+<!---HONumber=Mooncake_Quality_Review_0117_2017-->

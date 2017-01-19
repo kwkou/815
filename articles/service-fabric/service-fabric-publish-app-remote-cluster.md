@@ -14,7 +14,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="multiple"
     ms.date="07/29/2016"
-    wacn.date="08/29/2016"
+    wacn.date="01/17/2017"
     ms.author="cawa" />
 
 
@@ -111,4 +111,4 @@ Visual Studio 发布体验已针对发布到远程群集（与某个 Azure 订�
 [3]: ./media/service-fabric-publish-app-remote-cluster/EditVersions.png
 [4]: ./media/service-fabric-publish-app-remote-cluster/publish-to-party-cluster.png
 
-<!---HONumber=Mooncake_0822_2016-->
+<!---HONumber=Mooncake_Quality_Review_0117_2017-->

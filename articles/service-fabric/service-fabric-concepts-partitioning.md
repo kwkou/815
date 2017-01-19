@@ -14,7 +14,7 @@
     ms.tgt_pltfrm="NA"
     ms.workload="NA"
     ms.date="10/22/2016"
-    wacn.date="12/26/2016"
+    wacn.date="01/17/2017"
     ms.author="msfussell" />
 
 # Service Fabric Reliable Services 分区
@@ -370,4 +370,4 @@ Service Fabric 提供了三个分区方案可供选择：
 
 [wikipartition]: https://en.wikipedia.org/wiki/Partition_(database)
 
-<!---HONumber=Mooncake_1219_2016-->
+<!---HONumber=Mooncake_Quality_Review_0117_2017-->

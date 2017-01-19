@@ -14,7 +14,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="na"
    ms.date="09/28/2016"
-   wacn.date="11/28/2016"
+   wacn.date="01/17/2017"
    ms.author="oanapl"/>
 
 # 查看 Service Fabric 运行状况报告
@@ -1152,4 +1152,4 @@ Service Fabric 为每个支持的[实体类型](/documentation/articles/service-
 
 [Service Fabric 应用程序升级](/documentation/articles/service-fabric-application-upgrade/)
 
-<!---HONumber=Mooncake_1121_2016-->
+<!---HONumber=Mooncake_Quality_Review_0117_2017-->

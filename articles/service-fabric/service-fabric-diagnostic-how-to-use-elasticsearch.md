@@ -14,7 +14,7 @@
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
    ms.date="08/09/2016"
-   wacn.date="08/29/2016"
+   wacn.date="01/17/2017"
    ms.author="karolz@microsoft.com"/>
 
 
@@ -261,4 +261,4 @@ Elasticsearch 连接数据应该放在服务配置文件 (**PackageRoot\\Config\
 [1]: ./media/service-fabric-diagnostics-how-to-use-elasticsearch/listener-lib-references.png
 [2]: ./media/service-fabric-diagnostics-how-to-use-elasticsearch/kibana.png
 
-<!---HONumber=Mooncake_0822_2016-->
+<!---HONumber=Mooncake_Quality_Review_0117_2017-->

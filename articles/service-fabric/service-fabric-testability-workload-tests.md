@@ -14,7 +14,7 @@
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
    ms.date="05/17/2016"
-   wacn.date="07/04/2016"
+   wacn.date="01/17/2017"
    ms.author="anmola"/>
 
 # 在服务工作负荷期间模拟故障
@@ -156,4 +156,4 @@ Azure Service Fabric 中的可测试性方案可让开发人员不用再担心�
 	}
 
 
-<!---HONumber=Mooncake_0627_2016-->
+<!---HONumber=Mooncake_Quality_Review_0117_2017-->

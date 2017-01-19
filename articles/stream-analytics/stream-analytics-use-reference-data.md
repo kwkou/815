@@ -16,13 +16,13 @@
 	ms.tgt_pltfrm="na"
 	ms.workload="data-services"
 	ms.date="09/26/2016"
-	wacn.date="11/14/2016"
+	wacn.date="01/17/2017"
 	ms.author="jeffstok"/>  
 
 
 # 在流分析的输入流中使用引用数据或查找表
 
-引用数据（也称为查找表）是一个静态的或本质上缓慢变化的有限数据集，用于执行查找或与你的数据流相关联。为了在 Azure 流分析作业中利用引用数据，你通常会在查询中使用[引用数据联合](https://msdn.microsoft.com/zh-cn/library/azure/dn949258.aspx)。流分析使用 Azure Blob 存储作为引用数据的存储层，并且通过 Azure 数据工厂，可以从<!--[-->基于云和本地的任意数量的数据存储区<!--](/documentation/articles/data-factory-data-movement-activities/)-->将引用数据转换和/或复制到 Azure Blob 存储，以用作引用数据。
+引用数据（也称为查找表）是一个静态的或本质上缓慢变化的有限数据集，用于执行查找或与你的数据流相关联。为了在 Azure 流分析作业中利用引用数据，你通常会在查询中使用[引用数据联合](https://msdn.microsoft.com/zh-cn/library/azure/dn949258.aspx)。流分析使用 Azure Blob 存储作为引用数据的存储层，并且通过 Azure 数据工厂，可以从<!--[-->基于云和本地的任意数量的数据存储区<!--](/documentation/articles/data-factory-data-movement-activities/)-->将引用数据转换和/或复制到 Azure Blob 存储，以用作引用数据。引用数据建模为 blob 序列（在输入配置中定义），这些 blob 按blob 名称中指定的日期/时间顺序升序排列。它**仅**支持使用**大于**序列中最后一个 blob 指定的日期/时间的日期/时间添加到序列的末尾。
 
 ## 配置引用数据
 
@@ -113,4 +113,4 @@
 [stream.analytics.query.language.reference]: https://msdn.microsoft.com/zh-cn/library/dn834998.aspx
 [stream.analytics.rest.api.reference]: https://msdn.microsoft.com/zh-cn/library/dn835031.aspx
 
-<!---HONumber=Mooncake_1107_2016-->
+<!---HONumber=Mooncake_Quality_Review_0117_2017-->

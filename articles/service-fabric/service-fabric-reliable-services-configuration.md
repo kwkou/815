@@ -14,7 +14,7 @@
     ms.tgt_pltfrm="NA"
     ms.workload="NA"
     ms.date="10/18/2016"
-    wacn.date="12/26/2016"
+    wacn.date="01/17/2017"
     ms.author="sumukhs" />
 
 # 配置有状态 Reliable Services
@@ -164,4 +164,4 @@ SharedLogId 和 SharedLogPath 设置始终一起使用，使服务可以使用�
  - [在 Visual Studio 中调试 Service Fabric 应用程序](/documentation/articles/service-fabric-debugging-your-application/)
  - [Reliable Services 的开发人员参考](https://msdn.microsoft.com/zh-cn/library/azure/dn706529.aspx)
 
-<!---HONumber=Mooncake_1219_2016-->
+<!---HONumber=Mooncake_Quality_Review_0117_2017-->

@@ -14,7 +14,7 @@
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
    ms.date="07/05/2016"
-   wacn.date="11/17/2016"
+   wacn.date="01/17/2017"
    ms.author="abhisram"/>
 
 # Reliable Actors 的诊断和性能监视
@@ -170,4 +170,4 @@ Reliable Actors 运行时发布以下与执行组件激活和停用相关的性�
  - [执行组件 API 参考文档](https://msdn.microsoft.com/zh-cn/library/azure/dn971626.aspx)
  - [代码示例](https://github.com/Azure/servicefabric-samples)
 
-<!---HONumber=Mooncake_0801_2016-->
+<!---HONumber=Mooncake_Quality_Review_0117_2017-->
