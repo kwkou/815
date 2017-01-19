@@ -14,7 +14,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="identity"
     ms.date="12/16/2016"
-    wacn.date="01/05/2017"
+    wacn.date="01/19/2017"
     ms.author="markvi" />  
 
 
@@ -152,18 +152,18 @@ iOS 9 或更高版本支持本机 iOS 邮件客户端。若要确定其他所有
 		$c=Get-AzureADTrustedCertificateAuthority
 2. 删除证书颁发机构的证书：
    
-        Remove-AzureADTrustedCertificateAuthority -CertificateAuthorityInformation $c[2] 
+		Remove-AzureADTrustedCertificateAuthority -CertificateAuthorityInformation $c[2] 
 
 ### 修改证书颁发机构
 1. 检索证书颁发机构：
    
-     	$c=Get-AzureADTrustedCertificateAuthority
+		$c=Get-AzureADTrustedCertificateAuthority
 2. 修改证书颁发机构上的属性：
    
-        $c[0].AuthorityType=1 
+		$c[0].AuthorityType=1 
 3. 设置**证书颁发机构**：
    
-        Set-AzureADTrustedCertificateAuthority -CertificateAuthorityInformation $c[0] 
+		Set-AzureADTrustedCertificateAuthority -CertificateAuthorityInformation $c[0] 
 
 ## 测试 Office 移动应用程序
 若要在 Office 移动应用程序上测试证书身份验证，请执行以下操作：

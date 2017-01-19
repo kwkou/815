@@ -16,7 +16,7 @@
 	ms.topic="article"
 	ms.date="10/03/2016"
 	ms.author="rnagpal"
-	wacn.date="11/28/2016"/>
+	wacn.date="01/19/2017"/>
 
 # DocumentDB API 和 SDK
 

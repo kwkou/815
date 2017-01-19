@@ -14,7 +14,7 @@
 	ms.devlang="dotnet"
 	ms.topic="article"
 	ms.date="06/29/2016"
-	wacn.date="07/12/2016" 
+	wacn.date="01/19/2017" 
 	ms.author="wesmc"/>
 
 # 企业推送架构指南
@@ -47,7 +47,7 @@
 ###好处：
 
 1. 接收方（通过通知中心的移动应用/服务）和发送方（后端系统）之间的这种解耦使得只需要最小的更改即可集成其他后端系统。
-2. 这还使得采用多个移动应用的方案能够从一个或多个后端系统接收事件。  
+2. 这还使得采用多个移动应用的方案能够从一个或多个后端系统接收事件。
 
 ## 示例：
 
@@ -215,7 +215,7 @@
 
 	![][3]
 
-	g.将该作业配置为“连续运行”，以便在你登录到 [Azure 经典门户]时，应看到如下内容：
+	g.将该作业配置为“连续运行”，以便在你登录到 [Azure 经典管理门户]时，应看到如下内容：
 
 	![][4]
 
@@ -252,7 +252,7 @@
 
 	![][5]
 
-4. 消息最初发送到正被 WebJob 中的服务总线订阅监视的服务总线主题。收到消息后，将创建通知并将其发送到移动应用。当你转到 [Azure 经典门户]中 Web 作业的“日志”链接时，可以仔细查看 Web 作业日志来确认处理：
+4. 消息最初发送到正被 WebJob 中的服务总线订阅监视的服务总线主题。收到消息后，将创建通知并将其发送到移动应用。当你转到 [Azure 经典管理门户]中 Web 作业的“日志”链接时，可以仔细查看 Web 作业日志来确认处理：
 
 	![][6]
 
@@ -271,6 +271,6 @@
 [服务总线 Pub/Sub 编程]: /documentation/articles/service-bus-dotnet-how-to-use-topics-subscriptions/
 [Azure WebJob]: /documentation/articles/web-sites-create-web-jobs/
 [通知中心 - Windows 通用教程]: /documentation/articles/notification-hubs-windows-store-dotnet-get-started-wns-push-notification/
-[Azure 经典门户]: https://manage.windowsazure.cn/
+[Azure 经典管理门户]: https://manage.windowsazure.cn/
 
 <!---HONumber=Mooncake_0801_2016-->

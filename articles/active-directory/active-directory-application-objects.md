@@ -15,7 +15,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="identity"
     ms.date="11/29/2016"
-    wacn.date="01/05/2017"
+    wacn.date="01/19/2017"
     ms.author="bryanla;mbaldwin" />
 
 # Azure Active Directory 中的应用程序对象和服务主体对象

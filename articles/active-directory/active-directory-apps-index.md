@@ -14,8 +14,8 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="09/02/2016"
-	wacn.date="12/16/2016"
-	ms.author="markvi"/>
+	ms.author="markvi"
+	wacn.date="01/19/2017"/>
 
 #有关 Azure Active Directory 中应用程序管理的文章索引
 
@@ -147,6 +147,6 @@ Azure AD Connect 适用于[所有版本的 Azure Active Directory](/pricing/deta
 
 [什么是 Azure Active Directory？](/documentation/articles/active-directory-whatis/)
 
-[Azure Multi-Factor Authentication](/documentation/services/multi-factor-authentication/)
+[Azure 多重身份验证](/documentation/services/multi-factor-authentication/)
 
 <!---HONumber=Mooncake_0926_2016-->

@@ -14,7 +14,7 @@
       ms.tgt_pltfrm="na"
       ms.workload="identity"
       ms.date="02/09/2016"
-      wacn.date="06/23/2016"
+      wacn.date="01/19/2017"
       ms.author="inhenk"/>
 
 
@@ -63,7 +63,7 @@
 每个应用程序可能有不同的身份验证要求。借助 Azure AD，可对使用 SAML 2.0、WS 联合身份验证或 OpenID Connect 协议以及密码单一登录的应用程序使用签名证书。有关可用于 Azure AD 的应用程序身份验证类型的详细信息，请参阅[在 Azure Active Directory 中管理用于联合单一登录的证书](/documentation/articles/active-directory-sso-certs/)。
 
 ### 使用 Azure AD 应用代理启用 SSO
-使用 Microsoft Azure AD 应用程序代理，可以从任何位置和任何设备安全访问专用网络中的应用程序。在环境中安装应用程序代理连接器后，可以使用 Azure AD 轻松配置该连接器。
+使用 Azure AD 应用程序代理，可以从任何位置和任何设备安全访问专用网络中的应用程序。在环境中安装应用程序代理连接器后，可以使用 Azure AD 轻松配置该连接器。
 
 ### 将应用程序与 Azure AD 集成
 以下文章介绍了将应用程序与 Azure AD 集成的不同方法，并提供了一些指导。

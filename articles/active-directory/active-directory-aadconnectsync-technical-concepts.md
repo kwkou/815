@@ -15,8 +15,8 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="10/10/2016"
-	wacn.date="10/31/2016"
-	ms.author="markusvi;andkjell"/>
+	ms.author="markusvi;andkjell"
+	wacn.date="01/19/2017"/>
 
 
 # Azure AD Connect 同步：技术概念
@@ -89,8 +89,8 @@ metaverse 是相邻连接器空间中的所有已联接标识的合并视图。
 
 ## 其他资源
 
-* [Azure AD Connect Sync：自定义同步选项](/documentation/articles/active-directory-aadconnectsync-whatis/)
-* [将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect/)
+- [Azure AD Connect Sync：自定义同步选项](/documentation/articles/active-directory-aadconnectsync-whatis/)
+- [将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect/)
 
 <!--Image references-->
 [1]: ./media/active-directory-aadsync-technical-concepts/ic750598.png

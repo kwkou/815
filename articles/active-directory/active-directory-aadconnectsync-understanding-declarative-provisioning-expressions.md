@@ -14,8 +14,8 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="08/31/2016"
-	wacn.date="10/11/2016"
-	ms.author="markusvi;andkjell"/>
+	ms.author="markusvi;andkjell"
+	wacn.date="01/19/2017"/>
 
 
 # Azure AD Connect 同步：了解声明性预配表达式
@@ -32,7 +32,7 @@ Azure AD Connect 同步基于 Forefront Identity Manager 2010 中最先引入的
 - 函数名称后跟加括号的参数：FunctionName(argument 1, argument N)。
 - 属性采用方括号标识，如 [attributeName]。
 - 参数通过百分比符号标识：%ParameterName%
-- 字符串常量放在引号中：例如 "Contoso"（注意：必须使用直引号 ""，而不能使用弯引号""）
+- 字符串常量放在引号中：例如 "Contoso"（注意：必须使用直引号 ""，而不能使用弯引号“”）
 - 数字值表示不带引号，并且应为十进制。十六进制值带有前缀 &H。例如，98052, &HFF
 - 表示布尔值的常量： True、 False。
 - 内置常量和文本仅使用其名称表示：NULL、CRLF、IgnoreThisFlow

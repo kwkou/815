@@ -17,7 +17,7 @@
     ms.topic="article" 
     ms.date="09/23/2016" 
     ms.author="b-hoedid"
-    wacn.date="11/28/2016"/>  
+    wacn.date="01/19/2017"/>  
 
 
 # 使用逻辑应用针对新增或已更改的 DocumentDB 资源发送通知
@@ -65,12 +65,12 @@ IT 部门表示他们可以轻松提供此通知。他们还表示可以将文�
 
 3. 将此值 POST 到 API 应用，这会进行 DocumentDB 查询。此值用于查询中。
 
-SQL
+	SQL
 
-	SELECT * FROM Patients p WHERE (p._ts >= @unixTimeStamp)
+		SELECT * FROM Patients p WHERE (p._ts >= @unixTimeStamp)
     
 
-> [AZURE.NOTE] \_ts 表示所有 DocumentDB 资源的时间戳元数据。
+	> [AZURE.NOTE] The _ts represents the TimeStamp metadata for all DocumentDB resources.
 
 4. 如果找到文档，则会将响应正文发送到 Azure Blob 存储。
 
@@ -864,7 +864,7 @@ JSON
 
 
 ## 度量值
-你可以在门户预览中为主要逻辑应用配置监视。这样，你就可以查看“运行延迟”和其他事件，如下图所示。
+你可以在门户中为主要逻辑应用配置监视。这样，你就可以查看“运行延迟”和其他事件，如下图所示。
 
 ![](./media/documentdb-change-notification/metrics.png)  
 
@@ -1178,4 +1178,6 @@ EmailTo | 将会收到电子邮件通知的电子邮件地址
 ## 后续步骤
 下载并使用 [Github](https://github.com/HEDIDIN/DocDbNotifications) 上提供的逻辑应用代码。竭诚邀请你在该应用程序基础上进行构建，并将更改提交到存储库。
 
-<!---HONumber=Mooncake_0627_2016-->
+若要详细了解 DocumentDB，请访问[学习路径](/documentation/learning-paths/documentdb/)。
+
+<!---HONumber=Mooncake_1121_2016-->

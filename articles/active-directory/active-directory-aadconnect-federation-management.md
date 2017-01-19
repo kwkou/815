@@ -17,7 +17,7 @@
     ms.topic="article"
     ms.date="10/31/2016"
     ms.author="anandy" 
-    wacn.date="12/13/2016"/>
+    wacn.date="01/19/2017" />
 
 # 使用 Azure AD Connect 进行 Active Directory 联合身份验证服务的管理和自定义
 本文详述可以使用 Azure Active Directory Connect 执行的与 Active Directory 联合身份验证服务 (AD FS) 相关的各种任务，以及可能需要完全配置 AD FS 场的其他常见 AD FS 任务。

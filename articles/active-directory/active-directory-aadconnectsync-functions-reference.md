@@ -14,8 +14,8 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="08/23/2016"
-	wacn.date="10/11/2016"
-	ms.author="andkjell;markvi"/>
+	ms.author="andkjell;markvi"
+	wacn.date="01/19/2017"/>
 
 
 # Azure AD Connect 同步：函数参考
@@ -372,7 +372,7 @@ DNComponentRev 函数返回从右边起（末尾）的指定 DN 组件的值。
 
 - dn：要解释的引用属性
 - ComponentNumber - 要返回的 DN 中的组件
-- Options：DC - 忽略具有"dc="的所有组件
+- Options：DC - 忽略具有“dc=”的所有组件
 
 **示例：**  
 如果 dn 为 "cn=Joe,ou=Atlanta,ou=GA,ou=US, dc=contoso,dc=com"，则  
@@ -680,7 +680,7 @@ Join 函数使用多值字符串，并返回每个项之间插入指定分隔符
 `str Join(mvstr attribute, str Delimiter)`
 
 - attribute：包含要联接的字符串的多值属性。
-- delimiter：任意字符串，用于分隔返回的字符串中的子字符串。如果省略，则使用空格字符（" "）。如果分隔符为零长度字符串（""）或零，则列表中的所有项都不使用分隔符连接。
+- delimiter：任意字符串，用于分隔返回的字符串中的子字符串。如果省略，则使用空格字符（“ ”）。如果分隔符为零长度字符串（“”）或零，则列表中的所有项都不使用分隔符连接。
 
 **备注：**  
 Join 和 Split 函数之间没有奇偶校验。Join 函数使用字符串数组，并使用分隔符字符串将它们联接起来，以返回单个字符串。Split 函数使用字符串并以分隔符分隔，以返回字符串数组。但是，主要区别是 Join 可以使用任何分隔符字符串将字符串连接起来，而 Split 仅可以使用单个字符分隔符分隔字符串。
@@ -725,7 +725,7 @@ Left 函数从字符串左侧起返回指定的字符数。
 
 **示例：**  
 `Left("John Doe", 3)`  
-返回 "Joh"。
+返回 “Joh”。
 
 ----------
 ### Len
@@ -1131,8 +1131,8 @@ UCase 函数将字符串中的所有字符都转换为大写形式。
 
 ## 其他资源
 
-* [了解声明性设置表达式](/documentation/articles/active-directory-aadconnectsync-understanding-declarative-provisioning-expressions/)
-* [Azure AD Connect Sync：自定义同步选项](/documentation/articles/active-directory-aadconnectsync-whatis/)
-* [将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect/)
+- [了解声明性设置表达式](/documentation/articles/active-directory-aadconnectsync-understanding-declarative-provisioning-expressions/)
+- [Azure AD Connect Sync：自定义同步选项](/documentation/articles/active-directory-aadconnectsync-whatis/)
+- [将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect/)
 
 <!---HONumber=Mooncake_0926_2016-->

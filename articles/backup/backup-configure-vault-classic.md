@@ -15,7 +15,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="08/08/2016"
-	wacn.date="09/05/2016"
+	wacn.date="01/19/2017"
 	ms.author="jimpark; trinadhk; markgal"/>  
 
 
@@ -30,7 +30,7 @@
 
 ![创建保管库](./media/backup-configure-vault-classic/initial-backup-process.png)
 
->[AZURE.IMPORTANT] Azure 具有用于创建和处理资源的两个不同的部署模型：Resource Manager 模型和经典模型。本文介绍使用经典部署模型。Azure 建议大多数新部署使用资源管理器模型。
+>[AZURE.IMPORTANT] Azure 具有用于创建和处理资源的两个不同的部署模型：资源管理器模型和经典模型。本文介绍使用经典部署模型。Azure 建议大多数新部署使用资源管理器模型。
 
 ## 开始之前
 若要将服务器或客户端备份到 Azure，你需要一个 Azure 帐户。如果你没有帐户，只需几分钟的时间就能创建一个[试用帐户](/pricing/1rmb-trial/)。
@@ -62,9 +62,9 @@
 
     >[AZURE.IMPORTANT] 确定存储冗余选项的最佳时机是在创建保管库之后，并且是在将任何计算机注册到保管库之前。将某个项注册到保管库后，存储冗余选项将会锁定且不能修改。
 
-    若要使用 Azure 作为主要备份存储终结点（例如，从 Windows Server 备份到 Azure），请考虑选择（默认的）[异地冗余存储](/documentation/articles/storage-redundancy/#geo-redundant-storage)选项。
+    若要使用 Azure 作为主要备份存储终结点（例如，从 Windows Server 备份到 Azure），请考虑选择（默认的）[异地冗余存储](/documentation/articles/storage-redundancy/#geo-redundant-storage/)选项。
 
-    如果使用 Azure 作为第三级备份存储终结点（例如，你正在使用 System Center Data Protection Manager 在本地创建本地备份复制，使用 Azure 满足长期数据保留需求），应考虑选择[本地冗余存储](/documentation/articles/storage-redundancy/#locally-redundant-storage)。这可以降低在 Azure 中存储数据的成本，但提供的数据持久性更低，不过，对于第三级副本是可接受的。
+    如果使用 Azure 作为第三级备份存储终结点（例如，你正在使用 System Center Data Protection Manager 在本地创建本地备份复制，使用 Azure 满足长期数据保留需求），应考虑选择[本地冗余存储](/documentation/articles/storage-redundancy/#locally-redundant-storage/)。这可以降低在 Azure 中存储数据的成本，但提供的数据持久性更低，不过，对于第三级副本是可接受的。
 
     **选择存储冗余选项：**
 
@@ -83,7 +83,7 @@
 ## 步骤 2：下载保管库凭据文件
 本地计算机需要先在备份保存库中通过身份验证才能将数据备份到 Azure。身份验证是通过*保管库凭据*实现的。从经典管理门户通过安全通道下载保管库凭据文件。证书私钥不会在门户或服务中持久保存。
 
-详细了解[如何使用保管库凭据向备份服务进行身份验证](/documentation/articles/backup-introduction-to-azure-backup/#what-is-the-vault-credential-file)。
+详细了解[如何使用保管库凭据向备份服务进行身份验证](/documentation/articles/backup-introduction-to-azure-backup/#what-is-the-vault-credential-file/)。
 
 ### 将保管库凭据文件下载到本地计算机
 
@@ -179,7 +179,7 @@
 
 9. 在“选择初始备份类型”页上，选择初始备份类型。将“自动通过网络”选项保持选中状态，然后单击“下一步”。
 
-    你可以通过网络自动备份，或者脱机备份。本文的余下部分将介绍自动备份过程。
+    你可以通过网络自动备份，或者脱机备份。本文的余下部分将介绍自动备份过程。如果你想要执行脱机备份，请查看 [Azure 备份中的脱机备份工作流](/documentation/articles/backup-azure-backup-import-export/)以了解更多信息。
 
 10. 在“确认”页上复查信息，然后单击“完成”。
 

@@ -10,12 +10,12 @@
 <tags
 	ms.service="active-directory"
 	ms.workload="identity"
-  ms.tgt_pltfrm="na"
+        ms.tgt_pltfrm="na"
 	ms.devlang="java"
 	ms.topic="article"
 	ms.date="09/16/2016"
-	wacn.date="10/17/2016"
-	ms.author="brandwe"/>  
+	ms.author="brandwe"
+	wacn.date="01/19/2017"/>  
 
 
 
@@ -60,114 +60,114 @@
 
 -	在项目的根目录中，打开/创建 `pom.xml`，找到 `// TODO: provide dependencies for Maven` 并替换为以下代码：
 
-Java
+	Java
 
-	<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-		xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-		<modelVersion>4.0.0</modelVersion>
-		<groupId>com.microsoft.azure</groupId>
-		<artifactId>adal4jsample</artifactId>
-		<packaging>war</packaging>
-		<version>0.0.1-SNAPSHOT</version>
-		<name>adal4jsample</name>
-		<url>http://maven.apache.org</url>
-		<properties>
-			<spring.version>3.0.5.RELEASE</spring.version>
-		</properties>
+		<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+			xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+			<modelVersion>4.0.0</modelVersion>
+			<groupId>com.microsoft.azure</groupId>
+			<artifactId>adal4jsample</artifactId>
+			<packaging>war</packaging>
+			<version>0.0.1-SNAPSHOT</version>
+			<name>adal4jsample</name>
+			<url>http://maven.apache.org</url>
+			<properties>
+				<spring.version>3.0.5.RELEASE</spring.version>
+			</properties>
 	
-		<dependencies>
-			<dependency>
-				<groupId>com.microsoft.azure</groupId>
-				<artifactId>adal4j</artifactId>
-				<version>1.1.1</version>
-			</dependency>
-			<dependency>
-				<groupId>com.nimbusds</groupId>
-				<artifactId>oauth2-oidc-sdk</artifactId>
-				<version>4.5</version>
-			</dependency>
-			<dependency>
-				<groupId>org.json</groupId>
-				<artifactId>json</artifactId>
-				<version>20090211</version>
-			</dependency>
-			<dependency>
-				<groupId>javax.servlet</groupId>
-				<artifactId>javax.servlet-api</artifactId>
-				<version>3.0.1</version>
-				<scope>provided</scope>
-			</dependency>
-			<dependency>
-				<groupId>org.slf4j</groupId>
-				<artifactId>slf4j-log4j12</artifactId>
-				<version>1.7.5</version>
-			</dependency>
-			<!-- Spring 3 dependencies -->
-			<dependency>
-				<groupId>org.springframework</groupId>
-				<artifactId>spring-core</artifactId>
-				<version>${spring.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.springframework</groupId>
-				<artifactId>spring-web</artifactId>
-				<version>${spring.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.springframework</groupId>
-				<artifactId>spring-webmvc</artifactId>
-				<version>${spring.version}</version>
-			</dependency>
-		</dependencies>
+			<dependencies>
+				<dependency>
+					<groupId>com.microsoft.azure</groupId>
+					<artifactId>adal4j</artifactId>
+					<version>1.1.1</version>
+				</dependency>
+				<dependency>
+					<groupId>com.nimbusds</groupId>
+					<artifactId>oauth2-oidc-sdk</artifactId>
+					<version>4.5</version>
+				</dependency>
+				<dependency>
+					<groupId>org.json</groupId>
+					<artifactId>json</artifactId>
+					<version>20090211</version>
+				</dependency>
+				<dependency>
+					<groupId>javax.servlet</groupId>
+					<artifactId>javax.servlet-api</artifactId>
+					<version>3.0.1</version>
+					<scope>provided</scope>
+				</dependency>
+				<dependency>
+					<groupId>org.slf4j</groupId>
+					<artifactId>slf4j-log4j12</artifactId>
+					<version>1.7.5</version>
+				</dependency>
+				<!-- Spring 3 dependencies -->
+				<dependency>
+					<groupId>org.springframework</groupId>
+					<artifactId>spring-core</artifactId>
+					<version>${spring.version}</version>
+				</dependency>
+				<dependency>
+					<groupId>org.springframework</groupId>
+					<artifactId>spring-web</artifactId>
+					<version>${spring.version}</version>
+				</dependency>
+				<dependency>
+					<groupId>org.springframework</groupId>
+					<artifactId>spring-webmvc</artifactId>
+					<version>${spring.version}</version>
+				</dependency>
+			</dependencies>
 	
-		<build>
-			<finalName>sample-for-adal4j</finalName>
-			<plugins>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-compiler-plugin</artifactId>
-					<configuration>
-						<source>1.7</source>
-						<target>1.7</target>
-						<encoding>UTF-8</encoding>
-					</configuration>
-				</plugin>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-war-plugin</artifactId>
-					<version>2.4</version>
-					<configuration>
-						<warName>${project.artifactId}</warName>
-						<source>${project.basedir}\src</source>
-						<target>${maven.compiler.target}</target>
-						<encoding>utf-8</encoding>
-					</configuration>
-				</plugin>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-dependency-plugin</artifactId>
-					<executions>
-						<execution>
-							<id>install</id>
-							<phase>install</phase>
-							<goals>
-								<goal>sources</goal>
-							</goals>
-						</execution>
-					</executions>
-				</plugin>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-resources-plugin</artifactId>
-					<version>2.5</version>
-					<configuration>
-						<encoding>UTF-8</encoding>
-					</configuration>
-				</plugin>
-			</plugins>
-		</build>
+			<build>
+				<finalName>sample-for-adal4j</finalName>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-compiler-plugin</artifactId>
+						<configuration>
+							<source>1.7</source>
+							<target>1.7</target>
+							<encoding>UTF-8</encoding>
+						</configuration>
+					</plugin>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-war-plugin</artifactId>
+						<version>2.4</version>
+						<configuration>
+							<warName>${project.artifactId}</warName>
+							<source>${project.basedir}\src</source>
+							<target>${maven.compiler.target}</target>
+							<encoding>utf-8</encoding>
+						</configuration>
+					</plugin>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-dependency-plugin</artifactId>
+						<executions>
+							<execution>
+								<id>install</id>
+								<phase>install</phase>
+								<goals>
+									<goal>sources</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-resources-plugin</artifactId>
+						<version>2.5</version>
+						<configuration>
+							<encoding>UTF-8</encoding>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
 	
-	</project>
+		</project>
 
 ## 3\.创建 Java Web 应用程序文件 (WEB-INF)
 
@@ -175,62 +175,62 @@ Java
 
 -	首先，打开位于 `\webapp\WEB-INF` 中的 `web.xml` 文件，并在 xml 中输入应用的配置值。
 
-该文件应如下所示：
+	该文件应如下所示：
 
-xml
+	xml
 
-	<?xml version="1.0"?>
-	<web-app id="WebApp_ID" version="2.4"
-		xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-		xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee 
-	    http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
-		<display-name>Archetype Created Web Application</display-name>
-		<context-param>
-			<param-name>authority</param-name>
-			<param-value>https://login.chinacloudapi.cn/</param-value>
-		</context-param>
-		<context-param>
-			<param-name>tenant</param-name>
-			<param-value>YOUR_TENANT_NAME</param-value>
-		</context-param>
+		<?xml version="1.0"?>
+		<web-app id="WebApp_ID" version="2.4"
+			xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+			xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee 
+		    http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+			<display-name>Archetype Created Web Application</display-name>
+			<context-param>
+				<param-name>authority</param-name>
+				<param-value>https://login.chinacloudapi.cn/</param-value>
+			</context-param>
+			<context-param>
+				<param-name>tenant</param-name>
+				<param-value>YOUR_TENANT_NAME</param-value>
+			</context-param>
 	
-		<filter>
-			<filter-name>BasicFilter</filter-name>
-			<filter-class>com.microsoft.aad.adal4jsample.BasicFilter</filter-class>
-			<init-param>
-				<param-name>client_id</param-name>
-				<param-value>YOUR_CLIENT_ID</param-value>
-			</init-param>
-			<init-param>
-				<param-name>secret_key</param-name>
-				<param-value>YOUR_CLIENT_SECRET</param-value>
-			</init-param>
-		</filter>
-		<filter-mapping>
-			<filter-name>BasicFilter</filter-name>
-			<url-pattern>/secure/*</url-pattern>
-		</filter-mapping>
+			<filter>
+				<filter-name>BasicFilter</filter-name>
+				<filter-class>com.microsoft.aad.adal4jsample.BasicFilter</filter-class>
+				<init-param>
+					<param-name>client_id</param-name>
+					<param-value>YOUR_CLIENT_ID</param-value>
+				</init-param>
+				<init-param>
+					<param-name>secret_key</param-name>
+					<param-value>YOUR_CLIENT_SECRET</param-value>
+				</init-param>
+			</filter>
+			<filter-mapping>
+				<filter-name>BasicFilter</filter-name>
+				<url-pattern>/secure/*</url-pattern>
+			</filter-mapping>
 	
-		<servlet>
-			<servlet-name>mvc-dispatcher</servlet-name>
-			<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
-			<load-on-startup>1</load-on-startup>
-		</servlet>
+			<servlet>
+				<servlet-name>mvc-dispatcher</servlet-name>
+				<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+				<load-on-startup>1</load-on-startup>
+			</servlet>
 	
-		<servlet-mapping>
-			<servlet-name>mvc-dispatcher</servlet-name>
-			<url-pattern>/</url-pattern>
-		</servlet-mapping>
+			<servlet-mapping>
+				<servlet-name>mvc-dispatcher</servlet-name>
+				<url-pattern>/</url-pattern>
+			</servlet-mapping>
 	
-		<context-param>
-			<param-name>contextConfigLocation</param-name>
-			<param-value>/WEB-INF/mvc-dispatcher-servlet.xml</param-value>
-		</context-param>
+			<context-param>
+				<param-name>contextConfigLocation</param-name>
+				<param-value>/WEB-INF/mvc-dispatcher-servlet.xml</param-value>
+			</context-param>
 	
-		<listener>
-			<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-		</listener>
-	</web-app>
+			<listener>
+				<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+			</listener>
+		</web-app>
 
 
 
@@ -239,37 +239,37 @@ xml
     -	The `YOUR_CLIENT_SECRET` is the **Application Secret**  you created in the portal.
     -   The `YOUR_TENANT_NAME` is the **tenant name** of your app, e.g. contoso.partner.onmschina.cn
 
-将其余的配置参数保持不变。
+	将其余的配置参数保持不变。
 
-> [AZURE.NOTE]
-从 XML 文件中可以看到，我们要编写一个名为 `mvc-dispatcher` 的 JSP/Servlet Web 应用，每当我们访问 /secure URL 时，该应用就会使用 `BasicFilter`。在编写的代码的其余部分中，可以看到我们将使用 /secure 作为受保护内容的所在位置，并强制向 Azure Active Directory 进行身份验证。
+	> [AZURE.NOTE]
+	从 XML 文件中可以看到，我们要编写一个名为 `mvc-dispatcher` 的 JSP/Servlet Web 应用，每当我们访问 /secure URL 时，该应用就会使用 `BasicFilter`。在编写的代码的其余部分中，可以看到我们将使用 /secure 作为受保护内容的所在位置，并强制向 Azure Active Directory 进行身份验证。
 
 -	接下来，在 `\webapp\WEB-INF` 中创建 `mvc-dispatcher-servlet.xml` 文件并输入以下内容：
 
-xml
+	xml
 	
-	<beans xmlns="http://www.springframework.org/schema/beans"
-		xmlns:context="http://www.springframework.org/schema/context"
-		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-		xsi:schemaLocation="
-	        http://www.springframework.org/schema/beans     
-	        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
-	        http://www.springframework.org/schema/context 
-	        http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+		<beans xmlns="http://www.springframework.org/schema/beans"
+			xmlns:context="http://www.springframework.org/schema/context"
+			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+			xsi:schemaLocation="
+		        http://www.springframework.org/schema/beans     
+		        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		        http://www.springframework.org/schema/context 
+		        http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 	
-		<context:component-scan base-package="com.microsoft.aad.adal4jsample" />
+			<context:component-scan base-package="com.microsoft.aad.adal4jsample" />
 	
-		<bean
-			class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-			<property name="prefix">
-				<value>/</value>
-			</property>
-			<property name="suffix">
-				<value>.jsp</value>
-			</property>
-		</bean>
+			<bean
+				class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+				<property name="prefix">
+					<value>/</value>
+				</property>
+				<property name="suffix">
+					<value>.jsp</value>
+				</property>
+			</bean>
 	
-	</beans>
+		</beans>
 
 
 这将告知 Web 应用要使用 Spring 以及在哪里查找我们在下面编写的 .jsp 文件。
@@ -284,16 +284,16 @@ xml
 
 -	首先，请在 `\webapp` 中创建 `index.jsp` 文件，并剪切/粘贴以下内容：
 
-jsp
+	jsp
 
-	<html>
-	<body>
-		<h2>Hello World!</h2>
-		<ul>
-		<li><a href="secure/aad">Secure Page</a></li>
-		</ul>
-	</body>
-	</html>
+		<html>
+		<body>
+			<h2>Hello World!</h2>
+			<ul>
+			<li><a href="secure/aad">Secure Page</a></li>
+			</ul>
+		</body>
+		</html>
 
 
 
@@ -301,25 +301,25 @@ jsp
 
 - 接下来，在同一个目录中创建 `error.jsp` 文件，用于捕获可能发生的任何错误：
 
-jsp
+	jsp
 
-	<html>
-	<body>
-		<h2>ERROR PAGE!</h2>
-		<p>
-			Exception -
-			<%=request.getAttribute("error")%></p>
-		<ul>
-			<li><a href="<%=request.getContextPath()%>/index.jsp">Go Home</a></li>
-		</ul>
-	</body>
-	</html>
+		<html>
+		<body>
+			<h2>ERROR PAGE!</h2>
+			<p>
+				Exception -
+				<%=request.getAttribute("error")%></p>
+			<ul>
+				<li><a href="<%=request.getContextPath()%>/index.jsp">Go Home</a></li>
+			</ul>
+		</body>
+		</html>
 
 
 - 最后，在 `\webapp` 中创建名为 `\secure` 的文件夹，以生成所需的安全网页，因此，目录现在为 `\webapp\secure`。
 
 - 在此目录下，随后创建 `aad.jsp` 文件，并剪切/粘贴以下内容：
-jsp
+	jsp
 
 		<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 		<html>
@@ -363,11 +363,11 @@ jsp
 
 1. 在名为“adal4jsample”的根目录中创建一个文件夹用于存储所有 Java 文件。
 
-我们将在 Java 文件中使用命名空间 `com.microsoft.aad.adal4jsample`。大多数 IDE 将为此创建嵌套的文件夹结构（例如 `/com/microsoft/aad/adal4jsample`）。你可以根据需要创建这种结构，但不一定要这样做。
+	我们将在 Java 文件中使用命名空间 `com.microsoft.aad.adal4jsample`。大多数 IDE 将为此创建嵌套的文件夹结构（例如 `/com/microsoft/aad/adal4jsample`）。你可以根据需要创建这种结构，但不一定要这样做。
 
 2. 在此文件夹中创建名为 `JSONHelper.java` 的文件，我们将用它来根据令牌中的 JSON 数据帮助进行分析。可以从以下内容中剪切/粘贴此信息：
 
-Java
+	Java
 		
 		package com.microsoft.aad.adal4jsample;
 		
@@ -590,7 +590,7 @@ Java
 
 3. 接下来，创建名为 `HttpClientHelper.java` 的文件，我们将用它来根据 AAD 终结点中的 HTTP 数据帮助进行分析。可以从以下内容中剪切/粘贴此信息：
 
-Java
+	Java
 		
 		package com.microsoft.aad.adal4jsample;
 		
@@ -750,7 +750,7 @@ Java
 
 1. 创建一个名为 `DirectoryObject.java` 的文件，我们将用它来存储有关任何 DirectoryObject 的基本数据（你稍后可以随意使用它来执行任何其他图形查询）。可以从以下内容中剪切/粘贴此信息：
 
-Java
+	Java
 		
 		package com.microsoft.aad.adal4jsample;
 		
@@ -805,7 +805,7 @@ Java
 
 2. 创建名为 `User.java` 的文件，我们将用它来存储有关目录中任何用户的基本数据。同样，这是针对目录数据的基本 getter/setter，因此可以从以下内容中剪切/粘贴此信息：
 
-Java
+	Java
 		
 		package com.microsoft.aad.adal4jsample;
 		
@@ -1327,156 +1327,156 @@ Java
 
 1. 创建名为 `AuthHelper.java` 的文件，这可以提供用于确定已登录用户状态的方法。其中包括：
 
-- `isAuthenticated()` 方法，用于返回用户是否已登录的结果
-- `containsAuthenticationData()`，告知令牌是否包含数据
-- `isAuthenticationSuccessful()`，告知用户身份验证是否成功。
+	- `isAuthenticated()` 方法，用于返回用户是否已登录的结果
+	- `containsAuthenticationData()`，告知令牌是否包含数据
+	- `isAuthenticationSuccessful()`，告知用户身份验证是否成功。
 
-剪切/粘贴以下代码：
+	剪切/粘贴以下代码：
 
-Java
+	Java
 
-	package com.microsoft.aad.adal4jsample;
-	
-	import java.util.Map;
-	
-	import javax.servlet.http.HttpServletRequest;
-	
-	import com.microsoft.aad.adal4j.AuthenticationResult;
-	import com.nimbusds.openid.connect.sdk.AuthenticationResponse;
-	import com.nimbusds.openid.connect.sdk.AuthenticationResponseParser;
-	import com.nimbusds.openid.connect.sdk.AuthenticationSuccessResponse;
-	
-	public final class AuthHelper {
-	
-	    public static final String PRINCIPAL_SESSION_NAME = "principal";
-	
-	    private AuthHelper() {
-	    }
-	
-	    public static boolean isAuthenticated(HttpServletRequest request) {
-	        return request.getSession().getAttribute(PRINCIPAL_SESSION_NAME) != null;
-	    }
-	
-	    public static AuthenticationResult getAuthSessionObject(
-	            HttpServletRequest request) {
-	        return (AuthenticationResult) request.getSession().getAttribute(
-	                PRINCIPAL_SESSION_NAME);
-	    }
-	
-	    public static boolean containsAuthenticationData(
-	            HttpServletRequest httpRequest) {
-	        Map<String, String[]> map = httpRequest.getParameterMap();
-	        return httpRequest.getMethod().equalsIgnoreCase("POST") && (httpRequest.getParameterMap().containsKey(
-	                        AuthParameterNames.ERROR)
-	                        || httpRequest.getParameterMap().containsKey(
-	                                AuthParameterNames.ID_TOKEN) || httpRequest
-	                        .getParameterMap().containsKey(AuthParameterNames.CODE));
-	    }
-	
-	    public static boolean isAuthenticationSuccessful(
-	            AuthenticationResponse authResponse) {
-	        return authResponse instanceof AuthenticationSuccessResponse;
-	    }
-	}
+		package com.microsoft.aad.adal4jsample;
+		
+		import java.util.Map;
+		
+		import javax.servlet.http.HttpServletRequest;
+		
+		import com.microsoft.aad.adal4j.AuthenticationResult;
+		import com.nimbusds.openid.connect.sdk.AuthenticationResponse;
+		import com.nimbusds.openid.connect.sdk.AuthenticationResponseParser;
+		import com.nimbusds.openid.connect.sdk.AuthenticationSuccessResponse;
+		
+		public final class AuthHelper {
+		
+		    public static final String PRINCIPAL_SESSION_NAME = "principal";
+		
+		    private AuthHelper() {
+		    }
+		
+		    public static boolean isAuthenticated(HttpServletRequest request) {
+		        return request.getSession().getAttribute(PRINCIPAL_SESSION_NAME) != null;
+		    }
+		
+		    public static AuthenticationResult getAuthSessionObject(
+		            HttpServletRequest request) {
+		        return (AuthenticationResult) request.getSession().getAttribute(
+		                PRINCIPAL_SESSION_NAME);
+		    }
+		
+		    public static boolean containsAuthenticationData(
+		            HttpServletRequest httpRequest) {
+		        Map<String, String[]> map = httpRequest.getParameterMap();
+		        return httpRequest.getMethod().equalsIgnoreCase("POST") && (httpRequest.getParameterMap().containsKey(
+		                        AuthParameterNames.ERROR)
+		                        || httpRequest.getParameterMap().containsKey(
+		                                AuthParameterNames.ID_TOKEN) || httpRequest
+		                        .getParameterMap().containsKey(AuthParameterNames.CODE));
+		    }
+		
+		    public static boolean isAuthenticationSuccessful(
+		            AuthenticationResponse authResponse) {
+		        return authResponse instanceof AuthenticationSuccessResponse;
+		    }
+		}
 
 
 2. 创建名为 `AuthParameterNames.java` 的文件，用于提供 `ADAL4J` 所需的一些不可变变量。剪切/粘贴以下内容：
 
-Java
+	Java
 
-	package com.microsoft.aad.adal4jsample;
-	
-	public final class AuthParameterNames {
-	
-	    private AuthParameterNames() {
-	    }
-	
-	    public static String ERROR = "error";
-	    public static String ERROR_DESCRIPTION = "error_description";
-	    public static String ERROR_URI = "error_uri";
-	    public static String ID_TOKEN = "id_token";
-	    public static String CODE = "code";
-	}
+		package com.microsoft.aad.adal4jsample;
+		
+		public final class AuthParameterNames {
+		
+		    private AuthParameterNames() {
+		    }
+		
+		    public static String ERROR = "error";
+		    public static String ERROR_DESCRIPTION = "error_description";
+		    public static String ERROR_URI = "error_uri";
+		    public static String ID_TOKEN = "id_token";
+		    public static String CODE = "code";
+		}
 
 
 3. 最后，创建名为 `AadController.java` 的文件，这是 MVC 模式的控制器，可提供 JSP 控制器，并公开应用的 `secure/aad` URL 终结点。此外，我们还要将图形查询放在此文件中。
 
-剪切/粘贴以下内容：
+	剪切/粘贴以下内容：
 
-Java
+	Java
 
-	package com.microsoft.aad.adal4jsample;
+		package com.microsoft.aad.adal4jsample;
+		
+		import java.net.HttpURLConnection;
+		import java.net.URL;
+		
+		import javax.servlet.http.HttpServletRequest;
+		import javax.servlet.http.HttpSession;
+		
+		import org.json.JSONArray;
+		import org.json.JSONObject;
+		import org.springframework.stereotype.Controller;
+		import org.springframework.ui.ModelMap;
+		import org.springframework.web.bind.annotation.RequestMapping;
+		import org.springframework.web.bind.annotation.RequestMethod;
+		
+		import com.microsoft.aad.adal4j.AuthenticationResult;
+		
+		@Controller
+		@RequestMapping("/secure/aad")
+		public class AadController {
+		
+		    @RequestMapping(method = { RequestMethod.GET, RequestMethod.POST })
+		    public String getDirectoryObjects(ModelMap model, HttpServletRequest httpRequest) {
+		        HttpSession session = httpRequest.getSession();
+		        AuthenticationResult result = (AuthenticationResult) session.getAttribute(AuthHelper.PRINCIPAL_SESSION_NAME);
+		        if (result == null) {
+		            model.addAttribute("error", new Exception("AuthenticationResult not found in session."));
+		            return "/error";
+		        } else {
+		            String data;
+		            try {
+		                data = this.getUsernamesFromGraph(result.getAccessToken(), session.getServletContext()
+		                        .getInitParameter("tenant"));
+		                model.addAttribute("users", data);
+		            } catch (Exception e) {
+		                model.addAttribute("error", e);
+		                return "/error";
+		            }
+		        }
+		        return "/secure/aad";
+		    }
+		
+		    private String getUsernamesFromGraph(String accessToken, String tenant) throws Exception {
+		        URL url = new URL(String.format("https://graph.chinacloudapi.cn/%s/users?api-version=2013-04-05", tenant,
+		                accessToken));
+		
+		        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+		        // Set the appropriate header fields in the request header.
+		        conn.setRequestProperty("api-version", "2013-04-05");
+		        conn.setRequestProperty("Authorization", accessToken);
+		        conn.setRequestProperty("Accept", "application/json;odata=minimalmetadata");
+		        String goodRespStr = HttpClientHelper.getResponseStringFromConn(conn, true);
+		        // logger.info("goodRespStr ->" + goodRespStr);
+		        int responseCode = conn.getResponseCode();
+		        JSONObject response = HttpClientHelper.processGoodRespStr(responseCode, goodRespStr);
+		        JSONArray users = new JSONArray();
+		
+		        users = JSONHelper.fetchDirectoryObjectJSONArray(response);
+		
+		        StringBuilder builder = new StringBuilder();
+		        User user = null;
+		        for (int i = 0; i < users.length(); i++) {
+		            JSONObject thisUserJSONObject = users.optJSONObject(i);
+		            user = new User();
+		            JSONHelper.convertJSONObjectToDirectoryObject(thisUserJSONObject, user);
+		            builder.append(user.getUserPrincipalName() + "<br/>");
+		        }
+		        return builder.toString();
+		    }
+		
+		}
 	
-	import java.net.HttpURLConnection;
-	import java.net.URL;
-	
-	import javax.servlet.http.HttpServletRequest;
-	import javax.servlet.http.HttpSession;
-	
-	import org.json.JSONArray;
-	import org.json.JSONObject;
-	import org.springframework.stereotype.Controller;
-	import org.springframework.ui.ModelMap;
-	import org.springframework.web.bind.annotation.RequestMapping;
-	import org.springframework.web.bind.annotation.RequestMethod;
-	
-	import com.microsoft.aad.adal4j.AuthenticationResult;
-	
-	@Controller
-	@RequestMapping("/secure/aad")
-	public class AadController {
-	
-	    @RequestMapping(method = { RequestMethod.GET, RequestMethod.POST })
-	    public String getDirectoryObjects(ModelMap model, HttpServletRequest httpRequest) {
-	        HttpSession session = httpRequest.getSession();
-	        AuthenticationResult result = (AuthenticationResult) session.getAttribute(AuthHelper.PRINCIPAL_SESSION_NAME);
-	        if (result == null) {
-	            model.addAttribute("error", new Exception("AuthenticationResult not found in session."));
-	            return "/error";
-	        } else {
-	            String data;
-	            try {
-	                data = this.getUsernamesFromGraph(result.getAccessToken(), session.getServletContext()
-	                        .getInitParameter("tenant"));
-	                model.addAttribute("users", data);
-	            } catch (Exception e) {
-	                model.addAttribute("error", e);
-	                return "/error";
-	            }
-	        }
-	        return "/secure/aad";
-	    }
-	
-	    private String getUsernamesFromGraph(String accessToken, String tenant) throws Exception {
-	        URL url = new URL(String.format("https://graph.chinacloudapi.cn/%s/users?api-version=2013-04-05", tenant,
-	                accessToken));
-	
-	        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-	        // Set the appropriate header fields in the request header.
-	        conn.setRequestProperty("api-version", "2013-04-05");
-	        conn.setRequestProperty("Authorization", accessToken);
-	        conn.setRequestProperty("Accept", "application/json;odata=minimalmetadata");
-	        String goodRespStr = HttpClientHelper.getResponseStringFromConn(conn, true);
-	        // logger.info("goodRespStr ->" + goodRespStr);
-	        int responseCode = conn.getResponseCode();
-	        JSONObject response = HttpClientHelper.processGoodRespStr(responseCode, goodRespStr);
-	        JSONArray users = new JSONArray();
-	
-	        users = JSONHelper.fetchDirectoryObjectJSONArray(response);
-	
-	        StringBuilder builder = new StringBuilder();
-	        User user = null;
-	        for (int i = 0; i < users.length(); i++) {
-	            JSONObject thisUserJSONObject = users.optJSONObject(i);
-	            user = new User();
-	            JSONHelper.convertJSONObjectToDirectoryObject(thisUserJSONObject, user);
-	            builder.append(user.getUserPrincipalName() + "<br/>");
-	        }
-	        return builder.toString();
-	    }
-	
-	}
-
 
 
 ## 8\.创建 BasicFilter 文件（适用于 BasicFilter MVC）

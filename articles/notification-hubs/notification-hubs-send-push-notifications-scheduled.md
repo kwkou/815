@@ -14,7 +14,7 @@
 	ms.devlang="dotnet"
 	ms.topic="article"
 	ms.date="06/29/2016"
-	wacn.date="08/23/2016"
+	wacn.date="01/19/2017"
 	ms.author="wesmc"/>
 
 # 如何：发送预定通知
@@ -24,7 +24,7 @@
 
 如果在你的方案中，你需要在将来的某个时间点发送通知，但却无法轻松地唤醒后端代码来发送该通知。标准层通知中心支持一种功能，可让你提前最多 7 天计划好通知。
 
-发送通知时，只需如以下示例中所示，使用通知中心 SDK 中的 [ScheduledNotification](https://msdn.microsoft.com/library/microsoft.azure.notificationhubs.schedulednotification.aspx) 类：
+发送通知时，只需如以下示例中所示，使用通知中心 SDK 中的 [ScheduledNotification](https://msdn.microsoft.com/zh-cn/library/microsoft.azure.notificationhubs.schedulednotification.aspx) 类：
 
 	Notification notification = new AppleNotification("{\"aps\":{\"alert\":\"Happy birthday!\"}}");
 	var scheduled = await hub.ScheduleNotificationAsync(notification, new DateTime(2014, 7, 19, 0, 0, 0));

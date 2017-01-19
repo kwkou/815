@@ -11,10 +11,10 @@
     ms.workload="identity"
     ms.tgt_pltfrm="na"
     ms.devlang="na"
-	ms.topic="article"
+    ms.topic="article"
     ms.date="09/01/2016"
-    wacn.date="10/11/2016"
-    ms.author="billmath"/>
+    ms.author="andkjell"
+    wacn.date="01/19/2017"/>
 
 # Azure AD Connect 同步：了解默认配置
 本文介绍现成的配置规则。其中说明这些规则及其对配置将有何影响。此外还将逐步介绍如何完成 Azure AD Connect 同步的默认配置。其目的是让读者了解配置模型（名为声明性预配）在实际示例中的运行情形。本文假设你已使用安装向导安装并配置了 Azure AD Connect 同步。
@@ -72,7 +72,7 @@
 - 联系人必须已启用邮件。这可以使用以下规则来验证：
     - `IsPresent([proxyAddresses]) = True)`。必须填充 proxyAddresses 属性。
     - 可在 proxyAddresses 属性或 mail 属性中找到主要电子邮件地址。提供的 @ 用于验证内容是否为电子邮件地址。以下两条规则之一必须评估为 True。
-        - `(Contains([proxyAddresses], "SMTP:") > 0) && (InStr(Item([proxyAddresses], Contains([proxyAddresses], "SMTP:")), "@") > 0))`。是否有包含"SMTP:"的项，如果有，是否可在字符串中找到 @？
+        - `(Contains([proxyAddresses], "SMTP:") > 0) && (InStr(Item([proxyAddresses], Contains([proxyAddresses], "SMTP:")), "@") > 0))`。是否有包含“SMTP:”的项，如果有，是否可在字符串中找到 @？
         - `(IsPresent([mail]) = True && (InStr([mail], "@") > 0)`。是否已填充邮件属性，如果是，是否可在字符串中找到 @？
 
 以下联系人对象**不会**同步到 Azure AD：
@@ -89,7 +89,7 @@
     - 如果组在首次同步启动之前包含更多的成员，该组将不同步。
     - 如果成员数目在组最初创建之后有所增加，在达到 50,000 个成员时，组将停止同步，直到成员资格计数再次低于 50,000。
     - 注意：Azure AD 也强制实施 50,000 个成员身份计数。无法同步包含更多成员的组，即使修改或删除此规则，也是如此。
-- 如果组是**通讯组**，则还必须启用邮件。请参阅联系人的现成规则，了解实施此规则的情况。
+- 如果组是**通讯组**，则还必须启用邮件。请参阅 [Contact out-of-box rules](#contact-out-of-box-rules)（联系人的现成规则），了解实施此规则的情况。
 
 以下组对象**不会**同步到 Azure AD：
 
@@ -99,7 +99,7 @@
 - `CBool(InStr(DNComponent(CRef([dn]),1),"\\0ACNF:")>0)`。不同步任何复制牺牲者对象。
 
 ### ForeignSecurityPrincipal 现成规则
-FSP 联接到 Metaverse 中的"任何"（*）对象。这种联接实际上只发生在用户和安全组上。这种配置可确保解析并在 Azure AD 中正确显示跨林成员身份。
+FSP 联接到 Metaverse 中的“任何”（*）对象。这种联接实际上只发生在用户和安全组上。这种配置可确保解析并在 Azure AD 中正确显示跨林成员身份。
 
 ### 计算机现成规则
 计算机对象必须满足以下条件才进行同步：
@@ -128,45 +128,45 @@ SRE 是一个资源套件工具，将随 Azure AD Connect 同步一起安装。�
 
 ![入站同步规则](./media/active-directory-aadconnectsync-understanding-default-configuration/syncrulesinbound.png)
 
-此窗格中显示所有为配置创建的同步规则。表中的每一行代表一个同步规则。"规则类型"的左下侧列出了两种不同的类型："入站"和"出站"。入站和出站来自 Metaverse 视图。本概述主要介绍入站规则。同步规则的实际列表将取决于在 AD 中检测到的架构。在上图中，帐户林 (fabrikamonline.com) 没有任何服务（如 Exchange 和 Lync），并且未为这些服务创建任何同步规则。但在资源林 (res.fabrikamonline.com) 中，我们将找到这些服务的同步规则。规则的内容因检测到的版本而异。例如，在使用 Exchange 2013 的部署中，配置的属性流比在 Exchange 2010/2007 中更多。
+此窗格中显示所有为配置创建的同步规则。表中的每一行代表一个同步规则。“规则类型”的左下侧列出了两种不同的类型：“入站”和“出站”。入站和出站来自 Metaverse 视图。本概述主要介绍入站规则。同步规则的实际列表将取决于在 AD 中检测到的架构。在上图中，帐户林 (fabrikamonline.com) 没有任何服务（如 Exchange 和 Lync），并且未为这些服务创建任何同步规则。但在资源林 (res.fabrikamonline.com) 中，我们将找到这些服务的同步规则。规则的内容因检测到的版本而异。例如，在使用 Exchange 2013 的部署中，配置的属性流比在 Exchange 2010/2007 中更多。
 
 ### 同步规则
 满足条件时，同步规则是具有一组流动属性的配置对象。它还用于描述连接器空间中对象与 Metaverse 中对象的相关性，这种相关性称为**联接**或**匹配**。同步规则具有优先级值，该优先级指示这些规则彼此的相关性。数值较小的同步规则具有较高的优先级，当属性流发生冲突时，较高的优先级会赢得冲突解决方案。
 
-例如，查看同步规则"In from AD - User AccountEnabled"。在 SRE 中标记此行，然后选择"编辑"。
+例如，查看同步规则“In from AD - User AccountEnabled”。在 SRE 中标记此行，然后选择“编辑”。
 
-由于这是一条现成的规则，因此在打开该规则时将看到警告。你不应该[对现成规则进行任何更改](/documentation/articles/active-directory-aadconnectsync-best-practices-changing-default-configuration/)，因此系统会询问意图是什么。在本例中，我们只想要查看规则。请选择"否"。
+由于这是一条现成的规则，因此在打开该规则时将看到警告。你不应该[对现成规则进行任何更改](/documentation/articles/active-directory-aadconnectsync-best-practices-changing-default-configuration/)，因此系统会询问意图是什么。在本例中，我们只想要查看规则。请选择“否”。
 
 ![同步规则警告](./media/active-directory-aadconnectsync-understanding-default-configuration/warningeditrule.png)
 
-同步规则具有四个配置部分："描述"、"范围筛选器"、"联接规则"和"转换"。
+同步规则具有四个配置部分：“描述”、“范围筛选器”、“联接规则”和“转换”。
 
 #### 说明
 第一部分提供名称和描述等基本信息。
 
-![同步规则编辑器中的"说明"选项卡](./media/active-directory-aadconnectsync-understanding-default-configuration/syncruledescription.png)
+![同步规则编辑器中的“说明”选项卡](./media/active-directory-aadconnectsync-understanding-default-configuration/syncruledescription.png)
 
-还可以找到以下相关信息：此规则与哪个已连接系统相关、此规则适合于已连接系统中的哪种对象类型，以及 Metaverse 对象类型。无论源对象类型是用户、iNetOrgPerson 还是联系人，Metaverse 对象类型始终是人。Metaverse 对象类型应该永不更改，因此将它创建为泛型类型。可以将链接类型设置为"联接"、"StickyJoin"或"设置"。此设置将与"联接规则"部分协同工作，稍后将介绍此方面的内容。
+还可以找到以下相关信息：此规则与哪个已连接系统相关、此规则适合于已连接系统中的哪种对象类型，以及 Metaverse 对象类型。无论源对象类型是用户、iNetOrgPerson 还是联系人，Metaverse 对象类型始终是人。Metaverse 对象类型应该永不更改，因此将它创建为泛型类型。可以将链接类型设置为“联接”、“StickyJoin”或“设置”。此设置将与“联接规则”部分协同工作，稍后将介绍此方面的内容。
 
 你还可以看到此同步规则用于密码同步。如果用户在此同步规则的范围内，密码将从本地同步到云（假设已启用密码同步功能）。
 
 #### 范围筛选器
-"范围筛选器"部分用于配置同步规则何时适用。由于正在查看的同步规则的名称指示只应对已启用的用户应用该规则，因此对范围进行了配置，使得 AD 属性 **userAccountControl** 不能对 2 这个位进行设置。当同步引擎在 AD 中找到用户时，如果 **userAccountControl** 设置为十进制值 512（已启用的普通用户），则应用此同步规则。如果用户的 **userAccountControl** 设置为 514（已禁用的普通用户），则不应用该规则。
+“范围筛选器”部分用于配置同步规则何时适用。由于正在查看的同步规则的名称指示只应对已启用的用户应用该规则，因此对范围进行了配置，使得 AD 属性 **userAccountControl** 不能对 2 这个位进行设置。当同步引擎在 AD 中找到用户时，如果 **userAccountControl** 设置为十进制值 512（已启用的普通用户），则应用此同步规则。如果用户的 **userAccountControl** 设置为 514（已禁用的普通用户），则不应用该规则。
 
-![同步规则编辑器中的"范围"选项卡](./media/active-directory-aadconnectsync-understanding-default-configuration/syncrulescopingfilter.png)
+![同步规则编辑器中的“范围”选项卡](./media/active-directory-aadconnectsync-understanding-default-configuration/syncrulescopingfilter.png)
 
-范围筛选器具有可以嵌套的组和子句。必须满足组内所有子句的条件，才能应用同步规则。如果定义了多个组，则要应用该规则，必须满足至少一个组的条件。也就是说，组之间按逻辑或进行计算，组内按逻辑与进行计算。可以在出站同步规则"Out to AAD - Group Join"中找到此配置的示例。有多个同步筛选器组，例如，一个用于安全组 (`securityEnabled EQUAL True`)，一个用于分发组 (`securityEnabled EQUAL False`)。
+范围筛选器具有可以嵌套的组和子句。必须满足组内所有子句的条件，才能应用同步规则。如果定义了多个组，则要应用该规则，必须满足至少一个组的条件。也就是说，组之间按逻辑或进行计算，组内按逻辑与进行计算。可以在出站同步规则“Out to AAD - Group Join”中找到此配置的示例。有多个同步筛选器组，例如，一个用于安全组 (`securityEnabled EQUAL True`)，一个用于分发组 (`securityEnabled EQUAL False`)。
 
-![同步规则编辑器中的"范围"选项卡](./media/active-directory-aadconnectsync-understanding-default-configuration/syncrulescopingfilterout.png)
+![同步规则编辑器中的“范围”选项卡](./media/active-directory-aadconnectsync-understanding-default-configuration/syncrulescopingfilterout.png)
 
 此规则用于定义哪些组应设置到 Azure AD。分发组必须启用邮件，才能与 Azure AD 同步，但对于安全组，电子邮件不是必需的。
 
 #### 联接规则
-第三部分用于配置连接器空间中的对象与 Metaverse 中的对象的相关性。前面查看过的规则没有针对"联接规则"的任何配置，因此现在将查看"In from AD - User Join"。
+第三部分用于配置连接器空间中的对象与 Metaverse 中的对象的相关性。前面查看过的规则没有针对“联接规则”的任何配置，因此现在将查看“In from AD - User Join”。
 
-![同步规则编辑器中的"联接规则"选项卡](./media/active-directory-aadconnectsync-understanding-default-configuration/syncrulejoinrules.png)
+![同步规则编辑器中的“联接规则”选项卡](./media/active-directory-aadconnectsync-understanding-default-configuration/syncrulejoinrules.png)
 
-联接规则的内容取决于在安装向导中选择的匹配选项。对于入站规则，评估从源连接器空间中的对象开始，将按顺序对联接规则中的每个组进行评估。如果根据某个联接规则，某个源对象的评估结果是与 Metaverse 中的某个对象完全匹配，则这两个对象将联接在一起。如果已对所有规则进行评估但没有匹配项，则将使用描述页上的"链接类型"。如果此配置设为"预配"，则在目标（即 Metaverse）中创建一个新对象。将新对象设置到 Metaverse 也称为将对象**投影**到 Metaverse。
+联接规则的内容取决于在安装向导中选择的匹配选项。对于入站规则，评估从源连接器空间中的对象开始，将按顺序对联接规则中的每个组进行评估。如果根据某个联接规则，某个源对象的评估结果是与 Metaverse 中的某个对象完全匹配，则这两个对象将联接在一起。如果已对所有规则进行评估但没有匹配项，则将使用描述页上的“链接类型”。如果此配置设为“预配”，则在目标（即 Metaverse）中创建一个新对象。将新对象设置到 Metaverse 也称为将对象**投影**到 Metaverse。
 
 只对联接规则评估一次。当连接器空间对象与 Metaverse 对象联接在一起时，只要仍然满足同步规则的范围，它们就保持联接。
 
@@ -175,17 +175,17 @@ SRE 是一个资源套件工具，将随 Azure AD Connect 同步一起安装。�
 查看上图，可以看到规则尝试将 **objectSID** 与 **msExchMasterAccountSid** (Exchange) 和 **msRTCSIP-OriginatorSid** (Lync) 相联接，而这正是我们在帐户资源林拓扑中所预期的。发现所有林具有相同的规则。可以假设每个林可能是帐户或资源林。如果有帐户存在于单个林中且不需要联接，此配置也能正常运行。
 
 #### 转换
-"转换"部分定义当对象已联接且满足范围筛选器时，将应用于目标对象的所有属性流。回到"In from AD - User AccountEnabled"同步规则，找到以下转换：
+“转换”部分定义当对象已联接且满足范围筛选器时，将应用于目标对象的所有属性流。回到“In from AD - User AccountEnabled”同步规则，找到以下转换：
 
-![同步规则编辑器中的"转换"选项卡](./media/active-directory-aadconnectsync-understanding-default-configuration/syncruletransformations.png)
+![同步规则编辑器中的“转换”选项卡](./media/active-directory-aadconnectsync-understanding-default-configuration/syncruletransformations.png)
 
 如果将此配置放在帐户-资源林部署的上下文中考虑，应在帐户林中找到已启用的帐户，在具有 Exchange 和 Lync 设置的资源林中找到已禁用的帐户。查看的同步规则包含进行登录所需的属性，这些属性应从包含已启用帐户的林流动。所有这些属性流将在一个同步规则中进行组合。
 
-转换可以具有不同的类型："常量"、"直接"和"表达式"。
+转换可以具有不同的类型：“常量”、“直接”和“表达式”。
 
 - 常量流始终传递硬编码值。在上例中，始终在名为 **accountEnabled** 的 Metaverse 属性中设置值 **True**。
 - 直接流始终将源中的属性值按原样传递到目标属性。
-- 第三种流类型是"表达式"，它允许进行更高级的配置。
+- 第三种流类型是“表达式”，它允许进行更高级的配置。
 
 表达式语言是 VBA (Visual Basic for Applications)，因此具有 Microsoft Office 或 VBScript 经验的用户认识该格式。属性将括在方括号内，如 [attributeName]。属性名称和函数名称是区分大小写的，但同步规则编辑器将对表达式求值并在表达式无效时提供警告。所有表达式都使用嵌套函数表示在一行上。为了显示配置语言的强大功能，下面给出了 pwdLastSet 流的示例，但插入了附加注释：
 
@@ -203,11 +203,11 @@ SRE 是一个资源套件工具，将随 Azure AD Connect 同步一起安装。�
 有关属性流表达式语言的详细信息，请参阅 [Understanding Declarative Provisioning Expressions](/documentation/articles/active-directory-aadconnectsync-understanding-declarative-provisioning-expressions/)（了解声明性预配表达式）。
 
 ### 优先级
-现已了解几个不同的同步规则，但这些规则在配置中配合运行。在某些情况下，属性值由相同目标属性的多个同步规则提供。在此情况下，可以使用属性优先级来确定哪个属性胜出。以属性 sourceAnchor 为例。此属性是能否登录 Azure AD 的重要属性。可以在两个不同的同步规则中看到此属性的属性流："In from AD - User AccountEnabled"和"In from AD - User Common"。由于有同步规则优先级，如果有多个对象联接到 Metaverse 对象，sourceAnchor 属性将先由具有已启用帐户的林提供。如果没有已启用的帐户，同步引擎将使用全部提取同步规则"In from AD - User Common"。此配置可确保即使帐户已禁用，也仍有一个 sourceAnchor。
+现已了解几个不同的同步规则，但这些规则在配置中配合运行。在某些情况下，属性值由相同目标属性的多个同步规则提供。在此情况下，可以使用属性优先级来确定哪个属性胜出。以属性 sourceAnchor 为例。此属性是能否登录 Azure AD 的重要属性。可以在两个不同的同步规则中看到此属性的属性流：“In from AD - User AccountEnabled”和“In from AD - User Common”。由于有同步规则优先级，如果有多个对象联接到 Metaverse 对象，sourceAnchor 属性将先由具有已启用帐户的林提供。如果没有已启用的帐户，同步引擎将使用全部提取同步规则“In from AD - User Common”。此配置可确保即使帐户已禁用，也仍有一个 sourceAnchor。
 
 ![入站同步规则](./media/active-directory-aadconnectsync-understanding-default-configuration/syncrulesinbound.png)
 
-同步规则的优先级由安装向导设置在组中。组中的所有规则具有相同的名称，但连接到不同的连接目录。安装向导将最高优先级提供给规则"In from AD - User Join"，并迭代所有连接的 AD 目录。接下来，以预定义的顺序继续处理后续规则组。在组中，以在向导中添加连接器的顺序来添加规则。如果通过向导添加其他连接器，同步规则将重新排序，新连接器规则插到每个组中的末尾。
+同步规则的优先级由安装向导设置在组中。组中的所有规则具有相同的名称，但连接到不同的连接目录。安装向导将最高优先级提供给规则“In from AD - User Join”，并迭代所有连接的 AD 目录。接下来，以预定义的顺序继续处理后续规则组。在组中，以在向导中添加连接器的顺序来添加规则。如果通过向导添加其他连接器，同步规则将重新排序，新连接器规则插到每个组中的末尾。
 
 ### 汇总
 我们现在对同步规则已有足够的认识，能够了解配置如何在不同的同步规则下运行。如果观察某个用户和提供给 Metaverse 的属性，会发现规则将按以下顺序应用：
