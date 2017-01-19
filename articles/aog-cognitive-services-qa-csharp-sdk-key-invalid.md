@@ -8,7 +8,7 @@
 	selfHelpType=""
 	supportTopicIds=""
 	productPesIds=""
-	resourceTags="Cognitive Services, C# SDK, Key"​
+	resourceTags="Cognitive Services, C# SDK, Key"
 	cloudEnvironments="MoonCake" />
 <tags
 	ms.service="cognitive-services-aog"

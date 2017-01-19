@@ -8,7 +8,7 @@
 	selfHelpType=""
 	supportTopicIds=""
 	productPesIds=""
-	resourceTags="Notification Hubs, Android, 百度云"​
+	resourceTags="Notification Hubs, Android, 百度云"
 	cloudEnvironments="MoonCake" />
 <tags
 	ms.service="notification-hubs-aog"

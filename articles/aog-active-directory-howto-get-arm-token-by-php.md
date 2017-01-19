@@ -1,14 +1,14 @@
-<properties
-	pageTitle="如何通过 PHP 获取 Azure Active Directory 令牌"
-	description="通过 PHP 获取 调用 Azure Rest API 所需的 Azure Active Directory 令牌"
-	service="microsoft.activedirectory"
-	resource="activedirectory"
-	authors=""
-	displayOrder=""
-	selfHelpType=""
-	supportTopicIds=""
+<properties 
+	pageTitle="如何通过 PHP 获取 Azure Active Directory 令牌" 
+	description="通过 PHP 获取 调用 Azure Rest API 所需的 Azure Active Directory 令牌" 
+	service="microsoft.activedirectory" 
+	resource="activedirectory" 
+	authors="" 
+	displayOrder="" 
+	selfHelpType="" 
+	supportTopicIds="" 
 	productPesIds=""
-	resourceTags="Azure AD, PowerShell, PHP, OAuth"​
+	resourceTags="Azure AD, PowerShell, PHP, OAuth"
 	cloudEnvironments="MoonCake" />
 <tags 
 	ms.service="active-directory-aog"

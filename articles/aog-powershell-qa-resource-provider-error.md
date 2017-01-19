@@ -8,7 +8,7 @@
 	selfHelpType=""
 	supportTopicIds=""
 	productPesIds=""
-	resourceTags="PowerShell, Reource Provider"​
+	resourceTags="PowerShell, Reource Provider"
 	cloudEnvironments="MoonCake" />
 <tags
 	ms.service="na-aog"

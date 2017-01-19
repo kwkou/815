@@ -8,7 +8,7 @@
 	selfHelpType=""
 	supportTopicIds=""
 	productPesIds=""
-	resourceTags="Event Hubs, Apache Storm"​
+	resourceTags="Event Hubs, Apache Storm"
 	cloudEnvironments="MoonCake" />
 <tags
 	ms.service="notification-hubs-aog"

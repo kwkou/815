@@ -8,7 +8,7 @@
 	selfHelpType=""
 	supportTopicIds=""
 	productPesIds=""
-	resourceTags="Azure AD, PowerShell"​
+	resourceTags="Azure AD, PowerShell"
 	cloudEnvironments="MoonCake" />
 <tags
 	ms.service="active-directory-aog"

@@ -8,7 +8,7 @@
 	selfHelpType=""
 	supportTopicIds=""
 	productPesIds=""
-	resourceTags="IoT Hub, EventHubClient, D2C, C2D, Connection String"​
+	resourceTags="IoT Hub, EventHubClient, D2C, C2D, Connection String"
 	cloudEnvironments="MoonCake" />
 <tags
 	ms.service="iot-hub-aog"
