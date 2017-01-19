@@ -14,7 +14,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="required"
    ms.date="07/06/2016"
-   wacn.date="08/08/2016"
+   wacn.date="01/17/2017"
    ms.author="suchiagicha"/>
 
 # 在 Azure Service Fabric 中帮助保护服务的通信
@@ -310,4 +310,4 @@
 
 * [Reliable Services 中使用 OWIN 的 Web API](/documentation/articles/service-fabric-reliable-services-communication-webapi/)
 
-<!---HONumber=Mooncake_0801_2016-->
+<!---HONumber=Mooncake_Quality_Review_0117_2017-->

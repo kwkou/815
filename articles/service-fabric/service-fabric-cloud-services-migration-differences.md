@@ -14,7 +14,7 @@
     ms.tgt_pltfrm="NA"
     ms.workload="NA"
     ms.date="10/19/2016"
-    wacn.date="12/26/2016"
+    wacn.date="01/17/2017"
     ms.author="vturecek" />
 
 # 迁移应用程序之前了解云服务与 Service Fabric 之间的差异。
@@ -107,4 +107,4 @@ Service Fabric 提供服务发现机制（称为“命名服务”），用于�
 [10]: ./media/service-fabric-cloud-services-migration-differences/service-fabric-architecture-simple.png
 [11]: ./media/service-fabric-cloud-services-migration-differences/service-fabric-architecture-full.png
 
-<!---HONumber=Mooncake_1219_2016-->
+<!---HONumber=Mooncake_Quality_Review_0117_2017-->

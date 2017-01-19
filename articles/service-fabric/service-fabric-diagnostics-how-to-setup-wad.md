@@ -15,7 +15,7 @@
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
    ms.date="09/28/2016"
-   wacn.date="12/27/2016"
+   wacn.date="01/17/2017"
    ms.author="toddabel"/>
 
 
@@ -220,4 +220,4 @@ Azure 支持团队*需要*借助日志解决你创建的任何支持请求。这
 ## 相关文章
 * [了解如何使用诊断扩展收集性能计数器或日志](/documentation/articles/virtual-machines-windows-extensions-diagnostics-template/)
 
-<!---HONumber=Mooncake_1121_2016-->
+<!---HONumber=Mooncake_Quality_Review_0117_2017-->

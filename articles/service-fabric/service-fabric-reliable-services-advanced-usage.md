@@ -14,7 +14,7 @@
     ms.tgt_pltfrm="NA"
     ms.workload="NA"
     ms.date="10/19/2016"
-    wacn.date="12/26/2016"
+    wacn.date="01/17/2017"
     ms.author="vturecek" />
 
 # Reliable Services 编程模型的高级用法
@@ -66,4 +66,4 @@ Azure Service Fabric 可简化可靠的无状态服务和有状态服务的编�
 
 - [使用 Service Fabric 群集资源管理器配置服务](/documentation/articles/service-fabric-cluster-resource-manager-configure-services/)
 
-<!---HONumber=Mooncake_1219_2016-->
+<!---HONumber=Mooncake_Quality_Review_0117_2017-->

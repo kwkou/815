@@ -15,7 +15,7 @@
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
    ms.date="10/31/2016"
-   wacn.date="12/12/2016"
+   wacn.date="01/17/2017"
    ms.author="jrj;barbkess"/>
 
 
@@ -396,7 +396,6 @@ Azure SQL 数据仓库使用事务日志将更改提交到数据库。每个分�
 
 
 ## 暂停和缩放指南
-
 借助 Azure SQL 数据仓库，你可以根据需要暂停、恢复和缩放数据仓库。暂停或缩放 SQL 数据仓库时，一定要了解会立即终止任何正提交的事务；导致回滚所有未决事务。如果你的工作负荷在暂停或缩放操作前已发出数据修改在长时间运行之后仍未完成的指示，则需要撤消此项工作。这可能会影响暂停或缩放 Azure SQL 数据仓库数据库所花费的时间。
 
 > [AZURE.IMPORTANT] `UPDATE` 和 `DELETE` 都是完整记录的操作，因此这些撤消/重做操作相比同等最少记录的操作可能要花费更长的时间。
@@ -424,4 +423,4 @@ Azure SQL 数据仓库使用事务日志将更改提交到数据库。每个分�
 
 <!-- Other web references -->
 
-<!---HONumber=Mooncake_1205_2016-->
+<!---HONumber=Mooncake_Quality_Review_0117_2017-->

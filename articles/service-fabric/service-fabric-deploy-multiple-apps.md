@@ -14,7 +14,7 @@
     ms.tgt_pltfrm="NA"
     ms.workload="NA"
     ms.date="10/22/2016"
-    wacn.date="01/11/2016"
+    wacn.date="01/17/2017"
     ms.author="msfussell;mikhegn" />
 
 # 部署多个来宾可执行文件
@@ -202,4 +202,4 @@ Service Fabric 需要使用类似于下面的命令来启动 MongoDB，因此打
 
 - 了解如何[手动打包来宾应用程序](/documentation/articles/service-fabric-deploy-existing-app/)。
 
-<!---HONumber=Mooncake_1219_2016-->
+<!---HONumber=Mooncake_Quality_Review_0117_2017-->

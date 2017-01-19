@@ -15,7 +15,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="na"
    ms.date="09/09/2016"
-   wacn.date="10/24/2016"
+   wacn.date="01/17/2017"
    ms.author="chackdan"/>  
 
 
@@ -112,4 +112,4 @@ Service Fabric Explorer 中列出的节点是 Service Fabric 系统服务（特�
 [BrowseServiceFabricClusterResource]: ./media/service-fabric-cluster-scale-up-down/BrowseServiceFabricClusterResource.png
 [ClusterResources]: ./media/service-fabric-cluster-scale-up-down/ClusterResources.png
 
-<!---HONumber=Mooncake_1017_2016-->
+<!---HONumber=Mooncake_Quality_Review_0117_2017-->

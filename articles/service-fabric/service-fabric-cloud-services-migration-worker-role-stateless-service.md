@@ -14,7 +14,7 @@
     ms.tgt_pltfrm="NA"
     ms.workload="NA"
     ms.date="10/19/2016"
-    wacn.date="12/26/2016"
+    wacn.date="01/17/2017"
     ms.author="vturecek" />
 
 # 将 Web 角色和辅助角色转换成 Service Fabric 无状态服务的指南
@@ -272,4 +272,4 @@ Service Fabric 中的启动入口点是在 ServiceManifest.xml 中针对每个�
 [3]: ./media/service-fabric-cloud-services-migration-worker-role-stateless-service/service-fabric-cloud-service-projects.png
 [4]: ./media/service-fabric-cloud-services-migration-worker-role-stateless-service/worker-role-to-stateless-service.png
 
-<!---HONumber=Mooncake_1219_2016-->
+<!---HONumber=Mooncake_Quality_Review_0117_2017-->

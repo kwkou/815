@@ -15,7 +15,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="storage-backup-recovery"
     ms.date="12/19/2016"
-    wacn.date="01/03/2017"
+    wacn.date="01/17/2017"
     ms.author="pratshar" />
 
 # 使用 Azure Site Recovery 保护 Active Directory 和 DNS
@@ -111,4 +111,4 @@
 ## 后续步骤
 阅读[我可以保护哪些工作负荷？](/documentation/articles/site-recovery-workload/)详细了解如何使用 Azure Site Recovery 保护企业工作负荷。
 
-<!---HONumber=Mooncake_1226_2016-->
+<!---HONumber=Mooncake_Quality_Review_0117_2017-->

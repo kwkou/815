@@ -14,7 +14,7 @@
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
    ms.date="08/10/2016"
-   wacn.date="08/29/2016"
+   wacn.date="01/17/2017"
    ms.author="aprameyr"/>
 
 # 缩放 Service Fabric 应用程序
@@ -62,4 +62,4 @@ Service Fabric 支持将单个服务分区为多个较小的分区。[分区概�
 - [定义和管理状态](/documentation/articles/service-fabric-concepts-state/)
  
 
-<!---HONumber=Mooncake_0822_2016-->
+<!---HONumber=Mooncake_Quality_Review_0117_2017-->

@@ -14,7 +14,7 @@
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
    ms.date="04/06/2016"
-   wacn.date="07/04/2016"
+   wacn.date="01/17/2017"
    ms.author="rsinha"/>
 
 # 可测试性概述
@@ -118,4 +118,4 @@ Service Fabric 让编写和管理分布式可扩展应用程序的工作变得�
 
  
 
-<!---HONumber=Mooncake_0523_2016-->
+<!---HONumber=Mooncake_Quality_Review_0117_2017-->

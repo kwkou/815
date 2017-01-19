@@ -15,7 +15,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="na"
    ms.date="09/09/2016"
-   wacn.date="11/28/2016"
+   wacn.date="01/17/2017"
    ms.author="seanmck;mikhegn"/>
 
 # 使用 Visual Studio 简化 Service Fabric 应用程序的编写和管理
@@ -111,4 +111,4 @@
 [preservedata]: ./media/service-fabric-manage-application-in-visual-studio/preservedata.png
 [debugmodeproperty]: ./media/service-fabric-manage-application-in-visual-studio/debugmodeproperty.png
 
-<!---HONumber=Mooncake_1121_2016-->
+<!---HONumber=Mooncake_Quality_Review_0117_2017-->
