@@ -163,7 +163,7 @@ Azure 中的所有操作都围绕着资源组进行，因此，让我们创建�
     private static async Task<ResourceGroup> CreateResourceGroupAsync(TokenCredentials credentials, string subscriptionId, string resourceGroup, string location)
     {
         Console.WriteLine($"Creating Resource Group {resourceGroup}");
-        var resourceClient = new ResourceManagementClient(credentials) { SubscriptionId = subscriptionId };
+        var resourceClient = new ResourceManagementClient(new Uri("https://management.chinacloudapi.cn/"), credential) { SubscriptionId = subscriptionId };
         return await resourceClient.ResourceGroups.CreateOrUpdateAsync(resourceGroup,
             new ResourceGroup
             {
