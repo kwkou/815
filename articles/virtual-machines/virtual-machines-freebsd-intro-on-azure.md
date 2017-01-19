@@ -25,14 +25,14 @@
 ## 概述
 FreeBSD 是一种高级的计算机操作系统，现代服务器、台式机和嵌入式平台。
 
-Microsoft 公司在 Azure 上提供预先配置了 [Azure 虚拟机代理](https://github.com/Azure/WALinuxAgent/)的 FreeBSD 镜像。目前，Microsoft 提供以下FreeBSD版本的镜像：
+Microsoft 公司在 Azure 上提供预先配置了 [Azure 虚拟机代理](https://github.com/Azure/WALinuxAgent/)的 FreeBSD 镜像。目前，Microsoft 提供以下 FreeBSD 版本的镜像：
 
 - FreeBSD 10.3-RELEASE
 - FreeBSD 11.0-RELEASE
 
-Azure虚拟机代理负责FreeBSD 虚拟机 和 Azure 结构控制器之间的通信，比如首次使用时预配虚拟机（用户名、密码或 SSH 密钥、主机名等）并启用虚拟机扩展的选择功能。
+Azure 虚拟机代理负责 FreeBSD 虚拟机 和 Azure 结构控制器之间的通信，比如首次使用时预配虚拟机（用户名、密码或 SSH 密钥、主机名等）并启用虚拟机扩展的选择功能。
 
-至于未来的版本，策略是跟踪最新版本，确保在 FreeBSD工程团队发布了最新版本后在Azure尽快上线该版本。
+至于未来的版本，策略是跟踪最新版本，确保在 FreeBSD 工程团队发布了最新版本后在 Azure 尽快上线该版本。
 
 ## 部署 FreeBSD 虚拟机
 在使用 Azure 应用商店中的镜像时，部署 FreeBSD 虚拟机是一个非常简单的过程：
@@ -76,9 +76,9 @@ Azure虚拟机代理负责FreeBSD 虚拟机 和 Azure 结构控制器之间的�
 可以选择使用 `sudo -s` 获取 root shell。
 
 ## 已知问题
-1. 目前在基于 Hyper-V（以及 Azure）的 FreeBSD 11.0 上存在一个尚待解决的问题，如果操作系统使用 freebsd-update 进行更新，该问题可能导致虚拟机无法启动。在 Azure 应用商店的 FreeBSD 镜像中提供了[建议的修正](https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=212721)；但是，FreeBSD 团队尚未在社区接受该修正，因此运行 freebsd-update 会将内核替换为未修正的版本。建议 Azure 用户在 FreeBSD 11.0 发布该修正的ERRATA之前不要进行更新。
+1. 目前在基于 Hyper-V（以及 Azure）的 FreeBSD 11.0 上存在一个尚待解决的问题，如果操作系统使用 freebsd-update 进行更新，该问题可能导致虚拟机无法启动。在 Azure 应用商店的 FreeBSD 镜像中提供了[建议的修正](https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=212721)；但是，FreeBSD 团队尚未在社区接受该修正，因此运行 freebsd-update 会将内核替换为未修正的版本。建议 Azure 用户在 FreeBSD 11.0 发布该修正的 ERRATA 之前不要进行更新。
 
-2. [Azure虚拟机代理](https://github.com/Azure/WALinuxAgent/)版本2.2.2有一个[已知问题](https://github.com/Azure/WALinuxAgent/pull/517)会导致FreeBSD在Azure上预配的失败。建议Azure用户使用2.2.1以及之前的版本。这个修正将会在后续的2.2.3版本。
+2. [Azure 虚拟机代理](https://github.com/Azure/WALinuxAgent/)版本 2.2.2 有一个[已知问题](https://github.com/Azure/WALinuxAgent/pull/517)会导致 FreeBSD 在 Azure 上预配的失败。建议 Azure 用户使用 2.2.1 以及之前的版本。这个修正将会在后续的 2.2.3 版本。
 
 ## 后续步骤
 * 转到 [Azure 应用商店](https://portal.azure.cn/#create/Microsoft.FreeBSD103-ARM)创建 FreeBSD 虚拟机。
