@@ -15,7 +15,7 @@
 	ms.topic="article"
 	ms.date="08/30/2016"
 	ms.author="billmath"
-   	wacn.date="11/30/2016"/>  
+   	wacn.date="01/19/2017"/>  
 
 
 # 在 Azure 多重身份验证中使用移动应用作为联系方法

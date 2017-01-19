@@ -14,7 +14,7 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="06/29/2016" 
-	wacn.date="08/08/2016" 
+	wacn.date="01/19/2017" 
 	ms.author="wesmc"/>
 
 # 使用 PowerShell 部署和管理通知中心
@@ -28,7 +28,7 @@
 
 如果你还需要为通知中心创建新的服务总线命名空间，请参阅[使用 PowerShell 管理服务总线](/documentation/articles/service-bus-powershell-how-to-provision/)。
 
-不支持直接使用 Azure PowerShell 随附的 cmdlet 来管理通知中心。在 PowerShell 中，最佳方法是引用 Microsoft.Azure.NotificationHubs.dll 程序集。该程序集是随 [Microsoft Azure 通知中心 NuGet 包](https://www.nuget.org/packages/Microsoft.Azure.NotificationHubs/)一起分发的。
+不支持直接使用 Azure PowerShell 随附的 cmdlet 来管理通知中心。在 PowerShell 中，最佳方法是引用 Microsoft.Azure.NotificationHubs.dll 程序集。该程序集是随 [Azure 通知中心 NuGet 包](https://www.nuget.org/packages/Microsoft.Azure.NotificationHubs/)一起分发的。
 
 
 ## 先决条件
@@ -44,7 +44,7 @@
 
 ## 包含对适用于服务总线的 .NET 程序集的引用
 
-Azure PowerShell 中的 PowerShell cmdlet 尚不支持管理 Azure 通知中心。若要预配通知中心，可以使用 [ Azure 通知中心 NuGet 包](https://www.nuget.org/packages/Microsoft.Azure.NotificationHubs/)中提供的 .NET 客户端。
+Azure PowerShell 中的 PowerShell cmdlet 尚不支持管理 Azure 通知中心。若要预配通知中心，可以使用 [Azure 通知中心 NuGet 包](https://www.nuget.org/packages/Microsoft.Azure.NotificationHubs/)中提供的 .NET 客户端。
 
 首先，请确保脚本可以找到 **Microsoft.Azure.NotificationHubs.dll** 程序集，该程序集在 Visual Studio 项目中以 NuGet 包的形式安装。为了灵活起见，该脚本执行以下步骤：
 
@@ -77,7 +77,7 @@ powershell
 
 ## 创建 NamespaceManager 类
 
-若要预配通知中心，请从 SDK 创建 [NamespaceManager](https://msdn.microsoft.com/library/azure/microsoft.azure.notificationhubs.namespacemanager.aspx) 类的实例。
+若要预配通知中心，请从 SDK 创建 [NamespaceManager](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.notificationhubs.namespacemanager.aspx) 类的实例。
 
 可以使用 Azure PowerShell 随附的 [Get-AzureSBAuthorizationRule] cmdlet 来检索用于提供连接字符串的授权规则。我们将在 `$NamespaceManager` 变量中存储对 `NamespaceManager` 实例的引用。我们将使用 `$NamespaceManager` 设置通知中心。
 
@@ -97,10 +97,10 @@ powershell
 
 你将在脚本的这个部分设置四个本地变量。
 
-1.`$Namespace`：将此变量设置为要创建通知中心的命名空间的名称。  
-2.`$Path`：将此路径设置为新通知中心的名称。例如“MyHub”。      
-3.`$WnsPackageSid`：从 [Windows 开发人员中心](http://go.microsoft.com/fwlink/p/?linkid=266582&clcid=0x409)将此变量设置为 Windows 应用的包 SID。  
-4.`$WnsSecretkey`：从 [Windows 开发人员中心](http://go.microsoft.com/fwlink/p/?linkid=266582&clcid=0x409)将此变量设置为 Windows 应用的机密密钥。  
+1. `$Namespace`：将此变量设置为要创建通知中心的命名空间的名称。
+2. `$Path`：将此路径设置为新通知中心的名称。例如“MyHub”。
+3. `$WnsPackageSid`：从 [Windows 开发人员中心](http://go.microsoft.com/fwlink/p/?linkid=266582&clcid=0x409)将此变量设置为 Windows 应用的包 SID。
+4. `$WnsSecretkey`：从 [Windows 开发人员中心](http://go.microsoft.com/fwlink/p/?linkid=266582&clcid=0x409)将此变量设置为 Windows 应用的机密密钥。
 
 这些变量可用于连接命名空间，以及创建配置为使用 Windows 应用 Windows 通知中心 (WNS) 凭据处理 WNS 通知的新通知中心。有关获取包 SID 和机密密钥的信息，请参阅[通知中心入门](/documentation/articles/notification-hubs-windows-store-dotnet-get-started-wns-push-notification/)教程。
 
@@ -163,12 +163,12 @@ powershell
  
 
 
-[试用]: /pricing/free-trial/
+[试用]: /pricing/1rmb-trial/
 [安装和配置 Azure PowerShell]: /documentation/articles/powershell-install-configure/
-[通知中心的 .NET API]: https://msdn.microsoft.com/library/azure/mt414893.aspx
-[Get-AzureSBNamespace]: https://msdn.microsoft.com/library/azure/dn495122.aspx
-[New-AzureSBNamespace]: https://msdn.microsoft.com/library/azure/dn495165.aspx
-[Get-AzureSBAuthorizationRule]: https://msdn.microsoft.com/library/azure/dn495113.aspx
+[通知中心的 .NET API]: https://msdn.microsoft.com/zh-cn/library/azure/mt414893.aspx
+[Get-AzureSBNamespace]: https://msdn.microsoft.com/zh-cn/library/azure/dn495122.aspx
+[New-AzureSBNamespace]: https://msdn.microsoft.com/zh-cn/library/azure/dn495165.aspx
+[Get-AzureSBAuthorizationRule]: https://msdn.microsoft.com/zh-cn/library/azure/dn495113.aspx
  
 
 <!---HONumber=Mooncake_0801_2016-->

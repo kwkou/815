@@ -14,7 +14,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="08/03/2016"
-	wacn.date="09/05/2016"
+	wacn.date="01/19/2017"
 	ms.author="kgremban"/>
 
 # Azure AD 和应用程序：开发业务线应用
@@ -33,7 +33,7 @@
 
 - 获取 Azure AD 识别的应用程序标识
 - 获取应用程序可用于向 AD 验证其身份的一个或多个机密/密钥
-- 在 Azure 门户中使用自定义名称、徽标等指定应用程序的品牌。
+- 在 Azure 门户预览中使用自定义名称、徽标等指定应用程序的品牌。
 - 对应用应用 Azure AD 授权功能，包括：
   - 基于角色的访问控制 (RBAC)
   - 使用 Azure Active Directory 作为 oAuth 授权服务器（保护应用程序公开的 API）
@@ -61,7 +61,7 @@
 
 [要求用户分配](/documentation/articles/active-directory-applications-guiding-developers-requiring-user-assignment/)
 
-如果你是 Azure AD Premium 或 Enterprise Mobility Suite (EMS) 的订阅者，我们强烈建议利用组。将组分配到应用程序可让你将持续进行的访问管理委派给组所有者。你可以创建组，或使用组管理功能请求组织中负责人创建组。
+如果你是 Azure AD Premium 或 Enterprise Mobility Suite (EMS) 的订阅者，我们强烈建议使用组。将组分配到应用程序可让你将持续进行的访问管理委派给组所有者。你可以创建组，或使用组管理功能请求组织中负责人创建组。
 
 [将用户分配到应用程序](/documentation/articles/active-directory-applications-guiding-developers-assigning-users/)  
 
@@ -78,4 +78,4 @@
 
 - [有关 Azure Active Directory 中应用程序管理的文章索引](/documentation/articles/active-directory-apps-index/)
 
-<!---HONumber=Mooncake_0606_2016-->
+<!---HONumber=Mooncake_0829_2016-->

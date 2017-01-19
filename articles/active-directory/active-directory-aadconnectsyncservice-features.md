@@ -14,8 +14,8 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="08/22/2016"
-	wacn.date="11/21/2016"
-	ms.author="andkjell;markvi"/>
+	ms.author="andkjell;markvi"
+	wacn.date="01/19/2017"/>
 
 # Azure AD Connect 同步服务功能
 
@@ -55,7 +55,7 @@ UnifiedGroupWriteback | [预览：组写回](/documentation/articles/active-dire
 UserWriteback | 目前不支持。
 
 ## 重复属性复原
-将属性"隔离"并分配临时值，而不是使预配包含重复 UPNs/proxyAddresses 的对象失败。解决冲突时，自动将临时 UPN 更改为适当的值。可以单独为 UPN 和 proxyAddress 启用此行为。有关详细信息，请参阅 [Identity synchronization and duplicate attribute resiliency](/documentation/articles/active-directory-aadconnectsyncservice-duplicate-attribute-resiliency/)（标识同步和重复属性复原）。
+将属性“隔离”并分配临时值，而不是使预配包含重复 UPNs/proxyAddresses 的对象失败。解决冲突时，自动将临时 UPN 更改为适当的值。可以单独为 UPN 和 proxyAddress 启用此行为。有关详细信息，请参阅 [Identity synchronization and duplicate attribute resiliency](/documentation/articles/active-directory-aadconnectsyncservice-duplicate-attribute-resiliency/)（标识同步和重复属性复原）。
 
 ## UserPrincipalName 软匹配
 启用此功能后，将对 UPN 以及[主 SMTP 地址](https://support.microsoft.com/zh-cn/kb/2641663)应用并始终启用软匹配。软匹配功能用于将 Azure AD 中的现有云用户与本地用户进行匹配。

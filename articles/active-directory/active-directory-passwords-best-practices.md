@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="最佳实践：Azure AD 密码管理 | Microsoft Azure" 
+	pageTitle="最佳实践：Azure AD 密码管理 | Azure" 
 	description="有关 Azure Active Directory 中密码管理的部署和使用最佳实践、示例最终用户文档和培训指南。" 
 	services="active-directory" 
 	documentationCenter="" 
@@ -14,7 +14,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="07/12/2016"
-	wacn.date="08/22/2016"
+	wacn.date="01/19/2017"
 	ms.author="asteen"/>  
 
 # 部署密码管理并向用户培训其用法
@@ -73,18 +73,20 @@
 ### <a name="email-based-rollout"></a>基于电子邮件的启用
 或许，通知用户有关注册或使用密码重置的最简单方法是向其发送一封电子邮件，指导他们如何操作。下面是可实现此目的的模板。你可以将颜色/徽标随意替换为你自己选择的自定义项，以符合你的需求。
 
-  ![][001]
+  ![][001]  
+
 
 你可以[从此](http://1drv.ms/1xWFtQM)处下载电子邮件模板。
 
 ### <a name="creating-your-own-password-portal"></a>创建自己的密码门户
 对于部署密码管理功能的大型客户而言，一种策略是创建用户可在单个位置管理所有与其密码相关的事项的单一“密码门户”。
 
-我们的许多大客户都选择创建根 DNS 条目，例如 https://passwords.contoso.com ，其中包含 Azure AD 密码重置门户、密码重置注册门户和密码更改页面的链接。这样，你发出的任何电子邮件通信或传单都可以包含一个容易记住的，让用户在开始使用该服务时随时可以访问的 URL。
+我们的许多大客户都选择创建根 DNS 条目，例如 https://passwords.contoso.com，其中包含 Azure AD 密码重置门户、密码重置注册门户和密码更改页面的链接。这样，你发出的任何电子邮件通信或传单都可以包含一个容易记住的，让用户在开始使用该服务时随时可以访问的 URL。
 
 为演示此功能，我们创建了一个使用最新响应性 UI 设计模式且能够在所有浏览器和移动设备上运行的简单页面。
 
-  ![][007]
+  ![][007]  
+
   
 你可以[在此处下载网站模板](https://github.com/kenhoff/password-reset-page)。我们建议你根据组织的需要自定义徽标和颜色。
 
@@ -93,38 +95,42 @@
 
 也可以通过将“用户必须确认其联系人数据前的天数”选项修改为一个不是零的值，来定义在可配置的一段时间后是否要求用户重新注册。有关详细信息，请参阅[自定义用户密码管理行为](/documentation/articles/active-directory-passwords-customize/#password-management-behavior)。
 
-  ![][002]
+  ![][002]  
+
 
 启用此选项后，当用户登录到访问面板时，他们将看到一个弹出窗口，通知他们管理员已要求其验证联系信息。他们可以使用它来重置其密码（如果他们曾失去对其帐户的访问权限）。
 
-  ![][003]
+  ![][003]  
+
 
 单击“立即验证”可将用户带到**密码重置注册门户**（网址为 [http://aka.ms/ssprsetup）](http://aka.ms/ssprsetup)并要求他们注册。单击**取消**按钮或关闭窗口可撤消采用此方法进行的注册，但如果用户未注册，则在每次登录时，系统都会提醒用户。
 
-  ![][004]
+  ![][004]  
 
 ### <a name="uploading-data-yourself"></a>自行上载数据
 如果要自行上载身份验证数据，用户无需注册密码重置便可重置其密码。只要用户在其帐户上定义的身份验证数据符合你定义的密码重置策略，这些用户便能重置其密码。
 
-要了解可以通过 DirSync 或 Windows PowerShell 设置哪些属性，请参阅[密码重置使用的数据](/documentation/articles/active-directory-passwords-learn-more/#what-data-is-used-by-password-reset)。
+要了解可以通过 DirSync 或 Windows PowerShell 设置哪些属性，请参阅[密码重置使用的数据](/documentation/articles/active-directory-passwords-learn-more/#what-data-is-used-by-password-reset/)。
 
 你可以执行以下步骤，通过 [Azure 经典管理门户](https://manage.windowsazure.cn)上载身份验证数据：
 
 1.	在 [Azure 经典管理门户](https://manage.windowsazure.cn)的 **Active Directory 扩展**中导航到你的目录。
 2.	单击“用户”选项卡。
 3.	从列表中选择所需的用户。
-4.	在第一个选项卡上，可找到“备用电子邮件”，它可作为启用密码重置的属性使用。 
+4.	在第一个选项卡上，可找到“备用电子邮件”，它可作为启用密码重置的属性使用。
 
-    ![][005]
+    ![][005]  
+
 
 5.	单击“工作信息”选项卡。
-6.	在此页面上，你将发现“办公电话”、“移动电话”、“身份验证电话”和“身份验证电子邮件”。也可以将这些属性设置为允许用户重置其密码。也可以将这些属性设置为允许用户重置其密码。 
+6.	在此页面上，你将发现“办公电话”、“移动电话”、“身份验证电话”和“身份验证电子邮件”。也可以将这些属性设置为允许用户重置其密码。也可以将这些属性设置为允许用户重置其密码。
 
-    ![][006]
+    ![][006]  
 
-若要了解如何使用上述每个属性，请参阅[密码重置使用的数据](/documentation/articles/active-directory-passwords-learn-more/#what-data-is-used-by-password-reset)。
 
-请参阅[如何从 PowerShell 访问用户的密码重置数据](/documentation/articles/active-directory-passwords-learn-more/#how-to-access-password-reset-data-for-your-users)，以了解如何使用 PowerShell 读取和设置此数据。
+若要了解如何使用上述每个属性，请参阅[密码重置使用的数据](/documentation/articles/active-directory-passwords-learn-more/#what-data-is-used-by-password-reset/)。
+
+请参阅[如何从 PowerShell 访问用户的密码重置数据](/documentation/articles/active-directory-passwords-learn-more/#how-to-access-password-reset-data-for-your-users/)，以了解如何使用 PowerShell 读取和设置此数据。
 
 ## <a name="sample-training-materials"></a>示例培训材料
 我们正在准备示例培训材料，以帮助你的 IT 部门和用户快速了解如何部署及使用密码重置。敬请期待！

@@ -16,7 +16,7 @@
 	ms.topic="article"
 	ms.date="10/03/2016" 
 	ms.author="wesmc"
-	wacn.date="11/22/2016"/>  
+	wacn.date="01/19/2017"/>  
 
 
 # 使用通知中心向用户发送跨平台通知

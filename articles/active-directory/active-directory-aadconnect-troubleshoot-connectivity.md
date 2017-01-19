@@ -16,7 +16,7 @@
     ms.topic="article"
     ms.date="11/01/2016"
     ms.author="billmath" 
-    wacn.date="12/09/2016"/>  
+    wacn.date="01/19/2017"/>  
 
 
 # 使用 Azure AD Connect 排查连接问题

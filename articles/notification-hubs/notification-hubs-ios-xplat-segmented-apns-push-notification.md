@@ -14,7 +14,7 @@
 	ms.devlang="objective-c"
 	ms.topic="article"
 	ms.date="06/29/2016"
-	wacn.date="08/23/2016"
+	wacn.date="01/19/2017"
 	ms.author="wesmc"/>
 
 # 使用通知中心发送突发新闻
@@ -224,7 +224,7 @@
 
 ##（可选）发送带标记的通知
 
-如果你无权访问 Visual Studio，可以跳到下一部分，并从应用内部发送通知。你还可以在 [Azure 经典门户]中使用通知中心的调试选项卡发送适当的模板通知。
+如果你无权访问 Visual Studio，可以跳到下一部分，并从应用内部发送通知。你还可以在 [Azure 经典管理门户]中使用通知中心的调试选项卡发送适当的模板通知。
 
 [AZURE.INCLUDE [notification-hubs-send-categories-template](../../includes/notification-hubs-send-categories-template.md)]
 
@@ -361,12 +361,12 @@
 
 
 <!-- URLs. -->
-[How To: Service Bus Notification Hubs (iOS Apps)]: http://msdn.microsoft.com/library/jj927168.aspx
+[How To: Service Bus Notification Hubs (iOS Apps)]: http://msdn.microsoft.com/zh-cn/library/jj927168.aspx
 [使用通知中心广播本地化的突发新闻]: /documentation/articles/notification-hubs-ios-xplat-localized-apns-push-notification/
 [Notify users with Notification Hubs]: /documentation/articles/notification-hubs-aspnet-backend-ios-apple-apns-notification/
-[Notification Hubs Guidance]: http://msdn.microsoft.com/library/dn530749.aspx
-[Notification Hubs How-To for iOS]: http://msdn.microsoft.com/library/jj927168.aspx
+[Notification Hubs Guidance]: http://msdn.microsoft.com/zh-cn/library/dn530749.aspx
+[Notification Hubs How-To for iOS]: http://msdn.microsoft.com/zh-cn/library/jj927168.aspx
 [get-started]: /documentation/articles/notification-hubs-ios-apple-push-notification-apns-get-started/
-[Azure 经典门户]: https://manage.windowsazure.cn
+[Azure 经典管理门户]: https://manage.windowsazure.cn
 
 <!---HONumber=Mooncake_0808_2016-->

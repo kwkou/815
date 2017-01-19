@@ -17,7 +17,7 @@
     ms.topic="get-started-article"
     ms.date="10/03/2016"
     ms.author="anandy;billmath" 
-    wacn.date="12/13/2016"/>  
+    wacn.date="01/19/2017"/>  
 
 
 # Azure 中的 AD FS 部署

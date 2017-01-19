@@ -17,7 +17,7 @@
 	ms.topic="article"
 	ms.date="10/03/2016"
 	ms.author="moderakh"
-	wacn.date="11/29/2016"/>
+	wacn.date="01/19/2017"/>
 
 
 # DocumentDB Node.js 示例

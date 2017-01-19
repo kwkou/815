@@ -1,11 +1,11 @@
 <properties 
-	pageTitle="故障排除：Azure AD 密码管理 | Microsoft Azure" 
+	pageTitle="故障排除：Azure AD 密码管理 | Azure" 
 	description="针对 Azure AD 密码管理的常见故障排除步骤，包括重置、更改、写回、注册，以及寻求帮助时要提供的信息。" 
 	services="active-directory" 
 	documentationCenter="" 
 	authors="asteen" 
 	manager="femila"
-	editor="curtand"/>  
+	editor="curtand"/>
 
 <tags
 	ms.service="active-directory"
@@ -14,7 +14,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="08/12/2016"
-	wacn.date="01/06/2017"
+	wacn.date="01/19/2017"
 	ms.author="asteen"/>  
 
 # 如何排查密码管理问题
@@ -44,7 +44,7 @@
  - **支持代码** – 用户看到错误时所生成的支持代码（若要找到支持代码，请再现错误，然后单击屏幕底部的“支持代码”链接，将生成的 GUID 发送给支持工程师）。 
    - 如果所在页面的底部没有支持代码，请按 F12，搜索 SID 和 CID，然后将这两个结果发送给支持工程师。
 
-    ![][001]
+    ![][001]  
 
 
  - **用户 ID** – 看到错误的用户的 ID 是什么（例如 user@contoso.com）？
@@ -1521,4 +1521,4 @@
 
  
 
-<!---HONumber=Mooncake_0815_2016-->
+<!---HONumber=Mooncake_0829_2016-->

@@ -16,7 +16,7 @@
     ms.tgt_pltfrm="vm-windows"
     ms.workload="big-compute"
     ms.date="10/19/2016"
-    wacn.date="12/12/2016"
+    wacn.date="01/19/2017"
     ms.author="marsma" />  
 
 

@@ -14,7 +14,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="08/08/2016"
-	wacn.date="01/06/2017"
+	wacn.date="01/19/2017" 
 	ms.author="markgal;trinadhk;jimpark" />
 
 
@@ -24,14 +24,14 @@
 - [资源管理器](/documentation/articles/backup-azure-vms-automation/)
 - [经典](/documentation/articles/backup-azure-vms-classic-automation/)
 
-本文演示如何使用 Azure PowerShell 来备份和恢复 Azure VM。Azure 有两个用于创建和处理资源的不同部署模型：Resouce Manager 部署模型和经典部署模型。本文介绍如何使用经典部署模型。Azure 建议大多数新部署使用 Resource Manager 模型。
+本文演示如何使用 Azure PowerShell 来备份和恢复 Azure VM。Azure 有两个用于创建和处理资源的不同部署模型：Resouce Manager 部署模型和经典部署模型。本文介绍如何使用经典部署模型。Azure 建议大多数新部署使用资源管理器模型。
 
 ## 概念
 
 
 本文专门介绍用于备份虚拟机的 PowerShell cmdlet。有关如何保护 Azure VM 的介绍，请参阅[在 Azure 中计划 VM 备份基础结构](/documentation/articles/backup-azure-vms-introduction/)。
 
-> [AZURE.NOTE] 在开始之前，请阅读使用 Azure 备份所需的[系统必备组件](/documentation/articles/backup-azure-vms-prepare/)，以及当前 VM 备份解决方案的[限制](/documentation/articles/backup-azure-vms-prepare/)。
+> [AZURE.NOTE] 在开始之前，请阅读使用 Azure 备份所需的[系统必备组件](/documentation/articles/backup-azure-vms-prepare/)，以及当前 VM 备份解决方案的[限制](/documentation/articles/backup-azure-vms-prepare/#limitations/)。
 
 为了提高 PowerShell 使用效率，请抽时间了解对象的层次结构以及从何处开始。
 
@@ -312,6 +312,6 @@
 
 ## 后续步骤
 
-如果你更愿意使用 PowerShell 来处理 Azure 资源，则请查看有关如何保护 Windows Server 的 PowerShell 文章：[为 Windows Server 部署和管理备份](/documentation/articles/backup-client-automation-classic/)。此外还有一篇有关如何管理 DPM 备份的 PowerShell 文章：[为 DPM 部署和管理备份](/documentation/articles/backup-dpm-automation-classic/)。这两篇文章都为 Resource Manager 部署和经典部署提供了一个版本。
+如果你更愿意使用 PowerShell 来处理 Azure 资源，则请查看有关如何保护 Windows Server 的 PowerShell 文章：[为 Windows Server 部署和管理备份](/documentation/articles/backup-client-automation-classic/)。此外还有一篇有关如何管理 DPM 备份的 PowerShell 文章：[为 DPM 部署和管理备份](/documentation/articles/backup-dpm-automation-classic/)。这两篇文章都为资源管理器部署和经典部署提供了一个版本。
 
 <!---HONumber=Mooncake_0829_2016-->

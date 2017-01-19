@@ -14,14 +14,14 @@
     ms.tgt_pltfrm="NA"
     ms.workload="data-services"
     ms.date="07/08/2016"
-    wacn.date="08/22/2016"
+    wacn.date="01/19/2017"
     ms.author="denlee"/>
 
 #使用索引器连接 DocumentDB 和 Azure 搜索
 
 如果你希望对 DocumentDB 数据实现强大的搜索体验，请对 DocumentDB 使用 Azure 搜索索引器！ 在本文中，我们将展示如何将 Azure DocumentDB 与 Azure 搜索进行集成且无需编写代码以保持索引编制基础结构。
 
-要对此进行设置，你需要设置 Azure 搜索帐户（不需要升级到标准搜索），然后调用 [Azure 搜索 REST API](https://msdn.microsoft.com/library/azure/dn798935.aspx) 以创建 DocumentDB **数据源**和用于该数据源的**索引器**。
+要对此进行设置，你需要设置 Azure 搜索帐户（不需要升级到标准搜索），然后调用 [Azure 搜索 REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn798935.aspx) 以创建 DocumentDB **数据源**和用于该数据源的**索引器**。
 为了发送请求以与 REST API 交互，你可以使用 [Postman](https://www.getpostman.com/)、[Fiddler](http://www.telerik.com/fiddler)，或你喜欢的任何工具。
 
 ##<a id="Concepts"></a>Azure 搜索索引器概念
@@ -70,7 +70,7 @@ Azure 搜索支持创建和管理数据源（包括 DocumentDB）以及针对这
 
 ###<a id="DataChangeDetectionPolicy"></a>捕获已更改的文档
 
-数据更改检测策略旨在有效识别已更改的数据项。目前，唯一支持的策略是 DocumentDB 提供的使用 `_ts` 上次修改时间戳属性的 `High Water Mark` 策略 - 它按如下所示指定：
+数据更改检测策略旨在有效识别已更改的数据项。目前，唯一支持的策略是 DocumentDB 提供的使用 `_ts` 上次修改时间戳属性的 `High Water Mark` 策略，它按如下所示指定：
 
     {
         "@odata.type" : "#Microsoft.Azure.Search.HighWaterMarkChangeDetectionPolicy",
@@ -79,7 +79,7 @@ Azure 搜索支持创建和管理数据源（包括 DocumentDB）以及针对这
 
 你还需要为查询在投影中添加 `_ts` 和 `WHERE` 子句。例如：
 
-    SELECT s.id, s.Title, s.Abstract, s._ts FROM Sessions s WHERE s._ts > @HighWaterMark
+    SELECT s.id, s.Title, s.Abstract, s._ts FROM Sessions s WHERE s._ts >= @HighWaterMark
 
 
 ###<a id="DataDeletionDetectionPolicy"></a>捕获已删除的文档
@@ -125,7 +125,7 @@ Azure 搜索支持创建和管理数据源（包括 DocumentDB）以及针对这
 
 ##<a id="CreateIndex"></a>步骤 2：创建索引
 
-如果你还没有目标 Azure 搜索索引，请创建一个。你可以通过使用[创建索引 API](https://msdn.microsoft.com/library/azure/dn798941.aspx)。
+如果你还没有目标 Azure 搜索索引，请创建一个。你可以通过使用[创建索引 API](https://msdn.microsoft.com/zh-cn/library/azure/dn798941.aspx) 来执行此操作。
 
 	POST https://[Search service name].search.chinacloudapi.cn/indexes?api-version=[api-version]
 	Content-Type: application/json
@@ -273,6 +273,6 @@ Azure 搜索支持创建和管理数据源（包括 DocumentDB）以及针对这
 
  - 若要了解有关 Azure DocumentDB 的详细信息，请参阅 [DocumentDB 服务页](/documentation/services/documentdb/)。
 
- - 要了解有关 Azure 搜索的详细信息，请参阅[搜索服务页](https://azure.microsoft.com/services/search/)。
+
 
 <!---HONumber=Mooncake_0808_2016-->

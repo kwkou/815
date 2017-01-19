@@ -15,8 +15,8 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="09/16/2016"
-	wacn.date="11/30/2016"
-	ms.author="dastrock"/>  
+	ms.author="dastrock"
+   	wacn.date="01/19/2017"/>  
 
 
 # v2.0 协议 - OAuth 2.0 和 OpenID Connect  <a name="oauth2-authorization-code-flow"></a>

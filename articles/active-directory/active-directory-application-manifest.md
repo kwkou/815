@@ -15,8 +15,8 @@
    ms.tgt_pltfrm="na"
    ms.workload="identity"
    ms.date="10/11/2016"
-   wacn.date="10/31/2016"
-   ms.author="dkershaw;bryanla"/>
+   ms.author="dkershaw;bryanla"
+   wacn.date="01/19/2017"/>
 
 # 了解 Azure Active Directory 应用程序清单
 
@@ -40,7 +40,7 @@
 - **声明已知的客户端应用程序 (knownClientApplications)**，可让你以逻辑方式将指定客户端应用程序的许可绑定到资源/Web API。
 - **请求 Azure AD 对登录用户发出组成员资格声明** (groupMembershipClaims)。也可将此配置为发出有关用户目录角色成员资格的声明。请参阅[使用 AD 组在云应用程序中执行授权][AAD-GROUPS-FOR-AUTHORIZATION]一文，以获取实现示例。
 - **允许应用程序支持 OAuth 2.0 隐式授权**流 (oauth2AllowImplicitFlow)。这种类型的授权流可用于嵌入式 JavaScript 网页或单页应用程序 (SPA)。有关隐式授权许可的详细信息，请参阅 [Understanding the OAuth2 implicit grant flow in Azure Active Directory ][IMPLICIT-GRANT]（了解 Azure Active Directory 中的 OAuth2 隐式授予流）。
-- **允许使用 X509 证书作为机密密钥** (keyCredentials)。有关实现示例，请参阅文章 [Build service and daemon apps in Office 365][O365-SERVICE-DAEMON-APPS]（在 Office 365 中构建服务和守护程序应用）和 [Developer’s guide to auth with Azure 资源管理器 API ][DEV-GUIDE-TO-AUTH-WITH-ARM]（使用 Azure 资源管理器 API 进行身份验证的开发人员指南）。
+- **允许使用 X509 证书作为机密密钥** (keyCredentials)。有关实现示例，请参阅文章 [Build service and daemon apps in Office 365][O365-SERVICE-DAEMON-APPS]（在 Office 365 中构建服务和守护程序应用）和 [Developer’s guide to auth with Azure资源管理器API][DEV-GUIDE-TO-AUTH-WITH-ARM]（使用 Azure资源管理器API 进行身份验证的开发人员指南）。
 - 为应用程序（标识符 URI）**添加新的应用 ID URI**。应用 ID URI 用于唯一标识其 Azure AD 租户中的应用程序（或是通过已验证的自定义域限定多个租户方案时跨多个 Azure AD 租户中的应用程序）。在请求资源应用程序的权限，或获取资源应用程序的访问令牌时使用应用程序 ID URI。更新此元素时，相应的服务主体的 servicePrincipalNames 集合将做出同样的更新，该集合位于应用程序的主租户中。
 
 使用应用程序清单还能很好地跟踪应用程序注册状态。由于它可以 JSON 格式提供，因此文件表示形式可以签入源代码管理，以及应用程序的源代码。

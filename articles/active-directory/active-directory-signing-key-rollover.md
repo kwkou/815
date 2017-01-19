@@ -5,7 +5,8 @@
 	documentationCenter=".net"
 	authors="gsacavdm"
 	manager="krassk"
-	editor=""/>
+	editor=""/>  
+
 
 <tags
 	ms.service="active-directory"
@@ -14,7 +15,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="07/18/2016"
-	wacn.date="11/21/2016"
+	wacn.date="01/19/2017"
 	ms.author="gsacavdm"/>
 
 # Azure Active Directory 中的签名密钥滚动更新
@@ -150,7 +151,7 @@ Azure App Service 的服务身份验证/授权 (EasyAuth) 功能已包含必要�
 
 如果你在 Visual Studio 2013 中使用 Web API 模板创建了 Web API 应用程序，然后从“更改身份验证”菜单中选择了“组织帐户”，则应用程序中已包含必需的逻辑。如果你已手动配置身份验证，请参阅下面的说明，了解如何配置 Web API 来自动更新其密钥信息。
 
-以下代码片段演示如何从联合元数据文档获取最新密钥，然后使用 [JWT 令牌处理程序](https://msdn.microsoft.com/library/dn205065.aspx)来验证令牌。该代码片段假设你使用自己的缓存机制来持久保存密钥（以便验证将来从 Azure AD 获取的令牌），无论是将它保存在数据库中、配置文件中，还是保存在其他位置。
+以下代码片段演示如何从联合元数据文档获取最新密钥，然后使用 [JWT 令牌处理程序](https://msdn.microsoft.com/zh-cn/library/dn205065.aspx)来验证令牌。该代码片段假设你使用自己的缓存机制来持久保存密钥（以便验证将来从 Azure AD 获取的令牌），无论是将它保存在数据库中、配置文件中，还是保存在其他位置。
 
 
 	using System;
@@ -239,9 +240,10 @@ Azure App Service 的服务身份验证/授权 (EasyAuth) 功能已包含必要�
 	    }
 	}
 
+
 ### <a name="vs2012"></a>保护资源的和使用 Visual Studio 2012 创建的 Web 应用程序
 
-如果你的应用程序是在 Visual Studio 2012 中生成的，则你可能已使用标识和访问工具配置了应用程序。你还可能会使用[验证颁发者名称注册表 (VINR)](https://msdn.microsoft.com/library/dn205067.aspx)。VINR 负责维护受信任标识提供程序 (Azure AD) 以及验证它们颁发令牌时所使用密钥的相关信息。使用 VINR 还可轻松地自动更新存储在 Web.config 文件中的密钥信息，具体方法是：下载与你的目录关联的最新联合元数据文档，使用最新文档检查配置是否过期，然后根据需要更新应用程序以使用新密钥。
+如果你的应用程序是在 Visual Studio 2012 中生成的，则你可能已使用标识和访问工具配置了应用程序。你还可能会使用[验证颁发者名称注册表 (VINR)](https://msdn.microsoft.com/zh-cn/library/dn205067.aspx)。VINR 负责维护受信任标识提供程序 (Azure AD) 以及验证它们颁发令牌时所使用密钥的相关信息。使用 VINR 还可轻松地自动更新存储在 Web.config 文件中的密钥信息，具体方法是：下载与你的目录关联的最新联合元数据文档，使用最新文档检查配置是否过期，然后根据需要更新应用程序以使用新密钥。
 
 如果你是使用 Microsoft 提供的代码示例或演练文档创建的应用程序，则密钥滚动更新逻辑已包含在你的项目中。你会注意到下面的代码已存在于你的项目中。如果应用程序尚未包含该逻辑，请按照下面的步骤添加该逻辑，并验证该逻辑是否正常工作。
 
@@ -270,7 +272,6 @@ Azure App Service 的服务身份验证/授权 (EasyAuth) 功能已包含必要�
 	    RefreshValidationSettings();
 	}
 
-
 执行这些步骤后，系统将使用联合元数据文档中的最新信息（包括最新密钥）更新应用程序的 Web.config。每次在 IIS 中回收应用程序池时，都会进行此更新；默认情况下，IIS 设置为每 29 个小时回收一次应用程序。
 
 遵循以下步骤验证密钥滚动更新逻辑是否正常工作。
@@ -293,12 +294,12 @@ Azure App Service 的服务身份验证/授权 (EasyAuth) 功能已包含必要�
 如果你在 WIF v1.0 中构建应用程序，则系统未提供相应的机制来自动刷新应用程序的配置以使用新密钥。更新密钥的最简单方法是使用 WIF SDK 中包含的 FedUtil 工具，该工具可以检索最新的元数据文档并更新你的配置。下面提供了相关说明。或者，也可以执行以下操作之一：
 
 - 按照下面的“手动检索最新密钥并更新应用程序”部分中的说明操作，并编写逻辑以通过编程方式执行这些步骤。
-- 将应用程序更新到 .NET 4.5，该版本包括位于系统命名空间中的 WIF 的最新版本。然后，你可以使用[验证颁发者名称注册表 (VINR)](https://msdn.microsoft.com/library/dn205067.aspx) 来执行应用程序配置的自动更新。
+- 将应用程序更新到 .NET 4.5，该版本包括位于系统命名空间中的 WIF 的最新版本。然后，你可以使用[验证颁发者名称注册表 (VINR)](https://msdn.microsoft.com/zh-cn/library/dn205067.aspx) 来执行应用程序配置的自动更新。
 
 
 1. 请确认你已在开发计算机上为 Visual Studio 2008 或 2010 安装了 WIF v1.0 SDK。如果尚未安装，可以[从此处下载](https://www.microsoft.com/zh-cn/download/details.aspx?id=4451)。
 2. 在 Visual Studio 中打开解决方案，然后右键单击相应的项目并选择“更新联合元数据”。如果此选项不可用，则表示 FedUtil 和/或 WIF v1.0 SDK 尚未安装。
-3. 系统提示时，请选择“更新”以开始更新联合元数据。如果你有权访问托管应用程序的服务器环境，则可以选择使用 FedUtil 的[自动元数据更新计划程序](https://msdn.microsoft.com/library/ee517272.aspx)。
+3. 系统提示时，请选择“更新”以开始更新联合元数据。如果你有权访问托管应用程序的服务器环境，则可以选择使用 FedUtil 的[自动元数据更新计划程序](https://msdn.microsoft.com/zh-cn/library/ee517272.aspx)。
 4. 单击“完成”以完成更新过程。
 
 ### <a name="other"></a>使用任何其他库保护资源或手动实现任何受支持协议的 Web 应用程序/API
@@ -309,7 +310,7 @@ Azure App Service 的服务身份验证/授权 (EasyAuth) 功能已包含必要�
 
 若要从 OpenID 发现文档手动检索最新密钥，请执行以下操作：
 
-1. 在 Web 浏览器中，转到 `https://login.microsoftonline.com/your_directory_name/.well-known/openid-configuration`。你将看到 OpenID Connect 发现文档的内容。有关此文档的详细信息，请参阅 [OpenID Discovery Document specification（OpenID 发现文档规范）](http://openid.net/specs/openid-connect-discovery-1_0.html)。
+1. 在 Web 浏览器中，转到 `https://login.microsoftonline.com/your_directory_name/.well-known/openid-configuration`。你将看到 OpenID Connect 发现文档的内容。有关此文档的详细信息，请参阅 [OpenID 发现文档规范](http://openid.net/specs/openid-connect-discovery-1_0.html)。
 2. 复制 jwks\_uri 值中的链接
 3. 在浏览器中打开新的选项卡，并转到你刚复制的 URL。你将看到 JSON Web 密钥集文档的内容。
 4. 为了更新应用程序以使用新密钥，请找到每个 **x5c** 元素，然后复制每个元素的值。例如：
@@ -331,17 +332,16 @@ Azure App Service 的服务身份验证/授权 (EasyAuth) 功能已包含必要�
 
 若要从联合元数据文档检索最新密钥，请执行以下操作：
 
-1. 在 Web 浏览器中，转到 `https://login.microsoftonline.com/your_directory_name/federationmetadata/2007-06/federationmetadata.xml`。你将看到联合元数据 XML 文档的内容。有关此文档的详细信息，请参阅 [Federation Metadata（联合元数据）](/documentation/articles/active-directory-federation-metadata/)主题。
+1. 在 Web 浏览器中，转到 `https://login.microsoftonline.com/your_directory_name/federationmetadata/2007-06/federationmetadata.xml`。你将看到联合元数据 XML 文档的内容。有关此文档的详细信息，请参阅[联合元数据](/documentation/articles/active-directory-federation-metadata/)主题。
 2. 为了更新应用程序以使用新密钥，请找到每个 **<RoleDescriptor>** 块，然后复制每个块的 **<X509Certificate>** 元素的值。例如：
 	
-		<RoleDescriptor xmlns:fed="http://docs.oasis-open.org/wsfed/federation/200706" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" protocolSupportEnumeration="http://docs.oasis-open.org/wsfed/federation/200706" xsi:type="fed:SecurityTokenServiceType">
-		      <KeyDescriptor use="signing">
-		            <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
-		                <X509Data>
-		                    <X509Certificate>MIIDPjC…BcXWLAIarZ</X509Certificate>
+	<RoleDescriptor xmlns:fed="http://docs.oasis-open.org/wsfed/federation/200706" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" protocolSupportEnumeration="http://docs.oasis-open.org/wsfed/federation/200706" xsi:type="fed:SecurityTokenServiceType">
+	      <KeyDescriptor use="signing">
+	            <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
+	                <X509Data>
+	                    <X509Certificate>MIIDPjC…BcXWLAIarZ</X509Certificate>
 
-3. 在复制 **<X509Certificate>** 元素的值之后，打开纯文本编辑器并粘贴该值。请务必删除任何尾随空格，然后使用 **.cer** 扩展名保存该文件。
-
+3.在复制 **<X509Certificate>** 元素的值之后，打开纯文本编辑器并粘贴该值。请务必删除任何尾随空格，然后使用 **.cer** 扩展名保存该文件。
 现已创建用作 Azure AD 公钥的 X509 证书。使用此证书的详细信息（如指纹和过期日期），可以通过手动或编程方式检查应用程序当前使用的证书和指纹是否有效。
 
 ## 如何测试应用程序以确定它是否会受影响
