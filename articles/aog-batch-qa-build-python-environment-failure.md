@@ -1,21 +1,19 @@
-<properties 
-	pageTitle="搭建 Windows Batch Python 环境" 
-	description="解决搭建 Windows Batch Python 环境出错的问题" 
+<properties
+	pageTitle="搭建 Windows Batch Python 环境"
+	description="解决搭建 Windows Batch Python 环境出错的问题"
 	service=""
 	resource="batch"
 	authors=""
 	displayOrder=""
 	selfHelpType=""
-    supportTopicIds=""
-    productPesIds=""
-    resourceTags="Batch,Python"
-    cloudEnvironments="MoonCake" 
-/>
-<tags 
+	supportTopicIds=""
+	productPesIds=""
+	resourceTags="Batch,Python"
+	cloudEnvironments="MoonCake" />
+<tags
 	ms.service="batch-aog"
-	ms.date="" 
-	wacn.date="01/12/2017"
-/>
+	ms.date=""
+	wacn.date="01/12/2017" />
 # 搭建 Windows Batch Python 环境
 
 ## **问题描述**

@@ -1,21 +1,19 @@
-<properties 
-	pageTitle="如何通过 PHP 获取 Azure Active Directory 令牌" 
-	description="通过 PHP 获取 调用 Azure Rest API 所需的 Azure Active Directory 令牌" 
+<properties
+	pageTitle="如何通过 PHP 获取 Azure Active Directory 令牌"
+	description="通过 PHP 获取 调用 Azure Rest API 所需的 Azure Active Directory 令牌"
 	service="microsoft.activedirectory"
 	resource="activedirectory"
 	authors=""
 	displayOrder=""
 	selfHelpType=""
-    supportTopicIds=""
-    productPesIds=""
-    resourceTags="Azure AD, PowerShell, PHP, OAuth"​
-    cloudEnvironments="MoonCake" 
-/>
+	supportTopicIds=""
+	productPesIds=""
+	resourceTags="Azure AD, PowerShell, PHP, OAuth"​
+	cloudEnvironments="MoonCake" />
 <tags 
 	ms.service="active-directory-aog"
-	ms.date="" 
-	wacn.date="01/12/2017"
-/>
+	ms.date=""
+	wacn.date="01/12/2017" />
 # 如何通过 PHP 获取 Azure Active Directory 令牌
 
 在调用 Azure Rest API 时，如果是属于 Azure Resource Manager 的 API，则需要使用 Azure Active Directory (Azure AD)认证获取令牌（Token),然后才能够进行访问。

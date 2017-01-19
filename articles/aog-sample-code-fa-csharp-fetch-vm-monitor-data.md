@@ -1,21 +1,19 @@
-<properties 
-	pageTitle="C# 获取虚拟机监控数据" 
-	description="如何通过 C# 获取虚拟机监控数据" 
+<properties
+	pageTitle="C# 获取虚拟机监控数据"
+	description="如何通过 C# 获取虚拟机监控数据"
 	service=""
 	resource="virtualmachines"
 	authors=""
 	displayOrder=""
 	selfHelpType=""
-    supportTopicIds=""
-    productPesIds=""
-    resourceTags="虚拟机, 监控数据, 应用程序, C#"
-    cloudEnvironments="MoonCake"
-/>
-<tags 
+	supportTopicIds=""
+	productPesIds=""
+	resourceTags="虚拟机, 监控数据, 应用程序, C#"
+	cloudEnvironments="MoonCake" />
+<tags
 	ms.service="na-aog"
-	ms.date="" 
-	wacn.date="01/12/2017"
-/>
+	ms.date=""
+	wacn.date="01/12/2017" />
 # C# 获取虚拟机监控数据
 
 ## **问题描述**

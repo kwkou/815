@@ -1,21 +1,19 @@
-<properties 
-	pageTitle="未注册 Resource Provider 异常" 
-	description="通过注册 Resource Provicder 解决使用 PowerShell 出现模块未注册的异常" 
+<properties
+	pageTitle="未注册 Resource Provider 异常"
+	description="通过注册 Resource Provicder 解决使用 PowerShell 出现模块未注册的异常"
 	service=""
 	resource=""
 	authors=""
 	displayOrder=""
 	selfHelpType=""
-    supportTopicIds=""
-    productPesIds=""
-    resourceTags="PowerShell, Reource Provider"​
-    cloudEnvironments="MoonCake" 
-/>
-<tags 
+	supportTopicIds=""
+	productPesIds=""
+	resourceTags="PowerShell, Reource Provider"​
+	cloudEnvironments="MoonCake" />
+<tags
 	ms.service="na-aog"
-	ms.date="" 
-	wacn.date="01/12/2017"
-/>
+	ms.date=""
+	wacn.date="01/12/2017" />
 # 未注册 Resource Provider 异常
 ## **问题描述**
 

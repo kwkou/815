@@ -1,21 +1,19 @@
-<properties 
-	pageTitle="基于 EventProcessorHost 消费 Azure 事件中心消息" 
-	description="基于 EventProcessorHost 消费 Azure 事件中心消息" 
+<properties
+	pageTitle="基于 EventProcessorHost 消费 Azure 事件中心消息"
+	description="基于 EventProcessorHost 消费 Azure 事件中心消息"
 	service="microsoft.notificationhubs"
 	resource="notificationhubs"
 	authors=""
 	displayOrder=""
 	selfHelpType=""
-    supportTopicIds=""
-    productPesIds=""
-    resourceTags="Notification Hubs, EventProcessorHost"​
-    cloudEnvironments="MoonCake" 
-/>
-<tags 
+	supportTopicIds=""
+	productPesIds=""
+	resourceTags="Notification Hubs, EventProcessorHost"​
+	cloudEnvironments="MoonCake" />
+<tags
 	ms.service="notification-hubs-aog"
-	ms.date="" 
-	wacn.date="01/12/2017"
-/>
+	ms.date=""
+	wacn.date="01/12/2017" />
 # 基于 EventProcessorHost 消费 Azure 事件中心消息
 
 Azure 事件中心支持多种消费消息的方式，而且也提供了不同语言的 SDK 以方便开发者调用，这里做一个汇总的介绍。

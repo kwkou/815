@@ -1,21 +1,19 @@
-<properties 
-	pageTitle="基于直接接收的方法消费 Azure 事件中心消息" 
-	description="基于直接接收的方法消费 Azure 事件中心消息" 
+<properties
+	pageTitle="基于直接接收的方法消费 Azure 事件中心消息"
+	description="基于直接接收的方法消费 Azure 事件中心消息"
 	service="microsoft.notificationhubs"
 	resource="notificationhubs"
 	authors=""
 	displayOrder=""
 	selfHelpType=""
-    supportTopicIds=""
-    productPesIds=""
-    resourceTags="Event Hubs,receive"​
-    cloudEnvironments="MoonCake" 
-/>
-<tags 
+	supportTopicIds=""
+	productPesIds=""
+	resourceTags="Event Hubs,receive"​
+	cloudEnvironments="MoonCake" />
+<tags
 	ms.service="notification-hubs-aog"
-	ms.date="" 
-	wacn.date="01/12/2017"
-/>
+	ms.date=""
+	wacn.date="01/12/2017" />
 # 基于直接接收的方法消费 Azure 事件中心消息
 
 Azure 事件中心支持多种消费消息的方式，而且也提供了不同语言的 SDK 以方便开发者调用，这里做一个汇总的介绍。

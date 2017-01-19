@@ -1,21 +1,19 @@
-<properties 
-	pageTitle="Azure 通知中心结合 Android 百度云推送实现消息定制化服务" 
-	description="Azure 通知中心结合 Android 百度云推送实现消息定制化服务" 
+<properties
+	pageTitle="Azure 通知中心结合 Android 百度云推送实现消息定制化服务"
+	description="Azure 通知中心结合 Android 百度云推送实现消息定制化服务"
 	service="microsoft.notificationhubs"
 	resource="notificationhubs"
 	authors=""
 	displayOrder=""
 	selfHelpType=""
-    supportTopicIds=""
-    productPesIds=""
-    resourceTags="Notification Hubs, Android, 百度云"​
-    cloudEnvironments="MoonCake" 
-/>
-<tags 
+	supportTopicIds=""
+	productPesIds=""
+	resourceTags="Notification Hubs, Android, 百度云"​
+	cloudEnvironments="MoonCake" />
+<tags
 	ms.service="notification-hubs-aog"
-	ms.date="" 
-	wacn.date="01/12/2017"
-/>
+	ms.date=""
+	wacn.date="01/12/2017" />
 # Azure 通知中心结合 Android 百度云推送实现消息定制化服务
 
 ## 功能要点

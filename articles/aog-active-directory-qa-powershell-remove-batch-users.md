@@ -1,21 +1,19 @@
-<properties 
-	pageTitle="使用 PowerShell 批量删除 Azure Active Directory 用户信息" 
-	description="使用 PowerShell 导出、导入 .csv 文件的方式批量删除 Azure Active Directory 测试用户信息" 
+<properties
+	pageTitle="使用 PowerShell 批量删除 Azure Active Directory 用户信息"
+	description="使用 PowerShell 导出、导入 .csv 文件的方式批量删除 Azure Active Directory 测试用户信息"
 	service="microsoft.activedirectory"
 	resource="activedirectory"
 	authors=""
 	displayOrder=""
 	selfHelpType=""
-    supportTopicIds=""
-    productPesIds=""
-    resourceTags="Azure AD, PowerShell"​
-    cloudEnvironments="MoonCake" 
-/>
-<tags 
+	supportTopicIds=""
+	productPesIds=""
+	resourceTags="Azure AD, PowerShell"​
+	cloudEnvironments="MoonCake" />
+<tags
 	ms.service="active-directory-aog"
-	ms.date="" 
-	wacn.date="01/12/2017"
-/>
+	ms.date=""
+	wacn.date="01/12/2017" />
 # 使用 PowerShell 批量删除 Azure Active Directory 用户信息
 
 ## **问题描述**
