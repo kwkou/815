@@ -27,13 +27,13 @@ Azure 提供了用于运行应用程序的不同托管模型。每种模型提�
 | [虚拟机] | 可完全控制操作系统的自定义 Windows 和 Linux VM |
 
 <a name="tellmeas"></a>
-[AZURE.INCLUDE [内容](../../includes/app-service-choose-me-content.md)]
+[AZURE.INCLUDE [内容](../includes/app-service-choose-me-content.md)]
 
 <a name="tellmecs"></a>
-[AZURE.INCLUDE [内容](../../includes/cloud-services-choose-me-content.md)]
+[AZURE.INCLUDE [内容](../includes/cloud-services-choose-me-content.md)]
 
 <a name="tellmevm"></a>
-[AZURE.INCLUDE [内容](../../includes/virtual-machines-choose-me-content.md)]
+[AZURE.INCLUDE [内容](../includes/virtual-machines-choose-me-content.md)]
 
 ## 其他选项
 

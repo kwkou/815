@@ -55,7 +55,7 @@
 
 ## 如何使用 PowerShell 管理访问权限
 
-[AZURE.INCLUDE [powershell-preview-inline-include](../../includes/powershell-preview-inline-include.md)]
+[AZURE.INCLUDE [powershell-preview-inline-include](../includes/powershell-preview-inline-include.md)]
 
 
 ### 查看可用角色

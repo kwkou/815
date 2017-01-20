@@ -24,7 +24,7 @@
 
 安装 Azure Toolkit for IntelliJ 的方法有两种，一种是从“设置”对话框安装，另一种是从开始屏幕上的“配置”菜单安装；下列步骤将演示这两种安装方法。
 
-[AZURE.INCLUDE [azure-toolkit-for-IntelliJ-prerequisites](../../includes/azure-toolkit-for-intellij-prerequisites.md)]
+[AZURE.INCLUDE [azure-toolkit-for-IntelliJ-prerequisites](../includes/azure-toolkit-for-intellij-prerequisites.md)]
 
 ## 从“设置”对话框安装 Azure Toolkit for IntelliJ 的步骤
 1. 启动 IntelliJ IDEA。
