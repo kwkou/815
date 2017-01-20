@@ -506,7 +506,6 @@
 ## 后续步骤
 * 使用[在虚拟机规模集中管理虚拟机](/documentation/articles/virtual-machine-scale-sets-windows-manage/)中的信息管理刚刚创建的规模集。
 * 在 [Azure 监视器 PowerShell 快速入门示例](/documentation/articles/insights-powershell-samples/)中查找 Azure 监视器监视功能的示例
-* 若要了解有关通知功能的信息，请参阅[使用自动缩放操作在 Azure 监视器中发送电子邮件和 webhook 警报通知](/documentation/articles/insights-autoscale-to-webhook-email/)
 * 了解如何[使用审核日志在 Azure 监视器中发送电子邮件和 webhook 警报通知](/documentation/articles/insights-auditlog-to-webhook-email/)
 
 <!---HONumber=Mooncake_1205_2016-->
