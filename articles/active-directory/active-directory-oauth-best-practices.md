@@ -15,8 +15,6 @@
 
 # Azure Active Directory 中 OAuth 2.0 的最佳实践
 
-[AZURE.INCLUDE [active-directory-protocols](../../includes/active-directory-protocols.md)]
-
 ## 使用 State 参数
 
 `state` 参数是客户端在请求中发送的、随机生成的不可重用值（通常是一个 GUID）。它是一个可选参数，但强烈建议在授权代码的请求中使用。响应中也包含相同的 `state` 值，在使用响应之前，应用程序必须验证状态值是否完全相同。
