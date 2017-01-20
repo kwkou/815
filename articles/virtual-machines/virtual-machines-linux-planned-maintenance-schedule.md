@@ -21,7 +21,7 @@
 
 # 如何在 Azure VM 上安排计划内的维护
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]
 
 更多关于资源管理器模型的计划内维护，请点击[这里](/documentation/articles/virtual-machines-linux-planned-maintenance/)。
 

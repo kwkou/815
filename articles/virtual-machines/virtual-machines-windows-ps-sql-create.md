@@ -19,8 +19,6 @@
 
 # 使用 Azure PowerShell 预配 SQL Server 虚拟机 (Resource Manager)
 
-[AZURE.INCLUDE [arm-api-version-powershell](../../includes/arm-api-version-powershell.md)]
-
 ## 概述
 
 本教程演示如何使用 Azure PowerShell cmdlet 通过 **Azure Resource Manager** 部署模型创建单个 Azure 虚拟机。在本教程中，我们将从 SQL 库中的映像使用单个磁盘驱动器创建单个虚拟机。我们将为虚拟机要使用的存储、网络和计算资源创建新的提供程序。如果拥有上述任何资源的提供程序，则可以改用现有的提供程序。

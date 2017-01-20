@@ -63,7 +63,7 @@ Content-Type: application/json; charset=UTF-8
 
 ## 暂停计算
 
-[AZURE.INCLUDE [SQL Data Warehouse pause description（SQL 数据仓库暂停说明）](../../includes/sql-data-warehouse-pause-description)]
+[AZURE.INCLUDE [SQL Data Warehouse pause description（SQL 数据仓库暂停说明）](../../includes/sql-data-warehouse-pause-description.md)]
 
 若要暂停数据库，请使用[暂停数据库][] REST API。以下示例将暂停 Server01 服务器上托管的 Database02 数据库。该服务器位于名为 ResourceGroup1 的 Azure 资源组中。
 
