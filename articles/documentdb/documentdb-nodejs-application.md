@@ -41,11 +41,7 @@
 
 在按照本文中的说明操作之前，应确保已具备以下先决条件：
 
-- 有效的 Azure 帐户。如果你没有帐户，可以创建一个试用帐户，只需几分钟即可完成。有关详细信息，请参阅 [Azure 1 元试用](/pricing/1rmb-trial/)。
-
-   或
-
-   在本地安装 [Azure DocumentDB 模拟器](/documentation/articles/documentdb-nosql-local-emulator/)。
+- 有效的 Azure 帐户。如果你没有帐户，可以创建一个试用帐户，只需几分钟即可完成。有关详细信息，请参阅 [Azure 1 元试用](/pricing/1rmb-trial/)。或在本地安装 [Azure DocumentDB 模拟器](/documentation/articles/documentdb-nosql-local-emulator/)。
 - [Node.js][Node.js] 版本 v0.10.29 或更高版本。
 - [Express 生成器](http://www.expressjs.com/starter/generator.html)（你可以通过 `npm install express-generator -g` 安装它）
 - [Git][Git]。
@@ -187,12 +183,13 @@
    
         module.exports = DocDBUtils;
    
-   > [AZURE.TIP]
-   createCollection 采用一个用以指定集合 Offer 类型的可选 requestOptions 参数。如果没有提供任何 requestOptions.offerType 值，则将使用默认 Offer 类型创建集合。
-   > 
-   > 有关 DocumentDB 产品/服务类型的详细信息，请参阅 [DocumentDB 中的性能级别](/documentation/articles/documentdb-performance-levels/)
-   > 
-   > 
+	> [AZURE.TIP]
+   	> createCollection 采用一个用以指定集合 Offer 类型的可选 requestOptions 参数。如果没有提供任何 requestOptions.offerType 值，则将使用默认 Offer 类型创建集合。
+   	> 
+   	> 有关 DocumentDB 产品/服务类型的详细信息，请参阅 [DocumentDB 中的性能级别](/documentation/articles/documentdb-performance-levels/)
+   	> 
+   	>
+ 
 5. 保存并关闭 **docdbUtils.js** 文件。
 6. 在 **taskDao.js** 文件的开头，添加以下代码以引用我们上面创建的 **DocumentDBClient** 和 **docdbUtils.js**：
    
