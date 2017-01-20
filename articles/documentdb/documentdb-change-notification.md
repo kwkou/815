@@ -1178,6 +1178,4 @@ EmailTo | 将会收到电子邮件通知的电子邮件地址
 ## 后续步骤
 下载并使用 [Github](https://github.com/HEDIDIN/DocDbNotifications) 上提供的逻辑应用代码。竭诚邀请你在该应用程序基础上进行构建，并将更改提交到存储库。
 
-若要详细了解 DocumentDB，请访问[学习路径](/documentation/learning-paths/documentdb/)。
-
 <!---HONumber=Mooncake_1121_2016-->

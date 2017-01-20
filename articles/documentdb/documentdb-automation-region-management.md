@@ -142,7 +142,7 @@ DocumentDB 数据库帐户是目前唯一可以使用 [Azure 资源管理器模�
 
 DocumentDB 能够跨不同的 [Azure 区域](https://azure.microsoft.com/regions/)[在全局分发数据][distribute-globally]。本部分的说明介绍如何通过 Azure CLI 和 资源管理器模板向现有的 DocumentDB 帐户添加读取区域。可以在 Azure CLI 中使用或不使用资源管理器模板完成此任务。
 
-### <a id="add-region-documentdb-account-cli"></a> 使用 Azure CLI 不通过 资源管理器模板向 DocumentDB 帐户添加区域
+### <a id="add-region-documentdb-account-cli"></a> 使用 Azure CLI 不通过资源管理器模板向 DocumentDB 帐户添加区域
 
 在命令提示符处输入以下命令，于新的或现有的资源组中向现有的 DocumentDB 帐户添加区域。请注意，“位置”数组应反映 DocumentDB 帐户中的当前区域配置，要添加的新区域除外。以下示例显示的命令可将第二个区域添加到帐户。
 
@@ -184,7 +184,7 @@ DocumentDB 能够跨不同的 [Azure 区域](https://azure.microsoft.com/regions
 
 在此命令返回之后，在帐户更改为“联机”状态以准备好可供使用之前，该帐户将会进入“正在创建”状态数分钟的时间。可以在 [Azure 门户预览](https://portal.azure.cn)中的“DocumentDB 帐户”边栏选项卡上检查帐户的状态。
 
-### <a id="add-region-documentdb-account-cli-arm"></a> 使用 Azure CLI 通过 资源管理器模板向 DocumentDB 帐户添加区域
+### <a id="add-region-documentdb-account-cli-arm"></a> 使用 Azure CLI 通过资源管理器模板向 DocumentDB 帐户添加区域
 
 本部分的说明介绍如何使用 Azure 资源管理器模板和可选参数文件（均为 JSON 文件）向现有的 DocumentDB 帐户添加区域。使用模板可以准确描述所需的信息，并可重复使用而不会出现任何错误。
 
@@ -325,7 +325,7 @@ DocumentDB 能够跨不同的 [Azure 区域](https://azure.microsoft.com/regions
 
 DocumentDB 能够跨不同的 [Azure 区域](https://azure.microsoft.com/regions/)[在全局分发数据][distribute-globally]。本部分的说明介绍如何通过 Azure CLI 和 资源管理器模板从现有的 DocumentDB 帐户删除区域。可以在 Azure CLI 中使用或不使用资源管理器模板完成此任务。
 
-### <a id="remove-region-documentdb-account-cli"></a> 使用 Azure CLI 不通过 资源管理器模板从 DocumentDB 帐户删除区域
+### <a id="remove-region-documentdb-account-cli"></a> 使用 Azure CLI 不通过资源管理器模板从 DocumentDB 帐户删除区域
 
 若要从现有 DocumentDB 帐户中删除某个区域，可通过 Azure CLI 执行以下命令。“位置”数组应只包含会在删除该区域后保留的区域。**省略的位置将从 DocumentDB 帐户中删除**。在命令提示符中输入以下命令。
 
@@ -365,7 +365,7 @@ DocumentDB 能够跨不同的 [Azure 区域](https://azure.microsoft.com/regions
 
 在此命令返回之后，该帐户会进入“正在更新”状态数分钟，然后才会更改为可供使用的“联机”状态。可以在 [Azure 门户预览](https://portal.azure.cn)中的“DocumentDB 帐户”边栏选项卡上检查帐户的状态。
 
-### <a id="remove-region-documentdb-account-cli-arm"></a> 使用 Azure CLI 通过 资源管理器模板从 DocumentDB 帐户删除区域
+### <a id="remove-region-documentdb-account-cli-arm"></a> 使用 Azure CLI 通过资源管理器模板从 DocumentDB 帐户删除区域
 
 本部分的说明介绍如何使用 Azure 资源管理器模板和可选参数文件（均为 JSON 文件）从现有的 DocumentDB 帐户删除区域。使用模板可以准确描述所需的信息，并可重复使用而不会出现任何错误。
 

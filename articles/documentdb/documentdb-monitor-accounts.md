@@ -69,11 +69,11 @@ Azure 门户预览使你能够创建并排的指标图表。
 
 1. 首先，请右键单击要复制的图表，然后选择“自定义”。
    
-   ![请求总数图表的屏幕截图，其中突出显示了“自定义”选项](./media/documentdb-monitor-accounts/madocdb6.png)  
+	![请求总数图表的屏幕截图，其中突出显示了“自定义”选项](./media/documentdb-monitor-accounts/madocdb6.png)  
 
 2. 单击菜单上的“克隆”以复制部件，然后单击“完成自定义”。
    
-   ![请求总数图表的屏幕截图，其中突出显示了“克隆”和“完成自定义”选项](./media/documentdb-monitor-accounts/madocdb7.png)  
+	![请求总数图表的屏幕截图，其中突出显示了“克隆”和“完成自定义”选项](./media/documentdb-monitor-accounts/madocdb7.png)  
 
 
 你现在可能将此部件视为其他任何指标部件，同时自定义显示在部件中的指标和时间范围。通过执行此操作，可以同时看到两个并排的不同的指标图表。![请求总数图表和过去一小时新的请求总数的屏幕截图](./media/documentdb-monitor-accounts/madocdb8.png)
