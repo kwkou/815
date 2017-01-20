@@ -130,7 +130,7 @@
 
 既然你已使用 REST API 和 PowerShell 部署了一个 IoT 中心，接下来可以进一步进行探索：
 
-- 阅读 [IoT 中心资源提供程序 REST API][lnk-rest-api] 的相关功能。
+
 - 有关 Azure Resource Manager 功能的详细信息，请参阅 [Azure Resource Manager 概述][lnk-azure-rm-overview]。
 
 若要深入了解如何开发 IoT 中心，请参阅以下内容：
@@ -149,7 +149,7 @@
 [lnk-free-trial]: /pricing/1rmb-trial/
 [lnk-azure-portal]: https://portal.azure.cn/
 [lnk-powershell-install]: /documentation/articles/powershell-install-configure/
-[lnk-rest-api]: https://msdn.microsoft.com/zh-cn/library/mt589014.aspx
+
 [lnk-azure-rm-overview]: /documentation/articles/resource-group-overview/
 [lnk-powershell-arm]: /documentation/articles/powershell-azure-resource-manager/
 

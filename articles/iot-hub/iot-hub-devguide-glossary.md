@@ -158,7 +158,7 @@ IoT 中心是一项完全托管的 Azure 服务，可在数百万个 IoT 设备�
 [IoT 中心查询语言](/documentation/articles/iot-hub-devguide-query-language/)是一种类似 SQL 的语言，用于查询[作业](#job)和设备孪生。
 
 ## IoT 中心资源提供程序 REST API
-可以使用 [IoT 中心资源提供程序 REST API](https://docs.microsoft.com/rest/api/iothub/resourceprovider/iot-hub-resource-provider-rest) 管理 [Azure 订阅](#subscription)中的 IoT 中心，以便执行一些操作，例如创建、更新和删除中心。
+可以使用 IoT 中心资源提供程序 REST API 管理 [Azure 订阅](#subscription)中的 IoT 中心，以便执行一些操作，例如创建、更新和删除中心。
 
 ## IoT 套件
 Azure IoT 套件将多个 Azure 服务和预配置解决方案打包在一起。有了这些预配置解决方案，用户就可以快速启动常见 IoT 方案的端到端实现。有关详细信息，请参阅[什么是 Azure IoT 套件？](/documentation/articles/iot-suite-overview/)

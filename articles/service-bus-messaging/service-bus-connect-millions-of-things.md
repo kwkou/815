@@ -33,7 +33,6 @@
 - [互连设备的服务辅助通信](http://blogs.msdn.com/b/clemensv/archive/2014/02/10/service-assisted-communication-for-connected-devices.aspx)
 
 ## 相关服务
-- [物联网（Microsoft 博客通告）](http://blogs.microsoft.com/iot/2015/03/16/microsoft-announces-azure-iot-suite)
 - [IoT 中心](/home/features/iot-hub/)
 - [Azure Active Directory](/home/features/identity/)
 - [云服务](/documentation/services/cloud-services/) 
