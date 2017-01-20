@@ -31,11 +31,11 @@ Visual Studio Tools for Docker 提供了一致的方法在本地 Linux Docker �
 
 ## 1\.创建 Web 应用
 
-[AZURE.INCLUDE [create-aspnet5-app](../../includes/create-aspnet5-app.md)]
+[AZURE.INCLUDE [create-aspnet5-app](../includes/create-aspnet5-app.md)]
 
 ## 2\.添加 Docker 支持
 
-[AZURE.INCLUDE [添加 Docker 支持](../../includes/vs-azure-tools-docker-add-docker-support.md)]
+[AZURE.INCLUDE [添加 Docker 支持](../includes/vs-azure-tools-docker-add-docker-support.md)]
 
 
 ## 3\.编辑代码并刷新
