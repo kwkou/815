@@ -15,7 +15,7 @@
 
 本文回答了一些关于服务总线定价结构的常见问题。你还可以访问 [Azure 支持常见问题](http://go.microsoft.com/fwlink/?LinkID=185083)了解一般的 Azure 定价信息。有关服务总线定价的完整信息，请参阅[服务总线定价](/pricing/details/messaging/)。
 
->[AZURE.NOTE] 有关事件中心的定价结构，请参阅[事件中心的可用性和支持常见问题解答](/documentation/articles/event-hubs-availability-and-support-faq/)一文，有关其详细信息，请参阅[事件中心定价](/pricing/details/event-hubs/)一文。
+>[AZURE.NOTE] 有关事件中心的定价结构，请参阅[事件中心的可用性和支持常见问题解答](/documentation/articles/event-hubs-faq/)一文，有关其详细信息，请参阅[事件中心定价](/pricing/details/event-hubs/)一文。
 
 - [服务总线如何收取费用？](#how-do-you-charge-for-service-bus)
 - [服务总线的哪些使用情况受数据传输限制？ 哪些不受其限制？](#what-usage-of-service-bus-is-subject-to-data-transfer-what-is-not)
