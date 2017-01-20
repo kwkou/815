@@ -20,8 +20,6 @@
 
 # Azure Active Directory 中的签名密钥滚动更新
 
-[AZURE.INCLUDE [active-directory-protocols](../../includes/active-directory-protocols.md)]
-
 本主题介绍你需要了解的有关 Azure Active Directory (Azure AD) 中用来为安全令牌签名的公钥的信息。必须注意的是，这些密钥每 6 周按计划滚动更新一次。在紧急情况下，密钥可以远远不到 6 周就更改一次。所有使用 Azure AD 的应用程序应该都能以编程方式处理密钥滚动更新过程。请继续阅读以了解密钥的工作原理，以及如何更新应用程序以处理密钥滚动更新。
 
 ## Azure AD 中的签名密钥概述
