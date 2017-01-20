@@ -218,7 +218,6 @@ autoscaleSettings 资源使用诊断扩展中的信息，以决定是增加规�
 
 - 请参阅 [Automatically scale machines in a Virtual Machine Scale Set](/documentation/articles/virtual-machine-scale-sets-windows-autoscale/)（自动缩放虚拟机规模集中的虚拟机），以查看有关如何创建已配置自动缩放的规模集的示例。
 - 在 [Azure Insights PowerShell 快速启动示例](/documentation/articles/insights-powershell-samples/)中查找 Azure Insights 监视功能的示例
-- 若要了解有关通知功能的相关信息，请参阅[使用自动缩放操作在 Azure Insights 中发送电子邮件和 webhook 警报通知](/documentation/articles/insights-autoscale-to-webhook-email/)。
 - 了解如何[使用审核日志在 Azure Insights 中发送电子邮件和 webhook 警报通知](/documentation/articles/insights-auditlog-to-webhook-email/)
 
 <!---HONumber=Mooncake_1024_2016-->

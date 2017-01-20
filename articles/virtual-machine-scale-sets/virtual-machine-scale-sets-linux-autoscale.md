@@ -48,10 +48,10 @@
    
         azure login -e AzureChinaCloud
    
-   > [AZURE.NOTE]
-   如果有工作或学校 ID，而且未启用双因素身份验证，则可以在没有交互式会话的情况下，使用 `azure login -e AzureChinaCloud  -u` 以及 ID 进行登录。如果没有工作或学校 ID，则可以[从 Microsoft 个人帐户创建工作或学校 ID](/documentation/articles/virtual-machines-linux-create-aad-work-id/)。
-   > 
-   > 
+    > [AZURE.NOTE]
+    如果有工作或学校 ID，而且未启用双因素身份验证，则可以在没有交互式会话的情况下，使用 `azure login -e AzureChinaCloud  -u` 以及 ID 进行登录。如果没有工作或学校 ID，则可以[从 Microsoft 个人帐户创建工作或学校 ID](/documentation/articles/virtual-machines-linux-create-aad-work-id/)。
+    > 
+    > 
 2. **创建资源组** - 所有资源都必须部署到资源组。对于本教程，将资源组命名为 **vmsstest1**。
    
         azure group create vmsstestrg1 chinaeast
@@ -502,7 +502,6 @@
 
 ## 后续步骤
 * 在 [Azure 监视器跨平台 CLI 快速入门示例](/documentation/articles/insights-cli-samples/)中查找 Azure 监视器监视功能的示例
-* 若要了解有关通知功能的信息，请参阅[使用自动缩放操作在 Azure 监视器中发送电子邮件和 webhook 警报通知](/documentation/articles/insights-autoscale-to-webhook-email/)
 * 了解如何[使用审核日志在 Azure 监视器中发送电子邮件和 webhook 警报通知](/documentation/articles/insights-auditlog-to-webhook-email/)
 * 请查看[自动缩放运行 Ubuntu/Apache/PHP 应用的 VM 规模集](https://github.com/Azure/azure-quickstart-templates/tree/master/201-vmss-lapstack-autoscale)模板，该模板设置 LAMP 堆栈以执行虚拟机规模集的自动缩放功能。
 
