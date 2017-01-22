@@ -9,7 +9,7 @@
     documentationcenter="" />
 <tags
     ms.assetid=""
-	ms.service: documentdb
+	ms.service="documentdb"
     ms.workload="data-services"
     ms.tgt_pltfrm="na"
     ms.devlang="na"
