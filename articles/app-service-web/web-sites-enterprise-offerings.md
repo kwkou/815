@@ -109,7 +109,7 @@ Azure 平台提供了一些替代方法，可以将 Azure SQL 数据库用作 We
 App Service Web Apps 提供了一款灵活、经济高效、响应迅速的解决方案在快速发展的环境中满足企业不断变化的需求。Web Apps 帮助企业利用托管平台以及现代化的 DevOps 功能和减少的人工管理提高了生产力和效率，同时提供企业扩展功能、弹性、安全性以及与本地资产的集成。
 
 ## 行动号召 ##
-有关 Azure App Service Web Apps 服务的详细信息，请访问 [http://aka.ms/enterprisewebsites](/home/features/app-service/web-apps/)，在这里你可以查看更多信息；并登录 [https://www.azure.cn/pricing/1rmb-trial/](/pricing/1rmb-trial/) 立即注册试用版，评估该服务并发现为你企业带来的优势。
+有关 Azure App Service Web Apps 服务的详细信息，请访问 [https://www.azure.cn/home/features/app-service/web-apps/](/home/features/app-service/web-apps/)，在这里你可以查看更多信息；并登录 [https://www.azure.cn/pricing/1rmb-trial/](/pricing/1rmb-trial/) 立即注册试用版，评估该服务并发现为你企业带来的优势。
 
 [AZURE.INCLUDE [app-service-web-whats-changed](../../includes/app-service-web-whats-changed.md)]
 
