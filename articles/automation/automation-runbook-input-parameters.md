@@ -95,7 +95,7 @@ Runbook 有多种启动方式：通过 Azure 经典管理门户、webhook、Powe
 
 #### 使用 SDK 启动 Runbook 并分配参数
 
-  - **Azure 服务管理方法：**可以使用编程语言的 SDK 启动 Runbook。以下 C# 代码段用于在自动化帐户中启动 Runbook。可以在 [GitHub 存储库](https://github.com/Azure/azure-sdk-for-net/blob/master/src/ServiceManagement/Automation/Automation.Tests/TestSupport/AutomationTestBase.cs)中查看完整代码。
+- **Azure 服务管理方法：**可以使用编程语言的 SDK 启动 Runbook。以下 C# 代码段用于在自动化帐户中启动 Runbook。可以在 [GitHub 存储库](https://github.com/Azure/azure-sdk-for-net/blob/master/src/ServiceManagement/Automation/Automation.Tests/TestSupport/AutomationTestBase.cs)中查看完整代码。
 
         public Job StartRunbook(string runbookName, IDictionary<string, string> parameters = null)
         {
@@ -113,7 +113,7 @@ Runbook 有多种启动方式：通过 Azure 经典管理门户、webhook、Powe
             return response.Job;
         }
 
-  若要启动此方法，请创建一个字典来存储 Runbook 参数（**VMName** 和 **resourceGroupName**）及其值。然后启动 Runbook。以下 C# 代码段用于调用上面定义的方法。
+若要启动此方法，请创建一个字典来存储 Runbook 参数（**VMName** 和 **resourceGroupName**）及其值。然后启动 Runbook。以下 C# 代码段用于调用上面定义的方法。
 
     IDictionary<string, string> RunbookParameters = new Dictionary<string, string>();
 
