@@ -27,7 +27,7 @@
 
 ## 先决条件
 
-1. Azure 帐户（[在此处建立免费帐户](/pricing/1rmb-trial/)）
+1. Azure 帐户（[在此处建立使用帐户](/pricing/1rmb-trial/)）
 1. 已安装 [Node.js](http://nodejs.org)（本示例假设使用 Node.js 4.2.2 版）
 2. 已安装 [Git](https://git-scm.com/)
 1. [GitHub](https://github.com/) 帐户
