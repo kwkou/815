@@ -42,7 +42,7 @@ IoT 云应用程序可以使用 Azure IoT 中心中的基元（即设备孪生�
 
 若要完成本教程，您需要以下各项：
 
-* Node.js 版本 0.12.x 或更高版本，<br/>[准备开发环境][lnk-dev-setup]介绍了如何在 Windows 或 Linux 上安装本教程所用的 Node.js。
+* Node.js 版本 0.12.x 或更高版本，<br/>
 * 有效的 Azure 帐户。（如果没有帐户，只需花费几分钟就能创建一个[帐户][lnk-free-trial]。）
 
 [AZURE.INCLUDE [iot-hub-get-started-create-hub](../../includes/iot-hub-get-started-create-hub.md)]
@@ -257,7 +257,6 @@ IoT 解决方案可以扩展已定义的设备管理模式集，或通过使用�
 [img-output]: ./media/iot-hub-get-started-with-dm/image6.png
 [img-dm-ui]: ./media/iot-hub-get-started-with-dm/dmui.png
 
-[lnk-dev-setup]: https://github.com/Azure/azure-iot-sdks/blob/master/doc/get_started/node-devbox-setup.md
 
 [lnk-free-trial]: /pricing/1rmb-trial/
 [lnk-fwupdate]: /documentation/articles/iot-hub-node-node-firmware-update/

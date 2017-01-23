@@ -33,7 +33,7 @@
 
 若要完成本教程，您需要以下各项：
 
-+ Node.js 版本 0.12.x 或更高版本。<br/>[准备开发环境][lnk-dev-setup]介绍了如何在 Windows 或 Linux 上安装本教程所用的 Node.js。
++ Node.js 版本 0.12.x 或更高版本。<br/>
 
 + 有效的 Azure 帐户。（如果没有帐户，只需花费几分钟就能创建一个[帐户][lnk-free-trial]。）
 
@@ -278,7 +278,7 @@
 [lnk-devguide-identity]: /documentation/articles/iot-hub-devguide-identity-registry/
 [lnk-event-hubs-overview]: /documentation/articles/event-hubs-overview/
 
-[lnk-dev-setup]: https://github.com/Azure/azure-iot-sdks/blob/master/doc/get_started/node-devbox-setup.md
+
 [lnk-process-d2c-tutorial]: /documentation/articles/iot-hub-csharp-csharp-process-d2c/
 
 [lnk-hub-sdks]: /documentation/articles/iot-hub-devguide-sdks/

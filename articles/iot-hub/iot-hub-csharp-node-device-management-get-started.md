@@ -45,7 +45,7 @@ IoT 后端应用可以使用 Azure IoT 中心的基元（即设备孪生和直�
 若要完成本教程，您需要以下各项：
 
 * Microsoft Visual Studio 2015。
-* Node.js 版本 0.12.x 或更高版本，<br/>[准备开发环境][lnk-dev-setup]介绍了如何在 Windows 或 Linux 上安装本教程所用的 Node.js。
+* Node.js 版本 0.12.x 或更高版本。
 * 有效的 Azure 帐户。（如果没有帐户，只需花费几分钟就能创建一个[帐户][lnk-free-trial]。）
 
 [AZURE.INCLUDE [iot-hub-get-started-create-hub](../../includes/iot-hub-get-started-create-hub.md)]
@@ -118,82 +118,82 @@ IoT 后端应用可以使用 Azure IoT 中心的基元（即设备孪生和直�
 
 1. 新建名为 **manageddevice** 的空文件夹。在 **manageddevice** 文件夹的命令提示符处，使用以下命令创建 package.json 文件。接受所有默认值：
    
-    ```
-    npm init
-    ```
+    
+        npm init
+    
 2. 在 **manageddevice** 文件夹的命令提示符处，运行下述命令以安装 **azure-iot-device** 设备 SDK 包和 **azure-iot-device-mqtt** 包：
    
-    ```
-    npm install azure-iot-device azure-iot-device-mqtt --save
-    ```
+    
+        npm install azure-iot-device azure-iot-device-mqtt --save
+    
 3. 在 **manageddevice** 文件夹中，利用文本编辑器创建新的 **dmpatterns\_getstarted\_device.js** 文件。
 4. 在 **dmpatterns\_getstarted\_device.js** 文件开头添加以下“require”语句：
    
-    ```
-    'use strict';
-   
-    var Client = require('azure-iot-device').Client;
-    var Protocol = require('azure-iot-device-mqtt').Mqtt;
-    ```
+    
+        'use strict';
+       
+        var Client = require('azure-iot-device').Client;
+        var Protocol = require('azure-iot-device-mqtt').Mqtt;
+    
 5. 添加 **connectionString** 变量，并用其创建设备客户端。将连接字符串替换为设备连接字符串。
    
-    ```
-    var connectionString = 'HostName={youriothostname};DeviceId=myDeviceId;SharedAccessKey={yourdevicekey}';
-    var client = Client.fromConnectionString(connectionString, Protocol);
-    ```
+    
+        var connectionString = 'HostName={youriothostname};DeviceId=myDeviceId;SharedAccessKey={yourdevicekey}';
+        var client = Client.fromConnectionString(connectionString, Protocol);
+    
 6. 添加以下函数，实现设备上的直接方法
    
-    ```
-    var onReboot = function(request, response) {
-   
-        // Respond the cloud app for the direct method
-        response.send(200, 'Reboot started', function(err) {
-            if (!err) {
-                console.error('An error occured when sending a method response:\n' + err.toString());
-            } else {
-                console.log('Response to method \'' + request.methodName + '\' sent successfully.');
-            }
-        });
-   
-        // Report the reboot before the physical restart
-        var date = new Date();
-        var patch = {
-            iothubDM : {
-                reboot : {
-                    lastReboot : date.toISOString(),
+    
+        var onReboot = function(request, response) {
+       
+            // Respond the cloud app for the direct method
+            response.send(200, 'Reboot started', function(err) {
+                if (!err) {
+                    console.error('An error occured when sending a method response:\n' + err.toString());
+                } else {
+                    console.log('Response to method \'' + request.methodName + '\' sent successfully.');
                 }
-            }
+            });
+       
+            // Report the reboot before the physical restart
+            var date = new Date();
+            var patch = {
+                iothubDM : {
+                    reboot : {
+                        lastReboot : date.toISOString(),
+                    }
+                }
+            };
+       
+            // Get device Twin
+            client.getTwin(function(err, twin) {
+                if (err) {
+                    console.error('could not get twin');
+                } else {
+                    console.log('twin acquired');
+                    twin.properties.reported.update(patch, function(err) {
+                        if (err) throw err;
+                        console.log('Device reboot twin state reported')
+                    });  
+                }
+            });
+       
+            // Add your device's reboot API for physical restart.
+            console.log('Rebooting!');
         };
-   
-        // Get device Twin
-        client.getTwin(function(err, twin) {
-            if (err) {
-                console.error('could not get twin');
-            } else {
-                console.log('twin acquired');
-                twin.properties.reported.update(patch, function(err) {
-                    if (err) throw err;
-                    console.log('Device reboot twin state reported')
-                });  
-            }
-        });
-   
-        // Add your device's reboot API for physical restart.
-        console.log('Rebooting!');
-    };
-    ```
+    
 7. 添加以下代码，打开与 IoT 中心的连接并启动直接方法侦听器：
    
-    ```
-    client.open(function(err) {
-        if (err) {
-            console.error('Could not open IotHub client');
-        }  else {
-            console.log('Client opened.  Waiting for reboot method.');
-            client.onDeviceMethod('reboot', onReboot);
-        }
-    });
-    ```
+    
+        client.open(function(err) {
+            if (err) {
+                console.error('Could not open IotHub client');
+            }  else {
+                console.log('Client opened.  Waiting for reboot method.');
+                client.onDeviceMethod('reboot', onReboot);
+            }
+        });
+    
 8. 保存并关闭 **dmpatterns\_getstarted\_device.js** 文件。
    
    [AZURE.NOTE] 为简单起见，本教程不实现任何重试策略。在生产代码中，你应该按 MSDN 文章 [Transient Fault Handling][lnk-transient-faults]（暂时性故障处理）中所述实施重试策略（例如指数性的回退）。
@@ -204,9 +204,9 @@ IoT 后端应用可以使用 Azure IoT 中心的基元（即设备孪生和直�
 
 1. 在 **manageddevice** 文件夹的命令提示符处，运行以下命令以开始侦听重新启动直接方法。
    
-    ```
-    node dmpatterns_getstarted_device.js
-    ```
+    
+        node dmpatterns_getstarted_device.js
+    
 2. 运行 C# 控制台应用 **TriggerReboot** - 右键单击 **TriggerReboot** 项目，选择“调试”和“启动新实例”。
 
 3. 可以在控制台中看到设备对直接方法的响应。
@@ -235,7 +235,6 @@ IoT 解决方案可以扩展已定义的设备管理模式集，或通过使用�
 [img-servicenuget]: ./media/iot-hub-csharp-node-device-management-get-started/servicesdknuget.png
 [img-createapp]: ./media/iot-hub-csharp-node-device-management-get-started/createnetapp.png
 
-[lnk-dev-setup]: https://github.com/Azure/azure-iot-sdks/blob/master/doc/get_started/node-devbox-setup.md
 
 [lnk-free-trial]: /pricing/1rmb-trial/
 [lnk-fwupdate]: /documentation/articles/iot-hub-node-node-firmware-update/

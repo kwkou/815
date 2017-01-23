@@ -56,8 +56,6 @@
 * 准备开发环境
 * 获取设备凭据。
 
-如果需要在 Azure 订阅上创建 Azure IoT 中心的实例，请按照[此处](https://github.com/Azure/azure-iot-sdks/blob/master/doc/setup_iothub.md)的说明操作。
-
 SDK 中包含的自述文件提供了有关准备开发环境和获取设备凭据的说明。
 以下部分包含有关这些说明的一些额外注释。
 
@@ -96,7 +94,7 @@ SDK 中包含的自述文件提供了有关准备开发环境和获取设备凭�
 
 现在你已设置好开发环境，下一步要做的就是获取一组设备凭据。若要使设备能够访问 IoT 中心，必须先将该设备添加到 IoT 中心设备注册表。添加设备时，你将获取一组所需的设备凭据，以便设备能够连接到 IoT 中心。下一部分所述示例应用程序的预期凭据格式为**设备连接字符串**。
 
-SDK 开放源代码存储库中提供了两个工具用来帮助管理 IoT 中心。一个是称为设备资源管理器的 Windows 应用程序，另一个是称为 iothub-explorer 的基于 node.js 的跨平台 CLI 工具。你可以在[此处](https://github.com/Azure/azure-iot-sdks/blob/master/doc/manage_iot_hub.md)了解更多有关这两种工具的信息。
+SDK 开放源代码存储库中提供了两个工具用来帮助管理 IoT 中心。一个是称为设备资源管理器的 Windows 应用程序，另一个是称为 iothub-explorer 的基于 node.js 的跨平台 CLI 工具。
 
 本文中所述的在 Windows 上运行这些示例时使用的是设备资源管理器工具。但是，如果你更喜欢 CLI 工具，也可以使用 iothub-explorer。
 

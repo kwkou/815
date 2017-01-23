@@ -43,9 +43,9 @@ Azure IoT 中心是一项完全托管的服务，有助于在数百万个 IoT �
 
 若要完成本教程，您需要以下各项：
 
-+ Java SE 8。<br/>[准备开发环境][lnk-dev-setup]介绍了如何在 Windows 或 Linux 上安装本教程所用的 Java。
++ Java SE 8。<br/>
 
-+ Maven 3。<br/>[准备开发环境][lnk-dev-setup]介绍了如何在 Windows 或 Linux 上安装本教程所用的 Maven。
++ Maven 3。<br/>
 
 + 有效的 Azure 帐户。（如果没有帐户，只需花费几分钟就能创建一个[帐户][lnk-free-trial]。）
 
@@ -197,7 +197,7 @@ Azure IoT 中心是一项完全托管的服务，有助于在数百万个 IoT �
 [IoT Hub Developer Guide]: /documentation/articles/iot-hub-devguide/
 [Azure IoT Developer Center]: /develop/iot
 [lnk-free-trial]: /pricing/1rmb-trial/
-[lnk-dev-setup]: https://github.com/Azure/azure-iot-sdks/blob/master/doc/get_started/java-devbox-setup.md
+
 [Transient Fault Handling]: https://msdn.microsoft.com/zh-cn/library/hh680901(v=pandp.50).aspx
 [Azure 门户预览]: https://portal.azure.cn
 [Azure IoT Suite]: /documentation/services/iot-suite/

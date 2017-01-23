@@ -31,7 +31,7 @@
 
 若要完成本教程，您需要以下各项：
 
-* Node.js 版本 0.12.x 或更高版本，<br/>[准备开发环境][lnk-dev-setup]介绍了如何在 Windows 或 Linux 上安装本教程所用的 Node.js。
+* Node.js 版本 0.12.x 或更高版本，<br/>
 * 有效的 Azure 帐户。（如果没有帐户，只需花费几分钟就能创建一个[帐户][lnk-free-trial]。）
 
 按照[设备管理入门](/documentation/articles/iot-hub-node-node-device-management-get-started/)一文创建 IoT 中心并获取连接字符串。
@@ -355,7 +355,7 @@
 [lnk-dm-getstarted]: /documentation/articles/iot-hub-node-node-device-management-get-started/
 [lnk-tutorial-jobs]: /documentation/articles/iot-hub-node-node-schedule-jobs/
 
-[lnk-dev-setup]: https://github.com/Azure/azure-iot-sdks/blob/master/doc/get_started/node-devbox-setup.md
+
 [lnk-free-trial]: /pricing/1rmb-trial/
 [lnk-transient-faults]: https://msdn.microsoft.com/zh-cn/library/hh680901(v=pandp.50).aspx
 
