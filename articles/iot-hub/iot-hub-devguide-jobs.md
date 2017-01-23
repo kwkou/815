@@ -87,11 +87,11 @@
             jobId: '<jobId>',
             type: 'scheduleTwinUpdate', 
             updateTwin: <patch>                  // Valid JSON object
-        queryCondition: '<queryOrDevices>', // query condition
-        startTime: <jobStartTime>,          // as an ISO-8601 date string
-        maxExecutionTimeInSeconds: <maxExecutionTimeInSeconds>        // format TBD
-    }
-    ```
+            queryCondition: '<queryOrDevices>', // query condition
+            startTime: <jobStartTime>,          // as an ISO-8601 date string
+            maxExecutionTimeInSeconds: <maxExecutionTimeInSeconds>        // format TBD
+        }
+
 
 ## 查询作业的进度
 下面是用于[查询作业][lnk-query]的 HTTP 1.1 请求详细信息：

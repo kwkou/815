@@ -117,12 +117,12 @@
 
 
 1. 新建名为 **manageddevice** 的空文件夹。在 **manageddevice** 文件夹的命令提示符处，使用以下命令创建 package.json 文件。接受所有默认值：
-   
+  
     
         npm init
     
 2. 在 **manageddevice** 文件夹的命令提示符处，运行下述命令以安装 **azure-iot-device** 设备 SDK 包和 **azure-iot-device-mqtt** 包：
-   
+
     
         npm install azure-iot-device azure-iot-device-mqtt --save
     

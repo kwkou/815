@@ -88,7 +88,6 @@ IoT 中心通过 Azure IoT 设备 SDK 对许多设备平台和语言（包括 C�
 在本部分中，会创建 Java 控制台应用，用于向模拟设备应用发送云到设备的消息。需使用 [IoT 中心入门]教程中添加的设备的设备 ID。还需要中心的 IoT 中心连接字符串（位于 [Azure 门户预览]）。
 
 1. 在命令提示符处，使用以下命令创建名为 **send-c2d-messages** 的 Maven 项目。请注意，这是一条很长的命令：
-
     
         mvn archetype:generate -DgroupId=com.mycompany.app -DartifactId=send-c2d-messages -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
     

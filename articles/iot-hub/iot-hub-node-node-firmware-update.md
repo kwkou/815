@@ -327,7 +327,7 @@
         };
     
 8. 最后，向代码添加以下函数，以便启动固件更新序列并开始定期显示报告属性：
-   
+ 
     
         startFirmwareUpdateDevice();
         setInterval(queryTwinFWUpdateReported, 500);
