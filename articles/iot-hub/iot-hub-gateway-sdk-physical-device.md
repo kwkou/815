@@ -104,7 +104,7 @@ BLE 模块通过 BlueZ 堆栈与蓝牙硬件通信。需要 BlueZ 5.37 版才能
         wget http://www.kernel.org/pub/linux/bluetooth/bluez-5.37.tar.xz
     
 4. 解压缩源代码。
-   
+
     
         tar -xvf bluez-5.37.tar.xz
     
@@ -226,7 +226,7 @@ BLE 模块通过 BlueZ 堆栈与蓝牙硬件通信。需要 BlueZ 5.37 版才能
 ### 在 IoT 中心中配置两个示例设备
 
 - 若要在 Azure 订阅中[创建 IoT 中心][lnk-create-hub]，需要中心的名称来完成本演练。如果没有帐户，只需花费几分钟就能创建一个[帐户][lnk-free-trial]。
-- 将名为 **SensorTag\_01** 的设备添加到 IoT 中心，记下其 ID 和设备密钥。可使用设备资源管理器或 iothub-explorer 工具将此设备添加至上一步中创建的 IoT 中心，然后检索其密钥。配置网关时，可将此设备映射到 SensorTag 设备。
+- 将名为 **SensorTag_01** 的设备添加到 IoT 中心，记下其 ID 和设备密钥。可使用设备资源管理器或 iothub-explorer 工具将此设备添加至上一步中创建的 IoT 中心，然后检索其密钥。配置网关时，可将此设备映射到 SensorTag 设备。
 
 ### 在 Raspberry Pi 3 上生成 Azure IoT 网关 SDK
 
