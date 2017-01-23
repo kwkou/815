@@ -305,3 +305,4 @@ Service Bus 提供了相关功能来帮助你轻松地从应用程序错误或�
   [3]: ./media/service-bus-java-how-to-use-topics-subscriptions/sb-queues-09.png
 
 <!---HONumber=Mooncake_Quality_Review_1230_2016-->
+<!--Update_Description:update meta properties-->
