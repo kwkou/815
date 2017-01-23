@@ -1,36 +1,33 @@
 <properties
-	pageTitle="IoT 中心网关 SDK 入门 | Azure"
-	description="本 Azure IoT 中心网关 SDK 演练使用 Linux 说明使用 Azure IoT 中心网关 SDK 时应理解的关键概念。"
-	services="iot-hub"
-	documentationCenter=""
-	authors="chipalost"
-	manager="timlt"
-	editor=""/>  
-
-
+    pageTitle="Azure IoT 网关 SDK 入门 (Linux) | Azure"
+    description="了解如何在 Linux 计算机上生成网关，并了解 Azure IoT 网关 SDK（如模块）和 JSON 配置文件中的重要概念。"
+    services="iot-hub"
+    documentationcenter=""
+    author="chipalost"
+    manager="timlt"
+    editor="" />
 <tags
-     ms.service="iot-hub"
-     ms.devlang="cpp"
-     ms.topic="get-started-article"
-     ms.tgt_pltfrm="na"
-     ms.workload="na"
-     ms.date="08/25/2016"
-     wacn.date="12/12/2016"
-     ms.author="andbuc"/>  
+    ms.assetid="cf537bdd-2352-4bb1-96cd-a283fcd3d6cf"
+    ms.service="iot-hub"
+    ms.devlang="cpp"
+    ms.topic="get-started-article"
+    ms.tgt_pltfrm="na"
+    ms.workload="na"
+    ms.date="11/23/2016"
+    wacn.date="01/13/2017"
+    ms.author="andbuc" />  
 
 
-
-# Azure IoT 网关 SDK - 开始使用 Linux
+# Azure IoT 网关 SDK 入门 \(Linux\)
 
 [AZURE.INCLUDE [iot-hub-gateway-sdk-getstarted-selector](../../includes/iot-hub-gateway-sdk-getstarted-selector.md)]
 
 ## 如何生成示例
-
 开始之前，必须[设置开发环境][lnk-setupdevbox]，以便在 Linux 上使用 SDK。
 
 1. 打开 shell。
 2. 浏览到本地 **azure-iot-gateway-sdk** 存储库副本中的根文件夹。
-3. 运行 **tools/build.sh** 脚本。此脚本使用 **cmake** 实用工具在本地 **azure-iot-gateway-sdk** 存储库副本的根文件夹中创建一个名为 **build** 的文件夹，并生成一个生成文件。然后，该脚本将生成解决方案并运行测试。
+3. 运行 **tools/build.sh --skip-unittests** 脚本。此脚本使用 **cmake** 实用工具在本地 **azure-iot-gateway-sdk** 存储库副本的根文件夹中创建一个名为 **build** 的文件夹，并生成一个生成文件。然后，该脚本将生成解决方案，跳过单元测试。若想生成并运行单元测试，请删除 **--skip-unittests** 参数。
 
 > [AZURE.NOTE]  每次运行 **build.sh** 脚本时，都会删除本地 **azure-iot-gateway-sdk** 存储库副本的根文件夹中的 **build** 文件夹并重新生成。
 
@@ -78,7 +75,7 @@
             ]
         }
 
-3. 浏览到 **azure-iot-gateway-sdk** 文件夹。
+3. 浏览到 **azure-iot-gateway-sdk/build** 文件夹。
 4. 运行以下命令：
    
    ```
@@ -91,4 +88,5 @@
 
 [lnk-setupdevbox]: https://github.com/Azure/azure-iot-gateway-sdk/blob/master/doc/devbox_setup.md
 
-<!---HONumber=Mooncake_1205_2016-->
+<!---HONumber=Mooncake_0109_2017-->
+<!--Update_Description:update wording-->

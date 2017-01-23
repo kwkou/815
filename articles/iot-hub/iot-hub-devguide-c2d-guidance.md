@@ -1,33 +1,37 @@
 <properties
-	pageTitle="从 Azure IoT 中心云到设备通信指南"
-	description="Azure IoT 中心开发人员指南 - 指导用户何时使用直接方法、设备孪生的所需属性或从云到设备的消息。"
-	services="iot-hub"
-	documentationcenter=""
-	author="fsautomata"
-	manager="timlt"
-	editor=""/>  
-
-
+    pageTitle="Azure IoT 中心从云到设备选项 | Azure"
+    description="开发人员指南 - 指导用户何时使用直接方法、设备孪生的所需属性或云到设备的消息，以进行从云到设备的通信。"
+    services="iot-hub"
+    documentationcenter=""
+    author="fsautomata"
+    manager="timlt"
+    editor="" />
 <tags
-	ms.service="iot-hub"
-	ms.date="11/09/2016"
-	wacn.date="12/19/2016"/>  
+    ms.assetid="1ac90923-1edf-4134-bbd4-77fee9b68d24"
+    ms.service="iot-hub"
+    ms.devlang="multiple"
+    ms.topic="article"
+    ms.tgt_pltfrm="na"
+    ms.workload="na"
+    ms.date="11/09/2016"
+    wacn.date="01/13/2017"
+    ms.author="elioda" />  
 
 
 # 从云到设备通信指南
-IoT 中心提供三个选项，允许设备应用向后端公开功能：
+IoT 中心提供三个选项，允许设备应用向后端应用公开功能：
 
 * [直接方法][lnk-methods]，适用于需要立即确认其结果的通信，通常是对设备的交互式控制，例如，打开风扇；
-* [设备孪生的所需属性][lnk-twins]，适用于长时间运行的命令，目的是将设备置于某种所需状态，例如，将遥测发送时间间隔设置为 30 分钟；
+* [克隆的所需属性][lnk-twins]，用于旨在将设备置于某个所需状态的长时间运行命令。例如，将遥测发送间隔设置为 30 分钟；
 * [从云到设备 (C2D) 的消息][lnk-c2d]，向设备应用提供单向通知。
 
 下面详细比较了各种从云到设备的通信选项。
 
-| | 直接方法 | 设备孪生的所需属性 | C2D 消息 |
+| | 直接方法 | 克隆的所需属性 | C2D 消息 |
 | ---- | ------- | ---------- | ---- |
-| 方案 | 需要立即确认的命令，例如打开风扇。 | 适用于长时间运行的命令，目的是将设备置于某种所需状态，例如，将遥测发送时间间隔设置为 30 分钟。 | 提供给设备应用的单向通知。 |
-| 数据流 | 双向。设备应用可以立即响应方法。后端根据上下文接收请求结果。 | 单向。设备应用接收更改了属性的通知。 | 单向。设备应用接收消息
-| 持续性 | 不联系已断开连接的设备。会通知后端：设备未连接。 | 设备孪生会保留属性值。设备会在下次重新连接时读取属性值。属性值可通过 [SQL 类查询语言][lnk-query]检索。 | 消息可由 IoT 中心保留长达 48 小时。 |
+| 方案 | 需要立即确认的命令，例如打开风扇。 | 旨在将设备置于某个所需状态的长时间运行命令。例如，将遥测发送间隔设置为 30 分钟。 | 提供给设备应用的单向通知。 |
+| 数据流 | 双向。设备应用可以立即响应方法。解决方案后端根据上下文接收请求结果。 | 单向。设备应用接收更改了属性的通知。 | 单向。设备应用接收消息
+| 持续性 | 不联系已断开连接的设备。会通知后端：设备未连接。 | 设备孪生会保留属性值。设备会在下次重新连接时读取属性值。属性值可通过 [IoT 中心查询语言][lnk-query]检索。 | 消息可由 IoT 中心保留长达 48 小时。 |
 | 目标 | 通过 **deviceId** 与单个设备通信，或通过[作业][lnk-jobs]与多个设备通信。 | 通过 **deviceId** 与单个设备通信，或通过[作业][lnk-jobs]与多个设备通信。 | 通过 **deviceId** 与单个设备通信。 |
 | 大小 | 最多 8KB 请求和 8KB 响应。 | 所需属性大小最大为 8KB。 | 最多 256KB 的消息。 |
 | 频率 | 高。有关详细信息，请参阅 [IoT 中心限制][lnk-quotas]。 | 中。有关详细信息，请参阅 [IoT 中心限制][lnk-quotas]。 | 低。有关详细信息，请参阅 [IoT 中心限制][lnk-quotas]。 |
@@ -49,4 +53,5 @@ IoT 中心提供三个选项，允许设备应用向后端公开功能：
 [lnk-twin-properties]: /documentation/articles/iot-hub-node-node-twin-how-to-configure/
 [lnk-c2d-tutorial]: /documentation/articles/iot-hub-node-node-c2d/
 
-<!---HONumber=Mooncake_1212_2016-->
+<!---HONumber=Mooncake_0109_2017-->
+<!--Update_Description:update wording-->

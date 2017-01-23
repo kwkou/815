@@ -1,28 +1,25 @@
 <properties
- pageTitle="开发人员指南 - IoT 中心终结点 | Azure"
- description="Azure IoT 中心开发人员指南 - 有关 IoT 中心终结点的参考信息"
- services="iot-hub"
- documentationCenter=".net"
- authors="dominicbetts"
- manager="timlt"
- editor=""/>  
-
-
+    pageTitle="了解 Azure IoT 中心终结点 | Azure"
+    description="开发人员指南 - 有关 IoT 中心面向设备和面向服务的终结点的参考信息。"
+    services="iot-hub"
+    documentationcenter=".net"
+    author="dominicbetts"
+    manager="timlt"
+    editor="" />
 <tags
- ms.service="iot-hub"
- ms.devlang="multiple"
- ms.topic="article"
- ms.tgt_pltfrm="na"
- ms.workload="na"
- ms.date="09/30/2016"
- wacn.date="12/12/2016" 
- ms.author="dobett"/>  
+    ms.assetid="57ba52ae-19c6-43e4-bc6c-d8a5c2476e95"
+    ms.service="iot-hub"
+    ms.devlang="multiple"
+    ms.topic="article"
+    ms.tgt_pltfrm="na"
+    ms.workload="na"
+    ms.date="09/30/2016"
+    wacn.date="01/13/2017"
+    ms.author="dobett" />  
 
 
 # 参考 - IoT 中心终结点
-
-## IoT 中心终结点列表
-
+## 内置 IoT 中心终结点列表
 Azure IoT 中心属于多租户服务，向各种执行组件公开功能。下图显示了 IoT 中心公开的各种终结点。
 
 ![IoT 中心终结点][img-endpoints]
@@ -33,26 +30,42 @@ Azure IoT 中心属于多租户服务，向各种执行组件公开功能。下�
 * **设备标识管理**。每个 IoT 中心公开一组用于管理设备标识的 HTTP REST 终结点（创建、检索、更新和删除）。[设备标识][lnk-device-identities]用于设备身份验证和访问控制。
 * **设备孪生管理**。每个 IoT 中心都会公开一组面向服务的 HTTP REST 终结点，用于查询和更新[设备孪生][lnk-twins]（更新标记和属性）。
 * **作业管理**。每个 IoT 中心都会公开一组面向服务的 HTTP REST 终结点，用于查询和管理[作业][lnk-jobs]。
-* **设备终结点**。对于设备标识注册表中预配的每个设备，IoT 中心公开设备可用来发送和接收消息的一组终结点：
-    - *发送设备到云的消息*。使用此终结点[发送设备到云的消息][lnk-d2c]。
-    - *接收云到设备的消息*设备使用此终结点接收目标[云到设备的消息][lnk-c2d]。
-    - *启动文件上载*。设备使用此终结点接收来自 IoT 中心的 Azure 存储 SAS URI，以便[上载文件][lnk-upload]。
-    - *检索并更新设备孪生的属性*。设备使用此终结点访问其[设备孪生][lnk-twins]的属性。
-    - *接收直接方法请求*。设备使用此终结点侦听[直接方法][lnk-methods]的请求。
-
+* **设备终结点**。对于标识注册表中预配的每个设备，IoT 中心公开设备可用来发送和接收消息的一组终结点：
+  
+  * *发送设备到云的消息*。使用此终结点[发送设备到云的消息][lnk-d2c]。
+  * *接收云到设备的消息*设备使用此终结点接收目标[云到设备的消息][lnk-c2d]。
+  * *启动文件上载*。设备使用此终结点接收来自 IoT 中心的 Azure 存储 SAS URI，以便[上载文件][lnk-upload]。
+  * *检索并更新设备孪生的属性*。设备使用此终结点访问其[设备孪生][lnk-twins]的属性。
+  * *接收直接方法请求*。设备使用此终结点侦听[直接方法][lnk-methods]的请求。
+    
     这些终结点使用 [MQTT v3.1.1][lnk-mqtt]、HTTP 1.1 和 [AMQP 1.0][lnk-amqp] 协议进行公开。请注意，也可以通过端口 443 上的 [WebSockets][lnk-websockets] 来实现 AMQP。
     
     设备孪生的终结点和方法的终结点只能通过 [MQTT v3.1.1][lnk-mqtt] 使用。
-* **服务终结点**。每个 IoT 中心公开应用程序后端可用来与设备通信的一组终结点。这些终结点目前只能通过 [AMQP][lnk-amqp] 协议公开，方法调用终结点除外，后者通过 HTTP 1.1 公开。
-    - *接收设备到云的消息*。此终结点与 [Azure 事件中心][lnk-event-hubs]兼容。后端服务可用它来读取由设备发送的所有[设备到云的消息][lnk-d2c]。
-    - *发送云到设备的消息并接收传递确认*。这些终结点可让应用程序后端发送可靠的[云到设备的消息][lnk-c2d]，以及接收对应的传送或过期确认。
-    - *接收文件通知*。此消息传递终结点允许你在设备成功上传文件时接收通知。
-    - *直接方法调用*。此终结点允许后端服务调用设备上的[直接方法][lnk-methods]。
+* **服务终结点**。每个 IoT 中心公开解决方案后端可用来与设备通信的一组终结点。这些终结点目前只能通过 [AMQP][lnk-amqp] 协议公开，方法调用终结点除外，后者通过 HTTP 1.1 公开。
+  
+  * *接收设备到云的消息*。此终结点与 [Azure 事件中心][lnk-event-hubs]兼容。后端服务可用它来读取由设备发送的所有[设备到云的消息][lnk-d2c]。除此终结点外，还可将自定义路由终结点添加到 IoT 中心。
+  * *发送云到设备的消息并接收传递确认*。这些终结点可让解决方案后端发送可靠的[云到设备的消息][lnk-c2d]，以及接收对应的传送或过期确认。
+  * *接收文件通知*。此消息传递终结点允许你在设备成功上传文件时接收通知。
+  * *直接方法调用*。此终结点允许后端服务调用设备上的[直接方法][lnk-methods]。
 
-[IoT Hub APIs and SDKs][lnk-sdks]（IoT 中心 API 和 SDK）一文介绍了可用于访问这些终结点的各种方式。
+[Azure IoT SDK][lnk-sdks] 一文介绍了可用于访问这些终结点的各种方式。
 
 最后请务必注意，所有的 IoT 中心终结点都使用 [TLS][lnk-tls] 协议，且绝不会在未加密/不安全的通道上公开任何终结点。
 
+## 自定义路由终结点
+可将订阅中的现有 Azure 服务链接到用作消息路由终结点的 IoT 中心。它们充当服务终结点，用作消息路由的“接收器”。设备无法直接写入附加终结点。若要了解有关消息路由的详细信息，请参阅[通过 IoT 中心发送和接收消息][lnk-devguide-messaging]中的开发人员指南条目。
+
+IoT 中心当前支持将以下 Azure 服务作为附加终结点：
+
+* 事件中心
+* 服务总线队列
+* 服务总线主题
+
+IoT 中心需要这些终结点的写入权限，以便使用消息路由。如果通过 Azure 门户配置终结点，则将为你添加必要权限。请确保将服务配置为支持预期吞吐量。可能需要在首次配置 IoT 解决方案时监视附加终结点，然后针对实际负载进行任意的必要调整。
+
+如果消息与多个路由匹配，而这些路由全部指向同一终结点，则 IoT 中心仅向该终结点传递一次消息。因此不必在服务总线队列或主题中配置重复数据删除。在分区队列中，分区相关性可保障消息排序。不支持将已启用会话的队列用作终结点。也不支持已启用重复数据删除的分区队列和主题。
+
+有关可添加终结点的数量限制，请参阅[配额和限制][lnk-devguide-quotas]。
 ## <a name="field-gateways"></a> 现场网关
 
 在 IoT 解决方案中，*现场网关*位于设备和 IoT 中心终结点之间。它通常位于靠近设备的位置。设备使用设备支持的协议，直接与现场网关通信。现场网关使用 IoT 中心支持的协议连接到 IoT 中心终结点。现场网关可以是高度专业化的硬件，也可以是运行软件的低功率计算机，只需能够完成网关所适用的端到端方案即可。
@@ -63,7 +76,7 @@ Azure IoT 中心属于多租户服务，向各种执行组件公开功能。下�
 
 此 IoT 中心开发人员指南中的其他参考主题包括：
 
-- [设备孪生、方法和作业的 IoT 中心查询语言][lnk-devguide-query]
+- [设备孪生和作业的 IoT 中心查询语言][lnk-devguide-query]
 - [配额和限制][lnk-devguide-quotas]
 - [IoT 中心 MQTT 支持][lnk-devguide-mqtt]
 
@@ -94,5 +107,7 @@ Azure IoT 中心属于多租户服务，向各种执行组件公开功能。下�
 [lnk-devguide-quotas]: /documentation/articles/iot-hub-devguide-quotas-throttling/
 [lnk-devguide-query]: /documentation/articles/iot-hub-devguide-query-language/
 [lnk-devguide-mqtt]: /documentation/articles/iot-hub-mqtt-support/
+[lnk-devguide-messaging]: /documentation/articles/iot-hub-devguide-messaging/
 
-<!---HONumber=Mooncake_1205_2016-->
+<!---HONumber=Mooncake_0109_2017-->
+<!--Update_Description:update wording and add section of custom-routing-endpoint-->

@@ -1,21 +1,25 @@
 <properties
-	pageTitle="获取工具 (macOS 10.10)"
-	description="下载并安装适用于 macOS 上 Pi 的第一个示例应用程序的必需工具和软件。"
-	services="iot-hub"
-	documentationcenter=""
-	author="shizn"
-	manager="timlt"
-	tags=""
-	keywords=""/>  
-
-
+    pageTitle="获取工具 (macOS 10.10) | Azure"
+    description="下载并安装适用于 macOS 上 Pi 的第一个示例应用程序的必需工具和软件。"
+    services="iot-hub"
+    documentationcenter=""
+    author="shizn"
+    manager="timlt"
+    tags=""
+    keywords="iot 开发, iot 软件, 物联网软件, 安装 python mac, 在 mac 上安装 git, gulp 运行, 安装 node js mac" />
 <tags
-	ms.service="iot-hub"
-	ms.date="10/21/2016"
-	wacn.date="12/19/2016"/>  
+    ms.assetid="2ea6d211-c0e8-4ade-ac69-d1c2261d78c4"
+    ms.service="iot-hub"
+    ms.devlang="node"
+    ms.topic="article"
+    ms.tgt_pltfrm="na"
+    ms.workload="na"
+    ms.date="11/28/2016"
+    wacn.date="01/13/2017"
+    ms.author="xshi" />  
 
 
-# 获取工具 (macOS 10.10)
+# 获取工具 \(macOS 10.10\)
 > [AZURE.SELECTOR]
 - [Windows 7 或更高版本](/documentation/articles/iot-hub-raspberry-pi-kit-node-lesson1-get-the-tools-win32/)
 - [Ubuntu 16.04](/documentation/articles/iot-hub-raspberry-pi-kit-node-lesson1-get-the-tools-ubuntu/)
@@ -38,7 +42,7 @@
 若要完成此操作，需具备：
 
 * Internet 连接，用于下载开发工具和软件。
-* 运行 macOS Yosemite (10.10) 或更高版本的 Mac。
+* 运行 macOS Yosemite \(10.10\) 或更高版本的 Mac。
 
 ## 安装 Git 和 Node.js
 若要安装 Git 和 Node.js，请按以下步骤使用 [Homebrew](http://brew.sh) 包管理实用程序：
@@ -74,4 +78,5 @@
 ## 后续步骤
 [创建和部署 blink 示例应用程序](/documentation/articles/iot-hub-raspberry-pi-kit-node-lesson1-deploy-blink-app/)
 
-<!---HONumber=Mooncake_1212_2016-->
+<!---HONumber=Mooncake_0109_2017-->
+<!--Update_Description:update meta properties-->

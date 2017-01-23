@@ -1,119 +1,138 @@
 <properties
-	pageTitle="使用 CLI 创建 IoT 中心 | Azure"
-	description="按照本文说明，使用 Azure 命令行接口创建 IoT 中心。"
-	services="iot-hub"
-	documentationCenter=".net"
-	authors="BeatriceOltean"
-	manager="timlt"
-	editor=""/>  
-
-
+    pageTitle="使用 Azure CLI (az.py) 创建 IoT 中心 | Azure"
+    description="如何使用跨平台的 Azure CLI 2.0（预览版）(az.py) 创建 Azure IoT 中心。"
+    services="iot-hub"
+    documentationcenter=".net"
+    author="dominicbetts"
+    manager="timlt"
+    editor="" />
 <tags
-     ms.service="iot-hub"
-     ms.devlang="multiple"
-     ms.topic="article"
-     ms.tgt_pltfrm="na"
-     ms.workload="na"
-     ms.date="09/21/2016"
-     wacn.date="12/12/2016"
-     ms.author="boltean"/>  
+    ms.assetid="ms.service: iot-hub"
+    ms.devlang="multiple"
+    ms.topic="article"
+    ms.tgt_pltfrm="na"
+    ms.workload="na"
+    ms.date="12/15/2016"
+    wacn.date="01/13/2017"
+    ms.author="dobett" />  
 
 
-# 使用 Azure CLI 创建 IoT 中心
+# 使用 Azure CLI 2.0（预览版）创建 IoT 中心
 
 [AZURE.INCLUDE [iot-hub-resource-manager-selector](../../includes/iot-hub-resource-manager-selector.md)]
 
 ## 介绍
 
-可以使用 Azure 命令行接口以编程方式创建和管理 Azure IoT 中心。本文介绍如何使用 Azure CLI 创建 IoT 中心。
+可使用 Azure CLI 2.0（预览版）\(az.py\) 以编程方式创建和管理 Azure IoT 中心。本文说明如何使用 Azure CLI 2.0（预览版）\(az.py\) 创建 IoT 中心。
 
-完成本教程需具备以下条件：
+可使用以下 CLI 版本之一完成任务：
 
-- 有效的 Azure 帐户。只需几分钟即可创建一个 [Azure 试用][lnk-free-trial]帐户。
-- [Azure CLI 0.10.4][lnk-CLI-install] 或更高版本。如果已经有了 Azure CLI，则可在命令提示符处使用以下命令验证当前版本：
-```
-    azure --version
-```
+* [Azure CLI \(azure.js\)](/documentation/articles/iot-hub-create-using-cli-nodejs/)：用于经典部署模型和资源管理部署模型的 CLI。
+* Azure CLI 2.0（预览版）\(az.py\)：用于本文中所述的资源管理部署模型的下一代 CLI。
 
-> [AZURE.NOTE] Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model/)。Azure CLI 必须处于 Azure Resource Manager 模式：
-```
-    azure config mode arm
-```
+要完成本教程，需要具备以下先决条件：
 
-## 设置 Azure 帐户和订阅 
+* 有效的 Azure 帐户。如果没有帐户，只需花费几分钟就能创建一个[帐户][lnk-free-trial]。
+* [Azure CLI 2.0（预览版）][lnk-CLI-install]。
 
-1. 在命令提示符处键入以下命令登录
+## 登录并设置 Azure 帐户
 
-    	azure login -e AzureChinaCloud
-	
-    使用建议的 Web 浏览器和代码进行身份验证。
+登录 Azure 帐户，并将 Azure CLI 配置为与 IoT 中心资源配合使用。
 
-2. 如果你有多个 Azure 订阅，则连接到 Azure 即有权访问与凭据关联的所有 Azure 订阅。可查看这些订阅以及哪个订阅是默认订阅，只需使用以下命令
+1. 在命令提示符中，运行 [login 命令][lnk-login-command]：
+    
+    az login
 
-        azure account list 
+    按照说明使用代码进行身份验证，并通过 Web 浏览器登录 Azure 帐户。
 
+2. 如果有多个 Azure 订阅，登录 Azure 可获得与凭据关联的所有 Azure 帐户的访问权限。使用以下[命令，列出可供使用的 Azure 帐户][lnk-az-account-command]：
+    
+    
+    az account list 
+    
 
-	若要设置订阅上下文，以便在其下运行其余命令，请使用：
+    使用以下命令，选择想要用于运行命令以创建 IoT 中心的订阅。可使用上一命令输出中的订阅名称或 ID：
 
+    
+    az account set --subscription {your subscription name or id}
+    
 
-	    azure account set <subscription name>
+3. 安装 Azure CLI _iot 组件_。运行以下[命令，添加 iot 组件][lnk-az-addcomponent-command]：
+    
+    
+    az component update --add iot
+    
 
-
-3. 如果没有资源组，则可创建一个，将其命名为 **exampleResourceGroup**
-
-	    azure group create -n exampleResourceGroup -l chinaeast
-
-
-> [AZURE.TIP] [Use the Azure CLI to manage Azure resources and resource groups][lnk-CLI-arm]（使用 Azure CLI 管理 Azure 资源和资源组）一文详细介绍了如何使用 Azure CLI 管理 Azure 资源。
-
+4. 必须注册 IoT 提供程序才能部署 IoT 资源。运行以下[命令，注册 IoT 提供程序][lnk-az-register-command]：
+    
+    
+    az provider register -namespace Microsoft.Devices
+    
 
 ## 创建 IoT 中心
 
-所需参数：
+使用 Azure CLI 创建资源组，然后添加 IoT 中心。
 
-```
- azure iothub create -g <resource-group> -n <name> -l <location> -s <sku-name> -u <units>  
-	- <resourceGroup> The resource group name (case insensitive alphanumeric, underscore and hyphen, 1-64 length)
-	- <name> (The name of the IoT hub to be created. The format is case insensitive alphanumeric, underscore and hyphen, 3-50 length )
-	- <location> (The location (azure region/datacenter) where the IoT hub will be provisioned.
-	- <sku-name> (The name of the sku, one of: [F1, S1, S2, S3] etc. For the latest full list refer to the pricing page for IoT Hub.
-    - <units> (The number of provisioned units. Range : F1 [1-1] : S1, S2 [1-200] : S3 [1-10]. IoT Hub units are based on your total message count and the number of devices you want to connect.)
-```
-若要查看所有可以创建的参数，可以在命令提示符处使用帮助命令
+1. 创建 IoT 中心时，必须在资源组中创建它。使用现有资源组，或运行以下[命令创建资源组][lnk-az-resource-command]：
+    
+    
+     az group create --name {your resource group name} --location westus
+    
 
-    	azure iothub create -h 
+    > [AZURE.TIP]
+    上一示例在中国西部位置创建资源组。可运行 `az account list-locations -o table` 命令，查看可用位置的列表。
+    >
+    >
 
-简单示例：
+2. 运行以下[命令，在资源组中创建 IoT 中心][lnk-az-iot-command]：
+    
+    
+    az iot hub create --name {your iot hub name} --resource-group {your resource group name} --sku S1
+    
 
- 若要在资源组 **exampleResourceGroup** 中创建名为 **exampleIoTHubName** 的 IoT 中心，请直接运行以下命令
+> [AZURE.NOTE]
+IoT 中心的名称必须全局唯一。上一命令在计费的 S1 定价层中创建 IoT 中心。有关详细信息，请参阅 [Azure IoT 中心定价][lnk-iot-pricing]。
+>
+>
 
-        azure iothub create -g exampleResourceGroup -n exampleIoTHubName -l chinaeast -k s1 -u 1
+## 删除 IoT 中心
+
+可使用 Azure CLI [删除单个资源][lnk-az-resource-command]（例如 IoT 中心），或删除资源组及其所有资源（包括任何 IoT 中心）。
+
+若要删除 IoT 中心，请运行以下命令：
 
 
-> [AZURE.NOTE] 此 Azure CLI 命令为用户创建付费的 S1 标准 IoT 中心。可以使用以下命令删除 IoT 中心 **exampleIoTHubName**
-```
-    azure iothub delete -g exampleResourceGroup -n exampleIoTHubName
-```
+	az resource delete --name {your iot hub name} --resource-group {your resource group name} --resource-type Microsoft.Devices/IotHubs
+
+
+若要删除资源组及其所有资源，请运行以下命令：
+
+
+	az group delete --name {your resource group name}
 
 
 ## 后续步骤
-若要深入了解如何开发 IoT 中心，请参阅以下内容：
+若要详细了解如何开发 IoT 中心，请参阅以下文章：
 
-- [IoT 中心 SDK][lnk-sdks]
+* [IoT 中心开发人员指南][lnk-devguide]
 
 若要进一步探索 IoT 中心的功能，请参阅：
 
-- [使用 Azure 门户管理 IoT 中心][lnk-portal]
+* [使用 Azure 门户管理 IoT 中心][lnk-portal]
 
 <!-- Links -->
 
 [lnk-free-trial]: /pricing/1rmb-trial/
-[lnk-azure-portal]: https://portal.azure.cn/
-[lnk-CLI-install]: /documentation/articles/xplat-cli-install/
-[lnk-rest-api]: https://msdn.microsoft.com/zh-cn/library/mt589014.aspx
-[lnk-CLI-arm]: /documentation/articles/xplat-cli-azure-resource-manager/
-
-[lnk-sdks]: /documentation/articles/iot-hub-devguide-sdks/
+[lnk-CLI-install]: https://docs.microsoft.com/cli/azure/install-az-cli2
+[lnk-login-command]: https://docs.microsoft.com/cli/azure/get-started-with-az-cli2
+[lnk-az-account-command]: https://docs.microsoft.com/cli/azure/account
+[lnk-az-register-command]: https://docs.microsoft.com/cli/azure/provider
+[lnk-az-addcomponent-command]: https://docs.microsoft.com/cli/azure/component
+[lnk-az-resource-command]: https://docs.microsoft.com/cli/azure/resource
+[lnk-az-iot-command]: https://docs.microsoft.com/cli/azure/iot
+[lnk-iot-pricing]: /pricing/details/iot-hub/
+[lnk-devguide]: /documentation/articles/iot-hub-devguide/
 [lnk-portal]: /documentation/articles/iot-hub-create-through-portal/
 
-<!---HONumber=Mooncake_1205_2016-->
+<!---HONumber=Mooncake_0109_2017-->
+<!--Update_Description:update wording and code-->

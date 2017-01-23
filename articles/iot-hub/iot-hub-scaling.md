@@ -1,12 +1,11 @@
 <properties
  pageTitle="Azure IoT 中心缩放 | Azure"
- description="介绍如何缩放 Azure IoT 中心。"
+ description="如何缩放 IoT 中心来支持预期的消息吞吐量。概括介绍了分片选项和每层支持的吞吐量"
  services="iot-hub"
  documentationCenter=""
  authors="fsautomata"
  manager="timlt"
  editor=""/>  
-
 
 <tags
  ms.service="iot-hub"
@@ -15,13 +14,13 @@
  ms.tgt_pltfrm="na"
  ms.workload="na"
  ms.date="09/19/2016"
- wacn.date="01/04/2017"
+ wacn.date="01/13/2017"
  ms.author="elioda"/>  
 
 
 # 缩放 IoT 中心
 
-Azure IoT 中心可支持多达一百万台设备同时连接。有关详细信息，请参阅 [IoT 中心定价][lnk-pricing]。每个 IoT 中心计价单位允许特定数量的日常消息。
+Azure IoT 中心支持多达一百万台设备同时连接。有关详细信息，请参阅 [IoT 中心定价][lnk-pricing]。每个 IoT 中心计价单位允许特定数量的日常消息。
 
 为了正确缩放解决方案，必须考虑 IoT 中心的特定用法。尤其要考虑以下类别的操作所需的高峰吞吐量：
 
@@ -66,4 +65,5 @@ Azure IoT 中心可支持多达一百万台设备同时连接。有关详细信�
 [lnk-devguide]: /documentation/articles/iot-hub-devguide/
 [lnk-gateway]: /documentation/articles/iot-hub-linux-gateway-sdk-simulated-device/
 
-<!---HONumber=Mooncake_Quality_Review_1230_2016-->
+<!---HONumber=Mooncake_0109_2017-->
+<!--Update_Description:update wording-->

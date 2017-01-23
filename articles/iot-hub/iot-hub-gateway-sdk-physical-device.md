@@ -1,13 +1,11 @@
 <properties
-	pageTitle="通过网关 SDK 使用实际设备 | Azure"
-	description="Azure IoT 中心网关 SDK 演练使用 Texas Instruments SensorTag 通过 Intel Edison 计算模块上运行的网关将数据发送到 IoT 中心"
-	services="iot-hub"
-	documentationCenter=""
-	authors="chipalost"
-	manager="timlt"
-	editor=""/>  
-
-
+    pageTitle="将物理设备与 Azure IoT 网关 SDK 配合使用 | Azure"
+    description="如何使用 Texas Instruments SensorTag 设备通过 Raspberry Pi 3 设备上运行的网管将数据发送到 IoT 中心。该网关使用 Azure IoT 网关 SDK 生成。"
+    services="iot-hub"
+    documentationcenter=""
+    author="chipalost"
+    manager="timlt"
+    editor="" />
 <tags
      ms.service="iot-hub"
      ms.devlang="cpp"
@@ -22,7 +20,9 @@
 
 # Azure IoT 网关 SDK - 使用 Linux 通过实际设备发送设备到云消息
 
-本演练的蓝牙低功耗示例演示如何使用 [Microsoft Azure IoT 网关 SDK][lnk-sdk] 从物理设备将设备到云遥测转发到 IoT 中心以及如何从 IoT 中心将命令路由到物理设备。
+
+# 使用 Azure IoT 网关 SDK，通过物理设备发送设备到云的消息 \(Linux\)
+[蓝牙低功耗示例][lnk-ble-samplecode]演练展示了如何使用 [Azure IoT 网关 SDK][lnk-sdk] 将设备到云的遥测从物理设备转发到 IoT 中心，并介绍了如何将命令从 IoT 中心路由到物理设备。
 
 本文介绍的内容包括：
 
@@ -50,7 +50,7 @@
 
 ### 数据如何流经网关
 
-以下块图说明了遥测上载数据流管道：
+以下块图说明了遥测上传数据流管道：
 
 ![](./media/iot-hub-gateway-sdk-physical-device/gateway_ble_upload_data_flow.png)  
 
@@ -89,50 +89,50 @@ BLE 模块通过 BlueZ 堆栈与蓝牙硬件通信。需要 BlueZ 5.37 版才能
 
 1. 停止运行当前蓝牙守护程序：
    
-    ```
-    sudo systemctl stop bluetooth
-    ```
+    
+        sudo systemctl stop bluetooth
+    
 2. 安装 BlueZ 依赖项。
    
-    ```
-    sudo apt-get update
-    sudo apt-get install bluetooth bluez-tools build-essential autoconf glib2.0 libglib2.0-dev libdbus-1-dev libudev-dev libical-dev libreadline-dev
-    ```
+    
+        sudo apt-get update
+        sudo apt-get install bluetooth bluez-tools build-essential autoconf glib2.0 libglib2.0-dev libdbus-1-dev libudev-dev libical-dev libreadline-dev
+    
 3. 从 bluez.org 下载 BlueZ 源代码。
    
-    ```
-    wget http://www.kernel.org/pub/linux/bluetooth/bluez-5.37.tar.xz
-    ```
+    
+        wget http://www.kernel.org/pub/linux/bluetooth/bluez-5.37.tar.xz
+    
 4. 解压缩源代码。
    
-    ```
-    tar -xvf bluez-5.37.tar.xz
-    ```
+    
+        tar -xvf bluez-5.37.tar.xz
+    
 5. 将目录更改为新创建的文件夹。
    
-    ```
-    cd bluez-5.37
-    ```
+    
+        cd bluez-5.37
+    
 6. 配置要生成的 BlueZ 代码。
    
-    ```
-    ./configure --disable-udev --disable-systemd --enable-experimental
-    ```
+    
+        ./configure --disable-udev --disable-systemd --enable-experimental
+    
 7. 生成 BlueZ。
    
-    ```
-    make
-    ```
+    
+        make
+    
 8. 完成生成后安装 BlueZ。
    
-    ```
-    sudo make install
-    ```
+    
+        sudo make install
+    
 9. 更改蓝牙的 systemd 服务配置，使其指向文件 `/lib/systemd/system/bluetooth.service` 中的新蓝牙守护程序。使用以下文本替换“'ExecStart”行：
     
-    ```
-    ExecStart=/usr/local/libexec/bluetooth/bluetoothd -E
-    ```
+    
+        ExecStart=/usr/local/libexec/bluetooth/bluetoothd -E
+    
 
 ### 从 Raspberry Pi 3 设备启用到 SensorTag 设备的连接
 运行示例前，需要确认 Raspberry Pi 3 可以连接到 SensorTag 设备。
@@ -210,7 +210,7 @@ BLE 模块通过 BlueZ 堆栈与蓝牙硬件通信。需要 BlueZ 5.37 版才能
     Attempting to disconnect from A0:E6:F8:B5:F6:00
     Successful disconnected
     [CHG] Device A0:E6:F8:B5:F6:00 Connected: no
-    ```
+    
 
 现在，可在 Raspberry Pi 3 上运行 BLE 网关示例。
 
@@ -226,7 +226,7 @@ BLE 模块通过 BlueZ 堆栈与蓝牙硬件通信。需要 BlueZ 5.37 版才能
 ### 在 IoT 中心中配置两个示例设备
 
 - 若要在 Azure 订阅中[创建 IoT 中心][lnk-create-hub]，需要中心的名称来完成本演练。如果没有帐户，只需花费几分钟就能创建一个[帐户][lnk-free-trial]。
-- 将名为 **SensorTag\_01** 的设备添加到 IoT 中心，记下其 ID 和设备密钥。可使用[设备资源管理器或 iothub-explorer][lnk-explorer-tools] 工具将此设备添加至上一步中创建的 IoT 中心，然后检索其密钥。配置网关时，可将此设备映射到 SensorTag 设备。
+- 将名为 **SensorTag\_01** 的设备添加到 IoT 中心，记下其 ID 和设备密钥。可使用设备资源管理器或 iothub-explorer 工具将此设备添加至上一步中创建的 IoT 中心，然后检索其密钥。配置网关时，可将此设备映射到 SensorTag 设备。
 
 ### 在 Raspberry Pi 3 上生成 Azure IoT 网关 SDK
 
@@ -246,9 +246,9 @@ git submodule update --init --recursive
 
 Raspberry Pi 3 上有 IoT 网关 SDK 存储库的完整副本时，可以从包含该 SDK 的文件夹使用以下命令生成它：
 
-```
-./tools/build.sh --skip-unittests --skip-e2e-tests
-```
+
+./tools/build.sh --skip-unittests
+
 
 ### 在 Raspberry Pi 3 上配置和运行 BLE 示例
 若要启动和运行示例，需要配置参与网关的每个模块。在 JSON 文件中提供了此配置，你需要配置所有五个参与模块。存储库中提供了名为 **gateway\_sample.json** 的示例 JSON 文件，可将它用作自行生成配置文件的起点。此文件位于 IoT 网关 SDK 存储库的本地副本的 **samples/ble\_gateway/src** 文件夹中。
@@ -495,12 +495,13 @@ BLE 模块还支持从 Azure IoT 中心将指令发送到设备。可使用 Azur
 
 若要进一步探索 IoT 中心的功能，请参阅：
 
-- [开发人员指南][lnk-devguide]
+- [IoT 中心开发人员指南][lnk-devguide]
 
 <!-- Links -->
 
+[lnk-ble-samplecode]: https://github.com/Azure/azure-iot-gateway-sdk/tree/master/samples/ble_gateway
 [lnk-free-trial]: /pricing/1rmb-trial/
-[lnk-explorer-tools]: https://github.com/Azure/azure-iot-sdks/blob/master/doc/manage_iot_hub.md
+
 [lnk-sdk]: https://github.com/Azure/azure-iot-gateway-sdk/
 [lnk-noobs]: https://www.raspberrypi.org/documentation/installation/noobs.md
 [lnk-raspbian]: https://www.raspberrypi.org/downloads/raspbian/
@@ -509,4 +510,5 @@ BLE 模块还支持从 Azure IoT 中心将指令发送到设备。可使用 Azur
 [lnk-devguide]: /documentation/articles/iot-hub-devguide/
 [lnk-create-hub]: /documentation/articles/iot-hub-create-through-portal/
 
-<!---HONumber=Mooncake_Quality_Review_0117_2017-->
+<!---HONumber=Mooncake_0109_2017-->
+<!--Update_Description:update wording and link references-->

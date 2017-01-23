@@ -1,35 +1,33 @@
 <properties
-	pageTitle="设备孪生入门 | Azure"
-	description="本教程介绍如何使用设备孪生"
-	services="iot-hub"
-	documentationCenter="node"
-	authors="fsautomata"
-	manager="timlt"
-	editor=""/>  
-
-
+    pageTitle="Azure IoT 中心设备孪生入门 (.NET/Node) | Azure"
+    description="如何使用 Azure IoT 中心设备孪生添加标记，然后使用 IoT 中心查询。使用适用于 Node.js 的 Azure IoT 设备 SDK 实现模拟设备应用，并使用适用于 .NET 的 Azure IoT 服务 SDK 实现可添加标记并运行 IoT 中心查询的服务应用。"
+    services="iot-hub"
+    documentationcenter="node"
+    author="fsautomata"
+    manager="timlt"
+    editor="" />
 <tags
-     ms.service="iot-hub"
-     ms.devlang="node"
-     ms.topic="article"
-     ms.tgt_pltfrm="na"
-     ms.workload="na"
-     ms.date="09/13/2016"
-     wacn.date="12/12/2016"
-     ms.author="elioda"/>  
+    ms.assetid="f7e23b6e-bfde-4fba-a6ec-dbb0f0e005f4"
+    ms.service="iot-hub"
+    ms.devlang="node"
+    ms.topic="article"
+    ms.tgt_pltfrm="na"
+    ms.workload="na"
+    ms.date="09/13/2016"
+    wacn.date="01/13/2017"
+    ms.author="elioda" />  
 
 
-# 教程：设备孪生入门（预览版）
-
+# 设备孪生入门 \(.NET/Node\)
 [AZURE.INCLUDE [iot-hub-selector-twin-get-started](../../includes/iot-hub-selector-twin-get-started.md)]
 
-在本教程结束时，用户将有一个 .NET 控制台应用程序，以及一个 Node.js 控制台应用程序：
+在本教程结束时，你将拥有一个 .NET 控制台应用和一个 Node.js 控制台应用：
 
-* **AddTagsAndQuery.sln**，一个旨在从后端运行的 .NET 应用，用于添加标记并查询设备孪生。
-* **TwinSimulatedDevice.js**，一个 Node.js 应用，可模拟使用早前创建的设备标识连接到 IoT 中心的设备，并报告其连接状况。
+* **AddTagsAndQuery.sln**，一个 .NET 后端应用，用于添加标记并查询设备孪生。
+* **TwinSimulatedDevice.js**，一个 Node.js 应用，它模拟使用早前创建的设备标识连接到 IoT 中心的设备，并报告其连接条件。
 
 > [AZURE.NOTE]
-[Azure IoT SDK][lnk-hub-sdks] 一文介绍了各种可用来构建设备和后端应用程序的 SDK。
+[Azure IoT SDK][lnk-hub-sdks] 文章介绍了可用于构建设备和后端应用的 Azure IoT SDK。
 > 
 > 
 
@@ -46,21 +44,21 @@
 [AZURE.INCLUDE [iot-hub-get-started-create-device-identity](../../includes/iot-hub-get-started-create-device-identity.md)]
 
 ## 创建服务应用
-在此部分，会创建一个 Node.js 控制台应用，将位置元数据添加到与 **myDeviceId** 关联的设备孪生。该应用随后会选择位于中国的设备来查询存储在中心的设备孪生，然后查询报告手机网络连接的设备孪生。
+在此部分，会创建一个 Node.js 控制台应用，将位置元数据添加到与 **myDeviceId** 关联的设备孪生。该应用随后会选择位于中国的设备来查询存储在 IoT 中心的设备孪生，然后查询报告手机网络连接的设备孪生。
 
 1. 在 Visual Studio 中，使用“控制台应用程序”项目模板将 Visual C# Windows 经典桌面项目添加到当前解决方案。将项目命名为 **AddTagsAndQuery**。
    
     ![新的 Visual C# Windows 经典桌面项目][img-createapp]  
 
 2. 在“解决方案资源管理器”中，右键单击“AddTagsAndQuery”项目，然后单击“管理 NuGet 包”。
-3. 在“Nuget 包管理器”窗口中，选择“浏览”，搜索 **microsoft.azure.devices**，选择“安装”以安装 **Microsoft.Azure.Devices** 包，然后接受使用条款。此过程将下载、安装 [Microsoft Azure IoT Service SDK][lnk-nuget-service-sdk]（Microsoft Azure IoT 服务 SDK）NuGet 包及其依赖项并添加对它的引用。
+3. 在“Nuget 包管理器”窗口中，选择“浏览”，搜索 **microsoft.azure.devices**，选择“安装”以安装 **Microsoft.Azure.Devices** 包，然后接受使用条款。此过程将下载、安装 [Azure IoT 服务 SDK][lnk-nuget-service-sdk] NuGet 包及其依赖项并添加对它的引用。
    
     ![“NuGet 包管理器”窗口][img-servicenuget]  
 
 4. 在 **Program.cs** 文件顶部添加以下 `using` 语句：
    
         using Microsoft.Azure.Devices;
-5. 将以下字段添加到 **Program** 类。将占位符值替换为在上一部分中为 IoT 中心创建的连接字符串。
+5. 将以下字段添加到 **Program** 类。将占位符值替换为在上一部分中为中心创建的 IoT 中心连接字符串。
    
         static RegistryManager registryManager;
         static string connectionString = "{iot hub connection string}";
@@ -108,20 +106,20 @@
 在下一部分，用户创建的设备应用会报告连接信息并更改上一部分中查询的结果。
 
 ## 创建设备应用
-在此部分，会创建一个 Node.js 控制台应用作为 **myDeviceId** 连接到中心，然后更新其设备孪生的报告属性，说明它是使用手机网络进行连接的。
+在此部分，用户需创建一个 Node.js 控制台应用作为 **myDeviceId** 连接到中心，然后更新其报告属性，以包含它使用手机网络进行连接的信息。
 
-1. 新建名为 **reportconnectivity** 的空文件夹。在命令提示符下的 **reportconnectivity** 文件夹中，使用以下命令创建新的 package.json 文件。接受所有默认值：
+1. 新建名为 **reportconnectivity** 的空文件夹。在 **reportconnectivity** 文件夹的命令提示符处，使用以下命令创建新的 package.json 文件。接受所有默认值：
    
-    ```
-    npm init
-    ```
-2. 在 **reportconnectivity** 文件夹的命令提示符处，运行下述命令以安装 **azure-iot-device** 和 **azure-iot-device-mqtt** 包：
+    
+        npm init
+    
+2. 在 **reportconnectivity** 文件夹的命令提示符处，运行以下命令来安装 **azure-iot-device** 和 **azure-iot-device-mqtt** 包：
    
-    ```
-    npm install azure-iot-device azure-iot-device-mqtt --save
-    ```
+    
+        npm install azure-iot-device azure-iot-device-mqtt --save
+    
 3. 在 **reportconnectivity** 文件夹中使用文本编辑器新建 **ReportConnectivity.js** 文件。
-4. 将以下代码添加到 **ReportConnectivity.js** 文件，并将 **{device connection string}** 占位符替换为在创建 **myDeviceId** 设备标识时复制的连接字符串：
+4. 将以下代码添加到 **ReportConnectivity.js** 文件，并将 **{device connection string}** 占位符替换为创建 **myDeviceId** 设备标识时复制的设备连接字符串：
    
         'use strict';
         var Client = require('azure-iot-device').Client;
@@ -171,7 +169,7 @@
 
 
 ## 后续步骤
-在本教程中，在 Azure 门户中配置了新的 IoT 中心，然后在中心的标识注册表中创建了设备标识。已从后端应用程序以标记形式添加了设备元数据，并编写了模拟的设备应用，用于报告设备孪生中的设备连接信息。你还学习了如何使用 IoT 中心的类似 SQL 的查询语言来查询此信息。
+本教程中，在 Azure 门户预览中配置了新的 IoT 中心，然后在 IoT 中心的标识注册表中创建了设备标识。已从后端应用以标记形式添加了设备元数据，并编写了模拟的设备应用，用于报告设备孪生中的设备连接信息。还学习了如何使用类似 SQL 的 IoT 中心查询语言来查询此信息。
 
 充分利用以下资源：
 
@@ -204,4 +202,5 @@
 
 [lnk-dev-setup]: https://github.com/Azure/azure-iot-sdks/blob/master/doc/get_started/node-devbox-setup.md
 
-<!---HONumber=Mooncake_1205_2016-->
+<!---HONumber=Mooncake_0109_2017-->
+<!--Update_Description:update wording-->

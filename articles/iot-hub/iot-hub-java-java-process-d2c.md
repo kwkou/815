@@ -55,9 +55,8 @@ IoT 中心公开[事件中心][lnk-event-hubs]兼容的终结点来接收设备�
 
 + [IoT 中心入门]教程的完整工作版本。
 
-+ Java SE 8。<br/>[准备开发环境][lnk-dev-setup]介绍了如何在 Windows 或 Linux 上安装本教程所用的 Java。
-
-+ Maven 3。<br/>[准备开发环境][lnk-dev-setup]介绍了如何在 Windows 或 Linux 上安装本教程所用的 Maven。
++ Java SE 8。<br/>
++ Maven 3。<br/>
 
 + 有效的 Azure 帐户。<br/>如果没有 Azure 订阅，只需几分钟即可创建一个[试用帐户](/pricing/1rmb-trial/)。
 
@@ -694,7 +693,7 @@ IoT 中心公开[事件中心][lnk-event-hubs]兼容的终结点来接收设备�
 [lnk-service-fabric]: /documentation/services/service-fabric/
 [lnk-stream-analytics]: /documentation/services/stream-analytics/
 [lnk-event-hubs]: /documentation/services/event-hubs/
-[Transient Fault Handling]: https://msdn.microsoft.com/zh-cn/library/hh675232.aspx
+
 
 <!-- Links -->
 [关于 Azure 存储]: /documentation/articles/storage-create-storage-account/#create-a-storage-account
@@ -709,7 +708,7 @@ IoT 中心公开[事件中心][lnk-event-hubs]兼容的终结点来接收设备�
 [lnk-c2d]: /documentation/articles/iot-hub-java-java-process-d2c/
 [lnk-suite]: /documentation/services/iot-suite/
 
-[lnk-dev-setup]: https://github.com/Azure/azure-iot-sdks/blob/master/doc/get_started/java-devbox-setup.md
+
 [lnk-create-an-iot-hub]: /documentation/articles/iot-hub-java-java-getstarted/
 
 <!---HONumber=Mooncake_1205_2016-->

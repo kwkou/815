@@ -1,30 +1,33 @@
 <properties
-	pageTitle="使用 Azure IoT 中心的直接方法 (C#)"
-	description="本教程介绍如何使用直接方法"
-	services="iot-hub"
-	documentationcenter=""
-	author="nberdy"
-	manager="timlt"
-	editor=""/>  
-
-
+    pageTitle="使用 Azure IoT 中心的直接方法 (.NET/Node) | Azure"
+    description="如何使用 Azure IoT 中心直接方法。使用适用于 Node.js 的 Azure IoT 设备 SDK 实现包含直接方法的模拟设备应用，并使用适用于 .NET 的 Azure IoT 服务 SDK 实现调用直接方法的服务应用。"
+    services="iot-hub"
+    documentationcenter=""
+    author="nberdy"
+    manager="timlt"
+    editor="" />
 <tags
-	ms.service="iot-hub"
-	ms.date="10/05/2016"
-	wacn.date="12/19/2016"/>  
+    ms.assetid="ab035b8e-bff8-4e12-9536-f31d6b6fe425"
+    ms.service="iot-hub"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.tgt_pltfrm="na"
+    ms.workload="na"
+    ms.date="10/05/2016"
+    wacn.date="01/13/2017"
+    ms.author="nberdy" />  
 
 
-
-# 教程：使用直接方法 (C#)
+# 使用直接方法\(.NET/Node\)
 [AZURE.INCLUDE [iot-hub-selector-c2d-methods](../../includes/iot-hub-selector-c2d-methods.md)]
 
-在本教程结束时，用户将有一个 .NET 控制台应用程序，以及一个 Node.js 控制台应用程序：
+在本教程结束时，你将拥有一个 .NET 控制台应用和一个 Node.js 控制台应用：
 
-* **CallMethodOnDevice.sln**：一个 .NET 应用，可从后端运行，用于调用模拟设备上的方法并显示响应。
+* **CallMethodOnDevice.sln**：一个 .NET 后端应用，可调用模拟设备应用上的方法并显示响应。
 * **SimulatedDevice.js**：一个 Node.js 应用，它模拟使用早前创建的设备标识连接到 IoT 中心的设备，并响应通过云调用的方法。
 
 > [AZURE.NOTE]
-[Azure IoT SDK][lnk-hub-sdks] 一文提供了各种 SDK 的相关信息，用户可以使用这些 SDK 构建可在设备上和解决方案后端运行的应用程序。
+[Azure IoT SDK][lnk-hub-sdks] 文章介绍了 Azure IoT SDK，这些 SDK 可用于构建在设备和解决方案后端运行的应用程序。
 > 
 > 
 
@@ -39,7 +42,7 @@
 [AZURE.INCLUDE [iot-hub-get-started-create-device-identity](../../includes/iot-hub-get-started-create-device-identity.md)]
 
 ## 创建模拟设备应用程序
-在本部分，用户需创建一个 Node.js 控制台应用，用于响应通过后端调用的方法。
+在本部分，用户需创建一个 Node.js 控制台应用，用于响应解决方案后端调用的方法。
 
 1. 新建名为 **simulateddevice** 的空文件夹。在 **simulateddevice** 文件夹的命令提示符处，使用以下命令创建 package.json 文件。接受所有默认值：
    
@@ -54,13 +57,13 @@
 3. 在 **simulateddevice** 文件夹中，利用文本编辑器创建新的 **SimulatedDevice.js** 文件。
 4. 在 **SimulatedDevice.js** 文件的开头添加以下 `require` 语句：
    
-    ```
-    'use strict';
-   
-    var Mqtt = require('azure-iot-device-mqtt').Mqtt;
-    var DeviceClient = require('azure-iot-device').Client;
-    ```
-5. 添加 **connectionString** 变量，并用其创建设备客户端。将 **{device connection string}** 替换为在“创建设备标识”部分创建的连接字符串：
+    
+        'use strict';
+       
+        var Mqtt = require('azure-iot-device-mqtt').Mqtt;
+        var DeviceClient = require('azure-iot-device').Client;
+    
+5. 添加 **connectionString** 变量，并使用它创建 **DeviceClient** 实例。将 **{device connection string}** 替换为在“创建设备标识”部分创建的设备连接字符串：
    
     ```
     var connectionString = '{device connection string}';
@@ -101,14 +104,14 @@
 > 
 
 ## 在设备上调用直接方法
-在此部分，用户需创建一个 .NET 控制台应用，以便调用模拟设备上的方法，然后显示响应。
+在此部分，用户需创建一个 .NET 控制台应用，以便调用模拟设备应用上的方法，然后显示响应。
 
 1. 在 Visual Studio 中，使用“控制台应用程序”项目模板将 Visual C# Windows 经典桌面项目添加到当前解决方案。确保 .NET Framework 版本为 4.5.1 或更高。将项目命名为 **CallMethodOnDevice**。
    
     ![新的 Visual C# Windows 经典桌面项目][10]  
 
 2. 在“解决方案资源管理器”中，右键单击“CallMethodOnDevice”项目，然后单击“管理 NuGet 包”。
-3. 在“Nuget 包管理器”窗口中，选择“浏览”，搜索 **microsoft.azure.devices**，选择“安装”以安装 **Microsoft.Azure.Devices** 包，然后接受使用条款。此过程将下载、安装 [Microsoft Azure IoT Service SDK][lnk-nuget-service-sdk]（Microsoft Azure IoT 服务 SDK）NuGet 包及其依赖项并添加对它的引用。
+3. 在“NuGet 包管理器”窗口中，选择“浏览”，搜索 **microsoft.azure.devices**，选择“安装”以安装 **Microsoft.Azure.Devices** 包，然后接受使用条款。此过程将下载、安装 [Azure IoT 服务 SDK][lnk-nuget-service-sdk] NuGet 包及其依赖项并添加对它的引用。
    
     ![“NuGet 包管理器”窗口][11]  
 
@@ -117,7 +120,7 @@
    
         using System.Threading.Tasks;
         using Microsoft.Azure.Devices;
-5. 将以下字段添加到 **Program** 类。将占位符值替换为在上一部分中为 IoT 中心创建的连接字符串。
+5. 将以下字段添加到 **Program** 类。将占位符值替换为在上一部分中为中心创建的 IoT 中心连接字符串。
    
         static ServiceClient serviceClient;
         static string connectionString = "{iot hub connection string}";
@@ -145,7 +148,7 @@
 ## 运行应用程序
 现在，你已准备就绪，可以运行应用程序了。
 
-1. 在 **simulateddevice** 文件夹的命令提示符处运行以下命令，开始侦听向从 IoT 中心发出的方法调用：
+1. 在 **simulateddevice** 文件夹的命令提示符处运行以下命令，开始侦听从 IoT 中心发出的方法调用：
    
     ```
     node SimulatedDevice.js
@@ -153,7 +156,7 @@
    
     ![][7]  
 
-2. 设备已连接，正在等待方法调用，此时可运行 .NET **CallMethodOnDevice** 应用，调用模拟设备上的方法。此时会看到写入控制台的设备响应。
+2. 设备已连接，正在等待方法调用，此时可运行 .NET **CallMethodOnDevice** 应用，在模拟设备应用中调用方法。此时会看到写入控制台的设备响应。
    
     ![][8]  
 
@@ -163,7 +166,7 @@
 
 
 ## 后续步骤
-在本教程中，在 Azure 门户中配置了新的 IoT 中心，然后在中心的标识注册表中创建了设备标识。你已通过此设备标识启用模拟设备应用的相关功能，使之能够响应通过云调用的方法。你还创建了一个应用，用于调用设备上的方法并显示来自设备的响应。
+本教程中，在 Azure 门户预览中配置了新的 IoT 中心，然后在 IoT 中心的标识注册表中创建了设备标识。你已通过此设备标识启用模拟设备应用的相关功能，使之能够响应通过云调用的方法。你还创建了一个应用，用于调用设备上的方法并显示来自设备的响应。
 
 若要继续了解 IoT 中心入门知识并浏览其他 IoT 方案，请参阅：
 
@@ -201,4 +204,5 @@
 [Process Device-to-Cloud messages]: /documentation/articles/iot-hub-csharp-csharp-process-d2c/
 [IoT 中心入门]: /documentation/articles/iot-hub-node-node-getstarted/
 
-<!---HONumber=Mooncake_1212_2016-->
+<!---HONumber=Mooncake_0109_2017-->
+<!--Update_Description:update wording-->

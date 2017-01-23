@@ -1,33 +1,37 @@
 <properties
-	pageTitle="使用直接方法"
-	description="本教程介绍如何使用直接方法"
-	services="iot-hub"
-	documentationcenter=""
-	author="nberdy"
-	manager="timlt"
-	editor=""/>  
-
-
+    pageTitle="Azure IoT 中心直接方法 (Node) | Azure"
+    description="如何使用 Azure IoT 中心直接方法。使用 Azure IoT SDK for Node.js 实现包含直接方法的模拟设备应用和调用直接方法的服务应用。"
+    services="iot-hub"
+    documentationcenter=""
+    author="nberdy"
+    manager="timlt"
+    editor="" />
 <tags
-	ms.service="iot-hub"
-	ms.date="10/05/2016"
-	wacn.date="12/19/2016"/>  
+    ms.assetid="ea9c73ca-7778-4e38-a8f1-0bee9d142f04"
+    ms.service="iot-hub"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.tgt_pltfrm="na"
+    ms.workload="na"
+    ms.date="10/05/2016"
+    wacn.date="01/13/2017"
+    ms.author="nberdy" />  
 
 
-# 教程：使用直接方法
+# 使用直接方法 \(Node\)
 [AZURE.INCLUDE [iot-hub-selector-c2d-methods](../../includes/iot-hub-selector-c2d-methods.md)]
 
-在本教程结束时，用户有两个 Node.js 控制台应用程序：
+在本教程结束时，你将拥有两个 Node.js 控制台应用：
 
-* **CallMethodOnDevice.js**，用于调用模拟设备上的方法并显示响应。
+* **CallMethodOnDevice.js**，用于在模拟设备应用上调用方法并显示响应。
 * **SimulatedDevice.js**，可使用前面创建的设备标识连接到 IoT 中心，并响应通过云调用的方法。
 
 > [AZURE.NOTE]
-[Azure IoT SDK][lnk-hub-sdks] 一文提供了各种 SDK 的相关信息，用户可以使用这些 SDK 构建可在设备上和解决方案后端运行的应用程序。
+[Azure IoT SDK][lnk-hub-sdks] 文章介绍了 Azure IoT SDK，这些 SDK 可用于构建在设备和解决方案后端运行的应用程序。
 > 
 > 
 
-若要完成本教程，您需要以下各项：
+要完成本教程，需要具备以下先决条件：
 
 * Node.js 0.10.x 或更高版本。
 * 有效的 Azure 帐户。（如果没有帐户，只需花费几分钟就能创建一个[帐户][lnk-free-trial]。）
@@ -52,13 +56,13 @@
 3. 在 **simulateddevice** 文件夹中，利用文本编辑器创建新的 **SimulatedDevice.js** 文件。
 4. 在 **SimulatedDevice.js** 文件的开头添加以下 `require` 语句：
    
-    ```
-    'use strict';
-   
-    var Mqtt = require('azure-iot-device-mqtt').Mqtt;
-    var DeviceClient = require('azure-iot-device').Client;
-    ```
-5. 添加 **connectionString** 变量，并用其创建设备客户端。将 **{device connection string}** 替换为在“创建设备标识”部分创建的连接字符串：
+    
+        'use strict';
+       
+        var Mqtt = require('azure-iot-device-mqtt').Mqtt;
+        var DeviceClient = require('azure-iot-device').Client;
+    
+5. 添加 **connectionString** 变量，并使用它创建 **DeviceClient** 实例。将 **{device connection string}** 替换为在“创建设备标识”部分创建的设备连接字符串：
    
     ```
     var connectionString = '{device connection string}';
@@ -99,7 +103,7 @@
 > 
 
 ## 调用设备上的方法
-在此部分，用户需创建一个 Node.js 控制台应用，以便调用模拟设备上的方法，然后显示响应。
+在此部分中，会创建一个 Node.js 控制台应用，该应用在模拟设备应用上调用方法并随后显示响应。
 
 1. 新建名为 **callmethodondevice** 的空文件夹。在 **callmethodondevice** 文件夹的命令提示符处，使用以下命令创建 package.json 文件。接受所有默认值：
    
@@ -114,12 +118,12 @@
 3. 使用文本编辑器，在 **callmethodondevice** 文件夹中创建 **CallMethodOnDevice.js** 文件。
 4. 在 **CallMethodOnDevice.js** 文件的开头添加以下 `require` 语句：
    
-    ```
-    'use strict';
-   
-    var Client = require('azure-iothub').Client;
-    ```
-5. 添加以下变量声明，并将占位符值替换为你的 IoT 中心的连接字符串：
+    
+        'use strict';
+       
+        var Client = require('azure-iothub').Client;
+    
+5. 添加以下变量声明，并将占位符值替换为中心的 IoT 中心连接字符串：
    
     ```
     var connectionString = '{iothub connection string}';
@@ -154,7 +158,7 @@
 ## 运行应用
 现在，已准备就绪，可以运行应用。
 
-1. 在 **simulateddevice** 文件夹的命令提示符处运行以下命令，开始侦听向从 IoT 中心发出的方法调用：
+1. 在 **simulateddevice** 文件夹的命令提示符处运行以下命令，开始侦听从 IoT 中心发出的方法调用：
    
     ```
     node SimulatedDevice.js
@@ -162,7 +166,7 @@
    
     ![][7]  
 
-2. 在 **callmethodondevice** 文件夹中的命令提示符处运行以下命令，开始监视 IoT 中心：
+2. 在 **callmethodondevice** 文件夹的命令提示符处运行以下命令，开始监视 IoT 中心：
    
     ```
     node CallMethodOnDevice.js 
@@ -176,7 +180,7 @@
 
 
 ## 后续步骤
-在本教程中，在 Azure 门户中配置了新的 IoT 中心，然后在中心的标识注册表中创建了设备标识。你已通过此设备标识启用模拟设备应用的相关功能，使之能够响应通过云调用的方法。你还创建了一个应用，用于调用设备上的方法并显示来自设备的响应。
+本教程中，在 Azure 门户预览中配置了新的 IoT 中心，然后在 IoT 中心的标识注册表中创建了设备标识。你已通过此设备标识启用模拟设备应用的相关功能，使之能够响应通过云调用的方法。你还创建了一个应用，用于调用设备上的方法并显示来自设备的响应。
 
 若要继续了解 IoT 中心入门知识并浏览其他 IoT 方案，请参阅：
 
@@ -210,4 +214,5 @@
 [Process Device-to-Cloud messages]: /documentation/articles/iot-hub-csharp-csharp-process-d2c/
 [IoT 中心入门]: /documentation/articles/iot-hub-node-node-getstarted/
 
-<!---HONumber=Mooncake_1212_2016-->
+<!---HONumber=Mooncake_0109_2017-->
+<!--Update_Description:update wording-->

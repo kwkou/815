@@ -1,22 +1,21 @@
 <properties
- pageTitle="开发人员指南 - 术语表 | Azure"
- description="与 IoT 中心相关的常见术语表"
- services="iot-hub"
- documentationCenter=".net"
- authors="dominicbetts"
- manager="timlt"
- editor=""/>  
-
-
+    pageTitle="Azure IoT 中心术语表 | Azure"
+    description="开发人员指南 - 与 Azure IoT 中心相关的常用术语的术语表。"
+    services="iot-hub"
+    documentationcenter=".net"
+    author="dominicbetts"
+    manager="timlt"
+    editor="" />
 <tags
- ms.service="iot-hub"
- ms.devlang="multiple"
- ms.topic="article"
- ms.tgt_pltfrm="na"
- ms.workload="na"
- ms.date="09/30/2016"
- wacn.date="12/12/2016" 
- ms.author="dobett"/>  
+    ms.assetid="16ef29ea-a185-48c3-ba13-329325dc6716"
+    ms.service="iot-hub"
+    ms.devlang="multiple"
+    ms.topic="article"
+    ms.tgt_pltfrm="na"
+    ms.workload="na"
+    ms.date="09/30/2016"
+    wacn.date="01/13/2017"
+    ms.author="dobett" />  
 
 
 # IoT 中心术语表
@@ -38,7 +37,7 @@
 提供了多种语言的_服务 SDK_，以便于用户创建与 IoT 中心交互的[后端应用](#back-end-app)。IoT 中心教程介绍了如何使用这些服务 SDK。可以在此 GitHub [存储库](https://github.com/Azure/azure-iot-sdks)中找到有关服务 SDK 的源代码和进一步信息。
 
 ## <a name="azure-portal"></a> Azure 门户
-[Microsoft Azure 门户](https://portal.azure.cn)是一个中心位置，可在其中预配和管理 Azure 资源。该门户使用_边栏选项卡_组织其内容。在某些 IoT 中心教程中，可能会要求使用 [Azure 经典管理门户](https://manage.windowsazure.cn)。
+[Azure 门户预览](https://portal.azure.cn)是一个中心位置，可在其中预配和管理 Azure 资源。该门户使用_边栏选项卡_组织其内容。在某些 IoT 中心教程中，可能会要求使用 [Azure 经典管理门户](https://manage.windowsazure.cn)。
 
 ## Azure PowerShell
 [Azure PowerShell](/documentation/articles/powershell-install-configure/) 是一个 cmdlet 集合，可用于通过 Windows PowerShell 管理 Azure。你可以使用 cmdlet 来创建、测试、部署和管理通过 Azure 平台传送的解决方案和服务。
@@ -62,8 +61,9 @@
 指从 IoT 中心发送到已连接设备的消息。这些消息通常是命令，用于指示设备采取某项操作。有关详细信息，请参阅 [Send and receive messages with IoT Hub](/documentation/articles/iot-hub-devguide-messaging/)（使用 IoT 中心发送和接收消息）。
 
 ## <a name="connection-string"></a> 连接字符串
-使用应用程序代码中的连接字符串来封装连接到终结点所需的信息。连接字符串通常包含终结点的地址和安全信息，但连接字符串的格式因服务而异。
-
+使用应用程序代码中的连接字符串来封装连接到终结点所需的信息。连接字符串通常包含终结点的地址和安全信息，但连接字符串的格式因服务而异。与 IoT 中心服务关联的连接字符串有两种：
+- *设备连接字符串*使设备能够连接到 IoT 中心上面向设备的终结点。
+- *IoT 中心连接字符串*使后端应用能够连接到 IoT 中心上面向服务的终结点。
 ## <a name="custom-gateway"></a> 自定义网关
 网关使不能直接连接到 [IoT 中心](#iot-hub)的设备能建立连接。可以使用 [Azure IoT 网关 SDK](#azure-iot-gateway-sdk) 生成自定义网关，以便使用自定义逻辑处理消息和自定义协议转换。
 
@@ -116,7 +116,7 @@
 [设备孪生](/documentation/articles/iot-hub-devguide-device-twins/)是存储设备状态信息（如元数据、配置和条件）的 JSON 文档。[IoT 中心](#iot-hub)为在 IoT 中心预配的每台设备保留一个设备孪生。借助设备孪生可以在设备和解决方案后端之间同步[设备条件](#device-condition)和配置。可以通过查询设备孪生来定位特定设备和查询长时间运行的操作状态。
 
 ## 设备孪生查询
-[设备孪生查询](/documentation/articles/iot-hub-devguide-query-language/)使用类似 SQL 的查询语言从设备孪生中检索信息。可以使用相同的查询语言检索在 IoT 中心运行的[作业](#job)的信息。
+[设备孪生查询](/documentation/articles/iot-hub-devguide-query-language/)使用类似 SQL 的 IoT 中心查询语言从设备孪生中检索信息。可以使用相同的 IoT 中心查询语言检索在 IoT 中心运行的[作业](#job)的信息。
 
 ## 设备孪生同步
 设备孪生同步使用设备孪生中的[所需属性](#desired-properties)配置设备并检索设备中的[报告属性](#reported-properties)，以将其存储在设备孪生中。
@@ -125,7 +125,7 @@
 可以通过调用 IoT 中心的 API，使用[直接方法](/documentation/articles/iot-hub-devguide-direct-methods/)触发在设备上执行的方法。
 
 ## 终结点
-IoT 中心公开了多个[终结点](/documentation/articles/iot-hub-devguide-endpoints/)，以便使应用能够连接到中心。有面向设备的终结点，通过此终结点设备可以执行一些操作，例如发送[设备到云](#device-to-cloud)消息和接收[云到设备](#cloud-to-device)消息。有面向服务的终结点，通过此终结点[后端应用程序](#back-end-app)可以执行一些操作，如[设备标识](#device-identity)管理和设备孪生管理。
+IoT 中心将公开多个[终结点](/documentation/articles/iot-hub-devguide-endpoints/)，使 IoT 应用可通过这些终结点连接到中心。有面向设备的终结点，通过此终结点设备可以执行一些操作，例如发送[设备到云](#device-to-cloud)消息和接收[云到设备](#cloud-to-device)消息。有面向服务的终结点，通过此终结点[后端应用程序](#back-end-app)可以执行一些操作，如[设备标识](#device-identity)管理和设备孪生管理。
 
 ## 事件中心服务
 [事件中心](/documentation/articles/event-hubs-what-is-event-hubs/)是高度可扩展的数据传入服务，每秒可以引入数以百万计的事件。该服务使用户能够处理和分析连接设备和应用程序产生的大量数据。有关该服务与 IoT 中心服务的比较的信息，请参阅 [Azure IoT 中心和 Azure 事件中心的比较](/documentation/articles/iot-hub-compare-event-hubs/)。
@@ -146,7 +146,7 @@ IoT 中心公开了多个[终结点](/documentation/articles/iot-hub-devguide-en
 [标识注册表](/documentation/articles/iot-hub-devguide-identity-registry/)是 IoT 中心的内置组件，用于存储允许连接到中心的单个设备的信息。
 
 ## <a name="interactive-message"></a> 交互式消息
-交互式消息是[云到设备](#cloud-to-device)的消息，可在应用程序后端触发即时操作。例如，设备可能会发送故障警报，而该故障会自动记录到 CRM 系统中。
+交互式消息是[云到设备](#cloud-to-device)的消息，可在解决方案后端触发即时操作。例如，设备可能会发送故障警报，而该故障会自动记录到 CRM 系统中。
 
 ## <a name="iot-hub"></a> IoT 中心
 IoT 中心是一项完全托管的 Azure 服务，可在数百万个 IoT 设备和一个解决方案后端之间实现安全可靠的双向通信。有关详细信息，请参阅[什么是 Azure IoT 中心？](/documentation/articles/iot-hub-what-is-iot-hub/) 使用 [Azure 订阅](#subscription)可以创建 IoT 中心来处理 IoT 消息传送工作负荷。
@@ -238,4 +238,5 @@ Azure 订阅是发生计费的地方。用户创建的每个 Azure 资源或使�
 
 
 [暂时性错误]: https://msdn.microsoft.com/library/hh680901(v=pandp.50).aspx
-<!---HONumber=Mooncake_1205_2016-->
+<!---HONumber=Mooncake_0109_2017-->
+<!--Update_Description:update wording-->

@@ -1,18 +1,22 @@
 <properties
-	title="运行示例应用程序，接收从云到设备的消息"
-	description="示例应用程序在 Pi 上运行，用于监视来自 IoT 中心的传入消息。新的 gulp 任务会将消息从 IoT 中心发送到 Pi，使 LED 闪烁。"
-	services="iot-hub"
-	documentationcenter=""
-	author="shizn"
-	manager="timlt"
-	tags=""
-	keywords=""/>  
-
-
+    pageTitle="运行示例应用程序以接收云到设备的消息 | Azure"
+    description="示例应用程序在 Pi 上运行，用于监视来自 IoT 中心的传入消息。新的 gulp 任务会将消息从 IoT 中心发送到 Pi，使 LED 闪烁。"
+    services="iot-hub"
+    documentationcenter=""
+    author="shizn"
+    manager="timlt"
+    tags=""
+    keywords="云到设备, 来自云的消息" />
 <tags
-	ms.service="iot-hub"
-	ms.date="10/21/2016"
-	wacn.date="12/26/2016"/>
+    ms.assetid="6ae6539e-1163-4490-8d72-fdf7803e3054"
+    ms.service="iot-hub"
+    ms.devlang="node"
+    ms.topic="article"
+    ms.tgt_pltfrm="na"
+    ms.workload="na"
+    ms.date="11/28/2016"
+    wacn.date="01/13/2017"
+    ms.author="xshi" />  
 
 
 # 运行示例应用程序，接收从云到设备的消息
@@ -24,6 +28,7 @@
 * 将消息从 IoT 中心发送到 Pi，使 LED 闪烁。
 
 ## 你要学习的知识
+本文介绍：
 * 如何监视来自 IoT 中心的传入消息
 * 如何将从云到设备的消息从 IoT 中心发送到 Pi。
 
@@ -51,16 +56,19 @@
     ![config-raspberrypi.json 文件的内容](./media/iot-hub-raspberry-pi-lessons/lesson4/config_raspberrypi.png)  
 
 
-* 将 **[设备主机名或 IP 地址]** 替换为通过运行 `devdisco list --eth` 命令获取的 Pi 的 IP 地址或主机名。
-* 将 **[IoT 设备连接字符串]** 替换为通过运行 `az iot hub show-connection-string --name {my hub name} --resource-group {resource group name}` 命令获取的设备连接字符串。
-* 将 **[IoT 中心连接字符串]** 替换为通过运行 `az iot device show-connection-string --hub {my hub name} --device-id {device id} --resource-group {resource group name}` 命令获取的 IoT 中心连接字符串。
+* 将 **\[设备主机名或 IP 地址\]** 替换为通过运行 `devdisco list --eth` 命令获取的 Pi 的 IP 地址或主机名。
+* 将 **\[IoT 设备连接字符串\]** 替换为通过运行 `az iot device show-connection-string --hub-name {my hub name} --device-id {device id} -g iot-sample {resource group name}` 命令获取的设备连接字符串。
+* 将 **\[IoT 中心连接字符串\]** 替换为通过运行 `az iot hub show-connection-string --name {my hub name} -g iot-sample {resource group name}` 命令获取的 IoT 中心连接字符串。
+
+> [AZURE.NOTE]
+如果尚未在第 1 课中完成，请同时运行 **gulp install-tools**。
 
 ## 部署并运行示例应用程序
 运行以下命令，在 Pi 上部署并运行示例应用程序：
 
-        gulp
+	gulp deploy && gulp run
 
-Gulp 命令首先运行 install-tools 任务，然后将示例应用程序部署到 Pi。最后，它会在 Pi 上运行该应用程序，并在主机上运行单独的任务，以便从 IoT 中心将 20 条闪烁消息发送到 Pi。
+该命令将示例应用程序部署到 Pi。然后，它会在 Pi 上运行该应用程序，并在主计算机上运行单独的任务，将 20 条闪烁消息从 IoT 中心发送到 Pi。
 
 在示例应用程序运行以后，它会开始侦听 IoT 中心发出的消息。同时，gulp 任务会将多个“闪烁”消息从 IoT 中心发送到 Pi。Pi 每收到一条闪烁消息，示例应用程序都会调用 `blinkLED` 函数，使 LED 闪烁。
 
@@ -75,4 +83,5 @@ Gulp 命令首先运行 install-tools 任务，然后将示例应用程序部署
 ## 后续步骤
 [更改 LED 的开关行为](/documentation/articles/iot-hub-raspberry-pi-kit-node-lesson4-change-led-behavior/)
 
-<!---HONumber=Mooncake_1212_2016-->
+<!---HONumber=Mooncake_0109_2017-->
+<!--Update_Description:update wording and code-->

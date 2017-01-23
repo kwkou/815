@@ -1,33 +1,34 @@
 <properties
-	pageTitle="适用于 C 语言的 Azure IoT 设备 SDK - IoTHubClient | Azure"
-	description="了解如何使用适用于 C 语言的 Azure IoT 设备 SDK 中的 IoTHubClient 库"
-	services="iot-hub"
-	documentationCenter=""
-	authors="olivierbloch"
-	manager="timlt"
-	editor=""/>
-
+    pageTitle="适用于 C 语言的 Azure IoT 设备 SDK - IoTHubClient | Azure"
+    description="如何使用 Azure IoT 设备 SDK 中面向 C 语言的 IoTHubClient 库创建与 IoT 中心通信的设备应用。"
+    services="iot-hub"
+    documentationcenter=""
+    author="olivierbloch"
+    manager="timlt"
+    editor="" />
 <tags
-     ms.service="iot-hub"
-     ms.devlang="cpp"
-     ms.topic="article"
-     ms.tgt_pltfrm="na"
-     ms.workload="na"
-     ms.date="09/06/2016"
-     wacn.date="01/09/2017"
-     ms.author="obloch"/>
+    ms.assetid="828cf2bf-999d-4b8a-8a28-c7c901629600"
+    ms.service="iot-hub"
+    ms.devlang="cpp"
+    ms.topic="article"
+    ms.tgt_pltfrm="na"
+    ms.workload="na"
+    ms.date="09/06/2016"
+    wacn.date="01/13/2017"
+    ms.author="obloch" />  
 
-# 适用于 C 语言的 Azure IoT 设备 SDK – 有关 IoTHubClient 的详细信息
+
+# 适用于 C 语言的 Azure IoT 设备 SDK - 有关 IoTHubClient 的详细信息
 
 本系列教程的[第一篇文章](/documentation/articles/iot-hub-device-sdk-c-intro/)介绍了**适用于 C 语言的 Azure IoT 设备 SDK**。该文章已说明 SDK 中有两个体系结构层。底层是 **IoTHubClient** 库，用于直接管理与 IoT 中心的通信。另有一个**序列化程序**库，它构建在 SDK 的顶部，可提供序列化服务。在本文中，我们将提供有关 **IoTHubClient** 库的更多详细信息。
 
-前一篇文章介绍了如何使用 **IoTHubClient** 库将事件发送到 IoT 中心及接收消息。本文将扩大讨论范围，介绍**较低级别 API**，说明如何更精确地管理发送和接收数据的*时机*。此外将说明如何使用 **IoTHubClient** 库中的属性处理功能，将属性附加到事件（以及从消息中检索属性）。最后，进一步说明如何以不同的方式来处理从 IoT 中心收到的消息。
+前一篇文章介绍了如何使用 **IoTHubClient** 库将事件发送到 IoT 中心及接收消息。本文将扩大讨论范围，介绍**较低级别 API**，介绍如何更精确地管理发送和接收数据的*时机*。此外将介绍如何使用 **IoTHubClient** 库中的属性处理功能，将属性附加到事件（以及从消息中检索属性）。最后，进一步介绍如何以不同的方式来处理从 IoT 中心收到的消息。
 
 本文结尾提供了几个其他主题，深入介绍了设备凭据以及如何通过配置选项更改 **IoTHubClient** 的行为。
 
 我们将使用 **IoTHubClient** SDK 示例来阐释这些主题。如果想要继续，请参阅适用于 C 的 Azure IoT 设备 SDK 中随附的 **iothub\_client\_sample\_http** 和 **iothub\_client\_sample\_amqp** 应用程序。以下部分所述的所有内容都将通过这些示例来演示。
 
-你可在 [Azure IoT SDK](https://github.com/Azure/azure-iot-sdks) GitHub 存储库中找到**适用于 C 语言的Azure IoT 设备 SDK**，并可在 [C API 参考](http://azure.github.io/azure-iot-sdks/c/api_reference/index.html)中查看 API 的详细信息。
+有关**适用于 C 语言的 Azure IoT 设备 SDK**，可参阅 [Azure IoT SDK](https://github.com/Azure/azure-iot-sdks) GitHub 存储库；有关 API 的详细信息，可参阅 [C API 参考](http://azure.github.io/azure-iot-sdks/c/api_reference/index.html)。
 
 ## 较低级别 API
 
@@ -123,10 +124,10 @@ SDK 中随附的 **Iothub\_client\_sample\_http** 应用程序演示了较低级
 当你完成引入事件和接收消息时，请务必调用相应的函数来清理资源。
 
 
-		bClient_LL_Destroy(iotHubClientHandle);
+	IoTHubClient_LL_Destroy(iotHubClientHandle);
 
 
-基本上，只有一组 API 使用后台线程来发送和接收数据，而另一组 API 不会使用后台线程来执行相同的操作。许多开发人员可能偏好非 LL API，但是当他们想要明确控制网络传输时，较低级别 API 就很有用。例如，有些设备会收集各时间段的数据，并且只按指定的时间间隔引入事件（例如，每小时一次或每天一次）。较低级别 API 可以在与 IoT 中心之间发送和接收数据时提供明确控制的能力。还有一些人纯粹偏好较低级别 API 提供的简单性。所有操作都发生在主线程上，而不是有些操作在后台发生。
+基本上，只有一组 API 使用后台线程来发送和接收数据，而另一组 API 不会使用后台线程来执行相同的操作。许多开发人员可能更喜欢使用非 LL API，但是当他们想要明确控制网络传输时，较低级别 API 就很有用。例如，有些设备会收集各时间段的数据，并且只按指定的时间间隔引入事件（例如，每小时一次或每天一次）。较低级别 API 可以在与 IoT 中心之间发送和接收数据时提供明确控制的能力。还有一些人纯粹偏好较低级别 API 提供的简单性。所有操作都发生在主线程上，而不是有些操作在后台发生。
 
 无论选择哪种模型，都必须与使用的 API 相一致。如果首先调用 **IoTHubClient\_LL\_CreateFromConnectionString**，则对于任何后续工作，请务必只使用相应的较低级别 API：
 
@@ -236,7 +237,7 @@ SDK 中随附的 **Iothub\_client\_sample\_http** 应用程序演示了较低级
 		iotHubClientHandle = IoTHubClient_CreateFromConnectionString(connectionString, AMQP_Protocol);
 
 
-**IoTHubClient\_CreateFromConnectionString** 的参数是设备的连接字符串，以及用于指明我们在与 IoT 中心通信时要使用的协议的参数。该连接字符串的格式如下：
+**IoTHubClient\_CreateFromConnectionString** 的实参是设备连接字符串，并且是指示与 IoT 中心通信时所用协议的形参。设备连接字符串的格式如下：
 
 
 		HostName=IOTHUBNAME.IOTHUBSUFFIX;DeviceId=DEVICEID;SharedAccessKey=SHAREDACCESSKEY
@@ -244,7 +245,7 @@ SDK 中随附的 **Iothub\_client\_sample\_http** 应用程序演示了较低级
 
 此字符串包含四个信息片段：IoT 中心名称、IoT 中心后缀、设备 ID 和共享访问密钥。当你在 Azure 门户预览中创建 IoT 中心实例时，可以获取 IoT 中心的完全限定域名 (FQDN) - 它提供了 IoT 中心名称（FQDN 的第一个部分）和 IoT 中心后缀（FQDN 的其余部分）。使用 IoT 中心注册设备时，可以获取设备 ID 和共享访问密钥（如[前一篇文章](/documentation/articles/iot-hub-device-sdk-c-intro/)中所述）。
 
-**IoTHubClient\_CreateFromConnectionString** 提供了初始化库的方式。如果需要，你可以使用其中的每个参数而不是连接字符串来创建新的 **IOTHUB\_CLIENT\_HANDLE**。使用以下代码即可实现此目的：
+**IoTHubClient\_CreateFromConnectionString** 提供了初始化库的方式。必要时，可使用其中的独立参数创建新的 **IOTHUB\_CLIENT\_HANDLE**，而不使用设备连接字符串。使用以下代码即可实现此目的：
 
 
 		IOTHUB_CLIENT_CONFIG iotHubClientConfig;
@@ -258,7 +259,7 @@ SDK 中随附的 **Iothub\_client\_sample\_http** 应用程序演示了较低级
 
 结果将与使用 **IoTHubClient\_CreateFromConnectionString** 相同。
 
-显然，你更想要使用 **IoTHubClient\_CreateFromConnectionString**，而不是这种更繁琐的初始化方法。但请记住，当你在 IoT 中心注册设备时，获得的是设备 ID 和设备密钥（而不是连接字符串）。[前一篇文章](/documentation/articles/iot-hub-device-sdk-c-intro/)中介绍的**设备管理器** SDK 工具使用 **Azure IoT 服务 SDK** 中的库，从设备ID、设备密钥和 IoT 中心主机名创建连接字符串。因此调用 **IoTHubClient\_LL\_Create** 可能更好，因为这样可以免除生成连接字符串的步骤。使用任何一种方法都很方便。
+显然，你更想要使用 **IoTHubClient\_CreateFromConnectionString**，而不是这种更繁琐的初始化方法。但请记住，当你在 IoT 中心注册设备时，获得的是设备 ID 和设备密钥（而不是连接字符串）。[前一篇文章](/documentation/articles/iot-hub-device-sdk-c-intro/)中介绍的*设备资源管理器* SDK 工具使用 **Azure IoT 服务 SDK** 中的库，通过设备 ID、设备密钥和 IoT 中心主机名创建设备连接字符串。因此调用 **IoTHubClient\_LL\_Create** 可能更好，因为这样可以免除生成连接字符串的步骤。使用任何一种方法都很方便。
 
 ## 配置选项
 
@@ -280,7 +281,7 @@ batching 选项非常重要。默认情况下，库将逐个引入事件（单�
 
 本文详细探讨了**适用于 C 语言的 Azure IoT 设备 SDK** 中的 **IoTHubClient** 库的行为。参考这些信息可以充分了解 **IoTHubClient** 库的功能。[下一篇文章](/documentation/articles/iot-hub-device-sdk-c-serializer/)将提供有关**序列化程序**库的类似详细信息。
 
-若要详细了解如何针对 IoT 中心进行开发，请参阅 [IoT 中心 SDK][lnk-sdks]。
+若要详细了解如何针对 IoT 中心进行开发，请参阅 [Azure IoT SDK][lnk-sdks]。
 
 若要进一步探索 IoT 中心的功能，请参阅：
 
@@ -290,4 +291,5 @@ batching 选项非常重要。默认情况下，库将逐个引入事件（单�
 
 [lnk-gateway]: /documentation/articles/iot-hub-linux-gateway-sdk-simulated-device/
 
-<!---HONumber=Mooncake_Quality_Review_0104_2017-->
+<!---HONumber=Mooncake_0109_2017-->
+<!--Update_Description:update wording and code-->

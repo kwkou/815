@@ -1,18 +1,22 @@
 <properties
-	pageTitle="“可选：更改 LED 的开关行为”"
-	description="自定义这些消息，以便更改 LED 的开关行为。"
-	services="iot-hub"
-	documentationcenter=""
-	author="shizn"
-	manager="timlt"
-	tags=""
-	keywords=""/>  
-
-
+    pageTitle="可选：更改 LED 的开关行为 | Azure"
+    description="自定义这些消息，以便更改 LED 的开关行为。"
+    services="iot-hub"
+    documentationcenter=""
+    author="shizn"
+    manager="timlt"
+    tags=""
+    keywords="使用 raspberry pi 的控制 led, raspberry pi led 控制, raspberry pi 控制 led" />
 <tags
-	ms.service="iot-hub"
-	ms.date="10/21/2016"
-	wacn.date="12/19/2016"/>  
+    ms.assetid="3b42a4ad-0197-42f6-8ca9-04c883e879e8"
+    ms.service="iot-hub"
+    ms.devlang="node"
+    ms.topic="article"
+    ms.tgt_pltfrm="na"
+    ms.workload="na"
+    ms.date="11/28/2016"
+    wacn.date="01/13/2017"
+    ms.author="xshi" />  
 
 
 # 更改 LED 的开关行为
@@ -77,7 +81,7 @@
 ### 部署并运行示例应用程序
 运行以下命令，在 Pi 上部署并运行示例应用程序：
 
-        gulp
+	gulp deploy && gulp run
 
 此时会看到 LED 开启两秒，然后关闭两秒。最后一条为“停止”消息，停止示例应用程序运行。
 
@@ -89,4 +93,5 @@
 ### 摘要
 此可选部分介绍了如何自定义消息，使得示例应用程序能够以其他方式控制 LED 的开关行为。
 
-<!---HONumber=Mooncake_1212_2016-->
+<!---HONumber=Mooncake_0109_2017-->
+<!--Update_Description:update wording and code-->

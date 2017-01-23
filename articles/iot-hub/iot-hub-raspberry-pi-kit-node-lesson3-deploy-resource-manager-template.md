@@ -1,18 +1,22 @@
 <properties
-	pageTitle="创建 Azure 函数应用和 Azure 存储帐户"
-	description="Azure 函数应用可侦听 Azure IoT 中心事件、处理传入消息以及将其写入到 Azure 表存储。"
-	services="iot-hub"
-	documentationcenter=""
-	author="shizn"
-	manager="timlt"
-	tags=""
-	keywords=""/>  
-
-
+    pageTitle="创建 Azure Function App 和 Azure 存储帐户 | Azure"
+    description="Azure 函数应用可侦听 Azure IoT 中心事件、处理传入消息以及将其写入到 Azure 表存储。"
+    services="iot-hub"
+    documentationcenter=""
+    author="shizn"
+    manager="timlt"
+    tags=""
+    keywords="在云中存储数据, 云中存储的数据, iot 云服务" />
 <tags
-	ms.service="iot-hub"
-	ms.date="10/21/2016"
-	wacn.date="12/19/2016"/>  
+    ms.assetid="6c58de85-c5c4-4989-bb5e-08c45c549966"
+    ms.service="iot-hub"
+    ms.devlang="node"
+    ms.topic="article"
+    ms.tgt_pltfrm="na"
+    ms.workload="na"
+    ms.date="11/28/2016"
+    wacn.date="01/13/2017"
+    ms.author="xshi" />  
 
 
 # 创建 Azure 函数应用和 Azure 存储帐户
@@ -56,13 +60,9 @@ Azure Functions 是一种解决方案，特别适合在云中运行*函数*（�
 * 将 **[你的 IoT 中心名称]** 替换为 **{我的中心名称}**，后者是在[创建 IoT 中心和注册 Raspberry Pi 3](/documentation/articles/iot-hub-raspberry-pi-kit-node-lesson2-prepare-azure-iot-hub/) 时指定的。
 * 将 **[新资源的前缀字符串]** 替换为所需前缀。前缀可确保资源名称全局唯一，避免冲突。请勿在前缀中以短划线或数字开头。
 
-> [AZURE.NOTE] 本文不需 `azure_storage_connection_string`。请保留该名称。
-> 
-> 
-
 更新 `arm-template-param.json` 文件后，请运行以下命令，将资源部署到 Azure：
 
-        az resource group deployment create --template-file-path arm-template.json --parameters-file-path arm-template-param.json -g iot-sample -n mydeployment
+	az resource group deployment create --template-file arm-template.json --parameters @arm-template-param.json -g iot-sample
 
 创建这些资源约需五分钟。在创建这些资源时，用户可以阅读下一篇文章。
 
@@ -72,4 +72,5 @@ Azure Functions 是一种解决方案，特别适合在云中运行*函数*（�
 ## 后续步骤
 [在 Raspberry Pi 3 上运行示例应用程序，以便发送从设备到云的消息](/documentation/articles/iot-hub-raspberry-pi-kit-node-lesson3-run-azure-blink/)
 
-<!---HONumber=Mooncake_1212_2016-->
+<!---HONumber=Mooncake_0109_2017-->
+<!--Update_Description:update wording-->

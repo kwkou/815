@@ -1,18 +1,23 @@
 <properties
-	pageTitle="故障排除"
-	description="Raspberry Pi Node.js 体验的故障排除页"
-	services="iot-hub"
-	documentationcenter=""
-	author="shizn"
-	manager="timlt"
-	tags=""
-	keywords=""/>  
-
-
+    pageTitle="故障排除 | Azure"
+    description="Raspberry Pi Node.js 体验的故障排除页"
+    services="iot-hub"
+    documentationcenter=""
+    author="shizn"
+    manager="timlt"
+    tags=""
+    keywords="iot 问题, 物联网问题" />
 <tags
-	ms.service="iot-hub"
-	ms.date="10/21/2016"
-	wacn.date="12/19/2016"/>  
+    ms.assetid="22cf50dc-8206-42a2-a1fc-f75fa85135fa"
+    ms.service="iot-hub"
+    ms.devlang="node"
+    ms.topic="article"
+    ms.tgt_pltfrm="na"
+    ms.workload="na"
+    ms.date="11/28/2016"
+    wacn.date="01/13/2017"
+    ms.author="xshi" />  
+
 
 # 故障排除
 ## 硬件问题
@@ -60,6 +65,9 @@
 2. 单击绿色的“开始调试”(F5) 按钮。Visual Studio Code 打开 launch.json 文件。
 3. 使用以下内容更新 launch.json 文件。将 `[device hostname or IP address]` 替换为实际的设备 IP 地址或主机名。
 
+> [AZURE.NOTE]
+若要深入了解 Visual Studio 调试，请参阅[在 Visual Studio Code 中调试](https://code.visualstudio.com/Docs/editor/debugging#_launchjson-attributes)。
+
         {
             "version": "0.2.0",
             "configurations": [
@@ -82,7 +90,7 @@
 
 
 ### 连接到远程应用程序
-单击绿色的“开始调试”(F5) 按钮开始调试。
+单击绿色的“开始调试”\(F5\) 按钮开始调试。
 
 若要详细了解调试器，请参阅 [JavaScript in VS Code](https://code.visualstudio.com/docs/languages/javascript#_debugging)（VS Code 中的 JavaScript）。
 
@@ -109,7 +117,7 @@ Azure 命令行接口 (Azure CLI) 为预览版。
 如果已通过 Azure CLI 成功预配 Azure IoT 中心，且需使用工具管理连接到 IoT 中心的设备，可尝试以下工具。
 
 ### 设备资源管理器
-设备资源管理器在 Windows 本地计算机上运行，并连接到 Azure 中的 IoT 中心。它与以下 [IoT 中心终结点](/documentation/articles/iot-hub-devguide/)通信：
+设备资源管理器在 Windows 本地计算机上运行，并连接到 Azure 的 IoT 中心。它与以下 [IoT 中心终结点](/documentation/articles/iot-hub-devguide/)通信：
 
 * *设备标识管理*：用于预配和管理注册到 IoT 中心的设备。
 * *接收从设备到云的消息*：用于监视从设备发送到 IoT 中心的消息。
@@ -135,4 +143,5 @@ iothub-explorer 是一项示例性的多平台 CLI 工具，用于管理设备�
 ## Azure 存储问题
 [Microsoft Azure 存储资源管理器（预览版）](http://storageexplorer.com)是 Microsoft 推出的一款独立的应用，可用于在 Windows、OS X 和 Linux 上处理 Azure 存储数据。可以使用此工具连接到表并查看其中的数据。可以使用此工具排查 Azure 存储问题。
 
-<!---HONumber=Mooncake_1212_2016-->
+<!---HONumber=Mooncake_0109_2017-->
+<!--Update_Description:update wording-->

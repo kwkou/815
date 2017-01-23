@@ -1,17 +1,23 @@
 <properties
-	pageTitle="获取工具（Windows 7 或更高版本）"
-	description="下载并安装适用于 Windows 7 及更高版本上 Pi 的第一个示例应用程序的必需工具和软件。"
-	services="iot-hub"
-	documentationcenter=""
-	author="shizn"
-	manager="timlt"
-	tags=""
-	keywords=""/>  
-
+    pageTitle="获取工具（Windows 7 或更高版本）| Azure"
+    description="下载并安装适用于 Windows 7 及更高版本上 Pi 的第一个示例应用程序的必需工具和软件。"
+    services="iot-hub"
+    documentationcenter=""
+    author="shizn"
+    manager="timlt"
+    tags=""
+    keywords="iot 开发, iot 软件, 物联网软件, 在 windows 上安装 git, gulp 运行, 安装 node js windows, 在 windows 上安装 npm, 在 windows 上安装 python" />
 <tags
-	ms.service="iot-hub"
-	ms.date="10/21/2016"
-	wacn.date="12/19/2016"/>  
+    ms.assetid="b3d88e17-97cc-4f23-85fd-a688fc228eb8"
+    ms.service="iot-hub"
+    ms.devlang="node"
+    ms.topic="article"
+    ms.tgt_pltfrm="na"
+    ms.workload="na"
+    ms.date="11/28/2016"
+    wacn.date="01/13/2017"
+    ms.author="xshi" />  
+
 
 # 获取工具（Windows 7 或更高版本）
 > [AZURE.SELECTOR]
@@ -64,4 +70,5 @@
 ## 后续步骤
 [创建和部署 blink 示例应用程序](/documentation/articles/iot-hub-raspberry-pi-kit-node-lesson1-deploy-blink-app/)
 
-<!---HONumber=Mooncake_1212_2016-->
+<!---HONumber=Mooncake_0109_2017-->
+<!--Update_Description:update meta properties-->

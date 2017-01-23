@@ -1,29 +1,26 @@
 <properties
- pageTitle="开发人员指南 - 控制对 IoT 中心的访问 | Azure"
- description="Azure IoT 中心开发人员指南 - 如何控制对 IoT 中心的访问和管理安全性"
- services="iot-hub"
- documentationCenter=".net"
- authors="dominicbetts"
- manager="timlt"
- editor=""/>  
-
-
+    pageTitle="了解 Azure IoT 中心安全性 | Azure"
+    description="开发人员指南 - 如何控制设备应用和后端应用对 IoT 中心的访问。其中包括安全令牌和 X.509 证书支持的相关信息。"
+    services="iot-hub"
+    documentationcenter=".net"
+    author="dominicbetts"
+    manager="timlt"
+    editor="" />
 <tags
- ms.service="iot-hub"
- ms.devlang="multiple"
- ms.topic="article"
- ms.tgt_pltfrm="na"
- ms.workload="na"
- ms.date="09/30/2016"
- wacn.date="12/12/2016" 
- ms.author="dobett"/>  
+    ms.assetid="45631e70-865b-4e06-bb1d-aae1175a52ba"
+    ms.service="iot-hub"
+    ms.devlang="multiple"
+    ms.topic="article"
+    ms.tgt_pltfrm="na"
+    ms.workload="na"
+    ms.date="09/30/2016"
+    wacn.date="01/13/2017"
+    ms.author="dobett" />  
 
 
 # 控制 IoT 中心的访问权限
-
 ## 概述
-
-本文介绍用于保护 IoT 中心的选项。IoT 中心使用 *权限* 向每个 IoT 中心终结点授予访问权限。权限可根据功能限制对 IoT 中心的访问。
+本文介绍用于保护 IoT 中心的选项。IoT 中心使用*权限*向每个 IoT 中心终结点授予访问权限。权限可根据功能限制对 IoT 中心的访问。
 
 本文将介绍：
 
@@ -41,27 +38,24 @@
 
 可以通过以下方式授予[权限](#iot-hub-permissions)：
 
-* **中心级别的共享访问策略**。共享访问策略可以授予任意[权限](#iot-hub-permissions)组合。你可以在 [Azure 门户][lnk-management-portal]中定义策略，或使用 [Azure IoT 中心资源提供程序 API][lnk-resource-provider-apis] 以编程方式定义策略。新建的 IoT 中心有以下默认策略：
-
-    - **iothubowner**：包含所有权限的策略。
-    - **service**：包含 ServiceConnect 权限的策略。
-    - **device**：包含 DeviceConnect 权限的策略。
-    - **registryRead**：包含 RegistryRead 权限的策略。
-    - **registryReadWrite**：包含 RegistryRead 和 RegistryWrite 权限的策略。
-
-
-* **每个设备的安全凭据**。每个 IoT 中心都包含一个[设备标识注册表][lnk-identity-registry]。对于此注册表中的每个设备，可以配置安全凭据，以相应设备终结点为范围来授予 **DeviceConnect** 权限。
+* **IoT 中心级别的共享访问策略**。共享访问策略可以授予任意[权限](#iot-hub-permissions)组合。可在 [Azure 门户预览][lnk-management-portal]中定义策略，或使用 [IoT 中心资源提供程序 REST API][lnk-resource-provider-apis] 以编程方式进行定义。新建的 IoT 中心有以下默认策略：
+  
+  * **iothubowner**：包含所有权限的策略。
+  * **service**：包含 ServiceConnect 权限的策略。
+  * **device**：包含 DeviceConnect 权限的策略。
+  * **registryRead**：包含 RegistryRead 权限的策略。
+  * **registryReadWrite**：包含 RegistryRead 和 RegistryWrite 权限的策略。
+  * **每个设备的安全凭据**。每个 IoT 中心均包含一个[标识注册表][lnk-identity-registry]。对于此标识注册表中的每个设备，可配置安全凭据，授予局限于相应设备终结点的 **DeviceConnect** 权限。
 
 例如，在典型的 IoT 解决方案中：
 
-- 设备管理组件使用 *registryReadWrite* 策略。
-- 事件处理器组件使用 *service* 策略。
-- 运行时设备业务逻辑组件使用 *service* 策略。
-- 各个设备的连接使用 IoT 中心的标识注册表中存储的凭据。
+* 设备管理组件使用 *registryReadWrite* 策略。
+* 事件处理器组件使用 *service* 策略。
+* 运行时设备业务逻辑组件使用 *service* 策略。
+* 各个设备的连接使用 IoT 中心的标识注册表中存储的凭据。
 
 ## 身份验证
-
-Azure IoT 中心可根据共享访问策略和设备标识注册表安全凭据来验证令牌，以授予对终结点的访问权限。
+Azure IoT 中心可根据共享访问策略和标识注册表安全凭据验证令牌，进而授予终结点的访问权限。
 
 安全凭据（例如对称密钥）永远不会通过网络发送。
 
@@ -80,8 +74,8 @@ Azure IoT 中心可根据共享访问策略和设备标识注册表安全凭据�
 
 对于 SASL PLAIN，**用户名**可以是：
 
-* 如果是中心级别的令牌，则为 `{policyName}@sas.root.{iothubName}`。
-* 如果是设备范围的令牌，则为 `{deviceId}@sas.{iothubname}`。
+* `{policyName}@sas.root.{iothubName}`（若使用 IoT 中心级别的令牌）。
+* `{deviceId}@sas.{iothubname}`（若为设备范围的令牌）。
 
 在这两种情况下，密码字段都包含令牌，如 [IoT Hub security tokens][lnk-sas-tokens]（IoT 中心安全令牌）中所述。
 
@@ -94,23 +88,23 @@ HTTP 通过在**授权**请求标头中包含有效的令牌来实施身份验�
 
 密码（使用设备资源管理器生成 SAS 令牌）：`SharedAccessSignature sr=iothubname.azure-devices.cn%2fdevices%2fDeviceId&sig=kPszxZZZZZZZZZZZZZZZZZAhLT%2bV7o%3d&se=1487709501`
 
-> [AZURE.NOTE] [Azure IoT Hub SDKs][lnk-sdks]（Azure IoT 中心 SDK）在连接到服务时自动生成令牌。在某些情况下，SDK 不支持所有的协议或所有身份验证方法。
+> [AZURE.NOTE]
+[Azure IoT SDK][lnk-sdks] 在连接到服务时自动生成令牌。某些情况下，Azure IoT SDK 不支持部分协议或身份验证方法。
+> 
+> 
 
 ### 有关 SASL PLAIN 的特殊注意事项
-
-将 SASL PLAIN 用于 AMQP 时，连接到 IoT 中心的客户端可为每个 TCP 连接使用单个令牌。当令牌过期时，TCP 将从服务断开连接，并触发重新连接。此行为虽然不对应用程序后端组件造成问题，但对设备端应用程序极为不利，原因如下：
+将 SASL PLAIN 用于 AMQP 时，连接到 IoT 中心的客户端可为每个 TCP 连接使用单个令牌。当令牌过期时，TCP 将从服务断开连接，并触发重新连接。此行为虽然不会对后端应用造成问题，但对设备应用极为不利，原因如下：
 
 *  网关通常代表许多设备连接。使用 SASL PLAIN 时，它们必须针对连接到 IoT 中心的每个设备创建不同的 TCP 连接。此方案会大幅提高电源与网络资源的消耗并增大每个设备连接的延迟。
 * 在每个令牌过期后，增加使用要重新连接的资源通常会对资源受限的设备造成不良影响。
 
-## 设置中心级凭据的范围
-
-可以通过使用受限资源 URI 创建令牌，来设置中心级安全策略的范围。例如，要从设备发送设备到云的消息的终结点是 **/devices/{deviceId}/messages/events**。还可以使用包含 **DeviceConnect** 权限的中心级别共享访问策略对 resourceURI 为 **/devices/{deviceId}** 的令牌进行签名。此方法将创建一个令牌，该令牌仅可用于代表设备 **deviceId** 发送消息。
+## 设置 IoT 中心级凭据的范围
+可通过使用受限资源 URI 创建令牌，设置 IoT 中心级安全策略的范围。例如，要从设备发送设备到云的消息的终结点是 **/devices/{deviceId}/messages/events**。还可使用带 **DeviceConnect** 权限的 IoT 中心级别共享访问策略对 resourceURI 为 **/devices/{deviceId}** 的令牌进行签名。此方法将创建一个令牌，该令牌仅可用于代表设备 **deviceId** 发送消息。
 
 此机制类似于[事件中心发布者策略][lnk-event-hubs-publisher-policy]，可用于实施自定义身份验证方法。
 
 ## <a name="security-tokens"></a> 安全令牌
-
 IoT 中心使用安全令牌对设备和服务进行身份验证，以避免在线发送密钥。并且安全令牌的有效期和范围有限。[Azure IoT 中心 SDK][lnk-sdks] 无需任何特殊配置即可自动生成令牌。但在某些情况下，需要用户生成并直接使用安全令牌。包括 MQTT、AMQP 或 HTTP 应用层协议的直接使用，以及令牌服务模式的实现（如[自定义设备身份验证][lnk-custom-auth]中所述）。
 
 IoT 中心还允许设备使用 [X.509 证书][lnk-x509]向 IoT 中心进行身份验证。
@@ -118,7 +112,7 @@ IoT 中心还允许设备使用 [X.509 证书][lnk-x509]向 IoT 中心进行身�
 ### <a name="security-token-structure"></a> 安全令牌结构
 可以使用安全令牌向设备和服务授予限时访问 IoT 中心特定功能的权限。若要确保只有经过授权的设备和服务能够连接，安全令牌必须使用共享访问密钥或存储在标识注册表中并带有设备标识的对称密钥进行签名。
 
-使用共享访问策略密钥进行签名的令牌可以授权访问与共享访问策略权限相关的所有功能。另一方面，使用设备标识的对称密钥进行签名的令牌只能向相关设备标识授予 **DeviceConnect** 权限。
+使用共享访问密钥进行签名的令牌可授权访问与共享访问策略权限相关的所有功能。另一方面，使用设备标识的对称密钥进行签名的令牌只能向相关设备标识授予 **DeviceConnect** 权限。
 
 安全令牌采用以下格式：
 
@@ -185,9 +179,8 @@ IoT 中心还允许设备使用 [X.509 证书][lnk-x509]向 IoT 中心进行身�
 
 > [AZURE.NOTE] 由于 IoT 中心计算机会验证令牌的有效期，因此生成令牌的计算机的时间偏差必须很小。
 
-### <a name="use-sas-tokens-in-a-device-app"></a> 在设备客户端中使用 SAS 令牌
-
-有两种方法可以使用安全令牌来获取 IoT 中心的 **DeviceConnect** 权限：使用[设备标识注册表中的对称设备密钥](#use-a-symmetric-key-in-the-identity-registry)，或者使用[共享访问密钥](#use-a-shared-access-policy)。
+### <a name="use-sas-tokens-in-a-device-app"></a> 在设备应用中使用 SAS 令牌
+可按以下两种方式使用安全令牌获取 IoT 中心的 **DeviceConnect** 权限：使用[标识注册表中的对称设备密钥](#use-a-symmetric-key-in-the-identity-registry)或[共享访问密钥](#use-a-shared-access-policy)。
 
 请记住，可从设备访问的所有功能都故意显示在前缀为 `/devices/{deviceId}` 的终结点上。
 
@@ -200,6 +193,7 @@ IoT 中心还允许设备使用 [X.509 证书][lnk-x509]向 IoT 中心进行身�
 | `{iot hub host name}/devices/{deviceId}/messages/events` | 发送设备到云的消息。 |
 | `{iot hub host name}/devices/{deviceId}/devicebound`   | 接收云到设备的消息。 |
 
+
 ### <a name="use-a-symmetric-key-in-the-identity-registry"></a> 使用标识注册表中的对称密钥
 
 使用设备标识的对称密钥生成令牌时，将省略令牌的 policyName (`skn`) 元素。
@@ -211,7 +205,7 @@ IoT 中心还允许设备使用 [X.509 证书][lnk-x509]向 IoT 中心进行身�
 * 无策略名称；
 * 任何过期时间。
 
-使用上述 Node 函数的示例如下：
+上述 Node js 函数的使用示例如下：
 
     var endpoint ="myhub.azure-devices.cn/devices/device1";
     var deviceKey ="...";
@@ -222,7 +216,10 @@ IoT 中心还允许设备使用 [X.509 证书][lnk-x509]向 IoT 中心进行身�
 
     SharedAccessSignature sr=myhub.azure-devices.cn%2fdevices%2fdevice1&sig=13y8ejUk2z7PLmvtwR5RqlGBOVwiq7rQR3WZ5xZX3N4%3D&se=1456971697
 
-> [AZURE.NOTE] 可以使用 .NET 工具设备资源管理器来生成 SAS 令牌。
+> [AZURE.NOTE]
+可使用 .NET 设备资源管理器工具生成 SAS 令牌。
+> 
+> 
 
 ### <a name="use-a-shared-access-policy"></a> 使用共享访问策略
 
@@ -242,7 +239,7 @@ IoT 中心还允许设备使用 [X.509 证书][lnk-x509]向 IoT 中心进行身�
 * 策略名称：`device`，
 * 任何过期时间。
 
-使用上述 Node 函数的示例如下：
+上述 Node js 函数的使用示例如下：
 
     var endpoint ="myhub.azure-devices.cn/devices/device1";
     var policyName = 'device';
@@ -257,7 +254,6 @@ IoT 中心还允许设备使用 [X.509 证书][lnk-x509]向 IoT 中心进行身�
 协议网关可以对所有设备使用相同的令牌，只需将资源 URI 设置为 `myhub.azure-devices.cn/devices`。
 
 ### <a name="use-security-tokens-from-service-components"></a> 使用服务组件提供的安全令牌
-
 如前所述，服务组件使用共享访问策略只能生成安全令牌，授予适当权限。
 
 以下是终结点上显示的服务功能：
@@ -309,20 +305,18 @@ IoT 中心还允许设备使用 [X.509 证书][lnk-x509]向 IoT 中心进行身�
 
 下面是使用 X.509 证书注册设备的示例 C# 代码片段：
 
-```
-var device = new Device(deviceId)
-{
-  Authentication = new AuthenticationMechanism()
-  {
-    X509Thumbprint = new X509Thumbprint()
-    {
-      PrimaryThumbprint = "921BC9694ADEB8929D4F7FE4B9A3A6DE58B0790B"
-    }
-  }
-};
-RegistryManager registryManager = RegistryManager.CreateFromConnectionString(deviceGatewayConnectionString);
-await registryManager.AddDeviceAsync(device);
-```
+	var device = new Device(deviceId)
+	{
+	  Authentication = new AuthenticationMechanism()
+	  {
+	    X509Thumbprint = new X509Thumbprint()
+	    {
+	      PrimaryThumbprint = "921BC9694ADEB8929D4F7FE4B9A3A6DE58B0790B"
+	    }
+	  }
+	};
+	RegistryManager registryManager = RegistryManager.CreateFromConnectionString(deviceGatewayConnectionString);
+	await registryManager.AddDeviceAsync(device);
 
 ### 在运行时操作期间使用 X.509 证书
 用于 .NET 的 Azure IoT 设备 SDK （版本 1.0.11+）支持使用 X.509 证书。
@@ -332,15 +326,12 @@ await registryManager.AddDeviceAsync(device);
 
 下面是示例代码片段：
 
-```
-var authMethod = new DeviceAuthenticationWithX509Certificate("<device id>", x509Certificate);
+	var authMethod = new DeviceAuthenticationWithX509Certificate("<device id>", x509Certificate);
 
-var deviceClient = DeviceClient.Create("<IotHub DNS HostName>", authMethod);
-```
+	var deviceClient = DeviceClient.Create("<IotHub DNS HostName>", authMethod);
 
 ## <a name="custom-device-authentication"></a> 自定义设备身份验证
-
-可以使用 IoT 中心[设备标识注册表][lnk-identity-registry]来使用[令牌][lnk-sas-tokens]配置每个设备的安全凭据和访问控制。如果 IoT 解决方案已经大幅投资自定义设备标识注册表和/或身份验证方案，可以通过创建 *令牌服务* ，将此现有基础结构与 IoT 中心集成。这样，便可以在解决方案中使用其他 IoT 功能。
+可借助[令牌][lnk-sas-tokens]，使用 IoT 中心[标识注册表][lnk-identity-registry]配置各设备的安全凭据和访问控制。但是，如果 IoT 解决方案已大幅采用自定义标识注册表和/或身份验证方案，则可创建*令牌服务*将现有的此基础结构与 IoT 中心进行集成。这样，便可以在解决方案中使用其他 IoT 功能。
 
 令牌服务是自定义云服务。它使用包含 **DeviceConnect** 权限的 IoT 中心 *共享访问策略* 创建 *设备范围的* 令牌。这些令牌可让设备连接到 IoT 中心。
 
@@ -349,7 +340,7 @@ var deviceClient = DeviceClient.Create("<IotHub DNS HostName>", authMethod);
 下面是令牌服务模式的主要步骤：
 
 1. 为 IoT 中心创建包含 **DeviceConnect** 权限的 IoT 中心共享访问策略。可以在 [Azure 门户预览][lnk-management-portal]中或以编程方式创建此策略。令牌服务使用此策略为它创建的令牌签名。
-2. 当设备需要访问 IoT 中心时，将向令牌服务请求已签名的令牌。设备可以使用自定义设备标识注册表/身份验证方案来进行身份验证，以确定令牌服务用来创建令牌的设备标识。
+2. 当设备需要访问 IoT 中心时，将向令牌服务请求已签名的令牌。设备可使用自定义标识注册表/身份验证方案进行身份验证，确定令牌服务用于创建令牌的设备标识。
 3. 令牌服务返回令牌。使用 `/devices/{deviceId}` 作为 `resourceURI`、使用 `deviceId` 作为所要进行身份验证的设备创建令牌。令牌服务使用共享访问策略来构造令牌。
 4. 设备直接通过 IoT 中心使用令牌。
 
@@ -357,7 +348,7 @@ var deviceClient = DeviceClient.Create("<IotHub DNS HostName>", authMethod);
 
 令牌服务可以根据需要设置令牌过期日期。令牌过期时，IoT 中心将断开设备连接。然后，设备必须向令牌服务请求新令牌。如果使用过短的过期时间，会增加设备与令牌服务上的负载。
 
-为了让设备连接到中心，仍必须将它添加到 IoT 中心设备标识注册表，即使设备使用令牌而不是设备密钥来连接。因此，你可以在设备使用令牌身份验证时，通过在 [IoT 中心识别注册表][lnk-identity-registry]中启用或禁用设备标识，来继续使用基于设备的访问控制。这可以减轻使用较长过期时间令牌的风险。
+设备若要连接到中心，即使连接使用的是令牌而不是设备密钥，仍须将设备添加 IoT 中心标识注册表。因此，你可以在设备使用令牌身份验证时，通过在 [IoT 中心识别注册表][lnk-identity-registry]中启用或禁用设备标识，来继续使用基于设备的访问控制。这可以减轻使用较长过期时间令牌的风险。
 
 ### 与自定义网关的比较
 
@@ -373,26 +364,24 @@ var deviceClient = DeviceClient.Create("<IotHub DNS HostName>", authMethod);
 
 | 权限 | 说明 |
 | --- | --- |
-| **RegistryRead** |授予对设备标识注册表的读取访问权限。有关详细信息，请参阅 [Device identity registry][lnk-identity-registry]（设备标识注册表）。 |
-| **RegistryReadWrite** |授予对设备标识注册表的读取和写入访问权限。有关详细信息，请参阅 [Device identity registry][lnk-identity-registry]（设备标识注册表）。 |
+| **RegistryRead** |授予对标识注册表的读取访问权限。有关详细信息，请参阅[标识注册表][lnk-identity-registry]。 |
+| **RegistryReadWrite** |授予对标识注册表的读取和写入访问权限。有关详细信息，请参阅[标识注册表][lnk-identity-registry]。 |
 | **ServiceConnect** |授予对面向云服务的通信和监视终结点的访问权限。例如，它授权后端云服务接收设备到云的消息、发送云到设备的消息，以及检索对应的传送确认。 |
-| **DeviceConnect** |授予对面向设备的通信终结点的访问权限。例如，它授予发送设备到云的消息和接收云到设备的消息的权限。此权限由设备使用。 |
+| **DeviceConnect** |授予对面向设备的终结点的访问权限。例如，它授予发送设备到云的消息和接收云到设备的消息的权限。此权限由设备使用。 |
 
 ## 其他参考资料
+IoT 中心开发人员指南中的其他参考主题包括：
 
-开发人员指南中的其他参考主题包括：
-
-- [IoT 中心终结点][lnk-endpoints]，说明了每个 IoT 中心针对运行时和管理操作公开的各种终结点。
-- [限制和配额][lnk-quotas]，说明了适用于 IoT 中心服务的配额，以及使用服务时预期会碰到的限制行为。
-- [IoT 中心设备和服务 SDK][lnk-sdks]，列出了在开发与 IoT 中心交互的设备和服务应用程序时可以使用的各种语言 SDK。
-- [设备孪生、方法和作业的 IoT 中心查询语言][lnk-query]介绍从 IoT 中心检索有关设备孪生、方法和作业的信息时可以使用的查询语言。
-- [IoT 中心 MQTT 支持][lnk-devguide-mqtt]提供有关 IoT 中心对 MQTT 协议的支持的详细信息。
+* [IoT 中心终结点][lnk-endpoints]，介绍了每个 IoT 中心针对运行时和管理操作公开的各种终结点。
+* [限制和配额][lnk-quotas]，说明了适用于 IoT 中心服务的配额，以及使用服务时预期会碰到的限制行为。
+* [Azure IoT 设备和服务 SDK][lnk-sdks]，列出了在开发与 IoT 中心交互的设备和服务应用时可使用的各种语言 SDK。
+* [设备孪生和作业的 IoT 中心查询语言][lnk-query]，介绍了在 IoT 中心检索设备孪生和作业相关信息时可使用的 IoT 中心查询语言。
+* [IoT 中心 MQTT 支持][lnk-devguide-mqtt]提供有关 IoT 中心对 MQTT 协议的支持的详细信息。
 
 ## 后续步骤
+现已了解如何控制对 IoT 中心的访问，你可能有兴趣了解以下 IoT 中心开发人员指南主题：
 
-现在已了解如何控制对 IoT 中心的访问，你可能对以下开发人员指南主题感兴趣：
-
-- [使用设备孪生来同步状态和配置][lnk-devguide-device-twins]
+- [使用设备孪生同步状态和配置][lnk-devguide-device-twins]
 - [在设备上调用直接方法][lnk-devguide-directmethods]
 - [在多台设备上计划作业][lnk-devguide-jobs]
 
@@ -434,10 +423,10 @@ var deviceClient = DeviceClient.Create("<IotHub DNS HostName>", authMethod);
 [lnk-devguide-jobs]: /documentation/articles/iot-hub-devguide-jobs/
 [lnk-service-sdk]: https://github.com/Azure/azure-iot-sdks/tree/master/csharp/service
 [lnk-client-sdk]: https://github.com/Azure/azure-iot-sdks/tree/master/csharp/device
-[lnk-device-explorer]: https://github.com/Azure/azure-iot-sdks/blob/master/tools/DeviceExplorer/doc/how_to_use_device_explorer.md
 
 [lnk-getstarted-tutorial]: /documentation/articles/iot-hub-csharp-csharp-getstarted/
 [lnk-c2d-tutorial]: /documentation/articles/iot-hub-csharp-csharp-c2d/
 [lnk-d2c-tutorial]: /documentation/articles/iot-hub-csharp-csharp-process-d2c/
 
-<!---HONumber=Mooncake_1205_2016-->
+<!---HONumber=Mooncake_0109_2017-->
+<!--Update_Description:update wording-->

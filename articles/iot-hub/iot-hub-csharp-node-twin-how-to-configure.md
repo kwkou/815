@@ -1,34 +1,35 @@
 <properties
-	pageTitle="使用设备孪生属性 | Azure"
-	description="本教程介绍如何使用设备孪生属性"
-	services="iot-hub"
-	documentationCenter=".net"
-	authors="fsautomata"
-	manager="timlt"
-	editor=""/>  
-
-
+    pageTitle="使用 Azure IoT 中心设备孪生属性 (.NET/Node) | Azure"
+    description="如何使用 Azure IoT 中心设备孪生配置设备。使用适用于 Node.js 的 Azure IoT 设备 SDK 实现模拟设备应用，并使用适用于 .NET 的 Azure IoT 服务 SDK 实现可使用设备孪生更改设备配置的服务应用。"
+    services="iot-hub"
+    documentationcenter=".net"
+    author="fsautomata"
+    manager="timlt"
+    editor="" />
 <tags
-     ms.service="iot-hub"
-     ms.devlang="node"
-     ms.topic="article"
-     ms.tgt_pltfrm="na"
-     ms.workload="na"
-     ms.date="09/13/2016"
-     wacn.date="12/12/2016"
-     ms.author="elioda"/>  
+    ms.assetid="3c627476-f982-43c9-bd17-e0698c5d236d"
+    ms.service="iot-hub"
+    ms.devlang="node"
+    ms.topic="article"
+    ms.tgt_pltfrm="na"
+    ms.workload="na"
+    ms.date="09/13/2016"
+    wacn.date="01/13/2017"
+    ms.author="elioda" />  
 
 
-# 教程：使用所需属性配置设备
-
+# 使用所需属性配置设备
 [AZURE.INCLUDE [iot-hub-selector-twin-how-to-configure](../../includes/iot-hub-selector-twin-how-to-configure.md)]
 
-在本教程结束时，用户将有两个 Node.js 控制台应用程序：
+在本教程结束时，你将拥有两个 Node.js 控制台应用：
 
-* **SimulateDeviceConfiguration.js**，一个模拟设备应用，用于等待所需配置更新并报告模拟配置更新过程的状态。
-* **SetDesiredConfigurationAndQuery**，一个旨在从后端运行的 .NET 控制台应用，用于在设备上设置所需配置并查询配置更新过程。
+* **SimulateDeviceConfiguration.js**，一个模拟设备应用，它等待所需配置更新并报告模拟配置更新过程的状态。
+* **SetDesiredConfigurationAndQuery**，一个 .NET 后端应用，用于在设备上设置所需配置并查询配置更新过程。
 
-> [AZURE.NOTE] [IoT Hub SDKs][lnk-hub-sdks]（IoT 中心 SDK）一文介绍了各种可以用来构建设备和后端应用程序的 SDK。
+> [AZURE.NOTE]
+[Azure IoT SDK][lnk-hub-sdks] 文章介绍了可用于构建设备和后端应用的 Azure IoT SDK。
+> 
+> 
 
 完成本教程需具备以下条件：
 
@@ -38,7 +39,7 @@
 
 + 有效的 Azure 帐户。（如果没有帐户，只需花费几分钟就能创建一个[帐户][lnk-free-trial]。）
 
-如果学习过 [Get started with device twins][lnk-twin-tutorial]（设备孪生入门）教程，则用户已经有一个启用了设备管理的中心和一个名为 **myDeviceId** 的设备标识，因此可跳到[创建模拟设备应用][lnk-how-to-configure-createapp]部分。
+如果按照[设备孪生入门][lnk-twin-tutorial]教程操作，你就已拥有一个 IoT 中心和一个 **myDeviceId** 设备标识；因此可跳到[创建模拟设备应用][lnk-how-to-configure-createapp]部分。
 
 [AZURE.INCLUDE [iot-hub-get-started-create-hub](../../includes/iot-hub-get-started-create-hub.md)]
 
@@ -50,16 +51,16 @@
 
 1. 新建名为 **simulatedeviceconfiguration** 的空文件夹。在命令提示符下的 **simulatedeviceconfiguration** 文件夹中，使用以下命令创建新的 package.json 文件。接受所有默认值：
    
-    ```
+    
     npm init
-    ```
-2. 在 **simulatedeviceconfiguration** 文件夹的命令提示符处，运行下述命令以安装 **azure-iot-device** 和 **azure-iot-device-mqtt** 包：
+    
+2. 在 **simulatedeviceconfiguration** 文件夹的命令提示符处，运行以下命令来安装 **azure-iot-device** 和 **azure-iot-device-mqtt** 包：
    
-    ```
+    
     npm install azure-iot-device azure-iot-device-mqtt --save
-    ```
+    
 3. 在 **simulatedeviceconfiguration** 文件夹中使用文本编辑器新建 **SimulateDeviceConfiguration.js** 文件。
-4. 将以下代码添加到 **SimulateDeviceConfiguration.js** 文件，并将 **{device connection string}** 占位符替换为在创建 **myDeviceId** 设备标识时复制的连接字符串：
+4. 将以下代码添加到 **SimulateDeviceConfiguration.js** 文件，并将 **{device connection string}** 占位符替换为创建 **myDeviceId** 设备标识时复制的设备连接字符串：
    
         'use strict';
         var Client = require('azure-iot-device').Client;
@@ -144,7 +145,7 @@
             };
             
    
-    **initConfigChange** 方法使用配置更新请求更新本地设备孪生对象的报告属性，并将状态设置为 **Pending**，然后更新服务的设备孪生。成功更新设备孪生后，它会模拟在执行 **completeConfigChange** 期间终止的长时间运行的进程。此方法会更新本地设备孪生的报告属性，将状态设置为 **Success** 并删除 **pendingConfig** 对象。然后，它会更新服务的设备孪生。
+    **initConfigChange** 方法使用配置更新请求更新本地设备孪生对象的报告属性，并将状态设置为“等待中”，然后更新服务的设备孪生。成功更新设备孪生后，它会模拟在执行 **completeConfigChange** 期间终止的长时间运行的进程。此方法会更新本地克隆报告属性，将状态设置为 **Success** 并删除 **pendingConfig** 对象。然后，它会更新服务的设备孪生。
    
     请注意，为了节省带宽，在更新报告属性时，请仅指定要修改的属性（在上面的代码中名为 **patch**），而不要替换整个文档。
    
@@ -161,7 +162,7 @@
     此时会显示消息`retrieved device twin`。使应用保持运行状态。
 
 ## 创建服务应用
-在本节中，用户需创建一个 .NET 控制台应用，以便通过新的遥测配置对象在与 **myDeviceId** 关联的设备孪生上更新*所需属性*。该应用随后会查询存储在中心的设备孪生，并显示设备的所需配置与报告配置之间的差异。
+在本节中，用户需创建一个 .NET 控制台应用，以便通过新的遥测配置对象在与 **myDeviceId** 关联的设备孪生上更新*所需属性*。该应用随后会查询存储在 IoT 中心的设备孪生，并显示设备的所需配置与报告配置之间的差异。
 
 1. 在 Visual Studio 中，使用“控制台应用程序”项目模板将 Visual C# Windows 经典桌面项目添加到当前解决方案。将项目命名为 **SetDesiredConfigurationAndQuery**。
    
@@ -177,7 +178,7 @@
         using Microsoft.Azure.Devices;
         using System.Threading;
         using Newtonsoft.Json;
-5. 将以下字段添加到 **Program** 类。将占位符值替换为在上一部分中为 IoT 中心创建的连接字符串。
+5. 将以下字段添加到 **Program** 类。将占位符值替换为在上一部分中为中心创建的 IoT 中心连接字符串。
    
         static RegistryManager registryManager;
         static string connectionString = "{iot hub connection string}";
@@ -215,7 +216,7 @@
             }
         }
    
-    **Registry** 对象会公开从服务与设备孪生进行交互所需的所有方法。前面的代码在初始化 **Registry** 对象后检索 **myDeviceId** 的设备孪生，并使用新的遥测配置对象更新其所需属性。然后，该代码会每隔 10 秒钟查询一次存储在中心的设备孪生，并打印所需的和报告的遥测配置。请参阅 [IoT Hub query language][lnk-query]（IoT 中心查询语言），了解如何跨所有设备生成丰富的报告。
+    **Registry** 对象会公开从服务与设备孪生进行交互所需的所有方法。前面的代码在初始化 **Registry** 对象后检索 **myDeviceId** 的设备孪生，并使用新的遥测配置对象更新其所需属性。然后，该代码会每隔 10 秒钟查询一次存储在 IoT 中心的设备孪生，并打印所需的和报告的遥测配置。请参阅 [IoT Hub query language][lnk-query]（IoT 中心查询语言），了解如何跨所有设备生成丰富的报告。
    
        > [AZURE.IMPORTANT]
        为了方便用户查看，此应用程序每 10 秒查询 IoT 中心一次。使用查询跨多个设备生成面向用户的报表，而不检测更改。如果解决方案需要设备事件的实时通知，请使用[设备到云的消息][lnk-d2c]。
@@ -237,7 +238,7 @@
        > 
 
 ## 后续步骤
-在本教程中，用户已从后端将所需配置设置为*所需属性*，此外还编写了一个设备应用来检测该更改并模拟多步骤更新进程（将其状态作为*报告属性*报告给设备孪生）。
+在本教程中，用户已从解决方案后端将所需配置设置为*所需属性*，此外还编写了一个设备应用来检测该更改并模拟多步骤更新过程（通过报告属性报告其状态）。
 
 充分利用以下资源：
 
@@ -259,6 +260,7 @@
 [lnk-query]: /documentation/articles/iot-hub-devguide-query-language/
 [lnk-d2c]: /documentation/articles/iot-hub-devguide-messaging/#device-to-cloud-messages
 [lnk-methods]: /documentation/articles/iot-hub-devguide-direct-methods/
+[lnk-dm-overview]: /documentation/articles/iot-hub-device-management-overview/
 [lnk-twin-tutorial]: /documentation/articles/iot-hub-node-node-twin-getstarted/
 [lnk-dev-setup]: https://github.com/Azure/azure-iot-sdks/blob/master/doc/get_started/node-devbox-setup.md
 [lnk-connect-device]: /develop/iot/
@@ -271,4 +273,5 @@
 
 [lnk-how-to-configure-createapp]: /documentation/articles/iot-hub-node-node-twin-how-to-configure/#create-the-simulated-device-app
 
-<!---HONumber=Mooncake_1205_2016-->
+<!---HONumber=Mooncake_0109_2017-->
+<!--Update_Description:update wording-->

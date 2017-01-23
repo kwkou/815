@@ -14,13 +14,13 @@
      ms.topic="article"
      ms.tgt_pltfrm="na"
      ms.workload="na"
-     ms.date="08/25/2016"
-     wacn.date="12/12/2016"
+     ms.date="11/16/2016"
+     wacn.date="01/13/2017"
      ms.author="andbuc"/>  
 
 
 
-# Azure IoT 网关 SDK - 开始使用 Windows
+# Azure IoT 网关 SDK 入门 \(Windows\)
 
 [AZURE.INCLUDE [iot-hub-gateway-sdk-getstarted-selector](../../includes/iot-hub-gateway-sdk-getstarted-selector.md)]
 
@@ -35,10 +35,10 @@
 ## 如何运行示例
 1. **build.cmd** 脚本在本地存储库副本中创建一个名为 **build** 的文件夹。此文件夹中包含本示例中使用的两个模块。
    
-    生成脚本将 **logger.dll** 放在 **build\\modules\\logger\\Debug** 文件夹中，将 **hello\_world.dll** 放在 **build\\modules\\hello\_world\\Debug** 文件夹中。按如下 JSON 设置文件所示，将这些路径用于 **module path** 值。
-2. hello\_world\_sample 进程采用 JSON 配置文件路径作为命令行中的参数。已在 **azure-iot-gateway-sdk\\samples\\hello\_world\\src\\hello\_world\_win.json** 中将示例 JSON 文件作为存储库的一部分提供，并复制在下方。除非修改生成脚本，将模块或示例可执行文件放在非默认位置，否则它会按原样运行。
+    生成脚本将 **logger.dll** 放在 **build\\modules\\logger\\Debug** 文件夹中，将 **hello\_world.dll** 放在 **build\\modules\\hello\_world\\Debug** 文件夹中。按以下 JSON 设置文件所示，将这些路径用于 **module path** 值。
+2. hello\_world\_sample 进程采用 JSON 配置文件路径作为命令行中的参数。已在 **azure-iot-gateway-sdk\\samples\\hello\_world\\src\\hello\_world\_win.json** 中将以下示例 JSON 文件作为存储库的一部分提供。除非修改生成脚本，将模块或示例可执行文件放在非默认位置，否则它会按原样运行。
 
-    > [AZURE.NOTE]
+   > [AZURE.NOTE]
    模块路径相对 hello\_world\_sample.exe 所在的目录。示例 JSON 配置文件默认将“log.txt”写入当前工作目录。
    
 
@@ -86,4 +86,5 @@
 
 [lnk-setupdevbox]: https://github.com/Azure/azure-iot-gateway-sdk/blob/master/doc/devbox_setup.md
 
-<!---HONumber=Mooncake_1205_2016-->
+<!---HONumber=Mooncake_0109_2017-->
+<!--Update_Description:update wording-->
