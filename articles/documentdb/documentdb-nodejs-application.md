@@ -15,7 +15,7 @@
     ms.devlang="nodejs"
     ms.topic="hero-article"
     ms.date="12/16/2016"
-    wacn.date="01/16/2017"
+    wacn.date="01/23/2017"
     ms.author="syamk" />
 
 # <a name="_Toc395783175"></a>使用 DocumentDB 生成 Node.js Web 应用程序
@@ -554,3 +554,4 @@
 [Github]: https://github.com/Azure-Samples/documentdb-node-todo-app
 
 <!---HONumber=Mooncake_0109_2017-->
+<!---Update_Description: wording and code update -->

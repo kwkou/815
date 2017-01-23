@@ -15,7 +15,7 @@
     ms.devlang="node"
     ms.topic="hero-article"
     ms.date="12/16/2016"
-    wacn.date="01/16/2017"
+    wacn.date="01/23/2017"
     ms.author="anhoh" />
 
 # NoSQL Node.js 教程：DocumentDB Node.js 控制台应用程序
@@ -625,3 +625,4 @@ DocumentDB 支持删除 JSON 文档。
 [keys]: ./media/documentdb-nodejs-get-started/node-js-tutorial-keys.png
 
 <!---HONumber=Mooncake_0109_2017-->
+<!---Update_Description: wording update -->

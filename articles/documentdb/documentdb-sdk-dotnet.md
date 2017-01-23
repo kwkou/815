@@ -14,7 +14,7 @@
     ms.devlang="dotnet"
     ms.topic="article"
     ms.date="12/09/2016"
-    wacn.date="01/16/2017"
+    wacn.date="01/23/2017"
     ms.author="rnagpal" />
 
 # DocumentDB API 和 SDK
@@ -230,3 +230,4 @@ Microsoft 至少会在停用 SDK 的 **12 个月**之前发出通知，以便顺
 若要了解有关 DocumentDB 的详细信息，请参阅 [Azure DocumentDB](/home/features/documentdb/) 服务页。
 
 <!---HONumber=Mooncake_0109_2017-->
+<!---Update_Description: wording update -->

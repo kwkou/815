@@ -14,7 +14,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="12/15/2016"
-    wacn.date="01/16/2017"
+    wacn.date="01/23/2017"
     ms.author="mimig" />  
 
 
@@ -127,3 +127,4 @@ Azure 门户预览使你能够创建并排的指标图表。
 若要了解有关 DocumentDB 容量的详细信息，请参阅 [Manage DocumentDB capacity](/documentation/articles/documentdb-manage/)（管理 DocumentDB 容量）。
 
 <!---HONumber=Mooncake_0109_2017-->
+<!---Update_Description: add content to describe how to view performance metrics by using Azure Monitoring -->

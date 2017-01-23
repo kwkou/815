@@ -15,7 +15,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="12/13/2016"
-    wacn.date="01/19/2017"
+    wacn.date="01/23/2017"
     ms.author="mimig" />  
 
 
@@ -121,3 +121,4 @@ DocumentDB 通过 JavaScript 存储过程和触发器支持语言集成式事务
 [query]: /documentation/articles/documentdb-sql-query/
 
 <!---HONumber=Mooncake_0109_2017-->
+<!---Update_Description: wording update -->

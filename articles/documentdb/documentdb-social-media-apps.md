@@ -15,7 +15,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="12/09/2016"
-    wacn.date="01/19/2017"
+    wacn.date="01/23/2017"
     ms.author="mimig" />  
 
 
@@ -226,3 +226,4 @@ Azure 搜索可实现它们称之为[索引器](https://msdn.microsoft.com/zh-cn
 阅读 [Modeling data in DocumentDB](/documentation/articles/documentdb-modeling-data/)（为 DocumentDB 中的数据建模）一文，了解有关数据建模的详细信息。如需了解 DocumentDB 其他用例信息，请参阅 [Common DocumentDB use cases](/documentation/articles/documentdb-use-cases/)（DocumentDB 的常见用例）。
 
 <!---HONumber=Mooncake_0109_2017-->
+<!---Update_Description: wording and links update -->

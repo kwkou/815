@@ -14,7 +14,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="12/13/2016"
-    wacn.date="01/16/2017"
+    wacn.date="01/23/2017"
     ms.author="anhoh" />  
 
 
@@ -53,3 +53,4 @@
 - 若要了解有关 DocumentDB 的详细信息，请单击[此处](/documentation/services/documentdb/)。
 
 <!---HONumber=Mooncake_0109_2017-->
+<!---Update_Description: wording update -->

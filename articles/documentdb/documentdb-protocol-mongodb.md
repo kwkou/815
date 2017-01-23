@@ -15,7 +15,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="11/23/2016"
-    wacn.date="01/16/2017"
+    wacn.date="01/23/2017"
     ms.author="anhoh" />  
 
 
@@ -46,3 +46,4 @@
 - 浏览具有 MongoDB 协议支持的 DocumentDB [示例](/documentation/articles/documentdb-mongodb-samples/)。
 
 <!---HONumber=Mooncake_0109_2017-->
+<!---Update_Description: add content to describe What is the benefit of using DocumentDB protocol -->

@@ -16,7 +16,7 @@
     ms.devlang="dotnet"
     ms.topic="article"
     ms.date="11/22/2016"
-    wacn.date="01/16/2017"
+    wacn.date="01/23/2017"
     ms.author="mimig" />  
 
 
@@ -129,3 +129,4 @@ Microsoft 提供了五种 SQL 产品/服务：
   - [Azure 虚拟机中的 SQL Server](/home/features/virtual-machines#SQL/)
 
 <!---HONumber=Mooncake_0109_2017-->
+<!---Update_Description: wording update -->

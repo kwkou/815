@@ -15,7 +15,7 @@
     ms.devlang="dotnet"
     ms.topic="hero-article"
     ms.date="12/09/2016"
-    wacn.date="01/16/2017"
+    wacn.date="01/23/2017"
     ms.author="arramac" />  
 
 
@@ -556,3 +556,4 @@ DocumentDB 支持删除 JSON 文档。
 [keys]: ./media/documentdb-get-started/nosql-tutorial-keys.png
 
 <!---HONumber=Mooncake_0109_2017-->
+<!---Update_Description: update code and some words -->

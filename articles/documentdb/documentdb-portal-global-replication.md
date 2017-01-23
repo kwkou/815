@@ -15,7 +15,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="11/23/2016"
-    wacn.date="01/16/2017"
+    wacn.date="01/23/2017"
     ms.author="mimig" />  
 
 
@@ -81,3 +81,4 @@ While all regions associated with your DocumentDB database account can serve rea
 [offers]: /pricing/details/documentdb/
 
 <!---HONumber=Mooncake_0109_2017-->
+<!---Update_Description: wording update -->

@@ -15,7 +15,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="11/22/2016"
-    wacn.date="01/16/2017"
+    wacn.date="01/23/2017"
     ms.author="anhoh" />  
 
 
@@ -83,3 +83,4 @@ DocumentDB 具有严格的安全要求和标准。DocumentDB 帐户需要通过 
 - 浏览具有 MongoDB 协议支持的 DocumentDB [示例](/documentation/articles/documentdb-mongodb-samples/)。
 
 <!---HONumber=Mooncake_0109_2017-->
+<!---Update_Description: show more details on how to get connection string -->
