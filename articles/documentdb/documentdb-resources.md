@@ -15,7 +15,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="12/14/2016"
-    wacn.date="01/16/2017"
+    wacn.date="01/23/2017"
     ms.author="anhoh" />  
 
 
@@ -466,3 +466,4 @@ DocumentDB 用户是指对权限进行分组的逻辑命名空间。DocumentDB �
 [3]: ./media/documentdb-resources/resources3.png
 
 <!---HONumber=Mooncake_0109_2017-->
+<!---Update_Description: wording update -->

@@ -14,7 +14,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="12/14/2016"
-    wacn.date="01/16/2017"
+    wacn.date="01/23/2017"
     ms.author="arramac" />  
 
 
@@ -348,3 +348,4 @@ DocumentDB 最常见的使用案例之一是记录和遥测。选取适当的分
 [3]: ./media/documentdb-partition-data/documentdb-migration-partitioned-collection.png
 
 <!---HONumber=Mooncake_0109_2017-->
+<!---Update_Description: wording update -->

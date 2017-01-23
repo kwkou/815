@@ -14,7 +14,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="na"
     ms.date="12/09/2016"
-    wacn.date="01/19/2017"
+    wacn.date="01/23/2017"
     ms.author="kipandya" />  
 
 
@@ -156,3 +156,4 @@ SDK 会自动将所有写入请求发送到当前写入区域。
 [regions]: https://azure.microsoft.com/regions/
 
 <!---HONumber=Mooncake_0109_2017-->
+<!---Update_Description: update code -->

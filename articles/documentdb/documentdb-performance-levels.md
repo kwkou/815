@@ -14,7 +14,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="12/13/2016"
-    wacn.date="01/16/2017"
+    wacn.date="01/23/2017"
     ms.author="mimig" />  
 
 
@@ -179,3 +179,4 @@ DocumentDB 集合允许根据应用程序的查询模式和性能需求来对数
 [2]: ./media/documentdb-performance-levels/documentdb-change-collection-performance10-11.png
 
 <!---HONumber=Mooncake_0109_2017-->
+<!---Update_Description: wording update -->

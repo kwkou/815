@@ -14,7 +14,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="data-services"
     ms.date="12/13/2016"
-    wacn.date="01/16/2017"
+    wacn.date="01/23/2017"
     ms.author="andrl" />  
 
 
@@ -134,3 +134,5 @@ DocumentDB 奇才是社区领导者，他们是帮助其他人充分利用他们
 想要成为 DocumentDB 奇才？ 由于是否能成为 DocumentDB 奇才并没有任何评判基准，因此我们会针对部分条件来评估，包括被提名人对在线论坛（例如 StackOverflow 和 MSDN；Wiki 和在线内容；会议和用户组；播客；网站；博客和社交媒体；以及文章与书籍）的贡献所产生的影响。如果想提名自己或其他人，[请向我们发送电子邮件](mailto:askdocdb@microsoft.com)。
 
 <!---HONumber=Mooncake_0109_2017-->
+<!---Update_Description: wording update -->
+

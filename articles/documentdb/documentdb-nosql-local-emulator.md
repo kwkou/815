@@ -15,7 +15,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="na"
     ms.date="11/29/2016"
-    wacn.date="01/16/2017"
+    wacn.date="01/23/2017"
     ms.author="arramac" />  
 
 
@@ -218,3 +218,4 @@ DocumentDB 模拟器支持的主密钥仅用于模拟器。不能在 DocumentDB 
 - 若要开始使用 DocumentDB 模拟器进行开发，请下载一个[支持的 DocumentDB SDK](/documentation/articles/documentdb-sdk-dotnet/)。
 
 <!---HONumber=Mooncake_0109_2017-->
+<!---Update_Description: add content on how to Start the local emulator Data Explorer and export SSL certificate -->

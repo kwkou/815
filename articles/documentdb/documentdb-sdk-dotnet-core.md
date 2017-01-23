@@ -14,7 +14,7 @@
     ms.devlang="dotnet"
     ms.topic="article"
     ms.date="11/23/2016"
-    wacn.date="01/16/2017"
+    wacn.date="01/23/2017"
     ms.author="rnagpal" />
 
 # DocumentDB API 和 SDK
@@ -69,3 +69,4 @@ DocumentDB .NET Core 预览版 SDK 与最新版 [DocumentDB.NET SDK](/documentat
 若要了解有关 DocumentDB 的详细信息，请参阅 [Azure DocumentDB](/home/features/documentdb/) 服务页。
 
 <!---HONumber=Mooncake_0109_2017-->
+<!---Update_Description: wording update -->

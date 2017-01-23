@@ -15,7 +15,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="12/08/2016"
-    wacn.date="01/16/2017"
+    wacn.date="01/23/2017"
     ms.author="anhoh" />  
 
 
@@ -565,3 +565,4 @@ DocumentDB - 顺序记录导入程序具有下列高级附加选项︰
     ![DocumentDB JSON 导出选项的屏幕截图](./media/documentdb-import-data/newimport.png)  
 
 <!---HONumber=Mooncake_0109_2017-->
+<!---Update_Description: wording update -->

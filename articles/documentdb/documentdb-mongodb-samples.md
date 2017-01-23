@@ -15,7 +15,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="11/28/2016"
-    wacn.date="01/16/2017"
+    wacn.date="01/23/2017"
     ms.author="anhoh" />  
 
 
@@ -258,3 +258,4 @@
 - 了解如何配合具有 MongoDB 协议支持的 DocumentDB 帐户[使用 MongoChef](/documentation/articles/documentdb-mongodb-mongochef/)。
 
 <!---HONumber=Mooncake_0109_2017-->
+<!---Update_Description: code update -->

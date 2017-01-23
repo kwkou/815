@@ -14,7 +14,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="12/13/2016"
-    wacn.date="01/16/2017"
+    wacn.date="01/23/2017"
     ms.author="arramac" />  
 
 
@@ -23,3 +23,4 @@
 DocumentDB 是全局缩放数据库，可对吞吐量和存储进行缩放，以满足应用程序的所有需求。如果对 DocumentDB 提供的规模有任何问题，请发送电子邮件到 askdocdb@microsoft.com。
 
 <!---HONumber=Mooncake_0109_2017-->
+<!---Update_Description: wording and links update -->
