@@ -118,7 +118,6 @@
 > 例如，部署历史记录中的以下条目将显示字符串和对象的值，但不会显示 secureString 和 secureObject 的值。
 ><p>
 > ![显示部署值](./media/resource-group-authoring-templates/show-parameters.png)  
-
 >
 
 以下示例演示如何定义参数：
