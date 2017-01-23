@@ -13,9 +13,9 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="Java"
 	ms.topic="article"
-	ms.date="08/23/2016"
+	ms.date="11/30/2016"
 	ms.author="sethm"
-	wacn.date="01/04/2017"/>  
+	wacn.date="01/23/2017"/>  
 
 
 # 如何使用服务总线主题和订阅

@@ -13,9 +13,9 @@
     ms.topic="get-started-article"
     ms.tgt_pltfrm="na"
     ms.workload="na"
-    ms.date="09/27/2016"
+    ms.date="12/12/2016"
     ms.author="sethm"
-    wacn.date="01/09/2017"/>  
+    wacn.date="01/23/2017"/>  
 
 
 # 服务总线中转消息传送 REST 教程

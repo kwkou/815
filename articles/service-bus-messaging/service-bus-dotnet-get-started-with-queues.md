@@ -9,8 +9,8 @@
 
 <tags
     ms.service="service-bus"
-    ms.date="08/23/2016"
-    wacn.date="10/24/2016"/>
+    ms.date="11/30/2016"
+    wacn.date="01/23/2017"/>
 
 # 服务总线队列入门
 
