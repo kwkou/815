@@ -15,7 +15,7 @@
 	ms.devlang="na"
 	ms.topic="hero-article"
 	ms.date="09/27/2016"
-	wacn.date="11/08/2016"
+	wacn.date="01/23/2017"
 	ms.author="jotaub;sethm"/>  
 
 
@@ -31,7 +31,7 @@
 
 若要完成本教程，你需要以下各项：
 
-+ [Microsoft Visual Studio](https://www.visualstudio.com)
++ [Microsoft Visual Studio](http://visualstudio.com)
 
 + 有效的 Azure 帐户。<br/>如果你没有帐户，只需几分钟的时间就能创建一个帐户。有关详细信息，请参阅 [Azure 试用版](/pricing/1rmb-trial)。
 
@@ -72,4 +72,4 @@
 [使用事件中心的完整示例应用程序]: https://code.msdn.microsoft.com/Service-Bus-Event-Hub-286fd097
 [使用事件中心扩大事件处理]: https://code.msdn.microsoft.com/Service-Bus-Event-Hub-45f43fc3
 
-<!---HONumber=Mooncake_1031_2016-->
+<!---HONumber=Mooncake_0116_2017-->

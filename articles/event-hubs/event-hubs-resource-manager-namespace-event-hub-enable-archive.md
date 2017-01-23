@@ -1,6 +1,6 @@
 <properties
-    pageTitle="使用 Azure Resource Manager 模板创建包含事件中心和事件中心命名空间以及启用存档 | Azure"
-    description="使用 Azure Resource Manager 模板创建包含事件中心和事件中心命名空间以及启用存档"
+    pageTitle="使用 Azure Resource Manager 模板创建包含事件中心的事件中心命名空间以及启用存档 | Azure"
+    description="使用 Azure Resource Manager 模板创建包含事件中心的事件中心命名空间以及启用存档"
     services="event-hubs"
     documentationCenter=".net"
     authors="ShubhaVijayasarathy"
@@ -14,26 +14,30 @@
     ms.topic="article"
     ms.tgt_pltfrm="dotnet"
     ms.workload="na"
-    ms.date="09/14/2016"
-    wacn.date="11/08/2016"
-    ms.author="ShubhaVijayasarathy"/>  
+    ms.date="11/21/2016"
+    wacn.date="01/23/2017"
+    ms.author="shvija:sethm"/>  
 
 
 # 使用 Azure Resource Manager 模板创建包含事件中心和事件中心命名空间以及启用存档
 
 本文介绍如何使用 Azure Resource Manager 模板创建包含事件中心的事件中心命名空间以及在事件中心上启用存档。你将了解如何定义要部署的资源以及如何定义执行部署时指定的参数。可将此模板用于自己的部署，或自定义此模板以满足要求
 
-有关创建模板的详细信息，请参阅[创作 Azure Resource Manager 模板][]。
+有关创建模板的详细信息，请参阅[创作 Azure Resource Manager 模板][Authoring Azure Resource Manager templates]。
 
 
 有关完整的模板，请参阅 GitHub 上的[事件中心和启用存档模板][]。
 
 
-## 部署内容？
 
-使用此模板，你会部署包含事件中心的事件中心命名空间以及启用存档。
+## 你将部署什么内容？
+使用此模板，可部署包含事件中心的事件中心命名空间以及启用事件中心存档。
 
 [事件中心](/documentation/articles/event-hubs-what-is-event-hubs/)是一种事件处理服务，用于向 Azure 提供大规模的事件与遥测数据入口，并且具有较低的延迟和较高的可靠性。使用事件中心存档，可以按照所选指定时间或大小间隔将事件中心中的流数据自动传送到所选的 Azure Blob 存储。
+
+若要自动运行部署，请单击以下按钮：
+
+[![部署到 Azure](./media/event-hubs-resource-manager-namespace-event-hub/deploybutton.png)](https://portal.azure.cn/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F201-eventhubs-create-namespace-and-enable-archive%2Fazuredeploy.json)
 
 ## 参数
 
@@ -164,8 +168,7 @@
 
 
 ### destinationStorageAccountResourceId
-
-存档需要存储帐户资源 ID，以启用到所需 Azure 存储的存档。
+存档需要 Azure 存储帐户资源 ID，以启用到所需存储帐户的存档。
 
 
          "destinationStorageAccountResourceId":{
@@ -205,8 +208,7 @@
 
 
 ## 要部署的资源
-
-创建包含事件中心的 **EventHubs** 类型的命名空间以及启用存档。
+创建包含事件中心的 **EventHubs** 类型的命名空间并启用存档。
 
 
         "resources":[  
@@ -277,4 +279,4 @@
 [Event Hub and consumer group template]: https://github.com/Azure/azure-quickstart-templates/blob/master/201-eventhubs-create-namespace-and-enable-archive/
 [事件中心和启用存档模板]: https://github.com/Azure/azure-quickstart-templates/tree/master/201-eventhubs-create-namespace-and-enable-archive
 
-<!---HONumber=Mooncake_1031_2016-->
+<!---HONumber=Mooncake_0116_2017-->

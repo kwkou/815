@@ -14,8 +14,8 @@
 	ms.tgt_pltfrm="c"
 	ms.devlang="csharp"
 	ms.topic="article"
-	ms.date="08/16/2016"
-	wacn.date="01/04/2017"
+	ms.date="11/30/2016"
+	wacn.date="01/23/2017"
 	ms.author="jotaub;sethm"/>  
 
 
