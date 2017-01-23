@@ -18,7 +18,7 @@
     ms.author="dobett" />  
 
 
-# 使用 IoT 中心发送云到设备的消息 \(Java\)
+# 使用 IoT 中心发送云到设备的消息 (Java)
 
 [AZURE.INCLUDE [iot-hub-selector-c2d](../../includes/iot-hub-selector-c2d.md)]
 

@@ -18,7 +18,7 @@
     ms.author="juanpere" />  
 
 
-# 使用设备管理启动设备固件更新 \(.NET/Node\)
+# 使用设备管理启动设备固件更新 (.NET/Node)
 [AZURE.INCLUDE [iot-hub-selector-firmware-update](../../includes/iot-hub-selector-firmware-update.md)]
 
 ## 介绍
