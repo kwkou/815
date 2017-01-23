@@ -22,23 +22,23 @@ Azure IoT 中心支持两种通信方式，一个是设备到云（以下简称 
 
 -	D2C 消息发送端：[DeviceClient](https://github.com/Azure/azure-iot-sdk-csharp/blob/1f5a259eee0d178db42d2bf866b80c9846adebba/device/Microsoft.Azure.Devices.Client/DeviceClient.cs), [Nuget](https://www.nuget.org/packages/Microsoft.Azure.Devices.Client/), namespace: Microsoft.Azure.Devices.Client
 
-		var deviceConnectionString = "HostName=<iothub_host_name>;DeviceId=<device_id>;SharedAccessKey=<device_key>"
+		var deviceConnectionString = "HostName=<iothub_host_name>;DeviceId=<device_id>;SharedAccessKey=<device_key>";
 		var deviceClient = DeviceClient.CreateFromConnectionString(deviceConnectionString);
 
 -	D2C 消息消费端：EventHubClient, [Nuget](https://www.nuget.org/packages/WindowsAzure.ServiceBus/), namespace: 
 Microsoft.ServiceBus.Messaging
 
-		var eventHubCompatibleConnStr = “Endpoint=<eventhub_compatible_endpoint>;SharedAccessKeyName=<iothub_sas_policy_name>;SharedAccessKey=<iothub_sas_policy_key>;EntityPath=<eventhub_compatible_name>"
+		var eventHubCompatibleConnStr = “Endpoint=<eventhub_compatible_endpoint>;SharedAccessKeyName=<iothub_sas_policy_name>;SharedAccessKey=<iothub_sas_policy_key>;EntityPath=<eventhub_compatible_name>";
 		var eventHubClient = EventHubClient.CreateFromConnectionString(eventHubCompatibleConnStr);
 
 -	C2D 消息发送端：[ServiceClient](https://github.com/Azure/azure-iot-sdk-csharp/blob/1f5a259eee0d178db42d2bf866b80c9846adebba/service/Microsoft.Azure.Devices/ServiceClient.cs), [Nuget](https://www.nuget.org/packages/Microsoft.Azure.Devices/), namespace: Microsoft.Azure.Devices
 
-		var iotHubConnectionString = “HostName=<iothub_host_name>;SharedAccessKeyName=<iothub_sas_policy_name>;SharedAccessKey=<iothub_sas_policy_key>;”
+		var iotHubConnectionString = “HostName=<iothub_host_name>;SharedAccessKeyName=<iothub_sas_policy_name>;SharedAccessKey=<iothub_sas_policy_key>”;
 		var serviceClient = ServiceClient.CreateFromConnectionString(iotHubConnectionString, <transport_type>);
 
 -	C2D 消息消费端：[DeviceClient](https://github.com/Azure/azure-iot-sdk-csharp/blob/1f5a259eee0d178db42d2bf866b80c9846adebba/device/Microsoft.Azure.Devices.Client/DeviceClient.cs), [Nuget](https://www.nuget.org/packages/Microsoft.Azure.Devices.Client/), namespace: Microsoft.Azure.Devices.Client
 
-		var deviceConnectionString = "HostName=<iothub_host_name>;DeviceId=<device_id>;SharedAccessKey=<device_key>"
+		var deviceConnectionString = "HostName=<iothub_host_name>;DeviceId=<device_id>;SharedAccessKey=<device_key>";
 		var deviceClient = DeviceClient.CreateFromConnectionString(deviceConnectionString);
 
 可以看到其中消费 D2C（设备到云）消息是比较特殊的，它不是调用 IoT 中心的 SDK，而是使用服务总线 SDK 里的 EventHubClient。这是因为 IoT 中心公开[事件中心](/documentation/services/event-hubs/)兼容的终结点来接收设备到云的消息 。这样就可以重用现有的事件中心所支持的方式来消费 IoT 中心的 D2C 消息，包括使用 EventHubClient 直接读取，使用事件处理程序主机（EventProcessorHost），或者使用 Apache Storm 等等。这样做好处很明显，但是有时候也会产生混淆，**经常容易出错的地方就是使用 IoT 中心的连接字符串来创建 EventHubClient**。这样的使用是会产生问题的，比如连接不上或者连接容易断开等等。**正确的使用方式是使用事件中心兼容的连接字符串来创建 EventHubClient**。所以在 IoT 中心的管理门户里面提供了相应的事件中心兼容的名称和端点信息，以供构建正确的连接字符串。
