@@ -4,8 +4,7 @@
     services="virtual-machines-windows"
     documentationcenter=""
     author="dlepow"
-    manager="timlt" />  
-
+    manager="timlt" />
 <tags
     ms.assetid="9edf9559-db02-438b-8268-a6cba7b5c8b7"
     ms.service="virtual-machines-windows"
@@ -14,13 +13,12 @@
     ms.tgt_pltfrm="vm-multiple"
     ms.workload="big-compute"
     ms.date="11/14/2016"
-    wacn.date="12/20/2016"
+    wacn.date="01/20/2017"
     ms.author="danlep" />  
 
 
 # 使用 Azure Active Directory 管理 Azure 中的 HPC Pack 群集
 [Microsoft HPC Pack 2016](https://technet.microsoft.com/zh-cn/library/cc514029) 支持在 Azure 中部署 HPC Pack 群集的管理员将其与 [Azure Active Directory](/documentation/services/identity/) (Azure AD) 集成。
-
 
 
 请按照本文中的步骤执行以下高级别任务：
@@ -30,7 +28,6 @@
 将 HPC Pack 群集解决方案与 Azure AD 集成时按照标准步骤集成其他应用程序和服务。本文假定你熟悉 Azure AD 中的基本用户管理。有关详细信息和背景资料，请参阅 [Azure Active Directory 文档](/documentation/services/identity/)以及以下部分。
 
 ## 集成的好处
-
 
 Azure Active Directory (Azure AD) 是基于多租户云的目录和标识管理服务，可提供对云解决方案的单一登录 (SSO) 访问。
 
@@ -44,19 +41,16 @@ HPC Pack 群集与 Azure AD 集成可帮助用户实现以下目标：
     ![Azure Active Directory 环境](./media/virtual-machines-windows-hpcpack-cluster-active-directory/aad.png)  
 
 
-
 ## 先决条件
-* **Azure 虚拟机中部署的 HPC Pack 2016 群集**
+* **在 Azure 虚拟机中部署的 HPC Pack 2016 群集** - 需要获得头节点的 DNS 名称和群集管理员的凭据才能完成本文中的步骤。
 
   > [AZURE.NOTE]
   在 HPC Pack 2016 之前的 HPC Pack 版本中不支持 Azure Active Directory 集成。
 
 
-
 * **客户端计算机** - 需要有可运行 HPC Pack 客户端实用工具的 Windows 或 Windows Server 客户端计算机。如果只想使用 HPC Pack Web 门户或 REST API 来提交作业，则可以使用自选的任意客户端计算机。
 
 * **HPC Pack 客户端实用工具** - 使用 Microsoft 下载中心提供的免费安装包在客户端计算机上安装 HPC Pack 客户端实用工具。
-
 
 ## 步骤 1：将 HPC 群集服务器注册到 Azure AD 租户
 1. 登录 [Azure 经典管理门户](https://manage.windowsazure.cn)。
@@ -100,7 +94,7 @@ HPC Pack 群集与 Azure AD 集成可帮助用户实现以下目标：
         ],
 
 7. 保存文件。然后在门户中，单击“管理清单”>“上载清单”。然后，可以上载编辑的清单。
-8. 单击“用户”，选择用户，然后单击“分配”。将一个可用角色（HpcUsers 或 HpcAdminMirror）分配给用户。对目录中的其他用户重复此步骤。有关群集用户的背景信息，请参阅 [管理群集用户](https://technet.microsoft.com/zh-cn/library/ff919335(v=ws.11).aspx)。
+8. 单击“用户”，选择用户，然后单击“分配”。将一个可用角色（HpcUsers 或 HpcAdminMirror）分配给用户。对目录中的其他用户重复此步骤。有关群集用户的背景信息，请参阅 [管理群集用户] (https://technet.microsoft.com/zh-cn/library/ff919335(v=ws.11).aspx)。
 
 ## 步骤 2：将 HPC 群集客户端注册到 Azure AD 租户
 
@@ -117,7 +111,6 @@ HPC Pack 群集与 Azure AD 集成可帮助用户实现以下目标：
 5. 在“针对其他应用程序的权限”中，单击“添加应用程序”。搜索并添加 HpcPackClusterServer 应用程序（在步骤 1 中创建）。
 
 6. 在“委派权限”下拉列表中，选择“访问 HpcClusterServer”。然后单击“保存”。
-
 
 ## 步骤 3：配置 HPC 群集
 
@@ -170,7 +163,10 @@ HPC Pack 2016 提供两个新的 HPC PowerShell cmdlet 来管理本地令牌缓�
 
     Set-HpcTokenCache -UserName <AADUsername> -Password $SecurePassword -scheduler https://<Azure load balancer DNS name> 
 
-### 设置用于使用 Azure AD 帐户提交作业的凭据
+### 设置用于使用 Azure AD 帐户提交作业的凭据 
+
+有时，你可能想要以 HPC 群集用户的身份运行作业（对于已加入域的 HPC 群集，以域用户的身份运行；对于未加入域的 HPC 群集，以头节点上某个本地用户的身份运行）。
+
 1. 使用以下命令以设置凭据：
 
         $localUser = "<username>"
@@ -193,6 +189,16 @@ HPC Pack 2016 提供两个新的 HPC PowerShell cmdlet 来管理本地令牌缓�
 
         Submit-HpcJob -Job $job -Scheduler https://<Azure load balancer DNS name> -Credential $emptycreds
 
-    如果使用 `Submit-HpcJob` 时未指定 `-Credential`，则作业/任务在本地映射为 Azure AD 帐户的用户下运行。（HPC 群集创建的本地用户与用于运行任务的 Azure AD 帐户同名。）
+如果使用 `Submit-HpcJob` 时未指定 `-Credential`，则作业或任务在本地映射为 Azure AD 帐户的用户下运行。（HPC 群集创建的本地用户与用于运行任务的 Azure AD 帐户同名。）
+    
+3. 为 Azure AD 帐户设置扩展的数据。使用 Azure AD 帐户在 Linux 节点上运行 MPI 作业时，这种做法十分有用。
 
-<!---HONumber=Mooncake_1212_2016-->
+    * 为 Azure AD 帐户本身设置扩展的数据
+
+          Set-HpcJobCredential -Scheduler https://<Azure load balancer DNS name> -ExtendedData <data> -AadUser
+
+* 设置扩展的数据和 HPC 群集的运行方式用户
+
+          Set-HpcJobCredential -Credential $mycreds -Scheduler https://<Azure load balancer DNS name> -ExtendedData <data>
+
+<!---HONumber=Mooncake_0116_2017-->

@@ -7,8 +7,7 @@
     author="rickstercdn"
     manager="timlt"
     editor="tysonn"
-    tags="azure-resource-manager" />  
-
+    tags="azure-resource-manager" />
 <tags
     ms.assetid="3005a066-7a84-4dc5-bdaa-574c75e6e411"
     ms.service="virtual-machines-linux"
@@ -17,7 +16,7 @@
     ms.tgt_pltfrm="vm-linux"
     ms.devlang="na"
     ms.date="09/06/2016"
-    wacn.date="12/20/2016"
+    wacn.date="01/20/2017"
     ms.author="rclaus" />
 
 # 将磁盘添加到 Linux VM
@@ -68,10 +67,10 @@
     Usage of /:  41.4% of 1.94GB   Swap usage:   0%   Users logged in: 0
 
     Graph this data and manage this system at:
-    https://landscape.canonical.com/
+      https://landscape.canonical.com/
 
     Get cloud support with Ubuntu Advantage Cloud Guest:
-    http://www.ubuntu.com/business/services/cloud
+      http://www.ubuntu.com/business/services/cloud
 
     0 packages can be updated.
     0 updates are security updates.
@@ -112,8 +111,8 @@
 
     Command (m for help): n
     Partition type:
-    p   primary (0 primary, 0 extended, 4 free)
-    e   extended
+       p   primary (0 primary, 0 extended, 4 free)
+       e   extended
     Select (default p): p
     Partition number (1-4, default 1): 1
     First sector (2048-10485759, default 2048):
@@ -132,7 +131,7 @@
     I/O size (minimum/optimal): 512 bytes / 512 bytes
     Disk identifier: 0x2a59b123
 
-    Device Boot      Start         End      Blocks   Id  System
+       Device Boot      Start         End      Blocks   Id  System
     /dev/sdc1            2048    10485759     5241856   83  Linux
 
     Command (m for help): w
@@ -222,7 +221,7 @@
 
         UUID=33333333-3b3b-3c3c-3d3d-3e3e3e3e3e3e   /datadrive   ext4   defaults,discard   1   2
 
-* 此处，还可以从命令行手动运行 `fstrim` 命令，或将其添加到 crontab 以定期运行：
+* 在某些情况下 `discard` 选项可能会影响性能。此处，还可以从命令行手动运行 `fstrim` 命令，或将其添加到 crontab 以定期运行：
   
     **Ubuntu**
 
@@ -242,4 +241,4 @@
 * 为确保正确配置 Linux VM，请查看有关[优化 Linux 计算机性能](/documentation/articles/virtual-machines-linux-optimization/)的建议。
 * 可以添加更多的磁盘来扩展存储容量，[配置 RAID](/documentation/articles/virtual-machines-linux-configure-raid/) 来提高性能。
 
-<!---HONumber=Mooncake_1212_2016-->
+<!---HONumber=Mooncake_0116_2017-->
