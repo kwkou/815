@@ -16,8 +16,8 @@
     ms.topic="article"
     ms.tgt_pltfrm="vm-windows"
     ms.workload="infrastructure-services"
-    ms.date="11/17/2016"
-    wacn.date="12/20/2016"
+    ms.date="12/08/2016"
+    wacn.date="01/20/2017"
     ms.author="nepeters" />
 
 # 关于虚拟机扩展和功能
@@ -30,8 +30,8 @@ Azure 虚拟机扩展是小型应用程序，可在Azure 虚拟机上提供部�
 
 有许多不同的 Azure VM 扩展可用，每个都有特定用例。一些示例用例包括：
 
-- 使用适用于 Windows 的 DSC 扩展将 PowerShell 所需状态配置应用于虚拟机。有关详细信息，请参阅 [Azure 所需状态配置扩展](/documentation/articles/virtual-machines-windows-extensions-dsc-overview/)。
-- 使用 Datadog 扩展配置监视 Azure 基础结构的功能。有关详细信息，请参阅 [Datadog 博客](https://www.datadoghq.com/blog/introducing-azure-monitoring-with-one-click-datadog-deployment/)。
+- 使用适用于 Windows 的 DSC 扩展将 PowerShell 所需状态配置应用于虚拟机。有关详细信息，请参阅 [Azure Desired State configuration extension](/documentation/articles/virtual-machines-windows-extensions-dsc-overview/)（Azure Desired State Configuration 扩展）。
+- 使用 Datadog 扩展配置 Azure 基础结构监视功能。有关详细信息，请参阅 [Datadog 博客](https://www.datadoghq.com/blog/introducing-azure-monitoring-with-one-click-datadog-deployment/)。
 - 使用 Chef 配置 Azure 虚拟机。有关详细信息，请参阅[使用 Chef 自动执行 Azure 虚拟机部署](/documentation/articles/virtual-machines-windows-chef-automation/)。
 
 除了进程特定的扩展外，自定义脚本扩展也可用于 Windows 和 Linux 虚拟机。适用于 Windows 的自定义脚本扩展允许在虚拟机上运行任何 PowerShell 脚本。在设计需要本机 Azure 工具无法提供的配置的 Azure 部署时，这很有用。有关详细信息，请参阅 [Windows VM 自定义脚本扩展](/documentation/articles/virtual-machines-windows-extensions-customscript/)。
@@ -48,9 +48,11 @@ Azure VM 代理可管理 Azure 虚拟机与 Azure 结构控制器之间的交互
 若要了解支持的操作系统和安装说明，请参阅 [Azure 虚拟机代理](/documentation/articles/virtual-machines-windows-classic-agents-and-extensions/)。
 
 ## 发现 VM 扩展
-有许多不同的 VM 扩展可与 Azure 虚拟机配合使用。若要查看完整列表，请使用 Azure PowerShell 模块运行以下命令。
+有许多不同的 VM 扩展可与 Azure 虚拟机配合使用。若要查看完整列表，请使用 Azure Resource Manager PowerShell 模块运行以下命令。运行此命令时请确保指定所需的位置。
 
-    Get-AzureVMAvailableExtension | Select ExtensionName, Version
+    Get-AzureRmVmImagePublisher -Location ChinaNorth | `
+    Get-AzureRmVMExtensionImageType | ` 
+    Get-AzureRmVMExtensionImage | Select Type, Version
 
 ## 运行 VM 扩展
 
@@ -66,20 +68,20 @@ Azure 虚拟机扩展可以在现有虚拟机上运行，当需要在已部署�
 
 这提供类似如下的输出：
 
-        CommandType     Name                                               Version    Source
-        -----------     ----                                               -------    ------
-        Cmdlet          Set-AzureRmVMAccessExtension                       2.2.0      AzureRM.Compute
-        Cmdlet          Set-AzureRmVMADDomainExtension                     2.2.0      AzureRM.Compute
-        Cmdlet          Set-AzureRmVMAEMExtension                          2.2.0      AzureRM.Compute
-        Cmdlet          Set-AzureRmVMBackupExtension                       2.2.0      AzureRM.Compute
-        Cmdlet          Set-AzureRmVMBginfoExtension                       2.2.0      AzureRM.Compute
-        Cmdlet          Set-AzureRmVMChefExtension                         2.2.0      AzureRM.Compute
-        Cmdlet          Set-AzureRmVMCustomScriptExtension                 2.2.0      AzureRM.Compute
-        Cmdlet          Set-AzureRmVMDiagnosticsExtension                  2.2.0      AzureRM.Compute
-        Cmdlet          Set-AzureRmVMDiskEncryptionExtension               2.2.0      AzureRM.Compute
-        Cmdlet          Set-AzureRmVMDscExtension                          2.2.0      AzureRM.Compute
-        Cmdlet          Set-AzureRmVMExtension                             2.2.0      AzureRM.Compute
-        Cmdlet          Set-AzureRmVMSqlServerExtension                    2.2.0      AzureRM.Compute
+    CommandType     Name                                               Version    Source
+    -----------     ----                                               -------    ------
+    Cmdlet          Set-AzureRmVMAccessExtension                       2.2.0      AzureRM.Compute
+    Cmdlet          Set-AzureRmVMADDomainExtension                     2.2.0      AzureRM.Compute
+    Cmdlet          Set-AzureRmVMAEMExtension                          2.2.0      AzureRM.Compute
+    Cmdlet          Set-AzureRmVMBackupExtension                       2.2.0      AzureRM.Compute
+    Cmdlet          Set-AzureRmVMBginfoExtension                       2.2.0      AzureRM.Compute
+    Cmdlet          Set-AzureRmVMChefExtension                         2.2.0      AzureRM.Compute
+    Cmdlet          Set-AzureRmVMCustomScriptExtension                 2.2.0      AzureRM.Compute
+    Cmdlet          Set-AzureRmVMDiagnosticsExtension                  2.2.0      AzureRM.Compute
+    Cmdlet          Set-AzureRmVMDiskEncryptionExtension               2.2.0      AzureRM.Compute
+    Cmdlet          Set-AzureRmVMDscExtension                          2.2.0      AzureRM.Compute
+    Cmdlet          Set-AzureRmVMExtension                             2.2.0      AzureRM.Compute
+    Cmdlet          Set-AzureRmVMSqlServerExtension                    2.2.0      AzureRM.Compute
 
 以下示例使用自定义脚本扩展从 GitHub 存储库将脚本下载到目标虚拟机上，然后运行该脚本。有关 VM 访问扩展的详细信息，请参阅[自定义脚本扩展概述](/documentation/articles/virtual-machines-windows-extensions-customscript/)。
 
@@ -98,10 +100,9 @@ Azure 虚拟机扩展可以在现有虚拟机上运行，当需要在已部署�
 
 `Set-AzureRmVMExtension` 命令可用作“捕获全部”命令或用于启动任何 VM 扩展的常规命令。有关详细信息，请参阅 [Set-AzureRmVMExtension 参考](https://msdn.microsoft.com/zh-cn/library/mt603745.aspx)。
 
-
 ### Azure 门户预览
 
-可通过 Azure 门户预览将 VM 扩展应用于现有虚拟机，为此，请选择“虚拟机”-“扩展”，然后单击“添加”。这样做可提供可用扩展的列表。选择所需的扩展，这将提供一个配置向导。
+可通过 Azure 门户预览将 VM 扩展应用到现有虚拟机。为此，请选择“虚拟机”-“扩展”，然后单击“添加”。执行此操作后，将提供可用扩展的列表。选择所需的扩展，显示一个用于配置的向导。
 
 下图显示从 Azure 门户预览安装 Microsoft 反恶意软件扩展。
 
@@ -146,7 +147,69 @@ VM 扩展可添加到 Azure Resource Manager 模板，并在部署模板的过�
 
 有关详细信息，请参阅[使用 Windows VM 扩展创作 Azure Resource Manager 模板](/documentation/articles/virtual-machines-windows-extensions-authoring-templates/)。
 
-## VM 扩展故障排除
+## 保护 VM 扩展数据
+
+运行 VM 扩展时，可能需要提供敏感信息，例如凭据、存储帐户名称和存储帐户访问密钥。许多 VM 扩展包括用于对数据进行加密，并且仅在目标虚拟机内对数据进行解密的受保护配置。每个扩展都有特定的受保护配置架构，将在特定于扩展的文档中详细介绍每个配置架构。
+
+以下示例演示了适用于 Windows 的自定义脚本扩展的实例。请注意，要执行的命令包含一组凭据。在此示例中，不会加密要执行的命令。
+
+    {
+        "apiVersion": "2015-06-15",
+        "type": "extensions",
+        "name": "config-app",
+        "location": "[resourceGroup().location]",
+        "dependsOn": [
+        "[concat('Microsoft.Compute/virtualMachines/', variables('vmName'),copyindex())]",
+        "[variables('musicstoresqlName')]"
+        ],
+        "tags": {
+        "displayName": "config-app"
+        },
+        "properties": {
+        "publisher": "Microsoft.Compute",
+        "type": "CustomScriptExtension",
+        "typeHandlerVersion": "1.4",
+        "autoUpgradeMinorVersion": true,
+        "settings": {
+            "fileUris": [
+            "https://raw.githubusercontent.com/Microsoft/dotnet-core-sample-templates/master/dotnet-core-music-windows/scripts/configure-music-app.ps1"
+            ],
+            "commandToExecute": "[concat('powershell -ExecutionPolicy Unrestricted -File configure-music-app.ps1 -user ',parameters('adminUsername'),' -password ',parameters('adminPassword'),' -sqlserver ',variables('musicstoresqlName'),'.database.chinacloudapi.cn')]"
+        }
+        }
+    }
+
+将“要执行的命令”属性移到受保护配置可保护执行字符串。
+
+    {
+        "apiVersion": "2015-06-15",
+        "type": "extensions",
+        "name": "config-app",
+        "location": "[resourceGroup().location]",
+        "dependsOn": [
+        "[concat('Microsoft.Compute/virtualMachines/', variables('vmName'),copyindex())]",
+        "[variables('musicstoresqlName')]"
+        ],
+        "tags": {
+        "displayName": "config-app"
+        },
+        "properties": {
+        "publisher": "Microsoft.Compute",
+        "type": "CustomScriptExtension",
+        "typeHandlerVersion": "1.4",
+        "autoUpgradeMinorVersion": true,
+        "settings": {
+            "fileUris": [
+            "https://raw.githubusercontent.com/Microsoft/dotnet-core-sample-templates/master/dotnet-core-music-windows/scripts/configure-music-app.ps1"
+            ]
+        },
+        "protectedSettings": {
+            "commandToExecute": "[concat('powershell -ExecutionPolicy Unrestricted -File configure-music-app.ps1 -user ',parameters('adminUsername'),' -password ',parameters('adminPassword'),' -sqlserver ',variables('musicstoresqlName'),'.database.chinacloudapi.cn')]"
+        }
+        }
+    }
+
+## 排查 VM 扩展的问题
 
 每个 VM 扩展都有特定于扩展的故障排除步骤。例如，使用自定义脚本扩展时，可在运行该扩展的本地虚拟机上找到脚本执行详细信息。任何特定于扩展的故障排除步骤均在特定于扩展的文档中详细说明。
 
@@ -193,6 +256,6 @@ VM 扩展可添加到 Azure Resource Manager 模板，并在部署模板的过�
 | 适用于 Windows 的自定义脚本扩展 |针对 Azure 虚拟机运行脚本 |[适用于 Windows 的自定义脚本扩展](/documentation/articles/virtual-machines-windows-extensions-customscript/) |
 | 适用于 Windows 的 DSC 扩展 |PowerShell DSC（所需状态配置）扩展。 |[适用于 Windows 的 DSC 扩展](/documentation/articles/virtual-machines-windows-extensions-dsc-overview/) |
 | Azure 诊断扩展 |管理 Azure 诊断 |[Azure 诊断扩展](https://azure.microsoft.com/blog/windows-azure-virtual-machine-monitoring-with-wad-extension/) |
-| Azure VM 访问扩展 |管理用户和凭据 |[适用于 Windows 的 VM 访问扩展](https://azure.microsoft.com/blog/using-vmaccess-extension-to-reset-login-credentials-for-linux-vm/) |
+| Azure VM 访问扩展 |管理用户和凭据 |[适用于 Linux 的 VM 访问扩展](https://azure.microsoft.com/blog/using-vmaccess-extension-to-reset-login-credentials-for-linux-vm/) |
 
-<!---HONumber=Mooncake_1212_2016-->
+<!---HONumber=Mooncake_0116_2017-->

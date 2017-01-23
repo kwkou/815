@@ -6,17 +6,16 @@
     author="MikeRayMSFT"
     manager="timlt"
     editor="monicar"
-    tags="azure-service-management" />  
-
+    tags="azure-service-management" />
 <tags
     ms.assetid="986cbc2e-553d-4eba-8acb-c34ad7fd1d8b"
-    ms.service="virtual-machines-windows"
+    ms.service="virtual-machines"
     ms.devlang="na"
     ms.topic="article"
     ms.tgt_pltfrm="vm-windows-sql-server"
     ms.workload="infrastructure-services"
-    ms.date="10/21/2016"
-    wacn.date="12/21/2016"
+    ms.date="11/28/2016"
+    wacn.date="01/20/2017"
     ms.author="MikeRayMSFT" />  
 
 
@@ -63,7 +62,7 @@
 > 
 
 ## 创建资源组
-1. 登录到 [Azure 门户预览](http://portal.azure.cn)。
+1. 登录 [Azure 门户预览](http://portal.azure.cn)。
 2. 单击“+新建”，然后在“应用商店”搜索窗口中键入“资源组”。
    
     ![资源组](./media/virtual-machines-windows-portal-sql-alwayson-availability-groups-manual/01-resourcegroupsymbol.png)  
@@ -76,7 +75,7 @@
 5. 在“资源组”边栏选项卡的“资源组名称”下，键入 **SQL-HA-RG**
 6. 若有多个 Azure 订阅，请验证此订阅是否为要在其中创建可用性组的 Azure 订阅。
 7. 选择一个位置。该位置为要在其中创建可用性组的 Azure 区域。本教程中将在一个 Azure 位置构建所有资源。
-8. 确认已选中“固定到仪表板”。此可选设置将在 Azure 门户仪表板上放置资源组的快捷方式。
+8. 确认已选中“固定到仪表板”。此可选设置将在 Azure 门户预览仪表板上放置资源组的快捷方式。
 9. 单击“创建”以创建资源组。
 
 Azure 将创建资源组，并在门户中固定资源组的快捷方式。
@@ -107,14 +106,14 @@ Azure 将创建资源组，并在门户中固定资源组的快捷方式。
    
     | **字段** | 值 |
     | --- | --- |
-    | **名称** |autoHAVNET |
-    | **地址空间** |10.0.0.0/16 |
+    | **Name** |autoHAVNET |
+    | **地址空间** |10\.0.0.0/16 |
     | **子网名称** |Subnet-1 |
-    | **子网地址范围** |10.0.0.0/24 |
-    | **订阅** |指定要使用的订阅。如果只有一个订阅，可将此字段留空。|
-    | **位置** |指定 Azure 位置。|
+    | **子网地址范围** |10\.0.0.0/24 |
+    | **订阅** |指定要使用的订阅。若只有一个订阅，该字段可以为空。 |
+    | **位置** |指定 Azure 位置。 |
    
-    地址空间和子网地址范围可能与此表中的不同。 根据具体订阅，Azure 将指定可用的地址空间和相应的子网地址范围。 如果地址空间不足，请使用其他订阅。
+    地址空间和子网地址范围可能与此表中的不同。根据具体订阅，Azure 将指定可用的地址空间和相应的子网地址范围。如果地址空间不足，请使用其他订阅。
 6. 单击“创建”
    
     ![配置虚拟网络](./media/virtual-machines-windows-portal-sql-alwayson-availability-groups-manual/06-configurevirtualnetwork.png)  
@@ -130,7 +129,7 @@ Azure 将返回到门户仪表板并在创建新网络时发出通知。
     如果未显示 **SQL-HA-RG**，则单击“资源组”并根据资源组名称筛选即可找到。
 2. 单击资源列表上的 **autoHAVNET**。Azure 会打开网络配置边栏选项卡。
 3. 在“autoHAVNET”虚拟网络中，单击“所有设置”。
-4. 在“设置”边栏选项卡中，单击“子网”**。
+4. 在“设置”边栏选项卡中单击“子网”。
    
     请注意已创建的子网。
    
@@ -201,18 +200,18 @@ Azure 将返回到门户仪表板并在创建新网络时发出通知。
 | --- | --- |
 | **用户名** |DomainAdmin |
 | **密码** |Contoso!0000 |
-| **订阅** | *你的订阅* |
+| **订阅** |*你的订阅* |
 | **资源组** |SQL-HA-RG |
-| **位置** | *你的位置* |
+| **位置** |*你的位置* |
 | **大小** |D1\_V2（标准） |
 | **存储类型** |标准 |
-| **存储帐户** | *自动创建* |
+| **存储帐户** |*自动创建* |
 | **虚拟网络** |autoHAVNET |
 | **子网** |subnet-1 |
-| **公共 IP 地址** | *与 VM 同名* |
-| **网络安全组** | *与 VM 同名* |
+| **公共 IP 地址** |*与 VM 同名* |
+| **网络安全组** |*与 VM 同名* |
 | **诊断** |已启用 |
-| **诊断存储帐户** | *自动创建* |
+| **诊断存储帐户** |*自动创建* |
 | **可用性集** |adAvailabilitySet |
 
 > [AZURE.NOTE]
@@ -231,7 +230,7 @@ Azure 将创建虚拟机。
    
     ![连接到虚拟机](./media/virtual-machines-windows-portal-sql-alwayson-availability-groups-manual/20-connectrdp.png)  
 
-2. 使用已配置的管理员帐户 (**\DomainAdmin**) 和密码 (**Contoso!0000**) 登录。
+2. 使用已配置的管理员帐户 (**\\DomainAdmin**) 和密码 (**Contoso!0000**) 登录。
 3. 默认情况下，应显示“服务器管理器”仪表板。
 4. 单击仪表板上的“添加角色和功能”链接。
    
@@ -241,11 +240,12 @@ Azure 将创建虚拟机。
 6. 选择“Active Directory 域服务”和“DNS 服务器”角色。出现提示时，添加这些角色所需的任何其他功能。
    
     > [AZURE.NOTE]
-    Windows 会警告你没有静态 IP 地址。如果你要测试配置，请单击“继续”。对于生产方案，请在 Azure 门户中将 IP 地址设置为静态，或[使用 PowerShell 设置域控制器计算机的静态 IP 地址](/documentation/articles/virtual-networks-reserved-private-ip/)。
+    Windows 会警告你没有静态 IP 地址。如果你要测试配置，请单击“继续”。对于生产方案，请在 Azure 门户预览中将 IP 地址设置为静态地址，或[使用 PowerShell 设置域控制器计算机的静态 IP 地址](/documentation/articles/virtual-networks-reserved-private-ip/)。
     > 
     > 
    
-    ![Add Roles Dialog](./media/virtual-machines-windows-portal-sql-alwayson-availability-groups-manual/IC784624.png)
+    ![添加角色对话框](./media/virtual-machines-windows-portal-sql-alwayson-availability-groups-manual/IC784624.png)  
+
 7. 单击“下一步”，直到你到达“确认”部分。选中“必要时自动重新启动目标服务器”复选框。
 8. 单击“安装”。
 9. 功能安装完毕后，返回到“服务器管理器”仪表板。
@@ -268,7 +268,7 @@ Azure 将创建虚拟机。
 在主域控制器重新启动之后，可以配置第二个域控制器。此可选步骤有助于实现高可用性。若要完成此步骤，需要知道域控制器的专用 IP 地址。可以从 Azure 门户预览获取此信息。请按照以下步骤配置第二个域控制器。
 
 1. 登录到 **ad-primary-dc** 计算机。
-2. 打开远程桌面并通过 IP 地址连接到第二个域控制器。如果你不知道第二个域控制器的 IP 地址，请转到 Azure 门户并查看分配给第二个域控制器的网络接口的地址。
+2. 打开远程桌面并通过 IP 地址连接到第二个域控制器。如果不知道第二个域控制器的 IP 地址，请转到 Azure 门户预览并查看分配给第二个域控制器的网络接口的地址。
 3. 将首选 DNS 服务器地址更改为域控制器的地址。
 4. 启动主域控制器 (**ad-primary-dc**) 的 RDP 文件，并使用配置的管理员帐户 (**BUILTIN\\DomainAdmin**) 和密码 (**Contoso!0000**) 登录到 VM。
 5. 在主域控制器中，使用该 IP 地址启动连接到 **ad-secondary-dc** 的远程桌面。请使用相同的帐户和密码。
@@ -285,6 +285,7 @@ Azure 将创建虚拟机。
     
     ![使用 NSLOOKUP 查找 DC 的 IP 地址](./media/virtual-machines-windows-portal-sql-alwayson-availability-groups-manual/IC664954.png)  
 
+    
     > [AZURE.NOTE]
     设置 DNS 后，可能会断开与成员服务器之间的 RDP 会话。若发生此情况，可在 Azure 门户预览中重启 VM。
     > 
@@ -314,7 +315,7 @@ Azure 将创建虚拟机。
     | **用户 SamAccountName** |Install |
     | **密码** |Contoso!0000 |
     | **确认密码** |Contoso!0000 |
-    | **其他密码选项** |已选中 |
+    | **其他密码选项** |选定 |
     | **密码永不过期** |已选中 |
 5. 单击“确定”以创建 **Install** 用户。此帐户将用于配置故障转移群集和可用性组。
 6. 使用相同的步骤创建两个其他用户：**CORP\\SQLSvc1** 和 **CORP\\SQLSvc2**。SQL Server 服务使用这些帐户。接下来，要赋予 **CORP\\Install** 所需权限来配置 Windows Server 故障转移群集 (WSFC)。
@@ -385,6 +386,7 @@ Azure 将创建虚拟机。
     
     ![使用 NSLOOKUP 查找 DC 的 IP 地址](./media/virtual-machines-windows-portal-sql-alwayson-availability-groups-manual/IC664954.png)  
 
+    
     > [AZURE.NOTE]
     设置 DNS 后，可能会断开与成员服务器之间的 RDP 会话。若发生此情况，可在 Azure 门户预览中重启 VM。
     > 
@@ -456,15 +458,16 @@ Azure 将创建虚拟机。
    
     | 页面 | 设置 |
     | --- | --- |
-    | 准备工作 |使用默认值 |
-    | 选择服务器 |在“输入服务器名称”中键入 **sqlserver-0**，然后单击“添加”|
-    | 验证警告 |选择“否。不需要 Microsoft 对该群集的支持，因此不希望运行验证测试。单击‘下一步’时，继续创建群集”。|
-    | 用于管理群集的访问点 |在“群集类型”中键入 **Cluster1** |
-    | 确认 |除非使用的是“存储空间”，否则请使用默认值。请参阅此表后面的备注。|
+    | 开始之前 |使用默认值 |
+    | 选择服务器 |在“输入服务器名称”中键入 **sqlserver-0**，然后单击“添加” |
+    | 验证警告 |选择“否。不需要 Microsoft 对该群集的支持，因此不希望运行验证测试。单击‘下一步’时，继续创建群集。” |
+    | 用于管理群集的访问点 |在“群集名称”中键入 **Cluster1** |
+    | 确认 |除非你使用的是存储空间，否则请使用默认值。请参阅此表后面的备注。 |
 
-    >[AZURE.NOTE] 若利用[存储空间](https://technet.microsoft.com/zh-cn/library/hh831739)将多个磁盘组合到存储池中，则必须取消选中“确认”页上的“将所有符合条件的存储添加到群集中”复选框。 如果继续选中，Windows 会在群集过程中分离虚拟磁盘。 由此导致在从群集中删除存储空间并使用 PowerShell 重新附加之前，磁盘管理器或资源管理器中不会显示这些磁盘。
+    >[AZURE.NOTE]
+    如果使用存储空间，必须取消选中“确认”页上的“将所有符合条件的存储添加到群集中”复选框。如果继续选中，Windows 会在群集过程中分离虚拟磁盘。由此导致在从群集中删除存储空间并使用 PowerShell 重新附加之前，磁盘管理器或资源管理器中不会显示这些磁盘。存储空间会将多个磁盘分组到存储池。有关详细信息，请参阅[存储空间](https://technet.microsoft.com/zh-cn/library/hh831739)。
 
-    现已创建群集，接下来请验证配置并添加剩余的节点。 
+    现已创建群集，接下来请验证配置并添加剩余的节点。
 
 1. 在中心窗格中，向下滚动到“群集核心资源”部分并展开“名称: Clutser1”详细信息。你应看到“名称”和“IP 地址”资源都处于“已失败”状态。不能将 IP 地址资源联机，因为向该群集分配的 IP 地址与计算机本身的地址相同，地址重复。
 2. 右键单击失败的“IP 地址”资源，然后单击“属性”。
@@ -477,7 +480,7 @@ Azure 将创建虚拟机。
    
     ![向群集添加节点](./media/virtual-machines-windows-portal-sql-alwayson-availability-groups-manual/IC784634.png)  
 
-6. 在“添加节点向导”中，单击“下一步”。然后，访问“选择服务器”页面，在“输入服务器名称”中键入相应名称并单击“添加”，将 **sqlserver-1** 和 **cluster-fsw** 添加到列表中。完成后，单击“下一步”。
+6. 在“添加节点向导”中，单击“下一步”。然后，在“选择服务器”页上，将 **sqlserver-1** 添加到列表，方法是在“输入服务器名称”中键入服务器名称，然后单击“添加”。完成后，单击“下一步”。
 7. 在“验证警告”页上，单击“否”（在生产方案中，你应执行验证测试）。然后，单击“下一步”。
 8. 在“确认”页中，单击“下一步”以添加节点。
    
@@ -628,6 +631,7 @@ Azure 将创建虚拟机。
     
     ![故障转移群集管理器中的 AG](./media/virtual-machines-windows-portal-sql-alwayson-availability-groups-manual/IC665534.png)  
 
+    
     > [AZURE.WARNING]
     请勿尝试从故障转移群集管理器对可用性组进行故障转移。所有故障转移操作都应在 SSMS 中的 **AlwaysOn 仪表板**内进行。有关详细信息，请参阅[将 WSFC 故障转移群集管理器用于可用性组的限制](https://msdn.microsoft.com/zh-cn/library/ff929171.aspx)。
     > 
@@ -642,7 +646,7 @@ Azure 将创建虚拟机。
 > 
 
 ### 在 Azure 中创建负载均衡器
-1. 在 Azure 门户预览中，转到 **SQL-HA-RG** 并单击“+添加”。
+1. 在 Azure 门户预览中，转到“SQL-HA-RG”并单击“+添加”。
 2. 搜索“负载均衡器”。选择 Microsoft 发布的负载均衡器，然后单击“创建”。
 3. 配置负载均衡器的以下参数。
 
@@ -700,17 +704,17 @@ Azure 将创建虚拟机。
 4. 在“角色”中，右键单击可用性组名称，然后选择“添加资源”和“客户端访问点”。
 5. 在“名称”中键入 **aglistener**。单击“下一步”两次，然后单击“完成”。此时不要使侦听器或资源联机。
 6. 单击“资源”选项卡，然后展开刚创建的客户端访问点。右键单击 IP 资源，然后单击“属性”。记下 IP 地址的名称。稍后在 PowerShell 脚本的 `$IPResourceName` 变量中将要使用此名称。
-7. 单击“IP 地址”下面的“静态 IP 地址”，并将静态 IP 地址设置为在 Azure 门户上用于 **sqlLB** 负载均衡器的相同地址。PowerShell 脚本的 `$ILBIP` 变量中同样使用该 IP 地址。
+7. 单击“IP 地址”下的“静态 IP 地址”，并将静态 IP 地址设置为 Azure 门户预览上 **sqlLB** 负载均衡器所用的相同地址。PowerShell 脚本的 `$ILBIP` 变量中同样使用该 IP 地址。
 8. 为此地址禁用 NetBIOS，然后单击“确定”。
 9. 在当前托管主副本的群集节点上，打开已提升权限的 PowerShell ISE，然后将以下命令粘贴到新脚本中。
-   
+
         $ClusterNetworkName = "<MyClusterNetworkName>" # the cluster network name (Use Get-ClusterNetwork on Windows Server 2012 of higher to find the name)
         $IPResourceName = "<IPResourceName>" # the IP Address resource name
-        $ILBIP = "<X.X.X.X>" # the IP Address of the Internal Load Balancer (ILB). This is the static IP address for the load balancer you configured in the Azure portal Preview.
-        [int]$ProbePort = <nnnnn> # In this sample we've using 59999 for the probe port. 
-    
+        $ILBIP = "<X.X.X.X>" # the IP Address of the Internal Load Balancer (ILB). This is the static IP address for the load balancer you configured in the Azure portal preview.
+       [int]$ProbePort = <nnnnn> # 本示例使用 59999 作为探测端口。
+   
         Import-Module FailoverClusters
-    
+   
         Get-ClusterResource $IPResourceName | Set-ClusterParameter -Multiple @{"Address"="$ILBIP";"ProbePort"=$ProbePort;"SubnetMask"="255.255.255.255";"Network"="$ClusterNetworkName";"EnableDhcp"=0}
 
 10. 更新变量并运行 PowerShell 脚本，以配置新侦听器的 IP 地址和端口。
@@ -723,14 +727,14 @@ Azure 将创建虚拟机。
 
 1. 通过 RDP 连接到不拥有副本的 SQL Server。
 2. 使用 sqlcmd 实用工具来测试连接。例如，以下脚本通过侦听器与 Windows 身份验证来与主副本建立 sqlcmd 连接：
-   
+
         sqlcmd -S "<listenerName>" -E
-   
-    如果侦听器使用的端口号不是 1433，则需在测试中指定端口号。例如，以下查询使用端口 1435 测试到侦听器名称的连接：
+
+如果侦听器使用的端口号不是 1433，则需在测试中指定端口号。例如，以下查询使用端口 1435 测试到侦听器名称的连接：
 
         sqlcmd -S "<listenerName>",1435 -E
 
 ## 后续步骤
 有关在 Azure 中使用 SQL Server 的其他信息，请参阅 [Azure 虚拟机上的 SQL Server](/documentation/articles/virtual-machines-windows-sql-server-iaas-overview/)。
 
-<!---HONumber=Mooncake_1212_2016-->
+<!---HONumber=Mooncake_0116_2017-->

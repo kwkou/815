@@ -6,8 +6,7 @@
     author="rothja"
     manager="jhubbard"
     editor=""
-    tags="azure-service-management" />  
-
+    tags="azure-service-management" />
 <tags
     ms.assetid="c505089e-6bbf-4d14-af0e-dd39a1872767"
     ms.service="virtual-machines-windows"
@@ -15,8 +14,8 @@
     ms.topic="get-started-article"
     ms.tgt_pltfrm="vm-windows-sql-server"
     ms.workload="infrastructure-services"
-    ms.date="10/19/2016"
-    wacn.date="12/20/2016"
+    ms.date="12/01/2016"
+    wacn.date="01/20/2017"
     ms.author="jroth" />  
 
 
@@ -44,19 +43,17 @@
 
 有关教程中此过程的分步指导，请参阅[在 Azure 门户预览中预配 SQL Server 虚拟机](/documentation/articles/virtual-machines-windows-portal-sql-server-provision/)。另请查看 [Performance best practices for SQL Server VMs](/documentation/articles/virtual-machines-windows-sql-performance/)（SQL Server VM 的性能最佳实践），该文介绍了如何在预配期间选择适当的虚拟机大小和其他可用功能。
 
-## <a name="option-1-create-a-sql-vm-with-per-minute-licensing"></a> 使用每分钟许可创建 SQL VM
-下表提供了虚拟机库中提供的 SQL Server 映像的矩阵。单击任何链接，即可开始创建具有指定版本和操作系统的新 SQL VM。
+## <a name="option-1-create-a-sql-vm-with-per-minute-licensing"></a> 选项 1：使用每分钟许可创建 SQL VM
+下表提供了虚拟机库中提供的最新 SQL Server 映像的矩阵。单击任何链接，即可开始创建具有指定版本和操作系统的新 SQL VM。
 
 | 版本 | 操作系统 | 版本 |
 | --- | --- | --- |
-| **SQL 2016** |Windows Server 2012 R2 |[Enterprise](https://portal.azure.cn/#create/Microsoft.SQLServer2016RTMEnterpriseWindowsServer2012R2), [Standard](https://portal.azure.cn/#create/Microsoft.SQLServer2016RTMStandardWindowsServer2012R2), [Web](https://portal.azure.cn/#create/Microsoft.SQLServer2016RTMWebWindowsServer2012R2), [Dev](https://portal.azure.cn/#create/Microsoft.SQLServer2016RTMDeveloperWindowsServer2012R2), [Express](https://portal.azure.cn/#create/Microsoft.SQLServer2016RTMExpressWindowsServer2012R2) |
-| **SQL 2014 SP1** |Windows Server 2012 R2 |[Enterprise](https://portal.azure.cn/#create/Microsoft.SQLServer2014SP1EnterpriseWindowsServer2012R2), [Standard](https://portal.azure.cn/#create/Microsoft.SQLServer2014SP1StandardWindowsServer2012R2), [Web](https://portal.azure.cn/#create/Microsoft.SQLServer2014SP1WebWindowsServer2012R2), [Express](https://portal.azure.cn/#create/Microsoft.SQLServer2014SP1ExpressWindowsServer2012R2) |
-| **SQL 2014** |Windows Server 2012 R2 |[Enterprise](https://portal.azure.cn/#create/Microsoft.SQLServer2014EnterpriseWindowsServer2012R2), [Standard](https://portal.azure.cn/#create/Microsoft.SQLServer2014StandardWindowsServer2012R2), [Web](https://portal.azure.cn/#create/Microsoft.SQLServer2014WebWindowsServer2012R2) |
-| **SQL 2012 SP3** |Windows Server 2012 R2 |[Enterprise](https://portal.azure.cn/#create/Microsoft.SQLServer2012SP3EnterpriseWindowsServer2012R2), [Standard](https://portal.azure.cn/#create/Microsoft.SQLServer2012SP3StandardWindowsServer2012R2), [Web](https://portal.azure.cn/#create/Microsoft.SQLServer2012SP3WebWindowsServer2012R2), [Express](https://portal.azure.cn/#create/Microsoft.SQLServer2012SP3ExpressWindowsServer2012R2) |
-| **SQL 2012 SP2** |Windows Server 2012 R2 |[Enterprise](https://portal.azure.cn/#create/Microsoft.SQLServer2012SP2EnterpriseWindowsServer2012R2), [Standard](https://portal.azure.cn/#create/Microsoft.SQLServer2012SP2StandardWindowsServer2012R2), [Web](https://portal.azure.cn/#create/Microsoft.SQLServer2012SP2WebWindowsServer2012R2) |
-| **SQL 2012 SP2** |Windows Server 2012 |[Enterprise](https://portal.azure.cn/#create/Microsoft.SQLServer2012SP2EnterpriseWindowsServer2012), [Standard](https://portal.azure.cn/#create/Microsoft.SQLServer2012SP2StandardWindowsServer2012), [Web](https://portal.azure.cn/#create/Microsoft.SQLServer2012SP2WebWindowsServer2012), [Express](https://portal.azure.cn/#create/Microsoft.SQLServer2012SP2ExpressWindowsServer2012) |
-| **SQL 2008 R2 SP3** |Windows Server 2008 R2 |[Enterprise](https://portal.azure.cn/#create/Microsoft.SQLServer2008R2SP3EnterpriseWindowsServer2008R2), [Standard](https://portal.azure.cn/#create/Microsoft.SQLServer2008R2SP3StandardWindowsServer2008R2), [Web](https://portal.azure.cn/#create/Microsoft.SQLServer2008R2SP3WebWindowsServer2008R2) |
-| **SQL 2008 R2 SP3** |Windows Server 2012 |[Express](https://portal.azure.cn/#create/Microsoft.SQLServer2008R2SP3ExpressWindowsServer2012) |
+| **SQL Server 2016 SP1** |Windows Server 2016 |[Enterprise](https://portal.azure.cn/#create/Microsoft.SQLServer2016SP1EnterpriseWindowsServer2016)、[Standard](https://portal.azure.cn/#create/Microsoft.SQLServer2016SP1StandardWindowsServer2016)、[Web](https://portal.azure.cn/#create/Microsoft.SQLServer2016SP1WebWindowsServer2016)、[Express](https://portal.azure.cn/#create/Microsoft.SQLServer2016SP1ExpressWindowsServer2016)、[Developer](https://portal.azure.cn/#create/Microsoft.SQLServer2016SP1DeveloperWindowsServer2016) |
+| **SQL Server 2014 SP2** |Windows Server 2012 R2 |[Enterprise](https://portal.azure.cn/#create/Microsoft.SQLServer2014SP2EnterpriseWindowsServer2012R2)、[Standard](https://portal.azure.cn/#create/Microsoft.SQLServer2014SP2StandardWindowsServer2012R2)、[Web](https://portal.azure.cn/#create/Microsoft.SQLServer2014SP2WebWindowsServer2012R2)、[Express](https://portal.azure.cn/#create/Microsoft.SQLServer2014SP2ExpressWindowsServer2012R2) |
+| **SQL Server 2012 SP3** |Windows Server 2012 R2 |[Enterprise](https://portal.azure.cn/#create/Microsoft.SQLServer2012SP3EnterpriseWindowsServer2012R2)、[Standard](https://portal.azure.cn/#create/Microsoft.SQLServer2012SP3StandardWindowsServer2012R2)、[Web](https://portal.azure.cn/#create/Microsoft.SQLServer2012SP3WebWindowsServer2012R2)、[Express](https://portal.azure.cn/#create/Microsoft.SQLServer2012SP3ExpressWindowsServer2012R2) |
+| **SQL Server 2008 R2 SP3** |Windows Server 2008 R2 |[Enterprise](https://portal.azure.cn/#create/Microsoft.SQLServer2008R2SP3EnterpriseWindowsServer2008R2)、[Standard](https://portal.azure.cn/#create/Microsoft.SQLServer2008R2SP3StandardWindowsServer2008R2)、[Web](https://portal.azure.cn/#create/Microsoft.SQLServer2008R2SP3WebWindowsServer2008R2) |
+
+除了此列表，也可以使用 SQL Server 版本和操作系统的其他组合。在 Azure 门户预览中通过应用商店搜索查找其他映像。
 
 ## <a name="manage-your-sql-vm"></a> 管理 SQL VM
 预配 SQL Server VM 之后，有几项可选的管理任务。在许多方面，完全可以像管理本地 SQL Server 实例一样配置和管理 SQL Server。但某些任务是特定于 Azure 的。下列各节重点介绍上述某些领域并提供详细信息链接。
@@ -68,7 +65,7 @@
 如果已有数据库，你会想要将该数据库移至新预配的 SQL VM。有关迁移选项的列表和指导，请参阅 [Migrating a Database to SQL Server on an Azure VM](/documentation/articles/virtual-machines-windows-migrate-sql/)（将数据库迁移到 Azure VM 上的 SQL Server）。
 
 ### 配置高可用性
-如果你需要高可用性，请考虑配置 SQL Server 可用性组。如果想要手动配置可用性组和关联的侦听器，请参阅[在 Azure VM 中配置 AlwaysOn 可用性组](/documentation/articles/virtual-machines-windows-portal-sql-alwayson-availability-groups-manual/)。
+如果你需要高可用性，请考虑配置 SQL Server 可用性组。这涉及虚拟网络中的多个 Azure VM。如果想要手动配置可用性组和关联的侦听器，请参阅[在 Azure VM 中配置 AlwaysOn 可用性组](/documentation/articles/virtual-machines-windows-portal-sql-alwayson-availability-groups-manual/)。
 
 有关其他高可用性注意事项，请参阅 [Azure 虚拟机中 SQL Server 的高可用性和灾难恢复](/documentation/articles/virtual-machines-windows-sql-high-availability-dr/)。
 
@@ -84,6 +81,8 @@ Azure VM 可以使用[自动修补](/documentation/articles/virtual-machines-win
 有关详细信息，请参阅[接受许可条款](https://msdn.microsoft.com/zh-cn/library/ms143343.aspx)主题的 CEIP 部分。
 
 ## 后续步骤
+有关定价问题，请参阅[定价](/pricing/details/virtual-machines/)。在“OS/软件”列表中选择 SQL Server 的目标版本。然后查看不同大小的虚拟机的价格。
+
 其他问题？ 请先参阅 [Azure 虚拟机中的 SQL Server 常见问题解答](/documentation/articles/virtual-machines-windows-sql-server-iaas-faq/)。同时将问题或看法添加到任何 SQL VM 主题的底部，以便与 Azure.cn 和社区互动。
 
-<!---HONumber=Mooncake_1212_2016-->
+<!---HONumber=Mooncake_0116_2017-->

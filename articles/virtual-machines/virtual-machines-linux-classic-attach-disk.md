@@ -6,8 +6,7 @@
     author="iainfoulds"
     manager="timlt"
     editor="tysonn"
-    tags="azure-service-management" />  
-
+    tags="azure-service-management" />
 <tags
     ms.assetid="4901384d-2a6f-4f46-bba0-337a348b7f87"
     ms.service="virtual-machines-linux"
@@ -16,13 +15,12 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="11/14/2016"
-    wacn.date="12/20/2016"
+    wacn.date="01/20/2017"
     ms.author="iainfou" />
 
 # 如何将数据磁盘附加到 Linux 虚拟机
-[AZURE.INCLUDE [了解部署模型](../../includes/learn-about-deployment-models-classic-include.md)]
-
-请参阅如何[使用 Resource Manager 部署模型附加数据磁盘](/documentation/articles/virtual-machines-linux-add-disk/)。
+> [AZURE.IMPORTANT] 
+Azure 提供两个不同的部署模型用于创建和处理资源：[Resource Manager 模型和经典模型](/documentation/articles/resource-manager-deployment-model/)。本文介绍如何使用经典部署模型。Azure 建议大多数新部署使用 Resource Manager 模型。请参阅如何[使用 Resource Manager 部署模型附加数据磁盘](/documentation/articles/virtual-machines-linux-add-disk/)。
 
 可以将空磁盘和包含数据的磁盘附加到 Azure VM。这两种类型的磁盘是驻留在 Azure 存储帐户中的 .vhd 文件。与将任何磁盘添加到 Linux 计算机一样，附加磁盘之后需要将它初始化和格式化才可供使用。本文将详细说明如何附加空磁盘和附加包含数据的磁盘到 VM，以及初始化和格式化新磁盘的方法。
 
@@ -33,7 +31,7 @@
 
 [AZURE.INCLUDE [howto-attach-disk-windows-linux](../../includes/howto-attach-disk-linux.md)]
 
-## <a name="how-to-initialize-a-new-data-disk-in-linux"></a> 在 Linux 中初始化新的数据磁盘
+## <a name="how-to-initialize-a-new-data-disk-in-linux" id="initialize-a-new-data-disk-in-linux"></a> 在 Linux 中初始化新的数据磁盘
 1. 通过 SSH 连接到 VM。有关详细信息，请参阅[如何登录到运行 Linux 的虚拟机][Logon]。
 2. 接下来，需要查找可供数据磁盘初始化的设备标识符。可通过两种方式实现此操作：
    
@@ -86,11 +84,9 @@
 
     ![创建分区](./media/virtual-machines-linux-classic-attach-disk/fdisknewpartdetails.png)
 
-
 6. 键入“p”以查看有关分区磁盘的详细信息。
 
     ![列出磁盘信息](./media/virtual-machines-linux-classic-attach-disk/fdiskpartitiondetails.png)
-
 
 7. 键入“w”以写入磁盘的设置。
 
@@ -103,8 +99,8 @@
     ![创建文件系统](./media/virtual-machines-linux-classic-attach-disk/mkfsext4.png)  
 
    
-   > [AZURE.NOTE]
-   对于 ext4 文件系统，SuSE Linux Enterprise 11 系统仅支持只读访问。对于这些系统，建议将新文件系统格式化为 ext3 而非 ext4。
+    > [AZURE.NOTE]
+    对于 ext4 文件系统，SuSE Linux Enterprise 11 系统仅支持只读访问。对于这些系统，建议将新文件系统格式化为 ext3 而非 ext4。
 
 9. 创建一个目录来装载新的文件系统，如下所示：
 
@@ -171,7 +167,7 @@
 
         UUID=33333333-3b3b-3c3c-3d3d-3e3e3e3e3e3e   /datadrive   ext4   defaults,discard   1   2
 
-* 此处，还可以从命令行手动运行 `fstrim` 命令，或将其添加到 crontab 以定期运行：
+* 在某些情况下 `discard` 选项可能会影响性能。此处，还可以从命令行手动运行 `fstrim` 命令，或将其添加到 crontab 以定期运行：
   
     **Ubuntu**
 
@@ -192,9 +188,12 @@
 * [如何登录到运行 Linux 的虚拟机][Logon]
 * [如何从 Linux 虚拟机分离磁盘](/documentation/articles/virtual-machines-linux-classic-detach-disk/)
 * [将 Azuer CLI 与经典部署模型搭配使用](/documentation/articles/virtual-machines-command-line-tools/)
+* [在 Azure 中的 Linux VM 上配置 RAID](/documentation/articles/virtual-machines-linux-configure-raid/)
+* [在 Azure 中的 Linux VM 上配置 LVM](/documentation/articles/virtual-machines-linux-configure-lvm/)
 
 <!--Link references-->
+
 [Agent]: /documentation/articles/virtual-machines-linux-agent-user-guide/
 [Logon]: /documentation/articles/virtual-machines-linux-mac-create-ssh-keys/
 
-<!---HONumber=Mooncake_1212_2016-->
+<!---HONumber=Mooncake_0116_2017-->

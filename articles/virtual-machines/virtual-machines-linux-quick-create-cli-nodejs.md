@@ -5,8 +5,7 @@
     documentationcenter=""
     author="vlivech"
     manager="timlt"
-    editor="" />  
-
+    editor="" />
 <tags
     ms.assetid="facb1115-2b4e-4ef3-9905-330e42beb686"
     ms.service="virtual-machines-linux"
@@ -14,34 +13,38 @@
     ms.topic="hero-article"
     ms.tgt_pltfrm="vm-linux"
     ms.workload="infrastructure"
-    ms.date="10/27/2016"
-    wacn.date="12/20/2016"
+    ms.date="12/15/2016"
+    wacn.date="01/20/2017"
     ms.author="v-livech" />  
 
 
 # Create a Linux VM using the Azure CLI（使用 Azure CLI 创建 Linux VM）
+
 本文说明如何使用 Azure 命令行接口 (CLI) 的 `azure vm quick-create` 命令在 Azure 上快速部署 Linux 虚拟机 (VM)。`quick-create` 命令在基本的安全基础结构内部署 VM，用户可以将其用于快速构建某一概念的原型或进行测试。
 
-> [AZURE.NOTE] 
+> [AZURE.NOTE]
 若要使用 Azure CLI 2.0（预览版）创建 VM，请参阅[使用 Azure CLI 创建 VM](/documentation/articles/virtual-machines-linux-quick-create-cli/)。
 
 本文要求满足以下条件：
 
-* 一个 Azure 帐户（[获取试用版](/pricing/1rmb-trial/)）
-* 已使用 `azure login -e AzureChinaCloud` 登录 [Azure CLI](/documentation/articles/xplat-cli-install/)。
-* Azure CLI *必须处于* Azure Resource Manager 模式`azure config mode arm`。
+- [一个 Azure 帐户](/pricing/1rmb-trial/)
+
+- [SSH 公钥和私钥文件](/documentation/articles/virtual-machines-linux-mac-create-ssh-keys/)
 
 也可以使用 [Azure 门户预览](/documentation/articles/virtual-machines-linux-quick-create-portal/)快速部署 Linux VM。
 
 ## 快速命令
+
 以下示例演示如何部署 CoreOS VM 并附加安全外壳 (SSH) 密钥（你的参数可能与此不同）：
 
     azure vm quick-create -M ~/.ssh/id_rsa.pub -Q CoreOS
 
 ## 详细演练
+
 下面逐步讲解如何部署 UbuntuLTS VM，并解释每个步骤的具体操作。
 
 ## VM quick-create 别名
+
 选择分发的便捷方法是使用映射到最常见 OS 分发的 Azure CLI 别名。下表列出了别名（截止到 Azure 0.10 版）。使用 `quick-create` 的所有部署默认为部署到由固态硬盘 (SSD) 存储提供支持的 VM，这些 VM 提供更快的预配性能和高性能磁盘访问。（这些别名表示 Azure 上的一小部分可用分发。在 Azure 应用商店中查找更多映像（可以[在 PowerShell 中搜索映像](/documentation/articles/virtual-machines-linux-cli-ps-findimage/)），或者[上载自己的自定义映像](/documentation/articles/virtual-machines-linux-create-upload-generic/)。）
 
 | 别名 | 发布者 | 产品 | SKU | 版本 |
@@ -70,7 +73,7 @@
       --location chinanorth \
       --os-type Linux \
       --admin-username myAdminUser \
-      --ssh-public-file ~/.ssh/id_rsa.pub \
+      --ssh-publickey-file ~/.ssh/id_rsa.pub \
       --image-urn UbuntuLTS
 
 输出应类似于以下输出块：
@@ -159,7 +162,7 @@
     Warning: Permanently added '138.91.247.29' (ECDSA) to the list of known hosts.
     Welcome to Ubuntu 14.04.3 LTS (GNU/Linux 3.19.0-65-generic x86_64)
 
-    * Documentation:  https://help.ubuntu.com/
+     * Documentation:  https://help.ubuntu.com/
 
       System information as of Thu Sep  8 22:50:57 UTC 2016
 
@@ -174,7 +177,6 @@
 
     0 packages can be updated.
     0 updates are security updates.
-
 
 
     The programs included with the Ubuntu system are free software;
@@ -193,4 +195,4 @@
 * [Create your own custom environment for a Linux VM using Azure CLI commands directly（直接使用 Azure CLI 命令为 Linux VM 创建用户自己的自定义环境）](/documentation/articles/virtual-machines-linux-create-cli-complete/)
 * [Create an SSH Secured Linux VM on Azure using templates（使用模板在 Azure 上创建受 SSH 保护的 Linux VM）](/documentation/articles/virtual-machines-linux-create-ssh-secured-vm-from-template/)
 
-<!---HONumber=Mooncake_1212_2016-->
+<!---HONumber=Mooncake_0116_2017-->
