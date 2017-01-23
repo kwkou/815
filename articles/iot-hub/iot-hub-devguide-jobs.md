@@ -86,7 +86,7 @@
         {
             jobId: '<jobId>',
             type: 'scheduleTwinUpdate', 
-            updateTwin: <patch>                 // Valid JSON object
+            updateTwin: <patch>                  // Valid JSON object
         queryCondition: '<queryOrDevices>', // query condition
         startTime: <jobStartTime>,          // as an ISO-8601 date string
         maxExecutionTimeInSeconds: <maxExecutionTimeInSeconds>        // format TBD

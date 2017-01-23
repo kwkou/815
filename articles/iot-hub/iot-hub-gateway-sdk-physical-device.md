@@ -21,7 +21,7 @@
 # Azure IoT 网关 SDK - 使用 Linux 通过实际设备发送设备到云消息
 
 
-# 使用 Azure IoT 网关 SDK，通过物理设备发送设备到云的消息 \(Linux\)
+# 使用 Azure IoT 网关 SDK，通过物理设备发送设备到云的消息 (Linux)
 [蓝牙低功耗示例][lnk-ble-samplecode]演练展示了如何使用 [Azure IoT 网关 SDK][lnk-sdk] 将设备到云的遥测从物理设备转发到 IoT 中心，并介绍了如何将命令从 IoT 中心路由到物理设备。
 
 本文介绍的内容包括：
