@@ -14,7 +14,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="08/31/2016"
-	wacn.date="10/25/2016"
+	wacn.date="01/24/2017"
 	ms.author="billmath"/>  
 
 
@@ -94,7 +94,7 @@
 ### 启用计划程序
 如果一切按预期方式进行，可以再次启用计划程序。从 PowerShell 中运行 `Set-ADSyncScheduler -SyncCycleEnabled $true`。
 
-## 其他常见的属性流更改
+## 其他常见的属性流更改 <a name="other-common-attribute-flow-changes"></a>
 前面部分介绍了如何更改属性流。本部分提供了另外一些示例。虽然创建同步规则的步骤已缩简，但可以在前面部分中找到完整步骤。
 
 ### 使用其他属性而不是默认属性
@@ -135,7 +135,7 @@ Active Directory 中的某些属性在架构中是多值，不过它们在 Activ
 
 在此表达式中，如果属性具有值，我们会使用属性中的第一项 (Item)，删除前导空格和尾随空格 (Trim)，然后保留字符串中的前 448 个字符（左）。
 
-### 不要流送属性
+### 不要流送属性 <a name="do-not-flow-an-attribute"></a>
 有关本部分方案的背景信息，请参阅[控制属性流过程](/documentation/articles/active-directory-aadconnectsync-understanding-declarative-provisioning/)。
 
 有两种方法可防止流送属性。第一种方法可在安装向导中使用，可让你[删除选定的属性](/documentation/articles/active-directory-aadconnect-get-started-custom/)。如果你以前未曾同步该属性，则可以使用这个选项。但是，如果已开始同步此属性，后来使用此功能将它删除，则同步引擎将停止管理属性，现有值将保留在 Azure AD 中。

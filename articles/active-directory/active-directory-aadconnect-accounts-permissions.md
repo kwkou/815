@@ -15,7 +15,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="10/04/2016"
-    wacn.date="01/06/2017"
+    wacn.date="01/24/2017"
     ms.author="billmath" />
 
 # Azure AD Connect：帐户和权限
@@ -98,12 +98,12 @@ Azure AD Connect 安装向导提供提供两种不同的路径：
 | 运行安装向导的用户 |如果使用完整 SQL 服务器：需有同步引擎数据库的 DBO 权限（或类似权限） |进行数据库级别的更改，例如使用新列更新表。 |
 
 ## 有关所创建帐户的详细信息
-### Active Directory 帐户
+### Active Directory 帐户 <a name="active-directory-account"></a>
 如果使用快速设置，将在 Active Directory 中创建用于同步的帐户。创建的帐户位于林根域的用户容器中，其名称带有 **MSOL\_** 前缀。该帐户带有永不过期的长复杂密码。如果域中有密码策略，请确保允许此帐户使用长密码和复杂密码。
 
 ![AD 帐户](./media/active-directory-aadconnect-accounts-permissions/adsyncserviceaccount.png)
 
-### Azure AD Connect 同步服务帐户 <a name="azure-ad-connect-sync-service-accounts"></a>
+### Azure AD Connect 同步服务帐户 <a name="azure-ad-connect-sync-service-account"></a>
 本地服务帐户将由安装向导创建（除非你在自定义设置指定了要使用的帐户）。该帐户具有 **AAD_** 前缀，可作为实际同步服务的运行帐户。如果你在域控制器上安装 Azure AD Connect，则会在该域中创建帐户。如果使用运行 SQL 服务器的远程服务器或使用需要身份验证的代理，**AAD_** 服务帐户必须位于域中。
 
 ![同步服务帐户](./media/active-directory-aadconnect-accounts-permissions/syncserviceaccount.png)
