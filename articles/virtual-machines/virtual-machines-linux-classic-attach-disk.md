@@ -197,3 +197,4 @@ Azure 提供两个不同的部署模型用于创建和处理资源：[Resource M
 [Logon]: /documentation/articles/virtual-machines-linux-mac-create-ssh-keys/
 
 <!---HONumber=Mooncake_0116_2017-->
+<!--Update_Description: wording update & adding 2 links to Linux RAID and LVM articles-->

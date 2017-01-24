@@ -8,7 +8,7 @@
     editor="monicar" />
 <tags
     ms.assetid="14b39cde-311c-4ddf-98f3-8694e01a7d3b"
-    ms.service="virtual-machines"
+    ms.service="virtual-machines-windows"
     ms.devlang="na"
     ms.topic="article"
     ms.tgt_pltfrm="vm-windows-sql-server"
@@ -204,14 +204,14 @@
 
 设置群集参数。为此，请更新以下 PowerShell 脚本。使用环境值设置变量。在某个群集节点上运行 PowerShell 脚本。
 
-       $ClusterNetworkName = "<MyClusterNetworkName>" # the cluster network name (Use Get-ClusterNetwork on Windows Server 2012 of higher to find the name)
-       $IPResourceName = "<IPResourceName>" # the IP Address resource name
-       $ILBIP = "<n.n.n.n>" # the IP Address of the Internal Load Balancer (ILB). This is the static IP address for the load balancer you configured in the Azure portal preview.
-       [int]$ProbePort = <nnnnn>
+        $ClusterNetworkName = "<MyClusterNetworkName>" # the cluster network name (Use Get-ClusterNetwork on Windows Server 2012 of higher to find the name)
+        $IPResourceName = "<IPResourceName>" # the IP Address resource name
+        $ILBIP = "<n.n.n.n>" # the IP Address of the Internal Load Balancer (ILB). This is the static IP address for the load balancer you configured in the Azure portal preview.
+        [int]$ProbePort = <nnnnn>
 
-       Import-Module FailoverClusters
+        Import-Module FailoverClusters
 
-       Get-ClusterResource $IPResourceName | Set-ClusterParameter -Multiple @{"Address"="$ILBIP";"ProbePort"=$ProbePort;"SubnetMask"="255.255.255.255";"Network"="$ClusterNetworkName";"EnableDhcp"=0}
+        Get-ClusterResource $IPResourceName | Set-ClusterParameter -Multiple @{"Address"="$ILBIP";"ProbePort"=$ProbePort;"SubnetMask"="255.255.255.255";"Network"="$ClusterNetworkName";"EnableDhcp"=0}
 
 > [AZURE.NOTE]
 如果 SQL Server 位于不同的区域，则需要运行 PowerShell 脚本两次。第一次请使用第一个区域中的 `$ILBIP` 和 `$ProbePort`。第二次请使用第二个区域中的 `$ILBIP` 和 `$ProbePort`。群集网络名称和群集 IP 资源名称相同。
@@ -269,3 +269,4 @@ SQLCMD 连接将自动连接到托管主副本的 SQL Server 实例。
 如果需要从 Azure 资源组中删除负载均衡器，请使用 `Remove-AzureRmLoadBalancer`。有关详细信息，请参阅 [Remove-AzureRmLoadBalancer](http://msdn.microsoft.com/zh-cn/library/mt603862.aspx)。
 
 <!---HONumber=Mooncake_0116_2017-->
+<!--Update_Description: update meta properties & wording update-->

@@ -129,3 +129,4 @@ Azure 提供两个不同的部署模型用于创建和处理资源：[Resource M
 [AZURE.INCLUDE [Listener-Next-Steps](../../includes/virtual-machines-ag-listener-next-steps.md)]
 
 <!---HONumber=Mooncake_0116_2017-->
+<!--Update_Description: update meta properties & wording update & move contents out from include files-->

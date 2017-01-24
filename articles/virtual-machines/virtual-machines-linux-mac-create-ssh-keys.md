@@ -248,3 +248,4 @@ SSH 密钥默认保留在 `~/.ssh` 目录中。如果没有 `~/.ssh` 目录，`s
 * [使用 Azure CLI 创建安全 Linux VM](/documentation/articles/virtual-machines-linux-quick-create-cli/)
 
 <!---HONumber=Mooncake_0116_2017-->
+<!--Update_Description: update meta properties & wording update-->

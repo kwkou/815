@@ -96,3 +96,4 @@ VM 的大小决定可以在其上附加的磁盘数量。有关详细信息，�
 如果应用程序需要使用 D: 盘存储数据，可以[更改 Windows 临时磁盘的驱动器号](/documentation/articles/virtual-machines-windows-classic-change-drive-letter/)。
 
 <!---HONumber=Mooncake_0116_2017-->
+<!--Update_Description: move content out from include file & add support for TRIM-->

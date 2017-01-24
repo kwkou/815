@@ -162,3 +162,4 @@
 * [使用 CLI 将 IaaS 资源从经典部署模型迁移到 Azure Resource Manager](/documentation/articles/virtual-machines-linux-cli-migration-classic-resource-manager/)
 
 <!---HONumber=Mooncake_0116_2017-->
+<!--Update_Description: add detailed troubleshooting-->

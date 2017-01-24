@@ -52,3 +52,4 @@ Azure 中的底层基础结构分为更新域和容错域。这些域是按共�
 [AZURE.INCLUDE [virtual-machines-linux-infrastructure-guidelines-next-steps](../../includes/virtual-machines-linux-infrastructure-guidelines-next-steps.md)]
 
 <!---HONumber=Mooncake_0116_2017-->
+<!--Update_Description: update meta properties & wording update & add information about storage limitation when adding VHDs-->

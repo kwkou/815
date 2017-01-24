@@ -52,3 +52,4 @@ Packer 和 Terraform 也支持 Azure Resource Manager，因此也可以“代码
 假设要在更新 OS 映像的同时让 VM 规模集持续运行。为此，一种做法是每次更新一个 VM 的 VM 映像。可以使用 PowerShell 或 Azure CLI 实现此目的。有单独的命令可在单个 VM 上更新 VM 规模集模型（其配置的定义方式），以及发出“手动升级”调用。[升级虚拟机规模集](/documentation/articles/virtual-machine-scale-sets-upgrade-scale-set/) Azure 文档还提供了有关哪些选项可用于对 VM 规模集执行 OS 升级的详细信息。
 
 <!---HONumber=Mooncake_0116_2017-->
+<!--Update_Description: update meta properties & wording update-->

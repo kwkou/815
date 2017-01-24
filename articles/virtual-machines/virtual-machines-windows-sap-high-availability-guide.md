@@ -696,23 +696,23 @@ _**图 11：**指定 SAP 高可用性 Azure Resource Manager 参数_
 模板将会创建：
 
 * **虚拟机**：
-  * SAP 应用程序服务器虚拟机：<*SAPSystemSID*>-di-<*Number*>
-  * ASCS/SCS 群集虚拟机：<*SAPSystemSID*>-ascs-<*Number*>
-  * DBMS 群集：<*SAPSystemSID*>-db-<*Number*>
+    * SAP 应用程序服务器虚拟机：<*SAPSystemSID*>-di-<*Number*>
+    * ASCS/SCS 群集虚拟机：<*SAPSystemSID*>-ascs-<*Number*>
+    * DBMS 群集：<*SAPSystemSID*>-db-<*Number*>
 * **所有虚拟机的网卡及关联的 IP 地址：**
-  * <*SAPSystemSID*>-nic-di-<*Number*>
-  * <*SAPSystemSID*>-nic-ascs-<*Number*>
-  * <*SAPSystemSID*>-nic-db-<*Number*>
+    * <*SAPSystemSID*>-nic-di-<*Number*>
+    * <*SAPSystemSID*>-nic-ascs-<*Number*>
+    * <*SAPSystemSID*>-nic-db-<*Number*>
 * **Azure 存储帐户**
 * 以下各项的**可用性组**：
-  * SAP 应用程序服务器虚拟机：<*SAPSystemSID*>-avset-di
-  * SAP ASCS/SCS 群集虚拟机：<*SAPSystemSID*>-avset-ascs
-  * DBMS 群集虚拟机：<*SAPSystemSID*>-avset-db
+    * SAP 应用程序服务器虚拟机：<*SAPSystemSID*>-avset-di
+    * SAP ASCS/SCS 群集虚拟机：<*SAPSystemSID*>-avset-ascs
+    * DBMS 群集虚拟机：<*SAPSystemSID*>-avset-db
 * **Azure 内部负载均衡器**：
-  * ASCS/SCS 实例的所有端口和 IP 地址 <*SAPSystemSID*>-lb-ascs
-  * SQL Server DBMS 的所有端口和 IP 地址 <*SAPSystemSID*>-lb-db
+    * ASCS/SCS 实例的所有端口和 IP 地址 <*SAPSystemSID*>-lb-ascs
+    * SQL Server DBMS 的所有端口和 IP 地址 <*SAPSystemSID*>-lb-db
 * **网络安全组**：<*SAPSystemSID*>-nsg-ascs-0
-  * 向 <*SAPSystemSID*>-ascs-0 虚拟机开放的外部远程桌面协议 (RDP) 端口
+    * 向 <*SAPSystemSID*>-ascs-0 虚拟机开放的外部远程桌面协议 (RDP) 端口
 
 > [AZURE.NOTE]
 网卡和 Azure 内部负载均衡器的所有 IP 地址默认为**动态**。请将其更改为**静态** IP 地址。本文稍后将作介绍。
@@ -821,10 +821,10 @@ ASCS/SCS 模板部署两个虚拟机，可以使用这些虚拟机创建用于�
 * OS 类型：选择虚拟机的操作系统。
 
 * Dbtype：选择要在群集上安装的数据库的类型。若要在虚拟机上安装 Microsoft SQL Server，请选择“SQL”；若要安装 SAP HANA，请选择“HANA”。请确保选择正确的操作系统类型：对于 SQL，请选择 Windows；对于 HANA，请选择一个 Linux 分发版。连接到虚拟机的 Azure Load Balancer 将配置为支持选定的数据库类型：
-  * SQL：负载均衡器将对端口 1433 进行负载均衡。请确保在 SQL Server Always On 设置中使用此端口。
-  * HANA：负载均衡器将对端口 35015 和 35017 进行负载均衡。请确保安装实例编号为 50 的 SAP HANA。
+    * SQL：负载均衡器将对端口 1433 进行负载均衡。请确保在 SQL Server Always On 设置中使用此端口。
+    * HANA：负载均衡器将对端口 35015 和 35017 进行负载均衡。请确保安装实例编号为 50 的 SAP HANA。
 
-  负载均衡器将使用探测端口 62550。
+    负载均衡器将使用探测端口 62550。
 
 * SAP 系统大小：新系统将提供的 SAPS 数目。如果不确定系统需要多少 SAPS，请咨询你的 SAP 技术合作伙伴或系统集成商
 
@@ -1655,3 +1655,4 @@ _**图 64：**SIOS DataKeeper 将本地卷从群集节点 B 复制到群集节�
 本指南提供了有关如何使用 Azure Resource Manger 部署模型在 Azure 中安装高可用性 SAP NetWeaver 系统的概述和分步说明。
 
 <!---HONumber=Mooncake_0116_2017-->
+<!--Update_Description: update meta properties & wording update-->
