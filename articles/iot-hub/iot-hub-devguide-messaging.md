@@ -113,7 +113,7 @@ IoT 中心还支持用户管理内置设备到云接收终结点上的使用者�
 	  "issuer": "iothub"
 	}
 
-## 云到设备的消息
+## <a name="cloud-to-device-messages"></a> 云到设备的消息
 可以通过面向服务的终结点 \(**/messages/devicebound**\) 发送云到设备的消息。设备可以通过特定于设备的终结点 \(**/devices/{deviceId}/messages/devicebound**\) 接收这些消息。
 
 每个云到设备的消息都以单个设备为目标，方法是将 **to** 属性设置为 **/devices/{deviceId}/messages/devicebound**。
