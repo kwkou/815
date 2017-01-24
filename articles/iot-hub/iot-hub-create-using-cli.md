@@ -41,32 +41,32 @@
 
 1. 在命令提示符中，运行 [login 命令][lnk-login-command]：
     
-    az login
+        az login
 
     按照说明使用代码进行身份验证，并通过 Web 浏览器登录 Azure 帐户。
 
 2. 如果有多个 Azure 订阅，登录 Azure 可获得与凭据关联的所有 Azure 帐户的访问权限。使用以下[命令，列出可供使用的 Azure 帐户][lnk-az-account-command]：
     
     
-    az account list 
+        az account list 
     
 
     使用以下命令，选择想要用于运行命令以创建 IoT 中心的订阅。可使用上一命令输出中的订阅名称或 ID：
 
     
-    az account set --subscription {your subscription name or id}
+        az account set --subscription {your subscription name or id}
     
 
 3. 安装 Azure CLI _iot 组件_。运行以下[命令，添加 iot 组件][lnk-az-addcomponent-command]：
     
     
-    az component update --add iot
+        az component update --add iot
     
 
 4. 必须注册 IoT 提供程序才能部署 IoT 资源。运行以下[命令，注册 IoT 提供程序][lnk-az-register-command]：
     
     
-    az provider register -namespace Microsoft.Devices
+        az provider register -namespace Microsoft.Devices
     
 
 ## 创建 IoT 中心
@@ -76,7 +76,7 @@
 1. 创建 IoT 中心时，必须在资源组中创建它。使用现有资源组，或运行以下[命令创建资源组][lnk-az-resource-command]：
     
     
-     az group create --name {your resource group name} --location chinaeast
+         az group create --name {your resource group name} --location chinaeast
     
 
     > [AZURE.TIP]
@@ -87,7 +87,7 @@
 2. 运行以下[命令，在资源组中创建 IoT 中心][lnk-az-iot-command]：
     
     
-    az iot hub create --name {your iot hub name} --resource-group {your resource group name} --sku S1
+        az iot hub create --name {your iot hub name} --resource-group {your resource group name} --sku S1
     
 
 > [AZURE.NOTE]
