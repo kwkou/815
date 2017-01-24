@@ -9,7 +9,7 @@
     tags="azure-service-management" />
 <tags
     ms.assetid="986cbc2e-553d-4eba-8acb-c34ad7fd1d8b"
-    ms.service="virtual-machines"
+    ms.service="virtual-machines-windows"
     ms.devlang="na"
     ms.topic="article"
     ms.tgt_pltfrm="vm-windows-sql-server"
@@ -189,10 +189,10 @@ Azure 将返回到门户仪表板并在创建新网络时发出通知。
 * ad-primary-dc
 * ad-secondary-dc
   
-  > [AZURE.NOTE]
-  **ad-secondary-dc** 是可选组件，可为 Active Directory 域服务提供高可用性。
-  > 
-  > 
+    > [AZURE.NOTE]
+    **ad-secondary-dc** 是可选组件，可为 Active Directory 域服务提供高可用性。
+    > 
+    > 
 
 下表显示了这两个虚拟机的设置。
 
@@ -711,7 +711,7 @@ Azure 将创建虚拟机。
         $ClusterNetworkName = "<MyClusterNetworkName>" # the cluster network name (Use Get-ClusterNetwork on Windows Server 2012 of higher to find the name)
         $IPResourceName = "<IPResourceName>" # the IP Address resource name
         $ILBIP = "<X.X.X.X>" # the IP Address of the Internal Load Balancer (ILB). This is the static IP address for the load balancer you configured in the Azure portal preview.
-       [int]$ProbePort = <nnnnn> # 本示例使用 59999 作为探测端口。
+        [int]$ProbePort = <nnnnn> # In this sample we've using 59999 for the probe port. 
    
         Import-Module FailoverClusters
    
@@ -738,3 +738,4 @@ Azure 将创建虚拟机。
 有关在 Azure 中使用 SQL Server 的其他信息，请参阅 [Azure 虚拟机上的 SQL Server](/documentation/articles/virtual-machines-windows-sql-server-iaas-overview/)。
 
 <!---HONumber=Mooncake_0116_2017-->
+<!--Update_Description: update meta properties & wording update-->

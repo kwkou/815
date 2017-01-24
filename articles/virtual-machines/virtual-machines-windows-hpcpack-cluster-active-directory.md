@@ -44,8 +44,8 @@ HPC Pack 群集与 Azure AD 集成可帮助用户实现以下目标：
 ## 先决条件
 * **在 Azure 虚拟机中部署的 HPC Pack 2016 群集** - 需要获得头节点的 DNS 名称和群集管理员的凭据才能完成本文中的步骤。
 
-  > [AZURE.NOTE]
-  在 HPC Pack 2016 之前的 HPC Pack 版本中不支持 Azure Active Directory 集成。
+    > [AZURE.NOTE]
+    在 HPC Pack 2016 之前的 HPC Pack 版本中不支持 Azure Active Directory 集成。
 
 
 * **客户端计算机** - 需要有可运行 HPC Pack 客户端实用工具的 Windows 或 Windows Server 客户端计算机。如果只想使用 HPC Pack Web 门户或 REST API 来提交作业，则可以使用自选的任意客户端计算机。
@@ -189,16 +189,17 @@ HPC Pack 2016 提供两个新的 HPC PowerShell cmdlet 来管理本地令牌缓�
 
         Submit-HpcJob -Job $job -Scheduler https://<Azure load balancer DNS name> -Credential $emptycreds
 
-如果使用 `Submit-HpcJob` 时未指定 `-Credential`，则作业或任务在本地映射为 Azure AD 帐户的用户下运行。（HPC 群集创建的本地用户与用于运行任务的 Azure AD 帐户同名。）
+    如果使用 `Submit-HpcJob` 时未指定 `-Credential`，则作业或任务在本地映射为 Azure AD 帐户的用户下运行。（HPC 群集创建的本地用户与用于运行任务的 Azure AD 帐户同名。）
     
 3. 为 Azure AD 帐户设置扩展的数据。使用 Azure AD 帐户在 Linux 节点上运行 MPI 作业时，这种做法十分有用。
 
     * 为 Azure AD 帐户本身设置扩展的数据
 
-          Set-HpcJobCredential -Scheduler https://<Azure load balancer DNS name> -ExtendedData <data> -AadUser
+            Set-HpcJobCredential -Scheduler https://<Azure load balancer DNS name> -ExtendedData <data> -AadUser
 
-* 设置扩展的数据和 HPC 群集的运行方式用户
+    * 设置扩展的数据和 HPC 群集的运行方式用户
 
-          Set-HpcJobCredential -Credential $mycreds -Scheduler https://<Azure load balancer DNS name> -ExtendedData <data>
+            Set-HpcJobCredential -Credential $mycreds -Scheduler https://<Azure load balancer DNS name> -ExtendedData <data>
 
 <!---HONumber=Mooncake_0116_2017-->
+<!--Update_Description: Add AAD support for MPI Job-->

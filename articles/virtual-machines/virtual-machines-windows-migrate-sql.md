@@ -112,13 +112,13 @@
 
     * 如果指定了新的虚拟机名称，系统将提示你从库映像列表中选择一个映像，并提供以下信息：
       
-      * 映像 - 只能选择 SQL Server 2014 或 SQL Server 2016
-        * 用户名
-        * 新密码
-        * 确认密码
-        * 位置
-        * 大小。
-      * 此外，单击接受此新 Azure 虚拟机自行生成的证书，然后单击“确定”。
+        * 映像 - 只能选择 SQL Server 2014 或 SQL Server 2016
+            * 用户名
+            * 新密码
+            * 确认密码
+            * 位置
+            * 大小。
+        * 此外，单击接受此新 Azure 虚拟机自行生成的证书，然后单击“确定”。
     
     ![Azure 新计算机设置](./media/virtual-machines-windows-migrate-sql/azure-new-machine-settings.png)
 11. 指定目标数据库名称（如果与源数据库名称不同）。如果该目标数据库已存在，系统将自动递增数据库名称，而不是覆盖现有的数据库。
@@ -167,3 +167,4 @@
 有关从捕获的映像创建 Azure SQL Server 虚拟机的说明，请参阅 CSS SQL Server 工程师博客上的[有关从捕获的映像“克隆”Azure SQL 虚拟机的提示和技巧](https://blogs.msdn.microsoft.com/psssql/2016/07/06/tips-tricks-on-cloning-azure-sql-virtual-machines-from-captured-images/)。
 
 <!---HONumber=Mooncake_0116_2017-->
+<!--Update_Description: Add support for Storage Import/Export-->

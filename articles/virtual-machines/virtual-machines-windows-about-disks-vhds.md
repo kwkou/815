@@ -85,3 +85,4 @@ Azure 中所有要用作创建磁盘或映像的源的 .vhd 文件都是只读�
 * [更改 Windows 临时磁盘的驱动器号](/documentation/articles/virtual-machines-windows-classic-change-drive-letter/)，使应用程序能够将 D: 盘用于数据。
 
 <!---HONumber=Mooncake_0116_2017-->
+<!--Update_Description: update meta properties & wording update & add support for TRIM-->

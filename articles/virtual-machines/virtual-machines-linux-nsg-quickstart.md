@@ -27,6 +27,8 @@
 - [Azure CLI 1.0](/documentation/articles/virtual-machines-linux-nsg-quickstart-nodejs/)：用于经典部署模型和资源管理部署模型的 CLI
 - [Azure CLI 2.0（预览版）](#quick-commands)：用于资源管理部署模型（本文）的下一代 CLI
 
+[AZURE.INCLUDE [azure-cli-2-azurechinacloud-environment-parameter](../../includes/azure-cli-2-azurechinacloud-environment-parameter.md)]
+
 ## <a name="quick-commands"></a> 快速命令
 若要创建网络安全组和规则，需要安装最新的 [Azure CLI 2.0（预览版）](https://docs.microsoft.com/cli/azure/install-az-cli2)并使用 [az login](https://docs.microsoft.com/cli/azure/#login) 登录到 Azure 帐户。
 
@@ -70,3 +72,4 @@
 * [Azure Resource Manager 中负载均衡器的概述](/documentation/articles/load-balancer-arm/)
 
 <!---HONumber=Mooncake_0116_2017-->
+<!--Update_Description: change the steps from Azure CLI to Azure CLI 2.0-->

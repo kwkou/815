@@ -101,3 +101,4 @@ Azure 提供两个不同的部署模型用于创建和处理资源：[Resource M
 [5]: ./media/virtual-machines-windows-classic-extensions-customscript/addcse.png
 
 <!---HONumber=Mooncake_0116_2017-->
+<!--Update_Description: update meta properties & wording update & update code-->

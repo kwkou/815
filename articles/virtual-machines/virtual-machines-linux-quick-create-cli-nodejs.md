@@ -196,3 +196,4 @@
 * [Create an SSH Secured Linux VM on Azure using templates（使用模板在 Azure 上创建受 SSH 保护的 Linux VM）](/documentation/articles/virtual-machines-linux-create-ssh-secured-vm-from-template/)
 
 <!---HONumber=Mooncake_0116_2017-->
+<!--Update_Description: update meta properties & wording update-->

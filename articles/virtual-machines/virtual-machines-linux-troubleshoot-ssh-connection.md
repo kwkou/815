@@ -173,9 +173,9 @@ SSHD 配置本身可能有误或服务遇到错误。你可以重置 SSHD 以确
     完成此操作后，临时磁盘数据会丢失，并且系统会更新与虚拟机关联的动态 IP 地址。
 * 根据[如何为基于 Linux 的虚拟机重置密码或 SSH](/documentation/articles/virtual-machines-linux-classic-reset-access/) 中的说明执行以下操作：
   
-  * 重置密码或 SSH 密钥。
-  * 创建 *sudo* 用户帐户。
-  * 重置 SSH 配置。
+    * 重置密码或 SSH 密钥。
+    * 创建 *sudo* 用户帐户。
+    * 重置 SSH 配置。
 * 检查 VM 的资源运行状况，了解是否存在任何平台问题。<br> 选择你的 VM 并向下滚动到“设置”>“检查运行状况”。
 
 ## 其他资源
@@ -184,3 +184,4 @@ SSHD 配置本身可能有误或服务遇到错误。你可以重置 SSHD 以确
 * 有关对使用经典部署模型创建的虚拟机进行故障排除的详细信息，请参阅[如何为基于 Linux 的虚拟机重置密码或 SSH](/documentation/articles/virtual-machines-linux-classic-reset-access/)。
 
 <!---HONumber=Mooncake_0116_2017-->
+<!--Update_Description: update meta properties & wording update-->

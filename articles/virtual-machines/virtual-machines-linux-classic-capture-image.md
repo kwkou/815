@@ -94,3 +94,4 @@ Azure 在“映像”下存储映像，以及任何已上载的映像。有关�
 [How to Create a Linux Virtual Machine]: /documentation/articles/virtual-machines-linux-classic-create-custom/
 
 <!---HONumber=Mooncake_0116_2017-->
+<!--Update_Description: update meta properties & wording update & update code-->

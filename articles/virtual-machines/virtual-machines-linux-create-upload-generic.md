@@ -76,31 +76,31 @@ qemu-img 版本 2.2.1 或更高版本中存在已知 bug，会导致 VHD 格式�
 
 1. 直接使用工具（如 `qemu-img` 或 `vbox-manage`）调整 VHD 大小可能会生成无法启动的 VHD。因此，建议先将 VHD 转换为 RAW 磁盘映像。如果已将 VM 映像创建为 RAW 磁盘映像（对于 KVM 等某些虚拟机监控程序，这是默认设置），则可以跳过此步骤：
    
-       # qemu-img convert -f vpc -O raw MyLinuxVM.vhd MyLinuxVM.raw
+        # qemu-img convert -f vpc -O raw MyLinuxVM.vhd MyLinuxVM.raw
 
 2. 计算磁盘映像所需的大小，以确保虚拟大小已调整为 1 MB。以下 bash shell 脚本可以对此有帮助。此脚本使用“`qemu-img info`”来确定磁盘映像的虚拟大小，然后将大小计算到下个 1 MB：
    
-       rawdisk="MyLinuxVM.raw"
-       vhddisk="MyLinuxVM.vhd"
+        rawdisk="MyLinuxVM.raw"
+        vhddisk="MyLinuxVM.vhd"
    
-       MB=$((1024*1024))
-       size=$(qemu-img info -f raw --output json "$rawdisk" | \
-              gawk 'match($0, /"virtual-size": ([0-9]+),/, val) {print val[1]}')
+        MB=$((1024*1024))
+        size=$(qemu-img info -f raw --output json "$rawdisk" | \
+               gawk 'match($0, /"virtual-size": ([0-9]+),/, val) {print val[1]}')
    
-       rounded_size=$((($size/$MB + 1)*$MB))
-       echo "Rounded Size = $rounded_size"
+        rounded_size=$((($size/$MB + 1)*$MB))
+        echo "Rounded Size = $rounded_size"
 
 3. 使用 $rounded\_size 调整 RAW 磁盘大小，如上述脚本所设置：
    
-       # qemu-img resize MyLinuxVM.raw $rounded\_size
+        # qemu-img resize MyLinuxVM.raw $rounded\_size
 
 4. 现在，将 RAW 磁盘重新转换为固定大小 VHD：
    
-       # qemu-img convert -f raw -o subformat=fixed -O vpc MyLinuxVM.raw MyLinuxVM.vhd
+        # qemu-img convert -f raw -o subformat=fixed -O vpc MyLinuxVM.raw MyLinuxVM.vhd
 
     或者，使用 qemu 版本 **2.6+** 提供 `force_size` 选项：
 
-       # qemu-img convert -f raw -o subformat=fixed,force\_size -O vpc MyLinuxVM.raw MyLinuxVM.vhd
+        # qemu-img convert -f raw -o subformat=fixed,force\_size -O vpc MyLinuxVM.raw MyLinuxVM.vhd
 
 ## <a name="linux-kernel-requirements"></a> Linux 内核要求
 Hyper-V 和 Azure 的 Linux 集成服务 (LIS) 驱动程序会直接影响上游 Linux 内核。包括最新 Linux 内核版本（即 3.x）在内的许多分发已提供这些驱动程序，或以其他方式为其内核提供了这些驱动程序的向后移植版本。这些驱动程序会在上游内核中使用新的修补程序和功能进行不断更新，因此建议尽可能运行[认可的发行版](/documentation/articles/virtual-machines-linux-endorsed-distros/)以包含这些修补程序和更新。
@@ -172,10 +172,11 @@ Hyper-V 和 Azure 的 Linux 集成服务 (LIS) 驱动程序会直接影响上游
         # export HISTSIZE=0
         # logout
   
-  > [AZURE.NOTE]
-  运行“waagent -force -deprovision”之后，在 Virtualbox 上可能看到以下错误：`[Errno 5] Input/output error`。此错误消息并不关键，可以忽略。
-  > 
-  > 
+    > [AZURE.NOTE]
+    运行“waagent -force -deprovision”之后，在 Virtualbox 上可能看到以下错误：`[Errno 5] Input/output error`。此错误消息并不关键，可以忽略。
+    > 
+    > 
 * 然后，需要关闭虚拟机并将 VHD 上载到 Azure。
 
 <!---HONumber=Mooncake_0116_2017-->
+<!--Update_Description: update meta properties & wording update & add support for qemu 2.6+-->

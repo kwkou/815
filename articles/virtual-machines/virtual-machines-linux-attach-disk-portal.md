@@ -66,3 +66,4 @@
 添加磁盘后，需要准备它以供使用。有关详细信息，请参阅[如何：在 Linux 中初始化新数据磁盘](/documentation/articles/virtual-machines-linux-classic-attach-disk/#initialize-a-new-data-disk-in-linux)。
 
 <!---HONumber=Mooncake_0116_2017-->
+<!--Update_Description: update meta properties & wording update & move out content from include file-->

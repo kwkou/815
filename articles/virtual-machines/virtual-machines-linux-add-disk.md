@@ -242,3 +242,4 @@
 * 可以添加更多的磁盘来扩展存储容量，[配置 RAID](/documentation/articles/virtual-machines-linux-configure-raid/) 来提高性能。
 
 <!---HONumber=Mooncake_0116_2017-->
+<!--Update_Description: wording update-->

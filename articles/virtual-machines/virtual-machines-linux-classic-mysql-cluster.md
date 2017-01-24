@@ -29,7 +29,7 @@ Azure 提供两个不同的部署模型用于创建和处理资源：[Resource M
 
 无需使用类似 LVS 的 VIP 解决方案，因为我们使用 Azure 负载均衡集来同时提供轮循功能和 VIP 的终结点检测、删除和正常恢复功能。VIP 是在首次创建云服务时由 Azure 分配的全局可路由 IPv4 地址。
 
-MySQL 的其他可能体系结构包括 NBD 群集、Percona 和 Galera 以及多个中间件解决方案，其中至少有一个以 [VM Depot](http://vmdepot.msopentech.com) 中的 VM 的形式提供。只要这些解决方案可以复制到单播、多播或广播上，并且不要依赖于共享存储或多个网络接口，这些方案就应该很容易在 Azure 上部署。
+MySQL 的其他可能体系结构包括 NBD 群集、Percona 和 Galera 以及多个中间件解决方案，其中至少有一个以 VM Depot 中的 VM 的形式提供。只要这些解决方案可以复制到单播、多播或广播上，并且不要依赖于共享存储或多个网络接口，这些方案就应该很容易在 Azure 上部署。
 
 当然，这些群集体系结构可以类似方式扩展到其他产品（如 PostgreSQL 和 OpenLDAP）。例如，此无共享的负载均衡过程已成功在多主机 OpenLDAP 上测试，并可以在我们的第 9 频道博客上观看。
 
@@ -38,9 +38,9 @@ MySQL 的其他可能体系结构包括 NBD 群集、Percona 和 Galera 以及�
 
 ### 已测试的环境
 * Ubuntu 13.10
-  * DRBD
-  * MySQL Server
-  * Corosync 和 Pacemaker
+    * DRBD
+    * MySQL Server
+    * Corosync 和 Pacemaker
 
 ### 地缘组
 解决方案的地缘组是通过登录到 Azure 经典管理门户，向下滚动到“设置”并创建新地缘组来创建的。稍后创建的已分配资源将分配给此地缘组。
@@ -323,10 +323,11 @@ Pacemaker 使用群集监视资源、定义主节点何时停机，并将这些�
 以下限制适用：
 
 * 管理 DRBD 的 linbit DRBD 资源脚本作为 Pacemaker 中的资源在关闭节点时使用 `drbdadm down`，即使该节点只是转为待机状态也是如此。这并不理想，因为当主节点获得写入时，从节点将不会同步 DRBD 资源。如果主节点未优雅地失败，则从节点可以接受较旧的文件系统状态。可通过两种可能方式来解决此问题：
-  * 在所有群集节点上通过本地（非群集化）监视程序强制执行 `drbdadm up r0`，或者
-  * 编辑 linbit DRBD 脚本以确保未在 `/usr/lib/ocf/resource.d/linbit/drbd` 中调用 `down`。
+    * 在所有群集节点上通过本地（非群集化）监视程序强制执行 `drbdadm up r0`，或者
+    * 编辑 linbit DRBD 脚本以确保未在 `/usr/lib/ocf/resource.d/linbit/drbd` 中调用 `down`。
 * 负载均衡器至少需要 5 秒钟才能做出响应，因此应用程序应是群集感知的并更容忍超时；其他体系结构也会有帮助，例如应用程序中队列、查询中间件等。
 * 有必要进行 MySQL 优化以确保以合理的速度完成写入，并且尽可能频繁地将缓存刷新到磁盘，以最大限度地减少内存损失
 * 写入性能将依赖于虚拟交换机中的 VM 互连，因为这是 DRBD 用于复制设备的机制
 
 <!---HONumber=Mooncake_0116_2017-->
+<!--Update_Description: update meta properties & wording update-->

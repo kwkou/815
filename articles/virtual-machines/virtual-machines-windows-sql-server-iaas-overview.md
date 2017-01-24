@@ -81,8 +81,9 @@ Azure VM 可以使用[自动修补](/documentation/articles/virtual-machines-win
 有关详细信息，请参阅[接受许可条款](https://msdn.microsoft.com/zh-cn/library/ms143343.aspx)主题的 CEIP 部分。
 
 ## 后续步骤
-有关定价问题，请参阅[定价](/pricing/details/virtual-machines/)。在“OS/软件”列表中选择 SQL Server 的目标版本。然后查看不同大小的虚拟机的价格。
+有关定价问题，请参阅[定价](/pricing/details/virtual-machines/)。在“VM 类型”列表中选择 SQL Server 的目标版本。然后查看不同大小的虚拟机的价格。
 
 其他问题？ 请先参阅 [Azure 虚拟机中的 SQL Server 常见问题解答](/documentation/articles/virtual-machines-windows-sql-server-iaas-faq/)。同时将问题或看法添加到任何 SQL VM 主题的底部，以便与 Azure.cn 和社区互动。
 
 <!---HONumber=Mooncake_0116_2017-->
+<!--Update_Description: update meta properties & wording update-->

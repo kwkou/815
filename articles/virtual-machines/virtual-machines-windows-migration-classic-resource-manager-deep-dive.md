@@ -69,3 +69,4 @@
 * [查看最常见的迁移错误](/documentation/articles/virtual-machines-migration-errors/)
 
 <!---HONumber=Mooncake_0116_2017-->
+<!--Update_Description: add virtual network gateway, local network gateway, and connection in migration guidance table-->
