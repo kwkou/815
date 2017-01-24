@@ -18,7 +18,7 @@
     ms.author="darosa;sethm" />
 
 # 事件中心存档演练：Python
-事件中心存档是事件中心的一项新功能，允许用户自动将事件中心中的流数据传送到所选的 Azure Blob 存储帐户。这样易于对实时流数据执行批处理操作。本文介绍如何通过 Python 使用事件中心存档功能。有关事件中心存档的详细信息，请参阅[概述文章](/documentation/articles/event-hubs-archive-overview/)。
+事件中心存档是事件中心的一项新功能，允许用户自动将事件中心中的流数据传送到所选的 Azure Blob 存储帐户。这样易于对实时流数据执行批处理操作。本文介绍如何通过 Python 使用事件中心存档功能。
 
 此示例使用 Azure Python SDK 演示如何使用存档功能。Sender.py 程序以 JSON 格式将模拟的环境遥测数据发送到事件中心。事件中心已配置为使用存档功能将此数据成批地写入到 blob 存储。然后 archivereader.py 应用将读取这些 blob，并为每个设备创建一个附加文件，然后将数据写入到 .csv 文件中。
 
