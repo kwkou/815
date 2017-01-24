@@ -1,22 +1,21 @@
 <properties
-   pageTitle="基于 REST 的应用程序生命周期示例 | Azure"
-   description="一个 Microsoft Azure Service Fabric 示例，通过使用 Service Fabric REST 接口来显示应用程序生命周期。"
-   services="service-fabric"
-   documentationCenter=".net"
-   authors="rwike77"
-   manager="timlt"
-   editor=""/>  
-
-
+    pageTitle="基于 REST 的应用程序生命周期示例 | Azure"
+    description="一个 Microsoft Azure Service Fabric 示例，通过使用 Service Fabric REST 接口来显示应用程序生命周期。"
+    services="service-fabric"
+    documentationcenter=".net"
+    author="rwike77"
+    manager="timlt"
+    editor="" />
 <tags
-   ms.service="service-fabric"
-   ms.devlang="rest-api"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="na"
-   ms.date="08/25/2016"
-   wacn.date="10/24/2016"
-   ms.author="ryanwi"/>  
+    ms.assetid="0a374e53-ff23-4ee8-8cc6-259d41e118e7"
+    ms.service="service-fabric"
+    ms.devlang="rest-api"
+    ms.topic="article"
+    ms.tgt_pltfrm="na"
+    ms.workload="na"
+    ms.date="12/2/2016"
+    wacn.date="01/20/2017"
+    ms.author="ryanwi" />  
 
 
 # 基于 REST 的应用程序生命周期示例
@@ -40,15 +39,13 @@
 * 取消 WordCount 1.0.0 版示例的设置。
 * 显示应用程序类型的列表，该列表不再包括 WordCount。
 
-
 ## 先决条件
-
 本示例使用 [WordCount 示例](http://aka.ms/servicefabricsamples)（可在“入门”示例中找到）。必须首先生成 WordCount 示例，然后将两个应用程序包复制到映像存储。
 
-|文件夹|说明|
-|------|-----------|
-|WordCount|WordCount 示例应用程序。**ApplicationManifest.xml** 文件包含 **ApplicationTypeVersion="1.0.0"**。|
-|WordCountUpgrade|WordCount 示例应用程序。必须将 ApplicationManifest.xml 文件更改为 **ApplicationTypeVersion="1.1.0"** 以允许应用程序升级。|
+| 文件夹 | 说明 |
+| --- | --- |
+| WordCount |WordCount 示例应用程序。**ApplicationManifest.xml** 文件包含 **ApplicationTypeVersion="1.0.0"**。 |
+| WordCountUpgrade |WordCount 示例应用程序。必须将 ApplicationManifest.xml 文件更改为 **ApplicationTypeVersion="1.1.0"** 以允许应用程序升级。 |
 
 若要创建应用程序包并将它们复制到映像存储，请执行以下步骤：
 
@@ -77,7 +74,6 @@
 在 PowerShell 脚本执行完毕之后，此应用程序即可运行。
 
 ## 示例
-
 以下示例演示 Service Fabric 应用程序生命周期。
 
 
@@ -713,4 +709,5 @@
 
 [Service Fabric 应用程序生命周期](/documentation/articles/service-fabric-application-lifecycle/)
 
-<!---HONumber=Mooncake_1017_2016-->
+<!---HONumber=Mooncake_0116_2017-->
+<!--update: wording update-->

@@ -14,7 +14,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="na"
     ms.date="12/13/2016"
-    wacn.date="01/17/2017"
+    wacn.date="01/20/2017"
     ms.author="seanmck" />  
 
 
@@ -116,4 +116,5 @@ http://&lt;your-cluster-endpoint&gt;:19080/Explorer
 [sfx-delete-application]: ./media/service-fabric-visualizing-your-cluster/SfxDeleteApplication.png
 [sfx-create-app-instance]: ./media/service-fabric-visualizing-your-cluster/SfxCreateAppInstance.png
 
-<!---HONumber=Mooncake_Quality_Review_0117_2017-->
+<!---HONumber=Mooncake_0116_2017-->
+<!--update: wording update-->
