@@ -1,22 +1,21 @@
 <properties
-	pageTitle="通过 PowerShell 为 Azure VM 部署和管理备份 | Azure"
-	description="了解如何使用 PowerShell 部署和管理 Azure 备份"
-	services="backup"
-	documentationCenter=""
-	authors="markgalioto"
-	manager="cfreeman"
-	editor=""/>
-
+    pageTitle="通过 PowerShell 为 Azure VM 部署和管理备份 | Azure"
+    description="了解如何使用 PowerShell 部署和管理 Azure 备份"
+    services="backup"
+    documentationcenter=""
+    author="markgalioto"
+    manager="cfreeman"
+    editor="" />
 <tags
-	ms.service="backup"
-	ms.workload="storage-backup-recovery"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="08/08/2016"
-	wacn.date="01/19/2017" 
-	ms.author="markgal;trinadhk;jimpark" />
-
+    ms.assetid="2e24b1d9-4375-4049-a28d-e3bc01152f32"
+    ms.service="backup"
+    ms.workload="storage-backup-recovery"
+    ms.tgt_pltfrm="na"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.date="11/28/2016"
+    wacn.date="01/24/2017"
+    ms.author="markgal;trinadhk;jimpark" />
 
 # 通过 PowerShell 为 Azure VM 部署和管理备份
 
@@ -24,14 +23,15 @@
 - [资源管理器](/documentation/articles/backup-azure-vms-automation/)
 - [经典](/documentation/articles/backup-azure-vms-classic-automation/)
 
-本文演示如何使用 Azure PowerShell 来备份和恢复 Azure VM。Azure 有两个用于创建和处理资源的不同部署模型：Resouce Manager 部署模型和经典部署模型。本文介绍如何使用经典部署模型。Azure 建议大多数新部署使用资源管理器模型。
+本文演示如何使用 Azure PowerShell 来备份和恢复 Azure VM。Azure 有两个用于创建和处理资源的不同部署模型：Resouce Manager 部署模型和经典部署模型。本文介绍如何使用经典部署模型。Microsoft 建议大多数新部署使用资源管理器模型。
 
 ## 概念
+本文专门介绍用于备份虚拟机的 PowerShell cmdlet。有关如何保护 Azure VM 的介绍性信息，请参阅[在 Azure 中计划 VM 备份基础结构](/documentation/articles/backup-azure-vms-introduction/)。
 
-
-本文专门介绍用于备份虚拟机的 PowerShell cmdlet。有关如何保护 Azure VM 的介绍，请参阅[在 Azure 中计划 VM 备份基础结构](/documentation/articles/backup-azure-vms-introduction/)。
-
-> [AZURE.NOTE] 在开始之前，请阅读使用 Azure 备份所需的[系统必备组件](/documentation/articles/backup-azure-vms-prepare/)，以及当前 VM 备份解决方案的[限制](/documentation/articles/backup-azure-vms-prepare/#limitations/)。
+> [AZURE.NOTE]
+在开始之前，请阅读使用 Azure 备份所需的[系统必备组件](/documentation/articles/backup-azure-vms-prepare/)，以及当前 VM 备份解决方案的[限制](/documentation/articles/backup-azure-vms-prepare/#limitations-when-backing-up-and-restoring-a-vm/)。
+>
+>
 
 为了提高 PowerShell 使用效率，请抽时间了解对象的层次结构以及从何处开始。
 
@@ -43,13 +43,13 @@
 ## 设置和注册
 开始时，请执行以下操作：
 
-1. [下载最新 PowerShell](https://github.com/Azure/azure-powershell/releases)（要求的最低版本：1.0.0）
+1. [下载最新的 PowerShell](https://github.com/Azure/azure-powershell/releases)（要求的最低版本：1.0.0）
 
 2. 键入以下命令查找可用的 Azure 备份 PowerShell cmdlet：
 
 		PS C:\> Get-Command *azurermbackup*
 		
-		CommandType     Name                                               Version    Source
+		CommandType Name Version Source
 		-----------     ----                                               -------    ------
 		Cmdlet          Backup-AzureRmBackupItem                           1.0.1      AzureRM.Backup
 		Cmdlet          Disable-AzureRmBackupProtection                    1.0.1      AzureRM.Backup
@@ -82,8 +82,10 @@
 - 将 VM 注册到 Azure 备份服务
 
 ### 创建备份保管库
-
-> [AZURE.WARNING] 对于第一次使用 Azure 备份的客户，你需要注册用于订阅的 Azure 备份提供程序。可通过运行以下命令来执行此操作：Register-AzureRmResourceProvider -ProviderNamespace "Microsoft.Backup"
+> [AZURE.WARNING]
+对于首次使用 Azure 备份的客户，需要注册用于订阅的 Azure 备份提供程序。可通过运行以下命令来执行此操作：Register-AzureRmResourceProvider -ProviderNamespace "Microsoft.Backup"
+>
+>
 
 可以使用 **New-AzureRmBackupVault** cmdlet 创建新的备份保管库。备份保管库是一种 ARM 资源，因此需要将它放置在资源组中。在权限提升的 Azure PowerShell 控制台中运行以下命令：
 
@@ -92,11 +94,13 @@
 
 可以使用 **Get-AzureRmBackupVault** cmdlet 获取给定订阅中所有备份保管库的列表。
 
-> [AZURE.NOTE] 可以方便地将备份保管库对象保存到一个变量中。许多 Azure 备份 cmdlet 需要输入保管库对象。
-
+> [AZURE.NOTE]
+可以方便地将备份保管库对象保存到一个变量中。许多 Azure 备份 cmdlet 需要输入保管库对象。
+>
+>
 
 ### 注册 VM
-若要使用 Azure 备份配置备份，第一步是将你的计算机或 VM 注册到 Azure 备份保管库。**Register-AzureRmBackupContainer** cmdlet 采用 Azure IaaS 虚拟机的输入信息，并将其注册到指定保管库。注册操作将 Azure 虚拟机与备份保管库关联在一起，并跟踪备份生命周期中 VM 的活动。
+若要使用 Azure 备份配置备份，第一步是将计算机或 VM 注册到 Azure 备份保管库。**Register-AzureRmBackupContainer** cmdlet 采用 Azure IaaS 虚拟机的输入信息，并将其注册到指定保管库。注册操作将 Azure 虚拟机与备份保管库关联在一起，并通过备份生命周期跟踪 VM 的活动。
 
 将 VM 注册到 Azure 备份服务会创建顶级容器对象。一个容器通常保护多个可以备份的项，但在使用 VM 的情况下，容器将只有一个备份项。
 
@@ -105,7 +109,7 @@
 ## 备份 Azure VM <a name="restore-an-azure-vm"></a>
 
 ### 创建保护策略
-不必创建新的保护策略即可开始 VM 的备份。使用保管库附带的“默认策略”，你可以快速启用保护功能，稍后再使用适当的详细信息对该策略进行编辑。你可以使用 **Get-AzureRmBackupProtectionPolicy cmdlet** 获取保管库中提供的策略的列表：
+不必创建新的保护策略即可开始 VM 的备份。使用保管库附带的“默认策略”，可快速启用保护功能，稍后再使用适当的详细信息对该策略进行编辑。可以使用 **Get-AzureRmBackupProtectionPolicy cmdlet** 获取保管库中提供的策略的列表：
 
 	PS C:\> Get-AzureRmBackupProtectionPolicy -Vault $backupvault
 	
@@ -132,7 +136,7 @@
 	PS C:\> Get-AzureRmBackupContainer -Type AzureVM -Status Registered -Vault $backupvault | Get-AzureRmBackupItem | Enable-AzureRmBackupProtection -Policy $newpolicy
 
 ### 初始备份
-备份计划需要考虑的是如何为项目执行完整的初始复制，以及如何为后续备份执行增量复制。不过，如果你想要强制初始备份在某个时间发生或者甚至是立刻发生，则可使用 **Backup-AzureRmBackupItem** cmdlet：
+备份计划需要考虑的是如何为项目执行完整的初始复制，以及如何为后续备份执行增量复制。不过，如果想要强制初始备份在某个时间发生或者甚至是立刻发生，则可使用 **Backup-AzureRmBackupItem** cmdlet：
 
 	PS C:\> $container = Get-AzureRmBackupContainer -Vault $backupvault -Type AzureVM -Name "testvm"
 	PS C:\> $backupjob = Get-AzureRmBackupItem -Container $container | Backup-AzureRmBackupItem
@@ -163,17 +167,17 @@
 
 ## 还原 Azure VM
 
-若要还原备份数据，你需要确定已备份项目以及保留了时间点数据的恢复点。此信息将提供给 Restore-AzureRmBackupItem cmdlet，以便启动还原过程，将数据从保管库还原到客户的帐户。
+若要还原备份数据，请确定已备份项目以及保留了时间点数据的恢复点。此信息将提供给 Restore-AzureRmBackupItem cmdlet，以便启动还原过程，将数据从保管库还原到客户的帐户。
 
 ### 选择 VM
 
-若要获取用于标识正确备份项目的 PowerShell 对象，你需要从保管库中的容器开始，按对象层次结构进行操作。若要选择代表 VM 的容器，可使用 **Get-AzureRmBackupContainer** cmdlet，然后通过管道将其传输给 **Get-AzureRmBackupItem** cmdlet。
+若要获取用于标识正确备份项目的 PowerShell 对象，请从保管库中的容器开始，按对象层次结构进行操作。若要选择代表 VM 的容器，可使用 **Get-AzureRmBackupContainer** cmdlet，然后通过管道将其传输给 **Get-AzureRmBackupItem** cmdlet。
 
 	PS C:\> $backupitem = Get-AzureRmBackupContainer -Vault $backupvault -Type AzureVM -name "testvm" | Get-AzureRmBackupItem
 
 ### 选择恢复点
 
-你现在可以使用 **Get-AzureRmBackupRecoveryPoint** cmdlet 列出备份项目的所有恢复点，然后选择要还原的恢复点。通常情况下，用户会选取列表中在时间上最近的 *AppConsistent* 点。
+现在可以使用 **Get-AzureRmBackupRecoveryPoint** cmdlet 列出备份项目的所有恢复点，然后选择要还原的恢复点。通常情况下，用户会选取列表中在时间上最近的 *AppConsistent* 点。
 
 	PS C:\> $rp =  Get-AzureRmBackupRecoveryPoint -Item $backupitem
 	PS C:\> $rp
@@ -197,7 +201,7 @@
 	------------    ---------       ------          ---------              -------
 	testvm          Restore         InProgress      01-Sep-15 1:14:01 PM   01-Jan-01 12:00:00 AM
 
-还原作业完成后，你可以使用 **Get-AzureRmBackupJobDetails** cmdlet 获取还原操作的详细信息。*ErrorDetails* 属性将提供重建 VM 所需的信息。
+还原作业完成后，可使用 **Get-AzureRmBackupJobDetails** cmdlet 获取还原操作的详细信息。*ErrorDetails* 属性将提供重建 VM 所需的信息。
 
 	PS C:\> $restorejob = Get-AzureRmBackupJob -Job $restorejob
 	PS C:\> $details = Get-AzureRmBackupJobDetails -Job $restorejob
@@ -308,10 +312,11 @@
 	
 	$DAILYBACKUPSTATS | Out-GridView
 
-如果你想要为此报告输出添加图表功能，可通过 TechNet 博客[使用 PowerShell 绘制图表](http://blogs.technet.com/b/richard_macdonald/archive/2009/04/28/3231887.aspx)来了解相关信息
+如果想要为此报告输出添加图表功能，可通过 TechNet 博客文章[使用 PowerShell 绘制图表](http://blogs.technet.com/b/richard_macdonald/archive/2009/04/28/3231887.aspx)来了解相关信息
 
 ## 后续步骤
 
-如果你更愿意使用 PowerShell 来处理 Azure 资源，则请查看有关如何保护 Windows Server 的 PowerShell 文章：[为 Windows Server 部署和管理备份](/documentation/articles/backup-client-automation-classic/)。此外还有一篇有关如何管理 DPM 备份的 PowerShell 文章：[为 DPM 部署和管理备份](/documentation/articles/backup-dpm-automation-classic/)。这两篇文章都为资源管理器部署和经典部署提供了一个版本。
+如果愿意使用 PowerShell 来处理 Azure 资源，则请查看有关如何保护 Windows Server 的 PowerShell 文章：[为 Windows Server 部署和管理备份](/documentation/articles/backup-client-automation-classic/)。此外还有一篇关于如何管理 DPM 备份的 PowerShell 文章：[为 DPM 部署和管理备份](/documentation/articles/backup-dpm-automation-classic/)。这两篇文章都为资源管理器部署和经典部署提供了一个版本。
 
-<!---HONumber=Mooncake_0829_2016-->
+<!---HONumber=Mooncake_0116_2017-->
+<!---Update_Description: wording update -->

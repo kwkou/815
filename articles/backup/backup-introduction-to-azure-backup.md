@@ -1,13 +1,11 @@
 <properties
     pageTitle="什么是 Azure 备份？| Azure"
-    description="使用 Azure 备份和恢复服务，你可以从 Windows 服务器、Windows 客户端计算机、System Center DPM 服务器和 Azure 虚拟机备份和还原数据与应用程序。"
+    description="使用 Azure 备份和恢复服务，可从 Windows Server、Windows 客户端计算机、System Center DPM 服务器和 Azure 虚拟机备份和还原数据与应用程序。"
     services="backup"
     documentationcenter=""
     author="markgalioto"
     manager="cfreeman"
-    editor="tysonn"
-    keywords="备份和还原;恢复服务;备份解决方案" />  
-
+    editor="keywords: backup and restore; recovery services; backup solutions" />
 <tags
     ms.assetid="0d2a7f08-8ade-443a-93af-440cbf7c36c4"
     ms.service="backup"
@@ -15,8 +13,8 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="get-started-article"
-    ms.date="10/31/2016"
-    wacn.date="01/06/2017"
+    ms.date="12/7/2016"
+    wacn.date="01/24/2017"
     ms.author="jimpark; trinadhk" />
 
 # 什么是 Azure 备份？
@@ -29,12 +27,13 @@ Azure 备份是基于 Azure 的服务，可用于备份（或保护）和还原 
 
 **无限缩放** - Azure 备份利用 Azure 云的基础功能和无限缩放功能实现高可用性 - 无需维护或监视开销。可设置警报来获取相关事件信息，但无需担忧云数据的高可用性。
 
-**多种存储选项** - 高可用性的一个方面是存储复制。Azure 备份提供两种类型的复制：[本地冗余存储](/documentation/articles/storage-redundancy/#locally-redundant-storage/)和[异地复制存储](/documentation/articles/storage-redundancy/#geo-redundant-storage/)。根据需要选择备份存储选项：
+**多种存储选项** - 高可用性的一个方面是存储复制。Azure 备份提供 2 种类型的复制：[本地冗余存储](/documentation/articles/storage-redundancy/#locally-redundant-storage/)和[异地冗余存储](/documentation/articles/storage-redundancy/#geo-redundant-storage/)。根据需要选择备份存储选项：
 
-- 本地冗余存储 (LRS) 将同一区域的配对数据中心内的数据复制三次（创建三个数据副本）。LRS 选项成本低廉，适合注重价格的客户，因为它保护数据免受本地硬件故障的损害。
-- 异地复制存储 (GRS) 将数据复制在源数据主位置数英里之外的次要区域中。GRS 的成本比 LRS 的高，但它可让数据更为持久，即使出现区域性中断也是如此。
+- 本地冗余存储 (LRS) 将同一区域的配对数据中心内的数据复制三次（创建三个数据副本）。LRS 是一个低成本选项，可在本地硬件故障时保护数据。
 
-**无限制的数据传输** - Azure 备份不会限制传输的入站或出站数据量。Azure 备份也不会对传输的数据收费。但如果使用 Azure 导入/导出服务来导入大量数据，则入站数据将产生相关费用。出站数据是指还原操作期间从备份保管库传输的数据。
+- 异地冗余存储 (GRS) 将数据复制到源数据主位置数英里之外的次要区域中。GRS 的成本比 LRS 的高，但 GRS 可让数据更为持久，即使出现区域性中断也是如此。
+
+**无限制的数据传输** - Azure 备份不会限制传输的入站或出站数据量。Azure 备份也不会对传输的数据收费。但如果使用 Azure 导入/导出服务来导入大量数据，则入站数据将产生相关费用。有关此成本的详细信息，请参阅 [Azure 备份中的脱机备份工作流](/documentation/articles/backup-azure-backup-import-export/)。出站数据是指还原操作期间从备份保管库传输的数据。
 
 **数据加密** - 该服务允许在公有云中安全地传输和存储数据。加密通行短语存储在本地，绝不会传输或存储到 Azure 中。如有必要还原任何数据，只需具有加密通行短语或密码即可。
 
@@ -48,8 +47,8 @@ Azure 备份是基于 Azure 的服务，可用于备份（或保护）和还原 
 | 组件 | 优点 | 限制 | 哪些内容受到保护？ | 备份存储在何处？ |
 | --- | --- | --- | --- | --- |
 | Azure 备份 (MARS) 代理 |<li>将文本和文件夹备份到物理或虚拟 Windows OS（VM 可以在本地或在 Azure 中）<li>无需单独的备份服务器。 |<li>每天备份三次<li>不感知应用程序；仅支持文件、文件夹和卷级别的还原，<li>不支持 Linux。 |<li>文件、<li>文件夹 |Azure 备份保管库 |
-| System Center DPM |<li>应用感知的快照 (VSS)<li>创建备份时提供充分的弹性<li>恢复粒度（全部）<li>可以使用 Azure 备份保管库<li>Linux 支持（如果托管在 Hyper-V 上）<li>使用 DPM 2012 R2 保护 VMware VM |不支持备份 Oracle 工作负荷。 |<li>文件、<li>文件夹、<li>卷、<li>VM、<li>应用程序、<li>工作负荷 |<li>Azure 备份保管库、<li>本地附加的磁盘、<li>磁带（仅限本地） |
-| Azure 备份服务器 |<li>应用感知的快照 (VSS)<li>创建备份时提供充分的弹性<li>恢复粒度（全部）<li>可以使用 Azure 备份保管库<li>Linux 支持（如果托管在 Hyper-V 上）<li>不需要 System Center 许可证 |<li>缺少异构支持（VMware VM 备份、Oracle 工作负荷备份）。<li>始终需要实时 Azure 订阅<li>不支持磁带备份 |<li>文件、<li>文件夹、<li>卷、<li>VM、<li>应用程序、<li>工作负荷 |<li>Azure 备份保管库、<li>本地附加的磁盘 |
+| System Center DPM |<li>应用感知的快照 (VSS)<li>创建备份时提供充分的弹性<li>恢复粒度（全部）<li>可使用 Azure 备份保管库<li>Hyper-V 和 VMware VM 上的 Linux 支持<li>使用 DPM 2012 R2 保护 VMware VM |无法备份 Oracle 工作负荷。|<li>文件、<li>文件夹、<li>卷、<li>VM、<li>应用程序、<li>工作负荷 |<li>Azure 备份保管库、<li>本地附加的磁盘、<li>磁带（仅限本地） |
+| Azure 备份服务器 |<li>应用感知的快照 (VSS)<li>创建备份时提供充分的弹性<li>恢复粒度（全部）<li>可使用 Azure 备份保管库<li>Linux 支持（如果托管在 Hyper-V 上）<li>使用 DPM 2012 R2 保护 VMware VM<li>无需 System Center 许可证 |<li>无法备份 Oracle 工作负荷。<li>始终需要实时 Azure 订阅<li>不支持磁带备份 |<li>文件、<li>文件夹、<li>卷、<li>VM、<li>应用程序、<li>工作负荷 |<li>Azure 备份保管库、<li>本地附加的磁盘 |
 | Azure IaaS VM 备份 |<li>针对 Windows/Linux 的本机备份<li>不需要安装特定代理<li>无需使用备份基础结构进行结构级备份 |<li>每天备份 VM 一次<li>仅在磁盘级还原 VM<li>无法本地备份 |<li>VM、<li>所有磁盘（使用 PowerShell） |<p>Azure 备份保管库</p> |
 
 ## 每个组件适用于哪些部署方案？
@@ -91,9 +90,12 @@ Azure 备份是基于 Azure 的服务，可用于备份（或保护）和还原 
 Azure 备份可保护高级存储 VM。Azure 高级存储是基于固态硬盘 (SSD) 的存储，用于支持 I/O 密集型工作负荷。高级存储很适合虚拟机 (VM) 工作负荷。有关高级存储的详细信息，请参阅[高级存储：Azure 虚拟机工作负荷的高性能存储](/documentation/articles/storage-premium-storage/)一文
 
 ### 备份高级存储 VM <a name="back-up-and-restore-premium-storage-vms"></a>
-在备份高级存储 VM 时，备份服务在高级存储帐户中创建临时暂存位置。名为“AzureBackup-”的暂存位置相当于连接到 VM 的高级磁盘的数据大小总计。
+在备份高级存储 VM 时，备份服务在高级存储帐户中创建临时暂存位置。名为“AzureBackup-”的暂存位置相当于连接到 VM 的高级磁盘的数据大小总计。检查存储帐户中的临时暂存位置是否有足够可用空间。有关其他信息，请参阅[高级存储限制](/documentation/articles/storage-premium-storage/#premium-storage-scalability-and-performance-targets/)一文。
 
->[AZURE.NOTE] 请不要修改或编辑暂存位置。
+> [AZURE.NOTE]
+请不要修改或编辑暂存位置。
+>
+>
 
 备份作业完成后，将删除暂存位置。用于暂存位置的存储的价格与所有[高级存储定价](/documentation/articles/storage-premium-storage/#pricing-and-billing/)一致。
 
@@ -107,14 +109,10 @@ Azure 备份可保护高级存储 VM。Azure 高级存储是基于固态硬盘 (
 | 功能 | Azure 备份代理 | System Center DPM | Azure 备份服务器 | Azure IaaS VM 备份 |
 | --- | --- | --- | --- | --- |
 | Azure 备份保管库 |![是][green] |![是][green] |![是][green] |![是][green] |
-| 磁盘存储 | |![是][green]  
- |![是][green] | |
-| 表存储 | |![是][green]  
- | | |
-| 压缩<br/>（在备份保管库中） |![是][green]  
- |![是][green] |![是][green] | |
-| 增量备份 |![是][green] |![是][green] |![是][green] |![是][green]  
- |
+| 磁盘存储 | |![是][green]  |![是][green] | |
+| 表存储 | |![是][green] | | |
+| 压缩<br/>（在备份保管库中） |![是][green]|![是][green] |![是][green] | |
+| 增量备份 |![是][green] |![是][green] |![是][green] |![是][green] |
 | 磁盘重复数据删除 | |![部分][yellow] |![部分][yellow] | |
 
 ![表键](./media/backup-introduction-to-azure-backup/table-key.png)
@@ -132,15 +130,14 @@ Azure 备份可保护高级存储 VM。Azure 高级存储是基于固态硬盘 (
 
 > [AZURE.NOTE]
 重复数据删除不一定适用于 Azure 中的所有备份组件。如果 System Center DPM 和备份服务器部署在 Azure 中，则附加到 VM 的存储磁盘无法进行重复数据删除。
+>
+>
 
 ### 安全
 | 功能 | Azure 备份代理 | System Center DPM | Azure 备份服务器 | Azure IaaS VM 备份 |
 | --- | --- | --- | --- | --- |
-| 网络安全性<br/>（到 Azure） |![是][green]  
- |![是][green] |![是][green] |![部分][yellow]  
- |
-| 数据安全性<br/>（Azure 中） |![是][green]  
- |![是][green] |![是][green] |![部分][yellow] |
+| 网络安全性<br/>（到 Azure） |![是][green] |![是][green] |![是][green] |![部分][yellow] |
+| 数据安全性<br/>（Azure 中） |![是][green] |![是][green] |![是][green] |![部分][yellow] |
 
 ![表键](./media/backup-introduction-to-azure-backup/table-key.png)  
 
@@ -159,12 +156,8 @@ Azure 备份可保护高级存储 VM。Azure 高级存储是基于固态硬盘 (
 ### 网络
 | 功能 | Azure 备份代理 | System Center DPM | Azure 备份服务器 | Azure IaaS VM 备份 |
 | --- | --- | --- | --- | --- |
-| 网络压缩<br/>（到**备份服务器**） | |![是][green]  
- |![是][green]  
- | |
-| 网络压缩<br/>（到**备份保管库**） |![是][green]  
- |![是][green] |![是][green]  
- | |
+| 网络压缩<br/>（到**备份服务器**） | |![是][green] |![是][green] | |
+| 网络压缩<br/>（到**备份保管库**） |![是][green] |![是][green] |![是][green] | |
 | 网络协议<br/>（到**备份服务器**） | |TCP |TCP | |
 | 网络协议<br/>（到**备份保管库**） |HTTPS |HTTPS |HTTPS |HTTPS |
 
@@ -179,15 +172,26 @@ IaaS VM 上的 VM 扩展会通过存储网络直接读取 Azure 存储帐户中�
 Azure 备份代理提供网络限制功能，可用于控制数据传输期间的网络带宽使用方式。如果需要在上班时间内备份数据，但不希望备份程序干扰其他 Internet 流量，限制会很有帮助。数据传输的限制适用于备份和还原活动。
 
 ### 备份和保留
+
+针对每个受保护实例，Azure 备份的恢复点数（也称为备份副本或快照）限制为 9999。受保护实例指配置为将数据备份到 Azure 的计算机、物理或虚拟服务器，或工作负荷。有关详细信息，请参阅[受保护实例是什么](/documentation/articles/backup-introduction-to-azure-backup/#what-is-a-protected-instance/)一节。保存数据的备份副本后，实例将受保护。数据的备份副本就是保障。如果源数据丢失或损坏，备份副本可还原源数据。下表显示每个组件的最大备份频率。备份策略配置决定使用恢复点的速度。例如，如果每天创建恢复点，那么恢复点可保留 27 年才到期。如果每月创建恢复点，那么恢复点可保留 833 年才到期。备份服务不会为恢复点设置到期时间限制。
+
 | | Azure 备份代理 | System Center DPM | Azure 备份服务器 | Azure IaaS VM 备份 |
 | --- | --- | --- | --- | --- |
 | 备份频率<br/>（到备份保管库） |每天三次备份 |每天备份两次 |每天备份两次 |每天一次备份 |
 | 备份频率<br/>（到磁盘） |不适用 |<li>SQL Server 每 15 分钟一次<li>其他工作负荷每小时一次 |<li>SQL Server 每 15 分钟一次<li>其他工作负荷每小时一次</p> |不适用 |
 | 保留期选项 |每日、每周、每月、每年 |每日、每周、每月、每年 |每日、每周、每月、每年 |每日、每周、每月、每年 |
-| 保留期 |最长 99 年 |最长 99 年 |最长 99 年 |最长 99 年 |
-| 备份保管库中的恢复点 |不受限制 |不受限制 |不受限制 |不受限制 |
+| 每个受保护实例的最大恢复点数 |9999|9999|9999|9999|
+| 最大保留期 |取决于备份频率 |取决于备份频率 |取决于备份频率 |取决于备份频率 |
 | 本地磁盘上的恢复点 |不适用 |<li>对于文件服务器为 64，<li>对于应用程序服务器为 448 |<li>对于文件服务器为 64，<li>对于应用程序服务器为 448 |不适用 |
 | 磁带上的恢复点 |不适用 |不受限制 |不适用 |不适用 |
+
+## 受保护实例是什么
+受保护实例通常指配置为备份到 Azure 的 Windows 计算机、物理或虚拟服务器，或者 SQL 数据库。为计算机、服务器或数据库设置备份策略，并为数据创建副本后，实例即受到保护。该受保护实例的备份数据后续副本（称为恢复点）将增加使用的存储量。可为每个受保护实例创建最多 9999 个恢复点。如果从存储中删除恢复点，则不计入 9999 个总恢复点数。受保护实例的一些常见示例包括运行 Windows 操作系统的虚拟机、应用程序服务器、数据库和个人计算机。例如：
+
+- 运行 Hyper-V 或 Azure IaaS 虚拟机监控程序结构的虚拟机。此虚拟机的来宾操作系统可以是 Windows Server 或 Linux。
+- 应用程序服务器：应用程序服务器可以是运行 Windows Server 的物理或虚拟机，也可以是包含要备份的数据的工作负荷。常见工作负荷有 Microsoft SQL Server、Microsoft Exchange 服务器、Microsoft SharePoint 服务器、Microsoft Dynamics 和 Windows Server 的文件服务器角色。备份这些工作负荷需要 System Center Data Protection Manager (DPM) 或 Azure 备份服务器。
+- 运行 Windows 操作系统的个人计算机或笔记本电脑。
+
 
 ## 什么是保管库凭据文件？ <a name="what-is-the-vault-credential-file"></a>
 保管库凭据文件是门户为每个备份保管库生成的证书。然后，门户会将公钥上载到访问控制服务 (ACS)。下载凭据时，会向你提供私钥。可用它来注册要保护的计算机。私钥可用于对要将备份数据发送到特定备份保管库的服务器或计算机进行身份验证。
@@ -221,4 +225,5 @@ Azure 备份保护本地和云中的数据。Azure Site Recovery 可以协调虚
 [yellow]: ./media/backup-introduction-to-azure-backup/yellow.png
 [red]: ./media/backup-introduction-to-azure-backup/red.png
 
-<!---HONumber=Mooncake_Quality_Review_1230_2016-->
+<!---HONumber=Mooncake_0116_2017-->
+<!---Update_Description: wording update -->

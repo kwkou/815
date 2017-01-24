@@ -6,8 +6,7 @@
     author="markgalioto"
     manager="cfreeman"
     editor=""
-    keywords="备份 vm, 备份虚拟机" />  
-
+    keywords="备份 vm, 备份虚拟机" />
 <tags
     ms.assetid="19d2cf82-1f60-43e1-b089-9238042887a9"
     ms.service="backup"
@@ -15,8 +14,8 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="10/19/2016"
-    wacn.date="01/04/2017"
+    ms.date="12/08/2016"
+    wacn.date="01/24/2017"
     ms.author="trinadhk; jimpark; markgal;" />  
 
 
@@ -35,7 +34,10 @@ Azure 备份服务在计划的时间启动备份作业时，将触发备份扩�
 ### 数据一致性
 备份和还原业务关键型数据十分复杂，因为需要在生成数据的应用程序仍在运行时备份业务关键型数据。为了解决此问题，Azure 备份对 Microsoft 工作负荷进行应用程序一致性备份，使用 VSS 来确保将数据正确写入到存储中。
 
->[AZURE.NOTE] Linux 虚拟机只能使用文件一致性备份，因为 Linux 没有与 VSS 相当的平台。
+> [AZURE.NOTE]
+Linux 虚拟机只能使用文件一致性备份，因为 Linux 没有与 VSS 相当的平台。
+>
+>
 
 Azure 备份将在 Windows VM 上创建 VSS 完全备份（阅读有关 [VSS 完全备份](http://blogs.technet.com/b/filecab/archive/2008/05/21/what-is-the-difference-between-vss-full-backup-and-vss-copy-backup-in-windows-server-2008.aspx)的详细信息）。若要启用 VSS 复制备份，需要在 VM 上设置以下注册表项。
 
@@ -86,15 +88,23 @@ Azure 备份将在 Windows VM 上创建 VSS 完全备份（阅读有关 [VSS 完
 - 快照时间，即触发某个快照所花费的时间。接近计划的备份时间时触发快照。
 - 队列等待时间。由于备份服务要处理来自多个客户的备份，可能不会立即将备份数据从快照复制到备份或恢复服务保管库。在负载高峰期，由于要处理的备份数过多，等待时间可能会长达 8 小时。但是，每日备份策略规定的 VM 备份总时间不会超过 24 小时。
 
+## 还原总时间
+还原操作包含 2 个主要子任务：将保管库中的数据复制回选定的客户存储帐户、创建虚拟机。从保管库复制回数据取决于两点：Azure 中内部存储备份的位置，以及客户存储帐户的存储位置。复制数据所需时间取决于以下因素：
+- 队列等待时间 - 由于服务同时处理来自多个客户的还原，因此对还原请求进行排队。
+- 数据复制时间 - 数据将从保管库复制到客户存储帐户，类似于首次备份过程。备份服务需要将保管库中的数据写入客户存储帐户，如果该帐户已加载，复制时间可能增加。因此，请务必选择未使用其他应用程序加载的存储帐户，在还原期间使用此帐户进行写入和读取，从而优化复制时间。
+
 ## 最佳实践
 我们建议在为虚拟机配置备份时遵循以下做法：
 
-- 不要计划同一云服务中的四个以上的经典 VM 同时进行备份。若要备份同一云服务中的多个 VM，建议将备份开始时间错开一小时。
-- 不要计划 40 个以上的资源管理器部署型 VM 同时进行备份。
+- 请勿计划同时备份同一云服务中 10 个以上的经典 VM。若要备份同一云服务中的多个 VM，建议将备份开始时间错开一小时。
+- 请勿计划同时备份 40 个以上的 VM。
 - 请在非高峰时间计划 VM 备份，以便备份服务可通过 IOPS 将数据从客户存储帐户传输到备份或恢复服务保管库。
-- 请确保策略处理分布在不同存储帐户中的 VM。建议不要使用一个策略来保护来自单个存储帐户的总计 20 个以上的磁盘。如果存储帐户中的磁盘超过 20 个，可将这些 VM 分散到多个策略中，以便在备份过程的传输阶段能够获得所需的 IOPS。
+- 请确保策略已应用于分布在不同存储帐户中的 VM。建议不要使用同一备份计划保护单个存储帐户中总数超过 20 个的磁盘。如果存储帐户中的磁盘超过 20 个，可将这些 VM 分散到多个策略中，以便在备份过程的传输阶段能够获得所需的 IOPS。
 - 不要将运行在高级存储上的 VM 还原到同一存储帐户。如果还原操作过程与备份操作一致，则会减少备份的可用 IOPS。
 - 建议将每个高级 VM 运行在不同的高级存储帐户上，确保优化备份性能。
+
+## 数据加密
+在备份过程中，Azure 备份不会加密数据。但是，你可以在 VM 中加密数据，然后无缝备份保护的数据（阅读有关[备份加密数据](/documentation/articles/backup-azure-vms-encryption/)的详细信息）。
 
 ## 如何计算受保护的实例？
 通过 Azure 备份进行备份的 Azure 虚拟机的收费依据 [Azure 备份定价](/pricing/details/backup/)。受保护的实例计算基于虚拟机的*实际*大小，即虚拟机中除“资源磁盘”外的所有数据之和。
@@ -125,4 +135,5 @@ Azure 备份将在 Windows VM 上创建 VSS 完全备份（阅读有关 [VSS 完
 - [恢复虚拟机](/documentation/articles/backup-azure-restore-vms/)
 - [解决 VM 备份问题](/documentation/articles/backup-azure-vms-troubleshoot/)
 
-<!---HONumber=Mooncake_Quality_Review_1230_2016-->
+<!---HONumber=Mooncake_0116_2017-->
+<!---Update_Description: add content about "Total restore time" and "Data encryption" -->
