@@ -174,14 +174,13 @@
 
 访问以下链接可以了解有关事件中心的详细信息：
 
-- [事件中心存档概述][]
 - [使用事件中心的完整示例应用程序][]
 - [使用事件中心扩大事件处理][]示例
 - [事件中心概述][]
  
 
 [Azure portal]: https://portal.azure.cn/
-[事件中心存档概述]: /documentation/articles/event-hubs-archive-overview/
+
 [1]: ./media/event-hubs-archive-python/event-hubs-python1.png
 [About Azure storage accounts]: /documentation/articles/storage-create-storage-account/
 [Visual Studio Code]: https://code.visualstudio.com/

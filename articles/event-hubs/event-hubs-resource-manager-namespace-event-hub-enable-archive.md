@@ -23,7 +23,7 @@
 
 本文介绍如何使用 Azure Resource Manager 模板创建包含事件中心的事件中心命名空间以及在事件中心上启用存档。你将了解如何定义要部署的资源以及如何定义执行部署时指定的参数。可将此模板用于自己的部署，或自定义此模板以满足要求
 
-有关创建模板的详细信息，请参阅[创作 Azure Resource Manager 模板][Authoring Azure Resource Manager templates]。
+有关创建模板的详细信息，请参阅[创作 Azure Resource Manager 模板][创作 Azure Resource Manager 模板]。
 
 
 有关完整的模板，请参阅 GitHub 上的[事件中心和启用存档模板][]。
