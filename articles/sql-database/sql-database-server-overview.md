@@ -65,6 +65,7 @@ Azure SQL 数据库（包括 master 数据库）使用的默认数据库排序�
 ## 如何管理逻辑服务器？
 
 可以使用几种方法管理 Azure SQL 数据库逻辑服务器：
+
 - [Azure 门户](/documentation/articles/sql-database-manage-portal/)
 - [PowerShell](/documentation/articles/sql-database-manage-powershell/)
 - [REST](https://docs.microsoft.com/zh-CN/rest/api/sql/)
