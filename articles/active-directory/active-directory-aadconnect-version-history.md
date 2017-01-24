@@ -15,7 +15,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="identity"
     ms.date="12/07/2016"
-    wacn.date="01/05/2017"
+    wacn.date="01/24/2017"
     ms.author="billmath" />
 
 # Azure AD Connect：版本发布历史记录
@@ -179,7 +179,7 @@ Azure Active Directory 团队会定期更新 Azure AD Sync 的新特性和功能
 - 如果你不是 SQL 中的 SA，从装有完整 SQL 服务器的旧版 Azure AD Connect 更新将会失败。
 - 从装有远程 SQL 服务器的旧版 Azure AD Connect 更新时，将显示错误消息“无法访问 ADSync SQL 数据库”。
 
-## 1\.0.9125.0
+## 1\.0.9125.0  <a name="1091250"></a>
 发布日期：2015 年 11 月
 
 **新功能：**
