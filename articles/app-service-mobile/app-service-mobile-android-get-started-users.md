@@ -40,11 +40,11 @@
 
 ## 向应用程序添加身份验证
 
-[AZURE.INCLUDE [mobile-android-authenticate-app](../../includes/mobile-android-authenticate-app.md)]
+[AZURE.INCLUDE [mobile-android-authenticate-app](../../includes/mobile-services-android-authenticate-app.md)]
 
 ## <a name="cache-tokens"></a>在客户端上缓存身份验证令牌
 
-[AZURE.INCLUDE [mobile-android-authenticate-app-with-token](../../includes/mobile-android-authenticate-app-with-token.md)]
+[AZURE.INCLUDE [mobile-android-authenticate-app-with-token](../../includes/mobile-services-android-authenticate-app-with-token.md)]
 
 ##后续步骤
 

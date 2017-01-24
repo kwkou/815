@@ -210,7 +210,7 @@
 [authentication]: /documentation/articles/app-service-mobile-cordova-get-started-users/
 [Work with the .NET backend server SDK for Azure Mobile Apps]: /documentation/articles/app-service-mobile-dotnet-backend-how-to-use-server-sdk/
 [Visual Studio Community 2015]: http://www.visualstudio.com/
-[用于 Apache Cordova 的 Visual Studio 工具]: https://www.visualstudio.com/zh-CN/features/cordova-vs.aspx
+[用于 Apache Cordova 的 Visual Studio 工具]: https://www.visualstudio.com/vs/cordova/
 [Apache Cordova SDK]: /documentation/articles/app-service-mobile-cordova-how-to-use-client-library/
 [ASP.NET Server SDK]: /documentation/articles/app-service-mobile-dotnet-backend-how-to-use-server-sdk/
 [Node.js Server SDK]: /documentation/articles/app-service-mobile-node-backend-how-to-use-server-sdk/

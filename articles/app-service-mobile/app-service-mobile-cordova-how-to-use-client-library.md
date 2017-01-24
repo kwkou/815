@@ -100,7 +100,7 @@ Azure 应用服务支持使用各种外部标识提供者（包括 Microsoft 帐
 
 安装 [phonegap-plugin-push] 即可处理推送通知。在命令行中使用 `cordova plugin add` 命令，或者在 Visual Studio 内通过 Git 插件安装程序，即可轻松添加此插件。Apache Cordova 应用中的以下代码为设备注册推送通知：
 
-```
+
 		var pushOptions = {
 		    android: {
 		        senderId: '<from-gcm-console>'
@@ -135,7 +135,7 @@ Azure 应用服务支持使用各种外部标识提供者（包括 Microsoft 帐
 		pushHandler.on('error', function (error) {
 		    // Handle errors
 		});
-```
+
 
 使用通知中心 SDK 从服务器发送推送通知。永远不要直接从客户端发送推送通知。此做法可能会被用于触发针对通知中心或 PNS 的拒绝服务攻击。PNS 可能会因此类攻击而禁止相关流量。
 

@@ -28,8 +28,6 @@
 ## <a name="register"></a>注册应用以进行身份验证并配置应用服务
 [AZURE.INCLUDE [app-service-mobile-register-authentication](../../includes/app-service-mobile-register-authentication.md)]
 
-[AZURE.INCLUDE [app-service-mobile-register-authentication](../../includes/app-service-mobile-register-authentication.md)]
-
 ## <a name="permissions"></a>将权限限制给已经过身份验证的用户
 
 [AZURE.INCLUDE [app-service-mobile-restrict-permissions-dotnet-backend](../../includes/app-service-mobile-restrict-permissions-dotnet-backend.md)]

@@ -1,5 +1,5 @@
 ### <a name="server-auth"></a>如何：使用提供程序（服务器流）进行身份验证
-若要让移动应用管理应用中的身份验证过程，必须向标识提供者注册应用。然后，需要在 Azure App Service 中配置提供者提供的应用程序 ID 和机密。有关详细信息，请参阅[向应用程序添加身份验证](../articles/app-service-mobile/app-service-mobile-cordova-get-started-users.md)教程。
+若要让移动应用管理应用中的身份验证过程，必须向标识提供者注册应用。然后，需要在 Azure App Service 中配置提供者提供的应用程序 ID 和机密。有关详细信息，请参阅[向应用程序添加身份验证](/documentation/articles/app-service-mobile-cordova-get-started-users/)教程。
 
 注册标识提供者后，只需使用提供者的名称调用 .login() 方法即可。例如，若要使用 microsoftaccount 登录，请使用以下代码。
 
