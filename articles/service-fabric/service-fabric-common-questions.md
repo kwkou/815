@@ -1,5 +1,5 @@
 <properties
-    pageTitle="Microsoft Azure Service Fabric 常见问题 | Azure"
+    pageTitle="Azure Service Fabric 常见问题 | Azure"
     description="有关 Service Fabric 的常见问题及其回答"
     services="service-fabric"
     documentationcenter=".net"
@@ -100,8 +100,6 @@ Reliable Services 通常已分区，因此，存储量仅受限于群集中的�
 
 和 Reliable Services 一样，可以在执行组件服务中存储的数据量仅受限于群集中各个节点的总磁盘空间和可用内存。但是，单独的执行组件在用于封装少量状态和关联的业务逻辑时效率最高。一般而言，单独的执行组件应具有以千字节为单位的状态。
 
-## 后续步骤
 
-- [了解核心 Service Fabric 概念和最佳做法](https://mva.microsoft.com/zh-CN/training-courses/building-microservices-applications-on-azure-service-fabric-16747?l=tbuZM46yC_5206218965)
 
 <!---HONumber=Mooncake_0116_2017-->
