@@ -1,28 +1,29 @@
-
 <properties
-    pageTitle="什么是 Azure 弹性池？ | Azure"
-    description="使用池管理成百上千个数据库。可通过池分发一组性能单位的价格。可随心所欲地移入或移出数据库。"
-    keywords="弹性数据库, sql 数据库"
+    pageTitle="什么是 Azure 弹性池？| Azure"
+    description="使用池管理成百上千个数据库可通过池分发一组性能单位的价格。可随心所欲地移入或移出数据。"
+    keywords="弹性数据库, SQL 数据库"
     services="sql-database"
     documentationcenter=""
     author="CarlRabeler"
     manager="jhubbard"
-    editor="cgronlun" />
+    editor="" />
 <tags
     ms.assetid="b46e7fdc-2238-4b3b-a944-8ab36c5bdb8e"
     ms.service="sql-database"
+    ms.custom="multiple databases"
     ms.devlang="NA"
-    ms.date="11/15/2016"
-    wacn.date="12/19/2016"
+    ms.date="12/14/2016"
+    wacn.date="01/20/2016"
     ms.author="CarlRabeler"
     ms.workload="data-management"
-    ms.topic="article"
-    ms.tgt_pltfrm="NA" />
+    ms.topic="get-started-article"
+    ms.tgt_pltfrm="NA" />  
+
 
 # 什么是 Azure 弹性池？
 SQL DB 弹性池是一种简单的低成本高效益的解决方案，用于管理使用模式变化很大且不可预测的多个数据库的性能目标。
 
->[AZURE.NOTE] 弹性池目前在中国北部和中国东部已经正式上线。
+[AZURE.NOTE]弹性池在中国北部和中国东部公开上市 (GA)。
 
 
 
@@ -40,7 +41,7 @@ SQL DB 弹性池是一种简单的低成本高效益的解决方案，用于管�
 并且可以向池添加或缩减数据库。如果可以预测到数据库的资源利用率不足，则将其移出。
 
 ## 池中有哪些数据库？
-![弹性数据库池中共享 eDTU 的 SQL 数据库。][1]  
+![弹性池中共享 eDTU 的 SQL 数据库。][1]  
 
 
 最适合添加到弹性池的数据库通常有时活动，有时不活动。上述示例中，可以看到单一数据库的活动、4 个数据库的活动，最后是包含 20 个数据库的弹性池的活动。活动随时间而不同的数据库很适合添加到弹性池，因为它们不是永远都在使用中，而且可以共享 eDTU。并非所有数据库都符合此模式。具有更稳定资源需求的数据库更适合“基本”、“标准”和“高级”服务层级，这些层级的资源是单独分配的。
@@ -49,14 +50,13 @@ SQL DB 弹性池是一种简单的低成本高效益的解决方案，用于管�
 
 ##<a name="eDTU-and-storage-limits-for-elastic-pools-and-elastic-databases"></a><a name="elastic-database-pool-pricing-tier-recommendations"></a> 弹性池和弹性数据库的 eDTU 和存储限制
 
-下表描述了基本、标准和高级弹性数据库池的特征。
-
+下表描述了基本、标准和高级弹性池的特征。
 
 [AZURE.INCLUDE [用于弹性数据库的 SQL DB 服务层表](../../includes/sql-database-service-tiers-table-elastic-db-pools.md)]
 
 如果使用了弹性池的所有 DTU，那么池中的每个数据库将接收相同数量的资源来处理查询。SQL 数据库服务通过确保相等的计算时间片段，在数据库之间提供资源共享的公平性。弹性池资源共享公平性是在将每个数据库的 DTU 最小值设为非零值时，对另外为每个数据库保证的任意资源量的补充。
 
-##<a name="elastic-database-pool-properties"></a> 弹性数据库池属性
+##<a name="elastic-database-pool-properties"></a> 弹性池和弹性数据库属性
 
 下表介绍弹性池和弹性数据库的限制。
 
@@ -80,7 +80,7 @@ SQL DB 弹性池是一种简单的低成本高效益的解决方案，用于管�
 
 
 ## 池中数据库的业务连续性功能
-弹性数据库通常支持和可用于 V12 服务器上的单一数据库相同的[业务连续性功能](/documentation/articles/sql-database-business-continuity/)。
+弹性数据库通常支持和可用于单一数据库相同的[业务连续性功能](/documentation/articles/sql-database-business-continuity/)。
 
 ### 时间点还原
 时间点还原使用自动的数据库备份将池中的数据库恢复到特定的时间点。请参阅[时点还原](/documentation/articles/sql-database-recovery-using-backups/#point-in-time-restore)
@@ -97,4 +97,5 @@ SQL DB 弹性池是一种简单的低成本高效益的解决方案，用于管�
 
 [1]: ./media/sql-database-elastic-pool/databases.png
 
-<!---HONumber=Mooncake_1212_2016-->
+<!---HONumber=Mooncake_0116_2017-->
+<!--update: translation update "弹性数据库池" to "弹性池"-->
