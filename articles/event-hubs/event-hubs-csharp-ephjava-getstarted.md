@@ -73,3 +73,4 @@
 [使用事件中心扩大事件处理]: https://code.msdn.microsoft.com/Service-Bus-Event-Hub-45f43fc3
 
 <!---HONumber=Mooncake_0116_2017-->
+<!--Update_Description:update meta properties and wording-->

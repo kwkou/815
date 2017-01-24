@@ -187,3 +187,4 @@
 - [事件处理程序主机 API 参考](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.eventprocessorhost.aspx)
 
 <!---HONumber=Mooncake_0116_2017-->
+<!--Update_Description:update wording-->

@@ -88,3 +88,4 @@
 [使用事件中心的完整示例应用程序]: https://code.msdn.microsoft.com/Service-Bus-Event-Hub-286fd097
 
 <!---HONumber=Mooncake_0116_2017-->
+<!--Update_Description:update wording-->

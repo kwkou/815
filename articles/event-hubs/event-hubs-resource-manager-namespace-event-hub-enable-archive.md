@@ -280,3 +280,4 @@
 [事件中心和启用存档模板]: https://github.com/Azure/azure-quickstart-templates/tree/master/201-eventhubs-create-namespace-and-enable-archive
 
 <!---HONumber=Mooncake_0116_2017-->
+<!--Update_Description:update wording-->

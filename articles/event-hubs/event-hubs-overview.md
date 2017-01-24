@@ -171,3 +171,4 @@ Azure 事件中心提供缩放性超高的事件与遥测处理服务，可用�
 [使用事件中心的完整示例应用程序]: https://github.com/Azure-Samples/
 
 <!---HONumber=Mooncake_0116_2017-->
+<!--Update_Description:update wording-->

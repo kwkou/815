@@ -149,3 +149,4 @@
 [事件中心和使用者组模板]: https://github.com/Azure/azure-quickstart-templates/blob/master/201-event-hubs-create-event-hub-and-consumer-group/
 
 <!---HONumber=Mooncake_1031_2016-->
+<!--Update_Description:update meta properties-->

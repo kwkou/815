@@ -113,3 +113,4 @@ Azure 事件中心安全模型满足以下要求：
 [SAS 概述]: /documentation/articles/service-bus-sas-overview/
 
 <!---HONumber=Mooncake_0116_2017-->
+<!--Update_Description:update wording-->

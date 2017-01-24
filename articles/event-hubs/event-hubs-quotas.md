@@ -25,3 +25,4 @@
 [AZURE.INCLUDE [service-bus-quotas-table](../../includes/event-hubs-limits.md)]
 
 <!---HONumber=Mooncake_1031_2016-->
+<!--Update_Description:update meta properties-->

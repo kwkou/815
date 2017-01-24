@@ -303,3 +303,4 @@ Visual Studio 提供最简单的路径供你部署应用程序和事件中心接
 [0]: ./media/event-hubs-streaming-azure-diags-data/dashboard.png
 
 <!---HONumber=Mooncake_0116_2017-->
+<!--Update_Description:update wording-->
