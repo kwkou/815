@@ -1,4 +1,4 @@
-##<a name="connect-to-azure-sql-database-as-a-user"></a> 以用户身份连接到 Azure SQL 数据库
+##<a name="connect-to-azure-sql-database-as-a-user"></a><a name="connect-to-azure-sql-database-using-sql-server-authentication"></a> 以用户身份连接到 Azure SQL 数据库
 
 执行以下步骤，使用 SSMS 以用户身份连接到 Azure SQL 数据库。
 

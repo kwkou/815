@@ -15,7 +15,7 @@
     ms.devlang="na"
     ms.topic="get-started-article"
     ms.date="11/17/2016"
-    wacn.date="12/05/2016"
+    wacn.date="01/24/2017"
     ms.author="tamram" />  
 
 
@@ -183,7 +183,7 @@ Azure 存储空间资源可以通过任何发出 HTTP/HTTPS 请求的语言来�
 - [存储服务管理 REST API (Classic)](https://msdn.microsoft.com/zh-cn/library/azure/ee460790.aspx)
 
 ### Azure 存储空间数据移动服务
-- [存储导入/导出服务 REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn529096.aspx)
+- [存储导入/导出服务 REST API](https://docs.microsoft.com/en-us/rest/api/storageimportexport/)
 - [适用于 .NET 的存储数据移动客户端库](https://www.nuget.org/packages/Microsoft.Azure.Storage.DataMovement/)
 
 ### 工具和实用程序

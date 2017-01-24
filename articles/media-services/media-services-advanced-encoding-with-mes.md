@@ -14,7 +14,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="11/28/2016"
-    wacn.date="01/13/2017"
+    wacn.date="01/24/2017"
     ms.author="juliako" />  
 
 
@@ -838,7 +838,7 @@ Media Encoder Standard 允许在现有视频上覆盖图像。目前支持以下
 	2. 通过按相同顺序添加更多条目，对 JSON 中的“Sources”元素进行相应编辑。
 
 
-###.NET 代码
+###<a name="encoding_with_dotnet"></a>.NET 代码
 
 	
 	IAsset asset1 = _context.Assets.Where(asset => asset.Id == "nb:cid:UUID:606db602-efd7-4436-97b4-c0b867ba195b").FirstOrDefault();

@@ -98,7 +98,7 @@
 |`Drive`|嵌套的 XML 元素|包含每个驱动器的清单。|  
 |`DriveId`|String|驱动器的唯一驱动器标识符。通过查询驱动器获取其序列号，即可找到该驱动器标识符。该驱动器序列号通常还打印在该驱动器的外部。`DriveID` 元素必须出现在清单元素中的任何 `BlobList` 元素之前。|  
 |`StorageAccountKey`|String|<p>当且仅当未指定 `ContainerSas` 时，导入作业才需要此元素。与作业关联的 Azure 存储帐户的帐户密钥。</p><p> 导出操作的清单中会省略此元素。</p>|  
-|`ContainerSas`|String|当且仅当未指定 `StorageAccountKey` 时，导入作业才需要此元素。用于访问与作业关联的 Blob 的容器 SAS。有关其格式，请参阅 [Put Job](https://docs.microsoft.com/zh-CN/rest/api/storageservices/importexport/Put-Job)（放置作业）。导出操作的清单中会省略此元素。|  
+|`ContainerSas`|String|当且仅当未指定 `StorageAccountKey` 时，导入作业才需要此元素。用于访问与作业关联的 Blob 的容器 SAS。有关其格式，请参阅 [Put Job](https://docs.microsoft.com/en-us/rest/api/storageimportexport/jobs#Jobs_CreateOrUpdate)（放置作业）。导出操作的清单中会省略此元素。|  
 |`ClientCreator`|String|指定创建 XML 文件的客户端。导入/导出服务不解释该值。|  
 |`BlobList`|嵌套的 XML 元素|包含作为导入或导出作业一部分的 Blob 列表。Blob 列表中的每个 Blob 共享相同的元数据和属性。|  
 |`BlobList/MetadataPath`|String|<p>可选。指定磁盘上某个文件的相对路径，该文件包含针对导入操作的 Blob 列表中的 Blob 设置的默认元数据。可以针对每个 Blob 有选择性地重写此元数据。</p><p> 导出操作的清单中会省略此元素。</p>|  
@@ -129,6 +129,6 @@
 |`Blob/PropertiesPath/@Hash`|属性，字符串|指定 Blob properties 文件的 Base16 编码 MD5 哈希。|  
   
 ## 另请参阅  
-[存储导入/导出 REST](https://docs.microsoft.com/zh-CN/rest/api/storageservices/importexport/Storage-Import-Export-Service-REST-API-Reference)
+[存储导入/导出 REST](https://docs.microsoft.com/en-us/rest/api/storageimportexport/)
 
 <!---HONumber=Mooncake_1226_2016-->
