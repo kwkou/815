@@ -71,7 +71,7 @@ Service Fabric 工具是 Visual Studio 2017 RC 中 Azure 开发和管理工作�
 
 有关受支持的版本列表，请参阅 [Service Fabric 支持](/documentation/articles/service-fabric-support/)
 
-## 启用 PowerShell 脚本执行
+##<a name="enable-powershell-script-execution"></a> 启用 PowerShell 脚本执行
 Service Fabric 使用 Windows PowerShell 脚本创建本地开发群集和部署 Visual Studio 中的应用程序。默认情况下，Windows 会阻止这些脚本运行。若要启用它们，你必须修改你的 PowerShell 执行策略。以管理员身份打开 PowerShell 并输入以下命令：
 
 

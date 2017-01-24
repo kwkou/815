@@ -15,7 +15,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="05/25/2015"
-    wacn.date="12/29/2016"
+    wacn.date="01/24/2017"
     ms.author="renash" />  
 
 
@@ -30,7 +30,7 @@
 |**/sn:**<StorageAccountName>|必需。导出作业的存储帐户的名称。|  
 |**/sk:**<StorageAccountKey>|当且仅当未指定容器 SAS 时才是必需的。导出作业的存储帐户的帐户密钥。|  
 |**/csas:**<ContainerSas>|当且仅当未指定存储帐户密钥时才是必需的。用于列出要在导出作业中导出的 Blob 的容器 SAS。|  
-|**/ExportBlobListFile:**<ExportBlobListFile>|必需。包含要导出的 Blob 的 Blob 路径列表或 Blob 路径前缀的 XML 文件的路径。导入/导出服务 REST API 的[放置作业](https://docs.microsoft.com/rest/api/storageservices/importexport/Put-Job)操作的 `BlobListBlobPath` 元素中使用的文件格式。|  
+|**/ExportBlobListFile:**<ExportBlobListFile>|必需。包含要导出的 Blob 的 Blob 路径列表或 Blob 路径前缀的 XML 文件的路径。导入/导出服务 REST API 的[放置作业](https://docs.microsoft.com/en-us/rest/api/storageimportexport/jobs#Jobs_CreateOrUpdate)操作的 `BlobListBlobPath` 元素中使用的文件格式。|  
 |**/DriveSize:**<DriveSize>|必需。用于导出作业的驱动器大小，*例如* 500GB、1.5TB。|  
   
 以下示例演示了 `PreviewExport` 命令：

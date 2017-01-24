@@ -15,7 +15,7 @@
 	ms.tgt_pltfrm="na"
 	ms.workload="NA"
 	ms.date="09/06/2016"
-	wacn.date="10/17/2016"
+	wacn.date="01/24/2017"
 	ms.author="carlrab"/>  
 
 
@@ -23,7 +23,7 @@
 
 本文解释数据库事务单位 (DTU) 和弹性数据库事务单位 (eDTU)，以及在达到 DTU 或 eDTU 上限时会发生什么情况。
 
-## 什么是数据库事务单位 (DTU)
+##<a name="what-are-database-transaction-units-dtus"></a> 什么是数据库事务单位 (DTU)
 
 DTU 是资源度量单位，这些资源保证可用于[独立数据库服务层](/documentation/articles/sql-database-service-tiers/#standalone-database-service-tiers-and-performance-levels)中特定性能级别的独立 Azure SQL 数据库。DTU 是 CPU、内存、数据 I/O 和事务日志 I/O 的混合度量值，以设计为典型真实 OLTP 工作负荷的 OLTP 基准工作负荷所确定的比率表示。通过提升数据库的性能级别来使 DTU 加倍，就相当于让该数据库可用的资源集合加倍。例如，具有 1750 个 DTU 的高级 P11 数据库提供的 DTU 计算能力是具有 5 个 DTU 的基本数据库的 350 倍。若要了解使用 OLTP 基准工作负荷确定 DTU 混合度量值的方法，请参阅 [SQL Database benchmark overview](/documentation/articles/sql-database-benchmark-overview/)（SQL 数据库基准概述）。
 
@@ -32,7 +32,7 @@ DTU 是资源度量单位，这些资源保证可用于[独立数据库服务层
 
 可以随时[更改服务层](/documentation/articles/sql-database-scale-up-powershell/)，将给应用程序造成的停机时间降至最低（通常平均为四秒以下）。许多业务和应用只要能够创建数据库并按需调高或调低单一数据库的性能即可，尤其是当使用模式相对容易预测时。但如果有无法预测的使用模式，则管理成本和业务模式就会变得相当困难。在此方案中，可以使用具有特定 eDTU 数目的弹性池。
 
-## 什么是弹性数据库事务单位 (eDTU)
+##<a name="what-are-elastic-database-transaction-units-edtus"></a> 什么是弹性数据库事务单位 (eDTU)
 
 eDTU 是可以在 Azure SQL 服务器上一组数据库（称为[弹性池](/documentation/articles/sql-database-elastic-pool/)）之间共享的资源集 (DTU) 的度量单位。弹性池是一种简单的低成本高效益的解决方案，用于管理使用模式变化很大且不可预测的多个数据库的性能目标。有关详细信息，请参阅 [elastic pools and service tiers](/documentation/articles/sql-database-service-tiers/#elastic-pool-service-tiers-and-performance-in-edtus)（弹性池和服务层）。
 

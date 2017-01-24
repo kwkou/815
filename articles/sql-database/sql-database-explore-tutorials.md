@@ -54,7 +54,7 @@
 | [开始使用备份和还原进行数据保护和恢复](/documentation/articles/sql-database-get-started-backup-recovery/) | 在此教程中，将使用 Azure 门户预览将数据库还原到某个时间点、配置长期备份保留，并从 Azure 恢复服务保管库中的保留还原数据库。 |
 
 
-## 弹性池
+##<a name="elastic-pools"></a> 弹性池
 
 以下教程介绍如何使用[弹性池](/documentation/articles/sql-database-elastic-pool/)管理使用模式变化很大且不可预测的多个数据库的性能目标。
 

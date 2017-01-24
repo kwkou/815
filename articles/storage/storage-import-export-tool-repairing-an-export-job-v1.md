@@ -15,7 +15,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="05/25/2015"
-    wacn.date="12/29/2016"
+    wacn.date="01/24/2017"
     ms.author="renash" />  
 
 
@@ -81,7 +81,7 @@
 ## 使用 RepairExport 验证驱动器内容  
 还可以使用提供 **RepairExport** 选项的 Azure 导入/导出服务来验证驱动器上的内容是否正确。每个导出驱动器上的清单文件包含驱动器内容的 MD5 哈希。
   
-Azure 导入/导出服务还可以在导出过程中将清单文件保存到某个存储帐户。完成作业后，可通过[获取作业](https://docs.microsoft.com/rest/api/storageservices/importexport/Get-Job3)操作获得清单文件的位置。有关驱动器清单文件格式的详细信息，请参阅[导入/导出服务清单文件格式](/documentation/articles/storage-import-export-file-format-metadata-and-properties/)。
+Azure 导入/导出服务还可以在导出过程中将清单文件保存到某个存储帐户。完成作业后，可通过[获取作业](https://docs.microsoft.com/en-us/rest/api/storageimportexport/jobs#Jobs_Get)操作获得清单文件的位置。有关驱动器清单文件格式的详细信息，请参阅[导入/导出服务清单文件格式](/documentation/articles/storage-import-export-file-format-metadata-and-properties/)。
   
 以下示例演示如何结合 **/ManifestFile** 和 **/CopyLogFile** 参数运行 Azure 导入/导出工具：
   

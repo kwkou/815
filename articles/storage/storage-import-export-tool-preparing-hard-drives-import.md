@@ -14,7 +14,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="12/16/2016"
-    wacn.date="01/11/2016"
+    wacn.date="01/24/2017"
     ms.author="renash" />  
 
 
@@ -87,7 +87,7 @@ WAImportExport 工具是可与 [Azure 导入/导出服务](/documentation/articl
 | /BlobType | <p>**[可选]** block \| page</p><p>导入/导出服务目前支持 2 种 Blob：页 Blob 和块 Blob。默认情况下，所有文件将以块 Blob 的形式导入。*.vhd 和 *.vhdx 将以页 Blob 的形式导入。块 Blob 和页 Blob 的允许大小有限制。有关详细信息，请参阅 [Storage scalability targets](/documentation/articles/storage-scalability-targets/#scalability-targets-for-blobs-queues-tables-and-files)（存储可伸缩性目标）。</p> |
 | Disposition | <p>**[可选]** rename \| no-overwrite \| overwrite </p><p>此字段指定导入期间（将数据从磁盘上载到存储帐户时）的复制行为。可用选项包括：rename\|overwite\|no-overwrite.。如果未指定任何值，则默认为“rename”。</p><p>**Rename**：如果存在同名的对象，则在目标中创建一个副本。</p><p>Overwrite：将文件覆盖为更新的文件。使用最近一次修改的文件覆盖。</p><p>**No-overwrite**：跳过文件写入（如果该文件已存在）。</p>|
 | MetadataFile | <p>**[可选]**</p><p>此字段的值是用户需要保留对象的元数据或者提供自定义元数据时可提供的元数据文件。目标 Blob 的元数据文件的路径。有关详细信息，请参阅[导入/导出服务元数据和属性文件格式](/documentation/articles/storage-import-export-file-format-metadata-and-properties/)</p> |
-| PropertiesFile | <p>**[可选]**</p><p>目标 Blob 的属性文件的路径。有关详细信息，请参阅[导入/导出服务元数据和属性文件格式](https://docs.microsoft.com/zh-CN/rest/api/storageservices/importexport/import-export-service-metadata-and-properties-file-format)。</p> |
+| PropertiesFile | <p>**[可选]**</p><p>目标 Blob 的属性文件的路径。有关详细信息，请参阅[导入/导出服务元数据和属性文件格式](https://docs.microsoft.com/zh-cn/azure/storage/storage-import-export-file-format-metadata-and-properties)。</p> |
 
 ##<a name="prepare-initialdriveset-or-additionaldriveset-csv-file"></a> 准备 InitialDriveSet 或 AdditionalDriveSet CSV 文件
 

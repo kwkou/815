@@ -15,7 +15,7 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="09/19/2016" 
-	wacn.date="12/27/2016" 
+	wacn.date="01/24/2017" 
 	ms.author="juliako"/>  
 
 
@@ -64,15 +64,15 @@ Azure 媒体服务提供了多个用于在云中对媒体进行编码的选项�
 
 ###生成缩略图
 
-有关信息，请参阅[如何使用媒体编码器标准生成缩略图](/documentation/articles/media-services-custom-mes-presets-with-dotnet/#thumbnails)。
+有关信息，请参阅[如何使用媒体编码器标准生成缩略图](/documentation/articles/media-services-advanced-encoding-with-mes/#thumbnails)。
 
 ###修剪视频（裁剪）
 
-有关信息，请参阅[如何使用媒体编码器标准修剪视频](/documentation/articles/media-services-custom-mes-presets-with-dotnet/#trim_video)。
+有关信息，请参阅[如何使用媒体编码器标准修剪视频](/documentation/articles/media-services-advanced-encoding-with-mes/#trim_video)。
 
 ###创建覆盖层
 
-有关信息，请参阅[如何使用媒体编码器标准创建覆盖层](/documentation/articles/media-services-custom-mes-presets-with-dotnet/#overlay)。
+有关信息，请参阅[如何使用媒体编码器标准创建覆盖层](/documentation/articles/media-services-advanced-encoding-with-mes/#overlay)。
 
 ###另请参阅
 

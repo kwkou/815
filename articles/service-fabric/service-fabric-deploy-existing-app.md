@@ -14,7 +14,7 @@
     ms.tgt_pltfrm="NA"
     ms.workload="na"
     ms.date="10/22/2016"
-    wacn.date="01/04/2017"
+    wacn.date="01/24/2017"
     ms.author="msfussell;mikhegn" />
 
 # 将来宾可执行文件部署到 Service Fabric
@@ -68,7 +68,7 @@ ApplicationPackageRoot 包含定义应用程序的 ApplicationManifest.xml 文�
 
 >[AZURE.NOTE] 将现有 Windows 可执行文件打包到服务中的最简单方法是使用 Visual Studio。
 
-##<a name="using-visual-studio-to-package-an-existing-application"></a> 使用 Visual Studio 打包现有的可执行文件
+##<a name="using-visual-studio-to-package-an-existing-application"></a><a name="using-visual-studio-to-package-an-existing-executable"></a> 使用 Visual Studio 打包现有的可执行文件
 
 Visual Studio 提供 Service Fabric 服务模板来帮助你将来宾可执行文件部署到 Service Fabric 群集。
 

@@ -15,7 +15,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="10/21/2016"
-    wacn.date="12/05/2016"
+    wacn.date="01/24/2017"
     ms.author="yuemlu" />
 
 # 迁移到 Azure 高级存储
@@ -274,7 +274,7 @@ VM 必须完全关闭才能干净迁移。在迁移完成之前将会存在停�
 
 - [Azure 存储复制 Blob API](https://msdn.microsoft.com/zh-CN/library/azure/dd894037.aspx)
 * [Azure 存储资源管理器上传 Blob](https://azurestorageexplorer.codeplex.com/)
-- [存储导入/导出服务 REST API 参考](https://msdn.microsoft.com/zh-CN/library/dn529096.aspx)
+- [存储导入/导出服务 REST API 参考](https://docs.microsoft.com/en-us/rest/api/storageimportexport/)
 
 >[AZURE.NOTE]如果预估上传时间大于 7 天，建议使用导入/导出服务。可根据数据大小和传输单位，利用 [DataTransferSpeedCalculator](https://github.com/Azure-Samples/storage-dotnet-import-export-job-management/blob/master/DataTransferSpeedCalculator.html) 预估时间。导入/导出可用于复制到标准存储帐户。需要使用 AzCopy 等工具从标准存储复制到高级存储帐户。
 

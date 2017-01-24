@@ -56,7 +56,7 @@
 
 >[AZURE.NOTE] 如需本服务层表中所有其他行的详细说明，请参阅[服务层功能和限制](/documentation/articles/sql-database-performance-guidance/#service-tier-capabilities-and-limits)。
 
-##<a name="elastic-pool-service-tiers-and-performance-in-edtus"></a><a name="elastic-database-pool-service-tiers-and-performance-in-edtus"></a> 弹性池服务层和性能 (eDTU)
+##<a name="elastic-pool-service-tiers-and-performance-in-edtus"></a><a name="elastic-database-pool-service-tiers-and-performance-in-edtus"></a><a name="single-database-service-tiers-and-performance-levels"></a> 弹性池服务层和性能 (eDTU)
 
 池允许数据库共享和使用 eDTU 资源，而无需为该池中的每个数据库分配特定性能级别。例如，标准池中的单一数据库可使用 0 个 eDTU 到最大数据库 eDTU 数（配置池时设置的）运转。弹性池允许多个具有不同工作负荷的数据库有效地使用在整个池中都可用的 eDTU 资源。有关详细信息，请参阅[弹性池的价格和性能注意事项](/documentation/articles/sql-database-elastic-pool-guidance/)。
 

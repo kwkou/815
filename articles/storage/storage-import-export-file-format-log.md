@@ -15,7 +15,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="05/25/2015"
-    wacn.date="12/29/2016"
+    wacn.date="01/24/2017"
     ms.author="renash" />  
 
 
@@ -26,7 +26,7 @@
   
 -   发生错误时始终生成错误日志。
   
--   详细日志默认未启用，但可通过对[放置作业](https://docs.microsoft.com/zh-CN/rest/api/storageservices/importexport/Put-Job)或[更新作业属性](https://docs.microsoft.com/zh-CN/rest/api/storageservices/importexport/Update-Job-Properties)操作设置 `EnableVerboseLog` 属性来启用该日志。
+-   详细日志默认未启用，但可通过对[放置作业](https://docs.microsoft.com/en-us/rest/api/storageimportexport/jobs#Jobs_CreateOrUpdate)或[更新作业属性](https://docs.microsoft.com/en-us/rest/api/storageimportexport/jobs#Jobs_Update)操作设置 `EnableVerboseLog` 属性来启用该日志。
   
 ## 日志文件的位置  
 日志将写入到 `ImportExportStatesPath` 设置（可在“`Put Job`”操作中设置）指定的容器或虚拟目录中的块 Blob。日志写入到的位置取决于为该作业指定身份验证的方式，以及为 `ImportExportStatesPath` 指定的值。可通过存储帐户密钥或容器 SAS（共享访问签名）为作业指定身份验证。
@@ -42,7 +42,7 @@
 |容器 SAS|默认值|<p>名为 `waimportexport` 的虚拟目录，这是默认名称，位于 SAS 中指定的容器下方。</p><p> 例如，如果为作业指定的 SAS 是 `https://myaccount.blob.core.chinacloudapi.cn/mylogcontainer?sv=2012-02-12&se=2015-05-22T06%3A54%3A55Z&sr=c&sp=wl&sig=sigvalue`，则日志位置应为 `https://myaccount.blob.core.chinacloudapi.cn/mylogcontainer/waimportexport`</p>|  
 |容器 SAS|用户指定的值|<p>由用户命名的虚拟目录，位于 SAS 中指定的容器下方。</p><p> 例如，如果为作业指定的 SAS 是 `https://myaccount.blob.core.chinacloudapi.cn/mylogcontainer?sv=2012-02-12&se=2015-05-22T06%3A54%3A55Z&sr=c&sp=wl&sig=sigvalue`，指定的虚拟目录名为 `mylogblobs`，则日志位置应为 `https://myaccount.blob.core.chinacloudapi.cn/mylogcontainer/waimportexport/mylogblobs`。</p>|  
   
-可以通过调用[获取作业](https://docs.microsoft.com/zh-CN/rest/api/storageservices/importexport/Get-Job3)操作来检索错误日志和详细日志的 URL。处理完驱动器后，将提供日志。
+可以通过调用[获取作业](https://docs.microsoft.com/en-us/rest/api/storageimportexport/jobs#Jobs_CreateOrUpdate)操作来检索错误日志和详细日志的 URL。处理完驱动器后，将提供日志。
   
 ## 日志文件格式  
 这两种日志的格式相同：它是一个 Blob，包含在硬盘驱动器与客户帐户之间复制 Blob 时发生的事件的 XML 说明。
@@ -356,6 +356,6 @@
 
   
 ## 另请参阅  
-[存储导入/导出 REST](https://docs.microsoft.com/zh-CN/rest/api/storageservices/importexport/Storage-Import-Export-Service-REST-API-Reference)
+[存储导入/导出 REST](https://docs.microsoft.com/en-us/rest/api/storageimportexport/)
 
 <!---HONumber=Mooncake_1226_2016-->

@@ -13,7 +13,7 @@
     ms.custom="multiple databases"
     ms.devlang="NA"
     ms.date="12/14/2016"
-    wacn.date="01/20/2016"
+    wacn.date="01/20/2017"
     ms.author="CarlRabeler"
     ms.workload="data-management"
     ms.topic="get-started-article"
@@ -48,7 +48,7 @@ SQL DB 弹性池是一种简单的低成本高效益的解决方案，用于管�
 
 [弹性池的价格和性能注意事项](/documentation/articles/sql-database-elastic-pool-guidance/)。
 
-##<a name="eDTU-and-storage-limits-for-elastic-pools-and-elastic-databases"></a><a name="elastic-database-pool-pricing-tier-recommendations"></a> 弹性池和弹性数据库的 eDTU 和存储限制
+##<a name="eDTU-and-storage-limits-for-elastic-pools-and-elastic-databases"></a><a name="elastic-database-pool-pricing-tier-recommendations"></a><a name="edtu-and-storage-limits-for-elastic-pools-and-elastic-databases"></a> 弹性池和弹性数据库的 eDTU 和存储限制
 
 下表描述了基本、标准和高级弹性池的特征。
 

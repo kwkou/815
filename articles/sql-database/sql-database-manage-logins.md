@@ -16,7 +16,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="data-management"
    ms.date="09/14/2016"
-   wacn.date="11/18/2016"
+   wacn.date="01/24/2017"
    ms.author="rickbyh"/>  
 
 
@@ -58,7 +58,7 @@
 > [AZURE.IMPORTANT] 建议始终使用最新版本的 Management Studio 以保持与 Azure 和 SQL 数据库的更新同步。[更新 SQL Server Management Studio](https://msdn.microsoft.com/zh-cn/library/mt238290.aspx)。
 
 
-## 其他特殊帐户
+##<a name="non-administrator-users"></a> 其他特殊帐户
 SQL 数据库在虚拟 master 数据库中提供了两个受限管理角色，可以向这两个角色添加用户帐户。
 
 ### 数据库创建者

@@ -292,7 +292,7 @@
 	$connection.Close()
 
 
-## 使用 Azure PowerShell 创建新的空数据库
+##<a name="create-a-sql-database-powershell-script"></a> 使用 Azure PowerShell 创建新的空数据库
 
 
 	#$resourceGroupName = {resource-group-name}
@@ -537,7 +537,7 @@
 > [AZURE.TIP]
 可以删除不使用的数据库，这样可以节省一些学习费用。“基本”版数据库可以在 7 天内还原。但是，请勿删除服务器。如果这样做，则无法恢复服务器或其已删除的数据库。
 
-## 帮助器代码片段
+##<a name="helper-snippets"></a> 帮助器代码片段
 
 
 	# Get a list of Azure regions where you can create SQL resources
