@@ -7,7 +7,7 @@
     manager="jhubbard"
     editor="" />
 <tags
-    ms.assetid="ms.service: sql-database"
+    ms.service="sql-database"
     ms.custom="business continuity"
     ms.devlang="NA"
     ms.topic="article"

@@ -19,69 +19,10 @@
     wacn.date="01/20/2017"
     ms.author="carlrab" />
 
-<!------------------
-This topic is annotated with TEMPLATE guidelines for TUTORIAL TOPICS.
 
-
-Metadata guidelines
-
-title
-	60 characters or less. Tells users clearly what they will do (deploy an ASP.NET web app to App Service). Not the same as H1. It's 60 characters or fewer including all characters between the quotes and the Microsoft Docs site identifier.
-
-description
-	115-145 characters. Duplicate of the first sentence in the introduction. This is the abstract of the article that displays under the title when searching in Bing or Google. 
-
-	Example: "This tutorial shows how to deploy an ASP.NET web application to a web app in Azure App Service by using Visual Studio 2015."
------------------->
-
-<!----------------
-
-TEMPLATE GUIDELINES for tutorial topics
-
-The tutorial topic shows users how to solve a problem using a product or service. It includes the prerequisites and steps users need to be successful.  
-
-It is a "solve a problem" topic, not a "learn concepts" topic.
-
-DO include this:
-	• What users will do
-	• What they will create or accomplish by the end of the tutorial
-	• Time estimate
-	• Optional but useful: Include a diagram or video. Diagrams help users see the big picture of what they are doing. A video of the steps can be used by customers as an alternative to following the steps in the topic.
-	• Prerequisites: Technical expertise and software requirements
-	• End-to-end steps. At the end, include next steps to deeper or related tutorials so users can learn more about the service
-
-DON'T include this:
-	• Conceptual info about the service. This info is in overview topics that you can link to in the prerequisites section if necessary
-
-------------------->
-
-<!------------------
-GUIDELINES for the H1 
-	
-	The H1 should answer the question "What will I do in this topic?" Write the H1 heading in conversational language and use search keywords as much as possible. Since this is a "solve a problem" topic, make sure the title indicates that. Use a strong, specific verb like "Deploy."  
-		
-	Heading must use an industry standard term. If your feature is a proprietary name like "elastic pools", use a synonym. For example: "Learn about elastic pools for multi-tenant databases." In this case multi-tenant database is the industry-standard term that will be an anchor for finding the topic.
-
--------------------->
 
 
 # 开始使用备份和还原进行数据保护和恢复
-
-<!------------------
-	GUIDELINES for introduction
-	
-	The introduction is 1-2 sentences.  It is optimized for search and sets proper expectations about what to expect in the article. It should contain the top keywords that you are using throughout the article.The introduction should be brief and to the point of what users will do and what they will accomplish. 
-
-	In this example:
-	 
-
-Sentence #1 Explains what the user will do. This is also the metadata description. 
-	This tutorial shows how to deploy an ASP.NET web application to a web app in Azure App Service by using Visual Studio 2015. 
-
-Sentence #2 Explains what users will learn and the benefit.  
-	When you’re finished, you’ll have a simple web application up and running in the cloud.
-
--------------------->
 
 
 
@@ -103,11 +44,6 @@ Sentence #2 Explains what users will learn and the benefit.
 
 * 你已完成本教程的[开始使用 Azure 门户预览和 SQL Server Management Studio 了解 Azure SQL 数据库服务器、数据库和防火墙规则](/documentation/articles/sql-database-get-started/)部分或与之类似的 [PowerShell 版本](/documentation/articles/sql-database-get-started-powershell/)部分。请完成此必学教程或在完成本教程的 [PowerShell 版本](/documentation/articles/sql-database-get-started-powershell/)部分时执行 PowerShell 脚本（如果尚未进行），然后再继续。
 
-<!------------------
-> [AZURE.TIP]
-> You can perform these same tasks in a getting started tutorial by using either [C#](/documentation/articles/sql-database-get-started-csharp/) or [PowerShell](/documentation/articles/sql-database-get-started-powershell/).
->
--------------------->
 
 
 ## 使用现有帐户登录
@@ -187,8 +123,6 @@ Sentence #2 Explains what users will learn and the benefit.
    >
 
 
-
-<!--**Next steps**: *Reiterate what users have done, and give them interesting and useful next steps so they want to go on.*-->
 
 
 ## 后续步骤
