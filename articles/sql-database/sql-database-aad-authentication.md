@@ -6,35 +6,35 @@
     author="BYHAM"
     manager="jhubbard"
     editor=""
-    tags="" />  
-
+    tags="" />
 <tags
     ms.assetid="7e2508a1-347e-4f15-b060-d46602c5ce7e"
     ms.service="sql-database"
+    ms.custom="authentication and authorization"
     ms.devlang="na"
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="data-management"
-    ms.date="10/31/2016"
-    wacn.date="12/19/2016"
+    ms.date="11/22/2016"
+    wacn.date="01/20/2017"
     ms.author="rick.byham@microsoft.com" />
 
 # 使用 Azure Active Directory 身份验证连接到 SQL 数据库或 SQL 数据仓库
-Azure Active Directory 身份验证是使用 Azure Active Directory (Azure AD) 中的标识连接到 Azure SQL 数据库和 [SQL 数据仓库](/documentation/articles/sql-data-warehouse-overview-what-is/)的一种机制。通过 Azure Active Directory 身份验证，可以在一个中心位置中集中管理数据库用户和其他 Microsoft 服务的标识。集中 ID 管理提供一个单一位置来管理数据库用户，并简化权限管理。包括如下优点：
+Azure Active Directory 身份验证是使用 Azure Active Directory (Azure AD) 中的标识连接到 Azure SQL 数据库和 [SQL 数据仓库](/documentation/articles/sql-data-warehouse-overview-what-is/)的一种机制。通过 Azure AD 身份验证，可在一个中心位置中集中管理数据库用户和其他 Microsoft 服务的标识。集中 ID 管理提供一个单一位置来管理数据库用户，并简化权限管理。包括如下优点：
 
 - 提供一个 SQL Server 身份验证的替代方法。
 - 帮助阻止用户标识在数据库服务器之间激增。
 - 允许在单一位置中轮换密码
 - 客户可以使用外部 (AAD) 组管理数据库权限。
 - 它可以通过启用集成的 Windows 身份验证和 Azure Active Directory 支持的其他形式的身份验证来消除存储密码。
-- Azure Active Directory 身份验证使用包含的数据库用户以数据库级别对标识进行身份验证。
-- Azure Active Directory 支持对连接到 SQL 数据库的应用程序进行基于令牌的身份验证。
-- Azure Active Directory 身份验证支持对本地 Azure Active Directory 进行 ADFS（域联合）或本机用户/密码身份验证，无需进行域同步。
-- Azure Active Directory 支持从 SQL Server Management Studio 进行连接，后者使用 Active Directory 通用身份验证，其中包括多重身份验证 (MFA)。MFA 包括利用一系列简单的验证选项进行的强身份验证，这些选项包括电话、短信、含有 PIN 码的智能卡或移动应用通知。有关详细信息，请参阅 [SQL 数据库和 SQL 数据仓库针对 Azure AD MFA 的 SSMS 支持](/documentation/articles/sql-database-ssms-mfa-authentication/)。
+- Azure AD 身份验证使用包含的数据库用户以数据库级别对标识进行身份验证。
+- Azure AD 支持对连接到 SQL 数据库的应用程序进行基于令牌的身份验证。
+- Azure AD 身份验证支持对本地 Azure Active Directory 进行 ADFS（域联合）或本机用户/密码身份验证，无需进行域同步。
+- Azure AD 支持从 SQL Server Management Studio 进行连接，后者使用 Active Directory 通用身份验证，其中包括多重身份验证 (MFA)。MFA 包括利用一系列简单的验证选项进行的强身份验证，这些选项包括电话、短信、含有 PIN 码的智能卡或移动应用通知。有关详细信息，请参阅 [SQL 数据库和 SQL 数据仓库针对 Azure AD MFA 的 SSMS 支持](/documentation/articles/sql-database-ssms-mfa-authentication/)。
 
 配置步骤包括配置和使用 Azure Active Directory 身份验证的以下过程。
 
-1. 创建并填充 Azure Active Directory。
+1. 创建并填充 Azure AD。
 2. 确保你的数据库位于 Azure SQL 数据库 V12 中。（SQL 数据仓库无此要求。）
 3. 可选：关联或更改当前与 Azure 订阅关联的 Active Directory。
 4. 为 Azure SQL Server 或 [Azure SQL 数据仓库](/home/features/sql-data-warehouse/)创建 Azure Active Directory 管理员。
@@ -43,11 +43,11 @@ Azure Active Directory 身份验证是使用 Azure Active Directory (Azure AD) �
 7. 通过使用 Azure AD 标识连接到你的数据库。
 
 ## 信任体系结构
-以下高级别关系图概述了将 Azure AD 身份验证用于 Azure SQL 数据库的解决方案体系结构。相同的概念适用于 SQL 数据仓库。若要支持 Azure Active Directory 本机用户密码，只需考虑云部分和 Azure AD/Azure SQL 数据库。若要支持联合身份验证（或 Windows 凭据的用户/密码），需要与 ADFS 块进行通信。箭头表示通信路径。
+以下高级别关系图概述了将 Azure AD 身份验证用于 Azure SQL 数据库的解决方案体系结构。相同的概念适用于 SQL 数据仓库。若要支持 Azure AD 本机用户密码，只需考虑云部分和 Azure AD/Azure SQL 数据库。若要支持联合身份验证（或 Windows 凭据的用户/密码），需要与 ADFS 块进行通信。箭头表示通信路径。
 
 ![AAD 身份验证关系图][1]
 
-下图表明允许客户端通过提交令牌连接到数据库的联合、信任和托管关系。该令牌已由 Azure AD 进行身份验证且受数据库信任。客户 1 可以代表具有本机用户的 Azure Active Directory 或具有联合用户的 Azure Active Directory。客户 2 代表包含已导入用户的可行解决方案；在本例中，来自联合 Azure Active Directory 且 ADFS 正与 Azure Active Directory 进行同步。请务必了解，使用 Azure AD 身份验证访问数据库需要托管订阅与 Azure Active Directory 相关联。必须使用相同的订阅创建托管 Azure SQL 数据库或 SQL 数据仓库的 SQL Server。
+下图表明允许客户端通过提交令牌连接到数据库的联合、信任和托管关系。该令牌已由 Azure AD 进行身份验证且受数据库信任。客户 1 可以代表具有本机用户的 Azure Active Directory 或具有联合用户的 Azure AD。客户 2 代表包含已导入用户的可行解决方案；在本例中，来自联合 Azure Active Directory 且 ADFS 正与 Azure Active Directory 进行同步。请务必了解，使用 Azure AD 身份验证访问数据库需要托管订阅与 Azure AD 相关联。必须使用相同的订阅创建托管 Azure SQL 数据库或 SQL 数据仓库的 SQL Server。
 
 ![订阅关系][2]
 
@@ -59,44 +59,47 @@ Azure Active Directory 身份验证是使用 Azure Active Directory (Azure AD) �
 ## 权限
 若要新建用户，必须具有数据库中的 `ALTER ANY USER` 权限。`ALTER ANY USER` 权限可以授予任何数据库用户。`ALTER ANY USER` 权限还由服务器管理员帐户、具有该数据库的 `CONTROL ON DATABASE` 或 `ALTER ON DATABASE` 权限的数据库用户以及 `db_owner` 数据库角色的成员拥有。
 
-若要在 Azure SQL 数据库或 SQL 数据仓库中创建一个包含的数据库用户，必须使用 Azure AD 标识连接到数据库。若要创建第一个包含的数据库用户，必须使用 Azure Active Directory 管理员（数据库的所有者）连接到数据库。在下面的步骤 4 和 5 中演示了此操作。只有为 Azure SQL 数据库或 SQL 数据仓库服务器创建 Azure Active Directory 管理员之后，才有可能进行任何 Azure Active Directory 身份验证。如果已从服务器删除 Azure Active Directory 管理员，先前在 SQL Server 内创建的现有 Azure Active Directory 用户便无法再使用其 Azure Active Directory 凭据连接到数据库。
+若要在 Azure SQL 数据库或 SQL 数据仓库中创建一个包含的数据库用户，必须使用 Azure AD 标识连接到数据库。若要创建第一个包含数据库用户，必须通过使用 Azure AD 管理员（其是数据库的所有者）连接到数据库。在下面的步骤 4 和 5 中演示了此操作。只有为 Azure SQL 数据库或 SQL 数据仓库服务器创建 Azure AD 管理员之后，才有可能进行任何 Azure AD 身份验证。如果已从服务器删除 Azure Active Directory 管理员，先前在 SQL Server 内创建的现有 Azure Active Directory 用户便无法再使用其 Azure Active Directory 凭据连接到数据库。
 
 ## Azure AD 功能和限制
-可以在 Azure SQL Server 或 SQL 数据仓库中预配以下 Azure Active Directory 成员：
+可以在 Azure SQL Server 或 SQL 数据仓库中预配以下 Azure AD 成员：
 
 - 本机成员：在托管域或客户域中的 Azure AD 中创建的成员。有关详细信息，请参阅[将自己的域名添加到 Azure AD](/documentation/articles/active-directory-add-domain/)。
 - 联合域成员：在联合域的 Azure AD 中创建的成员。有关详细信息，请参阅 [Azure 现在支持与 Windows Server Active Directory 联合](https://azure.microsoft.com/blog/2012/11/28/windows-azure-now-supports-federation-with-windows-server-active-directory)。
-- 作为本机或联合域成员从其他 Azure Active Directory 导入的成员。
+- 作为本机或联合域成员从其他 Azure AD 导入的成员。
 - 以安全组形式创建的 Active Directory 组。
 
 不支持 Microsoft 帐户（例如 outlook.com、hotmail.com、live.com）或其他来宾帐户（例如 gmail.com、yahoo.com）。如果可以使用帐户和密码登录到 [https://login.live.com](https://login.live.com)，则使用的是 Microsoft 帐户，Azure SQL 数据库或 Azure SQL 数据仓库的 Azure AD 身份验证不支持此类帐户。
 
 ### 其他注意事项
 
-- 为了增强可管理性，建议将一个专用 Azure Active Directory 组预配为管理员。
+- 为了增强可管理性，建议将一个专用 Azure AD 组预配为管理员。
 - 无论何时都仅可为 Azure SQL Server 或 Azure SQL 数据仓库配置一个 Azure AD 管理员（一个用户或组）。
-- 只有 SQL Server 的 Azure Active Directory 管理员最初可以使用 Azure Active Directory 帐户连接到 Azure SQL Server 或 Azure SQL 数据仓库。Active Directory 管理员可以配置后续的 Azure Active Directory 数据库用户。
+- 只有 SQL Server 的 Azure AD 管理员最初可以使用 Azure Active Directory 帐户连接到 Azure SQL Server 或 Azure SQL 数据仓库。Active Directory 管理员可以配置后续的 Azure AD 数据库用户。
 - 我们建议将连接超时值设置为 30 秒。
-- SQL Server 2016 Management Studio 和 SQL Server Data Tools for Visual Studio 2015（版本 14.0.60311.1（2016 年 4 月）或更高版本）支持 Azure Active Directory 身份验证。（**用于 SqlServer 的 .NET Framework 数据提供程序**（.NET Framework 4.6 或更高版本）支持 Azure Active Directory 身份验证）。因此，这些工具和数据层应用程序（DAC 和 .bacpac）的最新版本可以使用 Azure Active Directory 身份验证。
+- SQL Server 2016 Management Studio 和 SQL Server Data Tools for Visual Studio 2015（版本 14.0.60311.1（2016 年 4 月）或更高版本）支持 Azure Active Directory 身份验证。（**用于 SqlServer 的 .NET Framework 数据提供程序**（.NET Framework 4.6 或更高版本）支持 Azure AD 身份验证）。因此，这些工具和数据层应用程序（DAC 和 .bacpac）的最新版本可以使用 Azure AD 身份验证。
 - 虽然 [ODBC 版本 13.1](https://www.microsoft.com/download/details.aspx?id=53339) 支持 Azure Active Directory 身份验证，但是 `bcp.exe` 无法使用 Azure Active Directory 身份验证进行连接，因为使用的是旧式 ODBC 提供程序。
 - `sqlcmd` 从版本 13.1 开始就支持 Azure Active Directory 身份验证，该版本可从[下载中心](http://go.microsoft.com/fwlink/?LinkID=825643)下载。
-- SQL Server Data Tools for Visual Studio 2015 至少需要 2016 年 4 月版的 Data Tools（版本 14.0.60311.1）。目前，Azure Active Directory 用户不会显示在 SSDT 对象资源管理器中。解决方法是在 [sys.database\_principals](https://msdn.microsoft.com/zh-cn/library/ms187328.aspx) 中查看这些用户。
-- [Microsoft JDBC Driver 6.0 for SQL Server](https://www.microsoft.com/zh-cn/download/details.aspx?id=11774) 支持 Azure Active Directory 身份验证。另外，请参阅[设置连接属性](https://msdn.microsoft.com/zh-cn/library/ms378988.aspx)。
-- PolyBase 无法使用 Azure Active Directory 身份验证进行身份验证。
+- SQL Server Data Tools for Visual Studio 2015 至少需要 2016 年 4 月版的 Data Tools（版本 14.0.60311.1）。目前，Azure AD 用户不会显示在 SSDT 对象资源管理器中。解决方法是在 [sys.database\_principals](https://msdn.microsoft.com/zh-cn/library/ms187328.aspx) 中查看这些用户。
+- [Microsoft JDBC Driver 6.0 for SQL Server](https://www.microsoft.com/zh-CN/download/details.aspx?id=11774) 支持 Azure AD 身份验证。另外，请参阅[设置连接属性](https://msdn.microsoft.com/zh-cn/library/ms378988.aspx)。
+- PolyBase 无法使用 Azure AD 身份验证进行身份验证。
 - 不支持 BI 和 Excel 这样的工具。
-- Azure 门户预览的“导入数据库”和“导出数据库”边栏选项卡支持 SQL 数据库的 Azure Active Directory 身份验证。PowerShell 命令也支持使用 Azure Active Directory 身份验证的导入和导出。
+- Azure 门户预览的“导入数据库”和“导出数据库”边栏选项卡支持 SQL 数据库的 Azure AD 身份验证。PowerShell 命令也支持使用 Azure AD 身份验证的导入和导出。
 
 ## 1\.创建并填充 Azure AD
-创建 Azure Active Directory 并对其填充用户和组。Azure Active Directory 可以是 Azure AD 托管的初始域。Azure Active Directory 也可以是本地 Active Directory 域服务，该服务可以与 Azure Active Directory 联合。
+创建 Azure AD 并对其填充用户和组。Azure AD 可以是初始域 Azure AD 托管的域。Azure AD 也可以是本地 Active Directory 域服务，该服务可以与 Azure AD 联合。
 
 有关详细信息，请参阅[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect/)、[将自己的域名添加到 Azure AD](/documentation/articles/active-directory-add-domain/)、[Azure 现在支持与 Windows Server Active Directory 联合](https://azure.microsoft.com/blog/2012/11/28/windows-azure-now-supports-federation-with-windows-server-active-directory)、[管理 Azure AD 目录](https://msdn.microsoft.com/zh-cn/library/azure/hh967611.aspx)、[使用 Windows PowerShell 管理 Azure AD](https://msdn.microsoft.com/zh-cn/library/azure/jj151815.aspx) 和[混合标识所需端口和协议](/documentation/articles/active-directory-aadconnect-ports/)。
 
 ## 2\.确保 SQL 数据库版本为 12
-在最新的 SQL 数据库 V12 中支持 Azure Active Directory 身份验证。有关 SQL 数据库 V12 以及了解其是否已在你所在区域提供的信息，请参阅[最新 SQL 数据库更新 V12 中的新增功能](/documentation/articles/sql-database-v12-whats-new/)。Azure SQL 数据仓库无需执行此步骤，因为 SQL 数据仓库只适用于 V12。
+在最新的 SQL 数据库 V12 中支持 Azure AD 身份验证。有关 SQL 数据库 V12 以及了解其是否已在你所在区域提供的信息，请参阅 [SQL 数据库的功能](/documentation/articles/sql-database-features/)。Azure SQL 数据仓库无需执行此步骤，因为 SQL 数据仓库只适用于 V12。
 
 如果已经有一个数据库，请连接到该数据库（例如，使用 SQL Server Management Studio）并执行 `SELECT @@VERSION;`，验证其是否托管在 SQL 数据库 V12 中。SQL 数据库 V12 中数据库的预期输出至少是 **Microsoft SQL Azure (RTM) - 12.0**。如果数据库未在 SQL 数据库 V12 中托管，请参阅[计划并准备升级到 SQL 数据库 V12](/documentation/articles/sql-database-v12-plan-prepare-upgrade/)，之后访问 Azure 经典管理门户，将数据库迁移到 SQL 数据库 V12。
 
-或者，可以按照[创建第一个 Azure SQL 数据库](/documentation/articles/sql-database-get-started/)中列出的步骤，在 SQL 数据库 V12 中新建数据库。**提示**：请先阅读下一步，之后为新的数据库选择订阅。
+或者，可以按照[创建第一个 Azure SQL 数据库](/documentation/articles/sql-database-get-started/)中列出的步骤，在 SQL 数据库 V12 中新建数据库。
+
+>  [AZURE.TIP]   
+ 请先阅读下一步，之后为新的数据库选择订阅。
 
 ## 3\.可选：关联或更改当前与 Azure 订阅关联的 Active Directory
 若要将数据库与组织的 Azure AD 目录相关联，请允许该目录成为托管数据库的 Azure 订阅的一个受信任目录。有关详细信息，请参阅 [Azure 订阅与 Azure AD 的关联方式](https://msdn.microsoft.com/zh-cn/library/azure/dn629581.aspx)。
@@ -160,11 +163,10 @@ Azure Active Directory 身份验证是使用 Azure Active Directory (Azure AD) �
 - Add-AzureRmAccount -EnvironmentName AzureChinaCloud
 - Select-AzureRmSubscription
 
-
 用于预配和管理 Azure AD 管理员的 Cmdlet：
 
 | Cmdlet 名称 | 说明 |
-|---------------------------------------------------|-----------------------------------------------------------------------------------------------------------------|
+| --- | --- |
 | [Set-AzureRmSqlServerActiveDirectoryAdministrator](https://msdn.microsoft.com/zh-cn/library/azure/mt603544.aspx) | 为 Azure SQL Server 或 Azure SQL 数据仓库预配 Azure Active Directory 管理员。（必须来自当前订阅。） |
 | [Remove-AzureRmSqlServerActiveDirectoryAdministrator](https://msdn.microsoft.com/zh-cn/library/azure/mt619340.aspx) | 为 Azure SQL Server 或 Azure SQL 数据仓库删除 Azure Active Directory 管理员。 |
 | [Get-AzureRmSqlServerActiveDirectoryAdministrator](https://msdn.microsoft.com/zh-cn/library/azure/mt603737.aspx) | 返回有关当前为 Azure SQL Server 或 Azure SQL 数据仓库配置的 Azure Active Directory 管理员的信息。 |
@@ -208,7 +210,7 @@ Azure Active Directory 身份验证是使用 Azure Active Directory (Azure AD) �
 在所有客户端计算机上，如果你的应用程序或用户从中使用 Azure AD 标识连接到 Azure SQL 数据库或 Azure SQL 数据仓库，则必须安装以下软件：
 
 - .NET Framework 4.6 或更高版本，可从 [https://msdn.microsoft.com/zh-cn/library/5a4x27ek.aspx](https://msdn.microsoft.com/zh-cn/library/5a4x27ek.aspx) 下载。
-- 用于 SQL Server 的 Azure Active Directory 身份验证库 (**ADALSQL.DLL**)，提供多个语言版本（x86 和 amd64），可从下载中心中的[用于 Microsoft SQL Server 的 Microsoft Active Directory 身份验证库](http://www.microsoft.com/zh-cn/download/details.aspx?id=48742)下载。
+- 用于 SQL Server 的 Azure Active Directory 身份验证库 (**ADALSQL.DLL**)，提供多个语言版本（x86 和 amd64），可从下载中心中的[用于 Microsoft SQL Server 的 Active Directory 身份验证库](http://www.microsoft.com/zh-cn/download/details.aspx?id=48742)下载。
 
 ### 工具
 
@@ -275,11 +277,18 @@ Azure Active Directory 身份验证要求以包含的数据库用户的身份创
 
 	CREATE USER [appName] FROM EXTERNAL PROVIDER;
 
+>  [AZURE.TIP]
+除了与 Azure 订阅关联的 Azure Active Directory 以外，无法从 Azure Active Directory 直接创建用户。但是，可将关联的 Active Directory 中导入的用户（称为外部用户）的其他 Active Directory 成员添加到租户 Active Directory 中的 Active Directory 组。通过创建该 AD 组的包含数据库用户，来自外部 Active Directory 的用户可以访问 SQL 数据库。
+
 有关基于 Azure Active Directory 标识创建包含的数据库用户的详细信息，请参阅 [CREATE USER (Transact-SQL)](http://msdn.microsoft.com/zh-cn/library/ms173463.aspx)。
 
 
 > [AZURE.NOTE] 删除 Azure SQL Server 的 Azure Active Directory 管理员会阻止所有 Azure AD 身份验证用户连接到服务器。必要时，SQL 数据库管理员可以手动删除无法使用的 Azure AD 用户。
 
+>  [AZURE.NOTE]
+如果收到“连接超时过期”，可能需要将 `TransparentNetworkIPResolution` 连接字符串的参数设置为 false。有关详细信息，请参阅 [.NET Framework 4.6.1 的连接超时问题 – TransparentNetworkIPResolution](https://blogs.msdn.microsoft.com/dataaccesstechnologies/2016/05/07/connection-timeout-issue-with-net-framework-4-6-1-transparentnetworkipresolution/)。
+
+   
 创建数据库用户时，该用户会收到 **CONNECT** 权限，并能够以 **PUBLIC** 角色的成员身份连接到该数据库。最初，仅供用户使用的权限是授予 **PUBLIC** 角色的任何权限，或者授予其所属任何 Windows 组的任何权限。预配基于 Azure AD 的包含的数据库用户后，你可以授予用户其他权限，方法与向任何其他类型的用户授予权限相同。通常，将权限授予数据库角色，并将用户添加到角色。有关详细信息，请参阅[数据库引擎权限基础知识](http://social.technet.microsoft.com/wiki/contents/articles/4433.database-engine-permission-basics.aspx)。有关特殊 SQL 数据库角色的详细信息，请参阅[在 Azure SQL 数据库中管理数据库和登录名](/documentation/articles/sql-database-manage-logins/)。如果将联合域用户导入到管理域，则此用户必须使用托管域标识。
 
 > [AZURE.NOTE] Azure AD 用户在数据库元数据中均标记为类型 E (EXTERNAL\_USER)，而组则标记为类型 X (EXTERNAL\_GROUPS)。有关详细信息，请参阅 [sys.database\_principals](https://msdn.microsoft.com/zh-cn/library/ms187328.aspx)。
@@ -367,4 +376,5 @@ Azure Active Directory 身份验证支持使用 Azure AD 标识连接到数据�
 [12]: ./media/sql-database-aad-authentication/12connect-using-pw-auth.png
 [13]: ./media/sql-database-aad-authentication/13connect-to-db.png
 
-<!---HONumber=Mooncake_1212_2016-->
+<!---HONumber=Mooncake_0116_2017-->
+<!--Update: change Active Directory to AD ; add three azure.tip-->

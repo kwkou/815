@@ -3,19 +3,20 @@
     description="使用 Azure 门户预览为 Azure SQL 数据库配置异地复制"
     services="sql-database"
     documentationcenter=""
-    author="stevestein"
+    author="anosov1960"
     manager="jhubbard"
     editor="" />
 <tags
     ms.assetid="d0b29822-714f-4633-a5ab-fb1a09d43ced"
     ms.service="sql-database"
+    ms.custom="business continuity"
     ms.devlang="NA"
     ms.topic="article"
     ms.tgt_pltfrm="NA"
     ms.workload="NA"
-    ms.date="10/18/2016"
-    wacn.date="12/19/2016"
-    ms.author="sstein" />
+    ms.date="11/22/2016"
+    wacn.date="01/20/2017"
+    ms.author="sashan;carlrab" />  
 
 # 使用 Azure 门户预览为 Azure SQL 数据库配置异地复制
 
@@ -30,18 +31,21 @@
 
 若要使用 Azure 门户预览启动故障转移，请参阅[使用 Azure 门户预览为 Azure SQL 数据库启动计划内或计划外故障转移](/documentation/articles/sql-database-geo-replication-failover-portal/)。
 
->[AZURE.NOTE] 活动异地复制（可读辅助数据库）现在可供所有服务层中的所有数据库使用。非可读辅助数据库类型将于 2017 年 4 月停用，现有的非可读数据库将自动升级到可读辅助数据库。
+>[AZURE.NOTE] 活动异地复制（可读辅助数据库）现在可供所有服务层中的所有数据库使用。2017 年 4 月将停用非可读辅助类型数据库，现有的非可读数据库将自动升级到可读辅助数据库。
 
-若要使用 Azure 门户预览配置异地复制，需要以下资源：
+若要使用 Azure 门户预览配置活动异地复制，需要以下资源：
 
 * Azure SQL 数据库：要复制到其他地理区域的主数据库。
+
+> [AZURE.NOTE]
+活动异地复制必须在同一订阅中的数据库之间进行。
 
 ## 添加辅助数据库
 以下步骤在异地复制合作关系中创建新的辅助数据库。
 
 只有订阅所有者或共有者才能添加辅助数据库。
 
-辅助数据库具有与主数据库相同的名称，并默认使用相同的服务级别。辅助数据库可以是单一数据库，也可以是弹性数据库。有关详细信息，请参阅[服务层](/documentation/articles/sql-database-service-tiers/)。创建辅助数据库并设定种子后，会开始将数据从主数据库复制到新的辅助数据库。
+辅助数据库具有与主数据库相同的名称，并默认使用相同的服务级别。辅助数据库可以是单一数据库，也可以是弹性池中的数据库。有关详细信息，请参阅[服务层](/documentation/articles/sql-database-service-tiers/)。创建辅助数据库并设定种子后，会开始将数据从主数据库复制到新的辅助数据库。
 
 > [AZURE.NOTE] 如果合作伙伴数据库已存在（例如，在终止之前的异地复制关系的情况下），命令会失败。
 
@@ -55,7 +59,7 @@
    
     ![配置辅助数据库](./media/sql-database-geo-replication-portal/create-secondary.png)  
 
-4. 可以选择性地将辅助数据库添加到弹性数据库池。若要在池中创建辅助数据库，单击“弹性数据库池”，然后在目标服务器上选择池。池必须已在目标服务器上存在。此工作流不会创建一个池。
+4. 可以选择性地将辅助数据库添加到弹性池。若要在池中创建辅助数据库，请单击“弹性池”，然后在目标服务器上选择池。池必须已在目标服务器上存在。此工作流不会创建一个池。
 5. 单击“创建”添加辅助数据库。
 6. 此时会创建辅助数据库，并开始种子设定过程。
    
@@ -83,4 +87,5 @@
 - 若要详细了解活动异地复制，请参阅[活动异地复制](/documentation/articles/sql-database-geo-replication-overview/)
 - 有关业务连续性概述和应用场景，请参阅[业务连续性概述](/documentation/articles/sql-database-business-continuity/)
 
-<!---HONumber=Mooncake_1212_2016-->
+<!---HONumber=Mooncake_0116_2017-->
+<!--update: translation update "弹性数据库池" to "弹性池"-->

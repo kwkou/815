@@ -1,30 +1,30 @@
 <properties
-   pageTitle="浏览 Azure SQL 数据库教程"
-   description="了解 SQL 数据库的特性和功能"
-   keywords=""
-   services="sql-database"
-   documentationCenter=""
-   authors="CarlRabeler"
-   manager="jhubbard"
-   editor=""/>
-
+    pageTitle="浏览 Azure SQL 数据库教程 | Azure"
+    description="了解 SQL 数据库的特性和功能"
+    keywords=""
+    services="sql-database"
+    documentationcenter=""
+    author="CarlRabeler"
+    manager="jhubbard"
+    editor="" />
 <tags
-   ms.service="sql-database"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="data-management"
-   ms.date="08/24/2016"
-   wacn.date="01/06/2017"
-   ms.author="carlrab"/>  
+    ms.assetid="04c0fd7f-d260-4e43-a4f0-41cdcd5e3786"
+    ms.service="sql-database"
+    ms.custom="overview"
+    ms.devlang="NA"
+    ms.topic="article"
+    ms.tgt_pltfrm="NA"
+    ms.workload="data-management"
+    ms.date="12/08/2016"
+    wacn.date="01/20/2017"
+    ms.author="carlrab" />  
 
-   
+
 # 浏览 Azure SQL 数据库教程
 
 以下链接可以转到每个列出的功能区域的概述，以及每个区域的简单的分步入门教程。有关在基于实际情况的完整解决方案中演示 SQL 数据库使用的解决方案范围内的快速入门，请参阅 [Azure SQL 数据库解决方案快速入门](/documentation/articles/sql-database-solution-quick-starts/)。
 
 ## 使用 SQL Server Management Studio
-
 以下教程介绍如何使用 SQL Server Management Studio 管理和查询 Azure SQL 数据库。
 
 
@@ -33,11 +33,28 @@
 
 | 教程 | 说明 |
 |---|---|---|
-| [使用服务器级主体登录名连接到 Azure SQL 数据库](/documentation/articles/sql-database-get-started-security/#connect-to-azure-sql-database-using-a-server-level-principal-login)| 本教程介绍如何使用服务器级主体登录名连接到 Azure SQL 数据库。|
+| [使用服务器级主体登录名连接到 Azure SQL 数据库](/documentation/articles/sql-database-get-started-security/#connect-to-azure-sql-database-using-sql-server-authentication)| 本教程介绍如何使用 SQL Server 级主体登录名连接到 Azure SQL 数据库。|
 | [以用户身份连接到 Azure SQL 数据库](/documentation/articles/sql-database-get-started-security/#connect-to-azure-sql-database-as-a-user) | 本教程介绍如何使用数据库级用户帐户连接到 Azure SQL 数据库。|
 ||||
 
-##<a name="elastic-pools"></a> 弹性池
+## 创建服务器、数据库和服务器级防火墙规则
+在以下教程中，用户可以创建服务器、数据库和服务器级防火墙规则，并了解如何连接和查询服务器和数据库。
+
+| 教程 | 说明 |
+| --- | --- | --- |
+| [开始使用 Azure 门户预览和 SQL Server Management Studio 了解 Azure SQL 数据库服务器、数据库和防火墙规则](/documentation/articles/sql-database-get-started/) | 在本教程中，将使用 Azure 门户预览和 SQL Server Management Studio 创建一个 Azure SQL 数据库逻辑服务器，查看其属性，创建服务器级防火墙，连接到 master 数据库，创建示例数据库，查看其属性，连接到示例数据库，并创建一个空数据库。 |
+| [开始使用 Azure PowerShell 了解 Azure SQL 数据库服务器、数据库和防火墙规则](/documentation/articles/sql-database-get-started-powershell/) | 在本教程中，将使用 PowerShell 创建一个 Azure SQL 数据库逻辑服务器，查看其属性，创建服务器级防火墙，连接到 master 数据库，创建示例数据库，查看其属性，连接到示例数据库，并创建一个空数据库。 |
+| [使用 C# 通过适用于 .NET 的 SQL 数据库库创建 SQL 数据库](/documentation/articles/sql-database-get-started-csharp/)| 在本教程中，将使用 C# 创建 SQL 数据库服务器、防火墙规则和 SQL 数据库。还将创建一个 Active Directory (AD) 应用程序和对 C# 应用进行身份验证所需的服务主体。 |
+
+## 备份和恢复
+在以下教程中，会将数据库还原到某个时间点、配置长期备份保留，并从 Azure 恢复服务保管库中的保留还原数据库。
+
+| 教程 | 说明 |
+| --- | --- | --- |
+| [开始使用备份和还原进行数据保护和恢复](/documentation/articles/sql-database-get-started-backup-recovery/) | 在此教程中，将使用 Azure 门户预览将数据库还原到某个时间点、配置长期备份保留，并从 Azure 恢复服务保管库中的保留还原数据库。 |
+
+
+## 弹性池
 
 以下教程介绍如何使用[弹性池](/documentation/articles/sql-database-elastic-pool/)管理使用模式变化很大且不可预测的多个数据库的性能目标。
 
@@ -72,6 +89,7 @@
 |---|---|---|
 | [更改数据库的服务层和性能级别](/documentation/articles/sql-database-scale-up/#change-the-service-tier-and-performance-level-of-your-database) | 本教程介绍如何使用服务层扩展或缩减 Azure SQL 数据库的性能。 |
 | [SQL 数据库顾问 Query Performance Insight](/documentation/articles/sql-database-performance/#performance-overview) | 本教程介绍如何打开和使用 SQL 数据库顾问 Query Performance Insight。|
+| [SQL 数据库顾问性能建议](/documentation/articles/sql-database-advisor/#viewing-recommendations) | 本教程介绍如何查看和应用 SQL 数据库顾问性能建议。 |
 | [查看 DTU 消耗量靠前的查询](/documentation/articles/sql-database-query-performance/#review-top-cpu-consuming-queries)| 本教程介绍如何使用 SQL 数据库顾问 Query Performance Insight 来查看 CPU 消耗量靠前的查询。|
 | [查看单个查询的详细信息](/documentation/articles/sql-database-query-performance/#viewing-individual-query-details)| 本教程介绍如何使用 SQL 数据库顾问 Query Performance Insight 来查看单个查询性能的详细信息。|
 ||||
@@ -114,8 +132,7 @@
 | [使用 Ruby 连接到 SQL 数据库](/documentation/articles/sql-database-develop-ruby-simple/) | 本教程介绍如何使用 Ruby 连接到 Azure SQL 数据库。 |
 ||||
  
-## 数据库访问
-
+## 数据库身份验证和授权
 以下教程介绍如何[创建和管理登录名和用户](/documentation/articles/sql-database-manage-logins/)。
 
 | 教程 | 说明 |
@@ -132,9 +149,7 @@
 | [以用户身份连接到 Azure SQL 数据库](/documentation/articles/sql-database-get-started-security/#connect-to-azure-sql-database-as-a-user) | 本教程介绍如何使用数据库级用户帐户连接到 Azure SQL 数据库。|
 ||||
 
-
-## 数据安全
-
+## 保护数据
 以下教程介绍如何[保护 Azure SQL 数据库数据](/documentation/articles/sql-database-security/)。
 
 | 教程 | 说明 |
@@ -146,8 +161,7 @@
 | [设置动态数据掩码](/documentation/articles/sql-database-dynamic-data-masking-get-started/#set-up-dynamic-data-masking-for-your-database-using-the-azure-portal) | 本教程介绍如何为 Azure SQL 数据库设置动态数据掩码。 |
 ||||
 
-## 业务连续性和查询横向扩展
-
+## 业务连续性
 以下教程介绍如何使用[异地还原和活动异地复制](/documentation/articles/sql-database-business-continuity/)从错误中恢复过来，以保持业务连续性和实现查询扩展。
 
 | 教程 | 说明 |
@@ -177,4 +191,5 @@
 
 [浏览 Azure SQL 数据库解决方案快速入门](/documentation/articles/sql-database-solution-quick-starts/)
 
-<!---HONumber=Mooncake_Quality_Review_1215_2016-->
+<!---HONumber=Mooncake_0116_2017-->
+<!--update: add sections("创建服务器、数据库和服务器级防火墙规则",备份和恢复); wording update-->
