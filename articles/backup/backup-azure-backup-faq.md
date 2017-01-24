@@ -270,7 +270,7 @@ Azure 备份代理依赖于 NTFS。[文件路径长度规范受限于 Windows AP
 ## 恢复服务保管库是否支持经典 VM 或基于资源管理器的 VM？<br/>
 恢复服务保管库同时支持这两种模型。可以将经典 VM（在经典管理门户中创建）或资源管理器VM（在 Azure 门户预览中创建）备份到恢复服务保管库。
 
-## 在备份保管库中备份经典 VM 后，能否将 VM 从经典模式迁移到 Resource Manager 模式并在恢复服务保管库中对其进行保护？
+## <a name="i-have-backed-up-my-classic-vms-in-a-backup-vault-can-i-migrate-my-vms-from-classic-mode-to-resource-manager-mode-and-protect-them-in-a-recovery-services-vault"></a> 在备份保管库中备份经典 VM 后，能否将 VM 从经典模式迁移到 Resource Manager 模式并在恢复服务保管库中对其进行保护？
 将 VM 从经典模式移到 Resource Manager 模式时，备份保管库中的经典 VM 恢复点不会自动迁移到恢复服务保管库中。请按以下步骤传输 VM 备份：
 
 1. 在备份保管库中，转到“受保护的项”选项卡并选择 VM。单击“停止保护”。[](/documentation/articles/backup-azure-manage-vms-classic/#stop-protecting-virtual-machines/)将“删除关联的备份数据”选项保持**未选中**状态。
