@@ -76,11 +76,11 @@
 1. 创建 IoT 中心时，必须在资源组中创建它。使用现有资源组，或运行以下[命令创建资源组][lnk-az-resource-command]：
     
     
-     az group create --name {your resource group name} --location westus
+     az group create --name {your resource group name} --location chinaeast
     
 
     > [AZURE.TIP]
-    上一示例在中国西部位置创建资源组。可运行 `az account list-locations -o table` 命令，查看可用位置的列表。
+    上一示例在中国东部位置创建资源组。可运行 `az account list-locations -o table` 命令，查看可用位置的列表。
     >
     >
 

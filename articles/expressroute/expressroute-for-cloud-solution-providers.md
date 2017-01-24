@@ -126,8 +126,8 @@ ExpressRoute 通过 Azure 虚拟网络网关连接到 Azure 网络。网络网�
 
 如需更多信息，可单击以下链接：
 
-[Microsoft 云解决方案提供商计划](https://partner.microsoft.com/zh-cn/Solutions/cloud-reseller-overview)。  
-[做好以云解决方案提供商身份进行事务处理的准备](https://partner.microsoft.com/zh-cn/solutions/cloud-reseller-pre-launch)。  
-[Microsoft 云解决方案提供商资源](https://partner.microsoft.com/zh-cn/solutions/cloud-reseller-resources)。
+- [Microsoft 云解决方案提供商计划](https://partner.microsoft.com/zh-cn/Solutions/cloud-reseller-overview)  
+- [做好以云解决方案提供商身份进行事务处理的准备](https://partner.microsoft.com/zh-cn/solutions/cloud-reseller-pre-launch)
+- [Microsoft 云解决方案提供商资源](https://partner.microsoft.com/zh-cn/solutions/cloud-reseller-resources)
 
 <!---HONumber=Mooncake_0530_2016-->

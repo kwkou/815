@@ -25,7 +25,7 @@
 
 本文提供经常用于在经典部署模型中创建和管理 Azure 资源的 Azure CLI 命令的语法和选项。通过在 Azure 服务管理 (asm) 模式下运行 CLI 可以访问这些命令。本参考内容并不完整，你的 CLI 版本可能会显示略微不同的命令或参数。
 
-若要开始，请先[安装 Azure CLI](/documentation/articles/xplat-cli-install) 并[连接到 Azure 订阅](/documentation/articles/xplat-cli-connect/)。
+若要开始，请先[安装 Azure CLI](/documentation/articles/xplat-cli-install/) 并[连接到 Azure 订阅](/documentation/articles/xplat-cli-connect/)。
 
 有关命令行当前的命令语法和选项，请键入 `azure help`；若要显示特定命令的帮助，请键入 `azure help [command]`。还可以在创建和管理特定 Azure 服务的说明文档中找到 CLI 示例。
 

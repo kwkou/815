@@ -14,8 +14,8 @@
     ms.topic="article"
     ms.tgt_pltfrm="dotnet"
     ms.workload="na"
-    ms.date="08/31/2016"
-    wacn.date="11/08/2016"
+    ms.date="11/21/2016"
+    wacn.date="01/23/2017"
     ms.author="sethm;shvija"/>  
 
 
@@ -149,3 +149,4 @@
 [事件中心和使用者组模板]: https://github.com/Azure/azure-quickstart-templates/blob/master/201-event-hubs-create-event-hub-and-consumer-group/
 
 <!---HONumber=Mooncake_1031_2016-->
+<!--Update_Description:update meta properties-->

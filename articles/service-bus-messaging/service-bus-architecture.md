@@ -8,8 +8,8 @@
     editor="" />
 <tags 
    ms.service="service-bus"
-    ms.date="07/11/2016"
-   wacn.date="01/04/2017" />
+    ms.date="11/30/2016"
+   wacn.date="01/23/2017" />
 
 # 服务总线体系结构
 
@@ -56,3 +56,4 @@
 - [使用服务总线队列的队列消息解决方案](/documentation/articles/service-bus-dotnet-multi-tier-app-using-service-bus-queues/)
 
 <!---HONumber=Mooncake_Quality_Review_1230_2016-->
+<!--Update_Description:update meta properties-->

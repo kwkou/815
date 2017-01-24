@@ -14,8 +14,8 @@
 	ms.tgt_pltfrm="mobile-html"
 	ms.devlang="javascript"
 	ms.topic="article"
-	ms.date="10/01/2016"
-	wacn.date="11/21/2016"
+	ms.date="10/30/2016"
+	wacn.date="01/23/2017"
 	ms.author="adrianha"/>
 
 # 如何使用适用于 Azure 移动应用的 Apache Cordova 客户端库
@@ -30,9 +30,8 @@
 
 * Android API 19-24（KitKat 到 Nougat）
 * iOS 8.0 和更高版本。
-* Windows Phone 8.0
-* Windows Phone 8.1
-* 通用 Windows 平台
+* Windows Phone 8.1。
+* 通用 Windows 平台。
 
 ##<a name="Setup"></a>安装与先决条件
 
@@ -101,44 +100,48 @@ Azure 应用服务支持使用各种外部标识提供者（包括 Microsoft 帐
 
 安装 [phonegap-plugin-push] 即可处理推送通知。在命令行中使用 `cordova plugin add` 命令，或者在 Visual Studio 内通过 Git 插件安装程序，即可轻松添加此插件。Apache Cordova 应用中的以下代码为设备注册推送通知：
 
-```
-var pushOptions = {
-    android: {
-        senderId: '<from-gcm-console>'
-    },
-    ios: {
-        alert: true,
-        badge: true,
-        sound: true
-    },
-    windows: {
-    }
-};
-pushHandler = PushNotification.init(pushOptions);
 
-pushHandler.on('registration', function (data) {
-    registrationId = data.registrationId;
-    // For cross-platform, you can use the device plugin to determine the device
-    // Best is to use device.platform
-    var name = 'gcm'; // For android - default
-    if (device.platform.toLowerCase() === 'ios')
-        name = 'apns';
-    if (device.platform.toLowerCase().substring(0, 3) === 'win')
-        name = 'wns';
-    client.push.register(name, registrationId);
-});
+		var pushOptions = {
+		    android: {
+		        senderId: '<from-gcm-console>'
+		    },
+		    ios: {
+		        alert: true,
+		        badge: true,
+		        sound: true
+		    },
+		    windows: {
+		    }
+		};
+		pushHandler = PushNotification.init(pushOptions);
 
-pushHandler.on('notification', function (data) {
-    // data is an object and is whatever is sent by the PNS - check the format
-    // for your particular PNS
-});
+		pushHandler.on('registration', function (data) {
+		    registrationId = data.registrationId;
+		    // For cross-platform, you can use the device plugin to determine the device
+		    // Best is to use device.platform
+		    var name = 'gcm'; // For android - default
+		    if (device.platform.toLowerCase() === 'ios')
+		        name = 'apns';
+		    if (device.platform.toLowerCase().substring(0, 3) === 'win')
+		        name = 'wns';
+		    client.push.register(name, registrationId);
+		});
 
-pushHandler.on('error', function (error) {
-    // Handle errors
-});
-```
+		pushHandler.on('notification', function (data) {
+		    // data is an object and is whatever is sent by the PNS - check the format
+		    // for your particular PNS
+		});
+
+		pushHandler.on('error', function (error) {
+		    // Handle errors
+		});
+
 
 使用通知中心 SDK 从服务器发送推送通知。永远不要直接从客户端发送推送通知。此做法可能会被用于触发针对通知中心或 PNS 的拒绝服务攻击。PNS 可能会因此类攻击而禁止相关流量。
+
+## 详细信息
+
+可在 [API 文档](http://azure.github.io/azure-mobile-apps-js-client/)中找到有关 API 的详细信息。
 
 <!-- URLs. -->
 
@@ -154,4 +157,5 @@ pushHandler.on('error', function (error) {
 [cordova-plugin-inappbrowser]: https://www.npmjs.com/package/cordova-plugin-inappbrowser
 [Query object documentation]: https://msdn.microsoft.com/zh-cn/library/azure/jj613353.aspx
 
-<!---HONumber=Mooncake_1114_2016-->
+<!---HONumber=Mooncake_0116_2017-->
+<!--Update_Description:update wording-->

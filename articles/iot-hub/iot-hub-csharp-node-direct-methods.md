@@ -46,14 +46,14 @@
 
 1. 新建名为 **simulateddevice** 的空文件夹。在 **simulateddevice** 文件夹的命令提示符处，使用以下命令创建 package.json 文件。接受所有默认值：
    
-    ```
-    npm init
-    ```
+    
+        npm init
+    
 2. 在 **simulateddevice** 文件夹的命令提示符处，运行下述命令以安装 **azure-iot-device** 和 **azure-iot-device-mqtt** 包：
    
-    ```
+    
         npm install azure-iot-device azure-iot-device-mqtt --save
-    ```
+    
 3. 在 **simulateddevice** 文件夹中，利用文本编辑器创建新的 **SimulatedDevice.js** 文件。
 4. 在 **SimulatedDevice.js** 文件的开头添加以下 `require` 语句：
    
@@ -65,37 +65,37 @@
     
 5. 添加 **connectionString** 变量，并使用它创建 **DeviceClient** 实例。将 **{device connection string}** 替换为在“创建设备标识”部分创建的设备连接字符串：
    
-    ```
-    var connectionString = '{device connection string}';
-    var client = DeviceClient.fromConnectionString(connectionString, Mqtt);
-    ```
+    
+        var connectionString = '{device connection string}';
+        var client = DeviceClient.fromConnectionString(connectionString, Mqtt);
+    
 6. 添加以下函数，实现设备上的直接方法：
    
-    ```
-    function onWriteLine(request, response) {
-        console.log(request.payload);
-   
-        response.send(200, 'Input was written to log.', function(err) {
-            if(err) {
-                console.error('An error ocurred when sending a method response:\n' + err.toString());
-            } else {
-                console.log('Response to method \'' + request.methodName + '\' sent successfully.' );
-            }
-        });
-    }
-    ```
+    
+        function onWriteLine(request, response) {
+            console.log(request.payload);
+       
+            response.send(200, 'Input was written to log.', function(err) {
+                if(err) {
+                    console.error('An error ocurred when sending a method response:\n' + err.toString());
+                } else {
+                    console.log('Response to method \'' + request.methodName + '\' sent successfully.' );
+                }
+            });
+        }
+    
 7. 打开与 IoT 中心的连接并初始化方法侦听器：
    
-    ```
-    client.open(function(err) {
-        if (err) {
-            console.error('could not open IotHub client');
-        }  else {
-            console.log('client opened');
-            client.onDeviceMethod('writeLine', onWriteLine);
-        }
-    });
-    ```
+    
+        client.open(function(err) {
+            if (err) {
+                console.error('could not open IotHub client');
+            }  else {
+                console.log('client opened');
+                client.onDeviceMethod('writeLine', onWriteLine);
+            }
+        });
+    
 8. 保存并关闭 **SimulatedDevice.js** 文件。
 
 > [AZURE.NOTE]
@@ -124,6 +124,7 @@
    
         static ServiceClient serviceClient;
         static string connectionString = "{iot hub connection string}";
+        
 6. 将以下方法添加到 **Program** 类：
    
         private static async Task InvokeMethod()
@@ -138,6 +139,7 @@
         }
    
     此方法在 `myDeviceId` 设备上调用名为 `writeLine` 的直接方法，然后将设备提供的响应写入到控制台。请注意如何才能为要响应的设备指定一个超时值。
+    
 7. 最后，在 **Main** 方法中添加以下行：
    
         serviceClient = ServiceClient.CreateFromConnectionString(connectionString);
@@ -150,9 +152,9 @@
 
 1. 在 **simulateddevice** 文件夹的命令提示符处运行以下命令，开始侦听从 IoT 中心发出的方法调用：
    
-    ```
-    node SimulatedDevice.js
-    ```
+    
+        node SimulatedDevice.js
+    
    
     ![][7]  
 

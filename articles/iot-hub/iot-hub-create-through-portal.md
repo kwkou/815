@@ -18,12 +18,12 @@
     ms.author="dobett" />  
 
 
-# 使用 Azure 门户创建 IoT 中心
+# 使用 Azure 门户预览创建 IoT 中心
 
 [AZURE.INCLUDE [iot-hub-resource-manager-selector](../../includes/iot-hub-resource-manager-selector.md)]
 
 ## 介绍
-本文介绍如何在 Azure 门户中查找 IoT 中心服务，以及如何创建和管理 IoT 中心。
+本文介绍如何在 Azure 门户预览中查找 IoT 中心服务，以及如何创建和管理 IoT 中心。
 
 ## 在哪里可以找到 IoT 中心
 可在多个位置找到 IoT 中心。

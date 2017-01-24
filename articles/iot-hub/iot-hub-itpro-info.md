@@ -37,7 +37,7 @@
 
 ## IoT 中心和安全性
 
-只有已注册到 IoT 中心的设备才能与该 IoT 中心通信。已注册的设备必须获得 *DeviceConnect* 权限。设备随附一个令牌来标识自身，该令牌可在设备发出的每个请求中封装其唯一 ID。随后，中心会检查令牌的有效性，并确保设备未在拒绝列表 (*DeviceConnect* permission revoked) 上。有关 IoT 中心支持的令牌的信息，请参阅[使用 IoT 中心安全令牌和 X.509 证书][lnk-tokens]
+只有已注册到 IoT 中心的设备才能与该 IoT 中心通信。已注册的设备必须获得 *DeviceConnect* 权限。设备随附一个令牌来标识自身，该令牌可在设备发出的每个请求中封装其唯一 ID。随后，中心会检查令牌的有效性，并确保设备未在拒绝列表 (*DeviceConnect* permission revoked) 上。有关 IoT 中心支持的令牌的信息，请参阅[使用 IoT 中心安全令牌和 X.509 证书][lnk-tokens]。
 
 对 IoT 中心内的其他管理终结点的访问权限也是通过一组权限进行控制的：*iothubowner*、*service*、*registryRead* 和 *registryReadWrite*。连接到 IoT 中心的所有客户端管理应用程序都必须包含具有相应权限的令牌。
 

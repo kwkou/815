@@ -13,9 +13,9 @@
     ms.topic="get-started-article"
     ms.tgt_pltfrm="na"
     ms.workload="na"
-    ms.date="09/27/2016"
+    ms.date="12/12/2016"
     ms.author="sethm"
-    wacn.date="01/09/2017"/>  
+    wacn.date="01/23/2017"/>  
 
 
 # 服务总线中转消息传送 REST 教程
@@ -30,9 +30,9 @@
 
 ### 创建命名空间并获取 SAS 密钥
 
-1. 若要创建服务命名空间，请访问 [Azure 经典管理门户][]。单击左侧的“服务总线”，然后单击“创建”。为你的命名空间键入一个名称，然后单击复选标记。
+1. 若要创建服务命名空间，请访问 [Azure 经典管理门户](https://manage.windowsazure.cn/)。单击左侧的“服务总线”，然后单击“创建”。为你的命名空间键入一个名称，然后单击复选标记。
 
-1. 在 [Azure 经典管理门户][] 的主窗口中，单击在上一步中创建的命名空间的名称。
+1. 在 [Azure 经典管理门户](https://manage.windowsazure.cn/) 的主窗口中，单击在上一步中创建的命名空间的名称。
 
 3. 单击“配置”选项卡。
 
@@ -639,3 +639,4 @@
 - [服务总线中继 REST 教程](/documentation/articles/service-bus-relay-rest-tutorial/)
 
 <!---HONumber=Mooncake_Quality_Review_0104_2017-->
+<!--Update_Description:update meta properties-->

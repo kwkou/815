@@ -140,76 +140,76 @@ BLE 模块通过 BlueZ 堆栈与蓝牙硬件通信。需要 BlueZ 5.37 版才能
 
 1. 确保安装 `rfkill` 实用程序。
    
-    ```
-    sudo apt-get install rfkill
-    ```
+    
+        sudo apt-get install rfkill
+    
 2. 打开 Raspberry Pi 3 上的蓝牙，确认版本号为 **5.37**。
    
-    ```
-    sudo rfkill unblock bluetooth
-    bluetoothctl --version
-    ```
+    
+        sudo rfkill unblock bluetooth
+        bluetoothctl --version
+    
 3. 启动蓝牙服务并执行 **bluetoothctl** 命令，进入交互式蓝牙外壳。
    
-    ```
-    sudo systemctl start bluetooth
-    bluetoothctl
-    ```
+    
+        sudo systemctl start bluetooth
+        bluetoothctl
+    
 4. 输入“启动”命令，打开蓝牙控制器。你应看到如下输出：
    
-    ```
-    [NEW] Controller 98:4F:EE:04:1F:DF C3 raspberrypi [default]
-    ```
+    
+        [NEW] Controller 98:4F:EE:04:1F:DF C3 raspberrypi [default]
+    
 
 4. 在交互式蓝牙程序中时，输入“打开扫描”命令以扫描蓝牙命令。你应看到如下输出：
     
-    ```
-    Discovery started
-    [CHG] Controller 98:4F:EE:04:1F:DF Discovering: yes
-    ```
+    
+        Discovery started
+        [CHG] Controller 98:4F:EE:04:1F:DF Discovering: yes
+    
 6. 通过按小按钮（绿色 LED 应闪烁）使 SensorTag 设备可检测到。Raspberry Pi 3 应发现 SensorTag 设备：
    
-    ```
-    [NEW] Device A0:E6:F8:B5:F6:00 CC2650 SensorTag
-    [CHG] Device A0:E6:F8:B5:F6:00 TxPower: 0
-    [CHG] Device A0:E6:F8:B5:F6:00 RSSI: -43
-    ```
+    
+        [NEW] Device A0:E6:F8:B5:F6:00 CC2650 SensorTag
+        [CHG] Device A0:E6:F8:B5:F6:00 TxPower: 0
+        [CHG] Device A0:E6:F8:B5:F6:00 RSSI: -43
+    
     
     在此示例中，可看到 SensorTag 设备的 MAC 地址为 **A0:E6:F8:B5:F6:00**。
 
 6. 输入“关闭扫描”命令来关闭扫描。
     
-    ```
-    [CHG] Controller 98:4F:EE:04:1F:DF Discovering: no
-    Discovery stopped
-    ```
+    
+        [CHG] Controller 98:4F:EE:04:1F:DF Discovering: no
+        Discovery stopped
+    
 
 7. 输入 **connect <MAC address>**，利用 MAC 地址连接到 SensorTag 设备。请注意，下面的示例输出已节略：
     
-    ```
-    Attempting to connect to A0:E6:F8:B5:F6:00
-    [CHG] Device A0:E6:F8:B5:F6:00 Connected: yes
-    Connection successful
-    [CHG] Device A0:E6:F8:B5:F6:00 UUIDs: 00001800-0000-1000-8000-00805f9b34fb
-    ...
-    [NEW] Primary Service
-            /org/bluez/hci0/dev_A0_E6_F8_B5_F6_00/service000c
-            Device Information
-    ...
-    [CHG] Device A0:E6:F8:B5:F6:00 GattServices: /org/bluez/hci0/dev_A0_E6_F8_B5_F6_00/service000c
-    ...
-    [CHG] Device A0:E6:F8:B5:F6:00 Name: SensorTag 2.0
-    [CHG] Device A0:E6:F8:B5:F6:00 Alias: SensorTag 2.0
-    [CHG] Device A0:E6:F8:B5:F6:00 Modalias: bluetooth:v000Dp0000d0110
-    ```
+    
+        Attempting to connect to A0:E6:F8:B5:F6:00
+        [CHG] Device A0:E6:F8:B5:F6:00 Connected: yes
+        Connection successful
+        [CHG] Device A0:E6:F8:B5:F6:00 UUIDs: 00001800-0000-1000-8000-00805f9b34fb
+        ...
+        [NEW] Primary Service
+                /org/bluez/hci0/dev_A0_E6_F8_B5_F6_00/service000c
+                Device Information
+        ...
+        [CHG] Device A0:E6:F8:B5:F6:00 GattServices: /org/bluez/hci0/dev_A0_E6_F8_B5_F6_00/service000c
+        ...
+        [CHG] Device A0:E6:F8:B5:F6:00 Name: SensorTag 2.0
+        [CHG] Device A0:E6:F8:B5:F6:00 Alias: SensorTag 2.0
+        [CHG] Device A0:E6:F8:B5:F6:00 Modalias: bluetooth:v000Dp0000d0110
+    
    
     > 请注意，可使用 **list-attributes** 命令重新列出设备的 GATT 特征。
 9. 现可使用“disconnect”断开与设备的连接，然后使用“quit”命令退出蓝牙程序：
    
-    ```
-    Attempting to disconnect from A0:E6:F8:B5:F6:00
-    Successful disconnected
-    [CHG] Device A0:E6:F8:B5:F6:00 Connected: no
+    
+        Attempting to disconnect from A0:E6:F8:B5:F6:00
+        Successful disconnected
+        [CHG] Device A0:E6:F8:B5:F6:00 Connected: no
     
 
 现在，可在 Raspberry Pi 3 上运行 BLE 网关示例。
@@ -232,17 +232,17 @@ BLE 模块通过 BlueZ 堆栈与蓝牙硬件通信。需要 BlueZ 5.37 版才能
 
 安装 Azure IoT 网关 SDK 的依赖项。
 
-``` 
-sudo apt-get install cmake uuid-dev curl libcurl4-openssl-dev libssl-dev
-```
+ 
+        sudo apt-get install cmake uuid-dev curl libcurl4-openssl-dev libssl-dev
+
 使用以下命令将 IoT 网关 SDK 及其所有子模块克隆到主目录：
 
-```
-cd ~
-git clone --recursive https://github.com/Azure/azure-iot-gateway-sdk.git 
-cd azure-iot-gateway-sdk
-git submodule update --init --recursive
-```
+
+        cd ~
+        git clone --recursive https://github.com/Azure/azure-iot-gateway-sdk.git 
+        cd azure-iot-gateway-sdk
+        git submodule update --init --recursive
+
 
 Raspberry Pi 3 上有 IoT 网关 SDK 存储库的完整副本时，可以从包含该 SDK 的文件夹使用以下命令生成它：
 
@@ -258,151 +258,151 @@ Raspberry Pi 3 上有 IoT 网关 SDK 存储库的完整副本时，可以从包�
 #### 记录器配置
 假设网关存储库位于 **/home/pi/azure-iot-gateway-sdk/** 文件夹中，请按如下所示配置记录器模块：
 
-```json
-{
-  "name": "Logger",
-  "loader": {
-    "name" : "native",
-    "entrypoint" : {
-      "module.path" : "build/modules/logger/liblogger.so"
-    }
-  },
-  "args":
-  {
-    "filename": "<</path/to/log-file.log>>"
-  }
-}
-```
+
+        {
+          "name": "Logger",
+          "loader": {
+            "name" : "native",
+            "entrypoint" : {
+              "module.path" : "build/modules/logger/liblogger.so"
+            }
+          },
+          "args":
+          {
+            "filename": "<</path/to/log-file.log>>"
+          }
+        }
+
 
 #### BLE 模块配置
 BLE 设备的示例配置假定使用 Texas Instruments SensorTag 设备。任何可以作为 GATT 外围设备运行的标准 BLE 设备都应可以使用，但你需要更新 GATT 特征 ID 和数据（用于编写说明）。添加 SensorTag 设备的 MAC 地址：
 
-```json
-{
-  "name": "SensorTag",
-  "loader": {
-    "name" : "native",
-    "entrypoint" : {
-      "module.path": "build/modules/ble/libble.so"
-    }
-  },
-  "args": {
-    "controller_index": 0,
-    "device_mac_address": "<<AA:BB:CC:DD:EE:FF>>",
-    "instructions": [
-      {
-        "type": "read_once",
-        "characteristic_uuid": "00002A24-0000-1000-8000-00805F9B34FB"
-      },
-      {
-        "type": "read_once",
-        "characteristic_uuid": "00002A25-0000-1000-8000-00805F9B34FB"
-      },
-      {
-        "type": "read_once",
-        "characteristic_uuid": "00002A26-0000-1000-8000-00805F9B34FB"
-      },
-      {
-        "type": "read_once",
-        "characteristic_uuid": "00002A27-0000-1000-8000-00805F9B34FB"
-      },
-      {
-        "type": "read_once",
-        "characteristic_uuid": "00002A28-0000-1000-8000-00805F9B34FB"
-      },
-      {
-        "type": "read_once",
-        "characteristic_uuid": "00002A29-0000-1000-8000-00805F9B34FB"
-      },
-      {
-        "type": "write_at_init",
-        "characteristic_uuid": "F000AA02-0451-4000-B000-000000000000",
-        "data": "AQ=="
-      },
-      {
-        "type": "read_periodic",
-        "characteristic_uuid": "F000AA01-0451-4000-B000-000000000000",
-        "interval_in_ms": 1000
-      },
-      {
-        "type": "write_at_exit",
-        "characteristic_uuid": "F000AA02-0451-4000-B000-000000000000",
-        "data": "AA=="
-      }
-    ]
-  }
-}
-```
+
+        {
+          "name": "SensorTag",
+          "loader": {
+            "name" : "native",
+            "entrypoint" : {
+              "module.path": "build/modules/ble/libble.so"
+            }
+          },
+          "args": {
+            "controller_index": 0,
+            "device_mac_address": "<<AA:BB:CC:DD:EE:FF>>",
+            "instructions": [
+              {
+                "type": "read_once",
+                "characteristic_uuid": "00002A24-0000-1000-8000-00805F9B34FB"
+              },
+              {
+                "type": "read_once",
+                "characteristic_uuid": "00002A25-0000-1000-8000-00805F9B34FB"
+              },
+              {
+                "type": "read_once",
+                "characteristic_uuid": "00002A26-0000-1000-8000-00805F9B34FB"
+              },
+              {
+                "type": "read_once",
+                "characteristic_uuid": "00002A27-0000-1000-8000-00805F9B34FB"
+              },
+              {
+                "type": "read_once",
+                "characteristic_uuid": "00002A28-0000-1000-8000-00805F9B34FB"
+              },
+              {
+                "type": "read_once",
+                "characteristic_uuid": "00002A29-0000-1000-8000-00805F9B34FB"
+              },
+              {
+                "type": "write_at_init",
+                "characteristic_uuid": "F000AA02-0451-4000-B000-000000000000",
+                "data": "AQ=="
+              },
+              {
+                "type": "read_periodic",
+                "characteristic_uuid": "F000AA01-0451-4000-B000-000000000000",
+                "interval_in_ms": 1000
+              },
+              {
+                "type": "write_at_exit",
+                "characteristic_uuid": "F000AA02-0451-4000-B000-000000000000",
+                "data": "AA=="
+              }
+            ]
+          }
+        }
+
 
 #### IoT 中心模块
 添加 IoT 中心的名称。后缀值通常是 **azure-devices.net**：
 
-```json
-{
-  "name": "IoTHub",
-  "loader": {
-    "name" : "native",
-    "entrypoint" : {
-      "module.path": "build/modules/iothub/libiothub.so"
-    }
-  },
-  "args": {
-    "IoTHubName": "<<Azure IoT Hub Name>>",
-    "IoTHubSuffix": "<<Azure IoT Hub Suffix>>",
-    "Transport" : "amqp"
-  }
-}
-```
+
+        {
+          "name": "IoTHub",
+          "loader": {
+            "name" : "native",
+            "entrypoint" : {
+              "module.path": "build/modules/iothub/libiothub.so"
+            }
+          },
+          "args": {
+            "IoTHubName": "<<Azure IoT Hub Name>>",
+            "IoTHubSuffix": "<<Azure IoT Hub Suffix>>",
+            "Transport" : "amqp"
+          }
+        }
+
 
 #### 标识映射模块配置
 添加 SensorTag 设备的 MAC 地址，以及添至 IoT 中心的 **SensorTag\_01** 设备的设备 ID 和密钥：
 
-```json
-{
-  "name": "mapping",
-  "loader": {
-    "name" : "native",
-    "entrypoint" : {
-      "module.path": "build/modules/identitymap/libidentity_map.so"
-    }
-  },
-  "args": [
-    {
-      "macAddress": "AA:BB:CC:DD:EE:FF",
-      "deviceId": "<<Azure IoT Hub Device ID>>",
-      "deviceKey": "<<Azure IoT Hub Device Key>>"
-    }
-  ]
-}
-```
+
+        {
+          "name": "mapping",
+          "loader": {
+            "name" : "native",
+            "entrypoint" : {
+              "module.path": "build/modules/identitymap/libidentity_map.so"
+            }
+          },
+          "args": [
+            {
+              "macAddress": "AA:BB:CC:DD:EE:FF",
+              "deviceId": "<<Azure IoT Hub Device ID>>",
+              "deviceKey": "<<Azure IoT Hub Device Key>>"
+            }
+          ]
+        }
+
 
 #### BLE 打印机模块配置
-```json
-{
-  "name": "BLE Printer",
-  "loader": {
-    "name" : "native",
-    "entrypoint" : {
-      "module.path": "build/samples/ble_gateway/ble_printer/libble_printer.so"
-    }
-  },
-  "args": null
-}
-```
+
+        {
+          "name": "BLE Printer",
+          "loader": {
+            "name" : "native",
+            "entrypoint" : {
+              "module.path": "build/samples/ble_gateway/ble_printer/libble_printer.so"
+            }
+          },
+          "args": null
+        }
+
 
 #### BLEC2D 模块配置
-```json
-{
-  "name": "BLEC2D",
-  "loader": {
-    "name" : "native",
-    "entrypoint" : {
-      "module.path": "build/modules/ble/libble_c2d.so"
-    }
-  },
-  "args": null
-}
-```
+
+        {
+          "name": "BLEC2D",
+          "loader": {
+            "name" : "native",
+            "entrypoint" : {
+              "module.path": "build/modules/ble/libble_c2d.so"
+            }
+          },
+          "args": null
+        }
+
 
 #### 路由配置
 以下配置可确保以下各项：
@@ -440,53 +440,53 @@ BLE 模块还支持从 Azure IoT 中心将指令发送到设备。可使用 Azur
 
 - 重置所有 LED 和蜂鸣器（将它们关闭）
   
-    ```json
-    {
-      "type": "write_once",
-      "characteristic_uuid": "F000AA65-0451-4000-B000-000000000000",
-      "data": "AA=="
-    }
-    ```
+    
+        {
+          "type": "write_once",
+          "characteristic_uuid": "F000AA65-0451-4000-B000-000000000000",
+          "data": "AA=="
+        }
+    
 
 - 将 I/O 配置为“远程”
 
-    ```json
-    {
-      "type": "write_once",
-      "characteristic_uuid": "F000AA66-0451-4000-B000-000000000000",
-      "data": "AQ=="
-    }
-    ```
+    
+        {
+          "type": "write_once",
+          "characteristic_uuid": "F000AA66-0451-4000-B000-000000000000",
+          "data": "AQ=="
+        }
+    
 
 - 打开红色 LED
 
-    ```json
-    {
-      "type": "write_once",
-      "characteristic_uuid": "F000AA65-0451-4000-B000-000000000000",
-      "data": "AQ=="
-    }
-    ```
+    
+        {
+          "type": "write_once",
+          "characteristic_uuid": "F000AA65-0451-4000-B000-000000000000",
+          "data": "AQ=="
+        }
+    
 
 - 打开绿色 LED
 
-    ```json
-    {
-      "type": "write_once",
-      "characteristic_uuid": "F000AA65-0451-4000-B000-000000000000",
-      "data": "Ag=="
-    }
-    ```
+    
+        {
+          "type": "write_once",
+          "characteristic_uuid": "F000AA65-0451-4000-B000-000000000000",
+          "data": "Ag=="
+        }
+    
 
 - 打开蜂鸣器
 
-    ```json
-    {
-      "type": "write_once",
-      "characteristic_uuid": "F000AA65-0451-4000-B000-000000000000",
-      "data": "BA=="
-    }
-    ```
+    
+        {
+          "type": "write_once",
+          "characteristic_uuid": "F000AA65-0451-4000-B000-000000000000",
+          "data": "BA=="
+        }
+    
 
 ## 后续步骤
 如果想要深入了解 IoT 网关 SDK 并尝试一些代码示例，请访问以下开发人员教程和资源：

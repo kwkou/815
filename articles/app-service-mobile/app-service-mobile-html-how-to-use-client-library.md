@@ -5,8 +5,7 @@
 	documentationCenter="javascript"
 	authors="adrianhall"
 	manager="erikre"
-	editor=""/>  
-
+	editor=""/>
 
 <tags
 	ms.service="app-service-mobile"
@@ -14,12 +13,11 @@
 	ms.tgt_pltfrm="html"
 	ms.devlang="javascript"
 	ms.topic="article"
-	ms.date="10/01/2016"
-	wacn.date="11/21/2016"
+	ms.date="10/30/2016"
+	wacn.date="01/23/2017"
 	ms.author="adrianha"/>
 
 # 如何使用适用于 Azure 移动应用的 JavaScript 客户端库
-
 [AZURE.INCLUDE [app-service-mobile-selector-client-library](../../includes/app-service-mobile-selector-client-library.md)]
 
 本指南介绍如何使用最新的 [Azure 移动应用 JavaScript SDK] 执行常见任务。对于 Azure 移动应用的新手，请先完成 [Azure Mobile Apps Quick Start]（Azure 移动应用快速入门）创建后端和表。本指南着重介绍如何在 HTML/JavaScript Web 应用程序中使用移动后端。
@@ -30,30 +28,29 @@
 
 包作为通用 JavaScript 模块分发，因此支持全局、AMD 和 CommonJS 格式。
 
-##<a name="Setup"></a>安装与先决条件
-
+## <a name="Setup"></a>安装与先决条件
 本指南假设已创建了包含表的后端。本指南假设该表的架构与这些教程中的表相同。
 
 可以通过 `npm` 命令安装 Azure 移动应用 JavaScript SDK：
 
-```
-npm install azure-mobile-apps-client --save
-```
 
-安装后，库位于 `node_modules/azure-mobile-apps-client/dist/MobileServices.Web.min.js`。将此文件复制到 Web 区域。
+		npm install azure-mobile-apps-client --save
 
-```
-<script src="path/to/MobileServices.Web.min.js"></script>
-```
 
 也可将库用作 CommonJS 环境（例如 Browserify 和 Webpack）中的 ES2015 模块，或者用作 AMD 库。例如：
 
-```
-# For ECMAScript 5.1 CommonJS
-var WindowsAzure = require('azure-mobile-apps-client');
-# For ES2015 modules
-import * as WindowsAzure from 'azure-mobile-apps-client';
-```
+
+		# For ECMAScript 5.1 CommonJS
+		var WindowsAzure = require('azure-mobile-apps-client');
+		# For ES2015 modules
+		import * as WindowsAzure from 'azure-mobile-apps-client';
+
+
+还可直接从 CDN 下载使用预建版本的 SDK：
+
+html
+		<script src="https://zumo.blob.core.windows.net/sdk/azure-mobile-apps-client.min.js"></script>
+
 
 [AZURE.INCLUDE [app-service-mobile-html-js-library](../../includes/app-service-mobile-html-js-library.md)]
 
@@ -75,7 +72,7 @@ Azure 应用服务支持使用各种外部标识提供者（包括 Microsoft 帐
 
 在本地运行可能会导致问题产生，因为默认情况下，应用服务身份验证只配置为允许从移动应用后端访问。使用以下步骤更改应用服务设置，允许在本地运行服务器时进行身份验证：
 
-1. 登录到 [Azure 门户预览]
+1. 登录到 [Azure 门户预览]。
 2. 导航到移动应用后端。
 3. 选择“开发工具”菜单中的“资源浏览器”。
 4. 单击“转到”，在新选项卡或窗口中打开移动应用后端的资源浏览器。
@@ -97,8 +94,8 @@ Azure 应用服务支持使用各种外部标识提供者（包括 Microsoft 帐
 1. 导航回到 [Azure 门户预览]。
 2. 导航到移动应用后端。
 3. 在“API”菜单中单击“CORS”。
-4. 在空的“允许的来源”文本框中输入每个 URL。将创建新的文本框。
-5. 单击“保存”
+4. 在空的“允许的来源”文本框中输入每个 URL ，将创建新的文本框。
+5. 单击“保存”。
     
 后端更新后，可以在应用中使用新的环回 URL。
 
@@ -111,4 +108,5 @@ Azure 应用服务支持使用各种外部标识提供者（包括 Microsoft 帐
 [Azure 移动应用 JavaScript SDK]: https://www.npmjs.com/package/azure-mobile-apps-client
 [Query object documentation]: https://msdn.microsoft.com/zh-cn/library/azure/jj613353.aspx
 
-<!---HONumber=Mooncake_1114_2016-->
+<!---HONumber=Mooncake_0116_2017-->
+<!--Update_Description:update wording-->

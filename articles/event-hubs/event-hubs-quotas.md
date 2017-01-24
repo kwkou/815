@@ -13,8 +13,8 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="na"
-    ms.date="09/27/2016"
-    wacn.date="11/08/2016"
+    ms.date="12/05/2016"
+    wacn.date="01/23/2017"
     ms.author="sethm" />  
 
 
@@ -25,3 +25,4 @@
 [AZURE.INCLUDE [service-bus-quotas-table](../../includes/event-hubs-limits.md)]
 
 <!---HONumber=Mooncake_1031_2016-->
+<!--Update_Description:update meta properties-->
