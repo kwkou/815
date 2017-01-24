@@ -45,7 +45,7 @@ Cassandra 可以部署到单个或多个 Azure 区域，具体取决于工作负
 ### 单区域部署
 首先学习单区域部署，然后运用所学的知识创建多区域模型。将使用 Azure 虚拟网络创建独立的子网，以满足上述网络安全要求。介绍的单区域部署创建过程使用 Ubuntu 14.04 LTS 和 Cassandra 2.08；但是，可以轻松调整该过程，使其适用于其他 Linux 产品。以下是单区域部署的部分系统特征。
 
-**高可用性：**图 1 中所示的 Cassandra 节点已部署到两个可用性集，因此可将这些节点分布到多个容错域，以实现高可用性。将标注每个可用性集的 VM 映射到 2 个容错域。Azure 使用容错域概念管理计划外停机（如硬件或软件故障），同时使用升级域（如主机或来宾 OS 修补/升级、应用程序升级）概念管理计划内停机。请参阅 [Azure 应用程序的灾难恢复和高可用性](http://msdn.microsoft.com/zh-cn/library/dn251004.aspx)，了解容错域和升级域在实现高可用性方面的作用。
+**高可用性：**图 1 中所示的 Cassandra 节点已部署到两个可用性集，因此可将这些节点分布到多个容错域，以实现高可用性。将标注每个可用性集的 VM 映射到 2 个容错域。Azure 使用容错域概念管理计划外停机（如硬件或软件故障），同时使用升级域（如主机或来宾 OS 修补/升级、应用程序升级）概念管理计划内停机。
 
 ![单区域部署](./media/virtual-machines-linux-classic-cassandra-nodejs/cassandra-linux1.png)
 
@@ -113,10 +113,10 @@ Cassandra 支持两种类型的数据完整性模型 - 一致性和最终一致�
 
 <table>
 <tr><th>软件</th><th>源</th><th>版本</th></tr>
-<tr><td>JRE    </td><td>[JRE 8](http://www.oracle.com/technetwork/java/javase/downloads/server-jre8-downloads-2133154.html) </td><td>8U5</td></tr>
-<tr><td>JNA    </td><td>[JNA](https://github.com/twall/jna) </td><td> 3.2.7</td></tr>
-<tr><td>Cassandra</td><td>[Apache Cassandra 2.0.8](https://archive.apache.org/dist/cassandra/2.0.8/apache-cassandra-2.0.8-bin.tar.gz)</td><td> 2.0.8</td></tr>
-<tr><td>Ubuntu    </td><td>[Azure](https://www.azure.cn) </td><td>14.04 LTS</td></tr>
+<tr><td>JRE    </td><td><a href="http://www.oracle.com/technetwork/java/javase/downloads/server-jre8-downloads-2133154.html">JRE 8</a> </td><td>8U5</td></tr>
+<tr><td>JNA    </td><td><a href="https://github.com/twall/jna">JNA</a> </td><td> 3.2.7</td></tr>
+<tr><td>Cassandra</td><td><a href="http://www.apache.org/dist/cassandra/2.0.8/apache-cassandra-2.0.8-bin.tar.gz">Apache Cassandra 2.0.8</a></td><td> 2.0.8</td></tr>
+<tr><td>Ubuntu    </td><td><a href="https://www.azure.cn">Azure</a> </td><td>14.04 LTS</td></tr>
 </table>
 
 由于下载 JRE 需要手动接受 Oracle 许可证，为了简化部署可先将所有必需软件下载到桌面，然后再将其上载到进行群集部署前需要创建的 Ubuntu 模板映像。
@@ -334,14 +334,14 @@ Azure 在进行预配时需要使用 PEM 或 DER 编码的 X509 公钥。按照�
 
 <table>
 <tr><th>计算机名称    </th><th>子网    </th><th>IP 地址    </th><th>可用性集</th><th>DC/机架</th><th>种子？</th></tr>
-<tr><td>hk-c1-china-north    </td><td>数据    </td><td>10.1.2.4    </td><td>hk-c-aset-1    </td><td>dc =CHINANORTH 机架 =rack1 </td><td>是</td></tr>
-<tr><td>hk-c2-china-north    </td><td>数据    </td><td>10.1.2.5    </td><td>hk-c-aset-1    </td><td>dc =CHINANORTH 机架 =rack1    </td><td>否 </td></tr>
-<tr><td>hk-c3-china-north    </td><td>数据    </td><td>10.1.2.6    </td><td>hk-c-aset-1    </td><td>dc =CHINANORTH 机架 =rack2    </td><td>是</td></tr>
-<tr><td>hk-c4-china-north    </td><td>数据    </td><td>10.1.2.7    </td><td>hk-c-aset-1    </td><td>dc =CHINANORTH 机架 =rack2    </td><td>否 </td></tr>
-<tr><td>hk-c5-china-north    </td><td>数据    </td><td>10.1.2.8    </td><td>hk-c-aset-2    </td><td>dc =CHINANORTH 机架 =rack3    </td><td>是</td></tr>
-<tr><td>hk-c6-china-north    </td><td>数据    </td><td>10.1.2.9    </td><td>hk-c-aset-2    </td><td>dc =CHINANORTH 机架 =rack3    </td><td>否 </td></tr>
-<tr><td>hk-c7-china-north    </td><td>数据    </td><td>10.1.2.10    </td><td>hk-c-aset-2    </td><td>dc =CHINANORTH 机架 =rack4    </td><td>是</td></tr>
-<tr><td>hk-c8-china-north    </td><td>数据    </td><td>10.1.2.11    </td><td>hk-c-aset-2    </td><td>dc =CHINANORTH 机架 =rack4    </td><td>否 </td></tr>
+<tr><td>hk-c1-china-north    </td><td>数据    </td><td>10.1.2.4    </td><td>hk-c-aset-1    </td><td>dc =CHINANORTH rack =rack1 </td><td>是</td></tr>
+<tr><td>hk-c2-china-north    </td><td>数据    </td><td>10.1.2.5    </td><td>hk-c-aset-1    </td><td>dc =CHINANORTH rack =rack1    </td><td>否 </td></tr>
+<tr><td>hk-c3-china-north    </td><td>数据    </td><td>10.1.2.6    </td><td>hk-c-aset-1    </td><td>dc =CHINANORTH rack =rack2    </td><td>是</td></tr>
+<tr><td>hk-c4-china-north    </td><td>数据    </td><td>10.1.2.7    </td><td>hk-c-aset-1    </td><td>dc =CHINANORTH rack =rack2    </td><td>否 </td></tr>
+<tr><td>hk-c5-china-north    </td><td>数据    </td><td>10.1.2.8    </td><td>hk-c-aset-2    </td><td>dc =CHINANORTH rack =rack3    </td><td>是</td></tr>
+<tr><td>hk-c6-china-north    </td><td>数据    </td><td>10.1.2.9    </td><td>hk-c-aset-2    </td><td>dc =CHINANORTH rack =rack3    </td><td>否 </td></tr>
+<tr><td>hk-c7-china-north    </td><td>数据    </td><td>10.1.2.10    </td><td>hk-c-aset-2    </td><td>dc =CHINANORTH rack =rack4    </td><td>是</td></tr>
+<tr><td>hk-c8-china-north    </td><td>数据    </td><td>10.1.2.11    </td><td>hk-c-aset-2    </td><td>dc =CHINANORTH rack =rack4    </td><td>否 </td></tr>
 <tr><td>hk-w1-china-north    </td><td>Web    </td><td>10.1.1.4    </td><td>hk-w-aset-1    </td><td></td><td>不适用</td></tr>
 <tr><td>hk-w2-china-north    </td><td>Web    </td><td>10.1.1.5    </td><td>hk-w-aset-1    </td><td></td><td>不适用</td></tr>
 </table>
@@ -539,13 +539,13 @@ Azure 虚拟网络中的本地网络是映射到远程站点（包括私有云�
 
 | 计算机名称 | 子网 | IP 地址 | 可用性集 | DC/机架 | 种子？ |
 | --- | --- | --- | --- | --- | --- |
-| hk-c1-china-east |数据 |10\.2.2.4 |hk-c-aset-1 |dc =CHINAEAST 机架 =rack1 |是 |
-| hk-c2-china-east |数据 |10\.2.2.5 |hk-c-aset-1 |dc =CHINAEAST 机架 =rack1 |否 |
-| hk-c3-china-east |数据 |10\.2.2.6 |hk-c-aset-1 |dc =CHINAEAST 机架 =rack2 |是 |
-| hk-c5-china-east |数据 |10\.2.2.8 |hk-c-aset-2 |dc =CHINAEAST 机架 =rack3 |是 |
-| hk-c6-china-east |数据 |10\.2.2.9 |hk-c-aset-2 |dc =CHINAEAST 机架 =rack3 |否 |
-| hk-c7-china-east |数据 |10\.2.2.10 |hk-c-aset-2 |dc =CHINAEAST 机架 =rack4 |是 |
-| hk-c8-china-east |数据 |10\.2.2.11 |hk-c-aset-2 |dc =CHINAEAST 机架 =rack4 |否 |
+| hk-c1-china-east |数据 |10\.2.2.4 |hk-c-aset-1 |dc =CHINAEAST rack =rack1 |是 |
+| hk-c2-china-east |数据 |10\.2.2.5 |hk-c-aset-1 |dc =CHINAEAST rack =rack1 |否 |
+| hk-c3-china-east |数据 |10\.2.2.6 |hk-c-aset-1 |dc =CHINAEAST rack =rack2 |是 |
+| hk-c5-china-east |数据 |10\.2.2.8 |hk-c-aset-2 |dc =CHINAEAST rack =rack3 |是 |
+| hk-c6-china-east |数据 |10\.2.2.9 |hk-c-aset-2 |dc =CHINAEAST rack =rack3 |否 |
+| hk-c7-china-east |数据 |10\.2.2.10 |hk-c-aset-2 |dc =CHINAEAST rack =rack4 |是 |
+| hk-c8-china-east |数据 |10\.2.2.11 |hk-c-aset-2 |dc =CHINAEAST rack =rack4 |否 |
 | hk-w1-china-east |Web |10\.2.1.4 |hk-w-aset-1 |不适用 |不适用 |
 | hk-w2-china-east |Web |10\.2.1.5 |hk-w-aset-1 |不适用 |不适用 |
 
