@@ -153,8 +153,7 @@ Service Fabric 使用 X.509 证书保护群集，提供应用程序安全功能�
 2. 导航到本地目录
 2. 在 PowerShell 窗口中导入 ServiceFabricRPHelpers 模块：
 
-
- 	Import-Module "C:..\\ServiceFabricRPHelpers\\ServiceFabricRPHelpers.psm1"
+		Import-Module "C:..\\ServiceFabricRPHelpers\\ServiceFabricRPHelpers.psm1"
 
      
 此 PowerShell 模块中的 `Invoke-AddCertToKeyVault` 命令自动将证书私钥的格式设置为 JSON 字符串，并将它上载到密钥保管库。使用该字符串可将群集证书与任何其他应用程序证书添加到密钥保管库。针对要在群集中安装的其他任何证书重复此步骤。
