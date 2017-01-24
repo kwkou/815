@@ -1,17 +1,17 @@
 <properties
 	pageTitle="基于 EventProcessorHost 消费 Azure 事件中心消息"
 	description="基于 EventProcessorHost 消费 Azure 事件中心消息"
-	service="microsoft.notificationhubs"
-	resource="notificationhubs"
+	service=""
+	resource="eventhubs"
 	authors=""
 	displayOrder=""
 	selfHelpType=""
 	supportTopicIds=""
 	productPesIds=""
-	resourceTags="Notification Hubs, EventProcessorHost"
+	resourceTags="Event Hubs, EventProcessorHost"
 	cloudEnvironments="MoonCake" />
 <tags
-	ms.service="notification-hubs-aog"
+	ms.service="event-hubs-aog"
 	ms.date=""
 	wacn.date="01/12/2017" />
 # 基于 EventProcessorHost 消费 Azure 事件中心消息
