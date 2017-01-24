@@ -20,14 +20,14 @@
 
 
 # 创建 Azure 函数应用和 Azure 存储帐户
-[Azure Functions](../../articles/azure-functions/functions-overview.md) 是一种解决方案，特别适合在云中运行*函数*（小块代码）。Azure 函数应用在 Azure 中托管函数的执行。
+Azure Functions 是一种解决方案，特别适合在云中运行*函数*（小块代码）。Azure 函数应用在 Azure 中托管函数的执行。
 
 ## 执行的操作
 使用 Azure Resource Manager 模板创建 Azure 函数应用和 Azure 存储帐户。Azure 函数应用可侦听 Azure IoT 中心事件、处理传入消息以及将其写入到 Azure 表存储。存储帐户用于从 Azure 表中读取消息的保存副本。如果有问题，可在[故障排除页][troubleshooting]上查找解决方案。
 
 ## 学习的内容
 本文介绍：
-* 如何使用 [Azure Resource Manager](../../articles/azure-resource-manager/resource-group-overview.md) 部署 Azure 资源。
+* 如何使用 [Azure Resource Manager](/documentation/articles/resource-group-overview/) 部署 Azure 资源。
 * 如何使用 Azure 函数应用处理 IoT 中心消息并将其写入到 Azure 表存储的表中。
 
 ## 所需条件
@@ -76,12 +76,12 @@
 <!-- Images and links -->
 
 
-[troubleshooting]: iot-hub-intel-edison-kit-node-troubleshooting.md
-[get-started-with-your-intel-edison]: iot-hub-intel-edison-kit-node-get-started.md
-[create-your-azure-iot-hub]: iot-hub-intel-edison-kit-node-get-started.md
-[repo-structure]: media/iot-hub-intel-edison-lessons/lesson3/repo_structure.png
-[arm-template-parameters]: media/iot-hub-intel-edison-lessons/lesson3/arm_para.png
-[created-your-iot-hub-and-registered-intel-edison]: iot-hub-intel-edison-kit-node-lesson2-prepare-azure-iot-hub.md
-[send-device-to-cloud-messages]: iot-hub-intel-edison-kit-node-lesson3-run-azure-blink.md
+[troubleshooting]: /documentation/articles/iot-hub-intel-edison-kit-node-troubleshooting/
+[get-started-with-your-intel-edison]: /documentation/articles/iot-hub-intel-edison-kit-node-get-started/
+[create-your-azure-iot-hub]: /documentation/articles/iot-hub-intel-edison-kit-node-get-started/
+[repo-structure]: ./media/iot-hub-intel-edison-lessons/lesson3/repo_structure.png
+[arm-template-parameters]: ./media/iot-hub-intel-edison-lessons/lesson3/arm_para.png
+[created-your-iot-hub-and-registered-intel-edison]: /documentation/articles/iot-hub-intel-edison-kit-node-lesson2-prepare-azure-iot-hub/
+[send-device-to-cloud-messages]: /documentation/articles/iot-hub-intel-edison-kit-node-lesson3-run-azure-blink/
 
 <!---HONumber=Mooncake_0103_2017-->
