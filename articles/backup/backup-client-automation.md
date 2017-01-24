@@ -57,13 +57,13 @@ Azure PowerShell 1.0 已在 2015 年 10 月发布。此版本在 0.9.8 版本的
 
 4. 指定要使用的存储冗余类型；你可以使用[本地冗余存储 (LRS)](/documentation/articles/storage-redundancy/#locally-redundant-storage/) 或[异地冗余存储 (GRS)](/documentation/articles/storage-redundancy/#geo-redundant-storage/)。以下示例显示，testVault 的 -BackupStorageRedundancy 选项设置为 GeoRedundant。
    
-   > [AZURE.TIP]
-   许多 Azure 备份 cmdlet 要求使用恢复服务保管库对象作为输入。因此，在变量中存储备份恢复服务保管库对象可提供方便。
-   > 
-   > 
+	> [AZURE.TIP]
+	> 许多 Azure 备份 cmdlet 要求使用恢复服务保管库对象作为输入。因此，在变量中存储备份恢复服务保管库对象可提供方便。
+	> 
+	> 
    
-	PS C:\> $vault1 = Get-AzureRmRecoveryServicesVault -Name "testVault"
-	PS C:\> Set-AzureRmRecoveryServicesBackupProperties  -vault $vault1 -BackupStorageRedundancy GeoRedundant
+		PS C:\> $vault1 = Get-AzureRmRecoveryServicesVault -Name "testVault"
+		PS C:\> Set-AzureRmRecoveryServicesBackupProperties  -vault $vault1 -BackupStorageRedundancy GeoRedundant
 
 
 ## 在订阅中查看保管库
