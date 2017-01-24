@@ -14,7 +14,7 @@
     ms.tgt_pltfrm="NA"
     ms.workload="NA"
     ms.date="12/09/2016"
-    wacn.date="01/17/2017"
+    wacn.date="01/20/2017"
     ms.author="ryanwi" />  
 
 
@@ -80,4 +80,5 @@
 
 有关使用 PowerShell 或 FabricClient 进行连接的示例，请参阅[连接到安全群集](/documentation/articles/service-fabric-connect-to-secure-cluster/)。
 
-<!---HONumber=Mooncake_Quality_Review_0117_2017-->
+<!---HONumber=Mooncake_0116_2017-->
+<!--update: wording update-->

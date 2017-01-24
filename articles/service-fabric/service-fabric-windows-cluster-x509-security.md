@@ -14,7 +14,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="na"
     ms.date="12/12/2016"
-    wacn.date="01/17/2017"
+    wacn.date="01/20/2017"
     ms.author="dkshir" />  
 
 
@@ -280,4 +280,5 @@
 > 
 > 
 
-<!---HONumber=Mooncake_Quality_Review_0117_2017-->
+<!---HONumber=Mooncake_0116_2017-->
+<!--update: wording update-->

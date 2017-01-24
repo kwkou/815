@@ -14,7 +14,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="na"
     ms.date="12/06/2016"
-    wacn.date="01/17/2017"
+    wacn.date="01/20/2017"
     ms.author="chackdan" />  
 
 
@@ -31,7 +31,6 @@ Service Fabric 群集是你拥有的资源。必须保护群集，防止未经�
 保护群集中 VM 或计算机之间的通信。这可确保只有已获授权加入群集的计算机可以参与托管应用程序和群集中的服务。
 
 ![节点到节点通信示意图][Node-to-Node]  
-
 
 在 Azure 上运行的群集或在 Windows 上运行的独立群集可对 Windows Server 计算机使用[证书安全性](https://msdn.microsoft.com/zh-cn/library/ff649801.aspx)或 [Windows 安全性](https://msdn.microsoft.com/zh-cn/library/ff649396.aspx)。
 ### 节点到节点的证书安全性
@@ -116,4 +115,5 @@ X.509 数字证书通常用于验证客户端与服务器，以及对消息进�
 [Node-to-Node]: ./media/service-fabric-cluster-security/node-to-node.png
 [Client-to-Node]: ./media/service-fabric-cluster-security/client-to-node.png
 
-<!---HONumber=Mooncake_Quality_Review_0117_2017-->
+<!---HONumber=Mooncake_0116_2017-->
+<!--update: wording update-->
