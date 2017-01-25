@@ -15,8 +15,8 @@
 	ms.tgt_pltfrm="vm-windows"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/08/2016"
-	wacn.date="12/26/2016"
+	ms.date="12/16/2016"
+	wacn.date="01/25/2017"
 	ms.author="iainfou"/>
 
 # 网络基础结构准则

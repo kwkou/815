@@ -15,8 +15,8 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="infrastructure-services"
-    ms.date="11/16/2016"
-    wacn.date="01/09/2017"
+    ms.date="12/13/2016"
+    wacn.date="01/25/2017"
     ms.author="gwallace" />
 
 # 使用适用于 Azure 资源管理器的 PowerShell 创建 Azure 应用程序网关的自定义探测

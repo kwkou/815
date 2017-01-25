@@ -12,8 +12,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="08/05/2016"
-   wacn.date="01/09/2017"
+   ms.date="12/09/2016"
+   wacn.date="01/25/2017"
    ms.author="bwren" />
 
 # 在 Azure 自动化中计划 Runbook

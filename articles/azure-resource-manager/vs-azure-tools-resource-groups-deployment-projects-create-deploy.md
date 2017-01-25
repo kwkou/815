@@ -14,8 +14,8 @@
     ms.topic="get-started-article"
     ms.tgt_pltfrm="na"
     ms.workload="na"
-    ms.date="09/20/2016"
-    wacn.date="12/26/2016"
+    ms.date="12/19/2016"
+    wacn.date="01/25/2017"
     ms.author="tomfitz" />
 
 # 通过 Visual Studio 创建和部署 Azure 资源组

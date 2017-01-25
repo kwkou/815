@@ -15,8 +15,8 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="11/17/2016"
-    wacn.date="01/05/2017"
+    ms.date="11/23/2016"
+    wacn.date="01/25/2017"
     ms.author="nitinme" />
 
 # Azure HDInsight 上的 Hadoop 组件发行说明

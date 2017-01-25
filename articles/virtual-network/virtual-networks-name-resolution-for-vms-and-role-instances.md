@@ -12,8 +12,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="08/31/2016"
-   wacn.date="12/12/2016"
+   ms.date="12/06/2016"
+   wacn.date="01/25/2017"
    ms.author="telmos" />
 
 # VM 和角色实例的名称解析
