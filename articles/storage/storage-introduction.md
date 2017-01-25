@@ -14,7 +14,7 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="get-started-article"
-    ms.date="11/17/2016"
+    ms.date="12/08/2016"
     wacn.date="01/24/2017"
     ms.author="tamram" />  
 
