@@ -12,8 +12,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="vm-windows"
    ms.workload="na"
-   ms.date="08/15/2016"
-   wacn.date="12/26/2016"
+   ms.date="12/09/2016"
+   wacn.date="01/25/2017"
    ms.author="tarcher" />
 
 # 在 Visual Studio 中创建和管理 Windows 虚拟机

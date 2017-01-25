@@ -12,8 +12,8 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="cache-redis"
 	ms.workload="tbd"
-	ms.date="09/01/2016"
-	wacn.date="01/09/2017"
+	ms.date="12/13/2016"
+	wacn.date="01/25/2017"
 	ms.author="sdanie" />
 
 # Azure Redis 缓存的 ASP.NET 会话状态提供程序

@@ -14,8 +14,8 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="big-data"
-    ms.date="10/21/2016"
-    wacn.date="12/12/2016"
+    ms.date="12/01/2016"
+    wacn.date="01/25/2017"
     ms.author="larryfr" />
 
 # 使用 Azure 虚拟网络扩展 HDInsight 功能

@@ -12,8 +12,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="11/16/2016"
-   wacn.date="01/03/2017"
+   ms.date="12/16/2016"
+   wacn.date="01/25/2017"
    ms.author="gwallace"/>
 
 # 使用经典部署模型配置应用程序网关以进行 SSL 卸载
