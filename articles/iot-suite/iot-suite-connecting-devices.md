@@ -15,8 +15,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="10/05/2016"
-   wacn.date="10/31/2016"
+   ms.date="01/04/2017"
+   wacn.date="01/25/2017"
    ms.author="dobett"/>  
 
 
@@ -373,3 +373,4 @@ IoT 中心客户端库使用一个模型来指定设备发送到 IoT 中心的�
 [lnk-c-project-properties]: https://msdn.microsoft.com/zh-cn/library/669zx6zc.aspx
 
 <!---HONumber=Mooncake_0815_2016-->
+<!--Update_Description:update meta properties-->
