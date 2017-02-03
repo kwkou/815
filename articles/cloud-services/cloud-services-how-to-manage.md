@@ -13,8 +13,8 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="11/16/2016"
-	wacn.date="12/12/2016"
+	ms.date="12/27/2016"
+	wacn.date="01/25/2017"
 	ms.author="adegeo"/>
 
 
@@ -77,8 +77,22 @@
 
 	为节省计算成本，确定新生产部署按预期执行时，可删除过渡环境中的部署。
 
-## <a name="how-to-link-a-resource-to-a-cloud-service"></a> 如何：将资源链接到云服务
+### 有关交换部署的常见问题
 
+**交换部署的先决条件是什么？**
+
+成功的部署交换有两个先决条件：
+
+- 如果想要将静态 IP 地址用于生产槽，也必须为过渡槽保留一个静态 IP 地址。否则，交换将失败。
+
+- 在执行交换之前，你的角色的所有实例必须都在运行。可以在 Azure 经典管理门户中或使用 [Windows PowerShell 中的 Get-AzureRole 命令](https://docs.microsoft.com/zh-cn/powershell/servicemanagement/azure.service/v3.1.0/get-azurerole)检查实例的状态。
+
+请注意，来宾 OS 更新和服务修复操作也会导致部署交换失败。有关详细信息，请参阅[排查云服务部署问题](/documentation/articles/cloud-services-troubleshoot-deployment-problems/)。
+
+**应用程序的交换是否会导致停机？ 应如何处理它？**
+
+如在上一部分中所述，部署交换通常非常快，因为它只更改 Azure Load Balancer 中的配置。但是，在某些情况下，它会需要 10 秒或更长时间并导致暂时性连接故障。
+## <a name="how-to-link-a-resource-to-a-cloud-service"></a> 如何：将资源链接到云服务
 要显示云服务对其他资源的依赖性，可将 Azure SQL 数据库实例或存储帐户链接到云服务。可以在“链接的资源”页上链接和取消链接资源，然后在云服务仪表板上监视其使用情况。如果链接的存储帐户启用了监视，可在云服务仪表板上监视“请求总数”。
 
 使用“链接”可将新的或现有的 SQL 数据库实例或存储帐户链接到云服务。然后即可在“缩放”页上缩放数据库以及正使用它的云服务角色。（存储帐户可在使用率增加时自动缩放。） 有关详细信息，请参阅[如何缩放云服务和链接的资源](/documentation/articles/cloud-services-how-to-scale/)。
@@ -161,4 +175,5 @@
 * 配置[自定义域名](/documentation/articles/cloud-services-custom-domain-name/)。
 * 配置 [SSL 证书](/documentation/articles/cloud-services-configure-ssl-certificate/)。
 
-<!---HONumber=Mooncake_1128_2016-->
+<!---HONumber=Mooncake_0120_2017-->
+<!--Update_Description:update wording and add the section of Common questions about swapping deployments-->

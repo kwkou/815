@@ -13,8 +13,8 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="nodejs" 
 	ms.topic="article" 
-	ms.date="11/01/2016" 
-	wacn.date="12/16/2016" 
+	ms.date="12/22/2016" 
+	wacn.date="01/25/2017" 
 	ms.author="robmcm"/>
 
 # 在 Azure 云服务中使用 Socket.IO 生成 Node.js 聊天应用程序
@@ -172,3 +172,4 @@ Socket.IO 在 node.js 服务器和客户端之间提供实时通信。本教程�
  
 
 <!---HONumber=Mooncake_Quality_Review_1202_2016-->
+<!--Update_Description:update meta properties-->
