@@ -14,8 +14,8 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="nodejs"
 	ms.topic="hero-article"
-	ms.date="11/01/2016" 
-	wacn.date="01/03/2017" 
+	ms.date="12/22/2016" 
+	wacn.date="01/25/2017" 
 	ms.author="robmcm"/>
 
 # 生成 Node.js 应用程序并将其部署到 Azure 云服务
@@ -196,3 +196,4 @@ Node.js 应用在 **server.js** 文件中定义，该文件位于 Web 角色（�
 [The status of the Remove-AzureService command]: ./media/cloud-services-nodejs-develop-deploy-app/node49.png
 
 <!---HONumber=Mooncake_1226_2016-->
+<!--Update_Description:update meta properties-->

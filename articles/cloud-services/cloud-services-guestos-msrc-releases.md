@@ -14,14 +14,36 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="tbd" 
-   ms.date="12/01/2016"
+   ms.date="01/10/2017"
    ms.author="raiye"
-   wacn.date="01/03/2017"/>  
+   wacn.date="01/25/2017"/>  
 
 
 # Azure 来宾 OS 
 
 下表显示了适用于 Azure 来宾 OS 的 Microsoft 安全响应中心 (MSRC) 更新。搜索本文以确定特定更新是否适用于使用的来宾 OS。引入这些更新的特定[系列][family-explain]始终会包含这些更新。
+
+## 1 月来宾 OS
+| 公告 ID | 上层知识库文章 | 漏洞描述 | 来宾 OS | 首次引入日期 |
+| --- | --- | --- | --- | --- |
+| MS17-004 | [3216771] |本地安全机构子系统服务的安全更新 |2\.59 |2017 年 1 月 10 日 |
+
+## 12 月来宾 OS
+| 公告 ID | 上层知识库文章 | 漏洞描述 | 来宾 OS | 首次引入日期 |
+| --- | --- | --- | --- | --- |
+| MS16-144 |[3204059] |Internet Explorer 的累积安全更新 |2\.58、3.46、4.39 |2016 年 12 月 13 日 |
+| MS16-145 |[3204062] |Microsoft Edge 的累积安全更新 |5\.4 |2016 年 12 月 13 日 |
+| MS16-146 |[3204066] |Microsoft 图形组件的安全更新|2\.58、3.46、4.39、5.4 |2016 年 12 月 13 日 |
+| MS16-147 |[3204063] |Microsoft Uniscribe 的安全更新|2\.58、3.46、4.39、5.4 |2016 年 12 月 13 日 |
+| MS16-149 |[3205655] |Microsoft Windows 的安全更新|2\.58、3.46、4.39、5.4 |2016 年 12 月 13 日 |
+| MS16-150 |[3205642] |安全内核模式的安全更新 |5\.4 |2016 年 12 月 13 日 |
+| MS16-151 |[3205651] |内核模式驱动程序的安全更新|2\.58、3.46、4.39、5.4 |2016 年 12 月 13 日 |
+| MS16-152 |[3199709] |Windows 内核的安全更新 |5\.4 |2016 年 12 月 13 日 |
+| MS16-153 |[3207328] |公用日志文件系统驱动程序的安全更新|2\.58、3.46、4.39、5.4 |2016 年 12 月 13 日 |
+| MS16-155 |[3205640] |.Net Framework 的安全更新 |5\.4 |2016 年 12 月 13 日 |
+| 不适用 |[3197868] |2016 年 11 月 Windows 7 SP1 和 Windows Server 2008 R2 SP1 安全质量月度汇总更新 |2\.58 |2016 年 12 月 13 日 |
+| 不适用 |[3197877] |2016 年 11 月 Windows Server 2012 安全质量月度汇总更新 |3\.46 |2016 年 12 月 13 日 |
+| 不适用 |[3197874] |2016 年 11 月 Windows 8.1 和 Windows Server 2012 R2 安全质量月度汇总更新 |4\.39 |2016 年 12 月 13 日 |
 
 ## 11 月来宾 OS
 | 公告 ID | 上层知识库文章 | 漏洞描述 | 来宾 OS | 首次引入日期 |
@@ -379,6 +401,22 @@
 | 不适用 |[2999802] |在 Windows 中打印时，虚线变成实线 |4\.15、3.22、2.34 |2015 年 1 月 13 日 |
 | 不适用 |[2896881] |在 Windows 中登录期间使用 AddPrinterConnection VBScript 命令映射用户的打印机时，登录时间过长 |4\.15、3.22、2.34 |2015 年 1 月 13 日 |
 
+[3216771]: https://technet.microsoft.com/zh-cn/library/security/MS17-004
+
+[3204059]: http://support.microsoft.com/zh-cn/kb/3204059
+[3204062]: http://support.microsoft.com/zh-cn/kb/3204062
+[3204066]: http://support.microsoft.com/zh-cn/kb/3204066
+[3204063]: http://support.microsoft.com/zh-cn/kb/3204063
+[3205655]: http://support.microsoft.com/zh-cn/kb/3205655
+[3205642]: http://support.microsoft.com/zh-cn/kb/3205642
+[3205651]: http://support.microsoft.com/zh-cn/kb/3205651
+[3199709]: http://support.microsoft.com/zh-cn/kb/3199709
+[3207328]: http://support.microsoft.com/zh-cn/kb/3207328
+[3205640]: http://support.microsoft.com/zh-cn/kb/3205640
+[3197868]: http://support.microsoft.com/zh-cn/kb/3197868
+[3197877]: http://support.microsoft.com/zh-cn/kb/3197877
+[3197874]: http://support.microsoft.com/zh-cn/kb/3197874
+
 [3199057]: http://support.microsoft.com/zh-cn/kb/3199057
 [3199172]: http://support.microsoft.com/zh-cn/kb/3199172
 [3199151]: http://support.microsoft.com/zh-cn/kb/3199151
@@ -674,4 +712,5 @@
 [family-explain]: /documentation/articles/cloud-services-guestos-update-matrix/#guest-os-family-version-and-release-explanation
  
 
-<!---HONumber=Mooncake_1226_2016-->
+<!---HONumber=Mooncake_0120_2017-->
+<!--Update_Description:update wording-->

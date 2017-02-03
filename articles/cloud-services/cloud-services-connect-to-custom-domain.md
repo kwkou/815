@@ -14,8 +14,8 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="10/21/2016"
-    wacn.date="12/26/2016"
+    ms.date="01/04/2017"
+    wacn.date="01/25/2017"
     ms.author="adegeo"/>
 
 
@@ -152,3 +152,4 @@
 
 
 <!---HONumber=Mooncake_Quality_Review_1215_2016-->
+<!--Update_Description:update meta properties-->

@@ -13,8 +13,8 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="10/11/2016" 
-	wacn.date="12/12/2016"
+	ms.date="01/04/2017" 
+	wacn.date="01/25/2017"
 	ms.author="adegeo"/>
 
 
@@ -86,3 +86,4 @@ Azure 经典管理门户还允许你[为 Azure 云服务中的角色启用远程
 * 配置 [SSL 证书](/documentation/articles/cloud-services-configure-ssl-certificate/)。
 
 <!---HONumber=Mooncake_Quality_Review_1118_2016-->
+<!--Update_Description:update meta properties-->

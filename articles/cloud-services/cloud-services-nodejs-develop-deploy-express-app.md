@@ -13,8 +13,8 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="nodejs" 
 	ms.topic="article" 
-	ms.date="11/01/2016" 
-	wacn.date="12/05/2016" 
+	ms.date="12/22/2017" 
+	wacn.date="01/25/2017"  
 	ms.author="robmcm"/>
 
 
@@ -24,7 +24,7 @@
 
 # 使用 Express 在 Azure 云服务中生成 Node.js Web 应用程序
 
-Node.js 包含核心运行时中最小的一个功能集。开发人员在开发 Node.js 应用程序时经常会使用第三方模块来提供额外功能。在本教程中，你将使用 [Express][] 模块新建一个应用程序，该模块可提供用于创建 Node.js Web 应用程序的 MVC 框架。
+Node.js 包含核心运行时中最小的一个功能集。开发人员在开发 Node.js 应用程序时经常会使用第三方模块来提供额外功能。在本教程中，你将使用 [Express][Express] 模块新建一个应用程序，该模块可提供用于创建 Node.js Web 应用程序的 MVC 框架。
 
 以下是已完成应用程序的屏幕截图：
 
@@ -39,7 +39,6 @@ Node.js 包含核心运行时中最小的一个功能集。开发人员在开发
 
 	![Azure PowerShell 图标](./media/cloud-services-nodejs-develop-deploy-express-app/azure-powershell-start.png)
 
-	[AZURE.INCLUDE [install-dev-tools](../../includes/install-dev-tools.md)]
 
 2. 将目录切换到 **c:\\node** 目录，然后输入下列命令以新建一个名为 **expressapp** 的解决方案和名为 **WebRole1** 的 Web 角色：
 
@@ -106,7 +105,7 @@ Node.js 包含核心运行时中最小的一个功能集。开发人员在开发
 
     ![index.jade 文件的内容。](./media/cloud-services-nodejs-develop-deploy-express-app/getting-started-19.png)
 
-    Jade 是 Express 应用程序使用的默认视图引擎。有关 Jade 视图引擎的详细信息，请参阅 [http://jade-lang.com][]。
+    Jade 是 Express 应用程序使用的默认视图引擎。有关 Jade 视图引擎的详细信息，请参阅 [http://jade-lang.com][http://jade-lang.com]。
 
 2.  通过追加 **in Azure** 来修改最后一行文本。
 
@@ -140,4 +139,5 @@ Node.js 包含核心运行时中最小的一个功能集。开发人员在开发
 
  
 
-<!---HONumber=Mooncake_1128_2016-->
+<!---HONumber=Mooncake_0120_2017-->
+<!--Update_Description:update wording-->

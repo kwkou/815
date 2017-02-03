@@ -12,8 +12,8 @@ ms.workload="tbd"
 ms.tgt_pltfrm="na" 
 ms.devlang="na" 
 ms.topic="article" 
-ms.date="09/06/2016" 
-wacn.date="12/12/2016" 
+ms.date="01/04/2017" 
+wacn.date="01/25/2017" 
 ms.author="adegeo"/>
 
 # 在 .NET 中自定义 Web 角色或辅助角色的生命周期
@@ -81,3 +81,4 @@ Azure 使角色实例联机时，会调用 **OnStart** 方法。OnStart 代码�
 了解如何[创建云服务包](/documentation/articles/cloud-services-model-and-package/)。
 
 <!---HONumber=Mooncake_Quality_Review_1202_2016-->
+<!--Update_Description:update meta properties-->

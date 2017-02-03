@@ -13,8 +13,8 @@ ms.workload="tbd"
 ms.tgt_pltfrm="na" 
 ms.devlang="na" 
 ms.topic="article" 
-ms.date="10/17/2016" 
-wacn.date="12/05/2016" 
+ms.date="01/04/2017" 
+wacn.date="01/25/2017" 
 ms.author="adegeo"/>
 
 # 常见的云服务启动任务
@@ -516,3 +516,4 @@ ServiceDefinition.cmd：
 [RoleInstanceValue]: https://msdn.microsoft.com/zh-cn/library/azure/gg557552.aspx#RoleInstanceValue
 
 <!---HONumber=Mooncake_1128_2016-->
+<!--Update_Description:update meta properties-->
