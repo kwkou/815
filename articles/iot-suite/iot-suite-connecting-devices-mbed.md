@@ -15,8 +15,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="10/05/2016"
-   wacn.date="10/31/2016"
+   ms.date="01/04/2017"
+   wacn.date="01/25/2017"
    ms.author="dobett"/>
 
 
@@ -79,12 +79,14 @@
 
 
 ### 演练代码
-
-如果对程序的工作原理感兴趣，此部分中介绍了示例代码的一些关键部分。如果你只是想运行代码，请跳到[生成并运行程序](#buildandrun)。
+如果对程序的工作原理感兴趣，此部分中介绍了示例代码的一些关键部分。若只需运行代码，请跳到[生成并运行程序](#buildandrun)。
 
 #### 定义模型
+此示例使用[序列化程序][lnk-serializer]库定义一个模型，该模型指定设备可以发送到 IoT 中心以及从 IoT 中心接收的消息。在此示例中，**Contoso** 命名空间定义的 **Thermostat** 模型指定了以下内容：
 
-此示例使用[序列化程序][lnk-serializer]库定义一个模型，该模型指定设备可以发送到 IoT 中心以及从 IoT 中心接收的消息。在此示例中，**Contoso** 命名空间定义一个 **Thermostat** 模型，该模型指定 **Temperature**、**ExternalTemperature** 和 **Humidity** 遥测数据以及元数据（如设备 ID、设备属性和设备响应的命令）：
+- **温度**、**ExternalTemperature** 和**湿度**遥测数据。
+- 元数据，例如设备 ID、设备属性。
+- 设备对其进行响应的命令：
 
 	BEGIN_NAMESPACE(Contoso);
 	
@@ -228,4 +230,5 @@
 [lnk-mbed-pcconnect]: https://developer.mbed.org/platforms/FRDM-K64F/#pc-configuration
 [lnk-serializer]: /documentation/articles/iot-hub-device-sdk-c-intro/#serializer
 
-<!---HONumber=Mooncake_0815_2016-->
+<!---HONumber=Mooncake_0120_2017-->
+<!--Update_Description:update wording-->
