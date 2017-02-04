@@ -8,9 +8,15 @@
    editor="" />  
 
 <tags
-   ms.service="multiple"
-   ms.date="05/08/2016"
-   wacn.date="08/22/2016" />
+    ms.assetid="92ee2f9e-ec49-4c7a-900d-620abe5e9d8a"
+    ms.service="multiple"
+    ms.devlang="dotnet"
+    ms.topic="article"
+    ms.tgt_pltfrm="na"
+    ms.workload="multiple"
+    ms.date="11/11/2016"
+    wacn.date="02/04/2017"
+    ms.author="tarcher" />
 
 # 准备从 Visual Studio 发布或部署 Azure 应用程序
 

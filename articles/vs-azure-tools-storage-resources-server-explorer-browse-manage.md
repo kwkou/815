@@ -6,10 +6,17 @@
    authors="TomArcher"
    manager="douge"
    editor="" />
+
 <tags
-   ms.service="storage"
-   ms.date="07/18/2016"
-   wacn.date="09/19/2016" />
+    ms.assetid="658dc064-4a4e-414b-ae5a-a977a34c930d"
+    ms.service="storage"
+    ms.devlang="multiple"
+    ms.topic="article"
+    ms.tgt_pltfrm="na"
+    ms.workload="na"
+    ms.date="11/18/2016"
+    wacn.date="02/04/2017"
+    ms.author="tarcher" />
 
 # 使用服务器资源管理器浏览和管理存储资源
 

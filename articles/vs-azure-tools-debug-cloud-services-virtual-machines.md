@@ -8,10 +8,15 @@
 	editor="" />  
 
 <tags 
-	ms.service="visual-studio-online"
-	ms.date="06/01/2016"
-	wacn.date="08/22/2016" />
-
+    ms.assetid="945e06e0-2100-41af-b218-72347367ddab"
+    ms.service="visual-studio-online"
+    ms.devlang="multiple"
+    ms.topic="article"
+    ms.tgt_pltfrm="multiple"
+    ms.workload="na"
+    ms.date="11/11/2016"
+    wacn.date="02/04/2017"
+    ms.author="tarcher" />
 
 # 在 Visual Studio 中调试云服务或虚拟机
 

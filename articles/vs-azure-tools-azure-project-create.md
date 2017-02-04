@@ -6,10 +6,17 @@
    authors="TomArcher"
    manager="douge"
    editor="" />
+
 <tags
-   ms.service="multiple"
-   ms.date="04/19/2016"
-   wacn.date="05/23/2016" />
+    ms.assetid="ec580df7-3dcc-45a9-a1d9-8c110678dfb5"
+    ms.service="multiple"
+    ms.devlang="multiple"
+    ms.topic="article"
+    ms.tgt_pltfrm="na"
+    ms.workload="na"
+    ms.date="11/11/2016"
+    wacn.date="02/04/2017"
+    ms.author="tarcher" />
 
 # 使用 Visual Studio 创建 Azure 项目
 

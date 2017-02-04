@@ -5,13 +5,18 @@
    documentationCenter="na"
    authors="TomArcher"
    manager="douge"
-   editor="" />  
+   editor="" />
 
 <tags
-   ms.service="multiple"
-   ms.date="06/01/2016"
-   wacn.date="08/22/2016" />  
-
+    ms.assetid="9394adfd-a645-4664-9354-dd5df08e8c91"
+    ms.service="multiple"
+    ms.devlang="dotnet"
+    ms.topic="article"
+    ms.tgt_pltfrm="na"
+    ms.workload="multiple"
+    ms.date="11/11/2016"
+    wacn.date="02/04/2017"
+    ms.author="tarcher" />
 
 # 如何：通过 Visual Studio 将 Web 应用程序迁移和发布到 Azure 云服务
 

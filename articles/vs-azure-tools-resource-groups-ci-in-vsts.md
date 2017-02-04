@@ -7,10 +7,16 @@
 	manager="douge"
 	editor="" />
 
- <tags
-	ms.service="azure-resource-manager"
-	ms.date="04/19/2016"
-	wacn.date="05/23/2016" />
+<tags
+    ms.assetid="b81c172a-be87-4adc-861e-d20b94be9e38"
+    ms.service="azure-resource-manager"
+    ms.devlang="multiple"
+    ms.topic="article"
+    ms.tgt_pltfrm="na"
+    ms.workload="na"
+    ms.date="08/01/2016"
+    wacn.date="02/04/2017"
+    ms.author="mlearned" />
 
 # 使用 Azure 资源组部署项目在 Visual Studio Team Services 中连续集成
 

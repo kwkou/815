@@ -6,10 +6,17 @@
    authors="TomArcher"
    manager="douge"
    editor="" />
-<tags 
-   ms.service="visual-studio-online"
-   ms.date="04/18/2016"
-   wacn.date="05/23/2016" />
+
+<tags
+    ms.assetid="80755da7-8350-4f5c-97ce-2962beabb36d"
+    ms.service="visual-studio-online"
+    ms.devlang="multiple"
+    ms.topic="article"
+    ms.tgt_pltfrm="multiple"
+    ms.workload="na"
+    ms.date="11/11/2016"
+    wacn.date="02/04/2017"
+    ms.author="tarcher" />
 
 # 调试云服务
 

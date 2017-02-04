@@ -8,11 +8,15 @@
    editor="" />  
 
 <tags
-   ms.service="visual-studio-online"
-   ms.date="04/19/2016"
-   wacn.date="08/22/2016" />  
-
-
+    ms.assetid="73108f98-a552-4817-b7a1-551367b71906"
+    ms.service="visual-studio-online"
+    ms.devlang="multiple"
+    ms.topic="article"
+    ms.tgt_pltfrm="multiple"
+    ms.workload="na"
+    ms.date="11/11/2016"
+    wacn.date="02/04/2017"
+    ms.author="tarcher" />
 
 # 使用 Emulator Express 在本地计算机上运行和调试云服务
 

@@ -6,11 +6,17 @@
    authors="TomArcher"
    manager="douge"
    editor="" />
-<tags 
-   ms.service="visual-studio-online"
-   ms.date="04/18/2016"
-   wacn.date="05/16/2016" />
 
+<tags 
+    ms.assetid="7a5501aa-f92c-457c-af9b-92ea50914e24"
+    ms.service="visual-studio-online"
+    ms.devlang="multiple"
+    ms.topic="article"
+    ms.tgt_pltfrm="multiple"
+    ms.workload="na"
+    ms.date="11/11/2016"
+    wacn.date="02/04/2017"
+    ms.author="tarcher" />
 
 # 测试云服务的性能 
 

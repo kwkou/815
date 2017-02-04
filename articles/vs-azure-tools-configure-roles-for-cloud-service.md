@@ -5,12 +5,18 @@
    documentationCenter="na"
    authors="TomArcher"
    manager="douge"
-   editor="" />  
+   editor="" />
 
 <tags
-   ms.service="multiple"
-   ms.date="06/01/2016"
-   wacn.date="08/22/2016" />
+    ms.assetid="d397ef87-64e5-401a-aad5-7f83f1022e16"
+    ms.service="multiple"
+    ms.devlang="dotnet"
+    ms.topic="article"
+    ms.tgt_pltfrm="na"
+    ms.workload="multiple"
+    ms.date="11/11/2016"
+    wacn.date="02/04/2017"
+    ms.author="tarcher" />
 
 # 使用 Visual Studio 配置 Azure 云服务的角色
 

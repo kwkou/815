@@ -6,10 +6,17 @@
    authors="TomArcher"
    manager="douge"
    editor="" />
+
 <tags
-   ms.service="multiple"
-   ms.date="04/18/2016"
-   wacn.date="05/23/2016" />
+    ms.assetid="1d64070a-078d-468a-87f4-e6715de6475f"
+    ms.service="multiple"
+    ms.devlang="dotnet"
+    ms.topic="article"
+    ms.tgt_pltfrm="na"
+    ms.workload="multiple"
+    ms.date="11/18/2016"
+    wacn.date="02/04/2017"
+    ms.author="tarcher" />
 
 # 如何将项目升级到最新版本的 Azure Tools for Visual Studio
 

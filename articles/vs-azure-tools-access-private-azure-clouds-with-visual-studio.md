@@ -8,9 +8,15 @@
    editor="" />  
 
 <tags 
-   ms.service="multiple"
-   ms.date="05/08/2016"
-   wacn.date="08/22/2016" />
+	ms.assetid="9d733c8d-703b-44e7-a210-bb75874c45c8"
+	ms.service="multiple"
+	ms.devlang="dotnet"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="multiple"
+	ms.date="11/11/2016"
+	ms.author="tarcher"
+	wacn.date="02/04/2017" />
 
 
 # 使用 Visual Studio 访问私有 Azure 云

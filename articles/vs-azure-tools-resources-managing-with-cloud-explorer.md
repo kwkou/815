@@ -6,10 +6,17 @@
    authors="TomArcher"
    manager="douge"
    editor="" />
-<tags 
-   ms.service="multiple"
-   ms.date="08/15/2016"
-   wacn.date="09/19/2016" />
+
+<tags
+    ms.assetid="6347dc53-f497-49d5-b29b-e8b9f0e939d7"
+    ms.service="multiple"
+    ms.devlang="dotnet"
+    ms.topic="article"
+    ms.tgt_pltfrm="na"
+    ms.workload="multiple"
+    ms.date="11/11/2016"
+    wacn.date="02/04/2017"
+    ms.author="tarcher" />
 
 # 使用云资源管理器管理 Azure 资源
 

@@ -6,10 +6,17 @@
    authors="TomArcher"
    manager="douge"
    editor="" />
+
 <tags
-   ms.service="multiple"
-   ms.date="04/18/2016"
-   wacn.date="05/23/2016" />
+    ms.assetid="5ec9ae2e-8579-4e5d-999e-8ae05b629bd1"
+    ms.service="multiple"
+    ms.devlang="dotnet"
+    ms.topic="article"
+    ms.tgt_pltfrm="na"
+    ms.workload="multiple"
+    ms.date="11/11/2016"
+    wacn.date="02/04/2017"
+    ms.author="tarcher" />
 
 # 使用 Visual Studio 在 Azure 云服务项目中管理角色
 

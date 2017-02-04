@@ -6,10 +6,17 @@
    authors="TomArcher"
    manager="douge"
    editor="" />
+
 <tags
-   ms.service="multiple"
-   ms.date="05/08/2016"
-   wacn.date="06/27/2016" />
+    ms.assetid="eb3afde6-ba90-4308-9ac1-3cc29da4ede0"
+    ms.service="multiple"
+    ms.devlang="dotnet"
+    ms.topic="article"
+    ms.tgt_pltfrm="na"
+    ms.workload="multiple"
+    ms.date="11/18/2016"
+    wacn.date="02/04/2017"
+    ms.author="tarcher" />
 
 # 从服务器资源管理器访问 Azure 虚拟机
 

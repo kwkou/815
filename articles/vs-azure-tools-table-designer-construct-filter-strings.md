@@ -6,10 +6,17 @@
    authors="TomArcher"
    manager="douge"
    editor="" />
+
 <tags
-   ms.service="storage"
-   ms.date="04/18/2016"
-   wacn.date="05/23/2016" />
+    ms.assetid="a1a10ea1-687a-4ee1-a952-6b24c2fe1a22"
+    ms.service="storage"
+    ms.devlang="multiple"
+    ms.topic="article"
+    ms.tgt_pltfrm="na"
+    ms.workload="na"
+    ms.date="11/18/2016"
+    wacn.date="02/04/2017"
+    ms.author="tarcher" />
 
 # 为表设计器构造筛选字符串
 
