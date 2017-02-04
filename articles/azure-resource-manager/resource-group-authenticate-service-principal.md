@@ -107,7 +107,7 @@
 
 就这么简单！ AD 应用程序和服务主体设置完毕。下一部分演示如何通过 PowerShell 使用凭据进行登录。如果要在代码应用程序中使用凭据，可以跳到[示例应用程序](#sample-applications)。
 
-### <a name="provide-credentials-through-powerShell"></a> 通过 PowerShell 提供凭据
+### <a name="provide-credentials-through-powershell"></a> 通过 PowerShell 提供凭据
 现在，需要以应用程序方式登录以执行相应操作。
 
 1. 运行 `Get-Credential` 命令，以创建包含你的凭据的 `PSCredential` 对象。运行此命令之前需要 `ApplicationId`，所以请确保可以使用它进行粘贴。
