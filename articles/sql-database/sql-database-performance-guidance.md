@@ -14,8 +14,8 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="data-management"
-    ms.date="12/06/2016"
-    wacn.date="01/20/2017"
+    ms.date="01/04/2017"
+    wacn.date="01/25/2017"
     ms.author="carlrab" />  
 
 
@@ -60,15 +60,8 @@ SQL 数据库的所需服务级别取决于每个资源维度的峰值负载要�
 
 [AZURE.INCLUDE [SQL 数据库服务层表](../../includes/sql-database-service-tiers-table.md)]
 
-后续部分详细说明了如何查看与这些限制相关的使用情况。
-
 ### 最大内存中 OLTP 存储
 可以使用 **sys.dm\_db\_resource\_stats** 视图来监视 Azure 内存中存储的使用情况。有关监视的详细信息，请参阅[监视内存中 OLTP 存储](/documentation/articles/sql-database-in-memory-oltp-monitoring/)。
-
-> [AZURE.NOTE]
-目前只能对单一数据库使用 Azure 内存中联机事务处理 (OLTP) 预览版。不能将其用于弹性池中的数据库。
-> 
-> 
 
 ### 最大并发请求数
 若要查看并发请求数，请在 SQL 数据库中运行以下 Transact-SQL 查询：
@@ -442,4 +435,4 @@ SQL Server 用户经常将许多功能集中在单一数据库中。例如，如
 - 有关性能和弹性池的信息，请参阅[何时考虑弹性池](/documentation/articles/sql-database-elastic-pool-guidance/)
 
 <!---HONumber=Mooncake_0116_2017-->
-<!--update: wording update; add introduction for Ibiza portal tools-->
+<!--update: remove some words-->

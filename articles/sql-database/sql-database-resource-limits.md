@@ -14,9 +14,9 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="data-management"
-    ms.date="12/14/2016"
-    wacn.date="01/20/2017"
-    ms.author="carlrab" />
+    ms.date="01/11/2017"
+    wacn.date="01/25/2017"
+    ms.author="carlrab; janeng" />
 
 # Azure SQL 数据库资源限制
 ## 概述
@@ -50,7 +50,7 @@ CPU、内存、日志 I/O 和数据 I/O 以外的资源在达到限制时，将�
 ### 弹性池
 [弹性池](/documentation/articles/sql-database-elastic-pool/)共享池中的数据库中的资源。下表描述了基本、标准和高级弹性池的特征。
 
-[AZURE.INCLUDE [用于弹性数据库的 SQL DB 服务层表](../../includes/sql-database-service-tiers-table-elastic-db-pools.md)]
+[AZURE.INCLUDE [用于弹性数据库的 SQL DB 服务层表](../../includes/sql-database-service-tiers-table-elastic-pools.md)]
 
 有关上述表中列出的每个资源的扩展定义，请参阅[服务层功能和限制](/documentation/articles/sql-database-performance-guidance/#service-tier-capabilities-and-limits)中的描述。有关服务层的概述，请参阅 [Azure SQL 数据库服务层和性能级别](/documentation/articles/sql-database-service-tiers/)。
 
@@ -72,5 +72,5 @@ Azure SQL 数据库自动导出现在处于预览状态且将于 2017 年 3 月 
 
 [SQL 数据库客户端程序的错误消息](/documentation/articles/sql-database-develop-error-messages/)
 
-<!---HONumber=Mooncake_0116_2017-->
-<!--update: wording update; add azure.important about auto-export feature-->
+<!---HONumber=Mooncake_0120_2017-->
+<!--update: update one include reference-->

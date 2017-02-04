@@ -1,22 +1,23 @@
 <properties
-   pageTitle="在迁移到 Azure SQL 数据库之前，使用 SQL Server Management Studio 确定 SQL 数据库的兼容性 | Azure"
-   description="Azure SQL 数据库, 数据库迁移, SQL 数据库兼容性, 导出数据层应用程序向导"
-   services="sql-database"
-   documentationCenter=""
-   authors="CarlRabeler"
-   manager="jhubbard"
-   editor=""/>
-
+    pageTitle="SSMS：Azure SQL Server 数据库兼容性 | Azure"
+    description="在本文中，你将了解如何使用 SQL Server Management Studio 中的“导出数据层应用程序”向导确定要迁移到 SQL 数据库的 SQL Server 数据库是否兼容。"
+    keywords="Microsoft Azure SQL 数据库, 数据库迁移, SQL 数据库兼容性, 导出数据层应用程序向导"
+    services="sql-database"
+    documentationcenter=""
+    author="CarlRabeler"
+    manager="jhubbard"
+    editor="" />
 <tags
-   ms.service="sql-database"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="sqldb-migrate"
-   ms.date="08/29/2016"
-   wacn.date="12/19/2016"
-   ms.author="carlrab"/>  
-
+    ms.assetid="c9ead868-aa1e-4a92-a099-6baf7c0dda32"
+    ms.service="sql-database"
+    ms.custom="migrate and move"
+    ms.devlang="NA"
+    ms.topic="article"
+    ms.tgt_pltfrm="NA"
+    ms.workload="sqldb-migrate"
+    ms.date="01/10/2017"
+    wacn.date="01/25/2017"
+    ms.author="carlrab" />
 
 # 在迁移到 Azure SQL 数据库之前，使用 SQL Server Management Studio 确定 SQL 数据库的兼容性
 
@@ -24,7 +25,6 @@
 - [SSDT](/documentation/articles/sql-database-cloud-migrate-fix-compatibility-issues-ssdt/)
 - [SqlPackage](/documentation/articles/sql-database-cloud-migrate-determine-compatibility-sqlpackage/)
 - [SSMS](/documentation/articles/sql-database-cloud-migrate-determine-compatibility-ssms/)
-- [升级顾问](http://www.microsoft.com/download/details.aspx?id=48119)
 - [SAMW](/documentation/articles/sql-database-cloud-migrate-fix-compatibility-issues/)
  
 在本文中，你将了解如何使用 SQL Server Management Studio 中的“导出数据层应用程序”向导确定要迁移到 SQL 数据库的 SQL Server 数据库是否兼容。
@@ -53,7 +53,7 @@
 
 	![导出设置](./media/sql-database-cloud-migrate/TestForCompatibilityUsingSSMS04.png)  
 
-7. 如果未显示任何错误，则数据库是兼容的，你已可以进行迁移。如果有错误，则需要修复它们。若要查看错误，请单击“验证架构”所对应的错误。
+7. 如果未显示任何错误，则数据库支持兼容，你可以随时进行迁移。如果有错误，则需要修复它们。若要查看错误，请单击“验证架构”所对应的“错误”。
 	![导出设置](./media/sql-database-cloud-migrate/TestForCompatibilityUsingSSMS05.png)
 
 8.	如果 *.BACPAC 文件已成功生成，则数据库与 SQL 数据库兼容，并可随时进行迁移。
@@ -67,8 +67,9 @@
 
 ## 其他资源
 
-- [SQL 数据库 V12](/documentation/articles/sql-database-v12-whats-new/)
+- [SQL 数据库 V12](/documentation/articles/sql-database-features/)
 - [Transact-SQL 部分支持或不支持的函数](/documentation/articles/sql-database-transact-sql-information/)
 - [使用 SQL Server 迁移助手迁移非 SQL Server 数据库](http://blogs.msdn.com/b/ssma/)
 
-<!---HONumber=Mooncake_Quality_Review_1202_2016-->
+<!---HONumber=Mooncake_0120_2017-->
+<!--Update_Description: wording update; Delete one link; Update one link-->

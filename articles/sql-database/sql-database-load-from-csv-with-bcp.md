@@ -1,32 +1,29 @@
 <properties
-   pageTitle="将数据从 CSV 文件载入 Azure SQL 数据库 (bcp) | Azure"
-   description="对于较小的数据，请使用 bcp 将数据导入到 Azure SQL 数据库。"
-   services="sql-database"
-   documentationCenter="NA"
-   authors="CarlRabeler"
-   manager="jhubbard"
-   editor=""/>
-
+    pageTitle="将数据从 CSV 文件载入 Azure SQL 数据库 (bcp) | Azure"
+    description="对于较小的数据，请使用 bcp 将数据导入到 Azure SQL 数据库。"
+    services="sql-database"
+    documentationcenter="NA"
+    author="CarlRabeler"
+    manager="jhubbard"
+    editor="" />
 <tags
-   ms.service="sql-database"
-   ms.devlang="NA"
-   ms.topic="get-started-article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="data-services"
-   ms.date="09/13/2016"
-   wacn.date="11/15/2016"
-   ms.author="carlrab"/>  
-
+    ms.assetid="875f9b8d-f1a1-4895-b717-f45570fb7f80"
+    ms.service="sql-database"
+    ms.custom="migrate and move"
+    ms.devlang="NA"
+    ms.topic="get-started-article"
+    ms.tgt_pltfrm="NA"
+    ms.workload="data-services"
+    ms.date="01/10/2017"
+    wacn.date="01/25/2017"
+    ms.author="carlrab" />  
 
 
 # 将数据从 CSV 载入 Azure SQL 数据仓库（平面文件）
-
 你可以使用 bcp 命令行实用程序将数据从 CSV 文件导入 Azure SQL 数据库。
 
 ## 开始之前
-
 ### 先决条件
-
 若要逐步完成本教程，你需要：
 
 - Azure SQL 数据库逻辑服务器和数据库
@@ -126,4 +123,4 @@ DateId |CalendarQuarter |FiscalQuarter
 <!--Other Web references-->
 [Microsoft 下载中心]: https://www.microsoft.com/download/details.aspx?id=36433
 
-<!---HONumber=Mooncake_1010_2016-->
+<!---HONumber=Mooncake_0120_2017-->
