@@ -1,21 +1,22 @@
 <properties
-   pageTitle="Azure SQL 数据库中的临时表入门 | Azure"
-   description="了解如何开始使用 Azure SQL 数据库中的临时表。"
-   services="sql-database"
-   documentationCenter=""
-   authors="CarlRabeler"
-   manager="jhubbard"
-   editor=""/>
-
+    pageTitle="Azure SQL 数据库中的临时表入门 | Azure"
+    description="了解如何开始使用 Azure SQL 数据库中的临时表。"
+    services="sql-database"
+    documentationcenter=""
+    author="CarlRabeler"
+    manager="jhubbard"
+    editor="" />
 <tags
-   ms.service="sql-database"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="sql-database"
-   ms.date="08/29/2016"
-   wacn.date="12/26/2016"
-   ms.author="carlrab"/>  
+    ms.assetid="c8c0f232-0751-4a7f-a36e-67a0b29fa1b8"
+    ms.service="sql-database"
+    ms.custom="development"
+    ms.devlang="NA"
+    ms.topic="article"
+    ms.tgt_pltfrm="NA"
+    ms.workload="sql-database"
+    ms.date="01/10/2017"
+    wacn.date="01/25/2017"
+    ms.author="carlrab" />
 
 
 #Azure SQL 数据库中的临时表入门
@@ -207,4 +208,4 @@
 有关临时表的详细信息，请参阅 [MSDN 文档](https://msdn.microsoft.com/zh-cn/library/dn935015.aspx)。
 访问第 9 频道收听[客户实施临时表的真实成功案例](https://channel9.msdn.com/Blogs/jsturtevant/Azure-SQL-Temporal-Tables-with-RockStep-Solutions)，观看[临时表现场演示](https://channel9.msdn.com/Shows/Data-Exposed/Temporal-in-SQL-Server-2016)。
 
-<!---HONumber=Mooncake_Quality_Review_1215_2016-->
+<!---HONumber=Mooncake_0120_2017-->

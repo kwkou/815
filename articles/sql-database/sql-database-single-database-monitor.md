@@ -1,24 +1,23 @@
 <properties
-	pageTitle="在 Azure SQL 数据库中监视数据库性能 | Azure"
-	description="了解使用 Azure 工具和动态管理视图监视数据库时可用的选项。"
-	keywords="数据库监视,云数据库性能"
-	services="sql-database"
-	documentationCenter=""
-	authors="CarlRabeler"
-	manager="jhubbard"
-	editor=""/>  
-
-
+    pageTitle="在 Azure SQL 数据库中监视数据库性能 | Azure"
+    description="了解使用 Azure 工具和动态管理视图监视数据库时可用的选项。"
+    keywords="数据库监视,云数据库性能"
+    services="sql-database"
+    documentationcenter=""
+    author="CarlRabeler"
+    manager="jhubbard"
+    editor="" />
 <tags
-	ms.service="sql-database"
-	ms.devlang="na"
-	ms.topic="get-started-article"
-	ms.tgt_pltfrm="na"
-	ms.workload="data-management"
-	ms.date="09/27/2016"
-	wacn.date="12/26/2016"
-	ms.author="carlrab"/>  
-
+    ms.assetid="a2e47475-c955-4a8d-a65c-cbef9a6d9b9f"
+    ms.service="sql-database"
+    ms.custom="monitor and tune"
+    ms.devlang="na"
+    ms.topic="get-started-article"
+    ms.tgt_pltfrm="na"
+    ms.workload="data-management"
+    ms.date="01/10/2017"
+    wacn.date="01/25/2017"
+    ms.author="carlrab" />
 
 # 在 Azure SQL 数据库中监视数据库性能
 若要监视 Azure 中的 SQL 数据库的性能，首先需要监视所选数据库性能级别相关的资源利用率。监视功能可帮助确定数据库是否超出容量，或者因资源超限而遇到问题，然后确定是否有必要调整数据库的性能级别和[服务层](/documentation/articles/sql-database-service-tiers/)。可使用 [Azure 门户预览](https://portal.azure.cn)中的图形工具或使用 SQL [动态管理视图](https://msdn.microsoft.com/zh-cn/library/ms188754.aspx)来监视数据库。
@@ -43,11 +42,11 @@
 性能指标还可以帮助确定能否降级到更低性能级别。假定正在使用标准 S2 数据库，所有性能指标均显示该数据库在任意给定时间的平均使用率都不超过 10%。采用标准 S1 很可能使该数据库正常工作。但是，在决定转换到更低的性能级别之前，请注意出现峰值或波动情况的工作负荷。
 
 ## 使用 DMV 监视数据库
-
-在门户中公开的指标也可以通过以下系统视图查看：在服务器的逻辑 **master** 数据库中使用 [sys.resource\_stats](https://msdn.microsoft.com/zh-cn/library/dn269979.aspx)，在用户数据库中使用 [sys.dm\_db\_resource\_stats](https://msdn.microsoft.com/zh-cn/library/dn800981.aspx)。如果需要在更长时间段内监视更粗略的数据，请使用 **sys.resource\_stats**。如果需要在较短时间范围内监视更精细的数据，请使用 **sys.dm\_db\_resource\_stats**。有关详细信息，请参阅 [Azure SQL 数据库性能指南](/documentation/articles/sql-database-performance-guidance/#monitoring-resource-use-with-sysresourcestats)。
+在门户中公开的指标也可以通过以下系统视图查看：在服务器的逻辑 **master** 数据库中使用 [sys.resource\_stats](https://msdn.microsoft.com/zh-cn/library/dn269979.aspx)，在用户数据库中使用 [sys.dm\_db\_resource\_stats](https://msdn.microsoft.com/zh-cn/library/dn800981.aspx)。如果需要在更长时间段内监视更粗略的数据，请使用 **sys.resource\_stats**。如果需要在较短时间范围内监视更精细的数据，请使用 **sys.dm\_db\_resource\_stats**。有关详细信息，请参阅 [Azure SQL 数据库性能指南](/documentation/articles/sql-database-performance-guidance/#monitor-resource-use)。
 
 >[AZURE.NOTE] 在已停用的 Web 和 Business Edition 数据库中使用 **sys.dm\_db\_resource\_stats** 将返回空结果集。
 
-对于弹性数据库池，可以使用本节中所述的技术来监视池中的单个数据库。但也可总体监视该池。有关信息，请参阅[监视和管理弹性数据库池](/documentation/articles/sql-database-elastic-pool-manage-portal/)。
+对于弹性池，可以使用本部分中所述的技术来监视池中的单个数据库。但也可总体监视该池。有关信息，请参阅[监视和管理弹性池](/documentation/articles/sql-database-elastic-pool-manage-portal/)。
 
-<!---HONumber=Mooncake_Quality_Review_1215_2016-->
+<!---HONumber=Mooncake_0120_2017-->
+<!--Update_Description: wording update-->
