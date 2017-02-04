@@ -137,7 +137,4 @@
 * 若要了解如何防止对所有用户的资源执行删除操作，请参阅[使用 Azure Resource Manager 锁定资源](/documentation/articles/resource-group-lock-resources/)。
 
 <!---HONumber=Mooncake_0120_2017-->
-<!-- Update_Description: update meta properties -->
-<!-- Update_Description: wording update -->
-<!-- Update_Description: update link references -->
-<!-- Update_Description: add quick review feature via built-in query, for example fail deployment. -->
+<!-- Update_Description: update meta properties ; wording update ; update link references ; add quick review feature via built-in query , e.g. fail deployment. -->

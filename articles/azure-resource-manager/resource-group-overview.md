@@ -314,6 +314,4 @@ Azure SDK 适用于多种语言和平台。每种语言实现可通过其生态�
 [powershellref]: https://docs.microsoft.com/powershell/resourcemanager/azurerm.resources/v3.2.0/azurerm.resources
 
 <!---HONumber=Mooncake_0120_2017-->
-<!-- Update_Description: update meta properties -->
-<!-- Update_Description: wording update -->
-<!-- Update_Description: update link reference -->
+<!-- Update_Description: update meta properties ; wording update ; update link reference -->

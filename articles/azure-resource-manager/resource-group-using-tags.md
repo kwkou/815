@@ -112,5 +112,4 @@ Resource Manager 当前不支持处理标记名称和值对象。可以传递标
 * 如需了解企业如何使用 Resource Manager 对订阅进行有效管理，请参阅 [Azure 企业机架 - 规范性订阅管理](/documentation/articles/resource-manager-subscription-governance/)。
 
 <!---HONumber=Mooncake_0120_2017-->
-<!-- Update_Description: update meta properties -->
-<!-- Update_Description: update link reference -->
+<!-- Update_Description: update meta properties ; update link reference -->

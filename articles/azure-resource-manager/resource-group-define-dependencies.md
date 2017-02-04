@@ -148,8 +148,4 @@ Resource Manager 可在模板验证过程中确定循环依赖项。如果收到
 * 有关模板的可用函数列表，请参阅[模板函数](/documentation/articles/resource-group-template-functions/)。
 
 <!---HONumber=Mooncake_0120_2017-->
-<!-- Update_Description: update meta properties -->
-<!-- Update_Description: wording update -->
-<!-- Update_Description: update code -->
-<!-- Update_Description: update link references -->
-<!-- Update_Description: add advise of setting dependency; add CDN config code -->
+<!-- Update_Description: update meta properties ; wording update ; update code ; update link references ; add advise of setting dependency ; add CDN config code -->
