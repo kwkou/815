@@ -5,8 +5,7 @@
     documentationcenter=""
     author="tfitzmac"
     manager="timlt"
-    editor="tysonn" />  
-
+    editor="tysonn" />
 <tags
     ms.assetid="ab7d42bd-8434-4026-a892-df4a97b60a9b"
     ms.service="azure-resource-manager"
@@ -14,9 +13,10 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="12/06/2016"
+    ms.date="01/03/2017"
     wacn.date="01/25/2017"
     ms.author="tomfitz" />
+
 
 # 将资源移到新资源组或订阅中
 本主题说明如何将资源移到新订阅或同一订阅的新资源组中。可以使用门户、PowerShell、Azure CLI 或 REST API 移动资源。本主题中的移动操作无需任何 Azure 支持的协助即可供使用。
@@ -35,7 +35,7 @@
 
 1. 服务必须支持移动资源的功能。本主题列出了哪些服务允许移动资源，哪些服务不允许移动资源。
 2. 源和目标订阅必须存在于同一 [Active Directory 租户](/documentation/articles/active-directory-howto-tenant/)中。若要移到新租户，请呼叫支持。
-3. 必须针对要移动的资源的资源提供程序注册目标订阅。否则，会收到错误，指明**未针对资源类型注册订阅**。将资源移到新的订阅时，可能会遇到此问题，但该订阅从未配合该资源类型使用。若要了解如何检查注册状态和注册资源提供程序，请参阅 [Resource providers and types](/documentation/articles/resource-manager-supported-services#resource-providers-and-types)（资源提供程序和类型）。
+3. 必须针对要移动的资源的资源提供程序注册目标订阅。否则，会收到错误，指明**未针对资源类型注册订阅**。将资源移到新的订阅时，可能会遇到此问题，但该订阅从未配合该资源类型使用。若要了解如何检查注册状态和注册资源提供程序，请参阅 [Resource providers and types](/documentation/articles/resource-manager-supported-services/#resource-providers-and-types)（资源提供程序和类型）。
 4. 如果你要移动 App Service 应用，则你已查看 [App Service 限制](#app-service-limitations)。
 5. 如果要移动与恢复服务关联的资源，则必须查看[恢复服务限制](#recovery-services-limitations)
 6. 如果你要移动通过经典模型部署的资源，则你已查看[经典部署限制](#classic-deployment-limitations)。
@@ -58,20 +58,36 @@
 * 应用服务应用（Web 应用）- 请参阅[应用服务限制](#app-service-limitations)
 * 自动化
 * 批处理
+* 必应地图
 * CDN
 * 云服务 - 请参阅[经典部署限制](#classic-deployment-limitations)
 * 认知服务
+* 容器服务
+* 内容审查器
+* 数据目录
+* Data Factory
+* 数据湖分析
+* 数据湖存储
+* DevTest Lab
+* DNS
 * DocumentDB
 * 事件中心
-* HDInsight 群集
+* HDInsight 群集 - 请参阅 [HDInsight 限制](#hdinsight-limitations)
 * IoT 中心
 * 密钥保管库
 * 负载均衡器
+* Logic Apps
+* 机器学习
 * 媒体服务
+* Mobile Engagement
 * 通知中心
+* 操作见解
+* 操作管理
 * Power BI
 * Redis 缓存
 * 计划程序
+* 搜索
+* 服务器管理
 * 服务总线
 * Service Fabric
 * 存储
@@ -83,13 +99,19 @@
 * 虚拟机（经典）- 请参阅 [Classic deployment limitations](#classic-deployment-limitations)（经典部署限制）
 * 虚拟网络
 
+> [AZURE.NOTE] 
+> 目前不能移动包含 VPN 网关的虚拟网络，除非已临时删除网关。删除后，即可成功移动虚拟网络，并可创建网关。
+>
+ 
 ## 不支持移动的服务
 目前不支持移动资源的服务包括：
 
 * AD 混合运行状况服务
 * 应用程序网关
 * Application Insights
+* BizTalk 服务
 * Express Route
+* Dynamics LCS
 * 恢复服务保管库：也不会移动与恢复服务保管库关联的计算、网络和存储资源，请参阅[恢复服务限制](#recovery-services-limitations)。
 * “安全”
 * 证书存储在密钥保管库中的虚拟机
@@ -97,7 +119,7 @@
 * 虚拟网络（经典）- 请参阅 [Classic deployment limitations](#classic-deployment-limitations)（经典部署限制）
 * VPN 网关
 
-## <a name="app-service-limitations"></a> App Service 限制
+## <a name="app-service-limitations"></a> 应用服务限制
 使用 App Service 应用时，你不能只移动 App Service 计划。若要移动 App Service 应用，可以使用以下选项：
 
 * 将该资源组中的 App Service 计划以及所有其他 App Service 资源移到尚无 App Service 资源的新资源组。这一要求意味着，与 App Service 计划不关联的 App Service 资源也必须移动。
@@ -141,6 +163,12 @@
 
 例如，假设已设置将本地计算机复制到存储帐户 (Storage1)，并且想要受保护的计算机在故障转移到 Azure 之后显示为连接到虚拟网络 (Network1) 的虚拟机 (VM1)。不能在同一订阅中的资源组之间或在订阅之间移动这些 Azure 资源 - Storage1、VM1 和 Network1。
 
+## <a name="hdinsight-limitations"></a> HDInsight 限制
+
+可以将 HDInsight 群集移到新订阅或资源组。但是，不能跨订阅移动链接到 HDInsight 群集的网络资源（例如虚拟网络、NIC 或负载均衡器）。此外，也无法将已附加到群集的虚拟机的 NIC 移至新资源组。
+
+将 HDInsight 群集移至新订阅时，请先移动其他资源（例如存储帐户）。然后移动 HDInsight 群集本身。
+
 ## <a name="classic-deployment-limitations"></a> 经典部署限制
 移动通过经典模型部署的资源时，其选项各不相同，具体取决于是在订阅内移动资源，还是将资源移到新的订阅。
 
@@ -163,7 +191,7 @@
 * 目标订阅不得包含任何其他经典资源。
 * 只能通过独立的适用于经典移动的 REST API 来请求移动。将经典资源移到新订阅时，不能使用标准的 Resource Manager 移动命令。
 
-若要将经典资源移动到新订阅，必须使用特定于经典资源的 REST 操作。执行以下步骤，将经典资源移动到新订阅。
+若要将经典资源移动到新订阅，请使用特定于经典资源的门户或 REST 操作。若要了解如何通过门户移动经典资源，请参阅[使用门户](#use-portal)。若要使用 REST，请执行以下步骤：
 
 1. 检查源订阅是否可以参与跨订阅移动。使用以下操作：
    
@@ -297,7 +325,10 @@
 ## 后续步骤
 * 若要了解管理订阅所需的 PowerShell cmdlet，请参阅 [Using Azure PowerShell with Resource Manager](/documentation/articles/powershell-azure-resource-manager/)（将 Azure PowerShell 与 Resource Manager 配合使用）。
 * 若要了解管理订阅所需的 Azure CLI 命令，请参阅 [Using the Azure CLI with Resource Manager](/documentation/articles/xplat-cli-azure-resource-manager/)（将 Azure CLI 与 Resource Manager 配合使用）。
-* 若要了解管理订阅所需的门户功能，请参阅[使用 Azure 门户预览管理资源](/documentation/articles/resource-group-portal/)。
+* 若要了解管理订阅所需的门户功能，请参阅[使用 Azure 门户预览版管理资源](/documentation/articles/resource-group-portal/)。
 * 若要了解如何对资源应用逻辑组织，请参阅 [Using tags to organize your resources](/documentation/articles/resource-group-using-tags/)（使用标记来组织资源）。
 
-<!---HONumber=Mooncake_1219_2016-->
+<!---HONumber=Mooncake_0120_2017-->
+<!-- Update_Description: update meta properties -->
+<!-- Update_Description: wording update -->
+<!-- Update_Description: add items for supported and unsupported mobile service.-->

@@ -13,9 +13,10 @@
     ms.topic="article"
     ms.tgt_pltfrm="multiple"
     ms.workload="na"
-    ms.date="12/14/2016"
-    wacn.date="01/06/2017"
+    ms.date="01/13/2017"
+    wacn.date="01/25/2017"
     ms.author="tomfitz" />
+
 
 # 使用 Azure CLI 创建服务主体来访问资源
 > [AZURE.SELECTOR]
@@ -23,7 +24,12 @@
 - [Azure CLI](/documentation/articles/resource-group-authenticate-service-principal-cli/)
 - [门户](/documentation/articles/resource-group-create-service-principal-portal/)
 
-如果应用程序或脚本需要访问资源，用户在多数情况下不想要使用自己的凭据来运行此过程。用户可能有几种不同的权限可用于应用程序，如果用户职责改变，则不想要应用程序继续使用此凭据。与上述方法不同，也可以为应用程序创建一个标识，其中包括身份验证凭据和角色分配情况。每次应用运行时，将使用这些凭据对其自身进行身份验证。本主题介绍如何通过[适用于 Mac、Linux 和 Windows 的 Azure CLI](/documentation/articles/xplat-cli-install/) 为应用程序进行设置，使之能够使用自己的凭据和标识运行。
+当应用或脚本需访问资源时，可以为应用设置一个标识，然后使用其自己的凭据进行身份验证。与使用用户自己的凭据运行应用相比，此方法更优，原因在于：
+
+* 可以将权限分配给应用标识，这些权限不同于你自己的权限。通常情况下，这些权限仅限于应用需执行的操作。
+* 你的职责变化时，无需更改应用的凭据。
+
+本主题介绍如何通过[适用于 Mac、Linux 和 Windows 的 Azure CLI](/documentation/articles/xplat-cli-install/) 为应用程序进行设置，使之能够使用自己的凭据和标识运行。
 
 使用 Azure CLI 时，可以通过 2 个选项进行 AD 应用程序身份验证：
 
@@ -40,7 +46,7 @@
 ## <a name="required-permissions"></a> 所需的权限
 若要完成本主题，必须在 Azure Active Directory 和 Azure 订阅中均具有足够的权限。具体而言，必须能够在 Active Directory 中创建应用并向角色分配服务主体。
 
-检查帐户是否有足够权限的最简方法是使用门户。请参阅[检查要求的权限](/documentation/articles/resource-group-create-service-principal-portal/#required-permissions)。
+检查帐户是否有足够权限的最简方法是使用门户。请参阅[在门户中检查所需的权限](/documentation/articles/resource-group-create-service-principal-portal/#required-permissions)。
 
 现在转到[密码](#create-service-principal-with-password)或[证书](#create-service-principal-with-certificate)身份验证部分。
 
@@ -59,9 +65,16 @@
 
             azure ad sp create -n exampleapp -p {your-password}
 
-    * 若要单独创建 AD 应用程序，请提供应用名称、主页 URI、标识符 URI 和密码，如以下命令中所示：
+    * 若要单独创建 AD 应用程序，请提供：
 
-            azure ad app create -n exampleapp --home-page http://www.contoso.org --identifier-uris https://www.contoso.org/example -p {Your\_Password}
+      * 应用的名称
+      * 应用主页的 URL
+      * 用于标识应用的 URI 的逗号分隔列表
+      * password
+
+      如以下命令所示：
+
+            azure ad app create -n exampleapp --home-page http://www.contoso.org --identifier-uris https://www.contoso.org/example -p {Your_Password}
 
     上述命令会返回 AppId 值。若要创建服务主体，请在以下命令中提供该值作为参数：
 
@@ -69,7 +82,7 @@
 
     如果帐户在 Active Directory 上不具有[所需的权限](#required-permissions)，将看到指示“Authentication\_Unauthorized”或“上下文中找不到订阅”的错误消息。
      
-    对于这两个选项，都会返回新的服务主体。授权时需要使用**对象 ID**。登录时需要提供随**服务主体名称**列出的 GUID。此 GUID 与 AppId 的值一样。在示例应用程序中，此值称为 **客户端 ID**。
+    对于这两个选项，都会返回新的服务主体。授权时需要使用 `Object Id`。登录时需要提供随 `Service Principal Names` 列出的 GUID。此 GUID 与 AppId 的值一样。在示例应用程序中，此值称为 `Client ID`。
 
          info:    Executing command ad sp create
      
@@ -82,15 +95,15 @@
            data:                             https://www.contoso.org/example
            info:    ad sp create command OK
 
-3. 向服务主体授予对订阅的权限。在此示例中，向“读取者”角色（授予读取订阅中所有资源的权限）添加服务主体。对于其他角色，请参阅 [RBAC：内置角色](/documentation/articles/role-based-access-built-in-roles/)。对于 **ServicePrincipalName** 参数，请提供创建应用程序时使用的 **ObjectId**。运行此命令之前，必须留出一些时间将新的服务主体传遍 Active Directory。手动运行这些命令时，任务之间通常已经过足够的时间。在脚本中，应在命令间添加休眠步骤（如 `sleep 15`）。如果看到错误称主体不存在于目录中，请重新运行该命令。
+3. 向服务主体授予对订阅的权限。在此示例中，向“读取者”角色（授予读取订阅中所有资源的权限）添加服务主体。对于其他角色，请参阅 [RBAC：内置角色](/documentation/articles/role-based-access-built-in-roles/)。对于 `objectid` 参数，请提供创建应用程序时使用的 `Object Id`。运行此命令之前，必须留出一些时间将新的服务主体传遍 Active Directory。手动运行这些命令时，任务之间通常已经过足够的时间。在脚本中，应在命令间添加休眠步骤（如 `sleep 15`）。如果看到错误称主体不存在于目录中，请重新运行该命令。
 
         azure role assignment create --objectId ff863613-e5e2-4a6b-af07-fff6f2de3f4e -o Reader -c /subscriptions/{subscriptionId}/
 
-    如果帐户没有足够权限来分配角色，将看到一条错误消息。该消息声明你的帐户**无权执行操作 'Microsoft.Authorization/roleAssignments/write' over scope '/subscriptions/{guid}'**。
+    如果帐户没有足够权限来分配角色，将看到一条错误消息。该消息声明用户的帐户“无权在作用域 '/subscriptions/{guid}' 执行操作 'Microsoft.Authorization/roleAssignments/write'”。
 
 就这么简单！ AD 应用程序和服务主体设置完毕。下一部分演示如何通过 Azure CLI 使用凭据进行登录。如果想在代码应用程序中使用凭据，则不需要继续了解本主题。可以跳到[示例应用程序](#sample-applications)，获取使用应用程序 ID 和密码登录的示例。
 
-### 通过 Azure CLI 提供凭据
+### <a name="provide-credentials-through-azure-cli"></a> 通过 Azure CLI 提供凭据
 现在，需要以应用程序方式登录以执行相应操作。
 
 1. 以服务主体方式登录时，需提供 AD 应用所在目录的租户 ID。租户是 Active Directory 的实例。若要检索当前已经过身份验证的订阅的租户 ID，请使用：
@@ -100,7 +113,7 @@
     将返回：
 
         info:    Executing command account show
-        data:    Name                        : Windows Azure MSDN - Visual Studio Ultimate
+        data:    Name                        : Microsoft Azure MSDN - Visual Studio Ultimate
         data:    ID                          : {guid}
         data:    State                       : Enabled
         data:    Tenant ID                   : {guid}
@@ -141,6 +154,8 @@
 
 现在，用户已作为所创建服务主体的服务主体进行身份验证。
 
+也可从要登录的命令行调用 REST 操作。可以从身份验证响应中检索访问令牌，将其用于其他操作。若要通过示例来了解如何通过调用 REST 操作来检索访问令牌，请参阅[生成访问令牌](/documentation/articles/resource-manager-rest-api/#generating-an-access-token)。
+
 ## <a name="create-service-principal-with-certificate"></a> 使用证书创建服务主体
 在本部分中，将执行步骤以：
 
@@ -169,7 +184,14 @@
 
             azure ad sp create -n exampleapp --cert-value {certificate data}
 
-    * 若要单独创建 AD 应用程序，请提供应用名称、主页 URI、标识符 URI 和证书数据，如以下命令中所示：
+* 若要单独创建 AD 应用程序，请提供：
+      
+      * 应用的名称
+      * 应用主页的 URL
+      * 用于标识应用的 URI 的逗号分隔列表
+      * 证书数据
+
+      如以下命令所示：
 
             azure ad app create -n exampleapp --home-page http://www.contoso.org --identifier-uris https://www.contoso.org/example --cert-value {certificate data}
 
@@ -179,7 +201,7 @@
 
     如果帐户在 Active Directory 上不具有[所需的权限](#required-permissions)，将看到指示“Authentication\_Unauthorized”或“上下文中找不到订阅”的错误消息。
      
-    对于这两个选项，都会返回新的服务主体。授权时需要使用对象 ID。登录时需要提供随**服务主体名称**列出的 GUID。此 GUID 与 AppId 的值一样。在示例应用程序中，此值称为 **客户端 ID**。
+    对于这两个选项，都会返回新的服务主体。授权时需要使用对象 ID。登录时需要提供随 `Service Principal Names` 列出的 GUID。此 GUID 与 AppId 的值一样。在示例应用程序中，此值称为 `Client ID`。
 
          info:    Executing command ad sp create
      
@@ -191,11 +213,11 @@
            data:                      https://www.contoso.org/example
            info:    ad sp create command OK
 
-6. 向服务主体授予对订阅的权限。在此示例中，向“读取者”角色（授予读取订阅中所有资源的权限）添加服务主体。对于其他角色，请参阅 [RBAC：内置角色](/documentation/articles/role-based-access-built-in-roles/)。对于 **ServicePrincipalName** 参数，请提供创建应用程序时使用的 **ObjectId**。运行此命令之前，必须留出一些时间将新的服务主体传遍 Active Directory。手动运行这些命令时，任务之间通常已经过足够的时间。在脚本中，应在命令间添加休眠步骤（如 `sleep 15`）。如果看到错误称主体不存在于目录中，请重新运行该命令。
+6. 向服务主体授予对订阅的权限。在此示例中，向“读取者”角色（授予读取订阅中所有资源的权限）添加服务主体。对于其他角色，请参阅 [RBAC：内置角色](/documentation/articles/role-based-access-built-in-roles/)。对于 `objectid` 参数，请提供创建应用程序时使用的 `Object Id`。运行此命令之前，必须留出一些时间将新的服务主体传遍 Active Directory。手动运行这些命令时，任务之间通常已经过足够的时间。在脚本中，应在命令间添加休眠步骤（如 `sleep 15`）。如果看到错误称主体不存在于目录中，请重新运行该命令。
 
         azure role assignment create --objectId 7dbc8265-51ed-4038-8e13-31948c7f4ce7 -o Reader -c /subscriptions/{subscriptionId}/
 
-    如果帐户没有足够权限来分配角色，将看到一条错误消息。该消息声明你的帐户**无权执行操作 'Microsoft.Authorization/roleAssignments/write' over scope '/subscriptions/{guid}'**。
+    如果帐户没有足够权限来分配角色，将看到一条错误消息。该消息声明用户的帐户“无权在作用域 '/subscriptions/{guid}' 执行操作 'Microsoft.Authorization/roleAssignments/write'”。
 
 ### 通过自动执行的 Azure CLI 脚本提供证书
 现在，需要以应用程序方式登录以执行相应操作。
@@ -207,7 +229,7 @@
     将返回：
 
         info:    Executing command account show
-        data:    Name                        : Windows Azure MSDN - Visual Studio Ultimate
+        data:    Name                        : Microsoft Azure MSDN - Visual Studio Ultimate
         data:    ID                          : {guid}
         data:    State                       : Enabled
         data:    Tenant ID                   : {guid}
@@ -295,4 +317,7 @@
 * 有关将应用程序集成到 Azure 以管理资源的详细步骤，请参阅 [Developer's guide to authorization with the Azure Resource Manager API](/documentation/articles/resource-manager-api-authentication/)（使用 Azure Resource Manager API 进行授权的开发人员指南）。
 * 若要获取有关使用证书和 Azure CLI 的详细信息，请参阅 [Certificate-based authentication with Azure Service Principals from Linux command line](http://blogs.msdn.com/b/arsen/archive/2015/09/18/certificate-based-auth-with-azure-service-principals-from-linux-command-line.aspx)（从 Linux 命令行对 Azure 服务主体进行基于证书的身份验证）。
 
-<!---HONumber=Mooncake_0103_2017-->
+<!---HONumber=Mooncake_0120_2017-->
+<!-- Update_Description: update meta properties -->
+<!-- Update_Description: wording update -->
+<!-- Update_Description: update link references -->

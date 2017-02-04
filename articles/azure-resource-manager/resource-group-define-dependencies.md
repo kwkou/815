@@ -13,13 +13,13 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="na"
-    ms.date="11/28/2016"
-    wacn.date="01/06/2017"
+    ms.date="01/03/2017"
+    wacn.date="01/25/2017"
     ms.author="tomfitz" />  
 
 
 # 在 Azure 资源管理器模板中定义依赖关系
-对于给定的资源，可能有部署资源之前必须存在的其他资源。例如，SQL Server 必须存在，才能尝试部署 SQL 数据库。可通过将一个资源标记为依赖于其他资源来定义此关系。通常会使用 **dependsOn** 元素来定义依赖关系，但也可以通过 **reference** 函数来定义。
+对于给定的资源，可能有部署资源之前必须存在的其他资源。例如，SQL Server 必须存在，才能尝试部署 SQL 数据库。可通过将一个资源标记为依赖于其他资源来定义此关系。使用 **dependsOn** 元素或 **reference** 函数定义依赖项。
 
 Resource Manager 将评估资源之间的依赖关系，并根据其依赖顺序进行部署。如果资源互不依赖，Resource Manager 将并行部署资源。只需为部署在同一模板中的资源定义依赖关系。
 
@@ -37,9 +37,9 @@ Resource Manager 将评估资源之间的依赖关系，并根据其依赖顺序
         "displayName": "VMScaleSet"
       },
       "dependsOn": [
-        "storageLoop",
         "[variables('loadBalancerName')]",
-        "[variables('virtualNetworkName')]"
+        "[variables('virtualNetworkName')]",
+        "storageLoop",
       ],
       ...
     }
@@ -53,7 +53,7 @@ Resource Manager 将评估资源之间的依赖关系，并根据其依赖顺序
       "[concat('Microsoft.Network/virtualNetworks/', variables('virtualNetworkName'))]"
     ] 
 
-尽管你可能倾向使用 dependsOn 来映射资源之间的关系，但请务必了解这么做的理由，因为它会影响部署性能。例如，若要记录资源的互连方式，那么，dependsOn 方法并不合适。部署之后，无法查询 dependsOn 元素中定义的资源。通过使用 dependsOn，可以影响部署时间，因为 Resource Manager 不会并行部署两个具有依赖关系的资源。若要记录资源之间的关系，请改为使用[资源链接](/documentation/articles/resource-group-link-resources/)。
+尽管你可能倾向使用 dependsOn 来映射资源之间的关系，但请务必了解这么做的理由。例如，若要记录资源的互连方式，那么，dependsOn 方法并不合适。部署之后，无法查询 dependsOn 元素中定义的资源。通过使用 dependsOn，可以影响部署时间，因为 Resource Manager 不会并行部署两个具有依赖关系的资源。若要记录资源之间的关系，请改为使用[资源链接](/documentation/articles/resource-group-link-resources/)。
 
 ## 子资源
 资源属性允许指定与所定义的资源相关的子资源。子资源总共只能定义五级。请务必注意子资源和父资源之间不能创建隐式依赖关系。如果您需要在父级资源后部署子资源，则必须使用 dependsOn 属性明确声明该依赖关系。
@@ -98,18 +98,58 @@ Resource Manager 将评估资源之间的依赖关系，并根据其依赖顺序
       }
     ]
 
-
 ## 引用函数
-[引用函数](/documentation/articles/resource-group-template-functions/#reference)使表达式能够从其他 JSON 名值对或运行时资源中派生其值。引用表达式隐式声明一个资源依赖于另一个资源。
+[引用函数](/documentation/articles/resource-group-template-functions/#reference)使表达式能够从其他 JSON 名值对或运行时资源中派生其值。引用表达式隐式声明一个资源依赖于另一个资源。常规格式为：
 
     reference('resourceName').propertyPath
 
-可以使用此元素或 dependsOn 元素来指定依赖关系，但不需要同时使用它们用于同一依赖资源。只要可能，可使用隐式引用以避免无意添加不必要的依赖关系。
+在以下示例中，CDN 终结点显式依赖于 CDN 配置文件，隐式依赖于 Web 应用。
+
+    {
+        "name": "[variables('endpointName')]",
+        "type": "endpoints",
+        "location": "[resourceGroup().location]",
+        "apiVersion": "2016-04-02",
+        "dependsOn": [
+                "[variables('profileName')]"
+        ],
+        "properties": {
+            "originHostHeader": "[reference(variables('webAppName')).hostNames[0]]",
+            ...
+        }
+
+可以使用此元素或 dependsOn 元素来指定依赖关系，但不需要同时使用它们用于同一依赖资源。只要可能，可使用隐式引用以避免添加不必要的依赖项。
 
 若要了解详细信息，请参阅[引用函数](/documentation/articles/resource-group-template-functions/#reference)。
 
+## 关于设置依赖项的建议
+
+在决定要设置的依赖项时，请遵循以下准则：
+
+* 尽可能少设置依赖项。
+* 将子资源设置为依赖于其父资源。
+* 使用 **reference** 函数在需要共享属性的资源之间设置隐式依赖项。在已经定义隐式依赖项的情况下，请勿添加显式依赖项 (**dependsOn**)。此方法降低了设置不必要依赖项的风险。
+* 如果没有其他资源提供的功能某项资源就无法**创建**，则可设置依赖项。如果资源仅在部署后进行交互，请勿设置依赖项。
+* 让依赖项级联，无需对其进行显式设置。例如，虚拟机依赖于虚拟网络接口，虚拟网络接口依赖于虚拟网络和公共 IP 地址。因此，虚拟机在所有这三个资源之后部署，但请勿将虚拟机显式设置为依赖于所有这三个资源。此方法阐明了依赖顺序，在以后更改模板会更容易。
+* 如果某个值可以在部署之前确定，请尝试在没有依赖项的情况下部署资源。例如，如果某个配置值需要另一资源的名称，则可能不需要依赖项。本指南并非始终适用，因为某些资源可验证其他资源是否存在。如果收到错误，请添加一个依赖项。
+
+Resource Manager 可在模板验证过程中确定循环依赖项。如果收到的错误指出存在循环依赖项，可重新评估模板，看是否存在不需要且可删除的依赖项。如果删除依赖项不起作用，则可将一些部署操作移至子资源中来避免循环依赖项（这些子资源是在具有循环依赖项的资源之后部署的）。例如，假设要部署两个虚拟机，但必须在每个虚拟机上设置引用另一虚拟机的属性。可以按下述顺序部署这两个虚拟机：
+
+1. vm1
+2. vm2
+3. vm1 上的扩展依赖于 vm1 和 vm2。扩展在 vm1 上设置的值是从 vm2 获取的。
+4. vm2 上的扩展依赖于 vm1 和 vm2。扩展在 vm2 上设置的值是从 vm1 获取的。
+
+若要了解如何评估部署顺序以及如何解决依赖项错误，请参阅[检查部署顺序](/documentation/articles/resource-manager-common-deployment-errors/#check-deployment-sequence)。
+
 ## 后续步骤
+* 若要了解如何在部署期间排查依赖项故障，请参阅[排查使用 Azure Resource Manager 时的常见 Azure 部署错误](/documentation/articles/resource-manager-common-deployment-errors/)。
 * 若要了解有关创建 Azure 资源管理器模板的信息，请参阅[创作模板](/documentation/articles/resource-group-authoring-templates/)。
 * 有关模板的可用函数列表，请参阅[模板函数](/documentation/articles/resource-group-template-functions/)。
 
-<!---HONumber=Mooncake_0103_2017-->
+<!---HONumber=Mooncake_0120_2017-->
+<!-- Update_Description: update meta properties -->
+<!-- Update_Description: wording update -->
+<!-- Update_Description: update code -->
+<!-- Update_Description: update link references -->
+<!-- Update_Description: add advise of setting dependency; add CDN config code -->

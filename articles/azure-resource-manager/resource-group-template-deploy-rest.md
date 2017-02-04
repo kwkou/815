@@ -5,8 +5,7 @@
     documentationcenter="na"
     author="tfitzmac"
     manager="timlt"
-    editor="tysonn" />  
-
+    editor="tysonn" />
 <tags
     ms.assetid="1d8fbd4c-78b0-425b-ba76-f2b7fd260b45"
     ms.service="azure-resource-manager"
@@ -14,24 +13,24 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="na"
-    ms.date="11/15/2016"
-    wacn.date="12/26/2016"
+    ms.date="01/13/2017"
+    wacn.date="01/25/2017"
     ms.author="tomfitz" />  
 
 
 # 使用 Resource Manager 模板和 Resource Manager REST API 部署资源
 > [AZURE.SELECTOR]
-* [Azure PowerShell](/documentation/articles/powershell-azure-resource-manager/)
-* [Azure CLI](/documentation/articles/xplat-cli-azure-resource-manager/)
-* [门户](/documentation/articles/resource-group-portal/)
-* [REST API](/documentation/articles/resource-manager-rest-api/)
+- [PowerShell](/documentation/articles/resource-group-template-deploy/)
+- [Azure CLI](/documentation/articles/resource-group-template-deploy-cli/)
+- [门户](/documentation/articles/resource-group-template-deploy-portal/)
+- [REST API](/documentation/articles/resource-group-template-deploy-rest/)
 
 本文介绍如何将 Resource Manager REST API 与 Resource Manager 模板配合使用向 Azure 部署资源。
 
 > [AZURE.TIP]
 有关在部署过程中调试错误的帮助，请参阅：
 > 
-> * [使用 REST API 查看部署操作](/documentation/articles/resource-manager-troubleshoot-deployments-rest/)，了解如何获取有助于排查错误的信息
+> * [查看部署操作](/documentation/articles/resource-manager-deployment-operations/)，了解如何获取有助于排查错误的信息
 > * [排查使用 Azure Resource Manager 将资源部署到 Azure 时的常见错误](/documentation/articles/resource-manager-common-deployment-errors/)，了解如何解决常见的部署错误
 > 
 > 
@@ -47,7 +46,7 @@
         PUT https://management.chinacloudapi.cn/subscriptions/<YourSubscriptionId>/resourcegroups/<YourResourceGroupName>?api-version=2015-01-01
           <common headers>
           {
-            "location": "China East",
+            "location": "China North",
             "tags": {
                "tagname1": "tagvalue1"
             }
@@ -88,11 +87,14 @@
 [AZURE.INCLUDE [resource-manager-parameter-file](../../includes/resource-manager-parameter-file.md)]
 
 ## 后续步骤
+* 若要了解如何处理异步 REST 操作，请参阅[跟踪异步 Azure 操作](/documentation/articles/resource-manager-async-operations/)。
 * 有关通过 .NET 客户端库部署资源的示例，请参阅 [Deploy resources using .NET libraries and a template](/documentation/articles/virtual-machines-windows-csharp-template/)（使用 .NET 库和模板部署资源）。
 * 若要在模板中定义参数，请参阅[创作模板](/documentation/articles/resource-group-authoring-templates/#parameters)。
-* 有关将解决方案部署到不同环境的指南，请参阅 [Azure 中的开发和测试环境](/documentation/articles/solution-dev-test-environments/)。
-* 有关使用 KeyVault 引用来传递安全值的详细信息，请参阅[在部署期间传递安全值](/documentation/articles/resource-manager-keyvault-parameter/)。
+* 有关将解决方案部署到不同环境的指南，请参阅 [Development and test environments in Azure](/documentation/articles/solution-dev-test-environments/)（Azure 中的开发和测试环境）。
 * 如需了解企业如何使用 Resource Manager 对订阅进行有效管理，请参阅 [Azure 企业机架 - 规范性订阅管理](/documentation/articles/resource-manager-subscription-governance/)。
 * 有关自动化部署的四部分系列教程，请参阅[将应用程序自动部署到 Azure 虚拟机](/documentation/articles/virtual-machines-windows-dotnet-core-1-landing/)。此系列教程介绍了应用程序体系结构、访问与安全性、可用性与缩放性，以及应用程序部署。
 
-<!---HONumber=Mooncake_1219_2016-->
+<!---HONumber=Mooncake_0120_2017-->
+<!-- Update_Description: update meta properties -->
+<!-- Update_Description: wording update -->
+<!-- Update_Description: update link reference -->
