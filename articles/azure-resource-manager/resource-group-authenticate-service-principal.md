@@ -305,6 +305,4 @@
 * 有关 Active Directory 身份验证的详细信息，请参阅 [Azure AD 的身份验证方案](/documentation/articles/active-directory-authentication-scenarios/)。
 
 <!---HONumber=Mooncake_0120_2017-->
-<!-- Update_Description: update meta properties -->
-<!-- Update_Description: wording update -->
-<!-- Update_Description: update link references -->
+<!-- Update_Description: update meta properties ; wording update ; update link references -->

@@ -393,6 +393,4 @@ resources 节包含要部署的资源数组。在每个资源内，还可以定�
 [deployment2cmdlet]: https://docs.microsoft.com/powershell/resourcemanager/azurerm.resources/v3.2.0/new-azurermresourcegroupdeployment
 
 <!---HONumber=Mooncake_0120_2017-->
-<!-- Update_Description: update meta properties -->
-<!-- Update_Description: wording update -->
-<!-- Update_Description: update link references -->
+<!-- Update_Description: update meta properties ; wording update ; update link references -->

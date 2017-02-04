@@ -329,6 +329,4 @@
 * 若要了解如何对资源应用逻辑组织，请参阅 [Using tags to organize your resources](/documentation/articles/resource-group-using-tags/)（使用标记来组织资源）。
 
 <!---HONumber=Mooncake_0120_2017-->
-<!-- Update_Description: update meta properties -->
-<!-- Update_Description: wording update -->
-<!-- Update_Description: add items for supported and unsupported mobile service.-->
+<!-- Update_Description: update meta properties ; wording update ; add items for supported and unsupported mobile service -->
