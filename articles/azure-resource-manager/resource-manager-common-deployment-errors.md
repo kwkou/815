@@ -15,8 +15,8 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="na"
-    ms.date="12/12/2016"
-    wacn.date="01/06/2017"
+    ms.date="01/03/2017"
+    wacn.date="01/25/2017"
     ms.author="tomfitz" />  
 
 
@@ -36,8 +36,7 @@
 
 方案中出现可预先确定会导致问题的验证错误。验证错误包括模板中的语法错误，还包括尝试部署将超过订阅配额的资源。部署错误起源于部署过程中出现的情况。例如，尝试访问正在并行部署的资源可能导致部署错误。
 
-这两种类型的错误都会返回错误代码，可使用该代码来排查部署问题。这两种类型的错误会显示在活动日志中。但是，验证错误不会显示在部署历史记录中，因为部署并未开始。
-
+这两种类型的错误都会返回错误代码，可使用该代码来排查部署问题。这两种类型的错误会显示在[活动日志](/documentation/articles/resource-group-audit/)中。但是，验证错误不会显示在部署历史记录中，因为部署并未开始。
 
 ## 错误代码
 部署错误会返回代码 **DeploymentFailed**。但是，此错误代码表示一般性的部署错误。真正能够帮助解决问题的错误代码往往是该错误的下一级错误代码。下图显示了部署错误的下一级 **RequestDisallowedByPolicy** 错误代码。
@@ -109,26 +108,26 @@
     对于子资源来说，类型和名称的段数必须相同。之所以必须这样，是因为子资源的完整名称和类型包含父名称和类型。因此，完整名称的段仍比完整类型的段少一个。
 
         "resources": [
-           {
-               "type": "Microsoft.KeyVault/vaults",
-               "name": "contosokeyvault",
-               ...
-               "resources": [
-                   {
-                       "type": "secrets",
-                       "name": "appPassword",
-                       ...
-                   }
-               ]
-           }
+            {
+                "type": "Microsoft.KeyVault/vaults",
+                "name": "contosokeyvault",
+                ...
+                "resources": [
+                    {
+                        "type": "secrets",
+                        "name": "appPassword",
+                        ...
+                    }
+                ]
+            }
         ]
 
     确保段数正确对于 Resource Manager 类型来说可能很困难，这些类型应用到各个资源提供程序。例如，对网站应用资源锁需要使用包含四个段的类型。因此，该名称包含三个段：
 
         {
-           "type": "Microsoft.Web/sites/providers/locks",
-           "name": "[concat(variables('siteName'),'/Microsoft.Authorization/MySiteLock')]",
-           ...
+            "type": "Microsoft.Web/sites/providers/locks",
+            "name": "[concat(variables('siteName'),'/Microsoft.Authorization/MySiteLock')]",
+            ...
         }
 
 - 不应使用 Copy 索引
@@ -140,11 +139,15 @@
     如果模板指定了参数的允许值，但你提供的值并不是这些允许值之一，则会收到类似于下面的错误消息：
 
         Code=InvalidTemplate;
-        Message=Deployment template validation failed: 'The provided value {parameter vaule}
+        Message=Deployment template validation failed: 'The provided value {parameter value}
         for the template parameter {parameter name} is not valid. The parameter value is not
-        part of the allowed value(s)
+        part of the allowed values
 
     请仔细检查模板中的允许值，然后提供在部署过程中提供这些值之一。
+
+- 检测到循环依赖项
+
+    当资源以某种方式互相依赖，导致部署无法启动时，就会出现此错误。将多个相互依赖的项组合在一起时，会导致两个或两个以上的资源等待其他资源，而后者也在进行等待。例如，resource1 依赖于 resource3，resource2 依赖于 resource1，resource3 依赖于 resource2。通常情况下，删除不必要的依赖项即可解决此问题。有关依赖项错误的故障诊断建议，请参阅[检查部署顺序](#check-deployment-sequence)。
 
 ### <a id="notfound" name="notfound-and-resourcenotfound"></a> NotFound 和 ResourceNotFound
 如果模板包含无法解析的资源的名称，将出现类似于下面的错误：
@@ -157,12 +160,13 @@
     {
       "apiVersion": "2015-08-01",
       "type": "Microsoft.Web/sites",
-      ...
       "dependsOn": [
         "[variables('hostingPlanName')]"
       ],
       ...
     }
+
+有关依赖项错误的故障诊断建议，请参阅[检查部署顺序](#check-deployment-sequence)。
 
 如果资源所在的资源组不是要部署到的资源组，也可能会出现此错误。在这种情况下，请使用 [resourceId 函数](/documentation/articles/resource-group-template-functions/#resourceid)获取资源的完全限定名称。
 
@@ -207,17 +211,17 @@
 
 可将命名约定与 [uniqueString](/documentation/articles/resource-group-template-functions/#uniquestring) 函数的结果连接起来创建一个唯一名称。
 
-    "name": "[concat('contosostorage', uniqueString(resourceGroup().id))]",
+    "name": "[concat('storage', uniqueString(resourceGroup().id))]",
     "type": "Microsoft.Storage/storageAccounts",
 
 如果部署的存储帐户与订阅中某个现有存储帐户的名称相同，但提供的位置不同，将会出现一条错误消息，指出不同的位置已存在该存储帐户。请删除现有存储帐户，或者提供与现有存储帐户相同的位置。
 
 ### <a name="accountnameinvalid"></a> AccountNameInvalid
-尝试为存储帐户提供一个包含禁止字符的名称时，将会出现 **AccountNameInvalid** 错误。存储帐户名称必须为 3 到 24 个字符，只能使用数字和小写字母。
+尝试为存储帐户提供一个包含禁止字符的名称时，将会出现 **AccountNameInvalid** 错误。存储帐户名称必须为 3 到 24 个字符，只能使用数字和小写字母。[uniqueString](/documentation/articles/resource-group-template-functions/#uniquestring) 函数返回 13 个字符。如果将前缀连接到 **uniqueString** 结果，请提供 11 个字符（或更少字符）的前缀。
 
 ### <a name="badrequest"></a> BadRequest
 
-为属性提供的值无效时，可能遇到 BadRequest 状态。例如，如果为存储帐户提供错误的 SKU 值，部署将失败。
+为属性提供的值无效时，可能遇到 BadRequest 状态。例如，如果为存储帐户提供错误的 SKU 值，部署将失败。若要确定属性的有效值，请查看 [REST API](https://docs.microsoft.com/rest/api) 以了解要部署的资源类型。
 
 ### <a id="noregisteredproviderfound"></a> NoRegisteredProviderFound 和 MissingSubscriptionRegistration
 部署资源时，你可能会收到以下错误代码和消息：
@@ -237,7 +241,7 @@
 2. 资源类型不支持该 API 版本
 3. 资源类型不支持该位置
 
-错误消息应提供有关支持的位置和 API 版本的建议。可以将模板更改为建议的值之一。Azure 门户预览或正在使用的命令行接口会自动注册大多数提供程序，但非全部。如果你以前未使用特定的资源提供程序，则可能需要注册该提供程序。可以通过 PowerShell 或 Azure CLI 了解有关资源提供程序的详细信息。
+错误消息应提供有关支持的位置和 API 版本的建议。可以将模板更改为建议的值之一。Azure 门户预览版或正在使用的命令行接口会自动注册大多数提供程序，但非全部。如果你以前未使用特定的资源提供程序，则可能需要注册该提供程序。可以通过 PowerShell 或 Azure CLI 了解有关资源提供程序的详细信息。
 
 **门户**
 
@@ -326,7 +330,7 @@
 在这种情况中，你应前往门户并提交一份支持问题以增加你在要部署区域内的配额。
 
 > [AZURE.NOTE]
-请记住，对于资源组，配额针对每个单独的区域，而不是针对整个订阅。如果你需要在中国北部部署 30 个核心，则必须在中国北部寻求 30 个资源管理器核心。如果需要在有权访问的任何区域内部署总共 30 个核心，则应在所有区域内请求总共 30 个 Resource Manager 核心。
+> 请记住，对于资源组，配额针对每个单独的区域，而不是针对整个订阅。如果你需要在中国北部部署 30 个核心，则必须在中国北部寻求 30 个资源管理器核心。如果需要在有权访问的任何区域内部署总共 30 个核心，则应在所有区域内请求总共 30 个 Resource Manager 核心。
 >
 >
 
@@ -412,19 +416,19 @@
     若要记录嵌套模板的调试信息，请使用 **debugSetting** 元素。
 
         {
-           "apiVersion": "2016-09-01",
-           "name": "nestedTemplate",
-           "type": "Microsoft.Resources/deployments",
-           "properties": {
-               "mode": "Incremental",
-               "templateLink": {
-                   "uri": "{template-uri}",
-                   "contentVersion": "1.0.0.0"
-               },
-               "debugSetting": {
-                  "detailLevel": "requestContent, responseContent"
-               }
-           }
+            "apiVersion": "2016-09-01",
+            "name": "nestedTemplate",
+            "type": "Microsoft.Resources/deployments",
+            "properties": {
+                "mode": "Incremental",
+                "templateLink": {
+                    "uri": "{template-uri}",
+                    "contentVersion": "1.0.0.0"
+                },
+                "debugSetting": {
+                   "detailLevel": "requestContent, responseContent"
+                }
+            }
         }
 
 
@@ -454,9 +458,13 @@
 
 或者，假设遇到部署错误，而你认为它与依赖关系设置错误有关。将模板分解为多个简化模板，对其进行测试。首先，创建仅部署单项资源（如 SQL Server）的模板。确保已正确定义该资源时，再添加依赖于它的资源（如 SQL 数据库）。正确定义这两项资源后，添加其他从属资源（如审核策略）。在每个测试部署之间，删除资源组，以确保充分测试依赖关系。
 
-### 检查部署顺序
+### <a name="check-deployment-sequence"></a>检查部署顺序
 
-如果以意外的顺序部署资源，可能发生许多部署错误。依赖关系设置不当就会出现这些错误。一项资源尝试使用另一资源的值，但后者尚不存在。查看部署操作顺序的方法如下：
+如果以意外的顺序部署资源，可能发生许多部署错误。依赖关系设置不当就会出现这些错误。缺少必需的依赖项时，就会出现一项资源尝试使用另一资源的值，但后者却不存在的情况。出现一个错误，指出找不到资源。可能会间歇性地遇到此类错误，因为资源的部署时间各不相同。例如，第一次尝试部署资源成功，因为所需资源偶然但却及时地完成了相关操作。但是，第二次尝试却失败了，因为所需资源未及时完成相关操作。
+
+不过，你想要避免设置不必要的依赖项。存在不必要的依赖项时，会导致不互相依赖的资源无法并行部署，从而延长了部署时间。此外，可能会创建阻止部署的循环依赖项。[reference](/documentation/articles/resource-group-template-functions/#reference) 函数可创建隐式依赖项，依赖于在函数中指定为参数的资源，前提是该资源部署在同一模板中。因此，用户拥有的依赖项可以多于在 **dependsOn** 属性中指定的依赖项。[resourceId](/documentation/articles/resource-group-template-functions/#resourceid) 函数不创建隐式依赖项，也不验证资源是否存在。
+
+遇到依赖项问题时，需了解资源部署顺序。查看部署操作顺序的方法如下：
 
 1. 选择资源组的部署历史记录。
 
@@ -473,15 +481,39 @@
     ![并行部署](./media/resource-manager-common-deployment-errors/deployment-events-parallel.png)  
 
 
-    下图显示了非并行部署的三个存储帐户。第二个存储帐户被标记为依赖于第一个存储帐户，第三个存储帐户又依赖于第二个存储帐户。因此，启动、接受并处理完成第一个存储帐户后才开始对下一个进行操作。
+    下图显示了非并行部署的三个存储帐户。第二个存储帐户依赖于第一个存储帐户，第三个存储帐户又依赖于第二个存储帐户。因此，启动、接受并处理完成第一个存储帐户后才开始对下一个进行操作。
 
     ![连续部署](./media/resource-manager-common-deployment-errors/deployment-events-sequence.png)  
 
 
-浏览部署事件，查看是否跟预期一样，有一项资源更早启动。如果是这样，请检查此资源的依赖关系。
+实际情况可能复杂得多，但可以通过相同方法发现每个资源的部署开始时间和完成时间。浏览部署事件，看其顺序是否不同于预期的顺序。如果答案为是，请重新评估该资源的依赖项。
+
+Resource Manager 可在模板验证过程中确定循环依赖项。它会返回一条错误消息，明确指出存在循环依赖项。解决循环依赖项问题的步骤：
+
+1. 在模板中找到循环依赖项中标识的资源。
+2. 检查该资源的 **dependsOn** 属性并使用 **reference** 函数查看其所依赖的资源。
+3. 检查这些资源，看其依赖于哪些资源。顺着这些依赖项检查下去，直到找到依赖于原始资源的资源。
+5. 对于循环依赖项所牵涉的资源，请仔细检查所有使用 **dependsOn** 属性的情况，确定不需要的依赖项。删除这些依赖项。如果不确定某个依赖项是否为必需依赖项，可尝试删除它。
+6. 重新部署模板。
+
+部署模板时，删除 **dependsOn** 属性中的值可能导致错误。如果遇到错误，可将依赖项添加回模板。
+
+如果该方法无法解决循环依赖项问题，可考虑将部分部署逻辑移至子资源（例如扩展或配置设置）中。将这些子资源配置为在循环依赖项所牵涉的资源之后部署。例如，假设要部署两个虚拟机，但必须在每个虚拟机上设置引用另一虚拟机的属性。可以按下述顺序部署这两个虚拟机：
+
+1. vm1
+2. vm2
+3. vm1 上的扩展依赖于 vm1 和 vm2。扩展在 vm1 上设置的值是从 vm2 获取的。
+4. vm2 上的扩展依赖于 vm1 和 vm2。扩展在 vm2 上设置的值是从 vm1 获取的。
+
+同一方法适用于应用服务应用。可以考虑将配置值移到应用资源的子资源中。可以按下述顺序部署两个 Web 应用：
+
+1. webapp1
+2. webapp2
+3. webapp1 的配置依赖于 webapp1 和 webapp2。它包含应用设置，其值来自 webapp2。
+4. webapp2 的配置依赖于 webapp1 和 webapp2。它包含应用设置，其值来自 webapp1。
 
 ## 其他服务故障排除
-如果前面的部署错误代码不能帮助你解决问题，可以查看出现了该错误的特定 Azure 服务的更详细的故障排除指南。
+如果前面的部署错误代码无助于解决问题，可以查看每个 Azure 服务的更详细的故障排除指南。
 
 下表列出了有关虚拟机的疑难解答主题。
 
@@ -509,6 +541,9 @@
 
 ## 后续步骤
 * 若要了解审核操作，请参阅 [Audit operations with Resource Manager](/documentation/articles/resource-group-audit/)（使用 Resource Manager 执行审核操作）。
-* 若要了解部署期间为确定错误执行哪些操作，请参阅 [View deployment operations](/documentation/articles/resource-manager-troubleshoot-deployments-portal/)（查看部署操作）。
+* 若要了解部署期间为确定错误执行哪些操作，请参阅 [View deployment operations](/documentation/articles/resource-manager-deployment-operations/)（查看部署操作）。
 
-<!---HONumber=Mooncake_0103_2017-->
+<!---HONumber=Mooncake_0120_2017-->
+<!-- Update_Description: update meta properties -->
+<!-- Update_Description: update link reference -->
+<!-- Update_Description: how to resolve the dependency among items. -->

@@ -5,8 +5,7 @@
     documentationcenter=""
     author="tfitzmac"
     manager="timlt"
-    editor="tysonn" />  
-
+    editor="tysonn" />
 <tags
     ms.assetid="003a78e5-2ff8-4685-93b4-e94d6fb8ed5b"
     ms.service="azure-resource-manager"
@@ -14,9 +13,10 @@
     ms.tgt_pltfrm="AzurePortal"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="10/08/2016"
-    wacn.date="12/26/2016"
+    ms.date="01/03/2017"
+    wacn.date="01/25/2017"
     ms.author="tomfitz" />
+
 
 # 使用标记来组织 Azure 资源
 资源管理器使您可以通过应用标记来按照逻辑组织资源。标记由通过您所定义的属性标识资源的键值对组成。若要将资源标记为属于同一类别，请将相同的标记应用到这些资源。
@@ -33,7 +33,7 @@
 > 
 
 ## 模板
-若要在部署过程中标记资源，只需将 **tags** 元素添加到正在部署的资源，然后提供标记名称和值即可。订阅中不需要预先存在标记名称和值。最多可为每个资源提供 15 个标记。
+若要在部署过程中标记资源，可将 **tags** 元素添加到正在部署的资源，然后提供标记名称和值。订阅中不需要预先存在标记名称和值。最多可为每个资源提供 15 个标记。
 
 以下示例显示了一个包含标记的存储帐户。
 
@@ -53,7 +53,7 @@
         }
     ]
 
-Resource Manager 当前不支持处理标记名称和值对象。可以传递标记值对象，但仍需指定标记名称，如以下示例所示。
+Resource Manager 当前不支持处理标记名称和值对象。可以传递标记值对象，但仍需指定标记名称，如以下示例所示：
 
     {
       "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
@@ -83,7 +83,6 @@ Resource Manager 当前不支持处理标记名称和值对象。可以传递标
       }]
     }
 
-
 ## 门户
 [AZURE.INCLUDE [resource-manager-tag-resource](../../includes/resource-manager-tag-resources.md)]
 
@@ -101,15 +100,17 @@ Resource Manager 当前不支持处理标记名称和值对象。可以传递标
 
 可以通过使用情况逗号分隔值 (CSV) 文件检索有关标记的信息。可以从 [Azure 帐户门户](https://account.windowsazure.cn/)下载使用情况文件。有关 REST API 操作，请参阅 [Azure 计费 REST API 参考](https://msdn.microsoft.com/zh-cn/library/azure/1ea5b323-54bb-423d-916f-190de96c6a3c)。
 
-在为支持标记和计费的服务下载使用情况 CSV 时，标记将显示在“标记”列中。有关更多详细信息，请参阅[了解 Azure 的计费](/documentation/articles/billing-understand-your-bill/)。
+在为支持标记和计费的服务下载使用情况 CSV 时，标记将显示在“标记”列中。有关详细信息，请参阅[了解你的 Azure 帐单](/documentation/articles/billing-understand-your-bill/)。
 
-![在计费中查看标记](./media/resource-group-using-tags/billing_csv.png)
+![在计费中查看标记](./media/resource-group-using-tags/billing_csv.png)  
 
 ## 后续步骤
 * 可以使用自定义策略对订阅应用限制和约定。定义的策略可能要求所有资源都拥有针对特定标记的值。有关详细信息，请参阅[使用策略来管理资源和控制访问](/documentation/articles/resource-manager-policy/)。
 * 有关部署资源时使用 Azure PowerShell 的说明，请参阅[将 Azure PowerShell 与 Azure 资源管理器配合使用](/documentation/articles/powershell-azure-resource-manager/)。
 * 有关部署资源时使用 Azure CLI 的说明，请参阅[将适用于 Mac、Linux 和 Windows 的 Azure CLI 与 Azure 资源管理配合使用](/documentation/articles/xplat-cli-azure-resource-manager/)。
-* 有关使用门户的说明，请参阅 [Using the Azure portal preview to manage your Azure resources](/documentation/articles/resource-group-portal/)（使用 Azure 门户预览管理 Azure 资源）
+* 如需门户使用简介，请参阅[使用 Azure 门户预览版管理 Azure 资源](/documentation/articles/resource-group-portal/)
 * 如需了解企业如何使用 Resource Manager 对订阅进行有效管理，请参阅 [Azure 企业机架 - 规范性订阅管理](/documentation/articles/resource-manager-subscription-governance/)。
 
-<!---HONumber=Mooncake_1219_2016-->
+<!---HONumber=Mooncake_0120_2017-->
+<!-- Update_Description: update meta properties -->
+<!-- Update_Description: update link reference -->

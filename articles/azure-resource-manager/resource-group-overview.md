@@ -13,9 +13,10 @@
     ms.topic="get-started-article"
     ms.tgt_pltfrm="na"
     ms.workload="na"
-    ms.date="12/12/2016"
-    wacn.date="01/06/2017"
+    ms.date="01/12/2017"
+    wacn.date="01/25/2017"
     ms.author="tomfitz" />
+
 
 # Azure 资源管理器概述
 应用程序的基础结构通常由许多组件构成：可能有虚拟机、存储帐户和虚拟网络，或 Web 应用、数据库、数据库服务器和第三方服务。这些组件不会以独立的实体出现，而是以单个实体的相关部件和依赖部件出现。如果你希望以组的方式部署、管理和监视这些这些组件，那么，你可以使用 Azure 资源管理器以组的方式处理解决方案中的资源。可以通过一个协调的操作为解决方案部署、更新或删除所有资源。可以使用一个模板来完成部署，该模板适用于不同的环境，例如测试、过渡和生产。资源管理器提供安全、审核和标记功能，以帮助你在部署后管理资源。
@@ -43,7 +44,7 @@
 资源管理器提供了一种新方法来部署和管理您的解决方案。如果你使用早期的部署模型并想要了解这些更改，请参阅[了解资源管理器部署和经典部署](/documentation/articles/resource-manager-deployment-model/)。
 
 ## <a name="consistent-management-layer"></a> 一致的管理层
-Resource Manager 通过 Azure PowerShell、Azure CLI、Azure 门户预览、REST API 和开发工具，为所执行的任务提供一致的管理层。所有工具使用一组通用操作。可以使用最合适的工具，并且可以换用这些工具而不发生混淆。
+Resource Manager 通过 Azure PowerShell、Azure CLI、Azure 门户预览版、REST API 和开发工具，为所执行的任务提供一致的管理层。所有工具使用一组通用操作。可以使用最合适的工具，并且可以换用这些工具而不发生混淆。
 
 下图显示了这些工具如何与同等的 Azure Resource Manager API 交互。API 将请求传递给 Resource Manager 服务，后者对请求进行身份验证和授权。然后，Resource Manager 将请求路由到适当的资源提供程序。
 
@@ -60,7 +61,7 @@ Resource Manager 通过 Azure PowerShell、Azure CLI、Azure 门户预览、REST
 
 有关模板的建议，请参阅 [Best practices for creating Azure Resource Manager templates](/documentation/articles/resource-manager-template-best-practices/)（有关创建 Azure Resource Manager 模板的最佳实践）。
 
-如需了解企业如何使用 Resource Manager 对订阅进行有效管理，请参阅 [Azure enterprise scaffold - prescriptive subscription governance](/documentation/articles/resource-manager-subscription-governance/)（Azure 企业基架 - 出于合规目的监管订阅）。
+如需了解企业如何使用 Resource Manager 对订阅进行有效管理，请参阅 [Azure 企业基架 - 规范性订阅管理](/documentation/articles/resource-manager-subscription-governance/)。
 
 ## <a name="resource-groups"></a> 资源组
 定义资源组时，需要考虑以下几个重要因素：
@@ -173,7 +174,7 @@ Azure Resource Manager 会分析依赖关系，以确保按正确的顺序创建
 
 * [使用 Resource Manager 模板和 Azure PowerShell 部署资源](/documentation/articles/resource-group-template-deploy/)
 * [使用 Resource Manager 模板和 Azure CLI 部署资源](/documentation/articles/resource-group-template-deploy-cli/)
-* [使用 Resource Manager 模板和 Azure 门户预览部署资源](/documentation/articles/resource-group-template-deploy-portal/)
+* [使用 Resource Manager 模板和 Azure 门户预览版部署资源](/documentation/articles/resource-group-template-deploy-portal/)
 * [使用 Resource Manager 模板和 Resource Manager REST API 部署资源](/documentation/articles/resource-group-template-deploy-rest/)
 
 ## 标记
@@ -204,7 +205,7 @@ Azure Resource Manager 会分析依赖关系，以确保按正确的顺序创建
 
     azure resource list -t costCenter=Finance --json
 
-还可通过 Azure 门户预览查看标记的资源。
+还可通过 Azure 门户预览版查看标记的资源。
 
 订阅的[使用情况报告](/documentation/articles/billing-understand-your-bill/)包含标记名称和值，可让你根据标记划分成本。有关标记的详细信息，请参阅[使用标记来组织 Azure 资源](/documentation/articles/resource-group-using-tags/)。
 
@@ -244,7 +245,7 @@ Azure 还提供资源特定的多种角色。一些常见的角色包括：
 你可以显式锁定关键资源，以防止用户删除或修改这些资源。有关详细信息，请参阅[使用 Azure 资源管理器锁定资源](/documentation/articles/resource-group-lock-resources/)。
 
 ## 活动日志
-Resource Manager 记录所有创建、修改或删除资源的操作。在进行故障排除或监视组织中的用户如何修改资源时，可以使用活动日志来查找错误。若要查看日志，请在资源组的“设置”边栏选项卡中选择“活动日志”。可以按照许多不同的值筛选日志，包括哪位用户启动了操作。有关使用活动日志的信息，请参阅 [Audit operations with Resource Manager](/documentation/articles/resource-group-audit/)（使用 Resource Manager 执行审核操作）。
+Resource Manager 记录所有创建、修改或删除资源的操作。在进行故障排除或监视组织中的用户如何修改资源时，可以使用活动日志来查找错误。若要查看日志，请在资源组的“设置”边栏选项卡中选择“活动日志”。可以按照许多不同的值筛选日志，包括哪位用户启动了操作。有关使用活动日志的信息，请参阅[通过查看活动日志管理 Azure 资源](/documentation/articles/resource-group-audit/)。
 
 ## 自定义的策略
 资源管理器可让你创建自定义策略来管理资源。创建的策略类型可包括各种方案。可以在资源上实施命名约定，限制可部署的资源的类型和实例，或限制可托管资源类型的区域。可以要求资源上的标记值按部门组织计费。可以通过创建策略来降低成本并在订阅中保持一致性。
@@ -277,7 +278,7 @@ Azure SDK 适用于多种语言和平台。每种语言实现可通过其生态�
 [.NET](https://github.com/Azure/azure-sdk-for-net) | [Java](https://github.com/Azure/azure-sdk-for-java) | [Node.js](https://github.com/Azure/azure-sdk-for-node) | [PHP](https://github.com/Azure/azure-sdk-for-php) | [Python](https://github.com/Azure/azure-sdk-for-python) | [Ruby](https://github.com/Azure/azure-sdk-for-ruby)
 
 > [AZURE.NOTE]
-如果 SDK 未提供所需的功能，也可以直接调用 [Azure REST API](https://docs.microsoft.com/rest/api/resources/)。
+> 如果 SDK 未提供所需的功能，也可以直接调用 [Azure REST API](https://docs.microsoft.com/rest/api/resources/)。
 > 
 > 
 
@@ -312,4 +313,7 @@ Azure SDK 适用于多种语言和平台。每种语言实现可通过其生态�
 
 [powershellref]: https://docs.microsoft.com/powershell/resourcemanager/azurerm.resources/v3.2.0/azurerm.resources
 
-<!---HONumber=Mooncake_0103_2017-->
+<!---HONumber=Mooncake_0120_2017-->
+<!-- Update_Description: update meta properties -->
+<!-- Update_Description: wording update -->
+<!-- Update_Description: update link reference -->

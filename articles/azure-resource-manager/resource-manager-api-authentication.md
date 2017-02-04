@@ -5,8 +5,7 @@
     documentationcenter="na"
     author="dushyantgill"
     manager="timlt"
-    editor="tysonn" />  
-
+    editor="tysonn" />
 <tags
     ms.assetid="17b2b40d-bf42-4c7d-9a88-9938409c5088"
     ms.service="azure-resource-manager"
@@ -14,11 +13,12 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="identity"
-    ms.date="08/31/2016"
-    wacn.date="12/26/2016"
-    ms.author="dugill;tomfitz" />
+    ms.date="12/27/2016"
+    wacn.date="01/25/2017"
+    ms.author="dugill;tomfitz" />  
 
-# 如何使用 Azure Active Directory 与 Resource Manager 管理客户的资源
+
+# 使用 Resource Manager 身份验证 API 访问订阅
 ## 介绍
 本主题面向需要创建应用来管理客户 Azure 资源的软件开发人员，介绍如何使用 Azure Resource Manager API 进行身份验证，并获取其他订阅中资源的访问权限。
 
@@ -349,13 +349,15 @@ ASP.NET MVC 示例应用的 [ServicePrincipalHasReadAccessToSubscription](https:
 ## 管理连接的订阅
 将相应的 RBAC 角色分配到订阅上的应用程序服务主体后，应用程序可以使用 Azure Resource Manager 的仅限应用的访问令牌来持续进行监视/管理。
 
-如果订阅所有者使用经典管理门户或命令行工具删除应用程序的角色分配，应用程序再也无法访问该订阅。在此情况下，你应该通知用户，与订阅的连接是通过应用程序外部提供的，并为他们提供“修复”连接的选项。“修复”只是重新创建脱机删除的角色分配。
+如果订阅所有者使用经典管理门户或命令行工具删除应用程序的角色分配，应用程序将再也无法访问该订阅。在此情况下，你应该通知用户，与订阅的连接是通过应用程序外部提供的，并为他们提供“修复”连接的选项。“修复”只是重新创建脱机删除的角色分配。
 
-如同允许用户将其订阅连接到应用程序一样，必须允许用户断开连接订阅。从访问管理的观点来讲，断开连接意味着删除应用程序服务主体在订阅上的角色分配。（可选）也可能删除订阅的任何应用程序状态。
-只有对订阅拥有访问管理权限的用户才能断开连接订阅。
+如同允许用户将其订阅连接到应用程序一样，必须允许用户断开连接订阅。从访问管理的观点来讲，断开连接意味着删除应用程序服务主体在订阅上的角色分配。（可选）也可能删除订阅的任何应用程序状态。只有对订阅拥有访问管理权限的用户才能断开连接订阅。
 
 ASP.net MVC 示例应用的 [RevokeRoleFromServicePrincipalOnSubscription 方法](https://github.com/dushyantgill/VipSwapper/blob/master/CloudSense/CloudSense/AzureResourceManagerUtil.cs#L200)可实现此调用。
 
 大功告成 - 用户现在可以使用应用程序来轻松连接和管理其 Azure 订阅。
 
-<!---HONumber=Mooncake_1219_2016-->
+<!---HONumber=Mooncake_0120_2017-->
+<!-- Update_Description: update meta properties -->
+<!-- Update_Description: wording update -->
+<!-- Update_Description: update link reference -->

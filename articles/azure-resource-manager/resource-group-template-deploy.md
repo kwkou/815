@@ -5,8 +5,7 @@
     documentationcenter="na"
     author="tfitzmac"
     manager="timlt"
-    editor="tysonn" />  
-
+    editor="tysonn" />
 <tags
     ms.assetid="55903f35-6c16-4c6d-bf52-dbf365605c3f"
     ms.service="azure-resource-manager"
@@ -15,23 +14,23 @@
     ms.tgt_pltfrm="na"
     ms.workload="na"
     ms.date="11/16/2016"
-    wacn.date="12/26/2016"
+    wacn.date="01/25/2017"
     ms.author="tomfitz" />  
 
 
 # 使用 Resource Manager 模板和 Azure PowerShell 部署资源
 > [AZURE.SELECTOR]
-* [Azure PowerShell](/documentation/articles/powershell-azure-resource-manager/)
-* [Azure CLI](/documentation/articles/xplat-cli-azure-resource-manager/)
-* [门户](/documentation/articles/resource-group-portal/)
-* [REST API](/documentation/articles/resource-manager-rest-api/)
+- [PowerShell](/documentation/articles/resource-group-template-deploy/)
+- [Azure CLI](/documentation/articles/resource-group-template-deploy-cli/)
+- [门户](/documentation/articles/resource-group-template-deploy-portal/)
+- [REST API](/documentation/articles/resource-group-template-deploy-rest/)
 
 本主题介绍如何将 Azure PowerShell 与 Resource Manager 模板配合使用向 Azure 部署资源。你的模板可以是本地文件或是可通过 URI 访问的外部文件。如果模板驻留在存储帐户中，你可以限制对该模板的访问，并在部署过程中提供共享访问签名 (SAS) 令牌。
 
 > [AZURE.TIP]
-有关在部署过程中调试错误的帮助，请参阅：
+> 有关在部署过程中调试错误的帮助，请参阅：
 > 
-> * [使用 Azure PowerShell 查看部署操作](/documentation/articles/resource-manager-troubleshoot-deployments-powershell/)，了解如何获取有助于排查错误的信息
+> * [查看部署操作](/documentation/articles/resource-manager-deployment-operations/)，了解如何获取有助于排查错误的信息
 > * [排查使用 Azure Resource Manager 将资源部署到 Azure 时的常见错误](/documentation/articles/resource-manager-common-deployment-errors/)，了解如何解决常见的部署错误
 > 
 > 
@@ -39,7 +38,7 @@
 ## 快速部署步骤
 若要快速开始进行部署，请使用以下命令：
 
-    New-AzureRmResourceGroup -Name ExampleResourceGroup -Location "China East"
+    New-AzureRmResourceGroup -Name ExampleResourceGroup -Location "China North"
     New-AzureRmResourceGroupDeployment -Name ExampleDeployment -ResourceGroupName ExampleResourceGroup -TemplateFile c:\MyTemplates\example.json -TemplateParameterFile c:\MyTemplates\example.params.json
 
 这些命令创建资源组，并将模板部署到该资源组。模板文件和参数文件都是本地文件。如果该操作成功，则一切准备就绪，可以部署资源了。不过，可以使用更多选项来指定要部署的资源。本文其余部分介绍了部署过程中可用的所有选项。
@@ -68,20 +67,10 @@
    
     若要创建资源组，请提供资源组的名称和位置。提供资源组的位置是因为资源组存储与资源有关的元数据。出于合规性原因，你可能会想要指定该元数据的存储位置。一般情况下，建议指定大部分资源将驻留的位置。使用相同位置可简化模板。
 
-        New-AzureRmResourceGroup -Name ExampleResourceGroup -Location "China East"
-   
-    将返回新资源组的摘要。
-   
-            ResourceGroupName : ExampleResourceGroup
-            Location          : chinaeast
-            ProvisioningState : Succeeded
-            Tags              :
-            Permissions       :
-                 Actions  NotActions
-                 =======  ==========
-                 *
-            ResourceId        : /subscriptions/######/resourceGroups/ExampleResourceGroup
+        New-AzureRmResourceGroup -Name ExampleResourceGroup -Location "China North"
 
+    将返回新资源组的摘要。
+    
 4. 在执行部署前，可以验证部署设置。使用 **Test-AzureRmResourceGroupDeployment** cmdlet 可以在创建实际资源之前找出问题。下面的示例演示如何验证部署。
 
         Test-AzureRmResourceGroupDeployment -ResourceGroupName ExampleResourceGroup -TemplateFile <PathToTemplate>
@@ -96,14 +85,14 @@
 
         New-AzureRmResourceGroupDeployment -Name ExampleDeployment -ResourceGroupName ExampleResourceGroup -TemplateUri https://raw.githubusercontent.com/exampleuser/MyTemplates/master/example.json
 
-    The preceding two examples do not include parameter values. You learn about the options for passing parameter values in the [Parameters](#parameters) section. For now, you are prompted to provide parameter values with the following syntax:
+    前面的两个示例不包括参数值。可以在[参数](#parameters)部分了解传递参数值的选项。现在，可通过以下语法提示用户提供参数值：
 
         cmdlet New-AzureRmResourceGroupDeployment at command pipeline position 1
         Supply values for the following parameters:
         (Type !? for Help.)
         firstParameter: <type here>
 
-    After the resources have been deployed, you see a summary of the deployment. The summary includes a **ProvisioningState**, which indicates whether the deployment succeeded.
+    部署资源组后，将看到部署摘要。摘要包含 **ProvisioningState**，指示部署是否成功。
 
         DeploymentName    : ExampleDeployment
         ResourceGroupName : ExampleResourceGroup
@@ -115,13 +104,13 @@
 
         New-AzureRmResourceGroupDeployment -Name ExampleDeployment -DeploymentDebugLogLevel All -ResourceGroupName ExampleResourceGroup -TemplateFile <PathOrLinkToTemplate>
 
-    有关使用此调试内容解决部署问题的详细信息，请参阅[使用 Azure PowerShell 对资源组部署进行故障排除](/documentation/articles/resource-manager-troubleshoot-deployments-powershell/)。
+    有关使用此调试内容排查部署问题的详细信息，请参阅[查看部署操作](/documentation/articles/resource-manager-deployment-operations/)。
 
 ## 使用 SAS 令牌部署专用模板
 可以将模板添加到存储帐户，并在部署过程中使用 SAS 令牌链接到这些模板。
 
 > [AZURE.IMPORTANT]
-通过执行以下步骤，只有帐户所有者可以访问包含模板的 blob。但是，如果为 blob 创建 SAS 令牌，则拥有该 URI 的任何人都可以访问 blob。如果其他用户截获了该 URI，则此用户可以访问该模板。使用 SAS 令牌是限制对模板的访问的好方法，但不应直接在模板中包括密码等敏感数据。
+> 通过执行以下步骤，只有帐户所有者可以访问包含模板的 blob。但是，如果为 blob 创建 SAS 令牌，则拥有该 URI 的任何人都可以访问 blob。如果其他用户截获了该 URI，则此用户可以访问该模板。使用 SAS 令牌是限制对模板的访问的好方法，但不应直接在模板中包括密码等敏感数据。
 > 
 > 
 
@@ -130,11 +119,11 @@
 
 1. 创建资源组。
 
-        New-AzureRmResourceGroup -Name ManageGroup -Location "China East"
+        New-AzureRmResourceGroup -Name ManageGroup -Location "China North"
 
 2. 创建存储帐户。存储帐户名称必须在 Azure 中唯一，因此，请为帐户提供自己的名称。
 
-        New-AzureRmStorageAccount -ResourceGroupName ManageGroup -Name storagecontosotemplates -Type Standard_LRS -Location "China East"
+        New-AzureRmStorageAccount -ResourceGroupName ManageGroup -Name storagecontosotemplates -Type Standard_LRS -Location "China North"
 
 3. 设置当前存储帐户。
 
@@ -186,8 +175,6 @@
 
         New-AzureRmResourceGroupDeployment -Name ExampleDeployment -ResourceGroupName ExampleResourceGroup -TemplateUri <LinkToTemplate> -TemplateParameterUri https://raw.githubusercontent.com/exampleuser/MyTemplates/master/example.params.json
 
-## <a name="parameter-file"></a> 参数文件
-
 [AZURE.INCLUDE [resource-manager-parameter-file](../../includes/resource-manager-parameter-file.md)]
 
 如果你的模板包括的一个参数与 PowerShell 命令中的某个参数同名，系统会提示你提供该参数的值。Azure PowerShell 在提供模板中的参数时包含后缀 **FromTemplate**。例如，模板中名为 **ResourceGroupName** 的参数与 [New-AzureRmResourceGroupDeployment](https://docs.microsoft.com/powershell/resourcemanager/azurerm.resources/v3.3.0/new-azurermresourcegroupdeployment) cmdlet 中的 **ResourceGroupName** 参数冲突。系统会提示你提供 **ResourceGroupNameFromTemplate** 的值。通常，不应将参数命名为与用于部署操作的参数的名称相同以避免这种混乱。
@@ -201,8 +188,11 @@
 ## 后续步骤
 * 有关通过 .NET 客户端库部署资源的示例，请参阅 [Deploy resources using .NET libraries and a template](/documentation/articles/virtual-machines-windows-csharp-template/)（使用 .NET 库和模板部署资源）。
 * 若要在模板中定义参数，请参阅[创作模板](/documentation/articles/resource-group-authoring-templates/#parameters)。
-* 有关将解决方案部署到不同环境的指南，请参阅 [Azure 中的开发和测试环境](/documentation/articles/solution-dev-test-environments/)。
+* 有关将解决方案部署到不同环境的指南，请参阅 [Development and test environments in Azure](/documentation/articles/solution-dev-test-environments/)（Azure 中的开发和测试环境）。
 * 如需了解企业如何使用 Resource Manager 对订阅进行有效管理，请参阅 [Azure 企业机架 - 规范性订阅管理](/documentation/articles/resource-manager-subscription-governance/)。
 * 有关自动化部署的四部分系列教程，请参阅[将应用程序自动部署到 Azure 虚拟机](/documentation/articles/virtual-machines-windows-dotnet-core-1-landing/)。此系列教程介绍了应用程序体系结构、访问与安全性、可用性与缩放性，以及应用程序部署。
 
-<!---HONumber=Mooncake_1219_2016-->
+<!---HONumber=Mooncake_0120_2017-->
+<!-- Update_Description: update meta properties -->
+<!-- Update_Description: wording update -->
+<!-- Update_Description: update link reference -->

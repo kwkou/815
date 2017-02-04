@@ -13,8 +13,8 @@
     ms.topic="article"
     ms.tgt_pltfrm="multiple"
     ms.workload="na"
-    ms.date="12/14/2016"
-    wacn.date="01/06/2017"
+    ms.date="01/13/2017"
+    wacn.date="01/25/2017"
     ms.author="tomfitz" />  
 
 
@@ -24,7 +24,12 @@
 - [Azure CLI](/documentation/articles/resource-group-authenticate-service-principal-cli/)
 - [门户](/documentation/articles/resource-group-create-service-principal-portal/)
 
-如果应用程序或脚本需要访问资源，用户在多数情况下不想要使用自己的凭据来运行此过程。用户可能有几种不同的权限可用于应用程序，如果用户职责改变，则不想要应用程序继续使用此凭据。与上述方法不同，也可以为应用程序创建一个标识，其中包括身份验证凭据和角色分配情况。每次应用运行时，将使用这些凭据对其自身进行身份验证。本主题介绍如何通过 [Azure PowerShell](https://docs.microsoft.com/powershell/azureps-cmdlets-docs) 为应用程序进行一切所需设置，使之能够使用自己的凭据和标识运行。
+当应用或脚本需访问资源时，可以为应用设置一个标识，然后使用其自己的凭据进行身份验证。与使用用户自己的凭据运行应用相比，此方法更优，原因在于：
+
+* 可以将权限分配给应用标识，这些权限不同于你自己的权限。通常情况下，这些权限仅限于应用需执行的操作。
+* 你的职责变化时，无需更改应用的凭据。
+
+本主题介绍如何通过 [Azure PowerShell](https://docs.microsoft.com/powershell/azureps-cmdlets-docs) 为应用程序进行一切所需设置，使之能够使用自己的凭据和标识运行。
 
 使用 PowerShell 时，可以通过两个选项进行 AD 应用程序身份验证：
 
@@ -59,7 +64,7 @@
     Start-Sleep 15
     New-AzureRmRoleAssignment -RoleDefinitionName Reader -ServicePrincipalName $app.ApplicationId
 
-该脚本休眠 15 秒，让新的服务主体有时间传遍 Active Directory。如果脚本等待时长不足，将显示错误，称“PrincipalNotFound: 主体 {id} 不存在于目录中”。如果收到此错误，可以重新运行该 cmdlet，将其分配给一个角色。
+该脚本休眠 15 秒，让新的服务主体有时间传遍 Active Directory。如果脚本等待时长不足，将显示错误，称“PrincipalNotFound: 主体 {id} 不存在于目录中”。 如果收到此错误，可以重新运行该 cmdlet，将其分配给一个角色。
 
 仔细浏览这些步骤以确保理解该过程。
 
@@ -72,14 +77,13 @@
         $app = New-AzureRmADApplication -DisplayName "exampleapp" -HomePage "https://www.contoso.org/exampleapp" -IdentifierUris "https://www.contoso.org/exampleapp" -Password "{Your_Password}"
 
     对于单租户应用程序，不会验证 URI。
-   
-    如果帐户在 Active Directory 上不具有[所需的权限](#required-permissions)，将看到指示“Authentication_Unauthorized”或“上下文中找不到订阅”的错误消息。
 
+    如果帐户在 Active Directory 上不具有[所需的权限](#required-permissions)，将看到指示“Authentication\_Unauthorized”或“上下文中找不到订阅”的错误消息。
 3. 检查新的应用程序对象。
 
         $app
 
-    请特别注意 **ApplicationId** 属性，需要使用该属性来创建服务主体、进行角色分配以及获取访问令牌。
+    请特别注意 `ApplicationId` 属性，需要使用该属性创建服务主体、进行角色分配以及获取访问令牌。
 
         DisplayName             : exampleapp
         ObjectId                : c95e67a3-403c-40ac-9377-115fa48f8f39
@@ -95,22 +99,22 @@
 
         New-AzureRmADServicePrincipal -ApplicationId $app.ApplicationId
 
-5. 向服务主体授予对订阅的权限。在此示例中，向“读取者”角色（授予读取订阅中所有资源的权限）添加服务主体。对于其他角色，请参阅 [RBAC：内置角色](/documentation/articles/role-based-access-built-in-roles/)。对于 **ServicePrincipalName** 参数，请提供你在创建应用程序时使用的 **ApplicationId**。运行此 cmdlet 之前，必须留出一些时间让新服务主体传遍 Active Directory。手动运行这些 cmdlet 时，cmdlet 之间通常已经过足够的时间。在脚本中，应在 cmdlet 之间添加休眠步骤（如 `Start-Sleep 15`）。如果看到错误称“PrincipalNotFound: 主体 {id} 不存在于目录中”，请重新运行该 cmdlet。
+5. 向服务主体授予对订阅的权限。在此示例中，向“读取者”角色（授予读取订阅中所有资源的权限）添加服务主体。对于其他角色，请参阅 [RBAC：内置角色](/documentation/articles/role-based-access-built-in-roles/)。对于 `ServicePrincipalName` 参数，请提供创建应用程序时使用的 `ApplicationId`。运行此 cmdlet 之前，必须留出一些时间让新服务主体传遍 Active Directory。手动运行这些 cmdlet 时，cmdlet 之间通常已经过足够的时间。在脚本中，应在 cmdlet 之间添加休眠步骤（如 `Start-Sleep 15`）。如果看到错误称“PrincipalNotFound: 主体 {id} 不存在于目录中”，请重新运行该 cmdlet。
 
         New-AzureRmRoleAssignment -RoleDefinitionName Reader -ServicePrincipalName $app.ApplicationId
 
-如果帐户没有足够权限来分配角色，将看到一条错误消息。该消息声明你的帐户**无权执行操作 'Microsoft.Authorization/roleAssignments/write' over scope '/subscriptions/{guid}'**。
+如果帐户没有足够权限来分配角色，将看到一条错误消息。该消息声明用户的帐户“无权在作用域 '/subscriptions/{guid}' 执行操作 'Microsoft.Authorization/roleAssignments/write'”。
 
 就这么简单！ AD 应用程序和服务主体设置完毕。下一部分演示如何通过 PowerShell 使用凭据进行登录。如果要在代码应用程序中使用凭据，可以跳到[示例应用程序](#sample-applications)。
 
-### 通过 PowerShell 提供凭据
+### <a name="provide-credentials-through-powerShell"></a> 通过 PowerShell 提供凭据
 现在，需要以应用程序方式登录以执行相应操作。
 
-1. 运行 **Get-Credential** 命令，以创建包含你的凭据的 **PSCredential** 对象。运行此命令之前需要 **ApplicationId**，所以请确保具有它以进行粘贴。
+1. 运行 `Get-Credential` 命令，以创建包含你的凭据的 `PSCredential` 对象。运行此命令之前需要 `ApplicationId`，所以请确保可以使用它进行粘贴。
 
         $creds = Get-Credential
 
-2. 系统会提示你输入凭据。对于用户名，请使用你在创建应用程序时所用的 **ApplicationId**。对于密码，请使用你在创建帐户时指定的密码。
+2. 系统会提示你输入凭据。对于用户名，请使用在创建应用程序时使用的 `ApplicationId`。对于密码，请使用你在创建帐户时指定的密码。
    
      ![输入凭据](./media/resource-group-authenticate-service-principal/arm-get-credential.png)  
 
@@ -141,9 +145,10 @@
         Select-AzureRmProfile -Path c:\Users\exampleuser\profile\exampleSP.json
 
 > [AZURE.NOTE]
-访问令牌会过期，因此使用保存的配置文件仅适合在令牌有效期间使用。
+> 访问令牌会过期，因此使用保存的配置文件仅适合在令牌有效期间使用。
 > 
-> 
+
+也可从要登录的 PowerShell 调用 REST 操作。可以从身份验证响应中检索访问令牌，将其用于其他操作。若要通过示例来了解如何通过调用 REST 操作来检索访问令牌，请参阅[生成访问令牌](/documentation/articles/resource-manager-rest-api/#generating-an-access-token)。
 
 ## <a name="create-service-principal-with-certificate"></a> 使用证书创建服务主体
 在本部分中，将执行步骤以：
@@ -153,7 +158,7 @@
 * 创建服务主体
 * 向服务主体分配“读取者”角色
 
-若要在 Windows 10 或 Windows Server 2016 Technical Preview 上使用 Azure PowerShell 2.0 快速执行这些步骤，请参阅以下 cmdlet。
+若要在 Windows 10 或 Windows Server 2016 Technical Preview 上使用 Azure PowerShell 2.0 快速执行这些步骤，请参阅以下 cmdlet：
 
     $cert = New-SelfSignedCertificate -CertStoreLocation "cert:\CurrentUser\My" -Subject "CN=exampleapp" -KeySpec KeyExchange
     $keyValue = [System.Convert]::ToBase64String($cert.GetRawCertData())
@@ -162,12 +167,12 @@
     Start-Sleep 15
     New-AzureRmRoleAssignment -RoleDefinitionName Reader -ServicePrincipalName $app.ApplicationId
 
-该脚本休眠 15 秒，让新的服务主体有时间传遍 Active Directory。如果脚本等待时长不足，将显示错误，称“PrincipalNotFound: 主体 {id} 不存在于目录中”。如果收到此错误，可以重新运行该 cmdlet，将其分配给一个角色。
+该脚本休眠 15 秒，让新的服务主体有时间传遍 Active Directory。如果脚本等待时长不足，将显示错误，称“PrincipalNotFound: 主体 {id} 不存在于目录中”。 如果收到此错误，可以重新运行该 cmdlet，将其分配给一个角色。
 
 仔细浏览这些步骤以确保理解该过程。本文还将演示如何在使用早期版本的 Azure PowerShell 或操作系统的情况下完成任务。
 
 ### 创建自签名证书
-可用于 Windows 10 和 Windows Server 2016 Technical Preview 的 PowerShell 版本具有更新的“New-SelfSignedCertificate”cmdlet，可生成自签名证书。早期版本的操作系统具有 New-SelfSignedCertificate cmdlet，但它不提供本主题需要的参数。相反，你需要导入一个模块以生成证书。本主题将演示两种基于所具有的操作系统生成证书的方法。
+可用于 Windows 10 和 Windows Server 2016 Technical Preview 的 PowerShell 版本具有更新的 `New-SelfSignedCertificate` cmdlet，可生成自签名证书。早期版本的操作系统具有 New-SelfSignedCertificate cmdlet，但它不提供本主题需要的参数。相反，你需要导入一个模块以生成证书。本主题将演示两种基于所具有的操作系统生成证书的方法。
 
 * 如果使用 **Windows 10 或 Windows Server 2016 Technical Preview**，请运行以下命令以创建自签名证书：
 
@@ -227,11 +232,11 @@
 
         New-AzureRmADServicePrincipal -ApplicationId $app.ApplicationId
 
-5. 向服务主体授予对订阅的权限。在此示例中，向“读取者”角色（授予读取订阅中所有资源的权限）添加服务主体。对于其他角色，请参阅 [RBAC：内置角色](/documentation/articles/role-based-access-built-in-roles/)。对于 **ServicePrincipalName** 参数，请提供你在创建应用程序时使用的 **ApplicationId**。运行此 cmdlet 之前，必须留出一些时间让新服务主体传遍 Active Directory。手动运行这些 cmdlet 时，cmdlet 之间通常已经过足够的时间。在脚本中，应在 cmdlet 之间添加休眠步骤（如 `Start-Sleep 15`）。如果看到错误称“PrincipalNotFound: 主体 {id} 不存在于目录中”，请重新运行该 cmdlet。
+5. 向服务主体授予对订阅的权限。在此示例中，向“读取者”角色（授予读取订阅中所有资源的权限）添加服务主体。对于其他角色，请参阅 [RBAC：内置角色](/documentation/articles/role-based-access-built-in-roles/)。对于 `ServicePrincipalName` 参数，请提供创建应用程序时使用的 `ApplicationId`。运行此 cmdlet 之前，必须留出一些时间让新服务主体传遍 Active Directory。手动运行这些 cmdlet 时，cmdlet 之间通常已经过足够的时间。在脚本中，应在 cmdlet 之间添加休眠步骤（如 `Start-Sleep 15`）。如果看到错误称“PrincipalNotFound: 主体 {id} 不存在于目录中”，请重新运行该 cmdlet。
 
         New-AzureRmRoleAssignment -RoleDefinitionName Reader -ServicePrincipalName $app.ApplicationId
 
-    如果帐户没有足够权限来分配角色，将看到一条错误消息。该消息声明你的帐户**无权执行操作 'Microsoft.Authorization/roleAssignments/write' over scope '/subscriptions/{guid}'**。
+    如果帐户没有足够权限来分配角色，将看到一条错误消息。该消息声明用户的帐户“无权在作用域 '/subscriptions/{guid}' 执行操作 'Microsoft.Authorization/roleAssignments/write'”。
 
 就这么简单！ AD 应用程序和服务主体设置完毕。下一部分演示如何通过 PowerShell 使用证书进行登录。
 
@@ -252,7 +257,7 @@
 
 ## 更改凭据
 
-为了保障安全或由于凭据过期，若要更改 AD 应用的凭据，请使用 `Remove-AzureRmADAppCredential` 和 `New-AzureRmADAppCredential` cmdlet。
+若要更改 AD 应用的凭据（为了保障安全或由于凭据过期的缘故），请使用 [Remove-AzureRmADAppCredential](https://docs.microsoft.com/powershell/resourcemanager/azurerm.resources/v3.3.0/remove-azurermadappcredential) 和 [New-AzureRmADAppCredential](https://docs.microsoft.com/powershell/resourcemanager/azurerm.resources/v3.3.0/new-azurermadappcredential) cmdlet。
 
 若要删除应用程序的所有凭据，请使用：
 
@@ -299,4 +304,7 @@
 * 有关应用程序和服务主体的详细说明，请参阅[应用程序对象和服务主体对象](/documentation/articles/active-directory-application-objects/)。
 * 有关 Active Directory 身份验证的详细信息，请参阅 [Azure AD 的身份验证方案](/documentation/articles/active-directory-authentication-scenarios/)。
 
-<!---HONumber=Mooncake_0103_2017-->
+<!---HONumber=Mooncake_0120_2017-->
+<!-- Update_Description: update meta properties -->
+<!-- Update_Description: wording update -->
+<!-- Update_Description: update link references -->

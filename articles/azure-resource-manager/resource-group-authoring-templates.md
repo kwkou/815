@@ -13,9 +13,10 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="na"
-    ms.date="12/01/2016"
-    wacn.date="01/06/2017"
+    ms.date="01/03/2017"
+    wacn.date="01/25/2017"
     ms.author="tomfitz" />
+
 
 # 创作 Azure 资源管理器模板
 本主题介绍 Azure Resource Manager 模板的结构，演示了模板的不同部分，以及可在相应部分使用的属性。模板中包含可用于为部署构造值的 JSON 和表达式。
@@ -50,7 +51,7 @@
 本主题稍后更详细地介绍模板的各个节。
 
 ## 表达式和函数
-模板的基本语法为 JSON。但是，表达式和函数扩展了模板中的可用 JSON。使用表达式，可以创建不是严格文本值的值。表达式括在方括号（[ 和 ]）中，并在部署模板时进行求值。表达式可以出现在 JSON 字符串值中的任何位置，并始终返回另一个 JSON 值。如果需要使用以方括号 [ 开头的文本字符串，则必须使用两个方括号 [[。
+模板的基本语法为 JSON。但是，表达式和函数扩展了模板中的可用 JSON。使用表达式，可以创建不是严格文本值的值。表达式括在方括号（`[` 和 `]`）中，并在部署模板时求值。表达式可以出现在 JSON 字符串值中的任何位置，并始终返回另一个 JSON 值。如果需要使用以方括号 `[` 开头的文本字符串，则必须使用两个方括号 (`[[`)。
 
 通常，你会将表达式与函数一起使用，以执行用于配置部署的操作。如同在 JavaScript 中一样，函数调用的格式为 **functionName(arg1,arg2,arg3)**。使用点和 [index] 运算符引用属性。
 
@@ -58,13 +59,13 @@
 
     "variables": {
        "location": "[resourceGroup().location]",
-       "usernameAndPassword": "[concat('parameters('username'), ':', parameters('password'))]",
+       "usernameAndPassword": "[concat(parameters('username'), ':', parameters('password'))]",
        "authorizationHeader": "[concat('Basic ', base64(variables('usernameAndPassword')))]"
     }
 
 有关模板函数的完整列表，请参阅 [Azure 资源管理器模板函数](/documentation/articles/resource-group-template-functions/)。
 
-## <a name="parameters"></a> Parameters
+## <a name="parameters"></a> 参数
 在模板的 parameters 节中，你可以指定在部署资源时能够输入的值。提供针对特定环境（例如开发、测试和生产环境）定制的参数值可以自定义部署。无需在模板中提供参数，但如果没有参数，模板始终部署具有相同名称、位置和属性的相同资源。
 
 你可以在整个模板中使用这些参数值，来为部署的资源设置值。在模板的其他节中，只能使用 parameters 节中声明的参数。
@@ -89,7 +90,7 @@
 | 元素名称 | 必选 | 说明 |
 |:--- |:--- |:--- |
 | parameterName |是 |参数的名称。必须是有效的 JavaScript 标识符。 |
-| type |是 |参数值的类型。请参阅以下允许类型的列表。 |
+| type |是 |参数值的类型。请参阅允许类型的列表（此表后面）。 |
 | defaultValue |否 |参数的默认值，如果没有为参数提供任何值。 |
 | allowedValues |否 |用来确保提供正确值的参数的允许值数组。 |
 | minValue |否 |int 类型参数的最小值，此值是包容性的。 |
@@ -110,10 +111,10 @@
 
 若要将某个参数指定为可选，请提供 defaultValue（可以为空字符串）。
 
-如果指定的参数名称与部署模板的命令中的某个参数匹配，系统会提示用户为后缀为 **FromTemplate** 的参数提供值。例如，如果在模板中提供的名为 **ResourceGroupName** 的参数与 [New-AzureRmResourceGroupDeployment][deployment2cmdlet] cmdlet 中的 **ResourceGroupName** 参数相同，系统会提示用户提供 **ResourceGroupNameFromTemplate** 的值。通常，不应将参数命名为与用于部署操作的参数的名称相同以避免这种混乱。
+如果在模板中指定的参数名称与部署模板时所用命令中的参数匹配，则可能会对提供的值造成混淆。Resource Manager 解决此混淆问题的方式是将后缀 **FromTemplate** 添加到模板参数。例如，如果在模板中包括名为 **ResourceGroupName** 的参数，则该参数会与 [New-AzureRmResourceGroupDeployment][deployment2cmdlet] cmdlet 中的 **ResourceGroupName** 参数冲突。在部署期间，系统会提示用户提供 **ResourceGroupNameFromTemplate** 的值。通常，不应将参数命名为与用于部署操作的参数的名称相同以避免这种混乱。
 
 > [AZURE.NOTE]
-所有密码、密钥和其他机密信息应使用 **secureString** 类型。若要将敏感数据传入 JSON 对象，请使用 **secureObject** 类型。部署资源后，无法读取 secureString 或 secureObject 类型的模板参数。
+> 所有密码、密钥和其他机密信息应使用 **secureString** 类型。若要将敏感数据传入 JSON 对象，请使用 **secureObject** 类型。部署资源后，无法读取 secureString 或 secureObject 类型的模板参数。
 ><p> 
 > 例如，部署历史记录中的以下条目将显示字符串和对象的值，但不会显示 secureString 和 secureObject 的值。
 ><p>
@@ -238,10 +239,10 @@
 | location |多种多样 |提供的资源支持的地理位置。可以选择任何可用位置，但通常选取靠近用户的位置。通常还会将彼此交互的资源置于同一区域。大多数资源类型需要一个位置，但某些类型 （如角色分配）不需要位置。 |
 | 标记 |否 |与资源关联的标记。 |
 | 注释 |否 |用于描述模板中资源的注释 |
-| dependsOn |否 |部署此资源之前必须部署的资源。Resource Manager 将评估资源之间的依赖关系，并按正确的顺序部署资源。如果资源不相互依赖，则可并行部署资源。该值可以是资源名称或资源唯一标识符的逗号分隔列表。在此模板中仅部署列出的资源。此模板中未定义的资源必须已存在。有关详细信息，请参阅[在 Azure 资源管理器模板中定义依赖关系](/documentation/articles/resource-group-define-dependencies/)。 |
-| 属性 |否 |特定于资源的配置设置。properties 的值与用户在创建资源时，在 REST API 操作（PUT 方法）的请求正文中提供的值相同。有关资源架构文档或 REST API 的链接，请参阅 [Resource Manager providers, regions, API versions and schemas](/documentation/articles/resource-manager-supported-services/)（Resource Manager 提供程序、区域、API 版本和架构）。 |
+| dependsOn |否 |部署此资源之前必须部署的资源。Resource Manager 将评估资源之间的依赖关系，并按正确的顺序部署资源。如果资源不相互依赖，则可并行部署资源。该值可以是资源名称或资源唯一标识符的逗号分隔列表。在此模板中仅部署列出的资源。此模板中未定义的资源必须已存在。避免添加不必要的依赖项，因为这些依赖项可能会降低部署速度并创建循环依赖项。有关设置依赖项的指导，请参阅[在 Azure Resource Manager 模板中定义依赖项](/documentation/articles/resource-group-define-dependencies/)。 |
+| 属性 |否 |特定于资源的配置设置。properties 的值与用户在创建资源时，在 REST API 操作（PUT 方法）的请求正文中提供的值相同。有关资源架构文档或 REST API 的链接，请参阅 [Resource Manager 提供程序、区域、API 版本和架构](/documentation/articles/resource-manager-supported-services/)。 |
 | 复制 |否 |如果需要多个实例，则为要创建的资源数。有关详细信息，请参阅[在 Azure Resource Manager 中创建多个资源实例](/documentation/articles/resource-group-create-multiple/)。 |
-| 资源 |否 |依赖于所定义的资源的子资源。只能提供父资源的架构允许的资源类型。子资源类型的完全限定名称包含父资源类型，例如 **Microsoft.Web/sites/extensions**。对父资源的依赖性不是隐式的；你必须显式定义该依赖性。 |
+| 资源 |否 |依赖于所定义的资源的子资源。只能提供父资源的架构允许的资源类型。子资源的完全限定类型包含父资源类型，例如 **Microsoft.Web/sites/extensions**。不隐式表示对父资源的依赖。必须显式定义该依赖关系。 |
 
 了解哪些值可以指定，因为 **apiVersion**、**type** 和 **location** 不会立即显示。幸运的是，可以通过 Azure PowerShell 或 Azure CLI 确定这些值。
 
@@ -354,7 +355,7 @@ resources 节包含要部署的资源数组。在每个资源内，还可以定�
       }
     ]
 
-## Outputs
+## 输出
 在 Outputs 节中，可以指定从部署返回的值。例如，可能会返回用于访问已部署资源的 URI。
 
 以下示例演示了输出定义的结构：
@@ -391,4 +392,7 @@ resources 节包含要部署的资源数组。在每个资源内，还可以定�
 
 [deployment2cmdlet]: https://docs.microsoft.com/powershell/resourcemanager/azurerm.resources/v3.2.0/new-azurermresourcegroupdeployment
 
-<!---HONumber=Mooncake_0103_2017-->
+<!---HONumber=Mooncake_0120_2017-->
+<!-- Update_Description: update meta properties -->
+<!-- Update_Description: wording update -->
+<!-- Update_Description: update link references -->
