@@ -7,15 +7,16 @@
 	manager="douge"
 	editor="" />  
 
-
- <tags
-	ms.service="storage"
-	ms.devlang="multiple"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="na"
-	ms.date="08/17/2016"
-	wacn.date="10/24/2016" />
+<tags
+    ms.assetid="2f09e545-ec94-4d89-b96c-14783cc9d7a9"
+    ms.service="storage"
+    ms.devlang="multiple"
+    ms.topic="article"
+    ms.tgt_pltfrm="na"
+    ms.workload="na"
+    ms.date="11/18/2016"
+    wacn.date="02/04/2017"
+    ms.author="tarcher" />
 
 # 使用存储资源管理器（预览版）管理 Azure Blob 存储资源
 

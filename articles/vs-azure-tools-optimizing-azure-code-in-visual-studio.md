@@ -6,10 +6,17 @@
    authors="TomArcher"
    manager="douge"
    editor="" />
+
 <tags
-   ms.service="multiple"
-   ms.date="04/19/2016"
-   wacn.date="05/16/2016" />
+    ms.assetid="ed48ee06-e2d2-4322-af22-07200fb16987"
+    ms.service="multiple"
+    ms.devlang="dotnet"
+    ms.topic="article"
+    ms.tgt_pltfrm="na"
+    ms.workload="multiple"
+    ms.date="11/11/2016"
+    wacn.date="02/04/2017"
+    ms.author="tarcher" />
 
 # 优化 Azure 代码
 

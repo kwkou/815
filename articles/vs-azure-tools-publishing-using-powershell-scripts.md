@@ -7,10 +7,17 @@
    authors="TomArcher"
    manager="douge"
    editor="" />
+
 <tags
-   ms.service="multiple"
-   ms.date="05/08/2016"
-   wacn.date="06/27/2016" />
+    ms.assetid="5fff1301-5469-4d97-be88-c85c30f837c1"
+    ms.service="multiple"
+    ms.devlang="dotnet"
+    ms.topic="article"
+    ms.tgt_pltfrm="na"
+    ms.workload="multiple"
+    ms.date="11/11/2016"
+    wacn.date="02/04/2017"
+    ms.author="tarcher" />
 
 # 使用 Windows PowerShell 脚本发布到开发和测试环境
 

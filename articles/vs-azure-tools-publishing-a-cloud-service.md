@@ -6,10 +6,17 @@
    authors="TomArcher"
    manager="douge"
    editor="" />
+
 <tags
-   ms.service="multiple"
-   ms.date="06/01/2016"
-   wacn.date="06/20/2016" />
+    ms.assetid="1a07b6e4-3678-4cbf-b37e-4520b402a3d9"
+    ms.service="multiple"
+    ms.devlang="dotnet"
+    ms.topic="article"
+    ms.tgt_pltfrm="na"
+    ms.workload="multiple"
+    ms.date="11/11/2016"
+    wacn.date="02/04/2017"
+    ms.author="tarcher" />
 
 # 使用 Azure Tools 发布云服务
 

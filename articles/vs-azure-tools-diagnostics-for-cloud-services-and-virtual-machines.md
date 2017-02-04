@@ -6,11 +6,17 @@
    authors="TomArcher"
    manager="douge"
    editor="" />
-<tags
-   ms.service="multiple"
-   ms.date="08/15/2016"
-   wacn.date="09/19/2016" />  
 
+<tags
+    ms.assetid="e70cd7b4-6298-43aa-adea-6fd618414c26"
+    ms.service="multiple"
+    ms.devlang="dotnet"
+    ms.topic="article"
+    ms.tgt_pltfrm="na"
+    ms.workload="multiple"
+    ms.date="11/11/2016"
+    wacn.date="02/04/2017"
+    ms.author="tarcher" />
 
 # 为 Azure 云服务和虚拟机配置诊断
 

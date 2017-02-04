@@ -6,10 +6,17 @@
    authors="TomArcher"
    manager="douge"
    editor="" />
+
 <tags 
-   ms.service="visual-studio-online"
-   ms.date="04/18/2016"
-   wacn.date="05/16/2016" />
+    ms.assetid="5e6662fc-b917-43ea-bf2b-4f2fc3d213dc"
+    ms.service="visual-studio-online"
+    ms.devlang="multiple"
+    ms.topic="article"
+    ms.tgt_pltfrm="multiple"
+    ms.workload="na"
+    ms.date="11/11/2016"
+    wacn.date="02/04/2017"
+    ms.author="tarcher" />
 
 # 使用 IntelliTrace 和 Visual Studio 调试已发布的云服务
 

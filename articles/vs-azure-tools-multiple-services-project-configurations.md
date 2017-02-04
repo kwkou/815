@@ -6,10 +6,17 @@
    authors="TomArcher"
    manager="douge"
    editor="" />
+
 <tags
-   ms.service="multiple"
-   ms.date="08/15/2016"
-   wacn.date="09/19/2016" />
+    ms.assetid="a4fb79ed-384f-4183-9f74-5cac257206b9"
+    ms.service="multiple"
+    ms.devlang="multiple"
+    ms.topic="article"
+    ms.tgt_pltfrm="na"
+    ms.workload="na"
+    ms.date="11/11/2016"
+    wacn.date="02/04/2017"
+    ms.author="tarcher" />
 
 # 使用多种服务配置来配置 Azure 项目
 

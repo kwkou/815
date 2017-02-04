@@ -8,10 +8,15 @@
    editor="" />  
 
 <tags
-   ms.service="multiple"
-   ms.date="05/08/2016"
-   wacn.date="08/22/2016" />  
-
+    ms.assetid="61570907-42a1-40e8-bcd6-952b21a55786"
+    ms.service="multiple"
+    ms.devlang="dotnet"
+    ms.topic="article"
+    ms.tgt_pltfrm="na"
+    ms.workload="multiple"
+    ms.date="11/18/2016"
+    wacn.date="02/04/2017"
+    ms.author="tarcher" />
 
 # 设置命名的身份验证凭据
 

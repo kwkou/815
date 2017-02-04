@@ -6,11 +6,17 @@
    authors="TomArcher"
    manager="douge"
    editor="" />
-<tags 
-   ms.service="storage"
-   ms.date="07/18/2016"
-   wacn.date="09/19/2016" />  
 
+<tags
+    ms.assetid="c8e7996f-6027-4762-806e-614b93131867"
+    ms.service="storage"
+    ms.devlang="multiple"
+    ms.topic="article"
+    ms.tgt_pltfrm="na"
+    ms.workload="na"
+    ms.date="11/18/2016"
+    wacn.date="02/04/2017"
+    ms.author="tarcher" />
 
 # 在 Visual Studio 中配置和使用存储模拟器
 

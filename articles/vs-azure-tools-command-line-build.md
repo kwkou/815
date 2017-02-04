@@ -6,10 +6,17 @@
    authors="TomArcher"
    manager="douge"
    editor="" />
+
 <tags
-   ms.service="multiple"
-   ms.date="05/08/2016"
-   wacn.date="05/23/2016" />
+    ms.assetid="94b35d0d-0d35-48b6-b48b-3641377867fd"
+    ms.service="multiple"
+    ms.devlang="multiple"
+    ms.topic="article"
+    ms.tgt_pltfrm="na"
+    ms.workload="na"
+    ms.date="11/11/2016"
+    wacn.date="02/04/2017"
+    ms.author="tarcher" />
 
 # 为 Azure 构建的命令行
 

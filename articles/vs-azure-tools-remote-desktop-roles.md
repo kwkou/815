@@ -6,10 +6,17 @@
    authors="TomArcher"
    manager="douge"
    editor="" />
-<tags 
-   ms.service="multiple"
-   ms.date="04/18/2016"
-   wacn.date="05/16/2016" />
+
+<tags
+    ms.assetid="f5727ebe-9f57-4d7d-aff1-58761e8de8c1"
+    ms.service="multiple"
+    ms.devlang="multiple"
+    ms.topic="article"
+    ms.tgt_pltfrm="na"
+    ms.workload="na"
+    ms.date="11/11/2016"
+    wacn.date="02/04/2017"
+    ms.author="tarcher" />
 
 # 将远程桌面与 Azure 角色一起使用
 
