@@ -31,7 +31,7 @@ Azure 使用的证书可以包含一个私钥或公钥。证书具有指纹，�
 
 服务证书可与服务分开管理，且可由不同的人员管理。例如，开发人员上载的服务包可以使用 IT 管理员以前上载到 Azure 的证书。IT 管理员可以管理和续订该证书（更改服务配置），而无需上载新的服务包。在没有新服务包的情况下更新之所以可能是因为证书的逻辑名称、存储名称和存储位置是在服务定义文件中指定的，而证书指纹则是在服务配置文件中指定的。若要更新证书，只需上载新证书并更改服务配置文件中的指纹值。
 
->[AZURE.Note]
+>[AZURE.NOTE]
 [云服务常见问题解答](/documentation/articles/cloud-services-faq/#certificates)一文提供了一些有关证书的有用信息。
 
 ## <a name="what-are-management-certificates"></a> 什么是管理证书？
@@ -90,9 +90,9 @@ Internet 上有许多关于如何使用 IIS 实现此操作的信息。[此页�
 
 ## 后续步骤
 
-[上载服务证书到 Azure 经典管理门户](/documentation/articles/cloud-services-configure-ssl-certificate/)。
+ - [上载服务证书到 Azure 经典管理门户](/documentation/articles/cloud-services-configure-ssl-certificate/)。
 
-将[管理 API 证书](/documentation/articles/azure-api-management-certs/)上载到 Azure 经典管理门户。
+ - 将[管理 API 证书](/documentation/articles/azure-api-management-certs/)上载到 Azure 经典管理门户。
 
 >[AZURE.NOTE] Azure 门户不使用管理证书访问 API，而是使用用户帐户。
 

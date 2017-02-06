@@ -495,11 +495,11 @@ ServiceDefinition.cmd：
 
 ## 后续步骤
 
-查看云[服务模型和包](/documentation/articles/cloud-services-model-and-package/)
+ - 查看云[服务模型和包](/documentation/articles/cloud-services-model-and-package/)
 
-详细了解[任务](/documentation/articles/cloud-services-startup-tasks/)的工作方式。
+ - 详细了解[任务](/documentation/articles/cloud-services-startup-tasks/)的工作方式。
 
-[创建和部署](/documentation/articles/cloud-services-how-to-create-deploy/)云服务包。
+ - [创建和部署](/documentation/articles/cloud-services-how-to-create-deploy/)云服务包。
 
 
 [ServiceDefinition.csdef]: /documentation/articles/cloud-services-model-and-package/#csdef
