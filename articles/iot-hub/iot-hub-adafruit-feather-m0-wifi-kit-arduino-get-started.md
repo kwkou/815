@@ -131,7 +131,7 @@
 
 [Lesson-1-end-to-end-diagram]: ./media/iot-hub-adafruit-feather-m0-wifi-lessons/e2e-lesson1.png
 [configure-your-device]: /documentation/articles/iot-hub-adafruit-feather-m0-wifi-kit-arduino-lesson1-configure-your-device/
-[get-the-tools]: /documentation/articles/iot-hub-adafruit-feather-m0-wifi-kit-arduino-lesson1-get-the-tools-win32.md
+[get-the-tools]: /documentation/articles/iot-hub-adafruit-feather-m0-wifi-kit-arduino-lesson1-get-the-tools-win32/
 [create-and-deploy-the-blink-application]: /documentation/articles/iot-hub-adafruit-feather-m0-wifi-kit-arduino-lesson1-deploy-blink-app/
 [lesson-2-end-to-end-diagram]: ./media/iot-hub-adafruit-feather-m0-wifi-lessons/e2e-lesson2.png
 [get-azure-tools]: /documentation/articles/iot-hub-adafruit-feather-m0-wifi-kit-arduino-lesson2-get-azure-tools-win32/

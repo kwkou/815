@@ -40,7 +40,7 @@
 		az iot hub list -g iot-sample --query [].name
 
 
-使用 `iot-sample` 作为 `{resource group name}` 的值（如果尚未更改此值）。
+    使用 `iot-sample` 作为 `{resource group name}` 的值（如果尚未更改此值）。
 
 * 运行以下 Azure CLI 命令，获取 IoT 中心连接字符串：
 
@@ -48,7 +48,7 @@
 		az iot hub show-connection-string --name {my hub name}
 
 
-`{my hub name}` 是在创建 IoT 中心并注册 Arduino 开发板时指定的名称。
+    `{my hub name}` 是在创建 IoT 中心并注册 Arduino 开发板时指定的名称。
 
 * 运行以下命令，获取设备连接字符串：
 
@@ -56,7 +56,7 @@
 		az iot device show-connection-string --hub-name {my hub name} --device-id mym0wifi
 
 
-使用 `mym0wifi` 作为 `{device id}` 的值（如果尚未更改此值）。
+    使用 `mym0wifi` 作为 `{device id}` 的值（如果尚未更改此值）。
 ## 配置设备连接
 若要配置设备连接，请执行以下步骤：
 
@@ -66,9 +66,9 @@
 		devdisco list --usb
    
 
-   应看到类似如下的输出，并找到 Arduino 开发板的 USB COM 端口：
+    应看到类似如下的输出，并找到 Arduino 开发板的 USB COM 端口：
 
-   ![设备发现][device-discovery]  
+    ![设备发现][device-discovery]  
 
 
 2. 打开课程文件夹中的 `config.json` 文件，并添加找到的 COM 端口号的值：
@@ -79,11 +79,11 @@
 		   }
    
 
-   ![config.json][config-json]  
+    ![config.json][config-json]  
 
 
-   > [AZURE.NOTE]
-   在 Windows 平台上，COM 端口的格式为：`COM1, COM2, ...`。在 macOS 或 Ubuntu 上，其以 `/dev/` 开头。
+    > [AZURE.NOTE]
+    >在 Windows 平台上，COM 端口的格式为：`COM1, COM2, ...`。在 macOS 或 Ubuntu 上，其以 `/dev/` 开头。
 
 3. 运行以下命令初始化配置文件：
 
@@ -102,7 +102,7 @@
 		   code ~/.iot-hub-getting-started/config-arduino.json
    
 
-   ![config-arduino.json][config-arduino-json]  
+    ![config-arduino.json][config-arduino-json]  
 
 
 5. 在 `config-arduino.json` 文件中进行以下替换：
@@ -112,8 +112,8 @@
    * 将 **[IoT 设备连接字符串]** 替换为获得的 `device connection string`。
    * 将 **[IoT 中心连接字符串]** 替换为获得的 `iot hub connection string`。
 
-   > [AZURE.NOTE]
-   本文中不需要 `azure_storage_connection_string`。请保留该名称。
+    > [AZURE.NOTE]
+    > 本文中不需要 `azure_storage_connection_string`。请保留该名称。
 
 ## 部署并运行示例应用程序
 运行以下命令，在 Arduino 开发板上部署并运行示例应用程序：

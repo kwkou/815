@@ -62,7 +62,7 @@
 
 2. 将 `"has_sensortag": true` 替换为 `"has_sensortag": false`
 
-   ![没有 TI SensorTag 设备的配置](./media/iot-hub-gateway-kit-lessons/lesson3/config_no_sensortag.png)  
+    ![没有 TI SensorTag 设备的配置](./media/iot-hub-gateway-kit-lessons/lesson3/config_no_sensortag.png)  
 
 
 3. 运行以下命令初始化配置文件：
@@ -83,14 +83,15 @@
    
 
 5. 找到以下代码行，将 `[device hostname or IP address]` 替换为 Intel NUC 的 IP 地址或主机名。
-![配置网关的屏幕截图](./media/iot-hub-gateway-kit-lessons/lesson3/config_gateway.png)
+
+    ![配置网关的屏幕截图](./media/iot-hub-gateway-kit-lessons/lesson3/config_gateway.png)
 
 ## 获取 IoT 中心逻辑设备的连接字符串
 
 若要获取逻辑设备的 Azure IoT 中心连接字符串，请在主计算机上运行以下命令：
 
 
-		az iot device show-connection-string --hub-name {IoT hub name} --device-id mydevice --resource-group iot-gateway
+	az iot device show-connection-string --hub-name {IoT hub name} --device-id mydevice --resource-group iot-gateway
 
 
 `{IoT hub name}` 是所使用的 IoT 中心名称。使用 iot-gateway 作为 `{resource group name}` 的值，使用 mydevice 作为 `{device id}` 的值（如果尚未更改第 2 课中的值）。
@@ -108,7 +109,7 @@
 		   code ~/.iot-hub-getting-started/config-sensortag.json
    
 
-   ![配置 sensortag 的屏幕截图](./media/iot-hub-gateway-kit-lessons/lesson3/config_simulated_device.png)  
+    ![配置 sensortag 的屏幕截图](./media/iot-hub-gateway-kit-lessons/lesson3/config_simulated_device.png)  
 
 
 2. 在代码中进行以下替换：
@@ -117,7 +118,7 @@
 
 3. 运行应用程序。
 
-   运行以下命令，部署并运行应用程序：
+    运行以下命令，部署并运行应用程序：
 
    
 		   gulp run

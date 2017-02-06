@@ -58,22 +58,22 @@
 
 2. 将手指放在 `What will you make?` 文字上方，按压模板，直至感觉模块已就位。
 
-   ![组装开发板 2](./media/iot-hub-intel-edison-lessons/lesson1/assemble_board2.jpg)  
+    ![组装开发板 2](./media/iot-hub-intel-edison-lessons/lesson1/assemble_board2.jpg)  
 
 
 3. 用两颗六角螺母（随附在工具包内）将模块固定到扩展板上。
 
-   ![组装开发板 3](./media/iot-hub-intel-edison-lessons/lesson1/assemble_board3.jpg)  
+    ![组装开发板 3](./media/iot-hub-intel-edison-lessons/lesson1/assemble_board3.jpg)  
 
 
 4. 将一颗螺钉插入扩展板上的一个角孔（共四个）。在螺钉上放置白色塑料垫片，转动并拧紧。
 
-   ![组装开发板 4](./media/iot-hub-intel-edison-lessons/lesson1/assemble_board4.jpg)  
+    ![组装开发板 4](./media/iot-hub-intel-edison-lessons/lesson1/assemble_board4.jpg)  
 
 
 5. 重复上述步骤安装其他三个角垫。
 
-   ![组装开发板 5](./media/iot-hub-intel-edison-lessons/lesson1/assemble_board5.jpg)  
+    ![组装开发板 5](./media/iot-hub-intel-edison-lessons/lesson1/assemble_board5.jpg)  
 
 
 现在，开发板就已组装完毕。
@@ -85,31 +85,31 @@
 
 1. 插入电源。
 
-   ![插入电源](./media/iot-hub-intel-edison-lessons/lesson1/plug_power.jpg)  
+    ![插入电源](./media/iot-hub-intel-edison-lessons/lesson1/plug_power.jpg)  
 
 
 2. 此时，绿色 LED（Arduino* 扩展板上标记为 DS1）应点亮并持续这一状态。
 
 3. 稍等片刻，等待开发板完成启动。
 
-   > [AZURE.NOTE]
-   如果没有 DC 电源，仍可通过 USB 端口为开发板供电。有关详细信息，请参阅`Connect Edison to your computer`部分。采用这种方式为开发板供电可能会导致开发板出现异常，尤其是在使用 Wi-Fi 或驱动电机时。
+    > [AZURE.NOTE]
+    > 如果没有 DC 电源，仍可通过 USB 端口为开发板供电。有关详细信息，请参阅`Connect Edison to your computer`部分。采用这种方式为开发板供电可能会导致开发板出现异常，尤其是在使用 Wi-Fi 或驱动电机时。
 
 ## 将 Edison 连接到计算机
 
 1. 向下扳动微动开关，使之朝向两个 micro USB 端口，将 Edison 设置为设备模式。有关设备模式与主机模式的区别，请参阅[此处](https://software.intel.com/zh-CN/node/628233#usb-device-mode-vs-usb-host-mode)。
 
-   ![向下扳动微动开关](./media/iot-hub-intel-edison-lessons/lesson1/toggle_down_microswitch.jpg)  
+    ![向下扳动微动开关](./media/iot-hub-intel-edison-lessons/lesson1/toggle_down_microswitch.jpg)  
 
 
 2. 将 micro USB 线缆插入顶部的 micro USB 端口。
 
-   ![顶部的 micro USB 端口](./media/iot-hub-intel-edison-lessons/lesson1/top_usbport.jpg)  
+    ![顶部的 micro USB 端口](./media/iot-hub-intel-edison-lessons/lesson1/top_usbport.jpg)  
 
 
 3. 将 USB 线缆的另一端插入计算机。
 
-   ![计算机 USB](./media/iot-hub-intel-edison-lessons/lesson1/computer_usb.jpg)  
+    ![计算机 USB](./media/iot-hub-intel-edison-lessons/lesson1/computer_usb.jpg)  
 
 
 4. 如果计算机安装了新硬盘，则可确定开发板已完全初始化（就像将一张 SD 卡插入计算机）。
@@ -138,7 +138,7 @@
 5. 记下 IP 地址，稍后会用到此地址。
 
 > [AZURE.NOTE]
-确保 Edison 与计算机连接到同一网络。计算机通过 IP 地址连接到 Edison。
+> 确保 Edison 与计算机连接到同一网络。计算机通过 IP 地址连接到 Edison。
 
 祝贺你！ Edison 已配置成功。
 

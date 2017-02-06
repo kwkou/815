@@ -48,12 +48,12 @@
 
 1. 将 micro USB 线缆插入顶部的 micro USB 端口。
 
-   ![顶部的 micro USB 端口][top-micro-usb-port]  
+    ![顶部的 micro USB 端口][top-micro-usb-port]  
 
 
 2. 将 USB 线缆的另一端插入计算机。
 
-   ![计算机 USB][computer-usb]  
+    ![计算机 USB][computer-usb]  
 
 
 ## 在 Ubuntu 上添加串行端口权限
@@ -68,7 +68,7 @@
 		   ls -l /dev/ttyACM*
    
 
-   将看到类似于下面的内容：
+    将看到类似于下面的内容：
 
    
 		   crw-rw---- 1 root uucp 188, 0 5 apr 23.01 ttyUSB0
@@ -76,7 +76,7 @@
 		   crw-rw---- 1 root dialout 188, 0 5 apr 23.01 ttyACM0
    
 
-   “0”可能是其他数字，或可能返回多个条目。在第一种情况下，需要 `uucp` 数据；第二种情况下，则需要 `dialout` 数据，这是文件的组所有者。
+    “0”可能是其他数字，或可能返回多个条目。在第一种情况下，需要 `uucp` 数据；第二种情况下，则需要 `dialout` 数据，这是文件的组所有者。
 
 2. 将用户添加到组：
 
@@ -84,7 +84,7 @@
 		sudo usermod -a -G group-name username
    
 
-   其中，`group-name` 是在第一个步骤中找到的数据，`username` 是 linux 用户名。
+    其中，`group-name` 是在第一个步骤中找到的数据，`username` 是 linux 用户名。
 
 3. 需先注销，然后再次登录，方可使此更改生效。
 

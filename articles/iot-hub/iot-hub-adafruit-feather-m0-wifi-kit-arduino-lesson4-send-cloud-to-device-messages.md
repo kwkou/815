@@ -31,27 +31,29 @@
 
 ## 你要学习的知识
 本文介绍：
-* 如何监视来自 IoT 中心的传入消息。
-* 如何将云到设备消息从 IoT 中心发送到 Arduino 开发板。
+
+ - 如何监视来自 IoT 中心的传入消息。
+ - 如何将云到设备消息从 IoT 中心发送到 Arduino 开发板。
 
 ## 需要什么
-* 设置 Arduino 开发板以供使用。若要了解如何设置 Arduino 开发板，请参阅[配置设备][configure-your-device]。
-* 一个 IoT 中心，已在 Azure 订阅中创建。若要了解如何创建 IoT 中心，请参阅[创建 Azure IoT 中心][create-your-azure-iot-hub]。
+
+ - 设置 Arduino 开发板以供使用。若要了解如何设置 Arduino 开发板，请参阅[配置设备][configure-your-device]。
+ - 一个 IoT 中心，已在 Azure 订阅中创建。若要了解如何创建 IoT 中心，请参阅[创建 Azure IoT 中心][create-your-azure-iot-hub]。
 
 ## 将示例应用程序连接到 IoT 中心
 
 1. 确保位于存储库文件夹 `iot-hub-c-feather-m0-getting-started` 中。
 
-   通过运行以下命令在 Visual Studio Code 中打开示例应用程序：
+    通过运行以下命令在 Visual Studio Code 中打开示例应用程序：
 
    
 		   cd Lesson4
 		   code .
    
 
-   请注意 `app` 子文件夹中的 `app.ino` 文件。`app.ino` 文件是关键的源文件，其中包含的代码用于监视 IoT 中心发出的传入消息。`blinkLED` 函数可使 LED 闪烁。
+    请注意 `app` 子文件夹中的 `app.ino` 文件。`app.ino` 文件是关键的源文件，其中包含的代码用于监视 IoT 中心发出的传入消息。`blinkLED` 函数可使 LED 闪烁。
 
-   ![示例应用程序中的存储库结构][repo-structure]  
+    ![示例应用程序中的存储库结构][repo-structure]  
 
 
 2. 使用设备发现 CLI 获取设备的串行端口：
@@ -60,24 +62,23 @@
 		devdisco list --usb
    
 
-   应看到类似如下的输出，并找到 Arduino 开发板的 USB COM 端口：
+    应看到类似如下的输出，并找到 Arduino 开发板的 USB COM 端口：
 
-   ![设备发现][device-discovery]  
+    ![设备发现][device-discovery]  
 
 
 3. 打开课程文件夹中的 `config.json` 文件，并输入找到的 COM 端口号的值：
 
-   json
 		   {
 		       "device_port" : "COM1"
 		   }
    
 
-   ![config.json][config-json]  
+    ![config.json][config-json]  
 
 
-   > [AZURE.NOTE]
-   在 Windows 平台上，COM 端口的格式为：`COM1, COM2, ...`。在 macOS 或 Ubuntu 上，其以 `/dev/` 开头。
+    > [AZURE.NOTE]
+    > 在 Windows 平台上，COM 端口的格式为：`COM1, COM2, ...`。在 macOS 或 Ubuntu 上，其以 `/dev/` 开头。
 
 4. 运行以下命令初始化配置文件：
 
@@ -90,9 +91,9 @@
 
 5. 在 `config-arduino.json` 文件中进行以下替换：
 
-   如果已在此计算机上完成[创建 Azure Function App 和存储帐户][create-an-azure-function-app-and-storage-account]中的步骤，并继承了所有配置，则可跳过该步骤，转到部署并运行示例应用程序的任务。如果用户在另一计算机上完成了[创建 Azure 函数应用和存储帐户][create-an-azure-function-app-and-storage-account]中的步骤，则需替换 `config-arduino.json` 文件中的占位符。`config-arduino.json` 文件位于主文件夹的子文件夹中。
+    如果已在此计算机上完成[创建 Azure Function App 和存储帐户][create-an-azure-function-app-and-storage-account]中的步骤，并继承了所有配置，则可跳过该步骤，转到部署并运行示例应用程序的任务。如果用户在另一计算机上完成了[创建 Azure 函数应用和存储帐户][create-an-azure-function-app-and-storage-account]中的步骤，则需替换 `config-arduino.json` 文件中的占位符。`config-arduino.json` 文件位于主文件夹的子文件夹中。
 
-   ![config-arduino.json 文件的内容][config-arduino-json]  
+    ![config-arduino.json 文件的内容][config-arduino-json]  
 
 
    * 将 **[Wi-Fi SSID]** 替换为连接到 Internet 的 Wi-Fi SSID。

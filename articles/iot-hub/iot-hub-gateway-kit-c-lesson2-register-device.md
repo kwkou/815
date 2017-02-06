@@ -28,7 +28,7 @@
 
 在 IoT 中心注册设备时，Azure IoT 中心服务会生成设备密钥，用于向服务进行身份验证。
 
-如果有问题，可在[故障排除页](/documentation/articles/iot-hub-gateway-kit-c-troubleshooting.md)上查找解决方案。
+如果有问题，可在[故障排除页](/documentation/articles/iot-hub-gateway-kit-c-troubleshooting/)上查找解决方案。
 
 ## 你要学习的知识
 
@@ -52,7 +52,7 @@
 		az login
    
 
-   成功登录后，会列出所有可用的订阅。
+    成功登录后，会列出所有可用的订阅。
 
 2. 运行以下命令，设置默认的需要使用的 Azure 订阅：
 
@@ -60,7 +60,7 @@
 		az account set --subscription {subscription id or name}
    
 
-   可在 `az login` 或 `az account list` 命令的输出中找到 `subscription ID or name`。
+    可在 `az login` 或 `az account list` 命令的输出中找到 `subscription ID or name`。
 
 3. 运行以下命令，注册提供程序。资源提供程序是指为应用程序提供资源的服务。必须先注册提供程序，然后才能部署该提供程序提供的 Azure 资源。
 
@@ -74,7 +74,7 @@
 		az resource group create --name iot-gateway --location chinaeast
    
    
-   `chinaeast` 是创建资源组所在的位置。如果想要使用其他位置，可运行 `az account list-locations -o table` 来查看 Azure 支持的所有位置。
+    `chinaeast` 是创建资源组所在的位置。如果想要使用其他位置，可运行 `az account list-locations -o table` 来查看 Azure 支持的所有位置。
 
 5. 运行以下命令，在 `iot-gateway` 资源组中创建 IoT 中心：
 
@@ -85,7 +85,7 @@
 默认情况下，该工具在免费定价层中创建 IoT 中心。有关详细信息，请参阅 [Azure IoT 中心定价](/pricing/details/iot-hub/)。
 
 > [AZURE.NOTE]
-IoT 中心的名称必须全局唯一。在 Azure 订阅下只能创建一个 F1 版的 Azure IoT 中心。
+> IoT 中心的名称必须全局唯一。在 Azure 订阅下只能创建一个 F1 版的 Azure IoT 中心。
 
 ## 在 IoT 中心注册设备
 

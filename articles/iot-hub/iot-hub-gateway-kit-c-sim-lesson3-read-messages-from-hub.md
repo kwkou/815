@@ -45,14 +45,15 @@
 		   az iot hub list -g iot-gateway --query [].name
    
 
-   使用 `iot-gateway` 作为 `{resource group name}` 的值（如果尚未更改）。
+    使用 `iot-gateway` 作为 `{resource group name}` 的值（如果尚未更改）。
+    
 - 运行以下命令，获取 IoT 中心连接字符串：
 
    
 		   az iot hub show-connection-string --name {my hub name} -g iot-gateway
    
 
-   `{my hub name}` 是在第 2 课中指定的名称。
+    `{my hub name}` 是在第 2 课中指定的名称。
 
 ## 配置示例代码的设备连接
 
@@ -69,17 +70,17 @@
 
 2. 在 `config-azure.json` 文件中进行以下替换：
 
-   ![配置 azure 的屏幕截图](./media/iot-hub-gateway-kit-lessons/lesson3/config_azure.png)  
+    ![配置 azure 的屏幕截图](./media/iot-hub-gateway-kit-lessons/lesson3/config_azure.png)  
 
 
-   将 `[IoT hub connection string]` 替换为 IoT 中心连接字符串。
+    将 `[IoT hub connection string]` 替换为 IoT 中心连接字符串。
 
 ## 从 IoT 中心读取消息
 
 通过以下命令运行模拟设备示例应用程序及读取 IoT 中心消息：
 
 
-		gulp run --iot-hub
+	gulp run --iot-hub
 
 
 该命令运行每隔 2 秒将消息发送到 IoT 中心的应用程序。它还生成用于接收消息的子进程。

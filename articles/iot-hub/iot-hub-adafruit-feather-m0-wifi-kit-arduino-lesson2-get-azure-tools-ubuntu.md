@@ -21,10 +21,10 @@
 
 # 获取 Azure 工具 (Ubuntu 16.04)
 
-> [!div class="op_single_selector"]
-> * [Windows 7 或更高版本][windows]
-> * [Ubuntu 16.04][ubuntu]
-> * [macOS 10.10][macos]
+> [AZURE.SELECTOR]
+- [Windows 7 或更高版本][windows]
+- [Ubuntu 16.04][ubuntu]
+- [macOS 10.10][macos]
 
 ## 执行的操作
 
@@ -32,12 +32,14 @@
 
 ## 你要学习的知识
 本文介绍：
-* 如何安装 Azure CLI。
-* 如何添加 Azure CLI 的 IoT 子组。
+
+ - 如何安装 Azure CLI。
+ - 如何添加 Azure CLI 的 IoT 子组。
 
 ## 需要什么
-* 启用 Internet 连接的 Ubuntu 计算机。
-* 一个有效的 Azure 订阅。如果没有帐户，只需花费几分钟就能创建一个[免费试用帐户](/pricing/1rmb-trial/)。
+
+ - 启用 Internet 连接的 Ubuntu 计算机。
+ - 一个有效的 Azure 订阅。如果没有帐户，只需花费几分钟就能创建一个[免费试用帐户](/pricing/1rmb-trial/)。
 
 ## 安装 Azure CLI
 Azure CLI 提供适用于 Azure 的多平台命令行体验，让用户能够直接通过命令行完成资源的预配和管理。

@@ -56,7 +56,7 @@
 3. 通过以太网电缆连接到有线网络。
 4. 通过电源线连接到电源。
 
-![连接到外围设备的 Intel NUC](./media/iot-hub-gateway-kit-lessons/lesson1/nuc.png)  
+    ![连接到外围设备的 Intel NUC](./media/iot-hub-gateway-kit-lessons/lesson1/nuc.png)  
 
 
 ## 通过安全外壳 (SSH) 从主计算机连接到 Intel NUC 系统
@@ -65,24 +65,25 @@
 
 1. 按电源按钮打开 Intel NUC，登录系统。
 
-   默认用户名和密码都是 `root`。
+    默认用户名和密码都是 `root`。
 
 2. 运行 `ifconfig` 命令，获取 NUC 的 IP 地址。在 NUC 设备上完成此步骤。
 
-   以下是命令输出的示例。
+    以下是命令输出的示例。
 
-   ![显示 NUC IP 的 ifconfig 输出](./media/iot-hub-gateway-kit-lessons/lesson1/ifconfig.png)  
+    ![显示 NUC IP 的 ifconfig 输出](./media/iot-hub-gateway-kit-lessons/lesson1/ifconfig.png)  
 
 
-   在此示例中，`inet addr:` 后面的值是计划从主计算机远程连接到 Intel NUC 时所需的 IP 地址。
+    在此示例中，`inet addr:` 后面的值是计划从主计算机远程连接到 Intel NUC 时所需的 IP 地址。
 
 3. 使用主计算机的以下任一 SSH 客户端连接到 Intel NUC。
 
    - 适用于 Windows 的 [PuTTY](http://www.putty.org/)。
    - Ubuntu 或 macOS 上的内置 SSH 客户端。
 
-   通过主计算机在 Intel NUC 上执行操作更高效。需要 IP 地址、用户名和密码才能通过 SSH 客户端连接 NUC。下面是在 macOS 上使用 SSH 客户端的示例。
-   ![在 macOS 上运行的 SSH 客户端](./media/iot-hub-gateway-kit-lessons/lesson1/ssh.png)
+    通过主计算机在 Intel NUC 上执行操作更高效。需要 IP 地址、用户名和密码才能通过 SSH 客户端连接 NUC。下面是在 macOS 上使用 SSH 客户端的示例。
+    
+    ![在 macOS 上运行的 SSH 客户端](./media/iot-hub-gateway-kit-lessons/lesson1/ssh.png)
 
 ## 安装 Azure IoT 网关 SDK 包
 
@@ -95,9 +96,9 @@ Azure IoT 网关 SDK 包中包含 SDK 及其依赖项的预编译二进制文件
 		   smart channel --add IoT_Cloud type=rpm-md name="IoT_Cloud" baseurl=http://iotdk.intel.com/repos/iot-cloud/wrlinux7/rcpl13/ -y
    
 
-   `rpm` 命令导入 rpm 密钥。`smart channel` 命令将 rpm 通道添加到智能包管理器。运行 `smart update` 命令前，将看到如下输出。
+    `rpm` 命令导入 rpm 密钥。`smart channel` 命令将 rpm 通道添加到智能包管理器。运行 `smart update` 命令前，将看到如下输出。
 
-   ![rpm 和智能通道命令输出](./media/iot-hub-gateway-kit-lessons/lesson1/rpm_smart_channel.png)  
+    ![rpm 和智能通道命令输出](./media/iot-hub-gateway-kit-lessons/lesson1/rpm_smart_channel.png)  
 
 
    
@@ -110,9 +111,9 @@ Azure IoT 网关 SDK 包中包含 SDK 及其依赖项的预编译二进制文件
 		smart install packagegroup-cloud-azure -y
    
 
-   `packagegroup-cloud-azure` 是包的名称。`smart install` 命令用于安装包。
+    `packagegroup-cloud-azure` 是包的名称。`smart install` 命令用于安装包。
 
-   安装此包后，Intel NUC 应可用作网关。
+    安装此包后，Intel NUC 应可用作网关。
 
 ## 运行 Azure IoT 网关 SDK“hello\_world”示例应用程序
 

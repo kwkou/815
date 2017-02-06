@@ -72,13 +72,13 @@ Azure Functions 是一种解决方案，可轻松地在云中运行 *函数* （
 
 - 将 `[your IoT Hub name]` 替换为在第 2 课中指定的 `{my hub name}`。
 
-更新 `arm-template-param.json` 文件后，请运行以下命令，将资源部署到 Azure：
+  更新 `arm-template-param.json` 文件后，请运行以下命令，将资源部署到 Azure：
 
 
 		az resource group deployment create --template-file arm-template.json --parameters @arm-template-param.json -g iot-gateway
 
 
-使用 `iot-gateway` 作为 `{resource group name}` 的值（如果尚未更改第 2 课中的值）。
+  使用 `iot-gateway` 作为 `{resource group name}` 的值（如果尚未更改第 2 课中的值）。
 
 ## 摘要
 

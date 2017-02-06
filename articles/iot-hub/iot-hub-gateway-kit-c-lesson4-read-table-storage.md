@@ -71,12 +71,12 @@
 		   code ~/.iot-hub-getting-started/config-azure.json
    
 
-   ![配置](./media/iot-hub-gateway-kit-lessons/lesson4/config_azure.png)  
+    ![配置](./media/iot-hub-gateway-kit-lessons/lesson4/config_azure.png)  
 
 
 2. 将 `[Azure storage connection string]` 替换为获取的 Azure 存储连接字符串。
 
-   `[IoT hub connection string]` 应该已在第 3 课的[从 Azure IoT 中心读取消息](/documentation/articles/iot-hub-gateway-kit-c-lesson3-read-messages-from-hub/)部分中被替换。
+    `[IoT hub connection string]` 应该已在第 3 课的[从 Azure IoT 中心读取消息](/documentation/articles/iot-hub-gateway-kit-c-lesson3-read-messages-from-hub/)部分中被替换。
 
 ## 读取 Azure 表存储中的消息
 
@@ -90,7 +90,7 @@ IoT 中心会在新消息到达时触发 Azure Function 应用程序，将消息
 
 发送和接收的消息全都在主计算机的同一控制台窗口中即时显示。示例应用程序实例会在 40 秒后自动终止。
 
-   ![gulp 读取](./media/iot-hub-gateway-kit-lessons/lesson4/gulp_run_read_table.png)  
+    ![gulp 读取](./media/iot-hub-gateway-kit-lessons/lesson4/gulp_run_read_table.png)  
 
 
 

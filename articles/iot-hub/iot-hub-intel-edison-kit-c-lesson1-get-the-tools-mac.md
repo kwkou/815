@@ -43,8 +43,9 @@
 
 ## 需要什么
 若要完成此操作，需具备：
-* Internet 连接，用于下载开发工具和软件。
-* 运行 macOS Yosemite (10.10) 或更高版本的 Mac。
+
+ - Internet 连接，用于下载开发工具和软件。
+ - 运行 macOS Yosemite (10.10) 或更高版本的 Mac。
 
 ## 安装 Git 和 Node.js
 若要安装 Git 和 Node.js，请按以下步骤使用 [Homebrew](http://brew.sh) 包管理实用程序：
@@ -55,7 +56,7 @@
    2. 运行以下命令：
 
       
-		/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+		    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
       
 2. 运行以下命令，安装 Git 和 Node.js：
 

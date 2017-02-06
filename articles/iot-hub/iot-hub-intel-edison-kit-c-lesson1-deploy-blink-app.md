@@ -48,10 +48,10 @@
 		   code .
    
 
-   ![存储库结构][repo-structure]  
+    ![存储库结构][repo-structure]  
 
 
-`app` 子文件夹中的文件是重要的源文件，其中包含用于控制 LED 的代码。
+    `app` 子文件夹中的文件是重要的源文件，其中包含用于控制 LED 的代码。
 
 ### 安装应用程序依赖项
 运行以下命令，安装示例应用程序所需的库和其他模块：
@@ -69,7 +69,7 @@
 		gulp init
    
 
-   配置文件 `config-edison.json` 包含用于登录到 Edison 的用户凭据。为了避免用户凭据泄漏，配置文件在计算机主文件夹的 `.iot-hub-getting-started` 子文件夹中生成。
+    配置文件 `config-edison.json` 包含用于登录到 Edison 的用户凭据。为了避免用户凭据泄漏，配置文件在计算机主文件夹的 `.iot-hub-getting-started` 子文件夹中生成。
 
 2. 运行以下命令，在 Visual Studio Code 中打开设备配置文件：
 
@@ -83,7 +83,7 @@
 
 3. 将占位符 `[device hostname or IP address]` 和 `[device password]` 替换为上一课中记录的 IP 地址和密码。
 
-   ![Config.json](./media/iot-hub-intel-edison-lessons/lesson1/vscode-config-mac.png)  
+    ![Config.json](./media/iot-hub-intel-edison-lessons/lesson1/vscode-config-mac.png)  
 
 
 祝贺你！ Edison 的第一个示例应用程序已创建成功。
