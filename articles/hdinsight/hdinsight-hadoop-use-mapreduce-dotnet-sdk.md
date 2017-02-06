@@ -6,8 +6,7 @@
     services="hdinsight"
     documentationcenter=""
     tags="azure-portal"
-    author="mumian" />  
-
+    author="mumian" />
 <tags
     ms.assetid="c85e44b0-85fd-4185-ad1c-c34a9fe5ef44"
     ms.service="hdinsight"
@@ -16,7 +15,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="11/15/2016"
-    wacn.date="12/26/2016"
+    wacn.date="01/25/2017"
     ms.author="jgao" />  
 
 
@@ -33,7 +32,7 @@
 ## 先决条件
 开始阅读本文之前，必须具备以下条件：
 
-* **HDInsight 中的 Hadoop 群集**。请参阅[开始在 HDInsight 中使用 Hadoop](/documentation/articles/hdinsight-use-sqoop/#create-cluster-and-sql-database)。
+* **HDInsight 中的 Hadoop 群集**。请参阅[在 HDInsight 中使用基于 Linux 的 Hadoop 入门](/documentation/articles/hdinsight-use-sqoop/#create-cluster-and-sql-database)。
 * **Visual Studio 2012/2013/2015**。
 
 ## 使用 HDInsight .NET SDK 提交 MapReduce 作业
@@ -133,9 +132,9 @@ HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 中使用 HDInsi
 ## 后续步骤
 在本文中，你已经学习了几种创建 HDInsight 群集的方法。若要了解更多信息，请参阅下列文章：
 
-* 有关创建群集和提交 Hive 作业，请参阅 [Azure HDInsight 入门](/documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1/)。
-* 有关创建 HDInsight 群集，请参阅[在 HDInsight 中创建 Hadoop 群集](/documentation/articles/hdinsight-provision-clusters-v1/)。
-* 有关管理 HDInsight 群集，请参阅[在 HDInsight 中管理 Hadoop 群集](/documentation/articles/hdinsight-administer-use-management-portal-v1/)。
+* 有关创建群集和提交 Hive 作业，请参阅 [Azure HDInsight 入门](/documentation/articles/hdinsight-hadoop-linux-tutorial-get-started/)。
+* 有关创建 HDInsight 群集，请参阅[在 HDInsight 中创建基于 Linux 的 Hadoop 群集](/documentation/articles/hdinsight-hadoop-provision-linux-clusters/)。
+* 有关管理 HDInsight 群集，请参阅[在 HDInsight 中管理 Hadoop 群集](/documentation/articles/hdinsight-administer-use-management-portal/)。
 * 有关学习 HDInsight .NET SDK，请参阅 [HDInsight .NET SDK 参考](https://msdn.microsoft.com/zh-cn/library/mt271028.aspx)。
 
-<!---HONumber=Mooncake_1219_2016-->
+<!---HONumber=Mooncake_0120_2017-->

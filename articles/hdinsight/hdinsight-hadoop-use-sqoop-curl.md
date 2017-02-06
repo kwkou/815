@@ -6,8 +6,7 @@
     author="mumian"
     manager="jhubbard"
     editor="cgronlun"
-    tags="azure-portal" />  
-
+    tags="azure-portal" />
 <tags
     ms.assetid="39798321-78ca-428c-bcfe-322e49af4059"
     ms.service="hdinsight"
@@ -16,7 +15,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="big-data"
     ms.date="10/21/2016"
-    wacn.date="12/26/2016"
+    wacn.date="01/25/2017"
     ms.author="jgao" />  
 
 
@@ -27,10 +26,15 @@
 
 本文档使用 Curl 演示如何使用原始 HTTP 请求来与 HDInsight 交互，以便运行、监视和检索 Sqoop 作业的结果。要执行这些操作，需要使用 HDInsight 群集提供的 WebHCat REST API（前称 Templeton）。
 
+> [AZURE.NOTE]
+如果已熟悉如何使用基于 Linux 的 Hadoop 服务器，但刚接触 HDInsight，请参阅[有关在 Linux 上使用 HDInsight 的信息](/documentation/articles/hdinsight-hadoop-linux-information/)。
+> 
+> 
+
 ## 先决条件
 要完成本文中的步骤，需要：
 
-* HDInsight 群集上的 Hadoop（基于 Windows）
+* HDInsight 群集上的 Hadoop（基于 Linux 或 Windows）
 * [Curl](http://curl.haxx.se/)
 * [jq](http://stedolan.github.io/jq/)
 
@@ -54,10 +58,10 @@
    
     此命令中使用的参数如下：
    
-   * **-u** - 用来对请求进行身份验证的用户名和密码。
-   * **-G** - 指出这是 GET 请求。
+    * **-u** - 用来对请求进行身份验证的用户名和密码。
+    * **-G** - 指出这是 GET 请求。
      
-     所有请求的 URL 开头 (**https://CLUSTERNAME.azurehdinsight.cn/templeton/v1**) 都是一样的。路径 **/status** 指示请求将返回服务器的 WebHCat（也称为 Templeton）状态。
+    所有请求的 URL 开头 (**https://CLUSTERNAME.azurehdinsight.cn/templeton/v1**) 都是一样的。路径 **/status** 指示请求将返回服务器的 WebHCat（也称为 Templeton）状态。
 2. 使用以下命令 sqoop 作业：
 
         curl -u USERNAME:PASSWORD -d user.name=USERNAME -d command="export --connect jdbc:sqlserver://SQLDATABASESERVERNAME.database.chinacloudapi.cn;user=USERNAME@SQLDATABASESERVERNAME;password=PASSWORD;database=SQLDATABASENAME --table log4jlogs --export-dir /tutorials/usesqoop/data --input-fields-terminated-by \0x20 -m 1" -d statusdir="wasbs:///example/curl" https://CLUSTERNAME.azurehdinsight.cn/templeton/v1/sqoop
@@ -82,10 +86,10 @@
    
     如果作业已完成，状态将是 **SUCCEEDED**。
    
-   > [AZURE.NOTE]
-   此 Curl 请求返回具有作业相关信息的 JavaScript 对象表示法 (JSON) 文档；使用 jq 可以仅检索状态值。
-   > 
-   > 
+    > [AZURE.NOTE]
+    此 Curl 请求返回具有作业相关信息的 JavaScript 对象表示法 (JSON) 文档；使用 jq 可以仅检索状态值。
+    > 
+    > 
 2. 在作业的状态更改为 **SUCCEEDED** 后，可以从 Azure Blob 存储中检索作业的结果。随查询一起传递的 `statusdir` 参数包含输出文件的位置；在本例中为 **wasbs:///example/curl**。此地址会将作业的输出存储在 HDInsight 群集所用的默认存储容器的 **example/curl** 目录中。
    
     可以使用 [Azure CLI](/documentation/articles/xplat-cli-install/) 列出并下载这些文件。例如，若要列出 **example/curl** 中的文件，请使用以下命令：
@@ -96,11 +100,14 @@
    
         azure storage blob download <container-name> <blob-name> <destination-file>
    
-   > [AZURE.NOTE]
-   必须使用 `-a` 和 `-k` 参数指定包含 Blob 的存储帐户名称，或者设置 **AZURE\_STORAGE\_ACCOUNT** 和 **AZURE\_STORAGE\_ACCESS\_KEY** 环境变量。请参阅<a href="/documentation/articles/hdinsight-upload-data/" target="\_blank">在 HDInsight 中上传 Hadoop 作业的数据</a>了解详细信息。
-   > 
-   > 
+    > [AZURE.NOTE]
+    必须使用 `-a` 和 `-k` 参数指定包含 Blob 的存储帐户名称，或者设置 **AZURE\_STORAGE\_ACCOUNT** 和 **AZURE\_STORAGE\_ACCESS\_KEY** 环境变量。请参阅 <a href="/documentation/articles/hdinsight-upload-data" target="\_blank" 了解详细信息。
+    > 
+    > 
 
+## 限制
+* 批量导出 - 在基于 Linux 的 HDInsight 上，用于将数据导出到 Microsoft SQL Server 或 Azure SQL 数据库的 Sqoop 连接器目前不支持批量插入。
+* 批处理 - 在基于 Linux 的 HDInsight 上，如果执行插入时使用 `-batch` 开关，Sqoop 将执行多次插入而不是批处理插入操作。
 
 ## 摘要
 如本文档中所示，你可以使用原始 HTTP 请求来运行、监视和查看 HDInsight 群集上的 Sqoop 作业的结果。
@@ -130,17 +137,15 @@
 [hive-on-tez-wiki]: https://cwiki.apache.org/confluence/display/Hive/Hive+on+Tez
 [import-to-excel]: /documentation/articles/hdinsight-connect-excel-power-query/
 
-
 [hdinsight-use-oozie]: /documentation/articles/hdinsight-use-oozie/
 [hdinsight-analyze-flight-data]: /documentation/articles/hdinsight-analyze-flight-delay-data/
 
 
 
-
-[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1/
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters/
 [hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically/
 [hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data/
 
 [powershell-here-strings]: http://technet.microsoft.com/zh-cn/library/ee692792.aspx
 
-<!---HONumber=Mooncake_Quality_Review_1215_2016-->
+<!---HONumber=Mooncake_0120_2017-->

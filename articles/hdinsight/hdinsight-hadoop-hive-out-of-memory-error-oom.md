@@ -55,7 +55,7 @@
 
 由于查询大约在 26 分钟内完成运行，因此客户忽略了这些警告，反而开始将重点放在如何进一步改善此查询的性能上。
 
-客户参考了[在 HDInsight 中优化 Hadoop 的 Hive 查询](/documentation/articles/hdinsight-hadoop-optimize-hive-query-v1/)，并决定使用 Tez 执行引擎。启用 Tez 设置运行同一个查询之后，该查询运行了 15 分钟，然后引发以下错误：
+客户参考了[在 HDInsight 中优化 Hadoop 的 Hive 查询](/documentation/articles/hdinsight-hadoop-optimize-hive-query/)，并决定使用 Tez 执行引擎。启用 Tez 设置运行同一个查询之后，该查询运行了 15 分钟，然后引发以下错误：
 
 	Status: Failed
 	Vertex failed, vertexName=Map 5, vertexId=vertex_1443634917922_0008_1_05, diagnostics=[Task failed, taskId=task_1443634917922_0008_1_05_000006, diagnostics=[TaskAttempt 0 failed, info=[Error: Failure while running task:java.lang.RuntimeException: java.lang.OutOfMemoryError: Java heap space

@@ -35,7 +35,7 @@
 
 ##先决条件
 
-* HDInsight (Hadoop) 群集：有关创建群集的信息，请参阅[在 HDInsight 中预配 Hadoop 群集](/documentation/articles/hdinsight-provision-clusters-v1/)。
+* HDInsight (Hadoop) 群集：有关创建群集的信息，请参阅[在 HDInsight 中预配 Hadoop 群集](/documentation/articles/hdinsight-provision-clusters/)。
 
 * Microsoft Excel 2013
 

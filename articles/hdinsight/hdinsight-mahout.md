@@ -1,465 +1,370 @@
 <properties
-	pageTitle="使用 Mahout 和基于 WIndows 的 HDInsight 生成推荐 | Azure"
-	description="了解如何使用 Apache Mahout 机器学习库，通过基于 Windows 的 HDInsight (Hadoop) 生成电影推荐。"
-	services="hdinsight"
-	documentationCenter=""
-	authors="Blackmist"
-	manager="paulettm"
-	editor="cgronlun"
-	tags="azure-portal"/>
-
+    pageTitle="通过 PowerShell 使用 Mahout HDInsight 生成推荐 | Azure"
+    description="了解如何使用 Apache Mahout 机器学习库通过客户端上运行的 PowerShell 脚本中的 HDInsight (Hadoop) 生成电影推荐。"
+    services="hdinsight"
+    documentationcenter=""
+    author="Blackmist"
+    manager="jhubbard"
+    editor="cgronlun"
+    tags="azure-portal" />
 <tags
-	ms.service="hdinsight"
-	ms.workload="big-data"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="10/11/2016"
-	wacn.date="01/05/2017"
-	ms.author="larryfr"/>
-
-#将 Apache Mahout 与 HDInsight 中的 Hadoop 配合使用以生成电影推荐
-
-了解如何使用 [Apache Mahout](http://mahout.apache.org) 机器学习库通过 Azure HDInsight 生成电影推荐。
+    ms.assetid="07b57208-32aa-4e59-900a-6c934fa1b7a7"
+    ms.service="hdinsight"
+    ms.workload="big-data"
+    ms.tgt_pltfrm="na"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.date="01/13/2017"
+    wacn.date="01/25/2017"
+    ms.author="larryfr" />  
 
 
-## <a name="learn"></a>学习内容
+# 将 Apache Mahout 与 HDInsight (PowerShell) 中的 Hadoop 配合使用生成电影推荐
+[AZURE.INCLUDE [mahout-selector](../../includes/hdinsight-selector-mahout.md)]
 
-Mahout 是适用于 Apache Hadoop 的[计算机学习][ml]库。Mahout 包含用于处理数据的算法，例如筛选、分类和群集。在本文中，你将使用推荐引擎生成基于你的朋友看过的电影的电影推荐。你还将学习如何使用决策林执行分类。本文将介绍以下内容：
+了解如何使用 [Apache Mahout](http://mahout.apache.org) 机器学习库通过 Azure HDInsight 生成电影推荐。本文档介绍如何使用 Azure PowerShell 远程运行 Mahout。
 
-* 如何使用 Windows PowerShell 运行 Mahout 作业
+Mahout 是适用于 Apache Hadoop 的[计算机学习][ml]库。Mahout 包含用于处理数据的算法，例如筛选、分类和群集。在本文中，用户使用推荐引擎根据好友看过的电影生成电影推荐。
 
-* 如何从 Hadoop 命令行运行 Mahout 作业
+## 先决条件
 
-* 如何在 HDInsight 3.0 和 HDInsight 2.0 群集上安装 Mahout
+* 基于 Linux 的 HDInsight 群集。有关创建该群集的信息，请参阅[开始在 HDInsight 中使用基于 Linux 的 Hadoop][getstarted]。
 
-	> [AZURE.NOTE] Mahout 是随 HDInsight 3.1 版本的群集一起提供的。如果使用早期版本的 HDInsight，请在继续操作之前参阅[安装 Mahout](#install)。
+    > [AZURE.IMPORTANT]
+    Linux 是在 HDInsight 3.4 版或更高版本上使用的唯一操作系统。有关详细信息，请参阅 [HDInsight 在 Windows 上弃用](/documentation/articles/hdinsight-component-versioning/#hdi-version-32-and-33-nearing-deprecation-date)。
 
-##先决条件
+* **配备 Azure PowerShell 的工作站**。
 
-- **HDInsight 中基于 Windows 的 Hadoop 群集**。有关创建该群集的信息，请参阅[开始使用 HDInsight 中的 Hadoop][getstarted]。
-- **配备 Azure PowerShell 的工作站**。
+    > [AZURE.IMPORTANT]
+    Azure PowerShell 对于使用 Azure Service Manager 管理 HDInsight 资源的支持已**弃用**，将于 2017 年 1 月 1 日删除。本文档中的步骤使用的是与 Azure Resource Manager 兼容的新 HDInsight cmdlet。
+    >
+    > 请按照 [Install and configure Azure PowerShell](https://docs.microsoft.com/powershell/azureps-cmdlets-docs)（安装和配置 Azure PowerShell）中的步骤安装最新版本的 Azure PowerShell。如果你的脚本需要修改才能使用与 Azure Resource Manager 兼容的新 cmdlet，请参阅[迁移到适用于 HDInsight 群集的基于 Azure Resource Manager 的开发工具](/documentation/articles/hdinsight-hadoop-development-using-azure-resource-manager/)，了解详细信息。
 
-    [AZURE.INCLUDE [upgrade-powershell](../../includes/hdinsight-use-latest-powershell.md)]
+## <a name="recommendations"></a>使用 Azure PowerShell 生成推荐
 
-## <a name="recommendations"></a>使用 Windows PowerShell 生成推荐
+> [AZURE.NOTE]
+尽管在本部分中使用的作业使用 Azure PowerShell 执行，但是，随 Mahout 一起提供的很多类当前不适用于 Azure PowerShell，必须使用 Hadoop 命令行来运行这些类。有关不适用于 Azure PowerShell 的类的列表，请参阅[故障排除](#troubleshooting)部分。
+>
+><p>有关使用 SSH 连接到 HDInsight 和直接在群集上运行 Mahout 示例的示例，请参阅[使用 Mahout 和 HDInsight (SSH) 生成电影推荐](/documentation/articles/hdinsight-hadoop-mahout-linux-mac/)。
 
-> [AZURE.NOTE] 尽管在本部分中使用的作业使用 Windows PowerShell 执行，但是，随 Mahout 一起提供的很多类当前不使用 Windows PowerShell，必须使用 Hadoop 命令行来运行这些类。有关不使用 Windows PowerShell 的类的列表，请参阅[故障排除](#troubleshooting)部分。<p>有关使用 Hadoop 命令行运行 Mahout 作业的示例，请参阅[使用 Hadoop 命令行对数据进行分类](#classify)。
-
-Mahout 提供的功能之一是推荐引擎。此引擎接受 `userID`、`itemId` 和 `prefValue` 格式（此项的用户偏好）的数据。然后，Mahout 将执行共同匹配项分析，以确定：_偏好某个项的用户也偏好其他类似项_。随后，Mahout 确定拥有类似项偏好的用户，这些偏好可用于推荐。
+Mahout 提供的功能之一是推荐引擎。此引擎接受 `userID`、`itemId` 和 `prefValue` 格式（此项的用户偏好）的数据。然后，Mahout 将执行共现分析，以确定：*偏好某个项的用户也偏好其他类似项*。随后，Mahout 确定拥有类似项偏好的用户，这些偏好可用于推荐。
 
 下面是使用电影的极其简单的示例：
 
-* __共同匹配项__：Joe、Alice 和 Bob 都喜欢电影《星球大战》、《帝国反击战》和《绝地归来》。Mahout 可确定喜欢以上电影之一的用户也喜欢其他两部。
+* **共现**：Joe、Alice 和 Bob 都喜欢电影《星球大战》、《帝国反击战》和《绝地归来》。Mahout 可确定喜欢以上电影之一的用户也喜欢其他两部。
 
-* __共同匹配项__：Bob 和 Alice 还喜欢电影《幽灵的威胁》、《克隆人的进攻》和《西斯的复仇》。Mahout 可确定喜欢前面三部电影的用户也喜欢这三部电影。
+* **共现**：Bob 和 Alice 还喜欢电影《幽灵的威胁》、《克隆人的进攻》和《西斯的复仇》。Mahout 可确定喜欢前面三部电影的用户也喜欢这三部电影。
 
-* __类似性推荐__：由于 Joe 喜欢前三部电影，Mahout 会查看具有类似偏好的其他人喜欢、但 Joe 还未观看过（喜欢/评价）的电影。在本例中，Mahout 推荐《幽灵的威胁》、《克隆人的进攻》和《西斯的复仇》。
+* **类似性推荐**：由于 Joe 喜欢前三部电影，Mahout 会查看具有类似偏好的其他人喜欢、但 Joe 还未观看过（喜欢/评价）的电影。在本例中，Mahout 推荐《幽灵的威胁》、《克隆人的进攻》和《西斯的复仇》。
 
-###了解数据
+### 了解数据
 
-为方便起见，[GroupLens 研究][movielens]以兼容 Mahout 的格式提供电影的评价数据。此数据在 `/HdiSamples/MahoutMovieData` 中你的群集的默认存储中可用。
+为方便起见，[GroupLens 研究][movielens]以兼容 Mahout 的格式提供电影的评价数据。此数据在 `/HdiSamples//HdiSamples/MahoutMovieData` 中你的群集的默认存储中可用。
 
 存在两个文件，`moviedb.txt`（有关影片的信息）和 `user-ratings.txt`。user-ratings.txt 文件用于分析过程中，而 moviedb.txt 用于在显示分析结果时，提供用户友好的文本信息。
 
 user-ratings.txt 中包含的数据具有 `userID`、`movieID`、`userRating` 和 `timestamp` 结构，它将告诉我们每个用户对电影评级的情况。下面是数据的示例：
 
+    196    242    3    881250949
+    186    302    3    891717742
+    22    377    1    878887116
+    244    51    2    880606923
+    166    346    1    886397596
 
-		196	242	3	881250949
-		186	302	3	891717742
-		22	377	1	878887116
-		244	51	2	880606923
-		166	346	1	886397596
-
-
-
-        
-        
-            
-    
-
-###运行作业
+### 运行作业
 
 使用以下 Windows PowerShell 脚本来运行作业，以将 Mahout 推荐引擎用于电影数据：
 
-	# The HDInsight cluster name.
-	$clusterName = "the cluster name"
-    
-    #Get HTTPS/Admin credentials for submitting the job later
-    $creds = Get-Credential
-    #Get the cluster info so we can get the storage, etc.
-    $clusterInfo = Get-AzureHDInsightCluster -Cluster $clusterName
-    $storageAccountName=$clusterInfo.DefaultStorageAccount.split('.')[0]
-    $container=$clusterInfo.DefaultStorageContainer
-    $storageAccountKey=Get-AzureStorageKey `
-        -StorageAccountName $storageAccountName `
-        | %{ $_.Primary }
-            
-    #Create a storage content and upload the file
+> [AZURE.NOTE]
+此文件将提示你输入用于连接到 HDInsight 群集和运行作业的信息。完成作业和下载 output.txt 文件可能需要几分钟时间。
+
+    # Script should stop on failures
+    $ErrorActionPreference = "Stop"
+
+    # Login to your Azure subscription
+    # Is there an active Azure subscription?
+    $sub = Get-AzureRmSubscription -ErrorAction SilentlyContinue
+    if(-not($sub))
+    {
+        Add-AzureRmAccount -EnvironmentName AzureChinaCloud
+    }
+
+    # Get cluster info
+    $clusterName = Read-Host -Prompt "Enter the HDInsight cluster name"
+    $creds=Get-Credential -Message "Enter the login for the cluster (the default name is usually 'admin')"
+
+    #Get the cluster info so we can get the resource group, storage, etc.
+    $clusterInfo = Get-AzureRmHDInsightCluster -ClusterName $clusterName
+    $resourceGroup = $clusterInfo.ResourceGroup
+    $storageAccountName = $clusterInfo.DefaultStorageAccount.split('.')[0]
+    $container = $clusterInfo.DefaultStorageContainer
+    $storageAccountKey = (Get-AzureRmStorageAccountKey `
+        -Name $storageAccountName `
+    -ResourceGroupName $resourceGroup)[0].Value
+
+    #Create a storage context and upload the file
     $context = New-AzureStorageContext `
         -StorageAccountName $storageAccountName `
         -StorageAccountKey $storageAccountKey
-            
-	# NOTE: The version number in the file path
-	# may change in future versions of HDInsight.
-	$jarFile =  "file:///C:/apps/dist/mahout-0.9.0.2.2.9.1-8/examples/target/mahout-examples-0.9.0.2.2.9.1-8-job.jar"
-    #
-	# If you are using an earlier version of HDInsight,
-	# set $jarFile to the jar file you
-	# uploaded.
-	# For example,
-	# $jarFile = "wasbs:///example/jars/mahout-core-0.9-job.jar"
 
-	# The arguments for this job
-	# * input - the path to the data uploaded to HDInsight
-	# * output - the path to store output data
-	# * tempDir - the directory for temp files
-	$jobArguments = "--similarityClassname", "recommenditembased", `
-                    "-s", "SIMILARITY_COOCCURRENCE", `
-	                "--input", "wasbs:///HdiSamples/MahoutMovieData/user-ratings.txt",
-	                "--output", "wasbs:///example/out",
-	                "--tempDir", "wasbs:///example/temp"
+    #Use Hive to figure out the path to the mahout examples
+    #Because the file name/path has a version number in it that changes
+    $queryString = "!ls /usr/hdp/current/mahout-client"
+    $hiveJobDefinition = New-AzureRmHDInsightHiveJobDefinition -Query $queryString
+    $hiveJob=Start-AzureRmHDInsightJob -ClusterName $clusterName -JobDefinition $hiveJobDefinition -HttpCredential $creds
+    $dummy = wait-azurermhdinsightjob -ClusterName $clusterName -JobId $hiveJob.JobId -HttpCredential $creds
+    #Get the files returned from Hive
+    $files=get-azurermhdinsightjoboutput -clustername $clusterName -JobId $hiveJob.JobId -DefaultContainer $container -DefaultStorageAccountName $storageAccountName -DefaultStorageAccountKey $storageAccountKey -HttpCredential $creds
+    #Find the file that starts with mahout-examples and ends in job.jar
+    $jarFile = $files | select-string "mahout-examples.+job\.jar" | % {$_.Matches.Value}
+    #Add the full path
+    $jarFile = "file:///usr/hdp/current/mahout-client/$jarFile"
 
-	# Create the job definition
-	$jobDefinition = New-AzureHDInsightMapReduceJobDefinition `
-	  -JarFile $jarFile `
-	  -Class "org.apache.mahout.cf.taste.hadoop.item.RecommenderJob" `
-	  -Arguments $jobArguments
+    # The arguments for the mahout job
+    # * input - the path to the data uploaded to HDInsight
+    # * output - the path to store output data
+    # * tempDir - the directory for temp files
+    $jobArguments = "-s", "SIMILARITY_COOCCURRENCE", `
+                    "--input", "/HdiSamples/HdiSamples/MahoutMovieData/user-ratings.txt",
+                    "--output", "/example/out",
+                    "--tempDir", "/example/temp"
 
-	# Start the job
-	$job = Start-AzureHDInsightJob `
-        -Cluster $clusterName `
+    # Create the job definition
+    $jobDefinition = New-AzureRmHDInsightMapReduceJobDefinition `
+        -JarFile $jarFile `
+        -ClassName "org.apache.mahout.cf.taste.hadoop.item.RecommenderJob" `
+        -Arguments $jobArguments
+
+    # Start the job
+    $job = Start-AzureRmHDInsightJob `
+        -ClusterName $clusterName `
         -JobDefinition $jobDefinition `
-        -Credential $creds
+        -HttpCredential $creds
 
-	# Wait on the job to complete
-	Write-Host "Wait for the job to complete ..." -ForegroundColor Green
-	Wait-AzureHDInsightJob `
-            -Cluster $clusterName `
+    # Wait on the job to complete
+    Write-Host "Wait for the job to complete ..." -ForegroundColor Green
+    Wait-AzureRmHDInsightJob `
+            -ClusterName $clusterName `
             -JobId $job.JobId `
-            -Credential $creds
+            -HttpCredential $creds
+
+    # Write out any error information
+    Write-Host "STDERR"
+    Get-AzureRmHDInsightJobOutput `
+            -Clustername $clusterName `
+            -JobId $job.JobId `
+            -DefaultContainer $container `
+            -DefaultStorageAccountName $storageAccountName `
+            -DefaultStorageAccountKey $storageAccountKey `
+            -HttpCredential $creds `
+            -DisplayOutputType StandardError
+
     # Download the output
     Get-AzureStorageBlobContent `
             -Blob example/out/part-r-00000 `
             -Container $container `
             -Destination output.txt `
             -Context $context
-            
-	# Write out any error information
-	Write-Host "STDERR"
-	Get-AzureHDInsightJobOutput `
-            -Cluster $clusterName `
-            -JobId $job.JobId `
-            -StandardError
+    #Download movie and user files for use in displaying results
+    Get-AzureStorageBlobContent -blob "HdiSamples/HdiSamples/MahoutMovieData/moviedb.txt" `
+            -Container $container `
+            -Destination moviedb.txt `
+            -Context $context
+    Get-AzureStorageBlobContent -blob "HdiSamples/HdiSamples/MahoutMovieData/user-ratings.txt" `
+            -Container $container `
+            -Destination user-ratings.txt `
+            -Context $context
 
-> [AZURE.NOTE] Mahout 作业不会删除处理作业时创建的临时数据。在示例作业中指定 `--tempDir` 参数，以将临时文件隔离到特定目录中。
+> [AZURE.NOTE]
+Mahout 作业不删除在处理作业时创建的临时数据。在示例作业中指定 `--tempDir` 参数，以将临时文件隔离到特定目录中。
 
-Mahout 作业不会将输出返回到 STDOUT。而是会将其作为 __part-r-00000__ 存储在指定的输出目录中。该脚本将此文件下载到你工作站上的当前目录中的 __output.txt__ 中。
+Mahout 作业不会将输出返回到 STDOUT。而是会将其作为 **part-r-00000** 存储在指定的输出目录中。该脚本将此文件下载到你工作站上的当前目录中的 **output.txt** 中。
 
 下面是此文件内容的示例：
 
-	1	[234:5.0,347:5.0,237:5.0,47:5.0,282:5.0,275:5.0,88:5.0,515:5.0,514:5.0,121:5.0]
-	2	[282:5.0,210:5.0,237:5.0,234:5.0,347:5.0,121:5.0,258:5.0,515:5.0,462:5.0,79:5.0]
-	3	[284:5.0,285:4.828125,508:4.7543354,845:4.75,319:4.705128,124:4.7045455,150:4.6938777,311:4.6769233,248:4.65625,272:4.649266]
-	4	[690:5.0,12:5.0,234:5.0,275:5.0,121:5.0,255:5.0,237:5.0,895:5.0,282:5.0,117:5.0]
+    1    [234:5.0,347:5.0,237:5.0,47:5.0,282:5.0,275:5.0,88:5.0,515:5.0,514:5.0,121:5.0]
+    2    [282:5.0,210:5.0,237:5.0,234:5.0,347:5.0,121:5.0,258:5.0,515:5.0,462:5.0,79:5.0]
+    3    [284:5.0,285:4.828125,508:4.7543354,845:4.75,319:4.705128,124:4.7045455,150:4.6938777,311:4.6769233,248:4.65625,272:4.649266]
+    4    [690:5.0,12:5.0,234:5.0,275:5.0,121:5.0,255:5.0,237:5.0,895:5.0,282:5.0,117:5.0]
 
 第一列是 `userID`。“[”和“]”中包含的值为 `movieId`:`recommendationScore`。
 
-###查看输出
+该脚本还会下载 `moviedb.txt` 和 `user-ratings.txt` 文件，需要这些文件格式化输出使其更具可读性。
 
-生成的输出也许可用于应用程序中，但其可读性欠佳。可使用服务器的 `moviedb.txt` 将 `movieId` 解析为电影名称，但必须先使用以下脚本从服务器下载它并对文件评级：
+### 查看输出
 
-    # The HDInsight cluster name.
-	$clusterName = "the cluster name"
-    #Get the cluster info so we can get the storage, etc.
-    $clusterInfo = Get-AzureHDInsightCluster -Cluster $clusterName
-    $storageAccountName=$clusterInfo.DefaultStorageAccount.split('.')[0]
-    $container=$clusterInfo.DefaultStorageContainer
-    $storageAccountKey=Get-AzureStorageKey `
-        -StorageAccountName $storageAccountName `
-        | %{ $_.Primary }
-    #Create a storage content and upload the file
-    $context = New-AzureStorageContext `
-        -StorageAccountName $storageAccountName `
-        -StorageAccountKey $storageAccountKey
-    #Download the files
-    Get-AzureStorageBlobContent -blob "HdiSamples/MahoutMovieData/moviedb.txt" `
-    -Container $container `
-    -Destination moviedb.txt `
-    -Context $context
-    Get-AzureStorageBlobContent -blob "HdiSamples/MahoutMovieData/user-ratings.txt" `
-    -Container $container `
-    -Destination user-ratings.txt `
-    -Context $context
-    
-下载文件后，使用以下 PowerShell 脚本显示包含影片名称的推荐：
+生成的输出也许可用于应用程序中，但其可读性欠佳。可以使用服务器中的 `moviedb.txt` 将 `movieId` 解析为电影名称。使用以下 PowerShell 脚本显示包含影片名称的推荐：
 
-	<#
-	.SYNOPSIS
-	    Displays recommendations for movies.
-	.DESCRIPTION
-	    Displays recommendations generated by Mahout
-	    with HDInsight example in a human readable format.
-	.EXAMPLE
-	    .\Show-Recommendation -userId 4
-	        -userDataFile "user-ratings.txt"
-	        -movieFile "moviedb.txt"
-	        -recommendationFile "output.txt"
-	#>
+    <#
+    .SYNOPSIS
+        Displays recommendations for movies.
+    .DESCRIPTION
+        Displays recommendations generated by Mahout
+        with HDInsight example in a human readable format.
+    .EXAMPLE
+        .\Show-Recommendation -userId 4
+            -userDataFile "user-ratings.txt"
+            -movieFile "moviedb.txt"
+            -recommendationFile "output.txt"
+    #>
 
-	[CmdletBinding(SupportsShouldProcess = $true)]
-	param(
-	    #The user ID
-	    [Parameter(Mandatory = $true)]
-	    [String]$userId,
+    [CmdletBinding(SupportsShouldProcess = $true)]
+    param(
+        #The user ID
+        [Parameter(Mandatory = $true)]
+        [String]$userId,
 
-	    [Parameter(Mandatory = $true)]
-	    [String]$userDataFile,
+        [Parameter(Mandatory = $true)]
+        [String]$userDataFile,
 
-	    [Parameter(Mandatory = $true)]
-	    [String]$movieFile,
+        [Parameter(Mandatory = $true)]
+        [String]$movieFile,
 
-	    [Parameter(Mandatory = $true)]
-	    [String]$recommendationFile
-	)
-	# Read movie ID & description into hash table
-	Write-Host "Reading movies descriptions" -ForegroundColor Green
-	$movieById = @{}
-	foreach($line in Get-Content $movieFile)
-	{
-	    $tokens = $line.Split("|")
-	    $movieById[$tokens[0]] = $tokens[1]
-	}
-	# Load movies user has already seen (rated)
-	# into a hash table
-	Write-Host "Reading rated movies" -ForegroundColor Green
-	$ratedMovieIds = @{}
-	foreach($line in Get-Content $userDataFile)
-	{
-	    $tokens = $line.Split("`t")
-	    if($tokens[0] -eq $userId)
-	    {
-	        # Resolve the ID to the movie name
-	        $ratedMovieIds[$movieById[$tokens[1]]] = $tokens[2]
-	    }
-	}
-	# Read recommendations generated by Mahout
-	Write-Host "Reading recommendations" -ForegroundColor Green
-	$recommendations = @{}
-	foreach($line in get-content $recommendationFile)
-	{
-	    $tokens = $line.Split("`t")
-	    if($tokens[0] -eq $userId)
-	    {
-	        #Trim leading/treailing [] and split at ,
-	        $movieIdAndScores = $tokens[1].TrimStart("[").TrimEnd("]").Split(",")
-	        foreach($movieIdAndScore in $movieIdAndScores)
-	        {
-	            #Split at : and store title and score in a hash table
-	            $idAndScore = $movieIdAndScore.Split(":")
-	            $recommendations[$movieById[$idAndScore[0]]] = $idAndScore[1]
-	        }
-	        break
-	    }
-	}
+        [Parameter(Mandatory = $true)]
+        [String]$recommendationFile
+    )
+    # Read movie ID & description into hash table
+    Write-Host "Reading movies descriptions" -ForegroundColor Green
+    $movieById = @{}
+    foreach($line in Get-Content $movieFile)
+    {
+        $tokens = $line.Split("|")
+        $movieById[$tokens[0]] = $tokens[1]
+    }
+    # Load movies user has already seen (rated)
+    # into a hash table
+    Write-Host "Reading rated movies" -ForegroundColor Green
+    $ratedMovieIds = @{}
+    foreach($line in Get-Content $userDataFile)
+    {
+        $tokens = $line.Split("`t")
+        if($tokens[0] -eq $userId)
+        {
+            # Resolve the ID to the movie name
+            $ratedMovieIds[$movieById[$tokens[1]]] = $tokens[2]
+        }
+    }
+    # Read recommendations generated by Mahout
+    Write-Host "Reading recommendations" -ForegroundColor Green
+    $recommendations = @{}
+    foreach($line in get-content $recommendationFile)
+    {
+        $tokens = $line.Split("`t")
+        if($tokens[0] -eq $userId)
+        {
+            #Trim leading/treailing [] and split at ,
+            $movieIdAndScores = $tokens[1].TrimStart("[").TrimEnd("]").Split(",")
+            foreach($movieIdAndScore in $movieIdAndScores)
+            {
+                #Split at : and store title and score in a hash table
+                $idAndScore = $movieIdAndScore.Split(":")
+                $recommendations[$movieById[$idAndScore[0]]] = $idAndScore[1]
+            }
+            break
+        }
+    }
 
-	Write-Host "Rated movies" -ForegroundColor Green
-	Write-Host "---------------------------" -ForegroundColor Green
-	$ratedFormat = @{Expression={$_.Name};Label="Movie";Width=40}, `
-	               @{Expression={$_.Value};Label="Rating"}
-	$ratedMovieIds | format-table $ratedFormat
-	Write-Host "---------------------------" -ForegroundColor Green
+    Write-Host "Rated movies" -ForegroundColor Green
+    Write-Host "---------------------------" -ForegroundColor Green
+    $ratedFormat = @{Expression={$_.Name};Label="Movie";Width=40}, `
+                    @{Expression={$_.Value};Label="Rating"}
+    $ratedMovieIds | format-table $ratedFormat
+    Write-Host "---------------------------" -ForegroundColor Green
 
-	write-host "Recommended movies" -ForegroundColor Green
-	Write-Host "---------------------------" -ForegroundColor Green
-	$recommendationFormat = @{Expression={$_.Name};Label="Movie";Width=40}, `
-	                        @{Expression={$_.Value};Label="Score"}
-	$recommendations | format-table $recommendationFormat
+    write-host "Recommended movies" -ForegroundColor Green
+    Write-Host "---------------------------" -ForegroundColor Green
+    $recommendationFormat = @{Expression={$_.Name};Label="Movie";Width=40}, `
+                            @{Expression={$_.Value};Label="Score"}
+    $recommendations | format-table $recommendationFormat
 
 下面是运行脚本的示例：
 
-	PS C:\> show-recommendation.ps1 -userId 4 -userDataFile .\user-ratings.txt -movieFile .\moviedb.txt -recommendationFile .\output.txt
+    PS C:\> show-recommendation.ps1 -userId 4 -userDataFile .\user-ratings.txt -movieFile .\moviedb.txt -recommendationFile .\output.txt
 
 输出应如下所示：
 
-	Reading movies descriptions
-	Reading rated movies
-	Reading recommendations
-	Rated movies
-	---------------------------
-	Movie                                    Rating
-	-----                                    ------
-	Devil's Own, The (1997)                  1
-	Alien: Resurrection (1997)               3
-	187 (1997)                               2
-	(lines ommitted)
+    Reading movies descriptions
+    Reading rated movies
+    Reading recommendations
+    Rated movies
+    ---------------------------
+    Movie                                    Rating
+    -----                                    ------
+    Devil's Own, The (1997)                  1
+    Alien: Resurrection (1997)               3
+    187 (1997)                               2
+    (lines ommitted)
 
-	---------------------------
-	Recommended movies
-	---------------------------
+    ---------------------------
+    Recommended movies
+    ---------------------------
 
-	Movie                                    Score
-	-----                                    -----
-	Good Will Hunting (1997)                 4.6504064
-	Swingers (1996)                          4.6862745
-	Wings of the Dove, The (1997)            4.6666665
-	People vs. Larry Flynt, The (1996)       4.834559
-	Everyone Says I Love You (1996)          4.707071
-	Secrets & Lies (1996)                    4.818182
-	That Thing You Do! (1996)                4.75
-	Grosse Pointe Blank (1997)               4.8235292
-	Donnie Brasco (1997)                     4.6792455
-	Lone Star (1996)                         4.7099237  
-
-## <a name="classify"></a>通过使用 Hadoop 命令行对数据进行分类
-
-Mahout 提供的分类方法之一是生成[随机林][forest]。这是一个多步骤过程，涉及到使用训练数据来生成决策树，然后使用决策树对数据进行分类。此过程使用 Mahout 提供的 __org.apache.mahout.classifier.df.tools.Describe__ 类。目前必须使用 Hadoop 命令行来运行它。
-
-###加载数据
-
-1. 从 [NSL-KDD 数据集](http://www.unb.ca/research/iscx/dataset/iscx-NSL-KDD-dataset.html)下载以下文件。
-
-  * KDDTrain+.ARFF：训练文件
-
-  * KDDTest+.ARFF：测试数据
-
-2. 打开每个文件，删除顶部以“@”开头的行，然后保存文件。如果未删除这些行，则将此数据用于 Mahout 时将收到错误消息。
-
-2. 将文件上传到 __example/data__。为此，可以使用以下脚本。将 __CLUSTERNAME__ 替换为 HDInsight 群集的名称。将 FILENAME 替换为要上传的文件的名称。
-
-        #Get the cluster info so we can get the storage, etc.
-        $clusterName="CLUSTERNAME"
-        $fileToUpload="FILENAME"
-        $blobPath="example/data/FILENAME"
-        $clusterInfo = Get-AzureHDInsightCluster -Cluster $clusterName
-        $storageAccountName=$clusterInfo.DefaultStorageAccount.split('.')[0]
-        $container=$clusterInfo.DefaultStorageContainer
-        $storageAccountKey=Get-AzureStorageKey `
-            -StorageAccountName $storageAccountName `
-            | %{ $_.Primary }
-        
-        #Create a storage content and upload the file
-        $context = New-AzureStorageContext `
-            -StorageAccountName $storageAccountName `
-            -StorageAccountKey $storageAccountKey
-            
-        Set-AzureStorageBlobContent `
-            -File $fileToUpload `
-            -Blob $blobPath `
-            -Container $container `
-            -Context $context
-
-###运行作业
-
-1. 此作业需要 Hadoop 命令行。为 HDInsight 群集启用远程桌面，然后按照[使用 RDP 连接到 HDInsight 群集](/documentation/articles/hdinsight-administer-use-management-portal-v1/#rdp)中的说明连接到该群集。
-
-3. 建立连接后，使用“Hadoop 命令行”图标打开 Hadoop 命令行：
-
-	![hadoop cli][hadoopcli]
-
-3. 使用以下命令生成文件描述符 (__KDDTrain+.info__)，该描述符使用 Mahout。
-
-		hadoop jar "c:/apps/dist/mahout-0.9.0.2.2.9.1-8/examples/target/mahout-examples-0.9.0.2.2.9.1-8-job.jar" org.apache.mahout.classifier.df.tools.Describe -p "wasbs:///example/data/KDDTrain+.arff" -f "wasbs:///example/data/KDDTrain+.info" -d N 3 C 2 N C 4 N C 8 N 2 C 19 N L
-
-	`N 3 C 2 N C 4 N C 8 N 2 C 19 N L` 描述文件中数据的属性。例如，L 指示标签。
-
-4. 使用以下命令生成决策树的林：
-
-		hadoop jar c:/apps/dist/mahout-0.9.0.2.2.9.1-8/examples/target/mahout-examples-0.9.0.2.2.9.1-8-job.jar org.apache.mahout.classifier.df.mapreduce.BuildForest -Dmapred.max.split.size=1874231 -d wasbs:///example/data/KDDTrain+.arff -ds wasbs:///example/data/KDDTrain+.info -sl 5 -p -t 100 -o nsl-forest
-
-    此操作的输出存储在 __nsl-forest__ 目录中，该目录位于 HDInsight 群集的存储中的 __wasbs://user/&lt;username>/nsl-forest/nsl-forest.seq 处。&lt;用户名> 即用于远程桌面会话的用户名。此文件对用户不可读。
-
-5. 通过为 __KDDTest+.arff__ 数据集分类来测试该林。使用以下命令：
-
-    	hadoop jar c:/apps/dist/mahout-0.9.0.2.2.9.1-8/examples/target/mahout-examples-0.9.0.2.2.9.1-8-job.jar org.apache.mahout.classifier.df.mapreduce.TestForest -i wasbs:///example/data/KDDTest+.arff -ds wasbs:///example/data/KDDTrain+.info -m nsl-forest -a -mr -o wasbs:///example/data/predictions
-
-    此命令返回有关分类过程的如下摘要信息：
-
-	    14/07/02 14:29:28 INFO mapreduce.TestForest:
-
-	    =======================================================
-	    Summary
-	    -------------------------------------------------------
-	    Correctly Classified Instances          :      17560       77.8921%
-	    Incorrectly Classified Instances        :       4984       22.1079%
-	    Total Classified Instances              :      22544
-
-	    =======================================================
-	    Confusion Matrix
-	    -------------------------------------------------------
-	    a       b       <--Classified as
-	    9437    274      |  9711        a     = normal
-	    4710    8123     |  12833       b     = anomaly
-
-	    =======================================================
-	    Statistics
-	    -------------------------------------------------------
-	    Kappa                                       0.5728
-	    Accuracy                                   77.8921%
-	    Reliability                                53.4921%
-	    Reliability (standard deviation)            0.4933
-
-  此作业还将生成位于 __wasbs:///example/data/predictions/KDDTest+.arff.out__ 的文件。但是，用户无法阅读此文。
-
-> [AZURE.NOTE] Mahout 作业不会覆盖文件。如果要再次运行这些作业，则必须删除由以前的作业创建的文件。
+    Movie                                    Score
+    -----                                    -----
+    Good Will Hunting (1997)                 4.6504064
+    Swingers (1996)                          4.6862745
+    Wings of the Dove, The (1997)            4.6666665
+    People vs. Larry Flynt, The (1996)       4.834559
+    Everyone Says I Love You (1996)          4.707071
+    Secrets & Lies (1996)                    4.818182
+    That Thing You Do! (1996)                4.75
+    Grosse Pointe Blank (1997)               4.8235292
+    Donnie Brasco (1997)                     4.6792455
+    Lone Star (1996)                         4.7099237
 
 ## <a name="troubleshooting"></a>故障排除
 
-### <a name="install"></a>安装 Mahout
-
-Mahout 安装在 HDInsight 3.1 群集上，可使用以下步骤将其手动安装在 HDInsight 3.0 或 HDInsight 2.1 群集上：
-
-1. 要使用的 Mahout 版本取决于群集的 HDInsight 版本。在 Azure 经典管理门户中查看群集的属性即可找到群集版本。
-
-  * __对于 HDInsight 2.1__，可以下载包含 [Mahout 0.9](http://repo2.maven.org/maven2/org/apache/mahout/mahout-core/0.9/mahout-core-0.9-job.jar) 的 Java 存档 (JAR) 文件。
-
-  * __对于 HDInsight 3.0__，必须[从源生成 Mahout][build] 并指定 HDInsight 提供的 Hadoop 版本。安装构建页上列出的必备组件，并下载源，然后使用以下命令创建 Mahout jar 文件：
-
-			mvn -Dhadoop2.version=2.2.0 -DskipTests clean package
-
-    	After the build completes, you can find the JAR file at __mahout\mrlegacy\target\mahout-mrlegacy-1.0-SNAPSHOT-job.jar__.
-
-    	> [AZURE.NOTE] When Mahout 1.0 is released, you should be able to use the prebuilt packages with HDInsight 3.0.
-
-2. 将该 jar 文件上传到群集默认存储内的 __example/jars__ 中。在以下脚本中将 CLUSTERNAME 替换为你的 HDInsight 群集的名称，并将 FILENAME 替换为 __mahout-coure-0.9-job.jar__ 文件的路径。
-
-        #Get the cluster info so we can get the storage, etc.
-        $clusterName = "CLUSTERNAME"
-        $fileToUpload = "FILENAME"
-        $clusterInfo = Get-AzureHDInsightCluster -Cluster $clusterName
-        $storageAccountName=$clusterInfo.DefaultStorageAccount.split('.')[0]
-        $container=$clusterInfo.DefaultStorageContainer
-        $storageAccountKey=Get-AzureStorageKey `
-            -StorageAccountName $storageAccountName `
-            | %{ $_.Primary }
-        
-        #Create a storage content and upload the file
-        $context = New-AzureStorageContext `
-            -StorageAccountName $storageAccountName `
-            -StorageAccountKey $storageAccountKey
-            
-        Set-AzureStorageBlobContent `
-            -File $fileToUpload `
-            -Blob "example/jars/mahout-core-0.9-job.jar" `
-            -Container $container `
-            -Context $context
-
-###无法覆盖文件
+### 无法覆盖文件
 
 Mahout 作业不清理在处理期间创建的临时文件。此外，作业将不会覆盖现有的输出文件。
 
-若要避免运行 Mahout 作业时出错，请在每次运行作业之前删除临时文件和输出文件，或者使用唯一的临时目录名称和输出目录名称。
+若要避免运行 Mahout 作业时出错，请在每次运行作业之前删除临时文件和输出文件，或者使用唯一的临时目录名称和输出目录名称。使用以下 PowerShell 脚本删除本文档前面的脚本创建的文件：
 
-###找不到 JAR 文件
+    # Script should stop on failures
+    $ErrorActionPreference = "Stop"
 
-HDInsight 3.1 群集提供 Mahout。路径和文件名包括在群集上安装的 Mahout 的版本号。本教程中的 Windows PowerShell 示例脚本使用的路径的有效截止期为 2015 年 11 月，但是，将来对 HDInsight 做出更新后，版本号将发生更改。若要确定群集的 Mahout JAR 文件的当前路径，请使用以下 Windows PowerShell 命令，然后修改脚本以引用返回的文件路径：
+    # Login to your Azure subscription
+    # Is there an active Azure subscription?
+    $sub = Get-AzureRmSubscription -ErrorAction SilentlyContinue
+    if(-not($sub))
+    {
+        Add-AzureRmAccount -EnvironmentName AzureChinaCloud
+    }
 
-	Use-AzureHDInsightCluster -Cluster $clusterName
-    Invoke-AzureHDInsightHiveJob `
-            -StatusFolder "wasbs:///example/statusout" `
-            -Query '!${env:COMSPEC} /c dir /b /s ${env:MAHOUT_HOME}\examples\target*-job.jar'
+    # Get cluster info
+    $clusterName = Read-Host -Prompt "Enter the HDInsight cluster name"
+    $creds=Get-Credential -Message "Enter the login for the cluster"
 
-### <a name="nopowershell"></a>不适用于 Windows PowerShell 的类
+    #Get the cluster info so we can get the resource group, storage, etc.
+    $clusterInfo = Get-AzureRmHDInsightCluster -ClusterName $clusterName
+    $resourceGroup = $clusterInfo.ResourceGroup
+    $storageAccountName = $clusterInfo.DefaultStorageAccount.split('.')[0]
+    $container = $clusterInfo.DefaultStorageContainer
+    $storageAccountKey = (Get-AzureRmStorageAccountKey `
+        -Name $storageAccountName `
+    -ResourceGroupName $resourceGroup)[0].Value
+
+    #Create a storage context and upload the file
+    $context = New-AzureStorageContext `
+        -StorageAccountName $storageAccountName `
+        -StorageAccountKey $storageAccountKey
+
+    #Azure PowerShell can't delete blobs using wildcard, 
+    #so have to get a list and delete one at a time
+    # Start with the output
+    $blobs = Get-AzureStorageBlob -Container $container -Context $context -Prefix "example/out"
+    foreach($blob in $blobs)
+    {
+        Remove-AzureStorageBlob -Blob $blob.Name -Container $container -context $context
+    }
+    # Next the temp files
+    $blobs = Get-AzureStorageBlob -Container $container -Context $context -Prefix "example/temp"
+    foreach($blob in $blobs)
+    {
+        Remove-AzureStorageBlob -Blob $blob.Name -Container $container -context $context
+    }
+
+### <a name="nopowershell"></a>不适用于 Azure PowerShell 的类
 
 Mahout 作业如果使用以下类，则从 Windows PowerShell 中使用这些类时，将返回各种错误消息：
 
@@ -480,9 +385,9 @@ Mahout 作业如果使用以下类，则从 Windows PowerShell 中使用这些�
 * org.apache.mahout.classifier.sequencelearning.hmm.RandomSequenceGenerator
 * org.apache.mahout.classifier.df.tools.Describe
 
-若要运行使用这些类的作业，请连接到 HDInsight 群集，然后通过使用 Hadoop 命令行运行这些作业。有关示例，请参阅[使用 Hadoop 命令行对数据分类](#classify)。
+若要运行使用这些类的作业，请使用 SSH 连接到 HDInsight 群集，然后从命令行运行这些作业。有关使用 SSH 运行 Mahout 作业的示例，请参阅[使用 Mahout 和 HDInsight (SSH) 生成电影推荐](/documentation/articles/hdinsight-hadoop-mahout-linux-mac/)。
 
-##后续步骤
+## 后续步骤
 
 既已学习如何使用 Mahout，可探索在 HDInsight 上处理数据的其他方式：
 
@@ -494,7 +399,7 @@ Mahout 作业如果使用以下类，则从 Windows PowerShell 中使用这些�
 [aps]: https://docs.microsoft.com/powershell/azureps-cmdlets-docs
 [movielens]: http://grouplens.org/datasets/movielens/
 [100k]: http://files.grouplens.org/datasets/movielens/ml-100k.zip
-[getstarted]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1/
+[getstarted]: /documentation/articles/hdinsight-hadoop-linux-tutorial-get-started/
 [upload]: /documentation/articles/hdinsight-upload-data/
 [ml]: http://en.wikipedia.org/wiki/Machine_learning
 [forest]: http://en.wikipedia.org/wiki/Random_forest
@@ -504,4 +409,4 @@ Mahout 作业如果使用以下类，则从 Windows PowerShell 中使用这些�
 [hadoopcli]: ./media/hdinsight-mahout/hadoopcli.png
 [tools]: https://github.com/Blackmist/hdinsight-tools
 
-<!---HONumber=Mooncake_Quality_Review_1118_2016-->
+<!---HONumber=Mooncake_0120_2017-->
