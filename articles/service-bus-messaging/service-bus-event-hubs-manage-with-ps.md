@@ -11,7 +11,7 @@
 <tags
    ms.service="service-bus"
    ms.date="10/04/2016"
-   wacn.date="12/26/2016"/>  
+   wacn.date="02/06/2017"/>  
 
 # 使用 PowerShell 管理 Service Bus 和事件中心资源
 
@@ -246,6 +246,7 @@ Azure PowerShell 是一个脚本编写环境，可用于控制和自动执行 Az
 以下博客文章提供了更多详细示例：
 
 - [How to create Service Bus queues, topics and subscriptions using a PowerShell script（如何使用 PowerShell 脚本创建服务总线队列、主题和订阅）](http://blogs.msdn.com/b/paolos/archive/2014/12/02/how-to-create-a-service-bus-queues-topics-and-subscriptions-using-a-powershell-script.aspx)
+- [如何使用 PowerShell 脚本创建 Service Bus 命名空间和事件中心](http://blogs.msdn.com/b/paolos/archive/2014/12/01/how-to-create-a-service-bus-namespace-and-an-event-hub-using-a-powershell-script.aspx)
 
 一些现成的脚本也可供下载：
 
@@ -263,4 +264,4 @@ Azure PowerShell 是一个脚本编写环境，可用于控制和自动执行 Az
 [.NET API for Service Bus]: https://msdn.microsoft.com/zh-cn/library/azure/mt419900.aspx
 [安装和配置 Azure PowerShell]: /documentation/articles/powershell-install-configure/
 
-<!---HONumber=Mooncake_1219_2016-->
+<!---HONumber=Mooncake_Quality_Review_0125_2017-->
