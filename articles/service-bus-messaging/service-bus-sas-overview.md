@@ -251,7 +251,6 @@ AMQP 消息包含一组属性，比简单消息包含更多信息。SAS 令牌�
 
 有关服务总线身份验证的详细信息，请参阅[服务总线身份验证和授权](/documentation/articles/service-bus-authentication-and-authorization/)。
 
-此[博客文章](http://developers.de/blogs/damir_dobric/archive/2013/10/17/how-to-create-shared-access-signature-for-service-bus.aspx)中介绍了更多关于 C# 和 Java 脚本中的 SAS 的示例。
 
 [Azure 经典管理门户]: http://manage.windowsazure.cn
 
