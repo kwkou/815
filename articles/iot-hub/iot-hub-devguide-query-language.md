@@ -368,7 +368,7 @@ GROUP BY 的正式语法为：
 | hexadecimal\_literal |以字符串“0x”后接十六进制数字符串表示的数字。 |
 | string\_literal |字符串文本是以零个或多个 Unicode 字符序列或转义符序列表示的 Unicode 字符串。字符串文本括在单引号 (') 或双引号 (") 中。允许的转义符：`\'`、`"`、`\`、`\uXXXX`（由 4 个十六进制数字定义的 Unicode 字符）。 |
 
-### <a name="operators“></a> 运算符
+### <a name="operators"></a> 运算符
 
 支持以下运算符：
 
