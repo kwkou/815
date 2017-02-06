@@ -90,7 +90,7 @@
      ![显示权限](./media/resource-group-create-service-principal-portal/view-assigned-roles.png)  
 
 
-## 创建 Active Directory 应用程序
+## <a name="create-an-active-directory-application"></a> 创建 Active Directory 应用程序
 1. 通过 [Azure 门户预览版](https://portal.azure.cn)登录 Azure 帐户。
 2. 选择“Azure Active Directory”。
 
@@ -113,7 +113,7 @@
 
 你已创建应用程序。
 
-## 获取应用程序 ID 和身份验证密钥
+## <a name="get-application-id-and-authentication-key"></a> 获取应用程序 ID 和身份验证密钥
 以编程方式登录时，需要使用应用程序的 ID 和身份验证密钥。若要获取这些值，请使用以下步骤：
 
 1. 从 Active Directory 中的“应用注册”，选择你的应用程序。
@@ -136,7 +136,7 @@
 
      ![保存的密钥](./media/resource-group-create-service-principal-portal/copy-key.png)  
 
-## 获取租户 ID
+## <a name="get-tenant-id"></a> 获取租户 ID
 以编程方式登录时，需要随身份验证请求传递租户 ID。
 
 1. 若要获取租户 ID，请选择 Active directory 的“属性”。
