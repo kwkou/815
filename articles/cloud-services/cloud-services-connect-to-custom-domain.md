@@ -37,8 +37,8 @@
 
 可使用 Azure 经典管理门户或 Powershell 在 Azure 中创建虚拟网络。在本教程中，我们将使用 Powershell。若要使用 Azure 经典管理门户创建虚拟网络，请参阅[创建虚拟网络](/documentation/articles/virtual-networks-create-vnet-arm-pportal/)。
 
-#创建虚拟网络
 
+    #创建虚拟网络
     $vnetStr =
     @"<?xml version="1.0" encoding="utf-8"?>
     <NetworkConfiguration xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/ServiceHosting/2011/07/NetworkConfiguration">
@@ -79,8 +79,8 @@
 	$password = '<your-password>'
 	$affgrp = '<your- affgrp>'
 
-# 创建 VM 并将其添加到虚拟网络
 
+    # 创建 VM 并将其添加到虚拟网络
 	New-AzureQuickVM -Windows -ServiceName $vmsvc1 -name $vm1 -ImageName $imgname -AdminUsername $username -Password $password -AffinityGroup $affgrp -SubnetNames $subnetname -VNetName $vnetname
 
 
@@ -89,7 +89,7 @@
 
 若要登录到 VM，可使用以下命令通过 Powershell 获取 RDP 文件。
 
-# 获取 RDP 文件
+    # 获取 RDP 文件
 	Get-AzureRemoteDesktopFile -ServiceName $vmsvc1 -Name $vm1 -LocalPath <rdp-file-path>
 
 登录 VM 后，请根据[如何设置客户 AD 域控制器](http://social.technet.microsoft.com/wiki/contents/articles/12370.windows-server-2012-set-up-your-first-domain-controller-step-by-step.aspx)中的分步指导，将虚拟机设置为 AD 域控制器。
@@ -131,16 +131,16 @@
 
 在 Azure 上部署云服务项目后，请使用 AD 域扩展将角色实例连接到自定义 AD 域。若要将 AD 域扩展添加到现有云服务部署并加入自定义域，请在 Powershell 中执行以下命令：
 
-# 初始化域变量
 
+    # 初始化域变量
 	$domain = '<your-domain-name>'
 	$dmuser = '$domain<your-username>'
 	$dmpswd = '<your-domain-password>'
 	$dmspwd = ConvertTo-SecureString $dmpswd -AsPlainText -Force
 	$dmcred = New-Object System.Management.Automation.PSCredential ($dmuser, $dmspwd)
 
-# 将 AD 域扩展添加到云服务角色
 
+    # 将 AD 域扩展添加到云服务角色
 	Set-AzureServiceADDomainExtension -Service <your-cloud-service-hosted-service-name> -Role <your-role-name> -Slot <staging-or-production> -DomainName $domain -Credential $dmcred -JoinOption 35
 
 这就是所有的操作。

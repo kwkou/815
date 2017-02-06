@@ -11,7 +11,7 @@
 <tags
 	ms.service="cloud-services"
 	ms.date="01/06/2017"
-	wach.date="01/25/2017"/>
+	wacn.date="01/25/2017"/>
 
 
 
@@ -65,7 +65,7 @@ Azure 数据中心的服务器分区成群集。会在多个群集中尝试新�
 	
    - 使用 Powershell 针对现有部署创建 ReservedIP 
 
-	    New-AzureReservedIP -ReservedIPName {new reserved IP name} -Location {location} -ServiceName {existing service name}
+            New-AzureReservedIP -ReservedIPName {new reserved IP name} -Location {location} -ServiceName {existing service name}
 		
    - 按照上面的第 2 种方法进行操作，确保在服务的 CSCFG 中指定新的 ReservedIP。
 
