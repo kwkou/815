@@ -85,7 +85,7 @@
 
 5. 按电源按钮（如下图所示）打开 SensorTag，绿色 LED 应闪烁。
 
-   ![打开 SensorTag](./media/iot-hub-gateway-kit-lessons/lesson3/turn on\_off sensortag.jpg)
+    ![打开 SensorTag](./media/iot-hub-gateway-kit-lessons/lesson3/turn on\_off sensortag.jpg)
 
 6. 运行以下命令，扫描 SensorTag 设备：
 
@@ -99,14 +99,14 @@
 		   gulp test-connectivity --mac {mac address}
    
 
-   将 `{mac address}` 替换为在前面步骤中获取的 MAC 地址。
+    将 `{mac address}` 替换为在前面步骤中获取的 MAC 地址。
 
 ## 获取 SensorTag 的连接字符串
 
 若要获取 SensorTag 的 Azure IoT 中心连接字符串，请在主计算机上运行以下命令：
 
 
-		az iot device show-connection-string --hub-name {IoT hub name} --device-id mydevice --resource-group iot-gateway
+    az iot device show-connection-string --hub-name {IoT hub name} --device-id mydevice --resource-group iot-gateway
 
 
 `{IoT hub name}` 是所使用的 IoT 中心名称。使用 iot-gateway 作为 `{resource group name}` 的值，使用 mydevice 作为 `{device id}` 的值（如果尚未更改第 2 课中的值）。
@@ -124,7 +124,7 @@
 		   code ~/.iot-hub-getting-started/config-sensortag.json
    
 
-   ![配置 sensortag 的屏幕截图](./media/iot-hub-gateway-kit-lessons/lesson3/config_sensortag.png)  
+    ![配置 sensortag 的屏幕截图](./media/iot-hub-gateway-kit-lessons/lesson3/config_sensortag.png)  
 
 
 2. 在代码中进行以下替换：
@@ -134,14 +134,14 @@
 
 3. 运行 BLE 示例应用程序。
 
-   若要运行 BLE 示例应用程序，请在主计算机上执行以下步骤：
+    若要运行 BLE 示例应用程序，请在主计算机上执行以下步骤：
 
-   1. 打开 SensorTag。
+    1. 打开 SensorTag。
 
-   2. 运行以下命令，在 Intel NUC 上部署和运行 BLE 示例应用程序：
+    2. 运行以下命令，在 Intel NUC 上部署和运行 BLE 示例应用程序：
    
       
-		gulp run
+		    gulp run
       
 
 ## 确认 BLE 示例应用程序可以正常运行

@@ -32,12 +32,13 @@
 
 ## 你要学习的知识
 本文介绍：
-* 如何安装 Azure CLI。
-* 如何添加 Azure CLI 的 IoT 子组。
+
+ - 如何安装 Azure CLI。
+ - 如何添加 Azure CLI 的 IoT 子组。
 
 ## 需要什么
-* 启用 Internet 连接的 Mac。
-* 一个有效的 Azure 订阅。如果没有 Azure 帐户，只需花费几分钟就能创建一个 [Azure 试用帐户](/pricing/1rmb-trial/)。
+ - 启用 Internet 连接的 Mac。
+ - 一个有效的 Azure 订阅。如果没有 Azure 帐户，只需花费几分钟就能创建一个 [Azure 试用帐户](/pricing/1rmb-trial/)。
 
 ## 安装 Python
 虽然 macOS 随附现成的 Python 2.7，但建议通过 Homebrew 安装 Python。请参阅 [Installing Python on macOS](http://docs.python-guide.org/en/latest/starting/install/osx/)（在 macOS 上安装 Python）。

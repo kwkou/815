@@ -27,13 +27,15 @@
 
 ## 学习的内容
 本文介绍：
-* 如何使用 [Azure Resource Manager](/documentation/articles/resource-group-overview/) 部署 Azure 资源。
-* 如何使用 Azure 函数应用处理 IoT 中心消息并将其写入到 Azure 表存储的表中。
+
+ - 如何使用 [Azure Resource Manager](/documentation/articles/resource-group-overview/) 部署 Azure 资源。
+ - 如何使用 Azure 函数应用处理 IoT 中心消息并将其写入到 Azure 表存储的表中。
 
 ## 所需条件
 用户必须已成功完成：
-- [开始使用 Intel Edison][get-started-with-your-intel-edison]
-- [创建 Azure IoT 中心][create-your-azure-iot-hub]
+
+ - [开始使用 Intel Edison][get-started-with-your-intel-edison]
+ - [创建 Azure IoT 中心][create-your-azure-iot-hub]
 
 ## 打开示例应用
 通过运行以下命令在 Visual Studio Code 中打开示例项目：

@@ -111,7 +111,7 @@
 
 ## Azure CLI 问题
 
-Azure 命令行接口 (Azure CLI) 为预览版。若要查找解决方案，可参阅 [Preview Install Guide](https://github.com/Azure/azure-cli/blob/master/doc/preview_install_guide.md)（预览版安装指南）。
+Azure 命令行接口 (Azure CLI) 为预览版。
 
 如果在使用此工具时遇到 Bug，请在 GitHub 存储库的“问题”部分提交[问题](https://github.com/Azure/azure-cli/issues)。
 
@@ -140,7 +140,7 @@ Azure 命令行接口 (Azure CLI) 为预览版。若要查找解决方案，可�
 
 ### 设备资源管理器
 
-[设备资源管理器](https://github.com/Azure/azure-iot-sdks/blob/master/tools/DeviceExplorer/doc/how_to_use_device_explorer.md)在 Windows 本地计算机上运行，并连接到 Azure 中的 IoT 中心。它与以下 [IoT 中心终结点](/documentation/articles/iot-hub-devguide/)通信：
+设备资源管理器在 Windows 本地计算机上运行，并连接到 Azure 中的 IoT 中心。它与以下 [IoT 中心终结点](/documentation/articles/iot-hub-devguide/)通信：
 
 - 设备标识管理，用于预配和管理注册到 IoT 中心的设备。
 - 接收设备到云消息，以便监视从设备发送到 IoT 中心的消息。
@@ -150,7 +150,7 @@ Azure 命令行接口 (Azure CLI) 为预览版。若要查找解决方案，可�
 
 ### iothub-explorer
 
-[iothub-explorer](https://github.com/Azure/azure-iot-sdks/blob/master/tools/iothub-explorer/readme.md) 是一项示例性的多平台 CLI 工具，用于管理设备客户端。可以使用该工具在标识注册表中管理设备、监视从设备到云的消息，以及发送从云到设备的命令。
+iothub-explorer 是一项示例性的多平台 CLI 工具，用于管理设备客户端。可以使用该工具在标识注册表中管理设备、监视从设备到云的消息，以及发送从云到设备的命令。
 
 若要安装最新（预发行）版的 iothub-explorer 工具，请运行以下命令：
 

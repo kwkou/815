@@ -59,7 +59,7 @@
 运行以下命令，安装示例应用程序所需的库和其他模块：
 
 
-npm install
+    npm install
 
 
 ## 配置设备连接
@@ -71,20 +71,20 @@ npm install
 		devdisco list --usb
    
 
-   应看到类似如下的输出，并找到 Arduino 开发板的 USB COM 端口：
-   ![设备发现][device-discovery]
+    应看到类似如下的输出，并找到 Arduino 开发板的 USB COM 端口：
+    
+    ![设备发现][device-discovery]
 
 2. 打开课程文件夹中的 `config.json` 文件，并添加找到的 COM 端口号的值：
 
-   json
 		   {
 		       "device_port" : "COM1"
 		   }
    
-   ![config.json][config-json]  
+    ![config.json][config-json]  
 
-   > [AZURE.NOTE]
-   在 Windows 平台上，COM 端口的格式为：`COM1, COM2, ...`。在 macOS 或 Ubuntu 上，其以 `/dev/` 开头。
+    > [AZURE.NOTE]
+    在 Windows 平台上，COM 端口的格式为：`COM1, COM2, ...`。在 macOS 或 Ubuntu 上，其以 `/dev/` 开头。
 
 ## 部署并运行示例应用程序
 ### 安装 Arduino 开发板必需工具

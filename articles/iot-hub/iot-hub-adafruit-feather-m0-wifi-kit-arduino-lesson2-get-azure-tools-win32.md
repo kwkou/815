@@ -21,10 +21,10 @@
 
 # 获取 Azure 工具（Windows 7 及更高版本）
 
-> [!div class="op_single_selector"]
-> * [Windows 7 或更高版本][windows]
-> * [Ubuntu 16.04][ubuntu]
-> * [macOS 10.10][macos]
+> [AZURE.SELECTOR]
+- [Windows 7 或更高版本][windows]
+- [Ubuntu 16.04][ubuntu]
+- [macOS 10.10][macos]
 
 ## 执行的操作
 
@@ -32,10 +32,12 @@
 
 ## 你要学习的知识
 本文介绍：
-* 如何安装 Python。
-* 如何安装 Azure CLI。
+
+ - 如何安装 Python。
+ - 如何安装 Azure CLI。
 
 ## 需要什么
+
 * 启用 Internet 连接的 Windows 计算机。
 * 一个有效的 Azure 订阅。如果没有 Azure 帐户，只需花费几分钟就能创建一个 [Azure 试用帐户](/pricing/1rmb-trial/)。
 

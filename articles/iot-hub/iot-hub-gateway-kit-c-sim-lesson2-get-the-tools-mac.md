@@ -64,7 +64,7 @@
    2. 运行以下命令：
 
       
-		/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+		    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
       
 
 2. 运行以下命令，安装 Git 和 Node.js：
@@ -106,15 +106,15 @@
 		pip install --upgrade azure-cli
 		pip install --upgrade azure-cli-iot
    
-   安装过程可能需要 5 分钟。
+    安装过程可能需要 5 分钟。
 
 2. 运行以下命令，对安装进行验证：
    
 		az iot -h
    
-   如果安装成功，则会看到以下输出。
+    如果安装成功，则会看到以下输出。
 
-   ![验证 Azure CLI 安装](./media/iot-hub-gateway-kit-lessons/lesson2/az_iot_help_osx.png)  
+    ![验证 Azure CLI 安装](./media/iot-hub-gateway-kit-lessons/lesson2/az_iot_help_osx.png)  
 
 
 ## 安装 Visual Studio Code

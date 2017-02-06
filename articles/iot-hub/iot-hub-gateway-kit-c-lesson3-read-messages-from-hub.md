@@ -25,7 +25,7 @@
 
 - 在主计算机上运行示例代码，从 IoT 中心读取消息。
 
-如果有任何问题，可在 [/documentation/articles/troubleshooting 页](iot-hub-gateway-kit-c-troubleshooting/)上查找解决方案。
+如果有任何问题，可在 [troubleshooting 页](/documentation/articles/iot-hub-gateway-kit-c-troubleshooting/)上查找解决方案。
 
 ## 你要学习的知识
 
@@ -45,14 +45,15 @@
 		az iot hub list -g iot-gateway --query [].name
    
 
-   使用 `iot-gateway` 作为 `{resource group name}` 的值（如果尚未更改此值）。
+    使用 `iot-gateway` 作为 `{resource group name}` 的值（如果尚未更改此值）。
+    
 - 运行以下命令，获取 IoT 中心连接字符串：
 
    
 		az iot hub show-connection-string --name {my hub name} -g iot-gateway
    
 
-   `{my hub name}` 是在第 2 课中指定的名称。
+    `{my hub name}` 是在第 2 课中指定的名称。
 
 ## 配置示例代码的设备连接
 
@@ -69,10 +70,10 @@
 
 2. 在 `config-azure.json` 文件中进行以下替换：
 
-   ![配置 azure 的屏幕截图](./media/iot-hub-gateway-kit-lessons/lesson3/config_azure.png)  
+    ![配置 azure 的屏幕截图](./media/iot-hub-gateway-kit-lessons/lesson3/config_azure.png)  
 
 
-   将 `[IoT hub connection string]` 替换为获取的 IoT 中心连接字符串。
+    将 `[IoT hub connection string]` 替换为获取的 IoT 中心连接字符串。
 
 ## 从 IoT 中心读取消息
 
