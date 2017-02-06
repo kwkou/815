@@ -29,7 +29,7 @@ Socket.IO 在 node.js 服务器和客户端之间提供实时通信。本教程�
 
 确保已安装以下产品和版本才能成功完成本文中的示例：
 
-* 安装 [Visual Studio 2013](https://www.visualstudio.com/zh-cn/downloads/download-visual-studio-vs.aspx)
+* 安装 [Visual Studio 2013](https://www.visualstudio.com/downloads/)
 * 安装 [Node.js](https://nodejs.org/download)
 * 安装 [Python 2.7.10 版](https://www.python.org)
 
