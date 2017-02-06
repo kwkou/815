@@ -14,7 +14,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="na"
     ms.date="11/11/2016"
-    wacn.date="12/26/2016"
+    wacn.date="01/25/2017"
     ms.author="ryanwi" />
 
 # 连接到安全群集
@@ -325,4 +325,4 @@ Azure 门户的群集基本信息窗格中也提供了完整 URL。
 - [Service Fabric 运行状况模型简介](/documentation/articles/service-fabric-health-introduction/)
 - [应用程序安全性和 RunAs](/documentation/articles/service-fabric-application-runas-security/)
 
-<!---HONumber=Mooncake_1219_2016-->
+<!---HONumber=Mooncake_Quality_Review_0125_2017-->

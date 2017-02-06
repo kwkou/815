@@ -15,7 +15,7 @@
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
    ms.date="10/03/2016"
-   wacn.date="11/28/2016"
+   wacn.date="01/25/2017"
    ms.author="motanv;heeldin"/>
 
 # 可测试性操作
@@ -240,4 +240,4 @@ ReplicaSelector 是在可测试性中运用的一个帮助程序，用于帮助�
    - [服务到服务通信失败](/documentation/articles/service-fabric-testability-scenarios-service-communication/)
  
 
-<!---HONumber=Mooncake_1121_2016-->
+<!---HONumber=Mooncake_Quality_Review_0125_2017-->

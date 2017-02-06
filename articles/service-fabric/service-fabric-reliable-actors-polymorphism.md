@@ -14,7 +14,7 @@
     ms.tgt_pltfrm="NA"
     ms.workload="NA"
     ms.date="12/13/2016"
-    wacn.date="01/20/2017"
+    wacn.date="01/25/2017"
     ms.author="seanmck" />  
 
 
@@ -73,5 +73,5 @@ Reliable Actors 框架要求至少定义一个要由执行组件类型实现的�
 
 [shapes-interface-hierarchy]: ./media/service-fabric-reliable-actors-polymorphism/Shapes-Interface-Hierarchy.png
 
-<!---HONumber=Mooncake_0116_2017-->
-<!--update: wording update-->
+<!---HONumber=Mooncake_Quality_Review_0125_2017-->
+<!--update: -->

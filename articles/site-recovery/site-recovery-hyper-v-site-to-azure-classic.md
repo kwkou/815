@@ -15,7 +15,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="storage-backup-recovery"
     ms.date="11/23/2016"
-    wacn.date="01/03/2016"
+    wacn.date="01/25/2017"
     ms.author="raynew" />  
 
 
@@ -322,4 +322,4 @@ Azure 提供用于创建和处理资源的两个不同的[部署模型](/documen
 
 设置并运行部署以后，请[详细了解](/documentation/articles/site-recovery-failover/)故障转移。
 
-<!---HONumber=Mooncake_1226_2016-->
+<!---HONumber=Mooncake_Quality_Review_0125_2017-->

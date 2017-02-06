@@ -14,7 +14,7 @@
     ms.tgt_pltfrm="NA"
     ms.workload="NA"
     ms.date="11/14/2016"
-    wacn.date="12/26/2016"
+    wacn.date="01/25/2017"
     ms.author="ryanwi" />
 
 # 使用 FabricClient API 时常见的异常和错误
@@ -45,4 +45,4 @@
 |InvalidSubjectName|使用者名称无效。|
 |InvalidAllowedCommonNameList|公用名字符串列表的格式无效。应为逗号分隔的列表。|
 
-<!---HONumber=Mooncake_1219_2016-->
+<!---HONumber=Mooncake_Quality_Review_0125_2017-->
