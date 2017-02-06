@@ -13,9 +13,9 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="powerbi"
-   ms.date="07/06/2016"
+   ms.date="10/04/2016"
    ms.author="mblythe"
-   wacn.date="12/29/2016"/>  
+   wacn.date="02/06/2017"/>  
 
 
 # Power BI Embedded 中的新增功能
