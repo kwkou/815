@@ -204,7 +204,6 @@
 ## 后续步骤
 现在已经了解了如何创建自定义规则，还可以了解关于预配置解决方案的更多内容：
 
-- [将逻辑应用连接到 Azure IoT 套件远程监视预配置解决方案][lnk-logic-app]
 - [远程监视预配置解决方案中的设备信息元数据][lnk-devinfo]。
 
 [lnk-devinfo]: /documentation/articles/iot-suite-remote-monitoring-device-info/
@@ -213,6 +212,5 @@
 [lnk-node]: http://nodejs.org
 [lnk-builtin-rule]: /documentation/articles/iot-suite-getstarted-preconfigured-solutions/#add-a-rule-for-the-new-device
 [lnk-dynamic-telemetry]: /documentation/articles/iot-suite-dynamic-telemetry/
-[lnk-logic-app]: /documentation/articles/iot-suite-logic-apps-tutorial/
 
 <!---HONumber=Mooncake_1226_2016-->
