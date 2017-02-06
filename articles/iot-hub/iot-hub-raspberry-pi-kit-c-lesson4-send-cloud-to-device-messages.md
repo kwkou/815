@@ -29,8 +29,8 @@
 
 ## 你要学习的知识
 本文介绍：
-* 如何监视来自 IoT 中心的传入消息。
-* 如何将从云到设备的消息从 IoT 中心发送到 Pi。
+ - 如何监视来自 IoT 中心的传入消息。
+ - 如何将从云到设备的消息从 IoT 中心发送到 Pi。
 
 ## 需要什么
 * Raspberry Pi 3，已完成使用设置。若要了解如何设置 Pi，请参阅[配置设备](/documentation/articles/iot-hub-raspberry-pi-kit-c-lesson1-configure-your-device/)。
@@ -44,9 +44,9 @@
            code .
 
 
-   请注意 `app` 子文件夹中的 `app.c` 文件。`app.c` 文件是关键的源文件，其中包含的代码用于监视 IoT 中心发出的传入消息。`blinkLED` 函数可使 LED 闪烁。
+    请注意 `app` 子文件夹中的 `app.c` 文件。`app.c` 文件是关键的源文件，其中包含的代码用于监视 IoT 中心发出的传入消息。`blinkLED` 函数可使 LED 闪烁。
 
-   ![示例应用程序中的存储库结构](./media/iot-hub-raspberry-pi-lessons/lesson4/repo_structure_c.png)  
+    ![示例应用程序中的存储库结构](./media/iot-hub-raspberry-pi-lessons/lesson4/repo_structure_c.png)  
 
 2. 运行以下命令初始化配置文件：
 
@@ -55,9 +55,9 @@
            gulp init
    
 
-   如果用户已在此计算机上完成[创建 Azure Function App 和存储帐户](/documentation/articles/iot-hub-raspberry-pi-kit-c-lesson3-deploy-resource-manager-template/)中的步骤，并继承了所有配置，则可跳转至部署并运行示例应用程序任务的步骤。如果用户在另一计算机上完成了[创建 Azure 函数应用和存储帐户](/documentation/articles/iot-hub-raspberry-pi-kit-c-lesson3-deploy-resource-manager-template/)中的步骤，则需替换 `config-raspberrypi.json` 文件中的占位符。`config-raspberrypi.json` 文件位于主文件夹的子文件夹中。
+    如果用户已在此计算机上完成[创建 Azure Function App 和存储帐户](/documentation/articles/iot-hub-raspberry-pi-kit-c-lesson3-deploy-resource-manager-template/)中的步骤，并继承了所有配置，则可跳转至部署并运行示例应用程序任务的步骤。如果用户在另一计算机上完成了[创建 Azure 函数应用和存储帐户](/documentation/articles/iot-hub-raspberry-pi-kit-c-lesson3-deploy-resource-manager-template/)中的步骤，则需替换 `config-raspberrypi.json` 文件中的占位符。`config-raspberrypi.json` 文件位于主文件夹的子文件夹中。
 
-   ![config-raspberrypi.json 文件的内容](./media/iot-hub-raspberry-pi-lessons/lesson4/config_raspberrypi.png)  
+    ![config-raspberrypi.json 文件的内容](./media/iot-hub-raspberry-pi-lessons/lesson4/config_raspberrypi.png)  
 
 
 * 将 **[设备主机名或 IP 地址]** 替换为通过运行 `devdisco list --eth` 命令获取的 Pi 的 IP 地址或主机名。

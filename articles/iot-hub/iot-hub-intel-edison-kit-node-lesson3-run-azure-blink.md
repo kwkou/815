@@ -35,10 +35,10 @@
 * 运行以下 Azure CLI 命令，列出资源组中的所有 IoT 中心：
 
 
-    	az iot hub list -g iot-sample --query [].name
+        az iot hub list -g iot-sample --query [].name
 
 
-使用 `iot-sample` 作为 `{resource group name}` 的值（如果尚未更改此值）。
+    使用 `iot-sample` 作为 `{resource group name}` 的值（如果尚未更改此值）。
 
 * 运行以下 Azure CLI 命令，获取 IoT 中心连接字符串：
 
@@ -46,7 +46,7 @@
     	az iot hub show-connection-string --name {my hub name}
 
 
-`{my hub name}` 是创建 IoT 中心和注册 Edison 时指定的名称。
+    `{my hub name}` 是创建 IoT 中心和注册 Edison 时指定的名称。
 
 * 运行以下命令，获取设备连接字符串：
 
@@ -54,7 +54,7 @@
     	az iot device show-connection-string --hub-name {my hub name} --device-id myinteledison
 
 
-使用 `myinteledison` 作为 `{device id}` 的值（如果尚未更改此值）。
+    使用 `myinteledison` 作为 `{device id}` 的值（如果尚未更改此值）。
 
 ## 配置设备连接
 1. 运行以下命令初始化配置文件：
@@ -74,7 +74,7 @@
 		   code ~/.iot-hub-getting-started/config-edison.json
    
 
-   ![config.json](./media/iot-hub-intel-edison-lessons/lesson3/config.png)  
+    ![config.json](./media/iot-hub-intel-edison-lessons/lesson3/config.png)  
 
 3. 在 `config-edison.json` 文件中进行以下替换：
 
@@ -82,8 +82,8 @@
    * 将 **[IoT 设备连接字符串]** 替换为获得的 `device connection string`。
    * 将 **[IoT 中心连接字符串]** 替换为获得的 `iot hub connection string`。
 
-   > [AZURE.NOTE]
-   本文中不需要 `azure_storage_connection_string`。请保留该名称。
+    > [AZURE.NOTE]
+    > 本文中不需要 `azure_storage_connection_string`。请保留该名称。
 
 ## 部署并运行示例应用程序
 运行以下命令，在 Edison 上部署并运行示例应用程序：

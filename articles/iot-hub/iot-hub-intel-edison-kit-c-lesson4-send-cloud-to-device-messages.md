@@ -29,8 +29,9 @@
 
 ## 你要学习的知识
 本文介绍：
-* 如何监视来自 IoT 中心的传入消息。
-* 如何将云到设备消息从 IoT 中心发送到 Edison。
+
+ - 如何监视来自 IoT 中心的传入消息。
+ - 如何将云到设备消息从 IoT 中心发送到 Edison。
 
 ## 需要什么
 * Intel Edison，设置以供使用。若要了解如何设置 Edison，请参阅[配置设备][configure-your-device]。
@@ -44,9 +45,9 @@
 		   code .
    
 
-   `app` 子文件夹中的文件是重要的源文件，其中包含用于监视来自 IoT 中心的传入消息的代码。`blinkLED` 函数可使 LED 闪烁。
+    `app` 子文件夹中的文件是重要的源文件，其中包含用于监视来自 IoT 中心的传入消息的代码。`blinkLED` 函数可使 LED 闪烁。
 
-   ![示例应用程序中的存储库结构][repo-structure]  
+    ![示例应用程序中的存储库结构][repo-structure]  
 
 2. 运行以下命令初始化配置文件：
 
@@ -55,17 +56,17 @@
 		   gulp init
    
 
-   如果已在此计算机上完成[创建 Azure Function App 和存储帐户][create-an-azure-function-app-and-storage-account]中的步骤，并继承了所有配置，则可跳过该步骤，转到部署并运行示例应用程序的任务。如果用户在另一计算机上完成了[创建 Azure 函数应用和存储帐户][create-an-azure-function-app-and-storage-account]中的步骤，则需替换 `config-edison.json` 文件中的占位符。`config-edison.json` 文件位于主文件夹的子文件夹中。
+    如果已在此计算机上完成[创建 Azure Function App 和存储帐户][create-an-azure-function-app-and-storage-account]中的步骤，并继承了所有配置，则可跳过该步骤，转到部署并运行示例应用程序的任务。如果用户在另一计算机上完成了[创建 Azure 函数应用和存储帐户][create-an-azure-function-app-and-storage-account]中的步骤，则需替换 `config-edison.json` 文件中的占位符。`config-edison.json` 文件位于主文件夹的子文件夹中。
 
-   ![config-edison.json 文件的内容](./media/iot-hub-intel-edison-lessons/lesson4/config-edison.png)  
+    ![config-edison.json 文件的内容](./media/iot-hub-intel-edison-lessons/lesson4/config-edison.png)  
 
 
    * 将 **[设备主机名或 IP 地址]** 替换为配置设备时标记的设备 IP 地址。
    * 将 **[IoT 设备连接字符串]** 替换为通过运行 `az iot device show-connection-string --hub-name {my hub name} --device-id {device id}` 命令获取的设备连接字符串。
    * 将 **[IoT 中心连接字符串]** 替换为通过运行 `az iot hub show-connection-string --name {my hub name}` 命令获取的 IoT 中心连接字符串。
 
-   > [AZURE.NOTE]
-   如果尚未在第 1 课中完成，请同时运行 **gulp install-tools**。
+    > [AZURE.NOTE]
+    > 如果尚未在第 1 课中完成，请同时运行 **gulp install-tools**。
 
 ## 部署并运行示例应用程序
 运行以下命令，在 Edison 上部署并运行示例应用程序：

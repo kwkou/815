@@ -27,20 +27,22 @@ Azure Functions 是一种解决方案，特别适合在云中运行*函数*（�
 
 ## 学习的内容
 本文介绍：
-* 如何使用 [Azure Resource Manager](/documentation/articles/resource-group-overview/) 部署 Azure 资源。
-* 如何使用 Azure 函数应用处理 IoT 中心消息并将其写入到 Azure 表存储的表中。
+
+ - 如何使用 [Azure Resource Manager](/documentation/articles/resource-group-overview/) 部署 Azure 资源。
+ - 如何使用 Azure 函数应用处理 IoT 中心消息并将其写入到 Azure 表存储的表中。
 
 ## 所需条件
 用户必须已成功完成：
-- [开始使用 Intel Edison][get-started-with-your-intel-edison]
-- [创建 Azure IoT 中心][create-your-azure-iot-hub]
+
+ - [开始使用 Intel Edison][get-started-with-your-intel-edison]
+ - [创建 Azure IoT 中心][create-your-azure-iot-hub]
 
 ## 打开示例应用
 通过运行以下命令在 Visual Studio Code 中打开示例项目：
 
 
-		cd Lesson3
-		code .
+	cd Lesson3
+	code .
 
 
 ![存储库结构][repo-structure]  
@@ -63,7 +65,7 @@ Azure Functions 是一种解决方案，特别适合在云中运行*函数*（�
 更新 `arm-template-param.json` 文件后，请运行以下命令，将资源部署到 Azure：
 
 
-		az resource group deployment create --template-file arm-template.json --parameters @arm-template-param.json -g iot-sample
+	az resource group deployment create --template-file arm-template.json --parameters @arm-template-param.json -g iot-sample
 
 
 创建这些资源约需五分钟。在创建这些资源时，用户可以阅读下一篇文章。

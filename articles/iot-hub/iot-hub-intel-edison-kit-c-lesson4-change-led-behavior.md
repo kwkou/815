@@ -50,7 +50,7 @@
 		   }
    
 
-   ![添加了函数的 main.c 文件](./media/iot-hub-intel-edison-lessons/lesson4/updated_app_c.png)  
+    ![添加了函数的 main.c 文件](./media/iot-hub-intel-edison-lessons/lesson4/updated_app_c.png)  
 
 
 3. 在 `receiveMessageCallback` 函数的 `else if` 块之前添加以下条件：
@@ -66,7 +66,7 @@
 		   }
    
 
-   现在已将示例应用程序配置为通过消息响应更多指令。“on”指令打开 LED，“off”指令关闭 LED。
+    现在已将示例应用程序配置为通过消息响应更多指令。“on”指令打开 LED，“off”指令关闭 LED。
 4. 打开 gulpfile.js 文件，然后在函数 `sendMessage` 之前添加新函数：
 
    
@@ -81,7 +81,7 @@
 		   }
    
 
-   ![增加了函数的 Gulpfile.js 文件][gulpfile]  
+    ![增加了函数的 Gulpfile.js 文件][gulpfile]  
 
 5. 在 `sendMessage` 函数中，将 `var message = buildMessage(sentMessageCount);` 行替换为新行，如以下代码片段所示：
 
@@ -94,7 +94,7 @@
 运行以下命令，在 Edison 上部署并运行示例应用程序：
 
 
-		gulp deploy && gulp run
+	gulp deploy && gulp run
 
 
 此时会看到 LED 开启两秒，然后关闭两秒。最后一条为“停止”消息，停止示例应用程序运行。

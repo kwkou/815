@@ -21,10 +21,10 @@
 
 # 获取工具 (Ubuntu 16.04)
 
-> [!div class="op_single_selector"]
-> * [Windows 7 或更高版本][windows]
-> * [Ubuntu 16.04][ubuntu]
-> * [macOS 10.10][macos]
+> [AZURE.SELECTOR]
+- [Windows 7 或更高版本][windows]
+- [Ubuntu 16.04][ubuntu]
+- [macOS 10.10][macos]
 
 ## 执行的操作
 下载用于 Intel Edison 的第一个示例应用程序的开发工具和软件。如果有问题，可在[故障排除页][troubleshooting]上查找解决方案。
@@ -44,8 +44,8 @@
 
 ## 需要什么
 若要完成此操作，需具备：
-* Internet 连接，用于下载开发工具和软件。
-* 运行 Ubuntu 16.04 或更高版本的计算机。
+ - Internet 连接，用于下载开发工具和软件。
+ - 运行 Ubuntu 16.04 或更高版本的计算机。
 
 ## 安装 Git、Node.js 和 NPM
 使用键盘快捷方式 `Ctrl + Alt + T` 打开一个终端并运行以下命令：

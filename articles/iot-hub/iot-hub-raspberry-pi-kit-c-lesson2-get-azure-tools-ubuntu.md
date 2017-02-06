@@ -30,8 +30,8 @@
 
 ## 你要学习的知识
 本文介绍：
-* 如何安装 Azure CLI。
-* 如何添加 Azure CLI 的 IoT 子组。
+ - 如何安装 Azure CLI。
+ - 如何添加 Azure CLI 的 IoT 子组。
 
 ## 需要什么
 * 启用 Internet 连接的 Ubuntu 计算机。
@@ -59,9 +59,9 @@ Azure CLI 提供适用于 Azure 的多平台命令行体验，让用户能够直
 		   az iot -h
    
 
-如果安装成功，则会看到以下输出。
+    如果安装成功，则会看到以下输出。
 
-![指示成功的输出](./media/iot-hub-raspberry-pi-lessons/lesson2/az_iot_help_ubuntu.png)  
+    ![指示成功的输出](./media/iot-hub-raspberry-pi-lessons/lesson2/az_iot_help_ubuntu.png)  
 
 
 ## 摘要
