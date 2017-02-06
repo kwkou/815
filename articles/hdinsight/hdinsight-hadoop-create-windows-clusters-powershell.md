@@ -1,46 +1,45 @@
 <properties
-   pageTitle="使用 Azure PowerShell 创建 HDInsight 中基于 Windows 的 Hadoop 群集 | Azure"
-   	description="了解如何使用 Azure PowerShell 创建 Azure HDInsight 的群集。"
-   services="hdinsight"
-   documentationCenter=""
-   tags="azure-portal"
-   authors="mumian"
-   manager="paulettm"
-   editor="cgronlun"/>
-
+    pageTitle="使用 Azure PowerShell 在 HDInsight 中创建基于 Windows 的 Hadoop 群集 | Azure"
+    description="了解如何使用 Azure PowerShell 创建 Azure HDInsight 的群集。"
+    services="hdinsight"
+    documentationcenter=""
+    tags="azure-portal"
+    author="mumian"
+    manager="jhubbard"
+    editor="cgronlun" />
 <tags
-   ms.service="hdinsight"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="big-data"
-   ms.date="11/15/2016"
-   wacn.date="01/05/2017"
-   ms.author="jgao"/>
+    ms.assetid="a365e67d-55bc-476e-a126-68f0962ec5aa"
+    ms.service="hdinsight"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.tgt_pltfrm="na"
+    ms.workload="big-data"
+    ms.date="11/15/2016"
+    wacn.date="01/25/2017"
+    ms.author="jgao" />
 
 # 使用 Azure PowerShell 在 HDInsight 中创建基于 Windows 的 Hadoop 群集
-
 [AZURE.INCLUDE [选择器](../../includes/hdinsight-selector-create-clusters.md)]
 
 [AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-sdk-developer-differences.md)]
 
-了解如何使用 Azure PowerShell 创建 HDInsight 群集。Azure PowerShell 是一个模块，提供用于通过 Windows PowerShell 管理 Azure 的 cmdlet。有关其他群集创建工具和功能，请单击本页面顶部的相应选项卡，或参阅[群集创建方法](/documentation/articles/hdinsight-provision-clusters-v1/#cluster-creation-methods)。
+了解如何使用 Azure PowerShell 创建 HDInsight 群集。Azure PowerShell 是一个模块，提供用于通过 Windows PowerShell 管理 Azure 的 cmdlet。有关其他群集创建工具和功能，请单击本页面顶部的相应选项卡，或参阅[群集创建方法](/documentation/articles/hdinsight-provision-clusters/#cluster-creation-methods)。
 
-
-###先决条件：
-
+## 先决条件：
 [AZURE.INCLUDE [delete-cluster-warning](../../includes/hdinsight-delete-cluster-warning.md)]
 
 在开始按照本文中的说明操作之前，你必须具有以下各项：
 
-- Azure 订阅。请参阅[获取 Azure 试用版](/pricing/1rmb-trial/)。
-- Azure PowerShell。请参阅[安装 Azure PowerShell 1.0](/documentation/articles/hdinsight-administer-use-powershell/#install-azure-powershell-10-and-greater)。
+* Azure 订阅。请参阅[获取 Azure 试用版](/pricing/1rmb-trial/)。
+* Azure PowerShell。
 
+[AZURE.INCLUDE [upgrade-powershell](../../includes/hdinsight-use-latest-powershell.md)]
 
+### 访问控制要求
+[AZURE.INCLUDE [access-control](../../includes/hdinsight-access-control-requirements.md)]
 
 ## 创建群集
 Azure PowerShell 是一个功能强大的脚本编写环境，可用于在 Azure 中控制和自动执行工作负荷的部署和管理。本部分提供有关如何通过使用 Azure PowerShell 创建 HDInsight 群集的说明。有关配置工作站以运行 HDInsight Windows Powershell cmdlet 的信息，请参阅[安装和配置 Azure PowerShell](https://docs.microsoft.com/powershell/azureps-cmdlets-docs)。有关将 Azure PowerShell 与 HDInsight 配合使用的详细信息，请参阅[使用 PowerShell 管理 HDInsight](/documentation/articles/hdinsight-administer-use-powershell/)。有关 HDInsight Windows PowerShell cmdlet 的列表，请参阅 [HDInsight cmdlet 参考](https://msdn.microsoft.com/zh-cn/library/azure/dn858087.aspx)。
-
 
 通过使用 Azure PowerShell 创建 HDInsight 群集需要执行以下过程：
 
@@ -48,7 +47,7 @@ Azure PowerShell 是一个功能强大的脚本编写环境，可用于在 Azure
     # Set these variables
     ####################################
     #region - used for creating Azure service names
-    $nameToken = "<Enter an Alias>" 
+    $nameToken = "<Enter an Alias>"
     #endregion
 
     #region - cluster user accounts
@@ -62,6 +61,7 @@ Azure PowerShell 是一个功能强大的脚本编写环境，可用于在 Azure
     #region - service names
     $namePrefix = $nameToken.ToLower() + (Get-Date -Format "MMdd")
 
+    $resourceGroupName = $namePrefix + "rg"
     $hdinsightClusterName = $namePrefix + "hdi"
     $defaultStorageAccountName = $namePrefix + "store"
     $defaultBlobContainerName = $hdinsightClusterName
@@ -78,22 +78,27 @@ Azure PowerShell 是一个功能强大的脚本编写环境，可用于在 Azure
     ###########################################
     #region - Connect to Azure subscription
     Write-Host "`nConnecting to your Azure subscription ..." -ForegroundColor Green
-    try{Get-AzureContext}
-    catch{
-        Add-AzureAccount -Environment AzureChinaCloud
-    }
+    try{Get-AzureRmContext}
+    catch{Login-AzureRmAccount -EnvironmentName AzureChinaCloud}
     #endregion
+
+    ###########################################
+    # Create the resource group
+    ###########################################
+    New-AzureRmResourceGroup -Name $resourceGroupName -Location $location
 
     ###########################################
     # Preapre default storage account and container
     ###########################################
-    New-AzureStorageAccount `
-        -StorageAccountName $defaultStorageAccountName `
+    New-AzureRmStorageAccount `
+        -ResourceGroupName $resourceGroupName `
+        -Name $defaultStorageAccountName `
         -Type Standard_GRS `
         -Location $location
 
-    $defaultStorageAccountKey = Get-AzureStorageKey `
-                                    -StorageAccountName $defaultStorageAccountName |  %{ $_.Primary }
+    $defaultStorageAccountKey = (Get-AzureRmStorageAccountKey `
+                                    -ResourceGroupName $resourceGroupName `
+                                    -Name $defaultStorageAccountName)[0].Value
     $defaultStorageContext = New-AzureStorageContext `
                                     -StorageAccountName $defaultStorageAccountName `
                                     -StorageAccountKey $defaultStorageAccountKey
@@ -107,38 +112,38 @@ Azure PowerShell 是一个功能强大的脚本编写环境，可用于在 Azure
     $httpPW = ConvertTo-SecureString -String $httpPassword -AsPlainText -Force
     $httpCredential = New-Object System.Management.Automation.PSCredential($httpUserName,$httpPW)
 
-    New-AzureHDInsightCluster `
-        -Name $hdinsightClusterName `
+    New-AzureRmHDInsightCluster `
+        -ResourceGroupName $resourceGroupName `
+        -ClusterName $hdinsightClusterName `
         -Location $location `
         -ClusterSizeInNodes $clusterSizeInNodes `
         -ClusterType Hadoop `
+        -OSType Windows `
         -Version "3.2" `
-        -Credential $httpCredential `
+        -HttpCredential $httpCredential `
         -DefaultStorageAccountName "$defaultStorageAccountName.blob.core.chinacloudapi.cn" `
         -DefaultStorageAccountKey $defaultStorageAccountKey `
-        -DefaultStorageContainerName $hdinsightClusterName 
+        -DefaultStorageContainer $hdinsightClusterName
 
     ####################################
     # Verify the cluster
     ####################################
-    Get-AzureHDInsightCluster -Name $hdinsightClusterName 
+    Get-AzureRmHDInsightCluster -ClusterName $hdinsightClusterName
 
-##自定义群集
+## 使用资源管理模板创建群集
+可以使用 Azure PowerShell 部署用于创建 HDInsight 群集的 Azure 资源管理模板。请参阅[使用 Azure PowerShell 调用模板](/documentation/articles/hdinsight-hadoop-create-windows-clusters-arm-templates/#deploy-with-powershell)。
 
-- 请参阅 [Customize HDInsight clusters using Bootstrap](/documentation/articles/hdinsight-hadoop-customize-cluster-bootstrap/#use-azure-powershell)（使用 Bootstrap 自定义 HDInsight 群集）。
-- 请参阅 [Customize Windows-based HDInsight clusters using Script Action](/documentation/articles/hdinsight-hadoop-customize-cluster-v1/#call-scripts-using-azure-powershell)（使用脚本操作自定义基于 Windows 的 HDInsight 群集）。
+## 自定义群集
+* 请参阅 [Customize HDInsight clusters using Bootstrap](/documentation/articles/hdinsight-hadoop-customize-cluster-bootstrap/#use-azure-powershell)（使用 Bootstrap 自定义 HDInsight 群集）。
+* 请参阅 [Customize Windows-based HDInsight clusters using Script Action](/documentation/articles/hdinsight-hadoop-customize-cluster/#call-scripts-using-azure-powershell)（使用脚本操作自定义基于 Windows 的 HDInsight 群集）。
 
-
-##后续步骤
+## 后续步骤
 在本文中，你已经学习了几种创建 HDInsight 群集的方法。若要了解更多信息，请参阅下列文章：
 
-* [Azure HDInsight 入门](/documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1/) - 了解如何开始使用你的 HDInsight 群集
+* [Azure HDInsight 入门](/documentation/articles/hdinsight-hadoop-linux-tutorial-get-started/) - 了解如何开始使用你的 HDInsight 群集
 * [以编程方式提交 Hadoop 作业](/documentation/articles/hdinsight-submit-hadoop-jobs-programmatically/) - 了解如何以编程方式将作业提交到 HDInsight
 * [使用 PowerShell 管理 HDInsight 中的 Hadoop 群集](/documentation/articles/hdinsight-administer-use-powershell/) - 了解如何通过 Azure PowerShell 使用 HDInsight
 * [Azure HDInsight SDK 文档][hdinsight-sdk-documentation] - 探索 HDInsight SDK
-
-
-
 
 [hdinsight-sdk-documentation]: http://msdn.microsoft.com/zh-cn/library/dn479185.aspx
 [azure-preview-portal]: https://manage.windowsazure.cn
@@ -147,4 +152,4 @@ Azure PowerShell 是一个功能强大的脚本编写环境，可用于在 Azure
 [ssisclustercreate]: http://msdn.microsoft.com/zh-cn/library/mt146774(v=sql.120).aspx
 [ssisclusterdelete]: http://msdn.microsoft.com/zh-cn/library/mt146778(v=sql.120).aspx
 
-<!---HONumber=Mooncake_Quality_Review_1215_2016-->
+<!---HONumber=Mooncake_0120_2017-->

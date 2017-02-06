@@ -7,8 +7,7 @@
     tags="azure-portal"
     author="mumian"
     manager="jhubbard"
-    editor="cgronlun" />  
-
+    editor="cgronlun" />
 <tags
     ms.assetid="ce9c572a-1e98-46bf-9581-13a9767f1fa5"
     ms.service="hdinsight"
@@ -17,7 +16,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="big-data"
     ms.date="11/02/2016"
-    wacn.date="12/12/2016"
+    wacn.date="01/25/2017"
     ms.author="jgao" />  
 
 
@@ -27,27 +26,30 @@
 
 了解如何使用用于 Visual Studio 的 Data Lake (HDInsight) 工具连接到 HDInsight 群集和提交 Hive 查询。有关使用 HDInsight 的详细信息，请参阅 [HDInsight 简介][hdinsight.introduction]和[开始使用 HDInsight][hdinsight.get.started]。有关连接到 Storm 群集的详细信息，请参阅[使用 Visual Studio 在 HDInsight 上针对 Apache Storm 开发 C# 拓扑][hdinsight.storm.visual.studio.tools]。
 
+用于 Visual Studio 的 Data Lake 工具可用于访问 HDInsight。
+
 **先决条件**
 
 若要完成本教程并使用 Visual Studio 中的 Data Lake 工具，需要以下项：
 
-* Azure HDInsight 群集：基于 Windows 的群集可用于本文档中的步骤。有关创建群集的详细信息，请参阅下列主题之一：
+* Azure HDInsight 群集：基于 Linux 或 Windows 的群集可用于本文档中的步骤。有关创建群集的详细信息，请参阅下列主题之一：
   
-  * [开始使用基于 Windows 的 HDInsight](/documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1/)
+    * [开始使用基于 Linux 的 HDInsight](/documentation/articles/hdinsight-hadoop-linux-tutorial-get-started/)
+    * [开始使用基于 Windows 的 HDInsight](/documentation/articles/hdinsight-hadoop-tutorial-get-started-windows/)
 * 安装有以下软件的工作站：
   
-  * Windows 8.1、Windows 8 或 Windows 7
-  * Visual Studio（以下版本之一）：
+    * Windows 8.1、Windows 8 或 Windows 7
+    * Visual Studio（以下版本之一）：
     
-    * 包含 [Update 4](https://www.microsoft.com/download/details.aspx?id=44921) 的 Visual Studio 2013 Community/Professional/Premium/Ultimate
-    * Visual Studio 2015 (Community/Enterprise)
+        * 包含 [Update 4](https://www.microsoft.com/download/details.aspx?id=44921) 的 Visual Studio 2013 Community/Professional/Premium/Ultimate
+        * Visual Studio 2015 (Community/Enterprise)
     
     > [AZURE.NOTE]
     目前，用于 Visual Studio 的 Data Lake 工具仅有英文版本。
     > 
     > 
 
-## <a name="install-hdinsight-tools-for-visual-studio"></a> 安装用于 Visual Studio 的 Data Lake 工具
+## <a name="install-data-lake-tools-for-visual-studio"></a> 安装用于 Visual Studio 的 Data Lake 工具
 可以使用 [Web 平台安装程序](https://www.microsoft.com/web/downloads/)来安装 Data Lake 工具。你必须选择与你的 Visual Studio 版本匹配的版本。如果尚未安装 Visual Studio，则可使用 [Web 平台安装程序](https://www.microsoft.com/web/downloads/)安装最新 Visual Studio Community 和 Azure SDK：
 
 ![用于 Visual Studio 的 Data Lake 工具 Web 平台安装程序。][1]  
@@ -67,29 +69,29 @@
 2. 在“视图”菜单中，单击“服务器资源管理器”，以打开“服务器资源管理器”窗口。
 3. 依次展开“Azure”和“HDInsight”。
    
-   > [AZURE.NOTE]
-   请注意，应打开“HDInsight 任务列表”窗口。如果你未看到它，则在“视图”菜单中，单击“其他窗口”，然后单击“HDInsight 任务列表”窗口。
-   > 
-   > 
+    > [AZURE.NOTE]
+    请注意，应打开“HDInsight 任务列表”窗口。如果你未看到它，则在“视图”菜单中，单击“其他窗口”，然后单击“HDInsight 任务列表”窗口。
+    > 
+    > 
 4. 输入 Azure 订阅凭据，然后单击“登录”。仅当尚未从此工作站上的 Visual Studio 连接到 Azure 订阅时，才需要此凭据。
-5. 在“服务器资源管理器”中，你将看到现有 HDInsight 群集的列表。如果没有任何群集，则可以通过使用 Azure 门户、Azure PowerShell 或 HDInsight SDK 创建群集。有关详细信息，请参阅[创建 HDInsight 群集][hdinsight-create-clusters]。
+5. 在“服务器资源管理器”中，你将看到现有 HDInsight 群集的列表。如果没有任何群集，则可以通过使用 Azure 门户预览、Azure PowerShell 或 HDInsight SDK 创建群集。有关详细信息，请参阅[创建 HDInsight 群集][hdinsight-create-clusters]。
    
-   ![用于 Visual Studio 的 Data Lake 工具服务器资源管理器群集列表][5]  
+    ![用于 Visual Studio 的 Data Lake 工具服务器资源管理器群集列表][5]  
 
-6. 展开 HDInsight 群集。你将看到“Hive 数据库”、默认存储帐户、链接的存储帐户，以及“Hadoop 服务日志”。可进一步展开条目。
+6. 展开 HDInsight 群集。你将看到“Hive 数据库”、默认存储帐户、链接的存储帐户，以及“Hadoop 服务日志”。你可以进一步展开条目。
 
 连接到 Azure 订阅后，可以执行以下操作：
 
-**从 Visual Studio 连接到 Azure 门户**
+**从 Visual Studio 连接到 Azure 门户预览**
 
-* 在“服务器资源管理器”中，展开“Azure”>“HDInsight”，右键单击 HDInsight 群集，然后单击“在 Azure 门户中管理群集”。
+* 在“服务器资源管理器”中，展开“Azure”>“HDInsight”，右键单击 HDInsight 群集，然后单击“在 Azure 门户预览中管理群集”。
 
 **通过 Visual Studio 提出问题并提供反馈**
 
 * 在“工具”菜单中，单击“HDInsight”，然后单击“MSDN 论坛”，以提出问题，或单击“提供反馈”。
 
 ## <a name="navigate-the-linked-resources"></a> 导航链接的资源
-在“服务器资源管理器”中，可看到默认存储帐户和任何链接的存储帐户。如果展开默认存储帐户，可看到存储帐户中的容器。默认存储帐户和默认容器将处于标记状态。也可右键单击任何容器以查看内容。
+在“服务器资源管理器”中，你可以看到默认存储帐户和任何链接的存储帐户。如果你展开默认存储帐户，则可以看到存储帐户中的容器。默认存储帐户和默认容器将处于标记状态。你也可以右键单击任何容器以查看内容。
 
 ![用于 Visual Studio 的 Data Lake 工具服务器资源管理器群集列表][2]  
 
@@ -107,21 +109,21 @@
 用于 Visual Studio 的 Data Lake 工具还让用户可通过以下方式查看 Hive 作业中的内容：收集和显示某些 Hive 作业的 YARN 日志。
 
 ### 查看 **hivesampletable**
-所有 HDInsight 群集都提供了一个名为 *hivesampletable* 的示例 Hive 表。我们将使用此表演示如何列出 Hive 表、如何查看表架构，以及如何列出 Hive 表中的行。
+所有 HDInsight 群集都提供了一个名为 *hivesampletable* 的示例 Hive 表。我们将使用此表向你说明如何列出 Hive 表、如何查看表架构，以及如何列出 Hive 表中的行。
 
 **列出 Hive 表和查看 Hive 表架构**
 
 1. 在“服务器资源管理器”中，展开“Azure”>“HDInsight”> 所选的群集 >“Hive 数据库”>“默认值”>“hivesampletable”，以查看表架构。
 2. 右键单击“hivesampletable”，然后单击“查看前 100 行”以列出行。这相当于使用 Hive ODBC 驱动程序运行以下 Hive 查询：
    
-     SELECT * FROM hivesampletable LIMIT 100
+        SELECT * FROM hivesampletable LIMIT 100
    
-   可自定义行计数。
+    你可以自定义行计数。
    
-   ![Data Lake 工具：HDinsight Hive Visual Studio 架构查询][6]
+    ![Data Lake 工具：HDinsight Hive Visual Studio 架构查询][6]
 
 ### 创建 Hive 表
-可使用 GUI 创建 Hive 表或使用 Hive 查询。有关使用 Hive 查询的信息，请参阅[运行 Hive 查询](#run.queries)。
+你可以使用 GUI 创建 Hive 表或使用 Hive 查询。有关使用 Hive 查询的信息，请参阅[运行 Hive 查询](#run.queries)。
 
 **创建 Hive 表**
 
@@ -132,7 +134,7 @@
     ![Data Lake 工具：HDInsight Visual Studio 工具创建 hive 表][7]
 
 ### <a name="run.queries"></a>验证和运行 Hive 查询
-可使用两种方法创建和运行 Hive 查询：
+你可以使用两种方法创建和运行 Hive 查询：
 
 * 创建临时查询
 * 创建 Hive 应用程序
@@ -148,10 +150,10 @@
    
     ![Data Lake 工具：HDInsight Visual Studio Tools IntelliSense][14]
    
-   > [AZURE.NOTE]
-   只建议 HDInsight 工具栏中已选择的群集元数据。
-   > 
-   > 
+    > [AZURE.NOTE]
+    只建议 HDInsight 工具栏中已选择的群集元数据。
+    > 
+    > 
 4. （可选）：单击“验证脚本”以检查脚本语法错误。
    
     ![Data Lake 工具：用于 Visual Studio 的 Data Lake 工具本地验证][10]
@@ -175,14 +177,14 @@
 4. 若要验证 Hive 脚本，可单击“验证脚本”按钮，或在 Hive 编辑器中右键单击该脚本，然后在上下文菜单中单击“验证脚本”。
 
 ### 查看 Hive 作业
-可查看作业查询、作业输出、作业日志和 Hive 作业的 Yarn 日志。有关详细信息，请参阅以前的屏幕截图。
+你可以查看作业查询、作业输出、作业日志和 Hive 作业的 Yarn 日志。有关详细信息，请参阅以前的屏幕截图。
 
 最新版本的工具允许用户通过收集和显示 YARN 日志来查看 Hive 作业的内容。YARN 日志可以帮助你调查性能问题。有关 HDInsight 如何收集 YARN 日志的详细信息，请参阅[以编程方式访问 HDInsight 应用程序日志][hdinsight.access.application.logs]。
 
 **查看 Hive 作业**
 
 1. 在“服务器资源管理器”中，展开“Azure”，然后展开“HDInsight”。
-2. 右键单击 HDInsight 群集，然后单击“查看作业”。你将看到群集上运行的 Hive 作业的列表。
+2. 右键单击 HDInsight 群集，然后单击“查看作业”。你将会看到群集上运行的 Hive 作业的列表。
 3. 单击作业列表中的作业以将其选定，然后使用“Hive 作业摘要”窗口以打开“作业查询”、“作业输出”、“作业日志”或“Yarn 日志”。
    
     ![Data Lake 工具：HDInsight Visual Studio 工具新建 hive 作业][12]
@@ -220,7 +222,7 @@ Data Lake 工具用于通过 [WebHCat](https://cwiki.apache.org/confluence/displ
 Data Lake 工具支持显示 Tez 执行引擎运行的 Hive 作业的性能图。有关启用 Tez 的信息，请参阅[使用 HDInsight 中的 Hive][hdinsight.hive]。提交 Visual Studio 中的 Hive 作业后，Visual Studio 将在作业完成时显示图形。你可能需要单击“刷新”按钮来获取最新的作业状态。
 
 > [AZURE.NOTE]
-此功能仅适用于高于 3.2.4.593 版的 HDInsight 群集，并且只能用于已完成的作业（如果你通过 WebHCat 提交作业，将在通过 HiveServer2 执行查询时显示此图形）。它适用于基于 Windows 的群集。
+此功能仅适用于高于 3.2.4.593 版的 HDInsight 群集，并且只能用于已完成的作业（如果你通过 WebHCat 提交作业，将在通过 HiveServer2 执行查询时显示此图形）。它适用于基于 Windows 和 Linux 的群集。
 > 
 > 
 
@@ -248,9 +250,9 @@ Data Lake 工具支持显示 Tez 执行引擎运行的 Hive 作业的性能图�
 * [在 HDInsight 中使用 Hadoop Hive][hdinsight.hive]
 * [开始在 HDInsight 中使用 Hadoop][hdinsight.get.started]
 * [在 HDInsight 中提交 Hadoop 作业][hdinsight.submit.jobs]
+* [使用 HDInsight 中的 Hadoop 分析 Twitter 数据][hdinsight.analyze.twitter.data]
 
 <!--Anchors-->
-
 [Installation]: #installation
 [Connect to your Azure subscription]: #connect-to-your-azure-subscription
 [Navigate the linked resources]: #navigate-the-linked-resources
@@ -271,17 +273,17 @@ Data Lake 工具支持显示 Tez 执行引擎运行的 Hive 作业的性能图�
 [13]: ./media/hdinsight-hadoop-visual-studio-tools-get-started/hdinsight.visual.studio.tools.intellisense.table.names.png
 [14]: ./media/hdinsight-hadoop-visual-studio-tools-get-started/hdinsight.visual.studio.tools.intellisense.column.names.png
 
-
 <!--Link references-->
 
-[hdinsight-create-clusters]: /documentation/articles/hdinsight-provision-clusters-v1/
+[hdinsight-create-clusters]: /documentation/articles/hdinsight-hadoop-provision-linux-clusters/
 [hdinsight.introduction]: /documentation/articles/hdinsight-hadoop-introduction/
-[hdinsight.get.started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1/
+[hdinsight.get.started]: /documentation/articles/hdinsight-hadoop-linux-tutorial-get-started/
 [hdinsight.hive]: /documentation/articles/hdinsight-use-hive/
 [hdinsight.submit.jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically/
+[hdinsight.analyze.twitter.data]: /documentation/articles/hdinsight-analyze-twitter-data/
 [hdinsight.storm.visual.studio.tools]: /documentation/articles/hdinsight-storm-develop-csharp-visual-studio-topology/
 [hdinsight.access.application.logs]: /documentation/articles/hdinsight-hadoop-access-yarn-app-logs/
 
 [apache.hive]: http://hive.apache.org
 
-<!---HONumber=Mooncake_1205_2016-->
+<!---HONumber=Mooncake_0120_2017-->

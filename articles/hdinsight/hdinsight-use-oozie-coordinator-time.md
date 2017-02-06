@@ -15,7 +15,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="11/15/2016"
-    wacn.date="01/06/2017"
+    wacn.date="01/25/2017"
     ms.author="jgao" />  
 
 
@@ -23,7 +23,10 @@
 
 [AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-sdk-developer-differences.md)]
 
-在本文中，将学习如何定义工作流和协调器，以及如何基于时间触发协调器作业。阅读本文前，浏览[将 Oozie 与 HDInsight 配合使用][hdinsight-use-oozie]很有帮助。
+在本文中，将学习如何定义工作流和协调器，以及如何基于时间触发协调器作业。阅读本文前，浏览[将 Oozie 与 HDInsight 配合使用][hdinsight-use-oozie]很有帮助。除了 Oozie，还可以使用 Azure 数据工厂来计划作业。
+
+> [AZURE.NOTE]
+本文需要基于 Windows 的 HDInsight 群集。有关在基于 Linux 的群集上使用 Oozie 的信息（包括基于时间的作业），请参阅[在基于 Linux 的 HDInsight 上将 Oozie 与 Hadoop 配合使用以定义和运行工作流](/documentation/articles/hdinsight-use-oozie-linux-mac/)
 
 ## <a id="whatisoozie"></a> 什么是 Oozie
 Apache Oozie 是一个管理 Hadoop 作业的工作流/协调系统。该系统与 Hadoop 堆栈集成，支持 Apache MapReduce、Apache Pig、Apache Hive 和 Apache Sqoop 的 Hadoop 作业。此外，还可用于调度系统特定作业，如 Java 程序或 shell 脚本。
@@ -64,6 +67,11 @@ Apache Oozie 是一个管理 Hadoop 作业的工作流/协调系统。该系统�
 
 * **配备 Azure PowerShell 的工作站**。
 
+    > [AZURE.IMPORTANT]
+    Azure PowerShell 对于使用 Azure Service Manager 管理 HDInsight 资源的支持已**弃用**，将于 2017 年 1 月 1 日删除。本文档中的步骤使用的是与 Azure Resource Manager 兼容的新 HDInsight cmdlet。
+    >
+    > 请按照 [Install and configure Azure PowerShell](https://docs.microsoft.com/powershell/azureps-cmdlets-docs)（安装和配置 Azure PowerShell）中的步骤安装最新版本的 Azure PowerShell。如果你的脚本需要修改才能使用与 Azure Resource Manager 兼容的新 cmdlet，请参阅[迁移到适用于 HDInsight 群集的基于 Azure Resource Manager 的开发工具](/documentation/articles/hdinsight-hadoop-development-using-azure-resource-manager/)，了解详细信息。
+
 * **HDInsight 群集**。有关创建 HDInsight 群集的信息，请参阅[创建 HDInsight 群集][hdinsight-provision]或 [HDInsight 入门][hdinsight-get-started]。完成本教程需要以下数据：
 
     <table border = "1">
@@ -84,8 +92,8 @@ Apache Oozie 是一个管理 Hadoop 作业的工作流/协调系统。该系统�
     <tr><td>SQL 数据库名</td><td>$sqlDatabaseName</td><td></td><td>Sqoop 将数据导出到的 Azure SQL 数据库。</td></tr>
     </table>
 
-  > [AZURE.NOTE]
-  默认情况下，可从 Azure 服务（如 Azure HDInsight）连接 Azure SQL 数据库。如果禁用此防火墙设置，则必须从 Azure 门户预览启用。有关创建 SQL 数据库和配置防火墙规则的说明，请参阅[创建和配置 SQL 数据库][sqldatabase-get-started]。
+    > [AZURE.NOTE]
+    默认情况下，可从 Azure 服务（如 Azure HDInsight）连接 Azure SQL 数据库。如果禁用此防火墙设置，则必须从 Azure 门户预览启用。有关创建 SQL 数据库和配置防火墙规则的说明，请参阅[创建和配置 SQL 数据库][sqldatabase-get-started]。
 
 > [AZURE.NOTE]
 填写表中的值。这将有助于学习本教程。
@@ -117,7 +125,7 @@ Oozie 工作流定义以 hPDL（XML 过程定义语言）编写。默认的工�
     * ${hiveDataFolder}
     * ${hiveOutputFolder}
 
-     工作流定义文件（本教程中的 workflow.xml）在运行时会将三个值传递到此 HiveQL 脚本。
+    工作流定义文件（本教程中的 workflow.xml）在运行时会将三个值传递到此 HiveQL 脚本。
 2. 使用 ANSI (ASCII) 编码将文件另存为 **C:\\Tutorials\\UseOozie\\useooziewf.hql**。（如果文本编辑器不提供此选项，可使用记事本。） 在本教程后面，会将此脚本文件部署到 HDInsight 群集。
 
 **定义工作流**
@@ -320,7 +328,7 @@ HDInsight 群集版本 3.0 仅支持 *wasb://* 语法。较早的 *asv://* 语�
 
         # Create a storage context object
         $storageaccountkey = get-azurestoragekey $storageAccountName | %{$_.Primary}
-        $destContext = New-AzureStorageContext -Environment AzureChinaCloud -StorageAccountName $storageAccountName -StorageAccountKey $storageaccountkey
+        $destContext = New-AzureStorageContext -StorageAccountName $storageAccountName -StorageAccountKey $storageaccountkey
 
         function uploadOozieFiles()
         {
@@ -642,7 +650,7 @@ HDInsight 群集版本 3.0 仅支持 *wasb://* 语法。较早的 *asv://* 语�
 
 **检查作业错误日志**
 
-要解决工作流的疑难问题，可从群集头节点中的 C:\\apps\\dist\\oozie-3.3.2.1.3.2.0-05\\oozie-win-distro\\logs\\Oozie.log 位置找到 Oozie 日志文件。有关 RDP 的信息，请参阅[使用 Azure 经典管理门户管理 HDInsight 群集][hdinsight-admin-portal]。
+要解决工作流的疑难问题，可从群集头节点中的 C:\\apps\\dist\\oozie-3.3.2.1.3.2.0-05\\oozie-win-distro\\logs\\Oozie.log 位置找到 Oozie 日志文件。有关 RDP 的信息，请参阅[使用 Azure 门户预览管理 HDInsight 群集][hdinsight-admin-portal]。
 
 **重新运行教程**
 
@@ -665,7 +673,7 @@ HDInsight 群集版本 3.0 仅支持 *wasb://* 语法。较早的 *asv://* 语�
 
     Write-host "Delete the Hive script output file ..." -ForegroundColor Green
     $storageaccountkey = get-azurestoragekey $storageAccountName | %{$_.Primary}
-    $destContext = New-AzureStorageContext -Environment AzureChinaCloud -StorageAccountName $storageAccountName -StorageAccountKey $storageaccountkey
+    $destContext = New-AzureStorageContext -StorageAccountName $storageAccountName -StorageAccountKey $storageaccountkey
     Remove-AzureStorageBlob -Context $destContext -Blob "tutorials/useoozie/output/000000_0" -Container $containerName
 
     Write-host "Delete all the records from the log4jLogsCount table ..." -ForegroundColor Green
@@ -693,19 +701,19 @@ HDInsight 群集版本 3.0 仅支持 *wasb://* 语法。较早的 *asv://* 语�
 
 [hdinsight-cmdlets-download]: http://go.microsoft.com/fwlink/?LinkID=325563
 
-[hdinsight-versions]: /documentation/articles/hdinsight-component-versioning-v1/
+[hdinsight-versions]: /documentation/articles/hdinsight-component-versioning/
 [hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage/
-[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1/
-[hdinsight-admin-portal]: /documentation/articles/hdinsight-administer-use-management-portal-v1/
+[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-linux-tutorial-get-started/
+[hdinsight-admin-portal]: /documentation/articles/hdinsight-administer-use-management-portal/
 
 [hdinsight-use-sqoop]: /documentation/articles/hdinsight-use-sqoop/
-[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1/
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters/
 [hdinsight-admin-powershell]: /documentation/articles/hdinsight-administer-use-powershell/
 [hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data/
 [hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive/
 [hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig/
 [hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage/
-[hdinsight-develop-java-mapreduce]: /documentation/articles/hdinsight-develop-deploy-java-mapreduce/
+[hdinsight-develop-java-mapreduce]: /documentation/articles/hdinsight-develop-deploy-java-mapreduce-linux/
 [hdinsight-use-oozie]: /documentation/articles/hdinsight-use-oozie/
 
 [sqldatabase-get-started]: /documentation/articles/sql-database-get-started/
@@ -731,4 +739,4 @@ HDInsight 群集版本 3.0 仅支持 *wasb://* 语法。较早的 *asv://* 语�
 
 [technetwiki-hive-error]: http://social.technet.microsoft.com/wiki/contents/articles/23047.hdinsight-hive-error-unable-to-rename.aspx
 
-<!---HONumber=Mooncake_0103_2017-->
+<!---HONumber=Mooncake_0120_2017-->

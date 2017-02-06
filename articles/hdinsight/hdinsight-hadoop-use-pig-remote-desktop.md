@@ -36,7 +36,7 @@
 
 ##<a id="connect"></a>使用远程桌面进行连接
 
-为 HDInsight 群集启用远程桌面，然后根据[使用 RDP 连接到 HDInsight 群集](/documentation/articles/hdinsight-administer-use-management-portal-v1/#rdp)中的说明连接到该群集。
+为 HDInsight 群集启用远程桌面，然后根据[使用 RDP 连接到 HDInsight 群集](/documentation/articles/hdinsight-administer-use-management-portal/#connect-to-clusters-using-rdp)中的说明连接到该群集。
 
 ##<a id="pig"></a>使用 Pig 命令
 

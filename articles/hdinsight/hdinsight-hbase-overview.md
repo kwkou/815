@@ -16,7 +16,7 @@
     ms.devlang="na"
     ms.topic="get-started-article"
     ms.date="09/14/2016"
-    wacn.date="01/06/2017"
+    wacn.date="01/25/2017"
     ms.author="jgao" />  
 
 
@@ -47,17 +47,22 @@ HDInsight 实施利用 HBase 的横向扩展架构来提供表自动分片、使
     [Phoenix](http://phoenix.apache.org/) 是 Apache HBase 的 SQL 查询引擎。该引擎以 JDBC 驱动程序的形式供用户访问，并且支持使用 SQL 来查询和管理 HBase 表。
 * HBase 即平台
   
-    应用程序可以将 HBase 作为数据存储库而在其上运行。具体示例包括 Phoenix、OpenTSDB、Kiji 和 Titan。应用程序也可以与 HBase 集成。具体示例包括：Hive、Pig、Solr、Storm、Flume、Impala、Ganglia 和 Drill。
+    应用程序可以将 HBase 作为数据存储库而在其上运行。具体示例包括 Phoenix、OpenTSDB、Kiji 和 Titan。应用程序也可以与 HBase 集成。具体示例包括：Hive、Pig、Solr、Storm、Flume、Impala、Spark、Ganglia 和 Drill。
 
 ## <a name="next-steps"></a>后续步骤
 * [开始在 HDInsight 中将 HBase 与 Hadoop 配合使用][hbase-get-started]
 * [在 Azure 虚拟网络上创建 HDInsight 群集][hbase-provision-vnet]
+* [在 HDInsight 中配置 HBase 复制](/documentation/articles/hdinsight-hbase-replication/)
+* [在 HDInsight 中使用 HBase 分析 Twitter 观点][hbase-twitter-sentiment]
 * [借助 Maven 生成可将 HBase 与 HDInsight (Hadoop) 配合使用的 Java 应用程序][hbase-build-java-maven]
 
 ## <a name="see-also"></a>另请参阅
 * [Apache HBase](https://hbase.apache.org/)
+* [Bigtable：针对结构化数据的分布式存储系统](http://research.google.com/archive/bigtable.html)
 
-[hbase-provision-vnet]: /documentation/articles/hdinsight-hbase-provision-vnet-v1/
+[hbase-provision-vnet]: /documentation/articles/hdinsight-hbase-provision-vnet/
+
+[hbase-twitter-sentiment]: /documentation/articles/hdinsight-hbase-analyze-twitter-sentiment/
 
 [hbase-build-java-maven]: /documentation/articles/hdinsight-hbase-build-java-maven/
 
@@ -65,7 +70,7 @@ HDInsight 实施利用 HBase 的横向扩展架构来提供表自动分片、使
 
 [hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage/
 
-[hbase-get-started]: /documentation/articles/hdinsight-hbase-tutorial-get-started-v1/
+[hbase-get-started]: /documentation/articles/hdinsight-hbase-tutorial-get-started/
 
 [azure-purchase-options]: /pricing/overview/
 [azure-member-offers]: /pricing/member-offers/
@@ -75,4 +80,4 @@ HDInsight 实施利用 HBase 的横向扩展架构来提供表自动分片、使
 
 [apache-hadoop]: http://hadoop.apache.org/
 
-<!---HONumber=Mooncake_0103_2017-->
+<!---HONumber=Mooncake_0120_2017-->

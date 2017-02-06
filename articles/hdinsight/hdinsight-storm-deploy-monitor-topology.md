@@ -6,8 +6,7 @@
     author="Blackmist"
     manager="jhubbard"
     editor="cgronlun"
-    tags="azure-portal" />  
-
+    tags="azure-portal" />
 <tags
     ms.assetid="5e542072-f014-42aa-82d6-2694a76df520"
     ms.service="hdinsight"
@@ -16,7 +15,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="big-data"
     ms.date="11/18/2016"
-    wacn.date="12/12/2016"
+    wacn.date="01/25/2017"
     ms.author="larryfr" />
 
 # 在基于 Windows 的 HDInsight 上部署和管理 Apache Storm 拓扑
@@ -26,6 +25,9 @@
 通过 Storm 仪表板可以使用 Web 浏览器轻松在 HDInsight 群集中部署和运行 Apache Storm 拓扑。还可以使用该仪表板监视和管理正在运行的拓扑。如果使用 Visual Studio，则适用于 Visual Studio 的 HDInsight 工具会提供 Visual Studio 中的类似功能。
 
 HDInsight 工具中的 Storm 仪表板和 Storm 功能依赖于 Storm REST API，此 API 可用于创建你自己的监视和管理解决方案。
+
+> [AZURE.IMPORTANT]
+本文档中的步骤要求使用 HDInsight 群集上基于 Windows 的 Storm。有关使用基于 Linux 的群集的信息，请参阅[在基于 Linux 的 HDInsight 上部署和管理 Apache Storm 拓扑](/documentation/articles/hdinsight-storm-deploy-monitor-topology-linux/)
 
 ## 先决条件
 
@@ -37,12 +39,10 @@ HDInsight 工具中的 Storm 仪表板和 Storm 功能依赖于 Storm REST API�
 
     下列其中一个版本的 Visual Studio：
 
-  * Visual Studio 2012 [Update 4](http://www.microsoft.com/download/details.aspx?id=39305)
+    * Visual Studio 2012 [Update 4](http://www.microsoft.com/download/details.aspx?id=39305)
 
-  * Visual Studio 2013 [Update 4](http://www.microsoft.com/download/details.aspx?id=44921) 或 [Visual Studio 2013 Community](http://download.microsoft.com/download/7/1/B/71BA74D8-B9A0-4E6C-9159-A8335D54437E/vs_community.exe)
-  * [Visual Studio 2015](https://www.visualstudio.com/downloads/)
-
-  > [AZURE.NOTE] 适用于 Visual Studio 的 HDInsight 工具目前只支持 Storm on HDInsight 群集版本 3.2。
+    * Visual Studio 2013 [Update 4](http://www.microsoft.com/download/details.aspx?id=44921) 或 [Visual Studio 2013 Community](http://download.microsoft.com/download/7/1/B/71BA74D8-B9A0-4E6C-9159-A8335D54437E/vs_community.exe)
+    * [Visual Studio 2015](https://www.visualstudio.com/downloads/)
 
 ## Storm 仪表板
 
@@ -81,15 +81,15 @@ Storm UI 的主页面提供以下信息：
 
 * **拓扑操作**：可对拓扑执行的管理操作。
 
-  * **激活**：继续处理已停用的拓扑。
+    * **激活**：继续处理已停用的拓扑。
 
-  * **停用**：暂停正在运行的拓扑。
+    * **停用**：暂停正在运行的拓扑。
 
-  * **重新平衡**：调整拓扑的并行度。更改群集中的节点数目之后，应该重新平衡正在运行的拓扑。这可让拓扑调整并行度，以弥补群集中增加或减少的节点数目。
+    * **重新平衡**：调整拓扑的并行度。更改群集中的节点数目之后，应该重新平衡正在运行的拓扑。这可让拓扑调整并行度，以弥补群集中增加或减少的节点数目。
 
-      有关详细信息，请参阅[了解 Storm 拓扑的并行度 (http://storm.apache.org/documentation/Understanding-the-parallelism-of-a-Storm-topology.html)](http://storm.apache.org/documentation/Understanding-the-parallelism-of-a-Storm-topology.html)。
+        有关详细信息，请参阅[了解 Storm 拓扑的并行度 (http://storm.apache.org/documentation/Understanding-the-parallelism-of-a-Storm-topology.html)](http://storm.apache.org/documentation/Understanding-the-parallelism-of-a-Storm-topology.html)。
 
-  * **终止**：在经过指定的超时之后终止 Storm 拓扑。
+    * **终止**：在经过指定的超时之后终止 Storm 拓扑。
 
 * **拓扑统计信息**：有关拓扑的统计信息。使用“窗口”列中的链接可以设置页面上剩余项的时间范围。
 
@@ -121,7 +121,7 @@ HDInsight 工具可用于将 C# 或混合拓扑提交到 Storm 群集。以下�
 
 使用以下步骤将示例部署到 Storm on HDInsight 群集，然后查看和管理拓扑。
 
-1. 如果尚未安装最新版本的用于 Visual Studio 的 HDInsight 工具，请参阅 [Get started using HDInsight Tools for Visual Studio](/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started/)（开始使用用于 Visual Studio 的 HDInsight 工具）。
+1. 如果尚未安装最新版本的 HDInsight Tools for Visual Studio，请参阅 [Get started using HDInsight Tools for Visual Studio](/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started/)（开始使用 HDInsight Tools for Visual Studio）。
 
 2. 打开 Visual Studio，选择“文件”>“新建”>“项目”。
 
@@ -131,8 +131,8 @@ HDInsight 工具可用于将 C# 或混合拓扑提交到 Storm 群集。以下�
 
 4. 在“解决方案资源管理器”中，右键单击项目，然后选择“提交到 Storm on HDInsight”。
 
-   > [AZURE.NOTE]
-   如果出现提示，请输入 Azure 订阅的登录凭据。如果有多个订阅，请登录包含 Storm on HDInsight 群集的订阅。
+    > [AZURE.NOTE]
+    如果出现提示，请输入 Azure 订阅的登录凭据。如果有多个订阅，请登录包含 Storm on HDInsight 群集的订阅。
 
 5. 从“Storm 群集”下拉列表中选择你的 Storm on HDInsight 群集，然后选择“提交”。你可以使用“输出”窗口监视提交是否成功。
 
@@ -140,19 +140,18 @@ HDInsight 工具可用于将 C# 或混合拓扑提交到 Storm 群集。以下�
 
     ![visual studio 监视器](./media/hdinsight-storm-deploy-monitor-topology/vsmonitor.png)
 
-   > [AZURE.NOTE]
-   你也可以依次展开“Azure”和“HDInsight”，右键单击 Storm on HDInsight 群集，然后选择“查看 Storm 拓扑”，从“服务器资源管理器”查看“Storm 拓扑”。
+    > [AZURE.NOTE]
+    你也可以依次展开“Azure”和“HDInsight”，右键单击 Storm on HDInsight 群集，然后选择“查看 Storm 拓扑”，从“服务器资源管理器”查看“Storm 拓扑”。
 
-    选择 Spout 或 Bolt 的形状可查看有关这些组件的信息。 每选择一项都会打开一个新窗口。
+    选择 Spout 或 Bolt 的形状可查看有关这些组件的信息。每选择一项都会打开一个新窗口。
 
-   > [AZURE.NOTE]
-   拓扑的名称是拓扑的类名（在此示例中为 `HelloWord`）并追加了时间戳。
+    > [AZURE.NOTE]
+    拓扑的名称是拓扑的类名（在此示例中为 `HelloWord`）并追加了时间戳。
 
 7. 从“拓扑摘要”视图中，选择“终止”以停止拓扑。
 
-   > [AZURE.NOTE]
-   Storm 拓扑会一直运行，直到它被停止，或者群集被删除。
-
+    > [AZURE.NOTE]
+    Storm 拓扑会一直运行，直到它被停止，或者群集被删除。
 
 ## REST API
 
@@ -189,4 +188,4 @@ REST API on HDInsight 群集的基本 URI 是 **https://&lt;clustername>.azurehd
 [storm-dashboard-submit]: ./media/hdinsight-storm-deploy-monitor-topology/submit.png
 [storm-dashboard-ui]: ./media/hdinsight-storm-deploy-monitor-topology/storm-ui-summary.png
 
-<!---HONumber=Mooncake_1205_2016-->
+<!---HONumber=Mooncake_0120_2017-->
