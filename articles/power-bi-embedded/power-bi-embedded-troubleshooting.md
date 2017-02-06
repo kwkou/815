@@ -13,9 +13,9 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="powerbi"
-   ms.date="06/29/2016"
+   ms.date="10/04/2016"
    ms.author="mblythe"
-   wacn.date="01/13/2017"/>  
+   wacn.date="02/06/2017"/>  
 
 
 # Power BI Embedded 预览版疑难解答

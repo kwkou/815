@@ -13,9 +13,9 @@
    ms.topic="hero-article"
    ms.tgt_pltfrm="NA"
    ms.workload="powerbi"
-   ms.date="08/26/2016"
+   ms.date="10/04/2016"
    ms.author="mblythe"
-   wacn.date="12/29/2016"/>  
+   wacn.date="02/06/2017"/>  
 
 
 # 使用 JavaScript API 与 Power BI 报表进行交互
