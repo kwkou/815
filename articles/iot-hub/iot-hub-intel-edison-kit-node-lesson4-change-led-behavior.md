@@ -33,8 +33,8 @@
 1. 通过运行以下命令在 Visual Studio Code 中打开示例应用程序：
 
    
-    	   cd Lesson4
-    	   code .
+    	cd Lesson4
+    	code .
    
 2. 打开 `app.js` 文件，然后在 blinkLED() 函数之后添加以下函数：
 
@@ -48,7 +48,7 @@
     	   }
        
 
-   ![增加了函数的 app.js 文件](./media/iot-hub-intel-edison-lessons/lesson4/updated_app_node.png)  
+    ![增加了函数的 app.js 文件](./media/iot-hub-intel-edison-lessons/lesson4/updated_app_node.png)  
 
 3. 在 `receiveMessageCallback` 函数的 switch-case 块中的“blink”案例之前添加以下条件：
 
@@ -61,7 +61,7 @@
     	     break;
    
 
-   现在已将示例应用程序配置为通过消息响应更多指令。“on”指令打开 LED，“off”指令关闭 LED。
+    现在已将示例应用程序配置为通过消息响应更多指令。“on”指令打开 LED，“off”指令关闭 LED。
 4. 打开 gulpfile.js 文件，然后在函数 `sendMessage` 之前添加新函数：
 
    
@@ -76,7 +76,7 @@
     	   }
    
 
-   ![增加了函数的 Gulpfile.js 文件][gulpfile]  
+    ![增加了函数的 Gulpfile.js 文件][gulpfile]  
 
 5. 在 `sendMessage` 函数中，将 `var message = buildMessage(sentMessageCount);` 行替换为新行，如以下代码片段所示：
 

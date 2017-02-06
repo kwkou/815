@@ -30,8 +30,8 @@
 
 ## 你要学习的知识
 本文介绍：
-* 如何安装 Python。
-* 如何安装 Azure CLI。
+ - 如何安装 Python。
+ - 如何安装 Azure CLI。
 
 ## 需要什么
 * 启用 Internet 连接的 Windows 计算机。

@@ -20,18 +20,19 @@
 
 
 # 获取 Azure 工具 (Ubuntu 16.04)
-> [!div class="op_single_selector"]
-> * [Windows 7 及更高版本][windows]
-> * [Ubuntu 16.04][ubuntu]
-> * [macOS 10.10][macos]
+> [AZURE.SELECTOR]
+- [Windows 7 及更高版本][windows]
+- [Ubuntu 16.04][ubuntu]
+- [macOS 10.10][macos]
 
 ## 执行的操作
 安装 Azure 命令行接口 (Azure CLI)。如果有问题，可在[故障排除页][troubleshooting]上查找解决方案。
 
 ## 你要学习的知识
 本文介绍：
-* 如何安装 Azure CLI。
-* 如何添加 Azure CLI 的 IoT 子组。
+
+ - 如何安装 Azure CLI。
+ - 如何添加 Azure CLI 的 IoT 子组。
 
 ## 需要什么
 * 启用 Internet 连接的 Ubuntu 计算机。
@@ -56,9 +57,9 @@ Azure CLI 提供适用于 Azure 的多平台命令行体验，让用户能够直
 
 		   az iot -h
 
-如果安装成功，则会看到以下输出。
+    如果安装成功，则会看到以下输出。
 
-![指示成功的输出](./media/iot-hub-intel-edison-lessons/lesson2/az_iot_help_ubuntu.png)  
+    ![指示成功的输出](./media/iot-hub-intel-edison-lessons/lesson2/az_iot_help_ubuntu.png)  
 
 
 ## 摘要

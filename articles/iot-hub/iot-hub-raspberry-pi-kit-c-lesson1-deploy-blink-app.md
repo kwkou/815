@@ -90,7 +90,7 @@
     	gulp init
    
    
-   配置文件 `config-raspberrypi.json` 包含用来登录到 Pi 的用户凭据。为了避免用户凭据泄漏，配置文件在计算机主文件夹的 `.iot-hub-getting-started` 子文件夹中生成。
+    配置文件 `config-raspberrypi.json` 包含用来登录到 Pi 的用户凭据。为了避免用户凭据泄漏，配置文件在计算机主文件夹的 `.iot-hub-getting-started` 子文件夹中生成。
 
 2. 运行以下命令，在 Visual Studio Code 中打开设备配置文件：
    
@@ -104,11 +104,11 @@
 
 3. 将占位符 `[device hostname or IP address]` 替换为此前在“获取 Pi 的 IP 地址和主机名”中获得的 IP 地址或主机名。
    
-   ![Config.json](./media/iot-hub-raspberry-pi-lessons/lesson1/vscode-config-mac.png)  
+    ![Config.json](./media/iot-hub-raspberry-pi-lessons/lesson1/vscode-config-mac.png)  
 
 
 > [AZURE.NOTE]
-连接到 Raspberry Pi 时，可以使用 SSH 密钥而不是用户名和密码。为此，必须使用 **ssh-keygen** 和 **ssh-copy-id pi@<device address>** 生成该密钥。
+>连接到 Raspberry Pi 时，可以使用 SSH 密钥而不是用户名和密码。为此，必须使用 **ssh-keygen** 和 **ssh-copy-id pi@<device address>** 生成该密钥。
 >
 > 在 Windows 中，这些命令均位于 **Git Bash**。
 >

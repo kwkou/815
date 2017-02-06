@@ -20,10 +20,10 @@
 
 
 # 获取工具（Windows 7 或更高版本）
-> [!div class="op_single_selector"]
-> * [Windows 7 或更高版本][windows]
-> * [Ubuntu 16.04][ubuntu]
-> * [macOS 10.10][macos]
+> [AZURE.SELECTOR]
+- [Windows 7 或更高版本][windows]
+- [Ubuntu 16.04][ubuntu]
+- [macOS 10.10][macos]
 
 ## 执行的操作
 下载用于 Intel Edison 的第一个示例应用程序的开发工具和软件。如果有问题，可在[故障排除页][troubleshooting]上查找解决方案。

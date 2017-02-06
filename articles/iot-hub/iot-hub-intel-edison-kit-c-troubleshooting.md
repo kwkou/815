@@ -41,7 +41,7 @@
 如果问题仍然存在，请在本文末尾留下你的评论，或者在[示例存储库][sample-repository]中创建一个 GitHub 问题。
 
 ## Azure-CLI 问题
-Azure 命令行接口 (Azure CLI) 为预览版。在[预览版安装指南](https://github.com/Azure/azure-cli/blob/master/doc/preview_install_guide.md)中寻求解决方案。如果命令不按预期工作，请尝试升级到最新版本的 Azure-cli。
+Azure 命令行接口 (Azure CLI) 为预览版。
 
 如果在使用此工具时遇到 Bug，请在 GitHub 存储库的“问题”部分提交[问题](https://github.com/Azure/azure-cli/issues)。
 
@@ -93,7 +93,7 @@ Azure 命令行接口 (Azure CLI) 为预览版。在[预览版安装指南](http
 完整的 CLI 体验有助于用户创建和管理其所有 Azure 资源。还可能需要借助 [Azure 门户预览](/documentation/articles/azure-portal-overview/)对 Azure 资源进行预配、管理和调试。
 
 ## Azure 存储问题
-[Microsoft Azure 存储资源管理器（预览版）](http://storageexplorer.com)是 Microsoft 推出的一款独立应用，可用于在 Windows、macOS和 Linux 上处理 [Azure 存储](/services/storage/)数据。可以使用此工具连接到表并查看其中的数据。可以使用此工具排查 Azure 存储问题。
+[Microsoft Azure 存储资源管理器（预览版）](http://storageexplorer.com)是 Microsoft 推出的一款独立应用，可用于在 Windows、macOS和 Linux 上处理 [Azure 存储](/documentation/services/storage/)数据。可以使用此工具连接到表并查看其中的数据。可以使用此工具排查 Azure 存储问题。
 
 ## 后续步骤
 本页仅包括 Intel Edison 工具包最常见的问题。可在底部留下注释，报告问题，进行进一步故障排除。

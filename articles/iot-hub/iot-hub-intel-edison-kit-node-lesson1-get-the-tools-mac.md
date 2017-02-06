@@ -20,10 +20,10 @@
 
 
 # 获取工具 (macOS 10.10)
-> [!div class="op_single_selector"]
-> * [Windows 7 或更高版本][windows]
-> * [Ubuntu 16.04][ubuntu]
-> * [macOS 10.10][macos]
+> [AZURE.SELECTOR]
+- [Windows 7 或更高版本][windows]
+- [Ubuntu 16.04][ubuntu]
+- [macOS 10.10][macos]
 
 ## 执行的操作
 下载用于 Intel Edison 的第一个示例应用程序的开发工具和软件。如果有问题，可在[故障排除页][troubleshooting]上查找解决方案。
@@ -40,8 +40,9 @@
 
 ## 需要什么
 若要完成此操作，需具备：
-* Internet 连接，用于下载开发工具和软件。
-* 运行 macOS Yosemite (10.10) 或更高版本的 Mac。
+
+ - Internet 连接，用于下载开发工具和软件。
+ - 运行 macOS Yosemite (10.10) 或更高版本的 Mac。
 
 ## 安装 Git 和 Node.js
 若要安装 Git 和 Node.js，请按以下步骤使用 [Homebrew](http://brew.sh) 包管理实用程序：
@@ -51,17 +52,17 @@
    1. 按 `Cmd + Space` 并输入 `Terminal` 即可打开终端。
    2. 运行以下命令：
 
-	      /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+	        /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 2. 运行以下命令，安装 Git 和 Node.js：
 
-		   brew install node git
+		brew install node git
 
 ## 安装其他 Node.js 开发工具
 使用 [gulp.js](http://gulpjs.com) 将示例应用程序自动部署到 Edison。
 
 在终端运行以下命令，安装 `gulp`：
 
-		sudo npm install -g gulp
+	sudo npm install -g gulp
 
 如果无法在 macOS 上安装 Node.js 和这些额外的开发工具，请参阅[故障排除指南][troubleshooting]，了解常见问题的解决方案。
 

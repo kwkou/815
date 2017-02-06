@@ -26,7 +26,7 @@
 
 在本教程中，从学习如何使用 Intel Edison 的基础知识开始。然后学习如何使用 [Azure IoT 中心](/documentation/articles/iot-hub-what-is-iot-hub/)将设备无缝连接到云。
 
-还没有工具包？ 从[此处](/develop/iot/starter-kits)开始
+还没有工具包？ 从[此处](/develop/iot/iot-starter-kits)开始
 
 ## 第 1 课：配置设备
 ![第 1 课端到端关系图](./media/iot-hub-intel-edison-lessons/e2e-lesson1.png)  

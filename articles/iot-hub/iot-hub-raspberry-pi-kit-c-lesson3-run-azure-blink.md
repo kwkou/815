@@ -38,7 +38,7 @@ Pi 使用设备连接字符串连接到 IoT 中心。IoT 中心连接字符串�
     	az iot hub list -g iot-sample --query [].name
 
 
-使用 `iot-sample` 作为 `{resource group name}` 的值（如果尚未更改此值）。
+    使用 `iot-sample` 作为 `{resource group name}` 的值（如果尚未更改此值）。
 
 * 运行以下 Azure CLI 命令，获取 IoT 中心连接字符串：
 
@@ -46,7 +46,7 @@ Pi 使用设备连接字符串连接到 IoT 中心。IoT 中心连接字符串�
     	az iot hub show-connection-string --name {my hub name} -g iot-sample
 
 
-`{my hub name}` 是用户在创建 IoT 中心和注册 Pi 时指定的名称。
+    `{my hub name}` 是用户在创建 IoT 中心和注册 Pi 时指定的名称。
 
 * 运行以下命令，获取设备连接字符串：
 
@@ -54,7 +54,7 @@ Pi 使用设备连接字符串连接到 IoT 中心。IoT 中心连接字符串�
     	az iot device show-connection-string --hub-name {my hub name} --device-id myraspberrypi -g iot-sample
 
 
-使用 `myraspberrypi` 作为 `{device id}` 的值（如果尚未更改此值）。
+    使用 `myraspberrypi` 作为 `{device id}` 的值（如果尚未更改此值）。
 
 ## 配置设备连接
 1. 运行以下命令初始化配置文件：
@@ -64,8 +64,8 @@ Pi 使用设备连接字符串连接到 IoT 中心。IoT 中心连接字符串�
     	gulp init
    
 
-> [AZURE.NOTE]
-如果尚未在第 1 课中完成，请同时运行 **gulp install-tools**。
+    > [AZURE.NOTE]
+    > 如果尚未在第 1 课中完成，请同时运行 **gulp install-tools**。
 
 2. 运行以下命令，在 Visual Studio Code 中打开设备配置文件 `config-raspberrypi.json`：
    
@@ -77,7 +77,7 @@ Pi 使用设备连接字符串连接到 IoT 中心。IoT 中心连接字符串�
 		   code ~/.iot-hub-getting-started/config-raspberrypi.json
    
    
-   ![config.json](./media/iot-hub-raspberry-pi-lessons/lesson3/config.png)  
+    ![config.json](./media/iot-hub-raspberry-pi-lessons/lesson3/config.png)  
 
 3. 在 `config-raspberrypi.json` 文件中进行以下替换：
    
@@ -94,7 +94,7 @@ Pi 使用设备连接字符串连接到 IoT 中心。IoT 中心连接字符串�
 运行以下命令，在 Pi 上部署并运行示例应用程序：
 
 
-    	gulp deploy && gulp run
+    gulp deploy && gulp run
 
 
 ## 验证示例应用程序是否正常运行
