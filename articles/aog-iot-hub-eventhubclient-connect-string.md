@@ -13,7 +13,7 @@
 <tags
 	ms.service="iot-hub-aog"
 	ms.date=""
-	wacn.date="01/12/2017" />
+	wacn.date="02/06/2017" />
 # 使用 EventHubClient 连接 IoT 中心的正确连接字符串
 
 Azure IoT 中心支持两种通信方式，一个是设备到云（以下简称 D2C），另一个是云到设备（以下简称 C2D）。对于这两种通信，都会有相应的发送端和消费端。微软也提供了相应的 SDK 以供开发者方便使用。
@@ -49,9 +49,11 @@ Microsoft.ServiceBus.Messaging
 
 ### 在IoT中心的管理门户上获取相应值：
 
+| ConnectionString					| Operation																						|
+|-----------------------------------|-----------------------------------------------------------------------------------------------|
 | eventhub_compatible_endpoint   	| {Your IoT Hub} -> Endpoints -> Built-in endpoints -> Events -> Event Hub-compatible endpoint 	|
 | iothub_sas_policy_name_and_key 	| {Your IoT Hub} -> Shared access policies -> {any policy with Device connect permission}      	|
-| eventhub_compatible_name       	| {Your IoT Hub} -> Endpoints ->,Built-in endpoints -> Events -> Event Hub-compatible name     	|
+| eventhub_compatible_name       	| {Your IoT Hub} -> Endpoints ->Built-in endpoints -> Events -> Event Hub-compatible name     	|
 
 ## **操作步骤：**
  
