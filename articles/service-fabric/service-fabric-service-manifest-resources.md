@@ -15,7 +15,7 @@
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
    ms.date="09/14/2016"
-   wacn.date="10/24/2016"
+   wacn.date="01/25/2017"
    ms.author="subramar"/>  
 
 
@@ -139,4 +139,4 @@ HTTPS 协议提供服务器身份验证，用于对客户端-服务器通信进�
 	  </Certificates>
 	</ApplicationManifest>
 
-<!---HONumber=Mooncake_1017_2016-->
+<!---HONumber=Mooncake_Quality_Review_0125_2017-->

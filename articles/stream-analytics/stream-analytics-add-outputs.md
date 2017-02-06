@@ -16,7 +16,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.workload="data-services" 
 	ms.date="09/26/2016" 
-	wacn.date="11/14/2016" 
+	wacn.date="01/25/2017" 
 	ms.author="jeffstok"/>  
 
 
@@ -76,4 +76,4 @@ Azure 流分析作业可以连接到一个或多个数据输出，这些数据�
 - [Azure 流分析查询语言参考](https://msdn.microsoft.com/zh-cn/library/azure/dn834998.aspx)
 - [Azure 流分析管理 REST API 参考](https://msdn.microsoft.com/zh-cn/library/azure/dn835031.aspx)
 
-<!---HONumber=Mooncake_1107_2016-->
+<!---HONumber=Mooncake_Quality_Review_0125_2017-->

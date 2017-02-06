@@ -15,7 +15,7 @@
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
    ms.date="09/20/2016"
-   wacn.date="11/28/2016"
+   wacn.date="01/25/2017"
    ms.author="sumukhs"/>
 
 
@@ -89,4 +89,4 @@ Azure Service Fabric 运行时在 settings.xml 文件中查找预定义的节名
 
 BatchAcknowledgementInterval 参数用于控制复制延迟。“0”值导致可能的最低延迟，但代价是牺牲吞吐量（因为必须发送和处理更多的确认消息，每个包含较少的确认）。BatchAcknowledgementInterval 的值越大，整体复制吞吐量就越高，但代价是导致更高的操作延迟。这直接转换为事务提交的延迟。
 
-<!---HONumber=Mooncake_1121_2016-->
+<!---HONumber=Mooncake_Quality_Review_0125_2017-->

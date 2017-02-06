@@ -14,7 +14,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="na"
    ms.date="09/28/2016"
-   wacn.date="11/28/2016"
+   wacn.date="01/25/2017"
    ms.author="oanapl"/>
 
 # 使用系统运行状况报告进行故障排除
@@ -668,4 +668,4 @@ Visual Studio 2015 诊断事件：RunAsync 在 **fabric:/HelloWorldStatefulAppli
 
 [Service Fabric 应用程序升级](/documentation/articles/service-fabric-application-upgrade/)
 
-<!---HONumber=Mooncake_1121_2016-->
+<!---HONumber=Mooncake_Quality_Review_0125_2017-->

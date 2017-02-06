@@ -14,7 +14,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="multiple"
     ms.date="11/18/2016"
-    wacn.date="12/26/2016"
+    wacn.date="01/25/2017"
     ms.author="cawa" />
 
 # 使用 Visual Studio Team Services 对应用程序进行负载测试
@@ -141,4 +141,4 @@ Visual Studio Team Services 负载测试提供了 API 来帮助你管理负载�
 [8]: ./media/service-fabric-vso-load-test/RunTest2.png
 [9]: ./media/service-fabric-vso-load-test/Graph.png
 
-<!---HONumber=Mooncake_1219_2016-->
+<!---HONumber=Mooncake_Quality_Review_0125_2017-->

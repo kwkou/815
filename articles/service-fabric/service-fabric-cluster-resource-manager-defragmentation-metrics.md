@@ -15,7 +15,7 @@
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
    ms.date="08/19/2016"
-   wacn.date="10/24/2016"
+   wacn.date="01/25/2017"
    ms.author="masnider"/>  
 
 
@@ -61,4 +61,4 @@ ClusterManifest.xml：
 
 [Image1]: ./media/service-fabric-cluster-resource-manager-defragmentation-metrics/balancing-defrag-compared.png
 
-<!---HONumber=Mooncake_1017_2016-->
+<!---HONumber=Mooncake_Quality_Review_0125_2017-->

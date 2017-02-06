@@ -15,7 +15,7 @@
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
    ms.date="10/31/2016"
-   wacn.date="12/12/2016"/>
+   wacn.date="01/25/2017"/>
 
 # 将数据从 SQL Server 载入 Azure SQL 数据仓库 (SSIS)
 
@@ -217,4 +217,4 @@ Visual Studio 将打开并创建新的 Integration Services (SSIS) 项目。然�
 [Visual Studio Community]: https://www.visualstudio.com/vs/community/
 [AdventureWorks 2014 Sample Databases]: https://msftdbprodsamples.codeplex.com/releases/view/125550
 
-<!---HONumber=Mooncake_1205_2016-->
+<!---HONumber=Mooncake_Quality_Review_0125_2017-->

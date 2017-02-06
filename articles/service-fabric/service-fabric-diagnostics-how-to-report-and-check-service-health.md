@@ -15,7 +15,7 @@
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
    ms.date="09/06/2016"
-   wacn.date="10/24/2016"
+   wacn.date="01/25/2017"
    ms.author="toddabel"/>  
 
 
@@ -160,4 +160,4 @@ Visual Studio 中的 Service Fabric 项目模板包含相同的代码。以下�
 ## 后续步骤
 [深入了解 Service Fabric 运行状况](/documentation/articles/service-fabric-health-introduction/)
 
-<!---HONumber=Mooncake_1017_2016-->
+<!---HONumber=Mooncake_Quality_Review_0125_2017-->

@@ -14,7 +14,7 @@
     ms.tgt_pltfrm="NA"
     ms.workload="NA"
     ms.date="10/29/2016"
-    wacn.date="12/26/2016"
+    wacn.date="01/25/2017"
     ms.author="seanmck" />
 
 # Azure Service Fabric 中的灾难恢复
@@ -102,4 +102,4 @@
 
 [sfx-cluster-map]: ./media/service-fabric-disaster-recovery/sfx-clustermap.png
 
-<!---HONumber=Mooncake_1219_2016-->
+<!---HONumber=Mooncake_Quality_Review_0125_2017-->

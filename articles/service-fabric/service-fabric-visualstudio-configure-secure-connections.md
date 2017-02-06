@@ -14,7 +14,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="multiple"
    ms.date="10/08/2015"
-   wacn.date="07/07/2016"
+   wacn.date="01/25/2017"
    ms.author="cawaMS" />
 
 # 从 Visual Studio 配置与 Service Fabric 群集的安全连接
@@ -25,9 +25,9 @@
 
 ## 群集连接类型
 
-Azure Service Fabric 群集支持两种连接：**不安全**连接和**基于 x509 证书**的安全连接。（如果托管在本地环境的 Service Fabric 群集，则还支持 **Windows** 和 **dSTS** 身份验证。） 创建群集时，你必须配置群集连接类型。创建后，无法更改连接类型。
+Azure Service Fabric 群集支持两种连接：不安全连接和基于 x509 证书的安全连接。（如果托管在本地环境的 Service Fabric 群集，则还支持 Windows 和 dSTS 身份验证。） 创建群集时，你必须配置群集连接类型。创建后，无法更改连接类型。
 
-Visual Studio Service Fabric 工具支持所有用于连接到群集来进行发布的身份验证类型。
+Visual Studio Service Fabric 工具支持所有用于连接到群集来进行发布的身份验证类型。有关如何设置安全 Service Fabric 群集的说明，请参阅[从 Azure 门户预览设置 Service Fabric 群集](/documentation/articles/service-fabric-cluster-creation-via-portal/)。
 
 ## 在发布配置文件中配置群集连接
 
@@ -41,9 +41,9 @@ Visual Studio Service Fabric 工具支持所有用于连接到群集来进行发
 
 ### 连接到安全群集
 
-1.	请确保你可以访问目标群集所信任的某个客户端证书。证书通常以个人信息交换 (.pfx) 文件的形式共享。
+1.	请确保你可以访问目标群集所信任的某个客户端证书。证书通常以个人信息交换 (.pfx) 文件的形式共享。有关如何配置服务器以授予客户端访问权限，请参阅[从 Azure 门户预览设置 Service Fabric 群集](/documentation/articles/service-fabric-cluster-creation-via-portal/)。
 
-2.	安装受信任的证书。为此，请双击 .pfx 文件，或使用 PowerShell 脚本 Import-PfxCertificate 来导入证书。将证书安装到 **Cert:\\LocalMachine\\My**。导入证书时，可以接受所有默认设置。
+2.	安装受信任的证书。为此，请双击 .pfx 文件，或使用 PowerShell 脚本 Import-PfxCertificate 来导入证书。将证书安装到 Cert:\\LocalMachine\\My。导入证书时，可以接受所有默认设置。
 
 3.	在项目的快捷菜单上选择“发布...”命令打开“发布 Azure应用程序”对话框，然后选择目标群集。该工具将自动解析连接，并将安全连接参数保存在发布配置文件中。
 
@@ -79,4 +79,4 @@ Visual Studio Service Fabric 工具支持所有用于连接到群集来进行发
 [publishdialog]: ./media/service-fabric-visualstudio-configure-secure-connections/publishdialog.png
 [selectsfcluster]: ./media/service-fabric-visualstudio-configure-secure-connections/selectsfcluster.png
 
-<!---HONumber=Mooncake_0321_2016-->
+<!---HONumber=Mooncake_Quality_Review_0125_2017-->

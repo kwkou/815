@@ -14,7 +14,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="na"
     ms.date="10/18/2016"
-    wacn.date="12/26/2016"
+    wacn.date="01/25/2017"
     ms.author="mcoskun" />
 
 # 备份和还原 Reliable Services 及 Reliable Actors
@@ -199,4 +199,4 @@ Reliable Actors 的备份和还原以 Reliable Services 提供的备份和还原
 * [Reliable Services 配置](/documentation/articles/service-fabric-reliable-services-configuration/)
 - [Reliable Collections 的开发人员参考](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicefabric.data.collections.aspx)
 
-<!---HONumber=Mooncake_1219_2016-->
+<!---HONumber=Mooncake_Quality_Review_0125_2017-->

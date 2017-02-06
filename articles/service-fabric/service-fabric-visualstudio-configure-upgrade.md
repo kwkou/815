@@ -14,7 +14,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="multiple"
     ms.date="11/18/2016"
-    wacn.date="12/26/2016"
+    wacn.date="01/25/2017"
     ms.author="cawa" />
 
 # 在 Visual Studio 中配置 Service Fabric 应用程序的升级
@@ -95,4 +95,4 @@ Service Fabric 应用程序中的每个服务可能有自身的运行状况策�
 ## 后续步骤
 有关部署应用程序的详细信息，请参阅[在 Azure Service Fabric 中部署现有应用程序](/documentation/articles/service-fabric-deploy-existing-app/)。
 
-<!---HONumber=Mooncake_1219_2016-->
+<!---HONumber=Mooncake_Quality_Review_0125_2017-->

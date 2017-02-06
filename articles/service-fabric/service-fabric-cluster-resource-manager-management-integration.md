@@ -15,7 +15,7 @@
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
    ms.date="08/19/2016"
-   wacn.date="11/17/2016"
+   wacn.date="01/25/2017"
    ms.author="masnider"/>  
 
 
@@ -139,4 +139,4 @@ PreferredLocation 约束稍有不同，因此它是唯一设置为“Optimizatio
 ## 后续步骤
 - 参阅 [Service Fabric 群集资源管理器简介](/documentation/articles/service-fabric-cluster-resource-manager-introduction/)，帮助自己入门
 
-<!---HONumber=Mooncake_1017_2016-->
+<!---HONumber=Mooncake_Quality_Review_0125_2017-->

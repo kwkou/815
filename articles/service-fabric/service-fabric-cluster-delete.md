@@ -15,7 +15,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="na"
    ms.date="09/09/2016"
-   wacn.date="10/24/2016"
+   wacn.date="01/25/2017"
    ms.author="chackdan"/>  
 
 
@@ -115,4 +115,4 @@ Service Fabric 群集由群集资源本身及众多其他 Azure 资源组成。�
 
 [TaggedResources]: ./media/service-fabric-cluster-delete/TaggedResources.PNG
 
-<!---HONumber=Mooncake_1017_2016-->
+<!---HONumber=Mooncake_Quality_Review_0125_2017-->

@@ -14,7 +14,7 @@
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
    ms.date="05/17/2016"
-   wacn.date="07/04/2016"
+   wacn.date="01/25/2017"
    ms.author="alanwar"/>
 
 # 有状态 Reliable Services 的诊断功能
@@ -45,4 +45,4 @@ StatefulRunAsyncInvocation、StatefulRunAsyncCompletion 和 StatefulRunAsyncCanc
 
 每当 RunAsync 任务的取消请求花费的时间超过四秒时，都会发出 StatefulRunAsyncSlowCancellation。当服务花费过长时间完成取消时，它会影响在另一个节点快速重启服务的能力。这可能会影响服务的总体可用性。
 
-<!---HONumber=Mooncake_0627_2016-->
+<!---HONumber=Mooncake_Quality_Review_0125_2017-->

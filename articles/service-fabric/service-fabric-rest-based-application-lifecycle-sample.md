@@ -14,7 +14,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="na"
     ms.date="12/2/2016"
-    wacn.date="01/20/2017"
+    wacn.date="01/25/2017"
     ms.author="ryanwi" />  
 
 
@@ -709,5 +709,5 @@
 
 [Service Fabric 应用程序生命周期](/documentation/articles/service-fabric-application-lifecycle/)
 
-<!---HONumber=Mooncake_0116_2017-->
-<!--update: wording update-->
+<!---HONumber=Mooncake_Quality_Review_0125_2017-->
+<!--update:-->

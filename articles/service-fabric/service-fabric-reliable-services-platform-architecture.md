@@ -14,7 +14,7 @@
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
    ms.date="03/30/2016"
-   wacn.date="07/04/2016"
+   wacn.date="01/25/2017"
    ms.author="alanwar"/>
 
 # 有状态和无状态 Reliable Services 的体系结构
@@ -101,4 +101,4 @@ StatefulService 派生自 StatefulServiceBase。StatefulServiceBase 为服务提
 
 [Reliable Services 配置](/documentation/articles/service-fabric-reliable-services-configuration/)
 
-<!---HONumber=Mooncake_0503_2016-->
+<!---HONumber=Mooncake_Quality_Review_0125_2017-->

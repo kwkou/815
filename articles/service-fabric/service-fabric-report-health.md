@@ -14,7 +14,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="na"
    ms.date="09/28/2016"
-   wacn.date="11/28/2016"
+   wacn.date="01/25/2017"
    ms.author="oanapl"/>
 
 
@@ -304,4 +304,4 @@ Service Fabric 报告器可监视感兴趣的已标识条件。它们会根据�
 [Service Fabric 应用程序升级](/documentation/articles/service-fabric-application-upgrade/)
  
 
-<!---HONumber=Mooncake_1121_2016-->
+<!---HONumber=Mooncake_Quality_Review_0125_2017-->

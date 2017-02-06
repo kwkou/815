@@ -15,7 +15,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="na"
    ms.date="10/10/2016"
-   wacn.date="11/28/2016"
+   wacn.date="01/25/2017"
    ms.author="chackdan"/>  
 
 
@@ -245,4 +245,4 @@ Microsoft 将维护 Azure 群集中运行的结构代码和配置。我们将根
 [Create_Manualmode]: ./media/service-fabric-cluster-upgrade/Create_Manualmode.PNG
 [Manage_Automaticmode]: ./media/service-fabric-cluster-upgrade/Manage_Automaticmode.PNG
 
-<!---HONumber=Mooncake_1121_2016-->
+<!---HONumber=Mooncake_Quality_Review_0125_2017-->

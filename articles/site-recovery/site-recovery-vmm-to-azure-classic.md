@@ -15,7 +15,7 @@
     ms.devlang="na"
     ms.topic="hero-article"
     ms.date="11/01/2016"
-    wacn.date="12/12/2016"
+    wacn.date="01/25/2017"
     ms.author="raynew" />  
 
 
@@ -368,4 +368,4 @@ Azure Site Recovery 服务有助于业务连续性和灾难恢复 (BCDR) 策略�
 
 了解[设置恢复计划](/documentation/articles/site-recovery-create-recovery-plans/)和[故障转移](/documentation/articles/site-recovery-failover/)。
 
-<!---HONumber=Mooncake_1205_2016-->
+<!---HONumber=Mooncake_Quality_Review_0125_2017-->
