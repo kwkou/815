@@ -1,5 +1,5 @@
 <properties 
-    pageTitle="服务总线死信队列 | Microsoft Azure" 
+    pageTitle="服务总线死信队列 | Azure" 
     description="Azure 服务总线死信队列概述" 
     services="service-bus" 
     documentationCenter=".net" 
@@ -10,11 +10,11 @@
 <tags
     ms.service="service-bus"
     ms.date="10/03/2016"
-    wacn.date="12/02/2016"/>
+    wacn.date="02/06/2017"/>
 
 # 服务总线死信队列概述
 
-服务总线队列和主题订阅提供了一个辅助子队列，称为死信队列 (DLQ)。死信队列不需要显式创建，并且不能删除或以其他方式独立于主实体进行管理。
+服务总线队列和主题订阅提供了一个辅助子队列，称为*死信队列* (DLQ)。死信队列不需要显式创建，并且不能删除或以其他方式独立于主实体进行管理。
 
 死信队列的用途是存放无法传递给任何接收方的消息或只是存放无法处理的消息。然后，可从 DLQ 中删除和检查这些消息。应用程序可能会在操作员的帮助下，更正问题并重新提交消息，记录出错的实际情况和/或执行更正操作。
 
@@ -63,22 +63,21 @@
 
 下面的代码片段将创建一个消息接收器。在主队列的接收循环中，此代码使用 [Receive(TimeSpan.Zero)](https://msdn.microsoft.com/zh-cn/library/azure/dn130350.aspx) 检索消息，该方法请求代理立即返回随时可用的任何消息或返回空结果。如果此代码收到一条消息，它会立即放弃该消息并递增 `DeliveryCount`。系统将该消息移到 DLQ 后，主队列将为空，并且循环将退出，因为 [ReceiveAsync](https://msdn.microsoft.com/zh-cn/library/azure/dn130350.aspx) 返回 **null**。
 
-```
-var receiver = await receiverFactory.CreateMessageReceiverAsync(queueName, ReceiveMode.PeekLock);
-while(true)
-{
-    var msg = await receiver.ReceiveAsync(TimeSpan.Zero);
-    if (msg != null)
-    {
-        Console.WriteLine("Picked up message; DeliveryCount {0}", msg.DeliveryCount);
-        await msg.AbandonAsync();
-    }
-    else
-    {
-        break;
-    }
-}
-```
+	var receiver = await receiverFactory.CreateMessageReceiverAsync(queueName, ReceiveMode.PeekLock);
+	while(true)
+	{
+	    var msg = await receiver.ReceiveAsync(TimeSpan.Zero);
+	    if (msg != null)
+	    {
+	        Console.WriteLine("Picked up message; DeliveryCount {0}", msg.DeliveryCount);
+	        await msg.AbandonAsync();
+	    }
+	    else
+	    {
+	        break;
+	    }
+	}
+
 
 ## 后续步骤
 
@@ -87,4 +86,4 @@ while(true)
 - [服务总线队列入门](/documentation/articles/service-bus-dotnet-get-started-with-queues/)
 - [比较 Azure 队列和服务总线队列](/documentation/articles/service-bus-azure-and-service-bus-queues-compared-contrasted/)
 
-<!---HONumber=Mooncake_0328_2016-->
+<!---HONumber=Mooncake_Quality_Review_0125_2017-->

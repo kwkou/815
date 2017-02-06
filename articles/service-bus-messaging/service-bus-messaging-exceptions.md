@@ -15,7 +15,7 @@
     ms.workload="na"
     ms.date="09/02/2016"
     ms.author="sethm"
-    wacn.date="12/26/2016" />  
+    wacn.date="02/06/2017" />  
 
 # 服务总线消息传送异常
 
@@ -27,7 +27,7 @@
 
 1.  用户代码错误（[System.ArgumentException](https://msdn.microsoft.com/zh-cn/library/system.argumentexception.aspx)、[System.InvalidOperationException](https://msdn.microsoft.com/zh-cn/library/system.invalidoperationexception.aspx)、[System.OperationCanceledException](https://msdn.microsoft.com/zh-cn/library/system.operationcanceledexception.aspx)、[System.Runtime.Serialization.SerializationException](https://msdn.microsoft.com/zh-cn/library/system.runtime.serialization.serializationexception.aspx)）。常规操作：继续之前尝试修复代码。
 
-2.  设置/配置错误（[Microsoft.ServiceBus.Messaging.MessagingEntityNotFoundException](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.messagingentitynotfoundexception.aspx)、[System.UnauthorizedAccessException](https://msdn.microsoft.com/zh-cn/zh-cn/library/system.unauthorizedaccessexception.aspx)）。常规操作：检查你的配置，必要时进行更改。
+2.  设置/配置错误（[Microsoft.ServiceBus.Messaging.MessagingEntityNotFoundException](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.messagingentitynotfoundexception.aspx)、[System.UnauthorizedAccessException](https://msdn.microsoft.com/zh-cn/library/system.unauthorizedaccessexception.aspx)）。常规操作：检查你的配置，必要时进行更改。
 
 3.  暂时性异常（[Microsoft.ServiceBus.Messaging.MessagingException](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.messagingexception.aspx)、[Microsoft.ServiceBus.Messaging.ServerBusyException](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.serverbusyexception.aspx)、[Microsoft.ServiceBus.Messaging.MessagingCommunicationException](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.messagingcommunicationexception.aspx)）。常规操作：重试操作或通知用户。
 
@@ -129,4 +129,4 @@ Message: The maximum entity size has been reached or exceeded for Topic: ‘xxx-
 - [服务总线基础知识](/documentation/articles/service-bus-fundamentals-hybrid-solutions/)
 - [服务总线体系结构](/documentation/articles/service-bus-architecture/)
 
-<!---HONumber=Mooncake_1219_2016-->
+<!---HONumber=Mooncake_Quality_Review_0125_2017-->

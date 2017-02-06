@@ -16,7 +16,7 @@
 	ms.topic="article" 
 	ms.date="10/04/2016" 
 	ms.author="sethm"
-	wacn.date="11/28/2016"/>  
+	wacn.date="02/06/2017"/>  
 
 
 # 如何将 Java 消息服务 (JMS) API 用于服务总线和 AMQP 1.0
@@ -48,7 +48,7 @@
 
 JMS 使用 Java 命名和目录接口 (JNDI) 创建逻辑名称和物理名称之间的分隔。将使用 JNDI 解析以下两种类型的 JMS 对象：ConnectionFactory 和 Destination。JNDI 使用一个提供程序模型，你可以在其中插入不同目录服务来处理名称解析任务。Apache Qpid JMS AMQP 1.0 库附带一个使用以下格式的属性文件配置的、基于属性文件的简单 JNDI 提供程序。
 
-```
+
 
 	# servicebus.properties – sample JNDI configuration
 		
@@ -60,15 +60,15 @@ JMS 使用 Java 命名和目录接口 (JNDI) 创建逻辑名称和物理名称�
 	# queue.[jndi_name] = [physical_name]
 	# topic.[jndi_name] = [physical_name]
 	queue.QUEUE = queue1
-```
+
 
 #### 配置 ConnectionFactory
 
 用于在 Qpid 属性文件 JNDI 提供程序中定义 **ConnectionFactory** 的条目的格式如下：
 
-```
-connectionfactory.[jndi_name] = [ConnectionURL]
-```
+
+	connectionfactory.[jndi_name] = [ConnectionURL]
+
 
 其中，**[jndi\_name]** 和 **[ConnectionURL]** 具有以下含义：
 
@@ -77,9 +77,9 @@ connectionfactory.[jndi_name] = [ConnectionURL]
 
 **ConnectionURL** 的格式如下：
 
-```
-amqps://[username]:[password]@[namespace].servicebus.chinacloudapi.cn
-```
+
+	amqps://[username]:[password]@[namespace].servicebus.chinacloudapi.cn
+
 
 其中，**[namespace]**、**[username]** 和 **[password]** 的含义如下：
 
@@ -93,14 +93,14 @@ amqps://[username]:[password]@[namespace].servicebus.chinacloudapi.cn
 
 用于在 Qpid 属性文件 JNDI 提供程序中定义目标的项的格式如下：
 
-```
-queue.[jndi_name] = [physical_name]
-```
+
+	queue.[jndi_name] = [physical_name]
+
 或
 
-```
-topic.[jndi_name] = [physical_name]
-```
+
+	topic.[jndi_name] = [physical_name]
+
 
 其中，**[jndi\_name]** 和 **[physical\_name]** 的含义如下：
 
@@ -117,12 +117,12 @@ topic.[jndi_name] = [physical_name]
 
 JNDI 环境是通过将配置信息的哈希表传入到 javax.naming.InitialContext 类的构造函数中来配置的。哈希表中的两个必需元素是初始上下文工厂的类名称和提供程序 URL。以下代码演示了如何配置 JNDI 环境以将基于 Qpid 属性文件的 JNDI 提供程序用于名为 **servicebus.properties** 的属性文件。
 
-```
-Hashtable<String, String> env = new Hashtable<String, String>(); 
-env.put(Context.INITIAL_CONTEXT_FACTORY, "org.apache.qpid.amqp_1_0.jms.jndi.PropertiesFileInitialContextFactory"); 
-env.put(Context.PROVIDER_URL, "servicebus.properties"); 
-InitialContext context = new InitialContext(env);
-``` 
+
+	Hashtable<String, String> env = new Hashtable<String, String>(); 
+	env.put(Context.INITIAL_CONTEXT_FACTORY, "org.apache.qpid.amqp_1_0.jms.jndi.PropertiesFileInitialContextFactory"); 
+	env.put(Context.PROVIDER_URL, "servicebus.properties"); 
+	InitialContext context = new InitialContext(env);
+ 
 
 ### 使用服务总线队列的简单 JMS 应用程序
 
@@ -227,20 +227,20 @@ InitialContext context = new InitialContext(env);
 
 运行应用程序将生成以下输出：
 
-```
-> java SimpleSenderReceiver
-Press [enter] to send a message. Type 'exit' + [enter] to quit.
+
+	> java SimpleSenderReceiver
+	Press [enter] to send a message. Type 'exit' + [enter] to quit.
 	
-Sent message with JMSMessageID = ID:2867600614942270318
-Received message with JMSMessageID = ID:2867600614942270318
+	Sent message with JMSMessageID = ID:2867600614942270318
+	Received message with JMSMessageID = ID:2867600614942270318
 	
-Sent message with JMSMessageID = ID:7578408152750301483
-Received message with JMSMessageID = ID:7578408152750301483
+	Sent message with JMSMessageID = ID:7578408152750301483
+	Received message with JMSMessageID = ID:7578408152750301483
 	
-Sent message with JMSMessageID = ID:956102171969368961
-Received message with JMSMessageID = ID:956102171969368961
-exit
-```
+	Sent message with JMSMessageID = ID:956102171969368961
+	Received message with JMSMessageID = ID:956102171969368961
+	exit
+
 
 ## JMS 和 .NET 之间的跨平台消息传送
 
@@ -261,18 +261,18 @@ exit
 
 #### 从 JMS 应用程序输出
 
-```
-> java SimpleSenderReceiver sendonly
-Press [enter] to send a message. Type 'exit' + [enter] to quit.
-Sent message with JMSMessageID = ID:4364096528752411591
-Sent message with JMSMessageID = ID:459252991689389983
-Sent message with JMSMessageID = ID:1565011046230456854
-exit
-```
+
+	> java SimpleSenderReceiver sendonly
+	Press [enter] to send a message. Type 'exit' + [enter] to quit.
+	Sent message with JMSMessageID = ID:4364096528752411591
+	Sent message with JMSMessageID = ID:459252991689389983
+	Sent message with JMSMessageID = ID:1565011046230456854
+	exit
+
 
 #### 从 .NET 应用程序输出
 
-```
+
 
 	> SimpleSenderReceiver.exe	
 	Press [enter] to send a message. Type 'exit' + [enter] to quit.
@@ -280,7 +280,7 @@ exit
 	Received message with MessageID = 459252991689389983
 	Received message with MessageID = 1565011046230456854
 	exit
-```
+
 
 ### .NET 到 JMS
 
@@ -293,25 +293,25 @@ exit
 
 #### 从 .NET 应用程序输出
 
-```
-> SimpleSenderReceiver.exe sendonly
-Press [enter] to send a message. Type 'exit' + [enter] to quit.
-Sent message with MessageID = d64e681a310a48a1ae0ce7b017bf1cf3	
-Sent message with MessageID = 98a39664995b4f74b32e2a0ecccc46bb
-Sent message with MessageID = acbca67f03c346de9b7893026f97ddeb
-exit
-```
+
+	> SimpleSenderReceiver.exe sendonly
+	Press [enter] to send a message. Type 'exit' + [enter] to quit.
+	Sent message with MessageID = d64e681a310a48a1ae0ce7b017bf1cf3	
+	Sent message with MessageID = 98a39664995b4f74b32e2a0ecccc46bb
+	Sent message with MessageID = acbca67f03c346de9b7893026f97ddeb
+	exit
+
 
 #### 从 JMS 应用程序输出
 
-```
-> java SimpleSenderReceiver	
-Press [enter] to send a message. Type 'exit' + [enter] to quit.
-Received message with JMSMessageID = ID:d64e681a310a48a1ae0ce7b017bf1cf3
-Received message with JMSMessageID = ID:98a39664995b4f74b32e2a0ecccc46bb
-Received message with JMSMessageID = ID:acbca67f03c346de9b7893026f97ddeb
-exit
-```
+
+	> java SimpleSenderReceiver	
+	Press [enter] to send a message. Type 'exit' + [enter] to quit.
+	Received message with JMSMessageID = ID:d64e681a310a48a1ae0ce7b017bf1cf3
+	Received message with JMSMessageID = ID:98a39664995b4f74b32e2a0ecccc46bb
+	Received message with JMSMessageID = ID:acbca67f03c346de9b7893026f97ddeb
+	exit
+
 
 ## 不受支持的功能和限制
 
@@ -336,4 +336,4 @@ exit
 * [服务总线 AMQP 1.0 开发人员指南](/documentation/articles/service-bus-amqp-dotnet/)
 * [如何使用 Service Bus 队列](/documentation/articles/service-bus-dotnet-get-started-with-queues/)
 
-<!---HONumber=Mooncake_0104_2016-->
+<!---HONumber=Mooncake_Quality_Review_0125_2017-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.workload="na"
 	ms.date="07/14/2016"
-	wacn.date="01/23/2017"
+	wacn.date="02/06/2017"
 	ms.author="sethm" />
 
 # 使用事件中心流式处理热路径中的 Azure 诊断数据
@@ -39,7 +39,7 @@ Azure 诊断提供了灵活的方法用于收集来自云服务虚拟机 (VM) �
 
 从 Azure SDK 2.9 和相应的 Azure Tools for Visual Studio 开始，使用事件中心接收 Azure 诊断就受云服务、VM、虚拟机规模集和 Service Fabric 支持。
 
-- Azure 诊断扩展 1.6（[用于 .NET 2.9的 Azure SDK或更高版本](/downloads/)默认以此为目标）
+- Azure 诊断扩展 1.6（[用于 .NET 的 Azure SDK 2.9 或更高版本](/downloads/)默认以此为目标）
 - [Visual Studio 2013 或更高版本](https://www.visualstudio.com/downloads/download-visual-studio-vs.aspx)
 - 应用程序中使用 *.wadcfgx* 文件和以下任一方法的 Azure 诊断现有配置：
 	- Windows PowerShell：[使用 PowerShell 在 Azure 云服务中启用诊断](/documentation/articles/cloud-services-diagnostics-powershell/)
@@ -71,7 +71,7 @@ Azure 诊断提供了灵活的方法用于收集来自云服务虚拟机 (VM) �
 
 `SharedAccessKeyName` 值必须与**事件中心**命名空间中定义的共享访问签名 (SAS) 密钥和策略相匹配。浏览到[Azure 经典管理门户](https://manage.windowsazure.cn)中的“事件中心”仪表板，单击“配置”选项卡，然后设置具有“发送”权限的命名策略（例如 “SendRule”）。**StorageAccount** 也已在 **PrivateConfig** 中声明。如果这里的值有效，就不需要更改。在本示例中，我们将值保留为空，这表示下游资产将设置这些值。例如，*ServiceConfiguration.Cloud.cscfg* 环境配置文件会设置适合环境的名称和密钥。
 
-> [AZURE.WARNING] 事件中心 SAS 密钥以纯文本形式存储在 *.wadcfgx* 文件中。通常，系统会将此密钥签入源代码管理，或作为生成服务器中的资产提供，因此应该适当地保护它。建议在此处使用具有仅发送权限的 SAS 密钥，使恶意用户只能写入事件中心，而无法侦听或进行管理。
+> [AZURE.WARNING] 事件中心 SAS 密钥以纯文本形式存储在 *.wadcfgx* 文件中。通常，系统会将此密钥签入源代码管理，或作为生成服务器中的资产提供，因此应该适当地保护它。建议在此处使用具有“仅发送”权限的 SAS 密钥，使恶意用户只能写入事件中心，而无法侦听或进行管理。
 
 ## 配置 Azure 诊断日志和指标以使用事件中心接收
 如前所述，所有默认和自定义诊断数据（即指标和日志）会在配置的时间间隔自动接收到 Azure 存储空间。使用事件中心及任何其他接收器时，可以指定层次结构中要使用事件中心接收的任何根节点或叶节点。这包括 ETW 事件、性能计数器、Windows 事件日志和应用程序日志。
@@ -302,5 +302,5 @@ Visual Studio 提供最简单的路径供你部署应用程序和事件中心接
 
 [0]: ./media/event-hubs-streaming-azure-diags-data/dashboard.png
 
-<!---HONumber=Mooncake_0116_2017-->
+<!---HONumber=Mooncake_Quality_Review_0125_2017-->
 <!--Update_Description:update wording-->

@@ -14,7 +14,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="na"
     ms.date="11/23/2016"
-    wacn.date="01/13/2017"
+    wacn.date="02/06/2017"
     ms.author="andbuc" />  
 
 
@@ -88,5 +88,5 @@
 
 [lnk-setupdevbox]: https://github.com/Azure/azure-iot-gateway-sdk/blob/master/doc/devbox_setup.md
 
-<!---HONumber=Mooncake_0109_2017-->
+<!---HONumber=Mooncake_Quality_Review_0125_2017-->
 <!--Update_Description:update wording-->
