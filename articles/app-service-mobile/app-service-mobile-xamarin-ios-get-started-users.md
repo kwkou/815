@@ -45,9 +45,8 @@
 
 1. 在客户端项目中，打开文件 **QSTodoService.cs**，在 QSTodoService 类中添加以下 using 语句和带访问器的 `MobileServiceUser`：
 
-	```
+
 		using UIKit;
-	```
 
 		// Logged in user
 		private MobileServiceUser user;
@@ -68,7 +67,7 @@
             }
         }
 
-	>[AZURE.NOTE] 如果使用的标识提供者不是 Microsoft，请将传递给上述 **LoginAsync** 的值更改为下列其中一项：_MicrosoftAccount_ 或 _WindowsAzureActiveDirectory_。
+	>[AZURE.NOTE] 如果使用的标识提供者不是 Microsoft，请将传递给上述 **LoginAsync** 的值更改为下列其中一项：_MicrosoftAccount_ 或 _WindowsAzureActiveDirectory_ 。
 
 3. 打开 **QSTodoListViewController.cs**。修改 **ViewDidLoad** 的方法定义，删除接近结尾处对 **RefreshAsync()** 的调用：
 

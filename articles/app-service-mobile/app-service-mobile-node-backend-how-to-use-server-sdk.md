@@ -111,7 +111,7 @@ Visual Studio 2015 需要使用一个扩展在 IDE 中开发 Node.js 应用程�
 
 6. 创建第一个 Node.js 应用程序时，可能需要刷新 npm 目录。如有需要，可单击“刷新”。
 
-7. 在搜索框中输入 _azure-mobile-apps_。单击“azure-mobile-apps 2.0.0”包，然后单击“安装包”。
+7. 在搜索框中输入 _azure-mobile-apps_ 。单击“azure-mobile-apps 2.0.0”包，然后单击“安装包”。
 
 	![安装新的 npm 包][2]  
 
