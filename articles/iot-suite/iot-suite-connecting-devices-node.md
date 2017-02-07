@@ -31,6 +31,8 @@
    
    * package.json
    * remote\_monitoring.js
+
+
 3. 打开 remote\_monitoring.js 文件并查找以下变量：
 
     
