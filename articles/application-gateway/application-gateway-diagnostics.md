@@ -16,7 +16,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="infrastructure-services"
     ms.date="12/13/2016"
-    wacn.date="01/03/2017"
+    wacn.date="01/25/2017"
     ms.author="amitsriva" />  
 
 
@@ -250,4 +250,4 @@ Azure 默认生成此日志（以前称为“操作日志”）。日志在 Azur
 [8]: ./media/application-gateway-diagnostics/figure8.png
 [9]: ./media/application-gateway-diagnostics/figure9.png
 
-<!---HONumber=Mooncake_1226_2016-->
+<!---HONumber=Mooncake_Quality_Review_0125_2017-->
