@@ -101,7 +101,7 @@ HDInsight 版本用于确定此群集所用的 HDInsight 版本。有关详细�
 使用 HDInsight 群集时，可以在群集创建期间配置三个用户帐户。
 
 * 可以借助 [Azure Resource Manager](/documentation/articles/resource-group-overview/) 以组（称为 Azure 资源组）的形式处理应用程序中的资源。可以通过一个协调的操作为应用程序部署、更新、监视或删除所有资源。
-* HTTP 用户。默认用户名是在 Azure 门户上使用基本配置创建的 *admin*，有时，默认称作“群集用户”。
+* HTTP 用户。默认用户名是在 Azure 门户预览上使用基本配置创建的 *admin*，有时，默认称作“群集用户”。
 * RDP 用户（Windows 群集）使用 RDP 连接到群集。创建帐户时，必须将过期日期设置在从帐户创建日期算起的 90 天内。
 * SSH 用户（Linux 群集）。使用 SSH 连接到群集。群集创建后，可以根据[在 Linux、Unix 或 OS X 中的 HDInsight 上将 SSH 与基于 Linux 的 Hadoop 配合使用](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix/)中的步骤创建更多 SSH 用户帐户。
 
@@ -149,7 +149,7 @@ HDInsight 群集与其默认存储帐户必须位于相同的 Azure 位置。
 > 
 > 
 
-使用 Azure 门户配置群集时，可通过“节点定价层”边栏选项卡查看节点大小。还可以查看不同节点大小的相关成本。以下屏幕截图显示了基于 Linux 的 Hadoop 群集的选项。
+使用 Azure 门户预览配置群集时，可通过“节点定价层”边栏选项卡查看节点大小。还可以查看不同节点大小的相关成本。以下屏幕截图显示了基于 Linux 的 Hadoop 群集的选项。
 
 ![HDInsight VM 节点大小](./media/hdinsight-provision-clusters/hdinsight.node.sizes.png)
 
@@ -277,14 +277,14 @@ HDInsight 元存储无法向后兼容。例如，无法使用 HDInsight 3.3 群�
 > 
 
 ## <a name="customize-clusters-using-script-action"></a> 使用脚本操作自定义群集
-你可以在创建期间通过使用脚本安装其他组件或自定义群集配置。此类脚本可通过**脚本操作**调用，脚本操作是一种配置选项，可通过 Azure 门户、HDInsight Windows PowerShell cmdlet 或 HDInsight .NET SDK 使用。有关详细信息，请参阅 [Customize a HDInsight cluster by using Script Action](/documentation/articles/hdinsight-hadoop-customize-cluster/)（使用脚本操作自定义 HDInsight 群集）。
+你可以在创建期间通过使用脚本安装其他组件或自定义群集配置。此类脚本可通过**脚本操作**调用，脚本操作是一种配置选项，可通过 Azure 门户预览、HDInsight Windows PowerShell cmdlet 或 HDInsight .NET SDK 使用。有关详细信息，请参阅 [Customize a HDInsight cluster by using Script Action](/documentation/articles/hdinsight-hadoop-customize-cluster/)（使用脚本操作自定义 HDInsight 群集）。
 
 ## <a name="cluster-creation-methods"></a> 群集创建方法
 在本文中，你了解了有关创建基于 Windows 的 HDInsight 群集的基本信息。使用下表查找具体信息，了解如何使用最合适的方法创建群集。
 
 | 群集创建方法 | Web 浏览器 | 命令行 | REST API | SDK | Linux、Mac OS X 或 Unix | Windows |
 | --- |:---:|:---:|:---:|:---:|:---:|:---:|
-| [Azure 门户](/documentation/articles/hdinsight-hadoop-create-windows-clusters-portal/) |✔ |&nbsp; |&nbsp; |&nbsp; |✔ |✔ |
+| [Azure 门户预览](/documentation/articles/hdinsight-hadoop-create-windows-clusters-portal/) |✔ |&nbsp; |&nbsp; |&nbsp; |✔ |✔ |
 | [Azure CLI](/documentation/articles/hdinsight-hadoop-create-windows-clusters-cli/) |&nbsp; |✔ |&nbsp; |&nbsp; |✔ |✔ |
 | [Azure PowerShell](/documentation/articles/hdinsight-hadoop-create-windows-clusters-powershell/) |&nbsp; |✔ |&nbsp; |&nbsp; |✔ |✔ |
 | [cURL](/documentation/articles/hdinsight-hadoop-create-linux-clusters-curl-rest/) |&nbsp; |✔ |✔ |&nbsp; |✔ |✔ |

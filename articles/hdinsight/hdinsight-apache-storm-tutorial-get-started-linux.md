@@ -49,7 +49,7 @@ Apache Storm 是一个可扩展的、具有容错能力的分布式实时计算�
 
 本部分使用 Azure Resource Manager 模板创建 HDInsight 3.5 版群集（Storm 1.0.1 版）。有关 HDInsight 版本及其 SLA 的信息，请参阅 [HDInsight 组件版本](/documentation/articles/hdinsight-component-versioning/)。有关其他群集创建方法，请参阅 [Create HDInsight clusters](/documentation/articles/hdinsight-provision-clusters/)（创建 HDInsight 群集）。
 
-1. 单击下面的图像可在 Azure 门户中打开模板。
+1. 单击下面的图像可在 Azure 门户预览中打开模板。
    
     <a href="https://portal.azure.cn/#create/Microsoft.Template/uri/https%3A%2F%2Fhditutorialdata.blob.core.windows.net%2Farmtemplates%2Fcreate-linux-based-storm-cluster-in-hdinsight-35.json" target="_blank"><img src="./media/hdinsight-apache-storm-tutorial-get-started-linux/deploy-to-azure.png" alt="Deploy to Azure"></a>
    

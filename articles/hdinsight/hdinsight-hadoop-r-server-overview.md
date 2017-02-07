@@ -67,7 +67,7 @@ HDInsight 群集的 HDFS 文件系统的默认存储可以与 Azure 存储帐户
 在这种情况下，可以在创建群集之后，使用脚本操作来安装其他包。有关详细信息，请参阅 [Creating an HDInsight cluster with R Server](/documentation/articles/hdinsight-hadoop-r-server-get-started/)（创建包含 R Server 的 HDInsight 群集）。
 
 ### 更改 Hadoop Map Reduce 内存设置
-可以在运行 Map Reduce 作业时修改群集，以更改 R Server 的可用内存量。若要修改群集，可以使用通过群集的 Azure 门户门户预览选项卡提供的 Apache Ambari UI。有关如何访问群集的 Ambari UI 的说明，请参阅 [Manage HDInsight clusters using the Ambari Web UI](/documentation/articles/hdinsight-hadoop-manage-ambari/)（使用 Ambari Web UI 管理 HDInsight 群集）。
+可以在运行 Map Reduce 作业时修改群集，以更改 R Server 的可用内存量。若要修改群集，可以使用通过群集的 Azure 门户预览选项卡提供的 Apache Ambari UI。有关如何访问群集的 Ambari UI 的说明，请参阅 [Manage HDInsight clusters using the Ambari Web UI](/documentation/articles/hdinsight-hadoop-manage-ambari/)（使用 Ambari Web UI 管理 HDInsight 群集）。
 
 也可以在 **RxHadoopMR** 的调用中使用 Hadoop 参数更改 R Server 可用的内存量，如下所示：
 

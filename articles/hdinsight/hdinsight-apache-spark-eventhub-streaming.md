@@ -29,7 +29,7 @@ Spark Streaming 可以扩展核心 Spark API，以生成可缩放、高吞吐量
 
 在本教程中，你将学习如何创建 Azure 事件中心，使用以 Java 编写的控制台应用程序将消息引入事件中心，以及使用以 Scala 编写的 Spark 应用程序同时检索这些消息。此应用程序使用通过事件中心流式处理的数据，并将其路由到不同的输出（Azure 存储 Blob、Hive 表和 SQL 表）。
 
-> [AZURE.NOTE] 若要遵循本文中的说明，必须使用两种版本的 Azure 门户。若要创建事件中心，需要使用 [Azure 经典管理门户](https://manage.windowsazure.cn)。若要操作 HDInsight Spark 群集，需要使用 [Azure 门户](https://portal.azure.cn/)。
+> [AZURE.NOTE] 若要遵循本文中的说明，必须使用两种版本的 Azure 门户。若要创建事件中心，需要使用 [Azure 经典管理门户](https://manage.windowsazure.cn)。若要操作 HDInsight Spark 群集，需要使用 [Azure 门户预览](https://portal.azure.cn/)。
 
 **先决条件：**
 

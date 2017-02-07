@@ -67,10 +67,10 @@ Microsoft 还提供了 HDInsight Emulator for Azure（以前称作 *Microsoft HD
 
 **创建 Hadoop 群集**
 
-1. 登录到 [Azure 门户](https://portal.azure.cn/)。
+1. 登录到 [Azure 门户预览](https://portal.azure.cn/)。
 2. 单击“新建”，单击“数据分析”，然后单击“HDInsight”。该门户将打开“新建 HDInsight 群集”边栏选项卡。
 
-    ![在 Azure 门户中创建新群集](./media/hdinsight-hadoop-tutorial-get-started-windows/HDI.CreateCluster.1.png "在 Azure 门户中创建新群集")  
+    ![在 Azure 门户预览中创建新群集](./media/hdinsight-hadoop-tutorial-get-started-windows/HDI.CreateCluster.1.png "在 Azure 门户预览中创建新群集")  
 
 
 3. 输入或选择以下项：
@@ -109,7 +109,7 @@ Microsoft 还提供了 HDInsight Emulator for Azure（以前称作 *Microsoft HD
 
 **从群集仪表板运行 Hive 作业**
 
-1. 登录到 [Azure 门户](https://portal.azure.cn/)。
+1. 登录到 [Azure 门户预览](https://portal.azure.cn/)。
 2. 依次单击“全部浏览”和“HDInsight 群集”查看群集列表，其中包括你刚刚在上一部分中创建的群集。
 3. 单击要用于运行 Hive 作业的群集名称，然后单击边栏选项卡顶部的“仪表板”。
 4. 这会在另一个浏览器选项卡中打开一个网页。输入 Hadoop 用户帐户和密码。默认用户名为 **admin**；密码是你在创建群集时所输入的密码。
@@ -186,7 +186,7 @@ HDInsight 群集提供包括入门库的查询控制台以直接从门户运行�
 
 **运行示例**
 
-1. 在 Azure 门户启动板中，单击刚创建的群集所对应的磁贴。
+1. 在 Azure 门户预览启动板中，单击刚创建的群集所对应的磁贴。
  
 2. 在新的边栏选项卡中，单击“仪表板”。出现提示时，输入群集的管理员用户名和密码。
 

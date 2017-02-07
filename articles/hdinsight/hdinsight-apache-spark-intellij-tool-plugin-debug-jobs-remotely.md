@@ -55,7 +55,7 @@
 
 遵循以下链接中的说明创建 Azure 虚拟网络，然后确认台式机与 Azure 虚拟网络之间的连接。
 
-* [使用 Azure 门户创建具有站点到站点 VPN 连接的 VNet](/documentation/articles/vpn-gateway-howto-site-to-site-resource-manager-portal/)
+* [使用 Azure 门户预览创建具有站点到站点 VPN 连接的 VNet](/documentation/articles/vpn-gateway-howto-site-to-site-resource-manager-portal/)
 * [使用 PowerShell 创建具有站点到站点 VPN 连接的 VNet](/documentation/articles/vpn-gateway-create-site-to-site-rm-powershell/)
 * [使用 PowerShell 配置与虚拟网络的点到站点连接](/documentation/articles/vpn-gateway-howto-point-to-site-rm-ps/)
 

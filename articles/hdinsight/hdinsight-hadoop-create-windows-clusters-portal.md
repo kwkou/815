@@ -2,7 +2,7 @@
 
 <properties
     pageTitle="在 HDInsight 中创建 Hadoop 群集 | Azure"
-    description="了解如何使用 Azure 门户创建 Azure HDInsight 的群集。"
+    description="了解如何使用 Azure 门户预览创建 Azure HDInsight 的群集。"
     services="hdinsight"
     documentationcenter=""
     tags="azure-portal"
@@ -20,10 +20,10 @@
     wacn.date="02/06/2017"
     ms.author="jgao" />
 
-# 使用 Azure 门户在 HDInsight 中创建基于 Windows 的 Hadoop 群集
+# 使用 Azure 门户预览在 HDInsight 中创建基于 Windows 的 Hadoop 群集
 [AZURE.INCLUDE [选择器](../../includes/hdinsight-selector-create-clusters.md)]
 
-了解如何使用 Azure 门户在 HDInsight 中创建 Hadoop 群集。Microsoft [Azure 门户](/documentation/articles/azure-portal-overview/)是一个中心位置，可在其中预配和管理 Azure 资源。Azure 门户是可用于在 HDInsight 中创建基于 Linux 的或基于 Windows 的 Hadoop 群集的工具之一。有关其他群集创建工具和功能，请单击本页顶部的相应选项卡，或参阅[群集创建方法](/documentation/articles/hdinsight-provision-clusters/#cluster-creation-methods)。
+了解如何使用 Azure 门户预览在 HDInsight 中创建 Hadoop 群集。Microsoft [Azure 门户预览](/documentation/articles/azure-portal-overview/)是一个中心位置，可在其中预配和管理 Azure 资源。Azure 门户预览是可用于在 HDInsight 中创建基于 Linux 的或基于 Windows 的 Hadoop 群集的工具之一。有关其他群集创建工具和功能，请单击本页顶部的相应选项卡，或参阅[群集创建方法](/documentation/articles/hdinsight-provision-clusters/#cluster-creation-methods)。
 
 ## 先决条件：
 [AZURE.INCLUDE [delete-cluster-warning](../../includes/hdinsight-delete-cluster-warning.md)]
@@ -38,10 +38,10 @@
 ## 创建群集
 **创建 HDInsight 群集**
 
-1. 登录到 [Azure 门户](https://portal.azure.cn)。
+1. 登录到 [Azure 门户预览](https://portal.azure.cn)。
 2. 单击“新建”，单击“数据分析”，然后单击“HDInsight”。
    
-    ![在 Azure 门户中创建新群集](./media/hdinsight-provision-clusters/HDI.CreateCluster.1.png "在 Azure 门户中创建新群集")  
+    ![在 Azure 门户预览中创建新群集](./media/hdinsight-provision-clusters/HDI.CreateCluster.1.png "在 Azure 门户预览中创建新群集")  
 
 3. 键入或选择以下值：
    
@@ -147,7 +147,7 @@
 
 * [Azure HDInsight 入门](/documentation/articles/hdinsight-hadoop-tutorial-get-started-windows/) - 了解如何开始使用你的 HDInsight 群集
 * [以编程方式提交 Hadoop 作业](/documentation/articles/hdinsight-submit-hadoop-jobs-programmatically/) - 了解如何以编程方式将作业提交到 HDInsight
-* [使用 Azure 门户管理 HDInsight 中的 Hadoop 群集](/documentation/articles/hdinsight-administer-use-management-portal/)
+* [使用 Azure 门户预览管理 HDInsight 中的 Hadoop 群集](/documentation/articles/hdinsight-administer-use-management-portal/)
 
 
 

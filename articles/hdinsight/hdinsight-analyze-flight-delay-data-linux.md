@@ -170,7 +170,7 @@
 6. 若要退出 Beeline，请在提示符处输入 `!quit`。
 
 ## 创建 SQL 数据库
-如果已具备 SQL 数据库，则必须获取服务器名称。可通过选择“SQL 数据库”在 [Azure 门户](https://portal.azure.cn)中找到该名称，然后筛选要使用的数据库的名称。服务器名称在“SERVER”列中列出。
+如果已具备 SQL 数据库，则必须获取服务器名称。可通过选择“SQL 数据库”在 [Azure 门户预览](https://portal.azure.cn)中找到该名称，然后筛选要使用的数据库的名称。服务器名称在“SERVER”列中列出。
 
 如果没有 SQL 数据库，请使用 [SQL 数据库教程：几分钟内即可创建 SQL 数据库](/documentation/articles/sql-database-get-started/)中的信息创建一个。需要保存数据库所使用的服务器名称。
 

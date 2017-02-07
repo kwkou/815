@@ -40,9 +40,9 @@
 
 [AZURE.INCLUDE [provisioningnote](../includes/hdinsight-provisioning.md)]
 
-**使用 Azure 管理门户创建 HBase 群集**
+**使用 Azure 经典管理门户创建 HBase 群集**
 
-1. 登录 [Azure 管理门户][azure-management-portal]。
+1. 登录 [Azure 经典管理门户][azure-management-portal]。
 2. 单击**新建**或左上角的 **+**，然后单击**数据 + 分析**、**“HDInsight”**。
 3. 输入以下值：
 
@@ -82,7 +82,7 @@
 
 **使用 HBase shell**
 
-1. 使用 RDP 连接到 HDInsight 中的 HBase 群集。有关 RDP 说明，请参阅[使用 Azure 管理门户管理 HDInsight 中的 Hadoop 群集][hdinsight-manage-portal]。
+1. 使用 RDP 连接到 HDInsight 中的 HBase 群集。有关 RDP 说明，请参阅[使用 Azure 经典管理门户管理 HDInsight 中的 Hadoop 群集][hdinsight-manage-portal]。
 2. 在 RDP 会话中，单击桌面上的“Hadoop 命令行”快捷方式。
 3. 打开 HBase shell：
 

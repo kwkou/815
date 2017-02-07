@@ -38,7 +38,7 @@ Spark 还可用于执行基于磁盘的传统数据处理。Spark 改进了传�
 
 ## <a name="install"></a>如何安装 Spark？
 
-用于在 HDInsight 群集上安装 Spark 的示例脚本可通过 [https://hdiconfigactions.blob.core.windows.net/sparkconfigactionv03/spark-installer-v03.ps1](https://hdiconfigactions.blob.core.windows.net/sparkconfigactionv03/spark-installer-v03.ps1) 上的只读 Azure 存储 Blob 获得。本部分提供有关如何在通过使用 Azure 门户设置群集时使用示例脚本的说明。
+用于在 HDInsight 群集上安装 Spark 的示例脚本可通过 [https://hdiconfigactions.blob.core.windows.net/sparkconfigactionv03/spark-installer-v03.ps1](https://hdiconfigactions.blob.core.windows.net/sparkconfigactionv03/spark-installer-v03.ps1) 上的只读 Azure 存储 Blob 获得。本部分提供有关如何在通过使用 Azure 门户预览设置群集时使用示例脚本的说明。
 
 > [AZURE.NOTE]该示例脚本仅适用于 HDInsight 3.1 和 3.2 群集。有关 HDInsight 群集版本的详细信息，请参阅 [HDInsight 群集版本](/documentation/articles/hdinsight-component-versioning/)。
 
@@ -78,7 +78,7 @@ Spark 提供用 Scala、Python 和 Java 编写的 API。你还可以使用交互
 ### <a name="sparkshell"></a>使用 Spark shell 来运行交互式查询
 执行以下步骤以从交互式 Spark shell 运行 Spark 查询。在本部分中，我们将对默认情况下在 HDInsight 群集上可用的示例数据文件 (/example/data/gutenberg/davinci.txt) 运行 Spark 查询。
 
-1. 在 Azure 门户中，对你创建的安装有 Spark 的群集启用远程桌面，然后远程连接到该群集。有关说明，请参阅<a href="/documentation/articles/hdinsight-administer-use-management-portal/#connect-to-clusters-using-rdp" target="_blank">使用 RDP 连接到 HDInsight 群集</a>。
+1. 在 Azure 门户预览中，对你创建的安装有 Spark 的群集启用远程桌面，然后远程连接到该群集。有关说明，请参阅<a href="/documentation/articles/hdinsight-administer-use-management-portal/#connect-to-clusters-using-rdp" target="_blank">使用 RDP 连接到 HDInsight 群集</a>。
 
 2. 在远程桌面协议 (RDP) 会话中，从桌面打开 Hadoop 命令行（通过桌面快捷方式），然后导航到 Spark 的安装位置；例如，**C:\apps\dist\spark-1.2.0**。
 
@@ -112,7 +112,7 @@ Spark SQL 允许你使用 Spark 运行以结构化查询语言 (SQL)、HiveQL �
 
 >[AZURE.NOTE]以下示例是根据 **Spark 1.2.0** 创建的，如果你在预配 HDInsight 3.2 群集时运行脚本操作，则将安装该程序。
 
-1. 在 Azure 门户中，对你创建的安装有 Spark 的群集启用远程桌面，然后远程连接到该群集。有关说明，请参阅<a href="/documentation/articles/hdinsight-administer-use-management-portal/#connect-to-clusters-using-rdp" target="_blank">使用 RDP 连接到 HDInsight 群集</a>。
+1. 在 Azure 门户预览中，对你创建的安装有 Spark 的群集启用远程桌面，然后远程连接到该群集。有关说明，请参阅<a href="/documentation/articles/hdinsight-administer-use-management-portal/#connect-to-clusters-using-rdp" target="_blank">使用 RDP 连接到 HDInsight 群集</a>。
 
 2. 在 RDP 会话中，从桌面打开 Hadoop 命令行（通过桌面快捷方式），并导航到 Spark 的安装位置；例如，**C:\apps\dist\spark-1.2.0**。
 

@@ -55,7 +55,7 @@
 
 若要找出特定元素的 JSON 架构，可以遵循以下过程：
 
-1. 打开 [Azure 门户](https://portal.azure.cn)创建 HDInsight 群集。请参阅 [Create Linux-based clusters in HDInsight using the Azure portal](/documentation/articles/hdinsight-hadoop-create-linux-clusters-portal/)（使用 Azure 门户在 HDInsight 中创建基于 Linux 的群集）。
+1. 打开 [Azure 门户预览](https://portal.azure.cn)创建 HDInsight 群集。请参阅 [Create Linux-based clusters in HDInsight using the Azure portal](/documentation/articles/hdinsight-hadoop-create-linux-clusters-portal/)（使用 Azure 门户预览在 HDInsight 中创建基于 Linux 的群集）。
 2. 配置所需的元素，以及要查看其 JSON 架构的元素。
 3. 在单击“创建”之前，请先单击“自动化选项”，如以下屏幕截图中所示：
 
