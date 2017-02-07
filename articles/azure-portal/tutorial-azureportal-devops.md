@@ -34,7 +34,7 @@ Azure 平台提供各式各样的灵活 DevOps（开发运营）工作流。在�
 
 创建一个要在本教程余下部分中使用的、包含 [Azure App Service](/documentation/services/app-service/) 的 Web 应用。首先，你要启用从源代码存储库到正在运行的 Azure 环境的连续部署。
 
-1.  登录到 Azure 门户
+1.  登录到 Azure 门户预览。 
 
 2.  选择“应用程序服务”&gt;“添加”图标并输入名称，选择订阅，然后创建新的资源组作为服务的容器。
 
@@ -51,7 +51,7 @@ Azure 平台提供各式各样的灵活 DevOps（开发运营）工作流。在�
 
 	![image3][image3]
 
-3.  Azure 门户能使连续部署变成只需执行几个简单步骤的轻松过程。在 Azure 门户中，通过刚刚创建的 App Service 对应的图标选择设置。
+3.  Azure 门户能使连续部署变成只需执行几个简单步骤的轻松过程。在 Azure 门户预览中，通过刚刚创建的 App Service 对应的图标选择设置。
 
     ![Image4][image4]
 
@@ -105,7 +105,7 @@ Azure 平台提供各式各样的灵活 DevOps（开发运营）工作流。在�
 
 接下来，对代码基进行一些更改，然后快速部署这些更改。此外，针对 Web 应用设置一些性能测试。
 
-1.  在 Azure 门户中，从导航窗格选择“应用程序服务”，并找到你的 App Service。
+1.  在 Azure 门户预览中，从导航窗格选择“应用程序服务”，并找到你的 App Service。
 
     ![image16][image16]
 
