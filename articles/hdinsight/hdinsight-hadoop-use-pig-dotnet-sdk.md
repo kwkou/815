@@ -26,7 +26,7 @@ HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 中使用 HDInsi
 
 [AZURE.INCLUDE [azure-portal](../includes/hdinsight-azure-portal.md)]
 
-* [使用 HDInsight 中的 .NET SDK for Hadoop 运行 Pig 作业](/documentation/articles/hdinsight-hadoop-use-pig-dotnet-sdk)
+* [使用 HDInsight 中的 .NET SDK for Hadoop 运行 Pig 作业](/documentation/articles/hdinsight-hadoop-use-pig-dotnet-sdk/)
 
 ##<a id="prereq"></a>先决条件
 
@@ -53,7 +53,7 @@ HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 中使用 HDInsi
 
 HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 中使用 HDInsight 群集的操作。
 
-下面的示例使用用户交互式身份验证。若要使用非交互式身份验证，请参阅[创建非交互式身份验证 .NET HDInsight 应用程序](/documentation/articles/hdinsight-create-non-interactive-authentication-dotnet-applications)。
+下面的示例使用用户交互式身份验证。若要使用非交互式身份验证，请参阅[创建非交互式身份验证 .NET HDInsight 应用程序](/documentation/articles/hdinsight-create-non-interactive-authentication-dotnet-applications/)。
 
 1. 打开 Visual Studio 2012 或 2013
 2. 在“文件”菜单中，选择“新建”，然后选择“项目”。
@@ -182,13 +182,13 @@ HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 中使用 HDInsi
 
 有关 HDInsight 中的 Pig 的一般信息。
 
-* [将 Pig 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-pig)
+* [将 Pig 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-pig/)
 
 有关 HDInsight 上的 Hadoop 的其他使用方法的信息。
 
-* [将 Hive 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-hive)
+* [将 Hive 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-hive/)
 
-* [将 MapReduce 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-mapreduce)
+* [将 MapReduce 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-mapreduce/)
 [preview-portal]: https://portal.azure.cn/
 
 <!---HONumber=Mooncake_Quality_Review_1215_2016-->
