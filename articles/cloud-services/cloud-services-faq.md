@@ -22,7 +22,7 @@
 # 云服务常见问题
 本文回答了一些关于 Azure 云服务的常见问题。你还可以访问 [Azure 支持 FAQ](http://go.microsoft.com/fwlink/?LinkID=185083) 了解一般的 Azure 定价和支持信息。还可以参阅[云服务 VM 大小页面](/documentation/articles/cloud-services-sizes-specs/)，了解大小信息。
 
-## 证书
+## <a name="certificates"></a> 证书
 
 ### 应该在何处安装我的证书？
 

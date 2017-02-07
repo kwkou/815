@@ -20,7 +20,7 @@
 
 
 # 创建 Azure 函数应用和 Azure 存储帐户
-[Azure Functions](/documentation/articles/functions-overview/) 是一种解决方案，特别适合在云中运行*函数*（小块代码）。Azure 函数应用在 Azure 中托管函数的执行。
+Azure Functions 是一种解决方案，特别适合在云中运行*函数*（小块代码）。Azure 函数应用在 Azure 中托管函数的执行。
 
 ## 执行的操作
 使用 Azure Resource Manager 模板创建 Azure 函数应用和 Azure 存储帐户。Azure 函数应用可侦听 Azure IoT 中心事件、处理传入消息以及将其写入到 Azure 表存储。存储帐户用于从 Azure 表中读取消息的保存副本。如果有问题，可在[故障排除页][troubleshooting]上查找解决方案。
