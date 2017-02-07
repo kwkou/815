@@ -1,22 +1,21 @@
 <properties
-	pageTitle="v2.0 终结点概述 | Azure"
-	description="使用 Microsoft 帐户和 Azure Active Directory 登录的构建应用简介。"
-	services="active-directory"
-	documentationCenter=""
-	authors="dstrockis"
-	manager="mbaldwin"
-	editor=""/>  
-
-
+    pageTitle="v2.0 终结点概述 | Azure"
+    description="使用 Microsoft 帐户和 Azure Active Directory 登录的构建应用简介。"
+    services="active-directory"
+    documentationcenter=""
+    author="dstrockis"
+    manager="mbaldwin"
+    editor="" />
 <tags
-	ms.service="active-directory"
-	ms.workload="identity"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="09/27/2016"
-	wacn.date="11/30/2016"
-	ms.author="dastrock"/>
+    ms.assetid="2dee579f-fdf6-474b-bc2c-016c931eaa27"
+    ms.service="active-directory"
+    ms.workload="identity"
+    ms.tgt_pltfrm="na"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.date="01/07/2017"
+    wacn.date="02/07/2017"
+    ms.author="dastrock" />
 
 # 在单个应用中登录 Microsoft 帐户和 Azure AD 用户
 
@@ -49,4 +48,5 @@
 - [Office 365 REST API 参考](https://msdn.microsoft.com/office/office365/howto/authenticate-Office-365-APIs-using-v2)
 - [Microsoft Graph](https://graph.microsoft.io)
 
-<!---HONumber=Mooncake_1024_2016-->
+<!---HONumber=Mooncake_0120_2017-->
+<!---Update_Description: update meta properties -->

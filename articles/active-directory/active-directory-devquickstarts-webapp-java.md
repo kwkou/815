@@ -1,32 +1,31 @@
 <properties
-	pageTitle="Azure AD Java 入门 | Azure"
-	description="如何生成一个可让用户使用工作或学校帐户登录的 Java Web 应用。"
-	services="active-directory"
-	documentationCenter="java"
-	authors="brandwe"
-	manager="mbaldwin"
-	editor=""/>
-
+    pageTitle="Azure AD Java 入门 | Azure"
+    description="如何生成一个可让用户使用工作或学校帐户登录的 Java Web 应用。"
+    services="active-directory"
+    documentationcenter="java"
+    author="xerners"
+    manager="mbaldwin"
+    editor="" />
 <tags
-	ms.service="active-directory"
-	ms.workload="identity"
-        ms.tgt_pltfrm="na"
-	ms.devlang="java"
-	ms.topic="article"
-	ms.date="09/16/2016"
-	ms.author="brandwe"
-	wacn.date="01/19/2017"/>  
-
+    ms.assetid="2b92b605-9cd5-4b99-bcbb-66c026558119"
+    ms.service="active-directory"
+    ms.workload="identity"
+    ms.tgt_pltfrm="na"
+    ms.devlang="java"
+    ms.topic="article"
+    ms.date="01/07/2017"
+    wacn.date="02/07/2017"
+    ms.author="brandwe" />  
 
 
 # 使用 Azure AD 执行 Java Web 应用登录和注销
-
 [AZURE.INCLUDE [active-directory-devguide](../../includes/active-directory-devguide.md)]
 
-使用 Azure AD，只需编写几行代码，就能简单直接地外包 Web 应用的标识管理，提供单一登录和注销。在 Java Web Apps 中，你可以使用社区驱动 ADAL4J 的 Microsoft 实现来达到此目的。
+使用 Azure AD，只需编写几行代码，就能简单直接地外包 Web 应用的标识管理，提供单一登录和注销。在 Java Web 应用中，你可以使用社区驱动 ADAL4J 的 Microsoft 实现来达到此目的。
 
   现在，我们将使用 ADAL4J 来执行以下操作：
-- 使用 Azure AD 作为标识提供者将用户登录到应用。
+
+- 使用 Azure AD 作为标识提供者程序将用户登录到应用。
 - 显示有关用户的一些信息。
 - 从应用中注销用户。
 
@@ -37,9 +36,9 @@
 3. 使用 ADAL4J 库向 Azure AD 发出登录和注销请求。
 4. 列显有关用户的数据。
 
-若要开始，请[下载应用程序框架](https://github.com/Azure-Samples/active-directory-java-webapp-openidconnect/archive/skeleton.zip)或[下载已完成的示例](https://github.com/Azure-Samples/active-directory-java-webapp-openidconnect/archive/complete.zip)。你还需要一个用于注册应用程序的 Azure AD 租户。如果你没有此租户，请[了解如何获取租户](/documentation/articles/active-directory-howto-tenant/)。
+若要开始，请[下载应用程序框架](https://github.com/Azure-Samples/active-directory-java-webapp-openidconnect/archive/skeleton.zip)或[下载已完成的示例](https://github.com/Azure-Samples/active-directory-java-webapp-openidconnect\\/archive/complete.zip)。你还需要一个用于注册应用程序的 Azure AD 租户。如果你没有此租户，请[了解如何获取租户](/documentation/articles/active-directory-howto-tenant/)。
 
-## 1\.将应用程序注册到 Azure AD
+## 1\.将一个应用程序注册到 Azure AD
 若要使应用程序对用户进行身份验证，你首先需要在租户中注册新的应用程序。
 
 - 登录到 Azure 管理门户。
@@ -48,17 +47,16 @@
 - 单击“应用程序”选项卡，然后在底部抽屉中单击“添加”。
 - 根据提示创建一个新的 **Web 应用程序和/或 WebAPI**。
     - 应用程序的**名称**向最终用户描述你的应用程序
-    - “登录 URL”是应用程序的基本 URL。框架的默认值为 `http://localhost:8080/adal4jsample/`。
-    - “应用程序 ID URI”是应用程序的唯一标识符。约定是使用 `https://<tenant-domain>/<app-name>`，例如 `http://localhost:8080/adal4jsample/`
-- 完成注册后，AAD 将为应用程序分配唯一的客户端标识符。在后面的部分中将会用到此值，因此，请从“配置”选项卡复制此值。
+    - “登录 URL”是应用的基本 URL。框架的默认值为 `http://localhost:8080/adal4jsample/`。
+    - “应用 ID URI”是应用程序的唯一标识符。约定是使用 `https://<tenant-domain>/<app-name>`，例如 `http://localhost:8080/adal4jsample/`
+- 完成注册后，AAD 将为应用分配唯一的客户端标识符。在后面的部分中将会用到此值，因此，请从“配置”选项卡复制此值。
 
-进入门户后，为你的应用创建一个**应用程序机密**并复制该机密。稍后您将需要它。
-
+进入门户后，为你的应用创建一个**应用程序机密**并复制该机密。稍后将需要它。
 
 ## 2\.使用 Maven 将应用设置为使用 ADAL4J 库和必备组件
 在这里，我们要将 ADAL4J 配置为使用 OpenID Connect 身份验证协议。ADAL4J 将用于发出登录和注销请求、管理用户的会话、获取有关用户的信息，等等。
 
--	在项目的根目录中，打开/创建 `pom.xml`，找到 `// TODO: provide dependencies for Maven` 并替换为以下代码：
+- 在项目的根目录中，打开/创建 `pom.xml`，找到 `// TODO: provide dependencies for Maven` 并替换为以下代码：
 
 	Java
 
@@ -170,10 +168,9 @@
 		</project>
 
 ## 3\.创建 Java Web 应用程序文件 (WEB-INF)
-
 在这里，我们要将 Java Web 应用配置为使用 OpenID Connect 身份验证协议。ADAL4J 库将用于发出登录和注销请求、管理用户的会话、获取有关用户的信息，等等。
 
--	首先，打开位于 `\webapp\WEB-INF` 中的 `web.xml` 文件，并在 xml 中输入应用的配置值。
+- 首先，打开位于 `\webapp\WEB-INF` 中的 `web.xml` 文件，并在 xml 中输入应用的配置值。
 
 	该文件应如下所示：
 
@@ -235,16 +232,18 @@
 
 
 
-    -	The `YOUR_CLIENT_ID` is the **Application Id** assigned to your app in the registration portal.
-    -	The `YOUR_CLIENT_SECRET` is the **Application Secret**  you created in the portal.
-    -   The `YOUR_TENANT_NAME` is the **tenant name** of your app, e.g. contoso.partner.onmschina.cn
+    -    YOUR\_CLIENT\_ID 是在注册门户中为应用分配的**应用程序 ID**。
+    -    YOUR\_CLIENT\_SECRET 是在门户中创建的**应用程序机密**。
+    -    YOUR\_TENANT\_NAME 是应用的**租户名称**，例如“contoso.partner.onmschina.cn”
 
 	将其余的配置参数保持不变。
-
+	
 	> [AZURE.NOTE]
 	从 XML 文件中可以看到，我们要编写一个名为 `mvc-dispatcher` 的 JSP/Servlet Web 应用，每当我们访问 /secure URL 时，该应用就会使用 `BasicFilter`。在编写的代码的其余部分中，可以看到我们将使用 /secure 作为受保护内容的所在位置，并强制向 Azure Active Directory 进行身份验证。
+	> 
+	> 
 
--	接下来，在 `\webapp\WEB-INF` 中创建 `mvc-dispatcher-servlet.xml` 文件并输入以下内容：
+- 接下来，在 `\webapp\WEB-INF` 中创建 `mvc-dispatcher-servlet.xml` 文件并输入以下内容：
 
 	xml
 	
@@ -275,14 +274,13 @@
 这将告知 Web 应用要使用 Spring 以及在哪里查找我们在下面编写的 .jsp 文件。
 
 ## 4\.创建 Java JSP 视图文件（适用于 BasicFilter MVC）
-
 在 WEB-INF 中设置 Web 应用的过程目前只完成了一半。接下来，需要创建 Web 应用将要执行的实际 Java Server 页面文件（已经在配置中提示）。
 
 如果你记得的话，我们已在 XML 配置文件中告知 Java 某个 `/` 资源应该加载 .jsp 文件，并且某个 `/secure` 资源应该通过名为 `BasicFilter` 的筛选器。
 
 现在让我们完成这些步骤。
 
--	首先，请在 `\webapp` 中创建 `index.jsp` 文件，并剪切/粘贴以下内容：
+- 首先，请在 `\webapp` 中创建 `index.jsp` 文件，并剪切/粘贴以下内容：
 
 	jsp
 
@@ -297,7 +295,7 @@
 
 
 
-这只会重定向到筛选器保护的安全页。
+	这只会重定向到筛选器保护的安全页。
 
 - 接下来，在同一个目录中创建 `error.jsp` 文件，用于捕获可能发生的任何错误：
 
@@ -317,8 +315,8 @@
 
 
 - 最后，在 `\webapp` 中创建名为 `\secure` 的文件夹，以生成所需的安全网页，因此，目录现在为 `\webapp\secure`。
+- 然后，在此目录中创建 `aad.jsp` 文件，并剪切/粘贴以下内容：
 
-- 在此目录下，随后创建 `aad.jsp` 文件，并剪切/粘贴以下内容：
 	jsp
 
 		<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -349,15 +347,16 @@
 
 当然，现在需要设置 Java 文件，以便 Servlet 可以执行其工作。
 
-## 5\.创建一些 Java 帮助器文件（适用于 BasicFilter MVC）
-
+## 5\.创建一些 Java 帮助程序文件（适用于 BasicFilter MVC）
 我们的目标是创建一些 Java 文件，用于：
 
 1. 允许用户登录和注销
 2. 获取有关用户的一些数据。
 
-> [AZURE.NOTE] 
+> [AZURE.NOTE]
 为了获取有关用户的数据，我们必须使用 Azure Active Directory 中的图形 API。图形 API 是安全的 Web 服务，可用于检索有关组织（包括个人用户）的数据。这比预先在令牌中填充敏感数据要好，因为这可以确保请求数据的用户已获授权，并且意外获得令牌（从越狱的手机或台式机上的 Web 浏览器缓存）的任何用户不会获取大量有关用户或组织的重要详细信息。
+> 
+> 
 
 让我们编写一些 Java 文件来执行此工作：
 
@@ -504,7 +503,7 @@
 		                        }
 		                    } else {
 		                        if (fieldName.equalsIgnoreCase("password")) {
-		                            obj.put("passwordProfile", new JSONObject("{\"password\": \"" + param + "\"}"));
+		                            obj.put("passwordProfile", new JSONObject("{"password": "" + param + ""}"));
 		                        } else {
 		                            obj.put(fieldName, param);
 		
@@ -745,7 +744,6 @@
 
 
 ## 6\.创建 Java 图形 API 模型文件（适用于 BasicFilter MVC）
-
 如上所述，我们将使用图形 API 来获取有关已登录的用户的数据。为了顺利进行，我们应该创建一个表示**目录对象**的文件以及一个表示**用户**的单独文件，如此便可以使用 Java 的 OO 模式。
 
 1. 创建一个名为 `DirectoryObject.java` 的文件，我们将用它来存储有关任何 DirectoryObject 的基本数据（你稍后可以随意使用它来执行任何其他图形查询）。可以从以下内容中剪切/粘贴此信息：
@@ -1476,11 +1474,10 @@
 		    }
 		
 		}
-	
+
 
 
 ## 8\.创建 BasicFilter 文件（适用于 BasicFilter MVC）
-
 最后，我们可以创建 BasicFilter 文件，以便从视图（JSP 文件）处理请求。
 
 创建名为 `BasicFilter.java` 的文件，其中包含以下内容：
@@ -1733,8 +1730,7 @@ Java
 - `createSessionPrincipal()` - 创建用于访问图形 API 的主体
 - `getRedirectUrl()` - 获取重定向 URL，以将它与你在门户中输入的值进行比较。
 
-##在 Tomcat 中编译并运行示例
-
+## 在 Tomcat 中编译并运行示例
 切换回到根目录，并运行以下命令来生成你刚刚使用 `maven` 组成的示例。这会使用你针对依赖项编写的 `pom.xml` 文件。
 
 `$ mvn package`
@@ -1743,16 +1739,17 @@ Java
 
 `http://localhost:8080/adal4jsample/`
 
-
-> [AZURE.NOTE] 
+> [AZURE.NOTE]
 使用最新的 Tomcat 服务器部署 WAR 非常容易。只要导航到 `http://localhost:8080/manager/` 并遵循有关上载 ``adal4jsample.war` 文件的说明即可。它会为你自动部署正确的终结点。
+> 
+> 
 
-##后续步骤
-
+## 后续步骤
 祝贺你！ 现在，你已创建一个有效的 Java 应用程序，它可以对用户进行身份验证，使用 OAuth 2.0 安全调用 Web API，并获取有关用户的基本信息。如果你尚未这样做，可以在租户中填充一些用户。
 
 [此处以 .zip 格式提供了](https://github.com/Azure-Samples/active-directory-java-webapp-openidconnect/archive/complete.zip)完整示例（不包括配置值），你也可以从 GitHub 克隆该示例：
 
 	git clone --branch complete https://github.com/Azure-Samples/active-directory-java-webapp-openidconnect.git
 
-<!---HONumber=Mooncake_1010_2016-->
+<!---HONumber=Mooncake_0120_2017-->
+<!---Update_Description: wording update -->
