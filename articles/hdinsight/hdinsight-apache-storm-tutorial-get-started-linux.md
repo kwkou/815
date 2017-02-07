@@ -47,7 +47,7 @@ Apache Storm 是一个可扩展的、具有容错能力的分布式实时计算�
 
 ## 创建 Storm 群集
 
-本部分使用 Azure Resource Manager 模板创建 HDInsight 3.5 版群集（Storm 1.0.1 版）。有关 HDInsight 版本及其 SLA 的信息，请参阅 [HDInsight 组件版本](/documentation/articles/hdinsight-component-versioning/)。有关其他群集创建方法，请参阅 [Create HDInsight clusters](/documentation/articles/hdinsight-provision-clusters/)（创建 HDInsight 群集）。
+本部分使用 Azure Resource Manager 模板创建 HDInsight 3.5 版群集（Storm 1.0.1 版）。有关 HDInsight 版本及其 SLA 的信息，请参阅 [HDInsight 组件版本](/documentation/articles/hdinsight-component-versioning/)。有关其他群集创建方法，请参阅 [Create HDInsight clusters](/documentation/articles/hdinsight-hadoop-provision-linux-clusters/)（创建 HDInsight 群集）。
 
 1. 单击下面的图像可在 Azure 门户预览中打开模板。
    
@@ -212,7 +212,7 @@ Storm UI 提供一个 Web 界面用于处理正在运行的拓扑，你的 HDIns
 [stormstarter]: https://github.com/apache/storm/tree/master/examples/storm-starter
 [stormjavadocs]: https://storm.incubator.apache.org/apidocs/
 [azureportal]: https://manage.windowsazure.cn/
-[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters/
+[hdinsight-provision]: /documentation/articles/hdinsight-hadoop-provision-linux-clusters/
 [preview-portal]: https://portal.azure.cn/
 
 <!---HONumber=Mooncake_1205_2016-->

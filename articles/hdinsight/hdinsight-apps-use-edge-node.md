@@ -54,7 +54,7 @@
         }
     ],
 
-如示例中所示，可以选择性地调用[脚本操作](/documentation/articles/hdinsight-hadoop-customize-cluster/)来执行其他配置，例如，在边缘节点中安装 [Apache Hue](/documentation/articles/hdinsight-hadoop-hue-linux/)。
+如示例中所示，可以选择性地调用[脚本操作](/documentation/articles/hdinsight-hadoop-customize-cluster-linux/)来执行其他配置，例如，在边缘节点中安装 [Apache Hue](/documentation/articles/hdinsight-hadoop-hue-linux/)。
 
 创建边缘节点后，可以使用 SSH 连接到该节点，运行客户端工具访问 HDInsight 中的 Hadoop 群集。
 
@@ -63,7 +63,7 @@
 
 **将空边缘节点添加到现有群集**
 
-1. 创建一个 HDInsight 群集（如果没有）。请参阅 [Hadoop tutorial: Get started using Linux-based Hadoop in HDInsight](/documentation/articles/hdinsight-hadoop-tutorial-get-started-windows/)（Hadoop 教程：开始使用 HDInsight 中基于 Linux 的 Hadoop）
+1. 创建一个 HDInsight 群集（如果没有）。请参阅 [Hadoop tutorial: Get started using Linux-based Hadoop in HDInsight](/documentation/articles/hdinsight-hadoop-linux-tutorial-get-started/)（Hadoop 教程：开始使用 HDInsight 中基于 Linux 的 Hadoop）
 2. 单击以下图像登录到 Azure，然后在 Azure 门户预览中打开 Azure Resource Manager 模板。
    
     <a href="https://portal.azure.cn/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-hdinsight-linux-with-edge-node%2Fazuredeploy.json" target="_blank"><img src="./media/hdinsight-apps-use-edge-node/deploy-to-azure.png" alt="Deploy to Azure"></a>
@@ -82,7 +82,7 @@
 
 **将空边缘节点添加到现有群集**
 
-1. 创建一个 HDInsight 群集（如果没有）。请参阅 [Hadoop tutorial: Get started using Linux-based Hadoop in HDInsight](/documentation/articles/hdinsight-hadoop-tutorial-get-started-windows/)（Hadoop 教程：开始使用 HDInsight 中基于 Linux 的 Hadoop）
+1. 创建一个 HDInsight 群集（如果没有）。请参阅 [Hadoop tutorial: Get started using Linux-based Hadoop in HDInsight](/documentation/articles/hdinsight-hadoop-linux-tutorial-get-started/)（Hadoop 教程：开始使用 HDInsight 中基于 Linux 的 Hadoop）
 2. 单击以下图像登录到 Azure，然后在 Azure 门户预览中打开 Azure Resource Manager 模板。
    
     <a href="https://portal.azure.cn/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-hdinsight-linux-with-edge-node%2Fazuredeploy.json" target="_blank"><img src="./media/hdinsight-apps-use-edge-node/deploy-to-azure.png" alt="Deploy to Azure"></a>
@@ -140,7 +140,7 @@
 * [Install HDInsight applications](/documentation/articles/hdinsight-apps-install-applications/)（安装 HDInsight 应用程序）：了解如何将 HDInsight 应用程序安装到群集。
 * [Install custom HDInsight applications](/documentation/articles/hdinsight-apps-install-custom-applications/)（安装自定义 HDInsight 应用程序）：了解如何将未发布的 HDInsight 应用程序部署到 HDInsight。
 * [MSDN: Install an HDInsight application](https://msdn.microsoft.com/zh-cn/library/mt706515.aspx)（MSDN：安装 HDInsight 应用程序）：了解如何定义 HDInsight 应用程序。
-* [Customize Linux-based HDInsight clusters using Script Action](/documentation/articles/hdinsight-hadoop-customize-cluster/)（使用脚本操作自定义基于 Linux 的 HDInsight 群集）：了解如何使用脚本操作安装其他应用程序。
+* [Customize Linux-based HDInsight clusters using Script Action](/documentation/articles/hdinsight-hadoop-customize-cluster-linux/)（使用脚本操作自定义基于 Linux 的 HDInsight 群集）：了解如何使用脚本操作安装其他应用程序。
 * [Create Linux-based Hadoop clusters in HDInsight using Resource Manager templates](/documentation/articles/hdinsight-hadoop-create-linux-clusters-arm-templates/)（使用 Resource Manager 模板在 HDInsight 中创建基于 Linux 的 Hadoop 群集）：了解如何调用 Resource Manager 模板来创建 HDInsight 群集。
 
 <!---HONumber=Mooncake_1205_2016-->

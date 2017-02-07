@@ -38,7 +38,7 @@ Apache Oozie 是一个管理 Hadoop 作业的工作流/协调系统。该系统�
     >
     > 请按照 [Install and configure Azure PowerShell](https://docs.microsoft.com/powershell/azureps-cmdlets-docs)（安装和配置 Azure PowerShell）中的步骤安装最新版 Azure PowerShell。如果脚本需要修改才能使用与 Azure Resource Manager 配合工作的新 cmdlet，请参阅[迁移到适用于 HDInsight 群集的基于 Azure Resource Manager 的开发工具](/documentation/articles/hdinsight-hadoop-development-using-azure-resource-manager/)，了解详细信息。
 
-* **HDInsight 群集**：请参阅 [Linux 上的 HDInsight 入门](/documentation/articles/hdinsight-hadoop-tutorial-get-started-windows/)
+* **HDInsight 群集**：请参阅 [Linux 上的 HDInsight 入门](/documentation/articles/hdinsight-hadoop-linux-tutorial-get-started/)
 * **Azure SQL 数据库**：将使用本文档中的步骤创建此数据库
 
 ## 示例工作流
@@ -621,7 +621,7 @@ Oozie UI 对于排查 Oozie 作业问题很有帮助，因为它可让你轻松�
 [hdinsight-oozie-coordinator-time]: /documentation/articles/hdinsight-use-oozie-coordinator-time/
 [hdinsight-versions]: /documentation/articles/hdinsight-component-versioning/
 [hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage/
-[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows/
+[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-linux-tutorial-get-started/
 [hdinsight-use-sqoop]: /documentation/articles/hdinsight-use-sqoop/
 [hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1/
 [hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data/

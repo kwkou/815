@@ -25,7 +25,7 @@
 
 [AZURE.INCLUDE [选择器](../../includes/hdinsight-selector-create-clusters.md)]
 
-了解如何使用 Azure Resource Manager (ARM) 模板创建 HDInsight 群集。有关详细信息，请参阅 [Deploy an application with Azure Resource Manager template](/documentation/articles/resource-group-template-deploy/)（使用 Azure Resource Manager 模板部署应用程序）。有关其他群集创建工具和功能，请单击本页顶部的相应选项卡，或参阅[群集创建方法](/documentation/articles/hdinsight-provision-clusters/#cluster-creation-methods)。
+了解如何使用 Azure Resource Manager (ARM) 模板创建 HDInsight 群集。有关详细信息，请参阅 [Deploy an application with Azure Resource Manager template](/documentation/articles/resource-group-template-deploy/)（使用 Azure Resource Manager 模板部署应用程序）。有关其他群集创建工具和功能，请单击本页顶部的相应选项卡，或参阅[群集创建方法](/documentation/articles/hdinsight-hadoop-provision-linux-clusters/#cluster-creation-methods)。
 
 ##先决条件：
 

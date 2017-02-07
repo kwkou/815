@@ -178,8 +178,8 @@ HDInsight 目前仅支持 Ambari 监视功能。Ambari API 1.0 受 HDInsight 版
 [hdinsight-admin-portal]: /documentation/articles/hdinsight-administer-use-management-portal/
 [hdinsight-admin-cli]: /documentation/articles/hdinsight-administer-use-command-line/
 [hdinsight-documentation]: /documentation/services/hdinsight/
-[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows/
-[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters/
+[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-linux-tutorial-get-started/
+[hdinsight-provision]: /documentation/articles/hdinsight-hadoop-provision-linux-clusters/
 
 [img-jobtracker-output]: ./media/hdinsight-monitor-use-ambari-api/hdi.ambari.monitor.jobtracker.output.png
 

@@ -61,7 +61,7 @@
 
 ## 步骤 2：创建 HDInsight Spark 群集
 
-还应该在 Azure HDInsight 上创建属于所创建 Azure 虚拟网络一部分的 Apache Spark 群集。参考 [Create Linux-based clusters in HDInsight](/documentation/articles/hdinsight-provision-clusters/)（在 HDInsight 中创建基于 Linux 的群集）中提供的信息。请选择在上一步骤中创建的 Azure 虚拟网络作为可选配置的一部分。
+还应该在 Azure HDInsight 上创建属于所创建 Azure 虚拟网络一部分的 Apache Spark 群集。参考 [Create Linux-based clusters in HDInsight](/documentation/articles/hdinsight-hadoop-provision-linux-clusters/)（在 HDInsight 中创建基于 Linux 的群集）中提供的信息。请选择在上一步骤中创建的 Azure 虚拟网络作为可选配置的一部分。
 
 ## 步骤 3：验证群集头节点与台式机之间的连接
 

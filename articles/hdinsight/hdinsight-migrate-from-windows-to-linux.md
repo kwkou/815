@@ -35,7 +35,7 @@ HDInsight 群集使用 Ubuntu 长期支持 (LTS) 作为群集中节点的操作�
 ![迁移工作流示意图](./media/hdinsight-migrate-from-windows-to-linux/workflow.png)
 
 1. 请阅读本文档的每个部分，以了解将现有工作流和作业等迁移到基于 Linux 的群集时，可能需要进行的更改。
-2. 创建基于 Linux 的群集作为测试/质量保证环境。有关创建基于 Linux 的群集的详细信息，请参阅 [Create Linux-based clusters in HDInsight](/documentation/articles/hdinsight-provision-clusters/)（在 HDInsight 中创建基于 Linux 的群集）。
+2. 创建基于 Linux 的群集作为测试/质量保证环境。有关创建基于 Linux 的群集的详细信息，请参阅 [Create Linux-based clusters in HDInsight](/documentation/articles/hdinsight-hadoop-provision-linux-clusters/)（在 HDInsight 中创建基于 Linux 的群集）。
 3. 将现有作业、数据源及接收器复制到新环境。有关详细信息，请参阅“将数据复制到测试环境”部分。
 4. 执行验证测试，以确保作业在新群集上按预期工作。
 
@@ -87,7 +87,7 @@ HDInsight 群集使用 Ubuntu 长期支持 (LTS) 作为群集中节点的操作�
 
 | 如果你使用此技术... | 请执行此操作... |
 | --- | --- |
-| **PowerShell**（服务器端脚本，包含群集创建期间使用的脚本操作） |重新编写为 Bash 脚本。有关脚本操作，请参阅 [Customize Linux-based HDInsight with Script Actions](/documentation/articles/hdinsight-hadoop-customize-cluster/)（使用脚本操作自定义基于 Linux 的 HDInsight 群集）和 [Script action development for Linux-based HDInsight](/documentation/articles/hdinsight-hadoop-script-actions-linux/)（针对基于 Linux 的 HDInsight 的脚本操作开发）。 |
+| **PowerShell**（服务器端脚本，包含群集创建期间使用的脚本操作） |重新编写为 Bash 脚本。有关脚本操作，请参阅 [Customize Linux-based HDInsight with Script Actions](/documentation/articles/hdinsight-hadoop-customize-cluster-linux/)（使用脚本操作自定义基于 Linux 的 HDInsight 群集）和 [Script action development for Linux-based HDInsight](/documentation/articles/hdinsight-hadoop-script-actions-linux/)（针对基于 Linux 的 HDInsight 的脚本操作开发）。 |
 | **Azure CLI**（服务器端脚本） |尽管 Azure CLI 可在 Linux 上使用，但它并没有预先安装在 HDInsight 群集头节点上。如果需要使用它来编写服务器端脚本，请参阅 [Install the Azure CLI](/documentation/articles/xplat-cli-install/)（安装 Azure CLI），了解如何在基于 Linux 的平台上进行安装。 |
 | **.NET 组件** |基于 Linux 的 HDInsight 群集不完全支持 .NET。2017 年 10 月 28 日以后创建的 HDInsight 群集上基于 Linux 的 Storm 使用 SCP.NET 框架支持 C# Storm 拓扑。在将来的更新中将添加对 .NET 的其他支持。 |
 | **Win32 组件或其他仅限 Windows 的技术** |具体的指导取决于组件或技术；需要找到与 Linux 兼容的版本、找到替代解决方案，或者重新编写此组件。 |
@@ -108,7 +108,7 @@ HDInsight 群集使用 Ubuntu 长期支持 (LTS) 作为群集中节点的操作�
 * [Use SSH with HDInsight from Linux, Unix, and OS X clients（在 Linux、Unix 和 OS X 客户端中将 SSH 与 HDInsight 配合使用）](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix/)
 
 ### 群集自定义
-配合基于 Linux 的群集使用的**脚本操作**必须以 Bash 脚本编写。尽管脚本操作可在群集创建期间使用，它们也可以用于在基于 Linux 的群集已启动并开始运行之后进行自定义。有关详细信息，请参阅 [Customize Linux-based HDInsight with Script Actions](/documentation/articles/hdinsight-hadoop-customize-cluster/)（使用脚本操作自定义基于 Linux 的 HDInsight 群集）和 [Script action development for Linux-based HDInsight](/documentation/articles/hdinsight-hadoop-script-actions-linux/)（针对基于 Linux 的 HDInsight 的脚本操作开发）。
+配合基于 Linux 的群集使用的**脚本操作**必须以 Bash 脚本编写。尽管脚本操作可在群集创建期间使用，它们也可以用于在基于 Linux 的群集已启动并开始运行之后进行自定义。有关详细信息，请参阅 [Customize Linux-based HDInsight with Script Actions](/documentation/articles/hdinsight-hadoop-customize-cluster-linux/)（使用脚本操作自定义基于 Linux 的 HDInsight 群集）和 [Script action development for Linux-based HDInsight](/documentation/articles/hdinsight-hadoop-script-actions-linux/)（针对基于 Linux 的 HDInsight 的脚本操作开发）。
 
 另一个自定义功能是 **bootstrap**。对于 Windows 群集，这可让你指定其他配合 Hive 使用的库的位置。在创建群集后，这些库可自动配合 Hive 查询使用，而无需使用 `ADD JAR`。
 
@@ -209,7 +209,7 @@ Linux 群集文件系统的布局与基于 Windows 的 HDInsight 群集不同。
       hdfs dfs -put -f script.py wasbs:///path/to/script.py
 
 ## 后续步骤
-* [了解如何创建基于 Linux 的 HDInsight 群集](/documentation/articles/hdinsight-provision-clusters/)
+* [了解如何创建基于 Linux 的 HDInsight 群集](/documentation/articles/hdinsight-hadoop-provision-linux-clusters/)
 * [从 Windows 客户端使用 SSH 连接到基于 Linux 的群集](/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows/)
 * [从 Linux、Unix，或 Mac 客户端使用 SSH 连接到基于 Linux 的群集](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix/)
 * [使用 Ambari 管理基于 Linux 的群集](/documentation/articles/hdinsight-hadoop-manage-ambari/)

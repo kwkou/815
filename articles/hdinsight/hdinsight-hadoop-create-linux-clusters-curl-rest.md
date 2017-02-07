@@ -395,7 +395,7 @@ Azure Resource Manager 模板是描述**资源组**及其包含的所有资源�
 
 ### HBase 群集
 
-* [Get started with HBase on HDInsight（HBase on HDInsight 入门）](/documentation/articles/hdinsight-hbase-tutorial-get-started/)
+* [Get started with HBase on HDInsight（HBase on HDInsight 入门）](/documentation/articles/hdinsight-hbase-tutorial-get-started-linux/)
 * [Develop Java applications for HBase on HDInsight（为 HBase on HDInsight 开发 Java 应用程序）](/documentation/articles/hdinsight-hbase-build-java-maven-linux/)
 
 ### Storm 群集
