@@ -45,7 +45,7 @@
 
 
 ## Azure-CLI 问题
-Azure 命令行接口 (Azure CLI) 为预览版。在[预览版安装指南](https://github.com/Azure/azure-cli/blob/master/doc/preview_install_guide.md)中寻求解决方案。如果命令不按预期工作，请尝试升级到最新版本的 Azure-cli。
+Azure 命令行接口 (Azure CLI) 为预览版。
 
 如果在使用此工具时遇到 Bug，请在 GitHub 存储库的“问题”部分提交[问题](https://github.com/Azure/azure-cli/issues)。
 

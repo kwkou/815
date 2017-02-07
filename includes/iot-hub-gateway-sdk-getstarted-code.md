@@ -59,7 +59,7 @@ int main(int argc, char** argv)
 JSON 设置文件包含要加载的模块的列表和模块之间的链接。每个模块必须指定：
 
 * **name**：模块的唯一名称。
-* **loader**：了解如何加载所需模块的加载程序。加载程序是用于加载各类模块的扩展点。我们提供用于使用本机 C、Node.js、Java 和 .Net 编写的模块的加载程序。Hello World 示例仅使用“本机”加载程序，因为此示例中的所有模块都是使用 C 语言编写的动态库。有关使用由其他各种语言编写的模块的详细信息，请参阅 [Node](https://github.com/Azure/azure-iot-gateway-sdk/blob/develop/samples/nodejs_simple_sample/)、[Java](https://github.com/Azure/azure-iot-gateway-sdk/tree/develop/samples/java_sample) 或 [.Net](https://github.com/Azure/azure-iot-gateway-sdk/tree/develop/samples/dotnet_binding_sample) 示例。
+* **loader**：了解如何加载所需模块的加载程序。加载程序是用于加载各类模块的扩展点。我们提供用于使用本机 C、Node.js、Java 和 .Net 编写的模块的加载程序。Hello World 示例仅使用“本机”加载程序，因为此示例中的所有模块都是使用 C 语言编写的动态库。
     * **name**：用于加载模块的加载程序的名称。
     * **entrypoint**：包含模块的库的路径。在 Linux 上，这是一个 .so 文件，而在 Windows 上，这是一个 .dll 文件。请注意，此入口点特定于所用加载程序的类型。例如，Node.js 加载程序的入口点是 .js 文件，Java 加载程序的入口点是类路径 + 类名称，.Net 加载程序的入口点是程序集名称 + 类名称。
 
