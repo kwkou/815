@@ -4,8 +4,7 @@
     services="active-directory"
     author="MarkusVi"
     documentationcenter="na"
-    manager="femila" />  
-
+    manager="femila" />
 <tags
     ms.assetid="26a6fc54-0153-44fb-b970-9b432c99e9f9"
     ms.service="active-directory"
@@ -13,8 +12,8 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="identity"
-    ms.date="12/16/2016"
-    wacn.date="01/19/2017"
+    ms.date="01/10/2017"
+    wacn.date="02/07/2017"
     ms.author="markvi" />  
 
 
@@ -42,7 +41,7 @@
 - 必须在 Azure Active Directory 中配置根证书颁发机构和任何中间证书颁发机构。
 - 每个证书颁发机构必须有一个可通过面向 Internet 的 URL 引用的证书吊销列表 (CRL)。
 - 必须颁发客户端证书以进行客户端身份验证。
-- 仅对于 Exchange ActiveSync 客户端，客户端证书的“使用者可选名称”字段的主体名称或 RFC822 名称必须为 Exchange Online 中用户的可路由电子邮件地址。Azure Active Directory 会将 RFC822 值映射到目录中的“代理地址”属性。
+- 仅对于 Exchange ActiveSync 客户端，客户端证书的“使用者可选名称”字段的主体名称或 RFC822 名称值必须为 Exchange Online 中用户的可路由电子邮件地址。Azure Active Directory 会将 RFC822 值映射到目录中的“代理地址”属性。
 
 ### Office 移动应用程序支持
 | 应用 | 支持 |
@@ -59,25 +58,26 @@
 
 必须配置联合服务器。
 
-iOS 设备上的 Office 应用需要安装 Azure Authenticator。
+iOS 设备上的 Office 应用程序需要安装 Azure Authenticator。
 
 若要让 Azure Active Directory 吊销客户端证书，ADFS 令牌必须具有以下声明：
 
-- `http://schemas.microsoft.com/ws/2008/06/identity/claims/<serialnumber>`
-（客户端证书的序列号）
-- `http://schemas.microsoft.com/2012/12/certificatecontext/field/<issuer>`
-（客户端证书颁发者的相应字符串）
+- `http://schemas.microsoft.com/ws/2008/06/identity/claims/<serialnumber>`  
+  （客户端证书的序列号）
+- `http://schemas.microsoft.com/2012/12/certificatecontext/field/<issuer>`  
+  （客户端证书颁发者的相应字符串）
 
-如果 ADFS 令牌（或任何其他 SAML 令牌）具有这些声明，Azure Active Directory 会将这些声明添加到刷新令牌中。当需要验证刷新令牌时，此信息可用于检查吊销。
+如果 ADFS 令牌（或任何其他 SAML 令牌）具有这些声明，Azure Active Directory 会将它们添加到刷新令牌中。当需要验证刷新令牌时，此信息可用于检查吊销。
 
 作为最佳做法，应该根据以下内容更新 ADFS 错误页：
 
 - 在 iOS 设备上安装 Azure Authenticator 的要求
 - 有关如何获取用户证书的说明。
 
-有关更多详细信息，请参阅 [Customizing the AD FS Sign-in Pages](https://technet.microsoft.com/zh-cn/library/dn280950.aspx)（自定义 AD FS 登录页）。
+有关更多详细信息，请参阅 [Customizing the AD FS Sign-in Pages（自定义 AD FS 登录页）](https://technet.microsoft.com/zh-cn/library/dn280950.aspx)。
 
-某些 Office 应用（启用了新式身份验证）在请求中向 Azure AD 发送“*prompt=login*”。默认情况下，Azure AD 会在请求中为 ADFS 将其转换为“*wauth=usernamepassworduri*”（要求 ADFS 执行 U/P 身份验证）和“*wfresh=0*”（要求 ADFS 忽略 SSO 状态并执行全新的身份验证）。如果想要为这些应用启用基于证书的身份验证，需要修改默认 Azure AD 行为。只需将联盟域设置中的“*PromptLoginBehavior*”设置为“禁用”即可。可使用 [MSOLDomainFederationSettings](https://docs.microsoft.com/zh-cn/powershell/msonline/v1/set-msoldomainfederationsettings) cmdlet 执行此任务：
+某些 Office 应用（启用了新式身份验证）在请求中向 Azure AD 发送“*prompt=login*”。默认情况下，Azure AD 会在请求中为 ADFS 将其转换为“*wauth=usernamepassworduri*”（要求 ADFS 执行 U/P 身份验证）和“*wfresh=0*”（要求 ADFS 忽略 SSO 状态并执行全新的身份验证）。如果想要为这些应用启用基于证书的身份验证，需要修改默认 Azure AD 行为。只需将联盟域设置中的“*PromptLoginBehavior*”设置为“禁用”即可。
+可使用 [MSOLDomainFederationSettings](https://docs.microsoft.com/zh-cn/powershell/msonline/v1/set-msoldomainfederationsettings) cmdlet 执行此任务：
 
 `Set-MSOLDomainFederationSettings -domainname <domain> -PromptLoginBehavior Disabled`  
 
@@ -117,13 +117,14 @@ iOS 9 或更高版本支持本机 iOS 邮件客户端。若要确定其他所有
     } 
 
 
-若要上传信息，可以通过 Windows PowerShell 使用 Azure AD 模块。下面是添加、删除或修改证书颁发机构的示例。
+若要上载信息，可以通过 Windows PowerShell 使用 Azure AD 模块。  
+下面是添加、删除或修改证书颁发机构的示例。
 
 ### 为 Azure AD 租户配置基于证书的身份验证
 1. 使用管理员特权启动 Windows PowerShell。
-2. 安装 Azure AD 模块。需要安装 [2\.0.0.33 ](https://www.powershellgallery.com/packages/AzureAD/2.0.0.33) 或更高版本。
+2. 安装 Azure AD 模块。需要安装 [2.0.0.33 ](https://www.powershellgallery.com/packages/AzureAD/2.0.0.33) 或更高版本。
    
-        Install-Module -Name AzureADPreview -RequiredVersion 2.0.0.33 
+        Install-Module -Name AzureAD -RequiredVersion 2.0.0.33 
 3. 连接到目标租户：
    
         Connect-AzureAD 
@@ -149,27 +150,27 @@ iOS 9 或更高版本支持本机 iOS 邮件客户端。若要确定其他所有
 ### 删除证书颁发机构
 1. 检索证书颁发机构：
    
-		$c=Get-AzureADTrustedCertificateAuthority
+        $c=Get-AzureADTrustedCertificateAuthority
 2. 删除证书颁发机构的证书：
    
-		Remove-AzureADTrustedCertificateAuthority -CertificateAuthorityInformation $c[2] 
+        Remove-AzureADTrustedCertificateAuthority -CertificateAuthorityInformation $c[2] 
 
 ### 修改证书颁发机构
 1. 检索证书颁发机构：
    
-		$c=Get-AzureADTrustedCertificateAuthority
+        $c=Get-AzureADTrustedCertificateAuthority
 2. 修改证书颁发机构上的属性：
    
-		$c[0].AuthorityType=1 
+        $c[0].AuthorityType=1 
 3. 设置**证书颁发机构**：
    
-		Set-AzureADTrustedCertificateAuthority -CertificateAuthorityInformation $c[0] 
+        Set-AzureADTrustedCertificateAuthority -CertificateAuthorityInformation $c[0] 
 
 ## 测试 Office 移动应用程序
 若要在 Office 移动应用程序上测试证书身份验证，请执行以下操作：
 
 1. 在测试设备上，从应用商店中安装 Office 移动应用程序（例如 OneDrive）。
-2. 确保已向测试设备预配用户证书。
+2. 确保已向测试设备设置用户证书。
 3. 启动应用程序。
 4. 输入用户名，然后选择要使用的用户证书。
 
@@ -188,7 +189,7 @@ iOS 9 或更高版本支持本机 iOS 邮件客户端。若要确定其他所有
 
 1. 配置满足上述要求的 EAS 配置文件。
 2. 在 iOS 设备上安装该配置文件（使用 MDM，如 Intune，或使用 Apple Configurator 应用程序）
-3. 正确安装该配置文件之后，打开本地的邮件应用程序，确认邮件正在同步
+3. 正确安装该配置文件之后，打开本机邮件应用程序，确认邮件正在同步
 
 ## 吊销
 若要吊销客户端证书，Azure Active Directory 会从作为证书颁发机构信息的一部分上传的 URL 中提取证书吊销列表 (CRL)，并将其缓存。CRL 中的上次发布时间戳（“生效日期”属性）用于确保 CRL 仍然有效。将定期引用 CRL，以撤销对该列表中证书的访问权限。
@@ -205,15 +206,16 @@ iOS 9 或更高版本支持本机 iOS 邮件客户端。若要确定其他所有
         connect-msolservice -credential $msolcred 
 2. 检索用户的当前 StsRefreshTokensValidFrom 值：
    
-     	$user = Get-MsolUser -UserPrincipalName test@yourdomain.com` 
-     	$user.StsRefreshTokensValidFrom
+        $user = Get-MsolUser -UserPrincipalName test@yourdomain.com` 
+        $user.StsRefreshTokensValidFrom
 3. 将用户的新 StsRefreshTokensValidFrom 值配置为等于当前时间戳：
    
-     	Set-MsolUser -UserPrincipalName test@yourdomain.com -StsRefreshTokensValidFrom ("03/05/2016")
+        Set-MsolUser -UserPrincipalName test@yourdomain.com -StsRefreshTokensValidFrom ("03/05/2016")
 
 所设日期必须属于将来。如果日期不属于将来，则不会设置 **StsRefreshTokensValidFrom** 属性。如果日期属于将来，**StsRefreshTokensValidFrom** 会设置为当前时间（而不是由 Set-MsolUser 命令指示的日期）。
 
 <!--Image references-->
 [1]: ./media/active-directory-certificate-based-authentication-ios/ic195031.png
 
-<!---HONumber=Mooncake_1226_2016-->
+<!---HONumber=Mooncake_0120_2017-->
+<!---Update_Description: wording and code update -->

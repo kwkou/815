@@ -4,8 +4,7 @@
     services="active-directory"
     author="MarkusVi"
     documentationcenter="na"
-    manager="femila" />  
-
+    manager="femila" />
 <tags
     ms.assetid="c6ad7640-8172-4541-9255-770f39ecce0e"
     ms.service="active-directory"
@@ -13,8 +12,8 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="identity"
-    ms.date="12/16/2016"
-    wacn.date="01/05/2017"
+    ms.date="01/10/2017"
+    wacn.date="02/07/2017"
     ms.author="markvi" />  
 
 
@@ -42,7 +41,7 @@
 - 必须在 Azure Active Directory 中配置根证书颁发机构和任何中间证书颁发机构。
 - 每个证书颁发机构必须有一个可通过面向 Internet 的 URL 引用的证书吊销列表 (CRL)。
 - 必须颁发客户端证书以进行客户端身份验证。
-- 仅对于 Exchange ActiveSync 客户端，客户端证书的“使用者可选名称”字段的主体名称或 RFC822 名称必须为 Exchange Online 中用户的可路由电子邮件地址。Azure Active Directory 会将 RFC822 值映射到目录中的“代理地址”属性。
+- 仅对于 Exchange ActiveSync 客户端，客户端证书的“使用者可选名称”字段的主体名称或 RFC822 名称值必须为 Exchange Online 中用户的可路由电子邮件地址。Azure Active Directory 会将 RFC822 值映射到目录中的“代理地址”属性。
 
 ### Office 移动应用程序支持
 | 应用 | 支持 |
@@ -55,22 +54,24 @@
 | Skype for Business |![勾选标记][1] |
 
 ### 要求
-设备 OS 版本必须为 Android 5.0 (Lollipop) 及更高版本
+设备 OS 版本必须为 Android 5.0 (Lollipop) 及更高版本。
 
 必须配置联合服务器。
 
 若要让 Azure Active Directory 吊销客户端证书，ADFS 令牌必须具有以下声明：
 
-- `http://schemas.microsoft.com/ws/2008/06/identity/claims/<serialnumber>`
-（客户端证书的序列号）
-- `http://schemas.microsoft.com/2012/12/certificatecontext/field/<issuer>`
-（客户端证书颁发者的相应字符串）
+- `http://schemas.microsoft.com/ws/2008/06/identity/claims/<serialnumber>`  
+  （客户端证书的序列号）
+- `http://schemas.microsoft.com/2012/12/certificatecontext/field/<issuer>`  
+  （客户端证书颁发者的相应字符串）
 
-如果 ADFS 令牌（或任何其他 SAML 令牌）具有这些声明，Azure Active Directory 会将这些声明添加到刷新令牌中。当需要验证刷新令牌时，此信息可用于检查吊销。
+如果 ADFS 令牌（或任何其他 SAML 令牌）具有这些声明，Azure Active Directory 会将它们添加到刷新令牌中。当需要验证刷新令牌时，此信息可用于检查吊销。
 
-作为最佳做法，你应该使用有关如何获取用户证书的说明来更新 ADFS 错误页。有关更多详细信息，请参阅 [Customizing the AD FS Sign-in Pages](https://technet.microsoft.com/zh-cn/library/dn280950.aspx)（自定义 AD FS 登录页）。
+作为最佳做法，你应该使用有关如何获取用户证书的说明来更新 ADFS 错误页。  
+有关更多详细信息，请参阅 [Customizing the AD FS Sign-in Pages（自定义 AD FS 登录页）](https://technet.microsoft.com/zh-cn/library/dn280950.aspx)。
 
-某些 Office 应用（启用了新式身份验证）在请求中向 Azure AD 发送“*prompt=login*”。默认情况下，Azure AD 会在请求中为 ADFS 将其转换为“*wauth=usernamepassworduri*”（要求 ADFS 执行 U/P 身份验证）和“*wfresh=0*”（要求 ADFS 忽略 SSO 状态并执行全新的身份验证）。如果想要为这些应用启用基于证书的身份验证，需要修改默认 Azure AD 行为。只需将联盟域设置中的“*PromptLoginBehavior*”设置为“禁用”即可。可使用 [MSOLDomainFederationSettings](https://docs.microsoft.com/zh-cn/powershell/msonline/v1/set-msoldomainfederationsettings) cmdlet 执行此任务：
+某些 Office 应用（启用了新式身份验证）在请求中向 Azure AD 发送“*prompt=login*”。默认情况下，Azure AD 会在请求中为 ADFS 将其转换为“*wauth=usernamepassworduri*”（要求 ADFS 执行 U/P 身份验证）和“*wfresh=0*”（要求 ADFS 忽略 SSO 状态并执行全新的身份验证）。如果想要为这些应用启用基于证书的身份验证，需要修改默认 Azure AD 行为。只需将联盟域设置中的“*PromptLoginBehavior*”设置为“禁用”即可。
+可使用 [MSOLDomainFederationSettings](https://docs.microsoft.com/zh-cn/powershell/msonline/v1/set-msoldomainfederationsettings) cmdlet 执行此任务：
 
 `Set-MSOLDomainFederationSettings -domainname <domain> -PromptLoginBehavior Disabled`  
 
@@ -111,13 +112,14 @@
     } 
 
 
-若要上传信息，可以通过 Windows PowerShell 使用 Azure AD 模块。下面是添加、删除或修改证书颁发机构的示例。
+若要上载信息，可以通过 Windows PowerShell 使用 Azure AD 模块。  
+下面是添加、删除或修改证书颁发机构的示例。
 
 ### 为 Azure AD 租户配置基于证书的身份验证
 1. 使用管理员特权启动 Windows PowerShell。
-2. 安装 Azure AD 模块。需要安装 [2\.0.0.33 ](https://www.powershellgallery.com/packages/AzureAD/2.0.0.33) 或更高版本。
+2. 安装 Azure AD 模块。需要安装 [2.0.0.33 ](https://www.powershellgallery.com/packages/AzureAD/2.0.0.33) 或更高版本。
    
-        Install-Module -Name AzureADPreview -RequiredVersion 2.0.0.33 
+        Install-Module -Name AzureAD -RequiredVersion 2.0.0.33
 3. 连接到目标租户：
    
         Connect-AzureAD 
@@ -143,7 +145,7 @@
 ### 删除证书颁发机构
 1. 检索证书颁发机构：
    
-     	$c=Get-AzureADTrustedCertificateAuthority
+        $c=Get-AzureADTrustedCertificateAuthority
 2. 删除证书颁发机构的证书：
    
         Remove-AzureADTrustedCertificateAuthority -CertificateAuthorityInformation $c[2] 
@@ -151,7 +153,7 @@
 ### 修改证书颁发机构
 1. 检索证书颁发机构：
    
-     	$c=Get-AzureADTrustedCertificateAuthority
+        $c=Get-AzureADTrustedCertificateAuthority
 2. 修改证书颁发机构上的属性：
    
         $c[0].AuthorityType=1 
@@ -178,7 +180,7 @@
 通过使用 MDM（例如 Intune）或者手动将 EAS 配置文件中的证书放置在设备上，可以配置 EAS 配置文件并将其放置在设备上。
 
 ### 在 Android 上测试 EAS 客户端应用程序
-若要在 Android 5.0 (Lollipop) 或更高版本上对某个应用程序测试证书身份验证，请执行以下步骤：
+若要在 Android 5.0 (Lollipop) 或更高版本上对某个应用程序进行证书身份验证测试，请执行以下步骤：
 
 1. 在应用程序中配置满足上述要求的 EAS 配置文件。
 2. 正确配置该配置文件后，打开应用程序，确认邮件正在同步。
@@ -198,15 +200,16 @@
         connect-msolservice -credential $msolcred 
 2. 检索用户的当前 StsRefreshTokensValidFrom 值：
    
-     	$user = Get-MsolUser -UserPrincipalName test@yourdomain.com` 
-     	$user.StsRefreshTokensValidFrom
+        $user = Get-MsolUser -UserPrincipalName test@yourdomain.com` 
+        $user.StsRefreshTokensValidFrom
 3. 将用户的新 StsRefreshTokensValidFrom 值配置为等于当前时间戳：
    
-     	Set-MsolUser -UserPrincipalName test@yourdomain.com -StsRefreshTokensValidFrom ("03/05/2016")
+        Set-MsolUser -UserPrincipalName test@yourdomain.com -StsRefreshTokensValidFrom ("03/05/2016")
 
 所设日期必须属于将来。如果日期不属于将来，则不会设置 **StsRefreshTokensValidFrom** 属性。如果日期属于将来，**StsRefreshTokensValidFrom** 会设置为当前时间（而不是由 Set-MsolUser 命令指示的日期）。
 
 <!--Image references-->
 [1]: ./media/active-directory-certificate-based-authentication-android/ic195031.png
 
-<!---HONumber=Mooncake_1226_2016-->
+<!---HONumber=Mooncake_0120_2017-->
+<!---Update_Description: wording and code update -->

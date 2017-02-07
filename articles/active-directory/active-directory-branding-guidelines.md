@@ -14,7 +14,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="identity"
     ms.date="01/07/2017"
-    wacn.date="02/06/2017"
+    wacn.date="02/07/2017"
     ms.author="mbaldwin" />  
 
 
@@ -87,3 +87,4 @@ Microsoft 徽标和“通过 Microsoft 登录”词语的关联可唯一地将 A
 **要**提供让用户注销以及切换到其他用户帐户的方法。虽然大多数人员只有一个由 Microsoft/Facebook/Google/Twitter 提供的个人帐户，但这些人员通常与多个组织相关联。即将推出支持多个登录用户的功能。
 
 <!---HONumber=Mooncake_0120_2017-->
+<!---Update_Description: update meta properties -->

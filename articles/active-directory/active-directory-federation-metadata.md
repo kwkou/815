@@ -14,7 +14,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="01/07/2017"
-    wacn.date="02/06/2017"
+    wacn.date="02/07/2017"
     ms.author="priyamo" />  
 
 
@@ -150,3 +150,4 @@ Azure AD 发布的联合元数据文档可以包含多个签名密钥，例如�
 	  </IDPSSODescriptor>
 
 <!---HONumber=Mooncake_0120_2017-->
+<!---Update_Description: update meta properties -->
