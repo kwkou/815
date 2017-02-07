@@ -15,7 +15,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="na"
     ms.date="11/16/2016"
-    wacn.date="12/20/2016"
+    wacn.date="02/06/2017"
     ms.author="kipandya" />
 
 # 使用 DocumentDB 全局分发数据
@@ -82,4 +82,4 @@ DocumentDB 保证读取延迟小于 10 毫秒，写入延迟小于 15 毫秒，�
 [vldb]: http://www.vldb.org/pvldb/vol8/p1668-shukla.pdf
 [sqlqueries]: /documentation/articles/documentdb-sql-query/
 
-<!---HONumber=Mooncake_1212_2016-->
+<!---HONumber=Mooncake_Quality_Review_0125_2017-->

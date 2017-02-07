@@ -15,7 +15,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="10/31/2016"
-    wacn.date="12/22/2016"
+    wacn.date="02/07/2017"
     ms.author="kgremban" />
 
 # 将 Azure 多重身份验证与 Azure AD 帐户配合使用时的安全最佳实践
@@ -91,4 +91,4 @@ Azure 多重身份验证服务器可用于保护 Azure AD 帐户所访问的云�
 - [Azure 多重身份验证的设置体验](/documentation/articles/multi-factor-authentication-end-user-first-time/)
 - [Azure 多重身份验证常见问题](/documentation/articles/multi-factor-authentication-faq/)
 
-<!---HONumber=Mooncake_1212_2016-->
+<!---HONumber=Mooncake_Quality_Review_0125_2017-->

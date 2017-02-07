@@ -14,8 +14,8 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="08/25/2016" 
-	wacn.date="10/18/2016" 
-	ms.author="mimig"/>  
+	ms.author="mimig"
+   	wacn.date="02/06/2017"/>  
 
 
 # 提升你的 DocumentDB 帐户
@@ -56,4 +56,4 @@
 
 如果你确定需要更多吞吐量（大于 10,000 RU/s）或更多存储（大于 10GB），可以创建分区集合。若要创建分区集合，请参阅[创建集合](/documentation/articles/documentdb-create-collection/)。
 
-<!---HONumber=Mooncake_1010_2016-->
+<!---HONumber=Mooncake_Quality_Review_0125_2017-->

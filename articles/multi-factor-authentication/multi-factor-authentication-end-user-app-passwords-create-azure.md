@@ -14,7 +14,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="08/04/2016"
-	wacn.date="09/12/2016"
+	wacn.date="02/06/2017"
 	ms.author="kgremban"/>
 
 # 在 Azure 门户中为多重身份验证创建应用密码
@@ -35,4 +35,4 @@
 
  
 
-<!---HONumber=Mooncake_0905_2016-->
+<!---HONumber=Mooncake_Quality_Review_0125_2017-->

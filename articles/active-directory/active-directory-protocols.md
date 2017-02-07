@@ -10,7 +10,7 @@
 <tags
 	ms.service="active-directory"
 	ms.date="06/06/2016"
-	wacn.date="07/26/2016"/>
+	wacn.date="02/06/2017"/>
 
 # Active Directory 身份验证协议
 
@@ -34,4 +34,4 @@ Azure Active Directory (Azure AD) 支持多个最广泛使用的身份验证和�
 - [排查身份验证协议问题](/documentation/articles/active-directory-error-handling/)：了解如何解释和解决在使用 OAuth 2.0 和 Azure AD 时遇到的最常见错误。
 - [Azure AD 中 OAuth 2.0 的最佳实践](/documentation/articles/active-directory-oauth-best-practices/)：了解在 Azure AD 中使用 OAuth 2.0 时可以运用的最佳实践，以及如何避免常见错误。
 
-<!---HONumber=AcomDC_0718_2016-->
+<!---HONumber=Mooncake_Quality_Review_0125_2017-->

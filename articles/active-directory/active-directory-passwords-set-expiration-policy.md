@@ -16,7 +16,7 @@
     ms.topic="article"
     ms.date="11/01/2016"
     ms.author="curtand"
-    wacn.date="12/12/2016"/>  
+    wacn.date="02/06/2017"/>  
 
 
 
@@ -59,4 +59,4 @@
 ## 后续步骤
 - **你是否因登录时遇到问题而浏览至此？** 如果是这样，[可按以下方式更改和重置你的密码](/documentation/articles/active-directory-passwords-update-your-own-password/)。
 
-<!---HONumber=Mooncake_1205_2016-->
+<!---HONumber=Mooncake_Quality_Review_0125_2017-->
