@@ -15,8 +15,8 @@
 	ms.devlang="objective-c"
 	ms.topic="article"
 	ms.date="09/16/2016"
-	wacn.date="10/25/2016"
-	ms.author="brandwe"/>  
+	ms.author="brandwe"
+  	wacn.date="02/06/2017"/>  
 
 
 
@@ -30,12 +30,6 @@
 Microsoft 标识平台以及 Microsoft 标识 SDK 能够为你完成所有这些繁琐的工作，并可让你使用 SSO 在自己的应用程序套件中让客户感到满意，或者使用中转站功能和验证器应用程序在整个设备上提供良好的用户体验。
 
 本演练将介绍如何在 SDK 中配置应用程序，以便向客户提供此项优点。
-
-本演练适用于：
-
-* Azure Active Directory
-* Azure Active Directory B2B
-
 
 请注意，以下文档假设已了解如何[在旧版门户中为 Azure Active Directory 预配应用程序](/documentation/articles/active-directory-how-to-integrate/)，并且已将应用程序与 [Microsoft Identity iOS SDK](https://github.com/AzureAD/azure-activedirectory-library-for-objc) 集成。
 
@@ -51,8 +45,8 @@ Microsoft 提供了为来自不同供应商的应用程序之间过渡凭据允�
 
 在设备上访问凭据遵循 Microsoft 标识平台的两种基本模式：
 
-* 非中转站辅助的登录
-* 中转站辅助的登录
+- 非中转站辅助的登录
+- 中转站辅助的登录
 
 #### 非中转站辅助的登录
 
@@ -157,9 +151,9 @@ Microsoft 提供了为来自不同供应商的应用程序之间过渡凭据允�
 若要跨你拥有的应用程序启用 SSO，需要执行以下操作：
 
 1. 确保所有应用程序使用相同的客户端 ID 或应用程序 ID。
-* 确保所有应用程序共享来自 Apple 的相同签名证书，以便可以共享密钥链
-* 请求每个应用程序的相同密钥链授权。
-* 告知 Microsoft 标识 SDK 你要使用的共享密钥链。
+- 确保所有应用程序共享来自 Apple 的相同签名证书，以便可以共享密钥链
+- 请求每个应用程序的相同密钥链授权。
+- 告知 Microsoft 标识 SDK 你要使用的共享密钥链。
 
 #### 对应用套件中的所有应用程序使用相同的客户端 ID/应用程序 ID
 
@@ -309,13 +303,13 @@ Microsoft 标识平台使用 URL 来调用中转站，然后将控制权返回�
 
 ADAL 使用 -canOpenURL: 来检查是否在设备上安装了中转站。在 iOS 9 中，Apple 锁定了应用程序可以查询的方案。需要将“msauth”添加到 `info.plist file` 的 LSApplicationQueriesSchemes 节。
 
-<key>LSApplicationQueriesSchemes</key>
-<array>
-     <string>msauth</string>
-</array>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+	     <string>msauth</string>
+	</array>
 
 ### 你已配置 SSO！
 
 现在，Microsoft 标识 SDK 将自动在应用程序之间共享凭据并调用中转站（如果在设备上存在）。
 
-<!---HONumber=Mooncake_1017_2016-->
+<!---HONumber=Mooncake_Quality_Review_0125_2017-->

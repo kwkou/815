@@ -15,8 +15,8 @@
 	ms.devlang="na"
 	ms.topic="get-started-article"
 	ms.date="09/22/2016"
-	wacn.date="12/16/2016"
-	ms.author="curtand"/>
+	ms.author="curtand"
+	wacn.date="02/06/2017"/>
 
 # 在 Azure Active Directory 中添加来自其他目录或合作伙伴公司的用户
 
@@ -67,9 +67,9 @@
 - **Azure 经典管理门户**：允许身为多个目录的管理员的外部用户管理这些目录。
 - **SharePoint Online**：如果启用外部共享，则允许外部用户访问 SharePoint Online 的已授权资源。
 - **Dynamics CRM**：如果用户通过 PowerShell 获得许可，则允许外部用户访问 Dynamics CRM 中的已授权资源。
-- **Dynamics AX**：如果用户通过 PowerShell 获得许可，则允许外部用户访问 Dynamics AX 中的已授权资源。适用于 Azure AD 外部用户的限制同样适用于 Dynamics AX 中的外部用户。
+- **Dynamics AX**：如果用户通过 PowerShell 获得许可，则允许外部用户访问 Dynamics AX 中的已授权资源。适用于 [Azure AD 外部用户](#known-limitations-of-azure-ad-external-users)的限制同样适用于 Dynamics AX 中的外部用户。
 
-### Azure AD 外部用户的已知限制
+### Azure AD 外部用户的已知限制 <a name="known-limitations-of-azure-ad-external-users"></a>
 
 - 身为管理员的外部用户无法将来自合作伙伴公司的用户添加到其主目录以外的目录（B2B 协作）
 - 外部用户无法同意在其主目录以外的目录中的多租户应用程序
@@ -84,4 +84,4 @@
 - [管理 Azure AD](/documentation/articles/active-directory-administer/)
 - [在 Azure AD 中管理密码](/documentation/articles/active-directory-manage-passwords/)
 
-<!---HONumber=Mooncake_1024_2016-->
+<!---HONumber=Mooncake_Quality_Review_0125_2017-->

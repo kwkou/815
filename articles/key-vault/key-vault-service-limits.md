@@ -15,7 +15,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="identity"
     ms.date="12/06/2016"
-    wacn.date="01/05/2017"
+    wacn.date="02/06/2017"
     ms.author="mbaldwin" />
 
 # Azure 密钥保管库服务限制
@@ -23,4 +23,4 @@
 
 [AZURE.INCLUDE [key-vault-limits](../../includes/key-vault-limits.md)]
 
-<!---HONumber=Mooncake_1226_2016-->
+<!---HONumber=Mooncake_Quality_Review_0125_2017-->

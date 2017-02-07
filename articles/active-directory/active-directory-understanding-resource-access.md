@@ -15,8 +15,8 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="10/10/2016"
-    wacn.date="11/08/2016"
-    ms.author="markusvi"/>  
+    ms.author="markusvi"
+    wacn.date="02/06/2017"/>  
 
 
 
@@ -73,4 +73,4 @@ Azure 中的访问控制首先体现在计费方面。Azure 帐户的所有者�
 [3]: ./media/active-directory-understanding-resource-access/IC707933.png
 [4]: ./media/active-directory-understanding-resource-access/IC707934.png
 
-<!---HONumber=Mooncake_1031_2016-->
+<!---HONumber=Mooncake_Quality_Review_0125_2017-->

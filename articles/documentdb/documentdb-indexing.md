@@ -15,7 +15,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="10/27/2016"
-    wacn.date="12/27/2016"
+    wacn.date="02/06/2017"
     ms.author="arramac" />  
 
 
@@ -68,4 +68,4 @@ DocumentDB 的索引旨在提升存储效率，同时处理多租户。为了追
 - [使用 DocumentDB SQL 进行查询](/documentation/articles/documentdb-sql-query/)
 - 在[此处](/documentation/articles/documentdb-indexing-policies/)了解如何自定义 DocumentDB 索引
 
-<!---HONumber=Mooncake_1219_2016-->
+<!---HONumber=Mooncake_Quality_Review_0125_2017-->

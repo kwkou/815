@@ -15,8 +15,8 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="09/30/2016"
-	wacn.date="11/08/2016"
-	ms.author="dastrock"/>  
+	ms.author="dastrock"
+   	wacn.date="02/06/2017"/>  
 
 
 # v2.0 终结点中的范围、权限和同意
@@ -57,7 +57,7 @@ OpenID Connect 的 v2.0 实现有一些明确定义但未应用到任何特定�
 
 #### OpenId
 
-如果应用使用 [OpenID Connect](/documentation/articles/active-directory-v2-protocols/) 执行登录，则必须请求 `openid` 范围。`openid` 范围在工作帐户同意屏幕上显示为“登录”权限，而在个人 Microsoft 帐户同意屏幕上显示为“查看你的配置文件并使用你的 Microsoft 帐户连接到应用程序和服务”权限。此权限使应用能够以 `sub` 声明的形式接收用户的唯一标识符。它还会向应用提供对用户信息终结点的访问权限。`openid` 范围还可用于在 v2.0 令牌终结点获取 id\_token，该令牌可用于保护应用不同组件之间的 HTTP 调用。
+如果应用使用 [OpenID Connect](/documentation/articles/active-directory-v2-protocols/#openid-connect-sign-in-flow/) 执行登录，则必须请求 `openid` 范围。`openid` 范围在工作帐户同意屏幕上显示为“登录”权限，而在个人 Microsoft 帐户同意屏幕上显示为“查看你的配置文件并使用你的 Microsoft 帐户连接到应用程序和服务”权限。此权限使应用能够以 `sub` 声明的形式接收用户的唯一标识符。它还会向应用提供对用户信息终结点的访问权限。`openid` 范围还可用于在 v2.0 令牌终结点获取 id\_token，该令牌可用于保护应用不同组件之间的 HTTP 调用。
 
 #### 电子邮件
 
@@ -71,7 +71,7 @@ OpenID Connect 的 v2.0 实现有一些明确定义但未应用到任何特定�
 
 [`offline_access` 范围](http://openid.net/specs/openid-connect-core-1_0.html#OfflineAccess)允许应用在较长时间内代表用户访问资源。在公司帐户同意屏幕上，此范围显示为“随时访问你的数据”权限。在个人 Microsoft 帐户同意屏幕上，则显示为“随时访问你的信息”权限。用户批准 `offline_access` 范围后，应用将能够接收来自 v2.0 令牌终结点的刷新令牌。刷新令牌属于长效令牌，可让应用程序在旧的访问令牌过期时获取新的访问令牌。
 
-如果应用未请求 `offline_access` 范围，则收不到 refresh\_tokens。这意味着，当在 [OAuth 2.0 授权代码流](/documentation/articles/active-directory-v2-protocols/)中兑换 authorization\_code 时，只从 `/token` 终结点接收 access\_token。该 access\_token 短时间维持有效（通常是一小时），但最后终将过期。到时，应用必须将用户重定向回到 `/authorize` 终结点以检索新的 authorization\_code。在此重定向期间，根据应用程序的类型，用户或许无需再次输入其凭据或重新同意权限。
+如果应用未请求 `offline_access` 范围，则收不到 refresh\_tokens。这意味着，当在 [OAuth 2.0 授权代码流](/documentation/articles/active-directory-v2-protocols/#oauth2-authorization-code-flow/)中兑换 authorization\_code 时，只从 `/token` 终结点接收 access\_token。该 access\_token 短时间维持有效（通常是一小时），但最后终将过期。到时，应用必须将用户重定向回到 `/authorize` 终结点以检索新的 authorization\_code。在此重定向期间，根据应用程序的类型，用户或许无需再次输入其凭据或重新同意权限。
 
 有关如何获取及使用刷新令牌的详细信息，请参阅 [v2.0 协议参考](/documentation/articles/active-directory-v2-protocols/)。
 
@@ -218,4 +218,4 @@ Microsoft 生态系统中的某些高特权权限可以标记为**受管理员�
 
 有关 OAuth 2.0 协议以及如何获取访问令牌的详细信息，请参阅 [v2.0 终结点协议参考](/documentation/articles/active-directory-v2-protocols/)。
 
-<!---HONumber=Mooncake_1031_2016-->
+<!---HONumber=Mooncake_Quality_Review_0125_2017-->

@@ -16,7 +16,7 @@
     ms.topic="article"
     ms.date="10/31/2016"
     ms.author="anandy" 
-    wacn.date="12/09/2016"/>  
+    wacn.date="02/06/2017"/>  
 
 
 # Azure AD Connect 和联合身份验证
@@ -47,4 +47,4 @@
 - [Azure 中的 AD FS 部署](/documentation/articles/active-directory-aadconnect-azure-adfs/)
 - [使用 Azure 流量管理器在 Azure 中部署高可用性跨地域 AD FS](/documentation/articles/active-directory-adfs-in-azure-with-azure-traffic-manager/)
 
-<!---HONumber=Mooncake_1128_2016-->
+<!---HONumber=Mooncake_Quality_Review_0125_2017-->

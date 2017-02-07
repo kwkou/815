@@ -15,8 +15,8 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="10/04/2016"
-	wacn.date="10/31/2016"
-	ms.author="curtand;jeffsta"/>  
+	ms.author="curtand;jeffsta"
+	wacn.date="02/06/2017"/>  
 
 
 # 管理 Azure Active Directory 中的自定义域名
@@ -83,4 +83,4 @@
 
 -   [管理自定义域名](/documentation/articles/active-directory-add-manage-domain-names/)
 
-<!---HONumber=Mooncake_1024_2016-->
+<!---HONumber=Mooncake_Quality_Review_0125_2017-->

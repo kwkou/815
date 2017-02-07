@@ -14,7 +14,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="big-compute"
     ms.date="11/30/2016"
-    wacn.date="01/24/2017"
+    wacn.date="02/06/2017"
     ms.author="tamram" />  
 
 
@@ -723,5 +723,4 @@ Python
 [10]: ./media/batch-python-tutorial/credentials_storage_sm.png "门户中的存储空间凭据"
 [11]: ./media/batch-python-tutorial/batch_workflow_minimal_sm.png "Batch 解决方案工作流（精简流程图）"
 
-<!---HONumber=Mooncake_0116_2017-->
-<!---Update_Description: wording and code update -->
+<!---HONumber=Mooncake_Quality_Review_0125_2017-->

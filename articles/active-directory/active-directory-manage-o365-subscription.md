@@ -16,7 +16,7 @@
     ms.workload="identity"
     ms.date="11/09/2016"
     ms.author="curtand"
-    wacn.date="12/12/2016"/>  
+    wacn.date="02/06/2017"/>  
 
 
 
@@ -64,4 +64,4 @@
 ## 后续步骤
 有关订阅与目录之间关系的详细信息，请参阅[订阅如何与目录关联](/documentation/articles/active-directory-how-subscriptions-associated-directory/)。
 
-<!---HONumber=Mooncake_1205_2016-->
+<!---HONumber=Mooncake_Quality_Review_0125_2017-->

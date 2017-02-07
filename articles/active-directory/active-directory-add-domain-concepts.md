@@ -15,8 +15,8 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="10/04/2016"
-	wacn.date="10/31/2016"
-	ms.author="curtand;jeffsta"/>  
+	ms.author="curtand;jeffsta"
+	wacn.date="02/06/2017"/>  
 
 
 # Azure Active Directory 中自定义域名的概念性概述
@@ -71,4 +71,4 @@ Azure Web 应用使用其自身的机制来验证域的所有权。必须验证�
 
 -   [使用 Azure AD 图形 API 管理 Azure AD 中的域名](https://msdn.microsoft.com/Library/Azure/Ad/Graph/api/domains-operations)
 
-<!---HONumber=Mooncake_1024_2016-->
+<!---HONumber=Mooncake_Quality_Review_0125_2017-->

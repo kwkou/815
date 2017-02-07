@@ -15,8 +15,8 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="09/30/2016"
-	wacn.date="11/30/2016"
-	ms.author="dastrock"/>  
+	ms.author="dastrock"
+	wacn.date="02/06/2017"/>  
 
 
 # v2.0 终结点的应用类型
@@ -124,6 +124,6 @@ v2.0 终结点目前不支持这些类型的应用，但这项支持已列入开
 ### 链接的 Web API（代理）
 许多体系结构包含需要调用另一个下游 Web API 的 Web API，这两者都受 v2.0 终结点的保护。此方案常见于具有 Web API 后端的本机客户端，该后端将调用 Office 365 或图形 API 等 Microsoft Online 服务。
 
-可以使用 OAuth 2.0 Jwt 持有者凭据授权（也称为[代理流](/documentation/articles/active-directory-v2-protocols/)）来支持这种链接的 Web API 方案。但是，v2.0 终结点中目前尚未实现代理流。若要查看此流在正式版 Azure AD 服务中如何工作，请参阅 [GitHub 上的代理代码示例](https://github.com/AzureADSamples/WebAPI-OnBehalfOf-DotNet)。
+可以使用 OAuth 2.0 Jwt 持有者凭据授权（也称为[代理流](/documentation/articles/active-directory-v2-protocols/#oauth2-on-behalf-of-flow/)）来支持这种链接的 Web API 方案。但是，v2.0 终结点中目前尚未实现代理流。若要查看此流在正式版 Azure AD 服务中如何工作，请参阅 [GitHub 上的代理代码示例](https://github.com/AzureADSamples/WebAPI-OnBehalfOf-DotNet)。
 
-<!---HONumber=Mooncake_1031_2016-->
+<!---HONumber=Mooncake_Quality_Review_0125_2017-->

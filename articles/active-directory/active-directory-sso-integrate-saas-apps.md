@@ -16,8 +16,8 @@
     ms.tgt_pltfrm="na"
     ms.workload="identity"
     ms.date="09/30/2016"
-    wacn.date="11/08/2016"
-    ms.author="curtand"/>  
+    ms.author="curtand"
+    wacn.date="02/06/2017"/>  
 
 
 # 将 Azure Active Directory 单一登录与 SaaS 应用相集成  
@@ -74,4 +74,4 @@ Azure.com 库中还提供了有关所有这些问题的更多详细信息，请�
 
 - [有关 Azure Active Directory 中应用程序管理的文章索引](/documentation/articles/active-directory-apps-index/)
 
-<!---HONumber=Mooncake_1031_2016-->
+<!---HONumber=Mooncake_Quality_Review_0125_2017-->

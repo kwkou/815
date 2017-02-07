@@ -15,7 +15,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="10/27/2016"
-    wacn.date="12/27/2016"
+    wacn.date="02/06/2017"
     ms.author="arramac" />  
 
 
@@ -162,4 +162,4 @@ cs
 - [DocumentDB 限制](/documentation/articles/documentdb-limits/)
 - [DocumentDB 性能提示博客](https://azure.microsoft.com/blog/2015/01/20/performance-tips-for-azure-documentdb-part-1-2/)
 
-<!---HONumber=Mooncake_1219_2016-->
+<!---HONumber=Mooncake_Quality_Review_0125_2017-->

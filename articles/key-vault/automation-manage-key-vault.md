@@ -3,9 +3,9 @@
 	description="了解如何使用 Azure 自动化服务来管理 Azure 密钥保管库。"
 	services="Key-Vault, automation"
 	documentationCenter=""
-	authors="csand-msft"
-	manager="eamono"
-	editor=""/>
+	authors="mgoedtel"
+	manager="jwhit"
+	editor=""/>  
 
 <tags
 	ms.service="key-vault"
@@ -14,7 +14,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="07/29/2016"
-	wacn.date="11/22/2016"
+	wacn.date="02/06/2017"
 	ms.author="magoedte;csand"/>
 
 
@@ -36,10 +36,24 @@ Azure 自动化提供了具有高可靠性和高可用性的工作流执行引�
 
 可以使用 [AzureRM 密钥保管库 cmdlet](https://www.powershellgallery.com/packages/AzureRM.KeyVault/1.1.4) 和 [Azure 经典密钥保管库 cmdlet](https://msdn.microsoft.com/zh-cn/library/azure/dn868052.aspx) 在 Azure 自动化中管理密钥保管库。Azure 自动化中自动提供管理经典密钥保管库所需的 Azure 模块，因此你可以将 [AzureRM-KeyVault 模块](https://www.powershellgallery.com/packages/AzureRM.KeyVault/1.1.4)导入 Azure 自动化中，以便在服务中执行多种密钥保管库管理任务。你还可以将 Azure 自动化中的这些 cmdlet 与其他 Azure 服务的 cmdlet 搭配使用，以自动完成跨 Azure 服务和第三方系统的复杂任务。
 
-使用 Azure 密钥保管库 cmdlet 可以与其他任务一起执行以下任务：创建和配置密钥保管库、创建或导入密钥、创建或更新机密、更新密钥属性、获取密钥或机密、删除密钥或机密。
+使用 Azure 密钥保管库 cmdlet 可以执行其他任务，如这些任务：
+
+- 创建和配置密钥保管库
+- 创建或导入密钥
+- 创建或更新机密
+- 更新密钥的属性
+- 获取密钥或机密
+- 删除密钥或机密
 
 下面是使用 PowerShell 管理密钥保管库的一些示例：
-* [Azure Key Vault - Step by Step（Azure 密钥保管库 - 分步指南）](https://blogs.technet.microsoft.com/kv/2015/06/02/azure-key-vault-step-by-step)
-* [Setting Up and Configuring an Azure Key Vault（设置和配置 Azure 密钥保管库）](https://www.simple-talk.com/cloud/platform-as-a-service/setting-up-and-configuring-an-azure-key-vault)
+- [Azure Key Vault - Step by Step（Azure 密钥保管库 - 分步指南）](https://blogs.technet.microsoft.com/kv/2015/06/02/azure-key-vault-step-by-step/)
+- [Setting Up and Configuring an Azure Key Vault（设置和配置 Azure 密钥保管库）](https://www.simple-talk.com/cloud/platform-as-a-service/setting-up-and-configuring-an-azure-key-vault/)
 
-<!---HONumber=Mooncake_0620_2016-->
+
+## 后续步骤
+
+在了解 Azure 自动化 以及如何使用它来管理 Azure 密钥保管库的基础知识后，请使用以下链接了解有关 Azure 自动化的更多信息。
+
+- 请参阅 [Azure 密钥保管库 PowerShell 脚本](https://gallery.technet.microsoft.com/scriptcenter/site/search?query=azure%20key%20vault&f%5B0%5D.Value=azure%20key%20vault&f%5B0%5D.Type=SearchText&ac=5)。
+
+<!---HONumber=Mooncake_Quality_Review_0125_2017-->

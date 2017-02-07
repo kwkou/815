@@ -16,7 +16,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="10/18/2016"
-    wacn.date="12/21/2016"
+    wacn.date="02/06/2017"
     ms.author="jimpark; markgal;genli" />  
 
 
@@ -130,4 +130,4 @@ VM 备份依赖于向底层存储发出快照命令。如果备份无法访问�
 | VM 在运行时使用了很高的 CPU 或内存。 |如果 VM 在运行时使用了很高的 CPU（使用率超过 90%）或内存，快照任务将排入队列、延迟并最终超时。在这种情况下，请尝试进行按需备份。 |
 | VM 无法从 DHCP 获取主机/结构地址。 |必须在来宾内启用 DHCP，才能正常进行 IaaS VM 备份。如果 VM 无法从 DHCP 响应 245 获取主机/结构地址，则无法下载或运行任何扩展。如果需要静态专用 IP 地址，你应该通过平台配置该 IP。VM 内的 DHCP 选项应保持启用。查看有关[设置静态内部专用 IP](/documentation/articles/virtual-networks-reserved-private-ip/) 的详细信息。 |
 
-<!---HONumber=Mooncake_1212_2016-->
+<!---HONumber=Mooncake_Quality_Review_0125_2017-->

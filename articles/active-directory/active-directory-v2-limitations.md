@@ -15,8 +15,8 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="09/30/2016"
-	wacn.date="11/08/2016"
-	ms.author="dastrock"/>
+	ms.author="dastrock"
+	wacn.date="02/06/2017"/>
 
 # 我是否应使用 v2.0 终结点？
 
@@ -131,4 +131,4 @@ v2.0 终结点尚不支持针对移动和本机应用程序的设备身份验证
 ##### 针对联合租户的 Windows 集成身份验证
 如果已在 Windows 应用程序中使用 ADAL（和原始的 Azure AD 终结点），则可能已经使用了所谓的 SAML 断言授予。此授予允许联合 Azure AD 租户的用户能够使用其本地 Active Directory 实例以无提示方式进行身份验证，而不用输入其凭据。当前 v2.0 终结点不支持 SAML 断言授予。
 
-<!---HONumber=Mooncake_1031_2016-->
+<!---HONumber=Mooncake_Quality_Review_0125_2017-->

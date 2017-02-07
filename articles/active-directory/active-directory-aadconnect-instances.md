@@ -14,7 +14,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="06/27/2016"
-	wacn.date="12/15/2016"
+	wacn.date="02/06/2017"
 	ms.author="billmath"/>
 
 # Azure AD Connect：有关实例的特殊注意事项
@@ -51,12 +51,12 @@ DirSync 的早期版本支持该云。从 Azure AD Connect 的 1.1.180 版本起
 
 Azure AD Connect 不能自动检测到你的 Azure AD 目录位于政府版的云中。当你安装 Azure AD Connect 时，需要改为执行以下操作。
 
-1. 开始 Azure AD Connect 安装。  
-2. 当你看到第一页后，这时应该接受 EULA，请不要继续，而是让安装向导运行。  
-3. 启动 regedit 并将注册表项 `HKLM\SOFTWARE\Microsoft\Azure AD Connect\AzureInstance` 更改为值 `2`。  
-4. 返回 Azure AD Connect 安装向导，接受 EULA，然后继续。在安装期间，请确保使用“自定义配置”安装路径（而不是快速安装）。然后，像往常一样继续安装。  
+1. 开始 Azure AD Connect 安装。
+2. 当你看到第一页后，这时应该接受 EULA，请不要继续，而是让安装向导运行。
+3. 启动 regedit 并将注册表项 `HKLM\SOFTWARE\Microsoft\Azure AD Connect\AzureInstance` 更改为值 `2`。
+4. 返回 Azure AD Connect 安装向导，接受 EULA，然后继续。在安装期间，请确保使用“自定义配置”安装路径（而不是快速安装）。然后，像往常一样继续安装。
 
-Microsoft Azure 政府版云中当前不存在的功能：
+Azure 政府版云中当前不存在的功能：
 
 - Azure AD Connect Health 未提供。
 - 自动更新未提供。
@@ -65,4 +65,4 @@ Microsoft Azure 政府版云中当前不存在的功能：
 ## 后续步骤
 了解有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect/)的详细信息。
 
-<!---HONumber=Mooncake_0725_2016-->
+<!---HONumber=Mooncake_Quality_Review_0125_2017-->
