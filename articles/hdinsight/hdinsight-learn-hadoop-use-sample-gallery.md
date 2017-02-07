@@ -38,11 +38,11 @@
 
 <center><a href="https://www.youtube.com/embed/7ePbHot1SN4">https://www.youtube.com/embed/7ePbHot1SN4></a></center>
 
-可以通过浏览至 http://<YourHDInsightClusterName>.azurehdinsight.cn/ 或从 Azure 管理门户访问仪表板。
+可以通过浏览至 http://<YourHDInsightClusterName>.azurehdinsight.cn/ 或从 Azure 经典管理门户访问仪表板。
 
 **从入门库运行示例**
 
-1. 登录 [Azure 管理门户][azure.portal]。
+1. 登录 [Azure 经典管理门户][azure.portal]。
 2. 从左侧菜单中依次单击**浏览**、**HDInsight 群集**和群集名称。
 3. 在顶部菜单中单击**仪表板**。
 4. 为 HTTP 用户（也称为群集用户）输入用户名和密码。

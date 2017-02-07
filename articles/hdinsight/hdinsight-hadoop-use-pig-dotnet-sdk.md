@@ -41,7 +41,7 @@ HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 中使用 HDInsi
 
 每个 Azure 订阅都以 GUID 值（称为订阅 ID）标识。请使用以下步骤查找此值。
 
-1. 访问 [Azure 门户][preview-portal]。
+1. 访问 [Azure 门户预览][preview-portal]。
 
 2. 从门户左侧的栏中，选择“浏览全部”，然后从“浏览”边栏选项卡中选择“订阅”。
 

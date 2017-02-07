@@ -1,7 +1,7 @@
 <!-- not suitable for Mooncake -->
 
 <properties
-	pageTitle="使用 Azure 管理门户管理 HDInsight 中的 Hadoop 群集 | Azure"
+	pageTitle="使用 Azure 门户预览管理 HDInsight 中的 Hadoop 群集 | Azure"
 	description="了解如何管理 HDInsight 服务。创建 HDInsight 群集，打开交互式 JavaScript 控制台，然后打开 Hadoop 命令控制台。"
 	services="hdinsight"
 	documentationCenter=""
@@ -15,11 +15,11 @@
 	ms.date="03/18/2016"
 	wacn.date="02/06/2017"/>
 
-# 使用 Azure 管理门户管理 HDInsight 中的 Hadoop 群集
+# 使用 Azure 门户预览管理 HDInsight 中的 Hadoop 群集
 
 [AZURE.INCLUDE [选择器](../includes/hdinsight-portal-management-selector.md)]
 
-使用 [Azure 管理门户][azure-portal]，可以创建 Azure HDInsight 中的 Hadoop 群集、更改 Hadoop 用户密码，以及启用远程桌面协议 (RDP) 以访问群集上的 Hadoop 命令控制台。
+使用 [Azure 门户预览][azure-portal]，可以创建 Azure HDInsight 中的 Hadoop 群集、更改 Hadoop 用户密码，以及启用远程桌面协议 (RDP) 以访问群集上的 Hadoop 命令控制台。
 
 本文中的信息仅适用于基于 Windows 的 HDInsight 群集。有关如何管理基于 Linux 的群集的信息，请单击上面的选项卡选择器。
 
@@ -27,7 +27,7 @@
 
 [AZURE.INCLUDE [hdinsight-azure-preview-portal](../includes/hdinsight-azure-preview-portal.md)]
 
-* [使用 Azure 管理门户管理 HDInsight 中的 Hadoop 群集](/documentation/articles/hdinsight-administer-use-management-portal/)
+* [使用 Azure 门户预览管理 HDInsight 中的 Hadoop 群集](/documentation/articles/hdinsight-administer-use-management-portal/)
 
 **先决条件**
 
@@ -38,7 +38,7 @@
 
 ##打开门户
 
-1. 登录 [https://manage.windowsazure.cn](https://manage.windowsazure.cn)。
+1. 登录 [https://portal.azure.cn](https://portal.azure.cn)。
 2. 打开门户后，可以：
 
 	- 单击左侧菜单中的“新建”以创建新群集：
@@ -46,11 +46,11 @@
 		![新建 HDInsight 群集按钮](./media/hdinsight-administer-use-management-portal/azure-portal-new-button.png)
 	- 单击左侧菜单中的“HDInsight 群集”。
 	
-		![Azure 管理门户 HDInsight 群集按钮](./media/hdinsight-administer-use-management-portal/azure-portal-hdinsight-button.png)
+		![Azure 门户预览 HDInsight 群集按钮](./media/hdinsight-administer-use-management-portal/azure-portal-hdinsight-button.png)
 
 	如果 **HDInsight** 没有显示在左侧菜单中，请单击“浏览”。
 
-	![Azure 管理门户浏览群集按钮](./media/hdinsight-administer-use-management-portal/azure-portal-browse-button.png)
+	![Azure 门户预览浏览群集按钮](./media/hdinsight-administer-use-management-portal/azure-portal-browse-button.png)
 
 ##创建群集
 
@@ -70,14 +70,14 @@ HDInsight 使用各种 Hadoop 组件。有关已获得验证和支持的组件�
 
 ## <a name="list-and-show-clusters"></a>列出并显示群集
 
-1. 登录 [https://manage.windowsazure.cn](https://manage.windowsazure.cn)。
+1. 登录 [https://portal.azure.cn](https://portal.azure.cn)。
 2. 单击左侧菜单中的“HDInsight 群集”。
 3. 单击群集名称。如果群集列表很长，可以使用页面顶部的筛选器。
 4. 双击列表中的群集可显示详细信息。
 
 	**菜单和基本信息**：
 
-	![Azure 管理门户 HDInsight 群集基本信息](./media/hdinsight-administer-use-management-portal/hdinsight-essentials.png)
+	![Azure 门户预览 HDInsight 群集基本信息](./media/hdinsight-administer-use-management-portal/hdinsight-essentials.png)
 	
 	- 要自定义菜单，右键单击菜单中的任意位置，然后单击“自定义”。
 	- **设置**和**配置**：显示群集的“设置”边栏选项卡，以便访问群集的详细配置信息。
@@ -87,7 +87,7 @@ HDInsight 使用各种 Hadoop 组件。有关已获得验证和支持的组件�
 	- **快速启动 (![云和闪电图标 = 快速启动](./media/hdinsight-administer-use-portal-linux/quickstart.png))**：显示有助于开始使用 HDInsight 的信息。
 	- **用户 (![用户图标](./media/hdinsight-administer-use-portal-linux/users.png))**：设置 Azure 订阅的其他用户对此群集的门户管理权限。
 	
-		> [AZURE.IMPORTANT] 这只会影响在 Azure 管理门户中对此群集的访问和权限，对于连接到 HDInsight 群集或将作业提交到 HDInsight 群集的用户没有任何影响。
+		> [AZURE.IMPORTANT] 这只会影响在 Azure 门户预览中对此群集的访问和权限，对于连接到 HDInsight 群集或将作业提交到 HDInsight 群集的用户没有任何影响。
 	- **标记 (![标记图标](./media/hdinsight-administer-use-portal-linux/tags.png))**：标记可设置键/值对，以定义云服务的自定义分类。例如，可以创建名为 __project__ 的键，然后对与特定项目关联的所有服务使用公用值。
 	- **Ambari 视图**：Ambari Web 链接。
 	
@@ -95,11 +95,11 @@ HDInsight 使用各种 Hadoop 组件。有关已获得验证和支持的组件�
 
 	**用法**：
 	
-	![Azure 管理门户 HDInsight 群集使用情况](./media/hdinsight-administer-use-management-portal/hdinsight-portal-cluster-usage.png)
+	![Azure 门户预览 HDInsight 群集使用情况](./media/hdinsight-administer-use-management-portal/hdinsight-portal-cluster-usage.png)
 	
 5. 单击“设置”。
 
-	![Azure 管理门户 HDInsight 群集使用情况](./media/hdinsight-administer-use-management-portal/hdinsight.portal.cluster.settings.png)
+	![Azure 门户预览 HDInsight 群集使用情况](./media/hdinsight-administer-use-management-portal/hdinsight.portal.cluster.settings.png)
 
 	- **属性**：查看群集属性。
 	- **群集 AAD 标识**： 
@@ -231,7 +231,7 @@ HDInsight 群集提供以下 HTTP Web 服务（所有这些服务都有 REST 样
 - Oozie
 - Templeton
 
-默认情况下，将授权这些服务进行访问。可以从 Azure 管理门户撤消/授予访问权限。
+默认情况下，将授权这些服务进行访问。可以从 Azure 门户预览撤消/授予访问权限。
 
 >[AZURE.NOTE] 授予/撤消访问权限时，将重设群集用户的用户名和密码。
 
@@ -381,7 +381,7 @@ HDInsight 群集边栏选项卡的“使用情况”部分会显示相关信息�
 * [Azure HDInsight 入门](/documentation/articles/hdinsight-hadoop-tutorial-get-started-windows/)
 * [Azure HDInsight 包含哪个版本的 Hadoop？](/documentation/articles/hdinsight-component-versioning/)
 
-[azure-portal]: https://manage.windowsazure.cn
+[azure-portal]: https://portal.azure.cn
 [image-hadoopcommandline]: ./media/hdinsight-administer-use-management-portal/hdinsight-hadoop-command-line.png "Hadoop 命令行"
 
 <!---HONumber=Mooncake_Quality_Review_1202_2016-->

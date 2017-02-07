@@ -43,7 +43,7 @@ Hue 是一组 Web 应用程序，用来与 Hadoop 群集交互。你可以使用
 以下脚本操作可用于在基于 Linux 的 HDInsight 群集上安装 Hue。
     https://hdiconfigactions.blob.core.windows.net/linuxhueconfigactionv02/install-hue-uber-v02.sh
     
-本部分说明如何在使用 Azure 门户预配群集时使用脚本。
+本部分说明如何在使用 Azure 门户预览预配群集时使用脚本。
 
 > [AZURE.NOTE] Azure PowerShell、Azure CLI、HDInsight .NET SDK 或 Azure Resource Manager 模板也可用于应用脚本操作。你也可以将脚本操作应用于已在运行的群集。有关详细信息，请参阅[使用脚本操作自定义 HDInsight 群集](/documentation/articles/hdinsight-hadoop-customize-cluster/)。
 

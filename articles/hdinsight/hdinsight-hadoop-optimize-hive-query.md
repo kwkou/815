@@ -21,7 +21,7 @@
 默认情况下，不会为了性能而优化 Hadoop 群集。本文介绍可对查询应用的几种最常见 Hive 性能优化方法。
 
 
-[AZURE.INCLUDE [预览门户](../../includes/hdinsight-azure-preview-portal.md)]
+[AZURE.INCLUDE [门户预览](../../includes/hdinsight-azure-preview-portal.md)]
 
 
 * [在 Hdinsight 中优化 Hadoop 的 Hive 查询](/documentation/articles/hdinsight-hadoop-optimize-hive-query/)。
@@ -30,7 +30,7 @@
 
 增加群集中的辅助节点数目，即可利用更多并行运行的映射器和化简器。在 HDInsight 中，可通过两种方式增加扩大的数目：
 
-- 在预配时，可以使用 Azure 门户、Azure PowerShell 或跨平台命令行界面指定辅助节点的数目。有关详细信息，请参阅[设置 HDInsight 群集](/documentation/articles/hdinsight-provision-clusters/)。以下屏幕显示了 Azure 门户上的辅助节点配置：
+- 在预配时，可以使用 Azure 门户预览、Azure PowerShell 或跨平台命令行界面指定辅助节点的数目。有关详细信息，请参阅[设置 HDInsight 群集](/documentation/articles/hdinsight-provision-clusters/)。以下屏幕显示了 Azure 门户预览上的辅助节点配置：
 
 	![scaleout\_1][image-hdi-optimize-hive-scaleout_1]
 

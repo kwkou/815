@@ -23,7 +23,7 @@
 当今有许多集成开发环境 (IDE) 适用于 R，包括 Microsoft 最近推出的 [R Tools for Visual Studio](https://www.visualstudio.com/features/rtvs-vs.aspx) (RTVS)、[RStudio](https://www.rstudio.com/products/rstudio-server/) 提供的桌面和服务器工具系列，或 Walware 的基于 Eclipse 的 [StatET](http://www.walware.de/goto/statet)。在 Linux 上使用最广泛的是 [RStudio Server](https://www.rstudio.com/products/rstudio-server/)，它为远程客户端提供基于浏览器的 IDE。在 HDInsight 群集的边缘节点上安装 RStudio Server 可以提供完整的 IDE 体验，以便通过群集上的 R Server 开发和运行 R 脚本，与按默认使用 R 控制台相比，可以大幅提高生产力。
 
 > [AZURE.NOTE]
-本文中所述的过程仅适用于在预配群集时没有选择安装 RStudio Server 社区版这种情况。如果在预配期间已添加它，则通过以下方式访问它：单击群集的 Azure 门户条目中的“R Server 仪表板”，然后单击“R Studio Server”磁贴。
+本文中所述的过程仅适用于在预配群集时没有选择安装 RStudio Server 社区版这种情况。如果在预配期间已添加它，则通过以下方式访问它：单击群集的 Azure 门户预览条目中的“R Server 仪表板”，然后单击“R Studio Server”磁贴。
 
 在本文中，你将学习如何使用自定义脚本，在群集的边缘节点上安装 RStudio Server 的社区（免费）版本。如果你偏好 RStudio Server 的商用授权 Pro 版本，则必须遵循 [RStudio Server](https://www.rstudio.com/products/rstudio/download-server/) 的安装说明。
 
