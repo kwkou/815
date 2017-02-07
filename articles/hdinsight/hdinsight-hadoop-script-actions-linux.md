@@ -42,7 +42,7 @@
 | HDInsight .NET SDK |✓ |✓ |
 | Azure Resource Manager 模板 |✓ |&nbsp; |
 
-有关使用这些方法应用脚本操作的详细信息，请参阅 [Customize HDInsight clusters using script actions](/documentation/articles/hdinsight-hadoop-customize-cluster/)（使用脚本操作自定义 HDInsight 群集）。
+有关使用这些方法应用脚本操作的详细信息，请参阅 [Customize HDInsight clusters using script actions](/documentation/articles/hdinsight-hadoop-customize-cluster-linux/)（使用脚本操作自定义 HDInsight 群集）。
 
 ## <a name="bestPracticeScripting"></a>脚本开发最佳实践
 
@@ -297,7 +297,7 @@ HDInsight 3.4 和 3.5 的另一个重要区别在于 `JAVA_HOME` 现在能够指
 
 ## <a name="runScriptAction"></a>如何运行脚本操作
 
-可以通过 Azure 门户、Azure PowerShell、Azure Resource Manager 模板或 HDInsight .NET SDK 使用脚本操作来自定义 HDInsight 群集。有关说明，请参阅 [How to use script action](/documentation/articles/hdinsight-hadoop-customize-cluster/)（如何使用脚本操作）。
+可以通过 Azure 门户、Azure PowerShell、Azure Resource Manager 模板或 HDInsight .NET SDK 使用脚本操作来自定义 HDInsight 群集。有关说明，请参阅 [How to use script action](/documentation/articles/hdinsight-hadoop-customize-cluster-linux/)（如何使用脚本操作）。
 
 ## <a name="sampleScripts"></a>自定义脚本示例
 
@@ -305,8 +305,8 @@ Microsoft 提供了在 HDInsight 群集上安装组件的示例脚本。示例�
 
 * [Install and use Hue on HDInsight clusters（在 HDInsight 群集上安装并使用 Hue）](/documentation/articles/hdinsight-hadoop-hue-linux/)
 * [在 HDInsight Hadoop 群集上安装并使用 R](/documentation/articles/hdinsight-hadoop-r-scripts/)
-* [在 HDInsight 群集上安装并使用 Solr](/documentation/articles/hdinsight-hadoop-solr-install/)
-* [在 HDInsight 群集上安装并使用 Giraph](/documentation/articles/hdinsight-hadoop-giraph-install/)
+* [在 HDInsight 群集上安装并使用 Solr](/documentation/articles/hdinsight-hadoop-solr-install-linux/)
+* [在 HDInsight 群集上安装并使用 Giraph](/documentation/articles/hdinsight-hadoop-giraph-install-linux/)
 
 > [AZURE.NOTE]
 上面链接的文档针对基于 Linux 的 HDInsight 群集。有关适用于基于 Windows 的 HDInsight 的脚本，请参阅 [Script action development with HDInsight (Windows)](/documentation/articles/hdinsight-hadoop-script-actions/)（使用 HDInsight 进行脚本操作开发 (Windows)）或使用每篇文章顶部提供的链接。
@@ -345,7 +345,7 @@ Microsoft 提供了在 HDInsight 群集上安装组件的示例脚本。示例�
 
 ## <a name="seeAlso"></a>后续步骤
 
-* 了解如何[使用脚本操作自定义 HDInsight 群集](/documentation/articles/hdinsight-hadoop-customize-cluster/)。
+* 了解如何[使用脚本操作自定义 HDInsight 群集](/documentation/articles/hdinsight-hadoop-customize-cluster-linux/)。
 * 使用 [HDInsight .NET SDK reference](https://msdn.microsoft.com/zh-cn/library/mt271028.aspx)（HDInsight.NET SDK 参考）详细了解如何创建用于管理 HDInsight 的 .NET 应用程序
 * 使用 [HDInsight REST API](https://msdn.microsoft.com/zh-cn/library/azure/mt622197.aspx) 了解如何通过 REST 在 HDInsight 群集上执行管理操作。
 

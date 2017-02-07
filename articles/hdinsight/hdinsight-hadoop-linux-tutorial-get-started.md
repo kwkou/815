@@ -39,7 +39,7 @@
 
 ## <a name="create-cluster"></a> 创建群集
 
-大部分 Hadoop 作业都是批处理作业。你可以创建群集、运行某些作业，然后删除该群集。在此部分中，会使用 [Azure Resource Manager 模板](/documentation/articles/resource-group-template-deploy/)在 HDInsight 中创建基于 Linux 的 Hadoop 群集。可以完全自定义 Resource Manager 模板；采用此模板，可以轻松创建 HDInsight 等 Azure 资源。对于遵循本教程，Resource Manager 模板体验不是必需的。对于其他群集创建方法以及了解本教程中使用的属性，请参阅[创建 HDInsight 群集](/documentation/articles/hdinsight-provision-clusters/)。使用页面顶部的选择器来选择群集创建选项。
+大部分 Hadoop 作业都是批处理作业。你可以创建群集、运行某些作业，然后删除该群集。在此部分中，会使用 [Azure Resource Manager 模板](/documentation/articles/resource-group-template-deploy/)在 HDInsight 中创建基于 Linux 的 Hadoop 群集。可以完全自定义 Resource Manager 模板；采用此模板，可以轻松创建 HDInsight 等 Azure 资源。对于遵循本教程，Resource Manager 模板体验不是必需的。对于其他群集创建方法以及了解本教程中使用的属性，请参阅[创建 HDInsight 群集](/documentation/articles/hdinsight-hadoop-provision-linux-clusters/)。使用页面顶部的选择器来选择群集创建选项。
 
 本教程中所用的 Resource Manager 模板位于 Github 中 (https://azure.microsoft.com/resources/templates/101-hdinsight-linux-ssh-password/)。
 
@@ -137,7 +137,7 @@ HDInsight 中使用的组件中，[Apache Hive](/documentation/articles/hdinsigh
 如果想要了解有关创建或管理 HDInsight 群集的详细信息，请参阅以下文档：
 
 * 若要了解有关管理基于 Linux 的 HDInsight 群集的信息，请参阅[使用 Ambari 管理 HDInsight 群集](/documentation/articles/hdinsight-hadoop-manage-ambari/)。
-* 若要了解有关创建 HDInsight 群集时可选择的选项的详细信息，请参阅[使用自定义选项在 Linux 上创建 HDInsight](/documentation/articles/hdinsight-provision-clusters/)。
+* 若要了解有关创建 HDInsight 群集时可选择的选项的详细信息，请参阅[使用自定义选项在 Linux 上创建 HDInsight](/documentation/articles/hdinsight-hadoop-provision-linux-clusters/)。
 * 如果熟悉 Linux 和 Hadoop，但想要了解有关 HDInsight 上 Hadoop 的具体信息，请参阅[使用 Linux 上的 HDInsight](/documentation/articles/hdinsight-hadoop-linux-information/)。这提供了如下信息：
   
   * 群集上托管的服务（例如 Ambari 和 WebHCat）的 URL
@@ -146,7 +146,7 @@ HDInsight 中使用的组件中，[Apache Hive](/documentation/articles/hdinsigh
 
 [1]: /documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started/
 
-[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters/
+[hdinsight-provision]: /documentation/articles/hdinsight-hadoop-provision-linux-clusters/
 [hdinsight-admin-powershell]: /documentation/articles/hdinsight-administer-use-powershell/
 [hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data/
 [hdinsight-use-mapreduce]: /documentation/articles/hdinsight-use-mapreduce/

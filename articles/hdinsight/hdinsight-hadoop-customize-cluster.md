@@ -21,7 +21,7 @@
 
 创建群集期间，可以使用**脚本操作**调用[自定义脚本](/documentation/articles/hdinsight-hadoop-script-actions/)，以便在群集上安装其他软件。
 
-也可以使用其他各种方法自定义 HDInsight 群集，例如包括其他 Azure 存储帐户、更改 hadoop 配置文件（core-site.xml、hive-site.xml 等），或者将共享库（如 Hive、Oozie）添加到群集中的共同位置。这些自定义可以通过 Azure PowerShell、Azure HDInsight .NET SDK 或 Azure 经典管理门户完成。有关详细信息，请参阅[在 HDInsight 中创建 Hadoop 群集][hdinsight-provision-cluster]。
+也可以使用其他各种方法自定义 HDInsight 群集，例如包括其他 Azure 存储帐户、更改 hadoop 配置文件（core-site.xml、hive-site.xml 等），或者将共享库（如 Hive、Oozie）添加到群集中的共同位置。这些自定义可以通过 Azure PowerShell、Azure HDInsight .NET SDK 或 Azure 门户预览完成。有关详细信息，请参阅[在 HDInsight 中创建 Hadoop 群集][hdinsight-provision-cluster]。
 
 ## 群集创建期间的脚本操作
 
@@ -47,14 +47,14 @@ Name | 脚本
 
 
 
-## 使用 Azure 经典管理门户调用脚本
+## 使用 Azure 门户预览调用脚本
 
-**通过 Azure 经典管理门户**
+**通过 Azure 门户预览**
 
 1. 使用“自定义创建”选项开始预配群集，如[使用自定义选项预配群集](/documentation/articles/hdinsight-provision-clusters/)中所述。 
 2. 在向导的“脚本操作”页上，单击“添加脚本操作”，以提供有关脚本操作的详细信息，如下所示：
 
-	![使用脚本操作自定义群集](./media/hdinsight-hadoop-customize-cluster-v1/HDI.CustomProvision.Page6.png "使用脚本操作自定义群集")
+	![使用脚本操作自定义群集](./media/hdinsight-hadoop-customize-cluster/HDI.CreateCluster.8.png "使用脚本操作自定义群集")
 
 	<table border='1'>
 		<tr><th>属性</th><th>值</th></tr>
@@ -162,6 +162,6 @@ HDInsight 服务可提供多种方法使用自定义组件。无论在群集上�
 [powershell-install-configure]: /documentation/articles/powershell-install-configure/
 
 
-[img-hdi-cluster-states]: ./media/hdinsight-hadoop-customize-cluster-v1/HDI-Cluster-state.png "群集创建期间的阶段"
+[img-hdi-cluster-states]: ./media/hdinsight-hadoop-customize-cluster/HDI-Cluster-state.png "群集创建期间的阶段"
 
 <!---HONumber=Mooncake_Quality_Review_1202_2016-->

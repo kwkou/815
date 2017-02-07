@@ -79,7 +79,7 @@ HBase 是构建于 Hadoop 上的 Apache 开源 NoSQL 数据库，用于为大量
 [vnet-point-to-site-connectivity]: https://msdn.microsoft.com/zh-cn/library/azure/09926218-92ab-4f43-aa99-83ab4d355555#BKMK_VNETPT
 
 [hdinsight-versions]: /documentation/articles/hdinsight-component-versioning/
-[hdinsight-hbase-get-started]: /documentation/articles/hdinsight-hbase-tutorial-get-started/
+[hdinsight-hbase-get-started]: /documentation/articles/hdinsight-hbase-tutorial-get-started-linux/
 [hdinsight-manage-portal]: /documentation/articles/hdinsight-administer-use-management-portal/#connect-to-hdinsight-clusters-by-using-rdp
 [hdinsight-hbase-provision-vnet]: /documentation/articles/hdinsight-hbase-provision-vnet/
 [hdinsight-hbase-overview]: /documentation/articles/hdinsight-hbase-overview/

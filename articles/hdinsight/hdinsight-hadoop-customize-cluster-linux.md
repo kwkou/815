@@ -147,8 +147,8 @@ HDInsight 提供一个称为**脚本操作**的配置选项，该选项可调用
 | **添加 Azure 存储帐户** |https://hdiconfigactions.blob.core.windows.net/linuxaddstorageaccountv01/add-storage-account-v01.sh。请参阅 [Apply a Script Action to a running cluster](#apply-a-script-action-to-a-running-cluster)（将脚本操作应用到正在运行的群集）。 |
 | **安装 Hue** |https://hdiconfigactions.blob.core.windows.net/linuxhueconfigactionv02/install-hue-uber-v02.sh。请参阅[在 HDInsight 群集上安装并使用 Hue](/documentation/articles/hdinsight-hadoop-hue-linux/)。 |
 | **安装 R** |https://hdiconfigactions.blob.core.windows.net/linuxrconfigactionv01/r-installer-v01.sh。请参阅[在 HDInsight 群集上安装并使用 R](/documentation/articles/hdinsight-hadoop-r-scripts/)。 |
-| **安装 Solr** |https://hdiconfigactions.blob.core.windows.net/linuxsolrconfigactionv01/solr-installer-v01.sh。请参阅[在 HDInsight 群集上安装并使用 Solr](/documentation/articles/hdinsight-hadoop-solr-install/)。 |
-| **安装 Giraph** |https://hdiconfigactions.blob.core.windows.net/linuxgiraphconfigactionv01/giraph-installer-v01.sh。请参阅[在 HDInsight 群集上安装并使用 Giraph](/documentation/articles/hdinsight-hadoop-giraph-install/)。 |
+| **安装 Solr** |https://hdiconfigactions.blob.core.windows.net/linuxsolrconfigactionv01/solr-installer-v01.sh。请参阅[在 HDInsight 群集上安装并使用 Solr](/documentation/articles/hdinsight-hadoop-solr-install-linux/)。 |
+| **安装 Giraph** |https://hdiconfigactions.blob.core.windows.net/linuxgiraphconfigactionv01/giraph-installer-v01.sh。请参阅[在 HDInsight 群集上安装并使用 Giraph](/documentation/articles/hdinsight-hadoop-giraph-install-linux/)。 |
 | **预加载 Hive 库** |https://hdiconfigactions.blob.core.windows.net/linuxsetupcustomhivelibsv01/setup-customhivelibs-v01.sh。请参阅 [Add Hive libraries on HDInsight clusters](/documentation/articles/hdinsight-hadoop-add-hive-libraries/)（在 HDInsight 群集上添加 Hive 库） |
 
 ## 在创建群集期间使用脚本操作
@@ -157,7 +157,7 @@ HDInsight 提供一个称为**脚本操作**的配置选项，该选项可调用
 
 ### 在创建群集期间从 Azure 门户预览使用脚本操作
 
-1. 根据 [Create Hadoop clusters in HDInsight](/documentation/articles/hdinsight-provision-clusters/)（在 HDInsight 中创建 Hadoop 群集）中所述开始创建群集。
+1. 根据 [Create Hadoop clusters in HDInsight](/documentation/articles/hdinsight-hadoop-provision-linux-clusters/)（在 HDInsight 中创建 Hadoop 群集）中所述开始创建群集。
 2. 在“脚本操作”边栏选项卡的“可选配置”下，单击“添加脚本操作”可提供有关脚本操作的详细信息，如下所示：
 
     ![使用脚本操作自定义群集](./media/hdinsight-hadoop-customize-cluster-linux/HDI.CreateCluster.8.png)
@@ -743,8 +743,8 @@ HDInsight 服务可提供多种方法使用自定义组件。无论在群集上�
 请参阅以下内容以获取有关创建和使用脚本自定义群集的信息和示例：
 
 * [为 HDInsight 开发脚本操作脚本](/documentation/articles/hdinsight-hadoop-script-actions-linux/)
-* [在 HDInsight 群集上安装并使用 Solr](/documentation/articles/hdinsight-hadoop-solr-install/)
-* [在 HDInsight 群集上安装并使用 Giraph](/documentation/articles/hdinsight-hadoop-giraph-install/)
+* [在 HDInsight 群集上安装并使用 Solr](/documentation/articles/hdinsight-hadoop-solr-install-linux/)
+* [在 HDInsight 群集上安装并使用 Giraph](/documentation/articles/hdinsight-hadoop-giraph-install-linux/)
 
 [img-hdi-cluster-states]: ./media/hdinsight-hadoop-customize-cluster-linux/HDI-Cluster-state.png "群集创建过程中的阶段"
 

@@ -53,7 +53,7 @@
 
 本部分提供有关如何在通过使用 Azure 门户创建新群集时使用示例脚本的说明。
 
-> [AZURE.NOTE] Azure PowerShell、Azure CLI、HDInsight .NET SDK 或 Azure Resource Manager 模板也可用于应用脚本操作。你也可以将脚本操作应用于已在运行的群集。有关详细信息，请参阅 [Customize HDInsight clusters with Script Actions](/documentation/articles/hdinsight-hadoop-customize-cluster/)（使用脚本操作自定义 HDInsight 群集）。
+> [AZURE.NOTE] Azure PowerShell、Azure CLI、HDInsight .NET SDK 或 Azure Resource Manager 模板也可用于应用脚本操作。你也可以将脚本操作应用于已在运行的群集。有关详细信息，请参阅 [Customize HDInsight clusters with Script Actions](/documentation/articles/hdinsight-hadoop-customize-cluster-linux/)（使用脚本操作自定义 HDInsight 群集）。
 
 1. 使用 [Provision Linux-based HDInsight clusters](/documentation/articles/hdinsight-hadoop-create-linux-clusters-portal/)（预配基于 Linux 的 HDInsight 群集）中的步骤开始预配群集，但不要完成预配。
 
@@ -317,13 +317,13 @@ Solr 仪表板是一个 Web UI，可让你通过 Web 浏览器使用 Solr。Solr
 
 - [在 HDInsight 群集上安装 R][hdinsight-install-r]。使用群集自定义在 HDInsight Hadoop 群集上安装 R。R 是一种用于统计计算的开放源代码语言和环境。它提供了数百个内置统计函数及其自己的编程语言，可结合各方面的函数编程和面向对象的编程。它还提供了各种图形功能。
 
-- [在 HDInsight 群集上安装 Giraph](/documentation/articles/hdinsight-hadoop-giraph-install/)。使用群集自定义在 HDInsight Hadoop 群集上安装 Giraph。Giraph 可让你通过使用 Hadoop 执行图形处理，并可以在 Azure HDInsight 上使用。
+- [在 HDInsight 群集上安装 Giraph](/documentation/articles/hdinsight-hadoop-giraph-install-linux/)。使用群集自定义在 HDInsight Hadoop 群集上安装 Giraph。Giraph 可让你通过使用 Hadoop 执行图形处理，并可以在 Azure HDInsight 上使用。
 
 - [Install Hue on HDInsight clusters](/documentation/articles/hdinsight-hadoop-hue-linux/)（在 HDInsight 群集上安装 Hue）。使用群集自定义在 HDInsight Hadoop 群集上安装 Hue。Hue 是用来与 Hadoop 群集交互的一系列 Web 应用程序。
 
 
 
 [hdinsight-install-r]: /documentation/articles/hdinsight-hadoop-r-scripts/
-[hdinsight-cluster-customize]: /documentation/articles/hdinsight-hadoop-customize-cluster/
+[hdinsight-cluster-customize]: /documentation/articles/hdinsight-hadoop-customize-cluster-linux/
 
 <!---HONumber=Mooncake_0926_2016-->

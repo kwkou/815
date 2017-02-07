@@ -32,7 +32,7 @@
 要阅读本教程，必须具备：
 
 * **Azure 订阅**。请参阅[获取 Azure 试用版](/pricing/1rmb-trial/)。
-* **HDInsight 群集**。有关创建新的基于 Linux 的 HDInsight 群集的步骤，请参阅 [在 Linux 上的 HDInsight 中开始将 Hadoop 与 Hive 配合使用](/documentation/articles/hdinsight-hadoop-tutorial-get-started-windows/)。
+* **HDInsight 群集**。有关创建新的基于 Linux 的 HDInsight 群集的步骤，请参阅 [在 Linux 上的 HDInsight 中开始将 Hadoop 与 Hive 配合使用](/documentation/articles/hdinsight-hadoop-linux-tutorial-get-started/)。
 * **Azure SQL 数据库**。你将使用 Azure SQL 数据库作为目标数据存储。如果没有 SQL 数据库，请参阅 [SQL 数据库教程：几分钟内即可创建 SQL 数据库](/documentation/articles/sql-database-get-started/)。
 * **Azure CLI**。如果你尚未安装 Azure CLI，请参阅[安装和配置 Azure CLI](/documentation/articles/xplat-cli-install/) 了解详细步骤。
   
@@ -263,7 +263,7 @@
 [hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1/
 [hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage/
 [hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data/
-[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows/
+[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-linux-tutorial-get-started/
 [hdinsight-use-sqoop]: /documentation/articles/hdinsight-use-sqoop/
 [hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig/
 [hdinsight-develop-streaming]: /documentation/articles/hdinsight-hadoop-streaming-python/

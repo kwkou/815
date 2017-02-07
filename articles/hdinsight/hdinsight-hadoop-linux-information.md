@@ -205,7 +205,7 @@ HDInsight 还允许你将多个 Blob 存储帐户与群集相关联。若要访�
 
 ## 如何安装 Hue（或其他 Hadoop 组件）？
 
-HDInsight 是一项托管服务，这意味着如果检测到问题，Azure 可能会自动破坏并重新预配群集中的节点。因此，不建议直接在群集节点上手动安装内容。请在需要安装以下内容时改用 [HDInsight 脚本操作](/documentation/articles/hdinsight-hadoop-customize-cluster/)：
+HDInsight 是一项托管服务，这意味着如果检测到问题，Azure 可能会自动破坏并重新预配群集中的节点。因此，不建议直接在群集节点上手动安装内容。请在需要安装以下内容时改用 [HDInsight 脚本操作](/documentation/articles/hdinsight-hadoop-customize-cluster-linux/)：
 
 * 服务或网站，例如 Spark 或 Hue。
 * 需要在群集的多个节点上进行配置更改的组件。例如，必需的环境变量、创建日志记录目录，或者创建配置文件。
@@ -213,8 +213,8 @@ HDInsight 是一项托管服务，这意味着如果检测到问题，Azure 可�
 脚本操作是在群集预配期间运行的 Bash 脚本，可用于在群集上安装和配置其他组件。提供了用于安装以下组件的示例脚本：
 
 * [Hue](/documentation/articles/hdinsight-hadoop-hue-linux/)
-* [Giraph](/documentation/articles/hdinsight-hadoop-giraph-install/)
-* [Solr](/documentation/articles/hdinsight-hadoop-solr-install/)
+* [Giraph](/documentation/articles/hdinsight-hadoop-giraph-install-linux/)
+* [Solr](/documentation/articles/hdinsight-hadoop-solr-install-linux/)
 
 有关开发你自己的脚本操作的信息，请参阅[使用 HDInsight 进行脚本操作开发](/documentation/articles/hdinsight-hadoop-script-actions-linux/)。
 

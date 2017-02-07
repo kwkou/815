@@ -38,7 +38,7 @@ HDInsight 提供可集成到 HDInsight 群集中的 R Server 选项。这将允�
 
 ## 创建群集
 > [AZURE.NOTE]
-本文档中的步骤将指导用户完成如何使用基本配置信息在 HDInsight 群集上创建 R Server。有关其他群集配置设置（例如，添加其他存储帐户、使用 Azure 虚拟网络或创建 Hive 元存储）的信息，请参阅 [Create Linux-based HDInsight clusters](/documentation/articles/hdinsight-provision-clusters/)（创建基于 Linux 的 HDInsight 群集）。
+本文档中的步骤将指导用户完成如何使用基本配置信息在 HDInsight 群集上创建 R Server。有关其他群集配置设置（例如，添加其他存储帐户、使用 Azure 虚拟网络或创建 Hive 元存储）的信息，请参阅 [Create Linux-based HDInsight clusters](/documentation/articles/hdinsight-hadoop-provision-linux-clusters/)（创建基于 Linux 的 HDInsight 群集）。
 >
 > 
 

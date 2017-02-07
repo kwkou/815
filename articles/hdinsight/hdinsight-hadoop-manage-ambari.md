@@ -180,7 +180,7 @@ Ambari 提供许多警报，其可能状态如下：
 
 
 > [AZURE.WARNING]
-虽然此菜单中列出了“添加服务”，但是不应使用它将服务添加到 HDInsight 群集。应在群集预配过程中使用脚本操作添加新服务。有关使用脚本操作的详细信息，请参阅 [Customize HDInsight clusters using Script Actions](/documentation/articles/hdinsight-hadoop-customize-cluster/)（使用脚本操作自定义 HDInsight 群集）。
+虽然此菜单中列出了“添加服务”，但是不应使用它将服务添加到 HDInsight 群集。应在群集预配过程中使用脚本操作添加新服务。有关使用脚本操作的详细信息，请参阅 [Customize HDInsight clusters using Script Actions](/documentation/articles/hdinsight-hadoop-customize-cluster-linux/)（使用脚本操作自定义 HDInsight 群集）。
 > 
 > 
 

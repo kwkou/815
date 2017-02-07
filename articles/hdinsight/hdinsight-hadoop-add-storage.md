@@ -24,7 +24,7 @@
 了解如何使用脚本操作将其他 Azure 存储帐户添加到现有 HDInsight 群集。
 
 > [AZURE.IMPORTANT]
-本文档中的信息是关于在创建群集后将其他存储添加到群集。有关在群集创建过程中添加其他存储帐户的信息，请参阅[创建基于 Linux 的 HDInsight 群集](/documentation/articles/hdinsight-provision-clusters/#use-additional-storage)文档的__使用其他存储__部分。
+本文档中的信息是关于在创建群集后将其他存储添加到群集。有关在群集创建过程中添加其他存储帐户的信息，请参阅[创建基于 Linux 的 HDInsight 群集](/documentation/articles/hdinsight-hadoop-provision-linux-clusters/#use-additional-storage)文档的__使用其他存储__部分。
 
 ## 工作原理
 
@@ -129,6 +129,6 @@ __要求__：
 
 ## 后续步骤
 
-在本文档中，已学习如何将其他存储帐户添加到现有 HDInsight 群集。有关脚本操作的详细信息，请参阅 [Customize Linux-based HDInsight clusters using script action](/documentation/articles/hdinsight-hadoop-customize-cluster/)（使用脚本操作自定义基于 Linux 的 HDInsight 群集）
+在本文档中，已学习如何将其他存储帐户添加到现有 HDInsight 群集。有关脚本操作的详细信息，请参阅 [Customize Linux-based HDInsight clusters using script action](/documentation/articles/hdinsight-hadoop-customize-cluster-linux/)（使用脚本操作自定义基于 Linux 的 HDInsight 群集）
 
 <!---HONumber=Mooncake_0103_2017-->

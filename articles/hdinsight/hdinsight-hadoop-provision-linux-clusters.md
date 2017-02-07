@@ -235,7 +235,7 @@ HDInsight 群集与其默认存储帐户必须位于相同的 Azure 位置。
 
 创建群集后便开始计费，删除群集后停止计费。有关定价的详细信息，请参阅 [HDInsight pricing details](/pricing/details/hdinsight/)（HDInsight 定价详细信息）。
 
-## 使用其他存储
+## <a name="use-additional-storage"></a> 使用其他存储
 在某些情况下，可能会向群集添加其他存储。例如，为不同地理区域或不同服务创建了多个 Azure 存储帐户，但想要使用 HDInsight 分析所有这些帐户。
 
 创建 HDInsight 群集时或创建群集后，可以添加存储帐户。请参阅 [Customize Linux-based HDInsight clusters using Script Action](/documentation/articles/hdinsight-hadoop-customize-cluster-linux/)（使用脚本操作自定义基于 Linux 的 HDInsight 群集）。
@@ -316,7 +316,7 @@ HDInsight 群集与其默认存储帐户必须位于相同的 Azure 位置。
 ## 使用边缘节点
  空边缘节点是安装并配置了与头节点中相同的客户端工具的 Linux 虚拟机。可以使用该边缘节点来访问群集、测试客户端应用程序和托管客户端应用程序。有关详细信息，请参阅 [Use empty edge nodes in HDInsight](/documentation/articles/hdinsight-apps-use-edge-node/)（在 HDInsight 中使用空边缘节点）。
 
-## 群集创建方法
+## <a name="cluster-creation-methods"></a> 群集创建方法
 在本文中，你了解了有关创建基于 Linux 的 HDInsight 群集的基本信息。使用下表查找具体信息，了解如何使用最合适的方法创建群集。
 
 | 群集创建方法 | Web 浏览器 | 命令行 | REST API | SDK | Linux、Mac OS X 或 Unix | Windows |

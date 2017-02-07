@@ -85,7 +85,7 @@ HDInsight 群集有各种类型，分别与针对其优化群集的工作负荷�
 ### 操作系统
 可以在以下两个操作系统之一上创建 HDInsight 群集：
 
-* Linux 上的 HDInsight。HDInsight 提供在 Azure 上配置 Linux 群集的选项。如果熟悉 Linux 或 Unix，要从现有的基于 Linux 的 Hadoop 解决方案进行迁移，或者想要轻松集成针对 Linux 构建的 Hadoop 生态系统组件，请配置 Linux 群集。有关详细信息，请参阅[在 HDInsight 中的 Linux 上开始使用 Hadoop](/documentation/articles/hdinsight-hadoop-tutorial-get-started-windows/)。
+* Linux 上的 HDInsight。HDInsight 提供在 Azure 上配置 Linux 群集的选项。如果熟悉 Linux 或 Unix，要从现有的基于 Linux 的 Hadoop 解决方案进行迁移，或者想要轻松集成针对 Linux 构建的 Hadoop 生态系统组件，请配置 Linux 群集。有关详细信息，请参阅[在 HDInsight 中的 Linux 上开始使用 Hadoop](/documentation/articles/hdinsight-hadoop-linux-tutorial-get-started/)。
 * Windows 上的 HDInsight (Windows Server 2012 R2 Datacenter)。
 
 ### HDInsight 版本
