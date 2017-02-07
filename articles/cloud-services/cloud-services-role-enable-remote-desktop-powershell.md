@@ -35,7 +35,7 @@ ms.author="adegeo"/>
 如果以交互方式使用 PowerShell，可以通过调用 [Get-Credentials](https://technet.microsoft.com/zh-cn/library/hh849815.aspx) cmdlet 轻松设置 PSCredential 对象。
 
 
-        $remoteusercredentials = Get-Credential
+    $remoteusercredentials = Get-Credential
 
 
 此命令显示一个对话框，用于以安全方式为远程用户输入用户名和密码。
@@ -45,7 +45,7 @@ ms.author="adegeo"/>
 还可以创建安全密码文件，这样就不需要每次都键入密码。此外，安全密码文件比纯文本文件安全。使用以下 PowerShell 创建安全密码文件：
 
 
-        ConvertTo-SecureString -String "Password123" -AsPlainText -Force | ConvertFrom-SecureString | Set-Content "password.txt"
+    ConvertTo-SecureString -String "Password123" -AsPlainText -Force | ConvertFrom-SecureString | Set-Content "password.txt"
  
 
 >[AZURE.IMPORTANT] 设置密码时，请确保满足[复杂性要求](https://technet.microsoft.com/zh-cn/library/cc786468.aspx)。
@@ -73,7 +73,7 @@ ms.author="adegeo"/>
 使用 [Get-AzureRemoteDesktopFile](https://msdn.microsoft.com/zh-cn/library/azure/dn495261.aspx) cmdlet 通过远程桌面连接到云服务的特定角色实例。可以使用 *LocalPath* 参数将 RDP 文件下载到本地。也可以使用 *Launch* 参数直接启动“远程桌面连接”对话框来访问云服务角色实例。
 
 
-        Get-AzureRemoteDesktopFile -ServiceName $servicename -Name "WorkerRole1_IN_0" -Launch
+    Get-AzureRemoteDesktopFile -ServiceName $servicename -Name "WorkerRole1_IN_0" -Launch
 
 
 
@@ -81,7 +81,7 @@ ms.author="adegeo"/>
 [Get-AzureServiceRemoteDesktopExtension](https://msdn.microsoft.com/zh-cn/library/azure/dn495261.aspx) cmdlet 显示是对服务部署启用还是禁用远程桌面。该 cmdlet 返回启用了远程桌面扩展的远程桌面用户和角色的用户名。默认情况下，这种情况发生在部署槽上，可以选择改用过渡槽。
 
 
-        Get-AzureServiceRemoteDesktopExtension -ServiceName $servicename
+    Get-AzureServiceRemoteDesktopExtension -ServiceName $servicename
 
 
 ## 从服务中删除远程桌面扩展 
@@ -90,7 +90,7 @@ ms.author="adegeo"/>
 若要从部署中删除远程桌面扩展，可以使用 [Remove-AzureServiceRemoteDesktopExtension](https://msdn.microsoft.com/zh-cn/library/azure/dn495280.aspx) cmdlet。还可以选择指定要从中删除远程桌面扩展的部署槽和角色。
 
 
-        Remove-AzureServiceRemoteDesktopExtension -ServiceName $servicename -UninstallConfiguration
+    Remove-AzureServiceRemoteDesktopExtension -ServiceName $servicename -UninstallConfiguration
 
 
 >[AZURE.NOTE] 若要完全删除扩展配置，应结合 **UninstallConfiguration** 参数调用 *remove* cmdlet。

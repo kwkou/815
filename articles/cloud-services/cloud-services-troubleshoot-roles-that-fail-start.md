@@ -139,7 +139,7 @@ DLL 或程序集缺失的症状可能为：
 
 8. 展开“异常数据”并查找类似如下内容的 **System.IO.FileNotFoundException** 错误：
 
-![异常数据、缺少文件或程序集](./media/cloud-services-troubleshoot-roles-that-fail-start/ic503390.png)
+    ![异常数据、缺少文件或程序集](./media/cloud-services-troubleshoot-roles-that-fail-start/ic503390.png)
 
 ## 解决缺失 DLL 和程序集的问题
 

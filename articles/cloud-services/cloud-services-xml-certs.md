@@ -24,18 +24,18 @@
 
 下面是在服务定义中定义的证书的示例。
 
-```xml
-<ServiceDefinition name="WindowsAzureProject4" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceDefinition">
-  <WorkerRole name="MyWokerRole"> <!-- or <WebRole name="MyWebRole" vmsize="Small"> -->
-    <ConfigurationSettings>
-      ...
-    </ConfigurationSettings>
-    <Certificates>
-      <Certificate name="MySSLCert" storeLocation="LocalMachine" storeName="My" permissionLevel="elevated" />
-    </Certificates>
-  </WorkerRole>
-</ServiceDefinition>
-```
+
+    <ServiceDefinition name="WindowsAzureProject4" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceDefinition">
+      <WorkerRole name="MyWokerRole"> <!-- or <WebRole name="MyWebRole" vmsize="Small"> -->
+        <ConfigurationSettings>
+          ...
+        </ConfigurationSettings>
+        <Certificates>
+          <Certificate name="MySSLCert" storeLocation="LocalMachine" storeName="My" permissionLevel="elevated" />
+        </Certificates>
+      </WorkerRole>
+    </ServiceDefinition>
+
 
 ### 权限
 权限（`permisionLevel` 属性）可以设置为以下值之一：
@@ -49,17 +49,17 @@
 
 下面是在服务配置中定义的证书的示例。
 
-```xml
-<Role name="MyWokerRole">
-...
-    <Certificates>
-        <Certificate name="MySSLCert" 
-            thumbprint="9427befa18ec6865a9ebdc79d4c38de50e6316ff" 
-            thumbprintAlgorithm="sha1" />
-    </Certificates>
-...
-</Role>
-```
+
+    <Role name="MyWokerRole">
+    ...
+        <Certificates>
+            <Certificate name="MySSLCert" 
+                thumbprint="9427befa18ec6865a9ebdc79d4c38de50e6316ff" 
+                thumbprintAlgorithm="sha1" />
+        </Certificates>
+    ...
+    </Role>
+
 
 **请注意**匹配的 `name` 属性。
 
