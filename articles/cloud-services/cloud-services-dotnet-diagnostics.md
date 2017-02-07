@@ -132,7 +132,9 @@
 7.	完成部署后，在 Azure 经典管理门户中验证你的云服务是否处于“正在运行”状态。
 
 ### 步骤 4：创建 Diagnostics 配置文件并安装扩展
-1.	通过执行以下 PowerShell 命令来下载公共配置文件架构定义：2.(Get-AzureServiceAvailableExtension -ExtensionName 'PaaSDiagnostics' -ProviderNamespace 'Microsoft.Azure.Diagnostics').PublicConfigurationSchema | Out-File -Encoding utf8 -FilePath 'WadConfig.xsd'
+1.	通过执行以下 PowerShell 命令来下载公共配置文件架构定义：
+
+        (Get-AzureServiceAvailableExtension -ExtensionName 'PaaSDiagnostics' -ProviderNamespace 'Microsoft.Azure.Diagnostics').PublicConfigurationSchema | Out-File -Encoding utf8 -FilePath 'WadConfig.xsd'
 
 2.	右键单击 WorkerRole1 项目并选择“添加”->“新建项...”->“Visual C# 项”->“数据”->“XML 文件”，将 XML 文件添加到 WorkerRole1 项目中。将该文件命名为“WadExample.xml”。
 

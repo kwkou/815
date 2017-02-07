@@ -28,19 +28,19 @@
 若希望通过 PowerShell 对订阅执行任何操作，必须首先登录：
 
 
-		Add-AzureAccount -Environment $(Get-AzureRmEnvironment -Name AzureChinaCloud)
+	Add-AzureAccount -Environment $(Get-AzureRmEnvironment -Name AzureChinaCloud)
 
 
 如果有多个订阅与帐户关联，可能需要根据云服务的所在位置更改当前订阅。若要查看当前订阅，请运行：
 
 
-		Get-AzureSubscription -Current
+	Get-AzureSubscription -Current
 
 
 如果需要更改当前订阅，请运行：
 
 
-		Set-AzureSubscription -SubscriptionId <subscription_id>
+	Set-AzureSubscription -SubscriptionId <subscription_id>
 
 
 ## 查看角色的当前实例计数
@@ -48,7 +48,7 @@
 若要查看角色的当前状态，请运行：
 
 
-		Get-AzureRole -ServiceName '<your_service_name>' -RoleName '<your_role_name>'
+	Get-AzureRole -ServiceName '<your_service_name>' -RoleName '<your_role_name>'
 
 
 应重新获取有关角色的信息，包括其当前 OS 版本和实例计数。在本例中，角色具有单个实例。
@@ -61,7 +61,7 @@
 若要扩展角色，请将所需的实例数作为**计数**参数传递给 **Set-AzureRole** cmdlet：
 
 
-		Set-AzureRole -ServiceName '<your_service_name>' -RoleName '<your_role_name>' -Slot <target_slot> -Count <desired_instances>
+	Set-AzureRole -ServiceName '<your_service_name>' -RoleName '<your_role_name>' -Slot <target_slot> -Count <desired_instances>
 
 
 当预配并启动新实例时，此 cmdlet 将立即阻止。在此期间，如果打开一个新的 PowerShell 窗口，然后调用 **Get-AzureRole**（如前面所示），将看到新的目标实例计数。如果在门户中查看角色状态，应看到新实例正在启动：
