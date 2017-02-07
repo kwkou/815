@@ -18,7 +18,7 @@
 
 # ExpressRoute 线路和路由域
 
- 你必须订购一条 *ExpressRoute 线路*，以通过连接提供商将你的本地基础结构连接到 Azure。下图提供了你的 WAN 与 Azure 之间的连接的逻辑表示形式。
+ 你必须订购一条 *ExpressRoute 线路* ，以通过连接提供商将你的本地基础结构连接到 Azure。下图提供了你的 WAN 与 Azure 之间的连接的逻辑表示形式。
 
 ![](./media/expressroute-circuit-peerings/expressroute-basic.png)
 
@@ -38,7 +38,7 @@ ExpressRoute 线路最多可以有两个独立的对等互连：Azure 公共和A
 
 ## ExpressRoute 路由域
 
-一条 ExpressRoute 线路有两个关联的路由域：Azure 公共和Azure 专用。在一对路由器上，每个路由域采用相同的配置（主动-主动，或负载分担配置）以实现高可用性。Azure 服务分类为 *Azure 公共*和 *Azure 专用*以表示 IP 寻址方案。
+一条 ExpressRoute 线路有两个关联的路由域：Azure 公共和Azure 专用。在一对路由器上，每个路由域采用相同的配置（主动-主动，或负载分担配置）以实现高可用性。Azure 服务分类为 *Azure 公共* 和 *Azure 专用* 以表示 IP 寻址方案。
 
 
 ![](./media/expressroute-circuit-peerings/expressroute-peerings.png)
