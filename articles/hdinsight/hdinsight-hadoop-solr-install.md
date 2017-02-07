@@ -18,20 +18,20 @@
 
 # 在 HDInsight Hadoop 群集上安装并使用 Solr
 
-了解如何使用 Solr 通过脚本操作自定义基于 Windows 的 HDInsight 群集，以及如何使用 Solr 搜索数据。有关在基于 Linux 的群集中使用 Solr 的信息，请参阅[在 HDInsight Hadoop 群集 (Linux) 上安装和使用 Solr](/documentation/articles/hdinsight-hadoop-solr-install-linux)。
+了解如何使用 Solr 通过脚本操作自定义基于 Windows 的 HDInsight 群集，以及如何使用 Solr 搜索数据。有关在基于 Linux 的群集中使用 Solr 的信息，请参阅[在 HDInsight Hadoop 群集 (Linux) 上安装和使用 Solr](/documentation/articles/hdinsight-hadoop-solr-install-linux/)。
  
 你可以使用*脚本操作*，在 Azure HDInsight 的任何群集类型（Hadoop、Storm、HBase、Spark）上安装 Solr。用于在 HDInsight 群集上安装 Solr 的示例脚本可通过 [https://hdiconfigactions.blob.core.windows.net/solrconfigactionv01/solr-installer-v01.ps1](https://hdiconfigactions.blob.core.windows.net/solrconfigactionv01/solr-installer-v01.ps1) 上的只读 Azure 存储 Blob 获得。
 
-示例脚本仅适用于 HDInsight 群集版本 3.1。有关 HDInsight 群集版本的详细信息，请参阅 [HDInsight 群集版本](/documentation/articles/hdinsight-component-versioning)。
+示例脚本仅适用于 HDInsight 群集版本 3.1。有关 HDInsight 群集版本的详细信息，请参阅 [HDInsight 群集版本](/documentation/articles/hdinsight-component-versioning/)。
 
 本主题中使用的示例脚本将使用特定配置创建基于 Windows 的 Solr 群集。如果你要使用不同集合、分片、架构、副本等配置 Solr 群集，则必须相应地修改脚本和 Solr 二进制文件。
 
 **相关文章**
 
-- [在 HDInsight Hadoop 群集 (Linux) 上安装和使用 Solr](/documentation/articles/hdinsight-hadoop-solr-install-linux)
-- [在 HDInsight 中创建 Hadoop 群集](/documentation/articles/hdinsight-provision-clusters)：有关创建 HDInsight 群集的一般信息。
+- [在 HDInsight Hadoop 群集 (Linux) 上安装和使用 Solr](/documentation/articles/hdinsight-hadoop-solr-install-linux/)
+- [在 HDInsight 中创建 Hadoop 群集](/documentation/articles/hdinsight-provision-clusters/)：有关创建 HDInsight 群集的一般信息。
 - [使用脚本操作自定义 HDInsight 群集][hdinsight-cluster-customize]：有关使用脚本操作自定义 HDInsight 群集的一般信息。
-- [为 HDInsight 开发脚本操作脚本](/documentation/articles/hdinsight-hadoop-script-actions)。
+- [为 HDInsight 开发脚本操作脚本](/documentation/articles/hdinsight-hadoop-script-actions/)。
 
 
 ## 什么是 Solr？
@@ -42,9 +42,9 @@
 
 [AZURE.INCLUDE [hdinsight-azure-preview-portal](../includes/hdinsight-azure-preview-portal.md)]
 
-* [在 HDInsight 群集上安装 Solr](/documentation/articles/hdinsight-hadoop-solr-install-linux)
+* [在 HDInsight 群集上安装 Solr](/documentation/articles/hdinsight-hadoop-solr-install-linux/)
 
-1. 如[在 HDInsight 中创建 Hadoop 群集](/documentation/articles/hdinsight-provision-clusters)中所述，使用“自定义创建”选项开始创建群集。
+1. 如[在 HDInsight 中创建 Hadoop 群集](/documentation/articles/hdinsight-provision-clusters/)中所述，使用“自定义创建”选项开始创建群集。
 2. 在向导的“脚本操作”页上，单击“添加脚本操作”，以提供有关脚本操作的详细信息，如下所示：
 
 	![使用脚本操作自定义群集](./media/hdinsight-hadoop-solr-install/hdi-script-action-solr.png "使用脚本操作自定义群集")
@@ -68,7 +68,7 @@
 
 你必须从使用一些数据文件为 Solr 编制索引开始。然后，可以使用 Solr 对索引数据运行搜索查询。执行以下步骤，以在 HDInsight 群集中使用 Solr：
 
-1. **使用远程桌面协议 (RDP) 远程连接到安装有 Solr 的 HDInsight 群集**。在 Azure 管理门户中，对你创建的安装有 Solr 的群集启用远程桌面，然后远程连接到该群集。有关说明，请参阅[使用 RDP 连接到 HDInsight 群集](/documentation/articles/hdinsight-administer-use-management-portal#connect-to-clusters-using-rdp)。
+1. **使用远程桌面协议 (RDP) 远程连接到安装有 Solr 的 HDInsight 群集**。在 Azure 管理门户中，对你创建的安装有 Solr 的群集启用远程桌面，然后远程连接到该群集。有关说明，请参阅[使用 RDP 连接到 HDInsight 群集](/documentation/articles/hdinsight-administer-use-management-portal/#connect-to-clusters-using-rdp)。
 
 2. **通过上传数据文件为 Solr 编制索引**。在为 Solr 编制索引时，你应将可能需要搜索的文档放置在其中。若要为 Solr 编制索引，请使用 RDP 远程连接到群集、导航到桌面、打开 Hadoop 命令行，然后导航到 **C:\\apps\\dist\\solr-4.7.2\\example\\exampledocs**。运行以下命令：
 
@@ -174,29 +174,29 @@
 
 ## 使用 Azure PowerShell 安装 Solr
 
-请参阅[使用脚本操作自定义 HDInsight 群集](/documentation/articles/hdinsight-hadoop-customize-cluster#call_scripts_using_powershell)。此示例演示如何使用 Azure PowerShell 安装 Spark。你需要自定义脚本以使用 [https://hdiconfigactions.blob.core.windows.net/solrconfigactionv01/solr-installer-v01.ps1](https://hdiconfigactions.blob.core.windows.net/solrconfigactionv01/solr-installer-v01.ps1)。
+请参阅[使用脚本操作自定义 HDInsight 群集](/documentation/articles/hdinsight-hadoop-customize-cluster/#call_scripts_using_powershell)。此示例演示如何使用 Azure PowerShell 安装 Spark。你需要自定义脚本以使用 [https://hdiconfigactions.blob.core.windows.net/solrconfigactionv01/solr-installer-v01.ps1](https://hdiconfigactions.blob.core.windows.net/solrconfigactionv01/solr-installer-v01.ps1)。
 
 ## 使用 .NET SDK 安装 Solr
 
-请参阅[使用脚本操作自定义 HDInsight 群集](/documentation/articles/hdinsight-hadoop-customize-cluster#call-scripts-using-azure-powershell)。此示例演示如何使用 .NET SDK 安装 Spark。你需要自定义脚本以使用 [https://hdiconfigactions.blob.core.windows.net/solrconfigactionv01/solr-installer-v01.ps1](https://hdiconfigactions.blob.core.windows.net/solrconfigactionv01/solr-installer-v01.ps1)。
+请参阅[使用脚本操作自定义 HDInsight 群集](/documentation/articles/hdinsight-hadoop-customize-cluster/#call-scripts-using-azure-powershell)。此示例演示如何使用 .NET SDK 安装 Spark。你需要自定义脚本以使用 [https://hdiconfigactions.blob.core.windows.net/solrconfigactionv01/solr-installer-v01.ps1](https://hdiconfigactions.blob.core.windows.net/solrconfigactionv01/solr-installer-v01.ps1)。
 
 
 
 ## 另请参阅
 
-- [在 HDInsight Hadoop 群集 (Linux) 上安装和使用 Solr](/documentation/articles/hdinsight-hadoop-solr-install-linux)
-- [在 HDInsight 中创建 Hadoop 群集](/documentation/articles/hdinsight-provision-clusters)：有关创建 HDInsight 群集的一般信息。
+- [在 HDInsight Hadoop 群集 (Linux) 上安装和使用 Solr](/documentation/articles/hdinsight-hadoop-solr-install-linux/)
+- [在 HDInsight 中创建 Hadoop 群集](/documentation/articles/hdinsight-provision-clusters/)：有关创建 HDInsight 群集的一般信息。
 - [使用脚本操作自定义 HDInsight 群集][hdinsight-cluster-customize]：有关使用脚本操作自定义 HDInsight 群集的一般信息。
-- [为 HDInsight 开发脚本操作脚本](/documentation/articles/hdinsight-hadoop-script-actions)。
+- [为 HDInsight 开发脚本操作脚本](/documentation/articles/hdinsight-hadoop-script-actions/)。
 - [在 HDInsight 群集上安装和使用 Spark][hdinsight-install-spark]：有关安装 Spark 的脚本操作示例。
 - [在 HDInsight 群集上安装 R][hdinsight-install-r]：有关安装 R 的脚本操作示例。
-- [在 HDInsight 群集上安装 Giraph](/documentation/articles/hdinsight-hadoop-giraph-install)：有关安装 Giraph 的脚本操作示例。
+- [在 HDInsight 群集上安装 Giraph](/documentation/articles/hdinsight-hadoop-giraph-install/)：有关安装 Giraph 的脚本操作示例。
 
 
-[powershell-install-configure]: /documentation/articles/powershell-install-configure
-[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters
-[hdinsight-install-r]: /documentation/articles/hdinsight-hadoop-r-scripts
-[hdinsight-install-spark]: /documentation/articles/hdinsight-hadoop-spark-install
-[hdinsight-cluster-customize]: /documentation/articles/hdinsight-hadoop-customize-cluster
+[powershell-install-configure]: /documentation/articles/powershell-install-configure/
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters/
+[hdinsight-install-r]: /documentation/articles/hdinsight-hadoop-r-scripts/
+[hdinsight-install-spark]: /documentation/articles/hdinsight-hadoop-spark-install/
+[hdinsight-cluster-customize]: /documentation/articles/hdinsight-hadoop-customize-cluster/
 
 <!---HONumber=Mooncake_Quality_Review_1215_2016-->

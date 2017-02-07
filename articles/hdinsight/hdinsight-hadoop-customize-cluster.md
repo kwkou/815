@@ -19,7 +19,7 @@
 
 [AZURE.INCLUDE [选择器](../includes/hdinsight-create-windows-cluster-selector.md)]
 
-创建群集期间，可以使用**脚本操作**调用[自定义脚本](/documentation/articles/hdinsight-hadoop-script-actions)，以便在群集上安装其他软件。
+创建群集期间，可以使用**脚本操作**调用[自定义脚本](/documentation/articles/hdinsight-hadoop-script-actions/)，以便在群集上安装其他软件。
 
 也可以使用其他各种方法自定义 HDInsight 群集，例如包括其他 Azure 存储帐户、更改 hadoop 配置文件（core-site.xml、hive-site.xml 等），或者将共享库（如 Hive、Oozie）添加到群集中的共同位置。这些自定义可以通过 Azure PowerShell、Azure HDInsight .NET SDK 或 Azure 管理门户完成。有关详细信息，请参阅[在 HDInsight 中创建 Hadoop 群集][hdinsight-provision-cluster]。
 
@@ -42,8 +42,8 @@ HDInsight 提供了多个脚本用于在 HDInsight 群集上安装以下组件�
 Name | 脚本
 ----- | -----
 **安装 R** | https://hdiconfigactions.blob.core.windows.net/rconfigactionv02/r-installer-v02.ps1。请参阅[在 HDInsight 群集上安装并使用 R][hdinsight-install-r]。
-**安装 Solr** | https://hdiconfigactions.blob.core.windows.net/solrconfigactionv01/solr-installer-v01.ps1。请参阅[在 HDInsight 群集上安装并使用 Solr](/documentation/articles/hdinsight-hadoop-solr-install)。
-- **安装 Giraph** | https://hdiconfigactions.blob.core.windows.net/giraphconfigactionv01/giraph-installer-v01.ps1。请参阅[在 HDInsight 群集上安装并使用 Giraph](/documentation/articles/hdinsight-hadoop-giraph-install)。
+**安装 Solr** | https://hdiconfigactions.blob.core.windows.net/solrconfigactionv01/solr-installer-v01.ps1。请参阅[在 HDInsight 群集上安装并使用 Solr](/documentation/articles/hdinsight-hadoop-solr-install/)。
+- **安装 Giraph** | https://hdiconfigactions.blob.core.windows.net/giraphconfigactionv01/giraph-installer-v01.ps1。请参阅[在 HDInsight 群集上安装并使用 Giraph](/documentation/articles/hdinsight-hadoop-giraph-install/)。
 
 
 
@@ -51,7 +51,7 @@ Name | 脚本
 
 **通过 Azure 管理门户**
 
-1. 使用“自定义创建”选项开始预配群集，如[使用自定义选项预配群集](/documentation/articles/hdinsight-provision-clusters)中所述。 
+1. 使用“自定义创建”选项开始预配群集，如[使用自定义选项预配群集](/documentation/articles/hdinsight-provision-clusters/)中所述。 
 2. 在向导的“脚本操作”页上，单击“添加脚本操作”，以提供有关脚本操作的详细信息，如下所示：
 
 	![使用脚本操作自定义群集](./media/hdinsight-hadoop-customize-cluster-v1/HDI.CustomProvision.Page6.png "使用脚本操作自定义群集")
@@ -128,7 +128,7 @@ Microsoft Azure HDInsight 服务是一个灵活的平台，可使用围绕 Hadoo
 
 HDInsight 服务提供两种类型的开源组件：
 
-- **内置组件** - 这些组件预先安装在 HDInsight 群集上，并提供群集的核心功能。例如，Yarn ResourceManager、Hive 查询语言 (HiveQL) 和 Mahout 库均属于此类别。[HDInsight 提供的 Hadoop 群集版本有哪些新增功能](/documentation/articles/hdinsight-component-versioning)</a>中提供了群集组件的完整列表。
+- **内置组件** - 这些组件预先安装在 HDInsight 群集上，并提供群集的核心功能。例如，Yarn ResourceManager、Hive 查询语言 (HiveQL) 和 Mahout 库均属于此类别。[HDInsight 提供的 Hadoop 群集版本有哪些新增功能](/documentation/articles/hdinsight-component-versioning/)</a>中提供了群集组件的完整列表。
 - **自定义组件** - 作为群集用户，可以安装，或者在工作负荷中使用由社区提供或自己创建的任何组件。
 
 完全支持内置组件，Microsoft 支持部门将帮助找出并解决与这些组件相关的问题。
@@ -153,13 +153,13 @@ HDInsight 服务可提供多种方法使用自定义组件。无论在群集上�
 - [在 HDInsight 中创建 Hadoop 群集][hdinsight-provision-cluster]介绍如何使用其他自定义选项创建 HDInsight 群集。
 - [为 HDInsight 开发脚本操作脚本][hdinsight-write-script]
 - [在 HDInsight 群集上安装并使用 R][hdinsight-install-r]
-- [在 HDInsight 群集上安装并使用 Solr](/documentation/articles/hdinsight-hadoop-solr-install)
-- [在 HDInsight 群集上安装并使用 Giraph](/documentation/articles/hdinsight-hadoop-giraph-install)
+- [在 HDInsight 群集上安装并使用 Solr](/documentation/articles/hdinsight-hadoop-solr-install/)
+- [在 HDInsight 群集上安装并使用 Giraph](/documentation/articles/hdinsight-hadoop-giraph-install/)
 
-[hdinsight-install-r]: /documentation/articles/hdinsight-hadoop-r-scripts
-[hdinsight-write-script]: /documentation/articles/hdinsight-hadoop-script-actions
-[hdinsight-provision-cluster]: /documentation/articles/hdinsight-provision-clusters
-[powershell-install-configure]: /documentation/articles/powershell-install-configure
+[hdinsight-install-r]: /documentation/articles/hdinsight-hadoop-r-scripts/
+[hdinsight-write-script]: /documentation/articles/hdinsight-hadoop-script-actions/
+[hdinsight-provision-cluster]: /documentation/articles/hdinsight-provision-clusters/
+[powershell-install-configure]: /documentation/articles/powershell-install-configure/
 
 
 [img-hdi-cluster-states]: ./media/hdinsight-hadoop-customize-cluster-v1/HDI-Cluster-state.png "群集创建期间的阶段"

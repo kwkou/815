@@ -27,14 +27,14 @@
 
 [AZURE.INCLUDE [hdinsight-azure-preview-portal](../includes/hdinsight-azure-preview-portal.md)]
 
-* [使用 Azure 管理门户管理 HDInsight 中的 Hadoop 群集](/documentation/articles/hdinsight-administer-use-management-portal)
+* [使用 Azure 管理门户管理 HDInsight 中的 Hadoop 群集](/documentation/articles/hdinsight-administer-use-management-portal/)
 
 **先决条件**
 
 开始阅读本文之前，必须具备以下条件：
 
 - **Azure 订阅**。请参阅[获取 Azure 试用版](/pricing/1rmb-trial/)。
-- **Azure 存储帐户** - HDInsight 群集使用 Azure Blob 存储容器作为默认文件系统。有关 Azure Blob 存储如何提供与 HDInsight 群集无缝体验的详细信息，请参阅[将 Azure Blob 存储与 HDInsight 配合使用](/documentation/articles/hdinsight-hadoop-use-blob-storage)。有关创建 Azure 存储帐户的详细信息，请参阅[如何创建存储帐户](/documentation/articles/storage-create-storage-account)。
+- **Azure 存储帐户** - HDInsight 群集使用 Azure Blob 存储容器作为默认文件系统。有关 Azure Blob 存储如何提供与 HDInsight 群集无缝体验的详细信息，请参阅[将 Azure Blob 存储与 HDInsight 配合使用](/documentation/articles/hdinsight-hadoop-use-blob-storage/)。有关创建 Azure 存储帐户的详细信息，请参阅[如何创建存储帐户](/documentation/articles/storage-create-storage-account/)。
 
 ##打开门户
 
@@ -54,17 +54,17 @@
 
 ##创建群集
 
-有关使用门户创建群集的说明，请参阅[创建 HDInsight 群集](/documentation/articles/hdinsight-provision-clusters)。
+有关使用门户创建群集的说明，请参阅[创建 HDInsight 群集](/documentation/articles/hdinsight-provision-clusters/)。
 
-HDInsight 使用各种 Hadoop 组件。有关已获得验证和支持的组件列表，请参阅 [Azure HDInsight 包含哪个版本的 Hadoop？](/documentation/articles/hdinsight-component-versioning)。可使用以下选项之一自定义 HDInsight：
+HDInsight 使用各种 Hadoop 组件。有关已获得验证和支持的组件列表，请参阅 [Azure HDInsight 包含哪个版本的 Hadoop？](/documentation/articles/hdinsight-component-versioning/)。可使用以下选项之一自定义 HDInsight：
 
-- 使用脚本操作运行可以自定义群集的自定义脚本，以更改群集配置或安装 Giraph 或 Solr 等自定义组件。有关详细信息，请参阅[使用脚本操作自定义 HDInsight 群集](/documentation/articles/hdinsight-hadoop-customize-cluster)。
-- 在群集创建期间使用 HDInsight .NET SDK 或 Azure PowerShell 中的群集自定义参数。然后，这些配置更改在群集的整个生存期内保留，并且不受 Azure 平台在维护时定期执行的群集节点重新映像影响。有关使用群集自定义参数的详细信息，请参阅[创建 HDInsight 群集](/documentation/articles/hdinsight-provision-clusters)。
-- 一些本机 Java 组件（如 Mahout 和 Cascading）可以在群集上作为 JAR 文件运行。可以通过 Hadoop 作业提交机制将这些 JAR 文件分发到 Azure Blob 存储，并提交到 HDInsight 群集。有关详细信息，请参阅[以编程方式提交 Hadoop 作业](/documentation/articles/hdinsight-submit-hadoop-jobs-programmatically)。
+- 使用脚本操作运行可以自定义群集的自定义脚本，以更改群集配置或安装 Giraph 或 Solr 等自定义组件。有关详细信息，请参阅[使用脚本操作自定义 HDInsight 群集](/documentation/articles/hdinsight-hadoop-customize-cluster/)。
+- 在群集创建期间使用 HDInsight .NET SDK 或 Azure PowerShell 中的群集自定义参数。然后，这些配置更改在群集的整个生存期内保留，并且不受 Azure 平台在维护时定期执行的群集节点重新映像影响。有关使用群集自定义参数的详细信息，请参阅[创建 HDInsight 群集](/documentation/articles/hdinsight-provision-clusters/)。
+- 一些本机 Java 组件（如 Mahout 和 Cascading）可以在群集上作为 JAR 文件运行。可以通过 Hadoop 作业提交机制将这些 JAR 文件分发到 Azure Blob 存储，并提交到 HDInsight 群集。有关详细信息，请参阅[以编程方式提交 Hadoop 作业](/documentation/articles/hdinsight-submit-hadoop-jobs-programmatically/)。
 
 	>[AZURE.NOTE] 如果在将 JAR 文件部署到 HDInsight 群集或调用 HDInsight 群集上的 JAR 文件时遇到问题，请联系 [Microsoft 技术支持](https://azure.microsoft.com/support/contact/)。
 
-	> Cascading 不受 HDInsight 支持，因此不符合 Microsoft 技术支持的条件。有关支持的组件列表，请参阅 [HDInsight 提供的群集版本有哪些新功能？](/documentation/articles/hdinsight-component-versioning)。
+	> Cascading 不受 HDInsight 支持，因此不符合 Microsoft 技术支持的条件。有关支持的组件列表，请参阅 [HDInsight 提供的群集版本有哪些新功能？](/documentation/articles/hdinsight-component-versioning/)。
 
 不支持使用远程桌面连接在群集上安装自定义软件。应避免在头节点的驱动器上存储任何文件，因为如果需要重新创建群集，这些文件会丢失。建议在 Azure Blob 存储中存储文件。Blob 存储是持久性的。
 
@@ -91,7 +91,7 @@ HDInsight 使用各种 Hadoop 组件。有关已获得验证和支持的组件�
 	- **标记 (![标记图标](./media/hdinsight-administer-use-portal-linux/tags.png))**：标记可设置键/值对，以定义云服务的自定义分类。例如，可以创建名为 __project__ 的键，然后对与特定项目关联的所有服务使用公用值。
 	- **Ambari 视图**：Ambari Web 链接。
 	
-	> [AZURE.IMPORTANT] 要管理 HDInsight 群集提供的服务，必须使用 Ambari Web 或 Ambari REST API。有关如何使用 Ambari 的详细信息，请参阅[使用 Ambari 管理 HDInsight 群集](/documentation/articles/hdinsight-hadoop-manage-ambari)。
+	> [AZURE.IMPORTANT] 要管理 HDInsight 群集提供的服务，必须使用 Ambari Web 或 Ambari REST API。有关如何使用 Ambari 的详细信息，请参阅[使用 Ambari 管理 HDInsight 群集](/documentation/articles/hdinsight-hadoop-manage-ambari/)。
 
 	**用法**：
 	
@@ -123,7 +123,7 @@ HDInsight 使用各种 Hadoop 组件。有关已获得验证和支持的组件�
 	- **已创建的数据**。
 	- **操作系统**：**Windows** 或 **Linux**。
 	- **类型**：Hadoop、HBase、Storm、Spark。 
-	- **版本**。请参阅 [HDInsight 版本](/documentation/articles/hdinsight-component-versioning)
+	- **版本**。请参阅 [HDInsight 版本](/documentation/articles/hdinsight-component-versioning/)
 	- **订阅**：订阅名称。
 	- **订阅 ID**。
 	- **主数据源**。用作默认 Hadoop 文件系统的 Azure Blob 存储帐户。
@@ -143,7 +143,7 @@ HDInsight 使用各种 Hadoop 组件。有关已获得验证和支持的组件�
 ## <a name="scale-clusters"></a>缩放群集
 群集缩放功能可更改 Azure HDInsight 中运行的群集使用的辅助节点数，而无需重新创建群集。
 
->[AZURE.NOTE] 仅支持使用 HDInsight 3.1.3 版或更高版本的群集。如果不确定群集的版本，可以查看“属性”页面。请参阅[列出并显示群集](/documentation/articles/hdinsight-administer-use-management-portal#list-and-show-clusters)。
+>[AZURE.NOTE] 仅支持使用 HDInsight 3.1.3 版或更高版本的群集。如果不确定群集的版本，可以查看“属性”页面。请参阅[列出并显示群集](/documentation/articles/hdinsight-administer-use-management-portal/#list-and-show-clusters)。
 
 更改 HDInsight 支持的每种类型的群集所用数据节点数的影响：
 
@@ -201,9 +201,9 @@ HDInsight 使用各种 Hadoop 组件。有关已获得验证和支持的组件�
 
 可以通过许多方式对此过程进行程序性处理：
 
-- 使用 Azure PowerShell。请参阅[分析航班延误数据](/documentation/articles/hdinsight-analyze-flight-delay-data)。
-- 使用 Azure CLI。请参阅[使用 Azure CLI 管理 HDInsight 群集](/documentation/articles/hdinsight-administer-use-command-line)。
-- 使用 HDInsight .NET SDK。请参阅[提交 Hadoop 作业](/documentation/articles/hdinsight-submit-hadoop-jobs-programmatically)。
+- 使用 Azure PowerShell。请参阅[分析航班延误数据](/documentation/articles/hdinsight-analyze-flight-delay-data/)。
+- 使用 Azure CLI。请参阅[使用 Azure CLI 管理 HDInsight 群集](/documentation/articles/hdinsight-administer-use-command-line/)。
+- 使用 HDInsight .NET SDK。请参阅[提交 Hadoop 作业](/documentation/articles/hdinsight-submit-hadoop-jobs-programmatically/)。
 
 有关定价信息，请参阅 [HDInsight 定价](/home/features/hdinsight/#price)。要从门户中删除群集，请参阅[删除群集](#delete-clusters)
 
@@ -267,8 +267,8 @@ HDInsight 群集提供以下 HTTP Web 服务（所有这些服务都有 REST 样
 
 HDInsight 查询控制台包括下列功能：
 
-- **入门库**：要使用此库，请参阅[使用 Azure HDInsight 入门库了解 Hadoop](/documentation/articles/hdinsight-learn-hadoop-use-sample-gallery)。
-- **Hive 编辑器**：用于提交 Hive 作业的 GUI Web 界面。请参阅[使用查询控制台运行 Hive 查询](/documentation/articles/hdinsight-hadoop-use-hive-query-console)。
+- **入门库**：要使用此库，请参阅[使用 Azure HDInsight 入门库了解 Hadoop](/documentation/articles/hdinsight-learn-hadoop-use-sample-gallery/)。
+- **Hive 编辑器**：用于提交 Hive 作业的 GUI Web 界面。请参阅[使用查询控制台运行 Hive 查询](/documentation/articles/hdinsight-hadoop-use-hive-query-console/)。
 
 	![hdinsight 门户 hive 编辑器](./media/hdinsight-administer-use-management-portal/hdinsight-hive-editor.png)
 
@@ -314,7 +314,7 @@ HDInsight 查询控制台包括下列功能：
 
 HDInsight 群集边栏选项卡的“使用情况”部分会显示相关信息，便于了解订阅中可用于 HDInsight 的核心数、分配给此群集的核心数，以及如何将这些核心分配给此群集中的节点。请参阅[列出并显示群集](#list-and-show-clusters)。
 
-> [AZURE.IMPORTANT] 要监视 HDInsight 群集提供的服务，必须使用 Ambari Web 或 Ambari REST API。有关如何使用 Ambari 的详细信息，请参阅[使用 Ambari 管理 HDInsight 群集](/documentation/articles/hdinsight-hadoop-manage-ambari)
+> [AZURE.IMPORTANT] 要监视 HDInsight 群集提供的服务，必须使用 Ambari Web 或 Ambari REST API。有关如何使用 Ambari 的详细信息，请参阅[使用 Ambari 管理 HDInsight 群集](/documentation/articles/hdinsight-hadoop-manage-ambari/)
 
 
 ##打开 Hadoop UI
@@ -327,7 +327,7 @@ HDInsight 群集边栏选项卡的“使用情况”部分会显示相关信息�
 
 ## <a name="connect-to-hdinsight-clusters-by-using-rdp" id="connect-to-clusters-using-rdp"></a>使用 RDP 连接到群集
 
-通过创建群集时提供的凭据，可以访问群集上的服务，但无法通过远程桌面访问群集本身。在预配群集时或在预配群集后，可以启用“远程桌面访问”。有关在创建时启用远程桌面的说明，请参阅[创建 HDInsight 群集](/documentation/articles/hdinsight-provision-clusters)。
+通过创建群集时提供的凭据，可以访问群集上的服务，但无法通过远程桌面访问群集本身。在预配群集时或在预配群集后，可以启用“远程桌面访问”。有关在创建时启用远程桌面的说明，请参阅[创建 HDInsight 群集](/documentation/articles/hdinsight-provision-clusters/)。
 
 **启用远程桌面**
 
@@ -374,12 +374,12 @@ HDInsight 群集边栏选项卡的“使用情况”部分会显示相关信息�
 ##后续步骤
 在本文中，已学习如何使用门户创建 HDInsight 群集和如何打开 Hadoop 命令行工具。要了解更多信息，请参阅下列文章：
 
-* [使用 Azure PowerShell 管理 HDInsight](/documentation/articles/hdinsight-administer-use-powershell)
-* [使用 Azure CLI 管理 HDInsight](/documentation/articles/hdinsight-administer-use-command-line)
-* [创建 HDInsight 群集](/documentation/articles/hdinsight-provision-clusters)
-* [以编程方式提交 Hadoop 作业](/documentation/articles/hdinsight-submit-hadoop-jobs-programmatically)
-* [Azure HDInsight 入门](/documentation/articles/hdinsight-hadoop-tutorial-get-started-windows)
-* [Azure HDInsight 包含哪个版本的 Hadoop？](/documentation/articles/hdinsight-component-versioning)
+* [使用 Azure PowerShell 管理 HDInsight](/documentation/articles/hdinsight-administer-use-powershell/)
+* [使用 Azure CLI 管理 HDInsight](/documentation/articles/hdinsight-administer-use-command-line/)
+* [创建 HDInsight 群集](/documentation/articles/hdinsight-provision-clusters/)
+* [以编程方式提交 Hadoop 作业](/documentation/articles/hdinsight-submit-hadoop-jobs-programmatically/)
+* [Azure HDInsight 入门](/documentation/articles/hdinsight-hadoop-tutorial-get-started-windows/)
+* [Azure HDInsight 包含哪个版本的 Hadoop？](/documentation/articles/hdinsight-component-versioning/)
 
 [azure-portal]: https://manage.windowsazure.cn
 [image-hadoopcommandline]: ./media/hdinsight-administer-use-management-portal/hdinsight-hadoop-command-line.png "Hadoop 命令行"
