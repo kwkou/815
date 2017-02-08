@@ -52,7 +52,7 @@
 
 下面介绍三种方案的具体配置方法 : 
 
-## <a id="vpn-bgp">使用 VPN 网关的 BGP 功能</a>
+## <a id="vpn-bgp"></a>使用 VPN 网关的 BGP 功能
 
 ![network-bgp](./media/aog-vpn-gateway-howto-implement-network-transmission/network-bgp.png)
 
@@ -63,7 +63,7 @@
 [如何使用 Azure Resource Manager 和 PowerShell 在 Azure VPN 网关上配置 BGP](/documentation/articles/vpn-gateway-bgp-resource-manager-ps/)<br>
 [如何使用 Windows Server 2016 与 Azure 搭建支持 BGP 协议的 VPN 通道](/documentation/articles/aog-virtual-machines-howto-windows-server-2016-bgp-vpn/)
 
-## <a id="local-network">自定义本地网络（Local Network）地址空间</a>
+## <a id="local-network"></a>自定义本地网络（Local Network）地址空间
 
 ![local-network](./media/aog-vpn-gateway-howto-implement-network-transmission/local-network.png)
 
@@ -112,7 +112,7 @@
 
 10.	以上配置成功后，就可以在 `VNET2` 和 `On Premises Local Site` 之间进行访问了。
 
-## <a id="vnet-peering">使用虚拟网络对等互联（VNET Peering）</a>
+## <a id="vnet-peering"></a>使用虚拟网络对等互联（VNET Peering）
 
 使用虚拟网络对等互联从架构上来讲是最简单的，操作也相对比较容易，但是必须得注意的是目前 `VNET1` 和 `VNET2` 必须创建在同一个数据中心。
 
