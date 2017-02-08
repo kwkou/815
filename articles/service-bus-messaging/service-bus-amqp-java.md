@@ -46,40 +46,40 @@ JMS 使用 Java 命名和目录接口 (JNDI) 创建逻辑名称和物理名称�
 
 Qpid 属性文件 JNDI 提供程序是使用以下格式的属性文件配置的：
 
-```
-# servicebus.properties – sample JNDI configuration
 
-# Register a ConnectionFactory in JNDI using the form:
-# connectionfactory.[jndi_name] = [ConnectionURL]
-connectionfactory.SBCONNECTIONFACTORY = amqps://[username]:[password]@[namespace].servicebus.chinacloudapi.cn
+    # servicebus.properties – sample JNDI configuration
+    
+    # Register a ConnectionFactory in JNDI using the form:
+    # connectionfactory.[jndi_name] = [ConnectionURL]
+    connectionfactory.SBCONNECTIONFACTORY = amqps://[username]:[password]@[namespace].servicebus.chinacloudapi.cn
+    
+    # Register some queues in JNDI using the form
+    # queue.[jndi_name] = [physical_name]
+    # topic.[jndi_name] = [physical_name]
+    topic.TOPIC = topic1
+    queue.QUEUE = queue1
 
-# Register some queues in JNDI using the form
-# queue.[jndi_name] = [physical_name]
-# topic.[jndi_name] = [physical_name]
-topic.TOPIC = topic1
-queue.QUEUE = queue1
-```
 
 #### 配置连接工厂
 
 用于在 Qpid 属性文件 JNDI 提供程序中定义 **ConnectionFactory** 的条目的格式如下：
 
-```
-connectionfactory.[jndi_name] = [ConnectionURL]
-```
 
-其中 `[jndi\_name]` 和 `[ConnectionURL]` 具有以下含义：
+    connectionfactory.[jndi_name] = [ConnectionURL]
+
+
+其中 `[jndi_name]` 和 `[ConnectionURL]` 具有以下含义：
 
 | 名称 | 含义 | | | | |
 |-----------------|--------------------------------------------------------------------------------------------------------------------------------------------|---|---|---|---|
-| `[jndi\_name]` | 连接工厂的逻辑名称。通过使用 JNDI `IntialContext.lookup()` 方法在 Java 应用程序中解析此名称。 | | | | |
+| `[jndi_name]` | 连接工厂的逻辑名称。通过使用 JNDI `IntialContext.lookup()` 方法在 Java 应用程序中解析此名称。 | | | | |
 | `[ConnectionURL]` | 用于向 AMQP 代理提供包含所需信息的 JMS 库的 URL。 | | | | |
 
 连接 URL 的格式如下：
 
-```
-amqps://[username]:[password]@[namespace].servicebus.chinacloudapi.cn
-```
+
+    amqps://[username]:[password]@[namespace].servicebus.chinacloudapi.cn
+
 
 其中 `[namespace]`、`[username]` 和 `[password]` 具有以下含义：
 
@@ -100,32 +100,32 @@ amqps://[username]:[password]@[namespace].servicebus.chinacloudapi.cn
 
 那么，为了定义名为 `SBCONNECTIONFACTORY` 的 **ConnectionFactory** 对象，配置字符串将如下所示：
 
-```
-connectionfactory.SBCONNECTIONFACTORY = amqps://RootManageSharedAccessKey:abcdefg@test.servicebus.chinacloudapi.cn
-```
+
+    connectionfactory.SBCONNECTIONFACTORY = amqps://RootManageSharedAccessKey:abcdefg@test.servicebus.chinacloudapi.cn
+
 
 #### 配置目标
 
 用于在 Qpid 属性文件 JNDI 提供程序中定义目标的条目的格式如下：
 
-```
-queue.[jndi_name] = [physical_name]
-topic.[jndi_name] = [physical_name]
-```
 
-其中 `[jndi\_name]` 和 `[physical\_name]` 具有以下含义：
+    queue.[jndi_name] = [physical_name]
+    topic.[jndi_name] = [physical_name]
+
+
+其中 `[jndi_name]` 和 `[physical_name]` 具有以下含义：
 
 | Name | 含义 |
 |-------------------|------------------------------------------------------------------------------------------------------------------------------------------|
-| `[jndi\_name]` | 目标的逻辑名称。通过使用 JNDI `IntialContext.lookup()` 方法在 Java 应用程序中解析此名称。 |
-| `[physical\name]` | 应用程序在其中发送或接收消息的 Service Bus 实体的名称。 |
+| `[jndi_name]` | 目标的逻辑名称。通过使用 JNDI `IntialContext.lookup()` 方法在 Java 应用程序中解析此名称。 |
+| `[physical_name]` | 应用程序在其中发送或接收消息的 Service Bus 实体的名称。 |
 
 注意以下事项：
 
-- `[physical\name]` 值可以是服务总线队列或主题。
+- `[physical_name]` 值可以是服务总线队列或主题。
 - 在从 Service Bus 主题订阅中接收时，在 JNDI 中指定的物理名称应该是该主题的名称。在 JMS 应用程序代码中创建可持久订阅时提供该订阅名称。
 - 还可以将服务总线主题订阅视为一个 JMS 队列。此方法具有以下几个优点：可以针对队列和主题订阅使用同一接收者代码，并且所有地址信息（主题和订阅名称）都在属性文件中外部化。
-- 若要将服务总线主题订阅视为一个 JMS 队列，属性文件中的条目应采用以下形式：`queue.[jndi\_name] = [topic\_name]/Subscriptions/[subscription\_name]`。|
+- 若要将服务总线主题订阅视为一个 JMS 队列，属性文件中的条目应采用以下形式：`queue.[jndi_name] = [topic_name]/Subscriptions/[subscription_name]`。|
 
 若要定义映射到名为“topic1”的服务总线主题的名为“TOPIC”的逻辑 JMS 目标，属性文件中的条目应如下所示：
 
