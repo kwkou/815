@@ -25,10 +25,6 @@
 
 单击选项卡选择器还可以了解如何使用其他工具在 HDInsight 中创建 Hadoop 群集。
 
-[AZURE.INCLUDE [hdinsight-azure-preview-portal](../includes/hdinsight-azure-preview-portal.md)]
-
-* [使用 Azure 门户预览管理 HDInsight 中的 Hadoop 群集](/documentation/articles/hdinsight-administer-use-management-portal/)
-
 **先决条件**
 
 开始阅读本文之前，必须具备以下条件：

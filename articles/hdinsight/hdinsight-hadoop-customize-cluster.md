@@ -23,6 +23,8 @@
 
 也可以使用其他各种方法自定义 HDInsight 群集，例如包括其他 Azure 存储帐户、更改 hadoop 配置文件（core-site.xml、hive-site.xml 等），或者将共享库（如 Hive、Oozie）添加到群集中的共同位置。这些自定义可以通过 Azure PowerShell、Azure HDInsight .NET SDK 或 Azure 门户预览完成。有关详细信息，请参阅[在 HDInsight 中创建 Hadoop 群集][hdinsight-provision-cluster]。
 
+[AZURE.INCLUDE [upgrade-powershell](../../includes/hdinsight-use-latest-powershell-cli-and-dotnet-sdk.md)]
+
 ## 群集创建期间的脚本操作
 
 只能在创建群集期间使用脚本操作。下图说明了在创建期间执行脚本操作的时间：

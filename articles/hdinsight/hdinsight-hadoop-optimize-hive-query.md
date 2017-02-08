@@ -20,12 +20,6 @@
 
 默认情况下，不会为了性能而优化 Hadoop 群集。本文介绍可对查询应用的几种最常见 Hive 性能优化方法。
 
-
-[AZURE.INCLUDE [门户预览](../../includes/hdinsight-azure-preview-portal.md)]
-
-
-* [在 Hdinsight 中优化 Hadoop 的 Hive 查询](/documentation/articles/hdinsight-hadoop-optimize-hive-query/)。
-
 ##向外缩放辅助节点
 
 增加群集中的辅助节点数目，即可利用更多并行运行的映射器和化简器。在 HDInsight 中，可通过两种方式增加扩大的数目：
