@@ -57,7 +57,7 @@
 运行以下命令，安装示例应用程序所需的库和其他模块：
 
 
-		npm install
+	npm install
 
 
 ## 配置设备连接
@@ -93,7 +93,7 @@
 运行以下命令，在 Edison 上安装 Azure IoT 中心 SDK：
 
 
-		gulp install-tools
+	gulp install-tools
 
 
 完成此任务可能耗时较长，具体取决于网络连接情况。一个 Edison 只能运行一次。
@@ -102,7 +102,7 @@
 运行以下命令，部署并运行示例应用程序：
 
 
-		gulp deploy && gulp run
+	gulp deploy && gulp run
 
 
 ### 确保应用正常运行

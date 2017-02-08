@@ -90,7 +90,7 @@ IoT 中心会在新消息到达时触发 Azure Function 应用程序，将消息
 
 发送和接收的消息全都在主计算机的同一控制台窗口中即时显示。示例应用程序实例会在 40 秒后自动终止。
 
-    ![gulp 读取](./media/iot-hub-gateway-kit-lessons/lesson4/gulp_run_read_table_simudev.png)  
+![gulp 读取](./media/iot-hub-gateway-kit-lessons/lesson4/gulp_run_read_table_simudev.png)  
 
 
 

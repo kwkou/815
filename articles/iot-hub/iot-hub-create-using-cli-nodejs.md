@@ -47,7 +47,7 @@ Azure 具有用于创建和处理资源的两个不同的部署模型：[Azure R
 1. 在命令提示符处键入以下命令登录
    
    
-        azure login
+        azure login -e AzureChinaCloud
    
    使用建议的 Web 浏览器和代码进行身份验证。
 2. 如果你有多个 Azure 订阅，则连接到 Azure 即有权访问与凭据关联的所有 Azure 订阅。可查看这些订阅以及哪个订阅是默认订阅，只需使用以下命令
@@ -93,7 +93,7 @@ Azure 具有用于创建和处理资源的两个不同的部署模型：[Azure R
  若要在资源组 **exampleResourceGroup** 中创建名为 **exampleIoTHubName** 的 IoT 中心，请直接运行以下命令
 
 
-    azure iothub create -g exampleResourceGroup -n exampleIoTHubName -l westus -k s1 -u 1
+    azure iothub create -g exampleResourceGroup -n exampleIoTHubName -l chinaeast -k s1 -u 1
 
 
 > [AZURE.NOTE]

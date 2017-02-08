@@ -36,10 +36,11 @@
 1. **build.cmd** 脚本在本地存储库副本中创建一个名为 **build** 的文件夹。此文件夹中包含本示例中使用的两个模块。
    
     生成脚本将 **logger.dll** 放在 **build\\modules\\logger\\Debug** 文件夹中，将 **hello\_world.dll** 放在 **build\\modules\\hello\_world\\Debug** 文件夹中。按以下 JSON 设置文件所示，将这些路径用于 **module path** 值。
+    
 2. hello\_world\_sample 进程采用 JSON 配置文件路径作为命令行中的参数。已在 **azure-iot-gateway-sdk\\samples\\hello\_world\\src\\hello\_world\_win.json** 中将以下示例 JSON 文件作为存储库的一部分提供。除非修改生成脚本，将模块或示例可执行文件放在非默认位置，否则它会按原样运行。
 
-   > [AZURE.NOTE]
-   模块路径相对 hello\_world\_sample.exe 所在的目录。示例 JSON 配置文件默认将“log.txt”写入当前工作目录。
+    > [AZURE.NOTE]
+    > 模块路径相对 hello\_world\_sample.exe 所在的目录。示例 JSON 配置文件默认将“log.txt”写入当前工作目录。
    
 
         {

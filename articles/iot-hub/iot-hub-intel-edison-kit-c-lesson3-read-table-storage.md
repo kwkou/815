@@ -56,7 +56,7 @@
 5. 运行以下命令，再次发送消息并从 Azure 表存储中读取这些消息：
 
    
-		   gulp run --read-storage
+		gulp run --read-storage
    
 
     从 Azure 表存储进行读取的逻辑位于 `azure-table.js` 文件中。

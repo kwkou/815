@@ -22,7 +22,7 @@
 
 ## 另请参阅
 
-若要详细了解如何保护 IoT 解决方案，请参阅[保护你的 IoT 部署][lnk-security-deployment]
+若要详细了解如何保护 IoT 解决方案，请参阅[保护你的 IoT 部署][lnk-security-deployment]。
 
 若要进一步探索 IoT 中心的功能，请参阅：
 

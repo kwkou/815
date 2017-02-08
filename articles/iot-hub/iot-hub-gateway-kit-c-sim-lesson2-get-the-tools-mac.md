@@ -80,7 +80,7 @@
 若要安装 gulp，请在终端运行以下命令：
 
 
-		npm install -g gulp
+	npm install -g gulp
 
 
 如果遇到安装问题，请参阅[故障排除指南](/documentation/articles/iot-hub-gateway-kit-c-sim-troubleshooting/)，获取常见问题的解决方案。
@@ -94,7 +94,7 @@
 通过运行以下命令安装 Python 和 pip：
 
 
-		brew install python
+	brew install python
 
 
 ## 安装 Azure CLI

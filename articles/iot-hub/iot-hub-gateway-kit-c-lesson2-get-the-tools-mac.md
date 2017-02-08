@@ -21,9 +21,9 @@
 
 # 获取工具 (MacOS)
 >[AZURE.SELECTOR]
-[Windows 7 or later](/documentation/articles/iot-hub-gateway-kit-c-lesson2-get-the-tools-win32/)
-[Ubuntu 16.04](/documentation/articles/iot-hub-gateway-kit-c-lesson2-get-the-tools-ubuntu/)
-[macOS 10.10](/documentation/articles/iot-hub-gateway-kit-c-lesson2-get-the-tools-mac/)
+- [Windows 7 or later](/documentation/articles/iot-hub-gateway-kit-c-lesson2-get-the-tools-win32/)
+- [Ubuntu 16.04](/documentation/articles/iot-hub-gateway-kit-c-lesson2-get-the-tools-ubuntu/)
+- [macOS 10.10](/documentation/articles/iot-hub-gateway-kit-c-lesson2-get-the-tools-mac/)
 
 ## 执行的操作
 
@@ -78,7 +78,7 @@
 若要安装 gulp，请在终端运行以下命令：
 
 
-		npm install -g gulp
+	npm install -g gulp
 
 
 如果遇到安装问题，请参阅[故障排除指南](/documentation/articles/iot-hub-gateway-kit-c-troubleshooting/)，获取常见问题的解决方案。
@@ -93,7 +93,7 @@
 通过运行以下命令安装 Python 和 pip：
 
 
-		brew install python
+	brew install python
 
 
 ## 安装 Azure CLI
@@ -102,14 +102,14 @@
 
 1. 在终端运行以下命令：
    
-		   pip install --upgrade azure-cli
-		   pip install --upgrade azure-cli-iot
+		pip install --upgrade azure-cli
+		pip install --upgrade azure-cli-iot
    
     安装过程可能需要 5 分钟。
 
 2. 运行以下命令，对安装进行验证：
    
-		   az iot -h
+		az iot -h
    
     如果安装成功，则会看到以下输出。
 

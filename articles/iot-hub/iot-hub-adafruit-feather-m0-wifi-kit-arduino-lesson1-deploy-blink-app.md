@@ -92,7 +92,7 @@
 通过运行以下命令安装 Arduino 开发板的 Azure IoT 中心 SDK：
 
 
-		gulp install-tools
+	gulp install-tools
 
 
 完成此任务可能耗时较长，具体取决于网络连接情况。

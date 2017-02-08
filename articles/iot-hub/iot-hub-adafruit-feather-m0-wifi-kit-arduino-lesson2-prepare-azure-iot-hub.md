@@ -48,6 +48,9 @@ Azure IoT 中心用于连接、监视并管理数百万 IoT 资产。若要创�
    
 
     成功登录后，会列出所有可用的订阅。
+    
+
+    [AZURE.INCLUDE [azure-cli-2-azurechinacloud-environment-parameter](../../includes/azure-cli-2-azurechinacloud-environment-parameter.md)]
 
 2. 运行以下命令，设置想要使用的默认订阅：
 

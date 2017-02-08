@@ -57,7 +57,7 @@
 1. 运行以下命令，在 Visual Studio Code 中打开配置文件 `config.json`：
 
    
-		   code config.json
+		code config.json
    
 
 2. 将 `"has_sensortag": true` 替换为 `"has_sensortag": false`
@@ -121,7 +121,7 @@
     运行以下命令，部署并运行应用程序：
 
    
-		   gulp run
+		gulp run
    
 
 ## 确认示例应用程序可以正常运行

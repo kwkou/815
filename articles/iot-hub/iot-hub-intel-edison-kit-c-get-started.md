@@ -21,8 +21,8 @@
 
 # 开始使用 Intel Edison (C)
 >[AZURE.SELECTOR]
-[Node.JS](/documentation/articles/iot-hub-intel-edison-kit-node-get-started/)
-[C](/documentation/articles/iot-hub-intel-edison-kit-c-get-started/)
+- [Node.JS](/documentation/articles/iot-hub-intel-edison-kit-node-get-started/)
+- [C](/documentation/articles/iot-hub-intel-edison-kit-c-get-started/)
 
 在本教程中，从学习如何使用 Intel Edison 的基础知识开始。然后学习如何使用 [Azure IoT 中心](/documentation/articles/iot-hub-what-is-iot-hub/)将设备无缝连接到云。
 

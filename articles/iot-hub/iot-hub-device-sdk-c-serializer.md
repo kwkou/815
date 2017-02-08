@@ -535,7 +535,7 @@
 如果使用 --recursive 选项从 GitHub 中克隆了 Azure-iot-sdks 存储库，那么可在此处找到此共享的实用程序库：
 
 
-        .\\c\\azure-c-shared-utility
+    .\\c\\azure-c-shared-utility
 
 
 如果没有克隆此库，则可以在[此处](https://github.com/Azure/azure-c-shared-utility)找到它。
@@ -543,7 +543,7 @@
 在此共享的实用程序库中，可找到以下文件夹：
 
 
-        azure-c-shared-utility\\macro\_utils\_h\_generator.
+    azure-c-shared-utility\\macro\_utils\_h\_generator.
 
 
 此文件夹包含名为 **macro\_utils\_h\_generator.sln** 的 Visual Studio 解决方案：
@@ -637,9 +637,9 @@
 值得一提的其他几个主题包括属性处理、使用替代设备凭据和配置选项。这些主题均涵盖在[前一篇文章](/documentation/articles/iot-hub-device-sdk-c-iothubclient/)中。重点在于，所有这些功能与**序列化程序**库配合使用的方式与和 **IoTHubClient** 库配合使用的方式相同。例如，如果你想要从模型将属性附加到事件，需要以前面所述的相同方式，使用 **IoTHubMessage\_Properties** 和 **Map**\_**AddorUpdate**：
 
 
-        MAP_HANDLE propMap = IoTHubMessage_Properties(message.messageHandle);
-        sprintf_s(propText, sizeof(propText), "%d", i);
-        Map_AddOrUpdate(propMap, "SequenceNumber", propText);
+    MAP_HANDLE propMap = IoTHubMessage_Properties(message.messageHandle);
+    sprintf_s(propText, sizeof(propText), "%d", i);
+    Map_AddOrUpdate(propMap, "SequenceNumber", propText);
 
 
 至于事件是从**序列化程序**库生成，还是使用 **IoTHubClient** 库手动创建，都并不重要。
@@ -651,7 +651,7 @@
 **序列化程序**库所具有的一个独特功能为初始化 API。在开始使用此库之前，必须先调用 **serializer\_init**：
 
 
-        serializer_init(NULL);
+    serializer_init(NULL);
 
 
 此操作必须在调用 **IoTHubClient\_CreateFromConnectionString** 之前完成。
@@ -659,7 +659,7 @@
 同样，当你使用完该库时，最后调用的对象是 **serializer\_deinit**：
 
 
-        serializer_deinit();
+    serializer_deinit();
 
 
 除此之外，上面列出的所有其他功能在**序列化程序**库中的运行方式均与在 **IoTHubClient** 库中的运行方式相同。有关这些主题中任何一个主题的详细信息，请参阅本系列教程中的[前一篇文章](/documentation/articles/iot-hub-device-sdk-c-iothubclient/)。

@@ -27,7 +27,7 @@
 * **SimulatedDevice.js**：一个 Node.js 应用，它模拟使用早前创建的设备标识连接到 IoT 中心的设备，并响应通过云调用的方法。
 
 > [AZURE.NOTE]
-[Azure IoT SDK][lnk-hub-sdks] 文章介绍了 Azure IoT SDK，这些 SDK 可用于构建在设备和解决方案后端运行的应用程序。
+> [Azure IoT SDK][lnk-hub-sdks] 文章介绍了 Azure IoT SDK，这些 SDK 可用于构建在设备和解决方案后端运行的应用程序。
 > 
 > 
 

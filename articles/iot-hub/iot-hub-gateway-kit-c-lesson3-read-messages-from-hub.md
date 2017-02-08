@@ -80,7 +80,7 @@
 如果拥有 TI SensorTag，请确保已打开 SensorTag。通过以下命令运行网关示例应用程序及读取 IoT 中心消息：
 
 
-		gulp run --iot-hub
+	gulp run --iot-hub
 
 
 该命令运行 BLE 示例应用程序，该 BLE 示例应用程序从 SensorTag 或模拟设备读取和打包温度数据，并每隔 2 秒将消息发送到 IoT 中心。它还生成用于接收消息的子进程。

@@ -85,7 +85,7 @@
 5. 在 `sendMessage` 函数中，将 `var message = buildMessage(sentMessageCount);` 行替换为新行，如以下代码片段所示：
 
    
-           var message = buildCustomMessage(sentMessageCount);
+        var message = buildCustomMessage(sentMessageCount);
    
 6. 保存所有更改。
 

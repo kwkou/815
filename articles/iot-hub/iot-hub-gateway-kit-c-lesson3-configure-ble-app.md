@@ -80,7 +80,7 @@
 4. 运行以下命令，在 Intel NUC 上安装帮助程序工具：
 
    
-		   gulp install-tools
+		gulp install-tools
    
 
 5. 按电源按钮（如下图所示）打开 SensorTag，绿色 LED 应闪烁。
@@ -90,13 +90,13 @@
 6. 运行以下命令，扫描 SensorTag 设备：
 
    
-		   gulp discover-sensortag
+		gulp discover-sensortag
    
 
 7. 运行以下命令，测试 SensorTag 与 Intel NUC 之间的连接：
 
    
-		   gulp test-connectivity --mac {mac address}
+		gulp test-connectivity --mac {mac address}
    
 
     将 `{mac address}` 替换为在前面步骤中获取的 MAC 地址。
