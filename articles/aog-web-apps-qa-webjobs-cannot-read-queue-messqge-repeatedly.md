@@ -8,7 +8,7 @@
 	selfHelpType=""
     supportTopicIds=""
     productPesIds=""
-    resourceTags="Web Apps, Web Jobs, Queue, SDK"​
+    resourceTags="Web Apps, Web Jobs, Queue, SDK"
     cloudEnvironments="MoonCake" />
 <tags
 	ms.service="app-service-web-aog"
