@@ -28,10 +28,6 @@
 	- 网站日志分析
 	- Mahout 电影推荐
 
-[AZURE.INCLUDE [hdinsight-azure-preview-portal](../includes/hdinsight-azure-preview-portal.md)]
-
-* [使用 HDInsight 入门库了解 Hadoop](/documentation/articles/hdinsight-learn-hadoop-use-sample-gallery)
-
 ![包括示例数据的 HDInsight Hadoop、Storm 和 HBase 入门库解决方案。][hdinsight.sample.gallery]
 
 以下视频演示了如何运行 Twitter 趋势分析示例：

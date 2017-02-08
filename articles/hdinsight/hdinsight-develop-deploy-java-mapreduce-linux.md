@@ -14,8 +14,6 @@
 
 # 为 HDInsight 中的 Hadoop 开发 Java MapReduce 程序
 
-[AZURE.INCLUDE [pig-selector](../../includes/hdinsight-maven-mapreduce-selector.md)]
-
 本文档介绍如何使用 Apache Maven 来创建 MapReduce 应用程序，然后在 HDInsight 群集中基于 Linux 的 Hadoop 上部署和运行它。
 
 ##<a name="prerequisites"></a>先决条件

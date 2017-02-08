@@ -36,7 +36,7 @@
 - [Azure 订阅](/pricing/1rmb-trial/)。
 - Azure PowerShell 和/或 Azure CLI
 
-    [AZURE.INCLUDE [use-latest-version](../../includes/hdinsight-use-latest-powershell-and-cli.md)]
+[AZURE.INCLUDE [use-latest-version](../../includes/hdinsight-use-latest-powershell-and-cli.md)]
 
 ### 访问控制要求
 
@@ -128,7 +128,7 @@
 
 以下示例通过调用 Resource Manager 模板创建一个群集及其依赖的存储帐户和容器：
 
-	azure login
+	azure login -e AzureChinaCloud
 	azure config mode arm
     azure group create -n hdi1229rg -l "China East"
     azure group deployment create --resource-group "hdi1229rg" --name "hdi1229" --template-file "C:\HDITutorials-ARM\hdinsight-arm-template.json"
@@ -203,18 +203,7 @@
         "defaultValue": "China East",
         "allowedValues": [
             "China East",
-            "China East 2",
-            "China North",
-            "China East",
-            "China North",
-            "China North",
-            "West Europe",
-            "China East",
-            "China North",
-            "China East",
-            "China East",
-            "Australia East",
-            "Australia Southeast"
+            "China North"
         ],
         "metadata": {
             "description": "The location where all azure resources will be deployed."
