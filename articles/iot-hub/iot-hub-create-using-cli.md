@@ -44,6 +44,8 @@
         az login
 
     按照说明使用代码进行身份验证，并通过 Web 浏览器登录 Azure 帐户。
+    
+    [AZURE.INCLUDE [azure-cli-2-azurechinacloud-environment-parameter](../../includes/azure-cli-2-azurechinacloud-environment-parameter.md)]
 
 2. 如果有多个 Azure 订阅，登录 Azure 可获得与凭据关联的所有 Azure 帐户的访问权限。使用以下[命令，列出可供使用的 Azure 帐户][lnk-az-account-command]：
     
