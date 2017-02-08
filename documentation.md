@@ -1,7 +1,7 @@
 <properties linkid="documentation-overview" urlDisplayName="Doc-Overview" pageTitle="文档概览" metaKeywords="Doc-Overview" description="" metaCanonical="" services="" documentationCenter="" title="" authors="" solutions="" manager="Tiffena" editor="Eric Chen" />
 <tags ms.service=""
     ms.date=""
-    wacn.date="02/07/2017"
+    wacn.date="02/08/2017"
     />
 
 #文档中心
@@ -88,7 +88,7 @@
     <td><a href="/documentation/services/cdn/">CDN</a></td>
     <td><a href="/documentation/services/media-services/">媒体服务</a></td>
     <td><a href="/documentation/services/notification-hubs/">通知中心</a></td>
-    <td><a href=""></a></td>
+    <td><a href="/documentation/services/mobile-services/">移动服务</a></td>
   </tr>
 </table>
 
@@ -176,24 +176,42 @@
 
 <table width="100%" border="0" cellspacing="0" cellpadding="0"style="table-layout:fixed;">
   <tr>
-    <td><a href="/documentation/articles/architecture-overview/">架构指南</a></td>
     <td><a href="/documentation/articles/developerdifferences/">开发说明</a></td>
     <td><a href="/develop/other/open-source-software/">开源软件</a></td>
     <td><a href="/develop/net/">.Net</a></td>
+    <td><a href="/develop/java/">Java</a></td>
   </tr>
   <tr>
-    <td><a href="/develop/java/">Java</a></td>
     <td><a href="/develop/nodejs/">Node.js</a></td>
     <td><a href="/develop/python/">Python</a></td>
     <td><a href="/develop/ruby/">Ruby</a></td>
+    <td><a href="/develop/php/">PHP</a></td>
   </tr>
   <tr>
-    <td><a href="/develop/php/">PHP</a></td>
     <td><a href="/develop/media-services/">Media</a></td>
     <td><a href="/develop/mobile/ios/">Ios,Android Windows</a></td>
     <td><a href="/develop/iot">Azure IoT</a></td>
+    <td><a href=""></a></td>
   </tr>
 </table>
+
+##最佳实践
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0" style="table-layout:fixed;">
+  <tr>
+    <td><a href="/documentation/articles/best-practices-availability-checklist/">可用性清单</a></td>
+    <td><a href="/documentation/articles/best-practices-scalability-checklist/">可伸缩性清单</a></td>
+    <td><a href="/documentation/articles/best-practices-monitoring/">监视和诊断指南</a></td>
+    <td><a href="/documentation/articles/best-practices-data-partitioning/">数据分区指南</a></td>
+  </tr>
+  <tr>
+    <td><a href="/documentation/articles/best-practices-caching/">缓存指南</a></td>
+    <td><a href=""></a></td>
+    <td><a href=""></a></td>
+    <td><a href=""></a></td>
+  </tr>
+</table>
+
 
 ##[工具下载](/downloads/)
 
