@@ -48,7 +48,7 @@
  
 - **操作系统**
 
-	可在以下两个操作系统之一上预配 HDInsight 群集：
+	可在以下操作系统上预配 HDInsight 群集：
 	- **Windows 上的 HDInsight (Windows Server 2012 R2 Datacenter)**：
 
 
