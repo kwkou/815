@@ -38,15 +38,15 @@
 
 首先，登录 Azure 订阅。
 
-		Login-AzureRmAccount -Environment $(Get-AzureRmEnvironment -Name AzureChinaCloud)
+	Login-AzureRmAccount -Environment $(Get-AzureRmEnvironment -Name AzureChinaCloud)
 
 这要求你进行登录。执行此操作后，会显示帐户、TenantId 和默认的订阅 ID。所有 Azure cmdlet 都可用于默认订阅的上下文。若要查看有权访问的订阅的列表，请使用以下命令。
 
-		Get-AzureRmSubscription
+	Get-AzureRmSubscription
 
 若要将工作上下文更改为其他订阅，请使用以下命令。
 
-		Set-AzureRmContext -SubscriptionId <subscriptionid>
+	Set-AzureRmContext -SubscriptionId <subscriptionid>
 
 
 ## 检索订阅的活动日志
@@ -54,27 +54,27 @@
 
 从此时间/日期中获取要显示的日志条目︰
 
-		Get-AzureRmLog -StartTime 2016-03-01T10:30
+	Get-AzureRmLog -StartTime 2016-03-01T10:30
 
 在一个时间/日期范围中获取日志条目︰
 
-		Get-AzureRmLog -StartTime 2015-01-01T10:30 -EndTime 2015-01-01T11:30
+	Get-AzureRmLog -StartTime 2015-01-01T10:30 -EndTime 2015-01-01T11:30
 
 从特定资源组中获取日志条目︰
 
-		Get-AzureRmLog -ResourceGroup 'myrg1'
+	Get-AzureRmLog -ResourceGroup 'myrg1'
 
 在一个时间/日期范围中从特定资源提供程序获取日志条目︰
 
-		Get-AzureRmLog -ResourceProvider 'Microsoft.Web' -StartTime 2015-01-01T10:30 -EndTime 2015-01-01T11:30
+	Get-AzureRmLog -ResourceProvider 'Microsoft.Web' -StartTime 2015-01-01T10:30 -EndTime 2015-01-01T11:30
 
 获取特定调用方的所有日志项︰
 
-		Get-AzureRmLog -Caller 'myname@company.com'
+    Get-AzureRmLog -Caller 'myname@company.com'
 
 以下命令从活动日志中检索最后 1000 个事件：
 
-		Get-AzureRmLog -MaxEvents 1000
+	Get-AzureRmLog -MaxEvents 1000
 
 `Get-AzureRmLog` 支持许多其他参数。有关详细信息，请参阅 `Get-AzureRmLog` 参考文档。
 
@@ -83,7 +83,7 @@
 ## 检索警报历史记录
 若要查看所有警报事件，可以使用以下示例查询 Azure Resource Manager 日志。
 
-		Get-AzureRmLog -Caller "Microsoft.Insights/alertRules" -DetailedOutput -StartTime 2015-03-01
+	Get-AzureRmLog -Caller "Microsoft.Insights/alertRules" -DetailedOutput -StartTime 2015-03-01
 
 若要查看特定警报规则的历史记录，可以使用 `Get-AzureRmAlertHistory` cmdlet，同时会传入警报规则的资源 ID。
 
@@ -97,15 +97,15 @@
 
 查看警报规则的所有属性︰
 
-		Get-AzureRmAlertRule -Name simpletestCPU -ResourceGroup montest -DetailedOutput
+	Get-AzureRmAlertRule -Name simpletestCPU -ResourceGroup montest -DetailedOutput
 
 检索某个资源组的所有警报︰
 
-		Get-AzureRmAlertRule -ResourceGroup montest
+	Get-AzureRmAlertRule -ResourceGroup montest
 
 检索目标资源的所有警报规则设置。例如，虚拟机上的所有警报规则设置。
 
-		Get-AzureRmAlertRule -ResourceGroup montest -TargetResourceId /subscriptions/s1/resourceGroups/montest/providers/Microsoft.Compute/virtualMachines/testconfig
+	Get-AzureRmAlertRule -ResourceGroup montest -TargetResourceId /subscriptions/s1/resourceGroups/montest/providers/Microsoft.Compute/virtualMachines/testconfig
 
 `Get-AzureRmAlertRule` 支持其他参数。有关详细信息，请参阅 [Get-AlertRule](https://msdn.microsoft.com/zh-cn/library/mt282459.aspx)。
 
@@ -139,15 +139,15 @@
 
 创建 Webhook 操作
 
-		$actionWebhook = New-AzureRmAlertRuleWebhook -ServiceUri https://example.com?token=mytoken
+	$actionWebhook = New-AzureRmAlertRuleWebhook -ServiceUri https://example.com?token=mytoken
 
 在经典虚拟机上创建关于 CPU %指标的警报规则
 
-		Add-AzureRmMetricAlertRule -Name vmcpu_gt_1 -Location "chinanorth" -ResourceGroup myrg1 -TargetResourceId /subscriptions/s1/resourceGroups/myrg1/providers/Microsoft.ClassicCompute/virtualMachines/my_vm1 -MetricName "Percentage CPU" -Operator GreaterThan -Threshold 1 -WindowSize 00:05:00 -TimeAggregationOperator Average -Actions $actionEmail, $actionWebhook -Description "alert on CPU > 1%"
+	Add-AzureRmMetricAlertRule -Name vmcpu_gt_1 -Location "chinanorth" -ResourceGroup myrg1 -TargetResourceId /subscriptions/s1/resourceGroups/myrg1/providers/Microsoft.ClassicCompute/virtualMachines/my_vm1 -MetricName "Percentage CPU" -Operator GreaterThan -Threshold 1 -WindowSize 00:05:00 -TimeAggregationOperator Average -Actions $actionEmail, $actionWebhook -Description "alert on CPU > 1%"
 
 检索警报规则
 
-		Get-AzureRmAlertRule -Name vmcpu_gt_1 -ResourceGroup myrg1 -DetailedOutput
+	Get-AzureRmAlertRule -Name vmcpu_gt_1 -ResourceGroup myrg1 -DetailedOutput
 
 如果给定属性已存在警报规则，则添加警报 cmdlet 还会更新该规则。若要禁用警报规则，请包括 **-DisableRule** 参数。
 
@@ -158,22 +158,23 @@
 在此方案中，在资源组 *abhingrgtest123* 中的我的订阅中成功启动网站时，会发送电子邮件。
 
 设置电子邮件规则
-		$actionEmail = New-AzureRmAlertRuleEmail -CustomEmail myname@company.com
+
+	$actionEmail = New-AzureRmAlertRuleEmail -CustomEmail myname@company.com
 
 设置 webhook 规则
 
-		$actionWebhook = New-AzureRmAlertRuleWebhook -ServiceUri https://example.com?token=mytoken
+	$actionWebhook = New-AzureRmAlertRuleWebhook -ServiceUri https://example.com?token=mytoken
 
 针对事件创建规则
 
 
-		Add-AzureRmLogAlertRule -Name superalert1 -Location "China East" -ResourceGroup myrg1 -OperationName microsoft.web/sites/start/action -Status Succeeded -TargetResourceGroup abhingrgtest123 -Actions $actionEmail, $actionWebhook
+	Add-AzureRmLogAlertRule -Name superalert1 -Location "China East" -ResourceGroup myrg1 -OperationName microsoft.web/sites/start/action -Status Succeeded -TargetResourceGroup abhingrgtest123 -Actions $actionEmail, $actionWebhook
 
 
 检索警报规则
 
 
-		Get-AzureRmAlertRule -Name superalert1 -ResourceGroup myrg1 -DetailedOutput
+	Get-AzureRmAlertRule -Name superalert1 -ResourceGroup myrg1 -DetailedOutput
 
 
 `Add-AlertRule` Cmdlet 允许使用多个其他参数。有关详细信息，请参阅 [Add-AlertRule](https://msdn.microsoft.com/zh-cn/library/mt282468.aspx)。
@@ -182,13 +183,13 @@
 可以使用 `Get-AzureRmMetricDefinition` cmdlet 来查看针对特定资源的所有指标的列表。
 
 
-		Get-AzureRmMetricDefinition -ResourceId <resource_id>
+	Get-AzureRmMetricDefinition -ResourceId <resource_id>
 
 
 以下示例会生成一张表，其中包含指标名称和单位。
 
 
-		Get-AzureRmMetricDefinition -ResourceId <resource_id> | Format-Table -Property Name,Unit
+	Get-AzureRmMetricDefinition -ResourceId <resource_id> | Format-Table -Property Name,Unit
 
 
 `Get-AzureRmMetricDefinition` 的可用选项的完整列表位于 [Get MetricDefinitions](https://msdn.microsoft.com/zh-cn/library/mt282458.aspx) 中。
@@ -209,37 +210,37 @@
 首先，创建向外扩展规则，实例计数增加。
 
 
-		$rule1 = New-AzureRmAutoscaleRule -MetricName "\Processor(_Total)\% Processor Time" -MetricResourceId /subscriptions/s1/resourceGroups/big2/providers/Microsoft.Compute/virtualMachineScaleSets/big2 -Operator GreaterThan -MetricStatistic Average -Threshold 0.01 -TimeGrain 00:01:00 -TimeWindow 00:10:00 -ScaleActionCooldown 00:10:00 -ScaleActionDirection Increase -ScaleActionScaleType ChangeCount -ScaleActionValue 1
+	$rule1 = New-AzureRmAutoscaleRule -MetricName "\Processor(_Total)\% Processor Time" -MetricResourceId /subscriptions/s1/resourceGroups/big2/providers/Microsoft.Compute/virtualMachineScaleSets/big2 -Operator GreaterThan -MetricStatistic Average -Threshold 0.01 -TimeGrain 00:01:00 -TimeWindow 00:10:00 -ScaleActionCooldown 00:10:00 -ScaleActionDirection Increase -ScaleActionScaleType ChangeCount -ScaleActionValue 1
 		
 
 接下来，创建向内扩展规则，实例计数减少。
 
 
-		$rule2 = New-AzureRmAutoscaleRule -MetricName "\Processor(_Total)\% Processor Time" -MetricResourceId /subscriptions/s1/resourceGroups/big2/providers/Microsoft.Compute/virtualMachineScaleSets/big2 -Operator GreaterThan -MetricStatistic Average -Threshold 2 -TimeGrain 00:01:00 -TimeWindow 00:10:00 -ScaleActionCooldown 00:10:00 -ScaleActionDirection Decrease -ScaleActionScaleType ChangeCount -ScaleActionValue 1
+	$rule2 = New-AzureRmAutoscaleRule -MetricName "\Processor(_Total)\% Processor Time" -MetricResourceId /subscriptions/s1/resourceGroups/big2/providers/Microsoft.Compute/virtualMachineScaleSets/big2 -Operator GreaterThan -MetricStatistic Average -Threshold 2 -TimeGrain 00:01:00 -TimeWindow 00:10:00 -ScaleActionCooldown 00:10:00 -ScaleActionDirection Decrease -ScaleActionScaleType ChangeCount -ScaleActionValue 1
 
 
 然后，为规则创建配置文件。
 
 
-		$profile1 = New-AzureRmAutoscaleProfile -DefaultCapacity 2 -MaximumCapacity 10 -MinimumCapacity 2 -Rules $rule1,$rule2 -Name "My_Profile"
+	$profile1 = New-AzureRmAutoscaleProfile -DefaultCapacity 2 -MaximumCapacity 10 -MinimumCapacity 2 -Rules $rule1,$rule2 -Name "My_Profile"
 
 
 创建 webhook 属性。
 
 
-		$webhook_scale = New-AzureRmAutoscaleWebhook -ServiceUri "https://example.com?mytoken=mytokenvalue"
+	$webhook_scale = New-AzureRmAutoscaleWebhook -ServiceUri "https://example.com?mytoken=mytokenvalue"
 
 
 创建自动缩放设置的通知属性，包括电子邮件和之前创建的 webhook。
 
 
-		$notification1= New-AzureRmAutoscaleNotification -CustomEmails ashwink@microsoft.com -SendEmailToSubscriptionAdministrators SendEmailToSubscriptionCoAdministrators -Webhooks $webhook_scale
+	$notification1= New-AzureRmAutoscaleNotification -CustomEmails ashwink@microsoft.com -SendEmailToSubscriptionAdministrators SendEmailToSubscriptionCoAdministrators -Webhooks $webhook_scale
 
 
 最后，创建自动缩放设置以添加上面创建的配置文件。
 
 
-		Add-AzureRmAutoscaleSetting -Location "China East" -Name "MyScaleVMSSSetting" -ResourceGroup big2 -TargetResourceId /subscriptions/s1/resourceGroups/big2/providers/Microsoft.Compute/virtualMachineScaleSets/big2 -AutoscaleProfiles $profile1 -Notifications $notification1
+	Add-AzureRmAutoscaleSetting -Location "China East" -Name "MyScaleVMSSSetting" -ResourceGroup big2 -TargetResourceId /subscriptions/s1/resourceGroups/big2/providers/Microsoft.Compute/virtualMachineScaleSets/big2 -AutoscaleProfiles $profile1 -Notifications $notification1
 
 
 有关管理自动缩放设置的详细信息，请参阅 [Get AutoscaleSetting](https://msdn.microsoft.com/zh-cn/library/mt282461.aspx)。
@@ -248,13 +249,13 @@
 以下示例演示了如何查看近期的自动缩放和警报事件。使用活动日志搜索来查看自动缩放历史记录。
 
 
-		Get-AzureRmLog -Caller "Microsoft.Insights/autoscaleSettings" -DetailedOutput -StartTime 2015-03-01
+	Get-AzureRmLog -Caller "Microsoft.Insights/autoscaleSettings" -DetailedOutput -StartTime 2015-03-01
 
 
 可以使用 `Get-AzureRmAutoScaleHistory` cmdlet 来检索自动缩放历史记录。
 
 
-		Get-AzureRmAutoScaleHistory -ResourceId /subscriptions/s1/resourceGroups/myrg1/providers/microsoft.insights/autoscalesettings/myScaleSetting -StartTime 2016-03-15 -DetailedOutput
+	Get-AzureRmAutoScaleHistory -ResourceId /subscriptions/s1/resourceGroups/myrg1/providers/microsoft.insights/autoscalesettings/myScaleSetting -StartTime 2016-03-15 -DetailedOutput
 
 
 有关详细信息，请参阅 [Get-AutoscaleHistory](https://msdn.microsoft.com/zh-cn/library/mt282464.aspx)。
@@ -265,20 +266,20 @@
 以下示例显示了关于资源组 myrg1 中所有自动缩放设置的详细信息。
 
 
-		Get-AzureRmAutoscalesetting -ResourceGroup myrg1 -DetailedOutput
+	Get-AzureRmAutoscalesetting -ResourceGroup myrg1 -DetailedOutput
 
 
 以下示例显示了关于资源组 myrg1 中所有自动缩放设置的详细信息，特别是名为 MyScaleVMSSSetting 的自动缩放设置的详细信息。
 
 
-		Get-AzureRmAutoscalesetting -ResourceGroup myrg1 -Name MyScaleVMSSSetting -DetailedOutput
+	Get-AzureRmAutoscalesetting -ResourceGroup myrg1 -Name MyScaleVMSSSetting -DetailedOutput
 
 
 ### 删除自动缩放设置
 可以使用 `Remove-Autoscalesetting` cmdlet 来删除自动缩放设置。
 
 
-		Remove-AzureRmAutoscalesetting -ResourceGroup myrg1 -Name MyScaleVMSSSetting
+	Remove-AzureRmAutoscalesetting -ResourceGroup myrg1 -Name MyScaleVMSSSetting
 
 
 ## 管理活动日志的日志配置文件
@@ -290,13 +291,13 @@
 ### 添加没有数据保留期的日志配置文件
 
 
-		Add-AzureRmLogProfile -Name my_log_profile_s1 -StorageAccountId /subscriptions/s1/resourceGroups/myrg1/providers/Microsoft.Storage/storageAccounts/my_storage -Locations chinaeast,chinanorth
+	Add-AzureRmLogProfile -Name my_log_profile_s1 -StorageAccountId /subscriptions/s1/resourceGroups/myrg1/providers/Microsoft.Storage/storageAccounts/my_storage -Locations chinaeast,chinanorth
 
 
 ### 删除日志配置文件
 
 
-		Remove-AzureRmLogProfile -name my_log_profile_s1
+	Remove-AzureRmLogProfile -name my_log_profile_s1
 
 
 ### 添加有数据保留期的日志配置文件
@@ -304,14 +305,14 @@
 可以用天数将 **-RetentionInDays** 属性指定为一个正整数，会在此期间保留数据。
 
 
-		Add-AzureRmLogProfile -Name my_log_profile_s1 -StorageAccountId /subscriptions/s1/resourceGroups/myrg1/providers/Microsoft.Storage/storageAccounts/my_storage -Locations chinaeast,chinanorth
+	Add-AzureRmLogProfile -Name my_log_profile_s1 -StorageAccountId /subscriptions/s1/resourceGroups/myrg1/providers/Microsoft.Storage/storageAccounts/my_storage -Locations chinaeast,chinanorth
 
 
 ### 添加具有保留期和 EventHub 的日志配置文件
 除了将数据路由到存储帐户，还可以流式传输到事件中心。请注意，在此预览版本中，存储帐户配置是必需的，但事件中心配置是可选的。
 
 
-		Add-AzureRmLogProfile -Name my_log_profile_s1 -StorageAccountId /subscriptions/s1/resourceGroups/myrg1/providers/Microsoft.Storage/storageAccounts/my_storage -serviceBusRuleId /subscriptions/s1/resourceGroups/Default-ServiceBus-EastUS/providers/Microsoft.ServiceBus/namespaces/mytestSB/authorizationrules/RootManageSharedAccessKey -Locations chinaeast,chinanorth
+	Add-AzureRmLogProfile -Name my_log_profile_s1 -StorageAccountId /subscriptions/s1/resourceGroups/myrg1/providers/Microsoft.Storage/storageAccounts/my_storage -serviceBusRuleId /subscriptions/s1/resourceGroups/Default-ServiceBus-EastUS/providers/Microsoft.ServiceBus/namespaces/mytestSB/authorizationrules/RootManageSharedAccessKey -Locations chinaeast,chinanorth
 
 
 ## 配置诊断日志
@@ -320,41 +321,41 @@
 ### 获取诊断设置
 
 
-		Get-AzureRmDiagnosticSetting -ResourceId /subscriptions/s1/resourceGroups/myrg1/providers/Microsoft.Logic/workflows/andy0315logicapp
+	Get-AzureRmDiagnosticSetting -ResourceId /subscriptions/s1/resourceGroups/myrg1/providers/Microsoft.Logic/workflows/andy0315logicapp
 
 
 禁用诊断设置
 
 
-		Set-AzureRmDiagnosticSetting -ResourceId /subscriptions/s1/resourceGroups/myrg1/providers/Microsoft.Logic/workflows/andy0315logicapp -StorageAccountId /subscriptions/s1/resourceGroups/Default-Storage-chinaeast/providers/Microsoft.Storage/storageAccounts/mystorageaccount -Enable $false
+	Set-AzureRmDiagnosticSetting -ResourceId /subscriptions/s1/resourceGroups/myrg1/providers/Microsoft.Logic/workflows/andy0315logicapp -StorageAccountId /subscriptions/s1/resourceGroups/Default-Storage-chinaeast/providers/Microsoft.Storage/storageAccounts/mystorageaccount -Enable $false
 
 
 启用没有保留期的诊断设置
 
 
-		Set-AzureRmDiagnosticSetting -ResourceId /subscriptions/s1/resourceGroups/myrg1/providers/Microsoft.Logic/workflows/andy0315logicapp -StorageAccountId /subscriptions/s1/resourceGroups/Default-Storage-chinaeast/providers/Microsoft.Storage/storageAccounts/mystorageaccount -Enable $true
+	Set-AzureRmDiagnosticSetting -ResourceId /subscriptions/s1/resourceGroups/myrg1/providers/Microsoft.Logic/workflows/andy0315logicapp -StorageAccountId /subscriptions/s1/resourceGroups/Default-Storage-chinaeast/providers/Microsoft.Storage/storageAccounts/mystorageaccount -Enable $true
 
 
 启用有保留期的诊断设置
 
 
-		Set-AzureRmDiagnosticSetting -ResourceId /subscriptions/s1/resourceGroups/myrg1/providers/Microsoft.Logic/workflows/andy0315logicapp -StorageAccountId /subscriptions/s1/resourceGroups/Default-Storage-chinaeast/providers/Microsoft.Storage/storageAccounts/mystorageaccount -Enable $true -RetentionEnabled $true -RetentionInDays 90
+	Set-AzureRmDiagnosticSetting -ResourceId /subscriptions/s1/resourceGroups/myrg1/providers/Microsoft.Logic/workflows/andy0315logicapp -StorageAccountId /subscriptions/s1/resourceGroups/Default-Storage-chinaeast/providers/Microsoft.Storage/storageAccounts/mystorageaccount -Enable $true -RetentionEnabled $true -RetentionInDays 90
 
 
 为特定日志类别启用有保留期的诊断设置
 
-		Set-AzureRmDiagnosticSetting -ResourceId /subscriptions/s1/resourceGroups/insights-integration/providers/Microsoft.Network/networkSecurityGroups/viruela1 -StorageAccountId /subscriptions/s1/resourceGroups/myrg1/providers/Microsoft.Storage/storageAccounts/sakteststorage -Categories NetworkSecurityGroupEvent -Enable $true -RetentionEnabled $true -RetentionInDays 90
+	Set-AzureRmDiagnosticSetting -ResourceId /subscriptions/s1/resourceGroups/insights-integration/providers/Microsoft.Network/networkSecurityGroups/viruela1 -StorageAccountId /subscriptions/s1/resourceGroups/myrg1/providers/Microsoft.Storage/storageAccounts/sakteststorage -Categories NetworkSecurityGroupEvent -Enable $true -RetentionEnabled $true -RetentionInDays 90
 
 启用事件中心的诊断设置
 
 
-		Set-AzureRmDiagnosticSetting -ResourceId /subscriptions/s1/resourceGroups/insights-integration/providers/Microsoft.Network/networkSecurityGroups/viruela1 -serviceBusRuleId /subscriptions/s1/resourceGroups/Default-ServiceBus-chinaeast/providers/Microsoft.ServiceBus/namespaces/mytestSB/authorizationrules/RootManageSharedAccessKey -Enable $true
+	Set-AzureRmDiagnosticSetting -ResourceId /subscriptions/s1/resourceGroups/insights-integration/providers/Microsoft.Network/networkSecurityGroups/viruela1 -serviceBusRuleId /subscriptions/s1/resourceGroups/Default-ServiceBus-chinaeast/providers/Microsoft.ServiceBus/namespaces/mytestSB/authorizationrules/RootManageSharedAccessKey -Enable $true
 
 
 启用 OMS 的诊断设置
 
 
-		Set-AzureRmDiagnosticSetting -ResourceId /subscriptions/s1/resourceGroups/insights-integration/providers/Microsoft.Network/networkSecurityGroups/viruela1 -WorkspaceId 76d785fd-d1ce-4f50-8ca3-858fc819ca0f -Enabled $true
+	Set-AzureRmDiagnosticSetting -ResourceId /subscriptions/s1/resourceGroups/insights-integration/providers/Microsoft.Network/networkSecurityGroups/viruela1 -WorkspaceId 76d785fd-d1ce-4f50-8ca3-858fc819ca0f -Enabled $true
 
 
 
