@@ -54,21 +54,21 @@
 
 1.  下载 Proton 库：
 
-	```
-	[azureuser@this-user ~]$ wget http://apache.panu.it/qpid/proton/0.9/qpid-proton-0.9.tar.gz
-	--2016-04-17 14:45:03--  http://apache.panu.it/qpid/proton/0.9/qpid-proton-0.9.tar.gz
-	Resolving apache.panu.it (apache.panu.it)... 81.208.22.71
-	Connecting to apache.panu.it (apache.panu.it)|81.208.22.71|:80... connected.
-	HTTP request sent, awaiting response... 200 OK
-	Length: 868226 (848K) [application/x-gzip]
-	Saving to: ‘qpid-proton-0.9.tar.gz’
-	
-	qpid-proton-0.9.tar.gz                               
-	
-	100%[====================================================================================================================>] 847.88K   102KB/s    in 8.4s    
-	
-	2016-04-17 14:45:12 (101 KB/s) - ‘qpid-proton-0.9.tar.gz’ saved [868226/868226]
-	```
+
+    	[azureuser@this-user ~]$ wget http://apache.panu.it/qpid/proton/0.9/qpid-proton-0.9.tar.gz
+    	--2016-04-17 14:45:03--  http://apache.panu.it/qpid/proton/0.9/qpid-proton-0.9.tar.gz
+    	Resolving apache.panu.it (apache.panu.it)... 81.208.22.71
+    	Connecting to apache.panu.it (apache.panu.it)|81.208.22.71|:80... connected.
+    	HTTP request sent, awaiting response... 200 OK
+    	Length: 868226 (848K) [application/x-gzip]
+    	Saving to: ‘qpid-proton-0.9.tar.gz’
+    	
+    	qpid-proton-0.9.tar.gz                               
+    	
+    	100%[====================================================================================================================>] 847.88K   102KB/s    in 8.4s    
+    	
+    	2016-04-17 14:45:12 (101 KB/s) - ‘qpid-proton-0.9.tar.gz’ saved [868226/868226]
+
 
 1.  从分发存档中提取 Proton 代码：
 
