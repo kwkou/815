@@ -8,7 +8,7 @@
 	selfHelpType=""
     supportTopicIds=""
     productPesIds=""
-    resourceTags="Virtual Machines, Linux, Root System File, GNOME, VNC"​
+    resourceTags="Virtual Machines, Linux, Root System File, GNOME, VNC"
     cloudEnvironments="MoonCake" />
 <tags
 	ms.service="virtual-machines-linux-aog"

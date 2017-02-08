@@ -8,7 +8,7 @@
 	selfHelpType=""
     supportTopicIds=""
     productPesIds=""
-    resourceTags="Web Apps, MIME"​
+    resourceTags="Web Apps, MIME"
     cloudEnvironments="MoonCake" />
 <tags
 	ms.service="app-service-web-aog"

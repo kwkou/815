@@ -8,7 +8,7 @@
 	selfHelpType=""
     supportTopicIds=""
     productPesIds=""
-    resourceTags="VPN, BGP, Local Network, VNET Peering"​
+    resourceTags="VPN, BGP, Local Network, VNET Peering"
     cloudEnvironments="MoonCake" />
 <tags
 	ms.service="vpn-gateway-aog"

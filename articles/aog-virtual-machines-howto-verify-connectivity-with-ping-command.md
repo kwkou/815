@@ -8,7 +8,7 @@
 	selfHelpType=""
     supportTopicIds=""
     productPesIds=""
-    resourceTags="Azure, Ping, NSG, PIP, ILPIP"​
+    resourceTags="Azure, Ping, NSG, PIP, ILPIP"
     cloudEnvironments="MoonCake" />
 <tags
 	ms.service="virtual-machines-aog"
