@@ -28,14 +28,14 @@
 如果在运行 gulp 任务时遇到问题，可添加 `--verbose` 选项进行调试。请尝试使用 `Ctrl + C` 终止当前 gulp 任务，然后在控制台窗口中运行以下命令，以便查看调试消息。可以在控制台输出中查看详细的错误消息。
 
 
-		gulp --verbose
+	gulp --verbose
 
 
 ### NPM 问题
 请尝试使用以下命令更新 NPM 包：
 
 
-		npm install -g npm
+	npm install -g npm
 
 
 如果问题仍然存在，请在本文末尾留下你的评论，或者在[示例存储库][sample-repository]中创建一个 GitHub 问题。
@@ -50,7 +50,7 @@ Azure 命令行接口 (Azure CLI) 为预览版。
 如果遇到“找不到满足需求的版本”，请运行以下命令，将 pip 升级到最新版本。
 
 
-		python -m pip install --upgrade pip
+	python -m pip install --upgrade pip
 
 
 ## Python 安装问题
@@ -68,9 +68,9 @@ Azure 命令行接口 (Azure CLI) 为预览版。
 ### 设备资源管理器
 [设备资源管理器](https://github.com/Azure/azure-iot-sdk-csharp/tree/master/tools/DeviceExplorer)在 Windows 本地计算机上运行，并连接到 Azure 中的 IoT 中心。它与以下 [IoT 中心终结点](/documentation/articles/iot-hub-devguide/)通信：
 
-- _设备标识管理_：用于预配和管理注册到 IoT 中心的设备。
-- _接收从设备到云的消息_：用于监视从设备发送到 IoT 中心的消息。
-- _发送从云到设备的消息_：用于将消息从 IoT 中心发送到设备。
+- _设备标识管理_ ：用于预配和管理注册到 IoT 中心的设备。
+- _接收从设备到云的消息_ ：用于监视从设备发送到 IoT 中心的消息。
+- _发送从云到设备的消息_ ：用于将消息从 IoT 中心发送到设备。
 
 在此工具中配置 `IoT hub connection string`，以便使用其所有功能。
 
@@ -80,13 +80,13 @@ Azure 命令行接口 (Azure CLI) 为预览版。
 若要安装最新（预发行）版的 iothub-explorer 工具，请在命令行环境中运行以下命令：
 
 
-		npm install -g iothub-explorer@latest
+	npm install -g iothub-explorer@latest
 
 
 可以使用以下命令获取所有 iothub-explorer 命令及其参数的更多帮助：
 
 
-		iothub-explorer help
+	iothub-explorer help
 
 
 ### Azure 门户预览

@@ -47,8 +47,8 @@
     通过运行以下命令在 Visual Studio Code 中打开示例应用程序：
 
    
-		   cd Lesson4
-		   code .
+		cd Lesson4
+		code .
    
 
     请注意 `app` 子文件夹中的 `app.ino` 文件。`app.ino` 文件是关键的源文件，其中包含的代码用于监视 IoT 中心发出的传入消息。`blinkLED` 函数可使 LED 闪烁。
@@ -69,9 +69,9 @@
 
 3. 打开课程文件夹中的 `config.json` 文件，并输入找到的 COM 端口号的值：
 
-		   {
-		       "device_port" : "COM1"
-		   }
+		{
+		    "device_port" : "COM1"
+		}
    
 
     ![config.json][config-json]  
@@ -83,10 +83,10 @@
 4. 运行以下命令初始化配置文件：
 
    
-		   # For Windows command prompt
-		   npm install
-		   gulp init
-		   gulp install-tools
+		# For Windows command prompt
+		npm install
+		gulp init
+		gulp install-tools
    
 
 5. 在 `config-arduino.json` 文件中进行以下替换：

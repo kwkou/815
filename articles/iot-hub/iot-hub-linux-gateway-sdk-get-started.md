@@ -79,7 +79,7 @@
 4. 运行以下命令：
    
    
-       ./build/samples/hello_world/hello_world_sample ./samples/hello_world/src/hello_world_lin.json
+        ./build/samples/hello_world/hello_world_sample ./samples/hello_world/src/hello_world_lin.json
     
 
 [AZURE.INCLUDE [iot-hub-gateway-sdk-getstarted-code](../../includes/iot-hub-gateway-sdk-getstarted-code.md)]

@@ -53,6 +53,8 @@
    
 
     成功登录后，会列出所有可用的订阅。
+    
+    [AZURE.INCLUDE [azure-cli-2-azurechinacloud-environment-parameter](../../includes/azure-cli-2-azurechinacloud-environment-parameter.md)]
 
 2. 运行以下命令，设置默认的需要使用的 Azure 订阅：
 
@@ -92,7 +94,7 @@
 每个将消息发送到 IoT 中心并从 IoT 中心接收消息的设备都必须使用唯一 ID 注册。运行以下命令，在 IoT 中心注册设备：
 
 
-		az iot device create --device-id mydevice --hub-name {my hub name} --resource-group iot-gateway
+	az iot device create --device-id mydevice --hub-name {my hub name} --resource-group iot-gateway
 
 
 ## 摘要

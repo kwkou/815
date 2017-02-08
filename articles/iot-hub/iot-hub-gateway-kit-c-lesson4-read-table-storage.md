@@ -83,14 +83,14 @@
 通过以下命令运行网关示例应用程序及读取 Azure 表存储消息：
 
 
-		gulp run --table-storage
+	gulp run --table-storage
 
 
 IoT 中心会在新消息到达时触发 Azure Function 应用程序，将消息保存到 Azure 表存储。`gulp run` 命令运行将消息发送到 IoT 中心的网关示例应用程序。借助 `table-storage` 参数，它还会生成用于接收 Azure 表存储中的已保存消息的子进程。
 
 发送和接收的消息全都在主计算机的同一控制台窗口中即时显示。示例应用程序实例会在 40 秒后自动终止。
 
-    ![gulp 读取](./media/iot-hub-gateway-kit-lessons/lesson4/gulp_run_read_table.png)  
+![gulp 读取](./media/iot-hub-gateway-kit-lessons/lesson4/gulp_run_read_table.png)  
 
 
 

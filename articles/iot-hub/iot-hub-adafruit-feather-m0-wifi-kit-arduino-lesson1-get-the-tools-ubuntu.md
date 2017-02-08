@@ -67,7 +67,7 @@
 在终端运行以下命令，安装 `gulp` 和 `device-discovery-cli`：
 
 
-		sudo npm install -g gulp device-discovery-cli
+	sudo npm install -g gulp device-discovery-cli
 
 
 如果无法在 Ubuntu 上安装 Node.js 和这些额外的开发工具，请参阅[故障排除指南][troubleshooting]，了解常见问题的解决方案。

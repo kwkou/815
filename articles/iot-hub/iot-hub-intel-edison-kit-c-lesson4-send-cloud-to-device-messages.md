@@ -41,8 +41,8 @@
 1. 确保位于存储库文件夹 `iot-hub-c-edison-getting-started` 中。通过运行以下命令在 Visual Studio Code 中打开示例应用程序：
 
    
-		   cd Lesson4
-		   code .
+		cd Lesson4
+		code .
    
 
     `app` 子文件夹中的文件是重要的源文件，其中包含用于监视来自 IoT 中心的传入消息的代码。`blinkLED` 函数可使 LED 闪烁。
@@ -52,8 +52,8 @@
 2. 运行以下命令初始化配置文件：
 
    
-		   npm install
-		   gulp init
+		npm install
+		gulp init
    
 
     如果已在此计算机上完成[创建 Azure Function App 和存储帐户][create-an-azure-function-app-and-storage-account]中的步骤，并继承了所有配置，则可跳过该步骤，转到部署并运行示例应用程序的任务。如果用户在另一计算机上完成了[创建 Azure 函数应用和存储帐户][create-an-azure-function-app-and-storage-account]中的步骤，则需替换 `config-edison.json` 文件中的占位符。`config-edison.json` 文件位于主文件夹的子文件夹中。
@@ -72,7 +72,7 @@
 运行以下命令，在 Edison 上部署并运行示例应用程序：
 
 
-		gulp deploy && gulp run
+	gulp deploy && gulp run
 
 
 gulp 命令会将示例应用程序部署到 Edison。然后，它会在 Edison 上运行该应用程序，并在主计算机上运行单独的任务，从 IoT 中心将 20 条闪烁消息发送到 Edison。

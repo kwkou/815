@@ -64,7 +64,7 @@ Azure Functions 是一种解决方案，特别适合在云中运行*函数*（�
 更新 `arm-template-param.json` 文件后，请运行以下命令，将资源部署到 Azure：
 
 
-		az resource group deployment create --template-file arm-template.json --parameters @arm-template-param.json -g iot-sample
+	az resource group deployment create --template-file arm-template.json --parameters @arm-template-param.json -g iot-sample
 
 
 创建这些资源约需五分钟。在创建这些资源时，用户可以阅读下一篇文章。

@@ -66,7 +66,7 @@
 以管理员身份启动命令提示符。在终端运行以下命令，安装 `gulp` 和 `device-discovery-cli`：
 
 
-		npm install -g gulp device-discovery-cli
+	npm install -g gulp device-discovery-cli
 
 
 如果无法在计算机上安装 Node.js 和这些额外的 Node.js 开发工具，请参阅[故障排除指南][troubleshooting]，了解常见问题的解决方案。

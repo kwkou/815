@@ -20,10 +20,10 @@
 
 
 # 获取 Azure 工具 (macOS 10.10)
-> [!div class="op_single_selector"]
-> * [Windows 7 及更高版本][windows]
-> * [Ubuntu 16.04][ubuntu]
-> * [macOS 10.10][macos]
+> [AZURE.SELECTOR]
+- [Windows 7 及更高版本][windows]
+- [Ubuntu 16.04][ubuntu]
+- [macOS 10.10][macos]
 
 ## 执行的操作
 安装 Azure 命令行接口 (Azure CLI)。如果有问题，可在[故障排除页][troubleshooting]上查找解决方案。
@@ -43,7 +43,7 @@
 通过运行以下命令安装 Python 和 pip：
 
 
-		brew install python
+	brew install python
 
 
 ## 安装 Azure CLI
@@ -54,13 +54,13 @@ Azure CLI 提供适用于 Azure 的多平台命令行体验。可以直接通过
 1. 在终端窗口运行以下命令。安装 Azure CLI 可能需要五分钟。
 
    
-		   pip install --upgrade azure-cli
-		   pip install --upgrade azure-cli-iot
+		pip install --upgrade azure-cli
+		pip install --upgrade azure-cli-iot
    
 2. 运行以下命令，对安装进行验证：
 
    
-		   az iot -h
+		az iot -h
    
 
 如果安装成功，则会看到以下输出。

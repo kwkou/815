@@ -20,7 +20,7 @@
 
 
 # 创建 Azure 函数应用和 Azure 存储帐户
-Azure Functions 是一种解决方案，特别适合在云中运行*函数*（小块代码）。Azure 函数应用在 Azure 中托管函数的执行。
+Azure Functions 是一种解决方案，特别适合在云中运行 *函数* （小块代码）。Azure 函数应用在 Azure 中托管函数的执行。
 
 ## 执行的操作
 使用 Azure Resource Manager 模板创建 Azure 函数应用和 Azure 存储帐户。Azure 函数应用可侦听 Azure IoT 中心事件、处理传入消息以及将其写入到 Azure 表存储。存储帐户用于从 Azure 表中读取消息的保存副本。如果有问题，可在[故障排除页][troubleshooting]上查找解决方案。
@@ -40,8 +40,8 @@ Azure Functions 是一种解决方案，特别适合在云中运行*函数*（�
 ## 打开示例应用
 通过运行以下命令在 Visual Studio Code 中打开示例项目：
 
-		cd Lesson3
-		code .
+	cd Lesson3
+	code .
 
 ![存储库结构][repo-structure]  
 
@@ -62,7 +62,7 @@ Azure Functions 是一种解决方案，特别适合在云中运行*函数*（�
 
 更新 `arm-template-param.json` 文件后，请运行以下命令，将资源部署到 Azure：
 
-		az resource group deployment create --template-file arm-template.json --parameters @arm-template-param.json -g iot-sample
+	az resource group deployment create --template-file arm-template.json --parameters @arm-template-param.json -g iot-sample
 
 创建这些资源约需五分钟。在创建这些资源时，用户可以阅读下一篇文章。
 

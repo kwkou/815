@@ -42,7 +42,7 @@
 - 运行以下命令，列出资源组中的所有 IoT 中心：
 
    
-		   az iot hub list -g iot-gateway --query [].name
+		az iot hub list -g iot-gateway --query [].name
    
 
     使用 `iot-gateway` 作为 `{resource group name}` 的值（如果尚未更改）。
@@ -50,7 +50,7 @@
 - 运行以下命令，获取 IoT 中心连接字符串：
 
    
-		   az iot hub show-connection-string --name {my hub name} -g iot-gateway
+		az iot hub show-connection-string --name {my hub name} -g iot-gateway
    
 
     `{my hub name}` 是在第 2 课中指定的名称。

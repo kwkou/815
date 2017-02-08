@@ -57,7 +57,7 @@
         az account set --subscription {your subscription name or id}
     
 
-3. 安装 Azure CLI _iot 组件_。运行以下[命令，添加 iot 组件][lnk-az-addcomponent-command]：
+3. 安装 Azure CLI *iot 组件* 。运行以下[命令，添加 iot 组件][lnk-az-addcomponent-command]：
     
     
         az component update --add iot

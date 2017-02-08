@@ -21,9 +21,9 @@
 
 # 获取工具 (Ubuntu 16.04)
 >[AZURE.SELECTOR]
-[Windows 7 or later](/documentation/articles/iot-hub-raspberry-pi-kit-c-lesson1-get-the-tools-win32/)
-[Ubuntu 16.04](/documentation/articles/iot-hub-raspberry-pi-kit-c-lesson1-get-the-tools-ubuntu/)
-[macOS 10.10](/documentation/articles/iot-hub-raspberry-pi-kit-c-lesson1-get-the-tools-mac/)
+- [Windows 7 or later](/documentation/articles/iot-hub-raspberry-pi-kit-c-lesson1-get-the-tools-win32/)
+- [Ubuntu 16.04](/documentation/articles/iot-hub-raspberry-pi-kit-c-lesson1-get-the-tools-ubuntu/)
+- [macOS 10.10](/documentation/articles/iot-hub-raspberry-pi-kit-c-lesson1-get-the-tools-mac/)
 
 ## 执行的操作
 下载适用于 Raspberry Pi 3 的第一个示例应用程序的开发工具和软件。如果有问题，可在[故障排除页](/documentation/articles/iot-hub-raspberry-pi-kit-c-troubleshooting/)上查找解决方案。
@@ -50,17 +50,17 @@
 ## 安装 Git、Node.js 和 NPM
 使用键盘快捷方式 `Ctrl + Alt + T` 打开一个终端并运行以下命令：
 
-		sudo apt-get update
-		curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
-		sudo apt-get install -y nodejs
-		sudo apt-get install git
+	sudo apt-get update
+	curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+	sudo apt-get install -y nodejs
+	sudo apt-get install git
 
 ## 安装其他 Node.js 开发工具
 使用 [gulp.js](http://gulpjs.com) 将示例应用程序自动部署到 Pi。使用 [device-discovery-cli](https://github.com/Azure/device-discovery-cli) 检索有关 IoT 设备的网络信息。
 
 在终端运行以下命令，安装 `gulp` 和 `device-discovery-cli`：
 
-		sudo npm install -g device-discovery-cli gulp
+	sudo npm install -g device-discovery-cli gulp
 
 如果无法在 Ubuntu 上安装 Node.js 和这些额外的开发工具，请参阅[故障排除指南](/documentation/articles/iot-hub-raspberry-pi-kit-c-troubleshooting/)，了解常见问题的解决方案。
 

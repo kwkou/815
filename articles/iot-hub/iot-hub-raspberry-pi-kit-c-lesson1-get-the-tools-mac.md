@@ -21,9 +21,9 @@
 
 # 获取工具 (macOS 10.10)
 >[AZURE.SELECTOR]
-[Windows 7 or later](/documentation/articles/iot-hub-raspberry-pi-kit-c-lesson1-get-the-tools-win32/)
-[Ubuntu 16.04](/documentation/articles/iot-hub-raspberry-pi-kit-c-lesson1-get-the-tools-ubuntu/)
-[macOS 10.10](/documentation/articles/iot-hub-raspberry-pi-kit-c-lesson1-get-the-tools-mac/)
+- [Windows 7 or later](/documentation/articles/iot-hub-raspberry-pi-kit-c-lesson1-get-the-tools-win32/)
+- [Ubuntu 16.04](/documentation/articles/iot-hub-raspberry-pi-kit-c-lesson1-get-the-tools-ubuntu/)
+- [macOS 10.10](/documentation/articles/iot-hub-raspberry-pi-kit-c-lesson1-get-the-tools-mac/)
 
 ## 执行的操作
 下载适用于 Raspberry Pi 3 的第一个示例应用程序的开发工具和软件。如果有问题，可在[故障排除页](/documentation/articles/iot-hub-raspberry-pi-kit-c-troubleshooting/)上查找解决方案。

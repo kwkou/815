@@ -21,8 +21,8 @@
 
 # 通过模拟设备开始使用 IoT 网关初学者工具包
 >[AZURE.SELECTOR]
-[SensorTag](/documentation/articles/iot-hub-gateway-kit-c-get-started/)
-[Simulated Device](/documentation/articles/iot-hub-gateway-kit-c-sim-get-started/)
+- [SensorTag](/documentation/articles/iot-hub-gateway-kit-c-get-started/)
+- [Simulated Device](/documentation/articles/iot-hub-gateway-kit-c-sim-get-started/)
 
 在本教程中，用户从学习如何使用 [IoT 网关初学者工具包](https://aka.ms/gateway-kit)的基础知识开始。用户会使用运行 Wind River Linux 的 Intel NUC。以及学习如何使用 Azure IoT 中心将设备无缝连接到云。
 
