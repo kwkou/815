@@ -17,7 +17,7 @@
 
 # 使用 Azure 门户预览管理 HDInsight 中的 Hadoop 群集
 
-[AZURE.INCLUDE [选择器](../includes/hdinsight-portal-management-selector.md)]
+[AZURE.INCLUDE [选择器](../../includes/hdinsight-portal-management-selector.md)]
 
 使用 [Azure 门户预览][azure-portal]，可以创建 Azure HDInsight 中的 Hadoop 群集、更改 Hadoop 用户密码，以及启用远程桌面协议 (RDP) 以访问群集上的 Hadoop 命令控制台。
 

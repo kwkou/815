@@ -78,7 +78,6 @@ __要求__：
 
 若要使用此脚本查看添加到群集的存储帐户信息，请使用 Ambari REST API。以下命令演示如何使用 [cURL (http://curl.haxx.se/)](http://curl.haxx.se/) 和 [jq (https://stedolan.github.io/jq/)](https://stedolan.github.io/jq/) 通过 Ambari 检索和分析 JSON 数据：
 
-> [!div class="tabbedCodeSnippets" data-resources="OutlookServices.Calendar"]
 > ```PowerShell
 > curl -u admin:PASSWORD -G "https://CLUSTERNAME.azurehdinsight.cn/api/v1/clusters/CLUSTERNAME/configurations/service_config_versions?service_name=HDFS&service_config_version=1" | jq '.items[].configurations[].properties["""fs.azure.account.key.STORAGEACCOUNT.blob.core.chinacloudapi.cn"""] | select(. != null)'
 > ```

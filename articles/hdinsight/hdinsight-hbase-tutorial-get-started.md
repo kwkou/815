@@ -19,7 +19,7 @@
 
 # HBase 教程：开始在 HDInsight 中将 Apache HBase 与基于 Windows 的 Hadoop 配合使用
 
-[AZURE.INCLUDE [hbase-selector](../includes/hdinsight-hbase-selector.md)]
+[AZURE.INCLUDE [hbase-selector](../../includes/hdinsight-hbase-selector.md)]
 
 了解如何使用 Apache Hive 在 HDInsight 中创建 HBase 群集、创建 HBase 表和查询表。有关 HBase 的一般信息，请参阅 [HDInsight HBase 概述][hdinsight-hbase-overview]。
 
@@ -29,7 +29,7 @@
 
 ###开始之前
 
-[AZURE.INCLUDE [delete-cluster-warning](../includes/hdinsight-delete-cluster-warning.md)]
+[AZURE.INCLUDE [delete-cluster-warning](../../includes/hdinsight-delete-cluster-warning.md)]
 
 要阅读本 HBase 教程，必须具备：
 
@@ -38,7 +38,7 @@
 
 ## <a name="create-hbase-cluster"></a> 创建 HBase 群集
 
-[AZURE.INCLUDE [provisioningnote](../includes/hdinsight-provisioning.md)]
+[AZURE.INCLUDE [provisioningnote](../../includes/hdinsight-provisioning.md)]
 
 **使用 Azure 经典管理门户创建 HBase 群集**
 
@@ -293,7 +293,7 @@ HDInsight 中的 HBase 随附了一个 Web UI 用于监视群集。使用该 Web
 
 ##删除群集
 
-[AZURE.INCLUDE [delete-cluster-warning](../includes/hdinsight-delete-cluster-warning.md)]
+[AZURE.INCLUDE [delete-cluster-warning](../../includes/hdinsight-delete-cluster-warning.md)]
 
 
 ## 后续步骤
