@@ -17,7 +17,7 @@
 
 # 使用脚本操作自定义基于 Windows 的 HDInsight 群集
 
-[AZURE.INCLUDE [选择器](../includes/hdinsight-create-windows-cluster-selector.md)]
+[AZURE.INCLUDE [选择器](../../includes/hdinsight-create-windows-cluster-selector.md)]
 
 创建群集期间，可以使用**脚本操作**调用[自定义脚本](/documentation/articles/hdinsight-hadoop-script-actions/)，以便在群集上安装其他软件。
 
