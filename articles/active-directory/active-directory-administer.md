@@ -121,8 +121,8 @@ Azure AD 要求删除目录之前必须符合特定的条件。这可以降低�
 - 目录中不能有任何应用程序。只有在删除所有应用程序后，才能删除目录。
 - 与目录关联的任何 Microsoft Online Services（例如 Azure、Office 365 或 Azure AD Premium）不能存在任何订阅。例如，如果在 Azure 中为你创建了一个默认目录，并且你的 Azure 订阅仍然依赖于此目录进行身份验证，则不能删除此目录。类似地，如果其他用户已将订阅与某个目录相关联，则你无法删除该目录。若要将订阅与其他目录相关联，请登录到 Azure 管理门户，并在左侧导航窗格中单击“设置”。然后，在“订阅”页的底部单击“编辑目录”。有关 Azure 订阅的详细信息，请参阅 [Azure 订阅与 Azure AD 的关联方式](/documentation/articles/active-directory-how-subscriptions-associated-directory/)。
 
-> [AZURE.NOTE]
-如果用户使用工作或学校帐户登录，则该用户不得尝试删除其主目录。例如，如果用户是作为 joe@contoso.partner.onmschina.cn 登录的，则该用户不能删除默认域为 contoso.partner.onmschina.cn 的目录。
+	> [AZURE.NOTE]
+	> 如果用户使用工作或学校帐户登录，则该用户不得尝试删除其主目录。例如，如果用户是作为 joe@contoso.partner.onmschina.cn 登录的，则该用户不能删除默认域为 contoso.partner.onmschina.cn 的目录。
 
 - 不能有任何多重身份验证提供程序链接到该目录。
 
