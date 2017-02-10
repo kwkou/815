@@ -79,7 +79,7 @@ Azure 提供许多应用商店映像，这些映像可配合各种版本和类�
 | --- | --- |
 | Azure 门户预览 |选择要使用的映像时，系统会自动指定值。 |
 | Azure PowerShell |[Get-AzureRMVMImagePublisher](https://msdn.microsoft.com/zh-cn/library/mt603484.aspx) -Location "location"<BR>[Get-AzureRMVMImageOffer](https://msdn.microsoft.com/zh-cn/library/mt603824.aspx) -Location "location" -Publisher "publisherName"<BR>[Get-AzureRMVMImageSku](https://msdn.microsoft.com/zh-cn/library/mt619458.aspx) -Location "location" -Publisher "publisherName" -Offer "offerName" |
-| REST API |[列出映像发布者](https://msdn.microsoft.com/zh-cn/library/mt743702.aspx)<BR>[列出映像产品](https://msdn.microsoft.com/zh-cn/library/mt743700.aspx)<BR>[列出映像 SKU](https://msdn.microsoft.com/zh-cn/library/mt743701.aspx) |
+| REST API |[列出映像发布者](https://docs.microsoft.com/zh-cn/rest/api/compute/platformimages/platformimages-list-publishers)<BR>[列出映像产品](https://docs.microsoft.com/zh-cn/rest/api/compute/platformimages/platformimages-list-publisher-offers)<BR>[列出映像 SKU](https://docs.microsoft.com/zh-cn/rest/api/compute/platformimages/platformimages-list-publisher-offer-skus) |
 
 可以选择[上载并使用自己的映像](/documentation/articles/virtual-machines-windows-upload-image/)，在这种情况下，无需使用发布者名称、产品和 SKU。
 
@@ -115,7 +115,7 @@ VM 使用下表中的资源，创建 VM 时，这些资源必须存在，否则�
 | 模板 |[使用 Resource Manager 模板创建 Windows 虚拟机](/documentation/articles/virtual-machines-windows-ps-template/) |
 | Azure PowerShell |[使用 PowerShell 创建 Windows VM](/documentation/articles/virtual-machines-windows-ps-create/) |
 | 客户端 SDK |[使用 C# 部署 Azure 资源](/documentation/articles/virtual-machines-windows-csharp/) |
-| REST API |[创建或更新 VM](https://msdn.microsoft.com/zh-cn/library/mt163591.aspx) |
+| REST API |[创建或更新 VM](https://docs.microsoft.com/zh-cn/rest/api/compute/virtualmachines/virtualmachines-create-or-update) |
 
 问题偶尔会不期而至。如果遇到了问题，请查看 [Troubleshoot Resource Manager deployment issues with creating a Windows virtual machine in Azure](/documentation/articles/virtual-machines-windows-troubleshoot-deployment-new-vm/)（排查在 Azure 中创建 Windows 虚拟机时遇到的 Resource Manager 部署问题）。
 
@@ -129,7 +129,7 @@ VM 使用下表中的资源，创建 VM 时，这些资源必须存在，否则�
 | --- | --- |
 | Azure 门户预览 |在中心菜单中，单击“虚拟机”，然后从列表中选择 VM。在 VM 的边栏选项卡中，可以访问概述信息、设置值以及监视指标。 |
 | Azure PowerShell |有关使用 PowerShell 管理 VM 的信息，请参阅 [Manage Azure Virtual Machines using Resource Manager and PowerShell](/documentation/articles/virtual-machines-windows-ps-manage/)（使用 Resource Manager 与 PowerShell 来管理 Azure 虚拟机）。 |
-| REST API |使用“获取 VM 信息”操作获取有关 VM 的信息。[](https://msdn.microsoft.com/zh-cn/library/mt163682.aspx) |
+| REST API |使用“获取 VM 信息”操作获取有关 VM 的信息。[](https://docs.microsoft.com/zh-cn/rest/api/compute/virtualmachines/virtualmachines-get) |
 | 客户端 SDK |有关使用 C# 管理 VM 的信息，请参阅 [Manage Azure Virtual Machines using Azure Resource Manager and C#](/documentation/articles/virtual-machines-windows-csharp-manage/)（使用 Azure Resource Manager 与 C# 来管理 Azure 虚拟机）。 |
 
 ### 登录到 VM
