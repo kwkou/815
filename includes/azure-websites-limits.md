@@ -4,7 +4,7 @@
 [App Service 计划](/documentation/articles/azure-web-sites-web-hosting-plans-in-depth-overview/)|每个区域 1 个|每个资源组 10 个|每个资源组 100 个|每个资源组 100 个|每个资源组 100 个
 计算实例类型|共享|共享|专用<sup>3</sup>|专用<sup>3</sup>|专用<sup>3</sup></p>
 [横向扩展](/documentation/articles/web-sites-scale/)（最大实例数）|1 个共享|1 个共享|3 个专用<sup>3</sup>|10 个专用<sup>3</sup>|20 个专用<sup>3,4</sup>
-存储<sup>5</sup>|1 GB<sup>5</sup>|1 GB<sup>5</sup>|10 GB<sup>5</sup>|50 GB<sup>5</sup>|500 GB<sup>4,5</sup></p>
+存储<sup>5</sup>|1 GB<sup>5</sup>|1 GB<sup>5</sup>|10 GB<sup>5</sup>|50 GB<sup>5</sup>|250 GB<sup>4,5</sup></p>
 CPU 时间（5 分钟）<sup>6</sup>|3 分钟|3 分钟|无限制，按标准[费率](/pricing/details/app-service/)</a>付费|无限制，按标准费率付费|无限制，按标准费率付费
 CPU 时间（天）<sup>6</sup>|60 分钟|240 分钟|无限制，按标准[费率](/pricing/details/app-service/)</a>付费|无限制，按标准费率付费|无限制，按标准费率付费
 内存（1 小时）|每个 App Service 计划 1024 MB|每个应用 1024 MB|不适用|不适用|不适用
