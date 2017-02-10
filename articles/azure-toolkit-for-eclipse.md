@@ -92,7 +92,7 @@
 [在 Eclipse 中为 Azure 部署启用远程访问]: /documentation/articles/azure-toolkit-for-eclipse-enabling-remote-access-for-azure-deployments/
 [启用会话相关性]: /documentation/articles/azure-toolkit-for-eclipse-enable-session-affinity/
 [HDInsight Tools Plugin for Eclipse]: /documentation/articles/hdinsight-apache-spark-eclipse-tool-plugin/
-[How to Authenticate Web Users with Azure Access Control Service Using Eclipse]: /documentation/articles/active-directory-java-authenticate-users-access-control-eclipse/
+
 
 <!-- [How to Maintain Session Data with Session Affinity]: http://go.microsoft.com/fwlink/?LinkID=699539 -->
 <!-- [How to Use Co-located Caching]: http://go.microsoft.com/fwlink/?LinkID=699542 -->

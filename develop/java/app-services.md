@@ -29,9 +29,9 @@
 <h3>功能指南： <a href="/documentation/articles/partner-twilio-java-how-to-use-voice-sms/" ms.pgarea="content" ms.cmpgrp="body" ms.cmptyp="link" ms.cmpnm="Twilio 音频和 SMS 服务" ms.title="" km.title="" ms.interactiontype="1">Twilio 音频和 SMS 服务</a></h3>
 <p>Azure 应用程序可以通过 Twilio 合并电话和短信服务 (SMS) 消息功能。可使用 Twilio API 拨打和接听电话，收发短信，以及通过现有互联网连接（包括移动连接）进行语音通信。</p>-->
 <h2 id="header-3">标识</h2>
-<h3>功能指南： <a href="/documentation/articles/active-directory-java-authenticate-users-access-control-eclipse/">访问控制</a></h3>
+<h3>功能指南： 访问控 </h3>
 <p>Access Control 是一项 Azure 服务，可用于轻松对需要访问您的 Web 应用程序和服务的用户进行身份验证，而不必在代码中添加复杂的身份验证逻辑因素。该服务还提供与 Windows Identity Foundation (WIF) 的集成，支持常用 Web 身份提供程序（包括 Windows Live ID、Yahoo），并且支持 ADFS 2.0。</p>
-<h3>如何： <a href="/documentation/articles/active-directory-java-view-saml-returned-by-access-control/">查看 Azure Access Control 服务返回的 SAML</a></h3>
+<h3>如何： 查看 Azure Access Control 服务返回的 SAML </h3>
 <p>当用户成功登录时，Access Control 服务会向您的应用程序返回安全声明标记语言 (SAML)。</p>
 <!--<h2 id="header-4">图像处理</h2>
 <h3>功能指南： <a href="/documentation/articles/store-blitline-how-to-use/">Blitline 图像处理服务</a></h3>

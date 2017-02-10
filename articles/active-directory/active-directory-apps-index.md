@@ -47,7 +47,7 @@
 | 文章指南 | |
 |:---:| --- |
 | 联合身份验证和其他登录类型简介 |[使用 Azure AD 进行单一登录](/documentation/articles/active-directory-appssoaccess-whatis/) |
-| 通过简化的单一登录配置步骤与 Azure AD 预先集成的数千个 SaaS 应用 |[Azure AD 应用程序库入门](/documentation/articles/active-directory-appssoaccess-whatis/#get-started-with-the-azure-ad-application-gallery/)<br /><br />[支持联合身份验证的预先集成应用完整列表](http://aka.ms/aadfederatedapps)<br /><br />[如何将应用添加到 Azure AD 应用库](/documentation/articles/active-directory-app-gallery-listing/) |
+| 通过简化的单一登录配置步骤与 Azure AD 预先集成的数千个 SaaS 应用 |[Azure AD 应用程序库入门](/documentation/articles/active-directory-appssoaccess-whatis/#get-started-with-the-azure-ad-application-gallery/)<br /><br />[支持联合身份验证的预先集成应用完整列表](http://aka.ms/aadfederatedapps)<br /><br />  |
 | 150 个以上的应用教程，介绍如何为应用配置单一登录等内容 | |
 | 如何手动设置和自定义单一登录配置 |如何为不在 Azure Active Directory 应用程序库中的应用配置联合单一登录<br /><br />[如何针对预先集成的应用自定义在 SAML 令牌中颁发的声明](/documentation/articles/active-directory-saml-claims-customization/) |
 | 使用 SAML 协议的联合应用的故障排除指南 |[排查基于 SAML 的单一登录问题](/documentation/articles/active-directory-saml-debugging/) |
@@ -90,7 +90,7 @@ Azure AD Connect 适用于[所有版本的 Azure Active Directory](/pricing/deta
 | 文章指南 | |
 |:---:| --- |
 | 有关 IT 专业人员和应用程序开发人员集成应用程序与 Azure AD 的指南 |[适用于开发 Azure AD 应用程序的 IT 专业人员指南](/documentation/articles/active-directory-applications-guiding-developers-for-lob-applications/)<br /><br />[Azure Active Directory 的开发人员指南](/documentation/articles/active-directory-developers-guide/) |
-| 应用程序供应商如何将其应用添加到 Azure AD 应用库 |[列出 Azure Active Directory 应用程序库中的应用程序](/documentation/articles/active-directory-app-gallery-listing/) |
+| 应用程序供应商如何将其应用添加到 Azure AD 应用库 |  |
 | 如何使用 Azure Active Directory 管理对开发的应用程序的访问 |[如何对开发的应用程序启用用户分配](/documentation/articles/active-directory-applications-guiding-developers-requiring-user-assignment/)<br /><br />[将用户分配到应用](/documentation/articles/active-directory-applications-guiding-developers-assigning-users/)<br /> |
 
 

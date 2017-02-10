@@ -41,14 +41,13 @@ editor="Eric Chen" />
 ###应用服务
 
 - [应用程序之间的消息](/documentation/articles/service-bus-java-how-to-use-queues/)
-- [对用户进行身份验证](/documentation/articles/active-directory-java-authenticate-users-access-control-eclipse/)
 <!--- [将 Twilio 用于音频和 SMS](/documentation/articles/partner-twilio-java-how-to-use-voice-sms/)-->
 - [全部显示](/develop/java/app-services)
 <!--- [使用 SendGrid 发送电子邮件](/documentation/articles/store-sendgrid-java-how-to-send-email/)-->
     
 ###参考文档
 
-- [Access Control](/documentation/articles/active-directory-java-authenticate-users-access-control-eclipse/) / [REST](http://msdn.microsoft.com/zh-cn/library/azure/hh278947)
+- [REST](http://msdn.microsoft.com/zh-cn/library/azure/hh278947)
 - [Blob 服务](/documentation/articles/storage-java-how-to-use-blob-storage/) / [API](http://dl.windowsazure.com/storage/javadoc) / [REST](http://msdn.microsoft.com/zh-cn/library/azure/dd179355)
 <!--
 - [DocumentDB](/documentation/articles/documentdb-java-application/) / [API](http://dl.windowsazure.com/documentdb/javadoc)-->

@@ -60,7 +60,6 @@
 - [对使用证书的服务/后台应用程序进行身份验证](https://github.com/Azure-Samples/active-directory-dotnet-daemon-certificate-credential/)
 - 使用 ADAL 在 [Android](/documentation/articles/active-directory-sso-android/) 和 [iOS](/documentation/articles/active-directory-sso-ios/) 设备上实现跨应用 SSO
 - [针对 Azure AD 认证 AppSource 应用程序](/documentation/articles/active-directory-devhowto-appsource-certified/)
-- [列出 Azure AD 应用程序库中的应用程序](/documentation/articles/active-directory-app-gallery-listing/)
 - [将适用于 Office 365 的 Web 应用提交到卖家仪表板](https://msdn.microsoft.com/office/office365/howto/submit-web-apps-seller-dashboard)
 - [了解 Azure Active Directory 应用程序清单](/documentation/articles/active-directory-application-manifest/)
 - [了解客户端应用程序中登录按钮和应用获取按钮的品牌准则](/documentation/articles/active-directory-branding-guidelines/)
