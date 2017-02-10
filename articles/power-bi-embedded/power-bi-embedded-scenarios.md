@@ -31,6 +31,6 @@
 ### 另请参阅
 
 - [Power BI Embedded 入门](/documentation/articles/power-bi-embedded-get-started/)
-- [示例入门](/documentation/articles/power-bi-embedded-get-started/)
+- [示例入门](/documentation/articles/power-bi-embedded-get-started-sample/)
 
 <!---HONumber=Mooncake_1010_2016-->
