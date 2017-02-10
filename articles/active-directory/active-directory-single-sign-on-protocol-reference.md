@@ -262,11 +262,11 @@ Azure AD 为断言签名以响应成功登录。`Signature` 元素包含数字�
 - `AuthnContext` 元素指定用于对用户进行身份验证的身份验证上下文。
 	
 	
-	<AuthnStatement AuthnInstant="2013-03-18T07:33:56.000Z" SessionIndex="_bf9c623d-cc20-407a-9a59-c2d0aee84d12">
-	      <AuthnContext>
-	        <AuthnContextClassRef> urn:oasis:names:tc:SAML:2.0:ac:classes:Password</AuthnContextClassRef>
-	      </AuthnContext>
-	</AuthnStatement>
+		<AuthnStatement AuthnInstant="2013-03-18T07:33:56.000Z" SessionIndex="_bf9c623d-cc20-407a-9a59-c2d0aee84d12">
+		      <AuthnContext>
+		        <AuthnContextClassRef> urn:oasis:names:tc:SAML:2.0:ac:classes:Password</AuthnContextClassRef>
+		      </AuthnContext>
+		</AuthnStatement>
 
 <!---HONumber=Mooncake_0120_2017-->
 <!---Update_Description: wording update -->

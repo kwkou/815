@@ -95,7 +95,7 @@ Azure AD 只会向已知的应用程序颁发令牌。在从应用使用 Azure A
 
 若要运行 `DirSearchClient Sample`，请向新建应用授予查询 *Azure AD 图形 API* 的权限：
 
-6. 在“设置”页上，依次选择“所需的权限”和“添加”。对于“Azure Active Directory”应用程序，选择“Microsoft Graph”作为 API，在“委派的权限”下添加“以已登录用户的身份访问目录”权限。这样，你的应用程序便可以在图形 API 中查询用户。
+在“设置”页上，依次选择“所需的权限”和“添加”。对于“Azure Active Directory”应用程序，选择“Microsoft Graph”作为 API，在“委派的权限”下添加“以已登录用户的身份访问目录”权限。这样，你的应用程序便可以在图形 API 中查询用户。
 
 ## 2\.克隆教程所需的示例应用存储库
 在 shell 或命令行中键入以下命令：
@@ -273,7 +273,7 @@ javascript
 
    **注意**：请确保安装 `ios-sim` 包以在模拟器上运行。有关详细信息，请参阅“先决条件”部分。
 
-    使用 `cordova run ios --list` 可查看所有可用目标，使用 `cordova run ios --target=<target_name>` 可在特定的设备或模拟器上运行应用程序（例如 `cordova run android --target="iPhone-6"`）。
+   使用 `cordova run ios --list` 可查看所有可用目标，使用 `cordova run ios --target=<target_name>` 可在特定的设备或模拟器上运行应用程序（例如 `cordova run android --target="iPhone-6"`）。
 
 使用 `cordova run --help` 可查看其他生成和运行选项。
 
