@@ -167,7 +167,7 @@
 
 ### 定义服务主机的配置
 
-1. 配置文件非常类似于 WCF 配置文件。该配置文件包括服务名称、终结点（即，服务总线公开的、让客户端和主机相互通信的位置）和绑定（用于通信的协议类型）。此处的主要差别在于，配置的服务终结点是指 [NetTcpRelayBinding](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.nettcprelaybinding.aspx) 绑定，它不是 .NET Framework 的一部分。[NetTcpRelayBinding](https://msdn.microsoft.com/zh-cn/library/microsoft.servicebus.nettcprelaybinding.aspx) 是通过服务总线定义的绑定之一。
+1. 配置文件非常类似于 WCF 配置文件。该配置文件包括服务名称、终结点（即，服务总线公开的、让客户端和主机相互通信的位置）和绑定（用于通信的协议类型）。此处的主要差别在于，配置的服务终结点是指 [NetTcpRelayBinding](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.nettcprelaybinding.aspx) 绑定，它不是 .NET Framework 的一部分。[NetTcpRelayBinding](https://docs.microsoft.com/en-us/dotnet/api/microsoft.servicebus.nettcprelaybinding?redirectedfrom=MSDN#microsoft_servicebus_nettcprelaybinding) 是通过服务总线定义的绑定之一。
 
 1. 在**解决方案资源管理器**中，双击 App.config 文件以在 Visual Studio 编辑器中将其打开。
 
@@ -273,7 +273,7 @@
 		Uri address = ServiceBusEnvironment.CreateServiceUri("sb", serviceNamespace, "EchoService");
 	
 
-	"sb" 是服务总线方案的缩写，并指示我们正在使用 TCP 作为协议。先前当 [NetTcpRelayBinding](https://msdn.microsoft.com/zh-cn/library/microsoft.servicebus.nettcprelaybinding.aspx) 被指定为绑定时，在配置文件中也指示了这一点。
+	"sb" 是服务总线方案的缩写，并指示我们正在使用 TCP 作为协议。先前当 [NetTcpRelayBinding](https://docs.microsoft.com/en-us/dotnet/api/microsoft.servicebus.nettcprelaybinding?redirectedfrom=MSDN#microsoft_servicebus_nettcprelaybinding) 被指定为绑定时，在配置文件中也指示了这一点。
 	
 	对于本教程中，URI 是 `sb://putServiceNamespaceHere.chinacloudapi.cn/EchoService`。
 

@@ -115,7 +115,7 @@
 		}
 
 
-这里使用了 [CreateQueue](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.namespacemanager.createqueue.aspx) 方法的重载，以允许你调整队列属性（例如，为了将默认的生存时间 (TTL) 值设置为应用于发送到队列的消息）。使用 [QueueDescription](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.queuedescription.aspx) 类应用这些设置。以下示例演示如何创建名为 `TestQueue`、最大大小为 5 GB、默认消息 TTL 为 1 分钟的队列。
+这里使用了 [CreateQueue](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.namespacemanager.createqueue.aspx) 方法的重载，以允许你调整队列属性（例如，为了将默认的生存时间 (TTL) 值设置为应用于发送到队列的消息）。使用 [QueueDescription](https://docs.microsoft.com/en-us/dotnet/api/microsoft.servicebus.messaging.queuedescription?redirectedfrom=MSDN#microsoft_servicebus_messaging_queuedescription) 类应用这些设置。以下示例演示如何创建名为 `TestQueue`、最大大小为 5 GB、默认消息 TTL 为 1 分钟的队列。
 
 
 		// Configure queue settings.

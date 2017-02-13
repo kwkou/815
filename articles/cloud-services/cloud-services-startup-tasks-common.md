@@ -512,7 +512,7 @@ ServiceDefinition.cmd：
 [RoleEnvironment]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.serviceruntime.roleenvironment.aspx
 [Endpoints]: https://msdn.microsoft.com/zh-cn/library/azure/gg557552.aspx#Endpoints
 [LocalStorage]: https://msdn.microsoft.com/zh-cn/library/azure/gg557552.aspx#LocalStorage
-[LocalResources]: https://msdn.microsoft.com/zh-cn/library/azure/gg557552.aspx#LocalResources
+[LocalResources]: https://msdn.microsoft.com/library/en-us/Gg557552.aspx#LocalResources
 [RoleInstanceValue]: https://msdn.microsoft.com/zh-cn/library/azure/gg557552.aspx#RoleInstanceValue
 
 <!---HONumber=Mooncake_1128_2016-->

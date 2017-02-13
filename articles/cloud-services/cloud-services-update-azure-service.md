@@ -25,7 +25,7 @@ ms.author="adegeo"/>
 
 Azure 将角色实例划分为称为升级域 (UD) 的逻辑组。升级域 (UD) 是角色实例的逻辑集，将以组方式进行更新。Azure 每次更新云服务的一个 UD，使其他 UD 中的实例能够继续处理流量。
 
-升级域的默认数量为 5 个。可以在服务定义文件 (.csdef) 中包含 upgradeDomainCount 属性以指定不同数量的升级域。有关 upgradeDomainCount 属性的详细信息，请参阅 [WebRole 架构](https://msdn.microsoft.com/zh-cn/library/azure/gg557553.aspx)或 [WorkerRole 架构](https://msdn.microsoft.com/zh-cn/library/azure/gg557552.aspx)。
+升级域的默认数量为 5 个。可以在服务定义文件 (.csdef) 中包含 upgradeDomainCount 属性以指定不同数量的升级域。有关 upgradeDomainCount 属性的详细信息，请参阅 [WebRole 架构](https://msdn.microsoft.com/library/en-us/Gg557553.aspx)或 [WorkerRole 架构](https://msdn.microsoft.com/zh-cn/library/azure/gg557552.aspx)。
 
 在为服务中的一个或多个角色执行就地更新时，Azure 根据所属的升级域更新角色实例集。Azure 更新给定升级域中的所有实例（停止、更新并将它们重新联机），然后移到下一个升级域。通过仅停止在当前升级域中运行的实例，Azure 确保在执行更新时将对正在运行服务造成的影响降到最低。有关详细信息，请参阅本文后面的[如何进行更新](#howanupgradeproceeds)。
 
@@ -143,7 +143,7 @@ Azure 将角色实例划分为称为升级域 (UD) 的逻辑组。升级域 (UD)
 
 在进行第一个更新的同时，启动第二个更新操作将以类似回滚操作的方式执行。如果第二个更新在自动模式下执行，将立即升级第一个升级域，这可能会导致多个升级域中的实例在同一时刻处于离线状态。
 
-变动操作如下：“更改部署配置”、“升级部署”、“更新部署状态”、“删除部署”和“回滚更新或升级”。[](https://msdn.microsoft.com/zh-cn/library/azure/ee460809.aspx)[](https://msdn.microsoft.com/zh-cn/library/azure/ee460793.aspx)[](https://msdn.microsoft.com/zh-cn/library/azure/ee460808.aspx)[](https://msdn.microsoft.com/zh-cn/library/azure/ee460815.aspx)[](https://msdn.microsoft.com/zh-cn/library/azure/hh403977.aspx)
+变动操作如下：“更改部署配置”、“升级部署”、“更新部署状态”、“删除部署”和“回滚更新或升级”。[](https://msdn.microsoft.com/zh-cn/library/azure/ee460809.aspx)[](https://msdn.microsoft.com/zh-cn/library/azure/ee460793.aspx)[](https://msdn.microsoft.com/zh-cn/library/azure/ee460808.aspx)[](https://msdn.microsoft.com/library/en-us/Ee460815.aspx)[](https://msdn.microsoft.com/zh-cn/library/azure/hh403977.aspx)
 
 “获取部署”和“获取云服务属性”这两个操作返回 Locked 标志，可以检查该标志以确定是否可以在给定部署上调用变动操作。[](https://msdn.microsoft.com/zh-cn/library/azure/ee460804.aspx)[](https://msdn.microsoft.com/zh-cn/library/azure/ee460806.aspx)
 

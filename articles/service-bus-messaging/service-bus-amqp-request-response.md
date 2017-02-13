@@ -496,7 +496,7 @@ sql-filter 映射必须包含以下条目。
 |session-id|字符串|否||  
 |reply-to-session-id|字符串|否||  
 |content-type|字符串|否||  
-|属性|map|否|映射到服务总线 [BrokeredMessage.Properties](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.properties.aspx)。|  
+|属性|map|否|映射到服务总线 [BrokeredMessage.Properties](https://docs.microsoft.com/zh-cn/dotnet/api/microsoft.servicebus.messaging.brokeredmessage?redirectedfrom=MSDN#Microsoft_ServiceBus_Messaging_BrokeredMessage_Properties)。|  
   
 **sql-rule-action** 映射必须包含以下条目。
   
