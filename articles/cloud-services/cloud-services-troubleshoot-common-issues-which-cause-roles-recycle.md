@@ -72,7 +72,7 @@ Azure 是一个 64 位的环境。因此，针对 32 位目标编译的 .NET 程
 
 
 
-[RoleEntryPoint]: https://msdn.microsoft.com/zh-cn/library/microsoft.windowsazure.serviceruntime.roleentrypoint.aspx
+[RoleEntryPoint]: https://msdn.microsoft.com/library/en-us/Ee758619.aspx
 [OnStart]: https://msdn.microsoft.com/zh-cn/library/microsoft.windowsazure.serviceruntime.roleentrypoint.onstart.aspx
 [OnStop]: https://msdn.microsoft.com/zh-cn/library/microsoft.windowsazure.serviceruntime.roleentrypoint.onstop.aspx
 [Run]: https://msdn.microsoft.com/zh-cn/library/microsoft.windowsazure.serviceruntime.roleentrypoint.run.aspx

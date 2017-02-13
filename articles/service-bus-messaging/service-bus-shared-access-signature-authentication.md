@@ -139,7 +139,7 @@ SAS 令牌中的 [KeyName](https://msdn.microsoft.com/zh-cn/library/azure/micros
 
 ## 访问实体上的共享访问授权规则
 
-你可以通过在相应 [QueueDescription](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.queuedescription.aspx)、[TopicDescription](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.topicdescription.aspx) 或 [NotificationHubDescription](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.notifications.notificationhubdescription.aspx) 对象上的 [AuthorizationRules](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.authorizationrules.aspx) 集合，访问在服务总线队列或主题中配置的 [Microsoft.ServiceBus.Messaging.SharedAccessAuthorizationRule](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.sharedaccessauthorizationrule.aspx) 对象。
+你可以通过在相应 [QueueDescription](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.queuedescription.aspx)、[TopicDescription](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.topicdescription.aspx) 或 [NotificationHubDescription](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.notifications.notificationhubdescription.aspx) 对象上的 [AuthorizationRules](https://docs.microsoft.com/en-us/dotnet/api/microsoft.servicebus.messaging.authorizationrules?redirectedfrom=MSDN#microsoft_servicebus_messaging_authorizationrules) 集合，访问在服务总线队列或主题中配置的 [Microsoft.ServiceBus.Messaging.SharedAccessAuthorizationRule](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.sharedaccessauthorizationrule.aspx) 对象。
 
 下面的代码演示了如何向队列添加授权规则。
 

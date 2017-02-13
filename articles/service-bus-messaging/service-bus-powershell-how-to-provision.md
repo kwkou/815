@@ -194,7 +194,7 @@ Azure PowerShell 是一个脚本编写环境，可用于在 Azure 中控制和�
 [服务总线 NuGet 包]: http://www.nuget.org/packages/WindowsAzure.ServiceBus/
 [Get-AzureSBNamespace]: https://msdn.microsoft.com/zh-cn/library/azure/dn495122.aspx
 [New-AzureSBNamespace]: https://msdn.microsoft.com/zh-cn/library/azure/dn495165.aspx
-[Get-AzureSBAuthorizationRule]: https://msdn.microsoft.com/zh-cn/library/azure/dn495113.aspx
+[Get-AzureSBAuthorizationRule]: https://docs.microsoft.com/en-us/powershell/servicemanagement/azure.compute/v1.6.1/Get-AzureSBAuthorizationRule?redirectedfrom=msdn
 [适用于服务总线的 .NET API]: https://msdn.microsoft.com/zh-cn/library/microsoft.servicebus.aspx
 [NamespaceManager]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.namespacemanager.aspx
 

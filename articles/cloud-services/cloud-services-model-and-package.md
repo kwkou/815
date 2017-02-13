@@ -200,7 +200,7 @@ Azure 仅允许 Web 角色有一个入口点。即所有通信都通过一个 IP
 仅可在角色实例处于脱机状态时更新一个证书。如果在角色实例处于联机状态时添加、删除或更改了某个证书，则 Azure 会使实例脱机以更新证书，并在更改完成后使其重新联机。
 
 ### 使用服务运行时事件处理配置更改
-[Azure 运行时库](https://msdn.microsoft.com/zh-cn/library/azure/mt419365.aspx)包括 [Microsoft.WindowsAzure.ServiceRuntime](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.serviceruntime.aspx) 命名空间，它为与 Azure 环境（来自角色实例中运行的代码）的交互提供类。[RoleEnvironment](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.serviceruntime.roleenvironment.aspx) 类定义在配置更改前后引发的以下事件：
+[Azure 运行时库](https://msdn.microsoft.com/zh-cn/library/azure/mt419365.aspx)包括 [Microsoft.WindowsAzure.ServiceRuntime](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.serviceruntime.aspx) 命名空间，它为与 Azure 环境（来自角色实例中运行的代码）的交互提供类。[RoleEnvironment](https://msdn.microsoft.com/library/en-us/Ee773173.aspx) 类定义在配置更改前后引发的以下事件：
 
 - **[Changing](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.serviceruntime.roleenvironment.changing.aspx) 事件**
 此事件发生在配置更改应用于某个角色的指定实例之前，使你有机会记下角色实例（如有必要）。

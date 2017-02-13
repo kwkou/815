@@ -70,7 +70,7 @@
 			...
 	
 
-8. 在命名空间声明的左大括号后面，紧接着定义一个名为 **IImageContract** 的新接口，然后将 **ServiceContractAttribute** 属性应用于该接口，其值为 `http://samples.microsoft.com/ServiceModel/Relay/`。该命名空间值不同于你在整个代码范围内使用的命名空间。该命名空间值将用作此约定的唯一标识符，并应有版本控制信息。有关详细信息，请参阅[服务版本控制](http://go.microsoft.com/fwlink/?LinkID=180498)。显式指定命名空间可防止将默认的命名空间值添加到约定名称中。
+8. 在命名空间声明的左大括号后面，紧接着定义一个名为 **IImageContract** 的新接口，然后将 **ServiceContractAttribute** 属性应用于该接口，其值为 `http://samples.microsoft.com/ServiceModel/Relay/`。该命名空间值不同于你在整个代码范围内使用的命名空间。该命名空间值将用作此约定的唯一标识符，并应有版本控制信息。有关详细信息，请参阅[服务版本控制](https://msdn.microsoft.com/en-us/library/ms731060.aspx)。显式指定命名空间可防止将默认的命名空间值添加到约定名称中。
 
 	
 		[ServiceContract(Name = "ImageContract", Namespace = "http://samples.microsoft.com/ServiceModel/Relay/RESTTutorial1")]
