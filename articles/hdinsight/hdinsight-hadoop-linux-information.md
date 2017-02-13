@@ -32,6 +32,8 @@
 * [jq](https://stedolan.github.io/jq/) - 用于分析 JSON 文档
 * [Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-az-cli2)（预览版）- 用于远程管理 Azure 服务
 
+    [AZURE.INCLUDE [azure-cli-2-azurechinacloud-environment-parameter](../../includes/azure-cli-2-azurechinacloud-environment-parameter.md)]
+
 ## 用户
 
 应将 HDInsight 视为**单用户**系统。使用群集时，将创建单个具有管理员级别权限的 SSH 用户帐户。可以创建其他 SSH 帐户，但这些帐户也具有对群集的管理员访问权限。
@@ -228,16 +230,15 @@ HDInsight 是一项托管服务，这意味着如果检测到问题，Azure 可�
 某些属于独立 jar 文件的组件通过 HDInsight 提供，但不在路径中。若要查找特定组件，可使用以下命令在群集上搜索：
 >
 > ```find / -name *componentname*.jar 2>/dev/null```  
-
 >
 > 此时会返回任何匹配的 jar 文件的路径。
 
 如果群集已经以独立 jar 文件的形式提供了某个版本的组件，但用户需要使用其他版本，则可将新版组件上载到群集，然后尝试在作业中使用该组件。
 
 > [AZURE.WARNING]
-完全支持通过 HDInsight 群集提供的组件，Microsoft 支持部门将帮助找出并解决与这些组件相关的问题。
+完全支持通过 HDInsight 群集提供的组件，Azure 支持部门将帮助找出并解决与这些组件相关的问题。
 >
-> 自定义组件可获得合理范围的支持，有助于进一步解决问题。这可能会促进解决问题，或要求使用可用的开源技术渠道，在渠道中可找到该技术的深厚的专业知识。有许多可以使用的社区站点，例如：[HDInsight 的 MSDN 论坛](https://social.msdn.microsoft.com/Forums/azure/zh-cn/home?forum=hdinsight)、[http://stackoverflow.com](http://stackoverflow.com)。此外，Apache 项目在 [http://apache.org](http://apache.org) 上提供了项目站点，例如 [Hadoop](http://hadoop.apache.org/)、[Spark](http://spark.apache.org/)。
+> 自定义组件可获得合理范围的支持，有助于进一步解决问题。这可能会促进解决问题，或要求使用可用的开源技术渠道，在渠道中可找到该技术的深厚的专业知识。有许多可以使用的社区站点，例如：[HDInsight 的 MSDN 论坛](https://social.msdn.microsoft.com/Forums/azure/zh-cn/home?forum=hdinsight)、[Azure CSDN](http://azure.csdn.net)。此外，Apache 项目在 [http://apache.org](http://apache.org) 上提供了项目站点，例如 [Hadoop](http://hadoop.apache.org/)、[Spark](http://spark.apache.org/)。
 
 ## 后续步骤
 

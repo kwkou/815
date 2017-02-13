@@ -146,7 +146,7 @@ Apache Storm 运行**拓扑**，而不是 HDInsight 或 Hadoop 中用户熟悉�
 * **Spout**：使用数据源中的数据并发出一个或多个**流**。
   
     > [AZURE.NOTE]
-    在许多情况下，数据是从队列（例如 Kafka 或 Azure 事件中心）读取的。队列确保发生中断时数据持续不断。
+    在许多情况下，数据是从队列（例如 Azure 事件中心）读取的。队列确保发生中断时数据持续不断。
 
 * **Bolt**：使用**流**，处理**元组**，并可以发出**流**。Bolt 还负责将数据编写到外部存储，比如队列、HDInsight HBase、blob 或其他数据存储。
 * **Apache Thrift**：用于可缩放跨语言服务开发的软件框架。可用于构建在 C++、Java、Python、PHP、Ruby、Erlang、Perl、Haskell、C#、Cocoa、JavaScript、Node.js、Smalltalk 及其他语言间工作的服务。

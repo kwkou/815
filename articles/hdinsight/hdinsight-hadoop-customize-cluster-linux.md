@@ -56,15 +56,12 @@ HDInsight 提供一个称为**脚本操作**的配置选项，该选项可调用
 
     * 本身是 HDInsight 群集之主要存储帐户或其他存储帐户的 **Blob 存储帐户**。由于在创建群集期间，已将这两种存储帐户的访问权限都授予 HDInsight，因此这些存储帐户提供一个使用非公共脚本操作的方式。
 
-    * https://review.docs.microsoft.com/azure/service-bus/?branch=master，例如 Azure Blob、GitHub、OneDrive、Dropbox 等。
+    * 例如 Azure Blob、GitHub、OneDrive、Dropbox 等。
 
         有关存储在 Blob 容器（可公开读取）中的脚本的 URI 示例，请参阅[示例脚本操作脚本](#example-script-action-scripts)部分。
 
 
 * 可以限制为**只对特定的节点类型运行**，例如头节点或辅助角色节点。
-
-  > [AZURE.NOTE]
-  与 HDInsight 高级版配合使用时，可以指定脚本应该在边缘节点上使用。
 
 * 可以是**持久化**或**即席**。
 
@@ -72,15 +69,15 @@ HDInsight 提供一个称为**脚本操作**的配置选项，该选项可调用
 
     持久化脚本还会将更改应用到其他节点类型（例如头节点），但从功能方面看，持久保存脚本的唯一原因就是它将应用到扩展群集时所创建的新辅助角色节点。
 
-  > [AZURE.IMPORTANT]
-  持久化脚本操作必须有唯一的名称。
+    > [AZURE.IMPORTANT]
+    持久化脚本操作必须有唯一的名称。
 
-    **Ad hoc** scripts are not persisted; however, you can subsequently promote an ad hoc script to a persisted script, or demote a persisted script to an ad hoc script.
+    **Ad hoc** 脚本是不保留的。不过，随后可以提升一个 ad hoc 脚本为保留脚本，或者下降一个保留脚本为 ad hoc 脚本。
 
-  > [AZURE.IMPORTANT]
-  创建群集期间使用的脚本操作将自动持久保存下来。
-  >
-  > 即使明确指出应予保存，也不会持久保存失败的脚本。
+    > [AZURE.IMPORTANT]
+    创建群集期间使用的脚本操作将自动持久保存下来。
+    >
+    > 即使明确指出应予保存，也不会持久保存失败的脚本。
 
 * 可以接受脚本在执行期间使用的**参数**。
 * 在群集节点上**以 root 级权限**运行。
@@ -512,9 +509,6 @@ HDInsight .NET SDK 提供客户端库，可简化从 .NET 应用程序中使用 
         $saURI = "<URI to the script>"                  # The URI where the script is located
         $nodeTypes = "headnode", "workernode"
 
-   > [AZURE.NOTE]
-   如果使用的是 HDInsight 高级群集，可以使用 `"edgenode"` 节点类型在边缘节点上运行脚本。
-
 2. 使用以下命令将脚本应用到群集：
 
         Submit-AzureRmHDInsightScriptAction -ClusterName $clusterName -Name $saName -Uri $saURI -NodeTypes $nodeTypes -PersistOnSuccess
@@ -531,8 +525,6 @@ HDInsight .NET SDK 提供客户端库，可简化从 .NET 应用程序中使用 
 ### 从 Azure CLI 将脚本操作应用到正在运行的群集
 
 在继续前，确保你已安装并配置 Azure CLI。有关详细信息，请参阅 [Install the Azure CLI](/documentation/articles/xplat-cli-install/)（安装 Azure CLI）。
-
-[AZURE.INCLUDE [use-latest-version](../../includes/hdinsight-use-latest-cli.md)]
 
 1. 打开系统的 shell 会话、终端、命令提示符或其他命令行，并使用以下命令切换到 Azure Resource Manager 模式。
 
@@ -657,9 +649,9 @@ HDInsight 服务提供两种类型的开源组件：
 * **自定义组件** - 作为群集用户，你可以安装，或者在工作负荷中使用由社区提供的或你自己创建的任何组件。
 
 > [AZURE.WARNING]
-完全支持通过 HDInsight 群集提供的组件，Microsoft 支持部门将帮助你找出并解决与这些组件相关的问题。
+完全支持通过 HDInsight 群集提供的组件，Azure 支持部门将帮助你找出并解决与这些组件相关的问题。
 >
-> 自定义组件可获得合理范围的支持，有助于进一步解决问题。这可能会促进解决问题，或要求使用可用的开源技术渠道，在渠道中可找到该技术的深厚的专业知识。有许多可以使用的社区站点，例如：[HDInsight 的 MSDN 论坛](https://social.msdn.microsoft.com/Forums/azure/zh-cn/home?forum=hdinsight)、[http://stackoverflow.com](http://stackoverflow.com)。此外，Apache 项目在 [http://apache.org](http://apache.org) 上提供了项目站点，例如 [Hadoop](http://hadoop.apache.org/)。
+> 自定义组件可获得合理范围的支持，有助于进一步解决问题。这可能会促进解决问题，或要求使用可用的开源技术渠道，在渠道中可找到该技术的深厚的专业知识。有许多可以使用的社区站点，例如：[HDInsight 的 MSDN 论坛](https://social.msdn.microsoft.com/Forums/azure/zh-cn/home?forum=hdinsight)、[Azure CSDN](http://azure.csdn.net)。此外，Apache 项目在 [http://apache.org](http://apache.org) 上提供了项目站点，例如 [Hadoop](http://hadoop.apache.org/)。
 
 HDInsight 服务可提供多种方法使用自定义组件。无论在群集上使用或安装组件的方式如何，均适用相同级别的支持。以下是可在 HDInsight 群集上使用自定义组件的最常见方法列表：
 

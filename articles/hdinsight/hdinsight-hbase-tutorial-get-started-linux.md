@@ -45,6 +45,9 @@
 1. 单击下面的图像可在 Azure 门户预览中打开模板。模板位于公共 blob 容器中。
    
     <a href="https://portal.azure.cn/#create/Microsoft.Template/uri/https%3A%2F%2Fhditutorialdata.blob.core.windows.net%2Farmtemplates%2Fcreate-linux-based-hbase-cluster-in-hdinsight.json" target="_blank"><img src="./media/hdinsight-hbase-tutorial-get-started-linux/deploy-to-azure.png" alt="Deploy to Azure"></a>
+
+    >[AZURE.NOTE] 必须修改从 GitHub 存储库“azure-quickstart-templates”下载的模板，以适应 Azure 中国云环境。例如，替换某些终结点（将“blob.core.windows.net”替换为“blob.core.chinacloudapi.cn”，将“cloudapp.azure.com”替换为“chinacloudapp.cn”）；把允许的地域改成“China North”和“China East”。
+
 2. 在“自定义部署”边栏选项卡中输入以下项：
    
     * **订阅**：选择将用于创建此群集的 Azure 订阅。
@@ -271,7 +274,6 @@ HDInsight 中的 HBase 随附了一个 Web UI 用于监视群集。使用该 Web
 [hdinsight-hbase-overview]: /documentation/articles/hdinsight-hbase-overview/
 [hdinsight-hbase-provision-vnet-v1]: /documentation/articles/hdinsight-hbase-provision-vnet-v1/
 [hdinsight-versions]: /documentation/articles/hdinsight-component-versioning-v1/
-[hbase-twitter-sentiment]: /documentation/articles/hdinsight-hbase-analyze-twitter-sentiment/
 [azure-purchase-options]: /pricing/overview/
 [azure-member-offers]: /pricing/member-offers/
 [azure-trial]: /pricing/1rmb-trial/

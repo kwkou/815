@@ -233,7 +233,7 @@ HDInsight 群集提供以下 HTTP Web 服务（所有这些服务都有 REST 样
 
 **提交 Hive 作业**
 
-请参阅[使用 .NET SDK 运行 Hive 查询）](/documentation/articles/hdinsight-hadoop-use-hive-dotnet-sdk/)。
+请参阅[使用 .NET SDK 运行 Hive 查询](/documentation/articles/hdinsight-hadoop-use-hive-dotnet-sdk/)。
 
 **提交 Pig 作业**
 

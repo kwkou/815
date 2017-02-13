@@ -55,6 +55,8 @@ Apache Storm 是一个可扩展的、具有容错能力的分布式实时计算�
    
     该模板位于公共 blob 容器中，*https://hditutorialdata.blob.core.windows.net/armtemplates/create-linux-based-storm-cluster-in-hdinsight.json*。
 
+    >[AZURE.NOTE] 必须修改从 GitHub 存储库“azure-quickstart-templates”下载的模板，以适应 Azure 中国云环境。例如，替换某些终结点（将“blob.core.windows.net”替换为“blob.core.chinacloudapi.cn”，将“cloudapp.azure.com”替换为“chinacloudapp.cn”）；把允许的地域改成“China North”和“China East”。
+
 2. 在“自定义部署”边栏选项卡中输入以下项：
    
     * __资源组__：在其中创建群集的资源组。

@@ -58,7 +58,7 @@ HDInsight 使用各种 Hadoop 组件。有关已获得验证和支持的组件�
 - 在群集创建期间使用 HDInsight .NET SDK 或 Azure PowerShell 中的群集自定义参数。然后，这些配置更改在群集的整个生存期内保留，并且不受 Azure 平台在维护时定期执行的群集节点重新映像影响。有关使用群集自定义参数的详细信息，请参阅[创建 HDInsight 群集](/documentation/articles/hdinsight-provision-clusters/)。
 - 一些本机 Java 组件（如 Mahout 和 Cascading）可以在群集上作为 JAR 文件运行。可以通过 Hadoop 作业提交机制将这些 JAR 文件分发到 Azure Blob 存储，并提交到 HDInsight 群集。有关详细信息，请参阅[以编程方式提交 Hadoop 作业](/documentation/articles/hdinsight-submit-hadoop-jobs-programmatically/)。
 
-	>[AZURE.NOTE] 如果在将 JAR 文件部署到 HDInsight 群集或调用 HDInsight 群集上的 JAR 文件时遇到问题，请联系 [Microsoft 技术支持](https://azure.microsoft.com/support/contact/)。
+	>[AZURE.NOTE] 如果在将 JAR 文件部署到 HDInsight 群集或调用 HDInsight 群集上的 JAR 文件时遇到问题，请联系 [Azure 技术支持](https://www.azure.cn/support/contact/)。
 
 	> Cascading 不受 HDInsight 支持，因此不符合 Microsoft 技术支持的条件。有关支持的组件列表，请参阅 [HDInsight 提供的群集版本有哪些新功能？](/documentation/articles/hdinsight-component-versioning/)。
 
@@ -115,7 +115,7 @@ HDInsight 使用各种 Hadoop 组件。有关已获得验证和支持的组件�
 	- **主机名**：群集名称。
 	- **群集 URL**。
 	- **状态**：包括“已终止”、“已接受”、ClusterStorageProvisioned、AzureVMConfiguration、HDInsightConfiguration、“正常运行”、“正在运行”、“错误”、“正在删除”、“已删除”、“超时”、DeleteQueued、DeleteTimedout、DeleteError、PatchQueued、CertRolloverQueued、ResizeQueued、ClusterCustomization
-	- **区域**：Azure 位置。有关受支持的 Azure 位置的列表，请参阅 [HDInsight 定价](/home/features/hdinsight/#price)中的“区域”下拉列表框。
+	- **区域**：Azure 位置。有关受支持的 Azure 位置的列表，请参阅 [HDInsight 定价](/pricing/details/hdinsight/)中的“区域”下拉列表框。
 	- **已创建的数据**。
 	- **操作系统**：**Windows** 或 **Linux**。
 	- **类型**：Hadoop、HBase、Storm、Spark。 
@@ -201,7 +201,7 @@ HDInsight 使用各种 Hadoop 组件。有关已获得验证和支持的组件�
 - 使用 Azure CLI。请参阅[使用 Azure CLI 管理 HDInsight 群集](/documentation/articles/hdinsight-administer-use-command-line/)。
 - 使用 HDInsight .NET SDK。请参阅[提交 Hadoop 作业](/documentation/articles/hdinsight-submit-hadoop-jobs-programmatically/)。
 
-有关定价信息，请参阅 [HDInsight 定价](/home/features/hdinsight/#price)。要从门户中删除群集，请参阅[删除群集](#delete-clusters)
+有关定价信息，请参阅 [HDInsight 定价](/pricing/details/hdinsight/)。要从门户中删除群集，请参阅[删除群集](#delete-clusters)
 
 ##更改群集用户名
 
@@ -247,7 +247,7 @@ HDInsight 群集提供以下 HTTP Web 服务（所有这些服务都有 REST 样
 
 ## <a name="find-the-default-storage-account"></a>查找默认存储帐户
 
-每个 HDInsight 群集都有默认存储帐户。群集的默认存储帐户及其密钥显示在“设置”/“属性”/“Azure 存储密钥”下。********请参阅[列出并显示群集](#list-and-show-clusters)。
+每个 HDInsight 群集都有默认存储帐户。群集的默认存储帐户及其密钥显示在“设置”/“属性”/“Azure 存储密钥”下。请参阅[列出并显示群集](#list-and-show-clusters)。
 
 	
 ##查找资源组 

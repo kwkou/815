@@ -69,7 +69,7 @@ Azure PowerShell 是一个功能强大的脚本编写环境，可用于在 Azure
     $clusterName = $token
     $defaultStorageAccountName = $token + "store"   # Provide a Storage account name
     $defaultStorageContainerName = $token + "container"
-    $location = "China East 2"     # Change the location if needed
+    $location = "China East"     # Change the location if needed
     $clusterNodes = 1           # The number of nodes in the HDInsight cluster
 
     # Sign in to Azure

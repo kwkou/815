@@ -77,7 +77,7 @@ HDInsight 提供可集成到 HDInsight 群集中的 R Server 选项。这将允�
 
     * 在便携式计算机上通过命令提示符生成公钥/私钥对：
 
-        ssh-keygen -t rsa -b 2048 -f <private-key-filename>
+            ssh-keygen -t rsa -b 2048 -f <private-key-filename>
 
     * 这将会创建一个私钥文件，以及一个名为 <私钥文件名>.pub 的公钥文件，例如 davec 和 davec.pub。然后，在分配 HDI 群集凭据时指定公钥文件 (*.pub)：
 
@@ -85,11 +85,11 @@ HDInsight 提供可集成到 HDInsight 群集中的 R Server 选项。这将允�
 
     * 在便携式计算机上更改对私钥文件的权限
 
-        chmod 600 <private-key-filename>
+            chmod 600 <private-key-filename>
 
     * 结合使用私钥文件和 SSH 进行远程登录，例如：
 
-        ssh -i <private-key-filename> remoteuser@<hostname public ip>
+            ssh -i <private-key-filename> remoteuser@<hostname public ip>
 
      或者在客户端上为 R Server 定义 Hadoop Spark 计算上下文的过程中（请参阅 [Get started with SacaleR on Apache Spark document](https://msdn.microsoft.com/microsoft-r/scaler-spark-getting-started)（Apache Spark 上的 SacaleR 入门）在线指南的 [Creating a Compute Context for Spark](https://msdn.microsoft.com/microsoft-r/scaler-spark-getting-started#creating-a-compute-context-for-spark)（创建 Spark 的计算上下文）部分中的“Using Microsoft R Server as a Hadoop Client”（使用 Microsoft R Server 作为 Hadoop 客户端））。
 
@@ -160,7 +160,7 @@ HDInsight 提供可集成到 HDInsight 群集中的 R Server 选项。这将允�
 
 1. 通过转到以下 URL（其中 **CLUSTERNAME** 是所创建的群集的名称）：
 
-    https://**CLUSTERNAME**.azurehdinsight.cn/rstudio/  
+        https://**CLUSTERNAME**.azurehdinsight.cn/rstudio/  
 
 
 2. 或通过打开群集在 Azure 门户预览中的条目，选择 R Server 仪表板快速链接，然后选择 R Studio 仪表板：
@@ -180,7 +180,6 @@ HDInsight 提供可集成到 HDInsight 群集中的 R Server 选项。这将允�
 也可以依次选择群集、“所有设置”、“应用”和“RServer”，在 Azure 门户预览中找到 `USERNAME@CLUSTERNAME-ed-ssh.azurehdinsight.cn` 地址。这会显示边缘节点的 SSH 终结点信息。
 >
 > ![边缘节点 SSH 终结点的图像](./media/hdinsight-getting-started-with-r/sshendpoint.png)  
-
 >
 > 
 

@@ -105,7 +105,6 @@ Blob 存储可用于结构化和非结构化数据。Blob 存储容器将数据�
 
 
 ### 使用 Azure CLI
-[AZURE.INCLUDE [use-latest-version](../../includes/hdinsight-use-latest-cli.md)]
 
 如果[已安装并配置 Azure CLI](/documentation/articles/xplat-cli-install/)，则以下命令可以用于存储帐户和容器。
 

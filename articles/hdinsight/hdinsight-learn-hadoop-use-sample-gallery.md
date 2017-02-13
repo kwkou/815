@@ -30,11 +30,7 @@
 
 ![包括示例数据的 HDInsight Hadoop、Storm 和 HBase 入门库解决方案。][hdinsight.sample.gallery]
 
-以下视频演示了如何运行 Twitter 趋势分析示例：
-
-<center><a href="https://www.youtube.com/embed/7ePbHot1SN4">https://www.youtube.com/embed/7ePbHot1SN4></a></center>
-
-可以通过浏览至 http://<YourHDInsightClusterName>.azurehdinsight.cn/ 或从 Azure 经典管理门户访问仪表板。
+可以通过浏览至 http://\<YourHDInsightClusterName\>.azurehdinsight.cn/ 或从 Azure 经典管理门户访问仪表板。
 
 **从入门库运行示例**
 

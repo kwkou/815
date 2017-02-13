@@ -34,7 +34,7 @@
 
 ## 先决条件
 * 装有 R Server 的 Azure HDInsight 群集。有关说明，请参阅 [Get started with R Server on HDInsight clusters](/documentation/articles/hdinsight-hadoop-r-server-get-started/)（HDInsight 群集上的 R Server 入门）。
-* SSH 客户端。对于 Linux 和 Unix 分发版或 Macintosh OS X，操作系统已随附 `ssh` 命令。对于 Windows，建议使用带有 [OpenSSH 选项](https://www.youtube.com/watch?v=CwYSvvGaiWU)的 [Cygwin](http://www.redhat.com/services/custom/cygwin/)，或使用 [PuTTY](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html)。
+* SSH 客户端。对于 Linux 和 Unix 分发版或 Macintosh OS X，操作系统已随附 `ssh` 命令。对于 Windows，建议使用带有 OpenSSH 选项的 [Cygwin](http://www.redhat.com/services/custom/cygwin/)，或使用 [PuTTY](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html)。
 
 ## 使用自定义脚本在群集上安装 RStudio
 1. 识别群集的边缘节点。对于装有 R Server 的 HDInsight 群集，下面是头节点和边缘节点的命名约定。

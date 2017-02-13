@@ -92,7 +92,7 @@ HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET Framework 应用
                 private const string ExistingBlobContainer = "<Enter Default Bob Container Name>";
                 private const string NewClusterName = "<Enter HDInsight Cluster Name>";
                 private const int NewClusterNumNodes = 2;
-                private const string NewClusterLocation = "EAST US 2";     // Must be the same as the default Storage account
+                private const string NewClusterLocation = "CHINA EAST";     // Must be the same as the default Storage account
                 private const OSType NewClusterOSType = OSType.Linux;
                 private const string NewClusterType = "Hadoop";
                 private const string NewClusterVersion = "3.4";

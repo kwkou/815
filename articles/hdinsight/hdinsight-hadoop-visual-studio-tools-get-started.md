@@ -250,7 +250,6 @@ Data Lake 工具支持显示 Tez 执行引擎运行的 Hive 作业的性能图�
 * [在 HDInsight 中使用 Hadoop Hive][hdinsight.hive]
 * [开始在 HDInsight 中使用 Hadoop][hdinsight.get.started]
 * [在 HDInsight 中提交 Hadoop 作业][hdinsight.submit.jobs]
-* [使用 HDInsight 中的 Hadoop 分析 Twitter 数据][hdinsight.analyze.twitter.data]
 
 <!--Anchors-->
 [Installation]: #installation
@@ -280,7 +279,6 @@ Data Lake 工具支持显示 Tez 执行引擎运行的 Hive 作业的性能图�
 [hdinsight.get.started]: /documentation/articles/hdinsight-hadoop-linux-tutorial-get-started/
 [hdinsight.hive]: /documentation/articles/hdinsight-use-hive/
 [hdinsight.submit.jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically/
-[hdinsight.analyze.twitter.data]: /documentation/articles/hdinsight-analyze-twitter-data/
 [hdinsight.storm.visual.studio.tools]: /documentation/articles/hdinsight-storm-develop-csharp-visual-studio-topology/
 [hdinsight.access.application.logs]: /documentation/articles/hdinsight-hadoop-access-yarn-app-logs/
 

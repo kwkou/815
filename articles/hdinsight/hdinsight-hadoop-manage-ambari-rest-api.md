@@ -39,8 +39,8 @@ Apache Ambari 提供简单易用的 Web UI 和 REST API 来简化 Hadoop 群集�
 * [jq](https://stedolan.github.io/jq/)：jq 是用于处理 JSON 文档的跨平台命令行实用工具。在本文档中，将使用它来分析从 Ambari REST API 返回的 JSON 文档。
 
 * [Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-az-cli2)（预览版）：用于使用 Azure 服务的跨平台命令行实用工具。
-  
-[AZURE.INCLUDE [use-latest-version](../../includes/hdinsight-use-latest-cli.md)]
+
+    [AZURE.INCLUDE [azure-cli-2-azurechinacloud-environment-parameter](../../includes/azure-cli-2-azurechinacloud-environment-parameter.md)]
 
 ## <a id="whatis"></a>什么是 Ambari？
 
@@ -193,18 +193,18 @@ PowerShell 对于使用单引号和双引号具有略有不同的规则。使用
         curl -u admin:PASSWORD -G "https://CLUSTERNAME.azurehdinsight.cn/api/v1/clusters/CLUSTERNAME/configurations?type=spark-thrift-sparkconf&tag=INITIAL" | jq --arg newtag "version$unixTimeStamp" '.items[] | del(.href, .version, .Config) | .tag |= $newtag | {"Clusters": {"desired_config": .}}' > newconfig.json
 
 Curl 检索 JSON 文档，然后使用 jq 修改数据以创建模板。然后使用模板添加/修改配置值。具体操作如下：
-   
-    * Creates a unique value containing the string "version" and the date, which is stored in **newtag**.
 
-    * Creates a root document for the new desired configuration.
+* 创造一个值，这个值包含“版本”字符串和日期，然后保存在“newtag”。
 
-    * Gets the contents of the `.items[]` array and adds it under the **desired_config** element.
+* 为新的所需配置创建根文档。
 
-    * Deletes the **href**, **version**, and **Config** elements, as these elements aren't needed to submit a new configuration.
+* 得到 `.items[]` 数组的内容，然后加到“desired_config”元素下。
 
-    * Adds a new **tag** element and sets its value to **version#################**. The numeric portion is based on the current date. Each configuration must have a unique tag.
-     
-        Finally, the data is saved to the **newconfig.json** document. The document structure should appear similar to the following example:
+* 删除“href”、“version”和“Config”元素，因为新建配置是不需要这些元素的。
+
+* 添加一个新的“tag”元素，然后把值设置为“version#################”。数值部分根据当钱的日期来设置。每一个配置都得有一个独特的标签。
+
+    最后，数据保存到“newconfig.json”文档。这个文档的结构应该跟以下示例类似：
 
         {
             "Clusters": {

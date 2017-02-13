@@ -32,8 +32,6 @@
 
 * **Azure 订阅**。请参阅[获取 Azure 试用版](/pricing/1rmb-trial/)。
 * **Azure CLI**。
-  
-    [AZURE.INCLUDE [use-latest-version](../../includes/hdinsight-use-latest-cli.md)]
 
 ### 访问控制要求
 [AZURE.INCLUDE [access-control](../../includes/hdinsight-access-control-requirements.md)]
