@@ -49,9 +49,7 @@
 在站点恢复中启用域控制器/DNS 虚拟机的保护。根据虚拟机类型（Hyper-V）配置站点恢复。我们建议配置 15 分钟的崩溃一致性复制频率。
 
 ### 配置虚拟机网络设置
-对于域控制器/DNS 虚拟机，请在站点恢复中配置网络设置，以便在故障转移后将 VM 连接到正确的网络。例如，如果将 Hyper-V VM 复制到 Azure，则可以按如下所示选择 VMM 云或保护组中的 VM 来配置网络设置
-
-![VM 网络设置](./media/site-recovery-active-directory/DNS-Target-IP.png)
+对于域控制器/DNS 虚拟机，请在站点恢复中配置网络设置，以便在故障转移后将 VM 连接到正确的网络。
 
 ##<a name="protect-active-directory-with-active-directory-replication"></a> 使用 Active Directory 复制保护 Active Directory
 ### 站点到站点保护
@@ -75,14 +73,6 @@
 1. 在站点恢复中为域控制器/DNS 虚拟机启用保护。
 2. 创建独立的网络。默认情况下，在 Azure 中创建的任何虚拟网络都是独立于其他网络的。建议将此网络的 IP 地址范围设置为与生产网络相同。不要在此网络上启用站点到站点连接。
 3. 提供创建的网站的 DNS IP 地址作为 DNS 虚拟机应该获取的 IP 地址。如果要复制到 Azure，请在 “计算和网络”设置的“目标 IP”设置中提供用于故障转移的 VM 的 IP 地址。
-
-	![目标 IP](./media/site-recovery-active-directory/DNS-Target-IP.png)
-	**目标 IP**
-
-	![Azure 测试网络](./media/site-recovery-active-directory/azure-test-network.png)  
-
-
-	**Azure 测试网络中的 DNS**
 
 1. 如果要复制到其他本地站点并使用 DHCP，请按照说明来[针对测试故障转移设置 DNS 和 DHCP](/documentation/articles/site-recovery-test-failover-vmm-to-vmm/#prepare-dhcp)
 1. 针对隔离网络中运行的域控制器虚拟机执行测试故障转移。使用域控制器虚拟机的最新可用**应用程序一致**恢复点执行测试性故障转移。
