@@ -14,7 +14,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="na"
     ms.date="09/30/2016"
-    wacn.date="01/13/2017"
+    wacn.date="02/10/2017"
     ms.author="elioda" />  
 
 
@@ -69,7 +69,10 @@ IoT 中心将设备孪生公开为名为**设备**的文档集合。因此，以
 
         SELECT * FROM devices
 
-> [AZURE.NOTE] [Azure IoT SDKs][lnk-hub-sdks] 支持将大量结果分页：
+> [AZURE.NOTE]
+> [Azure IoT SDKs][lnk-hub-sdks] 支持将大量结果分页：
+>
+>
 
 IoT 中心允许使用任意条件检索设备孪生筛选结果。例如，
 
@@ -121,7 +124,6 @@ IoT 中心允许使用任意条件检索设备孪生筛选结果。例如，
 上述示例阐释了以下情景：3 个设备报告配置成功，2 个设备仍在应用配置，1 个设备报告错误。
 
 ### C# 示例
-
 查询功能由 [C# 服务 SDK][lnk-hub-sdks] 在 **RegistryManager** 类中公开。下面是一个简单的查询示例：
 
         var query = registryManager.CreateQuery("SELECT * FROM devices", 100);
@@ -194,7 +196,7 @@ IoT 中心允许使用任意条件检索设备孪生筛选结果。例如，
 目前，可以使用 IoT 中心查询语言以 **devices.jobs** 形式查询此集合。
 
 > [AZURE.IMPORTANT]
-目前，查询设备孪生（即包含“FROM devices”的查询）时不会返回作业属性。它仅可使用 `FROM devices.jobs` 通过查询直接访问。
+> 目前，查询设备孪生（即包含“FROM devices”的查询）时不会返回作业属性。它仅可使用 `FROM devices.jobs` 通过查询直接访问。
 >
 >
 
@@ -239,7 +241,7 @@ IoT 中心允许使用任意条件检索设备孪生筛选结果。例如，
 请记住，属性名称不区分大小写。
 
 > [AZURE.NOTE]
-消息属性均为字符串。如[开发人员指南][lnk-devguide-messaging-format]所述，目前不能在查询中使用系统属性。
+> 消息属性均为字符串。如[开发人员指南][lnk-devguide-messaging-format]所述，目前不能在查询中使用系统属性。
 >
 >
 
@@ -266,16 +268,15 @@ IoT 中心允许使用任意条件检索设备孪生筛选结果。例如，
         [GROUP BY <group_specification>]
 
 ## FROM 子句
-
 **FROM <from\_specification>** 子句只能采用两个值：**FROM devices** - 查询设备孪生；**FROM devices.jobs** - 查询每个设备上的作业详细信息。
 
 ## <a name="where-clause"></a> WHERE 子句
-**WHERE \<filter\_condition\>** 子句是可选的。它指定要将 FROM 集合中的 JSON 文档内含在结果中时需满足的一项或多项条件。任何 JSON 文档必须将指定的条件求值为“true”才能包含在结果中。
+**WHERE <filter\_condition>** 子句是可选的。它指定要将 FROM 集合中的 JSON 文档内含在结果中时需满足的一项或多项条件。任何 JSON 文档必须将指定的条件求值为“true”才能包含在结果中。
 
 [表达式和条件][lnk-query-expressions]部分中介绍了允许的条件。
 
 ## SELECT 子句
-SELECT 子句 \(**SELECT <select_list>**\) 是必需的，用于指定要从查询中检索的值。它指定用于生成新 JSON 对象的 JSON 值。对于 FROM 集合中已筛选子集（且可选择性分组）的每个元素，投影阶段将生成一个新 JSON 对象，其由 SELECT 子句中指定的值构造而成。
+SELECT 子句 (**SELECT <select_list>**) 是必需的，用于指定要从查询中检索的值。它指定用于生成新 JSON 对象的 JSON 值。对于 FROM 集合中已筛选子集（且可选择性分组）的每个元素，投影阶段将生成一个新 JSON 对象，其由 SELECT 子句中指定的值构造而成。
 
 SELECT 子句的语法如下：
 
@@ -302,7 +303,7 @@ SELECT 子句的语法如下：
 目前，仅支持在针对设备孪生执行的聚合查询中使用除 **SELECT *** 以外的选择子句。
 
 ## GROUP BY 子句
-**GROUP BY \<group\_specification\>** 子句是可选步骤，可在 WHERE 子句中指定的筛选器后和在 SELECT 中指定的投影前执行该子句。它根据属性值来分组文档。这些组用于生成 SELECT 子句中指定的聚合值。
+**GROUP BY <group\_specification>** 子句是可选步骤，可在 WHERE 子句中指定的筛选器后和在 SELECT 中指定的投影前执行该子句。它根据属性值来分组文档。这些组用于生成 SELECT 子句中指定的聚合值。
 
 下面是使用 GROUP BY 的查询示例：
 
@@ -321,7 +322,6 @@ GROUP BY 的正式语法为：
 其中，**attribute\_name** 引用 FROM 集合中 JSON 文档的任一属性。
 
 目前，仅在查询设备孪生时才支持使用 GROUP BY 子句。
-
 
 ## <a name="expressions-and-conditions"></a> 表达式和条件
 从较高层面讲，*表达式*可以：
@@ -368,8 +368,8 @@ GROUP BY 的正式语法为：
 | hexadecimal\_literal |以字符串“0x”后接十六进制数字符串表示的数字。 |
 | string\_literal |字符串文本是以零个或多个 Unicode 字符序列或转义符序列表示的 Unicode 字符串。字符串文本括在单引号 (') 或双引号 (") 中。允许的转义符：`\'`、`"`、`\`、`\uXXXX`（由 4 个十六进制数字定义的 Unicode 字符）。 |
 
-### <a name="operators"></a> 运算符
 
+### <a name="operators"></a> 运算符
 支持以下运算符：
 
 | 系列 | 运算符 |
@@ -383,20 +383,20 @@ GROUP BY 的正式语法为：
 
 | 函数 | 说明 |
 | -------- | ----------- |
-| IS\_DEFINED\(property\) | 返回一个布尔值，指示是否已向属性分配值（包括 `null`）。 |
+| IS\_DEFINED(property) | 返回一个布尔值，指示是否已向属性分配值（包括 `null`）。 |
 
 在路由情况下，支持以下数学函数：
 
 | 函数 | 说明 |
 | -------- | ----------- |
-| ABS\(x\) | 返回指定数值表达式的绝对（正）值。 |
-| EXP\(x\) | 返回指定数值表达式 \(e^x\) 的指数值。 |
-| POWER\(x,y\) | 返回指定表达式相对指定幂 \(x^y\) 的值。|
-| SQUARE\(x\) | 返回指定数字值的平方。 |
-| CEILING\(x\) | 返回大于或等于指定数值表达式的最小整数值。 |
-| FLOOR\(x\) | 返回小于或等于指定数值表达式的最大整数。 |
-| SIGN\(x\) | 返回指定数值表达式的正数 \(+1\)、零 \(0\) 或负数 \(-1\)。|
-| SQRT\(x\) | 返回指定数字值的平方。 |
+| ABS(x) | 返回指定数值表达式的绝对（正）值。 |
+| EXP(x) | 返回指定数值表达式 (e^x) 的指数值。 |
+| POWER(x,y) | 返回指定表达式相对指定幂 (x^y) 的值。|
+| SQUARE(x) | 返回指定数字值的平方。 |
+| CEILING(x) | 返回大于或等于指定数值表达式的最小整数值。 |
+| FLOOR(x) | 返回小于或等于指定数值表达式的最大整数。 |
+| SIGN(x) | 返回指定数值表达式的正数 (+1)、零 (0) 或负数 (-1)。|
+| SQRT(x) | 返回指定数字值的平方。 |
 
 在路由情况下，支持以下检查和强制转换类型的函数：
 
@@ -416,22 +416,22 @@ GROUP BY 的正式语法为：
 
 | 函数 | 说明 |
 | -------- | ----------- |
-| CONCAT\(x, …\) | 返回一个字符串，该字符串是连接两个或多个字符串值的结果。 |
-| LENGTH\(x\) | 返回指定字符串表达式的字符数。|
-| LOWER\(x\) | 返回在将大写字符数据转换为小写后的字符串表达式。 |
-| UPPER\(x\) | 返回在将小写字符数据转换为大写后的字符串表达式。 |
-| SUBSTRING\(string, start \[, end\]\) | 返回字符串表达式的部分内容，该内容起于指定字符从零开始的位置，继续到指定长度或字符串结尾。 |
-| INDEX\_OF\(string, fragment\) | 返回第一个指定的字符串表达式中第一次出现第二个字符串表达式的起始位置，如果未找到字符串，则返回 -1。|
-| STARTS\_WITH\(x, y\) | 返回一个布尔值，指示第一个字符串表达式是否以第二个字符串表达式开头。 |
-| ENDS\_WITH\(x, y\) | 返回一个布尔值，指示第一个字符串表达式是否以第二个字符串表达式结尾。 |
-| CONTAINS\(x,y\) | 返回一个布尔值，该值指示第一个字符串表达式是否包含第二个字符串表达式。 |
+| CONCAT(x, …) | 返回一个字符串，该字符串是连接两个或多个字符串值的结果。 |
+| LENGTH(x) | 返回指定字符串表达式的字符数。|
+| LOWER(x) | 返回在将大写字符数据转换为小写后的字符串表达式。 |
+| UPPER(x) | 返回在将小写字符数据转换为大写后的字符串表达式。 |
+| SUBSTRING(string, start [, length]) | 返回字符串表达式的部分内容，该内容起于指定字符从零开始的位置，继续到指定长度或字符串结尾。 |
+| INDEX\_OF(string, fragment) | 返回第一个指定的字符串表达式中第一次出现第二个字符串表达式的起始位置，如果未找到字符串，则返回 -1。|
+| STARTS\_WITH(x, y) | 返回一个布尔值，指示第一个字符串表达式是否以第二个字符串表达式开头。 |
+| ENDS\_WITH(x, y) | 返回一个布尔值，指示第一个字符串表达式是否以第二个字符串表达式结尾。 |
+| CONTAINS(x,y) | 返回一个布尔值，该值指示第一个字符串表达式是否包含第二个字符串表达式。 |
 
 ## 后续步骤
 了解如何使用 [Azure IoT SDK][lnk-hub-sdks] 在应用中执行查询。
 
 [lnk-query-where]: /documentation/articles/iot-hub-devguide-query-language/#where-clause
 [lnk-query-expressions]: /documentation/articles/iot-hub-devguide-query-language/#expressions-and-conditions
-[lnk-query-getstarted]: /documentation/articles/iot-hub-devguide-query-language/#getting-started-with-twin-queries
+[lnk-query-getstarted]: /documentation/articles/iot-hub-devguide-query-language/#get-started-with-device-twin-queries
 
 [lnk-twins]: /documentation/articles/iot-hub-devguide-device-twins/
 [lnk-jobs]: /documentation/articles/iot-hub-devguide-jobs/
@@ -443,5 +443,5 @@ GROUP BY 的正式语法为：
 
 [lnk-hub-sdks]: /documentation/articles/iot-hub-devguide-sdks/
 
-<!---HONumber=Mooncake_0109_2017-->
-<!--Update_Description:update wording and add the section of functions-->
+<!---HONumber=Mooncake_0206_2017-->
+<!--Update_Description:update wording-->

@@ -13,8 +13,8 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="na"
-    ms.date="09/30/2016"
-    wacn.date="01/13/2017"
+    ms.date="01/04/2017"
+    wacn.date="02/10/2017"
     ms.author="dobett" />  
 
 
@@ -25,7 +25,10 @@
 [高级消息队列协议 (AMQP)](https://www.amqp.org/) 是 [IoT 中心](#iot-hub)支持的一种消息传送协议，适用于与设备通信。若要详细了解 IoT Hub 支持的消息传送协议，请参阅 [Send and receive messages with IoT Hub](/documentation/articles/iot-hub-devguide-messaging/)（使用 IoT 中心发送和接收消息）。
 
 ## Azure CLI
-[Azure 命令行接口 (Azure CLI)](/documentation/articles/xplat-cli-install/) 是一个跨平台、开源、基于 shell 的命令工具，适用于在 Azure 中创建和管理资源。
+[Azure CLI](/documentation/articles/xplat-cli-install/) 是一个跨平台、开源、基于 shell 的命令工具，用于在 Azure 中创建和管理资源。此版本的 CLI 是使用 Node.js 实现的。
+
+## Azure CLI 2.0（预览版）
+Azure CLI 2.0（预览版）是一个跨平台、开源、基于 shell 的命令工具，用于在 Azure 中创建和管理资源。此预览版本的 CLI 是使用 Python 实现的。
 
 ## <a name="azure-iot-device-sdks"></a> Azure IoT 设备 SDK
 提供了多种语言的_设备 SDK_，以便于用户创建与 IoT 中心交互的[设备应用](#device-app)。IoT 中心教程介绍了如何使用这些设备 SDK。可以在此 GitHub [存储库](https://github.com/Azure/azure-iot-sdks)中找到有关设备 SDK 的源代码和进一步信息。
@@ -36,7 +39,7 @@
 ## <a name="azure-iot-service-sdks"></a> Azure IoT 服务 SDK
 提供了多种语言的_服务 SDK_，以便于用户创建与 IoT 中心交互的[后端应用](#back-end-app)。IoT 中心教程介绍了如何使用这些服务 SDK。可以在此 GitHub [存储库](https://github.com/Azure/azure-iot-sdks)中找到有关服务 SDK 的源代码和进一步信息。
 
-## <a name="azure-portal"></a> Azure 门户
+## <a name="azure-portal"></a> Azure 门户预览
 [Azure 门户预览](https://portal.azure.cn)是一个中心位置，可在其中预配和管理 Azure 资源。该门户使用_边栏选项卡_组织其内容。在某些 IoT 中心教程中，可能会要求使用 [Azure 经典管理门户](https://manage.windowsazure.cn)。
 
 ## Azure PowerShell
@@ -64,6 +67,7 @@
 使用应用程序代码中的连接字符串来封装连接到终结点所需的信息。连接字符串通常包含终结点的地址和安全信息，但连接字符串的格式因服务而异。与 IoT 中心服务关联的连接字符串有两种：
 - *设备连接字符串*使设备能够连接到 IoT 中心上面向设备的终结点。
 - *IoT 中心连接字符串*使后端应用能够连接到 IoT 中心上面向服务的终结点。
+
 ## <a name="custom-gateway"></a> 自定义网关
 网关使不能直接连接到 [IoT 中心](#iot-hub)的设备能建立连接。可以使用 [Azure IoT 网关 SDK](#azure-iot-gateway-sdk) 生成自定义网关，以便使用自定义逻辑处理消息和自定义协议转换。
 
@@ -92,10 +96,10 @@
 设备数据是指存储在 IoT 中心[标识注册表](#identity-registry)中的每个设备数据。可以导入和导出此数据。
 
 ## 设备资源管理器
-设备资源管理器是一个在 Windows 上运行的工具，用户可使用该工具管理[标识注册表](#identity-registry)中的设备，以及发送和接收设备的消息。
+[设备资源管理器](https://github.com/Azure/azure-iot-sdk-csharp/tree/master/tools/DeviceExplorer)是一个在 Windows 上运行的工具，用户可使用该工具管理[标识注册表](#identity-registry)中的设备，以及发送和接收设备的消息。
 
 ## 设备标识 REST API
-通过设备标识 REST API 可使用 REST API管理在[标识注册表](#identity-registry)中注册的设备。通常情况下，使用 IoT 中心教程中演示的一种较高级别的[服务 SDK](#azure-iot-service-sdks)。
+通过[设备标识 REST API](https://docs.microsoft.com/rest/api/iothub/iothubresource) 可使用 REST API 管理在[标识注册表](#identity-registry)中注册的设备。通常情况下，使用 IoT 中心教程中演示的一种较高级别的[服务 SDK](#azure-iot-service-sdks)。
 
 ## <a name="device-identity"></a> 设备标识
 设备标识是分配给在[标识注册表](#identity-registry)中注册的每个设备的唯一标识符。
@@ -107,7 +111,7 @@
 [IoT 中心](#iot-hub)支持常见的设备管理模式，包括重新启动、执行恢复出厂设置，以及执行设备的固件更新。
 
 ## 设备消息传送 REST API
-可以在设备上使用设备消息传送 REST API，以便将设备到云消息发送到 IoT 中心，以及从 IoT 中心接收[云到设备](#cloud-to-device)消息。通常情况下，使用 IoT 中心教程中演示的一种较高级别的[设备 SDK](#azure-iot-device-sdks)。
+可以在设备上使用[设备消息传送 REST API](https://docs.microsoft.com/rest/api/iothub/httpruntime)，以便将设备到云消息发送到 IoT 中心，以及从 IoT 中心接收[云到设备](#cloud-to-device)消息。通常情况下，使用 IoT 中心教程中演示的一种较高级别的[设备 SDK](#azure-iot-device-sdks)。
 
 ## 设备预配
 设备预配是将初始[设备数据](#device-data)添加到解决方案中的存储的过程。若要使新设备能够连接到中心，必须将新设备 ID 和密钥添加到 IoT 中心的[标识注册表](#identity-registry)。在预配过程中，你可能需要初始化其他解决方案存储中的设备特定数据。
@@ -143,16 +147,16 @@ IoT 中心将公开多个[终结点](/documentation/articles/iot-hub-devguide-en
 网关使不能直接连接到 [IoT 中心](#iot-hub)的设备能建立连接。另请参阅[现场网关](#field-gateway)、[云网关](#cloud-gateway)和[自定义网关](#custom-gateway)。
 
 ## <a name="identity-registry"></a>标识注册表
-[标识注册表](/documentation/articles/iot-hub-devguide-identity-registry/)是 IoT 中心的内置组件，用于存储允许连接到中心的单个设备的信息。
+[标识注册表](/documentation/articles/iot-hub-devguide-identity-registry/)是 IoT 中心的内置组件，用于存储允许连接到 IoT 中心的单个设备的相关信息。
 
 ## <a name="interactive-message"></a> 交互式消息
 交互式消息是[云到设备](#cloud-to-device)的消息，可在解决方案后端触发即时操作。例如，设备可能会发送故障警报，而该故障会自动记录到 CRM 系统中。
 
 ## <a name="iot-hub"></a> IoT 中心
-IoT 中心是一项完全托管的 Azure 服务，可在数百万个 IoT 设备和一个解决方案后端之间实现安全可靠的双向通信。有关详细信息，请参阅[什么是 Azure IoT 中心？](/documentation/articles/iot-hub-what-is-iot-hub/) 使用 [Azure 订阅](#subscription)可以创建 IoT 中心来处理 IoT 消息传送工作负荷。
+IoT 中心是一项完全托管的 Azure 服务，可在数百万个设备和一个解决方案后端之间实现安全可靠的双向通信。有关详细信息，请参阅[什么是 Azure IoT 中心？](/documentation/articles/iot-hub-what-is-iot-hub/) 使用 [Azure 订阅](#subscription)可以创建 IoT 中心来处理 IoT 消息传送工作负荷。
 
 ## IoT 中心指标
-[IoT 中心指标](/documentation/articles/iot-hub-metrics/)向用户提供有关 [Azure 订阅](#subscription)中的 IoT 中心的状态数据。可以使用度量值评估服务以及连接到服务的设备的总体运行状况。指标可以帮助用户了解 IoT 中心发生的情况，并调查根本原因，而无需联系 Azure 支持部门。
+[IoT 中心指标](/documentation/articles/iot-hub-metrics/)向用户提供有关 [Azure 订阅](#subscription)中的 IoT 中心的状态数据。可以使用 IoT 中心指标评估服务以及连接到服务的设备的总体运行状况。IoT 中心指标可以帮助用户了解 IoT 中心发生的情况，并调查根本原因，而无需联系 Azure 支持部门。
 
 ## IoT 中心查询语言
 [IoT 中心查询语言](/documentation/articles/iot-hub-devguide-query-language/)是一种类似 SQL 的语言，用于查询[作业](#job)和设备孪生。
@@ -164,10 +168,13 @@ IoT 中心是一项完全托管的 Azure 服务，可在数百万个 IoT 设备�
 Azure IoT 套件将多个 Azure 服务和预配置解决方案打包在一起。有了这些预配置解决方案，用户就可以快速启动常见 IoT 方案的端到端实现。有关详细信息，请参阅[什么是 Azure IoT 套件？](/documentation/articles/iot-suite-overview/)
 
 ## iothub-explorer
-iothub-explorer 是跨平台的命令行工具。使用该工具可以管理[标识注册表](#identity-registry)中的设备、向设备发送消息和文件和接收来自设备的消息和文件，以及监视 IoT 中心的操作。
+[iothub-explorer](https://github.com/azure/iothub-explorer) 是跨平台的命令行工具。使用该工具可以管理[标识注册表](#identity-registry)中的设备、向设备发送消息和文件和接收来自设备的消息和文件，以及监视 IoT 中心的操作。
 
 ## <a name="job"></a> 作业
 解决方案后端可以使用[作业](/documentation/articles/iot-hub-devguide-jobs/)计划和跟踪在 IoT 中心注册的一组设备的活动。活动包括更新设备孪生的[所需属性](#desired-properties)、更新设备孪生[标记](#tags)，以及调用[直接方法](#direct-method)。[IoT 中心](#iot-hub)还使用作业在[标识注册表](#identity-registry)中[导入和导出](/documentation/articles/iot-hub-devguide-identity-registry/#import-and-export-device-identities)。
+
+## 作业 API
+[作业 API](https://docs.microsoft.com/rest/api/iothub/jobapi) 是一种 REST API，可以使用它管理 IoT 中心内运行的[作业](#job)。
 
 ## 模块
 在 [Azure IoT 网关 SDK](/documentation/articles/iot-hub-linux-gateway-sdk-get-started/) 中，[模块](/documentation/articles/iot-hub-linux-gateway-sdk-get-started/#azure-iot-gateway-sdk-concepts)是执行特定任务的组件。任务可能包括从设备引入消息、转换消息，或者将消息发送到 IoT 中心。中转站负责在模块之间转发消息。Azure IoT 网关 SDK 包括一组示例模块。用户还可以创建自己的自定义模块。
@@ -182,13 +189,13 @@ IoT 中心[操作监视](/documentation/articles/iot-hub-operations-monitoring/)
 物理设备是真实的设备，如连接到 IoT 中心的 Raspberry Pi。为方便起见，许多 IoT 中心教程使用[模拟设备](#simulated-device)，以便在本地计算机上运行示例。
 
 ## <a name="primary-and-secondary-keys"></a> 主要和次要密钥
-连接到 IoT 中心的面向设备或面向服务的终结点时，[连接字符串](#connection-string)包含密钥以授予用户访问权限。向[标识注册表](#identity-registry)中添加设备或向中心添加[共享访问策略](#shared-access-policy)时，服务生成主要和次要密钥。拥有两个密钥能够在更新密钥时从一个密钥切换到另一个密钥，而不丢失对中心的访问。
+连接到 IoT 中心的面向设备或面向服务的终结点时，[连接字符串](#connection-string)包含密钥以授予用户访问权限。向[标识注册表](#identity-registry)中添加设备或向中心添加[共享访问策略](#shared-access-policy)时，服务生成主要和次要密钥。拥有两个密钥能够在更新密钥时从一个密钥切换到另一个密钥，而不丢失对 IoT 中心的访问。
 
 ## 协议网关
 协议网关通常部署在云中，为连接到 [IoT 中心](#iot-hub)的设备提供协议转换服务。有关详细信息，请参阅[什么是 Azure IoT 中心？](/documentation/articles/iot-hub-what-is-iot-hub/)。
 
 ## 配额和限制
-各种[配额](/documentation/articles/iot-hub-devguide-quotas-throttling/)可用于 [IoT 中心](#iot-hub)，其中许多配额因所在的中心的层而异。[IoT 中心](#iot-hub)在运行时也对服务的使用执行一些[限制](/documentation/articles/iot-hub-devguide-quotas-throttling/)。
+有各种[配额](/documentation/articles/iot-hub-devguide-quotas-throttling/)可用于 [IoT 中心](#iot-hub)，其中许多配额因所在的 IoT 中心的层而异。[IoT 中心](#iot-hub)在运行时也对服务的使用执行一些[限制](/documentation/articles/iot-hub-devguide-quotas-throttling/)。
 
 ## 报告的配置
 在与[设备孪生](/documentation/articles/iot-hub-devguide-device-twins/)相关的使用中，报告的配置是指设备孪生中的完整的属性和元数据集，该配置由设备报告给解决方案后端。
@@ -200,7 +207,7 @@ IoT 中心[操作监视](/documentation/articles/iot-hub-operations-monitoring/)
 [Azure Resource Manager](#azure-resource-manager) 使用资源组将相关的资源组合在一起。通过使用资源组，可以对组中的所有资源同时执行操作。
 
 ## 重试策略
-连接到云服务时使用重试策略来处理 [暂时性错误][]。
+连接到云服务时使用重试策略来处理 [暂时性错误] (https://msdn.microsoft.com/en-us/library/hh680901(v=pandp.50).aspx)。
 
 ## SASL PLAIN
 SASL PLAIN 是一种协议， [AMQP](#advanced-message-queue-protocol) 协议使用它传输安全令牌。
@@ -224,7 +231,7 @@ Azure 订阅是发生计费的地方。用户创建的每个 Azure 资源或使�
 在与[设备孪生](/documentation/articles/iot-hub-devguide-device-twins/)相关的使用中，系统属性为只读，其中包括与设备使用情况相关的信息，例如上次活动时间和连接状态。
 
 ## <a name="tags"></a> 标记
-在与[设备孪生](/documentation/articles/iot-hub-devguide-device-twins/)相关的使用中，标记是指由应用程序后端以 JSON 文档形式存储和检索的设备元数据。标记对设备上的应用不可见。
+在与[设备孪生](/documentation/articles/iot-hub-devguide-device-twins/)相关的使用中，标记是指由解决方案后端以 JSON 文档形式存储和检索的设备元数据。标记对设备上的应用不可见。
 
 ## <a name="telemetry"></a> 遥测
 设备收集遥测数据，如风速或温度，并使用[数据点消息](#data-point-message)将遥测数据发送到 IoT 中心。
@@ -235,8 +242,5 @@ Azure 订阅是发生计费的地方。用户创建的每个 Azure 资源或使�
 ## X.509 客户端证书
 设备可以使用 X.509 证书在 [IoT 中心](#iot-hub)进行身份验证。使用 X.509 证书是使用 [SAS 令牌](#shared-access-signature)的替代方案。
 
-
-
-[暂时性错误]: https://msdn.microsoft.com/library/hh680901(v=pandp.50).aspx
-<!---HONumber=Mooncake_0109_2017-->
+<!---HONumber=Mooncake_0206_2017-->
 <!--Update_Description:update wording-->

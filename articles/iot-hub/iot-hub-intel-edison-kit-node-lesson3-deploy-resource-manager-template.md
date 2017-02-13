@@ -15,7 +15,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="na"
     ms.date="11/8/2016"
-    wacn.date="01/06/2017"
+    wacn.date="02/10/2017"
     ms.author="xshi" />  
 
 
@@ -65,7 +65,7 @@ Azure Functions 是一种解决方案，特别适合在云中运行*函数*（�
 更新 `arm-template-param.json` 文件后，请运行以下命令，将资源部署到 Azure：
 
 
-	az resource group deployment create --template-file arm-template.json --parameters @arm-template-param.json -g iot-sample
+	az group deployment create --template-file arm-template.json --parameters @arm-template-param.json -g iot-sample
 
 
 创建这些资源约需五分钟。在创建这些资源时，用户可以阅读下一篇文章。
@@ -86,4 +86,5 @@ Azure Functions 是一种解决方案，特别适合在云中运行*函数*（�
 [created-your-iot-hub-and-registered-intel-edison]: /documentation/articles/iot-hub-intel-edison-kit-node-lesson2-prepare-azure-iot-hub/
 [send-device-to-cloud-messages]: /documentation/articles/iot-hub-intel-edison-kit-node-lesson3-run-azure-blink/
 
-<!---HONumber=Mooncake_0103_2017-->
+<!---HONumber=Mooncake_0206_2017-->
+<!--Update_Description:update wording and code-->

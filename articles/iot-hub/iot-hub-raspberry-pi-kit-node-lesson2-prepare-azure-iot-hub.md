@@ -15,7 +15,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="na"
     ms.date="11/28/2016"
-    wacn.date="01/13/2017"
+    wacn.date="02/10/2017"
     ms.author="xshi" />  
 
 
@@ -97,4 +97,4 @@ IoT 中心的名称必须全局唯一。在 Azure 订阅下只能创建一个 F1
 [创建 Azure 函数应用和 Azure 存储帐户，以便处理和存储 IoT 中心消息](/documentation/articles/iot-hub-raspberry-pi-kit-node-lesson3-deploy-resource-manager-template/)
 
 <!---HONumber=Mooncake_0109_2017-->
-<!--Update_Description:update wording and code-->
+<!--Update_Description:update meta properties-->

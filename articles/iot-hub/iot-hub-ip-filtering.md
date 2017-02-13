@@ -13,8 +13,8 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="na"
-    ms.date="11/14/2016"
-    wacn.date="01/13/2017"
+    ms.date="01/05/2017"
+    wacn.date="02/10/2017"
     ms.author="boltean" />  
 
 
@@ -107,4 +107,4 @@ IP 筛选器规则按顺序应用，与 IP 地址匹配的第一条规则决定�
 [lnk-metrics]: /documentation/articles/iot-hub-metrics/
 
 <!---HONumber=Mooncake_0109_2017-->
-<!--Update_Description:update wording-->
+<!--Update_Description:update meta properties-->

@@ -1,6 +1,6 @@
 <properties
-    pageTitle="使用 Azure 门户预览创建 IoT 中心 | Azure"
-    description="如何通过 Azure 门户预览创建、管理和删除 Azure IoT 中心。包括有关定价层、缩放、安全性和消息传递配置的信息。"
+    pageTitle="使用 Azure 门户创建 IoT 中心 | Azure"
+    description="如何通过 Azure 门户创建、管理和删除 Azure IoT 中心。包括有关定价层、缩放、安全性和消息传递配置的信息。"
     services="iot-hub"
     documentationcenter=""
     author="dominicbetts"
@@ -13,8 +13,8 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="na"
-    ms.date="12/12/2016"
-    wacn.date="01/13/2017"
+    ms.date="01/05/2017"
+    wacn.date="02/10/2017"
     ms.author="dobett" />  
 
 
@@ -53,12 +53,12 @@
 
 
 > [AZURE.NOTE]
-IoT 中心只允许每个 Azure 订阅有一个免费中心。
+> IoT 中心只允许每个 Azure 订阅有一个免费中心。
 > 
 > 
 
 ### IoT 中心单位
-一个 IoT 中心单位每天包含一定数量的消息。此中心支持的消息总数等于单位数乘以该层每天的消息数。例如，如果希望 IoT 中心支持 700,000 条消息输入，则选择两个 S1 层单位。
+每个单位每日允许的消息数取决于中心的定价层。例如，如果希望 IoT 中心支持 700,000 条消息输入，则选择两个 S1 层单位。
 
 ### 设备到云分区和资源组
 可以更改 IoT 中心的分区数目。默认的分区设置为 4 个。但是，你可以从下拉列表中选择不同的分区数目。
@@ -89,7 +89,7 @@ Azure IoT 中心自动显示用户帐户所链接的 Azure 订阅列表。可在
 **共享访问策略**：这些策略定义设备与服务连接到 IoT 中心所需的权限。可单击“常规”下面的“共享访问策略”来访问这些策略。在此边栏选项卡中，可以修改现有的策略或添加新策略。
 
 ### 创建策略
-* 单击“添加”打开边栏选项卡。可在此处输入新的策略名称以及想要与此策略关联的权限，如下图所示。
+* 单击“添加”打开边栏选项卡。可在此处输入新的策略名称以及想要与此策略关联的权限，如下图所示：
   
     有许多权限可与这些共享策略相关联。前两个策略（**注册表读取**和**注册表写入**）用于向设备标识存储或标识注册表授予读取和写入访问权限。选择写入选项会自动选择读取选项。
   
@@ -117,7 +117,7 @@ Azure IoT 中心自动显示用户帐户所链接的 Azure 订阅列表。可在
 **使用者组**：使用者组是一种类似于其他消息传送系统的设置，可用于通过特定方式拉取数据，以将其他应用程序或服务连接到 IoT 中心。创建的每个 IoT 中心都包含一个默认使用者组。但是，你可以在 IoT 中心添加或删除使用者组。
 
 > [AZURE.NOTE]
-无法编辑或删除默认使用者组。
+> 无法编辑或删除默认使用者组。
 > 
 > 
 
@@ -189,5 +189,5 @@ Azure IoT 中心自动显示用户帐户所链接的 Azure 订阅列表。可在
 [lnk-gateway]: /documentation/articles/iot-hub-linux-gateway-sdk-simulated-device/
 [lnk-devguide-endpoints]: /documentation/articles/iot-hub-devguide-endpoints/
 
-<!---HONumber=Mooncake_0109_2017-->
-<!--Update_Description:update wording and add the section of endpoitn, build-in endpoint, custom endpoint-->
+<!---HONumber=Mooncake_0206_2017-->
+<!--Update_Description:update wording-->
