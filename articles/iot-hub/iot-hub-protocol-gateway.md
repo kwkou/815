@@ -13,8 +13,8 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="na"
-    ms.date="08/23/2016"
-    wacn.date="01/13/2017"
+    ms.date="01/11/2017"
+    wacn.date="02/10/2017"
     ms.author="kdotchko" />  
 
 
@@ -24,9 +24,9 @@ Azure IoT 中心通过 MQTT、AMQP 和 HTTP 协议以本机方式支持通信。
 ## Azure IoT 协议网关
 Azure IoT 协议网关是协议自适应的框架，旨在用来与 IoT 中心进行高缩放性双向设备通信。协议网关是一种传递组件，通过特定的协议接受设备连接。它通过 AMQP 1.0 桥接发往 IoT 中心的流量。Azure IoT 协议网关以开源软件项目的形式提供，它具有一定的灵活性，可用于添加对各种协议和协议版本的支持。
 
-你可以使用 Azure 云服务辅助角色，以高度缩放的方式在 Azure 中部署协议网关。此外，可将协议网关部署在本地环境中，例如现场网关。
+可以使用 Azure Service Fabric、Azure 云服务辅助角色或 Windows 虚拟机，以高度可缩放的方式在 Azure 中部署协议网关。此外，可将协议网关部署在本地环境中，例如现场网关。
 
-Azure IoT 协议网关包含可让你根据需要自定义 MQTT 协议行为的 MQTT 协议适配器。IoT 中心对 MQTT v3.1.1 协议提供内置支持，因此，需要进行协议自定义或者对其他功能有具体要求时，应只考虑使用 MQTT 协议适配器。
+Azure IoT 协议网关包含可让用户根据需要自定义 MQTT 协议行为的 MQTT 协议适配器。由于 IoT 中心对 MQTT v3.1.1 协议提供内置支持，因此，需要进行协议自定义或者对其他功能有具体要求时，应只考虑使用 MQTT 协议适配器。
 
 MQTT 适配器还会演示用来为其他协议构建协议适配器的编程模型。此外，借助 Azure IoT 协议网关编程模型，可对专门化处理插入自定义组件，例如自定义身份验证、消息转换、压缩/解压缩，或加密/解密设备与 IoT 中心之间的流量。
 
@@ -44,15 +44,11 @@ MQTT 适配器还会演示用来为其他协议构建协议适配器的编程模
 - [与事件中心比较][lnk-compare]
 - [缩放、HA 和 DR][lnk-scaling]
 
-若要进一步探索 IoT 中心的功能，请参阅：
-
 - [IoT 中心开发人员指南][lnk-devguide]
-- [使用网关 SDK 模拟设备][lnk-gateway]
 
 [lnk-compare]: /documentation/articles/iot-hub-compare-event-hubs/
 [lnk-scaling]: /documentation/articles/iot-hub-scaling/
 [lnk-devguide]: /documentation/articles/iot-hub-devguide/
-[lnk-gateway]: /documentation/articles/iot-hub-linux-gateway-sdk-simulated-device/
 
-<!---HONumber=Mooncake_0109_2017-->
+<!---HONumber=Mooncake_0206_2017-->
 <!--Update_Description:update wording-->

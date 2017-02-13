@@ -14,7 +14,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="na"
     ms.date="09/06/2016"
-    wacn.date="01/13/2017"
+    wacn.date="02/10/2017"
     ms.author="obloch" />  
 
 
@@ -28,7 +28,7 @@
 
 我们将使用 **IoTHubClient** SDK 示例来阐释这些主题。如果想要继续，请参阅适用于 C 的 Azure IoT 设备 SDK 中随附的 **iothub\_client\_sample\_http** 和 **iothub\_client\_sample\_amqp** 应用程序。以下部分所述的所有内容都将通过这些示例来演示。
 
-有关**适用于 C 语言的 Azure IoT 设备 SDK**，可参阅 [Azure IoT SDK](https://github.com/Azure/azure-iot-sdks) GitHub 存储库；有关 API 的详细信息，可参阅 [C API 参考](http://azure.github.io/azure-iot-sdks/c/api_reference/index.html)。
+可以在 GitHub 存储库中找到[**适用于 C 语言的 Azure IoT 设备 SDK**](https://github.com/Azure/azure-iot-sdk-c)，可以在 [C API 参考](http://azure.github.io/azure-iot-sdks/c/api_reference/index.html)中查看 API 的详细信息。
 
 ## 较低级别 API
 
@@ -262,7 +262,6 @@ SDK 中随附的 **Iothub\_client\_sample\_http** 应用程序演示了较低级
 显然，你更想要使用 **IoTHubClient\_CreateFromConnectionString**，而不是这种更繁琐的初始化方法。但请记住，当你在 IoT 中心注册设备时，获得的是设备 ID 和设备密钥（而不是连接字符串）。[前一篇文章](/documentation/articles/iot-hub-device-sdk-c-intro/)中介绍的*设备资源管理器* SDK 工具使用 **Azure IoT 服务 SDK** 中的库，通过设备 ID、设备密钥和 IoT 中心主机名创建设备连接字符串。因此调用 **IoTHubClient\_LL\_Create** 可能更好，因为这样可以免除生成连接字符串的步骤。使用任何一种方法都很方便。
 
 ## 配置选项
-
 到目前为止，有关 **IoTHubClient** 库工作方式的所有介绍内容都反映了其默认行为。但是，你可以设置几个选项来更改库的工作方式。此目的可以利用 **IoTHubClient\_LL\_SetOption** API 来实现。请看以下示例：
 
 
@@ -291,5 +290,5 @@ batching 选项非常重要。默认情况下，库将逐个引入事件（单�
 
 [lnk-gateway]: /documentation/articles/iot-hub-linux-gateway-sdk-simulated-device/
 
-<!---HONumber=Mooncake_0109_2017-->
-<!--Update_Description:update wording and code-->
+<!---HONumber=Mooncake_0206_2017-->
+<!--Update_Description:update meta properties and wording-->

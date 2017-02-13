@@ -15,7 +15,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="na"
     ms.date="11/8/2016"
-    wacn.date="01/06/2017"
+    wacn.date="02/10/2017"
     ms.author="xshi" />  
 
 
@@ -62,10 +62,10 @@ Azure IoT 中心用于连接、监视并管理数百万 IoT 资产。若要创�
    
 		az provider register -n "Microsoft.Devices"
    
-4. 运行以下命令，在“中国东部”区域创建名为 iot-sample 的资源组：
+4. 运行以下命令，在“中国东部”区域中创建名为 iot-sample 的资源组：
 
    
-		az resource group create --name iot-sample --location chinaeast
+		az group create --name iot-sample --location chinaeast
    
 
     `chinaeast` 是创建资源组所在的位置。如果想要使用其他位置，可运行 `az account list-locations -o table` 来查看 Azure 支持的所有位置。
@@ -104,4 +104,5 @@ IoT 中心的名称必须全局唯一。在 Azure 订阅下只能创建一个 F1
 [troubleshooting]: /documentation/articles/iot-hub-intel-edison-kit-node-troubleshooting/
 [process-and-store-iot-hub-messages]: /documentation/articles/iot-hub-intel-edison-kit-node-lesson3-deploy-resource-manager-template/
 
-<!---HONumber=Mooncake_0103_2017-->
+<!---HONumber=Mooncake_0206_2017-->
+<!--Update_Description:update wording and code-->

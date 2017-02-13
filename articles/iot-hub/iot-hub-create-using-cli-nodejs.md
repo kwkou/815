@@ -13,8 +13,8 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="na"
-    ms.date="09/21/2016"
-    wacn.date="01/23/2017"
+    ms.date="01/04/2017"
+    wacn.date="02/10/2017"
     ms.author="boltean" />  
 
 
@@ -26,13 +26,13 @@
 
 可使用以下 CLI 版本之一完成任务：
 
-* Azure CLI (azure.js)：用于经典部署模型和资源管理部署模型的 CLI（如本文中所述）。
-* [Azure CLI 2.0（预览版）(az.py)](/documentation/articles/iot-hub-create-using-cli/)：用于资源管理部署模型的下一代 CLI。
+- Azure CLI (azure.js)：用于经典部署模型和资源管理部署模型的 CLI（如本文中所述）。
+- [Azure CLI 2.0（预览版）(az.py)](/documentation/articles/iot-hub-create-using-cli/)：用于资源管理部署模型的下一代 CLI。
 
-完成本教程需具备以下条件：
+若要完成本教程，您需要以下各项：
 
-* 有效的 Azure 帐户。如果没有帐户，只需花费几分钟就能创建一个[帐户][lnk-free-trial]。
-* [Azure CLI 0.10.4][lnk-CLI-install] 或更高版本。如果已经有了 Azure CLI，则可在命令提示符处使用以下命令验证当前版本：
+- 有效的 Azure 帐户。如果没有帐户，只需花费几分钟就能创建一个[帐户][lnk-free-trial]。
+- [Azure CLI 0.10.4][lnk-CLI-install] 或更高版本。如果已安装 Azure CLI，则可在命令提示符处使用以下命令验证当前版本：
   
         azure --version
   
@@ -50,7 +50,7 @@ Azure 具有用于创建和处理资源的两个不同的部署模型：[Azure R
         azure login -e AzureChinaCloud
    
    使用建议的 Web 浏览器和代码进行身份验证。
-2. 如果你有多个 Azure 订阅，则连接到 Azure 即有权访问与凭据关联的所有 Azure 订阅。可查看这些订阅以及哪个订阅是默认订阅，只需使用以下命令
+2. 如果有多个 Azure 订阅，则连接到 Azure 即有权访问与凭据关联的所有 Azure 订阅。可以使用以下命令查看 Azure 订阅并确定哪个订阅是默认订阅：
    
    
         azure account list 
@@ -90,7 +90,7 @@ Azure 具有用于创建和处理资源的两个不同的部署模型：[Azure R
 
 简单示例：
 
- 若要在资源组 **exampleResourceGroup** 中创建名为 **exampleIoTHubName** 的 IoT 中心，请直接运行以下命令
+ 若要在资源组 **exampleResourceGroup** 中创建名为 **exampleIoTHubName** 的 IoT 中心，请运行以下命令：
 
 
     azure iothub create -g exampleResourceGroup -n exampleIoTHubName -l chinaeast -k s1 -u 1
@@ -103,6 +103,9 @@ Azure 具有用于创建和处理资源的两个不同的部署模型：[Azure R
 > 
 
 ## 后续步骤
+若要深入了解如何开发 IoT 中心，请参阅以下内容：
+
+- [IoT SDK][lnk-sdks]
 
 若要进一步探索 IoT 中心的功能，请参阅：
 
@@ -119,4 +122,5 @@ Azure 具有用于创建和处理资源的两个不同的部署模型：[Azure R
 [lnk-sdks]: /documentation/articles/iot-hub-devguide-sdks/
 [lnk-portal]: /documentation/articles/iot-hub-create-through-portal/
 
-<!---HONumber=Mooncake_0116_2017-->
+<!---HONumber=Mooncake_0206_2017-->
+<!--Update_Description:update wording-->

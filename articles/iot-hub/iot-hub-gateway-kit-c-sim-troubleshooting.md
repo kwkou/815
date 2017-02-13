@@ -15,7 +15,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="na"
     ms.date="10/21/2016"
-    wacn.date="01/23/2017"
+    wacn.date="02/10/2017"
     ms.author="xshi" />  
 
 
@@ -140,7 +140,7 @@ Azure 命令行接口 (Azure CLI) 为预览版。
 
 ### 设备资源管理器
 
-设备资源管理器在 Windows 本地计算机上运行，并连接到 Azure 中的 IoT 中心。它与以下 [IoT 中心终结点](/documentation/articles/iot-hub-devguide/)通信：
+[设备资源管理器](https://github.com/Azure/azure-iot-sdk-csharp/blob/master/tools/DeviceExplorer)在 Windows 本地计算机上运行，并连接到 Azure 中的 IoT 中心。它与以下 [IoT 中心终结点](/documentation/articles/iot-hub-devguide/)通信：
 
 - 设备标识管理，用于预配和管理注册到 IoT 中心的设备。
 - 接收设备到云消息，以便监视从设备发送到 IoT 中心的消息。
@@ -150,7 +150,7 @@ Azure 命令行接口 (Azure CLI) 为预览版。
 
 ### iothub-explorer
 
-iothub-explorer 是一项示例性的多平台 CLI 工具，用于管理设备客户端。可以使用该工具在标识注册表中管理设备、监视从设备到云的消息，以及发送从云到设备的命令。
+[iothub-explorer](https://github.com/Azure/iothub-explorer) 是一项示例性的多平台 CLI 工具，用于管理设备客户端。可以使用该工具在标识注册表中管理设备、监视从设备到云的消息，以及发送从云到设备的命令。
 
 若要安装最新（预发行）版的 iothub-explorer 工具，请运行以下命令：
 
@@ -173,3 +173,4 @@ iothub-explorer 是一项示例性的多平台 CLI 工具，用于管理设备�
 [Microsoft Azure 存储资源管理器（预览版）](http://storageexplorer.com/)是 Microsoft 推出的一款独立的应用，可用于在 Windows、OS X 和 Linux 上处理 Azure 存储数据。可以使用此工具连接到表并查看其中的数据。可以使用此工具排查 Azure 存储问题。
 
 <!---HONumber=Mooncake_0116_2017-->
+<!--Update_Description:update wording and link references-->

@@ -15,7 +15,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="na"
     ms.date="11/28/2016"
-    wacn.date="01/13/2017"
+    wacn.date="02/10/2017"
     ms.author="xshi" />  
 
 
@@ -90,7 +90,7 @@
 
 
 ### 连接到远程应用程序
-单击绿色的“开始调试”\(F5\) 按钮开始调试。
+单击绿色的“开始调试”(F5) 按钮开始调试。
 
 若要详细了解调试器，请参阅 [JavaScript in VS Code](https://code.visualstudio.com/docs/languages/javascript#_debugging)（VS Code 中的 JavaScript）。
 
@@ -117,7 +117,7 @@ Azure 命令行接口 (Azure CLI) 为预览版。
 如果已通过 Azure CLI 成功预配 Azure IoT 中心，且需使用工具管理连接到 IoT 中心的设备，可尝试以下工具。
 
 ### 设备资源管理器
-设备资源管理器在 Windows 本地计算机上运行，并连接到 Azure 的 IoT 中心。它与以下 [IoT 中心终结点](/documentation/articles/iot-hub-devguide/)通信：
+[设备资源管理器](https://github.com/Azure/azure-iot-sdk-csharp/blob/master/tools/DeviceExplorer)工具在 Windows 本地计算机上运行，并连接到 Azure 的 IoT 中心。它与以下 [IoT 中心终结点](/documentation/articles/iot-hub-devguide/)通信：
 
 * *设备标识管理*：用于预配和管理注册到 IoT 中心的设备。
 * *接收从设备到云的消息*：用于监视从设备发送到 IoT 中心的消息。
@@ -126,7 +126,7 @@ Azure 命令行接口 (Azure CLI) 为预览版。
 在此工具中配置 IoT 中心连接字符串，以便使用其所有功能。
 
 ### iothub-explorer
-iothub-explorer 是一项示例性的多平台 CLI 工具，用于管理设备客户端。可以使用该工具在标识注册表中管理设备、监视从设备到云的消息，以及发送从云到设备的命令。
+[iothub-explorer](https://github.com/Azure/iothub-explorer) 是一项示例性的多平台 CLI 工具，用于管理设备。可以使用该工具管理标识注册表中的设备、监视设备到云的消息，以及发送云到设备的消息。
 
 若要安装最新（预发行）版的 iothub-explorer 工具，请在命令行环境中运行以下命令：
 
@@ -143,5 +143,5 @@ iothub-explorer 是一项示例性的多平台 CLI 工具，用于管理设备�
 ## Azure 存储问题
 [Microsoft Azure 存储资源管理器（预览版）](http://storageexplorer.com)是 Microsoft 推出的一款独立的应用，可用于在 Windows、OS X 和 Linux 上处理 Azure 存储数据。可以使用此工具连接到表并查看其中的数据。可以使用此工具排查 Azure 存储问题。
 
-<!---HONumber=Mooncake_0109_2017-->
-<!--Update_Description:update wording-->
+<!---HONumber=Mooncake_0206_2017-->
+<!--Update_Description:update wording and link references-->

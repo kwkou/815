@@ -13,8 +13,8 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="na"
-    ms.date="09/30/2016"
-    wacn.date="01/13/2017"
+    ms.date="01/04/2017"
+    wacn.date="02/10/2017"
     ms.author="dobett" />  
 
 
@@ -53,7 +53,7 @@ Azure IoT 中心属于多租户服务，向各种执行组件公开功能。下�
 最后请务必注意，所有的 IoT 中心终结点都使用 [TLS][lnk-tls] 协议，且绝不会在未加密/不安全的通道上公开任何终结点。
 
 ## 自定义路由终结点
-可将订阅中的现有 Azure 服务链接到用作消息路由终结点的 IoT 中心。它们充当服务终结点，用作消息路由的“接收器”。设备无法直接写入附加终结点。若要了解有关消息路由的详细信息，请参阅[通过 IoT 中心发送和接收消息][lnk-devguide-messaging]中的开发人员指南条目。
+可将订阅中的现有 Azure 服务链接到用作消息路由终结点的 IoT 中心。这些服务终结点用作消息路由的“接收器”。设备无法直接写入附加终结点。若要了解有关消息路由的详细信息，请参阅[通过 IoT 中心发送和接收消息][lnk-devguide-messaging]中的开发人员指南条目。
 
 IoT 中心当前支持将以下 Azure 服务作为附加终结点：
 
@@ -66,11 +66,11 @@ IoT 中心需要这些终结点的写入权限，以便使用消息路由。如�
 如果消息与多个路由匹配，而这些路由全部指向同一终结点，则 IoT 中心仅向该终结点传递一次消息。因此不必在服务总线队列或主题中配置重复数据删除。在分区队列中，分区相关性可保障消息排序。不支持将已启用会话的队列用作终结点。也不支持已启用重复数据删除的分区队列和主题。
 
 有关可添加终结点的数量限制，请参阅[配额和限制][lnk-devguide-quotas]。
-## <a name="field-gateways"></a> 现场网关
 
+## <a name="field-gateways"></a> 现场网关
 在 IoT 解决方案中，*现场网关*位于设备和 IoT 中心终结点之间。它通常位于靠近设备的位置。设备使用设备支持的协议，直接与现场网关通信。现场网关使用 IoT 中心支持的协议连接到 IoT 中心终结点。现场网关可以是高度专业化的硬件，也可以是运行软件的低功率计算机，只需能够完成网关所适用的端到端方案即可。
 
-可以使用 [Azure IoT 网关 SDK][lnk-gateway-sdk] 实现现场网关。此 SDK 提供特定功能，例如能够在与 IoT 中心的同一个连接上多路复用来自多个设备的通信。
+可以使用 [Azure IoT 网关 SDK][lnk-gateway-sdk] 实现现场网关。此 SDK 提供特定功能，例如能够在同一个 IoT 中心连接上多路复用来自多个设备的通信。
 
 ## 后续步骤
 
@@ -109,5 +109,5 @@ IoT 中心需要这些终结点的写入权限，以便使用消息路由。如�
 [lnk-devguide-mqtt]: /documentation/articles/iot-hub-mqtt-support/
 [lnk-devguide-messaging]: /documentation/articles/iot-hub-devguide-messaging/
 
-<!---HONumber=Mooncake_0109_2017-->
-<!--Update_Description:update wording and add section of custom-routing-endpoint-->
+<!---HONumber=Mooncake_0206_2017-->
+<!--Update_Description:update wording-->

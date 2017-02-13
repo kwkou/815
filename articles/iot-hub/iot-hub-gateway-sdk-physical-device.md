@@ -7,21 +7,18 @@
     manager="timlt"
     editor="" />
 <tags
-     ms.service="iot-hub"
-     ms.devlang="cpp"
-     ms.topic="article"
-     ms.tgt_pltfrm="na"
-     ms.workload="na"
-     ms.date="11/14/2016"
-     wacn.date="01/17/2017"
-     ms.author="andbuc"/>
+    ms.assetid="212dacbf-e5e9-48b2-9c8a-1c14d9e7b913"
+    ms.service="iot-hub"
+    ms.devlang="cpp"
+    ms.topic="article"
+    ms.tgt_pltfrm="na"
+    ms.workload="na"
+    ms.date="11/14/2016"
+    wacn.date="02/10/2017"
+    ms.author="andbuc" />  
 
 
-
-
-# 使用 Azure IoT 网关 SDK，通过物理设备发送设备到云的消息(Linux)
-
-
+# 使用 Azure IoT 网关 SDK，通过物理设备发送设备到云的消息 (Linux)
 [蓝牙低功耗示例][lnk-ble-samplecode]演练展示了如何使用 [Azure IoT 网关 SDK][lnk-sdk] 将设备到云的遥测从物理设备转发到 IoT 中心，并介绍了如何将命令从 IoT 中心路由到物理设备。
 
 本文介绍的内容包括：
@@ -433,10 +430,10 @@ BLE 设备的示例配置假定使用 Texas Instruments SensorTag 设备。任�
 
 在运行示例前，可能需要按 SensorTag 设备上的小按钮，使其可被发现。
 
-运行示例时，可使用[设备资源管理器或 iothub-explorer][lnk-explorer-tools] 工具来监视网关从 SensorTag 设备转发的消息。
+运行示例时，可使用设备资源管理器或 iothub-explorer 工具来监视网关从 SensorTag 设备转发的消息。
 
 ## 发送云到设备的消息
-BLE 模块还支持从 Azure IoT 中心将指令发送到设备。可使用 Azure IoT 中心设备资源管理器或 IoT 中心资源管理器将传递 BLE 网关模块的 JSON 消息发送到 BLE 设备。如果使用 Texas Instruments SensorTag 设备，则可以从 IoT 中心发送命令，打开红色 LED、绿色 LED 或蜂鸣器。为此，请首先按顺序发送以下两个 JSON 消息。然后，可以发送任何命令，打开指示灯或蜂鸣器。
+BLE 模块还支持从 Azure IoT 中心将指令发送到设备。可使用[设备资源管理器](https://github.com/Azure/azure-iot-sdk-csharp/blob/master/tools/DeviceExplorer)或 [iothub-explorer](https://github.com/Azure/iothub-explorer) 工具将传递 BLE 网关模块的 JSON 消息发送到 BLE 设备。如果使用 Texas Instruments SensorTag 设备，则可以从 IoT 中心发送命令，打开红色 LED、绿色 LED 或蜂鸣器。为此，请首先按顺序发送以下两个 JSON 消息。然后，可以发送任何命令，打开指示灯或蜂鸣器。
 
 - 重置所有 LED 和蜂鸣器（将它们关闭）
   
@@ -457,9 +454,9 @@ BLE 模块还支持从 Azure IoT 中心将指令发送到设备。可使用 Azur
           "data": "AQ=="
         }
     
+然后，可以发送以下任何命令，打开指示灯或蜂鸣器。
 
-- 打开红色 LED
-
+- 打开红色 LED：
     
         {
           "type": "write_once",

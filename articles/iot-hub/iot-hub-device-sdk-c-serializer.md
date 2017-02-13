@@ -14,7 +14,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="na"
     ms.date="09/06/2016"
-    wacn.date="01/13/2017"
+    wacn.date="02/10/2017"
     ms.author="obloch" />  
 
 
@@ -28,7 +28,7 @@
 
 本文中所述的所有内容都基于**序列化程序** SDK 示例。如果你想要遵循这些内容，请参阅适用于 C 语言的 Azure IoT 设备 SDK 中包含的 **simplesample\_amqp** 和 **simplesample\_http** 应用程序。
 
-你可在 [Microsoft Azure IoT SDK](https://github.com/Azure/azure-iot-sdks) GitHub 存储库中找到**适用于 C 语言的Azure IoT 设备 SDK**，并可在 [C API 参考](http://azure.github.io/azure-iot-sdks/c/api_reference/index.html)中查看 API 的详细信息。
+可以在 GitHub 存储库中找到[**适用于 C 语言的 Azure IoT 设备 SDK**](https://github.com/Azure/azure-iot-sdk-c)，可以在 [C API 参考](http://azure.github.io/azure-iot-sdks/c/api_reference/index.html)中查看 API 的详细信息。
 
 ## 建模语言
 
@@ -535,7 +535,7 @@
 如果使用 --recursive 选项从 GitHub 中克隆了 Azure-iot-sdks 存储库，那么可在此处找到此共享的实用程序库：
 
 
-    .\\c\\azure-c-shared-utility
+	.\\c-utility
 
 
 如果没有克隆此库，则可以在[此处](https://github.com/Azure/azure-c-shared-utility)找到它。
@@ -591,6 +591,8 @@
 然后将此项目添加到 Visual Studio 解决方案：
 
 > .\\c\\serializer\\build\\windows\\serializer.vcxproj
+> 
+> 
 
 完成后，解决方案应该如下所示：
 
@@ -668,18 +670,17 @@
 
 本文详细介绍了**适用于 C 语言的 Azure IoT 设备 SDK** 中包含的**序列化程序**库的独特方面。通过文中提供的信息，你应该能充分了解如何使用模型来发送事件和接收来自 IoT 中心的消息。
 
-本文也是通过**适用于 C 语言的 Azure IoT 设备 SDK** 开发应用程序这一系列教程（由三部分组成）的最后一部分。这些信息应该不仅足以让你入门，还能让你彻底了解 API 的工作原理。请了解其他信息，因为还有一些 SDK 中的示例未涵盖在本文中。除此之外，[SDK 文档](https://github.com/Azure/azure-iot-sdks)是获取其他信息的绝佳资源。
+本文也是通过**适用于 C 语言的 Azure IoT 设备 SDK** 开发应用程序这一系列教程（由三部分组成）的最后一部分。这些信息应该不仅足以让你入门，还能让你彻底了解 API 的工作原理。请了解其他信息，因为还有一些 SDK 中的示例未涵盖在本文中。除此之外，[SDK 文档](https://github.com/Azure/azure-iot-sdk-c)是获取其他信息的绝佳资源。
 
 若要详细了解如何针对 IoT 中心进行开发，请参阅 [Azure IoT SDK][lnk-sdks]。
 
 若要进一步探索 IoT 中心的功能，请参阅：
 
 - [使用 IoT 网关 SDK 模拟设备][lnk-gateway]
-- [使用 Azure 门户管理 IoT 中心][lnk-portal]
 
 [lnk-sdks]: /documentation/articles/iot-hub-devguide-sdks/
 
 [lnk-gateway]: /documentation/articles/iot-hub-linux-gateway-sdk-simulated-device/
 
-<!---HONumber=Mooncake_0109_2017-->
-<!--Update_Description:update wording-->
+<!---HONumber=Mooncake_0206_2017-->
+<!--Update_Description:update wording and code-->

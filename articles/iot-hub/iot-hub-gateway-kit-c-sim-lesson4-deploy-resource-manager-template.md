@@ -15,7 +15,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="na"
     ms.date="10/28/2016"
-    wacn.date="01/23/2017"
+    wacn.date="02/10/2017"
     ms.author="xshi" />  
 
 
@@ -75,7 +75,7 @@ Azure Functions 是一种解决方案，可轻松地在云中运行 *函数* （
   更新 `arm-template-param.json` 文件后，请运行以下命令，将资源部署到 Azure：
 
 
-		az resource group deployment create --template-file arm-template.json --parameters @arm-template-param.json -g iot-gateway
+		az group deployment create --template-file arm-template.json --parameters @arm-template-param.json -g iot-gateway
 
 
   使用 `iot-gateway` 作为 `{resource group name}` 的值（如果尚未更改第 2 课中的值）。
@@ -87,4 +87,5 @@ Azure Functions 是一种解决方案，可轻松地在云中运行 *函数* （
 ## 后续步骤
 [读取保存在 Azure 存储中的消息](/documentation/articles/iot-hub-gateway-kit-c-sim-lesson4-read-table-storage/)。
 
-<!---HONumber=Mooncake_0116_2017-->
+<!---HONumber=Mooncake_0206_2017-->
+<!--Update_Description:update wording and code-->
