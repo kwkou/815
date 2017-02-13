@@ -7,7 +7,7 @@
 > | 3\.4 |0\.10.# |0\.10.#.# |
 > | 3\.5 |1\.0.# |1\.0.#.# |
 > 
-> 若要深入了解 HDInsight 随附提供的组件，请参阅 [HDInsight 组件版本](/documentation/articles/hdinsight-component-versioning-v1/)。
+> 若要深入了解 HDInsight 随附提供的组件，请参阅 [HDInsight 组件版本](/documentation/articles/hdinsight-component-versioning/)。
 > 
 > 
 

@@ -161,7 +161,7 @@ HBase 提供了多种将数据载入表中的方法。有关详细信息，请�
 
 **打开群集仪表板**
 
-1. 浏览到 **https://<HDInsight Cluster Name>.azurehdinsight.cn/**。
+1. 浏览到 **https://\<HDInsight Cluster Name\>.azurehdinsight.cn/**。
 5. 输入 Hadoop 用户帐户用户名和密码。默认用户名是 **admin**，而密码是在创建过程中输入的密码。此时将打开新浏览器标签。
 6. 单击该页顶部的“Hive 编辑器”。Hive 编辑器的外观如下：
 
@@ -304,7 +304,6 @@ HDInsight 中的 HBase 随附了一个 Web UI 用于监视群集。使用该 Web
 - [HDInsight HBase 概述][hdinsight-hbase-overview]。HBase 是构建于 Hadoop 上的 Apache 开源 NoSQL 数据库，用于为大量非结构化和半结构化数据提供随机访问和高度一致性。
 - [在 Azure 虚拟网络上创建 HBase 群集][hdinsight-hbase-provision-vnet]。通过虚拟网络集成，可以将 HBase 群集部署到应用程序所在的虚拟网络，以便应用程序直接与 HBase 进行通信。
 - [在 HDInsight 中配置 HBase 复制](/documentation/articles/hdinsight-hbase-geo-replication)。了解如何跨两个 Azure 数据中心配置 HBase 复制。
-- [在 HDInsight 中使用 HBase 分析 Twitter 观点][hbase-twitter-sentiment]。了解如何通过在 HDInsight 的 Hadoop 群集中使用 HBase 对大数据执行实时[情绪分析](http://en.wikipedia.org/wiki/Sentiment_analysis)。
 
 [hdinsight-manage-portal]: /documentation/articles/hdinsight-administer-use-management-portal
 [hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
@@ -319,7 +318,6 @@ HDInsight 中的 HBase 随附了一个 Web UI 用于监视群集。使用该 Web
 [hdinsight-hbase-overview]: /documentation/articles/hdinsight-hbase-overview
 [hdinsight-hbase-provision-vnet]: /documentation/articles/hdinsight-hbase-provision-vnet
 [hdinsight-versions]: /documentation/articles/hdinsight-component-versioning
-[hbase-twitter-sentiment]: /documentation/articles/hdinsight-hbase-analyze-twitter-sentiment
 [azure-purchase-options]: /pricing/overview/
 [azure-member-offers]: /pricing/member-offers/
 [azure-trial]: /pricing/1rmb-trial/

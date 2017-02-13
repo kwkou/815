@@ -74,7 +74,6 @@ HDInsight 应用程序是用户可以在基于 Linux 的 HDInsight 群集上安�
     * **群集类型**：如果你不知道要选择哪种群集，请选择“Hadoop”。它是最受欢迎的群集类型。
     * **操作系统**：选择“Linux”。
     * **版本**：如果不知道要选择哪个版本，请使用默认版本。有关详细信息，请参阅 [HDInsight 群集版本](/documentation/articles/hdinsight-component-versioning/)。
-    * **群集层**：Azure HDInsight 提供两个类别的大数据云产品：标准层和高级层。有关详细信息，请参阅[群集层](/documentation/articles/hdinsight-hadoop-provision-linux-clusters/#cluster-tiers)。
 6. 依次单击“应用程序”、其中一个已发布的应用程序，然后单击“选择”。
 7. 单击“凭据”，然后输入管理员用户的密码。此外，还必须输入“SSH 用户名”以及“密码”或“公钥”，这将用于验证 SSH 用户的身份。建议使用公钥。单击底部的“选择”以保存凭据配置。
 8. 单击“数据源”，选择其中一个现有的存储帐户，或创建新的存储帐户，作为群集的默认存储帐户。

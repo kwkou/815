@@ -54,7 +54,7 @@
 >
 >
 
-1. 单击下面的图像可在 Azure 门户预览中打开模板。模板位于 [Azure 快速入门模板](https://azure.microsoft.com/resources/templates/101-hdinsight-hbase-linux-vnet/)中。
+1. 单击下面的图像可在 Azure 门户预览中打开模板。模板位于 [Azure 快速入门模板](https://github.com/Azure/azure-quickstart-templates/tree/master/101-hdinsight-hbase-linux-vnet/)中。
 
     <a href="https://portal.azure.cn/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-hdinsight-hbase-linux-vnet%2Fazuredeploy.json" target="_blank"><img src="./media/hdinsight-hbase-provision-vnet/deploy-to-azure.png" alt="Deploy to Azure"></a>
 2. 在“自定义部署”边栏选项卡中输入以下项：
@@ -247,7 +247,6 @@
 * [在 HDInsight 中配置 HBase 复制](/documentation/articles/hdinsight-hbase-geo-replication/)
 * [在 HDInsight 中创建 Hadoop 群集](/documentation/articles/hdinsight-provision-clusters/)
 * [开始在 HDInsight 中将 HBase 与 Hadoop 配合使用](/documentation/articles/hdinsight-hbase-tutorial-get-started/)
-* [在 HDInsight 中使用 HBase 分析 Twitter 观点](/documentation/articles/hdinsight-hbase-analyze-twitter-sentiment/)
 * [虚拟网络概述][vnet-overview]
 
 [1]: /home/features/networking/
@@ -255,7 +254,6 @@
 [3]: http://technet.microsoft.com/zh-cn/library/hh847889.aspx
 
 [hbase-get-started]: /documentation/articles/hdinsight-hbase-tutorial-get-started/
-[hbase-twitter-sentiment]: /documentation/articles/hdinsight-hbase-analyze-twitter-sentiment/
 [vnet-overview]: /documentation/articles/virtual-networks-overview/
 [vm-create]: /documentation/articles/virtual-machines-windows-hero-tutorial/
 

@@ -91,7 +91,7 @@
         $defaultStorageAccountName = $namePrefix + "store"
         $defaultBlobContainerName = $hdinsightClusterName
 
-        $location = "China East 2"
+        $location = "China East"
 
         $armDeploymentName = $namePrefix
         #endregion

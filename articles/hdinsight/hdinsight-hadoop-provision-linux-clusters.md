@@ -39,7 +39,6 @@ Hadoop 群集由多个虚拟机（节点）组成，这些虚拟机用于对群�
 | [Spark](/documentation/articles/hdinsight-apache-spark-overview/) |内存中处理、交互式查询、微批流处理 |
 | [交互式 Hive（预览版）](/documentation/articles/hdinsight-hadoop-use-interactive-hive/) |内存中缓存用于实现交互式且更快的 Hive 查询 |
 | [Spark 上的 R Server（预览版）](/documentation/articles/hdinsight-hadoop-r-server-overview/) |各种不同的大数据统计信息、预测模型和机器学习功能 |
-| [Kafka（预览版）](/documentation/articles/hdinsight-apache-kafka-introduction/) | 分布式流式处理平台，可用于构建实时流数据管道和应用程序 |
 
 每个群集类型在群集中具有自身的节点数目、在群集中使用自身的节点术语，对每个节点类型具有默认的 VM 大小。下表中的括号内列出了每个节点类型的节点数目。
 
@@ -87,24 +86,6 @@ HDInsight 群集有各种类型，分别与针对其优化群集的工作负荷�
 有关将 Azure 虚拟网络与 HDInsight 配合使用的详细信息，请参阅[使用 Azure 虚拟网络扩展 HDInsight](/documentation/articles/hdinsight-extend-hadoop-virtual-network/)。
 
 有关在 Azure 虚拟网络中使用两种群集类型的示例，请参阅[使用 Storm 和 HBase 分析传感器数据](/documentation/articles/hdinsight-storm-sensor-data-analysis/)。
-
-## 群集层
-Azure HDInsight 提供了两个类别的大数据云产品：标准和[高级](/documentation/articles/hdinsight-component-versioning/#hdinsight-standard-and-hdinsight-premium)。HDInsight 高级版包括 R 和其他附加组件。只有 HDInsight 3.4 版才支持 HDInsight 高级版。
-
-下表列出了 HDInsight 群集类型和 HDInsight 高级版支持矩阵。
-
-| 群集类型 | 标准 | 高级 |
-| --- | --- | --- |
-| Hadoop |是 |是 |
-| Spark |是 |是 |
-| HBase |是 |否 |
-| Storm |是 |否 |
-| Spark 上的 R Server |否 |是 |
-
-随着 HDInsight 高级版中包含的群集类型更多，此表也会随之更新。以下屏幕截图显示了用于选择群集类型的 Azure 门户预览信息。
-
-![HDInsight 高级版配置](./media/hdinsight-hadoop-provision-linux-clusters/hdinsight-cluster-type-configuration.png)  
-
 
 ## 基本配置选项
 下面是用于创建 HDInsight 群集的基本配置选项。
@@ -172,9 +153,7 @@ Blob 存储容器提供一组 Blob 集，如下图所示。
 ### 位置（区域）
 HDInsight 群集与其默认存储帐户必须位于相同的 Azure 位置。
 
-![Azure 区域](./media/hdinsight-provision-clusters/Azure.regions.png)
-
-有关受支持区域的列表，请单击 [HDInsight 定价](/pricing/details/hdinsight/)中的“区域”下拉列表。
+有关受支持区域的列表，请单击 [HDInsight 定价](/pricing/details/hdinsight/)中的“上市地区”部分。
 
 ### <a name="cluster-tiers"></a> 节点定价层
 客户需根据群集的生存期，支付这些节点的使用费。创建群集后便开始计费，删除群集后停止计费。无法取消分配群集或将其置于暂停状态。

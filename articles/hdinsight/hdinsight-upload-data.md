@@ -58,8 +58,6 @@ Microsoft 提供了以下实用程序让你使用 Azure Blob 存储：
 ### <a id="xplatcli"></a>Azure CLI
 Azure CLI 是一个跨平台工具，可用于管理 Azure 服务。使用以下步骤将数据上传到 Azure Blob 存储：
 
-[AZURE.INCLUDE [use-latest-version](../../includes/hdinsight-use-latest-cli.md)]
-
 1. [安装和配置适用于 Mac、Linux 和 Windows 的 Azure CLI](/documentation/articles/xplat-cli-install/)。
 2. 打开命令提示符、bash 或其他 shell，然后使用以下方法对 Azure 订阅进行身份验证。
 

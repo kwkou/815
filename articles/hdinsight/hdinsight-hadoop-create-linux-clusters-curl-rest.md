@@ -40,6 +40,8 @@ Azure REST API 允许你对托管在 Azure 平台中的服务执行管理操作�
 
 * **Azure CLI 2.0**（预览版）。Azure CLI 用于创建服务主体，为针对 Azure REST API 的请求生成身份验证令牌时需要使用此主体。有关 Azure CLI 2.0 预览版的详细信息，请参阅 [Azure CLI 2.0 入门](https://docs.microsoft.com/cli/azure/get-started-with-az-cli2)。
 
+    [AZURE.INCLUDE [azure-cli-2-azurechinacloud-environment-parameter](../../includes/azure-cli-2-azurechinacloud-environment-parameter.md)]
+
 * **cURL**。可通过包管理系统获取此实用工具，也可以从 [http://curl.haxx.se/](http://curl.haxx.se/) 下载此实用工具。
 
   > [AZURE.NOTE]
@@ -83,15 +85,7 @@ Azure Resource Manager 模板是描述**资源组**及其包含的所有资源�
                     "location": {
                         "type": "string",
                         "allowedValues": ["China North",
-                        "China East",
-                        "China East",
-                        "China East",
-                        "China East",
-                        "China North",
-                        "China East",
-                        "China North",
-                        "West Europe",
-                        "China North"],
+                        "China East"],
                         "metadata": {
                             "description": "The location where all azure resources will be deployed."
                         }
@@ -354,10 +348,10 @@ Azure Resource Manager 模板是描述**资源组**及其包含的所有资源�
 * 将 **ResourceGroupName** 替换在上一部分中创建的资源组名称。
 * 将 **DeploymentName** 替换为要用于此部署的名称。
 
-    curl -X "PUT" "https://management.chinacloudapi.cn/subscriptions/SubscriptionID/resourcegroups/ResourceGroupName/providers/microsoft.resources/deployments/DeploymentName?api-version=2015-01-01" \
-    -H "Authorization: Bearer AccessToken" \
-    -H "Content-Type: application/json" \
-    -d "{set your body string to the template and parameters}"
+        curl -X "PUT" "https://management.chinacloudapi.cn/subscriptions/SubscriptionID/resourcegroups/ResourceGroupName/providers/microsoft.resources/deployments/DeploymentName?api-version=2015-01-01" \
+        -H "Authorization: Bearer AccessToken" \
+        -H "Content-Type: application/json" \
+        -d "{set your body string to the template and parameters}"
 
 > [AZURE.NOTE]
 如果已将包含模板和参数的 JSON 文档保存到某个文件，可以使用以下命令而不是 `-d "{ template and parameters}"`：
@@ -377,9 +371,9 @@ Azure Resource Manager 模板是描述**资源组**及其包含的所有资源�
 * 将 **SubscriptionID** 和 **AccessToken** 替换为前面使用的值。
 * 将 **ResourceGroupName** 替换在上一部分中创建的资源组名称。
 
-    curl -X "GET" "https://management.chinacloudapi.cn/subscriptions/SubscriptionID/resourcegroups/ResourceGroupName/providers/microsoft.resources/deployments/DeploymentName?api-version=2015-01-01" \
-    -H "Authorization: Bearer AccessToken" \
-    -H "Content-Type: application/json"
+        curl -X "GET" "https://management.chinacloudapi.cn/subscriptions/SubscriptionID/resourcegroups/ResourceGroupName/providers/microsoft.resources/deployments/DeploymentName?api-version=2015-01-01" \
+        -H "Authorization: Bearer AccessToken" \
+        -H "Content-Type: application/json"
 
 这将返回包含有关部署操作的信息的 JSON 文档。`"provisioningState"` 元素包含部署状态；如果此元素包含 `"Succeeded"` 的值，则表示部署已成功完成。现在，你的群集应可供使用。
 

@@ -40,7 +40,6 @@ HDInsight 群集中的所有节点都在 Azure 虚拟网络中，无法直接从
 | 服务 | 端口 | 协议 | 说明 |
 | ---- | ---------- | -------- | ----------- | ----------- |
 | sshd | 22 | SSH | 将客户端连接到主头节点上的 sshd。请参阅 [Use SSH with Linux-based HDInsight](/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows/)（在基于 Linux 的 HDInsight 中使用 SSH） |
-| sshd | 22 | SSH | 将客户端连接到边缘节点上的 sshd（仅适用于 HDInsight 高级版）。请参阅 [Get started using R Server on HDInsight](/documentation/articles/hdinsight-hadoop-r-server-get-started/)（开始使用 HDInsight 上的 R Server） |
 | sshd | 23 | SSH | 将客户端连接到辅助头节点上的 sshd。请参阅 [Use SSH with Linux-based HDInsight](/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows/)（在基于 Linux 的 HDInsight 中使用 SSH） |
 | Ambari | 443 | HTTPS | Ambari Web UI。请参阅 [Manage HDInsight using the Ambari Web UI](/documentation/articles/hdinsight-hadoop-manage-ambari/)（使用 Ambari Web UI 管理 HDInsight） |
 | Ambari | 443 | HTTPS | Ambari REST API。请参阅 [Manage HDInsight using the Ambari REST API](/documentation/articles/hdinsight-hadoop-manage-ambari-rest-api/)（使用 Ambari REST API 管理 HDInsight） |
@@ -138,12 +137,5 @@ HDInsight 群集中的所有节点都在 Azure 虚拟网络中，无法直接从
 | HMaster 信息 Web UI | 头节点 | 16010 | HTTP | HBase 主控 Web UI 的端口 |
 | 区域服务器 | 所有辅助角色节点 | 16020 | &nbsp; | &nbsp; |
 | &nbsp; | &nbsp; | 2181 | &nbsp; | 客户端用来连接 ZooKeeper 的端口 |
-
-### Kafka 端口
-
-| 服务 | 节点 | 端口 | 协议 | 说明 |
-| ------- | ------- | ---- | -------- | ----------- |
-| 代理 | 辅助角色节点 | 9092 | [Kafka 线路协议](http://kafka.apache.org/protocol.html) | 用于客户端通信 |
-| &nbsp; | Zookeeper 节点 | 2181 | &nbsp; | 客户端用来连接 Zookeeper 的端口 |
 
 <!---HONumber=Mooncake_0926_2016-->

@@ -35,8 +35,6 @@
 * **HDInsight 群集**。有关创建新的基于 Linux 的 HDInsight 群集的步骤，请参阅 [在 Linux 上的 HDInsight 中开始将 Hadoop 与 Hive 配合使用](/documentation/articles/hdinsight-hadoop-linux-tutorial-get-started/)。
 * **Azure SQL 数据库**。你将使用 Azure SQL 数据库作为目标数据存储。如果没有 SQL 数据库，请参阅 [SQL 数据库教程：几分钟内即可创建 SQL 数据库](/documentation/articles/sql-database-get-started/)。
 * **Azure CLI**。如果你尚未安装 Azure CLI，请参阅[安装和配置 Azure CLI](/documentation/articles/xplat-cli-install/) 了解详细步骤。
-  
-    [AZURE.INCLUDE [use-latest-version](../../includes/hdinsight-use-latest-cli.md)]
 
 ## 下载航班数据
 1. 浏览到[美国研究与技术创新管理部门 - 运输统计局][rita-website]。
@@ -75,8 +73,8 @@
     它将提取大小约为 60MB 的 .csv 文件。
 4. 使用以下命令在 WASB（由 HDInsight 使用的分布式数据存储）上创建一个新目录并复制该文件：
    
-    hdfs dfs -mkdir -p /tutorials/flightdelays/data
-    hdfs dfs -put FILENAME.csv /tutorials/flightdelays/data/
+        hdfs dfs -mkdir -p /tutorials/flightdelays/data
+        hdfs dfs -put FILENAME.csv /tutorials/flightdelays/data/
 
 ## 创建并运行 HiveQL
 使用以下步骤将 CSV 文件中的数据导入到名为 **Delays** 的 Hive 表中。

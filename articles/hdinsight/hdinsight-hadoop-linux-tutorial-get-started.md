@@ -32,7 +32,7 @@
 ## 先决条件
 在开始阅读本教程前，必须具备以下条件：
 
-* **Azure 订阅**：若要创建免费试用一个月的帐户，请浏览到 [azure.microsoft.com/free](https://azure.microsoft.com/free)。
+* **Azure 订阅**：若要创建免费试用一个月的帐户，请浏览到 [https://www.azure.cn/pricing/1rmb-trial/](https://www.azure.cn/pricing/1rmb-trial/)。
 
 ### 访问控制要求
 [AZURE.INCLUDE [access-control](../../includes/hdinsight-access-control-requirements.md)]
@@ -41,7 +41,7 @@
 
 大部分 Hadoop 作业都是批处理作业。你可以创建群集、运行某些作业，然后删除该群集。在此部分中，会使用 [Azure Resource Manager 模板](/documentation/articles/resource-group-template-deploy/)在 HDInsight 中创建基于 Linux 的 Hadoop 群集。可以完全自定义 Resource Manager 模板；采用此模板，可以轻松创建 HDInsight 等 Azure 资源。对于遵循本教程，Resource Manager 模板体验不是必需的。对于其他群集创建方法以及了解本教程中使用的属性，请参阅[创建 HDInsight 群集](/documentation/articles/hdinsight-hadoop-provision-linux-clusters/)。使用页面顶部的选择器来选择群集创建选项。
 
-本教程中所用的 Resource Manager 模板位于 Github 中 (https://azure.microsoft.com/resources/templates/101-hdinsight-linux-ssh-password/)。
+本教程中所用的 Resource Manager 模板位于 Github 中 (https://github.com/Azure/azure-quickstart-templates/tree/master/101-hdinsight-linux-ssh-password/)。
 
 1. 单击以下映像以登录到 Azure，然后在 Azure 门户预览中打开 Resource Manager 模板。
    

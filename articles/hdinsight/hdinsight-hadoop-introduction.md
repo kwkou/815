@@ -25,7 +25,7 @@
 ## HDInsight 上的 Hadoop 是什么？
 Hadoop 是指一个由开源软件组成的生态系统，其所构成的框架适用于对计算机群集上的大数据集进行分布式处理、存储和分析。Azure HDInsight 使 **Hortonworks 数据平台 (HDP)** 分发中的 Hadoop 组件能够在云中使用，可部署具有高可靠性和可用性的托管群集，并使用 Active Directory 提供企业级安全性和监管。
 
-Apache Hadoop 是进行大数据处理的原始开源项目。下面是被视为 Hadoop 技术堆栈一部分的相关软件和实用程序的开发情况，包括 Apache Hive、Apache HBase、Apache Spark、Apache Kafka 等。有关详细信息，请参阅 [HDInsight 中的 Hadoop 生态系统概述](#overview)。
+Apache Hadoop 是进行大数据处理的原始开源项目。下面是被视为 Hadoop 技术堆栈一部分的相关软件和实用程序的开发情况，包括 Apache Hive、Apache HBase、Apache Spark 等。有关详细信息，请参阅 [HDInsight 中的 Hadoop 生态系统概述](#overview)。
 
 ## 什么是大数据？
 大数据描述各种大型数字信息，从 Twitter 源中的文本到工业设备的传感器信息，再到客户在网站上进行浏览和购买的信息。大数据可以是历史数据（即已存储的数据），也可以是实时数据（即从数据源直接流式传输的数据）。大数据的收集量日益增加，收集速度越来越快，收集格式也越来越多。
@@ -33,9 +33,9 @@ Apache Hadoop 是进行大数据处理的原始开源项目。下面是被视为
 若要通过分析大数据来提供可行的情报或见解，必须收集相关数据并提出适当的问题。此外还需确保数据可供访问，已进行过清理和分析，并以可用方式提供。这就是有关 HDInsight 中的 Hadoop 的大数据分析的有用之处。
 
 ## <a name="overview"></a>HDInsight 中的 Hadoop 生态系统概述
-HDInsight 是快速扩展的适用于大数据分析的 Apache Hadoop 技术堆栈在 Azure 上的云分发。它包括 Apache Spark、HBase、Kafka、Storm、Pig、Hive、Interactive Hive、Sqoop、Oozie、Ambari 等的实现。HDInsight 还可集成商业智能 (BI) 工具，例如 Power BI、Excel、SQL Server Analysis Services 和 SQL Server Reporting Services。
+HDInsight 是快速扩展的适用于大数据分析的 Apache Hadoop 技术堆栈在 Azure 上的云分发。它包括 Apache Spark、HBase、Storm、Pig、Hive、Interactive Hive、Sqoop、Oozie、Ambari 等的实现。HDInsight 还可集成商业智能 (BI) 工具，例如 Power BI、Excel、SQL Server Analysis Services 和 SQL Server Reporting Services。
 
-### Hadoop、HBase、Spark、Kafka、Interactive Hive、Storm、自定义群集和其他群集
+### Hadoop、HBase、Spark、Interactive Hive、Storm、自定义群集和其他群集
 HDInsight 提供以下群集类型：
 
 * **[Apache Hadoop](https://wiki.apache.org/hadoop)**：为可靠的数据存储提供了 [HDFS](#hdfs) 和一个简单的 [MapReduce](#mapreduce) 编程模型，以并行地处理和分析数据。
@@ -44,7 +44,6 @@ HDInsight 提供以下群集类型：
 * **[Microsoft R Server](https://msdn.microsoft.com/microsoft-r/rserver)**：用于托管和管理并行分布式 R 进程的企业级服务器。它可让数据科研人员、统计人员和 R 程序员根据需要访问 HDInsight 上可缩放的分布式分析方法。请参阅 [HDInsight 上的 R Server 概述](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-r-server-overview)。
 * **[Apache Storm](https://storm.incubator.apache.org/)**：一个分布式实时计算系统，用于快速处理大型数据流。Storm 以 HDInsight 中的托管群集形式提供。请参阅[使用 Storm 和 Hadoop 分析实时传感器数据](/documentation/articles/hdinsight-storm-sensor-data-analysis/)。
 * **[Apache Interactive Hive 预览版（AKA：Live Long and Process）](https://cwiki.apache.org/confluence/display/Hive/LLAP)**：内存中缓存用于实现交互式且更快的 Hive 查询。请参阅[在 HDInsight 中使用 Interactive Hive](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-use-interactive-hive)。
-* **[Apache Kafka 预览版](https://kafka.apache.org/)**：用于生成流式处理数据管道和应用程序的开源平台。Kafka 还提供了消息队列功能，可用于发布和订阅数据流。请参阅 [Apache Kafka on HDInsight 简介](https://docs.microsoft.com/azure/hdinsight/hdinsight-apache-kafka-introduction)。
 * **[已加入域的群集预览版](https://docs.microsoft.com/azure/hdinsight/hdinsight-domain-joined-introduction)**：已加入到 Active Directory 域，以便用户可以控制访问权限并提供数据管理的群集。
 * **[使用脚本操作的自定义群集](/documentation/articles/hdinsight-hadoop-customize-cluster-linux/)**：使用在预配期间运行的脚本安装其他组件的群集。
 
@@ -171,9 +170,6 @@ HDInsight 群集支持以下特定于 Hadoop 生态系统的语言：
 
 若要详细了解 HDInsight 中的 Hadoop 的优势，请参阅 [HDInsight 的 Azure 功能页][marketing-page]。
 
-## HDInsight 标准版和 HDInsight 高级版
-HDInsight 提供两个类别的大数据云产品：标准和高级。HDInsight 标准版提供企业级群集，组织可使用它运行其大数据工作负荷。HDInsight 高级版基于标准版生成，提供针对 HDInsight 群集的高级分析和安全功能。有关详细信息，请参阅 [Azure HDInsight 高级版](/documentation/articles/hdinsight-component-versioning/#hdinsight-standard-and-hdinsight-premium)
-
 ## <a id="resources"></a>用于详细了解大数据分析、Hadoop 和 HDInsight 的资源
 使用以下资源在此介绍云中 Hadoop 和大数据分析的简介的基础上构建。
 
@@ -181,7 +177,7 @@ HDInsight 提供两个类别的大数据云产品：标准和高级。HDInsight 
 * [HDInsight 文档](/documentation/services/hdinsight/)：Azure HDInsight 上的 Hadoop 文档页，包含文章、视频及其他资源的链接。
 * [HDInsight 中的 Hadoop 入门](/documentation/articles/hdinsight-hadoop-linux-tutorial-get-started/)：有关预配 HDInsight Hadoop 群集和运行示例 Hive 查询的快速入门教程。
 * [HDInsight 中的 Spark 入门](/documentation/articles/hdinsight-apache-spark-jupyter-spark-sql/)：介绍如何创建 Spark 群集和运行交互式 Spark SQL 查询的快速入门教程。
-* [在 HDInsight 上使用 R Server](/documentation/articles/hdinsight-hadoop-r-server-get-started/)：开始在 HDInsight 高级版中使用 R Server。
+* [在 HDInsight 上使用 R Server](/documentation/articles/hdinsight-hadoop-r-server-get-started/)：开始在 HDInsight 中使用 R Server。
 * [预配 HDInsight 群集](/documentation/articles/hdinsight-hadoop-provision-linux-clusters/)：了解如何通过 Azure 门户预览、Azure CLI 或 Azure PowerShell 预配 HDInsight Hadoop 群集。
 
 ### Apache Hadoop

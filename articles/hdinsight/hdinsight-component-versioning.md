@@ -23,35 +23,6 @@
 # 可与 HDInsight 使用的不同 Hadoop 组件有哪些？
 了解 HDInsight 提供的不同服务级别，以及 HDInsight 所包括的不同 Hadoop 组件版本。
 
-## <a name="hdinsight-standard-and-hdinsight-premium"></a> HDInsight 标准版和 HDInsight 高级版
-Azure HDInsight 提供了两个类别的大数据云产品/服务：**标准**和**高级**。下表部分列出了**仅可作为高级版的一部分**使用的功能。没有在此处的表格中显式调用的功能将用作为标准版的一部分可用。
-
-> [AZURE.NOTE]
-HDInsight 高级版产品/服务当前处于预览状态，仅可用于 Linux 群集。
-> 
-> 
-
-| HDInsight 高级版功能 | 说明 |
-| --- | --- |
-| 已加入域的 HDInsight 群集 |将 HDInsight 群集加入到 Azure Active Directory (AAD) 域以实现企业级安全性。用户现在可以配置企业中员工的列表，这些员工可以通过 Azure Active Directory 进行身份验证，以便登录到 HDInsight 群集。企业管理员还可以使用 [Apache Ranger](http://hortonworks.com/apache/ranger/) 配置基于角色的访问控制以确保 Hive 安全性，根据需要尽可能限制对数据的访问权限。最后，管理员可以审核员工访问的数据以及对访问控制策略所做的任何更改，对公司资源进行高度控制。 |
-
-### 高级版支持的群集类型
-下表列出了 HDInsight 群集类型和高级版支持矩阵。
-
-| 群集类型 | 标准 | 高级 |
-| --- | --- | --- |
-| Hadoop |是 |是（仅限 HDInsight 3.5） |
-| Spark |是 |否 |
-| HBase |是 |否 |
-| Storm |是 |否 |
-| 交互式 Hive（预览版） |是 |否 |
-| R Server（预览版） |是 |否 |
-
-随着 HDInsight 高级版中包含的群集类型更多，此表也会随之更新。
-
-### 定价和 SLA
-有关 HDInsight 高级版的定价和 SLA 的详细信息，请参阅 [HDInsight pricing](/pricing/details/hdinsight/)（HDInsight 定价）。
-
 ## 可与不同 HDInsight 版本使用的 Hadoop 组件
 Azure HDInsight 支持多个可随时部署的 Hadoop 群集版本。每个版本选项创建 Hortonworks 数据平台 (HDP) 分发的特定版本和该分发内包含的一组组件。下表中逐项列出了与 HDInsight 群集版本关联的组件版本。请注意，Azure HDInsight 使用的默认群集版本当前是 3.4（到 09/14/2016 为止）并基于 HDP 2.4。
 

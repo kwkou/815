@@ -88,7 +88,7 @@ HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET Framework 应用
 				private const string ExistingBlobContainer = "<Default Blob Container Name>";
 				private const string NewClusterName = "<HDInsight Cluster Name>";
 				private const int NewClusterNumWorkerNodes = 2;
-				private const string NewClusterLocation = "EAST US 2";     // Must be the same as the default Storage account
+				private const string NewClusterLocation = "CHINA EAST";     // Must be the same as the default Storage account
 				private const OSType NewClusterOsType = OSType.Windows;
 				private const string NewClusterType = "Hadoop";
 				private const string NewClusterVersion = "3.2";
@@ -208,7 +208,7 @@ HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET Framework 应用
     $defaultStorageAccountName = $namePrefix + "store"
     $defaultBlobContainerName = $hdinsightClusterName
 
-    $location = "China East 2"
+    $location = "China East"
     #endregion
 
     # Treat all errors as terminating

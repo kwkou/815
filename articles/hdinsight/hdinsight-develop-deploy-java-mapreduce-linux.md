@@ -28,8 +28,6 @@
 
 - **Azure CLI**
 
-    [AZURE.INCLUDE [use-latest-version](../../includes/hdinsight-use-latest-cli.md)]
-
 ##配置环境变量
 
 可以在安装 Java 和 JDK 时设置以下环境变量。不过，你应该检查它们是否存在并且包含系统的正确值。

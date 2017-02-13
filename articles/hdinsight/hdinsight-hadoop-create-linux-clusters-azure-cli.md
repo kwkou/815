@@ -39,8 +39,6 @@ Linux 是在 HDInsight 3.4 版或更高版本上使用的唯一操作系统。�
 
 * **一个 Azure 订阅**。请参阅[获取 Azure 试用版](/pricing/1rmb-trial/)。
 * **Azure CLI**。本文档中的步骤最近已使用 Azure CLI 版本 0.10.1 进行测试。
-  
-[AZURE.INCLUDE [use-latest-version](../../includes/hdinsight-use-latest-cli.md)]
 
 ### 访问控制要求
 [AZURE.INCLUDE [access-control](../../includes/hdinsight-access-control-requirements.md)]
