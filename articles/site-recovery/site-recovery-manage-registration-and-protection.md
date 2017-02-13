@@ -5,8 +5,7 @@
     documentationcenter=""
     author="rayne-wiselman"
     manager="cfreeman"
-    editor="" />  
-
+    editor="" />
 <tags
     ms.assetid="ef1f31d5-285b-4a0f-89b5-0123cd422d80"
     ms.service="site-recovery"
@@ -14,8 +13,8 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="storage-backup-recovery"
-    ms.date="12/19/2016"
-    wacn.date="01/04/2017"
+    ms.date="12/28/2016"
+    wacn.date="02/10/2017"
     ms.author="raynew" />  
 
 
@@ -25,24 +24,33 @@ Azure Site Recovery 服务有助于实现业务连续性和灾难恢复 (BCDR) �
 
 本文介绍如何从 Azure 门户的恢复服务保管库中取消注册服务器，以及如何禁用受 Site Recovery 保护的计算机的保护。
 
-请将任何评论或问题发布到本文底部，或者发布到 [Azure 恢复服务论坛](https://social.msdn.microsoft.com/Forums/zh-cn/home?forum=hypervrecovmgr)。
 
-## 取消注册配置服务器
+## 取消注册已连接的配置服务器
 
-如果将 Windows/Linux 物理服务器复制到 Azure，则可将配置服务器从保管库取消注册，如下所示：
+如果将 Windows/Linux 物理服务器复制到 Azure，可按如下所述从保管库中取消注册已连接的配置服务器：
 
 1. 禁用计算机保护。在“受保护的项”>“复制的项”中，右键单击计算机 >“删除”。
 2. 取消任何策略的关联。在“Site Recovery 基础结构”>“对于 VMWare 和物理机”>“复制策略”中，右键单击关联的策略。右键单击配置服务器 >“取消关联”。
 3. 删除任何其他本地进程或主目标服务器。在“Site Recovery 基础结构”>“对于 VMWare 和物理机”>“配置服务器”中，右键单击服务器 >“删除”。
 4. 删除配置服务器。
 5. 手动卸载在主目标服务器（单独的服务器或在配置服务器上运行的服务器）上运行的移动服务。
-6. 卸载配置服务器。
-7. 卸载任何其他的进程服务器。
+6. 卸载任何其他的进程服务器。
+7. 卸载配置服务器。
 8. 在配置服务器上，卸载由 Site Recovery 安装的 MySQL 实例。
 9. 在配置服务器的注册表中删除项 ``HKEY_LOCAL_MACHINE\Software\Microsoft\Azure Site Recovery``。
 
-不管配置服务器是否连接到 Azure，说明都是相同的。
+## 取消注册未连接的配置服务器
 
+如果将 Windows/Linux 物理服务器复制到 Azure，可按如下所述从保管库中取消注册未连接的配置服务器：
+
+1. 禁用计算机保护。在“受保护的项”>“复制的项”中，右键单击计算机 >“删除”。选择“停止管理计算机”。
+2. 删除任何其他本地进程或主目标服务器。在“Site Recovery 基础结构”>“对于 VMWare 和物理机”>“配置服务器”中，右键单击服务器 >“删除”。
+3. 删除配置服务器。
+4. 手动卸载在主目标服务器（单独的服务器或在配置服务器上运行的服务器）上运行的移动服务。
+5. 卸载任何其他的进程服务器。
+6. 卸载配置服务器。
+7. 在配置服务器上，卸载由 Site Recovery 安装的 MySQL 实例。
+8. 在配置服务器的注册表中删除项 ``HKEY_LOCAL_MACHINE\Software\Microsoft\Azure Site Recovery``。
 
 ## 取消注册连接的 VMM 服务器
 
@@ -181,7 +189,7 @@ Azure Site Recovery 服务有助于实现业务连续性和灾难恢复 (BCDR) �
 
 ### 清理保护设置 - 复制到辅助 VMM 站点
 
-若已选择“停止管理计算机”且要复制到辅助站点，则请在主服务器上运行此脚本，以便清理主虚拟机的设置。在 VMM 控制台中，单击“PowerShell”按钮打开 VMM PowerShell 控制台。将 SQLVM1 替换为你的虚拟机名称。
+若已选择“停止管理计算机”且要复制到辅助站点，则请在主服务器上运行此脚本，以便清理主虚拟机的设置。在 VMM 控制台中，单击“PowerShell”按钮打开 VMM PowerShell 控制台。将 SQLVM1 替换为相应虚拟机名称。
 
 	     $vm = get-scvirtualmachine -Name "SQLVM1"
 	     Set-SCVirtualMachine -VM $vm -ClearDRProtection
@@ -228,4 +236,5 @@ Azure Site Recovery 服务有助于实现业务连续性和灾难恢复 (BCDR) �
 	    $replicationService = Get-WmiObject -Namespace "root\virtualization\v2"  -Query "Select * From Msvm_ReplicationService"
 	    $replicationService.RemoveReplicationRelationship($vm.__PATH)
 
-<!---HONumber=Mooncake_Quality_Review_0104_2017-->
+<!---HONumber=Mooncake_0206_2017-->
+<!--Update_Description: wording update; add "取消注册未连接的配置服务器" section-->
