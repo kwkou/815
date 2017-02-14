@@ -222,4 +222,4 @@ VPN 网关基本上是一个多宿主设备，其中一个 NIC 进入客户专�
 请在[虚拟网络常见问题](/documentation/articles/virtual-networks-faq/)中查看更多虚拟网络信息。
 
 <!---HONumber=Mooncake_0206_2017-->
-<!--Update_Description: update meta properties & wording update->
+<!--Update_Description: update meta properties & wording update-->
