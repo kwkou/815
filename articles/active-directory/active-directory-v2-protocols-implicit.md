@@ -1,22 +1,21 @@
 <properties
-	pageTitle="Azure AD v2.0 隐式流 | Azure"
-	description="使用单页面应用隐式流的 Azure AD v2.0 实现构建 Web 应用程序。"
-	services="active-directory"
-	documentationCenter=""
-	authors="dstrockis"
-	manager="msmbaldwin"
-	editor=""/>  
-
-
+    pageTitle="Azure AD v2.0 隐式流 | Azure"
+    description="使用单页面应用隐式流的 Azure AD v2.0 实现构建 Web 应用程序。"
+    services="active-directory"
+    documentationcenter=""
+    author="dstrockis"
+    manager="mbaldwin"
+    editor="" />
 <tags
-	ms.service="active-directory"
-	ms.workload="identity"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="09/16/2016"
-	wacn.date="10/25/2016"
-	ms.author="dastrock"/>  
+    ms.assetid="3605931f-dc24-4910-bb50-5375defec6a8"
+    ms.service="active-directory"
+    ms.workload="identity"
+    ms.tgt_pltfrm="na"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.date="01/07/2017"
+    wacn.date="02/13/2017"
+    ms.author="dastrock" />  
 
 
 # v2.0 协议 - 使用隐式流的 SPA
@@ -33,8 +32,10 @@
 但是，如果你不想要使用单一页面应用程序中的库，而是自行发送协议消息，请遵循下面的常规步骤。
 
 > [AZURE.NOTE]
-	v2.0 终结点并不支持所有 Azure Active Directory 方案和功能。若要确定是否应使用 v2.0 终结点，请阅读 [v2.0 限制](/documentation/articles/active-directory-v2-limitations/)。
-    
+v2.0 终结点并不支持所有 Azure Active Directory 方案和功能。若要确定是否应使用 v2.0 终结点，请阅读 [v2.0 限制](/documentation/articles/active-directory-v2-limitations/)。
+> 
+> 
+
 ## 协议图
 整个隐式登录流如下所示 - 下面将详细描述每个步骤。
 
@@ -45,35 +46,38 @@
 若要一开始将用户登录到应用，可以发送 [OpenID Connect](/documentation/articles/active-directory-v2-protocols-oidc/) 授权请求，以及从 v2.0 终结点获取 `id_token`：
 
 
-		// Line breaks for legibility only
-		
-		https://login.microsoftonline.com/{tenant}/oauth2/v2.0/authorize?
-		client_id=6731de76-14a6-49ae-97bc-6eba6914391e
-		&response_type=id_token+token
-		&redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F
-		&scope=openid%20https%3A%2F%2Fgraph.microsoft.com%2Fmail.read
-		&response_mode=fragment
-		&state=12345
-		&nonce=678910
-		
+	// Line breaks for legibility only
 
-> [AZURE.TIP] 单击下面的链接以执行此请求！ 登录之后，你的浏览器应重定向至地址栏中具有 `id_token` 的 `https://localhost/myapp/`。<a href="https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=6731de76-14a6-49ae-97bc-6eba6914391e&response_type=id_token+token&redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F&scope=openid%20https%3A%2F%2Fgraph.microsoft.com%2Fmail.read&response_mode=fragment&state=12345&nonce=678910" target="_blank">https://login.microsoftonline.com/common/oauth2/v2.0/authorize...</a>
+	https://login.microsoftonline.com/{tenant}/oauth2/v2.0/authorize?
+	client_id=6731de76-14a6-49ae-97bc-6eba6914391e
+	&response_type=id_token+token
+	&redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F
+	&scope=openid%20https%3A%2F%2Fgraph.microsoft.com%2Fmail.read
+	&response_mode=fragment
+	&state=12345
+	&nonce=678910
+
+
+> [AZURE.TIP]
+单击下面的链接以执行此请求！ 登录之后，你的浏览器应重定向至地址栏中具有 `id_token` 的 `https://localhost/myapp/`。<a href="https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=6731de76-14a6-49ae-97bc-6eba6914391e&response_type=id_token+token&redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F&scope=openid%20https%3A%2F%2Fgraph.microsoft.com%2Fmail.read&response_mode=fragment&state=12345&nonce=678910" target="_blank">https://login.microsoftonline.com/common/oauth2/v2.0/authorize...</a>
+> 
+> 
 
 | 参数 | | 说明 |
-| ----------------------- | ------------------------------- | --------------- |
-| tenant | 必填 | 请求路径中的 `{tenant}` 值可用于控制哪些用户可以登录应用程序。允许的值为 `common`、`organizations`、`consumers` 和租户标识符。有关更多详细信息，请参阅[协议基础知识](/documentation/articles/active-directory-v2-protocols/#endpoints/)。 |
-| client\_id | 必填 | 注册门户 ([apps.dev.microsoft.com](https://apps.dev.microsoft.com)) 分配给应用的应用程序 ID。 |
-| response\_type | 必填 | 必须包含 OpenID Connect 登录的 `id_token`。也可以包含 response\_type `token`。此处使用 `token`，让应用能够立即从授权终结点接收访问令牌，而无需向授权终结点发出第二次请求。如果使用 `token` response\_type，`scope` 参数必须包含范围，以指出要对哪个资源发出令牌。 |
-| redirect\_uri | 建议 | 应用程序的 redirect\_uri，应用程序可在此发送及接收身份验证响应。其必须完全符合在门户中注册的其中一个 redirect\_uris，否则必须是编码的 url。 |
-| 作用域 | 必填 | 范围的空格分隔列表。对于 OpenID Connect，它必须包含范围 `openid`，该范围在同意 UI 中将转换为“将你登录”权限。（可选）可能需要包含 `email` 或 `profile` [范围](/documentation/articles/active-directory-v2-scopes/)，以获取对其他用户数据的访问权限。也可以在此请求中包含其他范围，以请求同意各种资源。 |
-| response\_mode | 建议 | 指定将生成的令牌送回到应用程序所应该使用的方法。对于隐式流应该是 `fragment`。 |
-| state | 建议 | 同样随令牌响应返回的请求中所包含的值。其可以是你想要的任何内容的字符串。随机生成的唯一值通常用于[防止跨站点请求伪造攻击](http://tools.ietf.org/html/rfc6749#section-10.12)。该状态也用于在身份验证请求出现之前，于应用程序中编码用户的状态信息，例如之前所在的网页或视图。 |
-| nonce | 必填 | 由应用程序生成且包含在请求中的值，以声明方式包含在生成的 id\_token 中。应用程序接着便可确认此值，以减少令牌重新执行攻击。此值通常是随机的唯一字符串，可用以识别请求的来源。 |
-| prompt | 可选 | 表示需要的用户交互类型。目前唯一的有效值为“login”、“none”和“consent”。`prompt=login` 强制用户在该请求上输入凭据，否定单一登录。`prompt=none` 则相反 — 它确保不对用户显示任何交互式提示。如果请求无法通过单一登录以无提示方式完成，v2.0 终结点将返回错误。`prompt=consent` 将在用户登录之后触发 OAuth 同意对话框，要求用户向应用授予权限。 |
-| login\_hint | 可选 | 如果事先知道其用户名称，可用于预先填充用户登录页面的用户名称/电子邮件地址字段。通常，应用将在重新身份验证期间使用此参数，并且已经使用 `preferred_username` 声明从前次登录提取用户名。 |
-| domain\_hint | 可选 | 可以是 `consumers` 或 `organizations` 之一。如果包含，它跳过用户在 v2.0 登录页面上经历的基于电子邮件的发现过程，导致稍微更加流畅的用户体验。通常，应用将在重新身份验证期间使用此参数，方法是从 id\_token 提取 `tid` 声明。如果 `tid` 声明值是 `9188040d-6c67-4c5b-b112-36a304b66dad`，应该使用 `domain_hint=consumers`。否则使用 `domain_hint=organizations`。 |
+| --- | --- | --- |
+| tenant |必填 |请求路径中的 `{tenant}` 值可用于控制哪些用户可以登录应用程序。允许的值为 `common`、`organizations`、`consumers` 和租户标识符。有关更多详细信息，请参阅[协议基础知识](/documentation/articles/active-directory-v2-protocols/#endpoints/)。 |
+| client\_id |必填 |注册门户 ([apps.dev.microsoft.com](https://apps.dev.microsoft.com/?referrer=/documentation/articles&deeplink=/appList)) 分配给应用的应用程序 ID。 |
+| response\_type |必填 |必须包含 OpenID Connect 登录的 `id_token`。也可以包含 response\_type `token`。此处使用 `token`，让应用能够立即从授权终结点接收访问令牌，而无需向授权终结点发出第二次请求。如果使用 `token` response\_type，`scope` 参数必须包含范围，以指出要对哪个资源发出令牌。 |
+| redirect\_uri |建议 |应用的 redirect\_uri，应用可在此发送及接收身份验证响应。其必须完全符合在门户中注册的其中一个 redirect\_uris，否则必须是编码的 url。 |
+| 作用域 |必填 |范围的空格分隔列表。对于 OpenID Connect，它必须包含范围 `openid`，该范围在同意 UI 中将转换为“将你登录”权限。（可选）可能需要包含 `email` 或 `profile` [范围](/documentation/articles/active-directory-v2-scopes/)，以获取对其他用户数据的访问权限。也可以在此请求中包含其他范围，以请求同意各种资源。 |
+| response\_mode |建议 |指定将生成的令牌送回到应用程序所应该使用的方法。对于隐式流应该是 `fragment`。 |
+| state |建议 |同样随令牌响应返回的请求中所包含的值。可以是想要的任何内容的字符串。随机生成的唯一值通常用于[防止跨站点请求伪造攻击](http://tools.ietf.org/html/rfc6749#section-10.12)。该状态也用于在身份验证请求出现之前，于应用程序中编码用户的状态信息，例如之前所在的网页或视图。 |
+| nonce |必填 |由应用程序生成且包含在请求中的值，以声明方式包含在生成的 id\_token 中。应用程序接着便可确认此值，以减少令牌重新执行攻击。此值通常是随机的唯一字符串，可用以识别请求的来源。 |
+| prompt |可选 |表示需要的用户交互类型。目前唯一的有效值为“login”、“none”和“consent”。`prompt=login` 强制用户在该请求上输入凭据，否定单一登录。`prompt=none` 则相反 — 它确保不对用户显示任何交互式提示。如果请求无法通过单一登录以无提示方式完成，v2.0 终结点将返回错误。`prompt=consent` 将在用户登录之后触发 OAuth 同意对话框，要求用户向应用授予权限。 |
+| login\_hint |可选 |如果事先知道其用户名称，可用于预先填充用户登录页面的用户名称/电子邮件地址字段。通常，应用将在重新身份验证期间使用此参数，并且已经使用 `preferred_username` 声明从前次登录提取用户名。 |
+| domain\_hint |可选 |可以是 `consumers` 或 `organizations` 之一。如果包含，它跳过用户在 v2.0 登录页面上经历的基于电子邮件的发现过程，导致稍微更加流畅的用户体验。通常，应用将在重新身份验证期间使用此参数，方法是从 id\_token 提取 `tid` 声明。如果 `tid` 声明值是 `9188040d-6c67-4c5b-b112-36a304b66dad`，应该使用 `domain_hint=consumers`。否则使用 `domain_hint=organizations`。 |
 
-此时，请求用户输入其凭据并完成身份验证。v2.0 终结点也将确保用户已经同意 `scope` 查询参数中指示的权限。如果用户未曾同意这些权限的任何一项，就请求用户同意请求的权限。[此处提供了权限、同意与多租户应用](/documentation/articles/active-directory-v2-scopes/)的详细信息。
+此时，将请求用户输入凭据并完成身份验证。v2.0 终结点也将确保用户已经同意 `scope` 查询参数中指示的权限。如果用户未曾同意这些权限的任何一项，则将请求用户同意请求的权限。[此处提供了权限、同意与多租户应用](/documentation/articles/active-directory-v2-scopes/)的详细信息。
 
 用户经过身份验证并同意后，v2.0 终结点将使用 `response_mode` 参数中指定的方法，将响应返回到位于所指示的 `redirect_uri` 的应用。
 
@@ -81,7 +85,7 @@
 
 使用 `response_mode=fragment` 和 `response_type=id_token+token` 的成功响应如下所示（包含换行符以方便阅读）：
 
-		
+
 	GET https://localhost/myapp/#
 	access_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Ik5HVEZ2ZEstZnl0aEV1Q...
 	&token_type=Bearer
@@ -92,28 +96,27 @@
 
 
 | 参数 | 说明 |
-| ----------------------- | ------------------------------- |
-| access\_token | 如果 `response_type` 包含 `token`，则包含该参数。应用请求的访问令牌，在本例中为 Microsoft Graph 的访问令牌。访问令牌不得进行解码或检查，可被视为不透明的字符串。 |
-| token\_type | 如果 `response_type` 包含 `token`，则包含该参数。始终为 `Bearer`。 |
-| expires\_in | 如果 `response_type` 包含 `token`，则包含该参数。表示令牌有效的秒数（针对缓存目的）。 |
-| 作用域 | 如果 `response_type` 包含 `token`，则包含该参数。表示 access\_token 的有效范围。 |
-| id\_token | 应用程序请求的 id\_token。可以使用 id\_token 验证用户的标识，并以用户身份开始会话。有关 id\_token 及其内容的更多详细信息，请参阅 [v2.0 终结点令牌参考](/documentation/articles/active-directory-v2-tokens/)。 |
-| state | 如果请求中包含状态参数，响应中就应该出现相同的值。应用程序应该验证请求和响应中的状态值是否完全相同。 |
-
+| --- | --- |
+| access\_token |如果 `response_type` 包含 `token`，则包含该参数。应用请求的访问令牌，在本例中为 Microsoft Graph 的访问令牌。访问令牌不得进行解码或检查，可被视为不透明的字符串。 |
+| token\_type |如果 `response_type` 包含 `token`，则包含该参数。始终为 `Bearer`。 |
+| expires\_in |如果 `response_type` 包含 `token`，则包含该参数。表示令牌有效的秒数（针对缓存目的）。 |
+| 作用域 |如果 `response_type` 包含 `token`，则包含该参数。表示 access\_token 的有效范围。 |
+| id\_token |应用程序请求的 id\_token。可以使用 id\_token 验证用户的标识，并以用户身份开始会话。有关 id\_token 及其内容的更多详细信息，请参阅 [v2.0 终结点令牌参考](/documentation/articles/active-directory-v2-tokens/)。 |
+| state |如果请求中包含 state 参数，响应中就应该出现相同的值。应用应该验证请求和响应中的 state 值是否完全相同。 |
 
 #### 错误响应
 错误响应可能也发送到 `redirect_uri`，让应用可以适当地处理：
 
-		
+
 	GET https://localhost/myapp/#
 	error=access_denied
 	&error_description=the+user+canceled+the+authentication
 
 
 | 参数 | 说明 |
-| ----------------------- | ------------------------------- |
-| error | 用于分类发生的错误类型与响应错误的错误码字符串。 |
-| error\_description | 帮助开发人员识别身份验证错误根本原因的特定错误消息。 |
+| --- | --- |
+| error |可用于分类发生的错误类型与响应错误的错误码字符串。 |
+| error\_description |帮助开发人员识别身份验证错误根本原因的特定错误消息。 |
 
 ## 验证 id\_token
 仅接收 id\_token 不足以验证用户，必须身份验证 id\_token 签名，并按照应用的要求验证令牌中的声明。v2.0 终结点使用 [JSON Web 令牌 (JWT)](http://self-issued.info/docs/draft-ietf-oauth-json-web-token.html) 和公钥加密对令牌进行签名并验证其是否有效。
@@ -132,14 +135,13 @@
 完全验证 id\_token 后，即可开始与用户的会话，并使用 id\_token 中的声明来获取应用中的用户相关信息。此信息可以用于显示、记录和授权，等等。
 
 ## 获取访问令牌
-
 你已经将用户登录到单页面应用，现在可以获取访问令牌以调用受到 Azure AD 保护的 Web API，例如 [Microsoft Graph](https://graph.microsoft.io)。即使你已使用 `token` response\_type 收到令牌，也仍可以使用此方法获取其他资源的令牌，而无需再次将用户重定向到登录页。
 
 在正常的 OpenID Connect/OAuth 流中，可以通过对 v2.0 `/token` 终结点进行请求来实现此目的。但是，v2.0 终结点不支持 CORS 请求，因此进行 AJAX 调用以获取和刷新令牌是不可能的。相反，你可以在隐藏的 iframe 中使用隐式流，以获取其他 Web API 的新令牌：
 
-		
+
 	// Line breaks for legibility only
-		
+
 	https://login.microsoftonline.com/{tenant}/oauth2/v2.0/authorize?
 	client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 	&response_type=token
@@ -151,25 +153,27 @@
 	&login_hint=myuser@mycompany.com
 
 
-> [AZURE.TIP] 请尝试将以下请求复制并粘贴到浏览器选项卡中！ （不要忘记使用适用于用户的正确值替换 `domain_hint` 和 `login_hint`）
-
+> [AZURE.TIP]
+请尝试将以下请求复制并粘贴到浏览器选项卡中！ （不要忘记使用适用于用户的正确值替换 `domain_hint` 和 `login_hint`）
+> 
+> 
 
 	https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=6731de76-14a6-49ae-97bc-6eba6914391e&response_type=token&redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F&scope=https%3A%2F%2Fgraph.microsoft.com%2Fmail.read&response_mode=fragment&state=12345&nonce=678910&prompt=none&domain_hint={{consumers-or-organizations}}&login_hint={{your-username}}
 
 
 | 参数 | | 说明 |
-| ----------------------- | ------------------------------- | --------------- |
-| tenant | 必填 | 请求路径中的 `{tenant}` 值可用于控制哪些用户可以登录应用程序。允许的值为 `common`、`organizations`、`consumers` 和租户标识符。有关更多详细信息，请参阅[协议基础知识](/documentation/articles/active-directory-v2-protocols/#endpoints/)。 |
-| client\_id | 必填 | 注册门户 ([apps.dev.microsoft.com](https://apps.dev.microsoft.com)) 分配给应用的应用程序 ID。 |
-| response\_type | 必填 | 必须包含 OpenID Connect 登录的 `id_token`。还可以包含其他 response\_type，例如 `code`。 |
-| redirect\_uri | 建议 | 应用程序的 redirect\_uri，应用程序可在此发送及接收身份验证响应。其必须完全符合在门户中注册的其中一个 redirect\_uris，否则必须是编码的 url。 |
-| 作用域 | 必填 | 范围的空格分隔列表。若要获取令牌，请包含相应资源请求的所有[范围](/documentation/articles/active-directory-v2-scopes/)。 |
-| response\_mode | 建议 | 指定将生成的令牌送回到应用程序所应该使用的方法。可以是 `query`、`form_post` 或 `fragment` 之一。 |
-| state | 建议 | 同样随令牌响应返回的请求中所包含的值。其可以是你想要的任何内容的字符串。随机生成的唯一值通常用于防止跨站点请求伪造攻击。该状态也用于在身份验证请求出现之前，于应用程序中编码用户的状态信息，例如之前所在的网页或视图。 |
-| nonce | 必填 | 由应用程序生成且包含在请求中的值，以声明方式包含在生成的 id\_token 中。应用程序接着便可确认此值，以减少令牌重新执行攻击。此值通常是随机的唯一字符串，可用以识别请求的来源。 |
-| prompt | 必填 | 若要刷新并获取隐藏的 iframe 中的令牌，应该使用 `prompt=none` 以确保 iframe 会立即返回，而不会在 v2.0 登录页面上挂起。 |
-| login\_hint | 必填 | 若要刷新并获取隐藏 iframe 中的令牌，必须在此提示中包含用户的用户名，以便区分用户在特定时间点可能具有的多个会话。可以使用 `preferred_username` 声明从前次登录提取用户名。 |
-| domain\_hint | 必填 | 可以是 `consumers` 或 `organizations` 之一。若要刷新并获取隐藏 iframe 中的令牌，必须在请求中包含 domain\_hint。应该从前次登录的 id\_token 提取 `tid` 声明，以确定要使用哪个值。如果 `tid` 声明值是 `9188040d-6c67-4c5b-b112-36a304b66dad`，应该使用 `domain_hint=consumers`。否则使用 `domain_hint=organizations`。 |
+| --- | --- | --- |
+| tenant |必填 |请求路径中的 `{tenant}` 值可用于控制哪些用户可以登录应用程序。允许的值为 `common`、`organizations`、`consumers` 和租户标识符。有关更多详细信息，请参阅[协议基础知识](/documentation/articles/active-directory-v2-protocols/#endpoints/)。 |
+| client\_id |必填 |注册门户 ([apps.dev.microsoft.com](https://apps.dev.microsoft.com/?referrer=/documentation/articles&deeplink=/appList)) 分配给应用的应用程序 ID。 |
+| response\_type |必填 |必须包含 OpenID Connect 登录的 `id_token`。还可以包含其他 response\_type，例如 `code`。 |
+| redirect\_uri |建议 |应用的 redirect\_uri，应用可在此发送及接收身份验证响应。其必须完全符合在门户中注册的其中一个 redirect\_uris，否则必须是编码的 url。 |
+| 作用域 |必填 |范围的空格分隔列表。若要获取令牌，请包含相应资源请求的所有[范围](/documentation/articles/active-directory-v2-scopes/)。 |
+| response\_mode |建议 |指定将生成的令牌送回到应用程序所应该使用的方法。可以是 `query`、`form_post` 或 `fragment` 之一。 |
+| state |建议 |同样随令牌响应返回的请求中所包含的值。其可以是你想要的任何内容的字符串。随机生成的唯一值通常用于防止跨站点请求伪造攻击。该状态也用于在身份验证请求出现之前，于应用程序中编码用户的状态信息，例如之前所在的网页或视图。 |
+| nonce |必填 |由应用程序生成且包含在请求中的值，以声明方式包含在生成的 id\_token 中。应用程序接着便可确认此值，以减少令牌重新执行攻击。此值通常是随机的唯一字符串，可用以识别请求的来源。 |
+| prompt |必填 |若要刷新并获取隐藏的 iframe 中的令牌，应该使用 `prompt=none` 以确保 iframe 会立即返回，而不会在 v2.0 登录页面上挂起。 |
+| login\_hint |必填 |若要刷新并获取隐藏 iframe 中的令牌，必须在此提示中包含用户的用户名，以便区分用户在特定时间点可能具有的多个会话。可以使用 `preferred_username` 声明从前次登录提取用户名。 |
+| domain\_hint |必填 |可以是 `consumers` 或 `organizations` 之一。若要刷新并获取隐藏 iframe 中的令牌，必须在请求中包含 domain\_hint。应该从前次登录的 id\_token 提取 `tid` 声明，以确定要使用哪个值。如果 `tid` 声明值是 `9188040d-6c67-4c5b-b112-36a304b66dad`，应该使用 `domain_hint=consumers`。否则使用 `domain_hint=organizations`。 |
 
 借助 `prompt=none` 参数，此请求将立即成功或立即失败，并返回应用程序。成功的响应会通过 `response_mode` 参数中指定的方法，发送到位于所指示的 `redirect_uri` 的应用。
 
@@ -186,12 +190,12 @@
 
 
 | 参数 | 说明 |
-| ----------------------- | ------------------------------- |
-| access\_token | 应用请求的令牌。 |
-| token\_type | 始终为 `Bearer`。 |
-| state | 如果请求中包含状态参数，响应中就应该出现相同的值。应用程序应该验证请求和响应中的状态值是否完全相同。 |
-| expires\_in | 访问令牌的有效期（以秒为单位）。 |
-| 作用域 | 访问令牌有效的范围。 |
+| --- | --- |
+| access\_token |应用请求的令牌。 |
+| token\_type |始终为 `Bearer`。 |
+| state |如果请求中包含 state 参数，响应中就应该出现相同的值。应用程序应该验证请求和响应中的状态值是否完全相同。 |
+| expires\_in |访问令牌的有效期（以秒为单位）。 |
+| 作用域 |访问令牌有效的范围。 |
 
 #### 错误响应
 错误响应还可能发送到 `redirect_uri`，因此应用可以适当地对其进行处理。如果是 `prompt=none`，预期的错误为：
@@ -203,16 +207,14 @@
 
 
 | 参数 | 说明 |
-| ----------------------- | ------------------------------- |
-| error | 用于分类发生的错误类型与响应错误的错误码字符串。 |
-| error\_description | 帮助开发人员识别身份验证错误根本原因的特定错误消息。 |
+| --- | --- |
+| error |可用于分类发生的错误类型与响应错误的错误码字符串。 |
+| error\_description |帮助开发人员识别身份验证错误根本原因的特定错误消息。 |
 
 如果在 iframe 请求中收到此错误，用户必须再次以交互方式登录以检索新令牌。可以选择对应用程序合理的任何方式处理这种情况。
 
 ## 刷新令牌
-
 `id_token` 和 `access_token` 很快就会过期，因此应用必须准备好定期刷新这些令牌。若要刷新任一类型的令牌，可以通过使用 `prompt=none` 参数控制 Azure AD 的行为，来执行上述同一隐藏的 iframe 请求。如果想要接收新的 `id_token`，请务必使用 `response_type=id_token` 和 `scope=openid`，以及 `nonce` 参数。
-
 
 ## 发送注销请求
 
@@ -226,7 +228,7 @@ When you wish to sign the user out of the  app, it is not sufficient to clear yo
 
 You can simply redirect the user to the `end_session_endpoint` listed in the OpenID Connect metadata document:
 
-		
+
 	GET https://login.microsoftonline.com/common/oauth2/v2.0/logout?
 	post_logout_redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F
 
@@ -237,4 +239,5 @@ You can simply redirect the user to the `end_session_endpoint` listed in the Ope
 
 -->
 
-<!---HONumber=Mooncake_1017_2016-->
+<!---HONumber=Mooncake_0206_2017-->
+<!--Update_Description: wording update-->
