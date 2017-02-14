@@ -5,13 +5,13 @@
 
 若要查看缓存，请单击“更多服务”>“Redis 缓存”。如果你最近浏览过 Redis 缓存，则可以从列表中直接单击“Redis 缓存”，而无需单击“更多服务”。
 
-选择所需缓存以查看其属性。
+选择所需的缓存查看并配置其设置。
 
 ![Azure Redis 缓存浏览缓存列表](./media/redis-cache-browse/redis-caches.png)  
 
 
-单击“设置”或“所有设置”以查看和配置缓存。
+可以通过“Redis 缓存”边栏选项卡查看并配置缓存。
 
 ![Redis 缓存的所有设置](./media/redis-cache-browse/redis-cache-blade.png)  
 
-<!---HONumber=Mooncake_1114_2016-->
+<!---HONumber=Mooncake_0206_2017-->
