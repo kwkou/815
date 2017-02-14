@@ -65,7 +65,7 @@
 
 ## IP 地址范围
 
-密钥保管库服务会接着使用其他 Azure 资源（如 PaaS 基础结构），因此不可能提供密钥保管库服务终结点在任意给定时间会具有的特定 IP 地址范围。但是，如果防火墙仅支持 IP 地址范围，请参阅 [Azure 数据中心 IP 范围](https://www.microsoft.com/en-us/download/details.aspx?id=41653)文档。对于身份验证和标识 (Azure Active Directory)，应用程序必须能够连接到[身份验证和标识地址](https://support.office.com/article/Office-365-URLs-and-IP-address-ranges-8548a211-3fe7-47cb-abb1-355ea5aa88a2)中所述的终结点。
+密钥保管库服务会接着使用其他 Azure 资源（如 PaaS 基础结构），因此不可能提供密钥保管库服务终结点在任意给定时间会具有的特定 IP 地址范围。但是，如果防火墙仅支持 IP 地址范围，请参阅 [Azure 数据中心 IP 范围](https://www.microsoft.com/en-us/download/details.aspx?id=42064)文档。对于身份验证和标识 (Azure Active Directory)，应用程序必须能够连接到[身份验证和标识地址](https://support.office.com/article/Office-365-URLs-and-IP-address-ranges-8548a211-3fe7-47cb-abb1-355ea5aa88a2)中所述的终结点。
 
 ## 后续步骤
 

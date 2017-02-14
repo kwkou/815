@@ -66,7 +66,7 @@ NSG 包含两种类型的规则：入站规则和出站规则。在每组中，�
 
 * **VIRTUAL\_NETWORK**：此默认标记表示你的所有网络地址空间。它包括虚拟网络地址空间（Azure 中定义的 CIDR 范围）以及所有连接的本地地址空间和连接的 Azure VNet（本地网络）。
 * **AZURE\_LOADBALANCER**：此默认标记表示 Azure 的基础结构负载均衡器。这将转换到 Azure 数据中心 IP，从中进行 Azure 的运行状况探测。
-* **INTERNET**：此默认标记表示虚拟网络外部的 IP 地址空间，可以通过公共 Internet 进行访问。此范围还包括 [Azure 拥有的公共 IP 空间](https://www.microsoft.com/download/details.aspx?id=41653)。
+* **INTERNET**：此默认标记表示虚拟网络外部的 IP 地址空间，可以通过公共 Internet 进行访问。此范围还包括 [Azure 拥有的公共 IP 空间](https://www.microsoft.com/en-us/download/details.aspx?id=42064)。
 
 ### <a name="Default-Rules" id="default-rules"></a> 默认规则
 所有 NSG 都包含一组默认规则。默认规则无法删除，但由于给它们分配的优先级最低，可以用创建的规则来重写它们。

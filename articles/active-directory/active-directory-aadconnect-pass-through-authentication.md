@@ -73,7 +73,7 @@ Azure AD 直通身份验证为这些客户提供了一个简单的解决方案�
 	- 如果启用了 URL 筛选，请确保连接器能够与以下 URL 通信：
 		-  *.msappproxy.net
 		-  *.servicebus.chinacloudapi.cn.
-		-  连接器还建立到 [Azure 数据中心 IP 范围](https://www.microsoft.com/en-us/download/details.aspx?id=41653)的直接 IP 连接。
+		-  连接器还建立到 [Azure 数据中心 IP 范围](https://www.microsoft.com/en-us/download/details.aspx?id=42064)的直接 IP 连接。
 	- 确保当连接器使用客户端证书与 Azure AD 通信时，防火墙不执行 SSL 检查。
 	- 确保连接器可在以下端口上向 Azure AD 发出 HTTPS (TCP) 请求。
 

@@ -51,7 +51,7 @@ VM 无法根据部署要求访问 Internet，或者现有的限制阻止访问 A
 - 为 HTTP 流量创建路径
 
 ### 将 Azure 数据中心 IP 范围加入允许列表
-1. 获取要加入允许列表的 [Azure 数据中心 IP 列表](https://www.microsoft.com/en-us/download/details.aspx?id=41653)。
+1. 获取要加入允许列表的 [Azure 数据中心 IP 列表](https://www.microsoft.com/en-us/download/details.aspx?id=42064)。
 2. 使用 New-NetRoute cmdlet 取消阻止 IP。在 Azure VM 上提升权限的 PowerShell 窗口中运行此 cmdlet（以管理员身份运行）。
 3. 如果有允许访问 IP 的规则，请将规则添加到网络安全组 (NSG)。
 
