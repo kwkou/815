@@ -91,7 +91,7 @@ Azure IoT 中心用于连接、监视并管理数百万 IoT 资产。若要创�
 运行以下命令，在 IoT 中心注册 Arduino 开发板：
 
 
-		az iot device create --device-id mym0wifi --hub-name {my hub name}
+	az iot device create --device-id mym0wifi --hub-name {my hub name}
 
 
 ## 摘要

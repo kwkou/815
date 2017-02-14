@@ -56,71 +56,71 @@ IoT 中心对许多设备平台和语言（包括 C、Java 和 JavaScript）提�
 1. 使用文本编辑器打开 simulated-device\\src\\main\\java\\com\\mycompany\\app\\App.java 文件。本文件包含用于 [IoT 中心入门]教程中创建的 **simulated-device** 应用的代码。
 2. 使用以下代码替换 **MessageSender** 类：
    
-    private static class MessageSender implements Runnable {
-        public volatile boolean stopThread = false;
-
-        public void run()  {
-            try {
-                double avgWindSpeed = 10; // m/s
-                Random rand = new Random();
-
-                while (!stopThread) {
-                    double currentWindSpeed = avgWindSpeed + rand.nextDouble() * 4 - 2;
-                    TelemetryDataPoint telemetryDataPoint = new TelemetryDataPoint();
-                    telemetryDataPoint.deviceId = deviceId;
-                    telemetryDataPoint.windSpeed = currentWindSpeed;
-
-                    String msgStr = telemetryDataPoint.serialize();
-                    if (new Random() > 0.7) {
-                        Message msg = new Message("This is a critical message.");
-                        msg.setProperty("level", "critical");
-                    } else {
-                        Message msg = new Message(msgStr);
+        private static class MessageSender implements Runnable {
+            public volatile boolean stopThread = false;
+    
+            public void run()  {
+                try {
+                    double avgWindSpeed = 10; // m/s
+                    Random rand = new Random();
+    
+                    while (!stopThread) {
+                        double currentWindSpeed = avgWindSpeed + rand.nextDouble() * 4 - 2;
+                        TelemetryDataPoint telemetryDataPoint = new TelemetryDataPoint();
+                        telemetryDataPoint.deviceId = deviceId;
+                        telemetryDataPoint.windSpeed = currentWindSpeed;
+    
+                        String msgStr = telemetryDataPoint.serialize();
+                        if (new Random() > 0.7) {
+                            Message msg = new Message("This is a critical message.");
+                            msg.setProperty("level", "critical");
+                        } else {
+                            Message msg = new Message(msgStr);
+                        }
+                        
+                        System.out.println("Sending: " + msgStr);
+    
+                        Object lockobj = new Object();
+                        EventCallback callback = new EventCallback();
+                        client.sendEventAsync(msg, callback, lockobj);
+    
+                        synchronized (lockobj) {
+                            lockobj.wait();
+                        }
+                        Thread.sleep(1000);
                     }
-                    
-                    System.out.println("Sending: " + msgStr);
-
-                    Object lockobj = new Object();
-                    EventCallback callback = new EventCallback();
-                    client.sendEventAsync(msg, callback, lockobj);
-
-                    synchronized (lockobj) {
-                        lockobj.wait();
-                    }
-                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    System.out.println("Finished.");
                 }
-            } catch (InterruptedException e) {
-                System.out.println("Finished.");
             }
         }
-    }
    
     这会将 `"level": "critical"` 属性随机添加到模拟设备发送的消息，该设备可模拟需要解决方案后端立即执行操作的消息。应用程序将在消息属性中传递此信息（而非在消息正文中），因此 IoT 中心可将消息路由到适当的消息目标。
    
-   > [AZURE.NOTE]
-   可使用消息属性根据各种方案路由消息，包括冷路径处理和此处所示的热路径示例。
-   > 
-   > 
+    > [AZURE.NOTE]
+    > 可使用消息属性根据各种方案路由消息，包括冷路径处理和此处所示的热路径示例。
+    > 
+    > 
 
 2. 保存并关闭 simulated-device\\src\\main\\java\\com\\mycompany\\app\\App.java 文件。
    
-   > [AZURE.NOTE]
-   > 为简单起见，本教程不实现任何重试策略。在生产代码中，应按 MSDN 文章 [Transient Fault Handling]（暂时性故障处理）中所述实施指数退让等重试策略。
-   > 
-   > 
+    > [AZURE.NOTE]
+    > 为简单起见，本教程不实现任何重试策略。在生产代码中，应按 MSDN 文章 [Transient Fault Handling]（暂时性故障处理）中所述实施指数退让等重试策略。
+    > 
+    > 
 
 3. 若要使用 Maven 构建 **simulated-device** 应用，请在 simulated-device 文件夹的命令提示符处执行以下命令：
    
-    ```
-    mvn clean package -DskipTests
-    ```
+    
+        mvn clean package -DskipTests
+    
 
 ## 向 IoT 中心添加一个队列并向其路由消息
 在本部分中，将创建一个服务总线队列并将其连接到 IoT 中心，还会配置 IoT 中心，根据消息上的现有属性发送消息到队列。若要深入了解如何处理来自服务总线队列的消息，请参阅[队列入门][Service Bus queue]教程。
 
 1. 按[队列入门][Service Bus queue]中所述，创建服务总线队列。记下命名空间和队列名称。
 
-2. 在 Azure 门户中，打开 IoT 中心并单击“终结点”。
+2. 在 Azure 门户预览中，打开 IoT 中心并单击“终结点”。
     
     ![IoT 中心的终结点][30]  
 
@@ -150,7 +150,7 @@ IoT 中心对许多设备平台和语言（包括 C、Java 和 JavaScript）提�
 1. 若要运行 **read-d2c-messages** 应用程序，请在命令提示符或外壳处导航到 read-d2c 文件夹并执行以下命令：
    
    
-       mvn exec:java -Dexec.mainClass="com.mycompany.app.App"
+        mvn exec:java -Dexec.mainClass="com.mycompany.app.App"
    
    
     ![运行 read-d2c-messages][readd2c]  
@@ -158,18 +158,18 @@ IoT 中心对许多设备平台和语言（包括 C、Java 和 JavaScript）提�
 2. 若要运行 **read-critical-queue** 应用程序，请在命令提示符或外壳处导航到 read-critical-queue 文件夹并执行以下命令：
    
    
-       mvn exec:java -Dexec.mainClass="com.mycompany.app.App"
+        mvn exec:java -Dexec.mainClass="com.mycompany.app.App"
    
-   ![运行 read-critical-messages][readqueue]  
+    ![运行 read-critical-messages][readqueue]  
 
 
 3. 若要运行 **simulated-device** 应用，请在命令提示符或 shell 处导航到 simulated-device 文件夹并执行以下命令：
    
    
-       mvn exec:java -Dexec.mainClass="com.mycompany.app.App"
+        mvn exec:java -Dexec.mainClass="com.mycompany.app.App"
    
    
-   ![运行 simulated-device][simulateddevice]  
+    ![运行 simulated-device][simulateddevice]  
 
 
 

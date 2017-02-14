@@ -140,8 +140,8 @@ IoT 中心将公开多个[终结点](/documentation/articles/iot-hub-devguide-en
 ## <a name="field-gateway"></a>现场网关
 无法直接连接到 [IoT 中心](#iot-hub)的设备可以通过现场网关进行连接，而现场网关通常与设备一起部署在本地。有关详细信息，请参阅[什么是 Azure IoT 中心？](/documentation/articles/iot-hub-what-is-iot-hub/)。
 
-## 免费帐户
-你可以创建[免费的 Azure 帐户](/pricing/1rmb-trial/)，以便使用 IoT 中心服务（及其他 Azure 服务）完成 IoT 中心教程和试验。
+## 试用帐户
+你可以创建[ Azure 试用帐户](/pricing/1rmb-trial/)，以便使用 IoT 中心服务（及其他 Azure 服务）完成 IoT 中心教程和试验。
 
 ## 网关
 网关使不能直接连接到 [IoT 中心](#iot-hub)的设备能建立连接。另请参阅[现场网关](#field-gateway)、[云网关](#cloud-gateway)和[自定义网关](#custom-gateway)。
@@ -207,7 +207,7 @@ IoT 中心[操作监视](/documentation/articles/iot-hub-operations-monitoring/)
 [Azure Resource Manager](#azure-resource-manager) 使用资源组将相关的资源组合在一起。通过使用资源组，可以对组中的所有资源同时执行操作。
 
 ## 重试策略
-连接到云服务时使用重试策略来处理 [暂时性错误] (https://msdn.microsoft.com/en-us/library/hh680901(v=pandp.50).aspx)。
+连接到云服务时使用重试策略来处理 [暂时性错误][]。
 
 ## SASL PLAIN
 SASL PLAIN 是一种协议， [AMQP](#advanced-message-queue-protocol) 协议使用它传输安全令牌。
@@ -241,6 +241,10 @@ Azure 订阅是发生计费的地方。用户创建的每个 Azure 资源或使�
 
 ## X.509 客户端证书
 设备可以使用 X.509 证书在 [IoT 中心](#iot-hub)进行身份验证。使用 X.509 证书是使用 [SAS 令牌](#shared-access-signature)的替代方案。
+
+<!--link references-->
+[暂时性错误]: https://msdn.microsoft.com/en-us/library/hh680901(v=pandp.50).aspx 
+
 
 <!---HONumber=Mooncake_0206_2017-->
 <!--Update_Description:update wording-->

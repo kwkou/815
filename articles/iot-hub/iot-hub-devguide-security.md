@@ -270,11 +270,11 @@ IoT 中心还允许设备使用 [X.509 证书][lnk-x509]向 IoT 中心进行身�
 * 策略名称：`registryRead`，
 * 任何过期时间。
 
-    var endpoint ="myhub.azure-devices.cn/devices";
-    var policyName = 'device';
-    var policyKey = '...';
-
-    var 令牌为 generateSasToken(终结点, 策略密钥, 策略名称, 60)；
+        var endpoint ="myhub.azure-devices.cn/devices";
+        var policyName = 'device';
+        var policyKey = '...';
+    
+        var token = generateSasToken(endpoint, policyKey, policyName, 60)；
 
 授权读取所有设备标识权限的安全令牌是：
 
