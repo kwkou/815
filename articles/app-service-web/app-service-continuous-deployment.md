@@ -32,7 +32,7 @@
 
 有关将项目发布到这些服务的详细信息，请参阅[创建存储库 (GitHub)]。以下步骤仅适用于 GitHub 存储库。有关 GitHub 以外的存储库，请参阅[手动触发部署](https://github.com/projectkudu/kudu/wiki/Manually-triggering-a-deployment)以设置 Webhook。
 
-1. 登录到 [Azure 经典管理门户]。在“Web 应用”页上，选择要为其安装连续部署的 Web 应用，然后选择“仪表板”选项卡。
+1. 登录到 [Azure 经典管理门户](https://manage.windowsazure.cn/)。在“Web 应用”页上，选择要为其安装连续部署的 Web 应用，然后选择“仪表板”选项卡。
 2. 在“速览”部分中，选择“从源控件设置部署”。在“设置部署”对话框中，选择“外部存储库”。
 3. 输入 GitHub 存储库的 URL 并输入要跟踪的分支。将“存储库类型”保留为“Git”，并单击“完成”
 

@@ -140,4 +140,4 @@ SUSE 提供了一个名为“sapconf”的包，该包可管理一组特定于 S
 在虚拟化环境中，对于 Linux 上的 Oracle 的支持受到限制。尽管本主题并非只针对 Azure，但了解相应信息非常重要。SAP 不支持 Azure 等公有云中的 SUSE 或 Red Hat 上的 Oracle。若要讨论此主题，请直接联系 Oracle。
 
 <!---HONumber=Mooncake_0116_2017-->
-<!--Update_Description: update meta properties & wording update->
+<!--Update_Description: update meta properties & wording update-->

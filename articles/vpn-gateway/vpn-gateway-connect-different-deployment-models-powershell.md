@@ -51,26 +51,26 @@ Azure 当前具有两个管理模型：经典模型和 Resource Manager (RM) 模
 
 **经典 VNet 设置**
 
-VNet 名称 = ClassicVNet <br> 
-位置 = 中国北部 <br> 
-虚拟网络地址空间 = 10.0.0.0/24 <br> 
-子网-1 = 10.0.0.0/27 <br> 
-网关子网 = 10.0.0.32/29 <br> 
-本地网络名称 = RMVNetLocal <br> 
-网关类型 = DynamicRouting
+VNet Name = ClassicVNet <br>
+Location = China North <br>
+Virtual Network Address Spaces = 10.0.0.0/24 <br>
+Subnet-1 = 10.0.0.0/27 <br>
+GatewaySubnet = 10.0.0.32/29 <br>
+Local Network Name = RMVNetLocal <br>
+GatewayType = DynamicRouting
 
 **Resource Manager VNet 设置**
 
-VNet 名称 = RMVNet <br> 
-资源组 = RG1 <br> 
-虚拟网络 IP 地址空间 = 192.168.0.0/16 <br> 
-子网-1 = 192.168.1.0/24 <br> 
-网关子网 = 192.168.0.0/26 <br> 
-位置 = 中国东部 <br> 
-网关公共 IP 名称 = gwpip <br> 
-本地网络网关 = ClassicVNetLocal <br> 
-虚拟网络网关名称 = RMGateway <br> 
-网关 IP 寻址配置 = gwipconfig
+VNet Name = RMVNet <br>
+Resource Group = RG1 <br>
+Virtual Network IP Address Spaces = 192.168.0.0/16 <br>
+Subnet-1 = 192.168.1.0/24 <br>
+GatewaySubnet = 192.168.0.0/26 <br>
+Location = China East <br>
+Gateway public IP name = gwpip <br>
+Local Network Gateway = ClassicVNetLocal <br>
+Virtual Network Gateway name = RMGateway <br>
+Gateway IP addressing configuration = gwipconfig
 
 ## <a name="createsmgw"></a>第 1 节 — 配置经典 VNet
 ### 第 1 部分 — 下载网络配置文件。

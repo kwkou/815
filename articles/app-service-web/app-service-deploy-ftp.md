@@ -27,7 +27,7 @@
 
 若要访问应用的 FTP 服务器，首先需要部署凭据。
 
-若要设置或重置部署凭据，请参阅 [Azure 应用服务部署凭据](/documentation/articles/app-service-deploy-ftp/)。本教程演示如何使用用户级凭据。
+若要设置或重置部署凭据，请参阅 [Azure 应用服务部署凭据](/documentation/articles/app-service-deployment-credentials/)。本教程演示如何使用用户级凭据。
 
 ## 步骤 2：获取 FTP 连接信息
 
@@ -67,6 +67,6 @@
 ## 更多资源
 
 * [创建 PHP-MySQL Web 应用并使用 FTP 进行部署](/documentation/articles/web-sites-php-mysql-deploy-use-ftp/)。
-* [Azure App Service 部署凭据](/documentation/articles/app-service-deploy-ftp/)
+* [Azure App Service 部署凭据](/documentation/articles/app-service-deployment-credentials/)
 
 <!---HONumber=Mooncake_0206_2017-->
