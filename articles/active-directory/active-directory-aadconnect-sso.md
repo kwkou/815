@@ -5,23 +5,22 @@
     keywords="什么是 Azure AD Connect, 安装 Active Directory, Azure AD 所需的组件, SSO, 单一登录"
     documentationcenter=""
     author="billmath"
-    manager="femila"/>
+    manager="femila"/>  
 
-<tags
+    
+<tag    
     ms.assetid="9f994aca-6088-40f5-b2cc-c753a4f41da7"
     ms.service="active-directory"
     ms.workload="identity"
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="12/06/2016"
-    ms.author="billmath"
-    wacn.date="01/10/2017" />
+    ms.date="01/04/2017"
+    ms.author="billmath" 
+    wacn.date="02/13/2017"/>
 
 # 什么是单一登录 (SSO)（预览）
-单一登录是可以在 Azure Active Directory Connect 中启用的用于[密码哈希同步](/documentation/articles/active-directory-aadconnectsync-implement-password-synchronization/)或[直通身份验证](/documentation/articles/active-directory-aadconnect-pass-through-authentication/)的选项。如果启用了该选项，那么当用户使用其公司的计算机并连接到公司网络时不需要输入密码即可登录到 Azure Active Directory (Azure AD) 或其他云服务。
-
-启用单一登录后，用户访问连接到 Azure Active Directory 服务（如 Office 365、Microsoft Intune、CRM Online 和 SaaS 服务）的资源时，用户无需键入其密码，而是使用从本地 Active Directory 自动获取的 Kerberos 票证。
+单一登录是可以在 Azure Active Directory Connect 中启用的用于[密码哈希同步](/documentation/articles/active-directory-aadconnectsync-implement-password-synchronization/)或[直通身份验证](/documentation/articles/active-directory-aadconnect-pass-through-authentication/)的选项。如果启用该选项，当用户使用其企业计算机并连接到企业网络时只需键入其用户名即可登录到 Azure Active Directory (Azure AD) 或其他云服务，而不需要键入密码。
 
 ![单一登录](./media/active-directory-aadconnect-sso/sso1.png)  
 
@@ -33,12 +32,12 @@ SSO 是通过 AAD Connect 启用的一项功能，该功能用于密码哈希同
 
 - 在已加入域的计算机上
 - 具有与域控制器的直接连接，例如在公司的有线或无线网络上，或通过远程访问连接，如 VPN 连接。
-- 定义云中的 Kerberos 终结点，并将其作为 Intranet 区域的一部分。
+- 将云中的 Kerberos 终结点定义为浏览器 Intranet 区域的一部分。
 
-如果缺少上述任何一项，如计算机不在公司网络上，以及 Active Directory 不可用，那么只会提示用户输入其密码，就和没有单一登录时一样。
+如果缺少上述任何一项（例如，计算机不在企业网络中、Active Directory 不可用），系统只会提示用户输入其密码，如同未使用单一登录时一样。
 
 ## 支持的客户端
-在能够进行 Kerberos 身份验证的计算机上，如 Windows，支持新式身份验证的基于 Web 浏览器的客户端和 Office 客户端支持单一登录。下表详细描述了各个操作系统上基于浏览器的客户端。
+在能够进行 Kerberos 身份验证的计算机上，如 Windows，支持[新式身份验证](https://aka.ms/modernauthga)的基于 Web 浏览器的客户端和 Office 客户端支持单一登录。下表详细描述了各个操作系统上基于浏览器的客户端。
 
 | 操作系统\\浏览器 |Internet Explorer|Chrome|Firefox|Edge
 | --- | --- |--- | --- |--- |
@@ -59,11 +58,11 @@ SSO 是通过 AAD Connect 启用的一项功能，该功能用于密码哈希同
 ![单一登录](./media/active-directory-aadconnect-sso/sso2.png)  
 
 
-首先，用户尝试访问资源。资源可以是一台计算机或一个 URL。就 Azure AD 而言，它是服务的 URL，如 SharePoint online，下面将其描述为“Azure AD 资源”。
+首先，用户尝试访问某个资源（例如 SharePoint Online），该资源信任 Azure AD 颁发的令牌。然后，SharePoint Online 将用户重定向，以使用 Azure AD 进行身份验证。然后，用户提供其用户名，使 Azure AD 能够确定是否为其组织启用了单一登录。假设为组织启用了单一登录，将发生以下情况。
 
-1.	Azure AD 资源通过“401 未授权”响应质询客户端，以提供 Kerberos 票证。
-2.	客户端为 Azure AD 资源从 Active Directory 请求票证。
-3.	Active Directory 定位与 Azure AD 资源关联的计算机帐户，并将使用此计算机帐户的密码加密的 Kerberos 票证返回给客户端。此票证包括当前登录到此计算机的用户的标识。
+1.	Azure AD 通过“401 未授权”响应质询客户端，以提供 Kerberos 票证。
+2.	客户端针对 Azure AD 从 Active Directory 请求票证。
+3.	Active Directory 查找 Azure AD Connect 创建的计算机帐户，并将使用此计算机帐户的密码加密的 Kerberos 票证返回给客户端。此票证包括当前登录到此计算机的用户的标识。
 4.	客户端将其从 Active Directory 获取的 Kerberos 票证发送到 Azure AD。
 5.	Azure AD 使用以前共享的密钥解密 Kerberos 票证，然后向用户返回令牌或要求用户提供其他证明，例如资源所需的多重身份验证。
 
@@ -72,7 +71,7 @@ SSO 是通过 AAD Connect 启用的一项功能，该功能用于密码哈希同
 ## 为直通身份验证或密码哈希同步启用 SSO
 Azure AD Connect 提供了简单的过程来为直通身份验证或密码哈希同步启用单一登录。需要确保具有同步的每个林中一个域的域管理员权限，以允许为计算机帐户配置 Kerberos 服务主体名称 (SPN)。用户名和密码未存储在 Azure AD Connect 或 Azure AD 中，并且仅用于此操作。
 
-安装 Azure AD Connect 时选择自定义安装，以便能够在用户登录页面上配置单一登录。有关详细信息，请参阅 [Custom installation of Azure AD Connect](/documentation/articles/active-directory-aadconnect-get-started-custom/)（Azure AD Connect 的自定义安装）。
+安装 Azure AD Connect 时选择自定义安装，以便能够在用户登录页中选择单一登录选项。有关详细信息，请参阅 [Custom installation of Azure AD Connect](/documentation/articles/active-directory-aadconnect-get-started-custom/)（Azure AD Connect 的自定义安装）。
 
 ![单一登录](./media/active-directory-aadconnect-sso/sso3.png)  
 
@@ -84,6 +83,9 @@ Azure AD Connect 提供了简单的过程来为直通身份验证或密码哈希
 
 对于列出的每个林，提供相应的帐户详细信息，并为 Azure 目录启用单一登录。
 
+>[AZURE.NOTE]
+为了配置 SSO，Azure AD Connect 需要能够与端口 9090 (TCP) 上的 *.msappproxy.net 通信。只需在配置期间这样做，最终用户身份验证期间不需要执行此操作。
+
 ## 确保客户端自动登录
 默认情况下，浏览器不会尝试将凭据发送到 Web 服务器，除非 URL 定义为在 Intranet 区域。通常情况下，浏览器可以通过查看 URL 来计算正确的区域。例如，如果 URL 为 http://intranet/，浏览器将自动发送凭据，因为它将此 URL 映射到 Intranet 区域。但是，如果 URL 包含句点，例如 http://intranet.contoso.com/，那么服务器不会自动发送凭据，并将该 URL 视为任何 Internet 站点。
 
@@ -94,11 +96,12 @@ Azure AD Connect 提供了简单的过程来为直通身份验证或密码哈希
 3.	导航到“用户配置\\管理模板\\Windows 组件\\Internet Explorer\\Internet 控制面板\\安全性”页面，并选择“区域分配列表的站点”。
 ![单一登录](./media/active-directory-aadconnect-sso/sso6.png)</br>
 4.	启用策略，并在对话框中输入以下值/数据。</br>
-    	
+
 		Value: https://autologon.microsoftazuread-sso.com
     	Data: 1
-    	Value: https://aadg.chinacloudapi.cn.nsatc.net 
+    	Value: https://aadg.chinacloudapi.cn.nsatc.net
     	Data: 1'
+
 5.	如下图所示：
 
 	![单一登录](./media/active-directory-aadconnect-sso/sso7.png)  
@@ -119,6 +122,7 @@ Azure AD Connect 提供了简单的过程来为直通身份验证或密码哈希
 3.	确保用户使用域帐户登录。
 4.	请确保计算机已连接到公司网络
 5.	确保计算机的时间与 Active Directory 同步，并且域控制器时间与正确时间的误差在 5 分钟内。
+6.	清除客户端的现有 Kerberos 票证，例如，在命令提示符下运行命令“klist purge”。
 
 如果能够确认上述要求，则可以查看浏览器的控制台日志以了解其他信息。可以在开发人员工具下找到控制台日志。该日志有助于确定潜在问题。
 
@@ -131,4 +135,5 @@ Azure AD Connect 提供了简单的过程来为直通身份验证或密码哈希
 	  </Query>
 	</QueryList>
 
-<!---HONumber=Mooncake_1226_2016-->
+<!---HONumber=Mooncake_0206_2017-->
+<!--Update_Description: wording update-->

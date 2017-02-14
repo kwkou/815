@@ -1,47 +1,43 @@
 <properties
-	pageTitle="Azure AD Connect 同步：Synchronization Service Manager UI | Azure"
-	description="了解 Azure AD Connect 的 Synchronization Service Manager 中的“连接器”选项卡。"
-	services="active-directory"
-	documentationCenter=""
-	authors="andkjell"
-	manager="femila"
-	editor=""/>
-
+    pageTitle="Azure AD Connect 同步：Synchronization Service Manager UI | Azure"
+    description="了解用于 Azure AD Connect 的 Synchronization Service Manager 中的“连接器”选项卡。"
+    services="active-directory"
+    documentationcenter=""
+    author="andkjell"
+    manager="femila"
+    editor="" />
 <tags
-	ms.service="active-directory"
-	ms.workload="identity"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="09/07/2016"
-	ms.author="andkjell"
-	wacn.date="02/06/2017"/>
-
+    ms.assetid="60f1d979-8e6d-4460-aaab-747fffedfc1e"
+    ms.service="active-directory"
+    ms.workload="identity"
+    ms.tgt_pltfrm="na"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.date="01/09/2017"
+    wacn.date="02/13/2017"
+    ms.author="billmath" />
 
 # Azure AD Connect 同步：Synchronization Service Manager
 
-[操作](/documentation/articles/active-directory-aadconnectsync-service-manager-ui-operations/) | [连接器](/documentation/articles/active-directory-aadconnectsync-service-manager-ui-connectors/) | [Metaverse 设计器](/documentation/articles/active-directory-aadconnectsync-service-manager-ui-mvdesigner/) | [Metaverse 搜索](/documentation/articles/active-directory-aadconnectsync-service-manager-ui-mvsearch/)
---- | --- | --- | ---
+![Sync Service Manager](./media/active-directory-aadconnectsync-service-manager-ui/connectors.png)  
 
-![Sync Service Manager](./media/active-directory-aadconnectsync-service-manager-ui/connectors.png)
 
 “连接器”选项卡可用于管理同步引擎连接的所有系统。
 
 ## 连接器操作
-
-操作 | 注释
---- | ---
-创建 | 请勿使用。若要连接到其他 AD 林，请使用安装向导。
-属性 | 用于域和 OU 筛选。
-[删除](#delete) | 用于删除连接器空间中的数据或删除与林的连接。
-[配置运行配置文件](#configure-run-profiles) | 除了域筛选，不会在此处进行任何配置。可以通过此操作来查看已配置的运行配置文件。
-运行 | 用于启动配置文件的一次性运行。
-停止 | 停止当前运行配置文件的连接器。
-导出连接器 | 请勿使用。
-导入连接器 | 请勿使用。
-更新连接器 | 请勿使用。
-刷新架构 | 刷新缓存架构。最好改在安装向导中使用此选项，因为它也会更新同步规则。
-[搜索连接器空间](#search-connector-space) | 用于查找对象，以及[在整个系统中跟踪对象及其数据](#follow-an-object-and-its-data-through-the-system)。
+| 操作 | 注释 |
+| --- | --- |
+| 创建 |请勿使用。若要连接到其他 AD 林，请使用安装向导。 |
+| 属性 |用于域和 OU 筛选。 |
+| [删除](#delete) |用于删除连接器空间中的数据或删除与林的连接。 |
+| [配置运行配置文件](#configure-run-profiles) |除了对于域筛选，无需在此进行任何配置。可以通过此操作来查看已配置的运行配置文件。 |
+| 运行 |用于启动配置文件的一次性运行。 |
+| 停止 |停止当前运行配置文件的连接器。 |
+| 导出连接器 |请勿使用。 |
+| 导入连接器 |请勿使用。 |
+| 更新连接器 |请勿使用。 |
+| 刷新架构 |刷新缓存架构。最好改为在安装向导中使用此选项，因为它也会更新同步规则。 |
+| [搜索连接器空间](#search-connector-space) |用于查找对象，以及[在整个系统中跟踪对象及其数据](#follow-an-object-and-its-data-through-the-system)。 |
 
 ### 删除 <a name="delete"></a>
 删除操作适用于两种不同的用途。![Sync Service Manager](./media/active-directory-aadconnectsync-service-manager-ui/connectordelete.png)
@@ -98,7 +94,7 @@
 ![Sync Service Manager](./media/active-directory-aadconnectsync-service-manager-ui/preview2.png)
 
 **日志**
-“日志”页用于查看密码同步状态和历史记录。有关详细信息，请参阅 [Troubleshoot password synchronization](/documentation/articles/active-directory-aadconnectsync-implement-password-synchronization/#troubleshoot-password-synchronization/)（排查密码同步问题）。
+“日志”页用于查看密码同步状态和历史记录。
 
 ### Metaverse 对象属性 <a name="metaverse-object-properties"></a>
 **属性**
@@ -114,4 +110,5 @@
 
 了解有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect/)的详细信息。
 
-<!---HONumber=Mooncake_Quality_Review_0125_2017-->
+<!---HONumber=Mooncake_0206_2017-->
+<!--Update_Description: wording update-->

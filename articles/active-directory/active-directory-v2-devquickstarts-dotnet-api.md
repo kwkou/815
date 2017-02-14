@@ -1,27 +1,25 @@
 <properties
-	pageTitle="Azure AD v2.0 .NET Web API| Azure"
-	description="如何构建一个可从个人 Microsoft 帐户及公司或学校帐户接受令牌的 .NET MVC Web API。"
-	services="active-directory"
-	documentationCenter=".net"
-	authors="dstrockis"
-	manager="mbaldwin"
-	editor=""/>  
-
-
+    pageTitle="Azure AD v2.0 .NET Web API| Azure"
+    description="如何构建一个可从个人 Microsoft 帐户及公司或学校帐户接受令牌的 .NET MVC Web API。"
+    services="active-directory"
+    documentationcenter=".net"
+    author="dstrockis"
+    manager="mbaldwin"
+    editor="" />
 <tags
-	ms.service="active-directory"
-	ms.workload="identity"
-	ms.tgt_pltfrm="na"
-	ms.devlang="dotnet"
-	ms.topic="article"
-	ms.date="10/10/2016"
-	wacn.date="11/08/2016"
-	ms.author="dastrock"/>  
+    ms.assetid="e77bc4e0-d0c9-4075-a3f6-769e2c810206"
+    ms.service="active-directory"
+    ms.workload="identity"
+    ms.tgt_pltfrm="na"
+    ms.devlang="dotnet"
+    ms.topic="article"
+    ms.date="01/07/2017"
+    wacn.date="02/13/2017"
+    ms.author="dastrock" />  
 
 
 # 保护 MVC Web API
-
-Azure Active Directory 的 v2.0 终结点可让你使用 [OAuth 2.0](/documentation/articles/active-directory-v2-protocols/#oauth2-authorization-code-flow/) 访问令牌保护 Web API，具有个人 Microsoft 帐户以及公司或学校帐户的用户也能够安全访问 Web API。
+Azure Active Directory 的 v2.0 终结点可让你使用 [OAuth 2.0](/documentation/articles/active-directory-v2-protocols/) 访问令牌保护 Web API，具有个人 Microsoft 帐户以及公司或学校帐户的用户也能够安全访问 Web API。
 
 > [AZURE.NOTE]
 	v2.0 终结点并不支持所有 Azure Active Directory 方案和功能。若要确定是否应使用 v2.0 终结点，请阅读 [v2.0 限制](/documentation/articles/active-directory-v2-limitations/)。
@@ -143,14 +141,14 @@ C#
 	}
 
 
--	最后，打开位于 TodoListService 项目根目录中的 `web.config` 文件，并在 `<appSettings>` 节中输入你的配置值。
-  -	`ida:Audience` 是你在门户中为应用输入的**应用程序 ID**。
+- 最后，打开位于 TodoListService 项目根目录中的 `web.config` 文件，并在 `<appSettings>` 节中输入你的配置值。
+  - `ida:Audience` 是你在门户中为应用输入的**应用程序 ID**。
 
 ## 配置客户端应用
 需要先配置待办事项列表客户端，使它能够从 v2.0 终结点获取令牌并可调用服务，然后，你才能看到待办事项服务的运行情况。
 
 - 在 TodoListClient 项目中打开 `App.config`，然后在 `<appSettings>` 节中输入你的配置值。
-  -	从门户复制的 `ida:ClientId` 应用程序 ID。
+  - 从门户复制的 `ida:ClientId` 应用程序 ID。
 
 最后，清理、生成并运行每个项目！ 现在，你已构建了一个可从个人 Microsoft 帐户及公司或学校帐户接受令牌的 .NET MVC Web API。请登录到 TodoListClient，然后调用该 Web API 以将任务添加到用户的待办事项列表。
 
@@ -171,4 +169,5 @@ C#
 
 建议发生安全事件时获取相关通知，方法是访问[此页](https://technet.microsoft.com/security/dd252948)并订阅“安全公告通知”。
 
-<!---HONumber=Mooncake_1031_2016-->
+<!---HONumber=Mooncake_0206_2017-->
+<!--Update_Description: wording update-->
