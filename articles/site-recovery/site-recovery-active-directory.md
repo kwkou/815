@@ -14,7 +14,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="storage-backup-recovery"
     ms.date="1/9/2017"
-    wacn.date="02/10/2017"
+    wacn.date="02/14/2017"
     ms.author="pratshar" />
 
 # 使用 Azure Site Recovery 保护 Active Directory 和 DNS
@@ -65,7 +65,7 @@
 
 **Azure 生产网络中的 DNS**
 
-##<a name="test-failover-considerations"></a> 测试故障转移注意事项
+##<a name="test-failover-considerations"></a><a name="considerations-for-test-failover"></a> 测试故障转移注意事项
 测试故障转移发生在独立于生产网络的网络中，因此对生产工作负荷没有影响。
 
 大多数应用程序还需要域控制器和 DNS 服务器存在，因此在应用程序故障转移之前，需要在隔离的网络中创建域控制器以用于测试故障转移。若要这样做，最简单的方法是在运行应用程序恢复计划的测试故障转移之前，先使用站点恢复在域控制器/DNS 虚拟机上启用保护，然后对该虚拟机运行测试故障转移。下面介绍了操作方法：

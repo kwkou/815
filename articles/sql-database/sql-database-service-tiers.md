@@ -16,7 +16,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="data-management"
     ms.date="01/11/2017"
-    wacn.date="01/25/2017"
+    wacn.date="02/14/2017"
     ms.author="carlrab; janeng" />
 
 # SQL 数据库选项和性能：了解每个服务层提供的功能
@@ -47,7 +47,7 @@
 初始选取性能级别后，可以根据实际经验动态增加或减少[单个数据库](/documentation/articles/sql-database-scale-up/)或[弹性池](/documentation/articles/sql-database-elastic-pool-manage-portal/#change-performance-settings-of-a-pool)。对于迁移方案，还可以使用 [DTU 计算器](http://dtucalculator.azurewebsites.net/)估计所需的 DTU 数。
 
 
-## 单一数据库服务层和性能级别
+##<a name="standalone-database-service-tiers-and-performance-levels"></a> 单一数据库服务层和性能级别
 对于单一数据库，每个服务层内都具有多个性能级别。你可以灵活选择最能满足你的工作负荷需求的级别。如果你需要增加或减少工作负荷，可以轻松更改数据库层。有关详细信息，请参阅[更改数据库服务层和性能级别](/documentation/articles/sql-database-scale-up/)。
 
 尽管有多个托管的数据库，你的数据库仍可确保获得一组资源，并且数据库的预期性能特征不受影响。

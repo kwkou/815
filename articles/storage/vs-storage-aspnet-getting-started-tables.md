@@ -14,7 +14,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="12/02/2016"
-    wacn.date="01/06/2017"
+    wacn.date="02/14/2017"
     ms.author="tarcher" />  
 
 
@@ -114,7 +114,7 @@ Azure 表存储使用户可以存储大量结构化数据。该服务是一个 N
 
 		// Inspect result.HttpStatusCode for success/failure.
 
-## 向表添加一批实体
+##<a name="add-a-batch-of-entities-to-a-table"></a> 向表添加一批实体
 
 除了可以向表逐个添加实体，还可以成批添加实体。这可以减少代码与 Azure 表服务之间的重复操作次数。以下步骤演示了如何以编程方式使用单个操作向表添加多个实体。在 ASP.NET MVC 应用中，该代码会置于控制器中。
 
