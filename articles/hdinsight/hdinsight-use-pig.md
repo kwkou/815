@@ -141,3 +141,4 @@ Linux 是在 HDInsight 3.4 或更高版本上使用的唯一操作系统。有�
 [image-hdi-pig-data-transformation]: ./media/hdinsight-use-pig/HDI.DataTransformation.gif
 
 <!---HONumber=Mooncake_0120_2017-->
+<!--Update_Description: update from ASM to ARM-->

@@ -50,3 +50,4 @@ HDInsight 群集在创建群集时开始计费，在删除群集后停止计费�
 将 **CLUSTERNAME** 替换为 HDInsight 群集的名称。
 
 <!---HONumber=Mooncake_0120_2017-->
+<!--Update_Description: update from ASM to ARM-->

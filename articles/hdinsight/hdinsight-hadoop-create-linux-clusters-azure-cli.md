@@ -66,7 +66,7 @@ Linux 是在 HDInsight 3.4 版或更高版本上使用的唯一操作系统。�
     * 将 **groupname** 替换为组的唯一名称。
     * 将 **location** 替换为要在其中创建该组的地理区域。
      
-       有关有效位置的列表，请使用 `azure location list` 命令，然后使用 **Name** 列中的位置之一。
+        有关有效位置的列表，请使用 `azure location list` 命令，然后使用 **Name** 列中的位置之一。
 4. 创建存储帐户。该存储帐户用作 HDInsight 群集的默认存储。
    
         azure storage account create -g groupname --sku-name RAGRS -l location --kind Storage storagename
@@ -86,7 +86,7 @@ Linux 是在 HDInsight 3.4 版或更高版本上使用的唯一操作系统。�
     * 将 **groupname** 替换为资源组名称。
     * 将 **storagename** 替换为存储帐户的名称。
      
-     在返回的数据中，保存 **key1** 的 **key** 值。
+        在返回的数据中，保存 **key1** 的 **key** 值。
 6. 创建 HDInsight 群集。
    
         azure hdinsight cluster create -g groupname -l location -y Linux --clusterType Hadoop --defaultStorageAccountName storagename.blob.core.chinacloudapi.cn --defaultStorageAccountKey storagekey --defaultStorageContainer clustername --workerNodeCount 2 --userName admin --password httppassword --sshUserName sshuser --sshPassword sshuserpassword clustername
@@ -107,7 +107,7 @@ Linux 是在 HDInsight 3.4 版或更高版本上使用的唯一操作系统。�
    
     > [AZURE.IMPORTANT]
     上面的示例使用 2 个工作节点创建群集。如果你计划使用 32 个以上的工作节点（在创建或扩展群集时），则必须选择至少具有 8 个核心和 14GB ram 的头节点大小。可以使用 `--headNodeSize` 参数设置头节点大小。
-    > 
+    > <p>
     > 有关节点大小和相关费用的详细信息，请参阅 [HDInsight 定价](/pricing/details/hdinsight/)。
      
     可能需要几分钟时间才能完成群集创建过程。通常大约为 15 分钟。

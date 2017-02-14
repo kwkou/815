@@ -64,8 +64,8 @@ HDInsight 群集使用 Ubuntu 长期支持 (LTS) 作为群集中节点的操作�
 4. 选择“添加存储密钥”，并在出现提示时选择步骤 1 中由 PowerShell 脚本返回的存储帐户。在每个边栏选项卡上单击“选择”可关闭该边栏选项卡。最后，创建群集。
 5. 创建群集后，使用 **SSH** 连接到该群集。 如果你不熟悉配合 HDInsight 使用 SSH 的方式，请参阅以下文章。
 
-   * [Use SSH with Linux-based HDInsight from Windows clients（在 Windows 客户端中将 SSH 与基于 Linux 的 HDInsight 配合使用）](/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows/)
-   * [Use SSH with Linux-based HDInsight from Linux, Unix, and Mac clients（在 Linux、Unix 和 Mac 客户端中将 SSH 与基于 Linux 的 HDInsight 配合使用）](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix/)
+    * [Use SSH with Linux-based HDInsight from Windows clients（在 Windows 客户端中将 SSH 与基于 Linux 的 HDInsight 配合使用）](/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows/)
+    * [Use SSH with Linux-based HDInsight from Linux, Unix, and Mac clients（在 Linux、Unix 和 Mac 客户端中将 SSH 与基于 Linux 的 HDInsight 配合使用）](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix/)
 6. 从 SSH 会话中，使用以下命令来将文件从链接的存储帐户复制到新的默认存储帐户。将 CONTAINER 和 ACCOUNT 替换为步骤 1 中由 PowerShell 脚本返回的容器和帐户信息。将数据的路径替换为数据文件的路径。
 
         hdfs dfs -cp wasbs://CONTAINER@ACCOUNT.blob.core.chinacloudapi.cn/path/to/old/data /path/to/new/location
@@ -132,7 +132,7 @@ Ambari 提供能够通知群集潜在问题的警报系统。警报将以红色�
 
 > [AZURE.IMPORTANT]
 Ambari 警报表示*可能*有问题，而不表示*已发生*问题。例如，你可能会收到无法访问 HiveServer2 的警报，但实际上仍可以正常访问它。
->
+><p>
 > 许多警报都是针对某项服务实现为基于间隔的查询，并预期在特定的时间范围内收到响应。因此警报本身并不代表服务已关闭，而只是单纯表示该服务没有在预期时间范围内返回结果。
 >
 >
@@ -199,14 +199,14 @@ Linux 群集文件系统的布局与基于 Windows 的 HDInsight 群集不同。
 
 * **如果你打算将脚本上载群集**，请在将脚本上载到群集之前，使用以下 PowerShell 语句将行尾从 CRLF 更改为 LF。
 
-      $original\_file ='c:\\path\\to\\script.py' 
-      $text = [IO.File]::ReadAllText($original\_file) -replace "`r`n", "`n" 
-      [IO.File]::WriteAllText($original\_file, $text)
+        $original\_file ='c:\\path\\to\\script.py' 
+        $text = [IO.File]::ReadAllText($original\_file) -replace "`r`n", "`n" 
+        [IO.File]::WriteAllText($original\_file, $text)
 * **如果脚本已在群集使用的存储中**，可以针对基于 Linux 的群集，通过 SSH 会话使用以下命令来修改脚本。
 
-      hdfs dfs -get wasbs:///path/to/script.py oldscript.py 
-      tr -d '\\r' < oldscript.py > script.py 
-      hdfs dfs -put -f script.py wasbs:///path/to/script.py
+        hdfs dfs -get wasbs:///path/to/script.py oldscript.py 
+        tr -d '\\r' < oldscript.py > script.py 
+        hdfs dfs -put -f script.py wasbs:///path/to/script.py
 
 ## 后续步骤
 * [了解如何创建基于 Linux 的 HDInsight 群集](/documentation/articles/hdinsight-hadoop-provision-linux-clusters/)

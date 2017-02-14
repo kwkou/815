@@ -39,12 +39,12 @@
 ## 使用自定义脚本在群集上安装 RStudio
 1. 识别群集的边缘节点。对于装有 R Server 的 HDInsight 群集，下面是头节点和边缘节点的命名约定。
 
-   * 头节点 `CLUSTERNAME-ssh.azurehdinsight.cn`
-   * 边缘节点 `CLUSTERNAME-ed-ssh.azurehdinsight.cn`
+    * 头节点 `CLUSTERNAME-ssh.azurehdinsight.cn`
+    * 边缘节点 `CLUSTERNAME-ed-ssh.azurehdinsight.cn`
 2. 使用上述命名模式通过 SSH 连接到群集的边缘节点。
 
-   * 如果从 Linux 客户端连接，请参阅 [Connect to a Linux-based HDInsight cluster](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix/)（连接到基于 Linux 的 HDInsight 群集）。
-   * 如果从 Windows 客户端连接，请参阅 [Connect to a Linux-based HDInsight cluster using PuTTY](/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows/)（使用 PuTTY 连接到基于 Linux 的 HDInsight 群集）。
+    * 如果从 Linux 客户端连接，请参阅 [Connect to a Linux-based HDInsight cluster](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix/)（连接到基于 Linux 的 HDInsight 群集）。
+    * 如果从 Windows 客户端连接，请参阅 [Connect to a Linux-based HDInsight cluster using PuTTY](/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows/)（使用 PuTTY 连接到基于 Linux 的 HDInsight 群集）。
 3. 连接后，你将成为该群集上的 root 用户。在 SSH 会话中输入以下命令。
 
         sudo su -
@@ -71,23 +71,23 @@
 
 7. 将 HDInsight 群集上的 `ssh -L localhost:8787:localhost:8787 USERNAME@CLUSTERNAME-ed-ssh.azurehdinsight.cn` 映射到客户端计算机，创建通往群集的 SSH 隧道。必须在打开新浏览器会话之前创建 SSH 隧道。
 
-   * 在装有 [Cygwin](http://www.redhat.com/services/custom/cygwin/) 的 Linux 客户端或 Windows 客户端上，打开终端会话并使用以下命令。
+    * 在装有 [Cygwin](http://www.redhat.com/services/custom/cygwin/) 的 Linux 客户端或 Windows 客户端上，打开终端会话并使用以下命令。
 
-           ssh -L localhost:8787:localhost:8787 USERNAME@CLUSTERNAME-ed-ssh.azurehdinsight.cn
+            ssh -L localhost:8787:localhost:8787 USERNAME@CLUSTERNAME-ed-ssh.azurehdinsight.cn
 
-       将 **USERNAME** 替换为 HDInsight 群集的 SSH 用户，将 **CLUSTERNAME** 替换为 HDInsight 群集的名称。也可以通过添加 `-i id_rsa_key` 使用 SSH 密钥而不使用密码
-   * 如果使用装有 PuTTY 的 Windows 客户端
+        将 **USERNAME** 替换为 HDInsight 群集的 SSH 用户，将 **CLUSTERNAME** 替换为 HDInsight 群集的名称。也可以通过添加 `-i id_rsa_key` 使用 SSH 密钥而不使用密码
+    * 如果使用装有 PuTTY 的 Windows 客户端
 
-     1. 打开 PuTTY 并输入你的连接信息。如果不熟悉 PuTTY，请参阅 [Use SSH with Linux-based Hadoop on HDInsight from Windows](/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows/)（在 Windows 中的 HDInsight 上将 SSH 与基于 Linux 的 Hadoop 配合使用），了解如何配合 HDInsight 使用 PuTTY。
-     2. 在对话框左侧的“类别”部分中，依次展开“连接”和“SSH”，然后选择“隧道”。
-     3. 提供以下有关“用于控制 SSH 端口转发的选项”窗体的信息：
+        1. 打开 PuTTY 并输入你的连接信息。如果不熟悉 PuTTY，请参阅 [Use SSH with Linux-based Hadoop on HDInsight from Windows](/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows/)（在 Windows 中的 HDInsight 上将 SSH 与基于 Linux 的 Hadoop 配合使用），了解如何配合 HDInsight 使用 PuTTY。
+        2. 在对话框左侧的“类别”部分中，依次展开“连接”和“SSH”，然后选择“隧道”。
+        3. 提供以下有关“用于控制 SSH 端口转发的选项”窗体的信息：
 
-        * **源端口** - 客户端上要转发的端口。例如 **8787**。
-        * **目标** - 必须映射到本地客户端计算机的目标。例如 **localhost:8787**。
+            * **源端口** - 客户端上要转发的端口。例如 **8787**。
+            * **目标** - 必须映射到本地客户端计算机的目标。例如 **localhost:8787**。
 
-        ![创建 SSH 隧道](./media/hdinsight-hadoop-r-server-install-r-studio/createsshtunnel.png "创建 SSH 隧道")
-     4. 单击“添加”以添加设置，然后单击“打开”以打开 SSH 连接。
-     5. 出现提示时，登录到服务器。这将会建立 SSH 会话并启用隧道。
+            ![创建 SSH 隧道](./media/hdinsight-hadoop-r-server-install-r-studio/createsshtunnel.png "创建 SSH 隧道")
+        4. 单击“添加”以添加设置，然后单击“打开”以打开 SSH 连接。
+        5. 出现提示时，登录到服务器。这将会建立 SSH 会话并启用隧道。
 8. 打开 Web 浏览器，并根据你为隧道输入的端口输入以下 URL。
 
         http://localhost:8787/ 
@@ -96,15 +96,15 @@
     ![连接到 R Studio](./media/hdinsight-hadoop-r-server-install-r-studio/connecttostudio.png "创建 SSH 隧道")
 10. 若要测试 RStudio 安装是否成功，可以运行测试脚本，该脚本将在群集上执行基于 R 的 MapReduce 和 Spark 作业。返回到 SSH 控制台，并输入以下命令下载要在 RStudio 中运行的测试脚本。
 
-*    如果你创建了包含 R 的 Hadoop 群集，请使用此命令。
+    *    如果你创建了包含 R 的 Hadoop 群集，请使用此命令。
 
-           wget http://mrsactionscripts.blob.core.chinacloudapi.cn/rstudio-server-community-v01/testhdi.r
-*    如果你创建了包含 R 的 Spark 群集，请使用此命令。
+            wget http://mrsactionscripts.blob.core.chinacloudapi.cn/rstudio-server-community-v01/testhdi.r
+    *    如果你创建了包含 R 的 Spark 群集，请使用此命令。
 
-                    wget http://mrsactionscripts.blob.core.chinacloudapi.cn/rstudio-server-community-v01/testhdi_spark.r
+            wget http://mrsactionscripts.blob.core.chinacloudapi.cn/rstudio-server-community-v01/testhdi_spark.r
 11. 在 RStudio 中，你将看到下载的测试脚本。双击该文件将它打开，选择文件的内容，然后单击“运行”。“控制台”窗格中应会显示输出。
 
-   ![测试安装](./media/hdinsight-hadoop-r-server-install-r-studio/test-r-script.png "测试安装")
+    ![测试安装](./media/hdinsight-hadoop-r-server-install-r-studio/test-r-script.png "测试安装")
 
 另一种方法是键入 `source(testhdi.r)` 或 `source(testhdi_spark.r)` 来执行脚本。
 

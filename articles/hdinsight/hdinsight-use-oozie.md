@@ -672,3 +672,4 @@ Azure PowerShell 目前不提供任何用于定义 Oozie 作业的 cmdlet。可�
 [technetwiki-hive-error]: http://social.technet.microsoft.com/wiki/contents/articles/23047.hdinsight-hive-error-unable-to-rename.aspx
 
 <!---HONumber=Mooncake_0120_2017-->
+<!--Update_Description: update from ASM to ARM-->

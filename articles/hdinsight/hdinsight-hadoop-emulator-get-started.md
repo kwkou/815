@@ -84,3 +84,4 @@
 * [Hadoop 教程 - HDP 入门](http://hortonworks.com/hadoop-tutorial/hello-world-an-introduction-to-hadoop-hcatalog-hive-and-pig/)
 
 <!---HONumber=Mooncake_0120_2017-->
+<!--Update_Description: update meta properties & wording update-->

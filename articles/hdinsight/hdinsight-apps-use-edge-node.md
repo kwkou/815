@@ -69,12 +69,12 @@
     <a href="https://portal.azure.cn/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fhdinsight%2FIaas-Applications%2Fmaster%2FEmptyNode%2Fazuredeploy.json" target="_blank"><img src="./media/hdinsight-apps-use-edge-node/deploy-to-azure.png" alt="Deploy to Azure"></a>
 3. 配置以下属性：
    
-   * **订阅**：选择用于创建此群集的 Azure 订阅。
-   * **资源组**：选择现有 HDInsight 群集所用的资源组。
-   * **位置**：选择现有 HDInsight 群集的位置。
-   * **群集名称**：输入现有 HDInsight 群集的名称。
-   * **边缘节点大小**：选择一个 VM 大小。
-   * **边缘节点前缀**：默认值为 **new**。如果使用默认值，边缘节点的名称为 **new-edgenode**。可以通过门户自定义前缀。也可以通过模板自定义完整名称。
+    * **订阅**：选择用于创建此群集的 Azure 订阅。
+    * **资源组**：选择现有 HDInsight 群集所用的资源组。
+    * **位置**：选择现有 HDInsight 群集的位置。
+    * **群集名称**：输入现有 HDInsight 群集的名称。
+    * **边缘节点大小**：选择一个 VM 大小。
+    * **边缘节点前缀**：默认值为 **new**。如果使用默认值，边缘节点的名称为 **new-edgenode**。可以通过门户自定义前缀。也可以通过模板自定义完整名称。
 4. 选中“我同意上述条款和条件”，然后单击“购买”创建边缘节点。
 
 ## 创建群集时添加边缘节点
@@ -88,17 +88,17 @@
     <a href="https://portal.azure.cn/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-hdinsight-linux-with-edge-node%2Fazuredeploy.json" target="_blank"><img src="./media/hdinsight-apps-use-edge-node/deploy-to-azure.png" alt="Deploy to Azure"></a>
 3. 配置以下属性：
    
-   * **订阅**：选择用于创建此群集的 Azure 订阅。
-   * **资源组**：创建用于群集的新资源组。
-   * **位置**：选择资源组的位置。
-   * **群集名称**：输入要创建的新群集的名称。
-   * **群集登录用户名**：输入 Hadoop HTTP 用户名。默认名称为 **admin**。
-   * **群集登录密码**：输入 Hadoop HTTP 用户密码。
-   * **SSH 用户名**：输入 SSH 用户名。默认名称为 **sshuser**。
-   * **SSH 密码**：输入 SSH 用户密码。
-   * **安装脚本操作**：保留本教程自始至终使用的默认值。
+    * **订阅**：选择用于创建此群集的 Azure 订阅。
+    * **资源组**：创建用于群集的新资源组。
+    * **位置**：选择资源组的位置。
+    * **群集名称**：输入要创建的新群集的名称。
+    * **群集登录用户名**：输入 Hadoop HTTP 用户名。默认名称为 **admin**。
+    * **群集登录密码**：输入 Hadoop HTTP 用户密码。
+    * **SSH 用户名**：输入 SSH 用户名。默认名称为 **sshuser**。
+    * **SSH 密码**：输入 SSH 用户密码。
+    * **安装脚本操作**：保留本教程自始至终使用的默认值。
      
-     已在模板中硬编码的某些属性：群集类型、群集辅助角色节点计数、边缘节点大小，以及边缘节点名称。
+        已在模板中硬编码的某些属性：群集类型、群集辅助角色节点计数、边缘节点大小，以及边缘节点名称。
 4. 选中“我同意上述条款和条件”，然后单击“购买”创建带边缘节点的群集。
 
 ## 访问边缘节点

@@ -94,7 +94,7 @@ Azure 门户预览会公开大部分的群集属性。使用 Azure Resource Mana
    
     > [AZURE.IMPORTANT]
     如果你计划使用 32 个以上的工作节点（在创建群集时或是在创建之后通过扩展群集进行），则必须选择至少具有 8 个核心和 14GB ram 的头节点大小。
-    > 
+    > <p>
     > 有关节点大小和相关费用的详细信息，请参阅 [HDInsight 定价](/pricing/details/hdinsight/)。
     > 
     > 

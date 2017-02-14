@@ -86,7 +86,7 @@
 
     > [AZURE.NOTE]
     也可以在浏览器中打开以下 URL 来访问群集的 Jupyter 笔记本。将 **CLUSTERNAME** 替换为群集的名称：
-    >
+    ><p>
     > `https://CLUSTERNAME.azurehdinsight.cn/jupyter`
     >
     >
@@ -140,7 +140,7 @@
 
     默认情况下，将显示以下表格输出。
 
-     ![查询结果的表输出](./media/hdinsight-apache-spark-jupyter-spark-sql/tabular.output.png "查询结果的表输出")  
+    ![查询结果的表输出](./media/hdinsight-apache-spark-jupyter-spark-sql/tabular.output.png "查询结果的表输出")  
 
 
     你也可以在其他视觉效果中查看结果。例如，同一输出的分区图看起来如下所示。

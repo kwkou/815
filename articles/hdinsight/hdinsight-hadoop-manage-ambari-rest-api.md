@@ -54,12 +54,12 @@ HDInsight 上的 Ambari REST API 的基本 URI 为 https://CLUSTERNAME.azurehdin
 
 > [AZURE.IMPORTANT]
 URI 的完全限定域名 (FQDN) 部分 (CLUSTERNAME.azurehdinsight.cn) 中的群集名称不区分大小写，但 URI 中的其他部分则区分大小写。例如，如果群集名称为 MyCluster，则有效的 URI 如下：
-> 
+> <p>
 > `https://mycluster.azurehdinsight.cn/api/v1/clusters/MyCluster` 
 `https://MyCluster.azurehdinsight.cn/api/v1/clusters/MyCluster`
-> 
+> <p>
 > 下面的 URI 返回一个错误，因为第二个出现的名称的大小写不正确。
-> 
+> <p>
 > `https://mycluster.azurehdinsight.cn/api/v1/clusters/mycluster` 
 `https://MyCluster.azurehdinsight.cn/api/v1/clusters/mycluster`
 

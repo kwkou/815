@@ -49,11 +49,11 @@ Storm 0.10.0 或更高版本中提供了 Flux 框架。HDInsight 3.3 随附了 S
 
 * **PATH** - 应该包含以下路径：
   
-  * **JAVA\_HOME**（或等效路径）
+    * **JAVA\_HOME**（或等效路径）
 
-  * **JAVA\_HOME\\bin**（或等效路径）
+    * **JAVA\_HOME\\bin**（或等效路径）
 
-  * 安装 Maven 的目录
+    * 安装 Maven 的目录
 
 ## 创建新的 Maven 项目
 
@@ -595,7 +595,7 @@ YAML 文件定义要用于拓扑的组件、如何在组件之间流送数据，
 
 3. 对 **pom.xml** 文件进行以下更改。
    
-   * 在 `<dependencies>` 节中添加以下新依赖关系：
+    * 在 `<dependencies>` 节中添加以下新依赖关系：
      
             <!-- Add a dependency on the Flux framework -->
             <dependency>
@@ -604,7 +604,7 @@ YAML 文件定义要用于拓扑的组件、如何在组件之间流送数据，
                 <version>${storm.version}</version>
             </dependency>
 
-   * 将以下插件添加到 `<plugins>` 节。此插件处理项目包（jar 文件）的创建，并在创建包时应用一些特定于 Flux 的转换。
+    * 将以下插件添加到 `<plugins>` 节。此插件处理项目包（jar 文件）的创建，并在创建包时应用一些特定于 Flux 的转换。
      
             <!-- build an uber jar -->
             <plugin>
@@ -643,9 +643,9 @@ YAML 文件定义要用于拓扑的组件、如何在组件之间流送数据，
                 </executions>
             </plugin>
 
-   * 在 **exec-maven-plugin** `<configuration>` 节中，将 `<mainClass>` 的值更改为 `org.apache.storm.flux.Flux`。这样，在开发环境本地运行拓扑时，Flux 便可以处理这种运行。
+    * 在 **exec-maven-plugin** `<configuration>` 节中，将 `<mainClass>` 的值更改为 `org.apache.storm.flux.Flux`。这样，在开发环境本地运行拓扑时，Flux 便可以处理这种运行。
 
-   * 将以下内容添加到 `<resources>` 节中的 `<includes>`。这样就加入了用于将拓扑定义为项目一部分的 YAML 文件。
+    * 将以下内容添加到 `<resources>` 节中的 `<includes>`。这样就加入了用于将拓扑定义为项目一部分的 YAML 文件。
      
             <include>topology.yaml</include>
 

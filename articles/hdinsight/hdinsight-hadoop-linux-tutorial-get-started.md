@@ -140,9 +140,9 @@ HDInsight 中使用的组件中，[Apache Hive](/documentation/articles/hdinsigh
 * 若要了解有关创建 HDInsight 群集时可选择的选项的详细信息，请参阅[使用自定义选项在 Linux 上创建 HDInsight](/documentation/articles/hdinsight-hadoop-provision-linux-clusters/)。
 * 如果熟悉 Linux 和 Hadoop，但想要了解有关 HDInsight 上 Hadoop 的具体信息，请参阅[使用 Linux 上的 HDInsight](/documentation/articles/hdinsight-hadoop-linux-information/)。这提供了如下信息：
   
-  * 群集上托管的服务（例如 Ambari 和 WebHCat）的 URL
-  * Hadoop 文件和示例在本地文件系统上的位置
-  * 使用 Azure 存储空间 (WASB) 而不是 HDFS 作为默认数据存储
+    * 群集上托管的服务（例如 Ambari 和 WebHCat）的 URL
+    * Hadoop 文件和示例在本地文件系统上的位置
+    * 使用 Azure 存储空间 (WASB) 而不是 HDFS 作为默认数据存储
 
 [1]: /documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started/
 

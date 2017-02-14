@@ -210,3 +210,4 @@ Hive 非常适用于在 HDInsight 中处理数据，但有时你需要一种更�
 有关 Hive 用户定义函数的详细信息，请参阅 apache.org 网站上的 Hive wiki 的 [Hive 运算符和用户定义函数](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+UDF)部分。
 
 <!---HONumber=Mooncake_0120_2017-->
+<!--Update_Description: update from ASM to ARM-->

@@ -72,7 +72,7 @@
     -XX:OnOutOfMemoryError=/path/to/script
 
 > [AZURE.NOTE]由于 Hadoop 是分布式系统，任何使用的脚本都必须放置在服务运行时所在的群集的所有节点上。
->
+><p>
 > 该脚本还必须位于可供帐户（服务以该帐户的身份运行）访问的位置，并且必须提供执行权限。例如，你可能希望将脚本存储在 `/usr/local/bin` 中，并通过 `chmod go+rx /usr/local/bin/filename.sh` 来授予读取和执行权限。
 
 ## <a name="using-ambari"></a>使用 Ambari

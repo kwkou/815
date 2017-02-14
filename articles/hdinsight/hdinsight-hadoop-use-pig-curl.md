@@ -59,7 +59,7 @@
     * **-u**：用来对请求进行身份验证的用户名和密码。
     * **-G**：指示这是 GET 请求
      
-     所有请求的 URL 开头 (**https://CLUSTERNAME.azurehdinsight.cn/templeton/v1**) 都是一样的。路径 **/status** 指示请求是要返回服务器的 WebHCat（也称为 Templeton）状态。
+        所有请求的 URL 开头 (**https://CLUSTERNAME.azurehdinsight.cn/templeton/v1**) 都是一样的。路径 **/status** 指示请求是要返回服务器的 WebHCat（也称为 Templeton）状态。
 
 2. 使用以下代码将 Pig Latin 作业提交到群集：
    
@@ -122,3 +122,4 @@
 * [将 MapReduce 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-mapreduce/)
 
 <!---HONumber=Mooncake_0120_2017-->
+<!--Update_Description: update from ASM to ARM-->

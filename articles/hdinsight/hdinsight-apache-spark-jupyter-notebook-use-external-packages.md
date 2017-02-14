@@ -43,7 +43,7 @@
    
     > [AZURE.NOTE]
     也可以在浏览器中打开以下 URL 来访问群集的 Jupyter 笔记本。将 **CLUSTERNAME** 替换为群集的名称：
-    > 
+    > <p>
     > `https://CLUSTERNAME.azurehdinsight.cn/jupyter`
     > 
 

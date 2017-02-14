@@ -132,7 +132,7 @@ Azure 服务名称和虚拟机名称均必须唯一。本教程中使用的名�
     * **名称**：Contoso-LNet-CN
     * **VPN 设备 IP 地址**：192.168.0.1（稍后将会更新此地址）
      
-       通常，应该使用 VPN 设备的实际外部 IP 地址。对于 VNet 到 VNet 配置，将使用 VPN 网关 IP 地址。如果尚未为两个 VNet 创建 VPN 网关，请输入任意 IP 地址，然后返回进行修改。
+        通常，应该使用 VPN 设备的实际外部 IP 地址。对于 VNet 到 VNet 配置，将使用 VPN 网关 IP 地址。如果尚未为两个 VNet 创建 VPN 网关，请输入任意 IP 地址，然后返回进行修改。
 3. 输入：
    
     * **地址空间起始 IP 地址**：10.1.0.0
@@ -236,3 +236,4 @@ VNet 网关使用共享密钥对虚拟网络之间的连接进行身份验证。
 [img-vpn-status]: ./media/hdinsight-hbase-geo-replication-configure-vnets/hdinsight-hbase-vpn-status.png
 
 <!---HONumber=Mooncake_0120_2017-->
+<!--Update_Description: update meta properties & wording update-->

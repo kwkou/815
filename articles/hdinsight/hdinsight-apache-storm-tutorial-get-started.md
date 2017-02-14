@@ -82,7 +82,7 @@ Storm on HDInsight 使用 Azure Blob 存储来存储提交到群集的日志文�
     使用“选择”保存**节点定价层**信息。
 10. 选择“可选配置”。此边栏选项卡可用于选择群集版本以及配置其他可选设置，例如加入**虚拟网络**。
     
-     ![可选配置边栏选项卡](./media/hdinsight-apache-storm-tutorial-get-started/optionalconfiguration.png)  
+    ![可选配置边栏选项卡](./media/hdinsight-apache-storm-tutorial-get-started/optionalconfiguration.png)  
 
 11. 确保选中“固定到启动板”，然后选择“创建”。这将会创建群集，并将该群集的磁贴添加到 Azure 门户预览的启动板。该图标指示群集正在预配，完成预配后，将改为显示 HDInsight 图标。
     
@@ -247,3 +247,4 @@ Storm UI 可以用于监视拓扑。
 [preview-portal]: https://portal.azure.cn/
 
 <!---HONumber=Mooncake_0120_2017-->
+<!--Update_Description: update from ASM to ARM-->

@@ -188,3 +188,4 @@ Azure PowerShell 提供了一种简单方法，可让你在 HDInsight 群集上�
 * [将 Pig 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-pig/)
 
 <!---HONumber=Mooncake_0120_2017-->
+<!--Update_Description: update from ASM to ARM-->

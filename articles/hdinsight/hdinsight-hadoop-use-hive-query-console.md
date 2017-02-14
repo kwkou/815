@@ -117,3 +117,4 @@ HDInsight 查询控制台只能在基于 Windows 的 HDInsight 群集上使用�
 [img-hdi-hive-powershell-output]: ./media/hdinsight-use-hive/HDI.Hive.PowerShell.Output.png
 
 <!---HONumber=Mooncake_0120_2017-->
+<!--Update_Description: update from ASM to ARM-->

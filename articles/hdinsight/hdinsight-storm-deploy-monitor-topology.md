@@ -189,3 +189,4 @@ REST API on HDInsight 群集的基本 URI 是 **https://&lt;clustername>.azurehd
 [storm-dashboard-ui]: ./media/hdinsight-storm-deploy-monitor-topology/storm-ui-summary.png
 
 <!---HONumber=Mooncake_0120_2017-->
+<!--Update_Description: update from ASM to ARM-->

@@ -39,7 +39,7 @@
 
 > [AZURE.WARNING]
 完全支持通过 HDInsight 群集提供的组件，Azure 支持部门将帮助你找出并解决与这些组件相关的问题。
-> 
+> <p>
 > 自定义组件（如 Giraph）可获得合理范围的支持，以帮助你进一步排查问题。这可能导致问题解决，或要求你参与可用的开放源代码技术渠道，在该处可找到该技术的深入专业知识。有许多可以使用的社区站点，例如：[HDInsight 的 MSDN 论坛](https://social.msdn.microsoft.com/Forums/azure/zh-cn/home?forum=hdinsight)、[Azure CSDN](http://azure.csdn.net)。此外，Apache 项目在 [http://apache.org](http://apache.org) 上提供了项目站点，例如 [Hadoop](http://hadoop.apache.org/)。
 > 
 > 
@@ -65,12 +65,12 @@ Azure PowerShell、Azure CLI、HDInsight .NET SDK 或 Azure Resource Manager 模
 1. 使用[创建基于 Linux 的 HDInsight 群集](/documentation/articles/hdinsight-hadoop-create-linux-clusters-portal/)中的步骤开始创建群集，但是不完成创建。
 2. 在“可选配置”边栏选项卡上，选择“脚本操作”，并提供以下信息：
    
-   * **名称**：输入脚本操作的友好名称。
-   * **脚本 URI**：https://hdiconfigactions.blob.core.windows.net/linuxgiraphconfigactionv01/giraph-installer-v01.sh
-   * **标头**：选中此选项
-   * **辅助角色**：不选择此选项
-   * **ZOOKEEPER**：不选择此选项
-   * **参数**：将此字段留空
+    * **名称**：输入脚本操作的友好名称。
+    * **脚本 URI**：https://hdiconfigactions.blob.core.windows.net/linuxgiraphconfigactionv01/giraph-installer-v01.sh
+    * **标头**：选中此选项
+    * **辅助角色**：不选择此选项
+    * **ZOOKEEPER**：不选择此选项
+    * **参数**：将此字段留空
 3. 在“脚本操作”的底部，使用“选择”按钮保存配置。最后，使用“可选配置”边栏选项卡底部的“选择”按钮保存可选配置信息。
 4. 继续按[创建基于 Linux 的 HDInsight 群集](/documentation/articles/hdinsight-hadoop-create-linux-clusters-portal/)中所述创建群集。
 
@@ -83,8 +83,8 @@ Azure PowerShell、Azure CLI、HDInsight .NET SDK 或 Azure Resource Manager 模
    
     有关如何在 HDInsight 中使用 SSH 的详细信息，请参阅以下文档：
    
-   * [在 Linux、Unix 或 OS X 中的 HDInsight 上将 SSH 与基于 Linux 的 Hadoop 配合使用](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix/)
-   * [在 Windows 中的 HDInsight 上将 SSH 与基于 Linux 的 Hadoop 配合使用](/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows/)
+    * [在 Linux、Unix 或 OS X 中的 HDInsight 上将 SSH 与基于 Linux 的 Hadoop 配合使用](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix/)
+    * [在 Windows 中的 HDInsight 上将 SSH 与基于 Linux 的 Hadoop 配合使用](/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows/)
 2. 使用以下命令创建名为 **tiny\_graph.txt** 的新文件：
    
         nano tiny_graph.txt
@@ -108,21 +108,21 @@ Azure PowerShell、Azure CLI、HDInsight .NET SDK 或 Azure Resource Manager 模
         hdfs dfs -put tiny_graph.txt /example/data/tiny_graph.txt
 5. 使用以下命令运行 SimpleShortestPathsComputation 示例。
    
-         yarn jar /usr/hdp/current/giraph/giraph-examples.jar org.apache.giraph.GiraphRunner org.apache.giraph.examples.SimpleShortestPathsComputation -ca mapred.job.tracker=headnodehost:9010 -vif org.apache.giraph.io.formats.JsonLongDoubleFloatDoubleVertexInputFormat -vip /example/data/tiny_graph.txt -vof org.apache.giraph.io.formats.IdWithValueTextOutputFormat -op /example/output/shortestpaths -w 2
+        yarn jar /usr/hdp/current/giraph/giraph-examples.jar org.apache.giraph.GiraphRunner org.apache.giraph.examples.SimpleShortestPathsComputation -ca mapred.job.tracker=headnodehost:9010 -vif org.apache.giraph.io.formats.JsonLongDoubleFloatDoubleVertexInputFormat -vip /example/data/tiny_graph.txt -vof org.apache.giraph.io.formats.IdWithValueTextOutputFormat -op /example/output/shortestpaths -w 2
    
     下表介绍了与此命令搭配使用的参数：
    
-   | 参数 | 功能 | 
-   | --- | --- | 
-   | `jar /usr/hdp/current/giraph/giraph-examples.jar` |jar 文件包含示例。| 
-   | `org.apache.giraph.GiraphRunner` |用于启动示例的类。| 
-   | `org.apache.giraph.examples.SimpleShortestPathsCoputation` |将运行的示例。在此例中，它会计算图形中 ID 1 和其他所有 ID 之间的最短路径。| 
-   | `-ca mapred.job.tracker=headnodehost:9010` |群集的头节点。| 
-   | `-vif org.apache.giraph.io.formats.JsonLongDoubleFloatDoubleVertexInputFromat` |用于输入数据的输入格式。| 
-   | `-vip /example/data/tiny_graph.txt` |输入数据文件。| 
-   | `-vof org.apache.giraph.io.formats.IdWithValueTextOutputFormat` |输出格式。在此例中，ID 和值是纯文本。| 
-   | `-op /example/output/shortestpaths` |输出位置| 
-   | `-w 2` |要使用的辅助角色数。此例中为 2。|
+    | 参数 | 功能 | 
+    | --- | --- | 
+    | `jar /usr/hdp/current/giraph/giraph-examples.jar` |jar 文件包含示例。| 
+    | `org.apache.giraph.GiraphRunner` |用于启动示例的类。| 
+    | `org.apache.giraph.examples.SimpleShortestPathsCoputation` |将运行的示例。在此例中，它会计算图形中 ID 1 和其他所有 ID 之间的最短路径。| 
+    | `-ca mapred.job.tracker=headnodehost:9010` |群集的头节点。| 
+    | `-vif org.apache.giraph.io.formats.JsonLongDoubleFloatDoubleVertexInputFromat` |用于输入数据的输入格式。| 
+    | `-vip /example/data/tiny_graph.txt` |输入数据文件。| 
+    | `-vof org.apache.giraph.io.formats.IdWithValueTextOutputFormat` |输出格式。在此例中，ID 和值是纯文本。| 
+    | `-op /example/output/shortestpaths` |输出位置| 
+    | `-w 2` |要使用的辅助角色数。此例中为 2。|
    
     For more information on these, and other parameters used with Giraph samples, see the [Giraph quickstart](http://giraph.apache.org/quick_start.html).
 6. 该作业完成后，结果将存储在 **wasbs:///example/out/shotestpaths** 目录中。创建的文件将以 **part-m-** 开头，结尾的数字表示第一个文件、第二个文件，依此类推。使用以下命令查看输出：

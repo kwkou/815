@@ -305,7 +305,7 @@ Scalding 是一种 Scala 库，它可以让你轻松地创建 Hadoop MapReduce �
             -HttpCredential $creds `
             -DisplayOutputType StandardError
    
-     运行该脚本时，系统将提示你输入 HDInsight 群集的管理员用户名和密码。运行作业时发生的任何错误都将记录到控制台中。
+    运行该脚本时，系统将提示你输入 HDInsight 群集的管理员用户名和密码。运行作业时发生的任何错误都将记录到控制台中。
 4. 完成作业后，输出将下载到当前目录中的 **output.txt** 文件。使用以下命令显示结果。
    
         cat output.txt
@@ -334,3 +334,4 @@ Scalding 是一种 Scala 库，它可以让你轻松地创建 Hadoop MapReduce �
 * [将 MapReduce 作业与 HDInsight 配合使用](/documentation/articles/hdinsight-use-mapreduce/)
 
 <!---HONumber=Mooncake_0120_2017-->
+<!--Update_Description: update from ASM to ARM-->

@@ -60,3 +60,4 @@
 [ce0c02a2]: https://github.com/hdinsight/hdinsight-storm-examples/tree/master/templates/HDInsightStormExamples "此项目包含用来与各种 Azure 服务（例如事件中心、DocumentDB 和 SQL 数据库）进行交互的 spout、bolt 和拓扑的模板。"
 
 <!---HONumber=Mooncake_0120_2017-->
+<!--Update_Description: update from ASM to ARM-->

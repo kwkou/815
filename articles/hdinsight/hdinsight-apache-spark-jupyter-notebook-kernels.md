@@ -44,7 +44,7 @@
 2. 在 Spark 群集边栏选项卡中单击“快速链接”，然后在“群集仪表板”边栏选项卡中单击“Jupyter 笔记本”。出现提示时，请输入群集的管理员凭据。
 
 	> [AZURE.NOTE] 也可以在浏览器中打开以下 URL 来访问群集的 Jupyter 笔记本。将 __CLUSTERNAME__ 替换为群集的名称：
-	>
+	><p>
 	> `https://CLUSTERNAME.azurehdinsight.cn/jupyter`
 
 2. 创建具有新内核的新笔记本。单击“新建”，然后单击“Pyspark”或“Spark”。Spark 内核适用于 Scala 应用程序，PySpark 内核适用于 Python 应用程序。

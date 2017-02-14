@@ -39,7 +39,7 @@
 1. 在 [Azure 门户预览](https://portal.azure.cn/)中，从启动板（如果已将群集固定在此处），单击要在其中运行示例的群集磁贴。
 2. 在群集边栏选项卡中的“快速链接”下，单击“群集仪表板”，然后在“群集仪表板”边栏选项卡上，单击“HDInsight 群集仪表板”。或者，也可以直接使用以下 URL 打开仪表板：
    
-         https://<clustername>.azurehdinsight.cn
+        https://<clustername>.azurehdinsight.cn
    
     出现提示时，通过使用设置群集时所用的管理员用户名和密码进行身份验证。
 3. 在打开的网页中，单击“入门库”选项卡，然后在“使用示例数据的解决方案”类别下方，单击“网站日志分析”示例。
@@ -54,3 +54,4 @@
 [img-hdi-weblogs-sample]: ./media/hdinsight-hive-analyze-website-log/hdinsight-weblogs-sample.png
 
 <!---HONumber=Mooncake_0120_2017-->
+<!--Update_Description: update from ASM to ARM-->

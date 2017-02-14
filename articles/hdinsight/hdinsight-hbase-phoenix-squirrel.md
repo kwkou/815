@@ -23,7 +23,7 @@
 
 > [AZURE.NOTE]
 有关 HDInsight 中的 Phoenix 版本信息，请参阅 [HDInsight 提供的 Hadoop 群集版本有有何变化？](/documentation/articles/hdinsight-component-versioning/)。
->
+><p>
 > 此文档中的信息特定于基于 Windows 的 HDInsight 群集。有关在基于 Linux 的 HDInsight 上使用 Phoenix 的信息，请参阅 [Use Apache Phoenix with Linux-based HBase clusters in HDinsight](/documentation/articles/hdinsight-hbase-phoenix-squirrel-linux/)（将 Apache Phoenix 与 HDinsight 中基于 Linux 的 HBase 群集配合使用）。
 >
 >
@@ -149,7 +149,7 @@
 
 * 从同一命令提示符（必须位于创建根证书的计算机上。必须从根证书生成客户端证书）运行以下命令：
 
-          makecert.exe -n "CN=HBaseVnetVPNClientCertificate" -pe -sky exchange -m 96 -ss My -in "HBaseVnetVPNRootCertificate" -is my -a sha1
+        makecert.exe -n "CN=HBaseVnetVPNClientCertificate" -pe -sky exchange -m 96 -ss My -in "HBaseVnetVPNRootCertificate" -is my -a sha1
 
     HBaseVnetVPNRootCertificate 是根证书名称。它必须与根证书名称匹配。
 
@@ -295,3 +295,4 @@ Phoenix 驱动程序 jar 文件位于 HBase 群集上。根据具体的版本，
 [img-squirrel-sql]: ./media/hdinsight-hbase-phoenix-squirrel/hdinsight-hbase-squirrel-sql.png
 
 <!---HONumber=Mooncake_0120_2017-->
+<!--Update_Description: update from ASM to ARM-->

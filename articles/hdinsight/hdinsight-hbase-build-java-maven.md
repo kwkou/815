@@ -607,12 +607,12 @@
    
     此命令使用 **SearchByEmail** 类搜索任何 **contactinformation** 列系列和 **email** 列包含字符串 **contoso.com** 的行。你应该会收到以下结果：
    
-          Franklin Holtz - ID: 2
-          Franklin Holtz - franklin@contoso.com - ID: 2
-          Rae Schroeder - ID: 4
-          Rae Schroeder - rae@contoso.com - ID: 4
-          Gabriela Ingram - ID: 6
-          Gabriela Ingram - gabriela@contoso.com - ID: 6
+        Franklin Holtz - ID: 2
+        Franklin Holtz - franklin@contoso.com - ID: 2
+        Rae Schroeder - ID: 4
+        Rae Schroeder - rae@contoso.com - ID: 4
+        Gabriela Ingram - ID: 6
+        Gabriela Ingram - gabriela@contoso.com - ID: 6
    
     将 **fabrikam.com** 用于 `-emailRegex` 值会返回电子邮件字段中包含 **fabrikam.com** 的用户。此搜索使用基于正则表达式的筛选器执行，因此，也可以输入正则表达式，例如 **^r**，这样就会返回电子邮件以字母“r”开头的条目。
 
@@ -628,3 +628,4 @@
 使用 `-showErr` 参数可查看运行作业时生成的标准错误 (STDERR)。
 
 <!---HONumber=Mooncake_0120_2017-->
+<!--Update_Description: update from ASM to ARM-->

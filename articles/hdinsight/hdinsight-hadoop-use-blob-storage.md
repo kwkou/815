@@ -304,3 +304,4 @@ URI 方案提供了使用 *wasb:* 前缀的未加密访问和使用 *wasbs* 的 
 [img-hdi-custom-create-storage-account]: ./media/hdinsight-hadoop-use-blob-storage/HDI.CustomCreateStorageAccount.png
 
 <!---HONumber=Mooncake_0120_2017-->
+<!--Update_Description: update from ASM to ARM-->

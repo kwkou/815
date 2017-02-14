@@ -56,3 +56,4 @@
 3. 按照网页上提供的说明完成该示例。
 
 <!---HONumber=Mooncake_Quality_Review_1118_2016-->
+<!--Update_Description: update from ASM to ARM-->

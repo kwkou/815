@@ -130,3 +130,4 @@ Microsoft 的大数据解决方案可将 Microsoft 商业智能 (BI) 组件与�
 [img-hdi-simbahiveodbc.excel.dataconnection]: ./media/hdinsight-connect-excel-hive-ODBC-driver/HDI.SimbaHiveOdbc.Excel.DataConnection1.png
 
 <!---HONumber=Mooncake_0120_2017-->
+<!--Update_Description: update meta properties & wording update-->

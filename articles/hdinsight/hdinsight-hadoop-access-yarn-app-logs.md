@@ -72,3 +72,4 @@ YARN ResourceManager UI 在群集头节点上运行，可以通过 Azure 门户�
 [YARN-concepts]: http://hortonworks.com/blog/apache-hadoop-yarn-concepts-and-applications/
 
 <!---HONumber=Mooncake_0120_2017-->
+<!--Update_Description: update from ASM to ARM-->

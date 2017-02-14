@@ -69,7 +69,7 @@ Apache Oozie 是一个管理 Hadoop 作业的工作流/协调系统。该系统�
 
     > [AZURE.IMPORTANT]
     Azure PowerShell 对于使用 Azure Service Manager 管理 HDInsight 资源的支持已**弃用**，将于 2017 年 1 月 1 日删除。本文档中的步骤使用的是与 Azure Resource Manager 兼容的新 HDInsight cmdlet。
-    >
+    ><p>
     > 请按照 [Install and configure Azure PowerShell](https://docs.microsoft.com/powershell/azureps-cmdlets-docs)（安装和配置 Azure PowerShell）中的步骤安装最新版本的 Azure PowerShell。如果你的脚本需要修改才能使用与 Azure Resource Manager 兼容的新 cmdlet，请参阅[迁移到适用于 HDInsight 群集的基于 Azure Resource Manager 的开发工具](/documentation/articles/hdinsight-hadoop-development-using-azure-resource-manager/)，了解详细信息。
 
 * **HDInsight 群集**。有关创建 HDInsight 群集的信息，请参阅[创建 HDInsight 群集][hdinsight-provision]或 [HDInsight 入门][hdinsight-get-started]。完成本教程需要以下数据：
@@ -644,7 +644,7 @@ HDInsight 群集版本 3.0 仅支持 *wasb://* 语法。较早的 *asv://* 语�
 9. 如果 HDinsight 群集版本为 2.1，请将“https://$clusterName.azurehdinsight.cn:443/oozie/v2/”替换为“https://$clusterName.azurehdinsight.cn:443/oozie/v1/”。HDInsight 群集 2.1 版不支持 2 版的 Web 服务。
 10. 单击“运行脚本”或按 **F5** 运行脚本。输出结果类似如下：
 
-     ![教程运行工作流输出][img-runworkflow-output]  
+    ![教程运行工作流输出][img-runworkflow-output]  
 
 11. 连接到 SQL 数据库以查看导出的数据。
 
@@ -740,3 +740,4 @@ HDInsight 群集版本 3.0 仅支持 *wasb://* 语法。较早的 *asv://* 语�
 [technetwiki-hive-error]: http://social.technet.microsoft.com/wiki/contents/articles/23047.hdinsight-hive-error-unable-to-rename.aspx
 
 <!---HONumber=Mooncake_0120_2017-->
+<!--Update_Description: update from ASM to ARM-->

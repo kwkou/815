@@ -75,8 +75,8 @@
     azure hdinsight cluster disable-http-access [options] <Cluster Name>
 
 ## 启用/禁用对群集的 RDP 访问
-      azure hdinsight cluster enable-rdp-access [options] <Cluster Name> <rdpUserName> <rdpPassword> <rdpExpiryDate>
-      azure hdinsight cluster disable-rdp-access [options] <Cluster Name>
+    azure hdinsight cluster enable-rdp-access [options] <Cluster Name> <rdpUserName> <rdpPassword> <rdpExpiryDate>
+    azure hdinsight cluster disable-rdp-access [options] <Cluster Name>
 
 ## 后续步骤
 在本文中，已了解如何执行不同的 HDInsight 群集管理任务。要了解更多信息，请参阅下列文章：
@@ -102,3 +102,4 @@
 [image-cli-clusterlisting]: ./media/hdinsight-administer-use-command-line/HDI.CLIListClusters.png "列出并显示群集"
 
 <!---HONumber=Mooncake_0120_2017-->
+<!--Update_Description: update from ASM to ARM-->
