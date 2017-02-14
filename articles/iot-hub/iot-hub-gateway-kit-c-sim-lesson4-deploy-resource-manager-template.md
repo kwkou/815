@@ -85,7 +85,7 @@ Azure Functions 是一种解决方案，可轻松地在云中运行 *函数* （
 用户已创建 Azure 函数应用，因此可以处理 IoT 中心消息并通过 Azure 存储帐户存储这些消息。现在可读取网关发送到 IoT 中心的消息。
 
 ## 后续步骤
-[读取保存在 Azure 存储中的消息](/documentation/articles/iot-hub-gateway-kit-c-sim-lesson4-read-table-storage/)。
+- [读取保存在 Azure 存储中的消息](/documentation/articles/iot-hub-gateway-kit-c-sim-lesson4-read-table-storage/)
 
 <!---HONumber=Mooncake_0206_2017-->
 <!--Update_Description:update wording and code-->

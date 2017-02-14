@@ -50,8 +50,9 @@ SDK 已在许多平台上进行了测试（有关详细信息，请参阅[平台
 ## 运行示例之前
 
 必须先在 Azure 订阅中创建一个服务实例（若无）并完成以下 2 个任务，才可在面向 C 的 Azure IoT 设备 SDK 中运行示例：
-* 准备开发环境
-* 获取设备凭据。
+
+ - 准备开发环境
+ - 获取设备凭据
 
 
 SDK 中包含的[自述文件](https://github.com/Azure/azure-iot-sdk-c)提供了有关准备开发环境和获取设备凭据的说明。以下部分包含有关这些说明的一些额外注释。
@@ -68,7 +69,7 @@ SDK 中包含的[自述文件](https://github.com/Azure/azure-iot-sdk-c)提供�
 
 -   当你安装 **CMake** 实用程序时，请选择将 **CMake** 添加到**所有用户**的系统 PATH（也可以添加到**当前用户**）：
 
-  ![](./media/iot-hub-device-sdk-c-intro/08-CMake.PNG)
+    ![](./media/iot-hub-device-sdk-c-intro/08-CMake.PNG)
 
 
 -   在打开**VS2015 开发人员命令提示符**之前，请先安装 Git 命令行工具。若要安装这些工具，请完成以下步骤：

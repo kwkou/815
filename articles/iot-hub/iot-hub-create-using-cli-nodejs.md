@@ -49,14 +49,15 @@ Azure 具有用于创建和处理资源的两个不同的部署模型：[Azure R
    
         azure login -e AzureChinaCloud
    
-   使用建议的 Web 浏览器和代码进行身份验证。
+    使用建议的 Web 浏览器和代码进行身份验证。
+    
 2. 如果有多个 Azure 订阅，则连接到 Azure 即有权访问与凭据关联的所有 Azure 订阅。可以使用以下命令查看 Azure 订阅并确定哪个订阅是默认订阅：
    
    
         azure account list 
    
 
-   若要设置订阅上下文，以便在其下运行其余命令，请使用：
+    若要设置订阅上下文，以便在其下运行其余命令，请使用：
 
    
         azure account set <subscription name>

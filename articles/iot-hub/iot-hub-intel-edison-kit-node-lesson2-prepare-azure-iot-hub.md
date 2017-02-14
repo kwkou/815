@@ -29,8 +29,9 @@
 
 ## 你要学习的知识
 本文介绍：
- - 如何使用 Azure CLI 创建 IoT 中心。
- - 如何在 IoT 中心为 Edison 创建设备标识。
+
+- 如何使用 Azure CLI 创建 IoT 中心。
+- 如何在 IoT 中心为 Edison 创建设备标识。
 
 ## 需要什么
 * 一个 Azure 帐户。如果没有 Azure 帐户，只需花费几分钟就能创建一个 [Azure 试用帐户](/pricing/1rmb-trial/)。

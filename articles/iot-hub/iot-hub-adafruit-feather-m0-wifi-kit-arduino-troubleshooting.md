@@ -28,20 +28,20 @@
 如果在运行 gulp 任务时遇到问题，可添加 `--verbose` 选项进行调试。请尝试使用 `Ctrl + C` 终止当前 gulp 任务，然后在控制台窗口中运行以下命令，以便查看调试消息。可以在控制台输出中查看详细的错误消息。
 
 
-		gulp --verbose
+	gulp --verbose
 
 
 或者，可以添加 `--listen`打开输出设备日志信息的串行端口。
 
 
-		gulp --listen
+	gulp --listen
  
 
 ### NPM 问题
 请尝试使用以下命令更新 NPM 包：
 
 
-		npm install -g npm
+	npm install -g npm
 
 
 ## Azure-CLI 问题
@@ -54,7 +54,7 @@ Azure 命令行接口 (Azure CLI) 为预览版。
 如果遇到“找不到满足需求的版本”，请运行以下命令，将 pip 升级到最新版本。
 
 
-		python -m pip install --upgrade pip
+	python -m pip install --upgrade pip
 
 
 ## Python 安装问题
@@ -84,17 +84,17 @@ Azure 命令行接口 (Azure CLI) 为预览版。
 若要安装最新（预发行）版的 iothub-explorer 工具，请在命令行环境中运行以下命令：
 
 
-		npm install -g iothub-explorer@latest
+	npm install -g iothub-explorer@latest
 
 
 可以使用以下命令获取所有 iothub-explorer 命令及其参数的更多帮助：
 
 
-		iothub-explorer help
+	iothub-explorer help
 
 
-### Azure 门户
-完整的 CLI 体验有助于用户创建和管理其所有 Azure 资源。还可能需要借助 [Azure 门户](/documentation/articles/azure-portal-overview/)对 Azure 资源进行预配、管理和调试。
+### Azure 门户预览
+完整的 CLI 体验有助于用户创建和管理其所有 Azure 资源。还可能需要借助 [Azure 门户预览](/documentation/articles/azure-portal-overview/)对 Azure 资源进行预配、管理和调试。
 
 ## Azure 存储问题
 [Microsoft Azure 存储资源管理器（预览版）](http://storageexplorer.com)是 Microsoft 推出的一款独立的应用，可用于在 Windows、OS X 和 Linux 上处理 Azure 存储数据。可以使用此工具连接到表并查看其中的数据。可以使用此工具排查 Azure 存储问题。

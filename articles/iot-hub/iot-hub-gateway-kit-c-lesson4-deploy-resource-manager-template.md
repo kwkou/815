@@ -21,7 +21,7 @@
 
 # 创建 Azure Function App 和存储帐户
 
-Azure Functions 是一种解决方案，可轻松地在云中运行_函数_（小代码片段）。Azure 函数应用在 Azure 中托管函数的执行。
+Azure Functions 是一种解决方案，可轻松地在云中运行 _函数_ （小代码片段）。Azure 函数应用在 Azure 中托管函数的执行。
 
 ## 执行的操作
 

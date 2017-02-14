@@ -103,7 +103,7 @@ IoT 中心的名称必须全局唯一。在 Azure 订阅下只能创建一个 F1
 已创建 IoT 中心并在 IoT 中心使用设备标识注册逻辑设备。已准备好学习如何配置和运行网关示例应用程序，将数据从物理设备发送到云中的 IoT 中心。
 
 ## 后续步骤
-[配置和运行模拟设备云上传示例应用程序](/documentation/articles/iot-hub-gateway-kit-c-sim-lesson3-configure-simulated-device-app/)
+- [配置和运行模拟设备云上传示例应用程序](/documentation/articles/iot-hub-gateway-kit-c-sim-lesson3-configure-simulated-device-app/)
 
 <!---HONumber=Mooncake_0206_2017-->
 <!--Update_Description:update wording and code-->
