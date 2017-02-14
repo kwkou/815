@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="09/02/2015"
-	wacn.date="02/06/2017"/>
+	ms.date="10/11/2016"
+	wacn.date="02/14/2017"/>
 
 # 为 HDInsight 中的 Hadoop 开发 Java MapReduce 程序
 

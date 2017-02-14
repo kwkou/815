@@ -16,8 +16,8 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/13/2016"
-	wacn.date="02/06/2017"
+	ms.date="10/03/2016"
+	wacn.date="02/14/2017"
 	ms.author="larryfr"/>
 
 # 在 HDInsight Hadoop 群集上安装并使用 Solr

@@ -11,8 +11,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="06/29/2016"
-	wacn.date="02/06/2017"/>
+	ms.date="10/03/2016"
+	wacn.date="02/14/2017"/>
 
 #借助 Maven 构建可将 HBase 与基于 Linux 的 HDInsight (Hadoop) 配合使用的 Java 应用程序
 

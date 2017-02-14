@@ -11,8 +11,8 @@ editor="cgronlun"/>
 
 <tags
 	ms.service="hdinsight"
-	ms.date="07/22/2016"
-	wacn.date="02/06/2017"/>
+	ms.date="10/17/2016"
+	wacn.date="02/14/2017"/>
 
 #使用 SSH 隧道访问 Ambari Web UI、JobHistory、NameNode、Oozie 和其他 Web UI
 

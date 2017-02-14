@@ -15,8 +15,8 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="big-data"
-    ms.date="10/28/2016"
-    wacn.date="02/06/2017"
+    ms.date="01/13/2017"
+    wacn.date="02/14/2017"
     ms.author="larryfr" />
 
 # 从基于 Windows 的 HDInsight 群集迁移到基于 Linux 的群集

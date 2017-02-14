@@ -12,8 +12,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="05/13/2016"
-	wacn.date="02/06/2017"/>
+	ms.date="10/11/2016"
+	wacn.date="02/14/2017"/>
 
 #开发适用于 HDInsight 的 Python 流式处理程序
 

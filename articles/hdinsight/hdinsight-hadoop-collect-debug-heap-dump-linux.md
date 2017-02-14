@@ -10,8 +10,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="09/02/2015"
-	wacn.date="02/06/2017"/>
+	ms.date="09/27/2016"
+	wacn.date="02/14/2017"/>
 
 
 #在基于 Linux 的 HDInsight（预览版）上为 Hadoop 服务启用堆转储
