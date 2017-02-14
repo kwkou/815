@@ -3,13 +3,13 @@
 
 1. 在命令行环境中运行以下命令：
    
-    npm install -g iothub-explorer@latest
+        npm install -g iothub-explorer@latest
 2. 然后，运行以下命令登录中心，请记得使用之前复制的 IoT 中心连接字符串替换 `{iot hub connection string}`：
    
-    iothub-explorer login "{iot hub connection string}"
+        iothub-explorer login "{iot hub connection string}"
 3. 最后，以下使用命令创建名为 `myDeviceId` 的新设备标识：
    
-    iothub-explorer create myDeviceId --connection-string
+        iothub-explorer create myDeviceId --connection-string
 
 记下结果中的设备连接字符串。设备应用使用此设备连接字符串以设备身份连接到 IoT 中心。
 
