@@ -103,7 +103,7 @@
             "heartbeat_refresh_seconds": 5,
             "livy_server_heartbeat_timeout_seconds": 60,
             "heartbeat_retry_seconds": 1
-			
+
     >[AZURE.TIP]
     将发送检测信号，以确保会话不会泄漏。请注意，当计算机转到睡眠或关闭状态时，将不会发送检测信号，从而导致会话被清除。对于群集 v3.4，如果要禁用此行为，可以从 Ambari UI 将 Livy 配置 `livy.server.interactive.heartbeat.timeout` 设置为 `0`。对于群集 v3.5，如果未设置上述 3.5 配置，会话将不会删除。
 
