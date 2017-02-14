@@ -14,7 +14,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="storage-backup-recovery"
     ms.date="1/09/2017"
-    wacn.date="02/10/2017"
+    wacn.date="02/14/2017"
     ms.author="pratshar" />  
 
 
@@ -52,7 +52,7 @@
   * **使用 Windows 网络虚拟化的 VM 网络** — 如果使用此设置配置了 VM 网络，应为目标 VM 网络定义静态池，无论源 VM 网络是配置为使用 DHCP 还是静态 IP 地址池。如果定义 DHCP，目标 VMM 服务器将充当 DHCP 服务器，并从为目标 VM 网络定义的池中提供一个 IP 地址。如果为源服务器定义了使用静态 IP 地址，则目标 VMM 服务器将从池中分配一个 IP 地址。在这两种情况下，如果未定义静态 IP 地址池，则 IP 地址分配将会失败。
 
 
-### 准备 DHCP
+###<a name="prepare-dhcp"></a> 准备 DHCP
 如果测试故障转移中涉及的虚拟机使用 DHCP，则应在为进行测试故障转移创建的隔离网络中创建测试 DHCP 服务器。
 
 ### 准备 Active Directory

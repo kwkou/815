@@ -14,7 +14,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="storage-backup-recovery"
     ms.date="1/04/2017"
-    wacn.date="02/10/2017"
+    wacn.date="02/14/2017"
     ms.author="raynew" />  
 
 
@@ -49,7 +49,7 @@ Hyper-V 站点到 Azure | 支持 | 支持 | 支持
 Azure 到 Hyper-V 站点 | 不支持 | 支持 | 不支持
 物理服务器到 Azure | <p>支持（增强版方案）</p><p>不支持（旧方案）</p> | 不支持 | 支持
 
-## 故障转移和故障回复
+##<a name="failover-and-failback"></a> 故障转移和故障回复
 
 根据部署，将虚拟机故障转移到本地辅助站点或 Azure。故障转移到 Azure 的计算机将作为 Azure 虚拟机创建。可以故障转移单个虚拟机、物理服务器或恢复计划。恢复计划由一个或多个包含受保护虚拟机或物理服务器的有序组构成。它们用于根据多个虚拟机所在的组协调这些虚拟机的故障转移。[详细了解](/documentation/articles/site-recovery-create-recovery-plans/)恢复计划。
 
@@ -80,7 +80,7 @@ Azure 到 Hyper-V 站点 | 不支持 | 支持 | 不支持
 - **驱动器号** — 如果你要在故障转移后保留虚拟机上的驱动器号，可将虚拟机的 SAN 策略设置为“打开”。虚拟机磁盘将自动联机。[了解详细信息](https://technet.microsoft.com/zh-cn/library/gg252636.aspx)。
 - **路由客户端请求** — Site Recovery 可与 Azure 流量管理器配合工作，以便在故障转移后将客户端请求路由到你的应用程序。
 
-## 运行测试故障转移
+##<a name="run-a-test-failover"></a> 运行测试故障转移
 若要执行到 Azure 的测试故障转移，请参阅[执行到 Azure 的测试故障转移](/documentation/articles/site-recovery-test-failover-to-azure/)。若要执行到 VMM 服务器管理的另一个本地站点的测试故障转移，请参阅[执行到 VMM 的测试故障转移](/documentation/articles/site-recovery-test-failover-vmm-to-vmm/)。
 
 ## 运行计划的故障转移（主站点到辅助站点）

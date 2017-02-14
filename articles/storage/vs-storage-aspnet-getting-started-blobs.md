@@ -14,7 +14,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="12/02/2016"
-    wacn.date="01/06/2017"
+    wacn.date="02/14/2017"
     ms.author="tarcher" />  
 
 
@@ -63,7 +63,7 @@ Azure Blob 存储是一种将非结构化数据作为对象/Blob 存储在云中
 		using Microsoft.WindowsAzure.Storage.Blob;
 
 
-## 创建 Blob 容器
+##<a name="create-a-blob-container"></a> 创建 Blob 容器
 
 Blob 容器是由 Blob 和文件夹组成的嵌套式层次结构。以下步骤演示了如何创建 Blob 容器。
 

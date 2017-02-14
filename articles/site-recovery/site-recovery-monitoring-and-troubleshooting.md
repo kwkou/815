@@ -15,7 +15,7 @@
 	ms.tgt_pltfrm="na"
 	ms.workload="storage-backup-recovery" 
 	ms.date="10/13/2016" 
-	wacn.date="01/04/2017"	
+	wacn.date="02/14/2017"	
 	ms.author="rajanaki"/>  
 
 	
@@ -208,7 +208,7 @@ ASR 中的每个操作都被审核，可在“作业”选项卡下面跟踪。�
 ### 故障转移后进行远程桌面故障排除
 -   许多客户在连接到 Azure 中已故障转移的 VM 时会遇到问题。[参考故障排除文档使用 RDP 连接到 VM](http://social.technet.microsoft.com/wiki/contents/articles/31666.troubleshooting-remote-desktop-connection-after-failover-using-asr.aspx)
 
-#### 在 Resource Manager 虚拟机上添加公共 IP
+####<a name="adding-a-public-ip-on-a-resource-manager-virtual-machine"></a> 在 Resource Manager 虚拟机上添加公共 IP
 如果门户中的“连接”按钮灰显，并且未通过 Express Route 或站点到站点 VPN 连接连接到 Azure，则必须先为 VM 创建并分配一个公共 IP 地址才能使用 RDP/SSH。遵循以下步骤在虚拟机的网络接口上添加一个公共 IP。
 
 ![在已故障转移的虚拟机的网络接口上添加公共 IP](./media/site-recovery-monitoring-and-troubleshooting/createpublicip.gif)  

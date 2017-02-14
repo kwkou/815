@@ -15,7 +15,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="data-management"
     ms.date="01/04/2017"
-    wacn.date="01/25/2017"
+    wacn.date="02/14/2017"
     ms.author="carlrab" />  
 
 
@@ -103,7 +103,7 @@ SQL 数据库的所需服务级别取决于每个资源维度的峰值负载要�
 
 进行 SQL 数据库分析时，可以获取会话的历史统计信息。查询 **sys.resource\_stats**，并使用 **active\_session\_count** 列。请参阅下一部分，详细了解如何使用此视图。
 
-## 监视资源使用情况
+##<a name="monitor-resource-use"></a> 监视资源使用情况
 可以通过两个视图监视 SQL 数据库相对于其服务层的资源使用情况：
 
 - [sys.dm\_db\_resource\_stats](https://msdn.microsoft.com/zh-cn/library/dn800981.aspx)

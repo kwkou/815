@@ -14,7 +14,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="storage-backup-recovery"
     ms.date="1/09/2017"
-    wacn.date="02/10/2017"
+    wacn.date="02/14/2017"
     ms.author="pratshar" />  
 
 
@@ -60,7 +60,7 @@ Site Recovery 将使用在虚拟机的“计算和网络”设置中提供的同
 > 
 
 
-### 为测试故障转移创建网络 
+###<a name="creating-a-network-for-test-failover"></a> 为测试故障转移创建网络 
 执行测试故障转移时，建议选择与虚拟机的“计算和网络”设置中提供的生产恢复站点网络相隔离的网络。默认情况下，在创建某个 Azure 虚拟网络时，该网络都会与其他网络隔离。此网络应模拟生产网络：
 
 1. 测试网络中的子网数目应与生产网络中的子网数目相同，并且其子网名称应与生产网络中子网的名称相同。
