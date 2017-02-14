@@ -36,8 +36,6 @@
 * 查看页面在生产环境中的实时运行。
 * 按照[推送 Git 提交](https://git-scm.com/docs/git-push)的方式更新内容。
 
-[AZURE.INCLUDE [app-service-linux](../../includes/app-service-linux.md)]
-
 ## 用于完成任务的 CLI 版本
 
 可使用以下 CLI 版本之一完成任务：
