@@ -461,3 +461,4 @@ HDInsight 还包含 Jython，后者是用 Java 编写的 Python 实现。Pig 无
 * [将 MapReduce 与 HDInsight 配合使用](/documentation/articles/hdinsight-use-mapreduce/)
 
 <!---HONumber=Mooncake_0120_2017-->
+<!--Update_Description: update from ASM to ARM-->

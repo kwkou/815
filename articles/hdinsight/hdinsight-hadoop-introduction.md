@@ -201,3 +201,4 @@ HDInsight 群集支持以下特定于 Hadoop 生态系统的语言：
 [zookeeper]: http://zookeeper.apache.org/
 
 <!---HONumber=Mooncake_0120_2017-->
+<!--Update_Description: update from ASM to ARM-->

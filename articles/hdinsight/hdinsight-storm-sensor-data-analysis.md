@@ -25,7 +25,7 @@
 
 > [AZURE.NOTE]
 本文档中的信息以及提供的示例已使用基于 Linux 的 HDInsight 3.3 和 3.4 群集版本测试过。
->
+><p>
 > Linux 是在 HDInsight 3.4 或更高版本上使用的唯一操作系统。有关详细信息，请参阅 [HDInsight 在 Windows 上弃用](/documentation/articles/hdinsight-component-versioning/#hdi-version-32-and-33-nearing-deprecation-date)。
 
 ## 先决条件
@@ -33,11 +33,11 @@
   
     > [AZURE.IMPORTANT]
     不需要现有的 HDInsight 群集；本文档中的步骤将创建以下资源：
-    > 
-    > * 一个 Azure 虚拟网络
-    > * 一个 Storm on HDInsight 群集（基于 Linux，2 个辅助角色节点）
-    > * 一个 HBase on HDInsight 群集（基于 Linux，2 个辅助角色节点）
-    > * 一个 Azure Web 应用，用于托管 Web 仪表板
+    > <p>
+    ><p> * 一个 Azure 虚拟网络
+    ><p> * 一个 Storm on HDInsight 群集（基于 Linux，2 个辅助角色节点）
+    ><p> * 一个 HBase on HDInsight 群集（基于 Linux，2 个辅助角色节点）
+    ><p> * 一个 Azure Web 应用，用于托管 Web 仪表板
     > 
     > 
 * [Node.js](http://nodejs.org/)：用于在开发环境中以本地方式预览 Web 仪表板。
@@ -505,3 +505,4 @@
 [azure-portal]: https://portal.azure.cn
 
 <!---HONumber=Mooncake_0120_2017-->
+<!--Update_Description: update from ASM to ARM-->

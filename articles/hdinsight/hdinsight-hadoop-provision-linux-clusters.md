@@ -162,7 +162,7 @@ HDInsight 群集与其默认存储帐户必须位于相同的 Azure 位置。
 
 > [AZURE.NOTE]
 群集大小限制因 Azure 订阅而异。要提高限制的大小，请联系计费支持人员。
->
+><p>
 > 群集使用的节点不视为虚拟机，因为用于节点的虚拟机映像是 HDInsight 服务的实现细节。节点使用的计算核心会计入可供订阅使用的计算核心总数。创建 HDInsight 群集时，可以在“节点定价层”边栏选项卡的摘要部分中查看可用核心数以及群集要使用的核心数。
 >
 >
@@ -287,7 +287,7 @@ HDInsight 群集与其默认存储帐户必须位于相同的 Azure 位置。
 
 > [AZURE.NOTE]
 如果在将 JAR 文件部署到 HDInsight 群集或调用 HDInsight 群集上的 JAR 文件时遇到问题，请联系 [Microsoft 技术支持](/support/contact/)。
->
+><p>
 > HDInsight 不支持级联，因此不符合 Microsoft 技术支持的条件。有关支持的组件列表，请参阅 [HDInsight 提供的群集版本有哪些新功能？](/documentation/articles/hdinsight-component-versioning/)。
 >
 >

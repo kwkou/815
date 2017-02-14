@@ -40,17 +40,17 @@ HDInsight 目前仅支持 Ambari 监视功能。Ambari API 1.0 受 HDInsight 版
 * **配备 Azure PowerShell 的工作站**。
 * （可选）[cURL][curl]。若要安装它，请参阅 [cURL 版本和下载][curl-download]。
   
-  > [AZURE.NOTE]
-  在 Windows 中使用 cURL 命令时，对选项值使用双引号而非单引号。
-  > 
-  > 
+    > [AZURE.NOTE]
+    在 Windows 中使用 cURL 命令时，对选项值使用双引号而非单引号。
+    > 
+    > 
 * **一个 Azure HDInsight 群集**。有关群集预配的说明，请参阅[开始使用 HDInsight][hdinsight-get-started] 或[预配 HDInsight 群集][hdinsight-provision]。你需要以下数据才能完成本教程：
   
-  | 群集属性 | Azure PowerShell 变量名 | 值 | 说明 | 
-  | --- | --- | --- | --- | 
-  | HDInsight 群集名称 |$clusterName | |HDInsight 群集的名称。| 
-  | 群集用户名 |$clusterUsername | |创建群集时指定的群集用户名。| 
-  | 群集密码 |$clusterPassword | |群集用户密码。|
+    | 群集属性 | Azure PowerShell 变量名 | 值 | 说明 | 
+    | --- | --- | --- | --- | 
+    | HDInsight 群集名称 |$clusterName | |HDInsight 群集的名称。| 
+    | 群集用户名 |$clusterUsername | |创建群集时指定的群集用户名。| 
+    | 群集密码 |$clusterPassword | |群集用户密码。|
 
 [AZURE.INCLUDE [upgrade-powershell](../../includes/hdinsight-use-latest-powershell.md)]
 

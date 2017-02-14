@@ -64,21 +64,21 @@
 
     > [AZURE.IMPORTANT]
     虽然可以直接通过 Internet 访问群集的 Ambari，但若要使用某些功能，则需要根据访问群集所用的内部域名的节点来达到目的。由于这是内部域名且未公开，因此，在尝试通过 Internet 访问某些功能时，你将会收到“找不到服务器”的错误。
-    >
+    ><p>
     > 若要使用 Ambari web UI 的全部功能，请使用 SSH 隧道通过代理将 Web 流量传送到群集头节点。请参阅[使用 SSH 隧道访问 Ambari Web UI、ResourceManager、JobHistory、NameNode、Oozie 和其他 Web UI](/documentation/articles/hdinsight-linux-ambari-ssh-tunnel/)
 
 * **Ambari (REST)** - https://&lt;clustername>.azurehdinsight.cn/ambari
 
     > [AZURE.NOTE]
     通过使用群集管理员用户和密码进行身份验证。
-    >
+    ><p>
     > 身份验证是纯文本身份验证 - 始终使用 HTTPS 来帮助确保连接是安全的。
 
 * **WebHCat (Templeton)** - https://&lt;clustername>.azurehdinsight.cn/templeton
 
     > [AZURE.NOTE]
     通过使用群集管理员用户和密码进行身份验证。
-    >
+    ><p>
     > 身份验证是纯文本身份验证 - 始终使用 HTTPS 来帮助确保连接是安全的。
 
 * **SSH** - &lt;clustername>-ssh.azurehdinsight.cn，使用端口 22 或 23。端口 22 用于连接主要头节点，而端口 23 用于连接辅助头节点。有关头节点的详细信息，请参阅 [HDInsight 中的 Hadoop 群集的可用性和可靠性](/documentation/articles/hdinsight-high-availability/)。
@@ -228,16 +228,16 @@ HDInsight 是一项托管服务，这意味着如果检测到问题，Azure 可�
 
 > [AZURE.IMPORTANT]
 某些属于独立 jar 文件的组件通过 HDInsight 提供，但不在路径中。若要查找特定组件，可使用以下命令在群集上搜索：
->
+><p>
 > ```find / -name *componentname*.jar 2>/dev/null```  
->
+><p>
 > 此时会返回任何匹配的 jar 文件的路径。
 
 如果群集已经以独立 jar 文件的形式提供了某个版本的组件，但用户需要使用其他版本，则可将新版组件上载到群集，然后尝试在作业中使用该组件。
 
 > [AZURE.WARNING]
 完全支持通过 HDInsight 群集提供的组件，Azure 支持部门将帮助找出并解决与这些组件相关的问题。
->
+><p>
 > 自定义组件可获得合理范围的支持，有助于进一步解决问题。这可能会促进解决问题，或要求使用可用的开源技术渠道，在渠道中可找到该技术的深厚的专业知识。有许多可以使用的社区站点，例如：[HDInsight 的 MSDN 论坛](https://social.msdn.microsoft.com/Forums/azure/zh-cn/home?forum=hdinsight)、[Azure CSDN](http://azure.csdn.net)。此外，Apache 项目在 [http://apache.org](http://apache.org) 上提供了项目站点，例如 [Hadoop](http://hadoop.apache.org/)、[Spark](http://spark.apache.org/)。
 
 ## 后续步骤

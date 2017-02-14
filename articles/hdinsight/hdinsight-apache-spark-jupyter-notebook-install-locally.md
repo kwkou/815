@@ -113,10 +113,10 @@
 
     1. 创建新的笔记本。在右下角单击“新建”。可以看到默认内核 **Python2**，以及安装的两个新内核 **PySpark** 和 **Spark**。
 
-       ![创建新的 Jupyter 笔记本](./media/hdinsight-apache-spark-jupyter-notebook-install-locally/jupyter-kernels.png "创建新的 Jupyter 笔记本")  
+        ![创建新的 Jupyter 笔记本](./media/hdinsight-apache-spark-jupyter-notebook-install-locally/jupyter-kernels.png "创建新的 Jupyter 笔记本")  
 
 
-        Click **PySpark**.
+            Click **PySpark**.
 
 
     2. 运行以下代码片段。

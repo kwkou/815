@@ -142,11 +142,11 @@ HDInsight 使用 Azure 存储 Blob 存储数据。HDInsight 必须对用作群�
    
     > [AZURE.IMPORTANT]
     出现输入 HTTP/s 或 SSH 用户名和密码的提示时，必须提供符合以下条件的密码：
-    > 
-    > * 长度必须至少为 10 个字符
-    > * 必须至少包含一个数字
-    > * 必须至少包含一个非字母数字字符
-    > * 必须至少包含一个大写或小写字母
+    > <p>
+    ><p> * 长度必须至少为 10 个字符
+    ><p> * 必须至少包含一个数字
+    ><p> * 必须至少包含一个非字母数字字符
+    ><p> * 必须至少包含一个大写或小写字母
     > 
     > 
 
@@ -163,7 +163,7 @@ HDInsight 使用 Azure 存储 Blob 存储数据。HDInsight 必须对用作群�
     * **密钥**：fs.azure.sas.CONTAINERNAME.STORAGEACCOUNTNAME.blob.core.chinacloudapi.cn
     * **值**：之前运行的 C# 或 Python 应用程序返回的 SAS
      
-     将 **CONTAINERNAME** 替换为对 C# 或 SAS 应用程序使用的容器名称。将 **STORAGEACCOUNTNAME** 替换为所用的存储帐户名。
+        将 **CONTAINERNAME** 替换为对 C# 或 SAS 应用程序使用的容器名称。将 **STORAGEACCOUNTNAME** 替换为所用的存储帐户名。
 5. 单击“添加”按钮保存此密钥和值，然后单击“保存”按钮保存配置更改。出现提示时，添加此更改的说明（例如，“添加 SAS 存储访问”），然后单击“保存”。
    
     更改完成后，单击“确定”。
@@ -185,8 +185,8 @@ HDInsight 使用 Azure 存储 Blob 存储数据。HDInsight 必须对用作群�
     连接后，使用桌面上的“Hadoop 命令行”图标打开命令提示符。
 * 对于**基于 Linux** 的 HDInsight 群集，使用 SSH 连接到群集。有关如何将 SSH 与基于 Linux 的群集配合使用的信息，请参阅以下文档之一：
   
-  * [在 Linux、OS X 或 Unix 中的 HDInsight 上将 SSH 与基于 Linux 的 Hadoop 配合使用](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix/)
-  * [在 Windows 中的 HDInsight 上将 SSH 与基于 Linux 的 Hadoop 配合使用](/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows/)
+    * [在 Linux、OS X 或 Unix 中的 HDInsight 上将 SSH 与基于 Linux 的 Hadoop 配合使用](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix/)
+    * [在 Windows 中的 HDInsight 上将 SSH 与基于 Linux 的 Hadoop 配合使用](/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows/)
 
 连接到群集后，使用以下步骤验证是否只能读取和列出 SAS 存储帐户中的项：
 
@@ -249,3 +249,4 @@ HDInsight 使用 Azure 存储 Blob 存储数据。HDInsight 必须对用作群�
 [powershell]: https://docs.microsoft.com/powershell/azureps-cmdlets-docs
 
 <!---HONumber=Mooncake_0120_2017-->
+<!--Update_Description: update from ASM to ARM-->

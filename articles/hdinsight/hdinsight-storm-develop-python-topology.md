@@ -79,7 +79,7 @@ Java 在此处调用 Python，并运行包含实际 Blot 逻辑的脚本。Java 
 
 > [AZURE.IMPORTANT]
 请注意，这只会指定 `/multilang` 目录，而不是 `/multilang/resources`。Storm 预期非 JVM 资源都位于 `resources` 目录中，因此已在内部查找过该目录。将组件放入此文件夹可以在 Java 代码中直接按名称引用。例如 `super("python", "countbolt.py");`。另一种思路是 Storm 在访问多语言资源时会将 `resources` 目录视为根目录 (/)。
-> 
+> <p>
 > 就本示例项目来说，`storm.py` 模块位于 `/multilang/resources` 目录中。
 > 
 > 
@@ -183,3 +183,4 @@ Storm 拓扑在启动之后将一直运行，直到被停止（终止）。 若�
 * [如何在 Pig 和 Hive 中使用 Python 用户定义的函数 (UDF)](/documentation/articles/hdinsight-python/)
 
 <!---HONumber=Mooncake_0120_2017-->
+<!--Update_Description: update from ASM to ARM-->

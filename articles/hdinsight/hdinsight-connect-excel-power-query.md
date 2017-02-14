@@ -83,3 +83,4 @@ Microsoft 大数据解决方案的一个关键功能是，将 Microsoft 商业�
 [powerquery-download]: https://www.microsoft.com/zh-cn/download/details.aspx?id=39379
 
 <!---HONumber=Mooncake_0120_2017-->
+<!--Update_Description: update meta properties & wording update-->

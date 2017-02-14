@@ -216,3 +216,4 @@ Hive 和 Pig 非常适合处理 Azure HDInsight 中的数据，但有时你需�
 * [将 MapReduce 与 HDInsight 配合使用](/documentation/articles/hdinsight-use-mapreduce/)
 
 <!---HONumber=Mooncake_0120_2017-->
+<!--Update_Description: update meta properties & wording update-->

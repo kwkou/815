@@ -303,3 +303,4 @@ HDInsight 提供了多个脚本用于在 HDInsight 群集上安装附加组件�
 [1]: https://msdn.microsoft.com/zh-cn/library/96xafkes(v=vs.110).aspx
 
 <!---HONumber=Mooncake_0120_2017-->
+<!--Update_Description: update from ASM to ARM-->

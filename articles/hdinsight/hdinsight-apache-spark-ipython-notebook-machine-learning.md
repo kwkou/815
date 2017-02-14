@@ -53,7 +53,7 @@
 2. 在 Spark 群集边栏选项卡中单击“快速链接”，然后在“群集仪表板”边栏选项卡中单击“Jupyter 笔记本”。出现提示时，请输入群集的管理员凭据。
 
 	> [AZURE.NOTE] 也可以在浏览器中打开以下 URL 访问群集的 Jupyter 笔记本。将 __CLUSTERNAME__ 替换为群集的名称：
-	>
+	><p>
 	> `https://CLUSTERNAME.azurehdinsight.cn/jupyter`
 
 2. 创建新笔记本。单击“新建”，然后单击“PySpark”。
@@ -226,10 +226,6 @@ HDInsight 上的 Apache Spark 群集包含 Anaconda 库，还包括适用于机�
 * [使用 Livy 在 Spark 群集中远程运行作业](/documentation/articles/hdinsight-apache-spark-livy-rest-interface/)
 
 ### 工具和扩展
-
-* [使用适用于 IntelliJ IDEA 的 HDInsight 工具插件创建和提交 Spark Scala 应用程序](/documentation/articles/hdinsight-apache-spark-intellij-tool-plugin/)
-
-* [Use HDInsight Tools Plugin for IntelliJ IDEA to debug Spark applications remotely（使用 IntelliJ IDEA 的 HDInsight 工具插件远程调试 Spark 应用程序）](/documentation/articles/hdinsight-apache-spark-intellij-tool-plugin-debug-jobs-remotely/)
 
 * [在 HDInsight 上的 Spark 群集中使用 Zeppelin 笔记本](/documentation/articles/hdinsight-apache-spark-use-zeppelin-notebook/)
 

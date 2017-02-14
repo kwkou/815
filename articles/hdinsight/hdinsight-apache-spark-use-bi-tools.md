@@ -47,7 +47,7 @@
 
     > [AZURE.NOTE]
     也可以在浏览器中打开以下 URL 来访问群集的 Jupyter 笔记本。将 **CLUSTERNAME** 替换为群集的名称：
-    >
+    ><p>
     > `https://CLUSTERNAME.azurehdinsight.cn/jupyter`
     >
     >
@@ -157,7 +157,7 @@
     ![将表添加到 Tableau](./media/hdinsight-apache-spark-use-bi-tools/hdispark.tableau.drag.table.png "将表添加到 Tableau")
 6. 单击左下角的“工作表 1”选项卡。针对每个日期生成一种视觉效果，用于显示所有建筑物的目标温度和实际温度平均值。将“日期”和“建筑物 ID”拖到“列”，并将“实际温度”/“目标温度”拖到“行”。在“标记”下选择“区域”，以使用区域映射视觉效果。
 
-     ![添加可视化字段](./media/hdinsight-apache-spark-use-bi-tools/hdispark.tableau.drag.fields.png "添加可视化字段")  
+    ![添加可视化字段](./media/hdinsight-apache-spark-use-bi-tools/hdispark.tableau.drag.fields.png "添加可视化字段")  
 
 7. 默认情况下，温度字段显示为聚合值。如果要显示平均温度，可从下拉列表中执行该操作，如下所示。
 

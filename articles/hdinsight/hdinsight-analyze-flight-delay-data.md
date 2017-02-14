@@ -60,7 +60,7 @@ Azure HDInsight 的主要优势之一就是隔离数据存储和计算。HDInsig
 
     > [AZURE.IMPORTANT]
     Azure PowerShell 对于使用 Azure Service Manager 管理 HDInsight 资源的支持已**弃用**，将于 2017 年 1 月 1 日删除。本文档中的步骤使用的是与 Azure Resource Manager 兼容的新 HDInsight cmdlet。
-    >
+    ><p>
     > 请按照 [Install and configure Azure PowerShell](https://docs.microsoft.com/powershell/azureps-cmdlets-docs)（安装和配置 Azure PowerShell）中的步骤安装最新版本的 Azure PowerShell。如果你的脚本需要修改才能使用与 Azure Resource Manager 兼容的新 cmdlet，请参阅[迁移到适用于 HDInsight 群集的基于 Azure Resource Manager 的开发工具](/documentation/articles/hdinsight-hadoop-development-using-azure-resource-manager/)，了解详细信息。
 
 **本教程中使用的文件**
@@ -352,7 +352,7 @@ Hadoop MapReduce 属于批处理。运行 Hive 作业时，最具成本效益的
 
 > [AZURE.NOTE]
 必须更新 Hive 查询，才能从新位置进行读取。
->
+><p>
 > 必须配置容器访问权限，使其成为公用，或者将存储帐户绑定到 HDInsight 群集。否则，Hive 查询字符串将无法访问数据文件。
 
 - - -
@@ -739,3 +739,4 @@ HiveQL 脚本将执行以下操作：
 [img-hdi-flightdelays-flow]: ./media/hdinsight-analyze-flight-delay-data/HDI.FlightDelays.Flow.png
 
 <!---HONumber=Mooncake_0120_2017-->
+<!--Update_Description: update from ASM to ARM-->

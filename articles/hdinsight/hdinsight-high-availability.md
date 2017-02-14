@@ -103,3 +103,4 @@ Hadoop 群集的标准实现通常具有单个头节点。HDInsight 通过添加
 * [使用 HDInsight .NET SDK](/documentation/articles/hdinsight-provision-clusters/)
 
 <!---HONumber=Mooncake_0120_2017-->
+<!--Update_Description: update from ASM to ARM-->

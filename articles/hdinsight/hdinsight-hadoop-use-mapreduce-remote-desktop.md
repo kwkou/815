@@ -26,7 +26,7 @@
 
 > [AZURE.IMPORTANT]
 远程桌面只能在基于 Windows 的 HDInsight 群集上使用。Linux 是在 HDInsight 3.4 版或更高版本上使用的唯一操作系统。有关详细信息，请参阅 [HDInsight 在 Windows 上弃用](/documentation/articles/hdinsight-component-versioning/#hdi-version-32-and-33-nearing-deprecation-date)。
->
+><p>
 > 有关 HDInsight 3.4 或更高版本，请参阅[将 MapReduce 与 SSH 配合使用](/documentation/articles/hdinsight-hadoop-use-mapreduce-ssh/)，了解如何连接到 HDInsight 群集以及如何运行 MapReduce 作业。
 
 ## <a id="prereq"></a>先决条件
@@ -101,3 +101,4 @@ Hadoop 命令提供了一种简单方法，可在 HDInsight 群集上运行 MapR
 * [将 Pig 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-pig/)
 
 <!---HONumber=Mooncake_0120_2017-->
+<!--Update_Description: update from ASM to ARM-->

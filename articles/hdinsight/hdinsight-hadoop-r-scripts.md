@@ -108,3 +108,4 @@ R 与 Azure Blob 存储 (WASB) 兼容，这样，存储在此的数据可以在 
 [hdinsight-install-spark]: /documentation/articles/hdinsight-apache-spark-jupyter-spark-sql/
 
 <!---HONumber=Mooncake_0120_2017-->
+<!--Update_Description: update from ASM to ARM-->

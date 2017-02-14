@@ -119,3 +119,4 @@ HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 中使用 HDInsi
 * [将数据上传到 HDInsight](/documentation/articles/hdinsight-upload-data/)：了解将数据上传到 HDInsight/Azure Blob 存储的其他方法。
 
 <!---HONumber=Mooncake_0120_2017-->
+<!--Update_Description: update from ASM to ARM-->

@@ -156,3 +156,4 @@ Azure PowerShell 提供了一种简单方法，可在 HDInsight 群集上运行 
 * [将 MapReduce 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-mapreduce/)
 
 <!---HONumber=Mooncake_0120_2017-->
+<!--Update_Description: update from ASM to ARM-->

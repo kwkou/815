@@ -328,3 +328,4 @@ Power Query 可以从 [www.microsoft.com/download/details.aspx?id=39379](http://
 * [使用 Ambari Web UI 管理 HDInsight 群集](/documentation/articles/hdinsight-hadoop-manage-ambari/)
 
 <!---HONumber=Mooncake_0120_2017-->
+<!--Update_Description: update meta properties & wording update-->

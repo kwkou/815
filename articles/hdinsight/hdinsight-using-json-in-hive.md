@@ -156,7 +156,7 @@ SerDe 是用于分析嵌套 JSON 文档的最佳选择，不但可定义 JSON �
     2. 单击“环境变量”。
     3. 添加指向 **C:\\Program Files\\Java\\jdk1.7.0\_55** 或任何 JDK 安装位置的新 **JAVA\_HOME** 环境变量。
       
-      ![设置 JDK 的正确配置值][image-hdi-hivejson-jdk]  
+        ![设置 JDK 的正确配置值][image-hdi-hivejson-jdk]  
 
 2. 安装 [Maven 3.3.1](http://mirror.olnevhost.net/pub/apache/maven/maven-3/3.3.1/binaries/apache-maven-3.3.1-bin.zip)
    
@@ -227,6 +227,7 @@ SerDe 是用于分析嵌套 JSON 文档的最佳选择，不但可定义 JSON �
 ![SerDe 查询 2][image-hdi-hivejson-serde_query2]  
 
 查找指定学生在哪些科目取得 80 以上的分数
+
     SELECT  
       jt.StudentClassCollection.ClassId
     FROM json_table jt
@@ -267,3 +268,4 @@ SerDe 是用于分析嵌套 JSON 文档的最佳选择，不但可定义 JSON �
 [image-hdi-hivejson-serde_result]: ./media/hdinsight-using-json-in-hive/serde_result.png
 
 <!---HONumber=Mooncake_0120_2017-->
+<!--Update_Description: update from ASM to ARM-->

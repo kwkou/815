@@ -224,3 +224,4 @@ HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 中使用 HDInsi
 [apache-hive]: http://hive.apache.org/
 
 <!---HONumber=Mooncake_Quality_Review_1118_2016-->
+<!--Update_Description: update from ASM to ARM-->

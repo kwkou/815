@@ -65,7 +65,7 @@ Linux 是在 HDInsight 3.4 版或更高版本上使用的唯一操作系统。�
 ## 使用脚本创建群集。
 > [AZURE.NOTE]
 以下步骤新建基于 Linux 的 HDInsight 群集。若要新建基于 Windows 的群集，请在创建群集时选择“Windows”作为群集 OS，并使用 Windows (PowerShell) 脚本而不是 bash 脚本。
->
+><p>
 > 还可以使用此脚本通过 Azure PowerShell 或 HDInsight .NET SDK 创建群集。有关使用这些方法的详细信息，请参阅[使用脚本操作自定义 HDInsight 群集](/documentation/articles/hdinsight-hadoop-customize-cluster-linux/)。
 >
 >
@@ -90,3 +90,4 @@ Linux 是在 HDInsight 3.4 版或更高版本上使用的唯一操作系统。�
 在本文档中，你已了解如何在群集创建过程中将 jar 文件中包含的 Hive 库添加到 HDInsight 群集中。有关使用 Hive 的详细信息，请参阅[将 Hive 与 HDInsight 配合使用](/documentation/articles/hdinsight-use-hive/)
 
 <!---HONumber=Mooncake_0120_2017-->
+<!--Update_Description: update from ASM to ARM-->

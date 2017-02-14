@@ -92,8 +92,8 @@ Azure PowerShell 是一个功能强大的脚本编写环境，可用于在 Azure
   
     可以使用两种方法来完成重新平衡操作：
   
-  * Storm Web UI
-  * 命令行界面 (CLI) 工具
+    * Storm Web UI
+    * 命令行界面 (CLI) 工具
     
     有关更多详细信息，请参阅 [Apache Storm 文档](http://storm.apache.org/documentation/Understanding-the-parallelism-of-a-Storm-topology.html)。
     
@@ -227,3 +227,4 @@ HDInsight 群集提供以下 HTTP Web 服务（所有这些服务都有 REST 样
 [image-hdi-ps-provision]: ./media/hdinsight-administer-use-powershell/HDI.PS.Provision.png
 
 <!---HONumber=Mooncake_0120_2017-->
+<!--Update_Description: update from ASM to ARM-->

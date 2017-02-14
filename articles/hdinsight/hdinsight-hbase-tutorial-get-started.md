@@ -180,7 +180,7 @@ HBase 提供了多种将数据载入表中的方法。有关详细信息，请�
 
 2. 在 Hive 编辑器中输入以下 HiveQL 脚本，然后单击“提交”。Hive 查询会在 HBase 表中查询数据：
 
-     	SELECT count(*) FROM hbasecontacts;
+        SELECT count(*) FROM hbasecontacts;
 
 4. 要检索 Hive 查询的结果，请在作业完成运行时，单击“作业会话”窗口中的“查看详细信息”链接。由于将一条记录放置在 HBase 表中，因此将只有一个作业输出文件。
 

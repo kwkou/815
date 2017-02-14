@@ -57,9 +57,9 @@
     * **群集登录名和密码**：默认登录名是 **admin**。
     * **SSH 用户名和密码**：默认用户名是 **sshuser**。可以重命名它。
      
-     其他参数是可选的。
+        其他参数是可选的。
      
-     每个群集都有一个 Azure Blob 存储帐户依赖项。删除群集后，数据将保留在存储帐户中。群集的默认存储帐户名为群集名称后接“store”。该名称已在模板 variables 节中硬编码。
+        每个群集都有一个 Azure Blob 存储帐户依赖项。删除群集后，数据将保留在存储帐户中。群集的默认存储帐户名为群集名称后接“store”。该名称已在模板 variables 节中硬编码。
 3. 选中“我同意上述条款和条件”，然后单击“购买”。创建群集大约需要 20 分钟时间。
 
 > [AZURE.NOTE]
@@ -147,15 +147,15 @@ HBase 提供了多种将数据载入表中的方法。有关详细信息，请�
 
 > [AZURE.NOTE]
 如果 Hive 和 HBase 位于同一 VNet 的不同群集中，则需在调用 Hive shell 时传递 zookeeper 仲裁：
->
->       hive --hiveconf hbase.zookeeper.quorum=zk0-xxxx.xxxxxxxxxxxxxxxxxxxxxxx.cx.internal.chinacloudapp.cn,zk1-xxxx.xxxxxxxxxxxxxxxxxxxxxxx.cx.internal.chinacloudapp.cn,zk2-xxxx.xxxxxxxxxxxxxxxxxxxxxxx.cx.internal.chinacloudapp.cn --hiveconf zookeeper.znode.parent=/hbase-unsecure  
+><p>
+> `hive --hiveconf hbase.zookeeper.quorum=zk0-xxxx.xxxxxxxxxxxxxxxxxxxxxxx.cx.internal.chinacloudapp.cn,zk1-xxxx.xxxxxxxxxxxxxxxxxxxxxxx.cx.internal.chinacloudapp.cn,zk2-xxxx.xxxxxxxxxxxxxxxxxxxxxxx.cx.internal.chinacloudapp.cn --hiveconf zookeeper.znode.parent=/hbase-unsecure`
 >
 >
 
 1. 打开 **PuTTY** 并连接到群集。参阅前一过程中的说明。
 2. 打开 Hive shell。
    
-       hive
+        hive
        
 3. 运行以下 HiveQL 脚本，以创建映射到 HBase 表的 Hive 表。确保已创建本教程中前面引用的示例表，方法是在运行此语句前使用 HBase Shell。
    
@@ -165,14 +165,14 @@ HBase 提供了多种将数据载入表中的方法。有关详细信息，请�
         TBLPROPERTIES ('hbase.table.name' = 'Contacts');
 4. 运行以下 HiveQL 脚本，以查询 HBase 表中的数据：
    
-         SELECT count(*) FROM hbasecontacts;
+        SELECT count(*) FROM hbasecontacts;
 
 ## 通过 Curl 使用 HBase REST API
 > [AZURE.NOTE]
 使用 Curl 或者与 WebHCat 进行任何其他形式的 REST 通信时，必须提供 HDInsight 群集管理员用户名和密码对请求进行身份验证。此外，还必须使用群集名称作为用来向服务器发送请求的统一资源标识符 (URI) 的一部分。
-> 
+> <p>
 > 对本部分中的所有命令，请将 **USERNAME** 替换为在群集上进行身份验证的用户，并将 **PASSWORD** 替换为用户帐户的密码。将 **CLUSTERNAME** 替换为群集名称。
-> 
+> <p>
 > REST API 通过[基本身份验证](http://en.wikipedia.org/wiki/Basic_access_authentication)进行保护。你始终应该使用安全 HTTP (HTTPS) 来发出请求，以确保安全地将凭据发送到服务器。
 > 
 > 
@@ -219,7 +219,7 @@ HBase 提供了多种将数据载入表中的方法。有关详细信息，请�
     * UGVyc29uYWw6TmFtZQ==: Personal:Name
     * Sm9obiBEb2xl: John Dole
      
-     使用 [false-row-key](https://hbase.apache.org/apidocs/org/apache/hadoop/hbase/rest/package-summary.html#operation_cell_store_single) 可以插入多个（批处理）值。
+        使用 [false-row-key](https://hbase.apache.org/apidocs/org/apache/hadoop/hbase/rest/package-summary.html#operation_cell_store_single) 可以插入多个（批处理）值。
 5. 使用以下命令获取行：
    
         curl -u <UserName>:<Password> \
@@ -238,16 +238,16 @@ HDInsight 中的 HBase 随附了一个 Web UI 用于监视群集。使用该 Web
 2. 在左侧菜单中，单击“HBase”。
 3. 单击页面顶部的“快速链接”，指向活动 Zookeeper 节点链接，然后单击“HBase Master UI”。在另一个浏览器标签页中打开 UI：
 
-  ![HDInsight HBase HMaster UI](./media/hdinsight-hbase-tutorial-get-started-linux/hdinsight-hbase-hmaster-ui.png)  
+    ![HDInsight HBase HMaster UI](./media/hdinsight-hbase-tutorial-get-started-linux/hdinsight-hbase-hmaster-ui.png)  
 
 
-  HBase Master UI 包含以下部分：
+    HBase Master UI 包含以下部分：
 
-  - 区域服务器
-  - 备份主机
-  - 表
-  - 任务
-  - 软件属性
+    - 区域服务器
+    - 备份主机
+    - 表
+    - 任务
+    - 软件属性
 
 ## 删除群集
 为了避免不一致，建议你在删除群集之前先禁用 HBase 表。

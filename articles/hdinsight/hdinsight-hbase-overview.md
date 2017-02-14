@@ -78,3 +78,4 @@ HDInsight 实施利用 HBase 的横向扩展架构来提供表自动分片、使
 [apache-hadoop]: http://hadoop.apache.org/
 
 <!---HONumber=Mooncake_0120_2017-->
+<!--Update_Description: update from ASM to ARM-->

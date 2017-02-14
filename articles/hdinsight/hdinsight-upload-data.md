@@ -79,10 +79,10 @@ Azure CLI 是一个跨平台工具，可用于管理 Azure 服务。使用以下
 
     * 上传文件：
 
-           azure storage blob upload -a <storage-account-name> -k <primary-key> <source-file> <container-name> <blob-name>
+            azure storage blob upload -a <storage-account-name> -k <primary-key> <source-file> <container-name> <blob-name>
     * 下载文件：
 
-           azure storage blob download -a <storage-account-name> -k <primary-key> <container-name> <blob-name> <destination-file>
+            azure storage blob download -a <storage-account-name> -k <primary-key> <container-name> <blob-name> <destination-file>
 
 > [AZURE.NOTE]
 如果始终使用同一个存储帐户，可以不用为每条命令指定帐户和密钥，而是设置以下环境变量：
@@ -298,3 +298,4 @@ Sqoop 是一种专用于在 Hadoop 和关系数据库之间传输数据的工具
 [image-ase-blob]: ./media/hdinsight-upload-data/HDI.ASEBlob.png
 
 <!---HONumber=Mooncake_0120_2017-->
+<!--Update_Description: update from ASM to ARM-->

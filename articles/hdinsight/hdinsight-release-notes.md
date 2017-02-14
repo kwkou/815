@@ -1272,17 +1272,17 @@ Apache Mahout 是 Apache Hadoop 的机器学习库。Mahout 包含用于处理�
 ## 2014 年 8 月 24 日发行说明
 * 我们正在添加以下 WebHCat 配置 (HIVE-7155)，该配置可将 Templeton 控制器作业的默认内存限制设置为 1 GB：（以前的默认值是 512 MB。）
 
-     templeton.mapper.memory.mb (=1024)
+        templeton.mapper.memory.mb (=1024)
 
-  * 这项更改解决了某些 Hive 查询由于内存限制较低而遇到的以下错误：“容器即将超出物理内存限制”。
-  * 要恢复到旧默认值，你可以在创建群集时使用以下命令通过 Azure PowerShell 将此配置值设置为 512：
+    * 这项更改解决了某些 Hive 查询由于内存限制较低而遇到的以下错误：“容器即将超出物理内存限制”。
+    * 要恢复到旧默认值，你可以在创建群集时使用以下命令通过 Azure PowerShell 将此配置值设置为 512：
 
-      Add-AzureRmHDInsightConfigValues -Core @{"templeton.mapper.memory.mb"="512";}
+            Add-AzureRmHDInsightConfigValues -Core @{"templeton.mapper.memory.mb"="512";}
 * zookeeper 角色的主机名已更改为 *zookeeper*。这会影响群集内部的名称解析，但不会影响外部 REST API。如果你的组件使用了 *zookeepernode* 主机名，则需更新这些组件，让其使用新名称。三个 zookeeper 节点的新名称为：
 
-  * zookeeper0
-  * zookeeper1
-  * zookeeper2
+    * zookeeper0
+    * zookeeper1
+    * zookeeper2
 * 已更新 HBase 版本支持矩阵。仅 HDInsight 版本 3.1（HBase 版本 0.98）支持 HBase 工作负载生成。版本 3.0（用于预览）将不支持升级。
 
 ## 2014/8/15 之前创建的群集的注意事项
@@ -1292,8 +1292,8 @@ Apache Mahout 是 Apache Hadoop 的机器学习库。Mahout 包含用于处理�
 
 ## 2014 年 7 月 28 日发行说明
 * **HDInsight 已在新区域推出：**我们已将 HDInsight 的地理覆盖范围扩展到三个新的区域。HDInsight 客户可以在这些区域创建群集。
-  * 中国东部
-  * 中国北部
+    * 中国东部
+    * 中国北部
 * HDInsight 1.6 版（HDP1.1、Hadoop 1.0.3）和 HDInsight 2.1 版（HDP1.3、Hadoop 1.2）即将从 Azure 门户预览中删除。可以继续使用 Azure PowerShell cmdlet [New-AzureRmHDInsightCluster](http://msdn.microsoft.com/zh-cn/library/dn593744.aspx) 或 [HDInsight SDK](http://msdn.microsoft.com/zh-cn/library/azure/dn469975.aspx) 来创建这些版本的 Hadoop 群集。有关详细信息，请参阅 [HDInsight 组件版本控制](/documentation/articles/hdinsight-component-versioning/)页。
 * 此版本中发生的 Hortonworks 数据平台 (HDP) 更改：
 
@@ -1506,3 +1506,4 @@ SQL Server 的 Java 数据库连接 (JDBC) 驱动程序由 HDInsight 在内部�
 [hdinsight-r-scripts]: /documentation/articles/hdinsight-hadoop-r-scripts/
 
 <!---HONumber=Mooncake_0120_2017-->
+<!--Update_Description: update from ASM to ARM-->

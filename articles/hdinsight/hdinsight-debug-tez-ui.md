@@ -139,3 +139,4 @@ Tez UI 只能从群集头节点的桌面使用，因此必须使用远程桌面�
 有关 Tez 的更详细的技术信息，请参阅 [Hortonworks 的 Tez 页](http://hortonworks.com/hadoop/tez/)。
 
 <!---HONumber=Mooncake_0120_2017-->
+<!--Update_Description: update from ASM to ARM-->

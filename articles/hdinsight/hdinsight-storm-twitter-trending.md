@@ -66,12 +66,12 @@ Trident 是一种高级抽象，可提供联接、聚合、分组、函数和筛
 4. 由于我们只对指定的这批推文中最受欢迎的哈希标记感兴趣，因此应用 **FirstN** 程序集，并仅根据计数字段返回前 10 个值。
 
 > [AZURE.NOTE]我们使用的是内置 Trident 功能，而不是 Spout 和 HashtagExtractor。
->
+><p>
 > 有关非 MemoryMapState 的 Trident-state 实现，请参阅：
->
-> * <a href="https://github.com/fhussonnois/storm-trident-elasticsearch" target="_blank">Storm Trident 弹性搜索</a>
->
-> * <a href="https://github.com/kstyrc/trident-redis" target="_blank">trident-redis</a>
+><p>
+><p> * <a href="https://github.com/fhussonnois/storm-trident-elasticsearch" target="_blank">Storm Trident 弹性搜索</a>
+><p>
+><p> * <a href="https://github.com/kstyrc/trident-redis" target="_blank">trident-redis</a>
 
 ###Spout
 

@@ -133,7 +133,7 @@
 
     * HBaseTableColumnFamily：列系列名称
      
-     ![设置对话框的图像](./media/hdinsight-storm-correlation-topology/settings.png)
+        ![设置对话框的图像](./media/hdinsight-storm-correlation-topology/settings.png)
 
 4. 运行解决方案。出现提示时，选择可在 HBase 群集上创建表的“c”键。
 
@@ -177,9 +177,9 @@
    
     > [AZURE.NOTE]
     如果“Storm 拓扑视图”未自动打开，可按以下步骤将其打开：
-    > 
-    > 1. 在“解决方案资源管理器”中，展开“Azure”，然后展开“HDInsight”。
-    > 2. 右键单击在其上运行拓扑的 Storm 群集，然后选择“查看 Storm 拓扑”
+    > <p>
+    ><p> 1. 在“解决方案资源管理器”中，展开“Azure”，然后展开“HDInsight”。
+    ><p> 2. 右键单击在其上运行拓扑的 Storm 群集，然后选择“查看 Storm 拓扑”
 
 ## 查询数据
 
@@ -215,3 +215,4 @@
 如需更多 Storm 示例，请参阅 [Storm on HDInsight 拓扑示例](/documentation/articles/hdinsight-storm-example-topology/)。
 
 <!---HONumber=Mooncake_0120_2017-->
+<!--Update_Description: update from ASM to ARM-->

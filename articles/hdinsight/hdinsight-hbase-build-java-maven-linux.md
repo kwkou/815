@@ -147,7 +147,7 @@
 		scp USERNAME@CLUSTERNAME-ssh.azurehdinsight.cn:/etc/hbase/conf/hbase-site.xml ./conf/hbase-site.xml
 
 	> [AZURE.NOTE] 如果你使用了 SSH 帐户的密码，则系统将提示你输入该密码。如果将 SSH 密钥与帐户配合使用，则可能需要使用 `-i` 参数来指定密钥文件的路径。以下示例将从 `~/.ssh/id_rsa` 加载私钥：
-	>
+	><p>
 	> `scp -i ~/.ssh/id_rsa USERNAME@CLUSTERNAME-ssh.azurehdinsight.cn:/etc/hbase/conf/hbase-site.xml ./conf/hbase-site.xml`
 
 ##创建应用程序
@@ -352,7 +352,7 @@
 	这会将文件上载到 SSH 用户帐户的主目录。
 
 	> [AZURE.NOTE] 如果你使用了 SSH 帐户的密码，则系统将提示你输入该密码。如果将 SSH 密钥与帐户配合使用，则可能需要使用 `-i` 参数来指定密钥文件的路径。以下示例将从 `~/.ssh/id_rsa` 加载私钥：
-	>
+	><p>
 	> `scp -i ~/.ssh/id_rsa ./target/hbaseapp-1.0-SNAPSHOT.jar USERNAME@CLUSTERNAME-ssh.azurehdinsight.cn:.`
 
 2. 使用 SSH 连接到 HDInsight 群集。将 **USERNAME** 替换为你的 SSH 登录名。将 **CLUSTERNAME** 替换为 HDInsight 群集名称：
@@ -360,7 +360,7 @@
 		ssh USERNAME@CLUSTERNAME-ssh.azurehdinsight.cn
 
 	> [AZURE.NOTE] 如果你使用了 SSH 帐户的密码，则系统将提示你输入该密码。如果将 SSH 密钥与帐户配合使用，则可能需要使用 `-i` 参数来指定密钥文件的路径。以下示例将从 `~/.ssh/id_rsa` 加载私钥：
-	>
+	><p>
 	> `ssh -i ~/.ssh/id_rsa USERNAME@CLUSTERNAME-ssh.azurehdinsight.cn`
 
 3. 连接后，使用以下命令在 Java 应用程序中创建新的 HBase 表：

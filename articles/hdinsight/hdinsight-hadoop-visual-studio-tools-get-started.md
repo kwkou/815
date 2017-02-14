@@ -285,3 +285,4 @@ Data Lake 工具支持显示 Tez 执行引擎运行的 Hive 作业的性能图�
 [apache.hive]: http://hive.apache.org
 
 <!---HONumber=Mooncake_0120_2017-->
+<!--Update_Description: update from ASM to ARM-->
