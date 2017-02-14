@@ -42,7 +42,7 @@
 某些属性已在模板中硬编码。例如：
 ><p>
 ><p> * **位置**：中国东部 2
-><p> * **群集版本**：3.4
+><p> * **群集版本**：3.5
 ><p> * **群集辅助角色节点计数**：4
 ><p> * **默认存储帐户**：唯一字符串
 ><p> * **虚拟网络名称**：<群集名称>-vnet
@@ -57,6 +57,9 @@
 1. 单击下面的图像可在 Azure 门户预览中打开模板。模板位于 [Azure 快速入门模板](https://github.com/Azure/azure-quickstart-templates/tree/master/101-hdinsight-hbase-linux-vnet/)中。
 
     <a href="https://portal.azure.cn/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-hdinsight-hbase-linux-vnet%2Fazuredeploy.json" target="_blank"><img src="./media/hdinsight-hbase-provision-vnet/deploy-to-azure.png" alt="Deploy to Azure"></a>
+
+    >[AZURE.NOTE] 必须修改从 GitHub 存储库“azure-quickstart-templates”下载的模板，以适应 Azure 中国云环境。例如，替换某些终结点（将“blob.core.windows.net”替换为“blob.core.chinacloudapi.cn”，将“cloudapp.azure.com”替换为“chinacloudapp.cn”）；把允许的地域改成“China North”和“China East”；把 HDInsight Linux 版本改为 Azure 中国所支持的 3.5。
+
 2. 在“自定义部署”边栏选项卡中输入以下项：
 
     * **订阅**：选择用于创建 HDInsight 群集、从属存储帐户和 Azure 虚拟网络的 Azure 订阅。

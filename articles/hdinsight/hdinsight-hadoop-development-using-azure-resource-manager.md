@@ -162,7 +162,7 @@ Azure PowerShell ARM cmdlet 可与 ASM cmdlet 一同安装。两种模式下的 
         -ClusterSizeInNodes 2 `
         -ClusterType Hadoop `
         -OSType Linux `
-        -Version "3.2" `
+        -Version "3.5" `
         -Credential $httpCredential `
         -SshCredential $sshCredential
 
@@ -178,7 +178,7 @@ Azure PowerShell ARM cmdlet 可与 ASM cmdlet 一同安装。两种模式下的 
         -ClusterSizeInNodes 2 `
         -ClusterType Hadoop `
         -OSType Linux `
-        -Version "3.2" `
+        -Version "3.5" `
         -HttpCredential $httpcredentials `
         -SshCredential $sshCredentials
 

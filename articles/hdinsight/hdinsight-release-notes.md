@@ -20,6 +20,8 @@
 
 # Azure HDInsight 上的 Hadoop 组件发行说明
 
+[AZURE.INCLUDE [hdinsight-linux-acn-version.md](../../includes/hdinsight-linux-acn-version.md)]
+
 ##Spark 2.0.1 on HDInsight 3.5 2016 年 11 月 18 日发行说明
 Spark 2.0.1 现可在 Spark 群集（HDInsight 版本 3.5）上使用。
 

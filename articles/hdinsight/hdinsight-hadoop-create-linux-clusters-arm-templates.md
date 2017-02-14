@@ -257,7 +257,7 @@
 
         },
         "properties": {
-            "clusterVersion": "3.4",
+            "clusterVersion": "3.5",
             "osType": "Linux",
             "tier": "standard",
             "clusterDefinition": {
