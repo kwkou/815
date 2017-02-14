@@ -23,6 +23,8 @@
 
 在本文档中使用的 Azure Resource Manager 模板演示了如何在资源组中创建多个 Azure 资源。具体说来，它将创建一个 Azure 虚拟网络、两个 HDInsight 群集（Storm 和 HBase）以及一个 Azure Web 应用。node.js 所实现的实时 Web 仪表板将自动部署到 Web 应用。
 
+[AZURE.INCLUDE [hdinsight-linux-acn-version.md](../../includes/hdinsight-linux-acn-version.md)]
+
 > [AZURE.NOTE]
 本文档中的信息以及提供的示例已使用基于 Linux 的 HDInsight 3.3 和 3.4 群集版本测试过。
 ><p>
@@ -286,7 +288,7 @@
    
     <a href="https://portal.azure.cn/#create/Microsoft.Template/uri/https%3A%2F%2Fhditutorialdata.blob.core.windows.net%2Farmtemplates%2Fcreate-linux-based-hbase-storm-cluster-in-vnet.json" target="_blank"><img src="./media/hdinsight-storm-sensor-data-analysis/deploy-to-azure.png" alt="Deploy to Azure"></a>
 
-    >[AZURE.NOTE] 必须修改从 GitHub 存储库“azure-quickstart-templates”下载的模板，以适应 Azure 中国云环境。例如，替换某些终结点（将“blob.core.windows.net”替换为“blob.core.chinacloudapi.cn”，将“cloudapp.azure.com”替换为“chinacloudapp.cn”）；把允许的地域改成“China North”和“China East”。
+    >[AZURE.NOTE] 必须修改从 GitHub 存储库“azure-quickstart-templates”下载的模板，以适应 Azure 中国云环境。例如，替换某些终结点（将“blob.core.windows.net”替换为“blob.core.chinacloudapi.cn”，将“cloudapp.azure.com”替换为“chinacloudapp.cn”）；把允许的地域改成“China North”和“China East”；把 HDInsight Linux 版本改为 Azure 中国所支持的 3.5。
 
 2. 在“参数”边栏选项卡中，输入以下内容：
    

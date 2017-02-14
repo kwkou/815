@@ -30,6 +30,8 @@ Mahout 是适用于 Apache Hadoop 的[计算机学习][ml]库。Mahout 包含用
 
 * 基于 Linux 的 HDInsight 群集。有关创建该群集的信息，请参阅[开始在 HDInsight 中使用基于 Linux 的 Hadoop][getstarted]。
 
+    [AZURE.INCLUDE [hdinsight-linux-acn-version.md](../../includes/hdinsight-linux-acn-version.md)]
+
     > [AZURE.IMPORTANT]
     Linux 是在 HDInsight 3.4 版或更高版本上使用的唯一操作系统。有关详细信息，请参阅 [HDInsight 在 Windows 上弃用](/documentation/articles/hdinsight-component-versioning/#hdi-version-32-and-33-nearing-deprecation-date)。
 

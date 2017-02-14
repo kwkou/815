@@ -22,6 +22,8 @@
 # 为 HDInsight Linux 上的 Apache Spark 群集安装 Zeppelin 笔记本
 了解如何在 Apache Spark 群集上安装 Zeppelin 笔记本，以及如何使用 Zeppelin 笔记本运行 Spark 作业。
 
+[AZURE.INCLUDE [hdinsight-linux-acn-version.md](../../includes/hdinsight-linux-acn-version.md)]
+
 > [AZURE.IMPORTANT]
 如果已在 HDInsight 3.5 上预配 Spark 1.6 群集，默认情况下可以按照[在 HDInsight Linux 上将 Zeppelin 笔记本与 Apache Spark 群集配合使用](/documentation/articles/hdinsight-apache-spark-zeppelin-notebook/)中的说明，访问 Zeppelin 笔记本。如果要使用 HDInsight 群集版本 3.3、3.4 上的 Zeppelin，或 HDInsight 3.5 上的 Spark 2.0，则必须按照本文中的说明安装 Zeppelin。
 >
@@ -104,7 +106,7 @@
 
     Add-AzureRMHDInsightScriptAction -Config $azureHDInsightConfigs -Name "Install Zeppelin" -NodeType HeadNode -Parameters "void" -Uri "https://hdiconfigactions.blob.core.windows.net/linuxincubatorzeppelinv01/install-zeppelin-spark151-v01.sh"
 
-    New-AzureRMHDInsightCluster -Config $azureHDInsightConfigs -OSType Linux -HeadNodeSize "Standard_D12" -WorkerNodeSize "Standard_D12" -ClusterSizeInNodes 2 -Location $location -ResourceGroupName $resourceGroupName -ClusterName $clusterName -HttpCredential $clusterCredential -DefaultStorageContainer $clusterContainerName -SshCredential $clusterSshCredential -Version "3.3"
+    New-AzureRMHDInsightCluster -Config $azureHDInsightConfigs -OSType Linux -HeadNodeSize "Standard_D12" -WorkerNodeSize "Standard_D12" -ClusterSizeInNodes 2 -Location $location -ResourceGroupName $resourceGroupName -ClusterName $clusterName -HttpCredential $clusterCredential -DefaultStorageContainer $clusterContainerName -SshCredential $clusterSshCredential -Version "3.5"
 
 ## 访问 Zeppelin 笔记本
 

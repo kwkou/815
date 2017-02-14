@@ -27,6 +27,8 @@
 
 你还将学习如何创建使用 C# 和 Java 组件的混合拓扑。
 
+[AZURE.INCLUDE [hdinsight-linux-acn-version.md](../../includes/hdinsight-linux-acn-version.md)]
+
 > [AZURE.IMPORTANT]
 虽然本文档中的步骤依赖于带 Visual Studio 的 Windows 开发环境，但是也可将编译的项目提交到基于 Linux 或 Windows 的 HDInsight 群集。__仅在 2016 年 10 月 28 日以后创建的基于 Linux 的群集支持 SCP.NET 拓扑__。
 > <p>

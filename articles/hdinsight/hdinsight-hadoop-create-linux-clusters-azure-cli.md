@@ -30,6 +30,8 @@ Azure Resource Manager 模板是描述**资源组**及其包含的所有资源�
 
 本文档中的步骤将引导你完成使用 Azure CLI 和模板创建新 HDInsight 群集的过程。
 
+[AZURE.INCLUDE [hdinsight-linux-acn-version.md](../../includes/hdinsight-linux-acn-version.md)]
+
 > [AZURE.IMPORTANT]
 Linux 是在 HDInsight 3.4 版或更高版本上使用的唯一操作系统。有关详细信息，请参阅 [HDInsight 在 Windows 上弃用](/documentation/articles/hdinsight-component-versioning/#hdi-version-32-and-33-nearing-deprecation-date)。
 

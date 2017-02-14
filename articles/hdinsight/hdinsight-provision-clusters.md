@@ -220,6 +220,8 @@ HDInsight 群集与其默认存储帐户必须位于相同的 Azure 位置。
 ## 使用 Hive/Oozie 元存储
 如果希望在删除 HDInsight 群集后保留 Hive 表，则强烈建议使用自定义元存储，以便将来可将该元存储附加到另一个 HDInsight 群集。
 
+[AZURE.INCLUDE [hdinsight-linux-acn-version.md](../../includes/hdinsight-linux-acn-version.md)]
+
 > [AZURE.IMPORTANT]
 HDInsight 元存储无法向后兼容。例如，无法使用 HDInsight 3.3 群集的元存储来创建 HDInsight 3.2 群集。
 > 

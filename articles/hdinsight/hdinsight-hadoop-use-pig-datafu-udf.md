@@ -29,6 +29,8 @@ DataFu 是适用于 Hadoop 的开放源代码库的集合。在本文档中，�
 
 ## 在基于 Linux 的 HDInsight 上安装 DataFu
 
+[AZURE.INCLUDE [hdinsight-linux-acn-version.md](../../includes/hdinsight-linux-acn-version.md)]
+
 > [AZURE.NOTE]
 DataFu 将安装在基于 Linux 的群集 3.3 版和更高版本上，以及基于 Windows 的群集上。它不会安装在早于 3.3 版的基于 Linux 的群集上。
 > <p>

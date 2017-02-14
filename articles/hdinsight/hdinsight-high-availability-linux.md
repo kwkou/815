@@ -26,6 +26,8 @@ Hadoop 可以通过在群集中的节点之间分发服务和数据的冗余副�
 
 为了应对这种潜在问题，Azure 上的 HDInsight 群集提供两个头节点，提升 Hadoop 服务和作业运行的可用性与可靠性。
 
+[AZURE.INCLUDE [hdinsight-linux-acn-version.md](../../includes/hdinsight-linux-acn-version.md)]
+
 > [AZURE.IMPORTANT]
 Linux 是在 HDInsight 3.4 版或更高版本上使用的唯一操作系统。有关详细信息，请参阅 [HDInsight 在 Windows 上弃用](/documentation/articles/hdinsight-component-versioning/#hdi-version-32-and-33-nearing-deprecation-date)。
 

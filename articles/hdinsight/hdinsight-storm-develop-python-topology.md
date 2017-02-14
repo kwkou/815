@@ -22,6 +22,8 @@
 
 Apache Storm 支持多种语言，甚至可将多种语言的组件合并成一个拓扑。在本文档中，将学习如何在 HDInsight 上基于 Java 和 Clojure 的 Storm 拓扑中使用 Python 组件。
 
+[AZURE.INCLUDE [hdinsight-linux-acn-version.md](../../includes/hdinsight-linux-acn-version.md)]
+
 > [AZURE.IMPORTANT]
 本文档提供了使用基于 Windows 和基于 Linux 的 HDInsight 群集的步骤。Linux 是在 HDInsight 3.4 或更高版本上使用的唯一操作系统。有关详细信息，请参阅 [HDInsight 在 Windows 上弃用](/documentation/articles/hdinsight-component-versioning/#hdi-version-32-and-33-nearing-deprecation-date)。
 

@@ -23,6 +23,8 @@
 
 了解如何使用 Maven 为 HDInsight 上的 Apache Storm 创建基于 Java 的拓扑。本文将会演练使用 Maven 和 Java（如果拓扑是在 Java 中定义的）创建基本单词计数应用程序的过程。然后，介绍如何使用 Flux 框架定义拓扑。
 
+[AZURE.INCLUDE [hdinsight-linux-acn-version.md](../../includes/hdinsight-linux-acn-version.md)]
+
 > [AZURE.NOTE]
 Storm 0.10.0 或更高版本中提供了 Flux 框架。HDInsight 3.3 随附了 Storm 0.10.0。
 

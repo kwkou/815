@@ -27,8 +27,6 @@ HDInsight 应用程序是用户可以在基于 Linux 的 HDInsight 群集上安�
 
 * **Datameer**：[Datameer](http://www.datameer.com/documentation/display/DAS50/Home?ls=Partners&lsd=Microsoft&c=Partners&cd=Microsoft) 提供一种交互方式，让分析师发现、分析和可视化大数据的结果。轻松拉进其他数据源，以发现新的关系并迅速获取所需的答案。
 * **用于 HDnsight 的 Streamsets 数据收集器**提供了一个全功能的集成开发环境 (IDE)，它允许用户设计、测试、部署和管理汇合流和批处理数据的全面互通引入管道，并提供各种流中转换 - 所有这些都无需编写自定义代码。
-* **Cask CDAP 3.5 for HDInsight** 为大数据提供第一个统一集成平台，减少数据应用程序和 Data Lake 的 80% 的生成时间。此应用程序仅支持标准 HBase 3.4 群集。
-
 
 本文提供的说明使用 Azure 门户预览。也可以从门户导出 Azure Resource Manager 模板或从供应商处获取 Resource Manage 模板的副本，然后使用 Azure PowerShell 和 Azure CLI 部署模板。请参阅[使用 Resource Manager 模板在 HDInsight 中创建基于 Linux 的 Hadoop 群集](/documentation/articles/hdinsight-hadoop-create-linux-clusters-arm-templates/)。
 

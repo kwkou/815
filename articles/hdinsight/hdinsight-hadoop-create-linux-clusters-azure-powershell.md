@@ -110,7 +110,7 @@ Azure PowerShell 是一个功能强大的脚本编写环境，可用于在 Azure
         -ClusterSizeInNodes $clusterNodes `
         -ClusterType Hadoop `
         -OSType Linux `
-        -Version "3.4" `
+        -Version "3.5" `
         -SshCredential $sshCredentials
 
 你为 **$clusterCredentials** 指定的值用于创建群集的 Hadoop 用户帐户。使用此帐户连接到群集。
@@ -145,7 +145,7 @@ Azure PowerShell 是一个功能强大的脚本编写环境，可用于在 Azure
         -ClusterSizeInNodes $clusterNodes `
         -ClusterType Hadoop `
         -OSType Linux `
-        -Version "3.4" `
+        -Version "3.5" `
         -SshCredential $sshCredentials `
         -Config $config
 

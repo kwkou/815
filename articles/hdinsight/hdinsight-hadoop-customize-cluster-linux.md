@@ -263,7 +263,7 @@ HDInsight 提供一个称为**脚本操作**的配置选项，该选项可调用
                     ],
                     "tags": { },
                     "properties": {
-                        "clusterVersion": "3.2",
+                        "clusterVersion": "3.5",
                         "osType": "Linux",
                         "clusterDefinition": {
                             "kind": "hadoop",

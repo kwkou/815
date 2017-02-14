@@ -30,6 +30,8 @@ Apache Storm 是分布式可容错的开源计算系统，可用于配合 Hadoop
 
 Apache Storm on HDInsight 是已集成到 Azure 环境中的托管群集。HDInsight 上的 Storm 和其他 Hadoop 组件基于 Hortonworks 数据平台 (HDP)，而群集的操作系统则为 Ubuntu（Linux 分发）。这种情况下提供的平台十分兼容 Hadoop 生态系统中的常用工具和服务。
 
+[AZURE.INCLUDE [hdinsight-linux-acn-version.md](../../includes/hdinsight-linux-acn-version.md)]
+
 > [AZURE.IMPORTANT]
 Linux 是在 HDInsight 3.4 或更高版本上使用的唯一操作系统。有关详细信息，请参阅 [HDInsight 在 Windows 上弃用](/documentation/articles/hdinsight-component-versioning/#hdi-version-32-and-33-nearing-deprecation-date)。
 

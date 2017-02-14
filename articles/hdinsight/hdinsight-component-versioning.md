@@ -23,6 +23,8 @@
 # 可与 HDInsight 使用的不同 Hadoop 组件有哪些？
 了解 HDInsight 提供的不同服务级别，以及 HDInsight 所包括的不同 Hadoop 组件版本。
 
+[AZURE.INCLUDE [hdinsight-linux-acn-version.md](../../includes/hdinsight-linux-acn-version.md)]
+
 ## 可与不同 HDInsight 版本使用的 Hadoop 组件
 Azure HDInsight 支持多个可随时部署的 Hadoop 群集版本。每个版本选项创建 Hortonworks 数据平台 (HDP) 分发的特定版本和该分发内包含的一组组件。下表中逐项列出了与 HDInsight 群集版本关联的组件版本。请注意，Azure HDInsight 使用的默认群集版本当前是 3.4（到 09/14/2016 为止）并基于 HDP 2.4。
 

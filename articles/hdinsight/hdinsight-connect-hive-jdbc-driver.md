@@ -162,6 +162,8 @@ SQuirreL SQL 是一个 JDBC 客户端，可用于通过 HDInsight 群集远程�
 
 ### 尝试打开 SQL 连接时发生意外错误
 
+[AZURE.INCLUDE [hdinsight-linux-acn-version.md](../../includes/hdinsight-linux-acn-version.md)]
+
 **症状**：连接到 HDInsight 群集 3.3 版或 3.4 版时，可能会遇到意外错误。此错误的堆栈跟踪将以下列行为开头：
 
     java.util.concurrent.ExecutionException: java.lang.RuntimeException: java.lang.NoSuchMethodError: org.apache.commons.codec.binary.Base64.<init>(I)V

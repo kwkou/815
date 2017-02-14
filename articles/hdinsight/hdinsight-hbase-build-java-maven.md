@@ -33,6 +33,8 @@
 * [Maven](http://maven.apache.org/)
 * [装有 HBase 的基于 Windows 的 HDInsight 群集](/documentation/articles/hdinsight-hbase-tutorial-get-started/#create-hbase-cluster)
 
+    [AZURE.INCLUDE [hdinsight-linux-acn-version.md](../../includes/hdinsight-linux-acn-version.md)]
+
     > [AZURE.NOTE] 本文档中的步骤已在 HDInsight 群集版本 3.2 和 3.3 中测试。示例中提供的默认值适用于 HDInsight 3.3 群集。
 
 ## 创建项目

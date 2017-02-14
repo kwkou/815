@@ -28,6 +28,8 @@ Azure 事件中心可用于处理网站、应用程序和设备中的大量数�
     * [基于 Linux 的 Storm on HDInsight 群集](/documentation/articles/hdinsight-apache-storm-tutorial-get-started-linux/)：若要从 Linux、Unix、OS X 或 Windows 客户端使用 SSH 来操作群集，请选择此选项
     * [基于 Windows 的 Storm on HDInsight 群集](/documentation/articles/hdinsight-apache-storm-tutorial-get-started/)：若要从 Windows 客户端使用 PowerShell 来操作群集，请选择此选项
     
+    [AZURE.INCLUDE [hdinsight-linux-acn-version.md](../../includes/hdinsight-linux-acn-version.md)]
+
     > [AZURE.NOTE]
     本文档中的步骤假设使用 Storm on HDInsight 群集 3.3 或 3.4。这些群集提供 Storm 0.10.0 和 Hadoop 2.7，可减少正常演示本示例而需要执行的步骤。
     ><p> 

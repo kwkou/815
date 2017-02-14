@@ -171,7 +171,7 @@ Azure Resource Manager 模板是描述**资源组**及其包含的所有资源�
 
                     },
                     "properties": {
-                        "clusterVersion": "3.2",
+                        "clusterVersion": "3.5",
                         "osType": "Linux",
                         "clusterDefinition": {
                             "kind": "[parameters('clusterType')]",
