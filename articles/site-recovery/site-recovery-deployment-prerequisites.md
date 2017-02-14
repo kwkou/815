@@ -76,8 +76,8 @@ Azure 提供两种不同的[部署模型](/documentation/articles/resource-manag
 
 **组件** | **要求**
 --- | ---
-**VMM（可选）** | <p>可以选择性地在 VMM 云中托管的 Hyper-V 主机上复制 VM。</p><p> 如果不使用 VMM，则可将一个或多个 Hyper-V 主机或群集收集到 Hyper-V 站点中，然后为站点设置复制。</p><p> 如果使用 VMM，它应在 System Center 2012 R2 上运行。</p><p> 如果使用 VMM，应在每个 VMM 服务器上配置一个或多个云。云应包含一个或多个 VMM 主机组，每个主机组中包含一个或多个 Hyper-V 主机服务器或群集。</p><p> VMM 服务器应连接到 Internet，并可访问[所需 URL](#requirements-for-url-access)。</p><p> 如果在 VMM 服务器上设置了基于 IP 地址的防火墙规则，请确保这些规则允许与 Azure 通信。</p><p> 允许 [Azure 数据中心 IP 范围](https://www.microsoft.com/download/confirmation.aspx?id=41653)和 HTTPS (443) 端口。</p>
-**Hyper-V 主机** | <p>Hyper-V 主机服务器必须至少运行具有 Hyper-V 角色或 **Microsoft Hyper-V Server 2012 R2** 且安装了最新更新的 **Windows Server 2012 R2**。</p><p> Hyper-V 服务器应包含一个或多个 VM。</p><p>Hyper-V 服务器应直接或通过代理连接到 Internet。</p><p>Hyper-V 服务器应已安装文章 [2961977](https://support.microsoft.com/zh-cn/kb/2961977) 中所述的修补程序。</p><p>Hyper-V 主机服务器需有将数据复制到 Azure 的 Internet 访问权限，包括[所需 URL](#requirements-for-url-access) 的访问权限。另外，允许 [Azure 数据中心 IP 范围](https://www.microsoft.com/download/confirmation.aspx?id=41653)和 HTTPS (443) 端口。</p><p> 如果 Hyper-V 主机位于 VMM 云中，请确保安装 [KB 2961977](https://support.microsoft.com/zh-cn/kb/2961977)</p> 中所述的修补程序
+**VMM（可选）** | <p>可以选择性地在 VMM 云中托管的 Hyper-V 主机上复制 VM。</p><p> 如果不使用 VMM，则可将一个或多个 Hyper-V 主机或群集收集到 Hyper-V 站点中，然后为站点设置复制。</p><p> 如果使用 VMM，它应在 System Center 2012 R2 上运行。</p><p> 如果使用 VMM，应在每个 VMM 服务器上配置一个或多个云。云应包含一个或多个 VMM 主机组，每个主机组中包含一个或多个 Hyper-V 主机服务器或群集。</p><p> VMM 服务器应连接到 Internet，并可访问[所需 URL](#requirements-for-url-access)。</p><p> 如果在 VMM 服务器上设置了基于 IP 地址的防火墙规则，请确保这些规则允许与 Azure 通信。</p><p> 允许 [Azure 数据中心 IP 范围](https://www.microsoft.com/en-us/download/details.aspx?id=42064)和 HTTPS (443) 端口。</p>
+**Hyper-V 主机** | <p>Hyper-V 主机服务器必须至少运行具有 Hyper-V 角色或 **Microsoft Hyper-V Server 2012 R2** 且安装了最新更新的 **Windows Server 2012 R2**。</p><p> Hyper-V 服务器应包含一个或多个 VM。</p><p>Hyper-V 服务器应直接或通过代理连接到 Internet。</p><p>Hyper-V 服务器应已安装文章 [2961977](https://support.microsoft.com/zh-cn/kb/2961977) 中所述的修补程序。</p><p>Hyper-V 主机服务器需有将数据复制到 Azure 的 Internet 访问权限，包括[所需 URL](#requirements-for-url-access) 的访问权限。另外，允许 [Azure 数据中心 IP 范围](https://www.microsoft.com/en-us/download/details.aspx?id=42064)和 HTTPS (443) 端口。</p><p> 如果 Hyper-V 主机位于 VMM 云中，请确保安装 [KB 2961977](https://support.microsoft.com/zh-cn/kb/2961977)</p> 中所述的修补程序
 
 ### Hyper-V VM 要求（复制到 Azure）
 
@@ -97,7 +97,7 @@ Azure 提供两种不同的[部署模型](/documentation/articles/resource-manag
 
 **组件** | **要求**
 --- | ---
-**VMM** | 若要将 Hyper-V VM 复制到辅助站点，必须在 System Center VMM 云中管理 Hyper-V host 主机。<br/><br/> VMM 必须至少运行具有最新更新的 System Center 2012 SP1。<br/><br/> 建议在主站点和辅助站点中各有一个 VMM 服务器。在此方案中，用户可以在[同一 VMM 服务器的不同云](/documentation/articles/site-recovery-single-vmm/)之间复制，但需要进行一些手动配置。<br/><br/> VMM 服务器应连接到 Internet，并可访问[所需 URL](#requirements-for-url-access)。<br/><br/> 如果在 VMM 服务器上设置了基于 IP 地址的防火墙规则，请确保这些规则允许与 Azure 通信。<br/><br/> 允许 [Azure 数据中心 IP 范围](https://www.microsoft.com/download/confirmation.aspx?id=41653)和 HTTPS (443) 端口。
+**VMM** | 若要将 Hyper-V VM 复制到辅助站点，必须在 System Center VMM 云中管理 Hyper-V host 主机。<br/><br/> VMM 必须至少运行具有最新更新的 System Center 2012 SP1。<br/><br/> 建议在主站点和辅助站点中各有一个 VMM 服务器。在此方案中，用户可以在[同一 VMM 服务器的不同云](/documentation/articles/site-recovery-single-vmm/)之间复制，但需要进行一些手动配置。<br/><br/> VMM 服务器应连接到 Internet，并可访问[所需 URL](#requirements-for-url-access)。<br/><br/> 如果在 VMM 服务器上设置了基于 IP 地址的防火墙规则，请确保这些规则允许与 Azure 通信。<br/><br/> 允许 [Azure 数据中心 IP 范围](https://www.microsoft.com/en-us/download/details.aspx?id=42064)和 HTTPS (443) 端口。
 **Hyper-V** | Hyper-V 服务器必须至少运行安装了 Hyper-V 角色和最新更新的 Windows Server 2012。<br/><br/> Hyper-V 服务器应包含一个或多个 VM<br/><br/> Hyper-V 主机应位于主 VMM 服务器和辅助 VMM 服务器上的主机组中。<br/><br/> 如果在 Windows Server 2012 R2 上的群集中运行 Hyper-V，应安装更新 [2961977](https://support.microsoft.com/zh-cn/kb/2961977)。如果用户在 Windows Server 2012 上有 Hyper-V 群集，并且有基于静态 IP 地址的群集，则不会自动创建群集代理。[了解更多](http://social.technet.microsoft.com/wiki/contents/articles/18792.configure-replica-broker-role-cluster-to-cluster-replication.aspx)有关手动配置的内容。
 
 ### Hyper-V VM 要求（辅助站点）

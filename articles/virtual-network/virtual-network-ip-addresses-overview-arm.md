@@ -58,7 +58,7 @@ Azure 提供用于创建和处理资源的两种部署模型：[Resource Manager
 * 使用链接到 IP 地址的 SSL 证书。
 
 > [AZURE.NOTE]
-将公共 IP 地址（动态/静态）分配给 Azure 资源时所依据的 IP 范围列表已在 [Azure Datacenter IP ranges](https://www.microsoft.com/download/details.aspx?id=41653)（Azure 数据中心 IP 范围）中发布。
+将公共 IP 地址（动态/静态）分配给 Azure 资源时所依据的 IP 范围列表已在 [Azure Datacenter IP ranges](https://www.microsoft.com/en-us/download/details.aspx?id=42064)（Azure 数据中心 IP 范围）中发布。
 >
 
 ### DNS 主机名解析

@@ -125,7 +125,7 @@ Comcast 和某些 IT 组织阻止此端口。若要了解是否由此造成“�
 若要深入了解如何使用 Portqry，请参阅 [Portqry.exe 命令行实用工具说明](https://support.microsoft.com/zh-cn/kb/310099)。
 
 ### 原因 2 的解决方案
-与 IT 组织配合，向 [Azure IP 范围](https://www.microsoft.com/download/details.aspx?id=41653)开放端口 445 出站。
+与 IT 组织配合，向 [Azure IP 范围](https://www.microsoft.com/en-us/download/details.aspx?id=42064)开放端口 445 出站。
 
 ### 原因 3
 如果在客户端上启用 NTLMv1 通信，也会收到“系统错误 53”。启用 NTLMv1 会降低客户端的安全性。因此，将阻止 Azure 文件的通信。若要验证这是否是错误原因，请验证以下注册表子项是否设为值 3：
