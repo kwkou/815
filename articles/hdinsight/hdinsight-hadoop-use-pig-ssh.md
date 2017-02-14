@@ -10,8 +10,8 @@
 
 <tags
    ms.service="hdinsight" 
-   ms.date="07/06/2015"
-   wacn.date="02/06/2017"/>
+   ms.date="10/11/2016"
+   wacn.date="02/14/2017"/>
  
 #使用 Pig 命令 (SSH) 在基于 Linux 的群集上运行 Pig 作业
 

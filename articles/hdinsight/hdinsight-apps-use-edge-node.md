@@ -16,8 +16,8 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="11/15/2016"
-    wacn.date="02/06/2017"
+    ms.date="12/14/2016"
+    wacn.date="02/14/2017"
     ms.author="jgao" />
 
 # 在 HDInsight 中使用空边缘节点

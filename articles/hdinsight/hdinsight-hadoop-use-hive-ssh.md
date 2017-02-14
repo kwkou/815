@@ -10,8 +10,8 @@
 
 <tags
    ms.service="hdinsight" 
-   ms.date="07/06/2015"
-   wacn.date="02/06/2017"/>
+   ms.date="10/04/2016"
+   wacn.date="02/14/2017"/>
 
 #通过 SSH 将 Hive 与 HDInsight 中的 Hadoop 配合使用
 

@@ -12,8 +12,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="06/06/2016"
-	wacn.date="02/06/2017"/>
+	ms.date="08/25/2016"
+	wacn.date="02/14/2017"/>
 
 # 跟踪和调试 HDInsight Linux 中的 Apache Spark 群集上运行的作业
 

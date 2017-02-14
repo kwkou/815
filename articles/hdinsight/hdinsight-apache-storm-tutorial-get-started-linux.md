@@ -16,8 +16,8 @@
     ms.topic="get-started-article"
     ms.tgt_pltfrm="na"
     ms.workload="big-data"
-    ms.date="11/18/2016"
-    wacn.date="02/06/2017"
+    ms.date="01/12/2017"
+    wacn.date="02/14/2017"
     ms.author="larryfr" />
 
 # Apache Storm 教程：用于在 HDInsight 上进行大数据分析的 Storm 初学者示例入门

@@ -15,8 +15,8 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="data-services"
-    ms.date="11/23/2016"
-    wacn.date="02/06/2017"
+    ms.date="01/09/2017"
+    wacn.date="02/14/2017"
     ms.author="jeffstok" />
 
 # 开始使用 HDInsight 上的 R Server

@@ -11,8 +11,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="05/04/2016"
-	wacn.date="02/06/2017"/>
+	ms.date="10/05/2016"
+	wacn.date="02/14/2017"/>
 
 # 迁移到适用于 HDInsight 群集的基于 Azure Resource Manager 的开发工具
 
