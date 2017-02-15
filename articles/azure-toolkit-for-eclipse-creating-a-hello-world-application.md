@@ -2,25 +2,23 @@
     pageTitle="在 Eclipse 中创建 Azure 的 Hello World 云服务"
     description="了解如何使用 Azure Toolkit for Eclipse 创建一个简单的 Hello World 应用程序。"
     services=""
-    documentationCenter="java"
-    authors="rmcmurray"
-    manager="wpickett"
-    editor=""/>
-
+    documentationcenter="java"
+    author="rmcmurray"
+    manager="erikre"
+    editor="" />
 <tags
+    ms.assetid="7262e705-59d6-43ce-b888-29a21c8e0cb7"
     ms.service="multiple"
     ms.workload="na"
     ms.tgt_pltfrm="multiple"
     ms.devlang="Java"
     ms.topic="article"
-    ms.date="11/01/2016" 
-    wacn.date="12/05/2016" 
-    ms.author="robmcm"/>
-
-<!-- Legacy MSDN URL = https://msdn.microsoft.com/library/azure/hh690944.aspx -->
+    ms.date="12/22/2016"
+    wacn.date="02/14/2017"
+    ms.author="robmcm" />  
 
 
-# 在 Eclipse 中创建 Azure 的 Hello World 云服务 #
+# 在 Eclipse 中创建 Azure 的 Hello World 云服务
 以下步骤说明如何使用 Azure Toolkit for Eclipse 创建基本 JSP 应用程序并将其部署到 Azure。所述 JSP 示例是一个简化的示例，但就 Azure 部署而言，非常相似的步骤也适用于 Java servlet。
 
 该应用程序类似于：
@@ -28,48 +26,56 @@
 ![][ic600360]
 
 ## 先决条件
-* Java 开发人员工具包 (JDK) 1.7 或更高版本。
-* Eclipse IDE for Java EE Developers, Indigo 或更高版本。可以从 <http://www.eclipse.org/downloads/> 下载。
-* 基于 Java 的 Web 服务器或应用程序服务器的分发版，如 Apache Tomcat、GlassFish、JBoss 应用程序服务器、Jetty 或 IBM® WebSphere® Application Server Liberty Core。
-* Azure 订阅，可以从 </pricing/purchase-options/> 获取。
-* Azure Toolkit for Eclipse。有关详细信息，请参阅[安装 Azure Toolkit for Eclipse][]。
+- Java 开发人员工具包 (JDK) 1.7 或更高版本。
+- Eclipse IDE for Java EE Developers, Indigo 或更高版本。可以从 <http://www.eclipse.org/downloads/> 下载。
+- 基于 Java 的 Web 服务器或应用程序服务器的分发版，如 Apache Tomcat、GlassFish、JBoss 应用程序服务器、Jetty 或 IBM® WebSphere® Application Server Liberty Core。
+- Azure 订阅，可以从 <http://www.azure.cn/pricing/1rmb-trial/> 获取。
+- Azure Toolkit for Eclipse。有关详细信息，请参阅[安装 Azure Toolkit for Eclipse][Installing the Azure Toolkit for Eclipse]。
 
-## 创建 Hello World 应用程序 ##
-
+## 创建 Hello World 应用程序
 首先，我们将从创建 Java 项目开始。
 
-*  启动 Eclipse。在 Eclipse 中的菜单上，依次单击“文件”、新建和“动态 Web 项目”。（如果在单击“文件”、“新建”后未看到“动态 Web 项目”作为可用项目列出，则执行以下操作：依次单击“文件”、“新建”、“项目...”，展开“Web”，单击“动态 Web 项目”，然后单击“下一步”。）
-*  在本教程中，项目命名为 **MyHelloWorld**。（请务必使用此名称，因为本教程中的后续步骤会将你的 WAR 文件命名为 MyHelloWorld）。你的屏幕应与下图中所示类似：
-    ![][ic589576]
-* 单击“完成”。
-* 在 Eclipse 的项目资源管理器视图中，展开 **MyHelloWorld**。右键单击“WebContent”，单击“新建”，然后单击“JSP 文件”。
-* 在“新建 JSP 文件”对话框中，将文件命名为 **index.jsp**。将父文件夹保留为 **MyHelloWorld/WebContent**，如下所示：
-    ![][ic659262]
-* 对于本教程，请在“选择 JSP 模板”对话框中选择“新建 JSP 文件(html)”，然后单击“完成”。
-* 在 Eclipse 中打开 index.jsp 文件后，添加文本以便在现有 `<body>` 元素中动态显示 **Hello World!**。更新后的 `<body>` 内容应与下图中所示类似：
+- 启动 Eclipse。在 Eclipse 中的菜单上，依次单击“文件”、新建和“动态 Web 项目”。（如果在单击“文件”、“新建”后未看到“动态 Web 项目”作为可用项目列出，则执行以下操作：依次单击“文件”、“新建”、“项目...”，展开“Web”，单击“动态 Web 项目”，然后单击“下一步”。）
+- 在本教程中，项目命名为 **MyHelloWorld**。（请务必使用此名称，因为本教程中的后续步骤会将你的 WAR 文件命名为 MyHelloWorld）。你的屏幕应与下图中所示类似：
+
+	![][ic589576]
+
+- 单击“完成”。
+- 在 Eclipse 的项目资源管理器视图中，展开“MyHelloWorld”。右键单击“WebContent”，单击“新建”，然后单击“JSP 文件”。
+- 在“新建 JSP 文件”对话框中，将文件命名为 **index.jsp**。将父文件夹保留为 **MyHelloWorld/WebContent**，如下所示：
+
+	![][ic659262]
+
+- 对于本教程，请在“选择 JSP 模板”对话框中选择“新建 JSP 文件(html)”，然后单击“完成”。
+- 在 Eclipse 中打开 index.jsp 文件后，添加文本以便在现有 `<body>` 元素中动态显示 **Hello World!**。更新后的 `<body>` 内容应与下图中所示类似：
 
 	    <body>
 	    <b><% out.println("Hello World!"); %></b>
 	    </body>
 
-* 保存 index.jsp。
+- 保存 index.jsp。
 
-## 以快速简单的方式将应用程序部署到 Azure ##
-
+## 以快速简单的方式将应用程序部署到 Azure
 当你的 Java Web 应用程序准备好进行测试时，可立即使用以下快捷方式直接在 Azure 云上试用一下。
 
 1. 在 Eclipse 的项目资源管理器中，单击“MyHelloWorld”。
-2. 在 Eclipse 工具栏中，单击“发布”下拉按钮，然后单击“发布为 Azure 云服务”
-   ![][publishDropdownButton]
+2. 在 Eclipse 工具栏中，单击“发布”下拉按钮，然后单击“发布为 Azure 云服务” 
+
+	![][publishDropdownButton]
+
 3. 如果你是首次将此应用程序发布到 Azure，并且以前尚未为此应用程序创建 Azure 部署项目，则将自动为你创建 Azure 部署项目。你将看到以下提示，其中还列出了将自动部署的用于运行你的应用程序的 JDK 包和应用程序服务器。
-   ![][ic789598]
+	
+	![][ic789598]
    
     使用此快捷方法可快速简便地在 Azure 中测试你的应用程序，而无需配置不同于默认设置的特定服务器或 JDK。如果你对默认设置感到满意，则可以单击“确定”以继续执行后续步骤。但是，如果你要更改要用于应用程序的 JDK 或应用程序服务器，则可以稍后通过编辑已为你自动创建的 Azure 部署项目来执行该操作，也可以立即单击“取消”并阅读本教程的“关于 Azure 部署项目”部分。
 4. 在“发布到 Azure”对话框中执行以下操作：
    1. 如果“订阅”列表中还没有任何订阅可供选择，请按照下列步骤来导入订阅信息：
       1. 单击“从发布设置文件导入”。
       2. 在“导入订阅信息”对话框中，单击“下载发布设置文件”。如果你尚未登录到 Azure 帐户，则系统将提示你登录。然后系统将提示你保存 Azure 发布设置文件。请将该文件保存到本地计算机。
-      3. 仍在“导入订阅信息”对话框中，单击“浏览”按钮，选择在上一步中保存到本地的发布设置文件，然后单击“打开”。屏幕应与下图中所示类似：![][ic644267]
+      3. 仍在“导入订阅信息”对话框中，单击“浏览”按钮，选择在上一步中保存到本地的发布设置文件，然后单击“打开”。屏幕应与下图中所示类似：
+      	
+            ![][ic644267]
+
       4. 单击“确定”。
    2. 对于“订阅”，请选择要用于部署的订阅。
    3. 对于“存储帐户”，请选择要使用的存储帐户，或者单击“新建”以创建新的存储帐户。
@@ -77,14 +83,18 @@
    5. 对于“目标 OS”，请选择要用于部署的操作系统版本。
    6. 在本教程中，对于“目标环境”，请选择“过渡”。（如果你已准备好部署到生产站点，则将该选项更改为“生产”。）
    7. 可选：如果希望新部署自动覆盖以前的部署，请确保选中“覆盖以前的部署”。启用了此选项后，在发布到同一位置时将不会遇到“409 冲突”问题。请注意，“发布到 Azure”对话框包含“远程访问”部分。默认情况下，未启用远程访问，我们将不会为此示例启用它。若要启用远程访问，需输入远程登录时要使用的用户名和密码。有关远程访问的详细信息，请参阅 [Enabling Remote Access for Azure Deployments in Eclipse][Enabling Remote Access for Azure Deployments in Eclipse]（在 Eclipse 中为 Azure 部署启用远程访问）。“发布到 Azure”对话框将如下所示：
-      ![][ic719488]
-5. 单击“发布”以发布到过渡环境。当系统提示是否执行完全生成时，请单击“是”。第一次生成时可能需要花费几分钟时间。“Azure 活动日志”将显示在 Eclipse 的选项卡式视图部分中。
-   ![][ic719489] 
-   可以使用此日志以及**控制台**视图来查看部署进度。一种替代方法是登录到 [Azure 管理门户][Azure Management Portal]，然后使用“云服务”部分来监视状态。
-6. 成功部署后，“Azure 活动日志”将显示状态为“已发布”。单击“已发布”（如下图所示），浏览器将打开部署的实例。
-   ![][ic719490]
+   ![][ic719488]
 
-由于这是部署到过渡环境，DNS 名称将采用 http://&lt;*guid*&gt;.cloudapp.net 的格式，并且 URL 将包含 DNS 名称加上你的应用程序的后缀。例如，http://447564652c20426f6220526f636b7321.cloudapp.net/MyHelloWorld。 （**MyHelloWorld** 部分区分大小写。） 如果你在 Azure 平台经典管理门户中（在经典管理门户的“云服务”部分中）单击部署名称，也可以看到 DNS 名称。
+5. 单击“发布”以发布到过渡环境。当系统提示是否执行完全生成时，请单击“是”。第一次生成时可能需要花费几分钟时间。“Azure 活动日志”将显示在 Eclipse 的选项卡式视图部分中。
+
+      ![][ic719489]
+ 
+      可以使用此日志以及**控制台**视图来查看部署进度。一种替代方法是登录到 [Azure 管理门户][Azure Management Portal]，然后使用“云服务”部分来监视状态。
+6. 成功部署后，“Azure 活动日志”将显示状态为“已发布”。单击“已发布”（如下图所示），浏览器将打开部署的实例。
+
+      ![][ic719490]
+
+由于这是部署到过渡环境，DNS 名称将采用 http://&lt;*guid*&gt;.chinacloudapp.cn 的格式，并且 URL 将包含 DNS 名称加上应用程序的后缀。例如，http://447564652c20426f6220526f636b7321.chinacloudapp.cn/MyHelloWorld。（**MyHelloWorld** 部分区分大小写。） 如果你在 Azure 平台管理门户中（在管理门户的“云服务”部分中）单击部署名称，也可以看到 DNS 名称。
 
 尽管本演练针对的是到过渡环境的部署，但到生产环境的部署也遵循相同的步骤，不同的是，在“发布到 Azure”对话框中，对于“目标环境”，选择“生产”而不是“过渡”。部署到生产环境会生成基于所选 DNS 名称的 URL，而不是用于过渡的 GUID。
 
@@ -114,7 +124,7 @@
 
 无论你是通过编辑现有的 Azure 部署项目（如上所示）还是通过从头开始创建新的 Azure 部署项目来开始这些服务器配置步骤，你都将看到相同类型的对话框，让你可以配置 JDK、服务器和应用程序组件。若要详细了解如何更改这些对话框中的设置（例如，更改 JDK、应用程序服务器，以及在部署中添加或删除应用程序），请参阅 [Server configuration properties][Server configuration properties]（服务器配置属性）一文。
 
-## 仅限 Windows：将应用程序部署到计算模拟器 ##
+## 仅限 Windows：将应用程序部署到计算模拟器
 
 >[AZURE.NOTE] Azure 模拟器仅在 Windows 上可用。如果你使用的是非 Windows 操作系统，请跳过本部分。
 
@@ -133,7 +143,9 @@
 >[AZURE.IMPORTANT] 如果未看到 UAC 提示，请检查 Windows 任务栏是否有 UAC 图标，然后先单击该图标。有时 UAC 提示未显示为最前面的窗口，但只显示为任务栏图标。
 
 1. 检查计算模拟器 UI 的输出，以确定你的项目是否存在任何问题。根据部署的内容，你的应用程序可能需要几分钟时间才能在计算模拟器中完成启动。
-2. 启动浏览器并使用 URL `http://localhost:8080/MyHelloWorld` 作为地址（此 URL 的 `MyHelloWorld` 部分区分大小写）。MyHelloWorld 应用程序（index.jsp 的输出）应与下图类似：![][ic589579]
+2. 启动浏览器并使用 URL `http://localhost:8080/MyHelloWorld` 作为地址（此 URL 的 `MyHelloWorld` 部分区分大小写）。MyHelloWorld 应用程序（index.jsp 的输出）应与下图类似：
+
+	![][ic589579]
 
 准备使应用程序停止在计算模拟器中运行时，请在 Eclipse 工具栏中，单击“重置 Azure 模拟器”按钮 ![][ic710880]。
 
@@ -148,24 +160,25 @@
 （使用工具包来删除部署的替代方法是使用 Azure 管理门户的“云服务”部分：导航到你的部署，选择它，然后单击“删除”按钮。这将停止并删除该部署。如果只需要停止该部署但不删除它，请单击“停止”按钮而非“删除”按钮，但如上所述，如果未删除该部署，则会继续针对该部署累加计费，即使该部署已停止）。
 
 ## 另请参阅
-[适用于 Eclipse 的 Azure 工具包][]
+[适用于 Eclipse 的 Azure 工具包][Azure Toolkit for Eclipse]
 
-[安装 Azure Toolkit for Eclipse][]
+[安装 Azure Toolkit for Eclipse][Installing the Azure Toolkit for Eclipse]
 
-[Azure Toolkit for Eclipse 的新增功能][]
+[Azure Toolkit for Eclipse 的新增功能][What's New in the Azure Toolkit for Eclipse]
 
-有关将 Azure 与 Java 配合使用的详细信息，请参阅 [Azure Java 开发人员中心][]。
+有关将 Azure 与 Java 配合使用的详细信息，请参阅 [Azure Java 开发人员中心][Azure Java Developer Center]。
 
 <!-- URL List -->
 
-[Azure Java 开发人员中心]: /develop/java/
-[Azure 经典管理门户]: http://manage.windowsazure.cn
+
+[Azure Java Developer Center]: /develop/java/
+[Azure Management Portal]: https://manage.windowsazure.cn
 [Azure Role Properties]: /documentation/articles/azure-toolkit-for-eclipse-azure-role-properties/
-[适用于 Eclipse 的 Azure 工具包]: /documentation/articles/azure-toolkit-for-eclipse/
-[在 Eclipse 中为 Azure 部署启用远程访问]: /documentation/articles/azure-toolkit-for-eclipse-enabling-remote-access-for-azure-deployments/
-[安装 Azure Toolkit for Eclipse]: /documentation/articles/azure-toolkit-for-eclipse-installation/
-[服务器配置属性]: /documentation/articles/azure-toolkit-for-eclipse-azure-role-properties/#server_configuration_properties
-[Azure Toolkit for Eclipse 的新增功能]: /documentation/articles/azure-toolkit-for-eclipse-whats-new/
+[Azure Toolkit for Eclipse]: /documentation/articles/azure-toolkit-for-eclipse/
+[Enabling Remote Access for Azure Deployments in Eclipse]:/documentation/articles/azure-toolkit-for-eclipse-enabling-remote-access-for-azure-deployments/
+[Installing the Azure Toolkit for Eclipse]: /documentation/articles/azure-toolkit-for-eclipse-installation/
+[Server configuration properties]: /documentation/articles/azure-toolkit-for-eclipse-azure-role-properties/#server_configuration_properties/
+[What's New in the Azure Toolkit for Eclipse]: /documentation/articles/azure-toolkit-for-eclipse-whats-new/
 
 <!-- IMG List -->
 
@@ -186,4 +199,7 @@
 [ic789598]: ./media/azure-toolkit-for-eclipse-creating-a-hello-world-application/ic789598.png
 [publishDropdownButton]: ./media/azure-toolkit-for-eclipse-creating-a-hello-world-application/publishDropdownButton.png
 
-<!---HONumber=Mooncake_0725_2016-->
+<!-- Legacy MSDN URL = https://msdn.microsoft.com/zh-cn/library/azure/hh690944.aspx -->
+
+<!---HONumber=Mooncake_0206_2017-->
+<!--Update_Description: wording update-->

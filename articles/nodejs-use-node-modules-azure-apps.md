@@ -1,23 +1,21 @@
 <properties
-	pageTitle="使用 Node.js 模块"
-	description="了解如何在使用 Azure App Service 或云服务的同时使用 Node.js 模块。"
-	services=""
-	documentationCenter="nodejs"
-	authors="rmcmurray"
-	manager="wpickett"
-	editor=""/>  
-
-
+    pageTitle="使用 Node.js 模块"
+    description="了解如何在使用 Azure App Service 或云服务的同时使用 Node.js 模块。"
+    services=""
+    documentationcenter="nodejs"
+    author="rmcmurray"
+    manager="erikre"
+    editor="" />
 <tags
-	ms.service="multiple"
-	ms.workload="na"
-	ms.tgt_pltfrm="na"
-	ms.devlang="nodejs"
-	ms.topic="article"
-	ms.date="11/01/2016"
-	ms.author="robmcm"
-	wacn.date="12/23/2016"/>  
-
+    ms.assetid="c0e6cd3d-932d-433e-b72d-e513e23b4eb6"
+    ms.service="multiple"
+    ms.workload="na"
+    ms.tgt_pltfrm="na"
+    ms.devlang="nodejs"
+    ms.topic="article"
+    ms.date="12/22/2016"
+    wacn.date="02/14/2017"
+    ms.author="robmcm" />  
 
 
 # 将 Node.js 模块与 Azure 应用程序一起使用
@@ -43,6 +41,7 @@
 Azure App Service 不支持部分本机模块，并且在编译具有高度专用先决条件的本机模块时可能失败。一些常用模块（如 MongoDB）需要的本机依赖项是可选的，如果没有这些依赖项可勉强正常工作。对于当今几乎所有的可用本机模块而言，有两种成功的解决方法：
 
 - 在安装了所有系统必备组件的 Windows 计算机运行 **npm install** 。然后，将创建的 **node\_modules** 文件夹作为应用程序的一部分部署到 Azure App Service。
+  - 在编译之前，请检查本地 Node.js 安装是否具有匹配的体系结构，其版本是否与 Azure 中使用的版本尽量接近（可以在运行时通过 **process.arch** 和 **process.version** 属性检查当前值）。
 - 可以将 Azure App Service 配置为在部署期间执行自定义 bash 或 shell 脚本，使你能够执行自定义命令并精确配置 **npm install** 的运行方式。
 
 ### 使用 package.json 文件
@@ -54,11 +53,12 @@ Azure App Service 不支持部分本机模块，并且在编译具有高度专�
 
 > [AZURE.NOTE]
 部署到 Azure App Service 时，如果 <b>package.json</b> 文件引用本机模块，那么在使用 Git 发布应用程序时你将看到如下错误：
-
->		npm ERR! module-name@0.6.0 install: 'node-gyp configure build'
-
->		npm ERR! 'cmd "/c" "node-gyp configure build"' failed with 1
-
+> 
+> npm ERR! module-name@0.6.0 install: 'node-gyp configure build'
+> 
+> npm ERR! 'cmd "/c" "node-gyp configure build"' failed with 1
+> 
+> 
 
 ### 使用 npm-shrinkwrap.json 文件
 **npm-shrinkwrap.json** 文件用于尝试消除 **package.json** 文件的模块版本控制限制。虽然 **package.json** 文件仅包含顶级模块的版本，但 **npm-shrinkwrap.json** 文件包含所有模块依赖项链的版本要求。
@@ -67,11 +67,12 @@ Azure App Service 不支持部分本机模块，并且在编译具有高度专�
 
 > [AZURE.NOTE]
 部署到 Azure App Service 时，如果 <b>npm-shrinkwrap.json</b> 文件引用本机模块，那么在使用 Git 发布应用程序时你将看到如下错误：
-
->		npm ERR! module-name@0.6.0 install: 'node-gyp configure build'
-
->		npm ERR! 'cmd "/c" "node-gyp configure build"' failed with 1
-
+> 
+> npm ERR! module-name@0.6.0 install: 'node-gyp configure build'
+> 
+> npm ERR! 'cmd "/c" "node-gyp configure build"' failed with 1
+> 
+> 
 
 ## 后续步骤
 了解如何在 Azure 中使用 Node.js 模块后，了解如何[指定 Node.js 版本]、[生成和部署 Node.js Web 应用](/documentation/articles/web-sites-nodejs-develop-deploy-mac/)，以及[如何使用适用于 Mac 和 Linux 的 Azure 命令行接口]。
@@ -80,7 +81,6 @@ Azure App Service 不支持部分本机模块，并且在编译具有高度专�
 
 [指定 Node.js 版本]: /documentation/articles/nodejs-specify-node-version-azure-apps/
 [如何使用适用于 Mac 和 Linux 的 Azure 命令行接口]: /documentation/articles/xplat-cli-install/
-[build and deploy a Node.js web Site]:/documentation/articles/web-sites-nodejs-develop-deploy-mac/
-[Build and deploy a Node.js application to an Azure Cloud Service]: /documentation/articles/cloud-services-nodejs-develop-deploy-app/
 
-<!---HONumber=Mooncake_1212_2016-->
+<!---HONumber=Mooncake_0206_2017-->
+<!--Update_Description: wording update-->
