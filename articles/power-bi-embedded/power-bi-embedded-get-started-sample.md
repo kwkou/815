@@ -43,8 +43,7 @@
 	> https://management.azure.com 需要替换成 https://management.chinacloudapi.cn，
 	> \ProvisionSample\Program.cs 中的 https://management.core.windows.net 需要替换成 https://management.core.chinacloudapi.cn，
 	> \ProvisionSample\ProgramExtensions.cs 中的 https://login.windows.net 需要替换成 https://login.chinacloudapi.cn.
-	> 
-	> 具体详细的关于URL方面的使用区别请看[中国区 Azure 应用程序开发说明](/documentation/articles/developerdifferences)
+	> 具体详细的关于URL使用方面的区别请看[中国区 Azure 应用程序开发说明](/documentation/articles/developerdifferences)
 	> 
 
 2. 在 Visual Studio 中打开“PowerBI embedded.sln”。可能需要在 NuGET 程序包管理器控制台中执行“Update-Package”命令来更新此解决方案中使用的程序包。
