@@ -9,7 +9,11 @@
 	solutions="" 
 	manager="TK" 
 	editor=""/>
-<tags ms.service="multiple" ms.date="" wacn.date="11/18/2016"/>
+
+<tags 
+    ms.service="multiple" 
+    ms.date="" 
+    wacn.date="02/15/2017"/>
 
 
 # 中国区 Azure 应用程序开发说明
@@ -175,6 +179,7 @@ AAD Login | https://login.windows.net| https://login.chinacloudapi.cn
 AAD Graph API | https://graph.windows.net| https://graph.chinacloudapi.cn
 Azure 认知服务 | https://api.projectoxford.ai/face/v1.0 | https://api.cognitive.azure.cn/face/v1.0
 SQL 数据库导入/导出服务映射端点 | | <p>1. 中国东部：[https://sh1prod-dacsvc.chinacloudapp.cn/dacwebservice.svc](https://sh1prod-dacsvc.chinacloudapp.cn/dacwebservice.svc) </p><p> 2. 中国北部：[https://bj1prod-dacsvc.chinacloudapp.cn/dacwebservice.svc](https://bj1prod-dacsvc.chinacloudapp.cn/dacwebservice.svc)</p>
+Power BI Embedded | https://api.powerbi.com | https://api.powerbi.cn
 
 ###<a name="storagendpoint"></a>存储端点
 
