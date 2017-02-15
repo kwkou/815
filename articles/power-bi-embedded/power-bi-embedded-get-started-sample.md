@@ -38,7 +38,7 @@
 
 1. 下载并解压缩 GitHub 上的[Power BI Embedded - Integrate a report into a web app](http://go.microsoft.com/fwlink/?LinkId=761493)（Power BI Embedded - 将报表集成到 Web 应用中）示例。
 
-	>[AZURE.IMPORTANT] 实例中所使用的一些URL只适用于 Global 环境，用于 Azure China 需要做相应的替换，
+	>[AZURE.IMPORTANT] 示例中所使用的一些URL只适用于 Global 环境，用于 Azure China 需要做相应的替换，
 	> 如：\ProvisionSample\App.config 中的 https://api.powerbi.com 需要替换成 https://api.powerbi.cn,
 	> https://management.azure.com 需要替换成 https://management.chinacloudapi.cn，
 	> \ProvisionSample\Program.cs 中的 https://management.core.windows.net 需要替换成 https://management.core.chinacloudapi.cn，
