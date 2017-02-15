@@ -68,23 +68,13 @@ Azure 门户预览会公开大部分的群集属性。使用 Azure Resource Mana
     * [在 Linux、Unix 或 OS X 中的 HDInsight 上将 SSH 与基于 Linux 的 Hadoop 配合使用](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix/)
     * [在 Windows 中的 HDInsight 上将 SSH 与基于 Linux 的 Hadoop 配合使用](/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows/)
 
-8. 在“数据源”边栏选项卡上，指定是否要将 Azure 存储 (WASB) 或 Data Lake Store 作为默认存储。
+8. 在“数据源”边栏选项卡上，指定是否要将 Azure 存储 (WASB) 作为默认存储。
 
 	* **将 Azure 存储 Blob 作为默认存储**
 
 		对于**主存储类型**，单击“Azure 存储”。指定存储帐户和存储容器的详细信息，指定位置，然后单击“群集 AAD 标识”。
 
 		![将服务主体添加到 HDInsight 群集](./media/hdinsight-hadoop-create-linux-cluster-portal/hdi.adl.1.png "将服务主体添加到 HDInsight 群集")  
-
-
-		>[AZURE.NOTE]
-		群集 AAD 标识用于让 Azure Data Lake Store 能够根据 AAD 配置来访问群集。如果要使用 Data Lake Store 帐户作为与群集关联的其他存储，可使用此选项。
-		> 
-		>
-
-		单击“选择”以保存数据源配置。
-
-	* **将 Azure Data Lake Store 作为默认存储**
 
 		单击“选择”以保存数据源配置。
 
@@ -144,8 +134,6 @@ Azure 门户预览会公开大部分的群集属性。使用 Azure Resource Mana
         创建群集后，还可以添加其他存储帐户。请参阅 [Customize Linux-based HDInsight clusters using Script Action](/documentation/articles/hdinsight-hadoop-customize-cluster-linux/)（使用脚本操作自定义基于 Linux 的 HDInsight 群集）。
       
         单击“选择”，直至返回“新建 HDInsight 群集”边栏选项卡。
-      
-        除了 Blob 存储帐户，还可以链接 Azure Data Lake Store。你可以通过从配置默认存储帐户和默认容器的数据源配置 AAD 来完成此配置。
 
 11. 在“新建 HDInsight 群集”边栏选项卡上，确保选中“固定到启动板”，然后单击“创建”。这将会创建群集，并将该群集的磁贴添加到 Azure 门户预览的启动板。该图标指示群集正在预配，完成预配后，将改为显示 HDInsight 图标。
     

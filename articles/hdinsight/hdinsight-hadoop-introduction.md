@@ -44,7 +44,6 @@ HDInsight 提供以下群集类型：
 * **[Microsoft R Server](https://msdn.microsoft.com/microsoft-r/rserver)**：用于托管和管理并行分布式 R 进程的企业级服务器。它可让数据科研人员、统计人员和 R 程序员根据需要访问 HDInsight 上可缩放的分布式分析方法。请参阅 [HDInsight 上的 R Server 概述](/documentation/articles/hdinsight-hadoop-r-server-overview)。
 * **[Apache Storm](https://storm.incubator.apache.org/)**：一个分布式实时计算系统，用于快速处理大型数据流。Storm 以 HDInsight 中的托管群集形式提供。请参阅[使用 Storm 和 Hadoop 分析实时传感器数据](/documentation/articles/hdinsight-storm-sensor-data-analysis/)。
 * **[Apache Interactive Hive 预览版（AKA：Live Long and Process）](https://cwiki.apache.org/confluence/display/Hive/LLAP)**：内存中缓存用于实现交互式且更快的 Hive 查询。请参阅[在 HDInsight 中使用 Interactive Hive](/documentation/articles/hdinsight-hadoop-use-interactive-hive)。
-* **[已加入域的群集预览版](https://docs.microsoft.com/azure/hdinsight/hdinsight-domain-joined-introduction)**：已加入到 Active Directory 域，以便用户可以控制访问权限并提供数据管理的群集。
 * **[使用脚本操作的自定义群集](/documentation/articles/hdinsight-hadoop-customize-cluster-linux/)**：使用在预配期间运行的脚本安装其他组件的群集。
 
 ### 自定义脚本示例
@@ -161,7 +160,7 @@ HDInsight 群集支持以下特定于 Hadoop 生态系统的语言：
 * Hadoop 群集自动设置。创建 HDInsight 群集比手动配置 Hadoop 群集容易得多。有关详细信息，请参阅[在 HDInsight 中预配 Hadoop 群集](/documentation/articles/hdinsight-hadoop-provision-linux-clusters/)。
 * 最先进的 Hadoop 组件。有关详细信息，请参阅 [HDInsight 中的 Hadoop 组件、版本和服务产品][component-versioning]。
 * 群集具有高可用性和可靠性。有关详细信息，请参阅 [HDInsight 中的 Hadoop 群集的可用性和可靠性](/documentation/articles/hdinsight-high-availability-linux/)。
-* 使用 Azure Blob 存储或 Azure Data Lake Store（这两种都是与 Hadoop 兼容的存储选项），数据存储高效又经济。有关详细信息，请参阅[在 HDInsight 中将 Azure Blob 存储与 Hadoop 配合使用](/documentation/articles/hdinsight-hadoop-use-blob-storage/)或[将 Data Lake Store 与 HDInsight 群集配合使用](https://docs.microsoft.com/azure/data-lake-store/data-lake-store-hdinsight-hadoop-use-portal)。
+* 使用 Azure Blob 存储，数据存储高效又经济。有关详细信息，请参阅[在 HDInsight 中将 Azure Blob 存储与 Hadoop 配合使用](/documentation/articles/hdinsight-hadoop-use-blob-storage/)。
 * 与其他 Azure 服务集成，包括 [Web 应用](/documentation/services/app-service/web/)和 [SQL 数据库](/documentation/services/sql-databases/)。
 * 用于运行 HDInsight 群集的其他 VM 大小和类型。有关详细信息，请参阅 [HDInsight 中的 Hadoop 组件、版本和服务产品][component-versioning]。
 * 群集缩放。群集缩放使你能够更改正在运行的 HDInsight 群集的节点数，而无需删除或重新创建群集。

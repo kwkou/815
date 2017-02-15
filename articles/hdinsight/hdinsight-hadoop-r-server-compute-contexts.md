@@ -20,7 +20,7 @@
     ms.author="jeffstok" />
 
 # Compute context options for R Server on HDInsight（适用于 HDInsight 上的 R Server 的计算上下文选项）
-Azure HDInsight 上的 Microsoft R Server 提供最新的基于 R 的分析功能。它在 [Azure Blob](/documentation/articles/storage-introduction/ "Azure Blob 存储") 存储帐户、Data Lake Store 或本地 Linux 文件系统中使用存储在容器的 HDFS 中的数据。由于 R Server 基于开放源代码的 R 构建，因此你构建的基于 R 的应用程序可以利用超过 8000 个任意开放源代码 R 包。这些应用程序还可以利用 [ScaleR](http://www.revolutionanalytics.com/revolution-r-enterprise-scaler "Revolution Analytics ScaleR")（R Server 附带的 Microsoft 的大数据分析包）中的例程。
+Azure HDInsight 上的 Microsoft R Server 提供最新的基于 R 的分析功能。它在 [Azure Blob](/documentation/articles/storage-introduction/ "Azure Blob 存储") 存储帐户或本地 Linux 文件系统中使用存储在容器的 HDFS 中的数据。由于 R Server 基于开放源代码的 R 构建，因此你构建的基于 R 的应用程序可以利用超过 8000 个任意开放源代码 R 包。这些应用程序还可以利用 [ScaleR](http://www.revolutionanalytics.com/revolution-r-enterprise-scaler "Revolution Analytics ScaleR")（R Server 附带的 Microsoft 的大数据分析包）中的例程。
 
 群集的边缘节点为连接到群集和运行 R 脚本提供了便捷的位置。使用边缘节点，你可以选择跨边缘节点服务器的各个核心运行 ScaleR 的并行化分布式函数。你还可以选择通过使用 ScaleR 的 Hadoop Map Reduce 或 Spark 计算上下文跨群集的各个节点运行这些函数。
 

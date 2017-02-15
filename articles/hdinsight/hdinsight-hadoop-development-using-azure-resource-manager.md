@@ -143,10 +143,6 @@ Azure PowerShell ARM cmdlet 可与 ASM cmdlet 一同安装。两种模式下的 
 
 有关其他用法信息，请参阅 [Customize Linux-based HDInsight clusters using Script Action（使用脚本操作自定义基于 Linux 的 HDInsight 群集）](/documentation/articles/hdinsight-hadoop-customize-cluster/)。
 
-**与群集标识相关的 cmdlet：**
-
-- **Add-AzureRmHDInsightClusterIdentity**：将群集标识添加到群集配置对象，使 HDInsight 群集能够访问 Azure 数据湖存储。
-
 ### 示例
 
 **创建群集**

@@ -25,7 +25,7 @@
 
 可依据手头的项目和任务调整群集大小，不再需要群集时将它解除。由于这些群集属于 Azure HDInsight 的一部分，提供企业级全年无休支持、99.9% 运行时间 SLA，并且能够灵活地与 Azure 生态系统中的其他组件集成。
 
-HDInsight 上的 R Server 提供最新的功能，可针对载入 Azure Blob 或 Data Lake 存储的几乎任何大小的数据集执行基于 R 的分析。由于 R Server 基于开放源代码的 R 构建，因此你构建的基于 R 的应用程序可以利用超过 8000 个任意开放源代码 R 包，以及 ScaleR（R Server 附带的 Microsoft 的大数据分析包）的例程。
+HDInsight 上的 R Server 提供最新的功能，可针对载入 Azure Blob 的几乎任何大小的数据集执行基于 R 的分析。由于 R Server 基于开放源代码的 R 构建，因此你构建的基于 R 的应用程序可以利用超过 8000 个任意开放源代码 R 包，以及 ScaleR（R Server 附带的 Microsoft 的大数据分析包）的例程。
 
 群集的边缘节点为连接到群集和运行 R 脚本提供了便捷的位置。使用边缘节点，你可以选择跨边缘节点服务器的各个核心运行 ScaleR 的并行化分布式函数。你还可以选择通过使用 ScaleR 的 Hadoop Map Reduce 或 Spark 计算上下文跨群集的各个节点运行这些函数。
 
@@ -35,9 +35,9 @@ HDInsight 上的 R Server 提供最新的功能，可针对载入 Azure Blob 或
 若要在 HDInsight 群集中包括 R Server，必须在使用 Azure 门户预览创建 HDInsight 群集时选择 R Server 群集类型。R Server 群集类型包括群集数据节点以及作为基于 R Server 的分析登录区域的边缘节点上的 R Server。请参阅 [Getting Started with R Server on HDInsight](/documentation/articles/hdinsight-hadoop-r-server-get-started/)（HDInsight 上的 R Server 入门）了解创建群集的详细演练。
 
 ## 了解数据存储选项
-HDInsight 群集的 HDFS 文件系统的默认存储可以与 Azure 存储帐户或 Azure Data Lake Store 相关联。这可确保在分析过程中，上载到群集存储的任何数据均会持久保存。对于所选择的将数据传输到存储的选项有各种工具，包括存储帐户的基于门户的上载工具和 [AzCopy](/documentation/articles/storage-use-azcopy/) 实用程序。
+HDInsight 群集的 HDFS 文件系统的默认存储可以与 Azure 存储帐户相关联。这可确保在分析过程中，上载到群集存储的任何数据均会持久保存。对于所选择的将数据传输到存储的选项有各种工具，包括存储帐户的基于门户的上载工具和 [AzCopy](/documentation/articles/storage-use-azcopy/) 实用程序。
 
-无论你选择 Azure Blob 还是 Data Lake 作为群集的主存储，都可以在群集预配过程中选择添加对附加 Blob 和 Data Lake Store 的访问权限。请参阅 [HDInsight 上的 R Server 入门](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-r-server-get-started)，了解有关向其他帐户添加访问权限的信息，并请参阅补充的[适用于 HDInsight 上的 R Server 的 Azure 存储选项](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-r-server-storage)一文，了解如何使用多个存储帐户。
+可以在群集预配过程中选择添加对附加 Blob 的访问权限。请参阅 [HDInsight 上的 R Server 入门](/documentation/articles/hdinsight-hadoop-r-server-get-started/)，了解有关向其他帐户添加访问权限的信息，并请参阅补充的[适用于 HDInsight 上的 R Server 的 Azure 存储选项](/documentation/articles/hdinsight-hadoop-r-server-storage/)一文，了解如何使用多个存储帐户。
 
 你也可以将 [Azure 文件](/documentation/articles/storage-how-to-use-files-linux/)服务用作边缘节点上的存储选项。Azure 文件可让你将 Azure 存储空间中创建的文件共享装载到 Linux 文件系统。有关适用于 HDInsight 群集上 R Server 的数据存储选项的详细信息，请参阅 [Azure Storage options for R Server on HDInsight clusters](/documentation/articles/hdinsight-hadoop-r-server-storage/)（适用于 HDInsight 群集上 R Server 的 Azure 存储选项）。
 
@@ -82,7 +82,7 @@ HDInsight 群集的 HDFS 文件系统的默认存储可以与 Azure 存储帐户
 由于头节点是冗余的，且并非所有数据节点都受影响，因此在此时间段运行的所有作业可能会变慢。但是，这些作业应该都可运行完成。除非发生需要重建群集的灾难性故障，否则任何自定义软件或本地数据在这些维护事件中都将保留。
 
 ## 了解适用于 HDInsight 群集上 R Server 的 IDE 选项
-HDInsight 群集的 Linux 边缘节点是基于 R 的分析的登录区域。最新版本的 HDInsight 提供了一个默认选项，用于在边缘节点上安装 [RStudio Server](https://www.rstudio.com/products/rstudio-server/) 的社区版作为基于浏览器的 IDE。使用 RStudio Server 作为 IDE 来开发和执行 R 脚本，与仅使用 R 控制台相比，可以大幅提高生产力。如果选择不在创建群集时添加 RStudio Server，而想在以后添加，则请参阅[在 HDInsight 群集上安装 R Studio Server](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-r-server-install-r-studio)。+
+HDInsight 群集的 Linux 边缘节点是基于 R 的分析的登录区域。最新版本的 HDInsight 提供了一个默认选项，用于在边缘节点上安装 [RStudio Server](https://www.rstudio.com/products/rstudio-server/) 的社区版作为基于浏览器的 IDE。使用 RStudio Server 作为 IDE 来开发和执行 R 脚本，与仅使用 R 控制台相比，可以大幅提高生产力。如果选择不在创建群集时添加 RStudio Server，而想在以后添加，则请参阅[在 HDInsight 群集上安装 R Studio Server](/documentation/articles/hdinsight-hadoop-r-server-install-r-studio/)。+
 
 另一个完整的 IDE 选项是安装桌面 IDE（如 Microsoft 最近公布的 [R Tools for Visual Studio](https://www.visualstudio.com/features/rtvs-vs.aspx) (RTVS)、RStudio、或 Walware 的基于 Eclipse 的 [StatET](http://www.walware.de/goto/statet)）并通过使用远程 Map Reduce 或 Spark 计算上下文访问群集。
 

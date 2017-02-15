@@ -271,7 +271,7 @@ HDInsight 3.4 和 3.5 的另一个重要区别在于 `JAVA_HOME` 现在能够指
 将文件存储在群集可访问的 Azure 存储帐户（例如默认存储帐户）中可以提供快速访问，因为此存储在 Azure 网络内。
 
 > [AZURE.NOTE]
-用于引用脚本的 URI 格式因所使用的服务而异。对于与 HDInsight 群集关联的存储帐户，请使用 `wasb://` 或 `wasbs://`。对于可公开读取的 URI，请使用 `http://` 或 `https://`。对于 Data Lake Store，请使用 `adl://`。
+用于引用脚本的 URI 格式因所使用的服务而异。对于与 HDInsight 群集关联的存储帐户，请使用 `wasb://` 或 `wasbs://`。对于可公开读取的 URI，请使用 `http://` 或 `https://`。
 
 ### 检查操作系统版本
 

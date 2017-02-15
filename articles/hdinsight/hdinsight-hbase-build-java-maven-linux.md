@@ -30,7 +30,7 @@
 
 * [装有 HBase 的基于 Linux 的 Azure HDInsight 群集](/documentation/articles/hdinsight-hbase-tutorial-get-started-linux/#create-hbase-cluster)
 
-		[AZURE.INCLUDE [hdinsight-linux-acn-version.md](../../includes/hdinsight-linux-acn-version.md)]
+    [AZURE.INCLUDE [hdinsight-linux-acn-version.md](../../includes/hdinsight-linux-acn-version.md)]
 
     > [AZURE.NOTE] 本文档中的步骤已在 HDInsight 群集版本 3.2、3.3 和 3.4 中测试。示例中提供的默认值适用于 HDInsight 3.4 群集。
 

@@ -331,12 +331,12 @@ Azure Resource Manager 模板是描述**资源组**及其包含的所有资源�
 * 将 **DataCenterLocation** 替换为要在其中创建资源组和资源的数据中心。例如“China East”。
 * 将 **ResourceGroupName** 替换为要用于此组的名称：
 
-    curl -X "PUT" "https://management.chinacloudapi.cn/subscriptions/SubscriptionID/resourcegroups/ResourceGroupName?api-version=2015-01-01" \
-        -H "Authorization: Bearer AccessToken" \
-        -H "Content-Type: application/json" \
-        -d $'{
-    "location": "DataCenterLocation"
-    }'
+        curl -X "PUT" "https://management.chinacloudapi.cn/subscriptions/SubscriptionID/resourcegroups/ResourceGroupName?api-version=2015-01-01" \
+            -H "Authorization: Bearer AccessToken" \
+            -H "Content-Type: application/json" \
+            -d $'{
+        "location": "DataCenterLocation"
+        }'
 
 如果此请求成功，你将收到 200 系列响应，且响应正文包含一个 JSON 文档，其中包含有关组的信息。`"provisioningState"` 元素包含 `"Succeeded"` 值。
 

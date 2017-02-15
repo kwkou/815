@@ -136,6 +136,7 @@ HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 中使用 HDInsi
 * 有关创建 HDInsight 群集，请参阅[在 HDInsight 中创建基于 Linux 的 Hadoop 群集](/documentation/articles/hdinsight-hadoop-provision-linux-clusters/)。
 * 有关管理 HDInsight 群集，请参阅[在 HDInsight 中管理 Hadoop 群集](/documentation/articles/hdinsight-administer-use-management-portal/)。
 * 有关学习 HDInsight .NET SDK，请参阅 [HDInsight .NET SDK 参考](https://msdn.microsoft.com/zh-cn/library/mt271028.aspx)。
+* 有关向 Azure 进行非交互式身份验证，请参阅[创建非交互式身份验证 .NET HDInsight 应用程序](/documentation/articles/hdinsight-create-non-interactive-authentication-dotnet-applications/)。
 
 <!---HONumber=Mooncake_0120_2017-->
 <!--Update_Description: update from ASM to ARM-->
