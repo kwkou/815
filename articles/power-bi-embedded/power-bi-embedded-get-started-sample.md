@@ -38,14 +38,14 @@
 
 1. 下载并解压缩 GitHub 上的[Power BI Embedded - Integrate a report into a web app](http://go.microsoft.com/fwlink/?LinkId=761493)（Power BI Embedded - 将报表集成到 Web 应用中）示例。
 
-> [Azure.Important] 实例中所使用的一些URL只适用于 Global 环境，用于 Azure China 需要做相应的替换，
-> 如：\ProvisionSample\App.config 中的 https://api.powerbi.com 需要替换成 https://api.powerbi.cn,
-> https://management.azure.com 需要替换成 https://management.chinacloudapi.cn，
-> \ProvisionSample\Program.cs 中的 https://management.core.windows.net 需要替换成 https://management.core.chinacloudapi.cn，
-> \ProvisionSample\ProgramExtensions.cs 中的 https://login.windows.net 需要替换成 https://login.chinacloudapi.cn.
-> 
-> 具体详细的关于URL方面的使用区别请看[中国区 Azure 应用程序开发说明](/documentation/articles/developerdifferences)
-> 
+	>[AZURE.IMPORTANT] 实例中所使用的一些URL只适用于 Global 环境，用于 Azure China 需要做相应的替换，
+	> 如：\ProvisionSample\App.config 中的 https://api.powerbi.com 需要替换成 https://api.powerbi.cn,
+	> https://management.azure.com 需要替换成 https://management.chinacloudapi.cn，
+	> \ProvisionSample\Program.cs 中的 https://management.core.windows.net 需要替换成 https://management.core.chinacloudapi.cn，
+	> \ProvisionSample\ProgramExtensions.cs 中的 https://login.windows.net 需要替换成 https://login.chinacloudapi.cn.
+	> 
+	> 具体详细的关于URL方面的使用区别请看[中国区 Azure 应用程序开发说明](/documentation/articles/developerdifferences)
+	> 
 
 2. 在 Visual Studio 中打开“PowerBI embedded.sln”。可能需要在 NuGET 程序包管理器控制台中执行“Update-Package”命令来更新此解决方案中使用的程序包。
 
