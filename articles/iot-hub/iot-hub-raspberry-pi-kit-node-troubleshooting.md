@@ -86,7 +86,7 @@
             ]
         }
 
-    ![远程调试配置](./media/iot-hub-raspberry-pi-lessons/troubleshooting/remote_debugging_configuration.png)  
+   ![远程调试配置](./media/iot-hub-raspberry-pi-lessons/troubleshooting/remote_debugging_configuration.png)  
 
 
 ### 连接到远程应用程序
