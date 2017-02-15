@@ -15,7 +15,7 @@
    ms.workload="powerbi"
    ms.date="10/04/2016"
    ms.author="mblythe"
-   wacn.date="02/06/2017"/>  
+   wacn.date="02/15/2017"/>  
 
 
 # Power BI Embedded 示例入门
@@ -37,6 +37,15 @@
 下面将引导完成 Visual Studio 开发环境的设置，以便访问运行示例应用时所需的组件。
 
 1. 下载并解压缩 GitHub 上的[Power BI Embedded - Integrate a report into a web app](http://go.microsoft.com/fwlink/?LinkId=761493)（Power BI Embedded - 将报表集成到 Web 应用中）示例。
+
+> [Azure.Important] 实例中所使用的一些URL只适用于 Global 环境，用于 Azure China 需要做相应的替换，
+> 如：\ProvisionSample\App.config 中的 https://api.powerbi.com 需要替换成 https://api.powerbi.cn,
+> https://management.azure.com 需要替换成 https://management.chinacloudapi.cn，
+> \ProvisionSample\Program.cs 中的 https://management.core.windows.net 需要替换成 https://management.core.chinacloudapi.cn，
+> \ProvisionSample\ProgramExtensions.cs 中的 https://login.windows.net 需要替换成 https://login.chinacloudapi.cn.
+> 
+> 具体详细的关于URL方面的使用区别请看[中国区 Azure 应用程序开发说明](/documentation/articles/developerdifferences)
+> 
 
 2. 在 Visual Studio 中打开“PowerBI embedded.sln”。可能需要在 NuGET 程序包管理器控制台中执行“Update-Package”命令来更新此解决方案中使用的程序包。
 
@@ -84,7 +93,7 @@ Web 应用示例是一个示例仪表板，用于呈现**工作区**中导入的
     ```
     <appSettings>
         <add key="powerbi:AccessKey" value="" />
-        <add key="powerbi:ApiUrl" value="https://api.powerbi.com" />
+        <add key="powerbi:ApiUrl" value="https://api.powerbi.cn" />
         <add key="powerbi:WorkspaceCollection" value="" />
         <add key="powerbi:WorkspaceId" value="" />
     </appSettings>
