@@ -183,7 +183,7 @@ PowerShell 对于使用单引号和双引号具有略有不同的规则。使用
 
         curl -u admin:PASSWORD -G "https://CLUSTERNAME.azurehdinsight.cn/api/v1/clusters/CLUSTERNAME/configurations?type=spark-thrift-sparkconf&tag=INITIAL" | jq --arg newtag $(echo version$(date +%s%N)) '.items[] | del(.href, .version, .Config) | .tag |= $newtag | {"Clusters": {"desired_config": .}}' > newconfig.json
 
-<br/>  
+    <br/>  
 
 
         $epoch = Get-Date -Year 1970 -Month 1 -Day 1 -Hour 0 -Minute 0 -Second 0
@@ -192,33 +192,33 @@ PowerShell 对于使用单引号和双引号具有略有不同的规则。使用
 
         curl -u admin:PASSWORD -G "https://CLUSTERNAME.azurehdinsight.cn/api/v1/clusters/CLUSTERNAME/configurations?type=spark-thrift-sparkconf&tag=INITIAL" | jq --arg newtag "version$unixTimeStamp" '.items[] | del(.href, .version, .Config) | .tag |= $newtag | {"Clusters": {"desired_config": .}}' > newconfig.json
 
-Curl 检索 JSON 文档，然后使用 jq 修改数据以创建模板。然后使用模板添加/修改配置值。具体操作如下：
+    Curl 检索 JSON 文档，然后使用 jq 修改数据以创建模板。然后使用模板添加/修改配置值。具体操作如下：
 
-* 创造一个值，这个值包含“版本”字符串和日期，然后保存在“newtag”。
+    * 创造一个值，这个值包含“版本”字符串和日期，然后保存在“newtag”。
 
-* 为新的所需配置创建根文档。
+    * 为新的所需配置创建根文档。
 
-* 得到 `.items[]` 数组的内容，然后加到“desired_config”元素下。
+    * 得到 `.items[]` 数组的内容，然后加到“desired_config”元素下。
 
-* 删除“href”、“version”和“Config”元素，因为新建配置是不需要这些元素的。
+    * 删除“href”、“version”和“Config”元素，因为新建配置是不需要这些元素的。
 
-* 添加一个新的“tag”元素，然后把值设置为“version#################”。数值部分根据当钱的日期来设置。每一个配置都得有一个独特的标签。
+    * 添加一个新的“tag”元素，然后把值设置为“version#################”。数值部分根据当钱的日期来设置。每一个配置都得有一个独特的标签。
 
-    最后，数据保存到“newconfig.json”文档。这个文档的结构应该跟以下示例类似：
+        最后，数据保存到“newconfig.json”文档。这个文档的结构应该跟以下示例类似：
 
-        {
-            "Clusters": {
-                "desired_config": {
-                "tag": "version1459260185774265400",
-                "type": "spark-thrift-sparkconf",
-                "properties": {
-                    ....
-                },
-                "properties_attributes": {
-                    ....
+            {
+                "Clusters": {
+                    "desired_config": {
+                    "tag": "version1459260185774265400",
+                    "type": "spark-thrift-sparkconf",
+                    "properties": {
+                        ....
+                    },
+                    "properties_attributes": {
+                        ....
+                    }
                 }
             }
-        }
 
 3. 打开 **newconfig.json** 文档并在 **properties** 对象中修改/添加值。例如，下面的示例将“spark.yarn.am.memory”的值从“1g”更改为“3g”，并针对值为“256m”的“spark.kryoserializer.buffer.max”添加新元素。
    

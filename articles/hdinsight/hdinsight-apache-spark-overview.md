@@ -42,7 +42,6 @@ Azure HDInsight 提供完全托管的 Spark 服务。在 HDInsight 上使用 Spa
 | 方便创建群集 |你可以使用 Azure 管理门户、Azure PowerShell 或 HDInsight .NET SDK，在几分钟之内于 HDInsight 上创建新的 Spark 群集。请参阅 [HDInsight 中的 Spark 群集入门](/documentation/articles/hdinsight-apache-spark-jupyter-spark-sql/) |
 | 易于使用 |HDInsight 群集中的 Spark 包含预先配置的 Jupyter 笔记本。你可以使用这些笔记本执行交互式数据处理和可视化。Jupyter 笔记本的 URL 是 https://CLUSTERNAME.azurehdinsight.cn/jupyter。将 **CLUSTERNAME** 替换为 Spark HDInsight 群集的名称。 |
 | REST API |HDInsight 中的 Spark 包含 [Livy](https://github.com/cloudera/hue/tree/master/apps/spark/java#welcome-to-livy-the-rest-spark-server)，它是基于 REST-API 的 Spark 作业服务器，用于远程提交和监视正在运行的作业。 |
-| 支持 Azure 数据湖存储 |可将 HDInsight 上的 Spark 配置为使用 Azure Data Lake Store 作为附加存储和主存储（仅适用于 HDInsight 3.5 群集）。 |
 | 与 Azure 服务集成 |HDInsight 上的 Spark 随附了 Azure 事件中心的连接器。客户还可以使用事件中心来生成流式处理应用程序。 |
 | 支持 R Server |可以在 HDInsight Spark 群集上设置 R Server，以 Spark 群集承诺的速度运行分布式 R 计算。有关详细信息，请参阅[开始使用 HDInsight 上的 R Server](/documentation/articles/hdinsight-hadoop-r-server-get-started/)。 |
 | 并发查询 |HDInsight 中的 Spark 支持并发查询。它允许一个用户运行多个查询，或者不同的用户运行多个查询，以及让应用程序共享相同的群集资源。 |

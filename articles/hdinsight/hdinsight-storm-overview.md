@@ -86,8 +86,6 @@ Apache Storm on HDInsight 具有下述主要优势：
 
     * 进行 __Java__ 开发时，Microsoft 会尽可能利用现有的 Storm 组件与其他 Azure 服务集成。在某些情况下，可能需要特定于服务的组件或解决方案。
 
-        * __Azure Data Lake Store__：基于 Java 的拓扑可以在 URI 方案为 `adl://` 的情况下，使用 Storm-HDFS Bolt 访问 Data Lake Store。有关如何使用 Storm-HDFS Bolt 的示例，请参阅 [Use Azure Data Lake Store with Apache Storm on HDInsight](https://docs.microsoft.com/azure/hdinsight/hdinsight-storm-write-data-lake-store)（将 Azure Data Lake Store 与 Apache Storm on HDInsight 配合使用）。
-
         * __Azure Blob 存储__（当用作 HDInsight 的存储时）：基于 Java 的拓扑可以访问与群集关联的 Azure Blob 存储，方法是将 Storm-HDFS Bolt 与 URI 方案 `wasb://` 配合使用。
 
         * __Azure 事件中心__：可以使用 Microsoft 提供的 EventHubSpout 和 EventHubBolt 组件进行访问。这些组件是用 Java 编写的，作为独立的 .jar 文件提供。
