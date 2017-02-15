@@ -1,25 +1,22 @@
 <!-- Remove intelij, hello world for temp -->
 <properties
-	pageTitle="安装 Azure Toolkit for Eclipse | Azure"
-	description="了解如何安装 Azure Toolkit for Eclipse。"
-	services=""
-	documentationCenter="java"
-	authors="rmcmurray"
-	manager="wpickett"
-	editor=""/>  
-
-
+    pageTitle="安装 Azure Toolkit for Eclipse | Azure"
+    description="了解如何安装 Azure Toolkit for Eclipse。"
+    services=""
+    documentationcenter="java"
+    author="rmcmurray"
+    manager="erikre"
+    editor="" />
 <tags
-	ms.service="multiple"
-	ms.workload="na"
-	ms.tgt_pltfrm="multiple"
-	ms.devlang="Java"
-	ms.topic="article"
-	ms.date="11/01/2016" 
-	wacn.date="12/05/2016" 
-	ms.author="robmcm"/>
-
-<!-- Legacy MSDN URL = https://msdn.microsoft.com/library/azure/hh690946.aspx -->
+    ms.assetid="9e93ff6a-f42b-4d99-b55b-624136b4a730"
+    ms.service="multiple"
+    ms.workload="na"
+    ms.tgt_pltfrm="multiple"
+    ms.devlang="Java"
+    ms.topic="article"
+    ms.date="12/22/2016"
+    wacn.date="02/14/2017"
+    ms.author="robmcm" />
 
 # 安装 Azure Toolkit for Eclipse
 使用 Azure Toolkit for Eclipse 提供的模板和功能，可轻松地利用 Eclipse 开发环境创建、开发、测试和部署 Azure 应用程序。Azure Toolkit for Eclipse 是一个开放源代码项目，其源代码可从 GitHub 上项目站点的 MIT 许可证下获取，URL 为：
@@ -42,15 +39,15 @@
     ![安装 Azure Toolkit for Eclipse][02]
 5. 如果展开“Azure Toolkit for Eclipse”，你将看到以下项：
    
-   * **适用于 Java 的 Application Insights 插件**：此组件允许你将 Azure 的遥测日志记录和分析服务用于应用程序和服务器实例。
-   * **Azure 访问控制服务筛选器**：此组件对以下情况提供支持：向 Azure ACS 验证应用程序用户的身份，启用单一登录方案，以及从应用程序具体化标识逻辑。
-   * **Azure 常用插件**：此组件提供其他工具包组件所需的常见功能。
-   * **Azure Explorer for Eclipse**：此组件提供其他工具包组件所需的常见功能。
-   * **Azure Plugin for Eclipse with Java**：此组件对以下情况提供支持：在 Eclipse 中，通过命令行开发可帮助构建、测试和部署适用于 Azure 云的 Java 应用程序的项目。
-    * **Azure Web Apps Plugin with Java**：此组件在将 Java Web 应用程序部署到 Azure Web 应用容器时提供支持。
-    * **Microsoft JDBC Driver 4.2 for SQL Server**：此组件提供适用于 SQL Server 的 JDBC API 以及适用于 Java Platform Enterprise Edition 8 的 Azure SQL 数据库。
-    * **Apache Qpid JMS 客户端库包**：此组件提供 Apache Qpid 项目中的 JMS 客户端组件，以允许应用程序在 Azure 中使用 AMQP 消息传送。
-    * **Azure Java 库包**：此组件提供用于访问 Azure 服务（例如存储空间、服务总线、服务运行时等等）的 API。
+   - **适用于 Java 的 Application Insights 插件**：此组件允许你将 Azure 的遥测日志记录和分析服务用于应用程序和服务器实例。
+   - **Azure 访问控制服务筛选器**：此组件对以下情况提供支持：向 Azure ACS 验证应用程序用户的身份，启用单一登录方案，以及从应用程序具体化标识逻辑。
+   - **Azure 常用插件**：此组件提供其他工具包组件所需的常见功能。
+   - **Azure Explorer for Eclipse**：此组件提供其他工具包组件所需的常见功能。
+   - **Azure Plugin for Eclipse with Java**：此组件对以下情况提供支持：在 Eclipse 中，通过命令行开发可帮助构建、测试和部署适用于 Azure 云的 Java 应用程序的项目。
+   - **Azure Web Apps Plugin with Java**：此组件在将 Java Web 应用程序部署到 Azure Web 应用容器时提供支持。
+   - **Microsoft JDBC Driver 4.2 for SQL Server**：此组件提供适用于 SQL Server 的 JDBC API 以及适用于 Java Platform Enterprise Edition 8 的 Azure SQL 数据库。
+   - **Apache Qpid JMS 客户端库包**：此组件提供 Apache Qpid 项目中的 JMS 客户端组件，以允许应用程序在 Azure 中使用 AMQP 消息传送。
+   - **Azure Java 库包**：此组件提供用于访问 Azure 服务（例如存储、服务总线、服务运行时等）的 API。
 6. 单击“下一步”。（如果在安装该工具包时遇到不正常的延迟，请确保未选中“在安装过程中访问所有更新站点以查找所需的软件”。）
 7. 在“安装详细信息”对话框中，单击“下一步”。
    
@@ -74,11 +71,11 @@
 有关 Azure Toolkits for Java IDE 的详细信息，请参阅以下链接：
 
 - [适用于 Eclipse 的 Azure 工具包]
-  - 安装 Azure Toolkit for Eclipse（本文）
+  - *安装 Azure Toolkit for Eclipse（本文）*
   - [Azure Toolkit for Eclipse 的新增功能]
-
 - [Azure Toolkit for IntelliJ]
   - [安装 Azure Toolkit for IntelliJ]
+  - [Azure Toolkit for IntelliJ 中的新增功能]
 
 有关将 Azure 与 Java 配合使用的详细信息，请参阅 [Azure Java 开发人员中心]。
 
@@ -87,8 +84,6 @@
 
 [适用于 Eclipse 的 Azure 工具包]: /documentation/articles/azure-toolkit-for-eclipse/
 [Azure Toolkit for IntelliJ]: /documentation/articles/azure-toolkit-for-intellij/
-[在 Eclipse 中创建 Azure 的 Hello World Web 应用]: /documentation/articles/app-service-web-eclipse-create-hello-world-web-app/
-[在 IntelliJ 中创建 Azure 的 Hello World Web 应用]: /documentation/articles/app-service-web-intellij-create-hello-world-web-app/
 [Installing the Azure Toolkit for Eclipse]: /documentation/articles/azure-toolkit-for-eclipse-installation/
 [安装 Azure Toolkit for IntelliJ]: /documentation/articles/azure-toolkit-for-intellij-installation/
 [Azure Toolkit for Eclipse 的新增功能]: /documentation/articles/azure-toolkit-for-eclipse-whats-new/
@@ -105,5 +100,7 @@
 [05]: ./media/azure-toolkit-for-eclipse-installation/eclipse-installation-05.png
 [06]: ./media/azure-toolkit-for-eclipse-installation/eclipse-installation-06.png
 
+<!-- Legacy MSDN URL = https://msdn.microsoft.com/zh-cn/library/azure/hh690946.aspx -->
 
-<!---HONumber=Mooncake_1128_2016-->
+<!---HONumber=Mooncake_0206_2017-->
+<!--Update_Description: wording update-->

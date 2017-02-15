@@ -1,21 +1,22 @@
 <properties
-	pageTitle="安装 Azure Toolkit for IntelliJ | Azure"
-	description="了解如何安装 Azure Toolkit for IntelliJ IDEA。"
-	services=""
-	documentationCenter="java"
-	authors="rmcmurray"
-	manager="wpickett"
-	editor=""/>
-
+    pageTitle="安装 Azure Toolkit for IntelliJ | Azure"
+    description="了解如何安装 Azure Toolkit for IntelliJ IDEA。"
+    services=""
+    documentationcenter="java"
+    author="rmcmurray"
+    manager="erikre"
+    editor="" />
 <tags
-	ms.service="multiple"
-	ms.workload="na"
-	ms.tgt_pltfrm="multiple"
-	ms.devlang="Java"
-	ms.topic="article"
-	ms.date="11/01/2016" 
-	wacn.date="12/05/2016" 
-	ms.author="robmcm"/>
+    ms.assetid="c6817c7b-f28c-4c06-8216-41c7a8117de3"
+    ms.service="multiple"
+    ms.workload="na"
+    ms.tgt_pltfrm="multiple"
+    ms.devlang="Java"
+    ms.topic="article"
+    ms.date="12/22/2016"
+    wacn.date="02/14/2017"
+    ms.author="robmcm" />  
+
 
 # 安装 Azure Toolkit for IntelliJ
 借助 Azure Toolkit for IntelliJ 提供的模板和功能，你可以轻松使用 IntelliJ IDEA 开发环境来创建、开发、测试和部署 Azure 应用程序。Azure Toolkit for IntelliJ 是一个开放源代码项目，其源代码可从 GitHub 上项目站点的 MIT 许可证下获取，URL 为：
@@ -80,22 +81,24 @@
   - [安装 Azure Toolkit for Eclipse]
   - [Azure Toolkit for Eclipse 的新增功能]
 - [Azure Toolkit for IntelliJ]
-  - 安装 Azure Toolkit for IntelliJ（本文）
+  - *安装 Azure Toolkit for IntelliJ（本文）*
+  - [Azure Toolkit for IntelliJ 中的新增功能]
 
 有关将 Azure 与 Java 配合使用的详细信息，请参阅 [Azure Java 开发人员中心]。
 
 <!-- URL List -->
 
+
 [适用于 Eclipse 的 Azure 工具包]: /documentation/articles/azure-toolkit-for-eclipse/
 [Azure Toolkit for IntelliJ]: /documentation/articles/azure-toolkit-for-intellij/
-[在 Eclipse 中创建 Azure 的 Hello World Web 应用]: /documentation/articles/app-service-web-eclipse-create-hello-world-web-app/
-[在 IntelliJ 中创建 Azure 的 Hello World Web 应用]: /documentation/articles/app-service-web-intellij-create-hello-world-web-app/
 [安装 Azure Toolkit for Eclipse]: /documentation/articles/azure-toolkit-for-eclipse-installation/
 [Azure Toolkit for Eclipse 的新增功能]: /documentation/articles/azure-toolkit-for-eclipse-whats-new/
+[Azure Toolkit for IntelliJ 中的新增功能]: /documentation/articles/azure-toolkit-for-intellij-whats-new/
 
 [Azure Java 开发人员中心]: /develop/java/
 
 <!-- IMG List -->
+
 
 [01a]: ./media/azure-toolkit-for-intellij-installation/01-intellij-file-settings.png
 [01b]: ./media/azure-toolkit-for-intellij-installation/01-intellij-configure-dropdown.png
@@ -107,4 +110,5 @@
 [06]: ./media/azure-toolkit-for-intellij-installation/06-intellij-settings-dialog.png
 [07]: ./media/azure-toolkit-for-intellij-installation/07-restart-intellij.png
 
-<!---HONumber=Mooncake_1128_2016-->
+<!---HONumber=Mooncake_0206_2017-->
+<!--Update_Description: wording update-->
