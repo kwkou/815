@@ -71,8 +71,8 @@ Azure Toolkit for Eclipse - 2015 年 9 月版包含以下增强功能：
 
 - **支持 Zulu OpenJDK 更新**。有关详细信息，请参阅 [Zulu OpenJDK 的 Azul Systems 网页]。
 - **更新了 Tomcat 和 Jetty 分发版**。已更新 Azure 上提供的、可配合适用于 Eclipse 的 Azure 工具包使用的 Jetty 和 Tomcat 分发版。（这些分发版可让开发人员使用 Azure Toolkit for Eclipse 创建快速开发与测试项目）。
-- **支持自动更新的 Tomcat 和 Jetty 引用**。除了 Azure 上所提供的 Tomcat 和 Jetty 特定版本以外，开发人员现在还可以引用名为“最新(自动更新)”的分发版，这个分发版将在下一次回收角色实例时自动更新为每个 Jetty 或 Tomcat 主要版本的最新分发版。（回收将自动发生，但开发人员也可以通过 Azure 门户预览手动触发回收）。 此新功能意味着开发人员不需要重新部署应用程序就能更新其服务器软件。（
-- 此功能目前仅适用于开发和测试目的或非任务关键型应用程序，不建议在生产环境中使用。）
+- **支持自动更新的 Tomcat 和 Jetty 引用**。除了 Azure 上所提供的 Tomcat 和 Jetty 特定版本以外，开发人员现在还可以引用名为“最新(自动更新)”的分发版，这个分发版将在下一次回收角色实例时自动更新为每个 Jetty 或 Tomcat 主要版本的最新分发版。（回收将自动发生，但开发人员也可以通过 Azure 门户预览手动触发回收）。 此新功能意味着开发人员不需要重新部署应用程序就能更新其服务器软件。 
+- 此功能目前仅适用于开发和测试目的或非任务关键型应用程序，不建议在生产环境中使用。 
 - **适用于 Azure 存储中 Blob、队列和表的 Azure 资源管理器视图**。可让开发人员直接从 Eclipse IDE 中对其存储项目执行一组常见的任务。例如：删除、上载或下载 Blob。
 
 ### 2015 年 8 月 1 日
@@ -97,7 +97,7 @@ Azure Toolkit for Eclipse - 2015 年 3 月版包含以下增强功能：
 
 - **支持 Mac、Ubuntu 和其他 Linux 风格**。此版本的 Azure Toolkit for Eclipse 添加了对 Mac OS 和多种 Unix 平台的支持，因此，开发人员可以在运行非 Windows 操作系统的 Eclipse 中，安装该工具包来创建、配置 Java 项目并将其发布到 Azure 云服务 (PaaS)。
 
->[AZURE.NOTE] 此功能目前以预览版提供，不建议在生产环境中使用。对于此版本，我们不提供客户支持服务级别协议 (SLA)，但鼓励并感谢大家的反馈。
+	>[AZURE.NOTE] 此功能目前以预览版提供，不建议在生产环境中使用。对于此版本，我们不提供客户支持服务级别协议 (SLA)，但鼓励并感谢大家的反馈。
 
 - **新的 Application Insights 插件**。现在，开发人员可以在 Azure 上使用 Application Insights 配置自动服务器遥测。
 - **基于 Ant 的命令行部署自动化**。此功能使开发人员能够使用 Eclipse 外部的 Ant，自动发布其较新版本的部署。首次从 Eclipse 部署某个项目后，将为该项目自动配置一个预先生成的脚本，后续的部署只需使用该脚本通过命令行完全自动化部署。
@@ -320,7 +320,6 @@ Azure Plugin for Eclipse - 2011 年 12 月 CTP 已发布。新功能包括：新
 [在 Eclipse 中为 Azure 创建 Hello World 应用程序]: /documentation/articles/azure-toolkit-for-eclipse-creating-a-hello-world-application/
 [在 Eclipse 中调试 Azure 应用程序]: /documentation/articles/azure-toolkit-for-eclipse-debugging-azure-applications/
 [实施大型部署]: /documentation/articles/azure-toolkit-for-eclipse-deploying-large-deployments/
-[]: /documentation/articles/azure-toolkit-for-eclipse-azure-role-properties/#endpoints_properties/
 [环境变量属性]: /documentation/articles/azure-toolkit-for-eclipse-azure-role-properties/#environment_variables_properties/
 [如何使用 SSL 卸载]: /develop/java/
 [安装 Azure Toolkit for Eclipse]: /documentation/articles/azure-toolkit-for-eclipse-installation/

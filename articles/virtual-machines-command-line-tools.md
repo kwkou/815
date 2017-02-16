@@ -210,19 +210,33 @@ Windows 虚拟机稍后可以通过添加端口 3389 作为终结点来启用 RD
 此命令支持以下可选参数：
 
 **-c, --connect** 在托管服务中已创建的部署中创建虚拟机。如果 -vmname 未与此选项一起使用，将自动生成新虚拟机的名称。<br /> 
+
 **-n, --vm-name** 指定虚拟机的名称。默认情况下，此参数采用托管服务名称。如果未指定 -vmname，将生成 &lt;service-name>&lt;id> 形式的新虚拟机名称，其中 &lt;id> 是服务中现有虚拟机的数量加上 1。例如，如果使用此命令向拥有一个现有虚拟机的托管服务 MyService 中添加虚拟机，则会将新虚拟机命名为 MyService2。<br /> 
+
 **-u, --blob-url** 指定可从中创建虚拟机系统磁盘的目标 Blob 存储 URL。<br /> 
+
 **-z, --vm-size** 指定虚拟机的大小。有效值为：“ExtraSmall”、“Small”、“Medium”、“Large”、“ExtraLarge”、“A5”、“A6”、“A7”、“A8”、“A9”、“A10”、“A11”、“Basic\_A0”、“Basic\_A1”、“Basic\_A2”、“Basic\_A3”、“Basic\_A4”、“Standard\_D1”、“Standard\_D2”、“Standard\_D3”、“Standard\_D4”、“Standard\_D11”、“Standard\_D12”、“Standard\_D13”、“Standard\_D14”、“Standard\_DS1”、“Standard\_DS2”、“Standard\_DS3”、“Standard\_DS4”、“Standard\_DS11”、“Standard\_DS12”、“Standard\_DS13”、“Standard\_DS14”、“Standard\_G1”、“Standard\_G2”、“Standard\_G3”、“Standard\_G4”、“Standard\_G55”。默认值为“Small”。<br /> 
+
 **-r** 添加到 Windows 虚拟机的 RDP 连接。<br /> 
+
 **-e, --ssh** 添加到 Windows 虚拟机的 SSH 连接。<br /> 
+
 **-t, --ssh-cert** 指定 SSH 证书。<br /> 
+
 **-s** 订阅。<br /> 
+
 **-o, --community** 指定的映像是社区映像。<br /> 
+
 **-w** 虚拟网络名称。<br/> 
+
 **-l, --location** 指定位置（例如，“North Central US”）。<br /> 
+
 **-a, --affinity-group** 指定地缘组。<br /> 
+
 **-w, --virtual-network-name** 指定要在其中添加新虚拟机的虚拟网络。可从 Azure 经典管理门户设置和管理虚拟网络。<br />
+
 **-b, --subnet-names** 指定要分配虚拟机的子网名称。
+
 
 在此示例中，MSFT\_\_Win2K8R2SP1-120514-1520-141205-01-zh-cn-30GB 是该平台提供的映像。有关操作系统映像的详细信息，请参阅 VM 映像列表。
 
