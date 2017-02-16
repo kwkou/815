@@ -14,7 +14,7 @@
     ms.devlang="javascript"
     ms.topic="article"
     ms.date="01/07/2017"
-    wacn.date="02/13/2017"
+    wacn.date="02/15/2017"
     ms.author="dastrock" />  
 
 
@@ -231,7 +231,7 @@ js
 	...
 
 
-祝贺你！ 你现已完成创建与 Azure AD 集成的单页面应用。佩服吧！该应用可对用户进行身份验证，使用 OpenID Connect 安全调用其后端 REST API，并获取有关用户的基本信息。它原本就支持来自 Azure AD 的具有个人 Microsoft 帐户或工作/学校帐户的任何用户。运行该应用，然后在浏览器中导航到 `https://localhost:44326/`。使用个人 Microsoft 帐户或工作/学校帐户登录。将任务添加到用户的待办事项列表，然后注销。尝试使用其他类型的帐户登录。如果需要一个 Azure AD 租户来创建工作/学校用户，请[在此处了解如何获取租户](/documentation/articles/active-directory-howto-tenant/)（免费）。
+祝贺你！ 你现已完成创建与 Azure AD 集成的单页面应用。佩服吧！该应用可对用户进行身份验证，使用 OpenID Connect 安全调用其后端 REST API，并获取有关用户的基本信息。它原本就支持来自 Azure AD 的具有个人 Microsoft 帐户或工作/学校帐户的任何用户。运行该应用，然后在浏览器中导航到 `https://localhost:44326/`。使用个人 Microsoft 帐户或工作/学校帐户登录。将任务添加到用户的待办事项列表，然后注销。尝试使用其他类型的帐户登录。如果需要一个 Azure AD 租户来创建工作/学校用户，请[在此处了解如何获取租户](/documentation/articles/active-directory-howto-tenant/)。
 
 如果要继续了解 v2.0 终结点，请返回 [v2.0 开发人员指南](/documentation/articles/active-directory-appmodel-v2-overview/)。有关更多资源，请查看：
 
