@@ -14,7 +14,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="identity"
     ms.date="01/07/2017"
-    wacn.date="02/13/2017"
+    wacn.date="02/15/2017"
     ms.author="mbaldwin" />  
 
 
@@ -38,13 +38,7 @@
 
     或
 
-- Azure 租户至少有一个 Azure AD 访问控制 (ACS) 命名空间。有关详细信息，请参阅[访问控制命名空间](https://msdn.microsoft.com/zh-cn/library/azure/gg185908.aspx)。
-
-    或
-
 - Azure 租户至少有一个 Azure 多重身份验证提供程序。有关详细信息，请参阅[管理 Azure 多重身份验证提供程序](/documentation/articles/multi-factor-authentication-get-started-cloud/)。
-
-若要创建访问控制命名空间或多重身份验证提供程序，请单击“+新建”>“应用程序服务”>“Active Directory”。
 
 要获取对目录的管理权限，请让管理员为你的帐户分配管理员角色。有关详细信息，请参阅[分配管理员角色](/documentation/articles/active-directory-assign-admin-roles/)。
 

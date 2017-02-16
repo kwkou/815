@@ -196,7 +196,8 @@
 		Data: 1
 
 5.	结果如下图所示：
-![Intranet 区域](./media/active-directory-aadconnect-get-started-custom/sitezone.png)
+
+	![Intranet 区域](./media/active-directory-aadconnect-get-started-custom/sitezone.png)
 
 6.	单击“确定”两次。
 
