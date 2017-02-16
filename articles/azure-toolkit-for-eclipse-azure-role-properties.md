@@ -41,18 +41,16 @@
 - [服务器配置属性](#server_configuration_properties)
 - [SSL 卸载属性](#ssl_offloading_properties)
 
-<a name="virtual_machine_properties"></a> 
-
-### 虚拟机属性
+### 虚拟机属性 <a name="virtual_machine_properties"></a> 
 在 Eclipse 的项目资源管理器窗格中打开角色的上下文菜单，单击“Azure”，然后单击“属性”，你将能够更改虚拟机大小，还可以更改实例数，如下图所示。
 
 ![][ic719499]
 
 >[AZURE.NOTE] 仅限 Windows：将实例数设置为大于 1 的值，此外，还要配置应用程序服务器，不管此设置如何，工具包都只允许在模拟器中运行 1 个角色实例。这是为了避免不同服务器实例在同一台计算机上运行时，在这些实例之间出现端口绑定冲突（例如，所有实例都尝试绑定到端口 8080）。所需的实例计数设置已保留，但仅当部署到云中时生效。
 
-<a name="caching_properties"></a> 
 
-### 缓存属性
+
+### 缓存属性 <a name="caching_properties"></a> 
 在 Eclipse 的项目资源管理器窗格中打开角色的上下文菜单，单击“Azure”，然后单击“缓存”。在此对话框中，你可以启用命名并置的 Memcache 兼容缓存，从而可以帮助你加快 Web 应用程序的运行速度。
 
 ![][ic719483]
@@ -86,9 +84,8 @@
 
 有关如何使用缓存的详细信息，请参阅[如何使用并置缓存][How to Use Co-located Caching]。
 
-<a name="certificates_properties"></a> 
 
-### 证书属性
+### 证书属性 <a name="certificates_properties"></a> 
 在 Eclipse 的项目资源管理器窗格中打开角色的上下文菜单，单击“Azure”，然后单击“证书”。
 
 ![][ic710964]  
@@ -98,9 +95,8 @@
 
 当你使用发布向导将项目部署到 Azure 时，系统将提示你指向与这些证书对应的个人信息交换 (PFX) 文件并提供其密码，以便自动将其上载到 Azure 服务，但前提是这些文件以前尚未上载到那里。
 
-<a name="components_properties"></a> 
 
-### 组件属性
+### 组件属性 <a name="components_properties"></a> 
 在 Eclipse 的项目资源管理器窗格中打开角色的上下文菜单，单击“Azure”，然后单击“组件”。在此对话框中，你能够添加、修改或删除你的角色的组件，以及更改它们的处理顺序。
 
 ![][ic719502]  
@@ -160,9 +156,7 @@
 
 >[AZURE.NOTE] 服务器配置功能也依赖于组件。如果不删除相应的服务器配置，则无法删除或编辑这些组件。当你尝试对此类组件进行更改时，将向你提示该信息。
 
-<a name="debugging_properties"></a> 
-
-### 调试属性
+### 调试属性 <a name="debugging_properties"></a> 
 在 Eclipse 的项目资源管理器窗格中打开角色的上下文菜单，单击“Azure”，然后单击“调试”。在此对话框中，你可以启用或禁用远程调试，并可以创建调试配置，如下图所示。
 
 ![][ic719504]  
@@ -170,9 +164,9 @@
 
 有关调试的信息，请参阅[在 Eclipse 中调试 Azure 应用程序][Debugging Azure Applications in Eclipse]。
 
-<a name="endpoints_properties"></a> 
 
-### 终结点属性
+
+### 终结点属性 <a name="endpoints_properties"></a> 
 在 Eclipse 的项目资源管理器窗格中打开角色的上下文菜单，单击“Azure”，然后单击“终结点”。在此对话框中，你可以创建终结点以及编辑或删除终结点，如下图所示。
 
 ![][ic719505]  
@@ -203,9 +197,9 @@
 
 为了正确配置用户对角色启用的某些功能（例如缓存、远程调试、会话相关性或 SSL 卸载），该工具包可能会自动配置将与用户定义的终结点一起列出的特殊终结点。只要启用了关联的功能，该工具包就会禁止用户编辑或删除此类自动生成的终结点。
 
-<a name="environment_variables_properties"></a> 
 
-### 环境变量属性
+
+### 环境变量属性 <a name="environment_variables_properties"></a> 
 在 Eclipse 的项目资源管理器窗格中打开角色的上下文菜单，单击“Azure”，然后单击“环境变量”。在此对话框中，你可以创建环境变量以及修改或删除环境变量，如下图所示。
 
 ![][ic719506]  
@@ -238,9 +232,9 @@
 
 为了正确配置用户对角色启用的某些功能（如服务器配置、远程调试或本地存储），该工具包可能会自动配置将与用户定义的环境变量一起列出的特殊环境变量。只要启用了关联的功能，该工具包就会禁止用户编辑或删除此类自动生成的环境变量。
 
-<a name="session_affinity_properties"></a> 
 
-### 负载均衡/会话相关性（即“粘滞会话”）属性
+
+### 负载均衡/会话相关性（即“粘滞会话”）属性 <a name="session_affinity_properties"></a> 
 在 Eclipse 的项目资源管理器窗格中打开角色的上下文菜单，单击“Azure”，然后单击“负载均衡”。在此对话框中，你可以启用或禁用会话相关性，如下图所示。
 
 ![][ic719492]  
@@ -248,9 +242,9 @@
 
 如需相关信息，请参阅[会话相关性][Session Affinity]。另外，请注意此功能在 SSL 卸载上下文中的行为，如 [SSL 卸载][SSL Offloading]中所述。
 
-<a name="local_storage_properties"></a> 
 
-### 本地存储属性
+
+### 本地存储属性 <a name="local_storage_properties"></a> 
 在 Eclipse 的项目资源管理器窗格中打开角色的上下文菜单，单击“Azure”，然后单击“本地存储”。在此对话框中，你可以为运行你的应用程序的虚拟机创建、修改或删除临时本地存储。可以为本地存储大小设置特定值以及设置在回收角色时是否保留内容，如下图所示。
 
 ![][ic719508]  
@@ -266,9 +260,9 @@
 
 若要删除某个本地存储资源，请在“本地存储”属性页中选择该本地存储资源并单击“删除”按钮，然后单击“是”以确认删除。
 
-<a name="server_configuration_properties"></a> 
+ 
 
-### 服务器配置属性
+### 服务器配置属性 <a name="server_configuration_properties"></a>
 在 Eclipse 的项目资源管理器窗格中打开角色的上下文菜单，单击“Azure”，然后单击“服务器配置”。在此对话框中，你可以添加、删除和修改部署使用的 JDK 和 Java 应用程序服务器，以及添加或删除部署使用的应用程序（例如 WAR、JAR 或 EAR 文件）。
 
 ### JDK 配置
@@ -388,9 +382,9 @@
 
 如果选择了“自动上载...”选项，则每当需要上载时，就会在控制台窗口中看到每隔 5 秒钟报告上载进度的生成消息。
 
-<a name="ssl_offloading_properties"></a> 
 
-### SSL 卸载属性
+
+### SSL 卸载属性 <a name="ssl_offloading_properties"></a> 
 在 Eclipse 的项目资源管理器窗格中打开角色的上下文菜单，单击“Azure”，然后单击“SSL 卸载”。
 
 ![][ic719481]  
