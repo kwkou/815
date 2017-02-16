@@ -70,7 +70,7 @@ Azure IoT 中心用于连接、监视并管理数百万 IoT 资产。若要创�
 	    az resource group create --name iot-sample --location chinaeast
    
 
-   `chinaeast` 是创建资源组所在的位置。如果想要使用其他位置，可运行 `az account list-locations -o table` 来查看 Azure 支持的所有位置。
+    `chinaeast` 是创建资源组所在的位置。如果想要使用其他位置，可运行 `az account list-locations -o table` 来查看 Azure 支持的所有位置。
  
 5. 运行以下命令，在 iot-sample 资源组中创建 IoT 中心：
 
