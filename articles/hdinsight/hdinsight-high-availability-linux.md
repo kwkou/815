@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties
     pageTitle="HDInsight (Hadoop) 的高可用性功能 | Azure"
     description="了解基于 Linux 的 HDInsight 群集如何使用附加的头节点提高可靠性和可用性。此外，了解这种方式对 Ambari 和 Hive 等 Hadoop 服务造成怎样的影响，以及如何使用 SSH 分别连接到每个头节点。"

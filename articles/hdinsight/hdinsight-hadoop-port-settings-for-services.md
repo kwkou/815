@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties
 pageTitle="HDInsight 使用的端口 | Azure"
 description="HDInsight 上运行的 Hadoop 服务使用的端口列表。"

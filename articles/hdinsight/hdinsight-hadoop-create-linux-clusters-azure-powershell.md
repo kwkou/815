@@ -1,6 +1,3 @@
-<!-- not suitable for Mooncake -->
-
-
 <properties
    	pageTitle="使用 Azure PowerShell 在 HDInsight 中的 Linux 上创建 Hadoop、HBase、Storm 或 Spark 群集 | Azure"
    	description="了解如何使用 Azure PowerShell 在 HDInsight 中的 Linux 上创建 Hadoop、HBase、Storm 或 Spark 群集。"

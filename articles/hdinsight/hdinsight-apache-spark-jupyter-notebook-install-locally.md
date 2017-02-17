@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties
     pageTitle="在计算机上安装 Jupyter 笔记本并将它连接到 HDInsight Spark 群集 | Azure"
     description="了解如何在计算机上本地安装 Jupyter 笔记本并将其连接到 Azure HDInsight 上的 Apache Spark 群集。"

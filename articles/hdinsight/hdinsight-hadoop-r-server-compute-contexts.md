@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties
     pageTitle="适用于 HDInsight 上的 R Server 的计算上下文选项 | Azure"
     description="了解用户可用于 HDInsight 上的 R Server 的不同计算上下文选项"

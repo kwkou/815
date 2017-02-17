@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties
     pageTitle="配置 HBase 复制 | Azure"
     description="了解如何配置 HBase 复制，以实现负载均衡、高可用性、在不造成任何停机的情况下从一个 HDInsight 版本迁移/更新到另一个版本，以及灾难恢复。"

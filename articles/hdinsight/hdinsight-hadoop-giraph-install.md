@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties
     pageTitle="在 HDInsight 中的 Hadoop 群集上安装和使用 Giraph | Azure"
     description="了解如何通过 Giraph 自定义 HDInsight 群集，以及如何使用 Giraph。"

@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties 
 	pageTitle="在 HDInsight 上使用 Apache Spark 生成机器学习应用程序 | Azure" 
 	description="逐步介绍如何使用 Apache Spark 随附的笔记本生成机器学习应用程序" 

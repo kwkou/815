@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties 
 	pageTitle="跟踪和调试 HDInsight 中的 Apache Spark 群集上运行的作业 | Azure" 
 	description="使用 YARN UI、Spark UI 和 Spark History Server 来跟踪和调试 Azure HDInsight 中的 Spark 群集上运行的作业" 

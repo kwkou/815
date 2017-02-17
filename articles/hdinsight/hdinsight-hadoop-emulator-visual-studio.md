@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties
 pageTitle="将用于 Visual Studio 的 Azure Data Lake 工具与 Hortonworks 沙盒配合使用 | Azure"
 description="了解如何将用于 Visual Studio 的 Azure Data Lake 工具与 Hortonworks 沙盒（在本地 VM 中运行）配合使用。 使用这些工具，可以在沙盒中创建和运行 Hive 与 Pig 作业，并查看作业输出和历史记录。"

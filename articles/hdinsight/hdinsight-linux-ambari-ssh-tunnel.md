@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties
 pageTitle="使用 SSH 隧道访问 Ambari Web UI、ResourceManager、JobHistory、NameNode、Oozie 和其他 Web UI"
 description="了解如何使用 SSH 隧道来安全浏览基于 Linux 的 HDInsight 节点上托管的 Web 资源。"

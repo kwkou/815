@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties
     pageTitle="在 Azure HDInsight 上的 Apache Spark 群集中将外部 python 包与 Jupyter 笔记本配合使用 | Azure"
     description="逐步说明如何配置可在 HDInsight Spark 群集中使用的 Jupyter 笔记本，以使用外部 python 包。"

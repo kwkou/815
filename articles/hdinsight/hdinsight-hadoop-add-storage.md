@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties
     pageTitle="将其他 Azure 存储帐户添加到 HDInsight | Azure"
     description="了解如何将其他 Azure 存储帐户添加到现有 HDInsight 群集。"

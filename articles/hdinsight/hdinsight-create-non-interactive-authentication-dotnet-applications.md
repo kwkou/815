@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties
     pageTitle="创建非交互式身份验证 .NET HDInsight 应用程序 | Azure"
     description="了解如何创建非交互式身份验证 .NET HDInsight 应用程序。"

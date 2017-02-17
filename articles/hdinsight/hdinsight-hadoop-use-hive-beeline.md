@@ -1,6 +1,3 @@
-<!-- not suitable for Mooncake -->
-
-
 <properties
    pageTitle="使用 Beeline 来操作 HDInsight (Hadoop) 上的 Hive | Azure"
    description="了解如何使用 SSH 连接到 HDInsight 中的 Hadoop 群集，然后使用 Beeline 以交互方式提交 Hive 查询。Beeline 是用于通过 JDBC 操作 HiveServer2 的实用工具。"

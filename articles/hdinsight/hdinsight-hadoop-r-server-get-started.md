@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties
     pageTitle="HDInsight 上的 R Server 入门 | Azure"
     description="了解如何在包含 R Server 的 HDInsight 群集上创建 Apache Spark，然后在群集上提交 R 脚本。"

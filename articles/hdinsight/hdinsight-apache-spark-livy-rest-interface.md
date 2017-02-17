@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties
     pageTitle="使用 Livy 远程提交 Spark 作业 | Azure"
     description="了解如何在 HDInsight 中使用 Livy 来远程提交 Spark 作业。"

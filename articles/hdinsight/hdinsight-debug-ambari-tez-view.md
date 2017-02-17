@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties
 pageTitle="将 Ambari Tez 视图与 HDInsight 配合使用 | Azure"
 description="了解如何使用 Ambari Tez 视图来调试 HDInsight 上的 Tez 作业。"

@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties
     pageTitle="在 Azure HDInsight 中创建 Spark 群集并从 Jupyter 使用 Spark SQL 执行交互式分析 | Azure"
     description="逐步说明如何在 HDInsight 群集中快速创建 Apache Spark 群集，然后从 Jupyter 笔记本使用 Spark SQL 来运行交互式查询。"

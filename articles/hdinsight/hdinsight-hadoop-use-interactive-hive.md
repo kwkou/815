@@ -1,6 +1,3 @@
-<!-- not suitable for Mooncake -->
-
-
 <properties
 	pageTitle="在 HDInsight 中使用交互式 Hive | Azure"
 	description="了解如何在 HDInsight 中使用交互式 Hive（基于 LLAP 的 Hive）。"

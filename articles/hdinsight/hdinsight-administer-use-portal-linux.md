@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties
     pageTitle="使用 Azure 门户预览管理 HDInsight 中基于 Linux 的 Hadoop 群集 | Azure"
     description="了解如何使用 Azure 门户预览创建和管理基于 Linux 的 HDInsight 群集。"

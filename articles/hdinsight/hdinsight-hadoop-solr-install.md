@@ -1,6 +1,3 @@
-<!-- not suitable for Mooncake -->
-
-
 <properties
 	pageTitle="使用脚本操作在 Hadoop 群集上安装 Solr | Azure"
 	description="了解如何使用 Solr 通过脚本操作自定义 HDInsight 群集。"

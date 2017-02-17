@@ -1,6 +1,3 @@
-<!-- not suitable for Mooncake -->
-
-
 <properties
    pageTitle="Hadoop 教程：Windows 上的 Hadoop 入门 | Azure"
    description="HDInsight 中的 Hadoop 入门。学习如何在 Windows 上创建 Hadoop 群集、对数据运行 Hive 查询，以及在 Excel 中分析输出。"

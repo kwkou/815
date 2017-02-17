@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties
     pageTitle="在 HDInsight 上安装 Hadoop 应用程序 | Azure"
     description="了解如何在 HDInsight 上安装 HDInsight 应用程序。"

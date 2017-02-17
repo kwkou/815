@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties
     pageTitle="在 Windows 上通过 PuTTY 将 SSH 与 HDInsight 群集配合使用 | Azure"
     description="了解如何创建和使用 SSH 密钥，以便从基于 Windows 的客户端通过 PuTTY SSH 客户端向基于 Linux 的 HDInsight 群集进行身份验证。"

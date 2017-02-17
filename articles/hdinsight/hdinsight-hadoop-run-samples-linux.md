@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties
     pageTitle="在 HDInsight 上运行 Hadoop MapReduce 示例 | Azure"
     description="开始将 MapReduce 示例与 HDInsight 配合使用。使用 SSH 连接到群集，然后使用 Hadoop 命令来运行示例作业。"
