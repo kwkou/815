@@ -1,6 +1,3 @@
-<!-- not suitable for Mooncake -->
-
-
 <properties 
 	pageTitle="使用 Azure 事件中心和 HDInsight 中的 Apache Spark 处理流数据 | Azure" 
 	description="逐步说明如何向 Azure 事件中心发送数据流，然后使用 scala 应用程序在 Spark 接收这些事件" 

@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties
 	pageTitle="使用脚本操作在基于 Linux 的 HDInsight 上安装 Solr | Azure"
 	description="了解如何使用脚本操作在基于 Linux 的 HDInsight Hadoop 群集上安装 Solr。"

@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties
     pageTitle="Azure HDInsight 上的 R Server 简介 | Azure"
     description="获取 HDInsight 上的 R Server 简介。了解如何使用 R Server 创建用于大数据分析的应用程序。"

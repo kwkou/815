@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties
 	pageTitle="在基于 Linux 的 HDInsight 中使用 Hadoop Sqoop | Azure"
 	description="了解如何在 HDInsight 群集上基于 Linux 的 Hadoop 和 Azure SQL 数据库之间运行 Sqoop 导入和导出。"

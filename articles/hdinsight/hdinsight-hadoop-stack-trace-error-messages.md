@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties
 	pageTitle="Hadoop 堆栈跟踪错误消息 | Azure"
 	description="HDInsight 中的 Hadoop 堆栈跟踪错误消息的索引。在列表中查找错误以查看故障排除信息。"

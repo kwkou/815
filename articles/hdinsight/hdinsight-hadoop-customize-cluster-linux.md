@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties
     pageTitle="使用脚本操作自定义 HDInsight 群集 | Azure"
     description="了解如何使用脚本操作将自定义组件添加到基于 Linux 的 HDInsight 群集。脚本操作是在群集节点上运行的 Bash 脚本，可用于自定义群集配置，或者添加 Hue、Solr 或 R 等其他服务和实用工具。"

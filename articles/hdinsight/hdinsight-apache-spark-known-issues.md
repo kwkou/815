@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties 
 	pageTitle="HDInsight 中 Apache Spark 的已知问题 | Azure" 
 	description="HDInsight 中 Apache Spark 的已知问题。" 

@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties 
 	pageTitle="Linux 上的 HDInsight Spark 群集所包含的 Jupyter 笔记本可用的内核 | Azure" 
 	description="了解 HDInsight Linux 上的 Spark 群集可用的其他 Jupyter 笔记本内核。" 

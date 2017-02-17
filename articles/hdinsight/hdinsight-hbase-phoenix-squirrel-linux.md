@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties 
    pageTitle="在 HDInsight 中使用 Apache Phoenix 和 SQuirreL | Azure" 
    description="了解如何在 HDInsight 中使用 Apache Phoenix，以及如何在工作站上安装和配置 SQuirreL 以连接到 HDInsight 中的 HBase 群集。" 

@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties
     pageTitle="使用 HDInsight .NET SDK 在 Linux 上的 HDInsight 中创建 Hadoop、HBase、Storm 或 Spark 群集 | Azure"
     description="了解如何使用 HDInsight .NET SDK 在 Linux 中为 HDInsight 创建 Hadoop、HBase、Storm 或 Spark 群集。"

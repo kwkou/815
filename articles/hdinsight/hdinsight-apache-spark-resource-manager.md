@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties
     pageTitle="使用 Resource Manager 向 HDInsight 中的 Apache Spark 群集分配资源 | Azure"
     description="了解如何对 HDInsight 上的 Apache Spark 群集使用 Resource Manager，以提高性能。"

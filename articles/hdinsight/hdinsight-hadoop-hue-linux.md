@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties
 	pageTitle="在 HDInsight Linux 群集上将 Hue 与 Hadoop 搭配使用 | Azure"
 	description="了解如何在 HDInsight Linux 上安装 Hue 并将其与 Hadoop 群集搭配使用。"

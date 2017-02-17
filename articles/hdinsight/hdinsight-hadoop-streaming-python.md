@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties
    pageTitle="使用 HDInsight 开发 Python MapReduce 作业 | Azure"
    description="了解如何在基于 Linux 的 HDInsight 群集上创建和运行 Python MapReduce 作业。"

@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties
     pageTitle="在 HDInsight 中使用空边缘节点 | Azure"
     description="如何将空边缘节点添加到可充当客户端的 HDInsight 群集，以及如何测试/托管 HDInsight 应用程序。"

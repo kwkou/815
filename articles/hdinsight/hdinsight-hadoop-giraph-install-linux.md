@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties
     pageTitle="在基于 Linux 的 HDInsight (Hadoop) 上安装并使用 Giraph | Azure"
     description="了解如何使用脚本操作在基于 Linux 的 HDInsight 群集上安装 Giraph。脚本操作可让你通过更改群集配置或安装服务和实用工具，在创建期间自定义群集。"

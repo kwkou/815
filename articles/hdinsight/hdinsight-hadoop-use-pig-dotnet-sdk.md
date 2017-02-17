@@ -1,6 +1,3 @@
-<!-- not suitable for Mooncake -->
-
-
 <properties
    pageTitle="在 HDInsight 中将 Hadoop Pig 与 .NET 配合使用 | Azure"
    description="了解如何使用 .NET SDK for Hadoop 将 Pig 作业提交到 HDInsight 上的 Hadoop。"

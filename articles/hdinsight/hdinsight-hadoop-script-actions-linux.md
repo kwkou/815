@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties
     pageTitle="使用基于 Linux 的 HDInsight 进行脚本操作开发 | Azure"
     description="如何使用脚本操作自定义基于 Linux 的 HDInsight 群集。使用脚本操作可以通过指定群集配置设置，或者在群集上安装额外的服务、工具或其他软件，来自定义 Azure HDInsight 群集。"

@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties
    pageTitle="优化 Hive 查询以便在 HDInsight 中更快地执行 | Azure"
    description="了解如何为 HDInsight 中的 Hadoop 优化 Hive 查询。"

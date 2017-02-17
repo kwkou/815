@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties
     pageTitle="在基于 Linux 的 HDInsight 中使用 Hadoop Oozie 工作流 | Azure"
     description="在基于 Linux 的 HDInsight 中使用 Hadoop Oozie。了解如何定义 Oozie 工作流，并提交 Oozie 作业。"

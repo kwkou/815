@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties
     pageTitle="使用脚本操作自定义 HDInsight 群集 | Azure"
     description="了解如何使用脚本操作自定义 HDInsight 群集。"

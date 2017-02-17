@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties
     pageTitle="为 HDInsight Linux 上的 Apache Spark 群集安装 Zeppelin 笔记本 | Azure"
     description="逐步说明如何在 HDInsight Linux 上的 Spark 群集中安装和使用 Zeppelin 笔记本。"

@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties
     pageTitle="使用 HDInsight 上的 R Server 安装 RStudio | Azure"
     description="如何使用 HDInsight 上的 R Server 安装 RStudio。"

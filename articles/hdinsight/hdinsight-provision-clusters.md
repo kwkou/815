@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties
     pageTitle="在 HDInsight 中创建基于 Windows 的 Hadoop 群集 | Azure"
     description="了解如何创建 Azure HDInsight 的群集。"

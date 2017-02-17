@@ -1,6 +1,3 @@
-<!-- not suitable for Mooncake -->
-
-
 <properties
    pageTitle="使用 .NET SDK 在 HDInsight 中创建基于 Windows 的 Hadoop 群集 | Azure"
    	description="了解如何使用 .NET SDK 创建 Azure HDInsight 的 HDInsight 群集。"

@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties
     pageTitle="可与 HDInsight 群集使用的不同组件有哪些？|Azure"
     description="HDInsight 支持多个可部署的 Hadoop 群集组件和版本。请参见“支持的 Hadoop 和 HortonWorks 数据平台 (HDP) 版本”。"

@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties
     pageTitle="适用于 HDInsight 上的 R Server 的 Azure 存储选项 | Azure"
     description="了解用户可用于 HDInsight 上的 R Server 的不同存储选项"

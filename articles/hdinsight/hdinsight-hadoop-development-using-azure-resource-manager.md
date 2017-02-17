@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties
 	pageTitle="迁移到适用于 HDInsight 群集的 Azure Resource Manager 开发工具 | Azure"
 	description="如何迁移到适用于 HDInsight 群集的 Azure Resource Manager 开发工具"

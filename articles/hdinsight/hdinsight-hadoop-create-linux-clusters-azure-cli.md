@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties
     pageTitle="使用跨平台 Azure CLI 在 HDInsight 中的 Linux 上创建 Hadoop、HBase 或 Storm 群集 | Azure"
     description="了解如何使用跨平台 Azure CLI、Azure Resource Manager 模板和 Azure REST API 创建 HDInsight 群集。可以指定群集类型（Hadoop、HBase 或 Storm），或使用脚本来安装自定义组件。"

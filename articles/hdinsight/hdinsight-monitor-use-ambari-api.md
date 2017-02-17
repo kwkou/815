@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties
     pageTitle="使用 Ambari API 在 HDInsight 中监视 Hadoop 群集 | Azure"
     description="使用 Apache Ambari API 创建、管理和监视 Hadoop 群集。直观的操作员工具和 API 消除了 Hadoop 的复杂性。"

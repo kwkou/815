@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties
     pageTitle="在 Windows、Linux、Unix 或 OS X 上将 SSH 与 HDInsight (Hadoop) 配合使用 | Azure"
     description=" 使用安全外壳 (SSH) 访问 HDInsight。本文档提供有关在 Windows、Linux、Unix 或 OS X 客户端中将 SSH 与 HDInsight 配合使用的信息。"
