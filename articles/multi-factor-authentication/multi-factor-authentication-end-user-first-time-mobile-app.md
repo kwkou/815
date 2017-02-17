@@ -28,7 +28,7 @@ Microsoft Authenticator 应用可用于 [Windows Phone](http://go.microsoft.com/
 
 
 1. 在“其他安全性验证”屏幕上，从下拉列表中选择“移动应用”。
-2. 选择“通知”或“一次性密码”，然后选择“设置”。
+2. 选择“接收验证通知”或“使用验证码”，然后选择“Set up”。
 
 	![“其他安全性验证”屏幕](./media/multi-factor-authentication-end-user-first-time-mobile-app/mobileapp.png)  
 

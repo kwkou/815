@@ -26,10 +26,7 @@
 
 ## 我的手机丢失或被盗
 
-有两种方法可以返回你的帐户。第一种方法是使用你的备用身份验证电话号码进行登录（如果已设置了该电话号码）。第二种方法是要求管理员清除你的设置。
-
-如果你的手机已丢失或被盗，也建议你让管理员重置你的应用密码并清除所有已记住的设备。如果你的管理员不确定如何完成此操作，请向他们推荐以下文章：[管理用户和设备](/documentation/articles/multi-factor-authentication-manage-users-and-devices/#delete-users-existing-app-passwords/)。
-
+如果你的手机已丢失或被盗，建议你你可以要求管理员清除你的设置。
 
 ### 使用备用电话号码
 
@@ -77,11 +74,6 @@
 
 
 如果经常因为手机信号弱而导致延迟，建议在你的智能手机上使用 [Microsoft Authenticator 应用](/documentation/articles/multi-factor-authentication-microsoft-authenticator/)。该应用可以生成用来登录的随机安全代码，这些代码不需要手机信号或 Internet 连接。
-
-
-## 应用密码不起作用
-
-首先，请确保正确输入应用密码。如果仍然无法解决问题，请尝试登录并[创建新的应用密码](/documentation/articles/multi-factor-authentication-end-user-app-passwords/)。如果还是不起作用，请与管理员联系并让他们[删除现有应用密码](/documentation/articles/multi-factor-authentication-manage-users-and-devices/#delete-users-existing-app-passwords/)，然后你可以创建一个新密码。
 
 ## 我找不到我的问题的解答。
 

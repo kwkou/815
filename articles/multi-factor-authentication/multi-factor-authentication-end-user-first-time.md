@@ -40,10 +40,13 @@
 | [移动电话呼叫或短信](#use-your-mobile-phone-as-the-contact-method) |- **电话呼叫**会向提供的电话号码进行自动语音呼叫。接听电话并按电话拨号键盘中的 # 进行身份验证。<br>- **短信**会发送包含验证码的短信。按照短信中的提示，回复短信或在登录界面中输入提供的验证码。 |
 | [办公电话呼叫](#use-your-office-phone-as-the-contact-method) |向提供的电话号码进行自动语音呼叫。接听电话并按电话拨号键盘中的 # 进行身份验证。 |
 
+
+> [AZURE.NOTE] Android 系统中使用“Mobile app”来验证需要安装 “Azure Authentication App”，装好后系统还会提示安装 “Google Play Services”， 这个目前在中国无法使用。
+
 ## 使用移动应用作为联系方法
 使用此方法需要在电话或平板上安装验证器应用。本文中的步骤基于 Microsoft Authenticator 应用，该应用可用于 [Windows Phone](http://go.microsoft.com/fwlink/?Linkid=825071)、[Android](http://go.microsoft.com/fwlink/?Linkid=825072) 和 [IOS](http://go.microsoft.com/fwlink/?Linkid=825073)。
 
-1. 从下拉列表中选择“移动应用”。
+1. 从下拉列表中选择“Mobile app”。
 2. 选择“接收验证通知”或“使用验证码”，然后选择“设置”。
 
     ![“其他安全性验证”屏幕](./media/multi-factor-authentication-end-user-first-time/mobileapp.png)  
@@ -76,31 +79,29 @@
 3. 激活完成后，选择“与我联系”。此步骤会将通知或验证码发送到手机。选择“验证”。
 
 ## 使用移动电话作为联系方法
-1. 从下拉列表中选择“身份验证电话”。
+1. 从下拉列表中选择“Authentication phone”。
 
     ![设置](./media/multi-factor-authentication-end-user-first-time/phone.png)  
 
 2. 从下拉列表中选择国家/地区，然后输入手机号码。
 3. 选择想要使用移动电话的方法 - 短信或呼叫。
-4. 选择“与我联系”以验证电话号码。根据所选的模式，我们会发送短信或拨打电话。按照屏幕上提供的说明，选择“验证”。
+4. 选择“Contact me”以验证电话号码。根据所选的模式，我们会发送短信或拨打电话。按照屏幕上提供的说明，选择“验证”。
 5. 此时，系统会提示为非浏览器应用（如 Outlook 2010 或更低版本，或 Apple 设备上的本机电子邮件应用）设置应用密码。这是因为某些应用不支持双重验证。如果不使用这些应用，请单击“完成”并跳过其余步骤。
 6. 如果正在使用这些应用，请复制提供的应用密码，然后将其粘贴到应用程序（而不是常规密码）中。对于多个应用，可以使用相同的应用密码。有关详细信息，请参阅 [应用密码帮助]。
 7. 单击“Done”（完成）。
 
 ## 使用办公电话作为联系方法
-1. 从下拉列表中选择“办公电话”
+1. 从下拉列表中选择“Office phone”
 
     ![设置](./media/multi-factor-authentication-end-user-first-time/office.png)  
 
 2. 会使用公司联系人信息自动填充电话号码框。如果号码错误或丢失，请联系管理员进行更改。
-3. 选择“与我联系”以验证手机号码。我们会呼叫你的电话号码。按照屏幕上提供的说明，选择“验证”。
+3. 选择“Contact me”以验证手机号码。我们会呼叫你的电话号码。按照屏幕上提供的说明，选择“验证”。
 4. 此时，系统会提示为非浏览器应用（如 Outlook 2010 或更低版本，或 Apple 设备上的本机电子邮件应用）设置应用密码。这是因为某些应用不支持双重验证。如果不使用这些应用，请单击“完成”并跳过其余步骤。
-5. 如果正在使用这些应用，请复制提供的应用密码，然后将其粘贴到应用程序（而不是常规密码）中。对于多个应用，可以使用相同的应用密码。有关详细信息，请参阅[应用密码是什么](/documentation/articles/multi-factor-authentication-end-user-app-passwords/)。
-6. 单击“Done”（完成）。
+5. 单击“Done”（完成）。
 
 ## 后续步骤
 - 更改首选选项并[管理双重验证的设置](/documentation/articles/multi-factor-authentication-end-user-manage-settings/)
-- 为不支持双重验证的本机设备应用设置[应用密码](/documentation/articles/multi-factor-authentication-end-user-app-passwords/)。
 - 查看[Microsoft Authenticator 应用](/documentation/articles/multi-factor-authentication-microsoft-authenticator/)文章，了解快速、安全的身份验证（即便没有手机网络服务）。
 
 <!---HONumber=Mooncake_0103_2017-->
