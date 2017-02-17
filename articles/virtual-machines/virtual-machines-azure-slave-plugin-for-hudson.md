@@ -1,21 +1,21 @@
 <properties
     pageTitle="如何在 Hudson 连续集成中使用 Azure Slave 插件 | Azure"
     description="介绍如何在 Hudson 连续集成中使用 Azure Slave 插件。"
-	services="virtual-machines-linux"
-	documentationCenter=""
-	authors="rmcmurray"
-	manager="wpickett"
-	editor="" />
+    services="virtual-machines-linux"
+    documentationCenter=""
+    authors="rmcmurray"
+    manager="wpickett"
+    editor="" />
 
 <tags
-	ms.service="virtual-machines-linux"
-	ms.workload="infrastructure-services"
-	ms.tgt_pltfrm="vm-multiple"
-	ms.devlang="java"
-	ms.topic="article"
-	ms.date="09/20/2016"
-	wacn.date="11/21/2016"
-	ms.author="robmcm"/>
+    ms.service="virtual-machines-linux"
+    ms.workload="infrastructure-services"
+    ms.tgt_pltfrm="vm-multiple"
+    ms.devlang="java"
+    ms.topic="article"
+    ms.date="09/20/2016"
+    wacn.date="11/21/2016"
+    ms.author="robmcm"/>
 
 # 如何在 Hudson 连续集成中使用 Azure Slave 插件
 
@@ -31,7 +31,7 @@
 
 4. 单击“Search”，然后键入 **Azure**，将列表限制到相关插件。
 
-	如果选择滚动可用插件列表，你会在“其他”选项卡中的“Cluster Management and Distributed Build”部分下找到 Azure Slave 插件。
+    如果选择滚动可用插件列表，你会在“其他”选项卡中的“Cluster Management and Distributed Build”部分下找到 Azure Slave 插件。
 
 5. 选中“Azure Slave Plugin”复选框。
 
@@ -50,24 +50,24 @@
 
 可以在你的[订阅配置文件]中找到这些信息。以下是订阅配置文件的一个示例。
 
-	<?xml version="1.0" encoding="utf-8"?>
+    <?xml version="1.0" encoding="utf-8"?>
 
-		<PublishData>
+        <PublishData>
 
-  		<PublishProfile SchemaVersion="2.0" PublishMethod="AzureServiceManagementAPI">
+          <PublishProfile SchemaVersion="2.0" PublishMethod="AzureServiceManagementAPI">
 
-    	<Subscription
+        <Subscription
 
-      		ServiceManagementUrl="https://management.core.chinacloudapi.cn"
+              ServiceManagementUrl="https://management.core.chinacloudapi.cn"
 
-      		Id="<Subscription ID>"
+              Id="<Subscription ID>"
 
-      		Name="Pay-As-You-Go"
-			ManagementCertificate="<Management certificate value>" />
+              Name="Pay-As-You-Go"
+            ManagementCertificate="<Management certificate value>" />
 
-  		</PublishProfile>
+          </PublishProfile>
 
-	</PublishData>
+    </PublishData>
 
 获得订阅配置文件以后，请按照以下步骤配置 Azure Slave 插件。
 
@@ -79,17 +79,17 @@
 
 4. 单击“Add new cloud”>“Microsoft Azure”。
 
-	![添加新的云][add new cloud]
+    ![添加新的云][add new cloud]
 
-	这将显示你需要输入你的订阅详细信息的所在字段。
+    这将显示你需要输入你的订阅详细信息的所在字段。
 
-	![配置配置文件][configure profile]
+    ![配置配置文件][configure profile]
 
-	>[AZURE.NOTE] 要使用 Azure 中国，你需要点击 **Advanced...**，并把 "https://management.core.windows.net" 替换成 "https://management.core.chinacloudapi.cn"。
+    >[AZURE.NOTE] 要使用 Azure 中国，你需要点击 **Advanced...**，并把 "https://management.core.windows.net" 替换成 "https://management.core.chinacloudapi.cn"。
 
 5. 从你的订阅配置文件复制订阅 ID 和管理证书，然后将其粘贴到相应的字段中。
 
-	在复制订阅 ID 和管理证书时，**不要**包含将值括起来的引号。
+    在复制订阅 ID 和管理证书时，**不要**包含将值括起来的引号。
 
 6. 单击“Verify configuration”。
 
@@ -107,7 +107,7 @@
 
 4. 在“Cloud”部分中，找到“Add Azure Virtual Machine Template”，然后单击“Add”按钮。
 
-	![添加 VM 模板][add vm template]
+    ![添加 VM 模板][add vm template]
 
 5. 在“Name”字段中指定一个云服务名称。如果你指定的名称引用一个现有的云服务，则将在该服务中设置 VM。否则，Azure 将创建一个新服务。
 
@@ -125,47 +125,47 @@
 
 12. 在“Usage”中，选择使用此从属节点时的适当条件。现在，选择“Utilize this node as much as possible”。
 
-	此时，你的窗体会与以下类似：
+    此时，你的窗体会与以下类似：
 
-	![模板配置][template config]
+    ![模板配置][template config]
 
 13. 在“Image Family or Id”中，你必须指定要在你的 VM 中安装的系统映像。可以从映像系列的列表中选择，也可以指定一个自定义映像。
 
-	如果要从映像系列的列表中选择，请输入映像系列名称的首字符（区分大小写）。例如，键入 **U** 将显示一个 Ubuntu Server 系列列表。从列表中选择后，Jenkins 将在设置你的 VM 时使用该系列的最新版系统映像。
+    如果要从映像系列的列表中选择，请输入映像系列名称的首字符（区分大小写）。例如，键入 **U** 将显示一个 Ubuntu Server 系列列表。从列表中选择后，Jenkins 将在设置你的 VM 时使用该系列的最新版系统映像。
 
-	![OS 系列列表][OS family list]
+    ![OS 系列列表][OS family list]
 
-	如果你有一个自定义映像，想要改用该映像，则输入该自定义映像的名称。自定义映像名称不显示在列表中，因此你必须确保名称输入正确。
+    如果你有一个自定义映像，想要改用该映像，则输入该自定义映像的名称。自定义映像名称不显示在列表中，因此你必须确保名称输入正确。
 
-	对于本教程，键入 **U** 显示一个 Ubuntu 映像列表，然后选择 **Ubuntu Server 14.04 LTS**。
+    对于本教程，键入 **U** 显示一个 Ubuntu 映像列表，然后选择 **Ubuntu Server 14.04 LTS**。
 
 14. 对于“Launch method”，选择 **SSH**。
 
 15. 复制下面的脚本并粘贴到“Init script”字段中。
 
-		# Install Java
+        # Install Java
 
-		sudo apt-get -y update
+        sudo apt-get -y update
 
-		sudo apt-get install -y openjdk-7-jdk
+        sudo apt-get install -y openjdk-7-jdk
 
-		sudo apt-get -y update --fix-missing
+        sudo apt-get -y update --fix-missing
 
-		sudo apt-get install -y openjdk-7-jdk
+        sudo apt-get install -y openjdk-7-jdk
 
-		# Install git
+        # Install git
 
-		sudo apt-get install -y git
+        sudo apt-get install -y git
 
-		#Install ant
+        #Install ant
 
-		sudo apt-get install -y ant
+        sudo apt-get install -y ant
 
-		sudo apt-get -y update --fix-missing
+        sudo apt-get -y update --fix-missing
 
-		sudo apt-get install -y ant
+        sudo apt-get install -y ant
 
-	将在创建 VM 后执行“初始化脚本”。在此示例中，脚本安装 Java、git 和 ant。
+    将在创建 VM 后执行“初始化脚本”。在此示例中，脚本安装 Java、git 和 ant。
 
 16. 在“Username”和“Password”字段中，为要在你的 VM 中创建的管理员帐户创建你的偏好值。
 
@@ -193,29 +193,29 @@
 
 8. 编辑以下脚本，用相应的值代替 {你的 github 帐户名称} 、{你的项目名称} 和 {你的项目目录}，然后将编辑后的脚本粘贴到出现的文本区域中。
 
-		# Clone from git repo
+        # Clone from git repo
 
-		currentDir="$PWD"
+        currentDir="$PWD"
 
-		if [ -e {你的项目目录} ]; then
+        if [ -e {你的项目目录} ]; then
 
-  			cd {你的项目目录}
+              cd {你的项目目录}
 
-  			git pull origin master
+              git pull origin master
 
-		else
+        else
 
-			  git clone https://github.com/{你的 github 帐户名称}/{你的项目名称}.git
+              git clone https://github.com/{你的 github 帐户名称}/{你的项目名称}.git
 
-		fi
+        fi
 
-		# change directory to project
+        # change directory to project
 
-		cd $currentDir/{你的项目目录}
+        cd $currentDir/{你的项目目录}
 
-		#Execute build task
+        #Execute build task
 
-		ant
+        ant
 
 9. 单击“Save”。
 

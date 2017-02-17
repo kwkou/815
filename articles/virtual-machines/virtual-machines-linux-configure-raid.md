@@ -186,7 +186,7 @@
         # sudo apt-get install util-linux
         # sudo fstrim /data
 
-**RHEL/CentOS**
+    **RHEL/CentOS**
 
         # sudo yum install util-linux
         # sudo fstrim /data
