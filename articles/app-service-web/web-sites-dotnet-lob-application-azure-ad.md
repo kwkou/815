@@ -161,27 +161,27 @@
 
 1. 在 ~\\Models 文件夹中，创建名为 WorkItem.cs 的类文件，将 `public class WorkItem {...}` 替换为以下代码：
    
-     using System.ComponentModel.DataAnnotations;
+        using System.ComponentModel.DataAnnotations;
    
-     public class WorkItem
-     {
+        public class WorkItem
+        {
    
-         [Key]
-         public int ItemID { get; set; }
-         public string AssignedToID { get; set; }
-         public string AssignedToName { get; set; }
-         public string Description { get; set; }
-         public WorkItemStatus Status { get; set; }
-     }
+            [Key]
+            public int ItemID { get; set; }
+            public string AssignedToID { get; set; }
+            public string AssignedToName { get; set; }
+            public string Description { get; set; }
+            public WorkItemStatus Status { get; set; }
+        }
    
-     public enum WorkItemStatus
-     {
+        public enum WorkItemStatus
+        {
    
-         Open,
-         Investigating,
-         Resolved,
-         Closed
-     }
+            Open,
+            Investigating,
+            Resolved,
+            Closed
+        }
 2. 生成项目，以便能够通过 Visual Studio 中的基架逻辑访问你的新模型。
 3. 将新的基架项 `WorkItemsController` 添加到 ~\\Controllers 文件夹（右键单击“控制器”，指向“添加”，然后选择“新建基架项”）。
 4. 选择“使用实体框架的包含视图的 MVC 5 控制器”并单击“添加”。
@@ -280,7 +280,7 @@
    
     > [AZURE.NOTE]
     也可以使用 `~/.auth/me` 直接从客户端获取 `token` 和 `tenant`，但这是一个额外的服务器调用。例如：
-    > 
+    > ```
     > $.ajax({
     > dataType: "json",
     > url: "/.auth/me",
@@ -291,7 +291,7 @@
     > .val;
     > }
     > });
-    > 
+    > ```
     > 
 7. 对 ~\\Views\\WorkItems\\Edit.cshtml 进行相同的更改。
 8. `AadPicker` 对象在需要添加到项目的脚本中定义。右键单击 ~\\Scripts 文件夹，指向“添加”，然后单击“JavaScript 文件”。键入 `AadPickerLibrary` 作为文件名，然后单击“确定”。
@@ -339,10 +339,10 @@
     
     > [AZURE.NOTE]
     之所以需要这一行代码，是因为默认的 MVC 模板对某些操作使用 <code>[ValidateAntiForgeryToken]</code> 装饰。由于 Brock Allen 在 [MVC 4, AntiForgeryToken and Claims（MVC 4、AntiForgeryToken 和声明）](http://brockallen.com/2012/07/08/mvc-4-antiforgerytoken-and-claims/)中所述的行为，HTTP POST 可能无法通过防伪令牌验证，因为：
-    > 
-    > * Azure Active Directory 不发送防伪令牌默认所需的 http://schemas.microsoft.com/accesscontrolservice/2010/07/claims/identityprovider。
-    > * 如果 Azure Active Directory 目录与 AD FS 同步，AD FS 信任默认也不发送 http://schemas.microsoft.com/accesscontrolservice/2010/07/claims/identityprovider 声明，不过可以手动将 AD FS 配置为发送此声明。
-    > 
+    > <p>
+    ><p> * Azure Active Directory 不发送防伪令牌默认所需的 http://schemas.microsoft.com/accesscontrolservice/2010/07/claims/identityprovider。
+    ><p> * 如果 Azure Active Directory 目录与 AD FS 同步，AD FS 信任默认也不发送 http://schemas.microsoft.com/accesscontrolservice/2010/07/claims/identityprovider 声明，不过可以手动将 AD FS 配置为发送此声明。
+    ><p> 
     > `ClaimTypes.NameIdentifies` 指定 Azure Active Directory 提供的声明 `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier`。
     > 
     > 

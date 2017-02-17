@@ -115,7 +115,7 @@ Azure 资源管理器要求所有资源组指定一个位置。此位置将用�
 * **Hostname 和 path** - 应用程序网关为了确定实例运行状况而调用的完整 URL 路径。例如，如果网站为 **http://contoso.com/**，则可以为 **http://contoso.com/path/custompath.htm** 配置自定义探测，使探测检查能够获得成功的 HTTP 响应。
 * **UnhealthyThreshold** - 将后端实例标记为**不正常** 所需的失败 HTTP 响应数目。
 
-    $probe = New-AzureRmApplicationGatewayProbeConfig -Name probe01 -Protocol Http -HostName "contoso.com" -Path "/path/path.htm" -Interval 30 -Timeout 120 -UnhealthyThreshold 8
+        $probe = New-AzureRmApplicationGatewayProbeConfig -Name probe01 -Protocol Http -HostName "contoso.com" -Path "/path/path.htm" -Interval 30 -Timeout 120 -UnhealthyThreshold 8
 
 ### 步骤 4
 

@@ -95,7 +95,7 @@
 
         Server=<ServerName>,<ServerPort>;Database=<DatabaseName>;User ID=<UserName>;Password={your\_password\_here};Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;
 
-编辑 `DATABASES` 的定义，使用上面的值。
+    编辑 `DATABASES` 的定义，使用上面的值。
 
         DATABASES = {
             'default': {

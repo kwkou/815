@@ -409,7 +409,7 @@ ToDoListAPI 项目已有生成的客户端代码，但在以下步骤中，要�
 		{
 		    var client = new ToDoListDataAPI(new Uri(ConfigurationManager.AppSettings["toDoListDataAPIURL"]));
 
-更改为：
+	更改为：
 
 		private static ToDoListDataAPI071316 NewDataAPIClient()
 		{
