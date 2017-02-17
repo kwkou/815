@@ -117,10 +117,6 @@ Azure 多重身份验证可作为独立的服务购买，按照每位用户和�
 
 管理员可以要求用户再次完成注册过程来重置其帐户。详细了解如何[在云中使用 Azure 多重身份验证管理用户和设备设置](/documentation/articles/multi-factor-authentication-manage-users-and-devices/)。
 
-**问：如果包含应用密码的用户手机遗失或遭窃，管理员该如何处理？**
-
-管理员可以删除该用户的所有应用密码，防止未经授权的访问。用户购买替代设备后，即可重新创建密码。详细了解如何[在云中使用 Azure 多重身份验证管理用户和设备设置](/documentation/articles/multi-factor-authentication-manage-users-and-devices/)。
-
 **问：如果用户无法登录非浏览器应用，该怎么办？**
 
 - 配置为使用多重身份验证的用户需要通过一个应用密码来登录某些非浏览器应用。

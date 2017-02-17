@@ -44,7 +44,7 @@ Microsoft Authenticator 应用将替换这些应用。Azure Authenticator 已升
 ### 我有了一台新设备。如何从旧设备删除 Microsoft Authenticator 应用并将其迁移到新设备？
 将 Microsoft Authenticator 应用添加到新设备不会从任何其他设备将其自动删除。若要管理为帐户配置的设备，请访问用于管理双重验证的网站，选择删除旧应用。
 
-对于个人 Microsoft 帐户，此网站即[帐户安全](https://account.microsoft.com/security)页面。对于工作或学校 Microsoft 帐户，此网站可能是 [MyApps](https://myapps.microsoft.com) 或组织已设置的自定义门户。
+对于个人 Microsoft 帐户，此网站即[帐户安全](https://account.microsoft.com/security)页面。对于工作或学校 Microsoft 帐户，此网站可能是 [MyApps](https://login.partner.microsoftonline.cn) 或组织已设置的自定义门户。
 
 ### 如何从应用删除帐户？
 - iOS：从主屏幕中，在帐户磁贴上向左轻扫。选择“删除”。
