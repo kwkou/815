@@ -530,17 +530,17 @@ AzureWebDemo 应用程序的目的是创建应用服务 Web 应用，因此请�
 
 5. 将 JSPHello.war 从 `<project-path>/JSPHello/src/` 拖放到 Kudu 目录视图中的 `/site/wwwroot/webapps` 下。请不将它拖放到“拖到此处以上载和压缩”区域，因为 Tomcat 会将其解压缩。
 
-  ![][8]  
+    ![][8]  
 
 
-JSPHello.war 自身首先会显示在目录区域中：
+    JSPHello.war 自身首先会显示在目录区域中：
 
-  ![][9]  
+    ![][9]  
 
 
-不久之后（可能小于 5 分钟），Tomcat 服务器会将 WAR 文件解压缩到解包的 JSPHello 目录中。单击根目录以查看 index.jsp 是否已解压缩并复制到此处。如果是，请导航回到 webapps 目录，查看是否已创建解包的 JSPHello 目录。如果你看不到这些项，请等待片刻后重复操作。
+    不久之后（可能小于 5 分钟），Tomcat 服务器会将 WAR 文件解压缩到解包的 JSPHello 目录中。单击根目录以查看 index.jsp 是否已解压缩并复制到此处。如果是，请导航回到 webapps 目录，查看是否已创建解包的 JSPHello 目录。如果你看不到这些项，请等待片刻后重复操作。
 
-  ![][10]  
+    ![][10]  
 
 
 

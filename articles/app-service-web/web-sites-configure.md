@@ -130,7 +130,7 @@ Web 应用可能会使用根据 URL 路由的模块，而不是提供静态内�
 
 1. 回到 [Azure 门户预览](https://portal.azure.cn)。完整的 FTP 用户名是“app\\username”，其中 *app* 是 Web 应用的名称。用户名列在 Web 应用边栏选项卡的“Essentials”下。
 
-![FTP 部署凭据][configure02]
+    ![FTP 部署凭据][configure02]
 
 ## 其他配置任务
 

@@ -40,7 +40,7 @@
 ![网站屏幕截图][intro001]  
 
 
-<a name="bkmk_setupdevenv">
+<a name="bkmk_setupdevenv"></a>
 <!-- the next line produces the "Set up the development environment" section as see at /documentation/articles/web-sites-dotnet-get-started/ -->
 
 [AZURE.INCLUDE [create-account-and-websites-note](../../includes/create-account-and-websites-note.md)]
@@ -132,9 +132,9 @@
     “发布 Web”向导将打开。
 2. 单击“发布”。
 
-![“设置”选项卡](./media/web-sites-dotnet-rest-service-aspnet-api-sql-database/pw.png)
+    ![“设置”选项卡](./media/web-sites-dotnet-rest-service-aspnet-api-sql-database/pw.png)
 
-Visual Studio 开始执行将文件复制到 Azure 服务器的过程。“输出”窗口将显示已执行的部署操作并报告已成功完成部署。
+    Visual Studio 开始执行将文件复制到 Azure 服务器的过程。“输出”窗口将显示已执行的部署操作并报告已成功完成部署。
 
 1. 默认浏览器会自动打开，并指向所部署站点的 URL。
    
