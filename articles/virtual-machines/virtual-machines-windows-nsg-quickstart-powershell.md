@@ -1,5 +1,3 @@
-<!-- need to be verified -->
-
 <properties
     pageTitle="使用 PowerShell 打开 VM 的端口 | Azure"
     description="了解如何使用 Azure Resource Manager 部署模型和 Azure PowerShell 在 Windows VM 上打开端口/创建终结点"

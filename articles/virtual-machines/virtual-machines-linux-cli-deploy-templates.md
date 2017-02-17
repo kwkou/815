@@ -1,5 +1,3 @@
-<!-- ARM: tested -->
-
 <properties
 	pageTitle="使用模板部署和管理 VM | Azure"
 	description="使用资源管理器模板和 Azure CLI，为 Azure 虚拟机部署和管理最常用的配置。"

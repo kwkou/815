@@ -1,5 +1,3 @@
-<!-- need to be verified -->
-
 <properties
     pageTitle="在现有群集配置中配置附加的 SAP ASCS/SCS 实例以创建 SAP 多 SID 配置 - Azure Resource Manager | Azure"
     description="Windows 虚拟机上的多 SID 高可用性 SAP NetWeaver 指南"

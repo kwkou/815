@@ -1,5 +1,3 @@
-<!-- need to be verified -->
-
 <properties
     pageTitle="Windows 虚拟机概述 | Azure"
     description="了解如何在 Azure 中创建和管理 Windows 虚拟机。"
@@ -129,7 +127,7 @@ VM 使用下表中的资源，创建 VM 时，这些资源必须存在，否则�
 | --- | --- |
 | Azure 门户预览 |在中心菜单中，单击“虚拟机”，然后从列表中选择 VM。在 VM 的边栏选项卡中，可以访问概述信息、设置值以及监视指标。 |
 | Azure PowerShell |有关使用 PowerShell 管理 VM 的信息，请参阅 [Manage Azure Virtual Machines using Resource Manager and PowerShell](/documentation/articles/virtual-machines-windows-ps-manage/)（使用 Resource Manager 与 PowerShell 来管理 Azure 虚拟机）。 |
-| REST API |使用“获取 VM 信息”操作获取有关 VM 的信息。[](https://docs.microsoft.com/zh-cn/rest/api/compute/virtualmachines/virtualmachines-get) |
+| REST API |使用“[获取 VM 信息](https://docs.microsoft.com/zh-cn/rest/api/compute/virtualmachines/virtualmachines-get)”操作获取有关 VM 的信息。|
 | 客户端 SDK |有关使用 C# 管理 VM 的信息，请参阅 [Manage Azure Virtual Machines using Azure Resource Manager and C#](/documentation/articles/virtual-machines-windows-csharp-manage/)（使用 Azure Resource Manager 与 C# 来管理 Azure 虚拟机）。 |
 
 ### 登录到 VM

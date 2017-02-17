@@ -1,5 +1,3 @@
-<!-- ARM: tested -->
-
 <properties 
    pageTitle="如何使用 Azure 门户预览在 ARM 模式下设置静态专用 IP | Azure"
    description="了解专用 IP (DIP) 以及如何在 ARM 模式下使用 Azure 门户预览对其进行管理"

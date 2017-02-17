@@ -1,5 +1,3 @@
-<!-- need to be verified -->
-
 <properties
     pageTitle="使用 PowerShell 创建 Azure VM | Azure"
     description="使用 Azure PowerShell 和 Azure Resource Manager 轻松创建运行 Windows Server 的新 VM。"

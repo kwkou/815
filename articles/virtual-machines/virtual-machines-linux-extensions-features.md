@@ -1,5 +1,3 @@
-<!-- need to be verified -->
-
 <properties
     pageTitle="适用于 Linux 的虚拟机扩展和功能 | Azure"
     description="了解可为 Azure 虚拟机提供的扩展，这些虚拟机扩展按它们提供或改进的功能进行分组。"

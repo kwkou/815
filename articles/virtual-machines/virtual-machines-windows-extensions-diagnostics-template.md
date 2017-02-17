@@ -1,5 +1,3 @@
-<!-- ARM: tested -->
-
 <properties
 	pageTitle="使用 Azure 资源管理器模板创建具有监视和诊断功能的 Windows 虚拟机 | Azure"
 	description="使用 Azure 资源管理器模板新建具有 Azure 诊断扩展的 Windows 虚拟机。"

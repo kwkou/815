@@ -1,5 +1,3 @@
-<!-- need to be verified -->
-
 <properties
     pageTitle="云中的 Windows HPC Pack 群集选项 | Azure"
     description="了解在 Azure 云中使用 Microsoft HPC Pack 创建和管理 Windows 高性能计算 (HPC) 群集时可用的选项"

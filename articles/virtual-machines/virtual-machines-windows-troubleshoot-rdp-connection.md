@@ -1,5 +1,3 @@
-<!-- need to be verified -->
-
 <properties
     pageTitle="无法通过 RDP 连接到 Azure VM | Azure"
     description="排查无法使用远程桌面连接到 Azure 中 Windows 虚拟机的问题"

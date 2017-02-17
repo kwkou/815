@@ -1,5 +1,3 @@
-<!-- ARM: tested -->
-
 <properties 
    pageTitle="如何使用门户预览在 ARM 模式下创建 NSG | Azure"
    description="了解如何使用门户预览在 ARM 下创建和部署 NSG"

@@ -1,5 +1,3 @@
-<!-- need to be verified -->
-
 <properties
     pageTitle="自动缩放 HPC Pack 群集节点 | Azure"
     description="自动扩展和收缩 Azure 中的 HPC Pack 群集计算节点数"

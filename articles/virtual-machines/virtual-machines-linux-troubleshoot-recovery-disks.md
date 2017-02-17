@@ -1,5 +1,3 @@
-<!-- need to be verified -->
-
 <properties
     pageTitle="将 Linux 故障排除 VM 与 CLI 配合使用 | Azure"
     description="了解如何通过使用 Azure CLI 将 OS 磁盘连接到恢复 VM 来排查 Linux VM 问题"

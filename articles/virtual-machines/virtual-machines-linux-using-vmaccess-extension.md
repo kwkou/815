@@ -1,5 +1,3 @@
-<!-- need to be verified -->
-
 <properties
     pageTitle="使用 VMAccess 扩展重置 Azure Linux VM 上的访问权限 | Azure"
     description="使用 VMAccess 扩展重置 Azure Linux VM 上的访问权限。"

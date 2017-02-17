@@ -1,5 +1,3 @@
-<!-- ARM: tested -->
-
 <properties
 	pageTitle="将策略应用到 Azure Resource Manager 虚拟机 | Azure"
 	description="如何将策略应用到 Azure Resource Manager Windows 虚拟机"

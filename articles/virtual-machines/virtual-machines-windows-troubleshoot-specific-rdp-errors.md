@@ -1,5 +1,3 @@
-<!-- need to be verified -->
-
 <properties
     pageTitle="Azure VM 的特定 RDP 错误消息 | Azure"
     description="了解在尝试使用远程桌面连接到 Azure 中的 Windows 虚拟机时可能会收到的特定错误消息"
