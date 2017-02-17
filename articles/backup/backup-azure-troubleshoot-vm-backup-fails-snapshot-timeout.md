@@ -72,8 +72,7 @@ VM 无法根据部署要求访问 Internet，或者现有的限制阻止访问 A
    
     对于 Ubuntu：```service walinuxagent start```
    
-    对于其他分发版：```service waagent start
-   ```
+    对于其他分发版：```service waagent start```
 3. [配置自动重新启动代理](https://github.com/Azure/WALinuxAgent/wiki/Known-Issues#mitigate_agent_crash)。
 4. 运行新的测试备份。如果失败持续发生，请从以下文件夹收集日志，以做进一步调试。
    
