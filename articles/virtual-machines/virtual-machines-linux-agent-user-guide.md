@@ -116,14 +116,13 @@ Azure Linux 代理 (waagent) 可以管理 Linux 与 FreeBSD 预配，以及 VM �
 - help：列出支持的命令和标志。
 
 - deprovision：尝试清除系统并使其能够进行重新预配。此操作已删除以下各项：
- * 所有 SSH 主机密钥（如果在配置文件中 Provisioning.RegenerateSshHostKeyPair 为“y”）
- * /etc/resolv.conf 中的 Nameserver 配置
- * /etc/shadow 中的根密码（如果在配置文件中 Provisioning.DeleteRootPassword 为“y”）
- * 缓存的 DHCP 客户端租用
- * 将主机名重置为 localhost.localdomain
+    * 所有 SSH 主机密钥（如果在配置文件中 Provisioning.RegenerateSshHostKeyPair 为“y”）
+    * /etc/resolv.conf 中的 Nameserver 配置
+    * /etc/shadow 中的根密码（如果在配置文件中 Provisioning.DeleteRootPassword 为“y”）
+    * 缓存的 DHCP 客户端租用
+    * 将主机名重置为 localhost.localdomain
 
-
-> [AZURE.WARNING] 取消预配无法保证清除映像中的所有敏感信息且适用于分发版。
+    > [AZURE.WARNING] 取消预配无法保证清除映像中的所有敏感信息且适用于分发版。
 
 
 - deprovision+user：执行 -deprovision（上述）下的所有操作，还将删除最后预配的用户帐户（获取自 /var/lib/waagent 中）和关联数据。此参数是取消对以前在 Azure 中预配的映像预配，以捕获并重新使用该映像时的参数。

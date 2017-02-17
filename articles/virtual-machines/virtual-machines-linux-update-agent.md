@@ -51,11 +51,11 @@ Azure 支持的 Linux 发行版已将 Azure Linux 代理包放入其存储库中
 
 对于 Oracle Linux 6 虚拟机：
 
-  [ol6\_addons] name=Add-Ons for Oracle Linux $releasever ($basearch) baseurl=http://public-yum.oracle.com/repo/OracleLinux/OL6/addons/x86\_64 gpgkey=http://public-yum.oracle.com/RPM-GPG-KEY-oracle-ol6 gpgcheck=1 enabled=1
+    [ol6\_addons] name=Add-Ons for Oracle Linux $releasever ($basearch) baseurl=http://public-yum.oracle.com/repo/OracleLinux/OL6/addons/x86\_64 gpgkey=http://public-yum.oracle.com/RPM-GPG-KEY-oracle-ol6 gpgcheck=1 enabled=1
 
 对于 Oracle Linux 7 虚拟机：
 
-  [ol7\_addons] name=Oracle Linux $releasever Add ons ($basearch) baseurl=http://public-yum.oracle.com/repo/OracleLinux/OL7/addons/$basearch/ gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-oracle gpgcheck=1 enabled=0
+    [ol7\_addons] name=Oracle Linux $releasever Add ons ($basearch) baseurl=http://public-yum.oracle.com/repo/OracleLinux/OL7/addons/$basearch/ gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-oracle gpgcheck=1 enabled=0
 
 然后键入：
 
@@ -79,7 +79,7 @@ Azure 支持的 Linux 发行版已将 Azure Linux 代理包放入其存储库中
 
     #wget https://raw.githubusercontent.com/Azure/WALinuxAgent/WALinuxAgent-[version]/waagent  
 
-   以下行使用版本 2.0.14 作为示例：
+以下行使用版本 2.0.14 作为示例：
 
     #wget https://raw.githubusercontent.com/Azure/WALinuxAgent/WALinuxAgent-2.0.14/waagent  
 
@@ -89,7 +89,7 @@ Azure 支持的 Linux 发行版已将 Azure Linux 代理包放入其存储库中
     #unzip WALinuxAgent-[version].zip
     #cd WALinuxAgent-[version]
 
-   以下行使用版本 2.1.0 作为示例：
+以下行使用版本 2.1.0 作为示例：
 
     #wget https://github.com/Azure/WALinuxAgent/archive/WALinuxAgent-2.1.0.zip
     #unzip WALinuxAgent-2.1.0.zip  

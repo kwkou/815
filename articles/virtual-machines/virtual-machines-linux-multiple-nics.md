@@ -116,7 +116,7 @@
 Azure Resource Manager 模板使用声明性 JSON 文件来定义环境。阅读 [Azure Resource Manager 概述](/documentation/articles/resource-group-overview/)。Resource Manager 模板可让你在部署期间创建资源的多个实例，例如，创建多个 NIC。使用 *copy* 指定要创建的实例数：
 
     "copy": {
-        "name": "multiplenics"
+        "name": "multiplenics",
         "count": "[parameters('count')]"
     }
 

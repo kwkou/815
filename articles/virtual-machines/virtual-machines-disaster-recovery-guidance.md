@@ -1,21 +1,21 @@
 <properties
-	pageTitle="发生影响 Azure 虚拟机的 Azure 服务中断事件时该怎么办 | Azure"
-	description="了解发生影响 Azure 虚拟机的 Azure 服务中断事件时该怎么办。"
-	services="virtual-machines"
-	documentationCenter=""
-	authors="kmouss"
-	manager="drewm"
-	editor=""/>
+    pageTitle="发生影响 Azure 虚拟机的 Azure 服务中断事件时该怎么办 | Azure"
+    description="了解发生影响 Azure 虚拟机的 Azure 服务中断事件时该怎么办。"
+    services="virtual-machines"
+    documentationCenter=""
+    authors="kmouss"
+    manager="drewm"
+    editor=""/>
 
 <tags
-	ms.service="virtual-machines-windows"
-	ms.workload="virtual-machines"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="05/16/2016"
-	wacn.date="12/21/2016"
-	ms.author="kmouss;aglick"/>
+    ms.service="virtual-machines-windows"
+    ms.workload="virtual-machines"
+    ms.tgt_pltfrm="na"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.date="05/16/2016"
+    wacn.date="12/21/2016"
+    ms.author="kmouss;aglick"/>
 
 # 发生影响 Azure 虚拟机的 Azure 服务中断事件时该怎么办
 

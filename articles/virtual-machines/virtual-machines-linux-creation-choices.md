@@ -38,8 +38,8 @@ Azure CLI 可通过 npm 包、提供发行版的程序包或 Docker 容器跨平
 - [使用 Azure 模板创建受保护的 Linux VM](/documentation/articles/virtual-machines-linux-create-ssh-secured-vm-from-template/)
 	- 以下示例使用 GitHub 上存储的模板创建 VM：
 
-        azure group create --name myResourceGroup --location ChinaNorth 
-          --template-file /path/to/101-vm-sshkey/azuredeploy.json
+            azure group create --name myResourceGroup --location ChinaNorth \
+              --template-file /path/to/101-vm-sshkey/azuredeploy.json
 
 - [使用 Azure CLI 创建完整的 Linux 环境](/documentation/articles/virtual-machines-linux-create-cli-complete/)
 	- 包括在可用性集中创建负载均衡器和多个 VM。
@@ -47,8 +47,8 @@ Azure CLI 可通过 npm 包、提供发行版的程序包或 Docker 容器跨平
 - [将磁盘添加到 Linux VM](/documentation/articles/virtual-machines-linux-add-disk/)
 	- 以下示例将一个 5Gb 磁盘添加到名为 `TestVM` 的现有 VM：
 
-        azure vm disk attach-new --resource-group myResourceGroup  --vm-name myVM \
-          --size-in-GB 5
+            azure vm disk attach-new --resource-group myResourceGroup  --vm-name myVM \
+              --size-in-GB 5
 
 ## Azure 门户预览
 
@@ -104,9 +104,9 @@ Azure CLI 可通过 npm 包、提供发行版的程序包或 Docker 容器跨平
 - [How to capture a Linux virtual machine as a Resource Manager template](/documentation/articles/virtual-machines-linux-capture-image/)（如何捕获用作 Resource Manager 模板的 Linux 虚拟机）。
 	- 用于捕获现有 VM 的快速入门示例命令：
 
-        azure vm deallocate --resource-group myResourceGroup --vm-name myVM
-        azure vm generalize --resource-group myResourceGroup --vm-name myVM
-        azure vm capture --resource-group myResourceGroup --vm-name myVM --vhd-name-prefix myCapturedVM
+            azure vm deallocate --resource-group myResourceGroup --vm-name myVM
+            azure vm generalize --resource-group myResourceGroup --vm-name myVM
+            azure vm capture --resource-group myResourceGroup --vm-name myVM --vhd-name-prefix myCapturedVM
 
 ## 后续步骤
 

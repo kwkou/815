@@ -260,7 +260,8 @@
 		--ssh 23
 		--vm-name mariadb2
         --connect mariadbha mariadb-galera-image azureuser
-以及对于 MariaDB3
+
+    以及对于 MariaDB3
 
 		azure vm create
         --virtual-network-name mariadbvnet
