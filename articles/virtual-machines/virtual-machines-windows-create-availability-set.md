@@ -1,5 +1,3 @@
-<!-- Ibiza portal: tested -->
-
 <properties
 	pageTitle="创建 VM 可用性集 | Azure"
 	description="了解如何通过 Azure 门户预览或 PowerShell，使用资源管理器部署模型为虚拟机创建可用性集。"

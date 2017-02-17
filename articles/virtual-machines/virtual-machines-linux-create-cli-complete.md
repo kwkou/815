@@ -1,5 +1,3 @@
-<!-- need to be verified -->
-
 <properties
     pageTitle="使用 Azure CLI 2.0 预览版创建完整的 Linux 环境 | Azure"
     description="使用 Azure CLI 2.0（预览版）从头开始创建存储、Linux VM、虚拟网络和子网、负载均衡器、NIC、公共 IP 和网络安全组。"

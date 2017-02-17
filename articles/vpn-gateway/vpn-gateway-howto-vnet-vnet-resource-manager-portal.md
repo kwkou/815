@@ -1,5 +1,3 @@
-<!-- need to be verified -->
-
 <properties
     pageTitle="使用 Resource Manager 部署模型和 Azure 门户预览连接 VNet | Azure"
     description="使用 Resource Manager 和 Azure 门户预览在 VNet 之间创建 VPN 网关连接。"

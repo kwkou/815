@@ -1,5 +1,3 @@
-<!-- need to be verified -->
-
 <properties
     pageTitle="在 Windows 中对 Linux VM 使用 SSH 密钥 | Azure"
     description="了解如何在 Windows 计算机上生成和使用 SSH 密钥连接到 Azure 上的 Linux 虚拟机。"

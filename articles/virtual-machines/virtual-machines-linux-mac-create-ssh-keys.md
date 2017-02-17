@@ -1,5 +1,3 @@
-<!-- need to be verified -->
-
 <properties
     pageTitle="为 Linux VM 创建 SSH 密钥对 | Azure"
     description="以安全方式为 Linux VM 创建 SSH 公钥和私钥对。"

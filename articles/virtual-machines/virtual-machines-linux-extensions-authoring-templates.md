@@ -1,5 +1,3 @@
-<!-- ARM: tested -->
-
 <properties
    pageTitle="使用 Linux VM 扩展创作模板 | Azure"
    description="详细了解如何为 Linux VM 使用扩展创建 Azure 资源管理器模板"

@@ -1,5 +1,3 @@
-<!-- Ibiza Portal: tested -->
-
 <properties
    pageTitle="使用模板部署常用应用程序框架 | Azure"
    description="使用 Azure Resource Manager 模板在 Windows 虚拟机创建常用应用程序框架，以便安装 Active Directory、Docker，等等。"

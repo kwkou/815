@@ -1,5 +1,3 @@
-<!-- need to be verified -->
-
 <properties
     pageTitle="调整 Windows VM 的大小 | Azure"
     description="使用 Azure Powershell 调整在 Resource Manager 部署模型中创建的 Windows 虚拟机的大小。"

@@ -1,5 +1,3 @@
-<!-- need to be verified -->
-
 <properties
     pageTitle="从通用化 Azure VM 捕获 VM 映像 | Azure"
     description="了解如何从 Resource Manager 部署模型中创建的通用化 Azure VM 捕获 VM 映像"

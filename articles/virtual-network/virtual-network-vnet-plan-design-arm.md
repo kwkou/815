@@ -1,5 +1,3 @@
-<!-- ARM: tested -->
-
 <properties
    pageTitle="Azure 虚拟网络 (VNet) 规划和设计指南 | Azure"
    description="了解如何基于隔离、连接性和位置要求规划和设计 Azure 中的虚拟网络。"

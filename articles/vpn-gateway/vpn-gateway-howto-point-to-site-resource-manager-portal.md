@@ -1,5 +1,3 @@
-<!-- need to verified -->
-
 <properties
     pageTitle="使用 Resource Manager 部署模型和 Azure 门户预览配置与虚拟网络的点到站点 VPN 网关连接 | Azure"
     description="使用 Resource Manager 和 Azure 门户预览创建点到站点 VPN 网关连接，安全连接到 Azure 虚拟网络。"

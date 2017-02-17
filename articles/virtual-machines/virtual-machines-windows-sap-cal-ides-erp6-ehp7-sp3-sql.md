@@ -1,5 +1,3 @@
-<!-- need to be tested -->
-
 <properties
     pageTitle="在 Azure 上为 SAP ERP 6.0 部署 SAP IDE EHP7 SP3 | Azure"
     description="在 Azure 上为 SAP ERP 6.0 部署 SAP IDE EHP7 SP3"

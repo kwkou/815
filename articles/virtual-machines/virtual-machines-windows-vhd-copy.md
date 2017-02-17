@@ -1,5 +1,3 @@
-<!-- need to be verified -->
-
 <properties
     pageTitle="在 Azure 中创建专用 VM 的副本 | Azure"
     description="了解如何在 Resource Manager 部署模型中，为 Azure 中运行的专用 Windows VM 创建副本。"

@@ -1,5 +1,3 @@
-<!-- ARM: tested -->
-
 <properties
    pageTitle="Linux VM 扩展的示例配置 | Azure"
    description="使用扩展为 Linux VM 创作模板的示例配置"

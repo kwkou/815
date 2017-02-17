@@ -1,5 +1,3 @@
-<!-- need to be verified -->
-
 <properties
     pageTitle="创建具有多个 NIC 的 Windows VM | Azure"
     description="了解如何使用 Azure PowerShell 或 Resource Manager 模板创建附有多个 NIC 的 Windows VM。"
