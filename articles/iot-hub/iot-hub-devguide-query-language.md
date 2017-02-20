@@ -25,7 +25,7 @@ IoT 中心提供类似于 SQL 的强大语言用于检索有关[设备孪生][ln
 * IoT 中心查询语言的主要功能简介，以及
 * 语言的详细说明。
 
-## <a name="getting-started-with-twin-queries"></a> 设备孪生查询入门
+## <a name="getting-started-with-device-twin-queries"></a> 设备孪生查询入门
 [设备孪生][lnk-twins]可以包含标记和属性形式的任意 JSON 对象。通过 IoT 中心，可将设备孪生作为包含所有设备孪生信息的 JSON 文档进行查询。例如，假设 IoT 中心设备孪生采用以下结构：
 
         {                                                                      
