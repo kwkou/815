@@ -41,7 +41,7 @@
 | [办公电话呼叫](#use-your-office-phone-as-the-contact-method) |向提供的电话号码进行自动语音呼叫。接听电话并按电话拨号键盘中的 # 进行身份验证。 |
 
 
-> [AZURE.NOTE] Android 系统中使用 “Mobile app” 来验证需要安装 “Azure Authentication App”，装好后系统还会提示安装 “Google Play Services”， 这个目前在中国无法使用。
+> [AZURE.NOTE] 如果你选择使用 “Mobile app” 来作为联系方式并且你使用的是 Android 系统的手机，在安装 “Azure Authentication App” 后系统还会提示安装 “Google Play Services”， 这个 “Google Play Services” 目前在中国无法使用。
 
 ## 使用移动应用作为联系方法 <a name="use-a-mobile-app-as-the-contact-method"></a>
 使用此方法需要在电话或平板上安装验证器应用。本文中的步骤基于 Microsoft Authenticator 应用，该应用可用于 [Windows Phone](http://go.microsoft.com/fwlink/?Linkid=825071)、[Android](http://go.microsoft.com/fwlink/?Linkid=825072) 和 [IOS](http://go.microsoft.com/fwlink/?Linkid=825073)。
@@ -74,7 +74,7 @@
 
     ![设置](./media/multi-factor-authentication-end-user-first-time/barcode2.png)  
 
-3. 激活完成后，选择“与我联系”。此步骤会将通知或验证码发送到手机。选择“验证”。
+3. 激活完成后，选择“Contact me”。此步骤会将通知或验证码发送到手机。选择“验证”。
 
 ## 使用移动电话作为联系方法 <a name="use-your-mobile-phone-as-the-contact-method"></a>
 1. 从下拉列表中选择“Authentication phone”。
