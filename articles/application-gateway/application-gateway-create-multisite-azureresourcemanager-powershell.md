@@ -236,8 +236,4 @@ Azure 资源管理器要求所有资源组指定一个位置。此位置将用�
                                     "Fqdn": "00000000-0000-xxxx-xxxx-xxxxxxxxxxxx.chinacloudapp.cn"
                                 }
 
-## 后续步骤
-
-通过[应用程序网关 - Web 应用程序防火墙](/documentation/articles/application-gateway-webapplicationfirewall-overview/)了解如何保护网站
-
 <!---HONumber=Mooncake_1226_2016-->
