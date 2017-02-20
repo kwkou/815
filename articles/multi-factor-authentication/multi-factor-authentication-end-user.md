@@ -46,7 +46,6 @@
 [设置体验](/documentation/articles/multi-factor-authentication-end-user-first-time/)| 介绍第一次设置多重身份验证的过程。
 [登录体验](/documentation/articles/multi-factor-authentication-end-user-signin/)|说明使用各种方法（例如电话或应用）登录时预期会发生的情况。
 [更改设置](/documentation/articles/multi-factor-authentication-end-user-manage-settings/)|说明如何更改你的设置，例如电话号码或首选的注册方法。
-[有关应用密码的帮助](/documentation/articles/multi-factor-authentication-end-user-app-passwords/)| 查找有关创建和使用应用密码的信息。
 [使用移动应用](/documentation/articles/multi-factor-authentication-microsoft-authenticator/)|Microsoft Authenticator 应用可用于 [Windows Phone](http://go.microsoft.com/fwlink/?Linkid=825071)、[Android](http://go.microsoft.com/fwlink/?Linkid=825072) 和 [IOS](http://go.microsoft.com/fwlink/?Linkid=825073)。
 
  

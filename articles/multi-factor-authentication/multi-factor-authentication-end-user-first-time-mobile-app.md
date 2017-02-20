@@ -24,6 +24,8 @@
 
 Microsoft Authenticator 应用可用于 [Windows Phone](http://go.microsoft.com/fwlink/?Linkid=825071)、[Android](http://go.microsoft.com/fwlink/?Linkid=825072) 和 [iOS](http://go.microsoft.com/fwlink/?Linkid=825073)。
 
+> [AZURE.NOTE] 如果你选择使用 “Mobile app” 来作为联系方式并且你使用的是 Android 系统的手机，在安装 “Azure Authentication App” 后系统还会提示安装 “Google Play Services”， 这个 “Google Play Services” 目前在中国无法使用。
+
 ## 使用 Microsoft Authenticator 作为联系方法
 
 
@@ -52,7 +54,7 @@ Microsoft Authenticator 应用可用于 [Windows Phone](http://go.microsoft.com/
 	![用于手动输入信息的屏幕](./media/multi-factor-authentication-end-user-first-time-mobile-app/barcode.png)  
 
 
-6. 在手机上完成激活后，选择“与我联系”。此步骤会将通知或验证码发送到手机。选择“验证”。
+6. 在手机上完成激活后，选择“Contact me”。此步骤会将通知或验证码发送到手机。选择“验证”。
 
 	![在其中选择“验证”以登录的屏幕](./media/multi-factor-authentication-end-user-first-time-mobile-app/verify.png)  
 
@@ -82,6 +84,6 @@ Microsoft Authenticator 应用可用于 [Windows Phone](http://go.microsoft.com/
 	![设置](./media/multi-factor-authentication-end-user-first-time-mobile-app/barcode2.png)  
 
 
-3. 激活完成后，选择“与我联系”。此步骤会将通知或验证码发送到手机。选择“验证”。
+3. 激活完成后，选择“Contact me”。此步骤会将通知或验证码发送到手机。选择“验证”。
 
 <!---HONumber=Mooncake_1010_2016-->

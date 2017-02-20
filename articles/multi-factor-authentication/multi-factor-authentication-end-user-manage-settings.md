@@ -54,12 +54,11 @@
 
 ## 我想要更改我的电话号码
 
-用户一旦配置好了多因素验证之后，第二次登录的时候系统会将会自动使用用户配置的号码进行验证，上面图片中用户看到的步骤将不再出现。
+如果用户想要更改电话号码，可以在登录[经典管理门户](https://manage.windowsazure.cn)后，从 “Active Directory” 进入到 “Multi-factor authentication” 配置页面，在 “users" 子页面上，选中你的用户名，然后点击右侧的 “Manage user settings”，在弹出的页面上选择 “Require selected user to provide contact methods again”，然后点击 “Save” 保存。 用户下次登录后，可以选择新的验证方式和电话号码。
 
-如果用户想要更改电话号码，可以在登录[经典管理门户](https://manage.windowsazure.cn)后，从 “Active Directory” 进入到 “Multi-factor authentication”配置页面，
-在“users"子页面上，选中你的用户名，然后点击“Disable", 把验证停掉，再点击“Enable”，重新启用验证。然后再按照上面图片的步骤去修改你的电话号码。
+![5](./media/multi-factor-authentication-end-user-manage/5.png)  
 
-
+![6](./media/multi-factor-authentication-end-user-manage/6.png)  
 
 ## 如何从旧设备清除 Microsoft Authenticator 并将其迁移到新设备？
 从设备上卸载该应用或重置设备时，不会删除应用在后端的激活。有关详细信息，请参阅 [Microsoft Authenticator](/documentation/articles/multi-factor-authentication-microsoft-authenticator/)。
