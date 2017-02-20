@@ -1,53 +1,31 @@
 <properties
-	pageTitle="Azure 多重身份验证常见问题"
-	description="提供与 Azure 多重身份验证相关的常见问题与解答列表。Azure 多重身份验证是要求使用多种方式（而不仅仅是用户名和密码）来验证用户身份的一种方法。它为用户登录和事务提供了额外的安全层。"
-	services="multi-factor-authentication"
-	documentationCenter=""
-	authors="billmath"
-	manager="stevenpo"
-	editor="curtand"/>  
-
-
+    pageTitle="Azure 多重身份验证常见问题 | Azure"
+    description="提供与 Azure 多重身份验证相关的常见问题与解答列表。Azure 多重身份验证是要求使用多种方式（而不仅仅是用户名和密码）验证用户身份的一种方法。它为用户登录和事务提供了额外的安全层。"
+    services="multi-factor-authentication"
+    documentationcenter=""
+    author="kgremban"
+    manager="femila"
+    editor="yossib" />
 <tags
-	ms.service="multi-factor-authentication"
-	ms.workload="identity"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="10/13/2016"
-	wacn.date="02/17/2017"
-	ms.author="kgremban"/>
+    ms.assetid="50bb8ac3-5559-4d8b-a96a-799a74978b14"
+    ms.service="multi-factor-authentication"
+    ms.workload="identity"
+    ms.tgt_pltfrm="na"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.date="01/06/2017"
+    wacn.date="02/20/2017"
+    ms.author="kgremban" />
 
 # Azure 多重身份验证常见问题
-
-
 本“常见问题”文章解答有关 Azure 多重身份验证和使用多重身份验证服务的常见问题，包括计费模式和可用性相关问题。
 
 ## 常规
-
-**问：如何获得 Azure 多重身份验证方面的帮助？**
-
-- [搜索 Microsoft 支持知识库](https://www.microsoft.com/zh-cn/Search/result.aspx?form=mssupport&q=phonefactor&form=mssupport)
-
-  在知识库中搜索常见技术问题的解决方法。
-
-- [Azure Active Directory 论坛](https://social.msdn.microsoft.com/Forums/azure/home?forum=WindowsAzureAD)
-
-  在 [Azure Active Directory 论坛](https://social.msdn.microsoft.com/Forums/azure/newthread?category=windowsazureplatform&forum=WindowsAzureAD&prof=required)中搜索和浏览来自社区的技术问题与解答，或者提出自己的问题。
-
-- [密码重置](mailto:phonefactorsupport@microsoft.com)
-
-  对于旧版 PhoneFactor 客户，如果有疑问或需要重置密码方面的帮助，请使用[密码重置](mailto:phonefactorsupport@microsoft.com)链接建立支持案例。
-
-- [Azure 多重身份验证服务器 (PhoneFactor) 支持](https://support.microsoft.com/zh-cn/oas/default.aspx?prid=14947)
-  
-  使用此链接可联系 Microsoft 支持专业人员。他们会询问一些问题来帮助确定支持选项，这些选项可能包括电子邮件、在线提交或电话支持。
-
-
-
 **问：Azure 多重身份验证服务器如何处理用户数据？**
 
-使用多重身份验证服务器时，用户的数据只存储在本地服务器中。云中不会持久存储任何用户数据。当用户执行双因素身份验证时，多重身份验证服务器会将数据发送到 Azure 多重身份验证云服务执行身份验证。将这些身份验证请求发送到云服务时，会在请求和日志中发送以下列表中字段内的数据，在客户的身份验证和使用情况报告中使用。某些字段是可选的，可以在多重身份验证服务器中配置。从多重身份验证服务器到多重身份验证云服务的通信通过出站端口 443 使用安全套接字层 (SSL) 或传输层安全性 (TLS)。双因素身份验证日志中包含的数据字段如下：
+使用多重身份验证服务器时，用户数据只存储在本地服务器中。云中不会持久存储任何用户数据。当用户执行双重验证时，多重身份验证服务器会将数据发送到 Azure 多重身份验证云服务以进行身份验证。多重身份验证服务器和多重身份验证云服务器之间的通信通过出站端口 443 使用安全套接字层 (SSL) 或传输层安全性 (TLS)。
+
+当身份验证请求发送到云服务时，将收集数据用于身份验证和使用情况报告。双重验证日志中包含的数据字段如下：
 
 - **唯一 ID**（用户名或本地多重身份验证服务器 ID）
 - **名字和姓氏**（可选）
@@ -60,117 +38,112 @@
 - **多重身份验证服务器 IP**
 - **客户端 IP**（如果可用）
 
+可以在多重身份验证服务器中配置可选字段。
 
-
-除了上述字段以外，身份验证结果（成功或拒绝）和任何拒绝原因也与身份验证数据一起存储，可在身份验证和使用情况报告中使用。
-
-
-
+验证结果（成功或拒绝）和任何拒绝原因也与身份验证数据一起存储，可从身份验证和使用情况报告中获取。
 
 ## 计费
+可参阅[多重身份验证定价页](/pricing/details/multi-factor-authentication/)获得大多数计费问题的答案。
 
-**问：通过电话或短信对我的用户进行身份验证时，我的组织是否需要付费？**
+**问：通过电话或短信对用户进行身份验证时，组织是否需要付费？**
 
-所有费用都计入服务的每位用户或每次身份验证费用。对于通过 Azure 多重身份验证拨打的每个电话或者向用户发送的每条短信，组织不需要付费。手机主人可能会因为通过其手机服务运营商接听电话或发送短信而产生漫游相关费用或其他费用。
+对于通过 Azure 多重身份验证拨打的每个电话或者向用户发送的每条短信，组织不需要付费。可能会向电话主人收取接听电话或接收短信的费用（根据其个人电话服务）。
 
-**问：如何对使用 Azure 多重身份验证的组织计费？**
+**问：按用户计费模式的收费依据是配置为使用多重身份验证的用户数还是执行验证的用户数？**
 
-Azure 多重身份验证可作为独立的服务购买，按照每位用户和身份验证次数来计费，也能与 Azure Active Directory Premium、企业移动性套件或企业云套件一同购买。独立服务根据消费量提供，针对组织的 Azure 承诺用量按月计费；或者通过 Microsoft 企业协议、Microsoft 开放式许可计划、Microsoft 云解决方案提供商 (CSP) 计划或 Direct 按用户收取年度授权费。
-
-**问：按用户计费模式的收费依据是配置为使用多重身份验证的用户数目还是执行验证的用户数目？**
-
-计费依据是配置为使用多重身份验证的用户数目。
+计费依据是配置为使用多重身份验证的用户数。
 
 **问：多重身份验证如何计费？**
 
-当组织使用“按用户”或“按身份验证”消费量的计费和使用模式时，组织管理员可在 Azure 经典管理门户中创建多重身份验证提供程序时选择使用类型。这是针对组织 Azure 订阅计费的资源，就像虚拟机、网站等一样。使用授权模式时，需要购买 Azure 多重身份验证许可证并将其分配给用户，如同购买 Office 365 及其他订阅产品时一样。
+使用“每用户”或“每身份验证”模型时，Azure MFA 是基于消耗的资源。任何费用都将针对组织的 Azure 订阅计取，就和虚拟机、网站等一样。
+
+使用授权模式时，需要购买 Azure 多重身份验证许可证并将其分配给用户，如同购买 Office 365 及其他订阅产品时一样。
+
+通过 [Azure 多重身份验证的工作原理](/documentation/articles/multi-factor-authentication-how-it-works/#how-to-get-azure-multi-factor-authentication/)详细了解选项
 
 **问：是否有可供管理员使用的免费 Azure 多重身份验证版本？**
 
-如果基于消费量的 Azure 多重身份验证提供程序尚未链接到对应的 Azure Active Directory 实例，则会向 Azure 全局管理员组的成员免费提供一部分 Azure 多重身份验证功能，称为“面向 Azure 管理员的多重身份验证”。使用多重身份验证提供程序会将目录中已配置为使用多重身份验证的所有管理员和用户升级到完整版本的 Azure 多重身份验证。
+在某些情况下有。可供 Azure 管理员使用的多重身份验证免费提供 Azure MFA 功能的子集。此优惠适用于 Azure Active Directory 实例中的 Azure 全局管理员组的成员，这些实例未链接到基于使用的 Azure 多重身份验证提供程序。使用多重身份验证提供程序，会将目录中已配置为使用多重身份验证的所有管理员和用户升级到完整版本的 Azure 多重身份验证。
 
 **问：是否有可供 Office 365 用户使用的免费 Azure 多重身份验证版本？**
 
-如果基于消费量的 Azure 多重身份验证提供程序尚未链接到对应的 Azure Active Directory 实例，则会向已分配 Office 365 许可证的用户免费提供一部分 Azure 多重身份验证功能，称为“面向 Office 365 的多重身份验证”。使用多重身份验证提供程序会将目录中已配置为使用多重身份验证的所有管理员和用户升级到完整版本的 Azure 多重身份验证。
+在某些情况下有。适用于 Office 365 的多重身份验证免费提供 Azure MFA 功能的子集。当基于消耗的 Azure 多重身份验证提供程序尚未链接到 Azure Active Directory 的相应实例时，将向分配有 Office 365 许可证的用户提供此优惠。使用多重身份验证提供程序，会将目录中已配置为使用多重身份验证的所有管理员和用户升级到完整版本的 Azure 多重身份验证。
 
 **问：组织是否可以随时在“按用户”和“按身份验证”消费量计费模式之间切换？**
 
-组织在创建资源时可选择计费模式。预配资源之后无法更改计费模式。但是，可以创建新的多重身份验证资源来替换原始资源。请注意，用户设置和配置选项不能转移到新资源。
+组织在创建资源时可选择计费模式。预配资源之后无法更改计费模式。但是，可以创建另一个多重身份验证资源替换原始资源。用户设置和配置选项不能转移到新资源。
 
 **问：组织是否可以随时在消费量计费和授权模式之间切换？**
 
-组织可以随时购买 Azure 多重身份验证、Azure Active Directory Premium、企业移动性套件和企业云套件许可证。将许可证添加到已有按用户的 Azure 多重身份验证提供程序的目录时，会根据拥有的许可证数量减除基于消费量的计费。如果配置为使用多重身份验证的所有用户都分配有许可证，管理员就可以删除 Azure 多重身份验证提供程序。组织不能混用按身份验证的消费量计费与授权模式。如果按身份验证的多重身份验证提供程序已链接到目录，则无论组织是否拥有许可证，都会对其收取所有多重身份验证验证请求的费用。
+将许可证添加到已有按用户的 Azure 多重身份验证提供程序的目录时，会根据拥有的许可证数量减除基于消费量的计费。如果配置为使用多重身份验证的所有用户都分配有许可证，则管理员可以删除 Azure 多重身份验证提供程序。
+
+不能混用按身份验证的消费量计费与授权模式。如果按身份验证的多重身份验证提供程序已链接到目录，则无论组织是否拥有许可证，都会对其收取所有多重身份验证验证请求的费用。
 
 **问：组织是否必须使用并同步标识才能使用 Azure 多重身份验证？**
 
-组织使用基于消费量的计费模式时，不需要 Azure Active Directory。你可以视需要将多重身份验证提供链接到目录。如果组织未链接到目录，可以将多重身份验证服务器或多重身份验证 SDK 部署在本地。授权模式需要 Azure Active Directory，因为在购买许可证并将其分配给目录中的用户时，许可证将添加到目录。
+组织使用基于消费量的计费模式时，不需要 Azure Active Directory。可以视需要将多重身份验证提供链接到目录。如果组织未链接到目录，可以将多重身份验证服务器或多重身份验证 SDK 部署在本地。
 
+授权模式需要 Azure Active Directory，因为在购买许可证并将其分配给目录中的用户时，许可证将添加到目录。
 
 ## 可用性
-
 **问：如果用户未收到电话答复或者无法使用电话，该怎么办？**
 
-如果用户以前配置了备用电话，应在登录页出现提示时选择该电话，然后重试。如果用户未配置其他方法，则应与组织管理员联系，请管理员更新分配用作用户主要电话（手机或办公电话）的号码。
+如果用户配置了备用电话，则应在登录页出现提示时重试，并选择该电话。如果用户未配置其他方法，则组织管理员可以更新分配到用户主要电话的号码。
 
-
-**问：如果用户由于不再能够访问某个帐户而联系管理员，管理员该如何处理？**
+**问：如果用户因无法再访问某个帐户而联系管理员，管理员该如何处理？**
 
 管理员可以要求用户再次完成注册过程来重置其帐户。详细了解如何[在云中使用 Azure 多重身份验证管理用户和设备设置](/documentation/articles/multi-factor-authentication-manage-users-and-devices/)。
 
-**问：如果用户无法登录非浏览器应用，该怎么办？**
 
-- 配置为使用多重身份验证的用户需要通过一个应用密码来登录某些非浏览器应用。
-- 用户需要清除（删除）登录信息，重新启动该应用，然后使用其用户名和应用密码登录。
+> [AZURE.NOTE]
+适用于 Office 2013 客户端的新式验证
+> 
+> Office 2013 客户端（包括 Outlook）支持新式验证协议。可以将 Office 2013 配置为支持多重身份验证。配置 Office 2013 后，Office 2013 客户端不需要应用密码。有关详细信息，请参阅 [Office 2013 modern authentication public preview announcement](https://blogs.office.com/2015/03/23/office-2013-modern-authentication-public-preview-announced/)（Office 2013 新式验证公共预览版发布声明）。
+> 
+> 
 
-获取有关创建应用密码的详细信息，以及其他[有关应用密码的帮助](/documentation/articles/multi-factor-authentication-end-user-app-passwords/)。
+**问：如果用户未收到短信或者回复双向短信但验证超时，该怎么办？**
+
+因为存在可能影响服务可靠性的不可控因素，所以无法保证双向 SMS 中的短信送达和对回复的接收。这些因素包括目的地国家/地区、移动电话运营商和信号强度。
+
+难以可靠接收短信的用户应改为选择移动应用或电话呼叫的方法。移动应用可同时通过手机网络和 Wi-Fi 连接接收通知。此外，即使设备完全没有信号，移动应用也可以生成验证码。Microsoft Authenticator 应用可用于 [Windows Phone](http://go.microsoft.com/fwlink/?Linkid=825071)、[Android](http://go.microsoft.com/fwlink/?Linkid=825072) 和 [IOS](http://go.microsoft.com/fwlink/?Linkid=825073)。
+
+如果必须使用短信，建议尽可能使用单向短信，而不要使用双向短信。单向短信更加可靠，可以防止由于回复其他国家/地区发来的短信而给用户造成的全球短信费用。
 
 
->[AZURE.NOTE] 适用于 Office 2013 客户端的新式验证
->
-> Office 2013 客户端（包括 Outlook）支持新式验证协议。可以将 Office 2013 配置为支持多重身份验证。配置 Office 2013 之后，Office 2013 客户端就不需要应用密码。有关详细信息，请参阅 [Office 2013 modern authentication public preview announcement](https://blogs.office.com/2015/03/23/office-2013-modern-authentication-public-preview-announced/)（Office 2013 新式验证公共预览版发布声明）。
+**问：是否可以使用 Azure 多重身份验证服务器保护终端服务？**
 
-**问：如果用户未收到短信或者回复了双向短信但验证超时，该怎么办？**
+可以，但如果使用 Windows Server 2012 R2 或更高版本，则只能使用远程桌面网关（RD 网关）进行保护。
 
-Azure 多重身份验证服务通过短信聚合器发送短信。许多因素可能会影响短信传递和接收的可靠性，包括使用的聚合器、目标国家/地区、用户的手机运营商和信号强度。因此，在双向短信传递过程中，不保证短信和回复能够送达与收悉。建议尽可能使用单向短信，而不要使用双向短信。单向短信更加可靠，可以防止由于回复其他国家/地区发来的短信而给用户造成的全球短信费用。
+Windows Server 2012 R2 中的安全性更改，改变了 Azure 多重身份验证服务器连接到 Windows Server 2012 和更低版本中的本地安全机构 (LSA) 安全包的方式。对于 Windows 2012 或更低版本中的终端服务版本，可以使用 Windows 身份验证保护应用程序。如果使用 Windows Server 2012 R2，则需要 RD 网关。
 
-在某些国家，例如美国和加拿大，短信验证比其他国家或地区也更加可靠。建议在使用 Azure 多重身份验证时难以可靠接收短信的用户改用移动应用或电话呼叫的方法。移动应用身份验证方法非常有利，因为用户可以通过蜂窝网络和 Wi-Fi 连接接收移动应用通知。此外，即使设备根本没有信号，也可以显示移动应用密码。Microsoft Authenticator 应用可用于 [Windows Phone](http://go.microsoft.com/fwlink/?Linkid=825071)、[Android](http://go.microsoft.com/fwlink/?Linkid=825072) 和 [IOS](http://go.microsoft.com/fwlink/?Linkid=825073)。
-
-**问：是否可以在 Azure 多重身份验证服务器上使用硬件令牌？**
-
-如果使用的是 Azure 多重身份验证服务器，可以导入第三方基于时间的一次性密码 (TOTP) 开放式身份验证 (OATH) 令牌，然后将其用于多重身份验证。目前支持导入 Gemalto 为其令牌生成的早期便携式对称密钥容器 (PSKC) 格式的第三方 OATH TOTP 令牌，并支持导入 CSV 格式的令牌。如果导入 CSV 格式的令牌，CSV 文件必须包含序列号、Base32 格式的机密密钥和时间间隔（通常为 30 秒）。
-
-如果可将机密密钥文件放在可以导入 Azure 多重身份验证服务器的 CSV 文件中，就可以使用充当 OATH TOTP 令牌的 ActiveIdentity 令牌。可将 OATH 令牌与以下服务配合使用：Active Directory 联合身份验证服务 (ADFS)；远程身份验证拨入用户服务 (RADIUS)（如果客户端系统可以处理访问质询响应）；基于 Internet Information Server (IIS) 窗体的身份验证。
-
-**问：是否可以使用 Azure 多重身份验证服务器来保护终端服务？**
-
-可以，但如果使用的是 Windows Server 2012 R2 或更高版本，则只能使用远程桌面网关（RD 网关）来保护。
-
-Windows Server 2012 R2 中的安全性更改改变了 Azure 多重身份验证服务器连接到 Windows Server 2012 和更低版本中的本地安全机构 (LSA) 安全包的方式。如果使用的是 Windows Server 2012 R2，则需要 RD 网关。
-
-**问：为何设置来电显示之后，用户会收到来自匿名呼叫方的多重身份验证电话？**
+**问：为何设置来电显示后，用户会收到来自匿名呼叫方的多重身份验证电话？**
 
 通过公共电话网络拨打多重身份验证电话时，有时会通过不支持来电显示的运营商路由电话。因此，尽管多重身份验证系统始终会发送呼叫号码，但并不保证会显示该号码。
 
-
 ## 错误
+**问：如果用户使用移动应用通知时看到“身份验证请求不适用于已激活的帐户”错误消息，该怎么办？**
 
-**问：如果用户使用移动应用通知进行身份验证时看到“身份验证请求不适用于已激活的帐户”错误消息，该怎么办？**
-
-请遵循以下过程：
+告诉他们按照此过程从移动应用中删除其帐户，然后重新添加：
 
 1. 转到 Azure 门户预览配置文件，然后使用组织帐户登录。
-2. 如果需要，请单击“其他验证选项”，然后单击用于帐户验证的其他选项。
-3. 单击“其他安全验证”。
-4. 从移动应用中删除现有帐户。
-5. 单击“配置”，然后按照说明重新配置移动应用。
+2. 选择“其他安全性验证”。
+3. 从移动应用中删除现有帐户。
+4. 单击“配置”，然后按照说明重新配置移动应用。
 
+**问：如果用户在登录非浏览器应用程序时看到 0x800434D4L 错误消息，应该怎么办？**
 
-
-
-**问：如果用户在尝试使用非浏览器应用程序登录时看到 0x800434D4L 错误消息，该怎么办？**
-
-目前，用户只能在可以通过其浏览器访问的应用程序和服务中使用其他安全验证。安装在本地计算机上的非浏览器应用程序（也称为*富客户端应用程序*，例如 Windows PowerShell）无法使用需要其他安全验证的帐户。在此情况下，用户可能会看到应用程序生成 0x800434D4L 错误。
+目前，用户只能在可以通过浏览器访问的应用程序和服务中使用其他安全验证。安装在本地计算机上的非浏览器应用程序（也称为*富客户端应用程序*，例如 Windows PowerShell）无法使用需要其他安全验证的帐户。在此情况下，用户可能会看到应用程序生成 0x800434D4L 错误。
 
 此问题的解决方法是使用不同的用户帐户进行管理员相关操作和非管理员操作。稍后，可以在管理员帐户与非管理员帐户之间链接邮箱，以便能够使用非管理员帐户登录到 Outlook。了解如何[使管理员能够打开和查看用户邮箱的内容](http://help.outlook.com/141/gg709759.aspx?sl=1)，获取有关此解决方法的更多详细信息。
 
-<!---HONumber=Mooncake_1107_2016-->
+## 后续步骤
+如果此处未解答你的问题，请将其留在页面底部的评论中。或者，以下是一些用于获取帮助的其他选项：
+
+- 在 [Microsoft 支持知识库](https://www.microsoft.com/zh-cn/Search/result.aspx?form=mssupport&q=phonefactor&form=mssupport)中搜索常见技术问题的解决方法。
+- 在 [Azure Active Directory 论坛](https://social.msdn.microsoft.com/Forums/azure/newthread?category=windowsazureplatform&forum=WindowsAzureAD&prof=required)中搜索和浏览来自社区的技术问题与解答，或者提出自己的问题。
+- 对于旧版 PhoneFactor 客户，如果有疑问或需要重置密码方面的帮助，请使用[密码重置](mailto:phonefactorsupport@microsoft.com)链接建立支持案例。
+- 通过 [Azure 多重身份验证服务器 (PhoneFactor) 支持](https://support.microsoft.com/zh-cn/oas/default.aspx?prid=14947)联系专业支持人员。与我们联系时，请尽可能多地提供问题相关信息，这会很有帮助。可以提供的信息包括出现错误的页面、特定错误代码、特定会话 ID 以及看到错误的用户的 ID。
+
+<!---HONumber=Mooncake_0213_2017-->
+<!--Update_Description: wording update-->
