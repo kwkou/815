@@ -5,8 +5,7 @@
     manager="timlt"
     documentationcenter=""
     author="tfitzmac"
-    services="azure-resource-manager" />  
-
+    services="azure-resource-manager" />
 <tags
     ms.assetid="bb0af466-4f65-4559-ac3a-43985fa096ff"
     ms.service="azure-resource-manager"
@@ -15,15 +14,15 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="08/22/2016"
-    wacn.date="12/26/2016"
+    wacn.date="02/10/2017"
     ms.author="tomfitz" />
 
 # 使用 Azure CLI 管理 Azure 资源和资源组
 >[AZURE.SELECTOR]
-[Portal](/documentation/articles/resource-group-portal/)
-[Azure CLI](/documentation/articles/xplat-cli-azure-resource-manager/)
-[Azure PowerShell](/documentation/articles/powershell-azure-resource-manager/)
-[REST API](/documentation/articles/resource-manager-rest-api/)
+- [门户](/documentation/articles/resource-group-portal/)
+- [Azure CLI](/documentation/articles/xplat-cli-azure-resource-manager/)
+- [Azure PowerShell](/documentation/articles/powershell-azure-resource-manager/)
+- [REST API](/documentation/articles/resource-manager-rest-api/)
 
 Azure 命令行接口 (Azure CLI) 是可以配合 Resource Manager 部署和管理资源的多种工具之一。本文介绍在 Resource Manager 模式下使用 Azure CLI 管理 Azure 资源和资源组的常见方式。有关使用 CLI 部署资源的信息，请参阅 [Deploy resources with Resource Manager templates and Azure CLI](/documentation/articles/resource-group-template-deploy-cli/)（使用 Resource Manager 模板和 Azure CLI 部署资源）。有关 Azure 资源和 Resource Manager 的背景信息，请参阅 [Azure Resource Manager Overview](/documentation/articles/resource-group-overview/)（Azure Resource Manager 概述）。
 
@@ -38,9 +37,8 @@ Azure 命令行接口 (Azure CLI) 是可以配合 Resource Manager 部署和管�
 
     azure group list
 
-
 ### 资源
- 若要列出组中的所有资源，例如名为 *testRG* 的资源，请使用以下命令。
+若要列出组中的所有资源，例如名为 *testRG* 的资源，请使用以下命令。
 
     azure resource list testRG
 
@@ -72,7 +70,7 @@ Azure 命令行接口 (Azure CLI) 是可以配合 Resource Manager 部署和管�
 ## 管理资源
 若要将存储帐户等资源添加到资源组，请运行如下所示的命令：
 
-    azure resource create testRG MyStorageAccount "Microsoft.Storage/storageAccounts" "chinanorth" -o "2015-06-15" -p "{"accountType": "Standard_LRS"}"
+    azure resource create testRG MyStorageAccount "Microsoft.Storage/storageAccounts" "chinanorth" -o "2015-06-15" -p "{\"accountType\": \"Standard_LRS\"}"
 
 除了使用 **-o** 参数指定资源的 API 版本以外，请使用 **-p** 参数传递包含任何必需或其他属性的 JSON 格式字符串。
 
@@ -87,18 +85,18 @@ Azure 命令行接口 (Azure CLI) 是可以配合 Resource Manager 部署和管�
 ## 控制对资源的访问
 可以使用 Azure CLI 来创建和管理策略，控制对 Azure 资源的访问。有关策略定义以及将策略分配给资源的背景信息，请参阅 [Use policy to manage resources and control access](/documentation/articles/resource-manager-policy/)（使用策略来管理资源和控制访问）。
 
-例如，定义以下策略来拒绝所有位置不在中国东部或中国北部的请求，并将该策略保存到策略定义文件 policy.json 中：
+例如，定义以下策略来拒绝所有位置不在中国北部或中国东部的请求，并将该策略保存到策略定义文件 policy.json 中：
 
     {
-    "if" : {
+      "if" : {
         "not" : {
         "field" : "location",
         "in" : ["chinanorth" ,  "chinaeast"]
         }
-    },
-    "then" : {
+      },
+      "then" : {
         "effect" : "deny"
-    }
+      }
     }
 
 然后运行 **policy definition create** 命令：
@@ -116,7 +114,7 @@ Azure 命令行接口 (Azure CLI) 是可以配合 Resource Manager 部署和管�
     data:    Description:            undefined
     data:    PolicyRule:             field=location, in=[chinanorth, chinaeast], effect=deny
 
- 若要在所需的范围内分配策略，请使用前一命令返回的 **PolicyDefinitionId**。在以下示例中，此范围是订阅，但可以将范围设置为资源组或单个资源：
+若要在所需的范围内分配策略，请使用前一命令返回的 **PolicyDefinitionId**。在以下示例中，此范围是订阅，但可以将范围设置为资源组或单个资源：
 
     azure policy assignment create MyPolicyAssignment -p /subscriptions/########-####-####-####-############/providers/Microsoft.Authorization/policyDefinitions/MyPolicy -s /subscriptions/########-####-####-####-############/
 
@@ -149,8 +147,9 @@ Azure 命令行接口 (Azure CLI) 是可以配合 Resource Manager 部署和管�
 > 
 
 ## 后续步骤
-* 若要获取部署操作的详细信息并使用 Azure CLI 排查部署错误，请参阅 [View deployment operations with Azure CLI](/documentation/articles/resource-manager-troubleshoot-deployments-cli/)（使用 Azure CLI 查看部署操作）。
+* 若要获取部署操作的详细信息并使用 Azure CLI 排查部署错误，请参阅[查看部署操作](/documentation/articles/resource-manager-deployment-operations/)。
 * 若要使用 CLI 设置一个应用程序或脚本来访问资源，请参阅 [Use Azure CLI to create a service principal to access resources](/documentation/articles/resource-group-authenticate-service-principal-cli/)（使用 Azure CLI 创建服务主体来访问资源）。
 * 如需了解企业如何使用 Resource Manager 对订阅进行有效管理，请参阅 [Azure 企业机架 - 规范性订阅管理](/documentation/articles/resource-manager-subscription-governance/)。
 
-<!---HONumber=Mooncake_1219_2016-->
+<!---HONumber=Mooncake_0206_2017-->
+<!-- Update_Description: wording update; meta data -->

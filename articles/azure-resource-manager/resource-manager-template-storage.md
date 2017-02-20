@@ -5,8 +5,7 @@
     documentationcenter="na"
     author="tfitzmac"
     manager="timlt"
-    editor="" />  
-
+    editor="" />
 <tags
     ms.assetid="25d35683-fe99-4a11-8b1a-b80accab58e7"
     ms.service="azure-resource-manager"
@@ -15,7 +14,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="na"
     ms.date="04/05/2016"
-    wacn.date="12/26/2016"
+    wacn.date="02/10/2017"
     ms.author="tomfitz" />  
 
 
@@ -39,7 +38,7 @@
 ## 值
 下表描述了需要在架构中设置的值。
 
-| Name | 值 |
+| 名称 | 值 |
 | --- | --- |
 | type |枚举<br />必需<br />**Microsoft.Storage/storageAccounts**<br /><br />要创建的资源类型。 |
 | apiVersion |枚举<br />必需<br />**2015-06-15** 或 **2015-05-01-preview**<br /><br />用于创建该资源的 API 版本。 |
@@ -48,7 +47,7 @@
 | properties |对象<br />必需<br />[properties 对象](#properties)<br /><br />一个对象，用于指定要创建的存储帐户的类型。 |
 
 ### <a id="properties"></a> 属性对象
-| Name | 值 |
+| 名称 | 值 |
 | --- | --- |
 | accountType |字符串<br />必需<br />**Standard\_LRS**、**Standard\_ZRS**、**Standard\_GRS**、**Standard\_RAGRS** 或 **Premium\_LRS**<br /><br />存储帐户的类型。允许的值对应于标准本地冗余、标准区域冗余、标准地域冗余、标准读取访问地域冗余和高级本地冗余。有关这些帐户类型的信息，请参阅 [Azure 存储复制](/documentation/articles/storage-redundancy/)。 |
 
@@ -87,7 +86,8 @@
 * [从 Windows 映像创建包含 4 个空数据磁盘的虚拟机](https://github.com/Azure/azure-quickstart-templates/tree/master/101-vm-multiple-data-disk)
 
 ## 后续步骤
-* 有关存储的常规信息，请参阅 [Azure 存储空间简介](/documentation/articles/storage-introduction/)。
+* 有关存储的一般信息，请参阅 [Azure 存储简介](/documentation/articles/storage-introduction/)。
 * 有关在虚拟机中使用新存储帐户的示例模板，请参阅[部署简单的 Linux VM](https://github.com/Azure/azure-quickstart-templates/tree/master/101-vm-simple-linux/) 或[部署简单的 Windows VM](https://github.com/Azure/azure-quickstart-templates/tree/master/101-vm-simple-windows/)。
 
-<!---HONumber=Mooncake_1219_2016-->
+<!---HONumber=Mooncake_0206_2017-->
+<!-- Update_Description: meta data;wording update-->

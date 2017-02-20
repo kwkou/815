@@ -5,8 +5,7 @@
     documentationcenter="na"
     author="rdendtler"
     manager="timlt"
-    editor="tysonn" />  
-
+    editor="tysonn" />
 <tags
     ms.assetid="e8fbeeb8-d7a1-48af-804f-6fe1a6024bcb"
     ms.service="azure-resource-manager"
@@ -14,8 +13,8 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="na"
-    ms.date="10/05/2016"
-    wacn.date="12/26/2016"
+    ms.date="01/03/2017"
+    wacn.date="02/10/2017"
     ms.author="rodend;karlku;tomfitz" />  
 
 
@@ -23,7 +22,7 @@
 本主题通过示例介绍企业如何实施 [Azure 企业基架](/documentation/articles/resource-manager-subscription-governance/)的建议事项。其中使用一家虚构公司 Contoso 来演示常见方案的最佳实践。
 
 ## 背景
-Contoso 是一家跨国公司，为各行业的客户提供供应链解决方案，服务范围从“软件即服务”模型到本地部署的打包模型。他们在全国开发软件，在北京和上海设立了先进的开发中心。
+Contoso 是一家跨国公司，为各行业的客户提供供应链解决方案，服务范围从“软件即服务”模型到本地部署的打包模型。他们在全球开发软件，在北京和上海设立了先进的开发中心。
 
 该公司的 ISV 分部划分为多个独立业务单位，管理重要业务领域的产品。每个业务单位都有自身的开发人员、产品经理和架构师。
 
@@ -114,7 +113,7 @@ Dave 没有为此应用程序设置自动化。虽然他创建了 Azure 自动�
 ### Azure 安全中心
 Contoso IT 服务管理部门需要快速识别和处理威胁。他们还希望了解可能存在哪些问题。
 
-为了满足这些要求，Dave 启用了 Azure 安全中心，并向"安全经理"角色提供了访问权限。
+为了满足这些要求，Dave 启用了 Azure 安全中心，并向“安全经理”角色提供了访问权限。
 
 ## 方案 2：面向客户的应用
 供应链业务单位的业务领导发现，他们可以借助多种机会，使用会员卡来提高 Contoso 客户的参与度。Alice 的团队必须创建此应用程序，他们认定，Azure 能够帮助实现该业务需求。Alice 与来自 ETS 的 Dave 合作，配置了两个订阅用于开发和运行此应用程序。
@@ -198,4 +197,5 @@ Contoso IT 服务管理部门需要快速识别和处理威胁。他们还希望
 
 *本主题由 [Karl Kuhnhausen](https://github.com/karlkuhnhausen) 供稿。*
 
-<!---HONumber=Mooncake_1219_2016-->
+<!---HONumber=Mooncake_0206_2017-->
+<!-- Update_Description: meta data;wording update; -->
