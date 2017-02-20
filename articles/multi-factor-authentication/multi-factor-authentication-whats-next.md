@@ -14,17 +14,14 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="09/23/2016"
-	wacn.date="02/17/2016"
+	wacn.date="02/17/2017"
 	ms.author="kgremban"/>
 
 # 配置 Azure 多重身份验证
 
 在启动并运行 Azure 多重身份验证后，可以参考以下文章来对其进行管理。本文涵盖各种主题，足以让用户充分利用 Azure 多重身份验证。请注意，并非所有版本的 Azure 多重身份验证都提供这些功能。
 
-可以通过 Azure Multi-Factor Auth 提供程序访问 MFA 经典管理门户，请以管理员身份登录 Azure 经典管理门户，然后选择“Active Directory”选项。单击“Multi-Factor Auth 提供程序”选项卡，然后单击底部的“管理”按钮。
-
-若要通过“MFA 服务设置”页访问 MFA 管理门户，请以管理员身份登录 Azure 门户预览，然后选择“Active Directory”选项。单击你的目录，然后单击“配置”选项卡。在“多重身份验证”部分下，单击“管理服务设置”。在“MFA 服务设置”页底部，单击“转到门户”链接。
-
+可以通过“MFA 服务设置”页访问 MFA 管理门户。 请以管理员身份登录 Azure 管理门户，然后选择“Active Directory”选项。单击你的目录，然后单击“配置”选项卡。在“多重身份验证”部分下，单击“Manage service settings”。
 
 功能| 说明| 涵盖的内容
 :------------- | :------------- | :------------- | 

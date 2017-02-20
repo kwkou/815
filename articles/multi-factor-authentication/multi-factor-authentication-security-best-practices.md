@@ -15,7 +15,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="10/31/2016"
-    wacn.date="02/07/2017"
+    wacn.date="02/17/2017"
     ms.author="kgremban" />
 
 # 将 Azure 多重身份验证与 Azure AD 帐户配合使用时的安全最佳实践

@@ -15,7 +15,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="11/23/2016"
-    wacn.date="01/13/2017"
+    wacn.date="02/17/2017"
     ms.author="kgremban" />  
 
 
@@ -41,9 +41,9 @@
 | [办公电话呼叫](#use-your-office-phone-as-the-contact-method) |向提供的电话号码进行自动语音呼叫。接听电话并按电话拨号键盘中的 # 进行身份验证。 |
 
 
-> [AZURE.NOTE] Android 系统中使用“Mobile app”来验证需要安装 “Azure Authentication App”，装好后系统还会提示安装 “Google Play Services”， 这个目前在中国无法使用。
+> [AZURE.NOTE] Android 系统中使用 “Mobile app” 来验证需要安装 “Azure Authentication App”，装好后系统还会提示安装 “Google Play Services”， 这个目前在中国无法使用。
 
-## 使用移动应用作为联系方法
+## 使用移动应用作为联系方法 <a name="use-a-mobile-app-as-the-contact-method"></a>
 使用此方法需要在电话或平板上安装验证器应用。本文中的步骤基于 Microsoft Authenticator 应用，该应用可用于 [Windows Phone](http://go.microsoft.com/fwlink/?Linkid=825071)、[Android](http://go.microsoft.com/fwlink/?Linkid=825072) 和 [IOS](http://go.microsoft.com/fwlink/?Linkid=825073)。
 
 1. 从下拉列表中选择“Mobile app”。
@@ -57,16 +57,14 @@
 
     ![QR 码屏幕](./media/multi-factor-authentication-end-user-first-time/scan2.png)  
 
-6. 在手机上完成激活后，选择“与我联系”。此步骤会将通知或验证码发送到手机。选择“验证”。
+6. 在手机上完成激活后，选择“Contact me”。此步骤会将通知或验证码发送到手机。选择“验证”。
 7. 如果公司需要 PIN 才能批准登录验证，请输入它。
 
     ![用于输入 PIN 的框](./media/multi-factor-authentication-end-user-first-time/scan3.png)  
 
 8. 完成 PIN 条目后，选择“关闭”。此时，验证应已成功。
 9. 建议输入手机号码，以免无法访问移动应用。通过下拉列表指定国家/地区，然后在国家/地区名称旁边的框中输入手机号码。选择“下一步”。
-10. 此时，系统会提示为非浏览器应用（如 Outlook 2010 或更低版本，或 Apple 设备上的本机电子邮件应用）设置应用密码。这是因为某些应用不支持双重验证。如果不使用这些应用，请单击“完成”并跳过其余步骤。
-11. 如果正在使用这些应用，请复制提供的应用密码，然后将其粘贴到应用程序（而不是常规密码）中。对于多个应用，可以使用相同的应用密码。有关详细信息，请参阅 [应用密码帮助]。
-12. 单击“Done”（完成）。
+10. 单击“Done”（完成）。
 
 ### 手动添加帐户
 如果想要手动将帐户添加到移动应用，请按照下列步骤操作，而不要使用 QR 读取器。
@@ -78,7 +76,7 @@
 
 3. 激活完成后，选择“与我联系”。此步骤会将通知或验证码发送到手机。选择“验证”。
 
-## 使用移动电话作为联系方法
+## 使用移动电话作为联系方法 <a name="use-your-mobile-phone-as-the-contact-method"></a>
 1. 从下拉列表中选择“Authentication phone”。
 
     ![设置](./media/multi-factor-authentication-end-user-first-time/phone.png)  
@@ -86,19 +84,16 @@
 2. 从下拉列表中选择国家/地区，然后输入手机号码。
 3. 选择想要使用移动电话的方法 - 短信或呼叫。
 4. 选择“Contact me”以验证电话号码。根据所选的模式，我们会发送短信或拨打电话。按照屏幕上提供的说明，选择“验证”。
-5. 此时，系统会提示为非浏览器应用（如 Outlook 2010 或更低版本，或 Apple 设备上的本机电子邮件应用）设置应用密码。这是因为某些应用不支持双重验证。如果不使用这些应用，请单击“完成”并跳过其余步骤。
-6. 如果正在使用这些应用，请复制提供的应用密码，然后将其粘贴到应用程序（而不是常规密码）中。对于多个应用，可以使用相同的应用密码。有关详细信息，请参阅 [应用密码帮助]。
-7. 单击“Done”（完成）。
+5. 单击“Done”（完成）。
 
-## 使用办公电话作为联系方法
+## 使用办公电话作为联系方法 <a name="use-your-office-phone-as-the-contact-method"></a>
 1. 从下拉列表中选择“Office phone”
 
     ![设置](./media/multi-factor-authentication-end-user-first-time/office.png)  
 
 2. 会使用公司联系人信息自动填充电话号码框。如果号码错误或丢失，请联系管理员进行更改。
 3. 选择“Contact me”以验证手机号码。我们会呼叫你的电话号码。按照屏幕上提供的说明，选择“验证”。
-4. 此时，系统会提示为非浏览器应用（如 Outlook 2010 或更低版本，或 Apple 设备上的本机电子邮件应用）设置应用密码。这是因为某些应用不支持双重验证。如果不使用这些应用，请单击“完成”并跳过其余步骤。
-5. 单击“Done”（完成）。
+4. 单击“Done”（完成）。
 
 ## 后续步骤
 - 更改首选选项并[管理双重验证的设置](/documentation/articles/multi-factor-authentication-end-user-manage-settings/)
