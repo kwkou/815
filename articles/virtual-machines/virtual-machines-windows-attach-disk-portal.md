@@ -15,7 +15,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="11/28/2016"
-    wacn.date="01/20/2017"
+    wacn.date="02/20/2017"
     ms.author="cynthn" />  
 
 
@@ -40,7 +40,7 @@
 
 按照附加[新磁盘](#option-1-attach-a-new-disk)或[现有磁盘](#option-2-attach-an-existing-disk)的说明继续操作。
 
-## <a name="option-1-attach-a-new-disk"></a> 选项 1：附加新磁盘
+## <a name="option-1-attach-a-new-disk"></a> 选项 1：附加并初始化新的磁盘
 1. 在“磁盘”边栏选项卡上，单击“附加新磁盘”。
 2. 检查默认设置，根据需要更新，然后单击“确定”。
    
@@ -48,7 +48,21 @@
 
 3. 在 Azure 创建磁盘并将磁盘附加到虚拟机之后，新磁盘将出现在“数据磁盘”下的虚拟机磁盘设置中。
 
-## <a name="option-2-attach-an-existing-disk"></a> 选项 2：附加现有磁盘
+### <a name="option-2-attach-an-existing-disk"></a> 初始化新数据磁盘
+
+1. 连接到虚拟机。有关说明，请参阅 [How to connect and log on to an Azure virtual machine running Windows](/documentation/articles/virtual-machines-windows-connect-logon/)（如何连接并登录到运行 Windows 的 Azure 虚拟机）。
+2. 在登录虚拟机后，打开“服务器管理器”。在左窗格中，选择“文件和存储服务”。
+   
+    ![打开服务器管理器](./media/virtual-machines-windows-classic-attach-disk/fileandstorageservices.png)
+3. 展开菜单并选择“磁盘”。
+4. “磁盘”部分会列出磁盘。在大多数情况下，会有磁盘 0、磁盘 1 和磁盘 2。磁盘 0 是操作系统磁盘，磁盘 1 是临时磁盘，磁盘 2 是刚附加到 VM 的数据磁盘。新的数据磁盘会将分区列为“未知”。右键单击磁盘，然后选择“初始化”。
+5. 在初始化磁盘时，系统会通知用户所有的数据将被擦除。单击“是”以确认警告并初始化磁盘。完成后，即会将分区列为“GPT”。再次右键单击磁盘，然后选择“新建卷”。
+6. 使用默认值完成向导操作。完成向导后，“卷”部分将列出新卷。现在，磁盘处于联机状态并已准备好存储数据。
+
+    ![已成功初始化卷](./media/virtual-machines-windows-classic-attach-disk/newvolumecreated.png)  
+
+
+## 选项 2：附加现有磁盘
 1. 在“磁盘”边栏选项卡上，单击“附加现有磁盘”。
 2. 在“附加现有磁盘”下，单击“VHD 文件”。
    
@@ -63,26 +77,9 @@
 6. 在 Azure 将磁盘附加到虚拟机之后，磁盘将出现在“数据磁盘”下的虚拟机磁盘设置中。
 
 
-## 初始化新数据磁盘
-1. 连接到虚拟机。有关说明，请参阅 [How to connect and log on to an Azure virtual machine running Windows](/documentation/articles/virtual-machines-windows-connect-logon/)（如何连接并登录到运行 Windows 的 Azure 虚拟机）。
-2. 在登录虚拟机后，打开“服务器管理器”。在左窗格中，选择“文件和存储服务”。
-   
-    ![打开服务器管理器](./media/virtual-machines-windows-classic-attach-disk/fileandstorageservices.png)
-3. 展开菜单并选择“磁盘”。
-4. “磁盘”部分会列出磁盘。在大多数情况下，会有磁盘 0、磁盘 1 和磁盘 2。磁盘 0 是操作系统磁盘，磁盘 1 是临时磁盘，磁盘 2 是刚附加到 VM 的数据磁盘。新的数据磁盘会将分区列为“未知”。右键单击磁盘，然后选择“初始化”。
-5. 在初始化磁盘时，系统会通知用户所有的数据将被擦除。单击“是”以确认警告并初始化磁盘。完成后，即会将分区列为“GPT”。再次右键单击磁盘，然后选择“新建卷”。
-6. 使用默认值完成向导操作。完成向导后，“卷”部分将列出新卷。现在，磁盘处于联机状态并已准备好存储数据。
-
-    ![已成功初始化卷](./media/virtual-machines-windows-classic-attach-disk/newvolumecreated.png)
-
-> [AZURE.NOTE]
-VM 的大小决定可以在其上附加的磁盘数量。有关详细信息，请参阅[虚拟机大小](/documentation/articles/virtual-machines-linux-sizes/)。
-> 
-> 
-
 ## 在标准存储中使用 TRIM
 
-如果使用标准存储 (HDD)，应启用 TRIM。TRIM 会丢弃磁盘上未使用的块，使用户只需为实际使用的存储付费。如果创建了较大的文件，然后将其删除，这样可以节省成本。
+如果使用标准存储 \(HDD\)，应启用 TRIM。TRIM 会丢弃磁盘上未使用的块，使用户只需为实际使用的存储付费。如果创建了较大的文件，然后将其删除，这样可以节省成本。
 
 可以运行此命令来检查 TRIM 设置。在 Windows VM 上打开命令提示符，然后键入：
 
@@ -95,5 +92,4 @@ VM 的大小决定可以在其上附加的磁盘数量。有关详细信息，�
 ## 后续步骤
 如果应用程序需要使用 D: 盘存储数据，可以[更改 Windows 临时磁盘的驱动器号](/documentation/articles/virtual-machines-windows-classic-change-drive-letter/)。
 
-<!---HONumber=Mooncake_0116_2017-->
-<!--Update_Description: move content out from include file & add support for TRIM-->
+<!---HONumber=Mooncake_0213_2017-->

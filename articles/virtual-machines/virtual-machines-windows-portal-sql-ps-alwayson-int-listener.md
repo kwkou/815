@@ -13,8 +13,8 @@
     ms.topic="article"
     ms.tgt_pltfrm="vm-windows-sql-server"
     ms.workload="infrastructure-services"
-    ms.date="11/28/2016"
-    wacn.date="01/20/2017"
+    ms.date="12/28/2016"
+    wacn.date="02/20/2017"
     ms.author="mikeray" />  
 
 
@@ -24,21 +24,21 @@
 * 使用 PowerShell cmdlet 为 SQL Server 可用性组创建内部负载均衡器。
 * 将其他 IP 地址添加到负载均衡器，以支持多个可用性组。
 
-可用性组侦听器是客户端为了访问数据库而连接的虚拟网络名称。在 Azure 虚拟机上，负载均衡器持有侦听器的 IP 地址。负载均衡器将流量路由到侦听探测端口的 SQL Server 实例。在大多数情况下，可用性组使用内部负载均衡器。Azure 内部负载均衡器可以托管一个或多个 IP 地址。每个 IP 地址使用特定的探测端口。本文档说明如何使用 PowerShell 创建新的负载均衡器，或将 IP 地址添加到 SQL Server 可用性组的现有负载均衡器。
+可用性组侦听器是客户端为了访问数据库而连接的虚拟网络名称。在 Azure 虚拟机上，负载均衡器持有侦听器的 IP 地址。负载均衡器将流量路由到侦听探测端口的 SQL Server 实例。通常情况下，可用性组使用内部负载均衡器。Azure 内部负载均衡器可以托管一个或多个 IP 地址。每个 IP 地址使用特定的探测端口。本文档说明如何使用 PowerShell 创建负载均衡器，或将 IP 地址添加到 SQL Server 可用性组的现有负载均衡器。
 
-将多个 IP 地址分配到内部负载均衡器是 Azure 的一项新增功能，只能在 Resource Manager 模型中使用。若要完成此任务，需要在 Resource Manager 模型中的 Azure 虚拟机上部署 SQL Server 可用性组。这两个 SQL Server 虚拟机必须属于同一个可用性集。
+将多个 IP 地址分配到内部负载均衡器是 Azure 的一项新增功能，只能在 Resource Manager 模型中使用。若要完成此任务，需要在 Resource Manager 模型中的 Azure 虚拟机上部署 SQL Server 可用性组。这两个 SQL Server 虚拟机必须属于同一个可用性集。如果需要，可以[手动配置 AlwaysOn 可用性组](/documentation/articles/virtual-machines-windows-portal-sql-alwayson-availability-groups-manual/)。
 
 本主题要求事先配置可用性组。
 
 相关主题包括：
 
-* [在 Azure VM (GUI) 中配置 AlwaysOn 可用性组](/documentation/articles/virtual-machines-windows-portal-sql-alwayson-availability-groups-manual/)
+* [在 Azure VM \(GUI\) 中配置 AlwaysOn 可用性组](/documentation/articles/virtual-machines-windows-portal-sql-alwayson-availability-groups-manual/)
 * [使用 Azure Resource Manager 和 PowerShell 配置 VNet 到 VNet 连接](/documentation/articles/vpn-gateway-vnet-vnet-rm-ps/)
 
 [AZURE.INCLUDE [启动 PowerShell 会话](../../includes/sql-vm-powershell.md)]
 
 ## 配置 Windows 防火墙
-配置 Windows 防火墙以允许 SQL Server 访问。需要配置防火墙，允许通过 TCP 连接到 SQL Server 实例使用的端口，以及连接到侦听器探测使用的端口。有关详细的说明，请参阅 [Configure a Windows Firewall for Database Engine Access](http://msdn.microsoft.com/zh-cn/library/ms175043.aspx#Anchor_1)（配置 Windows 防火墙以允许数据库引擎访问）。为 SQL Server 端口和探测端口创建入站规则。
+配置 Windows 防火墙以允许 SQL Server 访问。防火墙规则允许到端口（由 SQL Server 实例使用）的 TCP 连接，并且允许侦听器探测。有关详细的说明，请参阅 [Configure a Windows Firewall for Database Engine Access](http://msdn.microsoft.com/zh-cn/library/ms175043.aspx#Anchor_1)（配置 Windows 防火墙以允许数据库引擎访问）。为 SQL Server 端口和探测端口创建入站规则。
 
 ## 示例脚本：使用 PowerShell 创建内部负载均衡器
 
@@ -61,8 +61,8 @@
     $LBProbeName ="ILBPROBE_$ListenerPort"       # The Load balancer Probe Object Name              
     $LBConfigRuleName = "ILBCR_$ListenerPort"    # The Load Balancer Rule Object Name
 
-    $FrontEndConfigurationName = "FE_SQLAGILB_1" # Object name for the Front End configuration 
-    $BackEndConfigurationName ="BE_SQLAGILB_1"   # Object name for the Back End configuration
+    $FrontEndConfigurationName = "FE_SQLAGILB_1" # Object name for the front-end configuration 
+    $BackEndConfigurationName ="BE_SQLAGILB_1"   # Object name for the back-end configuration
 
     $VNet = Get-AzureRmVirtualNetwork -Name $VNetName -ResourceGroupName $ResourceGroupName 
 
@@ -90,8 +90,8 @@
             start-AzureRmVM -ResourceGroupName $ResourceGroupName -Name $VM.Name 
         }
 
-## 示例脚本：使用 PowerShell 将 IP 地址添加到现有负载均衡器
-若要使用多个可用性组，请使用 PowerShell 将附加的 IP 地址添加到现有负载均衡器。每个 IP 地址都需要有自身的负载均衡规则、探测端口和前端端口。
+## <a name="Add-IP"></a> 示例脚本：使用 PowerShell 将 IP 地址添加到现有负载均衡器
+若要使用多个可用性组，请将附加的 IP 地址添加到负载均衡器。每个 IP 地址都需要有自身的负载均衡规则、探测端口和前端端口。
 
 前端端口是应用程序用来连接到 SQL Server 实例的端口。不同可用性组的 IP 地址可以使用相同的前端端口。
 
@@ -99,9 +99,9 @@
 对于 SQL Server 可用性组，每个 IP 地址需要一个特定的探测端口。例如，如果负载均衡器上有一个 IP 地址使用探测端口 59999，该负载均衡器上的其他任何 IP 地址就不能使用探测端口 59999。
 
 * 有关负载均衡器限制的信息，请参阅[网络限制 - Azure Resource Manager](/documentation/articles/azure-subscription-service-limits/#azure-resource-manager-virtual-networking-limits) 下面的**每个负载均衡器的专用前端 IP**。
-* 有关可用性组限制的信息，请参阅 [Restrictions (Availability Groups)](http://msdn.microsoft.com/zh-cn/library/ff878487.aspx#RestrictionsAG)（限制（可用性组））。
+* 有关可用性组限制的信息，请参阅 [Restrictions \(Availability Groups\)](http://msdn.microsoft.com/zh-cn/library/ff878487.aspx#RestrictionsAG)（限制（可用性组））。
 
-以下脚本将新的 IP 地址添加到现有负载均衡器。请更新环境的变量。ILB 使用侦听器端口作为负载均衡前端端口。此端口可以是 SQL Server 正在侦听的端口。对于 SQL Server 的默认实例，此端口为 1433。可用性组的负载均衡规则需要浮动 IP（直接服务器返回），因此后端端口与前端端口相同。
+以下脚本将新的 IP 地址添加到现有负载均衡器。ILB 使用侦听器端口作为负载均衡前端端口。此端口可以是 SQL Server 正在侦听的端口。对于 SQL Server 的默认实例，此端口为 1433。可用性组的负载均衡规则需要浮动 IP（直接服务器返回），因此后端端口与前端端口相同。请更新环境的变量。
 
     # Login-AzureRmAccount -EnvironmentName AzureChinaCloud
     # Select-AzureRmSubscription -SubscriptionId <xxxxxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx>
@@ -140,93 +140,111 @@
 
     $ILB | Add-AzureRmLoadBalancerRuleConfig -Name $LBConfigRuleName -FrontendIpConfiguration $FEConfig  -BackendAddressPool $BEConfig -Probe $SQLHealthProbe -Protocol tcp -FrontendPort  $ListenerPort -BackendPort $ListenerPort -LoadDistribution Default -EnableFloatingIP | Set-AzureRmLoadBalancer   
 
-## 将群集配置为使用负载均衡器 IP 地址
-下一步是在群集上配置侦听器，然后将侦听器联机。若要实现此目的，请执行以下步骤：
+## 配置侦听器
 
-1. 在故障转移群集上创建可用性组侦听器
-2. 使侦听器联机
+[AZURE.INCLUDE [ag-listener-configure](../../includes/virtual-machines-ag-listener-configure.md)]
 
-## 在故障转移群集上创建可用性组侦听器
+<!------------------------------- The content below is duplicated. Pointing to the link. Thinking about an include. 
 
-可用性组侦听器是 SQL Server 可用性组侦听的 IP 地址和网络名称。若要创建可用性组侦听器，请执行以下步骤：
+## Configure the cluster to use the load balancer IP address
+The next step is to configure the listener on the cluster, and bring the listener online. To accomplish this, do the following: 
 
-1. [获取群集网络资源的名称](#getnet)。
+1. Create the availability group listener on the failover cluster  
+2. Bring the listener online
 
-1. [添加客户端接入点](#addcap)。
+## Create the availability group listener on the failover cluster
 
-1. [配置可用性组的 IP 资源](#congroup)。
+The availability group listener is an IP address and network name that the SQL Server availability group listens on. To create the availability group listener, do the following steps:
 
-1. [使可用性组资源依赖于侦听器资源名称](#listname)。
+1. [Get the name of the cluster network resource](#getnet).
 
-1. [在 PowerShell 中设置群集参数](#setparam)。
+1. [Add the client access point](#addcap).
 
-以下部分提供其中每个步骤的详细说明。
+1. [Configure the IP resource for the availability group](#congroup).
 
-### <a name="getnet">获取群集网络资源的名称</a> 
+1. [Make the availability group resource dependent on the listener resource name](#listname).
 
-1. 使用 RDP 连接到托管主副本的 Azure 虚拟机。
+1. [Set the cluster parameters in PowerShell](#setparam).
 
-1. 打开故障转移群集管理器。
+The following sections provide detailed instructions for each of these steps. 
 
-1. 选择“网络”节点，并记下群集网络名称。稍后在 PowerShell 脚本的 `$ClusterNetworkName` 变量中将要使用此名称。
+### <a name="getnet">Get the name of the cluster network resource</a> 
 
-### <a name="addcap">添加客户端接入点</a>
+1. Use RDP to connect to the Azure virtual machine that hosts the primary replica. 
 
-1. 展开群集名称，然后单击“角色”。
+1. Open Failover Cluster Manager.
 
-1. 在“角色”窗格中，右键单击可用性组名称，然后选择“添加资源”>“客户端访问点”。
+1. Select the **Networks** node, and note the cluster network name. Use this name in the `$ClusterNetworkName` variable in the PowerShell script.
 
-1. 在“名称”框中，创建此新侦听器的名称。
+### <a name="addcap">Add the client access point</a>
 
-    新侦听器的名称是应用程序用来连接 SQL Server 可用性组中数据库的网络名称。
+1. Expand the cluster name, and then click **Roles**.
+
+1. In the **Roles** pane, right-click the availability group name and then select **Add Resource** > **Client Access Point**.
+
+1. In the **Name** box, create a name for this new listener. 
+
+    The name for the new listener is the network name that applications will use to connect to databases in the SQL Server availability group.
    
-    若要完成创建侦听器，请单击“下一步”两次，然后单击“完成”。此时不要使侦听器或资源联机。
+    To finish creating the listener, click **Next** twice, and then click **Finish**. Do not bring the listener or resource online at this point.
    
-### <a name="congroup">配置可用性组的 IP 资源</a>
+### <a name="congroup">Configure the IP resource for the availability group</a>
 
-1. 单击“资源”选项卡，然后展开刚创建的客户端访问点。右键单击 IP 资源，然后单击“属性”。记下 IP 地址的名称。稍后在 PowerShell 脚本的 `$IPResourceName` 变量中将要使用此名称。
+1. Click the **Resources** tab, then expand the Client Access Point you just created. Right-click the IP resource and click properties. Note the name of the IP address. You will use this name in the `$IPResourceName` variable in the PowerShell script.
 
-1. 单击“IP 地址”下面的“静态 IP 地址”，并将静态 IP 地址设置为在 Azure 门户预览上设置负载均衡器 IP 地址时所用的相同地址。
+1. Under **IP Address** click **Static IP Address** and set the static IP address to the same address that you used when you set the load balancer IP address on the Azure portal preview. 
 
-1. 为此地址禁用 NetBIOS，然后单击“确定”。如果你的解决方案跨越多个 Azure Vnet，请为每个 IP 资源重复此步骤。
+1. Disable NetBIOS for this address and click **OK**. Repeat this step for each IP resource if your solution spans multiple Azure VNets. 
 
-### <a name="listname">使可用性组资源依赖于侦听器资源</a>
+### <a name="listname">Make the availability group resource dependent on the listener resource</a>
 
-1. 在故障转移群集管理器中单击“角色”，然后单击你的可用性组。
+1. In Failover Cluster Manager click **Roles** and click your Availability Group. 
 
-1. 在“资源”选项卡上，右键单击可用性资源组，然后单击“属性”。
+1. On the **Resources** tab, right-click the availability resource group and click **Properties**. 
 
-1. 选择“依赖项”选项卡。设置与侦听器资源名称之间的依赖关系。如果有多个资源列出，请验证 IP 地址具有 OR 而不是 AND 依赖项。单击**“确定”**。
+1. Click the **Dependencies** tab. Set a dependency on the listener resource name. If there are multiple resources listed, verify that the IP addresses have OR, not AND, dependencies. Click **OK**. 
 
-1. 右键单击侦听器名称，然后单击“联机”。
+1. Right-click the listener name and click **Bring Online**. 
 
-### <a name="setparam">在 PowerShell 中设置群集参数</a>
+### <a name="setparam">Set the cluster parameters in PowerShell</a>
 
-设置群集参数。为此，请更新以下 PowerShell 脚本。使用环境值设置变量。在某个群集节点上运行 PowerShell 脚本。
+Set the cluster parameters. To do this, update the following PowerShell script. Set the variables with the values for your environment. Run the PowerShell script on one of the cluster nodes.  
 
-        $ClusterNetworkName = "<MyClusterNetworkName>" # the cluster network name (Use Get-ClusterNetwork on Windows Server 2012 of higher to find the name)
-        $IPResourceName = "<IPResourceName>" # the IP Address resource name
-        $ILBIP = "<n.n.n.n>" # the IP Address of the Internal Load Balancer (ILB). This is the static IP address for the load balancer you configured in the Azure portal preview.
-        [int]$ProbePort = <nnnnn>
+       $ClusterNetworkName = "<MyClusterNetworkName>" # the cluster network name (Use Get-ClusterNetwork on Windows Server 2012 of higher to find the name)
+       $IPResourceName = "<IPResourceName>" # the IP Address resource name
+       $ILBIP = "<n.n.n.n>" # the IP Address of the Internal Load Balancer (ILB). This is the static IP address for the load balancer you configured in the Azure portal preview.
+       [int]$ProbePort = <nnnnn>
 
-        Import-Module FailoverClusters
+       Import-Module FailoverClusters
 
-        Get-ClusterResource $IPResourceName | Set-ClusterParameter -Multiple @{"Address"="$ILBIP";"ProbePort"=$ProbePort;"SubnetMask"="255.255.255.255";"Network"="$ClusterNetworkName";"EnableDhcp"=0}
+       Get-ClusterResource $IPResourceName | Set-ClusterParameter -Multiple @{"Address"="$ILBIP";"ProbePort"=$ProbePort;"SubnetMask"="255.255.255.255";"Network"="$ClusterNetworkName";"EnableDhcp"=0}
 
 > [AZURE.NOTE]
-如果 SQL Server 位于不同的区域，则需要运行 PowerShell 脚本两次。第一次请使用第一个区域中的 `$ILBIP` 和 `$ProbePort`。第二次请使用第二个区域中的 `$ILBIP` 和 `$ProbePort`。群集网络名称和群集 IP 资源名称相同。
+> If your SQL Servers are in separate regions, you need to run the PowerShell script twice. The first time use the `$ILBIP` and `$ProbePort` from the first region. The second time, use the `$ILBIP` and `$ProbePort` from the second region. The cluster network name, and the cluster IP resource name are the same. 
+
+## Set the listener port in SQL Server Management Studio
+
+1. Launch SQL Server Management Studio and connect to the primary replica.
+
+1. Navigate to **AlwaysOn High Availability** | **Availability Groups** | **Availability Group Listeners**. 
+
+1. You should now see the listener name that you created in Failover Cluster Manager. Right-click the listener name and click **Properties**.
+
+1. In the **Port** box, specify the port number for the availability group listener by using the $EndpointPort you used earlier (1433 was the default), then click **OK**.
+
+You now have a SQL Server availability group in Azure virtual machines running in Resource Manager mode. 
+-------------------------------->
+
 
 ## 在 SQL Server Management Studio 中设置侦听器端口
 
 1. 启动 SQL Server Management Studio 并连接到主副本。
 
-1. 导航到“AlwaysOn 高可用性”|“可用性组”|“可用性组侦听器”。
+1. 导航到“AlwaysOn 高可用性”\|“可用性组”\|“可用性组侦听器”。
 
 1. 你现在应看到在故障转移群集管理器中创建的侦听器名称。右键单击侦听器名称，然后单击“属性”。
 
 1. 在“端口”框中，通过使用先前使用过的 $EndpointPort 为可用性组侦听器指定端口号（默认值为 1433），然后单击“确定”。
-
-现在，Resource Manager 模式下运行的 Azure 虚拟机中便有了一个 SQL Server 可用性组。
 
 ## 测试与侦听器的连接
 
@@ -238,7 +256,7 @@
 
         sqlmd -S <listenerName> -E
 
-如果侦听器使用的端口不是默认端口 (1433)，请在连接字符串中指定该端口。例如，以下 sqlcmd 命令连接到位于端口 1435 的侦听器：
+如果侦听器使用的端口不是默认端口 \(1433\)，请在连接字符串中指定该端口。例如，以下 sqlcmd 命令连接到位于端口 1435 的侦听器：
 
         sqlcmd -S <listenerName>,1435 -E
 
@@ -255,18 +273,16 @@ SQLCMD 连接将自动连接到托管主副本的 SQL Server 实例。
 * 使用内部负载均衡器只能从同一个虚拟网络中访问侦听器。
 
 ## 更多信息
-有关详细信息，请参阅 [Configure Always On availability group in Azure VM manually](/documentation/articles/virtual-machines-windows-portal-sql-alwayson-availability-groups-manual/)（在 Azure VM 中手动配置 Always On 可用性组）。
+有关详细信息，请参阅[在 Azure VM 中手动配置 AlwaysOn 可用性组](/documentation/articles/virtual-machines-windows-portal-sql-alwayson-availability-groups-manual/)。
 
-### PowerShell cmdlet
+## PowerShell cmdlet
 使用以下 PowerShell cmdlet 为 Azure 虚拟机创建内部负载均衡器。
 
-* `New-AzureRmLoadBalancer` 创建负载均衡器。有关详细信息，请参阅 [New-AzureRmLoadBalancer](http://msdn.microsoft.com/zh-cn/library/mt619450.aspx)。
-* `New-AzureRMLoadBalancerFrontendIpConfig` 创建负载均衡器的前端 IP 配置。有关详细信息，请参阅 [New-AzureRMLoadBalancerFrontendIpConfig](http://msdn.microsoft.com/zh-cn/library/mt603510.aspx)。
-* `New-AzureRmLoadBalancerRuleConfig` 创建负载均衡器的规则配置。有关详细信息，请参阅 [New-AzureRmLoadBalancerRuleConfig](http://msdn.microsoft.com/zh-cn/library/mt619391.aspx)。
-* `New-AzureRMLoadBalancerBackendAddressPoolConfig` 创建负载均衡器的后端地址池配置。有关详细信息，请参阅 [New-AzureRmLoadBalancerBackendAddressPoolConfig](http://msdn.microsoft.com/zh-cn/library/mt603791.aspx)。
-* `New-AzureRmLoadBalancerProbeConfig` 创建负载均衡器的探测配置。有关详细信息，请参阅 [New-AzureRmLoadBalancerProbeConfig](http://msdn.microsoft.com/zh-cn/library/mt603847.aspx)。
+* [New-AzureRmLoadBalancer](http://msdn.microsoft.com/zh-cn/library/mt619450.aspx) 创建负载均衡器。
+* [New-AzureRMLoadBalancerFrontendIpConfig](http://msdn.microsoft.com/zh-cn/library/mt603510.aspx) 创建负载均衡器的前端 IP 配置。
+* [New-AzureRmLoadBalancerRuleConfig](http://msdn.microsoft.com/zh-cn/library/mt619391.aspx) 创建负载均衡器的规则配置。
+* [New-AzureRmLoadBalancerBackendAddressPoolConfig](http://msdn.microsoft.com/zh-cn/library/mt603791.aspx) 创建负载均衡器的后端地址池配置。
+* [New-AzureRmLoadBalancerProbeConfig](http://msdn.microsoft.com/zh-cn/library/mt603847.aspx) 创建负载均衡器的探测配置。
+* [Remove-AzureRmLoadBalancer](http://msdn.microsoft.com/zh-cn/library/mt603862.aspx) 从 Azure 资源组中删除负载均衡器。
 
-如果需要从 Azure 资源组中删除负载均衡器，请使用 `Remove-AzureRmLoadBalancer`。有关详细信息，请参阅 [Remove-AzureRmLoadBalancer](http://msdn.microsoft.com/zh-cn/library/mt603862.aspx)。
-
-<!---HONumber=Mooncake_0116_2017-->
-<!--Update_Description: update meta properties & wording update-->
+<!---HONumber=Mooncake_0213_2017-->

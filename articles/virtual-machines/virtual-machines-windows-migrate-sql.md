@@ -10,12 +10,12 @@
 <tags
     ms.assetid="00fd08c6-98fa-4d62-a3b8-ca20aa5246b1"
     ms.service="virtual-machines-windows"
-    ms.workload="infrastructure-services"
+    ms.workload="iaas-sql-server"
     ms.tgt_pltfrm="vm-windows-sql-server"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="09/26/2016"
-    wacn.date="01/20/2017"
+    ms.date="01/11/2017"
+    wacn.date="02/20/2017"
     ms.author="carlasab" />
 
 # 将 SQL Server 数据库迁移到 Azure VM 中的 SQL Server
@@ -166,5 +166,4 @@
 
 有关从捕获的映像创建 Azure SQL Server 虚拟机的说明，请参阅 CSS SQL Server 工程师博客上的[有关从捕获的映像“克隆”Azure SQL 虚拟机的提示和技巧](https://blogs.msdn.microsoft.com/psssql/2016/07/06/tips-tricks-on-cloning-azure-sql-virtual-machines-from-captured-images/)。
 
-<!---HONumber=Mooncake_0116_2017-->
-<!--Update_Description: Add support for Storage Import/Export-->
+<!---HONumber=Mooncake_0213_2017-->
