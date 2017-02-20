@@ -9,7 +9,7 @@
     manager="jhubbard"
     editor="cgronlun"
     tags="azure-portal" />
-<tags 
+<tags
     ms.assetid="98be5893-2c6f-4dfa-95ec-d4d8b5b7dcb5"
     ms.service="hdinsight"
     ms.devlang="na"
@@ -17,7 +17,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="big-data"
     ms.date="11/28/2016"
-    wacn.date="02/06/2017"
+    wacn.date="02/20/2017"
     ms.author="larryfr" />
 
 # 在 HDInsight 中使用 cURL 和 Azure REST API 创建基于 Linux 的群集
@@ -30,7 +30,6 @@ Azure REST API 允许你对托管在 Azure 平台中的服务执行管理操作�
 本文档中的步骤对 HDInsight 群集使用默认数目（4 个）的辅助角色节点。如果你计划使用 32 个以上的工作节点（在创建群集时或是在创建之后通过扩展群集进行），则必须选择至少具有 8 个核心和 14GB ram 的头节点大小。
 ><p>
 > 有关节点大小和相关费用的详细信息，请参阅 [HDInsight 定价](/pricing/details/hdinsight/)。
-
 
 ## 先决条件
 
@@ -396,6 +395,6 @@ Azure Resource Manager 模板是描述**资源组**及其包含的所有资源�
 
 * [Develop Java topologies for Storm on HDInsight（为 Storm on HDInsight 开发 Java 拓扑）](/documentation/articles/hdinsight-storm-develop-java-topology/)
 * [Use Python components in Storm on HDInsight（在 Storm on HDInsight 中使用 Python 组件）](/documentation/articles/hdinsight-storm-develop-python-topology/)
-* [Deploy and monitor topologies with Storm on HDInsight（使用 Storm on HDInsight 部署和监视拓扑）](/documentation/articles/hdinsight-storm-deploy-monitor-topology/)
+* [Deploy and monitor topologies with Storm on HDInsight（使用 Storm on HDInsight 部署和监视拓扑）](/documentation/articles/hdinsight-storm-deploy-monitor-topology-linux/)
 
-<!---HONumber=Mooncake_0103_2017-->
+<!---HONumber=Mooncake_0213_2017-->
