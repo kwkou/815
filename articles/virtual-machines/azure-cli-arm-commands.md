@@ -2,41 +2,47 @@
     pageTitle="Resource Manager 模式下的 Azure CLI 命令 | Azure"
     description="用于在 Resource Manager 部署模型中管理资源的 Azure 命令行界面 (CLI) 命令"
     services="virtual-machines-linux,virtual-machines-windows,virtual-network,mobile-services,cloud-services"
-    documentationCenter=""
-    authors="dlepow"
+    documentationcenter=""
+    author="dlepow"
     manager="timlt"
     editor=""
-    tags="azure-resource-manager"/>
-
+    tags="azure-resource-manager" />
 <tags
+    ms.assetid="be37da5b-72fe-41a1-9fa0-8937b69464ec"
     ms.service="multiple"
     ms.workload="multiple"
     ms.tgt_pltfrm="command-line-interface"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="08/05/2016"
-    wacn.date="11/16/2016"
-    ms.author="danlep"/>
+    ms.date="01/03/2017"
+    wacn.date="02/20/2017"
+    ms.author="danlep" />  
+
 
 # Resource Manager 模式下的 Azure CLI 命令
+本文提供经常用于在 Azure Resource Manager 部署模型中创建和管理 Azure 资源的 Azure 命令行接口 (CLI) 命令的语法和选项。通过在 Resource Manager (arm) 模式下运行 CLI 可以访问这些命令。本参考内容并不完整，CLI 版本可能会显示稍微不同的命令或参数。有关 Azure 资源和资源组的一般概述，请参阅 [Azure Resource Manager 概述](/documentation/articles/resource-group-overview/)。
 
-本文提供经常用于在 Azure Resource Manager 部署模型中创建和管理 Azure 资源的 Azure 命令行界面 (CLI) 命令的语法和选项。通过在 Resource Manager (arm) 模式下运行 CLI 可以访问这些命令。本参考内容并不完整，你的 CLI 版本可能会显示略微不同的命令或参数。
+> [AZURE.NOTE]
+本文介绍 Azure CLI（有时称为 Azure CLI 1.0）中的 Resource Manager 模式命令。若要使用 Resource Manager 模式，还可试用 [Azure CLI 2.0（预览版）](https://docs.microsoft.com/cli/azure/install-az-cli2)，这是我们的下一代多平台 CLI。了解有关[旧版和新版 Azure CLI](https://docs.microsoft.com/cli/azure/old-and-new-clis) 的详细信息。
+>
 
-若要开始，请先[安装 Azure CLI](/documentation/articles/xplat-cli-install/)，然后使用工作或学校帐户[连接到你的 Azure 订阅](/documentation/articles/xplat-cli-connect/)。
+若要开始，请先[安装 Azure CLI](/documentation/articles/xplat-cli-install/) 并[连接到 Azure 订阅](/documentation/articles/xplat-cli-connect/)。
 
-要在资源管理器模式下在命令行中查看当前的命令语法和选项，请键入 `azure help`；要显示某个命令的帮助，请键入 `azure help [command]`。你还可以在创建和管理具体 Azure 服务的说明文档中找到 CLI 示例。
+要在资源管理器模式下在命令行中查看当前的命令语法和选项，请键入 `azure help`；要显示某个命令的帮助，请键入 `azure help [command]`。还可以在创建和管理特定 Azure 服务的说明文档中找到 CLI 示例。
 
 可选参数显示在方括号中（例如，`[parameter]`）。其他所有参数都是必需的。
 
-除了此处记录的特定于命令的可选参数外，还有三个可用于显示详细输出（例如请求选项和状态代码）的可选参数。`-v` 参数提供详细输出，而 `-vv` 参数提供更详细的输出。`--json` 选项将以原始的 json 格式输出结果。
+除了此处记录的特定于命令的可选参数外，还有三个可用于显示详细输出（例如请求选项和状态代码）的可选参数。`-v` 参数提供详细输出，而 `-vv` 参数提供更详细的输出。`--json` 选项以原始的 json 格式输出结果。
 
 ## 设置 Resource Manager 模式
-
-使用以下命令启用 Azure CLI Resource Manager 命令。
+使用以下命令启用 Azure CLI Resource Manager 模式命令。
 
     azure config mode arm
 
->[AZURE.NOTE] Azure 资源管理器模式与 Azure 服务管理模式互斥。即在一种模式下创建的资源不能从另一种模式进行管理。
+> [AZURE.NOTE]
+CLI 的 Azure Resource Manager 模式与 Azure 服务管理模式互斥。即，在一种模式下创建的资源不能通过另一种模式进行管理。
+> 
+> 
 
 ## azure account：管理你的帐户信息
 该工具使用你的 Azure 订阅信息连接到你的帐户。
@@ -66,7 +72,6 @@
     account env delete [options] [environment]
 
 ## azure ad：用于显示 Active Directory 对象的命令
-
 **用于显示 Active Directory 应用程序的命令**
 
     ad app create [options]
@@ -93,8 +98,7 @@
     ad user list [options]
     ad user show [options]
 
-## <a name="azure-availset-commands-to-manage-your-availability-sets"></a> azure availset：用于管理可用性集的命令
-
+## <a name="azure-availset-commands-to-manage-your-availability-sets"></a>azure availset：用于管理可用性集的命令
 **在资源组中创建可用性集**
 
     availset create [options] <resource-group> <name> <location> [tags]
@@ -112,26 +116,24 @@
     availset delete [options] <resource-group> <name>
 
 ## azure config：用于管理本地设置的命令
-
 **列出 Azure CLI 配置设置**
 
-    conconfig list [options]
+    config list [options]
 
 **删除配置设置**
 
-    conconfig delete [options] <name>
+    config delete [options] <name>
 
 **更新配置设置**
 
-    conconfig set <name> <value>
+    config set <name> <value>
 
-**将 Azure CLI 工作模式设置为 arm 或 asm**
+**将 Azure CLI 工作模式设置为 `arm` 或 `asm`**
 
-    conconfig mode [options] <modename>
+    config mode [options] <modename>
 
 ## azure group：用于管理资源组的命令
-
-**创建新的资源组**
+**创建资源组**
 
     group create [options] <name> <location>
 
@@ -170,24 +172,20 @@
     group template validate [options] <resource-group>
 
 ## azure insights：与监视 Insights（事件、警报规则、自动缩放设置、度量值）相关的命令
-
 **检索订阅、correlationId、资源组、资源或资源提供程序的操作日志**
 
     insights logs list [options]
 
 ## azure location：用于获取所有资源类型的可用位置的命令
-
 **列出可用位置**
 
     location list [options]
 
 ## azure network：用于管理网络资源的命令
-
 **用于管理虚拟网络的命令**
 
     network vnet create [options] <resource-group> <name> <location>
-用于创建新的虚拟网络。在以下示例中，我们将为中国北部区域的资源组 myresourcegroup 创建名为 newvnet 的虚拟网络。
-
+创建虚拟网络。在以下示例中，我们将为中国北部区域的资源组 myresourcegroup 创建名为 newvnet 的虚拟网络。
 
     azure network vnet create myresourcegroup newvnet "China North"
     info:    Executing command network vnet create
@@ -206,7 +204,6 @@
     data:    Subnets:
     data:
     info:    network vnet create command OK
-
 
 参数选项：
 
@@ -227,7 +224,7 @@
       For example, -t tag1=value1;tag2
      -s, --subscription <subscription>          the subscription identifier
 
-<BR>
+<BR>  
 
     network vnet set [options] <resource-group> <name>
 
@@ -275,12 +272,12 @@
 
        --no-tags                                  remove all existing tags
        -s, --subscription <subscription>          the subscription identifier
-<BR>
+
+<BR>  
 
     network vnet list [options] <resource-group>
 
-使用该命令可列出资源组中的所有虚拟网络。
-
+该命令列出资源组中的所有虚拟网络。
 
     C:\>azure network vnet list myresourcegroup
 
@@ -296,17 +293,15 @@
 
 参数选项：
 
-
       -h, --help                             output usage information
       -v, --verbose                          use verbose output
       --json                                 use json output
       -g, --resource-group <resource-group>  the name of the resource group
       -s, --subscription <subscription>      the subscription identifier
 
-<BR>
+<BR>  
 
     network vnet show [options] <resource-group> <name>
-
 该命令显示资源组中的虚拟网络属性。
 
     azure network vnet show -g myresourcegroup -n newvnet
@@ -325,10 +320,10 @@
     data:    Subnets:
     data:
     info:    network vnet show command OK
-<BR>
+
+<BR>  
 
     network vnet delete [options] <resource-group> <name>
-
 该命令删除虚拟网络。
 
     azure network vnet delete myresourcegroup newvnetX
@@ -349,11 +344,11 @@
      -q, --quiet                            quiet mode, do not ask for delete confirmation
      -s, --subscription <subscription>      the subscription identifier
 
-
 **用于管理虚拟网络子网的命令**
 
     network vnet subnet create [options] <resource-group> <vnet-name> <name>
-该命令允许将另一个子网添加到现有的虚拟网络。
+
+将另一个子网添加到现有的虚拟网络。
 
     azure network vnet subnet create -g myresourcegroup --vnet-name newvnet -n subnet --address-prefix 10.0.1.0/24
 
@@ -382,12 +377,11 @@
      -o, --network-security-group-name <network-security-group-name>  the network security group name
      -s, --subscription <subscription>                                the subscription identifier
 
-<BR>
+<BR>  
 
     network vnet subnet set [options] <resource-group> <vnet-name> <name>
 
 在资源组中设置特定的虚拟网络子网。
-
 
     C:\>azure network vnet subnet set -g myresourcegroup --vnet-name newvnet -n subnet1
 
@@ -401,7 +395,8 @@
     data:    Provisioning state:        Succeeded
     data:    Address prefix:            10.0.1.0/24
     info:    network vnet subnet set command OK
-<BR>
+
+<BR>  
 
     network vnet subnet list [options] <resource-group> <vnet-name>
 
@@ -419,10 +414,10 @@
     data:    Provisioning state:        Succeeded
     data:    Address prefix:            10.0.1.0/24
     info:    network vnet subnet set command OK
-<BR>
+
+<BR>  
 
     network vnet subnet show [options] <resource-group> <vnet-name> <name>
-
 显示虚拟网络子网属性
 
     azure network vnet subnet show -g myresourcegroup --vnet-name newvnet -n subnet1
@@ -446,10 +441,10 @@
     -e, --vnet-name <vnet-name>            the name of the virtual network
     -n, --name <name>                      the name of the subnet
     -s, --subscription <subscription>      the subscription identifier
-<BR>
+
+<BR>  
 
     network vnet subnet delete [options] <resource-group> <vnet-name> <subnet-name>
-
 从现有虚拟网络中删除子网。
 
     azure network vnet subnet delete -g myresourcegroup --vnet-name newvnet -n subnet1
@@ -474,7 +469,6 @@
 **用于管理负载均衡器的命令**
 
     network lb create [options] <resource-group> <name> <location>
-
 创建负载均衡器集。
 
     azure network lb create -g myresourcegroup -n mylb -l chinanorth
@@ -502,10 +496,10 @@
      Can be multiple. In the format of "name=value".
      Name is required and value is optional. For example, -t tag1=value1;tag2
     -s, --subscription <subscription>      the subscription identifier
-<BR>
+
+<BR>  
 
     network lb list [options] <resource-group>
-
 列出资源组中的负载均衡器资源。
 
     azure network lb list myresourcegroup
@@ -524,7 +518,8 @@
     --json                                 use json output
     -g, --resource-group <resource-group>  the name of the resource group
     -s, --subscription <subscription>      the subscription identifier
-<BR>
+
+<BR>  
 
     network lb show [options] <resource-group> <name>
 
@@ -550,7 +545,7 @@
     -n, --name <name>                      the name of the load balancer
     -s, --subscription <subscription>      the subscription identifier
 
-<BR>
+<BR>  
 
     network lb delete [options] <resource-group> <name>
 
@@ -602,11 +597,11 @@
     -c, --count <count>                    the number of probes
     -s, --subscription <subscription>      the subscription identifier
 
-<BR>
+<BR>  
 
     network lb probe set [options] <resource-group> <lb-name> <name>
 
-使用新值更新现有负载均衡器探测。
+使用新值更新现有的负载均衡器探测。
 
     azure network lb probe set -g myresourcegroup -l mylb -n mylbprobe -p mylbprobe1 -p TCP -o 443 -i 300
 
@@ -630,7 +625,8 @@
     -i, --interval <interval>              the new value for probe interval in seconds
     -c, --count <count>                    the new value for number of probes
     -s, --subscription <subscription>      the subscription identifier
-<BR>
+
+<BR>  
 
     network lb probe list [options] <resource-group> <lb-name>
 
@@ -654,9 +650,7 @@
     -l, --lb-name <lb-name>                the name of the load balancer
     -s, --subscription <subscription>      the subscription identifier
 
-
     network lb probe delete [options] <resource-group> <lb-name> <name>
-
 删除为负载均衡器创建的探测。
 
     azure network lb probe delete -g myresourcegroup -l mylb -n mylbprobe
@@ -670,7 +664,6 @@
 **用于管理负载均衡器前端 IP 配置的命令**
 
     network lb frontend-ip create [options] <resource-group> <lb-name> <name>
-
 为现有的负载均衡器集创建前端 IP 配置。
 
     azure network lb frontend-ip create -g myresourcegroup --lb-name mylb -n myfrontendip -o Dynamic -e subnet -m newvnet
@@ -695,11 +688,11 @@
     data:
     info:    network lb frontend-ip create command OK
 
-<BR>
+<BR>  
 
     network lb frontend-ip set [options] <resource-group> <lb-name> <name>
 
-用于更新现有的前端 IP 配置。以下命令将名为 mypubip5 的公共 IP 添加到名为 myfrontendip 的现有负载均衡器前端 IP。
+更新现有的前端 IP 配置。以下命令将名为 mypubip5 的公共 IP 添加到名为 myfrontendip 的现有负载均衡器前端 IP。
 
     azure network lb frontend-ip set -g myresourcegroup --lb-name mylb -n myfrontendip -i mypubip5
 
@@ -745,7 +738,7 @@
     Please use subnet-id if that is not the case.
     -s, --subscription <subscription>                                  the subscription identifier
 
-<BR>
+<BR>  
 
     network lb frontend-ip list [options] <resource-group> <lb-name>
 
@@ -768,10 +761,10 @@
     -g, --resource-group <resource-group>  the name of the resource group
     -l, --lb-name <lb-name>                the name of the load balancer
     -s, --subscription <subscription>      the subscription identifier
-<BR>
+
+<BR>  
 
     network lb frontend-ip delete [options] <resource-group> <lb-name> <name>
-
 删除与负载均衡器关联的前端 IP 对象
 
     network lb frontend-ip delete -g myresourcegroup -l mylb -n myfrontendip
@@ -822,15 +815,15 @@
     -n, --name <name>                      the name of the backend address pool
     -s, --subscription <subscription>      the subscription identifier
 
-<BR>
+<BR>  
 
     network lb address-pool add [options] <resource-group> <lb-name> <name>
 
-负载均衡器根据后端地址池范围来确定哪些资源正在使用 Azure 资源管理器来从其终结点路由传入的网络流量。在创建并命名后端地址池范围后（请参阅命令“azure network lb address-pool create”），需要添加现在已由名为“网络接口”的资源定义的终结点。
+负载均衡器根据后端地址池范围来确定哪些资源正在使用 Azure Resource Manager 来从其终结点路由传入的网络流量。创建并命名后端地址池范围后（请参阅命令“azure network lb address-pool create”），需要添加现在由名为“网络接口”的资源定义的终结点。
 
-若要配置后端地址范围，你至少需要一个“网络接口”（有关详细信息，请参阅“azure network lb nic”命令行）。
+若要配置后端地址范围，至少需要一个“网络接口”（有关更多详细信息，请参阅“azure network lb nic”命令行）。
 
-在以下示例中，使用了以前创建的“nic1”网络接口来创建后端地址池范围。
+在以下示例中，使用以前创建的“nic1”网络接口来创建后端地址池范围。
 
     azure network lb address-pool add -g myresourcegroup -l mylb -n mybackendpool -a nic1
 
@@ -865,7 +858,7 @@
     -a, --nic-name <nic-name>              the name of the network interface
     -s, --subscription <subscription>      the subscription identifier
 
-<BR>
+<BR>  
 
     network lb address-pool remove [options] <resource-group> <lb-name> <name>
 
@@ -902,7 +895,8 @@
     e.g. ""/subscriptions/<subscription-id>/resourceGroups/<resource-group-name>/providers/Microsoft.Network/networkInterfaces/<nic-name>"
     -a, --nic-name <nic-name>              the name of the network interface
     -s, --subscription <subscription>      the subscription identifier
-<BR>
+
+<BR>  
 
     network lb address-pool list [options] <resource-group> <lb-name>
 
@@ -926,7 +920,7 @@
      -l, --lb-name <lb-name>                the name of the load balancer
      -s, --subscription <subscription>      the subscription identifier
 
-<BR>
+<BR> 
 
     network lb address-pool delete [options] <resource-group> <lb-name> <name>
 
@@ -954,15 +948,13 @@
 **用于管理负载均衡器规则的命令**
 
     network lb rule create [options] <resource-group> <lb-name> <name>
-
 创建负载均衡器规则。
 
-你可以创建负载均衡器规则，用于配置负载均衡器的前端终结点以及要接收传入网络流量的后端地址池范围。设置还包括前端 IP 终结点的端口，以及后端地址池范围的端口。
+可创建负载均衡器规则，用于配置负载均衡器的前端终结点以及要接收传入网络流量的后端地址池范围。设置还包括前端 IP 终结点的端口，以及后端地址池范围的端口。
 
 以下示例演示了如何创建负载均衡器规则、侦听端口 80 TCP 的前端终结点，以及发送到后端地址池范围的端口 8080 的负载均衡网络流量。
 
     azure network lb rule create -g myresourcegroup -l mylb -n mylbrule -p tcp -f 80 -b 8080 -i 10
-
 
     info:    Executing command network lb rule create
     + Looking up the load balancer "mylb"
@@ -983,7 +975,7 @@
     data:
     info:    network lb rule create command OK
 
-<BR>
+<BR>  
 
     network lb rule set [options] <resource-group> <lb-name> <name>
 
@@ -1028,7 +1020,6 @@
     -t, --frontend-ip-name <frontend-ip-name>          the name of the frontend ip configuration in the same load balancer
     -o, --backend-address-pool <backend-address-pool>  name of the backend address pool defined in the same load balancer
     -s, --subscription <subscription>                  the subscription identifier
-
 
     network lb rule list [options] <resource-group> <lb-name>
 
@@ -1078,11 +1069,9 @@
 **用于管理负载均衡器入站 NAT 规则的命令**
 
     network lb inbound-nat-rule create [options] <resource-group> <lb-name> <name>
-
 为负载均衡器创建入站 NAT 规则。
 
-在以下示例中，我们从前端 IP（前面已定义。有关详细信息，请参阅“azure network frontend-ip”命令），使用入站侦听端口和负载均衡器要将网络流量发送到的出站端口，创建了一个 NAT 规则。
-
+在以下示例中，我们通过具有入站侦听端口和出站端口（负载均衡器用于发送网络流量）的前端 IP（之前已使用“azure network frontend-ip”命令定义）创建 NAT 规则。
 
     azure network lb inbound-nat-rule create -g myresourcegroup -l mylb -n myinboundnat -p tcp -f 80 -b 8080 -i myfrontendip
 
@@ -1121,10 +1110,10 @@
     Please use vm-id if that is not the case.
     this parameter will be ignored if --vm-id is specified
     -s, --subscription <subscription>              the subscription identifier
-<BR>
+
+<BR>  
 
     network lb inbound-nat-rule set [options] <resource-group> <lb-name> <name>
-
 更新现有的入站 NAT 规则。在以下示例中，我们已将入站侦听端口从 80 更改为 81。
 
     azure network lb inbound-nat-rule set -g group-1 -l mylb -n myinboundnat -p tcp -f 81 -b 8080 -i myfrontendip
@@ -1164,7 +1153,8 @@
     This virtual machine must exist in the same resource group as the lb.
     Please use vm-id if that is not the case
     -s, --subscription <subscription>              the subscription identifier
-<BR>
+
+<BR>  
 
     network lb inbound-nat-rule list [options] <resource-group> <lb-name>
 
@@ -1190,7 +1180,7 @@
     -l, --lb-name <lb-name>                the name of the load balancer
     -s, --subscription <subscription>      the subscription identifier
 
-<BR>
+<BR>  
 
     network lb inbound-nat-rule delete [options] <resource-group> <lb-name> <name>
 
@@ -1218,7 +1208,6 @@
 **用于管理公共 IP 地址的命令**
 
     network public-ip create [options] <resource-group> <name> <location>
-
 创建公共 IP 资源。你将要创建公共 IP 资源并将其关联到一个域名。
 
     azure network public-ip create -g myresourcegroup -n mytestpublicip1 -l chinaeast -d azureclitest -a "Dynamic"
@@ -1236,7 +1225,6 @@
     data:    Domain name label:    azureclitest
     data:    FQDN:                 azureclitest.chinaeast.chinacloudapp.cn
     info:    network public-ip create command OK
-
 
 参数选项：
 
@@ -1256,10 +1244,10 @@
     Name is required and value is optional.
     For example, -t tag1=value1;tag2
     -s, --subscription <subscription>            the subscription identifier
-<br>
+
+<br>  
 
     network public-ip set [options] <resource-group> <name>
-
 更新现有的公共 IP 资源的属性。在以下示例中，我们已将公共 IP 地址从动态更改为静态。
 
     azure network public-ip set -g group-1 -n mytestpublicip1 -d azureclitest -a "Static"
@@ -1298,7 +1286,7 @@
     --no-tags                                    remove all existing tags
     -s, --subscription <subscription>            the subscription identifier
 
-<br>
+<br> 
 
     network public-ip list [options] <resource-group> 
     
@@ -1323,7 +1311,7 @@
     -g, --resource-group <resource-group>  the name of the resource group
     -s, --subscription <subscription>      the subscription identifier
 
-<BR>
+<BR> 
 
     network public-ip show [options] <resource-group> <name>
 
@@ -1354,7 +1342,6 @@
     -n, --name <name>                      the name of the public IP
     -s, --subscription <subscription>      the subscription identifier
 
-
     network public-ip delete [options] <resource-group> <name>
 
 删除公共 IP 资源。
@@ -1376,11 +1363,9 @@
     -q, --quiet                            quiet mode, do not ask for delete confirmation
     -s, --subscription <subscription>      the subscription identifier
 
-
 **用于管理网络接口的命令**
 
     network nic create [options] <resource-group> <name> <location>
-
 创建可用于负载均衡器或关联到虚拟机的名为网络接口 (NIC) 的资源。
 
     azure network nic create -g myresourcegroup -l chinaeast -n testnic1 --subnet-name subnet-1 --subnet-vnet-name myvnet
@@ -1433,7 +1418,7 @@
     data:
     info:    network nic create command OK
 
-<BR>
+<BR>  
 
     network nic set [options] <resource-group> <name>
 
@@ -1477,8 +1462,7 @@
     network gateway list [options] <resource-group>
 
 ## azure provider：用于管理资源提供程序注册的命令
-
-**列出 ARM 中当前已注册的提供程序**
+**列出 Resource Manager 中当前已注册的提供程序**
 
     provider list [options]
 
@@ -1495,7 +1479,6 @@
     provider unregister [options] <namespace>
 
 ## azure resource：用于管理资源的命令
-
 **在资源组中创建资源**
 
     resource create [options] <resource-group> <name> <resource-type> <location> <api-version>
@@ -1517,7 +1500,6 @@
     resource delete [options] <resource-group> <name> <resource-type> <api-version>
 
 ## azure role：用于管理 Azure 角色的命令
-
 **获取所有可用的角色定义**
 
     role list [options]
@@ -1532,8 +1514,7 @@
     role assignment list [options] [objectId] [upn] [mail] [spn] [role] [scope] [resource-group] [resource-type] [resource-name]
     role assignment delete [options] [objectId] [upn] [mail] [spn] [role] [scope] [resource-group] [resource-type] [resource-name]
 
-##<a name="azure-storage-commands-to-manage-your-storage-objects"></a> azure storage：用于管理存储对象的命令
-
+## <a name="azure-storage-commands-to-manage-your-storage-objects"></a> azure storage：用于管理存储对象的命令
 **用于管理存储帐户的命令**
 
     storage account list [options]
@@ -1657,7 +1638,6 @@
     storage table policy delete [options] [table] [name]
 
 ## azure tag：用于管理资源管理器标记的命令
-
 **添加标记**
 
     tag create [options] <name> <value>
@@ -1675,7 +1655,6 @@
     tag show [options] [name]
 
 ## <a name="azure-vm-commands-to-manage-your-azure-virtual-machines"></a> azure vm：用于管理 Azure 虚拟机的命令
-
 **创建 VM**
 
     vm create [options] <resource-group> <name> <location> <os-type>
@@ -1683,8 +1662,11 @@
 **使用默认资源创建 VM**
 
     vm quick-create [options] <resource-group> <name> <location> <os-type> <image-urn> <admin-username> <admin-password>
-    
->[AZURE.TIP]从 CLI 版本 0.10 开始，你可以为某些常用的应用商店映像提供“UbuntuLTS”或“Win2012R2Datacenter”之类的简短别名作为 `image-urn`。针对选项运行 `azure help vm quick-create`。另外，从版本 0.10 开始，`azure vm quick-create` 默认使用高级存储，前提是所选区域提供该存储。
+
+> [AZURE.TIP]
+从 CLI 版本 0.10 开始，可以为某些常用的应用商店映像提供“UbuntuLTS”或“Win2012R2Datacenter”之类的简短别名作为 `image-urn`。针对选项运行 `azure help vm quick-create`。另外，从版本 0.10 开始，`azure vm quick-create` 默认使用高级存储，前提是所选区域提供该存储。
+> 
+> 
 
 **列出帐户中的虚拟机**
 
@@ -1756,4 +1738,4 @@
     vm image list-skus [options] <location> <publisher> <offer>
     vm image list [options] <location> <publisher> [offer] [sku]
 
-<!---HONumber=Mooncake_0620_2016-->
+<!---HONumber=Mooncake_0213_2017-->

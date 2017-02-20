@@ -6,30 +6,29 @@
     author="MikeRayMSFT"
     manager="jhubbard"
     editor=""
-    tags="azure-service-management" />  
-
+    tags="azure-service-management" />
 <tags
     ms.assetid="53981f7e-8370-4979-b26a-93a5988d905f"
-    ms.service="virtual-machines-windows"
+    ms.service="virtual-machines-sql"
     ms.devlang="na"
     ms.topic="article"
     ms.tgt_pltfrm="vm-windows-sql-server"
     ms.workload="iaas-sql-server"
     ms.date="11/15/2016"
-    wacn.date="12/21/2016"
+    wacn.date="02/20/2017"
     ms.author="MikeRayMSFT" />  
 
 
 # Azure 虚拟机中 SQL Server 的高可用性和灾难恢复
 ## 概述
-带有 SQL Server 的 Azure 虚拟机 (VM) 有助于降低高可用性和灾难恢复 (HADR) 数据库解决方案的成本。Azure 虚拟机支持大多数 SQL Server HADR 解决方案，这些解决方案既可以仅包含 Azure，也可是混合解决方案。在仅包含 Azure 的解决方案中，整个 HADR 系统都在 Azure 中运行。而在混合配置中，解决方案的一部分在 Azure 中运行，另一部分则在组织的本地运行。Azure 环境具有灵活性，允许你部分或完全迁移至 Azure，以满足 SQL Server 数据库系统对于预算和 HADR 的要求。
+带有 SQL Server 的 Azure 虚拟机 \(VM\) 有助于降低高可用性和灾难恢复 \(HADR\) 数据库解决方案的成本。Azure 虚拟机支持大多数 SQL Server HADR 解决方案，这些解决方案既可以仅包含 Azure，也可是混合解决方案。在仅包含 Azure 的解决方案中，整个 HADR 系统都在 Azure 中运行。而在混合配置中，解决方案的一部分在 Azure 中运行，另一部分则在组织的本地运行。Azure 环境具有灵活性，允许你部分或完全迁移至 Azure，以满足 SQL Server 数据库系统对于预算和 HADR 的要求。
 
 [AZURE.INCLUDE [了解部署模型](../../includes/learn-about-deployment-models-both-include.md)]
 
 ## 了解对 HADR 解决方案的需求
-你有责任确保你的数据库系统拥有服务级别协议 (SLA) 要求的 HADR 功能。Azure 提供了高可用性机制，例如云服务的服务修复和虚拟机的故障恢复检测，但这一事实自身并不保证你能够达到所需 SLA 的要求。这些机制可以保护 VM 的高可用性，但不能保护在 VM 内部运行的 SQL Server 的高可用性。VM 联机并正常运行时，SQL Server 实例也可能会出故障。再者，即便是 Azure 提供的高可用性机制，也会在 VM 遇到从软件或硬件故障进行恢复、操作系统升级等事件时，为其留出一定的停机时间。
+你有责任确保你的数据库系统拥有服务级别协议 \(SLA\) 要求的 HADR 功能。Azure 提供了高可用性机制，例如云服务的服务修复和虚拟机的故障恢复检测，但这一事实自身并不保证你能够达到所需 SLA 的要求。这些机制可以保护 VM 的高可用性，但不能保护在 VM 内部运行的 SQL Server 的高可用性。VM 联机并正常运行时，SQL Server 实例也可能会出故障。再者，即便是 Azure 提供的高可用性机制，也会在 VM 遇到从软件或硬件故障进行恢复、操作系统升级等事件时，为其留出一定的停机时间。
 
-此外，使用异地复制功能在 Azure 中实现的异地冗余存储 (GRS)，可能不适合作为数据库的灾难恢复解决方案。因为异地复制功能会异步发送数据，在发生灾难的情况下，最近的更新可能丢失。[数据和日志文件各自在不同磁盘上的情况下不支持异地复制](#geo-replication-support)部分中提供了有关异地复制限制的详细信息。
+此外，使用异地复制功能在 Azure 中实现的异地冗余存储 \(GRS\)，可能不适合作为数据库的灾难恢复解决方案。因为异地复制功能会异步发送数据，在发生灾难的情况下，最近的更新可能丢失。[数据和日志文件各自在不同磁盘上的情况下不支持异地复制](#geo-replication-support)部分中提供了有关异地复制限制的详细信息。
 
 ## HADR 部署体系结构
 Azure 支持的 SQL Server HADR 技术包括：
@@ -47,8 +46,8 @@ Azure 支持的 SQL Server HADR 技术包括：
 
 | 技术 | 示例体系结构 |
 | --- | --- |
-| **Always On 可用性组** |所有可用性副本均在同一区域内的 Azure VM 中运行以获得高可用性。你需要配置域控制器 VM，因为 Windows Server 故障转移群集 (WSFC) 需要 Active Directory 域。<br/> ![Always On 可用性组](./media/virtual-machines-windows-sql-high-availability-dr/azure_only_ha_always_on.gif)<br/>有关详细信息，请参阅[手动在 Azure 中配置 Always On 可用性组 (GUI)](/documentation/articles/virtual-machines-windows-portal-sql-alwayson-availability-groups-manual/)。 |
-| **Always On 故障转移群集实例** |需要共享存储的故障转移群集实例 (FCI)，可以通过 2 种不同方式创建。<br/><br/>1.在 Azure VM 中运行的双节点 WSFC 上创建 FCI，该 VM 使用的存储受第三方群集解决方案支持。有关使用 SIOS DataKeeper 的具体示例，请参阅[使用 WSFC 和第三方软件 SIOS Datakeeper 的文件共享的高可用性](https://azure.microsoft.com/blog/high-availability-for-a-file-share-using-wsfc-ilb-and-3rd-party-software-sios-datakeeper/)。<br/><br/>2.在 Azure VM 中运行的双节点 WSFC 上创建 FCI，该 VM 通过 ExpressRoute 使用远程 iSCSI 目标共享块存储。例如，NetApp Private Storage (NPS) 通过 Equinix 的 ExpressRoute 向 Azure VM 公开 iSCSI 目标。<br/><br/>有关第三方共享存储和数据复制解决方案，应联系供应商了解与在故障转移时访问数据相关的任何问题。<br/><br/>请注意，尚不支持在 [Azure 文件存储](/home/features/storage/files/)之上使用 FCI，因为此解决方案不使用高级存储。我们正在不懈努力，很快就能支持此功能。 |
+| **Always On 可用性组** |所有可用性副本均在同一区域内的 Azure VM 中运行以获得高可用性。你需要配置域控制器 VM，因为 Windows Server 故障转移群集 \(WSFC\) 需要 Active Directory 域。<br/> ![Always On 可用性组](./media/virtual-machines-windows-sql-high-availability-dr/azure_only_ha_always_on.gif)<br/>有关详细信息，请参阅[在 Azure 中配置 AlwaysOn 可用性组（手册）](/documentation/articles/virtual-machines-windows-portal-sql-alwayson-availability-groups-manual/)。 |
+| **Always On 故障转移群集实例** |需要共享存储的故障转移群集实例 \(FCI\)，可以通过 2 种不同方式创建。<br/><br/>1.在 Azure VM 中运行的双节点 WSFC 上创建 FCI，该 VM 使用的存储受第三方群集解决方案支持。有关使用 SIOS DataKeeper 的具体示例，请参阅[使用 WSFC 和第三方软件 SIOS Datakeeper 的文件共享的高可用性](https://azure.microsoft.com/blog/high-availability-for-a-file-share-using-wsfc-ilb-and-3rd-party-software-sios-datakeeper/)。<br/><br/>2.在 Azure VM 中运行的双节点 WSFC 上创建 FCI，该 VM 通过 ExpressRoute 使用远程 iSCSI 目标共享块存储。例如，NetApp Private Storage \(NPS\) 通过 Equinix 的 ExpressRoute 向 Azure VM 公开 iSCSI 目标。<br/><br/>有关第三方共享存储和数据复制解决方案，应联系供应商了解与在故障转移时访问数据相关的任何问题。<br/><br/>请注意，尚不支持在 [Azure 文件存储](/home/features/storage/files/)之上使用 FCI，因为此解决方案不使用高级存储。我们正在不懈努力，很快就能支持此功能。 |
 
 ## 仅限 Azure：灾难恢复解决方案
 可将 Always On 可用性组、数据库镜像或备份和还原与存储 Blob 配合使用，为 Azure 中的 SQL Server 数据库提供灾难恢复解决方案。
@@ -73,7 +72,7 @@ Azure 支持的 SQL Server HADR 技术包括：
 Azure VM、存储和网络的运行特征与本地非虚拟化的 IT 基础结构不同。需要了解这些区别并设计可适应这些区别的解决方案，才能成功地在 Azure 中实现 HADR SQL Server 解决方案。
 
 ### 可用性集中的高可用性节点
-使用 Azure 中的高可用性集，可以将高可用性节点放置在单独的容错域 (FD) 和更新域 (UD) 中。若要将 Azure VM 放入同一可用性集，必须将这些 VM 部署到同一云服务中。只有同一云服务中的节点可加入同一可用性集。有关详细信息，请参阅[管理虚拟机的可用性](/documentation/articles/virtual-machines-windows-manage-availability/)。
+使用 Azure 中的高可用性集，可以将高可用性节点放置在单独的容错域 \(FD\) 和更新域 \(UD\) 中。若要将 Azure VM 放入同一可用性集，必须将这些 VM 部署到同一云服务中。只有同一云服务中的节点可加入同一可用性集。有关详细信息，请参阅[管理虚拟机的可用性](/documentation/articles/virtual-machines-windows-manage-availability/)。
 
 ### WSFC 群集在 Azure 网络中的行为
 Azure 中的 DHCP 服务不符合 RFC 标准，可能会导致创建某些 WSFC 群集配置失败，因为向群集网络名称分配重复的 IP 地址（例如 IP 地址与某个群集节点相同）。实现 Always On 可用性组时，这就会产生问题，因为它依赖于 WSFC 功能。
@@ -89,12 +88,12 @@ Azure 中的 DHCP 服务不符合 RFC 标准，可能会导致创建某些 WSFC 
 
 可通过将未使用的静态 IP 地址（如 169.254.1.1 等链接本地 IP 地址）分配给群集网络名称，让群集网络名称联机，从而避免这种情况发生。若要简化此过程，请参阅[在 Azure 中针对 Always On 可用性组配置 Windows 故障转移群集](http://social.technet.microsoft.com/wiki/contents/articles/14776.configuring-windows-failover-cluster-in-windows-azure-for-alwayson-availability-groups.aspx)。
 
-有关详细信息，请参阅[手动在 Azure 中配置 Always On 可用性组 (GUI)](/documentation/articles/virtual-machines-windows-portal-sql-alwayson-availability-groups-manual/)。
+有关详细信息，请参阅[在 Azure 中配置 AlwaysOn 可用性组（手动）](/documentation/articles/virtual-machines-windows-portal-sql-alwayson-availability-groups-manual/)。
 
 ### 可用性组侦听器支持
 运行 Windows Server 2008 R2、Windows Server 2012、Windows Server 2012 R2 和 Windows Server 2016 的 Azure VM 支持可用性组侦听器。这种支持的实现，是借助于在 Azure VM 上启用的负载均衡终结点，它们都是可用性组节点。必须执行特殊的配置步骤，才能让侦听器对在 Azure 中运行和本地运行的客户端应用程序都有效。
 
-设置侦听器时有两个主要选项：“外部(公共)”或“内部”。外部（公共）侦听器使用面向 Internet 的负载均衡器，并与可通过 Internet 访问的公共虚拟 IP (VIP) 相关联。内部侦听器使用内部负载均衡器，仅支持同一虚拟网络内的客户端。无论使用哪种负载均衡器类型，都必须启用“直接服务器返回”。
+设置侦听器时有两个主要选项：“外部\(公共\)”或“内部”。外部（公共）侦听器使用面向 Internet 的负载均衡器，并与可通过 Internet 访问的公共虚拟 IP \(VIP\) 相关联。内部侦听器使用内部负载均衡器，仅支持同一虚拟网络内的客户端。无论使用哪种负载均衡器类型，都必须启用“直接服务器返回”。
 
 如果可用性组跨多个 Azure 子网（例如，跨 Azure 区域的部署），则客户端连接字符串必须包含“**MultisubnetFailover=True**”。这会导致尝试与不同子网中的副本建立并行连接。有关设置侦听器的说明，请参阅
 
@@ -113,9 +112,9 @@ Azure 中的 DHCP 服务不符合 RFC 标准，可能会导致创建某些 WSFC 
 有关客户端连接的详细信息，请参阅：
 
 * [将连接字符串关键字用于 SQL Server 本机客户端](https://msdn.microsoft.com/zh-cn/library/ms130822.aspx)
-* [将客户端连接到数据库镜像会话 (SQL Server)](https://technet.microsoft.com/zh-cn/library/ms175484.aspx)
+* [将客户端连接到数据库镜像会话 \(SQL Server\)](https://technet.microsoft.com/zh-cn/library/ms175484.aspx)
 * [在混合 IT 环境中连接到可用性组侦听器](http://blogs.msdn.com/b/sqlalwayson/archive/2013/02/14/connecting-to-availability-group-listener-in-hybrid-it.aspx)
-* [可用性组侦听器、客户端连接和应用程序故障转移 (SQL Server)](https://technet.microsoft.com/zh-cn/library/hh213417.aspx)
+* [可用性组侦听器、客户端连接和应用程序故障转移 \(SQL Server\)](https://technet.microsoft.com/zh-cn/library/hh213417.aspx)
 * [将数据库镜像连接字符串用于可用性组](https://technet.microsoft.com/zh-cn/library/hh213417.aspx)
 
 ### 混合 IT 环境中的网络延迟
@@ -135,4 +134,4 @@ Azure 磁盘中的异地复制不支持将同一数据库的数据文件和日�
 * [在 Azure 中安装新的 Active Directory 林](/documentation/articles/active-directory-new-forest-virtual-machine/)
 * [在 Azure VM 中创建用于 Always On 可用性组的 WSFC 群集](http://gallery.technet.microsoft.com/scriptcenter/Create-WSFC-Cluster-for-7c207d3a)
 
-<!---HONumber=Mooncake_1212_2016-->
+<!---HONumber=Mooncake_0213_2017-->

@@ -15,7 +15,7 @@
     ms.tgt_pltfrm="vm-windows-sql-server"
     ms.workload="infrastructure-services"
     ms.date="11/28/2016"
-    wacn.date="01/20/2017"
+    wacn.date="02/20/2017"
     ms.author="MikeRayMSFT" />  
 
 
@@ -30,11 +30,11 @@
 
 本端到端教程介绍如何在 Azure Resource Manager 虚拟机上实现 SQL Server 可用性组。
 
-本教程中将创建以下元素：
+本教程将创建以下元素：
 
 * 一个包含两个子网（包括前端子网和后端子网）的虚拟网络
-* 可用性集中的两个域控制器，具有 Active Directory (AD) 域
-* 可用性集中的两个 SQL Server VM，其已部署到后端子网并加入 AD 域
+* 可用性集中具有 Active Directory \(AD\) 域的两个域控制器
+* 可用性集中已部署到后端子网并加入 AD 域的两个 SQL Server VM
 * 一个 3 节点 WSFC 群集，具有节点多数仲裁模型
 * 具有一个或多个 IP 地址的内部负载均衡器，用于支持一个或多个可用性组侦听器
 * 一个可用性组，具有可用性数据库的两个同步提交副本
@@ -54,7 +54,7 @@
 
 * 你已有一个 Azure 帐户。
 * 你已经知道如何使用 GUI 从虚拟机库设置 SQL Server VM。有关详细信息，请参阅[在 Azure 上预配 SQL Server 虚拟机](/documentation/articles/virtual-machines-windows-portal-sql-server-provision/)
-* 你已经深入了解可用性组。有关详细信息，请参阅 [AlwaysOn 可用性组 (SQL Server)](https://msdn.microsoft.com/zh-cn/library/hh510230.aspx)。
+* 你已经深入了解可用性组。有关详细信息，请参阅 [AlwaysOn 可用性组 \(SQL Server\)](https://msdn.microsoft.com/zh-cn/library/hh510230.aspx)。
 
 > [AZURE.NOTE]
 若想要搭配使用可用性组和 SharePoint，另请参阅[配置 SharePoint 2013 适用的 SQL Server 2012 AlwaysOn 可用性组](https://technet.microsoft.com/zh-cn/library/jj715261.aspx)。
@@ -230,7 +230,7 @@ Azure 将创建虚拟机。
    
     ![连接到虚拟机](./media/virtual-machines-windows-portal-sql-alwayson-availability-groups-manual/20-connectrdp.png)  
 
-2. 使用已配置的管理员帐户 (**\\DomainAdmin**) 和密码 (**Contoso!0000**) 登录。
+2. 使用已配置的管理员帐户 \(**\\DomainAdmin**\) 和密码 \(**Contoso!0000**\) 登录。
 3. 默认情况下，应显示“服务器管理器”仪表板。
 4. 单击仪表板上的“添加角色和功能”链接。
    
@@ -265,12 +265,12 @@ Azure 将创建虚拟机。
 15. 单击“安装”。**ad-primary-dc** 虚拟机自动重启。
 
 ### 配置第二个域控制器
-在主域控制器重新启动之后，可以配置第二个域控制器。此可选步骤有助于实现高可用性。若要完成此步骤，需要知道域控制器的专用 IP 地址。可以从 Azure 门户预览获取此信息。请按照以下步骤配置第二个域控制器。
+在主域控制器重新启动之后，可以配置第二个域控制器。此可选步骤适用于实现高可用性。若要完成此步骤，需要知道域控制器的专用 IP 地址。可以从 Azure 门户预览获取此信息。请按照以下步骤配置第二个域控制器。
 
 1. 登录到 **ad-primary-dc** 计算机。
 2. 打开远程桌面并通过 IP 地址连接到第二个域控制器。如果不知道第二个域控制器的 IP 地址，请转到 Azure 门户预览并查看分配给第二个域控制器的网络接口的地址。
 3. 将首选 DNS 服务器地址更改为域控制器的地址。
-4. 启动主域控制器 (**ad-primary-dc**) 的 RDP 文件，并使用配置的管理员帐户 (**BUILTIN\\DomainAdmin**) 和密码 (**Contoso!0000**) 登录到 VM。
+4. 启动主域控制器 \(**ad-primary-dc**\) 的 RDP 文件，并使用配置的管理员帐户 \(**BUILTIN\\DomainAdmin**\) 和密码 \(**Contoso!0000**\) 登录到 VM。
 5. 在主域控制器中，使用该 IP 地址启动连接到 **ad-secondary-dc** 的远程桌面。请使用相同的帐户和密码。
 6. 一旦登录，你应看到“服务器管理器”仪表板。单击左窗格中的“本地服务器”。
 7. 选择“由 DHCP 分配的启用 IPv6 的 IPv4 地址”链接。
@@ -279,7 +279,7 @@ Azure 将创建虚拟机。
     ![更改 VM 的首选 DNS 服务器](./media/virtual-machines-windows-portal-sql-alwayson-availability-groups-manual/IC784629.png)  
 
 9. 在命令栏中，单击“更改此连接的设置”（根据你的窗口大小，你可能需要单击双右箭头才能看到此命令）。
-10. 选择“Internet 协议版本 4 (TCP/IPv4)”，然后单击“属性”。
+10. 选择“Internet 协议版本 4 \(TCP/IPv4\)”，然后单击“属性”。
 11. 选择“使用以下 DNS 服务器地址”，并在“首选 DNS 服务器”中指定主域控制器的地址。
 12. 该地址是分配给 Azure 虚拟网络中 subnet-1 子网内的 VM 的地址，而该 VM 为 **ad-primary-dc**。若要验证 **ad-primary-dc** 的 IP 地址，请在命令提示符中使用 **nslookup ad-primary-dc**，如下所示。
     
@@ -299,14 +299,14 @@ Azure 将创建虚拟机。
 | **域控制器选项** |**DSRM 密码** = Contoso!0000<br/>**确认密码** = Contoso!0000 |
 
 ### 配置域帐户
-接下来，配置 Active Directory (AD) 帐户以供稍后使用。
+接下来，配置 Active Directory \(AD\) 帐户以供稍后使用。
 
 1. 重新登录到 **ad-primary-dc** 计算机。
 2. 在“服务器管理器”中，选择“工具”，然后单击“Active Directory 管理中心”。
    
     ![Active Directory 管理中心](./media/virtual-machines-windows-portal-sql-alwayson-availability-groups-manual/IC784626.png)  
 
-3. 在“Active Directory 管理中心”的左窗格中，选择“corp (本地)”。
+3. 在“Active Directory 管理中心”的左窗格中，选择“corp \(本地\)”。
 4. 在右侧的“任务”窗格中，选择“新建”，然后单击“用户”。使用以下设置：
    
     | 设置 | 值 |
@@ -318,8 +318,8 @@ Azure 将创建虚拟机。
     | **其他密码选项** |选定 |
     | **密码永不过期** |已选中 |
 5. 单击“确定”以创建 **Install** 用户。此帐户将用于配置故障转移群集和可用性组。
-6. 使用相同的步骤创建两个其他用户：**CORP\\SQLSvc1** 和 **CORP\\SQLSvc2**。SQL Server 服务使用这些帐户。接下来，要赋予 **CORP\\Install** 所需权限来配置 Windows Server 故障转移群集 (WSFC)。
-7. 在“Active Directory 管理中心”的左窗格中，选择“corp (本地)”。然后，在右侧的“任务”窗格中，单击“属性”。
+6. 使用相同的步骤创建两个其他用户：**CORP\\SQLSvc1** 和 **CORP\\SQLSvc2**。SQL Server 服务使用这些帐户。接下来，要赋予 **CORP\\Install** 所需权限来配置 Windows Server 故障转移群集 \(WSFC\)。
+7. 在“Active Directory 管理中心”的左窗格中，选择“corp \(本地\)”。然后，在右侧的“任务”窗格中，单击“属性”。
    
     ![CORP 用户属性](./media/virtual-machines-windows-portal-sql-alwayson-availability-groups-manual/IC784627.png)  
 
@@ -338,12 +338,12 @@ Azure 将创建虚拟机。
 ### 创建并配置 SQL Server VM
 接下来，创建三个 VM，包括两个 SQL Server VM 和一个 WSFC 群集节点。若要创建各个 VM，请返回到 **SQL-HA-RG** 资源组，单击“添加”，搜索相应的库项，然后依次选择“虚拟机”和“从库中”。然后，使用下表中的模板来帮助创建 VM。
 
-| 页面 | VM1 | VM2 | VM3 |
+| Page | VM1 | VM2 | VM3 |
 | --- | --- | --- | --- |
 | 选择相应的库项 |**Windows Server 2012 R2 Datacenter** |**Windows Server 2012 R2 上的 SQL Server 2014 SP1 Enterprise** |**Windows Server 2012 R2 上的 SQL Server 2014 SP1 Enterprise** |
 | 虚拟机配置**基础知识** |**名称** = cluster-fsw<br/>**用户名** = DomainAdmin<br/>**密码** = Contoso!0000<br/>**订阅** = 你的订阅<br/>**资源组** = SQL-HA-RG<br/>**位置** = 你的 Azure 位置 |**名称** = sqlserver-0<br/>**用户名** = DomainAdmin<br/>**密码** = Contoso!0000<br/>**订阅** = 你的订阅<br/>**资源组** = SQL-HA-RG<br/>**位置** = 你的 Azure 位置 |**名称** = sqlserver-1<br/>**用户名** = DomainAdmin<br/>**密码** = Contoso!0000<br/>**订阅** = 你的订阅<br/>**资源组** = SQL-HA-RG<br/>**位置** = 你的 Azure 位置 |
 | 虚拟机配置**大小** |DS1（单核，3.5 GB 内存） |**大小** = DS 2（双核，7 GB 内存） |**大小** = DS 2（双核，7 GB 内存） |
-| 虚拟机配置**设置** |**存储** = 高级 (SSD)<br/>**网络子网** = autoHAVNET<br/>**存储帐户** = 使用自动生成的存储帐户<br/>**子网** = subnet-2(10.1.1.0/24)<br/>**公共 IP 地址** = 无<br/>**网络安全组** = 无<br/>**监视诊断** = 已启用<br/>**诊断存储帐户** =使用自动生成的存储帐户<br/>**可用性集** = sqlAvailabilitySet<br/> |**存储** = 高级 (SSD)<br/>**网络子网** = autoHAVNET<br/>**存储帐户** = 使用自动生成的存储帐户<br/>**子网** = subnet-2(10.1.1.0/24)<br/>**公共 IP 地址** = 无<br/>**网络安全组** = 无<br/>**监视诊断** = 已启用<br/>**诊断存储帐户** =使用自动生成的存储帐户<br/>**可用性集** = sqlAvailabilitySet<br/> |**存储** = 高级 (SSD)<br/>**网络子网** = autoHAVNET<br/>**存储帐户** = 使用自动生成的存储帐户<br/>**子网** = subnet-2(10.1.1.0/24)<br/>**公共 IP 地址** = 无<br/>**网络安全组** = 无<br/>**监视诊断** = 已启用<br/>**诊断存储帐户** =使用自动生成的存储帐户<br/>**可用性集** = sqlAvailabilitySet<br/> |
+| 虚拟机配置**设置** |**存储** = 高级 \(SSD\)<br/>**网络子网** = autoHAVNET<br/>**存储帐户** = 使用自动生成的存储帐户<br/>**子网** = subnet-2\(10.1.1.0/24\)<br/>**公共 IP 地址** = 无<br/>**网络安全组** = 无<br/>**监视诊断** = 已启用<br/>**诊断存储帐户** =使用自动生成的存储帐户<br/>**可用性集** = sqlAvailabilitySet<br/> |**存储** = 高级 \(SSD\)<br/>**网络子网** = autoHAVNET<br/>**存储帐户** = 使用自动生成的存储帐户<br/>**子网** = subnet-2\(10.1.1.0/24\)<br/>**公共 IP 地址** = 无<br/>**网络安全组** = 无<br/>**监视诊断** = 已启用<br/>**诊断存储帐户** =使用自动生成的存储帐户<br/>**可用性集** = sqlAvailabilitySet<br/> |**存储** = 高级 \(SSD\)<br/>**网络子网** = autoHAVNET<br/>**存储帐户** = 使用自动生成的存储帐户<br/>**子网** = subnet-2\(10.1.1.0/24\)<br/>**公共 IP 地址** = 无<br/>**网络安全组** = 无<br/>**监视诊断** = 已启用<br/>**诊断存储帐户** =使用自动生成的存储帐户<br/>**可用性集** = sqlAvailabilitySet<br/> |
 | 虚拟机配置 **SQL Server 设置** |不适用 |**SQL 连接** = 专用（在虚拟网络内）<br/>**端口** = 1433<br/>**SQL 身份验证** = 禁用<br/>**存储配置** = 常规<br/>**自动修补** = 星期日 2:00<br/>**自动备份** = 已禁用</br>**Azure 密钥保管库集成** = 已禁用 |**SQL 连接** = 专用（在虚拟网络内）<br/>**端口** = 1433<br/>**SQL 身份验证** = 禁用<br/>**存储配置** = 常规<br/>**自动修补** = 星期日 2:00<br/>**自动备份** = 已禁用</br>**Azure 密钥保管库集成** = 已禁用 |
 
 <br/>  
@@ -371,7 +371,7 @@ Azure 将创建虚拟机。
 使用这些地址来配置每个 VM 的 DNS 服务。请针对 3 个 VM 分别执行以下步骤。
 
 1. 首先，更改每个成员服务器的首选 DNS 服务器地址。
-2. 启动主域控制器 (**ad-primary-dc**) 的 RDP 文件，并使用配置的管理员帐户 (**BUILTIN\\DomainAdmin**) 和密码 (**Contoso!0000**) 登录到 VM。
+2. 启动主域控制器 \(**ad-primary-dc**\) 的 RDP 文件，并使用配置的管理员帐户 \(**BUILTIN\\DomainAdmin**\) 和密码 \(**Contoso!0000**\) 登录到 VM。
 3. 在主域控制器中，使用该 IP 地址启动连接到 **sqlserver-0** 的远程桌面。请使用相同的帐户和密码。
 4. 一旦登录，你应看到“服务器管理器”仪表板。单击左窗格中的“本地服务器”。
 5. 选择“由 DHCP 分配的启用 IPv6 的 IPv4 地址”链接。
@@ -380,7 +380,7 @@ Azure 将创建虚拟机。
     ![更改 VM 的首选 DNS 服务器](./media/virtual-machines-windows-portal-sql-alwayson-availability-groups-manual/IC784629.png)  
 
 7. 在命令栏中，单击“更改此连接的设置”（根据你的窗口大小，你可能需要单击双右箭头才能看到此命令）。
-8. 选择“Internet 协议版本 4 (TCP/IPv4)”，然后单击“属性”。
+8. 选择“Internet 协议版本 4 \(TCP/IPv4\)”，然后单击“属性”。
 9. 选择“使用以下 DNS 服务器地址”，并在“首选 DNS 服务器”中指定主域控制器的地址。
 10. 该地址是分配给 Azure 虚拟网络中 subnet-1 子网内的 VM 的地址，而该 VM 为 **ad-primary-dc**。若要验证 **ad-primary-dc** 的 IP 地址，请在命令提示符中使用 **nslookup ad-primary-dc**，如下所示。
     
@@ -395,7 +395,7 @@ Azure 将创建虚拟机。
 12. 再次在“本地服务器”窗口中，单击“工作组”链接。
 13. 在“计算机名”部分，单击“更改”。
 14. 选中“域”复选框并在文本框中键入 **corp.contoso.com**。单击“确定”。
-15. 在“Windows 安全性”弹出对话框中，指定默认域管理员帐户 (**CORP\\DomainAdmin**) 和密码 (**Contoso!0000**) 的凭据。
+15. 在“Windows 安全性”弹出对话框中，指定默认域管理员帐户 \(**CORP\\DomainAdmin**\) 和密码 \(**Contoso!0000**\) 的凭据。
 16. 在看到“欢迎使用 corp.contoso.com 域”消息时，请单击“确定”。
 17. 单击“关闭”，然后单击弹出对话框中的“立即重新启动”。
 18. 针对文件共享见证服务器和每台 SQL Server 重复执行这些步骤。
@@ -430,18 +430,18 @@ Azure 将创建虚拟机。
 这些 SQL Server VM 现在已设置并正在运行，但它们是使用默认选项与 SQL Server 一同安装的。
 
 ### 创建 WSFC 群集
-在本部分中，将创建托管可用性组的 WSFC 群集。至此，应已在 WSFC 群集中针对三个 VM 分别完成以下操作：
+本部分创建用于托管可用性组的 WSFC 群集。至此，应已在 WSFC 群集中针对三个 VM 分别完成以下操作：
 
-* 在 Azure 中进行了完全设置
+* 在 Azure 中进行了完全预配
 * 已将 VM 加入到域中
 * 已将 **CORP\\Install** 添加到本地管理员组
 * 添加了故障转移群集功能
 
-必须在每个 VM 上执行所有这些操作，才能将这些 VM 加入到 WSFC 群集中。
+必须在每个 VM 上执行所有这些操作，才能将该 VM 加入到 WSFC 群集中。
 
 另请注意，Azure 虚拟网络的行为与本地网络不同。你需要按以下顺序来创建群集：
 
-1. 在一个节点 (**sqlserver-0**) 上创建单节点群集。
+1. 在一个节点 \(**sqlserver-0**\) 上创建单节点群集。
 2. 将群集 IP 地址修改为 **sqlsubnet** 中未使用的 IP 地址。
 3. 将群集名称联机。
 4. 添加其他节点（**sqlserver-1** 和 **cluster-fsw**）。
@@ -456,7 +456,7 @@ Azure 将创建虚拟机。
 
 4. 在“创建群集向导”中，逐页完成以下设置来创建一个单节点群集：
    
-    | 页面 | 设置 |
+    | Page | 设置 |
     | --- | --- |
     | 开始之前 |使用默认值 |
     | 选择服务器 |在“输入服务器名称”中键入 **sqlserver-0**，然后单击“添加” |
@@ -509,7 +509,7 @@ Azure 将创建虚拟机。
 5. 在“服务器角色”页上，选择“sysadmin”。然后，单击“确定”。创建登录名后，可通过在“对象资源管理器”中展开“登录名”来查看该登录名。
 
 ### 打开防火墙，以便远程访问 SQL Server 和每个 SQL Server 上的探测端口
-此解决方案需要每个 SQL Server 有两个防火墙规则。第一个规则提供对 SQL Server 的入站访问，第二个规则提供对负载均衡器和侦听器的入站访问。
+此解决方案需要每个 SQL Server 有两个防火墙规则。第一个规则提供 SQL Server 的入站访问，第二个规则提供负载均衡器和侦听器的入站访问。
 
 1. 接下来，为 SQL Server 创建防火墙规则。从“开始”屏幕启动“高级安全 Windows 防火墙”。
 2. 在左窗格中，选择“入站规则”。在右窗格上，单击“新建规则”。
@@ -517,7 +517,7 @@ Azure 将创建虚拟机。
 4. 在“程序”页上，选择“此程序路径”，然后在文本框中键入 **%ProgramFiles%\\Microsoft SQL Server\\MSSQL12.MSSQLSERVER\\MSSQL\\Binn\\sqlservr.exe**（如果你遵循这些指示但使用的是 SQL Server 2012，SQL Server 目录则为 **MSSQL11.MSSQLSERVER**）。然后，单击“下一步”。
 5. 在“操作”页面中，保持选中“允许连接”，然后单击“下一步”。
 6. 在“配置文件”页面中，接受默认设置并单击“下一步”。
-7. 在“名称”页上，在“名称”文本框中指定一个规则名称，如 **SQL Server (Program Rule)**，然后单击“完成”。
+7. 在“名称”页上，在“名称”文本框中指定一个规则名称，如 **SQL Server \(Program Rule\)**，然后单击“完成”。
 8. 为探测端口创建额外的输入防火墙规则。在本教程中，此规则是到 TCP 端口 59999 的入站规则。将规则命名为 **SQL Server 侦听器**。
 
 在两个 SQL Server 上完成所有步骤。
@@ -526,7 +526,7 @@ Azure 将创建虚拟机。
 在两个 SQL Server 上执行这些步骤。
 
 1. 接下来，启用 **AlwaysOn 可用性组**功能。从“开始”菜单，启动 **SQL Server 配置管理器**。
-2. 在浏览器树中，单击“SQL Server 服务”，右键单击“SQL Server (MSSQLSERVER)”服务，然后单击“属性”。
+2. 在浏览器树中，单击“SQL Server 服务”，右键单击“SQL Server \(MSSQLSERVER\)”服务，然后单击“属性”。
 3. 单击“AlwaysOn 高可用性组”选项卡，选择“启用 AlwaysOn 可用性组”（如下所示），然后单击“应用”。在弹出对话框中，单击“确定”，但不要关闭属性窗口。在更改服务帐户后，将重新启动 SQL Server 服务。
    
     ![启用 AlwaysOn 可用性组](./media/virtual-machines-windows-portal-sql-alwayson-availability-groups-manual/IC665520.gif)  
@@ -542,15 +542,15 @@ Azure 将创建虚拟机。
 ### 创建可用性组
 此时，你已做好配置可用性组的准备。下面概括了将要执行的操作：
 
-* 在 **sqlserver-0** 上创建新数据库 (**MyDB1**)
+* 在 **sqlserver-0** 上创建新数据库 \(**MyDB1**\)
 * 获取数据库的完整备份和事务日志备份
 * 使用 **NORECOVERY** 选项将完整备份和日志备份还原到 **sqlserver-1**
-* 通过同步提交、自动故障转移和可读辅助副本来创建可用性组 (**AG1**)
+* 通过同步提交、自动故障转移和可读辅助副本来创建可用性组 \(**AG1**\)
 
 ### 在 sqlserver-0 上创建 MyDB1 数据库：
 1. 如果尚未退出 **sqlserver-0** 和 **sqlserver-1** 的远程桌面会话，请现在注销。
 2. 启动 **sqlserver-0** 的 RDP 文件，然后以 **CORP\\Install** 身份登录。
-3. 在“文件资源管理器”的 *C:** 下，创建名为 **backup** 的目录。你将使用此目录来备份并还原数据库。
+3. 在“文件资源管理器”的 *C:\** 下，创建名为 **backup** 的目录。你将使用此目录来备份并还原数据库。
 4. 右键单击新目录，指向“共享”，然后单击“特定用户”，如下所示。
    
     ![创建备份文件夹](./media/virtual-machines-windows-portal-sql-alwayson-availability-groups-manual/IC665521.gif)  
@@ -567,7 +567,7 @@ Azure 将创建虚拟机。
 1. 接下来，对数据库进行完整备份。在“对象资源管理器”中，展开“数据库”，右键单击“MyDB1”，指向“任务”，然后单击“备份”。
 2. 在“源”部分中，将“备份类型”设置为“完整”。在“目标”部分中，单击“删除”以删除备份文件的默认文件路径。
 3. 在“目标”部分中，单击“添加”。
-4. 在“文件名”文本框中，键入 **\\\sqlserver-0\\backup\\MyDB1.bak**。单击“确定”，然后再次单击“确定”以备份数据库。备份操作完成后，再次单击“确定”关闭对话框。
+4. 在“文件名”文本框中，键入 **\\\\sqlserver-0\\backup\\MyDB1.bak**。单击“确定”，然后再次单击“确定”以备份数据库。备份操作完成后，再次单击“确定”关闭对话框。
 5. 接下来，对数据库进行事务日志备份。在“对象资源管理器”中，展开“数据库”，右键单击“MyDB1”，指向“任务”，然后单击“备份”。
 6. 在“备份类型”中，选择“事务日志”。保持“目标”文件路径设置为此前指定的文件路径，然后单击“确定”。备份操作完成后，再次单击“确定”。
 7. 接下来，在 **sqlserver-1** 上还原完整备份和事务日志备份。启动 **sqlserver-1** 的 RDP 文件，然后以 **CORP\\Install** 身份登录。继续打开 **sqlserver-0** 的远程桌面会话。
@@ -575,7 +575,7 @@ Azure 将创建虚拟机。
 9. 在“对象资源管理器”中，右键单击“数据库”，然后单击“还原数据库”。
 10. 在“源”部分中，选择“设备”，然后单击“...”按钮。
 11. 在“选择备份设备”中，单击“添加”。
-12. 在“备份文件位置”中，键入 **\\\sqlserver-0\\backup**，单击“刷新”，再选择“MyDB1.bak”并单击“确定”，然后再次单击“确定”。现在，你应在“要还原的备份集”窗格中看到完整备份和日志备份。
+12. 在“备份文件位置”中，键入 **\\\\sqlserver-0\\backup**，单击“刷新”，再选择“MyDB1.bak”并单击“确定”，然后再次单击“确定”。现在，你应在“要还原的备份集”窗格中看到完整备份和日志备份。
 13. 转到“选项”页，在“恢复状态”中选择“RESTORE WITH NORECOVERY”，然后单击“确定”还原数据库。还原操作完成后，单击“确定”。
 
 ### 创建可用性组：
@@ -610,7 +610,7 @@ Azure 将创建虚拟机。
    
     ![新建 AG 向导，选择初始数据同步](./media/virtual-machines-windows-portal-sql-alwayson-availability-groups-manual/IC665529.png)  
 
-9. 在“验证”页中，单击“下一步”。此页应与以下页类似。由于你尚未配置可用性组侦听器，因此会出现一个侦听器配置警告。你可以忽略此警告，因为本教程不会配置侦听器。本教程稍后将帮助你创建侦听器。
+9. 在“验证”页中，单击“下一步”。此页应与以下页类似。因为你尚未配置可用性组侦听器，会出现一个侦听器配置警告。你可以忽略此警告，因为本教程不会配置侦听器。本教程稍后将帮助你创建侦听器。
    
     ![新建 AG 向导，验证](./media/virtual-machines-windows-portal-sql-alwayson-availability-groups-manual/IC665530.gif)  
 
@@ -618,7 +618,7 @@ Azure 将创建虚拟机。
     
      ![新建 AG 向导，结果](./media/virtual-machines-windows-portal-sql-alwayson-availability-groups-manual/IC665531.png)  
 
-11. 在“对象资源管理器”中，展开“AlwaysOn 高可用性”，然后展开“可用性组”。此时，你应在此容器中看到新的可用性组。右键单击“AG1 (主)”，然后单击“显示仪表板”。
+11. 在“对象资源管理器”中，展开“AlwaysOn 高可用性”，然后展开“可用性组”。此时，你应在此容器中看到新的可用性组。右键单击“AG1 \(主\)”，然后单击“显示仪表板”。
     
      ![显示 AG 仪表板](./media/virtual-machines-windows-portal-sql-alwayson-availability-groups-manual/IC665532.png)  
 
@@ -637,11 +637,11 @@ Azure 将创建虚拟机。
     > 
     > 
 
-## 配置内部负载均衡器
+## <a name="configure-internal-load-balancer"></a> 配置内部负载均衡器
 需要配置负载均衡器才可直接连接到可用性组。负载均衡器将客户端流量定向到侦听器 IP 地址和探测端口上绑定的 VM。本教程使用内部负载均衡（即 ILB）。ILB 允许同一虚拟网络中的流量连接到 SQL Server。若应用程序需要通过 Internet 连接到 SQL Server，则其需要面向 Internet 的负载均衡器或外部负载均衡器。有关详细信息，请参阅 [Azure Load Balancer 概述](/documentation/articles/load-balancer-overview/)。
 
 > [AZURE.NOTE]
-本教程说明如何创建单个侦听器，该侦听器只使用一个 ILB IP 地址。若要创建使用一个或多个 IP 地址的一个或多个侦听器，请参阅[创建可用性组侦听器和负载均衡器 | Azure](/documentation/articles/virtual-machines-windows-portal-sql-ps-alwayson-int-listener/)。
+本教程说明如何创建单个侦听器，该侦听器只使用一个 ILB IP 地址。若要创建使用一个或多个 IP 地址的一个或多个侦听器，请参阅[创建可用性组侦听器和负载均衡器 \| Azure](/documentation/articles/virtual-machines-windows-portal-sql-ps-alwayson-int-listener/)。
 > 
 > 
 
@@ -679,14 +679,14 @@ Azure 将创建虚拟机。
 | **探测使用方** |SQLAlwaysOnEndPointListener |
 | **负载均衡规则**名称 |SQLAlwaysOnEndPointListener |
 | **负载均衡规则协议** |TCP |
-| **负载均衡规则端口** |1433 * |
+| **负载均衡规则端口** |1433 \* |
 | **负载均衡规则后端端口** |1433 |
 | **负载均衡规则探测** |SQLAlwaysOnEndPointProbe |
 | **负载均衡规则会话持久性** |无 |
 | **负载均衡规则空闲超时** |4 |
 | **负载均衡规则浮动 IP（直接服务器返回）** |已启用 |
 
-> * 1433 为默认 SQL Server 端口。用于默认实例的前端端口。如果需要多个可用性组，则需为每个可用性组创建额外的 IP 地址。每个可用性组均需自备前端端口。请参阅[创建可用性组侦听器和负载均衡器 | Azure](/documentation/articles/virtual-machines-windows-portal-sql-ps-alwayson-int-listener/)。
+> * 1433 为默认 SQL Server 端口。用于默认实例的前端端口。如果需要多个可用性组，则需为每个可用性组创建额外的 IP 地址。每个可用性组均需自备前端端口。请参阅[创建可用性组侦听器和负载均衡器 \| Azure](/documentation/articles/virtual-machines-windows-portal-sql-ps-alwayson-int-listener/)。
 > 
 > [AZURE.NOTE]
 必须在创建时于负载均衡规则中启用直接服务器返回。
@@ -737,5 +737,4 @@ Azure 将创建虚拟机。
 ## 后续步骤
 有关在 Azure 中使用 SQL Server 的其他信息，请参阅 [Azure 虚拟机上的 SQL Server](/documentation/articles/virtual-machines-windows-sql-server-iaas-overview/)。
 
-<!---HONumber=Mooncake_0116_2017-->
-<!--Update_Description: update meta properties & wording update-->
+<!---HONumber=Mooncake_0213_2017-->

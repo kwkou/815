@@ -131,7 +131,7 @@ NSG 包含两种类型的规则：入站规则和出站规则。在每组中，�
 
 不支持 ![否](./media/virtual-network-nsg-overview/red.png)。
 
-## <a name="Planning"></a> 规划
+## <a name="Planning" id="planning"></a> 规划
 实施 NSG 之前，需要回答以下问题：
 
 1. 你想要筛选哪些类型的资源的进出流量（同一 VM、多个 VM 或其他资源（例如连接到同一子网的云服务或应用程序服务环境）中的 NIC，或者连接到不同子网的资源之间的 NIC）？

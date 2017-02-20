@@ -14,8 +14,8 @@
     ms.topic="article"
     ms.tgt_pltfrm="vm-linux"
     ms.workload="infrastructure-services"
-    ms.date="08/27/2016"
-    wacn.date="01/13/2017"
+    ms.date="01/09/2017"
+    wacn.date="02/20/2017"
     ms.author="kyliel" />  
 
 
@@ -65,6 +65,8 @@ Azure 虚拟机代理负责 FreeBSD 虚拟机 和 Azure 结构控制器之间的
 * 自动删除 shell 和 Python 脚本中的 BOM。
 * 保护 CommandToExecute 中的敏感数据。
 
+[AZURE.NOTE]FreeBSD VM 目前仅支持 CustomScript 1.x 版。
+
 ## 身份验证：用户名、密码和 SSH 密钥
 使用 Azure 门户预览创建 FreeBSD 虚拟机时，必须提供用户名、密码或 SSH 公钥。在 Azure 上部署 FreeBSD 虚拟机时，用户名必须与已经存在于虚拟机中的系统帐户 \(UID \<100\) 的名称（例如“root”）相符。目前仅支持 RSA SSH 密钥。多行 SSH 密钥必须以 `---- BEGIN SSH2 PUBLIC KEY ----` 开头，以 `---- END SSH2 PUBLIC KEY ----` 结尾。
 
@@ -84,6 +86,4 @@ Azure 虚拟机代理负责 FreeBSD 虚拟机 和 Azure 结构控制器之间的
 * 转到 [Azure 应用商店](https://portal.azure.cn/#create/Microsoft.FreeBSD103-ARM)创建 FreeBSD 虚拟机。
 * 若要将自己的 FreeBSD 上载到 Azure，请参阅[创建 FreeBSD VHD 并将其上载到 Azure](/documentation/articles/virtual-machines-linux-classic-freebsd-create-upload-vhd/)。
 
-<!---HONumber=Mooncake_0109_2017-->
-
-<!--Update_Description: change to ARM mode, add content about FreeBSD 11.0, and add a known issue as Kylie suggested-->
+<!---HONumber=Mooncake_0213_2017-->
