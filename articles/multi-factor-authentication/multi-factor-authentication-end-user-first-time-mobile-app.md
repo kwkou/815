@@ -15,7 +15,7 @@
 	ms.topic="article"
 	ms.date="08/30/2016"
 	ms.author="billmath"
-   	wacn.date="01/19/2017"/>  
+	wacn.date="02/17/2017"/>  
 
 
 # 在 Azure 多重身份验证中使用移动应用作为联系方法
@@ -64,13 +64,7 @@ Microsoft Authenticator 应用可用于 [Windows Phone](http://go.microsoft.com/
 
 8. 完成 PIN 条目后，选择“关闭”。此时，验证应已成功。
 9. 建议输入手机号码，以免无法访问移动应用。通过下拉列表指定国家/地区，然后在国家/地区名称旁边的框中输入手机号码。选择“下一步”。
-10. 此时，已设置联系方法。现在可以为非浏览器应用（例如，Outlook 2010 或更低版本）设置应用密码。如果不使用这些应用，请选择“完成”。否则，继续执行下一步。
-
-	![用于创建应用密码的屏幕](./media/multi-factor-authentication-end-user-first-time-mobile-app/step4.png)  
-
-
-11. 如果正在使用非浏览器应用，请复制提供的应用密码，然后将该密码粘贴到这些应用。有关在单个应用（例如 Outlook 和 Lync）上执行的步骤，请参阅“如何将电子邮件中的密码更改为应用密码”和“如何将应用程序中的密码更改为应用密码”。
-12. 选择“完成”。
+10. 选择“完成”。
 
 ## 手动添加帐户 <a name="add-an-account-manually"></a>
 如果要手动添加帐户，请执行以下操作：
