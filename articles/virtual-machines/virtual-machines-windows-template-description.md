@@ -168,6 +168,8 @@
 - PowerShell - [Get-AzureRmResourceProvider](https://docs.microsoft.com/powershell/resourcemanager/Azurerm.Resources/v3.1.0/Get-AzureRmResourceProvider?redirectedfrom=msdn)
 - Azure CLI 2.0（预览版）- [az provider show](https://docs.microsoft.com/cli/azure/provider#show)
 
+[AZURE.INCLUDE [azure-cli-2-azurechinacloud-environment-parameter](../../includes/azure-cli-2-azurechinacloud-environment-parameter.md)]
+
 ## 参数和变量
 
 使用[参数](/documentation/articles/resource-group-authoring-templates/)可在运行模板时轻松指定模板值。本示例使用了以下 parameters 节：

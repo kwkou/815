@@ -9,7 +9,7 @@
     tags="azure-resource-management" />
 <tags
     ms.assetid="95a89072-0edf-49b5-88ed-584891c0e066"
-    ms.service="virtual-machines-sql"
+    ms.service="virtual-machines-windows"
     ms.devlang="na"
     ms.topic="article"
     ms.tgt_pltfrm="vm-windows-sql-server"

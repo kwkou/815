@@ -33,7 +33,7 @@ Azure 具有用于创建和处理资源的两个不同的部署模型：[Azure R
 * 如何准备适用于 Tomcat7 的虚拟机。
 * 如何安装 Tomcat7。
 
-本文假设读者已拥有 Azure 订阅。如果没有，可在 [Azure 网站](https://azure.microsoft.com/)上注册一个免费试用订阅。如果已有 MSDN 订阅，请参阅 [Microsoft Azure 特价：MSDN、MPN 和 BizSpark 优惠](https://azure.microsoft.com/pricing/member-offers/msdn-benefits/?c=14-39)。若要了解有关 Azure 的详细信息，请参阅[什么是 Azure？](https://azure.microsoft.com/overview/what-is-azure/)。
+本文假设读者已拥有 Azure 订阅。如果没有，可在 [Azure 网站](https://www.azure.cn/)上注册一个免费试用订阅。
 
 本文假设读者具备 Tomcat 和 Linux 的基本实践知识。
 
@@ -50,7 +50,7 @@ SSH 是面向系统管理员的重要工具。但是，我们并不建议基于�
 
 按照下列步骤进行操作可生成 SSH 身份验证密钥。
 
-1. 从以下位置下载并安装 PuTTYgen：[http://www.chiark.greenend.org.uk/\~sgtatham/putty/download.html](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html)
+1. 从以下位置下载并安装 PuTTYgen：[http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html)
 2. 运行 Puttygen.exe。
 3. 单击“生成”以生成密钥。在此过程中，可以通过将鼠标放在窗口中的空白区域上来增加随机性。
 ![显示“生成新密钥”按钮的 PuTTY 密钥生成器屏幕截图][1]

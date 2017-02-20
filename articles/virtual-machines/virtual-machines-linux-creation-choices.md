@@ -29,6 +29,8 @@
 - Azure CLI 1.0 - 用于经典部署模型和资源管理部署模型的 CLI
 - [Azure CLI 2.0（预览版）](/documentation/articles/xplat-cli-install/)：用于资源管理部署模型的下一代 CLI
 
+[AZURE.INCLUDE [azure-cli-2-azurechinacloud-environment-parameter](../../includes/azure-cli-2-azurechinacloud-environment-parameter.md)]
+
 Azure CLI 2.0（预览版）可通过 npm 包、提供发行版的程序包或 Docker 容器跨平台使用。确保使用 **az login** 登录。
 
 以下教程提供了有关使用 Azure CLI 2.0（预览版）的示例。阅读每篇文章，详细了解所示命令：

@@ -92,6 +92,8 @@ SSHD 配置本身可能有误或服务遇到错误。你可以重置 SSHD 以确
         --user-name myUsername --ssh-key-file ~/.ssh/id_rsa.pub
 
 ## <a name="use-the-azure-cli-20-preview"></a> 使用 Azure CLI 2.0（预览版）
+[AZURE.INCLUDE [azure-cli-2-azurechinacloud-environment-parameter](../../includes/azure-cli-2-azurechinacloud-environment-parameter.md)]
+
 安装最新的 [Azure CLI 2.0（预览版）](https://docs.microsoft.com/cli/azure/install-az-cli2)并使用 [az login](https://docs.microsoft.com/cli/azure/#login) 登录到 Azure 帐户（如果尚未这样做）。
 
 如果创建并上载了自定义 Linux 磁盘映像，请确保已安装 [Azure Linux 代理](/documentation/articles/virtual-machines-linux-agent-user-guide/) 2.0.5 或更高版本。在使用库映像创建的 VM 上，系统已自动安装并配置了此访问扩展。

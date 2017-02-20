@@ -32,6 +32,7 @@
 
 还需要安装最新的 [Azure CLI 1.0](/documentation/articles/xplat-cli-install/) 或 [Azure CLI 2.0（预览版）](https://docs.microsoft.com/cli/azure/install-az-cli2)并登录到[有效的 Azure 帐户](/pricing/1rmb-trial/)。
 
+[AZURE.INCLUDE [azure-cli-2-azurechinacloud-environment-parameter](../../includes/azure-cli-2-azurechinacloud-environment-parameter.md)]
 
 ## 快速命令
 如果需要快速完成任务，以下部分详细说明了在 VM 上安装和配置远程桌面所需的基本命令。本文档的余下部分（[从此处开始](#install-graphical-environment-on-linux-vm)）提供了每个步骤的更详细信息和应用背景。
