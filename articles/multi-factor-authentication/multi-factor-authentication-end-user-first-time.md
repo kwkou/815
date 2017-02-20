@@ -1,5 +1,5 @@
 <properties
-    pageTitle="为工作或学校帐户设置双重验证"
+    pageTitle="为工作或学校帐户设置双重验证 | Azure"
     description="公司配置 Azure 多重身份验证时，会提示你注册双重验证。了解如何进行设置。"
     services="multi-factor-authentication"
     keywords="如何使用 azure 目录, 云中的 active directory, active directory 教程"
@@ -7,6 +7,7 @@
     author="kgremban"
     manager="femila"
     editor="pblachar" />
+    
 <tags
     ms.assetid="46f83a6a-dbdd-4375-8dc4-e7ea77c16357"
     ms.service="multi-factor-authentication"
@@ -14,8 +15,8 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="11/23/2016"
-    wacn.date="02/17/2017"
+    ms.date="12/15/2016"
+    wacn.date="02/20/2017"
     ms.author="kgremban" />  
 
 
@@ -97,6 +98,7 @@
 
 ## 后续步骤
 - 更改首选选项并[管理双重验证的设置](/documentation/articles/multi-factor-authentication-end-user-manage-settings/)
-- 查看[Microsoft Authenticator 应用](/documentation/articles/multi-factor-authentication-microsoft-authenticator/)文章，了解快速、安全的身份验证（即便没有手机网络服务）。
+- 查看[Microsoft Authenticator 应用](/documentation/articles/microsoft-authenticator-app-how-to/)文章，了解快速、安全的身份验证（即便没有手机网络服务）。
 
-<!---HONumber=Mooncake_0103_2017-->
+<!---HONumber=Mooncake_0213_2017-->
+<!--Update_Description: wording update-->

@@ -1,27 +1,25 @@
 <properties
-	pageTitle="双重验证故障排除 | Azure"
-	description="本文档向用户提供有关如何解决 Azure 多重身份验证问题的信息。"
-	services="multi-factor-authentication"
-	keywords = "multifactor authentication 客户端, 身份验证问题, 相关性 ID"
-	documentationCenter=""
-	authors="kgremban"
-	manager="femila"
-	editor="yossib"/>  
-
-
+    pageTitle="双重验证故障排除 | Azure"
+    description="本文档向用户提供有关如何解决 Azure 多重身份验证问题的信息。"
+    services="multi-factor-authentication"
+    keywords="multifactor authentication 客户端, 身份验证问题, 相关性 ID"
+    documentationcenter=""
+    author="kgremban"
+    manager="femila"
+    editor="yossib" />
 <tags
-	ms.service="multi-factor-authentication"
-	ms.workload="identity"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="10/10/2016"
-	wacn.date="02/17/2017"
-	ms.author="kgremban"/>  
+    ms.assetid="8f3aef42-7f66-4656-a7cd-d25a971cb9eb"
+    ms.service="multi-factor-authentication"
+    ms.workload="identity"
+    ms.tgt_pltfrm="na"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.date="12/15/2016"
+    wacn.date="02/20/2017"
+    ms.author="kgremban" />  
 
 
 # 执行双重验证时遇到问题
-
 本文讨论了执行双重验证时可能会遇到的一些问题。如果此处没有包含你遇到的问题，请在注释部分中提供详细的反馈以便我们可以改进。
 
 ## 我的手机丢失或被盗
@@ -29,7 +27,6 @@
 如果你的手机已丢失或被盗，建议你你可以要求管理员清除你的设置。
 
 ### 使用备用电话号码
-
 如果设置了多个验证选项，包括辅助电话号码或另一设备上的验证器应用，则可以使用其中之一进行登录。
 
 若要使用备用电话号码进行登录，请执行以下步骤：
@@ -73,7 +70,7 @@
 如果你没有配置其他方法，请联系管理员并要求他们清除你的设置。你下次登录时，会再次提示你[设置多重身份验证](/documentation/articles/multi-factor-authentication-end-user-first-time/)。
 
 
-如果经常因为手机信号弱而导致延迟，建议在你的智能手机上使用 [Microsoft Authenticator 应用](/documentation/articles/multi-factor-authentication-microsoft-authenticator/)。该应用可以生成用来登录的随机安全代码，这些代码不需要手机信号或 Internet 连接。
+如果经常因为手机信号弱而导致延迟，建议在你的智能手机上使用 [Microsoft Authenticator 应用](/documentation/articles/microsoft-authenticator-app-how-to/)。该应用可以生成用来登录的随机安全代码，这些代码不需要手机信号或 Internet 连接。
 
 ## 我找不到我的问题的解答。
 
@@ -100,6 +97,7 @@
 
 ## 相关主题
 - [管理双重验证设置](/documentation/articles/multi-factor-authentication-end-user-manage-settings/)
-- [Microsoft Authenticator 应用程序常见问题解答](/documentation/articles/multi-factor-authentication-app-faq/)
+- [Microsoft Authenticator 应用程序常见问题解答](/documentation/articles/microsoft-authenticator-app-faq/)
 
-<!---HONumber=Mooncake_1107_2016-->
+<!---HONumber=Mooncake_0213_2017-->
+<!--Update_Description: link update-->
