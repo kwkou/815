@@ -9,7 +9,7 @@
     tags="azure-service-management" />
 <tags
     ms.assetid="c492db4c-3faa-4645-849f-5a1a663be55a"
-    ms.service="virtual-machines-sql"
+    ms.service="virtual-machines-windows"
     ms.devlang="na"
     ms.custom="na"
     ms.topic="article"

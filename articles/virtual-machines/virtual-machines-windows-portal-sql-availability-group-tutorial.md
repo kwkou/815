@@ -9,7 +9,7 @@
     tags="azure-service-management" />
 <tags
     ms.assetid="08a00342-fee2-4afe-8824-0db1ed4b8fca"
-    ms.service="virtual-machines-sql"
+    ms.service="virtual-machines-windows"
     ms.devlang="na"
     ms.custom="na"
     ms.topic="article"
@@ -189,29 +189,6 @@
 5. 重新启动 SQL Server 服务。
 
 对另一个 SQL Server 重复上述步骤。
-
-<!-----------------
-## <a name="endpoint-firewall"></a>Open firewall for the database mirroring endpoint
-
-Each instance of SQL Server that participates in an Availability Group requires a database mirroring endpoint. This endpoint is a TCP port for the instance of SQL Server that is used to synchronize the database replicas in the Availability Groups on that instance.
-
-On both SQL Servers, open the firewall for the TCP port for the database mirroring endpoint.
-
-1. On the first SQL Server **Start** screen, launch **Windows Firewall with Advanced Security**.
-2. In the left pane, select **Inbound Rules**. On the right pane, click **New Rule**.
-3. For **Rule Type**, choose **Port**.
-1. For the port, specify TCP and choose an unused TCP port number. For example, type *5022* and click **Next**.
-
-    >[AZURE.NOTE]
-    >For this example, we're using TCP port 5022. You can use any available port.
-
-5. In the **Action** page, keep **Allow the connection** selected and click **Next**.
-6. In the **Profile** page, accept the default settings and click **Next**.
-7. In the **Name** page, specify a rule name, such as **Default Instance Mirroring Endpoint** in the **Name** text box, then click **Finish**.
-
-Repeat these steps on the second SQL Server.
--------------------------->
-
 
 ## 在第一个 SQL Server 上创建数据库
 

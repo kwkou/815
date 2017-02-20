@@ -52,11 +52,7 @@ Azure 虚拟机 \(VM\) 库包括几种内含 Microsoft SQL Server 的映像。�
    
     ![虚拟机库 SQL 映像](./media/virtual-machines-windows-portal-sql-server-provision/virtual-machine-gallery-sql-server.png)
 6. 每个模板均可标识 SQL Server 版本和操作系统。从列表中选择这些映像之一。然后查看详细信息边栏选项卡，了解虚拟机映像的说明。
-   
-    > [AZURE.NOTE]
-    SQL VM 映像包括你创建的 VM 的按分钟定价中的 SQL Server 许可费用。另一个选项是自带许可 \(BYOL\)，只支付 VM 费用。这些映像名称的前缀为 {BYOL}。有关此选项的详细信息，请参阅[在 Azure 虚拟机上开始使用 SQL Server](/documentation/articles/virtual-machines-windows-sql-server-iaas-overview/)。
-    > 
-    > 
+
 7. 在“选择部署模型”下面，确认已选择“Resource Manager”。对于新虚拟机，建议使用“Resource Manager”部署模型。单击“创建”。
    
     ![使用 Resource Manager 创建 SQL VM](./media/virtual-machines-windows-portal-sql-server-provision/azure-compute-sql-deployment-model.png)
@@ -81,10 +77,10 @@ Azure 虚拟机 \(VM\) 库包括几种内含 Microsoft SQL Server 的映像。�
 * 如果有多个订阅，验证该订阅是否是新 VM 的正确订阅。
 * 在“资源组”框中，键入新资源组的名称。此外，若要使用现有的资源组，请单击“选择现有项”。资源组是 Azure（虚拟机、存储帐户、虚拟网络等）中相关资源的集合。
   
-        > [AZURE.NOTE]
-        如果你只是测试或了解 Azure 中的 SQL Server 部署，使用新的资源组很有帮助。测试完成后，删除资源组会自动删除 VM 和与该资源组相关联的所有资源。有关资源组的详细信息，请参阅 [Azure Resource Manager 概述](/documentation/articles/resource-group-overview/)。
-        > 
-        > 
+    > [AZURE.NOTE]
+    如果你只是测试或了解 Azure 中的 SQL Server 部署，使用新的资源组很有帮助。测试完成后，删除资源组会自动删除 VM 和与该资源组相关联的所有资源。有关资源组的详细信息，请参阅 [Azure Resource Manager 概述](/documentation/articles/resource-group-overview/)。
+    > 
+    > 
 * 选择此部署的**位置**。
 * 单击“确定”保存设置。
 
@@ -303,7 +299,5 @@ SQL Server Express 版本的虚拟机映像不会自动启用 TCP/IP 协议。�
 有关在 Azure 中使用 SQL Server 的其他信息，请参阅 [Azure 虚拟机上的 SQL Server](/documentation/articles/virtual-machines-windows-sql-server-iaas-overview/) 和[常见问题](/documentation/articles/virtual-machines-windows-sql-server-iaas-faq/)。
 
 有关 Azure 虚拟机上的 SQL Server 视频概述，请观看 [Azure VM 是 SQL Server 2016 的最佳平台](https://channel9.msdn.com/Events/DataDriven/SQLServer2016/Azure-VM-is-the-best-platform-for-SQL-Server-2016)。
-
-[探索学习路径](https://azure.microsoft.com/documentation/learning-paths/sql-azure-vm/)：Azure 虚拟机上的 SQL Server。
 
 <!---HONumber=Mooncake_0213_2017-->

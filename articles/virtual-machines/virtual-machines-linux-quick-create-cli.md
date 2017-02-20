@@ -23,6 +23,8 @@
 
 本文说明如何在 Azure CLI 2.0（预览版）中使用 [az vm create](https://docs.microsoft.com/cli/azure/vm#create) 命令在 Azure 上快速部署 Linux 虚拟机 (VM)。
 
+[AZURE.INCLUDE [azure-cli-2-azurechinacloud-environment-parameter](../../includes/azure-cli-2-azurechinacloud-environment-parameter.md)]
+
 > [AZURE.NOTE] 
 Azure CLI 2.0 预览版是下一代的多平台 CLI。欢迎通过 [GitHub 项目页](https://github.com/Azure/azure-cli)试用该软件并提供反馈。
 ><p>

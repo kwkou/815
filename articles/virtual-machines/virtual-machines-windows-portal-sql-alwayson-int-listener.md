@@ -149,54 +149,6 @@ Azure 将创建探测。Azure 使用探测来测试哪个 SQL Server 具有可�
 
 [AZURE.INCLUDE [ag-listener-configure](../../includes/virtual-machines-ag-listener-configure.md)]
 
-<!---------------------------
-* Use RDP to connect to the Azure virtual machine that hosts the primary replica. 
-* Open Failover Cluster Manager.
-* Select the **Networks** node, and note the cluster network name. This name will be used in the `$ClusterNetworkName` variable in the PowerShell script.
-* Expand the cluster name, and then click **Roles**.
-* In the **Roles** pane, right-click the availability group name and then select **Add Resource** > **Client Access Point**.
-* In the **Name** box, create a name for this new listener, then click **Next** twice, and then click **Finish**. Do not bring the listener or resource online at this point.
-  
-  > [AZURE.NOTE]
-  > The name for the new listener is the network name that applications will use to connect to databases in the SQL Server availability group.
-  > 
-  > 
-* Click the **Resources** tab, then expand the Client Access Point you just created. Right-click the IP resource and click properties. Note the name of the IP address. You will use this name in the `$IPResourceName` variable in the PowerShell script.
-* Under **IP Address** click **Static IP Address** and set the static IP address to the same address that you used when you set the load balancer IP address on the Azure portal preview. Enable NetBIOS for this address and click **OK**. Repeat this step for each IP resource if your solution spans multiple Azure VNets. 
-* On the cluster node that currently hosts the primary replica, open an elevated PowerShell ISE and paste the following commands into a new script.
-  
-        $ClusterNetworkName = "<MyClusterNetworkName>" # the cluster network name (Use Get-ClusterNetwork on Windows Server 2012 of higher to find the name)
-        $IPResourceName = "<IPResourceName>" # the IP Address resource name
-        $ILBIP = "<X.X.X.X>" # the IP Address of the Internal Load Balancer (ILB). This is the static IP address for the load balancer you configured in the Azure portal preview.
-  
-        Import-Module FailoverClusters
-  
-        Get-ClusterResource $IPResourceName | Set-ClusterParameter -Multiple @{"Address"="$ILBIP";"ProbePort"="59999";"SubnetMask"="255.255.255.255";"Network"="$ClusterNetworkName";"EnableDhcp"=0}
-* Update the variables and run the PowerShell script to configure the IP address and port for the new listener.
-  
-  > [AZURE.NOTE]
-  > If your SQL Servers are in separate regions, you need to run the PowerShell script twice. The first time use the cluster network name, cluster IP resource name, and load balancer IP address from the first resource group. The second time use the cluster network name, cluster IP resource name, and load balancer IP address from the second resource group.
-  > 
-  > 
-
-Now the cluster has an availability group listener resource.
-
-### 2. Bring the listener online
-With the availability group listener resource configured, you can bring the listener online so that applications can connect to databases in the availability group with the listener.
-
-* Navigate back to Failover Cluster Manager. Expand **Roles** and then highlight your Availability Group. On the **Resources** tab, right-click the listener name and click **Properties**.
-* Click the **Dependencies** tab. If there are multiple resources listed, verify that the IP addresses have OR, not AND, dependencies. Click **OK**.
-* Right-click the listener name and click **Bring Online**.
-* Once the listener is online, from the **Resources** tab, right-click the availability group and click **Properties**.
-* Create a dependency on the listener name resource (not the IP address resources name). Click **OK**.
-* Launch SQL Server Management Studio and connect to the primary replica.
-* Navigate to **AlwaysOn High Availability** | **Availability Groups** | **Availability Group Listeners**. 
-* You should now see the listener name that you created in Failover Cluster Manager. Right-click the listener name and click **Properties**.
-* In the **Port** box, specify the port number for the availability group listener by using the $EndpointPort you used earlier (1433 was the default), then click **OK**.
-
-------------------------------->
-
-
 ### 验证侦听器的配置
 
 如果正确配置了群集资源和依赖项，则应能够在 SQL Server Management Studio 中看到侦听器。执行以下步骤，设置侦听器端口：
