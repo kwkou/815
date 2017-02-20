@@ -7,7 +7,7 @@
     manager="jhubbard"
     editor="cgronlun"
     tags="azure-portal" />
-<tags 
+<tags
     ms.assetid="2400530f-92b3-47b7-aa48-875f028765ff"
     ms.service="hdinsight"
     ms.devlang="na"
@@ -15,7 +15,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="big-data"
     ms.date="12/02/2016"
-    wacn.date="02/06/2017"
+    wacn.date="02/20/2017"
     ms.author="larryfr" />
 
 # 使用 Ambari REST API 管理 HDInsight 群集
@@ -51,15 +51,15 @@ Apache Ambari 提供简单易用的 Web UI 和 REST API 来简化 Hadoop 群集�
 HDInsight 上的 Ambari REST API 的基本 URI 为 https://CLUSTERNAME.azurehdinsight.cn/api/v1/clusters/CLUSTERNAME，其中 **CLUSTERNAME** 是群集的名称。
 
 > [AZURE.IMPORTANT]
-URI 的完全限定域名 (FQDN) 部分 (CLUSTERNAME.azurehdinsight.cn) 中的群集名称不区分大小写，但 URI 中的其他部分则区分大小写。例如，如果群集名称为 MyCluster，则有效的 URI 如下：
+URI 的完全限定域名 \(FQDN\) 部分 \(CLUSTERNAME.azurehdinsight.cn\) 中的群集名称不区分大小写，但 URI 中的其他部分则区分大小写。例如，如果群集名称为 MyCluster，则有效的 URI 如下：
 > <p>
 > `https://mycluster.azurehdinsight.cn/api/v1/clusters/MyCluster` 
-`https://MyCluster.azurehdinsight.cn/api/v1/clusters/MyCluster`
+> `https://MyCluster.azurehdinsight.cn/api/v1/clusters/MyCluster`
 > <p>
 > 下面的 URI 返回一个错误，因为第二个出现的名称的大小写不正确。
 > <p>
 > `https://mycluster.azurehdinsight.cn/api/v1/clusters/mycluster` 
-`https://MyCluster.azurehdinsight.cn/api/v1/clusters/mycluster`
+> `https://MyCluster.azurehdinsight.cn/api/v1/clusters/mycluster`
 
 连接到 HDInsight 上的 Ambari 需要 HTTPS。对连接进行身份验证时，必须使用创建群集时提供的管理员帐户名（默认为 **admin**）和密码。
 
@@ -92,7 +92,7 @@ URI 的完全限定域名 (FQDN) 部分 (CLUSTERNAME.azurehdinsight.cn) 中的�
 
 ## <a name="example-get-the-fqdn-of-cluster-nodes"></a> 示例：获取群集节点的 FQDN
 
-使用 HDInsight 时，可能需要知道群集节点的完全限定域名 (FQDN)。可以使用以下命令轻松检索群集中各个节点的 FQDN：
+使用 HDInsight 时，可能需要知道群集节点的完全限定域名 \(FQDN\)。可以使用以下命令轻松检索群集中各个节点的 FQDN：
 
 * **头节点**：`curl -u admin:PASSWORD -G "https://CLUSTERNAME.azurehdinsight.cn/api/v1/clusters/CLUSTERNAME/services/HDFS/components/NAMENODE" | jq '.host_components[].HostRoles.host_name'`
 
@@ -125,7 +125,7 @@ PowerShell 对于使用单引号和双引号具有略有不同的规则。使用
     curl -u admin:PASSWORD -G "https://CLUSTERNAME.azurehdinsight.cn/api/v1/clusters/CLUSTERNAME/configurations/service_config_versions?service_name=HDFS&service_config_version=1" | jq '.items[].configurations[].properties["""fs.defaultFS"""] | select(. != null)'
 
 > [AZURE.NOTE]
-以上代码返回应用到服务器的第一个配置 (`service_config_version=1`)，其中包含此信息。如果要检索创建群集后修改的值，可能需要列出配置版本并检索最新版本。
+以上代码返回应用到服务器的第一个配置 \(`service_config_version=1`\)，其中包含此信息。如果要检索创建群集后修改的值，可能需要列出配置版本并检索最新版本。
 
 上述代码返回的值类似于下面示例，其中，**CONTAINER** 是默认容器，**ACCOUNTNAME** 是 Azure 存储帐户名：
 
@@ -192,17 +192,17 @@ PowerShell 对于使用单引号和双引号具有略有不同的规则。使用
 
     Curl 检索 JSON 文档，然后使用 jq 修改数据以创建模板。然后使用模板添加/修改配置值。具体操作如下：
 
-    * 创造一个值，这个值包含“版本”字符串和日期，然后保存在“newtag”。
+    * 创建包含字符串 “version” 和日期并存储在 **newtag** 中的唯一值。
 
     * 为新的所需配置创建根文档。
 
-    * 得到 `.items[]` 数组的内容，然后加到“desired_config”元素下。
+    * 获取 `.items` 数组的内容，并将其添加在 **desired_config** 元素下。
 
-    * 删除“href”、“version”和“Config”元素，因为新建配置是不需要这些元素的。
+    * 删除 **href**、**version** 和 **Config** 元素，因为提交新配置时不需要这些元素。
 
-    * 添加一个新的“tag”元素，然后把值设置为“version#################”。数值部分根据当钱的日期来设置。每一个配置都得有一个独特的标签。
-
-        最后，数据保存到“newconfig.json”文档。这个文档的结构应该跟以下示例类似：
+    * 添加一个新的 **tag** 元素并将其值设置为 **version#################**。数字部分基于当前日期。每个配置必须有唯一的标记。
+     
+    * 最后，将数据保存到 **newconfig.json** 文档。该文档结构类似于下面的示例：
 
             {
                 "Clusters": {
@@ -278,4 +278,4 @@ PowerShell 对于使用单引号和双引号具有略有不同的规则。使用
 
 有关 REST API 的完整参考，请参阅 [Ambari API 参考 V1](https://github.com/apache/ambari/blob/trunk/ambari-server/docs/api/v1/index.md)。
 
-<!---HONumber=Mooncake_0103_2017-->
+<!---HONumber=Mooncake_0213_2017-->
