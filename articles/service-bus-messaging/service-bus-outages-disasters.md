@@ -13,9 +13,9 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="na"
-    ms.date="09/02/2016"
+    ms.date="01/10/2017"
     ms.author="sethm"
-    wacn.date="01/09/2017"/>  
+    wacn.date="02/20/2017"/>  
 
 # 使应用程序免受服务总线中断和灾难影响的最佳实践
 
@@ -104,3 +104,4 @@
   [Azure SQL 数据库业务连续性]: /documentation/articles/sql-database-business-continuity/
 
 <!---HONumber=Mooncake_Quality_Review_0104_2017-->
+<!--Update_Description:update meta properties--> 

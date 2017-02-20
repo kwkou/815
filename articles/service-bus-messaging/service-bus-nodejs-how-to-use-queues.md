@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="service-bus" 
-	ms.date="10/03/2016" 
-	wacn.date="01/09/2017"/>
+	ms.date="01/11/2017" 
+	wacn.date="02/20/2017"/>
 
 # 如何使用 Service Bus 队列
 
@@ -198,3 +198,4 @@ Service Bus 提供了相关功能来帮助你轻松地从应用程序错误或�
   [服务总线配额]: /documentation/articles/service-bus-quotas/
 
 <!---HONumber=Mooncake_Quality_Review_0104_2017-->
+<!--Update_Description:update meta properties--> 

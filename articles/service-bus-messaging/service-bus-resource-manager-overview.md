@@ -1,22 +1,21 @@
 <properties
     pageTitle="使用 Azure Resource Manager 模板创建服务总线资源 | Azure"
     description="使用 Azure Resource Manager 模板自动创建服务总线资源"
-    services="service-bus"
+    services="service-bus-messaging"
     documentationCenter=".net"
     authors="sethmanheim"
     manager="timlt"
-    editor=""/>  
-
+    editor=""/>
 
 <tags
-    ms.service="service-bus"
+    ms.service="service-bus-messaging"
     ms.devlang="tbd"
     ms.topic="article"
     ms.tgt_pltfrm="dotnet"
     ms.workload="na"
     ms.date="10/14/2016"
     ms.author="sethm"
-    wacn.date="12/26/2016"/>  
+    wacn.date="02/20/2017"/>  
 
 
 # 使用 Azure Resource Manager 模板创建服务总线资源
@@ -227,4 +226,5 @@ Azure Resource Manager 模板可帮助你定义要为解决方案部署的资源
 [Azure 资源管理器概述]: /documentation/articles/resource-group-overview/
 [使用 Azure Resource Manager 模板部署资源]: /documentation/articles/resource-group-template-deploy/
 [Azure 快速入门模板库]: https://azure.microsoft.com/zh-cn/documentation/templates/?term=service+bus
-<!---HONumber=Mooncake_1219_2016-->
+<!---HONumber=Mooncake_0213_2017-->
+<!--Update_Description:update meta properties and wording-->

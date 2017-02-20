@@ -14,9 +14,9 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/03/2016"
+	ms.date="01/12/2017"
 	ms.author="sethm"
-	wacn.date="01/04/2017"/>  
+	wacn.date="02/20/2017"/>  
 
 
 # 使用 PowerShell 管理服务总线
@@ -199,3 +199,4 @@ Azure PowerShell 是一个脚本编写环境，可用于在 Azure 中控制和�
 [NamespaceManager]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.namespacemanager.aspx
 
 <!---HONumber=Mooncake_Quality_Review_1230_2016-->
+<!--Update_Description:update meta properties--> 

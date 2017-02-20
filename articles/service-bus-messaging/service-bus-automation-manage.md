@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="service-bus"
-	ms.date="07/29/2016"
-	wacn.date="01/09/2017"/>
+	ms.date="01/10/2017"
+	wacn.date="02/20/2017"/>
 
 
 
@@ -45,3 +45,4 @@ Azure 自动化提供了具有高可靠性和高可用性的工作流执行引�
  
 
 <!---HONumber=Mooncake_Quality_Review_0104_2017-->
+<!--Update_Description:update meta properties--> 

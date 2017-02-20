@@ -14,9 +14,9 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="Java" 
 	ms.topic="article" 
-	ms.date="10/04/2016" 
+	ms.date="01/11/2017" 
 	ms.author="sethm"
-	wacn.date="01/09/2017"/>  
+	wacn.date="02/20/2017"/>  
 
 
 # 如何将 Java 消息服务 (JMS) API 用于服务总线和 AMQP 1.0
@@ -338,3 +338,4 @@ JNDI 环境是通过将配置信息的哈希表传入到 javax.naming.InitialCon
 * [Java 开发人员中心](/develop/java/)。
 
 <!---HONumber=Mooncake_Quality_Review_0104_2017-->
+<!--Update_Description:update meta properties--> 

@@ -14,9 +14,9 @@
     ms.topic="article"
     ms.tgt_pltfrm="dotnet"
     ms.workload="na"
-    ms.date="10/04/2016"
+    ms.date="01/10/2017"
     ms.author="sethm;shvija"
-    wacn.date="12/30/2016"/>  
+    wacn.date="02/20/2017"/>  
 
 
 # 使用 Azure Resource Manager 模板创建服务总线命名空间
@@ -53,32 +53,32 @@
 
 要创建的服务总线命名空间的名称。
 
-```
-"serviceBusNamespaceName": {
-"type": "string",
-"metadata": { 
-    "description": "Name of the Service Bus namespace" 
-    }
-}
-```
+
+	"serviceBusNamespaceName": {
+	"type": "string",
+	"metadata": { 
+	    "description": "Name of the Service Bus namespace" 
+	    }
+	}
+
 
 ### serviceBusSKU
 
 要创建的服务总线 [SKU](/pricing/details/messaging/) 的名称。
 
-```
-"serviceBusSku": { 
-    "type": "string", 
-    "allowedValues": [ 
-        "Basic", 
-        "Standard" 
-    ], 
-    "defaultValue": "Standard", 
-    "metadata": { 
-        "description": "The messaging tier for service Bus namespace" 
-    } 
 
-```
+	"serviceBusSku": { 
+	    "type": "string", 
+	    "allowedValues": [ 
+	        "Basic", 
+	        "Standard" 
+	    ], 
+	    "defaultValue": "Standard", 
+	    "metadata": { 
+	        "description": "The messaging tier for service Bus namespace" 
+	    } 
+
+
 
 模板定义此参数允许的值（Basic 或 Standard），如果未指定任何值，则分配默认值 (Standard)。
 
@@ -89,14 +89,14 @@
 
 模板的服务总线 API 版本。
 
-```
-"serviceBusApiVersion": { 
-       "type": "string", 
-       "defaultValue": "2015-08-01", 
-       "metadata": { 
-           "description": "Service Bus ApiVersion used by the template" 
-       } 
-```
+
+	"serviceBusApiVersion": { 
+	       "type": "string", 
+	       "defaultValue": "2015-08-01", 
+	       "metadata": { 
+	           "description": "Service Bus ApiVersion used by the template" 
+	       } 
+
 
 ## 要部署的资源
 
@@ -104,23 +104,23 @@
 
 创建类型为“Messaging”的标准服务总线命名空间。
 
-```
-"resources": [
-    {
-        "apiVersion": "[parameters('serviceBusApiVersion')]",
-        "name": "[parameters('serviceBusNamespaceName')]",
-        "type": "Microsoft.ServiceBus/Namespaces",
-        "location": "[variables('location')]",
-        "kind": "Messaging",
-        "sku": {
-            "name": "StandardSku",
-            "tier": "Standard"
-        },
-        "properties": {
-        }
-    }
-]
-```
+
+	"resources": [
+	    {
+	        "apiVersion": "[parameters('serviceBusApiVersion')]",
+	        "name": "[parameters('serviceBusNamespaceName')]",
+	        "type": "Microsoft.ServiceBus/Namespaces",
+	        "location": "[variables('location')]",
+	        "kind": "Messaging",
+	        "sku": {
+	            "name": "StandardSku",
+	            "tier": "Standard"
+	        },
+	        "properties": {
+	        }
+	    }
+	]
+
 
 ## 运行部署的命令
 
@@ -128,17 +128,17 @@
 
 ### PowerShell
 
-```
-New-AzureRmResourceGroupDeployment -ResourceGroupName <resource-group-name> -TemplateFile https://raw.githubusercontent.com/azure/azure-quickstart-templates/master/101-servicebus-create-namespace/azuredeploy.json
-```
+
+	New-AzureRmResourceGroupDeployment -ResourceGroupName <resource-group-name> -TemplateFile https://raw.githubusercontent.com/azure/azure-quickstart-templates/master/101-servicebus-create-namespace/azuredeploy.json
+
 
 ### Azure CLI
 
-```
-azure config mode arm
 
-azure group deployment create <my-resource-group> <my-deployment-name> --template-uri https://raw.githubusercontent.com/azure/azure-quickstart-templates/master/101-servicebus-create-namespace/azuredeploy.json
-```
+	azure config mode arm
+
+	azure group deployment create <my-resource-group> <my-deployment-name> --template-uri https://raw.githubusercontent.com/azure/azure-quickstart-templates/master/101-servicebus-create-namespace/azuredeploy.json
+
 
 ## 后续步骤
 现在，已使用 Azure Resource Manager 创建并部署了资源，请阅读以下文章了解如何管理这些资源：
@@ -154,3 +154,4 @@ azure group deployment create <my-resource-group> <my-deployment-name> --templat
   [Using the Azure CLI for Mac, Linux, and Windows with Azure Resource Management]: /documentation/articles/xplat-cli-azure-resource-manager/
 
 <!---HONumber=Mooncake_1219_2016-->
+<!--Update_Description:update meta properties--> 

@@ -1,11 +1,11 @@
 <properties
 	pageTitle="如何通过 Java 使用服务总线队列 | Azure"
-	description="了解如何在 Azure 中使用 Service Bus 队列。用 Java 编写的代码示例。"
+	description="了解如何在 Azure 中使用服务总线队列。用 Java 编写的代码示例。"
 	services="service-bus"
 	documentationCenter="java"
 	authors="sethmanheim"
 	manager="timlt"
-	/>  
+	/>
 
 
 <tags
@@ -14,77 +14,50 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="Java"
 	ms.topic="article"
-	ms.date="10/04/2016"
-	ms.author="sethm"
-	wacn.date="01/04/2017"/>  
+	ms.date="01/11/2017"
+	ms.author="sethm"  
+	wacn.date="02/20/2017"/>  
 
-
-# 如何使用 Service Bus 队列
+# 如何使用服务总线队列
 
 [AZURE.INCLUDE [service-bus-selector-queues](../../includes/service-bus-selector-queues.md)]
 
-本文介绍了如何使用服务总线队列。这些示例是采用 Java 编写的并且使用了 [Azure SDK for Java][]。涉及的任务包括**创建队列**、**发送和接收消息**以及**删除队列**。
+本文介绍了如何使用服务总线队列。相关示例用 Java 编写且使用 [Azure SDK for Java][Azure SDK for Java]。涉及的应用场景包括**创建队列**、**发送和接收消息**以及**删除队列**。
 
-## 什么是服务总线队列？
-
-Service Bus 队列支持**中转消息**通信模型。在使用队列时，分布式应用程序的组件不会直接相互通信，而是通过充当中介（代理）的队列交换消息。消息创建方（发送方）将消息传送到队列，然后继续对其进行处理。消息使用方（接收方）以异步方式从队列中提取消息并处理它。创建方不必等待使用方的答复即可继续处理并发送更多消息。队列为一个或多个竞争使用方提供**先入先出 (FIFO)** 消息传递方式。也就是说，接收方通常会按照消息添加到队列中的顺序来接收并处理消息，并且每条消息仅由一个消息使用方接收并处理。
-
-![QueueConcepts](./media/service-bus-java-how-to-use-queues/sb-queues-08.png)
-
-Service Bus 队列是一种可用于各种应用场景的通用技术：
-
-- 多层 Azure 应用程序中 Web 角色和辅助角色之间的通信。
-- 混合解决方案中本地应用程序和 Azure 托管应用程序之间的通信。
-- 在不同组织或组织的各部门中本地运行的分布式应用程序组件之间的通信。
-
-利用队列，你可以更轻松地扩大应用程序，并在体系结构启用复原。
+[AZURE.INCLUDE [howto-service-bus-queues](../../includes/howto-service-bus-queues.md)]
 
 ## 创建服务命名空间
 
-若要开始在 Azure 中使用服务总线队列，必须先创建一个命名空间。命名空间提供了用于对应用程序中的 Service Bus 资源进行寻址的范围容器。
+若要开始在 Azure 中使用服务总线队列，必须先创建一个命名空间。命名空间提供了用于对应用程序中的服务总线资源进行寻址的范围容器。
 
 创建命名空间：
 
-1.  登录到 [Azure 经典管理门户](https://manage.windowsazure.cn)。
+1. 打开 Azure Powershell 控制台窗口。
 
-2.  在门户的左侧导航窗格中，单击“服务总线”。
+2. 键入以下命令以创建命名空间。提供你自己的命名空间值，并指定与应用程序相同的区域。
 
-3.  在门户的下方窗格中，单击“创建”。
 
-	![](./media/service-bus-java-how-to-use-queues/sb-queues-03.png)
+	New-AzureSBNamespace -Name 'yourexamplenamespace' -Location 'West US' -NamespaceType 'Messaging' -CreateACSNamespace $true
 
-4.  在“添加新命名空间”对话框中，输入命名空间名称。系统会立即检查该名称是否可用。
 
-	![](./media/service-bus-java-how-to-use-queues/sb-queues-04.png)
+	![创建命名空间](./media/service-bus-ruby-how-to-use-topics-subscriptions/showcmdcreate.png)  
 
-5.  在确保命名空间名称可用后，选择应承载你的命名空间的国家或地区（确保使用在其中部署计算资源的同一国家/地区）。
-
-	重要说明：选取要部署应用程序的**相同区域**。这将为你提供最佳性能。
-
-6. 	将对话框中的其他字段保留其默认值（“消息传递”和“标准层”），然后单击复选标记。系统现已创建命名空间并已将其启用。您可能需要等待几分钟，因为系统将为您的帐户配置资源。
-
-创建的命名空间将花费一段时间来激活，然后显示在 Azure 门户中。请等到命名空间状态变为“活动”后再继续操作。
 
 ## 获取命名空间的默认管理凭据
 
-若要在新命名空间上执行管理操作（如创建队列），则必须获取该命名空间的管理凭据。可以从门户中获取这些凭据。
+若要在新命名空间上执行管理操作（如创建队列），则必须获取该命名空间的管理凭据。
 
-1.  在左侧导航窗格中，单击“Service Bus”节点以显示可用命名空间的列表：
+你运行的用于创建服务总线命名空间的 PowerShell cmdlet 将显示可用于管理命名空间的密钥。复制 **DefaultKey** 值。你将在本教程稍后的代码中使用此值。
 
-	![](./media/service-bus-java-how-to-use-queues/sb-queues-13.png)
+![复制密钥](./media/service-bus-ruby-how-to-use-topics-subscriptions/defaultkey.png)  
 
-2.  从显示的列表中单击你刚刚创建的命名空间。
 
-3.  单击“配置”以查看命名空间的共享访问策略。
-
-	![](./media/service-bus-java-how-to-use-queues/sb-queues-14.png)
 
 4.  记下主密钥，或将其复制到剪贴板。
 
 
-## 配置应用程序以使用 Service Bus
-
-在生成本示例之前，请确保已安装 [Azure SDK for Java][]。如果使用了 Eclipse，则可以安装包含 Azure SDK for Java 的 [Azure Toolkit for Eclipse][]。然后，你可以将 **Microsoft Azure Libraries for Java** 添加到你的项目：
+## 配置应用程序以使用服务总线
+在生成本示例之前，请确保已安装 [Azure SDK for Java][Azure SDK for Java]。如果使用了 Eclipse，则可以安装包含 Azure SDK for Java 的 [Azure Toolkit for Eclipse][Azure Toolkit for Eclipse]。然后，你可以将 **Microsoft Azure Libraries for Java** 添加到你的项目：
 
 ![](./media/service-bus-java-how-to-use-queues/eclipselibs.png)  
 
@@ -169,11 +142,11 @@ Service Bus 队列是一种可用于各种应用场景的通用技术：
 
 从队列接收消息的主要方法是使用 **ServiceBusContract** 对象。收到的消息可在两种不同模式下工作：**ReceiveAndDelete** 和 **PeekLock**。
 
-当使用 **ReceiveAndDelete** 模式时，接收是一项单次操作，即，当服务总线接收到队列中某条消息的读取请求时，它会将该消息标记为“已使用”并将其返回给应用程序。**ReceiveAndDelete** 模式（默认模式）是最简单的模式，最适合应用程序允许出现故障时不处理消息的方案。为了理解这一点，可以考虑这样一种情形：使用方发出接收请求，但在处理该请求前发生了崩溃。由于 Service Bus 会将消息标记为“将使用”，因此当应用程序重启并重新开始使用消息时，它会丢失在发生崩溃前使用的消息。
+当使用 **ReceiveAndDelete** 模式时，接收是一项单次操作，即，当服务总线接收到队列中某条消息的读取请求时，它会将该消息标记为“已使用”并将其返回给应用程序。**ReceiveAndDelete** 模式（默认模式）是最简单的模式，最适合应用程序允许出现故障时不处理消息的方案。为了理解这一点，可以考虑这样一种情形：使用方发出接收请求，但在处理该请求前发生崩溃。由于服务总线会将消息标记为“已使用”，因此当应用程序重启并重新开始使用消息时，它会遗漏在发生崩溃前使用的消息。
 
-在 **PeekLock** 模式下，接收变成了一个两阶段操作，从而有可能支持无法允许遗漏消息的应用程序。当 Service Bus 收到请求时，它会查找下一条要使用的消息，锁定该消息以防其他使用者接收，然后将该消息返回到应用程序。应用程序完成消息处理（或可靠地存储消息以供将来处理）后，它将通过对收到的消息调用 **Delete** 完成接收过程的第二个阶段。当服务总线发现 **Delete** 调用时，它会将消息标记为“已使用”并将其从队列中删除。
+在 **PeekLock** 模式下，接收变成了一个两阶段操作，从而有可能支持无法允许遗漏消息的应用程序。当服务总线收到请求时，它会查找下一条要使用的消息，锁定该消息以防其他使用方接收，然后将该消息返回给应用程序。应用程序完成消息处理（或可靠地存储消息以供将来处理）后，它将通过对收到的消息调用 **Delete** 完成接收过程的第二个阶段。当服务总线发现 **Delete** 调用时，它会将消息标记为“已使用”并将其从队列中删除。
 
-以下示例演示如何使用 **PeekLock** 模式（非默认模式）接收和处理消息。下面的示例将执行无限循环并在消息达到我们的“TestQueue”后进行处理：
+以下示例演示如何使用 **PeekLock** 模式（非默认模式）接收和处理消息。下面的示例将执行无限循环并在消息到达我们的“TestQueue”后进行处理：
 
     	try
 	{
@@ -228,21 +201,21 @@ Service Bus 队列是一种可用于各种应用场景的通用技术：
 
 ## 如何处理应用程序崩溃和不可读消息
 
-Service Bus 提供了相关功能来帮助你轻松地从应用程序错误或消息处理问题中恢复。如果接收方应用程序出于某种原因无法处理消息，它可以对收到的消息调用 **unlockMessage** 方法（而不是 **deleteMessage** 方法）。这将导致 Service Bus 解锁队列中的消息并使其能够重新被同一个正在使用的应用程序或其他正在使用的应用程序接收。
+服务总线提供了相关功能来帮助你轻松地从应用程序错误或消息处理问题中恢复。如果接收方应用程序出于某种原因无法处理消息，它可以对收到的消息调用 **unlockMessage** 方法（而不是 **deleteMessage** 方法）。这将导致服务总线解锁队列中的消息并使其能够再次被同一个消费应用程序或其他消费应用程序接收。
 
-还存在与队列中已锁定消息关联的超时，并且如果应用程序无法在锁定超时到期之前处理消息（例如，如果应用程序崩溃），Service Bus 将自动解锁该消息并使它可再次被接收。
+还存在与队列中的锁定消息关联的超时，如果应用程序未能在锁定超时过期前处理消息（例如，如果应用程序崩溃），则服务总线将自动解锁该消息并使其可再次被接收。
 
-如果在处理消息之后，发出 **deleteMessage** 请求之前应用程序发生崩溃，该消息将在应用程序重新启动时重新传送给它。此情况通常称作**至少处理一次**，即每条消息将至少被处理一次，但在某些情况下，同一消息可能会被重新传送如果方案无法容忍重复处理，则应用程序开发人员应向其应用程序添加更多逻辑以处理重复消息传送。通常可使用消息的 **getMessageId** 方法实现此操作，这在多个传送尝试中保持不变。
+如果在处理消息之后，发出 **deleteMessage** 请求之前应用程序发生崩溃，该消息将在应用程序重新启动时重新传送给它。此情况通常称作**至少处理一次**，即每条消息将至少被处理一次，但在某些情况下，同一消息可能会被重新传送如果某个场景不允许重复处理，则应用程序开发人员应向其应用程序添加更多逻辑以处理重复消息传送。通常可使用消息的 **getMessageId** 方法实现此操作，这在多个传送尝试中保持不变。
 
 ## 后续步骤
-
-现在，你已了解服务总线队列的基础知识，请参阅[队列、主题和订阅][]以获取更多信息。
+现在，你已了解服务总线队列的基础知识，请参阅[队列、主题和订阅][Queues, topics, and subscriptions]以获取更多信息。
 
 有关详细信息，请参阅 [Java 开发人员中心](/develop/java/)。
   [Azure SDK for Java]: /develop/java/
   [Azure Toolkit for Eclipse]: https://msdn.microsoft.com/zh-cn/library/azure/hh694271.aspx
 
-  [队列、主题和订阅]: /documentation/articles/service-bus-queues-topics-subscriptions/
+  [Queues, topics, and subscriptions]: /documentation/articles/service-bus-queues-topics-subscriptions/
   [BrokeredMessage]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.aspx
 
-<!---HONumber=Mooncake_Quality_Review_1230_2016-->
+<!---HONumber=Mooncake_0213_2017-->
+<!--Update_Description:update wording and link references-->

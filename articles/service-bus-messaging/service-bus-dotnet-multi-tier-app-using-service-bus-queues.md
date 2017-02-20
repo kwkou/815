@@ -9,8 +9,14 @@
 
 <tags
 	ms.service="service-bus"
-	ms.date="09/01/2016"
-	wacn.date="01/04/2017"/>
+	ms.workload="tbd"
+	ms.tgt_pltfrm="na"
+	ms.devlang="dotnet"
+	ms.topic="get-started-article"
+	ms.date="01/10/2017"
+	ms.author="sethm"
+	wacn.date="02/20/2017"/>  
+
 
 # 使用 Azure 服务总线队列创建 .NET 多层应用程序
 
@@ -27,7 +33,7 @@
 
 [AZURE.INCLUDE [create-account-note](../../includes/create-account-note.md)]
 
-在本教程中，你将生成多层应用程序并在 Azure 云服务中运行它。前端将为 ASP.NET MVC Web 角色，后端将为使用服务总线队列的辅助角色。你可以创建与前端相同的多层应用程序，作为将部署到 Azure 网站而不是云服务的 Web 项目。有关如何以不同方式处理 Azure 网站前端的说明，请参阅[后续步骤](#next-steps)部分。你还可以试用 [.NET 本地/云混合应用程序](/documentation/articles/service-bus-dotnet-hybrid-app-using-service-bus-relay/)教程。
+在本教程中，你将生成多层应用程序并在 Azure 云服务中运行它。前端是 ASP.NET MVC Web 角色，后端是使用服务总线队列的辅助角色。可创建与前端相同的多层应用程序，作为将部署到 Azure 网站而不是云服务的 Web 项目。有关如何以不同方式处理 Azure 网站前端的说明，请参阅[后续步骤](#nextsteps)部分。你还可以试用 [.NET 本地/云混合应用程序](/documentation/articles/service-bus-dotnet-hybrid-app-using-service-bus-relay/)教程。
 
 以下屏幕截图显示了已完成的应用程序。
 
@@ -39,7 +45,7 @@
 
 在 Web 层和中间层之间使用中转消息传送将分离这两个组件。与直接消息传送（即 TCP 或 HTTP）不同，Web 层不会直接连接到中间层，而是将工作单元作为消息推送到服务总线，服务总线将以可靠方式保留这些工作单元，直到中间层准备好使用和处理它们。
 
-服务总线提供了两个实体以支持中转消息传送、队列和主题。通过队列，发送到队列的每个消息均由一个接收方使用。主题支持发布/订阅模式，在该模式中，会为注册到主题中的订阅提供每个已发布消息。每个订阅都会以逻辑方式保留其自己的消息队列。此外，还可以使用筛选规则配置订阅，这些规则可将传递给订阅队列的消息集限制为符合筛选条件的消息集。以下示例使用服务总线队列。
+服务总线提供了两个实体以支持中转消息传送：队列和主题。通过队列，发送到队列的每个消息均由一个接收方使用。主题支持发布/订阅模式，在该模式下，会为注册到主题中的订阅提供每个已发布消息。每个订阅都会以逻辑方式保留其自己的消息队列。此外，还可以使用筛选规则配置订阅，这些规则可将传递给订阅队列的消息集限制为符合筛选条件的消息集。以下示例使用服务总线队列。
 
 ![][1]
 
@@ -49,7 +55,7 @@
 
 -   **负载量。** 在许多应用程序中，系统负载随时间而变化，而每个工作单元所需的处理时间通常为常量。使用队列在消息创建者与使用者之间中继意味着，只需将使用方应用程序（辅助）预配为适应平均负载而非最大负载。队列深度将随传入负载的变化而加大和减小。这将直接根据为应用程序加载提供服务所需的基础结构的数目来节省成本。
 
--   **负载均衡。** 随着负载增加，可添加更多的工作进程以从队列中读取。每条消息仅由一个辅助进程处理。另外，可通过此基于拉取的负载均衡来以最合理的方式使用辅助计算机，即使这些辅助计算机具有不同的处理能力（因为它们将以其最大速率拉取消息）也是如此。此模式通常称为使用者竞争模式。
+-   **负载均衡。** 随着负载增加，可添加更多的工作进程以从队列中读取。每条消息仅由一个辅助进程处理。另外，可通过此基于拉取的负载均衡来以最合理的方式使用辅助计算机，即使这些辅助计算机具有不同的处理能力（因为它们将以其最大速率拉取消息）也是如此。此模式通常称为*使用者竞争*模式。
 
     ![][2]
 
@@ -57,11 +63,11 @@
 
 ## 设置开发环境
 
-在开始开发 Azure 应用程序之前，需要获取工具并设置开发环境。
+在开始开发 Azure 应用程序之前，获取工具并设置开发环境。
 
-1.  在[获取工具和 SDK][] 安装用于 .NET 的 Azure SDK
+1.  通过[获取工具和 SDK][] 安装用于 .NET 的 Azure SDK。
 
-2. 	单击你正在使用的 Visual Studio 版本的“安装 SDK”。本教程中的步骤使用 Visual Studio 2015。
+2. 在 **.NET** 列中，单击要使用的 Visual Studio 的版本。本教程中的步骤使用 Visual Studio 2015。
 
 4.  当提示你是要运行还是保存安装程序时，单击“运行”。
 
@@ -69,9 +75,9 @@
 
 6.  安装完成后，你就有了开始开发应用所需的一切。SDK 包含了一些工具，可利用这些工具在 Visual Studio 中轻松开发 Azure 应用程序。如果你未安装 Visual Studio，SDK 还会安装免费的 Visual Studio Express。
 
-## 创建服务总线命名空间
+## 创建命名空间
 
-下一步是创建服务命名空间并获取共享访问签名 (SAS) 密钥。命名空间为每个通过服务总线公开的应用程序提供应用程序边界。创建服务命名空间时，系统将会生成 SAS 密钥。命名空间与 SAS 密钥的组合为服务总线提供了用于验证应用程序访问权限的凭据。
+下一步是创建服务命名空间并获取共享访问签名 (SAS) 密钥。命名空间为每个通过服务总线公开的应用程序提供应用程序边界。创建命名空间后，系统将生成一个 SAS 密钥。命名空间与 SAS 密钥的组合为服务总线提供了用于验证应用程序访问权限的凭据。
 
 ### 使用 Azure 经典管理门户设置命名空间
 
@@ -135,11 +141,11 @@
 
     ![][12]
 
-6. 仍然在“新建 ASP.NET 项目”对话框中，单击“更改身份验证”按钮。在“更改身份验证”对话框中，单击“无身份验证”，然后单击“确定”。在本教程中，你将部署无需用户登录名的应用。
+6. 继续在“新建 ASP.NET 项目”对话框中，单击“更改身份验证”按钮。在“更改身份验证”对话框中，单击“无身份验证”，然后单击“确定”。在本教程中，你将部署无需用户登录名的应用。
 
 	![][16]
 
-7. 返回到“新建 ASP.NET 项目”对话框，单击“确定”以创建项目。
+7. 返回到“新建 ASP.NET 项目”对话框中，单击“确定”创建项目。
 
 6.  在“解决方案资源管理器”的“FrontendWebRole”项目中，右键单击“引用”，然后单击“管理 NuGet 包”。
 
@@ -225,7 +231,7 @@
 
 4.  在“生成”菜单中，单击“生成解决方案”以测试工作的准确性。
 
-5.  现在，为前面创建的 `Submit()` 方法创建视图。在 `Submit()` 方法（不带任何参数的 `Submit()` 的重载函数）中右键单击，然后选择“添加视图”。
+5.  现在，为前面创建的 `Submit()` 方法创建视图。在 `Submit()` 方法（不带任何参数的 `Submit()` 的重载）中右键单击，然后选择“添加视图”。
 
     ![][14]
 
@@ -235,7 +241,7 @@
 
 7.  单击**“添加”**。
 
-8.  现在，请更改应用程序的显示名称。在“解决方案资源管理器”中，双击“Views\\Shared\\_Layout.cshtml”文件以在 Visual Studio 编辑器中将其打开。
+8.  现在，请更改应用程序的显示名称。在“解决方案资源管理器”中，双击“Views\\Shared\\_Layout.cshtml”文件，在 Visual Studio 编辑器中打开该文件。
 
 9.  将每一处 **My ASP.NET Application** 替换为 **LITWARE'S Products**。
 
@@ -277,7 +283,7 @@
                 public static QueueClient OrdersQueueClient;
 
                 // Obtain these values from the portal.
-                public const string Namespace = "your service bus namespace";
+	        public const string Namespace = "your Service Bus namespace";
 
                 // The name of your queue.
                 public const string QueueName = "OrdersQueue";
@@ -328,7 +334,7 @@
 
 6.  最后，更新之前创建的 Web 代码以便将项提交到队列。在“解决方案资源管理器”中，双击“Controllers\HomeController.cs”。
 
-7.  更新 `Submit()` 方法（不带任何参数的重载函数），如下所示，以获取队列的消息数。
+7.  更新 `Submit()` 方法（不包含任何参数的重载），如下所示，获取队列的消息计数。
 
         public ActionResult Submit()
         {
@@ -343,7 +349,7 @@
             return View();
         }
 
-8.  更新 `Submit(OnlineOrder order)` 方法（包含一个参数的重载函数），如下所示，以将订单信息提交到队列。
+8.  更新 `Submit(OnlineOrder order)` 方法（包含一个参数的重载），如下所示，将订单信息提交到队列。
 
         public ActionResult Submit(OnlineOrder order)
         {
@@ -396,7 +402,7 @@
 
 10. 浏览到 **FrontendWebRole\\Models** 的子文件夹，然后双击“OnlineOrder.cs”以将其添加到此项目中。
 
-11. 在 **WorkerRole.cs** 中，将 **QueueName** 变量的值 `"ProcessingQueue"` 更改为 `"OrdersQueue"`，如以下代码所示。
+11. 在 **WorkerRole.cs** 中，将 **QueueName** 变量的值从 `"ProcessingQueue"` 更改为 `"OrdersQueue"`，如以下代码所示。
 
 
 	// The name of your queue.
@@ -427,11 +433,11 @@
 
 ## <a name="next-steps"></a> 后续步骤  
 
-若要了解有关 Service Bus 的详细信息，请参阅以下资源：
+若要了解有关服务总线的详细信息，请参阅以下资源：
 
 * [Azure 服务总线][sbmsdn]  
-* [服务总线服务页][sbwacom]  
-* [如何使用 Service Bus 队列][sbwacomqhowto]  
+* [服务总线服务页][sbacom]  
+* [如何使用 Service Bus 队列][sbacomqhowto]  
 
 若要了解有关多层方案的详细信息，请参阅：
 
@@ -440,22 +446,6 @@
   [0]: ./media/service-bus-dotnet-multi-tier-app-using-service-bus-queues/getting-started-multi-tier-01.png
   [1]: ./media/service-bus-dotnet-multi-tier-app-using-service-bus-queues/getting-started-multi-tier-100.png
   [2]: ./media/service-bus-dotnet-multi-tier-app-using-service-bus-queues/getting-started-multi-tier-101.png
-  [获取工具和 SDK]: http://go.microsoft.com/fwlink/?LinkId=271920
-
-
-  [GetSetting]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.cloudconfigurationmanager.getsetting.aspx
-  [Microsoft.WindowsAzure.Configuration.CloudConfigurationManager]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.cloudconfigurationmanager.aspx
-  [NamespaceMananger]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.namespacemanager.aspx
-
-  [QueueClient]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.queueclient.aspx
-
-  [TopicClient]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.topicclient.aspx
-
-  [EventHubClient]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.eventhubclient.aspx
-
-  [Azure 经典管理门户]: http://manage.windowsazure.cn
-  [6]: ./media/service-bus-dotnet-multi-tier-app-using-service-bus-queues/sb-queues-03.png
-  [7]: ./media/service-bus-dotnet-multi-tier-app-using-service-bus-queues/sb-queues-04.png
   [9]: ./media/service-bus-dotnet-multi-tier-app-using-service-bus-queues/getting-started-multi-tier-10.png
   [10]: ./media/service-bus-dotnet-multi-tier-app-using-service-bus-queues/getting-started-multi-tier-11.png
   [11]: ./media/service-bus-dotnet-multi-tier-app-using-service-bus-queues/getting-started-multi-tier-02.png
@@ -473,8 +463,6 @@
   [25]: ./media/service-bus-dotnet-multi-tier-app-using-service-bus-queues/SBWorkerRoleProperties.png
   [26]: ./media/service-bus-dotnet-multi-tier-app-using-service-bus-queues/SBNewWorkerRole.png
   [28]: ./media/service-bus-dotnet-multi-tier-app-using-service-bus-queues/getting-started-multi-tier-40.png
-  [35]: ./media/service-bus-dotnet-multi-tier-app-using-service-bus-queues/multi-web-45.png
-  [36]: ./media/service-bus-dotnet-multi-tier-app-using-service-bus-queues/service-bus-policies.png
 
   [sbmsdn]: http://msdn.microsoft.com/zh-cn/library/azure/ee732537.aspx  
   [sbwacom]: /documentation/services/service-bus/  
@@ -482,4 +470,5 @@
   [mutitierstorage]: https://code.msdn.microsoft.com/Windows-Azure-Multi-Tier-eadceb36
   
 
-<!---HONumber=Mooncake_Quality_Review_1230_2016-->
+<!---HONumber=Mooncake_0213_2017-->
+<!--Update_Description:update wording and link references-->
