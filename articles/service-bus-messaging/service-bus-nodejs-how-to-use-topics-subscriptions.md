@@ -14,9 +14,9 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="nodejs" 
 	ms.topic="article" 
-	ms.date="10/04/2016" 
+	ms.date="01/12/2017" 
 	ms.author="sethm"
-	wacn.date="01/04/2017"/>  
+	wacn.date="02/20/2017"/>  
 
 
 
@@ -332,3 +332,4 @@ Service Bus 提供了相关功能来帮助你轻松地从应用程序错误或�
  
 
 <!---HONumber=Mooncake_Quality_Review_1230_2016-->
+<!--Update_Description:update meta properties--> 

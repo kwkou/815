@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="服务总线的共享访问签名身份验证 | Microsoft Azure"
+   pageTitle="服务总线的共享访问签名身份验证 | Azure"
    description="关于服务总线的 SAS 身份验证的详细信息。"
    services="service-bus"
    documentationCenter="na"
@@ -7,9 +7,14 @@
    manager="timlt"
    editor="" />
 <tags 
-   ms.service="service-bus"
+    ms.service="service-bus"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.tgt_pltfrm="na"
+    ms.workload="na"
     ms.date="10/02/2016"
-   wacn.date="01/04/2017" />
+    ms.author="sethm" 
+    wacn.date="02/20/2017" />
 
 # 服务总线的共享访问签名身份验证
 
@@ -18,10 +23,9 @@
 Azure SDK 2.0 版和更高版本包括 SAS 身份验证支持。有关服务总线身份验证的详细信息，请参阅[服务总线身份验证和授权](/documentation/articles/service-bus-authentication-and-authorization/)。
 
 ## 概念
+服务总线中的 SAS 身份验证涉及配置具有服务总线资源相关权限的加密密钥。客户端通过提供 SAS 令牌，声明访问服务总线资源。此令牌包括正在访问的资源 URI，以及一个由已配置的密钥签名的到期时间。
 
-服务总线中的 SAS 身份验证涉及配置具有服务总线资源相关权限的加密密钥。客户端通过提供 SAS 令牌，声明访问服务总线资源。此令牌包括正在访问的 URI 资源，以及一个由配置密钥签名的到期时间。
-
-你可以在服务总线[中继](/documentation/articles/service-bus-fundamentals-hybrid-solutions/#relays)、[队列](/documentation/articles/service-bus-fundamentals-hybrid-solutions/#queues)、[主题](/documentation/articles/service-bus-fundamentals-hybrid-solutions/#topics)和[事件中心](/documentation/services/event-hubs/)上配置共享访问签名授权规则。
+可在服务总线[中继](/documentation/articles/service-bus-fundamentals-hybrid-solutions/#relays)、[队列](/documentation/articles/service-bus-fundamentals-hybrid-solutions/#queues)、[主题](/documentation/articles/service-bus-fundamentals-hybrid-solutions/#topics)和事件中心上配置共享访问签名授权规则。
 
 SAS 身份验证使用以下元素：
 
@@ -31,13 +35,14 @@ SAS 身份验证使用以下元素：
 
 ## 共享访问签名身份验证的配置
 
-你可以在服务总线命名空间、队列，或主题上配置 [SharedAccessAuthorizationRule](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.sharedaccessauthorizationrule.aspx) 规则。当前不支持在服务总线订阅上配置 [SharedAccessAuthorizationRule](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.sharedaccessauthorizationrule.aspx)，但是你可以使用命名空间或主题上配置的规则来确保安全访问订阅。有关演示此步骤的工作示例，请参阅[使用服务总线订阅的共享访问签名 (SAS) 身份验证](http://code.msdn.microsoft.com/windowsazure/Using-Shared-Access-e605b37c)示例。
+可在服务总线命名空间、队列或主题上配置 [SharedAccessAuthorizationRule](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.sharedaccessauthorizationrule.aspx) 规则。当前不支持在服务总线订阅上配置 [SharedAccessAuthorizationRule](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.sharedaccessauthorizationrule.aspx)，但可以使用命名空间或主题上配置的规则来确保安全访问订阅。有关演示此过程的有效示例，请参阅 [Using Shared Access Signature (SAS) authentication with Service Bus Subscriptions](http://code.msdn.microsoft.com/windowsazure/Using-Shared-Access-e605b37c)（将共享访问签名 (SAS) 身份验证与服务总线订阅配合使用）示例。
 
-服务总线命名空间、队列或主题上可以配置最多 12 条这样的授权规则。在服务总线命名空间上配置的规则适用于该命名空间中的所有实体。
+服务总线命名空间、队列或主题上最多可配置 12 条这样的授权规则。在服务总线命名空间上配置的规则适用于该命名空间中的所有实体。
 
 ![SAS](./media/service-bus-shared-access-signature-authentication/IC676272.gif)
 
-在此图中，*manageRuleNS*、*sendRuleNS*，以及 *listenRuleNS* 授权规则适用于队列 Q1 和主题 T1，而 *listenRuleQ*、*sendRuleQ* 仅适用于队列 Q1，*sendRuleT* 仅适用于主题 T1。
+
+在此图中，*manageRuleNS*、*sendRuleNS*，以及 *listenRuleNS* 授权规则适用于队列 Q1 和主题 T1，而 *listenRuleQ* 和 *sendRuleQ* 仅适用于队列 Q1，*sendRuleT* 仅适用于主题 T1。
 
 [SharedAccessAuthorizationRule](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.sharedaccessauthorizationrule.aspx) 的密钥参数如下：
 
@@ -45,7 +50,7 @@ SAS 身份验证使用以下元素：
 |---|---|
 |*KeyName*|描述授权规则的字符串。|
 |*PrimaryKey*|用于签名和验证 SAS 令牌的 Base64 编码的 256 位主密钥。|
-|*SecondaryKey*|用于签名和验证 SAS 令牌的 Base64 编码的 256 位备用密钥。|
+|*SecondaryKey*|用于签名和验证 SAS 令牌的 Base64 编码的 256 位辅助密钥。|
 |*AccessRights*|授权规则授予的访问权限列表。这些权限可以是侦听、发送和管理权限的任何集合。|
 
 如果预配了服务总线命名空间，默认情况下，将创建 [SharedAccessAuthorizationRule](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.sharedaccessauthorizationrule.aspx)，其中，[KeyName](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.sharedaccessauthorizationrule.keyname.aspx) 设置为 **RootManageSharedAccessKey**。
@@ -72,7 +77,7 @@ SAS 令牌的**签名**使用签名字符串的 HMAC-SHA256 哈希来计算，�
 
 请注意，对此操作应使用编码的资源 URI。资源 URI 是向其声明访问权限的服务总线资源的完整 URI。例如，`http://<namespace>.servicebus.chinacloudapi.cn/<entityPath>` 或 `sb://<namespace>.servicebus.chinacloudapi.cn/<entityPath>`；即，`http://contoso.servicebus.chinacloudapi.cn/contosoTopics/T1/Subscriptions/S3`。
 
-到期时间表示为自 1970 年 1 月 1 日 00:00:00 UTC 时期以后的秒数。
+到期时间表示为自 1970 年 1 月 1 日 00:00:00 UTC 以来的秒数。
 
 用于签名的共享访问授权规则必须在此 URI 指定的实体上，或由其分层父级之一进行配置。例如，前面的示例中的 `http://contoso.servicebus.chinacloudapi.cn/contosoTopics/T1` 或 `http://contoso.servicebus.chinacloudapi.cn`。
 
@@ -86,7 +91,7 @@ SAS 令牌中的 [KeyName](https://msdn.microsoft.com/zh-cn/library/azure/micros
 
 以下方案包括配置授权规则、生成 SAS 令牌和客户端授权。
 
-有关演示使配置和使用 SAS 授权的服务总线应用程序的完整工作示例，请参阅[服务总线的共享访问签名身份验证](http://code.msdn.microsoft.com/Shared-Access-Signature-0a88adf8)。有关演示使用在命名空间或主题中配置的 SAS 授权规则，以保护服务总线订阅的相关示例，请参阅[使用服务总线订阅的共享访问签名 (SAS) 身份验证](http://code.msdn.microsoft.com/Using-Shared-Access-e605b37c)。
+有关演示使配置和使用 SAS 授权的服务总线应用程序的完整工作示例，请参阅[服务总线的共享访问签名身份验证](http://code.msdn.microsoft.com/Shared-Access-Signature-0a88adf8)。有关演示使用在命名空间或主题中配置的 SAS 授权规则来保护服务总线订阅的相关示例，请参阅 [Using Shared Access Signature (SAS) authentication with Service Bus Subscriptions](http://code.msdn.microsoft.com/Using-Shared-Access-e605b37c)（将共享访问签名 (SAS) 身份验证与服务总线订阅配合使用）。
 
 ## 访问命名空间上的共享访问授权规则
 
@@ -129,7 +134,7 @@ SAS 令牌中的 [KeyName](https://msdn.microsoft.com/zh-cn/library/azure/micros
 		var postResult = httpClient.PostAsJsonAsync("", sendRule).Result;
 
 
-与之类似，使用终结点上的 GET 操作来读取在命名空间上配置的授权规则。
+类似地，在终结点上使用 GET 操作来读取在命名空间上配置的授权规则。
 
 若要更新或删除特定的授权规则，请使用以下终结点：
 
@@ -139,7 +144,7 @@ SAS 令牌中的 [KeyName](https://msdn.microsoft.com/zh-cn/library/azure/micros
 
 ## 访问实体上的共享访问授权规则
 
-你可以通过在相应 [QueueDescription](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.queuedescription.aspx)、[TopicDescription](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.topicdescription.aspx) 或 [NotificationHubDescription](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.notifications.notificationhubdescription.aspx) 对象上的 [AuthorizationRules](https://docs.microsoft.com/en-us/dotnet/api/microsoft.servicebus.messaging.authorizationrules?redirectedfrom=MSDN#microsoft_servicebus_messaging_authorizationrules) 集合，访问在服务总线队列或主题中配置的 [Microsoft.ServiceBus.Messaging.SharedAccessAuthorizationRule](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.sharedaccessauthorizationrule.aspx) 对象。
+可通过相应 [QueueDescription](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.queuedescription.aspx)、[TopicDescription](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.topicdescription.aspx) 或 [NotificationHubDescription](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.notifications.notificationhubdescription.aspx) 对象中的 [AuthorizationRules](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.authorizationrules.aspx) 集合，访问在服务总线队列或主题中配置的 [Microsoft.ServiceBus.Messaging.SharedAccessAuthorizationRule](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.sharedaccessauthorizationrule.aspx) 对象。
 
 下面的代码演示了如何向队列添加授权规则。
 
@@ -174,7 +179,7 @@ SAS 令牌中的 [KeyName](https://msdn.microsoft.com/zh-cn/library/azure/micros
 
 ## 使用共享访问签名授权
 
-使用具有服务总线 .NET 库的 Azure.NET SDK 的应用程序可以通过 [SharedAccessSignatureTokenProvider](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.sharedaccesssignaturetokenprovider.aspx) 类使用 SAS 授权。下面的代码演示了使用令牌提供程序向服务总线队列发送消息。
+使用具有服务总线 .NET 库的 Azure.NET SDK 的应用程序可以通过 [SharedAccessSignatureTokenProvider](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.sharedaccesssignaturetokenprovider.aspx) 类使用 SAS 授权。下面的代码演示了如何使用令牌提供程序向服务总线队列发送消息。
 
 
 		Uri runtimeUri = ServiceBusEnvironment.CreateServiceUri("sb", 
@@ -203,18 +208,18 @@ SAS 令牌中的 [KeyName](https://msdn.microsoft.com/zh-cn/library/azure/micros
 |在命名空间上配置授权规则|管理|任何命名空间地址|
 |**服务注册表**|||
 |枚举私有策略|管理|任何命名空间地址|
-|中继|||
+| WCF 中继 | | |
 |开始在命名空间上侦听|侦听|任何命名空间地址|
 |将消息发送到命名空间中的侦听器|发送|任何命名空间地址|
 |**队列**|||
 |创建队列|管理|任何命名空间地址|
 |删除队列|管理|任何有效队列地址|
 |枚举队列|管理|/$Resources/Queues|
-|获取队列说明|管理或发送|任何有效队列地址|
+| 获取队列说明 |管理 |任何有效队列地址 |
 |在队列上配置授权规则|管理|任何有效队列地址|
 |发送到队列|发送|任何有效队列地址|
 |从队列接收消息|侦听|任何有效队列地址|
-|在查看锁定模式下接收消息后放弃或完成消息|侦听|任何有效队列地址|
+|在速览-锁定模式下接收消息后放弃或完成消息|侦听|任何有效队列地址|
 |推迟消息以供将来检索|侦听|任何有效队列地址|
 |将消息放入死信队列|侦听|任何有效队列地址|
 |获取与消息队列会话关联的状态|侦听|任何有效队列地址|
@@ -223,28 +228,23 @@ SAS 令牌中的 [KeyName](https://msdn.microsoft.com/zh-cn/library/azure/micros
 |创建主题|管理|任何命名空间地址|
 |删除主题|管理|任何有效主题地址|
 |枚举主题|管理|/$Resources/Topics|
-|获取主题描述|管理或发送|任何有效主题地址|
+| 获取主题描述 |管理 |任何有效主题地址 |
 |在主题上配置授权规则|管理|任何有效主题地址|
 |发送到主题|发送|任何有效主题地址|
 |**订阅**|||
 |创建订阅|管理|任何命名空间地址|
 |删除订阅|管理|../myTopic/Subscriptions/mySubscription|
 |枚举订阅|管理|../myTopic/Subscriptions|
-|获取订阅说明|管理或侦听|../myTopic/Subscriptions/mySubscription|
-|在查看锁定模式下接收消息后放弃或完成消息|侦听|../myTopic/Subscriptions/mySubscription|
+| 获取订阅说明 |管理 |../myTopic/Subscriptions/mySubscription |
+|在速览-锁定模式下接收消息后放弃或完成消息|侦听|../myTopic/Subscriptions/mySubscription|
 |推迟消息以供将来检索|侦听|../myTopic/Subscriptions/mySubscription|
 |将消息放入死信队列|侦听|../myTopic/Subscriptions/mySubscription|
 |获取与主题会话关联的状态|侦听|../myTopic/Subscriptions/mySubscription|
 |设置与主题会话关联的状态|侦听|../myTopic/Subscriptions/mySubscription|
-|**规则**|||
+| **规则** | | |
 |创建规则|管理|../myTopic/Subscriptions/mySubscription|
 |删除规则|管理|../myTopic/Subscriptions/mySubscription|
 |枚举规则|管理或侦听|../myTopic/Subscriptions/mySubscription/Rules|
-|**通知中心**|||
-|创建通知中心|管理|任何命名空间地址|
-|为活动设备创建或更新注册|侦听或管理|../notificationHub/tags/{tag}/registrations|
-|更新 PNS 信息|侦听或管理|../notificationHub/tags/{tag}/registrations/updatepnshandle|
-|发送到通知中心|发送|../notificationHub/messages|
 
 ## 后续步骤
 
@@ -253,4 +253,5 @@ SAS 令牌中的 [KeyName](https://msdn.microsoft.com/zh-cn/library/azure/micros
 有关服务总线身份验证的更多背景信息，请参阅[服务总线身份验证和授权](/documentation/articles/service-bus-authentication-and-authorization/)。
 [Azure 经典管理门户]: http://manage.windowsazure.cn
 
-<!---HONumber=Mooncake_Quality_Review_1230_2016-->
+<!---HONumber=Mooncake_0116_2017-->
+<!--Update_Description:update meta properties and wording-->

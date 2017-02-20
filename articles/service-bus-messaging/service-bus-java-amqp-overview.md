@@ -9,8 +9,8 @@
 
 <tags 
 	ms.service="service-bus" 
-	ms.date="10/04/2016" 
-	wacn.date="01/09/2017"/>
+	ms.date="01/12/2017" 
+	wacn.date="02/20/2017"/>
 
 
 # 服务总线的 AMQP 1.0 支持
@@ -97,3 +97,4 @@ Azure 服务总线中对 AMQP 1.0 的支持意味着现在可以通过一系列�
  
 
 <!---HONumber=Mooncake_Quality_Review_0104_2017-->
+<!--Update_Description:update meta properties--> 

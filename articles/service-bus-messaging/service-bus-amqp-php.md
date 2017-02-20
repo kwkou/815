@@ -8,8 +8,8 @@
    editor="" /> 
 <tags 
    ms.service="service-bus"
-    ms.date="09/29/2016"
-   wacn.date="01/09/2017" />
+    ms.date="01/07/2017"
+   wacn.date="02/20/2017" />
 
 # 使用 AMQP 1.0 通过 PHP 使用服务总线
 
@@ -229,3 +229,4 @@ Proton-PHP 消息支持以下类型的应用程序属性：**integer**、**doubl
 [服务总线 AMQP 概述]: /documentation/articles/service-bus-amqp-overview/
 
 <!---HONumber=Mooncake_Quality_Review_0104_2017-->
+<!--Update_Description:update meta properties--> 
