@@ -106,6 +106,6 @@
 如果在课程中遇到任何问题，可在[故障排除](/documentation/articles/iot-hub-gateway-kit-c-sim-troubleshooting/)一文中查找解决方案。
 
 ## 了解更多
-若要了解详细信息，请访问 [Intel IoT 网关工具包开发人员专区](https://software.intel.com/zh-CN/iot/hardware/gateways/dev-kit)。
+若要了解详细信息，请访问 [Intel IoT 网关工具包开发人员专区](https://software.intel.com/zh-cn/iot/hardware/gateways/dev-kit)。
 
 <!---HONumber=Mooncake_0116_2017-->

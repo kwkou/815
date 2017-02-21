@@ -21,7 +21,7 @@
 
 # 故障排除
 ## 硬件问题
-有关如何解决 Intel Edison 常见问题的信息，请参阅[官方故障排除页](https://software.intel.com/zh-CN/node/637974)。
+有关如何解决 Intel Edison 常见问题的信息，请参阅[官方故障排除页](https://software.intel.com/zh-cn/node/637974)。
 
 ## Node.js 包问题
 ### 在 Gulp 任务期间没有响应
@@ -94,8 +94,6 @@
 Azure 命令行接口 (Azure CLI) 为预览版。
 
 如果在使用此工具时遇到 Bug，请在 GitHub 存储库的“问题”部分提交[问题](https://github.com/Azure/azure-cli/issues)。
-
-如需常见问题的疑难解答帮助，请查看[自述文件](https://github.com/Azure/azure-cli/blob/master/README.rst)。
 
 如果遇到“找不到满足需求的版本”，请运行以下命令，将 pip 升级到最新版本。
 

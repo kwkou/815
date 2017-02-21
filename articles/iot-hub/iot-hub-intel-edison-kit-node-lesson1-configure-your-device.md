@@ -97,7 +97,7 @@
 
 ## 将 Edison 连接到计算机
 
-1. 向下扳动微动开关，使之朝向两个 micro USB 端口，将 Edison 设置为设备模式。有关设备模式与主机模式的区别，请参阅[此处](https://software.intel.com/zh-CN/node/628233#usb-device-mode-vs-usb-host-mode)。
+1. 向下扳动微动开关，使之朝向两个 micro USB 端口，将 Edison 设置为设备模式。有关设备模式与主机模式的区别，请参阅[此处](https://software.intel.com/zh-cn/node/628233#usb-device-mode-vs-usb-host-mode)。
 
     ![向下扳动微动开关](./media/iot-hub-intel-edison-lessons/lesson1/toggle_down_microswitch.jpg)  
 
@@ -115,7 +115,7 @@
 4. 如果计算机安装了新硬盘，则可确定开发板已完全初始化（就像将一张 SD 卡插入计算机）。
 
 ## 下载并运行配置工具
-请从[此链接](https://software.intel.com/zh-CN/iot/hardware/edison/downloads)（在`Installers`标题下列出）获取最新配置工具。运行该工具，并按照屏幕上的说明进行操作，在需要时单击“下一步”
+请从[此链接](https://software.intel.com/zh-cn/iot/hardware/edison/downloads)（在`Installers`标题下列出）获取最新配置工具。运行该工具，并按照屏幕上的说明进行操作，在需要时单击“下一步”
 
 ### 刷写固件
 1. 在`Set up options`页面上，单击`Flash Firmware`。

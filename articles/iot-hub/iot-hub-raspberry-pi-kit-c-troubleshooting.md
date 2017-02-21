@@ -70,8 +70,6 @@ Azure 命令行接口 (Azure CLI) 为预览版。
 
 如果在使用此工具时遇到 Bug，请在 GitHub 存储库的“问题”部分提交[问题](https://github.com/Azure/azure-cli/issues)。
 
-如需常见问题的疑难解答帮助，请查看[自述文件](https://github.com/Azure/azure-cli/blob/master/README.rst)。
-
 如果遇到“找不到满足需求的版本”，请运行以下命令，将 pip 升级到最新版本。
 
 

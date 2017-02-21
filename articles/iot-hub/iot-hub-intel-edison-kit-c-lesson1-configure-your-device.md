@@ -115,7 +115,7 @@
 4. 如果计算机安装了新硬盘，则可确定开发板已完全初始化（就像将一张 SD 卡插入计算机）。
 
 ## 下载并运行配置工具
-请从[此链接](https://software.intel.com/zh-CN/iot/hardware/edison/downloads)（在`Installers`标题下列出）获取最新配置工具。运行该工具，并按照屏幕上的说明进行操作，在需要时单击“下一步”
+请从[此链接](https://software.intel.com/zh-cn/iot/hardware/edison/downloads)（在`Installers`标题下列出）获取最新配置工具。运行该工具，并按照屏幕上的说明进行操作，在需要时单击“下一步”
 
 ### 刷写固件
 1. 在`Set up options`页面上，单击`Flash Firmware`。
