@@ -1018,7 +1018,7 @@ Xamarin 应用需要一些额外的代码才能注册 iOS 或 Android 平台上�
 [Windows 开发人员中心]: https://dev.windows.com/overview
 [DelegatingHandler]: https://msdn.microsoft.com/zh-cn/library/system.net.http.delegatinghandler(v=vs.110).aspx
 [Windows Live SDK]: https://msdn.microsoft.com/zh-cn/library/bb404787.aspx
-[PasswordVault]: http://msdn.microsoft.com/zh-cn/library/windows/apps/windows.security.credentials.passwordvault.aspx
+[PasswordVault]: http://msdn.microsoft.com/en-us/library/windows/apps/windows.security.credentials.passwordvault.aspx
 [ProtectedData]: http://msdn.microsoft.com/zh-cn/library/system.security.cryptography.protecteddata%28VS.95%29.aspx
 [Notification Hubs APIs]: https://msdn.microsoft.com/zh-cn/library/azure/dn495101.aspx
 [Mobile Apps Files Sample]: https://github.com/Azure-Samples/app-service-mobile-dotnet-todo-list-files

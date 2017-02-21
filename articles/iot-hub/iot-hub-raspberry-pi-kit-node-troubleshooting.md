@@ -102,8 +102,6 @@ Azure 命令行接口 (Azure CLI) 为预览版。
 
 如果在使用此工具时遇到 Bug，请在 GitHub 存储库的“问题”部分提交[问题](https://github.com/Azure/azure-cli/issues)。
 
-如需常见问题的疑难解答帮助，请查看[自述文件](https://github.com/Azure/azure-cli/blob/master/README.rst)。
-
 ## Python 安装问题
 ### 旧版安装问题 (macOS)
 安装 pip 时，如果使用 **su** 权限安装的包较旧，则会引发权限错误。之所以会出现这种情况，是因为未彻底卸载以前使用 brew (macOS) 安装的 Python。以前安装时留下的某些 pip 包是通过根权限创建的，因此会导致权限错误。删除这些通过根权限安装的包即可解决问题。通过以下步骤完成该任务：
