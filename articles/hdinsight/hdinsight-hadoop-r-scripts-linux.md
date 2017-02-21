@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties
     pageTitle="在基于 Linux 的 HDInsight 上安装 R | Azure"
     description="了解如何安装并使用 R 来自定义基于 Linux 的 Hadoop 群集。"

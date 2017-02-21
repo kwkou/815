@@ -143,7 +143,7 @@ Hue 是一组 Web 应用程序，用来与 Hadoop 群集交互。你可以使用
 
 - [在 HDInsight 群集上安装 Solr](/documentation/articles/hdinsight-hadoop-solr-install-linux/)。使用群集自定义在 HDInsight Hadoop 群集上安装 Solr。Solr 允许你对存储的数据执行功能强大的搜索操作。
 
-- [在 HDInsight 群集上安装 R](/documentation/articles/hdinsight-hadoop-r-scripts/)。使用群集自定义在 HDInsight Hadoop 群集上安装 R。R 是一种用于统计计算的开放源代码语言和环境。它提供了数百个内置统计函数及其自己的编程语言，可结合各方面的函数编程和面向对象的编程。它还提供了各种图形功能。
+- [在 HDInsight 群集上安装 R](/documentation/articles/hdinsight-hadoop-r-scripts-linux/)。使用群集自定义在 HDInsight Hadoop 群集上安装 R。R 是一种用于统计计算的开放源代码语言和环境。它提供了数百个内置统计函数及其自己的编程语言，可结合各方面的函数编程和面向对象的编程。它还提供了各种图形功能。
 
 [powershell-install-configure]: /documentation/articles/install-configure-powershell-linux/
 [hdinsight-provision]: /documentation/articles/hdinsight-hadoop-provision-linux-clusters/

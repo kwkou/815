@@ -27,7 +27,8 @@
 
 > [AZURE.IMPORTANT]
 HDInsight 查询控制台只能在基于 Windows 的 HDInsight 群集上使用。Linux 是在 HDInsight 3.4 版或更高版本上使用的唯一操作系统。有关详细信息，请参阅 [HDInsight 在 Windows 上弃用](/documentation/articles/hdinsight-component-versioning/#hdi-version-32-and-33-nearing-deprecation-date)。
->
+><p>
+> 有关 HDInsight 3.4 或更高版本，请参阅[在 Ambari Hive 视图中运行 Hive 查询](/documentation/articles/hdinsight-hadoop-use-hive-ambari-view/)，了解如何通过 Web 浏览器运行 Hive 查询。
 
 ## <a id="prereq"></a>先决条件
 要完成本文中的步骤，需要：

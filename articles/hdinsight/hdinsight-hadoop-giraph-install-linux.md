@@ -143,7 +143,7 @@ Azure PowerShell、Azure CLI、HDInsight .NET SDK 或 Azure Resource Manager 模
 
 ## 后续步骤
 * [Install and use Hue on HDInsight clusters](/documentation/articles/hdinsight-hadoop-hue-linux/)（在 HDInsight 群集上安装并使用 Hue）。Hue 是一种 Web UI，可让你轻松创建、运行及保存 Pig 和 Hive 作业，以及浏览 HDInsight 群集的默认存储。
-* [Install R on HDInsight clusters](/documentation/articles/hdinsight-hadoop-r-scripts/)（在 HDinsight 群集上安装 R）：说明如何使用群集自定义在 HDInsight Hadoop 群集上安装和使用 R。R 是一种用于统计计算的开放源代码语言和环境。它提供了数百个内置统计函数及其自己的编程语言，可结合各方面的函数编程和面向对象的编程。它还提供了各种图形功能。
+* [Install R on HDInsight clusters](/documentation/articles/hdinsight-hadoop-r-scripts-linux/)（在 HDinsight 群集上安装 R）：说明如何使用群集自定义在 HDInsight Hadoop 群集上安装和使用 R。R 是一种用于统计计算的开放源代码语言和环境。它提供了数百个内置统计函数及其自己的编程语言，可结合各方面的函数编程和面向对象的编程。它还提供了各种图形功能。
 * [在 HDInsight 群集上安装 Solr](/documentation/articles/hdinsight-hadoop-solr-install-linux/)。使用群集自定义在 HDInsight Hadoop 群集上安装 Solr。Solr 允许你对存储的数据执行功能强大的搜索操作。
 
 <!---HONumber=Mooncake_1205_2016-->

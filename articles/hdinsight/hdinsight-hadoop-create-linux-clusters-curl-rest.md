@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties
     pageTitle="在 HDInsight 中使用 cURL 和 Azure REST API 创建基于 Linux 的 Hadoop、HBase 或 Storm 群集 | Azure"
     description="了解如何使用 cURL、Azure Resource Manager 模板和 Azure REST API 创建基于 Linux 的 HDInsight 群集。可以指定群集类型（Hadoop、HBase 或 Storm），或使用脚本来安装自定义组件。"

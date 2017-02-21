@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties
     pageTitle="在基于 Linux 的 HDInsight 上访问 Hadoop YARN 应用程序日志 | Azure"
     description="了解如何使用命令行和 Web 浏览器在基于 Linux 的 HDInsight (Hadoop) 群集上访问 YARN 应用程序日志。"

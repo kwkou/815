@@ -21,6 +21,11 @@
 # 在基于 Windows 的 HDInsight 上访问 YARN 应用程序日志
 本主题介绍如何访问 Azure HDInsight 中 Hadoop 群集上的完成 YARN (Yet Another Resource Negotiator) 应用程序日志
 
+> [AZURE.NOTE]
+本文档中的信息仅适用于基于 Windows 的 HDInsight 群集。有关在基于 Linux 的 HDInsight 群集上访问 YARN 日志的信息，请参阅 [Access YARN application logs on Linux-based Hadoop on HDInsight](/documentation/articles/hdinsight-hadoop-access-yarn-app-logs-linux/)（在 HDInsight 上基于 Linux 的 Hadoop 中访问 YARN 应用程序日志）
+> 
+> 
+
 ### 先决条件
 * 基于 Windows 的 HDInsight 群集。请参阅[在 HDInsight 中创建基于 Windows 的 Hadoop 群集](/documentation/articles/hdinsight-provision-clusters/)。
 

@@ -44,6 +44,8 @@
 
 - 使用 Ambari Hive 视图运行 Hive
 
+	有关使用 Hive 视图的信息，请参阅[在 HDInsight 中将 Hive 视图与 Hadoop 配合使用](/documentation/articles/hdinsight-hadoop-use-hive-ambari-view/)。
+
 - 使用 Beeline 运行 Hive
 
 	有关在 HDInsight 上使用 Beeline 的信息，请参阅[在 HDInsight 中通过 Beeline 使用 Hive 和 Hadoop](/documentation/articles/hdinsight-hadoop-use-hive-beeline/)。

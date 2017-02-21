@@ -214,7 +214,7 @@ Ambari 提供许多警报，其可能状态如下：
 Ambari 视图允许开发人员使用 [Ambari 视图框架](https://cwiki.apache.org/confluence/display/AMBARI/Views)将 UI 元素插入到 Ambari Web UI 中。HDInsight 为 Hadoop 群集类型提供了以下视图：
 
 * Yarn 队列管理器：队列管理器提供简单的 UI，用于查看和修改 YARN 队列。
-* Hive 视图：Hive 视图允许用户直接从 Web 浏览器运行 Hive 查询。用户可以保存查询、查看结果、将结果保存到群集存储，或者将结果下载到本地系统。
+* Hive 视图：Hive 视图允许用户直接从 Web 浏览器运行 Hive 查询。用户可以保存查询、查看结果、将结果保存到群集存储，或者将结果下载到本地系统。有关使用 Hive 视图的详细信息，请参阅[将 Hive 视图与 HDInsight 配合使用](/documentation/articles/hdinsight-hadoop-use-hive-ambari-view/)。
 * Tez 视图：使用 Tez 视图可以查看有关 Tez 作业执行情况和作业使用的资源的信息，从而可以更好地了解和优化作业。
 
 <!---HONumber=Mooncake_1205_2016-->

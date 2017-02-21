@@ -321,7 +321,7 @@ Solr 仪表板是一个 Web UI，可让你通过 Web 浏览器使用 Solr。Solr
 
 
 
-[hdinsight-install-r]: /documentation/articles/hdinsight-hadoop-r-scripts/
+[hdinsight-install-r]: /documentation/articles/hdinsight-hadoop-r-scripts-linux/
 [hdinsight-cluster-customize]: /documentation/articles/hdinsight-hadoop-customize-cluster-linux/
 
 <!---HONumber=Mooncake_0926_2016-->
