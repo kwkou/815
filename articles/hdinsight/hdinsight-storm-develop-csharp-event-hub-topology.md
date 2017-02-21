@@ -25,6 +25,8 @@ Azure 事件中心可处理网站、应用和设备的大量数据。借助事�
 
 在本教程中，将学习如何使用随 HDInsight Tools for Visual Studio 一起安装的 Visual Studio 模板，创建两个可以配合 Azure 事件中心运行的拓扑。
 
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-visual-studio-login-guide.md)]
+
 * **EventHubWriter**：随机生成数据，并将其写入事件中心
 * **EventHubReader**：从事件中心读取数据并将数据记录到 Storm 日志中
 

@@ -63,6 +63,8 @@ Azure HDInsight 中的每个 Hadoop 群集都有用作默认文件系统的 Azur
 ### 用于访问日志的工具
 可以使用多个工具访问这些表中的数据：
 
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-visual-studio-login-guide.md)]
+
 * Visual Studio
 * Azure 存储空间资源管理器
 * Power Query for Excel

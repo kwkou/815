@@ -42,6 +42,8 @@
     * **JAVA\_HOME** 环境变量必须指向包含 Java 的目录。
     * **%JAVA\_HOME%/bin** 目录必须位于路径中
 
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-visual-studio-login-guide.md)]
+
 ## 体系结构
 
 ![拓扑中的数据流程图](./media/hdinsight-storm-correlation-topology/correlationtopology.png)
