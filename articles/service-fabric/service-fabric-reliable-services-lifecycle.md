@@ -35,9 +35,11 @@
 启动无状态服务的生命周期非常直接了当。下面是事件的顺序：
 
 1. 构造服务
+
 2. 然后，并行发生两个事件：
     - 调用 `StatelessService.CreateServiceInstanceListeners()`，打开返回的所有侦听器（针对每个侦听器调用 `ICommunicationListener.OpenAsync()`）
     - 调用服务的 RunAsync 方法 \(`StatelessService.RunAsync()`\)
+
 3. 调用服务的 OnOpenAsync 方法（如果存在）（具体而言，将调用 `StatelessService.OnOpenAsync()`。这是一种不常见的重写，但这种调用是可行的）。
 
 必须注意，在创建和打开侦听器与 RunAsync 时执行的调用之间没有一定的顺序。可在启动 RunAsync 之前打开侦听器。同样，在通信侦听器打开甚至构造之前，即可结束调用 RunAsync。如果需要进行任何同步，这是实现器的任务。常见解决方法：
@@ -51,17 +53,22 @@
 1. 并行
     - 关闭所有已打开的侦听器（针对每个侦听器调用 `ICommunicationListener.CloseAsync()`）
     - 取消传递给 `RunAsync()` 的取消标记（检查取消标记的 `IsCancellationRequested` 属性是否返回 true，如果调用标记的 `ThrowIfCancellationRequested` 方法，则会返回 `OperationCanceledException`）
+
 2. 针对每个侦听器完成 `CloseAsync()` 并且完成 `RunAsync()` 后，将调用服务的 `StatelessService.OnCloseAsync()` 方法（如果存在）（这也是一种不常见的重写）。
+
 3. 完成 `StatelessService.OnCloseAsync()` 后，销毁服务对象
 
 ## 有状态服务启动
 有状态服务的模式与无状态服务类似，只是稍有不同。启动有状态服务时，事件的顺序如下所述：
 
 1. 构造服务
+
 2. 调用 `StatefulServiceBase.OnOpenAsync()`。（这是服务中不常见的重写。）
+
 3. 如果有问题的服务副本是主副本，则会并行发生以下事件，否则，服务将跳到步骤 4
     - 调用 `StatefulServiceBase.CreateServiceReplicaListeners()`，打开返回的所有侦听器（针对每个侦听器调用 `ICommunicationListener.OpenAsync()`）
     - 调用服务的 RunAsync 方法 \(`StatefulServiceBase.RunAsync()`\)
+
 4. 完成副本侦听器的所有 `OpenAsync()` 调用并且已启动 `RunAsync()` 后（或者由于此副本当前是辅助节点而跳过了这些步骤时），将调用 `StatefulServiceBase.OnChangeRoleAsync()`。（这是服务中不常见的重写。）
 
 类似于无状态服务，创建和打开侦听器，以及调用 RunAsync 的顺序不会经过协调。解决方法大致相同，我们另举一例：假设抵达通信侦听器的调用需要在某个 [Reliable Collections](/documentation/articles/service-fabric-reliable-services-reliable-collections/) 中保存信息才能正常工作。由于通信侦听器可能在 Reliable Collections 可读或可写之前打开，因此，在 RunAsync 可以启动之前，必须经过一定的附加协调。最简单且最常见的解决方法是让通信侦听器返回某个错误代码，告知客户端重试请求。
@@ -72,8 +79,11 @@
 1. 并行
     - 关闭所有已打开的侦听器（针对每个侦听器调用 `ICommunicationListener.CloseAsync()`）
     - 取消传递给 `RunAsync()` 的取消标记（检查取消标记的 `IsCancellationRequested` 属性是否返回 true，如果调用标记的 `ThrowIfCancellationRequested` 方法，则会返回 `OperationCanceledException`）
+
 2. 针对每个侦听器完成 `CloseAsync()` 并且完成 `RunAsync()`（仅当此服务副本是主副本时，才需要完成此调用）后，将调用服务的 `StatefulServiceBase.OnChangeRoleAsync()`。（这是服务中不常见的重写。）
+
 3. 完成 `StatefulServiceBase.OnChangeRoleAsync()` 方法后，将调用 `StatefulServiceBase.OnCloseAsync()` 方法（这也是一种不常见的重写，但这种调用是可行的）。
+
 3. 完成 `StatefulServiceBase.OnCloseAsync()` 后，销毁服务对象。
 
 ## 有状态服务主副本交换
@@ -85,6 +95,7 @@ Service Fabric 需要使用此副本来停止处理消息，退出正在执行�
 1. 并行
     - 关闭所有已打开的侦听器（针对每个侦听器调用 `ICommunicationListener.CloseAsync()`）
     - 取消传递给 `RunAsync()` 的取消标记（检查取消标记的 `IsCancellationRequested` 属性是否返回 true，如果调用标记的 `ThrowIfCancellationRequested` 方法，则会返回 `OperationCanceledException`）
+
 2. 针对每个侦听器完成 `CloseAsync()` 并且完成 `RunAsync()` 后，将调用服务的 `StatefulServiceBase.OnChangeRoleAsync()`。（这是服务中不常见的重写。）
 
 ### 对于升级的辅助副本
@@ -93,6 +104,7 @@ Service Fabric 需要使用此副本来停止处理消息，退出正在执行�
 1. 并行
     - 调用 `StatefulServiceBase.CreateServiceReplicaListeners()`，打开返回的所有侦听器（针对每个侦听器调用 `ICommunicationListener.OpenAsync()`）
     - 调用服务的 RunAsync 方法 \(`StatefulServiceBase.RunAsync()`\)
+    
 4. 完成副本侦听器的所有 `OpenAsync()` 调用并且已启动 `RunAsync()` 后（或者由于此副本是辅助节点而跳过了这些步骤时），将调用 `StatefulServiceBase.OnChangeRoleAsync()`。（这是服务中不常见的重写。）
 
 ## 有关服务生命周期的说明

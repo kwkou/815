@@ -147,8 +147,9 @@ Service Fabric 提供两个广泛的领域，帮助用户生成使用微服务�
 Service Fabric 的目标是将使用微服务方法生成应用程序时的复杂性降低，使你不需要经历许多耗费成本的重新设计工作。方法是：从小规模开始，按需缩放，淘汰过时服务，添加新服务，根据客户使用情况而不断改进。我们也知道，还需要解决许多其他问题，才能让微服务更易为大部分开发人员所接受。容器和执行组件编程模型都是朝此目标前进的一小步，我们确信将涌现出更多的创新来轻松实现目标。 
 <!--Every topic should have next steps and links to the next logical set of content to keep the customer engaged-->
 ## 后续步骤
-    * [Service Fabric 术语概述](/documentation/articles/service-fabric-technical-overview/)
-    * [微服务：由云支持的应用程序变革](https://azure.microsoft.com/zh-CN/blog/microservices-an-application-revolution-powered-by-the-cloud/)
+
+* [Service Fabric 术语概述](/documentation/articles/service-fabric-technical-overview/)
+* [微服务：由云支持的应用程序变革](https://azure.microsoft.com/zh-CN/blog/microservices-an-application-revolution-powered-by-the-cloud/)
 
 
 [Image1]: ./media/service-fabric-overview-microservices/monolithic-vs-micro.png

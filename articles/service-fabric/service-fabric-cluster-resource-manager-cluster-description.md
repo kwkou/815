@@ -268,7 +268,7 @@ ClusterManifest.xml
 | 语句 | 语法 |
 | --- |:---:|
 | “和” | "&&" |
-| “或” | "||" |
+| “或” | "\|\|" |
 | “非” | "!" |
 | “分组为单个语句” | "()" |
 
@@ -441,27 +441,27 @@ ClusterManifest.xml
 
 通过用于独立部署的 ClusterConfig.json 或用于 Azure 托管群集的 Template.json：
 
-```json
-"fabricSettings": [
-  {
-    "name": "NodeBufferPercentage",
-    "parameters": [
-      {
-          "name": "DiskSpace",
-          "value": "0.10"
-      },
-      {
-          "name": "Memory",
-          "value": "0.15"
-      },
-      {
-          "name": "SomeOtherMetric",
-          "value": "0.20"
-      }
-    ]
-  }
-]
-```
+
+	"fabricSettings": [
+	{
+		"name": "NodeBufferPercentage",
+		"parameters": [
+		{
+			"name": "DiskSpace",
+			"value": "0.10"
+		},
+		{
+			"name": "Memory",
+			"value": "0.15"
+		},
+		{
+			"name": "SomeOtherMetric",
+			"value": "0.20"
+		}
+		]
+	}
+	]
+
 
 群集用于某个指标的缓冲容量不足时，创建新服务将失败。这样可以确保群集留有足够的备用开销，使升级和故障不会造成节点容量不足。缓冲容量是可选项，但建议为定义了指标容量的所有群集启用。
 

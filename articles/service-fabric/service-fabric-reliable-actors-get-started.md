@@ -71,27 +71,27 @@
 * **接口项目 \(MyActor.Interfaces\)**。这是包含执行组件的接口定义的项目。在 MyActor.Interfaces 项目中，你可以定义在解决方案中执行组件所使用的接口。可在任何项目中使用任何名称定义执行组件接口。不过，因为该接口定义了执行组件实现和调用执行组件的客户端所共享的执行组件协定，所以通常合理的做法是在独立于执行组件实现的程序集中定义接口，并且其他多个项目可以共享接口。
 
 
-	public interface IMyActor : IActor
-	{
-    	Task<string> HelloWorld();
-	}
+		public interface IMyActor : IActor
+		{
+			Task<string> HelloWorld();
+		}
 
 
 * **执行组件服务项目 \(MyActor\)**。这是用于定义要托管执行组件的 Service Fabric 服务的项目。它包含执行组件的实现。执行组件实现是派生自基类型 `Actor` 的一个类，用于实现在 MyActor.Interfaces 项目中定义的接口。执行组件类还必须实现一个构造函数，该函数接受一个 `ActorService` 实例和一个 `ActorId`，并将它们传递给基 `Actor` 类。这样即可注入平台依赖项，完成构造函数依赖项注入。
 
 
-	[StatePersistence(StatePersistence.Persisted)]
-	class MyActor : Actor, IMyActor
-	{
-	    public MyActor(ActorService actorService, ActorId actorId)
-	        : base(actorService, actorId)
-	    {
-	    }
-	    public Task<string> HelloWorld()
-	    {
-	    	return Task.FromResult("Hello world!");
-	    }
-	}
+		[StatePersistence(StatePersistence.Persisted)]
+		class MyActor : Actor, IMyActor
+		{
+			public MyActor(ActorService actorService, ActorId actorId)
+				: base(actorService, actorId)
+			{
+			}
+			public Task<string> HelloWorld()
+			{
+				return Task.FromResult("Hello world!");
+			}
+		}
 
 
 执行组件服务必须注册到 Service Fabric 运行时中的服务类型。为了使执行组件服务能够运行执行组件实例，还必须向执行组件服务注册你的执行组件类型。`ActorRuntime` 注册方法将为执行组件执行此操作。

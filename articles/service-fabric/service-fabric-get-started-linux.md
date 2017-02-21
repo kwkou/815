@@ -42,21 +42,21 @@
 1. 打开终端。
 2. 将 Service Fabric 存储库添加到源列表。
 
-    ```bash
-    sudo sh -c 'echo "deb [arch=amd64] http://apt-mo.trafficmanager.net/repos/servicefabric/ trusty main" > /etc/apt/sources.list.d/servicefabric.list'
-    ```
+
+        sudo sh -c 'echo "deb [arch=amd64] http://apt-mo.trafficmanager.net/repos/servicefabric/ trusty main" > /etc/apt/sources.list.d/servicefabric.list'
+
 
 3. 将新的 GPG 密钥添加到 apt keyring。
 
-    ```bash
-    sudo apt-key adv --keyserver apt-mo.trafficmanager.net --recv-keys 417A0893
-    ```
+
+        sudo apt-key adv --keyserver apt-mo.trafficmanager.net --recv-keys 417A0893
+
 
 4. 根据新添加的存储库刷新包列表。
 
-    ```bash
-    sudo apt-get update
-    ```
+
+        sudo apt-get update
+
 
 ## 安装和设置 SDK
 
@@ -64,15 +64,15 @@
 
 1. 安装 Service Fabric SDK 包。系统会请求用户确认安装并同意许可协议。
 
-    ```bash
-    sudo apt-get install servicefabricsdkcommon
-    ```
+
+        sudo apt-get install servicefabricsdkcommon
+
 
 2. 运行 SDK 安装脚本。
 
-    ```bash
-    sudo /opt/microsoft/sdk/servicefabric/common/sdkcommonsetup.sh
-    ```
+
+        sudo /opt/microsoft/sdk/servicefabric/common/sdkcommonsetup.sh
+
 
 ## 设置 Azure 跨平台 CLI
 
@@ -80,30 +80,30 @@
 
 1. 将 github 存储库克隆到开发计算机。
 
-    ```bash
-    git clone https://github.com/Azure/azure-xplat-cli.git
-    ```
+
+        git clone https://github.com/Azure/azure-xplat-cli.git
+
 
 2. 切换到克隆的存储库，然后使用 Node Package Manager \(npm\) 安装 CLI 的依赖项。
 
-    ```bash
-    cd azure-xplat-cli
-    npm install
-    ```
+
+        cd azure-xplat-cli
+        npm install
+
 
 3. 创建从所复制存储库的 bin/azure 文件夹到 /usr/bin/azure 的符号链接，以便将它添加到路径并从任何目录使用命令。
 
-    ```bash
-    sudo ln -s $(pwd)/bin/azure /usr/bin/azure
-    ```
+
+        sudo ln -s $(pwd)/bin/azure /usr/bin/azure
+
 
 4. 最后，启用自动补全 Service Fabric 命令。
 
-    ```bash
-    azure --completion >> ~/azure.completion.sh
-    echo 'source ~/azure.completion.sh' >> ~/.bash_profile
-    source ~/azure.completion.sh
-    ```
+
+        azure --completion >> ~/azure.completion.sh
+        echo 'source ~/azure.completion.sh' >> ~/.bash_profile
+        source ~/azure.completion.sh
+
 
 > [AZURE.NOTE]
 Service Fabric 命令目前在 Azure CLI 2.0 中不可用。
@@ -114,9 +114,9 @@ Service Fabric 命令目前在 Azure CLI 2.0 中不可用。
 
 1. 运行群集安装脚本。
 
-    ```bash
-    sudo /opt/microsoft/sdk/servicefabric/common/clustersetup/devclustersetup.sh
-    ```
+
+        sudo /opt/microsoft/sdk/servicefabric/common/clustersetup/devclustersetup.sh
+
 
 2. 打开 Web 浏览器并导航到 http://localhost:19080/Explorer。如果群集已启动，应会显示 Service Fabric Explorer 仪表板。
 
@@ -137,15 +137,15 @@ Java SDK 提供所需的库和模板用于通过 Java 构建 Service Fabric 服�
 
 1. 安装 Java SDK 包。
 
-    ```bash
-    sudo apt-get install servicefabricsdkjava
-    ```
+
+        sudo apt-get install servicefabricsdkjava
+
 
 2. 运行 SDK 安装脚本。
 
-    ```bash
-    sudo /opt/microsoft/sdk/servicefabric/java/sdkjavasetup.sh
-    ```
+
+        sudo /opt/microsoft/sdk/servicefabric/java/sdkjavasetup.sh
+
 
 可以从 Eclipse Neon IDE 安装适用于 Service Fabric 的 Eclipse 插件。
 
@@ -170,15 +170,15 @@ Java SDK 提供所需的库和模板用于通过 Java 构建 Service Fabric 服�
 
 1. 安装 .NET Core SDK 包。
 
-    ```bash
-    sudo apt-get install servicefabricsdkcsharp
-    ```
+
+        sudo apt-get install servicefabricsdkcsharp
+
 
 2. 运行 SDK 安装脚本。
 
-    ```bash
-    sudo /opt/microsoft/sdk/servicefabric/csharp/sdkcsharpsetup.sh
-    ```
+
+        sudo /opt/microsoft/sdk/servicefabric/csharp/sdkcsharpsetup.sh
+
 
 ## 更新 SDK 和运行时
 

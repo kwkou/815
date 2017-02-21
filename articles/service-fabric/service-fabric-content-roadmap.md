@@ -40,7 +40,7 @@ Service Fabric 提供了一个灵活可靠的平台用于编写和运行多种�
 </a></center>
 
 ## 入门并创建第一个应用 
-使用 Service Fabric SDK 和工具可在 Windows、Linux 或 MacOS 环境中开发应用，并将这些应用程序部署到 Windows 或 Linux 上运行的群集。以下指南可帮助你在短时间内部署应用。
+使用 Service Fabric SDK 和工具可在 Windows 开发应用，并将这些应用程序部署到 Windows 上运行的群集。以下指南可帮助你在短时间内部署应用。
 
 ### 在 Windows 上
 Service Fabric SDK 包含一个用于 Visual Studio 的外接程序，它可提供用于创建、部署和调试 Service Fabric 应用程序的模板和工具。这些主题逐步讲解了在 Visual Studio 中创建并在开发计算机上运行第一个应用程序的过程。
