@@ -49,6 +49,9 @@
 6. 若要验证是否能够在从所选存储库进行连续部署，请将更改推送到该存储库。推送到存储库完成后，你的应用应该很快更新以反映更改。可以在应用的“部署”页面中验证是否已提取更新。
 
 ## <a name="VSsolution"></a>连续部署 Visual Studio 解决方案
+
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-visual-studio-login-guide.md)]
+
 将 Visual Studio 解决方案推送到 Azure App Service 就像推送简单的 index.html 文件一样容易。应用服务部署过程简化了所有细节，包括还原 NuGet 依赖项和生成应用程序二进制文件。可以按照仅在 Git 存储库中维护代码的源控件最佳实践操作，并让应用服务部署处理其余工作。
 
 将 Visual Studio 解决方案推送到应用服务的步骤与[上一部分](#overview)中的步骤相同，前提是按以下方式配置解决方案和存储库：

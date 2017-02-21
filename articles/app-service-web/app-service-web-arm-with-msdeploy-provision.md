@@ -28,6 +28,8 @@
 
 你将部署一个 ASP.NET Web 应用程序。第一步是创建简单的 Web 应用程序（或者，可以选择使用现有的应用程序 - 在这种情况下，可以跳过此步骤）。
 
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-visual-studio-login-guide.md)]
+
 打开 Visual Studio 2015，然后选择“文件”>“新建项目”。在出现的对话框中，选择“Web”>“ASP.NET Web 应用程序”。在“模板”下选择“Web”，然后选择 MVC 模板。在“更改身份验证类型”中，选择“无身份验证”。这是为了尽量简化示例应用程序。
 
 此时，你将获得一个可随时在部署过程中使用的基本 ASP.Net Web 应用。

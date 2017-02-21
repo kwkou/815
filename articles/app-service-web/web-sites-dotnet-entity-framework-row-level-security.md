@@ -35,6 +35,8 @@
 
 我们将添加一个[拦截器](https://msdn.microsoft.com/data/dn469464.aspx)（具体而言，为 [DbConnectionInterceptor](https://msdn.microsoft.com/zh-cn/library/system.data.entity.infrastructure.interception.idbconnectioninterceptor)，这是 Entity Framework (EF) 6 中的新功能），以便每当 EF 打开连接时，通过执行一个 T-SQL 语句在 SESSION\_CONTEXT 中自动设置当前 UserId。
 
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-visual-studio-login-guide.md)]
+
 1.	在 Visual Studio 中打开 ContactManager 项目。
 2.	右键单击解决方案资源管理器中的 Models 文件夹，然后选择“添加”>“类”。
 3.	将新类命名为“SessionContextInterceptor.cs”，然后单击“添加”。

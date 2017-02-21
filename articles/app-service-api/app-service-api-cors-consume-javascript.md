@@ -102,6 +102,8 @@
 
 ### 为 ToDoListAngular 项目创建新的 Web 应用
 
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-visual-studio-login-guide.md)]
+
 创建新应用服务 Web 应用并向其部署项目的过程，与在[本系列教程的第一篇教程中所述的创建和部署 API 应用](/documentation/articles/app-service-api-dotnet-get-started/#createapiapp)的过程类似。唯一的差别在于，应用类型是 **Web 应用**而不是 **API 应用**。有关对话框的屏幕截图，请参阅
 
 1. 在“解决方案资源管理器”中，右键单击 ToDoListAngular 项目，然后单击“发布”。

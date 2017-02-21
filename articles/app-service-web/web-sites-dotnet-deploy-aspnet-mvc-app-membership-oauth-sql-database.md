@@ -47,6 +47,8 @@
 
 要设置开发环境，则必须安装 [Visual Studio 2013 Update 5](http://go.microsoft.com/fwlink/?LinkId=390521) 或更高版本，以及最新版本的 [Azure SDK for .NET](http://go.microsoft.com/fwlink/?linkid=324322&clcid=0x409)。本文专为 Visual Studio Update 4 和 SDK 2.8.1 编写。相同的说明同样适用于已安装最新 [Azure SDK for .NET](http://go.microsoft.com/fwlink/?linkid=518003&clcid=0x409) 的 Visual Studio 2015，但有些屏幕看起来与插图不同。
 
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-visual-studio-login-guide.md)]
+
 ## 创建 ASP.NET MVC 5 应用程序
 
 ### 创建项目

@@ -24,6 +24,8 @@
 
 适用于 Visual Studio 的 Azure Service Fabric 扩展提供简单、可重复且可编写脚本的方式，用于将应用程序发布到 Service Fabric 群集。
 
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-visual-studio-login-guide.md)]
+
 ## 发布时所需的项目
 
 ### Deploy-FabricApplication.ps1

@@ -46,6 +46,8 @@
 ### 使用 Visual Studio 2017 RC
 Service Fabric 工具是 Visual Studio 2017 RC 中 Azure 开发和管理工作负荷的一部分。需要在 Visual Studio 安装过程中启用此工作负荷。此外，需要使用 Web 平台安装程序安装 Microsoft Azure Service Fabric SDK。
 
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-visual-studio-login-guide.md)]
+
 * [安装 Microsoft Azure Service Fabric SDK][core-sdk]
 
 ### 使用 Visual Studio 2015（需要安装 Visual Studio 2015 Update 2 或更高版本）

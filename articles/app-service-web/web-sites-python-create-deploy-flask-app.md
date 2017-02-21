@@ -37,6 +37,8 @@
 - Git
 - [Python Tools for Visual Studio][] (PTVS) - 注意：这是可选的
 
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-visual-studio-login-guide.md)]
+
 **注意**：Python 项目目前不支持 TFS 发布。
 
 ### Windows

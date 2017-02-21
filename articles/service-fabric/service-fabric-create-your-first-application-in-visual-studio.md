@@ -28,6 +28,8 @@
 
 Service Fabric SDK 包含一个用于 Visual Studio 的外接程序，它可提供用于创建、部署和调试 Service Fabric 应用程序的模板和工具。本主题会指导您完成在 Visual Studio 中创建您的第一个应用程序的过程。
 
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-visual-studio-login-guide.md)]
+
 ## 先决条件
 开始之前，请确保已[设置开发环境](/documentation/articles/service-fabric-get-started/)。
 

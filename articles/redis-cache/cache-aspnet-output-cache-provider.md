@@ -28,6 +28,8 @@ Redis 输出缓存提供程序是用于输出缓存数据的进程外存储机�
 
 若要在 Visual Studio 中使用 Redis 输出缓存提供程序 NuGet 包配置客户端应用程序，请在“解决方案资源管理器”中右键单击项目，然后选择“管理 NuGet 包”。
 
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-visual-studio-login-guide.md)]
+
 ![Azure Redis 缓存管理 NuGet 包](./media/cache-aspnet-output-cache-provider/redis-cache-manage-nuget-menu.png)
 
 在搜索文本框中键入 **RedisOutputCacheProvider**，从结果中选择它，然后单击“安装”。

@@ -115,6 +115,8 @@ Service Fabric 应用程序项目可以包含一个或多个应用程序参数�
 
 在部署时，需选择要应用于应用程序的适当参数文件。可以通过 Visual Studio 中的“发布”对话框或通过 PowerShell 执行此操作。
 
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-visual-studio-login-guide.md)]
+
 ### 从 Visual Studio 部署
 
 在 Visual Studio 中发布应用程序时，可以从可用参数文件列表中进行选择。
