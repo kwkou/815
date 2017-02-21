@@ -47,7 +47,9 @@ Service Fabric 提供用于在 Linux 上构建服务的 .NET Core 和 Java SDK�
 Service Fabric 应用程序可以包含一个或多个服务，每个服务都在提供应用程序功能时具有特定角色。适用于 Linux 的 Service Fabric SDK 包含 [Yeoman](http://yeoman.io/) 生成器，使用它可以轻松创建第一个服务并在以后添加更多服务。让我们使用 Yeoman 创建包含单个服务的应用程序。
 
 1. 在终端中，键入 ``yo azuresfjava``。
+
 2. 为应用程序命名。
+
 3. 选择第一个服务的类型并为其命名。本教程选择了 Reliable Actor 服务。
 
   ![适用于 Java 的 Service Fabric Yeoman 生成器][sf-yeoman]  
@@ -58,25 +60,25 @@ Service Fabric 应用程序可以包含一个或多个服务，每个服务都�
 ## 构建应用程序
 Service Fabric Yeoman 模板包含 [Gradle](https://gradle.org/) 的构建脚本，可用于从终端构建应用程序。
 
-  ```bash
-  cd myapp
-  gradle
-  ```
+
+    cd myapp
+    gradle
+
 
 ## 部署应用程序
 构建应用程序后，可以使用 Azure CLI 将它部署到本地群集。
 
 1. 连接到本地 Service Fabric 群集。
 
-    ```bash
-    azure servicefabric cluster connect
-    ```
+
+        azure servicefabric cluster connect
+
 
 2. 使用模板中提供的安装脚本，将应用程序包复制到群集的映像存储、注册应用程序类型，然后创建应用程序的实例。
 
-    ```bash
-    ./install.sh
-    ```
+
+        ./install.sh
+
 
 3. 打开浏览器并导航到 Service Fabric Explorer \(http://localhost:19080/Explorer\)（如果在 Mac OS X 上使用 Vagrant，请将 localhost 替换为 VM 的专用 IP）。
 
@@ -87,10 +89,10 @@ Service Fabric Yeoman 模板包含 [Gradle](https://gradle.org/) 的构建脚本
 
 1. 使用监视实用工具运行脚本，查看执行组件服务的输出。
 
-    ```bash
-    cd myactorsvcTestClient
-    watch -n 1 ./testclient.sh
-    ```
+
+        cd myactorsvcTestClient
+        watch -n 1 ./testclient.sh
+
 
 2. 在 Service Fabric Explorer 中，找到托管执行组件服务主副本的节点。在以下屏幕截图中，该节点是节点 3。
 
@@ -120,8 +122,11 @@ Service Fabric Yeoman 模板包含 [Gradle](https://gradle.org/) 的构建脚本
 Service Fabric 模板包含一组用于构建和部署应用程序的 Gradle 任务，可以通过 Eclipse 触发这些任务。
 
 1. 选择“运行”\>“运行配置”。
+
 2. 指定“本地”或“云”。默认安装为“本地”。若要部署到远程群集，请选择“云”。
+
 3. 根据需要编辑 `local.json` 或 `cloud.json`，确保在发布配置文件中填充适当的信息。
+
 4. 单击“运行”。
 
 片刻时间内即可构建和部署应用。可以从 Service Fabric Explorer 监视其状态。

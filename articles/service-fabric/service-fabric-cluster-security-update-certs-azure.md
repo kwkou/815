@@ -76,7 +76,7 @@
 	    "secCertificateUrlValue": {
 	      "type": "string",
 	      "metadata": {
-	        "description": "Refers to the location URL in your key vault where the certificate was uploaded, it is should be in the format of https://<name of the vault>.vault.azure.net:443/secrets/<exact location>"
+	        "description": "Refers to the location URL in your key vault where the certificate was uploaded, it is should be in the format of https://<name of the vault>.vault.chinacloudapi.cn:443/secrets/<exact location>"
 	      }
 	    },
 
