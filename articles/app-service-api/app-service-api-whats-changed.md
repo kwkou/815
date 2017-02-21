@@ -71,6 +71,8 @@ Web 应用、移动应用和 API 应用中各自提供了 API 定义边栏选项
 
 大多数 Web 应用工具适用于新的 API 应用，因为它们共享相同的基础 **Microsoft.Web/sites** 资源类型。但是，应该将 Azure Visual Studio 工具升级到 2.8.1 或更高版本，因为它公开一些特定于 API 的功能。从 [Azure 下载页](/downloads/)下载 SDK。
 
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-visual-studio-login-guide.md)]
+
 随着应用服务类型的合理化，发布功能也已在“发布”>“Azure 应用服务”下面统一：
 
 ![API 应用发布](./media/app-service-api-whats-changed/api-apps-publish.png)

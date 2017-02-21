@@ -37,6 +37,8 @@
 
 如果正在开始新项目，可以使用 [Azure 门户预览]或 Visual Studio 创建应用服务应用程序。可以在本地运行应用服务应用程序，或将项目发布到基于云的应用服务移动应用。
 
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-visual-studio-login-guide.md)]
+
 如果将移动功能添加到现有项目，请参阅[下载并初始化 SDK](#install-sdk) 部分。
 
 ### 使用 Azure 门户创建 .NET 后端

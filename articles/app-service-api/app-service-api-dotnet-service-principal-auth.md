@@ -175,6 +175,8 @@
 
 在 Visual Studio 中对 ToDoListAPI 项目进行以下更改。
 
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-visual-studio-login-guide.md)]
+
 1. 取消注释 *ServicePrincipal.cs* 文件中的所有代码。
 
 	这是使用用于 .NET 的 ADAL 获取 Azure AD 持有者令牌的代码。此代码使用多个配置值，稍后将在 Azure 运行时环境中设置这些值。代码如下：

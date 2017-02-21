@@ -25,6 +25,7 @@
 
 本文介绍如何使用 Visual Studio 资源组部署来部署 Azure 虚拟机规模集。
 
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-visual-studio-login-guide.md)]
 
 [Azure 虚拟机规模集](https://azure.microsoft.com/blog/azure-vm-scale-sets-public-preview/)是一种 Azure 计算资源，可通过轻松集成的自动缩放和负载均衡选项部署和管理一组类似的虚拟机。可以使用 [Azure 资源管理器 (ARM) 模板](https://github.com/Azure/azure-quickstart-templates)预配和部署 VM 规模集。可以使用 Azure CLI、PowerShell、REST 来部署 ARM 模板，也可直接从 Visual Studio 部署。Visual Studio 提供了一组示例模板，这些模板可以作为 Azure 资源组部署项目的一部分进行部署。
 

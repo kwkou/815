@@ -259,6 +259,8 @@ Service Fabric 中的启动入口点是在 ServiceManifest.xml 中针对每个�
 ## 有关开发环境的说明
 云服务和 Service Fabric 都使用项目模板来与 Visual Studio 集成，并支持在本地和 Azure 中调试、配置及部署。此外，云服务和 Service Fabric 都提供本地开发运行时环境。差别在于，云服务的开发运行时模拟其运行所在的 Azure 环境，Service Fabric 不使用模拟器，而是使用完整的 Service Fabric 运行时。在本地开发计算机运行的 Service Fabric 环境就是在生产时运行的同一环境。
 
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-visual-studio-login-guide.md)]
+
 ##后续步骤
 
 阅读有关 Service Fabric Reliable Services 的详细信息以及云服务与 Service Fabric 应用程序体系结构之间的差异，以了解如何利用 Service Fabric 的完整功能集。

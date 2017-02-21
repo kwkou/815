@@ -25,6 +25,8 @@
 
 本主题介绍如何使用 Visual Studio 将控制台应用程序项目作为 [Azure Web 作业](/documentation/articles/websites-webjobs-resources/)部署到[应用服务](/documentation/articles/app-service-changes-existing-services/)中的 Web 应用。有关如何使用 [Azure 门户预览](https://portal.azure.cn)部署 Web 作业的信息，请参阅[使用 Web 作业运行后台任务](/documentation/articles/web-sites-create-web-jobs/)。
 
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-visual-studio-login-guide.md)]
+
 当 Visual Studio 部署启用 Web 作业的控制台应用程序项目时，它会执行两个任务：
 
 * 将运行时文件复制到 Web 应用中的相应文件夹（对于连续 Web 作业，该文件夹为 *App\_Data/jobs/continuous*，对于计划的按需 Web 作业，则为 *App\_Data/jobs/triggered*）。

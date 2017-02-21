@@ -29,6 +29,9 @@
 学习内容：
 
 * 如何通过 Visual Studio 2015 中的内置工具在 Azure 应用服务中创建和部署 [API 应用](/documentation/articles/app-service-api-apps-why-best-platform/)。
+
+    [AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-visual-studio-login-guide.md)]
+
 * 如何使用 Swashbuckle NuGet 包动态生成 Swagger API 元数据，以便自动进行 API 发现。
 * 如何使用 Swagger API 元数据自动生成 API 应用的客户端代码。
 

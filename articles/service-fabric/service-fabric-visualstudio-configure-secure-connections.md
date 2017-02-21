@@ -23,6 +23,8 @@
 
 了解如何使用 Visual Studio 安全访问已配置访问控制策略的 Azure Service Fabric 群集。
 
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-visual-studio-login-guide.md)]
+
 ## 群集连接类型
 
 Azure Service Fabric 群集支持两种连接：不安全连接和基于 x509 证书的安全连接。（如果托管在本地环境的 Service Fabric 群集，则还支持 Windows 和 dSTS 身份验证。） 创建群集时，你必须配置群集连接类型。创建后，无法更改连接类型。

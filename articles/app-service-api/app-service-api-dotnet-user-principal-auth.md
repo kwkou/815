@@ -76,6 +76,8 @@
 
 如果要遵循适用于 API 应用的 Node.js 或 Java 教程，请跳到下一篇文章：[service principal authentication for API apps](/documentation/articles/app-service-api-dotnet-service-principal-auth/)（API 应用的服务主体身份验证）。
 
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-visual-studio-login-guide.md)]
+
 如果要遵循适用于 API 应用的 .NET 系列教程，并已根据[第一篇](/documentation/articles/app-service-api-dotnet-get-started/)和[第二篇](/documentation/articles/app-service-api-cors-consume-javascript/)教程中的说明部署示例应用程序，请跳到[在应用服务和 Azure AD 中设置身份验证](#azureauth)部分。
 
 如果想要遵循本教程，但又不想完成第一篇和第二篇教程，请执行以下步骤，其中说明了如何开始使用自动化过程部署示例应用程序。
