@@ -163,7 +163,7 @@
 ## 其他链接
 
 * [Always On 可用性组](http://msdn.microsoft.com/zh-cn/library/hh510230.aspx)
-* [Azure 虚拟机](http://docs.microsoft.com/azure/virtual-machines/windows/)
+* [Azure 虚拟机](/documentation/services/virtual-machines/windows/)
 * [Azure 负载均衡器](/documentation/articles/virtual-machines-windows-portal-sql-alwayson-availability-groups-manual/#configure-internal-load-balancer)
 * [Azure 可用性集](/documentation/articles/virtual-machines-windows-manage-availability/)
 

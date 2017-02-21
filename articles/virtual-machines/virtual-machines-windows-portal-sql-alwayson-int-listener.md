@@ -8,7 +8,7 @@
     editor="monicar" />
 <tags
     ms.assetid="d1f291e9-9af2-41ba-9d29-9541e3adcfcf"
-    ms.service="virtual-machines"
+    ms.service="virtual-machines-windows"
     ms.devlang="na"
     ms.topic="article"
     ms.tgt_pltfrm="vm-windows-sql-server"
@@ -27,7 +27,7 @@
 
 相关主题包括：
 
-* [在 Azure VM \(GUI\) 中配置 AlwaysOn 可用性组](/documentation/articles/virtual-machines-windows-portal-sql-alwayson-availability-groups-manual/)
+* [在 Azure VM \(手动\) 中配置 AlwaysOn 可用性组](/documentation/articles/virtual-machines-windows-portal-sql-alwayson-availability-groups-manual/)
 * [使用 Azure Resource Manager 和 PowerShell 配置 VNet 到 VNet 连接](/documentation/articles/vpn-gateway-vnet-vnet-rm-ps/)
 
 执行本文档中的每个步骤可以在 Azure 门户预览中创建和配置负载均衡器。完成这些步骤后，需配置群集，将负载均衡器中的 IP 地址用于可用性组侦听器。
