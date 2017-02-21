@@ -64,7 +64,6 @@
 
 ## 后续步骤
 - 获取有关[使用双重验证时遇到问题](/documentation/articles/multi-factor-authentication-end-user-troubleshoot/)的故障排除提示和帮助
-- 为任何不支持双重验证的应用设置[应用密码](/documentation/articles/multi-factor-authentication-end-user-app-passwords/)。
 
 <!---HONumber=Mooncake_0213_2017-->
 <!--Update_Description: link update-->

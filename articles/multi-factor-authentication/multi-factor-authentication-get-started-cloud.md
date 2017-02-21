@@ -29,10 +29,10 @@
 ## 先决条件
 若要为用户启用 Azure 多重身份验证，必须满足以下先决条件。
 
-1. [注册 Azure 订阅](/pricing/1rmb-trial/) - 如果没有 Azure 订阅，则需要注册一个订阅。对于只是在摸索如何使用 Azure MFA 的新手，可以使用试用版订阅。
+[注册 Azure 订阅](/pricing/1rmb-trial/) - 如果没有 Azure 订阅，则需要注册一个订阅。对于只是在摸索如何使用 Azure MFA 的新手，可以使用试用版订阅。
 
-## 为用户打开双重验证
-若要开始要求用户打开双重验证，请将用户状态从“禁用”更改为“启用”。有关用户状态的详细信息，请参阅 [Azure 多重身份验证中的用户状态](/documentation/articles/multi-factor-authentication-get-started-user-states/)
+## 为用户打开多重身份验证
+若要开始要求用户打开多重身份验证，请将用户状态从“禁用”更改为“启用”。有关用户状态的详细信息，请参阅 [Azure 多重身份验证中的用户状态](/documentation/articles/multi-factor-authentication-get-started-user-states/)
 
 可以使用以下过程为用户启用 MFA。
 
