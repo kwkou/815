@@ -24,6 +24,8 @@
 
 通过 Storm 仪表板可以使用 Web 浏览器轻松在 HDInsight 群集中部署和运行 Apache Storm 拓扑。还可以使用该仪表板监视和管理正在运行的拓扑。如果使用 Visual Studio，则适用于 Visual Studio 的 HDInsight 工具会提供 Visual Studio 中的类似功能。
 
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-visual-studio-login-guide.md)]
+
 HDInsight 工具中的 Storm 仪表板和 Storm 功能依赖于 Storm REST API，此 API 可用于创建你自己的监视和管理解决方案。
 
 > [AZURE.IMPORTANT]
