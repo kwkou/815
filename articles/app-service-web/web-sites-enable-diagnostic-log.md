@@ -41,7 +41,7 @@ Azure 提供内置诊断功能，可帮助调试[应用服务 Web 应用](/docum
 
     System.Diagnostics.Trace.TraceError("If you're seeing this, something bad happened");
 
-在运行时，可以检索这些日志帮助进行故障排除。有关详细信息，请参阅[在 Visual Studio 中对 Azure Web 应用进行故障故障](/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/)。
+在运行时，可以检索这些日志帮助进行故障排除。有关详细信息，请参阅[在 Visual Studio 中对 Azure Web 应用进行故障排除](/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/)。
 
 将内容发布到某个 Web 应用时，应用服务 Web 应用还记录部署信息。此操作自动执行，不会对部署日志记录进行配置设置。部署日志记录允许你确定部署失败的原因。例如，如果使用自定义部署脚本，可能会使用部署日志记录确定该脚本失败的原因。
 
