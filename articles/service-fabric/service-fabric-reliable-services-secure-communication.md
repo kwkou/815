@@ -1,29 +1,30 @@
 <properties
-   pageTitle="在 Service Fabric 中帮助保护服务的通信 | Azure"
-   description="概述如何帮助保护 Azure Service Fabric 群集中运行的 Reliable Services 的通信。"
-   services="service-fabric"
-   documentationCenter=".net"
-   authors="suchiagicha"
-   manager="timlt"
-   editor="vturecek"/>
-
+    pageTitle="在 Service Fabric 中帮助保护服务的通信 | Azure"
+    description="概述如何帮助保护在 Azure Service Fabric 群集中运行的 Reliable Services 的通信。"
+    services="service-fabric"
+    documentationcenter=".net"
+    author="suchiagicha"
+    manager="timlt"
+    editor="vturecek" />
 <tags
-   ms.service="service-fabric"
-   ms.devlang="dotnet"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="required"
-   ms.date="07/06/2016"
-   wacn.date="01/17/2017"
-   ms.author="suchiagicha"/>
+    ms.assetid="fc129c1a-fbe4-4339-83ae-0e69a41654e0"
+    ms.service="service-fabric"
+    ms.devlang="dotnet"
+    ms.topic="article"
+    ms.tgt_pltfrm="na"
+    ms.workload="required"
+    ms.date="01/05/2017"
+    wacn.date="02/20/2017"
+    ms.author="suchia" />  
+
 
 # 在 Azure Service Fabric 中帮助保护服务的通信
 
-安全是通信最为重视的要素之一。Reliable Services 应用程序框架提供了一些预先构建的通信堆栈和工具供你用来提高安全性。本文将介绍如何在使用服务远程处理和 Windows Communication Foundation (WCF) 通信堆栈时提高安全性。
+安全是通信最为重视的要素之一。Reliable Services 应用程序框架提供了一些预先生成的通信堆栈和工具供你用来提高安全性。本文将介绍如何在使用服务远程处理和 Windows Communication Foundation \(WCF\) 通信堆栈时提高安全性。
 
 ## 使用服务远程处理时帮助保护服务
 
-我们将使用一个现有[示例](/documentation/articles/service-fabric-reliable-services-communication-remoting/)来解释如何为 Reliable Services 设置远程处理。若要在使用服务远程处理时帮助保护服务，请遵循以下步骤：
+我们将使用一个现有[示例](/documentation/articles/service-fabric-reliable-services-communication-remoting/)，解释如何为 Reliable Services 设置远程处理。若要在使用服务远程处理时帮助保护服务，请遵循以下步骤：
 
 1. 创建接口 `IHelloWorldStateful`，用于定义可供服务的远程过程调用使用的方法。服务将使用 `Microsoft.ServiceFabric.Services.Remoting.FabricTransport.Runtime` 命名空间中声明的 `FabricTransportServiceRemotingListener`。这是可以提供远程处理功能的 `ICommunicationListener` 实现。
 
@@ -118,7 +119,7 @@
         	}
 
 
-         如果将在 settings.xml 中添加 `TransportSettings` 节而不添加任何前缀，则 `FabricTransportListenerSettings` 将按默认加载此节中的所有设置。
+         如果将在 settings.xml 中添加 `TransportSettings` 节而不添加任何前缀，`FabricTransportListenerSettings` 将默认加载此节中的所有设置。
 
 
          	<!--"TransportSettings" section without any prefix.-->
@@ -140,7 +141,7 @@
          	}
 
 
-3. 在安全服务上使用远程堆栈而不是使用 `Microsoft.ServiceFabric.Services.Remoting.Client.ServiceProxy` 类调用方法来创建服务代理时，请使用 `Microsoft.ServiceFabric.Services.Remoting.Client.ServiceProxyFactory`。传入包含 `SecurityCredentials` 的 `FabricTransportSettings`。
+3. 在安全服务上使用远程处理堆栈而不是使用 `Microsoft.ServiceFabric.Services.Remoting.Client.ServiceProxy` 类调用方法来创建服务代理时，请使用 `Microsoft.ServiceFabric.Services.Remoting.Client.ServiceProxyFactory`。传入包含 `SecurityCredentials` 的 `FabricTransportSettings`。
 
 
 
@@ -169,7 +170,7 @@
 
 
 
-    如果客户端代码正在作为服务一部分运行，你可以从 settings.xml 中加载 `FabricTransportSettings`。创建与服务代码类似的 TransportSettings 节，如上所示。对客户端代码进行以下更改。
+    如果客户端代码正在作为服务一部分运行，你可以从 settings.xml 文件中加载 `FabricTransportSettings`。创建与服务代码类似的 TransportSettings 节，如上所示。对客户端代码进行以下更改：
 
 
 
@@ -183,9 +184,9 @@
 
 
 
-    如果客户端不是作为服务一部分运行，你可以在 client\_name.exe 所在的同一位置中创建 client\_name.settings.xml 文件。然后在该文件中创建 TransportSettings 节。
+    如果客户端不是作为服务的一部分运行，你可以在 client\_name.exe 所在的同一位置中创建 client\_name.settings.xml 文件。然后，在该文件中创建 TransportSettings 节。
 
-    类似于服务，如果你在客户端 settings.xml/client\_name.settings.xml 中添加 `TransportSettings` 节而不添加任何前缀，则 `FabricTransportSettings` 将按默认加载此节中的所有设置。
+    类似于服务，如果你在客户端 settings.xml/client\_name.settings.xml 中添加 `TransportSettings` 节而不添加任何前缀，`FabricTransportSettings` 将默认加载此节中的所有设置。
 
     在此情况下，上述代码将进一步简化：
 
@@ -200,9 +201,9 @@
 
 ## 使用基于 WCF 的通信堆栈时帮助保护服务
 
-我们将使用一个现有[示例](/documentation/articles/service-fabric-reliable-services-communication-wcf/)来解释如何为 Reliable Services 设置基于 WCF 的通信堆栈。若要在使用基于 WCF 的通信堆栈时帮助保护服务，请遵循以下步骤：
+我们将使用一个现有[示例](/documentation/articles/service-fabric-reliable-services-communication-wcf/)，解释如何为 Reliable Services 设置基于 WCF 的通信堆栈。若要在使用基于 WCF 的通信堆栈时帮助保护服务，请遵循以下步骤：
 
-1. 对于服务，需要帮助保护你创建的 WCF 通信侦听器 (`WcfCommunicationListener`)。为此，请修改 `CreateServiceReplicaListeners` 方法。
+1. 对于服务，需要帮助保护你创建的 WCF 通信侦听器 \(`WcfCommunicationListener`\)。为此，请修改 `CreateServiceReplicaListeners` 方法。
 
 
     	protected override IEnumerable<ServiceReplicaListener> CreateServiceReplicaListeners()
@@ -290,7 +291,7 @@
     	}
 
 
-    使用 `SecureWcfCommunicationClientFactory` 创建 WCF 通信客户端 (`WcfCommunicationClient`)。使用客户端调用服务方法。
+    使用 `SecureWcfCommunicationClientFactory` 创建 WCF 通信客户端 \(`WcfCommunicationClient`\)。使用客户端调用服务方法。
 
 
     	IServicePartitionResolver partitionResolver = ServicePartitionResolver.GetDefault();
@@ -310,4 +311,5 @@
 
 * [Reliable Services 中使用 OWIN 的 Web API](/documentation/articles/service-fabric-reliable-services-communication-webapi/)
 
-<!---HONumber=Mooncake_Quality_Review_0117_2017-->
+<!---HONumber=Mooncake_0213_2017-->
+<!--Update_Description: wording update-->

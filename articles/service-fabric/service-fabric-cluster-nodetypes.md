@@ -1,30 +1,26 @@
-
-<!--Ibiza portal-->
-
 <properties
-   pageTitle="Service Fabric 节点类型和 VM 规模集 | Azure"
-   description="介绍 Service Fabric 节点类型如何与 VM 规模集相关联，以及如何远程连接到 VM 规模集实例或群集节点。"
-   services="service-fabric"
-   documentationCenter=".net"
-   authors="ChackDan"
-   manager="timlt"
-   editor=""/>
-
+    pageTitle="Service Fabric 节点类型和 VM 规模集 | Azure"
+    description="介绍 Service Fabric 节点类型如何与 VM 规模集相关联，以及如何远程连接到 VM 规模集实例或群集节点。"
+    services="service-fabric"
+    documentationcenter=".net"
+    author="ChackDan"
+    manager="timlt"
+    editor="" />
 <tags
-   ms.service="service-fabric"
-   ms.devlang="dotnet"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="NA"
-   ms.date="09/09/2016"
-   wacn.date="01/17/2017"
-   ms.author="chackdan"/>  
-
+    ms.assetid="5441e7e0-d842-4398-b060-8c9d34b07c48"
+    ms.service="service-fabric"
+    ms.devlang="dotnet"
+    ms.topic="article"
+    ms.tgt_pltfrm="NA"
+    ms.workload="NA"
+    ms.date="01/05/2017"
+    wacn.date="02/20/2017"
+    ms.author="chackdan" />  
 
 
 # Service Fabric 节点类型与虚拟机规模集之间的关系
 
-虚拟机规模集是一种 Azure 计算资源，可用于将一组 VM 作为一个集进行部署和管理。在 Service Fabric 群集中定义的每个节点类型将设置为不同的 VM 规模集。然后，每个节点类型可以独立扩展或缩减、打开不同的端口集，并可以有不同的容量指标。
+虚拟机规模集是一种 Azure 计算资源，可用于将一组虚拟机作为一个集进行部署和管理。在 Service Fabric 群集中定义的每个节点类型将设置为单独的 VM 规模集。然后，每个节点类型可以独立增加或减少、打开不同的端口集，并可以有不同的容量指标。
 
 以下屏幕截图显示了具有 FrontEnd 和 BackEnd 两个节点类型的群集。每个节点类型各有五个节点。
 
@@ -32,9 +28,9 @@
 
 ## 将 VM 规模集实例映射到节点
 
-如上所示，VM 规模集实例从实例 0 开始逐渐递增。编号反映在名称中。例如，BackEnd\_0 是 BackEnd VM 规模集的实例 0。此特定 VM 规模集有五个实例，名称分别为 BackEnd\_0、BackEnd\_1、BackEnd\_2、BackEnd\_3、BackEnd\_4。
+如上所示，VM 规模集实例从实例 0 开始逐渐递增。编号反映在名称中。例如，BackEnd_0 是 BackEnd VM 规模集的实例 0。此特定 VM 规模集有五个实例，名称分别为 BackEnd_0、BackEnd_1、BackEnd_2、BackEnd_3、BackEnd_4。
 
-当你扩展 VM 规模集时，将创建新的实例。新 VM 规模集的名称通常是 VM 规模集名称 + 下一个实例编号。在本示例中，即 BackEnd\_5。
+当你增加 VM 规模集时，将创建新的实例。新 VM 规模集的实例名称通常是 VM 规模集名称 + 下一个实例编号。在本示例中，即 BackEnd\_5。
 
 
 ## 将 VM 规模集负载均衡器映射到每个节点类型/VM 规模集
@@ -48,9 +44,9 @@
 
 
 ##<a name="remote-connect-to-a-vm-scale-set-instance-or-a-cluster-node"></a> 远程连接到 VM 规模集实例或群集节点
-在群集中定义的每个节点类型将设置为不同的 VM 规模集。这意味着，节点类型可以独立扩展或缩减，且可由不同的 VM SKU 组成。不同于单实例 VM，VM 规模集的实例没有自身的虚拟 IP 地址。因此你可能很难找到可用来远程连接到特定实例的 IP 地址和连接端口。
+在群集中定义的每个节点类型将设置为单独的 VM 规模集。这意味着，节点类型可以独立增加或减少，且可由不同的 VM SKU 组成。不同于单实例 VM，VM 规模集的实例没有自身的虚拟 IP 地址。因此你可能很难找到可用来远程连接到特定实例的 IP 地址和端口。
 
-可以遵循以下步骤来查找 IP 地址和端口。
+可以遵循以下步骤查找 IP 地址和端口。
 
 ### 步骤 1：找出该节点类型的虚拟 IP 地址，然后找出 RDP 的入站 NAT 规则
 
@@ -69,23 +65,23 @@
 
 ### 步骤 2：找出可用来远程连接到特定 VM 规模集实例/节点的端口
 
-本文前面讨论了如何将 VM 规模集实例映射到节点。我们将使用这种方法来找出确切的端口。
+本文档前面讨论了如何将 VM 规模集实例映射到节点。我们将使用这种方法找出确切的端口。
 
 端口是以 VM 规模集实例的递增顺序分配的。因此，在 FrontEnd 节点类型的示例中，五个实例的每个端口分别如下。现在需要对 VM 规模集实例执行相同的映射。
 
-|**VM 规模集实例**|**端口**|
-|-----------------------|--------------------------|
-|FrontEnd\_0|3389|
-|FrontEnd\_1|3390|
-|FrontEnd\_2|3391|
-|FrontEnd\_3|3392|
-|FrontEnd\_4|3393|
-|FrontEnd\_5|3394|
+| **VM 规模集实例** | **端口** |
+| --- | --- |
+| FrontEnd_0 |3389 |
+| FrontEnd_1 |3390 |
+| FrontEnd_2 |3391 |
+| FrontEnd_3 |3392 |
+| FrontEnd_4 |3393 |
+| FrontEnd_5 |3394 |
 
 
 ### 步骤 3：远程连接到特定 VM 规模集实例
 
-在以下屏幕截图中，我使用了“远程桌面连接”来连接到 FrontEnd\_1：
+在以下屏幕截图中，使用“远程桌面连接”连接到 FrontEnd\_1：
 
 ![RDP][RDP]  
 
@@ -135,7 +131,6 @@
 
 
 <!--Image references-->
-
 [NodeTypes]: ./media/service-fabric-cluster-nodetypes/NodeTypes.png
 [Resources]: ./media/service-fabric-cluster-nodetypes/Resources.png
 [InboundNatPools]: ./media/service-fabric-cluster-nodetypes/InboundNatPools.png
@@ -143,4 +138,5 @@
 [NATRules]: ./media/service-fabric-cluster-nodetypes/NATRules.png
 [RDP]: ./media/service-fabric-cluster-nodetypes/RDP.png
 
-<!---HONumber=Mooncake_Quality_Review_0117_2017-->
+<!---HONumber=Mooncake_0213_2017-->
+<!--Update_Description: wording update-->

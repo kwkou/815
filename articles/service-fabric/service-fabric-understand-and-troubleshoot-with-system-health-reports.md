@@ -1,21 +1,22 @@
 <properties
-   pageTitle="使用系统运行状况报告进行故障排除 | Azure"
-   description="介绍 Azure Service Fabric 组件发送的运行状况报告，以及如何使用这些报告来排查群集或应用程序问题。"
-   services="service-fabric"
-   documentationCenter=".net"
-   authors="oanapl"
-   manager="timlt"
-   editor=""/>
-
+    pageTitle="使用系统运行状况报告进行故障排除 | Azure"
+    description="介绍 Azure Service Fabric 组件发送的运行状况报告，以及如何使用这些报告来排查群集或应用程序问题。"
+    services="service-fabric"
+    documentationcenter=".net"
+    author="oanapl"
+    manager="timlt"
+    editor="" />
 <tags
-   ms.service="service-fabric"
-   ms.devlang="dotnet"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="na"
-   ms.date="09/28/2016"
-   wacn.date="01/25/2017"
-   ms.author="oanapl"/>
+    ms.assetid="52574ea7-eb37-47e0-a20a-101539177625"
+    ms.service="service-fabric"
+    ms.devlang="dotnet"
+    ms.topic="article"
+    ms.tgt_pltfrm="na"
+    ms.workload="na"
+    ms.date="01/12/2017"
+    wacn.date="02/20/2017"
+    ms.author="oanapl" />  
+
 
 # 使用系统运行状况报告进行故障排除
 
@@ -25,9 +26,9 @@ Azure Service Fabric 组件报告包含群集中的所有实体。[运行状况�
 
 系统运行状况报告提供有关群集和应用程序功能的可见性，并且通过运行状况标记问题。对于应用程序和服务，系统运行状况报告从 Service Fabric 的角度验证实体得到实现并且正常运行。报告不对服务的业务逻辑进行任何运行状况监视，也不检测暂停的进程。用户服务可以使用其逻辑的特有信息来丰富运行状况数据。
 
-> [AZURE.NOTE] 监视器运行状况报告仅在系统组件创建一个实体之后才可见。在删除实体之后，运行状况存储自动删除与该实体关联的所有运行状况报告。创建实体的新实例时的处理方式也一样（例如，创建新的服务副本实例）。所有与旧实例关联的报告都将从存储中删除并清除。
+> [AZURE.NOTE] 监视器运行状况报告仅在系统组件创建一个实体之后才可见。删除实体之后，运行状况存储自动删除与该实体关联的所有运行状况报告。创建实体的新实例时的处理方式也一样（例如，创建新的服务副本实例）。所有与旧实例关联的报告都将从存储中删除并清除。
 
-按来源标识系统组件报告，并以“System”前缀开头。监视器不能与来源使用相同的前缀，因为如果参数无效，报告将被拒绝。让我们来看一些系统报告并了解是什么触发了这些报告以及如何纠正报告指出的问题。
+按源标识系统组件报告，并以“System”前缀开头。监视器不能与源使用相同的前缀，因为如果参数无效，报告将被拒绝。让我们来看一些系统报告，并了解是什么触发了这些报告以及如何纠正报告指出的问题。
 
 > [AZURE.NOTE] Service Fabric 不断添加感兴趣的状况报告，这些报告可以提高对群集和应用程序中正在发生的事情的可见性。
 
@@ -35,19 +36,19 @@ Azure Service Fabric 组件报告包含群集中的所有实体。[运行状况�
 群集运行状况实体在运行状况存储中自动创建。如果一切运行正常，则不提供系统报告。
 
 ### 邻居丢失
-System.Federation 在检测到邻居丢失时会报告一个错误。报告来自于单个节点，并且在属性名称中包含节点 ID。如果在整个 Service Fabric 环中出现一个邻居丢失，通常你会预料到两个事件（间隙的两侧都会报告）。如果有多个邻居丢失，则将有更多事件。
+**System.Federation** 在检测到邻居丢失时会报告一个错误。报告来自于单个节点，并且属性名称中包含节点 ID。如果在整个 Service Fabric 环中出现一个邻居丢失，通常可预料到两个事件（间隙的两侧都会报告）。如果有多个邻居丢失，则将有更多事件。
 
 报告将全局租约超时指定为生存时间。只要条件仍处于活动状态，就会在每半个 TTL 期间重新发送一次报告。事件过期后将被自动删除。即使报告节点已关闭，删除过期事件的行为也能确保从运行状况存储中正确清理报告。
 
 - **SourceId**：System.Federation
-- **属性**：以 Neighborhood 开头并包含节点信息。
-- **后续步骤**：调查网络上邻居丢失的原因（例如，检查群集节点之间的通信）。
+- **属性**：以 **Neighborhood** 开头并包含节点信息。
+- **后续步骤**：调查邻居丢失的原因（例如，检查群集节点之间的通信）。
 
 ## 节点系统运行状况报告
-System.FM 表示故障转移管理器 (Failover Manager) 服务，是管理群集节点信息的主管服务。每个节点应该都有一个来自 System.FM 的报告，显示其状态。删除节点状态时，也会删除节点实体（请参阅 [RemoveNodeStateAsync](https://msdn.microsoft.com/zh-cn/library/azure/mt161348.aspx)）。
+**System.FM** 表示故障转移管理器 \(Failover Manager\) 服务，是管理群集节点信息的主管服务。每个节点应该都有一个来自 System.FM 的报告，显示其状态。删除节点状态时，也会删除节点实体（请参阅 [RemoveNodeStateAsync](https://msdn.microsoft.com/zh-cn/library/azure/mt161348.aspx)）。
 
 ### 节点开启/节点关闭
-当节点加入环时，System.FM 报告为正常（节点已启动且正在运行）。当节点离开环时，则报告错误（节点已关闭进行升级，或只是发生故障）。运行状况存储构建的运行状况层次结构依据 System.FM 节点报告在已部署的实体上实施操作。它将节点视为所有已部署实体的虚拟父项。如果 System.FM 报告节点已启动并且其实例与实体关联的实例相同，则可以通过查询公开该节点上已部署的实体。当 System.FM 报告节点关闭或已重新启动（新实例）时，运行状况存储自动清理只能在已关闭节点或该节点的上一实例中存在的已部署实体。
+节点加入环时，System.FM 报告为正常（节点已启动且正在运行）。节点离开环时，则报告错误（节点已关闭进行升级，或只是发生故障）。运行状况存储构建的运行状况层次结构依据 System.FM 节点报告在已部署的实体上实施操作。它将节点视为所有已部署实体的虚拟父项。如果 System.FM 报告节点已启动并且其实例与实体关联的实例相同，则可以通过查询公开该节点上已部署的实体。System.FM 报告节点关闭或已重新启动（新实例）时，运行状况存储自动清理只能在已关闭节点或该节点的上一实例中存在的已部署实体。
 
 - **SourceId**：System.FM
 - **属性**：State
@@ -77,7 +78,7 @@ System.FM 表示故障转移管理器 (Failover Manager) 服务，是管理群�
 
 
 ### 证书过期日期
-**System.FabricNode** 在节点使用的证书即将过期时报告警告。每个节点有三个证书：**Certificate\_cluster**、**Certificate\_server** 和 **Certificate\_default\_client**。如果过期时间至少超过两周，报告运行状况是正常。如果过期时间在两周内，则报告类型是警告。这些事件的 TTL 是无限的，当节点离开群集时，它们被删除。
+**System.FabricNode** 在节点使用的证书即将过期时报告警告。每个节点有三个证书：**Certificate\_cluster**、**Certificate\_server** 和 **Certificate\_default\_client**。如果距过期时间至少还有两周，则报告运行状态为正常。如果过期时间在两周内，则报告类型为警告。这些事件的 TTL 是无限的，节点离开群集时，它们会被删除。
 
 - **SourceId**：System.FabricNode
 - **属性**：以 **Certificate** 开头并且包含有关证书类型的详细信息
@@ -94,11 +95,11 @@ System.FM 表示故障转移管理器 (Failover Manager) 服务，是管理群�
 **System.CM** 表示群集管理器服务，是管理应用程序信息的主管服务。
 
 ### 状态
-当创建或更新应用程序时，System.CM 报告正常。当删除应用程序时，它会通知运行状况存储，从而能够从存储中删除应用程序。
+创建或更新应用程序时，System.CM 报告正常。删除应用程序时，它会通知运行状况存储，以便能从存储中删除应用程序。
 
 - **SourceId**：System.CM
 - **属性**：State
-- **后续步骤**：如果已创建应用程序，它就应该包含群集管理器运行状况报告。否则，通过发出一个查询（例如 PowerShell cmdlet **Get-ServiceFabricApplication -ApplicationName *applicationName***）来检查应用程序的状态。
+- **后续步骤**：如果已创建应用程序，它就应该包含群集管理器运行状况报告。否则，通过发出一个查询（例如 PowerShell cmdlet **Get-ServiceFabricApplication -ApplicationName *applicationName***）来检查应用程序状态。
 
 以下示例显示 **fabric:/WordCount** 应用程序上的状态事件：
 
@@ -127,7 +128,7 @@ System.FM 表示故障转移管理器 (Failover Manager) 服务，是管理群�
 **System.FM** 表示故障转移管理器服务，是管理服务信息的主管服务。
 
 ### 状态
-当已创建服务时，System.FM 报告正常。当已删除服务时，它从运行状况存储删除实体。
+已创建服务时，System.FM 报告正常。已删除服务时，它从运行状况存储删除实体。
 
 - **SourceId**：System.FM
 - **属性**：State
@@ -157,8 +158,8 @@ System.FM 表示故障转移管理器 (Failover Manager) 服务，是管理群�
 	                        Transitions           : ->Ok = 4/24/2015 6:13:01 PM
 
 
-### 未放置副本冲突
-如果 **System.PLB** 找不到放置一或多个服务副本的位置，则报告警告。当报告过期时被删除。
+### 未放置的副本冲突
+如果 **System.PLB** 找不到放置一或多个服务副本的位置，则报告警告。报告过期时会被删除。
 
 - **SourceId**：System.FM
 - **属性**：State
@@ -237,15 +238,15 @@ System.FM 表示故障转移管理器 (Failover Manager) 服务，是管理群�
 **System.FM** 表示故障转移管理器服务，是管理服务分区信息的主管服务。
 
 ### 状态
-创建分区并且分区正常时，System.FM 报告正常。当删除分区时，它从运行状况存储删除实体。
+创建分区并且分区正常时，System.FM 报告正常。删除分区时，它从运行状况存储删除实体。
 
-如果分区小于最小副本计数，则它将报告错误。如果分区不小于最小副本计数，但是小于目标副本计数，则它将报告警告。如果分区在仲裁丢失中，则 System.FM 将报告错误。
+如果分区小于最小副本计数，则它将报告错误。如果分区不小于最小副本计数，但是小于目标副本计数，则它将报告警告。如果分区处于仲裁丢失状态，System.FM 会报告错误。
 
-其他重要的事件包括当重新配置超过预期时间时以及构建时间超过预期时发出警告。构建和重新配置的预期时间可依据服务方案配置。例如，如果服务拥有 1 TB 的状态（例如 SQL 数据库），则构建的时间比小数量状态的服务要长。
+其他重要的事件包括重新配置超过预期时间时以及构建时间超过预期时发出警告。构建和重新配置的预期时间可依据服务方案配置。例如，如果服务拥有 1 TB 的状态（例如 SQL 数据库），则构建的时间比小数量状态的服务要长。
 
 - **SourceId**：System.FM
 - **属性**：State
-- **后续步骤**：如果健康状况不正常，则有可能某些副本没有正确创建、打开或提升为主副本或次要副本。在很多情况下，根本原因是服务在打开或更改角色实现中存在 bug。
+- **后续步骤**：如果运行状况不正常，则有可能某些副本没有正确创建、打开或提升为主副本或次要副本。很多情况下，根本原因是服务在打开或更改角色实现中存在 bug。
 
 以下示例显示了一个运行状况良好的分区：
 
@@ -268,7 +269,7 @@ System.FM 表示故障转移管理器 (Failover Manager) 服务，是管理群�
                         	Transitions           : ->Ok = 4/24/2015 6:33:31 PM
 
 
-以下示例显示了一个小于目标副本计数的分区的运行状况。下一步是获取显示分区配置方式的分区描述：**MinReplicaSetSize** 为 2，**TargetReplicaSetSize** 为 7。然后获得群集中的节点数：5。因此在这种情形下，不能放置两个副本。
+以下示例显示了一个小于目标副本计数的分区的运行状况。下一步是获取显示分区配置方式的分区描述：**MinReplicaSetSize** 为 2，**TargetReplicaSetSize** 为 7。然后获得群集中的节点数：5。因此在这种情形下，有两个副本不能放置。
 
 
 	PS C:\> Get-ServiceFabricPartition fabric:/WordCount/WordCountService | Get-ServiceFabricPartitionHealth -ReplicasFilter None
@@ -321,7 +322,7 @@ System.FM 表示故障转移管理器 (Failover Manager) 服务，是管理群�
 **System.RA** 表示重新配置代理组件，是用于处理副本状态的主管组件。
 
 ### 状态
-当已创建副本时，**System.RA** 报告正常。
+已创建副本时，**System.RA** 报告正常。
 
 - **SourceId**：System.RA
 - **属性**：State
@@ -350,20 +351,20 @@ System.FM 表示故障转移管理器 (Failover Manager) 服务，是管理群�
 ### 副本打开状态
 此运行状况报告的描述包含调用 API 时的开始时间（协调世界时）。
 
-如果副本打开时间超过配置的时间（默认为 30 分钟），则 **System.RA** 报告警告。如果 API 影响服务可用性，则以更快的速度发送报告（间隔时间可配置，默认为 30 秒）。此计量时间包括复制器打开和服务打开所用的时间。如果打开完成，则属性更改为正常。
+如果副本打开时间超过配置的时间段（默认为 30 分钟），则 **System.RA** 报告警告。如果 API 影响服务可用性，则会以更快的速度发送报告（间隔时间可配置，默认为 30 秒）。此计量时间包括复制器打开和服务打开所用的时间。如果打开完成，则属性更改为正常。
 
 - **SourceId**：System.RA
 - **属性**：**ReplicaOpenStatus**
-- **后续步骤**：如果健康状况不正常，则调查副本打开时间超过预期的原因。
+- **后续步骤**：如果运行状况不正常，则调查副本打开时间超过预期的原因。
 
 ### 服务 API 调用缓慢
-如果对用户服务代码的调用时间超过配置的时间，则 **System.RAP** 和 **System.Replicator** 报告警告。当调用完成时，警告被清除。
+如果对用户服务代码的调用时间超过配置的时间，则 **System.RAP** 和 **System.Replicator** 报告警告。调用完成时，警告会被清除。
 
 - **SourceId**：System.RAP 或 System.Replicator
 - **属性**：慢速 API 的名称。说明提供了有关 API 挂起时间的详细信息。
 - **后续步骤**：调查调用时间超过预期的原因。
 
-以下示例显示仲裁丢失中的一个分区以及用于找出原因的调查步骤。其中一个副本的运行状况状态为警告，因此你要获取其运行状况。它显示服务操作时间超过预期，且 System.RAP 报告了事件。在收到此信息之后，下一步是查看服务代码并进行调查。对于这种情况，有状态服务的 **RunAsync** 实现会引发一个未处理的异常。副本正在循环，因此可能看不到任何处于警告状态的副本。你可以重试获取运行状况，并找出副本 ID 中的差异。在某些情况下，重试可以提供线索。
+以下示例显示仲裁丢失状态的分区以及用于找出原因的调查步骤。其中一个副本的运行状况状态为警告，因此需要获取其运行状况。它显示服务操作时间超过预期，且 System.RAP 报告了事件。收到此信息之后，下一步是查看服务代码并进行调查。对于这种情况，有状态服务的 **RunAsync** 实现会引发一个未经处理的异常。副本正在循环，因此可能看不到任何处于警告状态的副本。可重试获取运行状况，并找出副本 ID 中的差异。某些情况下，重试可以提供线索。
 
 
 	PS C:\> Get-ServiceFabricPartition fabric:/HelloWorldStatefulApplication/HelloWorldStateful | Get-ServiceFabricPartitionHealth
@@ -457,7 +458,7 @@ System.FM 表示故障转移管理器 (Failover Manager) 服务，是管理群�
                         	Transitions           : ->Warning = 4/24/2015 7:00:59 PM
 
 
-当你在调试程序中启动有故障的应用程序时，诊断事件窗口显示 RunAsync 引发的异常：
+在调试程序中启动有故障的应用程序时，诊断事件窗口显示 RunAsync 引发的异常：
 
 ![Visual Studio 2015 诊断事件：RunAsync 在 fabric:/HelloWorldStatefulApplication 中失败。][1]
 
@@ -467,24 +468,24 @@ Visual Studio 2015 诊断事件：RunAsync 在 **fabric:/HelloWorldStatefulAppli
 
 
 ### 复制队列已满
-如果复制队列已满，则 **System.Replicator** 报告警告。在主副本上，由于一个或多个辅助副本确认操作的速度较慢，通常会发生这种情况。在辅助副本上，当服务应用操作的速度较慢时，通常会发生这种情况。当队列不再满时，警告被清除。
+如果复制队列已满，则 **System.Replicator** 报告警告。主副本上一个或多个辅助副本确认操作的速度较慢，通常会发生这种情况。辅助副本上服务应用操作的速度较慢时，通常会发生这种情况。队列不再满时，警告会被清除。
 
 - **SourceId**：System.Replicator
 - **属性**：**PrimaryReplicationQueueStatus** 或 **SecondaryReplicationQueueStatus**，视副本角色而定
 
 ### 命名操作速度慢
 
-当命名操作所花时间过长而导致无法接受时，**System.NamingService** 会报告其主副本的运行状况。[CreateServiceAsync](https://msdn.microsoft.com/zh-cn/library/azure/mt124028.aspx) 或 [DeleteServiceAsync](https://msdn.microsoft.com/zh-cn/library/azure/mt124029.aspx) 都是命名操作的示例。在 FabricClient 下可找到更多方法，例如，可在[服务管理方法](https://msdn.microsoft.com/zh-cn/library/azure/system.fabric.fabricclient.servicemanagementclient.aspx)或[属性管理方法](https://msdn.microsoft.com/zh-cn/library/azure/system.fabric.fabricclient.propertymanagementclient.aspx)下找到更多方法。
+命名操作所花时间过长而导致无法接受时，**System.NamingService** 会报告其主副本的运行状况。[CreateServiceAsync](https://msdn.microsoft.com/zh-cn/library/azure/mt124028.aspx) 或 [DeleteServiceAsync](https://msdn.microsoft.com/zh-cn/library/azure/mt124029.aspx) 都是命名操作的示例。在 FabricClient 下可找到更多方法，例如，可在[服务管理方法](https://msdn.microsoft.com/zh-cn/library/azure/system.fabric.fabricclient.servicemanagementclient.aspx)或[属性管理方法](https://msdn.microsoft.com/zh-cn/library/azure/system.fabric.fabricclient.propertymanagementclient.aspx)下找到更多方法。
 
 > [AZURE.NOTE] 命名服务将服务名称解析到群集中的某个位置，并允许用户管理服务名称和属性。它是一个 Service Fabric 分区型持久服务。其中一个分区代表“颁发机构所有者”，内含与所有 Service Fabric 名称和服务相关的元数据。Service Fabric 名称映射到不同的分区，这些分区称为“名称所有者”分区，因此该服务是可扩展的。阅读有关[命名服务](/documentation/articles/service-fabric-architecture/)的更多内容。
 
-当某个命名操作所需时间超出预期时，将会在*为操作提供服务的命名服务分区的主副本*上使用警告报告对该操作进行标记。如果操作成功完成，将清除该警告。如果操作在完成时出现错误，则运行状况报告中会包括有关该错误的详细信息。
+某个命名操作所需时间超出预期时，会在为操作提供服务的命名服务分区的主副本上使用警告报告对该操作进行标记。如果操作成功完成，警告会被清除。如果操作在完成时出现错误，则运行状况报告中会包括有关该错误的详细信息。
 
 - **SourceId**：System.NamingService
 - **属性**：以前缀 **Duration\_** 开头，用于确定速度过慢的操作以及在其上应用该操作的 Service Fabric 名称。例如，如果使用名称 fabric:/MyApp/MyService 创建服务的操作耗时过长，则属性为 Duration\_AOCreateService.fabric:/MyApp/MyService。AO 指向此名称和操作的命名分区的角色。
 - **后续步骤**：查看命名操作失败的原因。每个操作可能会有不同的根本原因。例如，删除服务可能会在某个节点上受阻，因为应用程序主机总是在某个节点上崩溃，原因是服务代码中存在用户 Bug。
 
-以下示例显示了创建服务操作。该操作花的时间超过配置的持续时间。AO 重试并将工作发送到 NO。NO 在完成上一个操作时出现超时。在这种情况下，同一个副本对于 AO 和 NO 角色来说都是主副本。
+以下示例显示了创建服务操作。该操作花的时间超过配置的持续时间。AO 会重试并将工作发送到 NO。NO 在完成上一个操作时出现超时。这种情况下，同一个副本对于 AO 和 NO 角色来说都是主副本。
 
 
 	PartitionId           : 00000000-0000-0000-0000-000000001000
@@ -532,10 +533,10 @@ Visual Studio 2015 诊断事件：RunAsync 在 **fabric:/HelloWorldStatefulAppli
 
 
 ## DeployedApplication 系统运行状况报告
-**System.Hosting** 是已部署实体的主管组件。
+**System.Hosting** 是已部署实体上的主管组件。
 
 ### 激活
-当应用程序在节点上成功激活时，System.Hosting 报告正常。否则报告错误。
+应用程序在节点上成功激活时，System.Hosting 报告正常。否则报告错误。
 
 - **SourceId**：System.Hosting
 - **属性**：Activation，包括滚动更新版本
@@ -576,7 +577,7 @@ Visual Studio 2015 诊断事件：RunAsync 在 **fabric:/HelloWorldStatefulAppli
 - **后续步骤**：调查在节点上下载失败的原因。
 
 ## DeployedServicePackage 系统运行状况报告
-**System.Hosting** 是已部署实体的主管组件。
+**System.Hosting** 是已部署实体上的主管组件。
 
 ### 服务包激活
 如果服务包在节点上成功激活，则 System.Hosting 报告正常。否则报告错误。
@@ -592,7 +593,7 @@ Visual Studio 2015 诊断事件：RunAsync 在 **fabric:/HelloWorldStatefulAppli
 - **属性**：使用前缀 **CodePackageActivation**，并以 **CodePackageActivation:*CodePackageName*:*SetupEntryPoint/EntryPoint*** 的形式包含代码包的名称和入口点（例如，**CodePackageActivation:Code:SetupEntryPoint**）
 
 ### 服务类型注册
-如果服务类型注册成功，则 **System.Hosting** 报告正常。如果未按时完成注册（时间通过 **ServiceTypeRegistrationTimeout** 配置），则报告错误。如果因为运行时已关闭而导致服务类型从节点注销，则 Hosting 报告警告。
+如果服务类型注册成功，则 **System.Hosting** 报告正常。如果未按时完成注册（时间通过 **ServiceTypeRegistrationTimeout** 配置），则报告错误。如果服务类型从节点注销，这是因为运行时已关闭。Hosting 会报告警告。
 
 - **SourceId**：System.Hosting
 - **属性**：使用前缀 **ServiceTypeRegistration**，并包含服务类型名称（例如，**ServiceTypeRegistration:FileStoreServiceType**）
@@ -668,4 +669,5 @@ Visual Studio 2015 诊断事件：RunAsync 在 **fabric:/HelloWorldStatefulAppli
 
 [Service Fabric 应用程序升级](/documentation/articles/service-fabric-application-upgrade/)
 
-<!---HONumber=Mooncake_Quality_Review_0125_2017-->
+<!---HONumber=Mooncake_0213_2017-->
+<!--Update_Description: wording update-->
