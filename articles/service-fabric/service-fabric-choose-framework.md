@@ -13,8 +13,8 @@
     ms.topic="article"
     ms.tgt_pltfrm="NA"
     ms.workload="NA"
-    ms.date="12/13/2016"
-    wacn.date="01/20/2017"
+    ms.date="1/05/2016"
+    wacn.date="02/20/2017"
     ms.author="seanmck" />
 
 # Service Fabric 编程模型概述
@@ -40,7 +40,7 @@ Reliable Actor 框架在 Reliable Services 的基础上生成，是根据执行�
 由于 Reliable Actors 自身是在 Reliable Services 基础上生成的应用程序框架，所以它可与 Service Fabric 平台完全集成，并且获益于平台所提供的完整功能集。
 
 ## 后续步骤
-[了解有关 Reliable Actors 的详细信息](/documentation/articles/service-fabric-reliable-actors-introduction/)或通过[编写你的第一个 Reliable Actor 服务](/documentation/articles/service-fabric-reliable-actors-get-started/)帮助你入门
+[详细了解 Reliable Actors](/documentation/articles/service-fabric-reliable-actors-introduction/) 或者从[编写第一个 Reliable Actor 服务](/documentation/articles/service-fabric-reliable-actors-get-started/)开始
 
-<!---HONumber=Mooncake_0116_2017-->
+<!---HONumber=Mooncake_0213_2017-->
 <!--update: wording update-->

@@ -1,22 +1,21 @@
 <properties
-   pageTitle="Service Fabric Reliable Actors 入门 | Azure"
-   description="本教程将向你演示使用 Service Fabric Reliable Actors 创建、调试和部署简单的基于执行组件的服务的步骤。"
-   services="service-fabric"
-   documentationCenter=".net"
-   authors="vturecek"
-   manager="timlt"
-   editor=""/>  
-
-
+    pageTitle="Service Fabric Reliable Actors 入门 | Azure"
+    description="本教程将向你演示使用 Service Fabric Reliable Actors 创建、调试和部署简单的基于执行组件的服务的步骤。"
+    services="service-fabric"
+    documentationcenter=".net"
+    author="vturecek"
+    manager="timlt"
+    editor="" />
 <tags
-   ms.service="service-fabric"
-   ms.devlang="java"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="NA"
-   ms.date="09/25/2016"
-   wacn.date="11/28/2016"
-   ms.author="vturecek"/>  
+    ms.assetid="d31dc8ab-9760-4619-a641-facb8324c759"
+    ms.service="service-fabric"
+    ms.devlang="java"
+    ms.topic="article"
+    ms.tgt_pltfrm="NA"
+    ms.workload="NA"
+    ms.date="01/04/2017"
+    wacn.date="02/20/2017"
+    ms.author="vturecek" />  
 
 
 # Reliable Actors 入门
@@ -28,26 +27,25 @@
 本文介绍 Azure Service Fabric Reliable Actors 的基础知识，并演示如何在 Java 中创建和部署简单的 Reliable Actor 应用程序。
 
 ## 安装和设置
-在开始之前，请确保已在计算机上设置 Service Fabric 开发环境。
-如果需要设置环境，请转到[在 Mac 上开始使用](/documentation/articles/service-fabric-get-started-mac/)或[在 Linux 上开始使用](/documentation/articles/service-fabric-get-started-linux/)。
+在开始之前，请确保已在计算机上设置 Service Fabric 开发环境。如果需要设置环境，请转到[在 Mac 上开始使用](/documentation/articles/service-fabric-get-started-mac/)或[在 Linux 上开始使用](/documentation/articles/service-fabric-get-started-linux/)。
 
 ## 基本概念
 若要开始使用 Reliable Actors，只需了解几个基本概念：
 
- * **执行组件服务**。可以在 Service Fabric 基础结构中部署的 Reliable Services 中封装了 Reliable Actors。执行组件服务在命名的服务实例中激活。
+ * **执行组件服务**。可以在 Service Fabric 基础结构中部署的 Reliable Services 中打包 Reliable Actors。执行组件实例在命名的服务实例中激活。
  
  * **执行组件注册**。与 Reliable Services 一样，Reliable Actor 服务也需要注册到 Service Fabric 运行时。此外，需要将执行组件类型注册到执行组件运行时。
  
- * **执行组件接口**。执行组件接口用于定义执行组件的强类型公共接口。在 Reliable Actor 模型术语中，执行组件接口用于定义执行组件可以理解并处理的消息类型。其他执行组件或客户端应用程序使用此执行组件接口将消息“发送”到（异步方式）此执行组件。Reliable Actors 可实现多个接口。
+ * **执行组件接口**。执行组件接口用于定义执行组件的强类型公共接口。在 Reliable Actor 模型术语中，执行组件接口用于定义执行组件可以理解并处理的消息类型。其他执行组件或客户端应用程序使用此执行组件接口将消息“发送”（异步方式）到此执行组件。Reliable Actors 可实现多个接口。
  
  * **ActorProxy 类**。客户端应用程序使用 ActorProxy 类调用通过执行组件接口公开的方法。ActorProxy 类提供两个重要功能：
 	* 名称解析：能够在群集中找到执行组件（查找托管它的群集节点）。
-	* 故障处理：例如，在需要将执行组件重新定位到群集中另一个节点的故障之后，它可以重试方法调用和重新解析执行组件的位置。
+	* 故障处理：例如，在需要将执行组件重新定位到群集中另一个节点的故障之后，它可以重试方法调用和重新解析执行组件位置。
 
-有必要提一下以下与执行组件接口有关的规则：
+有必要提一下与执行组件接口有关的以下规则：
 
 - 不能重载执行组件接口方法。
-- 执行组件接口方法不能有 out、ref 或可选参数。
+- 执行组件接口方法不能有输出参数、引用参数或可选参数。
 - 不支持泛型接口。
 
 ## 创建执行组件服务
@@ -195,4 +193,5 @@ Yeoman 基架包含一个用于构建应用程序的 gradle 脚本，以及一�
 	$ ./install.sh
 
 
-<!---HONumber=Mooncake_1121_2016-->
+<!---HONumber=Mooncake_0213_2017-->
+<!--Update_Description: wording update-->

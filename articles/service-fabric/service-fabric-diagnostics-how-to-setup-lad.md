@@ -26,7 +26,7 @@
 - [Windows](/documentation/articles/service-fabric-diagnostics-how-to-setup-wad/)
 - [Linux](/documentation/articles/service-fabric-diagnostics-how-to-setup-lad/)
 
-当你运行 Azure Service Fabric 群集时，最好是从一个中心位置的所有节点中收集日志。只要将日志集中在一个位置，无论问题发生在服务、应用程序还是群集本身，都能轻松分析问题并进行故障排除。上载和收集日志的方式之一是使用可将日志上载到 Azure 存储空间的 Azure 诊断扩展。可以从存储中读取事件，并将它们放在[弹性缩放](/documentation/articles/service-fabric-diagnostic-how-to-use-elasticsearch/)等产品或其他日志分析解决方案中。
+当你运行 Azure Service Fabric 群集时，最好是从一个中心位置的所有节点中收集日志。只要将日志集中在一个位置，无论问题发生在服务、应用程序还是群集本身，都能轻松分析问题并进行故障排除。上载和收集日志的方式之一是使用可将日志上载到 Azure 存储空间的 Azure 诊断扩展。可以从存储中读取事件，并将它们放在其他日志分析解决方案中。
 
 ## 可以收集的日志源
 - **Service Fabric 日志**：由平台通过 [LTTng](http://lttng.org) 发出，将上载到你的存储帐户。日志可能是平台发出的操作事件或运行时事件。这些日志存储在群集清单指定的位置。（若要获取存储帐户的详细信息，请搜索 **AzureTableWinFabETWQueryable** 标记，然后查看 **StoreConnectionString**）。

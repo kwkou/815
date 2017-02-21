@@ -1,25 +1,21 @@
-
 <properties
-   pageTitle="应用程序升级：升级参数 | Azure"
-   description="描述与升级 Service Fabric 应用程序有关的参数，包括要执行的运行状况检查和用于自动撤消升级的策略。"
-   services="service-fabric"
-   documentationCenter=".net"
-   authors="mani-ramaswamy"
-   manager="timlt"
-   editor=""/>  
-
-
+    pageTitle="应用程序升级：升级参数 | Azure"
+    description="介绍与升级 Service Fabric 应用程序相关的参数，包括要执行的运行状况检查，以及用于自动撤消升级的策略。"
+    services="service-fabric"
+    documentationcenter=".net"
+    author="mani-ramaswamy"
+    manager="timlt"
+    editor="" />
 <tags
-   ms.service="service-fabric"
-   ms.devlang="dotnet"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="NA"
-   ms.date="11/15/2016"
-   wacn.date="12/26/2016"
-   ms.author="subramar"/>  
-
-
+    ms.assetid="a4170ac6-192e-44a8-b93d-7e39c92a347e"
+    ms.service="service-fabric"
+    ms.devlang="dotnet"
+    ms.topic="article"
+    ms.tgt_pltfrm="NA"
+    ms.workload="NA"
+    ms.date="01/05/2017"
+    wacn.date="02/20/2017"
+    ms.author="subramar" />  
 
 
 # 应用程序升级参数
@@ -32,7 +28,7 @@
 | ApplicationName |正在升级的应用程序的名称。示例：fabric:/VisualObjects、fabric:/ClusterMonitor |
 | TargetApplicationTypeVersion |作为升级目标的应用程序类型版本。 |
 | FailureAction |升级失败时 Service Fabric 要执行的操作。可将应用程序回滚到更新前的版本（回滚），或者在当前升级域中停止升级。对于后者，升级模式还会更改为“手动”。允许的值为“Rollback”和“Manual”。 |
-| HealthCheckWaitDurationSec |完成升级域的升级后，在 Service Fabric 评估应用程序的运行状况之前需要等待的时间（以秒为单位）。也可将此持续时间视为应用程序应先运行多长时间才可被视为正常运行。如果运行状况检查通过，升级过程将转到下一个升级域。如果运行状况检查失败，则在再次重试运行状况检查之前，Service Fabric 会等待一定的时间间隔 (UpgradeHealthCheckInterval)，直到达到 HealthCheckRetryTimeout。建议的默认值为 0 秒。 |
+| HealthCheckWaitDurationSec |完成升级域的升级后，在 Service Fabric 评估应用程序的运行状况之前需要等待的时间（以秒为单位）。也可将此持续时间视为应用程序应先运行多长时间才可被视为正常运行。如果运行状况检查通过，升级过程将转到下一个升级域。如果运行状况检查失败，则在再次重试运行状况检查之前，Service Fabric 会等待一定的时间间隔 \(UpgradeHealthCheckInterval\)，直到达到 HealthCheckRetryTimeout。建议的默认值为 0 秒。 |
 | HealthCheckRetryTimeoutSec |声明升级失败之前，Service Fabric 继续执行运行状况评估的持续时间（以秒为单位）。默认为 600 秒。此持续时间在达到 HealthCheckWaitDuration 后开始。在此 HealthCheckRetryTimeout 期间，Service Fabric 可能会对应用程序运行状况执行多次运行状况检查。默认值为 10 分钟，应该针对应用程序相应地自定义该值。 |
 | HealthCheckStableDurationSec |在转到下一个升级域或完成升级之前，为了验证应用程序是否稳定而要等待的持续时间（以秒为单位）。此等待持续时间用于防止在执行了运行状况检查后，未检测到运行状况更改。默认值为 120 秒，应该针对应用程序相应地自定义该值。 |
 | UpgradeDomainTimeoutSec |升级单个升级域的最长时间（以秒为单位）。如果达到了此超时，升级将会停止，然后根据 UpgradeFailureAction 的设置继续下一步。默认值为 never（无期限），应该针对应用程序相应地自定义该值。 |
@@ -75,4 +71,5 @@ MaxPercentUnhealthyServices、MaxPercentUnhealthyPartitionsPerService 和 MaxPer
 参考[对应用程序升级进行故障排除](/documentation/articles/service-fabric-application-upgrade-troubleshooting/)中的步骤来解决应用程序升级时的常见问题。
  
 
-<!---HONumber=Mooncake_1219_2016-->
+<!---HONumber=Mooncake_0213_2017-->
+<!--Update_Description: update meta properties-->

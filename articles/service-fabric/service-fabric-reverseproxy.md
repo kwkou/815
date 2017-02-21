@@ -1,22 +1,21 @@
 <properties
-   pageTitle="Service Fabric 反向代理 | Azure"
-   description="使用 Service Fabric 的反向代理从群集内部和外部与微服务通信"
-   services="service-fabric"
-   documentationCenter=".net"
-   authors="BharatNarasimman"
-   manager="timlt"
-   editor="vturecek"/>  
-
-
+    pageTitle="Service Fabric 反向代理 | Azure"
+    description="使用 Service Fabric 的反向代理从群集内部和外部与微服务通信"
+    services="service-fabric"
+    documentationcenter=".net"
+    author="BharatNarasimman"
+    manager="timlt"
+    editor="vturecek" />
 <tags
-   ms.service="service-fabric"
-   ms.devlang="dotnet"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="required"
-   ms.date="10/04/2016"
-   wacn.date="11/28/2016"
-   ms.author="vturecek"/>
+    ms.assetid="47f5c1c1-8fc8-4b80-a081-bc308f3655d3"
+    ms.service="service-fabric"
+    ms.devlang="dotnet"
+    ms.topic="article"
+    ms.tgt_pltfrm="na"
+    ms.workload="required"
+    ms.date="01/04/2017"
+    wacn.date="02/20/2017"
+    ms.author="bharatn" />  
 
 
 # Service Fabric 反向代理
@@ -31,8 +30,7 @@ Service Fabric 中的微服务通常在群集的一部分 VM 中运行，并且�
 2. 连接到服务。
 3. 确定连接失败的原因，必要时重新解析服务位置。
 
-此过程通常涉及将客户端通信库包装到重试循环中，以便执行服务解析和重试策略。
-有关本主题的详细信息，请参阅[与服务通信](/documentation/articles/service-fabric-connect-and-communicate-with-services/)。
+此过程通常涉及将客户端通信库包装到重试循环中，以便执行服务解析和重试策略。有关本主题的详细信息，请参阅[与服务通信](/documentation/articles/service-fabric-connect-and-communicate-with-services/)。
 
 ### 通过 SF 反向代理进行通信
 Service Fabric 反向代理在群集的所有节点上运行。它会代表客户端执行整个服务解析流程，然后再转发客户端请求。因此，在群集上运行的客户端可以通过在同一节点上以本地方式运行的 SF 反向代理，直接使用任何客户端 HTTP 通信库与目标服务通信。
@@ -43,8 +41,7 @@ Service Fabric 反向代理在群集的所有节点上运行。它会代表客�
 微服务的默认外部通信模型为“选择加入”，即默认情况下，不能直接从外部客户端访问每个服务。[Azure 负载均衡器](/documentation/articles/load-balancer-overview/) 充当微服务和外部客户端之间的网络边界，可以进行网络地址转换并将外部请求转发到内部的 **IP:端口**终结点。若要允许外部客户端直接访问微服务的终结点，必须先将 Azure Load Balancer 配置为将流量转发到群集中服务使用的每个端口。另外，大多数微服务（尤其是有状态微服务）并不是位于群集的所有节点上，这些微服务在故障转移时可以在节点之间移动，因此在这样的情况下，Azure Load Balancer 无法有效地确定副本的目标节点的位置，无法向其转发流量。
 
 ### 从群集外部通过 SF 反向代理访问微服务
-
-可以在 Azure Load Balancer 中直接配置 SF 反向代理端口，不需配置各个服务的端口。因此，群集外部的客户端可以通过反向代理访问群集内部的服务，不需额外进行配置。
+可以在 Azure 负载均衡器中直接配置 SF 反向代理端口，不需配置各个服务的端口。因此，群集外部的客户端可以通过反向代理访问群集内部的服务，不需额外进行配置。
 
 ![外部通信][0]
 
@@ -290,4 +287,5 @@ Service Fabric 反向代理在群集的所有节点上运行。它会代表客�
 [0]: ./media/service-fabric-reverseproxy/external-communication.png
 [1]: ./media/service-fabric-reverseproxy/internal-communication.png
 
-<!---HONumber=Mooncake_1121_2016-->
+<!---HONumber=Mooncake_0213_2017-->
+<!--Update_Description: wording udpate-->

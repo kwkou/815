@@ -1,22 +1,21 @@
 <properties
-   pageTitle="在 Mac OS X 上设置开发环境 | Azure"
-   description="安装运行时、SDK 和工具并创建本地开发群集。完成此设置后，可以在 Mac OS X 上构建应用程序。"
-   services="service-fabric"
-   documentationCenter=".net"
-   authors="seanmck"
-   manager="timlt"
-   editor=""/>  
-
-
+    pageTitle="在 Mac OS X 上设置开发环境 | Azure"
+    description="安装运行时、SDK 和工具并创建本地开发群集。完成此设置后，可以在 Mac OS X 上构建应用程序。"
+    services="service-fabric"
+    documentationcenter=".net"
+    author="seanmck"
+    manager="timlt"
+    editor="" />
 <tags
-   ms.service="service-fabric"
-   ms.devlang="dotNet"
-   ms.topic="get-started-article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="NA"
-   ms.date="09/25/2016"
-   wacn.date="11/28/2016"
-   ms.author="seanmck"/>  
+    ms.assetid="bf84458f-4b87-4de1-9844-19909e368deb"
+    ms.service="service-fabric"
+    ms.devlang="dotNet"
+    ms.topic="get-started-article"
+    ms.tgt_pltfrm="NA"
+    ms.workload="NA"
+    ms.date="12/27/2016"
+    wacn.date="02/20/2017"
+    ms.author="seanmck" />  
 
 
 # 在 Mac OS X 上设置开发环境
@@ -32,24 +31,23 @@
 
 Service Fabric 不是在 OS X 上以本机方式运行。为了运行本地 Service Fabric 群集，我们提供了使用 Vagrant 和 VirtualBox 的预配置 Ubuntu 虚拟机。开始之前，需要：
 
-- [Vagrant（v1.8.4 或更高版本）](http://wwww.vagrantup.com/downloads)
+- [Vagrant（v1.8.4 或更高版本）](http://www.vagrantup.com/downloads.html)
 - [VirtualBox](http://www.virtualbox.org/wiki/Downloads)
 
 ## 创建本地 VM
+若要创建包含 5 节点型 Service Fabric 群集的本地 VM，请执行以下步骤：
 
-若要创建包含 5 个节点 Service Fabric 群集的本地 VM，请执行以下操作：
+1. 克隆 **Vagrantfile** 存储库
+   
 
-1. 克隆 Vagrantfile 存储库
+    	git clone https://github.com/azure/service-fabric-linux-vagrant-onebox.git
 
-    ```bash
-    git clone https://github.com/azure/service-fabric-linux-vagrant-onebox.git
-    ```
 
 2. 导航到存储库的本地副本
 
-    ```bash
-    cd service-fabric-linux-vagrant-onebox
-    ```
+
+    	cd service-fabric-linux-vagrant-onebox
+
 
 3. （可选）修改默认的 VM 设置
 
@@ -62,9 +60,9 @@ Service Fabric 不是在 OS X 上以本机方式运行。为了运行本地 Serv
 
 4. 创建 VM
 
-    ```bash
-    vagrant up
-    ```
+
+    	vagrant up
+
 
     此步骤下载预配置的 VM 映像、在本地将它启动，然后在其中设置一个本地 Service Fabric 群集。此过程预计需要几分钟时间。如果设置成功完成，输出中会显示一条消息，指出群集正在启动。
 
@@ -97,9 +95,6 @@ Service Fabric 提供适用于 Eclipse Neon IDE 的插件，可简化构建和�
 6. 继续安装，并接受最终用户许可协议。
 
 ## 后续步骤
-
-- [创建第一个适用于 Linux 的 Service Fabric 应用程序](/documentation/articles/service-fabric-create-your-first-linux-application-with-java/)
-
 <!-- Links -->
 
 
@@ -114,4 +109,5 @@ Service Fabric 提供适用于 Eclipse Neon IDE 的插件，可简化构建和�
 [sf-eclipse-plugin-install]: ./media/service-fabric-get-started-mac/sf-eclipse-plugin-install.png
 [buildship-update]: https://projects.eclipse.org/projects/tools.buildship
 
-<!---HONumber=Mooncake_1121_2016-->
+<!---HONumber=Mooncake_0213_2017-->
+<!--Update_Description: wording update-->

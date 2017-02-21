@@ -2,19 +2,19 @@
     pageTitle="使用可靠集合 | Azure"
     description="了解有关使用可靠集合的最佳实践。"
     services="service-fabric"
-    documentationCenter=".net"
-    authors="JeffreyRichter"
+    documentationcenter=".net"
+    author="JeffreyRichter"
     manager="timlt"
     editor="" />
-
 <tags
-    ms.service="multiple"
+    ms.assetid="39e0cd6b-32c4-4b97-bbcf-33dad93dcad1"
+    ms.service="Service-Fabric"
     ms.devlang="dotnet"
     ms.topic="article"
-    ms.tgt_pltfrm="na"
-    ms.workload="multiple"
-    ms.date="03/28/2016"
-    wacn.date="01/25/2017"
+    ms.tgt_pltfrm="NA"
+    ms.workload="NA"
+    ms.date="01/05/2017"
+    wacn.date="02/20/2017"
     ms.author="jeffreyr" />
 
 # 使用可靠集合
@@ -198,12 +198,13 @@ public struct ItemId {
 或者，也可以执行通称为 2 阶段升级的功能。使用 2 阶段升级，服务可从 V1 升级成 V2：V2 包含知道如何处理新架构更改的代码，但这段代码不执行。当 V2 代码读取 V1 数据时，它在其上操作并写入 V1 数据。然后，在跨所有升级域的升级都完成之后，就可以通知运行中的 V2 实例，升级已完成。（通知方式之一是推出配置升级；这就是 2 阶段升级）。 现在，V2 实例可以读取 V1 数据，将它转换成 V2 数据、操作它，然后写出为 V2 数据。当其他实例读取 V2 数据时，不需要转换它，只要操作并写出 V2 数据即可。
 
 ## 后续步骤
-若要了解如何创建向前兼容的数据约定，请参阅 [Forward-Compatible Data Contracts（向前兼容的数据约定）](https://msdn.microsoft.com/zh-cn/library/ms731083.aspx)。
+若要了解如何创建向前兼容的数据约定，请参阅 [向前兼容的数据约定](https://msdn.microsoft.com/zh-cn/library/ms731083.aspx)。
 
-若要了解版本控制数据约定的最佳实践，请参阅 [Data Contract Versioning（数据约定版本控制）](https://msdn.microsoft.com/zh-cn/library/ms731138.aspx)。
+若要了解版本控制数据约定的最佳实践，请参阅 [数据约定版本控制](https://msdn.microsoft.com/zh-cn/library/ms731138.aspx)。
 
-若要了解如何实现版本容错的数据约定，请参阅 [Version-Tolerant Serialization Callbacks（版本容错的序列化回调）](https://msdn.microsoft.com/zh-cn/library/ms733734.aspx)。
+若要了解如何实现版本容错的数据约定，请参阅 [版本容错的序列化回调](https://msdn.microsoft.com/zh-cn/library/ms733734.aspx)。
 
 若要了解如何提供可跨多个版本互操作的数据结构，请参阅 [IExtensibleDataObject](https://msdn.microsoft.com/zh-cn/library/system.runtime.serialization.iextensibledataobject.aspx)。
 
-<!---HONumber=Mooncake_Quality_Review_0125_2017-->
+<!---HONumber=Mooncake_0213_2017-->
+<!--Update_Description: update meta properties-->
