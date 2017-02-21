@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties
     pageTitle="使用 Ambari 视图来操作 HDInsight (Hadoop) 上的 Hive | Azure"
     description="了解如何从 Web 浏览器中使用 Hive 视图来提交 Hive 查询。Hive 视图是随基于 Linux 的 HDInsight 群集提供的 Ambari Web UI 的一部分。"

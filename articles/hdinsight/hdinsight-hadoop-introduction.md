@@ -53,7 +53,7 @@ HDInsight 提供以下群集类型：
 
 * [Hue](/documentation/articles/hdinsight-hadoop-hue-linux/)：一组 Web 应用程序，用来与群集交互。仅 Linux 群集。
 * [Giraph](/documentation/articles/hdinsight-hadoop-giraph-install-linux/)：通过图形处理对事物或人员之间的关系建模。
-* [R](/documentation/articles/hdinsight-hadoop-r-scripts/)：机器学习中用于统计计算的开源语言和环境。
+* [R](/documentation/articles/hdinsight-hadoop-r-scripts-linux/)：机器学习中用于统计计算的开源语言和环境。
 * [Solr](/documentation/articles/hdinsight-hadoop-solr-install-linux/)：允许对数据进行全文搜索的企业级搜索平台。
 
 有关开发你自己的脚本操作的信息，请参阅[使用 HDInsight 进行脚本操作开发](/documentation/articles/hdinsight-hadoop-script-actions-linux/)。

@@ -28,7 +28,7 @@
 在本文中，你将学习如何使用自定义脚本，在群集的边缘节点上安装 RStudio Server 的社区（免费）版本。如果你偏好 RStudio Server 的商用授权 Pro 版本，则必须遵循 [RStudio Server](https://www.rstudio.com/products/rstudio/download-server/) 的安装说明。
 
 > [AZURE.NOTE]
-本文档中的步骤需要使用 HDInsight 群集上的 R Server，如果所用 HDInsight 群集上的 R 是使用[安装 R 脚本操作](/documentation/articles/hdinsight-hadoop-r-scripts/)安装的，则无法正常执行这些步骤。
+本文档中的步骤需要使用 HDInsight 群集上的 R Server，如果所用 HDInsight 群集上的 R 是使用[安装 R 脚本操作](/documentation/articles/hdinsight-hadoop-r-scripts-linux/)安装的，则无法正常执行这些步骤。
 >
 > 
 

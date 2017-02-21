@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties
     pageTitle="结合使用自定义库和 HDInsight Spark 群集分析网站日志 | Azure"
     description="结合使用自定义库和 HDInsight Spark 群集分析网站日志"

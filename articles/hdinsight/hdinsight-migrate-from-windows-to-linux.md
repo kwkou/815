@@ -166,7 +166,7 @@ Linux 群集文件系统的布局与基于 Windows 的 HDInsight 群集不同。
 
 | 对于基于 Windows 的群集，我使用... | 对于基于 Linux 的群集... |
 | --- | --- |
-| **Hive 编辑器** |Ambari 中的 Hive 视图 |
+| **Hive 编辑器** |[Ambari 中的 Hive 视图](/documentation/articles/hdinsight-hadoop-use-hive-ambari-view/) |
 | 运行 `set hive.execution.engine=tez;` 以启用 Tez |Tez 是基于 Linux 的群集的默认执行引擎，因此不再需要 set 语句。 |
 | 服务器上的 CMD 文件或脚本作为 Hive 作业的一部分调用 |使用 Bash 脚本 |
 | 从远程桌面运行 `hive` 命令 |使用 [Beeline](/documentation/articles/hdinsight-hadoop-use-hive-beeline/)，或者[从 SSH 会话使用 Hive](/documentation/articles/hdinsight-hadoop-use-hive-ssh/) |

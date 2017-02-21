@@ -306,7 +306,7 @@ HDInsight 3.4 和 3.5 的另一个重要区别在于 `JAVA_HOME` 现在能够指
 Microsoft 提供了在 HDInsight 群集上安装组件的示例脚本。示例脚本以及有关如何使用这些脚本的说明可以在以下链接上找到：
 
 * [Install and use Hue on HDInsight clusters（在 HDInsight 群集上安装并使用 Hue）](/documentation/articles/hdinsight-hadoop-hue-linux/)
-* [在 HDInsight Hadoop 群集上安装并使用 R](/documentation/articles/hdinsight-hadoop-r-scripts/)
+* [在 HDInsight Hadoop 群集上安装并使用 R](/documentation/articles/hdinsight-hadoop-r-scripts-linux/)
 * [在 HDInsight 群集上安装并使用 Solr](/documentation/articles/hdinsight-hadoop-solr-install-linux/)
 * [在 HDInsight 群集上安装并使用 Giraph](/documentation/articles/hdinsight-hadoop-giraph-install-linux/)
 

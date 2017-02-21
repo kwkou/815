@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties
     pageTitle="使用脚本操作在 Hadoop 群集上安装 Spark | Azure"
     description="了解如何使用脚本操作自定义具有 Spark 的 HDInsight 群集。"

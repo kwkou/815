@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties
     pageTitle="创建要在 HDInsight Spark 群集中运行的独立 scala 应用程序 | Azure"
     description="了解如何创建要在 HDInsight Spark 群集中运行的独立 Spark 应用程序。"

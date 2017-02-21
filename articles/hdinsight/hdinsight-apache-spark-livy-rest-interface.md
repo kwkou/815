@@ -72,7 +72,7 @@ Livy 可为群集上运行的 Spark 作业提供高可用性。下面是一些�
 * 适用于 HDInsight 的 Jupyter 笔记本由后端中的 Livy 提供支持。如果在笔记本运行 Spark 作业时重新启动 Livy 服务，笔记本将继续运行代码单元。
 
 ## 举个例子
-在本部分中，我们将通过示例了解如何使用 Livy 提交 Spark 应用程序、监视应用程序的进度，然后删除作业。以下步骤假设：
+在本部分中，我们将通过示例了解如何使用 Livy 提交 Spark 应用程序、监视应用程序的进度，然后删除作业。我们在本示例中使用的应用程序是 [Create a standalone Scala application and to run on HDInsight Spark cluster](/documentation/articles/hdinsight-apache-spark-create-standalone-application/)（创建独立的 Scala 应用程序并在 HDInsight Spark 群集上运行）一文中开发的应用程序。以下步骤假设：
 
 * 已将应用程序 jar 复制到与群集关联的存储帐户。
 * 已将 CuRL 安装在用于执行这些步骤的计算机上。
@@ -170,7 +170,12 @@ HDInsight 3.5 群集默认情况下禁止使用本地文件路径访问示例数
 ### 方案
 * [Spark 和 BI：使用 HDInsight 中的 Spark 和 BI 工具执行交互式数据分析](/documentation/articles/hdinsight-apache-spark-use-bi-tools/)
 * [Spark 和机器学习：使用 HDInsight 中的 Spark 对使用 HVAC 数据生成温度进行分析](/documentation/articles/hdinsight-apache-spark-ipython-notebook-machine-learning/)
+* [Spark 和机器学习：使用 HDInsight 中的 Spark 预测食品检查结果](/documentation/articles/hdinsight-apache-spark-machine-learning-mllib-ipython/)
 * [Spark 流式处理：使用 HDInsight 中的 Spark 生成实时流式处理应用程序](/documentation/articles/hdinsight-apache-spark-eventhub-streaming/)
+* [使用 HDInsight 中的 Spark 分析网站日志](/documentation/articles/hdinsight-apache-spark-custom-library-website-log-analysis/)
+
+### 创建和运行应用程序
+* [使用 Scala 创建独立的应用程序](/documentation/articles/hdinsight-apache-spark-create-standalone-application/)
 
 ### 工具和扩展
 * [在 HDInsight 上的 Spark 群集中使用 Zeppelin 笔记本](/documentation/articles/hdinsight-apache-spark-use-zeppelin-notebook/)
