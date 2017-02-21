@@ -14,7 +14,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="06/29/2016"
-	wacn.date="11/14/2016"
+	wacn.date="02/21/2017"
 	ms.author="rachelap"/>
 
 # 应用服务 API 应用 - 功能更改

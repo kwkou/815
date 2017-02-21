@@ -14,7 +14,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="na"
     ms.date="11/01/2016"
-    wacn.date="01/25/2017"
+    wacn.date="02/21/2017"
     ms.author="vturecek;mikhegn" />
 
 # 使用 Visual Studio 调试 Service Fabric 应用程序

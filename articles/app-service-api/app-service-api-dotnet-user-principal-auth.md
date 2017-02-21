@@ -14,7 +14,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="06/30/2016"
-	wacn.date="11/25/2016"
+	wacn.date="02/21/2017"
 	ms.author="rachelap"/>
 
 # Azure 应用服务中 API 应用的用户身份验证

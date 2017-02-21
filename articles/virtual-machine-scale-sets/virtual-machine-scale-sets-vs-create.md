@@ -16,7 +16,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="06/13/2016"
-	wacn.date="11/21/2016"
+	wacn.date="02/21/2017"
 	ms.author="guybo"/>
 
 # 使用 Visual Studio 部署虚拟机规模集

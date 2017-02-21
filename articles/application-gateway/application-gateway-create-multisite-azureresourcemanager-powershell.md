@@ -15,7 +15,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="infrastructure-services"
     ms.date="12/12/2016"
-    wacn.date="01/03/2017"
+    wacn.date="02/21/2017"
     ms.author="amsriva" />
 
 # 创建托管多个 Web 应用程序的应用程序网关

@@ -14,7 +14,7 @@
 	ms.devlang="na"
 	ms.topic="get-started-article"
 	ms.date="08/27/2016"
-	wacn.date="01/05/2017"
+	wacn.date="02/21/2017"
 	ms.author="rachelap"/>
 
 # 借助 CORS 从 JavaScript 使用 API 应用

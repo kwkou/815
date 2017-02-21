@@ -14,7 +14,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="multiple"
    ms.date="10/08/2015"
-   wacn.date="01/25/2017"
+   wacn.date="02/21/2017"
    ms.author="cawaMS" />
 
 # 从 Visual Studio 配置与 Service Fabric 群集的安全连接

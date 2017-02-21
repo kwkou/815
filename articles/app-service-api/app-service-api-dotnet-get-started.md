@@ -15,7 +15,7 @@
 	ms.devlang="na"
 	ms.topic="hero-article"
 	ms.date="09/20/2016"
-	wacn.date="11/25/2016"
+	wacn.date="02/21/2017"
 	ms.author="rachelap"/>
 
 # Azure 应用服务中的 API 应用、ASP.NET 和 Swagger 入门

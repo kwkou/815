@@ -14,7 +14,7 @@
     ms.tgt_pltfrm="NA"
     ms.workload="NA"
     ms.date="10/19/2016"
-    wacn.date="01/17/2017"
+    wacn.date="02/21/2017"
     ms.author="vturecek" />
 
 # 将 Web 角色和辅助角色转换成 Service Fabric 无状态服务的指南
