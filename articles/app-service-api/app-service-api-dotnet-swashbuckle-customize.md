@@ -15,7 +15,7 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="08/29/2016" 
-	wacn.date="11/25/2016" 
+	wacn.date="02/21/2017" 
 	ms.author="rachelap"/>
 
 # 自定义 Swashbuckle 生成的 API 定义 

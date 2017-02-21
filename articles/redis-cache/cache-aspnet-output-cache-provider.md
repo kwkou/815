@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="cache-redis"
 	ms.workload="tbd"
 	ms.date="12/13/2016"
-	wacn.date="01/25/2017"
+	wacn.date="02/21/2017"
 	ms.author="sdanie" />
 
 # Azure Redis 缓存的 ASP.NET 输出缓存提供程序

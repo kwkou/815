@@ -15,7 +15,7 @@
     ms.devlang="dotnet"
     ms.topic="get-started-article"
     ms.date="12/16/2016"
-    wacn.date="01/03/2017"
+    wacn.date="02/21/2017"
     ms.author="rachelap" />
 
 # 使用 Visual Studio 将 ASP.NET Web 应用部署到 Azure App Service

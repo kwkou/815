@@ -14,7 +14,7 @@
 	ms.devlang="dotnet"
 	ms.topic="article"
 	ms.date="04/25/2016"
-	wacn.date="11/25/2016"
+	wacn.date="02/21/2017"
 	ms.author="thmullan"/>
 
 # 教程：使用多租户数据库和 Entity Framework 及行级别安全性的 Web 应用

@@ -16,7 +16,7 @@
 	ms.devlang="dotnet"
 	ms.topic="article"
 	ms.date="10/01/2016"
-	wacn.date="11/21/2016"
+	wacn.date="02/21/2017"
 	ms.author="adrianha"/>
 
 # 使用适用于 Azure 移动应用的 .NET 后端服务器 SDK

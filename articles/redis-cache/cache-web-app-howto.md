@@ -14,7 +14,7 @@
     ms.devlang="na"
     ms.topic="hero-article"
     ms.date="12/19/2016"
-    wacn.date="01/06/2017"
+    wacn.date="02/21/2017"
     ms.author="sdanie" />
 
 # 如何使用 Redis 缓存创建 Web 应用
