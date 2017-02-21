@@ -1,5 +1,5 @@
 <properties
-    pageTitle="双重验证故障排除 | Azure"
+    pageTitle="多重身份验证故障排除 | Azure"
     description="本文档向用户提供有关如何解决 Azure 多重身份验证问题的信息。"
     services="multi-factor-authentication"
     keywords="multifactor authentication 客户端, 身份验证问题, 相关性 ID"
@@ -19,38 +19,12 @@
     ms.author="kgremban" />  
 
 
-# 执行双重验证时遇到问题
-本文讨论了执行双重验证时可能会遇到的一些问题。如果此处没有包含你遇到的问题，请在注释部分中提供详细的反馈以便我们可以改进。
+# 执行多重身份验证时遇到问题
+本文讨论了执行多重身份验证时可能会遇到的一些问题。如果此处没有包含你遇到的问题，请在注释部分中提供详细的反馈以便我们可以改进。
 
 ## 我的手机丢失或被盗
 
-如果你的手机已丢失或被盗，建议你你可以要求管理员清除你的设置。
-
-### 使用备用电话号码
-如果设置了多个验证选项，包括辅助电话号码或另一设备上的验证器应用，则可以使用其中之一进行登录。
-
-若要使用备用电话号码进行登录，请执行以下步骤：
-
-1. 像往常一样进行登录。
-2. 当提示进一步验证你的帐户时，选择“使用其他验证选项”。
-
-	![其他验证方法](./media/multi-factor-authentication-end-user-manage/differentverification.png)  
-
-
-3. 选择你有权访问的电话号码。
-
-	![备用号码](./media/multi-factor-authentication-end-user-manage/altphone2.png)  
-
-
-4. 在返回到你的帐户后，[管理你的设置](/documentation/articles/multi-factor-authentication-end-user-manage-settings/)以更改身份验证电话号码。
-
->[AZURE.IMPORTANT]
->必须配置辅助身份验证电话号码。如果你的主电话号码和移动应用位于同一手机上，并且你的手机丢失或被盗，则你需要第三个选项。
-
-### 清除你的设置
-
-如果未配置辅助身份验证电话号码，则必须联系管理员以寻求帮助。让管理员清除你的设置，以便在你下次登录时再次提示你[设置帐户](/documentation/articles/multi-factor-authentication-end-user-first-time/)。
-
+如果你的手机已丢失或被盗，建议你要求管理员清除你的设置。 以便在你下次登录时再次提示你[设置帐户](/documentation/articles/multi-factor-authentication-end-user-first-time/)。
 
 ## 我的手机上未收到短信或呼叫
 
@@ -96,7 +70,7 @@
 提供这些信息将有助于我们尽快为你解决问题。
 
 ## 相关主题
-- [管理双重验证设置](/documentation/articles/multi-factor-authentication-end-user-manage-settings/)
+- [管理多重身份验证设置](/documentation/articles/multi-factor-authentication-end-user-manage-settings/)
 - [Microsoft Authenticator 应用程序常见问题解答](/documentation/articles/microsoft-authenticator-app-faq/)
 
 <!---HONumber=Mooncake_0213_2017-->

@@ -69,10 +69,7 @@ Microsoft Authenticator 应用可用于 [Windows Phone](http://go.microsoft.com/
 
 7. 完成 PIN 条目后，选择“关闭”。此时，验证应已成功。
 8. 建议输入手机号码，以免无法访问应用。通过下拉列表指定国家/地区，然后在国家/地区名称旁边的框中输入手机号码。选择“下一步”。
-9. 此时，已设置联系方法。现在可以为非浏览器应用（例如，Outlook 2010 或更低版本）设置应用密码。如果不使用这些应用，请选择“完成”。否则，继续执行下一步。
-
-10. 如果正在使用非浏览器应用，请复制提供的应用密码，然后将该密码粘贴到这些应用。有关在单个应用（例如 Outlook 和 Lync）上执行的步骤，请参阅“如何将电子邮件中的密码更改为应用密码”和“如何将应用程序中的密码更改为应用密码”。
-11. 选择“完成”。
+9. 选择“完成”。
 
 现在应会在“帐户”屏幕上看到新帐户。
 
@@ -81,7 +78,7 @@ Microsoft Authenticator 应用可用于 [Windows Phone](http://go.microsoft.com/
 
 ### 手动将帐户添加到应用
 1. 转到安全验证设置屏幕。有关如何访问此屏幕的信息，请参阅[更改安全设置](/documentation/articles/multi-factor-authentication-end-user-manage-settings/)。
-2. 选择“配置”。
+2. 选择“Set up”。
 
     ![安全验证设置屏幕上的“配置”按钮](./media/authenticator-app-how-to/azureauthe.png)  
 

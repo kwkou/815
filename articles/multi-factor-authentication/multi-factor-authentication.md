@@ -15,7 +15,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="12/08/2016"
-    wacn.date="01/13/2017"
+    wacn.date="02/20/2017"
     ms.author="kgremban" />  
 
 
@@ -100,7 +100,7 @@ Azure 多重身份验证有三个不同版本。
 | MFA SDK | | |● 需要多重身份验证提供程序和完整的 Azure 订阅 |
 | 适用于本地应用程序的 MFA | | |● |
 
-## 如何获取 Azure 多重身份验证
+## 如何获取 Azure 多重身份验证 <a name="how-to-get-azure-multi-factor-authentication"></a>
 如果希望使用 Azure 多重身份验证提供的完整功能，有以下几种方法：
 
 1. 购买 Azure 多重身份验证许可证并将其分配给用户。
