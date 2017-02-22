@@ -118,7 +118,7 @@ vCenter 帐户访问现已完成。这样可满足完成故障回复操作的最
 
 
 ## CSP 计划概述
-Microsoft 的云解决方案提供商 (CSP) [计划](https://partner.microsoft.com/zh-CN/cloud-solution-provider)提供包括 O365、EMS 和 Microsoft Azure 在内的所有 Microsoft 云服务，适合希望通过产品组合充分发挥产品功能的合作伙伴使用。合作伙伴可以通过该计划与客户建立端到端关系，并在建立关系的过程中充当主要联络点。合作伙伴可以通过 CSP 为客户部署 Azure 订阅，并将这些订阅与自己的增值型自定义产品/服务相结合。
+Microsoft 的云解决方案提供商 (CSP) [计划](https://partner.microsoft.com/zh-CN/cloud-solution-provider)提供包括 O365、EMS 和 Azure 在内的所有 Microsoft 云服务，适合希望通过产品组合充分发挥产品功能的合作伙伴使用。合作伙伴可以通过该计划与客户建立端到端关系，并在建立关系的过程中充当主要联络点。合作伙伴可以通过 CSP 为客户部署 Azure 订阅，并将这些订阅与自己的增值型自定义产品/服务相结合。
 
 就 Azure Site Recovery 来说，合作伙伴可以通过 CSP 为客户直接管理完整的灾难恢复解决方案，或者使用 CSP 设置 Azure Site Recovery 环境，让客户以自助服务方式管理其自身的 DR 需求。在这两种方案中，合作伙伴是 Azure Site Recovery 和最终客户之间的纽带，致力于维护客户关系，同时向客户收取 Azure Site Recovery 使用费。
 
@@ -145,7 +145,7 @@ VM 先决条件与 Azure Site Recovery [文档](/documentation/articles/site-rec
 	![fill-details](./media/site-recovery-multi-tenant-support-vmware-using-csp/customer-add-filled.png)  
 
 
-4.	在订阅选择页上向下滚动，添加“Microsoft Azure”订阅。可以在现在或未来的某个时刻添加其他订阅。
+4.	在订阅选择页上向下滚动，添加 “Azure” 订阅。可以在现在或未来的某个时刻添加其他订阅。
 
 	![add-subscription](./media/site-recovery-multi-tenant-support-vmware-using-csp/azure-subscription-selection.png)  
 

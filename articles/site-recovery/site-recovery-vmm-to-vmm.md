@@ -89,7 +89,7 @@ Azure 提供用于创建和处理资源的两个不同的[部署模型](/documen
 
 **先决条件** | **详细信息**
 --- | ---
-**Azure**| 需要一个 [Microsoft Azure](https://azure.cn/) 帐户。你可以从 [1rmb 试用版](/pricing/1rmb-trial/)开始。[详细了解](/pricing/details/site-recovery/) Site Recovery 定价。 
+**Azure**| 需要一个 [Azure](https://azure.cn/) 帐户。你可以从 [1rmb 试用版](/pricing/1rmb-trial/)开始。[详细了解](/pricing/details/site-recovery/) Site Recovery 定价。 
 
 ## 本地先决条件
 下面是在主要和辅助本地站点中部署此方案所要满足的条件：

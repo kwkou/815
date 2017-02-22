@@ -115,7 +115,7 @@ Azure 提供两种不同的[部署模型](/documentation/articles/resource-manag
 - 根据要用于故障转移 Azure VM 的资源模型，需在 [Resource Manager 模式](/documentation/articles/virtual-networks-create-vnet-arm-pportal/)或[经典模式](/documentation/articles/virtual-networks-create-vnet-classic-pportal/)下设置 Azure 网络。
 - 建议在开始之前先设置网络。否则，需要在 Site Recovery 部署期间执行此操作。
 
-> [AZURE.NOTE] [Migration of networks]用于部署 Site Recovery 的网络不支持跨同一订阅的不同资源组或者跨订阅的 (/documentation/articles/resource-group-move-resources/)。
+> [AZURE.NOTE] [Migration of networks](/documentation/articles/resource-group-move-resources/)用于部署 Site Recovery 的网络不支持跨同一订阅的不同资源组或者跨订阅的 。
 ###<a id="set-up-an-azure-storage-account"></a> 设置 Azure 存储帐户
 
 - 需要使用标准 Azure 存储帐户来保存复制到 Azure 的数据。
@@ -135,7 +135,7 @@ Azure 提供两种不同的[部署模型](/documentation/articles/resource-manag
 	![新建保管库](./media/site-recovery-hyper-v-site-to-azure/new-vault3.png)
 
 3. 在“名称”中，指定一个友好名称以标识该保管库。如果拥有多个订阅，请选择其中一个。
-4. [创建新资源组](/documentation/articles/resource-group-template-deploy-portal/)或选择现有的资源组，并指定 Azure 区域。计算机将复制到此区域。若要查看受支持的区域，请参阅 Azure Site Recovery 价格详细信息中的“地域可用性”。[](/pricing/details/site-recovery/)
+4. [创建新资源组](/documentation/articles/resource-group-template-deploy-portal/)或选择现有的资源组，并指定 Azure 区域。计算机将复制到此区域。若要查看受支持的区域，请参阅 [Azure Site Recovery 价格详细信息](/pricing/details/site-recovery/)中的“地域可用性”。
 4. 如果要从仪表板快速访问保管库，请单击“固定到仪表板”，然后单击“创建保管库”。
 
 	![新保管库](./media/site-recovery-hyper-v-site-to-azure/new-vault-settings.png)  
@@ -435,8 +435,6 @@ Site Recovery 提供 Capacity Planner 帮助你为源环境、站点恢复组件
 为了对部署进行测试，你可以针对单个虚拟机或单个恢复计划（其中包含一个或多个虚拟机）运行测试故障转移。
 
 1. 若要故障转移单个计算机，请在“设置”>“复制的项”中，单击“VM”>“+测试性故障转移”图标。
-
-    ![测试故障转移](./media/site-recovery-vmware-to-azure/test-failover1.png)
 1. 若要故障转移某个恢复计划，请在“设置”>“恢复计划”中，右键单击该计划 >“测试性故障转移”。若要创建恢复计划，请[遵循这些说明](/documentation/articles/site-recovery-create-recovery-plans/)。
 1. 在“测试性故障转移”中，选择 Azure VM 在故障转移之后要连接到的 Azure 网络。
 1. 单击“确定”开始故障转移。若要跟踪进度，可以单击 VM 以打开其属性，或者在保管库名称 >“设置”>“作业”>“Site Recovery 作业”中选择“测试性故障转移”作业。

@@ -46,7 +46,7 @@ Site Recovery 是能够帮助实现业务连续性和灾难恢复 (BCDR) 策略�
 | **提供程序/代理** |复制的 VM 需要 Azure Site Recovery 提供程序。<br/><br/> Hyper-V 主机需要恢复服务代理。<br/><br/> 可在部署期间安装这些组件。 |
 | **Azure 要求** |Azure 帐户<br/><br/> 恢复服务保管库 <br/><br/> 保管库区域中有 LRS 或 GRS 存储帐户<br/><br/> 标准存储帐户<br/><br/> 保管库区域中有 Azure 虚拟网络。[完整详细信息](#azure-prerequisites)。 |
 | **Azure 限制** |如果使用 GRS，需要使用另一个 LRS 帐户进行日志记录<br/><br/> 在 Azure 门户中创建的存储帐户不能跨资源组移动，不管是在相同的订阅还是不同的订阅中。<br/><br/> 不支持高级存储。<br/><br/> 用于 Site Recovery 的 Azure 网络不能跨资源组移动，不管是在相同的订阅还是不同的订阅中。 
-| **VM 复制** |VM 必须符合 Azure 先决条件](/documentation/articles/site-recovery-best-practices/#azure-virtual-machine-requirements)<br/><br/> |
+| **VM 复制** |VM 必须符合 Azure [先决条件](/documentation/articles/site-recovery-best-practices/#azure-virtual-machine-requirements)<br/><br/> |
 | **复制限制** |无法复制使用静态 IP 地址运行 Linux 的 VM。<br/><br/> 可以从复制中排除特定的磁盘，但不能排除 OS 磁盘。
 | **部署步骤** |1) 准备 Azure（订阅、存储、网络）-> 2) 本地准备（VMM 和网络映射）-> 3) 创建恢复服务保管库 -> 4) 设置 VMM 和 Hyper-V 主机 -> 5) 配置复制设置 -> 6) 启用复制 -> 7) 测试复制和故障转移。 |
 
@@ -305,16 +305,15 @@ Hyper-V 主机上运行的恢复服务代理需有权通过 Internet 访问 Azur
 
 
    请注意：
-
-	- If you want to create a storage account using the classic model, do that in the Azure portal. [Learn more](/documentation/articles/storage-create-storage-account-classic-portal/)
-	- If you’re using a premium storage account for replicated data, set up an additional standard storage account to store replication logs that capture ongoing changes to on-premises data.
+   
+   - 如果要在经典模式下创建存储账户，请参考[此处](/documentation/articles/storage-create-storage-account-classic-portal/)。
+   - 如果要用高级存储账户来复制数据，你需要设置一个额外的标准存储账户来存储复制日志，来获取当前对内部数据的更改。 
 
 4.	如果尚未创建 Azure 网络并想使用 Resource Manager 创建一个，请单击“+网络”以内联方式执行该操作。在“创建虚拟网络”边栏选项卡上，指定网络名称、地址范围、子网详细信息、订阅和位置。该网络应位于与恢复服务保管库相同的位置。
 
    ![网络](./media/site-recovery-vmm-to-azure/gs-createnetwork.png)  
 
-
-	If you want to create a network using the classic model, do that in the Azure portal. [Learn more](/documentation/articles/virtual-networks-create-vnet-classic-pportal/).
+   如果要在经典模式下创建虚拟网络，请参考[此处](/documentation/articles/virtual-networks-create-vnet-classic-pportal/)。
 
 ### 配置网络映射
 - [阅读](#prepare-for-network-mapping)网络映射的快速概述。[阅读此文](/documentation/articles/site-recovery-network-mapping/)以获取更深入的说明。
@@ -432,10 +431,10 @@ Site Recovery 提供 Capacity Planner 帮助用户为源环境、站点恢复组
 	
 	>[AZURE.NOTE]
 	> 
-	> * 只能从复制中排除基本磁盘。不能排除 OS 磁盘，也不建议排除动态磁盘。ASR 无法识别来宾 VM 中的 VHD 磁盘是基本磁盘还是动态磁盘。如果未排除所有依赖性动态卷磁盘，则会将受保护的动态磁盘视为故障转移 VM 上的故障磁盘，该磁盘上的数据无法访问。
-	> * 启用复制后，无法添加或删除要复制的磁盘。如果想要添加或排除磁盘，需要禁用 VM 保护，然后重新启用保护。
-	> * 如果某个应用程序需要有排除的磁盘才能正常运行，则故障转移到 Azure 之后，需要在 Azure 中手动创建该磁盘，以便复制的应用程序可以运行。或者，可以将 Azure 自动化集成到恢复计划中，以便在故障转移计算机期间创建磁盘。
-	> * 在 Azure 中手动创建的磁盘不会进行故障回复。例如，如果直接在 Azure VM 中故障转移三个磁盘并创建两个，则只会将进行过故障转移的三个磁盘从 Azure 故障回复到 Hyper-V。不能包括在故障回复过程中或从 Hyper-V 到 Azure 的反向复制过程中手动创建的磁盘。
+	> <p>* 只能从复制中排除基本磁盘。不能排除 OS 磁盘，也不建议排除动态磁盘。ASR 无法识别来宾 VM 中的 VHD 磁盘是基本磁盘还是动态磁盘。如果未排除所有依赖性动态卷磁盘，则会将受保护的动态磁盘视为故障转移 VM 上的故障磁盘，该磁盘上的数据无法访问。
+	> <p>* 启用复制后，无法添加或删除要复制的磁盘。如果想要添加或排除磁盘，需要禁用 VM 保护，然后重新启用保护。
+	> <p>* 如果某个应用程序需要有排除的磁盘才能正常运行，则故障转移到 Azure 之后，需要在 Azure 中手动创建该磁盘，以便复制的应用程序可以运行。或者，可以将 Azure 自动化集成到恢复计划中，以便在故障转移计算机期间创建磁盘。
+	> <p>* 在 Azure 中手动创建的磁盘不会进行故障回复。例如，如果直接在 Azure VM 中故障转移三个磁盘并创建两个，则只会将进行过故障转移的三个磁盘从 Azure 故障回复到 Hyper-V。不能包括在故障回复过程中或从 Hyper-V 到 Azure 的反向复制过程中手动创建的磁盘。
 	>
 	>
     

@@ -339,17 +339,16 @@ Azure 提供用于创建和处理资源的两个不同的[部署模型](/documen
    ![存储](./media/site-recovery-vmware-to-azure/gs-createstorage.png)
 
    请注意：
-
-	- If you want to create a storage account using the classic model, do that in the Azure portal. [Learn more](/documentation/articles/storage-create-storage-account-classic-portal/)
-	- If you’re using a premium storage account for replicated data, you need to set up an additional standard storage account to store replication logs that capture ongoing changes to on-premises data. 
+   
+   - 如果要在经典模式下创建存储账户，请参考[此处](/documentation/articles/storage-create-storage-account-classic-portal/)。
+   - 如果要用高级存储账户来复制数据，你需要设置一个额外的标准存储账户来存储复制日志，来获取当前对内部数据的更改。 
 
    > [AZURE.NOTE]目前不支持为印度中部和印度南部的高级存储帐户提供保护。
 4.	选择 Azure 网络。如果尚未创建网络并想要使用 Resource Manager 创建网络，请单击“+网络”以内联方式执行该操作。在“创建虚拟网络”边栏选项卡上，指定网络名称、地址范围、子网详细信息、订阅和位置。该网络应位于与恢复服务保管库相同的位置。
 
    ![网络](./media/site-recovery-vmware-to-azure/gs-createnetwork.png)  
-
-
-	If you want to create a network using the classic model, do that in the Azure portal. [Learn more](/documentation/articles/virtual-networks-create-vnet-classic-pportal/).
+   
+   如果要在经典模式下创建虚拟网络，请参考[此处](/documentation/articles/virtual-networks-create-vnet-classic-pportal/)。
 
 ## 步骤 4：设置复制设置
 1. 若要创建新的复制策略，请单击“准备基础结构”>“复制设置”>“+创建和关联”。
@@ -635,9 +634,6 @@ Azure 提供用于创建和处理资源的两个不同的[部署模型](/documen
 
 1. 单击“设置”>“复制的项”，然后选择计算机。“概要”边栏选项卡显示有关计算机设置和状态的信息。
 2. 在“属性”中，可以查看 VM 的复制和故障转移信息。
-
-    ![启用复制](./media/site-recovery-vmware-to-azure/test-failover2.png)  
-
 3. 在“计算和网络”>“计算属性”中，可以指定 Azure VM 名称和目标大小。根据需要修改名称，使其符合 Azure 要求。你还可以查看和添加目标网络、子网的相关信息，以及要分配到 Azure VM 的 IP 地址。注意以下事项：
 
    * 可以设置目标 IP 地址。如果未提供地址，故障转移的计算机将使用 DHCP。如果设置了无法用于故障转移的地址，故障转移将不会正常工作。如果地址可用于测试故障转移网络，则同一个目标 IP 地址可用于测试故障转移。
@@ -648,8 +644,6 @@ Azure 提供用于创建和处理资源的两个不同的[部署模型](/documen
      * 例如，如果源计算机有两个网络适配器，而目标计算机大小支持四个，则目标计算机将有两个适配器。如果源计算机有两个适配器，但支持的目标大小只支持一个，则目标计算机只有一个适配器。
    * 如果虚拟机有多个网络适配器，它们将全部连接到同一个网络。
    * 如果虚拟机有多个网络适配器，列表中显示的第一个适配器将成为 Azure 虚拟机中的*默认*网络适配器。
-
-     ![启用复制](./media/site-recovery-vmware-to-azure/test-failover4.png)  
 
 4. 在“磁盘”中，可以看到 VM 上将要复制的操作系统和数据磁盘。
 
@@ -693,8 +687,6 @@ Azure 提供用于创建和处理资源的两个不同的[部署模型](/documen
 为了对部署进行测试，你可以针对单个虚拟机或单个恢复计划（其中包含一个或多个虚拟机）运行测试故障转移。
 
 1. 若要故障转移单个计算机，请在“设置”>“复制的项”中，单击“VM”>“+测试性故障转移”图标。
-
-    ![测试故障转移](./media/site-recovery-vmware-to-azure/test-failover1.png)
 1. 若要故障转移某个恢复计划，请在“设置”>“恢复计划”中，右键单击该计划 >“测试性故障转移”。若要创建恢复计划，请[遵循这些说明](/documentation/articles/site-recovery-create-recovery-plans/)。
 1. 在“测试性故障转移”中，选择 Azure VM 在故障转移之后要连接到的 Azure 网络。
 1. 单击“确定”开始故障转移。若要跟踪进度，可以单击 VM 以打开其属性，或者在保管库名称 >“设置”>“作业”>“Site Recovery 作业”中选择“测试性故障转移”作业。
