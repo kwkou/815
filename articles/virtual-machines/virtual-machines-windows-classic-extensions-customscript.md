@@ -116,3 +116,4 @@ Azure 提供两个不同的部署模型用于创建和处理资源：[Resource M
 如果对本文中的任何观点存在疑问，可以联系 [MSDN Azure 和 CSDN Azure](/support/forums/) 上的 Azure 专家。或者，也可以提交 Azure 支持事件。请转到 [Azure 支持站点](/support/contact/)并选择“获取支持”。有关使用 Azure 支持的信息，请阅读 [Azure 支持常见问题](/support/faq/)。
 
 <!---HONumber=Mooncake_0213_2017-->
+<!--Update_Description: wording update-->

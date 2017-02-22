@@ -111,3 +111,4 @@ SQL Server Express 版本的虚拟机映像不会自动启用 TCP/IP 协议。�
 有关其他与在 Azure VM 中运行 SQL Server 相关的主题，请参阅 [SQL Server on Azure Virtual Machines](/documentation/articles/virtual-machines-windows-sql-server-iaas-overview/)（Azure 虚拟机上的 SQL Server）。
 
 <!---HONumber=Mooncake_0213_2017-->
+<!--Update_Description: wording update-->

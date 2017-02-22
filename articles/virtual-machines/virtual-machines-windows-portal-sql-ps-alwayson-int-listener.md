@@ -194,3 +194,4 @@ SQLCMD 连接将自动连接到托管主副本的 SQL Server 实例。
 * [Remove-AzureRmLoadBalancer](http://msdn.microsoft.com/zh-cn/library/mt603862.aspx) 从 Azure 资源组中删除负载均衡器。
 
 <!---HONumber=Mooncake_0213_2017-->
+<!--Update_Description: wording update-->

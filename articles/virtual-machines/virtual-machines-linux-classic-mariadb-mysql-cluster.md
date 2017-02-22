@@ -367,3 +367,4 @@ CLI 将负载均衡器探测时间间隔设置为 15 秒，这可能有点太长
 [issue #1268 in the Azure CLI]: https://github.com/Azure/azure-xplat-cli/issues/1268
 
 <!---HONumber=Mooncake_0213_2017-->
+<!--Update_Description: wording update-->

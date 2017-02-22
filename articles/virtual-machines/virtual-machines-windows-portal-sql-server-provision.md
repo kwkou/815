@@ -301,3 +301,4 @@ SQL Server Express 版本的虚拟机映像不会自动启用 TCP/IP 协议。�
 有关 Azure 虚拟机上的 SQL Server 视频概述，请观看 [Azure VM 是 SQL Server 2016 的最佳平台](https://channel9.msdn.com/Events/DataDriven/SQLServer2016/Azure-VM-is-the-best-platform-for-SQL-Server-2016)。
 
 <!---HONumber=Mooncake_0213_2017-->
+<!--Update_Description: wording update-->

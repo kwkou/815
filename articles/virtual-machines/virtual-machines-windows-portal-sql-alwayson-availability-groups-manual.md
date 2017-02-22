@@ -738,3 +738,4 @@ Azure 将创建虚拟机。
 有关在 Azure 中使用 SQL Server 的其他信息，请参阅 [Azure 虚拟机上的 SQL Server](/documentation/articles/virtual-machines-windows-sql-server-iaas-overview/)。
 
 <!---HONumber=Mooncake_0213_2017-->
+<!--Update_Description: wording update-->

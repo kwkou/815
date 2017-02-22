@@ -63,3 +63,4 @@
 如果你在 Azure 中创建新的 Linux VM 时遇到问题，请参阅[排查在 Azure 中新建 Linux 虚拟机时遇到的部署问题](/documentation/articles/virtual-machines-linux-troubleshoot-deployment-new-vm/)。
 
 <!---HONumber=Mooncake_0213_2017-->
+<!--Update_Description: wording update-->

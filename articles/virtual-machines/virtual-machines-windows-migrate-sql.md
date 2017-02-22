@@ -167,3 +167,4 @@
 有关从捕获的映像创建 Azure SQL Server 虚拟机的说明，请参阅 CSS SQL Server 工程师博客上的[有关从捕获的映像“克隆”Azure SQL 虚拟机的提示和技巧](https://blogs.msdn.microsoft.com/psssql/2016/07/06/tips-tricks-on-cloning-azure-sql-virtual-machines-from-captured-images/)。
 
 <!---HONumber=Mooncake_0213_2017-->
+<!--Update_Description: update meta data-->

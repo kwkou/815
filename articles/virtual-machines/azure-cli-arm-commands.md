@@ -1739,3 +1739,4 @@ CLI 的 Azure Resource Manager 模式与 Azure 服务管理模式互斥。即，
     vm image list [options] <location> <publisher> [offer] [sku]
 
 <!---HONumber=Mooncake_0213_2017-->
+<!--Update_Description: add information about azure cli 2.0-->

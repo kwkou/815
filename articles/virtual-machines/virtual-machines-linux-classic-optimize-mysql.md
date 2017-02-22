@@ -348,3 +348,4 @@ MySQL 慢查询日志有助于识别 MySQL 的慢查询。在启用 MySQL 慢查
 [14]: ./media/virtual-machines-linux-classic-optimize-mysql/virtual-machines-linux-optimize-mysql-perf-14.png
 
 <!---HONumber=Mooncake_0213_2017-->
+<!--Update_Description: wording update-->

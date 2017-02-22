@@ -293,3 +293,4 @@
 创建虚拟机后，你就可以使用 RDP 和设置连接来连接虚拟机了。有关详细信息，请参阅[连接到 Azure 上的 SQL Server 虚拟机 \(Resource Manager\)](/documentation/articles/virtual-machines-windows-sql-connect/)。
 
 <!---HONumber=Mooncake_0213_2017-->
+<!--Update_Description: wording update-->

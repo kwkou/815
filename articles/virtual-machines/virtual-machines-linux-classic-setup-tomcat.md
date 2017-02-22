@@ -326,3 +326,4 @@ Tomcat 用 Java 编写。有两种类型的 Java 开发工具包 \(JDK\)：OpenJ
 [18]: ./media/virtual-machines-linux-classic-setup-tomcat/virtual-machines-linux-setup-tomcat7-linux-18.png
 
 <!---HONumber=Mooncake_0213_2017-->
+<!--Update_Description: wording update-->

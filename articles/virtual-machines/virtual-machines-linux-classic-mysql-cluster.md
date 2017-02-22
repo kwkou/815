@@ -341,3 +341,4 @@ Pacemaker 使用群集监视资源、定义主节点何时停机，并将这些�
 * 写入性能依赖于虚拟交换机中的 VM 互连，因为这是 DRBD 用于复制设备的机制。
 
 <!---HONumber=Mooncake_0213_2017-->
+<!--Update_Description: wording update-->
