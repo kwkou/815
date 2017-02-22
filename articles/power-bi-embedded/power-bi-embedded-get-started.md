@@ -14,8 +14,8 @@
     ms.topic="hero-article"
     ms.tgt_pltfrm="NA"
     ms.workload="powerbi"
-    ms.date="12/19/2016"
-    wacn.date="01/24/2017"
+    ms.date="01/06/2017"
+    wacn.date="02/22/2017"
     ms.author="asaxton" />  
 
 
@@ -38,18 +38,18 @@
 1. 打开并登录到 **Azure 门户预览**：[http://portal.azure.cn](http://portal.azure.cn)。
 2. 在顶部面板上单击“+ 新建”。
    
-	![](./media/power-bi-embedded-get-started/create-workspace-1.png)  
+   ![](./media/power-bi-embedded-get-started/create-workspace-1.png)  
 
 3. 在“数据 + 分析”下单击“Power BI Embedded”。
 4. 在“创建”边栏选项卡上输入所需的信息。有关**定价**信息，请参阅 [Power BI Embedded 定价](/pricing/details/power-bi-embedded/)。
    
-	![](./media/power-bi-embedded-get-started/create-workspace-2.png)  
+   ![](./media/power-bi-embedded-get-started/create-workspace-2.png)  
 
 5. 单击“创建”。
 
 **工作区集合**将花费一些时间进行预配。完成后将转到“工作区集合”边栏选项卡。
 
-![](./media/power-bi-embedded-get-started/create-workspace-3.png)  
+   ![](./media/power-bi-embedded-get-started/create-workspace-3.png)  
 
 
 “创建”边栏选项卡包含调用创建工作区并向其部署内容的 API 所需的信息。
@@ -57,7 +57,6 @@
 
 
 ## 查看 Power BI API 访问密钥 <a name="view-access-keys"></a>
-
 调用 Power BI REST API 所需的最重要信息之一是**访问密钥**。这些访问密钥用于生成对 API 请求进行身份验证的**应用令牌**。要查看**访问密钥**，请单击“设置”边栏选项卡上的“访问密钥”。若要了解关于**应用令牌**的详细信息，请参阅[通过 Power BI Embedded 进行身份验证和授权](/documentation/articles/power-bi-embedded-app-token-flow/)。
 
    ![](./media/power-bi-embedded-get-started/access-keys.png)  
@@ -93,7 +92,7 @@
 在 **Power BI Desktop** 中保存工作后，将创建一个 PBIX 文件。此文件包含你的报表。此外，如果导入数据，则 PBIX 包含完整数据集；而如果使用 **DirectQuery**，PBIX 只包含数据集架构。使用 [Power BI 导入 API](https://msdn.microsoft.com/zh-cn/library/mt711504.aspx) 以编程方式将 PBIX 部署到工作区。
 
 > [AZURE.NOTE]
-> **Power BI Embedded** 具有其他一些 API，用于更改数据集所指向的服务器和数据库，以及设置数据集将用于连接数据库的服务帐户凭据。请参阅 [Post SetAllConnections](https://msdn.microsoft.com/zh-cn/library/mt711505.aspx)（发布 SetAllConnections）和 [Patch Gateway Datasource](https://msdn.microsoft.com/zh-cn/library/mt711498.aspx)（修补网关数据源）。
+**Power BI Embedded** 具有其他一些 API，用于更改数据集所指向的服务器和数据库，以及设置数据集将用于连接数据库的服务帐户凭据。请参阅 [Post SetAllConnections](https://msdn.microsoft.com/zh-cn/library/mt711505.aspx)（发布 SetAllConnections）和 [Patch Gateway Datasource](https://msdn.microsoft.com/zh-cn/library/mt711498.aspx)（修补网关数据源）。
 
 ## 后续步骤
 在前面的步骤中你创建了工作区集合以及第一个报表和数据集。现在是时候了解如何为 **Power BI Embedded** 编写代码了。为了帮助用户入门，已创建了一个示例 Web 应用程序：[示例入门](/documentation/articles/power-bi-embedded-get-started-sample/)。此示例介绍了如何执行以下操作：
@@ -111,5 +110,5 @@
 
 有更多问题？ [试用 Power BI 社区](http://community.powerbi.com/)
 
-<!---HONumber=Mooncake_0116_2017-->
-<!---Update_Description: wording update -->
+<!---HONumber=Mooncake_0213_2017-->
+<!---Update_Description: meta update -->

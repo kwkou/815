@@ -14,25 +14,23 @@
     ms.topic="article"
     ms.tgt_pltfrm="NA"
     ms.workload="powerbi"
-    ms.date="12/05/2016"
-    wacn.date="01/24/2017"
+    ms.date="01/06/2017"
+    wacn.date="02/22/2017"
     ms.author="asaxton" />  
 
 
 # Power BI Embedded 是什么？
-
 通过 **Power BI Embedded**，可以将 Power BI 报表集成到 web 或移动应用程序。
 
 ![](./media/powerbi-embedded-whats-is/what-is.png)  
 
 
-Power BI Embedded 是一项 **Azure 服务**，使 ISV 能够在其自己的应用程序中融入 Power BI 数据体验。开发人员已经构建了应用程序，并且这些应用程序具有其自己的用户和不同的功能集。这些应用也可能碰巧具有内置的数据元素（如图表和报表），这些元素现在可以由 Power BI Embedded 提供支持。用户不需要具有 Power BI 帐户便可使用这些应用。他们可以继续像以前那样登录到这些应用程序，查看并与 Power BI 报表体验进行交互而无需任何额外的授权。
+Power BI Embedded 是一项 **Azure 服务**，使 ISV 能够在其自己的应用程序中融入 Power BI 数据体验。开发人员已经构建了应用程序，并且这些应用程序具有其自己的用户和不同的功能集。这些应用也可能碰巧具有内置的数据元素（如图表和报表），这些元素现在可以由 Power BI Embedded 提供支持。不需要 Power BI 帐户便可使用这些应用。可继续像以前那样登录这些应用程序，查看并与 Power BI 报表体验进行交互，而无需任何额外的授权。
 
 ## Power BI Embedded 的授权
 在 **Power BI Embedded** 使用模型中，Power BI 的授权不是由最终用户负责的。而是应该由使用视觉对象的应用开发人员来购买**会话**，并且费用计入拥有这些资源的订阅中。在定价页 (/pricing/details/power-bi-embedded/) 上可以找到其他信息。
 
 ## Power BI Embedded 概念模型
-
 ![](./media/powerbi-embedded-whats-is/model.png)  
 
 
@@ -63,11 +61,11 @@ Power BI Embedded 是一项 **Azure 服务**，使 ISV 能够在其自己的应�
 2. 开发令牌 - 直接调用 **Power BI REST API** 时使用
 3. 嵌入令牌 - 进行调用以在嵌入式 iframe 中呈现报表时使用
 
-这些令牌适用于与 **Power BI Embedded** 进行交互的各种阶段。这些令牌经过专门设计，以便可以将应用中的权限委托给 Power BI。有关详细信息，请参阅[应用令牌流](/documentation/articles/power-bi-embedded-app-token-flow/)。
+这些令牌适用于与 **Power BI Embedded** 进行交互的各个阶段。这些令牌经过专门设计，以便可以将应用中的权限委托给 Power BI。有关详细信息，请参阅[应用令牌流](/documentation/articles/power-bi-embedded-app-token-flow/)。
 
 ## 另请参阅
 - [常见 Power BI Embedded 方案](/documentation/articles/power-bi-embedded-scenarios/)
 - [Power BI Embedded 入门](/documentation/articles/power-bi-embedded-get-started/)
 
-<!---HONumber=Mooncake_0116_2017-->
+<!---HONumber=Mooncake_0213_2017-->
 <!---Update_Description: wording update -->

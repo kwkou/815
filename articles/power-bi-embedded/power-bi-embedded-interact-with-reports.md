@@ -1,28 +1,28 @@
 <properties
-   pageTitle="使用 JavaScript API 与报表进行交互 | Azure"
-   description="Power BI Embedded, 使用 JavaScript API 与报表进行交互"
-   services="power-bi-embedded"
-   documentationCenter=""
-   authors="mgblythe"
-   manager="NA"
-   editor=""
-   tags=""/>
+    pageTitle="使用 JavaScript API 与报表进行交互 | Azure"
+    description="Power BI Embedded, 使用 JavaScript API 与报表进行交互"
+    services="power-bi-embedded"
+    documentationcenter=""
+    author="guyinacube"
+    manager="erikre"
+    editor=""
+    tags="" />
 <tags
-   ms.service="power-bi-embedded"
-   ms.devlang="NA"
-   ms.topic="hero-article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="powerbi"
-   ms.date="10/04/2016"
-   ms.author="mblythe"
-   wacn.date="02/06/2017"/>  
+    ms.assetid="bdd885d3-1b00-4dcf-bdff-531eb1f97bfb"
+    ms.service="power-bi-embedded"
+    ms.devlang="NA"
+    ms.topic="hero-article"
+    ms.tgt_pltfrm="NA"
+    ms.workload="powerbi"
+    ms.date="01/06/2017"
+    wacn.date="02/22/2017"
+    ms.author="asaxton" />  
 
 
 # 使用 JavaScript API 与 Power BI 报表进行交互
+Power BI JavaScript API 可以轻松将 Power BI 报表嵌入到应用程序中。使用此 API，应用程序能够以编程方式与各种报表元素（例如页面和筛选器）进行交互。这种交互这种交互性使 Power BI 报表与应用程序的集成更紧密。
 
-Power BI JavaScript API 可以轻松将 Power BI 报表嵌入到应用程序中。使用此 API，应用程序能够以编程方式与各种报表元素（例如页面和筛选器）进行交互。此交互使 Power BI 报表成为应用程序更必不可少的部分。
-
-可以使用作为应用程序的一部分托管的 iframe 将 Power BI 报表嵌入到应用程序中。Iframe 充当应用程序与报表之间的边界，如下图中所示。
+通过使用作为应用程序一部分托管的 IFrame，可将 Power BI 报表嵌入到应用程序中。Iframe 充当应用程序与报表之间的边界，如下图中所示。
 
 ![不带 Javascript API 的 Power BI embedded iframe](./media/powerbi-embedded-interact-with-reports/powerbi-embedded-interact-report-1.png)  
 
@@ -116,7 +116,6 @@ iframe 使嵌入过程变得更容易，但是如果没有 JavaScript API，报�
 
 [了解有关筛选的详细信息](https://github.com/Microsoft/PowerBI-JavaScript/wiki/Filters)
 
-
 ### 处理事件
 除了向 iframe 发送信息之外，应用程序还可以接收来自 iframe 的有关下列事件的信息：
 
@@ -129,7 +128,6 @@ iframe 使嵌入过程变得更容易，但是如果没有 JavaScript API，报�
 
 [了解有关处理事件的详细信息](https://github.com/Microsoft/PowerBI-JavaScript/wiki/Handling-Events)
 
-
 ## 后续步骤
 有关 Power BI JavaScript API 的详细信息，请查看以下链接：
 
@@ -140,4 +138,5 @@ iframe 使嵌入过程变得更容易，但是如果没有 JavaScript API，报�
   - [Ember](https://github.com/Microsoft/powerbi-ember)
 - [直播演示](https://microsoft.github.io/PowerBI-JavaScript/demo/)
 
-<!---HONumber=Mooncake_1010_2016-->
+<!---HONumber=Mooncake_0213_2017-->
+<!---Update_Description: wording update -->
