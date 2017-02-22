@@ -133,3 +133,4 @@
 * 若要根据群集上作业及任务的当前工作负荷自动增加或减少群集节点，请参阅[在 Azure 中根据群集工作负荷自动扩展和收缩 HPC Pack 群集资源](/documentation/articles/virtual-machines-windows-classic-hpcpack-cluster-node-autogrowshrink/)。
 
 <!---HONumber=Mooncake_0213_2017-->
+<!--Update_Description: wording update-->

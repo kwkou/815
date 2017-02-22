@@ -177,3 +177,4 @@ SQLCMD 连接将自动连接到托管主副本的 SQL Server 实例。
 * 使用内部负载均衡器只能从同一个虚拟网络中访问侦听器。
 
 <!---HONumber=Mooncake_0213_2017-->
+<!--Update_Description: wording update-->

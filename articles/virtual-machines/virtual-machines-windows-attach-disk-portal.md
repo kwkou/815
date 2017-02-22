@@ -93,3 +93,4 @@
 如果应用程序需要使用 D: 盘存储数据，可以[更改 Windows 临时磁盘的驱动器号](/documentation/articles/virtual-machines-windows-classic-change-drive-letter/)。
 
 <!---HONumber=Mooncake_0213_2017-->
+<!--Update_Description: wording update-->

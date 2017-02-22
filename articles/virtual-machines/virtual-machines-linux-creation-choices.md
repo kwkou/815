@@ -131,3 +131,4 @@ Azure CLI 2.0（预览版）可通过 npm 包、提供发行版的程序包或 D
 * [重置密码或 SSH 密钥和管理用户](/documentation/articles/virtual-machines-linux-using-vmaccess-extension/)的快速步骤
 
 <!---HONumber=Mooncake_0213_2017-->
+<!--Update_Description: update to azure cli 2.0-->

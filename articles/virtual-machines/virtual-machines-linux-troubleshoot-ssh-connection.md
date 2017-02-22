@@ -212,3 +212,4 @@ SSHD 配置本身可能有误或服务遇到错误。你可以重置 SSHD 以确
 * 有关对使用经典部署模型创建的虚拟机进行故障排除的详细信息，请参阅[如何为基于 Linux 的虚拟机重置密码或 SSH](/documentation/articles/virtual-machines-linux-classic-reset-access/)。
 
 <!---HONumber=Mooncake_0213_2017-->
+<!--Update_Description: add support for azure cli 2.0-->

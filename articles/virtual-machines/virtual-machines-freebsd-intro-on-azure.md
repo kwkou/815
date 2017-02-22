@@ -87,3 +87,4 @@ Azure 虚拟机代理负责 FreeBSD 虚拟机 和 Azure 结构控制器之间的
 * 若要将自己的 FreeBSD 上载到 Azure，请参阅[创建 FreeBSD VHD 并将其上载到 Azure](/documentation/articles/virtual-machines-linux-classic-freebsd-create-upload-vhd/)。
 
 <!---HONumber=Mooncake_0213_2017-->
+<!--Update_Description: add information about supported CustomScript version-->

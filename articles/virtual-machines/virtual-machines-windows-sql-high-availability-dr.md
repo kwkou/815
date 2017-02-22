@@ -135,3 +135,4 @@ Azure 磁盘中的异地复制不支持将同一数据库的数据文件和日�
 * [在 Azure VM 中创建用于 Always On 可用性组的 WSFC 群集](http://gallery.technet.microsoft.com/scriptcenter/Create-WSFC-Cluster-for-7c207d3a)
 
 <!---HONumber=Mooncake_0213_2017-->
+<!--Update_Description: wording update-->

@@ -86,3 +86,4 @@ SQL Server 2014 包括以下增强功能：
 请查看其他[有关在 Azure 虚拟机中运行 SQL Server 的资源](/documentation/articles/virtual-machines-windows-sql-server-iaas-overview/)。
 
 <!---HONumber=Mooncake_0213_2017-->
+<!--Update_Description: wording update-->

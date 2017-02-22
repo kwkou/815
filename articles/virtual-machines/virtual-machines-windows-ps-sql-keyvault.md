@@ -65,3 +65,4 @@ SQL Server 加密功能多种多样，包括[透明数据加密 \(TDE\)](https:/
 [AZURE.INCLUDE [AKV 集成后续步骤](../../includes/virtual-machines-sql-server-akv-next-steps.md)]
 
 <!---HONumber=Mooncake_0213_2017-->
+<!--Update_Description: wording update-->
