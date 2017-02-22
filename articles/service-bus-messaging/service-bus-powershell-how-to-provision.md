@@ -29,7 +29,7 @@ Azure PowerShell 是一个脚本编写环境，可用于在 Azure 中控制和�
 
 开始阅读本文之前，必须具备以下先决条件：
 
-- Azure 订阅。Azure 是基于订阅的平台。有关获取订阅的详细信息，请参阅[购买选项]、[成员优惠]或[试用]。
+- Azure 订阅。
 
 - 配备 Azure PowerShell 的计算机。有关说明，请参阅[安装和配置 Azure PowerShell]。
 

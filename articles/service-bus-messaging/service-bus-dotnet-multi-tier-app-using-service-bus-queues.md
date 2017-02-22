@@ -404,25 +404,25 @@
 
 11. 在 **WorkerRole.cs** 中，将 **QueueName** 变量的值从 `"ProcessingQueue"` 更改为 `"OrdersQueue"`，如以下代码所示。
 
-
-	// The name of your queue.
-	const string QueueName = "OrdersQueue";
+    
+    	// The name of your queue.
+    	const string QueueName = "OrdersQueue";
 
 
 12. 在 WorkerRole.cs 文件顶部添加以下 using 语句。
 
 
-	using FrontendWebRole.Models;
+	    using FrontendWebRole.Models;
 
 
 13. 在 `Run()` 函数中，在 `OnMessage()` 调用的内部，将 `try` 子句的内容替换为以下代码。
 
 
-	Trace.WriteLine("Processing", receivedMessage.SequenceNumber.ToString());
-	// View the message as an OnlineOrder.
-	OnlineOrder order = receivedMessage.GetBody<OnlineOrder>();
-	Trace.WriteLine(order.Customer + ": " + order.Product, "ProcessingMessage");
-	receivedMessage.Complete();
+    	Trace.WriteLine("Processing", receivedMessage.SequenceNumber.ToString());
+    	// View the message as an OnlineOrder.
+    	OnlineOrder order = receivedMessage.GetBody<OnlineOrder>();
+    	Trace.WriteLine(order.Customer + ": " + order.Product, "ProcessingMessage");
+    	receivedMessage.Complete();
 
 
 14. 你已完成此应用程序。你可以测试整个应用程序，方法是右键单击“解决方案资源管理器”中的 MultiTierApp 项目，选择“设置为启动项目”，然后按 F5。请注意，消息计数不会递增，因为辅助角色会处理队列中的项并将其标记为完成。你可以通过查看 Azure 计算模拟器 UI 来查看辅助角色的跟踪输出。可通过右击任务栏的通知区域中的模拟器图标并选择“显示计算模拟器 UI”来执行此操作。
@@ -465,10 +465,27 @@
   [28]: ./media/service-bus-dotnet-multi-tier-app-using-service-bus-queues/getting-started-multi-tier-40.png
 
   [sbmsdn]: http://msdn.microsoft.com/zh-cn/library/azure/ee732537.aspx  
-  [sbwacom]: /documentation/services/service-bus/  
-  [sbwacomqhowto]: /documentation/articles/service-bus-dotnet-get-started-with-queues/  
+  [sbacom]: /documentation/services/service-bus/  
+  [sbacomqhowto]: /documentation/articles/service-bus-dotnet-get-started-with-queues/  
   [mutitierstorage]: https://code.msdn.microsoft.com/Windows-Azure-Multi-Tier-eadceb36
-  
 
+  [获取工具和 SDK]: http://go.microsoft.com/fwlink/?LinkId=271920
+
+
+  [GetSetting]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.cloudconfigurationmanager.getsetting.aspx
+  [Microsoft.WindowsAzure.Configuration.CloudConfigurationManager]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.cloudconfigurationmanager.aspx
+  [NamespaceMananger]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.namespacemanager.aspx
+
+  [QueueClient]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.queueclient.aspx
+
+  [TopicClient]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.topicclient.aspx
+
+  [EventHubClient]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.eventhubclient.aspx
+
+  [Azure 经典管理门户]: http://manage.windowsazure.cn
+  [6]: ./media/service-bus-dotnet-multi-tier-app-using-service-bus-queues/sb-queues-03.png
+  [7]: ./media/service-bus-dotnet-multi-tier-app-using-service-bus-queues/sb-queues-04.png
+  [35]: ./media/service-bus-dotnet-multi-tier-app-using-service-bus-queues/multi-web-45.png
+  [36]: ./media/service-bus-dotnet-multi-tier-app-using-service-bus-queues/service-bus-policies.png
 <!---HONumber=Mooncake_0213_2017-->
 <!--Update_Description:update wording and link references-->
