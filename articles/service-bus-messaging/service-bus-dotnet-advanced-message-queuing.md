@@ -15,7 +15,7 @@
 	ms.topic="article" 
 	ms.date="01/11/2017" 
 	ms.author="sethm"
-	wacn.date="02/20/2017/>  
+	wacn.date="02/20/2017"/>  
 
 
 # 如何将 AMQP 1.0 用于服务总线 .NET API

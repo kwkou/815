@@ -44,17 +44,17 @@
 
 	
     	azure@0.7.5 node_modules\azure
-	├── dateformat@1.0.2-1.2.3
-	├── xmlbuilder@0.4.2
-	├── node-uuid@1.2.0
-	├── mime@1.2.9
-	├── underscore@1.4.4
-	├── validator@1.1.1
-	├── tunnel@0.0.2
-	├── wns@0.5.3
-	├── xml2js@0.2.7 (sax@0.5.2)
-	└── request@2.21.0 (json-stringify-safe@4.0.0, forever-agent@0.5.0, aws-sign@0.3.0, tunnel-agent@0.3.0, oauth-sign@0.3.0, qs@0.6.5, cookie-jar@0.3.0, node-uuid@1.4.0, http-signature@0.9.11, form-data@0.0.8, hawk@0.13.1)
-	
+        	├── dateformat@1.0.2-1.2.3
+        	├── xmlbuilder@0.4.2
+        	├── node-uuid@1.2.0
+        	├── mime@1.2.9
+        	├── underscore@1.4.4
+        	├── validator@1.1.1
+        	├── tunnel@0.0.2
+        	├── wns@0.5.3
+        	├── xml2js@0.2.7 (sax@0.5.2)
+        	└── request@2.21.0 (json-stringify-safe@4.0.0, forever-agent@0.5.0, aws-sign@0.3.0, tunnel-agent@0.3.0, oauth-sign@0.3.0, qs@0.6.5, cookie-jar@0.3.0, node-uuid@1.4.0, http-signature@0.9.11, form-data@0.0.8, hawk@0.13.1)
+        	
 
 3.  可以手动运行 **ls** 命令来验证是否创建了 **node\_modules** 文件夹。在该文件夹中，找到 **azure** 程序包，其中包含访问服务总线主题所需的库。
 

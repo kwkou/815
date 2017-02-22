@@ -37,7 +37,7 @@
 2. 键入以下命令以创建命名空间。提供你自己的命名空间值，并指定与应用程序相同的区域。
 
 
-	New-AzureSBNamespace -Name 'yourexamplenamespace' -Location 'West US' -NamespaceType 'Messaging' -CreateACSNamespace $true
+	    New-AzureSBNamespace -Name 'yourexamplenamespace' -Location 'China East' -NamespaceType 'Messaging' -CreateACSNamespace $true
 
 
 	![创建命名空间](./media/service-bus-ruby-how-to-use-topics-subscriptions/showcmdcreate.png)  
@@ -53,7 +53,7 @@
 
 
 
-4.  记下主密钥，或将其复制到剪贴板。
+记下主密钥，或将其复制到剪贴板。
 
 
 ## 配置应用程序以使用服务总线
