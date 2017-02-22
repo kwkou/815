@@ -78,8 +78,9 @@ Azure IoT 预见性维护预配置解决方案使用通过此模板创建的回�
 
 以下屏幕截图显示了完成预配后的解决方案面板：
 
-![预配完成][img-provisioning-complete]  
+![预配完成1](./media/iot-suite-predictive-overview/predictive-maintenance-with-r-1.png) 
 
+![预配完成2](./media/iot-suite-predictive-overview/predictive-maintenance-with-r-2.png)
 
 在此面板中，可以：
 
