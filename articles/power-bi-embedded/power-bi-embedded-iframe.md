@@ -1,21 +1,22 @@
 <properties
-   pageTitle="如何将 Power BI Embedded 与 REST 配合使用 | Azure"
-   description="了解如何将 Power BI Embedded 与 REST 配合使用 "
-   services="power-bi-embedded"
-   documentationCenter=""
-   authors="mgblythe"
-   manager="NA"
-   editor=""
-   tags=""/>
+    pageTitle="如何将 Power BI Embedded 与 REST 配合使用 | Azure"
+    description="了解如何将 Power BI Embedded 与 REST 配合使用 "
+    services="power-bi-embedded"
+    documentationcenter=""
+    author="guyinacube"
+    manager="erikre"
+    editor=""
+    tags="" />
 <tags
-   ms.service="power-bi-embedded"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="powerbi"
-   ms.date="10/04/2016"
-   ms.author="mblythe"
-   wacn.date="02/06/2017"/>  
+    ms.assetid="8bcef780-cca0-4f30-9a9b-9daa1a7ae865"
+    ms.service="power-bi-embedded"
+    ms.devlang="NA"
+    ms.topic="article"
+    ms.tgt_pltfrm="NA"
+    ms.workload="powerbi"
+    ms.date="01/06/2017"
+    wacn.date="02/22/2017"
+    ms.author="asaxton" />  
 
 
 # 如何将 Power BI Embedded 与 REST 配合使用
@@ -34,7 +35,7 @@ ISV 应用程序也可以提供自身的身份验证方法，例如窗体身份�
 
  **Power BI Embedded** 正是针对此类 ISV 方案而设计。看完这些简介之后，让我们更详细地了解这个程序
 
-可以配合 Power BI Embedded，使用 .NET (C#) 或 Node.js SDK 轻松构建应用程序。但是，本文将不使用 SDK 来解释 Power BI 的 HTTP 流（包括 AuthN）。了解此流后，可以**使用任何编程语言**构建应用程序，详细了解 Power BI Embedded 的本质。
+可以配合 Power BI Embedded，使用 .NET \(C\#\) 或 Node.js SDK 轻松构建应用程序。但是，本文将不使用 SDK 来解释 Power BI 的 HTTP 流（包括 AuthN）。了解此流后，可以**使用任何编程语言**构建应用程序，详细了解 Power BI Embedded 的本质。
 
 ## 创建 Power BI 工作区集合并获取访问密钥（预配）
 Power BI Embedded 是一项 Azure 服务。只有使用 Azure 门户预览的 ISV 需要支付使用费（根据每小时用户会话计费），查看报表的用户不需要付费，甚至不需要 Azure 订阅。在开始开发应用程序之前，必须使用 Azure 门户预览创建 **Power BI 工作区集合**。
@@ -49,7 +50,10 @@ Power BI Embedded 的每个工作区是每位客户（租户）的工作区，�
 ![](./media/power-bi-embedded-iframe/copy-access-key.png)  
 
 
-> [AZURE.NOTE] 也可以预配工作区集合，然后通过 REST API 获取访问密钥。有关详细信息，请参阅 [Power BI Resource Provider APIs](https://msdn.microsoft.com/zh-cn/library/azure/mt712306.aspx)（Power BI 资源提供程序 API）。
+> [AZURE.NOTE]
+也可以预配工作区集合，然后通过 REST API 获取访问密钥。有关详细信息，请参阅 [Power BI Resource Provider APIs](https://msdn.microsoft.com/zh-cn/library/azure/mt712306.aspx)（Power BI 资源提供程序 API）。
+> 
+> 
 
 ## 使用 Power BI Desktop 创建 .pbix 文件
 接下来，必须创建数据连接以及要嵌入的报表。此任务不需要编程或编写代码，只需使用 Power BI Desktop。本文不会深入探讨如何使用 Power BI Desktop。如需帮助，请参阅 [Getting started with Power BI Desktop](https://powerbi.microsoft.com/documentation/powerbi-desktop-getting-started/)（Power BI Desktop 入门）。本示例只使用[零售分析示例](https://powerbi.microsoft.com/documentation/powerbi-sample-datasets/)。
@@ -59,12 +63,12 @@ Power BI Embedded 的每个工作区是每位客户（租户）的工作区，�
 
 ## 创建 Power BI 工作区
 
-现已完成所有预配，接下来可以通过 REST API 开始在工作区集合中创建客户工作区。以下 HTTP POST 请求 (REST) 将在现有的工作区集合中创建新工作区。在本示例中，工作区集合名称为 **mypbiapp**。只需将前面复制的访问密钥设置为 **AppKey**。这是非常简单的身份验证！
+现已完成所有预配，接下来可以通过 REST API 开始在工作区集合中创建客户工作区。以下 HTTP POST 请求 \(REST\) 将在现有的工作区集合中创建新工作区。在本示例中，工作区集合名称为 **mypbiapp**。只需将前面复制的访问密钥设置为 **AppKey**。这是非常简单的身份验证！
 
 **HTTP 请求**
 
 
-	POST https://api.powerbi.com/v1.0/collections/mypbiapp/workspaces
+	POST https://api.powerbi.cn/v1.0/collections/mypbiapp/workspaces
 	Authorization: AppKey MpaUgrTv5e...
 
 
@@ -91,7 +95,7 @@ Power BI Embedded 的每个工作区是每位客户（租户）的工作区，�
 URI 片段 **32960a09-6366-4208-a8bb-9e0678cdbb9d** 是 workspaceId，查询参数 **datasetDisplayName** 是要创建的数据集名称。创建的数据集保存 .pbix 文件中所有与数据相关的项目，例如导入的数据、指向数据源的指针，等等。
 
 
-	POST https://api.powerbi.com/v1.0/collections/mypbiapp/workspaces/32960a09-6366-4208-a8bb-9e0678cdbb9d/imports?datasetDisplayName=mydataset01
+	POST https://api.powerbi.cn/v1.0/collections/mypbiapp/workspaces/32960a09-6366-4208-a8bb-9e0678cdbb9d/imports?datasetDisplayName=mydataset01
 	Authorization: AppKey MpaUgrTv5e...
 	Content-Type: multipart/form-data; boundary="A300testx"
 
@@ -116,7 +120,7 @@ URI 片段 **32960a09-6366-4208-a8bb-9e0678cdbb9d** 是 workspaceId，查询参�
 以下内容显示正在使用此导入 ID 请求状态：
 
 
-	GET https://api.powerbi.com/v1.0/collections/mypbiapp/workspaces/32960a09-6366-4208-a8bb-9e0678cdbb9d/imports/4eec64dd-533b-47c3-a72c-6508ad854659
+	GET https://api.powerbi.cn/v1.0/collections/mypbiapp/workspaces/32960a09-6366-4208-a8bb-9e0678cdbb9d/imports/4eec64dd-533b-47c3-a72c-6508ad854659
 	Authorization: AppKey MpaUgrTv5e...
 
 
@@ -176,7 +180,7 @@ URI 片段 **32960a09-6366-4208-a8bb-9e0678cdbb9d** 是 workspaceId，查询参�
 **HTTP 请求**
 
 
-	GET https://api.powerbi.com/v1.0/collections/mypbiapp/workspaces/32960a09-6366-4208-a8bb-9e0678cdbb9d/datasets/458e0451-7215-4029-80b3-9627bf3417b0/Default.GetBoundGatewayDatasources
+	GET https://api.powerbi.cn/v1.0/collections/mypbiapp/workspaces/32960a09-6366-4208-a8bb-9e0678cdbb9d/datasets/458e0451-7215-4029-80b3-9627bf3417b0/Default.GetBoundGatewayDatasources
 	Authorization: AppKey MpaUgrTv5e...
 
 **HTTP 响应**
@@ -202,7 +206,7 @@ URI 片段 **32960a09-6366-4208-a8bb-9e0678cdbb9d** 是 workspaceId，查询参�
 
 **HTTP 请求**
 
-	PATCH https://api.powerbi.com/v1.0/collections/mypbiapp/workspaces/32960a09-6366-4208-a8bb-9e0678cdbb9d/gateways/ca17e77f-1b51-429b-b059-6b3e3e9685d1/datasources/5f7ee2e7-4851-44a1-8b75-3eb01309d0ea
+	PATCH https://api.powerbi.cn/v1.0/collections/mypbiapp/workspaces/32960a09-6366-4208-a8bb-9e0678cdbb9d/gateways/ca17e77f-1b51-429b-b059-6b3e3e9685d1/datasources/5f7ee2e7-4851-44a1-8b75-3eb01309d0ea
 	Authorization: AppKey MpaUgrTv5e...
 	Content-Type: application/json; charset=utf-8
 
@@ -226,7 +230,7 @@ URI 片段 **32960a09-6366-4208-a8bb-9e0678cdbb9d** 是 workspaceId，查询参�
 
 然后通过 REST 更改数据源的连接字符串。
 
-	POST https://api.powerbi.com/v1.0/collections/mypbiapp/workspaces/32960a09-6366-4208-a8bb-9e0678cdbb9d/datasets/458e0451-7215-4029-80b3-9627bf3417b0/Default.SetAllConnections
+	POST https://api.powerbi.cn/v1.0/collections/mypbiapp/workspaces/32960a09-6366-4208-a8bb-9e0678cdbb9d/datasets/458e0451-7215-4029-80b3-9627bf3417b0/Default.SetAllConnections
 	Authorization: AppKey MpaUgrTv5e...
 	Content-Type: application/json; charset=utf-8
 
@@ -236,23 +240,27 @@ URI 片段 **32960a09-6366-4208-a8bb-9e0678cdbb9d** 是 workspaceId，查询参�
 
 或者，可以使用 Power BI Embedded 中的行级别安全性，在一个报表中隔离每个用户的数据。这样，就可以使用相同的 .pbix（UI 等）和不同的数据源来预配每份客户报表。
 
-> [AZURE.NOTE] 如果使用**导入模式**而不是 **DirectQuery 模式**，则无法通过 API 刷新模型。此外，Power BI Embedded 尚不支持通过 Power BI 网关访问本地数据源。建议随时关注 [Power BI 博客](https://powerbi.microsoft.com/blog/)，了解最新消息和将来版本中推出的新功能。
+> [AZURE.NOTE]
+如果使用**导入模式**而不是 **DirectQuery 模式**，则无法通过 API 刷新模型。此外，Power BI Embedded 尚不支持通过 Power BI 网关访问本地数据源。建议随时关注 [Power BI 博客](https://powerbi.microsoft.com/blog/)，了解最新消息和将来版本中推出的新功能。
+> 
+> 
 
 ## 在网页中进行身份验证和托管（嵌入）报表
-
 在前面的 REST API 中，可以使用访问密钥 **AppKey** 本身作为授权标头。由于此类调用可以在后端服务器端处理，因此非常安全。
 
 但是，在网页中嵌入报表时，应使用 JavaScript（前端）处理此类安全信息。然后必须保护授权标头值。如果访问密钥被恶意用户或恶意代码发现，他们就可以使用此密钥调用任何操作。
 
-在网页中嵌入报表时，必须改用经过计算的令牌，而不要使用访问密钥 **AppKey**。应用程序必须创建 OAuth Json Web 令牌 (JWT)，它由声明和经过计算的数字签名组成。此 OAuth JWT 是点分隔的编码字符串令牌，如下图所示。
+在网页中嵌入报表时，必须改用经过计算的令牌，而不要使用访问密钥 **AppKey**。应用程序必须创建 OAuth Json Web 令牌 \(JWT\)，它由声明和经过计算的数字签名组成。此 OAuth JWT 是点分隔的编码字符串令牌，如下图所示。
 
 ![](./media/power-bi-embedded-iframe/oauth-jwt.png)  
 
 
-首先，必须准备好输入值，稍后要为此值签名。此值是以下 json 的 base64 url 编码 (rfc4648) 字符串，以点 (.) 字符分隔。稍后将会说明如何获取报表 ID。
+首先，必须准备好输入值，稍后要为此值签名。此值是以下 json 的 base64 url 编码 \(rfc4648\) 字符串，以点 \(.\) 字符分隔。稍后将会说明如何获取报表 ID。
 
-> [AZURE.NOTE] 如果想要使用 Power BI Embedded 的行级别安全性 (RLS)，则还必须在声明中指定 **username** 和 **roles**。
-
+> [AZURE.NOTE]
+如果想要使用 Power BI Embedded 的行级别安全性 \(RLS\)，则还必须在声明中指定 **username** 和 **roles**。
+> 
+> 
 
 	{
 	  "typ":"JWT",
@@ -275,7 +283,7 @@ URI 片段 **32960a09-6366-4208-a8bb-9e0678cdbb9d** 是 workspaceId，查询参�
 
 接下来，必须使用 SHA256 算法创建 HMAC（签名）的 base64 编码字符串。这个经过签名的输入值是前面获取的字符串。
 
-最后，必须使用句点 (.) 字符来合并输入值与签名字符串。完成的字符串是用于嵌入报表的应用令牌。即使该应用令牌被恶意用户发现，他们也无法获取原始访问密钥。此应用令牌很快就会过期。
+最后，必须使用句点 \(.\) 字符来合并输入值与签名字符串。完成的字符串是用于嵌入报表的应用令牌。即使该应用令牌被恶意用户发现，他们也无法获取原始访问密钥。此应用令牌很快就会过期。
 
 下面是这些步骤的 PHP 示例：
 
@@ -331,7 +339,7 @@ URI 片段 **32960a09-6366-4208-a8bb-9e0678cdbb9d** 是 workspaceId，查询参�
 
 **HTTP 请求**
 
-	GET https://api.powerbi.com/v1.0/collections/mypbiapp/workspaces/32960a09-6366-4208-a8bb-9e0678cdbb9d/reports
+	GET https://api.powerbi.cn/v1.0/collections/mypbiapp/workspaces/32960a09-6366-4208-a8bb-9e0678cdbb9d/reports
 	Authorization: AppKey MpaUgrTv5e...
 
 
@@ -357,7 +365,10 @@ URI 片段 **32960a09-6366-4208-a8bb-9e0678cdbb9d** 是 workspaceId，查询参�
 
 可以使用前面的应用令牌在 Web 应用中嵌入报表。在下一个示例代码中，可以发现前半部与前面的示例相同。在后半部中，本示例在 iframe 中显示 **embedUrl**（请参阅前面的结果），将应用令牌发布到 iframe 中。
 
-> [AZURE.NOTE] 需要将报表 ID 值更改为自己的值。此外，由于内容管理系统中的 bug，代码示例中的 iframe 标记以文本形式显示。如果复制并粘贴本示例代码，请删除标记中的大写文本。
+> [AZURE.NOTE]
+需要将报表 ID 值更改为自己的值。此外，由于内容管理系统中的 bug，代码示例中的 iframe 标记以文本形式显示。如果复制并粘贴本示例代码，请删除标记中的大写文本。
+> 
+> 
 
 	    <?php
 	    // 1. power bi access key
@@ -444,6 +455,7 @@ URI 片段 **32960a09-6366-4208-a8bb-9e0678cdbb9d** 是 workspaceId，查询参�
 
 
 ## 另请参阅
-- [Authenticating and authorizing in Power BI Embedded](/documentation/articles/power-bi-embedded-app-token-flow/)（在 Power BI Embedded 中进行身份验证和授权）
+- [Authenticating and authorizing in Power BI Embedded（在 Power BI Embedded 中进行身份验证和授权）](/documentation/articles/power-bi-embedded-app-token-flow/)
 
-<!---HONumber=Mooncake_1010_2016-->
+<!---HONumber=Mooncake_0213_2017-->
+<!---Update_Description: wording update -->
