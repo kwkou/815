@@ -24,7 +24,7 @@
 
 开始安装 Azure AD Connect 之前，确保[下载 Azure AD Connect](http://go.microsoft.com/fwlink/?LinkId=615771)，完成 [Azure AD Connect：硬件和先决条件](/documentation/articles/active-directory-aadconnect-prerequisites/)中的预先准备步骤。此外，确保拥有 [Azure AD Connect 帐户和权限](/documentation/articles/active-directory-aadconnect-accounts-permissions/)中所述的必需帐户。
 
-如果自定义的设置不匹配拓扑，例如，升级 DirSync，请参阅 [相关文档](#related-documentation)，了解其他情况。
+如果自定义的设置不匹配拓扑，例如，升级 DirSync，请参阅相关文档，了解其他情况。
 
 ## Azure AD Connect 的自定义设置安装
 ### 快速设置
@@ -69,7 +69,7 @@
 
 ## “同步”部分下的页面
 
-### 连接你的目录
+### 连接你的目录 <a name="connect-your-directories"></a>
 若要连接到你的 Active Directory 域服务，Azure AD Connect 工具需要使用具有足够权限的帐户的凭据。可以采用 NetBios 或 FQDN 格式输入域部分，即 FABRIKAM\\syncuser 或 fabrikam.com\\syncuser。此帐户可以是普通的用户帐户，因为该帐户只需默认的读取权限。不过，根据你的情况，可能会需要更多权限。若要了解详细信息，请参阅 [Azure AD Connect 帐户和权限](/documentation/articles/active-directory-aadconnect-accounts-permissions/#create-the-ad-ds-account/)
 
 ![连接目录](./media/active-directory-aadconnect-get-started-custom/connectdir.png)
@@ -114,7 +114,7 @@
 
 **源定位点** - sourceAnchor 属性是一个在用户对象的生命周期内不会改变的属性。它是链接本地用户与 Azure AD 中用户的主密钥。由于无法更改该属性，因此必须规划好要使用的合适属性。objectGUID 就是不错的候选项。除非在林/域之间移动用户帐户，否则此属性不会更改。在要在林间移动帐户的多林环境中，必须使用另一个属性，例如具有 employeeID 的属性。避免某人结婚时会改变的属性，或避免会更改分配的属性。由于不可以使用带有 @ 符号的属性，因此无法使用 email 和 userPrincipalName。属性也区分大小写，因此在林间移动对象时，请务必保留大小写。二进制属性采用 base64 编码，但其他属性类型会保留未编码状态。在联合方案和某些 Azure AD 接口中，此属性也称为 immutableID。可以在[设计概念](/documentation/articles/active-directory-aadconnect-design-concepts/#sourceanchor/)中找到有关源定位点的详细信息。
 
-### 根据组同步筛选
+### 根据组同步筛选 <a name="sync-filtering-based-on-groups"></a>
 按组筛选功能可让你只同步一小部分的对象来进行试验。若要使用此功能，请在本地 Active Directory 中针对此目的创建一个组。然后添加应该以直属成员身份与 Azure AD 同步的用户和组。稍后可以在此组中添加和删除用户，以维护应该要在 Azure AD 中显示的对象列表。要同步的所有对象必须是组的直属成员。用户、组、联系人和计算机/设备都必须是直属成员。系统不会解析嵌套组成员身份。添加某个组作为成员时，只会添加该组本身，而不添加其成员。
 
 ![同步筛选](./media/active-directory-aadconnect-get-started-custom/filter2.png)
@@ -126,7 +126,7 @@
 
 在成熟的生产部署中，往往很难维护包含要同步的所有对象的单个组。在这种情况下，你应该使用[配置筛选](/documentation/articles/active-directory-aadconnectsync-configure-filtering/)中所述的方法之一。
 
-### 可选功能
+### 可选功能 <a name="optional-features"></a>
 此屏幕可让你针对特定方案选择可选功能。
 
 ![可选功能](./media/active-directory-aadconnect-get-started-custom/optional.png)
@@ -201,7 +201,7 @@
 
 6.	单击“确定”两次。
 
-## 配置与 AD FS 的联合
+## 配置与 AD FS 的联合 <a name="configuring-federation-with-ad-fs"></a>
 只需单击几下鼠标，请能使用 Azure AD Connect 配置 AD FS。配置之前需要做好以下准备。
 
 - 已启用远程管理的、用作联合服务器的 Windows Server 2012 R2 服务器

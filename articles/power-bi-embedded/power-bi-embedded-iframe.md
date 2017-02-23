@@ -451,7 +451,7 @@ URI 片段 **32960a09-6366-4208-a8bb-9e0678cdbb9d** 是 workspaceId，查询参�
 ![](./media/power-bi-embedded-iframe/view-report.png)  
 
 
-现在，Power BI Embedded 仅在 iframe 中显示报表。不过，还请持续关注 [Power BI 博客]()。将来的增强功能可能使用新的客户端 API，使我们能够将信息发送到 iframe，以及从中获取信息。那将是振奋人心的一刻！
+现在，Power BI Embedded 仅在 iframe 中显示报表。不过，还请持续关注 Power BI 博客。将来的增强功能可能使用新的客户端 API，使我们能够将信息发送到 iframe，以及从中获取信息。那将是振奋人心的一刻！
 
 
 ## 另请参阅

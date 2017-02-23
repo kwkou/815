@@ -183,7 +183,7 @@ https://myapps.microsoft.com 上的访问面板是一个基于 Web 的门户，�
 
 ![][5]
 
-###联合、基于密码或现有应用的直接登录链接
+###联合、基于密码或现有应用的直接登录链接 <a name="direct-sign-on-links-for-federated-password-based-or-existing-apps"></a>
 
 Azure AD 还为支持基于密码单一登录、现有单一登录以及任何形式的联合单一登录的各个应用程序提供直接单一登录链接。
 

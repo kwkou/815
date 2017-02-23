@@ -102,7 +102,7 @@
 | error |可用于分类发生的错误类型与响应错误的错误码字符串。 |
 | error\_description |可帮助开发人员识别身份验证错误根本原因的特定错误消息。 |
 
-#### 授权终结点错误的错误代码
+#### 授权终结点错误的错误代码 <a name="error-codes-for-authorization-endpoint-errors"></a>
 下表描述了可在错误响应的 `error` 参数中返回的各个错误代码。
 
 | 错误代码 | 说明 | 客户端操作 |

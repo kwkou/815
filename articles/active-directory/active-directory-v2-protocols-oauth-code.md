@@ -116,7 +116,7 @@ v2.0 终结点并不支持所有 Azure Active Directory 方案和功能。若要
 | temporarily\_unavailable |服务器暂时繁忙，无法处理请求。 |重试请求。客户端应用程序可以向用户说明，其响应由于临时状况而延迟。 |
 | invalid\_resource |目标资源无效，原因是它不存在，Azure AD 找不到它，或者未正确配置。 |这表示未在租户中配置该资源（如果存在）。应用程序可以提示用户，并说明如何安装应用程序并将其添加到 Azure AD。 |
 
-## 请求访问令牌
+## 请求访问令牌 <a name="request-an-access-token"></a>
 你已获取 authorization\_code 并获得用户授权，现在可以将 `POST` 请求发送到 `/token` 终结点，兑换 `code` 以获取所需资源的 `access_token`：
 
 

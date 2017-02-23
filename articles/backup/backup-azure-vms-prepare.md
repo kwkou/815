@@ -37,7 +37,7 @@
  - **Windows Server**：不支持低于 Windows Server 2008 R2 的版本。
 
 
-## 备份和还原 VM 时的限制
+## 备份和还原 VM 时的限制 <a name="limitations-when-backing-up-and-restoring-a-vm"></a>
 > [AZURE.NOTE]
 Azure 有两种用于创建和使用资源的部署模型：[资源管理器部署模型和经典部署模型](/documentation/articles/resource-manager-deployment-model/)。以下列表提供了在经典模型中部署时的限制。
 >
@@ -85,7 +85,7 @@ Azure 有两种用于创建和使用资源的部署模型：[资源管理器部�
 
     ![“仪表板”页中的虚拟机备份说明](./media/backup-azure-vms-prepare/vmbackup-instructions.png)  
 
-## 网络连接 <a name="2-network-connectivity"></a>
+## 网络连接 <a name="network-connectivity"></a>
 
 为了管理 VM 快照，备份扩展需要连接 Azure 公共 IP 地址。如果未建立适当的 Internet 连接，虚拟机的 HTTP 请求将会超时，并且备份操作将会失败。如果部署中配置了访问限制（如通过网络安全组 (NSG)），请选择其中一个选项以提供备份流量的明确路径：
 

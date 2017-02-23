@@ -28,7 +28,7 @@ v2.0 终结点并不支持所有 Azure Active Directory 方案和功能。若要
 > 
 > 
 
-## 基础知识
+## 基础知识 <a name="the-basics"></a>
 几乎在所有的 OAuth 和 OpenID Connect 流中，都有四个参与交换的对象：
 
 ![OAuth 2.0 角色](./media/active-directory-v2-flows/protocols_roles.png)

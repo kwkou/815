@@ -516,10 +516,8 @@ DocumentDB 能够跨不同的 [Azure 区域](https://azure.microsoft.com/regions
 
 若要详细了解 DocumentDB，请浏览以下资源：
 
--	[DocumentDB 学习路径](/documentation/learning-paths/documentdb/)
 -	[DocumentDB 资源模型和概念](/documentation/articles/documentdb-resources/)
 
-有关可用的其他模板，请参阅 [Azure 快速启动模板](/documentation/templates/)。
 
 <!--Reference style links - using these makes the source content way more readable than using inline links-->
 

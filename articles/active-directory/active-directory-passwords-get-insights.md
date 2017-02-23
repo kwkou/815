@@ -45,7 +45,7 @@
 - [SsprActivityEvent](https://msdn.microsoft.com/zh-cn/library/azure/ad/graph/howto/azure-ad-reports-and-events-preview)：列出密码重置事件可用的列
 - [SsprRegistrationActivityEvent](https://msdn.microsoft.com/zh-cn/library/azure/mt126081.aspx#BKMK_SsprRegistrationActivityEvent)：列出密码重置注册事件可用的列
 
-## 查看密码重置注册活动
+## 查看密码重置注册活动 <a name="view-password-reset-registration-activity"></a>
 
 密码重置注册活动报告显示你的组织中已发生的所有密码重置注册。对于已在密码重置注册门户 ([http://aka.ms/ssprsetup](http://aka.ms/ssprsetup)) 成功注册身份验证信息的所有用户，密码重置注册都显示在此报告中。
 

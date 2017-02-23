@@ -88,7 +88,7 @@ Azure 备份是基于 Azure 的服务，可用于备份（或保护）和还原 
 | Azure 备份服务器 |文件一致性备份仅支持 Hyper-V<br/>（不适用于 Azure VM） |
 | Azure IaaS VM 备份 |是 |
 
-## 结合使用高级存储 VM 和 Azure 备份
+## 结合使用高级存储 VM 和 Azure 备份 <a name="using-premium-storage-vms-with-azure-backup"></a>
 Azure 备份可保护高级存储 VM。Azure 高级存储是基于固态硬盘 (SSD) 的存储，用于支持 I/O 密集型工作负荷。高级存储很适合虚拟机 (VM) 工作负荷。有关高级存储的详细信息，请参阅[高级存储：Azure 虚拟机工作负荷的高性能存储](/documentation/articles/storage-premium-storage/)一文
 
 ### 备份高级存储 VM <a name="back-up-and-restore-premium-storage-vms"></a>
@@ -187,7 +187,7 @@ Azure 备份代理提供网络限制功能，可用于控制数据传输期间�
 | 本地磁盘上的恢复点 |不适用 |<li>对于文件服务器为 64，<li>对于应用程序服务器为 448 |<li>对于文件服务器为 64，<li>对于应用程序服务器为 448 |不适用 |
 | 磁带上的恢复点 |不适用 |不受限制 |不适用 |不适用 |
 
-## 受保护实例是什么
+## 受保护实例是什么 <a name="what-is-a-protected-instance"></a>
 受保护实例通常指配置为备份到 Azure 的 Windows 计算机、物理或虚拟服务器，或者 SQL 数据库。为计算机、服务器或数据库设置备份策略，并为数据创建副本后，实例即受到保护。该受保护实例的备份数据后续副本（称为恢复点）将增加使用的存储量。可为每个受保护实例创建最多 9999 个恢复点。如果从存储中删除恢复点，则不计入 9999 个总恢复点数。受保护实例的一些常见示例包括运行 Windows 操作系统的虚拟机、应用程序服务器、数据库和个人计算机。例如：
 
 - 运行 Hyper-V 或 Azure IaaS 虚拟机监控程序结构的虚拟机。此虚拟机的来宾操作系统可以是 Windows Server 或 Linux。
