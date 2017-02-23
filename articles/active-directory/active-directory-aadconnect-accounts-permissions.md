@@ -103,7 +103,7 @@ Azure AD Connect 安装向导提供提供两种不同的路径：
 
 ![AD 帐户](./media/active-directory-aadconnect-accounts-permissions/adsyncserviceaccount.png)
 
-### Azure AD Connect 同步服务帐户 <a name="azure-ad-connect-sync-service-account"></a>
+### Azure AD Connect 同步服务帐户 <a name="azure-ad-connect-sync-service-accounts"></a>
 本地服务帐户将由安装向导创建（除非你在自定义设置指定了要使用的帐户）。该帐户具有 **AAD_** 前缀，可作为实际同步服务的运行帐户。如果你在域控制器上安装 Azure AD Connect，则会在该域中创建帐户。如果使用运行 SQL 服务器的远程服务器或使用需要身份验证的代理，**AAD_** 服务帐户必须位于域中。
 
 ![同步服务帐户](./media/active-directory-aadconnect-accounts-permissions/syncserviceaccount.png)

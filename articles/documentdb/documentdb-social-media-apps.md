@@ -211,7 +211,7 @@ Azure 搜索可实现它们称之为[索引器](https://msdn.microsoft.com/zh-cn
 
 由于想要深入了解，你可能会认为自己需要更多数学科学方面的知识才能提取出简单数据库和文件之外的这些模式和信息，其实不然。
 
-[Cortana Intelligence 套件](https://www.microsoft.com/en/server-cloud/cortana-analytics-suite/overview.aspx)的一部分，是完全托管的云服务，让用户可以在简单的拖放界面中使用算法创建工作流、使用 [R](https://zh.wikipedia.org/wiki/R_(programming_language)) 对自己的算法编码，或使用部分已生成的和现有的 API（例如 [文本分析](https://gallery.cortanaanalytics.com/MachineLearningAPI/Text-Analytics-2)、[内容审查器](https://www.microsoft.com/moderator)或[建议](https://gallery.cortanaanalytics.com/MachineLearningAPI/Recommendations-2)）。
+[Cortana Intelligence 套件](https://www.microsoft.com/en/server-cloud/cortana-analytics-suite/overview.aspx)的一部分，是完全托管的云服务，让用户可以在简单的拖放界面中使用算法创建工作流、使用 [R](https://en.wikipedia.org/wiki/R_(programming_language)) 对自己的算法编码，或使用部分已生成的和现有的 API（例如 [文本分析](https://gallery.cortanaanalytics.com/MachineLearningAPI/Text-Analytics-2)、[内容审查器](https://www.microsoft.com/moderator)或[建议](https://gallery.cortanaanalytics.com/MachineLearningAPI/Recommendations-2)）。
 
 另一种可行的做法是使用 [Microsoft 认知服务](https://www.microsoft.com/cognitive-services)分析用户内容；我们不仅可以更好地了解用户（通常分析他们使用[文本分析 API](https://www.microsoft.com/cognitive-services/zh-cn/text-analytics-api) 编写的内容），而且还能检测有害内容或成人内容，并使用[计算机视觉 API](https://www.microsoft.com/cognitive-services/zh-cn/computer-vision-api) 采取相应的措施。认知服务包含大量现成的解决方案，不需要拥有机器学习方面的知识就能使用这些解决方案。
 

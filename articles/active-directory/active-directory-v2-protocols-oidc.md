@@ -147,7 +147,7 @@ OpenID Connect 描述了元数据文档，该文档包含了应用执行登录�
 | error |可用于对发生的错误分类以及对错误做出反应的错误代码字符串。 |
 | error\_description |帮助识别身份验证错误根本原因的特定错误消息。 |
 
-### 授权终结点错误的错误代码
+### 授权终结点错误的错误代码 <a name="error-codes-for-authorization-endpoint-errors"></a>
 下表描述了可在错误响应的 `error` 参数中返回的错误代码：
 
 | 错误代码 | 说明 | 客户端操作 |
@@ -160,7 +160,7 @@ OpenID Connect 描述了元数据文档，该文档包含了应用执行登录�
 | temporarily\_unavailable |服务器暂时繁忙，无法处理请求。 |重试请求。客户端应用程序可向用户说明，其响应由于临时状况而延迟。 |
 | invalid\_resource |目标资源无效，原因是它不存在，Azure AD 找不到它，或者未正确配置。 |这表示未在租户中配置该资源（如果存在）。应用程序可以提示用户，说明如何安装应用程序并将其添加到 Azure AD。 |
 
-## 验证 ID 令牌
+## 验证 ID 令牌 <a name="validate-the-id-token"></a>
 仅接收 ID 令牌并不足以验证用户的身份。还必须验证 ID 令牌的签名，并根据应用的要求验证令牌中的声明。v2.0 终结点使用 [JSON Web 令牌 (JWT)](http://self-issued.info/docs/draft-ietf-oauth-json-web-token.html) 和公钥加密对令牌进行签名并验证其是否有效。
 
 可以选择验证客户端代码中的 ID 令牌，但是常见的做法是将 ID 令牌发送到后端服务器，在那里执行验证。验证 ID 令牌的签名后，需要验证一些声明。有关详细信息，包括有关[验证令牌](/documentation/articles/active-directory-v2-tokens/#validating-tokens/)的详细信息和[有关签名密钥滚动更新的重要信息](/documentation/articles/active-directory-v2-tokens/#validating-tokens/)，请参阅 [v2.0 令牌参考](/documentation/articles/active-directory-v2-tokens/)。我们建议使用库来分析和验证令牌。大多数语言和平台都至少有一个可用的库。

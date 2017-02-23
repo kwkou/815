@@ -27,7 +27,7 @@
 
 以下是先决条件：
 - [安装 Azure Active Directory V2 PowerShell 模块](https://www.powershellgallery.com/packages/AzureAD/2.0.0.30)。
-- [安装 Azure PowerShell](/powershell/azureps-cmdlets-docs/)。
+- [安装 Azure PowerShell](/documentation/articles/powershell-install-configure/)。 
 - 若要运行以下命令，需要具有在 Azure Active Directory 租户中创建/编辑组的权限。如果没有权限，则可能需要与 Azure Active Directory 管理员联系。
 
 接下来，在 PowerShell 中运行以下命令。
