@@ -30,6 +30,6 @@
 
 ## 后续步骤
 
-若要了解有关对虚拟机进行负载均衡的详细信息，请参阅[对虚拟机进行负载均衡](/documentation/articles/virtual-machines-linux-load-balance/)。
+若要了解有关对虚拟机进行负载均衡的详细信息，请参阅[对虚拟机进行负载均衡](/documentation/articles/load-balancer-overview/)。
 
 <!---HONumber=Mooncake_Quality_Review_1202_2016-->

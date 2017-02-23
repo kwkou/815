@@ -6,7 +6,7 @@
 
 ## 准备 Oracle Linux 虚拟机
 
-[为 Azure 准备 Oracle Linux 虚拟机](/documentation/articles/virtual-machines-linux-prepare-oracle/)将逐步引导你满足先决条件，并为 Oracle Linux 6.4 + 和 Oracle Linux 7.0 + 创建虚拟机。
+[为 Azure 准备 Oracle Linux 虚拟机](/documentation/articles/virtual-machines-linux-oracle-create-upload-vhd/)将逐步引导你满足先决条件，并为 Oracle Linux 6.4 + 和 Oracle Linux 7.0 + 创建虚拟机。
 
 ## Oracle 数据防护
 
