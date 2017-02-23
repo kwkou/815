@@ -189,7 +189,7 @@ Azure 门户预览中显示的一个示例入站 NAT 规则。在部署中为每
 ![入站 NAT 规则](./media/virtual-machines-linux-dotnet-core/natrule.png)  
 
 
-有关 Azure 网络负载均衡器的深入信息，请参阅 [Azure 基础结构服务的负载均衡](/documentation/articles/virtual-machines-linux-load-balance/)。
+有关 Azure 网络负载均衡器的深入信息，请参阅 [Azure 基础结构服务的负载均衡](/documentation/articles/load-balancer-overview/)。
 
 ## 部署多个 VM
 最后，为使可用性集或负载均衡器有效运行，需要部署多个虚拟机。可以使用 Azure Resource Manager 模板复制函数来部署多个 VM。使用复制函数时，不需要定义有限数量的虚拟机，而可以在部署时动态提供此值。复制函数使用要创建的实例数目，可以部署适当数目的虚拟机和关联的资源。

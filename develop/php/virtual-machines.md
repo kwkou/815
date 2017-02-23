@@ -41,7 +41,7 @@
 <h3>功能指南：<a href="/documentation/articles/virtual-machines-linux-mac-create-ssh-keys/">如何在 Azure 中将 SSH 用于 Linux</a></h3>
 <p>了解如何生成与 Azure 兼容的 SSH 密钥。</p>
 <h2 id="header-2">联网</h2>
-<h3>如何：<a href="/documentation/articles/virtual-machines-linux-load-balance/">平衡虚拟机负载</a></h3>
+<h3>如何：<a href="/documentation/articles/load-balancer-overview/">平衡虚拟机负载</a></h3>
 <p>了解如何平衡运行 Linux 的和位于云服务中的虚拟机的负载。</p>
 
 <h2 id="header-3">安装软件</h2>
