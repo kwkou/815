@@ -33,7 +33,7 @@
 
 [AZURE.INCLUDE [create-account-note](../../includes/create-account-note.md)]
 
-在本教程中，你将生成多层应用程序并在 Azure 云服务中运行它。前端是 ASP.NET MVC Web 角色，后端是使用服务总线队列的辅助角色。可创建与前端相同的多层应用程序，作为将部署到 Azure 网站而不是云服务的 Web 项目。有关如何以不同方式处理 Azure 网站前端的说明，请参阅[后续步骤](#nextsteps)部分。你还可以试用 [.NET 本地/云混合应用程序](/documentation/articles/service-bus-dotnet-hybrid-app-using-service-bus-relay/)教程。
+在本教程中，你将生成多层应用程序并在 Azure 云服务中运行它。前端是 ASP.NET MVC Web 角色，后端是使用服务总线队列的辅助角色。可创建与前端相同的多层应用程序，作为将部署到 Azure 网站而不是云服务的 Web 项目。有关如何以不同方式处理 Azure 网站前端的说明，请参阅[后续步骤](#next-steps)部分。你还可以试用 [.NET 本地/云混合应用程序](/documentation/articles/service-bus-dotnet-hybrid-app-using-service-bus-relay/)教程。
 
 以下屏幕截图显示了已完成的应用程序。
 
@@ -251,7 +251,7 @@
 
 11. 最后，修改提交页以包含有关队列的一些信息。在“解决方案资源管理器”中，双击“Views\\Home\\Submit.cshtml”文件以在 Visual Studio 编辑器中将其打开。在 `<h2>Submit</h2>` 后面添加以下行。`ViewBag.MessageCount` 当前为空。稍后你将填充它。
 
-	<p>Current number of orders in queue waiting to be processed: @ViewBag.MessageCount</p>
+	    <p>Current number of orders in queue waiting to be processed: @ViewBag.MessageCount</p>
 
 12. 现在，你已实现你的 UI。你可以按 **F5** 运行应用程序并确认其按预期方式运行。
 
