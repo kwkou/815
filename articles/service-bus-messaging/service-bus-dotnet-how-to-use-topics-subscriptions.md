@@ -1,7 +1,7 @@
 <properties
     pageTitle="通过 .NET 使用服务总线主题 | Azure"
     description="了解如何在 Azure 中通过 .NET 使用服务总线主题和订阅。代码示例是针对 .NET 应用程序编写的。"
-    services="service-bus-messaging"
+    services="service-bus"
     documentationCenter=".net"
     authors="sethmanheim"
     manager="timlt"

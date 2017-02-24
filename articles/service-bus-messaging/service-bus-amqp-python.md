@@ -1,7 +1,7 @@
 <properties 
    pageTitle="服务总线和 Python 与 AMQP 1.0 | Azure"
    description="使用 AMQP 1.0 通过 Python 使用服务总线。"
-   services="service-bus-messaing"
+   services="service-bus"
    documentationCenter="na"
    authors="sethmanheim"
    manager="timlt"

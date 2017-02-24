@@ -1,7 +1,7 @@
 <properties
     pageTitle="使用 Azure Resource Manager 模板创建服务总线资源 | Azure"
     description="使用 Azure Resource Manager 模板自动创建服务总线资源"
-    services="service-bus-messaging"
+    services="service-bus"
     documentationCenter=".net"
     authors="sethmanheim"
     manager="timlt"

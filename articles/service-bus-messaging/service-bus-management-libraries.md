@@ -1,7 +1,7 @@
 <properties
     pageTitle="Azure 服务总线管理库 | Azure"
       description="通过 .NET 管理服务总线命名空间和实体"
-      services="service-bus-messaging"
+      services="service-bus"
       cloud="na"
       documentationcenter="na"
       author="jtaubensee"

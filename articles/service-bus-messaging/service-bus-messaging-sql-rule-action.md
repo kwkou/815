@@ -1,7 +1,7 @@
 <properties
     pageTitle="SQLRuleAction 语法参考 | Azure"
     description="有关 SQLRuleAction 语法的详细信息。"
-    services="service-bus-messaging"
+    services="service-bus"
     documentationcenter="na"
     author="sethmanheim"
     manager="timlt"
