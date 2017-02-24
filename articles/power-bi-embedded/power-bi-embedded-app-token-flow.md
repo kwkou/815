@@ -63,27 +63,27 @@ Power BI Embedded 服务使用**密钥**和**应用令牌**进行身份验证和
 ## 下面是流的工作原理
 1. 将 API 密钥复制到应用程序中。可以在 **Azure 门户预览**中获取密钥。
    
-    ![](./media/powerbi-embedded-get-started-sample/azure-portal.png)  
+	![](./media/powerbi-embedded-get-started-sample/azure-portal.png)  
 
 2. 令牌将发布声明，并且有过期时间。
    
-    ![](./media/powerbi-embedded-get-started-sample/power-bi-embedded-token-2.png)  
+	![](./media/powerbi-embedded-get-started-sample/power-bi-embedded-token-2.png)  
 
 3. 令牌使用 API 访问密钥获得签名。
    
-    ![](./media/powerbi-embedded-get-started-sample/power-bi-embedded-token-3.png)  
+	![](./media/powerbi-embedded-get-started-sample/power-bi-embedded-token-3.png)  
 
 4. 用户请求查看报表。
    
-    ![](./media/powerbi-embedded-get-started-sample/power-bi-embedded-token-4.png)  
+	![](./media/powerbi-embedded-get-started-sample/power-bi-embedded-token-4.png)  
 
 5. 使用 API 访问密钥验证令牌。
    
-   ![](./media/powerbi-embedded-get-started-sample/power-bi-embedded-token-5.png)  
+	![](./media/powerbi-embedded-get-started-sample/power-bi-embedded-token-5.png)  
 
 6. Power BI Embedded 向用户发送报表。
    
-   ![](./media/powerbi-embedded-get-started-sample/power-bi-embedded-token-6.png)  
+	![](./media/powerbi-embedded-get-started-sample/power-bi-embedded-token-6.png)  
 
 
 **Power BI Embedded** 向用户发送报表后，用户可以在自定义应用中查看报表。例如，如果导入了 [Analyzing Sales Data PBIX sample](http://download.microsoft.com/download/1/4/E/14EDED28-6C58-4055-A65C-23B4DA81C4DE/Analyzing_Sales_Data.pbix)（分析销售数据 PBIX 示例），该示例 Web 应用将如下所示：
