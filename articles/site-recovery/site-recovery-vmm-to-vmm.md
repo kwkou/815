@@ -14,7 +14,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="01/23/2017"
-    wacn.date="02/15/2017"
+    wacn.date="02/24/2017"
     ms.author="raynew" />
 
 # 使用 Azure 门户将 VMM 云中的 Hyper-V 虚拟机复制到辅助 VMM 站点
@@ -96,7 +96,7 @@ Azure 提供用于创建和处理资源的两个不同的[部署模型](/documen
 
 | **先决条件** | **详细信息** |
 | --- | --- |
-| **VMM** | 我们建议在主站点和辅助站点中各部署一个 VMM 服务器。<br/><br/> 可[在单个 VMM 服务器上的云之间复制](/documentation/articles/site-recovery-single-vmm/)。为此，至少需要在 VMM 服务器上配置两个云。<br/><br/> VMM 服务器应当至少运行具有最新更新的 System Center 2012 SP1。<br/><br/> 每个 VMM 服务器必须有一个或多个云。必须在所有云中设置 Hyper-V 容量配置文件。<br/><br/>云必须包含一个或多个 VMM 主机组。<br/><br/> [详细了解](https://msdn.microsoft.com/zh-cn/library/azure/dn469075.aspx#BKMK_Fabric)如何设置 VMM 云。<br/><br/> VMM 服务器需要 Internet 访问权限。 |
+| **VMM** | 我们建议在主站点和辅助站点中各部署一个 VMM 服务器。<br/><br/> 可[在单个 VMM 服务器上的云之间复制](/documentation/articles/site-recovery-single-vmm/)。为此，至少需要在 VMM 服务器上配置两个云。<br/><br/> VMM 服务器应当至少运行具有最新更新的 System Center 2012 SP1。<br/><br/> 每个 VMM 服务器必须有一个或多个云。必须在所有云中设置 Hyper-V 容量配置文件。<br/><br/>云必须包含一个或多个 VMM 主机组。<br/><br/> [详细了解](/documentation/articles/site-recovery-prereq/)如何设置 VMM 云。<br/><br/> VMM 服务器需要 Internet 访问权限。 |
 | **Hyper-V** | Hyper-V 服务器必须至少运行具有 Hyper-V 角色且安装了最新更新的 Windows Server 2012。<br/><br/> Hyper-V 服务器应包含一个或多个 VM。<br/><br/> Hyper-V 主机服务器应位于主要和辅助 VMM 云中的主机组内。<br/><br/> 如果正在 Windows Server 2012 R2 上的群集中运行 Hyper-V，则应安装[更新 2961977](https://support.microsoft.com/zh-cn/kb/2961977)<br/><br/> 如果正在 Windows Server 2012 上的群集中运行 Hyper-V，请注意，若使用基于静态 IP 地址的群集，则不会自动创建该群集中转站。需要手动配置群集中转站。[了解详细信息](http://social.technet.microsoft.com/wiki/contents/articles/18792.configure-replica-broker-role-cluster-to-cluster-replication.aspx)。 |
 | **提供程序** | Site Recovery 部署期间，需要在 VMM 服务器上安装 Azure Site Recovery 提供程序。提供程序通过 HTTPS 443 与 Site Recovery 通信，协调复制。数据复制是通过 LAN 或 VPN 连接在主要和辅助 Hyper-V 服务器之间发生的。<br/><br/> 在 VMM 服务器上运行的提供程序需要访问以下 URL：<br/><br/> ``*.accesscontrol.chinacloudapi.cn``<br/><br/> ``*.backup.windowsazure.cn``<br/><br/> ``*.hypervrecoverymanager.windowsazure.cn``<br/><br/> ``*.store.core.chinacloudapi.cn``<br/><br/> ``*.blob.core.chinacloudapi.cn`` <br/><br/> ``https://www.msftncsi.com/ncsi.txt``<br/><br/> ``time.windows.cn``<br/><br/> ``time.nist.gov``<br/><br/> 允许从 VMM 服务器到 [Azure 数据中心 IP 范围](https://www.microsoft.com/download/confirmation.aspx?id=41653)的防火墙通信，并允许 HTTPS (443) 协议。 |
 

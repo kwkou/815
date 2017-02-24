@@ -10,7 +10,7 @@
 <tags
 	ms.service="site-recovery"
 	ms.date="08/26/2015"
-	wacn.date="02/15/2017"/>
+	wacn.date="02/24/2017"/>
 	
 
 #  使用 PowerShell 和 Azure 资源管理器实现 VMM 站点到 VMM 站点的保护
@@ -43,7 +43,7 @@ Azure PowerShell 是一个模块，提供用于通过 Windows PowerShell 管理 
 	- 了解有关设置 VMM 云的更多信息：
 
 		- [System Center 2012 R2 VMM 中私有云的新增功能](https://channel9.msdn.com/Events/TechEd/NorthAmerica/2013/MDC-B357#fbid=dfgvHAmYryA)及 [VMM 2012 和云](http://www.server-log.com/blog/2011/8/26/vmm-2012-and-the-clouds.html)。
-		- [配置 VMM 云结构](https://msdn.microsoft.com/zh-cn/library/azure/dn469075.aspx#BKMK_Fabric)
+		- [配置 VMM 云结构](/documentation/articles/site-recovery-prereq/)
 		- [在 VMM 中创建私有云](https://technet.microsoft.com/zh-cn/library/jj860425.aspx)和[演练：使用 System Center 2012 SP1 VMM 创建私有云](http://blogs.technet.com/b/keithmayer/archive/2013/04/18/walkthrough-creating-private-clouds-with-system-center-2012-sp1-virtual-machine-manager-build-your-private-cloud-in-a-month.aspx)
 - 至少运行 Windows Server 2012 的一个或多个 Hyper-V 服务器，具有 Hyper-V 角色并且安装了最新更新。服务器或群集必须包含在一个 VMM 云中。
 - 如果你在群集中运行 Hyper-V，请注意，如果你具有基于静态 IP 地址的群集，则不会自动创建群集代理。你需要手动配置群集代理。有关说明，请参阅[配置 Hyper-V 副本代理](http://social.technet.microsoft.com/wiki/contents/articles/18792.configure-replica-broker-role-cluster-to-cluster-replication.aspx)。

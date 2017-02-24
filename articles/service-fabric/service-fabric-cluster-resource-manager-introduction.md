@@ -14,7 +14,7 @@
     ms.tgt_pltfrm="NA"
     ms.workload="NA"
     ms.date="01/05/2017"
-    wacn.date="02/20/2017"
+    wacn.date="02/24/2017"
     ms.author="masnider" />  
 
 
@@ -44,7 +44,7 @@
 3. 提供其他进程的帮助
 
 若要了解群集资源管理器的工作原理，请观看下面的 Microsoft 虚拟大学视频：
-<center><a target="_blank" href="https://mva.microsoft.com/zh-CN/training-courses/building-microservices-applications-on-azure-service-fabric-16747?l=d4tka66yC_5706218965"> <img src="./media/service-fabric-cluster-resource-manager-introduction/ConceptsAndDemoVid.png" WIDTH="360" HEIGHT="244"> </a></center>
+<center><a target="_blank" href="https://mva.microsoft.com/en-us/training-courses/building-microservices-applications-on-azure-service-fabric-16747?l=d4tka66yC_5706218965"> <img src="./media/service-fabric-cluster-resource-manager-introduction/ConceptsAndDemoVid.png" WIDTH="360" HEIGHT="244"> </a></center>
 
 ### 它不是什么
 在传统的 N 层应用程序中，始终有某种有关“负载均衡器”的概念。通常情况下，该概念是指网络负载均衡器 \(NLB\) 或应用程序负载均衡器 \(ALB\)，具体取决于其在网络堆栈中所处的位置。有些负载均衡器基于硬件（例如 F5 的 BigIP 产品），有些则基于软件（例如 Microsoft 的 NLB）。在其他环境中，可能会在此角色中看到类似于 HAProxy 或 Nginx 的内容。在这些体系结构中，负载均衡作业的目的是确保无状态工作负荷接收大致相同的工作量。负载均衡策略各不相同。某些均衡器会将每个不同的调用发送到不同的服务器。另外一些均衡器提供会话固定/粘连。更高级的均衡器使用实际的估算或报告，根据预计的成本和当前的计算机负载来路由调用。

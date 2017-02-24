@@ -14,7 +14,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="storage-backup-recovery"
     ms.date="12/11/2016"
-    wacn.date="02/10/2017"
+    wacn.date="02/24/2017"
     ms.author="rajanaki" />  
 
 
@@ -88,7 +88,7 @@
 
 | **组件** | **详细信息** |
 | --- | --- |
-| **VMM** |<p> 我们建议在主站点和辅助站点中各部署一个 VMM 服务器。</p><p> 可[在单个 VMM 服务器上的云之间复制](/documentation/articles/site-recovery-single-vmm/)。为此，至少需要在 VMM 服务器上配置两个云。</p><p> VMM 服务器应当至少运行具有最新更新的 **System Center 2012 SP1**。</p><p> 每个 VMM 服务器必须有一个或多个云。必须在所有云中设置 Hyper-V 容量配置文件。</p><p>云必须包含一个或多个 VMM 主机组。[详细了解](https://msdn.microsoft.com/zh-cn/library/azure/dn469075.aspx#BKMK_Fabric)如何设置 VMM 云。</p><p> VMM 服务器需要 Internet 访问权限。</p> |
+| **VMM** |<p> 我们建议在主站点和辅助站点中各部署一个 VMM 服务器。</p><p> 可[在单个 VMM 服务器上的云之间复制](/documentation/articles/site-recovery-single-vmm/)。为此，至少需要在 VMM 服务器上配置两个云。</p><p> VMM 服务器应当至少运行具有最新更新的 **System Center 2012 SP1**。</p><p> 每个 VMM 服务器必须有一个或多个云。必须在所有云中设置 Hyper-V 容量配置文件。</p><p>云必须包含一个或多个 VMM 主机组。[详细了解](/documentation/articles/site-recovery-prereq/)如何设置 VMM 云。</p><p> VMM 服务器需要 Internet 访问权限。</p> |
 | **Hyper-V** | <p>Hyper-V 服务器必须至少运行**具有 Hyper-V 角色且安装了最新更新的 Windows Server 2012**。</p><p> Hyper-V 服务器应包含一个或多个 VM。</p><p> Hyper-V 主机服务器应位于主要和辅助 VMM 云中的主机组内。</p><p> 如果正在 Windows Server 2012 R2 上的群集中运行 Hyper-V，则应安装[更新 2961977](https://support.microsoft.com/zh-cn/kb/2961977)</p><p> 如果正在 Windows Server 2012 上的群集中运行 Hyper-V，请注意，若使用基于静态 IP 地址的群集，则不会自动创建该群集中转站。需要手动配置群集中转站。[了解详细信息](http://social.technet.microsoft.com/wiki/contents/articles/18792.configure-replica-broker-role-cluster-to-cluster-replication.aspx)。</p> |
 | **提供程序** | <p>Site Recovery 部署期间，需要在 VMM 服务器上安装 Azure Site Recovery 提供程序。提供程序通过 HTTPS 443 与 Site Recovery 通信，协调复制。数据复制是通过 LAN 或 VPN 连接在主要和辅助 Hyper-V 服务器之间发生的。</p><p> 在 VMM 服务器上运行的提供程序需要访问以下 URL：</p><p>[AZURE.INCLUDE [site-recovery-URLS](../../includes/site-recovery-URLS.md)] </p><p>允许从 VMM 服务器到 [Azure 数据中心 IP 范围](https://www.microsoft.com/en-us/download/details.aspx?id=42064)的防火墙通信，并允许 HTTPS (443) 协议。</p> |
 

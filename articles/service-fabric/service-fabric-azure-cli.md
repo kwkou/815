@@ -15,7 +15,7 @@
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
    ms.date="09/24/2016"
-   wacn.date="11/28/2016"
+   wacn.date="02/24/2017"
    ms.author="subramar"/>  
 
 
@@ -155,7 +155,7 @@
 
 现在，可以使用 SFX 监视应用程序升级。应用程序在几分钟内即可完成更新。还可以使用某个错误操作来尝试测试已更新的应用，检查 Service Fabric 中的自动回滚功能。
 
-## 故障排除
+##<a name="troubleshooting"></a> 故障排除
 
 ### 未成功复制应用程序包
 

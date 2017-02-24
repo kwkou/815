@@ -131,7 +131,7 @@ Linux 不支持独立群集 - 预览版仅支持单机群集和 Azure Linux 多�
 >
 >
 
-## 安装 Java SDK 和 Eclipse Neon 插件（可选）
+##<a name="install-the-java-sdk-and-eclipse-neon-plugin-optional"></a> 安装 Java SDK 和 Eclipse Neon 插件（可选）
 
 Java SDK 提供所需的库和模板用于通过 Java 构建 Service Fabric 服务。
 
