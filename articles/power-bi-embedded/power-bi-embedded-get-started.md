@@ -38,12 +38,12 @@
 1. 打开并登录到 **Azure 门户预览**：[http://portal.azure.cn](http://portal.azure.cn)。
 2. 在顶部面板上单击“+ 新建”。
    
-   ![](./media/power-bi-embedded-get-started/create-workspace-1.png)  
+	![](./media/power-bi-embedded-get-started/create-workspace-1.png)  
 
 3. 在“数据 + 分析”下单击“Power BI Embedded”。
 4. 在“创建”边栏选项卡上输入所需的信息。有关**定价**信息，请参阅 [Power BI Embedded 定价](/pricing/details/power-bi-embedded/)。
    
-   ![](./media/power-bi-embedded-get-started/create-workspace-2.png)  
+	![](./media/power-bi-embedded-get-started/create-workspace-2.png)  
 
 5. 单击“创建”。
 
