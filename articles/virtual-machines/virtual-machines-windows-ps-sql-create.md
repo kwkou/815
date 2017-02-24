@@ -236,7 +236,7 @@
 
     # Variables
     ## Global
-    $Location = "SouthCentralUS"
+    $Location = "ChinaEast"
     $ResourceGroupName = "sqlvm1"
     ## Storage
     $StorageName = $ResourceGroupName + "storage"
