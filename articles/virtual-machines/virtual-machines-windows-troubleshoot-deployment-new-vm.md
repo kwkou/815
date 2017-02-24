@@ -30,7 +30,7 @@
 
 若要开始故障排除，请收集审核日志，以识别与问题相关的错误。以下链接包含有关要遵循的过程的详细信息。
 
-[使用 Azure 门户预览对资源组部署进行故障排除](/documentation/articles/resource-manager-troubleshoot-deployments-portal/)
+[使用 Azure 门户预览对资源组部署进行故障排除](/documentation/articles/resource-manager-deployment-operations/)
 
 [使用 Resource Manager 执行审核操作](/documentation/articles/resource-group-audit/)
 

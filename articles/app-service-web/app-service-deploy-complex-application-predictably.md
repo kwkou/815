@@ -293,7 +293,7 @@ Web 应用取决于两个不同的资源。这意味着只有在创建 App Servi
 -	[Azure 资源管理器模板函数](/documentation/articles/resource-group-template-functions/)
 -	[使用 Azure 资源管理器模板部署应用程序](/documentation/articles/resource-group-template-deploy/)
 -	[将 Azure PowerShell 与 Azure 资源管理器配合使用](/documentation/articles/powershell-azure-resource-manager/)
--	[Azure 中的资源组部署疑难解答](/documentation/articles/resource-manager-troubleshoot-deployments-portal/)
+-	[Azure 中的资源组部署疑难解答](/documentation/articles/resource-manager-deployment-operations/)
 
 
 
