@@ -1,7 +1,7 @@
 <properties
     pageTitle="SQLFilter 语法参考 | Azure"
     description="有关 SqlFilter 语法的详细信息。"
-    services="service-bus-messaging"
+    services="service-bus"
     documentationcenter="na"
     author="sethmanheim"
     manager="timlt"

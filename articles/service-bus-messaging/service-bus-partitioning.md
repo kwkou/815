@@ -1,7 +1,7 @@
 <properties 
     pageTitle="分区队列和主题 | Azure"
     description="介绍如何使用多个消息中转站对服务总线队列和主题进行分区。"
-    services="service-bus-messaging"
+    services="service-bus"
     documentationCenter="na"
     authors="sethmanheim"
     manager="timlt"

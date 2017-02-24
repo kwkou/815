@@ -1,7 +1,7 @@
 <properties 
     pageTitle="Azure 服务总线和事件中心内的 AMQP 1.0 协议指南 | Azure" 
     description="Azure 服务总线和事件中心内 AMQP 1.0 协议的表达与描述指南" 
-    services="service-bus-messaging,event-hubs" 
+    services="service-bus,event-hubs" 
     documentationCenter=".net" 
     authors="clemensv" 
     manager="timlt" 

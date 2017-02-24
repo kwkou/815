@@ -1,7 +1,7 @@
 <properties 
 	pageTitle="如何将 AMQP 1.0 用于 .NET 服务总线 API | Azure" 
 	description="了解如何将高级消息队列协议 (AMQP) 1.0 用于 Azure .NET 服务总线 API。" 
-	services="service-bus-messaing" 
+	services="service-bus" 
 	documentationCenter=".net" 
 	authors="sethmanheim" 
 	manager="timlt" 
