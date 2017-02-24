@@ -25,7 +25,7 @@
 可使用以下 CLI 版本之一完成任务：
 
 - [Azure CLI 1.0](#quick-commands)：用于经典部署模型和资源管理部署模型（本文）的 CLI
-- [Azure CLI 2.0（预览版）](/documentation/articles/virtual-machines-linux-nsg-quickstart/)：用于资源管理部署模型的下一代 CLI
+- Azure CLI 2.0：因为 API 版本的问题， CLI 2.0 在 Azure 中国还不支持 Azure 虚拟机。
 
 
 ## <a name="quick-commands"></a> 快速命令

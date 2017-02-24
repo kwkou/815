@@ -44,7 +44,7 @@
 可以使用以下方法之一重置凭据或 SSH 配置：
 
 * [Azure 门户预览](#use-the-azure-portal) - 如果需要快速重置 SSH 配置或 SSH 密钥，并且没有安装 Azure 工具，则很适合使用此方法。
-* [Azure CLI 1.0](#use-the-azure-cli-10) - 如果已打开命令行，则可以快速重置 SSH 配置或凭据。也可使用 [Azure CLI 2.0（预览版）](#use-the-azure-cli-20-preview)
+* [Azure CLI 1.0](#use-the-azure-cli-10) - 如果已打开命令行，则可以快速重置 SSH 配置或凭据。
 * [Azure VMAccessForLinux 扩展](#use-the-vmaccess-extension) - 创建和重复使用 json 定义文件来重置 SSH 配置或用户凭据。
 
 在执行每个故障排除步骤之后，请尝试再次连接到 VM。如果仍然无法连接，请尝试下一步。
@@ -90,24 +90,6 @@ SSHD 配置本身可能有误或服务遇到错误。你可以重置 SSHD 以确
 
     azure vm reset-access --resource-group myResourceGroup --name myVM \
         --user-name myUsername --ssh-key-file ~/.ssh/id_rsa.pub
-
-## <a name="use-the-azure-cli-20-preview"></a> 使用 Azure CLI 2.0（预览版）
-[AZURE.INCLUDE [azure-cli-2-azurechinacloud-environment-parameter](../../includes/azure-cli-2-azurechinacloud-environment-parameter.md)]
-
-安装最新的 [Azure CLI 2.0（预览版）](https://docs.microsoft.com/cli/azure/install-az-cli2)并使用 [az login](https://docs.microsoft.com/cli/azure/#login) 登录到 Azure 帐户（如果尚未这样做）。
-
-如果创建并上载了自定义 Linux 磁盘映像，请确保已安装 [Azure Linux 代理](/documentation/articles/virtual-machines-linux-agent-user-guide/) 2.0.5 或更高版本。在使用库映像创建的 VM 上，系统已自动安装并配置了此访问扩展。
-
-### 重置用户的 SSH 凭据
-以下示例在 `myResourceGroup` 中名为 `myVM` 的 VM 上，使用 [az vm user update](https://docs.microsoft.com/en-ca/cli/azure/vm/user#update) 将 `myUsername` 的凭据重置为 `myPassword` 中指定的值。请如下所示使用自己的值：
-
-    az vm user update --resource-group myResourceGroup --name myVM \
-         --username myUsername --password myPassword
-
-如果使用 SSH 密钥身份验证，可以重置给定用户的 SSH 密钥。以下示例在 `myResourceGroup` 中名为 `myVM` 的 VM 上，使用 **az vm access set-linux-user** 为名为 `myUsername` 的用户更新 `~/.ssh/id_rsa.pub` 中存储的 SSH 密钥。请如下所示使用自己的值：
-
-    az vm user update --resource-group myResourceGroup --name myVM \
-        --username myUsername --ssh-key-value ~/.ssh/id_rsa.pub
 
 ## <a name="using-the-vmaccess-extension" id="use-the-vmaccess-extension"></a> 使用 VMAccess 扩展
 适用于 Linux 的 VM 访问扩展可以读入用于定义待执行操作的 json 文件。这些操作包括重置 SSHD、重置 SSH 密钥或添加用户。你仍要使用 Azure CLI 调用 VMAccess 扩展，但可以根据需要在多个 VM 上重复使用该 json 文件。使用这种方法可以创建 json 文件存储库，然后，可以在给定的方案中调用这些文件。
@@ -158,11 +140,6 @@ SSHD 配置本身可能有误或服务遇到错误。你可以重置 SSHD 以确
 
     azure vm restart --resource-group myResourceGroup --name myVM
 
-### Azure CLI 2.0（预览版）
-以下示例使用 [az vm restart](https://docs.microsoft.com/cli/azure/vm#restart) 重新启动名为 `myResourceGroup` 的资源组中名为 `myVM` 的 VM。请如下所示使用自己的值：
-
-    az vm restart --resource-group myResourceGroup --name myVM
-
 ## 重新部署 VM
 你可以将 VM 重新部署到 Azure 中的另一个节点，这可能可以更正任何潜在的网络问题。有关重新部署 VM 的信息，请参阅[将虚拟机重新部署到新的 Azure 节点](/documentation/articles/virtual-machines-windows-redeploy-to-new-node/)。
 
@@ -181,11 +158,6 @@ SSHD 配置本身可能有误或服务遇到错误。你可以重置 SSHD 以确
 以下示例重新部署 `myResourceGroup` 资源组中名为 `myVM` 的 VM。请如下所示使用自己的值：
 
     azure vm redeploy --resource-group myResourceGroup --name myVM
-
-### Azure CLI 2.0（预览版）
-以下示例使用 [az vm redeploy](https://docs.microsoft.com/cli/azure/vm#redeploy) 重新部署名为 `myResourceGroup` 的资源组中名为 `myVM` 的 VM。请如下所示使用自己的值：
-
-    az vm redeploy --resource-group myResourceGroup --name myVM
 
 ## 使用经典部署模型创建的 VM
 若要解决使用经典部署模型创建的 VM 中最常见的 SSH 连接失败问题，请尝试以下步骤。在执行每个步骤之后，请尝试重新连接到 VM。

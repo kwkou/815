@@ -25,12 +25,12 @@
 ## 先决条件
 本文需要 Azure 中的现有 Linux VM。如果需要创建 VM，请使用以下方法之一：
 
-- [Azure CLI 1.0](/documentation/articles/virtual-machines-linux-quick-create-cli-nodejs/) 或 [Azure CLI 2.0（预览版）](/documentation/articles/virtual-machines-linux-quick-create-cli/)
+- [Azure CLI 1.0](/documentation/articles/virtual-machines-linux-quick-create-cli-nodejs/)
 - [Azure 门户预览](/documentation/articles/virtual-machines-linux-quick-create-portal/)
 
 [AZURE.INCLUDE [azure-cli-2-azurechinacloud-environment-parameter](../../includes/azure-cli-2-azurechinacloud-environment-parameter.md)]
 
-还需要安装最新的 [Azure CLI 1.0](/documentation/articles/xplat-cli-install/) 或 [Azure CLI 2.0（预览版）](https://docs.microsoft.com/cli/azure/install-az-cli2)并登录到[有效的 Azure 帐户](/pricing/1rmb-trial/)。
+还需要安装最新的 [Azure CLI 1.0](/documentation/articles/xplat-cli-install/) 并登录到[有效的 Azure 帐户](/pricing/1rmb-trial/)。
 
 [AZURE.INCLUDE [azure-cli-2-azurechinacloud-environment-parameter](../../includes/azure-cli-2-azurechinacloud-environment-parameter.md)]
 
@@ -66,17 +66,6 @@
         --nsg-name myNetworkSecurityGroup --name myNetworkSecurityGroupRule \
         --protocol tcp --direction inbound --priority 1010 \
         --destination-port-range 3389 --access allow
-
-或者，将 [az network nsg rule create](https://docs.microsoft.com/cli/azure/network/nsg/rule#create) 与 Azure CLI 2.0（预览版）配合使用：
-
-    az network nsg rule create --resource-group myResourceGroup \
-        --nsg-name myNetworkSecurityGroup --name myNetworkSecurityGroupRule \
-        --protocol tcp --direction inbound --priority 1010 \
-        --source-address-prefix '*' --source-port-range '*' \
-        --destination-address-prefix '*' --destination-port-range 3389 \
-        --access allow
-
-使用所选的远程桌面客户端连接到 Linux VM。
 
 ![使用远程桌面客户端连接到 xrdp](./media/virtual-machines-linux-use-remote-desktop/remote-desktop-client.png)  
 
@@ -130,15 +119,6 @@ Azure 中的大多数 Linux VM 默认情况下未安装桌面环境。通常使�
             --nsg-name myNetworkSecurityGroup --name myNetworkSecurityGroupRule \
             --protocol tcp --direction inbound --priority 1010 \
             --destination-port-range 3389 --access allow
-
-- 或者，将 [az network nsg rule create](https://docs.microsoft.com/cli/azure/network/nsg/rule#create) 与 Azure CLI 2.0（预览版）配合使用：
-
-        az network nsg rule create --resource-group myResourceGroup \
-            --nsg-name myNetworkSecurityGroup --name myNetworkSecurityGroupRule \
-            --protocol tcp --direction inbound --priority 1010 \
-            --source-address-prefix '*' --source-port-range '*' \
-            --destination-address-prefix '*' --destination-port-range 3389 \
-            --access allow
 
 ## 使用远程桌面客户端连接 Linux VM
 打开本地的远程桌面客户端，并连接到 Linux VM 的 IP 地址或 DNS 名称。输入 VM 上的用户帐户的用户名和密码，如下所示：
