@@ -473,7 +473,7 @@ DocumentDB 能够跨不同的 Azure 区域[在全球分发数据][distribute-glo
 
     	azure group log show new_res_group --last-deployment
 
-    有关其他信息，则请参阅 [Azure 中的资源组部署故障排除](/documentation/articles/resource-manager-troubleshoot-deployments-cli/)。
+    有关其他信息，则请参阅 [Azure 中的资源组部署故障排除](/documentation/articles/resource-manager-deployment-operations/)。
 
 - Azure 门户预览中也会提供错误信息，如以下屏幕截图所示。导航到错误信息的步骤：单击跳转栏中的“资源组”，选择发生错误的资源组，接着在“资源组”边栏选项卡的“概要”区域中单击“上次部署”的日期，然后在“部署历史记录”边栏选项卡中选择失败的部署，之后在“部署”边栏选项卡中单击带有红色感叹号的“操作详细信息”。失败部署的状态消息显示在“操作详细信息”边栏选项卡中。
 
