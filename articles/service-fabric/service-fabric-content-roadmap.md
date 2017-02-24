@@ -12,7 +12,7 @@
     ms.tgt_pltfrm="NA"
     ms.workload="NA"
     ms.date="01/09/2017"
-    wacn.date="02/20/2017"
+    wacn.date="02/24/2017"
     ms.author="ryanwi" />  
 
 
@@ -60,9 +60,9 @@ Service Fabric SDK 包含一个用于 Visual Studio 的外接程序，它可提�
 [Service Fabric 术语](/documentation/articles/service-fabric-technical-overview/)、[应用程序模型](/documentation/articles/service-fabric-application-model/)和[支持的编程模型](/documentation/articles/service-fabric-choose-framework/)提供了更多概念和说明，下面只是基础知识。
 
 <table><tr><th>核心概念</th><th>设计时</th><th>运行时</th></tr>
-<tr><td><a target="_blank" href="https://mva.microsoft.com/zh-CN/training-courses/building-microservices-applications-on-azure-service-fabric-16747?l=tbuZM46yC_5206218965"> <img src="./media/service-fabric-content-roadmap/CoreConceptsVid.png" WIDTH="240" HEIGHT="162"></a></td>
-<td><a target="_blank" href="https://mva.microsoft.com/zh-CN/training-courses/building-microservices-applications-on-azure-service-fabric-16747?l=tlkI046yC_2906218965"><img src="./media/service-fabric-content-roadmap/RunTimeVid.png" WIDTH="240" HEIGHT="162"></a></td>
-<td><a target="_blank" href="https://mva.microsoft.com/zh-CN/training-courses/building-microservices-applications-on-azure-service-fabric-16747?l=x7CVH56yC_1406218965"> <img src="./media/service-fabric-content-roadmap/RunTimeVid.png" WIDTH="240" HEIGHT="162"></a></td></tr>
+<tr><td><a target="_blank" href="https://mva.microsoft.com/en-us/training-courses/building-microservices-applications-on-azure-service-fabric-16747?l=tbuZM46yC_5206218965"> <img src="./media/service-fabric-content-roadmap/CoreConceptsVid.png" WIDTH="240" HEIGHT="162"></a></td>
+<td><a target="_blank" href="https://mva.microsoft.com/en-us/training-courses/building-microservices-applications-on-azure-service-fabric-16747?l=tlkI046yC_2906218965"><img src="./media/service-fabric-content-roadmap/RunTimeVid.png" WIDTH="240" HEIGHT="162"></a></td>
+<td><a target="_blank" href="https://mva.microsoft.com/en-us/training-courses/building-microservices-applications-on-azure-service-fabric-16747?l=x7CVH56yC_1406218965"> <img src="./media/service-fabric-content-roadmap/RunTimeVid.png" WIDTH="240" HEIGHT="162"></a></td></tr>
 </table>
 
 ### 设计时：应用类型、服务类型、应用包和清单、服务包和清单

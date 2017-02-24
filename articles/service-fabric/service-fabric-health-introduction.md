@@ -66,7 +66,7 @@ Service Fabric 组件使用这种提供丰富信息的运行状况模型报告�
 
 设计大型云服务时，投入时间规划如何报告和响应运行状况，可以更轻松调试、监视和操作该服务。
 
-## 健康状况
+##<a name="health-states"></a> 健康状况
 Service Fabric 使用三种健康状况来描述实体是否正常运行：“正常”、“警告”和“错误”。发送到运行状况存储的任何报告都必须指定其中一种状态。运行状况评估结果是其中一种状态。
 
 可能的[运行状况](https://msdn.microsoft.com/zh-cn/library/azure/system.fabric.health.healthstate)如下：
