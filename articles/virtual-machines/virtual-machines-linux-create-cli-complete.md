@@ -52,6 +52,7 @@
 
 在以下示例中，请将示例参数名称替换为你自己的值。示例参数名称包括 `myResourceGroup`、`mystorageaccount` 和 `myVM`。
 
+<a name="create-resource-groups-and-choose-deployment-locations"></a>
 创建资源组。以下示例在 `chinanorth` 位置创建名为 `myResourceGroup` 的资源组：
 
     azure group create -n myResourceGroup -l chinanorth
@@ -60,6 +61,7 @@
 
     azure group show myResourceGroup --json | jq '.'
 
+<a name="create-a-storage-account"></a>
 创建存储帐户。以下示例创建名为 `mystorageaccount` 的存储帐户。（存储帐户名称必须唯一，因此，请提供自己的唯一名称。）
 
     azure storage account create -g myResourceGroup -l chinanorth \
@@ -69,6 +71,7 @@
 
     azure storage account show -g myResourceGroup mystorageaccount --json | jq '.'
 
+<a name="create-a-virtual-network-and-subnet"></a>
 创建虚拟网络。以下示例创建名为 `myVnet` 的虚拟网络：
 
     azure network vnet create -g myResourceGroup -l chinanorth\
@@ -83,11 +86,13 @@
 
     azure network vnet show myResourceGroup myVnet --json | jq '.'
 
+<a name="create-a-public-ip-address"></a>
 创建公共 IP。以下示例创建名为 `myPublicIP`、DNS 名称为 `mypublicdns` 的公共 IP。（DNS 名称必须唯一，因此，请提供自己的唯一名称。）
 
     azure network public-ip create -g myResourceGroup -l chinanorth \
       -n myPublicIP  -d mypublicdns -a static -i 4
 
+<a name="create-a-load-balancer-and-ip-pools"></a>
 创建负载均衡器。以下示例创建名为 `myLoadBalancer` 的负载均衡器：
 
     azure network lb create -g myResourceGroup -l chinanorth -n myLoadBalancer
@@ -115,15 +120,18 @@
       -n myLoadBalancerRuleWeb -p tcp -f 80 -b 80 \
       -t myFrontEndPool -o myBackEndPool
 
+<a name="create-a-load-balancer-health-probe"></a>
 创建负载均衡器运行状况探测。以下示例创建名为 `myHealthProbe` 的 TCP 探测：
 
     azure network lb probe create -g myResourceGroup -l myLoadBalancer \
       -n myHealthProbe -p "tcp" -i 15 -c 4
 
+<a name="verify-the-load-balancer"></a>
 使用 JSON 分析器验证虚拟机规模集、IP 池和 NAT 规则：
 
     azure network lb show -g myResourceGroup -n myLoadBalancer --json | jq '.'
 
+<a name="create-an-nic-to-use-with-the-linux-vm"></a>
 创建第一个网络接口卡 (NIC)。请将 `#####-###-###` 节替换为自己的 Azure 订阅 ID。检查所创建的资源时，订阅 ID 不会记录在 **jq** 的输出中。也可以使用 `azure account list` 查看订阅 ID。
 
 以下示例创建名为 `myNic1` 的 NIC：
@@ -166,10 +174,12 @@
     azure network nic set -g myResourceGroup -o myNetworkSecurityGroup -n myNic1
     azure network nic set -g myResourceGroup -o myNetworkSecurityGroup -n myNic2
 
+<a name="create-an-availability-set"></a>
 创建可用性集。以下示例创建名为 `myAvailabilitySet` 的可用性集：
 
     azure availset create -g myResourceGroup -l chinanorth -n myAvailabilitySet
 
+<a name="create-the-linux-vms"></a>
 创建第一个 Linux VM。以下示例创建名为 `myVM1` 的 VM：
 
     azure vm create \
