@@ -445,7 +445,7 @@ start.ps1 脚本可以完成许多配置任务。例如，在本示例中已添�
 ![获取扩展状态](./media/virtual-machines-windows-template-description/virtual-machines-show-extensions.png)  
 
 
-此外，也可以使用 **Get-AzureRmVMExtension** PowerShell 命令、**vm extension get** Azure CLI 2.0（预览版）命令或“获取扩展信息”REST API 来获取扩展信息。
+此外，也可以使用 **Get-AzureRmVMExtension** PowerShell 命令、**vm extension get** Azure CLI 1.0 命令或“获取扩展信息”REST API 来获取扩展信息。
 
 ## 部署
 
