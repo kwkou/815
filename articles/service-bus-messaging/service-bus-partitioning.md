@@ -7,7 +7,7 @@
     manager="timlt"
     editor="" /> 
 <tags 
-    ms.service="service-bus-messaging"
+    ms.service="service-bus"
     ms.devlang="na"
     ms.topic="article"
     ms.tgt_pltfrm="na"

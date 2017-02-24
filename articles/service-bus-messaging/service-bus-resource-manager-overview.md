@@ -8,7 +8,7 @@
     editor=""/>
 
 <tags
-    ms.service="service-bus-messaging"
+    ms.service="service-bus"
     ms.devlang="tbd"
     ms.topic="article"
     ms.tgt_pltfrm="dotnet"

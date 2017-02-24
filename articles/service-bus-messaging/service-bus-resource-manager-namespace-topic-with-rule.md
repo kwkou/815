@@ -1,7 +1,7 @@
 <properties
 	pageTitle="使用 Azure Resource Manager 模板创建包含主题、订阅和规则的服务总线命名空间 "
 	description="使用 Azure Resource Manager 模板创建包含主题、订阅和规则的服务总线命名空间"
-	services=" service-bus-messaging"
+	services=" service-bus"
 	documentationcenter=" .net"
 	authors="sethmanheim"
 	manager="timlt"
