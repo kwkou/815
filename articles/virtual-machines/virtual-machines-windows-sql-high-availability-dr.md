@@ -41,7 +41,7 @@ Azure 支持的 SQL Server HADR 技术包括：
 
 可将多种技术配合使用，以实现具有高可用性和灾难恢复功能的 SQL Server 解决方案。根据所用技术的不同，混合部署可能需要使用 VPN 隧道连接 Azure 虚拟网络。以下部分显示了某些部署体系结构的示例。
 
-## 仅限 Azure：高可用性解决方案
+## <a name="azure-only-high-availability-solutions"></a> 仅限 Azure：高可用性解决方案
 可使用 Always On 可用性组或数据库镜像，为 Azure 中的 SQL Server 数据库提供高可用性解决方案。
 
 | 技术 | 示例体系结构 |
