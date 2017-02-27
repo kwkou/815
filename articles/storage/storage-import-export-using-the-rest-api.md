@@ -1,8 +1,8 @@
 <properties
     pageTitle="使用 Azure 导入/导出服务 REST API | Azure"
     description="了解如何使用 Azure 导入/导出服务 REST API"
-    author="renashahmsft"
-    manager="aungoo"
+    author="muralikk"
+    manager="syadav"
     editor="tysonn"
     services="storage"
     documentationcenter="" />  
@@ -14,9 +14,9 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="12/16/2016"
-    wacn.date="12/29/2016"
-    ms.author="renash" />  
+    ms.date="01/15/2017"
+    wacn.date="02/24/2017"
+    ms.author="muralikk" />  
 
 
 # 使用 Azure 导入/导出服务 REST API
@@ -56,4 +56,4 @@ Azure 导入/导出服务是 Azure Resource Manager 的资源提供程序，它�
 ## 另请参阅
  [存储导入/导出 REST](https://docs.microsoft.com/rest/api/storageimportexport)
 
-<!---HONumber=Mooncake_1226_2016-->
+<!---HONumber=Mooncake_0220_2017-->

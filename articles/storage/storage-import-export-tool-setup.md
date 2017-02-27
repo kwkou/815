@@ -1,8 +1,8 @@
 <properties
     pageTitle="设置 Azure 导入/导出工具 | Azure"
     description="了解如何设置 Azure 导入/导出服务的驱动器准备和修复工具"
-    author="renashahmsft"
-    manager="aungoo"
+    author="muralikk"
+    manager="syadav"
     editor="tysonn"
     services="storage"
     documentationcenter="" />  
@@ -13,9 +13,9 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="12/16/2016"
-    wacn.date="12/29/2016"
-    ms.author="renash" />  
+    ms.date="01/15/2017"
+    wacn.date="02/24/2017"
+    ms.author="muralikk" />  
 
 
 # 设置 Azure 导入/导出工具
@@ -221,4 +221,4 @@ Azure 导入/导出工具由以下文件组成：
 * [修复导出作业](/documentation/articles/storage-import-export-tool-repairing-an-export-job-v1/)
 * [排查 Azure 导入/导出工具问题](/documentation/articles/storage-import-export-tool-troubleshooting-v1/)
 
-<!---HONumber=Mooncake_1226_2016-->
+<!---HONumber=Mooncake_0220_2017-->

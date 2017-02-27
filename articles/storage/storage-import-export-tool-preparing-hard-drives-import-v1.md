@@ -1,12 +1,11 @@
 <properties
     pageTitle="为导入作业准备硬盘驱动器 | Azure"
-    description="了解如何为 Azure 导入导出服务的导入作业准备一个或多个硬盘驱动器"
-    author="renashahmsft"
-    manager="aungoo"
+    description="了解如何为 Microsoft Azure 导入-导出服务的导入作业准备一个或多个硬盘驱动器"
+    author="muralikk"
+    manager="syadav"
     editor="tysonn"
     services="storage"
-    documentationcenter="" />  
-
+    documentationcenter="" />
 <tags
     ms.assetid="3d818245-8b1b-4435-a41f-8e5ec1f194b2"
     ms.service="storage"
@@ -14,9 +13,9 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="05/25/2015"
-    wacn.date="12/29/2016"
-    ms.author="renash" />  
+    ms.date="01/15/2017"
+    wacn.date="02/24/2017"
+    ms.author="muralikk" />  
 
 
 # 为导入作业准备硬盘驱动器
@@ -35,7 +34,7 @@
 ##  <a name="PrepareHardDrives_IdentifytheDatatoBeImported"></a>确定要导入的数据
  创建导入作业的第一个步骤是确定要导入哪些目录和文件，这可以是目录列表、唯一文件列表或两者的组合。包含某个目录时，该目录及其子目录中的所有文件都将成为导入作业的一部分。
 
-> [AZURE.NOTE]<p>由于在包含父目录时将以递归方式包含子目录，因此请仅指定父目录。此外，不要指定其任何子目录。<p>目前，Azure 导入/导出工具存在以下限制：如果目录包含的数据超过硬盘驱动器可包含的数据，该目录需要分解为小目录。例如，如果目录包含 2.5TB 数据，而硬盘驱动器的容量仅为 2TB，则需要将此 2.5TB 目录分解为多个小目录。该工具的更高版本中将解除该限制。
+> [AZURE.NOTE]<p>由于在包含父目录时将以递归方式包含子目录，因此请仅指定父目录。请勿同时指定其任何子目录。<p>目前，Azure 导入/导出工具存在以下限制：如果目录包含的数据超过硬盘驱动器可包含的数据，该目录需要分解为小目录。例如，如果目录包含 2.5TB 数据，而硬盘驱动器的容量仅为 2TB，则需要将此 2.5TB 目录分解为多个小目录。该工具的更高版本中将解除该限制。
 
 ##  <a name="PrepareHardDrives_IdentifytheDestinationLocationsintheBlobService"></a>在 Blob 服务中确定目标位置
  对于要导入的每个目录或文件，需要在 Azure Blob 服务中指定一个目标虚拟目录或 Blob。这些目标将用作 Azure 导入/导出工具的输入。请注意，目录应使用正斜杠字符“/”来分隔。
@@ -180,4 +179,4 @@
  [修复导出作业](/documentation/articles/storage-import-export-tool-repairing-an-export-job-v1/)
  [排查 Azure 导入/导出工具问题](/documentation/articles/storage-import-export-tool-troubleshooting-v1/)
 
-<!---HONumber=Mooncake_1226_2016-->
+<!---HONumber=Mooncake_0220_2017-->

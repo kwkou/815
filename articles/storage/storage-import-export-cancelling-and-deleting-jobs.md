@@ -1,12 +1,11 @@
 <properties
     pageTitle="取消和删除 Azure 导入/导出服务作业 | Azure"
-    description="了解如何取消和删除 Azure 导入/导出服务的作业"
-    author="renashahmsft"
-    manager="aungoo"
+    description="了解如何取消和删除 Microsoft Azure 导入/导出服务的作业"
+    author="muralikk"
+    manager="syadav"
     editor="tysonn"
     services="storage"
-    documentationcenter="" />  
-
+    documentationcenter="" />
 <tags
     ms.assetid="fd3d66f0-1dbb-4c75-9223-307d5abaeefc"
     ms.service="storage"
@@ -14,9 +13,9 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="05/25/2015"
-    wacn.date="12/29/2016"
-    ms.author="renash" />  
+    ms.date="09/01/2017"
+    wacn.date="02/24/2017"
+    ms.author="muralikk" />  
 
 
 # 取消和删除作业
@@ -29,4 +28,4 @@
 ## 另请参阅
  [使用导入/导出服务 REST API](/documentation/articles/storage-import-export-using-the-rest-api/)
 
-<!---HONumber=Mooncake_1226_2016-->
+<!---HONumber=Mooncake_0220_2017-->

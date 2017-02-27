@@ -1,9 +1,9 @@
 
 <properties
     pageTitle="使用导入/导出将数据传输到 Blob 存储 | Azure"
-    description="了解如何在 Azure 门户预览中创建导入和导出作业，以便将数据传输到 Blob 存储。"
-    author="renashahmsft"
-    manager="aungoo"
+    description="了解如何在 Azure 门户中创建导入和导出作业，以便将数据传输到 Blob 存储。"
+    author="muralikk"
+    manager="syadav"
     editor="tysonn"
     services="storage"
     documentationcenter="" />
@@ -14,9 +14,9 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="10/18/2016"
-    wacn.date="01/06/2017"
-    ms.author="renash" />  
+    ms.date="1/15/2017"
+    wacn.date="02/24/2017"
+    ms.author="muralikk" />  
 
 
 # 使用 Azure 导入/导出服务可将数据传输到 Blob 存储中
@@ -134,7 +134,7 @@ Azure 导入/导出服务支持将数据复制到 Azure 存储帐户，以及从
 - 确定要导入的数据，以及所需驱动器数目。
 - 确定 Blob 存储中用于存储数据的目标 Blob 位置。
 - 使用 WAImportExport 工具将数据复制到一个或多个硬盘驱动器，并使用 BitLocker 进行加密。
-- 使用 Azure 门户预览或导入/导出 REST API 在目标经典存储帐户中创建导入作业。如果使用 Azure 门户预览，请上载驱动器日志文件。
+- 使用 Azure 门户预览或导入/导出 REST API 在目标存储帐户中创建导入作业。如果使用 Azure 门户预览，请上载驱动器日志文件。
 - 请提供回寄地址以及快递商帐户号码，以便我们将驱动器寄回给你。
 - 将硬盘驱动器寄送到在创建作业时获得的寄送地址。
 - 在导入作业详细信息中更新快递跟踪号码，然后提交导入作业。
@@ -497,4 +497,4 @@ Azure 数据中心会将不符合支持要求的驱动器返还给你。如果�
 * [使用 AzCopy 命令行实用程序传输数据](/documentation/articles/storage-use-azcopy/)
 
 
-<!---HONumber=Mooncake_0103_2017-->
+<!---HONumber=Mooncake_0220_2017-->
