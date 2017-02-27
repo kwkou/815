@@ -1,31 +1,27 @@
-<properties 
-	pageTitle="使用本地编码器执行实时传送视频流以创建多比特率流 | Azure" 
-	description="本主题介绍如何设置接收来自本地编码器的多比特率实时流的频道。然后，该流可以使用以下自适应流式处理协议之一通过一个或多个流式处理终结点传送给客户端播放应用程序：HLS、平滑流、MPEG DASH、HDS。" 
-	services="media-services" 
-	documentationCenter="" 
-	authors="Juliako" 
-	manager="erikre" 
-	editor=""/>  
+<properties
+    pageTitle="使用本地编码器执行实时传送视频流以创建多比特率流 | Azure"
+    description="本主题介绍如何设置接收来自本地编码器的多比特率实时流的频道。然后，该流可使用以下自适应流式传输协议之一，通过一个或多个流式传输终结点传送给客户端播放应用程序：HLS、平滑流、MPEG DASH。"
+    services="media-services"
+    documentationcenter=""
+    author="Juliako"
+    manager="erikre"
+    editor="" />
+<tags
+    ms.assetid="d9f0912d-39ec-4c9c-817b-e5d9fcf1f7ea"
+    ms.service="media-services"
+    ms.workload="media"
+    ms.tgt_pltfrm="na"
+    ms.devlang="ne"
+    ms.topic="article"
+    ms.date="01/05/2017"
+    wacn.date="02/24/2017"
+    ms.author="cenkd;juliako" />
 
-
-<tags 
-	ms.service="media-services" 
-	ms.workload="media" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="ne" 
-	ms.topic="article" 
-	ms.date="10/12/2016" 
-	wacn.date="12/26/2016" 
-	ms.author="cenkdin;juliako"/>
-
-#使用本地编码器执行实时传送视频流以创建多比特率流
-
-##概述
-
+# 使用本地编码器执行实时传送视频流以创建多比特率流
+## 概述
 在 Azure 媒体服务中，**频道**表示用于处理实时传送视频流内容的管道。**频道**采用以下两种方式之一接收实时输入流：
 
-
-- 本地实时编码器将多比特率 **RTMP** 或“平滑流式处理”（分段 MP4）发送到未针对使用 AMS 执行实时编码而启用的频道。引入流将通过**频道**，但不会进行任何进一步处理。这种方法称为**直通**。可以使用以下输出多比特率平滑流的实时编码器：Elemental、Envivio、Cisco。以下实时编码器输出 RTMP：Adobe Flash Live、Telestream Wirecast 和 Tricaster 转码器。实时编码器也可将单比特率流发送到并未启用实时编码的通道，但不建议这样做。收到请求时，媒体服务会将该流传送给客户。
+* 本地实时编码器将多比特率 **RTMP** 或“平滑流式处理”（分段 MP4）发送到未针对使用 AMS 执行实时编码而启用的频道。引入流将通过**通道**，但不会进行任何进一步处理。这种方法称为**直通**。可以使用以下输出多比特率平滑流式处理的实时编码器：MediaExcel、Ateme、Imagine Communications、Envivio、Cisco、Elemental。以下实时编码器输出 RTMP：Adobe Flash Media Live Encoder \(FMLE\)、Telestream Wirecast、Haivision、Teradek 和 Tricaster 编码器。实时编码器也可将单比特率流发送到并未启用实时编码的通道，但不建议这样做。收到请求时，媒体服务会将该流传送给客户。
 
 	>[AZURE.NOTE] 实时传送视频流时，使用直通方法是最经济的方式。
 	
@@ -57,26 +53,28 @@
 	
 	此步骤也可以在创建通道后执行。
 
-1. 创建并启动通道。
-1. 检索通道引入 URL。
+2. 创建并启动通道。
+3. 检索通道引入 URL。
 
-	实时编码器使用引入 URL 将流发送到通道。
-1. 检索通道预览 URL。
+	实时编码器使用引入 URL 将流发送到频道。
+4. 检索频道预览 URL。
 
 	使用此 URL 来验证通道是否正常接收实时流。
 
-3. 创建节目。
+5. 创建节目。
 
 	使用 Azure 经典管理门户时，创建节目的同时还会创建资产。
 
 	使用 .NET SDK 或 REST 时，你需要创建一个资产并指定在创建节目时要使用该资产。
-1. 发布与节目关联的资源。
+6. 发布与节目关联的资源。
 
-	确保要从中以流形式传输内容的流式传输终结点上至少有一个串流保留单元。
-1. 在准备好开始流式传输和存档时，启动节目。
-2. （可选）可以向实时编码器发信号，以启动广告。将广告插入到输出流中。
-1. 在要停止对事件进行流式传输和存档时，停止节目。
-1. 删除节目（并选择性地删除资产）。
+	>[AZURE.NOTE]
+	创建 AMS 帐户时，系统会将**默认**流式处理终结点以“已停止”状态添加到用户的帐户。流式处理终结点（用于内容流式处理）必须处于“正在运行”状态。
+	
+7. 准备好开始流式传输和存档后，启动节目。
+8. （可选）可以向实时编码器发信号，以启动广告。将广告插入到输出流中。
+9. 在要停止对事件进行流式传输和存档时，停止节目。
+10. 删除节目（并选择性地删除资产）。
 
 ##<a id="channel"></a>频道及其相关组件的说明
 
@@ -187,7 +185,7 @@
 
 可以通过设置**存档时段**长度，指定你希望保留节目录制内容的小时数。此值的设置范围是最短 5 分钟，最长 25 小时。存储时段长度还决定了客户端能够从当前实时位置按时间向后搜索的最长时间。超出指定时间长度后，节目也能够运行，但落在时段长度后面的内容将全部被丢弃。此属性的值还决定了客户端清单能够增加多长时间。
 
-每个节目都与存储流式处理内容的资源相关联。资产将映射到 Azure Storage 帐户中的 BLOB 容器，资产中的文件则作为该容器中的 BLOB 存储。若要发布节目，以便客户查看该流，必须为关联的资源创建按需定位符。创建此定位符后，你可以生成提供给客户端的流式处理 URL。
+每个节目都与存储流式处理内容的资源相关联。资产将映射到 Azure 存储帐户中的块 blob 容器，资产中的文件则作为 blob 存储在该容器中。若要发布节目，以便客户查看该流，必须为关联的资源创建按需定位符。创建此定位符后，你可以生成提供给客户端的流式处理 URL。
 
 一个频道最多支持三个同时运行的节目，因此可为同一传入流创建多个存档。这样，你便可以根据需要发布和存档事件的不同部分。例如，你的业务要求是存档 6 小时的节目，但只广播过去 10 分钟的内容。若要实现此目的，需要创建两个同时运行的节目。一个节目设置为存档 6 小时的事件但不发布该节目。另一个节目设置为存档 10 分钟的事件，并且要发布该节目。
 
@@ -250,15 +248,9 @@ SCTE-35|用来提示广告插入的数字信号系统。下游接收器使用该
 - 通道或其关联的节目正在运行时，无法更改输入协议。如果需要不同的协议，应当针对每个输入协议创建单独的通道。
 - 仅当通道处于“正在运行”状态时才会收取费用。有关详细信息，请参阅[此](/documentation/articles/media-services-live-streaming-with-onprem-encoders/#states)部分。
 
-##如何创建从本地编码器接收多比特率实时流的频道
+## 使用第三方实时编码器
 
 有关本地实时编码器的详细信息，请参阅[将第三方实时编码器与 Azure 媒体服务结合使用](https://azure.microsoft.com/blog/azure-media-services-rtmp-support-and-live-encoders/)。
-
-依次选择“门户”、“.NET”、“REST API”，了解如何创建和管理频道和节目。
-
-[AZURE.INCLUDE [media-services-selector-manage-channels](../../includes/media-services-selector-manage-channels.md)]
-
-
 
 
 
@@ -272,4 +264,5 @@ SCTE-35|用来提示广告插入的数字信号系统。下游接收器使用该
 
 [live-overview]: ./media/media-services-manage-channels-overview/media-services-live-streaming-current.png
 
-<!---HONumber=Mooncake_Quality_Review_1215_2016-->
+<!---HONumber=Mooncake_0220_2017-->
+<!--Update_Description: add some new supported encoders; add note for creating AMS account; remove azure.selector for creating and managing channel-->

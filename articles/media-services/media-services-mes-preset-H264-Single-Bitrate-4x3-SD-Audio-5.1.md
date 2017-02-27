@@ -13,8 +13,8 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="11/23/2016"
-    wacn.date="01/13/2017"
+    ms.date="01/05/2017"
+    wacn.date="02/24/2017"
     ms.author="juliako" />  
 
 
@@ -23,7 +23,7 @@
   
  本主题演示 XML 和 JSON 格式的 `H264 Single Bitrate 4x3 SD Audio 5.1` 预设。
   
- 此预设将生成单个 MP4 文件，其比特率为 18000 kbps，并且带有 AAC 5.1 音频。若要深入了解此预设的配置文件、比特率、采样率等，请检查下面定义的 XML 或 JSON。有关每个元素含义的说明以及每个元素的有效值，请参阅 [Media Encoder Standard 架构](/documentation/articles/media-services-mes-schema/)。
+ 此预设将生成单个 MP4 文件，其比特率为 1800 kbps，并且带有 AAC 5.1 音频。若要深入了解此预设的配置文件、比特率、采样率等，请检查下面定义的 XML 或 JSON。有关每个元素含义的说明以及每个元素的有效值，请参阅 [Media Encoder Standard 架构](/documentation/articles/media-services-mes-schema/)。
   
  XML
   
@@ -113,4 +113,5 @@
 	  ]  
 	}  
 
-<!---HONumber=Mooncake_0109_2017-->
+<!---HONumber=Mooncake_0220_2017-->
+<!--Update_Description: fix the typo "18000 kbps" to "1800 kbps"-->

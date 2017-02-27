@@ -13,8 +13,8 @@
     ms.tgt_pltfrm="na"
     ms.devlang="ne"
     ms.topic="article"
-    ms.date="12/07/2016"
-    wacn.date="01/13/2017"
+    ms.date="01/05/2017"
+    wacn.date="02/24/2017"
     ms.author="juliako" />  
 
 
@@ -45,7 +45,7 @@
 
 **通道**表示用于处理实时流内容的管道。通道可以通过以下方式接收实时输入流：
 
-- 本地实时编码器将多比特率 **RTMP** 或**平滑流式处理**（分片 MP4）发送到经配置可以进行**直通**传递的通道。**直通**传递是指引入的流将会直接通过**通道**，而不会经过任何进一步的处理。可以使用以下输出多比特率平滑流的实时编码器：Elemental、Envivio、Cisco。以下实时编码器输出 RTMP：Adobe Flash Media Live Encoder (FMLE)、Telestream Wirecast 和 Tricaster 转码器。实时编码器也可将单比特率流发送到并未启用实时编码的通道，但不建议这样做。收到请求时，媒体服务会将该流传送给客户。
+- 本地实时编码器将多比特率 **RTMP** 或**平滑流式处理**（分片 MP4）发送到经配置可以进行**直通**传递的通道。**直通**传递是指引入的流将会直接通过**通道**，而不会经过任何进一步的处理。可以使用以下输出多比特率平滑流式处理的实时编码器：MediaExcel、Ateme、Imagine Communications、Envivio、Cisco、Elemental。以下实时编码器输出 RTMP：Adobe Flash Media Live Encoder \(FMLE\)、Telestream Wirecast、Haivision、Teradek 和 Tricaster 转码器。实时编码器也可将单比特率流发送到并未启用实时编码的通道，但不建议这样做。收到请求时，媒体服务会将该流传送给客户。
 
 	>[AZURE.NOTE] 需要长时间处理多个事件，并且已经在本地编码器上进行了投入时，可以使用直通这种最经济的方法来实时传送视频流。请参阅[定价](/pricing/details/media-services/)详细信息。
 	
@@ -155,5 +155,5 @@ ArchiveWindowLength 还决定了客户端能够从当前实时位置按时间向
 
 [媒体服务概念](/documentation/articles/media-services-concepts/)
 
-<!---HONumber=Mooncake_0109_2017-->
-<!--Update_Description: remove HDS related content-->
+<!---HONumber=Mooncake_0220_2017-->
+<!--Update_Description: add some new supported Encoders-->

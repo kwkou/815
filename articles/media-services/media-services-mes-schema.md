@@ -5,8 +5,7 @@
     manager="erikre"
     editor=""
     services="media-services"
-    documentationcenter="" />  
-
+    documentationcenter="" />
 <tags
     ms.assetid="4c060062-8ef2-41d9-834e-e81e8eafcf2e"
     ms.service="media-services"
@@ -14,13 +13,13 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="11/20/2016"
-    wacn.date="12/12/2016"
+    ms.date="01/10/2017"
+    wacn.date="02/24/2017"
     ms.author="juliako" />  
 
 
 # Media Encoder Standard 架构
-本主题介绍 [Media Encoder Standard 预设](https://msdn.microsoft.com/zh-cn/library/azure/mt269960.aspx)以其为基础的 XML 架构的一些元素和类型。本主题介绍元素及其有效值。将在以后发布完整架构。
+本主题介绍 [Media Encoder Standard 预设](/documentation/articles/media-services-mes-presets-overview/)以其为基础的 XML 架构的一些元素和类型。本主题介绍元素及其有效值。将在以后发布完整架构。
 
 ## <a name="Preset"></a> Preset（根元素）
 定义编码预设。
@@ -258,6 +257,7 @@
 | <p>**PngLayers**</p><p> minOccurs="0"</p> |[PngLayers](/documentation/articles/media-services-mes-schema/#PngLayers) |Png 层 |
 
 ## 示例
-有关基于此架构生成的 XML 预设的示例，请参阅 [MES (Media Encoder Standard) 的任务预设](https://msdn.microsoft.com/zh-cn/library/azure/mt269960.aspx)。
+有关基于此架构生成的 XML 预设的示例，请参阅 [MES \(Media Encoder Standard\) 的任务预设](/documentation/articles/media-services-mes-presets-overview/)。
 
-<!---HONumber=Mooncake_1205_2016-->
+<!---HONumber=Mooncake_0220_2017-->
+<!--Update_Description: update two MSDN links to A.CN links-->

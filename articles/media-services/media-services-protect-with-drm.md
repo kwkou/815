@@ -13,8 +13,8 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="get-started-article"
-    ms.date="12/11/2016"
-    wacn.date="01/13/2017"
+    ms.date="01/05/2017"
+    wacn.date="02/24/2017"
     ms.author="juliako" />  
 
 
@@ -39,8 +39,8 @@ Azure 媒体服务允许传送受 [Microsoft PlayReady DRM](https://www.microsof
 
 开发应用程序以传送受多个 DRM（例如 PlayReady 和 Widevine）保护的媒体的开发人员可以参考本主题。本主题介绍如何使用授权策略来配置 PlayReady 许可证传送服务，确保只有经过授权的客户端才能接收 PlayReady 或 Widevine 许可证。此外，还介绍如何通过 DASH 使用 PlayReady 或 Widevine DRM 进行动态加密。
 
->[AZURE.NOTE]若要开始使用动态加密，必须首先获取至少一个缩放单位（也称为流式处理单位）。有关详细信息，请参阅[如何缩放媒体服务](/documentation/articles/media-services-manage-origins/#scale_streaming_endpoints)。
-
+>[AZURE.NOTE]
+创建 AMS 帐户时，系统会将**默认**流式处理终结点以“已停止”状态添加到用户的帐户。若要开始对内容进行流式处理并利用动态打包和动态加密功能，必须确保要从其流式获取内容的流式处理终结点处于“正在运行”状态。
 
 ##下载示例
 
@@ -67,7 +67,7 @@ Azure 媒体服务允许传送受 [Microsoft PlayReady DRM](https://www.microsof
 
 ![使用 PlayReady 进行保护](./media/media-services-content-protection-overview/media-services-content-protection-with-drm.png)
 
-本主题的余下部分提供了详细说明、代码示例和演示如何完成上述任务的主题链接。
+本主题的余下部分提供了详细说明、代码示例和主题链接，向你演示如何完成上述任务。
 
 ##当前限制
 
@@ -146,9 +146,9 @@ Azure 媒体服务允许传送受 [Microsoft PlayReady DRM](https://www.microsof
 
 
 1. 创建新的控制台项目。
-1. 使用 NuGet 安装和添加 Azure 媒体服务 .NET SDK。
-2. 添加附加引用：System.Configuration。
-2. 添加包含帐户名称和密钥信息的配置文件：
+2. 使用 NuGet 安装和添加 Azure 媒体服务 .NET SDK。
+3. 添加附加引用：System.Configuration。
+4. 添加包含帐户名称和密钥信息的配置文件：
 	
 		<?xml version="1.0" encoding="utf-8"?>
 		<configuration>
@@ -165,9 +165,7 @@ Azure 媒体服务允许传送受 [Microsoft PlayReady DRM](https://www.microsof
 			  </appSettings>
 		</configuration>
 
-1. 针对要传送内容的“流式处理终结点”，获取至少一个流式处理单位。有关详细信息，请参阅：[配置流式处理终结点](/documentation/articles/media-services-dotnet-get-started/#configure-streaming-endpoint-using-the-portal)。
-
-1. 使用本部分中所示的代码覆盖 Program.cs 文件中的代码。
+7. 使用本部分中所示的代码覆盖 Program.cs 文件中的代码。
 	
 	请务必将变量更新为指向输入文件所在的文件夹。
 		
@@ -635,5 +633,5 @@ Azure 媒体服务允许传送受 [Microsoft PlayReady DRM](https://www.microsof
 [使用 AMS 配置 Widevine 打包](http://mingfeiy.com/how-to-configure-widevine-packaging-with-azure-media-services)
 
 
-<!---HONumber=Mooncake_0109_2017-->
-<!--Update_Description: remove HDS related content-->
+<!---HONumber=Mooncake_0220_2017-->
+<!--Update_Description: add note for creating AMS account-->

@@ -13,8 +13,8 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="12/11/2016"
-    wacn.date="01/13/2017"
+    ms.date="01/05/2017"
+    wacn.date="02/24/2017"
     ms.author="juliako;anilmur" />  
 
 
@@ -24,7 +24,7 @@
 
 - 本地实时编码器（采用以下格式之一：RTP (MPEG-TS)、RTMP 或平滑流式处理 （分片 MP4））将单比特率流发送至能够使用媒体服务执行实时编码的通道。然后，频道将对传入的单比特率流执行实时编码，使之转换为多比特率（自适应）视频流。收到请求时，媒体服务会将该流传送给客户。
 
-- 本地实时编码器将多比特率 **RTMP** 或**平滑流式处理**（分片 MP4）发送到无法通过 AMS 执行实时编码的通道。引入流将通过**通道**，但不会进行任何进一步处理。这种方法称为**直通**。可以使用以下输出多比特率平滑流的实时编码器：Elemental、Envivio、Cisco。以下实时编码器输出 RTMP：Adobe Flash Live、Telestream Wirecast 和 Tricaster 转码器。实时编码器也可将单比特率流发送到并未启用实时编码的通道，但不建议这样做。收到请求时，媒体服务会将该流传送给客户。
+- 本地实时编码器将多比特率 **RTMP** 或**平滑流式处理**（分片 MP4）发送到无法通过 AMS 执行实时编码的通道。引入流将通过**通道**，但不会进行任何进一步处理。这种方法称为**直通**。可以使用以下输出多比特率平滑流式处理的实时编码器：MediaExcel、Ateme、Imagine Communications、Envivio、Cisco、Elemental。以下实时编码器输出 RTMP：Adobe Flash Media Live Encoder \(FMLE\)、Telestream Wirecast、Haivision、Teradek 和 Tricaster 编码器。实时编码器也可将单比特率流发送到并未启用实时编码的通道，但不建议这样做。收到请求时，媒体服务会将该流传送给客户。
 
 	>[AZURE.NOTE] 实时传送视频流时，使用直通方法是最经济的。
 
@@ -76,45 +76,35 @@
 ![实时工作流][live-overview]  
 
 
-
-##本主题内容
-
-- 概述[常见的实时流式处理方案](/documentation/articles/media-services-manage-live-encoder-enabled-channels/#scenario)
-- [通道及其相关组件的说明](/documentation/articles/media-services-manage-live-encoder-enabled-channels/#channel)
-- [注意事项](/documentation/articles/media-services-manage-live-encoder-enabled-channels/#Considerations)
-
-
-##<a id="scenario"></a>常见的实时流处理方案
-
+## <a id="scenario"></a>常见的实时流处理方案
 以下是创建常见的实时流应用程序时涉及的常规步骤。
 
 >[AZURE.NOTE] 目前，实时事件的最大建议持续时间为 8 小时。如果需要长时间运行某个通道，请通过 Azure.cn 联系 amslived。请注意，实时编码会影响计费，应记住，将实时编码通道保持为“正在运行”状态会产生费用。建议在实时流式处理事件完成之后立即停止正在运行的通道，以避免产生额外的小时费用。
 
-1. 将视频摄像机连接到计算机。启动并配置可以通过以下协议之一输出**单**比特率流的本地实时编码器：RTMP、平滑流式处理或 RTP (MPEG-TS)。
+1. 将视频摄像机连接到计算机。启动并配置可以通过以下协议之一输出**单**比特率流的本地实时编码器：RTMP、平滑流式处理或 RTP \(MPEG-TS\)。
+   
+    此步骤也可以在创建通道后执行。
+2. 创建并启动通道。
+3. 检索通道引入 URL。
+   
+    实时编码器使用引入 URL 将流发送到频道。
+4. 检索频道预览 URL。
+   
+    使用此 URL 来验证通道是否正常接收实时流。
+5. 创建节目。
+   
+    使用 Azure 经典管理门户时，创建节目的同时还会创建资产。
+   
+    使用 .NET SDK 或 REST 时，需要创建一个资源并指定在创建节目时要使用该资源。
+6. 发布与节目关联的资源。
+   
+    >[AZURE.NOTE]
+	创建 AMS 帐户时，系统会将**默认**流式处理终结点以“已停止”状态添加到用户的帐户。流式处理终结点（用于内容流式处理）必须处于“正在运行”状态。
 	
-	此步骤也可以在创建通道后执行。
-
-1. 创建并启动通道。
-
-1. 检索通道引入 URL。
-
-	实时编码器使用引入 URL 将流发送到频道。
-1. 检索频道预览 URL。
-
-	使用此 URL 来验证通道是否正常接收实时流。
-
-3. 创建节目。
-
-	使用 Azure 经典管理门户时，创建节目的同时还会创建资产。
-
-	使用 .NET SDK 或 REST 时，需要创建一个资源并指定在创建节目时要使用该资源。
-1. 发布与节目关联的资源。
-
-	确保要从中以流形式传输内容的流式传输终结点上至少有一个串流保留保留单元
-1. 在准备好开始流式传输和存档时，启动节目。
-2. （可选）可以向实时编码器发信号，以启动广告。将广告插入到输出流中。
-1. 在要停止对事件进行流式传输和存档时，停止节目。
-1. 删除节目（并选择性地删除资产）。
+7. 准备好开始流式传输和存档后，启动节目。
+8. （可选）可以向实时编码器发信号，以启动广告。将广告插入到输出流中。
+9. 在要停止对事件进行流式传输和存档时，停止节目。
+10. 删除节目（并选择性地删除资产）。
 
 >[AZURE.NOTE]千万不要忘记停止实时编码通道。请注意，实时编码会影响每小时计费，应记住，将实时编码通道保持为“正在运行”状态会产生费用。建议在实时流式处理事件完成之后立即停止正在运行的通道，以避免产生额外的小时费用。
 
@@ -233,7 +223,7 @@
 
 创建通道后，可以获得引入 URL。若要获取这些 URL，通道不一定要处于“正在运行”状态。准备好开始将数据推送到通道时，通道必须处于“正在运行”状态。通道开始引入数据后，可通过预览 URL 来预览流。
 
-可以选择通过 SSL 连接引入分片 MP4（平滑流）实时流。若要通过 SSL 进行摄取，请确保将摄取 URL 更新为 HTTPS。
+可以选择通过 SSL 连接引入分片 MP4（平滑流）实时流。若要通过 SSL 进行摄取，请确保将摄取 URL 更新为 HTTPS。请注意，AMS 目前不支持对自定义域使用 SSL。
 
 ###允许的 IP 地址
 
@@ -329,9 +319,9 @@
 通道启用实时编码后，管道中会有一个正在处理视频的组件，可对其进行操作。可以向通道发出信号，以将静态图像和/或广告插入到传出自适应比特率流中。静态图像是在某些情况下（例如，在商业广告期间）可用于覆盖输入实时源的静止图像。广告信号是嵌入到传出流中的时间同步信号，用于指示视频播放器执行特殊操作（例如，在适当时间切换到广告）。有关用于此目的的 SCTE-35 信号机制的概述，请参阅此[博客](https://codesequoia.wordpress.com/2014/02/24/understanding-scte-35/)。下面是可以在实时事件中实现的典型方案。
 
 1. 事件开始前，让观看者获得事件前图像。
-1. 事件结束后，让观看者获得事件后图像。
-1. 如果在事件期间出现问题（例如，体育场中出现电源故障），让观看者获得错误事件图像。
-1. 在商业广告期间发送广告时间图像以隐藏实时事件源。
+2. 事件结束后，让观看者获得事件后图像。
+3. 如果在事件期间出现问题（例如，体育场中出现电源故障），让观看者获得错误事件图像。
+4. 在商业广告期间发送广告时间图像以隐藏实时事件源。
 
 以下是指示广告时可以设置的属性。
 
@@ -368,7 +358,9 @@
 
 可选。指定媒体服务资源（包含静态图像）的资源 ID。默认值为 null。
 
-**注意**：在创建通道之前，具有以下约束的静态图像应当作为专用资产上传（该资产中不应有其他文件）。
+
+>[AZURE.NOTE] 
+在创建通道之前，具有以下约束的静态图像应当作为专用资产上传（该资产中不应有其他文件）。
 
 - 分辨率最大为 1920x1080。
 - 大小最大为 3 MB。
@@ -384,7 +376,7 @@
 
 可以通过设置**存档窗口**长度，指定希望保留节目录制内容的小时数。此值的设置范围是最短 5 分钟，最长 25 小时。存储时段长度还决定了客户端能够从当前实时位置按时间向后搜索的最长时间。超出指定时间长度后，节目也能够运行，但落在时段长度后面的内容将全部被丢弃。此属性的值还决定了客户端清单能够增加多长时间。
 
-每个节目都与存储流式处理内容的资源相关联。资产将映射到 Azure Storage 帐户中的 BLOB 容器，资产中的文件则作为该容器中的 BLOB 存储。若要发布节目，以便客户查看该流，必须为关联的资源创建按需定位符。创建此定位符后，可以生成提供给客户端的流式处理 URL。
+每个节目都与存储流式处理内容的资源相关联。资产将映射到 Azure 存储帐户中的块 blob 容器，资产中的文件则作为 blob 存储在该容器中。若要发布节目，以便客户查看该流，必须为关联的资源创建按需定位符。创建此定位符后，可以生成提供给客户端的流式处理 URL。
 
 一个通道最多支持三个并发运行的节目，因此可以为同一传入流创建多个存档。这样，便可以根据需要发布和存档事件的不同部分。例如，业务要求是存档 6 小时的节目，但只广播过去 10 分钟的内容。若要实现此目的，需要创建两个同时运行的节目。一个节目设置为存档 6 小时的事件但不发布该节目。另一个节目设置为存档 10 分钟的事件，并且要发布该节目。
 
@@ -392,9 +384,9 @@
 
 准备好开始流式传输和存档后，启动节目。要停止对事件进行流式传输和存档时，停止节目。
 
-若要删除存档的内容，请停止并删除节目，然后删除关联的资产。如果资产被某个节目使用，则无法将其删除；必须先删除该节目。
+若要删除存档的内容，请停止并删除节目，然后删除关联的资产。如果资产被某个节目使用，则无法将其删除，必须先删除该节目。
 
-即使停止并删除了节目，只要没有删除资产，用户也能够将已存档内容作为点播视频进行流式传输。
+即使停止并删除了节目，只要没有删除资产，用户也将能够按需将已存档的内容作为视频进行流式传输。
 
 如果希望保留已存档的内容但不希望其可供流式传输，请删除流式传输定位符。
 
@@ -436,7 +428,7 @@
 - 通道或其关联的节目正在运行时，无法更改输入协议。如果需要不同的协议，应当针对每个输入协议创建单独的通道。
 - 仅当通道处于“正在运行”状态时才会收取费用。有关详细信息，请参阅[此](/documentation/articles/media-services-manage-live-encoder-enabled-channels/#states)部分。
 - 目前，实时事件的最大建议持续时间为 8 小时。如果你需要运行一个需要更长时间的通道，请通过 Azure.cn 联系 amslived。
-- 确保要从中以流形式传输内容的流式传输终结点上至少有一个串流保留单元。
+- 请确保让流式处理终结点（用于内容流式处理）处于“正在运行”状态。
 - 在 Azure 中输入多个语言轨迹和执行实时编码时，多语言输入仅支持 RTP。使用 MPEG-2 TS over RTP 最多可以定义 8 个音频流。当前不支持使用 RTMP 或平滑流引入多个音频轨迹。使用[本地实时编码器](/documentation/articles/media-services-live-streaming-with-onprem-encoders/)执行实时编码时，不存在这种限制，因为发送到 AMS 的任何数据都会通过某个通道，而不做进一步的处理。
 - 编码预设使用“最大帧速率”30 fps 的思路。因此，如果输入为 60fps/59.97i，则输入帧将修剪/反交错为 30/29.97 fps。如果输入为 50fps/50i，则输入帧将修剪/反交错为 25 fps。如果输入为 25 fps，则输出将保持为 25 fps。
 - 完成后请不要忘记关闭通道。否则会继续计费。
@@ -448,26 +440,20 @@
 - 静态图像应符合[此处](/documentation/articles/media-services-manage-live-encoder-enabled-channels/#default_slate)所述的限制。如果想要尝试创建默认静态图像大于 1920x1080 的通道，最终请求将会出错。
 - 再次强调，完成流式处理后请不要忘记关闭通道。否则会继续计费。
 
-###如何创建通道以执行从单比特率到自适应比特率流的实时编码
-
-依次选择“门户”、.NET、REST API 以了解如何创建和管理通道和节目。
-
-> [AZURE.SELECTOR]
-- [门户](/documentation/articles/media-services-portal-creating-live-encoder-enabled-channel/)
-- [.NET SDK](/documentation/articles/media-services-dotnet-creating-live-encoder-enabled-channel/)
-- [REST API](https://docs.microsoft.com/zh-cn/rest/api/media/operations/channel)
-
-
-
-##相关主题
-
+## 相关主题
 [使用 Azure 媒体服务传递实时流式处理事件](/documentation/articles/media-services-overview/)
 
+[使用门户创建通道以执行从单比特率到自适应比特率流的实时编码](/documentation/articles/media-services-portal-creating-live-encoder-enabled-channel/)
+
+[使用 .NET SDK 创建通道以执行从单比特率到自适应比特率流的实时编码](/documentation/articles/media-services-dotnet-creating-live-encoder-enabled-channel/)
+
+[Manage channels with REST API](https://docs.microsoft.com/rest/api/media/operations/channel)（使用 REST API 管理通道）
+ 
 [媒体服务概念](/documentation/articles/media-services-concepts/)
 
 [Azure 媒体服务分片 MP4 实时引入规范](/documentation/articles/media-services-fmp4-live-ingest-overview/)
 
 [live-overview]: ./media/media-services-manage-live-encoder-enabled-channels/media-services-live-streaming-new.png
 
-<!---HONumber=Mooncake_0109_2017-->
-<!--Update_Description: wording update-->
+<!---HONumber=Mooncake_0220_2017-->
+<!--Update_Description: add some new supported Encoders;remove "本主题内容" section; add note for not supprot SSL;-->

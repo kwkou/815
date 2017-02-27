@@ -1,22 +1,21 @@
-<properties 
-	pageTitle="如何添加编码单元" 
-	description="了解如何使用 .NET 添加编码单元"  
-	services="media-services" 
-	documentationCenter="" 
-	authors="juliako" 
-	manager="erikre" 
-	editor=""/>
-
-<tags 
-	ms.service="media-services" 
-	ms.workload="media" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
- 	ms.date="09/01/2016" 
- 	wacn.date="12/27/2016"
-	ms.author="juliako;milangada;gtrifonov"/>
-
+<properties
+    pageTitle="如何添加编码单位"
+    description="了解如何使用 .NET 添加编码单位"
+    services="media-services"
+    documentationcenter=""
+    author="juliako"
+    manager="erikre"
+    editor="" />
+<tags
+    ms.assetid="33f7625a-966a-4f06-bc09-bccd6e2a42b5"
+    ms.service="media-services"
+    ms.workload="media"
+    ms.tgt_pltfrm="na"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.date="01/10/2017"
+    wacn.date="02/24/2017"
+    ms.author="juliako;milangada;gtrifonov" />
 
 #如何使用 .NET SDK 缩放编码
 
@@ -47,6 +46,4 @@
 
 默认情况下，每个媒体服务帐户最多可缩放到 25 个媒体保留单元和 5 个点播流保留单元。你可以通过[在线申请支持](/support/support-ticket-form/?l=zh-cn)创建工单申请更高的限制值。
 
-
-
-<!---HONumber=Mooncake_Quality_Review_1215_2016-->
+<!---HONumber=Mooncake_0220_2017-->

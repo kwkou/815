@@ -5,8 +5,7 @@
     documentationcenter=""
     author="anilmur"
     manager="erikre"
-    editor="" />  
-
+    editor="" />
 <tags
     ms.assetid="504f74c2-3103-42a0-897b-9ff52f279e23"
     ms.service="media-services"
@@ -14,8 +13,8 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="get-started-article"
-    ms.date="10/24/2016"
-    wacn.date="12/27/2016"
+    ms.date="01/05/2017"
+    wacn.date="02/24/2017"
     ms.author="juliako" />  
 
 
@@ -52,7 +51,6 @@
 3. 创建事件/节目（还将创建一个资产）。
 1. 发布事件（将创建相关资产的按需定位符）。
 
-	确保你要从中以流形式传输内容的流式传输终结点上至少有一个流式传输保留单元。
 1. 在准备好开始流式传输和存档时，启动节目。
 2. （可选）可以向实时编码器发信号，以启动广告。将广告插入到输出流中。
 1. 在要停止对事件进行流式传输和存档时，停止节目。
@@ -60,9 +58,8 @@
 
 ##本教程的内容
 
-在本教程中，将使用 Azure 经典管理门户完成以下任务：
+本教程使用 Azure 经典管理门户完成以下任务：
 
-2.  配置流式处理终结点。
 3.  创建能够执行实时编码的频道。
 1.  获取引入 URL，以便将其提供给实时编码器。实时编码器将使用此 URL 将流引入频道。
 1.  创建节目（和资产）
@@ -73,7 +70,7 @@
 ##先决条件
 以下是完成本教程所需具备的条件。
 
-- 若要完成本教程，你需要一个 Azure 帐户。如果你没有帐户，可以创建一个试用帐户，只需几分钟即可完成。有关详细信息，请参阅 [Azure 试用](/pricing/1rmb-trial/)。
+- 若要完成本教程，你需要一个 Azure 帐户。如果没有帐户，可以创建一个试用帐户，只需几分钟即可完成。有关详细信息，请参阅 [Azure 试用](/pricing/1rmb-trial/)。
 - 一个媒体服务帐户。若要创建媒体服务帐户，请参阅[创建帐户](/documentation/articles/media-services-create-account/)。
 - 可以发送单比特率实时流的摄像头和编码器。
 
@@ -188,6 +185,9 @@
 
 将流传输到通道后，可以通过创建资产、节目和流定位符来启动流式传输事件。这将会存档流，并使观看者可通过流式处理终结点使用该流。
 
+>[AZURE.NOTE]
+创建 AMS 帐户时，系统会将**默认**流式处理终结点以“已停止”状态添加到用户的帐户。若要开始对内容进行流式处理并利用动态打包和动态加密功能，必须确保要从其流式获取内容的流式处理终结点处于“正在运行”状态。
+
 可通过两种方式启动该事件：
 
 1. 在**“频道”**页上，按**“添加”**以添加新节目。
@@ -257,8 +257,7 @@
 ##注意事项
 
 - 目前，实时事件的最大建议持续时间为 8 小时。如果你需要运行一个需要更长时间的频道，请通过 Azure.cn 联系 amslived。
-- 确保你要从中以流形式传输内容的流式传输终结点上至少有一个流式传输保留单元。
-
+- 请确保流式处理终结点（用于内容流式处理）处于“正在运行”状态。
 
 [standard0]: ./media/media-services-portal-creating-live-encoder-enabled-channel/media-services-create-channel-standard0.png
 [standard1]: ./media/media-services-portal-creating-live-encoder-enabled-channel/media-services-create-channel-standard1.png
@@ -267,4 +266,5 @@
 [standard4]: ./media/media-services-portal-creating-live-encoder-enabled-channel/media-services-create-channel-standard4.png
 [standard5]: ./media/media-services-portal-creating-live-encoder-enabled-channel/media-services-create-channel-standard_encode.png
 
-<!---HONumber=Mooncake_1205_2016-->
+<!---HONumber=Mooncake_0220_2017-->
+<!--Update_Description: update notifications list-->

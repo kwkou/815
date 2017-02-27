@@ -1,40 +1,43 @@
-<properties 
-	pageTitle="使用媒体服务 REST API 配置资产传送策略 | Azure" 
-	description="本主题说明如何使用媒体服务 REST API 配置不同的资产传送策略。" 
-	services="media-services" 
-	documentationCenter="" 
-	authors="Juliako" 
-	manager="dwrede" 
-	editor=""/>  
+<properties
+    pageTitle="使用媒体服务 REST API 配置资产传送策略 | Azure"
+    description="本主题介绍如何使用媒体服务 REST API 配置不同的资产传送策略。"
+    services="media-services"
+    documentationcenter=""
+    author="Juliako"
+    manager="dwrede"
+    editor="" />
+<tags
+    ms.assetid="5cb9d32a-e68b-4585-aa82-58dded0691d0"
+    ms.service="media-services"
+    ms.workload="media"
+    ms.tgt_pltfrm="na"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.date="01/05/2017"
+    wacn.date="02/24/2017"
+    ms.author="juliako" />  
 
 
-<tags 
-	ms.service="media-services" 
-	ms.workload="media" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="09/19/2016"  
-	wacn.date="12/16/2016"  
-	ms.author="juliako"/>
-
-#如何：配置资产传送策略
+# 配置资产传送策略
 
 [AZURE.INCLUDE [media-services-selector-asset-delivery-policy](../../includes/media-services-selector-asset-delivery-policy.md)]
 
 如果你打算传送动态加密的资产，媒体服务内容传送工作流中的步骤之一是为资产配置传送策略。资产传送策略告知媒体服务你希望如何传送资产：应该将资产动态打包成哪种流式处理协议（例如 MPEG DASH、HLS、平滑流式处理或全部），是否要动态加密资产以及如何加密（信封或常规加密）。
 
-本主题介绍为何以及如何创建和配置资产传送策略。
+本主题介绍创建和配置资产传送策略的原因和方式。
 
->[AZURE.NOTE]<p>若要使用动态打包和动态加密，必须确保至少有一个缩放单位（也称为流式处理单位）。有关详细信息，请参阅[如何缩放媒体服务](/documentation/articles/media-services-manage-origins/#scale_streaming_endpoints)。<p>此外，你的资产必须包含一组自适应比特率 MP4 或自适应比特率平滑流文件。
+>[AZURE.NOTE]
+创建 AMS 帐户时，系统会将**默认**流式处理终结点以“已停止”状态添加到用户的帐户。若要开始对内容进行流式处理并利用动态打包和动态加密功能，必须确保要从其流式获取内容的流式处理终结点处于“正在运行”状态。
+>
+>此外，若要使用动态打包和动态加密，用户的资产必须包含一组自适应比特率 MP4 或自适应比特率平滑流式处理文件。
 
-可以将不同的策略应用到同一个资产。例如，可以将 PlayReady 加密应用到平滑流式处理，将 AES 信封加密应用到 MPEG DASH 和 HLS。将阻止流式处理传送策略中未定义的任何协议（例如，添加仅将 HLS 指定为协议的单个策略）。不定义任何传送策略是例外情况。此时，将顺利允许所有协议。
+可以将不同的策略应用到同一个资产。例如，可以将 PlayReady 加密应用到平滑流式处理，将 AES 信封应用到 MPEG DASH 和 HLS。将阻止流式处理传送策略中未定义的任何协议（例如，添加仅将 HLS 指定为协议的单个策略）。如果你根本没有定义任何传送策略，则情况不是这样。此时，将允许所有明文形式的协议。
 
-如果要传送存储加密资产，则必须配置资产的传送策略。在流式处理资产之前，流式处理服务器会删除存储加密，然后再使用指定的传送策略流式处理内容。例如，若要传送使用高级加密标准 (AES) 信封加密密钥加密的资产，请将策略类型设为 **DynamicEnvelopeEncryption**。若要删除存储加密并不受阻碍地流式处理资产，请将策略类型设为 **NoDynamicEncryption**。下面是演示如何配置这些策略类型的示例。
+如果要传送存储加密资产，则必须配置资产的传送策略。在流式传输资产之前，流式处理服务器会删除存储加密，然后再使用指定的传送策略流式传输你的内容。例如，若要传送使用高级加密标准 \(AES\) 信封加密密钥加密的资产，请将策略类型设置为 **DynamicEnvelopeEncryption**。若要删除存储加密并以明文的形式流式传输资产，请将策略类型设置为 **NoDynamicEncryption**。下面是演示如何配置这些策略类型的示例。
 
-根据配置资产传送策略的方式，可动态打包、动态加密和流式处理以下流式处理协议：平滑流式处理、HLS、MPEG DASH 和 HDS 流。
+根据配置资产传送策略的方式，可以动态打包、动态加密和流式传输以下流式传输协议：平滑流式处理、HLS、MPEG DASH 流。
 
-以下列表显示了用于流式处理平滑、HLS DASH 和 HDS 的格式。
+以下列表显示了用于流式传输平滑流、HLS、DASH 的格式。
 
 平滑流式处理：
 
@@ -48,17 +51,14 @@ MPEG DASH
 
 	{streaming endpoint name-media services account name}.streaming.mediaservices.chinacloudapi.cn/{locator ID}/{filename}.ism/Manifest(format=mpd-time-csf) 
 
-HDS
 
-	{streaming endpoint name-media services account name}.streaming.mediaservices.chinacloudapi.cn/{locator ID}/{filename}.ism/Manifest(format=f4m-f4f)
-
-有关如何发布资产和生成流式处理 URL 的说明，请参阅[生成流式处理 URL](/documentation/articles/media-services-deliver-streaming-content/)。
+有关如何发布资产和生成流 URL 的说明，请参阅[生成流 URL](/documentation/articles/media-services-deliver-streaming-content/)。
 
 
 ##注意事项
 
-- 如果某项资产存在 OnDemand (streaming) 定位符，则不能删除与该资产关联的 AssetDeliveryPolicy。在删除策略之前，建议先从资产中删除该策略。
-- 如果未设置资产传送策略，则无法在存储加密的资产上创建流式处理定位符。如果资产未经过存储加密，则即使未设置资产传送策略，系统也将允许顺利创建定位符和流式处理资产。
+- 如果某个资产存在 OnDemand（流式处理）定位符，则不能删除与该资产关联的 AssetDeliveryPolicy。在删除策略之前，建议先从资产中删除该策略。
+- 如果未设置资产传送策略，则无法在存储加密的资产上创建流式处理定位符。如果资产未经过存储加密，则即使未设置资产传送策略，系统也可让你以明文形式创建定位符和流式处理资产。
 - 可将多个资产传送策略关联到单个资产，但只能指定一种方法来处理给定的 AssetDeliveryProtocol。也就是说，如果尝试链接两个指定 AssetDeliveryProtocol.SmoothStreaming 协议的传送策略，则会导致出错，因为当客户端发出平滑流式处理请求时，系统不知道要应用哪个策略。
 - 如果资产包含现有流式处理定位符，则不能将新策略链接到该资产、取消现有策略与资产的链接，或者更新与该资产关联的传送策略。必须先删除流式处理定位符，调整策略，再重新创建流式处理定位符。重新创建流式处理定位符时，可以使用同一个 locatorId，但应确保该操作不会导致客户端出现问题，因为内容可能已被来源或下游 CDN 缓存。
  
@@ -318,11 +318,6 @@ HDS
         HLS = 0x4,
 
         /// <summary>
-        /// Adobe HTTP Dynamic Streaming (HDS)
-        /// </summary>
-        Hds = 0x8,
-
-        /// <summary>
         /// Include all protocols.
         /// </summary>
         All = 0xFFFF
@@ -447,4 +442,5 @@ HDS
         WidevineLicenseAcquisitionUrl
     }
 
-<!---HONumber=Mooncake_Quality_Review_1202_2016-->
+<!---HONumber=Mooncake_0220_2017-->
+<!--Update_Description: add note for AMS account; remove HDS function-->

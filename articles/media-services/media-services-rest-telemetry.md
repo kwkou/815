@@ -5,17 +5,16 @@
     documentationcenter=""
     author="Juliako"
     manager="erikre"
-    editor="" />  
-
+    editor="" />
 <tags
-    ms.assetid="4e4a9ec3-8ddb-4938-aec1-d7172d3db858"
+    ms.assetid="e1a314fb-cc05-4a82-a41b-d1c9888aab09"
     ms.service="media-services"
     ms.workload="media"
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="11/17/2016"
-    wacn.date="12/12/2016"
+    ms.date="01/12/2017"
+    wacn.date="02/24/2017"
     ms.author="juliako" />  
 
 
@@ -96,7 +95,11 @@
 	Strict-Transport-Security: max-age=31536000; includeSubDomains
 	Date: Wed, 02 Dec 2015 05:10:40 GMT
 	
-	{"d":{"results":[]}}
+	{  
+   		"d":{  
+      		"results":[]
+   		}
+	}
  
 ## 创建用于监视的通知终结点
 
@@ -112,7 +115,11 @@
 	Host: wamsbjbclus001rest-hs.chinacloudapp.cn
 	Content-Length: 115
 	
-	{"Name":"monitoring","EndPointAddress":"https://telemetryvalidationstore.table.core.chinacloudapi.cn/","EndPointType":2}
+	{  
+   		"Name":"monitoring",
+   		"EndPointAddress":"https://telemetryvalidationstore.table.core.chinacloudapi.cn/",
+   		"EndPointType":2
+	}
 
 >[AZURE.NOTE]请务必将“https://telemetryvalidationstore.table.core.chinacloudapi.cn”值更改为存储帐户。
 
@@ -179,7 +186,15 @@
 	Host: wamsbjbclus001rest-hs.chinacloudapp.cn
 	Content-Length: 133
 	
-	{"NotificationEndPointId":"nb:nepid:UUID:76bb4faf-ea29-4815-840a-9a8e20102fc4","Settings":[{"Component":"Channel","Level":"Normal"}]}
+	{  
+	   "NotificationEndPointId":"nb:nepid:UUID:76bb4faf-ea29-4815-840a-9a8e20102fc4",
+	   "Settings":[  
+	      {  
+		 "Component":"Channel",
+		 "Level":"Normal"
+	      }
+	   ]
+	}
 
 ### 响应
 
@@ -204,4 +219,18 @@
 
 有关使用遥测信息的信息，请参阅[此主题](/documentation/articles/media-services-telemetry-overview/)。
 
-<!---HONumber=Mooncake_1205_2016-->
+## 停止遥测
+
+###请求
+
+	DELETE https://wamsbjbclus001rest-hs.chinacloudapp.cn/api/MonitoringConfigurations('nb%3Amcid%3AUUID%3A1a8931ae-799f-45fd-8aeb-9641740295c2')
+	x-ms-version: 2.13
+	DataServiceVersion: 3.0
+	MaxDataServiceVersion: 3.0
+	Accept: application/json; odata=verbose
+	Authorization: (redacted)
+	Content-Type: application/json; charset=utf-8
+	Host: wamsbjbclus001rest-hs.chinacloudapp.cn
+
+<!---HONumber=Mooncake_0220_2017-->
+<!--Update_Description: add request sample for "停止遥测"-->

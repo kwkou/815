@@ -1,37 +1,34 @@
-<properties 
-	pageTitle="使用 Azure 门户配置内容密钥授权策略 | Azure" 
-	description="了解如何配置内容密钥的授权策略。" 
-	services="media-services" 
-	documentationCenter="" 
-	authors="juliako" 
-	manager="erikre" 
-	editor=""/>  
+<properties
+    pageTitle="使用 Azure 门户配置内容密钥授权策略 | Azure"
+    description="了解如何配置内容密钥的授权策略。"
+    services="media-services"
+    documentationcenter=""
+    author="juliako"
+    manager="erikre"
+    editor="" />
+<tags
+    ms.assetid="ee82a3fa-c34b-48f2-a108-8ba321f1691e"
+    ms.service="media-services"
+    ms.workload="media"
+    ms.tgt_pltfrm="na"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.date="01/05/2017"
+    wacn.date="02/24/2017"
+    ms.author="juliako" />  
 
 
-<tags 
-	ms.service="media-services" 
-	ms.workload="media" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
- 	ms.date="10/12/2016" 
- 	wacn.date="12/16/2016" 
-	ms.author="juliako"/>
-
-
-
-
-#配置内容密钥授权策略 
+#配置内容密钥授权策略
 [AZURE.INCLUDE [media-services-selector-content-key-auth-policy](../../includes/media-services-selector-content-key-auth-policy.md)]
 
 
 ##概述
 
-Azure 媒体服务允许传送通过高级加密标准 (AES)（使用 128 位加密密钥）或 [Microsoft PlayReady DRM](https://www.microsoft.com/playready/overview/) 保护的 MPEG-DASH 流、平滑流式处理流和 HTTP 实时流式处理 (HLS) 流。AMS 还允许传送通过 Widevine DRM 加密的 DASH 流。PlayReady 和 Widevine 都是按通用加密 (ISO/IEC 23001-7 CENC) 规范加密的。
+Azure 媒体服务允许传送受高级加密标准 \(AES\)（使用 128 位加密密钥）或受 [Microsoft PlayReady DRM](https://www.microsoft.com/playready/overview/) 保护的 MPEG-DASH 流、平滑流式处理流和 HTTP 实时流式处理 \(HLS\) 流。AMS 还允许传送通过 Widevine DRM 加密的 DASH 流。PlayReady 和 Widevine 都是按通用加密 \(ISO/IEC 23001-7 CENC\) 规范加密的。
 
-媒体服务还提供了**密钥\\许可证传送服务**，客户端可从中获取 AES 密钥或 PlayReady/Widevine 许可证，以用于播放加密的内容。
+媒体服务还提供了一个**密钥\\许可证传送服务**，客户端可从中获取 AES 密钥或 PlayReady/Widevine 许可证，以用于播放加密的内容。
 
-本主题介绍了如何使用 **Azure 经典管理门户**配置内容密钥授权策略。以后，可以使用该密钥来动态加密内容。注意，当前可以加密以下流格式：HLS、MPEG DASH 和平滑流式处理。无法加密 HDS 流格式或渐进式下载。
+本主题介绍了如何使用 **Azure 经典管理门户**配置内容密钥授权策略。以后，可以使用该密钥来动态加密内容。注意，当前可以加密以下流格式：HLS、MPEG DASH 和平滑流式处理。无法加密渐进式下载。
  
 播放器请求已设置为动态加密的流时，媒体服务会使用配置的密钥通过 AES 或 DRM 加密来动态加密内容。为了解密流，播放器会从密钥传送服务请求密钥。为了确定用户是否有权获取密钥，该服务会评估为密钥指定的授权策略。
 
@@ -44,7 +41,7 @@ Azure 媒体服务允许传送通过高级加密标准 (AES)（使用 128 位加
 
 ###请注意以下事项：
 
-- 为了能够使用动态打包和动态加密，必须确保至少有一个流式处理保留单元。有关详细信息，请参阅[如何缩放媒体服务](/documentation/articles/media-services-manage-origins/#scale_streaming_endpoints)。
+- 创建 AMS 帐户时，系统会将**默认**流式处理终结点以“已停止”状态添加到用户的帐户。若要开始对内容进行流式处理并利用动态打包和动态加密功能，必须确保流式处理终结点处于“正在运行”状态。
 - 资产必须包含一组自适应比特率 MP4 或自适应比特率平滑流文件。有关详细信息，请参阅[对资产进行编码](/documentation/articles/media-services-encode-asset/)。
 - 密钥传送服务将 ContentKeyAuthorizationPolicy 及其相关对象（策略选项和限制）缓存 15 分钟。如果创建 ContentKeyAuthorizationPolicy 并指定使用“令牌”限制，然后对其进行测试，再将策略更新为“开放”限制，则现有策略切换到“开放”版本的策略需要大约 15 分钟。
 
@@ -91,14 +88,10 @@ Azure 媒体服务允许传送通过高级加密标准 (AES)（使用 128 位加
 可以单击“导入策略 xml”按钮，然后提供符合[此处](/documentation/articles/media-services-playready-license-template-overview/)定义的 XML 架构的另一个 XML。
 
 
-
-##后续步骤
-现在已经配置了内容密钥的授权策略，请转到[如何：使用 Azure 经典管理门户启用加密](/documentation/articles/media-services-manage-content/#encrypt)主题。
-
-
 [open_policy]: ./media/media-services-portal-configure-content-key-auth-policy/media-services-protect-content-with-open-restriction.png
 [token_policy]: ./media/media-services-key-authorization-policy/media-services-protect-content-with-token-restriction.png
 
  
 
-<!---HONumber=Mooncake_Quality_Review_1202_2016-->
+<!---HONumber=Mooncake_0220_2017-->
+<!--Update_Description: update notfications list; remove “后续步骤” section-->
