@@ -23,6 +23,7 @@
 
 [Microsoft R Server](https://msdn.microsoft.com/zh-cn/microsoft-r/rserver) 是适用于 R 的可部署范围最广的企业级分析平台，它在云中的提供方式如下：
 
+* [Azure HDInsight 上的 R Server](/documentation/articles/hdinsight-hadoop-r-server-overview/)
 * 充当 Azure 上预配置虚拟机的 R Server：
     * [在 Linux 上](/documentation/articles/microsoft-r-vm-azure-rserver-linux-9.0.1)
     * [在 Windows 上](/documentation/articles/microsoft-r-vm-azure-rserver-sql-server-2016-enterprise)

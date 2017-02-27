@@ -35,7 +35,7 @@
 - Azure 订阅。请参阅[获取 Azure 试用版](/pricing/1rmb-trial/)。
 - HDInsight Linux 上的 Apache Spark 群集。有关说明，请参阅 [Create Apache Spark clusters in Azure HDInsight](/documentation/articles/hdinsight-apache-spark-jupyter-spark-sql/)（在 Azure HDInsight 中创建 Apache Spark 群集）。
 
-## 如何使用内核？ 
+## <a name="choose-between-the-kernels"></a> 如何使用内核？ 
 
 1. 在 [Azure 门户预览](https://portal.azure.cn/)上的启动板中，单击 Spark 群集的磁贴（如果已将它固定到启动板）。也可以单击“全部浏览”>“HDInsight 群集”导航到你的群集。
 
