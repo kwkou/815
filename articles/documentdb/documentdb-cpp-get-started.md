@@ -5,8 +5,7 @@
     documentationcenter="cpp"
     author="asthana86"
     manager="jhubbard"
-    editor="" />  
-
+    editor="" />
 <tags
     ms.assetid="b8756b60-8d41-4231-ba4f-6cfcfe3b4bab"
     ms.service="documentdb"
@@ -14,17 +13,18 @@
     ms.tgt_pltfrm="na"
     ms.devlang="cpp"
     ms.topic="hero-article"
-    ms.date="11/02/2016"
-    wacn.date="01/06/2017"
+    ms.date="12/25/2016"
+    wacn.date="02/27/2017"
     ms.author="aasthan" />  
 
 
 # NoSQL C++ 教程：DocumentDB C++ 控制台应用程序
->[AZURE.SELECTOR]
-[.NET](/documentation/articles/documentdb-get-started/)
-[.NET Core](/documentation/articles/documentdb-dotnetcore-get-started/)
-[Node.js](/documentation/articles/documentdb-nodejs-get-started/)
-[C++](/documentation/articles/documentdb-cpp-get-started/)
+> [AZURE.SELECTOR]
+- [.NET](/documentation/articles/documentdb-get-started/)
+- [.NET Core](/documentation/articles/documentdb-dotnetcore-get-started/)
+- [Java](/documentation/articles/documentdb-java-get-started/)
+- [Node.js](/documentation/articles/documentdb-nodejs-get-started/)
+- [C++](/documentation/articles/documentdb-cpp-get-started/)
 
 欢迎使用面向 C++ 的 Azure DocumentDB SDK 的 C++ 教程！ 学习本教程后，你将拥有一个创建并查询 DocumentDB 资源（包括 C++ 数据库）的控制台应用程序。
 
@@ -55,7 +55,7 @@
 - [Visual Studio](https://www.visualstudio.com/downloads/)，安装了 C++ 语言组件。
 
 ## 第 1 步：创建 DocumentDB 帐户
-让我们创建一个 DocumentDB 帐户。如果已经有想要使用的帐户，可以跳到[安装 C++ 应用程序](#SetupC++)。
+让我们创建一个 DocumentDB 帐户。如果已经有想要使用的帐户，可以跳到[安装 C++ 应用程序](#SetupNode)。
 
 [AZURE.INCLUDE [documentdb-create-dbaccount](../../includes/documentdb-create-dbaccount.md)]
 
@@ -78,7 +78,7 @@
     将程序包添加到项目后，我们已准备好开始编写一些代码。
 
 ## <a id="Config"></a>步骤 3：从 Azure 门户预览中复制 DocumentDB 数据库的连接详细信息
-打开 [Azure 门户预览](https://portal.azure.cn)，遍历到你创建的 NoSQL (DocumentDB) 数据库帐户。下一步需要 Azure 门户预览中的 URI 和主要密钥，以便使用 C++ 代码片段建立连接。
+打开 [Azure 门户预览](https://portal.azure.cn)，遍历到你创建的 NoSQL \(DocumentDB\) 数据库帐户。下一步需要 Azure 门户预览中的 URI 和主要密钥，以便使用 C++ 代码片段建立连接。
 
 ![Azure 门户预览中的 DocumentDB URI 和密钥](./media/documentdb-cpp-get-started/nosql-tutorial-keys.png)  
 
@@ -94,7 +94,6 @@
         using namespace documentdb;
         using namespace std;
         using namespace web::json;
-	
 2. 接下来将以下代码添加到主函数，并替换帐户配置和主要密钥以匹配步骤 3 中的 DocumentDB 设置。
    
         DocumentDBConfiguration conf (L"<account_configuration_uri>", L"<primary_key>");
@@ -290,6 +289,6 @@ DocumentDB 支持删除 JSON 文档，可以复制下面的代码并将其粘贴
 - 在 [DocumentDB 文档页](/documentation/services/documentdb/)的“Develop”（开发）部分中了解有关编程模型的详细信息。
 
 [documentdb-create-account]: /documentation/articles/documentdb-create-account/
-[documentdb-manage]: /documentation/articles/documentdb-manage/
 
-<!---HONumber=Mooncake_1212_2016-->
+<!---HONumber=Mooncake_0220_2017-->
+<!--Update_Description: link update-->

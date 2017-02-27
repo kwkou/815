@@ -14,14 +14,15 @@
     ms.tgt_pltfrm="na"
     ms.devlang="node"
     ms.topic="hero-article"
-    ms.date="12/16/2016"
-    wacn.date="01/23/2017"
+    ms.date="12/25/2016"
+    wacn.date="02/27/2017"
     ms.author="anhoh" />
 
 # NoSQL Node.js 教程：DocumentDB Node.js 控制台应用程序
->[AZURE.SELECTOR]
+> [AZURE.SELECTOR]
 - [.NET](/documentation/articles/documentdb-get-started/)
 - [.NET Core](/documentation/articles/documentdb-dotnetcore-get-started/)
+- [Java](/documentation/articles/documentdb-java-get-started/)
 - [Node.js](/documentation/articles/documentdb-nodejs-get-started/)
 - [C++](/documentation/articles/documentdb-cpp-get-started/)
 
@@ -620,9 +621,7 @@ DocumentDB 支持删除 JSON 文档。
 - 在 [DocumentDB 文档页](/documentation/services/documentdb/)的“Develop”（开发）部分中了解有关编程模型的详细信息。
 
 [documentdb-create-account]: /documentation/articles/documentdb-create-account/
-[documentdb-manage]: /documentation/articles/documentdb-manage/
-
 [keys]: ./media/documentdb-nodejs-get-started/node-js-tutorial-keys.png
 
-<!---HONumber=Mooncake_0109_2017-->
-<!---Update_Description: wording update -->
+<!---HONumber=Mooncake_0220_2017-->
+<!--Update_Description: link update-->

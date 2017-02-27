@@ -6,8 +6,7 @@
     documentationcenter=".net"
     author="syamkmsft"
     manager="jhubbard"
-    editor="cgronlun" />  
-
+    editor="cgronlun" />
 <tags
     ms.assetid="52532d89-a40e-4fdf-9b38-aadb3a4cccbc"
     ms.service="documentdb"
@@ -15,25 +14,28 @@
     ms.tgt_pltfrm="na"
     ms.devlang="dotnet"
     ms.topic="hero-article"
-    ms.date="11/16/2016"
-    wacn.date="01/06/2017"
+    ms.date="12/25/2016"
+    wacn.date="02/27/2017"
     ms.author="syamk" />
 
 # <a name="_Toc395809351"></a>ASP.NET MVC 教程：使用 DocumentDB 开发 Web 应用程序
->[AZURE.SELECTOR]
-- [.NET](/documentation/articles/documentdb-dotnet-application/)
-- [Node.js](/documentation/articles/documentdb-nodejs-application/)
-- [Java](/documentation/articles/documentdb-java-application/)
-- [Python](/documentation/articles/documentdb-python-application/) 
+> [AZURE.SELECTOR]
+- [.NET](/documentation/articles/documentdb-get-started/)
+- [.NET Core](/documentation/articles/documentdb-dotnetcore-get-started/)
+- [Java](/documentation/articles/documentdb-java-get-started/)
+- [Node.js](/documentation/articles/documentdb-nodejs-get-started/)
+- [C++](/documentation/articles/documentdb-cpp-get-started/)
 
 为了特别说明你可以如何有效地利用 Azure DocumentDB 来存储和查询 JSON 文档，本文提供了演示如何使用 Azure DocumentDB 构建待办事项应用的完整演练。任务将存储为 Azure DocumentDB 中的 JSON 文档。
 
 ![屏幕截图：“ASP NET MVC 教程分步说明”教程创建的待办事项列表 MVC Web 应用程序](./media/documentdb-dotnet-application/asp-net-mvc-tutorial-image1.png)
 
-本演练演示如何使用 Azure 提供的 DocumentDB 服务来存储和访问 Azure 上托管的 ASP.NET MVC Web 应用程序的数据。如果你正在寻找只侧重于 DocumentDB 而不是 ASP.NET MVC 组件的教程，请参阅[构建 DocumentDB C# 控制台应用程序](/documentation/articles/documentdb-get-started/)。
+本演练演示如何使用 Azure 提供的 DocumentDB 服务来存储和访问 Azure 上托管的 ASP.NET MVC Web 应用程序的数据。如果你正在寻找只侧重于 DocumentDB 而不是 ASP.NET MVC 组件的教程，请参阅[构建 DocumentDB C\# 控制台应用程序](/documentation/articles/documentdb-get-started/)。
 
 > [AZURE.TIP]
 本教程假定你先前有使用 ASP.NET MVC 和 Azure 网站的经验。如果你不熟悉 ASP.NET 或[必备工具](#_Toc395637760)，我们建议从 [GitHub][GitHub] 下载完整的示例项目，并按照此示例中的说明操作。构建之后，你可以回顾本文以深入了解项目上下文中的代码。
+> 
+> 
 
 ## <a name="_Toc395637760"></a>本数据库教程的先决条件
 在按照本文中的说明操作之前，你应确保已拥有下列项：
@@ -43,7 +45,7 @@
     或
 
     在本地安装 [Azure DocumentDB 模拟器](/documentation/articles/documentdb-nosql-local-emulator/)。
-- [Visual Studio 2015](http://www.visualstudio.com/)、Visual Studio 2013 Update 4 或更高版本。如果使用的是 Visual Studio 2013，则需安装 [Microsoft.Net.Compilers Nuget 包](https://www.nuget.org/packages/Microsoft.Net.Compilers/)以添加对 C# 6.0 的支持。
+- [Visual Studio 2015](http://www.visualstudio.com/)、Visual Studio 2013 Update 4 或更高版本。如果使用的是 Visual Studio 2013，则需安装 [Microsoft.Net.Compilers Nuget 包](https://www.nuget.org/packages/Microsoft.Net.Compilers/)以添加对 C\# 6.0 的支持。
 - 用于 .NET 2.5.1 或更高版的 Azure SDK，可通过 [Microsoft Web 平台安装程序][Microsoft Web Platform Installer]获取。
 
 本文中的所有屏幕截图都是使用已应用 Update 4 的 Visual Studio 2013 以及用于 .NET 的 Azure SDK 2.5.1 版获取的。如果你的系统配备了不同的版本，那么，你的屏幕和选项可能不会完全相符，但只要你符合上述先决条件，本解决方案应该还是有效。
@@ -55,7 +57,8 @@
 
 [AZURE.INCLUDE [documentdb-keys](../../includes/documentdb-keys.md)]
 
-<br/> 现在，我们将演练如何从头开始创建新的 ASP.NET MVC 应用程序。
+<br/> 
+现在，我们将演练如何从头开始创建新的 ASP.NET MVC 应用程序。
 
 ## <a name="_Toc395637762"></a>步骤 2：创建新的 ASP.NET MVC 应用程序
 现在你已有帐户，我们可以开始创建新的 ASP.NET 项目。
@@ -63,7 +66,7 @@
 1. 在 Visual Studio 的“文件”菜单中，指向“新建”，然后单击“项目”。
    
        此时将显示“新建项目”对话框。
-2. 在“项目类型”窗格中，依次展开“模板”、“Visual C#”、“Web”，然后选择“ASP.NET Web 应用程序”。
+2. 在“项目类型”窗格中，依次展开“模板”、“Visual C\#”、“Web”，然后选择“ASP.NET Web 应用程序”。
    
       ![屏幕截图：突出显示 ASP.NET Web 应用程序项目类型的“新建项目”对话框](./media/documentdb-dotnet-application/asp-net-mvc-tutorial-image10.png)
 3. 在“名称”框中，键入项目的名称。本教程使用名称“todo”。如果你选择使用其他名称，则每当本教程提及 todo 命名空间时，你必须调整所提供的代码示例，以便使用你为应用程序命名的名称。
@@ -190,9 +193,9 @@
    
    - 在“视图名称”框中，键入“索引”。
    - 在“模板”框中，选择“列表”。
-   - 在“模型类”框中，选择“项(todo.Models)”。
+   - 在“模型类”框中，选择“项\(todo.Models\)”。
    - 将“数据上下文类”框留空。
-   - 在“布局页”框中，键入 ***~/Views/Shared/\_Layout.cshtml***。
+   - 在“布局页”框中，键入 ***\~/Views/Shared/\_Layout.cshtml***。
      
      ![屏幕截图：显示“添加视图”对话框](./media/documentdb-dotnet-application/image18.png)
 3. 设置完所有这些值之后，单击“添加”，让 Visual Studio 创建新的模板视图。完成之后，它会打开刚创建的 cshtml 文件。我们可以在 Visual Studio 中关闭该文件，我们稍后会回头使用此文件。
@@ -205,9 +208,9 @@
    
    - 在“视图名称”框中，键入“创建”。
    - 在“模板”框中，选择“创建”。
-   - 在“模型类”框中，选择“项(todo.Models)”。
+   - 在“模型类”框中，选择“项\(todo.Models\)”。
    - 将“数据上下文类”框留空。
-   - 在“布局页”框中，键入 ***~/Views/Shared/\_Layout.cshtml***。
+   - 在“布局页”框中，键入 ***\~/Views/Shared/\_Layout.cshtml***。
    - 单击**“添加”**。
 
 #### <a name="_Toc395888515"></a>添加“编辑项”视图
@@ -218,9 +221,9 @@
    
    - 在“视图名称”框中，键入“编辑”。
    - 在“模板”框中，选择“编辑”。
-   - 在“模型类”框中，选择“项(todo.Models)”。
+   - 在“模型类”框中，选择“项\(todo.Models\)”。
    - 将“数据上下文类”框留空。
-   - 在“布局页”框中，键入 ***~/Views/Shared/\_Layout.cshtml***。
+   - 在“布局页”框中，键入 ***\~/Views/Shared/\_Layout.cshtml***。
    - 单击**“添加”**。
 
 完成此操作之后，关闭 Visual Studio 中的所有 cshtml 文档，我们稍后会回头使用这些视图。
@@ -310,8 +313,10 @@
             }
         }
    
-	> [AZURE.TIP] 创建新的 DocumentCollection 时，你可以提供 OfferType 的可选 RequestOptions 参数，此参数可让你指定新集合的性能级别。如果未传递此参数，系统将使用默认的产品/服务类型。有关 DocumentDB 产品/服务类型的详细信息，请参阅 [DocumentDB 性能级别](/documentation/articles/documentdb-performance-levels/)
-
+   > [AZURE.TIP]
+   创建新的 DocumentCollection 时，你可以提供 OfferType 的可选 RequestOptions 参数，此参数可让你指定新集合的性能级别。如果未传递此参数，系统将使用默认的产品/服务类型。有关 DocumentDB 产品/服务类型的详细信息，请参阅 [DocumentDB 性能级别](/documentation/articles/documentdb-performance-levels/)
+   > 
+   > 
 3. 我们打算从配置中读取部分值，因此请打开应用程序的 **Web.config** 文件，并在 `<AppSettings>` 节下面添加下列几行。
    
         <add key="endpoint" value="enter the URI from the Keys blade of the Azure Portal"/>
@@ -391,13 +396,12 @@
 
 1. 将下列方法添加到 **DocumentDBRepository** 类。
    
-		public static async Task<Document> CreateItemAsync(T item)
-		{
-			return await client.CreateDocumentAsync(UriFactory.CreateDocumentCollectionUri(DatabaseId, CollectionId), item);
-		}
-
-	此方法只接受传递给它的对象，并将对象保留在 DocumentDB 中。
-
+       public static async Task<Document> CreateItemAsync(T item)
+       {
+           return await client.CreateDocumentAsync(UriFactory.CreateDocumentCollectionUri(DatabaseId, CollectionId), item);
+       }
+   
+   此方法只接受传递给它的对象，并将对象保留在 DocumentDB 中。
 2. 打开 ItemController.cs 文件，并在类中添加下列代码段。这是 ASP.NET MVC 得知如何执行**创建**操作的方式。在此情况下，只需呈现先前创建的关联 Create.cshtml 视图。
    
         [ActionName("Create")]
@@ -406,8 +410,7 @@
             return View();
         }
    
-	现在此控制器需要更多代码，以接受“创建”视图所提交的数据。
-
+    现在此控制器需要更多代码，以接受“创建”视图所提交的数据。
 3. 将下一个代码块添加到 ItemController.cs 类，以告诉 ASP.NET MVC 如何使用窗体 POST 来执行此控制器的操作。
    
         [HttpPost]
@@ -462,7 +465,7 @@
             }
         }
    
-    这些方法中的第一个方法 (**GetItem**) 会从 DocumentDB 中提取某个项，此项会被传递回 **ItemController**，接着传到“编辑”视图。
+    这些方法中的第一个方法 \(**GetItem**\) 会从 DocumentDB 中提取某个项，此项会被传递回 **ItemController**，接着传到“编辑”视图。
    
     刚刚添加的第二个方法使用从 **ItemController** 传入的**文档**版本取代 DocumentDB 中的**文档**。
 2. 将下列代码添加到 **ItemController** 类。
@@ -542,7 +545,7 @@
 
 在几秒钟内，Visual Studio 将完成 Web 应用程序发布并启动浏览器，你可从中查看在 Azure 中运行的简单作品！
 
-## <a name="troubleshooting"></a>故障排除
+## <a name="Troubleshooting"></a>故障排除
 
 如果尝试部署 Web 应用时收到“处理请求时发生错误”消息，请执行以下操作：
 
@@ -556,7 +559,7 @@
     - 区域：选择离应用用户最近的区域。
     - 数据库服务器： 单击无数据库，然后单击“创建”。
 
-4. 在“todo-net-app 屏幕”中单击“验证连接”。*验证连接后，即可发布**。
+4. 在“todo-net-app 屏幕”中单击“验证连接”。*验证连接后，即可发布*\*。
     
     之后，该应用在浏览器中显示。
 
@@ -573,4 +576,5 @@
 [Basic CRUD Operations in ASP.NET MVC]: http://go.microsoft.com/fwlink/?LinkId=317598
 [GitHub]: https://github.com/Azure-Samples/documentdb-net-todo-app
 
-<!---HONumber=Mooncake_Quality_Review_1230_2016-->
+<!---HONumber=Mooncake_0220_2017-->
+<!--Update_Description: link update-->

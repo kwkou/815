@@ -13,8 +13,8 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="data-services"
-    ms.date="12/13/2016"
-    wacn.date="01/23/2017"
+    ms.date="01/10/2017"
+    wacn.date="02/27/2017"
     ms.author="andrl" />  
 
 
@@ -103,7 +103,6 @@ fluent-plugin-documentdb 是用于输出到 Azure DocumentDB 的 Fluentd 插件�
 | 论坛提供者 | 说明 |
 | --- | --- |
 | [![堆栈溢出](./media/documentdb-community/stack-overflow.png)](http://stackoverflow.com/questions/tagged/azure-documentdb) |面向程序员的共同编辑问题和答案网站（与语言无关）。请访问我们的标记：[azure-documentdb](http://stackoverflow.com/questions/tagged/azure-documentdb) |
-| [![MSDN](./media/documentdb-community/msdn.png)](http://go.microsoft.com/fwlink/?LinkId=631655) |提供 Azure 功能和服务（例如网站、DocumentDB 等等）支持与反馈的好地方。 |
 
 ## 与团队联系
 ![团队](./media/documentdb-community/documentdb-team.png)  
@@ -124,7 +123,7 @@ fluent-plugin-documentdb 是用于输出到 Azure DocumentDB 的 Fluentd 插件�
 ### 其他项目
 | 名称 | Github | 网站 |
 | --- | --- | --- |
-| 文档 | azure-content |[文档网站](/documentation/services/documentdb/) |
+| 文档 |[azure-content](https://github.com/Azure/azure-content/tree/master/articles/documentdb) |[文档网站](/documentation/services/documentdb/) |
 | Hadoop 连接器 |[azure-documentdb-hadoop](https://github.com/Azure/azure-documentdb-hadoop) |[Maven](http://search.maven.org/#search%7Cga%7C1%7Ca%3A%22azure-documentdb-hadoop%22) |
 | 数据迁移工具 |[azure-documentdb-datamigrationtool](https://github.com/Azure/azure-documentdb-datamigrationtool) |[Microsoft 下载中心](http://www.microsoft.com/en-us/download/details.aspx?id=46436) |
 
@@ -133,6 +132,5 @@ DocumentDB 奇才是社区领导者，他们是帮助其他人充分利用他们
 
 想要成为 DocumentDB 奇才？ 由于是否能成为 DocumentDB 奇才并没有任何评判基准，因此我们会针对部分条件来评估，包括被提名人对在线论坛（例如 StackOverflow 和 MSDN；Wiki 和在线内容；会议和用户组；播客；网站；博客和社交媒体；以及文章与书籍）的贡献所产生的影响。如果想提名自己或其他人，[请向我们发送电子邮件](mailto:askdocdb@microsoft.com)。
 
-<!---HONumber=Mooncake_0109_2017-->
-<!---Update_Description: wording update -->
-
+<!---HONumber=Mooncake_0220_2017-->
+<!---Update_Description: wording and link update -->

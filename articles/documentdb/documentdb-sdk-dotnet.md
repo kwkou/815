@@ -13,12 +13,12 @@
     ms.tgt_pltfrm="na"
     ms.devlang="dotnet"
     ms.topic="article"
-    ms.date="12/09/2016"
-    wacn.date="01/23/2017"
+    ms.date="12/22/2016"
+    wacn.date="02/27/2017"
     ms.author="rnagpal" />
 
 # DocumentDB API 和 SDK
->[AZURE.SELECTOR]
+> [AZURE.SELECTOR]
 - [.NET](/documentation/articles/documentdb-sdk-dotnet/)
 - [.NET Core](/documentation/articles/documentdb-sdk-dotnet-core/)
 - [Node.js](/documentation/articles/documentdb-sdk-node/)
@@ -29,7 +29,7 @@
 - [SQL](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx)
 
 ## DocumentDB .NET API 和 SDK
-<table>
+<table>  
 
 
 <tr><td>**SDK 下载**</td><td><a href="https://www.nuget.org/packages/Microsoft.Azure.DocumentDB/">NuGet</a></td></tr>
@@ -46,6 +46,13 @@
 </table>
 
 ## 发行说明
+
+> [AZURE.NOTE]
+从版本 1.9.2 开始，如果主机进程为 32 位，在针对分区集合运行查询时，可能会出现 System.NotSupportedException。为了避免此异常，请确保主机进程为 64 位。有关详细信息，请参阅[疑难解答](#troubleshooting)。
+
+### <a name="1.11.1"/>[1\.11.1](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB/1.11.1)
+- 对 1.11.0 版本中引入的 CreateDocumentCollectionIfNotExistsAsync API 的轻微性能修复。
+- 针对 SDK 中涉及高度并发请求的方案的性能修复。
 
 ### <a name="1.11.0"/>[1\.11.0](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB/1.11.0)
 - 支持新类和方法，可处理集合内的文档[更改源](/documentation/articles/documentdb-change-feed/)。
@@ -106,7 +113,7 @@
 - 实现了[分区集合](/documentation/articles/documentdb-partition-data/)和[用户定义的性能级别](/documentation/articles/documentdb-performance-levels/)。
 
 ### <a name="1.5.3"/>[1\.5.3](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB/1.5.3)
-- **\[已修复\]** 查询 DocumentDB 终结点引发：“System.Net.Http.HttpRequestException：将内容复制到流时出错”。
+- **\[已修复\]** 查询 DocumentDB 终结点引发：“System.Net.Http.HttpRequestException: 将内容复制到流时出错”。
 
 ### <a name="1.5.2"/>[1\.5.2](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB/1.5.2)
 - 扩展的 LINQ 支持，包括用于分页、条件表达式和范围比较的新运算符。
@@ -157,9 +164,9 @@
   - LINQ 提供程序支持 OrderBy\(\) 或 OrderByDescending\(\)
   - 支持 Order By 的 IndexingPolicy
     
-    **注意：可能非常重大的更改** 
+        **注意：可能非常重大的更改** 
     
-    如果你的现有代码使用自定义索引策略预配集合，那么你的现有代码将需要更新为支持新的 IndexingPolicy 类。 如果你没有任何自定义索引策略，此更改不会影响你。 
+        如果你的现有代码使用自定义索引策略预配集合，那么你的现有代码将需要更新为支持新的 IndexingPolicy 类。 如果你没有任何自定义索引策略，此更改不会影响你。
 
 ### <a name="1.1.0"/>[1\.1.0](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB/1.1.0)
 - 通过使用新的 HashPartitionResolver 和 RangePartitionResolver 类以及 IPartitionResolver 支持对数据进行分区
@@ -170,15 +177,6 @@
 ### <a name="1.0.0"/>[1\.0.0](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB/1.0.0)
 - GA SDK
 
-> [AZURE.NOTE]
-预览版和 GA 版之间的 NuGet 程序包名称有所更改。从 **Microsoft.Azure.Documents.Client** 移到了 **Microsoft.Azure.DocumentDB**
-> <br/>
-> 
-> 
-
-### <a name="0.9.x-preview"/>[0\.9.x-preview](https://www.nuget.org/packages/Microsoft.Azure.Documents.Client)
-- 预览版 SDK\[已过时\]
-
 ## 发布和停用日期
 Microsoft 至少会在停用 SDK 的 **12 个月**之前发出通知，以便顺利转换到更新的/受支持的版本。
 
@@ -186,42 +184,43 @@ Microsoft 至少会在停用 SDK 的 **12 个月**之前发出通知，以便顺
 
 使用已停用的 SDK 对 DocumentDB 发出的任何请求都将被服务拒绝。
 
-> [AZURE.WARNING]
-**1.0.0** 版之前的所有 Azure DocumentDB SDK for .NET 版本都将在 **2016 年 2 月 29 日**停用。
-> 
-> 
+<br/>  
 
-<br/>
 
 | 版本 | 发布日期 | 停用日期 |
 | --- | --- | --- |
-| [1\.11.0](#1.11.0) |2016 年 12 月 8 日 |--- | 
-| [1\.10.0](#1.10.0) |2016 年 9 月 27 日 |--- | 
-| [1\.9.5](#1.9.5) |2016 年 9 月 1 日 |--- | 
-| [1\.9.4](#1.9.4) |2016 年 8 月 24 日 |--- | 
-| [1\.9.3](#1.9.3) |2016 年 8 月 15 日 |--- | 
-| [1\.9.2](#1.9.2) |2016 年 7 月 23 日 |--- | 
-| 1.9.1 |已弃用 |--- | 
-| 1.9.0 |已弃用 |--- | 
-| [1\.8.0](#1.8.0) |2016 年 6 月 14 日 |--- | 
-| [1\.7.1](#1.7.1) |2016 年 5 月 6 日 |--- | 
-| [1\.7.0](#1.7.0) |2016 年 4 月 26 日 |--- | 
-| [1\.6.3](#1.6.3) |2016 年 4 月 8 日 |--- | 
-| [1\.6.2](#1.6.2) |2016 年 3 月 29 日 |--- | 
-| [1\.5.3](#1.5.3) |2016 年 2 月 19 日 |--- | 
-| [1\.5.2](#1.5.2) |2015 年 12 月 14 日 |--- | 
-| [1\.5.1](#1.5.1) |2015 年 11 月 23 日 |--- | 
-| [1\.5.0](#1.5.0) |2015 年 10 月 5 日 |--- | 
-| [1\.4.1](#1.4.1) |2015 年 8 月 25 日 |--- | 
-| [1\.4.0](#1.4.0) |2015 年 8 月 13 日 |--- | 
-| [1\.3.0](#1.3.0) |2015 年 8 月 5 日 |--- | 
-| [1\.2.0](#1.2.0) |2015 年 7 月 6 日 |--- | 
-| [1\.1.0](#1.1.0) |2015 年 4 月 30 日 |--- | 
-| [1\.0.0](#1.0.0) |2015 年 4 月 8 日 |--- | 
-| [0\.9.3-prelease](#0.9.x-preview) |2015 年 3 月 12 日 |2016 年 2 月 29 日 | 
-| [0\.9.2-prelease](#0.9.x-preview) |2015 年 1 月 |2016 年 2 月 29 日 | 
-| [.9.1-prelease](#0.9.x-preview) |2014 年 10 月 13 日 |2016 年 2 月 29 日 | 
-| [0\.9.0-prelease](#0.9.x-preview) |2014 年 8 月 21 日 |2016 年 2 月 29 日|
+\| [1\.11.1](#1.11.1) \|2016 年 12 月 21 日 \|--- \| 
+\| [1\.11.0](#1.11.0) \|2016 年 12 月 8 日 \|--- \| 
+\| [1\.10.0](#1.10.0) \|2016 年 9 月 27 日 \|--- \| 
+\| [1\.9.5](#1.9.5) \|2016 年 9 月 1 日 \|--- \| 
+\| [1\.9.4](#1.9.4) \|2016 年 8 月 24 日 \|--- \| 
+\| [1\.9.3](#1.9.3) \|2016 年 8 月 15 日 \|--- \| 
+\| [1\.9.2](#1.9.2) \|2016 年 7 月 23 日 \|--- \| 
+\| 1.9.1 \|已弃用 \|--- \| 
+\| 1.9.0 \|已弃用 \|--- \| 
+\| [1\.8.0](#1.8.0) \|2016 年 6 月 14 日 \|--- \| 
+\| [1\.7.1](#1.7.1) \|2016 年 5 月 6 日 \|--- \| 
+\| [1\.7.0](#1.7.0) \|2016 年 4 月 26 日 \|--- \| 
+\| [1\.6.3](#1.6.3) \|2016 年 4 月 8 日 \|--- \| 
+\| [1\.6.2](#1.6.2) \|2016 年 3 月 29 日 \|--- \| 
+\| [1\.5.3](#1.5.3) \|2016 年 2 月 19 日 \|--- \| 
+\| [1\.5.2](#1.5.2) \|2015 年 12 月 14 日 \|--- \| 
+\| [1\.5.1](#1.5.1) \|2015 年 11 月 23 日 \|--- \| 
+\| [1\.5.0](#1.5.0) \|2015 年 10 月 5 日 \|--- \| 
+\| [1\.4.1](#1.4.1) \|2015 年 8 月 25 日 \|--- \| 
+\| [1\.4.0](#1.4.0) \|2015 年 8 月 13 日 \|--- \| 
+\| [1\.3.0](#1.3.0) \|2015 年 8 月 5 日 \|--- \| 
+\| [1\.2.0](#1.2.0) \|2015 年 7 月 6 日 \|--- \| 
+\| [1\.1.0](#1.1.0) \|2015 年 4 月 30 日 \|--- \| 
+\| [1\.0.0](#1.0.0) \|2015 年 4 月 8 日 \|--- \|
+
+## 故障排除 <a name="troubleshooting"></a>
+
+如果在 32 位进程中运行时遇到错误，指出无法从查询中提取分区路由信息，请在 Visual Studio 中执行以下操作：
+- 对于可执行应用程序，请在“项目”菜单中单击“项目名称”\|“属性...” 然后，在“生成”选项卡中清除“首选 32 位”框。
+- 对于 VSTest 测试项目，请在“测试”菜单中选择“测试设置”\|“默认处理器体系结构为 X64”。
+- 对于本地部署的 ASP.NET Web 应用程序，请在“工具”菜单中选择“选项”\|“项目和解决方案”\|“Web 项目”，然后选中“对网站和项目使用 64 位版本的 IIS Express”框。
+
 
 ## 常见问题
 [AZURE.INCLUDE [documentdb sdk 常见问题](../../includes/documentdb-sdk-faq.md)]
@@ -229,5 +228,5 @@ Microsoft 至少会在停用 SDK 的 **12 个月**之前发出通知，以便顺
 ## 另请参阅
 若要了解有关 DocumentDB 的详细信息，请参阅 [Azure DocumentDB](/home/features/documentdb/) 服务页。
 
-<!---HONumber=Mooncake_0109_2017-->
-<!---Update_Description: wording update -->
+<!---HONumber=Mooncake_0220_2017-->
+<!---Update_Description: add content of "Release notes" and "Troubleshooting" -->
