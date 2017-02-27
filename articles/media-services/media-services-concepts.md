@@ -13,8 +13,8 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="12/07/2016"
-    wacn.date="01/13/2017"
+    ms.date="01/05/2017"
+    wacn.date="02/24/2017"
     ms.author="juliako" />  
 
 
@@ -27,7 +27,7 @@
 
 [资产](https://docs.microsoft.com/zh-cn/rest/api/media/operations/asset)包含数字文件（包括视频、音频、图像、缩略图集合、文本轨道和隐藏式字幕文件）以及这些文件的相关元数据。数字文件上传到资产中后，即可用于媒体服务编码和流式处理工作流。
 
-资产将映射到 Azure Storage 帐户中的 blob 容器中，资产中的文件则作为 blob 存储在该容器中。
+资产将映射到 Azure 存储帐户中的 blob 容器，资产中的文件则作为块 blob 存储在该容器中。页 blob 不受 Azure 媒体服务支持。
 
 确定要将哪些媒体内容上传并存储到资产中时，需注意以下事项：
 
@@ -94,10 +94,7 @@ Azure 媒体服务提供了多个用于在云中对媒体进行编码的选项�
 
 媒体服务所提供的动态打包允许以媒体服务支持的流格式（MPEG DASH、HLS、平滑流式处理）传送自适应比特率 MP4 或平滑流式处理编码内容，而无须重新打包成这些流格式。
 
-若要使用[动态打包](/documentation/articles/media-services-dynamic-packaging-overview/)，必须执行下列操作：
-
-- 将夹层（源）文件编码成一组自适应比特率 MP4 文件或自适应比特率平滑流文件（本教程稍后将演示编码步骤）。
-- 针对要传送内容的流式处理终结点，获取至少一个按需流式处理单位。有关详细信息，请参阅[如何缩放按需流式处理保留单元](/documentation/articles/media-services-manage-origins/#scale_streaming_endpoints/)。
+若要利用[动态打包](/documentation/articles/media-services-dynamic-packaging-overview/)，需将 mezzanine（源）文件编码为一组自适应比特率 MP4 文件或自适应比特率平滑流式处理文件，且至少有一个标准流式处理终结点处于已启动状态。
 
 媒体服务支持将在本文中介绍的以下按需编码器：
 
@@ -111,9 +108,8 @@ Azure 媒体服务提供了多个用于在云中对媒体进行编码的选项�
 
 在 Azure 媒体服务中，频道表示用于处理实时流内容的管道。频道通过以下两种方式之一接收实时输入流：
 
-- 本地实时编码器将多比特率 RTMP 或平滑流（分片 MP4）发送到频道。可以使用以下输出多比特率平滑流的实时编码器：Elemental、Envivio、Cisco。以下实时编码器输出 RTMP：Adobe Flash Live、Telestream Wirecast 和 Tricaster 转码器。引入的流会直接通过频道，而不会经过任何进一步的处理。收到请求时，媒体服务会将该流传送给客户。
-
-- 将单比特率流（采用以下格式之一：RTP (MPEG-TS)、RTMP 或平滑流（分片 MP4）发送到能够使用媒体服务执行实时编码的频道。然后，频道将对传入的单比特率流执行实时编码，使之转换为多比特率（自适应）视频流。收到请求时，媒体服务会将该流传送给客户。
+* 本地实时编码器将多比特率 RTMP 或平滑流（分片 MP4）发送到频道。可以使用以下输出多比特率平滑流式处理的实时编码器：MediaExcel、Ateme、Imagine Communications、Envivio、Cisco、Elemental。以下实时编码器输出 RTMP：Adobe Flash Live Encoder、Telestream Wirecast、Teradek、Haivision 和 Tricaster 编码器。引入流将通过通道，但不会进行任何进一步的转码和编码操作。收到请求时，媒体服务会将该流传送给客户。
+* 将单比特率流（采用以下格式之一：RTP \(MPEG-TS\)、RTMP 或平滑流（分片 MP4）发送到能够使用媒体服务执行实时编码的频道。然后，频道将对传入的单比特率流执行实时编码，使之转换为多比特率（自适应）视频流。收到请求时，媒体服务会将该流传送给客户。
 
 ###频道
 
@@ -175,12 +171,15 @@ ArchiveWindowLength 还决定了客户端能够从当前实时位置按时间向
 
 使用媒体服务时，建议始终将夹层文件编码为自适应比特率 MP4 集，然后使用[动态打包](/documentation/articles/media-services-dynamic-packaging-overview/)将该集转换为所需的格式。
 
+### 流式处理终结点
+StreamingEndpoint 表示一个流服务，该服务可以直接将内容传送给客户端播放器应用程序，也可以传送给内容交付网络 \(CDN\) 以进一步分发（Azure 媒体服务现在还提供了 Azure CDN 集成）。 流式处理终结点服务的出站流可以是实时流，也可以是媒体服务帐户中的视频点播资产。媒体服务客户可以根据自身需要，选择“标准”流式处理终结点或者一个或多个“高级”流式处理终结点。标准流式处理终结点适用于最消耗流的工作负荷。
 
-###流式处理终结点
+标准流式处理终结点适用于最消耗流的工作负荷。标准流式处理终结点可以动态地将内容打包成 HLS、MPEG-DASH 和平滑流式处理，并针对 Microsoft PlayReady、Google Widevine、Apple Fairplay 和 AES128 进行动态加密，从而灵活地将内容传送到几乎所有设备。此外还可以通过 Azure CDN 集成将受众规模从极小扩展到极大，并发观看者可以成千上万。如果工作负荷为高级工作负荷，或者流式处理容量要求不符合标准流式处理终结点吞吐量目标，或者需要根据日益增长的带宽需求控制 StreamingEndpoint 服务的容量，则建议分配缩放单位（也称高级流式处理单位）。
 
-StreamingEndpoint 表示一个流服务，该服务可以直接将内容传送给客户端播放器应用程序，也可以传送给内容交付网络 (CDN) 以进一步分发（Azure 媒体服务现在还提供了 Azure CDN 集成）。 StreamingEndpoint 服务的出站流可以是实时流，也可以是媒体服务帐户中的视频点播资产。此外，还可以通过调整扩展单元（也称为流单元）来控制 StreamingEndpoint 服务处理不断增长的带宽需求的能力。建议为生产环境中的应用程序分配一个或多个扩展单元。缩放单元提供能够以 200 Mbps 为增量购买的专用出口容量和附加功能（当前包括使用动态打包）。
+建议使用动态打包和/或动态加密。
 
-建议使用动态打包和/或动态加密。若要使用这些功能，必须获取计划从中流式传输内容的终结点的至少一个流式处理单位。有关详细信息，请参阅[缩放流式处理单位](/documentation/articles/media-services-manage-origins/#scale_streaming_endpoints)。
+>[AZURE.NOTE]
+创建 AMS 帐户时，系统会将**默认**流式处理终结点以“已停止”状态添加到用户的帐户。若要开始对内容进行流式处理并利用动态打包和动态加密功能，必须确保要从其流式获取内容的流式处理终结点处于“正在运行”状态。
 
 默认情况下，每个媒体服务帐户最多可以包含 2 个流式处理终结点。若要请求更高的限制，请参阅[配额和限制](/documentation/articles/media-services-quotas-and-limitations/)。
 
@@ -206,7 +205,7 @@ StreamingEndpoint 表示一个流服务，该服务可以直接将内容传送�
 
 将内容流式传输到客户端。若要为用户提供流式处理 URL，必须先创建一个 OnDemandOrigin 定位符。创建定位符可为你提供包含要流式传输的内容的资产的基本路径。但是，为了能够流式传输此内容，需要进一步修改此路径。若要构造流清单文件的完整 URL，必须将定位符的 Path 值与清单 (filename.ism) 文件名连接起来。然后，向定位符路径追加 /Manifest 和相应的格式（如果需要）。
 
-你也可以通过 SSL 连接流式传输内容。为此，请确保流式处理 URL 以 HTTPS 开头。
+你也可以通过 SSL 连接流式传输内容。为此，请确保流 URL 以 HTTPS 开头。请注意，AMS 目前不支持对自定义域使用 SSL。
 
 请注意，仅当要从中传送内容的流式处理终结点创建于 2014 年 9 月 10 日以后时，才可以通过 SSL 流式传输内容。如果流式处理 URL 基于 9 月 10 日之后创建的流式处理终结点，则 URL 会包含“streaming.mediaservices.chinacloudapi.cn”（新格式）。包含“origin.mediaservices.chinacloudapi.cn”（旧格式）的流式处理 URL 不支持 SSL。如果你的 URL 采用旧格式，并且希望能够通过 SSL 流式传输内容，请创建新的流式处理终结点。使用基于新流式处理终结点创建的 URL 通过 SSL 流式传输内容。
 
@@ -241,5 +240,5 @@ StreamingEndpoint 表示一个流服务，该服务可以直接将内容传送�
 
 		http://testendpoint-testaccount.streaming.mediaservices.chinacloudapi.cn/fecebb23-46f6-490d-8b70-203e86b0df58/BigBuckBunny.ism/Manifest(format=m3u8-aapl-v3)
 
-<!---HONumber=Mooncake_0109_2017-->
-<!--Update_Description: remove HDS related content-->
+<!---HONumber=Mooncake_0220_2017-->
+<!--Update_Description: add note for page block not supported; add some new supported encoder; add note for SSL not supported-->

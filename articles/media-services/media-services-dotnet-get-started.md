@@ -13,17 +13,34 @@
     ms.tgt_pltfrm="na"
     ms.devlang="dotnet"
     ms.topic="hero-article"
-    ms.date="12/15/2016"
-    wacn.date="01/13/2017"
+    ms.date="01/10/2017"
+    wacn.date="02/24/2017"
     ms.author="juliako" />
 
 # 使用 .NET SDK 开始传送点播内容
 
 [AZURE.INCLUDE [media-services-selector-get-started](../../includes/media-services-selector-get-started.md)]
 
->[AZURE.NOTE]
-若要完成本教程，你需要一个 Azure 帐户。有关详细信息，请参阅 [Azure 试用](/pricing/1rmb-trial/?WT.mc_id=A261C142F)。
- 
+本教程将引导用户完成相关步骤，利用 Azure 媒体服务 .NET SDK 和 Azure 媒体服务 \(AMS\) 应用程序实现基本的点播视频 \(VoD\) 内容传送服务。
+
+## 先决条件
+
+以下是完成本教程所需具备的条件：
+
+* 一个 Azure 帐户。有关详细信息，请参阅 [1 元试用](/pricing/1rmb-trial/)。
+* 一个媒体服务帐户。若要创建媒体服务帐户，请参阅[如何创建媒体服务帐户](/documentation/articles/media-services-create-account/)。
+* .NET Framework 4.0 或更高版本
+* Visual Studio 2010 SP1（Professional、Premium、Ultimate 或 Express）或更高版本。
+
+本教程包括以下任务：
+
+1. 启动流式处理终结点（使用 Azure 经典管理门户）。
+2. 创建和配置 Visual Studio 项目。
+3. 连接到媒体服务帐户。
+2. 上载视频文件。
+3. 将源文件编码为一组自适应比特率 MP4 文件。
+4. 发布资产并获取流式处理和渐进式下载 URL。
+5. 播放内容。
 
 ## 概述
 本教程将引导你完成使用用于 .NET 的 Azure 媒体服务 (AMS) SDK 实施视频点播 (VoD) 内容传送应用程序的步骤。
@@ -38,65 +55,17 @@
 
 <a href="./media/media-services-dotnet-get-started/media-services-overview-object-model.png" target="_blank"><img src="./media/media-services-dotnet-get-started/media-services-overview-object-model-small.png"></a>
 
-可在[此处](https://media.windows.net/API/$metadata?api-version=2.14)查看完整模型。
+可在[此处](https://media.windows.net/API/$metadata?api-version=2.15)查看完整模型。
 
-## 学习内容
-本教程说明如何完成以下任务：
+## 使用 Azure 经典管理门户启动流式处理终结点
 
-1.  创建媒体服务帐户（使用 Azure 经典管理门户）。
-2.  配置流式处理终结点（使用 Azure 经典管理门户）。
-3.  创建和配置 Visual Studio 项目。
-4. 连接到媒体服务帐户。
-5. 创建新资产并上载视频文件。
-6. 将源文件编码为一组自适应比特率 MP4 文件。
-7. 发布资产并获取用于流式处理和渐进式下载的 URL。
-8. 通过播放内容进行测试。
+使用 Azure 媒体服务时，最常见的场景之一是通过自适应比特率流式处理来传送视频。媒体服务提供动态打包，可按媒体服务支持的流格式（MPEG DASH、HLS、平滑流式处理）及时传送自适应比特率 MP4 编码内容，而无需存储上述各流格式的预打包版本。
 
-## 先决条件
-以下是完成本教程所需具备的条件。
+>[AZURE.NOTE]
+创建 AMS 帐户时，系统会将**默认**流式处理终结点以“已停止”状态添加到用户的帐户。若要开始对内容进行流式处理并利用动态打包和动态加密功能，必须确保要从其流式获取内容的流式处理终结点处于“正在运行”状态。
 
-- 若要完成本教程，你需要一个 Azure 帐户。
-	
-	如果你没有帐户，可以创建一个试用帐户，只需几分钟即可完成。有关详细信息，请参阅 [Azure 试用](/pricing/1rmb-trial/?WT.mc_id=A261C142F)。获取可用来尝试付费版 Azure 服务的信用额度。即使在信用额度用完后，也可保留帐户并使用免费的 Azure 服务和功能，例如 Azure App Service 中的 Web 应用功能。
-- 操作系统：Windows 8 或更高版本、Windows 2008 R2、Windows 7。
-- .NET Framework 4.0 或更高版本
-- Visual Studio 2010 SP1（Professional、Premium、Ultimate 或 Express）或更高版本。
-
-
-
-##使用门户创建媒体服务帐户
-
-1. 在 Azure 经典管理门户中，依次单击“新建”、“媒体服务”和“快速创建”。
-
-	![媒体服务快速创建](./media/media-services-dotnet-get-started/wams-QuickCreate.png)
-
-2. 在“名称”中，输入新帐户的名称。媒体服务帐户名称由小写字母或数字构成（不含空格），长度为 3 - 24 个字符。
-
-3. 在“区域”中，选择将用于存储媒体服务帐户的元数据记录的地理区域。下拉列表中仅显示可用的媒体服务区域。
-
-4. 在“存储帐户”中，选择一个存储帐户以便为媒体服务帐户中的媒体内容提供 Blob 存储。你可以选择位于媒体服务帐户所在的地理区域内的现有存储帐户，也可以创建一个新的存储帐户。将在同一区域内创建一个新的存储帐户。
-
-5. 如果你创建了一个新的存储帐户，请在“新建存储帐户名称”中输入该存储帐户的名称。适用于存储帐户名的规则对媒体服务帐户同样适用。
-
-6. 单击窗体底部的“快速创建”。
-
-可以在窗口底部的消息区域中监视过程的状态。
-
-成功创建帐户后，状态将更改为“活动”。
-
-在页面底部，将出现“管理密钥”按钮。当你单击此按钮时，将会显示一个对话框，其中包含媒体服务帐户名以及主密钥和辅助密钥。你必须要有帐户名和主要密钥信息，才能以编程方式访问媒体服务帐户。
-
-![“媒体服务”页](./media/media-services-dotnet-get-started/wams-mediaservices-page.png)
-
-当你双击帐户名时，默认情况下将显示“快速启动”页。可从此页执行某些管理任务，而这些管理任务也可从该门户的其他页执行。例如，你可以从此页上载视频文件，也可以从“内容”页执行此操作。
-
-##<a name="configure-streaming-endpoint-using-the-portal"></a>使用门户配置流式处理终结点
-
-使用 Azure 媒体服务时，最常见的场景之一是通过自适应比特率流式处理将视频传送至你的客户端。媒体服务支持以下自适应比特率流式处理技术：HTTP 实时流式处理 (HLS)、平滑流式处理、MPEG DASH 和 HDS（仅适用于 Adobe PrimeTime/Access 许可证持有人）。
-
-媒体服务提供动态打包，可按媒体服务支持的流格式（MPEG DASH、HLS、平滑流式处理和 HDS）及时传送自适应比特率 MP4 编码内容，而无需存储上述各流格式的预打包版本。
-
-若要使用动态打包，必须执行下列操作：
+##<a name="configure-streaming-endpoint-using-the-portal"></a>使用经典管理门户配置流式处理终结点
+若要启动流式处理终结点，请执行以下操作：
 
 * 将夹层（源）文件编码成一组自适应比特率 MP4 文件（本教程稍后将演示编码步骤）。
 * 针对你要从其传送内容的“流式处理终结点”，创建至少一个流式处理单元。以下步骤显示如何更改流式处理单元数。
@@ -275,14 +244,11 @@
 
 如前所述，使用 Azure 媒体服务时最常见的方案之一是将自适应比特率流传送至你的客户端。媒体服务可将一组自适应比特率 MP4 文件动态打包为以下格式之一：HTTP Live Streaming \(HLS\)、平滑流式处理和 MPEG DASH。
 
-若要使用动态打包，必须执行下列操作：
-
-- 将夹层（源）文件编码或转换成一组自适应比特率 MP4 文件或自适应比特率平滑流文件，
-- 针对你要传送内容的“流式处理终结点”，获取至少一个流式处理单位。
+若要利用动态打包功能，需将夹层（源）文件编码或转换成一组自适应比特率 MP4 文件或自适应比特率平滑流式处理文件。
 
 以下代码演示如何提交编码作业。该作业所包含的一项任务会指定要使用 **Media Encoder Standard** 将夹层文件转码成一组自适应比特率 MP4。代码会提交作业，并等待作业完成。
 
-编码作业完成后，即可发布资产，然后流式传输或渐进式下载 MP4 文件。
+作业完成后，你即可流式处理资产，或渐进式下载转码后所创建的 MP4 文件。
  
 将以下方法添加到 Program 类。
 
@@ -340,7 +306,8 @@
 
 	{streaming endpoint name-media services account name}.streaming.mediaservices.chinacloudapi.cn/{locator ID}/{filename}.ism/Manifest
 
-用于下载文件的 SAS URL 采用以下格式：
+
+#### 用于下载文件的 SAS URL 采用以下格式：
 
 	{blob container name}/{asset name}/{file name}/{SAS signature}
 
@@ -473,5 +440,5 @@ MPEG DASH
   [Web Platform Installer]: http://go.microsoft.com/fwlink/?linkid=255386
   [Portal]: http://manage.windowsazure.cn/
 
-<!---HONumber=Mooncake_0109_2017-->
-<!--Update_Description:add AMS sub-section; update steaming urls-->
+<!---HONumber=Mooncake_0220_2017-->
+<!--Update_Description: move "先决条件" section before "概述"; wording update-->

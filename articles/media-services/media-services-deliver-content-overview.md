@@ -13,10 +13,9 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="12/07/2016"
-    wacn.date="01/13/2017"
+    ms.date="01/05/2017"
+    wacn.date="02/24/2017"
     ms.author="juliako" />  
-
 
 
 # 向客户传送内容
@@ -27,27 +26,26 @@
 - 将流编码为多比特率（自适应比特率）视频流。此操作可负责处理质量和网络条件问题。
 - 使用 Azure 媒体服务[动态打包](/documentation/articles/media-services-dynamic-packaging-overview/)功能将流动态地重新打包为不同的协议。此操作可负责处理不同设备上的流式处理问题。媒体服务支持传送以下自适应比特率流式处理技术：HTTP Live Streaming \(HLS\)、平滑流式处理和 MPEG-DASH。
 
+>[AZURE.NOTE]
+创建 AMS 帐户时，系统会将**默认**流式处理终结点以“已停止”状态添加到用户的帐户。若要开始对内容进行流式处理并利用动态打包和动态加密功能，必须确保要从其流式获取内容的流式处理终结点处于“正在运行”状态。
+
 本文概述重要的内容传送概念。
 
 若要查看已知问题，请参阅[已知问题](/documentation/articles/media-services-deliver-content-overview/#known-issues)。
 
 ## 动态打包
-
 借助媒体服务提供的动态打包功能，可采用媒体服务支持的流式传输格式（MPEG-DASH、HLS、平滑流式处理）传送自适应比特率 MP4 或平滑流式处理编码内容，而无须重新打包成这些流式传输格式。我们建议使用动态打包功能传送内容。
 
-若要使用动态打包，必须执行下列操作：
-
-- 将夹层（源）文件编码成一组自适应比特率 MP4 文件或自适应比特率平滑流式处理文件。
-- 针对计划从其中传送内容的流式处理终结点，获取至少一个按需流式处理单位。有关详细信息，请参阅[如何缩放按需流式处理保留单元](/documentation/articles/media-services-manage-origins/#scale_streaming_endpoints)。 
+若要利用动态打包功能，需将夹层（源）文件编码成一组自适应比特率 MP4 文件或自适应比特率平滑流式处理文件。
 
 借助动态打包功能，可存储和播放使用单一存储格式的文件。媒体服务会根据请求生成并提供适当的响应。
 
-除了提供动态打包功能访问权限外，按需流式处理保留单元还提供可按照 200 Mbps 的增量购买的专用出口容量。默认情况下，按需流式处理在共享实例模型中配置，该模型的服务器资源（例如，计算或出口容量）与所有其他用户共享。可通过购买按需流式处理保留单元，提高按需流式处理吞吐量。
+动态打包适用于标准流式处理终结点。
 
 有关详细信息，请参阅[动态打包](/documentation/articles/media-services-dynamic-packaging-overview/)。
 
 ## 筛选器和动态清单
-借助媒体服务，可为资产定义筛选器。这些筛选器是服务器端规则，可帮助客户完成类似如下的操作：播放视频的特定部分，或指定客户设备可以处理的音频和视频呈现形式（而非与该资产相关的所有呈现形式）的子集。通过客户请求根据一个或多个指定的筛选器流式传输视频时创建的 *动态清单* ，可实现此筛选操作。
+借助媒体服务，可为资产定义筛选器。这些筛选器是服务器端规则，可帮助客户完成类似如下的操作：播放视频的特定部分，或指定客户设备可以处理的音频和视频呈现形式（而非与该资产相关的所有呈现形式）的子集。通过客户请求根据一个或多个指定的筛选器流式传输视频时创建的*动态清单*，可实现此筛选操作。
 
 有关详细信息，请参阅[筛选器和动态清单](/documentation/articles/media-services-dynamic-manifest-overview/)。
 
@@ -63,7 +61,7 @@
 
 >[AZURE.NOTE] 如果在 2015 年 3 月之前使用 Azure 门户创建定位符，这些定位符设置为两年后过期。
 
-若要更新定位符的过期日期，请使用 [REST](https://docs.microsoft.com/zh-cn/rest/api/media/operations/locator#a-nameupdatealocatora-update-a-locator) 或 [.NET] (https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.mediaservices.client.ilocator.update(v=azure.10).aspx) API。请注意，当你更新 SAS 定位符的过期日期时，URL 会发生变化。
+若要更新定位符的过期日期，请使用 [REST](https://docs.microsoft.com/zh-cn/rest/api/media/operations/locator#update_a_locator) 或 [.NET] (https://docs.microsoft.com/zh-cn/dotnet/api/microsoft.windowsazure.mediaservices.client.ilocator?redirectedfrom=MSDN#Microsoft_WindowsAzure_MediaServices_Client_ILocator_Update_System_DateTime_) API。请注意，当你更新 SAS 定位符的过期日期时，URL 会发生变化。
  
 定位符不用于管理按用户的访问控制。通过数字版权管理 (DRM) 解决方案，可以为不同的用户提供不同的访问权限。有关详细信息，请参阅[保护媒体](http://msdn.microsoft.com/zh-cn/library/azure/dn282272.aspx)。
 
@@ -74,7 +72,7 @@
 
 若要为用户提供流式处理 URL，必须先创建一个 OnDemandOrigin 定位符。通过创建定位符，可获得包含要流式传输的内容的资产的基本路径。但是，为了能够流式传输此内容，需要进一步修改此路径。若要构造流式处理清单文件的完整 URL，必须将定位符的 path 值与清单 \(filename.ism\) 文件名连接起来。然后，向定位符路径追加 **/Manifest** 和相应的格式（如果需要）。
 
->[AZURE.NOTE]你也可以通过 SSL 连接流式传输内容。为此，请确保流 URL 以 HTTPS 开头。
+>[AZURE.NOTE]你也可以通过 SSL 连接流式传输内容。为此，请确保流 URL 以 HTTPS 开头。请注意，AMS 目前不支持对自定义域使用 SSL。
 
 仅当要从中传送内容的流式处理终结点是在 2014 年 9 月 10 日之后创建的情况下，才可以通过 SSL 流式传输内容。如果流式处理 URL 基于 2014 年 9 月 10 日之后创建的流式处理终结点，则 URL 会包含“streaming.mediaservices.chinacloudapi.cn”。 包含“origin.mediaservices.chinacloudapi.cn”（旧格式）的流 URL 不支持 SSL。如果你的 URL 采用旧格式，并且你希望能够通过 SSL 流式传输内容，请创建新的流式处理终结点。使用基于新流式处理终结点的 URL 通过 SSL 流式传输内容。
 
@@ -150,6 +148,8 @@
 
 流式处理终结点表示一个流服务，该服务可以直接将内容传送给客户端播放器应用程序，也可以直接将内容传送给内容交付网络 (CDN) 以进一步分发。流式处理终结点服务的出站流可以是实时流，也可以是媒体服务帐户中的视频点播资产。还可以通过调整流式处理保留单元来控制流式处理终结点服务处理不断增长的带宽需求的能力。你至少应该为生产环境中的应用程序分配一个保留单元。有关详细信息，请参阅[如何缩放媒体服务](/documentation/articles/media-services-manage-origins/#scale_streaming_endpoints)。
 
+>[AZURE.NOTE]
+创建 AMS 帐户时，系统会将**默认**流式处理终结点以“已停止”状态添加到用户的帐户。若要开始对内容进行流式处理并利用动态打包和动态加密功能，必须确保要从其流式获取内容的流式处理终结点处于“正在运行”状态。
 ##<a id="known-issues"></a>已知问题
 
 ### 更改为平滑流式处理清单版本
@@ -186,5 +186,5 @@
 [轮转存储密钥后更新媒体服务定位符](/documentation/articles/media-services-roll-storage-access-keys/)
  
 
-<!---HONumber=Mooncake_0109_2017-->
-<!--Update_Description: remove HDS related content-->
+<!---HONumber=Mooncake_0220_2017-->
+<!--Update_Description: add note for creating AMS account; add note for not support SSL-->

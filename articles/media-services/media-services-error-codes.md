@@ -5,8 +5,7 @@
     manager="erikre"
     editor=""
     services="media-services"
-    documentationcenter="" />  
-
+    documentationcenter="" />
 <tags
     ms.assetid="d3a62a64-7608-4b17-8667-479b26ba0d6c"
     ms.service="media-services"
@@ -14,8 +13,8 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="10/25/2016"
-    wacn.date="12/27/2016"
+    ms.date="01/10/2017"
+    wacn.date="02/24/2017"
     ms.author="juliako" />  
 
 
@@ -30,7 +29,7 @@
   
   > [AZURE.NOTE]如果使用 .NET 或 Java SDK 连接到媒体服务，则无论何时尝试并执行针对媒体服务的操作，都会指定 API 版本。
 
-* 指定了未定义的属性。错误消息中提供属性名称。仅可指定身份是给定实体的成员的那些属性。有关实体及其属性的列表，请参阅 [Azure 媒体服务 REST API 参考](https://docs.microsoft.com/zh-cn/rest/api/media/mediaservice)。
+* 指定了未定义的属性。错误消息中提供属性名称。仅可指定身份是给定实体的成员的那些属性。有关实体及其属性的列表，请参阅 [Azure 媒体服务 REST API 参考](https://docs.microsoft.com/rest/api/media/operations/azure-media-services-rest-api-reference)。
 * 指定了无效的属性值。错误消息中提供属性名称。请参阅上一个链接，了解有效的属性类型及其值。
 * 缺少必需的属性值。
 * 指定的 URL 中包含错误的值。
@@ -110,4 +109,5 @@
 ## 另请参阅
 [媒体服务管理错误代码](http://msdn.microsoft.com/zh-cn/library/windowsazure/dn167016.aspx)
 
-<!---HONumber=Mooncake_1205_2016-->
+<!---HONumber=Mooncake_0220_2017-->
+<!--Update_Description: update one link-->

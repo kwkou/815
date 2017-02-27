@@ -1,22 +1,21 @@
-<properties 
-	pageTitle="媒体服务发行说明 | Azure" 
-	description="媒体服务发行说明" 
-	services="media-services" 
-	documentationCenter="" 
-	authors="Juliako" 
-	manager="erikre" 
-	editor=""/>  
-
-
-<tags 
-	ms.service="media-services" 
-	ms.workload="media" 
-	ms.tgt_pltfrm="media" 
-	ms.devlang="dotnet" 
-	ms.topic="article" 
-	ms.date="09/19/2016"
-	wacn.date="12/27/2016"
-	ms.author="juliako"/>
+<properties
+    pageTitle="媒体服务发行说明 | Azure"
+    description="媒体服务发行说明"
+    services="media-services"
+    documentationcenter=""
+    author="Juliako"
+    manager="erikre"
+    editor="" />
+<tags
+    ms.assetid="3ca2d7af-1cf0-45fa-9585-3b73f3ee057d"
+    ms.service="media-services"
+    ms.workload="media"
+    ms.tgt_pltfrm="media"
+    ms.devlang="dotnet"
+    ms.topic="article"
+    ms.date="01/05/2017"
+    wacn.date="02/24/2017"
+    ms.author="juliako" />  
 
 
 # Azure 媒体服务发行说明
@@ -45,6 +44,11 @@ Azure 媒体服务 .NET SDK 对象无法进行序列化，因此无法与 Azure 
 ##<a id="rest_version_history"></a>REST API 版本历史记录
 
 有关媒体服务 REST API 版本历史记录的信息，请参阅 [Azure 媒体服务 REST API 参考]。
+
+
+## 2016 年 12 月版
+
+现在可以通过 Azure 媒体服务访问其服务的遥测/指标数据。通过当前版本的 AMS，可收集活动 Channel、StreamingEndpoint 和 Archive 实体的遥测数据。有关详细信息，请参阅[此](/documentation/articles/media-services-telemetry-overview/)主题。
 
 ##<a id="july_changes16"></a>2016 年 7 月版本
 

@@ -1,22 +1,21 @@
-<properties 
-	pageTitle="使用 Azure 媒体服务 REST API 创建筛选器 | Azure" 
-	description="本主题介绍如何创建筛选器，以便客户端能够使用它们对流的特定部分进行流式处理。媒体服务将创建动态清单来存档此选择性流。"
-	services="media-services" 
-	documentationCenter="" 
-	authors="Juliako" 
-	manager="dwrede" 
-	editor=""/>  
-
-
-<tags 
-	ms.service="media-services" 
-	ms.workload="media" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="ne" 
-	ms.topic="article" 
-	ms.date="09/26/2016"  
-	wacn.date="12/27/2016"  
-	ms.author="juliako;cenkdin"/>
+<properties
+    pageTitle="使用 Azure 媒体服务 REST API 创建筛选器 | Azure"
+    description="本主题介绍如何创建筛选器，以便客户端能够使用它们来流式传输流的特定部分。媒体服务创建动态清单来存档此选择性流。"
+    services="media-services"
+    documentationcenter=""
+    author="Juliako"
+    manager="dwrede"
+    editor="" />
+<tags
+    ms.assetid="f7d23daf-7cd2-49c7-a195-ab902912ab3c"
+    ms.service="media-services"
+    ms.workload="media"
+    ms.tgt_pltfrm="na"
+    ms.devlang="ne"
+    ms.topic="article"
+    ms.date="01/10/2017"
+    wacn.date="02/24/2017"
+    ms.author="juliako;cenkdin" />
 
 #使用 Azure 媒体服务 REST API 创建筛选器
 
@@ -25,7 +24,7 @@
 - [REST](/documentation/articles/media-services-rest-dynamic-manifest/)
 
 
-从 2.11 版开始，媒体服务允许为资产定义筛选器。这些筛选器是服务器端规则，可让你的客户选择执行如下操作：只播放一段视频（而非播放完整视频），或只指定客户设备可以处理的那一部分音频和视频再现内容（而非与该资产相关的所有再现内容）。通过按客户根据特定删选器对视频进行流式处理的请求创建的**动态清单**，对这种资产删选进行存档。
+从 2.11 版开始，媒体服务支持为资产定义筛选器。这些筛选器是服务器端规则，允许客户选择执行如下操作：只播放一段视频（而非播放完整视频），或只指定客户设备可以处理的一部分音频和视频再现内容（而非与该资产相关的所有再现内容）。通过按客户根据特定删选器对视频进行流式处理的请求创建的**动态清单**，对这种资产删选进行存档。
 
 有关与筛选器和动态清单相关的更多详细信息，请参阅[动态清单概述](/documentation/articles/media-services-dynamic-manifest-overview/)。
 
@@ -350,11 +349,7 @@
 
 	http://testendpoint-testaccount.streaming.mediaservices.chinacloudapi.cn/fecebb23-46f6-490d-8b70-203e86b0df58/BigBuckBunny.ism/Manifest(filter=MyFilter)
 
-
-**HDS**
-
-	http://testendpoint-testaccount.streaming.mediaservices.chinacloudapi.cn/fecebb23-46f6-490d-8b70-203e86b0df58/BigBuckBunny.ism/Manifest(format=f4m-f4f, filter=MyFilter)
-
+	
 
 ##另请参阅 
 
@@ -363,4 +358,5 @@
 
  
 
-<!---HONumber=Mooncake_Quality_Review_1202_2016-->
+<!---HONumber=Mooncake_0220_2017-->
+<!--Update_Description: remove HDS related content-->

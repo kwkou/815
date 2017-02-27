@@ -1,23 +1,21 @@
-<properties 
-	pageTitle="开发视频播放器应用程序" 
-	description="本主题提供可用于开发自己的客户端应用程序（这些应用程序使用媒体服务中的流媒体）的播放器框架和插件的链接。" 
-	authors="Juliako" 
-	manager="erikre" 
-	editor="" 
-	services="media-services" 
-	documentationCenter=""/>  
-
-
-<tags 
-	ms.service="media-services" 
-	ms.workload="media" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="09/26/2016" 
-	wacn.date="12/14/2016"
-	ms.author="juliako"/>  
-
+<properties
+    pageTitle="开发视频播放器应用程序"
+    description="本主题提供可用于开发自己的客户端应用程序（这些应用程序使用媒体服务中的流媒体）的播放器框架和插件的链接。"
+    author="Juliako"
+    manager="erikre"
+    editor=""
+    services="media-services"
+    documentationcenter="" />
+<tags
+    ms.assetid="55e419fc-4c39-4902-9c62-f41cfcd86c6c"
+    ms.service="media-services"
+    ms.workload="media"
+    ms.tgt_pltfrm="na"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.date="01/05/2017"
+    wacn.date="02/24/2017"
+    ms.author="juliako" />  
 
 
 #开发视频播放器应用程序
@@ -26,11 +24,14 @@
 
 Azure 媒体服务提供你所需的工具，以便你创建适用于大多数平台的丰富、动态的客户端播放器应用程序，这些平台包括：iOS 设备、Android 设备、Windows、Windows Phone、Xbox 和机顶盒。本主题还提供可用于开发自己的客户端应用程序（这些应用程序使用 Azure 媒体服务中的流媒体）的 SDK 和播放器框架的链接。
 
+>[AZURE.NOTE]
+创建 AMS 帐户时，系统会将**默认**流式处理终结点以“已停止”状态添加到用户的帐户。若要开始对内容进行流式处理并利用动态打包和动态加密功能，必须确保要从其流式获取内容的流式处理终结点处于“正在运行”状态。
+ 
 ##Azure 媒体播放器
 
 [Azure 媒体播放器](/documentation/services/media-services/)是 Web 视频播放器，用于在各种浏览器和设备中播放 Azure 媒体服务中的媒体内容。Azure 媒体播放器采用行业标准（如 HTML5、媒体源扩展 (MSE) 和加密媒体扩展插件 (EME)）来提供更丰富的自适应流式处理体验。如果无法在设备或浏览器中提供这些标准，Azure 媒体播放器将采用 Flash 和 Silverlight 作为回退技术。如果不考虑所使用的播放技术，开发人员将有一个统一的 JavaScript 接口来访问 API。这使 Azure 媒体服务提供的内容无需其他措施便可在各种设备和浏览中轻松播放。
 
-Azure 媒体服务允许播放使用 DASH、平滑流和 HLS 流格式提供的内容。Azure 媒体播放器会考虑这些不同的格式并基于平台/浏览器功能自动播放最佳链接。Azure 媒体服务还允许使用 PlayReady 加密或 AES 128 位信封加密对资产进行动态加密。Azure 媒体播放器在合理配置时允许对 PlayReady 和 AES-128 位加密的内容进行解密。
+Azure 媒体服务允许播放使用 DASH、平滑流式处理和 HLS 流式处理格式提供的内容。Azure 媒体播放器会考虑这些不同的格式并基于平台/浏览器功能自动播放最佳链接。Azure 媒体服务还允许使用 PlayReady 加密或 AES 128 位信封加密对资产进行动态加密。Azure 媒体播放器在合理配置时允许对 PlayReady 和 AES-128 位加密的内容进行解密。
 
 更多相关信息：
 
@@ -78,4 +79,5 @@ Azure 媒体服务通过“Windows 媒体平台：播放器框架”提供广告
 [GitHub dash.js 存储库](https://github.com/Dash-Industry-Forum/dash.js)
  
 
-<!---HONumber=Mooncake_Quality_Review_1118_2016-->
+<!---HONumber=Mooncake_0220_2017-->
+<!--Update_Description: add note for creating AMS account-->

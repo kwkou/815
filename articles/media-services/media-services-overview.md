@@ -13,8 +13,8 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="hero-article"
-    ms.date="12/14/2016"
-    wacn.date="01/13/2017"
+    ms.date="01/05/2017"
+    wacn.date="02/24/2017"
     ms.author="juliako;anilmur" />  
 
 
@@ -30,7 +30,7 @@ Azure 媒体服务是一个可扩展的基于云的平台，使开发人员能�
 
 若要构建媒体服务解决方案，可以使用：
 
-- [媒体服务 REST API](https://docs.microsoft.com/zh-cn/rest/api/media/mediaservice)
+- [媒体服务 REST API](https://docs.microsoft.com/rest/api/media/operations/azure-media-services-rest-api-reference)
 - 可用的客户端 SDK 之一：
 	- [适用于 .NET 的 Azure 媒体服务 SDK](https://github.com/Azure/azure-sdk-for-media-services)、
 	- [Azure SDK for Java](https://github.com/Azure/azure-sdk-for-java)，
@@ -46,8 +46,7 @@ Azure 媒体服务是一个可扩展的基于云的平台，使开发人员能�
 
 <a href="./media/media-services-overview/media-services-overview-object-model.png" target="_blank"><img src="./media/media-services-overview/media-services-overview-object-model-small.png"></a>
 
-
-可在[此处](https://media.windows.net/API/$metadata?api-version=2.14)查看完整模型。
+可在[此处](https://media.windows.net/API/$metadata?api-version=2.15)查看完整模型。
 
 
 
@@ -59,8 +58,8 @@ Azure 媒体服务是一个可扩展的基于云的平台，使开发人员能�
 2. Azure 媒体服务帐户。使用 Azure 经典管理门户、.NET 或 REST API 创建 Azure 媒体服务帐户。有关详细信息，请参阅[创建帐户](/documentation/articles/media-services-create-account/)。
 3. （可选）设置开发环境。为开发环境选择“.NET”或“REST API”。有关详细信息，请参阅[设置环境](/documentation/articles/media-services-dotnet-how-to-use/)。
 
-	此外，请学习如何以编程方式进行[连接](/documentation/articles/media-services-dotnet-connect-programmatically/)。
-4. （推荐）分配一个或多个缩放单位。建议为生产环境中的应用程序分配一个或多个缩放单位。有关详细信息，请参阅[管理流式处理终结点](/documentation/articles/media-services-manage-origins/)。
+	此外，请学习如何[以编程方式进行连接](/documentation/articles/media-services-dotnet-connect-programmatically/)。
+4. 处于已启动状态的标准流式处理终结点。有关详细信息，请参阅[管理流式处理终结点](/documentation/articles/media-services-manage-origins/)。
 
 ##概念和概述
 
@@ -72,40 +71,34 @@ Azure 媒体服务是一个可扩展的基于云的平台，使开发人员能�
 
 本部分描述常见方案并提供相关主题的链接。下图显示了参与点播内容交付的主要媒体服务平台部分。
 
-![VoD 工作流](./media/media-services-video-on-demand-workflow/media-services-video-on-demand.png)
+![VoD 工作流](./media/media-services-video-on-demand-workflow/media-services-video-on-demand.png)  
 
 
-###保护存储中的内容并以明文（非加密）形式交付流式处理媒体
-
+>[AZURE.NOTE]
+创建 AMS 帐户时，系统会将**默认**流式处理终结点以“已停止”状态添加到用户的帐户。若要开始对内容进行流式处理并利用动态打包和动态加密功能，必须确保要从其流式获取内容的流式处理终结点处于“正在运行”状态。
+	
+### 保护存储中的内容并以明文（非加密）形式交付流式处理媒体
 1. 将优质夹层文件上传到资产中。
-	
-	建议向资产应用存储加密选项，以便在内容上传期间和内容在存储中处于静态时，为其提供保护。
- 
-1. 编码为一组自适应比特率 MP4 文件。
+   
+    建议向资产应用存储加密选项，以便在内容上传期间和内容在存储中处于静态时，为其提供保护。
+2. 编码为一组自适应比特率 MP4 文件。
+   
+    建议向输出资产应用存储加密选项，以便保护静态内容。
+3. 配置资产传送策略（由动态打包使用）。
+   
+    如果资产已经过存储加密，则**必须**配置资产传送策略。
+4. 通过创建 OnDemand 定位符发布资产。
+5. 流式传输已发布的内容。
 
-	建议向输出资产应用存储加密选项，以便保护静态内容。
-	
-1. 配置资产传送策略（由动态打包使用）。
-	
-	如果资产已经过存储加密，则**必须**配置资产传送策略。
-
-1. 通过创建 OnDemand 定位符发布资产。
-
-	确保要从中以流形式传输内容的流式传输终结点上至少有一个串流保留单元。
-
-1. 流式传输已发布的内容。
-
-###在存储中保护内容，并以动态方式传送加密的流媒体  
-
-若要使用动态加密，首先必须获取想要从中流式传输加密内容的流式处理终结点的至少一个串流保留单元。
+### 在存储中保护内容，并以动态方式交付加密的流媒体
 
 1. 将优质夹层文件上传到资产中。向资产应用存储加密选项。
-1. 编码为一组自适应比特率 MP4 文件。向输出资产应用存储加密选项。
-1. 为播放期间想要动态加密的资产创建加密内容密钥。
-2. 配置内容密钥授权策略。
-1. 配置资产传送策略（由动态打包和动态加密使用）。
-1. 通过创建 OnDemand 定位符发布资产。
-1. 流式传输已发布的内容。
+2. 编码为一组自适应比特率 MP4 文件。向输出资产应用存储加密选项。
+3. 为播放期间想要动态加密的资产创建加密内容密钥。
+4. 配置内容密钥授权策略。
+5. 配置资产传送策略（由动态打包和动态加密使用）。
+6. 通过创建 OnDemand 定位符发布资产。
+7. 流式传输已发布的内容。
 
 ###使用媒体分析从视频中汲取可操作的见解 
 
@@ -123,14 +116,11 @@ Azure 媒体服务是一个可扩展的基于云的平台，使开发人员能�
 
 ### 提供渐进式下载
 1. 将优质夹层文件上传到资产中。
-1. 编码为单个 MP4 文件。
-1. 通过创建 OnDemand 或 SAS 定位符来发布资产。
+2. 编码为单个 MP4 文件。
+3. 通过创建 OnDemand 或 SAS 定位符来发布资产。
 
-	如果使用 OnDemand 定位符，请确保要从中以渐进方式下载内容的流式处理终结点上至少有一个串流保留单元。
-
-	如果使用 SAS 定位符，可从 Azure blob 存储中下载内容。在这种情况下，不需要串流保留单元。
-  
-1. 渐进式下载内容。
+	如果使用 SAS 定位符，将从 Azure Blob 存储中下载内容。在这种情况下，不需要让流式处理终结点处于已启动状态。
+4. 渐进式下载内容。
 
 ##<a id="live_scenarios"></a>使用 Azure 媒体服务传送实时流式处理事件
 
@@ -157,7 +147,7 @@ Azure 媒体服务是一个可扩展的基于云的平台，使开发人员能�
 
 **通道**表示用于处理实时流内容的管道。通道可以通过以下方式接收实时输入流：
 
-- 本地实时编码器将多比特率 **RTMP** 或**平滑流式处理**（分片 MP4）发送到经配置可以进行**直通**传递的通道。**直通**传递是指引入的流将会直接通过**通道**，而不会经过任何进一步的处理。可以使用以下输出多比特率平滑流的实时编码器：Elemental、Envivio、Cisco。以下实时编码器输出 RTMP：Adobe Flash Live、Telestream Wirecast 和 Tricaster 转码器。实时编码器也可将单比特率流发送到并未启用实时编码的通道，但不建议这样做。收到请求时，媒体服务会将该流传送给客户。
+- 本地实时编码器将多比特率 **RTMP** 或**平滑流式处理**（分片 MP4）发送到经配置可以进行**直通**传递的通道。**直通**传递是指引入的流将会直接通过**通道**，而不会经过任何进一步的转码或编码处理。可以使用以下输出多比特率平滑流式处理的实时编码器：MediaExcel、Imagine Communications、Ateme、Envivio、Cisco、Elemental。以下实时编码器输出 RTMP：Adobe Flash Live Encoder、Haivision、Telestream Wirecast、Teradek 和 Tricaster 编码器。实时编码器也可将单比特率流发送到并未启用实时编码的通道，但不建议这样做。收到请求时，媒体服务会将该流传送给客户。
 
 >[AZURE.NOTE] 需要长时间处理多个事件，并且已经在本地编码器上进行了投入时，可以使用直通这种最经济的方法来实时传送视频流。请参阅[定价](/pricing/details/media-services/)详细信息。
 
@@ -224,5 +214,5 @@ Azure 媒体服务提供所需的工具，以便创建适用于大多数平台�
 [live-overview2]: ./media/media-services-live-streaming-workflow/media-services-live-streaming-current.png
  
 
-<!---HONumber=Mooncake_0109_2017-->
-<!--Update_Description: remove HDS ralated content; add references links of Media Service analytics features; add introduction of Media Service Odata model-->
+<!---HONumber=Mooncake_0220_2017-->
+<!--Update_Description: add some new supported Encoders-->

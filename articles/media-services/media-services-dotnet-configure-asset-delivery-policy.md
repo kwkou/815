@@ -13,8 +13,8 @@
     ms.tgt_pltfrm="na"
     ms.devlang="dotnet"
     ms.topic="article"
-    ms.date="12/11/2016"
-    wacn.date="01/13/2017"
+    ms.date="01/05/2017"
+    wacn.date="02/24/2017"
     ms.author="juliako;mingfeiy" />
 
 #使用 .NET SDK 配置资产传送策略
@@ -26,9 +26,10 @@
 
 本主题介绍创建和配置资产传送策略的原因和方式。
 
->[AZURE.NOTE]若要使用动态打包和动态加密，必须确保至少有一个缩放单位（也称为流式处理单位）。有关详细信息，请参阅[如何缩放媒体服务](/documentation/articles/media-services-manage-origins/#scale_streaming_endpoints)。
+>[AZURE.NOTE]
+创建 AMS 帐户时，系统会将**默认**流式处理终结点以“已停止”状态添加到用户的帐户。若要开始对内容进行流式处理并利用动态打包和动态加密功能，必须确保要从其流式获取内容的流式处理终结点处于“正在运行”状态。
 >
->此外，你的资产必须包含一组自适应比特率 MP4 或自适应比特率平滑流式处理文件。
+>此外，若要使用动态打包和动态加密，用户的资产必须包含一组自适应比特率 MP4 或自适应比特率平滑流式处理文件。
 
 可以将不同的策略应用到同一个资产。例如，可以将 PlayReady 加密应用到平滑流式处理，将 AES 信封应用到 MPEG DASH 和 HLS。将阻止流式处理传送策略中未定义的任何协议（例如，添加仅将 HLS 指定为协议的单个策略）。如果你根本没有定义任何传送策略，则情况不是这样。此时，将允许所有明文形式的协议。
 
@@ -343,5 +344,5 @@ Azure 媒体服务还允许你添加 Widevine 加密。以下示例演示将 Pla
         WidevineLicenseAcquisitionUrl
     }
 
-<!---HONumber=Mooncake_0109_2017-->
-<!--Update_Description: remove HDS related content: wording update-->
+<!---HONumber=Mooncake_0220_2017-->
+<!--Update_Description: add note for creating AMS account-->

@@ -13,8 +13,8 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="12/07/2016"
-    wacn.date="01/13/2017"
+    ms.date="01/05/2017"
+    wacn.date="02/24/2017"
     ms.author="juliako;mingfeiy" />
 
 # 动态加密：配置内容密钥授权策略
@@ -45,8 +45,8 @@ Azure 媒体服务允许传送受高级加密标准 (AES)（使用 128 位加密
 
 ###请注意以下事项：
 
-- 为了能够使用动态打包和动态加密，必须确保至少有一个流式处理保留单元。有关详细信息，请参阅[如何缩放媒体服务](/documentation/articles/media-services-manage-origins/#scale_streaming_endpoints)。
-- 资产必须包含一组自适应比特率 MP4 或自适应比特率平滑流文件。有关详细信息，请参阅[对资产进行编码](/documentation/articles/media-services-encode-asset/)。
+- 创建 AMS 帐户时，系统会将**默认**流式处理终结点以“已停止”状态添加到用户的帐户。若要开始对内容进行流式处理并利用动态打包和动态加密功能，必须确保流式处理终结点处于“正在运行”状态。
+- 资产必须包含一组自适应比特率 MP4 或自适应比特率平滑流式处理文件。有关详细信息，请参阅[对资产进行编码](/documentation/articles/media-services-encode-asset/)。
 - 使用 **AssetCreationOptions.StorageEncrypted** 选项上传资产并对其进行编码。
 - 如果打算创建需要相同策略配置的多个内容密钥，我们强烈建议创建单个授权策略，并将其重复用于多个内容密钥。
 - 密钥传送服务将 ContentKeyAuthorizationPolicy 及其相关对象（策略选项和限制）缓存 15 分钟。如果创建 ContentKeyAuthorizationPolicy 并指定使用“令牌”限制，然后对其进行测试，再将策略更新为“开放”限制，则现有策略切换到“开放”版本的策略需要大约 15 分钟。
@@ -439,5 +439,5 @@ Azure 媒体服务允许传送受高级加密标准 (AES)（使用 128 位加密
 现在已配置内容密钥的授权策略，请转到[如何配置资产传送策略](/documentation/articles/media-services-dotnet-configure-asset-delivery-policy/)主题。
  
 
-<!---HONumber=Mooncake_0109_2017-->
-<!--Update_Description: wording update; remove HDS related content-->
+<!---HONumber=Mooncake_0220_2017-->
+<!--Update_Description: update notifications list-->

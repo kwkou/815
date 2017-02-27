@@ -1,22 +1,21 @@
-<properties 
-	pageTitle="实现故障转移流式处理方案 | Azure" 
-	description="本主题演示如何实现故障转移流式处理方案。" 
-	services="media-services" 
-	documentationCenter="" 
-	authors="Juliako" 
-	manager="erikre" 
-	editor=""/>  
-
-
-<tags 
-	ms.service="media-services" 
-	ms.workload="media" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="09/26/2016" 
-	wacn.date="11/21/2016" 
-	ms.author="juliako"/>
+<properties
+    pageTitle="实现故障转移流式处理方案 | Azure"
+    description="本主题演示如何实现故障转移流式处理方案。"
+    services="media-services"
+    documentationcenter=""
+    author="Juliako"
+    manager="erikre"
+    editor="" />
+<tags
+    ms.assetid="fc45d849-eb0d-4739-ae91-0ff648113445"
+    ms.service="media-services"
+    ms.workload="media"
+    ms.tgt_pltfrm="na"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.date="01/05/2017"
+    wacn.date="02/24/2017"
+    ms.author="juliako" />  
 
 
 #实现故障转移流式处理方案
@@ -47,7 +46,7 @@
 - 当前版本的媒体服务 SDK 不支持使用指定的定位器 ID 创建定位器。若要完成此任务，我们将使用媒体服务 REST API。
 - 当前版本的媒体服务 SDK 不支持以编程方式生成会将资产与资产文件关联的 IAssetFile 信息。若要完成此任务，我们将使用 CreateFileInfos 媒体服务 REST API。
 - 不支持使用存储加密资产 (AssetCreationOptions.StorageEncrypted) 进行复制（因为两个媒体服务帐户中的加密密钥将会有所不同）。
-- 如果你想要利用动态打包，则必须先获取至少一个按需流式处理保留单元。有关详细信息，请参阅[动态打包资产](/documentation/articles/media-services-dynamic-packaging-overview/)。
+- 若要利用动态打包功能，请确保流式处理终结点（用于内容流式处理）处于“正在运行”状态。
  
 
 >[AZURE.NOTE]请考虑将媒体服务[复制器工具](http://replicator.codeplex.com/)用作备用选项，以手动实现故障转移流式处理方案。此工具可用于在两个媒体服务帐户之间复制资产。
@@ -133,9 +132,7 @@
 		static private MediaServicesCredentials _cachedCredentialsSource = null;
 		static private MediaServicesCredentials _cachedCredentialsTarget = null;
 
-
-
-1. 请使用以下定义替换默认的 Main 方法定义：
+2. 请使用以下定义替换默认的 Main 方法定义。下面定义了从 Main 调用的方法定义。
 		
 		static void Main(string[] args)
 		{
@@ -219,21 +216,12 @@
 		        writeSasLocator.Delete();
 		}
 
-1. 下面定义了从 Main 调用的方法定义。
+3. 从 Main 调用的方法定义。
 		
 		public static IAsset CreateAssetAndUploadSingleFile(CloudMediaContext context,
 		                                                AssetCreationOptions assetCreationOptions,
 		                                                string singleFilePath)
 		{
-		    // For the AssetCreationOptions you can specify 
-		    // encryption options.
-		    //      None:  no encryption. By default, storage encryption is used. If you want to 
-		    //        create an unencrypted asset, you must set this option.
-		    //      StorageEncrypted:  storage encryption. Encrypts a clear input file 
-		    //        before it is uploaded to Azure storage. This is the default if not specified
-		    //      CommonEncryptionProtected:  for Common Encryption Protected (CENC) files. An 
-		    //        example is a set of files that are already PlayReady encrypted. 
-		
 		    var assetName = "UploadSingleFile_" + DateTime.UtcNow.ToString();
 		
 		    var asset = context.Assets.Create(assetName, assetCreationOptions);
@@ -497,6 +485,8 @@
 		
 		        if (sourceCloudBlob.Properties.Length > 0)
 		        {
+					// In AMS, the files are stored as block blobs. 
+					// Page blobs are not supported by AMS.  
 		            var destinationBlob = targetContainer.GetBlockBlobReference(fileName);
 		            destinationBlob.StartCopyFromBlob(new Uri(sourceBlob.Uri.AbsoluteUri + blobToken));
 		
@@ -966,4 +956,5 @@
 
 现在，你可以使用流量管理器在两个数据中心之间路由请求，因此可在任何中断情况下进行故障转移。
 
-<!---HONumber=Mooncake_1114_2016-->
+<!---HONumber=Mooncake_0220_2017-->
+<!--Update_Description: update code comments-->

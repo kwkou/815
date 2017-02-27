@@ -1,22 +1,21 @@
-<properties 
-	pageTitle="使用 REST 将文件上传到媒体服务帐户 | Azure" 
-	description="了解如何通过创建和上传资产将媒体内容加入媒体服务。" 
-	services="media-services" 
-	documentationCenter="" 
-	authors="Juliako" 
-	manager="erikre" 
-	editor=""/>  
-
-
-<tags 
-	ms.service="media-services" 
-	ms.workload="media" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="09/19/2016" 
-	wacn.date="12/12/2016"
-	ms.author="juliako"/>
+<properties
+    pageTitle="使用 REST 将文件上传到媒体服务帐户 | Azure"
+    description="了解如何通过创建和上传资产将媒体内容加入媒体服务。"
+    services="media-services"
+    documentationcenter=""
+    author="Juliako"
+    manager="erikre"
+    editor="" />
+<tags
+    ms.assetid="41df7cbe-b8e2-48c1-a86c-361ec4e5251f"
+    ms.service="media-services"
+    ms.workload="media"
+    ms.tgt_pltfrm="na"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.date="01/10/2017"
+    wacn.date="02/24/2017"
+    ms.author="juliako" />
 
 
 # 使用 REST 将文件上传到媒体服务帐户
@@ -296,13 +295,12 @@ SAS URL 采用以下格式：
 	}
 
 ### 将文件上传到 Blob 存储容器
-	
-设置 AccessPolicy 和定位符后，即可使用 Azure 存储 REST API 将具体的文件上传到 Azure BLOB 存储容器。也可以按页或块 BLOB 来上传。
+设置 AccessPolicy 和定位符后，即可使用 Azure 存储 REST API 将具体的文件上传到 Azure BLOB 存储容器。必须将文件作为块 blob 上载。页 blob 不受 Azure 媒体服务支持。
 
 >[AZURE.NOTE] 必须将要上传的文件的文件名添加到在上一节收到的定位符 **Path** 值中。例如，https://storagetestaccount001.blob.core.chinacloudapi.cn/asset-e7b02da4-5a69-40e7-a8db-e8f4f697aac0/BigBuckBunny.mp4? . . .
 
-有关使用 Azure 存储 blob 的详细信息，请参阅 [Blob 服务 REST API](http://msdn.microsoft.com/zh-cn/library/azure/dd135733.aspx)。
 
+有关使用 Azure 存储 blob 的详细信息，请参阅 [Blob 服务 REST API](https://docs.microsoft.com/rest/api/storageservices/fileservices/Blob-Service-REST-API)。
 
 ### 更新 AssetFile 
 
@@ -523,4 +521,5 @@ ContentKey 通过发送 HTTP POST 请求关联到一个或多个资产。以下�
 [How to Get a Media Processor]: /documentation/articles/media-services-get-media-processor/
  
 
-<!---HONumber=Mooncake_Quality_Review_1118_2016-->
+<!---HONumber=Mooncake_0220_2017-->
+<!--Update_Description: add note for not support page blob; update MSDN links to docs.microsoft.com links-->

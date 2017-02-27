@@ -13,8 +13,8 @@
     ms.tgt_pltfrm="na"
     ms.devlang="dotnet"
     ms.topic="article"
-    ms.date="11/29/2016"
-    wacn.date="01/13/2017"
+    ms.date="01/12/2017"
+    wacn.date="02/24/2017"
     ms.author="milanga;juliako;" />  
 
 
@@ -77,7 +77,18 @@ facesDetected|位于 JSON 结果的末尾，汇总在生成视频期间算法所
 ### 任务配置（预设）
 在使用 **Azure 媒体面部检测器**创建任务时，必须指定配置预设。以下配置预设仅适用于面部检测。
 
-    {"version":"1.0"}
+    {
+      "version":"1.0"
+      "options":{
+          "TrackingMode": "Faster"
+      }
+    }
+
+#### 属性说明
+| 属性名称 | 说明 |
+| --- | --- |
+| Mode |速度更快：处理速度更快，但准确性较低（默认设置）。<br/>质量：跟踪准确性更好，但所需时间更长。 |
+
 
 ### JSON 输出
 下面是 JSON 输出被截断的示例。
@@ -146,22 +157,21 @@ facesDetected|位于 JSON 结果的末尾，汇总在生成视频期间算法所
 	}
 
 
-####属性说明
-
-属性名称|说明
----|---
-Mode|Faces：仅面部检测<br/>AggregateEmotion：返回帧中所有面部的平均情绪值。
-AggregateEmotionWindowMs|在已选择 AggregateEmotion 模式时使用。指定用于生成每个聚合结果的视频的长度，以毫秒为单位。
-AggregateEmotionIntervalMs|在已选择 AggregateEmotion 模式时使用。指定生成聚合结果的频率。
+#### 属性说明
+| 属性名称 | 说明 |
+| --- | --- |
+| Mode |人脸：仅人脸检测。<br/>PerFaceEmotion：针对每个人脸检测独立返回表情。<br/>AggregateEmotion：针对帧中的所有人脸返回平均表情值。 |
+| AggregateEmotionWindowMs |在已选择 AggregateEmotion 模式时使用。指定用于生成每个聚合结果的视频的长度，以毫秒为单位。 |
+| AggregateEmotionIntervalMs |在已选择 AggregateEmotion 模式时使用。指定生成聚合结果的频率。 |
 
 ####聚合默认值
 
 下面是聚合窗口和间隔设置的建议值。AggregateEmotionWindowMs 应该超过 AggregateEmotionIntervalMs。
 
 | 默认值 | 最小值 | 最大值 |
-| --- | --- | --- |
-| AggregateEmotionWindowMs |0.5 |2 |
-| AggregateEmotionIntervalMs |0.5 |1 |
+| --- | --- | --- | --- |
+| AggregateEmotionWindowMs |0\.5 |2 |
+| AggregateEmotionIntervalMs |0\.5 |1 |
 
 ###JSON 输出
 
@@ -330,7 +340,7 @@ AggregateEmotionIntervalMs|在已选择 AggregateEmotion 模式时使用。指�
 以下程序演示如何：
 
 1. 创建资产并将媒体文件上传到资产。
-2. 使用基于包含以下 json 预设值的配置文件的面部检测任务创建一个作业。
+2. 使用人脸检测任务创建一个作业，所根据的配置文件包含以下 json 预设。
    
         {
             "version": "1.0"
@@ -521,5 +531,5 @@ AggregateEmotionIntervalMs|在已选择 AggregateEmotion 模式时使用。指�
 
 [Azure Media Analytics demos（Azure 媒体分析演示）](http://azuremedialabs.azurewebsites.net/demos/Analytics.html)
 
-<!---HONumber=Mooncake_0109_2017-->
-<!--Update_Description: update aggregate defaults table-->
+<!---HONumber=Mooncake_0220_2017-->
+<!--Update_Description: update configuration for face dection-->

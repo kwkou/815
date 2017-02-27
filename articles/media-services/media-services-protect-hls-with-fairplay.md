@@ -1,22 +1,21 @@
-<properties 
-	pageTitle="使用 Apple FairPlay 和/或 Microsoft PlayReady 保护 HLS 内容 | Azure" 
-	description="本主题概括介绍并演示了如何使用 Azure 媒体服务通过 Apple FairPlay 动态加密 HTTP 实时传送视频流 (HLS) 内容。它还演示了如何使用媒体服务许可证传送服务将 FairPlay 许可证传送到客户端。" 
-	services="media-services" 
-	documentationCenter="" 
-	authors="Juliako" 
-	manager="erikre" 
-	editor=""/>  
-
-
-<tags 
-	ms.service="media-services" 
-	ms.workload="media" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="09/27/2016"
-	wacn.date="11/21/2016"
-	ms.author="juliako"/>  
+<properties
+    pageTitle="使用 Apple FairPlay 和/或 Microsoft PlayReady 保护 HLS 内容 | Azure"
+    description="本主题概括介绍并演示了如何使用 Azure 媒体服务通过 Apple FairPlay 动态加密 HTTP 实时传送视频流 (HLS) 内容。它还演示了如何使用媒体服务许可证传送服务将 FairPlay 许可证传送到客户端。"
+    services="media-services"
+    documentationcenter=""
+    author="Juliako"
+    manager="erikre"
+    editor="" />
+<tags
+    ms.assetid="7c3b35d9-1269-4c83-8c91-490ae65b0817"
+    ms.service="media-services"
+    ms.workload="media"
+    ms.tgt_pltfrm="na"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.date="01/05/2017"
+    wacn.date="02/24/2017"
+    ms.author="juliako" />  
 
 
 # 使用 Apple FairPlay 和/或 Microsoft PlayReady 保护 HLS 内容
@@ -169,7 +168,6 @@
 			  </appSettings>
 		</configuration>
 
-1. 针对要传送内容的“流式处理终结点”，获取至少一个流式处理单位。有关详细信息，请参阅：[配置流式处理终结点](/documentation/articles/media-services-dotnet-get-started/#configure-streaming-endpoint-using-the-portal)。
 
 1. 使用本部分中所示的代码覆盖 Program.cs 文件中的代码。
 			
@@ -580,4 +578,5 @@
 		    }
 		}
 
-<!---HONumber=Mooncake_1114_2016-->
+<!---HONumber=Mooncake_0220_2017-->
+<!--Update_Description: wording update-->
