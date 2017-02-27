@@ -14,8 +14,8 @@
 	ms.tgt_pltfrm="mobile-multiple"
 	ms.devlang="dotnet"
 	ms.topic="article"
-	ms.date="10/01/2016"
-	wacn.date="12/26/2016"
+	ms.date="01/04/2017"
+	wacn.date="02/24/2017"
 	ms.author="adrianha"/>
 
 # 如何使用 Azure 移动应用的托管客户端
@@ -60,7 +60,7 @@ C# 中对应的类型化客户端类型为以下类：
 		public bool Complete { get; set; }
 	}
 
-[JsonPropertyAttribute][6] 用于定义客户端类型与表之间的 *PropertyName* 映射。
+[JsonPropertyAttribute][6] 用于定义客户端字段与表字段之间的 *PropertyName* 映射。
 
 若要了解如何在移动应用后端中创建表，请参阅 [.NET 服务器 SDK 主题][7]或 [Node.js 服务器 SDK 主题][8]。如果已在 Azure 门户预览中使用快速入门项目创建移动应用后端，也可以在 [Azure 门户预览]中使用“简易表”设置。
 
@@ -206,16 +206,13 @@ C# 中对应的类型化客户端类型为以下类：
 默认情况下，后端只返回前 50 行。你可以通过调用 [Take] 方法来增加返回的行数。将 `Take` 与 [Skip] 方法一起使用可以请求查询返回的总数据集的特定“页”。执行以下查询后，将返回表中的前三个项。
 
 	// Define a filtered query that returns the top 3 items.
-	MobileServiceTableQuery<TodoItem> query = todoTable
-					.Take(3);
+	MobileServiceTableQuery<TodoItem> query = todoTable.Take(3);
 	List<TodoItem> items = await query.ToListAsync();
 
 以下经过修改的查询会跳过前三个结果，返回接下来的三个结果。此查询生成数据的第二“页”，其页大小为三个项。
 
 	// Define a filtered query that skips the top 3 items and returns the next 3 items.
-	MobileServiceTableQuery<TodoItem> query = todoTable
-					.Skip(3)
-					.Take(3);
+	MobileServiceTableQuery<TodoItem> query = todoTable.Skip(3).Take(3);
 	List<TodoItem> items = await query.ToListAsync();
 
 [IncludeTotalCount] 方法请求应该返回的*所有*记录的总计数，并忽略指定的任何分页/限制子句：
@@ -476,7 +473,7 @@ C# 中对应的类型化客户端类型为以下类：
 
     * **Windows 8.1 运行时:**安装 [SQLite for Windows 8.1][3]。
     * **Windows Phone 8.1:**安装 [SQLite for Windows Phone 8.1][4]。
-    * **通用 Windows 平台** 安装[适用于通用 Windows 平台的 SQLite][5]。
+    * **通用 Windows 平台** 安装[适用于通用 Windows 的 SQLite][5]。
 
 3. （可选）。对于 Windows 设备，单击“引用”>“添加引用...”，展开 **Windows** 文件夹 >“扩展”，然后启用相应的 **SQLite for Windows** SDK 和 **Visual C++ 2013 Runtime for Windows** SDK。每个 Windows 平台的 SQLite SDK 名称略有不同。
 
@@ -563,9 +560,15 @@ SDK 会在提取记录前执行隐式 `PushAsync()`。
 
 此表单是类型化方法调用，要求定义 **MarkAllResult** 返回类型。支持类型化和非类型化的方法。
 
-##<a name="authentication"></a>对用户进行身份验证
+InvokeApiAsync\(\) 方法将“/api/”预置到要调用的 API，除非该 API 以“/”开头。例如：
 
-移动应用支持使用各种外部标识提供者对应用程序用户进行身份验证和授权，这些提供者包括：Microsoft 帐户和 Azure Active Directory。你可以在表中设置权限，以便将特定操作的访问权限限制给已经过身份验证的用户。你还可以在服务器脚本中使用已经过身份验证的用户的标识来实施授权规则。有关详细信息，请参阅[向应用程序添加身份验证]教程。
+* `InvokeApiAsync("completeAll",...)` 在后端调用 /api/completeAll
+* `InvokeApiAsync("/.auth/me",...)` 在后端调用 /.auth/me
+
+可以使用 InvokeApiAsync 调用任何 WebAPI，包括未使用 Azure 移动应用定义的那些 WebAPI。使用 InvokeApiAsync\(\) 时，会将相应的标头（包括身份验证标头）与请求一起发送。
+
+## <a name="authentication"></a>对用户进行身份验证
+移动应用支持使用各种外部标识提供者对应用程序用户进行身份验证和授权，这些提供者包括：Facebook、Google、Microsoft 帐户、Twitter 和 Azure Active Directory。你可以在表中设置权限，以便将特定操作的访问权限限制给已经过身份验证的用户。你还可以在服务器脚本中使用已经过身份验证的用户的标识来实施授权规则。有关详细信息，请参阅[向应用程序添加身份验证]教程。
 
 支持两种身份验证流： *客户端托管* 流和 *服务器托管* 流。服务器托管流依赖于提供者的 Web 身份验证界面，因此可提供最简便的身份验证体验。客户端托管流依赖于提供者和设备特定的 SDK，因此允许与设备特定的功能进行更深入的集成。
 
@@ -921,7 +924,7 @@ Xamarin 应用需要一些额外的代码才能注册 iOS 或 Android 平台上�
 		}
 	}
 
-有关处理错误条件的其他示例，可在 [Mobile Apps Files Sample]（移动应用文件示例）中找到。[LoggingHandler] 示例提供日志记录委托处理程序（如下所示），记录向后端发出的请求。
+有关处理错误条件的其他示例，可在 [Mobile Apps Files Sample]（移动应用文件示例）中找到。[LoggingHandler] 示例提供日志记录委托处理程序，记录向后端发出的请求。
 
 ###<a name="headers"></a>如何自定义请求标头
 
@@ -929,14 +932,11 @@ Xamarin 应用需要一些额外的代码才能注册 iOS 或 Android 平台上�
 
     public async Task CallClientWithHandler()
     {
-        HttpResponseMessage[]
-        MobileServiceClient client = new MobileServiceClient("AppUrl",
-            new MyHandler()
-            );
-        IMobileServiceTable<TodoItem> todoTable = client.GetTable<TodoItem>();
-        var newItem = new TodoItem { Text = "Hello world", Complete = false };
-        await todoTable.InsertAsync(newItem);
-    }
+	    MobileServiceClient client = new MobileServiceClient("AppUrl", new MyHandler());
+	    IMobileServiceTable<TodoItem> todoTable = client.GetTable<TodoItem>();
+	    var newItem = new TodoItem { Text = "Hello world", Complete = false };
+	    await todoTable.InsertAsync(newItem);
+}
 
     public class MyHandler : DelegatingHandler
     {
@@ -985,8 +985,6 @@ Xamarin 应用需要一些额外的代码才能注册 iOS 或 Android 平台上�
 [How to configure App Service for Active Directory login]: /documentation/articles/app-service-mobile-how-to-configure-active-directory-authentication/
 
 <!-- Microsoft URLs. -->
-[Azure Mobile Apps .NET client reference]: https://msdn.microsoft.com/zh-cn/library/azure/mt419521(v=azure.10).aspx
-[MobileServiceClient]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.mobileservices.mobileserviceclient(v=azure.10).aspx
 [MobileServiceCollection]: https://msdn.microsoft.com/zh-cn/library/azure/dn250636(v=azure.10).aspx
 [MobileServiceIncrementalLoadingCollection]: https://msdn.microsoft.com/zh-cn/library/azure/dn268408(v=azure.10).aspx
 [MobileServiceAuthenticationProvider]: http://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.mobileservices.mobileserviceauthenticationprovider(v=azure.10).aspx
@@ -1002,13 +1000,13 @@ Xamarin 应用需要一些额外的代码才能注册 iOS 或 Android 平台上�
 [LoginAsync 方法]: https://msdn.microsoft.com/zh-cn/library/azure/dn296411(v=azure.10).aspx
 [LookupAsync]: https://msdn.microsoft.com/zh-cn/library/azure/jj871654(v=azure.10).aspx
 [OrderBy]: https://msdn.microsoft.com/zh-cn/library/azure/dn250572(v=azure.10).aspx
-[OrderByDescending]: https://msdn.microsoft.com/library/en-us/Dn250568.aspx
+[OrderByDescending]: https://msdn.microsoft.com/zh-cn/library/azure/dn250568(v=azure.10).aspx
 [ReadAsync]: https://msdn.microsoft.com/zh-cn/library/azure/mt691741(v=azure.10).aspx
 [Take]: https://msdn.microsoft.com/zh-cn/library/azure/dn250574(v=azure.10).aspx
 [Select]: https://msdn.microsoft.com/zh-cn/library/azure/dn250569(v=azure.10).aspx
 [Skip]: https://msdn.microsoft.com/zh-cn/library/azure/dn250573(v=azure.10).aspx
 [UpdateAsync]: https://msdn.microsoft.com/zh-cn/library/azure/dn250536.(v=azure.10)aspx
-[UserID]: https://msdn.microsoft.com/library/en-us/JJ553657.aspx
+[UserID]: http://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.mobileservices.mobileserviceuser.userid(v=azure.10).aspx
 [Where]: https://msdn.microsoft.com/zh-cn/library/azure/dn250579(v=azure.10).aspx
 [Azure 门户预览]: https://portal.azure.cn/
 [Azure 经典管理门户]: https://manage.windowsazure.cn/
@@ -1032,4 +1030,4 @@ Xamarin 应用需要一些额外的代码才能注册 iOS 或 Android 平台上�
 [AuthStore.cs]: https://github.com/azure-appservice-samples/ContosoMoments/blob/dev/src/Mobile/ContosoMoments/Helpers/AuthStore.cs
 [ContosoMoments photo sharing sample]: https://github.com/azure-appservice-samples/ContosoMoments
 
-<!---HONumber=Mooncake_1219_2016-->
+<!---HONumber=Mooncake_0220_2017-->
