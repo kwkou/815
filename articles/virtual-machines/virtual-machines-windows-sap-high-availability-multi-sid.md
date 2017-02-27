@@ -1,14 +1,14 @@
 <properties
-    pageTitle="在现有群集配置中配置附加的 SAP ASCS/SCS 实例以创建 SAP 多 SID 配置 - Azure Resource Manager | Azure"
-    description="Windows 虚拟机上的多 SID 高可用性 SAP NetWeaver 指南"
-    services="virtual-machines-windows,virtual-network,storage"
+    pageTitle="创建 SAP 多 SID 配置 | Azure"
+    description="Windows 虚拟机上的高可用性 SAP NetWeaver 多 SID 配置指南"
+    services="virtual-machines-windows, virtual-network, storage"
     documentationcenter="saponazure"
     author="goraco"
     manager="timlt"
     editor=""
     tags="azure-resource-manager"
     keywords="" />
-<tags 
+<tags
     ms.assetid="0b89b4f8-6d6c-45d7-8d20-fe93430217ca"
     ms.service="virtual-machines-windows"
     ms.devlang="NA"
@@ -16,10 +16,10 @@
     ms.tgt_pltfrm="vm-windows"
     ms.workload="infrastructure-services"
     ms.date="12/09/2016"
-    wacn.date="01/13/2017"
+    wacn.date="02/24/2017"
     ms.author="goraco" />
 
-# 在现有群集中配置附加的 SAP ASCS/SCS 实例以创建 SAP 多 SID 配置
+# 创建 SAP 多 SID 配置
 [767598]: https://launchpad.support.sap.com/#/notes/767598
 [773830]: https://launchpad.support.sap.com/#/notes/773830
 [826037]: https://launchpad.support.sap.com/#/notes/826037
@@ -111,7 +111,7 @@
 [deployment-guide-3]: /documentation/articles/virtual-machines-windows-sap-deployment-guide/#b3253ee3-d63b-4d74-a49b-185e76c4088e "Azure 上 SAP 的 VM 部署方案"
 [deployment-guide-4.1]: /documentation/articles/virtual-machines-windows-sap-deployment-guide/#604bcec2-8b6e-48d2-a944-61b0f5dee2f7 "部署 Azure PowerShell cmdlet"
 [deployment-guide-4.2]: /documentation/articles/virtual-machines-windows-sap-deployment-guide/#7ccf6c3e-97ae-4a7a-9c75-e82c37beb18e "下载并导入 SAP 相关的 PowerShell cmdlet"
-[deployment-guide-4.3]: /documentation/articles/virtual-machines-windows-sap-deployment-guide/#31d9ecd6-b136-4c73-b61e-da4a29bbc9cc "将 VM 加入本地域 — 仅限 Windows"
+[deployment-guide-4.3]: /documentation/articles/virtual-machines-windows-sap-deployment-guide/#31d9ecd6-b136-4c73-b61e-da4a29bbc9cc "将 VM 加入本地域：仅限 Windows"
 [deployment-guide-4.4.2]: /documentation/articles/virtual-machines-windows-sap-deployment-guide/#6889ff12-eaaf-4f3c-97e1-7c9edc7f7542 "Linux"
 [deployment-guide-4.4]: /documentation/articles/virtual-machines-windows-sap-deployment-guide/#c7cbb0dc-52a4-49db-8e03-83e7edc2927d "下载、安装并启用 Azure VM 代理"
 [deployment-guide-4.5.1]: /documentation/articles/virtual-machines-windows-sap-deployment-guide/#987cf279-d713-4b4c-8143-6b11589bb9d4 "Azure PowerShell"
@@ -181,8 +181,8 @@
 [planning-guide-11]: /documentation/articles/virtual-machines-windows-sap-planning-guide/#7cf991a1-badd-40a9-944e-7baae842a058 "Azure 虚拟机上运行的 SAP NetWeaver 的高可用性 (HA) 和灾难恢复 (DR)"
 [planning-guide-11.4.1]: /documentation/articles/virtual-machines-windows-sap-planning-guide/#5d9d36f9-9058-435d-8367-5ad05f00de77 "SAP 应用程序服务器的高可用性"
 [planning-guide-11.5]: /documentation/articles/virtual-machines-windows-sap-planning-guide/#4e165b58-74ca-474f-a7f4-5e695a93204f "对 SAP 实例使用 Autostart"
-[planning-guide-2.1]: /documentation/articles/virtual-machines-windows-sap-planning-guide/#1625df66-4cc6-4d60-9202-de8a0b77f803 "仅限云 — 在不将依赖项部署到本地客户网络的情况下将虚拟机部署到 Azure 中"
-[planning-guide-2.2]: /documentation/articles/virtual-machines-windows-sap-planning-guide/#f5b3b18c-302c-4bd8-9ab2-c388f1ab3d10 "跨界 — 将单个或多个 SAP VM 部署到 Azure 中并要求完全集成到本地网络"
+[planning-guide-2.1]: /documentation/articles/virtual-machines-windows-sap-planning-guide/#1625df66-4cc6-4d60-9202-de8a0b77f803 "仅限云：将虚拟机部署到 Azure 中但不将依赖项部署到本地客户网络"
+[planning-guide-2.2]: /documentation/articles/virtual-machines-windows-sap-planning-guide/#f5b3b18c-302c-4bd8-9ab2-c388f1ab3d10 "跨界：将单个或多个 SAP VM 部署到 Azure 中并要求完全集成到本地网络"
 [planning-guide-3.1]: /documentation/articles/virtual-machines-windows-sap-planning-guide/#be80d1b9-a463-4845-bd35-f4cebdb5424a "Azure 区域"
 [planning-guide-3.2.1]: /documentation/articles/virtual-machines-windows-sap-planning-guide/#df49dc09-141b-4f34-a4a2-990913b30358 "容错域"
 [planning-guide-3.2.2]: /documentation/articles/virtual-machines-windows-sap-planning-guide/#fc1ac8b2-e54a-487c-8581-d3cc6625e560 "升级域"
@@ -286,7 +286,6 @@
 [sap-ha-guide-10.1]: /documentation/articles/virtual-machines-windows-sap-high-availability-guide/#65fdef0f-9f94-41f9-b314-ea45bbfea445 "SAP ASCS/SCS 实例在群集节点 A 上运行"
 [sap-ha-guide-10.2]: /documentation/articles/virtual-machines-windows-sap-high-availability-guide/#5e959fa9-8fcd-49e5-a12c-37f6ba07b916 "从节点 A 故障转移到节点 B"
 [sap-ha-guide-10.3]: /documentation/articles/virtual-machines-windows-sap-high-availability-guide/#755a6b93-0099-4533-9f6d-5c9a613878b5 "SAP ASCS/SCS 实例在群集节点 B 上运行"
-
 
 [sap-ha-guide-figure-1000]: ./media/virtual-machines-shared-sap-high-availability-guide/1000-wsfc-for-sap-ascs-on-azure.png
 [sap-ha-guide-figure-1001]: ./media/virtual-machines-shared-sap-high-availability-guide/1001-wsfc-on-azure-ilb.png
@@ -438,77 +437,65 @@
 [xplat-cli]: /documentation/articles/xplat-cli-install/
 [xplat-cli-azure-resource-manager]: /documentation/articles/xplat-cli-azure-resource-manager/
 
+2016 年 9 月，Microsoft 发布了一项功能，让用户可通过 [Azure 内部负载均衡器][load-balancer-multivip-overview]管理多个虚拟 IP 地址。Azure 外部负载均衡器中已存在此功能。
 
-在 9 月份，Microsoft 推出了一项可用于管理 [Azure 内部负载均衡器的多个虚拟 IP 地址][load-balancer-multivip-overview]的功能。Azure 外部负载均衡器已有类似的功能。
+如果具有 SAP 部署，则可使用内部负载均衡器创建 SAP ASCS/SCS 的 Windows 群集配置，如 [Windows VM 上的高可用性 SAP NetWeaver 指南][sap-ha-guide]中所述。
 
-在 SAP 部署中，Azure ILB 用于创建 SAP ASCS/SCS 的 Windows 群集配置，如主要文档 [High-availability SAP NetWeaver on Windows virtual machines guide][sap-ha-guide]（Windows 虚拟机上的高可用性 SAP NetWeaver 指南）中所述。
-
-本文重点介绍如何根据该文档中的现有内容，通过在现有 Windows 故障转移服务器群集 (WSFC) 中安装附加的 SAP ASCS/SCS 群集实例，从此类单一 ASCS/SCS 安装转移到 SAP 多 SID 配置。这样，便可以配置所谓的 SAP 多 SID 群集。
+本文重点介绍如何通过在现有 Windows Server 故障转移群集 \(WSFC\) 中安装附加的 SAP ASCS/SCS 群集实例，从单一 ASCS/SCS 安装转移到 SAP 多 SID 配置。此过程完成后，就已配置 SAP 多 SID 群集。
 
 > [AZURE.NOTE]
 此功能仅在 Azure Resource Manager 部署模型中可用。
->
->
 
 ## 先决条件
-已根据以下文档配置了用于一个 SAP ASCS/SCS 实例的 WSFC：[High-availability SAP NetWeaver on Windows virtual machines guide][sap-ha-guide]（Windows 虚拟机上的高可用性 SAP NetWeaver 指南）。
+已配置用于单个 SAP ASCS/SCS 实例的 WSFC 群集，如 [Windows VM 上的高可用性 SAP NetWeaver 指南][sap-ha-guide]中所述并如此图中所示。
 
-![图 1：高可用性 SAP ASCS/SCS 实例][sap-ha-guide-figure-6001]  
-
-
-_**图 1：**Azure 中有一个 SAP ASCS/SCS 群集实例_
+![高可用性 SAP ASCS/SCS 实例][sap-ha-guide-figure-6001]  
 
 
 ## 目标体系结构
 
-目标是能够在同一个 WSAFC 群集中安装多个 **SAP ABAP ASCS** 或 **SAP Java SCS** 群集实例。
+目标是在同一个 WSFC 群集中安装多个 SAP ABAP ASCS 或 SAP Java SCS 群集实例，如下图所示：
 
-![图 2：Azure 中有多个 SAP ASCS/SCS 群集实例][sap-ha-guide-figure-6002]  
+![Azure 中的多个 SAP ASCS/SCS 群集实例][sap-ha-guide-figure-6002]  
 
-
-_**图 2：**Azure 中有多个 SAP ASCS/SCS 群集实例_
 
 > [AZURE.NOTE]
-**每个 Azure 内部负载均衡器的专用前端 IP** 的最大数目有限制。
+每个 Azure 内部负载均衡器的专用前端 IP 数目有限。
+><p>
+>一个 WSFC 群集中的最大 SAP ASCS/SCS 实例数等于每个 Azure 内部负载均衡器的最大专用前端 IP 数。
 >
->这意味着，**一个 WSFC 群集中的最大 SAP ASCS/SCS 实例数**等于**每个 Azure 内部负载均衡器的最大专用前端 IP 数**。
->
 
-有关负载均衡器限制的信息，请参阅[网络限制 - Azure Resource Manager][networking-limits-azure-resource-manager] 下面的**每个负载均衡器的专用前端 IP**
+有关负载均衡器限制的详细信息，请参阅[网络限制：Azure Resource Manager][networking-limits-azure-resource-manager] 中的“每个负载均衡器的专用前端 IP”。
 
-包含两个高可用性 SAP 系统的完整布局的大体形势如下所示：
+包含两个高可用性 SAP 系统的完整布局如下所示：
 
-![图 3：包含两个 SAP 系统的 SAP 高可用性多 SID 设置][sap-ha-guide-figure-6003]  
+![包含两个 SAP 系统 SID 的 SAP 高可用性多 SID 设置][sap-ha-guide-figure-6003]  
 
-
-_**图 3：**包含两个 SAP 系统的 SAP 高可用性多 SID 设置_
 
 > [AZURE.IMPORTANT]
-要点如下：
-> - **SAP ASCS/SCS** 实例**共享同一个 WSFC 群集**。
-> - 每个 **DBMS SID** 具有**自身的专用 WSFC 群集**。
->- 属于一个 SAP 系统 SID 的 **SAP 应用程序服务器**具有**自身的专用 VM**。
->
+安装必须满足以下条件：
+><p> - SAP ASCS/SCS 实例必须共享同一个 WSFC 群集。
+><p> - 每个 DBMS SID 必须具有自身的专用 WSFC 群集。
+><p> - 属于同一 SAP 系统 SID 的 SAP 应用程序服务器必须具有自身的专用 VM。
 
 ## 准备基础结构
-假设要使用以下参数安装**附加的** SAP ASCS/SCS 实例：
+若要准备基础结构，可使用以下参数安装附加 SAP ASCS/SCS 实例：
 
 | 参数名称 | 值 |
 | --- | --- |
-|SAP ASC/SCS SID |pr1-lb-ascs |
+| SAP ASCS/SCS SID |pr1-lb-ascs |
 | SAP DBMS 内部负载均衡器 | PR5 |
 | SAP 虚拟主机名 | pr5-sap-cl |
-| SAP ASCS/SCS 虚拟主机 IP 地址（附加的 Azure 负载均衡 IP 地址） | 10\.0.0.50 |
+| SAP ASCS/SCS 虚拟主机 IP 地址（附加 Azure 负载均衡器 IP 地址） | 10\.0.0.50 |
 | SAP ASCS/SCS 实例编号 | 50 |
 | 附加 SAP ASCS/SCS 实例的 ILB 探测端口 | 62350 |
 
 > [AZURE.NOTE]
-对于 SAP ASCS/SCS 群集实例，每个 IP 地址需要特定的探测端口。例如，如果 Azure 内部负载均衡器上有一个 IP 地址使用探测端口 62300，该负载均衡器上的其他任何 IP 地址就不能使用探测端口 62300。
->
->在本例中，探测端口 62300 已被保留，因此我们使用另一个探测端口 62350。
->
+对于 SAP ASCS/SCS 群集实例，每个 IP 地址都需要唯一探测端口。例如，如果 Azure 内部负载均衡器上有一个 IP 地址使用探测端口 62300，则该负载均衡器上的其他 IP 地址均不能使用探测端口 62300。
+><p>
+>在本例中，已保留探测端口 62300，因此使用探测端口 62350。
 
-我们要在**现有**的 WSFC 群集中安装包含两个节点的附加 SAP ASCS/SCS 实例：
+可在现有的 WSFC 群集中安装包含两个节点的附加 SAP ASCS/SCS 实例：
 
 | 虚拟机角色 | 虚拟机主机名 | 静态 IP 地址 |
 | --- | --- | --- |
@@ -517,41 +504,40 @@ _**图 3：**包含两个 SAP 系统的 SAP 高可用性多 SID 设置_
 
 ### 在 DNS 服务器上创建 SAP ASCS/SCS 群集实例的虚拟主机名
 
-使用以下参数创建 ASCS/SCS 实例虚拟主机名的 DNS 项：
+可使用以下参数创建 ASCS/SCS 实例虚拟主机名的 DNS 项：
 
 | 新的 SAP ASCS/SCS 虚拟主机名 | 关联的 IP 地址 |
 | --- | --- | --- |
 |pr5-sap-cl |10\.0.0.50 |
 
-![图 4：定义附加的新 SAP ASCS/SCS 群集虚拟名称和 TCP/IP 地址的 DNS 项][sap-ha-guide-figure-6004]  
+新的主机名和 IP 地址显示在 DNS 管理器中，如下面的屏幕截图所示：
+
+![DNS 管理器列表，突出显示新 SAP ASCS/SCS 群集虚拟名称和 TCP/IP 地址的已定义 DNS 项][sap-ha-guide-figure-6004]  
 
 
-_**图 4：**定义附加的新 SAP ASCS/SCS 群集虚拟名称和 TCP/IP 地址的 DNS 项_
-
-主要文档 [SAP NetWeaver on Windows virtual machines (VMs) - High-Availability Guide][sap-ha-guide-9.1.1]（Windows 虚拟机 (VM) 上的 SAP NetWeaver - 高可用性指南）中也详细介绍了如何创建 DNS 项。
+有关 DNS 项的详细创建过程，请参阅主要文档 [Windows VM 上的高可用性 SAP NetWeaver 指南][sap-ha-guide-9.1.1]。
 
 > [AZURE.NOTE]
-请记住，分配给附加 ASCS/SCS 实例虚拟主机名的新 IP 地址必须与分配给 SAP Azure Load Balancer 的新 IP 地址相同。
->
->在本例中，该 IP 地址为 10.0.0.50。
+分配给附加 ASCS/SCS 实例虚拟主机名的新 IP 地址必须与分配给 SAP Azure 负载均衡器的新 IP 地址相同。
+><p>
+>本例中，IP 地址是 10.0.0.50。
 
 ### 使用 PowerShell 将 IP 地址添加到现有 Azure 内部负载均衡器
 
-若要在同一个 WSFC 群集中使用多个 SAP ASCS/SCS 实例，请使用 PowerShell 将附加的 IP 地址添加到现有的 Azure 内部负载均衡器。每个 IP 地址需要有自身的负载均衡规则、探测端口、前端 IP 池和后端池。
+若要在同一个 WSFC 群集中创建多个 SAP ASCS/SCS 实例，请使用 PowerShell 将 IP 地址添加到现有 Azure 内部负载均衡器。每个 IP 地址需要有自身的负载均衡规则、探测端口、前端 IP 池和后端池。
 
 以下脚本将新的 IP 地址添加到现有负载均衡器。更新环境的 PowerShell 变量。该脚本将为所有 SAP ASCS/SCS 端口创建全部所需的负载均衡规则。
 
-    # Login-AzureRmAccount -EnvironmentName AzureChinaCloud
     # Select-AzureRmSubscription -SubscriptionId <xxxxxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx>
     Clear-Host
-    $ResourceGroupName = "SAP-MULTI-SID-Landscape"      # Existing Resource group name
-    $VNetName = "pr2-vnet"                        # Existing Virtual network name
-    $SubnetName = "Subnet"                        # Existing Subnet name
+    $ResourceGroupName = "SAP-MULTI-SID-Landscape"      # Existing resource group name
+    $VNetName = "pr2-vnet"                        # Existing virtual network name
+    $SubnetName = "Subnet"                        # Existing subnet name
     $ILBName = "pr2-lb-ascs"                      # Existing ILB name                      
     $ILBIP = "10.0.0.50"                          # New IP address
-    $VMNames = "pr2-ascs-0","pr2-ascs-1"          # Existing cluster Virtual machine names
-    $SAPInstanceNumber = 50                       # SAP ASCS/SCS Instance Number - must be unique value per cluster
-    [int]$ProbePort = "623$SAPInstanceNumber"     # Probe port - MUST be unique value per IP and load balancer
+    $VMNames = "pr2-ascs-0","pr2-ascs-1"          # Existing cluster virtual machine names
+    $SAPInstanceNumber = 50                       # SAP ASCS/SCS instance number: must be a unique value for each cluster
+    [int]$ProbePort = "623$SAPInstanceNumber"     # Probe port: must be a unique value for each IP and load balancer
 
     $ILB = Get-AzureRmLoadBalancer -Name $ILBName -ResourceGroupName $ResourceGroupName
 
@@ -559,29 +545,27 @@ _**图 4：**定义附加的新 SAP ASCS/SCS 群集虚拟名称和 TCP/IP 地址
     $FrontEndConfigurationName ="lbFrontendASCS$count"
     $LBProbeName = "lbProbeASCS$count"
 
-    # Get the Azure VNet and Subnet
+    # Get the Azure VNet and subnet
     $VNet = Get-AzureRmVirtualNetwork -Name $VNetName -ResourceGroupName $ResourceGroupName
     $Subnet = Get-AzureRmVirtualNetworkSubnetConfig -VirtualNetwork $VNet -Name $SubnetName
 
-    # Add Second Frontend and Probe config
+    # Add second front-end and probe configuration
     Write-Host "Adding new front end IP Pool '$FrontEndConfigurationName' ..." -ForegroundColor Green
     $ILB | Add-AzureRmLoadBalancerFrontendIpConfig -Name $FrontEndConfigurationName -PrivateIpAddress $ILBIP -SubnetId $Subnet.Id
     $ILB | Add-AzureRmLoadBalancerProbeConfig -Name $LBProbeName  -Protocol Tcp -Port $Probeport -ProbeCount 2 -IntervalInSeconds 10  | Set-AzureRmLoadBalancer
 
-    #Get new updated config
+    # Get new updated configuration
     $ILB = Get-AzureRmLoadBalancer -Name $ILBname -ResourceGroupName $ResourceGroupName
     # Get new updated LP FrontendIP COnfig
     $FEConfig = Get-AzureRmLoadBalancerFrontendIpConfig -Name $FrontEndConfigurationName -LoadBalancer $ILB
     $HealthProbe  = Get-AzureRmLoadBalancerProbeConfig -Name $LBProbeName -LoadBalancer $ILB
 
-    # Add new backend config into existign ILB
+    # Add new back-end configuration into existing ILB
     $BackEndConfigurationName  = "backendPoolASCS$count"
     Write-Host "Adding new backend Pool '$BackEndConfigurationName' ..." -ForegroundColor Green
     $BEConfig = Add-AzureRmLoadBalancerBackendAddressPoolConfig -Name $BackEndConfigurationName -LoadBalancer $ILB | Set-AzureRmLoadBalancer
 
-
-
-    #Get new updated config
+    # Get new updated config
     $ILB = Get-AzureRmLoadBalancer -Name $ILBname -ResourceGroupName $ResourceGroupName
 
     # Assign VM NICs to backend pool
@@ -596,8 +580,7 @@ _**图 4：**定义附加的新 SAP ASCS/SCS 群集虚拟名称和 TCP/IP 地址
             #start-AzureRmVM -ResourceGroupName $ResourceGroupName -Name $VM.Name
     }
 
-
-    # Create Load Balancing Rules
+    # Create load-balancing rules
     $Ports = "445","32$SAPInstanceNumber","33$SAPInstanceNumber","36$SAPInstanceNumber","39$SAPInstanceNumber","5985","81$SAPInstanceNumber","5$SAPInstanceNumber`13","5$SAPInstanceNumber`14","5$SAPInstanceNumber`16"
     $ILB = Get-AzureRmLoadBalancer -Name $ILBname -ResourceGroupName $ResourceGroupName
     $FEConfig = get-AzureRMLoadBalancerFrontendIpConfig -Name $FrontEndConfigurationName -LoadBalancer $ILB
@@ -618,88 +601,62 @@ _**图 4：**定义附加的新 SAP ASCS/SCS 群集虚拟名称和 TCP/IP 地址
 
     Write-Host "Succesfully added new IP '$ILBIP' to the internal load balancer '$ILBName'!" -ForegroundColor Green
 
+运行脚本后，结果将在 Azure 门户预览中显示，如下面的屏幕截图所示：
+
+![Azure 门户预览中的新前端 IP 池][sap-ha-guide-figure-6005]  
 
 
-运行完脚本后，可在 Azure 门户预览中看到结果。
+### 将磁盘添加到群集计算机并配置 SIOS 群集共享磁盘
 
-![图 5：Azure 端口中的新前端 IP 池][sap-ha-guide-figure-6005]  
+必须为每个附加 SAP ASCS/SCS 实例添加新的群集共享磁盘。在 Windows Server 2012 R2 中，目前使用的 WSFC 群集共享磁盘是 SIOS DataKeeper 软件解决方案。
 
+请执行以下操作：
+1. 将相同大小的一个或多个附加磁盘（需要条带化）添加到每个群集节点，然后将其格式化。
+2. 使用 SIOS DataKeeper 配置存储复制。
 
-_**图 5：**Azure 端口中的新前端 IP 池_
+此过程假定已在 WSFC 群集计算机上安装了 SIOS DataKeeper。如果已安装，则现在必须配置计算机之间的复制。有关此过程的详细信息，请参阅主要文档 [Windows VM 上的高可用性 SAP NetWeaver 指南][sap-ha-guide-8.12.3.3]。
 
-### 将附加磁盘添加到群集计算机并配置 SIOS 群集共享磁盘
+![新 SAP ASCS/SCS 共享磁盘的 DataKeeper 同步镜像][sap-ha-guide-figure-6006]  
 
-需要使用一个新的群集共享磁盘来存储新的附加 SAP ASCS/SCS 实例。在 Windows Server 2012 R2 中，WSFC 群集共享磁盘目前由 SIOS DataKeeper 软件解决方案使用。
-
-因此：
--	请将相同大小的附加磁盘（或其他要条带化的磁盘）添加到每个群集节点，然后将其格式化。
--	使用 SIOS DataKeeper 配置存储复制。
-
-假设已在 WSFC 群集计算机上安装 SIOS DataKeeper，因此只需在两者之间配置复制即可。
-
-主要文档 [SAP NetWeaver on Windows virtual machines (VMs) - High-Availability Guide][sap-ha-guide-8.12.3.3]（Windows 虚拟机 (VM) 上的 SAP NetWeaver - 高可用性指南）中对此做了详细介绍。
-
-![图 6：新的 SAP ASCS/SCS 共享磁盘的 DataKeeper 同步镜像处于活动状态][sap-ha-guide-figure-6006]  
-
-
-_**图 6：**新的 SAP ASCS/SCS 共享磁盘的 DataKeeper 同步镜像处于活动状态_
 
 ### 为 SAP 应用程序服务器和 DBMS 群集部署 VM
 
-若要完成第二个 SAP 系统的基础结构准备，需要：
+若要完成第二个 SAP 系统的基础结构准备，请执行以下操作：
 
-- 为 SAP 应用程序服务器部署专用 VM，并将这些 VM 放在其自身的专用可用性组中
-- 为 DBMS 群集部署专用 VM，并将这些 VM 放在其自身的专用可用性组中
-
+1. 为 SAP 应用程序服务器部署专用 VM，并将这些 VM 放在其自身的专用可用性组中。
+2. 为 DBMS 群集部署专用 VM，并将这些 VM 放在其自身的专用可用性组中。
 
 ## 安装第二个 SAP SID2 NetWeaver 系统
 
-现在，可以安装第二个 SAP **SID2** 系统。
+有关第二个 SAP SID2 的完整安装过程，请参阅主要文档 [Windows Vm 上的高可用性 SAP NetWeaver 指南][sap-ha-guide-9]。
 
-主要文档 [SAP NetWeaver on Windows virtual machines (VMs) - High-Availability Guide][sap-ha-guide-9]（Windows 虚拟机 (VM) 上的 SAP NetWeaver - 高可用性指南）中介绍了整个过程。
+高级过程如下所示：
 
-下面说明了概要过程：
+1. [安装 SAP 的第一个群集节点][sap-ha-guide-9.1.2]。此步骤中，将在**现有 WSFC 群集节点 1** 上安装包含高可用性 ASCS/SCS 实例的 SAP。
 
-- [安装 SAP 的第一个群集节点][sap-ha-guide-9.1.2]
+2. [修改 ASCS/SCS 实例的 SAP 配置文件][sap-ha-guide-9.1.3]。
 
-    在**现有 WSFC 群集节点 1** 上安装包含高可用性 ASCS/SCS 实例的 SAP 系统。
+3. [配置探测端口][sap-ha-guide-9.1.4]。此步骤中，将使用 PowerShell 配置 SAP 群集资源 SAP-SID2-IP 探测端口。在其中一个 SAP ASCS/SCS 群集节点上执行此配置。
 
-- [修改 ASCS/SCS 实例的 SAP 配置文件][sap-ha-guide-9.1.3]
+4. [安装数据库实例][sap-ha-guide-9.2]。此步骤中，将在专用 WSFC 群集上安装 DBMS。
 
-- [配置探测端口][sap-ha-guide-9.1.4]
+5. [安装第二个群集节点][sap-ha-guide-9.3]。此步骤中，将在现有 WSFC 群集节点 2 上安装包含高可用性 ASCS/SCS 实例的 SAP。
 
-    使用 PowerShell 配置 SAP 群集资源 **SAP-SID2-IP** 探测端口。在其中一个 SAP ASCS/SCS 群集节点上执行此操作。
+6. 打开 SAP ASCS/SCS 实例的 Windows 防火墙端口和探测端口。在用于 SAP ASCS/SCS 实例的两个群集节点上，打开 SAP ASCS/SCS 使用的所有 Windows 防火墙端口。有关这些端口，请参阅 [Windows VM 上的高可用性的 SAP NetWeaver 指南][sap-ha-guide-8.8]。此外，打开 Azure 内部负载均衡器探测端口，在本方案中为 62350。
 
-- [安装数据库实例][sap-ha-guide-9.2]
+7. [更改 SAP ERS Windows 服务实例的启动类型][sap-ha-guide-9.4]。
 
-    在**专用 WSFC 群集**上安装 DBMS。
+8. 在新的专用 VM 上[安装 SAP 主应用程序服务器][sap-ha-guide-9.5]。
 
-- [安装第二个群集节点][sap-ha-guide-9.3]
+9. 在新的专用 VM 上[安装 SAP 附加应用程序服务器][sap-ha-guide-9.6]。
 
-    在**现有 WSFC 群集节点 2** 上安装包含高可用性 ASCS/SCS 实例的 SAP 系统。
-
-- **打开 SAP ASCS/SCS 实例的 Windows 防火墙端口和探测端口**
-
-    在用于 SAP ASCS/SCS 实例的两个群集节点上，打开 SAP ASCS/SCS 端口使用的所有 Windows 防火墙端口。[此处][sap-ha-guide-8.8]列出了这些端口。
-
-    此外，打开 Azure 内部负载均衡器探测端口，在本例中为 62350。
-
-- [更改 SAP ERS Windows 服务实例的启动类型][sap-ha-guide-9.4]
-
-- [安装 SAP 主应用程序服务器][sap-ha-guide-9.5]
-
-    在**新的专用 VM** 上安装 SAP 主应用程序服务器。
-
-- [安装 SAP 附加应用程序服务器][sap-ha-guide-9.6]
-
-    在**新的专用 VM** 上安装 SAP SID2 附加应用程序服务器。
-
-- [测试 SAP ASCS/SCS 实例故障转移和 SIOS 复制][sap-ha-guide-10]
+10. [测试 SAP ASCS/SCS 实例故障转移和 SIOS 复制][sap-ha-guide-10]。
 
 ## 后续步骤
 
-- [网络限制 - Azure 资源管理器][networking-limits-azure-resource-manager]
-- [Azure Load Balancer 的多个 VIP][load-balancer-multivip-overview]
-- [Windows 虚拟机上的高可用性 SAP NetWeaver 主要指南][sap-ha-guide]
+- [网络限制：Azure Resource Manager][networking-limits-azure-resource-manager]
+- [Azure 负载均衡器的多个 VIP][load-balancer-multivip-overview]
+- [Windows VM 上的高可用性 SAP NetWeaver 指南][sap-ha-guide]
 
-<!---HONumber=Mooncake_0109_2017-->
+<!---HONumber=Mooncake_0220_2017-->
+<!--Update_Description: wording update-->

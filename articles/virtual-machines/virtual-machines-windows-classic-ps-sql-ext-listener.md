@@ -15,7 +15,7 @@
     ms.tgt_pltfrm="vm-windows-sql-server"
     ms.workload="infrastructure-services"
     ms.date="11/28/2016"
-    wacn.date="01/20/2017"
+    wacn.date="02/24/2017"
     ms.author="MikeRayMSFT" />
 
 # 在 Azure 中配置 AlwaysOn 可用性组的外部侦听器
@@ -23,21 +23,21 @@
 - [内部侦听器](/documentation/articles/virtual-machines-windows-classic-ps-sql-int-listener/)
 - [外部侦听器](/documentation/articles/virtual-machines-windows-classic-ps-sql-ext-listener/)
 
-本主题说明如何为 AlwaysOn 可用性组配置一个可以通过 Internet 从外部访问的侦听器。这是通过将云服务的**公共虚拟 IP (VIP)** 地址与侦听器关联来实现的。
+本主题说明如何为 AlwaysOn 可用性组配置一个可以通过 Internet 从外部访问的侦听器。这是通过将云服务的**公共虚拟 IP \(VIP\)** 地址与侦听器关联来实现的。
 
 > [AZURE.IMPORTANT] 
 Azure 提供两个不同的部署模型用于创建和处理资源：[Resource Manager 模型和经典模型](/documentation/articles/resource-manager-deployment-model/)。本文介绍如何使用经典部署模型。Azure 建议大多数新部署使用 Resource Manager 模型。
 
-你的可用性组可以仅包含本地副本或 Azure 副本，也可以跨越本地和 Azure 以实现混合配置。Azure 副本可以位于同一区域，也可以跨越使用多个虚拟网络 (VNet) 的多个区域。以下步骤假设你已[配置了一个可用性组](/documentation/articles/virtual-machines-windows-classic-portal-sql-alwayson-availability-groups/)但是没有配置侦听器。
+你的可用性组可以仅包含本地副本或 Azure 副本，也可以跨越本地和 Azure 以实现混合配置。Azure 副本可以位于同一区域，也可以跨越使用多个虚拟网络 \(VNet\) 的多个区域。以下步骤假设你已[配置了一个可用性组](/documentation/articles/virtual-machines-windows-classic-portal-sql-alwayson-availability-groups/)但是没有配置侦听器。
 
 ## 外部侦听器的准则和限制
 在使用云服务的公共 VIP 地址部署时，请注意有关 Azure 中可用性组侦听器的以下准则：
 
 * Windows Server 2008 R2、Windows Server 2012 和 Windows Server 2012 R2 支持可用性组侦听器。
 * 客户端应用程序必须位于不包含你的可用性组 VM 的云服务中。Azure 不支持客户端和服务器位于同一个云服务中的直接服务器返回。
-* 默认情况下，本文中的步骤说明如何将一个侦听器配置为使用云服务虚拟 IP (VIP) 地址。但是，你可以为云服务保留和创建多个 VIP 地址。这样就可以使用本文中的步骤创建多个侦听器，每个侦听器与不同的 VIP 相关联。有关如何创建多个 VIP 地址的信息，请参阅[每个云服务具有多个 VIP](/documentation/articles/load-balancer-multivip/)。
+* 默认情况下，本文中的步骤说明如何将一个侦听器配置为使用云服务虚拟 IP \(VIP\) 地址。但是，你可以为云服务保留和创建多个 VIP 地址。这样就可以使用本文中的步骤创建多个侦听器，每个侦听器与不同的 VIP 相关联。有关如何创建多个 VIP 地址的信息，请参阅[每个云服务具有多个 VIP](/documentation/articles/load-balancer-multivip/)。
 * 如果你要为混合环境创建侦听器，则本地网络必须连接到公共 Internet，并通过 Azure 虚拟网络连接到站点到站点 VPN。位于 Azure 子网中时，只能通过相应云服务的公共 IP 地址来访问该可用性组侦听器。
-* 不支持在你在其中也有使用内部负载均衡器 (ILB) 的内部侦听器的同一云服务中创建外部侦听器。
+* 不支持在你在其中也有使用内部负载均衡器 \(ILB\) 的内部侦听器的同一云服务中创建外部侦听器。
 
 ## 确定侦听器的可访问性
 [AZURE.INCLUDE [ag-listener-accessibility](../../includes/virtual-machines-ag-listener-determine-accessibility.md)]
@@ -73,7 +73,7 @@ Azure 提供两个不同的部署模型用于创建和处理资源：[Resource M
             Get-AzureVM -ServiceName $ServiceName -Name $node | Add-AzureEndpoint -Name "ListenerEndpoint" -Protocol "TCP" -PublicPort 1433 -LocalPort 1433 -LBSetName "ListenerEndpointLB" -ProbePort 59999 -ProbeProtocol "TCP" -DirectServerReturn $true | Update-AzureVM
         }
 
-2. 设置变量后，将脚本从文本编辑器复制到 Azure PowerShell 会话中运行。如果提示符仍然显示 >>，请再次按 Enter，以确保脚本开始运行。
+2. 设置变量后，将脚本从文本编辑器复制到 Azure PowerShell 会话中运行。如果提示符仍然显示 \>\>，请再次按 Enter，以确保脚本开始运行。
 
 ## 如果需要，请验证是否已安装 KB2854082
 [AZURE.INCLUDE [kb2854082](../../includes/virtual-machines-ag-listener-kb2854082.md)]
@@ -90,7 +90,7 @@ Azure 提供两个不同的部署模型用于创建和处理资源：[Resource M
 
 ### 在 PowerShell 中配置群集资源
 1. 对于外部负载均衡，你必须获取包含副本的云服务的公共虚拟 IP 地址。登录到 Azure 经典管理门户。导航到包含你的可用性组 VM 的云服务。打开“仪表板”视图。
-2. 记下“公共虚拟 IP (VIP)地址”下显示的地址。如果解决方案跨 VNet，请针对包含副本所在 VM 的每个云服务重复此步骤。
+2. 记下“公共虚拟 IP \(VIP\)地址”下显示的地址。如果解决方案跨 VNet，请针对包含副本所在 VM 的每个云服务重复此步骤。
 3. 在某个 VM 上，将以下 PowerShell 脚本复制到文本编辑器中，将变量设置为之前记下的值。
    
         # Define variables
@@ -104,7 +104,7 @@ Azure 提供两个不同的部署模型用于创建和处理资源：[Resource M
    
         # Get-ClusterResource $IPResourceName | Set-ClusterParameter -Multiple @{"Address"="$CloudServiceIP";"ProbePort"="59999";"SubnetMask"="255.255.255.255";"Network"="$ClusterNetworkName";"OverrideAddressMatch"=1;"EnableDhcp"=0}
         # cluster res $IPResourceName /priv enabledhcp=0 overrideaddressmatch=1 address=$CloudServiceIP probeport=59999  subnetmask=255.255.255.255
-4. 设置变量之后，打开提升的 Windows PowerShell 窗口，然后从文本编辑器复制脚本，并将其粘贴到 Azure PowerShell 会话中运行。如果提示符仍然显示 >>，请再次按 Enter，以确保脚本开始运行。
+4. 设置变量之后，打开提升的 Windows PowerShell 窗口，然后从文本编辑器复制脚本，并将其粘贴到 Azure PowerShell 会话中运行。如果提示符仍然显示 \>\>，请再次按 Enter，以确保脚本开始运行。
 5. 在每个 VM 上重复此过程。此脚本将使用云服务的 IP 地址来配置 IP 地址资源，同时设置探测端口等其他参数。在 IP 地址资源联机后，它可以响应我们在本教程前面部分创建的负载均衡终结点在探测端口上的轮询。
 
 ## 使侦听器联机
@@ -128,5 +128,5 @@ Azure 提供两个不同的部署模型用于创建和处理资源：[Resource M
 ## 后续步骤
 [AZURE.INCLUDE [Listener-Next-Steps](../../includes/virtual-machines-ag-listener-next-steps.md)]
 
-<!---HONumber=Mooncake_0116_2017-->
-<!--Update_Description: update meta properties & wording update & move contents out from include files-->
+<!---HONumber=Mooncake_0220_2017-->
+<!--Update_Description: wording update-->

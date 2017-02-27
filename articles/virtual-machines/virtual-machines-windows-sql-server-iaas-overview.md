@@ -14,13 +14,13 @@
     ms.topic="get-started-article"
     ms.tgt_pltfrm="vm-windows-sql-server"
     ms.workload="infrastructure-services"
-    ms.date="12/01/2016"
-    wacn.date="01/20/2017"
+    ms.date="01/09/2017"
+    wacn.date="02/24/2017"
     ms.author="jroth" />  
 
 
 # Azure 虚拟机中的 SQL Server 概述
-本主题介绍了在 Azure 虚拟机 (VM) 上运行 SQL Server 的选项，提供了[门户映像链接](#option-1-create-a-sql-vm-with-per-minute-licensing)，同时概述了[常见任务](#manage-your-sql-vm)。
+本主题介绍了在 Azure 虚拟机 \(VM\) 上运行 SQL Server 的选项，提供了[门户映像链接](#option-1-create-a-sql-vm-with-per-minute-licensing)，同时概述了[常见任务](#manage-your-sql-vm)。
 
 > [AZURE.NOTE]
 如果用户已熟悉 SQL Server，只是想了解如何部署 SQL Server VM，则请参阅[在 Azure 门户预览中预配 SQL Server 虚拟机](/documentation/articles/virtual-machines-windows-portal-sql-server-provision/)。
@@ -36,7 +36,7 @@
 可用使用“在 Azure VM 中运行 SQL Server”选项在 Azure 中存储关系数据。它对于几个方案来说是不错的选择。例如，你可能想要配置与本地 SQL Server 计算机高度相似的 Azure VM。或者可能想要在同一数据库服务器上运行其他应用程序和服务。有两个主要资源，可帮助用户仔细考虑更多方案和注意事项：
 
 * [Azure 虚拟机上的 SQL Server](/home/features/virtual-machines/#home_vm_overview_info) 概述了在 Azure VM 上使用 SQL Server 的最佳方案。
-* [选择云 SQL Server 选项：Azure SQL (PaaS) 数据库或 Azure VM 上的 SQL Server (IaaS)](/documentation/articles/sql-database-paas-vs-sql-server-iaas/) 介绍了 SQL 数据库与运行于 VM 上的 SQL Server 之间的详细比较。
+* [选择云 SQL Server 选项：Azure SQL \(PaaS\) 数据库或 Azure VM 上的 SQL Server \(IaaS\)](/documentation/articles/sql-database-paas-vs-sql-server-iaas/) 介绍了 SQL 数据库与运行于 VM 上的 SQL Server 之间的详细比较。
 
 ## 创建新的 SQL VM
 以下部分提供了直接链接，可链接到 Azure 门户预览的 SQL Server 虚拟机库映像。
@@ -59,7 +59,7 @@
 预配 SQL Server VM 之后，有几项可选的管理任务。在许多方面，完全可以像管理本地 SQL Server 实例一样配置和管理 SQL Server。但某些任务是特定于 Azure 的。下列各节重点介绍上述某些领域并提供详细信息链接。
 
 ### 连接到 VM
-其中一个最基本的管理步骤是，通过工具连接到 SQL Server VM，如 SQL Server Management Studio (SSMS)。有关如何连接到新 SQL Server VM 的说明，请参阅[连接到 Azure 上的 SQL Server 虚拟机](/documentation/articles/virtual-machines-windows-sql-connect/)。
+其中一个最基本的管理步骤是，通过工具连接到 SQL Server VM，如 SQL Server Management Studio \(SSMS\)。有关如何连接到新 SQL Server VM 的说明，请参阅[连接到 Azure 上的 SQL Server 虚拟机](/documentation/articles/virtual-machines-windows-sql-connect/)。
 
 ### 迁移数据
 如果已有数据库，你会想要将该数据库移至新预配的 SQL VM。有关迁移选项的列表和指导，请参阅 [Migrating a Database to SQL Server on an Azure VM](/documentation/articles/virtual-machines-windows-migrate-sql/)（将数据库迁移到 Azure VM 上的 SQL Server）。
@@ -75,15 +75,15 @@ Azure VM 可以利用[自动备份](/documentation/articles/virtual-machines-win
 ### 自动更新
 Azure VM 可以使用[自动修补](/documentation/articles/virtual-machines-windows-sql-automated-patching/)来安排维护时段，以便自动安装重要的 Windows 和 SQL Server 更新。
 
-### 客户体验改善计划 (CEIP)
-客户体验改善计划 (CEIP) 默认情况下已启用。它定期将报表发送给 Microsoft，以帮助改进 SQL Server。CEIP 不要求管理任务，除非想在预配后禁用它。你可以通过远程桌面连接到 VM，以自定义或禁用 CEIP。然后运行 **SQL Server 错误和使用情况报告**实用工具。请按照说明禁用报告功能。
+### 客户体验改善计划 \(CEIP\)
+客户体验改善计划 \(CEIP\) 默认情况下已启用。它定期将报表发送给 Microsoft，以帮助改进 SQL Server。CEIP 不要求管理任务，除非想在预配后禁用它。你可以通过远程桌面连接到 VM，以自定义或禁用 CEIP。然后运行 **SQL Server 错误和使用情况报告**实用工具。请按照说明禁用报告功能。
 
 有关详细信息，请参阅[接受许可条款](https://msdn.microsoft.com/zh-cn/library/ms143343.aspx)主题的 CEIP 部分。
 
 ## 后续步骤
-有关定价问题，请参阅[定价](/pricing/details/virtual-machines/)。在“VM 类型”列表中选择 SQL Server 的目标版本。然后查看不同大小的虚拟机的价格。
+有关定价问题，请参阅[定价](/pricing/details/virtual-machines/)。在**VM 类型**列表中选择 SQL Server 的目标版本。然后查看不同大小的虚拟机的价格。
 
 其他问题？ 请先参阅 [Azure 虚拟机中的 SQL Server 常见问题解答](/documentation/articles/virtual-machines-windows-sql-server-iaas-faq/)。同时将问题或看法添加到任何 SQL VM 主题的底部，以便与 Azure.cn 和社区互动。
 
-<!---HONumber=Mooncake_0116_2017-->
-<!--Update_Description: update meta properties & wording update-->
+<!---HONumber=Mooncake_0220_2017-->
+<!--Update_Description: wording update-->
