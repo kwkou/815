@@ -51,7 +51,7 @@
 
 2. 打开 Web 浏览器并导航到显示的 URL（通常是 http://127.0.0.1:8888）。
 
-## <a name="set-passwords"></a> 设置沙盒密码
+## <a name="set-passwords" id="set-sandbox-passwords"></a> 设置沙盒密码
 
 1. 在“Hortonworks 沙盒”页的“开始”步骤中，选择“查看高级选项”。使用此页上的信息通过 SSH 登录到沙盒。使用提供的名称和密码。
    

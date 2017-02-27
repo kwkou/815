@@ -164,7 +164,7 @@ HDInsight 提供了多个脚本用于在 HDInsight 群集上安装以下组件�
 
 出现提示时，请输入群集的凭据。创建群集可能需要几分钟时间。
 
-## 使用 .NET SDK 调用脚本
+## <a name="call-scripts-using-net-sdk"></a> 使用 .NET SDK 调用脚本
 以下示例演示如何在基于 Windows 的 HDInsight 群集上安装 Spark。若要安装其他软件，需要替换代码中的脚本文件。
 
 **创建具有 Spark 的 HDInsight 群集**
