@@ -82,13 +82,11 @@ RStudio Server 使用端口 8787。Azure VM 的默认配置不会打开此端口
 
 例如，使用 PowerShell 为包含资源组 `rservercloudrg` 和所需主机名 `rservercloud` 的、名为 `rservercloudvm` 的 VM 添加公共主机名。
 
-```powershell
-PS C:\\Users\\juser> Select-AzureSubscription -SubscriptionName "Visual Studio Ultimate with MSDN" –Current
+    PS C:\\Users\\juser> Select-AzureSubscription -SubscriptionName "Visual Studio Ultimate with MSDN" –Current
 
-PS C:\\Users\\juser> Switch-AzureMode -Name AzureResourceManager
+    PS C:\\Users\\juser> Switch-AzureMode -Name AzureResourceManager
 
-PS C:\\Users\\juser> New-AzurePublicIpAddress -Name rservercloudvm -ResourceGroupName rservercloudrg -Location "China East" -DomainNameLabel rservercloud -AllocationMethod Dynamic
-```
+    PS C:\\Users\\juser> New-AzurePublicIpAddress -Name rservercloudvm -ResourceGroupName rservercloudrg -Location "China East" -DomainNameLabel rservercloud -AllocationMethod Dynamic
 
 在入站安全规则中添加对端口 TCP/8787 的访问权限后，可通过 http://rservercloud.chinaeast.chinacloudapp.cn:8787/ 访问 RStudio Server
 
@@ -107,9 +105,6 @@ PS C:\\Users\\juser> New-AzurePublicIpAddress -Name rservercloudvm -ResourceGrou
 
 * 使用 [AzCopy](/documentation/articles/storage-use-azcopy/) 等实用工具将数据从存储帐户复制到本地文件系统。
 * 将文件添加到存储帐户中的某个文件共享，然后将该文件共享装载为 VM 上的网络驱动器。有关详细信息，请参阅[装载 Azure 文件](/documentation/articles/storage-how-to-use-files-linux/)。
-
-## 使用 Azure Data Lake Storage \(ADLS\) 帐户中的数据
-可以使用 `RevoscaleR` 包从 ADLS 存储中读取数据。只需像使用 `webHDFS` 引用 HDFS 文件系统一样引用存储帐户。有关详细信息，请参阅此[设置指南](http://go.microsoft.com/fwlink/?LinkId=723452)。
 
 ## 文档和资源
 
