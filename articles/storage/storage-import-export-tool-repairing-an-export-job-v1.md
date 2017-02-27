@@ -1,8 +1,8 @@
 <properties
     pageTitle="修复导出作业 | Azure"
     description="了解如何使用 Azure 导入/导出服务修复已创建和运行的导出作业。"
-    author="renashahmsft"
-    manager="aungoo"
+    author="muralikk"
+    manager="syadav"
     editor="tysonn"
     services="storage"
     documentationcenter="" />  
@@ -14,9 +14,9 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="05/25/2015"
-    wacn.date="01/24/2017"
-    ms.author="renash" />  
+    ms.date="01/15/2017"
+    wacn.date="02/24/2017"
+    ms.author="muralikk" />  
 
 
 # 修复导出作业
@@ -39,7 +39,7 @@
 |**/sn:<StorageAccountName>**|必需。导出作业的存储帐户的名称。|  
 |**/sk:<StorageAccountKey>**|当且仅当未指定容器 SAS 时才是**必需**的。导出作业的存储帐户的帐户密钥。|  
 |**/csas:<ContainerSas>**|当且仅当未指定存储帐户密钥时才是**必需**的。用于访问与导出作业关联的 Blob 的容器 SAS。|  
-|**/CopyLogFile:<DriveCopyLogFile>**|必需。驱动器复制日志文件的路径。该文件由 Microsoft Azure 导入/导出服务生成，可以从与该作业关联的 Blob 存储下载。复制日志文件包含有关要修复的已失败 Blob 或文件的信息。|  
+|**/CopyLogFile:<DriveCopyLogFile>**|必需。驱动器复制日志文件的路径。该文件由 Azure 导入/导出服务生成，可以从与该作业关联的 Blob 存储下载。复制日志文件包含有关要修复的已失败 Blob 或文件的信息。|  
 |**/ManifestFile:<DriveManifestFile>**|<p>可选。导出驱动器的清单文件的路径。此文件由 Azure 导入/导出服务生成，存储在导出驱动器上，或者位于与该作业关联的存储帐户的 Blob 中。</p><p> 将使用在此文件中包含的 MD5 哈希验证导出驱动器上文件的内容。确定下载已损坏的所有文件并将其重新写入目标目录。<p>|  
   
 ## 使用 RepairExport 模式更正失败的导出  
@@ -81,7 +81,7 @@
 ## 使用 RepairExport 验证驱动器内容  
 还可以使用提供 **RepairExport** 选项的 Azure 导入/导出服务来验证驱动器上的内容是否正确。每个导出驱动器上的清单文件包含驱动器内容的 MD5 哈希。
   
-Azure 导入/导出服务还可以在导出过程中将清单文件保存到某个存储帐户。完成作业后，可通过[获取作业](https://docs.microsoft.com/en-us/rest/api/storageimportexport/jobs#Jobs_Get)操作获得清单文件的位置。有关驱动器清单文件格式的详细信息，请参阅[导入/导出服务清单文件格式](/documentation/articles/storage-import-export-file-format-metadata-and-properties/)。
+Azure 导入/导出服务还可以在导出过程中将清单文件保存到某个存储帐户。完成作业后，可通过[获取作业](https://docs.microsoft.com/rest/api/storageimportexport/jobs#Jobs_CreateOrUpdate)操作获得清单文件的位置。有关驱动器清单文件格式的详细信息，请参阅[导入/导出服务清单文件格式](/documentation/articles/storage-import-export-file-format-metadata-and-properties/)。
   
 以下示例演示如何结合 **/ManifestFile** 和 **/CopyLogFile** 参数运行 Azure 导入/导出工具：
   
@@ -155,4 +155,4 @@ G:\\pictures\\wild\\canyon.jpg.properties
 [修复导入作业](/documentation/articles/storage-import-export-tool-repairing-an-import-job-v1/)
 [排查 Azure 导入/导出工具问题](/documentation/articles/storage-import-export-tool-troubleshooting-v1/)
 
-<!---HONumber=Mooncake_1226_2016-->
+<!---HONumber=Mooncake_0220_2017-->

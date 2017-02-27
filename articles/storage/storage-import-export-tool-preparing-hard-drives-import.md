@@ -1,27 +1,26 @@
 <properties
     pageTitle="为 Azure 导入/导出的导入作业准备硬盘驱动器 | Azure"
     description="了解如何使用 WAImportExport 工具准备硬盘驱动器，以便为 Azure 导入/导出服务创建导入作业。"
-    author="renashahmsft"
-    manager="aungoo"
+    author="muralikk"
+    manager="syadav"
     editor="tysonn"
     services="storage"
-    documentationcenter="" />  
-
+    documentationcenter="" />
 <tags
-    ms.service="storage"
+    ms.assetid="ms.service: storage"
     ms.workload="storage"
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="12/16/2016"
-    wacn.date="01/24/2017"
-    ms.author="renash" />  
+    ms.date="01/15/2017"
+    wacn.date="02/24/2017"
+    ms.author="muralikk" />  
 
 
 # 为导入作业准备硬盘驱动器
 ## 概述
 
-WAImportExport 工具是可与 [Azure 导入/导出服务](/documentation/articles/storage-import-export-service/)一起使用的驱动器准备和修复工具。可以使用此工具将数据复制到要寄送给 Azure 数据中心的硬盘驱动器。完成某个导入作业后，可以使用此工具修复已损坏、丢失或与其他 Blob 冲突的任何 Blob。通过某个已完成的导出作业收到驱动器后，可以使用此工具修复这些驱动器上已损坏或丢失的任何文件。本文讲解此工具的工作原理。
+WAImportExport 工具是可与 [Azure 导入/导出服务](/documentation/articles/storage-import-export-service/)一起使用的驱动器准备和修复工具。可以使用此工具将数据复制到要寄送给 Azure 数据中心的硬盘驱动器。完成某个导入作业后，可以使用此工具修复已损坏、丢失或与其他 Blob 冲突的任何 Blob。获得已完成导出作业的驱动器后，可以使用此工具修复这些驱动器上已损坏或丢失的任何文件。本文讲解此工具的工作原理。
 
 ## 先决条件
 
@@ -82,20 +81,20 @@ WAImportExport 工具是可与 [Azure 导入/导出服务](/documentation/articl
 
 | 字段 | 说明 |
 | --- | --- |
-| BasePath | <p>**[必需]**</p><p>此参数的值表示要导入的数据所在的源。工具将以递归方式复制此路径下的所有数据。</p><p>**允许的值**：必须是本地计算机上的有效路径，或者可由用户访问的有效共享路径。目录路径必须是绝对路径（而不是相对路径）。如果路径以“\\”结尾，则表示目录；如果路径不以“\\”结尾，则表示文件。</p><p>不允许在此字段中指定正则表达式。如果路径包含空格，请将路径括在 "" 中。</p><p>**示例**："c:\\Directory\\c\\Directory\\File.txt"<br>"\\\FBaseFilesharePath.domain.net\\sharename\\directory 1" |
-| DstBlobPathOrPrefix | <p>**[必需]**</p><p> Azure 存储帐户中的目标虚拟目录的路径。虚拟目录可能存在，也可能不存在。如果不存在，导入/导出服务将创建一个虚拟目录。</p><p>在指定目标虚拟目录或 Blob 时，请确保使用有效的容器名称。请记住，容器名称必须是小写的。有关容器命名规则，请参阅 [Naming and Referencing Containers, Blobs, and Metadata](https://docs.microsoft.com/en-us/rest/api/storageservices/fileservices/naming-and-referencing-containers--blobs--and-metadata)（命名和引用容器、Blob 与元数据）。如果仅指定根，则源的目录结构将目标 Blob 容器中复制。如果所需的目录结构不同于源中的目录结构，可在 CSV 中包含多个映射行</p><p>可以指定容器，或者指定类似于 music/70s/ 的 Blob 前缀。目标目录必须以容器名称开头，后跟正斜杠“/”，并且可以选择包含以“/”结尾的虚拟 Blob 目录。</p><p>当目标容器为根容器时，必须显式指定包含正斜杠的根容器（如 $root/）。由于根容器下的 Blob 的名称中不能包含“/”，因此当目标目录为根容器时，将不会复制源目录中的任何子目录。</p><p>**示例**</p><p>如果目标 Blob 路径为 https://mystorageaccount.blob.core.chinacloudapi.cn/video，则此字段的值可以是 video</p> |
+| BasePath | <p>**[必需]**</p><p>此参数的值表示要导入的数据所在的源。工具将以递归方式复制此路径下的所有数据。</p><p>**允许的值**：必须是本地计算机上的有效路径，并且用户可以对其进行访问。目录路径必须是绝对路径（而不是相对路径）。如果路径以“\\”结尾，则表示目录；如果路径不以“\\”结尾，则表示文件。</p><p>不允许在此字段中指定正则表达式。如果路径包含空格，请将路径括在 "" 中。</p><p>**示例**："c:\\Directory\\c\\Directory\\File.txt"<br>"\\\FBaseFilesharePath.domain.net\\sharename\\directory 1" |
+| DstBlobPathOrPrefix | <p>**[必需]**</p><p> Azure 存储帐户中的目标虚拟目录的路径。虚拟目录可以是已经存在或尚不存在的目录。如果不存在，导入/导出服务将创建一个虚拟目录。</p><p>在指定目标虚拟目录或 Blob 时，请确保使用有效的容器名称。请记住，容器名称必须是小写的。有关容器命名规则，请参阅 [Naming and Referencing Containers, Blobs, and Metadata](https://docs.microsoft.com/en-us/rest/api/storageservices/fileservices/naming-and-referencing-containers--blobs--and-metadata)（命名和引用容器、Blob 与元数据）。如果仅指定根，则源的目录结构将在目标 Blob 容器中复制。如果所需的目录结构不同于源中的目录结构，可在 CSV 中包含多个映射行</p><p>可以指定容器，或者指定类似于 music/70s/ 的 Blob 前缀。目标目录必须以容器名称开头，后跟正斜杠“/”，并且可以选择包含以“/”结尾的虚拟 Blob 目录。</p><p>当目标容器为根容器时，必须显式指定包含正斜杠的根容器（如 $root/）。由于根容器下的 Blob 的名称中不能包含“/”，因此当目标目录为根容器时，将不会复制源目录中的任何子目录。</p><p>**示例**</p><p>如果目标 Blob 路径为 https://mystorageaccount.blob.core.chinacloudapi.cn/video，则此字段的值可以是 video</p> |
 | /BlobType | <p>**[可选]** block \| page</p><p>导入/导出服务目前支持 2 种 Blob：页 Blob 和块 Blob。默认情况下，所有文件将以块 Blob 的形式导入。*.vhd 和 *.vhdx 将以页 Blob 的形式导入。块 Blob 和页 Blob 的允许大小有限制。有关详细信息，请参阅 [Storage scalability targets](/documentation/articles/storage-scalability-targets/#scalability-targets-for-blobs-queues-tables-and-files)（存储可伸缩性目标）。</p> |
 | Disposition | <p>**[可选]** rename \| no-overwrite \| overwrite </p><p>此字段指定导入期间（将数据从磁盘上载到存储帐户时）的复制行为。可用选项包括：rename\|overwite\|no-overwrite.。如果未指定任何值，则默认为“rename”。</p><p>**Rename**：如果存在同名的对象，则在目标中创建一个副本。</p><p>Overwrite：将文件覆盖为更新的文件。使用最近一次修改的文件覆盖。</p><p>**No-overwrite**：跳过文件写入（如果该文件已存在）。</p>|
 | MetadataFile | <p>**[可选]**</p><p>此字段的值是用户需要保留对象的元数据或者提供自定义元数据时可提供的元数据文件。目标 Blob 的元数据文件的路径。有关详细信息，请参阅[导入/导出服务元数据和属性文件格式](/documentation/articles/storage-import-export-file-format-metadata-and-properties/)</p> |
-| PropertiesFile | <p>**[可选]**</p><p>目标 Blob 的属性文件的路径。有关详细信息，请参阅[导入/导出服务元数据和属性文件格式](https://docs.microsoft.com/zh-cn/azure/storage/storage-import-export-file-format-metadata-and-properties)。</p> |
+| PropertiesFile | <p>**[可选]**</p><p>目标 Blob 的属性文件的路径。有关详细信息，请参阅[导入/导出服务元数据和属性文件格式](/documentation/articles/storage-import-export-file-format-metadata-and-properties/)。</p> |
 
 ##<a name="prepare-initialdriveset-or-additionaldriveset-csv-file"></a> 准备 InitialDriveSet 或 AdditionalDriveSet CSV 文件
 
 ### 什么是驱动器集 CSV
 
-/InitialDriveSet 或 /AdditionalDriveSet 标志的值是一个 CSV 文件，其中包含要将驱动器号映射到的磁盘的列表，以便工具可以正确选择要准备的磁盘列表。如果数据大小大于单个磁盘的大小，WAImportExport 工具将以优化方式在此 CSV 文件中所列的多个磁盘之间分发数据。
+/InitialDriveSet 或 /AdditionalDriveSet 标志的值是一个 CSV 文件，其中包含要将驱动器号映射到的磁盘的列表，以便工具可以正确选择要准备的磁盘。如果数据大小大于单个磁盘的大小，WAImportExport 工具将以优化方式在此 CSV 文件中所列的多个磁盘之间分配数据。
 
-在单个会话中可将数据写入到磁盘数量没有限制。工具会根据磁盘大小和文件夹大小分发数据。它会选择对于对象大小最有利的磁盘。数据上载到存储帐户时，将融合回到数据集文件中指定的目录结构。若要创建驱动器集 CSV，请遵循以下步骤。
+在单个会话中用于写入数据的磁盘没有数量限制。工具会根据磁盘大小和文件夹大小分配数据。它会选择对于对象大小最有利的磁盘。数据上载到存储帐户时，将融合回到数据集文件中指定的目录结构。若要创建驱动器集 CSV，请遵循以下步骤。
 
 ### 创建基本卷并分配驱动器号
 
@@ -114,7 +113,7 @@ WAImportExport 工具是可与 [Azure 导入/导出服务](/documentation/articl
 | 字段 | 值 |
 | --- | --- |
 | DriveLetter | <p>**[必需]**</p><p>作为目标提供给工具的每个驱动器上需有一个简单的 NTFS 卷，并分配有一个驱动器号。</p> <p>**示例**：R 或 r</p>|
-| FormatOption | <p>**[必需]** Format \| AlreadyFormatted</p><p>**Format**：指定将格式磁盘上的所有数据。</p><p>**AlreadyFormatted**：如果指定此值，工具将跳过格式化。</p>|
+| FormatOption | <p>**[必需]** Format \| AlreadyFormatted</p><p>**Format**：如指定此值，将格式化磁盘上的所有数据。</p><p>**AlreadyFormatted**：如果指定此值，工具将跳过格式化。</p>|
 | SilentOrPromptOnFormat | <p>**[必需]** SilentMode \| PromptOnFormat</p><p>**SilentMode**：提供此值可让用户以无提示模式运行该工具。</p><p>**PromptOnFormat**：每次格式化时，工具将提示用户确认是否确实想要执行该操作。</p><p>如果未设置此字段，命令将会中止并提示错误消息：“SilentOrPromptOnFormat 的值不正确: 无”</p>|
 | 加密 | <p>**[必需]**Encrypt \| AlreadyEncrypted</p><p>此字段的值确定要加密哪个磁盘，不加密哪个磁盘。</p><p>**Encrypt**：工具将格式化驱动器。如果“FormatOption”字段的值为“Format”，则此字段的值必须是“Encrypt”。如果在这种情况下指定“AlreadyEncrypted”，将导致错误“指定‘Format’时，也必须指定‘Encrypt’”。</p><p>**AlreadyEncrypted**：工具将使用“ExistingBitLockerKey”字段中提供的 BitLockerKey 解密驱动器。如果“FormatOption”字段的值为“AlreadyFormatted”，则此字段的值可以是“Encrypt”或“AlreadyEncrypted”</p>|
 | ExistingBitLockerKey | <p>**[必需]**（如果“Encryption”字段的值为“AlreadyEncrypted”）</p><p>此字段的值是与特定磁盘关联的 BitLocker 密钥。</p><p>如果“Encryption”字段的值为“Encrypt”，应将此字段留空。如果在这种情况下指定 BitLocker 密钥，将导致错误“不应指定 Bitlocker 密钥”。</p><p> **示例**：060456-014509-132033-080300-252615-584177-672089-411631</p>|
@@ -125,7 +124,7 @@ WAImportExport 工具是可与 [Azure 导入/导出服务](/documentation/articl
 
 ### 第一个会话
 
-将单个/多个目录复制到单个/多个磁盘（具体取决于 CSV 文件中的指定）的第一个复制会话。可以使用 PrepImport 命令调用 WAImportExport 工具，在第一个复制会话中使用一个新的复制会话来复制目录和/或文件：
+将单个/多个目录复制到单个/多个磁盘（具体取决于 CSV 文件中的指定）的第一个复制会话。可以使用如下 PrepImport 命令调用 WAImportExport 工具，在第一个复制会话中使用一个新的复制会话来复制目录和/或文件：
 
 
 	WAImportExport.exe PrepImport /j:<JournalFile> /id:<SessionId> [/logdir:<LogDirectory>] [/sk:<StorageAccountKey>] [/silentmode] [/InitialDriveSet:<driveset.csv>] DataSet:<dataset.csv>
@@ -134,12 +133,12 @@ WAImportExport 工具是可与 [Azure 导入/导出服务](/documentation/articl
 **示例：**
 
 
-	WAImportExport.exe PrepImport /j:JournalTest.jrn /id:session#1  /sk:************* /InitialDriveSet:driveset-1.csv /DataSet:dataset-1.csv /logdir:F:\logs
+	WAImportExport.exe PrepImport /j:JournalTest.jrn /id:session#1  /sk:\*\*\*\*\*\*\*\*\*\*\*\*\* /InitialDriveSet:driveset-1.csv /DataSet:dataset-1.csv /logdir:F:\logs
 
 
 ### 在后续会话中添加数据
 
-在后续复制会话中，无需指定初始参数。需要使用相同的日记文件，使工具能够记住上一会话的暂停位置。复制会话的状态将写入日记文件。下面是用于复制目录和/或文件的后续复制会话的语法：
+在后续复制会话中，无需指定初始参数。需要使用相同的日记文件，使工具能够记住上一会话的暂停位置。复制会话的状态将写入日记文件。下面是用于复制更多目录和/或文件的后续复制会话的语法：
 
 
 	WAImportExport.exe PrepImport /j:<SameJournalFile> /id:<DifferentSessionId>  [DataSet:<differentdataset.csv>]
@@ -181,7 +180,7 @@ WAImportExport 工具是可与 [Azure 导入/导出服务](/documentation/articl
 	WAImportExport.exe PrepImport /j:JournalTest.jrn /id:session#2  /AbortSession
 
 
-如果异常终止，则只能中止最后的复制会话。请注意，无法中止驱动器的第一个复制会话。在此情况下，必须重新启动包含新日记文件的复制会话。
+如果异常终止，则只能中止最后的复制会话。请注意，无法中止驱动器的第一个复制会话。在此情况下，必须使用新日记文件重新启动复制会话。
 
 ### 恢复最近中断的会话：
 
@@ -216,7 +215,7 @@ WAImportExport 工具是可与 [Azure 导入/导出服务](/documentation/articl
 | /d:&lt;TargetDirectories&gt; | **必需**。仅适用于 RepairImport 和 RepairExport。对于 RepairImport，值为要修复的一个或多个以分号分隔的目录；对于 RepairExport，值为要修复的一个目录，例如驱动器的根目录。 |
 | /CopyLogFile:&lt;DriveCopyLogFile&gt; | **必需**仅适用于 RepairImport 和 RepairExport。驱动器复制日志文件（详细或错误）的路径。 |
 | /ManifestFile:&lt;DriveManifestFile&gt; | <p>**必需**仅适用于 RepairExport。</p><p> 驱动器清单文件的路径。</p> |
-| /PathMapFile:&lt;DrivePathMapFile&gt; | <p>**可选**。仅适用于 RepairImport。</p><p> 包含驱动器根目录相对路径与实际文件位置之间的映射的文件（制表符分隔）的路径。首次指定时，该字段中将填充目标为空的文件路径，也就是说，在 TargetDirectories 中找不到目录、访问目标被拒绝、名称无效，或者目标在多个目录中存在。可以手动编辑路径映射文件来包含正确的目标路径，然后再次为工具指定该文件，以正确解析文件路径。</p> |
+| /PathMapFile:&lt;DrivePathMapFile&gt; | <p>**可选**。仅适用于 RepairImport。</p><p> 包含驱动器根目录相对文件路径与实际文件位置之间的映射的文件（制表符分隔）的路径。首次指定时，该字段中将填充目标为空的文件路径，也就是说，在 TargetDirectories 中找不到目录、访问目标被拒绝、名称无效，或者目标在多个目录中存在。可以手动编辑路径映射文件来包含正确的目标路径，然后再次为工具指定该文件，以正确解析文件路径。</p> |
 | /ExportBlobListFile:&lt;ExportBlobListFile&gt; | <p>**必需**。仅适用于 PreviewExport。</p><p> 包含要导出的 Blob 的 Blob 路径列表或 Blob 路径前缀的 XML 文件的路径。文件格式与导入/导出服务 REST API 的“放置作业”操作中的 Blob 列表 Blob 格式相同。</p> |
 | /DriveSize:&lt;DriveSize&gt; | <p>**必需**。仅适用于 PreviewExport。</p><p> 用于导出的驱动器的大小。例如，500GB、1.5TB。注意：1GB = 1,000,000,000 字节，1TB = 1,000,000,000,000 字节</p> |
 | /DataSet:&lt;dataset.csv&gt; | <p>**必需**</p><p>包含要复制到目标驱动器的目录列表和/或列表文件的 CSV 文件。</p> |
@@ -281,7 +280,7 @@ WAImportExport 工具是可与 [Azure 导入/导出服务](/documentation/articl
 	[EndUpdateRecord]
 
 
-### 会话的示例日记文件：以 .jrn 结尾，记录会话跟踪
+### 会话的示例日记文件：以 .jrn 结尾，记录会话轨迹
 
 
 	[BeginUpdateRecord][2016/11/02 18:24:14.735][Type:NewJournalFile]
@@ -303,15 +302,15 @@ WAImportExport 工具是可与 [Azure 导入/导出服务](/documentation/articl
 
 #### WAImportExport 工具是什么？
 
-WAImportExport 工具是可与 Azure 导入/导出服务一起使用的驱动器准备和修复工具。可以使用此工具将数据复制到要寄送给 Azure 数据中心的硬盘驱动器。完成某个导入作业后，可以使用此工具修复已损坏、丢失或与其他 Blob 冲突的任何 Blob。通过某个已完成的导出作业收到驱动器后，可以使用此工具修复这些驱动器上已损坏或丢失的任何文件。
+WAImportExport 工具是可与 Azure 导入/导出服务一起使用的驱动器准备和修复工具。可以使用此工具将数据复制到要寄送给 Azure 数据中心的硬盘驱动器。完成某个导入作业后，可以使用此工具修复已损坏、丢失或与其他 Blob 冲突的任何 Blob。获得已完成导出作业的驱动器后，可以使用此工具修复这些驱动器上已损坏或丢失的任何文件。
 
 #### WAImportExport 工具如何在多个源目录和磁盘中工作？
 
-如果数据大小大于磁盘大小，WAImportExport 工具将以优化方式在磁盘之间分发数据。到多个磁盘的数据复制可以并行或者按顺序执行。可同时将数据写入到磁盘数量没有限制。工具会根据磁盘大小和文件夹大小分发数据。它会选择对于对象大小最有利的磁盘。数据上载到存储帐户时，将融合回到指定的目录结构。
+如果数据大小大于磁盘大小，WAImportExport 工具将以优化方式在磁盘之间分配数据。到多个磁盘的数据复制可以并行或者按顺序执行。可同时将数据写入到磁盘数量没有限制。工具会根据磁盘大小和文件夹大小分配数据。它会选择对于对象大小最有利的磁盘。数据上载到存储帐户时，将融合回到指定的目录结构。
 
 #### 在哪里可以找到上一个版本的 WAImportExport 工具？
 
-WAImportExport 工具包含 WAImportExport V1 工具所提供的全部功能。用户可以使用 WAImportExport 工具指定多个源以及写入多个驱动器。此外，用户可以轻松管理要在其中以单个 CSV 文件复制数据的源位置。但是，如果需要 SAS 支持或者要将单个源复制到单个磁盘，可以[下载 WAImportExport V1 工具](http://go.microsoft.com/fwlink/?LinkID=301900&amp;clcid=0x409)并参阅 [WAImportExport V1 Reference](/documentation/articles/storage-import-export-tool-how-to-v1/)（WAImportExport V1 参考），获取 WAImportExport V1 用法的帮助。
+WAImportExport 工具包含 WAImportExport V1 工具所提供的全部功能。用户可以使用 WAImportExport 工具指定多个源以及写入多个驱动器。此外，用户可以在单个 CSV 文件中轻松管理要复制的数据的多个源位置。但是，如果需要 SAS 支持或者要将单个源复制到单个磁盘，可以[下载 WAImportExport V1 工具](http://go.microsoft.com/fwlink/?LinkID=301900&amp;clcid=0x409)并参阅 [WAImportExport V1 Reference](/documentation/articles/storage-import-export-tool-how-to-v1/)（WAImportExport V1 参考），获取 WAImportExport V1 用法的帮助。
 
 #### 会话 ID 是什么？
 
@@ -319,17 +318,17 @@ WAImportExport 工具包含 WAImportExport V1 工具所提供的全部功能。�
 
 但是，不能使用相同的复制会话将数据导入不同的存储帐户。
 
-如果多次运行工具后复制会话名称相同，则日志文件 (/logdir) 和存储帐户密钥 (/sk) 也应会相同。
+如果多次使用相同的复制会话名称运行工具，则日志文件 \(/logdir\) 和存储帐户密钥 \(/sk\) 也应相同。
 
-SessionId 可以包含字母、0~9、下划线 (\_)、短划线 (-) 或井号 (#)，长度必须为 3~30 个字符。
+SessionId 可以包含字母、0\~9、下划线 \(\_\)、短划线 \(-\) 或井号 \(\#\)，长度必须为 3\~30 个字符。
 
-例如，session-1、session#1 或 session\_1
+例如，session-1、session\#1 或 session\_1
 
 #### 日记文件是什么？
 
 每次运行 WAImportExport 工具将文件复制到硬盘驱动器时，该工具会创建一个复制会话。复制会话的状态将写入日记文件。如果某个复制会话中断（例如，由于系统电源中断），可以通过重新运行该工具并在命令行上指定日记文件来恢复该复制会话。
 
-对于使用 Azure 导入/导出工具准备的每个硬盘驱动器，该工具将创建一个日记文件，文件名为“&lt;DriveID&gt;.xml”，其中，驱动器 ID 是与该工具从磁盘读取的驱动器关联的序列号。需要使用所有驱动器中的日记文件创建导入作业。在工具中断的情况下，还可使用日记文件来恢复驱动器准备操作。
+对于使用 Azure 导入/导出工具准备的每个硬盘驱动器，该工具将创建一个日记文件，文件名为“&lt;DriveID&gt;.xml”，其中，DriveID 是与该工具从磁盘读取的驱动器关联的序列号。需要使用所有驱动器中的日记文件创建导入作业。在工具中断的情况下，还可使用日记文件来恢复驱动器准备操作。
 
 #### 日志目录是什么？
 
@@ -366,13 +365,13 @@ SessionId 可以包含字母、0~9、下划线 (\_)、短划线 (-) 或井号 (#
 
 所有 Microsoft .NET Framework 版本都安装在以下目录：%windir%\\Microsoft.NET\\Framework\\
 
-请在要运行该工具的目标计算机上导航到上述路径。查找以“v4”开头的文件夹名称。如果不存在这种目录，则表示计算机上未安装 .Net v4。可以使用 [Microsoft .NET Framework 4（Web 安装程序）](https://www.microsoft.com/download/details.aspx?id=17851)在计算机上下载 .Net 4。
+请在要运行该工具的目标计算机上导航到上述位置。查找以“v4”开头的文件夹名称。如果不存在这种目录，则表示计算机上未安装 .Net v4。可以使用 [Microsoft .NET Framework 4（Web 安装程序）](https://www.microsoft.com/download/details.aspx?id=17851)在计算机上下载 .Net 4。
 
 ### 限制
 
 #### 可以同时准备/发送多少个驱动器？
 
-工具可准备的磁盘数量没有限制。但是，工具要求使用驱动器号作为输入。同时准备的磁盘数限制为 25 个。一个作业每次最多可以处理 10 个磁盘。如果针对同一个存储帐户准备 10 个以上的磁盘，可将这些磁盘的准备分散在多个作业中。
+工具可准备的磁盘数量没有限制。但是，工具要求使用驱动器号作为输入。这会将同时准备的磁盘数限制为 25 个。一个作业每次最多可以处理 10 个磁盘。如果针对同一个存储帐户准备 10 个以上的磁盘，可将这些磁盘的准备分散在多个作业中。
 
 #### 是否可以针对多个存储帐户准备磁盘？
 
@@ -390,18 +389,19 @@ SessionId 可以包含字母、0~9、下划线 (\_)、短划线 (-) 或井号 (#
 
 #### 复制正在进行时，有多少个输入磁盘会并行发生活动 IO？
 
-WAImportExport 工具根据输入文件的大小在输入磁盘之间分发数据。也就是说，并行的活动磁盘数完全取决于输入数据的性质。根据输入数据集中各个文件的大小，可能有一个或多个磁盘出现并行活动 IO。有关详细信息，请参阅下一条常见问题。
+WAImportExport 工具根据输入文件的大小在输入磁盘之间分配数据。然而，并行的活动磁盘数完全取决于输入数据的性质。根据输入数据集中各个文件的大小，可能有一个或多个磁盘出现并行活动 IO。有关详细信息，请参阅下一条常见问题。
 
-#### 工具如何在磁盘之间分发文件？
+#### 工具如何在磁盘之间分配文件？
 
-WAImportExport 工具逐批读取和写入文件，每个批最多包含 100000 个文件。也就是说，最多可以并行写入 100000 个文件。如果这 100000 个文件已分发到多个驱动器，则会同时写入多个磁盘。但是，工具是同时写入多个磁盘还是写入单个磁盘，则取决于批的累积大小。例如，在处理小型文件时，如果这 100000 个文件全部能够装入一个驱动器，则处理此批期间，工具只写入一个磁盘。
+WAImportExport 工具逐批读取和写入文件，每个批最多包含 100000 个文件。也就是说，最多可以并行写入 100000 个文件。如果将这 100000 个文件分配到多个驱动器，则会同时写入多个磁盘。但是，工具是同时写入多个磁盘还是写入单个磁盘，则取决于批的累积大小。例如，在处理小型文件时，如果这 100000 个文件全部能够装入一个驱动器，则处理此批期间，工具只写入一个磁盘。
 
 ### WAImportExport 输出
 
 #### 有两个日记文件。应该将哪个文件上载到 Azure 门户？
 
-**.xml** - 对于使用 WAImportExport 工具准备的每个硬盘驱动器，该工具将创建一个日记文件，文件名为“&lt;DriveID&gt;.xml”，其中，驱动器 ID 是与该工具从磁盘读取的驱动器关联的序列号。在 Azure 门户中创建导入作业时，需要使用所有驱动器中的日记文件。在工具中断的情况下，还可使用此日记文件来恢复驱动器准备操作。
+**.xml** - 对于使用 WAImportExport 工具准备的每个硬盘驱动器，该工具将创建一个日记文件，文件名为“&lt;DriveID&gt;.xml”，其中，DriveID 是与该工具从磁盘读取的驱动器关联的序列号。在 Azure 门户中创建导入作业时，需要使用所有驱动器中的日记文件。在工具中断的情况下，还可使用此日记文件来恢复驱动器准备操作。
 
-**.jrn** - 带 .jrn 后缀的日志文件包含硬盘驱动器的所有复制会话的状态。它还包含创建导入作业所需的信息。运行 WAImportExport 工具时，始终必须指定一个日志文件，以及一个复制会话 ID。
+**.jrn** - 带 .jrn 后缀的日志文件，包含硬盘驱动器的所有复制会话的状态。它还包含创建导入作业所需的信息。运行 WAImportExport 工具时，始终必须指定一个日志文件，以及一个复制会话 ID。
 
-<!---HONumber=Mooncake_1226_2016-->
+<!---HONumber=Mooncake_0220_2017-->
+<!--Update_Description: wording update-->

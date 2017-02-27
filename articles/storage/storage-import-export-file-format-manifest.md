@@ -1,12 +1,11 @@
 <properties
     pageTitle="导入/导出服务清单文件格式 | Azure"
     description="了解驱动器清单文件的格式。清单文件描述 Azure Blob 存储中的 Blob 与构成导入/导出服务中导入或导出作业的驱动器上的文件之间的映射。"
-    author="renashahmsft"
-    manager="aungoo"
+    author="muralikk"
+    manager="syadav"
     editor="tysonn"
     services="storage"
-    documentationcenter="" />  
-
+    documentationcenter="" />
 <tags
     ms.assetid="f3119e1c-2c25-48ad-8752-a6ed4adadbb0"
     ms.service="storage"
@@ -14,9 +13,9 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="05/25/2015"
-    wacn.date="12/29/2016"
-    ms.author="renash" />  
+    ms.date="01/15/2017"
+    wacn.date="02/24/2017"
+    ms.author="muralikk" />  
 
 
 # 导入/导出服务清单文件格式
@@ -98,7 +97,7 @@
 |`Drive`|嵌套的 XML 元素|包含每个驱动器的清单。|  
 |`DriveId`|String|驱动器的唯一驱动器标识符。通过查询驱动器获取其序列号，即可找到该驱动器标识符。该驱动器序列号通常还打印在该驱动器的外部。`DriveID` 元素必须出现在清单元素中的任何 `BlobList` 元素之前。|  
 |`StorageAccountKey`|String|<p>当且仅当未指定 `ContainerSas` 时，导入作业才需要此元素。与作业关联的 Azure 存储帐户的帐户密钥。</p><p> 导出操作的清单中会省略此元素。</p>|  
-|`ContainerSas`|String|当且仅当未指定 `StorageAccountKey` 时，导入作业才需要此元素。用于访问与作业关联的 Blob 的容器 SAS。有关其格式，请参阅 [Put Job](https://docs.microsoft.com/en-us/rest/api/storageimportexport/jobs#Jobs_CreateOrUpdate)（放置作业）。导出操作的清单中会省略此元素。|  
+|`ContainerSas`|String|当且仅当未指定 `StorageAccountKey` 时，导入作业才需要此元素。用于访问与作业关联的 Blob 的容器 SAS。有关其格式，请参阅 [Put Job](https://docs.microsoft.com/zh-cn/rest/api/storageimportexport/jobs#Jobs_CreateOrUpdate)（放置作业）。导出操作的清单中会省略此元素。|  
 |`ClientCreator`|String|指定创建 XML 文件的客户端。导入/导出服务不解释该值。|  
 |`BlobList`|嵌套的 XML 元素|包含作为导入或导出作业一部分的 Blob 列表。Blob 列表中的每个 Blob 共享相同的元数据和属性。|  
 |`BlobList/MetadataPath`|String|<p>可选。指定磁盘上某个文件的相对路径，该文件包含针对导入操作的 Blob 列表中的 Blob 设置的默认元数据。可以针对每个 Blob 有选择性地重写此元数据。</p><p> 导出操作的清单中会省略此元素。</p>|  
@@ -129,6 +128,6 @@
 |`Blob/PropertiesPath/@Hash`|属性，字符串|指定 Blob properties 文件的 Base16 编码 MD5 哈希。|  
   
 ## 另请参阅  
-[存储导入/导出 REST](https://docs.microsoft.com/en-us/rest/api/storageimportexport/)
+[存储导入/导出 REST](https://docs.microsoft.com/zh-cn/rest/api/storageimportexport/)
 
-<!---HONumber=Mooncake_1226_2016-->
+<!---HONumber=Mooncake_0220_2017-->

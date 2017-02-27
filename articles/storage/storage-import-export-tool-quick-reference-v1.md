@@ -1,21 +1,21 @@
 <properties
     pageTitle="Azure 导入/导出工具的导入作业命令快速参考 | Azure"
     description="导入作业常用的 Azure 导入/导出工具命令参考。本文所述的导入/导出工具为 v1 版本。"
-    author="renashahmsft"
-    manager="aungoo"
+    author="muralikk"
+    manager="syadav"
     editor="tysonn"
     services="storage"
     documentationcenter="" />  
 
 <tags
-    ms.service="storage"
+    ms.assetid="ms.service: storage"
     ms.workload="storage"
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="12/16/2016"
-    wacn.date="12/29/2016"
-    ms.author="renash" />  
+    ms.date="01/15/2017"
+    wacn.date="02/24/2017"
+    ms.author="muralikk" />  
 
 
 # 导入作业的常用命令快速参考
@@ -60,4 +60,4 @@
 ## 另请参阅  
  [为导入作业准备硬盘驱动器的示例工作流](/documentation/articles/storage-import-export-tool-sample-preparing-hard-drives-import-job-workflow-v1/)
 
-<!---HONumber=Mooncake_1226_2016-->
+<!---HONumber=Mooncake_0220_2017-->

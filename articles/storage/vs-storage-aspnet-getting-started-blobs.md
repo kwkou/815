@@ -13,8 +13,8 @@
     ms.tgt_pltfrm="vs-getting-started"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="12/02/2016"
-    wacn.date="02/14/2017"
+    ms.date="12/21/2016"
+    wacn.date="02/24/2017"
     ms.author="tarcher" />  
 
 
@@ -65,7 +65,11 @@ Azure Blob 存储是一种将非结构化数据作为对象/Blob 存储在云中
 
 ##<a name="create-a-blob-container"></a> 创建 Blob 容器
 
-Blob 容器是由 Blob 和文件夹组成的嵌套式层次结构。以下步骤演示了如何创建 Blob 容器。
+Blob 容器是由 Blob 和文件夹组成的嵌套式层次结构。以下步骤演示了如何创建 Blob 容器：
+
+> [AZURE.NOTE]
+> 
+> 本部分中的代码假定你已完成[设置开发环境](#set-up-the-development-environment)部分中的步骤。
 
 1. 打开 `BlobsController.cs` 文件。
 
@@ -99,7 +103,7 @@ Blob 容器是由 Blob 和文件夹组成的嵌套式层次结构。以下步骤
     	CloudBlobContainer container = blobClient.GetContainerReference("test-blob-container");
 
 
-1. 如果容器不存在，则调用 **CloudBlobContainer.CreateIfNotExists** 方法来创建容器。如果容器原本不存在，但已成功创建，则 **CloudBlobContainer.CreateIfNotExists** 方法返回 **true**；否则返回 **false**。
+1. 如果容器不存在，则调用 **CloudBlobContainer.CreateIfNotExists** 方法来创建容器。如果没有容器但已成功创建，则 **CloudBlobContainer.CreateIfNotExists** 方法返回 **true**。否则返回 **false**。
 
 
 		ViewBag.Success = container.CreateIfNotExists();
@@ -115,7 +119,7 @@ Blob 容器是由 Blob 和文件夹组成的嵌套式层次结构。以下步骤
 
 1. 在“添加视图”对话框中，输入 **CreateBlobContainer** 作为视图名称，然后选择“添加”。
 
-1. 打开 `CreateBlobContainer.cshtml` 并对其进行修改，使之看起来如下所示。
+1. 打开 `CreateBlobContainer.cshtml` 并对其进行修改，使其看起来如以下代码片段所示：
 
 
 		@{
@@ -129,22 +133,26 @@ Blob 容器是由 Blob 和文件夹组成的嵌套式层次结构。以下步骤
 
 1. 在“解决方案资源管理器”中，展开“Views”->“Shared”文件夹，然后打开 `_Layout.cshtml`。
 
-1. 在最后一个 **Html.ActionLink** 之后，添加以下 **Html.ActionLink**。
+1. 在最后一个 **Html.ActionLink** 的后面，添加以下 **Html.ActionLink**：
 
 
 		<li>@Html.ActionLink("Create blob container", "CreateBlobContainer", "Blobs")</li>
 
 
-1. 运行该应用程序，然后选择“创建 Blob 容器”。此时会出现类似于以下屏幕快照所示的结果。
+1. 运行该应用程序，并选择“创建 Blob 容器”查看类似于以下屏幕截图所示的结果：
   
-	![创建 Blob 容器](./media/vs-storage-aspnet-getting-started-blobs/results.PNG)  
+	![创建 Blob 容器](./media/vs-storage-aspnet-getting-started-blobs/create-blob-container-results.png)  
 
 
 	如前所述，**CloudBlobContainer.CreateIfNotExists** 方法返回 **true** 的前提是容器原本不存在，是新建的。因此，如果在容器存在的情况下运行该应用，此方法会返回 **false**。若要多次运行应用，必须在再次运行应用之前删除容器。可通过 **CloudBlobContainer.Delete** 方法删除容器。也可通过 [Azure 门户](http://go.microsoft.com/fwlink/p/?LinkID=525040)删除容器。
 
 ## 将 Blob 上传到 Blob 容器中
 
-[创建 Blob 容器](#create-a-blob-container)以后，即可将文件上载到该容器中。本部分介绍如何将本地文件上载到 Blob 容器。相关步骤假定用户已创建名为 *test-blob-container* 的 Blob 容器。用户需将该名称更改为自己的 Blob 容器的名称。
+[创建 Blob 容器](#create-a-blob-container)以后，即可将文件上载到该容器中。本部分介绍如何将本地文件上传到 Blob 容器。相关步骤假定用户已创建名为 *test-blob-container* 的 Blob 容器。
+
+> [AZURE.NOTE]
+> 
+> 本部分中的代码假定你已完成[设置开发环境](#set-up-the-development-environment)部分中的步骤。
 
 1. 打开 `BlobsController.cs` 文件。
 
@@ -159,7 +167,7 @@ Blob 容器是由 Blob 和文件夹组成的嵌套式层次结构。以下步骤
 	    }
 
  
-1. 在 **UploadBlob** 方法中，获取表示存储帐户信息的 **CloudStorageAccount** 对象。使用下面的代码获取存储连接字符串和 Azure 服务配置中的存储帐户信息。（将 *&lt;storage-account-name>* 更改为要访问的 Azure 存储帐户的名称。）
+1. 在 **UploadBlob** 方法中，获取表示存储帐户信息的 **CloudStorageAccount** 对象。使用以下代码从 Azure 服务配置中获取存储连接字符串和存储帐户信息：（将 *&lt;storage-account-name\>* 更改为要访问的 Azure 存储帐户的名称。）
    
 
 	    CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
@@ -178,13 +186,13 @@ Blob 容器是由 Blob 和文件夹组成的嵌套式层次结构。以下步骤
     	CloudBlobContainer container = blobClient.GetContainerReference("test-blob-container");
 
 
-1. 如前所述，Azure 存储支持不同的 Blob 类型。若要检索页 Blob 引用，请调用 **CloudBlobContainer.GetPageBlobReference** 方法。若要检索块 Blob 引用，请调用 **CloudBlobContainer.GetBlockBlobReference** 方法。通常情况下，推荐使用块 Blob 类型。（将 *<blob-name>* 更改为在上载 Blob 后需要提供给 Blob 的名称。）
+1. 如前所述，Azure 存储支持不同的 Blob 类型。若要检索页 Blob 引用，请调用 **CloudBlobContainer.GetPageBlobReference** 方法。若要检索块 Blob 引用，请调用 **CloudBlobContainer.GetBlockBlobReference** 方法。通常情况下，推荐使用块 Blob 类型。（将 \<blob-name\>\* 更改为上传后要提供给 Blob 的名称。）
 
 
     	CloudBlockBlob blob = container.GetBlockBlobReference(<blob-name>);
 
 
-1. 有了 Blob 引用以后，即可通过调用 Blob 引用对象的 **UploadFromStream** 方法，将任何数据流上载到该引用。**UploadFromStream** 方法会根据 Blob 是否存在来覆盖或创建 Blob。（将 *&lt;file-to-upload>* 更改为需上载文件的完全限定路径。）
+1. 有了 Blob 引用以后，即可通过调用 Blob 引用对象的 **UploadFromStream** 方法，将任何数据流上载到该引用。**UploadFromStream** 方法会根据 Blob 是否存在来覆盖或创建 Blob。（将 *&lt;file-to-upload\>* 更改为需上载文件的完全限定路径。）
 
 
 	    using (var fileStream = System.IO.File.OpenRead(<file-to-upload>))
@@ -193,11 +201,11 @@ Blob 容器是由 Blob 和文件夹组成的嵌套式层次结构。以下步骤
 	    }
 
 
-1. 在“解决方案资源管理器”中展开“Views”文件夹，右键单击“Blob”，然后从上下文菜单中选择“添加”->“视图”。
+1. 在“解决方案资源管理器”中展开“Views”文件夹，右键单击“Blob”，然后从上下文菜单中选择“添加”-\>“视图”。
 
-1. 在“解决方案资源管理器”中，展开“Views”->“Shared”文件夹，然后打开 `_Layout.cshtml`。
+1. 在“解决方案资源管理器”中，展开“Views”-\>“Shared”文件夹，然后打开 `_Layout.cshtml`。
 
-1. 在最后一个 **Html.ActionLink** 之后，添加以下 **Html.ActionLink**。
+1. 在最后一个 **Html.ActionLink** 的后面，添加以下 **Html.ActionLink**：
 
 
 		<li>@Html.ActionLink("Upload blob", "UploadBlob", "Blobs")</li>
@@ -205,11 +213,15 @@ Blob 容器是由 Blob 和文件夹组成的嵌套式层次结构。以下步骤
 
 1. 运行该应用程序，然后选择“上载 Blob”。
   
-下一部分将说明如何列出 Blob 容器中的 Blob。
+[列出 Blob 容器中的 Blob](#list-the-blobs-in-a-blob-container) 部分说明了如何列出 Blob 容器中的 Blob。
 
-## 列出 Blob 容器中的 Blob
+##<a name="list-the-blobs-in-a-blob-container"></a> 列出 Blob 容器中的 Blob
 
 本部分说明如何列出 Blob 容器中的 Blob。示例代码引用在[创建 Blob 容器](#create-a-blob-container)部分创建的 *test-blob-container*。
+
+> [AZURE.NOTE]
+> 
+> 本部分中的代码假定你已完成[设置开发环境](#set-up-the-development-environment)部分中的步骤。
 
 1. 打开 `BlobsController.cs` 文件。
 
@@ -224,7 +236,7 @@ Blob 容器是由 Blob 和文件夹组成的嵌套式层次结构。以下步骤
 	    }
 
  
-1. 在 **ListBlobs** 方法中，获取表示存储帐户信息的 **CloudStorageAccount** 对象。使用下面的代码获取存储连接字符串和 Azure 服务配置中的存储帐户信息。（将 *&lt;storage-account-name>* 更改为要访问的 Azure 存储帐户的名称。）
+1. 在 **ListBlobs** 方法中，获取表示存储帐户信息的 **CloudStorageAccount** 对象。使用以下代码从 Azure 服务配置中获取存储连接字符串和存储帐户信息：（将 *&lt;storage-account-name\>* 更改为要访问的 Azure 存储帐户的名称。）
    
 
 	    CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
@@ -243,7 +255,7 @@ Blob 容器是由 Blob 和文件夹组成的嵌套式层次结构。以下步骤
     	CloudBlobContainer container = blobClient.GetContainerReference("test-blob-container");
 
 
-1. 若要列出 Blob 容器中的 Blob，请使用 **CloudBlobContainer.ListBlobs** 方法。**CloudBlobContainer.ListBlobs** 方法返回 **IListBlobItem** 对象，该对象可强制转换为 **CloudBlockBlob**、**CloudPageBlob** 或 **CloudBlobDirectory** 对象。以下代码片段枚举 Blob 容器中的所有 Blob，根据类型将已返回对象强制转换为相应的对象，并将名称添加到可以显示的列表中（如果强制转换为 **CloudBlobDirectory** 对象，则添加 URI）。
+1. 若要列出 Blob 容器中的 Blob，请使用 **CloudBlobContainer.ListBlobs** 方法。**CloudBlobContainer.ListBlobs** 方法返回 **IListBlobItem** 对象，该对象可强制转换为 **CloudBlockBlob**、**CloudPageBlob** 或 **CloudBlobDirectory** 对象。以下代码片段将枚举 Blob 容器中的所有 Blob。每个 Blob 都将按照其类型强制转换为适当的对象，并将其名称（**CloudBlobDirectory** 的情况下是 URI）添加到列表中。
 
 
 	    List<string> blobs = new List<string>();
@@ -282,7 +294,7 @@ Blob 容器是由 Blob 和文件夹组成的嵌套式层次结构。以下步骤
 		<storage-account-url>/test-blob-container/dir1
 		<storage-account-url>/test-blob-container/dir2
 
-	可以看到，该列表仅包含顶级实体，而不包含嵌套实体（ *bar.png* 和 *baz.png* ）。若要列出 Blob 容器中的所有实体，必须调用 **CloudBlobContainer.ListBlobs** 方法，为 **useFlatBlobListing** 参数传递 **true**。
+	可以看到，该列表仅包含顶级实体，而不包含嵌套实体（*bar.png* 和 *baz.png*）。若要列出 Blob 容器中的所有实体，必须调用 **CloudBlobContainer.ListBlobs** 方法，并为 **useFlatBlobListing** 参数传递 **true**。
 
 
 	    ...
@@ -300,7 +312,7 @@ Blob 容器是由 Blob 和文件夹组成的嵌套式层次结构。以下步骤
 
 1. 在“添加视图”对话框中，输入 **ListBlobs** 作为视图名称，然后选择“添加”。
 
-1. 打开 `ListBlobs.cshtml` 并对其进行修改，使之看起来如下所示。
+1. 打开 `ListBlobs.cshtml` 并对其进行修改，使其看起来如以下代码片段所示：
 
 
 		@model List<string>
@@ -320,20 +332,20 @@ Blob 容器是由 Blob 和文件夹组成的嵌套式层次结构。以下步骤
 
 1. 在“解决方案资源管理器”中，展开“Views”->“Shared”文件夹，然后打开 `_Layout.cshtml`。
 
-1. 在最后一个 **Html.ActionLink** 之后，添加以下 **Html.ActionLink**。
+1. 在最后一个 **Html.ActionLink** 的后面，添加以下 **Html.ActionLink**：
 
 
 		<li>@Html.ActionLink("List blobs", "ListBlobs", "Blobs")</li>
 
 
-1. 运行该应用程序，然后选择“列出 Blob”。此时会出现类似于以下屏幕快照所示的结果。
+1. 运行该应用程序，并选择“列出 Blob”来查看类似于以下屏幕截图所示的结果：
   
 	![Blob 列表](./media/vs-storage-aspnet-getting-started-blobs/listblobs.png)  
 
 
 ## 下载 Blob
 
-以下步骤演示了如何下载 Blob，并将其保存到本地存储，或将内容读入字符串中。示例代码引用在[创建 Blob 容器](#create-a-blob-container)部分创建的 *test-blob-container* 。
+本部分演示了如何下载 Blob，以及如何将其保存到本地存储或将内容读入字符串中。示例代码引用在[创建 Blob 容器](#create-a-blob-container)部分创建的 *test-blob-container*。
 
 1. 打开 `BlobsController.cs` 文件。
 
@@ -347,7 +359,7 @@ Blob 容器是由 Blob 和文件夹组成的嵌套式层次结构。以下步骤
 	    }
 
  
-1. 在 **DownloadBlob** 方法中，获取表示存储帐户信息的 **CloudStorageAccount** 对象。使用下面的代码获取存储连接字符串和 Azure 服务配置中的存储帐户信息。（将 *&lt;storage-account-name>* 更改为要访问的 Azure 存储帐户的名称。）
+1. 在 **DownloadBlob** 方法中，获取表示存储帐户信息的 **CloudStorageAccount** 对象。使用以下代码从 Azure 服务配置中获取存储连接字符串和存储帐户信息：（将 *&lt;storage-account-name\>* 更改为要访问的 Azure 存储帐户的名称。）
    
 
 	    CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
@@ -372,7 +384,7 @@ Blob 容器是由 Blob 和文件夹组成的嵌套式层次结构。以下步骤
     	CloudBlockBlob blob = container.GetBlockBlobReference(<blob-name>);
 
 
-1. 若要下载 Blob，请使用 **CloudBlockBlob.DownloadToStream** 或 **CloudPageBlob.DownloadToStream** 方法，具体取决于 Blob 类型。以下代码片段使用 **CloudBlockBlob.DownloadToStream** 方法将 Blob 的内容传输到流对象，然后将该对象保存到本地文件。（将 *&lt;local-file-name>* 更改为完全限定文件名，代表要将 Blob 下载到的位置。）
+1. 若要下载 Blob，请使用 **CloudBlockBlob.DownloadToStream** 或 **CloudPageBlob.DownloadToStream** 方法，具体取决于 Blob 类型。以下代码片段使用 **CloudBlockBlob.DownloadToStream** 方法将 Blob 的内容传输到流对象，该对象随后保存到本地文件：（将 *&lt;local-file-name\>* 更改为完全限定文件名，表示 Blob 要下载到的位置。）
 
 
 	    using (var fileStream = System.IO.File.OpenWrite(<local-file-name>))
@@ -383,17 +395,21 @@ Blob 容器是由 Blob 和文件夹组成的嵌套式层次结构。以下步骤
 
 1. 在“解决方案资源管理器”中，展开“Views”->“Shared”文件夹，然后打开 `_Layout.cshtml`。
 
-1. 在最后一个 **Html.ActionLink** 之后，添加以下 **Html.ActionLink**。
+1. 在最后一个 **Html.ActionLink** 的后面，添加以下 **Html.ActionLink**：
 
 
 		<li>@Html.ActionLink("Download blob", "DownloadBlob", "Blobs")</li>
 
 
-1. 运行该应用程序，然后选择“下载 Blob”下载 Blob。在 **CloudBlobContainer.GetBlockBlobReference** 方法调用中指定的 Blob 下载到在 **File.OpenWrite** 方法调用中指定的位置。
+1. 运行该应用程序，然后选择“下载 Blob”下载 Blob。将 **CloudBlobContainer.GetBlockBlobReference** 方法调用中指定的 Blob 下载到 **File.OpenWrite** 方法调用中指定的位置。
 
 ## 删除 Blob
 
-以下步骤演示了如何删除 Blob。
+以下步骤演示了如何删除 Blob：
+
+> [AZURE.NOTE]
+> 
+> 本部分中的代码假定你已完成[设置开发环境](#set-up-the-development-environment)部分中的步骤。
 
 1. 打开 `BlobsController.cs` 文件。
 
@@ -408,7 +424,7 @@ Blob 容器是由 Blob 和文件夹组成的嵌套式层次结构。以下步骤
 	    }
 
 
-1. 获取表示存储帐户信息的 **CloudStorageAccount** 对象。使用下面的代码获取存储连接字符串和 Azure 服务配置中的存储帐户信息。（将 *&lt;storage-account-name>* 更改为要访问的 Azure 存储帐户的名称。）
+1. 获取表示存储帐户信息的 **CloudStorageAccount** 对象。使用以下代码从 Azure 服务配置中获取存储连接字符串和存储帐户信息：（将 *&lt;storage-account-name\>* 更改为要访问的 Azure 存储帐户的名称。）
    
 
 	    CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
@@ -441,7 +457,7 @@ Blob 容器是由 Blob 和文件夹组成的嵌套式层次结构。以下步骤
 
 1. 在“解决方案资源管理器”中，展开“Views”->“Shared”文件夹，然后打开 `_Layout.cshtml`。
 
-1. 在最后一个 **Html.ActionLink** 之后，添加以下 **Html.ActionLink**。
+1. 在最后一个 **Html.ActionLink** 的后面，添加以下 **Html.ActionLink**：
 
 
 		<li>@Html.ActionLink("Delete blob", "DeleteBlob", "Blobs")</li>
@@ -455,4 +471,5 @@ Blob 容器是由 Blob 和文件夹组成的嵌套式层次结构。以下步骤
   * [开始使用 Azure 表存储和 Visual Studio 连接服务 (ASP.NET)](/documentation/articles/vs-storage-aspnet-getting-started-tables/)
   * [开始使用 Azure 队列存储和 Visual Studio 连接服务 (ASP.NET)](/documentation/articles/vs-storage-aspnet-getting-started-queues/)
 
-<!---HONumber=Mooncake_0103_2017-->
+<!---HONumber=Mooncake_0220_2017-->
+<!--Update_Description: wording update-->

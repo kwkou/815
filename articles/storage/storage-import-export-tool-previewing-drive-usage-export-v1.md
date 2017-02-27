@@ -1,8 +1,8 @@
 <properties
     pageTitle="预览导出作业的驱动器使用情况 | Azure"
     description="了解如何预览针对 Azure 导入/导出服务中的导出作业选择的 Blob 列表"
-    author="renashahmsft"
-    manager="aungoo"
+    author="muralikk"
+    manager="syadav"
     editor="tysonn"
     services="storage"
     documentationcenter="" />  
@@ -14,9 +14,9 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="05/25/2015"
-    wacn.date="01/24/2017"
-    ms.author="renash" />  
+    ms.date="01/15/2017"
+    wacn.date="02/24/2017"
+    ms.author="muralikk" />  
 
 
 # 预览导出作业的驱动器使用情况
@@ -71,4 +71,4 @@ Azure 导入/导出工具可列出要导出的所有 Blob，在考虑所有必�
 ## 另请参阅  
 [Azure 导入/导出工具参考](/documentation/articles/storage-import-export-tool-how-to-v1/)
 
-<!---HONumber=Mooncake_1226_2016-->
+<!---HONumber=Mooncake_0220_2017-->
