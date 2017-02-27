@@ -14,7 +14,7 @@
 	ms.devlang="objective-c"
 	ms.topic="article"
 	ms.date="10/01/2016"
-	wacn.date="11/21/2016"
+	wacn.date="02/24/2017"
 	ms.author="yuaxu"/>
 
 # 为 iOS 移动应用启用脱机同步
@@ -288,4 +288,4 @@ Azure 移动应用的普通 CRUD 操作执行起来就像此应用仍处于连�
 [defining-core-data-tableconfig-entity]: ./media/app-service-mobile-ios-get-started-offline-data/defining-core-data-tableconfig-entity.png
 [defining-core-data-todoitem-entity]: ./media/app-service-mobile-ios-get-started-offline-data/defining-core-data-todoitem-entity.png
 
-<!---HONumber=Mooncake_0919_2016-->
+<!---HONumber=Mooncake_0220_2017-->
