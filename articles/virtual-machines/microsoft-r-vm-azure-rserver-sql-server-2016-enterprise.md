@@ -85,10 +85,6 @@ Azure 上的 R Server Only SQL Server 2016 Enterprise 虚拟机是可快速轻�
 * 使用 [AzCopy](/documentation/articles/storage-use-azcopy/) 等实用工具将数据从存储帐户复制到本地文件系统。
 * 将文件添加到存储帐户中的某个文件共享，然后将该文件共享装载为 VM 上的网络驱动器。有关详细信息，请参阅[装载 Azure 文件](/documentation/articles/storage-dotnet-how-to-use-files/)。
 
-## 使用 Azure Data Lake Storage \(ADLS\) 帐户中的数据
-
-可以使用 ScaleR 从 ADLS 存储中读取数据。为此，可以像使用 webHDFS 引用 HDFS 文件系统一样引用存储帐户。有关详细信息，请参阅此[设置指南](http://go.microsoft.com/fwlink/?LinkId=723452)。
-
 ## 资源
 
 在 MSDSN 库中可以找到有关 Microsoft R 的其他文档：[R Server and Scale R](https://msdn.microsoft.com/microsoft-r)（R Server 和 Scale R）
