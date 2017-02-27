@@ -53,7 +53,7 @@ VPN 网关连接需依赖于多个具有特定设置的资源。大多数资源�
 
 使用图示和描述来帮助选择符合要求的连接拓扑。这些图示显示主要基准拓扑，但也可以使用这些图示作为指导来构建更复杂的配置。
 
-## <a name="site-to-site-and-multi-site"></a> 站点到站点和多站点
+## <a name="site-to-site-and-multi-site" id="site-to-site-and-multi-site-connections"></a> 站点到站点和多站点
 ### 站点到站点
 站点到站点 (S2S) VPN 网关连接是通过 IPsec/IKE（IKEv1 或 IKEv2）VPN 隧道建立的连接。这种类型的连接要求 VPN 设备位于本地，并且分配有公共 IP 地址，不在 NAT 的后面。S2S 连接可用于跨界和混合配置。
 

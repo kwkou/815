@@ -181,7 +181,7 @@ CLI 的 Azure Resource Manager 模式与 Azure 服务管理模式互斥。即，
 
     location list [options]
 
-## azure network：用于管理网络资源的命令
+## <a name="azure-network-commands-to-manage-network-resources"></a> azure network：用于管理网络资源的命令
 **用于管理虚拟网络的命令**
 
     network vnet create [options] <resource-group> <name> <location>

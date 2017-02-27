@@ -45,7 +45,7 @@
 
 [AZURE.INCLUDE [resource-manager-deployments](../../includes/resource-manager-deployments.md)]
 
-## 部署
+## <a name="deploy"></a> 部署
 1. 登录到你的 Azure 帐户。
 
         Add-AzureRmAccount -EnvironmentName AzureChinaCloud

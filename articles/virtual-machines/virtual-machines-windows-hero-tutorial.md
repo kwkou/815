@@ -80,7 +80,7 @@
 8. 当 Azure 创建虚拟机时，可以在“中心”菜单的“虚拟机”中跟踪进度。
 
 
-## <a name="log-on-to-the-virtual-machine"></a> 连接到虚拟机并登录
+## <a name="log-on-to-the-virtual-machine" id="connect-to-the-virtual-machine-and-sign-on"></a> 连接到虚拟机并登录
 
 1.	在中心菜单中，单击“虚拟机”。
 
