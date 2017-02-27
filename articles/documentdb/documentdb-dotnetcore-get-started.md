@@ -1,12 +1,11 @@
 <properties
     pageTitle="NoSQL tutorial 教程：DocumentDB .NET Core SDK | Azure"
     description="使用 DocumentDB .NET Core SDK 创建联机数据库和 C# 控制台应用程序的 NoSQL 教程。DocumentDB 是用于 JSON 的 NoSQL 数据库。"
-    keywords="nosql 教程, 联机数据库, c# 控制台应用程序"
     services="documentdb"
     documentationcenter=".net"
     author="arramac"
     manager="jhubbard"
-    editor="monicar" />
+    editor="" />
 <tags
     ms.assetid="9f93e276-9936-4efb-a534-a9889fa7c7d2"
     ms.service="documentdb"
@@ -14,17 +13,18 @@
     ms.tgt_pltfrm="na"
     ms.devlang="dotnet"
     ms.topic="hero-article"
-    ms.date="12/09/2016"
-    wacn.date="01/23/2017"
+    ms.date="12/25/2016"
+    wacn.date="02/27/2017"
     ms.author="arramac" />  
 
 
 # NoSQL 教程：在 .NET Core 上构建 DocumentDB C\# 控制台应用程序
->[AZURE.SELECTOR]
-[.NET](/documentation/articles/documentdb-get-started/)
-[.NET Core](/documentation/articles/documentdb-dotnetcore-get-started/)
-[Node.js](/documentation/articles/documentdb-nodejs-get-started/)
-[C++](/documentation/articles/documentdb-cpp-get-started/)
+> [AZURE.SELECTOR]
+- [.NET](/documentation/articles/documentdb-get-started/)
+- [.NET Core](/documentation/articles/documentdb-dotnetcore-get-started/)
+- [Java](/documentation/articles/documentdb-java-get-started/)
+- [Node.js](/documentation/articles/documentdb-nodejs-get-started/)
+- [C++](/documentation/articles/documentdb-cpp-get-started/)
 
 欢迎使用 Azure DocumentDB .NET Core SDK 的 NoSQL 教程！ 学习本教程后，你将拥有一个可创建并查询 DocumentDB 资源的控制台应用程序。
 
@@ -44,6 +44,9 @@
 
 然后，请使用位于本页顶部或底部的投票按钮向我们提供反馈。如果你希望我们直接与你联系，欢迎将你的电子邮件地址附在评论中。
 
+> [AZURE.NOTE]
+本教程中使用的 DocumentDB .NET Core SDK 目前与通用 Windows 平台 \(UWP\) 应用不兼容。如需支持 UWP 应用的 .NET Core SDK 预览版，请发送电子邮件至 [askdocdb@microsoft.com](mailto:askdocdb@microsoft.com)。
+
 现在，让我们开始吧！
 
 ## 先决条件
@@ -62,13 +65,13 @@
 [AZURE.INCLUDE [documentdb-create-dbaccount](../../includes/documentdb-create-dbaccount.md)]
 
 ## <a id="SetupVS"></a>第 2 步：设置 Visual Studio 解决方案
-1. 在计算机上打开 **Visual Studio 2015** 。
-2. 在 **“文件”** 菜单中，选择 **“新建”** ，然后选择 **“项目”** 。
+1. 在计算机上打开 **Visual Studio 2015**。
+2. 在**“文件”**菜单中，选择**“新建”**，然后选择**“项目”**。
 3. 在“新建项目”对话框中，选择“模板”/ “Visual C\#”/“.NET Core”/“控制台应用程序 \(.NET Core\)”，为项目命名，然后单击“确定”。
-   ![“新建项目”窗口屏幕截图](./media/documentdb-get-started/nosql-tutorial-new-project-2.png)
-4. 在 **“解决方案资源管理器”** 中，右键单击 Visual Studio 解决方案下方的新控制台应用程序。
-5. 接下来，无需离开菜单，单击 **“管理 NuGet 程序包...”** 
-   ![“项目”右键菜单屏幕截图](./media/documentdb-get-started/nosql-tutorial-manage-nuget-pacakges.png)
+![“新建项目”窗口屏幕截图](./media/documentdb-get-started/nosql-tutorial-new-project-2.png)
+4. 在**“解决方案资源管理器”**中，右键单击 Visual Studio 解决方案下方的新控制台应用程序。
+5. 接下来，无需离开菜单，单击**“管理 NuGet 程序包...”** 
+![“项目”右键菜单屏幕截图](./media/documentdb-get-started/nosql-tutorial-manage-nuget-pacakges.png)
 6. 在“Nuget”选项卡上，单击“浏览”，然后在搜索框中输入“azure documentdb”。
 7. 在结果中，找到“Microsoft.Azure.DocumentDB.Core”，然后单击“安装”。
    DocumentDB 客户端库的程序包 ID 是 [Microsoft.Azure.DocumentDB.Core](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB.Core)
@@ -93,7 +96,7 @@
 > 
 > 
 
-现在，在公共类 *Program* 下添加这两个常量和 *客户端* 变量。
+现在，在公共类 *Program* 下添加这两个常量和*客户端* 变量。
 
     public class Program
     {
@@ -552,8 +555,7 @@ DocumentDB 支持删除 JSON 文档。
 - 在 [DocumentDB 文档页](/documentation/services/documentdb/)的“Develop”（开发）部分中了解有关编程模型的详细信息。
 
 [documentdb-create-account]: /documentation/articles/documentdb-create-account/
-[documentdb-manage]: /documentation/articles/documentdb-manage/
 [keys]: ./media/documentdb-get-started/nosql-tutorial-keys.png
 
-<!---HONumber=Mooncake_0109_2017-->
-<!---Update_Description: update code and some words -->
+<!---HONumber=Mooncake_0220_2017-->
+<!---Update_Description: wording and link update -->

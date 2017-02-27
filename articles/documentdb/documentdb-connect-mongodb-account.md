@@ -14,8 +14,8 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="11/22/2016"
-    wacn.date="01/23/2017"
+    ms.date="01/09/2016"
+    wacn.date="02/27/2017"
     ms.author="anhoh" />  
 
 
@@ -36,7 +36,7 @@
 1. 在 Internet 浏览器中，登录 [Azure 门户预览](https://portal.azure.cn)。
 2. 在“NoSQL \(DocumentDB\)”边栏选项卡中，选择具有 MongoDB 协议支持的 DocumentDB 帐户。
 3. 在“帐户”边栏选项卡的**左侧导航**栏中，单击“快速启动”。
-4. 选择平台（ *.NET 驱动程序* 、 *Node.js 驱动程序* 、 *MongoDB Shell* 、 *Java 驱动程序* 、 *Python 驱动程序* ）。如果没有看到所需的驱动程序或工具，请不要担心，我们会持续记录更多的连接代码片段。请在下方就想要看到的内容进行评论，并阅读[获取帐户的连接字符串信息](#GetCustomConnection)，了解如何创建自己的连接。
+4. 选择平台（*.NET 驱动程序*、*Node.js 驱动程序*、*MongoDB Shell*、*Java 驱动程序*、*Python 驱动程序*）。如果没有看到所需的驱动程序或工具，请不要担心，我们会持续记录更多的连接代码片段。请在下方就想要看到的内容进行评论，并阅读[获取帐户的连接字符串信息](#GetCustomConnection)，了解如何创建自己的连接。
 5. 将代码片段复制并粘贴到 MongoDB 应用后，即已准备就绪。
 
     ![“快速启动”边栏选项卡的屏幕截图](./media/documentdb-connect-mongodb-account/QuickStartBlade.png)  
@@ -82,5 +82,5 @@ DocumentDB 具有严格的安全要求和标准。DocumentDB 帐户需要通过 
 - 了解如何对具有 MongoDB 协议支持的 DocumentDB 帐户[使用 MongoChef](/documentation/articles/documentdb-mongodb-mongochef/)。
 - 浏览具有 MongoDB 协议支持的 DocumentDB [示例](/documentation/articles/documentdb-mongodb-samples/)。
 
-<!---HONumber=Mooncake_0109_2017-->
-<!---Update_Description: show more details on how to get connection string -->
+<!---HONumber=Mooncake_0220_2017-->
+<!--Update_Description: update meta properties-->
