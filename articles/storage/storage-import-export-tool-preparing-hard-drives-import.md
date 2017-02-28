@@ -7,7 +7,7 @@
     services="storage"
     documentationcenter="" />
 <tags
-    ms.assetid="ms.service: storage"
+    ms.service="storage"
     ms.workload="storage"
     ms.tgt_pltfrm="na"
     ms.devlang="na"
@@ -133,7 +133,7 @@ WAImportExport 工具是可与 [Azure 导入/导出服务](/documentation/articl
 **示例：**
 
 
-	WAImportExport.exe PrepImport /j:JournalTest.jrn /id:session#1  /sk:\*\*\*\*\*\*\*\*\*\*\*\*\* /InitialDriveSet:driveset-1.csv /DataSet:dataset-1.csv /logdir:F:\logs
+	WAImportExport.exe PrepImport /j:JournalTest.jrn /id:session#1  /sk:************* /InitialDriveSet:driveset-1.csv /DataSet:dataset-1.csv /logdir:F:\logs
 
 
 ### 在后续会话中添加数据

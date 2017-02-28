@@ -29,137 +29,137 @@
 <tr> 
 <td rowspan="16"><b>Blob</b></td>
 <td>追加 Blob</td> 
-<td><a href="https://msdn.microsoft.com/zh-cn/library/microsoft.windowsazure.storage.blob.cloudblobcontainer.getappendblobreference.aspx">CloudBlobContainer.GetAppendBlobReference Method Example</a>（CloudBlobContainer.GetAppendBlobReference 方法示例）</td> 
+<td><a href="https://msdn.microsoft.com/zh-cn/library/microsoft.windowsazure.storage.blob.cloudblobcontainer.getappendblobreference.aspx">CloudBlobContainer.GetAppendBlobReference 方法示例</a></td> 
 </tr> 
 <tr> 
 <td>块 blob</td>
-<td><a href="https://github.com/Azure-Samples/storage-blobs-dotnet-webapp/blob/master/WebApp-Storage-DotNet/Controllers/HomeController.cs">Azure Blob Storage Photo Gallery Web Application（Azure Blob 存储照片库 Web 应用程序）</a></td>
+<td><a href="https://github.com/Azure-Samples/storage-blobs-dotnet-webapp/blob/master/WebApp-Storage-DotNet/Controllers/HomeController.cs">Azure Blob 存储照片库 Web 应用程序</a></td>
 </tr> 
 <tr> 
 <td>客户端加密</td>
-<td><a href="https://github.com/Azure/azure-storage-net/blob/master/Samples/GettingStarted/EncryptionSamples/BlobGettingStarted/Program.cs">Blob Encryption Samples</a>（Blob 加密示例）</td>
+<td><a href="https://github.com/Azure/azure-storage-net/blob/master/Samples/GettingStarted/EncryptionSamples/BlobGettingStarted/Program.cs">Blob 加密示例</a></td>
 </tr> 
 <tr> 
 <td>复制 Blob</td>
-<td><a href="https://github.com/Azure-Samples/storage-blob-dotnet-getting-started/blob/master/BlobStorage/Advanced.cs">Getting Started with Blobs</a>（Blob 入门）</td>
+<td><a href="https://github.com/Azure-Samples/storage-blob-dotnet-getting-started/blob/master/BlobStorage/Advanced.cs">Blob 入门</a></td>
 </tr> 
 <tr> 
 <td>创建容器</td>
-<td><a href="https://github.com/Azure-Samples/storage-blobs-dotnet-webapp/blob/master/WebApp-Storage-DotNet/Controllers/HomeController.cs">Azure Blob Storage Photo Gallery Web Application（Azure Blob 存储照片库 Web 应用程序）</a></td>
+<td><a href="https://github.com/Azure-Samples/storage-blobs-dotnet-webapp/blob/master/WebApp-Storage-DotNet/Controllers/HomeController.cs">Azure Blob 存储照片库 Web 应用程序</a></td>
 </tr> 
 <tr> 
 <td>删除 Blob</td>
-<td><a href="https://github.com/Azure-Samples/storage-blobs-dotnet-webapp/blob/master/WebApp-Storage-DotNet/Controllers/HomeController.cs">Azure Blob Storage Photo Gallery Web Application（Azure Blob 存储照片库 Web 应用程序）</a></td>
+<td><a href="https://github.com/Azure-Samples/storage-blobs-dotnet-webapp/blob/master/WebApp-Storage-DotNet/Controllers/HomeController.cs">Azure Blob 存储照片库 Web 应用程序</a></td>
 </tr> 
 <tr> 
 <td>删除容器</td>
-<td><a href="https://github.com/Azure-Samples/storage-blob-dotnet-getting-started/blob/master/BlobStorage/Advanced.cs">Getting Started with Blobs</a>（Blob 入门）</td>
+<td><a href="https://github.com/Azure-Samples/storage-blob-dotnet-getting-started/blob/master/BlobStorage/Advanced.cs">Blob 入门</a></td>
 </tr> 
 <tr> 
 <td>Blob 元数据/属性/统计信息</td>
-<td><a href="https://github.com/Azure-Samples/storage-blob-dotnet-getting-started/blob/master/BlobStorage/Advanced.cs">Getting Started with Blobs</a>（Blob 入门）</td>
+<td><a href="https://github.com/Azure-Samples/storage-blob-dotnet-getting-started/blob/master/BlobStorage/Advanced.cs">Blob 入门</a></td>
 </tr> 
 <tr> 
 <td>容器 ACL/元数据/属性</td>
-<td><a href="https://github.com/Azure-Samples/storage-blobs-dotnet-webapp/blob/master/WebApp-Storage-DotNet/Controllers/HomeController.cs">Azure Blob Storage Photo Gallery Web Application（Azure Blob 存储照片库 Web 应用程序）</a></td>
+<td><a href="https://github.com/Azure-Samples/storage-blobs-dotnet-webapp/blob/master/WebApp-Storage-DotNet/Controllers/HomeController.cs">Azure Blob 存储照片库 Web 应用程序</a></td>
 </tr> 
 <tr> 
 <td>获取页面范围</td>
-<td><a href="https://github.com/Azure-Samples/storage-blob-dotnet-getting-started/blob/master/BlobStorage/Advanced.cs">Getting Started with Blobs</a>（Blob 入门）</td>
+<td><a href="https://github.com/Azure-Samples/storage-blob-dotnet-getting-started/blob/master/BlobStorage/Advanced.cs">Blob 入门</a></td>
 </tr> 
 <tr> 
 <td>租赁 Blob/容器</td>
-<td><a href="https://github.com/Azure-Samples/storage-blob-dotnet-getting-started/blob/master/BlobStorage/Advanced.cs">Getting Started with Blobs</a>（Blob 入门）</td>
+<td><a href="https://github.com/Azure-Samples/storage-blob-dotnet-getting-started/blob/master/BlobStorage/Advanced.cs">Blob 入门</a></td>
 </tr> 
 <tr> 
 <td>列出 Blob/容器</td>
-<td><a href="https://github.com/Azure-Samples/storage-blob-dotnet-getting-started/blob/master/BlobStorage/GettingStarted.cs">Getting Started with Blobs</a>（Blob 入门）</td>
+<td><a href="https://github.com/Azure-Samples/storage-blob-dotnet-getting-started/blob/master/BlobStorage/GettingStarted.cs">Blob 入门</a></td>
 </tr> 
 <tr> 
 <td>页 blob</td>
-<td><a href="https://github.com/Azure-Samples/storage-blob-dotnet-getting-started/blob/master/BlobStorage/GettingStarted.cs">Getting Started with Blobs</a>（Blob 入门）</td>
+<td><a href="https://github.com/Azure-Samples/storage-blob-dotnet-getting-started/blob/master/BlobStorage/GettingStarted.cs">Blob 入门</a></td>
 </tr>
 <tr> 
 <td>SAS</td>
-<td><a href="https://github.com/Azure-Samples/storage-blob-dotnet-getting-started/blob/master/BlobStorage/Advanced.cs">Getting Started with Blobs</a>（Blob 入门）</td>
+<td><a href="https://github.com/Azure-Samples/storage-blob-dotnet-getting-started/blob/master/BlobStorage/Advanced.cs">Blob 入门</a></td>
 </tr> 	
 <tr> 
 <td>服务属性</td>
-<td><a href="https://github.com/Azure-Samples/storage-blob-dotnet-getting-started/blob/master/BlobStorage/Advanced.cs">Getting Started with Blobs</a>（Blob 入门）</td>
+<td><a href="https://github.com/Azure-Samples/storage-blob-dotnet-getting-started/blob/master/BlobStorage/Advanced.cs">Blob 入门</a></td>
 </tr> 			
 <tr> 
 <td>快照 Blob</td>
-<td><a href="https://github.com/Azure-Samples/storage-blob-dotnet-back-up-with-incremental-snapshots/blob/master/Program.cs">Backup Azure Virtual Machine Disks with Incremental Snapshots</a>（使用增量快照备份 Azure 虚拟机磁盘）</td>
+<td><a href="https://github.com/Azure-Samples/storage-blob-dotnet-back-up-with-incremental-snapshots/blob/master/Program.cs">使用增量快照备份 Azure 虚拟机磁盘</a></td>
 </tr> 
 <tr> 
 <td rowspan="9"><b>文件</b></td>
 <td>创建共享/目录/文件</td> 
-<td><a href="https://github.com/Azure/azure-storage-net/blob/master/Samples/GettingStarted/VisualStudioQuickStarts/DataFileStorage/Program.cs">Azure Storage .NET File Storage Sample</a>（Azure 存储 .NET 文件存储示例）</td> 
+<td><a href="https://github.com/Azure/azure-storage-net/blob/master/Samples/GettingStarted/VisualStudioQuickStarts/DataFileStorage/Program.cs">Azure 存储 .NET 文件存储示例</a></td> 
 </tr>
 <tr> 
 <td>删除共享/目录/文件</td> 
-<td><a href="https://github.com/Azure-Samples/storage-file-dotnet-getting-started/blob/master/FileStorage/GettingStarted.cs">Getting Started with Azure File Service in .NET（.NET 中 Azure 文件服务入门）</a></td> 
+<td><a href="https://github.com/Azure-Samples/storage-file-dotnet-getting-started/blob/master/FileStorage/GettingStarted.cs">.NET 中 Azure 文件服务入门</a></td> 
 </tr> 
 <tr> 
 <td>目录属性/元数据</td> 
-<td><a href="https://github.com/Azure-Samples/storage-file-dotnet-getting-started/blob/9f12304b2f5f5472a1c87c1e21be4af5661ac043/FileStorage/Advanced.cs">Azure Storage .NET File Storage Sample</a>（Azure 存储 .NET 文件存储示例）</td> 
+<td><a href="https://github.com/Azure-Samples/storage-file-dotnet-getting-started/blob/9f12304b2f5f5472a1c87c1e21be4af5661ac043/FileStorage/Advanced.cs">Azure 存储 .NET 文件存储示例</a></td> 
 </tr> 
 <tr> 
 <td>下载文件</td> 
-<td><a href="https://github.com/Azure/azure-storage-net/blob/master/Samples/GettingStarted/VisualStudioQuickStarts/DataFileStorage/Program.cs">Azure Storage .NET File Storage Sample</a>（Azure 存储 .NET 文件存储示例）</td> 
+<td><a href="https://github.com/Azure/azure-storage-net/blob/master/Samples/GettingStarted/VisualStudioQuickStarts/DataFileStorage/Program.cs">Azure 存储 .NET 文件存储示例</a></td> 
 </tr> 
 <tr> 
 <td>文件属性/元数据/指标</td> 
-<td><a href="https://github.com/Azure-Samples/storage-file-dotnet-getting-started/blob/9f12304b2f5f5472a1c87c1e21be4af5661ac043/FileStorage/Advanced.cs">Azure Storage .NET File Storage Sample</a>（Azure 存储 .NET 文件存储示例）</td> 
+<td><a href="https://github.com/Azure-Samples/storage-file-dotnet-getting-started/blob/9f12304b2f5f5472a1c87c1e21be4af5661ac043/FileStorage/Advanced.cs">Azure 存储 .NET 文件存储示例</a></td> 
 </tr> 
 <tr> 
 <td>文件服务属性</td> 
-<td><a href="https://github.com/Azure-Samples/storage-file-dotnet-getting-started/blob/9f12304b2f5f5472a1c87c1e21be4af5661ac043/FileStorage/Advanced.cs">Azure Storage .NET File Storage Sample</a>（Azure 存储 .NET 文件存储示例）</td> 
+<td><a href="https://github.com/Azure-Samples/storage-file-dotnet-getting-started/blob/9f12304b2f5f5472a1c87c1e21be4af5661ac043/FileStorage/Advanced.cs">Azure 存储 .NET 文件存储示例</a></td> 
 </tr> 
 <tr> 
 <td>列出目录和文件</td> 
-<td><a href="https://github.com/Azure/azure-storage-net/blob/master/Samples/GettingStarted/VisualStudioQuickStarts/DataFileStorage/Program.cs">Azure Storage .NET File Storage Sample</a>（Azure 存储 .NET 文件存储示例）</td> 
+<td><a href="https://github.com/Azure/azure-storage-net/blob/master/Samples/GettingStarted/VisualStudioQuickStarts/DataFileStorage/Program.cs">Azure 存储 .NET 文件存储示例</a></td> 
 </tr>
 <tr> 
 <td>列出共享</td> 
-<td><a href="https://github.com/Azure-Samples/storage-file-dotnet-getting-started/blob/9f12304b2f5f5472a1c87c1e21be4af5661ac043/FileStorage/Advanced.cs">Azure Storage .NET File Storage Sample</a>（Azure 存储 .NET 文件存储示例）</td> 
+<td><a href="https://github.com/Azure-Samples/storage-file-dotnet-getting-started/blob/9f12304b2f5f5472a1c87c1e21be4af5661ac043/FileStorage/Advanced.cs">Azure 存储 .NET 文件存储示例</a></td> 
 </tr>
 <tr> 
 <td>共享属性/元数据/统计信息</td> 
-<td><a href="https://github.com/Azure-Samples/storage-file-dotnet-getting-started/blob/9f12304b2f5f5472a1c87c1e21be4af5661ac043/FileStorage/Advanced.cs">Azure Storage .NET File Storage Sample</a>（Azure 存储 .NET 文件存储示例）</td> 
+<td><a href="https://github.com/Azure-Samples/storage-file-dotnet-getting-started/blob/9f12304b2f5f5472a1c87c1e21be4af5661ac043/FileStorage/Advanced.cs">Azure 存储 .NET 文件存储示例</a></td> 
 </tr>
 <tr> 
 <td rowspan="8"><b>队列</b></td>
 <td>添加消息</td> 
-<td><a href="https://github.com/Azure-Samples/storage-queue-dotnet-getting-started/blob/master/QueueStorage/GettingStarted.cs">Getting Started with Azure Queue Service in .NET（.NET 中 Azure 队列服务入门）</a></td> 
+<td><a href="https://github.com/Azure-Samples/storage-queue-dotnet-getting-started/blob/master/QueueStorage/GettingStarted.cs">.NET 中 Azure 队列服务入门</a></td> 
 </tr> 
 <tr> 
 <td>客户端加密</td> 
-<td><a href="https://github.com/Azure/azure-storage-net/blob/master/Samples/GettingStarted/EncryptionSamples/QueueGettingStarted/Program.cs">Azure Storage .NET Queue Client-Side Encryption</a>（Azure 存储 .NET 队列客户端加密）</td> 
+<td><a href="https://github.com/Azure/azure-storage-net/blob/master/Samples/GettingStarted/EncryptionSamples/QueueGettingStarted/Program.cs">Azure 存储 .NET 队列客户端加密</a></td> 
 </tr> 
 <tr> 
 <td>创建队列</td> 
-<td><a href="https://github.com/Azure-Samples/storage-queue-dotnet-getting-started/blob/master/QueueStorage/GettingStarted.cs">Getting Started with Azure Queue Service in .NET（.NET 中 Azure 队列服务入门）</a></td> 
+<td><a href="https://github.com/Azure-Samples/storage-queue-dotnet-getting-started/blob/master/QueueStorage/GettingStarted.cs">.NET 中 Azure 队列服务入门</a></td> 
 </tr> 
 <tr> 
 <td>删除消息/队列</td> 
-<td><a href="https://github.com/Azure-Samples/storage-queue-dotnet-getting-started/blob/master/QueueStorage/GettingStarted.cs">Getting Started with Azure Queue Service in .NET（.NET 中 Azure 队列服务入门）</a></td> 
+<td><a href="https://github.com/Azure-Samples/storage-queue-dotnet-getting-started/blob/master/QueueStorage/GettingStarted.cs">.NET 中 Azure 队列服务入门</a></td> 
 </tr> 
 <tr> 
 <td>速览消息</td> 
-<td><a href="https://github.com/Azure-Samples/storage-queue-dotnet-getting-started/blob/master/QueueStorage/GettingStarted.cs">Getting Started with Azure Queue Service in .NET（.NET 中 Azure 队列服务入门）</a></td> 
+<td><a href="https://github.com/Azure-Samples/storage-queue-dotnet-getting-started/blob/master/QueueStorage/GettingStarted.cs">.NET 中 Azure 队列服务入门</a></td> 
 </tr> 
 <tr> 
 <td>队列 ACL/元数据/统计信息</td> 
-<td><a href="https://github.com/Azure-Samples/storage-queue-dotnet-getting-started/blob/master/QueueStorage/Advanced.cs">Getting Started with Azure Queue Service in .NET（.NET 中 Azure 队列服务入门）</a></td> 
+<td><a href="https://github.com/Azure-Samples/storage-queue-dotnet-getting-started/blob/master/QueueStorage/Advanced.cs">.NET 中 Azure 队列服务入门</a></td> 
 </tr> 
 <tr> 
 <td>队列服务属性</td> 
-<td><a href="https://github.com/Azure-Samples/storage-queue-dotnet-getting-started/blob/master/QueueStorage/Advanced.cs">Getting Started with Azure Queue Service in .NET（.NET 中 Azure 队列服务入门）</a></td> 
+<td><a href="https://github.com/Azure-Samples/storage-queue-dotnet-getting-started/blob/master/QueueStorage/Advanced.cs">.NET 中 Azure 队列服务入门</a></td> 
 </tr> 
 <tr> 
 <td>更新消息</td> 
-<td><a href="https://github.com/Azure-Samples/storage-queue-dotnet-getting-started/blob/master/QueueStorage/GettingStarted.cs">Getting Started with Azure Queue Service in .NET（.NET 中 Azure 队列服务入门）</a></td> 
+<td><a href="https://github.com/Azure-Samples/storage-queue-dotnet-getting-started/blob/master/QueueStorage/GettingStarted.cs">.NET 中 Azure 队列服务入门</a></td> 
 </tr> 
 <tr> 
 <td rowspan="7"><b>表</b></td>
@@ -168,7 +168,7 @@
 </tr> 
 <tr> 
 <td>删除实体/表</td> 
-<td><a href="https://github.com/Azure-Samples/storage-table-dotnet-getting-started/blob/master/TableStorage/BasicSamples.cs">Getting Started with Azure Table Storage in .NET</a>（.NET 中的 Azure 表存储入门）</td> 
+<td><a href="https://github.com/Azure-Samples/storage-table-dotnet-getting-started/blob/master/TableStorage/BasicSamples.cs">.NET 中的 Azure 表存储入门</a></td> 
 </tr> 
 <tr> 
 <td>插入/合并/替换实体</td> 
@@ -176,15 +176,15 @@
 </tr> 
 <tr> 
 <td>查询实体</td> 
-<td><a href="https://github.com/Azure-Samples/storage-table-dotnet-getting-started/blob/master/TableStorage/BasicSamples.cs">Getting Started with Azure Table Storage in .NET</a>（.NET 中的 Azure 表存储入门）</td> 
+<td><a href="https://github.com/Azure-Samples/storage-table-dotnet-getting-started/blob/master/TableStorage/BasicSamples.cs">.NET 中的 Azure 表存储入门</a></td> 
 </tr> 
 <tr> 
 <td>查询表</td> 
-<td><a href="https://github.com/Azure-Samples/storage-table-dotnet-getting-started/blob/master/TableStorage/BasicSamples.cs">Getting Started with Azure Table Storage in .NET</a>（.NET 中的 Azure 表存储入门）</td> 
+<td><a href="https://github.com/Azure-Samples/storage-table-dotnet-getting-started/blob/master/TableStorage/BasicSamples.cs">.NET 中的 Azure 表存储入门</a></td> 
 </tr> 
 <tr> 
 <td>表 ACL/属性</td> 
-<td><a href="https://github.com/Azure-Samples/storage-table-dotnet-getting-started/blob/master/TableStorage/AdvancedSamples.cs">Getting Started with Azure Table Storage in .NET</a>（.NET 中的 Azure 表存储入门）</td> 
+<td><a href="https://github.com/Azure-Samples/storage-table-dotnet-getting-started/blob/master/TableStorage/AdvancedSamples.cs">.NET 中的 Azure 表存储入门</a></td> 
 </tr> 
 <tr> 
 <td>更新实体</td> 

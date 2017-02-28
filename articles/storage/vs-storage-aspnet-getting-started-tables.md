@@ -96,7 +96,6 @@ Azure 表存储使用户可以存储大量结构化数据。该服务是一个 N
 以下步骤演示了如何创建表：
 
 > [AZURE.NOTE]
-> 
 > 本部分假定你已完成[设置开发环境](#set-up-the-development-environment)中的步骤。
 
 1. 打开 `TablesController.cs` 文件。
@@ -178,7 +177,6 @@ Azure 表存储使用户可以存储大量结构化数据。该服务是一个 N
 *实体*通过派生自 **TableEntity** 的自定义类映射到 C\# 对象。若要将实体添加到表，请创建用于定义实体的属性的类。在本部分中，将介绍如何定义将客户的名字和姓氏分别用作行键和分区键的实体类。实体的分区键和行键共同唯一地标识表中的实体。相对于查询分区键不同的实体，分区键相同的实体的查询速度更快，但使用不同的分区键能够增加并行操作的可伸缩性。对于应在表服务中存储的所有属性，该属性必须是受支持类型的公共属性且公开设置和检索值。实体类*必须*声明不带参数的公共构造函数。
 
 > [AZURE.NOTE]
-> 
 > 本部分假定你已完成[设置开发环境](#set-up-the-development-environment)中的步骤。
 
 1. 打开 `TablesController.cs` 文件。
@@ -275,7 +273,6 @@ Azure 表存储使用户可以存储大量结构化数据。该服务是一个 N
 除了可向表[逐个添加实体](#add-an-entity-to-a-table)，还可成批添加实体。成批添加实体可减少代码与 Azure 表服务之间的重复操作次数。以下步骤演示了如何通过单个插入操作向表添加多个实体：
 
 > [AZURE.NOTE]
-> 
 > 本部分假定你已完成[设置开发环境](#set-up-the-development-environment)中的步骤。
 
 1. 打开 `TablesController.cs` 文件。
@@ -386,7 +383,6 @@ Azure 表存储使用户可以存储大量结构化数据。该服务是一个 N
 本部分演示了如何使用实体的行键和分区键获取表中的单个实体。
 
 > [AZURE.NOTE]
-> 
 > 本部分假定你已完成[设置开发环境](#set-up-the-development-environment)中的步骤且使用[向表添加一批实体](#add-a-batch-of-entities-to-a-table)中的数据。
 
 1. 打开 `TablesController.cs` 文件。
@@ -480,7 +476,6 @@ Azure 表存储使用户可以存储大量结构化数据。该服务是一个 N
 如[向表中添加实体](#add-an-entity-to-a-table)部分所述，分区键和行键结合使用可唯一标识表中的实体。相比于查询分区键不同的实体，分区键相同的实体的查询速度更快。本部分演示了如何查询表中指定分区的所有实体。
 
 > [AZURE.NOTE]
-> 
 > 本部分假定你已完成[设置开发环境](#set-up-the-development-environment)中的步骤且使用[向表添加一批实体](#add-a-batch-of-entities-to-a-table)中的数据。
 
 1. 打开 `TablesController.cs` 文件。
@@ -583,7 +578,6 @@ Azure 表存储使用户可以存储大量结构化数据。该服务是一个 N
 本部分演示了如何删除表中的实体。
 
 > [AZURE.NOTE]
-> 
 > 本部分假定你已完成[设置开发环境](#set-up-the-development-environment)中的步骤且使用[向表添加一批实体](#add-a-batch-of-entities-to-a-table)中的数据。
 
 1. 打开 `TablesController.cs` 文件。

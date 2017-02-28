@@ -164,7 +164,8 @@
 复制会话完成后，可断开两个驱动器与复制计算机的连接，然后将其寄送到相应的 Microsoft Azure 数据中心。在 [Azure 管理门户](https://manage.windowsazure.CN/)中创建导入作业时，将上载两个日记文件：`FirstDrive.jrn` 和 `SecondDrive.jrn`。
   
 ## 另请参阅  
-[为导入作业准备硬盘驱动器](/documentation/articles/storage-import-export-tool-preparing-hard-drives-import-v1/) 
+
+[为导入作业准备硬盘驱动器](/documentation/articles/storage-import-export-tool-preparing-hard-drives-import-v1/)  
 [常用命令快速参考](/documentation/articles/storage-import-export-tool-quick-reference-v1/)
 
 <!---HONumber=Mooncake_0220_2017-->

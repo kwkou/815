@@ -220,7 +220,6 @@ Blob 容器是由 Blob 和文件夹组成的嵌套式层次结构。以下步骤
 本部分说明如何列出 Blob 容器中的 Blob。示例代码引用在[创建 Blob 容器](#create-a-blob-container)部分创建的 *test-blob-container*。
 
 > [AZURE.NOTE]
-> 
 > 本部分中的代码假定你已完成[设置开发环境](#set-up-the-development-environment)部分中的步骤。
 
 1. 打开 `BlobsController.cs` 文件。
@@ -408,7 +407,6 @@ Blob 容器是由 Blob 和文件夹组成的嵌套式层次结构。以下步骤
 以下步骤演示了如何删除 Blob：
 
 > [AZURE.NOTE]
-> 
 > 本部分中的代码假定你已完成[设置开发环境](#set-up-the-development-environment)部分中的步骤。
 
 1. 打开 `BlobsController.cs` 文件。
