@@ -126,7 +126,7 @@
 
 <!--Other Web references-->
 
-[Microsoft Web 平台安装程序]: https://aka.ms/webpi-azps
+[Microsoft Web 平台安装程序]: https://www.microsoft.com/web/downloads/platform.aspx
 [Azure portal]: http://manage.windowsazure.cn/
 
 <!---HONumber=Mooncake_1205_2016-->
