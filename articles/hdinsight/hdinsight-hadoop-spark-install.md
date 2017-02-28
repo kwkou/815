@@ -26,7 +26,6 @@
 **相关文章**
 
 * [在 HDInsight 中创建 Hadoop 群集](/documentation/articles/hdinsight-provision-clusters/)：有关创建 HDInsight 群集的一般信息。
-* [HDInsight 上的 Apache Spark 入门](/documentation/articles/hdinsight-apache-spark-jupyter-spark-sql/)：创建 HDInsight Spark 群集。
 * [使用脚本操作自定义 HDInsight 群集][hdinsight-cluster-customize]：有关使用脚本操作自定义 HDInsight 群集的一般信息。
 * [为 HDInsight 开发脚本操作脚本](/documentation/articles/hdinsight-hadoop-script-actions/)。
 
@@ -274,7 +273,6 @@ Spark SQL 允许你使用 Spark 运行以结构化查询语言 (SQL)、HiveQL �
 
 ## 另请参阅
 * [在 HDInsight 中创建 Hadoop 群集](/documentation/articles/hdinsight-provision-clusters/)：创建 Hadoop 群集。
-* [HDInsight 上的 Apache Spark 入门](/documentation/articles/hdinsight-apache-spark-jupyter-spark-sql/)：HDInsight 上的 Spark 入门。
 * [使用脚本操作自定义 HDInsight 群集][hdinsight-cluster-customize]：使用脚本操作自定义 HDInsight 群集。
 * [为 HDInsight 开发脚本操作脚本](/documentation/articles/hdinsight-hadoop-script-actions/)：开发脚本操作脚本。
 * [在 HDinsight 群集上安装 R][hdinsight-install-r]：提供有关如何使用群集自定义在 HDInsight Hadoop 群集上安装和使用 R 的说明。R 是一种用于统计计算的开放源代码语言和环境。它提供了数百个内置统计函数及其自己的编程语言，可结合各方面的函数编程和面向对象的编程。它还提供了各种图形功能。

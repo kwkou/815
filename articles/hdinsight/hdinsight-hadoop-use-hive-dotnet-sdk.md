@@ -31,7 +31,7 @@
 ## 先决条件
 在开始阅读本文前，必须具有以下项：
 
-* **HDInsight 中的 Hadoop 群集**。请参阅[在 HDInsight 中使用基于 Linux 的 Hadoop 入门](/documentation/articles/hdinsight-use-sqoop/#create-cluster-and-sql-database)。
+* **HDInsight 中的 Hadoop 群集**。请参阅[在 HDInsight 中使用基于 Windows 的 Hadoop 入门](/documentation/articles/hdinsight-use-sqoop/#create-cluster-and-sql-database)。
 * **Visual Studio 2012/2013/2015**。
 
 ## 使用 HDInsight .NET SDK 提交 Hive 查询
@@ -142,11 +142,11 @@ HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 中使用 HDInsi
 * [使用 Azure 门户预览管理 HDInsight 中的 Hadoop 群集](/documentation/articles/hdinsight-administer-use-management-portal/)
 * [HDInsight .NET SDK 参考](https://msdn.microsoft.com/zh-cn/library/mt271028.aspx)
 * [将 Pig 与 HDInsight 配合使用](/documentation/articles/hdinsight-use-pig/)
-* [将 Sqoop 与 HDInsight 配合使用](/documentation/articles/hdinsight-use-sqoop-mac-linux/)
+* [将 Sqoop 与 HDInsight 配合使用](/documentation/articles/hdinsight-use-sqoop/)
 * [创建非交互式身份验证 .NET HDInsight 应用程序](/documentation/articles/hdinsight-create-non-interactive-authentication-dotnet-applications/)
 
 [hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters/
-[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-linux-tutorial-get-started/
+[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows/
 
 <!---HONumber=Mooncake_0120_2017-->
 <!--Update_Description: update from ASM to ARM-->

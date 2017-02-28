@@ -96,7 +96,7 @@ SLA 用“支持窗口”来定义。“支持窗口”是指 HDInsight 群集�
 * 开源社区可以主动开发实现 Hadoop 和更新的大数据技术
 * HDInsight 服务可以更专注于大数据开放源代码技术
 
-为了对开放源代码大数据技术持续投资，将来的 HDInsight 版本将仅在 Linux 操作系统上可用。Windows 操作系统上的 HDInsight 将不会有任何将来版本。Windows 上的最后一个 HDInsight 版本是 HDI 3.3。对 HDI 3.3 的支持于 06/27/2016 到期，并将于 07/31/2017 弃用。若要从基于 Windows 的 HDInsight 群集迁移到基于 Linux 的群集，请参阅[此文](/documentation/articles/hdinsight-migrate-from-windows-to-linux/)。
+为了对开放源代码大数据技术持续投资，将来的 HDInsight 版本将仅在 Linux 操作系统上可用。Windows 操作系统上的 HDInsight 将不会有任何将来版本。Windows 上的最后一个 HDInsight 版本是 HDI 3.3。对 HDI 3.3 的支持于 06/27/2016 到期，并将于 07/31/2017 弃用。
 
 
 ## 与 HDInsight 版本相关的 Hortonworks 发行说明

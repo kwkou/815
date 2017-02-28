@@ -20,7 +20,6 @@
 
 
 # 在 HDInsight 中将 Oozie 与 Hadoop 配合使用以定义和运行工作流
-[AZURE.INCLUDE [oozie-selector](../../includes/hdinsight-oozie-selector.md)]
 
 [AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-sdk-developer-differences.md)]
 
@@ -624,7 +623,6 @@ Azure PowerShell 目前不提供任何用于定义 Oozie 作业的 cmdlet。可�
 * [将 Sqoop 与 HDInsight 中的 Hadoop 配合使用][hdinsight-use-sqoop]
 * [将 Hive 与 HDInsight 上的 Hadoop 配合使用][hdinsight-use-hive]
 * [将 Pig 与 HDInsight 上的 Hadoop 配合使用][hdinsight-use-pig]
-* [为 HDInsight 开发 Java MapReduce 程序][hdinsight-develop-mapreduce]
 
 [hdinsight-cmdlets-download]: http://go.microsoft.com/fwlink/?LinkID=325563
 
@@ -633,7 +631,7 @@ Azure PowerShell 目前不提供任何用于定义 Oozie 作业的 cmdlet。可�
 [hdinsight-oozie-coordinator-time]: /documentation/articles/hdinsight-use-oozie-coordinator-time/
 [hdinsight-versions]: /documentation/articles/hdinsight-component-versioning/
 [hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage/
-[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-linux-tutorial-get-started/
+[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows/
 [hdinsight-admin-portal]: /documentation/articles/hdinsight-administer-use-management-portal/
 
 [hdinsight-use-sqoop]: /documentation/articles/hdinsight-use-sqoop/
@@ -644,8 +642,6 @@ Azure PowerShell 目前不提供任何用于定义 Oozie 作业的 cmdlet。可�
 [hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive/
 [hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig/
 [hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage/
-
-[hdinsight-develop-mapreduce]: /documentation/articles/hdinsight-develop-deploy-java-mapreduce-linux/
 
 [sqldatabase-create-configue]: /documentation/articles/sql-database-get-started/
 [sqldatabase-get-started]: /documentation/articles/sql-database-get-started/

@@ -31,11 +31,8 @@
 * Visual Studio 和适用于 Visual Studio 的 HDInsight 工具：有关安装信息，请参阅[开始使用适用于 Visual Studio 的 HDInsight 工具](/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started/)。
 
 * Apache Storm on HDInsight 群集（基于 Windows）。这将运行 Storm 拓扑，以便处理传入的数据并将其存储在 HBase 中。
-  
-    > [AZURE.IMPORTANT]
-    虽然 2016 年 10 月 28 日之后创建的基于 Linux 的 Storm 群集支持 SCP.NET 拓扑，但是 2016 年 10 月 28 日前提供的 HBase SDK for .NET 包无法在 Linux 上正常工作。
 
-* HDInsight 群集上的 Apache HBase（基于 Linux 或 Windows）。这是本示例的数据存储。
+* HDInsight 群集上的 Apache HBase（基于 Windows）。这是本示例的数据存储。
 
 * [Java](https://java.com) 1.7 或更高版本，适用于开发环境。将拓扑提交到 HDInsight 群集时，可以使用 Java 将拓扑打包。
 

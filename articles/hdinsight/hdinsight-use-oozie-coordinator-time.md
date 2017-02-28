@@ -26,7 +26,7 @@
 在本文中，将学习如何定义工作流和协调器，以及如何基于时间触发协调器作业。阅读本文前，浏览[将 Oozie 与 HDInsight 配合使用][hdinsight-use-oozie]很有帮助。除了 Oozie，还可以使用 Azure 数据工厂来计划作业。
 
 > [AZURE.NOTE]
-本文需要基于 Windows 的 HDInsight 群集。有关在基于 Linux 的群集上使用 Oozie 的信息（包括基于时间的作业），请参阅[在基于 Linux 的 HDInsight 上将 Oozie 与 Hadoop 配合使用以定义和运行工作流](/documentation/articles/hdinsight-use-oozie-linux-mac/)
+本文需要基于 Windows 的 HDInsight 群集。
 
 ## <a id="whatisoozie"></a> 什么是 Oozie
 Apache Oozie 是一个管理 Hadoop 作业的工作流/协调系统。该系统与 Hadoop 堆栈集成，支持 Apache MapReduce、Apache Pig、Apache Hive 和 Apache Sqoop 的 Hadoop 作业。此外，还可用于调度系统特定作业，如 Java 程序或 shell 脚本。
@@ -697,13 +697,12 @@ HDInsight 群集版本 3.0 仅支持 *wasb://* 语法。较早的 *asv://* 语�
 * [将 Sqoop 与 HDInsight 配合使用][hdinsight-use-sqoop]
 * [将 Hive 与 HDInsight 配合使用][hdinsight-use-hive]
 * [将 Pig 与 HDInsight 配合使用][hdinsight-use-pig]
-* [为 HDInsight 开发 Java MapReduce 程序][hdinsight-develop-java-mapreduce]
 
 [hdinsight-cmdlets-download]: http://go.microsoft.com/fwlink/?LinkID=325563
 
 [hdinsight-versions]: /documentation/articles/hdinsight-component-versioning/
 [hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage/
-[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-linux-tutorial-get-started/
+[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows/
 [hdinsight-admin-portal]: /documentation/articles/hdinsight-administer-use-management-portal/
 
 [hdinsight-use-sqoop]: /documentation/articles/hdinsight-use-sqoop/
@@ -713,7 +712,6 @@ HDInsight 群集版本 3.0 仅支持 *wasb://* 语法。较早的 *asv://* 语�
 [hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive/
 [hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig/
 [hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage/
-[hdinsight-develop-java-mapreduce]: /documentation/articles/hdinsight-develop-deploy-java-mapreduce-linux/
 [hdinsight-use-oozie]: /documentation/articles/hdinsight-use-oozie/
 
 [sqldatabase-get-started]: /documentation/articles/sql-database-get-started/

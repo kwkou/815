@@ -59,8 +59,8 @@ Azure CLI 提供的用于通过 Azure 服务管理 (ASM) 使用 HDInsight 的基
 
 __创建群集__
 
-* 旧命令 (ASM) - `azure hdinsight cluster create myhdicluster --location northeurope --osType linux --storageAccountName mystorage --storageAccountKey <storagekey> --storageContainer mycontainer --userName admin --password mypassword --sshUserName sshuser --sshPassword mypassword`
-* 新命令 (ARM) - `azure hdinsight cluster create myhdicluster -g myresourcegroup --location northeurope --osType linux --clusterType hadoop --defaultStorageAccountName mystorage --defaultStorageAccountKey <storagekey> --defaultStorageContainer mycontainer --userName admin -password mypassword --sshUserName sshuser --sshPassword mypassword`
+* 旧命令 (ASM) - `azure hdinsight cluster create myhdicluster --location northeurope --osType windows --storageAccountName mystorage --storageAccountKey <storagekey> --storageContainer mycontainer --userName admin --password mypassword`
+* 新命令 (ARM) - `azure hdinsight cluster create myhdicluster -g myresourcegroup --location northeurope --osType windows --clusterType hadoop --defaultStorageAccountName mystorage --defaultStorageAccountKey <storagekey> --defaultStorageContainer mycontainer --userName admin -password mypassword`
 
 __删除群集__
 
@@ -139,7 +139,7 @@ Azure PowerShell ARM cmdlet 可与 ASM cmdlet 一同安装。两种模式下的 
 - **Set-AzureRmHDInsightPersistedScriptAction**：将以前执行的脚本操作设置为持久性脚本操作。
 - **Submit-AzureRmHDInsightScriptAction**：将新的脚本操作提交到 Azure HDInsight 群集。 
 
-有关其他用法信息，请参阅 [Customize Linux-based HDInsight clusters using Script Action（使用脚本操作自定义基于 Linux 的 HDInsight 群集）](/documentation/articles/hdinsight-hadoop-customize-cluster/)。
+有关其他用法信息，请参阅 [Customize Windows-based HDInsight clusters using Script Action（使用脚本操作自定义基于 Windows 的 HDInsight 群集）](/documentation/articles/hdinsight-hadoop-customize-cluster/)。
 
 ### 示例
 
@@ -155,10 +155,9 @@ Azure PowerShell ARM cmdlet 可与 ASM cmdlet 一同安装。两种模式下的 
         -DefaultStorageContainerName $containerName `
         -ClusterSizeInNodes 2 `
         -ClusterType Hadoop `
-        -OSType Linux `
-        -Version "3.5" `
-        -Credential $httpCredential `
-        -SshCredential $sshCredential
+        -OSType Windows `
+        -Version "3.3" `
+        -Credential $httpCredential
 
 新命令 (ARM)：
 
@@ -171,10 +170,9 @@ Azure PowerShell ARM cmdlet 可与 ASM cmdlet 一同安装。两种模式下的 
         -DefaultStorageContainer $containerName  `
         -ClusterSizeInNodes 2 `
         -ClusterType Hadoop `
-        -OSType Linux `
+        -OSType Windows `
         -Version "3.5" `
-        -HttpCredential $httpcredentials `
-        -SshCredential $sshCredentials
+        -HttpCredential $httpcredentials
 
  
 **删除群集**
@@ -210,7 +208,7 @@ Azure PowerShell ARM cmdlet 可与 ASM cmdlet 一同安装。两种模式下的 
 
 ####其他示例
 
-- [创建 HDInsight 群集](/documentation/articles/hdinsight-hadoop-create-linux-clusters-azure-powershell/)
+- [创建 HDInsight 群集](/documentation/articles/hdinsight-hadoop-create-windows-clusters-powershell/)
 - [提交 Hive 作业](/documentation/articles/hdinsight-hadoop-use-hive-powershell/)
 - [提交 Pig 作业](/documentation/articles/hdinsight-hadoop-use-pig-powershell/)
 - [提交 Sqoop 作业](/documentation/articles/hdinsight-hadoop-use-sqoop-powershell/)
@@ -229,8 +227,7 @@ Azure PowerShell ARM cmdlet 可与 ASM cmdlet 一同安装。两种模式下的 
 
 | 如何...使用基于 ARM 的 HDInsight SDK | 链接 |
 | ------------------- | --------------- |
-| 使用 .NET SDK 创建 HDInsight 群集| 请参阅 [Create HDInsight clusters using .NET SDK（使用 .NET SDK 创建 HDInsight 群集）](/documentation/articles/hdinsight-hadoop-create-linux-clusters-dotnet-sdk/)|
-| 配合使用脚本操作与 .NET SDK 来自定义群集 | 请参阅 [Customize HDInsight Linux clusters using Script Action（使用脚本操作自定义 HDInsight Linux 群集）](/documentation/articles/hdinsight-hadoop-create-linux-clusters-dotnet-sdk/#use-script-action) |
+| 使用 .NET SDK 创建 HDInsight 群集| 请参阅 [Create HDInsight clusters using .NET SDK（使用 .NET SDK 创建 HDInsight 群集）](/documentation/articles/hdinsight-hadoop-create-windows-clusters-dotnet-sdk/)|
 | 配合使用 Azure Active Directory 与 .NET SDK 以交互方式对应用程序进行身份验证| 请参阅 [Run Hive queries using .NET SDK（使用 .NET SDK 运行 Hive 查询）](/documentation/articles/hdinsight-hadoop-use-hive-dotnet-sdk/)。本文中的代码段使用交互式身份验证方法。|
 | 配合使用 Azure Active Directory 与 .NET SDK 以非交互方式对应用程序进行身份验证 | 请参阅 [Create non-interactive applications for HDInsight（为 HDInsight 创建非交互式应用程序）](/documentation/articles/hdinsight-create-non-interactive-authentication-dotnet-applications/) |
 | 使用 .NET SDK 提交 Hive 作业| 请参阅 [Submit Hive jobs（提交 Hive 作业）](/documentation/articles/hdinsight-hadoop-use-hive-dotnet-sdk/) |

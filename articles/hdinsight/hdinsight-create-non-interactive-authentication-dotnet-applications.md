@@ -28,7 +28,7 @@
 * Azure Directory 应用程序密钥。请参阅[获取应用程序身份验证密钥](/documentation/articles/resource-group-create-service-principal-portal/#get-application-id-and-authentication-key)
 
 ## 先决条件
-* HDInsight 群集。请参阅[入门教程](/documentation/articles/hdinsight-hadoop-linux-tutorial-get-started/#create-cluster)。
+* HDInsight 群集。请参阅[入门教程](/documentation/articles/hdinsight-hadoop-tutorial-get-started-windows/#create-cluster)。
 
 
 ## 将 AD 应用程序分配到角色

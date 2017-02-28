@@ -45,7 +45,7 @@
 * [Apache Storm on HDInsight 入门][2b8c3488]
 * [了解如何使用 Storm on HDInsight 部署和管理 Storm 拓扑][6eb0d3b8]
 
-[2b8c3488]: /documentation/articles/hdinsight-apache-storm-tutorial-get-started-linux/ "了解如何创建 Storm on HDInsight 群集，以及如何使用 Storm 仪表板来部署示例拓扑。"
+[2b8c3488]: /documentation/articles/hdinsight-apache-storm-tutorial-get-started/ "了解如何创建 Storm on HDInsight 群集，以及如何使用 Storm 仪表板来部署示例拓扑。"
 [6eb0d3b8]: /documentation/articles/hdinsight-storm-deploy-monitor-topology/ "了解如何使用基于 Web 的 Storm 仪表板和 Storm UI 或 HDInsight Tools for Visual Studio 来部署和管理拓扑。"
 [16fce2d1]: /documentation/articles/hdinsight-storm-develop-csharp-visual-studio-topology/ "了解如何使用用于 Visual Studio 的 HDInsight 工具创建 C# Storm 拓扑。"
 [5797064f]: /documentation/articles/hdinsight-storm-develop-java-topology/ "了解如何通过创建一个基本的单词计数拓扑，使用 Maven 以 Java 语言创建 Storm 拓扑。"

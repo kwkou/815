@@ -25,7 +25,7 @@
 Hive 提供了通过类似 SQL 的脚本语言（称为 *[HiveQL][hadoop-hiveql]*）运行 Hadoop MapReduce 作业的方法，此方法可用于对大量数据进行汇总、查询和分析。
 
 > [AZURE.NOTE]
-本文档中的步骤要求使用基于 Windows 的 HDInsight 群集。有关适用于基于 Linux 的群集的步骤，请参阅[使用 HDInsight (Linux) 中的 Hive 分析航班延误数据](/documentation/articles/hdinsight-analyze-flight-delay-data-linux/)。
+本文档中的步骤要求使用基于 Windows 的 HDInsight 群集。
 
 Azure HDInsight 的主要优势之一就是隔离数据存储和计算。HDInsight 将 Azure Blob 存储用于数据存储。典型的作业包含三部分：
 
@@ -50,7 +50,7 @@ Azure HDInsight 的主要优势之一就是隔离数据存储和计算。HDInsig
 在附录中，你可以找到有关上载航班延误数据、创建/上载 Hive 查询字符串和针对 Sqoop 作业准备 Azure SQL 数据库的说明。
 
 > [AZURE.NOTE]
-本文档中的步骤特定于基于 Windows 的 HDInsight 群集。有关适用于基于 Linux 的群集的步骤，请参阅[使用 HDInsight (Linux) 中的 Hive 分析航班延误数据](/documentation/articles/hdinsight-analyze-flight-delay-data-linux/)
+本文档中的步骤特定于基于 Windows 的 HDInsight 群集。
 
 ### <a id="prerequisite"></a>先决条件
 要阅读本教程，必须具备以下项：
@@ -710,7 +710,6 @@ HiveQL 脚本将执行以下操作：
 * [将 Oozie 与 HDInsight 配合使用][hdinsight-use-oozie]
 * [将 Sqoop 与 HDInsight 配合使用][hdinsight-use-sqoop]
 * [将 Pig 与 HDInsight 配合使用][hdinsight-use-pig]
-* [为 HDInsight 开发 Java MapReduce 程序][hdinsight-develop-mapreduce]
 
 [azure-purchase-options]: /pricing/overview/
 [azure-member-offers]: /pricing/member-offers/
@@ -724,10 +723,9 @@ HiveQL 脚本将执行以下操作：
 [hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters/
 [hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage/
 [hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data/
-[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-linux-tutorial-get-started/
+[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows/
 [hdinsight-use-sqoop]: /documentation/articles/hdinsight-use-sqoop/
 [hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig/
-[hdinsight-develop-mapreduce]: /documentation/articles/hdinsight-develop-deploy-java-mapreduce-linux/
 
 [hadoop-hiveql]: https://cwiki.apache.org/confluence/display/Hive/LanguageManual+DDL
 [hadoop-shell-commands]: http://hadoop.apache.org/docs/r0.18.3/hdfs_shell.html

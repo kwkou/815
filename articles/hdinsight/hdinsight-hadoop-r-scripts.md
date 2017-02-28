@@ -19,13 +19,12 @@
     ms.author="jgao" />
 
 # 在 HDInsight Hadoop 群集上安装并使用 R
-了解如何使用 R 通过脚本操作来自定义基于 Windows 的 HDInsight 群集，以及如何在 HDInsight 群集上使用 R。[HDInsight 产品/服务](/pricing/details/hdinsight/)包括 HDInsight 群集中的 R Server。这将允许 R 脚本使用 MapReduce 和 Spark 运行分布式计算。有关详细信息，请参阅[Get started using R Server on HDInsight](/documentation/articles/hdinsight-hadoop-r-server-get-started/)（开始使用 HDInsight 上的 R Server）。有关在基于 Linux 的群集中使用 R 的信息，请参阅[在 HDInsight Hadoop 群集 (Linux) 上安装和使用 R](/documentation/articles/hdinsight-hadoop-r-scripts-linux/)。
+了解如何使用 R 通过脚本操作来自定义基于 Windows 的 HDInsight 群集，以及如何在 HDInsight 群集上使用 R。这将允许 R 脚本使用 MapReduce 和 Spark 运行分布式计算。
 
 可以使用*脚本操作*，在 Azure HDInsight 的任何群集类型（Hadoop、Storm、HBase、Spark）上安装 R。用于在 HDInsight 群集上安装 R 的示例脚本可通过 [https://hdiconfigactions.blob.core.windows.net/rconfigactionv02/r-installer-v02.ps1](https://hdiconfigactions.blob.core.windows.net/rconfigactionv02/r-installer-v02.ps1) 上的只读 Azure 存储 Blob 获得。
 
 **相关文章**
 
-* [在 HDInsight Hadoop 群集 (Linux) 上安装和使用 R](/documentation/articles/hdinsight-hadoop-r-scripts-linux/)
 * [在 HDInsight 中创建 Hadoop 群集](/documentation/articles/hdinsight-provision-clusters/)：有关如何创建 HDInsight 群集的一般信息
 * [使用脚本操作自定义 HDInsight 群集][hdinsight-cluster-customize]：有关如何使用脚本操作自定义 HDInsight 群集的一般信息
 * [为 HDInsight 开发脚本操作脚本](/documentation/articles/hdinsight-hadoop-script-actions/)
@@ -96,18 +95,15 @@ R 与 Azure Blob 存储 (WASB) 兼容，这样，存储在此的数据可以在 
 请参阅[使用脚本操作自定义 HDInsight 群集](/documentation/articles/hdinsight-hadoop-customize-cluster/#call-scripts-using-azure-powershell)。此示例演示如何使用 .NET SDK 安装 Spark。你需要自定义要使用的脚本 [https://hdiconfigactions.blob.core.windows.net/rconfigactionv02/r-installer-v02.ps1](https://hdiconfigactions.blob.core.windows.net/rconfigactionv02/r-installer-v02.ps1)。
 
 ## 另请参阅
-* [在 HDInsight Hadoop 群集 (Linux) 上安装和使用 R](/documentation/articles/hdinsight-hadoop-r-scripts-linux/)
 * [在 HDInsight 中创建 Hadoop 群集](/documentation/articles/hdinsight-provision-clusters/)：有关如何创建 HDInsight 群集的一般信息
 * [使用脚本操作自定义 HDInsight 群集][hdinsight-cluster-customize]：有关如何使用脚本操作自定义 HDInsight 群集的一般信息
 * [为 HDInsight 开发脚本操作脚本](/documentation/articles/hdinsight-hadoop-script-actions/)
-* [在 HDInsight 群集上安装和使用 Spark][hdinsight-install-spark]：有关安装 Spark 的脚本操作示例
 * [在 HDInsight 群集上安装 Giraph](/documentation/articles/hdinsight-hadoop-giraph-install/)：有关如何安装 Giraph 的脚本操作示例
-* [在 HDInsight 群集上安装 Solr](/documentation/articles/hdinsight-hadoop-solr-install-linux/)：有关如何安装 Solr 的脚本操作示例。
+* [在 HDInsight 群集上安装 Solr](/documentation/articles/hdinsight-hadoop-solr-install/)：有关如何安装 Solr 的脚本操作示例。
 
 [powershell-install-configure]: https://docs.microsoft.com/powershell/azureps-cmdlets-docs
 [hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters/
-[hdinsight-cluster-customize]: /documentation/articles/hdinsight-hadoop-customize-cluster-linux/
-[hdinsight-install-spark]: /documentation/articles/hdinsight-apache-spark-jupyter-spark-sql/
+[hdinsight-cluster-customize]: /documentation/articles/hdinsight-hadoop-customize-cluster/
 
 <!---HONumber=Mooncake_0120_2017-->
 <!--Update_Description: update from ASM to ARM-->

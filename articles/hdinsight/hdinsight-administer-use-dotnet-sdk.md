@@ -110,7 +110,7 @@
 运行此程序时，将看到提示。如果不想看到提示，请参阅[创建非交互式身份验证 .NET HDInsight 应用程序](/documentation/articles/hdinsight-create-non-interactive-authentication-dotnet-applications/)。
 
 ## 创建群集
-请参阅[使用 .NET SDK 在 HDInsight 中创建基于 Linux 的群集](/documentation/articles/hdinsight-hadoop-create-linux-clusters-dotnet-sdk/)。
+请参阅[使用 .NET SDK 在 HDInsight 中创建基于 Windows 的群集](/documentation/articles/hdinsight-hadoop-create-windows-clusters-dotnet-sdk/)。
 
 ## <a name="list-clusters"></a> 列出群集
 以下代码片段列出了群集和一些属性：
@@ -133,7 +133,7 @@
 使用群集缩放功能，可更改 Azure HDInsight 中运行的群集使用的辅助节点数，而无需重新创建群集。
 
 > [AZURE.NOTE]
-只支持使用 HDInsight 3.1.3 或更高版本的群集。如果不确定群集的版本，可以查看“属性”页面。请参阅[列出并显示群集](/documentation/articles/hdinsight-administer-use-portal-linux/#list-and-show-clusters)。
+只支持使用 HDInsight 3.1.3 或更高版本的群集。如果不确定群集的版本，可以查看“属性”页面。请参阅[列出并显示群集](/documentation/articles/hdinsight-administer-use-management-portal/#list-and-show-clusters)。
 > 
 > 
 
@@ -183,7 +183,6 @@ HDInsight 群集提供以下 HTTP Web 服务（所有这些服务都有 REST 样
 
 * ODBC
 * JDBC
-* Ambari
 * Oozie
 * Templeton
 
@@ -229,7 +228,7 @@ HDInsight 群集提供以下 HTTP Web 服务（所有这些服务都有 REST 样
 ## 提交作业
 **提交 MapReduce 作业**
 
-请参阅[在 HDInsight 中运行 Hadoop MapReduce 示例](/documentation/articles/hdinsight-hadoop-run-samples-linux/)。
+请参阅[在 HDInsight 中运行 Hadoop MapReduce 示例](/documentation/articles/hdinsight-run-samples/)。
 
 **提交 Hive 作业**
 
@@ -245,7 +244,7 @@ HDInsight 群集提供以下 HTTP Web 服务（所有这些服务都有 REST 样
 
 **提交 Oozie 作业**
 
-请参阅[在 HDInsight 中将 Oozie 与 Hadoop 配合使用以定义和运行工作流](/documentation/articles/hdinsight-use-oozie-linux-mac/)。
+请参阅[在 HDInsight 中将 Oozie 与 Hadoop 配合使用以定义和运行工作流](/documentation/articles/hdinsight-use-oozie/)。
 
 ## 将数据上传到 Azure Blob 存储
 请参阅[将数据上传到 HDInsight][hdinsight-upload-data]。
@@ -262,13 +261,13 @@ HDInsight 群集提供以下 HTTP Web 服务（所有这些服务都有 REST 样
 [azure-member-offers]: /pricing/member-offers/
 [azure-trial]: /pricing/1rmb-trial/
 
-[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-linux-tutorial-get-started/
+[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows/
 [hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters/
 [hdinsight-provision-custom-options]: /documentation/articles/hdinsight-provision-clusters/#configuration
 [hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically/
 
 [hdinsight-admin-cli]: /documentation/articles/hdinsight-administer-use-command-line/
-[hdinsight-admin-portal]: /documentation/articles/hdinsight-administer-use-portal-linux/
+[hdinsight-admin-portal]: /documentation/articles/hdinsight-administer-use-management-portal/
 [hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage/
 [hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive/
 [hdinsight-use-mapreduce]: /documentation/articles/hdinsight-use-mapreduce/

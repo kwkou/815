@@ -17,8 +17,6 @@
 
 # HBase 教程：开始在 HDInsight 中将 Apache HBase 与基于 Windows 的 Hadoop 配合使用
 
-[AZURE.INCLUDE [hbase-selector](../../includes/hdinsight-hbase-selector.md)]
-
 了解如何使用 Apache Hive 在 HDInsight 中创建 HBase 群集、创建 HBase 表和查询表。有关 HBase 的一般信息，请参阅 [HDInsight HBase 概述][hdinsight-hbase-overview]。
 
 此文档中的信息特定于基于 Windows 的 HDInsight 群集。有关基于 Windows 的群集的信息，请使用页面顶部的选项卡选择器进行切换。
@@ -46,7 +44,7 @@
 
 	- **群集名称** - 输入用于标识此群集的名称。
 	- **群集类型** - 选择 **HBase**。
-	- **群集操作系统** - 选择 **Windows**。对于创建基于 Linux 的 HBase 群集，请参阅 [HBase 教程：开始在 HDInsight 中将 Apache HBase 与 Hadoop 配合使用 (Linux)](/documentation/articles/hdinsight-hbase-tutorial-get-started-linux)。
+	- **群集操作系统** - 选择 **Windows**。
 	- **版本** - 选择 HBase 版本。
 	- **订阅** - 选择用于创建此群集的 Azure 订阅。
 	- **资源组** - 创建新 Azure 资源组或选择现有资源组。有关详细信息，请参阅 [Azure Resource Manager 概述](/documentation/articles/resource-group-overview)

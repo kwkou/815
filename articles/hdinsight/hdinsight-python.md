@@ -26,11 +26,6 @@ Hive 和 Pig 非常适用于在 HDInsight 中处理数据，但有时需要使�
 
 * HDInsight 群集
 
-    [AZURE.INCLUDE [hdinsight-linux-acn-version.md](../../includes/hdinsight-linux-acn-version.md)]
-
-    > [AZURE.IMPORTANT]
-    Linux 是在 HDInsight 3.4 版或更高版本上使用的唯一操作系统。有关详细信息，请参阅 [HDInsight 在 Windows 上弃用](/documentation/articles/hdinsight-component-versioning/#hdi-version-32-and-33-nearing-deprecation-date)。
-
 * 文本编辑器
 
 ## <a name="python"></a>HDInsight 上的 Python
@@ -42,16 +37,6 @@ HDInsight 还包含 Jython，后者是用 Java 编写的 Python 实现。Pig 无
 ## <a name="hivepython"></a>Hive 和 Python
 
 可以通过 HiveQL **TRANSFORM** 语句将 Python 用作 Hive 中的 UDF。例如，以下 HiveQL 将调用 **streaming.py** 文件中存储的 Python 脚本。
-
-**基于 Linux 的 HDInsight**
-
-    add file wasbs:///streaming.py;
-
-    SELECT TRANSFORM (clientid, devicemake, devicemodel)
-        USING 'python streaming.py' AS
-        (clientid string, phoneLable string, phoneHash string)
-    FROM hivesampletable
-    ORDER BY clientid LIMIT 50;
 
 **基于 Windows 的 HDInsight**
 
@@ -164,81 +149,6 @@ HDInsight 还包含 Jython，后者是用 Java 编写的 Python 实现。Pig 无
 当数据返回到 Pig 时，其架构将与 **@outputSchema** 语句中的定义一致。
 
 ## <a name="running"></a>运行示例
-如果使用的是基于 Linux 的 HDInsight 群集，请使用以下 **SSH** 步骤。如果使用的是基于 Windows 的 HDInsight 群集和 Windows 客户端，请使用 **PowerShell** 步骤。
-
-### SSH
-有关使用 SSH 的详细信息，请参阅[在 Linux、Unix 或 OS X 中的 HDInsight 上将 SSH 与基于 Linux 的 Hadoop 配合使用](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix/)或[在 Windows 中的 HDInsight 上将 SSH 与基于 Linux 的 Hadoop 配合使用](/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows/)。
-
-1. 使用 Python 示例 [streaming.py](#streamingpy) 和 [pig\_python.py](#jythonpy) 在开发计算机上创建文件的本地副本。
-2. 使用 `scp` 将文件复制到你的 HDInsight 群集。例如，下面会将文件复制到名为 **mycluster** 的群集。
-   
-        scp streaming.py pig_python.py myuser@mycluster-ssh.azurehdinsight.cn:
-3. 使用 SSH 连接到群集。例如，下面会以用户 **myuser** 的身份连接到名为 **mycluster** 的群集。
-   
-        ssh myuser@mycluster-ssh.azurehdinsight.cn
-4. 从 SSH 会话将前面上载的 python 文件添加到群集的 WASB 存储中。
-   
-        hdfs dfs -put streaming.py /streaming.py
-        hdfs dfs -put pig_python.py /pig_python.py
-
-在上载文件后，使用以下步骤来运行 Hive 和 Pig 作业。
-
-#### Hive
-1. 使用 `hive` 命令来启动 Hive Shell。加载 Shell 后，应可看到 `hive>` 提示符。
-2. 在 `hive>` 提示符下输入以下命令。
-
-        add file wasbs:///streaming.py;
-        SELECT TRANSFORM (clientid, devicemake, devicemodel)
-          USING 'python streaming.py' AS
-          (clientid string, phoneLabel string, phoneHash string)
-        FROM hivesampletable
-        ORDER BY clientid LIMIT 50;
-
-3. 输入最后一行后，应会启动作业。最终，它将返回类似于以下内容的输出。
-   
-        100041    RIM 9650    d476f3687700442549a83fac4560c51c
-        100041    RIM 9650    d476f3687700442549a83fac4560c51c
-        100042    Apple iPhone 4.2.x    375ad9a0ddc4351536804f1d5d0ea9b9
-        100042    Apple iPhone 4.2.x    375ad9a0ddc4351536804f1d5d0ea9b9
-        100042    Apple iPhone 4.2.x    375ad9a0ddc4351536804f1d5d0ea9b9
-
-#### Pig
-
-1. 使用 `pig` 命令来启动该 shell。加载 Shell 后，应可看到 `grunt>` 提示符。
-2. 在 `grunt>` 提示符下输入以下语句，使用 Jython 解释器运行 Python 脚本。
-
-        Register wasbs:///pig_python.py using jython as myfuncs;
-        LOGS = LOAD 'wasbs:///example/data/sample.log' as (LINE:chararray);
-        LOG = FILTER LOGS by LINE is not null;
-        DETAILS = foreach LOG generate myfuncs.create_structure(LINE);
-        DUMP DETAILS;
-
-3. 输入以下行后，应会启动作业。最终，它将返回类似于以下内容的输出。
-   
-        ((2012-02-03,20:11:56,SampleClass5,[TRACE],verbose detail for id 990982084))
-        ((2012-02-03,20:11:56,SampleClass7,[TRACE],verbose detail for id 1560323914))
-        ((2012-02-03,20:11:56,SampleClass8,[DEBUG],detail for id 2083681507))
-        ((2012-02-03,20:11:56,SampleClass3,[TRACE],verbose detail for id 1718828806))
-        ((2012-02-03,20:11:56,SampleClass3,[INFO],everything normal for id 530537821))
-4. 使用 `quit` 退出 Grunt Shell，然后在本地文件系统上使用以下命令编辑 pig\_python.py 文件：
-   
-    nano pig\_python.py
-
-5. 进入编辑器后，删除行开头的 `#` 字符以取消注释以下行：
-   
-        #from pig_util import outputSchema
-   
-    完成更改后，使用 Ctrl+X 退出编辑器。选择“Y”，然后按 Enter 保存更改。
-
-6. 使用 `pig` 命令再次启动 shell。在 `grunt>` 提示符下，使用以下命令运行带有 Jython 解释器的 Python 脚本。
-
-        Register 'pig_python.py' using streaming_python as myfuncs;
-        LOGS = LOAD 'wasbs:///example/data/sample.log' as (LINE:chararray);
-        LOG = FILTER LOGS by LINE is not null;
-        DETAILS = foreach LOG generate myfuncs.create_structure(LINE);
-        DUMP DETAILS;
-
-    完成此作业后，看到的输出应该与之前使用 Jython 运行脚本后的输出相同。
 
 ### PowerShell
 

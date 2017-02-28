@@ -78,10 +78,6 @@ Tez 速度更快，因为：
 	Add-AzureHDInsightConfigValues -Hive $hiveConfig |
 	New-AzureHDInsightCluster -Name $clusterName -Location $location -Credential $hdiCredential
 
-    
-> [AZURE.NOTE] 基于 Linux 的 HDInsight 群集在默认情况下会启用 Tez。
-    
-
 ## Hive 分区
 
 I/O 操作是运行 Hive 查询的主要性能瓶颈。如果可以减少需要读取的数据量，即可改善性能。默认情况下，Hive 查询会扫描整个 Hive 表。对于表扫描之类的查询，这非常有利；但是，对于只需扫描少量数据的查询（例如，使用筛选进行查询），这会产生不必要的开销。使用 Hive 分区，Hive 查询只需访问 Hive 表中必要的数据量。

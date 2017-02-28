@@ -28,7 +28,7 @@ HDInsight 使用 Azure 存储 Blob 存储数据。HDInsight 必须对用作群�
   
     * Visual Studio 的版本必须是 2013 或 2015。
     * Python 的版本必须是 2.7 或更高版本
-* 基于 Linux 的 HDInsight 群集或 [Azure PowerShell][powershell] - 如果已有基于 Linux 的群集，则可以使用 Ambari 将共享访问签名添加到群集。如果没有，则可以使用 Azure PowerShell 新建群集，并在创建群集期间添加共享访问签名。
+* [Azure PowerShell][powershell] - 使用 Azure PowerShell 新建群集，并在创建群集期间添加共享访问签名。
 * 来自以下网址的示例文件：[https://github.com/Azure-Samples/hdinsight-dotnet-python-azure-storage-shared-access-signature](https://github.com/Azure-Samples/hdinsight-dotnet-python-azure-storage-shared-access-signature)。此存储库包含以下项目：
   
     * Visual Studio 项目，可以创建存储容器、存储策略，以及与 HDInsight 配合使用的 SAS
@@ -94,8 +94,7 @@ HDInsight 使用 Azure 存储 Blob 存储数据。HDInsight 必须对用作群�
 
 若要使用共享访问签名限制对容器的访问，必须将一个自定义条目添加到群集的 **core-site** 配置中。
 
-* 对于**基于 Windows** 或**基于 Linux** 的 HDInsight 群集，可以使用 PowerShell 在创建群集期间执行此操作。
-* 对于**基于 Linux** 的 HDInsight 群集，可以在创建群集后使用 Ambari 更改配置。
+* 对于**基于 Windows** 的 HDInsight 群集，可以使用 PowerShell 在创建群集期间执行此操作。
 
 ### 创建使用 SAS 的新群集
 存储库的 `CreateCluster` 目录中包含创建使用 SAS 的 HDInsight 群集的示例。若要使用它，请执行以下步骤：
@@ -104,8 +103,8 @@ HDInsight 使用 Azure 存储 Blob 存储数据。HDInsight 必须对用作群�
    
         # Replace 'mycluster' with the name of the cluster to be created
         $clusterName = 'mycluster'
-        # Valid values are 'Linux' and 'Windows'
-        $osType = 'Linux'
+        # Valid value is 'Windows'
+        $osType = 'Windows'
         # Replace 'myresourcegroup' with the name of the group to be created
         $resourceGroupName = 'myresourcegroup'
         # Replace with the Azure data center you want to the cluster to live in
@@ -137,11 +136,9 @@ HDInsight 使用 Azure 存储 Blob 存储数据。HDInsight 必须对用作群�
         .\HDInsightSAS.ps1
    
     脚本运行后，会在创建资源组和存储帐户时将输出记录到 PowerShell 提示符下。然后它会提示你输入 HDInsight 群集的 HTTP 用户。这是用于保护群集的 HTTP/s 访问的用户帐户。
-   
-    如果要创建基于 Linux 的群集，系统还会提示你输入 SSH 用户帐户名和密码。这用于远程登录到群集。
-   
+
     > [AZURE.IMPORTANT]
-    出现输入 HTTP/s 或 SSH 用户名和密码的提示时，必须提供符合以下条件的密码：
+    出现输入 HTTP/s 用户名和密码的提示时，必须提供符合以下条件的密码：
     > <p>
     ><p> * 长度必须至少为 10 个字符
     ><p> * 必须至少包含一个数字
@@ -152,41 +149,12 @@ HDInsight 使用 Azure 存储 Blob 存储数据。HDInsight 必须对用作群�
 
 需要等待一段时间让此脚本完成，通常大约是 15 分钟。如果脚本完成且没有发生任何错误，则群集创建完毕。
 
-### 更新现有群集以使用 SAS
-如果已有基于 Linux 的群集，则可以按照以下步骤将 SAS 添加到 **core-site** 配置：
-
-1. 打开群集的 Ambari Web UI。此页的地址是 https://YOURCLUSTERNAME.azurehdinsight.cn。出现提示时，使用创建群集时所用的管理员名称 (admin) 和密码向群集进行身份验证。
-2. 在 Ambari Web UI 的左侧选择“HDFS”，然后选择页中间的“配置”选项卡。
-3. 选择“高级”选项卡，然后滚动页面，直到找到“自定义 core-site”部分。
-4. 展开“自定义 core-site”部分，然后滚动到底部并选择“添加属性...”链接。对“密钥”和“值”字段使用以下值：
-   
-    * **密钥**：fs.azure.sas.CONTAINERNAME.STORAGEACCOUNTNAME.blob.core.chinacloudapi.cn
-    * **值**：之前运行的 C# 或 Python 应用程序返回的 SAS
-     
-        将 **CONTAINERNAME** 替换为对 C# 或 SAS 应用程序使用的容器名称。将 **STORAGEACCOUNTNAME** 替换为所用的存储帐户名。
-5. 单击“添加”按钮保存此密钥和值，然后单击“保存”按钮保存配置更改。出现提示时，添加此更改的说明（例如，“添加 SAS 存储访问”），然后单击“保存”。
-   
-    更改完成后，单击“确定”。
-   
-    > [AZURE.IMPORTANT]
-    这将保存配置更改，但必须重启多个服务，更改才能生效。
-    > 
-    > 
-6. 在 Ambari Web UI 中，从左侧的列表中选择“HDFS”，然后从右侧的“服务操作”下拉列表中选择“全部重启”。出现提示时，选择“启用维护模式”，然后选择“确认全部重启”。
-   
-    对页面左侧列表中的 MapReduce2 和 YARN 条目重复此过程。
-7. 重启这些服务后，选择每个服务并从“服务操作”下拉列表中选择“禁用维护模式”。
-
 ## 测试限制的访问
 若要验证是否已限制访问，请使用以下方法：
 
 * 对于**基于 Windows** 的 HDInsight 群集，请使用远程桌面连接到群集。有关详细信息，请参阅[使用 RDP 连接到 HDInsight](/documentation/articles/hdinsight-administer-use-management-portal/#connect-to-clusters-using-rdp)。
   
     连接后，使用桌面上的“Hadoop 命令行”图标打开命令提示符。
-* 对于**基于 Linux** 的 HDInsight 群集，使用 SSH 连接到群集。有关如何将 SSH 与基于 Linux 的群集配合使用的信息，请参阅以下文档之一：
-  
-    * [在 Linux、OS X 或 Unix 中的 HDInsight 上将 SSH 与基于 Linux 的 Hadoop 配合使用](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix/)
-    * [在 Windows 中的 HDInsight 上将 SSH 与基于 Linux 的 Hadoop 配合使用](/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows/)
 
 连接到群集后，使用以下步骤验证是否只能读取和列出 SAS 存储帐户中的项：
 
@@ -230,7 +198,7 @@ HDInsight 使用 Azure 存储 Blob 存储数据。HDInsight 必须对用作群�
         + CategoryInfo          : NotSpecified: (:) [New-AzureRmHDInsightCluster], CloudException
         + FullyQualifiedErrorId : Hyak.Common.CloudException,Microsoft.Azure.Commands.HDInsight.NewAzureHDInsightClusterCommand
 
-**原因**：如果使用群集管理员/HTTP 用户或（对于基于 Linux 的群集）SSH 用户的密码，则可能发生此错误。
+**原因**：如果使用群集管理员/HTTP 用户，则可能发生此错误。
 
 **解决方法**：使用符合以下条件的密码：
 

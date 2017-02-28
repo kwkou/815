@@ -21,7 +21,7 @@
 # 使用 Azure 门户预览在 HDInsight 中创建基于 Windows 的 Hadoop 群集
 [AZURE.INCLUDE [选择器](../../includes/hdinsight-selector-create-clusters.md)]
 
-了解如何使用 Azure 门户预览在 HDInsight 中创建 Hadoop 群集。Microsoft [Azure 门户预览](/documentation/articles/azure-portal-overview/)是一个中心位置，可在其中预配和管理 Azure 资源。Azure 门户预览是可用于在 HDInsight 中创建基于 Linux 的或基于 Windows 的 Hadoop 群集的工具之一。有关其他群集创建工具和功能，请单击本页顶部的相应选项卡，或参阅[群集创建方法](/documentation/articles/hdinsight-provision-clusters/#cluster-creation-methods)。
+了解如何使用 Azure 门户预览在 HDInsight 中创建 Hadoop 群集。Microsoft [Azure 门户预览](/documentation/articles/azure-portal-overview/)是一个中心位置，可在其中预配和管理 Azure 资源。Azure 门户预览是可用于在 HDInsight 中创建基于 Windows 的 Hadoop 群集的工具之一。有关其他群集创建工具和功能，请单击本页顶部的相应选项卡，或参阅[群集创建方法](/documentation/articles/hdinsight-provision-clusters/#cluster-creation-methods)。
 
 ## 先决条件：
 [AZURE.INCLUDE [delete-cluster-warning](../../includes/hdinsight-delete-cluster-warning.md)]
@@ -44,13 +44,13 @@
 3. 键入或选择以下值：
    
     * **群集名称**：输入群集的名称。如果该群集名称可用，则名称旁边会出现绿色的复选标记。
-    * **群集类型**：选择“Hadoop”。其他选项包括 **HBase**、**Storm** 和 **Spark**。
+    * **群集类型**：选择“Hadoop”。其他选项包括 **HBase** 和 **Storm**。
      
         > [AZURE.IMPORTANT]
         HDInsight 群集有各种类型，分别与针对其优化群集的工作负荷或技术相对应。没有任何方法支持创建组合多种类型的群集，例如一个群集同时具有 Storm 和 HBase 类型。
         > 
         > 
-    * **群集操作系统**：选择“Windows”。若要创建基于 Linux 的群集，请选择“Linux”。
+    * **群集操作系统**：选择“Windows”。
     * **版本**：请参阅 [HDInsight 版本](/documentation/articles/hdinsight-component-versioning/)。
     * **订阅**：选择将用于创建此群集的 Azure 订阅。
     * **资源组**：选择现有资源组或创建新的资源组。如果有可用的资源组，则此条目默认为现有资源组中的一个。

@@ -42,11 +42,6 @@ Hive 和 Pig 非常适合处理 Azure HDInsight 中的数据，但有时你需�
 ## HDInsight 的 .NET
 基于 Windows 的 HDInsight 群集上会默认安装 .NET 通用语言运行时 (CLR) 和框架。这允许你将 C# 应用程序与 Hive 和 Pig 流式处理配合使用（通过 stdout/stdin 在 Hive/Pig 与 C# 应用程序之间传递数据）。
 
-> [AZURE.NOTE]
-当前不支持在基于 Linux 的 HDInsight 群集上运行 .NET Framework UDF。
->
->
-
 ## .NET 和流式处理
 流式处理涉及 Hive 和 Pig 将数据通过 stdout 传递到外部应用程序，并通过 stdin 接收结果。对于 C# 应用程序，这可以通过 `Console.ReadLine()` 和 `Console.WriteLine()` 非常轻松地实现。
 
