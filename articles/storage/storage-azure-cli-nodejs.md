@@ -87,7 +87,9 @@ Azure CLI 提供了一组开源且跨平台的命令，这些命令可以用于 
    * **\<container\_name\>**：使用脚本中给定的名称，或输入容器的新名称。
    * **\<image\_to\_upload\>**：输入本地计算机上图片的路径，例如：“\~/images/HelloWorld.png”。
    * **\<destination\_folder\>**：输入用于存储从 Azure 存储下载的文件的本地目录路径，例如：“\~/downloadImages”。
+
 7. 在 vim 中更新完必需的变量以后，按组合键 `ESC`+`:`+`wq!` 保存脚本。
+
 8. 若要运行此脚本，在 bash 控制台中键入脚本文件名即可。运行此脚本后，应会创建包含已下载图像文件的本地目标文件夹。以下屏幕截图显示了示例输出：
 
 运行脚本后，应会创建包含已下载图像文件的本地目标文件夹。
@@ -239,7 +241,7 @@ Azure 文件共享是 Azure 中的 SMB 文件共享。所有目录和文件都�
 * [Resource Manager 模式下的 Azure CLI 命令](/documentation/articles/azure-cli-arm-commands/#azure-storage-commands-to-manage-your-storage-objects)
 * [Azure 服务管理模式下的 Azure CLI 命令](/documentation/articles/virtual-machines-command-line-tools/#commands-to-manage-your-storage-objects)
 
-也可以尝试 [Azure CLI 2.0（预览版）](/documentation/articles/storage-azure-cli/)，这是我们使用 Python 编写的下一代 CLI，用于资源管理部署模型。
+
 
 [Image1]: ./media/storage-azure-cli/azure_command.png
 
