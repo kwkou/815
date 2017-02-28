@@ -87,7 +87,7 @@ facesDetected|位于 JSON 结果的末尾，汇总在生成视频期间算法所
 #### 属性说明
 | 属性名称 | 说明 |
 | --- | --- |
-| Mode |速度更快：处理速度更快，但准确性较低（默认设置）。<br/>质量：跟踪准确性更好，但所需时间更长。 |
+| Mode |<p>速度更快：处理速度更快，但准确性较低（默认设置）。</p><p>质量：跟踪准确性更好，但所需时间更长。</p> |
 
 
 ### JSON 输出
@@ -160,7 +160,7 @@ facesDetected|位于 JSON 结果的末尾，汇总在生成视频期间算法所
 #### 属性说明
 | 属性名称 | 说明 |
 | --- | --- |
-| Mode |人脸：仅人脸检测。<br/>PerFaceEmotion：针对每个人脸检测独立返回表情。<br/>AggregateEmotion：针对帧中的所有人脸返回平均表情值。 |
+| Mode |<p>人脸：仅人脸检测。</p><p>PerFaceEmotion：针对每个人脸检测独立返回表情。</p><p>AggregateEmotion：针对帧中的所有人脸返回平均表情值。</p> |
 | AggregateEmotionWindowMs |在已选择 AggregateEmotion 模式时使用。指定用于生成每个聚合结果的视频的长度，以毫秒为单位。 |
 | AggregateEmotionIntervalMs |在已选择 AggregateEmotion 模式时使用。指定生成聚合结果的频率。 |
 
