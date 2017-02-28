@@ -236,25 +236,15 @@
 安装最新的 Windows 更新。如果无法安装，请确保安装以下更新：
    
 * [KB3137061](https://support.microsoft.com/kb/3137061)：发生网络中断和数据损坏后，Azure VM 无法恢复
-
 * [KB3115224](https://support.microsoft.com/kb/3115224)：对运行 Windows Server 2012 R2 或 Windows Server 2012 主机的 VM 所做的可靠性改进
-
 * [KB3140410](https://support.microsoft.com/kb/3140410) MS16-031：Microsoft Windows 安全更新，解决权限提升过程中的问题：2016 年 3 月 8 日
-
 * [KB3063075](https://support.microsoft.com/kb/3063075)：在 Azure 中运行 Windows Server 2012 R2 虚拟机时记录了许多的 ID 129 事件
-
 * [KB3137061](https://support.microsoft.com/kb/3137061)：发生网络中断和数据损坏后，Azure VM 无法恢复
-
 * [KB3114025](https://support.microsoft.com/kb/3114025)：从 Windows 8.1 或 Server 2012 R2 访问 Azure 文件存储时性能不佳
-
 * [KB3033930](https://support.microsoft.com/kb/3033930)：该修补程序提升了 Windows 中 Azure 服务每个进程的 RIO 缓冲区的 64K 限制
-
 * [KB3004545](https://support.microsoft.com/kb/3004545)：无法在 Windows 中通过 VPN 连接访问托管服务的 Azure 中的虚拟机
-
 * [KB3082343](https://support.microsoft.com/kb/3082343)：当 Azure 站点到站点 VPN 隧道使用 Windows Server 2012 R2 RRAS 时跨界 VPN 连接断开
-
 * [KB3140410](https://support.microsoft.com/kb/3140410) MS16-031：Microsoft Windows 安全更新，解决权限提升过程中的问题：2016 年 3 月 8 日
-
 * [KB3146723](https://support.microsoft.com/kb/3146723) MS16-048：描述 CSRSS 的安全更新：2016 年 4 月 12 日
 * [KB2904100](https://support.microsoft.com/kb/2904100)：Windows 中发生磁盘 I/O 期间系统会冻结 
      

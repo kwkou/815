@@ -44,7 +44,7 @@
     可将 SQL Server 安装媒体复制到 Windows Server VM，然后在该 VM 上安装 SQL Server。出于许可原因，必须提供 [Azure 上通过软件保障实现的许可移动性](/pricing/license-mobility/)。
 7. **如果 VM 是基于一个即用即付库映像创建的，是否可以将它更改为使用我自己的 SQL Server 许可证？**
 
-    不可以。无法从按分钟付费许可证改为使用自己的许可证。请使用一个 [BYOL 映像](/documentation/articles/virtual-machines-windows-migrate-sql/)创建新的 Azure 虚拟机，然后使用标准数据迁移技术将数据库迁移到新服务器。
+    不可以。无法从按分钟付费许可证改为使用自己的许可证。请创建新的 Azure 虚拟机，然后使用标准数据迁移技术将数据库迁移到新服务器。
 
 7. **如果 Azure VM 仅供备用/故障转移，是否必须支持该 VM 上的 SQL Server 许可费？**
    
