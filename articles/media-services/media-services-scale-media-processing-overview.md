@@ -32,8 +32,8 @@
 
 方案|**S1**|**S2**|**S3**|
 ----------|------------|----------|------------
-预期的用例| 单比特率编码。<br/>处于 SD 或较低分辨率的文件，对时间不敏感，成本低。|单比特率和多比特率编码。<br/>针对 SD 和 HD 编码的正常使用情况。 |单比特率和多比特率编码。<br/>全高清和 4K 分辨率视频。对时间敏感，更快的编码周转。 
-基准|[输入文件：5 分钟、640x360p、29.97 帧/秒](https://wamspartners.blob.core.windows.net/for-long-term-share/Whistler_5min_360p30.mp4?sr=c&si=AzureDotComReadOnly&sig=OY0TZ%2BP2jLK7vmcQsCTAWl33GIVCu67I02pgarkCTNw%3D)。<br/><br/>编码为具有相同分辨率的单比特率 MP4 文件大约需要 11 分钟。|[输入文件：5 分钟、1280x720p、29.97 帧/秒](https://wamspartners.blob.core.windows.net/for-long-term-share/Whistler_5min_720p30.mp4?sr=c&si=AzureDotComReadOnly&sig=OY0TZ%2BP2jLK7vmcQsCTAWl33GIVCu67I02pgarkCTNw%3D)<br/><br/>使用“H264 单比特率 720p”预设值进行编码大约需要 5 分钟。<br/><br/>使用“H264 多比特率 720p”预设值进行编码大约需要 11.5 分钟。|[输入文件：5 分钟、1920x1080p、29.97 帧/秒](https://wamspartners.blob.core.windows.net/for-long-term-share/Whistler_5min_1080p30.mp4?sr=c&si=AzureDotComReadOnly&sig=OY0TZ%2BP2jLK7vmcQsCTAWl33GIVCu67I02pgarkCTNw%3D)。<br/><br/>使用“H264 单比特率 1080p”预设值进行编码大约需要 2.7 分钟。<br/><br/>使用“H264 多比特率 1080p”预设值进行编码大约需要 5.7 分钟。
+预期的用例| <p>单比特率编码。</p><p>处于 SD 或较低分辨率的文件，对时间不敏感，成本低。|单比特率和多比特率编码。</p><p>针对 SD 和 HD 编码的正常使用情况。 |单比特率和多比特率编码。</p><p>全高清和 4K 分辨率视频。对时间敏感，更快的编码周转。 </p>
+基准|<p>[输入文件：5 分钟、640x360p、29.97 帧/秒](https://wamspartners.blob.core.windows.net/for-long-term-share/Whistler_5min_360p30.mp4?sr=c&si=AzureDotComReadOnly&sig=OY0TZ%2BP2jLK7vmcQsCTAWl33GIVCu67I02pgarkCTNw%3D)。</p><p>编码为具有相同分辨率的单比特率 MP4 文件大约需要 11 分钟。</p>|<p>[输入文件：5 分钟、1280x720p、29.97 帧/秒](https://wamspartners.blob.core.windows.net/for-long-term-share/Whistler_5min_720p30.mp4?sr=c&si=AzureDotComReadOnly&sig=OY0TZ%2BP2jLK7vmcQsCTAWl33GIVCu67I02pgarkCTNw%3D)</p><p>使用“H264 单比特率 720p”预设值进行编码大约需要 5 分钟。</p><p>使用“H264 多比特率 720p”预设值进行编码大约需要 11.5 分钟。</p>|<p>[输入文件：5 分钟、1920x1080p、29.97 帧/秒](https://wamspartners.blob.core.windows.net/for-long-term-share/Whistler_5min_1080p30.mp4?sr=c&si=AzureDotComReadOnly&sig=OY0TZ%2BP2jLK7vmcQsCTAWl33GIVCu67I02pgarkCTNw%3D)。</p><p>使用“H264 单比特率 1080p”预设值进行编码大约需要 2.7 分钟。</p><p>使用“H264 多比特率 1080p”预设值进行编码大约需要 5.7 分钟。</p>
 
 ##注意事项
 

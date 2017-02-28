@@ -26,7 +26,7 @@
 - [PHP](https://github.com/Azure/azure-sdk-for-php/tree/master/examples/MediaServices)
 
 ## 概述
-> [AZURE.NOTE][this]\(https://channel9.msdn.com/Shows/Azure-Friday/Azure-Media-Services-Protecting-your-Media-Content-with-AES-Encryption\) 如何使用 AES 加密保护媒体内容的概述视频。
+> [AZURE.NOTE] 如何使用 AES 加密保护媒体内容的概述[视频](https://channel9.msdn.com/Shows/Azure-Friday/Azure-Media-Services-Protecting-your-Media-Content-with-AES-Encryption)。
 > 
 > 
 
