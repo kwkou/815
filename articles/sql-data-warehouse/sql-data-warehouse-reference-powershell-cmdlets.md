@@ -109,6 +109,6 @@
 
 <!--Other Web references-->
 
-[Microsoft Web 平台安装程序]: https://aka.ms/webpi-azps
+[Microsoft Web 平台安装程序]: https://www.microsoft.com/web/downloads/platform.aspx
 
 <!---HONumber=Mooncake_Quality_Review_0104_2017-->
