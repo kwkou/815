@@ -59,7 +59,7 @@ SQL Server IaaS 代理扩展支持以下管理任务：
 ## 安装
 当你预配某个 SQL Server 虚拟机库映像时，系统会自动安装 SQL Server IaaS 代理扩展。
 
-如果你创建仅有 OS 的 Windows Server 虚拟机，可以使用 **Set-AzureVMSqlServerExtension** PowerShell cmdlet 手动安装扩展。例如，以下命令将在仅限操作系统的 Windows Server VM 上安装扩展，并将其命名为"SQLIaaSExtension"。
+如果你创建仅有 OS 的 Windows Server 虚拟机，可以使用 **Set-AzureVMSqlServerExtension** PowerShell cmdlet 手动安装扩展。例如，以下命令将在仅限操作系统的 Windows Server VM 上安装扩展，并将其命名为“SQLIaaSExtension”。
 
     Set-AzureRmVMSqlServerExtension -ResourceGroupName "resourcegroupname" -VMName "vmname" -Name "SQLIaasExtension" -Version "1.2" -Location "China East"
 
@@ -71,7 +71,7 @@ SQL Server IaaS 代理扩展支持以下管理任务：
 > 
 
 ## 状态
-验证是否已安装扩展的方法之一是在 Azure 门户预览中查看代理状态。在虚拟机边栏选项卡中选择"所有设置"，然后单击"扩展"。随后应会列出"SQLIaaSExtension"扩展。
+验证是否已安装扩展的方法之一是在 Azure 门户预览中查看代理状态。在虚拟机边栏选项卡中选择“所有设置”，然后单击“扩展”。随后应会列出“SQLIaaSExtension”扩展。
 
 ![Azure 门户预览中的 SQL Server IaaS 代理扩展](./media/virtual-machines-windows-sql-server-agent-extension/azure-rm-sql-server-iaas-agent-portal.png)  
 
@@ -86,7 +86,7 @@ SQL Server IaaS 代理扩展支持以下管理任务：
     $sqlext.AutoBackupSettings
 
 ## 删除
-在 Azure 门户预览中，可以卸载扩展，方法是访问虚拟机属性的"扩展"边栏选项卡，单击其中的省略号，然后单击"删除"。
+在 Azure 门户预览中，可以卸载扩展，方法是访问虚拟机属性的“扩展”边栏选项卡，单击其中的省略号，然后单击“删除”。
 
 ![在 Azure 门户预览中卸载 SQL Server IaaS 代理扩展](./media/virtual-machines-windows-sql-server-agent-extension/azure-rm-sql-server-iaas-agent-uninstall.png)  
 
