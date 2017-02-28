@@ -18,7 +18,7 @@
 	wacn.date="12/12/2016" 
 	ms.author="larryfr"/>
 
-#使用 HDInsight 中 Hadoop上的 Hive 查询控制台分析传感器数据
+# 使用 HDInsight 中 Hadoop上的 Hive 查询控制台分析传感器数据
 
 了解如何通过将 Hive 查询控制台与 HDInsight (Hadoop) 配合使用来分析传感器数据，然后通过使用 Power View 在 Microsoft Excel 中可视化数据。
 
@@ -33,7 +33,7 @@
 
 ![解决方案体系结构关系图](./media/hdinsight-hive-analyze-sensor-data/hvac-architecture.png)
 
-##先决条件
+## 先决条件
 
 * HDInsight (Hadoop) 群集：有关创建群集的信息，请参阅[在 HDInsight 中预配 Hadoop 群集](/documentation/articles/hdinsight-provision-clusters/)。
 
@@ -43,7 +43,7 @@
 
 * [Microsoft Hive ODBC 驱动程序](http://www.microsoft.com/download/details.aspx?id=40886)
 
-##运行示例
+## 运行示例
 
 1. 通过 Web 浏览器导航到以下 URL。将 `<clustername>` 替换为 HDInsight 群集的名称。
 

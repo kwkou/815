@@ -74,13 +74,6 @@
 
 HBase 读取器和写入器模板使用 HBase REST API（而不是 HBase Java API）与 HBase on HDInsight 群集通信。
 
-### EventHub 模板说明
-
-> [AZURE.IMPORTANT]
-EventHub 读取器模板随附的基于 Java 的 EventHub Spout 组件不适用于 Storm on HDInsight 版本 3.5。请改用 [https://000aarperiscus.blob.core.windows.net/certs/storm-eventhubs-1.0.2-jar-with-dependencies.jar](https://000aarperiscus.blob.core.windows.net/certs/storm-eventhubs-1.0.2-jar-with-dependencies.jar) 提供的 EventHub Spout 组件。
-
-如需使用此组件且适用于 Storm on HDInsight 3.5 的示例拓扑，请参阅 [https://github.com/Azure-Samples/hdinsight-dotnet-java-storm-eventhub](https://github.com/Azure-Samples/hdinsight-dotnet-java-storm-eventhub)。
-
 ## 创建 C# 拓扑
 
 1. 如果你尚未安装最新版本的 HDInsight Tools for Visual Studio，请参阅[开始使用 HDInsight Tools for Visual Studio](/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started/)。
@@ -485,7 +478,6 @@ SCP.Net 版本 0.9.4.203 引入了专用于事件中心 Spout（从事件中心�
    
     ![输出类型](./media/hdinsight-storm-develop-csharp-visual-studio-topology/outputtype.png)  
 
-   
     > [AZURE.NOTE]
     将拓扑部署到群集之前，请记得将“输出类型”更改回“类库”。
     > 

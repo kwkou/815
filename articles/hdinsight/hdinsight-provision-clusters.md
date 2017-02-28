@@ -127,9 +127,7 @@ HDInsight 不支持多个群集共享同一个 Blob 存储容器。
 ### 位置（区域）
 HDInsight 群集与其默认存储帐户必须位于相同的 Azure 位置。
 
-![Azure 区域](./media/hdinsight-provision-clusters/Azure.regions.png)
-
-有关受支持区域的列表，请单击 [HDInsight 定价](/pricing/details/hdinsight/)中的“区域”下拉列表。
+有关受支持区域的列表，请查看 [HDInsight 定价](/pricing/details/hdinsight/)中的“上市地区”部分。
 
 ### <a name="cluster-tiers"></a> 节点定价层
 客户需根据群集的生存期，支付这些节点的使用费。创建群集后便开始计费，删除群集后停止计费。无法取消分配群集或将其置于暂停状态。

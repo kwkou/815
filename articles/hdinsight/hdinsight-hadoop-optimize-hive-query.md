@@ -18,7 +18,7 @@
 
 默认情况下，不会为了性能而优化 Hadoop 群集。本文介绍可对查询应用的几种最常见 Hive 性能优化方法。
 
-##向外缩放辅助节点
+## 向外缩放辅助节点
 
 增加群集中的辅助节点数目，即可利用更多并行运行的映射器和化简器。在 HDInsight 中，可通过两种方式增加扩大的数目：
 
@@ -32,7 +32,7 @@
 
 有关 HDInsight 支持的不同虚拟机的详细信息，请参阅 [HDInsight 定价](/pricing/details/hdinsight/)。
 
-##启用 Tez
+## 启用 Tez
 
 [Apache Tez](http://hortonworks.com/hadoop/tez/) 是 MapReduce 引擎的替代执行引擎：
 
@@ -131,7 +131,7 @@ Hive 分区的实现方法是将原始数据刷新成新的目录，而每个分
 
 有关更多详细信息，请参阅[分区表](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+DDL#LanguageManualDDL-PartitionedTables)。
 
-##使用 ORCFile 格式
+## 使用 ORCFile 格式
 
 Hive 支持不同的文件格式。例如：
 
@@ -180,7 +180,7 @@ ORC（优化行纵栏式）格式是存储 Hive 数据的高效方式。与其�
 
 可在[此处](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+ORC)阅读有关 ORC 格式的详细信息。
 
-##向量化
+## 向量化
 
 向量化可让 Hive 以批的形式同时处理 1024 行，而不是一次处理一行。这意味着，简单的操作可以更快地完成，因为需要运行的内部代码更少。
 
@@ -191,7 +191,7 @@ ORC（优化行纵栏式）格式是存储 Hive 数据的高效方式。与其�
 有关详细信息，请参阅[向量化查询执行](https://cwiki.apache.org/confluence/display/Hive/Vectorized+Query+Execution)。
 
 
-##其他优化方法
+## 其他优化方法
 
 还可以考虑使用其他一些高级优化方法，例如：
 
@@ -199,7 +199,7 @@ ORC（优化行纵栏式）格式是存储 Hive 数据的高效方式。与其�
 - **联接优化：**Hive 的查询执行计划优化，可改善联接的效率并减少用户提示的需要。有关详细信息，请参阅[联接优化](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+JoinOptimization#LanguageManualJoinOptimization-JoinOptimization)。
 - **增加化简器**
 
-##<a id="nextsteps"></a>后续步骤
+## <a id="nextsteps"></a>后续步骤
 在本文中，你学习了几种常见的 Hive 查询优化方法。要了解更多信息，请参阅下列文章：
 
 - [使用 HDInsight 中的 Apache Hive](/documentation/articles/hdinsight-use-hive/)

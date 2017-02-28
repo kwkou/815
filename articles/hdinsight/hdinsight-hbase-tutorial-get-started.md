@@ -287,7 +287,7 @@ HDInsight 中的 HBase 随附了一个 Web UI 用于监视群集。使用该 Web
 
 在高可用性群集中，会找到要托管 WebUI 的当前活动 HBase 主节点的链接。
 
-##删除群集
+## 删除群集
 
 [AZURE.INCLUDE [delete-cluster-warning](../../includes/hdinsight-delete-cluster-warning.md)]
 

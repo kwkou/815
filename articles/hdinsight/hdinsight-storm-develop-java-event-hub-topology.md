@@ -28,7 +28,7 @@ Azure 事件中心可用于处理网站、应用程序和设备中的大量数�
     * [基于 Windows 的 Storm on HDInsight 群集](/documentation/articles/hdinsight-apache-storm-tutorial-get-started/)：若要从 Windows 客户端使用 PowerShell 来操作群集，请选择此选项
 
     > [AZURE.NOTE]
-    本文档中的步骤假设使用 Storm on HDInsight 群集 3.3 或 3.4。这些群集提供 Storm 0.10.0 和 Hadoop 2.7，可减少正常演示本示例而需要执行的步骤。
+    本文档中的步骤假设使用 Storm on HDInsight 群集 3.3。这些群集提供 Storm 0.10.0 和 Hadoop 2.7，可减少正常演示本示例而需要执行的步骤。
     ><p> 
     > 有关可在 HDInsight 3.2 上与 Storm 0.9.3 配合运行的示例版本，请参阅示例存储库的 [Storm v0.9.3](https://github.com/Azure-Samples/hdinsight-java-storm-eventhub/tree/Storm_v0.9.3) 分支。
     > 

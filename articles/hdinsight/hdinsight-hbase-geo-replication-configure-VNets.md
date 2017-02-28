@@ -34,12 +34,6 @@ Azure 虚拟网络站点到站点连接使用 VPN 网关通过 Ipsec/IKE 提供�
 
 有关详细信息，请参阅[配置 VNet 到 VNet 连接](/documentation/articles/virtual-networks-configure-vnet-to-vnet-connection/)。
 
-若要通过视频了解它：
-
-> [!VIDEO https://channel9.msdn.com/Series/Getting-started-with-Windows-Azure-HDInsight-Service/Configure-the-VPN-connectivity-between-two-Azure-virtual-networks/player]
-> 
-> 
-
 * 在两个虚拟网络之间配置 VPN 连接（本教程）
 * [为虚拟网络配置 DNS][hdinsight-hbase-geo-replication-dns]
 * [配置 HBase 异地复制][hdinsight-hbase-geo-replication]

@@ -15,10 +15,10 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="11/15/2016"
-	wacn.date="01/05/2017"
+	wacn.date="01/25/2017"
 	ms.author="jgao"/>
 
-#将 Sqoop 与 HDInsight 中的 Hadoop 配合使用
+# 将 Sqoop 与 HDInsight 中的 Hadoop 配合使用
 
 [AZURE.INCLUDE [sqoop-selector](../../includes/hdinsight-selector-use-sqoop.md)]
 
@@ -32,7 +32,7 @@
 
 有关 HDInsight 群集上支持的 Sqoop 版本，请参阅 [HDInsight 提供的群集版本有哪些新增功能？][hdinsight-versions]。
 
-##了解方案
+## 了解方案
 
 HDInsight 群集附带了某些示例数据。以后会用到以下两个示例：
 
@@ -116,7 +116,7 @@ HDInsight 可以使用各种方法运行 Sqoop 作业。使用下表来确定哪
 | [.NET SDK for Hadoop](/documentation/articles/hdinsight-hadoop-use-sqoop-dotnet-sdk/) | &nbsp; | ✔ | Windows | Windows（暂时） |
 | [Azure PowerShell](/documentation/articles/hdinsight-hadoop-use-sqoop-powershell/) | &nbsp; | ✔ | Windows | Windows |
 
-##后续步骤
+## 后续步骤
 
 现在你已经学习了如何使用 Sqoop。若要了解更多信息，请参阅以下文章：
 

@@ -44,7 +44,7 @@ Azure PowerShell 提供 *cmdlet*，可让你在 HDInsight 上远程运行 Pig �
 
 在远程 HDInsight 群集上运行 Pig 作业时，使用以下 Cmdlet：
 
-* **Login-AzureRmAccount -EnvironmentName AzureChinaCloud**：向 Azure 订阅进行 Azure PowerShell 身份验证
+* **Login-AzureRmAccount**：向 Azure 订阅进行 Azure PowerShell 身份验证
 * **New-AzureRmHDInsightPigJobDefinition**：使用指定的 Pig Latin 语句创建新的*作业定义*
 * **Start-AzureRmHDInsightJob**：将作业定义发送到 HDInsight，启动作业，然后返回可用来检查作业状态的*作业*对象
 * **Wait-AzureRmHDInsightJob**：使用作业对象来检查作业的状态。它会等待作业完成或超时。

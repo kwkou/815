@@ -13,7 +13,7 @@
 	ms.date="10/17/2016"
 	wacn.date="02/14/2017"/>
 
-#使用 HDInsight 中的 .NET SDK for Hadoop 运行 Pig 作业
+# 使用 HDInsight 中的 .NET SDK for Hadoop 运行 Pig 作业
 
 [AZURE.INCLUDE [pig-selector](../../includes/hdinsight-selector-use-pig.md)]
 
@@ -21,7 +21,7 @@
 
 HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 中使用 HDInsight 群集的操作。Pig 可让你通过为一系列数据转换建模，创建 MapReduce 操作。你将了解如何使用基本 C# 应用程序将 Pig 作业提交到 HDInsight 群集。
 
-##<a id="prereq"></a>先决条件
+## <a id="prereq"></a>先决条件
 
 若要完成本文中的步骤，你将需要以下各项：
 
@@ -30,7 +30,7 @@ HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 中使用 HDInsi
 
 * Visual Studio 2012、2013 或 2015
 
-##<a id="subscriptionid"></a>查找你的订阅 ID
+## <a id="subscriptionid"></a>查找你的订阅 ID
 
 每个 Azure 订阅都以 GUID 值（称为订阅 ID）标识。请使用以下步骤查找此值。
 
@@ -42,7 +42,7 @@ HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 中使用 HDInsi
 
 保存该订阅 ID，因为稍后你要用到它。
 
-##<a id="create"></a>创建应用程序
+## <a id="create"></a>创建应用程序
 
 HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 中使用 HDInsight 群集的操作。
 
@@ -167,11 +167,11 @@ HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 中使用 HDInsi
 7. 按 **F5** 启动应用程序。
 8. 按 **ENTER** 退出应用程序。
 
-##<a id="summary"></a>摘要
+## <a id="summary"></a>摘要
 
 如你所见，.NET SDK for Hadoop 可让你创建 .NET 应用程序，以将 Pig 作业提交到 HDInsight 群集、监视作业状态，以及检索输出。
 
-##<a id="nextsteps"></a>后续步骤
+## <a id="nextsteps"></a>后续步骤
 
 有关 HDInsight 中的 Pig 的一般信息。
 

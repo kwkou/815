@@ -126,13 +126,13 @@
         Get-AzureStorageBlobContent -Container $containerName -Blob example/output/shortestpaths/part-m-00001 -Context $storageContext -Force
         Get-AzureStorageBlobContent -Container $containerName -Blob example/output/shortestpaths/part-m-00002 -Context $storageContext -Force
 
-此时会在工作站上的当前目录中创建 **example/output/shortestpaths** 目录结构，并将两个输出文件下载到该位置。
+    此时会在工作站上的当前目录中创建 **example/output/shortestpaths** 目录结构，并将两个输出文件下载到该位置。
 
-    Use the **Cat** cmdlet to display the contents of the files:
+    使用 **Cat** 命令来显示文件的内容:
 
         Cat example/output/shortestpaths/part*
 
-    The output should appear similar to the following:
+    输出应该类似于以下:
 
         0    1.0
         4    5.0
@@ -140,9 +140,9 @@
         1    0.0
         3    1.0
 
-    The SimpleShortestPathComputation example is hard coded to start with object ID 1 and find the shortest path to other objects. So the output should be read as `destination_id distance`, where distance is the value (or weight) of the edges traveled between object ID 1 and the target ID.
+    这个 SimpleShortestPathComputation 示例硬编码为以 ID 1 对象开始，寻找到其他对象的最短路径。所以，输出应该为 `destination_id distance`，距离为目标 ID 与 ID 1 对象之间的边的重量之和。
 
-    Visualizing this, you can verify the results by traveling the shortest paths between ID 1 and all other objects. Note that the shortest path between ID 1 and ID 4 is 5. This is the total distance between <span style="color:orange">ID 1 and 3</span>, and then <span style="color:red">ID 3 and 4</span>.
+    可以图像中的最短路径看检测输出的结果。请注意 ID 1 到 ID 4 的最短路径是 5。这是 <span style="color:orange">ID 1 和 3</span> 的距离，加上 <span style="color:red">ID 3 和 4</span> 的距离。
 
     ![Drawing of objects as circles with shortest paths drawn between](./media/hdinsight-hadoop-giraph-install/giraph-graph-out.png)
 

@@ -67,7 +67,6 @@ Microsoft 还提供了 HDInsight Emulator for Azure（以前称作 *Microsoft HD
 
 	![输入群集名称和类型](./media/hdinsight-hadoop-tutorial-get-started-windows/HDI.CreateCluster.2.png "输入群集名称和类型")  
 
-	
 	|字段名称| 值|
 	|----------|------|
 	|群集名称| 用于标识群集的唯一名称|
@@ -107,7 +106,6 @@ Microsoft 还提供了 HDInsight Emulator for Azure（以前称作 *Microsoft HD
 
 	![HDInsight 群集仪表板中的“Hive 编辑器”选项卡。][img-hdi-dashboard]  
 
-
 	页面顶部有多个选项卡。默认选项卡为“Hive 编辑器”，而其他选项卡为“作业历史记录”和“文件浏览器”。使用仪表板可以提交 Hive 查询、检查 Hadoop 作业日志，以及浏览 WASB 文件。
 
 	> [AZURE.NOTE] 请注意，网页的 URL 为 *&lt;群集名称&gt;.azurehdinsight.cn*。因此，如果不从门户打开仪表板，也可以在 Web 浏览器中使用 URL 打开仪表板。
@@ -116,19 +114,15 @@ Microsoft 还提供了 HDInsight Emulator for Azure（以前称作 *Microsoft HD
 
 	![在 Hive 编辑器的查询窗格中输入的 Hive 查询。][img-hdi-dashboard-query-select]  
 
-
 4. 单击“提交”。片刻之后即可返回结果。屏幕将每隔 30 秒刷新一次。你也可以单击“刷新”来刷新屏幕。
 
     ![在群集仪表板底部列出的 Hive 查询结果。][img-hdi-dashboard-query-select-result]  
-
 
 5. 在状态显示作业已完成后，单击屏幕上的查询名称以查看输出。记下“作业开始时间(UTC)”。稍后需要用到此值。
 
     ![在 HDInsight 群集仪表板的“作业历史记录”选项卡中列出的“作业开始时间”。][img-hdi-dashboard-query-select-result-output]  
 
-
     该页面还显示“作业输出”和“作业日志”。你也可以选择下载输出文件 (\_stdout) 和日志文件 (\_stderr)。
-
 
 **浏览到输出文件**
 
@@ -136,12 +130,9 @@ Microsoft 还提供了 HDInsight Emulator for Azure（以前称作 *Microsoft HD
 2. 单击你的存储帐户名称，单击容器名称（与群集名称相同），然后单击“用户”。
 3. 单击“admin”，然后单击其上次修改时间比你前面记下的作业开始时间稍晚的 GUID。复制此 GUID。在后一个部分将要用到它。
 
-
     ![在“文件浏览器”选项卡中列出的 Hive 查询输出文件 GUID。][img-hdi-dashboard-query-browse-output]  
 
-
-
-##连接到 Excel 的 Microsoft 商业智能工具
+## 连接到 Excel 的 Microsoft 商业智能工具
 
 你可以使用 Microsoft Excel 的 Power Query 附加组件将作业输出从 HDInsight 导入到 Excel 中，从中可以使用 Microsoft 商业智能工具进一步分析结果。
 
@@ -158,7 +149,6 @@ Microsoft 还提供了 HDInsight Emulator for Azure（以前称作 *Microsoft HD
 
 	![为 Azure HDInsight 打开的 Excel PowerQuery 导入菜单。][image-hdi-gettingstarted-powerquery-importdata]  
 
-
 3. 输入与你的群集关联的 Azure Blob 存储帐户的“帐户名称”，然后单击“确定”。（这是先前在教程中创建的存储帐户。）
 4. 输入 Azure Blob 存储帐户的“帐户密钥”，然后单击“保存”。
 5. 在右窗格中，双击 Blob 名称。默认情况下，该 Blob 名称与群集名称相同。
@@ -167,10 +157,9 @@ Microsoft 还提供了 HDInsight Emulator for Azure（以前称作 *Microsoft HD
 
 	![按内容列表中的 GUID 查找数据输出。][image-hdi-gettingstarted-powerquery-importdata2]  
 
-
 9. 单击左上角的“关闭并加载”以将 Hive 作业输出导入到 Excel 中。
 
-##运行示例
+## 运行示例
 
 HDInsight 群集提供包括入门库的查询控制台以直接从门户运行示例。通过浏览一些基本方案，你可以使用示例了解如何使用 HDInsight。这些示例提供所有必要组件，比如要分析的数据和要对数据运行的查询。若要了解有关入门库中的示例的详细信息，请参阅[使用 HDInsight 入门库了解 HDInsight 中的 Hadoop](/documentation/articles/hdinsight-learn-hadoop-use-sample-gallery/)。
 
@@ -181,7 +170,6 @@ HDInsight 群集提供包括入门库的查询控制台以直接从门户运行�
 2. 在新的边栏选项卡中，单击“仪表板”。出现提示时，输入群集的管理员用户名和密码。
 
 	![启动群集仪表板](./media/hdinsight-hadoop-tutorial-get-started-windows/HDI.Cluster.Dashboard.png "启动群集仪表板")  
-
  
 3. 从打开的网页中，单击“入门库”选项卡，然后在“使用示例数据的解决方案”类别下，单击要运行的示例。按照网页上的说明完成示例。下表列出了几个示例，并提供了有关每个示例的作用的详细信息。
 
@@ -190,11 +178,11 @@ HDInsight 群集提供包括入门库的查询控制台以直接从门户运行�
 [传感器数据分析][hdinsight-sensor-data-sample] | 了解如何使用 HDInsight 处理加热、通风和空调 (HVAC) 系统产生的历史数据，以识别无法可靠地保持设定温度的系统
 [网站日志分析][hdinsight-weblogs-sample] | 了解如何使用 HDInsight 分析网站日志文件，以了解一天中从外部网站对该网站的访问次数，以及用户遇到的网站错误汇总
 
-##删除群集
+## 删除群集
 
 [AZURE.INCLUDE [delete-cluster-warning](../../includes/hdinsight-delete-cluster-warning.md)]
 
-##后续步骤
+## 后续步骤
 在本 Hadoop 教程中，你已学习如何在 Windows 上的HDInsight 中创建 Hadoop 群集、如何对数据运行 Hive 查询，以及如何将结果导入到 Excel 中，在 Excel 中，可以使用商业智能工具进一步处理结果以及以图形方式显示结果。若要了解更多信息，请参阅以下教程：
 
 - [开始使用适用于 Visual Studio 的 HDInsight 工具][1]

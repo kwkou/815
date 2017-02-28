@@ -14,8 +14,8 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="big-data"
-    ms.date="09/20/2016"
-    wacn.date="12/12/2016"
+    ms.date="01/12/2017"
+    wacn.date="01/25/2017"
     ms.author="larryfr" />  
 
 
@@ -205,7 +205,6 @@
    
     ![Web 仪表板](./media/hdinsight-storm-sensor-data-analysis/emptydashboard.png)  
 
-   
     将此命令提示符或终端保持打开状态。测试完成后，使用 Ctrl-C 停止 Web 服务器。
 
 ### 开始生成数据

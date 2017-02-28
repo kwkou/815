@@ -148,7 +148,6 @@
    
     ![Data Lake 工具：HDInsight Visual Studio Tools IntelliSense][13]  
 
-   
     ![Data Lake 工具：HDInsight Visual Studio Tools IntelliSense][14]
    
     > [AZURE.NOTE]
@@ -202,7 +201,6 @@ Data Lake 工具用于通过 [WebHCat](https://cwiki.apache.org/confluence/displ
 使用 HDInsight 群集 3.2 或更高版本时，可以看到“通过 HiveServer2 执行”按钮：
 
 ![通过 hiveserver2 执行 Data Lake visual studio 工具](./media/hdinsight-hadoop-visual-studio-tools-get-started/hdinsight.visual.studio.tools.execute.via.hiveserver2.png)  
-
 
 如果在 Tez 中执行 Hive 查询，还可实时查看流式传输回的日志和作业图形。
 

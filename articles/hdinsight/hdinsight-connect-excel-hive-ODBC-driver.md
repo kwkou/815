@@ -74,7 +74,6 @@ Microsoft 的大数据解决方案可将 Microsoft 商业智能 (BI) 组件与�
 
     ![高级选项][img-HiveOdbc-DataSource-AdvancedOptions]  
 
-
 1. 单击“测试”以测试数据源。正确配置数据源时，将显示“测试成功完成!”。
 2. 单击“确定”关闭“测试”对话框。现在，新的数据源应该在“ODBC 数据源管理器”中列出。
 3. 单击“确定”退出向导。

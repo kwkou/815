@@ -14,8 +14,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
-   ms.date="09/02/2016"
-   wacn.date=""
+   ms.date="11/18/2016"
+   wacn.date="02/06/2017"
    ms.author="jgao"/>
 
 # 在 Azure 虚拟网络上设置 HBase 群集
@@ -30,7 +30,7 @@
 - 提高性能，因为流量不必通过多个网关和负载均衡器。
 - 能够以更安全的方式处理敏感信息，而无需公开公共终结点。
 
-##先决条件
+## 先决条件
 在开始阅读本教程前，你必须具有：
 
 - **一个 Azure 订阅**。请参阅[获取 Azure 试用版](/pricing/1rmb-trial/)。
@@ -46,7 +46,7 @@
 		Select-AzureSubscription <AzureSubscriptionName>
 
 
-##在虚拟网络中设置 HBase 群集
+## 在虚拟网络中设置 HBase 群集
 
 在设置 HBase 群集前，你需要拥有 Azure 虚拟网络。
 
@@ -118,7 +118,6 @@ DNS 服务器是可选的，但在某些情况下又是必需的。[在两个 Az
 
 	![提供 HBase 群集的详细信息][img-provision-cluster-page1]
 
-
 	> [AZURE.NOTE]对于 HBase 群集，Windows Server 是唯一可用的 OS 选项。
 
 4. 在“配置群集”页上，输入或选择以下内容：
@@ -133,6 +132,7 @@ DNS 服务器是可选的，但在某些情况下又是必需的。[在两个 Az
 	<tr><td>数据节点大小</td><td><p>为数据节点选择 VM 大小。</p></td></tr>
 	<tr><td>Zookeeper 大小</td><td><p>为 Zookeeper 节点选择 VM 大小。</p></td></tr>
 	</table>
+	
 	>[AZURE.NOTE]根据所选的 VM，你的成本可能会有所不同。HDInsight 对群集节点使用所有标准层 VM。有关 VM 大小如何影响价格的信息，请参阅 <a href="/pricing/details/hdinsight/" target="_blank">HDInsight 价格</a>。
 
 	单击右侧按钮。
@@ -227,7 +227,7 @@ DNS 服务器是可选的，但在某些情况下又是必需的。[在两个 Az
 
 	Get-AzureHDInsightCluster
 
-##后续步骤
+## 后续步骤
 
 在本教程中，你已学习了如何设置 HBase 群集。若要了解更多信息，请参阅以下文章：
 

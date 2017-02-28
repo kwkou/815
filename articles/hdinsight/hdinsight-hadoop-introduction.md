@@ -75,7 +75,7 @@ HDInsight 群集包含以下组件和实用程序。
 >
 
 ### <a name="avro"></a>Avro (Microsoft .NET Library for Avro)
-Microsoft .NET Library for Avro 针对 Microsoft.NET 环境序列化实现了 Apache Avro 紧凑的二进制数据交换格式。它使用 <a target="_blank" href="http://www.json.org/">JavaScript 对象表示法 (JSON)</a> 定义与语言无关的架构，以支持语言互操作性，这意味着可以用一种语言读取以另一种语言序列化的数据。<a target=_"blank" href="http://avro.apache.org/docs/current/spec.html">Apache Avro 规范</a>中可找到有关格式的详细信息。Avro 文件格式支持分布式 MapReduce 编程模型。文件是“可拆分的”，这意味着可搜寻文件中的任意点，并可从某特定块开始读取。若要了解相关方法，请参阅[使用 Microsoft .NET Library for Avro 序列化数据](/documentation/articles/hdinsight-dotnet-avro-serialization/)。
+Microsoft .NET Library for Avro 针对 Microsoft.NET 环境序列化实现了 Apache Avro 紧凑的二进制数据交换格式。它使用 <a target="_blank" href="http://www.json.org/">JavaScript 对象表示法 (JSON)</a> 定义与语言无关的架构，以支持语言互操作性，这意味着可以用一种语言读取以另一种语言序列化的数据。<a target="_blank" href="http://avro.apache.org/docs/current/spec.html">Apache Avro 规范</a>中可找到有关格式的详细信息。Avro 文件格式支持分布式 MapReduce 编程模型。文件是“可拆分的”，这意味着可搜寻文件中的任意点，并可从某特定块开始读取。若要了解相关方法，请参阅[使用 Microsoft .NET Library for Avro 序列化数据](/documentation/articles/hdinsight-dotnet-avro-serialization/)。
 
 ### <a name="hdfs" id="HDFS"></a>HDFS
 Hadoop 分布式文件系统 (HDFS) 是一种分布式文件系统，采用 MapReduce 和 YARN，是 Hadoop 生态系统的核心。HDFS 是 HDInsight 上 Hadoop 群集的标准文件系统。

@@ -47,7 +47,6 @@ R 与 Azure Blob 存储 (WASB) 兼容，这样，存储在此的数据可以在 
 
     ![使用脚本操作自定义群集](./media/hdinsight-hadoop-r-scripts/hdi-r-script-action.png "使用脚本操作自定义群集")  
 
-
     <table border='1'>
         <tr><th>属性</th><th>值</th></tr>
         <tr><td>Name</td>
