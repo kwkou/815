@@ -87,11 +87,6 @@ Azure Blob 存储是 HDInsight 的默认存储，因此也可以使用 HiveQL �
 在上例中，HiveQL 语句执行以下操作：
 
 * **set hive.execution.engine=tez;**：设置执行引擎以使用 Tez。使用 Tez 而不是 MapReduce 可以提高查询性能。有关 Tez 的详细信息，请参阅[使用 Apache Tez 提高性能](#usetez)部分。
-  
-    > [AZURE.NOTE]
-    只有在使用基于 Windows 的 HDInsight 群集时，才需要此语句；对于基于 Linux 的 HDInsight，Tez 是默认的执行引擎。
-    > 
-    > 
 * **DROP TABLE**：删除表和数据文件（如果该表已存在）。
 * **CREATE EXTERNAL TABLE**：在 Hive 中创建新的**外部**表。外部表只会在 Hive 中存储表定义；数据以原始格式保留在原始位置。
 * **ROW FORMAT**：告知 Hive 如何设置数据的格式。在此情况下，每个日志中的字段以空格分隔。
@@ -126,7 +121,7 @@ Azure Blob 存储是 HDInsight 的默认存储，因此也可以使用 HiveQL �
 > 
 
 ## <a id="usetez"></a>使用 Apache Tez 提高性能
-[Apache Tez](http://tez.apache.org) 是让数据密集型应用程序（例如 Hive）能够大规模高效运行的框架。在最新版的 HDInsight 中，Hive 支持在 Tez 上运行。默认情况下，已经为基于 Linux 的 HDInsight 群集启用了 Tez。
+[Apache Tez](http://tez.apache.org) 是让数据密集型应用程序（例如 Hive）能够大规模高效运行的框架。
 
 > [AZURE.NOTE]
 对于基于 Windows 的 HDInsight 群集来说，Tez 目前默认处于关闭状态，因此必须启用。若要充分利用 Tez，你必须设置 Hive 查询的以下值：
@@ -143,26 +138,17 @@ Azure Blob 存储是 HDInsight 的默认存储，因此也可以使用 HiveQL �
 为了帮助使用 Tez 调试运行的作业，HDInsight 提供了以下 Web UI，用于查看 Tez 作业的详细信息：
 
 * [在基于 Windows 的 HDInsight 上使用 Tez UI](/documentation/articles/hdinsight-debug-tez-ui/)
-* [Use the Ambari Tez view on Linux-based HDInsight（在基于 Linux 的 HDInsight 上使用 Ambari Tez 视图）](/documentation/articles/hdinsight-debug-ambari-tez-view/)
 
 ## <a id="run"></a>选择如何运行 HiveQL 作业
 HDInsight 可以使用各种方法运行 HiveQL 作业。使用下表来确定哪种方法最适合你，然后访问此链接进行演练。
 
 | **使用此方法**，如果想要... | ...**交互式** shell | ...**批处理** | ...使用此**群集操作系统** | ...从此**客户端操作系统** |
 |:--- |:---:|:---:|:--- |:--- |
-| [Hive 视图](/documentation/articles/hdinsight-hadoop-use-hive-ambari-view/) |✔ |✔ |Linux |任何（基于浏览器） |
-| [Beeline 命令（来自 SSH 会话）](/documentation/articles/hdinsight-hadoop-use-hive-beeline/) |✔ |✔ |Linux |Linux、Unix、Mac OS X 或 Windows |
-| [Hive 命令（来自 SSH 会话）](/documentation/articles/hdinsight-hadoop-use-hive-ssh/) |✔ |✔ |Linux |Linux、Unix、Mac OS X 或 Windows |
-| [Curl](/documentation/articles/hdinsight-hadoop-use-hive-curl/) |&nbsp; |✔ |Linux 或 Windows |Linux、Unix、Mac OS X 或 Windows |
+| [Curl](/documentation/articles/hdinsight-hadoop-use-hive-curl/) |&nbsp; |✔ | Windows |Linux、Unix、Mac OS X 或 Windows |
 | [查询控制台](/documentation/articles/hdinsight-hadoop-use-hive-query-console/) |&nbsp; |✔ |Windows |任何（基于浏览器） |
-| [HDInsight tools for Visual Studio](/documentation/articles/hdinsight-hadoop-use-hive-visual-studio/) |&nbsp; |✔ |Linux 或 Windows |Windows |
-| [Windows PowerShell](/documentation/articles/hdinsight-hadoop-use-hive-powershell/) |&nbsp; |✔ |Linux 或 Windows |Windows |
+| [HDInsight tools for Visual Studio](/documentation/articles/hdinsight-hadoop-use-hive-visual-studio/) |&nbsp; |✔ | Windows |Windows |
+| [Windows PowerShell](/documentation/articles/hdinsight-hadoop-use-hive-powershell/) |&nbsp; |✔ | Windows |Windows |
 | [远程桌面](/documentation/articles/hdinsight-hadoop-use-hive-remote-desktop/) |✔ |✔ |Windows |Windows |
-
-[AZURE.INCLUDE [hdinsight-linux-acn-version.md](../../includes/hdinsight-linux-acn-version.md)]
-
-> [AZURE.IMPORTANT]
-Linux 是在 HDInsight 3.4 或更高版本上使用的唯一操作系统。有关详细信息，请参阅 [HDInsight 在 Windows 上弃用](/documentation/articles/hdinsight-component-versioning/#hdi-version-32-and-33-nearing-deprecation-date)。
 
 ## 使用本地 SQL Server Integration Services 在 Azure HDInsight 上运行 Hive 作业
 也可以使用 SQL Server Integration Services (SSIS) 运行 Hive 作业。Azure Feature Pack for SSIS 提供以下组件，用于 HDInsight 上的 Hive 作业。

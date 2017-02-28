@@ -98,8 +98,6 @@ Hive 提供类似于 SQL 的查询语言 (HiveQL) 来处理结构化数据。使
     ![作业状态](./media/hdinsight-hadoop-emulator-visual-studio/job-state.png)
 
     “作业状态”更改为“已完成”后，将显示有向无环图 (DAG)。此图描述 Tez（本地群集上 Hive 的默认执行引擎）确定的执行路径。
-    
-    > [AZURE.NOTE] 使用基于 Linux 的 HDInsight 群集时，Tez 也是默认引擎。它不是基于 Windows 的 HDInsight 上的默认引擎；若要这种群集上使用 Tez，必须在 Hive 查询的开头处添加 `set hive.execution.engine = tez;` 行。
 
     使用“作业输出”链接查看输出。在本例中，输出为 __823__，即 sample\_08 表中的行数。可以使用“作业日志”和“下载 YARN 日志”链接查看有关作业的诊断信息。
 

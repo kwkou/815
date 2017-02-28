@@ -24,7 +24,7 @@
 [Maven](http://maven.apache.org/) 是一种软件项目管理和综合工具，可用于为 Java 项目构建软件、文档和报告。在本文中，可了解如何使用 Maven 创建一个基本的 Java 应用程序，该应用程序可在 Azure HDInsight 群集中创建、查询和删除 HBase 表。
 
 > [AZURE.NOTE]
-本文档中的步骤假设使用基于 Windows 的 HDInsight 群集。有关使用基于 Linux 的 HDInsight 群集的信息，请参阅 [Use Maven to build Java applications that use HBase with Linux-based HDInsight](/documentation/articles/hdinsight-hbase-build-java-maven-linux/)（借助 Maven 构建可将 HBase 与基于 Linux 的 HDInsight 配合使用的 Java 应用程序）
+本文档中的步骤假设使用基于 Windows 的 HDInsight 群集。
 > 
 > 
 
@@ -32,8 +32,6 @@
 * [Java 平台 JDK](http://www.oracle.com/technetwork/java/javase/downloads/index.html) 7 或更高版本
 * [Maven](http://maven.apache.org/)
 * [装有 HBase 的基于 Windows 的 HDInsight 群集](/documentation/articles/hdinsight-hbase-tutorial-get-started/#create-hbase-cluster)
-
-    [AZURE.INCLUDE [hdinsight-linux-acn-version.md](../../includes/hdinsight-linux-acn-version.md)]
 
     > [AZURE.NOTE] 本文档中的步骤已在 HDInsight 群集版本 3.2 和 3.3 中测试。示例中提供的默认值适用于 HDInsight 3.3 群集。
 
@@ -212,8 +210,6 @@
             //            "zookeepernode0,zookeepernode1,zookeepernode2");
             //config.set("hbase.zookeeper.property.clientPort", "2181");
             //config.set("hbase.cluster.distributed", "true");
-            // The following sets the znode root for Linux-based HDInsight
-            //config.set("zookeeper.znode.parent","/hbase-unsecure");
    
             // create an admin object using the config
             HBaseAdmin admin = new HBaseAdmin(config);

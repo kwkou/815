@@ -31,7 +31,7 @@
 
 要完成本文中的步骤，需要：
 
-* **Azure HDInsight（HDInsight 上的 Hadoop）群集（基于 Windows 或 Linux）**
+* **Azure HDInsight（HDInsight 上的 Hadoop）群集（基于 Windows）**
 * **配备 Azure PowerShell 的工作站**。
   
 [AZURE.INCLUDE [upgrade-powershell](../../includes/hdinsight-use-latest-powershell.md)]

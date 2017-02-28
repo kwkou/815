@@ -21,7 +21,7 @@
 Tez UI 是一个网页，可用于了解和调试在基于 Windows 的 HDInsight 群集上将 Tez 用作执行引擎的作业。利用 Tez UI，你可以将作业显示为包含已连接项目的图形、深入了解每个项目并检索统计信息和日志记录信息。
 
 > [AZURE.NOTE]
-此文档中的信息特定于基于 Windows 的 HDInsight 群集。有关在基于 Linux 的 HDInsight 上查看和调试 Tez 的信息，请参阅[使用 Ambari 视图来调试 HDInsight 上的 Tez 作业](/documentation/articles/hdinsight-debug-ambari-tez-view/)。
+此文档中的信息特定于基于 Windows 的 HDInsight 群集。
 > 
 > 
 

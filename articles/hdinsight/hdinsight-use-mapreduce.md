@@ -54,10 +54,6 @@ Hadoop 流式处理通过 STDIN 和 STDOUT 与 mapper 和 reducer 通信 - mappe
 
 有关详细信息，请参阅 [Hadoop 流式处理](http://hadoop.apache.org/docs/r1.2.1/streaming.html)。
 
-有关将 Hadoop 流式处理与 hdinsight 配合使用的示例，请参阅：
-
-* [开发 Python MapReduce 作业](/documentation/articles/hdinsight-hadoop-streaming-python/)
-
 ## <a id="data"></a>关于示例数据
 
 在本示例中，使用 Leonardo Da Vinci 的笔记本作为示例数据，它在 HDInsight 群集中以文本文档形式提供。
@@ -150,38 +146,27 @@ Hadoop 流式处理通过 STDIN 和 STDOUT 与 mapper 和 reducer 通信 - mappe
         }
     }
 
-有关编写自己的 MapReduce 作业的说明，请参阅[为 HDInsight 开发 Java MapReduce 程序](/documentation/articles/hdinsight-develop-deploy-java-mapreduce-linux/)。
-
 ## <a id="run"></a>运行 MapReduce
 
 HDInsight 可以使用各种方法运行 HiveQL 作业。使用下表来确定哪种方法最适合你，然后访问此链接进行演练。
 
 | **使用此方法**... | **...实现此目的** | ...使用此**群集操作系统** | ...从此**客户端操作系统** |
 |:--- |:--- |:--- |:--- |
-| [SSH](/documentation/articles/hdinsight-hadoop-use-mapreduce-ssh/) |通过 **SSH** 使用 Hadoop 命令 |Linux |Linux、Unix、Mac OS X 或 Windows |
-| [Curl](/documentation/articles/hdinsight-hadoop-use-mapreduce-curl/) |使用 **REST** 远程提交作业 |Linux 或 Windows |Linux、Unix、Mac OS X 或 Windows |
-| [Windows PowerShell](/documentation/articles/hdinsight-hadoop-use-mapreduce-powershell/) |使用 **Windows PowerShell** 远程提交作业 |Linux 或 Windows |Windows |
+| [Curl](/documentation/articles/hdinsight-hadoop-use-mapreduce-curl/) |使用 **REST** 远程提交作业 | Windows |Linux、Unix、Mac OS X 或 Windows |
+| [Windows PowerShell](/documentation/articles/hdinsight-hadoop-use-mapreduce-powershell/) |使用 **Windows PowerShell** 远程提交作业 | Windows |Windows |
 | [远程桌面](/documentation/articles/hdinsight-hadoop-use-mapreduce-remote-desktop/) |通过**远程桌面**使用 Hadoop 命令 |Windows |Windows |
-
-[AZURE.INCLUDE [hdinsight-linux-acn-version.md](../../includes/hdinsight-linux-acn-version.md)]
-
-> [AZURE.IMPORTANT]
-Linux 是在 HDInsight 3.4 或更高版本上使用的唯一操作系统。有关详细信息，请参阅 [HDInsight 在 Windows 上弃用](/documentation/articles/hdinsight-component-versioning/#hdi-version-32-and-33-nearing-deprecation-date)。
 
 ## <a id="nextsteps"></a>后续步骤
 
 虽然 MapReduce 提供了强大的诊断功能，但掌握起来可能会比较困难。此处提供了多个基于 Java 的框架，使定义 MapReduce 应用程序更轻松，还提供了一些技术（例如 Pig 和 Hive），使得在 HDInsight 中处理数据更方便。若要了解更多信息，请参阅下列文章：
 
-* [为 HDInsight 开发 Java MapReduce 程序](/documentation/articles/hdinsight-develop-deploy-java-mapreduce-linux/)
-* [开发适用于 HDInsight 的 Python 流式处理 MapReduce 程序](/documentation/articles/hdinsight-hadoop-streaming-python/)
 * [使用 Apache Hadoop on HDInsight 开发 Scalding MapReduce 作业](/documentation/articles/hdinsight-hadoop-mapreduce-scalding/)
 * [将 Hive 与 HDInsight 配合使用][hdinsight-use-hive]
 * [将 Pig 与 HDInsight 配合使用][hdinsight-use-pig]
 * [运行 HDInsight 示例][hdinsight-samples]
 
 [hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data/
-[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-linux-tutorial-get-started/
-[hdinsight-develop-mapreduce-jobs]: /documentation/articles/hdinsight-develop-deploy-java-mapreduce-linux/
+[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows/
 [hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive/
 [hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig/
 [hdinsight-samples]: /documentation/articles/hdinsight-run-samples/

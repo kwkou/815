@@ -76,7 +76,7 @@ Azure HDInsight 仅支持基于位置的虚拟网络，目前无法处理基于�
 
 ### 经典或 V2 虚拟网络
 
-基于 Windows 的群集需要经典虚拟网络，而基于 Linux 的群集需要 Azure Resource Manager 虚拟网络。如果没有正确的网络类型，则在创建群集时无法使用网络。
+基于 Windows 的群集需要经典虚拟网络。如果没有正确的网络类型，则在创建群集时无法使用网络。
 
 如果计划创建的群集无法使用虚拟网络上的资源，可以创建群集使用的虚拟网络，并将其连接到不兼容的虚拟网络。然后，可以在所需的网络版本中创建群集，并且由于两个网络已联接，因此群集可以访问其他网络中的资源。有关如何连接经典虚拟网络和新虚拟网络的详细信息，请参阅[将经典 VNet 连接到新的 VNet](/documentation/articles/vpn-gateway-connect-different-deployment-models-portal/)。
 
@@ -217,118 +217,15 @@ HDInsight 不支持限制出站流量，仅限制入站流量。在定义包含 
    
     此命令执行完成后，可以将 HDInsight 成功安装到这些步骤中使用的子网上的受保护虚拟网络。
 
-> [AZURE.IMPORTANT]
-使用上述步骤只可访问 Azure 云上的 HDInsight 运行状况和管理服务。此操作可成功将 HDInsight 群集安装到子网，但默认阻止从虚拟网络外部访问 HDInsight 群集。如果要启用从虚拟网络外部进行访问，需要添加其他网络安全组规则。
-> <p>
-> 例如，若要允许来自 Internet 的 SSH 访问，需要添加类似于下面的规则：
-> <p>
-><p> * Azure PowerShell - ```Add-AzureRmNetworkSecurityRuleConfig -Name "SSSH" -Description "SSH" -Protocol "*" -SourcePortRange "*" -DestinationPortRange "22" -SourceAddressPrefix "*" -DestinationAddressPrefix "VirtualNetwork" -Access Allow -Priority 304 -Direction Inbound```
-><p> * Azure CLI - ```az network nsg rule create -g RESOURCEGROUPNAME --nsg-name hdisecure -n hdirule4 --protocol "*" --source-port-range "*" --destination-port-range "22" --source-address-prefix "*" --destination-address-prefix "VirtualNetwork" --access "Allow" --priority 304 --direction "Inbound"```
-
 有关网络安全组的详细信息，请参阅[网络安全组概述](/documentation/articles/virtual-networks-nsg/)。有关在 Azure 虚拟网络中控制路由的详细信息，请参阅[用户定义的路由和 IP 转发](/documentation/articles/virtual-networks-udr-overview/)。
-
-## <a id="tasks"></a>任务和信息
-
-本节包含常见任务的相关信息，以及搭配使用 HDInsight 与虚拟网络时可能需要的信息。
-
-### 确定 FQDN
-
-系统将为 HDInsight 群集分配虚拟网络接口的特定完全限定域名 (FQDN)。在从虚拟网络上的其他资源连接到群集时，应该使用这个地址。若要确定 FQDN，请使用以下 URL 来查询 Ambari 管理服务:
-
-    https://<clustername>.azurehdinsight.cn/ambari/api/v1/clusters/<clustername>.azurehdinsight.cn/services/<servicename>/components/<componentname>
-
-> [AZURE.NOTE]
-有关如何将 Ambari 与 HDInsight 配合使用的详细信息，请参阅[使用 Ambari API 监视 HDInsight 中的 Hadoop 群集](/documentation/articles/hdinsight-monitor-use-ambari-api/)。
-
-必须指定群集名称和群集上运行的服务和组件，例如 YARN 资源管理器。
-
-> [AZURE.NOTE]
-返回的数据是一个 JavaScript 对象表示法 (JSON) 文档，其中包含有关组件的大量信息。若只要提取 FQDN，你应该使用 JSON 分析器来检索 `host_components[0].HostRoles.host_name` 值。
-
-例如，若要从 HDInsight Hadoop 群集返回 FQDN，可以使用以下其中一种方法检索 YARN 资源管理器的数据：
-
-* [Azure PowerShell](https://docs.microsoft.com/powershell/azureps-cmdlets-docs)
-  
-        $ClusterDnsName = <clustername>
-        $Username = <cluster admin username>
-        $Password = <cluster admin password>
-        $DnsSuffix = ".azurehdinsight.cn"
-        $ClusterFQDN = $ClusterDnsName + $DnsSuffix
-  
-        $webclient = new-object System.Net.WebClient
-        $webclient.Credentials = new-object System.Net.NetworkCredential($Username, $Password)
-  
-        $Url = "https://" + $ClusterFQDN + "/ambari/api/v1/clusters/" + $ClusterFQDN + "/services/yarn/        components/resourcemanager"
-        $Response = $webclient.DownloadString($Url)
-        $JsonObject = $Response | ConvertFrom-Json
-        $FQDN = $JsonObject.host_components[0].HostRoles.host_name
-        Write-host $FQDN
-
-* [cURL](http://curl.haxx.se/) 和 [jq](http://stedolan.github.io/jq/)
-  
-        curl -G -u <username>:<password> https://<clustername>.azurehdinsight.cn/ambari/api/v1/clusters/<clustername>.azurehdinsight.cn/services/yarn/components/resourcemanager | jq .host_components[0].HostRoles.host_name
-
-### 连接到 HBase
-
-若要使用 Java API 远程连接到 HBase，必须确定 HBase 群集的 Zookeeper 仲裁地址，并在应用程序中加以指定。
-
-若要获取 Zookeeper 仲裁地址，请使用以下其中一种方法来查询 Ambari 管理服务：
-
-* [Azure PowerShell](https://docs.microsoft.com/powershell/azureps-cmdlets-docs)
-  
-        $ClusterDnsName = <clustername>
-        $Username = <cluster admin username>
-        $Password = <cluster admin password>
-        $DnsSuffix = ".azurehdinsight.cn"
-        $ClusterFQDN = $ClusterDnsName + $DnsSuffix
-  
-        $webclient = new-object System.Net.WebClient
-        $webclient.Credentials = new-object System.Net.NetworkCredential($Username, $Password)
-  
-        $Url = "https://" + $ClusterFQDN + "/ambari/api/v1/clusters/" + $ClusterFQDN + "/configurations?type=hbase-site&tag=default&fields=items/properties/hbase.zookeeper.quorum"
-        $Response = $webclient.DownloadString($Url)
-        $JsonObject = $Response | ConvertFrom-Json
-        Write-host $JsonObject.items[0].properties.'hbase.zookeeper.quorum'
-
-* [cURL](http://curl.haxx.se/) 和 [jq](http://stedolan.github.io/jq/)
-  
-        curl -G -u <username>:<password> "https://<clustername>.azurehdinsight.cn/ambari/api/v1/clusters/<clustername>.azurehdinsight.cn/configurations?type=hbase-site&tag=default&fields=items/properties/hbase.zookeeper.quorum" | jq .items[0].properties[]
-
-> [AZURE.NOTE]
-有关如何将 Ambari 与 HDInsight 配合使用的详细信息，请参阅[使用 Ambari API 监视 HDInsight 中的 Hadoop 群集](/documentation/articles/hdinsight-monitor-use-ambari-api/)。
-
-获取仲裁信息后，请将其用于客户端应用程序中。
-
-例如，对于使用 HBase API 的 Java 应用程序，你可以将 **hbase-site.xml** 文件添加到项目，并在此文件中指定仲裁信息，如下所示：
-
-    <configuration>
-      <property>
-        <name>hbase.cluster.distributed</name>
-        <value>true</value>
-      </property>
-      <property>
-        <name>hbase.zookeeper.quorum</name>
-        <value>zookeeper0.address,zookeeper1.address,zookeeper2.address</value>
-      </property>
-      <property>
-        <name>hbase.zookeeper.property.clientPort</name>
-        <value>2181</value>
-      </property>
-    </configuration>
-
-### 验证网络连接
-
-某些服务（如 SQL Server）可能会限制传入网络连接。这将防止 HDInsight 成功使用这些服务。
-
-如果在从 HDInsight 访问服务时遇到问题，请参阅相关服务文档，以确保启用网络访问功能。还可以通过在相同虚拟网络上创建 Azure 虚拟机验证网络访问功能，并使用客户端实用工具验证虚拟机是否可通过虚拟网络连接服务。
 
 ## <a id="nextsteps"></a>后续步骤
 
 下例演示如何对 Azure 虚拟网络使用 HDInsight：
 
 * [使用 HDInsight 中的 Storm 和 HBase 分析传感器数据](/documentation/articles/hdinsight-storm-sensor-data-analysis/) - 演示如何在虚拟网络中配置 Storm 和 HBase 群集，以及如何从 Storm 将数据远程写入 HBase。
-* [在 HDInsight 中设置 Hadoop 群集](/documentation/articles/hdinsight-hadoop-provision-linux-clusters/) - 提供有关预配 Hadoop 群集的信息，包括有关使用 Azure 虚拟网络的信息。
-* [将 Sqoop 与 HDinsight 中的 Hadoop 配合使用](/documentation/articles/hdinsight-use-sqoop-mac-linux/) - 提供有关使用 Sqoop 通过虚拟网络传输 SQL Server 数据的信息。
+* [在 HDInsight 中设置 Hadoop 群集](/documentation/articles/hdinsight-provision-clusters/) - 提供有关预配 Hadoop 群集的信息，包括有关使用 Azure 虚拟网络的信息。
+* [将 Sqoop 与 HDinsight 中的 Hadoop 配合使用](/documentation/articles/hdinsight-use-sqoop/) - 提供有关使用 Sqoop 通过虚拟网络传输 SQL Server 数据的信息。
 
 要了解有关 Azure 虚拟网络的详细信息，请参阅 [Azure 虚拟网络概述](/documentation/articles/virtual-networks-overview/)。
 

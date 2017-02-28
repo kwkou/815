@@ -25,11 +25,6 @@
 
 了解如何使用 Azure PowerShell 在 HDInsight 中运行 Sqoop 作业，以在 HDInsight 群集和 Azure SQL 数据库或 SQL Server 数据库之间进行导入和导出。
 
-> [AZURE.NOTE]
-可以对基于 Linux 或 Windows 的 HDInsight 群集使用本文中的步骤，但是，只能从 Windows 客户端执行这些步骤。有关其他作业提交方法，请单击本文顶部的选项卡选择器。
-> 
-> 
-
 ### 先决条件
 在开始本教程前，你必须具有以下项：
 
@@ -163,8 +158,6 @@
     #endregion
 
 ## 限制
-* 批量导出 - 在基于 Linux 的 HDInsight 上，用于将数据导出到 Microsoft SQL Server 或 Azure SQL 数据库的 Sqoop 连接器目前不支持批量插入。
-* 批处理 - 在基于 Linux 的 HDInsight 上，如果执行插入时使用 `-batch` 开关，Sqoop 将执行多次插入而不是批处理插入操作。
 
 ## 后续步骤
 现在你已了解如何使用 Sqoop。若要了解详细信息，请参阅以下文章：

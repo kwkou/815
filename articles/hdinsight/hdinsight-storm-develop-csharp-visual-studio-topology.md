@@ -29,17 +29,6 @@
 
 你还将学习如何创建使用 C# 和 Java 组件的混合拓扑。
 
-[AZURE.INCLUDE [hdinsight-linux-acn-version.md](../../includes/hdinsight-linux-acn-version.md)]
-
-> [AZURE.IMPORTANT]
-虽然本文档中的步骤依赖于带 Visual Studio 的 Windows 开发环境，但是也可将编译的项目提交到基于 Linux 或 Windows 的 HDInsight 群集。__仅在 2016 年 10 月 28 日以后创建的基于 Linux 的群集支持 SCP.NET 拓扑__。
-> <p>
-> 若要将 C# 拓扑与基于 Linux 的群集一起使用，必须将项目所使用的 Microsoft.SCP.Net.SDK NuGet 包更新为 0.10.0.6 或更高版本。包的版本还必须与 HDInsight 上安装的 Storm 的主要版本相符。例如，Storm on HDInsight 版本 3.3 和 3.4 使用 Storm 版本 0.10.x，而 HDInsight 3.5 使用 Storm 1.0.x。
-> <p>
-> 基于 Linux 的群集上的 C# 拓扑必须使用 .NET 4.5，并使用要在 HDInsight 群集上运行的 Mono。大多数功能会正常运行，但应查看 [Mono 兼容性](http://www.mono-project.com/docs/about-mono/compatibility/)文档，了解可能的不兼容性。
-> 
-> 
-
 ## 先决条件
 
 * [Java](https://java.com) 1.7 或更高版本，适用于开发环境。将拓扑提交到 HDInsight 群集时，可以使用 Java 将拓扑打包。
@@ -483,24 +472,6 @@ SCP.Net 版本 0.9.4.203 引入了专用于事件中心 Spout（从事件中心�
 
 ## 故障排除
 
-### 空指针异常
-
-将 C# 拓扑与基于 Linux 的 HDInsight 群集配合使用时，使用 ConfigurationManager 在运行时读取配置设置的 Bolt 和 Spout 组件可能会返回空指针异常。之所以会发生这种情况，是因为已加载域的配置不是来自包含项目的程序集。
-
-项目的配置作为拓扑上下文中的键值对传递到 Storm 拓扑中，并可从组件初始化时传递到组件的字典对象检索。
-
-以下示例演示了如何从拓扑上下文加载配置值，详见本文档的 [ConfigurationManager](#configurationmanager) 部分。
-
-### System.TypeLoadException
-
-将 C# 拓扑与基于 Linux 的 HDInsight 群集配合使用时，可能会遇到以下错误：
-
-    System.TypeLoadException: Failure has occurred while loading a type.
-
-如果使用的是二进制文件，而该文件不兼容 Mono 支持的 .NET 版本，通常会发生这种情况。
-
-对于基于 Linux 的 HDInsight 群集，应确保项目使用的二进制文件是针对 .NET 4.5 编译的。
-
 ### 在本地测试拓扑
 
 虽然很容易就可以将拓扑部署到群集，但是，在某些情况下，你可能需要在本地测试拓扑。使用以下步骤，在开发环境上本地执行和测试本教程中的示例拓扑。
@@ -656,14 +627,6 @@ SCP.Net 版本 0.9.4.203 引入了专用于事件中心 Spout（从事件中心�
 2. 对于 **Spout** 和 **Bolt**，“上一错误”列将包含有关上次发生的错误的信息。
 3. 选择发生错误的组件的“Spout ID”或“Bolt ID”。在显示的详细信息页面上，其他错误信息将列在页面底部的“错误”部分中。
 4. 若要获取详细信息，请从页面的“执行器”部分中选择“端口”，以查看最后几分钟的 Storm 工作进程日志。
-
-### 提交拓扑时出错
-
-如果用户在将拓扑提交到 HDInsight 时遇到错误，则可查找服务器端组件的日志，这些组件处理 HDInsight 群集上的拓扑提交事项。若要检索这些日志，请从命令行使用以下命令：
-
-    scp sshuser@clustername-ssh.azurehdinsight.cn:/var/log/hdinsight-scpwebapi/hdinsight-scpwebapi.out .
-
-将 __sshuser__ 替换为群集的 SSH 用户帐户。将 __clustername__ 替换为 HDInsight 群集的名称。如果使用了 SSH 帐户的密码，则系统会提示输入该密码。该命令会将文件下载到其运行时所在的目录。
 
 ## 后续步骤
 在了解如何使用 HDInsight Tools for Visual Studio 开发和部署 Storm 拓扑后，请了解如何[使用 Storm on HDInsight 从 Azure 事件中心处理事件](/documentation/articles/hdinsight-storm-develop-csharp-event-hub-topology/)。

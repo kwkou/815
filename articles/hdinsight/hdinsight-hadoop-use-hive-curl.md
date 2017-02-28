@@ -25,9 +25,6 @@
 
 本文档使用 Curl 演示如何通过使用原始 HTTP 请求来与 HDInsight 交互，以便运行、监视和检索 Hive 查询的结果。要执行这些操作，需要使用 HDInsight 群集提供的 WebHCat REST API（前称 Templeton）。
 
-> [AZURE.NOTE]
-如果你已熟悉如何使用基于 Linux 的 Hadoop 服务器，但刚接触 HDInsight，请参阅[基于 Linux 的 HDInsight 上的 Hadoop 须知信息](/documentation/articles/hdinsight-hadoop-linux-information/)。
-
 ## <a id="prereq"></a>先决条件
 要完成本文中的步骤，需要：
 
@@ -167,7 +164,6 @@
 如果将 Tez 与 Hive 配合使用，请参阅以下文档，了解调试信息：
 
 * [在基于 Windows 的 HDInsight 上使用 Tez UI](/documentation/articles/hdinsight-debug-tez-ui/)
-* [Use the Ambari Tez view on Linux-based HDInsight（在基于 Linux 的 HDInsight 上使用 Ambari Tez 视图）](/documentation/articles/hdinsight-debug-ambari-tez-view/)
 
 [hdinsight-sdk-documentation]: http://msdn.microsoft.com/zh-cn/library/dn479185.aspx
 

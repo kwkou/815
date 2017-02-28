@@ -28,18 +28,13 @@ Apache Storm 是分布式可容错的开源计算系统，可用于配合 Hadoop
 
 ## 为何要使用 Storm on HDInsight？
 
-Apache Storm on HDInsight 是已集成到 Azure 环境中的托管群集。HDInsight 上的 Storm 和其他 Hadoop 组件基于 Hortonworks 数据平台 (HDP)，而群集的操作系统则为 Ubuntu（Linux 分发）。这种情况下提供的平台十分兼容 Hadoop 生态系统中的常用工具和服务。
-
-[AZURE.INCLUDE [hdinsight-linux-acn-version.md](../../includes/hdinsight-linux-acn-version.md)]
-
-> [AZURE.IMPORTANT]
-Linux 是在 HDInsight 3.4 或更高版本上使用的唯一操作系统。有关详细信息，请参阅 [HDInsight 在 Windows 上弃用](/documentation/articles/hdinsight-component-versioning/#hdi-version-32-and-33-nearing-deprecation-date)。
+Apache Storm on HDInsight 是已集成到 Azure 环境中的托管群集。HDInsight 上的 Storm 和其他 Hadoop 组件基于 Hortonworks 数据平台 (HDP)。这种情况下提供的平台十分兼容 Hadoop 生态系统中的常用工具和服务。
 
 Apache Storm on HDInsight 具有下述主要优势：
 
 * 以托管服务的形式执行，提供 99.9% 运行时间的 SLA。
 
-* 可以在创建期间或创建后针对群集运行脚本，轻松地进行自定义。有关详细信息，请参阅[使用脚本操作自定义 HDInsight 群集](/documentation/articles/hdinsight-hadoop-customize-cluster-linux/)。
+* 可以在创建期间或创建后针对群集运行脚本，轻松地进行自定义。有关详细信息，请参阅[使用脚本操作自定义 HDInsight 群集](/documentation/articles/hdinsight-hadoop-customize-cluster/)。
 
 * 使用所选语言：支持以 **Java**、**C#** 和 **Python** 编写的 Storm 组件。
   
@@ -68,13 +63,7 @@ Apache Storm on HDInsight 具有下述主要优势：
 
 ### 易于使用
 
-* __安全的 Shell 连接__：可以使用 SSH 通过 Internet 访问 HDInsight 群集的头节点。因此，用户可以直接在群集上运行命令。
-
-    有关详细信息，请参阅[将 SSH 与 HDInsight 配合使用](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix/)。
-
-* __Web 连接__：HDInsight 群集提供 Ambari Web UI。这样即可轻松地监视、配置和管理群集上的服务。Storm on HDInsight 还提供 Storm UI，适用于监视和管理通过浏览器运行 Storm 拓扑的操作。
-
-    有关详细信息，请参阅[使用 Ambari Web UI 管理 HDInsight](/documentation/articles/hdinsight-hadoop-manage-ambari/) 和[使用 Storm UI 进行监视和管理](/documentation/articles/hdinsight-storm-deploy-monitor-topology-linux/#monitor-and-manage-using-the-storm-ui)。
+* __Web 连接__：Storm on HDInsight 提供 Storm UI，适用于监视和管理通过浏览器运行 Storm 拓扑的操作。
 
 * __Azure PowerShell 和 CLI__：Azure PowerShell 和 Azure CLI 均提供命令行实用工具，可以使用这些工具通过客户端系统使用 HDInsight 和其他 Azure 服务。
 
@@ -92,7 +81,7 @@ Apache Storm on HDInsight 具有下述主要优势：
 
         有关如何开发 Java 解决方案的详细信息，请参阅[为 Storm on HDInsight 开发基于 Java 的拓扑](/documentation/articles/hdinsight-storm-develop-java-topology/)。
 
-    * 进行 __C#__ 开发时，通常可以将 .NET SDK 用于 Azure 服务。在某些情况下，SDK 可能依赖于无法在 Linux（适用于 HDInsight 3.4 及更高版本的主机 OS）上使用的框架。 这种情况下，可以使用 C# 解决方案中的 Java 组件。
+    * 进行 __C#__ 开发时，通常可以将 .NET SDK 用于 Azure 服务。 这种情况下，可以使用 C# 解决方案中的 Java 组件。
 
         * 适用于 __SQL DB__、__DocumentDB__、__EventHub__ 和 __HBase__ 的示例作为模板包括在用于 Visual Studio 的 Azure Data Lake 工具中。有关详细信息，请参阅[为 Storm on HDInsight 开发 C# 拓扑](/documentation/articles/hdinsight-storm-develop-csharp-visual-studio-topology/)。
 
@@ -229,7 +218,7 @@ Storm 使用 Apache Log4j 来记录信息。默认情况下，将记录大量的
 [stormtrident]: https://storm.apache.org/documentation/Trident-API-Overview.html
 [samoa]: http://yahooeng.tumblr.com/post/65453012905/introducing-samoa-an-open-source-platform-for-mining
 [apachetutorial]: https://storm.apache.org/documentation/Tutorial.html
-[gettingstarted]: /documentation/articles/hdinsight-apache-storm-tutorial-get-started-linux/
+[gettingstarted]: /documentation/articles/hdinsight-apache-storm-tutorial-get-started/
 
 <!---HONumber=Mooncake_0120_2017-->
 <!--Update_Description: update from ASM to ARM-->

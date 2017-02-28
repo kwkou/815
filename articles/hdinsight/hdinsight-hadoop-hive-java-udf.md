@@ -22,21 +22,10 @@ Hive 非常适用于在 HDInsight 中处理数据，但有时你需要一种更�
 
 ## 要求
 
-* HDInsight 群集（基于 Windows 或 Linux）
-
-    [AZURE.INCLUDE [hdinsight-linux-acn-version.md](../../includes/hdinsight-linux-acn-version.md)]
-
-    > [AZURE.IMPORTANT]
-    Linux 是在 HDInsight 3.4 版或更高版本上使用的唯一操作系统。有关详细信息，请参阅 [HDInsight 在 Windows 上弃用](/documentation/articles/hdinsight-component-versioning/#hdi-version-32-and-33-nearing-deprecation-date)。
-  
-    本文档中的大多数步骤将适用于这两种群集类型；但是，用于将已编译的 UDF 上载到群集并运行它的步骤特定于基于 Linux 的群集。对于可用于基于 Windows 的群集的信息，提供了链接。
-
+* HDInsight 群集（基于 Windows）
 * [Java JDK](http://www.oracle.com/technetwork/java/javase/downloads/) 7 或更高版本（或类似版本，如 OpenJDK）
 * [Apache Maven](http://maven.apache.org/)
 * 文本编辑器或 Java IDE
-  
-    > [AZURE.IMPORTANT]
-    如果使用的是基于 Linux 的 HDInsight 服务器，但创建 Windows 客户端上的 Python 文件，则必须采用使用 LF 作为行结束的编辑器。
 
 ## 创建示例 UDF
 1. 从命令行中，使用以下命令新建 Maven 项目：
@@ -151,60 +140,6 @@ Hive 非常适用于在 HDInsight 中处理数据，但有时你需要一种更�
         }
    
     该代码将实现接受一个字符串值，并返回该字符串的小写形式的 UDF。
-
-## 生成并安装 UDF
-1. 使用以下命令编译并打包 UDF：
-   
-        mvn compile package
-   
-    这将生成 UDF，然后将 UDF 打包到 **exampleudf/target/ExampleUDF-1.0-SNAPSHOT.jar**。
-2. 使用 `scp` 命令将文件复制到 HDInsight 群集。
-   
-        scp ./target/ExampleUDF-1.0-SNAPSHOT.jar myuser@mycluster-ssh.azurehdinsight
-   
-    将 **myuser** 替换为群集的 SSH 用户帐户。将 **mycluster** 替换为群集名称。如果使用密码保护 SSH 帐户，系统将提示输入该密码。如果使用了证书，则可能需要使用 `-i` 参数指定私钥文件。
-3. 使用 SSH 连接到群集。
-   
-        ssh myuser@mycluster-ssh.azurehdinsight.cn
-   
-    有关如何将 SSH 与 HDInsight 配合使用的详细信息，请参阅以下文档。
-   
-    * [在 Linux、Unix 或 OS X 中的 HDInsight 上将 SSH 与基于 Linux 的 Hadoop 配合使用](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix/)
-    * [在 Windows 中的 HDInsight 上将 SSH 与基于 Linux 的 Hadoop 配合使用](/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows/)
-4. 从 SSH 会话将 jar 文件复制到 HDInsight 存储。
-   
-        hdfs dfs -put ExampleUDF-1.0-SNAPSHOT.jar /example/jars
-
-## 在 Hive 中使用 UDF
-1. 使用以下命令在 SSH 会话中启动 Beeline 客户端。
-   
-        beeline -u 'jdbc:hive2://localhost:10001/;transportMode=http' -n admin
-   
-    该命令假定你使用默认的群集登录帐户 **admin**。
-2. 显示 `jdbc:hive2://localhost:10001/>` 提示符后，输入以下代码将 UDF 添加到 Hive，并将其作为函数公开。
-   
-        ADD JAR wasbs:///example/jars/ExampleUDF-1.0-SNAPSHOT.jar;
-        CREATE TEMPORARY FUNCTION tolower as 'com.microsoft.examples.ExampleUDF';
-3. 使用该 UDF 将从表中检索的值转换为小写字符串。
-   
-        SELECT tolower(deviceplatform) FROM hivesampletable LIMIT 10;
-   
-    这将从表中选择设备平台（Android、Windows、iOS 等）、将字符串转换为小写字符串，然后进行显示。输出结果如下所示。
-   
-        +----------+--+
-        |   _c0    |
-        +----------+--+
-        | android  |
-        | android  |
-        | android  |
-        | android  |
-        | android  |
-        | android  |
-        | android  |
-        | android  |
-        | android  |
-        | android  |
-        +----------+--+
 
 ## 后续步骤
 有关使用 Hive 的其他方式，请参阅[将 Hive 与 HDInsight 配合使用](/documentation/articles/hdinsight-use-hive/)。

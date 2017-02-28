@@ -24,7 +24,7 @@
 Apache Storm 是一个可扩展的、具有容错能力的分布式实时计算系统，用于处理数据流。使用 Azure HDInsight 上的 Storm，你可以创建一个基于云的、用于实时执行大数据分析的 Storm 群集。
 
 > [AZURE.NOTE]
-本文中的步骤将创建基于 Windows 的 HDInsight 群集。有关在 HDInsight 群集上创建基于 Linux 的 Storm 的步骤，请参阅 [Apache Storm 教程：开始在 HDInsight 上使用 Storm 初学者示例进行数据分析](/documentation/articles/hdinsight-apache-storm-tutorial-get-started-linux/)
+本文中的步骤将创建基于 Windows 的 HDInsight 群集。
 > 
 > 
 

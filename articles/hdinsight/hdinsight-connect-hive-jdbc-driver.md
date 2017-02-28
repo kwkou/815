@@ -30,7 +30,7 @@
 
 要完成本文中的步骤，需要：
 
-* HDInsight 群集上的 Hadoop。可以使用基于 Linux 或基于 Windows 的群集。
+* HDInsight 群集上的 Hadoop。可以使用基于 Windows 的群集。
 * [SQuirreL SQL](http://squirrel-sql.sourceforge.net/)。SQuirreL 是 JDBC 客户端应用程序。
 
 要生成和运行本文中链接的 Java 应用程序示例，需要以下软件。
@@ -59,20 +59,6 @@ JDBC 通过 443 连接到 Azure 上的 HDInsight 群集，并使用 SSL 保护�
 SQuirreL SQL 是一个 JDBC 客户端，可用于通过 HDInsight 群集远程运行 Hive 查询。以下步骤假设已安装 SQuirreL SQL，并引导下载和配置 Hive 的驱动程序。
 
 1. 从 HDInsight 群集复制 Hive JDBC 驱动程序。
-   
-    * 对于**基于 Linux 的 HDInsight**，请使用以下步骤下载所需的 jar 文件。
-     
-        1. 创建一个新的目录以包含这些文件。例如，`mkdir hivedriver`。
-        2. 从命令提示符、Bash、PowerShell 或其他命令行提示符，将目录切换到新目录并使用以下命令从 HDInsight 群集复制文件。
-        
-                scp USERNAME@CLUSTERNAME:/usr/hdp/current/hive-client/lib/hive-jdbc*standalone.jar .
-                scp USERNAME@CLUSTERNAME:/usr/hdp/current/hadoop-client/hadoop-common.jar .
-                scp USERNAME@CLUSTERNAME:/usr/hdp/current/hadoop-client/hadoop-auth.jar .
-        
-            将 **USERNAME** 替换为群集的 SSH 用户帐户名称。将 **CLUSTERNAME** 替换为 HDInsight 群集名称。
-        
-        > [AZURE.NOTE]
-        在 Windows 环境中，需要使用 PSCP 实用程序（而不是 scp）。可以从 [http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html) 安装该程序。
 
     * 对于**基于 Windows 的 HDInsight**，请使用以下步骤下载 jar 文件。
      
@@ -162,9 +148,7 @@ SQuirreL SQL 是一个 JDBC 客户端，可用于通过 HDInsight 群集远程�
 
 ### 尝试打开 SQL 连接时发生意外错误
 
-[AZURE.INCLUDE [hdinsight-linux-acn-version.md](../../includes/hdinsight-linux-acn-version.md)]
-
-**症状**：连接到 HDInsight 群集 3.3 版或 3.4 版时，可能会遇到意外错误。此错误的堆栈跟踪将以下列行为开头：
+**症状**：连接到 HDInsight 群集 3.3 版时，可能会遇到意外错误。此错误的堆栈跟踪将以下列行为开头：
 
     java.util.concurrent.ExecutionException: java.lang.RuntimeException: java.lang.NoSuchMethodError: org.apache.commons.codec.binary.Base64.<init>(I)V
     at java.util.concurrent.FutureTas...(FutureTask.java:122)

@@ -25,7 +25,7 @@ Scalding 是一种 Scala 库，它可以让你轻松地创建 Hadoop MapReduce �
 
 ## 先决条件
 * **一个 Azure 订阅**。请参阅[获取 Azure 试用版](/pricing/1rmb-trial/)。
-* **HDInsight 群集上基于 Windows 或 Linux 的 Hadoop**。有关详细信息，请参阅[在 HDInsight 上预配基于 Linux 的 Hadoop](/documentation/articles/hdinsight-hadoop-provision-linux-clusters/) 或[在 HDInsight 上预配基于 Windows 的 Hadoop](/documentation/articles/hdinsight-provision-clusters/)。
+* **HDInsight 群集上基于 Windows 的 Hadoop**。有关详细信息，请参阅[在 HDInsight 上预配基于 Windows 的 Hadoop](/documentation/articles/hdinsight-provision-clusters/)。
 * **[Maven](http://maven.apache.org/)**
 * **[Java 平台 JDK](http://www.oracle.com/technetwork/java/javase/downloads/index.html) 7 或更高版本**
 
@@ -169,55 +169,6 @@ Scalding 是一种 Scala 库，它可以让你轻松地创建 Hadoop MapReduce �
         mvn package
    
     完成此作业后，可以在 **target/scaldingwordcount-1.0-SNAPSHOT.jar** 中找到包含 WordCount 应用程序的程序包。
-
-## 在基于 Linux 的群集上运行作业
-> [AZURE.NOTE]
-以下步骤使用 SSH 和 Hadoop 命令。有关运行 MapReduce 作业的其他方法，请参阅[在 Hadoop on HDInsight 中使用 MapReduce](/documentation/articles/hdinsight-use-mapreduce/)。
-> 
-> 
-
-1. 使用以下命令将该程序包上载到你的 HDInsight 群集：
-   
-        scp target/scaldingwordcount-1.0-SNAPSHOT.jar username@clustername-ssh.azurehdinsight.cn:
-   
-    这样就会将两个文件从本地系统复制到头节点。
-   
-    > [AZURE.NOTE]
-    如果使用了密码来保护 SSH 帐户，系统会提示你输入密码。如果你使用了 SSH 密钥，你可能必须使用 `-i` 参数和私钥的路径。例如 `scp -i /path/to/private/key target/scaldingwordcount-1.0-SNAPSHOT.jar username@clustername-ssh.azurehdinsight.cn:.`
-    > 
-    > 
-2. 输入以下命令连接到群集头节点：
-   
-        ssh username@clustername-ssh.azurehdinsight.cn
-   
-    > [AZURE.NOTE]
-    如果你使用了密码来保护 SSH 帐户，系统会提示你输入密码。如果你使用了 SSH 密钥，你可能必须使用 `-i` 参数和私钥的路径。例如 `ssh -i /path/to/private/key username@clustername-ssh.azurehdinsight.cn`
-    > 
-    > 
-3. 连接到头节点后，使用以下命令运行该单词计数作业
-   
-        yarn jar scaldingwordcount-1.0-SNAPSHOT.jar com.microsoft.example.WordCount --hdfs --input wasbs:///example/data/gutenberg/davinci.txt --output wasbs:///example/wordcountout
-   
-    这将会运行前面实现的 WordCount 类。`--hdfs` 指示作业使用 HDFS。`--input` 指定输入文本文件，而 `--output` 指定输出位置。
-4. 完成作业后，使用以下命令查看输出。
-   
-        hdfs dfs -text wasbs:///example/wordcountout/*
-   
-    这将会显示如下信息：
-   
-        writers 9
-        writes  18
-        writhed 1
-        writing 51
-        writings        24
-        written 208
-        writtenthese    1
-        wrong   11
-        wrongly 2
-        wrongplace      1
-        wrote   34
-        wrotefootnote   1
-        wrought 7
 
 ## 在基于 Windows 的群集上运行作业
 以下步骤使用 Windows PowerShell。有关运行 MapReduce 作业的其他方法，请参阅[在 HDInsight 上的 Hadoop 中使用 MapReduce](/documentation/articles/hdinsight-use-mapreduce/)。

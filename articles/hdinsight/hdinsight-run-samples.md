@@ -20,7 +20,6 @@
 
 
 # 在基于 Windows 的 HDInsight 中运行 Hadoop MapReduce 示例
-[AZURE.INCLUDE [samples-selector](../../includes/hdinsight-run-samples-selector.md)]
 
 为帮助你开始使用 Azure HDInsight 在 Hadoop 群集上运行 MapReduce 作业，我们提供了一组示例。在你创建的每一个 HDInsight 托管群集上都可以使用这些示例。运行这些示例，可熟悉如何使用 Azure PowerShell cmdlet 在 Hadoop 群集上运行作业。
 
@@ -34,7 +33,6 @@
 
 Web 上有许多介绍 Hadoop 相关技术（例如基于 Java 的 MapReduce 编程和流式处理）的其他文档，以及有关 Windows PowerShell 脚本中使用的 cmdlet 的文档。有关这些资源的详细信息，请参阅：
 
-* [为 HDInsight 中的 Hadoop 开发 Java MapReduce 程序](/documentation/articles/hdinsight-develop-deploy-java-mapreduce-linux/)
 * [在 HDInsight 中提交 Hadoop 作业](/documentation/articles/hdinsight-submit-hadoop-jobs-programmatically/)
 * [Azure HDInsight 简介][hdinsight-introduction]
 
@@ -58,8 +56,6 @@ Web 上有许多介绍 Hadoop 相关技术（例如基于 Java 的 MapReduce 编
 若要提交 MapReduce 项目，请先创建 MapReduce 作业定义。在作业定义中，指定 MapReduce 程序 jar 文件和 jar 文件的位置（即，* *wasbs:///example/jars/hadoop-mapreduce-examples.jar**）、类名和参数。Wordcount MapReduce 程序采用两个参数：用于字数统计的源文件，以及输出的位置。
 
 可以在[附录 A](#apendix-a---the-word-count-MapReduce-program-in-java) 中找到源代码。
-
-有关开发 Java MapReduce 程序的过程，请参阅[开发适用于 HDInsight 中的 Hadoop 的 Java MapReduce 程序](/documentation/articles/hdinsight-develop-deploy-java-mapreduce-linux/)
 
 **提交字数统计 MapReduce 作业**
 
@@ -120,9 +116,6 @@ Web 上有许多介绍 Hadoop 相关技术（例如基于 Java 的 MapReduce 编
 
 ## <a name="hdinsight-sample-csharp-streaming"></a>字数统计 - C# 流式处理
 Hadoop 向 MapReduce 提供流式处理 API，利用它，可以采用 Java 以外的语言编写映射函数和化简函数。
-
-> [AZURE.NOTE]
-本教程中的步骤仅适用于基于 Windows 的 HDInsight 群集。有关基于 Linux 的 HDInsight 群集流式处理的示例，请参阅[开发适用于 HDInsight 的 Python 流式处理程序](/documentation/articles/hdinsight-hadoop-streaming-python/)。
 
 在示例中，映射器和化简器都是可执行的，它们从 [stdin][stdin-stdout-stderr] 读取输入（逐行）并将输出结果发送到 [stdout][stdin-stdout-stderr]。程序计算文本中所有单词的数量。
 
@@ -952,7 +945,7 @@ wc.cs 文件中的化简器代码使用 [StreamReader][streamreader] 对象从 c
 
 [powershell-install-configure]: https://docs.microsoft.com/powershell/azureps-cmdlets-docs
 
-[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-linux-tutorial-get-started/
+[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows/
 
 [hdinsight-samples]: /documentation/articles/hdinsight-run-samples/
 [hdinsight-sample-10gb-graysort]: #hdinsight-sample-10gb-graysort

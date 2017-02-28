@@ -21,7 +21,7 @@
 
 # HDInsight 中基于 Windows 的 Hadoop 群集的可用性和可靠性
 > [AZURE.NOTE]
-本文档中使用的步骤特定于基于 Windows 的 HDInsight 群集。如果使用基于 Linux 的群集，请参阅 [HDInsight 中基于 Linux 的 Hadoop 群集的可用性和可靠性](/documentation/articles/hdinsight-high-availability-linux/)，以了解有关特定于 Linux 的信息。
+本文档中使用的步骤特定于基于 Windows 的 HDInsight 群集。
 >
 >
 
