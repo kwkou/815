@@ -61,7 +61,6 @@ HDInsight 提供了多个脚本用于在 HDInsight 群集上安装以下组件�
 
     ![使用脚本操作自定义群集](./media/hdinsight-hadoop-customize-cluster/HDI.CreateCluster.8.png "使用脚本操作自定义群集")  
 
-
     <table border='1'>
         <tr><th>属性</th><th>值</th></tr>
         <tr><td>名称</td>

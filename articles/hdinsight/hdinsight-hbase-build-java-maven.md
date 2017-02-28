@@ -531,7 +531,7 @@
             $sub = Get-AzureRmSubscription -ErrorAction SilentlyContinue
             if(-not($sub))
             {
-                throw "No active Azure subscription found! If you have a subscription, use the Login-AzureRmAccount -EnvironmentName AzureChinaCloud cmdlet to login to your subscription."
+                throw "No active Azure subscription found! If you have a subscription, use the Login-AzureRmAccount cmdlet to login to your subscription."
             }
         }
    

@@ -66,12 +66,10 @@ SQuirreL SQL 是一个 JDBC 客户端，可用于通过 HDInsight 群集远程�
         
             ![“远程桌面”图标](./media/hdinsight-connect-hive-jdbc-driver/remotedesktopicon.png)  
 
-
         2. 在“远程桌面”边栏选项卡上，使用“连接”按钮连接到群集。如果未启用远程桌面，请使用表单提供用户名和密码，然后选择“启用”为群集启用远程桌面。
         
             ![“远程桌面”边栏选项卡](./media/hdinsight-connect-hive-jdbc-driver/remotedesktopblade.png)  
 
-        
             选择“连接”后，将会下载 .rdp 文件。使用此文件启动远程桌面客户端。出现提示时，使用输入的用户名和密码进行远程桌面访问。
 
         3. 连接后，将以下文件从远程桌面会话复制到本地计算机。将其放置在名为 `hivedriver` 的本地目录中。

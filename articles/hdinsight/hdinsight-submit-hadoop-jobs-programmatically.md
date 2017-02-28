@@ -27,18 +27,18 @@
 ><p> - [在 HDInsight 使用 Pig](/documentation/articles/hdinsight-use-pig/)
 ><p> - [在 HDInsight 使用 MapReduce](/documentation/articles/hdinsight-use-mapreduce/)
 
-##先决条件
+## 先决条件
 
 在开始阅读本文前，你必须具有：
 
 * **一个 Azure HDInsight 群集**。有关说明，请参阅 [HDInsight 入门][hdinsight-get-started]或[在 HDInsight 中创建 Hadoop 群集][hdinsight-provision]。
 - **配备 Azure PowerShell 的工作站**。请参阅[安装 Azure PowerShell 1.0 或更新](/documentation/articles/hdinsight-administer-use-powershell/#install-azure-powershell-10-and-greater)。
 
-##使用 PowerShell 提交 MapReduce 作业
+## 使用 PowerShell 提交 MapReduce 作业
 
 请参阅[在基于 Windows 的 HDInsight 中运行 Hadoop MapReduce 示例](/documentation/articles/hdinsight-run-samples/)。
 
-##使用 PowerShell 提交 Hive 作业
+## 使用 PowerShell 提交 Hive 作业
 
 请参阅[使用 PowerShell 运行 Hive 查询](/documentation/articles/hdinsight-hadoop-use-hive-powershell/)
 
@@ -46,11 +46,11 @@
 
 请参阅[适用于 Visual Studio 的 HDInsight Hadoop 工具入门][hdinsight-visual-studio-tools]。
 
-##使用 PowerShell 提交 Sqoop 作业
+## 使用 PowerShell 提交 Sqoop 作业
 
 请参阅[将 Sqoop 与 HDInsight 配合使用][hdinsight-use-sqoop]。
 
-##使用 HDInsight .NET SDK 提交 Hive/Pig/Sqoop 作业
+## 使用 HDInsight .NET SDK 提交 Hive/Pig/Sqoop 作业
 HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 中使用 HDInsight 群集的操作。
 
 **提交作业**
@@ -186,11 +186,11 @@ HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 中使用 HDInsi
 
 5. 按 **F5** 运行应用程序。
 
-##使用适用于 Visual Studio 的 HDInsight 工具提交作业
+## 使用适用于 Visual Studio 的 HDInsight 工具提交作业
 
 你可以使用适用于 Visual Studio 的 HDInsight 工具来运行 Hive 查询和 Pig 脚本。请参阅[适用于 HDInsight 的 Visual Studio Hadoop 工具入门](/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started/)。
 
-##后续步骤
+## 后续步骤
 在本文中，你已经学习了几种创建 HDInsight 群集的方法。若要了解更多信息，请参阅下列文章：
 
 * [Azure HDInsight 入门][hdinsight-get-started]

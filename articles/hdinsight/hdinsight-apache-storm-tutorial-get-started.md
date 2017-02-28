@@ -61,7 +61,6 @@ Storm on HDInsight 使用 Azure Blob 存储来存储提交到群集的日志文�
    
     ![数据源边栏选项卡](./media/hdinsight-apache-storm-tutorial-get-started/datasource.png)  
 
-   
     目前可以选择 Azure 存储帐户作为 HDInsight 群集数据源。通过以下信息来了解“数据源”边栏选项卡上的条目。
    
     * **选择方法**：将此项设置为“来自所有订阅”，以便能够浏览所有订阅中的存储帐户。如果要输入现有存储帐户的“存储名称”和“访问密钥”，请将此项设置为“访问密钥”。
@@ -78,7 +77,6 @@ Storm on HDInsight 使用 Azure Blob 存储来存储提交到群集的日志文�
    
     ![节点定价层边栏选项卡](./media/hdinsight-apache-storm-tutorial-get-started/nodepricingtiers.png)  
 
-   
     使用“选择”保存**节点定价层**信息。
 10. 选择“可选配置”。此边栏选项卡可用于选择群集版本以及配置其他可选设置，例如加入**虚拟网络**。
     
@@ -127,14 +125,12 @@ Storm on HDInsight 使用 Azure Blob 存储来存储提交到群集的日志文�
    
     ![已在 Storm 仪表板上选择 Storm 初学者项目 WordCount。](./media/hdinsight-apache-storm-tutorial-get-started/submit.png)  
 
-   
     * **类名** - 提交拓扑的 .jar 文件中的类。
     * **其他参数** - 拓扑所需的任何参数。在此示例中，该字段用于提供已提交的拓扑的友好名称。
 2. 单击“提交”。片刻之后，“结果”字段将显示用于提交该作业的命令以及命令的结果。“错误”字段将显示提交拓扑时出现的任何错误。
    
     ![“提交”按钮和 Storm 初学者项目 WordCount 的结果。](./media/hdinsight-apache-storm-tutorial-get-started/submit-results.png)  
 
-   
     > [AZURE.NOTE]
     结果不会指示已完成拓扑 - **Storm 拓扑在启动后将一直运行，直到你停止它**。 单词计数拓扑将会生成随机的句子，并会一直计算所遇到的每个单词的出现次数，直到你将其停止。
     > 
@@ -147,7 +143,6 @@ Storm UI 可以用于监视拓扑。
    
     ![显示 Storm 初学者项目 WordCount 拓扑摘要的 Storm 仪表板。](./media/hdinsight-apache-storm-tutorial-get-started/stormui.png)  
 
-   
     在上述页面中，可看到拓扑处于活动状态的时间，以及工作线程、执行器和正在使用的任务数。
    
     > [AZURE.NOTE]
@@ -158,7 +153,6 @@ Storm UI 可以用于监视拓扑。
    
     ![包含 Storm 初学者项目 WordCount 拓扑信息的 Storm 仪表板。](./media/hdinsight-apache-storm-tutorial-get-started/topology-summary.png)  
 
-   
     此页提供以下信息：
    
     * **拓扑统计信息** - 有关拓扑性能的基本信息，已组织到时间窗口中。
@@ -181,7 +175,6 @@ Storm UI 可以用于监视拓扑。
    
     ![包含有关选定组件的信息的 Storm 仪表板。](./media/hdinsight-apache-storm-tutorial-get-started/component-summary.png)  
 
-   
     此页显示以下信息：
    
     * **Spout/Bolt 统计信息** - 有关组件性能的基本信息，已组织到时间窗口中。

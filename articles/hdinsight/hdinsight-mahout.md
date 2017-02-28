@@ -14,11 +14,11 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/11/2016"
-	wacn.date="01/05/2017"
+	ms.date="01/13/2017"
+	wacn.date="01/25/2017"
 	ms.author="larryfr"/>
 
-#将 Apache Mahout 与 HDInsight 中的 Hadoop 配合使用以生成电影推荐
+# 将 Apache Mahout 与 HDInsight 中的 Hadoop 配合使用以生成电影推荐
 
 了解如何使用 [Apache Mahout](http://mahout.apache.org) 机器学习库通过 Azure HDInsight 生成电影推荐。
 
@@ -35,7 +35,7 @@ Mahout 是适用于 Apache Hadoop 的[计算机学习][ml]库。Mahout 包含用
 
 	> [AZURE.NOTE] Mahout 是随 HDInsight 3.1 版本的群集一起提供的。如果使用早期版本的 HDInsight，请在继续操作之前参阅[安装 Mahout](#install)。
 
-##先决条件
+## 先决条件
 
 - **HDInsight 中基于 Windows 的 Hadoop 群集**。有关创建该群集的信息，请参阅[开始使用 HDInsight 中的 Hadoop][getstarted]。
 - **配备 Azure PowerShell 的工作站**。
@@ -56,7 +56,7 @@ Mahout 提供的功能之一是推荐引擎。此引擎接受 `userID`、`itemId
 
 * __类似性推荐__：由于 Joe 喜欢前三部电影，Mahout 会查看具有类似偏好的其他人喜欢、但 Joe 还未观看过（喜欢/评价）的电影。在本例中，Mahout 推荐《幽灵的威胁》、《克隆人的进攻》和《西斯的复仇》。
 
-###了解数据
+### 了解数据
 
 为方便起见，[GroupLens 研究][movielens]以兼容 Mahout 的格式提供电影的评价数据。此数据在 `/HdiSamples/MahoutMovieData` 中你的群集的默认存储中可用。
 
@@ -78,7 +78,7 @@ user-ratings.txt 中包含的数据具有 `userID`、`movieID`、`userRating` �
             
     
 
-###运行作业
+### 运行作业
 
 使用以下 Windows PowerShell 脚本来运行作业，以将 Mahout 推荐引擎用于电影数据：
 
@@ -165,7 +165,7 @@ Mahout 作业不会将输出返回到 STDOUT。而是会将其作为 __part-r-00
 
 第一列是 `userID`。“[”和“]”中包含的值为 `movieId`:`recommendationScore`。
 
-###查看输出
+### 查看输出
 
 生成的输出也许可用于应用程序中，但其可读性欠佳。可使用服务器的 `moviedb.txt` 将 `movieId` 解析为电影名称，但必须先使用以下脚本从服务器下载它并对文件评级：
 
@@ -315,7 +315,7 @@ Mahout 作业不会将输出返回到 STDOUT。而是会将其作为 __part-r-00
 
 Mahout 提供的分类方法之一是生成[随机林][forest]。这是一个多步骤过程，涉及到使用训练数据来生成决策树，然后使用决策树对数据进行分类。此过程使用 Mahout 提供的 __org.apache.mahout.classifier.df.tools.Describe__ 类。目前必须使用 Hadoop 命令行来运行它。
 
-###加载数据
+### 加载数据
 
 1. 从 [NSL-KDD 数据集](http://www.unb.ca/research/iscx/dataset/iscx-NSL-KDD-dataset.html)下载以下文件。
 
@@ -349,7 +349,7 @@ Mahout 提供的分类方法之一是生成[随机林][forest]。这是一个多
             -Container $container `
             -Context $context
 
-###运行作业
+### 运行作业
 
 1. 此作业需要 Hadoop 命令行。为 HDInsight 群集启用远程桌面，然后按照[使用 RDP 连接到 HDInsight 群集](/documentation/articles/hdinsight-administer-use-management-portal/#connect-to-hdinsight-clusters-by-using-rdp)中的说明连接到该群集。
 
@@ -444,13 +444,13 @@ Mahout 安装在 HDInsight 3.1 群集上，可使用以下步骤将其手动安�
             -Container $container `
             -Context $context
 
-###无法覆盖文件
+### 无法覆盖文件
 
 Mahout 作业不清理在处理期间创建的临时文件。此外，作业将不会覆盖现有的输出文件。
 
 若要避免运行 Mahout 作业时出错，请在每次运行作业之前删除临时文件和输出文件，或者使用唯一的临时目录名称和输出目录名称。
 
-###找不到 JAR 文件
+### 找不到 JAR 文件
 
 HDInsight 3.1 群集提供 Mahout。路径和文件名包括在群集上安装的 Mahout 的版本号。本教程中的 Windows PowerShell 示例脚本使用的路径的有效截止期为 2015 年 11 月，但是，将来对 HDInsight 做出更新后，版本号将发生更改。若要确定群集的 Mahout JAR 文件的当前路径，请使用以下 Windows PowerShell 命令，然后修改脚本以引用返回的文件路径：
 
@@ -482,7 +482,7 @@ Mahout 作业如果使用以下类，则从 Windows PowerShell 中使用这些�
 
 若要运行使用这些类的作业，请连接到 HDInsight 群集，然后通过使用 Hadoop 命令行运行这些作业。有关示例，请参阅[使用 Hadoop 命令行对数据分类](#classify)。
 
-##后续步骤
+## 后续步骤
 
 既已学习如何使用 Mahout，可探索在 HDInsight 上处理数据的其他方式：
 

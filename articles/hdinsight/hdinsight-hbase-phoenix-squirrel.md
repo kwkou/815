@@ -56,7 +56,6 @@
 
     ![hdinsight hbase phoenix sqlline][hdinsight-hbase-phoenix-sqlline]  
 
-
     示例中使用的命令：
 
         CREATE TABLE Company (COMPANY_ID INTEGER PRIMARY KEY, NAME VARCHAR(225));
@@ -122,7 +121,6 @@
 
     ![Azure 虚拟网络点到站点虚拟图][img-vnet-diagram]  
 
-
     该图显示了 0 个客户端连接。在与虚拟网络建立连接后，数字将更新为 1。
 
 #### <a name="Create-your-certificates"></a> 创建证书
@@ -156,7 +154,6 @@
     根证书和客户端证书都存储在计算机上的“个人”证书存储中。使用 certmgr.msc 进行验证。
 
     ![Azure 虚拟网络点到站点 VPN 证书][img-certificate]  
-
 
     必须在要连接到虚拟网络的每台计算机上都安装客户端证书。建议为要连接到虚拟网络的每台计算机都创建唯一的客户端证书。若要导出客户端证书，请使用 certmgr.msc。
 

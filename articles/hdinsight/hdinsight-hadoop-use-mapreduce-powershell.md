@@ -42,7 +42,7 @@ Azure PowerShell 提供 *cmdlet*，可让你在 HDInsight 上远程运行 MapRed
 
 在远程 HDInsight 群集上运行 MapReduce 作业时，将使用以下 Cmdlet。
 
-* **Login-AzureRmAccount -EnvironmentName AzureChinaCloud**：向 Azure 订阅进行 Azure PowerShell 身份验证。
+* **Login-AzureRmAccount**：向 Azure 订阅进行 Azure PowerShell 身份验证。
 
 * **New-AzureRmHDInsightMapReduceJobDefinition**：使用指定的 MapReduce 信息创建新*作业定义*。
 

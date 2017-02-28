@@ -62,7 +62,6 @@
      
         ![数据源边栏选项卡](./media/hdinsight-provision-clusters/HDI.CreateCluster.4.png "提供数据源配置")  
 
-     
         * **选择方法**：将此项设置为“来自所有订阅”，以便能够浏览所有订阅中的存储帐户。如果你想要输入现有存储帐户的“存储名称”和“访问密钥”，请将此项设置为“访问密钥”。
         * **选择存储帐户/新建**：单击“选择存储帐户”，浏览并选择要与群集关联的现有存储帐户。或者单击“新建”来创建新的存储帐户。使用出现的字段输入存储帐户名称。如果该名称可用，将出现绿色复选标记。
         * **选择默认容器**：使用此选项输入要用于该群集的默认容器名称。尽管你可以输入任何名称，但我们建议使用与群集相同的名称，以方便辨别用于这个特定群集的容器。
@@ -71,7 +70,6 @@
 
         ![Node pricing tiers blade](./media/hdinsight-provision-clusters/HDI.CreateCluster.5.png "Specify number of cluster nodes")
 
-
     * “可选配置”用于选择群集的版本，以及配置其他可选设置，例如加入**虚拟网络**、设置**外部元存储**用于保存 Hive 和 Oozie 的数据、使用脚本操作来自定义要安装自定义组件的群集，或使用具有该群集的其他存储帐户。
 
     * **HDInsight 版本**：选择要用于该群集的版本。有关详细信息，请参阅 [HDInsight 群集版本](/documentation/articles/hdinsight-component-versioning/)。
@@ -79,10 +77,7 @@
 
         ![虚拟网络边栏选项卡](./media/hdinsight-provision-clusters/HDI.CreateCluster.6.png "指定虚拟网络详细信息")  
 
-
         有关将 HDInsight 与虚拟网络配合使用的信息（包括虚拟网络的特定配置要求），请参阅[使用 Azure 虚拟网络扩展 HDInsight 功能](/documentation/articles/hdinsight-extend-hadoop-virtual-network/)。
-
-
 
     * **外部元存储**：指定 Azure SQL 数据库用于存储与该群集关联的 Hive 和 Oozie 元数据。
 
@@ -100,17 +95,11 @@
 
         * 如果你想要在创建群集时使用自定义脚本自定义群集，请选择“脚本操作”。有关脚本操作的详细信息，请参阅[使用脚本操作自定义 HDInsight 群集](/documentation/articles/hdinsight-hadoop-customize-cluster/)。在“脚本操作”边栏选项卡上提供如屏幕截图中所示的详细信息。
 
-
             ![脚本操作边栏选项卡](./media/hdinsight-provision-clusters/HDI.CreateCluster.8.png "指定脚本操作")  
-
-
 
         * **Azure 存储密钥**：指定与该群集关联的其他存储帐户。在“Azure 存储密钥”边栏选项卡中，单击“添加存储密钥”，然后选择现有的存储帐户或创建新的帐户。
 
-
             ![其他存储边栏选项卡](./media/hdinsight-provision-clusters/HDI.CreateCluster.9.png "指定其他存储帐户")  
-
-
 
 1. 单击“创建”。选择“固定到启动板”会将群集的磁贴添加到门户的启动板。该图标指示正在创建群集，完成创建后，将改为显示 HDInsight 图标。
    
@@ -119,9 +108,7 @@
 
     ![群集边栏选项卡](./media/hdinsight-provision-clusters/HDI.Cluster.Blade.png "群集属性")
 
-
     参考以下内容了解边栏选项卡顶部和“基本功能”部分中的图标：
-
 
     * **设置**和**所有设置**：显示该群集的“设置”边栏选项卡，可让你访问该群集的详细配置信息。
     * **仪表板**、**群集仪表板**和 **URL**：这是访问群集仪表板（也就是可在群集上运行作业的 Web 门户）的所有途径。
@@ -130,7 +117,6 @@
     * **删除**：删除 HDInsight 群集。
     * **快速启动** \(![云和闪电图标 = 快速启动](./media/hdinsight-provision-clusters/quickstart.png)\)：显示可帮助你开始使用 HDInsight 的信息。
     * **用户** \(![用户图标](./media/hdinsight-provision-clusters/users.png)\)：用于设置 Azure 订阅上其他用户对此群集的_门户管理_权限。
-
 
         > [AZURE.IMPORTANT] 这_只会_影响在门户中对此群集的访问和权限，对于连接到 HDInsight 群集或将作业提交到该群集的用户没有影响。
 

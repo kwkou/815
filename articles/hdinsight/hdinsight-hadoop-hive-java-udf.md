@@ -56,7 +56,7 @@ Hive 非常适用于在 HDInsight 中处理数据，但有时你需要一种更�
             </dependency>
         </dependencies>
    
-    这些条目指定了 HDInsight 3.3 和 3.4 群集中包含的 Hadoop 和 Hive 的版本。你可以在 [HDInsight 组件版本控制](/documentation/articles/hdinsight-component-versioning/)文档中找到 HDInsight 提供的 Hadoop 和 Hive 的版本信息。
+    这些条目指定了 HDInsight 3.3 群集中包含的 Hadoop 和 Hive 的版本。你可以在 [HDInsight 组件版本控制](/documentation/articles/hdinsight-component-versioning/)文档中找到 HDInsight 提供的 Hadoop 和 Hive 的版本信息。
    
     在文件末尾的 `</project>` 行前面添加 `<build>` 部分。该部分应包含以下内容：
    

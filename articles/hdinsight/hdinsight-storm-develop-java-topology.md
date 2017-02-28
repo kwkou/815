@@ -83,7 +83,7 @@ Maven 允许定义项目级的值，称为属性。在 `<url>http://maven.apache
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <!--
-        Storm 0.10.0 is for HDInsight 3.3 and 3.4.
+        Storm 0.10.0 is for HDInsight 3.3.
         To find the version information for earlier HDInsight cluster
         versions, see /documentation/articles/hdinsight-component-versioning-v1/
         -->
