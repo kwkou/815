@@ -76,7 +76,8 @@
 
     ![门户视图](./media/sql-data-warehouse-get-started-provision/database-portal-view.png)
 
-<!-- Not for Mooncake with sql-database-create-new-server-firewall-portal.md -->
+[AZURE.INCLUDE [SQL 数据库创建服务器](../../includes/sql-database-create-new-server-firewall-portal.md)]
+
 ## 后续步骤
 
 创建 SQL 数据仓库后，便可以[连接](/documentation/articles/sql-data-warehouse-connect-overview/)并开始查询。
