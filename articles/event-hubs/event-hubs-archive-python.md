@@ -58,9 +58,9 @@
 ## 创建用于将事件发送到事件中心的 Python 脚本
 1. 打开常用的 Python 编辑器，如 [Visual Studio Code][Visual Studio Code]。
 
-2.  创建名为 **sender.py** 的脚本。此脚本将向事件中心发送 200 个事件。它们是以 JSON 格式发送的简单环境读数。
+2. 创建名为 **sender.py** 的脚本。此脚本将向事件中心发送 200 个事件。它们是以 JSON 格式发送的简单环境读数。
 
-3.  将以下代码粘贴到 sender.py 中：
+3. 将以下代码粘贴到 sender.py 中：
                 
         import uuid
         import datetime
@@ -141,9 +141,9 @@
         pip install azure-servicebus
         pip install avro
 
-如果使用的是早期版本的 Azure 存储或 Azure，可能需要使用 **-upgrade** 选项
+    如果使用的是早期版本的 Azure 存储或 Azure，可能需要使用 **-upgrade** 选项
 
-还可能需要运行以下命令（在大多数系统上不必要）： 
+    还可能需要运行以下命令（在大多数系统上不必要）： 
 
         pip install cryptography
 
