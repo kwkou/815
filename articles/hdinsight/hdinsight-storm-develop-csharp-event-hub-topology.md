@@ -85,12 +85,12 @@ Spout 和 Bolt 以名为 **eventhubs-storm-spout-#.#-jar-with-dependencies.jar**
 
 4. 选择“配置”，然后使用以下信息创建两个新的访问策略。
 
-   | 名称 | 权限 | 
-   | --- | --- | 
-   | 写入者 | 发送 | 
-   | 读者 | 侦听 |
+    | 名称 | 权限 | 
+    | --- | --- | 
+    | 写入者 | 发送 | 
+    | 读者 | 侦听 |
    
-    After You create the permissions, select the **Save** icon at the bottom of the page. This creates the shared access policies that will be used to send (writer) and listen (reader) to this Event Hub.
+    创建权限后，点击页面底部的“保存”图标。这样就创建了共享访问策略，然后便能发送（写入者）和倾听（读者）这个事件中心。
 
     ![policies](./media/hdinsight-storm-develop-csharp-event-hub-topology/policy.png)
 

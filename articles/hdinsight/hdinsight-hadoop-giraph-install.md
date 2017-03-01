@@ -108,7 +108,7 @@
         Write-Host "Display the standard output ..." -ForegroundColor Green
         Get-AzureHDInsightJobOutput -Cluster $clusterName -JobId $job.JobId -StandardOutput
 
-在上面的示例中，请将 **clustername** 替换为已装有 Giraph 的 HDInsight 群集的名称。
+    在上面的示例中，请将 **clustername** 替换为已装有 Giraph 的 HDInsight 群集的名称。
 3. 查看结果。完成该作业后，结果将存储在 **wasbs:///example/out/shotestpaths** 文件夹中的两个输出文件中。这些文件名为 **part-m-00001** 和 **part-m-00002**。执行以下步骤以下载和查看输出：
 
         $subscriptionName = "<SubscriptionName>"       # Azure subscription name

@@ -80,7 +80,7 @@ Storm 0.10.0 或更高版本中提供了 Flux 框架。HDInsight 3.3 随附了 S
 
 Maven 允许定义项目级的值，称为属性。在 `<url>http://maven.apache.org</url>` 行的后面添加以下内容：
 
-    <properties>
+    <Properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <!--
         Storm 0.10.0 is for HDInsight 3.3.
@@ -88,7 +88,7 @@ Maven 允许定义项目级的值，称为属性。在 `<url>http://maven.apache
         versions, see /documentation/articles/hdinsight-component-versioning-v1/
         -->
         <storm.version>0.10.0</storm.version>
-    </properties>
+    </Properties>
 
 现在，可以在其他部分中使用这些值。例如，在指定 Storm 组件的版本时，可以使用 `${storm.version}` 而无需将值硬编码。
 

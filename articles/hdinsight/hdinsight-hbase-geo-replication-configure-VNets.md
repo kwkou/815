@@ -222,9 +222,9 @@ VNet 网关使用共享密钥对虚拟网络之间的连接进行身份验证。
 
 [hdinsight-hbase-dns]: /documentation/articles/hdinsight-hbase-geo-replication-configure-DNS/
 
-[img-vnet-diagram]: ./media/hdinsight-hbase-geo-replication-configure-vnets/hdinsight-hbase-vpn-diagram.png
-[img-vnet-lnet-diagram]: ./media/hdinsight-hbase-geo-replication-configure-vnets/hdinsight-hbase-vpn-lnet-diagram.png
-[img-vpn-status]: ./media/hdinsight-hbase-geo-replication-configure-vnets/hdinsight-hbase-vpn-status.png
+[img-vnet-diagram]: ./media/hdinsight-hbase-geo-replication-configure-VNets/hdinsight-hbase-vpn-diagram.png
+[img-vnet-lnet-diagram]: ./media/hdinsight-hbase-geo-replication-configure-VNets/hdinsight-hbase-vpn-lnet-diagram.png
+[img-vpn-status]: ./media/hdinsight-hbase-geo-replication-configure-VNets/hdinsight-hbase-vpn-status.png
 
 <!---HONumber=Mooncake_0120_2017-->
 <!--Update_Description: update meta properties & wording update-->

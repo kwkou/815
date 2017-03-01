@@ -175,7 +175,7 @@ SerDe 是用于分析嵌套 JSON 文档的最佳选择，不但可定义 JSON �
 
 6. 在 hive 提示符下，键入“add jar /path/to/json-serde-1.1.9.9-Hive13-jar-with-dependencies.jar”。在此示例中，由于 jar 在 C:\\apps\\dist\\hive-0.13.x\\bin 文件夹中，因此可以直接添加名称如下的 jar：
 
-    add jar json-serde-1.1.9.9-Hive13-jar-with-dependencies.jar；
+        add jar json-serde-1.1.9.9-Hive13-jar-with-dependencies.jar；
 
     ![将 JAR 添加到项目][image-hdi-hivejson-addjar]  
 
