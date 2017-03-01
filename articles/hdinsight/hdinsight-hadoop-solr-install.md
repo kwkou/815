@@ -15,9 +15,9 @@
 
 # 在 HDInsight Hadoop 群集上安装并使用 Solr
 
-了解如何使用 Solr 通过脚本操作自定义基于 Windows 的 HDInsight 群集，以及如何使用 Solr 搜索数据。
+了解如何使用 Solr 通过脚本操作自定义基于 Windows 的 HDInsight 群集，以及如何使用 Solr 搜索数据。有关在基于 Linux 的群集中使用 Solr 的信息，请参阅[在 HDInsight Hadoop 群集 (Linux) 上安装和使用 Solr](/documentation/articles/hdinsight-hadoop-solr-install-linux/)。
  
-你可以使用*脚本操作*，在 Azure HDInsight 的任何群集类型（Hadoop、Storm、HBase）上安装 Solr。用于在 HDInsight 群集上安装 Solr 的示例脚本可通过 [https://hdiconfigactions.blob.core.windows.net/solrconfigactionv01/solr-installer-v01.ps1](https://hdiconfigactions.blob.core.windows.net/solrconfigactionv01/solr-installer-v01.ps1) 上的只读 Azure 存储 Blob 获得。
+你可以使用*脚本操作*，在 Azure HDInsight 的任何群集类型（Hadoop、Storm、HBase、Spark）上安装 Solr。用于在 HDInsight 群集上安装 Solr 的示例脚本可通过 [https://hdiconfigactions.blob.core.windows.net/solrconfigactionv01/solr-installer-v01.ps1](https://hdiconfigactions.blob.core.windows.net/solrconfigactionv01/solr-installer-v01.ps1) 上的只读 Azure 存储 Blob 获得。
 
 示例脚本仅适用于 HDInsight 群集版本 3.1。有关 HDInsight 群集版本的详细信息，请参阅 [HDInsight 群集版本](/documentation/articles/hdinsight-component-versioning/)。
 
@@ -25,6 +25,7 @@
 
 **相关文章**
 
+- [在 HDInsight Hadoop 群集 (Linux) 上安装和使用 Solr](/documentation/articles/hdinsight-hadoop-solr-install-linux/)
 - [在 HDInsight 中创建 Hadoop 群集](/documentation/articles/hdinsight-provision-clusters/)：有关创建 HDInsight 群集的一般信息。
 - [使用脚本操作自定义 HDInsight 群集][hdinsight-cluster-customize]：有关使用脚本操作自定义 HDInsight 群集的一般信息。
 - [为 HDInsight 开发脚本操作脚本](/documentation/articles/hdinsight-hadoop-script-actions/)。
@@ -176,6 +177,7 @@
 
 ## 另请参阅
 
+- [在 HDInsight Hadoop 群集 (Linux) 上安装和使用 Solr](/documentation/articles/hdinsight-hadoop-solr-install-linux/)
 - [在 HDInsight 中创建 Hadoop 群集](/documentation/articles/hdinsight-provision-clusters/)：有关创建 HDInsight 群集的一般信息。
 - [使用脚本操作自定义 HDInsight 群集][hdinsight-cluster-customize]：有关使用脚本操作自定义 HDInsight 群集的一般信息。
 - [为 HDInsight 开发脚本操作脚本](/documentation/articles/hdinsight-hadoop-script-actions/)。

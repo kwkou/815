@@ -43,7 +43,7 @@ Azure PowerShell 是一个功能强大的脚本编写环境，可用于在 Azure
 若要卸载旧版本，请运行控制面板中的“程序和功能”。
 
 ## 创建群集
-请参阅[使用 Azure PowerShell 在 HDInsight 中创建基于 Windows 的群集](/documentation/articles/hdinsight-hadoop-create-windows-clusters-powershell/)
+请参阅[使用 Azure PowerShell 在 HDInsight 中创建基于 Linux 的群集](/documentation/articles/hdinsight-hadoop-create-linux-clusters-azure-powershell/)
 
 ## 列出群集
 使用以下命令可列出当前订阅中的所有群集：
@@ -68,7 +68,7 @@ Azure PowerShell 是一个功能强大的脚本编写环境，可用于在 Azure
 使用群集缩放功能，可更改 Azure HDInsight 中运行的群集使用的辅助节点数，而无需重新创建群集。
 
 > [AZURE.NOTE]
-只支持使用 HDInsight 3.1.3 或更高版本的群集。如果不确定群集的版本，可以查看“属性”页面。请参阅[列出并显示群集](/documentation/articles/hdinsight-administer-use-management-portal/#list-and-show-clusters)。
+只支持使用 HDInsight 3.1.3 或更高版本的群集。如果不确定群集的版本，可以查看“属性”页面。请参阅[列出并显示群集](/documentation/articles/hdinsight-administer-use-portal-linux/#list-and-show-clusters)。
 > 
 > 
 
@@ -117,6 +117,7 @@ HDInsight 群集提供以下 HTTP Web 服务（所有这些服务都有 REST 样
 
 * ODBC
 * JDBC
+* Ambari
 * Oozie
 * Templeton
 
@@ -206,7 +207,7 @@ HDInsight 群集提供以下 HTTP Web 服务（所有这些服务都有 REST 样
 [azure-member-offers]: /pricing/member-offers/
 [azure-trial]: /pricing/1rmb-trial/
 
-[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows/
+[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-linux-tutorial-get-started/
 [hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters/
 [hdinsight-provision-custom-options]: /documentation/articles/hdinsight-provision-clusters/#configuration
 [hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically/

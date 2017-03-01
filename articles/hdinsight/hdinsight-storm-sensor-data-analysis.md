@@ -5,8 +5,7 @@
     documentationcenter=""
     author="Blackmist"
     manager="jhubbard"
-    editor="cgronlun" />  
-
+    editor="cgronlun" />
 <tags
     ms.assetid="a9a1ac8e-5708-4833-b965-e453815e671f"
     ms.service="hdinsight"
@@ -20,23 +19,42 @@
 
 
 # 使用 Apache Storm、事件中心和 HDInsight 中的 HBase (Hadoop) 分析传感器数据
+了解如何使用 Apache Storm on HDInsight 处理来自 Azure 事件中心的传感器数据，将这些数据存储到 Apache HBase on HDInsight 中，然后使用作为 Azure Web 应用运行的 D3.js 来可视化这些数据。
 
-了解如何使用 Apache Storm on HDInsight 处理来自 Azure 事件中心的传感器数据，然后使用 D3.js 来可视化这些数据。本文档还将介绍如何使用 Azure 虚拟网络来连接 Storm on HDInsight 和 HBase on HDInsight，然后将拓扑中的数据存储到 HBase。
+在本文档中使用的 Azure Resource Manager 模板演示了如何在资源组中创建多个 Azure 资源。具体说来，它将创建一个 Azure 虚拟网络、两个 HDInsight 群集（Storm 和 HBase）以及一个 Azure Web 应用。node.js 所实现的实时 Web 仪表板将自动部署到 Web 应用。
+
+[AZURE.INCLUDE [hdinsight-linux-acn-version.md](../../includes/hdinsight-linux-acn-version.md)]
+
+> [AZURE.NOTE]
+本文档中的信息以及提供的示例已使用基于 Linux 的 HDInsight 3.3 和 3.4 群集版本测试过。
+><p>
+> Linux 是在 HDInsight 3.4 或更高版本上使用的唯一操作系统。有关详细信息，请参阅 [HDInsight 在 Windows 上弃用](/documentation/articles/hdinsight-component-versioning/#hdi-version-32-and-33-nearing-deprecation-date)。
 
 ## 先决条件
 * Azure 订阅。请参阅[获取 Azure 试用版](/pricing/1rmb-trial/)。
-
-* 一个 [Apache Storm on HDInsight 群集](/documentation/articles/hdinsight-apache-storm-tutorial-get-started/)
-
-* [Node.js](http://nodejs.org/)：用于 Web 仪表板，以及将传感器数据发送到事件中心。
-
-* [Java 和 JDK 1.7](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
-
-* [Maven](http://maven.apache.org/what-is-maven.html)
-
-* [Git](http://git-scm.com/)
-
-> [AZURE.NOTE] Java、JDK、Maven 和 Git 也可通过 [Chocolatey NuGet](http://chocolatey.org/) 包管理器获得。
+  
+    > [AZURE.IMPORTANT]
+    不需要现有的 HDInsight 群集；本文档中的步骤将创建以下资源：
+    > <p>
+    ><p> * 一个 Azure 虚拟网络
+    ><p> * 一个 Storm on HDInsight 群集（基于 Linux，2 个辅助角色节点）
+    ><p> * 一个 HBase on HDInsight 群集（基于 Linux，2 个辅助角色节点）
+    ><p> * 一个 Azure Web 应用，用于托管 Web 仪表板
+    > 
+    > 
+* [Node.js](http://nodejs.org/)：用于在开发环境中以本地方式预览 Web 仪表板。
+* [Java 和 JDK 1.7](http://www.oracle.com/technetwork/java/javase/downloads/index.html)：用于开发 Storm 拓扑。
+* [Maven](http://maven.apache.org/what-is-maven.html)：用于生成和编译项目。
+* [Git](http://git-scm.com/)：用于从 GitHub 下载项目。
+* **SSH** 客户端：用于连接到基于 Linux 的 HDInsight 群集。有关如何将 SSH 与 HDInsight 配合使用的详细信息，请参阅以下文档。
+  
+    * [Use SSH with HDInsight from Windows clients（在 Windows 客户端中将 SSH 与 HDInsight 配合使用）](/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows/)
+    * [在 Linux、Unix 或 Mac 客户端中将 SSH 与 HDInsight 配合使用](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix/)
+    
+    > [AZURE.NOTE]
+    用户还必须有权访问 `scp` 命令，该命令用于通过 SSH 在本地开发环境和 HDInsight 群集之间复制文件。
+    > 
+    > 
 
 ## 体系结构
 ![体系结构示意图](./media/hdinsight-storm-sensor-data-analysis/devicesarchitecture.png)  
@@ -49,20 +67,27 @@
 * **HBase on HDInsight**：由 Storm 处理数据后为数据提供持久性 NoSQL 数据存储。
 * **Azure 虚拟网络服务**：在 Storm on HDInsight 和 HBase on HDInsight 群集之间启用安全通信。
   
+    > [AZURE.NOTE]
+    若要使用 Java HBase 客户端 API，必须使用虚拟网络，因为该 API 不是通过 HBase 群集的公共网关公开的。将 HBase 和 Storm 群集安装到同一虚拟网络以后，Storm 群集（或虚拟网络上的任何其他系统）即可使用客户端 API 直接访问 HBase。
+    > 
+    > 
 * **仪表板网站**：实时绘制数据图表的示例仪表板。
   
-  * 该网站在 Node.js 中实现，因此它可以在用于测试的任何客户端操作系统上运行，或者可以部署到 Azure 网站。
-  * [Socket.io](http://socket.io/) 用于 Storm 拓扑和网站之间的实时通信。
+    * 该网站在 Node.js 中实现，因此它可以在用于测试的任何客户端操作系统上运行，或者可以部署到 Azure 网站。
+    * [Socket.io](http://socket.io/) 用于 Storm 拓扑和网站之间的实时通信。
     
-    > [AZURE.NOTE]
-    这是实现详细信息。你可以使用任何通信框架，例如原始 WebSockets 或 SignalR。
-    > 
-    > 
-  * [D3.js](http://d3js.org/) 用于绘制发送到网站的数据的图表。
+        > [AZURE.NOTE]
+        这是实现详细信息。你可以使用任何通信框架，例如原始 WebSockets 或 SignalR。
+        > 
+        > 
+    * [D3.js](http://d3js.org/) 用于绘制发送到网站的数据的图表。
 
-拓扑中使用从事件中心读取数据 **com.microsoft.eventhubs.spout.EventHubSpout** 类，该类在 Storm on HDInsight 群集中提供。与网站的通信可通过使用 [socket.io client.java](https://github.com/nkzawa/socket.io-client.java) 来实现。
+> [AZURE.IMPORTANT]
+需要两个群集，因为没有方法可以创建一个同时适用于 Storm 和 HBase 的 HDInsight 群集。
+> 
+> 
 
-或者，可以使用 Storm 随附的 org.apache.storm.hbase.bolt.HBaseBolt 来实现与 HBase 的通信。
+拓扑使用 [org.apache.storm.eventhubs.spout.EventHubSpout](http://storm.apache.org/releases/0.10.1/javadocs/org/apache/storm/eventhubs/spout/class-use/EventHubSpout.html) 类从事件中心读取数据，使用 [org.apache.storm.hbase.bolt.HBaseBolt](https://storm.apache.org/javadoc/apidocs/org/apache/storm/hbase/bolt/class-use/HBaseBolt.html) 类将数据写入 HBase 中。与网站的通信可通过使用 [socket.io client.java](https://github.com/nkzawa/socket.io-client.java) 来实现。
 
 下面是拓扑图。
 
@@ -72,13 +97,18 @@
 > [AZURE.NOTE]
 这是一个非常简单的拓扑视图。在运行时，每个组件的实例为每个分区创建事件中心所读取。这些实例分布在群集中，节点和数据在它们之间路由，如下所示：
 ><p> 
-><p> * 从 spout 到分析器的数据已经过负载均衡。<p> * 从分析器到仪表板和 HBase 的数据已按设备 ID 分组，因此来自同一设备的消息始终流向同一组件。
+><p> * 从 spout 到分析器的数据已经过负载均衡。
+<p> * 从分析器到仪表板和 HBase 的数据已按设备 ID 分组，因此来自同一设备的消息始终流向同一组件。
 > 
 > 
 
 ### 拓扑组件
-* **事件中心 Spout**：GitHub 上的 [HDInsight Storm 示例](https://github.com/hdinsight/hdinsight-storm-examples)随附了 spout。
-
+* **EventHub Spout**：此 Spout 作为 Apache Storm 0.10.0 及更高版本的一部分提供。
+  
+    > [AZURE.NOTE]
+    此示例中使用的事件中心 Spout 需要 Storm on HDInsight 群集版本 3.3 或 3.4。有关如何将事件中心与旧版 Storm on HDInsight 配合使用的信息，请参阅[使用 Storm on HDInsight 从 Azure 事件中心处理事件](/documentation/articles/hdinsight-storm-develop-java-event-hub-topology/)。
+    > 
+    > 
 * **ParserBolt.java**：spout 发出的数据是原始的 JSON，有时每次会发出多个事件。此 bolt 演示如何读取 spout 发出的数据，并将它作为包含多个字段的元组形式发送到新流。
 * **DashboardBolt.java**：演示如何使用 Java 的 Socket.io 客户端库将数据实时发送到 Web 仪表板。
 
@@ -88,58 +118,30 @@
 * **with-hbase.yaml** - 将拓扑部署到 Storm 群集时使用此文件。它使用 HBase 组件，因为它在与 HBase 群集相同的虚拟网络中运行。
 
 ## 准备环境
-
-在使用本示例之前，必须创建要由 Storm 读取的 Azure 事件中心。你还必须创建 Storm on HDInsight 拓扑，从事件中心读取数据的组件只在群集中可用。
-
-> [AZURE.NOTE] 最终，事件中心 spout 将从 Maven 提供。
+在使用本示例之前，必须创建由 Storm 拓扑读取的 Azure 事件中心。
 
 ### 配置事件中心
 事件中心是此示例的数据源。按照下列步骤创建一个新的事件中心。
 
-1. 在 [Azure 经典管理门户](https://manage.windowsazure.cn)中选择**“新建”| Service Bus | Event Hub | Custom Create**.
-
-2. 在“添加新事件中心”对话框中，输入“事件中心名称”，选择要在其中创建中心的“区域”，然后创建新的命名空间或选择现有的命名空间。最后，单击箭头以继续。
-
-2. 在“配置事件中心”对话框中，输入“分区计数”和“消息保留期”值。对于本示例，请使用分区计数 10，消息保留期 1。
-
-3. 创建事件中心后，选择命名空间，然后选择“事件中心”。最后，选择前面创建的事件中心。
-
-4. 选择“配置”，然后使用以下信息创建两个新的访问策略。
+1. 在 [Azure 门户预览](https://portal.azure.cn)中，选择“+ 新建”->“物联网”->“事件中心”。
+2. 在“创建命名空间”边栏选项卡上，执行以下任务：
+   
+    1. 输入该命名空间的“名称”。
+    2. 选择定价层。“基本”对于本示例来说已足够。
+    3. 选择要使用的 Azure“订阅”。
+    4. 选择现有的资源组或创建新资源组。
+    5. 选择事件中心的“位置”。
+    6. 选择“固定到仪表板”，然后单击“创建”。
+3. 创建过程完成后，将显示命名空间的“事件中心”边栏选项卡。在此处选择“+ 添加事件中心”。在“创建事件中心”边栏选项卡上，输入名称“sensordata”，然后选择“创建”。将其他字段保留默认值。
+4. 在命名空间的“事件中心”边栏选项卡中，选择“事件中心”。选择“sensordata”条目。
+5. 在 sensordata 事件中心的边栏选项卡中，选择“共享访问策略”。使用“+ 添加”链接添加以下策略：
 
     | 策略名称 | 声明 |
     | ----- | ----- |
     | devices | 发送 |
     | storm | 侦听 |
 
-    创建权限后，在页面底部选择“保存”图标。这将创建共享的访问策略，该策略将用于向此中心发送消息以及从中读取消息。
-
-5. 保存策略后，使用页面底部的“共享访问密钥生成器”检索设备和 storm 策略的密钥。保存这些密钥，因为稍后将要用到。
-
-### 创建 Storm on HDInsight 群集
-
-1. 登录 [Azure 经典管理门户](https://manage.windowsazure.cn/)。
-
-2. 在左窗格中单击“HDInsight”，然后单击页面左下角的“+新建”。
-
-3. 单击第二列中的 HDInsight 图标，然后选择“自定义”。
-
-4. 在“群集详细信息”页上，输入新群集的名称，然后选择“Storm”作为“群集类型”。单击箭头继续。
-
-5. 输入 1 作为用于此群集的“数据节点”数量。
-
-    > [AZURE.NOTE] 为了最大程度减少本文所用群集的成本，请将“群集大小”减至 1，并在群集使用完后删除群集。
-
-6. 输入管理员“用户名”和“密码”，然后单击箭头继续。
-
-4. 对于“存储帐户”，请选择“创建新存储”或选择已有的存储帐户。选择或输入要使用的“帐户名称”和“默认容器”。选择左下角复选标记图标以创建 Storm 群集。
-
-## 下载并安装 EventHubSpout
-
-1. 下载 [HDInsight Storm 示例项目](https://github.com/hdinsight/hdinsight-storm-examples/)。下载后，找到 **lib/eventhubs/eventhubs-storm-spout-0.9-jar-with-dependencies.jar** 文件。
-
-2. 在命令提示符下，使用以下命令将 **eventhubs-storm-spout-0.9-jar-with-dependencies.jar** 文件安装到本地 Maven 存储。这样，你便可以在稍后的步骤中轻松地将其作为一个引用添加到 Storm 项目中。
-
-        mvn install:install-file -Dfile=target/eventhubs-storm-spout-0.9-jar-with-dependencies.jar -DgroupId=com.microsoft.eventhubs -DartifactId=eventhubs-storm-spout -Dversion=0.9 -Dpackaging=jar
+1. 选择这两个策略，记下“PRIMARY KEY”值。在将来的步骤中需要这两个策略的值。
 
 ## 下载并配置项目
 使用以下命令从 GitHub 中下载项目。
@@ -176,19 +178,15 @@
 > 
 > 
 
- 在添加此信息后，请保存该文件。
-
-
-
-    ## if not provided, will use storm's zookeeper settings
-    ## zookeeper.connectionstring=localhost:2181
-
-    eventhubspout.checkpoint.interval = 10
-
-    eventhub.receiver.credits = 1024
+在添加此信息后，请保存该文件。
 
 ## 编译并在本地测试
 测试之前，必须启动仪表板以查看拓扑的输出，并生成要在事件中心中存储的数据。
+
+> [AZURE.IMPORTANT]
+在本地进行测试时，此拓扑的 HBase 组件不处于活动状态，因为 HBase 群集的 Java API 无法从包含群集的 Azure 虚拟网络外部访问。
+> 
+> 
 
 ### 启动 Web 应用程序
 1. 打开新的命令提示符或终端，并将目录更改为 将目录更改为 **hdinsight-eventhub-example/dashboard**，并使用以下命令安装 Web 应用程序所需的依赖项：
@@ -205,6 +203,7 @@
    
     ![Web 仪表板](./media/hdinsight-storm-sensor-data-analysis/emptydashboard.png)  
 
+   
     将此命令提示符或终端保持打开状态。测试完成后，使用 Ctrl-C 停止 Web 服务器。
 
 ### 开始生成数据
@@ -226,10 +225,10 @@
         var my_key_name = 'devices';
         var my_key = 'YourKey';
    
-   > [AZURE.NOTE]
-   此示例假定已使用 **sensordata** 作为事件中心的名称并已使用**devices** 作为具有 **Send** 声明的策略的名称。
-   > 
-   > 
+    > [AZURE.NOTE]
+    此示例假定已使用 **sensordata** 作为事件中心的名称并已使用**devices** 作为具有 **Send** 声明的策略的名称。
+    > 
+    > 
 3. 使用以下命令在事件中心插入新条目：
    
         node app.js
@@ -266,165 +265,238 @@
     这会在本地模式下启动 **no-hbase.yaml** 文件中定义的拓扑。**dev.properties** 文件中包含的值提供事件中心的连接信息。启动后，拓扑会从事件中心读取条目，然后将它们发送到在本地计算机上运行的仪表板。你应看到各行显示在 Web 仪表板中，如下所示：
    
     ![包含数据的仪表板](./media/hdinsight-storm-sensor-data-analysis/datadashboard.png)  
-3. 当仪表板正在运行时，使用前面步骤中的 `node app.js` 命令将新数据发送到仪表板。由于温度值是随机生成的，因此图表应会更新以显示新值。
+
+2. 当仪表板正在运行时，使用前面步骤中的 `node app.js` 命令将新数据发送到事件中心。由于温度值是随机生成的，因此图表应进行更新，以显示温度的较大变化。
+   
+    > [AZURE.NOTE]
+    使用 `node app.js` 命令时，必须位于 **hdinsight-eventhub-example/SendEvents/Nodejs** 目录中。
+    > 
+    > 
+3. 验证其运行情况后，使用 Ctrl+C 停止拓扑。也可以使用 Ctrl+C 停止本地 Web 服务器。
+
+## 创建 Storm 和 HBase 群集
+为了在 HDInsight 上运行拓扑并启用 HBase Bolt，必须创建新的 Storm 群集和 HBase 群集。此部分的步骤使用 [Azure Resource Manager 模板](/documentation/articles/resource-group-template-deploy/)创建新的 Azure 虚拟网络以及该虚拟网络上的 Storm 和 HBase 群集。该模板还创建 Azure Web 应用并将仪表板的副本部署到其中。
+
+> [AZURE.NOTE]
+使用虚拟网络，以便运行在 Storm 群集上的拓扑能够直接使用 HBase Java API 与 HBase 群集通信。
+> 
+> 
+
+本文档所使用的 Resource Manager 模板位于 **https://hditutorialdata.blob.core.windows.net/armtemplates/create-linux-based-hbase-storm-cluster-in-vnet.json** 的公共 Blob 容器中。
+
+1. 单击以下按钮登录到 Azure，然后在 Azure 门户预览中打开 Resource Manager 模板。
+   
+    <a href="https://portal.azure.cn/#create/Microsoft.Template/uri/https%3A%2F%2Fhditutorialdata.blob.core.windows.net%2Farmtemplates%2Fcreate-linux-based-hbase-storm-cluster-in-vnet.json" target="_blank"><img src="./media/hdinsight-storm-sensor-data-analysis/deploy-to-azure.png" alt="Deploy to Azure"></a>
+
+    >[AZURE.NOTE] 必须修改从 GitHub 存储库“azure-quickstart-templates”下载的模板，以适应 Azure 中国云环境。例如，替换某些终结点（将“blob.core.windows.net”替换为“blob.core.chinacloudapi.cn”，将“cloudapp.azure.com”替换为“chinacloudapp.cn”）；把允许的地域改成“China North”和“China East”；把 HDInsight Linux 版本改为 Azure 中国所支持的 3.5。
+
+2. 在“参数”边栏选项卡中，输入以下内容：
+   
+    ![HDInsight 参数](./media/hdinsight-storm-sensor-data-analysis/parameters.png)  
+
+   
+    * **BASECLUSTERNAME**：此值将用作 Storm 和 HBase 群集的基名称。例如，输入 **hdi** 会创建名为 **storm-hdi** 的 Storm 群集，以及名为 **hbase-hdi** 的 HBase 群集。
+    * **CLUSTERLOGINUSERNAME**：Storm 和 HBase 群集的管理员用户名。
+    * **CLUSTERLOGINPASSWORD**：Storm 和 HBase 群集的管理员用户名。
+    * **SSHUSERNAME**：要为 Storm 和 HBase 群集创建的 SSH 用户。
+    * **SSHPASSWORD**：Storm 和 HBase 群集的 SSH 用户的密码。
+    * **LOCATION**：要在其中创建群集的区域。
+     
+    单击**确定**以保存参数。
+3. 使用“资源组”部分创建新资源组或选择现有的资源组。
+4. 在“资源组位置”下拉菜单中选择一个位置，该位置与为 **LOCATION** 参数选择的位置相同。
+5. 选择“法律条款”，然后选择“创建”。
+6. 最后，选中“固定到仪表板”并选择“创建”。创建群集大约会需要 20 分钟时间。
+
+创建资源后，将重定向到包含群集和 Web 仪表板的资源组的边栏选项卡。
+
+![VNet 和群集的资源组边栏选项卡](./media/hdinsight-storm-sensor-data-analysis/groupblade.png)  
 
 
+> [AZURE.IMPORTANT]
+请注意，HDInsight 群集的名称为 **storm-BASENAME** 和 **hbase-BASENAME**，其中，BASENAME 是为模板提供的名称。在后续步骤中连接到群集时，将用到这些名称。另请注意，仪表板站点的名称是 **basename-dashboard**。以后在查看仪表板时会用到该名称。
+> 
+> 
 
-## 打包拓扑并将其部署到 HDInsight 中
+## 配置仪表板 Bolt
+若要将数据发送到部署为 Web 应用的仪表板，必须修改 **dev.properties** 文件中的以下行：
 
-在你的开发环境中，按照以下步骤在你的 HDInsight Storm 群集中执行“Temperature”拓扑。
+    dashboard.uri: http://localhost:3000
 
-### 发布网站仪表板
+将 `http://localhost:3000` 更改为 `http://BASENAME-dashboard.chinacloudsites.cn`，然后保存文件。将 **BASENAME** 替换为在上一步提供的基名称。还可以通过以前创建的资源组选择仪表板并查看 URL。
 
-1. 若要将仪表板部署到 Azure 网站，请遵循[构建 Node.js 网站并将其部署到 Azure](/documentation/articles/web-sites-nodejs-develop-deploy-mac/) 中的步骤。记下网站的 URL，它类似于 **mywebsite.chinacloudsites.cn**。
+## 创建 HBase 表
+若要将数据存储在 HBase 中，必须先创建表。通常需预先创建供 Storm 将内容写入到其中的资源，因为如果尝试从 Storm 拓扑内部创建资源，则代码的多个分布式副本会尝试创建同一资源。在拓扑外部创建资源，只使用 Storm 进行读取/写入和分析。
 
-2. 创建网站后，转到 Azure 经典管理门户中的站点，然后选择“配置”选项卡。启用“Web 套接字”，然后在页面底部单击“保存”。
+1. 使用你在创建群集期间提供给模板的 SSH 用户和密码，通过 SSH 连接到 HBase 群集。例如，如果使用 `ssh` 命令进行连接，将使用以下语法：
+   
+        ssh USERNAME@hbase-BASENAME-ssh.azurehdinsight.cn
+   
+    在该命令中，将 **USERNAME** 替换为创建群集时提供的 SSH 用户名，将 **BASENAME** 替换为所提供的基名称。出现提示时，请输入 SSH 用户的密码。
+2. 从 SSH 会话中启动 HBase Shell。
+   
+        hbase shell
+   
+    在 Shell 加载后，将会显示 `hbase(main):001:0>` 提示符。
+3. 从 HBase Shell 中，输入以下命令以创建存储传感器数据的表。
+   
+        create 'SensorData', 'cf'
+4. 使用以下命令验证是否已创建该表：
+   
+        scan 'SensorData'
+   
+    此时会返回类似于以下示例的信息，指示表中有 0 行。
+   
+        ROW                   COLUMN+CELL                                       0 row(s) in 0.1900 seconds
+5. 输入以下命令，退出 HBase Shell：
+   
+        exit
 
-2. 打开 **hdinsight-eventhub-example\\TemperatureMonitor\\src\\main\\java\\com\\microsoft\\examples\\bolts\\DashboardBolt.java** 并将以下行更改为指向已发布仪表板的 URL：
+## 配置 HBase Bolt
+若要将内容从 Storm 群集写入 HBase，必须为 HBase Bolt 提供 HBase 群集的配置详细信息。若要执行此操作，最简单的方法是从群集下载 **hbase-site.xml** 并将其包括在项目中。此外还必须取消注释 **pom.xml** 文件中的多个依赖项，这些依赖项加载 storm-hbase 组件和必需依赖项。
 
-        socket = IO.socket("http://mywebsite.chinacloudsites.cn");
+> [AZURE.IMPORTANT]
+还必须下载在 Storm on HDInsight 3.3 或 3.4 群集上提供的 storm-hbase.jar 文件；此版本经编译后兼容 HBase 1.1.x，后者可用于 HBase on HDInsight 3.3 和 3.4 群集。如果从其他位置使用 storm-hbase 组件，则可针对旧版 HBase 对其进行编译。
+> 
+> 
 
-3. 保存 **DashboardBolt.java** 文件。
+### 下载 hbase-site.xml
+在命令提示符处，使用 SCP 从群集下载 **hbase-site.xml** 文件。在以下示例中，将 **USERNAME** 替换为创建群集时提供的 SSH 用户，将 **BASENAME** 替换为此前提供的基名称。出现提示时，请输入 SSH 用户的密码。将 `/path/to/TemperatureMonitor/resources/hbase-site.xml` 替换为此文件在 TemperatureMonitor 项目中的路径。
 
-### 打包并部署拓扑
+    scp USERNAME@hbase-BASENAME-ssh.azurehdinsight.cn:/etc/hbase/conf/hbase-site.xml /path/to/TemperatureMonitor/resources/hbase-site.xml
 
-1. 使用以下命令从你的项目中创建一个 JAR 程序包：
+此时会将 **hbase-site.xml** 下载到指定路径。
 
-        mvn package
+### 下载并安装 storm-hbase 组件
+1. 在命令提示符处，使用 SCP 从 Storm 群集下载 **storm-hbase.jar** 文件。在以下示例中，将 **USERNAME** 替换为创建群集时提供的 SSH 用户，将 **BASENAME** 替换为此前提供的基名称。出现提示时，请输入 SSH 用户的密码。
+   
+        scp USERNAME@storm-BASENAME-ssh.azurehdinsight.cn:/usr/hdp/current/storm-client/contrib/storm-hbase/storm-hbase*.jar .
+   
+    此时会下载名为 `storm-hbase-####.jar` 的文件，其中 #### 是此群集的 Storm 的版本号。记下该版本号，因为此后会用到它。
+2. 使用以下命令，将该组件安装到开发环境中的本地 Maven 存储库。这样 Maven 就能在编译项目时找到包。将 **####** 替换为文件名中包含的版本号。
+   
+        mvn install:install-file -Dfile=storm-hbase-####.jar -DgroupId=org.apache.storm -DartifactId=storm-hbase -Dversion=#### -Dpackaging=jar
+   
+    如果使用的是 PowerShell，请使用以下命令：
+   
+        mvn install:install-file "-Dfile=storm-hbase-####.jar" "-DgroupId=org.apache.storm" "-DartifactId=storm-hbase" "-Dversion=####" "-Dpackaging=jar"
 
+### 启用项目中的 storm-hbase 组件
+1. 打开 **TemperatureMonitor/pom.xml** 文件并删除以下行：
+   
+        <!-- uncomment this section to enable the hbase-bolt
+        end comment for hbase-bolt section -->
+   
+    > [AZURE.IMPORTANT]
+    仅删除这两行；不要删除其间的任何行。
+    > 
+    > 
+   
+    这样会启用多个组件，这些组件在使用 hbase bolt 与 HBase 通信时是必需的。
+2. 找到以下行，然后将 **####** 替换为此前下载的 storm-hbase 文件的版本号。
+   
+        <dependency>
+            <groupId>org.apache.storm</groupId>
+            <artifactId>storm-hbase</artifactId>
+            <version>####</version>
+        </dependency>
+   
+    > [AZURE.IMPORTANT]
+    版本号必须与将组件安装到本地 Maven 存储库时使用的版本相符，因为 Maven 在生成项目时使用该信息加载组件。
+    > 
+    > 
+3. 保存 **pom.xml** 文件。
+
+## 生成解决方案，然后将其打包并部署到 HDInsight
+在开发环境中，按以下步骤将 Storm 拓扑部署到 Storm 群集。
+
+1. 在 **TemperatureMonitor** 目录中，使用以下命令在项目中执行新的生成操作并创建 JAR 包：
+   
+        mvn clean compile package
+   
     此操作将在项目的 **target** 目录中创建一个名为 **TemperatureMonitor-1.0-SNAPSHOT.jar** 的文件。
-
-2. 根据[部署和管理 Storm 拓扑](/documentation/articles/hdinsight-storm-deploy-monitor-topology/)中的步骤，在 Storm on HDInsight 群集上使用 **Storm 仪表板**上载和启动拓扑。
-
-3. 启动拓扑后，打开浏览器到 Azure 发布的网站，然后使用 `node app.js` 命令将数据发送到事件中心。你应该看到 Web 仪表板更新以显示信息。
-
+2. 使用 scp 将 **TemperatureMonitor-1.0-SNAPSHOT.jar** 文件上载到 Storm 群集。在以下示例中，将 **USERNAME** 替换为创建群集时提供的 SSH 用户，将 **BASENAME** 替换为此前提供的基名称。出现提示时，请输入 SSH 用户的密码。
+   
+        scp target\TemperatureMonitor-1.0-SNAPSHOT.jar USERNAME@storm-BASENAME-ssh.azurehdinsight.cn:TemperatureMonitor-1.0-SNAPSHOT.jar
+   
+    > [AZURE.NOTE]
+    上载文件可能需要几分钟的时间，因为文件大小有数 MB。
+    > 
+    > 
+   
+    使用 scp 上载 **dev.properties** 文件，因为其中包含用于连接到事件中心和仪表板的信息。
+   
+        scp dev.properties USERNAME@storm-BASENAME-ssh.azurehdinsight.cn:dev.properties
+3. 上载文件以后，使用 SSH 连接到群集。
+   
+        ssh USERNAME@storm-BASENAME-ssh.azurehdinsight.cn
+4. 在 SSH 会话中，使用以下命令启动拓扑。
+   
+        storm jar TemperatureMonitor-1.0-SNAPSHOT.jar org.apache.storm.flux.Flux --remote -R /with-hbase.yaml --filter dev.properties
+   
+    这将使用 **with-hbase.yaml** 文件中的拓扑定义以及 **dev.properties** 文件中的配置值启动拓扑。
+5. 启动拓扑后，打开浏览器到 Azure 发布的网站，然后使用 `node app.js` 命令将数据发送到事件中心。你应该看到 Web 仪表板更新以显示信息。
+   
     ![仪表板](./media/hdinsight-storm-sensor-data-analysis/datadashboard.png)  
 
 
-## 可选：使用 HBase
+## 查看 HBase 数据
+通过 `node app.js` 将数据提交到拓扑以后，请执行以下步骤，以便连接到 HBase 并确保数据已写入此前创建的表中。
 
-若要将 Storm 和 HBase 一起使用，必须创建 Azure 虚拟网络，并在该网络中创建 Storm 和 HBase 群集。
-
-### 创建 Azure 虚拟网络（可选）
-
-如果你打算对本示例使用 HBase，必须创建 Azure 虚拟网络并在其中包含 Storm on HDInsight 群集和 HBase on HDInsight 群集。
-
-1. 登录 [Azure 经典管理门户](https://manage.windowsazure.cn)。
-
-2. 在页面底部，单击“+新建”>“网络服务”>“虚拟网络”>“快速创建”。
-
-3. 键入或选择以下值：
-
-    - **名称**：虚拟网络的名称。
-
-    - **地址空间**：为虚拟网络提供大到足以为群集中的所有节点提供地址的地址空间。否则，设置将失败。
-
-    - **最大 VM 计数**：选择最大虚拟机计数之一。
-
-    - **位置**：该位置必须与要创建的 HBase 群集相同。
-
-    - **DNS 服务器**：本文使用 Azure 提供的内部 DNS 服务器，因此，你可以选择“无”。此外，也支持使用自定义 DNS 服务器的高级网络配置。有关详细指导，请参阅[名称解析 (DNS)](/documentation/articles/virtual-networks-name-resolution-for-vms-and-role-instances/)。
-
-4. 单击“创建虚拟网络”。新虚拟网络名称将显示在列表中。等到“状态”列显示“已创建”。
-
-5. 在主窗格中，单击刚创建的虚拟网络。
-
-6. 在页面顶部，单击“仪表板”。
-
-7. 在“速览”下，记住“虚拟网络 ID”。在设置 Storm 和 HBase 群集时将要用到它。
-
-8. 在页面顶部，单击“配置”。
-
-9. 在页面底部，默认子网名称为 **Subnet-1**。使用“添加子网”按钮添加 **Subnet-2**。Storm 和 HBase 群集将位于这些子网中。
-
-    > [AZURE.NOTE] 在本文中，我们将使用只有一个节点的群集。如果你创建的是多节点群集，你必须为用于群集的子网验证其 **CIDR（地址数）**。地址数必须大于辅助节点数加上七（网关：2，头节点：2，ZooKeeper：3）。例如，如果需要一个 10 节点 HBase 群集，子网的地址数必须大于 17 (10+7)。否则，部署将失败。<p>强烈建议为一个群集指定一个子网。
-
-11. 单击页面底部的“保存”。
-
-### 在虚拟网络中创建 Storm 和 HBase 群集
-
-1. 登录 [Azure 经典管理门户](https://manage.windowsazure.cn/)。
-
-2. 在左窗格中单击“HDInsight”，然后单击页面左下角的“+新建”。
-
-3. 单击第二列中的 HDInsight 图标，然后选择“自定义”。
-
-4. 在“群集详细信息”页上，输入新群集的名称，然后选择“Storm”作为“群集类型”。单击箭头继续。
-
-5. 输入 1 作为用于此群集的“数据节点”数量。对于“区域/虚拟网络”，请选择先前创建的 Azure 虚拟网络。对于“虚拟网络子网”，请选择“Subnet-1”。
-
-    > [AZURE.NOTE] 为了最大程度减少本文所用群集的成本，请将“群集大小”减至 1，并在群集使用完后删除群集。
-
-6. 输入管理员“用户名”和“密码”，然后单击箭头继续。
-
-4. 对于“存储帐户”，请选择“创建新存储”或选择已有的存储帐户。选择或输入要使用的“帐户名称”和“默认容器”。选择左下角复选标记图标以创建 Storm 群集。
-
-5. 重复上述步骤以创建新的 **HBase** 群集。下面是主要区别：
-
-    * **群集类型**：选择“HBase”
-
-    * **虚拟网络子网**：选择“Subnet-2”
-
-    * **存储帐户**：你应使用一个不同于 Storm 群集所用的容器。
-
-### 发现 HBase DNS 后缀
-
-为了从 Storm 群集写入 HBase，你必须为 HBase 群集使用完全限定域名 (FQDN)。使用以下命令发现此信息：
-
-    curl -u <username>:<password> -k https://<clustername>.azurehdinsight.cn/ambari/api/v1/clusters/<clustername>.azurehdinsight.cn/services/hbase/components/hbrest
-
-在返回的 JSON 数据中, 找到 **"host\_name"** 条目。其中包含群集中节点的 FQDN，例如：
-
-    ...
-    "host_name": "wordkernode0.<clustername>.b1.chinacloudapp.cn
-    ...
-
-域名称中以群集名称开头的部分是 DNS 后缀，例如 **mycluster.b1.chinacloudapp.cn**。
-
-### 启用 HBase bolt
-
-1. 打开 **hdinsight-eventhub-example\\TemperatureMonitor\\conf\\hbase-site.xml** 并将以下行中的 `suffix` 条目替换前面为 HBase 群集获取的 DNS 后缀。进行这些更改之后，保存该文件。
-
-        <value>zookeeper0.suffix,zookeeper1.suffix,zookeeper2.suffix</value>
-
-    这将用于通过 HBase bolt 与 HBase 群集通信。
-
-1. 在文本编辑器中打开 **hdinsight-eventhub-example\\TemperatureMonitor\\src\\main\\java\\com\\microsoft\\examples\\bolts**，通过删除开头的 `//` 取消注释以下行。进行此更改之后，保存该文件。
-
-
-
-
-### HBase 和 Storm 数据
-
-在运行拓扑之前，必须准备 HBase 接受数据。
-
-1. 使用远程桌面连接到 HBase 群集。
-
-2. 从桌面中启动 HDInsight 命令行并输入以下命令。
-
-        cd %HBASE_HOME%
-        bin\hbase shell
-
-3. 从 HBase Shell 中，输入以下命令以创建存储传感器数据的表。
-
-    create 'SensorData', 'cf'
-
-4. 通过输入以下命令验证表中不包含数据：
-
-    scan 'SensorData'
-
-在 Storm 群集上启动拓扑并已开始处理数据后，你可以再次使用 `scan 'SensorData'` 命令来验证数据是否已插入 HBase。
+1. 使用 SSH 连接到 HBase 群集。
+   
+        ssh USERNAME@hbase-BASENAME-ssh.azurehdinsight.cn
+2. 从 SSH 会话中启动 HBase Shell。
+   
+        hbase shell
+   
+    在 Shell 加载后，将会显示 `hbase(main):001:0>` 提示符。
+3. 查看表中的行：
+   
+        scan 'SensorData'
+   
+    此时会返回类似于以下内容的信息，指示表中有 0 行。
+   
+        hbase(main):002:0> scan 'SensorData'
+        ROW                             COLUMN+CELL
+        \x00\x00\x00\x00               column=cf:temperature, timestamp=1467290788277, value=\x00\x00\x00\x04
+        \x00\x00\x00\x00               column=cf:timestamp, timestamp=1467290788277, value=2015-02-10T14:43.05.00320Z
+        \x00\x00\x00\x01               column=cf:temperature, timestamp=1467290788348, value=\x00\x00\x00M
+        \x00\x00\x00\x01               column=cf:timestamp, timestamp=1467290788348, value=2015-02-10T14:43.05.00320Z
+        \x00\x00\x00\x02               column=cf:temperature, timestamp=1467290788268, value=\x00\x00\x00R
+        \x00\x00\x00\x02               column=cf:timestamp, timestamp=1467290788268, value=2015-02-10T14:43.05.00320Z
+        \x00\x00\x00\x03               column=cf:temperature, timestamp=1467290788269, value=\x00\x00\x00#
+        \x00\x00\x00\x03               column=cf:timestamp, timestamp=1467290788269, value=2015-02-10T14:43.05.00320Z
+        \x00\x00\x00\x04               column=cf:temperature, timestamp=1467290788356, value=\x00\x00\x00>
+        \x00\x00\x00\x04               column=cf:timestamp, timestamp=1467290788356, value=2015-02-10T14:43.05.00320Z
+        \x00\x00\x00\x05               column=cf:temperature, timestamp=1467290788326, value=\x00\x00\x00\x0D
+        \x00\x00\x00\x05               column=cf:timestamp, timestamp=1467290788326, value=2015-02-10T14:43.05.00320Z
+        \x00\x00\x00\x06               column=cf:temperature, timestamp=1467290788253, value=\x00\x00\x009
+        \x00\x00\x00\x06               column=cf:timestamp, timestamp=1467290788253, value=2015-02-10T14:43.05.00320Z
+        \x00\x00\x00\x07               column=cf:temperature, timestamp=1467290788229, value=\x00\x00\x00\x12
+        \x00\x00\x00\x07               column=cf:timestamp, timestamp=1467290788229, value=2015-02-10T14:43.05.00320Z
+        \x00\x00\x00\x08               column=cf:temperature, timestamp=1467290788336, value=\x00\x00\x00\x16
+        \x00\x00\x00\x08               column=cf:timestamp, timestamp=1467290788336, value=2015-02-10T14:43.05.00320Z
+        \x00\x00\x00\x09               column=cf:temperature, timestamp=1467290788246, value=\x00\x00\x001
+        \x00\x00\x00\x09               column=cf:timestamp, timestamp=1467290788246, value=2015-02-10T14:43.05.00320Z
+        10 row(s) in 0.1800 seconds
+   
+    > [AZURE.NOTE]
+    此扫描操作将仅返回表中的行，最多 10 行。
+    > 
+    > 
 
 ## 删除群集
 [AZURE.INCLUDE [delete-cluster-warning](../../includes/hdinsight-delete-cluster-warning.md)]
 
-## 后续步骤
+若要同时删除群集、存储和 Web 应用，请删除包含它们的资源组。
 
-现在，你已了解如何使用 Storm 从事件中心读取数据，以及使用 SignalR 和 D3.js 将 Storm 中的信息显示在 的外部仪表板上。如果你使用了可选步骤，则还已了解如何在虚拟网络中配置 HDInsight，以及如何使用 HBase bolt 在 Storm 拓扑与 HBase 之间进行通信。
+## 后续步骤
+你现在已了解如何使用 Storm 从事件中心读取数据、如何将数据存储到 HBase 中，以及如何使用 Socket.io 和 D3.js 将信息显示在外部仪表板上。
 
 * 有关 HDinsight Storm 拓扑的更多示例，请参阅：
   
-  * [Storm on HDInsight 的示例拓扑](/documentation/articles/hdinsight-storm-example-topology/)
+    * [Storm on HDInsight 的示例拓扑](/documentation/articles/hdinsight-storm-example-topology/)
 * 有关 Apache Storm 的详细信息，请参阅 [Apache Storm](https://storm.incubator.apache.org/) 站点。
 * 有关 HBase on HDInsight 的详细信息，请参阅 [HDInsight 上的 HBase 概述](/documentation/articles/hdinsight-hbase-overview/)。
 * 有关 Socket.io 的详细信息，请参阅 [socket.io](http://socket.io/) 站点。
@@ -432,6 +504,7 @@
 * 有关以 Java 创建拓扑的信息，请参阅[为 Apache Storm on HDInsight 开发 Java 拓扑](/documentation/articles/hdinsight-storm-develop-java-topology/)。
 * 有关以 .NET 创建拓扑的信息，请参阅[使用 Visual Studio 为 Apache Storm on HDInsight 开发 C# 拓扑](/documentation/articles/hdinsight-storm-develop-csharp-visual-studio-topology/)。
 
-[azure-portal]: https://manage.windowsazure.cn/
+[azure-portal]: https://portal.azure.cn
 
-<!---HONumber=Mooncake_1205_2016-->
+<!---HONumber=Mooncake_0120_2017-->
+<!--Update_Description: update from ASM to ARM-->

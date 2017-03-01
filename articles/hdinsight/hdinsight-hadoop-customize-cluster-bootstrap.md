@@ -52,6 +52,7 @@ Bootstrap 的使用方式有 3 种：
 
 有关在创建时在 HDInsight 群集上安装其他组件的信息，请参阅：
 
+* [使用脚本操作 (Linux) 自定义 HDInsight 群集](/documentation/articles/hdinsight-hadoop-customize-cluster-linux/)
 * [使用脚本操作自定义 HDInsight 群集 (Windows)](/documentation/articles/hdinsight-hadoop-customize-cluster/)
 
 ## <a name="use-azure-powershell"></a> 使用 Azure PowerShell
@@ -85,6 +86,7 @@ Bootstrap 的使用方式有 3 种：
 1. 登录到 [Azure 门户预览](https://portal.azure.cn)。
 2. 在左窗格中，单击“浏览”，然后单击“HDInsight 群集”。
 3. 单击刚刚使用 PowerShell 脚本创建的群集。
+4. 单击边栏选项卡顶部的“仪表板”打开 Ambari UI。
 5. 在左侧菜单中，单击“Hive”。
 6. 单击“摘要”中的 **HiveServer2**。
 7. 单击“配置”选项卡。
@@ -109,6 +111,9 @@ Bootstrap 的使用方式有 3 种：
 
 有关详细信息，请参阅 Azim Uddin 的标题为[自定义 HDInsight 群集创建](http://blogs.msdn.com/b/bigdatasupport/archive/2014/04/15/customizing-hdinsight-cluster-provisioning-via-powershell-and-net-sdk.aspx)的博客。
 
+## 使用 .NET SDK
+请参阅[使用 .NET SDK 在 HDInsight 中创建基于 Linux 的群集](/documentation/articles/hdinsight-hadoop-create-linux-clusters-dotnet-sdk/#use-bootstrap)。
+
 ## 使用 Resource Manager 模板
 可以在 Resource Manager 模板中使用 bootstrap：
 
@@ -127,10 +132,12 @@ Bootstrap 的使用方式有 3 种：
 ## 另请参阅
 * [在 HDInsight 中创建 Hadoop 群集][hdinsight-provision-cluster]说明了如何使用其他自定义选项创建 HDInsight 群集。
 * [为 HDInsight 开发脚本操作脚本][hdinsight-write-script]
+* [在 HDInsight 群集上安装并使用 Spark][hdinsight-install-spark]
 * [在 HDInsight 群集上安装并使用 R][hdinsight-install-r]
 * [在 HDInsight 群集上安装并使用 Solr](/documentation/articles/hdinsight-hadoop-solr-install/)
 * [在 HDInsight 群集上安装并使用 Giraph](/documentation/articles/hdinsight-hadoop-giraph-install/)
 
+[hdinsight-install-spark]: /documentation/articles/hdinsight-hadoop-spark-install/
 [hdinsight-install-r]: /documentation/articles/hdinsight-hadoop-r-scripts/
 [hdinsight-write-script]: /documentation/articles/hdinsight-hadoop-script-actions/
 [hdinsight-provision-cluster]: /documentation/articles/hdinsight-provision-clusters/
@@ -152,6 +159,8 @@ Bootstrap 的使用方式有 3 种：
     $httpUserName = "admin"  #HDInsight cluster username
     $httpPassword = "<ENTER A PASSWORD>" #"<Enter a Password>"
 
+    $sshUserName = "sshuser" #HDInsight ssh user name
+    $sshPassword = "<ENTER A PASSWORD>" #"<Enter a Password>"
     #endregion
 
     ####################################
@@ -224,15 +233,19 @@ Bootstrap 的使用方式有 3 种：
     $httpPW = ConvertTo-SecureString -String $httpPassword -AsPlainText -Force
     $httpCredential = New-Object System.Management.Automation.PSCredential($httpUserName,$httpPW)
 
+    $sshPW = ConvertTo-SecureString -String $sshPassword -AsPlainText -Force
+    $sshCredential = New-Object System.Management.Automation.PSCredential($sshUserName,$sshPW)
+
     New-AzureRmHDInsightCluster `
         -ResourceGroupName $resourceGroupName `
         -ClusterName $hdinsightClusterName `
         -Location $location `
         -ClusterSizeInNodes 1 `
         -ClusterType Hadoop `
-        -OSType Windows `
-        -Version "3.3" `
+        -OSType Linux `
+        -Version "3.5" `
         -HttpCredential $httpCredential `
+        -SshCredential $sshCredential `
         -Config $config
 
     ####################################

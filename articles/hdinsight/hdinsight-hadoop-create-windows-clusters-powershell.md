@@ -140,7 +140,7 @@ Azure PowerShell 是一个功能强大的脚本编写环境，可用于在 Azure
 ## 后续步骤
 在本文中，你已经学习了几种创建 HDInsight 群集的方法。若要了解更多信息，请参阅下列文章：
 
-* [Azure HDInsight 入门](/documentation/articles/hdinsight-hadoop-tutorial-get-started-windows/) - 了解如何开始使用你的 HDInsight 群集
+* [Azure HDInsight 入门](/documentation/articles/hdinsight-hadoop-linux-tutorial-get-started/) - 了解如何开始使用你的 HDInsight 群集
 * [以编程方式提交 Hadoop 作业](/documentation/articles/hdinsight-submit-hadoop-jobs-programmatically/) - 了解如何以编程方式将作业提交到 HDInsight
 * [使用 PowerShell 管理 HDInsight 中的 Hadoop 群集](/documentation/articles/hdinsight-administer-use-powershell/) - 了解如何通过 Azure PowerShell 使用 HDInsight
 * [Azure HDInsight SDK 文档][hdinsight-sdk-documentation] - 探索 HDInsight SDK

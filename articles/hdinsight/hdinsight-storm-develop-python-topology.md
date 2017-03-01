@@ -22,8 +22,10 @@
 
 Apache Storm 支持多种语言，甚至可将多种语言的组件合并成一个拓扑。在本文档中，将学习如何在 HDInsight 上基于 Java 和 Clojure 的 Storm 拓扑中使用 Python 组件。
 
+[AZURE.INCLUDE [hdinsight-linux-acn-version.md](../../includes/hdinsight-linux-acn-version.md)]
+
 > [AZURE.IMPORTANT]
-本文档提供了使用基于 Windows 的 HDInsight 群集的步骤。
+本文档提供了使用基于 Windows 和基于 Linux 的 HDInsight 群集的步骤。Linux 是在 HDInsight 3.4 或更高版本上使用的唯一操作系统。有关详细信息，请参阅 [HDInsight 在 Windows 上弃用](/documentation/articles/hdinsight-component-versioning/#hdi-version-32-and-33-nearing-deprecation-date)。
 
 ## 先决条件
 
@@ -99,7 +101,10 @@ Java 在此处调用 Python，并运行包含实际 Blot 逻辑的脚本。Java 
    
     这会在此项目的 `/target` 目录中创建名为 **WordCount--1.0-SNAPSHOT.jar** 的文件。
 2. 使用以下方法之一将 jar 文件上载到 Hadoop 群集：
-
+   
+    * 对于**基于 Linux** 的 HDInsight 群集：使用 `scp WordCount-1.0-SNAPSHOT.jar USERNAME@CLUSTERNAME-ssh.azurehdinsight.cn:WordCount-1.0-SNAPSHOT.jar` 将 jar 文件复制到群集，将 USERNAME 替换为 SSH 用户名，将 CLUSTERNAME 替换为 HDInsight 群集名称。
+     
+        上载完文件后，使用 SSH 连接到群集，并使用 `storm jar WordCount-1.0-SNAPSHOT.jar com.microsoft.example.WordCount wordcount` 启动拓扑
     * 对于**基于 Windows** 的 HDInsight 群集：在浏览器中转到 HTTPS://CLUSTERNAME.azurehdinsight.cn/，以连接到 Storm 仪表板。将 CLUSTERNAME 替换为 HDInsight 群集名称，并在出现提示时输入管理员名称和密码。
      
         使用窗体执行以下操作：
@@ -111,7 +116,7 @@ Java 在此处调用 Python，并运行包含实际 Blot 逻辑的脚本。Java 
         最后，选择“提交”启动拓扑。
 
 > [AZURE.NOTE]
-Storm 拓扑在启动之后将一直运行，直到被停止（终止）。 若要停止拓扑，请从命令行使用 `storm kill TOPOLOGYNAME` 命令，或使用 Storm UI 选择拓扑，然后选择“终止”按钮。
+Storm 拓扑在启动之后将一直运行，直到被停止（终止）。 若要停止拓扑，请从命令行（例如 Linux 群集的 SSH 会话）使用 `storm kill TOPOLOGYNAME` 命令，或使用 Storm UI 选择拓扑，然后选择“终止”按钮。
 > 
 > 
 
@@ -142,7 +147,21 @@ Storm 拓扑在启动之后将一直运行，直到被停止（终止）。 若�
    
     这会在 `target\uberjar+uberjar` 目录中创建一个名为 `wordcount-1.0-SNAPSHOT.jar` 的新文件。
 2. 使用以下方法之一将拓扑部署到 HDInsight 群集并运行该拓扑：
-
+   
+    * **基于 Linux 的 HDInsight**
+     
+        1. 使用 `scp` 将文件复制到 HDInsight 群集头节点。例如：
+        
+                scp wordcount-1.0-SNAPSHOT.jar USERNAME@CLUSTERNAME-ssh.azurehdinsight.cn:wordcount-1.0-SNAPSHOT.jar
+        
+            将 USERNAME 替换为群集的 SSH 用户，并将 CLUSTERNAME 替换为 HDInsight 群集名称。
+        2. 将文件复制到群集以后，即可使用 SSH 连接到群集并提交作业。有关如何将 SSH 与 HDInsight 配合使用的信息，请参阅以下文档之一：
+        
+            * [在 Linux、Unix 或 OS X 中将 SSH 与基于 Linux 的 HDInsight 配合使用](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix/)
+            * [Use SSH with Linux-based HDInsight from Windows（通过 Windows 将 SSH 与基于 Linux 的 HDInsight 配合使用）](/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows/)
+        3. 连接后，使用以下命令来启动拓扑：
+        
+                storm jar wordcount-1.0-SNAPSHOT.jar wordcount.core wordcount
     * **基于 Windows 的 HDInsight**
      
         1. 在浏览器中转到 HTTPS://CLUSTERNAME.azurehdinsight.cn/，以连接到 Storm 仪表板。将 CLUSTERNAME 替换为 HDInsight 群集名称，并在出现提示时输入管理员名称和密码。
@@ -155,13 +174,14 @@ Storm 拓扑在启动之后将一直运行，直到被停止（终止）。 若�
             最后，选择“提交”启动拓扑。
 
 > [AZURE.NOTE]
-Storm 拓扑在启动之后将一直运行，直到被停止（终止）。 若要停止拓扑，请从命令行使用 `storm kill TOPOLOGYNAME` 命令，或使用 Storm UI 选择拓扑，然后选择“终止”按钮。
+Storm 拓扑在启动之后将一直运行，直到被停止（终止）。 若要停止拓扑，请从命令行（Linux 群集的 SSH 会话）使用 `storm kill TOPOLOGYNAME` 命令，或使用 Storm UI 选择拓扑，然后选择“终止”按钮。
 > 
 > 
 
 ## 后续步骤
 在本文档中，已学习如何通过 Storm 拓扑使用 Python 组件。请参阅以下文档，了解将 Python 与 HDInsight 配合使用的其他方式：
 
+* [如何使用 Python 流式处理 MapReduce 作业](/documentation/articles/hdinsight-hadoop-streaming-python/)
 * [如何在 Pig 和 Hive 中使用 Python 用户定义的函数 (UDF)](/documentation/articles/hdinsight-python/)
 
 <!---HONumber=Mooncake_0120_2017-->

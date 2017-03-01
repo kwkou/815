@@ -23,6 +23,13 @@
 
 本文介绍如何通过使用远程桌面连接到 HDInsight 群集，然后通过使用 Hive 命令行界面 (CLI) 运行 Hive 查询。
 
+[AZURE.INCLUDE [hdinsight-linux-acn-version.md](../../includes/hdinsight-linux-acn-version.md)]
+
+> [AZURE.IMPORTANT]
+远程桌面只能在使用 Windows 作为操作系统的 HDInsight 群集上使用。Linux 是在 HDInsight 3.4 版或更高版本上使用的唯一操作系统。有关详细信息，请参阅 [HDInsight 在 Windows 上弃用](/documentation/articles/hdinsight-component-versioning/#hdi-version-32-and-33-nearing-deprecation-date)。
+><p>
+> 有关 HDInsight 3.4 或更高版本，请参阅[将 Hive 与 HDInsight 和 Beeline 配合使用](/documentation/articles/hdinsight-hadoop-use-hive-beeline/)，了解如何通过命令行直接在群集上运行 Hive 查询。
+
 ## <a id="prereq"></a>先决条件
 要完成本文中的步骤，需要：
 
@@ -103,6 +110,7 @@ Hive 命令提供了一种简单的方法，可以交互方式在 HDInsight 群�
 如果将 Tez 与 Hive 配合使用，请参阅以下文档，了解调试信息：
 
 * [在基于 Windows 的 HDInsight 上使用 Tez UI](/documentation/articles/hdinsight-debug-tez-ui/)
+* [Use the Ambari Tez view on Linux-based HDInsight（在基于 Linux 的 HDInsight 上使用 Ambari Tez 视图）](/documentation/articles/hdinsight-debug-ambari-tez-view/)
 
 [1]: /documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started/
 

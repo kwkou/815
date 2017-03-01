@@ -24,7 +24,7 @@
 Hadoop 群集由用于对群集中的任务进行分布式处理的多个虚拟机（节点）组成。Azure 已将各个节点的安装和配置的实现细节精简化，因此只需提供常规配置信息。在本文中，你会了解这些配置设置。
 
 > [AZURE.NOTE]
-本文档中的信息与基于 Windows 的 Azure HDInsight 群集相关。
+本文档中的信息与基于 Windows 的 Azure HDInsight 群集相关。有关基于 Linux 的群集的信息，请参阅 [Create Linux-based Hadoop clusters in HDInsight](/documentation/articles/hdinsight-hadoop-provision-linux-clusters/)（在 HDInsight 中创建基于 Linux 的 Hadoop 群集）。
 > 
 > 
 
@@ -39,6 +39,7 @@ Hadoop 群集由用于对群集中的任务进行分布式处理的多个虚拟�
 | Hadoop |查询和分析（批处理作业） |
 | HBase |NoSQL 数据存储 |
 | Storm |实时事件处理 |
+| Spark（预览版） |内存中处理、交互式查询、微批流处理 |
 
 每个群集类型具有自身的节点数目，在群集中使用自身的节点术语，对每个节点类型具有默认的 VM 大小。下表中的括号内列出了每个节点类型的节点数目。
 
@@ -47,6 +48,7 @@ Hadoop 群集由用于对群集中的任务进行分布式处理的多个虚拟�
 | Hadoop |头节点 (2)，数据节点 (1+) |![HDInsight Hadoop 群集节点](./media/hdinsight-provision-clusters/HDInsight.Hadoop.roles.png) |
 | HBase |头服务器 (2)，区域服务器 (1+)，主控/ZooKeeper 节点 (3) |![HDInsight HBase 群集节点](./media/hdinsight-provision-clusters/HDInsight.HBase.roles.png) |
 | Storm |Nimbus 节点 (2)，监督程序服务器 (1+)，ZooKeeper 节点 (3) |![HDInsight Storm 群集节点](./media/hdinsight-provision-clusters/HDInsight.Storm.roles.png) |
+| Spark |头节点 (2)，辅助角色节点 (1+)，ZooKeeper 节点 (3)（对于 A1 ZooKeeper VM 大小免费） |![HDInsight Spark 群集节点](./media/hdinsight-provision-clusters/HDInsight.Spark.roles.png) |
 
 > [AZURE.IMPORTANT]
 如果计划使用 32 个以上的工作节点（在创建群集时配置或者是在创建之后通过扩展群集来配置），必须选择至少具有 8 个核心和 14 GB RAM 的头节点大小。
@@ -79,8 +81,9 @@ HDInsight 群集有各种类型，分别与针对其优化群集的工作负荷�
 请参阅[群集类型](#cluster-types)。
 
 ### 操作系统
-可以在以下操作系统上创建 HDInsight 群集：
+可以在以下两个操作系统之一上创建 HDInsight 群集：
 
+* Linux 上的 HDInsight。HDInsight 提供在 Azure 上配置 Linux 群集的选项。如果熟悉 Linux 或 Unix，要从现有的基于 Linux 的 Hadoop 解决方案进行迁移，或者想要轻松集成针对 Linux 构建的 Hadoop 生态系统组件，请配置 Linux 群集。有关详细信息，请参阅[在 HDInsight 中的 Linux 上开始使用 Hadoop](/documentation/articles/hdinsight-hadoop-linux-tutorial-get-started/)。
 * Windows 上的 HDInsight (Windows Server 2012 R2 Datacenter)。
 
 ### HDInsight 版本
@@ -93,11 +96,12 @@ HDInsight 版本用于确定此群集所用的 HDInsight 版本。有关详细�
 使用 [Azure Resource Manager](/documentation/articles/resource-group-overview/) 可为应用程序部署、更新、监视或删除资源。
 
 ### 凭据
-使用 HDInsight 群集时，可以在群集创建期间配置 2 个用户帐户。
+使用 HDInsight 群集时，可以在群集创建期间配置三个用户帐户。
 
 * 可以借助 [Azure Resource Manager](/documentation/articles/resource-group-overview/) 以组（称为 Azure 资源组）的形式处理应用程序中的资源。可以通过一个协调的操作为应用程序部署、更新、监视或删除所有资源。
 * HTTP 用户。默认用户名是在 Azure 门户预览上使用基本配置创建的 *admin*，有时，默认称作“群集用户”。
 * RDP 用户（Windows 群集）使用 RDP 连接到群集。创建帐户时，必须将过期日期设置在从帐户创建日期算起的 90 天内。
+* SSH 用户（Linux 群集）。使用 SSH 连接到群集。群集创建后，可以根据[在 Linux、Unix 或 OS X 中的 HDInsight 上将 SSH 与基于 Linux 的 Hadoop 配合使用](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix/)中的步骤创建更多 SSH 用户帐户。
 
 ### 数据源
 原始 Hadoop 分布式文件系统 (HDFS) 在群集上使用许多本地磁盘。HDInsight 将 Azure Blob 存储用于数据存储。Azure Blob 存储是一种稳健、通用的存储解决方案，它与 HDInsight 无缝集成。通过 HDFS 界面，可以针对 Blob 存储中的结构化或非结构化数据直接运行 HDInsight 中的整套组件。如果将数据存储在 Blob 存储中，则可以安全删除用于计算的 HDInsight 群集，而不会丢失用户数据。
@@ -141,7 +145,9 @@ HDInsight 群集与其默认存储帐户必须位于相同的 Azure 位置。
 > 
 > 
 
-使用 Azure 门户预览配置群集时，可通过“节点定价层”边栏选项卡查看节点大小。还可以查看不同节点大小的相关成本。
+使用 Azure 门户预览配置群集时，可通过“节点定价层”边栏选项卡查看节点大小。还可以查看不同节点大小的相关成本。以下屏幕截图显示了基于 Linux 的 Hadoop 群集的选项。
+
+![HDInsight VM 节点大小](./media/hdinsight-provision-clusters/hdinsight.node.sizes.png)
 
 下表显示 HDInsight 群集支持的大小和它们提供的容量。
 
@@ -210,6 +216,8 @@ HDInsight 群集与其默认存储帐户必须位于相同的 Azure 位置。
 ## 使用 Hive/Oozie 元存储
 如果希望在删除 HDInsight 群集后保留 Hive 表，则强烈建议使用自定义元存储，以便将来可将该元存储附加到另一个 HDInsight 群集。
 
+[AZURE.INCLUDE [hdinsight-linux-acn-version.md](../../includes/hdinsight-linux-acn-version.md)]
+
 > [AZURE.IMPORTANT]
 HDInsight 元存储无法向后兼容。例如，无法使用 HDInsight 3.3 群集的元存储来创建 HDInsight 3.2 群集。
 > 
@@ -236,7 +244,7 @@ HDInsight 元存储无法向后兼容。例如，无法使用 HDInsight 3.3 群�
 | --- | --- |
 | 借助站点到站点配置，可以使用硬件 VPN 或路由和远程访问服务将多个资源从数据中心连接到 Azure 虚拟网络。<br />![站点到站点配置示意图](./media/hdinsight-provision-clusters/hdinsight-vnet-site-to-site.png) |借助点到站点配置，可以使用软件 VPN 将特定资源连接到 Azure 虚拟网络。<br />![点到站点配置示意图](./media/hdinsight-provision-clusters/hdinsight-vnet-point-to-site.png) |
 
-基于 Windows 的群集需要经典虚拟网络。如果没有正确的网络类型，创建群集时它将不能使用。
+基于 Windows 的群集需要经典虚拟网络，基于 Linux 的群集需要 Azure Resource Manager 虚拟网络。如果没有正确的网络类型，创建群集时它将不能使用。
 
 有关如何将 HDInsight 与虚拟网络配合使用的详细信息（包括虚拟网络的特定配置要求），请参阅 [Extend HDInsight capabilities by using Azure Virtual Network](/documentation/articles/hdinsight-extend-hadoop-virtual-network/)（使用 Azure 虚拟网络扩展 HDInsight 功能）。
 
@@ -259,7 +267,7 @@ HDInsight 元存储无法向后兼容。例如，无法使用 HDInsight 3.3 群�
 * webhcat-site.xml
 * yarn-site.xml
 
-若要在群集生存期保留更改，你可以在创建过程中使用 HDInsight 群集自定义。有关详细信息，请参阅 [Customize HDInsight clusters by using Bootstrap](/documentation/articles/hdinsight-hadoop-customize-cluster-bootstrap/)（使用 Bootstrap 自定义 HDInsight 群集）。
+若要在群集生存期保留更改，你可以在创建过程中使用 HDInsight 群集自定义。也可以在基于 Linux 的群集中使用 Ambari。有关详细信息，请参阅 [Customize HDInsight clusters by using Bootstrap](/documentation/articles/hdinsight-hadoop-customize-cluster-bootstrap/)（使用 Bootstrap 自定义 HDInsight 群集）。
 
 > [AZURE.NOTE]
 基于 Windows 的群集无法保留重置映像所造成的更改。有关详细信息，请参阅[重新启动角色实例进行 OS 升级](http://blogs.msdn.com/b/kwill/archive/2012/09/19/role-instance-restarts-due-to-os-upgrades.aspx)。若要在群集的整个生存期内保留更改，必须在创建过程中使用 HDInsight 群集自定义。
@@ -277,6 +285,7 @@ HDInsight 元存储无法向后兼容。例如，无法使用 HDInsight 3.3 群�
 | [Azure 门户预览](/documentation/articles/hdinsight-hadoop-create-windows-clusters-portal/) |✔ |&nbsp; |&nbsp; |&nbsp; |✔ |✔ |
 | [Azure CLI](/documentation/articles/hdinsight-hadoop-create-windows-clusters-cli/) |&nbsp; |✔ |&nbsp; |&nbsp; |✔ |✔ |
 | [Azure PowerShell](/documentation/articles/hdinsight-hadoop-create-windows-clusters-powershell/) |&nbsp; |✔ |&nbsp; |&nbsp; |✔ |✔ |
+| [cURL](/documentation/articles/hdinsight-hadoop-create-linux-clusters-curl-rest/) |&nbsp; |✔ |✔ |&nbsp; |✔ |✔ |
 | [.NET SDK](/documentation/articles/hdinsight-hadoop-create-windows-clusters-dotnet-sdk/) |&nbsp; |&nbsp; |&nbsp; |✔ |✔ |✔ |
 | [Azure Resource Manager 模板](/documentation/articles/hdinsight-hadoop-create-windows-clusters-arm-templates/) |&nbsp; |✔ |&nbsp; |&nbsp; |✔ |✔ |
 

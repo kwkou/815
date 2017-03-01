@@ -22,7 +22,7 @@
 
 # 在虚拟机上使用 Hadoop 沙盒，开始了解 Hadoop 生态系统
 
-了解如何在虚拟机上安装 Hortonworks 提供的 Hadoop 沙盒，了解 Hadoop 生态系统。该沙盒提供一个本地开发环境，让用户了解 Hadoop、Hadoop 分布式文件系统 (HDFS) 和作业提交内容。熟悉 Hadoop 之后，便可以开始在 Azure 中使用 Hadoop 创建 HDInsight 群集。有关如何入门的详细信息，请参阅 [HDInsight 上的 Hadoop 入门](/documentation/articles/hdinsight-hadoop-tutorial-get-started-windows/)。
+了解如何在虚拟机上安装 Hortonworks 提供的 Hadoop 沙盒，了解 Hadoop 生态系统。该沙盒提供一个本地开发环境，让用户了解 Hadoop、Hadoop 分布式文件系统 (HDFS) 和作业提交内容。熟悉 Hadoop 之后，便可以开始在 Azure 中使用 Hadoop 创建 HDInsight 群集。有关如何入门的详细信息，请参阅 [HDInsight 上的 Hadoop 入门](/documentation/articles/hdinsight-hadoop-linux-tutorial-get-started/)。
 
 ## 先决条件
 * [Oracle VirtualBox](https://www.virtualbox.org/)。从[此处](https://www.virtualbox.org/wiki/Downloads)下载并安装它。

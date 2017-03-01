@@ -20,10 +20,10 @@
 
 
 # 为 HDInsight 基于 Windows 的群集开发脚本操作脚本
-了解如何为 HDInsight 编写脚本操作脚本。有关如何使用脚本操作脚本的信息，请参阅[使用脚本操作自定义 HDInsight 群集](/documentation/articles/hdinsight-hadoop-customize-cluster/)。
+了解如何为 HDInsight 编写脚本操作脚本。有关如何使用脚本操作脚本的信息，请参阅[使用脚本操作自定义 HDInsight 群集](/documentation/articles/hdinsight-hadoop-customize-cluster/)。有关针对基于 Linux 的 HDInsight 群集编写的相同文章，请参阅[为 HDInsight 开发脚本操作脚本](/documentation/articles/hdinsight-hadoop-script-actions-linux/)。
 
 > [AZURE.NOTE]
-此文档中的信息特定于基于 Windows 的 HDInsight 群集。
+此文档中的信息特定于基于 Windows 的 HDInsight 群集。有关在基于 Windows 的群集上使用脚本操作的信息，请参阅 [Script action development with HDInsight (Linux)](/documentation/articles/hdinsight-hadoop-script-actions-linux/)（使用 HDInsight 进行脚本操作开发 (Linux)）。
 >
 >
 

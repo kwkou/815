@@ -35,7 +35,7 @@
 
 若要完成本文中的步骤，你将需要以下各项：
 
-* Azure HDInsight（HDInsight 上的 Hadoop）群集（基于 Windows）
+* Azure HDInsight（HDInsight 上的 Hadoop）群集（基于 Linux 或 Windows）
 * Visual Studio（以下版本之一）：
   
     包含 [Update 4](https://www.microsoft.com/download/details.aspx?id=44921) 的 Visual Studio 2013 Community/Professional/Premium/Ultimate
@@ -144,7 +144,7 @@
 [hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters/
 [hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically/
 [hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data/
-[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows/
+[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-linux-tutorial-get-started/
 
 [powershell-here-strings]: http://technet.microsoft.com/zh-cn/library/ee692792.aspx
 

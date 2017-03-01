@@ -46,7 +46,7 @@
     azure hdinsight cluster create -h
 
 ## 创建群集
-请参阅[使用 Azure CLI 在 HDInsight 中创建基于 Windows 的群集](/documentation/articles/hdinsight-hadoop-create-windows-clusters-cli/)。
+请参阅[使用 Azure CLI 在 HDInsight 中创建基于 Linux 的群集](/documentation/articles/hdinsight-hadoop-create-linux-clusters-azure-cli/)。
 
 ## 列出并显示群集详细信息
 使用以下命令列出并显示群集详细信息：
@@ -94,7 +94,7 @@
 
 [hdinsight-admin-portal]: /documentation/articles/hdinsight-administer-use-management-portal/
 [hdinsight-admin-powershell]: /documentation/articles/hdinsight-administer-use-powershell/
-[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows/
+[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-linux-tutorial-get-started/
 
 [image-cli-account-download-import]: ./media/hdinsight-administer-use-command-line/HDI.CLIAccountDownloadImport.png
 [image-cli-clustercreation]: ./media/hdinsight-administer-use-command-line/HDI.CLIClusterCreation.png

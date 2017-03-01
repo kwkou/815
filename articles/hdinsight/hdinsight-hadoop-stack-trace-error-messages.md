@@ -29,9 +29,10 @@
 
 ## 更多疑难解答文章
 
+* [有关在 Linux 上使用 HDInsight 的信息](/documentation/articles/hdinsight-hadoop-linux-information/)
 * [在 HDInsight 中调试 Hadoop：查看日志和解释错误消息](/documentation/articles/hdinsight-debug-jobs/)
-* [Access YARN application logs on Windows-based Hadoop on HDInsight（在 HDInsight 上基于 Windows 的 Hadoop 中访问 YARN 应用程序日志）](/documentation/articles/hdinsight-hadoop-access-yarn-app-logs/)
-* [Enable heap dumps for Hadoop services on Windows-based HDInsight（在基于 Windows 的 HDInsight 上为 Hadoop 服务启用堆转储）](/documentation/articles/hdinsight-hadoop-collect-debug-heap-dumps/)
+* [Access YARN application logs on Linux-based Hadoop on HDInsight（在 HDInsight 上基于 Linux 的 Hadoop 中访问 YARN 应用程序日志）](/documentation/articles/hdinsight-hadoop-access-yarn-app-logs-linux/)
+* [Enable heap dumps for Hadoop services on Linux-based HDInsight（在基于 Linux 的 HDInsight 上为 Hadoop 服务启用堆转储）](/documentation/articles/hdinsight-hadoop-collect-debug-heap-dump-linux/)
 * [Azure HDInsight 上的 Hadoop 组件发行说明](/documentation/articles/hdinsight-release-notes/)
 
 <!---HONumber=Mooncake_0725_2016-->

@@ -26,10 +26,15 @@
 
 本文档使用 Curl 演示如何使用原始 HTTP 请求来与 HDInsight 交互，以便运行、监视和检索 Sqoop 作业的结果。要执行这些操作，需要使用 HDInsight 群集提供的 WebHCat REST API（前称 Templeton）。
 
+> [AZURE.NOTE]
+如果已熟悉如何使用基于 Linux 的 Hadoop 服务器，但刚接触 HDInsight，请参阅[有关在 Linux 上使用 HDInsight 的信息](/documentation/articles/hdinsight-hadoop-linux-information/)。
+> 
+> 
+
 ## 先决条件
 要完成本文中的步骤，需要：
 
-* HDInsight 群集上的 Hadoop（基于 Windows）
+* HDInsight 群集上的 Hadoop（基于 Linux 或 Windows）
 * [Curl](http://curl.haxx.se/)
 * [jq](http://stedolan.github.io/jq/)
 
@@ -99,6 +104,10 @@
     必须使用 `-a` 和 `-k` 参数指定包含 Blob 的存储帐户名称，或者设置 **AZURE\_STORAGE\_ACCOUNT** 和 **AZURE\_STORAGE\_ACCESS\_KEY** 环境变量。请参阅 <a href="/documentation/articles/hdinsight-upload-data" target="\_blank" 了解详细信息。
     > 
     > 
+
+## 限制
+* 批量导出 - 在基于 Linux 的 HDInsight 上，用于将数据导出到 Microsoft SQL Server 或 Azure SQL 数据库的 Sqoop 连接器目前不支持批量插入。
+* 批处理 - 在基于 Linux 的 HDInsight 上，如果执行插入时使用 `-batch` 开关，Sqoop 将执行多次插入而不是批处理插入操作。
 
 ## 摘要
 如本文档中所示，你可以使用原始 HTTP 请求来运行、监视和查看 HDInsight 群集上的 Sqoop 作业的结果。

@@ -34,8 +34,9 @@
 
 若要完成本教程并使用 Visual Studio 中的 Data Lake 工具，需要以下项：
 
-* Azure HDInsight 群集：基于 Windows 的群集可用于本文档中的步骤。有关创建群集的详细信息，请参阅下列主题之一：
+* Azure HDInsight 群集：基于 Linux 或 Windows 的群集可用于本文档中的步骤。有关创建群集的详细信息，请参阅下列主题之一：
   
+    * [开始使用基于 Linux 的 HDInsight](/documentation/articles/hdinsight-hadoop-linux-tutorial-get-started/)
     * [开始使用基于 Windows 的 HDInsight](/documentation/articles/hdinsight-hadoop-tutorial-get-started-windows/)
 * 安装有以下软件的工作站：
   
@@ -191,12 +192,14 @@
 
 ### 通过 HiveServer2 的更快路径 Hive 执行
 
+[AZURE.INCLUDE [hdinsight-linux-acn-version.md](../../includes/hdinsight-linux-acn-version.md)]
+
 > [AZURE.NOTE]
 此功能仅适用于 HDInsight 群集 3.2 和更高版本。
 > 
 > 
 
-Data Lake 工具用于通过 [WebHCat](https://cwiki.apache.org/confluence/display/Hive/WebHCat)（也称为 Templeton）提交 Hive 作业。返回作业详细信息和错误信息所需的时间很长。为了解决此性能问题，Data Lake 工具通过 HiveServer2 直接在群集中运行 Hive 作业，以便绕过 RDP。Tez 图形不仅可提升性能，还可用于查看 Hive 和任务详细信息。
+Data Lake 工具用于通过 [WebHCat](https://cwiki.apache.org/confluence/display/Hive/WebHCat)（也称为 Templeton）提交 Hive 作业。返回作业详细信息和错误信息所需的时间很长。为了解决此性能问题，Data Lake 工具通过 HiveServer2 直接在群集中运行 Hive 作业，以便绕过 RDP/SSH。Tez 图形不仅可提升性能，还可用于查看 Hive 和任务详细信息。
 
 使用 HDInsight 群集 3.2 或更高版本时，可以看到“通过 HiveServer2 执行”按钮：
 
@@ -222,7 +225,7 @@ Data Lake 工具用于通过 [WebHCat](https://cwiki.apache.org/confluence/displ
 Data Lake 工具支持显示 Tez 执行引擎运行的 Hive 作业的性能图。有关启用 Tez 的信息，请参阅[使用 HDInsight 中的 Hive][hdinsight.hive]。提交 Visual Studio 中的 Hive 作业后，Visual Studio 将在作业完成时显示图形。你可能需要单击“刷新”按钮来获取最新的作业状态。
 
 > [AZURE.NOTE]
-此功能仅适用于高于 3.2.4.593 版的 HDInsight 群集，并且只能用于已完成的作业（如果你通过 WebHCat 提交作业，将在通过 HiveServer2 执行查询时显示此图形）。它适用于基于 Windows 的群集。
+此功能仅适用于高于 3.2.4.593 版的 HDInsight 群集，并且只能用于已完成的作业（如果你通过 WebHCat 提交作业，将在通过 HiveServer2 执行查询时显示此图形）。它适用于基于 Windows 和 Linux 的群集。
 > 
 > 
 
@@ -274,9 +277,9 @@ Data Lake 工具支持显示 Tez 执行引擎运行的 Hive 作业的性能图�
 
 <!--Link references-->
 
-[hdinsight-create-clusters]: /documentation/articles/hdinsight-provision-clusters/
+[hdinsight-create-clusters]: /documentation/articles/hdinsight-hadoop-provision-linux-clusters/
 [hdinsight.introduction]: /documentation/articles/hdinsight-hadoop-introduction/
-[hdinsight.get.started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows/
+[hdinsight.get.started]: /documentation/articles/hdinsight-hadoop-linux-tutorial-get-started/
 [hdinsight.hive]: /documentation/articles/hdinsight-use-hive/
 [hdinsight.submit.jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically/
 [hdinsight.storm.visual.studio.tools]: /documentation/articles/hdinsight-storm-develop-csharp-visual-studio-topology/

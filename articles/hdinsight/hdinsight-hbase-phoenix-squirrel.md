@@ -24,7 +24,7 @@
 > [AZURE.NOTE]
 有关 HDInsight 中的 Phoenix 版本信息，请参阅 [HDInsight 提供的 Hadoop 群集版本有有何变化？](/documentation/articles/hdinsight-component-versioning/)。
 ><p>
-> 此文档中的信息特定于基于 Windows 的 HDInsight 群集。
+> 此文档中的信息特定于基于 Windows 的 HDInsight 群集。有关在基于 Linux 的 HDInsight 上使用 Phoenix 的信息，请参阅 [Use Apache Phoenix with Linux-based HBase clusters in HDinsight](/documentation/articles/hdinsight-hbase-phoenix-squirrel-linux/)（将 Apache Phoenix 与 HDinsight 中基于 Linux 的 HBase 群集配合使用）。
 >
 >
 
@@ -272,6 +272,7 @@ Phoenix 驱动程序 jar 文件位于 HBase 群集上。根据具体的版本，
 
 * [HDInsight HBase 概述][hdinsight-hbase-overview]：HBase 是构建于 Hadoop 上的 Apache 开源 NoSQL 数据库，用于为大量非结构化和半结构化数据提供随机访问和高度一致性。
 * [在 Azure 虚拟网络上设置 HBase 群集][hdinsight-hbase-provision-vnet]：通过虚拟网络集成，可以将 HBase 群集部署到应用程序所在的虚拟网络，以便应用程序直接与 HBase 进行通信。
+* [在 HDInsight 中配置 HBase 地域复制](/documentation/articles/hdinsight-hbase-replication/)：了解如何跨两个 Azure 数据中心配置 HBase 复制。
 
 [azure-portal]: https://portal.azure.cn
 [vnet-point-to-site-connectivity]: https://msdn.microsoft.com/zh-cn/library/azure/09926218-92ab-4f43-aa99-83ab4d355555#BKMK_VNETPT

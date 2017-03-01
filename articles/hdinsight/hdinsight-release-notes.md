@@ -194,8 +194,8 @@ Spark 2.0.1 现可在 Spark 群集（HDInsight 版本 3.5）上使用。
 | --- | --- | --- | --- | --- |
 | 自定义 HDI 3.4 的元存储升级问题 |如果使用的是此前已在另一低版 HDInsight 群集上使用过的自定义元存储，则无法创建群集。这是由于升级脚本错误（现已修复） |群集创建 |全部 |不适用 |
 | Livy 崩溃恢复 |为通过 Livy 提交的任何作业提供作业状态复原 |可靠性 |Linux 上的 Spark |不适用 |
-| Jupyter 内容 HA |提供通过与群集关联的存储帐户来回保存和加载 Jupyter 笔记本内容的功能。 |笔记本 |Linux 上的 Spark |不适用 |
-| 删除 Jupter 笔记本中的 hiveContext |使用 `%%sql` 幻数而非 `%%hive` 幻数。SqlContext 相当于 hiveContext。 |笔记本 |Linux 上的 Spark 群集 |不适用 |
+| Jupyter 内容 HA |提供通过与群集关联的存储帐户来回保存和加载 Jupyter 笔记本内容的功能。有关详细信息，请参阅[可供 Jupyter 笔记本使用的内核](/documentation/articles/hdinsight-apache-spark-jupyter-notebook-kernels/)。 |笔记本 |Linux 上的 Spark |不适用 |
+| 删除 Jupter 笔记本中的 hiveContext |使用 `%%sql` 幻数而非 `%%hive` 幻数。SqlContext 相当于 hiveContext。有关详细信息，请参阅[可供 Jupyter 笔记本使用的内核](/documentation/articles/hdinsight-apache-spark-jupyter-notebook-kernels/) |笔记本 |Linux 上的 Spark 群集 |不适用 |
 | 不推荐使用较早的 Spark 版本 |较早的 Spark 版本 1.3.1 将于 5 月 31 日从服务中删除 |服务 |Windows 上的 Spark 群集 |不适用 |
 
 ## HDInsight 2016 年 3 月 29 日发行说明
@@ -217,7 +217,7 @@ Spark 2.0.1 现可在 Spark 群集（HDInsight 版本 3.5）上使用。
 | --- | --- | --- | --- | --- |
 | 添加了 HDInsight 3.4 版本并更新了所有 HDInsight 群集的 HDP 版本 |在此版本中，我们添加了 HDInsight v3.4（基于 HDP 2.4）并更新了其他 HDP 版本。[此处](http://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.4.0/bk_HDP_RelNotes/content/ch_relnotes_v240.html)提供了 HDP 2.4 发行说明；[此处](/documentation/articles/hdinsight-component-versioning/)提供了有关 HDInsight 版本的详细信息。 |服务 |所有 Linux 群集 |不适用 |
 | Spark 1.6.0 |HDInsight 3.4 群集现在包括 Spark 1.6.0 |服务 |Linux 上的 Spark 群集 |不适用 |
-| Jupyter 笔记本增强功能 |适用于 Spark 群集的 Jupyter 笔记本现在提供更多的 Spark 内核。该笔记本还包括多种增强功能，例如使用 %%幻数、自动可视化，以及集成 Python 可视化库（例如 matplotlib）。 |服务 |Linux 上的 Spark 群集 |不适用 |
+| Jupyter 笔记本增强功能 |适用于 Spark 群集的 Jupyter 笔记本现在提供更多的 Spark 内核。该笔记本还包括多种增强功能，例如使用 %%幻数、自动可视化，以及集成 Python 可视化库（例如 matplotlib）。有关详细信息，请参阅[可供 Jupyter 笔记本使用的内核](/documentation/articles/hdinsight-apache-spark-jupyter-notebook-kernels/)。 |服务 |Linux 上的 Spark 群集 |不适用 |
 
 ## HDInsight 2016 年 3 月 22 日发行说明
 随此版本一起部署的 HDInsight 群集的所有版本号包括：

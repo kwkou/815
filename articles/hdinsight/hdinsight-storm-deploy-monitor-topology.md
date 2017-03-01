@@ -29,7 +29,7 @@
 HDInsight 工具中的 Storm 仪表板和 Storm 功能依赖于 Storm REST API，此 API 可用于创建你自己的监视和管理解决方案。
 
 > [AZURE.IMPORTANT]
-本文档中的步骤要求使用 HDInsight 群集上基于 Windows 的 Storm。
+本文档中的步骤要求使用 HDInsight 群集上基于 Windows 的 Storm。有关使用基于 Linux 的群集的信息，请参阅[在基于 Linux 的 HDInsight 上部署和管理 Apache Storm 拓扑](/documentation/articles/hdinsight-storm-deploy-monitor-topology-linux/)
 
 ## 先决条件
 

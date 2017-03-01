@@ -21,7 +21,7 @@
 # 使用脚本操作自定义基于 Windows 的 HDInsight 群集
 创建群集期间，可以使用**脚本操作**调用[自定义脚本](/documentation/articles/hdinsight-hadoop-script-actions/)，以便在群集上安装其他软件。
 
-本文中的信息特定于基于 Windows 的 HDInsight 群集。
+本文中的信息特定于基于 Windows 的 HDInsight 群集。有关基于 Linux 的群集的信息，请参阅[使用脚本操作自定义基于 Linux 的 HDInsight 群集](/documentation/articles/hdinsight-hadoop-customize-cluster-linux/)。
 
 也可以使用其他各种方法自定义 HDInsight 群集，例如包括其他 Azure 存储帐户、更改 hadoop 配置文件（core-site.xml、hive-site.xml 等），或者将共享库（如 Hive、Oozie）添加到群集中的共同位置。这些自定义可通过使用 Azure PowerShell、Azure HDInsight .NET SDK 或 Azure 门户预览来完成。有关详细信息，请参阅[在 HDInsight 中创建 Hadoop 群集][hdinsight-provision-cluster]。
 
@@ -35,7 +35,7 @@
 当脚本运行时，群集进入 **ClusterCustomization** 阶段。在此阶段，脚本在系统管理员帐户下，以并行方式在群集中所有指定的节点上运行，并在节点上提供完全系统管理员权限。
 
 > [AZURE.NOTE]
-由于在 **ClusterCustomization** 阶段期间在群集节点上拥有系统管理员权限，因此可以使用脚本运行作业，例如停止和启动服务，包括 Hadoop 相关服务。因此，作为脚本的一部分，必须在脚本运行完成前，确保 Hadoop 相关服务已启动且正在运行。创建时成功确定群集的运行状况和状态需要这些服务。如果更改群集上影响这些服务的任何配置，必须使用提供的帮助函数。有关帮助函数的详细信息，请参阅[为 HDInsight 开发脚本操作脚本][hdinsight-write-script]。
+由于在 **ClusterCustomization** 阶段期间在群集节点上拥有系统管理员权限，因此可以使用脚本运行作业，例如停止和启动服务，包括 Hadoop 相关服务。因此，作为脚本的一部分，必须在脚本运行完成前，确保 Ambari 服务和其他 Hadoop 相关服务已启动且正在运行。创建时成功确定群集的运行状况和状态需要这些服务。如果更改群集上影响这些服务的任何配置，必须使用提供的帮助函数。有关帮助函数的详细信息，请参阅[为 HDInsight 开发脚本操作脚本][hdinsight-write-script]。
 >
 >
 

@@ -135,6 +135,7 @@ AzCopy 语法为：
 若要使用 Hadoop 命令，必须先使用以下方法之一连接到头节点：
 
 * **基于 Windows 的 HDInsight**：[使用远程桌面连接](/documentation/articles/hdinsight-administer-use-management-portal/#connect-to-clusters-using-rdp)
+* **基于 Linux 的 HDInsight**：使用 SSH（[SSH 命令](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix/)或 [PuTTY](/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows/)）连接
 
 连接之后，可以使用以下语法将文件上载到存储。
 
@@ -244,6 +245,20 @@ Sqoop 是一种专用于在 Hadoop 和关系数据库之间传输数据的工具
 
     hadoop -fs -D fs.azure.write.request.size=4194304 -copyFromLocal test_large_file.bin /example/data
 
+还可以使用 Ambari 全局增加 `fs.azure.write.request.size` 的值。可以使用以下步骤在 Ambari Web UI 中更改该值：
+
+1. 在浏览器中，转到群集的 Ambari Web UI。网址为 https://CLUSTERNAME.azurehdinsight.cn，其中 **CLUSTERNAME** 是群集的名称。
+
+    出现提示时，输入群集的管理员名称和密码。
+2. 在屏幕左侧选择“HDFS”，然后选择“配置”选项卡。
+3. 在“筛选...”字段中，输入 `fs.azure.write.request.size`。这将在页中间显示该字段和当前值。
+4. 将值从 262144 (256KB) 更改为新值。例如，4194304 (4MB)。
+
+![通过 Ambari Web UI 更改值的图像](./media/hdinsight-upload-data/hbase-change-block-write-size.png)  
+
+
+有关如何使用 Ambari 的详细信息，请参阅 [Manage HDInsight clusters using the Ambari Web UI](/documentation/articles/hdinsight-hadoop-manage-ambari/)（使用 Ambari Web UI 管理 HDInsight 群集）。
+
 ## 后续步骤
 现在，你已了解如何将数据导入 HDInsight，请阅读以下文章了解如何执行分析：
 
@@ -264,7 +279,7 @@ Sqoop 是一种专用于在 Hadoop 和关系数据库之间传输数据的工具
 
 [hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage/
 [hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically/
-[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows/
+[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-linux-tutorial-get-started/
 
 [hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive/
 [hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig/

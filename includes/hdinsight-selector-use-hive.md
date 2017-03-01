@@ -1,5 +1,7 @@
 > [AZURE.SELECTOR]
 - [Overview](/documentation/articles/hdinsight-use-hive/)
+- [SSH](/documentation/articles/hdinsight-hadoop-use-hive-ssh/)
+- [Beeline](/documentation/articles/hdinsight-hadoop-use-hive-beeline/)
 - [Curl](/documentation/articles/hdinsight-hadoop-use-hive-curl/)
 - [PowerShell](/documentation/articles/hdinsight-hadoop-use-hive-powershell/)
 - [.NET](/documentation/articles/hdinsight-hadoop-use-hive-dotnet-sdk/)

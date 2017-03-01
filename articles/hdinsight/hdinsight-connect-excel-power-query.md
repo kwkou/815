@@ -24,6 +24,11 @@
 
 Microsoft 大数据解决方案的一个关键功能是，将 Microsoft 商业智能 (BI) 组件与 Azure HDInsight 中的 Hadoop 群集相集成。此集成的一个主要示例是能够使用 Microsoft Power Query for Excel 外接程序将 Excel 连接到包含与 Hadoop 群集关联的数据的 Azure 存储帐户。本文将逐步说明如何设置和使用 Power Query 来查询与 HDInsight 管理的 Hadoop 群集关联的数据。
 
+> [AZURE.NOTE]
+尽管可以对基于 Linux 或 Windows 的 HDInsight 群集使用本文中的步骤，但客户端工作站需要 Windows。
+> 
+> 
+
 ### 先决条件
 开始阅读本文之前，必须具备以下先决条件：
 
@@ -68,7 +73,7 @@ Microsoft 大数据解决方案的一个关键功能是，将 Microsoft 商业�
 * [将数据上传到 HDInsight][hdinsight-upload-data]
 
 [hdinsight-ODBC]: /documentation/articles/hdinsight-connect-excel-hive-ODBC-driver/
-[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows/
+[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-linux-tutorial-get-started/
 [hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data/
 
 [image-hdi-powerquery-hdi-source]: ./media/hdinsight-connect-excel-power-query/HDI.PowerQuery.SelectHdiSource.png

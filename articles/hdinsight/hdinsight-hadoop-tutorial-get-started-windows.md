@@ -23,9 +23,13 @@
 
 # Hadoop 教程：在 Windows 上开始使用 HDInsight 中的 Hadoop
 
+> [AZURE.SELECTOR]
+- [基于 Linux](/documentation/articles/hdinsight-hadoop-linux-tutorial-get-started/)
+- [基于 Windows](/documentation/articles/hdinsight-hadoop-tutorial-get-started-windows/)
+
 为了帮助你了解并开始使用 Windows 上的 HDInsight，本教程说明了如何对 Hadoop 群集中的非结构化数据运行 Hive 查询，然后在 Microsoft Excel 中分析结果。
 
->[AZURE.NOTE] 此文档中的信息特定于基于 Windows 的 HDInsight 群集。
+>[AZURE.NOTE] 此文档中的信息特定于基于 Windows 的 HDInsight 群集。有关基于 Linux 的群集的信息，请参阅 [Hadoop 教程：在 HDInsight 中使用基于 Linux 的 Hadoop 入门](/documentation/articles/hdinsight-hadoop-linux-tutorial-get-started/)。
 
 假设你具有一个大型非结构化数据集，想要对其运行 Hive 查询以提取一些有意义的信息。这正是你在本教程中要实现的目标。下面说明了如何实现此目标：
 
@@ -194,6 +198,7 @@ HDInsight 群集提供包括入门库的查询控制台以直接从门户运行�
 - [将 Hive 与 HDInsight 配合使用][hdinsight-use-hive]
 - [将 Pig 与 HDInsight 配合使用][hdinsight-use-pig]
 - [将 Oozie 与 HDInsight 配合使用][hdinsight-use-oozie]
+- [为 HDInsight 开发 Java MapReduce 程序][hdinsight-develop-mapreduce]
 
 
 [1]: /documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started/
@@ -210,6 +215,7 @@ HDInsight 群集提供包括入门库的查询控制台以直接从门户运行�
 [hdinsight-use-oozie]: /documentation/articles/hdinsight-use-oozie/
 [hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage/
 [hdinsight-emulator]: /documentation/articles/hdinsight-hadoop-emulator-get-started/
+[hdinsight-develop-mapreduce]: /documentation/articles/hdinsight-develop-deploy-java-mapreduce-linux/
 [hadoop-hdinsight-intro]: /documentation/articles/hdinsight-hadoop-introduction/
 [hdinsight-weblogs-sample]: /documentation/articles/hdinsight-hive-analyze-website-log/
 [hdinsight-sensor-data-sample]: /documentation/articles/hdinsight-hive-analyze-sensor-data/

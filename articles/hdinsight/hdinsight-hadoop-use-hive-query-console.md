@@ -23,6 +23,13 @@
 
 本文介绍如何在浏览器中使用 HDInsight 查询控制台在 HDInsight Hadoop 群集上运行 Hive 查询。
 
+[AZURE.INCLUDE [hdinsight-linux-acn-version.md](../../includes/hdinsight-linux-acn-version.md)]
+
+> [AZURE.IMPORTANT]
+HDInsight 查询控制台只能在基于 Windows 的 HDInsight 群集上使用。Linux 是在 HDInsight 3.4 版或更高版本上使用的唯一操作系统。有关详细信息，请参阅 [HDInsight 在 Windows 上弃用](/documentation/articles/hdinsight-component-versioning/#hdi-version-32-and-33-nearing-deprecation-date)。
+><p>
+> 有关 HDInsight 3.4 或更高版本，请参阅[在 Ambari Hive 视图中运行 Hive 查询](/documentation/articles/hdinsight-hadoop-use-hive-ambari-view/)，了解如何通过 Web 浏览器运行 Hive 查询。
+
 ## <a id="prereq"></a>先决条件
 要完成本文中的步骤，需要：
 
@@ -80,6 +87,7 @@
 如果将 Tez 与 Hive 配合使用，请参阅以下文档，了解调试信息：
 
 * [在基于 Windows 的 HDInsight 上使用 Tez UI](/documentation/articles/hdinsight-debug-tez-ui/)
+* [Use the Ambari Tez view on Linux-based HDInsight（在基于 Linux 的 HDInsight 上使用 Ambari Tez 视图）](/documentation/articles/hdinsight-debug-ambari-tez-view/)
 
 [1]: /documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started/
 
@@ -104,7 +112,7 @@
 [hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters/
 [hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically/
 [hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data/
-[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows/
+[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-linux-tutorial-get-started/
 
 [Powershell-install-configure]: https://docs.microsoft.com/powershell/azureps-cmdlets-docs
 [powershell-here-strings]: http://technet.microsoft.com/zh-cn/library/ee692792.aspx
