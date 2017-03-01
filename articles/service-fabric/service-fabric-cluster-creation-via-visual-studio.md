@@ -55,7 +55,7 @@
 Visual Studio Service Fabric Resource Manager 模板将创建一个受证书保护的安全群集。此证书以最后三个模板参数标识（`certificateThumbprint`、`sourceVaultValue` 和 `certificateUrlValue`），并且必须在 **Azure 密钥保管库**中存在。有关如何创建群集安全证书的详细信息，请参阅 [Service Fabric 群集安全方案](/documentation/articles/service-fabric-cluster-security/#x509-certificates-and-service-fabric)一文。
 
 ## 可选：更改群集名称
-每个 Service Fabric 群集都有一个名称。在 Azure 中创建结构群集时，群集名称（连同 Azure 区域）确定了群集的域名系统 (DNS) 名称。例如，如果将群集命名为 `myBigCluster`，需托管新群集的资源组的位置（Azure 区域）为“中国东部”，则群集的 DNS 名称为 `myBigCluster.chinaeast.chinacloudapp.cn`。
+每个 Service Fabric 群集都有一个名称。在 Azure 中创建结构群集时，群集名称（连同 Azure 区域）确定了群集的域名系统 (DNS) 名称。例如，如果将群集命名为 `myBigCluster`，需托管新群集的资源组的位置（Azure 区域）为“中国东部”，则群集的 DNS 名称为 `myBigCluster.chinaeast.cloudapp.chinacloudapi.cn`。
 
 默认情况下，系统会自动生成群集名称，并在“群集”前缀后面附加一个随机后缀，使该名称唯一。这样便可以轻松使用模板作为**持续集成** (CI) 系统的一部分。如果想要为群集使用特定的名称，有效的方法之一是将 Resource Manager 模板文件 (`ServiceFabricCluster.json`) 中的 `clusterName` 变量的值设置为所选的名称。该名称是该文件中定义的第一个变量。
 

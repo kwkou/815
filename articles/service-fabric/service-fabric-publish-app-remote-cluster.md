@@ -88,10 +88,10 @@ Service Fabric 应用程序项目中名为 PublishProfiles 的文件夹包含 XM
 
 Visual Studio 发布体验已针对发布到远程群集（与某个 Azure 订阅关联）进行优化。但是，也可以通过直接编辑发布配置文件 XML 发布到任意终结点（例如 Service Fabric 合作群集）。如上所述，默认情况下提供了两个发布配置文件 - **Local.xml** 和 **Cloud.xml** - 但你可以针对不同的环境创建更多的配置文件。例如，你可以创建一个配置文件（例如命名为 **Party.xml**）用于发布到合作群集。
 
-如果要连接到未受保护的群集，只需提供群集连接终结点，例如 `partycluster1.chinaeast.chinacloudapp.cn:19000`。在此情况下，发布配置文件中的连接终结点看起来类似于：
+如果要连接到未受保护的群集，只需提供群集连接终结点，例如 `partycluster1.chinaeast.cloudapp.chinacloudapi.cn:19000`。在此情况下，发布配置文件中的连接终结点看起来类似于：
 
 
-	<ClusterConnectionParameters ConnectionEndpoint="partycluster1.chinaeast.chinacloudapp.cn:19000" />
+	<ClusterConnectionParameters ConnectionEndpoint="partycluster1.chinaeast.cloudapp.chinacloudapi.cn:19000" />
 
 
   如果要连接到受保护的群集，则还需要提供本地存储中用于身份验证的客户端证书的详细信息。有关详细信息，请参阅[配置与 Service Fabric 群集的安全连接](/documentation/articles/service-fabric-visualstudio-configure-secure-connections/)。
