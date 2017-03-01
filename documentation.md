@@ -1,7 +1,7 @@
 <properties linkid="documentation-overview" urlDisplayName="Doc-Overview" pageTitle="文档概览" metaKeywords="Doc-Overview" description="" metaCanonical="" services="" documentationCenter="" title="" authors="" solutions="" manager="Tiffena" editor="Eric Chen" />
 <tags ms.service=""
     ms.date=""
-    wacn.date="02/08/2017"
+    wacn.date="03/01/2017"
     />
 
 #文档中心
@@ -169,6 +169,7 @@
 	<td><a href="/documentation/services/backup/">备份</a></td>
 	<td><a href="/documentation/services/site-recovery/">站点恢复</a></td>
 	<td><a href="/documentation/services/scheduler/">计划程序</a></td>
+  <td><a href="/documentation/services/azure-resource-manager/">Azure 资源管理器</a></td>
   </tr>
 </table>
 
