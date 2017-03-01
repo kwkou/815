@@ -57,7 +57,7 @@ Service Fabric 反向代理在群集的所有节点上运行。它会代表客�
 
 
  - **http(s):** 可以将反向代理配置为接受 HTTP 或 HTTPS 流量。如果为 HTTPS 流量，则会在反向代理中出现 SSL 终止的情况。由反向代理转发到群集中服务的请求是通过 HTTP 进行的。
- - **群集 FQDN| internal IP:** For external clients, the reverse proxy can be configured so that it is reachable through the cluster domain (e.g., mycluster.chinaeast.chinacloudapp.cn). By default the reverse proxy runs on every node, so for internal traffic it can be reached on localhost or on any internal node IP (e.g., 10.0.0.1).
+ - **群集 FQDN| internal IP:** For external clients, the reverse proxy can be configured so that it is reachable through the cluster domain (e.g., mycluster.chinaeast.cloudapp.chinacloudapi.cn). By default the reverse proxy runs on every node, so for internal traffic it can be reached on localhost or on any internal node IP (e.g., 10.0.0.1).
  - **Port:** 为反向代理指定的端口。例如：19008。
  - **ServiceInstanceName:** 这是要在不使用“fabric:/”方案的情况下访问的服务的完全限定式已部署服务实例名称。例如，若要访问服务 *fabric:/myapp/myservice/*，可使用 *myapp/myservice*。
  - **Suffix path:** 这是要连接到的服务的实际 URL 路径。例如，*myapi/values/add/3*
@@ -80,17 +80,17 @@ Service Fabric 反向代理在群集的所有节点上运行。它会代表客�
 
 如果服务使用单独分区方案，则 *PartitionKey* 和 *PartitionKind* 查询字符串参数不是必需的，可以通过网关访问服务，如下所示：
 
- - 外部访问方式：`http://mycluster.chinaeast.chinacloudapp.cn:19008/MyApp/MyService`
+ - 外部访问方式：`http://mycluster.chinaeast.cloudapp.chinacloudapi.cn:19008/MyApp/MyService`
  - 内部访问方式：`http://localhost:19008/MyApp/MyService`
 
 如果服务使用“统一 Int64”分区方案，则必须使用 *PartitionKey* 和 *PartitionKind* 查询字符串来访问服务的分区：
 
- - 外部访问方式：`http://mycluster.chinaeast.chinacloudapp.cn:19008/MyApp/MyService?PartitionKey=3&PartitionKind=Int64Range`
+ - 外部访问方式：`http://mycluster.chinaeast.cloudapp.chinacloudapi.cn:19008/MyApp/MyService?PartitionKey=3&PartitionKind=Int64Range`
  - 内部访问方式：`http://localhost:19008/MyApp/MyService?PartitionKey=3&PartitionKind=Int64Range`
 
 若要访问服务所公开的资源，可直接在 URL 中将资源路径置于服务名称之后：
 
- - 外部访问方式：`http://mycluster.chinaeast.chinacloudapp.cn:19008/MyApp/MyService/index.html?PartitionKey=3&PartitionKind=Int64Range`
+ - 外部访问方式：`http://mycluster.chinaeast.cloudapp.chinacloudapi.cn:19008/MyApp/MyService/index.html?PartitionKey=3&PartitionKind=Int64Range`
  - 内部访问方式：`http://localhost:19008/MyApp/MyService/api/users/6?PartitionKey=3&PartitionKind=Int64Range`
 
 然后，网关会将这些请求转发到服务的 URL：

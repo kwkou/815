@@ -160,7 +160,7 @@ Visual Studio 支持在中国区 Azure 上开发，使用 Visual Studio 2015 upd
 :--|:--|:--
 Azure - 常规 | *.windows.net | *.chinacloudapi.cn
 Azure - 计算 | *.cloudapp.net | *.chinacloudapp.cn  
-Azure - Service Fabric Cluster | *.cloudapp.azure.com | *.chinaeast.chinacloudapp.cn
+Azure - Service Fabric Cluster | *.cloudapp.azure.com | *.cloudapp.chinacloudapi.cn
 Azure - 存储 | <p>\*.blob.core.windows.net </p> <p>\*.queue.core.windows.net </p> <p>\*.table.core.windows.net</p> | <p>*.blob.core.chinacloudapi.cn </p><p> *.queue.core.chinacloudapi.cn </p><p> *.table.core.chinacloudapi.cn</p>
 Azure - 服务管理 | https://management.core.windows.net | https://management.core.chinacloudapi.cn
 Azure - 资源管理器 (ARM) | https://management.azure.com | https://management.chinacloudapi.cn

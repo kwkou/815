@@ -57,13 +57,13 @@ Visual Studio Service Fabric 工具支持所有用于连接到群集来进行发
 
     如果你要发布到远程群集，需要指定该特定群集的相应参数。下面是连接到不安全群集的示例：
 
-    `<ClusterConnectionParameters ConnectionEndpoint="mycluster.chinaeast.chinacloudapp.cn:19000" />`
+    `<ClusterConnectionParameters ConnectionEndpoint="mycluster.chinaeast.cloudapp.chinacloudapi.cn:19000" />`
 
     下面是连接到基于 x509 证书的安全群集的示例：
 
     
 	    <ClusterConnectionParameters
-	    ConnectionEndpoint="mycluster.chinaeast.chinacloudapp.cn:19000"
+	    ConnectionEndpoint="mycluster.chinaeast.cloudapp.chinacloudapi.cn:19000"
 	    X509Credential="true"
 	    ServerCertThumbprint="0123456789012345678901234567890123456789"
 	    FindType="FindByThumbprint"

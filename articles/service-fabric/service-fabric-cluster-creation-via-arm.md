@@ -284,7 +284,7 @@ Service Fabric 群集提供其管理功能的各种入口点，包括基于 Web 
 4. 运行 `SetupApplications.ps1` 并提供 TenantId、ClusterName 和 WebApplicationReplyUrl 作为参数。例如：
 
 
-    	.\SetupApplications.ps1 -TenantId '690ec069-8200-4068-9d01-5aaf188e557a' -ClusterName 'mycluster' -WebApplicationReplyUrl 'https://mycluster.chinaeast.chinacloudapp.cn:19080/Explorer/index.html'
+    	.\SetupApplications.ps1 -TenantId '690ec069-8200-4068-9d01-5aaf188e557a' -ClusterName 'mycluster' -WebApplicationReplyUrl 'https://mycluster.chinaeast.cloudapp.chinacloudapi.cn:19080/Explorer/index.html'
 
 
     执行 PowerShell 命令 `Get-AzureSubscription`，可找到 **TenantId**。此命令会显示每个订阅的 **TenantId**。

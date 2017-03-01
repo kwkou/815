@@ -92,7 +92,7 @@
 *ServerCertThumbprint* 是群集节点上安装的服务器证书的指纹。*FindValue* 是管理客户端证书的指纹。填充参数时，命令如以下示例所示：
 
 
-	Connect-ServiceFabricCluster -ConnectionEndpoint clustername.chinaeast.chinacloudapp.cn:19000 `
+	Connect-ServiceFabricCluster -ConnectionEndpoint clustername.chinaeast.cloudapp.chinacloudapi.cn:19000 `
 	          -KeepAliveIntervalInSec 10 `
 	          -X509Credential -ServerCertThumbprint A8136758F4AB8962AF2BF3F27921BE1DF67F4326 `
 	          -FindType FindByThumbprint -FindValue 71DE04467C9ED0544D021098BCD44C71E183414E `
@@ -110,7 +110,7 @@ Service Fabric SDK 为群集管理提供 [FabricClient](https://msdn.microsoft.c
 若要连接到远程不安全群集，只需创建一个 FabricClient 实例并提供群集地址：
 
 
-	FabricClient fabricClient = new FabricClient("clustername.chinaeast.chinacloudapp.cn:19000");
+	FabricClient fabricClient = new FabricClient("clustername.chinaeast.cloudapp.chinacloudapi.cn:19000");
 
 
 对于在群集内运行的代码（例如，在可靠服务中），请创建 FabricClient，无需指定群集地址。FabricClient 连接到代码当前正在运行的节点上的本地管理网关，从而避免额外的网络跃点。
@@ -126,8 +126,8 @@ Service Fabric SDK 为群集管理提供 [FabricClient](https://msdn.microsoft.c
 
 	string clientCertThumb = "71DE04467C9ED0544D021098BCD44C71E183414E";
 	string serverCertThumb = "A8136758F4AB8962AF2BF3F27921BE1DF67F4326";
-	string CommonName = "www.clustername.chinaeast.chinacloudapp.cn";
-	string connection = "clustername.chinaeast.chinacloudapp.cn:19000";
+	string CommonName = "www.clustername.chinaeast.cloudapp.chinacloudapi.cn";
+	string connection = "clustername.chinaeast.cloudapp.chinacloudapi.cn:19000";
 	
 	X509Credentials xc = GetCredentials(clientCertThumb, serverCertThumb, CommonName);
 	FabricClient fc = new FabricClient(xc, connection);
@@ -173,7 +173,7 @@ Service Fabric SDK 为群集管理提供 [FabricClient](https://msdn.microsoft.c
 
 
 	string serverCertThumb = "A8136758F4AB8962AF2BF3F27921BE1DF67F4326";
-	string connection = "clustername.chinaeast.chinacloudapp.cn:19000";
+	string connection = "clustername.chinaeast.cloudapp.chinacloudapi.cn:19000";
 
 	ClaimsCredentials claimsCredentials = new ClaimsCredentials();
 	claimsCredentials.ServerThumbprints.Add(serverCertThumb);
@@ -216,7 +216,7 @@ Service Fabric SDK 为群集管理提供 [FabricClient](https://msdn.microsoft.c
 	    );
 
 	string serverCertThumb = "A8136758F4AB8962AF2BF3F27921BE1DF67F4326";
-	string connection = "clustername.chinaeast.chinacloudapp.cn:19000";
+	string connection = "clustername.chinaeast.cloudapp.chinacloudapi.cn:19000";
 	ClaimsCredentials claimsCredentials = new ClaimsCredentials();
 	claimsCredentials.ServerThumbprints.Add(serverCertThumb);
 	claimsCredentials.LocalClaims = token;

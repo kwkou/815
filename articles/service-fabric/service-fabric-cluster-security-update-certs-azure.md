@@ -251,7 +251,7 @@
 
 以下快速参考提供了用于连接到安全群集的命令
 
-	$ClusterName= "chackosecure5.chinaeast.chinacloudapp.cn:19000"
+	$ClusterName= "chackosecure5.chinaeast.cloudapp.chinacloudapi.cn:19000"
 	$CertThumbprint= "70EF5E22ADB649799DA3C8B6A6BF7SD1D630F8F3" 
 
 	Connect-serviceFabricCluster -ConnectionEndpoint $ClusterName -KeepAliveIntervalInSec 10 `
