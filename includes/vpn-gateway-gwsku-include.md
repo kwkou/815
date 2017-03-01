@@ -6,6 +6,8 @@ VPN 网关可以使用以下 SKU：
 * 标准
 * HighPerformance
 
+VPN 网关不使用 UltraPerformance 网关 SKU。有关 UltraPerformance SKU 的信息，请参阅 [ExpressRoute](/documentation/articles/expressroute-about-virtual-network-gateways/) 文档。
+
 选择 SKU 时，请考虑以下内容：
 
 * 如果想要使用 PolicyBased VPN 类型，必须使用基本 SKU。任何其他 SKU 均不支持 PolicyBased VPN（之前称为静态路由）。
