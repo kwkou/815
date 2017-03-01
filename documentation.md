@@ -169,7 +169,12 @@
 	<td><a href="/documentation/services/backup/">备份</a></td>
 	<td><a href="/documentation/services/site-recovery/">站点恢复</a></td>
 	<td><a href="/documentation/services/scheduler/">计划程序</a></td>
+  </tr>
+  <tr>
   <td><a href="/documentation/services/azure-resource-manager/">Azure 资源管理器</a></td>
+  <td><a href=""></a></td>
+	<td><a href=""></a></td>
+	<td><a href=""></a></td>
   </tr>
 </table>
 
