@@ -99,34 +99,34 @@
 
 		[openlogic]
 		name=CentOS-$releasever - openlogic packages for $basearch
-		baseurl=http://olcentgbl.trafficmanager.cn/openlogic/$releasever/openlogic/$basearch/
+		baseurl=http://olcentgbl.trafficmanager.net/openlogic/$releasever/openlogic/$basearch/
 		enabled=1
 		gpgcheck=0
 
 		[base]
 		name=CentOS-$releasever - Base
-		baseurl=http://olcentgbl.trafficmanager.cn/centos/$releasever/os/$basearch/
+		baseurl=http://olcentgbl.trafficmanager.net/centos/$releasever/os/$basearch/
 		gpgcheck=1
 		gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6
 
 		#released updates
 		[updates]
 		name=CentOS-$releasever - Updates
-		baseurl=http://olcentgbl.trafficmanager.cn/centos/$releasever/updates/$basearch/
+		baseurl=http://olcentgbl.trafficmanager.net/centos/$releasever/updates/$basearch/
 		gpgcheck=1
 		gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6
 
 		#additional packages that may be useful
 		[extras]
 		name=CentOS-$releasever - Extras
-		baseurl=http://olcentgbl.trafficmanager.cn/centos/$releasever/extras/$basearch/
+		baseurl=http://olcentgbl.trafficmanager.net/centos/$releasever/extras/$basearch/
 		gpgcheck=1
 		gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6
 
 		#additional packages that extend functionality of existing packages
 		[centosplus]
 		name=CentOS-$releasever - Plus
-		baseurl=http://olcentgbl.trafficmanager.cn/centos/$releasever/centosplus/$basearch/
+		baseurl=http://olcentgbl.trafficmanager.net/centos/$releasever/centosplus/$basearch/
 		gpgcheck=1
 		enabled=0
 		gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6
@@ -134,7 +134,7 @@
 		#contrib - packages by Centos Users
 		[contrib]
 		name=CentOS-$releasever - Contrib
-		baseurl=http://olcentgbl.trafficmanager.cn/centos/$releasever/contrib/$basearch/
+		baseurl=http://olcentgbl.trafficmanager.net/centos/$releasever/contrib/$basearch/
 		gpgcheck=1
 		enabled=0
 		gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6
@@ -255,34 +255,34 @@
 
 		[openlogic]
 		name=CentOS-$releasever - openlogic packages for $basearch
-		baseurl=http://olcentgbl.trafficmanager.cn/openlogic/$releasever/openlogic/$basearch/
+		baseurl=http://olcentgbl.trafficmanager.net/openlogic/$releasever/openlogic/$basearch/
 		enabled=1
 		gpgcheck=0
 
 		[base]
 		name=CentOS-$releasever - Base
-		baseurl=http://olcentgbl.trafficmanager.cn/centos/$releasever/os/$basearch/
+		baseurl=http://olcentgbl.trafficmanager.net/centos/$releasever/os/$basearch/
 		gpgcheck=1
 		gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
 
 		#released updates
 		[updates]
 		name=CentOS-$releasever - Updates
-		baseurl=http://olcentgbl.trafficmanager.cn/centos/$releasever/updates/$basearch/
+		baseurl=http://olcentgbl.trafficmanager.net/centos/$releasever/updates/$basearch/
 		gpgcheck=1
 		gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
 
 		#additional packages that may be useful
 		[extras]
 		name=CentOS-$releasever - Extras
-		baseurl=http://olcentgbl.trafficmanager.cn/centos/$releasever/extras/$basearch/
+		baseurl=http://olcentgbl.trafficmanager.net/centos/$releasever/extras/$basearch/
 		gpgcheck=1
 		gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
 
 		#additional packages that extend functionality of existing packages
 		[centosplus]
 		name=CentOS-$releasever - Plus
-		baseurl=http://olcentgbl.trafficmanager.cn/centos/$releasever/centosplus/$basearch/
+		baseurl=http://olcentgbl.trafficmanager.net/centos/$releasever/centosplus/$basearch/
 		gpgcheck=1
 		enabled=0
 		gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
@@ -290,7 +290,7 @@
 		#contrib - packages by Centos Users
 		[contrib]
 		name=CentOS-$releasever - Contrib
-		baseurl=http://olcentgbl.trafficmanager.cn/centos/$releasever/contrib/$basearch/
+		baseurl=http://olcentgbl.trafficmanager.net/centos/$releasever/contrib/$basearch/
 		gpgcheck=1
 		enabled=0
 		gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
