@@ -21,7 +21,7 @@
 
 # 预见性维护预配置解决方案概述
 
-*预见性维护* [预配置解决方案][lnk_preconfigured_solutions]是 [ Azure IoT 套件][lnk_iot_suite]预配置解决方案之一。此解决方案将实时设备遥测收集与使用 R 统计计算语言创建的预测模型相集成。
+*预见性维护* [预配置解决方案][lnk_preconfigured_solutions]是 [ Azure IoT 套件][lnk_iot_suite]预配置解决方案之一。此解决方案将实时设备遥测收集与使用 [Microsoft R Server](https://www.microsoft.com/en-sa/cloud-platform/r-server)创建的预测模型相集成。
 
 使用 Azure IoT 套件，企业可以快速方便地连接和监视资产，实时分析数据。预见性维护预配置解决方案会利用该数据及丰富的仪表板与可视化效果，为用户提供新的信息，提升其效率及增加收入来源。
 
