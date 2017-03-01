@@ -61,24 +61,24 @@
 2.  创建名为 **sender.py** 的脚本。此脚本将向事件中心发送 200 个事件。它们是以 JSON 格式发送的简单环境读数。
 
 3.  将以下代码粘贴到 sender.py 中：
-
-	import uuid
-	import datetime
-	import random
-	import json
-	from azure.servicebus import ServiceBusService
+                
+        import uuid
+        import datetime
+        import random
+        import json
+        from azure.servicebus import ServiceBusService
 	
-	sbs = ServiceBusService(service_namespace='INSERT YOUR NAMESPACE NAME', shared_access_key_name='RootManageSharedAccessKey', shared_access_key_value='INSERT YOUR KEY')
-	devices = []
-	for x in range(0, 10):
-    	    devices.append(str(uuid.uuid4()))
+        sbs = ServiceBusService(service_namespace='INSERT YOUR NAMESPACE NAME', shared_access_key_name='RootManageSharedAccessKey', shared_access_key_value='INSERT YOUR KEY')
+        devices = []
+        for x in range(0, 10):
+          devices.append(str(uuid.uuid4()))
     	
-	for y in range(0,20):
-    	    for dev in devices:
-    	        reading = {'id': dev, 'timestamp': str(datetime.datetime.utcnow()), 'uv': random.random(), 'temperature': random.randint(70, 100), 'humidity': random.randint(70, 100)}
-    	        s = json.dumps(reading)
-    	        sbs.send_event('myhub', s)
-    	    print y
+        for y in range(0,20):
+          for dev in devices:
+               reading = {'id': dev, 'timestamp': str(datetime.datetime.utcnow()), 'uv': random.random(), 'temperature': random.randint(70, 100), 'humidity': random.randint(70, 100)}
+               s = json.dumps(reading)
+               sbs.send_event('myhub', s)
+          print y
 	
 4. 更新前面的代码，使用在创建事件中心命名空间时获取的命名空间名称、密钥值和事件中心名称。
 
@@ -90,48 +90,46 @@
 
 3. 将以下代码粘贴到 archivereader.py 中：
 
-	
-	import os
-	import string
-	import json
-	import avro.schema
-	from avro.datafile import DataFileReader, DataFileWriter
-	from avro.io import DatumReader, DatumWriter
-	from azure.storage.blob import BlockBlobService
-    	
-	def processBlob(filename):
-    	    reader = DataFileReader(open(filename, 'rb'), DatumReader())
-    	    dict = {}
-    	    for reading in reader:
-    	        parsed\_json = json.loads(reading["Body"])
-    	        if not 'id' in parsed\_json:
-    	            return
-    	        if not dict.has\_key(parsed\_json['id']):
-    	        list = []
-    	        dict[parsed\_json['id']] = list
-    	    else:
-    	        list = dict[parsed\_json['id']]
-    	        list.append(parsed\_json)
-    	    reader.close()
-    	    for device in dict.keys():
-    	        deviceFile = open(device + '.csv', "a")
-    	        for r in dict[device]:
-    	            deviceFile.write(", ".join([str(r[x]) for x in r.keys()])+'\\n')
-    
-	def startProcessing(accountName, key, container):
-    	    print 'Processor started using path: ' + os.getcwd()
-    	    block\_blob\_service = BlockBlobService(account\_name=accountName, account\_key=key)
-    	    generator = block\_blob\_service.list\_blobs(container)
-    	    for blob in generator:
-    	        if blob.properties.content\_length != 0:
-    	            print('Downloaded a non empty blob: ' + blob.name)
-    	            cleanName = string.replace(blob.name, '/', '\_')
-    	            block\_blob\_service.get\_blob\_to\_path(container, blob.name, cleanName)
-    	            processBlob(cleanName)
-    	            os.remove(cleanName)
-    	        block\_blob\_service.delete\_blob(container, blob.name)
-	startProcessing('YOUR STORAGE ACCOUNT NAME', 'YOUR KEY', 'archive')
-    
+        import os
+        import string
+        import json
+        import avro.schema
+        from avro.datafile import DataFileReader, DataFileWriter
+        from avro.io import DatumReader, DatumWriter
+        from azure.storage.blob import BlockBlobService
+   
+        def processBlob(filename):
+           reader = DataFileReader(open(filename, 'rb'), DatumReader())
+           dict = {}
+           for reading in reader:
+               parsed_json = json.loads(reading["Body"])
+               if not 'id' in parsed_json:
+                   return
+               if not dict.has_key(parsed_json['id']):
+               list = []
+               dict[parsed_json['id']] = list
+           else:
+               list = dict[parsed_json['id']]
+               list.append(parsed_json)
+           reader.close()
+           for device in dict.keys():
+               deviceFile = open(device + '.csv', "a")
+               for r in dict[device]:
+                   deviceFile.write(", ".join([str(r[x]) for x in r.keys()])+'\n')
+   
+        def startProcessing(accountName, key, container):
+           print 'Processor started using path: ' + os.getcwd()
+           block_blob_service = BlockBlobService(account_name=accountName, account_key=key)
+           generator = block_blob_service.list_blobs(container)
+           for blob in generator:
+               if blob.properties.content_length != 0:
+                   print('Downloaded a non empty blob: ' + blob.name)
+                   cleanName = string.replace(blob.name, '/', '_')
+                   block_blob_service.get_blob_to_path(container, blob.name, cleanName)
+                   processBlob(cleanName)
+                   os.remove(cleanName)
+               block_blob_service.delete_blob(container, blob.name)
+        startProcessing('YOUR STORAGE ACCOUNT NAME', 'YOUR KEY', 'archive')
 
 4. 请务必在调用 `startProcessing` 时粘贴存储帐户名称和密钥的相应值。
 
@@ -139,14 +137,14 @@
 
 1. 打开其路径中包含 Python 的命令提示符，然后运行以下命令，安装 Python 必备组件包：
 
-	pip install azure-storage
-	pip install azure-servicebus
-	pip install avro
-    
-    如果使用的是早期版本的 Azure 存储或 Azure，可能需要使用 **-upgrade** 选项
+        pip install azure-storage
+        pip install azure-servicebus
+        pip install avro
 
-    还可能需要运行以下命令（在大多数系统上不必要）：
-    
+如果使用的是早期版本的 Azure 存储或 Azure，可能需要使用 **-upgrade** 选项
+
+还可能需要运行以下命令（在大多数系统上不必要）： 
+
         pip install cryptography
 
 2. 将目录更改到保存 sender.py 和 archivereader.py 的位置，然后运行以下命令：

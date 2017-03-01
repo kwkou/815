@@ -32,7 +32,7 @@
 
 * [Microsoft Visual Studio](http://visualstudio.com)
 
-* 有效的 Azure 帐户。<br/>如果你没有帐户，只需几分钟的时间就能创建一个免费帐户。有关详细信息，请参阅 \[Azure 试用\]\(/pricing/1rmb-trial/ target="\_blank"\)。
+* 有效的 Azure 帐户。<br/>如果你没有帐户，只需几分钟的时间就能创建一个免费帐户。有关详细信息，请参阅[Azure 试用](/pricing/1rmb-trial)
 
 [AZURE.INCLUDE [event-hubs-create-event-hub](../../includes/event-hubs-create-event-hub.md)]
 
