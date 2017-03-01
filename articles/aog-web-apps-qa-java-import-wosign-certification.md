@@ -8,11 +8,6 @@
 	editor=""
 	tags="Java,Wosign 证书" />
 <tags
-	ms.service="app-service-web-aog"
-	ms.date="10/28/2016"
-	wacn.date="10/28/2016" />
-
-<tags
     ms.service="service-fabric-aog"
     ms.date=""
     wacn.date="02/21/2017" />
@@ -34,6 +29,7 @@ JDK 有一套单独的证书库，JAVA 在访问 HTTPS 服务时，会使用自�
 安装 Wosign 根证书到 JDK 的证书库，详细步骤如下：
 
 1. 从 [http://www.wosign.com/Root/index.htm#](http://www.wosign.com/Root/index.htm# "http://www.wosign.com/Root/index.htm#") 站点下载 WoSign 根证书（Certification Authority of WoSign），将 `.crt` 文件后缀改为 `.cer`。
+
 2. 执行以下命令导入 :
 
 		keytool -
