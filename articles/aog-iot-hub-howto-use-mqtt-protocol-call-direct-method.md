@@ -1,5 +1,5 @@
 <properties
-    pageTitle="Node JS 如何使用 MQTT 协议调用“直接方法”"
+    pageTitle="Node JS 如何使用 MQTT 协议调用“直接方法”"
     description="Node JS 如何使用 MQTT 协议调用“直接方法”"
     service=""
     resource="iot-hub"
