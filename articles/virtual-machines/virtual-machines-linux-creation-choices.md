@@ -14,8 +14,8 @@
     ms.topic="get-started-article"
     ms.tgt_pltfrm="vm-linux"
     ms.workload="infrastructure-services"
-    ms.date="09/27/2016"
-    wacn.date="02/20/2017"
+    ms.date="01/03/2016"
+    wacn.date="03/01/2017"
     ms.author="iainfou" />  
 
 

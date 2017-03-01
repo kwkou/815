@@ -13,8 +13,8 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="01/04/2016"
-	wacn.date="09/26/2016"
+	ms.date="12/21/2016"
+	wacn.date="03/01/2017"
 	ms.author="zarizvi"/>
 	
 # 受支持的迁移配置

@@ -14,8 +14,8 @@
 	ms.tgt_pltfrm="vm-windows"
 	ms.devlang="na"
 	ms.topic="support-article"
-	ms.date="09/27/2016"
-	wacn.date="11/21/2016"
+	ms.date="12/20/2016"
+	wacn.date="03/01/2017"
 	ms.author="iainfou"/>
 
 # 对在 Azure 虚拟机上运行的应用程序的访问进行故障排除

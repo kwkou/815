@@ -14,8 +14,8 @@
     ms.tgt_pltfrm="na"
     ms.devlang="Java"
     ms.topic="get-started-article"
-    ms.date="11/01/2016"
-    wacn.date="01/05/2017"
+    ms.date="12/22/2016"
+    wacn.date="03/01/2017"
     ms.author="robmcm" />
 
 # 在 Azure App Service 中创建 Java Web 应用

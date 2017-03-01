@@ -15,8 +15,8 @@
     ms.tgt_pltfrm="vm-windows"
     ms.devlang="na"
     ms.topic="support-article"
-    ms.date="10/14/2016"
-    wacn.date="12/20/2016"
+    ms.date="01/10/2017"
+    wacn.date="03/01/2017"
     ms.author="iainfou" />
 
 # 排查发送到 Azure 中 Windows VM 的特定 RDP 错误消息

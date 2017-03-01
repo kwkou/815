@@ -14,8 +14,8 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="06/16/2016"
-   wacn.date="01/09/2017"
+   ms.date="01/12/2017"
+   wacn.date="03/01/2017"
    ms.author="yushwang"/>
 
 # Azure VPN 网关的 BGP 概述

@@ -13,8 +13,8 @@
 	ms.tgt_pltfrm="cache-redis" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="08/30/2016" 
-	wacn.date="11/14/2016" 
+	ms.date="01/06/2017" 
+	wacn.date="03/01/2017" 
 	ms.author="sdanie"/>  
 
 
