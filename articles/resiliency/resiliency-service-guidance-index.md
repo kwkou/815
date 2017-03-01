@@ -6,8 +6,6 @@
    authors="adamglick"
    manager="saladki"
    editor=""/>  
-
-
 <tags
    ms.service="resiliency"
    ms.devlang="na"
@@ -15,7 +13,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="na"
    ms.date="08/18/2016"
-   wacn.date="11/08/2016"/>  
+   ms.author="aglick"/>  
 
 
 # Azure 服务复原指南
@@ -31,10 +29,14 @@
 | 服务 | 灾难恢复指南 | 设计指南 |
 |:---------|:--------------------------:|:------------------:|
 | [云服务](/home/features/cloud-services/ "Azure 云服务") | [链接](/documentation/articles/cloud-services-disaster-recovery-guidance/ "Azure 云服务灾难恢复指南") | 不可用 |
+| [密钥保管库](/home/features/key-vault/ "Azure 密钥保管库") | [链接](/documentation/articles/key-vault-disaster-recovery-guidance/ "Azure 密钥保管库灾难恢复指南") | 不可用 |
 | [存储](/home/features/storage/ "Azure 存储空间") | [链接](/documentation/articles/storage-disaster-recovery-guidance/ "Azure 存储空间灾难恢复指南") | 不可用 |
+| [SQL 数据库](/home/features/sql-database/ "Azure SQL 数据库") | [链接](/documentation/articles/sql-database-disaster-recovery/ "Azure SQL 数据库灾难恢复指南") | [链接](/documentation/articles/sql-database-business-continuity-design/ "Azure SQL 数据库设计指南") |
+| [虚拟机](/home/features/virtual-machines/ "Azure 虚拟机") | [链接](/documentation/articles/virtual-machines-disaster-recovery-guidance/ "Azure 虚拟机灾难恢复指南") | 不可用 |
 | [虚拟网络](/home/features/networking/ "Azure 虚拟网络") | [链接](/documentation/articles/virtual-network-disaster-recovery-guidance/ "Azure 虚拟网络灾难恢复指南") | 不可用 |
 
-##后续步骤
+## 后续步骤
 如果你正在查找主要侧重于系统与解决方案的指南，请参阅[构建在 Azure 基础之上的应用程序灾难恢复和高可用性](/documentation/articles/resiliency-disaster-recovery-high-availability-azure-applications/)。
 
 <!---HONumber=Mooncake_1031_2016-->
+<!-- Update_Description:update meta properties; wording update; update link reference-->
