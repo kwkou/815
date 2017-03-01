@@ -34,7 +34,7 @@
 
 [AZURE.INCLUDE [expressroute-gwsku-include](../../includes/expressroute-gwsku-include.md)]
 
-如果想要将网关升级为功能更强大的网关 SKU，在大多数情况下，可以使用“Resize-AzureRmVirtualNetworkGateway”PowerShell cmdlet。此方法适用于升级到 Standard 和 HighPerformance SKU。
+如果想要将网关升级为功能更强大的网关 SKU，在大多数情况下，可以使用“Resize-AzureRmVirtualNetworkGateway”PowerShell cmdlet。此方法适用于升级到 Standard 和 HighPerformance SKU。但是，若要升级到 UltraPerformance SKU，需要重新创建网关。
 
 ###  <a name="aggthroughput"></a>按网关 SKU 列出的估计聚合吞吐量
 

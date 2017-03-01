@@ -116,7 +116,7 @@
 
 		Set-AzureVNetConfig -ConfigurationPath 'C:\NetworkConfig.xml'
 
-4. <a name="gw"></a> 创建 ExpressRoute 网关。请务必将 GatewaySKU 指定为 *Standard* 或 *HighPerformance* ，并将 GatewayType 指定为 *DynamicRouting*。
+4. <a name="gw"></a> 创建 ExpressRoute 网关。请务必将 GatewaySKU 指定为 *Standard* 、 *HighPerformance*  或 *UltraPerformance* ，并将 GatewayType 指定为 *DynamicRouting*。
 
 	使用以下示例，将值替换为你自己的值。
 
@@ -126,7 +126,7 @@
 
 		New-AzureDedicatedCircuitLink -ServiceKey <service-key> -VNetName MyAzureVNET
 
-6. <a name="vpngw"></a> 接下来，创建站点到站点 VPN 网关。GatewaySKU 必须为 *Standard* 或 *HighPerformance* ，GatewayType 必须为 *DynamicRouting*。
+6. <a name="vpngw"></a> 接下来，创建站点到站点 VPN 网关。GatewaySKU 必须为 *Standard* 、 *HighPerformance*  或 *UltraPerformance* ，GatewayType 必须为 *DynamicRouting*。
 
 		New-AzureVirtualNetworkGateway -VNetName MyAzureVNET -GatewayName S2SVPN -GatewayType DynamicRouting -GatewaySKU  HighPerformance
 
