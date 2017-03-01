@@ -15,8 +15,8 @@
     ms.topic="article"
     ms.tgt_pltfrm="vm-windows-sql-server"
     ms.workload="iaas-sql-server"
-    ms.date="01/10/2016"
-    wacn.date="02/20/2017"
+    ms.date=""
+    wacn.date="03/01/2017"
     ms.author="mikeray" />
 
 # 满足在 Azure 虚拟机中创建 Always On 可用性组的先决条件

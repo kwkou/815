@@ -15,8 +15,8 @@
     ms.topic="article"
     ms.tgt_pltfrm="vm-windows-sql-server"
     ms.workload="iaas-sql-server"
-    ms.date="01/09/2017"
-    wacn.date="02/20/2017"
+    ms.date=""
+    wacn.date="03/01/2017"
     ms.author="mikeray" />
 
 # 在不同区域中的 Azure 虚拟机上创建 SQL Server Always On 可用性组

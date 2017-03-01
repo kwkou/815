@@ -15,8 +15,8 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="infrastructure-services"
-    ms.date="12/28/2016"
-    wacn.date="02/20/2017"
+    ms.date=""
+    wacn.date="03/01/2017"
     ms.author="mikeray" />
 
 # Azure 虚拟机上的 SQL Server AlwaysOn 可用性组简介 #

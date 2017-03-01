@@ -14,8 +14,8 @@
 	ms.tgt_pltfrm="vm-windows"
 	ms.devlang="Java"
 	ms.topic="article"
-	ms.date="11/01/2016"
-	wacn.date="12/30/2016"
+	ms.date="12/22/2016"
+	wacn.date="03/01/2017"
 	ms.author="robmcm"/>
 
 # 如何在虚拟机上通过 Java 运行需要进行大量计算的任务

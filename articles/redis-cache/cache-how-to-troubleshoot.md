@@ -13,8 +13,8 @@
 	ms.tgt_pltfrm="cache-redis" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="12/13/2016" 
-	wacn.date="01/25/2017" 
+	ms.date="01/06/2017" 
+	wacn.date="03/01/2017" 
 	ms.author="sdanie"/>
 
 # 如何排查 Azure Redis 缓存问题
