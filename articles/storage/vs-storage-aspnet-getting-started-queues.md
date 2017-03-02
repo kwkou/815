@@ -14,7 +14,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="12/23/2016"
-    wacn.date="02/24/2017"
+    wacn.date="03/02/2017"
     ms.author="tarcher" />  
 
 
@@ -62,7 +62,7 @@ Azure 队列存储用于在应用程序组件之间进行云消息传送。在�
 	    using Microsoft.WindowsAzure.Storage.Auth;
 	    using Microsoft.WindowsAzure.Storage.Queue;
 
-## 创建队列
+##<a name="create-a-queue"></a> 创建队列
 
 以下步骤演示了如何创建队列：
 
@@ -140,7 +140,7 @@ Azure 队列存储用于在应用程序组件之间进行云消息传送。在�
 	![创建队列](./media/vs-storage-aspnet-getting-started-queues/create-queue-results.png)  
 
 
-	如前所述，仅当队列不存在但已新建时，**CloudQueue.CreateIfNotExists** 方法才会返回 **true**。因此，如果在队列存在的情况下运行该应用，此方法会返回 **false**。若要多次运行应用，必须在重新运行应用前删除队列。可通过**CloudQueue.Delete**方法完成队列的删除。也可通过 [Azure 门户](https://portal.azure.cn/)或 [Azure 存储资源管理器](/documentation/articles/vs-azure-tools-storage-manage-with-storage-explorer/)删除队列。
+	如前所述，仅当队列不存在但已新建时，**CloudQueue.CreateIfNotExists** 方法才会返回 **true**。因此，如果在队列存在的情况下运行该应用，此方法会返回 **false**。若要多次运行应用，必须在重新运行应用前删除队列。可通过**CloudQueue.Delete**方法完成队列的删除。也可通过 [Azure 门户](https://portal.azure.cn/)删除队列。
 
 ## 向队列添加消息
 
@@ -226,7 +226,7 @@ Azure 队列存储用于在应用程序组件之间进行云消息传送。在�
 
 这两部分 - [从队列中读取消息但不删除它](#read-a-message-from-a-queue-without-removing-it)和[读取和删除队列中的消息](#read-and-remove-a-message-from-a-queue) - 演示了如何读取队列中的消息。
 
-## 从队列中读取一条消息，不删除它
+##<a name="read-a-message-from-a-queue-without-removing-it"></a> 从队列中读取一条消息，不删除它
 
 本部分演示了如何查看排队的消息（读取第一条消息但不删除它）。
 
@@ -310,7 +310,7 @@ Azure 队列存储用于在应用程序组件之间进行云消息传送。在�
 	![速览消息](./media/vs-storage-aspnet-getting-started-queues/peek-message-results.png)  
 
 
-## 读取和删除队列中的消息
+##<a name="read-and-remove-a-message-from-a-queue"></a> 读取和删除队列中的消息
 
 本部分介绍了如何读取和删除队列中的消息。
 
