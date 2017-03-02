@@ -78,7 +78,7 @@ RStudio Server 使用端口 8787。Azure VM 的默认配置不会打开此端口
 
 ### 向 VM 分配完全限定的域名以访问 RStudio Server
 
-系统不会创建云服务来包含 VM 的公共资源，因此，默认情况下，没有向动态公共 IP 分配完全限定的域名。可以创建一个完全限定的域名，并在部署后使用 Azure PowerShell 将其添加到映像。主机名的格式为 `domainnamelabel; region;.cloudapp.azure.com`。
+系统不会创建云服务来包含 VM 的公共资源，因此，默认情况下，没有向动态公共 IP 分配完全限定的域名。可以创建一个完全限定的域名，并在部署后使用 Azure PowerShell 将其添加到映像。主机名的格式为 `domainnamelabel; region;.chinacloudapp.cn`。
 
 例如，使用 PowerShell 为包含资源组 `rservercloudrg` 和所需主机名 `rservercloud` 的、名为 `rservercloudvm` 的 VM 添加公共主机名。
 
