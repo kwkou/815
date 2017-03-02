@@ -14,7 +14,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="01/10/2017"
-    wacn.date="02/24/2017"
+    wacn.date="03/02/2017"
     ms.author="juliako" />
 
 # 开始使用 REST 传送点播内容
@@ -49,7 +49,7 @@
 5. 使用 REST API 发布资产并获取流式处理和渐进式下载 URL。
 6. 播放内容。
 
-有关此主题中使用的 AMS REST 实体的详细信息，请参阅 [Azure 媒体服务 REST API 参考](https://docs.microsoft.com/rest/api/media/services/azure-media-services-rest-api-reference)。另请参阅 [Azure 媒体服务概念](/documentation/articles/media-services-concepts/)。
+有关此主题中使用的 AMS REST 实体的详细信息，请参阅 [Azure 媒体服务 REST API 参考](https://docs.microsoft.com/en-us/rest/api/media/mediaservice)。另请参阅 [Azure 媒体服务概念](/documentation/articles/media-services-concepts/)。
 
 ## <a id="create_ams"></a>使用门户创建媒体服务帐户
 

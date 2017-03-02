@@ -14,7 +14,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="12/21/2016"
-    wacn.date="02/24/2017"
+    wacn.date="03/02/2017"
     ms.author="tarcher" />  
 
 
@@ -170,9 +170,9 @@ Azure 表存储使用户可以存储大量结构化数据。该服务是一个 N
 	![创建表](./media/vs-storage-aspnet-getting-started-tables/create-table-results.png)  
 
 
-	如前所述，仅当表不存在但已新建时，**CloudTable.CreateIfNotExists** 方法才会返回 **true**。因此，如果在表存在的情况下运行该应用，此方法会返回 **false**。若要多次运行应用，必须在重新运行应用前删除表格。可通过**CloudTable.Delete** 方法完成表的删除。也可通过 [Azure 门户](https://portal.azure.cn/)或 [Azure 存储资源管理器](/documentation/articles/vs-azure-tools-storage-manage-with-storage-explorer/)删除表。
+	如前所述，仅当表不存在但已新建时，**CloudTable.CreateIfNotExists** 方法才会返回 **true**。因此，如果在表存在的情况下运行该应用，此方法会返回 **false**。若要多次运行应用，必须在重新运行应用前删除表格。可通过**CloudTable.Delete** 方法完成表的删除。也可通过 [Azure 门户](https://portal.azure.cn/)删除表。
 
-## 向表中添加条目
+##<a name="add-an-entity-to-a-table"></a> 向表中添加条目
 
 *实体*通过派生自 **TableEntity** 的自定义类映射到 C\# 对象。若要将实体添加到表，请创建用于定义实体的属性的类。在本部分中，将介绍如何定义将客户的名字和姓氏分别用作行键和分区键的实体类。实体的分区键和行键共同唯一地标识表中的实体。相对于查询分区键不同的实体，分区键相同的实体的查询速度更快，但使用不同的分区键能够增加并行操作的可伸缩性。对于应在表服务中存储的所有属性，该属性必须是受支持类型的公共属性且公开设置和检索值。实体类*必须*声明不带参数的公共构造函数。
 
@@ -268,7 +268,7 @@ Azure 表存储使用户可以存储大量结构化数据。该服务是一个 N
 
 	可按照[获取单个实体](#get-a-single-entity)部分中的步骤验证已添加该实体。还可使用 [Azure 存储资源管理器](/documentation/articles/vs-azure-tools-storage-manage-with-storage-explorer/)查看表的所有实体。
 
-## 向表添加一批实体
+##<a name="add-a-batch-of-entities-to-a-table"></a> 向表添加一批实体
 
 除了可向表[逐个添加实体](#add-an-entity-to-a-table)，还可成批添加实体。成批添加实体可减少代码与 Azure 表服务之间的重复操作次数。以下步骤演示了如何通过单个插入操作向表添加多个实体：
 
@@ -378,7 +378,7 @@ Azure 表存储使用户可以存储大量结构化数据。该服务是一个 N
 
 	可按照[获取单个实体](#get-a-single-entity)部分中的步骤验证已添加该实体。还可使用 [Azure 存储资源管理器](/documentation/articles/vs-azure-tools-storage-manage-with-storage-explorer/)查看表的所有实体。
 
-## 获取单个实体
+##<a name="get-a-single-entity"></a> 获取单个实体
 
 本部分演示了如何使用实体的行键和分区键获取表中的单个实体。
 

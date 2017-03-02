@@ -1,4 +1,4 @@
-## 设置开发环境
+##<a name="set-up-the-development-environment"></a> 设置开发环境
 
 本部分逐步讲解如何设置开发环境，包括创建 ASP.NET MVC 应用、添加“连接服务”连接、添加控制器，以及指定所需的命名空间指令。
 

@@ -14,7 +14,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="01/10/2017"
-    wacn.date="02/24/2017"
+    wacn.date="03/02/2017"
     ms.author="micurd" />  
 
 
@@ -38,7 +38,7 @@ Azure CLI 提供了一组开源且跨平台的命令，这些命令可以用于 
 ## 在 5 分钟内开始使用 Azure 存储空间和 Azure CLI
 本指南使用 Ubuntu 作为示例，但其他 OS 平台的操作应与此类似。
 
-**Azure 新用户：**获取一个 Azure 订阅以及与该订阅关联的帐户。有关 Azure 购买选项的信息，请参阅 [1rmb 试用](/pricing/1rmb-trial/)、[购买选项](/pricing/purchase-options/)。
+**Azure 新用户：**获取一个 Azure 订阅以及与该订阅关联的帐户。有关 Azure 购买选项的信息，请参阅 [1rmb 试用](/pricing/1rmb-trial/)、[购买选项](/pricing/)。
 
 请参阅 [在 Azure Active Directory \(Azure AD\ 中分配管理员角色)](https://msdn.microsoft.com/zh-cn/library/azure/hh531793.aspx)，以了解有关 Azure 订阅的更多信息。
 
@@ -239,7 +239,7 @@ Azure 文件共享是 Azure 中的 SMB 文件共享。所有目录和文件都�
 可以在下面查找适用于存储资源的 Azure CLI 1.0 命令参考：
 
 * [Resource Manager 模式下的 Azure CLI 命令](/documentation/articles/azure-cli-arm-commands/#azure-storage-commands-to-manage-your-storage-objects)
-* [Azure 服务管理模式下的 Azure CLI 命令](/documentation/articles/virtual-machines-command-line-tools/#commands-to-manage-your-storage-objects)
+* [Azure 服务管理模式下的 Azure CLI 命令](/documentation/articles/virtual-machines-command-line-tools/#Commands_to_manage_your_Storage_objects)
 
 
 
