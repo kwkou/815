@@ -217,12 +217,12 @@ Azure 有两个部署模型：Azure Resource Manager 和经典模型。Azure 建
 8. 单击“法律条款”，阅读条款，然后单击“购买”以表示同意。
 9. 单击“创建”以创建该 VNet。
    
-    ![在门户预览版中提交部署磁贴](./media/virtual-networks-create-vnet-arm-template-click-include/figure4.png)  
+    ![在门户预览中提交部署磁贴](./media/virtual-networks-create-vnet-arm-template-click-include/figure4.png)  
 
 
-10. 部署完成后，在 Azure 门户预览版中单击“更多服务”，接下来在显示的筛选框中键入“虚拟网络”，然后单击“虚拟网络”以查看“虚拟网络”边栏选项卡。在边栏选项卡中，单击“TestVNet”。在“TestVNet”边栏选项卡中，单击“子网”查看创建的子网，如下图所示：
+10. 部署完成后，在 Azure 门户预览中单击“更多服务”，接下来在显示的筛选框中键入“虚拟网络”，然后单击“虚拟网络”以查看“虚拟网络”边栏选项卡。在边栏选项卡中，单击“TestVNet”。在“TestVNet”边栏选项卡中，单击“子网”查看创建的子网，如下图所示：
     
-     ![在门户预览版中创建 VNet](./media/virtual-networks-create-vnet-arm-template-click-include/figure5.png)  
+     ![在门户预览中创建 VNet](./media/virtual-networks-create-vnet-arm-template-click-include/figure5.png)  
 
 
 ## 后续步骤
