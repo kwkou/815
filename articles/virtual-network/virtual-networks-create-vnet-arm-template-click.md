@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties
     pageTitle="使用 Resource Manager 模板创建虚拟网络 | Azure"
     description="了解如何使用模板创建虚拟网络 | Resource Manager。"
@@ -17,7 +15,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="infrastructure-services"
     ms.date="03/15/2016"
-    wacn.date=""
+    wacn.date="02/20/2017"
     ms.author="jdial" />
 
 # 使用模板创建虚拟网络
