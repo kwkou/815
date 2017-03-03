@@ -8,8 +8,8 @@
    editor="" /> 
 <tags 
    ms.service="service-bus"
-    ms.date="01/07/2017"
-   wacn.date="02/20/2017" />
+    ms.date="01/17/2017"
+   wacn.date="03/03/2017" />
 
 # 使用 AMQP 1.0 通过 PHP 使用服务总线
 
