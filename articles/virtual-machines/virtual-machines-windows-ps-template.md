@@ -16,6 +16,7 @@
   ms.devlang="na"
   ms.topic="article"
   ms.date="01/06/2017"
+  wacn.date="02/24/2017"
   ms.author="davidmu"/>
 
 # 使用 Resource Manager 模板创建 Windows 虚拟机
