@@ -18,7 +18,7 @@
 
 JAVA 在调用 Azure 的 HTTPS 的 REST API 时，会经常报证书问题。错误如下：
 
-	`PKIX：unable to find valid certification path to requested target`
+	PKIX：unable to find valid certification path to requested target
 
 ## **问题分析** 
 
@@ -41,7 +41,3 @@ JDK 有一套单独的证书库，JAVA 在访问 HTTPS 服务时，会使用自�
 3. 如果看到以下结果，则导入成功。
 
 	![certification-imoport-success](./media/aog-web-apps-qa-java-import-wosign-certification/certification-import-success.png "certification-import-success")
-
-4.	对于某些用户因为本地计算机的配置原因无法导入证书的问题，可以直接下载导入成功的 cacerts 替换即可，下载地址：[https://yunewstoragetest.blob.core.chinacloudapi.cn/to-customer-file/cacerts](https://yunewstoragetest.blob.core.chinacloudapi.cn/to-customer-file/cacerts)
-
-[AZURE.NOTE]在使用该替换时确保原 cacerts 中没有个人导入其它证书，否者可能会影响其它应用的使用。
