@@ -107,7 +107,7 @@ DocumentDB 数据库帐户是目前唯一可以使用资源管理器模板和 Az
     azure group create <resourcegroupname> <resourcegrouplocation>
 
 - `<resourcegroupname>` 只能使用字母数字字符、句点、下划线、“-”字符和括号，且不能以句点结尾。
- - `<resourcegrouplocation>` 必须是已正式推出 DocumentDB 的区域之一。
+- `<resourcegrouplocation>` 必须是已正式推出 DocumentDB 的区域之一。
 
 输入示例：
 

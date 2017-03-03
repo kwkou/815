@@ -211,14 +211,13 @@ Azure 密钥保管库是可以在 Azure资源管理器部署模型中使用的 A
   此文详细说明了 RBAC 中所有可用内置角色。
 - [了解资源管理器部署和经典部署](/documentation/articles/resource-manager-deployment-model/)
   
-  此文介绍了资源管理器部署和经典部署模型，并说明使用资源管理器和资源组的优点
+  此文介绍了资源管理器部署和经典部署模型，并说明使用资源管理器和资源组的优点。
 - [使用 Azure PowerShell 管理基于角色的访问控制](/documentation/articles/role-based-access-control-manage-access-powershell/)
   
-  此文介绍如何使用 Azure PowerShell 管理基于角色的访问控制
+  此文介绍如何使用 Azure PowerShell 管理基于角色的访问控制。
 - [Managing Role-Based Access Control with the REST API（使用 REST API 管理基于角色的访问控制）](/documentation/articles/role-based-access-control-manage-access-rest/)
   
   此文说明如何使用 REST API 来管理 RBAC。
-
 - [使用 OAuth 2.0 和 Azure Active Directory 来授权访问 Web 应用程序](/documentation/articles/active-directory-protocols-oauth-code/)
   
   此文介绍使用 Azure Active Directory 进行身份验证时遵循的整个 OAuth 2.0 流程。
