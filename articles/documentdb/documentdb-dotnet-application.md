@@ -313,10 +313,10 @@
             }
         }
    
-   > [AZURE.TIP]
-   创建新的 DocumentCollection 时，你可以提供 OfferType 的可选 RequestOptions 参数，此参数可让你指定新集合的性能级别。如果未传递此参数，系统将使用默认的产品/服务类型。有关 DocumentDB 产品/服务类型的详细信息，请参阅 [DocumentDB 性能级别](/documentation/articles/documentdb-performance-levels/)
-   > 
-   > 
+	   > [AZURE.TIP]
+	   创建新的 DocumentCollection 时，你可以提供 OfferType 的可选 RequestOptions 参数，此参数可让你指定新集合的性能级别。如果未传递此参数，系统将使用默认的产品/服务类型。有关 DocumentDB 产品/服务类型的详细信息，请参阅 [DocumentDB 性能级别](/documentation/articles/documentdb-performance-levels/)
+	   > 
+	   > 
 3. 我们打算从配置中读取部分值，因此请打开应用程序的 **Web.config** 文件，并在 `<AppSettings>` 节下面添加下列几行。
    
         <add key="endpoint" value="enter the URI from the Keys blade of the Azure Portal"/>
@@ -378,7 +378,7 @@
 
 打开 ***App\_Start\\RouteConfig.cs***，找到以“defaults:”开头的行，然后将它更改为如下行。
 
-        defaults: new { controller = "Item", action = "Index", id = UrlParameter.Optional }
+	defaults: new { controller = "Item", action = "Index", id = UrlParameter.Optional }
 
 若未在 URL 中指定控制路由行为的值，这会让 ASP.NET MVC 知道改用“项”（而不是“主页”）作为控制器，并使用“索引”作为视图。
 
@@ -401,7 +401,7 @@
            return await client.CreateDocumentAsync(UriFactory.CreateDocumentCollectionUri(DatabaseId, CollectionId), item);
        }
    
-   此方法只接受传递给它的对象，并将对象保留在 DocumentDB 中。
+	此方法只接受传递给它的对象，并将对象保留在 DocumentDB 中。
 2. 打开 ItemController.cs 文件，并在类中添加下列代码段。这是 ASP.NET MVC 得知如何执行**创建**操作的方式。在此情况下，只需呈现先前创建的关联 Create.cshtml 视图。
    
         [ActionName("Create")]

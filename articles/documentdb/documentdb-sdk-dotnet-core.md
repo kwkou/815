@@ -72,8 +72,8 @@ DocumentDB .NET Core 预览版 SDK 与最新版 [DocumentDB.NET SDK](/documentat
 
 | 版本 | 发布日期 | 停用日期 |
 | --- | --- | --- |
-\| [1\.0.0](#1.0.0) \|2016 年 12 月 21 日 \|--- \| 
-\| [0\.1.0-preview](#0.1.0-preview) \|2016 年 11 月 15 日 \|2016 年 12 月 31 日 \|
+| [1\.0.0](#1.0.0) \|2016 年 12 月 21 日 \|--- \| 
+| [0\.1.0-preview](#0.1.0-preview) \|2016 年 11 月 15 日 \|2016 年 12 月 31 日 \|
 
 ## 另请参阅
 若要了解有关 DocumentDB 的详细信息，请参阅 [Azure DocumentDB](/home/features/documentdb/) 服务页。
