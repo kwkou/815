@@ -13,9 +13,9 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="na"
-    ms.date="01/13/2017"
+    ms.date="01/12/2017"
     ms.author="sethm"
-    wacn.date="02/20/2017"/>  
+    wacn.date="03/03/2017"/>  
 
 
 # 使用 AMQP 1.0 通过 Java 使用 Service Bus
