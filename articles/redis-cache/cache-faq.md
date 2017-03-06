@@ -256,7 +256,7 @@ Redis 服务器本身不支持 SSL，但 Azure Redis 缓存可以。如果你要
 #### <a name="stackexchangeredis-best-practices"></a> StackExchange.Redis 最佳做法
 * 将 `AbortConnect` 设置为 false，然后使 ConnectionMultiplexer 自动重新连接。[请参阅此处了解详细信息](https://gist.github.com/JonCole/36ba6f60c274e89014dd#file-se-redis-setabortconnecttofalse-md)。
 * 重复使用 ConnectionMultiplexer - 不要为每个请求创建一个新的 ConnectionMultiplexer。建议使用[此处所示](/documentation/articles/cache-dotnet-how-to-use-azure-redis-cache/#connect-to-the-cache)的 `Lazy<ConnectionMultiplexer>` 模式。
-* 具有较小值的 Redis 工作性能最佳，因此请考虑将较大数据分成多个密钥。在[本次 Redis 讨论](https://groups.google.com/forum/#!searchin/redis-db/size/redis-db/n7aa2A4DZDs/3OeEPHSQBAAJ)中，100 kb 即可视为大型数据。阅读 [](https://gist.github.com/JonCole/db0e90bedeb3fc4823c2#large-requestresponse-size) 了解较大值可能引起的问题示例。
+* 具有较小值的 Redis 工作性能最佳，因此请考虑将较大数据分成多个密钥。阅读[这篇文章](https://gist.github.com/JonCole/db0e90bedeb3fc4823c2#large-requestresponse-size)了解较大值可能引起的问题示例。
 * 配置 [ThreadPool 设置](#important-details-about-threadpool-growth)，以免超时。
 * 将默认 connectTimeout 至少设置为 5 秒。出现网络故障时，此时间间隔会给 StackExchange.Redis 足够的时间来重新建立连接。
 * 注意与正在运行的不同操作相关的性能成本。例如，`KEYS` 命令是 O(n) 操作，应当避免。[redis.io 站点](http://redis.io/commands/)具有关于其支持的每个操作的时间复杂性的详细信息。单击每个命令以查看每个操作的复杂程度。

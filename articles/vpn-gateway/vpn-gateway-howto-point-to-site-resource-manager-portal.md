@@ -225,7 +225,7 @@ VPN 客户端包中包含用于配置 Windows 内置 VPN 客户端软件的信�
 [AZURE.INCLUDE [点到站点常见问题解答](../../includes/vpn-gateway-point-to-site-faq-include.md)]
 
 ## 后续步骤
-连接完成后，即可将虚拟机添加到虚拟网络。有关详细信息，请参阅[虚拟机](https://docs.microsoft.com/azure/#pivot=services&panel=Compute)。
+连接完成后，即可将虚拟机添加到虚拟网络。有关详细信息，请参阅[虚拟机](/documentation/services/virtual-machines/)。
 
 <!---HONumber=Mooncake_0227_2017-->
 <!--Update_Description: wording update and add FAQ-->
