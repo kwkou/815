@@ -13,8 +13,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="storage-backup-recovery"
-   ms.date="10/25/2016"
-   wacn.date="12/30/2016"
+   ms.date="12/27/2016"
+   wacn.date="03/03/2017"
    ms.author="markgal; jimpark; trinadhk"/>
 
 # VM 备份期间处理加密的磁盘
