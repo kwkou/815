@@ -13,9 +13,9 @@
     ms.topic="article"
     ms.tgt_pltfrm="NA"
     ms.workload="NA"
-    ms.date="01/05/2017"
-    wacn.date="02/20/2017"
-    ms.author="subramar" />  
+    ms.date="02/02/2017"
+    wacn.date="03/03/2017"
+    ms.author="subramar;chackdan" />  
 
 
 # Service Fabric 应用程序升级：高级主题
@@ -30,7 +30,7 @@
 
 Azure Service Fabric 提供了多种升级模式，可支持开发和生产群集。选择的部署选项可根据不同的环境而有所不同。
 
-受监视应用程序滚动升级是生产中使用的最典型的升级。当指定了升级策略时，Service Fabric 可确保在升级继续进行之前，应用程序运行正常。
+受监视的应用程序滚动升级是生产环境中使用的最典型的升级。当指定了升级策略时，Service Fabric 可确保在升级继续进行之前，应用程序运行正常。
 
  应用程序管理员可以使用手动滚动应用程序升级模式，通过各种升级域完全控制升级过程。需要自定义的或者复杂的运行状况评估策略，或者进行非常规升级（例如，应用程序已有数据丢失）时，此模式非常有用。
 
@@ -99,5 +99,5 @@ Service Fabric 应用程序可以通过预配一个完整且自包含的应用�
 参考 [Troubleshooting Application Upgrades](/documentation/articles/service-fabric-application-upgrade-troubleshooting/)（对应用程序升级进行故障排除）中的步骤来解决应用程序升级时的常见问题。
  
 
-<!---HONumber=Mooncake_0213_2017-->
+<!---HONumber=Mooncake_0227_2017-->
 <!--Update_Description: wording update-->

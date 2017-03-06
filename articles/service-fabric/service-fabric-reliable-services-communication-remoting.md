@@ -13,19 +13,18 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="required"
-    ms.date="10/19/2016"
-    wacn.date="01/25/2017"
-    ms.author="vturecek" />
+    ms.date="02/10/2017"
+    wacn.date="03/03/2017"
+    ms.author="vturecek" />  
 
 # 通过 Reliable Services 进行服务远程处理
-对于不依赖于特定的通信协议或堆栈的服务，如 WebAPI、Windows Communication Foundation (WCF) 或其他服务，Reliable Services 框架提供一种远程处理机制，以便快速而轻松地为这些服务设置远程过程调用。
+对于不依赖于特定通信协议或堆栈的服务，如 WebAPI、Windows Communication Foundation (WCF) 或其他服务，Reliable Services 框架提供一种远程处理机制，可快速且轻松地为这些服务设置远程过程调用。
 
 ## 为服务设置远程处理
 为服务设置远程处理包括两个简单步骤：
 
-1. 为你的服务创建要实现的接口。此接口定义可供你的服务的远程过程调用使用的方法。这些方法必须是返回任务的异步方法。接口必须实现 `Microsoft.ServiceFabric.Services.Remoting.IService` 以表明此服务具有远程处理接口。
-2. 在服务中使用远程处理侦听器。这是可以提供远程处理功能的 
-`ICommunicationListener` 实现。`Microsoft.ServiceFabric.Services.Remoting.Runtime` 命名空间包含一个同时适用于无状态服务和有状态服务的扩展方法 `CreateServiceRemotingListener`，可用于创建使用默认远程处理传输协议的远程处理侦听器。
+1. 为服务创建要实现的接口。此接口定义可供服务的远程过程调用使用的方法。这些方法必须是返回任务的异步方法。接口必须实现 `Microsoft.ServiceFabric.Services.Remoting.IService` 以表明此服务具有远程处理接口。
+2. 在服务中使用远程处理侦听器。这是可以提供远程处理功能的 `ICommunicationListener` 实现。`Microsoft.ServiceFabric.Services.Remoting.Runtime` 命名空间包含一个同时适用于无状态服务和有状态服务的扩展方法 `CreateServiceRemotingListener`，可用于创建使用默认远程处理传输协议的远程处理侦听器。
 
 例如，以下无状态服务公开了一个方法，此方法通过远程过程调用获取“Hello World”。
 
@@ -63,7 +62,7 @@
 
 
 ## 调用远程服务的方法
-若要使用远程处理堆栈在服务上调用方法，可以通过 `Microsoft.ServiceFabric.Services.Remoting.Client.ServiceProxy` 类对该服务使用本地代理。`ServiceProxy` 方法通过使用该服务实现的同一接口来创建本地代理。使用此代理，你只需在此接口上远程调用方法。
+若要使用远程处理堆栈在服务上调用方法，可以通过 `Microsoft.ServiceFabric.Services.Remoting.Client.ServiceProxy` 类对该服务使用本地代理。`ServiceProxy` 方法通过使用该服务实现的同一接口来创建本地代理。借助该代理，可轻松地在接口上远程调用方法。
 
 
 
@@ -74,7 +73,7 @@
 
 
 
-此远程处理框架将服务引发的异常传播到客户端。因此，在客户端使用 `ServiceProxy` 的异常处理逻辑可直接处理服务引发的异常。
+该远程处理框架将服务引发的异常传播到客户端。因此，在客户端使用 `ServiceProxy` 的异常处理逻辑可直接处理服务引发的异常。
 
 ## 后续步骤
 
@@ -84,4 +83,4 @@
 
 * [确保 Reliable Services 的通信安全](/documentation/articles/service-fabric-reliable-services-secure-communication/)
 
-<!---HONumber=Mooncake_Quality_Review_0125_2017-->
+<!---HONumber=Mooncake_0227_2017-->

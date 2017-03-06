@@ -1,5 +1,5 @@
 <properties
-    pageTitle="设置开发环境 | Azure"
+    pageTitle="设置 Azure 微服务的开发环境 | Azure"
     description="安装运行时、SDK 和工具并创建本地开发群集。完成此设置后，你就可以开始生成应用程序。"
     services="service-fabric"
     documentationcenter=".net"
@@ -13,8 +13,8 @@
     ms.topic="get-started-article"
     ms.tgt_pltfrm="NA"
     ms.workload="NA"
-    ms.date="12/15/2016"
-    wacn.date="02/21/2017"
+    ms.date="02/14/2017"
+    wacn.date="03/03/2017"
     ms.author="ryanwi, mikhegn" />
 
 # 准备开发环境
@@ -44,7 +44,7 @@
 
 ## 安装 SDK 和工具
 ### 使用 Visual Studio 2017 RC
-Service Fabric 工具是 Visual Studio 2017 RC 中 Azure 开发和管理工作负荷的一部分。需要在 Visual Studio 安装过程中启用此工作负荷。此外，需要使用 Web 平台安装程序安装 Microsoft Azure Service Fabric SDK。
+Service Fabric 工具是 Visual Studio 2017 RC 中 Azure 开发和管理工作负荷的一部分。在 Visual Studio 安装过程中启用此工作负荷。此外，需要使用 Web 平台安装程序安装 Microsoft Azure Service Fabric SDK。
 
 [AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-visual-studio-login-guide.md)]
 
@@ -60,16 +60,16 @@ Service Fabric 工具是 Visual Studio 2017 RC 中 Azure 开发和管理工作�
 * [安装 Microsoft Azure Service Fabric SDK][core-sdk]
 
 > [AZURE.WARNING]
-在安装过程中使用这些启动链接，或者在 Chrome 浏览器中使用这些链接时，客户会遇到报告的错误。这些错误是 Web 平台安装程序中的已知问题，正在解决中。请尝试以下解决方法：
+在安装过程中使用这些启动链接，或者在 Chrome 浏览器中使用这些链接时，客户会遇到报告的错误。这些错误是 Web 平台安装程序中的已知问题，我们正在着手解决。请尝试以下解决方法：
 >- 在 Internet Explorer 或 Edge 浏览器中启动上述链接，或者
 >- 在开始菜单中启动 Web 平台安装程序，搜索“Service Fabric”，然后安装 SDK
 > 
 > 对此给你带来的不便，我们深表歉意。
 
 当前版本有：
-* Service Fabric SDK 2.4.145
-* Service Fabric 运行时 5.4.145
-* Visual Studio 2015 工具 1.4.41209
+* Service Fabric SDK 2.4.164
+* Service Fabric 运行时 5.4.164
+* Visual Studio 2015 工具 1.4.50124
 
 有关受支持的版本列表，请参阅 [Service Fabric 支持](/documentation/articles/service-fabric-support/)
 
@@ -88,6 +88,7 @@ Service Fabric 使用 Windows PowerShell 脚本创建本地开发群集和部署
 - [了解编程模型：Reliable Services 和 Reliable Actors](/documentation/articles/service-fabric-choose-framework/)
 
 - [使用 Service Fabric 资源管理器可视化群集](/documentation/articles/service-fabric-visualizing-your-cluster/)
+- 了解 [Service Fabric 支持选项](/documentation/articles/service-fabric-support/)
 
 [1]: /home/features/service-fabric "Service Fabric 活动页"
 [2]: http://go.microsoft.com/fwlink/?LinkId=517106 "VS RC"
@@ -96,5 +97,5 @@ Service Fabric 使用 Windows PowerShell 脚本创建本地开发群集和部署
 [core-sdk]: http://www.microsoft.com/web/handlers/webpi.ashx?command=getinstallerredirect&appid=MicrosoftAzure-ServiceFabric-CoreSDK "Core SDK WebPI 链接"
 [powershell5-download]: https://www.microsoft.com/en-us/download/details.aspx?id=50395
 
-<!---HONumber=Mooncake_0116_2017-->
-<!--update: add introduction to support windows server 2016 and visual studio 2017 rc-->
+<!---HONumber=Mooncake_0227_2017-->
+<!--update: update Service Fabric SDK version to 2.4.164; Runtime version update to 5.4.164; VS tool version update to 1.4.50124-->

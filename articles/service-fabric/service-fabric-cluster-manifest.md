@@ -3,7 +3,7 @@
     description="本文介绍如何配置独立的或专用的 Service Fabric 群集。"
     services="service-fabric"
     documentationcenter=".net"
-    author="dsk-2015"
+    author="rwike77"
     manager="timlt"
     editor="" />
 <tags
@@ -13,14 +13,13 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="na"
-    ms.date="12/12/2016"
-    wacn.date="01/20/2017"
-    ms.author="dkshir" />  
+    ms.date="2/17/2017"
+    wacn.date="03/03/2017"
+    ms.author="ryanwi" />  
 
 
 # Windows 独立群集的配置设置
-
-本文介绍如何使用 _**ClusterConfig.JSON**_ 文件来配置独立的 Service Fabric 群集。可以使用此文件指定 Service Fabric 群集的信息，例如 Service Fabric 节点及其 IP 地址、群集上不同类型的节点、安全配置，以及使用独立群集的容错域/升级域定义的网络拓扑。
+本文介绍如何使用 ***ClusterConfig.JSON*** 文件来配置独立的 Service Fabric 群集。可以使用此文件指定 Service Fabric 群集的信息，例如 Service Fabric 节点及其 IP 地址、群集上不同类型的节点、安全配置，以及使用独立群集的容错域/升级域定义的网络拓扑。
 
 [下载独立的 Service Fabric 包](/documentation/articles/service-fabric-cluster-creation-for-windows-server/#downloadpackage)时，一些 ClusterConfig.JSON 文件示例将下载到你的工作计算机。名称中包含 *DevCluster* 的示例可帮助你在同一台计算机上创建包含所有三个节点（类似于逻辑节点）的群集。在这些节点中，必须将一个节点标记为主节点。此群集可用于开发或测试环境，不支持用作生产群集。名称中包含 *MultiMachine* 的示例可帮助你创建生产质量群集，其中的每个节点位于不同的计算机上。这些群集的主节点数基于[可靠性级别](#reliability)。
 
@@ -30,8 +29,7 @@
 
 3. *ClusterConfig.X509.DevCluster.JSON* 和 *ClusterConfig.X509.MultiMachine.JSON* 说明如何创建使用[基于 X509 证书的安全性](/documentation/articles/service-fabric-windows-cluster-x509-security/)保护的测试群集和生产群集。
 
-
-现在，我们查看 _**ClusterConfig.JSON**_ 文件的以下各个节。
+现在，我们查看 ***ClusterConfig.JSON*** 文件的以下各个节。
 
 ## 常规群集配置
 此部分介绍各种特定于群集的配置，如下面的 JSON 代码段所示。
@@ -159,25 +157,35 @@ ClusterConfig.JSON 中的 **properties** 节用于配置群集，如下所示。
 - *applicationPorts* 是 Service Fabric 应用程序使用的端口。这些端口应是 *ephemeralPorts* 的子集，其范围足以满足应用程序的终结点要求。每当需要新端口时，Service Fabric 将使用这些端口，并负责为这些端口打开防火墙。
 - *reverseProxyEndpointPort* 是可选的反向代理终结点。有关详细信息，请参阅 [Service Fabric 反向代理](/documentation/articles/service-fabric-reverseproxy/)。
 
-
-### 其他设置
+### 日志设置
 使用 **fabricSettings** 节可以设置 Service Fabric 数据和日志的根目录。只能在初次创建群集的时候自定义这些设置。下面是此部分的代码段示例。
 
     "fabricSettings": [{
         "name": "Setup",
         "parameters": [{
             "name": "FabricDataRoot",
-            "value": "C:\ProgramData\SF"
+            "value": "C:\\ProgramData\\SF"
         }, {
             "name": "FabricLogRoot",
-            "value": "C:\ProgramData\SF\Log"
+            "value": "C:\\ProgramData\\SF\\Log"
     }]
 
 建议使用非 OS 驱动器作为 FabricDataRoot 和 FabricLogRoot，因为它能够更可靠地防范 OS 崩溃。请注意，如果只自定义数据根目录，则会将日志根目录放置在比数据根目录低一级的位置。
+
+### 有状态可靠服务设置
+使用 **KtlLogger** 部分可以设置 Reliable Services 的全局配置设置。有关这些设置的更多详细信息，请阅读[配置有状态可靠服务](/documentation/articles/service-fabric-reliable-services-configuration/)。以下示例说明如何更改为支持有状态服务的任何可靠集合而创建的共享事务日志。
+
+	    "fabricSettings": [{
+	        "name": "KtlLogger",
+	        "parameters": [{
+	            "name": "SharedLogSizeInMB",
+	            "value": "4096"
+	        }]
+	    }]
 
 ## 后续步骤
 
 根据独立群集设置配置完整的 ClusterConfig.JSON 文件后，可根据[创建独立 Service Fabric 群集](/documentation/articles/service-fabric-cluster-creation-for-windows-server/)一文部署群集，然后继续[使用 Service Fabric Explorer 可视化群集](/documentation/articles/service-fabric-visualizing-your-cluster/)。
 
-<!---HONumber=Mooncake_0116_2017-->
-<!--update: apiversion update from 2015-01-01-alpha to 2016-09-26; add reverseProxyEndpointPort property for nodeTypes definition-->
+<!---HONumber=Mooncake_0227_2017-->
+<!--Update_Description: add "有状态可靠服务设置" section -->

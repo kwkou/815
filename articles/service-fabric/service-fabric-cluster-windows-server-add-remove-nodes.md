@@ -3,7 +3,7 @@
     description="了解如何向运行 Windows Server 的本地或任意云中物理计算机或虚拟机上的 Azure Service Fabric 群集添加节点。"
     services="service-fabric"
     documentationcenter=".net"
-    author="dsk-2015"
+    author="rwike77"
     manager="timlt"
     editor="" />
 <tags
@@ -13,9 +13,9 @@
     ms.topic="article"
     ms.tgt_pltfrm="NA"
     ms.workload="NA"
-    ms.date="12/06/2016"
-    wacn.date="01/20/2017"
-    ms.author="dkshir;chackdan" />
+    ms.date="2/02/2017"
+    wacn.date="03/03/2017"
+    ms.author="chackdan" />
 
 # 向在 Windows Server 上运行的独立 Service Fabric 群集添加或删除节点
 
@@ -23,7 +23,7 @@
 
 ## 向群集添加节点
 
-1. 按照[准备计算机以满足群集部署的先决条件](/documentation/articles/service-fabric-cluster-creation-for-windows-server/#preparemachines)部分中所涉及的步骤，准备要添加到群集中的 VM/计算机。
+1. 按照[准备计算机以满足群集部署的先决条件](/documentation/articles/service-fabric-cluster-creation-for-windows-server/)部分中所涉及的步骤，准备要添加到群集中的 VM/计算机。
 2. 规划要向哪些容错域和升级域添加此 VM/计算机。
 3. 通过远程桌面 (RDP) 方式进入需要向群集添加的 VM/计算机。
 4. 向此 VM/计算机复制或[下载适用于 Windows Server 的 Service Fabric 独立包](http://go.microsoft.com/fwlink/?LinkId=730690)并解压缩该包。
@@ -54,11 +54,19 @@
 
 即使在删除节点后，它也可能在查询和 SFX 中显示为停机，请注意，这是已知缺陷。我们会在即将发布的版本中解决此问题。
 
+
+## 从群集中删除节点类型
+删除节点类型时需要特别小心。删除节点类型之前，请仔细检查是否存在任何引用该节点类型的节点。
+
+
+## 替换群集的主节点
+应顺次执行主节点的替换，而不是成批删除，然后成批添加。
+
+
 ## 后续步骤
 - [Windows 独立群集的配置设置](/documentation/articles/service-fabric-cluster-manifest/)
-- [使用 Windows 安全性保护 Windows 上的独立群集](/documentation/articles/service-fabric-windows-cluster-windows-security/)
 - [使用 X509 证书保护 Windows 上的独立群集](/documentation/articles/service-fabric-windows-cluster-x509-security/)
 - [使用运行 Windows 的 Azure VM 创建独立 Service Fabric 群集](/documentation/articles/service-fabric-cluster-creation-with-windows-azure-vms/)
 
-<!---HONumber=Mooncake_0116_2017-->
-<!--update: update PowerShell scripts; wording update-->
+<!---HONumber=Mooncake_0227_2017-->
+<!--update: add "从群集中删除节点类型", "替换群集的主节点" sections-->

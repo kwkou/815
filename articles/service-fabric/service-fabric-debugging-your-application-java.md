@@ -13,8 +13,8 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="na"
-    ms.date="11/01/2016"
-    wacn.date="02/20/2017"
+    ms.date="02/10/2017"
+    wacn.date="03/03/2017"
     ms.author="vturecek;mikhegn" />  
 
 
@@ -49,4 +49,4 @@
 * [使用 Linux Azure 诊断收集日志](/documentation/articles/service-fabric-diagnostics-how-to-setup-lad/)。
 * [在本地监视和诊断服务](/documentation/articles/service-fabric-diagnostics-how-to-monitor-and-diagnose-services-locally-linux/)。
 
-<!---HONumber=Mooncake_0213_2017-->
+<!---HONumber=Mooncake_0227_2017-->

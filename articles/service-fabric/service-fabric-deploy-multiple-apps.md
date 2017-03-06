@@ -1,6 +1,6 @@
 <properties
     pageTitle="部署使用 MongoDB 的 Node.js 应用程序 | Azure"
-    description="演示如何打包多个来宾可执行文件以部署到 Azure Service Fabric 群集"
+    description="演练如何打包多个来宾可执行文件以部署到 Azure Service Fabric 群集"
     services="service-fabric"
     documentationcenter=".net"
     author="msfussell"
@@ -13,16 +13,19 @@
     ms.topic="article"
     ms.tgt_pltfrm="NA"
     ms.workload="NA"
-    ms.date="10/22/2016"
-    wacn.date="01/17/2017"
-    ms.author="msfussell;mikhegn" />
+    ms.date="02/17/2017"
+    wacn.date="03/03/2017"
+    ms.author="msfussell;mikhegn" />  
 
 # 部署多个来宾可执行文件
 本文介绍如何打包多个来宾可执行文件并部署到 Azure Service Fabric。若要生成和部署单个 Service Fabric 包，请参阅如何[将来宾可执行文件部署到 Service Fabric](/documentation/articles/service-fabric-deploy-existing-app/)。
 
-虽然本演练演示的是如何部署将 MongoDB 用作数据存储并具有 Node.js 前端的应用程序，但是你可以将这些步骤套用于任何与另一个应用程序具有依赖关系的应用程序。
+虽然本演练演示如何部署将 MongoDB 用作数据存储并具有 Node.js 前端的应用程序，但是你可以将这些步骤套用于任何与另一个应用程序具有依赖关系的应用程序。
 
-可使用 Visual Studio 生成包含多个来宾可执行文件的应用程序包。请参阅[使用 Visual Studio 打包现有应用程序](/documentation/articles/service-fabric-deploy-existing-app/#using-visual-studio-to-package-an-existing-executable)。添加第一个来宾可执行文件后，右键单击应用程序项目，然后选择“添加”>“新建 Service Fabric 服务”，将第二个来宾可执行项目添加到解决方案中。注意：如果选择在 Visual Studio 项目中链接源，则生成 Visual Studio 解决方案可确保应用程序包能够与源中的更改保持同步。
+可使用 Visual Studio 生成包含多个来宾可执行文件的应用程序包。请参阅[使用 Visual Studio 打包现有应用程序](/documentation/articles/service-fabric-deploy-existing-app/#use-visual-studio-to-package-an-existing-executable)。添加第一个来宾可执行文件后，右键单击应用程序项目，然后选择“添加”>“新建 Service Fabric 服务”，将第二个来宾可执行项目添加到解决方案中。注意：如果选择在 Visual Studio 项目中链接源，则生成 Visual Studio 解决方案可确保应用程序包能够与源中的更改保持同步。
+## 示例
+* [用于打包和部署来宾可执行文件的示例](https://github.com/Azure-Samples/service-fabric-dotnet-getting-started/tree/master/GuestExe/SimpleApplication)
+* [使用 REST 通过命名服务通信的两个来宾可执行文件（C# 和 nodejs）的示例](https://github.com/Azure-Samples/service-fabric-dotnet-containers)
 
 ## 手动打包多个来宾可执行文件应用程序
 或者可以手动打包来宾可执行文件。对于手动打包，本文使用 Service Fabric 打包工具，它位于 [http://aka.ms/servicefabricpacktool](http://aka.ms/servicefabricpacktool)。
@@ -112,9 +115,9 @@
 	</Resources>
 
 ### 打包 MongoDB 应用程序
-既然你已打包 Node.js 应用程序，你可以继续打包 MongoDB。如前文所述，你现在进行的步骤并非特定于 Node.js 和 MongoDB 的步骤。事实上，它们适用于所有要打包在一起以作为一个 Service Fabric 应用程序的应用程序。
+既然已打包 Node.js 应用程序，你可以继续打包 MongoDB。如前文所述，你现在进行的步骤并非特定于 Node.js 和 MongoDB 的步骤。事实上，它们适用于所有要打包在一起以作为一个 Service Fabric 应用程序的应用程序。
 
-为了打包 MongoDB，你会想要确定你打包 Mongod.exe 和 Mongo.exe。这两个二进制文件都位于 MongoDB 安装目录的 `bin` 目录中。目录结构类似于下面的结构。
+为了打包 MongoDB，你希望确保打包 Mongod.exe 和 Mongo.exe。这两个二进制文件都位于 MongoDB 安装目录的 `bin` 目录中。目录结构类似于下面的结构。
 
 
 	|-- MongoDB
@@ -130,13 +133,13 @@ Service Fabric 需要使用类似于下面的命令来启动 MongoDB，因此打
 
 > [AZURE.NOTE] 如果你将 MongoDB 数据目录放在节点的本地目录中，当节点发生故障时，将不会保留数据。你应该使用持久存储或实现 MongoDB 副本集以防止数据丢失。
 
-在 PowerShell 或命令行界面中，我们会使用下列参数来运行打包工具：
+在 PowerShell 或命令外壳中，我们会使用下列参数运行打包工具：
 
 
 	.\ServiceFabricAppPackageUtil.exe /source: [yourdirectory]\MongoDB' /target:'[yourtargetdirectory]' /appname:MongoDB /exe:'bin\mongod.exe' /ma:'--dbpath [path to data]' /AppType:NodeAppType
 
 
-为了将 MongoDB 添加到你的 Service Fabric 应用程序包，你必须确定 /target 参数指向已经包含应用程序清单及 Node.js 应用程序的同一个目录。此外，还需要确定你使用的是相同的 ApplicationType 名称。
+为了将 MongoDB 添加到你的 Service Fabric 应用程序包，需要确保 /target 参数指向已经包含应用程序清单及 Node.js 应用程序的同一个目录。此外，还需要确保你使用的是相同的 ApplicationType 名称。
 
 让我们浏览到该目录并检查已创建的工具。
 
@@ -180,7 +183,7 @@ Service Fabric 需要使用类似于下面的命令来启动 MongoDB，因此打
 
 
 ### 发布应用程序
-最后一个步骤是要使用以下 PowerShell 脚本，将应用程序发布到本地 Service Fabric 群集：
+最后一个步骤是使用以下 PowerShell 脚本，将应用程序发布到本地 Service Fabric 群集：
 
 
 	Connect-ServiceFabricCluster localhost:19000
@@ -196,10 +199,12 @@ Service Fabric 需要使用类似于下面的命令来启动 MongoDB，因此打
 
 将应用程序成功发布到本地群集之后，可以通过我们在 Node.js 应用程序的服务清单中输入的端口（例如 http://localhost:3000）访问 Node.js 应用程序。
 
-在本教程中，你学习了如何轻松地将两个现有应用程序打包成一个 Service Fabric 应用程序。你也了解了如何将其部署到 Service Fabric，以便让它能够从一些 Service Fabric 功能（例如高可用性和运行状况系统整合）中获益。
+在本教程中，你学习了如何轻松地将两个现有应用程序打包成一个 Service Fabric 应用程序。你也了解了如何将其部署到 Service Fabric，以便让它能够从一些 Service Fabric 功能（例如高可用性和运行状况系统集成）中获益。
 
 ## 后续步骤
 
-- 了解如何[手动打包来宾应用程序](/documentation/articles/service-fabric-deploy-existing-app/)。
+* [用于打包和部署来宾可执行文件的示例](https://github.com/Azure-Samples/service-fabric-dotnet-getting-started/tree/master/GuestExe/SimpleApplication)
+* [使用 REST 通过命名服务通信的两个来宾可执行文件（C# 和 nodejs）的示例](https://github.com/Azure-Samples/service-fabric-dotnet-containers)
 
-<!---HONumber=Mooncake_Quality_Review_0117_2017-->
+<!---HONumber=Mooncake_0227_2017-->
+<!--Update_Description: add two sample packages-->

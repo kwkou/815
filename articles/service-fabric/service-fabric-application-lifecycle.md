@@ -1,39 +1,39 @@
 <properties
-   pageTitle="Service Fabric 中的应用程序生命周期 | Azure" 
-   description="介绍开发、部署、测试、升级、维护和删除 Service Fabric 应用程序。" 
-   services="service-fabric" 
-   documentationCenter=".net" 
-   authors="rwike77" 
-   manager="timlt" 
-   editor=""/>
-
-
+    pageTitle="Service Fabric 中的应用程序生命周期 | Azure"
+    description="介绍了如何开发、部署、测试、升级、维护和删除 Service Fabric 应用程序。"
+    services="service-fabric"
+    documentationcenter=".net"
+    author="rwike77"
+    manager="timlt"
+    editor="" />
 <tags
-   ms.service="service-fabric"
-   ms.devlang="dotnet"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="NA"
-   ms.date="11/14/2016"
-   wacn.date="01/17/2017"
-   ms.author="ryanwi"/>  
-
+    ms.assetid="08837cca-5aa7-40da-b087-2b657224a097"
+    ms.service="service-fabric"
+    ms.devlang="dotnet"
+    ms.topic="article"
+    ms.tgt_pltfrm="NA"
+    ms.workload="NA"
+    ms.date="02/16/2017"
+    wacn.date="03/03/2017"
+    ms.author="ryanwi" />  
 
 
 # Service Fabric 应用程序生命周期
-与其他平台一样，Azure Service Fabric 上的应用程序通常将经历以下几个阶段：设计、开发、测试、部署、升级、维护和删除。Service Fabric 为云应用程序的整个应用程序生命周期提供一流的支持：从开发到部署、到日常管理和维护，再到最终解除授权。服务模型使多个不同角色可以独立参与到应用程序生命周期中。本文提供了有关 API 的概述，以及在 Service Fabric 应用程序生命周期的各个阶段，它们是如何被不同角色所使用的。
+与其他平台一样，Azure Service Fabric 上的应用程序通常将经历以下几个阶段：设计、开发、测试、部署、升级、维护和删除。Service Fabric 为云应用程序的整个应用程序生命周期提供一流的支持：从开发到部署、到日常管理和维护，再到最终解除授权。服务模型使多个不同角色可以独立参与到应用程序生命周期中。本文提供了有关 API 的概述，以及不同角色在 Service Fabric 应用程序生命周期的各个阶段如何使用它们。
+
+以下 Microsoft Virtual Academy 视频介绍了如何管理应用程序生命周期：
+<center><a target="_blank" href="https://mva.microsoft.com/en-us/training-courses/building-microservices-applications-on-azure-service-fabric-16747?l=My3Ka56yC_6106218965"> <img src="./media/service-fabric-application-lifecycle/AppLifecycleVid.png" WIDTH="360" HEIGHT="244"> </a></center>
 
 ## 服务模型角色
 服务模型角色如下：
 
-- **服务开发人员**：开发可以用作其他用途或在相同类型或不同类型的多个应用程序中使用的模块和通用服务。例如，队列服务可用于创建票证应用程序（帮助服务台）或电子商务应用程序（购物车）。
+- **服务开发人员**：开发可以用作其他用途或在相同类型或不同类型的多个应用程序中使用的模块和通用服务。例如，队列服务可用于创建票证应用程序（支持人员）或电子商务应用程序（购物车）。
 
-- **应用程序开发人员**：通过集成满足某些特定要求或方案的服务的集合，来创建应用程序。例如，电子商务网站可能集成“JSON 无状态前端服务”、“拍卖有状态服务”，以及“队列有状态服务”来建构拍卖解决方案。
+- **应用程序开发人员**：通过集成满足某些特定要求或方案的服务的集合，来创建应用程序。例如，电子商务网站可能集成“JSON 无状态前端服务”、“拍卖有状态服务”，以及“队列有状态服务”来生成拍卖解决方案。
 
 - **应用程序管理员**：针对应用程序配置（填写配置模板参数）、部署（映射到可用资源），以及服务质量做出决策。例如，应用程序管理员决定应用程序的语言区域设置（例如，美国为英语，中国为中文）。另一个已部署的应用程序可以具有不同的设置。
 
-- **操作员**：基于由应用程序管理员指定的应用程序配置和要求部署应用程序。例如，操作员设置和部署应用程序并确保它在 Azure 中运行。操作员监视应用程序运行状况和性能信息，并根据需要维护物理基础结构。
-
+- **操作员**：基于由应用程序管理员指定的应用程序配置和要求部署应用程序。例如，操作员预配和部署应用程序并确保它在 Azure 中运行。操作员监视应用程序运行状况和性能信息，并根据需要维护物理基础结构。
 
 ## 开发
 1. *服务开发人员* [Reliable Actors ](/documentation/articles/service-fabric-reliable-actors-introduction/)或 [Reliable Services](/documentation/articles/service-fabric-reliable-services-introduction/) 编程模型开发不同类型的服务。
@@ -61,7 +61,7 @@
 ## 测试
 1. 部署到本地开发群集或测试群集后，*服务开发人员*使用 [**FailoverTestScenarioParameters**](https://docs.microsoft.com/dotnet/api/system.fabric.testability.scenario.failovertestscenarioparameters#System_Fabric_Testability_Scenario_FailoverTestScenarioParameters) 和 [**FailoverTestScenario**](https://docs.microsoft.com/dotnet/api/system.fabric.testability.scenario.failovertestscenario#System_Fabric_Testability_Scenario_FailoverTestScenario) 类或 [**Invoke ServiceFabricFailoverTestScenario** cmdlet](https://docs.microsoft.com/powershell/servicefabric/vlatest/invoke-servicefabricfailovertestscenario) 运行内置的故障转移测试方案。故障转移测试方案在重要转换和故障转移中运行指定的服务，以确保其仍然可用并正在工作。
 
-2. 然后，*服务开发人员*使用 [**ChaosTestScenarioParameters**](https://docs.microsoft.com/dotnet/api/system.fabric.testability.scenario.chaostestscenarioparameters#System_Fabric_Testability_Scenario_ChaosTestScenarioParameters) 和 [**ChaosTestScenario**](https://docs.microsoft.com/dotnet/api/system.fabric.testability.scenario.chaostestscenario#System_Fabric_Testability_Scenario_ChaosTestScenario) 类，或 [**Invoke ServiceFabricChaosTestScenario** cmdlet](https://docs.microsoft.com/powershell/servicefabric/vlatest/invoke-servicefabricchaostestscenario) 运行内置的混乱测试方案。任意混合测试方案会将多个节点、代码包和副本错误包括到群集中。
+2. 然后，*服务开发人员*使用 [**ChaosTestScenarioParameters**](https://docs.microsoft.com/dotnet/api/system.fabric.testability.scenario.chaostestscenarioparameters#System_Fabric_Testability_Scenario_ChaosTestScenarioParameters) 和 [**ChaosTestScenario**](https://docs.microsoft.com/dotnet/api/system.fabric.testability.scenario.chaostestscenario#System_Fabric_Testability_Scenario_ChaosTestScenario) 类，或 [**Invoke ServiceFabricChaosTestScenario** cmdlet](https://docs.microsoft.com/powershell/servicefabric/vlatest/invoke-servicefabricchaostestscenario) 运行内置的混乱测试方案。任意混沌测试方案会将多个节点、代码包和副本错误包括到群集中。
 
 3. *服务开发人员*通过创建围绕群集移动主副本的测试方案，来[测试服务之间的通信](/documentation/articles/service-fabric-testability-scenarios-service-communication/)。
 
@@ -91,7 +91,7 @@
 有关示例，请参阅[应用程序升级教程](/documentation/articles/service-fabric-application-upgrade-tutorial/)。
 
 ## 维护
-1. 对于操作系统升级和修补程序，Service Fabric 与 Azure 基础结构连接，以确保所有在群集中运行的应用程序的可用性。
+1. 对于操作系统升级和修补程序，Service Fabric 与 Azure 基础结构连接，以确保在群集中运行的所有应用程序的可用性。
 
 2. 对于 Service Fabric 平台的升级和修补程序，Service Fabric 自行升级，并且不会丢失在群集上运行的任何应用程序的可用性。
 
@@ -99,7 +99,7 @@
 
 4. *操作者*添加和删除由*应用程序管理员*指定的节点。
 
-5. 当新节点被添加到群集中或从群集中删除现有节点时，Service Fabric 自动负载均衡正在群集中的所有节点上运行的应用程序，以获得最佳性能。
+5. 当新节点添加到群集中或从群集中删除现有节点时，Service Fabric 自动负载均衡正在群集中的所有节点上运行的应用程序，以获得最佳性能。
 
 ## 删除
 1. *操作员*可以使用 [**DeleteServiceAsync** 方法](https://docs.microsoft.com/dotnet/api/system.fabric.fabricclient.servicemanagementclient#System_Fabric_FabricClient_ServiceManagementClient_DeleteServiceAsync_System_Fabric_Description_DeleteServiceDescription_System_TimeSpan_System_Threading_CancellationToken_)、[**Remove-ServiceFabricService** cmdlet](https://docs.microsoft.com/powershell/servicefabric/vlatest/remove-servicefabricservice) 或[**删除服务** REST 操作](https://docs.microsoft.com/rest/api/servicefabric/delete-a-service)来删除群集中正在运行的服务的特定实例，并且不会删除整个应用程序。
@@ -122,4 +122,5 @@
 - [可测试性概述](/documentation/articles/service-fabric-testability-overview/)
 - [基于 REST 的应用程序生命周期示例](/documentation/articles/service-fabric-rest-based-application-lifecycle-sample/)
 
-<!---HONumber=Mooncake_Quality_Review_0117_2017-->
+<!---HONumber=Mooncake_0227_2017-->
+<!--Update_Description: add a MVA video; wording update-->

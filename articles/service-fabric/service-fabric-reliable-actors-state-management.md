@@ -13,9 +13,10 @@
     ms.topic="article"
     ms.tgt_pltfrm="NA"
     ms.workload="NA"
-    ms.date="10/19/2016"
-    wacn.date="12/26/2016"
-    ms.author="vturecek" />
+    ms.date="02/10/2017"
+    wacn.date="03/03/2017"
+    ms.author="vturecek" />  
+
 
 # Reliable Actors 状态管理
 Reliable Actors 是可封装逻辑与状态的单线程对象。由于执行组件在 Reliable Services 上执行，因此，它们可以使用 Reliable Services 所用的相同持久性和复制机制可靠地保护状态。这样，执行组件就不会在发生故障之后、在内存回收后重新激活时或者由于资源平衡和升级的原因而在群集中的节点之间移动时丢失其状态。
@@ -256,4 +257,4 @@ Reliable Actors 是可封装逻辑与状态的单线程对象。由于执行组�
  - [执行组件 API 参考文档](https://msdn.microsoft.com/zh-cn/library/azure/dn971626.aspx)
  - [代码示例](https://github.com/Azure/servicefabric-samples)
 
-<!---HONumber=Mooncake_1219_2016-->
+<!---HONumber=Mooncake_0227_2017-->

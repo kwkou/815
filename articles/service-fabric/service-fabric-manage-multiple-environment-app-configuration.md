@@ -13,8 +13,8 @@
     ms.topic="article"
     ms.tgt_pltfrm="NA"
     ms.workload="NA"
-    ms.date="1/05/2017"
-    wacn.date="02/20/2017"
+    ms.date="2/06/2017"
+    wacn.date="03/03/2017"
     ms.author="seanmck" />
 
 # 管理多个环境的应用程序参数
@@ -132,6 +132,46 @@ DefaultValue 属性指定给定环境缺少更具体的参数时所要使用的�
 
     	string EnvVariable = Environment.GetEnvironmentVariable("MyEnvVariable");
 
+### Service Fabric 环境变量
+Service Fabric 针对每个服务实例设置内置的环境变量。环境变量的完整列表如下所示，其中以粗体显示的环境变量将用于服务中，其他的则由 Service Fabric 运行时使用。
+
+* Fabric\_ApplicationHostId
+* Fabric\_ApplicationHostType
+* Fabric\_ApplicationId
+* **Fabric\_ApplicationName**
+* Fabric\_CodePackageInstanceId
+* **Fabric\_CodePackageName**
+* **Fabric\_Endpoint\_[YourServiceName]TypeEndpoint**
+* **Fabric\_Folder\_App\_Log**
+* **Fabric\_Folder\_App\_Temp**
+* **Fabric\_Folder\_App\_Work**
+* **Fabric\_Folder\_Application**
+* Fabric\_NodeId
+* **Fabric\_NodeIPOrFQDN**
+* **Fabric\_NodeName**
+* Fabric\_RuntimeConnectionAddress
+* Fabric\_ServicePackageInstanceId
+* Fabric\_ServicePackageName
+* Fabric\_ServicePackageVersionInstance
+* FabricPackageFileName
+
+下列代码说明如何列出 Service Fabric 环境变量
+
+	    foreach (DictionaryEntry de in Environment.GetEnvironmentVariables())
+	    {
+	        if (de.Key.ToString().StartsWith("Fabric"))
+	        {
+	            Console.WriteLine(" Environment variable {0} = {1}", de.Key, de.Value);
+	        }
+	    }
+
+在本地开发计算机上运行时，如果应用程序类型为 `GuestExe.Application`，服务类型为 `FrontEndService`，则会用到以下示例环境变量。
+
+* **Fabric\_ApplicationName = fabric:/GuestExe.Application**
+* **Fabric\_CodePackageName = Code**
+* **Fabric\_Endpoint\_FrontEndServiceTypeEndpoint = 80**
+* **Fabric\_NodeIPOrFQDN = localhost**
+* **Fabric\_NodeName = _Node_2**
 
 ### 应用程序参数文件
 
@@ -182,5 +222,5 @@ Service Fabric 应用程序项目可以包含一个或多个应用程序参数�
 [publishdialog]: ./media/service-fabric-manage-multiple-environment-app-configuration/publish-dialog-choose-app-config.png
 [app-parameters-solution-explorer]: ./media/service-fabric-manage-multiple-environment-app-configuration/app-parameters-in-solution-explorer.png
 
-<!---HONumber=Mooncake_0213_2017-->
-<!--Update_Description: add "设置和使用环境变量" section-->
+<!---HONumber=Mooncake_0227_2017-->
+<!--Update_Description: add "Service Fabric 环境变量" section-->

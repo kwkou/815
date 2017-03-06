@@ -1,6 +1,6 @@
 <properties
     pageTitle="将现有可执行文件部署到 Azure Service Fabric | Azure"
-    description="演示如何将现有应用程序打包为来宾可执行文件，以便将其部署到 Service Fabric 群集"
+    description="有关如何将现有应用程序打包为来宾可执行文件，以便可以部署到 Service Fabric 群集的演练"
     services="service-fabric"
     documentationcenter=".net"
     author="msfussell"
@@ -13,22 +13,26 @@
     ms.topic="article"
     ms.tgt_pltfrm="NA"
     ms.workload="na"
-    ms.date="10/22/2016"
-    wacn.date="01/24/2017"
-    ms.author="msfussell;mikhegn" />
+    ms.date="02/17/2016"
+    wacn.date="03/03/2017"
+    ms.author="msfussell;mikhegn" />  
 
 # 将来宾可执行文件部署到 Service Fabric
 可以在 Azure Service Fabric 中运行任何类型的应用程序，如 Node.js、Java 或本机应用程序。Service Fabric 将这些类型的应用程序称为来宾可执行文件。来宾可执行文件由 Service Fabric 如同无状态服务一样进行处理。因此，可以出于可用性和其他指标目的将它们放置在群集中的节点上。本文介绍如何使用 Visual Studio 或命令行实用工具打包来宾可执行文件并将其部署到 Service Fabric 群集。
 
 其中将会介绍打包来宾可执行文件并将它部署到 Service Fabric 的基本步骤。
 
-## 在 Service Fabric 中运行来宾可执行文件的好处
+## 在 Service Fabric 中运行来宾可执行文件的优势
 在 Service Fabric 群集中运行来宾可执行文件有几个优势：
 
 * 高可用性。Service Fabric 中运行的应用程序具有高可用性。Service Fabric 可确保应用程序的实例保持运行。
 * 运行状况监视。Service Fabric 运行状况监视会检测应用程序是否正在运行，在发生故障时可提供诊断信息。
-* 应用程序生命周期管理。除了提供无需停机的升级，如果升级期间报告了不正常的事件，Service Fabric 还支持回滚到以前的版本。
+* 应用程序生命周期管理。除了提供无需停机的升级，如果升级期间报告了运行不正常事件，Service Fabric 还支持回滚到以前的版本。
 * 密度。可以在群集中运行多个应用程序，这样便无需使每个应用程序在自己的硬件上运行。
+
+## 示例
+* [用于打包和部署来宾可执行文件的示例](https://github.com/Azure-Samples/service-fabric-dotnet-getting-started/tree/master/GuestExe/SimpleApplication)
+* [使用 REST 通过命名服务通信的两个来宾可执行文件（C# 和 nodejs）的示例](https://github.com/Azure-Samples/service-fabric-dotnet-containers)
 
 ## 应用程序和服务清单文件概述
 在部署来宾可执行文件的过程中，最好先了解[应用程序模型](/documentation/articles/service-fabric-application-model/)中所述的 Service Fabric 打包和部署模型。Service Fabric 打包模型依赖于两个 XML 文件：应用程序清单和服务清单。ApplicationManifest.xml 和 ServiceManifest.xml 文件的架构定义随 Service Fabric SDK 一起安装到 *C:\\Program Files\\Microsoft SDKs\\Service Fabric\\schemas\\ServiceFabricServiceModel.xsd* 中。
@@ -36,7 +40,7 @@
 * **应用程序清单**
 应用程序清单用于描述应用程序。它列出自身的构成服务，以及用于定义应如何部署一个或多个服务的其他参数（如实例数）。
   
-  在 Service Fabric 中，一个应用程序是一个部署和升级单位。应用程序可以作为一个单元升级，其中的潜在失败（潜在回滚）由系统管理。Service Fabric 保证升级过程成功，一旦升级失败，它不会使应用程序保持未知或不稳定状态。
+  在 Service Fabric 中，应用程序是部署和升级的单位。可将应用程序作为一个单位进行升级，其中潜在的失败和潜在回滚受到管理。Service Fabric 保证升级过程成功，一旦升级失败，它不会使应用程序保持未知或不稳定状态。
 * **服务清单**
 服务清单描述服务的组件。其中包含服务的名称和类型、其代码以及配置等数据。服务清单还包含一些可以用于在部署之后配置服务的其他参数。
 
@@ -297,7 +301,7 @@ Service Fabric 服务可以采用各种“配置”进行部署。 例如，可�
 这是前端应用程序（不包括 REST 终结点）的有用配置，因为客户端应用程序需要“连接到”群集中的任何节点才能使用该终结点。例如，当 Service Fabric 群集的所有节点都连接到负载均衡器时，也可以使用此配置。然后，客户端流量可以分布于在集群中所有节点上运行的服务。
 
 ## 检查正在运行的应用程序
-在 Service Fabric 资源管理器中，确定服务在其中运行的节点。在此示例中，它在节点 1 上运行：
+在 Service Fabric Explorer 中，确定服务在其中运行的节点。在此示例中，它在节点 1 上运行：
 
 ![运行服务的节点](./media/service-fabric-deploy-existing-app/nodeappinsfx.png)  
 
@@ -316,7 +320,9 @@ Service Fabric 服务可以采用各种“配置”进行部署。 例如，可�
 在本文中，我们了解了如何打包来宾可执行文件并将它部署到 Service Fabric。有关相关信息和任务，请参阅以下文章。
 
 - [在 GitHub 上打包和部署来宾可执行文件的示例](https://github.com/Azure-Samples/service-fabric-dotnet-getting-started/tree/master/GuestExe/SimpleApplication)，包括打包工具的预发行版本的链接
+- [使用 REST 通过命名服务通信的两个来宾可执行文件（C# 和 nodejs）的示例](https://github.com/Azure-Samples/service-fabric-dotnet-containers)
 - [部署多个来宾可执行文件](/documentation/articles/service-fabric-deploy-multiple-apps/)
 - [使用 Visual Studio 创建第一个 Service Fabric 应用程序](/documentation/articles/service-fabric-create-your-first-application-in-visual-studio/)
 
-<!---HONumber=Mooncake_Quality_Review_0104_2017-->
+<!---HONumber=Mooncake_0227_2017-->
+<!--Update_Description: wording update-->

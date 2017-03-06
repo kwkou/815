@@ -1,21 +1,21 @@
 <properties
-   pageTitle="Azure Service Fabric Reliable Actors ReliableDictionaryActorStateProvider 配置概述 | Azure"
-   description="了解如何配置 ReliableDictionaryActorStateProvider 类型的 Azure Service Fabric 有状态执行组件。"
-   services="Service-Fabric"
-   documentationCenter=".net"
-   authors="sumukhs"
-   manager="timlt"
-   editor=""/>
-
+    pageTitle="更改 Azure 微服务中的 ReliableDictionaryActorStateProvider 设置 | Azure"
+    description="了解如何配置 ReliableDictionaryActorStateProvider 类型的 Azure Service Fabric 有状态执行组件。"
+    services="Service-Fabric"
+    documentationcenter=".net"
+    author="sumukhs"
+    manager="timlt"
+    editor="" />
 <tags
-   ms.service="Service-Fabric"
-   ms.devlang="dotnet"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="NA"
-   ms.date="07/18/2016"
-   wacn.date="08/08/2016"
-   ms.author="sumukhs"/>
+    ms.assetid="79b48ffa-2474-4f1c-a857-3471f9590ded"
+    ms.service="Service-Fabric"
+    ms.devlang="dotnet"
+    ms.topic="article"
+    ms.tgt_pltfrm="NA"
+    ms.workload="NA"
+    ms.date="02/8/2017"
+    wacn.date="03/03/2017"
+    ms.author="sumukhs" />  
 
 # 配置 Reliable Actors - ReliableDictionaryActorStateProvider
 通过更改 Visual Studio 包根目录下的指定执行组件的 Config 文件夹中生成的 settings.xml 文件，可以修改 ReliableDictionaryActorStateProvider 的默认配置。
@@ -34,12 +34,12 @@ Azure Service Fabric 运行时在 settings.xml 文件中查找预定义的节名
 
 ### 配置名称
 
-|Name|计价单位|默认值|备注|
+|名称|计价单位|默认值|备注|
 |----|----|-------------|-------|
 |WriteBufferMemoryPoolMinimumInKB|千字节|8388608|以内核模式分配给记录器写入缓冲区内存池的最小 KB 数。此内存池用于在将状态信息写入磁盘之前缓存这些信息。|
 |WriteBufferMemoryPoolMaximumInKB|千字节|无限制|记录器写入缓冲区内存池可以增长到的大小上限。|
-|SharedLogId|GUID|""|指定用来标识默认共享日志文件的唯一 GUID，该文件用于群集中所有节点上的所有 Reliable Services（不会在其服务特定配置中指定 SharedLogId）。如果指定了 SharedLogId，则也必须指定 SharedLogPath。|
-|SharedLogPath|完全限定的路径名|""|指定完全限定的路径，该路径中的共享日志文件用于群集中所有节点上的所有 Reliable Services（不会在其服务特定配置中指定 SharedLogPath）。但是如果指定了 SharedLogPath，则也必须指定 SharedLogId。|
+|SharedLogId|GUID|""|指定用来标识默认共享日志文件的唯一 GUID，该文件用于群集中所有节点上的所有 Reliable Services（不会在其服务特定配置中指定 SharedLogId）。如果指定了 SharedLogId，还必须指定 SharedLogPath。|
+|SharedLogPath|完全限定的路径名|""|指定完全限定的路径，该路径中的共享日志文件用于群集中所有节点上的所有 Reliable Services（不会在其服务特定配置中指定 SharedLogPath）。但是如果指定了 SharedLogPath，还必须指定 SharedLogId。|
 |SharedLogSizeInMB|兆字节|8192|指定以静态方式分配给共享日志的磁盘空间 MB 数。此值必须为 2048 或更大。|
 
 ### 群集清单节示例
@@ -54,9 +54,9 @@ Azure Service Fabric 运行时在 settings.xml 文件中查找预定义的节名
 
 
 ### 备注
-记录器具有一个从未分页的内核内存分配的内存全局池，节点上的所有 Reliable Services 都可以使用该池在将状态数据写入与可靠服务副本关联的专用日志之前缓存这些数据。池大小由 WriteBufferMemoryPoolMinimumInKB 和 WriteBufferMemoryPoolMaximumInKB 设置控制。WriteBufferMemoryPoolMinimumInKB 指定此内存池的初始大小，以及内存池可以缩小到的大小下限。WriteBufferMemoryPoolMaximumInKB 是内存池可以增长到的大小上限。每个打开的可靠服务副本都可能会增加内存池的大小，增加幅度从系统决定的数量到 WriteBufferMemoryPoolMaximumInKB。如果内存池的内存需求大于可用的内存，则会延迟内存请求，直到有可用的内存。因此，如果写入缓冲区内存池对特定配置而言太小，则性能可能会受到影响。
+记录器具有一个从未分页的内核内存分配的内存全局池，节点上的所有 Reliable Services 都可以使用该池在将状态数据写入与 Reliable Service 副本关联的专用日志之前缓存这些数据。池大小由 WriteBufferMemoryPoolMinimumInKB 和 WriteBufferMemoryPoolMaximumInKB 设置控制。WriteBufferMemoryPoolMinimumInKB 指定此内存池的初始大小，以及内存池可以缩小到的大小下限。WriteBufferMemoryPoolMaximumInKB 是内存池可以增长到的大小上限。每个打开的 Reliable Service 副本都可能会增加内存池的大小，增加幅度从系统决定的数量到 WriteBufferMemoryPoolMaximumInKB。如果内存池的内存需求大于可用的内存，则会延迟内存请求，直到有可用的内存。因此，如果写入缓冲区内存池对特定配置而言太小，则性能可能会受到影响。
 
-SharedLogId 和 SharedLogPath 设置始终一起使用，用于定义群集中所有节点的默认共享日志的 GUID 和位置。默认共享日志可用于不在特定服务 settings.xml 中指定设置的所有 Reliable Services。为了获得最佳性能，共享日志文件应置于仅用于共享日志文件的磁盘上，以便减少争用。
+SharedLogId 和 SharedLogPath 设置始终一起使用，用于定义群集中所有节点的默认共享日志的 GUID 和位置。默认共享日志可用于不在特定服务的 settings.xml 中指定设置的所有 Reliable Services。为了获得最佳性能，共享日志文件应置于仅用于共享日志文件的磁盘上，以便减少争用。
 
 SharedLogSizeInMB 指定要预先分配给所有节点上的默认共享日志的磁盘空间数量。若要指定 SharedLogSizeInMB，不需要指定 SharedLogId 和 SharedLogPath。
 
@@ -76,7 +76,7 @@ SharedLogSizeInMB 指定要预先分配给所有节点上的默认共享日志�
 
 ### 配置名称
 
-|Name|计价单位|默认值|备注|
+|名称|计价单位|默认值|备注|
 |----|----|-------------|-------|
 |BatchAcknowledgementInterval|秒|0\.05|收到操作后，在向主要复制器送回确认之前，辅助复制器等待的时间段。为在此间隔内处理的操作发送的任何其他确认都作为响应发送。||
 |ReplicatorEndpoint|不适用|无默认值--必选参数|主要/辅助复制器用于与副本集中其他复制器通信的 IP 地址和端口。这应该引用服务清单中的 TCP 资源终结点。若要了解有关在服务清单中定义终结点资源的详细信息，请参阅[服务清单资源](/documentation/articles/service-fabric-service-manifest-resources/)。 |
@@ -85,10 +85,9 @@ SharedLogSizeInMB 指定要预先分配给所有节点上的默认共享日志�
 |MaxSecondaryReplicationQueueSize|操作的数量|16384|辅助队列中的操作的最大数目。将在使操作的状态在暂留期间高度可用后释放该操作。此值必须大于 64 和 2 的幂。|
 |CheckpointThresholdInMB|MB|200|创建状态检查点后的日志文件空间量。|
 |MaxRecordSizeInKB|KB|1024|复制器可以在日志中写入的最大记录大小。此值必须是 4 的倍数，且大于 16。|
-|OptimizeLogForLowerDiskUsage|布尔|是|为 true 时会配置日志，以便使用 NTFS 稀疏文件创建副本的专用日志文件。这会降低文件的实际磁盘空间使用率。为 false 时，会使用固定分配创建文件，这可提供最佳写入性能。|
-|SharedLogId|guid|""|指定要用于标识与此副本一起使用的共享日志文件的唯一 guid。通常情况下，服务不应使用此设置。但是如果指定了 SharedLogId，则也必须指定 SharedLogPath。|
-|SharedLogPath|完全限定的路径名|""|指定将在其中创建此副本共享日志文件的完全限定路径。通常情况下，服务不应使用此设置。但是如果指定了 SharedLogPath，则也必须指定 SharedLogId。|
-
+|OptimizeLogForLowerDiskUsage|布尔|true|为 true 时会配置日志，以便使用 NTFS 稀疏文件创建副本的专用日志文件。这会降低文件的实际磁盘空间使用率。为 false 时，会使用固定分配创建文件，这可提供最佳写入性能。|
+|SharedLogId|guid|""|指定要用于标识与此副本一起使用的共享日志文件的唯一 guid。通常情况下，服务不应使用此设置。但是如果指定了 SharedLogId，还必须指定 SharedLogPath。|
+|SharedLogPath|完全限定的路径名|""|指定将在其中创建此副本共享日志文件的完全限定路径。通常情况下，服务不应使用此设置。但是如果指定了 SharedLogPath，还必须指定 SharedLogId。|
 
 ## 示例配置文件
 
@@ -120,8 +119,8 @@ CheckpointThresholdInMB 参数控制复制器可以用于将状态信息存储�
 
 如果将 OptimizeForLowerDiskUsage 设置为 true，则会过度预配日志文件空间，以便活动副本可以将更多状态信息存储在其日志文件中，而非活动副本使用较少的磁盘空间。这样可以在节点上托管多个副本。如果将 OptimizeForLowerDiskUsage 设置为 false，状态信息将更快地写入日志文件。
 
-MaxRecordSizeInKB 设置用于定义可由复制器写入日志文件的记录的最大大小。大多数情况下，默认的 1024-KB 记录大小是最佳的。但是，如果服务使更大数据项成为状态信息的一部分，则可能需要增加此值。使 MaxRecordSizeInKB 小于 1024 几乎没什么好处，因为记录仅使用较小记录所需的空间。我们预期此值只在极少数情况下需要更改。
+MaxRecordSizeInKB 设置用于定义可由复制器写入日志文件的记录的最大大小。大多数情况下，默认的 1024-KB 记录大小是最佳大小。但是，如果服务使更大数据项成为状态信息的一部分，则可能需要增加此值。使 MaxRecordSizeInKB 小于 1024 几乎没什么好处，因为较小记录仅使用较小记录所需的空间。我们预期此值只在极少数情况下需要更改。
 
 SharedLogId 和 SharedLogPath 设置始终一起使用，使服务可以使用与节点的默认共享日志不同的共享日志。为获得最佳效率，应让尽可能多的服务指定相同共享日志。共享日志文件应置于仅用于共享日志文件的磁盘上，以便减少磁头运动争用。我们预期这些值只在极少数情况下需要更改。
 
-<!---HONumber=Mooncake_0801_2016-->
+<!---HONumber=Mooncake_0227_2017-->

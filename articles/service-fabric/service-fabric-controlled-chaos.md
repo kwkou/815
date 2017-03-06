@@ -1,22 +1,21 @@
 <properties
-   pageTitle="在 Service Fabric 群集中引入混沌测试 | Azure"
-   description="使用故障注入和群集分析服务 API 管理群集中的混沌测试。"
-   services="service-fabric"
-   documentationCenter=".net"
-   authors="motanv"
-   manager="rsinha"
-   editor="toddabel"/>  
-
-
+    pageTitle="在 Service Fabric 群集中引入混沌测试 | Azure"
+    description="使用故障注入和群集分析服务 API 管理群集中的混沌测试。"
+    services="service-fabric"
+    documentationcenter=".net"
+    author="motanv"
+    manager="rsinha"
+    editor="toddabel" />
 <tags
-   ms.service="service-fabric"
-   ms.devlang="dotnet"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="NA"
-   ms.date="09/19/2016"
-   wacn.date="11/28/2016"
-   ms.author="motanv"/>  
+    ms.assetid="2bd13443-3478-4382-9a5a-1f6c6b32bfc9"
+    ms.service="service-fabric"
+    ms.devlang="dotnet"
+    ms.topic="article"
+    ms.tgt_pltfrm="NA"
+    ms.workload="NA"
+    ms.date="01/19/2017"
+    wacn.date="03/03/2017"
+    ms.author="motanv" />  
 
 
 # 在 Service Fabric 群集中引入受控的混沌测试
@@ -193,4 +192,4 @@
 
 	Stop-ServiceFabricChaos
 
-<!---HONumber=Mooncake_1121_2016-->
+<!---HONumber=Mooncake_0227_2017-->

@@ -13,9 +13,10 @@
     ms.topic="article"
     ms.tgt_pltfrm="NA"
     ms.workload="NA"
-    ms.date="10/19/2016"
-    wacn.date="12/26/2016"
-    ms.author="vturecek" />
+    ms.date="02/10/2017"
+    wacn.date="03/03/2017"
+    ms.author="vturecek" />  
+
 
 # 有关 Service Fabric Reliable Actors 类型序列化的说明
 
@@ -96,4 +97,4 @@ Reliable Actor 框架使用 DataContract 序列化。因此，自定义数据对
  - [执行组件多态性和面向对象的设计模式](/documentation/articles/service-fabric-reliable-actors-polymorphism/)
  - [执行组件诊断和性能监视](/documentation/articles/service-fabric-reliable-actors-diagnostics/)
 
-<!---HONumber=Mooncake_1219_2016-->
+<!---HONumber=Mooncake_0227_2017-->

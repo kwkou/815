@@ -1,5 +1,5 @@
 <properties
-    pageTitle="了解微服务 | Azure"
+    pageTitle="Azure 微服务简介 | Azure"
     description="概述了为何使用微服务方法生成云应用程序对于开发现代应用程序非常重要，以及 Azure Service Fabric 如何提供一个平台来实现此目的。"
     services="service-fabric"
     documentationcenter=".net"
@@ -13,9 +13,9 @@
     ms.topic="article"
     ms.tgt_pltfrm="NA"
     ms.workload="NA"
-    ms.date="1/05/2017"
-    wacn.date="02/20/2017"
-    ms.author="mfussell" />  
+    ms.date="02/06/2017"
+    wacn.date="03/03/2017"
+    ms.author="msfussell" />  
 
 
 # 为什么通过微服务的方法生成应用程序？
@@ -130,7 +130,7 @@
 
 ## Service Fabric 作为微服务平台
 
-Azure 从提供盒装产品（通常是单一式）转换到提供服务后，Azure Service Fabric 横空问世。构建和操作大型服务（例如 Azure SQL 数据库和 DocumentDB）的经验成就了 Service Fabric。该平台随着越来越多服务采用它而不断发展变化。重要的是，Service Fabric 必须在任何地方运行：不仅在 Azure 中，还有在独立的 Windows Server 部署中。
+Azure 从提供盒装产品（通常是单一式）转换到提供服务后，Azure Service Fabric 横空问世。生成和操作大型服务（例如 Azure SQL 数据库和 Azure DocumentDB）的经验成就了 Service Fabric。该平台随着越来越多服务采用它而不断发展变化。重要的是，Service Fabric 不仅必须在 Azure 中运行，还必须在独立的 Windows Server 部署中运行。
 
 ***Service Fabric 旨在解决构建和运行服务方面的难题，并有效地利用基础结构资源，使团队可以使用微服务方法来解决业务问题。***
 
@@ -155,5 +155,5 @@ Service Fabric 的目标是将使用微服务方法生成应用程序时的复�
 [Image1]: ./media/service-fabric-overview-microservices/monolithic-vs-micro.png
 [Image2]: ./media/service-fabric-overview-microservices/statemonolithic-vs-micro.png
 
-<!---HONumber=Mooncake_0213_2017-->
+<!---HONumber=Mooncake_0227_2017-->
 <!--Update_Description: wording update-->

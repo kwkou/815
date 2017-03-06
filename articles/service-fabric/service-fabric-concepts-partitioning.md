@@ -1,6 +1,6 @@
 <properties
     pageTitle="Service Fabric 服务分区 | Azure"
-    description="介绍如何对 Service Fabric 有状态服务进行分区。分区启用了本地计算机上的数据存储，因此可以将数据和计算一起缩放。"
+    description="介绍如何对 Service Fabric 有状态服务进行分区。使用分区可以将数据存储在本地计算机上，以便数据和计算可以一起扩展。"
     services="service-fabric"
     documentationcenter=".net"
     author="msfussell"
@@ -13,15 +13,15 @@
     ms.topic="article"
     ms.tgt_pltfrm="NA"
     ms.workload="NA"
-    ms.date="10/22/2016"
-    wacn.date="01/17/2017"
-    ms.author="msfussell" />
+    ms.date="02/17/2017"
+    wacn.date="03/03/2017"
+    ms.author="msfussell" />  
 
 # Service Fabric Reliable Services 分区
 本文介绍 Azure Service Fabric Reliable Services 分区的基本概念。本文中使用的源代码也可以在 [GitHub](https://github.com/Azure-Samples/service-fabric-dotnet-getting-started/tree/master/Services/AlphabetPartitions) 上获取。
 
 ## 分区
-分区并不是 Service Fabric 所独有的。事实上，它是构建可缩放服务的核心模式。从更广泛的意义来说，我们可以将分区视为将状态（数据）和计算划分为更小的可访问单元，以提高可伸缩性和性能的一种概念。一种众所周知的分区形式是[数据分区][wikipartition]，也称为分片。
+分区并不是 Service Fabric 所独有的。事实上，它是生成可缩放服务的核心模式。从更广泛的意义来说，我们可以将分区视为将状态（数据）和计算划分为更小的可访问单元，以提高可伸缩性和性能的一种概念。一种众所周知的分区形式是[数据分区][wikipartition]，也称为分片。
 
 ### Service Fabric 无状态服务分区
 对于无状态服务，可以将分区视为包含服务的一个或多个实例的逻辑单元。图 1 显示一个无状态服务，其五个实例使用一个分区在群集中分布。
@@ -31,16 +31,16 @@
 
 实际上有两种类型的无状态服务解决方案。第一种是在外部（例如在 Azure SQL 数据库中）保持其状态的服务（如存储会话信息和数据的网站）。第二种是不管理任何持久状态的仅计算服务（如计算器或图像缩略）。
 
-在任一情况下，对无状态服务进行分区都是非常少见的方案 — 通常通过添加更多实例来实现可伸缩性和可用性。对于无状态服务实例要考虑多个分区的唯一情况是在需要满足特殊路由请求时。
+在任一情况下，对无状态服务进行分区都是非常少见的方案 — 通常通过添加更多实例实现可伸缩性和可用性。对于无状态服务实例要考虑多个分区的唯一情况是在需要满足特殊路由请求时。
 
 例如，考虑以下这种情况：ID 处于特定范围内的用户只应该由特定服务实例提供服务。可以对无状态服务进行分区的情况的另一个示例是在你具有真正分区后端（例如分片 SQL 数据库）并且你要控制哪个服务实例应写入数据库分片（或是在无状态服务中执行的其他准备工作需要的分区信息与后端中使用的信息相同）时。这些类型的情况也可以通过其他方式进行解决，并不一定需要服务分区。
 
 本演练的其余部分侧重于有状态服务。
 
-### 对 Service Fabric 有状态服务进行分区
-通过 Service Fabric 可以提供到一流的状态（数据）分区方式，从而方便地开发可缩放有状态服务。从概念上讲，可以将有状态服务的分区视为使用在群集中的节点间进行分布和平衡的[副本](/documentation/articles/service-fabric-availability-services/)而具有高度可靠性的缩放单位。
+### Service Fabric 有状态服务分区
+借助 Service Fabric，可以通过提供一流的状态（数据）分区方式轻松开发可缩放的有状态服务。从概念上讲，可以将有状态服务的分区视为使用在群集中的节点间进行分布和平衡的[副本](/documentation/articles/service-fabric-availability-services/)而具有高度可靠性的缩放单位。
 
-在 Service Fabric 有状态服务的上下文中进行分区是指确定特定服务分区负责服务完整状态的某个部分的过程。（如前所述，分区是一组[副本](/documentation/articles/service-fabric-availability-services/)）。Service Fabric 的一大优点是它将分区置于不同节点上。这使它们可以按照节点的资源限制来增长。随着数据需求的增长，分区也会增长，Service Fabric 会在节点间重新平衡分区。这可确保硬件资源的持续高效使用。
+在 Service Fabric 有状态服务的上下文中进行分区是指确定特定服务分区负责服务完整状态的某个部分的过程。（如前所述，分区是一组[副本](/documentation/articles/service-fabric-availability-services/)）。Service Fabric 的一大优点是它将分区置于不同节点上。这使它们可以按照节点的资源限制增长。随着数据需求的增长，分区也会增长，Service Fabric 会在节点间重新平衡分区。这可确保硬件资源的持续高效使用。
 
 为了提供一个示例，假设你开始时具有一个 5 节点群集，以及一个配置为具有 10 个分区并且目标为 3 个副本的服务。在这种情况下，Service Fabric 会在群集间平衡和分布副本 — 最后每个节点会有两个主[副本](/documentation/articles/service-fabric-availability-services/)。如果现在需要将群集扩大到 10 个节点，则 Service Fabric 会在所有 10 个节点间重新平衡主[副本](/documentation/articles/service-fabric-availability-services/)。同样，如果重新缩小为 5 个节点，则 Service Fabric 会在 5 个节点间重新平衡所有副本。
 
@@ -56,7 +56,7 @@
 
 一个不错的方法是将需要进行分区的状态的结构视为第一步。
 
-我们来看一个简单的示例。如果你要为全县投票构建一个服务，则可以为县中的每个城市创建一个分区。随后可以在对应于城市的分区中为城市中的每个人存储投票。图 3 显示一组人及其所在的城市。
+我们来看一个简单的示例。如果你要为全国投票生成一个服务，则可以为该国家/地区中的每个城市创建一个分区。随后可以在对应于该城市的分区中为城市中的每个人存储投票。图 3 显示一组人及其所在的城市。
 
 ![简单分区屏幕截图](./media/service-fabric-concepts-partitioning/cities.png)
 
@@ -67,7 +67,7 @@
 为避免出现这种情况，从分区的角度来看，你应做两件事：
 
 - 尝试对状态进行分区，以便状态在所有分区间均匀分布。
-- 从服务的每个副本报告负载。（有关操作方法的信息，请查看这篇有关[指标和负载](/documentation/articles/service-fabric-cluster-resource-manager-metrics/)的文章）。Service Fabric 可以报告服务消耗的负载，例如内存量或记录数。根据报告的指标，Service Fabric 会检测到某些分区处理的负载高于其他分区，并通过将副本移动到更合适的节点来重新平衡群集，以便在整体上不会有节点过载。
+- 从服务的每个副本报告负载。（有关操作方法的信息，请查看这篇有关[指标和负载](/documentation/articles/service-fabric-cluster-resource-manager-metrics/)的文章）。Service Fabric 可以报告服务消耗的负载，例如内存量或记录数。根据报告的指标，Service Fabric 会检测到某些分区处理的负载高于其他分区，并通过将副本移动到更合适的节点来重新平衡群集，以便在整体上不会有节点重载。
 
 有时，无法知道将处于给定分区中的数据量。因此，常规建议是执行以下两种操作：首先是采用在分区间均匀分布数据的分区策略，其次是报告负载。第一种方法可防止投票示例中描述的情况，而第二种方法可帮助随时间推移而消除访问或负载的中的临时差异。
 
@@ -111,8 +111,8 @@ Service Fabric 提供了三个分区方案可供选择：
 
 有关选择常规哈希代码算法的很好的资源是[哈希函数的维基百科网页](http://en.wikipedia.org/wiki/Hash_function)。
 
-## 构建具有多个分区的有状态服务
-我们来创建具有多个分区的第一个可靠有状态服务。在此示例中，你会构建一个非常简单的应用程序，在其中你要将以相同字母开头的所有姓氏存储在相同分区中。
+## 生成具有多个分区的有状态服务
+让我们创建具有多个分区的第一个可靠有状态服务。在此示例中，你会生成一个非常简单的应用程序，在其中你要将以相同字母开头的所有姓氏存储在相同分区中。
 
 编写任何代码之前，需要考虑分区和分区键。需要 26 个分区（字母表中的每个字母各一个分区），但是低键和高键是怎样的呢？ 因为我们确实是对每个字母使用一个分区，所以可以使用 0 作为低键，使用 25 作为高键，因为每个字母都是自己的键。
 
@@ -140,7 +140,7 @@ Service Fabric 提供了三个分区方案可供选择：
     	</Service>
     
 
-6. 要使访问可以访问，请通过添加 Alphabet.Processing 服务的 ServiceManifest.xml（位于 PackageRoot 文件夹中）的终结点元素，在某个端口上打开终结点，如下所示：
+6. 若要使服务可以访问，请通过添加 Alphabet.Processing 服务的 ServiceManifest.xml（位于 PackageRoot 文件夹中）的终结点元素，在某个端口上打开终结点，如下所示：
 
     
     	<Endpoint Name="ProcessingServiceEndpoint" Port="8089" Protocol="http" Type="Internal" />
@@ -154,7 +154,7 @@ Service Fabric 提供了三个分区方案可供选择：
 
 8. 副本所侦听的 URL 的建议格式为以下格式：`{scheme}://{nodeIp}:{port}/{partitionid}/{replicaid}/{guid}`。因此，你要将通信侦听器配置为侦听正确的终结点以及使用此模式。
 
-    可以在同一台计算机上承载此服务的多个副本，因此此地址需要是副本独有的。这就是 URL 中包含分区 ID 和副本 ID 的原因。HttpListener 可以在同一端口上侦听多个地址，只要 URL 前缀是唯一的。
+    可以在同一台计算机上托管此服务的多个副本，因此此地址需要是副本独有的。这就是 URL 中包含分区 ID 和副本 ID 的原因。HttpListener 可以在同一端口上侦听多个地址，只要 URL 前缀是唯一的。
 
     额外 GUID 在其中用于辅助副本也针对只读请求进行侦听的高级情况。如果是这种情况，则要确保在从主副本转换为辅助副本时使用新的唯一地址，以强制客户端重新解析地址。“+”在此处用作地址，以便副本在所有可用主机（IP、FQDM、localhost 等）上进行侦听 下面的代码演示一个示例。
 
@@ -229,7 +229,7 @@ Service Fabric 提供了三个分区方案可供选择：
 
     `ProcessInternalRequest` 读取用于调用分区的查询字符串参数值，并调用 `AddUserAsync` 以将姓氏添加到可靠字典 `dictionary`。
 
-10. 我们来将一个无状态服务添加到项目，以查看如何调用特定分区。
+10. 让我们将一个无状态服务添加到项目，以查看如何调用特定分区。
 
     此服务可用作简单 Web 界面，它接受姓氏作为查询字符串参数，确定分区键，然后将它发送到 Alphabet.Processing 服务进行处理。
     
@@ -260,7 +260,7 @@ Service Fabric 提供了三个分区方案可供选择：
     	}
     
 
-14. 现在需要实现处理逻辑。HttpCommunicationListener 在请求进入时调用 `ProcessInputRequest`。那么，我们来继续进行，添加下面的代码。
+14. 现在需要实现处理逻辑。HttpCommunicationListener 在请求进入时调用 `ProcessInputRequest`。让我们继续操作，添加下面的代码。
 
     
     	private async Task ProcessInputRequest(HttpListenerContext context, CancellationToken cancelRequest)
@@ -326,7 +326,7 @@ Service Fabric 提供了三个分区方案可供选择：
     	ResolvedServiceEndpoint ep = partition.GetEndpoint()
     
 
-    最后，我们会构建终结点 URL 以及查询字符串，并调用处理服务。
+    最后，我们会生成终结点 URL 以及查询字符串，并调用处理服务。
 
     
     	JObject addresses = JObject.Parse(ep.Address);
@@ -348,11 +348,11 @@ Service Fabric 提供了三个分区方案可供选择：
 		</Parameters>
     
 
-16. 完成部署之后，便可以在 Service Fabric 资源管理器中检查服务及其所有分区。
+16. 完成部署之后，可以在 Service Fabric Explorer 中检查服务及其所有分区。
     
     ![Service Fabric 资源管理器屏幕截图](./media/service-fabric-concepts-partitioning/sfxpartitions.png)
     
-17. 在浏览器中，可以输入 `http://localhost:8081/?lastname=somename` 来测试分区逻辑。你会看到以相同字母开头的每个姓氏都存储在相同区域中。
+17. 在浏览器中，可以输入 `http://localhost:8081/?lastname=somename` 来测试分区逻辑。你会看到以相同字母开头的每个姓氏都存储在相同分区中。
     
     ![浏览器屏幕截图](./media/service-fabric-concepts-partitioning/samplerunning.png)
 
@@ -370,4 +370,5 @@ Service Fabric 提供了三个分区方案可供选择：
 
 [wikipartition]: https://en.wikipedia.org/wiki/Partition_(database)
 
-<!---HONumber=Mooncake_Quality_Review_0117_2017-->
+<!---HONumber=Mooncake_0227_2017-->
+<!--Update_Description: wording update-->

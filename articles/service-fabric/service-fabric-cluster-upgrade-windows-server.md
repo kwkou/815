@@ -1,23 +1,21 @@
 <properties
-   pageTitle="在 Windows Server 上升级独立的 Service Fabric 群集 | Azure"
-   description="升级运行独立 Service Fabric 群集的 Service Fabric 代码和/或配置，包括设置群集更新模式"
-   services="service-fabric"
-   documentationCenter=".net"
-   authors="ChackDan"
-   manager="timlt"
-   editor=""/>  
-
-
+    pageTitle="在 Windows Server 上升级独立的 Service Fabric 群集 | Azure"
+    description="升级运行独立 Service Fabric 群集的 Service Fabric 代码和/或配置，包括设置群集更新模式"
+    services="service-fabric"
+    documentationcenter=".net"
+    author="ChackDan"
+    manager="timlt"
+    editor="" />
 <tags
-   ms.service="service-fabric"
-   ms.devlang="dotnet"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="na"
-   ms.date="10/10/2016"
-   wacn.date="11/28/2016"
-   ms.author="chackdan"/>  
-
+    ms.assetid="66296cc6-9524-4c6a-b0a6-57c253bdf67e"
+    ms.service="service-fabric"
+    ms.devlang="dotnet"
+    ms.topic="article"
+    ms.tgt_pltfrm="na"
+    ms.workload="na"
+    ms.date="02/02/2017"
+    wacn.date="03/03/2017"
+    ms.author="chackdan" />  
 
 
 # 在 Windows Server 上升级独立的 Service Fabric 群集
@@ -122,23 +120,24 @@
 
         "fabricClusterAutoupgradeEnabled": false,
 
-然后开始升级配置。有关用法详细信息，请参阅 [Start-ServiceFabricClusterUpgrade PS 命令](https://msdn.microsoft.com/zh-cn/library/mt125872.aspx)。群集清单版本是 clusterConfig.JSON 中指定的版本。请务必在开始升级配置之前更新该版本。
+然后开始配置升级。有关用法详细信息，请参阅 [Start-ServiceFabricClusterConfigurationUpgrade PS 命令](https://msdn.microsoft.com/zh-cn/library/mt788302.aspx)。请确保先更新 JSON 中的“clusterConfigurationVersion”，然后再开始配置升级。
 
 
 
-	Start-ServiceFabricClusterUpgrade [-Config] [-ClusterConfigVersion] -FailureAction Rollback -Monitored 
+    	Start-ServiceFabricClusterConfigurationUpgrade -ClusterConfigPath <Path to Configuration File> 
 
 
 
 #### 群集升级工作流。
- 
+1. 从群集中的一个节点运行 Get-ServiceFabricClusterUpgrade 并记下 TargetCodeVersion。
+2. 从与 Internet 相连的计算机上运行以下命令，列出与当前版本兼容的所有升级版本，并从关联的下载链接下载相应的包。
 
+   
+	    ###### Get list of all upgrade compatible packages
+	    Get-ServiceFabricRuntimeUpgradeVersion -BaseVersion <TargetCodeVersion as noted in Step 1>
 
-1. 通过 [Create service fabric cluster for windows server](/documentation/articles/service-fabric-cluster-creation-for-windows-server/)（创建适用于 Windows Server 的 Service Fabric 群集）下载最新的包版本
-
-
-1. 从对群集配置文件中列为节点的所有计算机拥有管理员访问权限的任何计算机连接到该群集。运行此脚本的计算机不必要是群集的一部分
-
+3. 从对群集配置文件中列为节点的所有计算机拥有管理员访问权限的任何计算机连接到该群集。运行此脚本的计算机不必要是群集的一部分
+   
 
 
 		###### connect to the cluster
@@ -152,9 +151,8 @@
 			-StoreLocation CurrentUser `
 			-StoreName My
 
-
-2. 将下载的包复制到群集映像存储中。
-
+4. 将下载的包复制到群集映像存储中。
+   
 
 
 		###### Get the list of available service fabric versions 
@@ -165,8 +163,7 @@
 
 
 
-
-2. 注册复制的包
+5. 注册复制的包
 
 
 
@@ -179,7 +176,7 @@
 
 
 
-3. 开始将群集升级到可用的版本之一。
+6. 开始将群集升级到可用的版本之一。
 
 
 
@@ -201,6 +198,20 @@
 解决导致回滚的问题后，需要遵循前面相同的步骤再次启动升级。
 
 
+## 群集配置升级
+若要执行群集配置升级，请运行 Start-ServiceFabricClusterConfigurationUpgrade。按升级域逐个处理配置升级。
+
+
+
+	    Start-ServiceFabricClusterConfigurationUpgrade -ClusterConfigPath <Path to Configuration File> 
+
+
+### 群集证书配置升级（请继续使用当前配置，直到发布 v5.5，因为在 v5.5 之前，群集证书升级不起作用）
+群集证书用于群集节点之间的身份验证，因此执行证书切换时应额外小心，因为失败会阻止群集节点间的通信。从技术上讲，支持两个选项：
+
+1. 单证书升级：升级路径是“证书 A（主）-> 证书 B（主）-> 证书 C（主）->...”。
+2. 双证书升级：升级路径是“证书 A（主）-> 证书 A（主）和 B（辅助）-> 证书 B（主）-> 证书 B（主）和 C（辅助）-> 证书 C（主）->...”
+
 
 ## 后续步骤
 - 了解如何自定义某些 [Service Fabric 群集结构设置](/documentation/articles/service-fabric-cluster-fabric-settings/)
@@ -210,4 +221,5 @@
 
 [getfabversions]: ./media/service-fabric-cluster-upgrade-windows-server/getfabversions.PNG
 
-<!---HONumber=Mooncake_1121_2016-->
+<!---HONumber=Mooncake_0227_2017-->
+<!--Update_Description: add "群集配置升级" section-->

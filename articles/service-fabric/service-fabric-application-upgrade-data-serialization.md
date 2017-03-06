@@ -1,21 +1,21 @@
 <properties
-   pageTitle="应用程序升级：数据序列化 | Azure"
-   description="数据序列化的最佳实践和它如何影响应用程序的滚动升级。"
-   services="service-fabric"
-   documentationCenter=".net"
-   authors="vturecek"
-   manager="timlt"
-   editor=""/>
-
+    pageTitle="应用程序升级：数据序列化 | Azure"
+    description="介绍有关数据序列化的最佳实践，以及数据序列化如何影响应用程序滚动升级。"
+    services="service-fabric"
+    documentationcenter=".net"
+    author="vturecek"
+    manager="timlt"
+    editor="" />
 <tags
-   ms.service="service-fabric"
-   ms.devlang="dotnet"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="NA"
-   ms.date="10/19/2016"
-   wacn.date="12/26/2016"
-   ms.author="vturecek"/>
+    ms.assetid="a5f36366-a2ab-4ae3-bb08-bc2f9533bc5a"
+    ms.service="service-fabric"
+    ms.devlang="dotnet"
+    ms.topic="article"
+    ms.tgt_pltfrm="NA"
+    ms.workload="NA"
+    ms.date="02/10/2017"
+    wacn.date="03/03/2017"
+    ms.author="vturecek" />  
 
 
 # 数据序列化如何影响应用程序升级
@@ -59,4 +59,4 @@
 
 参考[对应用程序升级进行故障排除](/documentation/articles/service-fabric-application-upgrade-troubleshooting/)中的步骤来解决应用程序升级时的常见问题。
 
-<!---HONumber=Mooncake_1219_2016-->
+<!---HONumber=Mooncake_0227_2017-->

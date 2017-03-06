@@ -1,5 +1,5 @@
 <properties
-    pageTitle="Azure Service Fabric 内容路线图 | Azure"
+    pageTitle="了解 Azure Service Fabric | Azure"
     description="Service Fabric 的概述和入门指南。在 Service Fabric 中，应用程序由许多微服务组成，能够提供可伸缩性和复原能力。"
     services="service-fabric"
     documentationcenter=".net"
@@ -11,8 +11,8 @@
     ms.topic="article"
     ms.tgt_pltfrm="NA"
     ms.workload="NA"
-    ms.date="01/09/2017"
-    wacn.date="02/24/2017"
+    ms.date="02/17/2017"
+    wacn.date="03/03/2017"
     ms.author="ryanwi" />  
 
 
@@ -48,7 +48,8 @@ Service Fabric SDK 包含一个用于 Visual Studio 的外接程序，它可提�
 [设置开发环境](/documentation/articles/service-fabric-get-started/)
 [创建第一个应用 \(C\#\)](/documentation/articles/service-fabric-create-your-first-application-in-visual-studio/)
 
-学习这篇内容丰富的[动手实验](https://msdnshared.blob.core.windows.net/media/2016/07/SF-Lab-Part-I.docx)，熟悉 Service Fabric 的端到端开发流。了解如何创建无状态服务、配置监视和运行状况报告，以及执行应用程序升级。
+#### 实际动手实验
+学习这篇内容丰富的[动手实验第 1 部分](https://msdnshared.blob.core.windows.net/media/2016/07/SF-Lab-Part-I.docx)，熟悉 Service Fabric 的端到端开发流。了解如何创建无状态服务、配置监视和运行状况报告，以及执行应用程序升级。此后，请执行[动手实验第 2 部分](http://aka.ms/sflab2)，这将带你了解有状态服务。
 
 第 9 频道中的以下视频逐步讲解了在 Visual Studio 中创建 C\# 应用的过程：
 <center><a target="_blank" href="https://channel9.msdn.com/Blogs/Windows-Azure/Creating-your-first-Service-Fabric-application-in-Visual-Studio">  
@@ -57,7 +58,7 @@ Service Fabric SDK 包含一个用于 Visual Studio 的外接程序，它可提�
 
 
 ## 核心概念
-[Service Fabric 术语](/documentation/articles/service-fabric-technical-overview/)、[应用程序模型](/documentation/articles/service-fabric-application-model/)和[支持的编程模型](/documentation/articles/service-fabric-choose-framework/)提供了更多概念和说明，下面只是基础知识。
+[Service Fabric 术语](/documentation/articles/service-fabric-technical-overview/)、[应用程序模型](/documentation/articles/service-fabric-application-model/)和[支持的编程模型](/documentation/articles/service-fabric-choose-framework/)提供了更多概念和说明，但此处提供的是基础知识。
 
 <table><tr><th>核心概念</th><th>设计时</th><th>运行时</th></tr>
 <tr><td><a target="_blank" href="https://mva.microsoft.com/en-us/training-courses/building-microservices-applications-on-azure-service-fabric-16747?l=tbuZM46yC_5206218965"> <img src="./media/service-fabric-content-roadmap/CoreConceptsVid.png" WIDTH="240" HEIGHT="162"></a></td>
@@ -120,4 +121,5 @@ Service Fabric 提供了多种方法来编写和管理服务。服务可以选�
 [cluster-application-instances]: ./media/service-fabric-content-roadmap/cluster-application-instances.png
 [cluster-imagestore-apptypes]: ./media/service-fabric-content-roadmap/cluster-imagestore-apptypes.png
 
-<!---HONumber=Mooncake_0213_2017-->
+<!---HONumber=Mooncake_0227_2017-->
+<!--Update_Description: wording update-->

@@ -1,5 +1,5 @@
 <properties
-    pageTitle="Service Fabric 术语概述 | Azure"
+    pageTitle="了解 Azure Service Fabric 术语 | Azure"
     description="Service Fabric 的术语概述。讨论本文档其余部分所用的重要术语概念和术语。"
     services="service-fabric"
     documentationcenter=".net"
@@ -13,13 +13,15 @@
     ms.topic="article"
     ms.tgt_pltfrm="NA"
     ms.workload="NA"
-    ms.date="12/01/2016"
-    wacn.date="01/20/2017"
+    ms.date="2/17/2017"
+    wacn.date="03/03/2017"
     ms.author="ryanwi" />  
 
 
 # Service Fabric 术语概述
 Service Fabric 是一种分布式系统平台，可让用户轻松打包、部署和管理可缩放、可靠的微服务。本主题详细说明 Service Fabric 所使用的术语，以帮助了解文档中使用的术语。
+
+以下微软虚拟学院视频也讨论了本部分中列出的概念：<a target="_blank" href="https://mva.microsoft.com/en-us/training-courses/building-microservices-applications-on-azure-service-fabric-16747?l=tbuZM46yC_5206218965">核心概念</a>、<a target="_blank" href="https://mva.microsoft.com/zh-CN/training-courses/building-microservices-applications-on-azure-service-fabric-16747?l=tlkI046yC_2906218965">设计时概念</a>和<a target="_blank" href="https://mva.microsoft.com/zh-CN/training-courses/building-microservices-applications-on-azure-service-fabric-16747?l=x7CVH56yC_1406218965">运行时概念</a>。
 
 ## 基础结构概念
 **群集**：一组通过网络连接在一起的虚拟机或物理计算机，将在其中部署和管理微服务。群集可以扩展到成千上万台计算机。
@@ -70,6 +72,8 @@ Service Fabric 是一种分布式系统平台，可让用户轻松打包、部�
 
 **映像存储服务**：每个 Service Fabric 群集都有一个映像存储服务，其中保存已部署且版本化的应用程序包。将应用程序包复制到映像存储，然后注册该应用程序包内包含的应用程序类型。预配应用程序类型后，创建它的命名应用程序。在删除某个应用程序类型的所有命名应用程序之后，可以从映像存储服务中注销该应用程序类型。
 
+有关映像存储区服务的详细信息，请阅读[了解 ImageStoreConnectionString 设置](/documentation/articles/service-fabric-image-store-connection-string/)。
+
 有关将应用程序部署到映像存储服务的详细信息，请阅读[部署应用程序](/documentation/articles/service-fabric-deploy-remove-applications/)一文。
 
 ## 内置编程模型
@@ -89,5 +93,5 @@ Service Fabric 是一种分布式系统平台，可让用户轻松打包、部�
 - [为什么要使用微服务方法构建应用程序？](/documentation/articles/service-fabric-overview-microservices/)
 - [应用程序方案](/documentation/articles/service-fabric-application-scenarios/)
 
-<!---HONumber=Mooncake_0116_2017-->
-<!--update: wording update-->
+<!---HONumber=Mooncake_0227_2017-->
+<!--Update_Description: add a MVA video; add reference to ImageStoreConnectionString-->

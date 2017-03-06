@@ -1,23 +1,22 @@
 
 <properties
-   pageTitle="管理 Service Fabric 应用程序中的密码 | Azure"
-   description="本文介绍如何保护 Service Fabric 应用程序中的密码。"
-   services="service-fabric"
-   documentationCenter=".net"
-   authors="vturecek"
-   manager="timlt"
-   editor=""/>  
-
-
+    pageTitle="管理 Service Fabric 应用程序中的机密 | Azure"
+    description="本文介绍如何保护 Service Fabric 应用程序中的机密值。"
+    services="service-fabric"
+    documentationcenter=".net"
+    author="vturecek"
+    manager="timlt"
+    editor="" />
 <tags
-   ms.service="service-fabric"
-   ms.devlang="dotnet"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="NA"
-   ms.date="10/19/2016"
-   wacn.date="12/26/2016"
-   ms.author="vturecek"/>  
+    ms.assetid="94a67e45-7094-4fbd-9c88-51f4fc3c523a"
+    ms.service="service-fabric"
+    ms.devlang="dotnet"
+    ms.topic="article"
+    ms.tgt_pltfrm="NA"
+    ms.workload="NA"
+    ms.date="02/10/2017"
+    wacn.date="03/03/2017"
+    ms.author="vturecek" />  
 
 
 # 管理 Service Fabric 应用程序中的机密
@@ -43,7 +42,7 @@
 [Azure 密钥保管库][key-vault-get-started]在此处用作证书的安全存储位置，可用于将证书安装在 Azure 中的 Service Fabric 群集上。如果不部署到 Azure，则不需要使用密钥保管库来管理 Service Fabric 应用程序中的机密。
 
 ## 数据加密证书
-数据加密证书只用于加密和解密服务 Settings.xml 中的配置值，而不用于身份验证。该证书必须满足以下要求：
+数据加密证书只用于加密和解密服务 Settings.xml 中的配置值，而不用于身份验证或密码文本签名。该证书必须满足以下要求：
 
  - 证书必须包含私钥。
  - 必须为密钥交换创建证书，并且该证书可导出到个人信息交换 (.pfx) 文件。
@@ -61,7 +60,7 @@
 ## 加密应用程序机密
 Service Fabric SDK 提供内置的机密加密和解密函数。可以在生成时加密机密值，在服务代码中以编程方式解密和读取机密值。
 
-以下 PowerShell 命令用于加密机密。若要生成机密值的密文，必须使用群集中安装的同一个加密证书：
+以下 PowerShell 命令用于加密机密。此命令仅加密值；它并**不**对密码文本进行签名。若要生成机密值的密文，必须使用群集中安装的同一个加密证书：
 
 
 	Invoke-ServiceFabricEncryptText -CertStore -CertThumbprint "<thumbprint>" -Text "mysecret" -StoreLocation CurrentUser -StoreName My
@@ -190,4 +189,5 @@ Settings.xml 配置文件允许使用可在创建应用程序时提供的可重�
 
 [overview]: ./media/service-fabric-application-secret-management/overview.png
 
-<!---HONumber=Mooncake_1219_2016-->
+<!---HONumber=Mooncake_0227_2017-->
+<!--Update_Description: wording update-->

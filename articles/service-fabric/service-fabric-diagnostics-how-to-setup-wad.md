@@ -13,8 +13,8 @@
     ms.topic="article"
     ms.tgt_pltfrm="NA"
     ms.workload="NA"
-    ms.date="01/04/2017"
-    wacn.date="02/20/2017"
+    ms.date="01/17/2017"
+    wacn.date="03/03/2017"
     ms.author="toddabel" />  
 
 
@@ -25,7 +25,7 @@
 上传和收集日志的方式之一是使用可将日志上传到 Azure 存储的 Azure 诊断扩展。无法直接在存储中使用日志。
 
 ## 先决条件
-将使用以下工具执行本文档中的某些操作：
+使用以下工具执行本文档中的某些操作：
 
 * [Azure 诊断](/documentation/articles/cloud-services-dotnet-diagnostics/)（与 Azure 云服务相关，但包含有用的信息和示例）
 * [Azure 资源管理器](/documentation/articles/resource-group-overview/)
@@ -189,6 +189,24 @@ Azure 支持团队*需要*借助日志解决你创建的任何支持请求。这
 
 如上所述修改 template.json 文件后，请重新发布 Resource Manager 模板。如果已导出模板，则运行 deploy.ps1 文件会重新发布模板。部署后，请确保 **ProvisioningState** 为 **Succeeded**。
 
+## 更新诊断以收集运行状况和负载事件
+
+从 Service Fabric 版本 5.4 开始，将可以收集运行状况和负载指标事件。这些事件反映了系统或代码使用运行状况或负载报告 API（[ReportPartitionHealth](https://msdn.microsoft.com/zh-cn/library/azure/system.fabric.iservicepartition.reportpartitionhealth.aspx) 或 [ReportLoad](https://msdn.microsoft.com/zh-cn/library/azure/system.fabric.iservicepartition.reportload.aspx)）生成的事件。这样就可以随着时间的推移聚合和查看系统运行状况，以及基于运行状况或负载事件触发警报。若要在 Visual Studio 的诊断事件查看器中查看这些事件，请将“Microsoft-ServiceFabric:4:0x4000000000000008”添加到 ETW 提供程序列表。
+
+若要收集事件，请修改 Resource Manager 模板以包括
+
+
+	  "EtwManifestProviderConfiguration": [
+	    {
+	      "provider": "cbd93bc2-71e5-4566-b3a7-595d8eeca6e8",
+	      "scheduledTransferLogLevelFilter": "Information",
+	      "scheduledTransferKeywordFilter": "4611686018427387912",
+	      "scheduledTransferPeriod": "PT5M",
+	      "DefaultEvents": {
+	        "eventDestination": "ServiceFabricSystemEventTable"
+	      }
+	    }
+
 
 ## 更新诊断以从新的 EventSource 通道收集并上传日志
 若要将诊断更新为从新的 EventSource 通道（表示要部署的新应用程序）收集日志，请执行[前一部分](#deploywadarm)中相同的步骤，其中描述了现有群集的诊断设置。
@@ -213,5 +231,5 @@ Azure 支持团队*需要*借助日志解决你创建的任何支持请求。这
 ## 相关文章
 * [了解如何使用诊断扩展收集性能计数器或日志](/documentation/articles/virtual-machines-windows-extensions-diagnostics-template/)
 
-<!---HONumber=Mooncake_0213_2017-->
-<!--Update_Description: wording update; remove link reference to elasticsearch-->
+<!---HONumber=Mooncake_0227_2017-->
+<!--Update_Description: add "更新诊断以收集运行状况和负载事件" section-->
