@@ -1,8 +1,8 @@
 <properties
-	pageTitle="使用 Azure 门户预览为 Azure 服务创建警报 | Azure"
-	description="使用 Azure 门户创建 Azure 警报，以便在满足指定的条件时触发通知或自动化操作。"
+	pageTitle="为 Azure 服务创建警报 - Azure 门户 | Azure"
+	description="满足指定的条件时，触发电子邮件、通知、调用网站 URL (webhook) 或自动执行。"
 	authors="rboucher"
-	manager=""
+	manager="carmonm"
 	editor=""
 	services="monitoring-and-diagnostics"
 	documentationCenter="monitoring-and-diagnostics"/>
@@ -14,11 +14,11 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="09/23/2016"
-	wacn.date="11/14/2016"
+	wacn.date="03/03/2017"
 	ms.author="robb"/>
 
 
-# 使用 Azure 门户预览为 Azure 服务创建警报
+# 在 Azure Monitor 中为 Azure 服务创建警报 - Azure 门户
 
 > [AZURE.SELECTOR]
 - [门户预览](/documentation/articles/insights-alerts-portal/)
@@ -96,4 +96,5 @@
 * 详细了解 [Azure 自动化 Runbook](/documentation/articles/automation-starting-a-runbook/)。
 * [大致了解指标收集](/documentation/articles/insights-how-to-customize-monitoring/)以确保你的服务可用且响应迅速。
 
-<!---HONumber=Mooncake_1107_2016-->
+<!---HONumber=Mooncake_0227_2017-->
+<!--Update_Description:update wording -->

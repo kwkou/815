@@ -1,24 +1,24 @@
 <properties
-	pageTitle="使用 PowerShell 为 Azure 服务创建警报 | Azure"
-    description="使用 PowerShell 创建 Azure 警报，以便在满足指定的条件时触发通知或自动化操作。"
+	pageTitle="为 Azure 服务创建警报 - PowerShell | Azure"
+    description="满足指定的条件时，触发电子邮件、通知、调用网站 URL (webhook) 或自动执行。"
 	authors="rboucher"
-	manager=""
+	manager="carmonm"
 	editor=""
 	services="monitoring-and-diagnostics"
 	documentationCenter="monitoring-and-diagnostics"/>
 
 <tags
-	ms.service="azure-portal"
+	ms.service="monitoring-and-diagnostics"
 	ms.workload="na"
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="10/20/2016"
-	wacn.date="12/26/2016"
+	wacn.date="03/03/2017"
 	ms.author="robb"/>
 
 
-# 使用 PowerShell 为 Azure 服务创建警报 
+# 在 Azure Monitor 中为 Azure 服务创建警报 - 跨平台 CLI 
 
 > [AZURE.SELECTOR]
 - [门户预览](/documentation/articles/insights-alerts-portal/)
@@ -26,7 +26,6 @@
 - [CLI](/documentation/articles/insights-alerts-command-line-interface/)
 
 ## 概述
-
 本文将展示如何使用 PowerShell 设置 Azure 警报。
 
 可以根据监视指标或事件接收 Azure 服务的警报。
@@ -76,7 +75,7 @@
 	- 要为其设置警报的资源的**资源 ID**
 	- 可用于该资源的**指标定义**
 	
-	获取资源 ID 的方法是使用 Azure 门户预览。假定该资源已创建，则在门户预览中将其选中。然后，在下一个边栏选项卡中的“设置”部分下选择“属性”。“资源 ID”是下一个边栏选项卡中的一个字段。
+	获取资源 ID 的一种方法是使用 Azure 门户预览。假定该资源已创建，则在门户中将其选中。然后，在下一个边栏选项卡中，在“设置”部分下选择“属性”。“资源 ID”是下一个边栏选项卡中的一个字段。
 
     下面是 Web 应用的一个示例资源 ID：
 
@@ -149,4 +148,5 @@
 * 详细了解 [Azure 自动化 Runbook](/documentation/articles/automation-starting-a-runbook/)。
 * [大致了解指标收集](/documentation/articles/insights-how-to-customize-monitoring/)以确保你的服务可用且响应迅速。
 
-<!---HONumber=Mooncake_1107_2016-->
+<!---HONumber=Mooncake_0227_2017-->
+<!--Update_Description:update wording -->
