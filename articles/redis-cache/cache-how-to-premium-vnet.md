@@ -1,12 +1,11 @@
 <properties
-    pageTitle="如何为高级 Azure Redis 缓存配置虚拟网络支持 | Azure"
+    pageTitle="为高级 Azure Redis 缓存配置虚拟网络 | Azure"
     description="了解如何为高级层 Azure Redis 缓存实例创建和管理虚拟网络支持"
     services="redis-cache"
     documentationcenter=""
     author="steved0x"
     manager="douge"
-    editor="" />  
-
+    editor="" />
 <tags
     ms.assetid="8b1e43a0-a70e-41e6-8994-0ac246d8bf7f"
     ms.service="cache"
@@ -14,14 +13,12 @@
     ms.tgt_pltfrm="cache-redis"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="01/06/2017"
-    wacn.date="03/01/2017"
+    ms.date="02/09/2017"
+    wacn.date="03/03/2017"
     ms.author="sdanie" />
 
 # 如何为高级 Azure Redis 缓存配置虚拟网络支持
-Azure Redis 缓存具有不同的缓存产品（包括新推出的高级层），使缓存大小和功能的选择更加灵活。
-
-Azure Redis 缓存高级层功能包括群集、持久性和虚拟网络 (VNet) 支持。VNet 是云中的专用网络。为 Azure Redis 缓存实例配置了 VNet 后，该实例不可公开寻址，而只能从 VNet 中的虚拟机和应用程序进行访问。本文说明如何为高级 Azure Redis 缓存实例配置虚拟网络支持。
+Azure Redis 缓存具有不同的缓存产品（包括群集、持久性和虚拟网络支持等高级层功能），使缓存大小和功能的选择更加灵活。VNet 是云中的专用网络。为 Azure Redis 缓存实例配置了 VNet 后，该实例不可公开寻址，而只能从 VNet 中的虚拟机和应用程序进行访问。本文说明如何为高级 Azure Redis 缓存实例配置虚拟网络支持。
 
 > [AZURE.NOTE]
 Azure Redis 缓存同时支持经典 VNet 和 ARM VNet。
@@ -38,7 +35,7 @@ Azure Redis 缓存同时支持经典 VNet 和 ARM VNet。
 
 [AZURE.INCLUDE [redis-cache-create](../../includes/redis-cache-premium-create.md)]
 
-选择高级定价层之后，可以通过选择与缓存相同的订阅和位置中的 VNet，来配置 Azure Redis 缓存 VNet 集成。若要使用新 VNet，请先创建 VNet，方法是遵循 [Create a virtual network using the Azure portal Preview](/documentation/articles/virtual-networks-create-vnet-arm-pportal/)（使用 Azure 门户预览创建虚拟网络）或 [Create a virtual network (classic) by using the Azure portal Preview](/documentation/articles/virtual-networks-create-vnet-classic-portal/)（使用 Azure 门户预览创建虚拟网络（经典））中的步骤，然后返回“建的 Redis 缓存”边栏选项卡来创建和配置高级缓存。
+选择高级定价层之后，可以通过选择与缓存相同的订阅和位置中的 VNet，来配置 Azure Redis 缓存 VNet 集成。若要使用新 VNet，请先创建 VNet，方法是遵循[使用 Azure 门户预览创建虚拟网络](/documentation/articles/virtual-networks-create-vnet-arm-pportal/)或[使用 Azure 门户预览创建虚拟网络（经典）](/documentation/articles/virtual-networks-create-vnet-classic-portal/)中的步骤，然后返回“新建 Redis 缓存”边栏选项卡来创建和配置高级缓存。
 
 若要为新缓存配置 VNet，请单击“新建 Redis 缓存”边栏选项卡上的“虚拟网络”，然后从下拉列表中选择所需的 VNet。
 
@@ -59,7 +56,7 @@ Azure Redis 缓存同时支持经典 VNet 和 ARM VNet。
 > 
 > 
 
-创建缓存之后，可以在“设置”边栏选项卡中单击“虚拟网络”，查看 VNet 的配置。
+创建缓存之后，可以在“资源”菜单中单击“虚拟网络”，查看 VNet 的配置。
 
 ![虚拟网络][redis-cache-vnet-info]  
 
@@ -90,7 +87,7 @@ Azure Redis 缓存同时支持经典 VNet 和 ARM VNet。
 ## <a name="what-are-some-common-misconfiguration-issues-with-azure-redis-cache-and-vnets"></a> Azure Redis 缓存和 VNet 有哪些常见的错误配置问题？
 在 VNet 中托管 Azure Redis 缓存时，会使用下表中的端口。如果这些端口受阻，则缓存可能无法正常工作。在 VNet 中使用 Azure Redis 缓存时，阻止这些端口中的一个或多个是最常见的错误配置问题。
 
-| 端口 | Direction | 传输协议 | 目的 | 远程 IP |
+| 端口 | 方向 | 传输协议 | 目的 | 远程 IP |
 | --- | --- | --- | --- | --- |
 | 80、443 |出站 |TCP |Azure 存储空间/PKI (Internet) 上的 Redis 依赖关系 |* |
 | 53 |出站 |TCP/UDP |DNS (Internet/VNet) 上的 Redis 依赖关系 |* |
@@ -110,10 +107,10 @@ Azure Redis 缓存同时支持经典 VNet 和 ARM VNet。
 * 虚拟网络的 DNS 设置必须能够解析前面几点所提到的所有终结点和域。确保已针对虚拟网络配置并维护有效的 DNS 基础结构即可符合这些 DNS 要求。
 * 与以下 Azure 监视终结点（在下列 DNS 域下进行解析）的出站网络连接：shoebox2-black.shoebox2.metrics.nsatc.net、north-prod2.prod2.metrics.nsatc.net、azglobal-black.azglobal.metrics.nsatc.net、shoebox2-red.shoebox2.metrics.nsatc.net、east-prod2.prod2.metrics.nsatc.net、azglobal-red.azglobal.metrics.nsatc.net。
 
-### <a name="can-i-use-vnets-with-a-standard-or-basic-cache"></a>是否可以对标准或基本缓存使用 VNet？
+### <a name="can-i-use-vnets-with-a-standard-or-basic-cache"></a> 是否可以对标准或基本缓存使用 VNet？
 只能对高级缓存使用 VNet。
 
-### <a name="why-does-creating-a-redis-cache-fail-in-some-subnets-but-not-others"></a>为什么在某些子网中创建 Redis 缓存失败，而在其他子网中不会失败？
+### <a name="why-does-creating-a-redis-cache-fail-in-some-subnets-but-not-others"></a> 为什么在某些子网中创建 Redis 缓存会失败，而在其他子网中不会失败？
 如果你要将 Azure Redis 缓存部署到 ARM VNet，则该缓存必须在不包含任何其他资源类型的专用子网中。如果尝试将 Azure Redis 缓存部署到包含其他资源的 ARM VNet 子网，则部署将失败。必须先删除该子网中的现有资源，然后才能创建新的 Redis 缓存。
 
 只要你有足够的可用 IP 地址，就可以将多种类型的资源部署到经典 VNet。
@@ -121,7 +118,7 @@ Azure Redis 缓存同时支持经典 VNet 和 ARM VNet。
 ### <a name="do-all-cache-features-work-when-hosting-a-cache-in-a-vnet"></a>在 VNET 中托管缓存时，是否可以使用所有缓存功能？
 如果缓存是 VNET 的一部分，则只有 VNET 中的客户端可以访问缓存。因此，以下缓存管理功能目前不起作用。
 
-* Redis 控制台 - Redis 控制台使用的 redis cli.exe 客户端承载于不属于 VNET 的 VM 上，因此该控制台无法连接到你的缓存。
+* Redis 控制台 - Redis 控制台使用的 redis cli.exe 客户端托管于不属于 VNET 的 VM 上，因此该控制台无法连接到你的缓存。
 
 ## 将 ExpressRoute 用于 Azure Redis 缓存
 客户可以将 [Azure ExpressRoute](/home/features/expressroute/) 线路连接到虚拟网络基础结构，从而将其本地网络扩展到 Azure。
@@ -142,18 +139,17 @@ Azure Redis 缓存同时支持经典 VNet 和 ARM VNet。
 虽然由于性能原因，从本地应用程序使用 ExpressRoute 连接到 Azure Redis 缓存实例不是典型使用方案（为了获得最佳性能，Azure Redis 缓存客户端应与 Azure Redis 缓存在同一区域中），但在此方案中出站网络路径不能经过内部公司代理，也不能使用强制隧道发送到本地。否则会更改来自 Azure Redis 缓存的出站网络流量的有效 NAT 地址。更改 Azure Redis 缓存实例的出站网络流量的 NAT 地址会导致上述众多终结点的连接失败。这会导致创建 Azure Redis 缓存尝试失败。
 
 >[AZURE.IMPORTANT] 
-UDR 中定义的路由**必须**足够明确，这样才能优先于 ExpressRoute 配置所播发的任何路由。以下示例使用广泛 0.0.0.0/0 地址范围，因此使用更明确的地址范围，有可能意外地被路由播发重写。
+UDR 中定义的路由**必须**足够明确，以便优先于 ExpressRoute 配置所播发的任何路由。以下示例使用广泛 0.0.0.0/0 地址范围，因此使用更明确的地址范围，有可能意外地被路由播发重写。
 
 >[AZURE.WARNING]  
 **未正确交叉播发从公共对等路径到专用对等路径的路由**的 ExpressRoute 配置不支持 Azure Redis 缓存。已配置公共对等互连的 ExpressRoute 配置将收到来自 Microsoft 的大量 Microsoft Azure IP 地址范围的路由播发。如果这些地址范围在专用对等路径上未正确交叉播发，最后的结果是来自 Azure Redis 缓存实例子网的所有出站网络数据包都不会正确地使用强制隧道发送到客户的本地网络基础结构。此网络流将破坏 Azure Redis 缓存。此问题的解决方法是停止从公共对等路径到专用对等路径的交叉播发路由。
-
 
 有关用户定义路由的背景信息，请参阅此[概述](/documentation/articles/virtual-networks-udr-overview/)。
 
 有关 ExpressRoute 的详细信息，请参阅 [ExpressRoute 技术概述](/documentation/articles/expressroute-introduction/)
 
 ## 后续步骤
-了解如何使用更多的高级版缓存功能。
+了解如何使用更多的高级缓存功能。
 
 * [Azure Redis 缓存高级层简介](/documentation/articles/cache-premium-tier-intro/)
 
@@ -166,4 +162,5 @@ UDR 中定义的路由**必须**足够明确，这样才能优先于 ExpressRout
 
 [redis-cache-vnet-info]: ./media/cache-how-to-premium-vnet/redis-cache-vnet-info.png
 
-<!---HONumber=Mooncake_Quality_Review_1230_2016-->
+<!---HONumber=Mooncake_0227_2017-->
+<!--Update_Description: wording update-->

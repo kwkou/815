@@ -15,7 +15,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="10/19/2016"
-    wacn.date="12/20/2016"
+    wacn.date="03/06/2017"
     ms.author="drewm" />
 
 # 调整 Windows VM 的大小
@@ -88,8 +88,5 @@
             Update-AzureRmVM -ResourceGroupName $rg -VM $vm
             Start-AzureRmVM -ResourceGroupName $rg -Name $vmName
         }
-
-## 后续步骤
-* 若要提高可伸缩性，请运行多个 VM 实例并进行横向扩展。有关详细信息，请参阅[自动缩放虚拟机规模集中的 Windows 计算机](/documentation/articles/virtual-machine-scale-sets-windows-autoscale/)。
 
 <!---HONumber=Mooncake_1212_2016-->

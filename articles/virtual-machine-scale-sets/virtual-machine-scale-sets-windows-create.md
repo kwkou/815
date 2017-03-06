@@ -16,7 +16,7 @@
     ms.devlang="na"
     ms.topic="get-started-article"
     ms.date="10/18/2016"
-    wacn.date="01/05/2017"
+    wacn.date="03/06/2017"
     ms.author="davidmu" />  
 
 
@@ -217,6 +217,5 @@
 
 ## 后续步骤
 * 使用[在虚拟机规模集中管理虚拟机](/documentation/articles/virtual-machine-scale-sets-windows-manage/)中的信息管理刚刚创建的规模集
-* 请考虑使用[自动缩放和虚拟机规模集](/documentation/articles/virtual-machine-scale-sets-autoscale-overview/)中的信息设置规模集的自动缩放
 
 <!---HONumber=Mooncake_1205_2016-->

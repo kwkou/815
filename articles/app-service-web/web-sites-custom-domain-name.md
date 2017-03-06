@@ -6,8 +6,7 @@
     author="cephalin"
     manager="wpickett"
     editor="jimbe"
-    tags="top-support-issue" />  
-
+    tags="top-support-issue" />
 <tags
     ms.assetid="48644a39-107c-45fb-9cd3-c741974ff590"
     ms.service="app-service"
@@ -15,8 +14,8 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="07/27/2016"
-    wacn.date="01/03/2017"
+    ms.date="01/30/2017"
+    wacn.date="03/03/2017"
     ms.author="cephalin" />
 
 # 将自定义域名映射到 Azure 应用
@@ -24,19 +23,9 @@
 
 本文演示如何在 [Azure App Service](/documentation/articles/app-service-value-prop-what-is/) 中手动将自定义域名映射到 Web 应用、移动应用后端或 API 应用。
 
-应用已附带了唯一的子域，即 chinacloudsites.cn。例如，如果应用的名称为 **contoso**，则其域名为 **contoso.chinacloudsites.cn**。但是由于可将自定义域名映射到应用，因此其 URL（如 `www.contoso.com`）会反映出品牌。
-
-> [AZURE.NOTE]
-在 [Azure 论坛](/support/forums/)获取 Azure 专家的帮助。若要获取更高级别的帮助，请转到 [Azure 支持站点](/support/contact/)，然后单击“获取支持”。
-> 
-> 
-
-[AZURE.INCLUDE [introfooter](../../includes/custom-dns-web-site-intro-notes.md)]
-
-## 映射从外部购买的自定义域
 如果已从第三方提供商购买了自定义域，则可按照以下三个主要步骤将自定义域映射到应用：
 
-1. [ *（仅 A 记录）* 获取应用的 IP 地址](#vip)。
+1. [*（仅 A 记录）*获取应用的 IP 地址](#vip)。
 2. [创建将域映射到应用的 DNS 记录](#createdns)。
     * **位置**：域注册机构自己的管理工具（例如 Azure DNS、GoDaddy 等）。
     * **原因**：这样域注册机构便知道要将所需的自定义域解析到 Azure 应用。
@@ -45,14 +34,14 @@
     * **原因**：这样应用便知道响应对自定义域名所发出的请求。
 4. [验证 DNS 传播](#verify)。
 
-### 可映射的域类型
+## 可映射的域类型
 Azure App Service 允许将以下类别的自定义域映射到应用。
 
 * **根域** - 通过域注册机构所保留的域名（通常由 `@` 主机记录表示）。例如 **contoso.com**。
-* **子域** - 根域下的所有域。例如， **www.contoso.com** （由 `www` 主机记录表示）。在 Azure 中可将相同根域的不同子域映射到不同的应用中。
+* **子域** - 根域下的所有域。例如，**www.contoso.com**（由 `www` 主机记录表示）。在 Azure 中可将相同根域的不同子域映射到不同的应用中。
 * **通配符域** - [其最左边的 DNS 标签为 `*` 的所有子域](https://en.wikipedia.org/wiki/Wildcard_DNS_record)（例如主机记录 `*` 和 `*.blogs`）。例如 ***.contoso.com**。
 
-### 可使用的 DNS 记录类型
+## 可使用的 DNS 记录类型
 根据需要，可以使用两种不同类型的标准 DNS 记录来映射自定义域：
 
 * [A](https://en.wikipedia.org/wiki/List_of_DNS_record_types#A) - 直接将自定义域名映射到 Azure 应用的虚拟 IP 地址。
@@ -67,7 +56,7 @@ CNAME 的优点是其不会随 IP 地址的更改而更改。如果删除和重�
 > 
 > 
 
-## <a name="vip"></a>步骤 1。 *（仅 A 记录）* 获取应用的 IP 地址
+## <a name="vip"></a>步骤 1。*（仅 A 记录）*获取应用的 IP 地址
 若要使用 A 记录映射自定义域名，则需要 Azure 应用的 IP 地址。如果要使用 CNAME 记录进行映射，请跳过此步骤并转到下一节。
 
 1. 登录 [Azure 门户预览](https://portal.azure.cn)。
@@ -115,7 +104,7 @@ CNAME 的优点是其不会随 IP 地址的更改而更改。如果删除和重�
   </tr>
 </table>
 
-其他 TXT 记录遵循从 &lt; *子域* >.&lt; *根域* > 映射到 &lt; *应用名称* >.chinacloudsites.cn 的约定。按如下所示配置 TXT 记录：
+其他 TXT 记录遵循从 &lt;*子域*>.&lt;*根域*> 映射到 &lt;*应用名称*>.chinacloudsites.cn 的约定。按如下所示配置 TXT 记录：
 
 <table cellspacing="0" border="1">
   <tr>
@@ -174,7 +163,7 @@ CNAME 的优点是其不会随 IP 地址的更改而更改。如果删除和重�
 1. 登录到 [Azure 门户预览](https://portal.azure.cn)（如果尚未登录）。
 2. 在 Azure 门户预览中，单击左侧菜单中的“应用程序服务”。
 3. 单击应用，然后单击“自定义域”>“添加域”。
-4. 将自定义域的 FQDN 添加到列表中（例如 **www.contoso.com** ）。
+4. 将自定义域的 FQDN 添加到列表中（例如 **www.contoso.com**）。
    
     ![将自定义域名映射到 Azure 应用：添加域名的列表](./media/web-sites-custom-domain-name/add-custom-domain.png)
    
@@ -187,42 +176,9 @@ CNAME 的优点是其不会随 IP 地址的更改而更改。如果删除和重�
 7. 验证成功后，“添加主机名”按钮变为激活状态，就可以分配主机名了。
 8. Azure 完成配置新的自定义域名后，可在浏览器中导航到自定义域名。浏览器应会打开 Azure 应用，这意味着已正确配置自定义域名。
 
-## 迁移活动域（不停机） 
+## 迁移活动域名
 
-将实时站点及其域名迁移到应用服务时，该域名已在进行实时通信，而你不希望 DNS 解析在迁移过程中出现任何停机。在这种情况下，请提前将域名绑定到用于域验证的 Azure 应用。为此，请执行以下修改后的步骤：
-
-1. 首先，请按照下面的[步骤 2. 创建 DNS 记录中的步骤，使用 DNS 注册表创建验证 TXT 记录](#createdns)。其他 TXT 记录遵循从 &lt; *子域* >.&lt; *根域* > 映射到 &lt; *应用名称* >.chinacloudsites.cn 的约定。有关示例，请参见下表：
- 
-    <table cellspacing="0" border="1">
-    <tr>
-    <th>FQDN 示例</th>
-    <th>TXT 主机</th>
-    <th>TXT 值</th>
-    </tr>
-    <tr>
-    <td>contoso.com (root)</td>
-    <td>awverify.contoso.com</td>
-    <td>&lt;<i>appname</i>>.chinacloudsites.cn</td>
-    </tr>
-    <tr>
-    <td>www.contoso.com (sub)</td>
-    <td>awverify.www.contoso.com</td>
-    <td>&lt;<i>appname</i>>.chinacloudsites.cn</td>
-    </tr>
-    <tr>
-    <td>*.contoso.com (wildcard)</td>
-    <td>awverify.*.contoso.com</td>
-    <td>&lt;<i>appname</i>>.chinacloudsites.cn</td>
-    </tr>
-    </table>
-
-2. 然后，请按照[步骤 3. 为应用启用自定义域名](#enable)中的步骤，将自定义域名添加到 Azure 应用。
-
-    自定义域现已在 Azure 应用中启用。只需通过域注册机构更新 DNS 记录。
-
-3. 最后，更新域的 DNS 记录，指向 Azure 应用，如[步骤 2. 使用 DNS 注册表创建验证 TXT 记录](#createdns)。
-
-    DNS 传播开始后，应立即将用户流量重定向至 Azure 应用。
+如果想要映射的域名已被现有网站使用，并且想要避免故障时间，请参阅[将活动自定义域迁移到应用服务](/documentation/articles/app-service-custom-domain-name-migrate/)。
 
 ## <a name="verify"></a>验证 DNS 传播
 完成配置步骤后，更改可能需要一些时间来进行传播，传播速度取决于 DNS 提供商。可以通过使用 [http://digwebinterface.com/](http://digwebinterface.com/) 验证 DNS 传播是否按预期方式工作。浏览到站点后，在文本框中指定主机名并单击“深入发掘”。验证结果以确认最近所做的更改是否已生效。
@@ -241,6 +197,5 @@ DNS 条目的传播可能需要 48 小时（有时会更久）。如果已正确
 
 [subdomain]: ./media/web-sites-custom-domain-name/azurewebsites-subdomain.png
 
-
-
-<!---HONumber=Mooncake_1226_2016-->
+<!---HONumber=Mooncake_0227_2017-->
+<!--Update_Description: move "migrating active domain name to app-service-custom-domain-name-migrate"-->
