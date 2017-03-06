@@ -16,7 +16,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="03/24/2016"
-	wacn.date="11/03/2016"
+	wacn.date="03/06/2017"
 	ms.author="gatneil"/>
 
 # 什么是虚拟机规模集？
@@ -27,7 +27,6 @@
 
 1. 高可用性。每个规模集将它的 VM 放入具有 5 个容错域 (FD) 和 5 个更新域 (UD) 的可用性集，以确保可用性（有关 FD 和 UD 的详细信息，请参阅 [VM availability（VM 可用性）](/documentation/articles/virtual-machines-linux-manage-availability/)）。 
 2. 与 Azure 负载均衡器和应用网关轻松集成。
-3. 与 Azure 自动缩放轻松集成。
 4. 简化 VM 的部署、管理和清理。
 5. 支持常用的 Windows 和 Linux 版本以及自定义映像。
 

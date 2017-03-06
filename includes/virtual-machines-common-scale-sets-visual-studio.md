@@ -3,7 +3,7 @@
 本文介绍如何使用 Visual Studio 资源组部署来部署 Azure 虚拟机规模集。
 
 
-[Azure 虚拟机规模集](https://azure.microsoft.com/blog/azure-vm-scale-sets-public-preview/)是一种 Azure 计算资源，可通过轻松集成的自动缩放和负载均衡选项部署和管理一组类似的虚拟机。可以使用 [Azure 资源管理器 (ARM) 模板](https://github.com/Azure/azure-quickstart-templates)预配和部署 VM 规模集。可以使用 Azure CLI、PowerShell、REST 来部署 ARM 模板，也可直接从 Visual Studio 部署。Visual Studio 提供了一组示例模板，这些模板可以作为 Azure 资源组部署项目的一部分进行部署。
+[Azure 虚拟机规模集](https://azure.microsoft.com/blog/azure-vm-scale-sets-public-preview/)是一种 Azure 计算资源，可通过轻松集成的负载均衡选项部署和管理一组类似的虚拟机。可以使用 [Azure 资源管理器 (ARM) 模板](https://github.com/Azure/azure-quickstart-templates)预配和部署 VM 规模集。可以使用 Azure CLI、PowerShell、REST 来部署 ARM 模板，也可直接从 Visual Studio 部署。Visual Studio 提供了一组示例模板，这些模板可以作为 Azure 资源组部署项目的一部分进行部署。
 
 Azure 资源组部署是一种通过单个部署操作将相关的一组 Azure 资源组合在一起并进行发布的方式。
 
@@ -37,7 +37,7 @@ Azure 资源组部署是一种通过单个部署操作将相关的一组 Azure �
 
 ## 自定义项目
 
-现在可以编辑模板以根据应用程序的需求自定义它，例如添加 VM 扩展属性或编辑负载均衡规则。默认情况下 VM 规模集模板已配置为部署 AzureDiagnostics 扩展，这样可通过其轻松添加自动缩放规则。它还使用公共 IP 地址部署了配置有入站 NAT 规则的负载均衡器，可以使用 SSH (Linux) 或 RDP (Windows) 连接到 VM 实例 - 前端端口范围从 50000 开始，这意味着在 Linux 的情况下，如果通过 SSH 连接到公共 IP 地址（或域名）的端口 50000，会路由到规模集中的第一个 VM 的端口 22。连接到端口 50001 将被路由到的第二个 VM 的端口 22，依此类推。
+现在可以编辑模板以根据应用程序的需求自定义它，例如添加 VM 扩展属性或编辑负载均衡规则。默认情况下 VM 规模集模板已配置为部署 AzureDiagnostics 扩展。它还使用公共 IP 地址部署了配置有入站 NAT 规则的负载均衡器，可以使用 SSH (Linux) 或 RDP (Windows) 连接到 VM 实例 - 前端端口范围从 50000 开始，这意味着在 Linux 的情况下，如果通过 SSH 连接到公共 IP 地址（或域名）的端口 50000，会路由到规模集中的第一个 VM 的端口 22。连接到端口 50001 将被路由到的第二个 VM 的端口 22，依此类推。
 
  使用 Visual Studio 编辑模板的良好方法是使用“JSON 概要”来组织参数、变量和资源。了解架构后，Visual Studio 可以在部署前指出模板中的错误。
 
@@ -79,7 +79,7 @@ Azure 资源组部署是一种通过单个部署操作将相关的一组 Azure �
 
 ## 后续步骤
 
-通过 Visual Studio 成功部署 VM 规模集后，便可以进一步自定义您的项目以满足应用程序需求。例如，通过添加 Insights 资源设置自动缩放，将独立 VM 等基础结构添加到你的模板，或使用自定义脚本扩展部署应用程序。可以在 [Azure 快速入门模板](https://github.com/Azure/azure-quickstart-templates) GitHub 存储库中（搜索“vmss”）找到很好的示例模板源。
+通过 Visual Studio 成功部署 VM 规模集后，便可以进一步自定义您的项目以满足应用程序需求。例如，将独立 VM 等基础结构添加到你的模板，或使用自定义脚本扩展部署应用程序。可以在 [Azure 快速入门模板](https://github.com/Azure/azure-quickstart-templates) GitHub 存储库中（搜索“vmss”）找到很好的示例模板源。
 
 [file_new]: ./media/virtual-machines-common-scale-sets-visual-studio/1-FileNew.png
 [create_project]: ./media/virtual-machines-common-scale-sets-visual-studio/2-CreateProject.png

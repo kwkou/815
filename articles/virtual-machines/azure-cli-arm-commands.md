@@ -15,7 +15,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="01/03/2017"
-    wacn.date="02/20/2017"
+    wacn.date="03/06/2017"
     ms.author="danlep" />  
 
 
@@ -171,7 +171,7 @@ CLI 的 Azure Resource Manager 模式与 Azure 服务管理模式互斥。即，
     group template download [options] [name] [file]
     group template validate [options] <resource-group>
 
-## azure insights：与监视 Insights（事件、警报规则、自动缩放设置、度量值）相关的命令
+## azure insights：与监视 Insights（事件、警报规则、度量值）相关的命令
 **检索订阅、correlationId、资源组、资源或资源提供程序的操作日志**
 
     insights logs list [options]
