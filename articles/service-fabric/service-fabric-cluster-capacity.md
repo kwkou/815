@@ -155,6 +155,7 @@
 <!--Every topic should have next steps and links to the next logical set of content to keep the customer engaged-->
 ## 后续步骤
 完成容量规划并设置群集后，请阅读以下文章：
+
 - [Service Fabric 群集安全性](/documentation/articles/service-fabric-cluster-security/)
 - [Service Fabric 运行状况模型简介](/documentation/articles/service-fabric-health-introduction/)
 - [Nodetype 与 VMSS 之间的关系](/documentation/articles/service-fabric-cluster-nodetypes/)

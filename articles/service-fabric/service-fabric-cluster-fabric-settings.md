@@ -309,7 +309,7 @@
 | PrimaryAccountType | Wstring，默认值为 "" |FileStoreService 共享的 ACL 主体的主 AccountType。 |
 | PrimaryAccountUserName | Wstring，默认值为 "" |FileStoreService 共享的 ACL 主体的主帐户用户名。 |
 | PrimaryAccountUserPassword | SecureString，默认值为空 |FileStoreService 共享的 ACL 主体的主帐户密码。 |
-| FileStoreService | PrimaryAccountNTLMPasswordSecret | SecureString，默认值为空 | 密码机密，使用 NTLM 身份验证时用作种子来生成相同的密码。 |
+| FileStoreService | PrimaryAccountNTLMPasswordSecret | SecureString，默认值为空 |
 | PrimaryAccountNTLMX509StoreLocation | Wstring，默认值为“LocalMachine”| 使用 NTLM 身份验证时，用于在 PrimaryAccountNTLMPasswordSecret 上生成 HMAC 的 X509 证书的存储位置。 |
 | PrimaryAccountNTLMX509StoreName | Wstring，默认值为“MY”| 使用 NTLM 身份验证时，用于在 PrimaryAccountNTLMPasswordSecret 上生成 HMAC 的 X509 证书的存储名称。 |
 | PrimaryAccountNTLMX509Thumbprint | Wstring，默认值为 ""|使用 NTLM 身份验证时，用于在 PrimaryAccountNTLMPasswordSecret 上生成 HMAC 的 X509 证书的指纹。 |
@@ -441,31 +441,31 @@
 | StartClusterConfigurationUpgrade |Wstring，默认值为“Admin” | 在分区上引入 StartClusterConfigurationUpgrade。 |
 | GetUpgradesPendingApproval |Wstring，默认值为“Admin” | 在分区上引入 GetUpgradesPendingApproval。 |
 | StartApprovedUpgrades |Wstring，默认值为“Admin” | 在分区上引入 StartApprovedUpgrades。 |
-| Ping |Wstring，默认值为“Admin||User” | 用于客户 ping 的安全配置。 |
-| 查询 |Wstring，默认值为“Admin||User” | 用于查询的安全配置。 |
-| NameExists |Wstring，默认值为“Admin||User” | 用于检查是否存在命名 URI 的安全配置。 |
-| EnumerateSubnames |Wstring，默认值为“Admin||User” | 用于枚举命名 URI 的安全配置。 |
-| EnumerateProperties |Wstring，默认值为“Admin||User” | 用于枚举 Naming 属性的安全配置。 |
-| PropertyReadBatch |Wstring，默认值为“Admin||User” | 用于 Naming 属性读取操作的安全配置。 |
-| GetServiceDescription |Wstring，默认值为“Admin||User” | 用于长时间轮询服务通知和读取服务说明的安全配置。 |
-| ResolveService |Wstring，默认值为“Admin||User” | 用于基于投诉解析服务的安全配置。 |
-| ResolveNameOwner |Wstring，默认值为“Admin||User” | 用于解析命名 URI 所有者的安全配置。 |
-| ResolvePartition |Wstring，默认值为“Admin||User” | 用于解析系统服务的安全配置。 |
-| ServiceNotifications |Wstring，默认值为“Admin||User” | 用于基于事件的服务通知的安全配置。 |
-| PrefixResolveService |Wstring，默认值为“Admin||User” | 用于基于投诉解析服务前缀的安全配置。 |
-| GetUpgradeStatus |Wstring，默认值为“Admin||User” | 用于轮询应用程序升级状态的安全配置。 |
-| GetFabricUpgradeStatus |Wstring，默认值为“Admin||User” | 用于轮询群集升级状态的安全配置。 |
-| InvokeInfrastructureQuery |Wstring，默认值为“Admin||User” | 用于查询基础结构任务的安全配置。 |
-| 列出 |Wstring，默认值为“Admin||User” | 用于映像存储客户端文件列表操作的安全配置。 |
-| ResetPartitionLoad |Wstring，默认值为“Admin||User” | 用于重置 failoverUnit 负载的安全配置。 |
-| ToggleVerboseServicePlacementHealthReporting | Wstring，默认值为“Admin||User” | 用于切换详细 ServicePlacement HealthReporting 的安全配置。 |
-| GetPartitionDataLossProgress | Wstring，默认值为“Admin||User” | 提取调用数据丢失 API 调用的进度。 |
-| GetPartitionQuorumLossProgress | Wstring，默认值为“Admin||User” | 提取调用仲裁丢失 API 调用的进度。 |
-| GetPartitionRestartProgress | Wstring，默认值为“Admin||User” | 提取重启分区 API 调用的进度。 |
-| GetChaosReport | Wstring，默认值为“Admin||User” | 提取给定时间范围内的混沌状态。 |
-| GetNodeTransitionProgress | Wstring，默认值为“Admin||User” | 用于获取节点转换命令进度的安全配置。 |
-| GetClusterConfigurationUpgradeStatus | Wstring，默认值为“Admin||User” | 在分区上引入 GetClusterConfigurationUpgradeStatus。 |
-| GetClusterConfiguration | Wstring，默认值为“Admin||User” | 在分区上引入 GetClusterConfiguration。 |
+| Ping |Wstring，默认值为“Admin\|\|User” | 用于客户 ping 的安全配置。 |
+| 查询 |Wstring，默认值为“Admin\|\|User” | 用于查询的安全配置。 |
+| NameExists |Wstring，默认值为“Admin\|\|User” | 用于检查是否存在命名 URI 的安全配置。 |
+| EnumerateSubnames |Wstring，默认值为“Admin\|\|User” | 用于枚举命名 URI 的安全配置。 |
+| EnumerateProperties |Wstring，默认值为“Admin\|\|User” | 用于枚举 Naming 属性的安全配置。 |
+| PropertyReadBatch |Wstring，默认值为“Admin\|\|User” | 用于 Naming 属性读取操作的安全配置。 |
+| GetServiceDescription |Wstring，默认值为“Admin\|\|User” | 用于长时间轮询服务通知和读取服务说明的安全配置。 |
+| ResolveService |Wstring，默认值为“Admin\|\|User” | 用于基于投诉解析服务的安全配置。 |
+| ResolveNameOwner |Wstring，默认值为“Admin\|\|User” | 用于解析命名 URI 所有者的安全配置。 |
+| ResolvePartition |Wstring，默认值为“Admin\|\|User” | 用于解析系统服务的安全配置。 |
+| ServiceNotifications |Wstring，默认值为“Admin\|\|User” | 用于基于事件的服务通知的安全配置。 |
+| PrefixResolveService |Wstring，默认值为“Admin\|\|User” | 用于基于投诉解析服务前缀的安全配置。 |
+| GetUpgradeStatus |Wstring，默认值为“Admin\|\|User” | 用于轮询应用程序升级状态的安全配置。 |
+| GetFabricUpgradeStatus |Wstring，默认值为“Admin\|\|User” | 用于轮询群集升级状态的安全配置。 |
+| InvokeInfrastructureQuery |Wstring，默认值为“Admin\|\|User” | 用于查询基础结构任务的安全配置。 |
+| 列出 |Wstring，默认值为“Admin\|\|User” | 用于映像存储客户端文件列表操作的安全配置。 |
+| ResetPartitionLoad |Wstring，默认值为“Admin\|\|User” | 用于重置 failoverUnit 负载的安全配置。 |
+| ToggleVerboseServicePlacementHealthReporting | Wstring，默认值为“Admin\|\|User” | 用于切换详细 ServicePlacement HealthReporting 的安全配置。 |
+| GetPartitionDataLossProgress | Wstring，默认值为“Admin\|\|User” | 提取调用数据丢失 API 调用的进度。 |
+| GetPartitionQuorumLossProgress | Wstring，默认值为“Admin\|\|User” | 提取调用仲裁丢失 API 调用的进度。 |
+| GetPartitionRestartProgress | Wstring，默认值为“Admin\|\|User” | 提取重启分区 API 调用的进度。 |
+| GetChaosReport | Wstring，默认值为“Admin\|\|User” | 提取给定时间范围内的混沌状态。 |
+| GetNodeTransitionProgress | Wstring，默认值为“Admin\|\|User” | 用于获取节点转换命令进度的安全配置。 |
+| GetClusterConfigurationUpgradeStatus | Wstring，默认值为“Admin\|\|User” | 在分区上引入 GetClusterConfigurationUpgradeStatus。 |
+| GetClusterConfiguration | Wstring，默认值为“Admin\|\|User” | 在分区上引入 GetClusterConfiguration。 |
 
 ### 节名称：ReconfigurationAgent
 | **参数** | **允许的值** | **指导或简短说明** |

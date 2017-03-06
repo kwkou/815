@@ -24,6 +24,7 @@
 为服务设置远程处理包括两个简单步骤：
 
 1. 为服务创建要实现的接口。此接口定义可供服务的远程过程调用使用的方法。这些方法必须是返回任务的异步方法。接口必须实现 `Microsoft.ServiceFabric.Services.Remoting.IService` 以表明此服务具有远程处理接口。
+
 2. 在服务中使用远程处理侦听器。这是可以提供远程处理功能的 `ICommunicationListener` 实现。`Microsoft.ServiceFabric.Services.Remoting.Runtime` 命名空间包含一个同时适用于无状态服务和有状态服务的扩展方法 `CreateServiceRemotingListener`，可用于创建使用默认远程处理传输协议的远程处理侦听器。
 
 例如，以下无状态服务公开了一个方法，此方法通过远程过程调用获取“Hello World”。

@@ -14,7 +14,7 @@
     ms.workload="NA"
     ms.date="1/17/2016"
     wacn.date="03/03/2017"
-    ms.author="dkshir;chackdan;maburlik" />  
+    ms.author="dkshir;chackdan;maburlik" />
 
 
 <a id="preparemachines"></a>

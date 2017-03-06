@@ -23,6 +23,7 @@
 监视、检测、诊断和故障排除功能允许服务继续运行，同时对用户体验造成最小的干扰。这些功能可提供业务见解、监视资源用量、检测硬件和软件故障或性能问题，以及诊断潜在的服务行为问题。尽管监视和诊断在实际部署的生产环境中相当重要，但是效果取决于在服务开发过程中采用类似的模型，以便在转移到实际安装时确保其正常工作。通过 Service Fabric，服务开发人员能够轻松实现诊断，可以跨单个计算机本地开发安装和实际生产群集安装无缝工作。
 
 “监视”是一个泛指的术语，具体包括检测代码、收集检测日志、分析日志、根据日志数据可视化见解、根据日志值和见解发出警报，监视基础结构，以及让工程师检测和诊断对其客户造成了影响的问题。本文的目的是概述如何使用 .NET 来监视 Azure 中或本地托管的、在 Windows 或 Linux 上部署的 Service Fabric 群集。首先，让我们将问题划分为三个部分
+
 - 检测代码或基础结构
 - 收集生成的事件
 - 存储、聚合、可视化和分析
@@ -219,6 +220,7 @@ Azure 诊断仅适用于部署到 Azure 的 Service Fabric 群集，但适用于
 ## Azure Service Fabric 运行状况和负载报告
 
 Service Fabric 具有自身的运行状况模型，有多篇文章对此做了详细介绍
+
 - [Service Fabric 运行状况监视简介](/documentation/articles/service-fabric-health-introduction/)
 - [报告和检查服务运行状况](/documentation/articles/service-fabric-diagnostics-how-to-report-and-check-service-health/)
 - [添加自定义 Service Fabric 运行状况报告](/documentation/articles/service-fabric-report-health/)

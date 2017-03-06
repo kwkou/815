@@ -88,15 +88,15 @@ Service Fabric 应用程序可以通过预配一个完整且自包含的应用�
 
 ## 后续步骤
 
-[Upgrading your Application Using Visual Studio](/documentation/articles/service-fabric-application-upgrade-tutorial/)（使用 Visual Studio 升级应用程序）逐步讲解了如何使用 Visual Studio 进行应用程序升级。
+- [使用 Visual Studio 升级应用程序](/documentation/articles/service-fabric-application-upgrade-tutorial/)逐步讲解了如何使用 Visual Studio 进行应用程序升级。
 
-[Upgrading your Application Using Powershell](/documentation/articles/service-fabric-application-upgrade-tutorial-powershell/)（使用 PowerShell 升级应用程序）逐步讲解了如何使用 PowerShell 进行应用程序升级。
+- [使用 PowerShell 升级应用程序](/documentation/articles/service-fabric-application-upgrade-tutorial-powershell/)逐步讲解了如何使用 PowerShell 进行应用程序升级。
 
-使用[升级参数](/documentation/articles/service-fabric-application-upgrade-parameters/)来控制应用程序的升级方式。
+- 使用[升级参数](/documentation/articles/service-fabric-application-upgrade-parameters/)来控制应用程序的升级方式。
 
-了解如何使用[数据序列化](/documentation/articles/service-fabric-application-upgrade-data-serialization/)，使应用程序在升级后保持兼容。
+- 了解如何使用[数据序列化](/documentation/articles/service-fabric-application-upgrade-data-serialization/)，使应用程序在升级后保持兼容。
 
-参考 [Troubleshooting Application Upgrades](/documentation/articles/service-fabric-application-upgrade-troubleshooting/)（对应用程序升级进行故障排除）中的步骤来解决应用程序升级时的常见问题。
+- 参考 [对应用程序升级进行故障排除](/documentation/articles/service-fabric-application-upgrade-troubleshooting/)中的步骤来解决应用程序升级时的常见问题。
  
 
 <!---HONumber=Mooncake_0227_2017-->

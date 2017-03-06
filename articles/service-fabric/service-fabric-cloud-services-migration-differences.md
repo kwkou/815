@@ -92,7 +92,7 @@ Service Fabric 提供服务发现机制（称为“命名服务”），用于�
 ## 后续步骤
 从云服务迁移到 Service Fabric 的最简单路径是只将云服务部署替换为 Service Fabric 应用程序，并将应用程序的整个体系结构保持大致相同。以下文章提供了帮助你将 Web 角色或辅助角色转换为 Service Fabric 无状态服务的指南。
 
- - [Simple migration: convert a Web or Worker Role to a Service Fabric stateless service（简单迁移：将 Web 角色或辅助角色转换为 Service Fabric 无状态服务）](/documentation/articles/service-fabric-cloud-services-migration-worker-role-stateless-service/)
+ - [简单迁移：将 Web 角色或辅助角色转换为 Service Fabric 无状态服务](/documentation/articles/service-fabric-cloud-services-migration-worker-role-stateless-service/)
 
 <!--Image references-->
 [1]: ./media/service-fabric-cloud-services-migration-differences/topology-cloud-services.png

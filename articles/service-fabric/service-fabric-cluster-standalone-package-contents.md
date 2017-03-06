@@ -30,11 +30,12 @@
 | TestConfiguration.ps1 |一个 PowerShell 脚本，用于分析 Cluster.json 中指定的基础结构。 |
 | DownloadServiceFabricRuntimePackage.ps1 |一个 PowerShell 脚本，在部署计算机未连接到 Internet 的方案中，用于在带外下载最新的运行时包。 |
 | DeploymentComponentsAutoextractor.exe |自解压存档，包含独立包脚本使用的部署组件。 |
-| EULA\_ENU.txt |有关使用 Microsoft Azure Service Fabric Windows Server 独立包的许可条款。可以立即[下载一份 EULA](http://go.microsoft.com/fwlink/?LinkID=733084)。 |
+| EULA\_ENU.txt |有关使用 Azure Service Fabric Windows Server 独立包的许可条款。可以立即[下载一份 EULA](http://go.microsoft.com/fwlink/?LinkID=733084)。 |
 | Readme.txt |发行说明和基本安装说明的链接。本文档包含此文件中的一部分说明。 |
 | ThirdPartyNotice.rtf |包中第三方软件的声明。 |
 
 **模板**
+
 | **文件名** | **简短说明** |
 | --- | --- |
 | ClusterConfig.Unsecure.DevCluster.json |一个群集配置示例文件，包含非安全型三节点式单计算机（或虚拟机）开发群集的设置，包括群集中每个节点的信息。 |
