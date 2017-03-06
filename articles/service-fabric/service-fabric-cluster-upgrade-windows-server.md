@@ -204,7 +204,6 @@
 
 ## 后续步骤
 - 了解如何自定义某些 [Service Fabric 群集结构设置](/documentation/articles/service-fabric-cluster-fabric-settings/)
-- 了解如何[扩展和缩减群集](/documentation/articles/service-fabric-cluster-scale-up-down/)
 - 了解[应用程序升级](/documentation/articles/service-fabric-application-upgrade/)
 
 <!--Image references-->
