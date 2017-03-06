@@ -32,9 +32,9 @@
 
 若要开始使用事件中心管理库，必须使用 Azure Active Directory \(AAD\) 进行身份验证。AAD 要求以提供 Azure 资源访问权限的服务主体身份进行身份验证。有关创建服务主体的信息，请参阅以下文章之一：
 
-* [使用 Azure 门户预览创建可访问资源的 Active Directory 应用程序和服务主体](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-create-service-principal-portal)
-* [使用 Azure PowerShell 创建服务主体来访问资源](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-authenticate-service-principal)
-* [使用 Azure CLI 创建服务主体来访问资源](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-authenticate-service-principal-cli)
+* [使用 Azure 门户预览创建可访问资源的 Active Directory 应用程序和服务主体](/documentation/articles/resource-group-create-service-principal-portal)
+* [使用 Azure PowerShell 创建服务主体来访问资源](/documentation/articles/resource-group-authenticate-service-principal)
+* [使用 Azure CLI 创建服务主体来访问资源](/documentation/articles/resource-group-authenticate-service-principal-cli)
 
 前面的教程提供 `AppId`（客户端 ID）、`TenantId` 和 `ClientSecret`（身份验证密钥），管理库会使用它们进行身份验证。必须具有要在其中运行的资源组的“所有者”权限。
 
