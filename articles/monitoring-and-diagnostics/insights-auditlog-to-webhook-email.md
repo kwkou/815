@@ -1,8 +1,8 @@
 <properties
-	pageTitle="针对 Azure 活动日志警报配置 webhook | Azure"
-	description="了解如何使用活动日志警报调用 webhook。"
+	pageTitle="对 Azure 活动日志警报调用 webhook | Azure"
+	description="将活动日志事件路由到其他服务以执行自定义操作。例如，发送短信、记录 bug，或者通过聊天/消息服务通知团队。"
 	authors="kamathashwin"
-	manager=""
+	manager="carmonm"
 	editor=""
 	services="monitoring-and-diagnostics"
 	documentationCenter="monitoring-and-diagnostics"/>  
@@ -14,24 +14,23 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="12/08/2016"
-	wacn.date="01/03/2017"
-	ms.author="ashwink"/>  
+	ms.date="01/23/2017"
+	ms.author="ashwink"
+	wacn.date="03/03/2017"/>  
 
 
-# 针对 Azure 活动日志警报配置 webhook
-
-通过 webhook 可以将 Azure 警报通知路由到其他系统，以便进行后续处理或自定义操作。可以针对警报使用 webhook，以将警报路由到可以发送短信、记录 Bug、通过聊天/消息通知团队，或执行任意数量的其他操作的服务。本文介绍如何针对 Azure 活动日志警报设置 webhook，以及 HTTP POST 对 webhook 的有效负载情况。有关 Azure 度量值警报的设置和架构的信息，[请参阅本页](/documentation/articles/insights-webhooks-alerts/)。还可以将活动日志警报设置为激活时发送电子邮件。
+# 对 Azure 活动日志警报调用 webhook
+通过 webhook 可以将 Azure 警报通知路由到其他系统，以便进行后续处理或自定义操作。可以针对警报使用 webhook，以将警报路由到可以发送短信、记录 Bug、通过聊天/消息通知团队，或执行任意数量的其他操作的服务。本文介绍如何设置要在触发 Azure 活动日志警报时调用的 webhook。它还显示了发送到 webhook 的 HTTP POST 的有效负载是怎样的。有关 Azure 度量值警报的设置和架构的信息，[请参阅本页](/documentation/articles/insights-webhooks-alerts/)。还可以将活动日志警报设置为激活时发送电子邮件。
 
 >[AZURE.NOTE] 此功能目前处于预览状态，将在以后删除。
 
-可以使用 [Azure PowerShell Cmdlet](/documentation/articles/insights-powershell-samples/#create-alert-rules)、[跨平台 CLI](/documentation/articles/insights-cli-samples/#work-with-alerts) 或 [Azure Monitor REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn933805.aspx) 设置活动日志警报。
+可以使用 [Azure PowerShell Cmdlet](/documentation/articles/insights-powershell-samples/#create-alert-rules)、[跨平台 CLI](/documentation/articles/insights-cli-samples/#work-with-alerts) 或 [Azure Monitor REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn933805.aspx) 设置活动日志警报。目前，不能使用 Azure 门户设置活动日志警报。
 
 ## 对 webhook 进行身份验证
 Webhook 可以使用以下任一方法进行身份验证：
 
 1. **基于令牌的授权** - 保存的 webhook URI 具有令牌 ID，例如 `https://mysamplealert/webcallback?tokenid=sometokenid&someparameter=somevalue`
-2.	**基本授权** - 保存的 webhook URI 具有用户名和密码，例如 `https://userid:password@mysamplealert/webcallback?someparamater=somevalue&foo=bar`
+2. **基本授权** - 保存的 webhook URI 具有用户名和密码，例如 `https://userid:password@mysamplealert/webcallback?someparamater=somevalue&foo=bar`
 
 ## 负载架构
 POST 操作对于所有基于活动日志的警报包含以下 JSON 有效负载和架构。此架构类似于基于度量值的警报使用的架构。
@@ -119,4 +118,5 @@ POST 操作对于所有基于活动日志的警报包含以下 JSON 有效负载
 - [使用逻辑应用从 Azure 警报发送 Slack 消息](https://github.com/Azure/azure-quickstart-templates/tree/master/201-alert-to-slack-with-logic-app)。本示例适用于度量值警报，但经过修改后可用于活动日志警报。
 - [使用逻辑应用从 Azure 警报将消息发送到 Azure 队列](https://github.com/Azure/azure-quickstart-templates/tree/master/201-alert-to-queue-with-logic-app)。本示例适用于度量值警报，但经过修改后可用于活动日志警报。
 
-<!---HONumber=Mooncake_1226_2016-->
+<!---HONumber=Mooncake_0227_2017-->
+<!--Update_Description:update wording -->

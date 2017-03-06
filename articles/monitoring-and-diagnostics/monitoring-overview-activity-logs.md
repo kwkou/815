@@ -14,17 +14,21 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="12/09/2016"
-	wacn.date="01/03/2017"
-	ms.author="johnkem"/>  
+	ms.date="02/02/2017"
+	ms.author="johnkem"  
+	wacn.date="03/03/2017"/>
 
 
 # Azure 活动日志概述
 **Azure 活动日志**是一种日志，方便用户了解对订阅中的资源执行的操作。活动日志此前称为“审核日志”或“操作日志”，因为它报告订阅的控制平面事件。使用活动日志，用户可以确定针对订阅中的资源执行的任何写入操作（PUT、POST、DELETE）的“内容、人员和时间”。还可以了解该操作和其他相关属性的状态。活动日志不包括读取 (GET) 操作。
 
 
-可以通过 Azure 门户预览、CLI、PowerShell cmdlet 和 Azure Monitor REST API 从活动日志检索事件。
+可通过 Azure 门户预览、CLI、PowerShell cmdlet 和 Azure Monitor REST API 从活动日志检索事件。
 
+> [AZURE.WARNING]
+Azure 活动日志主要适用于 Azure Resource Manager 中发生的活动，而不适用于那些使用经典/RDFE 模型的活动。请注意，某些经典资源类型在 Azure Resource Manager 中有代理资源提供程序（例如，Microsoft.ClassicCompute）。如果用户使用这些代理资源提供程序通过 Azure Resource Manager 与经典资源类型交互，相关操作将出现在活动日志中。如果用户在经典门户中或以其他方式不通过 Azure Resource Manager 代理与经典资源类型交互，则用户操作将只会记录在操作日志中，只能在经典门户中访问操作日志。
+>
+>
 ## 可以对活动日志执行的操作
 可以对活动日志执行的部分操作如下：
 
@@ -32,15 +36,16 @@
 - 通过 REST API、PowerShell Cmdlet 或 CLI 查询活动日志。
 - [创建触发活动日志事件的电子邮件或 webhook 警报。](/documentation/articles/insights-auditlog-to-webhook-email/)
 - [将活动日志保存到**存储帐户**进行存档或手动检查](/documentation/articles/monitoring-archive-activity-log/)。可以使用“日志配置文件”指定保留时间（天）。
-- 在 PowerBI 中使用 [**PowerBI 内容包**](https://powerbi.microsoft.com/zh-CN/documentation/powerbi-content-pack-azure-audit-logs/)分析活动日志。
+- 在 PowerBI 中使用 [**PowerBI 内容包**](https://powerbi.microsoft.com/zh-cn/documentation/powerbi-content-pack-azure-audit-logs/)分析活动日志。
 - [将活动日志流式传输到**事件中心**](/documentation/articles/monitoring-stream-activity-logs-event-hubs/)，方便第三方服务或自定义分析解决方案（例如 PowerBI）引入。
 
 只要配置设置的用户同时拥有两个订阅的相应 RBAC 访问权限，存储帐户或事件中心命名空间就不必与订阅发出日志位于同一订阅中。
+
 ## <a name="export-the-activity-log-with-log-profiles"></a> 使用日志配置文件导出活动日志
 **日志配置文件**控制如何导出活动日志。可以使用日志配置文件配置：
 
 - 应将活动日志发送到何处：存储帐户或事件中心
-- 应该发送哪些事件类别（Write、Delete、Action）
+- 应该发送哪些事件类别（Write、Delete、Action）。*请注意，日志配置文件的上下文中“category”的含义不同于活动日志事件中“category”属性的含义。日志配置文件中的“category”表示操作类型（Write、Delete、Action），而活动日志事件中的“category”属性则表示事件的源或类型（Administration、ServiceHealth、Alert 等）。*
 - 应该导出哪些区域（位置）
 - 应该将活动日志保留在存储帐户中多长时间 – 保留期为 0 天表示永久保留日志。如果不需永久保留，则可将该值设置为 1 到 2147483647 之间的任意天数。如果设置了保留策略，但禁止将日志存储在存储帐户中（例如，如果仅选择事件中心或 OMS 选项），则保留策略无效。
 
@@ -70,15 +75,15 @@
 
 ### 通过 Azure PowerShell Cmdlet 配置日志配置文件
 #### 获取现有的日志配置文件
-		Get-AzureRmLogProfile
+	Get-AzureRmLogProfile
 
 #### 添加日志配置文件
 
-		Add-AzureRmLogProfile -Name my_log_profile -StorageAccountId /subscriptions/s1/resourceGroups/myrg1/providers/Microsoft.Storage/storageAccounts/my_storage -serviceBusRuleId /subscriptions/s1/resourceGroups/Default-ServiceBus-chinanorth/providers/Microsoft.ServiceBus/namespaces/mytestSB/authorizationrules/RootManageSharedAccessKey -Locations chinaeast,chinanorth -RetentionInDays 90 -Categories Write,Delete,Action
+	Add-AzureRmLogProfile -Name my_log_profile -StorageAccountId /subscriptions/s1/resourceGroups/myrg1/providers/Microsoft.Storage/storageAccounts/my_storage -serviceBusRuleId /subscriptions/s1/resourceGroups/Default-ServiceBus-chinanorth/providers/Microsoft.ServiceBus/namespaces/mytestSB/authorizationrules/RootManageSharedAccessKey -Locations chinaeast,chinanorth -RetentionInDays 90 -Categories Write,Delete,Action
 
 
 | 属性 | 必选 | 说明 |
-|------------------|----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| --- | --- | --- |
 | 名称 | 是 | 日志配置文件的名称。 |
 | StorageAccountId | 否 | 应该将活动日志保存到其中的存储帐户的资源 ID。 |
 | serviceBusRuleId | 否 | 服务总线命名空间（需在其中创建事件中心）的服务总线规则 ID。将是以下格式的字符串：`{service bus resource ID}/authorizationrules/{key name}`。 |
@@ -105,7 +110,7 @@
 
 
 | 属性 | 必选 | 说明 |
-|------------------|----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| --- | --- | --- |
 | 名称 | 是 | 日志配置文件的名称。 |
 | storageId | 否 | 应该将活动日志保存到其中的存储帐户的资源 ID。 |
 | serviceBusRuleId | 否 | 服务总线命名空间（需在其中创建事件中心）的服务总线规则 ID。将是以下格式的字符串：`{service bus resource ID}/authorizationrules/{key name}`。 |
@@ -228,4 +233,5 @@
 - [详细了解活动日志（以前称为审核日志）](/documentation/articles/resource-group-audit/)
 - [将 Azure 活动日志流式传输到事件中心](/documentation/articles/monitoring-stream-activity-logs-event-hubs/)
 
-<!---HONumber=Mooncake_1226_2016-->
+<!---HONumber=Mooncake_0227_2017-->
+<!--Update_Description:update wording and link references-->

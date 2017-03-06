@@ -5,8 +5,7 @@
 	manager=""
 	editor=""
 	services="monitoring-and-diagnostics"
-	documentationCenter="monitoring-and-diagnostics"/>  
-
+	documentationCenter="monitoring-and-diagnostics"/>
 
 <tags
 	ms.service="monitoring-and-diagnostics"
@@ -14,9 +13,9 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/15/2016"
-	wacn.date="01/03/2017"
-	ms.author="ashwink"/>  
+	ms.date="01/07/2017"
+	ms.author="ashwink"
+	wacn.date="03/03/2017"/>  
 
 
 # 针对 Azure 度量值警报配置 webhook
@@ -39,7 +38,7 @@ Azure 警报会将警报内容以 JSON 格式（架构定义如下）HTTP POST �
 Webhook 可以使用以下任一方法进行身份验证：
 
 1. **基于令牌的授权** - 保存的 webhook URI 具有令牌 ID，例如 `https://mysamplealert/webcallback?tokenid=sometokenid&someparameter=somevalue`
-2.	**基本授权** - 保存的 webhook URI 具有用户名和密码，例如 `https://userid:password@mysamplealert/webcallback?someparamater=somevalue&foo=bar`
+2. **基于密码的授权** - 保存的 webhook URI 具有用户名和密码，例如 `https://userid:password@mysamplealert/webcallback?someparamater=somevalue&foo=bar`
 
 ## 负载架构
 
@@ -78,7 +77,7 @@ POST 操作对于所有基于度量值的警报包含以下 JSON 有效负载和
 
 
 | 字段 | 必需 | 一组固定的值 | 说明 |
-| :-------------| :-------------   | :-------------   | :-------------   |
+|:--- |:--- |:--- |:--- |
 |status|Y|“Activated”, “Resolved”|以设置的条件为基础的警报的状态。|
 |context| Y | | 警报上下文。|
 |timestamp| Y | | 触发警报的时间。|
@@ -96,8 +95,8 @@ POST 操作对于所有基于度量值的警报包含以下 JSON 有效负载和
 |operator |用于指标警报 | |用于比较当前度量值数据和所设阈值的运算符。|
 |subscriptionId |Y | |Azure 订阅 ID。|
 |resourceGroupName |Y | |受影响资源的资源组的名称。|
-|resourceName |Y | |受影响资源的资源名|
-|resourceType |Y | |受影响资源的资源类型|
+| resourceName |Y | |受影响资源的资源名称。 |
+| resourceType |Y | |受影响资源的资源类型。 |
 |resourceId |Y | |受影响资源的资源 ID。|
 |resourceRegion |Y | |受影响资源的区域或位置。|
 |portalLink |Y | |指向门户资源摘要页的直接链接。|
@@ -113,4 +112,5 @@ POST 操作对于所有基于度量值的警报包含以下 JSON 有效负载和
 - [使用逻辑应用从 Azure 警报发送 Slack 消息](https://github.com/Azure/azure-quickstart-templates/tree/master/201-alert-to-slack-with-logic-app)
 - [使用逻辑应用从 Azure 警报将消息发送到 Azure 队列](https://github.com/Azure/azure-quickstart-templates/tree/master/201-alert-to-queue-with-logic-app)
 
-<!---HONumber=Mooncake_1226_2016-->
+<!---HONumber=Mooncake_0227_2017-->
+<!--Update_Description:update wording -->
