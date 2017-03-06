@@ -4,10 +4,9 @@
   services=""
   suite="iot-suite"
   documentationCenter=""
-  authors="aguilaaj"
+  author="dominicbetts"
   manager="timlt"
-  editor=""/>  
-
+  editor=""/>
 
 <tags
   ms.service="iot-suite"
@@ -16,12 +15,11 @@
   ms.tgt_pltfrm="na"
   ms.workload="na"
   ms.date="01/04/2017"
-  wacn.date="01/25/2017"
-  ms.author="araguila"/>
+  wacn.date="03/03/2017"
+  ms.author="corywink"/>
 
    
 # 有关 IoT 套件的常见问题
-
 ### 在 Azure 门户预览中删除资源组与在 azureiotsuite.cn 中对预配置解决方案单击删除之间的区别是什么？
 
 * 如果在 [azureiotsuite.cn][lnk-azureiotsuite] 中删除预配置解决方案，则会删除在创建预配置解决方案时设置的所有资源。如果向资源组添加了其他资源，则也会删除这些资源。
@@ -30,7 +28,7 @@
 
 ### 在一个订阅中可以设置多少个 IoT 中心实例？
 
-10 个。可以创建 [Azure 在线申请支持](/support/support-ticket-form/?l=zh-cn)创建工单，提出申请以提高此限制，但默认情况下，如 [Azure subscription limits][link-azuresublimits]（Azure 订阅限制）中所述，对每个订阅只能预配 10 个 IoT 中心。由于每个预配置的解决方案将预配一个新的 IoT 中心，因此，在给定的订阅中，最多只能预配 10 个预配置的解决方案。
+每个订阅可以预配 10 个 IoT 中心。可以创建 [Azure 在线申请支持](/support/support-ticket-form/?l=zh-cn)创建工单，提出申请以提高此限制，但默认情况下，如 [Azure subscription limits][link-azuresublimits]（Azure 订阅限制）中所述，对每个订阅只能预配 10 个 IoT 中心。由于每个预配置的解决方案将预配一个新的 IoT 中心，因此，在给定的订阅中，最多只能预配 10 个预配置的解决方案。
 
 ### 在订阅中可以设置多少个 DocumentDB 实例？
 
@@ -43,12 +41,13 @@
 
 
 
-## 后续步骤
-
+### 后续步骤
 你还可以浏览 IoT 套件预配置的解决方案的一些其他特性和功能：
 
+- [预见性维护预配置解决方案概述][lnk-predictive-overview]
 - [从头开始保障 IoT 安全][lnk-security-groundup]
 
+[lnk-predictive-overview]: /documentation/articles/iot-suite-predictive-overview/
 [lnk-security-groundup]: /documentation/articles/securing-iot-ground-up/
 [link-azuresublimits]: /documentation/articles/azure-subscription-service-limits/#iot-hub-limits
 [lnk-azure-portal]: https://portal.azure.cn
@@ -59,5 +58,5 @@
 [1rmb-trial]: /pricing/1rmb-trial
 [lnk-delete-aad-tennant]: http://blogs.msdn.com/b/ericgolpe/archive/2015/04/30/walkthrough-of-deleting-an-azure-ad-tenant.aspx
 
-<!---HONumber=Mooncake_0120_2017-->
+<!---HONumber=Mooncake_0227_2017-->
 <!--Update_Description:update wording and delete Bing Map API related content-->

@@ -15,8 +15,8 @@
  ms.topic="get-started-article"
  ms.tgt_pltfrm="na"
  ms.workload="na"
- ms.date="11/16/2016"
- wacn.date="12/05/2016"
+ ms.date="02/09/2017"
+ wacn.date="03/03/2017"
  ms.author="dobett"/>  
 
 
@@ -54,3 +54,4 @@ Azure IoT 套件是企业级解决方案，通过一组用于处理常见的 IoT
 [lnk-predictive-maintenance]: /documentation/articles/iot-suite-predictive-overview/
 
 <!---HONumber=Mooncake_0815_2016-->
+<!--Update_Description:update meta properties-->
