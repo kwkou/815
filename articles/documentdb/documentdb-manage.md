@@ -16,10 +16,8 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="01/06/2017"
-    wacn.date="02/27/2017"
     ms.author="mimig"
-    wacn.date="02/27/2017"
-/>  
+    wacn.date="02/27/2017" />  
 
 # DocumentDB 中的存储和可预测性能的预配信息
 Azure DocumentDB 是一个全面托管、面向可缩放文档，针对 JSON 文档的 NoSQL 数据库服务。使用 DocumentDB，无需租用虚拟机、部署软件或监视数据库。DocumentDB 由 Microsoft 工程师操作和持续监视，可提供一流的可用性、性能和数据保护。
