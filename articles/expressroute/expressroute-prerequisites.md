@@ -1,5 +1,5 @@
 <properties
-   pageTitle="采用 ExpressRoute 所要满足的先决条件 | Azure"
+   pageTitle="采用 ExpressRoute 要要满足的先决条件 | Azure"
    description="本页提供了在订购 Azure ExpressRoute 线路之前需要满足的要求列表。"
    documentationCenter="na"
    services="expressroute"
@@ -55,4 +55,4 @@
 	- [将 VNet 链接到 ExpressRoute 线路](/documentation/articles/expressroute-howto-linkvnet-classic/)
  
 
-<!---HONumber=Mooncake_Quality_Review_1230_2016-->
+<!---HONumber=Mooncake_0220_2017-->
