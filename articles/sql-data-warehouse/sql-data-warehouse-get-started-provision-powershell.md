@@ -89,8 +89,8 @@
 
 [How to install and configure Azure PowerShell]: /documentation/articles/powershell-install-configure/
 [how to create a SQL Data Warehouse from the Azure Portal]: /documentation/articles/sql-data-warehouse-get-started-provision/
-[Create an Azure SQL Database logical server with the Azure Portal]: /documentation/articles/sql-database-get-started/#create-an-azure-sql-database-logical-server
-[Create an Azure SQL Database logical server with PowerShell]: /documentation/articles/sql-database-get-started-powershell/#database-setup-create-a-resource-group-server-and-firewall-rule
+[Create an Azure SQL Database logical server with the Azure Portal]: /documentation/articles/sql-database-get-started/#create-a-new-logical-sql-server
+[Create an Azure SQL Database logical server with PowerShell]: /documentation/articles/sql-database-get-started-powershell/#complete-azure-powershell-script-to-create-a-server-firewall-rule-and-database
 [how to create a resource group]: /documentation/articles/resource-group-portal/
 
 <!--MSDN references--> 

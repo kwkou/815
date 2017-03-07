@@ -172,7 +172,7 @@ Azure Active Directory (Azure AD) 使用 OAuth 2.0，使你能够授权访问 Az
 | refresh\_token |OAuth 2.0 刷新令牌。应用可以使用此令牌，在当前访问令牌过期之后获取其他访问令牌。刷新令牌的生存期很长，而且可以用于延长保留资源访问权限的时间。 |
 | id\_token |无符号 JSON Web 令牌 (JWT)。应用可以 base64Url 解码此令牌的段，以请求已登录用户的相关信息。应用可以缓存并显示值，但不应依赖于这些值来获取任何授权或安全边界。 |
 
-### JWT 令牌声明
+### <a id="jwt-token-claims"></a> JWT 令牌声明
 `id_token` 参数值中的 JWT 令牌可以解码为以下声明：
 
 

@@ -74,7 +74,7 @@ Azure 团队会努力尽快还原服务可用性，但视根本原因而定，�
 
 - [使用 PowerShell 将数据库异地还原到新的区域](/documentation/articles/sql-database-geo-restore-powershell/) 
 
-## 恢复后配置数据库
+## <a id="configure-your-database-after-recovery"></a> 恢复后配置数据库
 
 服务中断后，如果使用异地复制进行故障转移或使用异地还原进行恢复，则必须确保已正确配置与新数据库的连接，以便恢复正常的应用程序功能。以下任务清单可帮助准备将恢复的数据库投入生产。
 

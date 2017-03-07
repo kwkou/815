@@ -65,7 +65,7 @@
 
 <a name="create-logical-server-bk">
 
-## 在 Azure 门户中创建新的逻辑 SQL Server
+## <a id="create-a-new-logical-sql-server"></a> 在 Azure 门户中创建新的逻辑 SQL Server
 
 1. 单击“新建”，键入 **sql server**，然后单击 **ENTER**。
 

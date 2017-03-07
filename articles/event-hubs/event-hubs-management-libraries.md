@@ -72,7 +72,7 @@
 
 ## 后续步骤
 * [.NET 管理示例](https://github.com/Azure-Samples/event-hubs-dotnet-management/)
-* [Microsoft.Azure.Management.EventHub 参考](/dotnet/api/Microsoft.Azure.Management.EventHub)
+* [Microsoft.Azure.Management.EventHub 参考](https://docs.microsoft.com/en-us/dotnet/api/Microsoft.Azure.Management.EventHub)
 
 <!---HONumber=Mooncake_0220_2017-->
 <!-- Update_Description: add new article on managing the namespace and entity in the event hubs management libraries -->

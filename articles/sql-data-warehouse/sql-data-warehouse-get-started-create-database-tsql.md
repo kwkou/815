@@ -68,7 +68,7 @@
 [load]: /documentation/articles/sql-data-warehouse-overview-load/
 [load sample data]: /documentation/articles/sql-data-warehouse-load-sample-databases/
 [使用 Azure 门户预览创建 Azure SQL 数据库逻辑服务器]: /documentation/articles/sql-database-get-started/#create-an-azure-sql-database-logical-server
-[使用 PowerShell 创建 Azure SQL 数据库逻辑服务器]: /documentation/articles/sql-database-get-started-powershell/#database-setup-create-a-resource-group-server-and-firewall-rule
+[使用 PowerShell 创建 Azure SQL 数据库逻辑服务器]: /documentation/articles/sql-database-get-started-powershell/#complete-azure-powershell-script-to-create-a-server-firewall-rule-and-database
 [如何创建资源组]: /documentation/articles/resource-group-template-deploy-portal/#create-resource-group
 [Installing Visual Studio and SSDT]: /documentation/articles/sql-data-warehouse-install-visual-studio/
 [sqlcmd]: /documentation/articles/sql-data-warehouse-get-started-connect-sqlcmd/
