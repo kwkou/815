@@ -58,7 +58,7 @@ Azure IoT 套件提供的预配置解决方案演示了套件中的服务如何�
 
 ## 自定义设备
 
-最常见的扩展活动之一是使用方案特定的设备。使用设备的方法有数种。这些方法包括更改模拟设备以符合你的方案，或使用 [IoT 设备 SDK][] 将物理设备连接到解决方案。
+最常见的扩展活动之一是使用方案特定的设备。使用设备的方法有数种。这些方法包括更改模拟设备以符合你的方案，或使用 [IoT Device SDK][] 将物理设备连接到解决方案。
 
 有关添加设备的分步指南，请参阅 [Iot 套件连接设备](/documentation/articles/iot-suite-connecting-devices/)一文和[远程监视 C SDK 示例](https://github.com/Azure/azure-iot-sdk-c/tree/master/serializer/samples/remote_monitoring)（旨在搭配远程监视预配置解决方案）。
 
@@ -156,7 +156,7 @@ Azure IoT 套件提供的预配置解决方案演示了套件中的服务如何�
 [lnk-dynamic]: /documentation/articles/iot-suite-dynamic-telemetry/
 [lnk-devinfo]: /documentation/articles/iot-suite-remote-monitoring-device-info/
 
-[IoT 设备 SDK]: /documentation/articles/iot-hub-sdks-summary/
+[IoT Device SDK]: /documentation/articles/iot-hub-sdks-summary/
 [lnk-permissions]: /documentation/articles/iot-suite-permissions/
 [lnk-dashboard-controller]: https://github.com/Azure/azure-iot-remote-monitoring/blob/3fd43b8a9f7e0f2774d73f3569439063705cebe4/DeviceAdministration/Web/Controllers/DashboardController.cs#L27
 [lnk-telemetry-api-controller-01]: https://github.com/Azure/azure-iot-remote-monitoring/blob/3fd43b8a9f7e0f2774d73f3569439063705cebe4/DeviceAdministration/Web/WebApiControllers/TelemetryApiController.cs#L27

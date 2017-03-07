@@ -63,4 +63,4 @@
 [lnk-github-repo]: https://github.com/azure/azure-iot-sdk-node
 [lnk-github-prepare]: https://github.com/Azure/azure-iot-sdk-node/blob/master/doc/node-devbox-setup.md
 
-<!---HONumber=Mooncake_1226_2016-->
+<!---HONumber=Mooncake_0306_2017-->

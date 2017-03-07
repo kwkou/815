@@ -266,7 +266,7 @@ Azure IoT 套件远程监视预配置解决方案演示了管理设备元数据�
 ## 后续步骤
 
 现在你已学习如何自定义预配置解决方案，接下来你可以浏览 IoT 套件预配置的解决方案的一些其他特性和功能：
-
+- [预见性维护预配置解决方案概述][lnk-predictive-overview]
 - [有关 IoT 套件的常见问题][lnk-faq]
 - [从头开始保障 IoT 安全][lnk-security-groundup]
 
@@ -284,6 +284,7 @@ Azure IoT 套件远程监视预配置解决方案演示了管理设备元数据�
 [lnk-stream-analytics]: /documentation/services/stream-analytics/
 [lnk-dm-preview]: /documentation/articles/iot-hub-device-management-overview/
 [lnk-dynamic-telemetry]: /documentation/articles/iot-suite-dynamic-telemetry/
+[lnk-predictive-overview]: /documentation/articles/iot-suite-predictive-overview/
 [lnk-faq]: /documentation/articles/iot-suite-faq/
 [lnk-security-groundup]: /documentation/articles/securing-iot-ground-up/
 

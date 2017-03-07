@@ -58,5 +58,5 @@
 [1rmb-trial]: /pricing/1rmb-trial
 [lnk-delete-aad-tennant]: http://blogs.msdn.com/b/ericgolpe/archive/2015/04/30/walkthrough-of-deleting-an-azure-ad-tenant.aspx
 
-<!---HONumber=Mooncake_0227_2017-->
+<!---HONumber=Mooncake_0306_2017-->
 <!--Update_Description:update wording and delete Bing Map API related content-->

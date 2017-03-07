@@ -106,7 +106,7 @@ IoT 套件远程监视[预配置解决方案][lnk-preconfigured-solutions]是适
     	WITH AlarmsData AS 
     	(
     	SELECT
-         	     Stream.IoTHub.ConnectionDeviceId AS DeviceId,
+             Stream.IoTHub.ConnectionDeviceId AS DeviceId,
     	     'Temperature' as ReadingType,
     	     Stream.Temperature as Reading,
     	     Ref.Temperature as Threshold,

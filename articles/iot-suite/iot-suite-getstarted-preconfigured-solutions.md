@@ -34,6 +34,7 @@ Azure IoT 套件[预配置解决方案][lnk-preconfigured-solutions]结合了多
 
 > [AZURE.NOTE]  如果没有帐户，可以创建一个试用帐户，只需几分钟即可完成。有关详细信息，请参阅 [Trial][1rmb-trial]（试用）。
 
+
 [AZURE.INCLUDE [iot-suite-provision-remote-monitoring](../../includes/iot-suite-provision-remote-monitoring.md)]
 
 ## 查看解决方案仪表板
@@ -268,4 +269,4 @@ Azure IoT 套件[预配置解决方案][lnk-preconfigured-solutions]结合了多
 [lnk-connect-rm]: /documentation/articles/iot-suite-connecting-devices/
 [lnk-permissions]: /documentation/articles/iot-suite-permissions/
 
-<!---HONumber=Mooncake_0815_2016-->
+<!---HONumber=Mooncake_0306_2017-->
