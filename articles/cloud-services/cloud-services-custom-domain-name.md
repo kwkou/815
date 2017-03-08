@@ -73,7 +73,7 @@ A 记录将域（例如 **contoso.com** 或 **www.contoso.com**）*或通配符�
    * 安装并配置 [Azure Powershell](/documentation/articles/powershell-install-configure/)，然后使用以下命令：
         
 
-        Get-AzureDeployment -ServiceName yourservicename | Select Url
+            Get-AzureDeployment -ServiceName yourservicename | Select Url
 
     
      保存任一方法返回的 URL 中所使用的域名，因为创建 CNAME 记录时需要它。
@@ -112,7 +112,7 @@ A 记录将域（例如 **contoso.com** 或 **www.contoso.com**）*或通配符�
     
    * 安装并配置 [Azure Powershell](/documentation/articles/powershell-install-configure/)，然后使用以下命令：
     
-        get-azurevm -servicename yourservicename | get-azureendpoint -VM {$_.VM} | select Vip
+            get-azurevm -servicename yourservicename | get-azureendpoint -VM {$_.VM} | select Vip
     
     如果有多个终结点与云服务相关联，将收到包含 IP 地址的多个行，但所有行都显示相同地址。
     

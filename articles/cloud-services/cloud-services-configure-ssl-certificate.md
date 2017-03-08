@@ -88,7 +88,7 @@
     | limitedOrElevated | **（默认）**所有角色进程都可以访问该私钥。 |
     | elevated | 仅提升的进程可以访问该私钥。|
 
-2.  在你的服务定义文件中，在** Endpoints** 节中添加 **InputEndpoint** 元素以启用 HTTPS：
+2.  在你的服务定义文件中，在 **Endpoints** 节中添加 **InputEndpoint** 元素以启用 HTTPS：
 
         <WebRole name="CertificateTesting" vmsize="Small">
         ...
@@ -115,7 +115,7 @@
 
     对服务定义文件进行的所有必需更改已完成，但还需要将证书信息添加到服务配置文件中。
 
-4.  在你的服务配置文件 (CSCFG) ServiceConfiguration.Cloud.cscfg 中，在** Role** 节中添加 **Certificates **节，并将下面显示的示例指纹值替换为你的证书的指纹值：
+4.  在你的服务配置文件 (CSCFG) ServiceConfiguration.Cloud.cscfg 中，在 **Role** 节中添加 **Certificates** 节，并将下面显示的示例指纹值替换为你的证书的指纹值：
 
         <Role name="Deployment">
         ...

@@ -22,7 +22,7 @@
 [AZURE.INCLUDE [iot-hub-resource-manager-selector](../../includes/iot-hub-resource-manager-selector.md)]
 
 ## 介绍
-可使用 [IoT 中心资源提供程序 REST API][lnk-rest-api] 按编程方式创建和管理 Azure IoT 中心。本教程介绍如何使用 IoT 中心资源提供程序 REST API 通过 C\# 程序创建 IoT 中心。
+可使用 IoT 中心资源提供程序 REST API 按编程方式创建和管理 Azure IoT 中心。本教程介绍如何使用 IoT 中心资源提供程序 REST API 通过 C\# 程序创建 IoT 中心。
 
 > [AZURE.NOTE]
 Azure 具有用于创建和处理资源的两个不同的部署模型：[Azure Resource Manager 模型和经典模型](/documentation/articles/resource-manager-deployment-model/)。本文介绍如何使用 Azure Resource Manager 部署模型。
