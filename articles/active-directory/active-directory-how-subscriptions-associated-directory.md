@@ -5,8 +5,7 @@
     documentationcenter=""
     author="curtand"
     manager="femila"
-    editor="" />  
-
+    editor="" />
 <tags
     ms.assetid="bc4773c2-bc4a-4d21-9264-2267065f0aea"
     ms.service="active-directory"
@@ -14,9 +13,9 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="get-started-article"
-    ms.date="11/01/2016"
-    ms.author="curtand" 
-    wacn.date="01/03/2017"/>  
+    ms.date="02/13/2017"
+    wacn.date="03/07/2017"
+    ms.author="curtand" />  
 
 
 # Azure 订阅与 Azure Active Directory 的关联方式
@@ -37,9 +36,8 @@
 例如，下面这个具有 Microsoft 帐户的用户想要登录 Azure 经典管理门户。
 
 > [AZURE.NOTE]
-> 若要登录到 Azure 经典管理门户，msmith@hotmail.com 必须拥有 Azure 订阅。该帐户必须是服务管理员，或者订阅的协同管理员。
-> 
-> 
+若要登录到 Azure 经典管理门户，msmith@hotmail.com 必须拥有 Azure 订阅。该帐户必须是服务管理员，或者订阅的协同管理员。
+
 
 ![][1]
 
@@ -48,7 +46,7 @@
 ## Azure 订阅与 Azure AD 的关系
 每个 Azure 订阅都与某个 Azure AD 实例存在信任关系。这意味着，此订阅信任该目录对用户、服务和设备执行身份验证。多个订阅可以信任同一个目录，但一个订阅只能信任一个目录。可以在“设置”选项卡下查看你的订阅信任的目录。可以[编辑订阅设置](/documentation/articles/active-directory-understanding-resource-access/)以更改它信任的目录。
 
-订阅与目录之间的这种信任关系不同于订阅与 Azure 中所有其他资源（网站、数据库等）之间的信任关系，在后一种关系中，这些资源更像是订阅的子资源。如果某个订阅过期，则对该订阅关联的其他那些资源的访问权限也将终止。但是，目录将保留在 Azure 中，并且你可以将另一个订阅与该目录相关联，然后继续管理目录用户。
+订阅与目录之间的这种信任关系不同于订阅与 Azure 中所有其他资源（网站、数据库等）之间的信任关系，在后一种关系中，这些资源更像是订阅的子资源。如果某个订阅过期，则对该订阅关联的其他那些资源的访问权限也将终止。但是，目录将保留在 Azure 中，你可以将另一个订阅与该目录相关联，然后继续管理目录用户。
 
 同样，订阅中显示的 Azure AD 扩展将不会像 Azure 经典管理门户中的其他扩展那样工作。Azure 经典管理门户中的其他扩展将划归到 Azure 订阅范围内。Azure AD 扩展中显示的内容不会因订阅而异 - 它只会根据登录用户显示目录。
 
@@ -69,10 +67,10 @@ Azure AD 提供一组不同的管理角色，用于管理目录和标识相关�
 
 但必须注意，Azure 订阅管理员和 Azure AD 目录管理员是两个不同的概念。Azure 订阅管理员可以管理 Azure 中的资源，还可以在 Azure 经典管理门户中查看 Active Directory 扩展（因为 Azure 经典管理门户是一种 Azure 资源）。Directory 管理员可以管理目录中的属性。
 
-一个人可以充当两种角色，但是没有这个必要。可将某个用户分配到目录全局管理员角色，但不能将其分配为 Azure 订阅的服务管理员或协同管理员。如果不是订阅的管理员，此用户将无法登录到 Azure 经典管理门户。但是，该用户可以使用其他工具（例如 Azure AD PowerShell 或 Office 365 管理中心）执行目录管理任务。
+一个人可以充当两种角色，但是没有这个必要。可向某个用户分配目录全局管理员角色，但不能将其分配为 Azure 订阅的服务管理员或协同管理员。如果不是订阅的管理员，此用户将无法登录到 Azure 经典管理门户。但是，此用户可以使用其他工具（例如 Azure AD PowerShell 或 Office 365 管理中心）执行目录管理任务。
 
-## 我为何无法使用我当前的用户帐户管理目录？
-有时，用户在注册 Azure 订阅之前，可能会尝试使用工作或学校帐户登录到 Azure 经典管理门户。在这种情况下，该用户将会收到一条消息，指明该帐户没有订阅。该消息包含一个用于开始试用订阅的链接。
+## 我为何无法使用当前的用户帐户管理目录？
+有时，用户在注册 Azure 订阅之前，可能会尝试使用工作或学校帐户登录 Azure 经典管理门户。在这种情况下，该用户将会收到一条消息，指明该帐户没有订阅。该消息包含一个用于开始试用订阅的链接。
 
 在注册试用订阅之后，该用户将在 Azure 经典管理门户中看到组织的目录，但无法管理该目录（也就是说，无法添加用户或编辑任何现有用户属性），因为该用户不是目录全局管理员。订阅后，该用户可以使用 Azure 经典管理门户并查看 Azure Active Directory 扩展，但若要管理目录，则需要拥有全局管理员的其他权限。
 
@@ -83,22 +81,22 @@ Azure AD 提供一组不同的管理角色，用于管理目录和标识相关�
 
 在某些情况下，你可能希望你组织中的用户能够管理与 Microsoft 使用者帐户的 Azure 订阅关联的资源。有关如何改为使用不同帐户管理订阅或目录的详细信息，请参阅[在 Azure 中管理 Office 365 订阅的目录](#manage-the-directory-for-your-office-365-subscription-in-azure)。
 
-## 在使用 Microsoft 帐户的工作电子邮件时登录
+## 已将工作电子邮件用于 Microsoft 帐户时登录
 如果在过去的某个时间点，你使用工作电子邮件作为用户标识符创建了一个 Microsoft 使用者帐户，则可能会看到一个页面，要求在 Azure 帐户系统与 Microsoft 帐户系统中选择其一。
 
 ![][3]  
 
 
-你有两个同名的用户帐户，一个在 Azure AD 中，而另一个在 Microsoft 使用者帐户系统中。应该选取与要使用的 Azure 订阅关联的帐户。如果出现错误，指明此用户不存在订阅，则可能是你选择了错误的选项。请注销后重试。有关可能会阻止登录的错误的详细信息，请参阅[Troubleshooting "We were unable to find any subscriptions associated with your account" errors](https://social.msdn.microsoft.com/Forums/en-US/f952f398-f700-41a1-8729-be49599dd7e2/troubleshooting-we-were-unable-to-find-any-subscriptions-associated-with-your-account-errors-in?forum=windowsazuremanagement)（排查“找不到任何与你的帐户关联的订阅”错误）。
+你有两个同名的用户帐户，一个在 Azure AD 中，而另一个在 Microsoft 使用者帐户系统中。应该选取与要使用的 Azure 订阅关联的帐户。如果出现错误，指明此用户不存在订阅，则可能是你选择了错误的选项。请注销后重试。有关可能会阻止登录的错误的详细信息，请参阅[Troubleshooting "We were unable to find any subscriptions associated with your account" errors](https://social.msdn.microsoft.com/Forums/zh-cn/f952f398-f700-41a1-8729-be49599dd7e2/troubleshooting-we-were-unable-to-find-any-subscriptions-associated-with-your-account-errors-in?forum=windowsazuremanagement)（排查“找不到任何与你的帐户关联的订阅”错误）。
 
 ## 在 Azure 中管理 Office 365 订阅的目录 <a name="manage-the-directory-for-your-office-365-subscription-in-azure"></a>
-假设你在注册 Azure 之前注册了 Office 365。假设你要在 Azure 经典管理门户中管理 Office 365 订阅的目录。可以通过两种方式进行管理，具体取决于你是否注册了 Azure。
+假设在注册 Azure 之前注册了 Office 365。现在你要在 Azure 经典管理门户中管理 Office 365 订阅的目录。可以通过两种方式进行管理，具体取决于是否注册了 Azure。
 
 ### 我没有订阅 Azure
 在这种情况下，你只需使用登录 Office 365 时所用的同一个工作帐户或学校帐户来[注册 Azure](/documentation/articles/sign-up-organization/)。Office 365 帐户中的相关信息将预填充到 Azure 注册表单中。你的帐户将被指定为订阅的服务管理员角色。
 
 ### 我已使用我的 Microsoft 帐户订阅了 Azure
-如果你已使用工作或学校帐户注册了 Office 365 并随后使用 Microsoft 帐户注册了 Azure，那么，你将获得两个目录：在工作时或学校中使用的目录，以及在你注册 Azure 时创建的默认目录。
+如果已使用工作或学校帐户注册了 Office 365 并随后使用 Microsoft 帐户注册了 Azure，你将拥有两个目录：一个是在工作时或学校中使用的目录，另一个是在注册 Azure 时创建的默认目录。
 
 若要在 Azure 经典管理门户中管理这两个目录，请完成以下步骤。
 
@@ -106,13 +104,13 @@ Azure AD 提供一组不同的管理角色，用于管理目录和标识相关�
 只有当用户使用 Microsoft 帐户登录时才能完成这些步骤。如果用户是使用工作或学校帐户登录的，则“使用现有目录”选项不可用，因为工作或学校帐户只能通过其主目录（也就是存储着工作或学校帐户的目录，该目录归工作单位或学校拥有）进行身份验证。
 
 
-1. 使用你的 Microsoft 帐户登录到 Azure 经典管理门户。
+1. 使用 Microsoft 帐户登录到 Azure 经典管理门户。
 2. 单击“新建”>“应用程序服务”>“Active Directory”>“目录”>“自定义创建”。
 3. 单击“使用现有目录”并选中“已准备好立即注销”，然后单击复选标记以完成操作。
 4. 使用对工作或学校目录具有全局管理员权限的帐户登录到 Azure 经典管理门户。
 5. 当系统提示“是否要将 Contoso 目录用于 Azure?”时，单击“继续”。
 6. 单击“立即注销”。
-7. 使用你的 Microsoft 帐户重新登录到 Azure 经典管理门户。这两个目录将显示在“Active Directory”扩展中。
+7. 使用 Microsoft 帐户重新登录到 Azure 经典管理门户。这两个目录将显示在“Active Directory”扩展中。
 
 ## 后续步骤
 - 若要了解有关如何在 Azure 中控制资源访问的详细信息，请参阅 [Understanding resource access in Azure](/documentation/articles/active-directory-understanding-resource-access/)（了解 Azure 中的资源访问权限）
@@ -120,9 +118,9 @@ Azure AD 提供一组不同的管理角色，用于管理目录和标识相关�
 - [以组织身份注册 Azure](/documentation/articles/sign-up-organization/)
 
 <!--Image references-->
-
 [1]: ./media/active-directory-how-subscriptions-associated-directory/WAAD_PassThruAuth.png
 [2]: ./media/active-directory-how-subscriptions-associated-directory/WAAD_OrgAccountSubscription.png
 [3]: ./media/active-directory-how-subscriptions-associated-directory/WAAD_SignInDisambiguation.PNG
 
-<!---HONumber=Mooncake_Quality_Review_1230_2016-->
+<!---HONumber=Mooncake_0227_2017-->
+<!---Update_Description: wording update -->

@@ -14,9 +14,9 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="get-started-article"
-    ms.date="01/09/2017"
-    ms.author="billmath" 
-    wacn.date="02/13/2017"/>  
+    ms.date="02/07/2017"
+    ms.author="billmath"    
+    wacn.date="03/07/2017"/>  
 
 
 # Azure AD Connect 的自定义安装
@@ -60,7 +60,8 @@
 ### 连接到 Azure AD
 在“连接到 Azure AD”屏幕中，输入全局管理员的帐户和密码。如果在前一个页面选择了“与 AD FS 联合”，不要以计划启用联合的域中的帐户登录。建议使用默认“partner.onmschina.cn”域中的帐户，Azure AD 目录随附该域。
 
-此帐户只用于在 Azure AD 中创建服务帐户，向导完成后将不会使用。![用户登录](./media/active-directory-aadconnect-get-started-custom/connectaad.png)
+此帐户只用于在 Azure AD 中创建服务帐户，向导完成后将不会使用。
+![用户登录](./media/active-directory-aadconnect-get-started-custom/connectaad.png)
 
 如果全局管理员帐户已启用 MFA，则需要在登录弹出窗口中再次提供密码，并完成 MFA 质询。该质询可能是提供验证码或打电话。
 ![用户登录 MFA](./media/active-directory-aadconnect-get-started-custom/connectaadmfa.png)
@@ -77,7 +78,8 @@
 ### Azure AD 登录配置
 在此页中，可以查看本地 AD DS 中存在的 UPN 域，以及已在 Azure AD 中验证的 UPN 域。还可以在此页中配置要用于 userPrincipalName 的属性。
 
-![未验证的域](./media/active-directory-aadconnect-get-started-custom/aadsigninconfig.png)查看标记为“未添加”和“未验证”的每个域。确保使用的域已在 Azure AD 中验证。验证域后，单击“刷新”符号。若要了解详细信息，请参阅[添加和验证域](/documentation/articles/active-directory-add-domain/)
+![未验证的域](./media/active-directory-aadconnect-get-started-custom/aadsigninconfig.png)
+查看标记为“未添加”和“未验证”的每个域。确保使用的域已在 Azure AD 中验证。验证域后，单击“刷新”符号。若要了解详细信息，请参阅[添加和验证域](/documentation/articles/active-directory-add-domain/)
 
 **UserPrincipalName** - 属性 userPrincipalName 是用户登录 Azure AD 和 Office 365 时使用的属性。应在同步处理用户前在 Azure AD 中对使用的域（也称为 UPN 后缀）进行验证。Microsoft 建议保留默认属性 userPrincipalName。如果此属性不可路由且无法验证，可以选择另一个属性。例如，可以选择 email 作为保存登录 ID 的属性。使用除 userPrincipalName 以外的其他属性被称为“替代 ID”。“替代 ID”属性值必须遵循 RFC822 标准。替代 ID 可以配合密码同步和联合使用。
 
@@ -91,12 +93,16 @@
 
 ### 域和 OU 筛选 <a name="domain-and-ou-filtering"></a>
 默认情况下将同步所有域和 OU。如果不想将某些域或 OU 同步到 Azure AD，可以取消选择这些域和 OU。
-![DomainOU 筛选](./media/active-directory-aadconnect-get-started-custom/domainoufiltering.png)向导中的此页面用于配置基于域和基于 OU 的筛选。有关详细信息，请参阅[基于域的筛选](/documentation/articles/active-directory-aadconnectsync-configure-filtering/#domain-based-filtering/)和[基于 OU 的筛选](/documentation/articles/active-directory-aadconnectsync-configure-filtering/#organizational-unitbased-filtering/)。如果使用基于 OU 的筛选，以后添加的新 OU 默认会同步。如果希望行为是不同步新 OU，可在向导完成后，使用[基于 OU 的筛选](/documentation/articles/active-directory-aadconnectsync-configure-filtering/#organizational-unitbased-filtering/)来配置此行为。
+![DomainOU 筛选](./media/active-directory-aadconnect-get-started-custom/domainoufiltering.png)
+向导中的此页面用于配置基于域和基于 OU 的筛选。如果计划进行更改，则请在进行相应更改之前，参阅[基于域的筛选](/documentation/articles/active-directory-aadconnectsync-configure-filtering/#domain-based-filtering/)和[基于 OU 的筛选](/documentation/articles/active-directory-aadconnectsync-configure-filtering/#organizational-unitbased-filtering/)。某些 OU 对于功能很重要，不应将其取消选中。
+
+如果使用基于 OU 的筛选，以后添加的新 OU 默认会同步。如果希望行为是不同步新 OU，可在向导完成后，使用[基于 OU 的筛选](/documentation/articles/active-directory-aadconnectsync-configure-filtering/#organizational-unitbased-filtering/)来配置此行为。
 
 如果打算使用[基于组的筛选](#sync-filtering-based-on-groups)，请确保包含该组所在的 OU，而未使用 OU 筛选将该 OU 筛选掉。OU 筛选将在基于组的筛选之前评估。
 
 由于防火墙限制，也可能无法连接到某些域。默认情况下未选择这些域，并且会出现警告。
-![不可访问的域](./media/active-directory-aadconnect-get-started-custom/unreachable.png)如果你看到此警告，请确认确实无法访问这些域，并且该警报在你的意料之中。
+![不可访问的域](./media/active-directory-aadconnect-get-started-custom/unreachable.png)
+如果你看到此警告，请确认确实无法访问这些域，并且该警报在你的意料之中。
 
 ### 唯一标识你的用户
 “跨林匹配”功能允许定义如何在 Azure AD 中呈现 AD DS 林中的用户。一个用户可以在所有林中只呈现一次，也可以使用已启用和已禁用帐户的组合。在某些林中，用户还可以被呈现为联系人。
@@ -298,8 +304,8 @@ AD Connect 尝试在配置阶段验证域。如果继续进行配置但未添加
 
 此外，请执行以下验证步骤：
 
-- 在 Intranet 上，通过已加入域的计算机上的浏览器验证是否能够登录：连接到 https://myapps.microsoft.com，然后使用你的登录帐户验证登录。内置的 AD DS 管理员帐户未同步，因此无法用于验证。
-- 验证是否能够从 Extranet 中的设备登录。在家庭计算机或移动设备上连接到 https://myapps.microsoft.com，并提供你的凭据。
+- 在 Intranet 上，通过已加入域的计算机上的浏览器验证是否能够登录：连接到 https://login.partner.microsoftonline.cn，然后使用你的登录帐户验证登录。内置的 AD DS 管理员帐户未同步，因此无法用于验证。
+- 验证是否能够从 Extranet 中的设备登录。在家庭计算机或移动设备上连接到 https://login.partner.microsoftonline.cn，并提供你的凭据。
 - 验证富客户端登录。连接到 https://testconnectivity.microsoft.com，选择“Office 365”选项卡，然后选择“Office 365 单一登录测试”。
 
 ## 后续步骤
@@ -313,5 +319,5 @@ AD Connect 尝试在配置阶段验证域。如果继续进行配置但未添加
 
 了解有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect/)的详细信息。
 
-<!---HONumber=Mooncake_0206_2017-->
+<!---HONumber=Mooncake_0227_2017-->
 <!--Update_Description: wording update-->

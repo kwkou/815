@@ -5,8 +5,7 @@
     documentationcenter=""
     author="curtand"
     manager="femila"
-    editor="" />  
-
+    editor="" />
 <tags
     ms.assetid="a7679724-0ed5-4973-92e2-bd1285a6ef93"
     ms.service="active-directory"
@@ -14,10 +13,9 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="11/09/2016"
-    ms.author="curtand"
-    wacn.date="01/19/2017"/>  
-
+    ms.date="02/13/2017"
+    wacn.date="03/07/2017"
+    ms.author="curtand" />  
 
 
 # 在 Azure Active Directory 中管理密码
@@ -32,6 +30,8 @@
 
 > [AZURE.NOTE]
 Azure AD 高级版适用于使用世界范围的 Azure AD 实例的中国客户。由中国的 21Vianet 运营的 Azure 服务目前不支持 Azure AD Premium。有关详细信息，请在 [Azure Active Directory 论坛](https://feedback.azure.com/forums/169401-azure-active-directory/)与我们联系。
+>
+>
 
 使用以下链接可跳转至你最感兴趣的文档：
 
@@ -48,4 +48,5 @@ Azure AD 高级版适用于使用世界范围的 Azure AD 实例的中国客户�
 - [管理 Azure AD](/documentation/articles/active-directory-administer/)
 - [在 Azure AD 中创建或编辑用户](/documentation/articles/active-directory-create-users/)
 
-<!---HONumber=Mooncake_1205_2016-->
+<!---HONumber=Mooncake_0227_2017-->
+<!--Update_Description: update meta properties -->

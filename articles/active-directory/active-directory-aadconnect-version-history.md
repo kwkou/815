@@ -5,8 +5,7 @@
     documentationcenter=""
     author="billmath"
     manager="femila"
-    editor="" />  
-
+    editor="" />
 <tags
     ms.assetid="ef2797d7-d440-4a9a-a648-db32ad137494"
     ms.service="active-directory"
@@ -14,8 +13,8 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="identity"
-    ms.date="12/07/2016"
-    wacn.date="01/24/2017"
+    ms.date="02/08/2017"
+    wacn.date="03/07/2017"
     ms.author="billmath" />
 
 # Azure AD Connect：版本发布历史记录
@@ -32,6 +31,16 @@ Azure Active Directory 团队会定期更新 Azure AD Sync 的新特性和功能
 所需的权限 | 有关应用更新时所需的权限，请参阅[帐户和权限](/documentation/articles/active-directory-aadconnect-accounts-permissions/#upgrade/)
 下载| [下载 Azure AD Connect](http://go.microsoft.com/fwlink/?LinkId=615771)
 
+## 1\.1.380.0
+发布日期：2016 年 12 月
+
+**修复的问题：**
+
+- 修复了 ADFS 的 issuerid 声明规则在该内部版本中缺失的问题。
+
+>[AZURE.NOTE]
+不通过 Azure AD Connect 自动升级功能向客户提供此内部版本。
+
 ## 1\.1.371.0
 发布日期：2016 年 12 月
 
@@ -39,17 +48,19 @@ Azure Active Directory 团队会定期更新 Azure AD Sync 的新特性和功能
 
 - 如果未打开用于出站连接的端口 9090，Azure AD Connect 安装或升级将失败。
 
+>[AZURE.NOTE]
+不通过 Azure AD Connect 自动升级功能向客户提供此内部版本。
+
 ## 1\.1.370.0
 发布日期：2016 年 12 月
-
-**新功能：**
-
-- 直通身份验证（预览）。
-
 
 **已知问题：**
 
 - 必须打开用于出站连接的端口 9090 才能完成安装。
+
+**新功能：**
+
+- 直通身份验证（预览）。
 
 >[AZURE.NOTE]
 不通过 Azure AD Connect 自动升级功能向客户提供此内部版本。
@@ -65,7 +76,7 @@ Azure Active Directory 团队会定期更新 Azure AD Sync 的新特性和功能
 
 **改进：**
 
-- 添加了在 Windows Server 2016 标准版或更高版本上安装 Azure AD Connect 的支持。
+- 添加了针对在 Windows Server 2016 标准版或更高版本上安装 Azure AD Connect 的支持。
 - 添加了将 SQL Server 2016 用作 Azure AD Connect 远程数据库的支持。
 
 ## 1\.1.281.0
@@ -148,7 +159,7 @@ Azure Active Directory 团队会定期更新 Azure AD Sync 的新特性和功能
 **新功能：**
 
 - 适用于快速设置客户的[自动升级](/documentation/articles/active-directory-aadconnect-feature-automatic-upgrade/)功能。
-- 使用安装向导中的 MFA 和 PIM 来提供全局管理员支持。
+- 支持使用安装向导中的 MFA 和 PIM 来提供全局管理员。
   - 如果使用 MFA，则需要让代理也允许向 https://secure.aadcdn.microsoftonline-p.com 传送流量。
   - 需要将 https://secure.aadcdn.microsoftonline-p.com 添加到受信任站点列表，MFA 才能正常运行。
 - 允许在初始安装之后更改用户的登录方法。
@@ -166,7 +177,7 @@ Azure Active Directory 团队会定期更新 Azure AD Sync 的新特性和功能
 **已解决的问题：**
 
 - 验证 DNS 域页面不一定都能识别域。
-- 配置 ADFS 时出现域管理员凭据提示。
+- 配置 ADFS 时提示提供域管理员凭据。
 - 当本地 AD 帐户所在域的 DNS 树与根域不同时，安装向导将无法识别这些帐户。
 
 ## 1\.0.9131.0
@@ -176,8 +187,8 @@ Azure Active Directory 团队会定期更新 Azure AD Sync 的新特性和功能
 
 - 更改 AD DS 中的密码时，密码同步可能不会正常工作，但设置密码时可以正常工作。
 - 如果你设置了代理服务器，在安装期间或在配置页上运行升级时，向 Azure AD 进行身份验证可能会失败。
-- 如果你不是 SQL 中的 SA，从装有完整 SQL 服务器的旧版 Azure AD Connect 更新将会失败。
-- 从装有远程 SQL 服务器的旧版 Azure AD Connect 更新时，将显示错误消息“无法访问 ADSync SQL 数据库”。
+- 如果你不是 SQL 中的 SA，从装有完整 SQL Server 的旧版 Azure AD Connect 更新将会失败。
+- 从装有远程 SQL Server 的旧版 Azure AD Connect 更新时，将显示错误消息“无法访问 ADSync SQL 数据库”。
 
 ## 1\.0.9125.0  <a name="1091250"></a>
 发布日期：2015 年 11 月
@@ -203,7 +214,7 @@ Azure Active Directory 团队会定期更新 Azure AD Sync 的新特性和功能
   - 从范围外移到范围内的对象不会同步其密码。这包括 OU 和属性筛选。
   - 选择要包含在同步中的新 OU 时不需要完全密码同步。
   - 启用已禁用的用户时密码不会同步。
-  - 密码重试队列是无限的，以前实施的 5000 个对象限制已停用且已被删除。
+  - 密码重试队列是无限的，以前实施的 5,000 个对象限制已停用且已被删除。
   - [改进了故障排除](/documentation/articles/active-directory-aadconnectsync-implement-password-synchronization/#troubleshooting-password-synchronization/)。
 - 无法连接到具有 Windows Server 2016 林功能级别的 Active Directory。
 - 初始安装后，无法更改用于组筛选的组。
@@ -217,12 +228,12 @@ Azure Active Directory 团队会定期更新 Azure AD Sync 的新特性和功能
 **新功能：**
 
 - Azure AD Connect 安装向导现已本地化为所有 Windows Server 语言。
-- 添加了在使用 Azure AD 密码管理时的帐户解锁支持。
+- 添加了对在使用 Azure AD 密码管理时的帐户解锁支持。
 
 **已解决的问题：**
 
 - 如果另一位用户而不是第一位启动安装的人继续安装，则 Azure AD Connect 安装向导将会崩溃。
-- 如果 Azure AD Connect 的先前卸载操作无法将 Azure AD Connect Sync 完全卸载，则无法重新安装。
+- 如果 Azure AD Connect 的先前卸载操作无法将 Azure AD Connect 同步完全卸载，则无法重新安装。
 - 如果用户不在林的根域中或使用了非英文版 Active Directory，则无法使用快速安装选项安装 Azure AD Connect。
 - 如果无法解析 Active Directory 用户帐户的 FQDN，则会显示“无法提交架构”的误导性错误消息。
 - 如果 Active Directory 连接器上使用的帐户已在向导外部更改，向导在进行后续操作时将会失败。
@@ -273,7 +284,7 @@ Azure Active Directory 团队会定期更新 Azure AD Sync 的新特性和功能
 
 **已解决的问题和改进：**
 
-- 如果启用回收站且林中存在多个域，Active Directory 连接器不会正确处理删除。
+- 如果已启用回收站且林中存在多个域，Active Directory 连接器不会正确处理删除。
 - 对 Azure Active Directory 连接器的导入操作性能有所改进。
 - 当某个组超过成员资格限制（默认情况下，此限制设置为 5 万个对象）时，便会在 Azure Active Directory 中删除该组。新行为是将保留该组、引发错误且不导出任何新的成员资格更改。
 - 如果连接器空间中已经存在 DN 相同的暂存删除，则无法设置新对象。
@@ -296,7 +307,7 @@ Azure Active Directory 团队会定期更新 Azure AD Sync 的新特性和功能
 
 - 密码同步具有属性筛选所用的 cloudFiltered 属性。已筛选的对象将不再在密码同步范围中。
 - 在拓扑中有非常多域控制器的极少数情况下，密码同步不起作用。
-- 在设备管理后从 Azure AD 连接器导入时，已在 Azure AD/Intune 中启用了“Stopped-server”。
+- 在 Azure AD/Intune 中启用设备管理后，在从 Azure AD 连接器导入时，“服务器停止”。
 - 从同一林中的多个域联接外部安全主体 (FSP) 会导致模糊联接错误。
 
 ## 1\.0.475.1202
@@ -338,7 +349,7 @@ Azure Active Directory 团队会定期更新 Azure AD Sync 的新特性和功能
 
 **AD 帐户的权限**
 
-必须为 AD 帐户授予其他权限，才能从 AD 读取密码哈希。要授予的权限称为“复制目录更改”和“复制目录更改所有项”。需要这两个权限才能读取密码哈希。
+必须为 AD 帐户授予其他权限，才能从 AD 读取密码哈希。要授予的权限称为“复制目录更改”和“复制目录更改所有项”。需要这两个权限才能读取密码哈希
 
 ## 1\.0.419.0911
 发布日期：2014 年 9 月
@@ -348,4 +359,5 @@ Azure Active Directory 团队会定期更新 Azure AD Sync 的新特性和功能
 ## 后续步骤
 了解有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect/)的详细信息。
 
-<!---HONumber=Mooncake_1226_2016-->
+<!---HONumber=Mooncake_0227_2017-->
+<!---Update_Description: wording update -->

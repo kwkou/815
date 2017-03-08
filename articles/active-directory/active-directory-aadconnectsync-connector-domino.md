@@ -5,8 +5,7 @@
     documentationcenter=""
     author="AndKjell"
     manager="femila"
-    editor="" />  
-
+    editor="" />
 <tags
     ms.assetid="e07fd469-d862-470f-a3c6-3ed2a8d745bf"
     ms.service="active-directory"
@@ -14,9 +13,9 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="11/01/2016"
-    ms.author="billmath"
-    wacn.date="12/15/2016"/>
+    ms.date="02/08/2017"
+    wacn.date="03/07/2017"
+    ms.author="billmath" />
 
 # Lotus Domino 连接器技术参考
 本指南介绍 Lotus Domino 连接器。本文适用于以下产品：
@@ -42,7 +41,7 @@
 Lotus Domino 连接器使用 Lotus Notes 客户端来与 Lotus Domino 服务器通信。由于这种依赖关系，同步服务器上必须安装支持的 Lotus Notes 客户端。客户端与服务器之间的通信是通过 Lotus Notes .NET Interop (Interop.domino.dll) 接口实现的。此接口可帮助在 Microsoft.NET 平台和 Lotus Notes 客户端之间进行通信，并支持 Lotus Domino 文档和视图的访问。在执行增量导入时，也可以使用 C++ 本机接口（取决于所选的增量导入方法）。
 
 ### 先决条件
-在使用连接器之前，请确保在同步服务器上安装以下软件：
+在使用连接器之前，请确保在同步服务器上符合以下先决条件：
 
 - Microsoft .NET 4.5.2 Framework 或更高版本
 - 同步服务器上必须安装 Lotus Notes 客户端
@@ -132,7 +131,7 @@ ServerName/DirectoryName 格式是此属性的首选格式，因为它可在连�
 
 在“架构选项”中，可以使用以下选项：
 
-- **默认架构**。连接器检测 Domino 服务器中的架构。这是默认选项。
+- **默认架构**。连接器检测 Domino 服务器中的架构。此选择是默认选项。
 - **DSML 架构**。只在 Domino 服务器不公开架构时使用。然后，你可以使用此架构创建 DSML 文件，并导入此文件。有关 DSML 的详细信息，请参阅 [OASIS](https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=dsml)。
 
 当你单击“下一步”时，将验证 UserID 和密码配置参数。
@@ -191,8 +190,7 @@ ServerName/DirectoryName 格式是此属性的首选格式，因为它可在连�
 #### 多值转换
 Lotus Domino 中有许多属性具有多个值。相对应的 Metaverse 属性则通常是单个值。通过设置导入和导出操作选项，可以启用连接器来帮助受影响的属性进行必要转换。
 
-**导出**
-导出操作选项支持两种模式：
+**导出**导出操作选项支持两种模式：
 
 - 附加项
 - 替换项
@@ -310,7 +308,7 @@ Person 对象代表组织和组织单位中的用户。除了默认属性，Domi
 有关设置资源保留数据库的详细信息，请参阅 [Setting up the Resource Reservations database](https://www-01.ibm.com/support/knowledgecenter/SSKTMJ_8.0.1/com.ibm.help.domino.admin.doc/DOC/H_SETTING_UP_THE_RESOURCE_RESERVATIONS_DATABASE.html)（设置资源保留数据库）。
 
 **创建、更新和删除资源**
-Lotus Domino 连接器在资源保留数据库中执行创建、更新和删除操作。将资源创建为 Names.nsf 中的文档（即主要通讯簿）。有关编辑和删除资源的详细信息，请参阅[编辑和删除“资源”文档](http://publib.boulder.ibm.com/infocenter/domhelp/v8r0/index.jsp?topic=/com.ibm.help.domino.admin85.doc/H_EDITING_AND_DELETING_RESOURCE_DOCUMENTS.html)。
+Lotus Domino 连接器在资源保留数据库中执行创建、更新和删除操作。将资源创建为 Names.nsf 中的文档（即主要通讯簿）。有关编辑和删除资源的详细信息，请参阅 [Editing and deleting Resource documents](http://publib.boulder.ibm.com/infocenter/domhelp/v8r0/index.jsp?topic=/com.ibm.help.domino.admin85.doc/H_EDITING_AND_DELETING_RESOURCE_DOCUMENTS.html)（编辑和删除“资源”文档）。
 
 **资源的导入和导出操作**
 与其他任何对象类型一样，可以在同步服务中导入和导出资源。在配置期间选择对象类型作为资源。为了成功执行导出操作，你应该具有资源类型、会议数据库和站点名称的详细信息。
@@ -488,4 +486,5 @@ Domino 连接器依赖**目录助手**功能来查找辅助通讯簿。如果辅
 ## 故障排除
 - 有关如何启用记录来排查连接器问题的信息，请参阅[如何启用连接器的 ETW 跟踪](http://go.microsoft.com/fwlink/?LinkId=335731)。
 
-<!---HONumber=Mooncake_1128_2016-->
+<!---HONumber=Mooncake_0227_2017-->
+<!---Update_Description: wording update -->

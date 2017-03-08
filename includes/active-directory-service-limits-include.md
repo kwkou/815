@@ -9,5 +9,7 @@
 | 组 | <ul><li>最多有 10 位用户可以是单一应用程序的所有者。</li><li>Azure Active Directory 中的单个组可以具有任意数量的对象。</li><li>使用 Azure Active Directory 目录同步 (DirSync) 时，一个组中可以从本地 Active Directory 同步到 Azure Active Directory 的成员数限制为 15000 个。</li><li>使用 Azure AD Connect 时，一个组中可以从本地 Active Directory 同步到 Azure Active Directory 的成员数限制为 50000 个。</li></ul> |
 | 访问面板 | <ul><li>对应用程序的数量没有限制，应用程序可在每位订阅 Azure AD Premium 或企业移动套件的最终用户的访问面板中查看。</li><li>最多 10 个应用磁贴（例如：Box、Salesforce 或 Dropbox）可在每位使用 Azure Active Directory 免费版或 Azure AD 基本版的最终用户的访问面板中查看。此限制不适用于管理员帐户。</li></ul> |
 | 报告 | 在报告中最多可查看或下载 1,000 行。系统会截断其他任何数据。 |
+| 管理单元 | 对象可以是不超出 30 个管理单位的成员。 |
 
-<!---HONumber=71-->
+<!---HONumber=Mooncake_0227_2017-->
+<!---Update_Description: wording update -->

@@ -5,8 +5,7 @@
     documentationcenter=""
     author="billmath"
     manager="femila"
-    editor="" />  
-
+    editor="" />
 <tags
     ms.assetid="b93e595b-354a-479d-85ec-a95553dd9cc2"
     ms.service="active-directory"
@@ -14,8 +13,8 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="10/04/2016"
-    wacn.date="01/24/2017"
+    ms.date="02/07/2017"
+    wacn.date="03/07/2017"
     ms.author="billmath" />
 
 # Azure AD Connect：帐户和权限
@@ -130,4 +129,5 @@ Azure AD Connect 安装向导提供提供两种不同的路径：
 ## 后续步骤
 了解有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect/)的详细信息。
 
-<!---HONumber=Mooncake_1226_2016-->
+<!---HONumber=Mooncake_0227_2017-->
+<!--Update_Description: update meta properties -->

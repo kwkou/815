@@ -1,5 +1,5 @@
 <properties
-    pageTitle="Azure AD Connect：端口 | Azure"
+    pageTitle="混合标识所需的端口和协议 - Azure | Azure"
     description="此技术参考页面描述了需要为 Azure AD Connect 打开的端口"
     services="active-directory"
     documentationcenter=""
@@ -14,14 +14,15 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="12/06/2016"
-    wacn.date="01/06/2017"
-    ms.author="billmath" />
+    ms.date="02/15/2017"
+    wacn.date="03/07/2017"
+    ms.author="billmath" />  
+
 
 # 混合标识所需的端口和协议
 以下文档是用于实现混合标识解决方案所需的端口和协议的技术参考。使用下图并参考相应的表格。
 
-![什么是 Azure AD Connect](./media/active-directory-aadconnect-ports/required2.png)
+![什么是 Azure AD Connect](./media/active-directory-aadconnect-ports/required3.png)
 
 ## 表 1 - Azure AD Connect 和本地 AD
 此表描述了 Azure AD Connect 服务器与本地 AD 之间通信所需的端口和协议。
@@ -35,7 +36,7 @@
 | LDAP/SSL |636 (TCP/UDP) |用于从 AD 导入数据。数据传输经过签名和加密。仅当你使用 SSL 时才使用该端口。 |
 | RPC |49152-65535（随机高 RPC 端口）(TCP/UDP) |该端口绑定到 AD 林后，将在初始配置 Azure AD Connect 期间使用。有关详细信息，请参阅 [KB929851](https://support.microsoft.com/zh-cn/kb/929851)、[KB832017](https://support.microsoft.com/zh-cn/kb/832017) 和 [KB224196](https://support.microsoft.com/zh-cn/kb/224196)。 |
 
-## 表 2 - Azure AD Connect 和 Azure AD 
+## 表 2 - Azure AD Connect 和 Azure AD
 此表描述了 Azure AD Connect 服务器与 Azure AD 之间通信所需的端口和协议。
 
 | 协议 | 端口 | 说明 |
@@ -69,9 +70,10 @@
 | HTTPS |443 (TCP/UDP) |用于设备身份验证。 |
 | TCP |49443 (TCP) |用于证书身份验证。 |
 
-## 表 6 - 直通身份验证
-此表描述了连接器与 Azure AD 之间通信所需的端口和协议。
+## 表 6a 和 6b - 单一登录 (SSO) 的直通身份验证和单一登录 (SSO) 的密码哈希同步
+下面的表描述了 Azure AD Connect 与 Azure AD 之间通信所需的端口和协议。
 
+### 表 6a - SSO 的直通身份验证
 |协议|端口号|说明
 | --- | --- | ---
 |HTTP|80|启用出站 HTTP 流量以进行安全验证，例如 SSL。
@@ -82,6 +84,12 @@
 |HTTPS|8080/443|	启用连接器启动序列和连接器自动更新
 |HTTPS|9090|	启用连接器注册（只有连接器注册过程才需要）
 |HTTPS|9091|	启用连接器信任证书自动续订
+
+### 表 6b - SSO 的密码哈希同步
+
+|协议|端口号|说明
+| --- | --- | ---
+|HTTPS|9090|	启用 SSO 注册（只有 SSO 注册过程才需要）。
 
 ## 表 7a 和 7b - 适用于 (AD FS/Sync) 和 Azure AD 的 Azure AD Connect Health 代理
 下表描述了在 Azure AD Connect Health 代理与 Azure AD 之间通信所需的终结点、端口和协议
@@ -94,4 +102,5 @@
 | HTTPS |443 (TCP/UDP) |出站 |
 | Azure 服务总线 |5671 (TCP/UDP) |出站 |
 
-<!---HONumber=Mooncake_1226_2016-->
+<!---HONumber=Mooncake_0227_2017-->
+<!---Update_Description: wording update -->

@@ -5,8 +5,7 @@
     documentationcenter=""
     author="billmath"
     manager="femila"
-    editor="curtand" />  
-
+    editor="curtand" />
 <tags
     ms.assetid="c18bee36-aebf-4281-b8fc-3fe14116f1a5"
     ms.service="active-directory"
@@ -14,9 +13,9 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="11/01/2016"
-    ms.author="billmath" 
-    wacn.date="12/09/2016"/>
+    ms.date="02/08/2017"
+    wacn.date="03/07/2017"
+    ms.author="billmath" />
 
 # 后续步骤以及如何管理 Azure AD Connect
 以下属于高级操作主题，介绍如何根据组织的需要和要求自定义 Azure Active Directory Connect。
@@ -27,13 +26,13 @@
 ## 向 Azure AD Premium 和企业移动性套件用户分配许可证
 将用户同步到云后，你需要向他们分配许可证，以便他们继续使用云应用（例如 Office 365）。
 
-### 分配 Azure AD Premium 或企业移动套件许可证
+### 分配 Azure AD Premium 或企业移动性套件许可证
 - - -
 1. 以管理员身份登录到 Azure 门户预览。
 2. 在左侧选择“Active Directory”。
-3. 在“Active Directory”页上，双击要分配许可证的用户所在的目录。
+3. 在“Active Directory”页上，双击要启用的用户所在的目录。
 4. 在“目录”页的顶部，选择“许可证”。
-5. 在“许可证”页上，选择“Active Directory Premium”或“企业移动套件”，然后单击“分配”。
+5. 在“许可证”页上，选择“Active Directory Premium”或“企业移动性套件”，然后单击“分配”。
 6. 在对话框中，选择要向其分配许可证的用户，然后单击复选标记图标以保存更改。
 
 ## 验证计划的同步任务
@@ -47,12 +46,12 @@
 4. 在“目录”页的顶部，选择“目录集成”。
 5. 在与本地 Active Directory 的集成下方，注意上次同步时间。
 
-<center>![云](./media/active-directory-aadconnect-whats-next/verify.png)</center>
+<center>![Cloud](./media/active-directory-aadconnect-whats-next/verify.png)</center>
 
 ## 启动计划的同步任务
-如果需要运行同步工作，你可以通过再次运行 Azure AD Connect 向导来实现此目的。需要提供 Azure AD 凭据。在向导中，选择“自定义同步选项”任务，然后在向导中一直单击“下一步”。最后，请确保已选中“初始配置完成后立即开始同步过程”框。
+如果需要运行同步任务，你可以通过再次运行 Azure AD Connect 向导来实现此目的。需要提供 Azure AD 凭据。在向导中，选择“自定义同步选项”任务，然后在向导中一直单击“下一步”。最后，请确保已选中“初始配置完成后立即开始同步过程”框。
 
-<center>![云](./media/active-directory-aadconnect-whats-next/startsynch.png)</center>
+<center>![Cloud](./media/active-directory-aadconnect-whats-next/startsynch.png)</center>
 
 有关“Azure AD Connect 同步：计划程序”的详细信息，请参阅 [Azure AD Connect 计划程序](/documentation/articles/active-directory-aadconnectsync-feature-scheduler/)
 
@@ -65,11 +64,12 @@
 
 | 其他任务 | 说明 |
 | --- | --- |
-| 查看选定的方案 |可让你查看当前的 Azure AD Connect 解决方案。这包括常规设置、同步的目录、同步设置，等等。 |
+| 查看选定的方案 |可让你查看当前的 Azure AD Connect 解决方案。这包括常规设置、同步的目录、同步设置等。 |
 | 自定义同步选项 |可让你更改当前的配置，包括在配置中添加其他 Active Directory 林，或启用同步选项，例如用户、组、设备或密码回写。 |
 | 启用暂存模式 |可让你暂存稍后将要同步的信息，但不会将任何内容导出到 Azure AD 或 Active Directory。这样，你便可以在同步之前进行预览。 |
 
 ## 后续步骤
 了解有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect/)的详细信息。
 
-<!---HONumber=Mooncake_1128_2016-->
+<!---HONumber=Mooncake_0227_2017-->
+<!---Update_Description: wording update -->

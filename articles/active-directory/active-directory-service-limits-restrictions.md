@@ -5,8 +5,7 @@
     documentationcenter=""
     author="curtand"
     manager="femila"
-    editor="" />  
-
+    editor="" />
 <tags
     ms.assetid="e4166a30-eb45-43b8-a466-6254b664fd1a"
     ms.service="active-directory"
@@ -14,10 +13,9 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="identity"
-    ms.date="11/09/2016"
-    ms.author="curtand"
-    wacn.date="12/12/2016"/>  
-
+    ms.date="02/09/2017"
+    wacn.date="03/07/2017"
+    ms.author="curtand" />  
 
 
 # Azure AD 服务限制和局限性
@@ -29,4 +27,5 @@
 - [以组织身份注册 Azure](/documentation/articles/sign-up-organization/)
 - [Azure 订阅与 Azure AD 的关联方式](/documentation/articles/active-directory-how-subscriptions-associated-directory/)
 
-<!---HONumber=Mooncake_1205_2016-->
+<!---HONumber=Mooncake_0227_2017-->
+<!--Update_Description: update meta properties -->

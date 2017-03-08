@@ -5,8 +5,7 @@
     documentationcenter=""
     author="curtand"
     manager="femila"
-    editor="" />  
-
+    editor="" />
 <tags
     ms.assetid="b9f01876-29d1-4ab8-8b74-04d43d532f4b"
     ms.service="active-directory"
@@ -14,10 +13,9 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="identity"
-    ms.date="11/09/2016"
-    ms.author="curtand"
-    wacn.date="12/13/2016"/>  
-
+    ms.date="02/13/2017"
+    wacn.date="03/07/2017"
+    ms.author="curtand" />  
 
 
 # 什么是 Azure 的自助服务注册？
@@ -125,13 +123,12 @@
 2.Office 365
 
    在 Office 365 中，可以使用“管理域”[](https://support.office.com/article/Navigate-to-the-Office-365-Manage-domains-page-026af1f2-0e6d-4f2d-9b33-fd147420fac2/)页上的选项来处理域和 DNS 记录。请参阅[在 Office 365 中验证域](https://support.office.com/article/Verify-your-domain-in-Office-365-6383f56d-3d09-4dcb-9b41-b5f5a5efd611/)。
-
-3.Windows PowerShell
+3. Windows PowerShell
 
    需要执行以下步骤以使用 Windows PowerShell 执行验证。
 
    | 步骤 | 要使用的 Cmdlet | 
-   | ---- | ---- | 
+   | --- | --- | 
    | 创建凭据对象 |Get-Credential | 
    | 连接到 Azure AD |Connect-MsolService | 
    | 获取域列表 |Get-MsolDomain | 
@@ -148,29 +145,29 @@
         connect-msolservice -credential $msolcred
 2. 获取域的列表：
 
-    	Get-MsolDomain
+    Get-MsolDomain
 3. 然后 Get-MsolDomainVerificationDns cmdlet 来创建质询：
 
-    	Get-MsolDomainVerificationDns -DomainName *your\_domain\_name* -Mode DnsTxtRecord
+    Get-MsolDomainVerificationDns -DomainName *your\_domain\_name* -Mode DnsTxtRecord
 
     例如：
 
-    	Get-MsolDomainVerificationDns -DomainName contoso.com -Mode DnsTxtRecord
+    Get-MsolDomainVerificationDns -DomainName contoso.com -Mode DnsTxtRecord
 4. 复制从此命令返回的值（质询）。
 
     例如：
 
-    	MS=32DD01B82C05D27151EA9AE93C5890787F0E65D9
+    MS=32DD01B82C05D27151EA9AE93C5890787F0E65D9
 5. 在公共 DNS 命名空间中，创建包含你在上一步复制的值的 DNS txt 记录。
 
     此记录的名称即是父域的名称，因此，如果你要使用 Windows Server 中的 DNS 角色创建此资源记录，请将记录名称保留空白，而只在文本框中粘贴该值
 6. 运行 Confirm-MsolDomain cmdlet 以验证质询：
 
-    	Confirm-MsolEmailVerifiedDomain -DomainName *your\_domain\_name*
+    Confirm-MsolEmailVerifiedDomain -DomainName *your\_domain\_name*
 
     例如：
 
-    	Confirm-MsolEmailVerifiedDomain -DomainName contoso.com
+    Confirm-MsolEmailVerifiedDomain -DomainName contoso.com
 
 如果质询成功，你将返回到提示符，且不会显示错误。
 
@@ -207,4 +204,5 @@
 
 [1]: ./media/active-directory-self-service-signup/SelfServiceSignUpControls.png
 
-<!---HONumber=Mooncake_1205_2016-->
+<!---HONumber=Mooncake_0227_2017-->
+<!--Update_Description: update meta properties -->

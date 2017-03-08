@@ -5,8 +5,7 @@
     documentationcenter=""
     author="curtand"
     manager="femila"
-    editor="" />  
-
+    editor="" />
 <tags
     ms.assetid="324a0b7a-4370-4b3d-bd25-2d5e7eafa683"
     ms.service="active-directory"
@@ -14,9 +13,9 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="11/09/2016"
-    ms.author="curtand" 
-    wacn.date="12/09/2016"/>
+    ms.date="02/13/2017"
+    wacn.date="03/07/2017"
+    ms.author="curtand" />
 
 # 已重置用户的密码
 
@@ -33,4 +32,5 @@
 - [管理 Azure AD](/documentation/articles/active-directory-administer/)
 - [在 Azure AD 中管理密码](/documentation/articles/active-directory-manage-passwords/)
 
-<!---HONumber=Mooncake_1128_2016-->
+<!---HONumber=Mooncake_0227_2017-->
+<!--Update_Description: update meta properties -->

@@ -1,148 +1,121 @@
 <properties
-	pageTitle="在 Azure Active Directory 中分配管理员角色 | Azure"
-	description="介绍 Azure Active Directory 提供的管理员角色，以及如何分配这些角色。"
-	services="active-directory"
-	documentationCenter=""
-	authors="curtand"
-	manager="femila"
-	editor=""/>
-
+    pageTitle="在 Azure Active Directory 中分配管理员角色 | Azure"
+    description="介绍 Azure Active Directory 提供的管理员角色，以及如何分配这些角色。"
+    services="active-directory"
+    documentationcenter=""
+    author="curtand"
+    manager="femila"
+    editor="" />
 <tags
-	ms.service="active-directory"
-	ms.workload="identity"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="08/31/2016"
-	ms.author="curtand"
-	wacn.date="01/03/2017"/>
+    ms.assetid="7fc27e8e-b55f-4194-9b8f-2e95705fb731"
+    ms.service="active-directory"
+    ms.workload="identity"
+    ms.tgt_pltfrm="na"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.date="02/13/2017"
+    wacn.date="03/07/2017"
+    ms.author="curtand" />
 
 # 在 Azure Active Directory 中分配管理员角色
-
-使用 Azure Active Directory (Azure AD) 时，可以指定不同的管理员来执行不同的功能。这些管理员可以按角色访问 Azure 门户预览或 Azure 经典管理门户中的各种功能：创建或编辑用户、将管理角色分配给他人、重置用户密码、管理用户许可证以及管理域，等等。分配为管理员角色的用户在组织订阅的所有云服务中拥有相同的权限，不管该角色是通过 Office 365 门户、Azure 经典管理门户还是用于 Windows PowerShell 的 Azure AD 模块分配的。
+使用 Azure Active Directory (Azure AD) 时，可以指定不同的管理员来执行不同的功能。这些管理员可以按角色访问 Azure 门户预览或 Azure 经典管理门户中的各种功能：创建或编辑用户、将管理角色分配给他人、重置用户密码、管理用户许可证以及管理域，等等。不论是通过 Office 365 门户、Azure 经典管理门户还是用于 Windows PowerShell 的 Azure AD 模块分配管理员角色，分配了该角色的用户在组织订阅的所有云服务中都拥有相同的权限。
 
 提供以下管理员角色：
 
+- **[计费管理员](#billing-administrator)**：进行采购、管理订阅、管理支持票证并监视服务运行状况。
+- **[全局管理员/公司管理员](#global-administrator)**：有权访问所有管理功能。注册 Azure 帐户的人员将成为全局管理员。只有全局管理员才能分配其他管理员角色。你的公司中可以有多个全局管理员。
 
-- **计费管理员**：进行采购、管理订阅、管理支持票证并监视服务运行状况。
-
-- **全局管理员/公司管理员**：有权访问所有管理功能。注册 Azure 帐户的人员将成为全局管理员。只有全局管理员才能分配其他管理员角色。你的公司中可以有多个全局管理员。
-
-	> [AZURE.NOTE] 在 Microsoft 图形 API、Azure AD 图形 API 和 Azure AD PowerShell 中，此角色标识为“公司管理员”。它是 [Azure 门户预览](https://portal.azure.cn)中的“全局管理员”。
-
-- **法规管理员**：
-
+  > [AZURE.NOTE]
+  在 Microsoft 图形 API、Azure AD 图形 API 和 Azure AD PowerShell 中，此角色标识为“公司管理员”。它是 [Azure 门户预览](https://portal.azure.cn)中的“全局管理员”。
+  >
+  >
+- **符合性管理员**：担任此角色的用户具有 [Office 365 安全性与符合性中心](https://support.office.com/zh-cn/article/Permissions-in-the-Office-365-Security-Compliance-Center-d10608af-7934-490a-818e-e68f17d0e9c1?ui=en-US&rs=en-US&ad=US&fromAR=1)和 [Exchange 管理中心](https://technet.microsoft.com/zh-cn/library/jj657489(v=exchg.150).aspx) 的管理权限，并可访问 Office 365 管理中心，读取其中的报告。有关详细信息，请参阅 [About Office 365 admin roles](https://support.office.com/article/About-Office-365-admin-roles-da585eea-f576-4f55-a1e0-87090b6aaa9d?ui=en-US&rs=en-US&ad=US)（关于 Office 365 管理员角色）。
 - **CRM 服务管理员**：具有此角色的用户在 Microsoft CRM Online（如果存在此服务）中拥有全局权限。有关详细信息，请参阅 [About Office 365 admin roles](https://support.office.com/article/About-Office-365-admin-roles-da585eea-f576-4f55-a1e0-87090b6aaa9d?ui=en-US&rs=en-US&ad=US)（关于 Office 365 管理员角色）。
-
-- **客户密码箱访问审批人**：如果启用了密码箱服务，具有此角色的用户可以审批 Microsoft 工程师访问公司信息的请求。有关详细信息，请参阅 [About Office 365 admin roles](https://support.office.com/article/About-Office-365-admin-roles-da585eea-f576-4f55-a1e0-87090b6aaa9d?ui=en-US&rs=en-US&ad=US)（关于 Office 365 管理员角色）。
-
 - **设备管理员**：具有此角色的用户将成为已加入 Azure Active Directory 的所有 Windows 10 设备上的管理员。
-
 - **目录读取者**：这是一个遗留的角色，分配给不支持[同意框架](/documentation/articles/active-directory-integrating-applications/)的应用程序。不应将它分配给任何用户。
-
 - **目录同步帐户**：请勿使用。此角色自动分配给 Azure AD Connect 服务，不可用于其他任何用途。
-
 - **目录写入者**：这是一个遗留的角色，分配给不支持[同意框架](/documentation/articles/active-directory-integrating-applications/)的应用程序。不应将它分配给任何用户。
-
 - **Exchange 服务管理员**：具有此角色的用户在 Microsoft Exchange Online（如果存在此服务）中拥有全局权限。有关详细信息，请参阅 [About Office 365 admin roles](https://support.office.com/article/About-Office-365-admin-roles-da585eea-f576-4f55-a1e0-87090b6aaa9d?ui=en-US&rs=en-US&ad=US)（关于 Office 365 管理员角色）。
-
 - **Intune 服务管理员**：具有此角色的用户在 Microsoft Intune Online（如果存在此服务）中拥有全局权限。有关详细信息，请参阅 [About Office 365 admin roles](https://support.office.com/article/About-Office-365-admin-roles-da585eea-f576-4f55-a1e0-87090b6aaa9d?ui=en-US&rs=en-US&ad=US)（关于 Office 365 管理员角色）。
-
 - **Skype for Business 服务管理员**：具有此角色的用户在 Microsoft Skype for Business（如果存在此服务）中拥有全局权限。有关详细信息，请参阅 [About Office 365 admin roles](https://support.office.com/article/About-Office-365-admin-roles-da585eea-f576-4f55-a1e0-87090b6aaa9d?ui=en-US&rs=en-US&ad=US)（关于 Office 365 管理员角色）。此角色以前称为 **Lync 服务管理员**角色。
+- **来宾邀请者**：担任此角色的用户可以管理来宾邀请。它不包括任何其他权限。
+- **邮箱管理员**：此角色仅充当 RIM Blackberry 设备的 Exchange Online 电子邮件支持的一部分。如果组织不使用 RIM Blackberry 设备上的 Exchange Online 电子邮件，请勿使用此角色。
+- **合作伙伴层 1 支持**：请勿使用。此角色已弃用，将来会从 Azure AD 中删除。此角色适用于少数 Microsoft 转售合作伙伴，不能广泛使用。
+- **合作伙伴层 2 支持**：请勿使用。此角色已弃用，将来会从 Azure AD 中删除。此角色适用于少数 Microsoft 转售合作伙伴，不能广泛使用。
+- **[密码管理员/支持管理员](#password-administrator)**：重置密码、管理服务请求并监视服务运行状况。密码管理员只能为用户和其他密码管理员重置密码。
 
-- **密码管理员/支持管理员**：重置密码、管理服务请求并监视服务运行状况。密码管理员只能为用户和其他密码管理员重置密码。
-
-	> [AZURE.NOTE] 在 Microsoft 图形 API、Azure AD 图形 API 和 Azure AD PowerShell 中，此角色标识为“支持管理员”。
-
+  > [AZURE.NOTE]
+  在 Microsoft 图形 API、Azure AD 图形 API 和 Azure AD PowerShell 中，此角色标识为“支持管理员”。
+  >
+  >
 - **SharePoint 服务管理员**：具有此角色的用户在 Microsoft SharePoint Online（如果存在此服务）中拥有全局权限。有关详细信息，请参阅 [About Office 365 admin roles](https://support.office.com/article/About-Office-365-admin-roles-da585eea-f576-4f55-a1e0-87090b6aaa9d?ui=en-US&rs=en-US&ad=US)（关于 Office 365 管理员角色）。
+- **[服务管理员](#service-administrator)**：管理服务请求并监视服务运行状况。
 
-- **服务管理员**：管理服务请求并监视服务运行状况。
-
-	> [AZURE.NOTE] 若要为用户分配服务管理员角色，全局管理员必须先在服务（例如 Exchange Online）中将管理权限分配给用户，然后在 Azure 经典管理门户中将服务管理员角色分配给用户。
-
-- **用户帐户管理员**：重置密码、监视服务运行状况，并管理用户帐户、用户组和服务请求。用户管理管理员权限存在一些限制。例如，他们不能删除全局管理员或创建其他管理员。另外，他们也不能为计费管理员、全局管理员和服务管理员重置密码。
-
-- **安全读取者**：能够以只读方式访问 Identity Protection Center、Privileged Identity Management、监视 Office 365 运行状况和 Office 365 安全与合规中心的一些安全功能。
-
-- **安全管理员**：拥有**安全读取者**角色的所有只读权限，再加上下列相同服务的一些附加管理权限：Identity Protection Center、Privileged Identity Management、监视 Office 365 运行状况和 Office 365 安全与合规中心。
+  > [AZURE.NOTE]
+  若要为用户分配服务管理员角色，全局管理员必须先在服务（例如 Exchange Online）中将管理权限分配给用户，然后在 Azure 经典管理门户中将服务管理员角色分配给用户。
+  >
+  >
+- **[用户帐户管理员](#user-administrator)**：重置密码、监视服务运行状况，并管理用户帐户、用户组和服务请求。用户管理管理员权限存在一些限制。例如，他们不能删除全局管理员或创建其他管理员。另外，他们也不能为计费管理员、全局管理员和服务管理员重置密码。
+- **[安全读取者](#security-reader)**：能够以只读方式访问 Identity Protection Center、Privileged Identity Management、监视 Office 365 运行状况和 Office 365 安全性与符合性中心的一些安全功能。
+- **[安全管理员](#security-administrator)**：拥有**安全读取者**角色的所有只读权限，再加上下列相同服务的一些附加管理权限：Identity Protection Center、Privileged Identity Management、监视 Office 365 运行状况和 Office 365 安全性与符合性中心。
 
 ## 管理员权限
+### 计费管理员 <a name="billing-administrator"></a>
+| 有权执行的操作 | 无权执行的操作 |
+| --- | --- |
+| <p>查看公司信息和用户信息</p><p>管理 Office 支持票证为 Office 产品</p><p>执行计费和采购操作</p> |<p>重置用户密码</p><p>创建和管理用户视图</p><p>创建、编辑和删除用户与组，以及管理用户许可证</p><p>管理域</p><p>管理公司信息</p><p>向其他人委派管理角色</p><p>使用目录同步</p><p>查看报告</p> |
 
-### 计费管理员
+### 全局管理员 <a name="global-administrator"></a>
+| 有权执行的操作 | 无权执行的操作 |
+| --- | --- |
+| <p>查看公司信息和用户信息</p><p>管理 Office 支持票证为 Office 产品</p><p>执行计费和采购操作</p><p>重置用户密码</p><p>创建和管理用户视图</p><p>创建、编辑和删除用户与组，以及管理用户许可证</p><p>管理域</p><p>管理公司信息</p><p>向其他人委派管理角色</p><p>使用目录同步</p><p>启用或禁用多重身份验证</p><p>查看报告</p> |不适用 |
 
-有权执行的操作 | 无权执行的操作
-------------- | -------------
-<p>查看公司信息和用户信息</p><p>管理 Office 支持票证为 Office 产品</p><p>执行计费和采购操作</p> | <p>重置用户密码</p><p>创建和管理用户视图</p><p>创建、编辑和删除用户与组，以及管理用户许可证</p><p>管理域</p><p>管理公司信息</p><p>向其他人委派管理角色</p><p>使用目录同步</p><p>查看报告</p>
+### 密码管理员 <a name="password-administrator"></a>
+| 有权执行的操作 | 无权执行的操作 |
+| --- | --- |
+| <p>查看公司信息和用户信息</p><p>管理 Office 支持票证</p><p>重置用户密码</p> |<p>为 Office 产品执行计费和采购操作</p><p>创建和管理用户视图</p><p>创建、编辑和删除用户与组，以及管理用户许可证</p><p>管理域</p><p>管理公司信息</p><p>向其他人委派管理角色</p><p>使用目录同步</p><p>查看报告</p> |
 
-### 全局管理员
+### 服务管理员 <a name="service-administrator"></a>
+| 有权执行的操作 | 无权执行的操作 |
+| --- | --- |
+| <p>查看公司信息和用户信息</p><p>管理 Office 支持票证</p> |<p>重置用户密码</p><p>为 Office 产品执行计费和采购操作</p><p>创建和管理用户视图</p><p>创建、编辑和删除用户与组，以及管理用户许可证</p><p>管理域</p><p>管理公司信息</p><p>向其他人委派管理角色</p><p>使用目录同步</p><p>查看报告</p> |
 
-有权执行的操作 | 无权执行的操作
-------------- | -------------
-<p>查看公司信息和用户信息</p><p>管理 Office 支持票证为 Office 产品</p><p>执行计费和采购操作</p><p>重置用户密码</p><p>创建和管理用户视图</p><p>创建、编辑和删除用户与组，以及管理用户许可证</p><p>管理域</p><p>管理公司信息</p><p>向其他人委派管理角色</p><p>使用目录同步</p><p>启用或禁用多重身份验证</p><p>查看报告</p> | 不适用
+### 用户管理员 <a name="user-administrator"></a>
+| 有权执行的操作 | 无权执行的操作 |
+| --- | --- |
+| <p>查看公司信息和用户信息</p><p>管理 Office 支持票证</p><p>重置用户密码，但有限制。他（她）不能为计费管理员、全局管理员和服务管理员重置密码。</p><p>创建和管理用户视图</p><p>创建、编辑和删除用户与组，以及管理用户许可证，但有限制。他（她）不能删除全局管理员或创建其他管理员。</p> |<p>为 Office 产品执行计费和采购操作</p><p>管理域</p><p>管理公司信息</p><p>向其他人委派管理角色</p><p>使用目录同步</p><p>启用或禁用多重身份验证</p><p>查看报告</p> |
 
-### 密码管理员
+### 安全读取者 <a name="security-reader"></a>
+| In | 有权执行的操作 |
+| --- | --- |
+| Identity Protection Center |读取安全功能的所有安全报告和设置信息<ul><li>反垃圾邮件<li>加密<li>数据丢失防护<li>防病毒<li>高级威胁防护<li>防钓鱼<li>邮件流规则 |
+| Privileged Identity Management |<p>以只读方式访问 Azure AD PIM 中所显示的一切信息：Azure AD 角色分配的策略和报告、安全审阅，以及在未来还可通过读取来访问 Azure AD 角色分配以外的方案的策略数据和报告。<p>**无法**注册 Azure AD PIM 或对它进行任何更改。担任此角色的人员可以在 PIM 的门户中或通过 PowerShell 激活其他角色（例如，全局管理员或特权角色管理员），前提是该用户是这些角色的候选用户。 |
+| <p>监视 Office 365 服务运行状况</p><p>Office 365 安全与合规中心</p> |<ul><li>读取和管理警报<li>读取安全策略<li>读取威胁情报、执行 Cloud App Discovery，以及在搜索和调查时执行隔离<li>读取所有报告 |
 
-有权执行的操作 | 无权执行的操作
-------------- | -------------
-<p>查看公司信息和用户信息</p><p>管理 Office 支持票证</p><p>重置用户密码</p> | <p>为 Office 产品执行计费和采购操作</p><p>创建和管理用户视图</p><p>创建、编辑和删除用户与组，以及管理用户许可证</p><p>管理域</p><p>管理公司信息</p><p>向其他人委派管理角色</p><p>使用目录同步</p><p>查看报告</p>
-
-### 服务管理员
-
-有权执行的操作 | 无权执行的操作
-------------- | -------------
-<p>查看公司信息和用户信息</p><p>管理 Office 支持票证</p> | <p>重置用户密码</p><p>为 Office 产品执行计费和采购操作</p><p>创建和管理用户视图</p><p>创建、编辑和删除用户与组，以及管理用户许可证</p><p>管理域</p><p>管理公司信息</p><p>向其他人委派管理角色</p><p>使用目录同步</p><p>查看报告</p>
-
-### 用户管理员
-
-有权执行的操作 | 无权执行的操作
-------------- | -------------
-<p>查看公司信息和用户信息</p><p>管理 Office 支持票证</p><p>重置用户密码，但有限制。他（她）不能为计费管理员、全局管理员和服务管理员重置密码。</p><p>创建和管理用户视图</p><p>创建、编辑和删除用户与组，以及管理用户许可证，但有限制。他（她）不能删除全局管理员或创建其他管理员。</p> | <p>为 Office 产品执行计费和采购操作</p><p>管理域</p><p>管理公司信息</p><p>向其他人委派管理角色</p><p>使用目录同步</p><p>启用或禁用多重身份验证</p><p>查看报告</p>
-
-### 安全读取者
-
-In | 有权执行的操作
-------------- | -------------
-Identity Protection Center | 读取安全功能的所有安全报告和设置信息<ul><li>反垃圾邮件<li>加密<li>数据丢失防护<li>防病毒<li>高级威胁防护<li>防钓鱼<li>邮件流规则
-Privileged Identity Management | <p>以只读方式访问 Azure AD PIM 中所显示的一切信息：Azure AD 角色分配的策略和报告、安全审阅，以及在未来还可通过读取来访问 Azure AD 角色分配以外的方案的策略数据和报告。<p>**无法**注册 Azure AD PIM 或对它进行任何更改。担任此角色的人员可以在 PIM 的门户中或通过 PowerShell，为其他角色（例如，全局管理员或特权角色管理员）的候选用户激活角色。
-<p>监视 Office 365 服务运行状况</p><p>Office 365 安全与合规中心</p> | <ul><li>读取和管理警报<li>读取安全策略<li>读取威胁情报、执行 Cloud App Discovery，以及在搜索和调查时执行隔离<li>读取所有报告
-
-### 安全管理员
-
-In | 有权执行的操作
-------------- | -------------
-Identity Protection Center | <ul><li>安全读取者角色的所有权限。<li>此外，还能够执行除了重置密码以外的所有 IPC 操作。
-Privileged Identity Management | <ul><li>安全读取者角色的所有权限。<li>**无法**管理 Azure AD 角色成员资格或设置。
-<p>监视 Office 365 服务运行状况</p><p>Office 365 安全与合规中心 | <ul><li>安全读取者角色的所有权限。<li>可以配置高级威胁防护功能中的所有设置（恶意软件和病毒保护、恶意 URL 配置、URL 跟踪等）。
+### 安全管理员 <a name="security-administrator"></a>
+| In | 有权执行的操作 |
+| --- | --- |
+| Identity Protection Center |<ul><li>安全读取者角色的所有权限。<li>此外，还能够执行除了重置密码以外的所有 IPC 操作。 |
+| Privileged Identity Management |<ul><li>安全读取者角色的所有权限。<li>**无法**管理 Azure AD 角色成员资格或设置。 |
+| <p>监视 Office 365 服务运行状况</p><p>Office 365 安全与合规中心 |<ul><li>安全读取者角色的所有权限。<li>可以配置高级威胁防护功能中的所有设置（恶意软件和病毒保护、恶意 URL 配置、URL 跟踪等）。 |
 
 ## 有关全局管理员角色的详细信息
-
 全局管理员有权访问所有管理功能。默认情况下，系统会将注册 Azure 订阅的人员指派为目录的全局管理员角色。只有全局管理员才能分配其他管理员角色。
 
 ## 分配或删除管理员角色
-
 1. 在 [Azure 经典管理门户](https://manage.windowsazure.cn)中，单击“Active Directory”，然后单击所在组织的目录的名称。
-
 2. 在“用户”页上，单击你想要编辑的用户的显示名称。
-
 3. 在“组织角色”列表中，选择要分配给此用户的管理员角色，或者选择“用户”（如果要删除现有的管理员角色）。
-
 4. 在“备用电子邮件地址”框中键入一个电子邮件地址。此电子邮件地址用于接收重要通知（包括有关密码自助重置的通知），因此，不管该用户是否能够访问 Azure，都必须能够访问其电子邮件帐户。
-
 5. 选择“允许”或“阻止”以指定是否允许用户登录并访问服务。
-
 6. 从“使用位置”下拉列表中指定位置。
-
 7. 完成后，单击“保存”。
 
 ## 后续步骤
-
-
 - 若要了解有关如何在 Azure 中控制资源访问的详细信息，请参阅 [Understanding resource access in Azure](/documentation/articles/active-directory-understanding-resource-access/)（了解 Azure 中的资源访问权限）
-
 - 有关 Azure Active Directory 如何与 Azure 订阅相关联的详细信息，请参阅 [How Azure subscriptions are associated with Azure Active Directory](/documentation/articles/active-directory-how-subscriptions-associated-directory/)（Azure 订阅与 Azure Active Directory 的关联方式）
-
 - [管理用户](/documentation/articles/active-directory-create-users/)
-
 - [管理密码](/documentation/articles/active-directory-manage-passwords/)
 
-<!---HONumber=Mooncake_Quality_Review_1230_2016-->
+<!---HONumber=Mooncake_0227_2017-->
+<!---Update_Description: wording update -->
