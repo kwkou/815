@@ -1,5 +1,5 @@
 <properties
-    pageTitle="在经典部署模型中为云服务创建内部负载均衡器 | Azure"
+    pageTitle="为 Azure 云服务创建内部负载均衡器 | Azure"
     description="了解如何在经典部署模型中使用 PowerShell 创建内部负载均衡器"
     services="load-balancer"
     documentationcenter="na"
@@ -13,8 +13,8 @@
     ms.topic="get-started-article"
     ms.tgt_pltfrm="na"
     ms.workload="infrastructure-services"
-    ms.date="02/09/2016"
-    wacn.date="01/13/2017"
+    ms.date="01/23/2017"
+    wacn.date="03/03/2017"
     ms.author="kumud" />
 
 # 开始为云服务创建内部负载均衡器（经典）
@@ -37,7 +37,7 @@ Azure 具有两种不同的部署模型，用于创建和处理资源：[Resourc
 
 ### 步骤 1
 
-在 Visual Studio 中打开云部署的服务配置文件 \(.cscfg\)，并在网络配置的最后一个“`</Role>`”项下添加以下节，以便创建内部负载均衡。
+在 Visual Studio 中打开云部署的服务配置文件 (.cscfg)，并在网络配置的最后一个“`</Role>`”项下添加以下节，以便创建内部负载均衡。
 
     <NetworkConfiguration>
         <LoadBalancers>
@@ -61,7 +61,7 @@ Azure 具有两种不同的部署模型，用于创建和处理资源：[Resourc
 
 ### 步骤 2
 
-更改服务定义 \(.csdef\) 文件，以便向内部负载均衡添加终结点。创建角色实例的那一刻，服务定义文件会将角色实例添加到内部负载均衡。
+更改服务定义 (.csdef) 文件，以便向内部负载均衡添加终结点。创建角色实例的那一刻，服务定义文件会将角色实例添加到内部负载均衡。
 
     <WorkerRole name="worker-role-name" vmsize="worker-role-size" enableNativeCodeExecution="[true|false]">
         <Endpoints>
@@ -85,5 +85,5 @@ Azure 具有两种不同的部署模型，用于创建和处理资源：[Resourc
 
 [为负载均衡器配置空闲 TCP 超时设置](/documentation/articles/load-balancer-tcp-idle-timeout/)
 
-<!---HONumber=Mooncake_0109_2017-->
-<!--Update_Description: update meta properties & wording update & update link references & update code-->
+<!---HONumber=Mooncake_0227_2017-->
+<!--Update_Description: update meta properties; wording update-->

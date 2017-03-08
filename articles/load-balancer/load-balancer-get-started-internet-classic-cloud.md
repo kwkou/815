@@ -1,5 +1,5 @@
 <properties
-    pageTitle="开始在经典部署模型中为云服务创建面向 Internet 的负载均衡器 | Azure"
+    pageTitle="为 Azure 云服务创建面向 Internet 的负载均衡器 | Azure"
     description="了解如何在经典部署模型中为云服务创建面向 Internet 的负载均衡器"
     services="load-balancer"
     documentationcenter="na"
@@ -13,8 +13,8 @@
     ms.topic="get-started-article"
     ms.tgt_pltfrm="na"
     ms.workload="infrastructure-services"
-    ms.date="03/17/2016"
-    wacn.date="01/13/2017"
+    ms.date="01/23/2017"
+    wacn.date="03/03/2017"
     ms.author="kumud" />
 
 # 开始为云服务创建面向 Internet 的负载均衡器
@@ -68,8 +68,7 @@
 
 负载均衡器组合了终结点信息和探测器信息，以便以 `http://{DIP of VM}:80/Probe.aspx` 格式创建可用于查询服务的运行状况的 URL。
 
-该服务通过同一 IP 地址检测定期探测。这是来自正在运行虚拟机的节点主机的运行状况探测请求。
-该服务必须对负载均衡器以 HTTP 200 状态代码进行响应，以假设该服务处于正常状态。任何其他 HTTP 状态代码（例如 503）会直接将虚拟机从轮转列表中删除。
+该服务通过同一 IP 地址检测定期探测。这是来自正在运行虚拟机的节点主机的运行状况探测请求。该服务必须对负载均衡器以 HTTP 200 状态代码进行响应，以假设该服务处于正常状态。任何其他 HTTP 状态代码（例如 503）会直接将虚拟机从轮转列表中删除。
 
 探测器定义还控制探测的频率。在上面的示例中，负载均衡器每隔 5 秒探测一次终结点。如果在 10 秒（两个探测时间间隔）内未收到肯定应答，则认为探测器关闭，并且虚拟机将从轮转列表中删除。同样，如果该服务已退出轮转列表并且收到肯定应答，则该服务将立即回到轮转列表。如果该服务在正常和不正常之间波动，负载均衡器可以决定推迟将该服务重新引入到轮转列表，直到多次探测的结果为正常。
 
@@ -83,5 +82,5 @@
 
 [为负载均衡器配置空闲 TCP 超时设置](/documentation/articles/load-balancer-tcp-idle-timeout/)
 
-<!---HONumber=Mooncake_0109_2017-->
-<!--Update_Description: update meta properties & wording update & update link references & update code-->
+<!---HONumber=Mooncake_0227_2017-->
+<!--Update_Description: update meta properties; wording update -->

@@ -1,36 +1,36 @@
 <properties
-   pageTitle="在 Resource Manager 中使用 PowerShell 创建内部负载均衡器 | Azure"
-   description="了解如何在 Resource Manager 中使用 PowerShell 创建内部负载均衡器"
-   services="load-balancer"
-   documentationCenter="na"
-   authors="sdwheeler"
-   manager="carmonm"
-   editor=""
-   tags="azure-resource-manager"
-/>  
-
+    pageTitle="创建 Azure 内部负载均衡器 - PowerShell | Azure"
+    description="了解如何在 Resource Manager 中使用 PowerShell 创建内部负载均衡器"
+    services="load-balancer"
+    documentationcenter="na"
+    author="kumudd"
+    manager="timlt"
+    tags="azure-resource-manager" />
 <tags
-   ms.service="load-balancer"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
-   ms.date="10/24/2016"
-   wacn.date="12/30/2016"
-   ms.author="sewhee" />  
+    ms.assetid="c6c98981-df9d-4dd7-a94b-cc7d1dc99369"
+    ms.service="load-balancer"
+    ms.devlang="na"
+    ms.topic="get-started-article"
+    ms.tgt_pltfrm="na"
+    ms.workload="infrastructure-services"
+    ms.date="01/23/2017"
+    wacn.date="03/03/2017"
+    ms.author="kumud" />  
 
 
 # 使用 PowerShell 创建内部负载均衡器
 
 > [AZURE.SELECTOR]
-[Azure Portal](/documentation/articles/load-balancer-get-started-ilb-arm-portal/)
-[PowerShell](/documentation/articles/load-balancer-get-started-ilb-arm-ps/)
-[Azure CLI](/documentation/articles/load-balancer-get-started-ilb-arm-cli/)
-[Template](/documentation/articles/load-balancer-get-started-ilb-arm-template/)
+- [Azure 门户](/documentation/articles/load-balancer-get-started-ilb-arm-portal/)
+- [PowerShell](/documentation/articles/load-balancer-get-started-ilb-arm-ps/)
+- [Azure CLI](/documentation/articles/load-balancer-get-started-ilb-arm-cli/)
+- [模板](/documentation/articles/load-balancer-get-started-ilb-arm-template/)
 
->[AZURE.INCLUDE [load-balancer-get-started-ilb-intro-include.md](../../includes/load-balancer-get-started-ilb-intro-include.md)]
+[AZURE.INCLUDE [load-balancer-get-started-ilb-intro-include.md](../../includes/load-balancer-get-started-ilb-intro-include.md)]
 
->[AZURE.NOTE] Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model/)。本文介绍如何使用 Resource Manager 部署模型。Microsoft 建议对大多数新部署使用该模型，而不要使用[经典部署模型](/documentation/articles/load-balancer-get-started-ilb-classic-ps/)。
+> [AZURE.NOTE]
+Azure 具有两种不同的部署模型，用于创建和处理资源：[Resource Manager 模型和经典模型](/documentation/articles/resource-manager-deployment-model/)。本文介绍如何使用 Resource Manager 部署模型。Azure 建议对大多数新的部署使用该模型，而不是[经典部署模型](/documentation/articles/load-balancer-get-started-ilb-classic-ps/)。
+>
 
 [AZURE.INCLUDE [load-balancer-get-started-ilb-scenario-include.md](../../includes/load-balancer-get-started-ilb-scenario-include.md)]
 
@@ -65,12 +65,11 @@
 
 	Get-AzureRmSubscription
 
-系统将提示你使用凭据进行身份验证。<BR>
+系统将提示你使用凭据进行身份验证。
 
 ### 步骤 3
 
 选择要使用的 Azure 订阅。
-
 
 	Select-AzureRmSubscription -Subscriptionid "GUID of subscription"
 
@@ -78,7 +77,7 @@
 
 创建新的资源组（如果要使用现有的资源组，请跳过此步骤）
 
-	New-AzureRmResourceGroup -Name NRP-RG -location "China East"
+    New-AzureRmResourceGroup -Name NRP-RG -location "China East"
 
 Azure 资源管理器要求所有资源组指定一个位置。此位置将用作该资源组中的资源的默认位置。请确保用于创建负载均衡器的所有命令都使用相同的资源组。
 
@@ -88,11 +87,11 @@ Azure 资源管理器要求所有资源组指定一个位置。此位置将用�
 
 为虚拟网络创建子网，并将其分配给变量 $backendSubnet
 
-	$backendSubnet = New-AzureRmVirtualNetworkSubnetConfig -Name LB-Subnet-BE -AddressPrefix 10.0.2.0/24
+    $backendSubnet = New-AzureRmVirtualNetworkSubnetConfig -Name LB-Subnet-BE -AddressPrefix 10.0.2.0/24
 
 创建虚拟网络：
 
-	$vnet= New-AzureRmVirtualNetwork -Name NRPVNet -ResourceGroupName NRP-RG -Location "China East" -AddressPrefix 10.0.0.0/16 -Subnet $backendSubnet
+    $vnet= New-AzureRmVirtualNetwork -Name NRPVNet -ResourceGroupName NRP-RG -Location "China East" -AddressPrefix 10.0.0.0/16 -Subnet $backendSubnet
 
 创建虚拟网络，将子网 lb-subnet-be 添加到虚拟网络 NRPVNet，并将其分配给变量 $vnet
 
@@ -104,13 +103,13 @@ Azure 资源管理器要求所有资源组指定一个位置。此位置将用�
 
 使用专用 IP 地址 10.0.2.5 为子网 10.0.2.0/24 创建前端 IP 池，该池将是传入网络流量终结点。
 
-	$frontendIP = New-AzureRmLoadBalancerFrontendIpConfig -Name LB-Frontend -PrivateIpAddress 10.0.2.5 -SubnetId $vnet.subnets[0].Id
+    $frontendIP = New-AzureRmLoadBalancerFrontendIpConfig -Name LB-Frontend -PrivateIpAddress 10.0.2.5 -SubnetId $vnet.subnets[0].Id
 
 ### 步骤 2
 
 设置用于从前端 IP 池接收传入流量的后端地址池：
 
-	$beaddresspool= New-AzureRmLoadBalancerBackendAddressPoolConfig -Name "LB-backend"
+    $beaddresspool= New-AzureRmLoadBalancerBackendAddressPoolConfig -Name "LB-backend"
 
 
 ## 创建 LB 规则、NAT 规则、探测器和负载均衡器
@@ -119,14 +118,13 @@ Azure 资源管理器要求所有资源组指定一个位置。此位置将用�
 
 ### 步骤 1
 
-	$inboundNATRule1= New-AzureRmLoadBalancerInboundNatRuleConfig -Name "RDP1" -FrontendIpConfiguration $frontendIP -Protocol TCP -FrontendPort 3441 -BackendPort 3389
+    $inboundNATRule1= New-AzureRmLoadBalancerInboundNatRuleConfig -Name "RDP1" -FrontendIpConfiguration $frontendIP -Protocol TCP -FrontendPort 3441 -BackendPort 3389
 
-	$inboundNATRule2= New-AzureRmLoadBalancerInboundNatRuleConfig -Name "RDP2" -FrontendIpConfiguration $frontendIP -Protocol TCP -FrontendPort 3442 -BackendPort 3389
+    $inboundNATRule2= New-AzureRmLoadBalancerInboundNatRuleConfig -Name "RDP2" -FrontendIpConfiguration $frontendIP -Protocol TCP -FrontendPort 3442 -BackendPort 3389
 
-	$healthProbe = New-AzureRmLoadBalancerProbeConfig -Name "HealthProbe" -RequestPath "HealthProbe.aspx" -Protocol http -Port 80 -IntervalInSeconds 15 -ProbeCount 2
+    $healthProbe = New-AzureRmLoadBalancerProbeConfig -Name "HealthProbe" -RequestPath "HealthProbe.aspx" -Protocol http -Port 80 -IntervalInSeconds 15 -ProbeCount 2
 
-	$lbrule = New-AzureRmLoadBalancerRuleConfig -Name "HTTP" -FrontendIpConfiguration $frontendIP -BackendAddressPool $beAddressPool -Probe $healthProbe -Protocol Tcp -FrontendPort 80 -BackendPort 80
-
+    $lbrule = New-AzureRmLoadBalancerRuleConfig -Name "HTTP" -FrontendIpConfiguration $frontendIP -BackendAddressPool $beAddressPool -Probe $healthProbe -Protocol Tcp -FrontendPort 80 -BackendPort 80
 
 上面的示例将创建以下项：
 
@@ -139,7 +137,7 @@ Azure 资源管理器要求所有资源组指定一个位置。此位置将用�
 
 将所有对象（NAT 规则、负载均衡器规则、探测配置）添加在一起创建负载均衡器：
 
-	$NRPLB = New-AzureRmLoadBalancer -ResourceGroupName "NRP-RG" -Name "NRP-LB" -Location "China East" -FrontendIpConfiguration $frontendIP -InboundNatRule $inboundNATRule1,$inboundNatRule2 -LoadBalancingRule $lbrule -BackendAddressPool $beAddressPool -Probe $healthProbe 
+    $NRPLB = New-AzureRmLoadBalancer -ResourceGroupName "NRP-RG" -Name "NRP-LB" -Location "China East" -FrontendIpConfiguration $frontendIP -InboundNatRule $inboundNATRule1,$inboundNatRule2 -LoadBalancingRule $lbrule -BackendAddressPool $beAddressPool -Probe $healthProbe 
 
 
 ## 创建网络接口
@@ -150,14 +148,14 @@ Azure 资源管理器要求所有资源组指定一个位置。此位置将用�
 
 获取用于创建网络接口的资源虚拟网络和子网：
 
-	$vnet = Get-AzureRmVirtualNetwork -Name NRPVNet -ResourceGroupName NRP-RG
+    $vnet = Get-AzureRmVirtualNetwork -Name NRPVNet -ResourceGroupName NRP-RG
 
-	$backendSubnet = Get-AzureRmVirtualNetworkSubnetConfig -Name LB-Subnet-BE -VirtualNetwork $vnet
+    $backendSubnet = Get-AzureRmVirtualNetworkSubnetConfig -Name LB-Subnet-BE -VirtualNetwork $vnet
 
 
 此步骤创建属于负载均衡器后端池的网络接口，并为此网络接口关联 RDP 的第一个 NAT 规则：
 
-	$backendnic1= New-AzureRmNetworkInterface -ResourceGroupName "NRP-RG" -Name lb-nic1-be -Location "China East" -PrivateIpAddress 10.0.2.6 -Subnet $backendSubnet -LoadBalancerBackendAddressPool $nrplb.BackendAddressPools[0] -LoadBalancerInboundNatRule $nrplb.InboundNatRules[0]
+    $backendnic1= New-AzureRmNetworkInterface -ResourceGroupName "NRP-RG" -Name lb-nic1-be -Location "China East" -PrivateIpAddress 10.0.2.6 -Subnet $backendSubnet -LoadBalancerBackendAddressPool $nrplb.BackendAddressPools[0] -LoadBalancerInboundNatRule $nrplb.InboundNatRules[0]
 
 ### 步骤 2
 
@@ -165,7 +163,7 @@ Azure 资源管理器要求所有资源组指定一个位置。此位置将用�
 
 此步骤创建第二个网络接口，将其分配给同一负载均衡器后端池，并关联为 RDP 创建的第二个 NAT 规则：
 
- 	$backendnic2= New-AzureRmNetworkInterface -ResourceGroupName "NRP-RG" -Name lb-nic2-be -Location "China East" -PrivateIpAddress 10.0.2.7 -Subnet $backendSubnet -LoadBalancerBackendAddressPool $nrplb.BackendAddressPools[0] -LoadBalancerInboundNatRule $nrplb.InboundNatRules[1]
+    $backendnic2= New-AzureRmNetworkInterface -ResourceGroupName "NRP-RG" -Name lb-nic2-be -Location "China East" -PrivateIpAddress 10.0.2.7 -Subnet $backendSubnet -LoadBalancerBackendAddressPool $nrplb.BackendAddressPools[0] -LoadBalancerInboundNatRule $nrplb.InboundNatRules[1]
 
 
 最终结果将显示以下信息：
@@ -204,7 +202,7 @@ Azure 资源管理器要求所有资源组指定一个位置。此位置将用�
                            ],
                            "ProvisioningState": "Succeeded",
                            "Name": "ipconfig1",
-                           "Etag": "W/"d448256a-e1df-413a-9103-a137e07276d1"",
+                           "Etag": "W/\"d448256a-e1df-413a-9103-a137e07276d1\"",
                            "Id": "/subscriptions/f50504a2-1865-4541-823a-b32842e3e0ee/resourceGroups/NRP-RG/providers/Microsoft.Network/networkInterfaces/lb-nic1-be/ipConfigurations/ipconfig1"
                          }
                        ]
@@ -222,7 +220,7 @@ Azure 资源管理器要求所有资源组指定一个位置。此位置将用�
 
 使用命令 Add-AzureRmVMNetworkInterface 将 NIC 分配给虚拟机。
 
-可以通过以下文档找到相关分步说明，以创建虚拟机并将其分配给 NIC：[使用 PowerShell 创建 Azure VM(/documentation/articles/virtual-machines-windows-create-powershell)。
+可以按照以下文档找到相关分步说明，以创建虚拟机并将其分配给 NIC：[使用 PowerShell 创建 Azure VM](/documentation/articles/virtual-machines-windows-ps-create/)。
 
 ## 添加网络接口
 
@@ -232,19 +230,19 @@ Azure 资源管理器要求所有资源组指定一个位置。此位置将用�
 
 将负载均衡器资源加载到变量中（如果你还没有这样做）。所用的变量名为 $lb，并使用前面创建的负载均衡器资源的相同名称。
 
-	$lb= Get-AzureRmLoadBalancer –name NRP-LB -resourcegroupname NRP-RG
+    $lb = Get-AzureRmLoadBalancer -name NRP-LB -resourcegroupname NRP-RG
 
 ### 步骤 2
 
 将后端配置加载到变量。
 
-	$backend= Get-AzureRmLoadBalancerBackendAddressPoolConfig -name backendpool1 -LoadBalancer $lb
+    $backend = Get-AzureRmLoadBalancerBackendAddressPoolConfig -name backendpool1 -LoadBalancer $lb
 
 ### 步骤 3
 
 将已创建的网络接口加载到变量中。所用的变量名称为 $nic。所用的网络接口名称与前面的示例相同。
 
-	$nic=Get-AzureRmNetworkInterface –name lb-nic1-be -resourcegroupname NRP-RG
+    $nic = Get-AzureRmNetworkInterface -name lb-nic1-be -resourcegroupname NRP-RG
 
 ### 步骤 4
 
@@ -256,7 +254,7 @@ Azure 资源管理器要求所有资源组指定一个位置。此位置将用�
 
 保存网络接口对象。
 
-	Set-AzureRmNetworkInterface -NetworkInterface $nic
+    Set-AzureRmNetworkInterface -NetworkInterface $nic
 
 将网络接口添加到负载均衡器后端池后，它会根据该负载均衡器资源的负载均衡规则开始接收网络流量。
 
@@ -265,30 +263,29 @@ Azure 资源管理器要求所有资源组指定一个位置。此位置将用�
 ### 步骤 1
 使用前面示例中的负载均衡器，通过 Get-AzureRmLoadBalancer 将负载均衡器对象分配给变量 $slb
 
-	$slb=Get-AzureRmLoadBalancer -Name NRPLB -ResourceGroupName NRP-RG
+    $slb = Get-AzureRmLoadBalancer -Name NRPLB -ResourceGroupName NRP-RG
 
 ### 步骤 2
 
 在以下示例中，你将在前端使用端口 81 添加新的入站 NAT 规则，并将后端池的端口 8181 添加到现有的负载均衡器
 
-	$slb | Add-AzureRmLoadBalancerInboundNatRuleConfig -Name NewRule -FrontendIpConfiguration $slb.FrontendIpConfigurations[0] -FrontendPort 81  -BackendPort 8181 -Protocol Tcp
-
+    $slb | Add-AzureRmLoadBalancerInboundNatRuleConfig -Name NewRule -FrontendIpConfiguration $slb.FrontendIpConfigurations[0] -FrontendPort 81  -BackendPort 8181 -Protocol Tcp
 
 ### 步骤 3
 
 使用 Set-AzureLoadBalancer 保存新配置
 
-	$slb | Set-AzureRmLoadBalancer
+    $slb | Set-AzureRmLoadBalancer
 
 ## 删除负载均衡器
 
 使用命令 Remove-AzureRmLoadBalancer 删除以前在名为“NRP-RG”的资源组中创建的名为“NRP-LB”的负载均衡器
 
-	Remove-AzureRmLoadBalancer -Name NRPLB -ResourceGroupName NRP-RG
+    Remove-AzureRmLoadBalancer -Name NRPLB -ResourceGroupName NRP-RG
 
->[AZURE.NOTE] 你可以使用可选开关 -Force 来避免显示删除提示。
-
-
+> [AZURE.NOTE]
+你可以使用可选开关 -Force 来避免显示删除提示。
+>
 
 ## 后续步骤
 
@@ -296,4 +293,5 @@ Azure 资源管理器要求所有资源组指定一个位置。此位置将用�
 
 [为负载均衡器配置空闲 TCP 超时设置](/documentation/articles/load-balancer-tcp-idle-timeout/)
 
-<!---HONumber=Mooncake_1128_2016-->
+<!---HONumber=Mooncake_0227_2017-->
+<!--Update_Description:update meta properties; wording update -->

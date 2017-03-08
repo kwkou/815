@@ -13,8 +13,8 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="infrastructure-services"
-    ms.date="11/28/2016"
-    wacn.date="01/13/2017"
+    ms.date="02/10/2017"
+    wacn.date="03/03/2017"
     ms.author="annahar" />  
 
 
@@ -23,7 +23,7 @@
 - [PowerShell](/documentation/articles/load-balancer-multiple-ip/)
 - [CLI](/documentation/articles/load-balancer-multiple-ip-cli/)
 
-本文介绍如何将 Azure Load Balancer 用于每个虚拟网络接口 \(NIC\) 的多个 IP 地址。目前，对一个 NIC 的多个 IP 地址的支持是预览版的功能。有关详细信息，请参阅本文的[限制](#limitations)部分。以下场景说明了如何通过负载均衡器使用此功能。
+本文介绍如何将 Azure 负载均衡器用于每个虚拟网络接口 (NIC) 的多个 IP 地址。目前，对一个 NIC 的多个 IP 地址的支持是预览版的功能。有关详细信息，请参阅本文的[限制](#limitations)部分。以下场景说明了如何通过负载均衡器使用此功能。
 
 在本场景中有两个运行 Windows 的 VM，每个 VM 有一个 NIC。每个 NIC 具有多个 IP 配置。每个 VM 都托管了 contoso.com 和 fabrikam.com 这两个网站。每个网站都绑定到 NIC 的一个 IP 配置。我们使用负载均衡器来公开两个前端 IP 地址，每个地址分别对应于一个网站，从而将流量分发到各个网站的 IP 配置。此场景中两个前端以及两个后端池 IP 地址都使用相同的端口号。
 
@@ -46,7 +46,7 @@
         $location = "chinaeast".
         $myResourceGroup = "contosofabrikam"
 
-有关详细信息，请参阅[创建资源组](/documentation/articles/virtual-machines-windows-ps-create/)的第 2 步。
+    有关详细信息，请参阅[创建资源组](/documentation/articles/virtual-machines-windows-ps-create/)的第 2 步。
 
 3. [创建用于包含 VM 的可用性集](/documentation/articles/virtual-machines-windows-create-availability-set/)。对于此场景，请使用以下命令：
 
@@ -57,7 +57,7 @@
         $availset = Get-AzureRmAvailabilitySet -ResourceGroupName "contosofabrikam" -Name "myAvailset"
         New-AzureRmVMConfig -VMName "VM1" -VMSize "Standard_DS1_v2" -AvailabilitySetId $availset.Id
 
-然后完成[创建 Windows VM](/documentation/articles/virtual-machines-windows-ps-create/) 的步骤 6.3 至 6.8。
+    然后完成[创建 Windows VM](/documentation/articles/virtual-machines-windows-ps-create/) 的步骤 6.3 至 6.8。
 
 5. 向每个 VM 中添加另一个 IP 配置。按照[将多个 IP 地址分配给虚拟机](/documentation/articles/virtual-network-multiple-ip-addresses-powershell/#add)文章中的说明执行操作。请使用以下配置设置：
 
@@ -67,7 +67,7 @@
         $IPConfigName4 = "VM1-ipconfig2"
         $Subnet1 = Get-AzureRmVirtualNetworkSubnetConfig -Name "mySubnet" -VirtualNetwork $myVnet
 
-在本文中无需将辅助 IP 配置与公共 IP 关联。请编辑此命令以删除公共 IP 关联部分。
+    在本文中无需将辅助 IP 配置与公共 IP 关联。请编辑此命令以删除公共 IP 关联部分。
 
 6. 针对 VM2 再次完成本文的步骤 4 到 6。执行此操作时务必将 VM 名称替换为 VM2。请注意，无需为第二个 VM 创建虚拟网络。用户可以根据自己的用例创建或不创建新的子网。
 
@@ -123,5 +123,5 @@
 
 13. 最后，必须将 DNS 资源记录配置为指向各自的负载均衡器的前端 IP 地址。
 
-<!---HONumber=Mooncake_0109_2017-->
-<!--Update_Description: update meta properties & wording update & update link references & update code-->
+<!---HONumber=Mooncake_0227_2017-->
+<!--Update_Description: update meta properties; wording update-->

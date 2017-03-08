@@ -1,5 +1,5 @@
 <properties
-    pageTitle="在经典部署模型中使用 PowerShell 创建内部负载均衡器 | Azure"
+    pageTitle="创建 Azure 内部负载均衡器 - PowerShell 经典 | Azure"
     description="了解如何在经典部署模型中使用 PowerShell 创建内部负载均衡器"
     services="load-balancer"
     documentationcenter="na"
@@ -14,8 +14,8 @@
     ms.topic="get-started-article"
     ms.tgt_pltfrm="na"
     ms.workload="infrastructure-services"
-    ms.date="02/09/2016"
-    wacn.date="01/13/2017"
+    ms.date="01/23/2017"
+    wacn.date="03/03/2017"
     ms.author="kumud" />
 
 # 开始使用 PowerShell 创建内部负载均衡器（经典）
@@ -39,7 +39,7 @@ Azure 具有两种不同的部署模型，用于创建和处理资源：[Resourc
 
 1. 创建内部负载均衡实例，该实例将是要在负载均衡集的服务器上进行负载均衡的传入流量的终结点。
 2. 添加与虚拟机对应的终结点以接收传入流量。
-3. 配置将发送要进行负载均衡的流量的服务器，以将其流量发送到内部负载均衡实例的虚拟 IP \(VIP\) 地址。
+3. 配置将发送要进行负载均衡的流量的服务器，以将其流量发送到内部负载均衡实例的虚拟 IP (VIP) 地址。
 
 ### 步骤 1：创建内部负载均衡实例
 
@@ -70,14 +70,14 @@ Azure 具有两种不同的部署模型，用于创建和处理资源：[Resourc
 
 ### 步骤 3：配置服务器，将其流量发送到新的内部负载均衡终结点
 
-你必须将其流量要进行负载均衡的服务器配置为使用内部负载均衡实例的新 IP 地址 \(VIP\)。此地址是内部负载均衡实例正在侦听的地址。在大多数情况下，你只需添加或修改内部负载均衡实例的 VIP 的 DNS 记录。
+你必须将其流量要进行负载均衡的服务器配置为使用内部负载均衡实例的新 IP 地址 (VIP)。此地址是内部负载均衡实例正在侦听的地址。在大多数情况下，你只需添加或修改内部负载均衡实例的 VIP 的 DNS 记录。
 
 如果在创建内部负载均衡实例期间指定了 IP 地址，则你已有 VIP。否则，你可以通过以下命令查看 VIP：
 
     $svc="<Cloud Service Name>"
     Get-AzureService -ServiceName $svc | Get-AzureInternalLoadBalancer
 
-若要使用这些命令，请填充值并删除 \< 和 \>。下面是一个示例：
+若要使用这些命令，请填充值并删除 < 和 >。下面是一个示例：
 
     $svc="mytestcloud"
     Get-AzureService -ServiceName $svc | Get-AzureInternalLoadBalancer
@@ -129,7 +129,7 @@ Azure Platform 对各种管理方案使用一个公开可路由的静态 IPv4 �
     $epname="<Name of the endpoint>"
     Get-AzureVM -ServiceName $svc -Name $vmname | Remove-AzureEndpoint -Name $epname | Update-AzureVM
 
-若要使用这些命令，请填充值并删除 \< 和 \>。
+若要使用这些命令，请填充值并删除 < 和 >。
 
 下面是一个示例：
 
@@ -143,7 +143,7 @@ Azure Platform 对各种管理方案使用一个公开可路由的静态 IPv4 �
     $svc="<Cloud service name>"
     Remove-AzureInternalLoadBalancer -ServiceName $svc
 
-若要使用这些命令，请填充值并删除 \< 和 \>。
+若要使用这些命令，请填充值并删除 < 和 >。
 
 下面是一个示例：
 
@@ -165,5 +165,5 @@ Azure Platform 对各种管理方案使用一个公开可路由的静态 IPv4 �
 
 [为负载均衡器配置空闲 TCP 超时设置](/documentation/articles/load-balancer-tcp-idle-timeout/)
 
-<!---HONumber=Mooncake_0109_2017-->
-<!--Update_Description: update meta properties & wording update & update link references & update code-->
+<!---HONumber=Mooncake_0227_2017-->
+<!--Update_Description: update meta properties; wording update -->

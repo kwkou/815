@@ -1,23 +1,22 @@
 
 <properties
-   pageTitle="内部负载均衡器概述 | Azure"
-   description="内部负载均衡器及其功能的概述。Azure 的负载均衡器的工作原理，以及配置内部终结点的可能方案"
-   services="load-balancer"
-   documentationCenter="na"
-   authors="sdwheeler"
-   manager="carmonm"
-   editor="tysonn" />  
-
+    pageTitle="内部负载均衡器概述 | Azure"
+    description="内部负载均衡器及其功能的概述。Azure 的负载均衡器的工作原理，以及配置内部终结点的可能方案"
+    services="load-balancer"
+    documentationcenter="na"
+    author="kumudd"
+    manager="timlt"
+    editor="tysonn" />
 <tags
-   ms.service="load-balancer"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
-   ms.date="10/24/2016"
-   wacn.date="12/05/2016"
-   ms.author="sewhee" />  
-
+    ms.assetid="36065bfe-0ef1-46f9-a9e1-80b229105c85"
+    ms.service="load-balancer"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.tgt_pltfrm="na"
+    ms.workload="infrastructure-services"
+    ms.date="10/24/2016"
+    wacn.date="03/03/2017"
+    ms.author="kumud" />  
 
 
 # Internal load balancer overview（内部负载均衡器概述）
@@ -78,7 +77,7 @@ LOB 的另一方案是通过站点到站点 VPN 连接到在其中配置了 ILB 
 
 ## 后续步骤
 
-[Azure Load Balancer 的 Azure Resource Manager 支持](/documentation/articles/load-balancer-arm/)
+[Azure 负载均衡器的 Azure Resource Manager 支持](/documentation/articles/load-balancer-arm/)
 
 [开始配置面向 Internet 的负载均衡器](/documentation/articles/load-balancer-get-started-internet-arm-ps/)
 
@@ -88,4 +87,5 @@ LOB 的另一方案是通过站点到站点 VPN 连接到在其中配置了 ILB 
 
 [为负载均衡器配置空闲 TCP 超时设置](/documentation/articles/load-balancer-tcp-idle-timeout/)
 
-<!---HONumber=Mooncake_1128_2016-->
+<!---HONumber=Mooncake_0227_2017-->
+<!--Update_Description: update meta properties; wording update-->

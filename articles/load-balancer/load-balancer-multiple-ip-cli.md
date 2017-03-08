@@ -9,15 +9,15 @@
     manager="narayan"
     editor=""
     tags="azure-resource-manager" />
-<tags
-    ms.assetid=""
+<tags 
+    ms.assetid="" 
     ms.service="load-balancer"
     ms.devlang="na"
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="infrastructure-services"
     ms.date="11/28/2016"
-    wacn.date="01/13/2017"
+    wacn.date="03/03/2017"
     ms.author="annahar" />
 
 # 在多个 IP 配置上进行负载均衡
@@ -25,7 +25,7 @@
 - [PowerShell](/documentation/articles/load-balancer-multiple-ip/)
 - [CLI](/documentation/articles/load-balancer-multiple-ip-cli/)
 
-本文介绍如何将 Azure Load Balancer 用于每个虚拟网络接口 \(NIC\) 的多个 IP 地址。目前，对一个 NIC 的多个 IP 地址的支持是预览版的功能。有关详细信息，请参阅本文的[限制](#limitations)部分。以下场景说明如何通过 Azure Load Balancer 使用此功能。
+本文介绍如何将 Azure 负载均衡器用于每个虚拟网络接口 (NIC) 的多个 IP 地址。目前，对一个 NIC 的多个 IP 地址的支持是预览版的功能。有关详细信息，请参阅本文的[限制](#limitations)部分。以下场景说明如何通过 Azure 负载均衡器使用此功能。
 
 在本场景中有两个运行 Windows 的 VM，每个 VM 有一个 NIC。每个 NIC 具有多个 IP 配置。每个 VM 都托管了 contoso.com 和 fabrikam.com 这两个网站。每个网站都绑定到 NIC 的一个 IP 配置。我们使用负载均衡器来公开两个前端 IP 地址，每个地址分别对应于一个网站，从而将流量分发到各个网站的 IP 配置。此场景中两个前端以及两个后端池 IP 地址都使用相同的端口号。
 
@@ -41,7 +41,7 @@
 按照以下步骤来实现本文所概述的场景：
 
 1. 按链接的文章中的步骤[安装和配置 Azure CLI](/documentation/articles/xplat-cli-install/)，并登录 Azure 帐户。
-2. [创建资源组](/documentation/articles/virtual-machines-linux-create-cli-complete/#create-resource-groups-and-choose-deployment-locations) contosofabrikam。
+2. [创建资源组](/documentation/articles/virtual-machines-linux-create-cli-complete/#create-resource-groups-and-choose-deployment-locations) contosofabrikam，。
 
         azure group create contosofabrikam chinaeast
 
@@ -106,4 +106,5 @@
 
 13. 最后，必须将 DNS 资源记录配置为指向各自的负载均衡器的前端 IP 地址。
 
-<!---HONumber=Mooncake_0109_2017-->
+<!---HONumber=Mooncake_0227_2017-->
+<!-- Update_Description:udpate meta properties; wording update -->

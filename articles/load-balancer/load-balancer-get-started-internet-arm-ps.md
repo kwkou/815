@@ -1,39 +1,35 @@
 <properties
-   pageTitle="使用 PowerShell 在 Resource Manager 中创建面向 Internet 的负载均衡器 | Azure"
-   description="了解如何使用 PowerShell 在 Resource Manager 中创建面向 Internet 的负载均衡器"
-   services="load-balancer"
-   documentationCenter="na"
-   authors="sdwheeler"
-   manager="carmonm"
-   editor=""
-   tags="azure-resource-manager"
-/>  
-
+    pageTitle="创建 Azure 面向 Internet 的负载均衡器 - PowerShell | Azure"
+    description="了解如何使用 PowerShell 在 Resource Manager 中创建面向 Internet 的负载均衡器"
+    services="load-balancer"
+    documentationcenter="na"
+    author="kumudd"
+    manager="timlt"
+    tags="azure-resource-manager" />
 <tags
-  ms.service="load-balancer"
-  ms.devlang="na"
-  ms.topic="article"
-  ms.tgt_pltfrm="na"
-  ms.workload="infrastructure-services"
-  ms.date="10/24/2016"
-  ms.author="sewhee"
-  wacn.date="12/12/2016" />  
+    ms.assetid="8257f548-7019-417f-b15f-d004a1eec826"
+    ms.service="load-balancer"
+    ms.devlang="na"
+    ms.topic="get-started-article"
+    ms.tgt_pltfrm="na"
+    ms.workload="infrastructure-services"
+    ms.date="01/23/2017"
+    wacn.date="03/03/2017"
+    ms.author="kumud" />  
 
-
-# <a name="get-started">  
-</a>使用 PowerShell 在 Resource Manager 中创建面向 Internet 的负载均衡器
+# <a name="get-started"></a> 使用 PowerShell 在 Resource Manager 中创建面向 Internet 的负载均衡器
 
 > [AZURE.SELECTOR]
-[Portal](/documentation/articles/load-balancer-get-started-internet-portal/)
-[PowerShell](/documentation/articles/load-balancer-get-started-internet-arm-ps/)
-[Azure CLI](/documentation/articles/load-balancer-get-started-internet-arm-cli/)
-[Template](/documentation/articles/load-balancer-get-started-internet-arm-template/)
+- [门户](/documentation/articles/load-balancer-get-started-internet-portal/)
+- [PowerShell](/documentation/articles/load-balancer-get-started-internet-arm-ps/)
+- [Azure CLI](/documentation/articles/load-balancer-get-started-internet-arm-cli/)
+- [模板](/documentation/articles/load-balancer-get-started-internet-arm-template/)
 
 [AZURE.INCLUDE [load-balancer-get-started-internet-intro-include.md](../../includes/load-balancer-get-started-internet-intro-include.md)]
 
 [AZURE.INCLUDE [azure-arm-classic-important-include](../../includes/azure-arm-classic-important-include.md)]
 
-本文介绍资源管理器部署模型。还可[了解如何使用经典部署模型创建面向 Internet 的负载均衡器](/documentation/articles/load-balancer-get-started-internet-classic-cli/)。
+本文介绍 Resource Manager 部署模型。还可[了解如何使用经典部署模型创建面向 Internet 的负载均衡器](/documentation/articles/load-balancer-get-started-internet-classic-cli/)。
 
 [AZURE.INCLUDE [load-balancer-get-started-internet-scenario-include.md](../../includes/load-balancer-get-started-internet-scenario-include.md)]
 
@@ -82,9 +78,11 @@
 
 2. 使用 DNS 名称 **loadbalancernrp.chinaeast.chinacloudapp.cn** 创建要由前端 IP 池使用的名为 **PublicIP** 的 Azure 公共 IP 地址 资源。以下命令使用静态分配类型。
 
-	    $publicIP = New-AzureRmPublicIpAddress -Name PublicIp -ResourceGroupName NRP-RG -Location 'China East' –AllocationMethod Static -DomainNameLabel loadbalancernrp 
+        $publicIP = New-AzureRmPublicIpAddress -Name PublicIp -ResourceGroupName NRP-RG -Location 'China East' –AllocationMethod Static -DomainNameLabel loadbalancernrp 
 
-    >[AZURE.IMPORTANT] 负载均衡器将公共 IP 的域标签用作 FQDN 的前缀。这不同于经典部署模型，后者将云服务用作负载均衡器 FQDN。
+    > [AZURE.IMPORTANT]
+    负载均衡器将公共 IP 的域标签用作其 FQDN 的前缀。这与经典部署模型不同，后者使用云服务作为负载均衡器 FQDN。> 在此示例中，FQDN 是 **loadbalancernrp.chinanorth.chinacloudapp.cn**。
+    >
 
 ## 创建前端 IP 池和后端地址池
 
@@ -130,7 +128,7 @@
 
 4. 使用之前创建的对象创建负载均衡器。
 
-	    $NRPLB = New-AzureRmLoadBalancer -ResourceGroupName NRP-RG -Name NRP-LB -Location 'China East' -FrontendIpConfiguration $frontendIP -InboundNatRule $inboundNATRule1,$inboundNatRule2 -LoadBalancingRule $lbrule -BackendAddressPool $beAddressPool -Probe $healthProbe
+        $NRPLB = New-AzureRmLoadBalancer -ResourceGroupName NRP-RG -Name NRP-LB -Location 'China East' -FrontendIpConfiguration $frontendIP -InboundNatRule $inboundNATRule1,$inboundNatRule2 -LoadBalancingRule $lbrule -BackendAddressPool $beAddressPool -Probe $healthProbe
 
 ## 创建 NIC
 
@@ -143,11 +141,11 @@
 
 2. 创建名为 **lb-nic1-be** 的 NIC，并将其与第一个 NAT 规则和第一个（且仅有的）后端地址池相关联。
 
-	    $backendnic1= New-AzureRmNetworkInterface -ResourceGroupName NRP-RG -Name lb-nic1-be -Location 'China East' -PrivateIpAddress 10.0.2.6 -Subnet $backendSubnet -LoadBalancerBackendAddressPool $nrplb.BackendAddressPools[0] -LoadBalancerInboundNatRule $nrplb.InboundNatRules[0]
+        $backendnic1= New-AzureRmNetworkInterface -ResourceGroupName NRP-RG -Name lb-nic1-be -Location 'China East' -PrivateIpAddress 10.0.2.6 -Subnet $backendSubnet -LoadBalancerBackendAddressPool $nrplb.BackendAddressPools[0] -LoadBalancerInboundNatRule $nrplb.InboundNatRules[0]
 
 3. 创建名为 **lb-nic2-be** 的 NIC，并将其与第二个 NAT 规则和第一个（且仅有的）后端地址池相关联。
 
-	    $backendnic2= New-AzureRmNetworkInterface -ResourceGroupName NRP-RG -Name lb-nic2-be -Location 'China East' -PrivateIpAddress 10.0.2.7 -Subnet $backendSubnet -LoadBalancerBackendAddressPool $nrplb.BackendAddressPools[0] -LoadBalancerInboundNatRule $nrplb.InboundNatRules[1]
+        $backendnic2= New-AzureRmNetworkInterface -ResourceGroupName NRP-RG -Name lb-nic2-be -Location 'China East' -PrivateIpAddress 10.0.2.7 -Subnet $backendSubnet -LoadBalancerBackendAddressPool $nrplb.BackendAddressPools[0] -LoadBalancerInboundNatRule $nrplb.InboundNatRules[1]
 
 4. 检查 NIC。
 
@@ -196,7 +194,7 @@
         DnsSettings          : {
                             "DnsServers": [],
                             "AppliedDnsServers": [],
-                            "InternalDomainNameSuffix": "prcwibzcuvie5hnxav0yjks2cd.dx.internal.cloudapp.net"
+                            "InternalDomainNameSuffix": "prcwibzcuvie5hnxav0yjks2cd.dx.internal.chinacloudapp.cn"
                         }
         EnableIPForwarding   : False
         NetworkSecurityGroup : null
@@ -214,7 +212,7 @@
 
     将负载均衡器资源加载到变量中（如果你还没有这样做）。该变量称为 **$lb**。使用与先前创建的负载均衡器资源相同的名称。
 
-        $lb= get-azurermloadbalancer –name NRP-LB -resourcegroupname NRP-RG
+        $lb= get-azurermloadbalancer -name NRP-LB -resourcegroupname NRP-RG
 
 2. 将后端配置加载到变量。
 
@@ -222,7 +220,7 @@
 
 3. 将创建好的网络接口加载到变量中。变量名为 **$nic**。网络接口名称与上例中的相同。
 
-        $nic =get-azurermnetworkinterface –name lb-nic1-be -resourcegroupname NRP-RG
+        $nic =get-azurermnetworkinterface -name lb-nic1-be -resourcegroupname NRP-RG
 
 4. 更改网络接口上的后端配置。
 
@@ -254,7 +252,9 @@
 
     Remove-AzureRmLoadBalancer -Name NRPLB -ResourceGroupName NRP-RG
 
->[AZURE.NOTE] 可选开关 **-Force** 可用于避免删除提示。
+> [AZURE.NOTE]
+可选开关 **-Force** 可用于避免删除提示。
+>
 
 ## 后续步骤
 
@@ -264,4 +264,5 @@
 
 [为负载均衡器配置空闲 TCP 超时设置](/documentation/articles/load-balancer-tcp-idle-timeout/)
 
-<!---HONumber=Mooncake_1128_2016-->
+<!---HONumber=Mooncake_0227_2017-->
+<!--Update_Description: update meta properties; wording update; update code with full-parameter format -->

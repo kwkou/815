@@ -1,6 +1,6 @@
 <properties
-    pageTitle="使用 Azure 门户预览在 Resource Manager 中创建面向 Internet 的负载均衡器 | Azure"
-    description="了解如何使用 Azure 门户预览在 Resource Manager 中创建面向 Internet 的负载均衡器"
+    pageTitle="创建面向 Internet 的负载均衡器 - Azure 门户 | Azure"
+    description="了解如何使用 Azure 门户在 Resource Manager 中创建面向 Internet 的负载均衡器"
     services="load-balancer"
     documentationcenter="na"
     author="anavinahar"
@@ -14,12 +14,12 @@
     ms.topic="hero-article"
     ms.tgt_pltfrm="na"
     ms.workload="infrastructure-services"
-    ms.date="09/14/2016"
-    wacn.date="01/13/2017"
+    ms.date="01/23/2017"
+    wacn.date="03/03/2017"
     ms.author="annahar" />  
 
 
-# 使用 Azure 门户预览创建面向 Internet 的负载均衡器
+# 使用 Azure 门户创建面向 Internet 的负载均衡器
 > [AZURE.SELECTOR]
 - [门户](/documentation/articles/load-balancer-get-started-internet-portal/)
 - [PowerShell](/documentation/articles/load-balancer-get-started-internet-arm-ps/)
@@ -41,7 +41,7 @@
 需要创建和配置以下对象以部署负载均衡器。
 
 * 前端 IP 配置 - 包含传入网络流量的公共 IP 地址。
-* 后端地址池 - 包含从负载均衡器接收网络流量的虚拟机网络接口 \(NIC\)。
+* 后端地址池 - 包含从负载均衡器接收网络流量的虚拟机网络接口 (NIC)。
 * 负载均衡规则 - 包含将负载均衡器上的公共端口映射到后端地址池中的端口的规则。
 * 入站 NAT 规则 - 包含将负载均衡器上的公共端口映射到后端地址池中特定虚拟机的端口的规则。
 * 探测器 - 包含用于检查后端地址池中虚拟机实例的可用性的运行状况探测器。
@@ -54,7 +54,7 @@
 本示例假定已有名为 **myVNet** 的虚拟网络。请参考[创建虚拟网络](/documentation/articles/virtual-networks-create-vnet-arm-pportal/)完成此操作。本示例还假定 **myVNet** 内有一个名为 **LB-Subnet-BE** 的子网以及两个分别名为 **web1** 和 **web2** 的 VM，这两个 VM 都位于 **myVNet** 中名为 **myAvailSet** 的可用性集中。请参考[此链接](/documentation/articles/virtual-machines-windows-hero-tutorial/)创建 VM。
 
 1. 从浏览器导航到 Azure 门户预览：[http://portal.azure.cn](http://portal.azure.cn)，并使用你的 Azure 帐户登录。
-2. 在屏幕的左上方，选择“新建”\>“网络”\>“负载均衡器”。
+2. 在屏幕的左上方，选择“新建”>“网络”>“负载均衡器”。
 3. 在“创建负载均衡器”边栏选项卡中，为负载均衡器键入一个名称。此例中使用名称 **myLoadBalancer**。
 4. 在“类型”下，选择“公共”。
 5. 在“公共 IP 地址”下，创建名为 **myPublicIP** 的新公共 IP。
@@ -92,7 +92,7 @@
 
 3. 创建入站 NAT 规则
 
-    单击负载均衡器的“设置”部分下的“入站 NAT 规则”。在“新建”边栏选项卡中，单击“添加”。然后，为入站 NAT 规则命名。此处使用名称 **inboundNATrule1**。目标应是以前创建的公共 IP。在“服务”下选择“自定义”，并选择要使用的协议。此处选择 TCP。输入端口 \(3441\) 和目标端口（此例中为 3389）。然后单击“确定”保存此规则。
+    单击负载均衡器的“设置”部分下的“入站 NAT 规则”。在“新建”边栏选项卡中，单击“添加”。然后，为入站 NAT 规则命名。此处使用名称 **inboundNATrule1**。目标应是以前创建的公共 IP。在“服务”下选择“自定义”，并选择要使用的协议。此处选择 TCP。输入端口 (3441) 和目标端口（此例中为 3389）。然后单击“确定”保存此规则。
 
     创建第一条规则后，对名为 inboundNATrule2 的第二个入站 NAT 规则重复此步骤（从端口 3442 到目标端口 3389）。
 
@@ -110,5 +110,5 @@
 
 [为负载均衡器配置空闲 TCP 超时设置](/documentation/articles/load-balancer-tcp-idle-timeout/)
 
-<!---HONumber=Mooncake_0109_2017-->
-<!--Update_Description: update meta properties & wording update & update link references-->
+<!---HONumber=Mooncake_0227_2017-->
+<!--Update_Description: update meta properties; wording update -->

@@ -1,5 +1,5 @@
 <properties
-    pageTitle="在经典部署模型中使用 Azure CLI 创建内部负载均衡器 | Azure"
+    pageTitle="创建内部负载均衡器 - Azure CLI 经典 | Azure"
     description="了解如何在经典部署模型中使用 Azure CLI 创建内部负载均衡器"
     services="load-balancer"
     documentationcenter="na"
@@ -14,8 +14,8 @@
     ms.topic="get-started-article"
     ms.tgt_pltfrm="na"
     ms.workload="infrastructure-services"
-    ms.date="02/09/2016"
-    wacn.date="01/13/2017"
+    ms.date="01/23/2017"
+    wacn.date="03/03/2017"
     ms.author="kumud" />  
 
 
@@ -38,7 +38,7 @@ Azure 具有两种不同的部署模型，用于创建和处理资源：[Resourc
 
 1. 创建内部负载均衡实例，该实例将是要在负载均衡集的服务器上进行负载均衡的传入流量的终结点。
 2. 添加与虚拟机对应的终结点以接收传入流量。
-3. 配置将发送要进行负载均衡的流量的服务器，以将其流量发送到内部负载均衡实例的虚拟 IP \(VIP\) 地址。
+3. 配置将发送要进行负载均衡的流量的服务器，以将其流量发送到内部负载均衡实例的虚拟 IP (VIP) 地址。
 
 ## 使用 CLI 逐步创建内部负载均衡器
 
@@ -80,7 +80,6 @@ Azure 具有两种不同的部署模型，用于创建和处理资源：[Resourc
     data:    ------  -------  ----------  -----------------------------
     data:    ilbset  Private  subnet-1    192.168.2.7
     info:    service internal-load-balancer list command OK
-
 
 ### 步骤 2
 
@@ -165,5 +164,5 @@ Azure 具有两种不同的部署模型，用于创建和处理资源：[Resourc
 
 [为负载均衡器配置空闲 TCP 超时设置](/documentation/articles/load-balancer-tcp-idle-timeout/)
 
-<!---HONumber=Mooncake_0109_2017-->
-<!--Update_Description: update meta properties & wording update & update link references & update code-->
+<!---HONumber=Mooncake_0227_2017-->
+<!--Update_Description: update meta properties; wording update -->

@@ -1,5 +1,5 @@
 <properties
-    pageTitle="开始使用 Azure CLI 在经典部署模型中创建面向 Internet 的负载均衡器 | Azure"
+    pageTitle="创建面向 Internet 的负载均衡器 - Azure CLI 经典 | Azure"
     description="了解如何使用 Azure CLI 在经典部署模型中创建面向 Internet 的负载均衡器"
     services="load-balancer"
     documentationcenter="na"
@@ -13,8 +13,8 @@
     ms.topic="get-started-article"
     ms.tgt_pltfrm="na"
     ms.workload="infrastructure-services"
-    ms.date="02/09/2016"
-    wacn.date="01/13/2017"
+    ms.date="01/23/2017"
+    wacn.date="03/03/2017"
     ms.author="kumud" />  
 
 
@@ -47,8 +47,7 @@
 
 ## 创建终结点和负载均衡器集
 
-此方案假定已创建虚拟机“web1”和“web2”。本指南将使用端口 80 作为公用端口和本地端口创建负载均衡器集。
-还将在端口 80 上配置探测端口，并将负载均衡器集命名为“lbset”。
+此方案假定已创建虚拟机“web1”和“web2”。本指南将使用端口 80 作为公用端口和本地端口创建负载均衡器集。还将在端口 80 上配置探测端口，并将负载均衡器集命名为“lbset”。
 
 ### 步骤 1
 
@@ -137,5 +136,5 @@
 
 [为负载均衡器配置空闲 TCP 超时设置](/documentation/articles/load-balancer-tcp-idle-timeout/)
 
-<!---HONumber=Mooncake_0109_2017-->
-<!--Update_Description: update meta properties & wording update & update link references & update code-->
+<!---HONumber=Mooncake_0227_2017-->
+<!--Update_Description: update meta properties; wording update-->

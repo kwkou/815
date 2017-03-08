@@ -1,5 +1,5 @@
 <properties
-    pageTitle="开始使用 Azure 经典管理门户在经典部署模型中创建面向 Internet 的负载均衡器 | Azure"
+    pageTitle="创建面向 Internet 的负载均衡器 - Azure 门户预览经典 | Azure"
     description="了解如何使用 Azure 经典管理门户在经典部署模型中，创建面向 Internet 的负载均衡器"
     services="load-balancer"
     documentationcenter="na"
@@ -14,8 +14,8 @@
     ms.topic="get-started-article"
     ms.tgt_pltfrm="na"
     ms.workload="infrastructure-services"
-    ms.date="08/31/2016"
-    wacn.date="01/13/2017"
+    ms.date="01/23/2017"
+    wacn.date="03/03/2017"
     ms.author="kumud" />  
 
 
@@ -30,6 +30,7 @@
 
 > [AZURE.IMPORTANT]
 在使用 Azure 资源之前，请务必了解 Azure 当前使用两种部署模型：Azure Resource Manager 部署模型和经典部署模型。在使用任何 Azure 资源前，请确保了解[部署模型和工具](/documentation/articles/azure-classic-rm/)。可以通过单击本文顶部的选项卡来查看不同工具的文档。本文介绍经典部署模型。你还可以[了解如何使用 Azure Resource Manager 创建面向 Internet 的负载均衡器](/documentation/articles/load-balancer-get-started-internet-arm-ps/)。
+>
 
 [AZURE.INCLUDE [load-balancer-get-started-internet-scenario-include.md](../../includes/load-balancer-get-started-internet-scenario-include.md)]
 
@@ -46,7 +47,7 @@
 
     * 在“名称”中，键入终结点的名称，或者从常用协议的预定义终结点列表中选择名称。
     * 在“协议”中，根据需要选择终结点类型需要的协议，例如 TCP 或 UDP。
-    * 在“公用端口”和“专用端口”中，根据需要键入你希望虚拟机使用的端口号。你可以使用虚拟机上的专用端口和防火墙规则，从而以适合你的应用程序的方式重定向流量。专用端口可以与公用端口一样。例如，对于 Web \(HTTP\) 流量的终结点，你可将端口 80 指定为公用端口和专用端口。
+    * 在“公用端口”和“专用端口”中，根据需要键入你希望虚拟机使用的端口号。你可以使用虚拟机上的专用端口和防火墙规则，从而以适合你的应用程序的方式重定向流量。专用端口可以与公用端口一样。例如，对于 Web (HTTP) 流量的终结点，你可将端口 80 指定为公用端口和专用端口。
 
 5. 选择“创建负载均衡集”，然后单击右箭头。
 6. 在“配置负载均衡集”页上，键入负载均衡集的名称，然后分配用于 Azure 负载均衡器的探测行为的值。负载均衡器使用探测来确定负载均衡集中的虚拟机是否可用于接收传入流量。
@@ -65,5 +66,5 @@
 
 [为负载均衡器配置空闲 TCP 超时设置](/documentation/articles/load-balancer-tcp-idle-timeout/)
 
-<!---HONumber=Mooncake_0109_2017-->
-<!--Update_Description: update meta properties & wording update & update link references & update code-->
+<!---HONumber=Mooncake_0227_2017-->
+<!--Update_Description: update meta properties; wording update -->

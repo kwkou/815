@@ -1,54 +1,60 @@
 <properties
-   pageTitle="开始使用 Azure 门户预览在 Resource Manager 中创建内部负载均衡器 | Azure"
-   description="了解如何使用 Azure 门户预览在 Resource Manager 中创建内部负载均衡器"
-   services="load-balancer"
-   documentationCenter="na"
-   authors="sdwheeler"
-   manager="carmonm"
-   editor=""
-   tags="azure-service-management"
-/>  
-
+    pageTitle="创建内部负载均衡器 - Azure 门户预览 | Azure"
+    description="了解如何使用 Azure 门户预览在 Resource Manager 中创建内部负载均衡器"
+    services="load-balancer"
+    documentationcenter="na"
+    author="kumudd"
+    manager="timlt"
+    editor=""
+    tags="azure-service-management" />
 <tags
-   ms.service="load-balancer"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
-   ms.date="10/24/2016"
-   wacn.date="12/05/2016"
-   ms.author="sewhee" />
+    ms.assetid="1ac14fb9-8d14-4892-bfe6-8bc74c48ae2c"
+    ms.service="load-balancer"
+    ms.devlang="na"
+    ms.topic="hero-article"
+    ms.tgt_pltfrm="na"
+    ms.workload="infrastructure-services"
+    ms.date="01/23/2017"
+    wacn.date="03/03/2017"
+    ms.author="kumud" />  
 
 # 在 Azure 门户中创建内部负载均衡器
 
 > [AZURE.SELECTOR]
-[Azure Portal](/documentation/articles/load-balancer-get-started-ilb-arm-portal/)
-[PowerShell](/documentation/articles/load-balancer-get-started-ilb-arm-ps/)
-[Azure CLI](/documentation/articles/load-balancer-get-started-ilb-arm-cli/)
-[Template](/documentation/articles/load-balancer-get-started-ilb-arm-template/)
+- [Azure 门户](/documentation/articles/load-balancer-get-started-ilb-arm-portal/)
+- [PowerShell](/documentation/articles/load-balancer-get-started-ilb-arm-ps/)
+- [Azure CLI](/documentation/articles/load-balancer-get-started-ilb-arm-cli/)
+- [模板](/documentation/articles/load-balancer-get-started-ilb-arm-template/)
 
 [AZURE.INCLUDE [load-balancer-get-started-ilb-intro-include.md](../../includes/load-balancer-get-started-ilb-intro-include.md)]
 
->[AZURE.NOTE] Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model/)。本文介绍如何使用 Resource Manager 部署模型。Microsoft 建议对大多数新部署使用该模型，而不要使用[经典部署模型](/documentation/articles/load-balancer-get-started-ilb-classic-ps/)。
+> [AZURE.NOTE]
+Azure 具有两种不同的部署模型，用于创建和处理资源：[Resource Manager 模型和经典模型](/documentation/articles/resource-manager-deployment-model/)。本文介绍如何使用 Resource Manager 部署模型。Azure 建议对大多数新的部署使用该模型，而不是[经典部署模型](/documentation/articles/load-balancer-get-started-ilb-classic-ps/)。
+>
+>
 
 [AZURE.INCLUDE [load-balancer-get-started-ilb-scenario-include.md](../../includes/load-balancer-get-started-ilb-scenario-include.md)]
 
-## 开始使用 Azure 门户预览创建内部负载均衡器	
+## 开始使用 Azure 门户创建内部负载均衡器	
 
-使用以下步骤从 Azure 门户预览创建内部负载均衡器。
+使用以下步骤从 Azure 门户创建内部负载均衡器。
 
-1. 打开浏览器导航到 [Azure 门户预览](http://portal.azure.cn)并使用 Azure 帐户登录。
+1. 打开浏览器导航到 [Azure 门户](http://portal.azure.cn)并使用 Azure 帐户登录。
 2. 在屏幕的左上方，单击“新建”>“网络”>“负载均衡器”。
 3. 在“创建负载均衡器”边栏选项卡中，输入负载均衡器的**名称**。
 4. 在“方案”下，单击“内部”。
 5. 单击“虚拟网络”，然后选择要在其中创建负载均衡器的虚拟网络。
 
-    >[AZURE.NOTE] 如果看不到要使用的虚拟网络，请选中要用于负载均衡器的**位置**，并相应地更改它。
+    > [AZURE.NOTE]
+    如果看不到要使用的虚拟网络，请选中要用于负载均衡器的**位置**，并相应地更改它。
+    >
 
 6. 单击“子网”，然后选择要在其中创建负载均衡器的子网。
 7. 在“IP 地址分配”下，单击“动态”或“静态”，具体取决于负载均衡器的 IP 地址是否要固定（静态）。
 
-    >[AZURE.NOTE] 如果你选择使用静态 IP 地址，则必须为负载均衡器提供一个地址。
+    > [AZURE.NOTE]
+    如果你选择使用静态 IP 地址，则必须为负载均衡器提供一个地址。
+    >
 
 8. 在“资源组”下，为负载均衡器指定新资源组的名称，或者单击“选择现有”，然后选择现有资源组。
 9. 单击“创建”。
@@ -98,4 +104,5 @@
 
 [为负载均衡器配置空闲 TCP 超时设置](/documentation/articles/load-balancer-tcp-idle-timeout/)
 
-<!---HONumber=Mooncake_1128_2016-->
+<!---HONumber=Mooncake_0227_2017-->
+<!--Update_Description:update meta properties; wording update-->
