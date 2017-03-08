@@ -1,6 +1,6 @@
 <properties
-    pageTitle="Resource Manager 模板中的模式 | Azure"
-    description="演示 Azure 资源管理器模板的设计模式"
+    pageTitle="为复杂解决方案设计 Azure 模板 | Azure"
+    description="介绍为复杂方案设计 Azure Resource Manager 模板的最佳做法"
     services="azure-resource-manager"
     documentationcenter=""
     author="tfitzmac"
@@ -14,11 +14,11 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="12/19/2016"
-    wacn.date="01/06/2017"
+    wacn.date="03/03/2017"
     ms.author="tomfitz" />  
 
 
-# 用于设计 Azure Resource Manager 模板的模式
+# 部署复杂解决方案时 Azure Resource Manager 模板的设计模式
 使用基于 Azure Resource Manager 模板的灵活方法，可以快速、一致地部署复杂的拓扑。随着核心产品的发展，你可以轻松地调整这些部署或适应外来方案或客户的变化。
 
 本主题是包含更多内容的白皮书的一部分。若要阅读完整的白皮书，请下载[一流的 Azure Resource Manager 模板注意事项和成熟的做法](http://download.microsoft.com/download/8/E/1/8E1DBEFA-CECE-4DC9-A813-93520A5D7CFE/World%20Class%20ARM%20Templates%20-%20Considerations%20and%20Proven%20Practices.pdf)。
@@ -181,7 +181,7 @@ DSC 可以使用最热门机制的一些资源扩展 - PowerShell DSC、Chef 和
 
 **模板元数据在 metadata.json 文件中描述**
 
-软件代理可以检索 metadata.json 文件，并在网页或目录中发布信息以及模板的链接。元素包括 *itemDisplayName* 、 *description* 、 *summary* 、 *githubUsername* 和 *dateUpdated* 。
+软件代理可以检索 metadata.json 文件，并在网页或目录中发布信息以及模板的链接。元素包括 *itemDisplayName*、*description*、*summary*、*githubUsername* 和 *dateUpdated*。
 
 下面显示了完整的示例文件。
 
@@ -225,7 +225,7 @@ DSC 可以使用最热门机制的一些资源扩展 - PowerShell DSC、Chef 和
 
 **可选资源模板**
 
-例如，可以使用可选资源模板来配置 Jumpbox，以便从公共 Internet 间接访问部署的环境。使用参数或变量来识别是否应启用 Jumpbox，并使用 *concat* 函数来构建模板的目标名称，例如 *jumpbox\_enabled.json* 。模板链接将使用生成的变量来安装 Jumpbox。
+例如，可以使用可选资源模板来配置 Jumpbox，以便从公共 Internet 间接访问部署的环境。使用参数或变量来识别是否应启用 Jumpbox，并使用 *concat* 函数来构建模板的目标名称，例如 *jumpbox\_enabled.json*。模板链接将使用生成的变量来安装 Jumpbox。
 
 可以从多个位置链接可选资源模板：
 
@@ -296,7 +296,7 @@ Redis 只使用单一节点类型，因此要创建名为 node-resources.json �
 ### 链接模板
 主模板使用模板链接向外链接到共享资源模板，以建立虚拟网络。
 
-在主模板中添加逻辑，使模板使用者能够指定是否应部署 Jumpbox。 *EnableJumpbox* 参数的 *enabled* 值指示客户想要部署 Jumpbox。如果提供了此值，模板将串联 *\_enabled* 作为 Jumpbox 功能的基本模板名称后缀。
+在主模板中添加逻辑，使模板使用者能够指定是否应部署 Jumpbox。*EnableJumpbox* 参数的 *enabled* 值指示客户想要部署 Jumpbox。如果提供了此值，模板将串联 *\_enabled* 作为 Jumpbox 功能的基本模板名称后缀。
 
 主模板应用 *large* 参数值作为 T 恤尺寸的基本模板名称后缀，然后使用模板中的该值向外链接到 *technology\_on\_os\_large.json*。
 
@@ -310,7 +310,7 @@ Redis 只使用单一节点类型，因此要创建名为 node-resources.json �
 对于群集中的节点，有两个步骤可用于配置状态，这两个步骤通过具有特定用途的脚本来表示。“redis-cluster-install.sh” 安装 Redis，“redis-cluster-setup.sh”设置群集。
 
 ### 支持不同大小的部署
-在变量内部，T 恤尺寸模板针对特定大小 ( *large* ) 指定每个要部署类型的节点数。然后，该模板通过从 *copyIndex()* 附加包含数字序号的节点名称提供资源的唯一名称，使用资源循环来部署该数目的 VM 实例。将根据 T 恤名称模板中的定义，对热区和暖区 VM 执行这些步骤
+在变量内部，T 恤尺寸模板针对特定大小 (*large*) 指定每个要部署类型的节点数。然后，该模板通过从 *copyIndex()* 附加包含数字序号的节点名称提供资源的唯一名称，使用资源循环来部署该数目的 VM 实例。将根据 T 恤名称模板中的定义，对热区和暖区 VM 执行这些步骤
 
 ## 分解和划归到端到端解决方案的模板
 具有端到端解决方案范围的解决方案模板侧重于提供端到端解决方案。该方法通常是多个已划归功能的模板及其他资源、逻辑和状态的组合。
@@ -355,4 +355,5 @@ Redis 只使用单一节点类型，因此要创建名为 node-resources.json �
 * 若要了解进出模板的状态，请参阅[共享 Azure 资源管理器模板中的状态](/documentation/articles/best-practices-resource-manager-state/)。
 * 如需了解企业如何使用 Resource Manager 对订阅进行有效管理，请参阅 [Azure 企业机架 - 规范性订阅管理](/documentation/articles/resource-manager-subscription-governance/)。
 
-<!---HONumber=Mooncake_0103_2017-->
+<!---HONumber=Mooncake_0227_2017-->
+<!--Update_Description: update meta properties; wording update -->

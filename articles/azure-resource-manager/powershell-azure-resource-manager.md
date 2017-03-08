@@ -1,6 +1,6 @@
 <properties
-    pageTitle="Azure PowerShell 与资源管理器 | Azure"
-    description="介绍如何使用 Azure PowerShell 将作为资源组的多个资源部署到 Azure。"
+    pageTitle="使用 PowerShell 管理 Azure 解决方案 | Azure"
+    description="使用 Azure PowerShell 和 Resource Manager 管理资源。"
     services="azure-resource-manager"
     documentationcenter=""
     author="tfitzmac"
@@ -14,10 +14,10 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="12/05/2016"
-    wacn.date="01/06/2017"
+    wacn.date="03/03/2017"
     ms.author="tomfitz" />  
 
-# 使用 PowerShell 和 Resource Manager 管理 Azure 资源
+# 使用 Azure PowerShell 和 Resource Manager 管理资源
 > [AZURE.SELECTOR]
 - [门户](/documentation/articles/resource-group-portal/)
 - [Azure CLI](/documentation/articles/xplat-cli-azure-resource-manager/)
@@ -44,6 +44,7 @@
 
     Get-Module -ListAvailable -Name AzureRm.Resources | Select Version
 
+<!-- Append the domain name before powershell subdirectory-->
 本主题已针对版本 3.3.0 更新。如果使用更旧的版本，体验可能与本主题中所示步骤不完全相同。有关此版本中 cmdlet 的文档，请参阅 [AzureRM.Resources 模块](https://docs.microsoft.com/powershell/resourcemanager/azurerm.resources/v3.3.0/azurerm.resources)。
 
 ## 登录到 Azure 帐户
@@ -211,8 +212,10 @@
 
 以下主题演示如何使用 Azure 自动化、Resource Manager 和 PowerShell 来有效执行管理任务：
 
-- 有关创建 Runbook 的信息，请参阅[我的第一个 Runbook](/documentation/articles/automation-first-runbook-textual/)。
+<!-- - 有关创建 Runbook 的信息，请参阅[我的第一个 PowerShell Runbook](/documentation/articles/automation-first-runbook-textual-powershell/)。-->
 - 有关使用脚本库的信息，请参阅 [Azure 自动化的 Runbook 和模块库](/documentation/articles/automation-runbook-gallery/)。
+<!-- - 如需用于启动和停止虚拟机的 Runbook，请参阅 [Azure 自动化方案 - 使用 JSON 格式的标记创建 Azure VM 启动和关闭计划](/documentation/articles/automation-scenario-start-stop-vm-wjson-tags/)。-->
+<!-- - 如需用于在非工作时间启动和停止虚拟机的 Runbook，请参阅[在自动化中，在非工作时间启动/停止 VM](/documentation/articles/automation-solution-vm-management/)。-->
 
 ## 后续步骤
 * 若要了解如何创建资源管理器模板，请参阅[创作 Azure 资源管理器模板](/documentation/articles/resource-group-authoring-templates/)。
@@ -220,4 +223,5 @@
 * 可以将现有资源移动到新的资源组。有关示例，请参阅[将资源移动到新的资源组或订阅中](/documentation/articles/resource-group-move-resources/)。
 * 如需了解企业如何使用 Resource Manager 对订阅进行有效管理，请参阅 [Azure 企业机架 - 规范性订阅管理](/documentation/articles/resource-manager-subscription-governance/)。
 
-<!---HONumber=Mooncake_0103_2017-->
+<!---HONumber=Mooncake_0227_2017-->
+<!--Update_Description: update meta properties; wording update; update link reference -->

@@ -1,5 +1,5 @@
 <properties
-    pageTitle="使用 Azure CLI 创建服务主体 | Azure"
+    pageTitle="使用 Azure CLI 创建 Azure 应用标识 | Azure"
     description="描述如何使用 Azure CLI 创建 Active Directory 应用程序和服务主体，并通过基于角色的访问控制授予其对资源的访问权限。它演示如何使用密码或证书对应用程序进行身份验证。"
     services="azure-resource-manager"
     documentationcenter="na"
@@ -13,8 +13,8 @@
     ms.topic="article"
     ms.tgt_pltfrm="multiple"
     ms.workload="na"
-    ms.date="01/13/2017"
-    wacn.date="01/25/2017"
+    ms.date="01/17/2017"
+    wacn.date="03/03/2017"
     ms.author="tomfitz" />
 
 
@@ -28,12 +28,13 @@
 
 * 可以将权限分配给应用标识，这些权限不同于你自己的权限。通常情况下，这些权限仅限于应用需执行的操作。
 * 你的职责变化时，无需更改应用的凭据。
+* 执行无人参与的脚本时，可以使用证书自动执行身份验证。
 
 本主题介绍如何通过[适用于 Mac、Linux 和 Windows 的 Azure CLI](/documentation/articles/xplat-cli-install/) 为应用程序进行设置，使之能够使用自己的凭据和标识运行。
 
 使用 Azure CLI 时，可以通过 2 个选项进行 AD 应用程序身份验证：
 
-* password
+* 密码
 * 证书
 
 本主题演示如何在 Azure CLI 中使用这两个选项。如果想从一个编程框架（例如 Python、Ruby 或 Node.js）登录 Azure，则最好是使用密码身份验证。在确定是使用密码还是证书之前，请参阅[示例应用程序](#sample-applications)部分，获取在不同框架中进行身份验证的示例。
@@ -67,33 +68,33 @@
 
     * 若要单独创建 AD 应用程序，请提供：
 
-      * 应用的名称
-      * 应用主页的 URL
-      * 用于标识应用的 URI 的逗号分隔列表
-      * password
+        * 应用的名称
+        * 应用主页的 URL
+        * 用于标识应用的 URI 的逗号分隔列表
+        * password
 
-      如以下命令所示：
+    如以下命令所示：
 
             azure ad app create -n exampleapp --home-page http://www.contoso.org --identifier-uris https://www.contoso.org/example -p {Your_Password}
 
     上述命令会返回 AppId 值。若要创建服务主体，请在以下命令中提供该值作为参数：
 
-         azure ad sp create -a {AppId}
+            azure ad sp create -a {AppId}
 
     如果帐户在 Active Directory 上不具有[所需的权限](#required-permissions)，将看到指示“Authentication\_Unauthorized”或“上下文中找不到订阅”的错误消息。
      
     对于这两个选项，都会返回新的服务主体。授权时需要使用 `Object Id`。登录时需要提供随 `Service Principal Names` 列出的 GUID。此 GUID 与 AppId 的值一样。在示例应用程序中，此值称为 `Client ID`。
 
-         info:    Executing command ad sp create
+            info:    Executing command ad sp create
      
-         Creating application exampleapp
-           / Creating service principal for application 7132aca4-1bdb-4238-ad81-996ff91d8db+
-           data:    Object Id:               ff863613-e5e2-4a6b-af07-fff6f2de3f4e
-           data:    Display Name:            exampleapp
-           data:    Service Principal Names:
-           data:                             7132aca4-1bdb-4238-ad81-996ff91d8db4
-           data:                             https://www.contoso.org/example
-           info:    ad sp create command OK
+            Creating application exampleapp
+              / Creating service principal for application 7132aca4-1bdb-4238-ad81-996ff91d8db+
+              data:    Object Id:               ff863613-e5e2-4a6b-af07-fff6f2de3f4e
+              data:    Display Name:            exampleapp
+              data:    Service Principal Names:
+              data:                             7132aca4-1bdb-4238-ad81-996ff91d8db4
+              data:                             https://www.contoso.org/example
+              info:    ad sp create command OK
 
 3. 向服务主体授予对订阅的权限。在此示例中，向“读取者”角色（授予读取订阅中所有资源的权限）添加服务主体。对于其他角色，请参阅 [RBAC：内置角色](/documentation/articles/role-based-access-built-in-roles/)。对于 `objectid` 参数，请提供创建应用程序时使用的 `Object Id`。运行此命令之前，必须留出一些时间将新的服务主体传遍 Active Directory。手动运行这些命令时，任务之间通常已经过足够的时间。在脚本中，应在命令间添加休眠步骤（如 `sleep 15`）。如果看到错误称主体不存在于目录中，请重新运行该命令。
 
@@ -113,7 +114,7 @@
     将返回：
 
         info:    Executing command account show
-        data:    Name                        : Microsoft Azure MSDN - Visual Studio Ultimate
+        data:    Name                        : Windows Azure MSDN - Visual Studio Ultimate
         data:    ID                          : {guid}
         data:    State                       : Enabled
         data:    Tenant ID                   : {guid}
@@ -184,28 +185,28 @@
 
             azure ad sp create -n exampleapp --cert-value {certificate data}
 
-* 若要单独创建 AD 应用程序，请提供：
+    * 若要单独创建 AD 应用程序，请提供：
       
-      * 应用的名称
-      * 应用主页的 URL
-      * 用于标识应用的 URI 的逗号分隔列表
-      * 证书数据
+        * 应用的名称
+        * 应用主页的 URL
+        * 用于标识应用的 URI 的逗号分隔列表
+        * 证书数据
 
-      如以下命令所示：
+        如以下命令所示：
 
             azure ad app create -n exampleapp --home-page http://www.contoso.org --identifier-uris https://www.contoso.org/example --cert-value {certificate data}
 
-    上述命令会返回 AppId 值。若要创建服务主体，请在以下命令中提供该值作为参数：
+        上述命令会返回 AppId 值。若要创建服务主体，请在以下命令中提供该值作为参数：
 
-         azure ad sp create -a {AppId}
+            azure ad sp create -a {AppId}
 
     如果帐户在 Active Directory 上不具有[所需的权限](#required-permissions)，将看到指示“Authentication\_Unauthorized”或“上下文中找不到订阅”的错误消息。
      
     对于这两个选项，都会返回新的服务主体。授权时需要使用对象 ID。登录时需要提供随 `Service Principal Names` 列出的 GUID。此 GUID 与 AppId 的值一样。在示例应用程序中，此值称为 `Client ID`。
 
-         info:    Executing command ad sp create
+        info:    Executing command ad sp create
      
-         Creating service principal for application 4fd39843-c338-417d-b549-a545f584a74+
+        Creating service principal for application 4fd39843-c338-417d-b549-a545f584a74+
            data:    Object Id:        7dbc8265-51ed-4038-8e13-31948c7f4ce7
            data:    Display Name:     exampleapp
            data:    Service Principal Names:
@@ -229,7 +230,7 @@
     将返回：
 
         info:    Executing command account show
-        data:    Name                        : Microsoft Azure MSDN - Visual Studio Ultimate
+        data:    Name                        : Windows Azure MSDN - Visual Studio Ultimate
         data:    ID                          : {guid}
         data:    State                       : Enabled
         data:    Tenant ID                   : {guid}
@@ -317,5 +318,5 @@
 * 有关将应用程序集成到 Azure 以管理资源的详细步骤，请参阅 [Developer's guide to authorization with the Azure Resource Manager API](/documentation/articles/resource-manager-api-authentication/)（使用 Azure Resource Manager API 进行授权的开发人员指南）。
 * 若要获取有关使用证书和 Azure CLI 的详细信息，请参阅 [Certificate-based authentication with Azure Service Principals from Linux command line](http://blogs.msdn.com/b/arsen/archive/2015/09/18/certificate-based-auth-with-azure-service-principals-from-linux-command-line.aspx)（从 Linux 命令行对 Azure 服务主体进行基于证书的身份验证）。
 
-<!---HONumber=Mooncake_0120_2017-->
-<!-- Update_Description: update meta properties ; wording update ; update link references -->
+<!---HONumber=Mooncake_0227_2017-->
+<!-- Update_Description: update meta properties; wording update -->

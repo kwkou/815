@@ -14,7 +14,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="na"
     ms.date="11/16/2016"
-    wacn.date="01/25/2017"
+    wacn.date="03/03/2017"
     ms.author="tomfitz" />  
 
 
@@ -50,7 +50,7 @@
 
         Add-AzureRmAccount -EnvironmentName AzureChinaCloud
 
-     将返回你的帐户的摘要。
+    将返回你的帐户的摘要。
 
         Environment           : AzureChinaCloud
         Account               : someone@example.partner.onmschina.cn
@@ -192,5 +192,5 @@
 * 如需了解企业如何使用 Resource Manager 对订阅进行有效管理，请参阅 [Azure 企业机架 - 规范性订阅管理](/documentation/articles/resource-manager-subscription-governance/)。
 * 有关自动化部署的四部分系列教程，请参阅[将应用程序自动部署到 Azure 虚拟机](/documentation/articles/virtual-machines-windows-dotnet-core-1-landing/)。此系列教程介绍了应用程序体系结构、访问与安全性、可用性与缩放性，以及应用程序部署。
 
-<!---HONumber=Mooncake_0120_2017-->
-<!-- Update_Description: update meta properties ; wording update ; update link reference -->
+<!---HONumber=Mooncake_0227_2017-->
+<!-- Update_Description: update meta properties; wording update -->

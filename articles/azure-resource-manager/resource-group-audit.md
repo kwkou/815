@@ -1,6 +1,6 @@
 <properties
-    pageTitle="用于管理 Azure 资源的活动日志 | Azure"
-    description="使用 Resource Manager 中的活动日志查看用户操作和错误。显示 Azure 门户预览版、PowerShell、Azure CLI 和 REST。"
+    pageTitle="查看 Azure 活动日志，以便监视资源 | Azure"
+    description="使用活动日志查看用户操作和错误。显示 Azure 门户预览、PowerShell、Azure CLI 和 REST。"
     services="azure-resource-manager"
     documentationcenter=""
     author="tfitzmac"
@@ -14,11 +14,11 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="01/09/2017"
-    wacn.date="01/25/2017"
+    wacn.date="03/03/2017"
     ms.author="tomfitz" />  
 
 
-# 通过查看活动日志管理 Azure 资源
+# 查看活动日志，以便审核对资源的操作
 通过活动日志，可以确定：
 
 * 对订阅中的资源执行了什么操作
@@ -84,7 +84,7 @@
 
 2. 根据指定的开始时间，前面的命令可能会返回对该资源组执行的一长串操作。你可以提供搜索条件，以筛选所要查找的结果。例如，若要调查 Web 应用的停止方式，可运行以下命令：
 
-      Get-AzureRmLog -ResourceGroup ExampleGroup -StartTime (Get-Date).AddDays(-14) | Where-Object OperationName -eq Microsoft.Web/sites/stop/action
+        Get-AzureRmLog -ResourceGroup ExampleGroup -StartTime (Get-Date).AddDays(-14) | Where-Object OperationName -eq Microsoft.Web/sites/stop/action
 
     就此示例来说，该命令显示 someone@contoso.com 执行了停止操作。
    
@@ -136,5 +136,5 @@
 * 若要了解查看部署操作的命令，请参阅[查看部署操作](/documentation/articles/resource-manager-deployment-operations/)。
 * 若要了解如何防止对所有用户的资源执行删除操作，请参阅[使用 Azure Resource Manager 锁定资源](/documentation/articles/resource-group-lock-resources/)。
 
-<!---HONumber=Mooncake_0120_2017-->
-<!-- Update_Description: update meta properties ; wording update ; update link references ; add quick review feature via built-in query , e.g. fail deployment. -->
+<!---HONumber=Mooncake_0227_2017-->
+<!-- Update_Description: update meta properties ; wording update-->

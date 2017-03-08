@@ -1,6 +1,6 @@
 <properties
-    pageTitle="使用 PowerShell 创建 Azure 服务主体 | Azure"
-    description="描述如何使用 Azure PowerShell 创建 Active Directory 应用程序和服务主体，并通过基于角色的访问控制授予其对资源的访问权限。它演示如何使用密码或证书对应用程序进行身份验证。"
+    pageTitle="使用 PowerShell 创建 Azure 应用标识 | Azure"
+    description="介绍如何使用 Azure PowerShell 创建 Active Directory 应用程序和服务主体，并通过基于角色的访问控制向其授予资源访问权限。它演示如何使用密码或证书对应用程序进行身份验证。"
     services="azure-resource-manager"
     documentationcenter="na"
     author="tfitzmac"
@@ -13,8 +13,8 @@
     ms.topic="article"
     ms.tgt_pltfrm="multiple"
     ms.workload="na"
-    ms.date="01/13/2017"
-    wacn.date="01/25/2017"
+    ms.date="01/17/2017"
+    wacn.date="03/03/2017"
     ms.author="tomfitz" />  
 
 
@@ -28,12 +28,13 @@
 
 * 可以将权限分配给应用标识，这些权限不同于你自己的权限。通常情况下，这些权限仅限于应用需执行的操作。
 * 你的职责变化时，无需更改应用的凭据。
+* 执行无人参与的脚本时，可以使用证书自动执行身份验证。
 
 本主题介绍如何通过 [Azure PowerShell](https://docs.microsoft.com/powershell/azureps-cmdlets-docs) 为应用程序进行一切所需设置，使之能够使用自己的凭据和标识运行。
 
 使用 PowerShell 时，可以通过两个选项进行 AD 应用程序身份验证：
 
-* password
+* 密码
 * 证书
 
 本主题演示如何在 PowerShell 中使用这两个选项。如果想从一个编程框架（例如 Python、Ruby 或 Node.js）登录 Azure，则最好是使用密码身份验证。在确定是使用密码还是证书之前，请参阅[示例应用程序](#sample-applications)部分，获取在不同框架中进行身份验证的示例。
@@ -72,7 +73,7 @@
 
         Add-AzureRmAccount -EnvironmentName AzureChinaCloud
 
-2. 通过提供显示名称、用于描述应用程序的 URI、用于标识应用程序的 URI，以及应用程序标识的密码来创建新的 Active Directory 应用程序。
+2. 通过提供显示名称，用于描述应用程序的 URI，用于标识应用程序的 URI，以及应用程序标识的密码来创建新 Active Directory 应用程序。
 
         $app = New-AzureRmADApplication -DisplayName "exampleapp" -HomePage "https://www.contoso.org/exampleapp" -IdentifierUris "https://www.contoso.org/exampleapp" -Password "{Your_Password}"
 
@@ -198,9 +199,9 @@
 
         Add-AzureRmAccount -EnvironmentName AzureChinaCloud
 
-3. 通过提供显示名称、用于描述应用程序的 URI、用于标识应用程序的 URI，以及应用程序标识的密码来创建新的 Active Directory 应用程序。
+3. 通过提供显示名称，用于描述应用程序的 URI，用于标识应用程序的 URI，以及应用程序标识的密码来创建新 Active Directory 应用程序。
    
-     如果有 Azure PowerShell 2.0（2016 年 8 月或之后发布），请使用以下 cmdlet：
+    如果有 Azure PowerShell 2.0（2016 年 8 月或之后发布），请使用以下 cmdlet：
 
         $app = New-AzureRmADApplication -DisplayName "exampleapp" -HomePage "https://www.contoso.org" -IdentifierUris "https://www.contoso.org/example" -CertValue $keyValue -EndDate $cert.NotAfter -StartDate $cert.NotBefore      
 
@@ -304,5 +305,5 @@
 * 有关应用程序和服务主体的详细说明，请参阅[应用程序对象和服务主体对象](/documentation/articles/active-directory-application-objects/)。
 * 有关 Active Directory 身份验证的详细信息，请参阅 [Azure AD 的身份验证方案](/documentation/articles/active-directory-authentication-scenarios/)。
 
-<!---HONumber=Mooncake_0120_2017-->
-<!-- Update_Description: update meta properties ; wording update ; update link references -->
+<!---HONumber=Mooncake_0227_2017-->
+<!-- Update_Description: update meta properties ; wording update -->

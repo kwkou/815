@@ -15,8 +15,8 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="na"
-    ms.date="01/03/2017"
-    wacn.date="01/25/2017"
+    ms.date="01/18/2017"
+    wacn.date="03/03/2017"
     ms.author="tomfitz" />  
 
 
@@ -39,16 +39,13 @@
 这两种类型的错误都会返回错误代码，可使用该代码来排查部署问题。这两种类型的错误会显示在[活动日志](/documentation/articles/resource-group-audit/)中。但是，验证错误不会显示在部署历史记录中，因为部署并未开始。
 
 ## 错误代码
-部署错误会返回代码 **DeploymentFailed**。但是，此错误代码表示一般性的部署错误。真正能够帮助解决问题的错误代码往往是该错误的下一级错误代码。下图显示了部署错误的下一级 **RequestDisallowedByPolicy** 错误代码。
-
-![显示错误代码](./media/resource-manager-common-deployment-errors/error-code.png)  
-
 
 本主题介绍以下错误代码：
 
 * [AccountNameInvalid](#accountnameinvalid)
 * [授权失败](#authorization-failed)
 * [BadRequest](#badrequest)
+* [DeploymentFailed](#deploymentfailed)
 * [InvalidContentLink](#invalidcontentlink)
 * [InvalidTemplate](#invalidtemplate)
 * [MissingSubscriptionRegistration](#noregisteredproviderfound)
@@ -63,7 +60,66 @@
 * [StorageAccountAlreadyExists](#storagenamenotunique)
 * [StorageAccountAlreadyTaken](#storagenamenotunique)
 
+
+### <a id="deploymentfailed"></a> DeploymentFailed
+
+此错误代码指示常规部署错误，但它不是开始进行故障排除所需的错误代码。真正能够帮助解决问题的错误代码通常是该错误的下一级错误代码。例如，下图显示了部署错误下的 **RequestDisallowedByPolicy** 错误代码。
+
+![显示错误代码](./media/resource-manager-common-deployment-errors/error-code.png)  
+
+
+### <a id="skunotavailable"></a> SkuNotAvailable
+
+在部署资源（通常为虚拟机）时，可能会收到以下错误代码和错误消息：
+
+    Code: SkuNotAvailable
+    Message: The requested tier for resource '<resource>' is currently not available in location '<location>' 
+    for subscription '<subscriptionID>'. Please try another tier or deploy to a different location.
+
+当所选的资源 SKU（如 VM 大小）不可用于所选的位置时，会收到此错误。若要解决此问题，需要确定区域提供哪些 SKU。可以使用门户或 REST 操作查找可用的 SKU。
+
+- 若要使用[门户](https://portal.azure.cn)，请登录到门户，然后通过界面添加资源。设置值时，可看到该资源的可用 SKU。不需要完成部署。
+
+    ![可用的 SKU](./media/resource-manager-common-deployment-errors/view-sku.png)  
+
+
+- 若要对虚拟机使用 REST API，请发送以下请求：
+
+        GET https://management.chinacloudapi.cn/subscriptions/{subscription-id}/providers/Microsoft.Compute/skus?api-version=2016-03-30
+
+     它会用以下格式返回可用的 SKU 和区域：
+
+        {
+            "value": [
+	          {
+	            "resourceType": "virtualMachines",
+	            "name": "Standard_A0",
+	            "tier": "Standard",
+	            "size": "A0",
+	            "locations": [
+	              "chinaeast"
+	            ],
+	            "restrictions": []
+	          },
+	          {
+	            "resourceType": "virtualMachines",
+	            "name": "Standard_A1",
+	            "tier": "Standard",
+	            "size": "A1",
+	            "locations": [
+	              "chinaeast"
+	            ],
+	            "restrictions": []
+	          },
+	          ...
+            ]
+        }    
+
+    如果在该区域或满足业务需求的备用区域中找不到合适的 SKU，请与 [Azure 支持](https://portal.azure.cn/#create/Microsoft.Support)联系。
+
+
 ### <a name="invalidtemplate"></a> InvalidTemplate
+
 此错误可由多种不同类型的错误导致。
 
 - 语法错误
@@ -150,6 +206,7 @@
     当资源以某种方式互相依赖，导致部署无法启动时，就会出现此错误。将多个相互依赖的项组合在一起时，会导致两个或两个以上的资源等待其他资源，而后者也在进行等待。例如，resource1 依赖于 resource3，resource2 依赖于 resource1，resource3 依赖于 resource2。通常情况下，删除不必要的依赖项即可解决此问题。有关依赖项错误的故障诊断建议，请参阅[检查部署顺序](#check-deployment-sequence)。
 
 ### <a id="notfound" name="notfound-and-resourcenotfound"></a> NotFound 和 ResourceNotFound
+
 如果模板包含无法解析的资源的名称，将出现类似于下面的错误：
 
     Code=NotFound;
@@ -187,8 +244,8 @@
 
 如果一项资源是另一资源的父级，则父资源必须存在才能创建子资源。如果它尚不存在，将收到以下错误：
 
-     Code=ParentResourceNotFound;
-     Message=Can not perform requested operation on nested resource. Parent resource 'exampleserver' not found."
+    Code=ParentResourceNotFound;
+    Message=Can not perform requested operation on nested resource. Parent resource 'exampleserver' not found."
 
 子资源的名称包括父名称。例如，SQL 数据库可能定义为：
 
@@ -204,6 +261,7 @@
     ]
 
 ### <a id="storagenamenotunique" name="storageaccountalreadyexists-and-storageaccountalreadytaken"></a> StorageAccountAlreadyExists 和 StorageAccountAlreadyTaken
+
 对于存储帐户，必须提供在 Azure 中唯一的资源名称。如果不提供唯一名称，会出现类似于下面的错误：
 
     Code=StorageAccountAlreadyTaken
@@ -217,6 +275,7 @@
 如果部署的存储帐户与订阅中某个现有存储帐户的名称相同，但提供的位置不同，将会出现一条错误消息，指出不同的位置已存在该存储帐户。请删除现有存储帐户，或者提供与现有存储帐户相同的位置。
 
 ### <a name="accountnameinvalid"></a> AccountNameInvalid
+
 尝试为存储帐户提供一个包含禁止字符的名称时，将会出现 **AccountNameInvalid** 错误。存储帐户名称必须为 3 到 24 个字符，只能使用数字和小写字母。[uniqueString](/documentation/articles/resource-group-template-functions/#uniquestring) 函数返回 13 个字符。如果将前缀连接到 **uniqueString** 结果，请提供 11 个字符（或更少字符）的前缀。
 
 ### <a name="badrequest"></a> BadRequest
@@ -227,7 +286,7 @@
 部署资源时，你可能会收到以下错误代码和消息：
 
     Code: NoRegisteredProviderFound
-    Message: No registered resource provider found for location {ocation}
+    Message: No registered resource provider found for location {location}
     and API version {api-version} for type {resource-type}.
 
 或者，可能收到类似的消息，指出：
@@ -362,22 +421,6 @@
 
 有关基于角色的访问控制的详细信息，请参阅 [Azure 基于角色的访问控制](/documentation/articles/role-based-access-control-configure/)。
 
-### <a name="sku-not-available" id="skunotavailable"></a> SkuNotAvailable
-
-在部署资源（通常为虚拟机）时，可能会收到以下错误代码和错误消息：
-
-    Code: SkuNotAvailable
-    Message: The requested tier for resource '<resource>' is currently not available in location '<location>' for subscription '<subscriptionID>'. Please try another tier or deploy to a different location.
-
-当所选的资源 SKU（如 VM 大小）不可用于所选的位置时，会收到此错误。有两个选项可解决此问题：
-
-- 登录到门户，并通过 UI 添加新资源。设置值时，可看到该资源的可用 SKU。不需要完成部署。
-
-    ![可用的 sku](./media/resource-manager-common-deployment-errors/view-sku.png)  
-
-
-- 如果在该区域或满足业务需求的备用区域中找不到合适的 SKU，请与 [Azure 支持](https://portal.azure.cn/#create/Microsoft.Support)联系。
-
 ## 故障排除技巧和提示
 
 ### 启用调试日志记录
@@ -387,7 +430,7 @@
 
     在 PowerShell 中，将 **DeploymentDebugLogLevel** 参数设置为 All、ResponseContent 或 RequestContent。
 
-        New-AzureRmResourceGroupDeployment -ResourceGroupName examplegroup -TemplateFile c:\\Azure\\Templates\\storage.json -DeploymentDebugLogLevel All
+        New-AzureRmResourceGroupDeployment -ResourceGroupName examplegroup -TemplateFile c:\Azure\Templates\storage.json -DeploymentDebugLogLevel All
 
     使用以下 cmdlet 检查请求内容：
 
@@ -403,7 +446,7 @@
 
     在 Azure CLI 中，将 **--debug-setting** 参数设置为 All、ResponseContent 或 RequestContent。
 
-        azure group deployment create --debug-setting All -f c:\\Azure\\Templates\\storage.json -g examplegroup -n ExampleDeployment
+        azure group deployment create --debug-setting All -f c:\Azure\Templates\storage.json -g examplegroup -n ExampleDeployment
 
     使用以下命令检查记录的请求和响应内容：
 
@@ -458,7 +501,7 @@
 
 或者，假设遇到部署错误，而你认为它与依赖关系设置错误有关。将模板分解为多个简化模板，对其进行测试。首先，创建仅部署单项资源（如 SQL Server）的模板。确保已正确定义该资源时，再添加依赖于它的资源（如 SQL 数据库）。正确定义这两项资源后，添加其他从属资源（如审核策略）。在每个测试部署之间，删除资源组，以确保充分测试依赖关系。
 
-### <a name="check-deployment-sequence"></a>检查部署顺序
+### <a name="check-deployment-sequence"></a> 检查部署顺序
 
 如果以意外的顺序部署资源，可能发生许多部署错误。依赖关系设置不当就会出现这些错误。缺少必需的依赖项时，就会出现一项资源尝试使用另一资源的值，但后者却不存在的情况。出现一个错误，指出找不到资源。可能会间歇性地遇到此类错误，因为资源的部署时间各不相同。例如，第一次尝试部署资源成功，因为所需资源偶然但却及时地完成了相关操作。但是，第二次尝试却失败了，因为所需资源未及时完成相关操作。
 
@@ -493,8 +536,8 @@ Resource Manager 可在模板验证过程中确定循环依赖项。它会返回
 1. 在模板中找到循环依赖项中标识的资源。
 2. 检查该资源的 **dependsOn** 属性并使用 **reference** 函数查看其所依赖的资源。
 3. 检查这些资源，看其依赖于哪些资源。顺着这些依赖项检查下去，直到找到依赖于原始资源的资源。
-5. 对于循环依赖项所牵涉的资源，请仔细检查所有使用 **dependsOn** 属性的情况，确定不需要的依赖项。删除这些依赖项。如果不确定某个依赖项是否为必需依赖项，可尝试删除它。
-6. 重新部署模板。
+4. 对于循环依赖项所牵涉的资源，请仔细检查所有使用 **dependsOn** 属性的情况，确定不需要的依赖项。删除这些依赖项。如果不确定某个依赖项是否为必需依赖项，可尝试删除它。
+5. 重新部署模板。
 
 部署模板时，删除 **dependsOn** 属性中的值可能导致错误。如果遇到错误，可将依赖项添加回模板。
 
@@ -543,5 +586,5 @@ Resource Manager 可在模板验证过程中确定循环依赖项。它会返回
 * 若要了解审核操作，请参阅 [Audit operations with Resource Manager](/documentation/articles/resource-group-audit/)（使用 Resource Manager 执行审核操作）。
 * 若要了解部署期间为确定错误执行哪些操作，请参阅 [View deployment operations](/documentation/articles/resource-manager-deployment-operations/)（查看部署操作）。
 
-<!---HONumber=Mooncake_0120_2017-->
-<!-- Update_Description: update meta properties ; update link reference ; how to resolve the dependency among items -->
+<!---HONumber=Mooncake_0227_2017-->
+<!-- Update_Description: update meta properties; update link reference; add DeploymentFailed errorcode  -->

@@ -1,5 +1,5 @@
 <properties
-    pageTitle="将链接模版与 Resource Manager 配合使用 | Azure"
+    pageTitle="连接 Azure 部署相关模板 | Azure"
     description="介绍如何使用 Azure 资源管理器模板中的链接模板创建一个模块化的模板的解决方案。演示如何传递参数值、指定参数文件和动态创建的 URL。"
     services="azure-resource-manager"
     documentationcenter="na"
@@ -14,10 +14,10 @@
     ms.tgt_pltfrm="na"
     ms.workload="na"
     ms.date="11/28/2016"
-    wacn.date="01/06/2017"
-    ms.author="tomfitz" />
+    wacn.date="03/03/2017"
+    ms.author="tomfitz" />  
 
-# 将已链接的模版与 Azure 资源管理器配合使用
+# 部署 Azure 资源时使用链接模板
 可在一个 Azure Resource Manager 模板中链接到另一个模板，将部署分解成一组有针对性并且有特定用途的模板。如同将一个应用程序分解为多个代码类那样，分解可在测试、重用和可读性方面带来好处。
 
 可以将参数从主模板传递到链接的模板，并可以直接将这些参数映射到由调用模板公开提供的参数或变量。链接模板还可以将输出变量传递回源模板中，启用模板之间的双向数据交换。
@@ -81,7 +81,6 @@ Resource Manager 服务必须能够访问链接的模板。无法为链接的模
 Resource Manager 会将每个链接模板作为单独的部署来处理。在资源组的部署历史记录中，可看到父模板和嵌套模板的分别部署。
 
 ![部署历史记录](./media/resource-group-linked-templates/linked-deployment-history.png)  
-
 
 ## 链接到参数文件
 以下示例使用 **parametersLink** 属性链接到参数文件。
@@ -291,4 +290,5 @@ URI 将解析成名为 **existingStorageAccount.json** 或 **newStorageAccount.j
 * 若要了解如何为资源定义部署顺序，请参阅 [Defining dependencies in Azure Resource Manager templates](/documentation/articles/resource-group-define-dependencies/)（在 Azure Resource Manager 模板中定义依赖关系）
 * 若要了解如何定义一个资源而创建多个实例，请参阅 [Create multiple instances of resources in Azure Resource Manager](/documentation/articles/resource-group-create-multiple/)（在 Azure Resource Manager 中创建多个资源实例）
 
-<!---HONumber=Mooncake_0103_2017-->
+<!---HONumber=Mooncake_0227_2017-->
+<!--Update_Description:update meta properties; wording update-->

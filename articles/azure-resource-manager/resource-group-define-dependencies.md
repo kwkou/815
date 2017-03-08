@@ -1,5 +1,5 @@
 <properties
-    pageTitle="Resource Manager 模板中的依赖关系 | Azure"
+    pageTitle="设置 Azure 资源的部署顺序 | Azure"
     description="介绍如何在部署期间将一个资源设置为依赖于另一个资源，以确保按正确的顺序部署资源。"
     services="azure-resource-manager"
     documentationcenter="na"
@@ -14,11 +14,10 @@
     ms.tgt_pltfrm="na"
     ms.workload="na"
     ms.date="01/03/2017"
-    wacn.date="01/25/2017"
+    wacn.date="03/03/2017"
     ms.author="tomfitz" />  
 
-
-# 在 Azure 资源管理器模板中定义依赖关系
+# 定义在 Azure Resource Manager 模板中部署资源的顺序
 对于给定的资源，可能有部署资源之前必须存在的其他资源。例如，SQL Server 必须存在，才能尝试部署 SQL 数据库。可通过将一个资源标记为依赖于其他资源来定义此关系。使用 **dependsOn** 元素或 **reference** 函数定义依赖项。
 
 Resource Manager 将评估资源之间的依赖关系，并根据其依赖顺序进行部署。如果资源互不依赖，Resource Manager 将并行部署资源。只需为部署在同一模板中的资源定义依赖关系。
@@ -51,7 +50,7 @@ Resource Manager 将评估资源之间的依赖关系，并根据其依赖顺序
     "dependsOn": [
       "[concat('Microsoft.Network/loadBalancers/', variables('loadBalancerName'))]",
       "[concat('Microsoft.Network/virtualNetworks/', variables('virtualNetworkName'))]"
-    ] 
+    ]
 
 尽管你可能倾向使用 dependsOn 来映射资源之间的关系，但请务必了解这么做的理由。例如，若要记录资源的互连方式，那么，dependsOn 方法并不合适。部署之后，无法查询 dependsOn 元素中定义的资源。通过使用 dependsOn，可以影响部署时间，因为 Resource Manager 不会并行部署两个具有依赖关系的资源。若要记录资源之间的关系，请改为使用[资源链接](/documentation/articles/resource-group-link-resources/)。
 
@@ -147,5 +146,5 @@ Resource Manager 可在模板验证过程中确定循环依赖项。如果收到
 * 若要了解有关创建 Azure 资源管理器模板的信息，请参阅[创作模板](/documentation/articles/resource-group-authoring-templates/)。
 * 有关模板的可用函数列表，请参阅[模板函数](/documentation/articles/resource-group-template-functions/)。
 
-<!---HONumber=Mooncake_0120_2017-->
-<!-- Update_Description: update meta properties ; wording update ; update code ; update link references ; add advise of setting dependency ; add CDN config code -->
+<!---HONumber=Mooncake_0227_2017-->
+<!-- Update_Description: update meta properties; wording update -->

@@ -1,12 +1,11 @@
 <properties
-    pageTitle="Azure Resource Manager 中的链接资源 | Azure"
+    pageTitle="在 Azure 解决方案中链接相关资源 | Azure"
     description="在 Azure Resource Manager 的不同资源组中的相关资源之间创建链接。"
     services="azure-resource-manager"
     documentationcenter=""
     author="tfitzmac"
     manager="timlt"
-    editor="tysonn" />  
-
+    editor="tysonn" />
 <tags
     ms.assetid="0738d072-c093-4cf1-a790-de13025d9d60"
     ms.service="azure-resource-manager"
@@ -15,11 +14,11 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="08/01/2016"
-    wacn.date="12/26/2016"
+    wacn.date="03/03/2017"
     ms.author="tomfitz" />  
 
 
-# Azure 资源管理器中的链接资源
+# 从不同资源组链接相关资源
 在部署期间，你可以将一个资源标记为依赖于另一个资源，但该生命周期在部署时结束。部署后，依赖资源之间没有任何标识关系。Resource Manager 提供了一个称为资源链接的功能来建立资源之间的永久关系。
 
 通过资源链接，可以记录跨资源组的关系。例如，将数据库的生命周期驻留在一个资源组中，将应用程序的不同于前者的生命周期驻留在另一个资源组中是一种常见现象。应用将连接到数据库，因此你需要在应用和数据库之间标记链接。
@@ -39,7 +38,6 @@
         "notes": "This web site uses the storage account to store user information."
       }
     }
-
 
 有关模板格式的完整说明，请参阅[资源链接 - 模板架构](/documentation/articles/resource-manager-template-links/)。
 
@@ -72,4 +70,5 @@ Properties 元素包含第二个资源的标识符。
 * 您还可以使用标记来组织您的资源。若要了解有关标记资源的信息，请参阅[使用标记来组织你的资源](/documentation/articles/resource-group-using-tags/)。
 * 有关如何创建模板并定义要部署的资源的说明，请参阅[创作模板](/documentation/articles/resource-group-authoring-templates/)。
 
-<!---HONumber=Mooncake_1219_2016-->
+<!---HONumber=Mooncake_0227_2017-->
+<!--Update_Description:update meta properties; wording update-->
