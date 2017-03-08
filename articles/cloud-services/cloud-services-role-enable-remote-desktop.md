@@ -19,7 +19,9 @@ ms.author="saurabh"/>
 # 为 Azure 云服务中的角色设置远程桌面连接
 
 >[AZURE.SELECTOR]
+- [Azure 门户预览](/documentation/articles/cloud-services-role-enable-remote-desktop-new-portal/)
 - [Azure 经典管理门户](/documentation/articles/cloud-services-role-enable-remote-desktop/)
+
 - [PowerShell](/documentation/articles/cloud-services-role-enable-remote-desktop-powershell/)
 
 
