@@ -82,7 +82,6 @@
 | UpgradeAbortedSyncOrConfigurationInProgress |安装向导正在运行，或者在计划程序外部计划了同步。 |
 | **UpgradeNotSupported** | |
 | UpgradeNotSupportedCustomizedSyncRules |你已将自己的自定义规则添加到配置中。 |
-
 | UpgradeNotSupportedGroupWritebackEnabled |用户已启用[组写回](/documentation/articles/active-directory-aadconnect-feature-preview/#group-writeback/)功能。| 
 | UpgradeNotSupportedInvalidPersistedState |安装不是快速设置或 DirSync 升级。| 
 | UpgradeNotSupportedMetaverseSizeExceeeded |metaverse 中的对象超过 100,000 个。| 

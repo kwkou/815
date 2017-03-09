@@ -191,10 +191,10 @@ ID 令牌将传递给网站和本机客户端，包含有关用户的配置文�
 1. 若要开始，请下载最新的 [Azure AD PowerShell Cmdlet 预览版](https://www.powershellgallery.com/packages/AzureADPreview)。
 2. 获取 Azure AD PowerShell Cmdlet 后，运行 Connect 命令登录到 Azure AD 管理员帐户。每次启动新会话都需要执行此操作。
    
-     Connect-AzureAD -Confirm
+		Connect-AzureAD -Confirm
 3. 运行以下命令，查看组织中创建的所有策略。在以下方案中执行大多数操作之后，都应该使用此命令。此命令还可帮助获取策略的**对象 ID**。
    
-     Get-AzureADPolicy
+		Get-AzureADPolicy
 
 ### 示例：管理组织的默认策略
 本示例将创建一个策略，使用户不需要太频繁地在整个组织中登录。
@@ -248,8 +248,6 @@ ID 令牌将传递给网站和本机客户端，包含有关用户的配置文�
 
     Add-AzureADServicePrincipalPolicy -ObjectId <ObjectID of the Service Principal> -RefObjectId <ObjectId of the Policy>
 &nbsp;&nbsp;3.**大功告成！**
-
- 
 
 ### 示例：为调用 Web API 的本机应用创建策略
 在本示例中创建的策略不要求用户太频繁地进行身份验证，这会延长用户可保持非活动状态、不必再次身份验证的时间。该策略将应用到 Web API，因此，当本机应用以资源形式请求 Web API 时，将应用此策略。

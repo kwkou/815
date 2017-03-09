@@ -91,16 +91,6 @@
 | --- | --- | ---
 |HTTPS|9090|	启用 SSO 注册（只有 SSO 注册过程才需要）。
 
-## 表 7a 和 7b - 适用于 (AD FS/Sync) 和 Azure AD 的 Azure AD Connect Health 代理
-下表描述了在 Azure AD Connect Health 代理与 Azure AD 之间通信所需的终结点、端口和协议
-
-### 表 7a - 适用于 (AD FS/Sync) 和 Azure AD 的 Azure AD Connect Health 代理的端口和协议
-此表描述了 Azure AD Connect Health 代理与 Azure AD 之间通信所需的以下出站端口和协议。
-
-| 协议 | 端口 | 说明 |
-| --- | --- | --- |
-| HTTPS |443 (TCP/UDP) |出站 |
-| Azure 服务总线 |5671 (TCP/UDP) |出站 |
 
 <!---HONumber=Mooncake_0227_2017-->
 <!---Update_Description: wording update -->

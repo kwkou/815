@@ -62,18 +62,6 @@
 - 获取目录中已验证域的列表
 - 同意应用程序，授予它们与在目录中相同的成员访问权限
 
-## 设置来宾用户访问策略
-目录的“配置”选项卡包含用于控制来宾用户访问权限的选项。这些选项只能由目录全局管理员在 Azure 经典管理门户中更改。目前不支持 PowerShell 或 API 方法。
-
-若要在 Azure 经典管理门户中打开“配置”选项卡，请选择“Active Directory”，然后选择目录的名称。
-
-![Azure Active Directory 中的“配置”选项卡][1]  
-
-
-然后，便可以编辑用于控制来宾用户访问权限的选项。
-
-![来宾用户的访问控制选项][2]
-
 ## 后续步骤
 - [在 Azure Active Directory 中添加来自其他目录或合作伙伴公司的用户](/documentation/articles/active-directory-create-users-external/)
 - [管理 Azure AD](/documentation/articles/active-directory-administer/)

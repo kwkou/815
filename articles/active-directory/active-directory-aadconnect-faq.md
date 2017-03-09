@@ -4,7 +4,9 @@
     services="active-directory"
     documentationcenter=""
     author="billmath"
-    manager="femila"
+    manager="femila" />
+
+<tags
     ms.assetid="4e47a087-ebcd-4b63-9574-0c31907a39a3"
     ms.service="active-directory"
     ms.workload="identity"
@@ -12,7 +14,8 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="02/07/2017"
-    ms.author="billmath" />  
+    ms.author="billmath" 
+    wacn.date="03/07/2017" />  
 
 
 # 有关 Azure Active Directory Connect 的常见问题

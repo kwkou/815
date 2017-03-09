@@ -67,30 +67,30 @@
   - 如果在德国使用 Microsoft 云或 Azure 政府版云，请参阅 [Azure AD Connect 同步服务实例注意事项](/documentation/articles/active-directory-aadconnect-instances/)获取 URL。
 - Azure AD Connect 默认情况下使用 TLS 1.0 与 Azure AD 进行通信。可以遵循[为 Azure AD connect 启用 TLS 1.2](#enable-tls-12-for-azure-ad-connect) 中的步骤将此更改为 TLS 1.2。
 - 如果使用出站代理连接到 Internet，则必须在 **C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319\\Config\\machine.config** 文件中添加以下设置，才能将安装向导和 Azure AD Connect 同步连接到 Internet 和 Azure AD。必须在文件底部输入此文本。在此代码中，&lt;PROXYADRESS&gt; 代表实际代理 IP 地址或主机名。
-
-    <system.net>
-        <defaultProxy>
-            <proxy
-            usesystemdefault="true"
-            proxyaddress="http://<PROXYADDRESS>:<PROXYPORT>"
-            bypassonlocal="true"
-            />
-        </defaultProxy>
-    </system.net>
+	
+	    <system.net>
+	        <defaultProxy>
+	            <proxy
+	            usesystemdefault="true"
+	            proxyaddress="http://<PROXYADDRESS>:<PROXYPORT>"
+	            bypassonlocal="true"
+	            />
+	        </defaultProxy>
+	    </system.net>
 
 
 - 如果代理服务器要求身份验证，则[服务帐户](/documentation/articles/active-directory-aadconnect-accounts-permissions/#azure-ad-connect-sync-service-accounts/)必须位于域中，且必须使用自定义的设置安装路径来指定[自定义服务帐户](/documentation/articles/active-directory-aadconnect-get-started-custom/#install-required-components/)。还需要对 machine.config 进行不同的更改。在 machine.config 中进行此更改之后，安装向导和同步引擎将响应来自代理服务器的身份验证请求。在所有安装向导页中（“配置”页除外）都使用已登录用户的凭据。在安装向导结束时的“配置”页上，上下文将切换到创建的[服务帐户](/documentation/articles/active-directory-aadconnect-accounts-permissions/#azure-ad-connect-sync-service-accounts/)。machine.config 节应如下所示。
 
 
-    <system.net>
-        <defaultProxy enabled="true" useDefaultCredentials="true">
-            <proxy
-            usesystemdefault="true"
-            proxyaddress="http://<PROXYADDRESS>:<PROXYPORT>"
-            bypassonlocal="true"
-            />
-        </defaultProxy>
-    </system.net>
+	    <system.net>
+	        <defaultProxy enabled="true" useDefaultCredentials="true">
+	            <proxy
+	            usesystemdefault="true"
+	            proxyaddress="http://<PROXYADDRESS>:<PROXYPORT>"
+	            bypassonlocal="true"
+	            />
+	        </defaultProxy>
+	    </system.net>
 
 
 有关[默认代理元素](https://msdn.microsoft.com/zh-cn/library/kd3cf2ex.aspx)的详细信息，请参阅 MSDN。
@@ -121,14 +121,14 @@ Azure AD Connect 默认情况下使用 TLS 1.0 对同步引擎服务器和 Azure
 1. 无法在 Windows Server 2008 上启用 TLS 1.2。需要 Windows Server 2008R2 或更高版本。请确保已为操作系统安装了 .Net 4.5.1 修补程序，请参阅 [Microsoft 安全通报 2960358](https://technet.microsoft.com/security/advisory/2960358)。服务器上可能已经安装了此版本或更高版本。
 2. 如果使用 Windows Server 2008R2，请确保已启用 TLS 1.2。Windows Server 2012 服务器及更高版本上应该已经启用了 TLS 1.2。
 	
-	[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2]
-	[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Client] "DisabledByDefault"=dword:00000000 "Enabled"=dword:00000001
-	[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Server] "DisabledByDefault"=dword:00000000 "Enabled"=dword:00000001
+		[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2]
+		[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Client] "DisabledByDefault"=dword:00000000 "Enabled"=dword:00000001
+		[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Server] "DisabledByDefault"=dword:00000000 "Enabled"=dword:00000001
 
 3. 对于所有操作系统，设置此注册表项并重新启动服务器。
 
-	HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\.NETFramework\v4.0.30319
-	"SchUseStrongCrypto"=dword:00000001
+		HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\.NETFramework\v4.0.30319
+		"SchUseStrongCrypto"=dword:00000001
 
 4. 如果还想要在同步引擎服务器和远程 SQL Server 之间启用 TLS 1.2，请确保为 [Microsoft SQL Server 的 TLS 1.2 支持](https://support.microsoft.com/zh-cn/kb/3135244)安装所需的版本。
 

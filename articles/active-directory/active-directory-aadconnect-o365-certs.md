@@ -135,7 +135,7 @@ https://(your_FS_name)/federationmetadata/2007-06/federationmetadata.xml
 1. 确认是否已登录到主 AD FS 服务器。
 2. 通过打开 PowerShell 命令窗口并运行以下命令，检查 AD FS 中的当前签名证书：
 
-    PS C:\>Get-ADFSCertificate -CertificateType token-signing
+		PS C:\>Get-ADFSCertificate -CertificateType token-signing
 
    > [AZURE.NOTE]
    如果你使用的是 AD FS 2.0，应该先运行 Add-Pssnapin Microsoft.Adfs.Powershell。

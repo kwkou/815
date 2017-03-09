@@ -57,12 +57,20 @@
 
 1. 在 [Azure 经典管理门户中](https://manage.windowsazure.cn)，单击“新建”>“计算”>“虚拟机”>“从库中”。使用以下值来完成向导。除非建议或必须使用其他值，否则请接受默认的设置值。
 
-   | 在此向导页中... | 指定以下值 | |--- |--- | | **选择映像** |Windows Server 2012 R2 Datacenter | | **虚拟机配置** |<p>虚拟机名称：键入单个标签名称（例如 AzureDC1）。</p><p>新用户名：键入用户的名称。此用户将成为 VM 上本地管理员组的成员。首次登录 VM 时，需要使用此名称。名为 Administrator 的内置帐户将无法使用。</p><p>新密码/确认：键入密码</p> | | **虚拟机配置** |<p>云服务：针对第一个 VM 选择“创建新云服务”<b></b>，然后在创建其他将用于托管 DC 角色的 VM 时选择同一云服务名称。</p><p>云服务 DNS 名称：指定全局唯一的名称</p><p>区域/地缘组/虚拟网络：指定虚拟网络名称（例如 WestUSVNet）。</p><p>存储帐户：针对第一个 VM 选择“使用自动生成的存储帐户”<b></b>，然后在创建其他将用于托管 DC 角色的 VM 时选择同一存储帐户名称。</p><p>可用性集：选择“创建可用性集”<b></b>。</p><p>可用性集名称：创建第一个 VM 时键入可用性集的名称，然后在创建其他 VM 时选择同一名称。</p> | | **虚拟机配置** |<p>选择“安装VM代理”<b></b>和所需的任何其他扩展。</p> |
+	   | 在此向导页中... | 指定以下值 | 
+	   |--- |--- | 
+	   | **选择映像** |Windows Server 2012 R2 Datacenter | 
+	   | **虚拟机配置** |<p>虚拟机名称：键入单个标签名称（例如 AzureDC1）。</p><p>新用户名：键入用户的名称。此用户将成为 VM 上本地管理员组的成员。首次登录 VM 时，需要使用此名称。名为 Administrator 的内置帐户将无法使用。</p><p>新密码/确认：键入密码</p> | 
+	   | **虚拟机配置** |<p>云服务：针对第一个 VM 选择“创建新云服务”<b></b>，然后在创建其他将用于托管 DC 角色的 VM 时选择同一云服务名称。</p><p>云服务 DNS 名称：指定全局唯一的名称</p><p>区域/地缘组/虚拟网络：指定虚拟网络名称（例如 WestUSVNet）。</p><p>存储帐户：针对第一个 VM 选择“使用自动生成的存储帐户”<b></b>，然后在创建其他将用于托管 DC 角色的 VM 时选择同一存储帐户名称。</p><p>可用性集：选择“创建可用性集”<b></b>。</p><p>可用性集名称：创建第一个 VM 时键入可用性集的名称，然后在创建其他 VM 时选择同一名称。</p> | 
+	   | **虚拟机配置** |<p>选择“安装VM代理”<b></b>和所需的任何其他扩展。</p> |
+
 2. 将磁盘附加到将运行 DC 服务器角色的每个 VM。需要提供额外的磁盘来存储 AD 数据库、日志和 SYSVOL。指定磁盘的大小（例如 10 GB）并将“主机缓存首选项”保持设置为“无”。有关步骤，请参阅[如何将数据磁盘附加到 Windows 虚拟机](/documentation/articles/virtual-machines-windows-classic-attach-disk?toc=%2fazure%2fvirtual-machines%2fwindows%2fclassic%2ftoc.json/)。
+
 3. 在首次登录 VM 之后，请打开“服务器管理器”>“文件和存储服务”，以使用 NTFS 在磁盘上创建一个卷。
+
 4. 为要运行 DC 角色的 VM 保留静态 IP 地址。若要保留静态 IP 地址，请下载 Microsoft Web 平台安装程序，[安装 Azure PowerShell](/documentation/articles/powershell-install-configure/) 并运行 Set-AzureStaticVNetIP cmdlet。例如：
 
-    'Get-AzureVM -ServiceName AzureDC1 -Name AzureDC1 | Set-AzureStaticVNetIP -IPAddress 10.0.0.4 | Update-AzureVM
+	Get-AzureVM -ServiceName AzureDC1 -Name AzureDC1 | Set-AzureStaticVNetIP -IPAddress 10.0.0.4 | Update-AzureVM
 
 有关如何设置静态 IP 地址的详细信息，请参阅[为 VM 配置静态内部 IP 地址](/documentation/articles/virtual-networks-reserved-private-ip/)。
 
@@ -77,12 +85,13 @@
 ## 为应用程序服务器创建 VM
 1. 重复以下步骤，创建作为应用程序服务器运行的 VM。除非建议或必须使用其他值，否则请接受默认的设置值。
 
-   | 在此向导页中... | 指定以下值 | 
-   |--- |--- | 
-   | **选择映像** |Windows Server 2012 R2 Datacenter | 
-   | **虚拟机配置** |<p>虚拟机名称：键入单个标签名称（例如 AppServer1）。</p><p>新用户名：键入用户的名称。此用户将成为 VM 上本地管理员组的成员。首次登录 VM 时，需要使用此名称。名为 Administrator 的内置帐户将无法使用。</p><p>新密码/确认：键入密码</p> | 
-   | **虚拟机配置** |<p>云服务：针对第一个 VM 选择“创建新云服务”，然后在创建其他将用于托管应用程序的 VM 时选择同一云服务名称。</p><p>云服务 DNS 名称：指定全局唯一的名称</p><p>区域/地缘组/虚拟网络：指定虚拟网络名称（例如 WestUSVNet）。</p><p>存储帐户：针对第一个 VM 选择“使用自动生成的存储帐户”，然后在创建其他将用于托管应用程序的 VM 时选择同一存储帐户名称。</p><p>可用性集：选择“创建可用性集”。</p><p>可用性集名称：创建第一个 VM 时键入可用性集的名称，然后在创建其他 VM 时选择同一名称。</p> | 
-   | **虚拟机配置** |<p>选择“安装VM代理”<b></b>和所需的任何其他扩展。</p> |
+	   | 在此向导页中... | 指定以下值 | 
+	   |--- |--- | 
+	   | **选择映像** |Windows Server 2012 R2 Datacenter | 
+	   | **虚拟机配置** |<p>虚拟机名称：键入单个标签名称（例如 AppServer1）。</p><p>新用户名：键入用户的名称。此用户将成为 VM 上本地管理员组的成员。首次登录 VM 时，需要使用此名称。名为 Administrator 的内置帐户将无法使用。</p><p>新密码/确认：键入密码</p> | 
+	   | **虚拟机配置** |<p>云服务：针对第一个 VM 选择“创建新云服务”，然后在创建其他将用于托管应用程序的 VM 时选择同一云服务名称。</p><p>云服务 DNS 名称：指定全局唯一的名称</p><p>区域/地缘组/虚拟网络：指定虚拟网络名称（例如 WestUSVNet）。</p><p>存储帐户：针对第一个 VM 选择“使用自动生成的存储帐户”，然后在创建其他将用于托管应用程序的 VM 时选择同一存储帐户名称。</p><p>可用性集：选择“创建可用性集”。</p><p>可用性集名称：创建第一个 VM 时键入可用性集的名称，然后在创建其他 VM 时选择同一名称。</p> | 
+	   | **虚拟机配置** |<p>选择“安装VM代理”<b></b>和所需的任何其他扩展。</p> |
+
 2. 预配每个 VM 之后，登录 VM 并将其加入域。在“服务器管理器”中，单击“本地服务器”>“工作组”>“更改...”，然后选择“域”并键入本地域名。提供域用户的凭据，然后重新启动 VM 以完成加入域的操作。
 
 若要使用 Windows PowerShell 而不是 UI 创建 VM，请参阅[使用 Azure PowerShell 创建和预配置基于 Windows 的虚拟机](/documentation/articles/virtual-machines-windows-classic-create-powershell?toc=%2fazure%2fvirtual-machines%2fwindows%2fclassic%2ftoc.json/)

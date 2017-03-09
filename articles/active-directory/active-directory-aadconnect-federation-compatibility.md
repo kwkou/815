@@ -140,7 +140,7 @@ Centrify 帮助提供针对 Office 365 的联合单一登录体验，而无需�
 | 富客户端应用程序（如 Lync、Office Subscription、CRM） |支持 |无 |
 | 多重格式电子邮件客户端（如 Outlook 和 ActiveSync） |支持 |不支持客户端访问控制 |
 
-有关 Centrify 的详细信息，请查看[此处](http://www.centrify.com/cloud/apps/single-sign-on-for-office-365.asp)。|
+有关 Centrify 的详细信息，请查看[此处](http://www.centrify.com/cloud/apps/single-sign-on-for-office-365.asp)。
 
 ## IBM Tivoli Federated Identity Manager 6.2.2 <a name="ibm-tivoli-federated-identity-manager-622"></a>
 IBM Tivoli Federated Identity Manager 6.2.2 装有 IBM Security Access Manager 且适用于 Microsoft Applications 1.4，它实施广泛使用的 WS 联合身份验证/WS-Trust 标识标准，以提供单一登录和属性交换框架。
