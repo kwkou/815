@@ -8,7 +8,7 @@
     editor=""/>
 
 <tags
-    ms.service="virtual-machines-windows"
+    ms.service="virtual-machines-linux"
     ms.workload="virtual-machines"
     ms.tgt_pltfrm="na"
     ms.devlang="na"
