@@ -70,7 +70,7 @@
 
 4. 为要运行 DC 角色的 VM 保留静态 IP 地址。若要保留静态 IP 地址，请下载 Microsoft Web 平台安装程序，[安装 Azure PowerShell](/documentation/articles/powershell-install-configure/) 并运行 Set-AzureStaticVNetIP cmdlet。例如：
 
-	Get-AzureVM -ServiceName AzureDC1 -Name AzureDC1 | Set-AzureStaticVNetIP -IPAddress 10.0.0.4 | Update-AzureVM
+		Get-AzureVM -ServiceName AzureDC1 -Name AzureDC1 | Set-AzureStaticVNetIP -IPAddress 10.0.0.4 | Update-AzureVM
 
 有关如何设置静态 IP 地址的详细信息，请参阅[为 VM 配置静态内部 IP 地址](/documentation/articles/virtual-networks-reserved-private-ip/)。
 

@@ -137,10 +137,10 @@ https://(your_FS_name)/federationmetadata/2007-06/federationmetadata.xml
 
 		PS C:\>Get-ADFSCertificate -CertificateType token-signing
 
-   > [AZURE.NOTE]
-   如果你使用的是 AD FS 2.0，应该先运行 Add-Pssnapin Microsoft.Adfs.Powershell。
-   >
-   >
+	   > [AZURE.NOTE]
+	   如果你使用的是 AD FS 2.0，应该先运行 Add-Pssnapin Microsoft.Adfs.Powershell。
+	   >
+	   >
 3. 查看命令输出中是否存在任何已列出的证书。如果 AD FS 已生成新证书，你应该会在输出中看到两个证书：一个证书的 **IsPrimary** 值为 **True**，**NotAfter** 日期为 5 天内；另一个证书的 **IsPrimary** 为 **False**，**NotAfter** 大约为未来的 1 年。
 4. 如果你只看到一个证书，且 **NotAfter** 日期在 5 天内，则需要生成新的证书。
 5. 若要生成新的证书，请在 PowerShell 命令提示符下执行以下命令：`PS C:\>Update-ADFSCertificate -CertificateType token-signing`。
