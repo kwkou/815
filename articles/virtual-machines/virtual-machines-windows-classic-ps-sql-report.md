@@ -79,8 +79,8 @@ Azure 提供两个不同的部署模型用于创建和处理资源：[Resource M
     * **可用性集**：无。
     * **终结点**：保留“远程桌面”和 **PowerShell** 终结点，然后添加一个 HTTP 或 HTTPS 终结点，具体取决于你的环境。
      
-     * **HTTP**：默认公共和专用端口均为 **80**。请注意，如果你使用非 80 的专用端口，请修改 http 脚本中的 **$HTTPport = 80**。
-     * **HTTPS**：默认公共和专用端口均为 **443**。最佳安全方案是更改私有端口并配置你的防火墙和报表服务器以使用私有端口。有关终结点的详细信息，请参阅[如何设置与虚拟机的通信](/documentation/articles/virtual-machines-windows-classic-setup-endpoints/)。请注意，如果你使用非 443 的端口，请更改 HTTPS 脚本中的参数 **$HTTPsport = 443**。
+        * **HTTP**：默认公共和专用端口均为 **80**。请注意，如果你使用非 80 的专用端口，请修改 http 脚本中的 **$HTTPport = 80**。
+        * **HTTPS**：默认公共和专用端口均为 **443**。最佳安全方案是更改私有端口并配置你的防火墙和报表服务器以使用私有端口。有关终结点的详细信息，请参阅[如何设置与虚拟机的通信](/documentation/articles/virtual-machines-windows-classic-setup-endpoints/)。请注意，如果你使用非 443 的端口，请更改 HTTPS 脚本中的参数 **$HTTPsport = 443**。
     * 单击“下一步”。![下一步](./media/virtual-machines-windows-classic-ps-sql-report/IC692021.gif)
 8. 在向导的最后一页上，保持选中默认的“安装 VM 代理”。本主题中的步骤不使用 VM 代理，但如果打算保留此 VM，VM 代理和扩展将允许你增强该 VM。有关 VM 代理的详细信息，请参阅 [VM Agent and Extensions - Part 1](https://azure.microsoft.com/blog/2014/04/11/vm-agent-and-extensions-part-1/)（VM 代理和扩展 – 第 1 部分）。安装并运行的一个默认扩展是“BGINFO”扩展，它在 VM 桌面上显示系统信息，如内部 IP 和可用驱动器空间。
 9. 单击“完成”。![确定](./media/virtual-machines-windows-classic-ps-sql-report/IC660122.gif)

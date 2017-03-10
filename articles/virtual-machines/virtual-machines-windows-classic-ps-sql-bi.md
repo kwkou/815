@@ -151,12 +151,12 @@ SQL Server 的虚拟机库映像包括安装的 Reporting Services 本机模式�
 
 * 通过 Windows 远程桌面连接到虚拟机。在远程桌面的用户界面中：
   
-  1. 键入**云服务名称**作为计算机名称。
-  2. 键入冒号 \(:\) 和为 TCP 远程桌面终结点配置的公共端口号。
+    1. 键入**云服务名称**作为计算机名称。
+    2. 键入冒号 \(:\) 和为 TCP 远程桌面终结点配置的公共端口号。
      
-          Myservice.chinacloudapp.cn:63133
+            Myservice.chinacloudapp.cn:63133
      
-      有关详细信息，请参阅[什么是云服务？](/documentation/articles/fundamentals-application-models/)。
+        有关详细信息，请参阅[什么是云服务？](/documentation/articles/fundamentals-application-models/)。
 
 **启动 Reporting Services 配置管理器。**
 

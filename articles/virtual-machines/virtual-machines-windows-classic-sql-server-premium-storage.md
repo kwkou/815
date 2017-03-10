@@ -132,7 +132,7 @@ DS\* 系列必须是部署到新的云服务的第一个 VM。
 
 6. 转储每个存储池关联的磁盘：
 
-        Get-StoragePool -FriendlyName AMS1pooldata \| Get-PhysicalDisk
+        Get-StoragePool -FriendlyName AMS1pooldata | Get-PhysicalDisk
 
     ![GetStoragePool][5]
 
