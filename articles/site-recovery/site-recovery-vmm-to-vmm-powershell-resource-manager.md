@@ -1,5 +1,5 @@
 <properties
-    pageTitle="使用 PowerShell (Resource Manager) 将 VMM 云中的 Hyper-V 虚拟机复制到辅助 VMM 站点 | Azure"
+    pageTitle="使用 PowerShell 将 VMM 中的 Hyper-V VM 复制到辅助站点 (Azure Resource Manager) | Azure"
     description="介绍如何部署 Azure Site Recovery，以便使用 PowerShell (Resource Manager) 来协调 VMM 云中 Hyper-V VM 到辅助 VMM 站点的复制、故障转移和恢复"
     services="site-recovery"
     documentationcenter=""
@@ -14,8 +14,8 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="11/01/2016"
-    wacn.date="02/24/2017"
+    ms.date="02/06/2017"
+    wacn.date="03/10/2017"
     ms.author="sutalasi" />  
 
 
@@ -127,13 +127,13 @@
 	
 		New-Item c:\ASR -type directory
 		
-2.	通过运行以下命令，使用下载的提供者提取文件
+2.	通过运行以下命令，使用下载的提供程序提取文件
 	
 		pushd C:\ASR\
 		.\AzureSiteRecoveryProvider.exe /x:. /q
 
 	
-3.	使用以下命令安装提供者：
+3.	使用以下命令安装提供程序：
 	
 		.\SetupDr.exe /i
 		$installationRegPath = "hklm:\software\Microsoft\Microsoft System Center Virtual Machine Manager Server\DRAdapter"
@@ -266,7 +266,7 @@
 
 ## 测试你的部署
 
-若要测试你的部署，可针对一台虚拟机运行测试故障转移，或者创建一个包括多个虚拟机的恢复计划并针对该计划运行测试故障转移。测试故障转移在隔离的网络中模拟你的故障转移和恢复机制。
+若要测试部署，可针对一台虚拟机运行测试故障转移，或者创建一个包括多个虚拟机的恢复计划并针对该计划运行测试故障转移。测试故障转移在隔离的网络中模拟你的故障转移和恢复机制。
 
 > [AZURE.NOTE] 你可以在 Azure 门户中为应用程序创建恢复计划。
 
@@ -351,4 +351,4 @@
 
 [详细了解](https://msdn.microsoft.com/zh-cn/library/azure/mt637930.aspx) Azure Site Recovery 和 Azure Resource Manager PowerShell cmdlet。
 
-<!---HONumber=Mooncake_1205_2016-->
+<!---HONumber=Mooncake_0306_2017-->

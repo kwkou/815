@@ -1,22 +1,21 @@
 <properties
-	pageTitle="配合使用 Azure PowerShell 和 Azure Resource Manager 将服务器保护到 Azure | Azure"
-	description="通过使用 PowerShell 和 Azure Resource Manager，通过 Azure Site Recovery 将服务器自动保护到 Azure。"
-	services="site-recovery"
-	documentationCenter=""
-	authors="bsiva"
-	manager="abhiag"
-	editor=""/>  
-
-
+    pageTitle="使用 PowerShell 和 Azure Resource Manager 复制 Hyper-V VM | Azure"
+    description="在 PowerShell 和 Azure Resource Manager 中使用 Azure Site Recovery 将 Hyper-V VM 自动复制到 Azure。"
+    services="site-recovery"
+    documentationcenter=""
+    author="bsiva"
+    manager="abhiag"
+    editor="" />
 <tags
-	ms.service="site-recovery"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="backup-recovery"
-	ms.date="09/27/2016"
-	wacn.date="02/15/2017"
-	ms.author="bsiva"/>  
+    ms.assetid="05e0d76e-c3f5-4845-8052-094019b6d102"
+    ms.service="site-recovery"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.tgt_pltfrm="na"
+    ms.workload="backup-recovery"
+    ms.date="02/06/2017"
+    wacn.date="03/10/2017"
+    ms.author="bsiva" />  
 
 
 # 使用 PowerShell 和 Azure Resource Manager 在本地 Hyper-V 虚拟机与 Azure 之间复制
@@ -56,10 +55,9 @@ Site Recovery PowerShell cmdlet 在 Azure PowerShell for Azure Resource Manager 
 
 本文将举例说明如何使用 Azure Powershell 和 Azure Resource Manager 来配置和管理对服务器的保护。本文中使用的示例演示了如何将在 Hyper-V 主机上运行的虚拟机保护到 Azure。下面是特定于该示例的先决条件。如需不同站点恢复方案的各种详细要求，请参阅与该方案相关的文档。
 
-- 需要一台运行 Windows Server 2012 R2 的 Hyper-V 主机，其中包含一个或多个虚拟机。
+- 需要一台运行 Windows Server 2012 R2 或 Microsoft Hyper-V Server 2012 R2 的 Hyper-V 主机，其中包含一个或多个虚拟机。
 - Hyper-V 服务器应直接或通过代理连接到 Internet。
-- 要保护的虚拟机应符合[虚拟机先决条件](/documentation/articles/site-recovery-best-practices/#virtual-machines)。
-	
+- 要保护的虚拟机应符合[虚拟机先决条件](/documentation/articles/site-recovery-best-practices/#azure-virtual-machine-requirements)。
 
 ## 步骤 1：登录到你的 Azure 帐户
 
@@ -262,4 +260,5 @@ Site Recovery PowerShell cmdlet 在 Azure PowerShell for Azure Resource Manager 
 
 [详细了解](https://msdn.microsoft.com/zh-cn/library/azure/mt637930.aspx) Azure Site Recovery 和 Azure Resource Manager PowerShell cmdlet。
 
-<!---HONumber=Mooncake_1107_2016-->
+<!---HONumber=Mooncake_0306_2017-->
+<!--Update_Description: add Microsoft Hyper-V Server 2012 R2 as prerequisites option-->

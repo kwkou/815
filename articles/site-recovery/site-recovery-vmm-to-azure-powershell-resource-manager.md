@@ -1,29 +1,28 @@
 <properties
-	pageTitle="使用 Azure Site Recovery 和 PowerShell（资源管理器）在 VMM 云中复制 Hyper-V 虚拟机 | Azure"
-	description="使用 Azure Site Recovery 和 PowerShell 在 VMM 云中复制 Hyper-V 虚拟机"
-	services="site-recovery"
-	documentationCenter=""
-	authors="Rajani-Janaki-Ram"
-	manager="rochakm"
-	editor="raynew"/>  
-
-
+    pageTitle="使用 Azure Site Recovery 和 PowerShell（资源管理器）在 VMM 云中复制 Hyper-V 虚拟机 | Azure"
+    description="使用 Azure Site Recovery 和 PowerShell 在 VMM 云中复制 Hyper-V 虚拟机"
+    services="site-recovery"
+    documentationcenter=""
+    author="Rajani-Janaki-Ram"
+    manager="rochakm"
+    editor="raynew" />
 <tags
-	ms.service="site-recovery"
-	ms.workload="backup-recovery"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="09/16/2016"
-	wacn.date="02/15/2017"
-	ms.author="rajanaki"/>  
+    ms.assetid="6ac509ad-5024-43d8-b621-d8fec019b9a9"
+    ms.service="site-recovery"
+    ms.workload="backup-recovery"
+    ms.tgt_pltfrm="na"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.date="02/02/2017"
+    wacn.date="03/10/2017"
+    ms.author="rajanaki" />  
 
 
 # 使用 PowerShell 和 Azure Resource Manager 将 VMM 云中的 Hyper-V 虚拟机复制到 Azure
 
 > [AZURE.SELECTOR]
 - [Azure 门户](/documentation/articles/site-recovery-vmm-to-azure/)
-- [PowerShell - ARM](/documentation/articles/site-recovery-vmm-to-azure-powershell-resource-manager/)
+- [PowerShell - Resource Manager](/documentation/articles/site-recovery-vmm-to-azure-powershell-resource-manager/)
 - [经典门户](/documentation/articles/site-recovery-vmm-to-azure-classic/)
 - [PowerShell - 经典](/documentation/articles/site-recovery-deploy-with-powershell/)
 
@@ -74,11 +73,10 @@ Azure Site Recovery 可在许多部署方案中安排虚拟机的复制、故障
 	- 了解有关[配置 VMM 云结构](/documentation/articles/site-recovery-best-practices/)的更多信息
 	- 在你的云结构元素就位后，通过[在 VMM 中创建私有云](https://technet.microsoft.com/zh-cn/library/jj860425.aspx)和[Walkthrough: Creating private clouds with System Center 2012 SP1 VMM（演练：使用 System Center 2012 SP1 VMM 创建私有云）](https://blogs.technet.microsoft.com/b/keithmayer/archive/2013/04/18/walkthrough-creating-private-clouds-with-system-center-2012-sp1-virtual-machine-manager-build-your-private-cloud-in-a-month.aspx)了解如何创建私有云。
 
-
 ### Hyper-V 先决条件
 
-- Hyper-V 主机服务器必须至少运行具有 Hyper-V 角色且安装了最新更新的 Windows Server 2012。
-- 如果你在群集中运行 Hyper-V，请注意，如果你具有基于静态 IP 地址的群集，则不会自动创建群集代理。你需要手动配置群集代理。对于
+- Hyper-V 主机服务器必须至少运行具有 Hyper-V 角色的 **Windows Server 2012** 或 **Microsoft Hyper-V Server 2012** 并且安装了最新的更新。
+- 如果在群集中运行 Hyper-V，请注意，如果具有基于静态 IP 地址的群集，则不会自动创建群集代理。你需要手动配置群集代理。对于
 - 有关说明，请参阅 [How to Configure Hyper-V Replica Broker（如何配置 Hyper-V 副本代理）](http://blogs.technet.com/b/haroldwong/archive/2013/03/27/server-virtualization-series-hyper-v-replica-broker-explained-part-15-of-20-by-yung-chou.aspx)。
 - 你要为其管理保护的任何 Hyper-V 主机服务器或群集必须包括在 VMM 云中。
 
@@ -91,7 +89,7 @@ Azure Site Recovery 可在许多部署方案中安排虚拟机的复制、故障
 
 如果希望部署网络映射，需要满足下列条件：
 
-- 源 VMM 服务器上你要保护的虚拟机应当连接到某个 VM 网络。该网络应当该链接到与该云相关联的逻辑网络。
+- 源 VMM 服务器上要保护的虚拟机应当连接到某个 VM 网络。该网络应当该链接到与该云相关联的逻辑网络。
 - 在故障转移后复制的虚拟机可以连接到的 Azure 网络。你将在故障转移时选择此网络。此网络应与 Azure Site Recovery 订阅位于同一区域中。
 
 若要详细了解网络映射，请参阅：
@@ -125,22 +123,19 @@ Azure Site Recovery 可在许多部署方案中安排虚拟机的复制、故障
 
 		Set-AzureRmContext –SubscriptionID <subscriptionId>
 
-
-## 步骤 2：创建恢复服务保管库 
-
-1. 如果还没有 ARM 资源组，则创建一个
-
-		New-AzureRmResourceGroup -Name #ResourceGroupName -Location #location
-
+## 步骤 2：创建恢复服务保管库
+1. 如果没有 Azure Resource Manager 资源组，请创建一个资源组
+   
+        New-AzureRmResourceGroup -Name #ResourceGroupName -Location #location
 2. 创建新的恢复服务保管库，并将所创建的 ASR 保管库对象保存在变量（后面将用到）中。你还可以使用 Get-AzureRMRecoveryServicesVault cmdlet 检索 ASR 保管库对象后期创建：-
 
 		$vault = New-AzureRmRecoveryServicesVault -Name #vaultname -ResouceGroupName #ResourceGroupName -Location #location 
 
 ## 步骤 3：设置恢复服务保管库上下文
 
-1.  通过运行以下命令设置保管库上下文。
-
-		Set-AzureRmSiteRecoveryVaultSettings -ARSVault $vault
+通过运行以下命令设置保管库上下文。
+   
+       Set-AzureRmSiteRecoveryVaultSettings -ARSVault $vault
 
 ## 步骤 4：安装 Azure Site Recovery 提供者
 
@@ -148,13 +143,13 @@ Azure Site Recovery 可在许多部署方案中安排虚拟机的复制、故障
 	
 		New-Item c:\ASR -type directory
 		
-2.	通过运行以下命令，使用下载的提供者提取文件
+2.	通过运行以下命令，使用下载的提供程序提取文件
 	
 		pushd C:\ASR\
 		.\AzureSiteRecoveryProvider.exe /x:. /q
 
 	
-3.	使用以下命令安装提供者：
+3.	使用以下命令安装提供程序：
 	
 		.\SetupDr.exe /i
 		$installationRegPath = "hklm:\software\Microsoft\Microsoft System Center Virtual Machine Manager Server\DRAdapter"
@@ -348,4 +343,5 @@ Azure Site Recovery 可在许多部署方案中安排虚拟机的复制、故障
 
 [详细了解](https://msdn.microsoft.com/zh-cn/library/azure/mt637930.aspx) Azure Site Recovery 和 Azure Resource Manager PowerShell cmdlet。
 
-<!---HONumber=Mooncake_1107_2016-->
+<!---HONumber=Mooncake_0306_2017-->
+<!--Update_Description: add Microsoft Hyper-V Server 2012 as prerequisites option-->
