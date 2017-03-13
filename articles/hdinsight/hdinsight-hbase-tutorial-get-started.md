@@ -39,9 +39,9 @@ Linux 是在 HDInsight 3.4 版或更高版本上使用的唯一操作系统。�
 ## <a name="create-hbase-cluster"></a>创建 HBase 群集
 [AZURE.INCLUDE [provisioningnote](../../includes/hdinsight-provisioning.md)]
 
-**使用 Azure 经典管理门户创建 HBase 群集**
+**使用 Azure 门户预览创建 HBase 群集**
 
-1. 登录 [Azure 经典管理门户][azure-management-portal]。
+1. 登录 [Azure 门户预览][azure-management-portal]。
 2. 单击**新建**或左上角的 **+**，然后单击**数据 + 分析**、**“HDInsight”**。
 3. 输入以下值：
    

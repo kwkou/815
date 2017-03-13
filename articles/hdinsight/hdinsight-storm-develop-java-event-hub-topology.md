@@ -383,7 +383,7 @@ HdfsBolt 一般用于将数据存储到 Hadoop 分布式文件系统 (HDFS)。�
 
 * 若要使用**基于 Linux** 的 Storm on HDInsight 群集，请参阅[在基于 Linux 的 HDInsight 上部署和管理 Apache Storm 拓扑](/documentation/articles/hdinsight-storm-deploy-monitor-topology-linux/)
 
-* 如果在 HDInsight 群集上使用**基于 Windows** 的 Storm，请参阅[在基于 Windows 的 HDInsight 上部署和管理 Apache Storm 拓扑](/documentation/articles/hdinsight-storm-deploy-monitor-topology-linux/)
+* 如果在 HDInsight 群集上使用**基于 Windows** 的 Storm，请参阅[在基于 Windows 的 HDInsight 上部署和管理 Apache Storm 拓扑](/documentation/articles/hdinsight-storm-deploy-monitor-topology/)
 
 ## 后续步骤
 

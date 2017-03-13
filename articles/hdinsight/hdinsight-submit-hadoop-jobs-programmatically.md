@@ -47,7 +47,7 @@
 
 ## 另请参阅
 
-- [Azure HDInsight 文档](https://docs.microsoft.com/azure/hdinsight/)
+- [Azure HDInsight 文档](/documentation/services/hdinsight/)
 
 <!---HONumber=Mooncake_0306_2017-->
 <!--Update_Description: instead of providing solutions, provide links to solutions-->

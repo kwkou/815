@@ -46,7 +46,7 @@ DataFu 将安装在基于 Linux 的群集 3.3 版和更高版本上，以及基�
 1. 使用 SSH 连接到基于 Linux 的 HDInsight 群集。有关如何将 SSH 与 HDInsight 配合使用的详细信息，请参阅以下文档之一：
    
     * [从 Linux、OS X、Unix 以及 Windows 10 上的 Bash 中将 SSH 与HDInsight 上基于 Linux 的 Hadoop 配合使用](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix/)
-    * [在 Windows 中的 HDInsight 上将 SSH (PuTTY) 与基于 Linux 的 Hadoop 配合使用](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix/)
+    * [在 Windows 中的 HDInsight 上将 SSH (PuTTY) 与基于 Linux 的 Hadoop 配合使用](/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows/)
 
 2. 使用以下命令通过 wget 实用程序下载 DataFu jar 文件，或者将链接复制并粘贴到浏览器中以开始下载。
 
