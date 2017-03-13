@@ -1,10 +1,11 @@
 1. 运行统一安装程序安装文件。
-2. 在“开始之前”中选择“安装配置服务器和进程服务器”。![开始之前](./media/site-recovery-add-configuration-server/combined-wiz1.png)
+2. 在“开始之前”中选择“安装配置服务器和进程服务器”。
+![开始之前](./media/site-recovery-add-configuration-server/combined-wiz1.png)
 3. 在“第三方软件许可证”中单击“我接受”，下载并安装 MySQL。
 
     ![第三方软件](./media/site-recovery-add-configuration-server/combined-wiz105.PNG)  
 
-4. 在“注册”中，通过浏览查找并选择从保管库下载的注册密钥。
+4. 在“注册”中，选择从保管库下载的注册密钥。
 
     ![注册](./media/site-recovery-add-configuration-server/combined-wiz3.png)  
 
@@ -12,7 +13,7 @@
 
    * 如果希望使用当前已在计算机上设置的代理进行连接，请选择“使用现有代理设置进行连接”。
    * 如果希望提供程序直接进行连接，请选择“不使用代理直接连接”。
-   * 如果现有代理要求身份验证，或者你希望使用自定义代理进行提供程序连接，请选择“使用自定义代理设置进行连接”。
+   * 如果现有代理要求身份验证，或者用户希望使用自定义代理进行提供程序连接，请选择“使用自定义代理设置进行连接”。
 
      * 如果使用自定义代理，则需指定地址、端口和凭据
      * 如果使用代理，应事先允许[先决条件](#configuration-server-prerequisites)中所述的 URL。
@@ -31,7 +32,7 @@
 
     ![MySQL](./media/site-recovery-add-configuration-server/combined-wiz7.png)  
 
-9. 在“安装位置”中，选择要安装二进制文件和存储缓存的位置。可以选择至少有 5 GB 可用存储空间的驱动器，但我们建议选择至少有 600 GB 可用空间的缓存驱动器。
+9. 在“安装位置”中，选择要安装二进制文件和存储缓存的位置。选择的驱动器必须至少有 5 GB 可用存储空间，但我们建议选择至少有 600 GB 可用空间的缓存驱动器。
 
     ![安装位置](./media/site-recovery-add-configuration-server/combined-wiz8.png)  
 
@@ -41,12 +42,11 @@
 
 
 
-
-1. 在“摘要”中复查信息，然后单击“安装”。安装完成后，将生成通行短语。启用复制时需要用到它，因此请复制并将它保存在安全的位置。
+11. 在“摘要”中复查信息，然后单击“安装”。安装完成后，将生成通行短语。启用复制时需要用到它，因此请复制并将它保存在安全的位置。
 
 	![摘要](./media/site-recovery-add-configuration-server/combined-wiz10.png)  
 
 
-3. 注册完成后，服务器将显示在保管库的“设置”>“服务器”边栏选项卡中。
+注册完成后，服务器将显示在保管库的“设置”>“服务器”边栏选项卡中。
 
-<!---HONumber=Mooncake_0206_2017-->
+<!---HONumber=Mooncake_0306_2017-->

@@ -1,5 +1,5 @@
 <properties
-    pageTitle="使用 SQL Server 灾难恢复和 Azure Site Recovery 来保护 SQL Server | Azure"
+    pageTitle="使用 SQL Server 和 Azure Site Recovery 复制应用 | Azure"
     description="本文介绍如何使用 Azure Site Recovery 的 SQL Server 灾难功能来复制 SQL Server。"
     services="site-recovery"
     documentationcenter=""
@@ -13,8 +13,8 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="12/21/2016"
-    wacn.date="02/10/2017"
+    ms.date="01/23/2017"
+    wacn.date="03/10/2017"
     ms.author="raynew" />
 
 # 使用 SQL Server 灾难恢复和 Azure Site Recovery 来保护 SQL Server
@@ -31,8 +31,8 @@ Azure Site Recovery 服务有助于业务连续性和灾难恢复 (BCDR) 策略�
 
 在 Enterprise Edition 中，SQL Server 还提供了本机灾难恢复技术，用于将数据库恢复到远程站点。在本文中，我们将运用并集成这些本机 SQL 灾难恢复技术：
 
-- SQL Server 2012 或 2014 Enterprise Edition 灾难恢复的 SQL Always On 可用性组
-- SQL Server Standard Edition（任何版本）或 SQL Server 2008 R2 高安全性模式下的 SQL 数据库镜像
+* SQL Server 2012 或 2014 Enterprise Edition 灾难恢复的 SQL AlwaysOn 可用性组
+* SQL Server Standard Edition（任何版本）或 SQL Server 2008 R2 高安全性模式下的 SQL 数据库镜像
 
 
 Site Recovery 可以保护下表中汇总的 SQL Server。
@@ -45,10 +45,9 @@ Site Recovery 可以保护下表中汇总的 SQL Server。
 ## 支持和集成
 本文中的方案支持以下 SQL Server 版本：
 
-
-- SQL Server 2014 Enterprise 和 Standard
-- SQL Server 2012 Enterprise 和 Standard
-- SQL Server 2008 R2 Enterprise 和 Standard
+* SQL Server 2014 Enterprise 和 Standard
+* SQL Server 2012 Enterprise 和 Standard
+* SQL Server 2008 R2 Enterprise 和 Standard
 
 
 Site Recovery 可与下表中汇总的本机 SQL Server BCDR 技术集成，以提供灾难恢复解决方案。
@@ -334,5 +333,5 @@ Site Recovery 可与下表中汇总的本机 SQL Server BCDR 技术集成，以�
 ## 后续步骤
 [详细了解](/documentation/articles/site-recovery-best-practices/)如何准备开始部署 Site Recovery。
 
-<!---HONumber=Mooncake_0206_2017-->
-<!--Update_Description: update table format; wording update-->
+<!---HONumber=Mooncake_0306_2017-->
+<!--Update_Description: wording update-->

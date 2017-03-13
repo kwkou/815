@@ -1,22 +1,22 @@
 <properties
-	pageTitle="了解如何通过 Azure Site Recovery 进行 Hyper-V 复制 | Azure" 
-	description="使用本文来了解帮助你成功安装、配置和管理 Azure Site Recovery 的技术概念。" 
-	services="site-recovery" 
-	documentationCenter="" 
-	authors="anbacker" 
-	manager="mkjain" 
-	editor=""/>
-
+    pageTitle="使用 Azure Site Recovery 进行 Hyper-V 复制 | Azure"
+    description="阅读本文，了解成功安装、配置和管理 Azure Site Recovery 所要掌握的技术概念。"
+    services="site-recovery"
+    documentationcenter=""
+    author="Rajani-Janaki-Ram"
+    manager="mkjain"
+    editor="" />
 <tags
-	ms.service="site-recovery"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="storage-backup-recovery"
-	ms.date="09/12/2016"
-	wacn.date="01/04/2017"
-	ms.author="rajanaki"/>
- 
+    ms.assetid="97916915-1379-47df-8369-12ddf022c4da"
+    ms.service="site-recovery"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.tgt_pltfrm="na"
+    ms.workload="storage-backup-recovery"
+    ms.date="01/19/2017"
+    wacn.date="03/10/2017"
+    ms.author="rajanaki" />  
+
 
 # 了解如何通过 Azure Site Recovery 进行 Hyper-V 复制
 
@@ -82,4 +82,4 @@ Hyper-V 副本复制跟踪器是 Hyper-V 副本复制引擎的一部分，以 Hy
 - [联系 Microsoft 技术](/documentation/articles/site-recovery-monitoring-and-troubleshooting/#reaching-out-for-microsoft-support)
 - [常见 ASR 错误及其解决方法](/documentation/articles/site-recovery-monitoring-and-troubleshooting/#common-asr-errors-and-their-resolutions)
 
-<!---HONumber=Mooncake_Quality_Review_0104_2017-->
+<!---HONumber=Mooncake_0306_2017-->

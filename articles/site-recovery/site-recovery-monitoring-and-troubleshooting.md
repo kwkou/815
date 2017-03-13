@@ -1,147 +1,156 @@
 <properties
-	pageTitle="监视虚拟机和物理服务器的保护及其故障排除 | Windows Auzre" 
-	description="Azure Site Recovery 可以协调位于本地服务器中的虚拟机到 Azure 或辅助数据中心的复制、故障转移和恢复。参考本文来监视 VMM 或 Hyper-V 站点保护并对其进行故障排除。" 
-	services="site-recovery" 
-	documentationCenter="" 
-	authors="anbacker" 
-	manager="mkjain" 
-	editor=""/>  
+    pageTitle="监视虚拟机和物理服务器的保护及其故障排除 | Azure"
+    description="Azure Site Recovery 可以协调位于本地服务器中的虚拟机到 Azure 或辅助数据中心的复制、故障转移和恢复。参考本文来监视 Virtual Machine Manager 或 Hyper-V 站点保护并对其进行故障排除。"
+    services="site-recovery"
+    documentationcenter=""
+    author="ruturaj"
+    manager="mkjain"
+    editor="" />
+<tags
+    ms.assetid="0fc8e368-0c0e-4bb1-9d50-cffd5ad0853f"
+    ms.service="site-recovery"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.tgt_pltfrm="na"
+    ms.workload="storage-backup-recovery"
+    ms.date="01/19/2017"
+    wacn.date="03/10/2017"
+    ms.author="rajanaki" />  
 
 
-<tags 
-	ms.service="site-recovery" 
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="storage-backup-recovery" 
-	ms.date="10/13/2016" 
-	wacn.date="02/14/2017"	
-	ms.author="rajanaki"/>  
-
-	
 # 监视虚拟机和物理服务器的保护及其故障排除
-
-你可以参考本监视与故障排除指南来了解如何跟踪 Azure Site Recovery 的复制运行状况，并掌握相关的故障排除方法。
+本监视与故障排除指南可帮助你了解如何跟踪 Azure Site Recovery 的复制运行状况，并掌握相关的故障排除方法。
 
 ## 了解组件
 
-### 用于在本地与 Azure 之间复制的物理站点部署。
-要在本地物理计算机之间设置灾难恢复；需要配置配置服务器、主目标和进程服务器。在启用对源服务器的保护时，Azure Site Recovery 将安装移动服务。在源服务器故障转移到 Azure 发生本地中断后，客户需要在 Azure 中设置进程服务器和在本地设置主目标服务器，以防止源服务器在本地重新生成。
+### 用于在本地与 Azure 之间复制的物理服务器站点部署
+若要设置本地物理服务器与 Azure 之间的数据库恢复，需要在虚拟机或服务器上设置配置服务器、主目标服务器和进程服务器组件。为源服务器启用保护时，Azure Site Recovery 将安装 Azure 应用服务的移动应用功能。在本地中断或源服务器故障转移到 Azure 后，客户需要在 Azure 中设置进程服务器，并在本地设置主目标服务器，以便在本地重新生成源服务器。
 
 ![用于在本地与 Azure 之间复制的物理站点部署](./media/site-recovery-monitoring-and-troubleshooting/image18.png)
 
-### 用于在本地站点之间复制的 VMM 站点部署。
 
-在两个本地位置之间设置 DR 的一部分操作；需要下载 Azure 站点恢复提供者并将其安装在 VMM 服务器上。提供者需要 Internet 连接，以确保从 Azure 经典管理门户触发的所有操作都将转换成本地操作，例如启用保护、在故障排除过程中关闭主端虚拟机，等等。
+### 用于在本地站点之间复制的 Virtual Machine Manager 站点部署
+若要在两个本地位置之间设置数据库恢复，需要下载 Azure Site Recovery 提供程序，并将其安装在 Virtual Machine Manager 服务器上。该提供程序需要连接到 Internet，确保从 Azure 门户触发的所有操作都转换成本地操作。
 
-![用于在本地站点之间复制的 VMM 站点部署](./media/site-recovery-monitoring-and-troubleshooting/image1.png)
-
-### 用于在本地与 Azure 之间复制的 VMM 站点部署。
-
-在本地和 Azure 之间设置 DR 的一部分操作；下载 Azure Site Recovery 提供程序并将其安装在 VMM 服务器上，此外还需要在每个 Hyper-V 主机上安装 Azure 恢复服务代理。有关详细信息，请参阅[了解站点到 Azure 的保护](/documentation/articles/site-recovery-understanding-site-to-azure-protection/)。
-
-![用于在本地与 Azure 之间复制的 VMM 站点部署](./media/site-recovery-monitoring-and-troubleshooting/image2.png)  
+![用于在本地站点之间复制的 Virtual Machine Manager 站点部署](./media/site-recovery-monitoring-and-troubleshooting/image1.png)  
 
 
-### 用于在本地与 Azure 之间复制的 Hyper-V 站点部署
+### 用于在本地位置与 Azure 之间复制的 Virtual Machine Manager 站点部署
+在本地位置与 Azure 之间设置数据库恢复时，需要下载 Azure Site Recovery 提供程序，并将其安装在 Virtual Machine Manager 服务器上。此外，还需要在每个 Hyper-V 主机上安装 Azure 恢复服务代理。有关详细信息，请参阅[了解站点到 Azure 的保护](/documentation/articles/site-recovery-understanding-site-to-azure-protection/)。
 
-与 VMM 部署相同 – 不同的是提供者和代理都安装在 Hyper-V 主机本身上。有关详细信息，请参阅[了解站点到 Azure 的保护](/documentation/articles/site-recovery-understanding-site-to-azure-protection/)。
+![用于在本地位置与 Azure 之间复制的 Virtual Machine Manager 站点部署](./media/site-recovery-monitoring-and-troubleshooting/image2.png)  
+
+
+### 用于在本地位置与 Azure 之间复制的 Hyper-V 站点部署
+此过程与 Virtual Machine Manager 部署类似。唯一的区别在于，Azure Site Recovery 提供程序和 Azure 恢复服务代理将在 Hyper-V 主机上自行安装。有关详细信息，请参阅[了解站点到 Azure 的保护](/documentation/articles/site-recovery-understanding-site-to-azure-protection/)。
 
 ## 监视配置、保护和恢复操作
+在“作业”选项卡下，Azure Site Recovery 中的每项操作都会经过审核和跟踪。若要查看任何配置、保护或恢复错误，请转到“作业”选项卡，然后查找故障。
 
-ASR 中的每个操作都被审核，可在“作业”选项卡下面跟踪。如果发生任何配置、保护或恢复错误，请导航到“作业”选项卡，并查看是否发生了任何失败。
+![“作业”选项卡中的失败筛选器](./media/site-recovery-monitoring-and-troubleshooting/image3.png)  
 
-![监视配置、保护和恢复操作](./media/site-recovery-monitoring-and-troubleshooting/image3.png)
 
-如果在“作业”视图下发现失败，请选择该作业，然后单击该作业对应的“错误详细信息”。
+如果在“作业”选项卡下发现故障，请单击相应的作业，然后单击该作业对应的“错误详细信息”。
 
-![监视配置、保护和恢复操作](./media/site-recovery-monitoring-and-troubleshooting/image4.png)
+![“错误详细信息”按钮](./media/site-recovery-monitoring-and-troubleshooting/image4.png)  
 
-错误详细信息可帮助你识别可能的原因，并获得解决问题的建议。
 
-![监视配置、保护和恢复操作](./media/site-recovery-monitoring-and-troubleshooting/image5.png)
+可以借助错误详细信息识别可能的原因，获得解决问题的建议。
 
-在上例中，似乎有另一个操作正在进行，正是该操作导致保护配置失败。确保根据建议解决问题 – 然后单击“重新启动”以重新启动该操作。
+![显示特定作业的错误详细信息的对话框](./media/site-recovery-monitoring-and-troubleshooting/image5.png)  
 
-![监视配置、保护和恢复操作](./media/site-recovery-monitoring-and-troubleshooting/image6.png)
 
-“重新启动”选项并非适用于所有操作 – 对于那些没有“重新启动”选项的操作，请导航回到对象，然后再次重做操作。随时都可以使用“取消”按钮来取消正在进行的每个作业。
+在上述示例中，另一个正在进行的操作可能导致保护配置失败。请根据建议解决此问题，然后单击“重新启动”再次启动操作。
 
-![监视配置、保护和恢复操作](./media/site-recovery-monitoring-and-troubleshooting/image7.png)
+![“作业”选项卡中的“重新启动”按钮](./media/site-recovery-monitoring-and-troubleshooting/image6.png)  
 
-##<a id="monitor-replication-health-for-virtual-machine"></a> 监视虚拟机的复制运行状况
 
-可以通过 Azure 门户针对每个受保护实体进行 ASR 提供者中心监视和远程监视。在选择“VMM 云”或“保护组”之后，导航到“受保护的项”。“VMM 云”选项卡只适用于基于 VMM 的部署，以及在“保护组”选项卡下具有受保护实体的所有其他案例。
+“重新启动”选项并不适用于所有操作。如果操作没有对应的“重新启动”选项，请返回到对象，然后重做操作。可以使用“取消”按钮取消正在进行的任何作业。
 
-![监视虚拟机的复制运行状况](./media/site-recovery-monitoring-and-troubleshooting/image8.png)
+![“取消”按钮](./media/site-recovery-monitoring-and-troubleshooting/image7.png)  
 
-然后在相应云或保护组下选择受保护的实体。在你选择受保护的实体后，所有允许的操作将显示在底部窗格中。
 
-![监视虚拟机的复制运行状况](./media/site-recovery-monitoring-and-troubleshooting/image9.png)
+## 监视虚拟机的复制运行状况
+可以使用 Azure 门户远程监视每个受保护的实体的 Azure Site Recovery 提供程序。单击“受保护的项”，然后单击“VMM 云”或“保护组”。“VMM 云”选项卡只适用于基于 Virtual Machine Manager 的部署。对于其他方案，受保护的实体位于“保护组”选项卡下。
 
-如上所示，如果虚拟机的运行状况为关键 – 你可以单击底部的“错误详细信息”按钮以查看错误。根据提到的“可能原因”和“建议”来解决问题。
+![“VMM 云”和“保护组”选项](./media/site-recovery-monitoring-and-troubleshooting/image8.png)  
 
-![监视虚拟机的复制运行状况](./media/site-recovery-monitoring-and-troubleshooting/image10.png)
 
-![监视虚拟机的复制运行状况](./media/site-recovery-monitoring-and-troubleshooting/image11.png)
+在相应的云或保护组下，单击受保护的实体，查看底部窗格中显示的所有可用操作。
 
-注意：如果有任何活动的操作正在进行或失败，请如前所述导航到“作业”视图，以查看特定于作业的错误。
+![所选受保护实体的可用选项](./media/site-recovery-monitoring-and-troubleshooting/image9.png)  
+
+
+如上面的屏幕截图所示，虚拟机运行状况为“关键”。可以单击底部的“错误详细信息”按钮查看错误。根据“可能的原因”和“建议”解决问题。
+
+![“错误详细信息”按钮](./media/site-recovery-monitoring-and-troubleshooting/image10.png)  
+
+
+![“错误详细信息”对话框中的错误和建议](./media/site-recovery-monitoring-and-troubleshooting/image11.png)  
+
+
+> [AZURE.NOTE]
+如果任何可用操作正在进行或失败，请转到“作业”视图（如前所述），查看特定作业的错误。
+> 
+> 
 
 ## 排查本地 Hyper-V 问题
+连接本地 Hyper-V 管理器控制台，选择虚拟机，然后查看复制运行状况。
 
-连接到本地 Hyper-V 管理器控制台，选择虚拟机，然后查看复制运行状况。
+![用于在 Hyper-V 管理器控制台中查看复制运行状况的选项](./media/site-recovery-monitoring-and-troubleshooting/image12.png)  
 
-![排查本地 Hyper-V 问题](./media/site-recovery-monitoring-and-troubleshooting/image12.png)
 
-在本例中，“复制运行状况”指示为“关键”– 请使用“查看复制运行状况”查看详细信息。
+在本例中，“复制运行状况”为“关键”。右键单击虚拟机，然后单击“复制”>“查看复制运行状况”查看详细信息。
 
-![排查本地 Hyper-V 问题](./media/site-recovery-monitoring-and-troubleshooting/image13.png)
+![特定虚拟机的复制运行状况](./media/site-recovery-monitoring-and-troubleshooting/image13.png)  
 
-在虚拟机复制已暂停的情况下，右键单击虚拟机并选择“复制”->“继续复制”
 
-![排查本地 Hyper-V 问题](./media/site-recovery-monitoring-and-troubleshooting/image19.png)
+如果虚拟机复制已暂停，请右键单击虚拟机，然后单击“复制”>“恢复复制”。
 
-如果虚拟机将迁移通过 ASR 配置的新 Hyper-V 主机（在群集或独立计算机中），虚拟机的复制不受影响。确保新 Hyper-V 主机符合所有先决条件并已使用 ASR 进行配置。
+![用于在 Hyper-V 管理器控制台中恢复复制的选项](./media/site-recovery-monitoring-and-troubleshooting/image19.png)  
+
+
+如果虚拟机迁移通过 Azure Site Recovery 配置的新 Hyper-V 主机（在群集或独立计算机中），虚拟机的复制不受影响。请确保新的 Hyper-V 主机符合所有先决条件，并已使用 Azure Site Recovery 进行配置。
 
 ### 事件日志
 
 | 事件源 | 详细信息 |
-|-------------------------	|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	|
-| **应用程序和服务日志/Microsoft/VirtualMachineManager/Server/Admin**（VMM 服务器） | 提供有用的日志用于排查许多不同的 VMM 问题。 |
-| **应用程序和服务日志/MicrosoftAzureRecoveryServices/Replication**（Hyper-V 主机） | 提供有用的日志用于排查许多 Azure 恢复服务代理问题。<br/> ![Hyper-V 主机的事件源](./media/site-recovery-monitoring-and-troubleshooting/eventviewer03.png) |
-| **应用程序和服务日志/Microsoft/Azure Site Recovery/Provider/Operational**（Hyper-V 主机） | 提供有用的日志用于排查许多 Azure Site Recovery 服务问题。<br/> ![Hyper-V 主机的事件源](./media/site-recovery-monitoring-and-troubleshooting/eventviewer02.png) |
-| **应用程序和服务日志/Microsoft/Windows/Hyper-V-VMMS/Admin**（Hyper-V 主机） | 提供有用的日志用于排查许多 Hyper-V 虚拟机管理问题。<br/> ![Hyper-V 主机的事件源](./media/site-recovery-monitoring-and-troubleshooting/eventviewer01.png) |
+| --- |:--- |
+| **Applications and Service Logs/Microsoft/VirtualMachineManager/Server/Admin**（Virtual Machine Manager 服务器） |提供实用的日志记录，用于排查许多不同的 Virtual Machine Manager 问题。 |
+| **Applications and Service Logs/MicrosoftAzureRecoveryServices/Replication**（Hyper-V 主机） |提供实用的日志记录，用于排查许多 Azure 恢复服务代理问题。<br/> ![Hyper-V 主机的复制事件源位置](./media/site-recovery-monitoring-and-troubleshooting/eventviewer03.png) |
+| **Applications and Service Logs/Microsoft/Azure Site Recovery/Provider/Operational**（Hyper-V 主机） |提供实用的日志记录，用于排查许多 Azure Site Recovery 服务问题。<br/> ![Hyper-V 主机的操作事件源位置](./media/site-recovery-monitoring-and-troubleshooting/eventviewer02.png) |
+| **Applications and Service Logs/Microsoft/Windows/Hyper-V-VMMS/Admin**（Hyper-V 主机） |提供实用的日志记录，用于排查许多 Hyper-V 虚拟机管理问题。<br/> ![Hyper-V 主机的 Virtual Machine Manager 事件源位置](./media/site-recovery-monitoring-and-troubleshooting/eventviewer01.png) |
 
 
 ### Hyper-V 复制日志记录选项
+与 Hyper-V 复制相关的所有事件都会记录在“Applications and Services Logs\\Microsoft\\Windows”下的 Hyper-V-VMMS\\Admin 日志中。此外，还可为 Hyper-V 虚拟机管理服务启用分析日志。若要启用此日志，请先在“事件查看器”中显示“分析”与“调试”日志。打开“事件查看器”，然后单击“视图”>“显示分析和调试日志”。
 
-与 Hyper-V 复本相关的所有事件都会记录在位于“应用程序和服务日志\\Microsoft\\Windows”下的 Hyper-V-VMMS\\Admin 日志中。此外，可以针对 Hyper-V-VMMS 启用分析日志。若要启用此日志，请先在“事件查看器”中显示“分析”与“调试”日志。开启事件查看器，然后在“查看”菜单中，单击“显示分析和调试日志”。
-
-![排查本地 Hyper-V 问题](./media/site-recovery-monitoring-and-troubleshooting/image14.png)
-
-分析日志将显示在 Hyper-V-VMMS 下
-
-![排查本地 Hyper-V 问题](./media/site-recovery-monitoring-and-troubleshooting/image15.png)
-
-然后，在“操作”窗格中，单击“启用日志”。启用后，它将在“性能监视器”中显示为“数据收集器集”下的一个事件跟踪会话。
-
-![排查本地 Hyper-V 问题](./media/site-recovery-monitoring-and-troubleshooting/image16.png)
-
-若要查看收集的信息，请先通过禁用日志来停止跟踪会话，然后保存日志并在“事件查看器”中重新将它打开，或者根据需要使用其他工具转换它。
+![“显示分析和调试日志”选项](./media/site-recovery-monitoring-and-troubleshooting/image14.png)  
 
 
+分析日志显示在“Hyper-V-VMMS”下。
+
+![事件查看器树中的分析日志](./media/site-recovery-monitoring-and-troubleshooting/image15.png)  
+
+
+在“操作”窗格中，单击“启用日志”。启用后，日志将作为“事件跟踪会话”显示在“性能监视器”中的“数据收集器集”下。
+
+![性能监视器树中的事件跟踪会话](./media/site-recovery-monitoring-and-troubleshooting/image16.png)  
+
+
+若要查看收集到的信息，请先禁用日志，从而停止跟踪会话。保存日志，然后再次在“事件查看器”中打开日志，或使用其他工具根据需要转换日志。
 
 ##<a id="reaching-out-for-microsoft-support"></a> 联系 Microsoft 技术
 
 ### 日志收集
 
-对于 VMM 站点保护，请参阅[使用支持诊断平台 (SDP) 工具进行 ASR 日志收集](http://social.technet.microsoft.com/wiki/contents/articles/28198.asr-data-collection-and-analysis-using-the-vmm-support-diagnostics-platform-sdp-tool.aspx)，以收集所需的日志。
+对于 Virtual Machine Manager 站点保护，请参阅[使用支持诊断平台 (SDP) 工具收集 Azure Site Recovery 日志](http://social.technet.microsoft.com/wiki/contents/articles/28198.asr-data-collection-and-analysis-using-the-vmm-support-diagnostics-platform-sdp-tool.aspx)收集所需的日志。
 
 对于 Hyper-V 站点保护，请下载[工具](https://dcupload.microsoft.com/tools/win7files/DIAG_ASRHyperV_global.DiagCab)，然后在 Hyper-V 主机上执行该工具以收集日志。
 
-对于物理站点方案，请参阅[针对物理站点保护进行 Azure 站点恢复日志收集](http://social.technet.microsoft.com/wiki/contents/articles/30677.azure-site-recovery-log-collection-for-vmware-and-physical-site-protection.aspx)，以收集所需的日志。
+对于物理服务器方案，请参阅[针对物理站点保护收集 Azure Site Recovery 日志](http://social.technet.microsoft.com/wiki/contents/articles/30677.azure-site-recovery-log-collection-for-vmware-and-physical-site-protection.aspx)收集所需的日志。
 
-工具将在本地收集日志，这些日志位于 **%LocalAppData%\\ElevatedDiagnostics** 下随机命名的子文件夹中
+工具在本地收集日志，这些日志位于 %LocalAppData%\\ElevatedDiagnostics 下随机命名的子文件夹中。
 
 ![从 Hyper-V 站点保护显示的示例步骤。](./media/site-recovery-monitoring-and-troubleshooting/animate01.gif)
 
@@ -150,15 +159,14 @@ ASR 中的每个操作都被审核，可在“作业”选项卡下面跟踪。�
 若需要对应 ASR 的帮助，请[在线申请支持](/support/support-ticket-form/?l=zh-cn)创建工单
 
 ## 知识库文章
-
--   [如何为已故障转移或迁移到 Azure 的受保护虚拟机保留驱动器号](http://support.microsoft.com/zh-cn/kb/3031135)
--   [如何管理本地到 Azure 保护的网络带宽用量](https://support.microsoft.com/zh-cn/kb/3056159)
--   [ASR：尝试为虚拟机启用保护时发生“找不到群集资源”错误](http://support.microsoft.com/zh-cn/kb/3010979)
--   [了解 Hyper-V 副本及其故障排除指南](http://social.technet.microsoft.com/wiki/contents/articles/21948.hyper-v-replica-troubleshooting-guide.aspx)
+* [如何为已故障转移或迁移到 Azure 的受保护虚拟机保留驱动器号](http://support.microsoft.com/zh-cn/kb/3031135)
+* [如何管理本地到 Azure 保护的网络带宽用量](https://support.microsoft.com/zh-cn/kb/3056159)
+* [Azure Site Recovery：尝试为虚拟机启用保护时发生“找不到群集资源”错误](http://support.microsoft.com/zh-cn/kb/3010979)
+* [Hyper-V 复制简介和故障排除指南](http://social.technet.microsoft.com/wiki/contents/articles/21948.hyper-v-replica-troubleshooting-guide.aspx)
 
 ##<a id="common-asr-errors-and-their-resolutions"></a> 常见 ASR 错误及其解决方法	
 
-以下是您可能遇到的常见错误及其解决方法。每个错误记录在单独的 WIKI 网页中。
+下面介绍了常见错误及其解决方法。每个错误均记录在单独的 wiki 网页中。
 
 ### 常规
 -   <span style="color:green;">新</span> [作业失败并发生错误“操作正在进行。” 错误 505、514、532](http://social.technet.microsoft.com/wiki/contents/articles/32190.azure-site-recovery-jobs-failing-with-error-an-operation-is-in-progress-error-505-514-532.aspx)
@@ -183,9 +191,8 @@ ASR 中的每个操作都被审核，可在“作业”选项卡下面跟踪。�
 - [找不到适合副本虚拟机的主机 - 因为没有连接逻辑网络](http://social.technet.microsoft.com/wiki/contents/articles/25502.a-suitable-host-for-the-replica-virtual-machine-can-t-be-found-due-to-no-logical-network-attached.aspx)
 - [无法连接到副本主机 - 不能建立连接](http://social.technet.microsoft.com/wiki/contents/articles/31106.cannot-connect-to-the-replica-host-machine-connection-could-not-be-established.aspx)
 
-
 ### 恢复
-- VMM 无法完成主机操作 -
+- Virtual Machine Manager 无法完成主机操作 -
     -   [故障转移到虚拟机的所选恢复点：常规拒绝访问错误。](http://social.technet.microsoft.com/wiki/contents/articles/25504.fail-over-to-the-selected-recovery-point-for-virtual-machine-general-access-denied-error.aspx)
     -   [Hyper-V 无法故障转移到虚拟机的所选恢复点：操作中止。请尝试使用较新的恢复点。(0x80004004)](http://social.technet.microsoft.com/wiki/contents/articles/25503.hyper-v-failed-to-fail-over-to-the-selected-recovery-point-for-virtual-machine-operation-aborted-try-a-more-recent-recovery-point-0x80004004.aspx)
     -   不能建立与服务器的连接 (0x00002EFD)
@@ -200,17 +207,16 @@ ASR 中的每个操作都被审核，可在“作业”选项卡下面跟踪。�
     -   [无法启动故障转移，因为正在进行测试故障转移](http://social.technet.microsoft.com/wiki/contents/articles/31111.failover-could-not-be-initiated-since-test-failover-is-in-progress.aspx)
 -   <span style="color:green;">新</span> 故障转移将超时，显示 'PreFailoverWorkflow 任务 WaitForScriptExecutionTask 超时'，这是与虚拟机或虚拟机所属的子网相关联的网络安全组的配置设置造成的。有关详细信息，请参阅['PreFailoverWorkflow 任务 WaitForScriptExecutionTask 超时’](http://social.technet.microsoft.com/wiki/contents/articles/34503.failover-operation-timed-out-due-to-prefailoverworkflow-task-waitforscriptexecutiontask-timed-out.aspx)。
 
-
 ### 配置服务器、进程服务器、主目标
-配置服务器 (CS)、进程服务器 (PS)、主目标 (MT)
--   [PS/CS 作为虚拟机托管所在的 ESXi 主机发生故障，出现死机紫屏。](http://social.technet.microsoft.com/wiki/contents/articles/31107.vmware-esxi-host-experiences-a-purple-screen-of-death.aspx)
+* [PS/CS 作为虚拟机托管所在的 ESXi 主机发生故障，出现死机紫屏。](http://social.technet.microsoft.com/wiki/contents/articles/31107.vmware-esxi-host-experiences-a-purple-screen-of-death.aspx)
 
 ### 故障转移后进行远程桌面故障排除
--   许多客户在连接到 Azure 中已故障转移的 VM 时会遇到问题。[参考故障排除文档使用 RDP 连接到 VM](http://social.technet.microsoft.com/wiki/contents/articles/31666.troubleshooting-remote-desktop-connection-after-failover-using-asr.aspx)
+* 许多客户在连接到 Azure 中已故障转移的虚拟机时会遇到问题。[参考故障排除文档通过 RDP 连接到虚拟机](http://social.technet.microsoft.com/wiki/contents/articles/31666.troubleshooting-remote-desktop-connection-after-failover-using-asr.aspx)。
 
 ####<a name="adding-a-public-ip-on-a-resource-manager-virtual-machine"></a> 在 Resource Manager 虚拟机上添加公共 IP
-如果门户中的“连接”按钮灰显，并且未通过 Express Route 或站点到站点 VPN 连接连接到 Azure，则必须先为 VM 创建并分配一个公共 IP 地址才能使用 RDP/SSH。遵循以下步骤在虚拟机的网络接口上添加一个公共 IP。
+如果门户中的“连接”按钮灰显，并且你未通过 Express Route 或站点到站点 VPN 连接连接 Azure，必须先为虚拟机创建并分配一个公共 IP 地址，然后才能使用远程桌面/共享 Shell。然后，可在虚拟机的网络接口上添加公共 IP。
 
 ![在已故障转移的虚拟机的网络接口上添加公共 IP](./media/site-recovery-monitoring-and-troubleshooting/createpublicip.gif)  
 
-<!---HONumber=Mooncake_Quality_Review_0104_2017-->
+<!---HONumber=Mooncake_0306_2017-->
+<!--Update_Description: whole content wording refine-->

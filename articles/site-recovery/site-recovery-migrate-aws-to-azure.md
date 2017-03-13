@@ -1,9 +1,9 @@
 <properties
-    pageTitle="使用 Site Recovery 将虚拟机从 Amazon Web Services 迁移到 Azure | Azure"
+    pageTitle="将 VM 从 AWS 迁移到 Azure | Azure"
     description="本文介绍如何使用 Azure Site Recovery 将 Amazon Web Services (AWS) 中运行的虚拟机迁移到 Azure。"
     services="site-recovery"
     documentationcenter=""
-    author="rayne-wiselman"
+    author="bsiva"
     manager="jwhit"
     editor="" />  
 
@@ -14,44 +14,41 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="backup-recovery"
-    ms.date="11/01/2016"
-    wacn.date="01/04/2017"
-    ms.author="raynew" />  
+    ms.date="02/12/2017"
+    wacn.date="03/10/2017"
+    ms.author="bsiva" />  
 
 
 # 使用 Azure Site Recovery 将 Amazon Web Services (AWS) 中的虚拟机迁移到 Azure
-## 概述
-欢迎使用 Azure Site Recovery。根据本文所述的方法，使用 Site Recovery 将 AWS 中运行的 EC2 实例迁移到 Azure。开始之前，请注意：
 
+本文介绍如何使用 [Azure Site Recovery](/documentation/articles/site-recovery-overview/) 服务将 AWS Windows 实例迁移到 Azure 虚拟机。
 
-- **目前仅能从 AWS 迁移到 Azure。可以从 AWS 将 VM 故障转移到 Azure，但不能重新对其进行故障回复。没有任何正在进行的复制。**
-- 本文中的迁移说明以将物理计算机复制到 Azure 的说明为基础。
-
-
+迁移实际上是从 AWS 到 Azure 的故障转移。无法故障回复计算机，并且不会发生任何复制。
 请将任何评论或问题发布到本文底部，或者发布到 [Azure 恢复服务论坛](https://social.msdn.microsoft.com/Forums/zh-cn/home?forum=hypervrecovmgr)
 
 ## 支持的操作系统
-可以使用 Site Recovery 来迁移运行以下任何操作系统的 EC2 实例
 
-### Windows（仅 64 位）
-* Windows Server 2008 R2 SP1+（仅限 Citrix PV 驱动程序或 AWS PV 驱动程序；**不支持运行 RedHat PV 驱动程序的实例**）
-* Windows Server 2012
-* Windows Server 2012 R2
+可以使用 Site Recovery 来迁移运行以下任何操作系统的 EC2 实例：
+
+- Windows（仅 64 位）
+    - Windows Server 2008 R2 SP1 和更高版本（仅限 Citrix PV 驱动程序或 AWS PV 驱动程序。**不支持运行 RedHat PV 驱动程序的实例**）
+    Windows Server 2012 
+    Windows Server 2012 R2
 
 
 ## 先决条件
 以下是执行此部署所需的组件
 
-- **配置服务器**：运行 Windows Server 2012 R2 作为配置服务器的本地 VM。在此 VM 上也安装其他 Site Recovery 组件（包括进程服务器和主目标服务器）。
-- **EC2 VM 实例**：要迁移的 EC2 实例。
+* **配置服务器**：将运行 Windows Server 2012 R2 的本地 VM 部署为配置服务器。默认情况下，部署配置服务器时将安装其他 Azure Site Recovery 组件（进程服务器和主目标服务器）。[了解详细信息](/documentation/articles/site-recovery-components/#replicate-vmware-vmsphysical-servers-to-azure)
+* **EC2 实例**：要迁移的 Amazon EC2 虚拟机实例。
 
 ## 部署步骤
 
 1. 创建保管库
-2. 部署管理服务器
-3. 部署管理服务器之后，验证该服务器是否能够与要迁移的 EC2 实例通信。
-4. 创建保护组。保护组包含共享相同复制设置的受保护计算机。指定组的复制设置，这些设置将被应用到添加到该组的所有计算机。 
-5. 安装移动服务。你要保护的每个虚拟机需要安装移动服务。此服务将数据发送到进程服务器。可以手动安装移动服务，也可以在启用了虚拟机保护后由进程服务器自动推送并安装。要迁移的 EC2 实例上的防火墙规则应配置为允许此服务的推送安装。EC2 实例的安全组应具有以下规则：
+2. 部署配置服务器
+3. 部署配置服务器之后，验证其是否能与要迁移的 VM 通信。
+4. 设置复制设置。
+5. 安装移动服务。要保护的每个虚拟机均需要安装移动服务。此服务将数据发送到进程服务器。可以手动安装移动服务，也可以在启用了虚拟机保护后由进程服务器自动推送并安装。要迁移的 EC2 实例上的防火墙规则应配置为允许此服务的推送安装。EC2 实例的安全组应具有以下规则：
 
 	![防火墙规则](./media/site-recovery-migrate-aws-to-azure/migrate-firewall.png)
 
@@ -71,4 +68,5 @@
 
 若要详细了解其他复制方案，请参阅[什么是 Azure Site Recovery？](/documentation/articles/site-recovery-overview/)
 
-<!---HONumber=Mooncake_Quality_Review_0104_2017-->
+<!---HONumber=Mooncake_0306_2017-->
+<!--Update_Description: update overview description-->

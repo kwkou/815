@@ -1,6 +1,6 @@
 <properties
     pageTitle="在 Site Recovery 中执行到 Azure 的测试故障转移 | Azure"
-    description="Azure Site Recovery 可以协调虚拟机和物理服务器的复制、故障转移与恢复。了解有关故障转移到 Azure 或辅助数据中心的信息。"
+    description="了解如何运行从本地到 Azure 的测试故障转移"
     services="site-recovery"
     documentationcenter=""
     author="prateek9us"
@@ -13,8 +13,8 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="storage-backup-recovery"
-    ms.date="1/09/2017"
-    wacn.date="02/14/2017"
+    ms.date="2/15/2017"
+    wacn.date="03/10/2017"
     ms.author="pratshar" />  
 
 
@@ -43,15 +43,7 @@
 1. 如果要故障转移到 Azure 并启用了数据加密，请在“加密密钥”中，选择在安装提供程序期间启用数据加密时颁发的证书。如果尚未在虚拟机中启用加密，则可以忽略此步骤。
 1. 在“作业”选项卡上跟踪故障转移进度。在 Azure 门户中，应当能够看到测试副本计算机。
 1. 若要在虚拟机上启动 RDP 连接，需要在故障转移虚拟机的网络接口上[添加一个公共 IP](/documentation/articles/site-recovery-monitoring-and-troubleshooting/#adding-a-public-ip-on-a-resource-manager-virtual-machine)。如果要故障转移到经典虚拟机，需要在端口 3389 上[添加一个终结点](/documentation/articles/virtual-machines-windows-classic-setup-endpoints/)
-1. 完成后，在故障转移到达“完成测试”阶段时，单击“完成测试”以完成故障转移。
-1. 在“说明”中，记录并保存与测试故障转移相关联的任何观测结果。
-1. 单击“测试故障转移已完成”以自动清理测试环境。完成此操作后，测试故障转移将显示“已完成”状态。
-
-
-> [AZURE.IMPORTANT]
-如果测试故障转移持续了两周以上，系统会强行将其结束。测试故障转移期间自动创建的任何元素或虚拟机将被删除。
-> 
-> 
+1. 完成后，单击恢复计划中的“清理测试故障转移”。在“说明”中，记录并保存与测试故障转移相关联的任何观测结果。这会删除测试故障转移期间创建的虚拟机。
 
 
 > [AZURE.TIP]
@@ -68,7 +60,7 @@ Site Recovery 将使用在虚拟机的“计算和网络”设置中提供的同
 1. 将测试网络的 DNS 更新为在“计算和网络”设置下面作为目标 IP 提供给 DNS 虚拟机的 IP。如需更多详细信息，请参阅 [Active Directory 的测试性故障转移注意事项](/documentation/articles/site-recovery-active-directory/#test-failover-considerations)部分。
 
 
-### 在恢复站点上执行到生产网络的测试故障转移 
+## 在恢复站点上执行到生产网络的测试故障转移
 执行测试故障转移时，建议选择与虚拟机的“计算和网络”设置中提供的生产恢复站点网络不同的网络。但是，如果你确实想要在故障转移后的虚拟机中验证端到端网络连接，请注意以下几点：
 
 1. 确保在执行测试故障转移时主虚拟机已关闭。否则，同一网络中会同时运行两个具有相同标识的虚拟机，这可能会导致意外的后果。
@@ -77,10 +69,24 @@ Site Recovery 将使用在虚拟机的“计算和网络”设置中提供的同
 
 
 
-### 准备 Active Directory 和 DNS
+## 准备 Active Directory 和 DNS
 要运行测试故障转移以进行应用程序测试，测试中需要生产用 Active Directory 环境的副本。如需更多详细信息，请参阅 [Active Directory 的测试性故障转移注意事项](/documentation/articles/site-recovery-active-directory/#test-failover-considerations)部分。
+
+## 准备在故障转移后连接到 Azure VM
+
+如果想要在故障转移后使用 RDP 连接到 Azure VM，请确保执行下表中汇总的操作。
+
+**故障转移** | **位置** | **操作**
+--- | --- | ---
+**运行 Windows 的 Azure VM** | 故障转移之前在本地计算机上 | <p>若要通过 Internet 访问 Azure VM，请启用 RDP，确保已针对“公共”添加 TCP 和 UDP 规则，并确保在“Windows 防火墙”>“允许的应用”中针对所有配置文件允许 RDP。</p><p> 若要通过站点到站点连接进行访问，在计算机上启用 RDP，并确保在“Windows 防火墙”->“允许的应用和功能”中针对“域”和“专用”网络允许 RDP。</p><p> 安装 Azure VM 代理</p><p>确保操作系统的 SAN 策略已设置为 **OnlineAll**。[了解详细信息](https://support.microsoft.com/zh-cn/kb/3031135)。</p><p> 在运行故障转移之前关闭 IPsec 服务。</p>
+**运行 Windows 的 Azure VM** | 故障转移之后在 Azure VM 上 | <p>添加 RDP 协议（端口 3389）的公共终结点并指定用于登录的凭据。</p><p> 确保没有任何域策略阻止你使用公共地址连接到虚拟机。</p><p> 尝试连接。如果无法连接，请检查 VM 是否正在运行。获取[故障排除提示](http://social.technet.microsoft.com/wiki/contents/articles/31666.troubleshooting-remote-desktop-connection-after-failover-using-asr.aspx)。</p><p> 确保操作系统的 SAN 策略设置为 **OnlineAll**。[了解详细信息](https://support.microsoft.com/zh-cn/kb/3031135)。</p><p> 在运行故障转移之前关闭 IPsec 服务。</p><p> 如果某个网络安全组与计算机或子网关联，请确保该组中已创建一个允许 HTTP/HTTPS 的出站规则。确保 VM 故障转移到的网络的 DNS 配置正确。否则，故障转移可能会超时并出现错误 -“PreFailoverWorkflow 任务 WaitForScriptExecutionTask 超时”。[了解详细信息](https://github.com/rayne-wiselman/azure-docs-pr/blob/75653b84d6ccbefe7d5230449bea81f498e10a98/articles/site-recovery/site-recovery-monitoring-and-troubleshooting.md#recovery)。</p>
+**运行 Linux 的 Azure VM** | 故障转移之前在本地计算机上 | <p>确保 Azure VM 上的安全外壳服务已设置为在系统引导时自动启动。</p><p> 确保防火墙规则允许 SSH 连接。</p>
+**运行 Linux 的 Azure VM** | 故障转移之后在 Azure VM 上 | <p>已故障转移的 VM 及其连接到的 Azure 子网上的网络安全组规则需要允许与 SSH 端口建立传入连接。</p><p> 应创建公共终结点，以允许 SSH 端口（默认为 TCP 端口 22）上的传入连接。</p><p> 如果通过 VPN 连接（Express Route 或站点到站点 VPN）访问 VM，则可以使用客户端通过 SSH 直接连接到 VM。</p><p> 如果某个网络安全组与计算机或子网关联，请确保该组中已创建一个允许 HTTP/HTTPS 的出站规则。确保 VM 故障转移到的网络的 DNS 配置正确。否则，故障转移可能会超时并出现错误 -“PreFailoverWorkflow 任务 WaitForScriptExecutionTask 超时”。[了解详细信息](https://github.com/rayne-wiselman/azure-docs-pr/blob/75653b84d6ccbefe7d5230449bea81f498e10a98/articles/site-recovery/site-recovery-monitoring-and-troubleshooting.md#recovery)。</p>
+
+
 
 ## 后续步骤
 成功尝试执行测试故障转移后，可以尝试执行实际[故障转移](/documentation/articles/site-recovery-failover/)。
 
-<!---HONumber=Mooncake_0206_2017-->
+<!---HONumber=Mooncake_0306_2017-->
+<!--Update_Description: add VM rdp table-->
