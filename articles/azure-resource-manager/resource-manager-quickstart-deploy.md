@@ -44,32 +44,32 @@
 
 2. 若要快速开始进行部署，请使用以下 cmdlet：
 
-	Login-AzureRmAccount -EnvironmentName AzureChinaCloud
+        Login-AzureRmAccount -EnvironmentName AzureChinaCloud
         Set-AzureRmContext -SubscriptionID {subscription-id}
 
         New-AzureRmResourceGroup -Name ExampleGroup -Location "China North"
         New-AzureRmResourceGroupDeployment -Name ExampleDeployment -ResourceGroupName ExampleGroup -TemplateFile c:\MyTemplates\azuredeploy.json 
 
-仅当要使用非默认订阅时，才需要 `Set-AzureRmContext` cmdlet。若要查看所有订阅及其 ID，请使用：
+    仅当要使用非默认订阅时，才需要 `Set-AzureRmContext` cmdlet。若要查看所有订阅及其 ID，请使用：
 
         Get-AzureRmSubscription
 
 3. 部署可能需要几分钟才能完成。完成之后，将看到如下消息：
 
-	DeploymentName          : ExampleDeployment
-	CorrelationId           : 07b3b233-8367-4a0b-b9bc-7aa189065665
-	ResourceGroupName       : ExampleGroup
-	ProvisioningState       : Succeeded
-	...
+        DeploymentName          : ExampleDeployment
+        CorrelationId           : 07b3b233-8367-4a0b-b9bc-7aa189065665
+        ResourceGroupName       : ExampleGroup
+        ProvisioningState       : Succeeded
+        ...
 
 4. 若要查看资源组和存储帐户是否已部署到订阅，请使用：
 
-	Get-AzureRmResourceGroup -Name ExampleGroup
-	Find-AzureRmResource -ResourceGroupNameEquals ExampleGroup
+        Get-AzureRmResourceGroup -Name ExampleGroup
+        Find-AzureRmResource -ResourceGroupNameEquals ExampleGroup
 
 5. 部署模板时，可以指定模板参数作为 PowerShell 参数。前面的示例未包括任何模板参数，因此使用了模板中的默认值。若要部署其他存储帐户，并为存储名称前缀和存储帐户 SKU 提供参数值，请使用：
 
-      	New-AzureRmResourceGroupDeployment -Name ExampleDeployment2 -ResourceGroupName ExampleGroup -TemplateFile c:\MyTemplates\azuredeploy.json -storageNamePrefix "contoso" -storageSKU "Standard_GRS"
+        New-AzureRmResourceGroupDeployment -Name ExampleDeployment2 -ResourceGroupName ExampleGroup -TemplateFile c:\MyTemplates\azuredeploy.json -storageNamePrefix "contoso" -storageSKU "Standard_GRS"
 
 现在，资源组中已有两个存储帐户。
 
@@ -79,32 +79,32 @@
 
 2. 若要快速开始进行部署，请使用以下命令：
 
-      	az login
-      	az account set --subscription {subscription-id}
+        az login
+        az account set --subscription {subscription-id}
 
-      	az group create --name ExampleGroup --location "China North"
-      	az group deployment create --name ExampleDeployment --resource-group ExampleGroup --template-file c:\MyTemplates\azuredeploy.json
+        az group create --name ExampleGroup --location "China North"
+        az group deployment create --name ExampleDeployment --resource-group ExampleGroup --template-file c:\MyTemplates\azuredeploy.json
 
-仅当要使用非默认订阅时，才需要 `az account set` 命令。若要查看所有订阅及其 ID，请使用：
+    仅当要使用非默认订阅时，才需要 `az account set` 命令。若要查看所有订阅及其 ID，请使用：
 
-      	az account list
+        az account list
 
 3. 部署可能需要几分钟才能完成。完成之后，将看到如下消息：
 
-      	"provisioningState": "Succeeded",
+        "provisioningState": "Succeeded",
 
 4. 若要查看资源组和存储帐户是否已部署到订阅，请使用：
 
-      	az group show --name ExampleGroup
-      	az resource list --resource-group ExampleGroup
+        az group show --name ExampleGroup
+        az resource list --resource-group ExampleGroup
 
 5. 部署模板时，可以指定模板参数作为 PowerShell 参数。前面的示例未包括任何模板参数，因此使用了模板中的默认值。若要部署其他存储帐户，并为存储名称前缀和存储帐户 SKU 提供参数值，请使用：
 
-      	az group deployment create --name ExampleDeployment2 --resource-group ExampleGroup --template-file c:\MyTemplates\azuredeploy.json --parameters '{"storageNamePrefix":{"value":"contoso"},"storageSKU":{"value":"Standard_GRS"}}'
+        az group deployment create --name ExampleDeployment2 --resource-group ExampleGroup --template-file c:\MyTemplates\azuredeploy.json --parameters '{"storageNamePrefix":{"value":"contoso"},"storageSKU":{"value":"Standard_GRS"}}'
 
 现在，资源组中已有两个存储帐户。
 
-## <a id="example-storage-template"></> 示例存储模板
+## <a id="example-storage-template"></a> 示例存储模板
 
 使用以下示例模板将存储帐户部署到订阅：
 
