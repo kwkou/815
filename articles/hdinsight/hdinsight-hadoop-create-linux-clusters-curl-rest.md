@@ -298,7 +298,7 @@ Azure Resource Manager 模板是描述**资源组**及其包含的所有资源�
     --data-urlencode "client_secret=password" \
     --data-urlencode "resource=https://management.chinacloudapi.cn/"
 
-    Replace **TenantID**, **AppID**, and **password** with the values obtained or used previously.
+请用之前得到的或者使用的值来替换 **TenantID**、**AppID** 和 **password**。
 
 如果这个请求成功，会得到一个200系列的返回，这个返回的主体包含了一个 JSON 文档。
 
