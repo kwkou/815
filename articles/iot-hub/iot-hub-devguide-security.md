@@ -14,7 +14,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="na"
     ms.date="01/04/2017"
-    wacn.date="02/10/2017"
+    wacn.date="03/10/2017"
     ms.author="dobett" />  
 
 
@@ -132,7 +132,7 @@ IoT 中心还允许设备使用 [X.509 证书][lnk-x509]向 IoT 中心进行身�
 以下 Node.js 代码片段显示名为 **generateSasToken** 的函数，该函数通过输入 `resourceUri, signingKey, policyName, expiresInMins` 计算令牌。以下各节将详细讲解如何初始化不同令牌用例的不同输入。
 
     var generateSasToken = function(resourceUri, signingKey, policyName, expiresInMins) {
-        resourceUri = encodeURIComponent(resourceUri.toLowerCase()).toLowerCase();
+        resourceUri = encodeURIComponent(resourceUri);
 
         // Set expiration in seconds
         var expires = (Date.now() / 1000) + expiresInMins * 60;
@@ -179,6 +179,7 @@ IoT 中心还允许设备使用 [X.509 证书][lnk-x509]向 IoT 中心进行身�
 > [AZURE.NOTE] 由于 IoT 中心计算机会验证令牌的有效期，因此生成令牌的计算机的时间偏差必须很小。
 
 
+
 ### <a name="use-sas-tokens-in-a-device-app"></a> 在设备应用中使用 SAS 令牌
 可按以下两种方式使用安全令牌获取 IoT 中心的 **DeviceConnect** 权限：使用[标识注册表中的对称设备密钥](#use-a-symmetric-key-in-the-identity-registry)或[共享访问密钥](#use-a-shared-access-policy)。
 
@@ -192,6 +193,7 @@ IoT 中心还允许设备使用 [X.509 证书][lnk-x509]向 IoT 中心进行身�
 | --- | --- |
 | `{iot hub host name}/devices/{deviceId}/messages/events` | 发送设备到云的消息。 |
 | `{iot hub host name}/devices/{deviceId}/devicebound`   | 接收云到设备的消息。 |
+
 
 ### <a name="use-a-symmetric-key-in-the-identity-registry"></a> 使用标识注册表中的对称密钥
 使用设备标识的对称密钥生成令牌时，将省略令牌的 policyName (`skn`) 元素。
@@ -215,7 +217,7 @@ IoT 中心还允许设备使用 [X.509 证书][lnk-x509]向 IoT 中心进行身�
     SharedAccessSignature sr=myhub.azure-devices.cn%2fdevices%2fdevice1&sig=13y8ejUk2z7PLmvtwR5RqlGBOVwiq7rQR3WZ5xZX3N4%3D&se=1456971697
 
 > [AZURE.NOTE]
-> 可使用 .NET [设备资源管理器][lnk-device-explorer]工具生成 SAS 令牌。
+> 可以使用 .NET [设备资源管理器][lnk-device-explorer]工具或跨平台基于节点的 [iothub-explorer][lnk-iothub-explorer] 命令行实用工具生成 SAS 令牌。
 > 
 > 
 
@@ -422,6 +424,7 @@ IoT 中心开发人员指南中的其他参考主题包括：
 [lnk-service-sdk]: https://github.com/Azure/azure-iot-sdk-csharp/tree/master/service
 [lnk-client-sdk]: https://github.com/Azure/azure-iot-sdk-csharp/tree/master/device
 [lnk-device-explorer]: https://github.com/Azure/azure-iot-sdk-csharp/blob/master/tools/DeviceExplorer
+[lnk-iothub-explorer]: https://github.com/azure/iothub-explorer
 
 [lnk-getstarted-tutorial]: /documentation/articles/iot-hub-csharp-csharp-getstarted/
 [lnk-c2d-tutorial]: /documentation/articles/iot-hub-csharp-csharp-c2d/

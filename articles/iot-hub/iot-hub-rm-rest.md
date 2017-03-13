@@ -13,8 +13,8 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="na"
-    ms.date="11/16/2016"
-    wacn.date="01/13/2017"
+    ms.date="02/08/2017"
+    wacn.date="03/10/2017"
     ms.author="dobett" />  
 
 
@@ -44,8 +44,7 @@ Azure 具有用于创建和处理资源的两个不同的部署模型：[Azure R
 3. 在 NuGet 包管理器中，选中“包括预发行版”，然后搜索 **Microsoft.Azure.Management.ResourceManager**。单击“安装”，在“审阅更改”中单击“确定”，然后单击“我接受”以接受许可证。
 
 4. 在 NuGet 包管理器中，搜索 **Microsoft.IdentityModel.Clients.ActiveDirectory**。单击“安装”，在“审阅更改”中单击“确定”，然后单击“我接受”以接受许可证。
-
-6. 在 Program.cs 中，将现有 **using** 语句替换为以下内容：
+5. 在 Program.cs 中，将现有 **using** 语句替换为以下代码：
    
     
 	    using System;
@@ -87,14 +86,14 @@ Azure 具有用于创建和处理资源的两个不同的部署模型：[Azure R
 	    }
     
 
-2. 在 **CreateIoTHub** 方法中添加以下代码，创建 **HttpClient** 对象并在标头中指定身份验证令牌：
+2. 将以下代码添加到 **CreateIoTHub** 方法。该代码创建一个 **HttpClient** 对象，在标头中使用身份验证令牌：
 
     
 	    HttpClient client = new HttpClient();
 	    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
     
 
-3. 在 **CreateIoTHub** 方法中添加以下代码，描述如何使用 IoT 中心创建并生成 JSON 表示法。
+3. 将以下代码添加到 **CreateIoTHub** 方法。该代码描述用于创建和生成 JSON 表示形式的 IoT 中心。有关支持 IoT 中心的位置的最新列表，请参阅 [Azure 状态][lnk-status]：
 
     
 	    var description = new
@@ -112,7 +111,7 @@ Azure 具有用于创建和处理资源的两个不同的部署模型：[Azure R
 	    var json = JsonConvert.SerializeObject(description, Formatting.Indented);
     
 
-4. 在 **CreateIoTHub** 方法中添加以下代码，向 Azure 提交 REST 请求、检查响应，并检索可用于监视部署任务状态的 URL：
+4. 将以下代码添加到 **CreateIoTHub** 方法。该代码向 Azure 提交 REST 请求、检查响应，并检索可用于监视部署任务状态的 URL：
 
     
 	    var content = new StringContent(JsonConvert.SerializeObject(description), Encoding.UTF8, "application/json");
@@ -128,7 +127,7 @@ Azure 具有用于创建和处理资源的两个不同的部署模型：[Azure R
 	    var asyncStatusUri = result.Headers.GetValues("Azure-AsyncOperation").First();
     
 
-5. 在 **CreateIoTHub** 方法末尾添加以下代码，使用上一步中检索的 **asyncStatusUri** 地址等待部署完成：
+5. 将以下代码添加到 **CreateIoTHub** 方法的末尾。该代码使用在上一步检索的 **asyncStatusUri** 地址等待部署完成：
 
     
 	    string body;
@@ -140,7 +139,7 @@ Azure 具有用于创建和处理资源的两个不同的部署模型：[Azure R
     	    } while (body == "{\"status\":\"Running\"}");
     
 
-6. 在 **CreateIoTHub** 方法末尾添加以下代码，检索创建的 IoT 中心的密钥并将其输出到控制台：
+6. 将以下代码添加到 **CreateIoTHub** 方法的末尾。该代码检索用户创建的 IoT 中心的密钥并将其输出到控制台：
 
     
 	    var listKeysUri = string.Format("https://management.chinacloudapi.cn/subscriptions/{0}/resourceGroups/{1}/providers/Microsoft.Devices/IotHubs/{2}/IoTHubKeys/listkeys?api-version=2015-08-15-preview", subscriptionId, rgName, iotHubName);
@@ -173,7 +172,7 @@ Azure 具有用于创建和处理资源的两个不同的部署模型：[Azure R
 
 - 有关 Azure Resource Manager 功能的详细信息，请参阅 [Azure Resource Manager 概述][lnk-azure-rm-overview]。
 
-若要深入了解如何开发 IoT 中心，请参阅以下内容：
+若要详细了解如何开发 IoT 中心，请参阅以下文章：
 
 - [C SDK 简介][lnk-c-sdk]
 - [Azure IoT SDK][lnk-sdks]
@@ -194,5 +193,5 @@ Azure 具有用于创建和处理资源的两个不同的部署模型：[Azure R
 
 [lnk-gateway]: /documentation/articles/iot-hub-linux-gateway-sdk-simulated-device/
 
-<!---HONumber=Mooncake_0109_2017-->
+<!---HONumber=Mooncake_0306_2017-->
 <!--Update_Description:update wording-->

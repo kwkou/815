@@ -1,6 +1,6 @@
 <properties
     pageTitle="处理 Azure IoT 中心设备到云的消息 (Java) | Azure"
-    description="如何通过通过 IoT 中心从与事件中心兼容的终结点进行读取，处理 IoT 中心设备到云的消息。创建使用 EventProcessorHost 实例的 Java 服务应用。"
+    description="如何使用路由规则和自定义终结点将消息发送到其他后端服务，从而处理 IoT 中心设备到云消息。"
     services="iot-hub"
     documentationcenter="java"
     author="dominicbetts"
@@ -13,8 +13,8 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="na"
-    ms.date="12/12/2016"
-    wacn.date="02/10/2017"
+    ms.date="01/31/2017"
+    wacn.date="03/10/2017"
     ms.author="dobett" />  
 
 
@@ -51,7 +51,7 @@ IoT 中心对许多设备平台和语言（包括 C、Java 和 JavaScript）提�
 应具备 [Azure 存储]和 [Azure 服务总线]的一些基础知识。
 
 ## 从模拟设备应用发送交互式消息
-在本部分中，将修改 [IoT 中心入门]教程中创建的模拟设备应用，不定期发送需要立即处理的消息。
+在本部分中，会修改 [IoT 中心入门]教程中创建的模拟设备应用，以便不定期地发送需要立即处理的消息。
 
 1. 使用文本编辑器打开 simulated-device\\src\\main\\java\\com\\mycompany\\app\\App.java 文件。本文件包含用于 [IoT 中心入门]教程中创建的 **simulated-device** 应用的代码。
 2. 使用以下代码替换 **MessageSender** 类：
@@ -95,7 +95,7 @@ IoT 中心对许多设备平台和语言（包括 C、Java 和 JavaScript）提�
             }
         }
    
-    这会将 `"level": "critical"` 属性随机添加到模拟设备发送的消息，该设备可模拟需要解决方案后端立即执行操作的消息。应用程序将在消息属性中传递此信息（而非在消息正文中），因此 IoT 中心可将消息路由到适当的消息目标。
+    此方法会将 `"level": "critical"` 属性随机添加到模拟设备发送的消息，该设备可模拟需要应用程序后端立即执行操作的消息。应用程序将在消息属性中传递此信息（而非在消息正文中），因此 IoT 中心可将消息路由到适当的消息目标。
    
     > [AZURE.NOTE]
     > 可使用消息属性根据各种方案路由消息，包括冷路径处理和此处所示的热路径示例。
@@ -130,12 +130,12 @@ IoT 中心对许多设备平台和语言（包括 C、Java 和 JavaScript）提�
     ![添加终结点][31]  
 
     
-4. 现在单击 IoT 中心的“路由”。单击边栏选项卡顶部的“添加”，创建将消息路由到刚添加的队列的规则。选择“DeviceTelemetry”作为数据源。输入 `level="critical"` 作为条件，然后选择刚添加为终结点的队列作为路由终结点。完成后，单击底部的“保存”。
+4. 现在单击 IoT 中心的“路由”。单击边栏选项卡顶部的“添加”，创建将消息路由到刚添加的队列的路由规则。选择“DeviceTelemetry”作为数据源。输入 `level="critical"` 作为条件，然后选择刚添加为自定义终结点的队列作为路由规则终结点。完成后，单击底部的“保存”。
     
     ![添加路由][32]  
 
     
-    请确保回退路由设为“开”。这是 IoT 中心的默认配置。
+    请确保回退路由设为“开”。此设置是 IoT 中心的默认配置。
     
     ![回退路由][33]  
 
@@ -235,5 +235,5 @@ IoT 中心对许多设备平台和语言（包括 C、Java 和 JavaScript）提�
 [lnk-dev-setup]: https://github.com/Azure/azure-iot-sdk-java
 [lnk-create-an-iot-hub]: /documentation/articles/iot-hub-java-java-getstarted/#create-an-iot-hub
 
-<!---HONumber=Mooncake_0206_2017-->
+<!---HONumber=Mooncake_0306_2017-->
 <!--Update_Description:update wording and code-->

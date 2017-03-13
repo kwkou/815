@@ -16,7 +16,7 @@ Azure IoT 套件提供独特的功能，从 IoT 设备预配、连接到及存�
 
 ## 安全基础结构基础知识 
 
-[Microsoft 云](https://www.microsoft.com/enterprise/microsoftcloud/default.aspx#fbid=WzBsRQi6aGk)基础结构支持 127 个国家/地区十亿个以上的客户。使用我们数十年之久构建企业软件的体验，并在世界各地运行一些大型在线服务，相较于多数客户可自行实现，我们提供更高级别的增强安全、隐私权、合规性及威胁缓解实践。
+[Azure 云](https://www.microsoft.com/enterprise/microsoftcloud/default.aspx#fbid=WzBsRQi6aGk)基础结构支持 127 个国家/地区十亿个以上的客户。使用我们数十年之久构建企业软件的体验，并在世界各地运行一些大型在线服务，相较于多数客户可自行实现，我们提供更高级别的增强安全、隐私权、合规性及威胁缓解实践。
 
 我们的[安全开发生命周期 (SDL)](https://www.microsoft.com/sdl/) 提供必要的全企业开发过程，将安全要求嵌入整个软件生命周期中。为了帮助确保运行活动遵循一致的安全优先级，我们使用运行安全保证 (OSA) 流程中规定的严苛安全指导方针。我们还与第三方审核机构合作以持续验证我们符合法规遵循义务，并通过创建卓越的中心（包括 Microsoft 反数字犯罪部门、Microsoft 安全响应中心和 Microsoft 恶意软件防护中心），致力于产生广泛的安全成果。
 

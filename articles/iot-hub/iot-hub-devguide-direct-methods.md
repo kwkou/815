@@ -14,7 +14,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="na"
     ms.date="01/11/2017"
-    wacn.date="02/10/2017"
+    wacn.date="03/10/2017"
     ms.author="nberdy" />  
 
 
@@ -41,7 +41,9 @@
 
 直接方法是同步的，在超时期限（默认：30 秒，最长可设置为 3600 秒）过后，其结果不是成功就是失败。直接方法适用于交互式场景，即当且仅当设备处于联机状态且可接收命令时，用户希望设备做出响应，例如打开手机的灯。在此类方案中，用户需要立即看到结果是成功还是失败，以便云服务可以尽快根据结果进行操作。设备可能返回某些消息正文作为方法的结果，但系统不会要求方法一定这样做。无法保证基于方法调用的排序或者任何并发语义。
 
-从云端来看，设备方法调用仅限 HTTP，从设备端来看，则仅限 MQTT。
+从云端来看，直接方法调用仅限 HTTP，从设备端来看，则仅限 MQTT。
+
+方法请求和响应的有效负载为最多 8KB 的 JSON 文档。
 
 ## 参考主题：
 以下参考主题详细介绍了如何使用直接方法。
@@ -139,5 +141,5 @@ IoT 中心开发人员指南中的其他参考主题包括：
 [lnk-devguide-messages]: /documentation/articles/iot-hub-devguide-messaging/
 [lnk-c2d-guidance]: /documentation/articles/iot-hub-devguide-c2d-guidance/
 
-<!---HONumber=Mooncake_0109_2017-->
+<!---HONumber=Mooncake_0306_2017-->
 <!--Update_Description:update meta properties-->

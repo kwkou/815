@@ -13,8 +13,8 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="na"
-    ms.date="01/04/2017"
-    wacn.date="02/10/2017"
+    ms.date="01/31/2017"
+    wacn.date="03/10/2017"
     ms.author="dobett" />  
 
 
@@ -28,7 +28,8 @@
 [Azure CLI](/documentation/articles/xplat-cli-install/) 是一个跨平台、开源、基于 shell 的命令工具，用于在 Azure 中创建和管理资源。此版本的 CLI 是使用 Node.js 实现的。
 
 ## Azure CLI 2.0（预览版）
-Azure CLI 2.0（预览版）是一个跨平台、开源、基于 shell 的命令工具，用于在 Azure 中创建和管理资源。此预览版本的 CLI 是使用 Python 实现的。
+[Azure CLI 2.0（预览版）](https://docs.microsoft.com/cli/azure/install-az-cli2)是一个跨平台、开源、基于 shell 的命令工具，用于在 Azure 中创建和管理资源。此预览版本的 CLI 是使用 Python 实现的。
+
 
 ## <a name="azure-iot-device-sdks"></a> Azure IoT 设备 SDK
 提供了多种语言的_设备 SDK_，以便于用户创建与 IoT 中心交互的[设备应用](#device-app)。IoT 中心教程介绍了如何使用这些设备 SDK。可以在此 GitHub [存储库](https://github.com/Azure/azure-iot-sdks)中找到有关设备 SDK 的源代码和进一步信息。
@@ -57,6 +58,9 @@ Azure CLI 2.0（预览版）是一个跨平台、开源、基于 shell 的命令
 ## <a name="back-end-app"></a>后端应用
 在 [IoT 中心](#iot-hub)环境中，后端应用是指连接到 IoT 中心的一个面向服务的终结点的应用。例如，后端应用可能检索[设备到云](#device-to-cloud)消息或管理[标识注册表](#identity-registry)。通常，后端应用在云中运行，但在许多教程中，后端应用是在本地开发计算机上运行的控制台应用。
 
+## <a name="built-in-endpoints"></a> 内置终结点
+每 IoT 中心均包括与事件中心兼容的内置[终结点](/documentation/articles/iot-hub-devguide-endpoints/)。可以使用任何适用于事件中心的机制从此终结点读取设备到云消息。
+
 ## <a name="cloud-gateway"></a> 云网关
 云网关使不能直接连接到 [IoT 中心](#iot-hub)的设备能建立连接。和在设备本地运行的[现场网关](#field-gateway)相反，云网关在云中托管。云网关的一个典型用例是实现设备的协议转换。
 
@@ -67,6 +71,9 @@ Azure CLI 2.0（预览版）是一个跨平台、开源、基于 shell 的命令
 使用应用程序代码中的连接字符串来封装连接到终结点所需的信息。连接字符串通常包含终结点的地址和安全信息，但连接字符串的格式因服务而异。与 IoT 中心服务关联的连接字符串有两种：
 - *设备连接字符串*使设备能够连接到 IoT 中心上面向设备的终结点。
 - *IoT 中心连接字符串*使后端应用能够连接到 IoT 中心上面向服务的终结点。
+
+## <a name="custom-endpoints"></a> 自定义终结点
+可以在 IoT 中心创建自定义[终结点](/documentation/articles/iot-hub-devguide-endpoints/)，传递[路由规则](#routing-rules)分派的消息。自定义终结点会直接连接到事件中心、服务总线队列或服务总线主题。
 
 ## <a name="custom-gateway"></a> 自定义网关
 网关使不能直接连接到 [IoT 中心](#iot-hub)的设备能建立连接。可以使用 [Azure IoT 网关 SDK](#azure-iot-gateway-sdk) 生成自定义网关，以便使用自定义逻辑处理消息和自定义协议转换。
@@ -116,11 +123,14 @@ Azure CLI 2.0（预览版）是一个跨平台、开源、基于 shell 的命令
 ## 设备预配
 设备预配是将初始[设备数据](#device-data)添加到解决方案中的存储的过程。若要使新设备能够连接到中心，必须将新设备 ID 和密钥添加到 IoT 中心的[标识注册表](#identity-registry)。在预配过程中，你可能需要初始化其他解决方案存储中的设备特定数据。
 
-## 设备孪生
+## <a name="device-twin"></a> 设备孪生
 [设备孪生](/documentation/articles/iot-hub-devguide-device-twins/)是存储设备状态信息（如元数据、配置和条件）的 JSON 文档。[IoT 中心](#iot-hub)为在 IoT 中心预配的每台设备保留一个设备孪生。借助设备孪生可以在设备和解决方案后端之间同步[设备条件](#device-condition)和配置。可以通过查询设备孪生来定位特定设备和查询长时间运行的操作状态。
 
 ## 设备孪生查询
 [设备孪生查询](/documentation/articles/iot-hub-devguide-query-language/)使用类似 SQL 的 IoT 中心查询语言从设备孪生中检索信息。可以使用相同的 IoT 中心查询语言检索在 IoT 中心运行的[作业](#job)的信息。
+
+## 设备孪生 REST API
+可以使用[设备孪生 REST API](https://docs.microsoft.com/rest/api/iothub/devicetwinapi) 从解决方案后端管理设备孪生。使用该 API 可以检索和更新[设备孪生](#device-twin)属性和调用[直接方法](#direct-method)。通常情况下，使用 IoT 中心教程中演示的一种较高级别的[服务 SDK](#azure-iot-service-sdks)。
 
 ## 设备孪生同步
 设备孪生同步使用设备孪生中的[所需属性](#desired-properties)配置设备并检索设备中的[报告属性](#reported-properties)，以将其存储在设备孪生中。
@@ -173,8 +183,8 @@ Azure IoT 套件将多个 Azure 服务和预配置解决方案打包在一起。
 ## <a name="job"></a> 作业
 解决方案后端可以使用[作业](/documentation/articles/iot-hub-devguide-jobs/)计划和跟踪在 IoT 中心注册的一组设备的活动。活动包括更新设备孪生的[所需属性](#desired-properties)、更新设备孪生[标记](#tags)，以及调用[直接方法](#direct-method)。[IoT 中心](#iot-hub)还使用作业在[标识注册表](#identity-registry)中[导入和导出](/documentation/articles/iot-hub-devguide-identity-registry/#import-and-export-device-identities)。
 
-## 作业 API
-[作业 API](https://docs.microsoft.com/rest/api/iothub/jobapi) 是一种 REST API，可以使用它管理 IoT 中心内运行的[作业](#job)。
+## 作业 REST API
+使用[作业 REST API](https://docs.microsoft.com/rest/api/iothub/jobapi) 可管理 IoT 中心内运行的[作业](#job)。
 
 ## 模块
 在 [Azure IoT 网关 SDK](/documentation/articles/iot-hub-linux-gateway-sdk-get-started/) 中，[模块](/documentation/articles/iot-hub-linux-gateway-sdk-get-started/#azure-iot-gateway-sdk-concepts)是执行特定任务的组件。任务可能包括从设备引入消息、转换消息，或者将消息发送到 IoT 中心。中转站负责在模块之间转发消息。Azure IoT 网关 SDK 包括一组示例模块。用户还可以创建自己的自定义模块。
@@ -208,6 +218,9 @@ IoT 中心[操作监视](/documentation/articles/iot-hub-operations-monitoring/)
 
 ## 重试策略
 连接到云服务时使用重试策略来处理 [暂时性错误][]。
+
+## <a name="routing-rules"></a> 路由规则
+在 IoT 中心配置[路由规则](/documentation/articles/iot-hub-devguide-messaging/#device-to-cloud-configuration-options)，将设备到云消息路由到[内置终结点](#built-in-endpoints)或[自定义终结点](#custom-endpoints)，以供解决方案后端处理。
 
 ## SASL PLAIN
 SASL PLAIN 是一种协议， [AMQP](#advanced-message-queue-protocol) 协议使用它传输安全令牌。
@@ -246,5 +259,5 @@ Azure 订阅是发生计费的地方。用户创建的每个 Azure 资源或使�
 [暂时性错误]: https://msdn.microsoft.com/en-us/library/hh680901(v=pandp.50).aspx 
 
 
-<!---HONumber=Mooncake_0206_2017-->
-<!--Update_Description:update wording-->
+<!---HONumber=Mooncake_0306_2017-->
+<!--Update_Description:update wording and add the section of built-in-endpoints and custom-endpoints and device-twin REST API and routing-rules-->

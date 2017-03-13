@@ -14,7 +14,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="na"
     ms.date="10/24/2016"
-    wacn.date="01/13/2017"
+    wacn.date="03/10/2017"
     ms.author="kdotchko" />  
 
 
@@ -26,7 +26,7 @@ IoT 中心让设备能够在端口 8883 上使用 [MQTT v3.1.1][lnk-mqtt-org] �
 设备既可以通过 [Microsoft Azure IoT SDK][lnk-device-sdks] 中的库使用 MQTT 协议连接到 IoT 中心，也可以直接使用 MQTT 协议连接到 IoT 中心。
 
 ## 使用设备 SDK
-支持 MQTT 协议的[设备 SDK][lnk-device-sdks] 可用于 Java、Node.js、C、C\# 和 Python。设备 SDK 使用标准 IoT 中心连接字符串连接到 IoT 中心。若要使用 MQTT 协议，必须将客户端协议参数设置为 **MQTT**。默认情况下，设备 SDK 连接到 **CleanSession** 标志设为 **0** 的 IoT 中心，并使用 **QoS 1** 与 IoT 中心交换消息。
+支持 MQTT 协议的[设备 SDK][lnk-device-sdks] 可用于 Java、Node.js、C、C# 和 Python。设备 SDK 使用标准 IoT 中心连接字符串连接到 IoT 中心。若要使用 MQTT 协议，必须将客户端协议参数设置为 **MQTT**。默认情况下，设备 SDK 连接到 **CleanSession** 标志设为 **0** 的 IoT 中心，并使用 **QoS 1** 与 IoT 中心交换消息。
 
 当设备连接到 IoT 中心时，设备 SDK 将提供相关方法，使设备可接收来自 IoT 中心的消息并向其发送消息。
 
@@ -52,25 +52,23 @@ IoT 中心让设备能够在端口 8883 上使用 [MQTT v3.1.1][lnk-mqtt-org] �
 如果设备无法使用设备 SDK，仍可使用 MQTT 协议连接到公共设备终结点。在 **CONNECT** 数据包中，设备应使用以下值：
 
 - **ClientId** 字段使用 **deviceId**。
-- “用户名”字段使用 `{iothubhostname}/{device_id}`，其中 {iothubhostname} 是 IoT 中心的完整 CName。
+- “用户名”字段使用 `{iothubhostname}/{device_id}/api-version=2016-11-14`，其中 {iothubhostname} 是 IoT 中心的完整 CName。
 
-    例如，如果 IoT 中心的名称为 **contoso.azure-devices.cn**，设备的名称为 **MyDevice01**，则完整“用户名”字段应包含 `contoso.azure-devices.cn/MyDevice01`。
+    例如，如果 IoT 中心的名称为 **contoso.azure-devices.cn**，设备的名称为 **MyDevice01**，则完整“用户名”字段应包含 `contoso.azure-devices.cn/MyDevice01/api-version=2016-11-14`。
 - “密码”字段使用 SAS 令牌。对于 HTTP 和 AMQP 协议，SAS 令牌的格式是相同的：<br/>`SharedAccessSignature sig={signature-string}&se={expiry}&sr={URL-encoded-resourceURI}`。
 
     有关如何生成 SAS 令牌的详细信息，请参阅[使用 IoT 中心安全令牌][lnk-sas-tokens]的设备部分。
-    
-    测试时也可以使用设备资源管理器工具来快速生成可以复制并粘贴到自己的代码中的 SAS 令牌。
-    
-    1. 转到设备资源管理器中的“管理”选项卡。
-    2. 单击“SAS 令牌”（右上角）。
-    3. 在 **SASTokenForm** 上，从“DeviceID”下拉列表中选择你的设备。设置 **TTL**。
-    4. 单击“生成”创建令牌。
-    
-    所生成的 SAS 令牌具有以下结构：
-    `HostName={your hub name}.azure-devices.cn;DeviceId=javadevice;SharedAccessSignature=SharedAccessSignature sr={your hub name}.azure-devices.cn%2fdevices%2fMyDevice01&sig=vSgHBMUG.....Ntg%3d&se=1456481802`。
 
-    此令牌中要用作“密码”字段以便使用 MQTT 进行连接的部分是：
-    `SharedAccessSignature sr={your hub name}.azure-devices.cn%2fdevices%2fyDevice01&sig=vSgHBMUG.....Ntg%3d&se=1456481802g%3d&se=1456481802`。
+    测试时也可以使用[设备资源管理器][lnk-device-explorer]工具来快速生成可以复制并粘贴到你自己的代码中的 SAS 令牌。
+
+  1. 转到“设备资源管理器”中的“管理”选项卡。
+  2. 单击“SAS 令牌”（右上角）。
+  3. 在 **SASTokenForm** 上，从“DeviceID”下拉列表中选择你的设备。设置 **TTL**。
+  4. 单击“生成”创建令牌。
+
+     所生成的 SAS 令牌具有以下结构：`HostName={your hub name}.azure-devices.cn;DeviceId=javadevice;SharedAccessSignature=SharedAccessSignature sr={your hub name}.azure-devices.net%2Fdevices%2FMyDevice01%2Fapi-version%3D2016-11-14&sig=vSgHBMUG.....Ntg%3d&se=1456481802`。
+
+     此令牌中要用作“密码”字段以便使用 MQTT 进行连接的部分是：`SharedAccessSignature sr={your hub name}.azure-devices.cn%2Fdevices%2FMyDevice01%2Fapi-version%3D2016-11-14&sig=vSgHBMUG.....Ntg%3d&se=1456481802`。
 
 对于 MQTT 连接和断开连接数据包，IoT 中心会在**操作监视**频道发布事件，并提供可帮助对连接问题进行故障排除的其他信息。
 
@@ -83,7 +81,9 @@ IoT 中心让设备能够在端口 8883 上使用 [MQTT v3.1.1][lnk-mqtt-org] �
 
 设备应用还可使用`devices/{device_id}/messages/events/{property_bag}` 作为**遗嘱主题名称**，用于定义要作为遥测消息转发的*遗嘱消息*。
 
-IoT 中心不支持 QoS 2 消息。如果设备应用使用 **QoS 2** 发布消息，IoT 中心将断开网络连接。IoT 中心不会存储保留消息。如果设备发送 **RETAIN** 标志设置为 1 的消息，IoT 中心会在消息中添加 **x-opt-retain** 应用程序属性。在此情况下，IoT 中心不会存储保留消息，而将其传递到后端应用。
+- IoT 中心不支持 QoS 2 消息。如果设备应用使用 **QoS 2** 发布消息，IoT 中心将断开网络连接。
+- IoT 中心不会存储保留消息。如果设备发送 **RETAIN** 标志设置为 1 的消息，IoT 中心会在消息中添加 **x-opt-retain** 应用程序属性。在此情况下，IoT 中心不会存储保留消息，而将其传递到后端应用。
+- IoT 中心只允许一个设备有一个活动的 MQTT 连接。如果新的 MQTT 连接代表的是同一设备 ID，则会导致 IoT 中心断开现有连接。
 
 有关详细信息，请参阅[消息传送开发人员指南][lnk-messaging]。
 
@@ -124,15 +124,21 @@ request id 可以是消息属性值的任何有效值（如 [IoT 中心消息传
 | ----- | ----------- |
 | 200 | 成功 |
 | 429 | 请求过多（限制），如 [IoT 中心限制][lnk-quotas]中所述 |
-| 5\*\* | 服务器错误 |
+| 5** | 服务器错误 |
 
 有关详细信息，请参阅[设备孪生开发人员指南][lnk-devguide-twin]。
 
 ### 更新设备孪生的报告属性
 
-首先，设备需要订阅 `$iothub/twin/res/#`，接收操作的响应。然后，它会发送一条消息（内附 `$iothub/twin/PATCH/properties/reported/?$rid={request id}` 的设备孪生更新），并提供**请求 ID** 的填充值。随后，服务将使用与请求相同的**请求 ID**，发送包含主题 `$iothub/twin/res/{status}/?$rid={request id}` 的设备孪生数据的响应消息。
+以下顺序说明了设备如何在 IoT 中心更新设备孪生中报告的属性：
 
-请求消息正文包含 JSON 文档，该文档提供报告属性的新值（不可修改任何其他属性或元数据）。JSON 文档中的每个成员均会更新或添加设备孪生文档中的相应成员。设置为 `null` 的成员会从包含的对象中删除成员。例如
+1. 设备必须先订阅 `$iothub/twin/res/#` 主题，以便接收 IoT 中心的操作响应。
+
+1. 设备发送一条消息，其中包含 `$iothub/twin/PATCH/properties/reported/?$rid={request id}` 主题的设备孪生更新。该消息包含**请求 ID** 值。
+
+1. 然后，服务发送一条响应消息，其中包含主题 `$iothub/twin/res/{status}/?$rid={request id}` 的已报告属性集合的全新 ETag 值。该响应消息使用与该请求相同的**请求 ID**。
+
+请求消息正文包含 JSON 文档，该文档提供报告属性的新值（不可修改任何其他属性或元数据）。JSON 文档中的每个成员均会更新或添加设备孪生文档中的相应成员。设置为 `null` 的成员会从包含的对象中删除成员。例如：
 
         {
             "telemetrySendFrequency": "35m",
@@ -146,13 +152,13 @@ request id 可以是消息属性值的任何有效值（如 [IoT 中心消息传
 | 200 | 成功 |
 | 400 | 错误的请求。格式不正确的 JSON |
 | 429 | 请求过多（限制），如 [IoT 中心限制][lnk-quotas]中所述 |
-| 5\*\* | 服务器错误 |
+| 5** | 服务器错误 |
 
 有关详细信息，请参阅[设备孪生开发人员指南][lnk-devguide-twin]。
 
 ### 接收所需属性更新通知
 
-设备连接时，IoT 中心会向主题 `$iothub/twin/PATCH/properties/desired/?$version={new version}` 发送通知，内附解决方案后端执行的更新内容。例如，
+设备连接时，IoT 中心会向主题 `$iothub/twin/PATCH/properties/desired/?$version={new version}` 发送通知，内附解决方案后端执行的更新内容。例如：
 
         {
             "telemetrySendFrequency": "5m",
@@ -193,15 +199,15 @@ request id 可以是消息属性值的任何有效值（如 [IoT 中心消息传
 - [IoT 中心开发人员指南][lnk-devguide]
 - [使用 IoT 网关 SDK 模拟设备][lnk-gateway]
 
-[lnk-device-sdks]: https://github.com/Azure/azure-iot-sdks/blob/master/readme.md
+[lnk-device-sdks]: https://github.com/Azure/azure-iot-sdks
 [lnk-mqtt-org]: http://mqtt.org/
 [lnk-mqtt-docs]: http://mqtt.org/documentation
-
-[lnk-sample-c]: https://github.com/Azure/azure-iot-sdks/tree/master/c/iothub_client/samples/iothub_client_sample_mqtt
-[lnk-sample-csharp]: https://github.com/Azure/azure-iot-sdks/tree/master/csharp/device/samples
-[lnk-sample-python]: https://github.com/Azure/azure-iot-sdks/tree/master/python/device/samples
-[lnk-device-explorer]: https://github.com/Azure/azure-iot-sdks/blob/master/tools/DeviceExplorer/readme.md
-[lnk-sas-tokens]: /documentation/articles/iot-hub-devguide-security/#use-sas-tokens-in-a-device-app
+[lnk-sample-node]: https://github.com/Azure/azure-iot-sdk-node/blob/master/device/samples/simple_sample_device.js
+[lnk-sample-c]: https://github.com/Azure/azure-iot-sdk-c/tree/master/iothub_client/samples/iothub_client_sample_mqtt
+[lnk-sample-csharp]: https://github.com/Azure/azure-iot-sdk-csharp/tree/master/device/samples
+[lnk-sample-python]: https://github.com/Azure/azure-iot-sdk-python/tree/master/device/samples
+[lnk-device-explorer]: https://github.com/Azure/azure-iot-sdk-csharp/blob/master/tools/DeviceExplorer
+[lnk-sas-tokens]: /documentation/articles/iot-hub-devguide-security/#use-sas-tokens-in-a-device-client
 [lnk-mqtt-devguide]: /documentation/articles/iot-hub-devguide-messaging/#notes-on-mqtt-support
 [lnk-azure-protocol-gateway]: /documentation/articles/iot-hub-protocol-gateway/
 
@@ -218,6 +224,6 @@ request id 可以是消息属性值的任何有效值（如 [IoT 中心消息传
 [lnk-devguide-twin-reconnection]: /documentation/articles/iot-hub-devguide-device-twins/#device-reconnection-flow
 [lnk-devguide-twin]: /documentation/articles/iot-hub-devguide-device-twins/
 
-<!---HONumber=Mooncake_0109_2017-->
+<!---HONumber=Mooncake_0306_2017-->
 <!--Update_Description:add sections of Receiving c2d messages, Retrieving a device twin's properties, 
 update device twin's reported properties, Receiving desired properties update notifications, Respond to a direct method-->

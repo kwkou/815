@@ -1,9 +1,9 @@
 <properties
-	pageTitle="IoT 中心网关 SDK 入门 | Azure"
-	description="使用 Windows 的 Azure IoT 中心网关 SDK 演练，说明使用 Azure IoT 中心网关 SDK 时应理解的关键概念。"
+	pageTitle="Azure IoT 网关 SDK 入门 (Windows) | Azure"
+	description="了解如何在 Windows 计算机上生成网关，并了解 Azure IoT 网关 SDK（如模块）和 JSON 配置文件中的重要概念。"
 	services="iot-hub"
 	documentationCenter=""
-	authors="chipalost"
+	author="chipalost"
 	manager="timlt"
 	editor=""/>  
 
@@ -15,7 +15,7 @@
      ms.tgt_pltfrm="na"
      ms.workload="na"
      ms.date="11/16/2016"
-     wacn.date="01/13/2017"
+     wacn.date="03/10/2017"
      ms.author="andbuc"/>  
 
 
@@ -25,12 +25,11 @@
 [AZURE.INCLUDE [iot-hub-gateway-sdk-getstarted-selector](../../includes/iot-hub-gateway-sdk-getstarted-selector.md)]
 
 ## 如何生成示例
-
 开始之前，必须[设置开发环境][lnk-setupdevbox]，以便在 Windows 上使用 SDK。
 
 1. 打开 **VS2015 开发人员命令提示**命令提示符。
 2. 浏览到本地 **azure-iot-gateway-sdk** 存储库副本中的根文件夹。
-3. 运行 **tools\\build.cmd** 脚本。此脚本创建 Visual Studio 解决方案文件，生成解决方案，并运行测试。你可以在本地 **azure-iot-gateway-sdk** 存储库副本的 **build** 文件夹中找到 Visual Studio 解决方案。
+3. 运行 **tools\\build.cmd** 脚本。此脚本创建 Visual Studio 解决方案文件，并生成解决方案。你可以在本地 **azure-iot-gateway-sdk** 存储库副本的 **build** 文件夹中找到 Visual Studio 解决方案。可以为脚本添加其他参数，以便生成和运行单元测试和端到端测试。这些参数分别为 **--run-unittests** 和 **--run-e2e-tests**。
 
 ## 如何运行示例
 1. **build.cmd** 脚本在本地存储库副本中创建一个名为 **build** 的文件夹。此文件夹中包含本示例中使用的两个模块。
@@ -87,5 +86,5 @@
 
 [lnk-setupdevbox]: https://github.com/Azure/azure-iot-gateway-sdk/blob/master/doc/devbox_setup.md
 
-<!---HONumber=Mooncake_0109_2017-->
+<!---HONumber=Mooncake_0306_2017-->
 <!--Update_Description:update wording-->

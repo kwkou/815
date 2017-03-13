@@ -1,6 +1,6 @@
 <properties
     pageTitle="使用路由处理 Azure IoT 中心设备到云消息 (.NET) | Azure"
-    description="如何使用路由将消息发送到其他后端服务，从而处理 IoT 中心设备到云消息。"
+    description="如何使用路由规则和自定义终结点将消息发送到其他后端服务，从而处理 IoT 中心设备到云消息。"
     services="iot-hub"
     documentationcenter=".net"
     author="dominicbetts"
@@ -13,8 +13,8 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="na"
-    ms.date="12/12/2016"
-    wacn.date="01/13/2017"
+    ms.date="01/31/2017"
+    wacn.date="03/10/2017"
     ms.author="dobett" />  
 
 
@@ -23,13 +23,13 @@
 [AZURE.INCLUDE [iot-hub-selector-process-d2c](../../includes/iot-hub-selector-process-d2c.md)]
 
 ## 介绍
-Azure IoT 中心是一项完全托管的服务，可在数百万台设备和单个解决方案后端之间实现安全可靠的双向通信。其他教程（[《IoT 中心入门》]和[《使用 IoT 中心发送云到设备的消息》][lnk-c2d]）介绍了如何使用 IoT 中心的“设备到云”和“云到设备”的基本消息传递功能。
+Azure IoT 中心是一项完全托管的服务，可在数百万台设备和单个解决方案后端之间实现安全可靠的双向通信。其他教程（[IoT 中心入门]和[使用 IoT 中心发送云到设备的消息][lnk-c2d]）介绍了如何使用 IoT 中心的设备到云和云到设备的基本消息传递功能。
 
-本教程以 [IoT 中心入门]教程中所示的代码为基础，说明如何以基于配置的轻松方式，使用消息路由发送设备到云消息。本教程介绍如何隔离需要解决方案后端立即执行操作以进行进一步处理的消息。例如，设备可能将发送一条警报消息，触发在 CRM 系统中插入票证。与此相反，数据点消息仅送入分析引擎。例如，设备中存储便于日后分析的温度遥测是数据点消息。
+本教程以 [IoT 中心入门]教程为基础，说明如何以基于配置的轻松方式，使用路由规则发送设备到云消息。本教程介绍如何隔离需要解决方案后端立即执行操作以进行进一步处理的消息。例如，设备可能将发送一条警报消息，触发在 CRM 系统中插入票证。与此相反，数据点消息仅送入分析引擎。例如，设备中存储便于日后分析的温度遥测是数据点消息。
 
 在本教程结束时，会运行 3 个 .NET 控制台应用：
 
-* **SimulatedDevice**，[IoT 中心入门]教程中创建的应用的修改版本，每秒发送一次数据点设备到云消息，每 10 秒发送一次交互式设备到云消息。此应用使用 AMQP 协议来与 IoT 中心通信。
+* **SimulatedDevice**，[IoT 中心入门]教程中创建的应用的修改版本，每秒发送一次数据点设备到云消息，每 10 秒发送一次交互式设备到云消息。此应用使用 AMQP 协议实现与 IoT 中心的通信。
 * **ReadDeviceToCloudMessages**，显示模拟设备应用发送的非关键遥测数据。
 * **read-critical-queue**，从附加到 IoT 中心的服务总线队列中取消模拟设备应用发送的关键消息的排队。
 
@@ -89,7 +89,7 @@ IoT 中心对许多设备平台和语言（包括 C、Java 和 JavaScript）提�
         }
     
    
-     这会将 `"level": "critical"` 属性随机添加到设备发送的消息，可模拟需要解决方案后端立即执行操作的消息。设备应用会在消息属性中（而非在消息正文中）传递此信息，以便 IoT 中心能够将消息路由到适当的消息目标。
+此方法会将 `"level": "critical"` 属性随机添加到设备发送的消息，可模拟需要解决方案后端立即执行操作的消息。设备应用会在消息属性中（而非在消息正文中）传递此信息，以便 IoT 中心能够将消息路由到适当的消息目标。
 
     > [AZURE.NOTE]
     > 可使用消息属性根据各种方案路由消息，包括冷路径处理和此处所示的热路径示例。
@@ -102,7 +102,13 @@ IoT 中心对许多设备平台和语言（包括 C、Java 和 JavaScript）提�
     > 
 
 ## 向 IoT 中心添加一个队列并向其路由消息
-在本部分中，将创建一个服务总线队列并将其连接到 IoT 中心，还会配置 IoT 中心，根据消息上的现有属性发送消息到队列。若要深入了解如何处理来自服务总线队列的消息，请参阅[队列入门][Service Bus queue]教程。
+本部分的操作：
+
+* 创建服务总线队列。
+* 将其连接到 IoT 中心。
+* 配置 IoT 中心，以根据是否存在某个消息属性将消息发送到队列。
+
+若要深入了解如何处理来自服务总线队列的消息，请参阅[队列入门][Service Bus queue]教程。
 
 1. 按[队列入门][Service Bus queue]中所述，创建服务总线队列。队列必须与 IoT 中心位于同一订阅和区域中。记下命名空间和队列名称。
 
@@ -116,12 +122,12 @@ IoT 中心对许多设备平台和语言（包括 C、Java 和 JavaScript）提�
     ![添加终结点][31]  
 
     
-4. 现在单击 IoT 中心的“路由”。单击边栏选项卡顶部的“添加”，创建将消息路由到刚添加的队列的规则。选择“DeviceTelemetry”作为数据源。输入 `level="critical"` 作为条件，然后选择刚添加为终结点的队列作为路由终结点。完成后，单击底部的“保存”。
+4. 现在单击 IoT 中心的“路由”。单击边栏选项卡顶部的“添加”，创建将消息路由到刚添加的队列的路由规则。选择“DeviceTelemetry”作为数据源。输入 `level="critical"` 作为条件，然后选择刚添加为自定义终结点的队列作为路由规则终结点。完成后，单击底部的“保存”。
     
     ![添加路由][32]  
 
     
-    请确保回退路由设为“开”。这是 IoT 中心的默认配置。
+    请确保回退路由设为“开”。此值是 IoT 中心的默认配置。
     
     ![回退路由][33]  
 
@@ -129,7 +135,7 @@ IoT 中心对许多设备平台和语言（包括 C、Java 和 JavaScript）提�
 ## 从队列终结点读取
 在本部分中，会从队列终结点读取消息。
 
-1. 在当前的 Visual Studio 解决方案中，使用“控制台应用程序”项目模板创建 Visual C\# Windows 项目。将项目命名为 **ReadCriticalQueue**。
+1. 在当前的 Visual Studio 解决方案中，使用“控制台应用程序”项目模板创建 Visual C# Windows 项目。将项目命名为 **ReadCriticalQueue**。
 
 2. 在“解决方案资源管理器”中，右键单击 **ReadCriticalQueue** 项目，然后单击“管理 NuGet 包”。此操作会显示“NuGet 包管理器”窗口。
 
@@ -168,7 +174,7 @@ IoT 中心对许多设备平台和语言（包括 C、Java 和 JavaScript）提�
 1. 在 Visual Studio 的解决方案资源管理器中，右键单击你的解决方案并选择“设置启动项目”。选择“多个启动项目”，然后为 **ReadDeviceToCloudMessages**、**SimulatedDevice** 和 **ReadCriticalQueue** 项目选择“启动”作为操作。
 2. 按 **F5** 启动 3 个控制台应用。**ReadDeviceToCloudMessages** 应用仅拥有 **SimulatedDevice** 应用程序发送的非关键消息，而 **ReadCriticalQueue** 应用仅拥有关键消息。
    
-    ![3 个控制台应用][50]  
+   ![3 个控制台应用][50]  
 
 
 ## 后续步骤
@@ -206,12 +212,12 @@ IoT 中心对许多设备平台和语言（包括 C、Java 和 JavaScript）提�
 
 [IoT 中心开发人员指南]: /documentation/articles/iot-hub-devguide/
 [IoT 中心入门]: /documentation/articles/iot-hub-csharp-csharp-getstarted/
-[《IoT 中心入门》]: /documentation/articles/iot-hub-csharp-csharp-getstarted/
 [lnk-devguide-messaging]: /documentation/articles/iot-hub-devguide-messaging/
 [Azure IoT 开发人员中心]: /develop/iot
 [lnk-service-fabric]: /documentation/services/service-fabric/
 [lnk-stream-analytics]: /documentation/services/stream-analytics/
 [lnk-event-hubs]: /documentation/services/event-hubs/
+[Transient Fault Handling]: https://msdn.microsoft.com/library/hh675232.aspx
 
 <!-- Links -->
 
@@ -229,5 +235,5 @@ IoT 中心对许多设备平台和语言（包括 C、Java 和 JavaScript）提�
 [lnk-c2d]: /documentation/articles/iot-hub-csharp-csharp-process-d2c/
 [lnk-suite]: /documentation/services/iot-suite/
 
-<!---HONumber=Mooncake_0109_2017-->
+<!---HONumber=Mooncake_0306_2017-->
 <!--Update_Description:update wording and code-->

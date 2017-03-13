@@ -1,5 +1,5 @@
 <properties
-    pageTitle="Azure IoT 中心 IP 筛选器 | Azure"
+    pageTitle="Azure IoT 中心 IP 连接筛选器 | Azure"
     description="如何使用 IP 筛选阻止特定 IP 地址到 Azure IoT 中心的连接。可阻止来自单独 IP 地址或 IP 地址范围的连接。"
     services="iot-hub"
     documentationcenter=""
@@ -14,7 +14,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="na"
     ms.date="01/05/2017"
-    wacn.date="02/10/2017"
+    wacn.date="03/10/2017"
     ms.author="boltean" />  
 
 
@@ -61,6 +61,9 @@
 
 可以通过双击包含规则的行来编辑现有规则。
 
+> [AZURE.NOTE]
+拒绝 IP 地址可以防止其他 Azure 服务（例如门户中的 Azure 流分析、Azure 虚拟机或设备资源管理器）与 IoT 中心交互。
+
 ## 删除 IP 筛选器规则
 
 若要删除 IP 筛选器规则，请在网格中选择一条或多条规则，然后单击“删除”。
@@ -72,7 +75,7 @@
 
 IP 筛选器规则按顺序应用，与 IP 地址匹配的第一条规则决定了是采取接受操作还是拒绝操作。
 
-例如，若要接受 192.168.100.0/22 范围内的地址并拒绝所有其他地址，则网格中的第一条规则应接受 192.168.100.0/22 这一地址范围。下一规则应使用 0.0.0.0/0 这一范围拒绝所有地址。如果在添加最后一条规则时拒绝了 0.0.0.0/0 这一范围，则相当于将默认行为更改为启用允许列表。
+例如，若要接受 192.168.100.0/22 范围内的地址并拒绝所有其他地址，则网格中的第一条规则应接受 192.168.100.0/22 这一地址范围。下一规则应使用 0.0.0.0/0 这一范围拒绝所有地址。
 
 可以更改网格中 IP 筛选器规则的顺序，只需单击一行开始处的三个垂直点并使用拖放操作即可。
 
@@ -106,5 +109,5 @@ IP 筛选器规则按顺序应用，与 IP 地址匹配的第一条规则决定�
 [lnk-monitor]: /documentation/articles/iot-hub-operations-monitoring/
 [lnk-metrics]: /documentation/articles/iot-hub-metrics/
 
-<!---HONumber=Mooncake_0109_2017-->
+<!---HONumber=Mooncake_0306_2017-->
 <!--Update_Description:update meta properties-->

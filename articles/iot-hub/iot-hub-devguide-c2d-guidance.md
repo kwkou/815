@@ -14,7 +14,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="na"
     ms.date="11/09/2016"
-    wacn.date="01/13/2017"
+    wacn.date="03/10/2017"
     ms.author="elioda" />  
 
 
@@ -33,9 +33,9 @@ IoT 中心提供三个选项，允许设备应用向后端应用公开功能：
 | 数据流 | 双向。设备应用可以立即响应方法。解决方案后端根据上下文接收请求结果。 | 单向。设备应用接收更改了属性的通知。 | 单向。设备应用接收消息
 | 持续性 | 不联系已断开连接的设备。会通知后端：设备未连接。 | 设备孪生会保留属性值。设备会在下次重新连接时读取属性值。属性值可通过 [IoT 中心查询语言][lnk-query]检索。 | 消息可由 IoT 中心保留长达 48 小时。 |
 | 目标 | 通过 **deviceId** 与单个设备通信，或通过[作业][lnk-jobs]与多个设备通信。 | 通过 **deviceId** 与单个设备通信，或通过[作业][lnk-jobs]与多个设备通信。 | 通过 **deviceId** 与单个设备通信。 |
-| 大小 | 最多 8KB 请求和 8KB 响应。 | 所需属性大小最大为 8KB。 | 最多 256KB 的消息。 |
+| 大小 | 最多 8KB 请求和 8KB 响应。 | 所需属性大小最大为 8KB。 | 最多为 64KB 的消息。 |
 | 频率 | 高。有关详细信息，请参阅 [IoT 中心限制][lnk-quotas]。 | 中。有关详细信息，请参阅 [IoT 中心限制][lnk-quotas]。 | 低。有关详细信息，请参阅 [IoT 中心限制][lnk-quotas]。 |
-| 协议 | 在 MQTT 和 AMQP 上可用。 | 目前仅在使用 MQTT 时提供。 | 在所有协议上可用。在使用 HTTP 时，设备必须轮询。 |
+| 协议 | 目前仅在使用 MQTT 时提供。 | 目前仅在使用 MQTT 时提供。 | 在所有协议上可用。在使用 HTTP 时，设备必须轮询。 |
 
 在以下教程中学习如何使用直接方法、所需属性以及从云到设备的消息：
 
@@ -53,5 +53,5 @@ IoT 中心提供三个选项，允许设备应用向后端应用公开功能：
 [lnk-twin-properties]: /documentation/articles/iot-hub-node-node-twin-how-to-configure/
 [lnk-c2d-tutorial]: /documentation/articles/iot-hub-node-node-c2d/
 
-<!---HONumber=Mooncake_0109_2017-->
+<!---HONumber=Mooncake_0306_2017-->
 <!--Update_Description:update wording-->

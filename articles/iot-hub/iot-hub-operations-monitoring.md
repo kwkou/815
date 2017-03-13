@@ -14,7 +14,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="na"
     ms.date="12/13/2016"
-    wacn.date="01/13/2017"
+    wacn.date="03/10/2017"
     ms.author="nberdy" />  
 
 
@@ -39,6 +39,9 @@ IoT 中心监视 6 种类别的事件：
    
     ![][2]  
 
+
+> [AZURE.NOTE]
+针对“连接”类别选择“详细”监视时，IoT 中心会生成更多诊断消息。对于所有其他类别，“详细”设置会更改 IoT 中心包括在每个错误消息中的信息数量。
 
 ## 事件类别及其用法
 每种操作监视类别跟踪与 IoT 中心之间进行的不同类型的交互，每一种监视类别都有一个架构用于定义如何构建该类别的事件。
@@ -66,7 +69,7 @@ IoT 中心监视 6 种类别的事件：
          "messageSizeInBytes": 1234,
          "batching": 0,
          "protocol": "Amqp",
-         "authType": "{\"scope\":\"device\",\"type\":\"sas\",\"issuer\":\"iothub\"}",
+         "authType": "{"scope":"device","type":"sas","issuer":"iothub"}",
          "time": "UTC timestamp",
          "operationName": "ingress",
          "category": "DeviceTelemetry",
@@ -85,7 +88,7 @@ IoT 中心监视 6 种类别的事件：
 
     {
          "messageSizeInBytes": 1234,
-         "authType": "{\"scope\":\"hub\",\"type\":\"sas\",\"issuer\":\"iothub\"}",
+         "authType": "{"scope":"hub","type":"sas","issuer":"iothub"}",
          "deliveryAcknowledgement": 0,
          "protocol": "Amqp",
          "time": " UTC timestamp",
@@ -106,7 +109,7 @@ IoT 中心监视 6 种类别的事件：
 
     {
          "durationMs": 1234,
-         "authType": "{\"scope\":\"hub\",\"type\":\"sas\",\"issuer\":\"iothub\"}",
+         "authType": "{"scope":"hub","type":"sas","issuer":"iothub"}",
          "protocol": "Amqp",
          "time": " UTC timestamp",
          "operationName": "deviceConnect",
@@ -128,8 +131,9 @@ IoT 中心监视 6 种类别的事件：
 
 请注意，此类别不能捕获在设备将文件上载到存储空间时直接发生的错误。
 
+
     {
-         "authType": "{\"scope\":\"hub\",\"type\":\"sas\",\"issuer\":\"iothub\"}",
+         "authType": "{"scope":"hub","type":"sas","issuer":"iothub"}",
          "protocol": "HTTP",
          "time": " UTC timestamp",
          "operationName": "ingress",
@@ -179,5 +183,5 @@ IoT 中心监视 6 种类别的事件：
 [lnk-devguide]: /documentation/articles/iot-hub-devguide/
 [lnk-gateway]: /documentation/articles/iot-hub-linux-gateway-sdk-simulated-device/
 
-<!---HONumber=Mooncake_0109_2017-->
-<!--Update_Description:add message routing-->
+<!---HONumber=Mooncake_0306_2017-->
+<!--Update_Description:update wording and code-->

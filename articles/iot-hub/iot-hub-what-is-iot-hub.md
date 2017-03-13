@@ -13,9 +13,10 @@
  ms.topic="get-started-article"
  ms.tgt_pltfrm="na"
  ms.workload="na"
- ms.date="12/12/2016"
- wacn.date="01/13/2017"
- ms.author="dobett"/>  
+ ms.date="01/31/2017"
+ wacn.date="03/10/2017"
+ ms.author="dobett"/>
+  
 
 
 # Azure IoT 中心是什么？

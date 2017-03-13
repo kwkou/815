@@ -14,7 +14,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="na"
     ms.date="11/14/2016"
-    wacn.date="02/10/2017"
+    wacn.date="03/10/2017"
     ms.author="andbuc" />  
 
 
@@ -244,7 +244,7 @@ BLE 模块通过 BlueZ 堆栈与蓝牙硬件通信。需要 BlueZ 5.37 版才能
 Raspberry Pi 3 上有 IoT 网关 SDK 存储库的完整副本时，可以从包含该 SDK 的文件夹使用以下命令生成它：
 
 
-./tools/build.sh --skip-unittests
+./tools/build.sh
 
 
 ### 在 Raspberry Pi 3 上配置和运行 BLE 示例
@@ -352,7 +352,7 @@ BLE 设备的示例配置假定使用 Texas Instruments SensorTag 设备。任�
 
 
 #### 标识映射模块配置
-添加 SensorTag 设备的 MAC 地址，以及添至 IoT 中心的 **SensorTag\_01** 设备的设备 ID 和密钥：
+添加 SensorTag 设备的 MAC 地址，以及添加至 IoT 中心的 **SensorTag\_01** 设备的设备 ID 和密钥：
 
 
         {
@@ -430,7 +430,7 @@ BLE 设备的示例配置假定使用 Texas Instruments SensorTag 设备。任�
 
 在运行示例前，可能需要按 SensorTag 设备上的小按钮，使其可被发现。
 
-运行示例时，可使用设备资源管理器或 iothub-explorer 工具来监视网关从 SensorTag 设备转发的消息。
+运行示例时，可使用设备资源管理器或 iothub-explorer 工具监视网关从 SensorTag 设备转发的消息。
 
 ## 发送云到设备的消息
 BLE 模块还支持从 Azure IoT 中心将指令发送到设备。可使用[设备资源管理器](https://github.com/Azure/azure-iot-sdk-csharp/blob/master/tools/DeviceExplorer)或 [iothub-explorer](https://github.com/Azure/iothub-explorer) 工具将传递 BLE 网关模块的 JSON 消息发送到 BLE 设备。如果使用 Texas Instruments SensorTag 设备，则可以从 IoT 中心发送命令，打开红色 LED、绿色 LED 或蜂鸣器。为此，请首先按顺序发送以下两个 JSON 消息。然后，可以发送任何命令，打开指示灯或蜂鸣器。
@@ -507,5 +507,5 @@ BLE 模块还支持从 Azure IoT 中心将指令发送到设备。可使用[设�
 [lnk-devguide]: /documentation/articles/iot-hub-devguide/
 [lnk-create-hub]: /documentation/articles/iot-hub-create-through-portal/
 
-<!---HONumber=Mooncake_0109_2017-->
+<!---HONumber=Mooncake_0306_2017-->
 <!--Update_Description:update wording and link references-->

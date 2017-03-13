@@ -14,7 +14,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="na"
     ms.date="09/06/2016"
-    wacn.date="02/10/2017"
+    wacn.date="03/10/2017"
     ms.author="obloch" />  
 
 
@@ -63,21 +63,21 @@
 利用**序列化程序**库创建的模型支持以下数据类型：
 
 | 类型 | 说明 |
-|-------------------------|----------------------------------------|
-| double | 双精度浮点数 |
-| int | 32 位整数 |
-| float | 单精度浮点数 |
-| long | 长整数 |
-| int8\_t | 8 位整数 |
-| int16\_t | 16 位整数 |
-| int32\_t | 32 位整数 |
-| int64\_t | 64 位整数 |
-| bool | 布尔值 |
-| ascii\_char\_ptr | ASCII 字符串 |
-| EDM\_DATE\_TIME\_OFFSET | 日期时间偏移 |
-| EDM\_GUID | GUID |
-| EDM\_BINARY | binary |
-| DECLARE\_STRUCT | 复杂数据类型 |
+| --- | --- |
+| double |双精度浮点数 |
+| int |32 位整数 |
+| float |单精度浮点数 |
+| long |长整数 |
+| int8\_t |8 位整数 |
+| int16\_t |16 位整数 |
+| int32\_t |32 位整数 |
+| int64\_t |64 位整数 |
+| bool |布尔值 |
+| ascii\_char\_ptr |ASCII 字符串 |
+| EDM\_DATE\_TIME\_OFFSET |日期时间偏移 |
+| EDM\_GUID |GUID |
+| EDM\_BINARY |binary |
+| DECLARE\_STRUCT |复杂数据类型 |
 
 我们从最后一种数据类型开始。**DECLARE\_STRUCT** 可让你定义复杂数据类型，即其他基元类型的分组。这些分组可让我们定义如下所示的模型：
 
@@ -527,6 +527,13 @@
 
 操作名称必须完全与模型中定义的操作匹配。参数名称也必须匹配。另请注意大小写。**Name** 和 **Parameters** 始终大写。请务必与模型中操作名称和参数的大小写匹配。在本示例中，操作名称是“SetAirResistance”，而不是“setairresistance”。
 
+将这些消息发送到某个设备即可调用 **TurnFanOn** 和 **TurnFanOff** 这两个其他的操作：
+
+
+	{"Name" : "TurnFanOn", "Parameters" : {}}
+	{"Name" : "TurnFanOff", "Parameters" : {}}
+
+
 本部分说明了使用**序列化程序**库发送事件和接收消息时的所有要点。在继续讨论之前，让我们先介绍一些可以配置以控制模型大小的参数。
 
 ## 宏配置
@@ -682,5 +689,5 @@
 
 [lnk-gateway]: /documentation/articles/iot-hub-linux-gateway-sdk-simulated-device/
 
-<!---HONumber=Mooncake_0206_2017-->
+<!---HONumber=Mooncake_0306_2017-->
 <!--Update_Description:update wording and code-->

@@ -13,8 +13,8 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="na"
-    ms.date="12/12/2016"
-    wacn.date="01/13/2017"
+    ms.date="01/31/2017"
+    wacn.date="03/10/2017"
     ms.author="dobett" />
 
 # Azure IoT 中心开发人员指南
@@ -38,7 +38,7 @@ Azure IoT 中心提供：
 * [使用设备孪生同步状态和配置][devguide-device-twins]介绍了*设备孪生*的概念及其公开的功能（如使用设备孪生同步设备）。此文章包括有关设备孪生中存储的数据的信息。
 * [在设备上调用直接方法][devguide-directmethods]说明直接方法的生命周期，介绍有关如何从后端应用调用设备方法以及在设备上处理直接方法的信息。
 * [在多台设备上计划作业][devguide-jobs]介绍如何在多台设备上计划作业。此文章介绍了如何提交作业，这些作业在执行直接方法和利用设备孪生更新设备时执行任务。它还介绍如何查询作业的状态。
-* [参考 - IoT 中心终结点][devguide-endpoints]说明了每个 IoT 中心针对运行时和管理操作公开的各种终结点。此文章还介绍如何向 IoT 中心添加附加终结点，以及如何使用现场网关使某些设备连接到 IoT 中心终结点。
+* [参考 - IoT 中心终结点][devguide-endpoints]说明了每个 IoT 中心针对运行时和管理操作公开的各种终结点。此文章还介绍如何在 IoT 中心创建附加终结点，以及如何使用现场网关使设备连接到非标准方案中的 IoT 中心终结点。
 * [参考 - 设备孪生和作业的 IoT 中心查询语言][devguide-query]介绍了可用于在中心检索设备孪生和作业相关信息的 IoT 中心查询语言。
 * [参考 - 配额和限制][devguide-quotas]总结了 IoT 中心服务中设置的配额，以及当超过配额时可以预期看到的限制行为。
 * [参考 - 设备和服务 SDK][devguide-sdks] 列出了开发与 IoT 中心交互的设备和服务应用时可使用的 Azure IoT SDK。此文章包括指向联机 API 文档的链接。
@@ -63,5 +63,5 @@ Azure IoT 中心提供：
 [lnk-c2d-guidance]: /documentation/articles/iot-hub-devguide-c2d-guidance/
 [lnk-d2c-guidance]: /documentation/articles/iot-hub-devguide-d2c-guidance/
 
-<!---HONumber=Mooncake_0109_2017-->
+<!---HONumber=Mooncake_0306_2017-->
 <!--Update_Description:update wording-->

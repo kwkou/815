@@ -13,8 +13,8 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="na"
-    ms.date="12/13/2016"
-    wacn.date="01/13/2017"
+    ms.date="01/31/2017"
+    wacn.date="03/10/2017"
     ms.author="dobett" />  
 
 
@@ -29,7 +29,7 @@ IoT 中心消息传送功能的核心属性是消息的可靠性和持久性。�
 
 IoT 中心支持多个[面向设备的协议][lnk-protocols]（例如 MQTT、AMQP 和 HTTP）。为了支持无缝的跨协议互操作性，IoT 中心定义了所有面向设备的协议均可支持的[通用消息格式][lnk-message-format]。
 
-IoT 中心公开[与事件中心兼容的终结点][lnk-compatible-endpoint]，让后端应用能读取中心收到的设备到云消息。通过将订阅中的其他服务链接到中心，还可以将自定义路由终结点添加到 IoT 中心。
+IoT 中心公开内置的[与事件中心兼容的终结点][lnk-compatible-endpoint]，让后端应用能读取中心收到的设备到云消息。通过将订阅中的其他服务链接到中心，还可以在 IoT 中心创建自定义终结点。
 
 ### 何时使用
 使用设备到云消息从设备应用发送时序遥测数据和警报，使用云到设备消息向设备应用发送单向通知。
@@ -40,26 +40,26 @@ IoT 中心公开[与事件中心兼容的终结点][lnk-compatible-endpoint]，�
 有关 IoT 中心与事件中心服务的比较，请参阅 [IoT 中心与事件中心的比较][lnk-compare]。
 
 ## <a name="device-to-cloud-messages"></a> 设备到云的消息
-通过面向设备的终结点 \(**/devices/{deviceId}/messages/events**\) 发送设备到云消息。消息路由随后将消息路由到 IoT 中心内面向服务的终结点之一。消息路由使用流经中心的设备到云消息的属性来确定将消息路由到的位置。默认情况下，消息将路由到与[事件中心][lnk-event-hubs]兼容的内置面向服务的终结点 \(messages/events\) 中。因此，可以使用标准[事件中心集成和 SDK][lnk-compatible-endpoint] 来接收设备到云的消息。
+通过面向设备的终结点 (**/devices/{deviceId}/messages/events**) 发送设备到云消息。路由规则随后将消息路由到 IoT 中心内面向服务的终结点之一。路由规则使用流经中心的设备到云消息的属性来确定将消息路由到的位置。默认情况下，消息将路由到与[事件中心][lnk-event-hubs]兼容的内置面向服务的终结点 (messages/events) 中。因此，可以使用标准[事件中心集成和 SDK][lnk-compatible-endpoint] 来接收设备到云的消息。
 
 IoT 中心使用流式消息传递模式实现设备到云的消息传递。与[事件中心][lnk-event-hubs]*事件*和[服务总线][lnk-servicebus]*消息*相比，IoT 中心的设备到云消息更类似前者，类似之处在于有大量事件通过可供多个读取器读取的服务。
 
 这种实现具有以下含义：
 
-* 与事件中心事件类似，设备到云的消息可持久保留在 IoT 中心的默认 **messages/events** 终结点多达 7 天（请参阅[设备到云的配置选项][lnk-d2c-configuration]）。
+* 与事件中心事件类似，设备到云的消息可持久保留在 IoT 中心的默认 **messages/events** 终结点多达 7 天。
 * 如同事件中心的事件，设备到云的消息最大可为 256 KB，而且可分成多个批以优化发送。Batch 最大可为 256 KB。
 
 不过，IoT 中心的设备到云的消息传递与事件中心之间还有一些重要差异：
 
 * 如[控制 IoT 中心的访问权限][lnk-devguide-security]部分中所述，IoT 中心允许基于设备的身份验证和访问控制。
-* IoT 中心允许添加至多 10 个附加终结点。基于 IoT 中心上配置的路由，将消息传递到终结点。
+* 使用 IoT 中心最多可创建 10 个自定义终结点。基于 IoT 中心上配置的路由，将消息传递到终结点。
 * IoT 中心允许同时连接数百万个设备（请参阅[配额和限制][lnk-quotas]），而事件中心则限制为每个命名空间 5000 个 AMQP 连接。
 * IoT 中心不允许使用 **PartitionKey** 任意分区。设备到云的消息根据其源于的 **deviceId** 进行分区。
 * IoT 中心的缩放方式与事件中心稍有不同。有关详细信息，请参阅 [Scaling IoT Hub][lnk-guidance-scale]（缩放 IoT 中心）。
 
 有关如何使用设备到云的消息传送的详细信息，请参阅 [Azure IoT SDK][lnk-sdks]。
 
-有关如何设置消息路由的详细信息，请参阅以下设备到云配置选项。
+有关如何设置消息路由的详细信息，请参阅以下[设备到云配置选项](#device-to-cloud-configuration-options)。
 
 > [AZURE.NOTE]
 使用 HTTP 发送设备到云的消息时，属性名称和值只能包含 ASCII 字母数字字符加上 ``{'!', '#', '$', '%, '&', "'", '*', '*', '+', '-', '.', '^', '_', '`', '|', '~'}``。
@@ -72,18 +72,19 @@ IoT 中心使用流式消息传递模式实现设备到云的消息传递。与[
 有关此类消息的最佳处理方式的详细信息，请参阅[教程：如何处理 IoT 中心设备到云的消息][lnk-d2c-tutorial]教程。
 
 ### <a name="device-to-cloud-configuration-options"></a> 设备到云的配置选项
+
 IoT 中心允许基于消息属性将消息路由到 IoT 中心终结点。使用路由规则可将消息灵活发送到所需目标位置，无需借助其他服务来处理消息，也无需编写其他代码。配置的每个规则都具有以下属性
 
-* **Name**。这是标识规则的唯一名称。
-* **Source**。表示要处理的数据流的来源。例如，设备遥测。
-* **Condition**。这是路由规则的查询表达式，针对消息属性运行，用于确定它是否与终结点匹配。有关构造路由条件的详细信息，请参阅[参考 - 设备孪生和作业的查询语言][lnk-devguide-query-language]。
-* **Endpoint**。IoT 中心将匹配条件的消息发送到的终结点的名称。终结点应与 IoT 中心位于同一区域，因为跨区域写入将产生费用。
+* **Name**。用于标识规则的唯一名称。
+* **Source**。要处理的数据流的来源。例如，设备遥测。
+* **Condition**。路由规则的查询表达式，针对消息属性运行，用于确定它是否与终结点匹配。有关构造路由条件的详细信息，请参阅[参考 - 设备孪生和作业的查询语言][lnk-devguide-query-language]。
+* **Endpoint**。IoT 中心将匹配条件的消息发送到的终结点的名称。终结点应与 IoT 中心位于同一区域，否则跨区域写入将产生费用。
 
-一条消息可能与多个消息路由上的条件匹配，在这种情况下，IoT 中心会将该消息传递到与每个匹配规则关联的终结点。IoT 中心还会自动删除重复的消息传递，因此如果消息与具有相同目标位置的多个规则匹配，则仅会将其写入该目标位置一次。
+一条消息可能与多个路由规则的条件匹配，在这种情况下，IoT 中心会将该消息传递到与每个匹配规则关联的终结点。IoT 中心还会自动删除重复的消息传递，因此如果消息与具有相同目标位置的多个规则匹配，则仅会将其写入该目标位置一次。
 
-有关将附加终结点添加到 IoT 中心的详细信息，请参阅[IoT 中心终结点][lnk-devguide-endpoints]。
+有关在 IoT 中心创建自定义终结点的详细信息，请参阅 [IoT 中心终结点][lnk-devguide-endpoints]。
 
-#### 内置终结点：messages/events
+### 内置终结点：messages/events
 
 IoT 中心公开以下属性以允许用户控制内置消息传送终结点 **messages/events**。
 
@@ -92,9 +93,9 @@ IoT 中心公开以下属性以允许用户控制内置消息传送终结点 **m
 
 IoT 中心还支持用户管理内置设备到云接收终结点上的使用者组。
 
-默认情况下，不显式匹配消息路由规则的所有消息都将写入到内置终结点。如果禁用此“回退路由”，将删除不显式匹配任何消息路由规则的消息。
+默认情况下，不显式匹配消息路由规则的所有消息都将写入到内置终结点。如果禁用此回退路由，将删除不显式匹配任何消息路由规则的消息。
 
-可以通过 [IoT 中心资源提供程序 REST API][lnk-resource-provider-apis] 以编程方式修改上述所有属性，或使用 [Azure 门户][lnk-management-portal]进行修改。
+可以通过 [IoT 中心资源提供程序 REST API][lnk-resource-provider-apis] 以编程方式修改保留时间，或使用 [Azure 门户预览][lnk-management-portal]进行修改。
 
 ### <a name="anti-spoofing-properties"></a> 反欺骗属性
 为了避免设备到云的消息中出现设备欺骗，IoT 中心使用以下属性在所有消息上加上戳记：
@@ -112,6 +113,7 @@ IoT 中心还支持用户管理内置设备到云接收终结点上的使用者�
 	  "type": "{ symkey | sas}",
 	  "issuer": "iothub"
 	}
+
 
 ## <a name="cloud-to-device-messages"></a> 云到设备的消息
 可以通过面向服务的终结点 \(**/messages/devicebound**\) 发送云到设备的消息。设备可以通过特定于设备的终结点 \(**/devices/{deviceId}/messages/devicebound**\) 接收这些消息。
@@ -226,11 +228,11 @@ IoT 中心还支持用户管理内置设备到云接收终结点上的使用者�
 
 有关详细信息，请参阅[创建 IoT 中心][lnk-portal]。
 
-
 ## <a name="read-device-to-cloud-messages"></a> 读取设备到云的消息
-IoT 中心向后端服务公开内置终结点，以便让后端服务读取中心 - 即 **messages/events** 终结点收到的设备到云的消息。此终结点与事件中心兼容，这样就可以使用事件中心服务支持的任何机制读取消息。
 
-也可向 IoT 中心添加自定义路由终结点。IoT 中心目前支持将事件中心、服务总线队列和服务总线主题添加为自定义路由终结点。有关从这些服务中读取信息的详细信息，请参阅：从[事件中心][lnk-getstarted-eh]读取信息、从[服务总线队列][lnk-getstarted-queue]读取信息，以及从[服务总线主题][lnk-getstarted-topic]读取信息。
+IoT 中心向后端服务公开 **messages/events** 内置终结点，以便让后端服务读取中心收到的设备到云消息。此终结点与事件中心兼容，这样就可以使用事件中心服务支持的任何机制读取消息。
+
+还可以在 IoT 中心创建自定义终结点。IoT 中心目前支持将事件中心、服务总线队列和服务总线主题作为自定义终结点。有关从这些服务中读取信息的详细信息，请参阅：从[事件中心][lnk-getstarted-eh]读取信息、从[服务总线队列][lnk-getstarted-queue]读取信息，以及从[服务总线主题][lnk-getstarted-topic]读取信息。
 
 ### 从内置终结点读取信息
 
@@ -239,17 +241,18 @@ IoT 中心向后端服务公开内置终结点，以便让后端服务读取中�
 使用无法识别 IoT 中心的 SDK（或产品集成）时，必须从 [Azure 门户预览][lnk-management-portal]中的 IoT 中心设置检索与事件中心兼容的终结点和与事件中心兼容的名称：
 
 1. 单击“IoT 中心边栏选项卡”中的“终结点”。
-2. 在“内置终结点”部分，单击“事件”。边栏选项卡包含以下值：“事件中心兼容的终结点”、“事件中心兼容的名称”、“分区”、“保留时间”和“使用者组”。
+2. 在“内置终结点”部分中，单击“事件”。边栏选项卡包含以下值：“事件中心兼容的终结点”、“事件中心兼容的名称”、“分区”、“保留时间”和“使用者组”。
    
     ![设备到云的设置][img-eventhubcompatible]  
 
+
 > [AZURE.NOTE]
-IoT 中心 SDK 需要 IoT 中心终结点名称，即“终结点”边栏选项卡中所示的 **messages/events**。
+> IoT 中心 SDK 需要 IoT 中心终结点名称，即“终结点”边栏选项卡中所示的 **messages/events**。
 >
 >
 
 > [AZURE.NOTE]
-如果当前使用的 SDK 需要“主机名”或“命名空间”值，请从“事件中心兼容的终结点”中删除方案。例如，如果与事件中心兼容的终结点为 **sb://iothub-ns-myiothub-1234.servicebus.chinacloudapi.cn/**，则**主机名**为 **iothub-ns-myiothub-1234.servicebus.chinacloudapi.cn**，**命名空间**为 **iothub-ns-myiothub-1234**。
+如果当前使用的 SDK 需要“主机名”或“命名空间”值，请从“事件中心兼容的终结点”中删除方案。例如，如果事件中心兼容的终结点为 **sb://iothub-ns-myiothub-1234.servicebus.chinacloudapi.cn/**，则**主机名**为 **iothub-ns-myiothub-1234.servicebus.chinacloudapi.cn**，**命名空间**为 **iothub-ns-myiothub-1234**。
 > 
 >
 
@@ -265,11 +268,11 @@ Endpoint={Event Hub-compatible endpoint};SharedAccessKeyName={iot hub policy nam
 
 - [Java 事件中心客户端](https://github.com/hdinsight/eventhubs-client)
 - [Apache Storm Spout](/documentation/articles/hdinsight-storm-develop-csharp-event-hub-topology/)。可以在 GitHub 上查看 [Spout 源代码](https://github.com/apache/storm/tree/master/external/storm-eventhubs)。
+* [Apache Spark 集成](/documentation/articles/hdinsight-apache-spark-eventhub-streaming/)
 
 ## 参考主题：
 
 以下参考主题提供有关与 IoT 中心交换消息的详细信息。
-
 
 ## <a name="message-format"></a> 消息格式
 IoT 中心消息包含：
@@ -340,7 +343,6 @@ IoT 中心允许设备使用 [MQTT][lnk-mqtt]、基于 WebSocket 的 MQQT、[AMQ
 
 在 Azure 区域创建 IoT 中心后，该 IoT 中心在其生存期内会保留同一 IP 地址。但为了保证服务质量，如果 Microsoft 调整 IoT 中心的大小，则向其分配新 IP 地址。
 
-
 ## <a name="notes-on-mqtt-support"></a> 有关 MQTT 支持的说明
 IoT 中心实现 MQTT v3.1.1 协议，但具有以下限制和特定行为：
 
@@ -408,7 +410,6 @@ IoT 中心开发人员指南中的其他参考主题包括：
 [lnk-compatible-endpoint]: /documentation/articles/iot-hub-devguide-messaging/#read-device-to-cloud-messages
 [lnk-protocols]: /documentation/articles/iot-hub-devguide-messaging/#communication-protocols
 [lnk-message-format]: /documentation/articles/iot-hub-devguide-messaging/#message-format
-[lnk-d2c-configuration]: /documentation/articles/iot-hub-devguide-messaging/#device-to-cloud-configuration-options
 [lnk-device-properties]: /documentation/articles/iot-hub-devguide-identity-registry/#device-identity-properties
 [lnk-ttl]: /documentation/articles/iot-hub-devguide-messaging/#message-expiration-time-to-live
 [lnk-c2d-configuration]: /documentation/articles/iot-hub-devguide-messaging/#cloud-to-device-configuration-options
@@ -432,5 +433,5 @@ IoT 中心开发人员指南中的其他参考主题包括：
 [lnk-c2d-tutorial]: /documentation/articles/iot-hub-csharp-csharp-c2d/
 [lnk-d2c-tutorial]: /documentation/articles/iot-hub-csharp-csharp-process-d2c/
 
-<!---HONumber=Mooncake_0109_2017-->
+<!---HONumber=Mooncake_0306_2017-->
 <!--Update_Description:update wording and add build-in endpoints-->

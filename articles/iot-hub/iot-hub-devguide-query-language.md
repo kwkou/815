@@ -14,7 +14,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="na"
     ms.date="09/30/2016"
-    wacn.date="02/10/2017"
+    wacn.date="03/10/2017"
     ms.author="elioda" />  
 
 
@@ -234,9 +234,24 @@ IoT 中心允许使用任意条件检索设备孪生筛选结果。例如，
 在克隆和作业查询中，路由[条件][lnk-query-expressions]使用相同的 IoT 中心查询语言作为条件。假设以下 JSON 表示形式，根据消息属性评估路由条件：
 
         {
+            "$messageId": "",
+            "$enqueuedTime": "",
+            "$to": "",
+            "$expiryTimeUtc": "",
+            "$correlationId": "",
+            "$userId": "",
+            "$ack": "",
+            "$connectionDeviceId": "",
+            "$connectionDeviceGenerationId": "",
+            "$connectionAuthMethod": "",
+            "$content-type": "",
+            "$content-encoding": ""
+
             "userProperty1": "",
             "userProperty2": ""
         }
+
+消息系统属性以 `'$'` 符号作为前缀。始终可以通过属性名称访问用户属性。如果用户属性名恰好与系统属性同名（例如 `$to`），则将使用 `$to` 表达式检索用户属性。始终可以使用方括号 (`{}`) 访问系统属性：例如，可以使用表达式 `{$to}` 访问系统属性 `to`。括在括号中的属性名称始终检索相应的系统属性。
 
 请记住，属性名称不区分大小写。
 
@@ -368,7 +383,6 @@ GROUP BY 的正式语法为：
 | hexadecimal\_literal |以字符串“0x”后接十六进制数字符串表示的数字。 |
 | string\_literal |字符串文本是以零个或多个 Unicode 字符序列或转义符序列表示的 Unicode 字符串。字符串文本括在单引号 (') 或双引号 (") 中。允许的转义符：`\'`、`"`、`\`、`\uXXXX`（由 4 个十六进制数字定义的 Unicode 字符）。 |
 
-
 ### <a name="operators"></a> 运算符
 支持以下运算符：
 
@@ -443,5 +457,5 @@ GROUP BY 的正式语法为：
 
 [lnk-hub-sdks]: /documentation/articles/iot-hub-devguide-sdks/
 
-<!---HONumber=Mooncake_0206_2017-->
-<!--Update_Description:update wording-->
+<!---HONumber=Mooncake_0306_2017-->
+<!--Update_Description:update wording and code-->
