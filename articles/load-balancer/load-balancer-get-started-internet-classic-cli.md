@@ -55,13 +55,13 @@
 
     azure vm endpoint create web1 80 --local-port 80 --protocol tcp --probe-port 80 --load-balanced-set-name lbset
 
-## 步骤 2
+### 步骤 2
 
 将第二个虚拟机“web2”添加到负载均衡器集。
 
     azure vm endpoint create web2 80 --local-port 80 --protocol tcp --probe-port 80 --load-balanced-set-name lbset
 
-## 步骤 3
+### 步骤 3
 
 使用 `azure vm show` 验证负载均衡器配置。
 
