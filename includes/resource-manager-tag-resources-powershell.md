@@ -12,38 +12,38 @@ AzureRm.Resources 模块版本 3.0 包括在使用标记方式方面的重大更
 
 * 不带现有标记的资源组。
 
-    Set-AzureRmResourceGroup -Name TagTestGroup -Tag @{ Dept="IT"; Environment="Test" }
+       Set-AzureRmResourceGroup -Name TagTestGroup -Tag @{ Dept="IT"; Environment="Test" }
 
 * 带有现有标记的资源组。
 
-    $tags = (Get-AzureRmResourceGroup -Name TagTestGroup).Tags
-    $tags += @{Status="Approved"}
-    Set-AzureRmResourceGroup -Tag $tags -Name TagTestGroup
+       $tags = (Get-AzureRmResourceGroup -Name TagTestGroup).Tags
+       $tags += @{Status="Approved"}
+       Set-AzureRmResourceGroup -Tag $tags -Name TagTestGroup
 
 * 不带现有标记的资源。
 
-    Set-AzureRmResource -Tag @{ Dept="IT"; Environment="Test" } -ResourceName storageexample -ResourceGroupName TagTestGroup -ResourceType Microsoft.Storage/storageAccounts
+       Set-AzureRmResource -Tag @{ Dept="IT"; Environment="Test" } -ResourceName storageexample -ResourceGroupName TagTestGroup -ResourceType Microsoft.Storage/storageAccounts
 
 * 带有现有标记的资源。
 
-    $tags = (Get-AzureRmResource -ResourceName storageexample -ResourceGroupName TagTestGroup).Tags
-    $tags += @{Status="Approved"}
-    Set-AzureRmResource -Tag $tags -ResourceName storageexample -ResourceGroupName TagTestGroup -ResourceType Microsoft.Storage/storageAccounts
+       $tags = (Get-AzureRmResource -ResourceName storageexample -ResourceGroupName TagTestGroup).Tags
+       $tags += @{Status="Approved"}
+       Set-AzureRmResource -Tag $tags -ResourceName storageexample -ResourceGroupName TagTestGroup -ResourceType Microsoft.Storage/storageAccounts
 
     若要将资源组中的所有标记应用于其资源，并且**不保留资源上的现有标记**，请使用以下脚本：
 
-    $groups = Get-AzureRmResourceGroup
-    foreach ($g in $groups) 
-    {
-        Find-AzureRmResource -ResourceGroupNameEquals $g.ResourceGroupName | ForEach-Object {Set-AzureRmResource -ResourceId $_.ResourceId -Tag $g.Tags -Force } 
-    }
+       $groups = Get-AzureRmResourceGroup
+       foreach ($g in $groups) 
+       {
+            Find-AzureRmResource -ResourceGroupNameEquals $g.ResourceGroupName | ForEach-Object {Set-AzureRmResource -ResourceId $_.ResourceId -Tag $g.Tags -Force } 
+       }
 
     若要将资源组中的所有标记应用于其资源，并且**保留资源上不重复的现有标记**，请使用以下脚本：
 
-    $groups = Get-AzureRmResourceGroup
-    foreach ($g in $groups) 
-    {
-        if ($g.Tags -ne $null) {
+       $groups = Get-AzureRmResourceGroup
+       foreach ($g in $groups) 
+       {
+          if ($g.Tags -ne $null) {
             $resources = Find-AzureRmResource -ResourceGroupNameEquals $g.ResourceGroupName 
             foreach ($r in $resources)
             {
@@ -55,8 +55,8 @@ AzureRm.Resources 模块版本 3.0 包括在使用标记方式方面的重大更
                 $resourcetags += $g.Tags
                 Set-AzureRmResource -Tag $resourcetags -ResourceId $r.ResourceId -Force
             }
-        }
-    }
+          }
+       }
 
 若要删除所有标记，请传递一个空哈希表。
 

@@ -38,3 +38,4 @@
      ![将标记固定到仪表板](./media/resource-manager-tag-resources/show-pinned-tag.png)  
 
 <!---HONumber=Mooncake_0227_2017-->
+<!--Update_Description: new aticle about how to config resource manager tag -->
