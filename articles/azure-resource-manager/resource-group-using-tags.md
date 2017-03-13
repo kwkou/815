@@ -50,11 +50,11 @@
 
 * 不带现有标记的资源组。
 
-    az group update -n TagTestGroup --set tags.Environment=Test tags.Dept=IT
+        az group update -n TagTestGroup --set tags.Environment=Test tags.Dept=IT
 
 * 不带现有标记的资源。
 
-    az resource tag --tags Dept=IT Environment=Test -g TagTestGroup -n storageexample --resource-type "Microsoft.Storage/storageAccounts"
+        az resource tag --tags Dept=IT Environment=Test -g TagTestGroup -n storageexample --resource-type "Microsoft.Storage/storageAccounts"
 
 若要向已具有标记的资源添加标记，请首先检索现有标记：
 
