@@ -13,8 +13,8 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="01/10/2017"
-    wacn.date="02/24/2017"
+    ms.date="02/13/2017"
+    wacn.date="03/10/2017"
     ms.author="juliako" />
 
 
@@ -23,14 +23,16 @@
  > [AZURE.SELECTOR]
  - [.NET](/documentation/articles/media-services-dotnet-upload-files/)
  - [REST](/documentation/articles/media-services-rest-upload-files/)
+ - [经典管理门户](/documentation/articles/media-services-manage-content/#upload)
 
 在媒体服务中，可以将数字文件上传到资产中。[资产](https://docs.microsoft.com/zh-cn/rest/api/media/operations/asset)实体可以包含视频、音频、图像、缩略图集合、图文轨迹和隐藏式字幕文件（以及有关这些文件的元数据。） 将文件上传到资产后，相关内容即安全地存储在云中供后续处理和流式处理。
 
 >[AZURE.NOTE]选择资产文件名时需考虑下列事项：
 >
->- 构建流内容的 URL 时，媒体服务会使用 IAssetFile.Name 属性的值（如 http://{AMSAccount}.origin.mediaservices.chinacloudapi.cn/{GUID}/{IAssetFile.Name}/streamingParameters.）。出于此原因，不允许使用百分号编码。**Name** 属性的值不能含有任何以下[百分号编码保留字符](http://zh.wikipedia.org/wiki/百分号编码#.E4.BF.9D.E7.95.99.E5.AD.97.E7.AC.A6.E7.9A.84.E7.99.BE.E5.88.86.E5.8F.B7.E7.BC.96.E7.A0.81)：!*'();:@&=+$,/?%#"。此外，文件扩展名中只能含有一个“.”。
->
->- 名称长度不应超过 260 个字符。
+> * 构建流内容的 URL 时，媒体服务会使用 IAssetFile.Name 属性的值（如 http://{AMSAccount}.origin.mediaservices.chinacloudapi.cn/{GUID}/{IAssetFile.Name}/streamingParameters.）。出于此原因，不允许使用百分号编码。**Name** 属性的值不能含有任何以下[百分号编码保留字符](http://zh.wikipedia.org/wiki/百分号编码#.E4.BF.9D.E7.95.99.E5.AD.97.E7.AC.A6.E7.9A.84.E7.99.BE.E5.88.86.E5.8F.B7.E7.BC.96.E7.A0.81)：!*'();:@&=+$,/?%#"。此外，文件扩展名中只能含有一个“.”。
+> * 名称长度不应超过 260 个字符。
+> * 在媒体服务中进行处理时，系统支持的最大文件大小存在限制。有关文件大小限制的详细信息，请参阅[此](/documentation/articles/media-services-quotas-and-limitations/)主题。
+> 
 
 上传资产的基本工作流分为下列各节：
 
@@ -521,5 +523,4 @@ ContentKey 通过发送 HTTP POST 请求关联到一个或多个资产。以下�
 [How to Get a Media Processor]: /documentation/articles/media-services-get-media-processor/
  
 
-<!---HONumber=Mooncake_0220_2017-->
-<!--Update_Description: add note for not support page blob; update MSDN links to docs.microsoft.com links-->
+<!---HONumber=Mooncake_0306_2017-->

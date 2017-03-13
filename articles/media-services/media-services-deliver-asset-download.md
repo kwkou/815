@@ -1,23 +1,21 @@
-<properties 
-	pageTitle="下载媒体资产" 
-	description="了解如何将资产下载到计算机。代码示例用 C# 编写且使用适用于 .NET 的媒体服务 SDK。" 
-	services="media-services" 
-	documentationCenter="" 
-	authors="juliako" 
-	manager="erikre" 
-	editor=""/>
-
-
-<tags 
-	ms.service="media-services" 
-	ms.workload="media" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article"
-	ms.date="09/26/2016"
-	wacn.date="12/16/2016"
-	ms.author="juliako"/>  
-
+<properties
+    pageTitle="将媒体服务资产下载到计算机 - Azure | Azure"
+    description="了解如何将资产下载到计算机。代码示例用 C# 编写且使用适用于 .NET 的媒体服务 SDK。"
+    services="media-services"
+    documentationcenter=""
+    author="juliako"
+    manager="erikre"
+    editor="" />
+<tags
+    ms.assetid="8908a1dd-3ffb-4f18-955d-4c8e2d82fc5d"
+    ms.service="media-services"
+    ms.workload="media"
+    ms.tgt_pltfrm="na"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.date="01/23/2017"
+    wacn.date="03/10/2017"
+    ms.author="juliako" />
 
 #如何：通过下载交付资产
 
@@ -81,4 +79,4 @@
 
 [交付流内容](/documentation/articles/media-services-deliver-streaming-content/)
 
-<!---HONumber=Mooncake_Quality_Review_1202_2016-->
+<!---HONumber=Mooncake_0306_2017-->

@@ -1,26 +1,24 @@
-
-<properties 
-	pageTitle="使用 REST API 管理媒体服务实体 | Azure" 
-	description="了解如何使用 REST API 管理媒体服务实体。" 
-	authors="juliako" 
-	manager="dwrede" 
-	editor="" 
-	services="media-services" 
-	documentationCenter=""/>
-
-
-<tags 
-	ms.service="media-services" 
-	ms.workload="media" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="09/26/2016" 
-	wacn.date="12/16/2016" 
-	ms.author="juliako"/>
+<properties
+    pageTitle="使用 REST 管理媒体服务实体 | Azure"
+    description="了解如何使用 REST API 管理媒体服务实体。"
+    author="juliako"
+    manager="dwrede"
+    editor=""
+    services="media-services"
+    documentationcenter="" />
+<tags
+    ms.assetid="95262a32-0f2a-4286-b9e2-1a1ca6399b5b"
+    ms.service="media-services"
+    ms.workload="media"
+    ms.tgt_pltfrm="na"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.date="02/09/2017"
+    wacn.date="03/10/2017"
+    ms.author="juliako" />  
 
 
-#使用 REST API 管理媒体服务实体
+# 使用 REST 管理媒体服务实体 
 
 > [AZURE.SELECTOR]
 - [REST](/documentation/articles/media-services-rest-manage-entities/)
@@ -28,11 +26,13 @@
 
 Azure 媒体服务是一项以 OData v3 为基础的基于 REST 的服务。因此，你可以像在任何其他 OData 服务上一样添加、查询、更新和删除实体。适用时，将标注例外情况。有关 OData 的详细信息，请参阅[开放数据协议文档](http://www.odata.org/documentation/)。
 
-- 添加实体
-- 查询实体
-- 枚举实体的大型集合
-- 更新实体
-- 删除实体
+本主题介绍如何使用 REST 管理 Azure 媒体服务实体。
+
+
+>[AZURE.NOTE]
+从 2017 年 4 月 1 日开始，用户帐户中任何超过 90 天的作业记录及其关联的任务记录都会被系统自动删除，即使记录总数低于最大配额。例如，在 2017 年 4 月 1 日，用户帐户中 2016 年 12 月 31 日以前的任何作业记录都会被系统自动删除。若需存档作业/任务信息，可使用本主题所述代码。
+
+## 使用 AMS REST 时的注意事项
 
 >[AZURE.NOTE] 使用媒体服务 REST API 时，需注意以下事项：
 >
@@ -168,4 +168,5 @@ Azure 媒体服务是一项以 OData v3 为基础的基于 REST 的服务。因�
 	Host: wamsshaclus001rest-hs.chinacloudapp.cn
 	Content-Length: 0
 
-<!---HONumber=Mooncake_Quality_Review_1202_2016-->
+<!---HONumber=Mooncake_0306_2017-->
+<!--Update_Description: add one AZURE.NOTE about that any Job record in your account older than 90 days will be automatically deleted, along with its associated Task records -->

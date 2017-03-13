@@ -1,22 +1,21 @@
-<properties 
-	pageTitle="播放内容 | Azure" 
-	description="本主题列出了你可以用来播放内容的现有播放器。" 
-	services="media-services" 
-	documentationCenter="" 
-	authors="Juliako" 
-	manager="erikre" 
-	editor=""/>  
-
-
-<tags 
-	ms.service="media-services" 
-	ms.workload="media" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="10/12/2016" 
-	wacn.date="11/21/2016" 
-	ms.author="juliako"/>
+<properties
+    pageTitle="使用现有的播放器播放内容 - Azure | Azure"
+    description="本主题列出了你可以用来播放内容的现有播放器。"
+    services="media-services"
+    documentationcenter=""
+    author="Juliako"
+    manager="erikre"
+    editor="" />
+<tags
+    ms.assetid="7e9fcf89-0fb6-4fa4-96cb-666320684d69"
+    ms.service="media-services"
+    ms.workload="media"
+    ms.tgt_pltfrm="na"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.date="01/23/2017"
+    wacn.date="03/10/2017"
+    ms.author="juliako" />  
 
 
 
@@ -87,4 +86,4 @@ Azure 媒体服务支持多种常用的流式处理格式，如平滑流、HTTP 
  
 [AMSPlayer]: ./media/media-services-playback-content-with-existing-players/media-services-portal-player.png
 
-<!---HONumber=Mooncake_1114_2016-->
+<!---HONumber=Mooncake_0306_2017-->

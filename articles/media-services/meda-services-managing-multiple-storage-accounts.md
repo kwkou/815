@@ -1,24 +1,21 @@
-<properties 
-	pageTitle="跨多个存储帐户管理媒体服务资产" 
-	description="本文提供如何跨多个存储帐户管理媒体服务资产的指导。" 
-	services="media-services" 
-	documentationCenter="" 
-	authors="Juliako" 
-	manager="dwrede" 
-	editor=""/>
-
-
-<tags 
-	ms.service="media-services" 
-	ms.workload="media" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="09/26/2016" 
-	wacn.date="12/27/2016"    
-	ms.author="juliako"/>  
-
-
+<properties
+    pageTitle="跨多个存储帐户管理媒体服务资产 | Azure"
+    description="本文提供如何跨多个存储帐户管理媒体服务资产的指导。"
+    services="media-services"
+    documentationcenter=""
+    author="Juliako"
+    manager="erikre"
+    editor="" />
+<tags
+    ms.assetid="4e4a9ec3-8ddb-4938-aec1-d7172d3db858"
+    ms.service="media-services"
+    ms.workload="media"
+    ms.tgt_pltfrm="na"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.date="01/27/2017"
+    wacn.date="03/10/2017"
+    ms.author="juliako" />
 
 #跨多个存储帐户管理媒体服务资产
 
@@ -27,33 +24,50 @@
 - 使多个存储帐户之间的资产实现负载均衡。
 - 缩放媒体服务以处理大量内容（目前，单个存储帐户的上限为 500 TB）。
 
-本主题演示如何使用 Azure 服务管理 REST API 将多个存储帐户附加到一个媒体服务帐户，此外还说明如何在使用媒体服务 SDK 创建资产时指定不同的存储帐户。
+本主题演示如何使用 [Azure 资源管理 API](https://docs.microsoft.com/rest/api/media/mediaservice) 和 [Powershell](https://docs.microsoft.com/powershell/resourcemanager/azurerm.media/v0.3.2/azurerm.media) 将多个存储帐户附加到一个媒体服务帐户，此外还说明如何在使用媒体服务 SDK 创建资产时指定不同的存储帐户。
 
-##注意事项
-
+## 注意事项
 将多个存储帐户附加到媒体服务帐户时，请注意以下事项：
 
-- 附加到媒体服务帐户的所有存储帐户必须与媒体服务帐户位于同一数据中心。
-- 目前，存储帐户一旦附加到指定的媒体服务帐户便无法断开。
-- 主存储帐户是在创建媒体服务帐户创建时指定的帐户。目前无法更改默认存储帐户。
+* 附加到媒体服务帐户的所有存储帐户必须与媒体服务帐户位于同一数据中心。
+* 目前，存储帐户一旦附加到指定的媒体服务帐户便无法断开。
+* 主存储帐户是在创建媒体服务帐户创建时指定的帐户。目前无法更改默认存储帐户。
+* 目前，如果需要将冷存储帐户添加到 AMS 帐户，该存储帐户必须为 Blob 类型且设置为“非主”。
 
 其他注意事项：
 
 构建流内容的 URL 时，媒体服务会使用 **IAssetFile.Name** 属性的值（如 http://{WAMSAccount}.origin.mediaservices.chinacloudapi.cn/{GUID}/{IAssetFile.Name}/streamingParameters.）。出于此原因，不允许使用百分号编码。Name 属性的值不能含有任何以下[百分号编码保留字符](http://zh.wikipedia.org/wiki/百分号编码#.E4.BF.9D.E7.95.99.E5.AD.97.E7.AC.A6.E7.9A.84.E7.99.BE.E5.88.86.E5.8F.B7.E7.BC.96.E7.A0.81)：!*'();:@&=+$,/?%#"。此外，文件扩展名中只能含有一个“.”。
 
-##使用 Azure 服务管理 REST API 附加存储帐户
+## 附加存储帐户  
 
-目前，只能使用 [Azure 服务管理 REST API](https://docs.microsoft.com/zh-cn/rest/api/media/operations/azure-media-services-rest-api-reference) 附加多个存储帐户。[如何：使用媒体服务管理 REST API](https://docs.microsoft.com/zh-cn/rest/api/media/management/how-to-use-media-services-management-rest-api) 主题中的代码示例定义了将存储帐户附加到指定媒体服务帐户的 **AttachStorageAccountToMediaServiceAccount** 方法。此主题中的代码定义了列出已附加到指定媒体服务帐户的所有存储帐户的 **ListStorageAccountDetails** 方法。
+若要将存储帐户附加到 AMS 帐户，请使用 [Azure 资源管理 API](https://docs.microsoft.com/rest/api/media/mediaservice) 和 [Powershell](https://docs.microsoft.com/powershell/resourcemanager/azurerm.media/v0.3.2/azurerm.media)，如以下示例所示。
 
+	$regionName = "China East"
+	$subscriptionId = " xxxxxxxx-xxxx-xxxx-xxxx- xxxxxxxxxxxx "
+	$resourceGroupName = "SkyMedia-ChinaEast-App"
+	$mediaAccountName = "sky"
+	$storageAccount1Name = "skystorage1"
+	$storageAccount2Name = "skystorage2"
+	$storageAccount1Id = "/subscriptions/$subscriptionId/resourceGroups/$resourceGroupName/providers/Microsoft.Storage/storageAccounts/$storageAccount1Name"
+	$storageAccount2Id = "/subscriptions/$subscriptionId/resourceGroups/$resourceGroupName/providers/Microsoft.Storage/storageAccounts/$storageAccount2Name"
+	$storageAccount1 = New-AzureRmMediaServiceStorageConfig -StorageAccountId $storageAccount1Id -IsPrimary
+	$storageAccount2 = New-AzureRmMediaServiceStorageConfig -StorageAccountId $storageAccount2Id
+	$storageAccounts = @($storageAccount1, $storageAccount2)
+	
+	Set-AzureRmMediaService -ResourceGroupName $resourceGroupName -AccountName $mediaAccountName -StorageAccounts $storageAccounts
+
+### 支持冷存储
+
+目前，如果需要将冷存储帐户添加到 AMS 帐户，该存储帐户必须为 Blob 类型且设置为“非主”。
 
 ##跨多个存储帐户管理媒体服务资产
 
 以下代码使用最新的媒体服务 SDK 执行下列任务：
 
 1. 显示与指定媒体服务帐户关联的所有存储帐户。
-1. 检索默认存储帐户的名称。
-1. 在默认存储帐户中创建一个新资产。
-1. 在指定存储帐户中创建编码作业的输出资产。
+2. 检索默认存储帐户的名称。
+3. 在默认存储帐户中创建一个新资产。
+4. 在指定存储帐户中创建编码作业的输出资产。
 	
 		using Microsoft.WindowsAzure.MediaServices.Client;
 		using System;
@@ -268,4 +282,5 @@
 		}
  
 
-<!---HONumber=Mooncake_Quality_Review_1202_2016-->
+<!---HONumber=Mooncake_0306_2017-->
+<!--Update_Description: add powershell scripts for attaching multi storage accounts, including cool storage-->

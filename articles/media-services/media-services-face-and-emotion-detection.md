@@ -13,8 +13,8 @@
     ms.tgt_pltfrm="na"
     ms.devlang="dotnet"
     ms.topic="article"
-    ms.date="01/12/2017"
-    wacn.date="02/24/2017"
+    ms.date="02/09/2017"
+    wacn.date="03/10/2017"
     ms.author="milanga;juliako;" />  
 
 
@@ -168,10 +168,10 @@ facesDetected|位于 JSON 结果的末尾，汇总在生成视频期间算法所
 
 下面是聚合窗口和间隔设置的建议值。AggregateEmotionWindowMs 应该超过 AggregateEmotionIntervalMs。
 
-| 默认值 | 最小值 | 最大值 |
-| --- | --- | --- | --- |
-| AggregateEmotionWindowMs |0\.5 |2 |
-| AggregateEmotionIntervalMs |0\.5 |1 |
+|| 默认值 | 最小值 | 最大值 |
+|--- | --- | --- | --- |
+| AggregateEmotionWindowMs |0\.5 |2 |0\.25|
+| AggregateEmotionIntervalMs |0\.5 |1 |0\.25|
 
 ###JSON 输出
 
@@ -531,5 +531,5 @@ facesDetected|位于 JSON 结果的末尾，汇总在生成视频期间算法所
 
 [Azure Media Analytics demos（Azure 媒体分析演示）](http://azuremedialabs.azurewebsites.net/demos/Analytics.html)
 
-<!---HONumber=Mooncake_0220_2017-->
-<!--Update_Description: update configuration for face dection-->
+<!---HONumber=Mooncake_0306_2017-->
+<!--Update_Description: update "聚合默认值" table-->

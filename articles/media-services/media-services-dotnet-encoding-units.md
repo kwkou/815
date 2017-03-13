@@ -1,5 +1,5 @@
 <properties
-    pageTitle="如何添加编码单位"
+    pageTitle="通过添加编码单位调整媒体处理的规模 - Azure | Azure"
     description="了解如何使用 .NET 添加编码单位"
     services="media-services"
     documentationcenter=""
@@ -13,9 +13,9 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="01/10/2017"
-    wacn.date="02/24/2017"
-    ms.author="juliako;milangada;gtrifonov" />
+    ms.date="01/23/2017"
+    wacn.date="03/10/2017"
+    ms.author="juliako;milangada;" />
 
 #如何使用 .NET SDK 缩放编码
 
@@ -46,4 +46,4 @@
 
 默认情况下，每个媒体服务帐户最多可缩放到 25 个媒体保留单元和 5 个点播流保留单元。你可以通过[在线申请支持](/support/support-ticket-form/?l=zh-cn)创建工单申请更高的限制值。
 
-<!---HONumber=Mooncake_0220_2017-->
+<!---HONumber=Mooncake_0306_2017-->

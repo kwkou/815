@@ -13,8 +13,8 @@
     ms.tgt_pltfrm="na"
     ms.devlang="dotnet"
     ms.topic="article"
-    ms.date="11/30/2016"
-    wacn.date="01/13/2017"
+    ms.date="02/01/2017"
+    wacn.date="03/10/2017"
     ms.author="juliako;" />  
 
 
@@ -24,7 +24,7 @@
 
 本主题提供有关 **Azure 媒体修订器**的详细信息，并演示如何通过适用于 .NET 的媒体服务 SDK 使用它。
 
-**Azure 媒体修订器** MP 目前以预览版提供。当前，此预览版免费。在当前版本中，已处理视频长度的限制为 10 分钟。
+**Azure 媒体修订器** MP 目前以预览版提供。当前，此预览版免费。
 
 ## 面部修订模式
 面部修订的工作方式是：检测每一帧视频中的面部，并跟踪之前和之后的面部对象，以便同一个人在其他角度也模糊显示。自动修订过程非常复杂，并且无法始终产生 100% 符合要求的输出，因此，媒体分析提供了几种修改最终输出的方式。
@@ -320,5 +320,4 @@
 
 [Azure 媒体分析演示](http://azuremedialabs.azurewebsites.net/demos/Analytics.html)
 
-<!---HONumber=Mooncake_0109_2017-->
-<!--Update_Description: update -->
+<!---HONumber=Mooncake_0306_2017-->

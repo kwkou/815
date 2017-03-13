@@ -1,5 +1,5 @@
 <properties
-    pageTitle="常见问题 | Azure"
+    pageTitle="Azure 媒体服务常见问题 | Azure"
     description="常见问题 (FAQ)"
     services="media-services"
     documentationcenter=""
@@ -13,8 +13,8 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="01/05/2017"
-    wacn.date="02/24/2017"
+    ms.date="01/23/2017"
+    wacn.date="03/10/2017"
     ms.author="juliako" />  
 
 
@@ -73,5 +73,4 @@
 	
 	...
 
-<!---HONumber=Mooncake_0220_2017-->
-<!--Update_Description: wording update-->
+<!---HONumber=Mooncake_0306_2017-->

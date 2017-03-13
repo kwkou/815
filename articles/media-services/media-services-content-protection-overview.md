@@ -1,5 +1,5 @@
 <properties
-    pageTitle="保护内容概述 | Azure"
+    pageTitle="使用 Azure 媒体服务对内容进行保护 | Azure"
     description="本文概述了如何使用媒体服务来保护内容。"
     services="media-services"
     documentationcenter=""
@@ -13,8 +13,8 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="01/05/2017"
-    wacn.date="02/24/2017"
+    ms.date="01/23/2017"
+    wacn.date="03/10/2017"
     ms.author="juliako" />  
 
 
@@ -70,7 +70,7 @@ Azure 媒体服务支持传送使用 AES 明文密钥和 DRM 加密（Microsoft 
 
 ##令牌限制
 
-内容密钥授权策略可能受到一种或多种授权限制：开放或令牌限制。令牌限制策略必须附带由安全令牌服务 (STS) 颁发的令牌。媒体服务支持采用简单 Web 令牌 (SWT) 格式和 JSON Web 令牌 (JWT) 格式的令牌。媒体服务不提供安全令牌服务。你可以创建自定义 STS 或利用 Azure ACS 来颁发令牌。必须将 STS 配置为创建令牌，该令牌使用指定密钥以及你在令牌限制配置中指定的颁发声明进行签名。如果令牌有效，而且令牌中的声明与为密钥（或许可证）配置的声明相匹配，则媒体服务密钥传送服务会将请求的密钥（或许可证）返回到客户端。
+内容密钥授权策略可能受到一种或多种授权限制：开放或令牌限制。令牌限制策略必须附带由安全令牌服务 (STS) 颁发的令牌。媒体服务支持采用简单 Web 令牌 (SWT) 格式和 JSON Web 令牌 (JWT) 格式的令牌。媒体服务不提供安全令牌服务。可以创建自定义 STS 或利用 Azure ACS 来颁发令牌。必须将 STS 配置为创建令牌，该令牌使用指定密钥以及你在令牌限制配置中指定的颁发声明进行签名。如果令牌有效，而且令牌中的声明与为密钥（或许可证）配置的声明相匹配，则媒体服务密钥传送服务会将请求的密钥（或许可证）返回到客户端。
 
 配置令牌限制策略时，必须指定主验证密钥、颁发者和受众参数。主验证密钥包含用于为令牌签名的密钥，颁发者是颁发令牌的安全令牌服务。受众（有时称为范围）描述该令牌的意图，或者令牌授权访问的资源。媒体服务密钥交付服务将验证令牌中的这些值是否与模板中的值匹配。
 
@@ -120,5 +120,5 @@ Azure 媒体服务支持传送使用 AES 明文密钥和 DRM 加密（Microsoft 
 
 [content-protection]: ./media/media-services-content-protection-overview/media-services-content-protection.png
 
-<!---HONumber=Mooncake_0220_2017-->
-<!--Update_Description: update azure.note; add note for not support external DRM-->
+<!---HONumber=Mooncake_0306_2017-->
+<!--Update_Description: wording update-->

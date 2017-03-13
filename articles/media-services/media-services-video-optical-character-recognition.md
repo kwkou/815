@@ -1,27 +1,25 @@
 <properties
-	pageTitle="使用 Azure 媒体分析将视频文件中的文本内容转换为数字文本 | Azure"
-	description="Azure 媒体分析 OCR（光学字符识别）可让你将视频文件中的文本内容转换成可编辑、可搜索的数字文本。这可让你从媒体的视频信号中自动提取有意义的元数据。"
-	services="media-services"
-	documentationCenter=""
-	authors="juliako"
-	manager="erikre"
-	editor=""/>  
-
-
+    pageTitle="使用 Azure 媒体分析 OCR 将文本数字化 | Azure"
+    description="Azure 媒体分析 OCR（光学字符识别）可让你将视频文件中的文本内容转换成可编辑、可搜索的数字文本。这可让你从媒体的视频信号中自动提取有意义的元数据。"
+    services="media-services"
+    documentationcenter=""
+    author="juliako"
+    manager="erikre"
+    editor="" />
 <tags
-	ms.service="media-services"
-	ms.workload="media"
-	ms.tgt_pltfrm="na"
-	ms.devlang="dotnet"
-	ms.topic="article"
-	ms.date="09/26/2016"   
-	wacn.date="11/21/2016"   
-	ms.author="juliako"/>
- 
-#使用 Azure 媒体分析将视频文件中的文本内容转换为数字文本 
+    ms.assetid="307c196e-3a50-4f4b-b982-51585448ffc6"
+    ms.service="media-services"
+    ms.workload="media"
+    ms.tgt_pltfrm="na"
+    ms.devlang="dotnet"
+    ms.topic="article"
+    ms.date="02/01/2017"
+    wacn.date="03/10/2017"
+    ms.author="juliako" />  
 
-##概述
 
+# 使用 Azure 媒体分析将视频文件中的文本内容转换为数字文本
+## 概述
 如果你需要提取视频文件的文本内容，并生成可编辑、可搜索的数字文本，则应该使用 Azure 媒体分析 OCR（光学字符识别）。此 Azure 媒体处理器可检测视频文件的文本内容并生成文本文件供你使用。OCR 可让你从媒体的视频信号中自动提取有意义的元数据。
 
 与搜索引擎配合使用时，可以根据文本轻松编制媒体的索引，并增强发现内容的能力。这在包含大量文本的视频（例如视频录制或者幻灯片演示屏幕截图）中非常有用。Azure OCR 媒体处理器已针对数字文本进行优化。
@@ -38,14 +36,17 @@
 
 任务配置（预设）在使用 **Azure 媒体 OCR** 创建任务时，必须使用 JSON 或 XML 指定配置预设。
 
-###属性说明
+>[AZURE.NOTE]
+在高度/宽度上，OCR 引擎仅将最小 40 像素到最大 32000 像素的图像区域视为有效输入。
+>
 
-属性名称|说明
----|---
-语言|（可选）描述要查找的文本的语言。下列其中一项：AutoDetect（默认值）、Arabic、ChineseSimplified、ChineseTraditional、Czech Danish、Dutch、English、Finnish、French、German、Greek、Hungarian、Italian、Japanese、Korean、Norwegian、Polish、Portuguese、Romanian、Russian、SerbianCyrillic、SerbianLatin、Slovak、Spanish、Swedish、Turkish。
-TextOrientation|（可选）描述要查找的文本的方向。“Left”表示所有字母顶部朝向左侧。默认文本（例如书籍中出现的文本）的方向为“Up”。下列其中一项：AutoDetect（默认值）、Up、Right、Down、Left。
-TimeInterval|（可选）描述采样率。默认值为每隔 1/2 秒。<br/>JSON 格式 – HH:mm:ss.SSS（默认值 00:00:00.500）<br/>XML 格式 – W3C XSD 持续时间基元（默认值 PT0.5）
-DetectRegions|（可选）DetectRegion 对象的数组，指定视频帧内要检测文本的区域。<br/>DetectRegion 对象由以下四个整数值构成：<br/>Left - 从左边缘算起的像素<br/>Top - 从上边缘算起的像素<br/>Width – 以像素为单位的区域宽度<br/>Height – 以像素为单位的区域高度
+### 属性说明
+| 属性名称 | 说明 |
+| --- | --- |
+| 语言 |（可选）描述要查找的文本的语言。下列其中一项：AutoDetect（默认值）、Arabic、ChineseSimplified、ChineseTraditional、Czech Danish、Dutch、English、Finnish、French、German、Greek、Hungarian、Italian、Japanese、Korean、Norwegian、Polish、Portuguese、Romanian、Russian、SerbianCyrillic、SerbianLatin、Slovak、Spanish、Swedish、Turkish。 |
+| TextOrientation |（可选）描述要查找的文本的方向。“Left”表示所有字母顶部朝向左侧。默认文本（例如书籍中出现的文本）的方向为“Up”。下列其中一项：AutoDetect（默认值）、Up、Right、Down、Left。 |
+| TimeInterval |（可选）描述采样率。默认值为每隔 1/2 秒。<br/>JSON 格式 – HH:mm:ss.SSS（默认值 00:00:00.500）<br/>XML 格式 – W3C XSD 持续时间基元（默认值 PT0.5） |
+| DetectRegions |（可选）DetectRegion 对象的数组，指定视频帧内要检测文本的区域。<br/>DetectRegion 对象由以下四个整数值构成：<br/>Left - 从左边缘算起的像素<br/>Top - 从上边缘算起的像素<br/>Width – 以像素为单位的区域宽度<br/>Height – 以像素为单位的区域高度 |
 
 ####JSON 预设示例
 	 	
@@ -356,5 +357,9 @@ text|实际文本
 
 
 
+##相关链接
 
-<!---HONumber=Mooncake_1114_2016-->
+[Azure Media Services Analytics Overview（Azure 媒体服务分析概述）](/documentation/articles/media-services-analytics-overview/)
+
+<!---HONumber=Mooncake_0306_2017-->
+<!--Update_Description: add link reference to media service analytics-->

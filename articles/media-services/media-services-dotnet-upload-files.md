@@ -1,40 +1,40 @@
-<properties 
-	pageTitle="使用 .NET 将文件上传到媒体服务帐户" 
-	description="了解如何通过创建和上传资产将媒体内容加入媒体服务。" 
-	services="media-services" 
-	documentationCenter="" 
-	authors="juliako" 
-	manager="erikre" 
-	editor=""/>  
-
-
-<tags 
-	ms.service="media-services" 
-	ms.workload="media" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
- 	ms.date="09/19/2016" 
- 	wacn.date="10/10/2016" 
-	ms.author="juliako"/>
-
-
+<properties
+    pageTitle="使用 .NET 将文件上传到媒体服务帐户 | Azure"
+    description="了解如何通过创建和上传资产将媒体内容加入媒体服务。"
+    services="media-services"
+    documentationcenter=""
+    author="juliako"
+    manager="erikre"
+    editor="" />
+<tags
+    ms.assetid="c9c86380-9395-4db8-acea-507c52066f73"
+    ms.service="media-services"
+    ms.workload="media"
+    ms.tgt_pltfrm="na"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.date="02/13/2017"
+    wacn.date="03/10/2017"
+    ms.author="juliako" />
 
 # 使用 .NET 将文件上传到媒体服务帐户
 
  > [AZURE.SELECTOR]
  - [.NET](/documentation/articles/media-services-dotnet-upload-files/)
  - [REST](/documentation/articles/media-services-rest-upload-files/)
+ - [经典管理门户](/documentation/articles/media-services-manage-content/#upload)
 
 在媒体服务中，可以将数字文件上传（引入）到资产中。**资产**实体可以包含视频、音频、图像、缩略图集合、图文轨迹和隐藏式字幕文件（以及有关这些文件的元数据。） 文件上传完成后，相关内容即安全地存储在云中供后续处理和流式处理。
 
 资产中的文件称为**资产文件**。**AssetFile** 实例和实际媒体文件是两个不同的对象。AssetFile 实例包含有关媒体文件的元数据，而媒体文件包含实际媒体内容。
 
->[AZURE.NOTE]选择资产文件名时需考虑下列事项：
+> [AZURE.NOTE]
+请注意以下事项：
+> * 构建流内容的 URL 时，媒体服务会使用 IAssetFile.Name 属性的值（如 http://{AMSAccount}.origin.mediaservices.chinacloudapi.cn/{GUID}/{IAssetFile.Name}/streamingParameters.）。出于此原因，不允许使用百分号编码。**Name** 属性的值不能含有任何以下[百分号编码保留字符](http://en.wikipedia.org/wiki/Percent-encoding#Percent-encoding_reserved_characters)：!*'();:@&=+$,/?%#"。此外，文件扩展名中只能含有一个“.”。
+> * 名称长度不应超过 260 个字符。
+> * 在媒体服务中进行处理时，系统支持的最大文件大小存在限制。有关文件大小限制的详细信息，请参阅[此](/documentation/articles/media-services-quotas-and-limitations/)主题。
 >
->- 构建流内容的 URL 时，媒体服务会使用 IAssetFile.Name 属性的值（如 http://{AMSAccount}.origin.mediaservices.chinacloudapi.cn/{GUID}/{IAssetFile.Name}/streamingParameters.）。出于此原因，不允许使用百分号编码。**Name** 属性的值不能含有任何以下[百分号编码保留字符](http://en.wikipedia.org/wiki/Percent-encoding#Percent-encoding_reserved_characters)：!*'();:@&=+$,/?%#"。此外，文件扩展名中只能含有一个“.”。
->
->- 名称长度不应超过 260 个字符。
+> 
 
 创建资产时，可以指定以下加密选项。
 
@@ -307,13 +307,16 @@
 
 	var asset = UploadFile(@"C:\VideoFiles\BigBuckBunny.mp4", AssetCreationOptions.StorageEncrypted);
 
+## 后续步骤
 
+现即可编码已上传的资产。有关详细信息，请参阅[对资产进行编码](/documentation/articles/media-services-encode-asset/)。
 
 
 ##后续步骤
-将资产上传到媒体服务后，请转到[如何获取媒体处理器][]主题。
+将资产上传到媒体服务后，请转到[如何获取媒体处理器][How to Get a Media Processor]主题。
 
-[如何获取媒体处理器]: /documentation/articles/media-services-get-media-processor/
+[How to Get a Media Processor]: /documentation/articles/media-services-get-media-processor/
  
 
-<!---HONumber=Mooncake_Quality_Review_1118_2016-->
+<!---HONumber=Mooncake_0306_2017-->
+<!--Update_Description: add azure.selector for uploading assets via portal-->

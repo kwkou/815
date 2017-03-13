@@ -1,5 +1,5 @@
 <properties
-    pageTitle="H264 单比特率 720p | Azure"
+    pageTitle="H264 单比特率 720p Media Encoder Standard 预设 - Azure | Azure"
     description="本主题概述了 **H264 单比特率 720p** 任务预设。"
     author="Juliako"
     manager="erikre"
@@ -13,8 +13,8 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="11/23/2016"
-    wacn.date="01/13/2017"
+    ms.date="01/23/2017"
+    wacn.date="03/10/2017"
     ms.author="juliako" />  
 
 
@@ -113,4 +113,4 @@
 	  ]  
 	}  
 
-<!---HONumber=Mooncake_0109_2017-->
+<!---HONumber=Mooncake_0306_2017-->

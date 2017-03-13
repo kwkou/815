@@ -1,5 +1,5 @@
 <properties
-    pageTitle="使用媒体服务 REST API 配置内容密钥授权策略 | Azure"
+    pageTitle="使用 REST 配置内容密钥授权策略 - Azure | Azure"
     description="了解如何使用媒体服务 REST API 配置内容密钥的授权策略。"
     services="media-services"
     documentationcenter=""
@@ -13,11 +13,9 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="01/05/2017"
-    wacn.date="02/24/2017"
+    ms.date="01/23/2017"
+    wacn.date="03/10/2017"
     ms.author="juliako" />
-
-
 
 #动态加密：配置内容密钥授权策略
 [AZURE.INCLUDE [media-services-selector-content-key-auth-policy](../../includes/media-services-selector-content-key-auth-policy.md)]
@@ -478,5 +476,4 @@
 
  
 
-<!---HONumber=Mooncake_0220_2017-->
-<!--Update_Description: update notifications list-->
+<!---HONumber=Mooncake_0306_2017-->

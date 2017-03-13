@@ -1,24 +1,21 @@
-
-<properties 
-	pageTitle="使用媒体服务 .NET SDK 管理资产和相关的实体" 
-	description="了解如何使用适用于 .NET 的媒体服务 SDK 管理资产和相关的实体。" 
-	authors="juliako" 
-	manager="dwrede" 
-	editor="" 
-	services="media-services" 
-	documentationCenter=""/>  
-
-
-<tags 
-	ms.service="media-services" 
-	ms.workload="media" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
- 	ms.date="10/10/2016" 
- 	wacn.date="12/12/2016"
-	ms.author="juliako"/>
-
+<properties
+    pageTitle="使用媒体服务 .NET SDK 管理资产和相关的实体"
+    description="了解如何使用适用于 .NET 的媒体服务 SDK 管理资产和相关的实体。"
+    author="juliako"
+    manager="erikre"
+    editor=""
+    services="media-services"
+    documentationcenter="" />
+<tags
+    ms.assetid="1bd8fd42-7306-463d-bfe5-f642802f1906"
+    ms.service="media-services"
+    ms.workload="media"
+    ms.tgt_pltfrm="na"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.date="02/12/2017"
+    wacn.date="03/10/2017"
+    ms.author="juliako" />
 
 #使用媒体服务 .NET SDK 管理资产和相关的实体
 
@@ -28,18 +25,11 @@
 - [REST](/documentation/articles/media-services-rest-manage-entities/)
 
 
-本主题介绍如何完成以下媒体服务管理任务：
 
-- [获取资产引用](#Get-an-asset-reference) 
-- [获取作业引用](#Get-a-job-reference) 
-- [列出所有资产](#List-all-assets) 
-- [列出作业和资产](#List-jobs-and-assets) 
-- [列出所有访问策略](#List-all-access-policies) 
-- [列出所有定位符](#List-All-Locators) 
-- 枚举大型实体集合
-- [删除资产](#Delete-an-asset) 
-- [删除作业](#Delete-a-job) 
-- [删除访问策略](#Delete-an-access-policy) 
+本主题介绍如何使用 .NET 管理 Azure 媒体服务实体。
+
+>[AZURE.NOTE]
+从 2017 年 4 月 1 日开始，用户帐户中任何超过 90 天的作业记录及其关联的任务记录都会被系统自动删除，即使记录总数低于最大配额。例如，在 2017 年 4 月 1 日，用户帐户中 2016 年 12 月 31 日以前的任何作业记录都会被系统自动删除。若需存档作业/任务信息，可使用本主题所述代码。
 
 ##先决条件 
 
@@ -63,9 +53,50 @@
 	    return asset;
 	}
 
+##<a id="List-all-assets"></a>列出所有资产
+随着存储空间中的资产数量的增长，这对列出你的资产很有用。以下代码示例演示了如何循环访问服务器上下文对象上的资产集合。对于每个资产，该代码示例还会将其一些属性值写入控制台。例如，每个资产可以包含多个媒体文件。代码示例会写出与每个资产关联的所有文件。
+
+    static void ListAssets()
+    {
+        string waitMessage = "Building the list. This may take a few "
+            + "seconds to a few minutes depending on how many assets "
+            + "you have."
+            + Environment.NewLine + Environment.NewLine
+            + "Please wait..."
+            + Environment.NewLine;
+        Console.Write(waitMessage);
+
+        // Create a Stringbuilder to store the list that we build. 
+        StringBuilder builder = new StringBuilder();
+
+        foreach (IAsset asset in _context.Assets)
+        {
+            // Display the collection of assets.
+            builder.AppendLine("");
+            builder.AppendLine("******ASSET******");
+            builder.AppendLine("Asset ID: " + asset.Id);
+            builder.AppendLine("Name: " + asset.Name);
+            builder.AppendLine("==============");
+            builder.AppendLine("******ASSET FILES******");
+
+            // Display the files associated with each asset. 
+            foreach (IAssetFile fileItem in asset.AssetFiles)
+            {
+                builder.AppendLine("Name: " + fileItem.Name);
+                builder.AppendLine("Size: " + fileItem.ContentFileSize);
+                builder.AppendLine("==============");
+            }
+        }
+
+        // Display output in console.
+        Console.Write(builder.ToString());
+    }
+
 ##<a id="Get-a-job-reference"></a>获取作业引用
 
-处理媒体服务代码中的任务时，通常需要根据 ID 获取对现有作业的引用。以下代码示例演示了如何获取对作业集合中某个 IJob 对象的引用。警告：开始长时运行的编码作业时，你可能需要获取作业引用，并且需要检查线程上的作业状态。在这种情况下，当方法从某个线程返回时，你需要检索对作业的刷新引用。
+处理媒体服务代码中的任务时，通常需要根据 ID 获取对现有作业的引用。以下代码示例演示了如何获取对作业集合中某个 IJob 对象的引用。
+
+开始长时运行的编码作业时，可能需要获取作业引用，并且需要检查线程上的作业状态。在这种情况下，当方法从某个线程返回时，你需要检索对作业的刷新引用。
 
 	static IJob GetJob(string jobId)
 	{
@@ -81,50 +112,7 @@
 	    return job;
 	}
 
-##<a id="List-all-assets"></a>列出所有资产
-
-随着存储空间中的资产数量的增长，这对列出你的资产很有用。以下代码示例演示了如何循环访问服务器上下文对象上的资产集合。对于每个资产，该代码示例还会将其一些属性值写入控制台。例如，每个资产可以包含多个媒体文件。代码示例会写出与每个资产关联的所有文件。
-
-
-
-	static void ListAssets()
-	{
-	    string waitMessage = "Building the list. This may take a few "
-	        + "seconds to a few minutes depending on how many assets "
-	        + "you have."
-	        + Environment.NewLine + Environment.NewLine
-	        + "Please wait..."
-	        + Environment.NewLine;
-	    Console.Write(waitMessage);
-	
-	    // Create a Stringbuilder to store the list that we build. 
-	    StringBuilder builder = new StringBuilder();
-	
-	    foreach (IAsset asset in _context.Assets)
-	    {
-	        // Display the collection of assets.
-	        builder.AppendLine("");
-	        builder.AppendLine("******ASSET******");
-	        builder.AppendLine("Asset ID: " + asset.Id);
-	        builder.AppendLine("Name: " + asset.Name);
-	        builder.AppendLine("==============");
-	        builder.AppendLine("******ASSET FILES******");
-	
-	        // Display the files associated with each asset. 
-	        foreach (IAssetFile fileItem in asset.AssetFiles)
-	        {
-	            builder.AppendLine("Name: " + fileItem.Name);
-	            builder.AppendLine("Size: " + fileItem.ContentFileSize);
-	            builder.AppendLine("==============");
-	        }
-	    }
-	
-	    // Display output in console.
-	    Console.Write(builder.ToString());
-	}
-
-##<a id="List-jobs-and-assets"></a>列出作业和资产
-
+## 列出作业和资产
 在媒体服务中列出资产及其关联作业是一项重要的相关任务。以下代码示例演示了如何列出每个 IJob 对象，然后，针对每个作业，它会显示作业的相关属性、所有相关的任务、所有输入资产和所有输出资产。本示例中的代码对各种其他任务也有所帮助。例如，如果想要列出你先前运行的一个或多个编码作业的输出资产，本代码将演示如何访问输出资产。如果拥有对某个输出资产的引用，你可以通过下载或提供 URL 的方式，将内容传递给其他用户或应用程序。
 
 有关传递资产选项的详细信息，请参阅[使用适用于 .NET 的媒体服务 SDK 传递资产](/documentation/articles/media-services-deliver-streaming-content/)。
@@ -222,9 +210,46 @@
 	
 	    }
 	}
+## 限制访问策略数 
+
+>[AZURE.NOTE]
+各种不同的 AMS 策略（例如定位器策略或 ContentKeyAuthorizationPolicy）的数目限制为 1,000,000 个。如果用户始终使用相同的日期/访问权限，则应使用同一策略 ID。定位器策略就是这样的例子，这些策略（非上载策略）可长时间置于一个位置。
+
+例如，可以使用以下代码创建通用的策略组，该代码在应用程序中只运行一次。可以将 ID 记录到日志文件中供以后使用：
+
+	    double year = 365.25;
+	    double week = 7;
+	    IAccessPolicy policyYear = _context.AccessPolicies.Create("One Year", TimeSpan.FromDays(year), AccessPermissions.Read);
+	    IAccessPolicy policy100Year = _context.AccessPolicies.Create("Hundred Years", TimeSpan.FromDays(year * 100), AccessPermissions.Read);
+	    IAccessPolicy policyWeek = _context.AccessPolicies.Create("One Week", TimeSpan.FromDays(week), AccessPermissions.Read);
+
+	    Console.WriteLine("One year policy ID is: " + policyYear.Id);
+	    Console.WriteLine("100 year policy ID is: " + policy100Year.Id);
+	    Console.WriteLine("One week policy ID is: " + policyWeek.Id);
+
+然后即可在代码中使用现有的 ID，如下所示：
+
+	    const string policy1YearId = "nb:pid:UUID:2a4f0104-51a9-4078-ae26-c730f88d35cf";
+
+
+	    // Get the standard policy for 1 year read only
+	    var tempPolicyId = from b in _context.AccessPolicies
+	                       where b.Id == policy1YearId
+	                       select b;
+	    IAccessPolicy policy1Year = tempPolicyId.FirstOrDefault();
+
+	    // Get the existing asset
+	    var tempAsset = from a in _context.Assets
+	                where a.Id == assetID
+	                select a;
+	    IAsset asset = tempAsset.SingleOrDefault();
+
+	    ILocator originLocator = _context.Locators.CreateLocator(LocatorType.OnDemandOrigin, asset,
+	        policy1Year,
+	        DateTime.UtcNow.AddMinutes(-5));
+	    Console.WriteLine("The locator base path is " + originLocator.BaseUri.ToString());
 
 ##<a id="List-All-Locators"></a>列出所有定位符
-
 定位符是一个 URL，提供访问资产的直接路径，以及定位符的关联访问策略所定义的对该资产的权限。每个资产都有一个在其定位符属性上与其关联的 ILocator 对象集合。服务器上下文还具有一个包含所有定位符的定位符集合。
 
 以下代码示例列出了服务器上的所有定位符。对于每个定位符，它将显示相关资产和访问策略的 ID。它也显示权限的类型、到期日期和访问资产的完整路径。
@@ -374,4 +399,5 @@
 	}
 	
 
-<!---HONumber=Mooncake_Quality_Review_1118_2016-->
+<!---HONumber=Mooncake_0306_2017-->
+<!--Update_Description: add "限制访问策略数" section-->

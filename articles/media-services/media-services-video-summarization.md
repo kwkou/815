@@ -1,22 +1,21 @@
 <properties
-	pageTitle="使用 Azure 媒体视频缩略图创建视频摘要 | Azure"
-	description="视频摘要可通过自动选择来自源视频的有趣片段帮助你创建长视频的摘要。当你要提供有关长视频内容的快速概述时，这很有用。"
-	services="media-services"
-	documentationCenter=""
-	authors="juliako"
-	manager="erikre"
-	editor=""/>  
-
-
+    pageTitle="使用 Azure 媒体视频缩略图创建视频摘要 | Azure"
+    description="视频摘要可通过自动选择来自源视频的有趣片段帮助你创建长视频的摘要。当你要提供有关长视频内容的快速概述时，这很有用。"
+    services="media-services"
+    documentationcenter=""
+    author="juliako"
+    manager="erikre"
+    editor="" />
 <tags
-	ms.service="media-services"
-	ms.workload="media"
-	ms.tgt_pltfrm="na"
-	ms.devlang="dotnet"
-	ms.topic="article"
-	ms.date="09/26/2016"   
-	wacn.date="11/25/2016"
-	ms.author="milanga;juliako;"/>
+    ms.assetid="a245529f-3150-4afc-93ec-e40d8a6b761d"
+    ms.service="media-services"
+    ms.workload="media"
+    ms.tgt_pltfrm="na"
+    ms.devlang="dotnet"
+    ms.topic="article"
+    ms.date="02/16/2017"
+    wacn.date="03/10/2017"
+    ms.author="milanga;juliako;" />
 
 #使用 Azure 媒体视频缩略图创建视频摘要
 ##概述
@@ -25,10 +24,13 @@
 
 **Azure 媒体视频缩略图** MP 目前处于预览状态。
 
-此主题提供有关 **Azure 媒体视频缩略图**的详细信息，并演示如何将它与适用于 .NET 的媒体服务 SDK 配合使用。
+此主题提供有关 **Azure 媒体视频缩略图**的详细信息，介绍如何将它与适用于 .NET 的媒体服务 SDK 配合使用。
 
-##视频摘要示例 
+## 限制
 
+在某些情况下，如果视频不是由不同的场景构成，则输出仅为单张快照。
+
+## 视频摘要示例
 下面是 Azure 媒体视频缩略图媒体处理器可以执行的操作的一些示例：
 
 ###原始视频
@@ -56,10 +58,10 @@ maxMotionThumbnailDurationInSecs|指定生成的整个视频的时长的整数�
 
 下表描述了当 **maxMotionThumbnailInSecs** 未使用时的默认持续时间。
 
-||||
----|---|---|---|---
-视频持续时间|d < 3 分钟|3 分钟 < d < 15 分钟|15 分钟 < d < 30 分钟| 30 分钟 < d
-缩略图持续时间|15 秒（2-3 个场景）| 30 秒（3-5 个场景）|60 秒（5-10 个场景）|90 秒（10-15 个场景）
+| | | |
+| --- | --- | --- | --- | --- |
+| 视频持续时间 |d < 3 分钟 |3 分钟 < d < 15 分钟 |
+| 缩略图持续时间 |15 秒（2-3 个场景） |30 秒（3-5 个场景） |
 
 
 下面的 JSON 设置可用的参数。
@@ -281,4 +283,5 @@ maxMotionThumbnailDurationInSecs|指定生成的整个视频的时长的整数�
 
 [Azure Media Analytics demos（Azure 媒体分析演示）](http://azuremedialabs.azurewebsites.net/demos/Analytics.html)
 
-<!---HONumber=Mooncake_1114_2016-->
+<!---HONumber=Mooncake_0306_2017-->
+<!--Update_Description: add one azure.note-->
