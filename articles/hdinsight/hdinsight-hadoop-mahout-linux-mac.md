@@ -7,7 +7,7 @@
     manager="jhubbard"
     editor="cgronlun"
     tags="azure-portal" />
-<tags 
+<tags
     ms.assetid="c78ec37c-9a8c-4bb6-9e38-0bdb9e89fbd7"
     ms.service="hdinsight"
     ms.workload="big-data"
@@ -15,8 +15,9 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="01/12/2017"
-    wacn.date="01/25/2017"
-    ms.author="larryfr" />
+    wacn.date="03/10/2017"
+    ms.author="larryfr" />  
+
 
 # 通过 HDInsight (SSH) 中基于 Linux 的 Hadoop 使用 Apache Mahout 生成电影推荐
 
@@ -41,9 +42,9 @@ Linux 是在 HDInsight 3.4 版或更高版本上使用的唯一操作系统。�
 
 ## <a name="recommendations"></a>了解建议
 
-Mahout 提供的功能之一是推荐引擎。此引擎接受 `userID`、`itemId` 和 `prefValue` 格式（此项的用户偏好）的数据。然后，Mahout 将执行共同匹配项分析，以确定：*偏好某个项的用户也偏好其他类似项*。随后，Mahout 确定拥有类似项偏好的用户，这些偏好可用于推荐。
+Mahout 提供的功能之一是推荐引擎。此引擎接受 `userID`、`itemId` 和 `prefValue` 格式（此项的首选项）的数据。然后，Mahout 将执行共同匹配项分析，以确定：*偏好某个项的用户也偏好其他类似项*。随后，Mahout 确定拥有类似项偏好的用户，这些偏好可用于推荐。
 
-下面的工作流是使用电影数据的极其简单的示例：
+下面的工作流是使用电影数据的简单示例：
 
 * **共同匹配项**：Joe、Alice 和 Bob 都喜欢电影《星球大战》、《帝国反击战》和《绝地归来》。Mahout 可确定喜欢以上电影之一的用户也喜欢其他两部。
 
@@ -55,7 +56,7 @@ Mahout 提供的功能之一是推荐引擎。此引擎接受 `userID`、`itemId
 
 为方便起见，[GroupLens 研究][movielens]以兼容 Mahout 的格式提供电影的评价数据。此数据在 `/HdiSamples/HdiSamples/MahoutMovieData` 中你的群集的默认存储中可用。
 
-存在两个文件，`moviedb.txt`（有关影片的信息）和 `user-ratings.txt`。user-ratings.txt 文件用于分析过程中，而 moviedb.txt 用于在显示分析结果时，提供用户友好的文本信息。
+其中存在两个文件，即 `moviedb.txt` 和 `user-ratings.txt`。user-ratings.txt 文件用于分析过程中，而 moviedb.txt 用于在显示分析结果时，提供用户友好的文本信息。
 
 user-ratings.txt 中包含的数据具有 `userID`、`movieID`、`userRating` 和 `timestamp` 结构，它将告诉我们每个用户对电影评级的情况。下面是数据的示例：
 
@@ -89,14 +90,14 @@ user-ratings.txt 中包含的数据具有 `userID`、`movieID`、`userRating` �
    
     第一列是 `userID`。“[”和“]”中包含的值为 `movieId`:`recommendationScore`。
 
-2. 可以使用输出和 moviedb.txt 显示更多适用于用户的信息。首先需使用以下命令按本地方式复制文件：
+2. 可配合使用输出和 moviedb.txt 来提供更多推荐信息。首先需使用以下命令按本地方式复制文件：
 
         hdfs dfs -get /example/data/mahoutout/part-r-00000 recommendations.txt
         hdfs dfs -get /HdiSamples/HdiSamples/MahoutMovieData/* .
 
-    这会将输出数据以及电影数据文件复制到当前目录中名为 **recommendations.txt** 的文件。
+    此命令会将输出数据以及电影数据文件复制到当前目录中名为 **recommendations.txt** 的文件。
 
-3. 使用以下命令创建新的 Python 脚本，该脚本查找电影名称中是否存在建议输出中的数据：
+3. 使用如下命令创建 Python 脚本，该脚本查找电影名称中是否存在建议输出中的数据：
 
         nano show_recommendations.py
 
@@ -153,7 +154,7 @@ user-ratings.txt 中包含的数据具有 `userID`、`movieID`、`userRating` �
         print "------------------------"
 
     按 **Ctrl-X**、**Y**，最后按 **Enter** 来保存数据。
-    
+
 4. 使用以下命令以使该文件成为可执行文件：
 
         chmod +x show_recommendations.py
@@ -164,56 +165,56 @@ user-ratings.txt 中包含的数据具有 `userID`、`movieID`、`userRating` �
 
     此命令查看为用户 ID 4 生成的建议。
    
-    * **user-ratings.txt** 文件用于检索用户评价过的电影。
+    * **user-ratings.txt** 文件用于检索已被评价过的电影。
 
     * **moviedb.txt** 文件用于检索电影的名称。
 
     * **recommendations.txt** 用于检索此用户的电影建议。
      
-    此命令的输出类似于以下文本：
+        此命令的输出类似于以下文本：
 
-           Reading Movies Descriptions
-           Reading Rated Movies
-           Reading Recommendations
+               Reading Movies Descriptions
+               Reading Rated Movies
+               Reading Recommendations
      
-         ##   Rated Movies
-           Mimic (1997), rating=3
-           Ulee's Gold (1997), rating=5
-           Incognito (1997), rating=5
-           One Flew Over the Cuckoo's Nest (1975), rating=4
-           Event Horizon (1997), rating=4
-           Client, The (1994), rating=3
-           Liar Liar (1997), rating=5
-           Scream (1996), rating=4
-           Star Wars (1977), rating=5
-           Wedding Singer, The (1998), rating=5
-           Starship Troopers (1997), rating=4
-           Air Force One (1997), rating=5
-           Conspiracy Theory (1997), rating=3
-           Contact (1997), rating=5
-           Indiana Jones and the Last Crusade (1989), rating=3
-           Desperate Measures (1998), rating=5
-           Seven (Se7en) (1995), rating=4
-           Cop Land (1997), rating=5
-           Lost Highway (1997), rating=5
-           Assignment, The (1997), rating=5
-           Blues Brothers 2000 (1998), rating=5
-           Spawn (1997), rating=2
-           Wonderland (1997), rating=5
+             ##   Rated Movies
+               Mimic (1997), rating=3
+               Ulee's Gold (1997), rating=5
+               Incognito (1997), rating=5
+               One Flew Over the Cuckoo's Nest (1975), rating=4
+               Event Horizon (1997), rating=4
+               Client, The (1994), rating=3
+               Liar Liar (1997), rating=5
+               Scream (1996), rating=4
+               Star Wars (1977), rating=5
+               Wedding Singer, The (1998), rating=5
+               Starship Troopers (1997), rating=4
+               Air Force One (1997), rating=5
+               Conspiracy Theory (1997), rating=3
+               Contact (1997), rating=5
+               Indiana Jones and the Last Crusade (1989), rating=3
+               Desperate Measures (1998), rating=5
+               Seven (Se7en) (1995), rating=4
+               Cop Land (1997), rating=5
+               Lost Highway (1997), rating=5
+               Assignment, The (1997), rating=5
+               Blues Brothers 2000 (1998), rating=5
+               Spawn (1997), rating=2
+               Wonderland (1997), rating=5
      
-         ##   In & Out (1997), rating=5
-         ##   Recommended Movies
-           Seven Years in Tibet (1997), score=5.0
-           Indiana Jones and the Last Crusade (1989), score=5.0
-           Jaws (1975), score=5.0
-           Sense and Sensibility (1995), score=5.0
-           Independence Day (ID4) (1996), score=5.0
-           My Best Friend's Wedding (1997), score=5.0
-           Jerry Maguire (1996), score=5.0
-           Scream 2 (1997), score=5.0
-           Time to Kill, A (1996), score=5.0
+             ##   In & Out (1997), rating=5
+             ##   Recommended Movies
+               Seven Years in Tibet (1997), score=5.0
+               Indiana Jones and the Last Crusade (1989), score=5.0
+               Jaws (1975), score=5.0
+               Sense and Sensibility (1995), score=5.0
+               Independence Day (ID4) (1996), score=5.0
+               My Best Friend's Wedding (1997), score=5.0
+               Jerry Maguire (1996), score=5.0
+               Scream 2 (1997), score=5.0
+               Time to Kill, A (1996), score=5.0
      
-         ##   Rock, The (1996), score=5.0
+             ##   Rock, The (1996), score=5.0
 
 ## 删除临时数据
 
@@ -223,7 +224,7 @@ Mahout 作业不删除在处理作业时创建的临时数据。在示例作业�
 
 > [AZURE.WARNING]
 如需再次运行此命令，则还必须删除输出目录。使用以下命令删除此目录：
-> <p>
+> <p> 
 > ```hdfs dfs -rm -f -r /example/data/mahoutout```  
 
 
@@ -248,4 +249,5 @@ Mahout 作业不删除在处理作业时创建的临时数据。在示例作业�
 [hadoopcli]: ./media/hdinsight-mahout/hadoopcli.png
 [tools]: https://github.com/Blackmist/hdinsight-tools
 
-<!---HONumber=Mooncake_0120_2017-->
+<!---HONumber=Mooncake_0306_2017-->
+<!--Update_Description: wording update-->

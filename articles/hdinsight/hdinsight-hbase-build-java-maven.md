@@ -1,5 +1,5 @@
 <properties
-    pageTitle="使用 Maven 构建 HBase 应用程序并将其部署到基于 Windows 的 HDInsight | Azure"
+    pageTitle="为基于 Windows 的 Azure HDInsight 构建 Java HBase 应用程序 | Azure"
     description="了解如何使用 Apache Maven 构建基于 Java 的 Apache HBase 应用程序，然后将其部署到基于 Windows 的 Azure HDInsight 群集。"
     services="hdinsight"
     documentationcenter=""
@@ -14,8 +14,8 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="10/03/2016"
-    wacn.date="01/25/2017"
+    ms.date="02/05/2017"
+    wacn.date="03/10/2017"
     ms.author="larryfr" />
 
 # 借助 Maven 构建可将 HBase 与基于 Windows 的 HDInsight (Hadoop) 配合使用的 Java 应用程序
@@ -23,10 +23,8 @@
 
 [Maven](http://maven.apache.org/) 是一种软件项目管理和综合工具，可用于为 Java 项目构建软件、文档和报告。在本文中，可了解如何使用 Maven 创建一个基本的 Java 应用程序，该应用程序可在 Azure HDInsight 群集中创建、查询和删除 HBase 表。
 
-> [AZURE.NOTE]
-本文档中的步骤假设使用基于 Windows 的 HDInsight 群集。有关使用基于 Linux 的 HDInsight 群集的信息，请参阅 [Use Maven to build Java applications that use HBase with Linux-based HDInsight](/documentation/articles/hdinsight-hbase-build-java-maven-linux/)（借助 Maven 构建可将 HBase 与基于 Linux 的 HDInsight 配合使用的 Java 应用程序）
-> 
-> 
+> [AZURE.IMPORTANT]
+本文档中的步骤需要使用 Windows 的 HDInsight 群集。Linux 是在 HDInsight 3.4 版或更高版本上使用的唯一操作系统。有关详细信息，请参阅 [HDInsight 在 Windows 上弃用](/documentation/articles/hdinsight-component-versioning/#hdi-version-32-and-33-nearing-deprecation-date)。
 
 ## 要求
 * [Java 平台 JDK](http://www.oracle.com/technetwork/java/javase/downloads/index.html) 7 或更高版本
@@ -35,7 +33,8 @@
 
     [AZURE.INCLUDE [hdinsight-linux-acn-version.md](../../includes/hdinsight-linux-acn-version.md)]
 
-    > [AZURE.NOTE] 本文档中的步骤已在 HDInsight 群集版本 3.2 和 3.3 中测试。示例中提供的默认值适用于 HDInsight 3.3 群集。
+    > [AZURE.NOTE] 
+    本文档中的步骤已在 HDInsight 群集版本 3.2 和 3.3 中测试。示例中提供的默认值适用于 HDInsight 3.3 群集。
 
 ## 创建项目
 1. 在开发环境中，通过命令行将目录更改为要创建项目的位置，例如 `cd code\hdinsight`。
@@ -180,8 +179,7 @@
    
     > [AZURE.NOTE]
     这是最小的 hbase-site.xml 文件，其中包含 HDInsight 群集的最低基本设置。
-    > 
-    > 
+
 6. 保存 **hbase-site.xml** 文件。
 
 ## 创建应用程序
@@ -365,8 +363,6 @@
    
     > [AZURE.NOTE]
     **hbaseapp-1.0-SNAPSHOT.jar** 文件是 uber jar（有时称为 fat jar），其中包含运行应用程序所需的所有依赖项。
-    > 
-    > 
 
 ## 上载 JAR 文件并启动作业
 你可以使用多种方法将文件上载到 HDInsight 群集，如[在 HDInsight 中为 Hadoop 作业上载数据](/documentation/articles/hdinsight-upload-data/)中所述。以下步骤使用 Azure PowerShell。
@@ -422,10 +418,7 @@
         FindAzure
    
         # Get the login for the HDInsight cluster
-        $creds = Get-Credential
-   
-        # Get storage information
-        $storage = GetStorage -clusterName $clusterName
+        $creds=Get-Credential -Message "Enter the login for the cluster" -UserName "admin"
    
         # The JAR
         $jarFile = "wasbs:///example/jars/hbaseapp-1.0-SNAPSHOT.jar"
@@ -452,9 +445,6 @@
         Get-AzureRmHDInsightJobOutput `
                     -Clustername $clusterName `
                     -JobId $job.JobId `
-                    -DefaultContainer $storage.container `
-                    -DefaultStorageAccountName $storage.storageAccount `
-                    -DefaultStorageAccountKey $storage.storageAccountKey `
                     -HttpCredential $creds `
                     -DisplayOutputType StandardError
         }
@@ -462,9 +452,6 @@
         Get-AzureRmHDInsightJobOutput `
                     -Clustername $clusterName `
                     -JobId $job.JobId `
-                    -DefaultContainer $storage.container `
-                    -DefaultStorageAccountName $storage.storageAccount `
-                    -DefaultStorageAccountKey $storage.storageAccountKey `
                     -HttpCredential $creds
         }
    
@@ -609,12 +596,12 @@
    
     此命令使用 **SearchByEmail** 类搜索任何 **contactinformation** 列系列和 **email** 列包含字符串 **contoso.com** 的行。你应该会收到以下结果：
    
-        Franklin Holtz - ID: 2
-        Franklin Holtz - franklin@contoso.com - ID: 2
-        Rae Schroeder - ID: 4
-        Rae Schroeder - rae@contoso.com - ID: 4
-        Gabriela Ingram - ID: 6
-        Gabriela Ingram - gabriela@contoso.com - ID: 6
+          Franklin Holtz - ID: 2
+          Franklin Holtz - franklin@contoso.com - ID: 2
+          Rae Schroeder - ID: 4
+          Rae Schroeder - rae@contoso.com - ID: 4
+          Gabriela Ingram - ID: 6
+          Gabriela Ingram - gabriela@contoso.com - ID: 6
    
     将 **fabrikam.com** 用于 `-emailRegex` 值会返回电子邮件字段中包含 **fabrikam.com** 的用户。此搜索使用基于正则表达式的筛选器执行，因此，也可以输入正则表达式，例如 **^r**，这样就会返回电子邮件以字母“r”开头的条目。
 
@@ -629,5 +616,5 @@
 ### 使用 Start-HBaseExample 时无结果或意外结果
 使用 `-showErr` 参数可查看运行作业时生成的标准错误 (STDERR)。
 
-<!---HONumber=Mooncake_0120_2017-->
-<!--Update_Description: update from ASM to ARM-->
+<!---HONumber=Mooncake_0306_2017-->
+<!--Update_Description: add information about HDInsight Windows is going to be abandoned-->

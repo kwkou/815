@@ -14,13 +14,16 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="11/23/2016"
-    wacn.date="01/25/2017"
+    ms.date="1/18/2017"
+    wacn.date="03/10/2017"
     ms.author="nitinme" />
 
 # Azure HDInsight 上的 Hadoop 组件发行说明
 
 [AZURE.INCLUDE [hdinsight-linux-acn-version.md](../../includes/hdinsight-linux-acn-version.md)]
+
+> [AZURE.IMPORTANT]
+Linux 是在 HDInsight 3.4 版或更高版本上使用的唯一操作系统。有关详细信息，请参阅 [HDInsight 在 Windows 上弃用](/documentation/articles/hdinsight-component-versioning/#hdi-version-32-and-33-nearing-deprecation-date)。
 
 ##Spark 2.0.1 on HDInsight 3.5 2016 年 11 月 18 日发行说明
 Spark 2.0.1 现可在 Spark 群集（HDInsight 版本 3.5）上使用。
@@ -451,7 +454,7 @@ Spark 2.0.1 现可在 Spark 群集（HDInsight 版本 3.5）上使用。
 </tr>
 <tr>
 <td>其他打开的 HTTPS 端口</td>
-<td>云服务现在会打开群集上的 5 个端口（8001 到 8005），例如 https://\<clustername\>.azurehdinsight.cn:8001/。对这些 URL 的请求使用和端口 443 相同的基本身份验证密码机制进行验证。这些端口绑定到活动头节点上的相同端口。使用脚本操作可让客户服务在头节点的这些端口上侦听并路由到群集外部。</td>
+<td>云服务现在会打开群集上的 5 个端口（8001 到 8005），例如 https://\&lt;clustername>.azurehdinsight.cn:8001/。对这些 URL 的请求使用和端口 443 相同的基本身份验证密码机制进行验证。这些端口绑定到活动头节点上的相同端口。使用脚本操作可让客户服务在头节点的这些端口上侦听并路由到群集外部。</td>
 <td>云服务</td>
 <td>全部</td>
 <td>不适用</td>
@@ -1265,7 +1268,7 @@ Apache Mahout 是 Apache Hadoop 的机器学习库。Mahout 包含用于处理�
 关于 Azure PowerShell 和 HDInsight SDK 错误消息：“群集未配置 HTTP 服务访问”：
 
 * 此错误是已知的[兼容性问题](https://social.msdn.microsoft.com/Forums/azure/a7de016d-8de1-4385-b89e-d2e7a1a9d927/hdinsight-powershellsdk-error-cluster-is-not-configured-for-http-services-access?forum=hdinsight)，源于 HDInsight SDK 或 Azure PowerShell 版本和群集版本的差异。8 月 15 日或之后创建的群集支持虚拟网络的新预配功能。但旧版的 HDInsight SDK 或 Azure PowerShell 无法正确解释此功能。结果造成某些作业提交操作失败。如果使用 HDInsight SDK API 或 Azure PowerShell cmdlet（**Use-AzureRmHDInsightCluster** 或 **Invoke-AzureRmHDInsightHiveJob**）提交作业，这些作业可能失败并返回错误消息“*未在群集 <群集名称> 上配置 HTTP 服务访问权限*”。 或者（根据具体的操作），可能会收到其他错误消息，例如“*无法连接到群集*”。
-* 在最新版 HDInsight SDK 和 Azure PowerShell 中，这些兼容性问题均已解决。我们建议将 HDInsight SDK 更新至 1.3.1.6 版本或更高版本，将 Azure PowerShell 工具更新至 0.8.8 版本或更高版本。可以从 [NuGet](http://nuget.codeplex.com/wikipage?title=Getting%20Started) 获取最新的 HDInsight SDK，从[如何安装和配置 Azure PowerShell](https://docs.microsoft.com/powershell/azureps-cmdlets-docs) 获取 Azure PowerShell 工具。
+* 在最新版 HDInsight SDK 和 Azure PowerShell 中，这些兼容性问题均已解决。我们建议将 HDInsight SDK 更新至 1.3.1.6 版本或更高版本，将 Azure PowerShell 工具更新至 0.8.8 版本或更高版本。可以从 [Nuget](http://nuget.codeplex.com/wikipage?title=Getting%20Started) 获取最新的 HDInsight SDK，从[如何安装和配置 Azure PowerShell](https://docs.microsoft.com/powershell/azureps-cmdlets-docs) 获取 Azure PowerShell 工具。
 
 ## HDInsight 3.1 2014 9 月 12 日发行说明
 * 此版本基于 Hortonworks 数据平台 (HDP) 2.1.5。有关此版本中修复的 Bug 列表，请参阅 Hortonworks 站点上的[此版本中修复的问题](http://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.1.5/bk_releasenotes_hdp_2.1/content/ch_relnotes-hdp-2.1.5-fixed.html)页。
@@ -1507,5 +1510,5 @@ SQL Server 的 Java 数据库连接 (JDBC) 驱动程序由 HDInsight 在内部�
 [hdinsight-install-spark]: /documentation/articles/hdinsight-hadoop-spark-install/
 [hdinsight-r-scripts]: /documentation/articles/hdinsight-hadoop-r-scripts/
 
-<!---HONumber=Mooncake_0120_2017-->
-<!--Update_Description: update from ASM to ARM-->
+<!---HONumber=Mooncake_0306_2017-->
+<!--Update_Description: add information about HDInsight Windows is going to be abandoned-->

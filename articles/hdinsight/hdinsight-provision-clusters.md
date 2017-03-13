@@ -7,26 +7,23 @@
     author="mumian"
     manager="jhubbard"
     editor="cgronlun" />
-<tags 
+<tags
     ms.assetid="a311f7e0-9333-4886-a726-def79e5db8cb"
     ms.service="hdinsight"
     ms.devlang="na"
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="big-data"
-    ms.date="10/21/2016"
-    wacn.date="02/06/2017"
+    ms.date="02/17/2017"
+    wacn.date="03/10/2017"
     ms.author="jgao" />
 
 # 在 HDInsight 中创建基于 Windows 的 Hadoop 群集
-[AZURE.INCLUDE [选择器](../../includes/hdinsight-selector-create-clusters.md)]
 
-Hadoop 群集由用于对群集中的任务进行分布式处理的多个虚拟机（节点）组成。Azure 已将各个节点的安装和配置的实现细节精简化，因此只需提供常规配置信息。在本文中，你会了解这些配置设置。
+Hadoop 群集由多个虚拟机（节点）组成，这些虚拟机用于对群集中的任务进行分布式处理。Azure 已将各个节点的安装和配置的实现细节精简化，因此只需提供常规配置信息。在本文中，你会了解这些配置设置。
 
-> [AZURE.NOTE]
-本文档中的信息与基于 Windows 的 Azure HDInsight 群集相关。有关基于 Linux 的群集的信息，请参阅 [Create Linux-based Hadoop clusters in HDInsight](/documentation/articles/hdinsight-hadoop-provision-linux-clusters/)（在 HDInsight 中创建基于 Linux 的 Hadoop 群集）。
-> 
-> 
+> [AZURE.IMPORTANT]
+Linux 是在 HDInsight 3.4 版或更高版本上使用的唯一操作系统。有关详细信息，请参阅 [HDInsight 在 Windows 上弃用](/documentation/articles/hdinsight-component-versioning/#hdi-version-32-and-33-nearing-deprecation-date)。本文档中的信息与基于 Windows 的 Azure HDInsight 群集相关。有关基于 Linux 的群集的信息，请参阅 [Create Linux-based Hadoop clusters in HDInsight](/documentation/articles/hdinsight-hadoop-provision-linux-clusters/)（在 HDInsight 中创建基于 Linux 的 Hadoop 群集）。
 
 ## 访问控制要求
 [AZURE.INCLUDE [access-control](../../includes/hdinsight-access-control-requirements.md)]
@@ -99,7 +96,7 @@ HDInsight 版本用于确定此群集所用的 HDInsight 版本。有关详细�
 使用 HDInsight 群集时，可以在群集创建期间配置三个用户帐户。
 
 * 可以借助 [Azure Resource Manager](/documentation/articles/resource-group-overview/) 以组（称为 Azure 资源组）的形式处理应用程序中的资源。可以通过一个协调的操作为应用程序部署、更新、监视或删除所有资源。
-* HTTP 用户。默认用户名是在 Azure 门户预览上使用基本配置创建的 *admin*，有时，默认称作“群集用户”。
+* HTTP 用户。默认用户名是在 Azure 门户预览上使用基本配置创建的 *admin*。有时，默认称作“群集用户”。
 * RDP 用户（Windows 群集）使用 RDP 连接到群集。创建帐户时，必须将过期日期设置在从帐户创建日期算起的 90 天内。
 * SSH 用户（Linux 群集）。使用 SSH 连接到群集。群集创建后，可以根据[在 Linux、Unix 或 OS X 中的 HDInsight 上将 SSH 与基于 Linux 的 Hadoop 配合使用](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix/)中的步骤创建更多 SSH 用户帐户。
 
@@ -131,7 +128,7 @@ HDInsight 不支持多个群集共享同一个 Blob 存储容器。
 ### 位置（区域）
 HDInsight 群集与其默认存储帐户必须位于相同的 Azure 位置。
 
-有关受支持区域的列表，请查看 [HDInsight 定价](/pricing/details/hdinsight/)中的“上市地区”部分。
+有关受支持区域的列表，请选中 [HDInsight 定价](/pricing/details/hdinsight/)中的“已列出区域”。
 
 ### <a name="cluster-tiers"></a> 节点定价层
 客户需根据群集的生存期，支付这些节点的使用费。创建群集后便开始计费，删除群集后停止计费。无法取消分配群集或将其置于暂停状态。
@@ -140,7 +137,7 @@ HDInsight 群集与其默认存储帐户必须位于相同的 Azure 位置。
 
 > [AZURE.NOTE]
 群集大小限制因 Azure 订阅而异。要提高限制的大小，请联系计费支持人员。
-> <p>
+> <p> 
 > 群集使用的节点不视为虚拟机，因为用于节点的虚拟机映像是 HDInsight 服务的实现细节。但是，节点使用的计算核心会计入可供订阅使用的计算核心总数。创建 HDInsight 群集时，可以在“节点定价层”边栏选项卡的摘要部分中查看可用核心数以及群集要使用的核心数。
 > 
 > 
@@ -237,12 +234,12 @@ HDInsight 元存储无法向后兼容。例如，无法使用 HDInsight 3.3 群�
 
 * 在专用网络（仅限云）中将云资源连接在一起。
   
-    ![仅限云配置示意图](./media/hdinsight-provision-clusters/hdinsight-vnet-cloud-only.png)
+    ![仅限云配置示意图](./media/hdinsight-hadoop-provision-linux-clusters/hdinsight-vnet-cloud-only.png)
 * 使用虚拟专用网络 (VPN) 将云资源连接到本地数据中心网络（站点到站点，或点到站点）。
 
 | 站点到站点配置 | 点到站点配置 |
 | --- | --- |
-| 借助站点到站点配置，可以使用硬件 VPN 或路由和远程访问服务将多个资源从数据中心连接到 Azure 虚拟网络。<br />![站点到站点配置示意图](./media/hdinsight-provision-clusters/hdinsight-vnet-site-to-site.png) |借助点到站点配置，可以使用软件 VPN 将特定资源连接到 Azure 虚拟网络。<br />![点到站点配置示意图](./media/hdinsight-provision-clusters/hdinsight-vnet-point-to-site.png) |
+| 借助站点到站点配置，可以使用硬件 VPN 或路由和远程访问服务将多个资源从数据中心连接到 Azure 虚拟网络。<br />![站点到站点配置示意图](./media/hdinsight-hadoop-provision-linux-clusters/hdinsight-vnet-site-to-site.png) |借助点到站点配置，可以使用软件 VPN 将特定资源连接到 Azure 虚拟网络。<br />![点到站点配置示意图](./media/hdinsight-hadoop-provision-linux-clusters/hdinsight-vnet-point-to-site.png) |
 
 基于 Windows 的群集需要经典虚拟网络，基于 Linux 的群集需要 Azure Resource Manager 虚拟网络。如果没有正确的网络类型，创建群集时它将不能使用。
 
@@ -289,4 +286,5 @@ HDInsight 元存储无法向后兼容。例如，无法使用 HDInsight 3.3 群�
 | [.NET SDK](/documentation/articles/hdinsight-hadoop-create-windows-clusters-dotnet-sdk/) |&nbsp; |&nbsp; |&nbsp; |✔ |✔ |✔ |
 | [Azure Resource Manager 模板](/documentation/articles/hdinsight-hadoop-create-windows-clusters-arm-templates/) |&nbsp; |✔ |&nbsp; |&nbsp; |✔ |✔ |
 
-<!---HONumber=Mooncake_1205_2016-->
+<!---HONumber=Mooncake_0306_2017-->
+<!--Update_Description: add information about HDInsight Windows is going to be abandoned-->

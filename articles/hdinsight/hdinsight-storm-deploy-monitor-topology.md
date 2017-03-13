@@ -14,8 +14,8 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="big-data"
-    ms.date="11/18/2016"
-    wacn.date="01/25/2017"
+    ms.date="02/13/2017"
+    wacn.date="03/10/2017"
     ms.author="larryfr" />
 
 # 在基于 Windows 的 HDInsight 上部署和管理 Apache Storm 拓扑
@@ -29,7 +29,9 @@
 HDInsight 工具中的 Storm 仪表板和 Storm 功能依赖于 Storm REST API，此 API 可用于创建你自己的监视和管理解决方案。
 
 > [AZURE.IMPORTANT]
-本文档中的步骤要求使用 HDInsight 群集上基于 Windows 的 Storm。有关使用基于 Linux 的群集的信息，请参阅[在基于 Linux 的 HDInsight 上部署和管理 Apache Storm 拓扑](/documentation/articles/hdinsight-storm-deploy-monitor-topology-linux/)
+本文档中的步骤需要将 Windows 作为操作系统的 Storm on HDInsight 群集。Linux 是在 HDInsight 3.4 版或更高版本上使用的唯一操作系统。有关详细信息，请参阅 [HDInsight 在 Windows 上弃用](/documentation/articles/hdinsight-component-versioning/#hdi-version-32-and-33-nearing-deprecation-date)。
+><p>
+> 有关在使用 Linux 的 HDInsight 群集上部署和管理 Storm 拓扑的信息，请参阅 [Deploy and manage Apache Storm topologies on Linux-based HDInsight](/documentation/articles/hdinsight-storm-deploy-monitor-topology-linux/)（在基于 Linux 的 HDInsight 上部署和管理 Apache Storm 拓扑）
 
 ## 先决条件
 
@@ -58,7 +60,7 @@ Storm 仪表板是 Storm 群集上提供的网页。URL 是 **https://&lt;cluste
 
 在 Storm 仪表板中，选择“Storm UI”链接。这会显示有关群集和任何正在运行的拓扑的信息。
 
-![Storm UI][storm-dashboard-ui]
+![Storm UI][storm-dashboard-ui]  
 
 > [AZURE.NOTE]
 在某些版本的 Internet Explorer 中，你可能会发现，在首次访问 Storm UI 后它并不会刷新。例如，可能不显示已提交的新拓扑，或者将以前停用的拓扑显示为活动状态。Microsoft 已意识此问题，并在努力找出相应的解决方法。
@@ -190,5 +192,5 @@ REST API on HDInsight 群集的基本 URI 是 **https://&lt;clustername>.azurehd
 [storm-dashboard-submit]: ./media/hdinsight-storm-deploy-monitor-topology/submit.png
 [storm-dashboard-ui]: ./media/hdinsight-storm-deploy-monitor-topology/storm-ui-summary.png
 
-<!---HONumber=Mooncake_0120_2017-->
-<!--Update_Description: update from ASM to ARM-->
+<!---HONumber=Mooncake_0306_2017-->
+<!--Update_Description: add information about HDInsight Windows is going to be abandoned-->

@@ -14,7 +14,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="big-data"
     ms.date="01/12/2017"
-    wacn.date="01/25/2017"
+    wacn.date="03/10/2017"
     ms.author="larryfr" />  
 
 
@@ -35,11 +35,11 @@
   
     > [AZURE.IMPORTANT]
     不需要现有的 HDInsight 群集；本文档中的步骤将创建以下资源：
-    > <p>
-    ><p> * 一个 Azure 虚拟网络
-    ><p> * 一个 Storm on HDInsight 群集（基于 Linux，2 个辅助角色节点）
-    ><p> * 一个 HBase on HDInsight 群集（基于 Linux，2 个辅助角色节点）
-    ><p> * 一个 Azure Web 应用，用于托管 Web 仪表板
+    > <p> 
+    ><p>* Azure 虚拟网络
+    <p> * Storm on HDInsight 群集（基于 Linux 的 2 个工作节点）
+    <p> * HBase on HDInsight 群集（基于 Linux 的 2 个工作节点）
+    <p> *托管 Web 仪表板的 Azure Web 应用
     > 
     > 
 * [Node.js](http://nodejs.org/)：用于在开发环境中以本地方式预览 Web 仪表板。
@@ -51,10 +51,10 @@
     * [Use SSH with HDInsight from Windows clients（在 Windows 客户端中将 SSH 与 HDInsight 配合使用）](/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows/)
     * [在 Linux、Unix 或 Mac 客户端中将 SSH 与 HDInsight 配合使用](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix/)
     
-    > [AZURE.NOTE]
-    用户还必须有权访问 `scp` 命令，该命令用于通过 SSH 在本地开发环境和 HDInsight 群集之间复制文件。
-    > 
-    > 
+        > [AZURE.NOTE]
+        用户还必须有权访问 `scp` 命令，该命令用于通过 SSH 在本地开发环境和 HDInsight 群集之间复制文件。
+        > 
+        > 
 
 ## 体系结构
 ![体系结构示意图](./media/hdinsight-storm-sensor-data-analysis/devicesarchitecture.png)  
@@ -227,8 +227,7 @@
    
     > [AZURE.NOTE]
     此示例假定已使用 **sensordata** 作为事件中心的名称并已使用**devices** 作为具有 **Send** 声明的策略的名称。
-    > 
-    > 
+
 3. 使用以下命令在事件中心插入新条目：
    
         node app.js
@@ -288,7 +287,7 @@
    
     <a href="https://portal.azure.cn/#create/Microsoft.Template/uri/https%3A%2F%2Fhditutorialdata.blob.core.windows.net%2Farmtemplates%2Fcreate-linux-based-hbase-storm-cluster-in-vnet.json" target="_blank"><img src="./media/hdinsight-storm-sensor-data-analysis/deploy-to-azure.png" alt="Deploy to Azure"></a>
 
-    >[AZURE.NOTE] 必须修改从 GitHub 存储库“azure-quickstart-templates”下载的模板，以适应 Azure 中国云环境。例如，替换某些终结点（将“blob.core.windows.net”替换为“blob.core.chinacloudapi.cn”，将“cloudapp.azure.com”替换为“chinacloudapp.cn”）；把允许的地域改成“China North”和“China East”；把 HDInsight Linux 版本改为 Azure 中国所支持的 3.5。
+    >[AZURE.NOTE] 必须修改从 GitHub 存储库“azure-quickstart-templates”下载的模板，以适应 Azure 中国云环境。例如，将一些终结点 -“blob.core.windows.net”替换为“blob.core.chinacloudapi.cn”，将“cloudapp.azure.com”替换为“chinacloudapp.cn”；将允许的位置更改为“中国北部”和“中国东部”；将 HDInsight Linux 版本更改为 Azure 中国区支持的版本 3.5。
 
 2. 在“参数”边栏选项卡中，输入以下内容：
    
@@ -302,7 +301,7 @@
     * **SSHPASSWORD**：Storm 和 HBase 群集的 SSH 用户的密码。
     * **LOCATION**：要在其中创建群集的区域。
      
-    单击**确定**以保存参数。
+        单击**确定**以保存参数。
 3. 使用“资源组”部分创建新资源组或选择现有的资源组。
 4. 在“资源组位置”下拉菜单中选择一个位置，该位置与为 **LOCATION** 参数选择的位置相同。
 5. 选择“法律条款”，然后选择“创建”。
@@ -353,12 +352,11 @@
         exit
 
 ## 配置 HBase Bolt
-若要将内容从 Storm 群集写入 HBase，必须为 HBase Bolt 提供 HBase 群集的配置详细信息。若要执行此操作，最简单的方法是从群集下载 **hbase-site.xml** 并将其包括在项目中。此外还必须取消注释 **pom.xml** 文件中的多个依赖项，这些依赖项加载 storm-hbase 组件和必需依赖项。
+
+若要将内容从 Storm 群集写入 HBase，必须为 HBase Bolt 提供 HBase 群集的配置详细信息。若要执行此操作，最简单的方法是从群集下载 **hbase-site.xml** 并将其包括在项目中。
 
 > [AZURE.IMPORTANT]
 还必须下载在 Storm on HDInsight 3.3 或 3.4 群集上提供的 storm-hbase.jar 文件；此版本经编译后兼容 HBase 1.1.x，后者可用于 HBase on HDInsight 3.3 和 3.4 群集。如果从其他位置使用 storm-hbase 组件，则可针对旧版 HBase 对其进行编译。
-> 
-> 
 
 ### 下载 hbase-site.xml
 在命令提示符处，使用 SCP 从群集下载 **hbase-site.xml** 文件。在以下示例中，将 **USERNAME** 替换为创建群集时提供的 SSH 用户，将 **BASENAME** 替换为此前提供的基名称。出现提示时，请输入 SSH 用户的密码。将 `/path/to/TemperatureMonitor/resources/hbase-site.xml` 替换为此文件在 TemperatureMonitor 项目中的路径。
@@ -381,33 +379,18 @@
    
         mvn install:install-file "-Dfile=storm-hbase-####.jar" "-DgroupId=org.apache.storm" "-DartifactId=storm-hbase" "-Dversion=####" "-Dpackaging=jar"
 
-### 启用项目中的 storm-hbase 组件
-1. 打开 **TemperatureMonitor/pom.xml** 文件并删除以下行：
-   
-        <!-- uncomment this section to enable the hbase-bolt
-        end comment for hbase-bolt section -->
-   
-    > [AZURE.IMPORTANT]
-    仅删除这两行；不要删除其间的任何行。
-    > 
-    > 
-   
-    这样会启用多个组件，这些组件在使用 hbase bolt 与 HBase 通信时是必需的。
-2. 找到以下行，然后将 **####** 替换为此前下载的 storm-hbase 文件的版本号。
-   
+3. 在 __pom.xml__ 文件中，查找 __storm-hbase__ 的依赖项节。通过删除围绕依赖项的 `<!--` 和 `-->`，取消注释依赖项。此外，更改 `<version></version>` 条目以匹配先前步骤中使用的 ####。该条目将如以下示例中所示：
+
         <dependency>
             <groupId>org.apache.storm</groupId>
             <artifactId>storm-hbase</artifactId>
-            <version>####</version>
+            <version>0.10.0.2.4.2.4-5</version>
         </dependency>
-   
-    > [AZURE.IMPORTANT]
-    版本号必须与将组件安装到本地 Maven 存储库时使用的版本相符，因为 Maven 在生成项目时使用该信息加载组件。
-    > 
-    > 
-3. 保存 **pom.xml** 文件。
+
+    进行更改之后，保存该文件。
 
 ## 生成解决方案，然后将其打包并部署到 HDInsight
+
 在开发环境中，按以下步骤将 Storm 拓扑部署到 Storm 群集。
 
 1. 在 **TemperatureMonitor** 目录中，使用以下命令在项目中执行新的生成操作并创建 JAR 包：
@@ -417,7 +400,7 @@
     此操作将在项目的 **target** 目录中创建一个名为 **TemperatureMonitor-1.0-SNAPSHOT.jar** 的文件。
 2. 使用 scp 将 **TemperatureMonitor-1.0-SNAPSHOT.jar** 文件上载到 Storm 群集。在以下示例中，将 **USERNAME** 替换为创建群集时提供的 SSH 用户，将 **BASENAME** 替换为此前提供的基名称。出现提示时，请输入 SSH 用户的密码。
    
-        scp target\TemperatureMonitor-1.0-SNAPSHOT.jar USERNAME@storm-BASENAME-ssh.azurehdinsight.cn:TemperatureMonitor-1.0-SNAPSHOT.jar
+        scp target/TemperatureMonitor-1.0-SNAPSHOT.jar USERNAME@storm-BASENAME-ssh.azurehdinsight.cn:TemperatureMonitor-1.0-SNAPSHOT.jar
    
     > [AZURE.NOTE]
     上载文件可能需要几分钟的时间，因为文件大小有数 MB。
@@ -506,5 +489,5 @@
 
 [azure-portal]: https://portal.azure.cn
 
-<!---HONumber=Mooncake_0120_2017-->
-<!--Update_Description: update from ASM to ARM-->
+<!---HONumber=Mooncake_0306_2017-->
+<!--Update_Description: add information about HDInsight Windows is going to be abandoned-->

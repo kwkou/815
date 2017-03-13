@@ -15,11 +15,15 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="05/17/2016"
-    wacn.date="01/25/2017"
-    ms.author="nitinme" />
+    wacn.date="03/10/2017"
+    ms.author="nitinme" />  
 
-# 将 Hive 与 HDInsight 配合使用来分析来自网站的日志
+
+# 将 Hive 与基于 Windows 的 HDInsight 配合使用来分析网站的日志
 了解如何通过将 HiveQL 与 HDInsight 配合使用来分析来自网站的日志。网站日志分析可用于根据类似活动分类受众，按人口统计分类站点访问者，以及了解他们查看的内容和这些内容来自的网站等。
+
+> [AZURE.IMPORTANT]
+本文档中的步骤仅适用于基于 Windows 的 HDInsight 群集。低于 HDInsight 3.4 的 HDInsight 版本仅在 Windows 上提供。Linux 是在 HDInsight 3.4 版或更高版本上使用的唯一操作系统。有关详细信息，请参阅 [HDInsight 在 Windows 上弃用](/documentation/articles/hdinsight-component-versioning/#hdi-version-32-and-33-nearing-deprecation-date)。
 
 在此示例中，你将使用 HDInsight 群集来分析网站日志文件，以深入了解每天从外部网站访问网站的频率。你还将生成用户遇到的网站错误的摘要。你将了解如何执行以下操作：
 
@@ -39,7 +43,7 @@
 1. 在 [Azure 门户预览](https://portal.azure.cn/)中，从启动板（如果已将群集固定在此处），单击要在其中运行示例的群集磁贴。
 2. 在群集边栏选项卡中的“快速链接”下，单击“群集仪表板”，然后在“群集仪表板”边栏选项卡上，单击“HDInsight 群集仪表板”。或者，也可以直接使用以下 URL 打开仪表板：
    
-        https://<clustername>.azurehdinsight.cn
+         https://<clustername>.azurehdinsight.cn
    
     出现提示时，通过使用设置群集时所用的管理员用户名和密码进行身份验证。
 3. 在打开的网页中，单击“入门库”选项卡，然后在“使用示例数据的解决方案”类别下方，单击“网站日志分析”示例。
@@ -53,5 +57,5 @@
 
 [img-hdi-weblogs-sample]: ./media/hdinsight-hive-analyze-website-log/hdinsight-weblogs-sample.png
 
-<!---HONumber=Mooncake_0120_2017-->
-<!--Update_Description: update from ASM to ARM-->
+<!---HONumber=Mooncake_0306_2017-->
+<!--Update_Description: add information about HDInsight Windows is going to be abandoned-->

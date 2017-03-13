@@ -1,6 +1,6 @@
 <properties
     pageTitle="使用 Azure CLI 在 HDInsight 中创建基于 Windows 的 Hadoop 群集"
-    description="了解如何使用 Azure CLI 创建 Azure HDInsight 群集。"
+    description="了解如何使用 Azure CLI 为 Azure HDInsight 创建基于 Windows 的 Hadoop 群集。"
     services="hdinsight"
     documentationcenter=""
     tags="azure-portal"
@@ -14,16 +14,20 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="big-data"
-    ms.date="09/02/2016"
-    wacn.date="01/25/2017"
+    ms.date="02/06/2017"
+    wacn.date="03/10/2017"
     ms.author="jgao" />
 
 # 使用 Azure CLI 在 HDInsight 中创建基于 Windows 的 Hadoop 群集
-[AZURE.INCLUDE [选择器](../../includes/hdinsight-selector-create-clusters.md)]
 
 [AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-sdk-developer-differences.md)]
 
-了解如何使用 Azure CLI 创建 HDInsight 群集。有关其他群集创建工具和功能，请单击本页面顶部的相应选项卡，或参阅[群集创建方法](/documentation/articles/hdinsight-provision-clusters/#cluster-creation-methods)。
+[AZURE.INCLUDE [选择器](../../includes/hdinsight-selector-create-clusters.md)]
+
+了解如何使用 Azure CLI 在 HDInsight 中创建基于 Windows 的 Hadoop 群集。
+
+> [AZURE.IMPORTANT]
+Linux 是在 HDInsight 3.4 版或更高版本上使用的唯一操作系统。有关详细信息，请参阅 [HDInsight 在 Windows 上弃用](/documentation/articles/hdinsight-component-versioning/#hdi-version-32-and-33-nearing-deprecation-date)。本文中的信息仅适用于基于 Windows 的 HDInsight 群集。若要了解如何创建基于 Linux 的群集，请参阅[使用 Azure CLI 在 HDInsight 中创建 Hadoop 群集](/documentation/articles/hdinsight-hadoop-create-linux-clusters-azure-cli/)。
 
 ## 先决条件：
 [AZURE.INCLUDE [delete-cluster-warning](../../includes/hdinsight-delete-cluster-warning.md)]
@@ -32,6 +36,8 @@
 
 * **Azure 订阅**。请参阅[获取 Azure 试用版](/pricing/1rmb-trial/)。
 * **Azure CLI**。
+  
+[AZURE.INCLUDE [use-latest-version](../../includes/hdinsight-use-latest-cli.md)]
 
 ### 访问控制要求
 [AZURE.INCLUDE [access-control](../../includes/hdinsight-access-control-requirements.md)]
@@ -43,7 +49,7 @@
 
 有关使用公司或学校帐户进行身份验证的详细信息，请参阅[从 Azure CLI 连接到 Azure 订阅](/documentation/articles/xplat-cli-connect/)。
 
-使用以下命令切换到 ARM 模式：
+使用以下命令切换到 Azure Resource Manager 模式：
 
     azure config mode arm
 
@@ -52,9 +58,9 @@
     azure hdinsight cluster create -h
 
 ## 创建群集
-在创建 HDInsight 群集之前，你必须拥有 Azure 资源管理 (ARM) 和 Azure Blob 存储帐户。若要创建 HDInsight 群集，必须指定以下信息：
+在创建 HDInsight 群集前，必须拥有 Resource Management 组和 Azure Blob 存储帐户。若要创建 HDInsight 群集，必须指定以下信息：
 
-* **Azure 资源组**：那么，你可以使用 Azure 资源管理器以组的方式处理应用程序中的资源。你可以通过一个协调的操作为应用程序部署、更新或删除所有资源。
+* **Azure Resource 组**：使用 Azure Resource Manager，能够以组的方式处理应用程序中的资源。你可以通过一个协调的操作为应用程序部署、更新或删除所有资源。
   
     若要列出订阅中的资源组：
   
@@ -72,12 +78,11 @@
         azure storage account create "<Azure Storage Account Name>" -g "<Resource Group Name>" -l "<Azure Location>" --type LRS
   
     > [AZURE.NOTE]
-    存储帐户必须与 HDInsight 共置于同一数据中心。
-    存储帐户类型不能为 ZRS，因为 ZRS 不支持表。
+    存储帐户必须与 HDInsight 共置于同一数据中心。存储帐户类型不能为 ZRS，因为 ZRS 不支持表。
     > 
     > 
   
-    有关使用 Azure 门户预览创建 Azure 存储帐户的信息，请参阅[创建、管理或删除存储帐户][azure-create-storageaccount]。
+    若要了解如何使用 Azure 门户预览创建 Azure 存储帐户，请参阅[创建、管理或删除存储帐户][azure-create-storageaccount]。
   
     如果已拥有存储帐户但不知道帐户名称和帐户密钥，可使用以下命令检索相关信息：
   
@@ -88,7 +93,7 @@
         -- Lists the keys for a Storage account
         azure storage account keys list "<Storage Account Name>" -g "<Resource Group Name>"
   
-    有关使用 Azure 门户预览获取信息的详细信息，请参阅[关于 Azure 存储帐户](/documentation/articles/storage-create-storage-account/#manage-your-storage-account)的“管理存储帐户”部分。
+    若要深入了解如何使用 Azure 门户预览获取信息，请参阅[关于 Azure 存储帐户](/documentation/articles/storage-create-storage-account/#manage-your-storage-account)的“管理存储帐户”部分。
 * **(可选)默认 Blob 容器**：如果容器不存在，可使用 **azure hdinsight cluster create** 命令创建。如果选择预先创建容器，可以使用以下命令：
   
         azure storage container create --account-name "<Storage Account Name>" --account-key <Storage Account Key> [ContainerName]
@@ -122,14 +127,14 @@
 
 有关脚本操作的常规信息，请参阅[使用脚本操作 (Linux) 自定义 HDInsight 群集](/documentation/articles/hdinsight-hadoop-customize-cluster/)。
 
-## 使用 ARM 模板创建群集
-可以通过调用 ARM 模板使用 CLI 创建群集。请参阅[使用 Azure CLI 进行部署](/documentation/articles/hdinsight-hadoop-create-windows-clusters-arm-templates/#deploy-with-azure-cli)。
+## 使用 Resource Manager 模板创建群集
+可以通过调用 Azure Resource Manager 模板使用 CLI 创建群集。请参阅[使用 Azure CLI 进行部署](/documentation/articles/hdinsight-hadoop-create-windows-clusters-arm-templates/#deploy-with-azure-cli)。
 
 ## 另请参阅
 * [Azure HDInsight 入门](/documentation/articles/hdinsight-hadoop-linux-tutorial-get-started/) - 了解如何开始使用 HDInsight 群集
 * [以编程方式提交 Hadoop 作业](/documentation/articles/hdinsight-submit-hadoop-jobs-programmatically/) - 了解如何以编程方式将作业提交到 HDInsight
 * [使用 Azure CLI 管理 HDInsight 中的 Hadoop 群集](/documentation/articles/hdinsight-administer-use-command-line/)
-* [将适用于 Mac、Linux 和 Windows 的 Azure CLI 与 Azure 服务管理配合使用](/documentation/articles/virtual-machines-command-line-tools/)
+* [将适用于 Mac、Linux 和 Windows 的 Azure CLI 与 Azure 服务管理配合使用](https://docs.microsoft.com/cli/azure/get-started-with-az-cli2)
 
-<!---HONumber=Mooncake_0120_2017-->
-<!--Update_Description: update from ASM to ARM-->
+<!---HONumber=Mooncake_0306_2017-->
+<!--Update_Description: add information about HDInsight Windows is going to be abandoned-->

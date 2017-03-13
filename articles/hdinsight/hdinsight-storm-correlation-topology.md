@@ -14,8 +14,8 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="big-data"
-    ms.date="11/18/2016"
-    wacn.date="01/25/2017"
+    ms.date="02/13/2017"
+    wacn.date="03/10/2017"
     ms.author="larryfr" />
 
 # 使用 HDInsight 上的 Storm 和 HBase 按时间关联事件
@@ -24,7 +24,7 @@
 
 通过使用 Apache Storm 的持久数据存储，可以将不同时间到达的数据条目关联起来。例如，将用户会话的登录事件和注销事件关联起来，即可计算该会话的持续时间。
 
-本文介绍如何创建基本的 C# Storm 拓扑来跟踪用户会话的登录事件和注销事件，从而计算出会话的持续时间。拓扑使用 HBase 作为永久性数据存储。HBase 还可用于对历史数据执行批查询，以便获得额外的信息，例如在特定的时段有多少用户会话启动或结束。
+本文档介绍如何创建基本的 C# Storm 拓扑来跟踪用户会话的登录事件和注销事件，从而计算出会话的持续时间。拓扑使用 HBase 作为永久性数据存储。HBase 还可用于对历史数据执行批查询，以便获得额外的信息，例如在特定的时段有多少用户会话启动或结束。
 
 ## 先决条件
 
@@ -36,6 +36,9 @@
     虽然 2016 年 10 月 28 日之后创建的基于 Linux 的 Storm 群集支持 SCP.NET 拓扑，但是 2016 年 10 月 28 日前提供的 HBase SDK for .NET 包无法在 Linux 上正常工作。
 
 * HDInsight 群集上的 Apache HBase（基于 Linux 或 Windows）。这是本示例的数据存储。
+
+    > [AZURE.IMPORTANT]
+    Linux 是在 HDInsight 3.4 版或更高版本上使用的唯一操作系统。有关详细信息，请参阅 [HDInsight 在 Windows 上弃用](/documentation/articles/hdinsight-component-versioning/#hdi-version-32-and-33-nearing-deprecation-date)。
 
 * [Java](https://java.com) 1.7 或更高版本，适用于开发环境。将拓扑提交到 HDInsight 群集时，可以使用 Java 将拓扑打包。
 
@@ -70,9 +73,7 @@
 > [AZURE.IMPORTANT]
 虽然此拓扑演示了基本的模式，但生产型解决方案需要针对以下情况进行设计：
 ><p> 
-><p> * 事件在到达时混乱无序 
-><p> * 重复的事件 
-><p> * 删除的事件
+><p> * 事件在到达时混乱无序 <p> * 重复的事件 <p> * 删除的事件
 
 示例拓扑由以下组件组成：
 
@@ -164,24 +165,24 @@
 
 5. 在“解决方案资源管理器”中，右键单击项目，然后选择“提交到 Storm on HDInsight”。如果出现提示，请输入 Azure 订阅的凭据。
    
-    ![提交到 storm 菜单项的图像](./media/hdinsight-storm-correlation-topology/submittostorm.png)
+    ![提交到 storm 菜单项的图像](./media/hdinsight-storm-correlation-topology/submittostorm.png)  
 
-6. 在“提交拓扑”对话框中，选择将运行此拓扑的 Storm 群集。
+
+6. 在“提交拓扑”对话框中，选择要将此拓扑部署到的 Storm 群集。
    
     > [AZURE.NOTE]
     第一次提交拓扑时，可能需要几秒钟来检索 HDInsight 群集名称。
 
-7. 一旦上载拓扑并将其提交到该群集，“Storm 拓扑视图”将打开并显示正在运行的拓扑。选择 **CorrelationTopology**，然后使用页面右上角的刷新按钮刷新拓扑信息。
+7. 上载拓扑并将其提交到群集后，“Storm 拓扑视图”将打开并显示正在运行的拓扑。选择 **CorrelationTopology**，然后使用页面右上角的刷新按钮刷新拓扑信息。
    
-    ![拓扑视图的图像](./media/hdinsight-storm-correlation-topology/topologyview.png)
+    ![拓扑视图的图像](./media/hdinsight-storm-correlation-topology/topologyview.png)  
    
     当拓扑开始生成数据时，“已发出”列中的值将递增。
    
     > [AZURE.NOTE]
     如果“Storm 拓扑视图”未自动打开，可按以下步骤将其打开：
-    > <p>
-    ><p> 1. 在“解决方案资源管理器”中，展开“Azure”，然后展开“HDInsight”。
-    ><p> 2. 右键单击在其上运行拓扑的 Storm 群集，然后选择“查看 Storm 拓扑”
+    > <p> 
+    ><p> 1.在“解决方案资源管理器”中，展开“Azure”，然后展开“HDInsight”。<p> 2.右键单击在其上运行拓扑的 Storm 群集，然后选择“查看 Storm 拓扑”
 
 ## 查询数据
 
@@ -197,12 +198,12 @@
    
         Session e6992b3e-79be-4991-afcf-5cb47dd1c81c started at 6/5/2015 6:10:15 PM. Timestamp = 1433527820737
 
-搜索结束事件与搜索开始事件在原理上是相同的。不过，结束事件是在开始事件之后 1 到 5 分钟随机生成的。因此，可能需要尝试数个时间范围才能找到结束事件。结束事件还会包含会话持续时间 - 开始事件时间与结束事件时间之差。下面是结束事件数据的一个示例：
+搜索结束事件与搜索开始事件在原理上是相同的。不过，结束事件是在开始事件之后 1 到 5 分钟随机生成的。因此，可能需要尝试数个时间范围才能找到结束事件。结束事件还包含会话持续时间 - 开始事件时间与结束事件时间之差。下面是结束事件数据的一个示例：
 
     Session fc9fa8e6-6892-4073-93b3-a587040d892e lasted 2 minutes, and ended at 6/5/2015 6:12:15 PM
 
 > [AZURE.NOTE]
-虽然输入的时间值为本地时间，但从查询返回的时间将是 UTC。
+虽然输入的时间值为本地时间，但从查询返回的时间将是 UTC 格式。
 
 ## 停止拓扑
 
@@ -216,5 +217,5 @@
 
 如需更多 Storm 示例，请参阅 [Storm on HDInsight 拓扑示例](/documentation/articles/hdinsight-storm-example-topology/)。
 
-<!---HONumber=Mooncake_0120_2017-->
-<!--Update_Description: update from ASM to ARM-->
+<!---HONumber=Mooncake_0306_2017-->
+<!--Update_Description: add information about HDInsight Windows is going to be abandoned-->

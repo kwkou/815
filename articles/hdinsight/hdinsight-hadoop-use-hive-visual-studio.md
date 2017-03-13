@@ -15,7 +15,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="big-data"
     ms.date="11/28/2016"
-    wacn.date="01/25/2017"
+    wacn.date="03/10/2017"
     ms.author="larryfr" />
 
 # 使用适用于 Visual Studio 的 HDInsight 工具运行 Hive 查询
@@ -33,9 +33,13 @@
 
 ## <a id="prereq"></a>先决条件
 
-若要完成本文中的步骤，你将需要以下各项：
+要完成本文中的步骤，需要：
 
-* Azure HDInsight（HDInsight 上的 Hadoop）群集（基于 Linux 或 Windows）
+* Azure HDInsight（HDInsight 上的 Hadoop）群集
+
+    > [AZURE.IMPORTANT]
+    Linux 是在 HDInsight 3.4 版或更高版本上使用的唯一操作系统。有关详细信息，请参阅 [HDInsight 在 Windows 上弃用](/documentation/articles/hdinsight-component-versioning/#hdi-version-32-and-33-nearing-deprecation-date)。
+
 * Visual Studio（以下版本之一）：
   
     包含 [Update 4](https://www.microsoft.com/download/details.aspx?id=44921) 的 Visual Studio 2013 Community/Professional/Premium/Ultimate
@@ -65,7 +69,7 @@
      
         > [AZURE.NOTE]
         如果希望以外部源更新基础数据（例如自动化数据上载过程），或以其他 MapReduce 操作更新基础数据，但希望 Hive 查询始终使用最新数据，则必须使用外部表。
-        > <p>
+        > <p> 
         > 删除外部表**不会**删除数据，只会删除表定义。
 
     * **ROW FORMAT**：告知 Hive 如何设置数据的格式。在此情况下，每个日志中的字段以空格分隔。
@@ -138,7 +142,6 @@
 [hdinsight-use-oozie]: /documentation/articles/hdinsight-use-oozie/
 [hdinsight-analyze-flight-data]: /documentation/articles/hdinsight-analyze-flight-delay-data/
 
-
 [hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage/
 
 [hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters/
@@ -152,5 +155,5 @@
 [img-hdi-hive-powershell-output]: ./media/hdinsight-use-hive/HDI.Hive.PowerShell.Output.png
 [image-hdi-hive-architecture]: ./media/hdinsight-use-hive/HDI.Hive.Architecture.png
 
-<!---HONumber=Mooncake_0120_2017-->
-<!--Update_Description: update from ASM to ARM-->
+<!---HONumber=Mooncake_0306_2017-->
+<!--Update_Description: add information about HDInsight Windows is going to be abandoned-->

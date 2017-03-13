@@ -7,7 +7,7 @@
     manager="jhubbard"
     editor="cgronlun"
     tags="azure-portal" />
-<tags 
+<tags
     ms.assetid="77a1d0e0-55de-4e61-98a0-060914fb7ca0"
     ms.service="hdinsight"
     ms.workload="big-data"
@@ -15,11 +15,16 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="02/05/2016"
-    wacn.date="02/06/2017"
-    ms.author="nitinme" />
+    wacn.date="03/10/2017"
+    ms.author="nitinme" />  
 
-# 在 HDInsight 中安装和使用 Giraph
+
+# 在基于 Windows 的 HDInsight 群集上安装并使用 Giraph
+
 了解如何使用 Giraph 通过脚本操作来自定义基于 Windows 的 HDInsight 群集，以及如何使用 Giraph 来处理大型关系图。有关在基于 Linux 的群集中使用 Giraph 的信息，请参阅[在 HDInsight Hadoop 群集 (Linux) 上安装 Giraph](/documentation/articles/hdinsight-hadoop-giraph-install-linux/)。
+
+> [AZURE.IMPORTANT]
+本文档中的步骤仅适用于基于 Windows 的 HDInsight 群集。低于 HDInsight 3.4 的 HDInsight 版本仅在 Windows 上提供。Linux 是在 HDInsight 3.4 版或更高版本上使用的唯一操作系统。有关详细信息，请参阅 [HDInsight 在 Windows 上弃用](/documentation/articles/hdinsight-component-versioning/#hdi-version-32-and-33-nearing-deprecation-date)。有关如何在基于 Linux 的 HDInsight 群集上安装 Giraph 的信息，请参阅[在 HDInsight Hadoop 群集 (Linux) 上安装 Giraph](/documentation/articles/hdinsight-hadoop-giraph-install-linux/)。
 
 可以使用*脚本操作*，在 Azure HDInsight 的任何一种群集（Hadoop、Storm、HBase、Spark）上安装 Giraph。用于在 HDInsight 群集上安装 Giraph 的示例脚本可通过 [https://hdiconfigactions.blob.core.windows.net/giraphconfigactionv01/giraph-installer-v01.ps1](https://hdiconfigactions.blob.core.windows.net/giraphconfigactionv01/giraph-installer-v01.ps1) 上的只读 Azure 存储 Blob 获得。示例脚本仅适用于 HDInsight 群集版本 3.1。有关 HDInsight 群集版本的详细信息，请参阅 [HDInsight 群集版本](/documentation/articles/hdinsight-component-versioning/)。
 
@@ -74,7 +79,7 @@
 
     使用表示对象间距离的值（或权重）绘制图形后，上述数据可能类似以下形式：
 
-    ![tiny\_graph.txt 中的对象绘制为圆圈，线条表示对象之间的不同距离](./media/hdinsight-hadoop-giraph-install/giraph-graph.png)  
+    ![绘制为圆形的 tiny\_graph.txt，各个圆形之间有长度不一的线条](./media/hdinsight-hadoop-giraph-install/giraph-graph.png)  
 
 2. 运行 SimpleShortestPathsComputation 示例。使用 tiny\_graph.txt 文件作为输入，通过以下 Azure PowerShell cmdlet 来运行该示例。
 
@@ -129,11 +134,11 @@
 
     此时会在工作站上的当前目录中创建 **example/output/shortestpaths** 目录结构，并将两个输出文件下载到该位置。
 
-    使用 **Cat** 命令来显示文件的内容:
+    使用 **Cat** cmdlet 显示文件的内容：
 
         Cat example/output/shortestpaths/part*
 
-    输出应该类似于以下:
+    输出应如下所示：
 
         0    1.0
         4    5.0
@@ -141,11 +146,11 @@
         1    0.0
         3    1.0
 
-    这个 SimpleShortestPathComputation 示例硬编码为以 ID 1 对象开始，寻找到其他对象的最短路径。所以，输出应该为 `destination_id distance`，距离为目标 ID 与 ID 1 对象之间的边的重量之和。
+    SimpleShortestPathComputation 示例硬编码为从对象 ID 1 开始查找与其他对象间的最短路径。因此，输出应显示为 `destination_id distance`，其中，distance 为对象 ID 1 与目标 ID 的边缘之间的行程值（或权重）。
 
-    可以图像中的最短路径看检测输出的结果。请注意 ID 1 到 ID 4 的最短路径是 5。这是 <span style="color:orange">ID 1 和 3</span> 的距离，加上 <span style="color:red">ID 3 和 4</span> 的距离。
+    在可视化此数据的情况下，可以通过行经 ID 1 与所有其他对象之间的最短路径来验证结果。请注意，ID 1 和 ID 4 之间的最短路径为 5。这是从 <span style="color:orange">ID 1 到 ID 3</span>，然后再从 <span style="color:red">ID 3 到 ID 4</span> 的总距离。
 
-    ![Drawing of objects as circles with shortest paths drawn between](./media/hdinsight-hadoop-giraph-install/giraph-graph-out.png)
+    ![对象绘制为圆形，并绘制对象之间的最短路径](./media/hdinsight-hadoop-giraph-install/giraph-graph-out.png)  
 
 ## 使用 Azure PowerShell 安装 Giraph
 请参阅[使用脚本操作自定义 HDInsight 群集](/documentation/articles/hdinsight-hadoop-customize-cluster/#call-scripts-using-azure-powershell)。此示例演示如何使用 Azure PowerShell 安装 Spark。你需要自定义脚本以使用 [https://hdiconfigactions.blob.core.windows.net/giraphconfigactionv01/giraph-installer-v01.ps1](https://hdiconfigactions.blob.core.windows.net/giraphconfigactionv01/giraph-installer-v01.ps1)。
@@ -171,4 +176,5 @@
 [hdinsight-install-spark]: /documentation/articles/hdinsight-hadoop-spark-install/
 [hdinsight-cluster-customize]: /documentation/articles/hdinsight-hadoop-customize-cluster/
 
-<!---HONumber=Mooncake_0103_2017-->
+<!---HONumber=Mooncake_0306_2017-->
+<!--Update_Description: add information about HDInsight Windows is going to be abandoned-->

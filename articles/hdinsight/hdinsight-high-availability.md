@@ -14,14 +14,14 @@
     ms.tgt_pltfrm="na"
     ms.devlang="multiple"
     ms.topic="article"
-    ms.date="10/21/2016"
-    wacn.date="01/25/2017"
+    ms.date="02/06/2017"
+    wacn.date="03/10/2017"
     ms.author="jgao" />  
 
 
 # HDInsight 中基于 Windows 的 Hadoop 群集的可用性和可靠性
-> [AZURE.NOTE]
-本文档中使用的步骤特定于基于 Windows 的 HDInsight 群集。如果使用基于 Linux 的群集，请参阅 [HDInsight 中基于 Linux 的 Hadoop 群集的可用性和可靠性](/documentation/articles/hdinsight-high-availability-linux/)，以了解有关特定于 Linux 的信息。
+> [AZURE.IMPORTANT]
+本文档中使用的步骤特定于基于 Windows 的 HDInsight 群集。Linux 是在 HDInsight 3.4 版或更高版本上使用的唯一操作系统。有关详细信息，请参阅 [HDInsight 在 Windows 上弃用](/documentation/articles/hdinsight-component-versioning/#hdi-version-32-and-33-nearing-deprecation-date)。如果使用基于 Linux 的群集，请参阅 [HDInsight 中基于 Linux 的 Hadoop 群集的可用性和可靠性](/documentation/articles/hdinsight-high-availability-linux/)，以了解有关特定于 Linux 的信息。
 >
 >
 
@@ -57,9 +57,9 @@ Hadoop 群集的标准实现通常具有单个头节点。HDInsight 通过添加
 在屏幕截图中，活动头节点是 *headnode0*。
 
 ## 访问辅助头节点上的日志文件
-当辅助头节点变为活动头节点时，可以通过浏览 JobTracker UI 来访问辅助头节点上的作业日志，就像是在主活动节点上操作一样。若要访问 JobTracker，必需通过使用 RDP 连接到 Hadoop 群集，如以上部分中所述。在远程连接到了该群集后，双击位于桌面上的“Hadoop 名称节点状态”图标，然后单击“NameNode 日志”，即可转到辅助头节点上的日志目录。
+当辅助头节点变为活动头节点时，可以通过浏览 JobTracker UI 来访问辅助头节点上的作业日志，就像是在主活动节点上操作一样。若要访问 JobTracker，必需通过使用 RDP 连接到 Hadoop 群集，如以上部分中所述。通过 RDP 连接到该群集后，双击位于桌面上的“Hadoop 名称节点状态”图标，然后单击“NameNode 日志”，即可转到辅助头节点上的日志目录。
 
-![](./media/hdinsight-high-availability/Hadoop.Head.Node.Log.Files.png)
+![](./media/hdinsight-high-availability/Hadoop.Head.Node.Log.Files.png)  
 
 ## 配置头节点大小
 默认情况下，头节点分配作为大型虚拟机 (VM)。管理在群集上运行的大多数 Hadoop 作业只需要这种大小。但是有时，头节点可能需要超大 VM。例如，当群集需要管理大量的小型 Oozie 作业时。
@@ -102,5 +102,5 @@ Hadoop 群集的标准实现通常具有单个头节点。HDInsight 通过添加
 * [使用 RDP 连接到 HDInsight 群集](/documentation/articles/hdinsight-administer-use-management-portal/#connect-to-clusters-using-rdp)
 * [使用 HDInsight .NET SDK](/documentation/articles/hdinsight-provision-clusters/)
 
-<!---HONumber=Mooncake_0120_2017-->
-<!--Update_Description: update from ASM to ARM-->
+<!---HONumber=Mooncake_0306_2017-->
+<!--Update_Description: add information about HDInsight Windows is going to be abandoned-->

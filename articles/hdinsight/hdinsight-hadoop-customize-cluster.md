@@ -7,7 +7,7 @@
     manager="jhubbard"
     editor="cgronlun"
     tags="azure-portal" />
-<tags 
+<tags
     ms.assetid="3a63e216-4163-40c1-aa04-6b42fd0162ad"
     ms.service="hdinsight"
     ms.workload="big-data"
@@ -15,13 +15,16 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="10/05/2016"
-    wacn.date="02/20/2017"
+    wacn.date="03/10/2017"
     ms.author="nitinme" />
 
 # 使用脚本操作自定义基于 Windows 的 HDInsight 群集
 创建群集期间，可以使用**脚本操作**调用[自定义脚本](/documentation/articles/hdinsight-hadoop-script-actions/)，以便在群集上安装其他软件。
 
 本文中的信息特定于基于 Windows 的 HDInsight 群集。有关基于 Linux 的群集的信息，请参阅[使用脚本操作自定义基于 Linux 的 HDInsight 群集](/documentation/articles/hdinsight-hadoop-customize-cluster-linux/)。
+
+> [AZURE.IMPORTANT]
+Linux 是在 HDInsight 3.4 版或更高版本上使用的唯一操作系统。有关详细信息，请参阅 [HDInsight 在 Windows 上弃用](/documentation/articles/hdinsight-component-versioning/#hdi-version-32-and-33-nearing-deprecation-date)。
 
 也可以使用其他各种方法自定义 HDInsight 群集，例如包括其他 Azure 存储帐户、更改 hadoop 配置文件（core-site.xml、hive-site.xml 等），或者将共享库（如 Hive、Oozie）添加到群集中的共同位置。这些自定义可通过使用 Azure PowerShell、Azure HDInsight .NET SDK 或 Azure 门户预览来完成。有关详细信息，请参阅[在 HDInsight 中创建 Hadoop 群集][hdinsight-provision-cluster]。
 
@@ -76,7 +79,7 @@ HDInsight 提供了多个脚本用于在 HDInsight 群集上安装以下组件�
     按 ENTER 可添加多个脚本操作，以便在群集上安装多个组件。
 3. 单击“选择”可保存脚本操作配置，并继续创建群集。
 
-## <a name="call-scripts-using-azure-powershell"></a> 使用 Azure PowerShell 调用脚本
+## <a name="call_scripts_using_powershell" id="call-scripts-using-azure-powershell"></a>使用 Azure PowerShell 调用脚本
 以下 PowerShell 脚本演示如何在基于 Windows 的 HDInsight 群集上安装 Spark。
 
     # Provide values for these variables
@@ -161,7 +164,7 @@ HDInsight 提供了多个脚本用于在 HDInsight 群集上安装以下组件�
 
 出现提示时，请输入群集的凭据。创建群集可能需要几分钟时间。
 
-## <a name="call-scripts-using-net-sdk"></a> 使用 .NET SDK 调用脚本
+## <a name="call-scripts-using-net-sdk"></a>使用 .NET SDK 调用脚本
 以下示例演示如何在基于 Windows 的 HDInsight 群集上安装 Spark。若要安装其他软件，需要替换代码中的脚本文件。
 
 **创建具有 Spark 的 HDInsight 群集**
@@ -288,12 +291,12 @@ HDInsight 服务提供两种类型的开源组件：
 * **内置组件** - 这些组件预先安装在 HDInsight 群集上，并提供群集的核心功能。例如，Yarn ResourceManager、Hive 查询语言 (HiveQL) 和 Mahout 库均属于此类别。[HDInsight 提供的 Hadoop 群集版本有哪些新增功能](/documentation/articles/hdinsight-component-versioning/)</a>中提供了群集组件的完整列表。
 * **自定义组件** - 作为群集用户，可以安装，或者在工作负荷中使用由社区提供或自己创建的任何组件。
 
-完全支持内置组件，Microsoft 支持部门将帮助找出并解决与这些组件相关的问题。
+完全支持内置组件，Azure 支持部门将帮助找出并解决与这些组件相关的问题。
 
 > [AZURE.WARNING]
 完全支持通过 HDInsight 群集提供的组件，Azure 支持部门将帮助找出并解决与这些组件相关的问题。
 ><p>
-> 自定义组件可获得合理范围的支持，有助于进一步解决问题。这可能会促进解决问题，或要求使用可用的开源技术渠道，在渠道中可找到该技术的深厚的专业知识。有许多可以使用的社区站点，例如：[HDInsight 的 MSDN 论坛](https://social.msdn.microsoft.com/Forums/azure/zh-cn/home?forum=hdinsight)、[Azure CSDN](http://azure.csdn.net)。此外，Apache 项目在 [http://apache.org](http://apache.org) 上提供了项目站点，例如 [Hadoop](http://hadoop.apache.org/)、[Spark](http://spark.apache.org/)。
+> 自定义组件可获得合理范围的支持，有助于进一步解决问题。这可能会促进解决问题，或要求使用可用的开源技术渠道，在渠道中可找到该技术的深厚的专业知识。有许多可以使用的社区站点，例如：[HDInsight 的 MSDN 论坛](https://social.msdn.microsoft.com/Forums/azure/zh-cn/home?forum=hdinsight)和 [Azure CSDN](http://azure.csdn.net)。此外，Apache 项目在 [http://apache.org](http://apache.org) 上提供了项目站点，例如 [Hadoop](http://hadoop.apache.org/)、[Spark](http://spark.apache.org/)。
 >
 >
 
@@ -322,4 +325,5 @@ HDInsight 服务可提供多种方法使用自定义组件。无论在群集上�
 
 [img-hdi-cluster-states]: ./media/hdinsight-hadoop-customize-cluster/HDI-Cluster-state.png "群集创建期间的阶段"
 
-<!---HONumber=Mooncake_0213_2017-->
+<!---HONumber=Mooncake_0306_2017-->
+<!--Update_Description: add information about HDInsight Windows is going to be abandoned-->

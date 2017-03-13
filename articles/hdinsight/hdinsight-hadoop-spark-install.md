@@ -6,7 +6,7 @@
     author="nitinme"
     manager="jhubbard"
     editor="cgronlun" />
-<tags 
+<tags
     ms.assetid="7ebf4e2b-0742-4a2f-b429-60dc30d3f905"
     ms.service="hdinsight"
     ms.workload="big-data"
@@ -14,12 +14,14 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="02/05/2016"
-    wacn.date="02/20/2017"
-    ms.author="nitinme" />
+    wacn.date="03/10/2017"
+    ms.author="nitinme" />  
 
-# 使用脚本操作在 HDInsight Hadoop 群集上安装并使用 Spark
+
+# 使用脚本操作在基于 Windows 的 HDInsight 群集上安装并使用 Spark
+
 > [AZURE.IMPORTANT]
-本文现已弃用。HDInsight 现在为基于 Windows 的群集提供属于一流群集类型的 Spark，这意味着现在可以直接创建 Spark 群集，而无需使用脚本操作修改 Hadoop 群集。使用 Spark 群集类型，你可以获得 Spark 版本为 1.3.1 的 HDInsight 3.2 版群集。若要安装其他版本的 Spark，可使用脚本操作。HDInsight 提供示例脚本操作脚本。
+本文现已弃用。HDInsight 现在为基于 Linux 的群集提供属于一流群集类型的 Spark，这意味着现在可以直接创建 Spark 群集，而无需使用脚本操作修改 Hadoop 群集。此外，本文档中的步骤仅适用于基于 Windows 的 HDInsight 群集。低于 HDInsight 3.4 的 HDInsight 版本仅在 Windows 上提供。Linux 是在 HDInsight 3.4 版或更高版本上使用的唯一操作系统。有关详细信息，请参阅 [HDInsight 在 Windows 上弃用](/documentation/articles/hdinsight-component-versioning/#hdi-version-32-and-33-nearing-deprecation-date)。
 
 了解如何使用脚本操作在基于 Windows 的 HDInsight 上安装 Spark，以及如何在 HDInsight 群集上运行 Spark 查询。
 
@@ -246,17 +248,17 @@ Spark SQL 允许你使用 Spark 运行以结构化查询语言 (SQL)、HiveQL �
     <td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;">Config</td>
     <td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px; padding-right:5px;">脚本操作信息添加到的配置对象。</td></tr>
     <tr>
-    <td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;">Name</td>
+    <td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;">名称</td>
     <td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;">脚本操作的名称。</td></tr>
     <tr>
     <td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;">ClusterRoleCollection</td>
-    <td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;">指定在其上运行自定义脚本的节点。有效值为 HeadNode（在头节点上安装）或 DataNode（在所有数据节点上安装）。你可以使用任一值或两个值。</td></tr>
+    <td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;">指定在其上运行自定义脚本的节点。有效值是 HeadNode（在头节点上安装）或 DataNode（在所有数据节点上安装）。可以使用任一值或两个值。</td></tr>
     <tr>
     <td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;">Uri</td>
     <td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;">指定执行的脚本的 URI。</td></tr>
     <tr>
     <td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;">Parameters</td>
-    <td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;">脚本所需的参数。本主题中使用的示例脚本不需要任何参数，因此，你在上述代码段中看不到此参数。
+    <td style="border-color: #c6c6c6; border-width: 2px; border-style: solid; border-collapse: collapse; padding-left:5px;">脚本所需的参数。本主题中使用的示例脚本不需要任何参数，因此，在上述代码段中看不到此参数。
     </td></tr>
     </table>
 4. 最后，开始创建装有 Spark 的自定义群集。
@@ -286,4 +288,5 @@ Spark SQL 允许你使用 Spark 运行以结构化查询语言 (SQL)、HiveQL �
 [hdinsight-cluster-customize]: /documentation/articles/hdinsight-hadoop-customize-cluster/
 [powershell-install-configure]: https://docs.microsoft.com/powershell/azureps-cmdlets-docs
 
-<!---HONumber=Mooncake_0213_2017-->
+<!---HONumber=Mooncake_0306_2017-->
+<!--Update_Description: add information about HDInsight Windows is going to be abandoned-->
