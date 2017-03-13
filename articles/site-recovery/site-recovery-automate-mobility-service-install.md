@@ -1,6 +1,6 @@
 <properties
-    pageTitle="使用 Site Recovery 和 Azure Automation DSC 将 VMware 虚拟机复制到 Azure | Azure"
-    description="介绍如何通过 Azure Automation DSC 将适用于虚拟机/物理机的 Azure Site Recovery 移动服务和 Azure 代理自动部署到 Azure。"
+    pageTitle="使用 Azure Automation DSC 部署 Site Recovery 移动服务 | Azure"
+    description="介绍如何使用 Azure Automation DSC 将适用于 VMware VM 和物理机服务器复制的 Azure Site Recovery 移动服务与 Azure 代理自动部署到 Azure"
     services="site-recovery"
     documentationcenter=""
     author="krnese"
@@ -14,12 +14,12 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="11/01/2016"
-    wacn.date="02/15/2017"
+    ms.date="02/06/2017"
+    wacn.date="03/10/2017"
     ms.author="krnese" />  
 
 
-# 使用 Site Recovery 和 Azure Automation DSC 将 VMware 虚拟机复制到 Azure
+# 使用 Azure Automation DSC 部署移动服务以复制 VM
 在 Operations Management Suite 中，我们提供了一个可在业务连续性计划中使用的综合性备份和灾难恢复解决方案。
 
 我们已使用 Hyper-V 副本并结合 Hyper-V 体验了这些功能。但是，这些功能现已经过扩展，可支持异构设置，因为客户在其云中拥有多个虚拟机监管程序与平台。
@@ -516,4 +516,4 @@
 ## 后续步骤
 部署移动服务代理后，可为虚拟机[启用复制](/documentation/articles/site-recovery-vmware-to-azure/#step-6-replicate-applications)。
 
-<!---HONumber=Mooncake_1205_2016-->
+<!---HONumber=Mooncake_0306_2017-->
