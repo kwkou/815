@@ -77,10 +77,21 @@
    * 运行 **netsh http show servicestate** 以检查是否针对指定的协议/端口运行了侦听器：
 4. 设置防火墙。在 Hyper-V 安装期间创建防火墙规则，以允许默认端口上的流量（443 上的 HTTPS 流量，80 上的 Kerberos 流量）。按如下所示启用这些规则：
 
-  - 群集 (443) 上的证书身份验证：``Get-ClusterNode | ForEach-Object {Invoke-command -computername \$\_.name -scriptblock {Enable-Netfirewallrule -displayname "Hyper-V Replica HTTPS Listener (TCP-In)"}}``
-  - 群集 (80) 上的 Kerberos 身份验证：``Get-ClusterNode | ForEach-Object {Invoke-command -computername \$\_.name -scriptblock {Enable-Netfirewallrule -displayname "Hyper-V Replica HTTP Listener (TCP-In)"}}``
-  - 独立服务器上的证书身份验证：``Enable-Netfirewallrule -displayname "Hyper-V Replica HTTPS Listener (TCP-In)"``
-  - 独立服务器上的 Kerberos 身份验证：``Enable-Netfirewallrule -displayname "Hyper-V Replica HTTP Listener (TCP-In)"``
+  - 群集 (443) 上的证书身份验证：
+  
+        Get-ClusterNode | ForEach-Object {Invoke-command -computername \$\_.name -scriptblock {Enable-Netfirewallrule -displayname "Hyper-V Replica HTTPS Listener (TCP-In)"}}
+
+  - 群集 (80) 上的 Kerberos 身份验证：
+        
+        Get-ClusterNode | ForEach-Object {Invoke-command -computername \$\_.name -scriptblock {Enable-Netfirewallrule -displayname "Hyper-V Replica HTTP Listener (TCP-In)"}}
+
+  - 独立服务器上的证书身份验证：
+    
+        Enable-Netfirewallrule -displayname "Hyper-V Replica HTTPS Listener (TCP-In)"
+
+  - 独立服务器上的 Kerberos 身份验证：
+  
+        Enable-Netfirewallrule -displayname "Hyper-V Replica HTTP Listener (TCP-In)"
 
 ## 步骤 3：运行 Capacity Planner 工具
 在准备好主站点并设置恢复服务器之后，可以运行该工具。

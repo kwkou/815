@@ -22,7 +22,6 @@
 
 > [AZURE.SELECTOR]
 - [Azure 门户](/documentation/articles/site-recovery-vmm-to-azure/)
-- [PowerShell - Resource Manager](/documentation/articles/site-recovery-vmm-to-azure-powershell-resource-manager/)
 - [经典门户](/documentation/articles/site-recovery-vmm-to-azure-classic/)
 - [PowerShell - 经典](/documentation/articles/site-recovery-deploy-with-powershell/)
 
