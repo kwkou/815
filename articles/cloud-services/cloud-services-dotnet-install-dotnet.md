@@ -47,23 +47,23 @@
 
 1. 将以下内容添加所有角色的 **WebRole** **或WorkerRole** 节点下的 *ServiceDefinition.csdef* 文件：
 	
-	```xml
-	<LocalResources>
-      <LocalStorage name="NETFXInstall" sizeInMB="1024" cleanOnRoleRecycle="false" />
-    </LocalResources>    
-	<Startup>
-      <Task commandLine="install.cmd" executionContext="elevated" taskType="simple">
-        <Environment>
-          <Variable name="PathToNETFXInstall">
-            <RoleInstanceValue xpath="/RoleEnvironment/CurrentInstance/LocalResources/LocalResource[@name='NETFXInstall']/@path" />
-          </Variable>
-          <Variable name="ComputeEmulatorRunning">
-            <RoleInstanceValue xpath="/RoleEnvironment/Deployment/@emulated" />
-          </Variable>
-        </Environment>
-      </Task>
-    </Startup>
-	```
+
+    	<LocalResources>
+          <LocalStorage name="NETFXInstall" sizeInMB="1024" cleanOnRoleRecycle="false" />
+        </LocalResources>    
+    	<Startup>
+          <Task commandLine="install.cmd" executionContext="elevated" taskType="simple">
+            <Environment>
+              <Variable name="PathToNETFXInstall">
+                <RoleInstanceValue xpath="/RoleEnvironment/CurrentInstance/LocalResources/LocalResource[@name='NETFXInstall']/@path" />
+              </Variable>
+              <Variable name="ComputeEmulatorRunning">
+                <RoleInstanceValue xpath="/RoleEnvironment/Deployment/@emulated" />
+              </Variable>
+            </Environment>
+          </Task>
+        </Startup>
+
 
 	上述配置将使用管理员特权来执行控制台命令*install.cmd*，以安装 .NET Framework。该配置还会创建名为 *NETFXInstall* 的 LocalStorage。启动脚本会将临时文件夹设置为使用此本地存储资源，以便从此资源下载并安装 .NET Framework 安装程序。必须将此资源的大小设置为至少 1024MB，以确保能够正确安装 Framework。有关启动任务的详细信息，请参阅[常见的云服务启动任务](/documentation/articles/cloud-services-startup-tasks-common/)
 

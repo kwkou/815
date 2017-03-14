@@ -22,7 +22,6 @@
 
 本文中所述过程向你演示如何设置对 Azure 云应用程序的持续交付。此过程使你能够在签入每个代码后，自动创建服务包并将其部署到 Azure。本文中介绍的包生成过程与 Visual Studio 中的 **Package** 命令等效，而发布步骤与 Visual Studio 中的 **Publish** 命令等效。本文包含使用 MSBuild 命令行语句和 Windows PowerShell 脚本创建生成服务器的方法，并演示了如何选择性地配置 Visual Studio Team Foundation Server - Team Build 定义以使用 MSBuild 命令和 PowerShell 脚本。可针对生成环境和 Azure 目标环境自定义此过程。
 
-也可以使用 Visual Studio Team Services（Azure 中托管的 TFS 版本）更轻松地实现此目的。有关详细信息，请参阅[使用 Visual Studio Team Services 向 Azure 持续交付][使用 Visual Studio Team Services 向 Azure 持续交付]。
 
 开始之前，应从 Visual Studio 中发布应用程序。这将确保所有资源在尝试实现发布过程的自动化时可用并已初始化。
 
@@ -46,7 +45,7 @@
 
 1.  如果在生成服务器上安装了 Visual Studio，请在 Windows 上的“Visual Studio 工具”文件夹中找到并选择“Visual Studio 命令提示符”。
 
-    如果未在生成服务器上安装 Visual Studio，请打开命令提示符并确保可按相应的路径访问 MSBuild.exe。MSBuild 与 .NET Framework 一起安装在路径 %WINDIR%\\Microsoft.NET\\Framework\*Version* 中。例如，若要在已安装 .NET Framework 4 的情况下将 MSBuild.exe 添加到 PATH 环境变量，请在命令提示符处键入以下命令：
+    如果未在生成服务器上安装 Visual Studio，请打开命令提示符并确保可按相应的路径访问 MSBuild.exe。MSBuild 与 .NET Framework 一起安装在路径 %WINDIR%\\Microsoft.NET\\Framework\\*Version* 中。例如，若要在已安装 .NET Framework 4 的情况下将 MSBuild.exe 添加到 PATH 环境变量，请在命令提示符处键入以下命令：
 
         set PATH=%PATH%;"C:\Windows\Microsoft.NET\Framework\v4.0.30319"
 
@@ -125,7 +124,7 @@
 
     这会显示有关订阅的信息。验证所有内容是否正确。
 
-4.  将本文末尾提供的脚本模板保存到脚本文件夹，路径为 c:\\scripts\\WindowsAzure\**PublishCloudService.ps1**。
+4.  将本文末尾提供的脚本模板保存到脚本文件夹，路径为 c:\\scripts\\WindowsAzure\\**PublishCloudService.ps1**。
 
 5.  查看脚本的参数部分。添加或修改任何默认值。始终可通过传入显式参数来覆盖这些值。
 

@@ -30,7 +30,7 @@
 本演练介绍如何实现使用 .NET EventSource 类发出遥测数据的 Azure 辅助角色。Azure Diagnostics 用于收集遥测数据，并将其存储在一个 Azure 存储帐户中。创建辅助角色时，Visual Studio 将在适用于 .NET 2.4 和更低版本的 Azure SDK 中，自动启用 Diagnostics 1.0 作为解决方案的一部分。以下说明介绍了创建辅助角色、从解决方案禁用 Diagnostics 1.0，以及在辅助角色中部署 Diagnostics 1.2 或 1.3 的过程。
 
 ### 先决条件
-本文假定你具有 Azure 订阅，并将 Visual Studio 2013 与 Azure SDK 结合使用。如果你没有 Azure 订阅，你可以注册[试用版][]。请确保 [安装并配置 Azure PowerShell 0.8.7 或更高版本][]。
+本文假定你具有 Azure 订阅，并将 Visual Studio 2013 与 Azure SDK 结合使用。如果你没有 Azure 订阅，你可以注册[试用版][]。请确保 [安装和配置 Azure PowerShell 0.8.7 或更高版本][]。
 
 ### 步骤 1：创建辅助角色
 1.	启动 **Visual Studio 2013**。
@@ -167,7 +167,7 @@
 	
 
 ### 步骤 5：在辅助角色上安装 Diagnostics
-用于在 Web 或辅助角色上管理 Diagnostics 的 PowerShell cmdlet 为：Set-AzureServiceDiagnosticsExtension、Get-AzureServiceDiagnosticsExtension 和 Remove-AzureServiceDiagnosticsExtension。
+用于在 Web 或辅助角色上管理 Diagnostics 的 PowerShell cmdlet 为：`Set-AzureServiceDiagnosticsExtension`、`Get-AzureServiceDiagnosticsExtension` 和 `Remove-AzureServiceDiagnosticsExtension`。
 
 1.	打开 Azure PowerShell。
 2.	执行脚本以在辅助角色上安装 Diagnostics（将 *StorageAccountKey* 替换为 wadexample 存储帐户的存储帐户密钥）：

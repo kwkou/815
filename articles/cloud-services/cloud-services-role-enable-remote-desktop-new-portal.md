@@ -42,7 +42,7 @@ Azure 门户使用远程桌面扩展方法，即使在部署应用程序之后�
 
 3. 填写所需的字段：用户名、密码、到期时间和证书。
 
-    ![云服务远程桌面](./media/cloud-services-role-enable-remote-desktop-new-portal/CloudServices_Remote_Desktop_Details.png)  
+    ![云服务远程桌面](./media/cloud-services-role-enable-remote-desktop-new-portal/CloudServices_Remote_Desktop_Details.PNG)  
 
 
    > [AZURE.WARNING]
@@ -60,7 +60,7 @@ Azure 门户使用远程桌面扩展方法，即使在部署应用程序之后�
 2. 选择一个已配置远程桌面的角色实例。
 3. 单击“连接”下载角色实例的 RDP 文件。
 
-    ![云服务远程桌面](./media/cloud-services-role-enable-remote-desktop-new-portal/CloudServices_Remote_Desktop_Connect.png)  
+    ![云服务远程桌面](./media/cloud-services-role-enable-remote-desktop-new-portal/CloudServices_Remote_Desktop_Connect.PNG)  
 
 
 4. 依次单击“打开”和“连接”以启动远程桌面连接。

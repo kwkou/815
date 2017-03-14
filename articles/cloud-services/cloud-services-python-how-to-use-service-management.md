@@ -35,7 +35,7 @@ Azure SDK for Python 可包装 [Azure 服务管理 API][svc-mgmt-rest-api]，后
 
 ## <a name="Installation"></a>安装
 
-`azure-servicemanagement-legacy` 包中提供本文介绍的所有功能，可以使用 pip 安装该包。有关安装的更多详细信息（例如，如果刚开始接触 Python），请参阅此文：[安装 Python 和 Azure SDK](/documentation/articles/python-how-to-install/)
+`azure-servicemanagement-legacy` 包中提供本文介绍的所有功能，可以使用 pip 安装该包。有关安装的更多详细信息（例如，如果刚开始接触 Python），请参阅此文：[安装 Python 和 Azure SDK](/documentation/articles/python-how-to-install/)。
 
 ## <a name="Connect"> </a>如何：连接到服务管理
 若要连接到服务管理终结点，你需要 Azure 订阅 ID 和有效管理证书。可以通过 [Azure 经典管理门户][management-portal]获取订阅 ID。
