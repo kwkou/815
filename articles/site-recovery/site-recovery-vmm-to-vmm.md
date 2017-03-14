@@ -32,10 +32,10 @@
 **先决条件** | **详细信息**
 --- | ---
 **Azure** | 需要一个 [Azure](http://azure.cn/) 帐户。你可以从 [1rmb 试用版](/pricing/1rmb-trial/)开始。[详细了解](/pricing/details/site-recovery/) Site Recovery 定价。
-**本地 VMM** | 建议在主站点和辅助站点中各提供一个 VMM 服务器。<br/><br/> 可在单个 VMM 服务器上的云之间复制。<br/><br/> VMM 服务器应当至少运行具有最新更新的 System Center 2012 SP1。<br/><br/> VMM 服务器需要 Internet 访问权限。
-**VMM 云** | 每个 VMM 服务器必须包含一个或多个云，所有云中必须设置了 Hyper-V 容量配置文件。<br/><br/>云必须包含一个或多个 VMM 主机组。<br/><br/> 如果只有一台 VMM 服务器，它至少需要包含两个云，分别充当主云和辅助云。
-**Hyper-V** | Hyper-V 服务器必须至少运行具有 Hyper-V 角色且安装了最新更新的 Windows Server 2012。<br/><br/> Hyper-V 服务器应包含一个或多个 VM。<br/><br/> Hyper-V 主机服务器应位于主要和辅助 VMM 云中的主机组内。<br/><br/> 如果在 Windows Server 2012 R2 的群集中运行 Hyper-V，请安装更新 [2961977](https://support.microsoft.com/zh-cn/kb/2961977)<br/><br/>如果在 Windows Server 2012 的群集中运行 Hyper-V，并且使用基于静态 IP 地址的群集，则系统不会自动创建群集代理。请手动配置群集代理。[了解详细信息](http://social.technet.microsoft.com/wiki/contents/articles/18792.configure-replica-broker-role-cluster-to-cluster-replication.aspx)。<br/><br/> Hyper-V 服务器需要访问 Internet。
-**URL** | VMM 服务器和 Hyper-V 主机应能够访问以下 URL：<br/><br/> [AZURE.INCLUDE [site-recovery-URLS](../../includes/site-recovery-URLS.md)]
+**本地 VMM** | <p>建议在主站点和辅助站点中各提供一个 VMM 服务器。</p><p> 可在单个 VMM 服务器上的云之间复制。</p><p> VMM 服务器应当至少运行具有最新更新的 System Center 2012 SP1。</p><p> VMM 服务器需要 Internet 访问权限。</p>
+**VMM 云** | <p>每个 VMM 服务器必须包含一个或多个云，所有云中必须设置了 Hyper-V 容量配置文件。</p><p>云必须包含一个或多个 VMM 主机组。</p><p> 如果只有一台 VMM 服务器，它至少需要包含两个云，分别充当主云和辅助云。</p>
+**Hyper-V** | <p>Hyper-V 服务器必须至少运行具有 Hyper-V 角色且安装了最新更新的 Windows Server 2012。</p><p> Hyper-V 服务器应包含一个或多个 VM。</p><p> Hyper-V 主机服务器应位于主要和辅助 VMM 云中的主机组内。</p><p> 如果在 Windows Server 2012 R2 的群集中运行 Hyper-V，请安装更新 [2961977](https://support.microsoft.com/zh-cn/kb/2961977)</p><p>如果在 Windows Server 2012 的群集中运行 Hyper-V，并且使用基于静态 IP 地址的群集，则系统不会自动创建群集代理。请手动配置群集代理。[了解详细信息](http://social.technet.microsoft.com/wiki/contents/articles/18792.configure-replica-broker-role-cluster-to-cluster-replication.aspx)。</p><p> Hyper-V 服务器需要访问 Internet。</p>
+**URL** | <p>VMM 服务器和 Hyper-V 主机应能够访问以下 URL：</p><p> [AZURE.INCLUDE [site-recovery-URLS](../../includes/site-recovery-URLS.md)]</p>
 
 ## 步骤
 
