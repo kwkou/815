@@ -30,9 +30,9 @@
 
 > [AZURE.NOTE]
 请注意以下事项：
-> * 构建流内容的 URL 时，媒体服务会使用 IAssetFile.Name 属性的值（如 http://{AMSAccount}.origin.mediaservices.chinacloudapi.cn/{GUID}/{IAssetFile.Name}/streamingParameters.）。出于此原因，不允许使用百分号编码。**Name** 属性的值不能含有任何以下[百分号编码保留字符](http://en.wikipedia.org/wiki/Percent-encoding#Percent-encoding_reserved_characters)：!*'();:@&=+$,/?%#"。此外，文件扩展名中只能含有一个“.”。
-> * 名称长度不应超过 260 个字符。
-> * 在媒体服务中进行处理时，系统支持的最大文件大小存在限制。有关文件大小限制的详细信息，请参阅[此](/documentation/articles/media-services-quotas-and-limitations/)主题。
+> <p>* 构建流内容的 URL 时，媒体服务会使用 IAssetFile.Name 属性的值（如 http://{AMSAccount}.origin.mediaservices.chinacloudapi.cn/{GUID}/{IAssetFile.Name}/streamingParameters.）。出于此原因，不允许使用百分号编码。**Name** 属性的值不能含有任何以下[百分号编码保留字符](http://en.wikipedia.org/wiki/Percent-encoding#Percent-encoding_reserved_characters)：!*'();:@&=+$,/?%#"。此外，文件扩展名中只能含有一个“.”。
+> <p>* 名称长度不应超过 260 个字符。
+> <p>* 在媒体服务中进行处理时，系统支持的最大文件大小存在限制。有关文件大小限制的详细信息，请参阅[此](/documentation/articles/media-services-quotas-and-limitations/)主题。
 >
 > 
 

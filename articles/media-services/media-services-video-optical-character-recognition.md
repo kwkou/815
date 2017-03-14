@@ -45,8 +45,8 @@
 | --- | --- |
 | 语言 |（可选）描述要查找的文本的语言。下列其中一项：AutoDetect（默认值）、Arabic、ChineseSimplified、ChineseTraditional、Czech Danish、Dutch、English、Finnish、French、German、Greek、Hungarian、Italian、Japanese、Korean、Norwegian、Polish、Portuguese、Romanian、Russian、SerbianCyrillic、SerbianLatin、Slovak、Spanish、Swedish、Turkish。 |
 | TextOrientation |（可选）描述要查找的文本的方向。“Left”表示所有字母顶部朝向左侧。默认文本（例如书籍中出现的文本）的方向为“Up”。下列其中一项：AutoDetect（默认值）、Up、Right、Down、Left。 |
-| TimeInterval |（可选）描述采样率。默认值为每隔 1/2 秒。<br/>JSON 格式 – HH:mm:ss.SSS（默认值 00:00:00.500）<br/>XML 格式 – W3C XSD 持续时间基元（默认值 PT0.5） |
-| DetectRegions |（可选）DetectRegion 对象的数组，指定视频帧内要检测文本的区域。<br/>DetectRegion 对象由以下四个整数值构成：<br/>Left - 从左边缘算起的像素<br/>Top - 从上边缘算起的像素<br/>Width – 以像素为单位的区域宽度<br/>Height – 以像素为单位的区域高度 |
+| TimeInterval |<p>（可选）描述采样率。默认值为每隔 1/2 秒。</p><p>JSON 格式 – HH:mm:ss.SSS（默认值 00:00:00.500）</p><p>XML 格式 – W3C XSD 持续时间基元（默认值 PT0.5） </p>|
+| DetectRegions |<p>（可选）DetectRegion 对象的数组，指定视频帧内要检测文本的区域。</p><p>DetectRegion 对象由以下四个整数值构成：</p><p>Left - 从左边缘算起的像素</p><p>Top - 从上边缘算起的像素</p><p>Width – 以像素为单位的区域宽度</p><p>Height – 以像素为单位的区域高度</p> |
 
 ####JSON 预设示例
 	 	
@@ -359,7 +359,7 @@ text|实际文本
 
 ##相关链接
 
-[Azure Media Services Analytics Overview（Azure 媒体服务分析概述）](/documentation/articles/media-services-analytics-overview/)
+[Azure 媒体服务分析概述](/documentation/articles/media-services-analytics-overview/)
 
 <!---HONumber=Mooncake_0306_2017-->
 <!--Update_Description: add link reference to media service analytics-->
