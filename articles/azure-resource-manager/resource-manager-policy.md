@@ -25,7 +25,8 @@
 * 策略定义 - 描述何时强制执行策略，以及要采取的操作
 * 策略分配 - 应用策略定义的范围（订阅或资源组）
 
-本主题重点介绍策略定义。有关策略分配的信息，请参阅[分配和管理策略](/documentation/articles/resource-manager-policy-create-assign/)。
+<!-- Policy not supported on Azure.cn-->
+<!--本主题重点介绍策略定义。有关策略分配的信息，请参阅[分配和管理策略](/documentation/articles/resource-manager-policy-create-assign/)。-->
 
 Azure 提供一些内置的策略定义，可减少需要定义的策略数目。如果内置策略定义适用于你的方案，请在分配到范围时使用该定义。
 
@@ -228,8 +229,9 @@ Azure 提供一些内置的策略定义，可减少需要定义的策略数目�
 
 以下主题包含策略示例：
 
-* 有关标记策略的示例，请参阅[将资源策略应用于标记](/documentation/articles/resource-manager-policy-tags/)。
-* 有关存储策略的示例，请参阅[将资源策略应用于存储帐户](/documentation/articles/resource-manager-policy-storage/)。
+<!-- Policy unable on Azure.cn-->
+<!-- * 有关标记策略的示例，请参阅[将资源策略应用于标记](/documentation/articles/resource-manager-policy-tags/)。-->
+<!-- * 有关存储策略的示例，请参阅[将资源策略应用于存储帐户](/documentation/articles/resource-manager-policy-storage/)。-->
 * 有关虚拟机策略的示例，请参阅[将资源策略应用于 Linux VM](/documentation/articles/virtual-machines-linux-policy/) 和[将资源策略应用于 Windows VM](/documentation/articles/virtual-machines-windows-policy/)
 
 ### 允许的资源位置

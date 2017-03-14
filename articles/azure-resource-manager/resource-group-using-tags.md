@@ -26,10 +26,11 @@
 > 
 > 
 
+<!-- Policy Unable on the Azure.cn>
 ## 确保标记与策略一致
 
 使用资源策略，可以为你的组织创建标准规则。可以创建策略，以确保使用适当的值标记资源。有关详细信息，请参阅[对标记应用资源策略](/documentation/articles/resource-manager-policy-tags/)。
-
+-->
 ## 模板
 
 [AZURE.INCLUDE [resource-manager-tags-in-templates](../../includes/resource-manager-tags-in-templates.md)]

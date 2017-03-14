@@ -158,8 +158,8 @@
 
 ## 后续步骤
 
-* 有关使用 PowerShell 部署模板的详细信息，请参阅[使用 Resource Manager 模板和 Azure PowerShell 部署资源](/azure/azure-resource-manager/resource-group-template-deploy)。
-* 有关使用 Azure CLI 部署模板的详细信息，请参阅[使用 Resource Manager 模板和 Azure CLI 部署资源](/azure/azure-resource-manager/resource-group-template-deploy-cli)。
+* 有关使用 PowerShell 部署模板的详细信息，请参阅[使用 Resource Manager 模板和 Azure PowerShell 部署资源](/documentation/articles/resource-group-template-deploy/)。
+* 有关使用 Azure CLI 部署模板的详细信息，请参阅[使用 Resource Manager 模板和 Azure CLI 部署资源](/documentation/articles/resource-group-template-deploy-cli/)。
 
 <!---HONumber=Mooncake_0227_2017-->
 <!--Update_Description: New article about the quickstare on depolying resouce to azure -->

@@ -34,7 +34,7 @@ Azure 资源管理器为你提供了一种新的方式来部署和管理构成�
 | 动态生命周期服务 |是 | | | |
 | 规模集 |是 |[规模集 REST](https://docs.microsoft.com/rest/api/virtualmachinescalesets/) |[规模集架构](https://github.com/Azure/azure-resource-manager-schemas/blob/master/schemas/2015-08-01/Microsoft.Compute.json) |[virtualMachineScaleSets](https://github.com/Azure/azure-quickstart-templates/search?utf8=%E2%9C%93&q=virtualMachineScaleSets&type=Code) |
 | Service Fabric |是 |[Service Fabric Rest](https://docs.microsoft.com/rest/api/servicefabric) | [Service Fabric 架构](https://github.com/Azure/azure-resource-manager-schemas/blob/master/schemas/2016-09-01/Microsoft.ServiceFabric.json) |[Microsoft.ServiceFabric](https://github.com/Azure/azure-quickstart-templates/search?utf8=%E2%9C%93&q=%22Microsoft.ServiceFabric%22&type=Code) |
-| 虚拟机 |是 |[VM REST](https://docs.microsoft.com/rest/api/compute/virtualmachines/virtualmachines-rest-api) |[VM 架构](https://github.com/Azure/azure-resource-manager-schemas/blob/master/schemas/2015-08-01/Microsoft.Compute.json) |[virtualMachines](https://github.com/Azure/azure-quickstart-templates/search?utf8=%E2%9C%93&q=%22Microsoft.Compute%2Fvirtualmachines%22&type=Code) |
+| 虚拟机 |是 |[VM REST](https://docs.microsoft.com/rest/api/compute/virtualmachines/) |[VM 架构](https://github.com/Azure/azure-resource-manager-schemas/blob/master/schemas/2015-08-01/Microsoft.Compute.json) |[virtualMachines](https://github.com/Azure/azure-quickstart-templates/search?utf8=%E2%9C%93&q=%22Microsoft.Compute%2Fvirtualmachines%22&type=Code) |
 | 虚拟机（经典）|有限制 |- |- |- |
 | 云服务（经典）|有限制（参阅下文）|- |- |- |
 <!-- 规模集 REST change to rest/api/virtualmachinescalesets/-->
