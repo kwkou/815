@@ -79,19 +79,19 @@
 
   - 群集 (443) 上的证书身份验证：
   
-        Get-ClusterNode | ForEach-Object {Invoke-command -computername \$\_.name -scriptblock {Enable-Netfirewallrule -displayname "Hyper-V Replica HTTPS Listener (TCP-In)"}}
+            Get-ClusterNode | ForEach-Object {Invoke-command -computername \$\_.name -scriptblock {Enable-Netfirewallrule -displayname "Hyper-V Replica HTTPS Listener (TCP-In)"}}
 
   - 群集 (80) 上的 Kerberos 身份验证：
         
-        Get-ClusterNode | ForEach-Object {Invoke-command -computername \$\_.name -scriptblock {Enable-Netfirewallrule -displayname "Hyper-V Replica HTTP Listener (TCP-In)"}}
+            Get-ClusterNode | ForEach-Object {Invoke-command -computername \$\_.name -scriptblock {Enable-Netfirewallrule -displayname "Hyper-V Replica HTTP Listener (TCP-In)"}}
 
   - 独立服务器上的证书身份验证：
     
-        Enable-Netfirewallrule -displayname "Hyper-V Replica HTTPS Listener (TCP-In)"
+            Enable-Netfirewallrule -displayname "Hyper-V Replica HTTPS Listener (TCP-In)"
 
   - 独立服务器上的 Kerberos 身份验证：
   
-        Enable-Netfirewallrule -displayname "Hyper-V Replica HTTP Listener (TCP-In)"
+            Enable-Netfirewallrule -displayname "Hyper-V Replica HTTP Listener (TCP-In)"
 
 ## 步骤 3：运行 Capacity Planner 工具
 在准备好主站点并设置恢复服务器之后，可以运行该工具。
