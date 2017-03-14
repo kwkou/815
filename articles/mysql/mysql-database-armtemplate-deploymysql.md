@@ -88,8 +88,6 @@
 	      },
 	      "sku": { "name": "[parameters('mysqlServerSku')]" },
 	      "properties": {
-	        "Charset": "utf8",
-	        "Collation": "utf8_general_ci",
 	        "version": "[parameters('mysqlServerVersion')]",
 	        "AllowAzureServices": true
 	      },
@@ -115,7 +113,10 @@
 	          "dependsOn": [
 	            "[concat('Microsoft.MySql/servers/', parameters('mysqlServerName'))]"
 	          ],
-	          "properties": { },
+	          "properties": {
+	           "Charset": "utf8",
+	           "Collation": "utf8_general_ci"
+              },
 	          "resources": [
 	            {
 	              "name": "[parameters('mysqlUserName')]",
