@@ -14,26 +14,29 @@
     ms.topic="article"
     ms.tgt_pltfrm="NA"
     ms.workload="powerbi"
-    ms.date="01/06/2017"
-    wacn.date="02/22/2017"
+    ms.date="02/06/2017"
+    wacn.date="03/14/2017"
     ms.author="asaxton" />  
 
 
 # Power BI Embedded 示例入门
+
 通过 **Power BI Embedded**，可以将 Power BI 报表集成到 web 或移动应用程序。本文介绍了 **Power BI Embedded** 入门示例。
 
 在继续之前，可能需要保存以下资源。在将 Power BI 报表集成到示例应用和自己的应用中时，这些资源都可以提供帮助。
 
- -	[Web 应用示例仪表板](https://github.com/kustbilla/Mooncake_PowerBI_Embedded)
- -	[Power BI Embedded API 参考](https://msdn.microsoft.com/zh-cn/library/mt711493.aspx)
- -	[Power BI Embedded .NET SDK](https://www.nuget.org/profiles/powerbi)（通过 NuGet 提供）
+- [Web 应用示例仪表板](https://github.com/kustbilla/Mooncake_PowerBI_Embedded)
+- [Power BI Embedded API 参考](https://msdn.microsoft.com/zh-cn/library/mt711493.aspx)
+- [Power BI Embedded .NET SDK](https://www.nuget.org/profiles/powerbi)（通过 NuGet 提供）
+- [JavaScript 报表嵌入示例](https://microsoft.github.io/PowerBI-JavaScript/demo)
 
-> [AZURE.NOTE]
+> [AZURE.NOTE] 
 需要先在 Azure 订阅中创建至少一个**工作区集合**才能配置和运行 Power BI Embedded 入门示例。若要了解如何在 Azure 门户预览中创建**工作区集合**，请参阅 [Power BI Embedded 入门](/documentation/articles/power-bi-embedded-get-started/)。
 >
 >
 
 ## 配置示例应用
+
 下面将引导完成 Visual Studio 开发环境的设置，以便访问运行示例应用时所需的组件。
 
 1. 下载并解压缩 GitHub 上的[Power BI Embedded - Integrate a report into a web app](http://go.microsoft.com/fwlink/?LinkId=761493)（Power BI Embedded - 将报表集成到 Web 应用中）示例。
@@ -115,6 +118,7 @@ Web 应用示例是一个示例仪表板，用于呈现**工作区**中导入的
 >
 
 ### 模型
+
 此示例具有 **ReportsViewModel** 和 **ReportViewModel**。
 
 **ReportsViewModel.cs**：表示多个 Power BI 报表。
@@ -134,6 +138,7 @@ Web 应用示例是一个示例仪表板，用于呈现**工作区**中导入的
     }
 
 ### 连接字符串
+
 连接字符串必须采用以下格式：
 
 
@@ -143,6 +148,7 @@ Web 应用示例是一个示例仪表板，用于呈现**工作区**中导入的
 使用一般的服务器和数据库属性将会失败。例如：Server=tcp:MyServer.database.chinacloudapi.cn,1433;Database=MyDatabase。
 
 ### 视图
+
 **视图**用于管理多个 Power BI **报表**或一个 Power BI **报表**的显示情况。
 
 **Reports.cshtml**：循环访问 **Model.Reports** 以创建 **ActionLink**。**ActionLink** 包含以下内容：
@@ -256,5 +262,7 @@ Report.cshtml：为 **PowerBIReportFor** 设置 **Model.AccessToken** 和 Lambda
 - [常见 Power BI Embedded 方案](/documentation/articles/power-bi-embedded-scenarios/)
 - [在 Power BI Embedded 中进行身份验证和授权](/documentation/articles/power-bi-embedded-app-token-flow/)
 
-<!---HONumber=Mooncake_0213_2017-->
+有更多问题？ [试用 Power BI 社区](http://community.powerbi.com/)
+
+<!---HONumber=Mooncake_0306_2017-->
 <!---Update_Description: wording update-->
