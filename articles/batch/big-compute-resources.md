@@ -5,8 +5,7 @@
     documentationcenter=""
     author="dlepow"
     manager="timlt"
-    editor="" />  
-
+    editor="" />
 <tags
     ms.assetid="6f8be911-c841-41ae-88d3-3bcfc029eb7f"
     ms.service="multiple"
@@ -14,8 +13,8 @@
     ms.topic="article"
     ms.tgt_pltfrm="NA"
     ms.workload="big-compute"
-    ms.date="11/17/2016"
-    wacn.date="12/12/2016"
+    ms.date="01/23/2017"
+    wacn.date="03/14/2017"
     ms.author="danlep" />  
 
 
@@ -37,14 +36,14 @@
 - [Batch 论坛](https://social.msdn.microsoft.com/Forums/zh-cn/home?forum=azurebatch)
 
 ## HPC 群集解决方案
-将现有的 Windows 或 Linux HPC 群集部署或扩展到 Azure，以运行计算密集型工作负荷。
+将现有的 Windows HPC 群集部署或扩展到 Azure，以运行计算密集型工作负荷。
 
 ### Microsoft HPC Pack
 HPC Pack 是在 Azure 和 Windows Server 技术基础之上构建的 Microsoft 免费 HPC 解决方案，它能够运行 Windows 和 Linux HPC 工作负荷。
 
+- [下载 HPC Pack 2016](https://www.microsoft.com/zh-cn/download/details.aspx?id=54507)
 - [下载 HPC Pack 2012 R2 Update 3](https://www.microsoft.com/zh-cn/download/details.aspx?id=49922)
 - [文档](https://technet.microsoft.com/zh-cn/library/jj899572.aspx)
-- Azure 中的 Linux 和 [Windows](/documentation/articles/virtual-machines-windows-hpcpack-cluster-options/) HPC Pack 群集选项
 - [使用 HPC Pack 迸发到 Azure 辅助角色实例](https://technet.microsoft.com/zh-cn/library/gg481749.aspx)
 - [使用 HPC Pack 迸发到 Azure Batch](https://technet.microsoft.com/zh-cn/library/mt612877.aspx)
 - [Windows HPC 论坛](https://social.microsoft.com/Forums/home?category=windowshpc)
@@ -53,17 +52,17 @@ HPC Pack 是在 Azure 和 Windows Server 技术基础之上构建的 Microsoft �
 使用这些 Azure 模板来部署 Linux HPC 群集。
 
 - [博客文章](http://blogs.technet.com/b/windowshpc/archive/2015/06/06/deploy-a-slurm-cluster-on-azure.aspx)
-- 用于 Lustre 软件的 Intel 云版本 - 评估
 
 ## Microsoft MPI
-[Microsoft MPI](https://msdn.microsoft.com/zh-cn/library/bb524831.aspx) (MS-MPI) 是 Microsoft 实现的消息传递接口标准，用于在 Windows 平台上开发和运行并行应用程序。最新版本为 MS-MPI v7。
+[Microsoft MPI](https://msdn.microsoft.com/zh-cn/library/bb524831.aspx) (MS-MPI) 是 Microsoft 实现的消息传递接口标准，用于在 Windows 平台上开发和运行并行应用程序。
 
 - [下载 MS-MPI](http://go.microsoft.com/FWLink/p/?LinkID=389556)
 - [MS-MPI 参考](https://msdn.microsoft.com/zh-cn/library/dn473458.aspx)
 - [MPI 论坛](https://social.microsoft.com/Forums/zh-cn/home?forum=windowshpcmpi)
 
 ## 计算密集型实例
-Azure 提供了一[系列 VM 大小](/documentation/articles/virtual-machines-windows-sizes/)，包括能够连接到后端 RDMA 网络的计算密集型 H 系列实例，以运行 Linux 和 Windows HPC 工作负荷。
+Azure 为后端 RDMA 网络提供 [VM 大小范围](/documentation/articles/virtual-machines-windows-sizes?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json/)，以便运行 Linux 和 Windows HPC 工作负荷。
+
 
 ## 示例和演示
 - [Azure Batch C# and Python code samples（Azure Batch C# 和 Python 代码示例）](https://github.com/Azure/azure-batch-samples)
@@ -98,4 +97,5 @@ Azure 提供了一[系列 VM 大小](/documentation/articles/virtual-machines-wi
 - 有关最新通告，请参阅 [Microsoft HPC 和批处理团队博客](http://blogs.technet.com/b/windowshpc/)与 [Azure 博客](https://azure.microsoft.com/blog/tag/hpc/)。
 - 另请参阅 [Batch 中的新增功能](https://azure.microsoft.com/updates/?service=batch)或订阅 [RSS 源](https://azure.microsoft.com/updates/feed/?service=batch)。
 
-<!---HONumber=Mooncake_1205_2016-->
+<!---HONumber=Mooncake_0306_2017-->
+<!---Update_Description: wording update -->

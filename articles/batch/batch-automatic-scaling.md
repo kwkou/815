@@ -1,26 +1,25 @@
 <properties
-	pageTitle="自动缩放 Azure Batch 池中的计算节点 | Azure"
-	description="对云池启用自动缩放功能可以动态调整池中计算节点的数目。"
-	services="batch"
-	documentationCenter=""
-	authors="mmacy"
-	manager="timlt"
-	editor="tysonn"/>  
-
+    pageTitle="自动缩放 Azure Batch 池中的计算节点 | Azure"
+    description="对云池启用自动缩放功能可以动态调整池中计算节点的数目。"
+    services="batch"
+    documentationcenter=""
+    author="tamram"
+    manager="timlt"
+    editor="tysonn" />
 
 <tags
-	ms.service="batch"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="vm-windows"
-	ms.workload="multiple"
-	ms.date="10/14/2016"
-	wacn.date="11/16/2016"
-	ms.author="marsma"/>  
+    ms.assetid="c624cdfc-c5f2-4d13-a7d7-ae080833b779"
+    ms.service="batch"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.tgt_pltfrm="vm-windows"
+    ms.workload="multiple"
+    ms.date="01/23/2017"
+    wacn.date="03/14/2017"
+    ms.author="tamram" />  
 
 
 # 自动缩放 Azure Batch 池中的计算节点
-
 使用自动缩放，Azure Batch 可以根据所定义的参数在池中动态添加或删除计算节点。还可以通过自动调整你的应用程序使用的计算能力（当工作的任务要求提高时增加节点，当任务要求降低时删除节点）来节省时间和金钱。
 
 你可以通过将定义的*自动缩放公式*与计算节点池相关联（例如，使用 [Batch .NET](/documentation/articles/batch-dotnet-get-started/) 库中的 [PoolOperations.EnableAutoScale][net_enableautoscale] 方法），对计算节点池启用自动缩放。然后，Batch 服务将使用此公式来确定执行工作负荷所需的计算节点数目。Batch 将会响应定期收集的服务指标数据样本，并根据公式按可配置的间隔调整池中的计算节点数。
@@ -33,7 +32,8 @@
 
 可以将自动缩放公式视为使用 Batch 自动缩放“语言”。 公式语句是自由形式的表达式，可以包括服务定义的变量（由 Batch 服务定义的变量）和用户定义的变量（你定义的变量）。公式语句可以通过内置类型、运算符和函数对这些值执行各种操作。例如，语句可以采用以下格式：
 
-`$myNewVariable = function($ServiceDefinedVariable, $myCustomVariable);`  
+
+	$myNewVariable = function($ServiceDefinedVariable, $myCustomVariable);
 
 
 公式通常包含多个语句，这些语句对先前语句中获取的值执行操作。例如，首先获取 `variable1` 的值，然后将其传递给一个函数来填充 `variable2`：
@@ -50,114 +50,51 @@
 
 本文的后续部分将介绍构成自动缩放公式的各个实体，包括变量、运算符、操作和函数。你会了解如何在 Batch 中获取各种计算资源和任务度量值。你可以使用这些度量值，根据资源使用情况和任务状态对池的节点计数进行智能化调整。然后，你将了解如何使用 Batch REST 和 .NET API 构建公式以及对池启用自动缩放。最后，我们将讨论几个示例公式。
 
-> [AZURE.IMPORTANT] 每个 Azure Batch 帐户都受限于可以用于处理的最大核心数（以及由此确定的计算节点数）。Batch 服务最多将创建达到该核心数限制的节点数。因此，它可能达不到公式所指定的目标计算节点数。请参阅 [Azure Batch 服务的配额和限制](/documentation/articles/batch-quota-limit/)了解有关查看和提高帐户配额的信息。
+> [AZURE.IMPORTANT]
+每个 Azure Batch 帐户都受限于可以用于处理的最大核心数（以及由此确定的计算节点数）。Batch 服务最多将创建达到该核心数限制的节点数。因此，它可能达不到公式所指定的目标计算节点数。请参阅 [Azure Batch 服务的配额和限制](/documentation/articles/batch-quota-limit/)了解有关查看和提高帐户配额的信息。
+> 
+> 
 
 ## <a name="variables"></a>变量
-
 可以在自动缩放公式中使用**服务定义的**变量和**用户定义的**变量。服务定义的变量内置在 Batch 服务中，有些是可读写的，有些是只读的。用户定义的变量指的是*你*定义的变量。在上面的两行示例公式中，`$TargetDedicated` 是服务定义的变量，而 `$averageActiveTaskCount` 是用户定义的变量。
 
 下表显示了 Batch 服务定义的读写和只读变量。
 
 可以**获取**和**设置**这些服务定义的变量的值，以管理池中计算节点的数目：
 
-<table>
-  <tr>
-    <th>服务定义的<br/>可读写变量</th>
-    <th>说明</th>
-  </tr>
-  <tr>
-    <td>$TargetDedicated</td>
-    <td>池的<b>专用计算节点</b>的<b>目标</b>数。这是池应该缩放到的计算节点数目。它是一个“目标”数目，因为池可能达不到此目标节点数目。如果在池达到初始目标之前节点的目标数目被后续的自动缩放评估再次修改，则可能会发生这种情况。如果在达到节点的目标数目之前达到了 Batch 帐户的节点或核心配额，则也可能会发生这种情况。</td>
-  </tr>
-  <tr>
-    <td>$NodeDeallocationOption</td>
-    <td>从池中删除计算节点时发生的操作。可能的值包括：
-      <br/>
-      <ul>
-        <li><p><b>requeue</b>--立即终止任务并将其放回作业队列，以便重新计划这些任务。</p></li>
-        <li><p><b>terminate</b>--立即终止任务并从作业队列中删除它们。</p></li>
-        <li><p><b>taskcompletion</b>--等待当前运行的任务完成，然后从池中删除节点。</p></li>
-        <li><p><b>retaineddata</b>--等待清理节点上的本地任务保留的所有数据，然后从池中删除节点。</p></li>
-      </ul></td>
-   </tr>
-</table>
+| 读写服务定义的变量 | 说明 |
+| --- | --- |
+| $TargetDedicated |池的**专用计算节点**的**目标**数。这是池应该缩放到的计算节点数目。它是一个“目标”数目，因为池可能达不到此目标节点数目。如果在池达到初始目标之前节点的目标数目被后续的自动缩放评估再次修改，则可能会发生这种情况。如果在达到节点的目标数目之前达到了 Batch 帐户的节点或核心配额，则也可能会发生这种情况。 |
+| $NodeDeallocationOption |从池中删除计算节点时发生的操作。可能的值为：<ul><li>**requeue**-- 立即终止任务并将其放回作业队列，以便对其进行重新安排。<li>**terminate**-- 立即终止任务并从作业队列中删除它们。<li>**taskcompletion**-- 等待当前运行的任务完成，然后从池中删除节点。<li>**retaineddata**-- 从池中删除节点之前等待清理节点上的所有本地保留的任务的数据。</ul> |
 
 可以**获取**这些服务定义的变量的值，以根据 Batch 服务中的指标进行调整：
 
-<table>
-  <tr>
-    <th>服务定义的<br/>只读<br/>变量</th>
-    <th>说明</th>
-  </tr>
-  <tr>
-    <td>$CPUPercent</td>
-    <td>CPU 使用率的平均百分比。</td>
-  </tr>
-  <tr>
-    <td>$WallClockSeconds</td>
-    <td>使用的秒数。</td>
-  </tr>
-  <tr>
-    <td>$MemoryBytes</td>
-    <td>使用的平均 MB 数。</td>
-  <tr>
-    <td>$DiskBytes</td>
-    <td>本地磁盘上使用的平均 GB 数。</td>
-  </tr>
-  <tr>
-    <td>$DiskReadBytes</td>
-    <td>读取的字节数。</td>
-  </tr>
-  <tr>
-    <td>$DiskWriteBytes</td>
-    <td>写入的字节数。</td>
-  </tr>
-  <tr>
-    <td>$DiskReadOps</td>
-    <td>执行的读取磁盘操作数。</td>
-  </tr>
-  <tr>
-    <td>$DiskWriteOps</td>
-    <td>执行的写入磁盘操作数。</td>
-  </tr>
-  <tr>
-    <td>$NetworkInBytes</td>
-    <td>入站字节数。</td>
-  </tr>
-  <tr>
-    <td>$NetworkInBytes</td>
-    <td>出站字节数。</td>
-  </tr>
-  <tr>
-    <td>$SampleNodeCount</td>
-    <td>计算节点数。</td>
-  </tr>
-  <tr>
-    <td>$ActiveTasks</td>
-    <td>处于活动状态的任务数。</td>
-  </tr>
-  <tr>
-    <td>$RunningTasks</td>
-    <td>处于运行状态的任务数。</td>
-  </tr>
-  <tr>
-    <td>$SucceededTasks</td>
-    <td>成功完成的任务数。</td>
-  </tr>
-  <tr>
-    <td>$FailedTasks</td>
-    <td>失败的任务数。</td>
-  </tr>
-  <tr>
-    <td>$CurrentDedicated</td>
-    <td>当前的专用计算节点数。</td>
-  </tr>
-</table>
+| 只读服务定义的变量 | 说明 |
+| --- | --- |
+| $CPUPercent |CPU 使用率的平均百分比。 |
+| $WallClockSeconds |使用的秒数。 |
+| $MemoryBytes |使用的平均 MB 数。 |
+| $DiskBytes |本地磁盘上使用的平均 GB 数。 |
+| $DiskReadBytes |读取的字节数。 |
+| $DiskWriteBytes |写入的字节数。 |
+| $DiskReadOps |执行的读取磁盘操作数。 |
+| $DiskWriteOps |执行的写入磁盘操作数。 |
+| $NetworkInBytes |入站字节数。 |
+| $NetworkOutBytes |出站字节数。 |
+| $SampleNodeCount |计算节点数。 |
+| $ActiveTasks |处于活动状态的任务数。 |
+| $RunningTasks |处于运行状态的任务数。 |
+| $PendingTasks |$ActiveTasks 和 $RunningTasks 的总和。 |
+| $SucceededTasks |成功完成的任务数。 |
+| $FailedTasks |失败的任务数。 |
+| $CurrentDedicated |当前的专用计算节点数。 |
 
-> [AZURE.TIP] 上面所示的服务定义的只读变量是一些*对象*，它们提供了各种方法来访问与其相关的数据。有关详细信息，请参阅下面的[获取样本数据](#getsampledata)。
+> [AZURE.TIP]
+上面所示的服务定义的只读变量是一些*对象*，它们提供了各种方法来访问与其相关的数据。有关详细信息，请参阅下面的[获取样本数据](#getsampledata)。
+> 
+> 
 
 ## 类型
-
 公式支持以下**类型**：
 
 - double
@@ -165,41 +102,40 @@
 - doubleVecList
 - 字符串
 - timestamp--timestamp 是包含以下成员的复合结构：
-
-	- year
-	- month (1-12)
-	- day (1-31)
-	- weekday（采用数字格式，例如 1 表示星期一）
-	- hour（采用 24 时制数字格式，例如 13 表示下午 1 点）
-	- minute (00-59)
-	- second (00-59)
+  
+  - year
+  - month (1-12)
+  - day (1-31)
+  - weekday（采用数字格式，例如 1 表示星期一）
+  - hour（采用 24 时制数字格式，例如 13 表示下午 1 点）
+  - minute (00-59)
+  - second (00-59)
 - timeinterval
-
-	- TimeInterval\_Zero
-	- TimeInterval\_100ns
-	- TimeInterval\_Microsecond
-	- TimeInterval\_Millisecond
-	- TimeInterval\_Second
-	- TimeInterval\_Minute
-	- TimeInterval\_Hour
-	- TimeInterval\_Day
-	- TimeInterval\_Week
-	- TimeInterval\_Year
+  
+  - TimeInterval\_Zero
+  - TimeInterval\_100ns
+  - TimeInterval\_Microsecond
+  - TimeInterval\_Millisecond
+  - TimeInterval\_Second
+  - TimeInterval\_Minute
+  - TimeInterval\_Hour
+  - TimeInterval\_Day
+  - TimeInterval\_Week
+  - TimeInterval\_Year
 
 ## 操作
-
 上面列出的类型允许以下**操作**。
 
 | 操作 | 支持的运算符 | 结果类型 |
-| ------------------------------------- | --------------------- | ------------- |
-| double *operator* double | +, -, *, / | double |
-| double *operator* timeinterval | * | timeinterval |
-| doubleVec *operator* double | +, -, *, / | doubleVec |
-| doubleVec *operator* doubleVec | +, -, *, / | doubleVec |
-| timeinterval *operator* double | *, / | timeinterval |
-| timeinterval *operator* timeinterval | +, - | timeinterval |
-| timeinterval *operator* timestamp | + | timestamp |
-| timestamp *operator* timeinterval | + | timestamp |
+| --- | --- | --- |
+| double *operator* double |+, -, *, / |double |
+| double *operator* timeinterval |* |timeinterval |
+| doubleVec *operator* double |+, -, *, / |doubleVec |
+| doubleVec *operator* doubleVec |+, -, *, / |doubleVec |
+| timeinterval *operator* double |*, / |timeinterval |
+| timeinterval *operator* timeinterval |+, - |timeinterval |
+| timeinterval *operator* timestamp |+ |timestamp |
+| timestamp *operator* timeinterval |+ |timestamp |
 | timestamp *operator* timestamp | - | timeinterval | 
 | *operator*double | -, ! | double | 
 | *operator*timeinterval | - | timeinterval | 
@@ -209,33 +145,33 @@
 | timeinterval *operator* timeinterval | <, <=, ==, >=, >, != | double | 
 | double *operator* double | &&, || | double |
 
+
 使用三元运算符 (`double ? statement1 : statement2`) 测试双精度值时，非零值为 **true**，零值为 **false**。
 
 ## 函数
-
 可以使用以下预定义**函数**来定义自动缩放公式。
 
-| 函数 | 返回类型 | 说明
-| --------------------------------- | ------------- | --------- |
-| avg(doubleVecList) | double | 返回 DoubleVecList 中所有值的平均值。
-| len(doubleVecList) | double | 返回从 doubleVecList 创建的向量的长度。
-| lg(double) | double | 返回 double 的对数底数 2。
-| lg(doubleVecList) | doubleVec | 返回 doubleVecList 的分量对数底数 2。必须为参数显式传递 vec(double)。否则会采用 double lg(double) 版本。
-| ln(double) | double | 返回 double 的自然对数。
-| ln(doubleVecList) | doubleVec | 返回 doubleVecList 的分量对数底数 2。必须为参数显式传递 vec(double)。否则会采用 double lg(double) 版本。
-| log(double) | double | 返回 double 的对数底数 10。
-| log(doubleVecList) | doubleVec | 返回 doubleVecList 的分量对数底数 10。对于单一的 double 参数，必须显式传递 vec(double)。否则会采用 double log(double) 版本。
-| max(doubleVecList) | double | 返回 doubleVecList 中的最大值。
-| min(doubleVecList) | double | 返回 doubleVecList 中的最小值。
-| norm(doubleVecList) | double | 返回从 doubleVecList 创建的向量的二范数。
-| percentile(doubleVec v, double p) | double | 返回向量 v 的百分位元素。
-| rand() | double | 返回介于 0.0 和 1.0 之间的随机值。
-| range(doubleVecList) | double | 返回 doubleVecList 中最小值和最大值之间的差。
-| std(doubleVecList) | double | 返回 doubleVecList 中值的样本标准偏差。
-| stop() | | 停止对自动缩放表达式求值。
-| sum(doubleVecList) | double | 返回 doubleVecList 的所有组成部分之和。
-| time(string dateTime="") | timestamp | 如果未传递参数，则返回当前时间的时间戳；如果传递了参数，则返回 dateTime 字符串的时间戳。支持的 dateTime 格式为 W3C-DTF 和 RFC 1123。
-| val(doubleVec v, double i) | double | 返回在起始索引为零的向量 v 中，位置 i 处的元素的值。
+| 函数 | 返回类型 | 说明 |
+| --- | --- | --- |
+| avg(doubleVecList) |double |返回 doubleVecList 中所有值的平均值。 |
+| len(doubleVecList) |double |返回从 doubleVecList 创建的向量的长度。 |
+| lg(double) |double |返回 double 的对数底数 2。 |
+| lg(doubleVecList) |doubleVec |返回 doubleVecList 的分量对数底数 2。必须为参数显式传递 vec(double)。否则会采用 double lg(double) 版本。 |
+| ln(double) |double |返回 double 的自然对数。 |
+| ln(doubleVecList) |doubleVec |返回 doubleVecList 的分量对数底数 2。必须为参数显式传递 vec(double)。否则会采用 double lg(double) 版本。 |
+| log(double) |double |返回 double 的对数底数 10。 |
+| log(doubleVecList) |doubleVec |返回 doubleVecList 的分量对数底数 10。对于单一的 double 参数，必须显式传递 vec(double)。否则会采用 double log(double) 版本。 |
+| max(doubleVecList) |double |返回 doubleVecList 中的最大值。 |
+| min(doubleVecList) |double |返回 doubleVecList 中的最小值。 |
+| norm(doubleVecList) |double |返回从 doubleVecList 创建的向量的二范数。 |
+| percentile(doubleVec v, double p) |double |返回向量 v 的百分位元素。 |
+| rand() |double |返回介于 0.0 和 1.0 之间的随机值。 |
+| range(doubleVecList) |double |返回 doubleVecList 中最小值和最大值之间的差。 |
+| std(doubleVecList) |double |返回 doubleVecList 中值的样本标准偏差。 |
+| stop() | |停止对自动缩放表达式求值。 |
+| sum(doubleVecList) |double |返回 doubleVecList 的所有组成部分之和。 |
+| time(string dateTime="") |timestamp |如果未传递参数，则返回当前时间的时间戳；如果传递了参数，则返回 dateTime 字符串的时间戳。支持的 dateTime 格式为 W3C-DTF 和 RFC 1123。 |
+| val(doubleVec v, double i) |double |返回在起始索引为零的向量 v 中，位置 i 处的元素的值。 |
 
 上表中描述的某些函数可以接受列表作为参数。逗号分隔列表为 *double* 和 *doubleVec* 的任意组合。例如：
 
@@ -245,53 +181,21 @@
 *doubleVecList* 值在计算之前将转换为单个 *doubleVec*。例如，如果 `v = [1,2,3]`，则调用 `avg(v)` 相当于调用 `avg(1,2,3)`。调用 `avg(v, 7)` 相当于调用 `avg(1,2,3,7)`。
 
 ## <a name="getsampledata"></a>获取样本数据
-
 自动缩放公式使用 Batch 服务提供的度量值数据（样本）。公式根据服务所提供的值来扩大或缩小池的大小。上述服务定义的变量是可提供各种方法来访问与该对象关联的数据的对象。例如，以下表达式显示了一个用于获取过去五分钟 CPU 使用率的请求：
 
-`$CPUPercent.GetSample(TimeInterval_Minute * 5)`  
+
+	$CPUPercent.GetSample(TimeInterval_Minute * 5)
 
 
-<table>
-  <tr>
-    <th>方法</th>
-    <th>说明</th>
-  </tr>
-  <tr>
-    <td>GetSample()</td>
-    <td><p><b>GetSample()</b> 方法返回数据样本的向量。
-	<p>一个样本最好包含 30 秒钟的度量值数据。换而言之，将每隔 30 秒获取一次样本。但如下所示，样本在收集后需经历一定的延迟才能供公式使用。因此，并非一段指定时间内的所有样本都可用于公式求值。
-        <ul>
-          <li><p><b>doubleVec GetSample(double count)</b>--在最近收集的样本中指定要获取的样本数。</p>
-				  <p>GetSample(1) 返回最后一个可用样本。但对于像 $CPUPercent 这样的度量值，你不应使用此方法，因为无法知道样本是<em>何时</em>收集的。它可能是最近收集的，也可能由于系统问题而变得很旧。最好使用如下所示的时间间隔。</p></li>
-          <li><p><b>doubleVec GetSample((timestamp | timeinterval) startTime [, double samplePercent])</b>--指定收集样本数据的时间范围。（可选）它还指定必须在请求的时间范围内提供的样本的百分比。</p>
-          <p>如果 CPUPercent 历史记录中存在过去十分钟的所在样本，<em>$CPUPercent.GetSample(TimeInterval_Minute * 10)</em> 将返回 20 个样本。但如果最后一分钟的历史记录不可用，则只返回 18 个样本。在本示例中：<br/>
-		  &#160;&#160;&#160;&#160;<em>$CPUPercent.GetSample(TimeInterval_Minute * 10, 95)</em> 将会失败，因为只有 90% 的样本可用。<br/>
-		  &#160;&#160;&#160;&#160;<em>$CPUPercent.GetSample(TimeInterval_Minute * 10, 80)</em> 将会成功。</p></li>
-          <li><p><b>doubleVec GetSample((timestamp | timeinterval) startTime, (timestamp | timeinterval) endTime [, double samplePercent])</b>--指定收集数据的时间范围，包括开始时间和结束时间。</p></li></ul>
-		  <p>如前所述，每收集一个样本后并且该样本可供公式使用时，会存在一定的延迟。在使用 <em>GetSample</em> 方法时，必须考虑这个因素。参见下面的 <em>GetSamplePercent</em>。</td>
-  </tr>
-  <tr>
-    <td>GetSamplePeriod()</td>
-    <td>返回在历史样本数据集中采样的期间。</td>
-  </tr>
-	<tr>
-		<td>Count()</td>
-		<td>返回度量值历史记录中的样本总数。</td>
-	</tr>
-  <tr>
-    <td>HistoryBeginTime()</td>
-    <td>返回度量值最旧可用数据样本的时间戳。</td>
-  </tr>
-  <tr>
-    <td>GetSamplePercent()</td>
-    <td><p>返回给定时间间隔的可用样本百分比。例如：</p>
-    <p><b>doubleVec GetSamplePercent( (timestamp | timeinterval) startTime [, (timestamp | timeinterval) endTime] )</b>
-	<p>由于 GetSample 方法失败，因此如果返回的样本的百分比低于指定的 samplePercent，则可先使用 GetSamplePercent 方法进行检查。然后，如果存在的样本数量不足，你可以执行其他操作，无需停止自动缩放评估。</p></td>
-  </tr>
-</table>
+| 方法 | 说明 |
+| --- | --- |
+| GetSample() |`GetSample()` 方法返回数据样本的向量。<br/><br/>一个样本为 30 秒的度量数据。换而言之，将每隔 30 秒获取一次样本。但如下所示，样本在收集后需经历一定的延迟才能供公式使用。在此情况下，并不是给定时间段内的所有样本均可用于公式的计算。<ul> <li> `doubleVec GetSample(double count)`<br/>指定要从最新收集的样本中获取的样本数。<br/><br/> `GetSample(1)`返回最后一个可用样本。但对于像 `$CPUPercent` 这样的度量值，不应使用此方法，因为无法知道样本是*何时*收集的。它可能是最近收集的，也可能由于系统问题而变得很旧。在此情况下，最好使用如下所示的时间间隔。<li> `doubleVec GetSample((timestamp or timeinterval) startTime [, double samplePercent])`<br/>指定用于收集样本数据的时间范围。此外，它还指定必须在请求的时间范围内提供的样本的百分比。<br/><br/>`$CPUPercent.GetSample(TimeInterval_Minute * 10)` 返回 20 个样本（如果 CPUPercent 历史记录中显示过去十分钟的所有样本）。但如果最后一分钟的历史记录不可用，则只返回 18 个样本。如果这样：<br/><br/>`$CPUPercent.GetSample(TimeInterval_Minute * 10, 95)` 将失败，因为只有 90% 的样本可用。<br/><br/>`$CPUPercent.GetSample(TimeInterval_Minute * 10, 80)` 将成功。<li>`doubleVec GetSample((timestamp or timeinterval) startTime, (timestamp or timeinterval) endTime [, double samplePercent])`<br/>指定用于收集数据的时间范围，包括开始时间和结束时间。<br/><br/>如上所述，样本在收集后需经历一定的延迟才能供公式使用。在使用 `GetSample` 方法时，必须考虑这个因素。请参阅下面的 `GetSamplePercent`。 |
+| GetSamplePeriod() |返回在历史样本数据集中采样的期间。 |
+| Count() |返回度量值历史记录中的样本总数。 |
+| HistoryBeginTime() |返回度量值最旧可用数据样本的时间戳。 |
+| GetSamplePercent() |返回给定时间间隔的可用样本百分比。例如：<br/><br/>`doubleVec GetSamplePercent( (timestamp or timeinterval) startTime [, (timestamp or timeinterval) endTime] )`<br/><br/>由于 `GetSample` 方法失败，因此如果返回的样本的百分比低于指定的 `samplePercent`，则可先使用 `GetSamplePercent` 方法进行检查。然后，如果存在的样本数量不足，你可以执行其他操作，无需停止自动缩放评估。 |
 
 ### 样本、样本百分比和 *GetSample()* 方法
-
 自动缩放公式的核心操作是获取任务和资源度量值数据，然后根据该数据调整池大小。因此，请务必明确知道自动缩放公式如何与度量值数据或“样本”交互。
 
 **示例**
@@ -310,27 +214,32 @@ Batch 服务定期获取任务和资源指标的*样本*，使其可供自动缩
 
 为此，请使用 `GetSample(interval look-back start, interval look-back end)` 返回样本的**向量**：
 
-`runningTasksSample = $RunningTasks.GetSample(1 * TimeInterval_Minute, 6 * TimeInterval_Minute);`  
+
+	$runningTasksSample = $RunningTasks.GetSample(1 * TimeInterval_Minute, 6 * TimeInterval_Minute);
 
 
 Batch 评估上述代码行后，会以值的向量形式返回样本范围。例如：
 
-`runningTasksSample=[1,1,1,1,1,1,1,1,1,1];`  
+
+	$runningTasksSample=[1,1,1,1,1,1,1,1,1,1];
 
 
 收集样本向量后，便可使用 `min()`、`max()` 和 `avg()` 等函数从所收集的范围派生有意义的值。
 
 为了提高安全性，如果特定时间段可用的样本数小于特定百分比，你可以强制公式求值*失败*。强制公式求值失败会指示 Batch 在无法提供指定百分比的样本数时停止进一步的公式求值--不更改池大小。若要指定求值成功所需的样本百分比，请将其指定为 `GetSample()` 的第三个参数。下面指定要求 75% 的样本：
 
-`runningTasksSample = $RunningTasks.GetSample(60 * TimeInterval_Second, 120 * TimeInterval_Second, 75);`  
+
+	$runningTasksSample = $RunningTasks.GetSample(60 * TimeInterval_Second, 120 * TimeInterval_Second, 75);
 
 
 此外，由于先前提到的样本可用性延迟问题，请务必记得指定回查开始时间早于一分钟的时间范围。这是由于样本需要花大约一分钟的时间才能传播到整个系统，因此通常无法使用 `(0 * TimeInterval_Second, 60 * TimeInterval_Second)` 范围内的样本。同样地，可以使用 `GetSample()` 百分比参数来强制实施特定样本百分比要求。
 
-> [AZURE.IMPORTANT] **强烈建议****不要*只*依赖于自动缩放公式中的 `GetSample(1)`**。这是因为，`GetSample(1)` 基本上只是向 Batch 服务表明：“不论多久以前获取最后一个样本，请将它提供给我。” 由于它只是单个样本，而且可能是较旧的样本，因此可能无法代表最近任务或资源状态的全貌。如果使用 `GetSample(1)`，请确保它是更大语句的一部分，而不是公式所依赖的唯一数据点。
+> [AZURE.IMPORTANT]
+**强烈建议****不要*只*依赖于自动缩放公式中的 `GetSample(1)`**。这是因为，`GetSample(1)` 基本上只是向 Batch 服务表明：“不论多久以前获取最后一个样本，请将它提供给我。” 由于它只是单个样本，而且可能是较旧的样本，因此可能无法代表最近任务或资源状态的全貌。如果使用 `GetSample(1)`，请确保它是更大语句的一部分，而不是公式所依赖的唯一数据点。
+> 
+> 
 
 ## 度量值
-
 在定义公式时，可以同时使用**资源**和**任务**度量值。可根据获取和求值的度量值数据对池中专用节点的目标数目进行调整。有关每个度量值的详细信息，请参阅上面的[变量](#variables)部分。
 
 <table>
@@ -341,11 +250,11 @@ Batch 评估上述代码行后，会以值的向量形式返回样本范围。�
   <tr>
     <td><b>资源</b></td>
     <td><p><b>资源度量值</b>基于计算节点的 CPU、带宽和内存使用量，以及节点数目。</p>
-		<p> 这些服务定义的变量可用于根据节点计数进行调整：</p>
+        <p> 这些服务定义的变量可用于根据节点计数进行调整：</p>
     <p><ul>
       <li>$TargetDedicated</li>
-			<li>$CurrentDedicated</li>
-			<li>$SampleNodeCount</li>
+            <li>$CurrentDedicated</li>
+            <li>$SampleNodeCount</li>
     </ul></p>
     <p>这些服务定义的变量可用于根据节点资源使用量进行调整：</p>
     <p><ul>
@@ -358,7 +267,7 @@ Batch 评估上述代码行后，会以值的向量形式返回样本范围。�
       <li>$DiskReadOps</li>
       <li>$DiskWriteOps</li>
       <li>$NetworkInBytes</li>
-      <li>$NetworkInBytes</li></ul></p>
+      <li>$NetworkOutBytes</li></ul></p>
   </tr>
   <tr>
     <td><b>任务</b></td>
@@ -366,219 +275,348 @@ Batch 评估上述代码行后，会以值的向量形式返回样本范围。�
     <p><ul>
       <li>$ActiveTasks</li>
       <li>$RunningTasks</li>
+      <li>$PendingTasks</li>
       <li>$SucceededTasks</li>
-			<li>$FailedTasks</li></ul></p>
-		</td>
+            <li>$FailedTasks</li></ul></p>
+        </td>
   </tr>
 </table>
 
-## 构建自动缩放公式
+## 编写自动缩放公式
+构造自动缩放公式时，可以使用上述组件来生成语句，然后将这些语句组合成完整的公式即可。本节中将创建一个自动缩放公式示例，用来执行一些实际的缩放决策。
 
-构造自动缩放公式时，可以使用上述组件来生成语句，然后将这些语句组合成完整的公式即可。例如，在这里，我们在构造公式时，会先定义对公式的要求：
+首先，定义新自动缩放公式的要求。该公式应可以：
 
-1. 如果 CPU 使用率高，则增加池中计算节点的目标数。
-2. 如果 CPU 使用率低，则降低池中计算节点的目标数。
-3. 始终将最大节点数限制为 400。
+1. 如果 CPU 使用率高，则**增加**池中计算节点的目标数。
+2. 如果 CPU 使用率低，则**减少**池中计算节点的目标数。
+3. 始终将**最大**节点数限制为 400。
 
-为了在 CPU 使用率高时*增加* 节点数，我们定义了一个语句，如果在过去 10 分钟内最小平均 CPU 使用率高于 70%，该语句就会向用户定义变量 ($TotalNodes) 填充一个值，值的大小为节点当前目标数的 110%：
-
-`$TotalNodes = (min($CPUPercent.GetSample(TimeInterval_Minute*10)) > 0.7) ? ($CurrentDedicated * 1.1) : $CurrentDedicated;`  
+为了在 CPU 使用率高时*增加*节点数，我们定义了一个语句，仅当过去 10 分钟内最小平均 CPU 使用率高于 70% 时，该语句向用户定义变量 (`$totalNodes`) 填充一个值，值的大小为节点当前目标数的 110%。否则，使用当前的专用值。
 
 
-如果过去 60 分钟的平均 CPU 使用率*低于* 20%，则下一个语句会将同一变量设置为节点当前目标数的 90%。这会降低 CPU 使用率低时的目标数。请注意，此语句还引用以上语句中的用户定义变量 *$TotalNodes*。
+	$totalNodes =
+	    (min($CPUPercent.GetSample(TimeInterval_Minute * 10)) > 0.7) ?
+	    ($CurrentDedicated * 1.1) : $CurrentDedicated;
 
-`$TotalNodes = (avg($CPUPercent.GetSample(TimeInterval_Minute * 60)) < 0.2) ? ($CurrentDedicated * 0.9) : $TotalNodes;`  
+
+若要在 CPU 使用率低时*减少*节点数，则在过去 60 分钟的平均 CPU 使用率低于 20% 时，公式中的下一个语句将同一 `$totalNodes` 变量设置为节点当前目标数的 90%。否则，使用上述语句中填充的 `$totalNodes` 的当前值。
+
+
+	$totalNodes =
+	    (avg($CPUPercent.GetSample(TimeInterval_Minute * 60)) < 0.2) ?
+	    ($CurrentDedicated * 0.9) : $totalNodes;
 
 
 现在，将专用计算节点的目标数限制为**最大值** 400：
 
-`$TargetDedicated = min(400, $TotalNodes)`  
+
+	$TargetDedicated = min(400, $totalNodes)
 
 
 下面是完整公式：
 
-	$TotalNodes = (min($CPUPercent.GetSample(TimeInterval_Minute*10)) > 0.7) ? ($CurrentDedicated * 1.1) : $CurrentDedicated;
-	$TotalNodes = (avg($CPUPercent.GetSample(TimeInterval_Minute*60)) < 0.2) ? ($CurrentDedicated * 0.9) : $TotalNodes;
-	$TargetDedicated = min(400, $TotalNodes)
 
-> [AZURE.NOTE] 自动缩放公式由 [Batch REST][rest_api] API 变量、类型、操作和函数组成。即使是在使用 [Batch .NET][net_api] 库的时候，也可在公式字符串中使用这些组成元素。
+	$totalNodes =
+	    (min($CPUPercent.GetSample(TimeInterval_Minute * 10)) > 0.7) ?
+	    ($CurrentDedicated * 1.1) : $CurrentDedicated;
+	$totalNodes =
+	    (avg($CPUPercent.GetSample(TimeInterval_Minute * 60)) < 0.2) ?
+	    ($CurrentDedicated * 0.9) : $totalNodes;
+	$TargetDedicated = min(400, $totalNodes)
 
-## 在启用自动缩放的情况下创建池
 
-若要在创建池时启用自动缩放功能，请使用以下方法之一：
+## 创建已启用自动缩放功能的池
+若要创建启用自动缩放功能的新池，可使用以下方法之一：
 
-- [New-AzureBatchPool](https://msdn.microsoft.com/zh-cn/library/azure/mt125936.aspx)--此 Azure PowerShell cmdlet 使用 AutoScaleFormula 参数来指定自动缩放公式。
-- [BatchClient.PoolOperations.CreatePool](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.pooloperations.createpool.aspx)--在调用此 .NET 方法创建池后，将设置池的 [CloudPool.AutoScaleEnabled](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.cloudpool.autoscaleenabled.aspx) 属性和 [CloudPool.AutoScaleFormula](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.cloudpool.autoscaleformula.aspx) 属性，以启用自动缩放。
-- [将池添加到帐户](https://msdn.microsoft.com/zh-cn/library/azure/dn820174.aspx)--创建池后，此 REST API 请求中使用的 enableAutoScale 和 autoScaleFormula 元素将为池设置自动缩放。
+**Batch .NET**
 
-> [AZURE.IMPORTANT] 如果你使用上述方法之一创建了支持自动缩放的池，则**不得**指定该池的 *targetDedicated* 参数。另请注意，如果你希望手动调整启用自动缩放功能的池的大小（例如，使用 [BatchClient.PoolOperations.ResizePool][net_poolops_resizepool] 来调整），则必须先**禁用**该池的自动缩放功能，然后再调整池的大小。
+1. 使用 [BatchClient.PoolOperations.CreatePool](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.pooloperations.createpool.aspx) 创建池。
+2. 将 [CloudPool.AutoScaleEnabled](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.cloudpool.autoscaleenabled.aspx) 属性设为 `true`。
+3. 使用自动缩放公式设置 [CloudPool.AutoScaleFormula](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.cloudpool.autoscaleformula.aspx) 属性。
+4. （可选）设置 [CloudPool.AutoScaleEvaluationInterval](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.cloudpool.autoScaleevaluationinterval.aspx) 属性（默认值为 15 分钟）。
+5. 使用 [CloudPool.Commit](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.cloudpool.commit.aspx) 或 [CommitAsync](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.cloudpool.commitasync.aspx) 提交池。
 
-下面的代码段演示如何通过 [Batch .NET][net_api] 库创建启用自动缩放的池 ([CloudPool][net_cloudpool])。该池的自动缩放公式在星期一将节点的目标数设置为 5，在每星期的其他日子将该目标数设置为 1。此外，自动缩放间隔设置为 30 分钟（请参阅下面的[自动缩放间隔](#automatic-scaling-interval)）。在本文的此部分与其他 C# 代码段中，“myBatchClient”是适当初始化的 [BatchClient][net_batchclient] 实例。
+**Batch REST API**
+
+- [将池添加到帐户](https://msdn.microsoft.com/zh-cn/library/azure/dn820174.aspx)：在 REST API 请求中指定 `enableAutoScale` 和 `autoScaleFormula` 元素，以便在创建池时为其配置自动缩放功能。
+
+下面的代码片段通过 [Batch .NET][net_api] 库创建启用自动缩放的池。该池的自动缩放公式将星期一的节点的目标数设置为 5，将其他星期的目标数设置为 1。[自动缩放时间间隔](#automatic-scaling-interval)设置为 30 分钟。在本文的此部分与其他 C# 代码段中，“myBatchClient”是适当初始化的 [BatchClient][net_batchclient] 实例。
+
+csharp
 
 	CloudPool pool = myBatchClient.PoolOperations.CreatePool("mypool", "3", "small");
 	pool.AutoScaleEnabled = true;
-	pool.AutoScaleFormula = "$TargetDedicated = (time().weekday==1?5:1);";
+	pool.AutoScaleFormula = "$TargetDedicated = (time().weekday == 1 ? 5:1);";
 	pool.AutoScaleEvaluationInterval = TimeSpan.FromMinutes(30);
 	pool.Commit();
 
-### <a name="interval" id="automatic-scaling-interval"></a>自动缩放间隔
 
+除了 Batch REST API 和 .NET SDK，还可以在自动缩放中使用任何其他 [Batch SDK](/documentation/articles/batch-technical-overview/#batch-development-apis/)、[Batch PowerShell cmdlet](/documentation/articles/batch-powershell-cmdlets-get-started/) 和 [Batch CLI](/documentation/articles/batch-cli-get-started/)。
+
+> [AZURE.IMPORTANT]
+当创建启用自动缩放功能的池时，**不可以**指定 `targetDedicated` 参数。另外，如果希望手动调整启用自动缩放功能的池的大小（例如，使用 [BatchClient.PoolOperations.ResizePool][net_poolops_resizepool] 来调整），则必须先**禁用**该池的自动缩放功能，然后再调整池的大小。
+> 
+> 
+
+### <a name="interval" id="automatic-scaling-interval"></a>自动缩放间隔
 默认情况下，Batch 服务根据其自动缩放公式每隔 **15 分钟**调整池大小。但是，可使用以下池属性配置此间隔：
 
-- REST API--[autoScaleEvaluationInterval][rest_autoscaleinterval]
-- .NET API--[CloudPool.AutoScaleEvaluationInterval][net_cloudpool_autoscaleevalinterval]
+- [CloudPool.AutoScaleEvaluationInterval][net_cloudpool_autoscaleevalinterval] (Batch .NET)
+- [autoScaleEvaluationInterval][rest_autoscaleinterval] (REST API)
 
 最小间隔为 5 分钟，最大间隔为 168 小时。如果指定的间隔超出此范围，Batch 服务将返回“错误的请求(400)”错误。
 
-> [AZURE.NOTE] 自动缩放目前不能以低于一分钟的时间响应更改，而只能在你运行工作负荷时逐步调整池大小。
+> [AZURE.NOTE]
+自动缩放目前不能以低于一分钟的时间响应更改，而只能在你运行工作负荷时逐步调整池大小。
+> 
+> 
 
-## 创建池后启用自动缩放
+## 启用现有池的自动缩放功能
+如果已使用 *targetDedicated* 参数创建具有一定数量的计算节点的池，仍可以启用池的自动缩放功能。每个 Batch SDK 提供“启用自动缩放”操作，例如：
 
-如果你使用 *targetDedicated* 参数设置了包含指定计算节点数的池，则以后可以更新现有池以自动缩放。可以通过以下方法之一实现此目的：
+- [BatchClient.PoolOperations.EnableAutoScale][net_enableautoscale] (Batch .NET)
+- [启用池的自动缩放功能][rest_enableautoscale] (REST API)
 
-- [BatchClient.PoolOperations.EnableAutoScale][net_enableautoscale]--此 .NET 方法需要现有池的 ID 和自动缩放公式才能应用到池。
-- [允许对池进行自动缩放][rest_enableautoscale]--此 REST API 请求要求 URI 中存在现有池的 ID，以及请求正文中存在自动缩放公式。
+启用现有池的自动缩放功能时，适用以下说明：
 
-> [AZURE.NOTE] 如果某个值是在创建池时为 *targetDedicated* 参数指定的，则会在评估自动缩放公式时忽略该值。
+- 如果在发出“启用自动缩放”请求时已**禁用**池的自动缩放功能，那么在发出该请求时*必须*指定有效的自动缩放公式。你可以*选择性*地指定自动缩放评估时间间隔。如果未指定时间间隔，则使用默认值 15 分钟。
+- 如果当前已**启用**池的自动缩放功能，则可以指定自动缩放公式和/或评估时间间隔。不能同时省略这两个属性。
+  
+  - 如果指定新的自动缩放评估时间间隔，那么将停止现有的评估计划，并启动新的计划。新计划的开始时间是发出“启用自动缩放”请求的时间。
+  - 如果忽略自动缩放公式或评估时间间隔，那么 Batch 服务将继续使用该设置的当前值。
 
-此代码段演示了如何在现有池上通过 [Batch .NET][net_api] 库启用自动缩放功能。请注意，针对现有池启用公式和更新公式使用相同的方法。因此，如果已启用自动缩放功能，则此方法会针对指定池*更新* 公式。该代码段假设“mypool”是现有池 ([CloudPool][net_cloudpool]) 的 ID。
+> [AZURE.NOTE]
+如果某个值是在创建池时为 *targetDedicated* 参数指定的，则会在评估自动缩放公式时忽略该值。
+> 
+> 
 
-	// Define the autoscaling formula. In this snippet, the  formula sets the target number of nodes to 5 on
-	// Mondays, and 1 on every other day of the week
-	string myAutoScaleFormula = "$TargetDedicated = (time().weekday==1?5:1);";
-	
-	// Update the existing pool's autoscaling formula by calling the BatchClient.PoolOperations.EnableAutoScale
-	// method, passing in both the pool's ID and the new formula.
-	myBatchClient.PoolOperations.EnableAutoScale("mypool", myAutoScaleFormula);
+此 C# 代码片段使用 [Batch .NET][net_api] 库启用现有池的自动缩放功能：
 
-## 评估自动缩放公式
+csharp
 
-在应用程序中使用公式之前，最好先对它进行评估。评估公式时，可以针对现有池对公式进行“测试性运行”。执行此操作时，可通过以下方式：
+	// Define the autoscaling formula. This formula sets the target number of nodes
+	// to 5 on Mondays, and 1 on every other day of the week
+	string myAutoScaleFormula = "$TargetDedicated = (time().weekday == 1 ? 5:1);";
 
-- [BatchClient.PoolOperations.EvaluateAutoScale](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.pooloperations.evaluateautoscale.aspx) 或 [BatchClient.PoolOperations.EvaluateAutoScaleAsync](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.pooloperations.evaluateautoscaleasync.aspx)--这些 .NET 方法需要现有池的 ID，并需要包含自动缩放公式的字符串。调用的结果将包含在 [AutoScaleEvaluation](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.autoscaleevaluation.aspx) 类的实例中。
-- [对自动缩放公式求值](https://msdn.microsoft.com/zh-cn/library/azure/dn820183.aspx)--在此 REST API 请求中，池 ID 在 URI 中指定。自动缩放公式是在请求正文的 *autoScaleFormula* 元素中指定的。操作的响应包含任何可能与该公式相关的错误信息。
+	// Set the autoscale formula on the existing pool
+	myBatchClient.PoolOperations.EnableAutoScale(
+		"myexistingpool",
+		autoscaleFormula: myAutoScaleFormula);
 
-> [AZURE.NOTE] 若要评估某个自动缩放公式，必须先通过有效的公式对池启用了自动缩放功能。
 
-在这个使用 [Batch .NET][net_api] 库的代码段中，我们先对公式求值，然后将其应用到池 ([CloudPool][net_cloudpool])。
+### 更新自动缩放公式
 
-	// First obtain a reference to the existing pool
-	CloudPool pool = myBatchClient.PoolOperations.GetPool("mypool");
-	
-	// We must ensure that autoscaling is enabled on the pool prior to evaluating a formula
-	if (pool.AutoScaleEnabled.HasValue && pool.AutoScaleEnabled.Value)
+使用相同的“启用自动缩放”请求*更新*现有的已启用自动缩放的池的公式（例如，使用 Batch.NET 中的 [EnableAutoScale][net_enableautoscale]）。未提供专门的“更新自动缩放”操作。例如，如果在执行以下代码时“myexistingpool”已启用自动缩放功能，那么该池的自动缩放公式将被替换为 `myNewFormula` 的内容。
+
+csharp
+
+	myBatchClient.PoolOperations.EnableAutoScale(
+		"myexistingpool",
+		autoscaleFormula: myNewFormula);
+
+
+
+### 更新自动缩放的时间间隔
+
+和更新自动缩放公式一样，使用相同的 [EnableAutoScale][net_enableautoscale] 方法更改现有的已启用自动缩放的池的自动缩放评估时间间隔。例如，将已启用自动缩放功能的池的自动缩放评估时间间隔设为 60 分钟：
+
+csharp
+
+	myBatchClient.PoolOperations.EnableAutoScale(
+	    "myexistingpool",
+	    autoscaleEvaluationInterval: TimeSpan.FromMinutes(60));
+
+
+## 计算自动缩放公式
+
+在将公式应用于池之前可以对公式进行计算。这样，就可以在将公式投入生产之前对公式执行“测试运行”以便查看公式的语句是如何进行计算的。
+
+若要计算自动缩放公式，必须先通过**有效的公式****启用池的自动缩放功能**。如果想要测试还没有启用自动缩放功能的池的公式，则在首次启用自动缩放功能时可以使用单行公式 `$TargetDedicated = 0`。然后，使用以下任何一个方法来计算想要测试的公式：
+
+- [BatchClient.PoolOperations.EvaluateAutoScale](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.pooloperations.evaluateautoscale.aspx) 或 [EvaluateAutoScaleAsync](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.pooloperations.evaluateautoscaleasync.aspx)
+  
+    这两种 Batch.NET 方法需要现有池的 ID 和包含要计算的自动缩放公式的字符串。计算结果包含在返回的 [AutoScaleEvaluation](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.autoscaleevaluation.aspx) 实例中。
+- [计算自动缩放公式](https://msdn.microsoft.com/zh-cn/library/azure/dn820183.aspx)
+  
+    在此 REST API 请求中，指定 URI 中的池 ID，以及请求正文的 *autoScaleFormula* 元素中的自动缩放公式。操作的响应包含任何可能与该公式相关的错误信息。
+
+在此 [Batch .NET][net_api] 代码片段中，我们先对公式进行计算，然后将其应用到 [CloudPool][net_cloudpool]。如果池尚未启用自动缩放功能，则首先启用它。
+
+csharp
+
+	// First obtain a reference to an existing pool
+	CloudPool pool = batchClient.PoolOperations.GetPool("myExistingPool");
+
+	// If autoscaling isn't already enabled on the pool, enable it.
+	// You can't evaluate an autoscale formula on non-autoscale-enabled pool.
+	if (pool.AutoScaleEnabled == false)
 	{
-		// The formula to evaluate - adjusts target number of nodes based on day of week and time of day
-		string myFormula = @"
-			$CurTime=time();
-			$WorkHours=$CurTime.hour>=8 && $CurTime.hour<18;
-			$IsWeekday=$CurTime.weekday>=1 && $CurTime.weekday<=5;
-			$IsWorkingWeekdayHour=$WorkHours && $IsWeekday;
-			$TargetDedicated=$IsWorkingWeekdayHour?20:10;
-		";
-	
-		// Perform the autoscale formula evaluation. Note that this does not actually apply the formula to
-		// the pool.
-		AutoScaleEvaluation eval = client.PoolOperations.EvaluateAutoScale(pool.Id, myFormula);
-	
-		if (eval.AutoScaleRun.Error == null)
-		{
-			// Evaluation success - print the results of the AutoScaleRun. This will display the values of each
-			// variable as evaluated by the autoscale formula.
-			Console.WriteLine("AutoScaleRun.Results: " + eval.AutoScaleRun.Results);
-	
-			// Apply the formula to the pool since it evaluated successfully
-			client.PoolOperations.EnableAutoScale(pool.Id, myFormula);
-		}
-		else
-		{
-			// Evaluation failed, output the message associated with the error
-			Console.WriteLine("AutoScaleRun.Error.Message: " + eval.AutoScaleRun.Error.Message);
-		}
+	    // We need a valid autoscale formula to enable autoscaling on the
+	    // pool. This formula is valid, but won't resize the pool:
+	    pool.EnableAutoScale(
+	        autoscaleFormula: $"$TargetDedicated = {pool.CurrentDedicated};",
+	        autoscaleEvaluationInterval: TimeSpan.FromMinutes(5));
+
+	    // Batch limits EnableAutoScale calls to once every 30 seconds.
+	    // Because we want to apply our new autoscale formula below if it
+	    // evaluates successfully, and we *just* enabled autoscaling on
+	    // this pool, we pause here to ensure we pass that threshold.
+	    Thread.Sleep(TimeSpan.FromSeconds(31));
+
+	    // Refresh the properties of the pool so that we've got the
+	    // latest value for AutoScaleEnabled
+	    pool.Refresh();
 	}
+
+	// We must ensure that autoscaling is enabled on the pool prior to
+	// evaluating a formula
+	if (pool.AutoScaleEnabled == true)
+	{
+	    // The formula to evaluate - adjusts target number of nodes based on
+	    // day of week and time of day
+	    string myFormula = @"
+	        $curTime = time();
+	        $workHours = $curTime.hour >= 8 && $curTime.hour < 18;
+	        $isWeekday = $curTime.weekday >= 1 && $curTime.weekday <= 5;
+	        $isWorkingWeekdayHour = $workHours && $isWeekday;
+	        $TargetDedicated = $isWorkingWeekdayHour ? 20:10;
+	    ";
+
+	    // Perform the autoscale formula evaluation. Note that this does not
+	    // actually apply the formula to the pool.
+	    AutoScaleRun eval =
+	        batchClient.PoolOperations.EvaluateAutoScale(pool.Id, myFormula);
+
+	    if (eval.Error == null)
+	    {
+	        // Evaluation success - print the results of the AutoScaleRun.
+	        // This will display the values of each variable as evaluated by the
+	        // autoscale formula.
+	        Console.WriteLine("AutoScaleRun.Results: " +
+	            eval.Results.Replace("$", "\n    $"));
+
+	        // Apply the formula to the pool since it evaluated successfully
+	        batchClient.PoolOperations.EnableAutoScale(pool.Id, myFormula);
+	    }
+	    else
+	    {
+	        // Evaluation failed, output the message associated with the error
+	        Console.WriteLine("AutoScaleRun.Error.Message: " +
+	            eval.Error.Message);
+	    }
+	}
+
 
 成功对此代码段中的公式进行评估以后，将生成如下所示的输出：
 
-`AutoScaleRun.Results: $TargetDedicated = 10;$NodeDeallocationOption = requeue;$CurTime = 2015 - 08 - 25T20: 08:42.271Z;$IsWeekday = 1;$IsWorkingWeekdayHour = 0;$WorkHours = 0`  
+
+	AutoScaleRun.Results:
+	    $TargetDedicated=10;
+	    $NodeDeallocationOption=requeue;
+	    $curTime=2016-10-13T19:18:47.805Z;
+	    $isWeekday=1;
+	    $isWorkingWeekdayHour=0;
+	    $workHours=0
 
 
 ## 获取有关自动缩放运行的信息
+若要确保公式按预期方式执行，我们建议你定期检查 Batch 对池执行的自动缩放的“运行”结果。为此，请获取（或刷新）池的引用，并检查其最近的自动缩放运行的属性。
 
-定期检查自动缩放的运行结果，以确保公式按预期执行。
+在 Batch .NET 中，[CloudPool.AutoScaleRun](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.cloudpool.autoscalerun.aspx) 属性具有多个属性提供了有关 Batch 服务在池上执行的最新自动缩放运行的信息。
 
-- [CloudPool.AutoScaleRun](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.cloudpool.autoscalerun.aspx)--使用 .NET 库时，池的此属性提供 [AutoScaleRun](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.autoscalerun.aspx) 类的实例。此类提供最新自动缩放运行的以下属性：
-  - [AutoScaleRun.Error](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.autoscalerun.error.aspx)
-  - [AutoScaleRun.Results](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.autoscalerun.results.aspx)
-  - [AutoScaleRun.Timestamp](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.autoscalerun.timestamp.aspx)
-- [获取有关池的信息](https://msdn.microsoft.com/zh-cn/library/dn820165.aspx)--此 REST API 请求返回有关池的信息，包括最近的自动缩放运行结果。
+- [AutoScaleRun.Timestamp](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.autoscalerun.timestamp.aspx)
+- [AutoScaleRun.Results](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.autoscalerun.results.aspx)
+- [AutoScaleRun.Error](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.autoscalerun.error.aspx)
 
-## <a name="examples"></a>示例公式
+在 REST API 中，[获取池的信息](https://msdn.microsoft.com/zh-cn/library/dn820165.aspx)请求返回有关池的信息，在 [autoScaleRun](https://msdn.microsoft.com/zh-cn/library/dn820165.aspx#bk_autrun) 中包括最近的自动缩放运行信息。
 
-让我们看看一些示例，了解如何通过多种方式使用公式来自动缩放池中的计算资源。
+以下 C# 代码片段使用 Batch .NET 库来打印有关池“myPool”的最新自动缩放运行的信息：
+
+csharp
+
+	Cloud pool = myBatchClient.PoolOperations.GetPool("myPool");
+	Console.WriteLine("Last execution: " + pool.AutoScaleRun.Timestamp);
+	Console.WriteLine("Result:" + pool.AutoScaleRun.Results.Replace("$", "\n  $"));
+	Console.WriteLine("Error: " + pool.AutoScaleRun.Error);
+
+
+前面的代码段的示例输出：
+
+
+	Last execution: 10/14/2016 18:36:43
+	Result:
+	  $TargetDedicated=10;
+	  $NodeDeallocationOption=requeue;
+	  $curTime=2016-10-14T18:36:43.282Z;
+	  $isWeekday=1;
+	  $isWorkingWeekdayHour=0;
+	  $workHours=0
+	Error:
+
+
+## 自动缩放公式示例
+让我们看看几个使用不同的方法来调整池中的计算资源量的公式。
 
 ### 示例 1：基于时间的调整
+也许，你希望能够根据星期几和一天的具体时间来调整池的大小，以便相应地增加或减少池中节点的数目。
 
-也许，你希望能够根据星期几和一天的具体时间来调整池的大小，相应地增加或减少池中节点的数目：
+此公式首先获取当前时间。如果日期是工作日（周一到周五）且时间是工作时间（早 8 点到晚 6 点），则会将目标池大小设置为 20 个节点。否则，设为 10 个节点。
 
-	$CurTime=time();
-	$WorkHours=$CurTime.hour>=8 && $CurTime.hour<18;
-	$IsWeekday=$CurTime.weekday>=1 && $CurTime.weekday<=5;
-	$IsWorkingWeekdayHour=$WorkHours && $IsWeekday;
-	$TargetDedicated=$IsWorkingWeekdayHour?20:10;
 
-此公式首先获取当前时间。如果日期是工作日（周一到周五）且时间是工作时间（早 8 点到晚 6 点），则会将目标池大小设置为 20 个节点。否则，目标池大小将设置为 10 个节点。
+	$curTime = time();
+	$workHours = $curTime.hour >= 8 && $curTime.hour < 18;
+	$isWeekday = $curTime.weekday >= 1 && $curTime.weekday <= 5;
+	$isWorkingWeekdayHour = $workHours && $isWeekday;
+	$TargetDedicated = $isWorkingWeekdayHour ? 20:10;
+
 
 ### 示例 2：基于任务的调整
 
 在此示例中，池大小是根据队列中的任务数来调整的。请注意，在公式字符串中，注释和分行符都是可以接受的。
 
+csharp
+
 	// Get pending tasks for the past 15 minutes.
-	$Samples = $ActiveTasks.GetSamplePercent(TimeInterval_Minute * 15);
-	// If we have fewer than 70 percent data points, we use the last sample point, otherwise we use the maximum of
-	// last sample point and the history average.
-	$Tasks = $Samples < 70 ? max(0,$ActiveTasks.GetSample(1)) : max( $ActiveTasks.GetSample(1), avg($ActiveTasks.GetSample(TimeInterval_Minute * 15)));
-	// If number of pending tasks is not 0, set targetVM to pending tasks, otherwise half of current dedicated.
-	$TargetVMs = $Tasks > 0? $Tasks:max(0, $TargetDedicated/2);
-	// The pool size is capped at 20, if target VM value is more than that, set it to 20. This value
-	// should be adjusted according to your use case.
-	$TargetDedicated = max(0,min($TargetVMs,20));
+	$samples = $ActiveTasks.GetSamplePercent(TimeInterval_Minute * 15);
+	// If we have fewer than 70 percent data points, we use the last sample point,
+	// otherwise we use the maximum of last sample point and the history average.
+	$tasks = $samples < 70 ? max(0,$ActiveTasks.GetSample(1)) : max( $ActiveTasks.GetSample(1), avg($ActiveTasks.GetSample(TimeInterval_Minute * 15)));
+	// If number of pending tasks is not 0, set targetVM to pending tasks, otherwise
+	// half of current dedicated.
+	$targetVMs = $tasks > 0? $tasks:max(0, $TargetDedicated/2);
+	// The pool size is capped at 20, if target VM value is more than that, set it
+	// to 20. This value should be adjusted according to your use case.
+	$TargetDedicated = max(0, min($targetVMs, 20));
 	// Set node deallocation mode - keep nodes active only until tasks finish
 	$NodeDeallocationOption = taskcompletion;
 
-### 示例 3：考虑并行任务
 
+### 示例 3：考虑并行任务
 这是另一个示例，可根据任务数调整池大小。此公式还考虑为池设置的 [MaxTasksPerComputeNode][net_maxtasks] 值。在对池启用了[并行任务执行](/documentation/articles/batch-parallel-node-tasks/)的情况下，此公式特别有用。
 
-	// Determine whether 70 percent of the samples have been recorded in the past 15 minutes; if not, use last sample
-	$Samples = $ActiveTasks.GetSamplePercent(TimeInterval_Minute * 15);
-	$Tasks = $Samples < 70 ? max(0,$ActiveTasks.GetSample(1)) : max( $ActiveTasks.GetSample(1),avg($ActiveTasks.GetSample(TimeInterval_Minute * 15)));
-	// Set the number of nodes to add to one-fourth the number of active tasks (the MaxTasksPerComputeNode
-	// property on this pool is set to 4, adjust this number for your use case)
-	$Cores = $TargetDedicated * 4;
-	$ExtraVMs = (($Tasks - $Cores) + 3) / 4;
-	$TargetVMs = ($TargetDedicated+$ExtraVMs);
-	// Attempt to grow the number of compute nodes to match the number of active tasks, with a maximum of 3
-	$TargetDedicated = max(0,min($TargetVMs,3));
+csharp
+
+	// Determine whether 70 percent of the samples have been recorded in the past
+	// 15 minutes; if not, use last sample
+	$samples = $ActiveTasks.GetSamplePercent(TimeInterval_Minute * 15);
+	$tasks = $samples < 70 ? max(0,$ActiveTasks.GetSample(1)) : max( $ActiveTasks.GetSample(1),avg($ActiveTasks.GetSample(TimeInterval_Minute * 15)));
+	// Set the number of nodes to add to one-fourth the number of active tasks (the
+	// MaxTasksPerComputeNode property on this pool is set to 4, adjust this number
+	// for your use case)
+	$cores = $TargetDedicated * 4;
+	$extraVMs = (($tasks - $cores) + 3) / 4;
+	$targetVMs = ($TargetDedicated + $extraVMs);
+	// Attempt to grow the number of compute nodes to match the number of active
+	// tasks, with a maximum of 3
+	$TargetDedicated = max(0,min($targetVMs,3));
 	// Keep the nodes active until the tasks finish
 	$NodeDeallocationOption = taskcompletion;
 
-### 示例 4：设置初始池大小
 
+### 示例 4：设置初始池大小
 此示例演示了一个 C# 代码段，其中的自动缩放公式可在初始时间段内将池大小设置为特定的节点数。然后，在初始时间段过后，该公式会根据正在运行和处于活动状态的任务的数目调整池大小。
 
-	string now = DateTime.UtcNow.ToString("r");
-	string formula = string.Format(@"
-	
-		$TargetDedicated = {1};
-		lifespan         = time() - time(""{0}"");
-		span             = TimeInterval_Minute * 60;
-		startup          = TimeInterval_Minute * 10;
-		ratio            = 50;
-	
-		$TargetDedicated = (lifespan > startup ? (max($RunningTasks.GetSample(span, ratio), $ActiveTasks.GetSample(span, ratio)) == 0 ? 0 : $TargetDedicated) : {1});
-		", now, 4);
-
-上面的代码段中的公式：
+以下代码片段中的公式：
 
 - 将初始池大小设置为 4 个节点。
 - 在池生命周期的最初 10 分钟内不调整池大小。
@@ -586,11 +624,23 @@ Batch 评估上述代码行后，会以值的向量形式返回样本范围。�
   - 如果这两个值均为 0（表示过去 60 分钟没有正在运行或处于活动状态的任务），则池大小将设置为 0。
   - 如果其中一个值大于零，则不进行任何更改。
 
+csharp
+
+	string now = DateTime.UtcNow.ToString("r");
+	string formula = string.Format(@"
+		$TargetDedicated = {1};
+		lifespan         = time() - time(""{0}"");
+		span             = TimeInterval_Minute * 60;
+		startup          = TimeInterval_Minute * 10;
+		ratio            = 50;
+
+		$TargetDedicated = (lifespan > startup ? (max($RunningTasks.GetSample(span, ratio), $ActiveTasks.GetSample(span, ratio)) == 0 ? 0 : $TargetDedicated) : {1});
+		", now, 4);
+
+
 ## 后续步骤
-
-* [Maximize Azure Batch compute resource usage with concurrent node tasks](/documentation/articles/batch-parallel-node-tasks/)（通过并发节点任务最大限度地提高 Azure Batch 计算资源的利用率）详细说明了如何在池中的计算节点上同时执行多个任务。除了自动缩放以外，此功能还可帮助降低某些工作负荷的作业持续时间，从而节省资金。
-
-* 为了进一步提升效率，请确保 Batch 应用程序以最佳的方式查询 Batch 服务。在 [Query the Azure Batch service efficiently](/documentation/articles/batch-efficient-list-queries/)（有效地查询 Azure Batch 服务）中，可以了解在查询数千个计算节点或任务的状态时，如何限制跨线数据量。
+- [Maximize Azure Batch compute resource usage with concurrent node tasks](/documentation/articles/batch-parallel-node-tasks/)（通过并发节点任务最大限度地提高 Azure Batch 计算资源的利用率）详细说明了如何在池中的计算节点上同时执行多个任务。除了自动缩放以外，此功能还可帮助降低某些工作负荷的作业持续时间，从而节省资金。
+- 为了进一步提升效率，请确保 Batch 应用程序以最佳的方式查询 Batch 服务。在 [Query the Azure Batch service efficiently](/documentation/articles/batch-efficient-list-queries/)（有效地查询 Azure Batch 服务）中，可以了解在查询数千个计算节点或任务的状态时，如何限制跨线数据量。
 
 [net_api]: https://msdn.microsoft.com/zh-cn/library/azure/mt348682.aspx
 [net_batchclient]: http://msdn.microsoft.com/zh-cn/library/azure/microsoft.azure.batch.batchclient.aspx
@@ -606,4 +656,5 @@ Batch 评估上述代码行后，会以值的向量形式返回样本范围。�
 [rest_autoscaleinterval]: https://msdn.microsoft.com/zh-cn/library/azure/dn820173.aspx
 [rest_enableautoscale]: https://msdn.microsoft.com/zh-cn/library/azure/dn820173.aspx
 
-<!---HONumber=Mooncake_1107_2016-->
+<!---HONumber=Mooncake_0306_2017-->
+<!---Update_Description: wording update -->

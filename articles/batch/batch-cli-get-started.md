@@ -1,5 +1,5 @@
 <properties
-    pageTitle="Azure Batch CLI 入门 | Azure"
+    pageTitle="Azure CLI for Batch 入门 | Azure"
     description="Azure CLI 中用于管理 Azure Batch 服务资源的 Batch 命令简介"
     services="batch"
     documentationcenter=""
@@ -13,8 +13,8 @@
     ms.topic="get-started-article"
     ms.tgt_pltfrm="multiple"
     ms.workload="big-compute"
-    ms.date="01/05/2017"
-    wacn.date="02/22/2017"
+    ms.date="01/23/2017"
+    wacn.date="03/14/2017"
     ms.author="tamram" />  
 
 
@@ -270,5 +270,5 @@ Batch CLI 支持 Batch 服务所支持的所有三个子句：
 [rest_api]: https://msdn.microsoft.com/zh-cn/library/azure/dn820158.aspx
 [rest_add_pool]: https://msdn.microsoft.com/zh-cn/library/azure/dn820174.aspx
 
-<!---HONumber=Mooncake_0213_2017-->
+<!---HONumber=Mooncake_0306_2017-->
 <!---Update_Description: wording and code update -->

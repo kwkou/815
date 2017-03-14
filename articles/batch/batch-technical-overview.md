@@ -1,5 +1,5 @@
 <properties
-    pageTitle="Azure Batch 服务基础知识 | Azure"
+    pageTitle="Azure Batch 服务概述 | Azure"
     description="了解如何使用 Azure Batch 服务执行大规模并发工作负荷与 HPC 工作负荷"
     services="batch"
     documentationcenter=""
@@ -13,8 +13,8 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="get-started-article"
-    ms.date="12/19/2016"
-    wacn.date="01/24/2017"
+    ms.date="01/23/2017"
+    wacn.date="03/14/2017"
     ms.author="tamram" />
 
 # Azure Batch 基础知识
@@ -51,7 +51,7 @@ Batch 很适合处理本质并行（也称为“超简单并行”）的应用�
 可以为组织高效处理大量工作负荷，或提供服务前端给客户，让他们可以在一个、数百个甚至数千个节点上，按需要或按计划运行作业和任务。
 
 > [AZURE.TIP]
-> 若要深入了解 Batch API 所提供的功能，请参阅 [Batch feature overview for developers](/documentation/articles/batch-api-basics/)（面向开发人员的 Batch 功能概述）。
+若要深入了解 Batch API 所提供的功能，请参阅 [Batch feature overview for developers](/documentation/articles/batch-api-basics/)（面向开发人员的 Batch 功能概述）。
 > 
 > 
 
@@ -67,17 +67,17 @@ Batch 很适合处理本质并行（也称为“超简单并行”）的应用�
 
 | API | API 参考 | 下载 | 教程 | 代码示例 |
 | --- | --- | --- | --- | --- |
-| **Batch REST** |[MSDN][batch_rest] |N/A |- |- |
-| **Batch .NET** |[docs.microsoft.com][api_net] |[NuGet ][api_net_nuget] |[Tutorial](/documentation/articles/batch-dotnet-get-started/) |[GitHub][api_sample_net] |
-| **Batch Python** |[readthedocs.io][api_python] |[PyPI][api_python_pypi] |[Tutorial](/documentation/articles/batch-python-tutorial/)|[GitHub][api_sample_python] |
-| **Batch Node.js** |[github.io][api_nodejs] |[npm][api_nodejs_npm] |- |- |
-| **Batch Java** (preview) |[github.io][api_java] |[Maven][api_java_jar] |- |[GitHub][api_sample_java] |
+| **Batch REST** | [MSDN][batch_rest] | N/A | - | - | 
+| **Batch .NET** | [docs.microsoft.com][api_net] | [NuGet ][api_net_nuget] | [教程](/documentation/articles/batch-dotnet-get-started/) | [GitHub][api_sample_net] | 
+| **Batch Python** | [readthedocs.io][api_python] | [PyPI][api_python_pypi] | [教程](/documentation/articles/batch-python-tutorial/) | [GitHub][api_sample_python] | 
+| **Batch Node.js** | [github.io][api_nodejs] | [npm][api_nodejs_npm] | - | - | 
+| **Batch Java**（预览）| [github.io][api_java] | [Maven][api_java_jar] | - | [GitHub][api_sample_java] |
 
 ### Batch 命令行工具
 
 也可通过命令行工具使用开发 API 提供的功能：
 
-- [Batch PowerShell cmdlet][batch_ps]：Azure PowerShell 模块中的 Azure Batch cmdlet 允许用户使用 PowerShell 管理 Batch 资源。
+- [Batch PowerShell cmdlet][batch_ps]：[Azure PowerShell](/documentation/articles/powershell-install-configure/) 模块中的 Azure Batch cmdlet 可让用户使用 PowerShell 管理 Batch 资源。
 - [Azure CLI](/documentation/articles/xplat-cli-install/)：Azure 命令行接口 (Azure CLI) 是一个跨平台工具集，提供用来与许多 Azure 服务（包括 Batch）交互的 shell 命令。
 
 ### Batch 资源管理
@@ -152,5 +152,5 @@ Batch 很适合处理本质并行（也称为“超简单并行”）的应用�
 [1]: ./media/batch-technical-overview/tech_overview_01.png
 [2]: ./media/batch-technical-overview/tech_overview_02.png
 
-<!---HONumber=Mooncake_0116_2017-->
+<!---HONumber=Mooncake_0306_2017-->
 <!---Update_Description: wording update -->

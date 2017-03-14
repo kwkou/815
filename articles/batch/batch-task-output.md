@@ -1,5 +1,5 @@
 <properties
-    pageTitle="保存 Azure Batch 中的作业和任务输出 | Azure"
+    pageTitle="保留作业和任务的输出 - Azure Batch | Azure"
     description="了解如何使用 Azure 存储作为 Batch 任务和作业输出的持久性存储，在 Azure 门户预览中查看这些保存的输出。"
     services="batch"
     documentationcenter=".net"
@@ -13,8 +13,8 @@
     ms.topic="article"
     ms.tgt_pltfrm="vm-windows"
     ms.workload="big-compute"
-    ms.date="01/05/2017"
-    wacn.date="02/22/2017"
+    ms.date="01/23/2017"
+    wacn.date="03/14/2017"
     ms.author="tamram" />  
 
 
@@ -244,5 +244,5 @@ Azure 门户预览将显示使用 Azure Batch 文件约定自述文件中提到�
 [1]: ./media/batch-task-output/task-output-01.png "门户中“保存的输出文件”和“保存的日志”选择器"
 [2]: ./media/batch-task-output/task-output-02.png "Azure 门户预览中的“任务输出”边栏选项卡"
 
-<!---HONumber=Mooncake_0213_2017-->
-<!---Update_Description: wording update -->
+<!---HONumber=Mooncake_0306_2017-->
+<!---Update_Description: update meta properties -->

@@ -1,5 +1,5 @@
 <properties
-    pageTitle="教程 - Azure Batch Python 客户端入门 | Azure"
+    pageTitle="教程 - 使用适用于 Python 的 Azure Batch SDK |Azure"
     description="了解 Azure Batch 的基本概念，以及如何使用一个简单方案开发 Batch 服务"
     services="batch"
     documentationcenter="python"
@@ -13,8 +13,8 @@
     ms.topic="hero-article"
     ms.tgt_pltfrm="na"
     ms.workload="big-compute"
-    ms.date="11/30/2016"
-    wacn.date="02/06/2017"
+    ms.date="02/01/2017"
+    wacn.date="03/14/2017"
     ms.author="tamram" />  
 
 
@@ -39,7 +39,7 @@
 ### 代码示例
 Python 教程[代码示例][github_article_samples]是 GitHub 上的 [azure-batch-samples][github_samples] 存储库中提供的众多 Batch 代码示例之一。单击存储库主页上的“克隆或下载”>“下载 ZIP”，或单击“azure-batch-samples-master.zip”直接下载链接，即可下载所有示例。[][github_samples_zip]解压缩 ZIP 文件的内容后，在 `article_samples` 目录中可找到本教程的两个脚本：
 
-`/azure-batch-samples/Python/Batch/article_samples/python_tutorial_client.py`<br/>
+`/azure-batch-samples/Python/Batch/article_samples/python_tutorial_client.py`<br/> 
 `/azure-batch-samples/Python/Batch/article_samples/python_tutorial_task.py`
 
 ### Python 环境
@@ -94,7 +94,7 @@ Python 教程[代码示例][github_article_samples]是 GitHub 上的 [azure-batc
 ## Batch Python 教程代码示例
 Batch Python 教程代码示例由两个 Python 脚本和若干数据文件组成。
 
-- **python\_tutorial\_client.py**：与 Batch 和存储空间服务交互，在计算节点（虚拟机）上执行并行工作负荷。*python\_tutorial\_client.py* 脚本在本地工作站上运行。
+- **python\_tutorial\_client.py**：与 Batch 和存储服务交互，在计算节点（虚拟机）上执行并行工作负荷。*python\_tutorial\_client.py* 脚本在本地工作站上运行。
 - **python\_tutorial\_task.py**：在 Azure 中的计算节点上运行从而执行实际工作的脚本。在示例中，*python\_tutorial\_task.py* 将分析从 Azure 存储下载的文件（输入文件）中的文本。然后，它会生成一个文本文件（输出文件），其中包含出现在输入文件中的头三个单词的列表。创建输出文件后，*python\_tutorial\_task.py* 会将该文件上载到 Azure 存储。这样，便可以将文件下载到工作站上运行的客户端脚本。*python\_tutorial\_task.py* 脚本在 Batch 服务中的多个计算节点上并行运行。
 - **./data/taskdata*.txt**：这三个文本文件为计算节点上运行的任务提供输入。
 
@@ -146,7 +146,7 @@ Python
 
 可以在 [Azure 门户预览][azure_portal]中每项服务的帐户边栏选项卡中查找 Batch 和存储帐户凭据：
 
-![门户中的 Batch 凭据][9] 
+![门户中的 Batch 凭据][9]
 ![门户中的存储空间凭据][10]<br/>
 
 在以下部分中，我们将分析脚本处理 Batch 服务中工作负荷的步骤。建议你在执行本文余下部分所述的步骤时，经常在编辑器中查看脚本。
@@ -160,9 +160,9 @@ Python
 
 ## 步骤 1：创建存储容器  <a name="step-1-create-storage-containers"></a>
 
-![在 Azure 存储空间中创建容器][1] <br/>
+![在 Azure 存储中创建容器][1] <br/>
 
-Batch 包含的内置支持支持与 Azure 存储空间交互。存储帐户中的容器将为 Batch 帐户中运行的任务提供所需的文件。这些容器还提供存储任务生成的输出数据所需的位置。*python\_tutorial\_client.py* 脚本执行的第一个操作是在 [Azure Blob 存储](/documentation/articles/storage-introduction/#blob-storage/)中创建三个容器：
+Batch 包含的内置支持支持与 Azure 存储交互。存储帐户中的容器将为 Batch 帐户中运行的任务提供所需的文件。这些容器还提供存储任务生成的输出数据所需的位置。*python\_tutorial\_client.py* 脚本执行的第一个操作是在 [Azure Blob 存储](/documentation/articles/storage-introduction/#blob-storage/)中创建三个容器：
 
 - **应用程序**：此容器存储任务运行的 Python 脚本 *python\_tutorial\_task.py*。
 - **输入**：任务将从*输入*容器下载所要处理的数据文件。
@@ -263,7 +263,7 @@ Python
 	                                    blob_source=sas_url)
 
 ### ResourceFiles
-[ResourceFile][py_resource_file] 提供 Batch 中的任务，以及 Azure 存储空间中将在任务运行之前下载到计算节点的文件的 URL。[ResourceFile][py_resource_file].**blob\_source** 属性指定存在于 Azure 存储的文件的完整 URL。该 URL 还可以包含用于对文件进行安全访问的共享访问签名 (SAS)。Batch 中的大多数任务类型都包含 *ResourceFiles* 属性，这些类型包括：
+[ResourceFile][py_resource_file] 提供 Batch 中的任务，以及 Azure 存储中将在任务运行之前下载到计算节点的文件的 URL。[ResourceFile][py_resource_file].**blob\_source** 属性指定存在于 Azure 存储的文件的完整 URL。该 URL 还可以包含用于对文件进行安全访问的共享访问签名 (SAS)。Batch 中的大多数任务类型都包含 *ResourceFiles* 属性，这些类型包括：
 
 - [CloudTask][py_task]
 - [StartTask][py_starttask]
@@ -273,13 +273,13 @@ Python
 本示例未使用 JobPreparationTask 或 JobReleaseTask 任务类型，但读者可以通过 [Run job preparation and completion tasks on Azure Batch compute nodes](/documentation/articles/batch-job-prep-release/)（在 Azure Batch 计算节点上运行作业准备和完成任务）详细了解这些任务类型。
 
 ### 共享访问签名 (SAS)
-共享访问签名是一些字符串，可以提供对 Azure 存储空间中容器和 Blob 的安全访问。*python\_tutorial\_client.py* 脚本使用 Blob 和容器共享访问签名，并演示如何从存储空间服务获取这些共享访问签名字符串。
+共享访问签名是一些字符串，可以提供对 Azure 存储中容器和 Blob 的安全访问。*python\_tutorial\_client.py* 脚本使用 Blob 和容器共享访问签名，并演示如何从存储服务获取这些共享访问签名字符串。
 
 - **Blob 共享访问签名**：池的 StartTask 在从存储空间下载任务脚本和输入数据文件时使用 Blob 共享访问签名（请参阅下面的[步骤 3](#step-3-create-batch-pool)）。*python\_tutorial\_client.py* 中的 `upload_file_to_container` 函数包含可用于获取每个 Blob 的共享访问签名的代码。它通过调用存储模块中的 [BlockBlobService.make\_blob\_url][py_make_blob_url] 实现此目的。
 - **容器共享访问签名**：每个任务在计算节点上完成其工作后，会将其输出文件上载到 Azure 存储中的*输出*容器。为此，*python\_tutorial\_task.py* 将使用提供容器写入访问权限的容器共享访问签名。*python\_tutorial\_client.py* 中的 `get_container_sas_token` 函数获取容器的共享访问签名，然后该签名将以命令行参数的形式传递给任务。步骤 5 [将任务添加到作业](#step-5-add-tasks-to-job)介绍了容器 SAS 的用法。
 
 > [AZURE.TIP]
-> 请查看有关共享访问签名的两篇系列教程的[第 1 部分：了解 SAS 模型](/documentation/articles/storage-dotnet-shared-access-signature-part-1/)和[第 2 部分：创建 SAS 并将其用于 Blob 服务](/documentation/articles/storage-dotnet-shared-access-signature-part-2/)，以详细了解如何提供对存储帐户中数据的安全访问。
+请查看有关共享访问签名的两篇系列教程的[第 1 部分：了解 SAS 模型](/documentation/articles/storage-dotnet-shared-access-signature-part-1/)和[第 2 部分：创建 SAS 并将其用于 Blob 服务](/documentation/articles/storage-dotnet-shared-access-signature-part-2/)，以详细了解如何提供对存储帐户中数据的安全访问。
 >
 >
 
@@ -391,6 +391,7 @@ Python
 
 ## 步骤 4：创建 Batch 作业  <a name="step-4-create-batch-job"></a>
 ![创建 Batch 作业][4]
+<br/>
 
 Batch **作业**是任务的集合，它与计算节点池相关联。作业中的任务在关联池的计算节点上执行。
 
@@ -546,9 +547,9 @@ Python
 
 ## 步骤 7：下载任务输出  <a name="step-7-download-task-output"></a>
 
-![从存储空间下载任务输出][7]
+![从存储空间下载任务输出][7]<br/>
 
-完成作业后，可以从 Azure 存储空间下载任务的输出。可通过在 *python\_tutorial\_client.py* 中调用 `download_blobs_from_container` 来实现此目的：
+完成作业后，可以从 Azure 存储下载任务的输出。可通过在 *python\_tutorial\_client.py* 中调用 `download_blobs_from_container` 来实现此目的：
 
 Python
 
@@ -583,13 +584,13 @@ Python
 	    print('  Download complete!')
 
 > [AZURE.NOTE]
-> 在 *python\_tutorial\_client.py* 中调用 `download_blobs_from_container` 可指定应将文件下载到主目录。可以随意修改此输出位置。
+在 *python\_tutorial\_client.py* 中调用 `download_blobs_from_container` 可指定应将文件下载到主目录。可以随意修改此输出位置。
 >
 >
 
 ## 步骤 8：删除容器
 
-由于你需要对位于 Azure 存储空间中的数据付费，因此我们建议删除 Batch 作业不再需要的所有 Blob。在 *python\_tutorial\_client.py* 中，可通过调用 [BlockBlobService.delete\_container][py_delete_container] 三次来实现此目的：
+由于你需要对位于 Azure 存储中的数据付费，因此我们建议删除 Batch 作业不再需要的所有 Blob。在 *python\_tutorial\_client.py* 中，可通过调用 [BlockBlobService.delete\_container][py_delete_container] 三次来实现此目的：
 
 	# Clean up storage resources
 	print('Deleting containers...')
@@ -612,7 +613,7 @@ Python
 	    batch_client.pool.delete(_POOL_ID)
 
 > [AZURE.IMPORTANT]
-> 请记住，需要支付计算资源的费用，而删除未使用的池可将费用降到最低。另请注意，删除池也会删除该池内的所有计算节点，并且删除池后，将无法恢复节点上的任何数据。
+请记住，需要支付计算资源的费用，而删除未使用的池可将费用降到最低。另请注意，删除池也会删除该池内的所有计算节点，并且删除池后，将无法恢复节点上的任何数据。
 >
 >
 
@@ -620,7 +621,7 @@ Python
 从教程[代码示例][github_article_samples]运行 *python\_tutorial\_client.py* 脚本时，控制台输出如下所示。出现 `Monitoring all tasks for 'Completed' state, timeout in 0:20:00...` 后将会暂停，此时会创建、启动池的计算节点，然后执行池启动任务中的命令。在执行期间和之后，可以使用 [Azure 门户预览][azure_portal]监视池、计算节点、作业和任务。使用 [Azure 门户预览][azure_portal]或 [Azure 存储资源管理器][storage_explorer]可以查看应用程序创建的存储资源（容器和 Blob）。
 
 > [AZURE.TIP]
-> 从 `azure-batch-samples/Python/Batch/article_samples` 目录内运行 python\_tutorial\_client.py 脚本。它将使用 `common.helpers` 模块导入的相对路径，因此如果未从此目录内运行脚本，可能会看到 `ImportError: No module named 'common'`。
+从 `azure-batch-samples/Python/Batch/article_samples` 目录内运行 python\_tutorial\_client.py 脚本。它将使用 `common.helpers` 模块导入的相对路径，因此如果未从此目录内运行脚本，可能会看到 `ImportError: No module named 'common'`。
 >
 >
 
@@ -658,7 +659,6 @@ Python
 熟悉 Batch 解决方案的基本工作流后，接下来可以深入了解 Batch 服务的其他功能。
 
 - 查看 [Overview of Azure Batch features](/documentation/articles/batch-api-basics/)（Azure Batch 功能概述）一文。如果对该服务不熟悉，建议阅读此文。
-- 请先转到批处理学习路径，阅读**深入开发开发**下的其他批处理开发文章。
 - 通过 [TopNWords][github_topnwords] 示例了解有关使用 Batch 处理“前 N 个单词”工作负荷的不同实现方式。
 
 [azure_batch]: /home/features/batch/
@@ -711,7 +711,7 @@ Python
 [visual_studio]: https://www.visualstudio.com/products/vs-2015-product-editions
 [vm_marketplace]: https://azure.microsoft.com/marketplace/virtual-machines/
 
-[1]: ./media/batch-python-tutorial/batch_workflow_01_sm.png "在 Azure 存储空间中创建容器"
+[1]: ./media/batch-python-tutorial/batch_workflow_01_sm.png "在 Azure 存储中创建容器"
 [2]: ./media/batch-python-tutorial/batch_workflow_02_sm.png "将任务应用程序和输入（数据）文件上载到容器"
 [3]: ./media/batch-python-tutorial/batch_workflow_03_sm.png "创建 Batch 池"
 [4]: ./media/batch-python-tutorial/batch_workflow_04_sm.png "创建 Batch 作业"
@@ -723,4 +723,5 @@ Python
 [10]: ./media/batch-python-tutorial/credentials_storage_sm.png "门户中的存储空间凭据"
 [11]: ./media/batch-python-tutorial/batch_workflow_minimal_sm.png "Batch 解决方案工作流（精简流程图）"
 
-<!---HONumber=Mooncake_Quality_Review_0125_2017-->
+<!---HONumber=Mooncake_0306_2017-->
+<!---Update_Description: wording update -->

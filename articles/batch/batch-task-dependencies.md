@@ -1,5 +1,5 @@
 <properties
-    pageTitle="Azure Batch 中的任务依赖关系 | Azure"
+    pageTitle="配置依赖于其他任务的任务 - Azure Batch | Azure"
     description="在 Azure Batch 中创建依赖于其他任务的成功完成的任务，以处理 MapReduce 样式工作负荷和类似的大数据工作负荷。"
     services="batch"
     documentationcenter=".net"
@@ -13,8 +13,8 @@
     ms.topic="article"
     ms.tgt_pltfrm="vm-windows"
     ms.workload="big-compute"
-    ms.date="01/05/2017"
-    wacn.date="02/22/2017"
+    ms.date="01/23/2017"
+    wacn.date="03/14/2017"
     ms.author="tamram" />
 
 # Azure Batch 中的任务依赖关系
@@ -169,5 +169,5 @@ csharp
 [2]: ./media/batch-task-dependency/02_one_to_many.png "关系图：一对多依赖关系"
 [3]: ./media/batch-task-dependency/03_task_id_range.png "关系图：任务 ID 范围依赖关系"
 
-<!---HONumber=Mooncake_0213_2017-->
-<!---Update_Description: wording update -->
+<!---HONumber=Mooncake_0306_2017-->
+<!---Update_Description: update meta properties -->

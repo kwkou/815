@@ -1,12 +1,11 @@
 <properties
-    pageTitle="在 Azure Batch 中使用多实例任务运行 MPI 应用程序 | Azure"
+    pageTitle="使用多实例任务运行 MPI 应用程序 - Azure Batch | Azure"
     description="了解如何在 Azure Batch 中使用多实例任务类型执行消息传递接口 (MPI) 应用程序。"
     services="batch"
     documentationcenter=".net"
-    author="mmacy"
+    author="tamram"
     manager="timlt"
-    editor="" />  
-
+    editor="" />
 <tags
     ms.assetid="83e34bd7-a027-4b1b-8314-759384719327"
     ms.service="batch"
@@ -14,33 +13,39 @@
     ms.topic="article"
     ms.tgt_pltfrm="vm-windows"
     ms.workload="big-compute"
-    ms.date="10/21/2016"
-    wacn.date="12/12/2016"
-    ms.author="marsma" />
+    ms.date="01/23/2017"
+    wacn.date="03/14/2017"
+    ms.author="tamram" />
 
 # 在 Azure Batch 中使用多实例任务来执行消息传递接口 (MPI) 应用程序
 使用多实例任务可在多个计算节点上同时运行 Azure Batch 任务。这些任务可在 Batch 中实现高性能计算方案，例如消息传递接口 (MPI) 应用程序。本文介绍如何使用 [Batch .NET][api_net] 库执行多实例任务。
 
->[AZURE.NOTE] 虽然本文中的示例重点介绍批处理 .NET、MS-MPI 和 Windows 计算节点，但此处讨论的多实例任务概念也适用于其他平台和技术（例如 Linux 节点上的 Python 和 Intel MPI）。
+> [AZURE.NOTE]
+虽然本文中的示例重点介绍 Batch .NET、MS-MPI 和 Windows 计算节点，但此处讨论的多实例任务概念也适用于其他平台和技术（例如 Linux 节点上的 Python 和 Intel MPI）。
+>
+>
 
 ## 多实例任务概述
-在 Batch 中，每个任务通常是在单个计算节点上执行 -- 你将多个任务提交给作业，Batch 服务将每个任务安排在节点上执行。但是，可以通过配置任务的“多实例设置”，告知批处理改为创建一个主要任务和多个子任务，然后在多个节点上执行它们。
+在 Batch 中，每个任务通常是在单个计算节点上执行 -- 将多个任务提交给作业，Batch 服务将每个任务安排在节点上执行。但是，可以通过配置任务的“多实例设置”，告知 Batch 改为创建一个主要任务和多个子任务，然后在多个节点上执行任务。
 
 ![多实例任务概述][1]  
 
 
 将具有多实例设置的任务提交给作业时，Batch 执行多实例任务特有的几个步骤：
 
-1. 批处理服务根据多实例设置创建一个**主要任务**和多个**子任务**。任务（主要任务和所有子任务）的总数与用户在多实例设置中指定的**实例**（计算节点）数相符。
-2. 批处理将其中一个计算节点指定为**主**节点，将主要任务安排在主节点上执行，将子任务安排在已分配给多实例任务的剩余计算节点上执行，一个节点一个子任务。
-3. 主要任务和所有子任务会下载在多实例设置中指定的任何**通用资源文件**。
-4. 下载通用资源文件之后，主任务和子任务将执行多实例设置中指定的**协调命令**。通常使用协调命令准备节点，以便执行任务。该操作可能包括启动后台服务（例如 [Microsoft MPI][msmpi_msdn] 的 `smpd.exe`），以及验证节点是否已就绪，能够处理节点间消息。
+1. Batch 服务根据多实例设置创建一个**主要任务**和多个**子任务**。任务（主要任务和所有子任务）的总数与用户在多实例设置中指定的**实例**（计算节点）数相符。
+2. Batch 将其中一个计算节点指定为**主**节点，将主要任务安排在主节点上执行，将子任务安排在已分配给多实例任务的剩余计算节点上执行，一个节点一个子任务。
+3. 主要任务和所有子任务会下载在多实例设置中指定的任何**公共资源文件**。
+4. 下载公共资源文件之后，主任务和子任务将执行多实例设置中指定的**协调命令**。通常使用协调命令准备节点，以便执行任务。该操作可能包括启动后台服务（例如 [Microsoft MPI][msmpi_msdn] 的 `smpd.exe`），以及验证节点是否已就绪，能够处理节点间消息。
 5. 在主要任务和所有子任务成功完成协调命令*以后*，主要任务会在主节点上执行**应用程序命令**。应用程序命令是多实例任务本身的命令行，只由主要任务执行。在基于 [MS-MPI][msmpi_msdn] 的解决方案中，用户将在此处使用 `mpiexec.exe` 执行已启用 MPI 的应用程序。
 
-> [AZURE.NOTE] 虽然“多实例任务”在功能上不同，但不是特殊的任务类型，例如 [StartTask][net_starttask] 或 [JobPreparationTask][net_jobprep]。多实例任务只是已设置多实例设置的标准 Batch 任务（Batch .NET 中的 [CloudTask][net_task]）。在本文中，我们将它称为多实例任务。
+> [AZURE.NOTE]
+虽然“多实例任务”在功能上不同，但并不是特殊的任务类型，例如 [StartTask][net_starttask] 或 [JobPreparationTask][net_jobprep]。多实例任务只是已设置多实例设置的标准 Batch 任务（Batch .NET 中的 [CloudTask][net_task]）。在本文中，我们将它称为多实例任务。
+>
+>
 
 ## 多实例任务的要求
-多实例任务需要有已启用节点间通信和已禁用并发任务执行的池。如果尝试在已禁用节点间通信，或 *maxTasksPerNode* 值大于 1 的池中运行多实例任务，则永远不排定任务 -- 它无限期停留在“活动”状态。本代码段显示如何使用 Batch .NET 库创建这种池。
+多实例任务需要有已启用节点间通信和已禁用并发任务执行的池。如果尝试在已禁用节点间通信，或 *maxTasksPerNode* 值大于 1 的池中运行多实例任务，则永远不排定任务 -- 它无限期停留在“活动”状态。本代码片段显示如何使用 Batch .NET 库创建这种池。
 
 csharp
 
@@ -81,7 +86,7 @@ csharp
 
 
 ### 远程直接内存访问 (RDMA)
-在批处理池中为计算节点选择支持 RDMA 的大小（例如 A9）时，MPI 应用程序可以使用 Azure 的高性能、低延迟的远程直接内存访问 (RDMA) 网络。
+在 Batch 池中为计算节点选择[支持 RDMA 的大小](/documentation/articles/virtual-machines-windows-a8-a9-a10-a11-specs?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json/)（例如 A9）时，MPI 应用程序可以使用 Azure 的高性能、低延迟的远程直接内存访问 (RDMA) 网络。
 
 在以下文章中查找指定为“支持 RDMA”的大小：
 
@@ -90,13 +95,16 @@ csharp
   - [云服务的大小](/documentation/articles/cloud-services-sizes-specs/)（仅 Windows）
 - **VirtualMachineConfiguration** 池
 
+  - [Azure 中虚拟机的大小](/documentation/articles/virtual-machines-linux-sizes?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json/) (Linux)
+  - [Azure 中虚拟机的大小](/documentation/articles/virtual-machines-windows-sizes?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json/) (Windows)
+
 > [AZURE.NOTE]
 若要充分利用 [Linux 计算节点](/documentation/articles/batch-linux-nodes/)上的 RDMA，必须使用节点上的 **Intel MPI**。有关 CloudServiceConfiguration 和 VirtualMachineConfiguration 池的详细信息，请参阅[批处理功能概述](/documentation/articles/batch-api-basics/)的“池”部分。
 >
 >
 
 ## 使用 Batch .NET 创建多实例任务
-我们已讨论池的要求和 MPI 包安装，现在让我们创建多实例任务。在此代码段中，我们将创建一个标准 [CloudTask][net_task]，然后配置其 [MultiInstanceSettings][net_multiinstance_prop] 属性。如前所述，多实例任务不是独特的任务类型，而只是已配置多实例设置的标准 Batch 任务。
+我们已讨论池的要求和 MPI 包安装，现在让我们创建多实例任务。在此代码段中，我们将创建一个标准 [CloudTask][net_task]，然后配置其 [MultiInstanceSettings][net_multiinstance_prop] 属性。如前所述，多实例任务并不是独特的任务类型，而只是已配置多实例设置的标准 Batch 任务。
 
 csharp
 
@@ -132,7 +140,7 @@ csharp
 	myMultiInstanceTask.MultiInstanceSettings = new MultiInstanceSettings(numberOfNodes);
 
 ### 主节点
-当用户提交多实例任务时，批处理服务会将其中一个计算节点指定为“主”节点，并将主要任务安排在主节点上执行。子任务安排在已分配给多实例任务的剩余节点上执行。
+当用户提交多实例任务时，Batch 服务会将其中一个计算节点指定为“主”节点，并将主要任务安排在主节点上执行。子任务安排在已分配给多实例任务的剩余节点上执行。
 
 ## 协调命令
 主要任务和子任务都执行协调命令。
@@ -151,12 +159,15 @@ csharp
 	cmd /c ""%MSMPI_BIN%\mpiexec.exe"" -c 1 -wdir %AZ_BATCH_TASK_SHARED_DIR% MyMPIApplication.exe
 
 
->[AZURE.NOTE] 由于 MS-MPI 的 `mpiexec.exe` 默认使用 `CCP_NODES` 变量（请参阅[环境变量](#environment-variables)），上述示例应用程序命令行已排除该变量。
+> [AZURE.NOTE]
+由于 MS-MPI 的 `mpiexec.exe` 默认使用 `CCP_NODES` 变量（请参阅[环境变量](#environment-variables)），上述示例应用程序命令行已排除该变量。
+>
+>
 
-## 环境变量 <a name="environment-variables"></a>
+## 环境变量
 批处理创建的多个[环境变量][msdn_env_var]特定于已分配给某个多实例任务的计算节点上的多实例任务。协调命令行和应用程序命令行可以引用这些环境变量，就像其所执行的脚本和程序一样。
 
-以下环境变量由多实例任务所使用的批处理服务创建：
+以下环境变量由多实例任务所使用的 Batch 服务创建：
 
 - `CCP_NODES`  
 
@@ -169,16 +180,22 @@ csharp
 
 如需这些环境变量以及其他批处理计算节点环境变量的完整详细信息（包括内容和可见性），请参阅 [Compute node environment variables][msdn_env_var]（计算节点环境变量）。
 
->[AZURE.TIP] 此批处理 Linux MPI 代码示例包含一个示例，介绍了如何使用这些环境变量中的其中几个。[coordination-cmd][coord_cmd_example] Bash 脚本可从 Azure 存储下载常用应用程序和输入文件、在主节点上启用网络文件系统 (NFS) 共享，以及将其他分配给多实例任务的节点配置为 NFS 客户端。
+> [AZURE.TIP]
+此 Batch Linux MPI 代码示例包含一个示例，介绍了如何使用其中几个环境变量。[coordination-cmd][coord_cmd_example] Bash 脚本可从 Azure 存储下载常用应用程序和输入文件、在主节点上启用网络文件系统 (NFS) 共享，以及将其他分配给多实例任务的节点配置为 NFS 客户端。
+>
+>
 
 ## 资源文件
 多实例任务需要考虑两组资源文件：所有任务（主要任务和子任务）下载的一般资源文件，以及为多实例任务本身指定的资源文件（只有主要任务下载）。
 
-可以在任务的多实例设置中指定一个或多个通用资源文件。主要任务及所有子任务从 [Azure 存储](/documentation/articles/storage-introduction/)将这些通用资源文件下载到每个节点的**任务共享目录**。可以使用 `AZ_BATCH_TASK_SHARED_DIR` 环境变量从应用程序命令和协调命令行访问任务共享目录。`AZ_BATCH_TASK_SHARED_DIR` 路径在所有分配给多实例任务的节点上都是相同的，因此可在主要任务和所有子任务之间共享单个协调命令。从远程访问的意义上来说，批处理并不“共享”目录，但用户可将其用作装入点或共享点，如此前在有关环境变量的提示中所述。
+可以在任务的多实例设置中指定一个或多个通用资源文件。主要任务及所有子任务从 [Azure 存储](/documentation/articles/storage-introduction/)将这些通用资源文件下载到每个节点的**任务共享目录**。可以使用 `AZ_BATCH_TASK_SHARED_DIR` 环境变量从应用程序命令和协调命令行访问任务共享目录。`AZ_BATCH_TASK_SHARED_DIR` 路径在所有分配给多实例任务的节点上都是相同的，因此可在主要任务和所有子任务之间共享单个协调命令。从远程访问的意义上来说，Batch 并不“共享”目录，但用户可将其用作装入点或共享点，如此前在有关环境变量的提示中所述。
 
-默认情况下，为多实例任务本身指定的资源文件下载到任务的工作目录 `AZ_BATCH_TASK_WORKING_DIR`。如前所述，仅主要任务下载为多实例任务本身指定的资源文件（与常用资源文件相比）。
+默认情况下，为多实例任务本身指定的资源文件下载到任务的工作目录 `AZ_BATCH_TASK_WORKING_DIR`。如前所述，仅主要任务下载为多实例任务本身指定的资源文件（与公共资源文件相比）。
 
-> [AZURE.IMPORTANT] 在命令行中，请始终使用环境变量 `AZ_BATCH_TASK_SHARED_DIR` 和 `AZ_BATCH_TASK_WORKING_DIR` 来引用这些目录。请勿尝试手动构造路径。
+> [AZURE.IMPORTANT]
+在命令行中，请始终使用环境变量 `AZ_BATCH_TASK_SHARED_DIR` 和 `AZ_BATCH_TASK_WORKING_DIR` 来引用这些目录。请勿尝试手动构造路径。
+>
+>
 
 ## 任务生存期
 主要任务的生存期控制整个多实例任务的生存期。当主要任务退出时，所有子任务就会终止。主要任务的退出代码就是任务的退出代码，因此在重试用途上用于判断任务成功或失败。
@@ -194,9 +211,12 @@ csharp
 ## 获取有关子任务的信息
 若要使用 Batch .NET 库获取子任务的详细信息，请调用 [CloudTask.ListSubtasks][net_task_listsubtasks] 方法。此方法返回所有子任务的相关信息，以及已执行任务的计算节点的相关信息。可以根据此信息判断每项子任务的根目录、池 ID、其当前状态、退出代码等等。可以使用此信息结合 [PoolOperations.GetNodeFile][poolops_getnodefile] 方法，以获取子任务的文件。请注意，此方法不返回主要任务 (ID 0) 的相关信息。
 
-> [AZURE.NOTE] 除非另有指明，否则在多实例 [CloudTask][net_task] 本身执行的 Batch .NET 方法只应用到主要任务。例如，当在多实例任务上调用 [CloudTask.ListNodeFiles][net_task_listnodefiles] 方法时，只返回主要任务的文件。
+> [AZURE.NOTE]
+除非另有指明，否则在多实例 [CloudTask][net_task] 本身执行的 Batch .NET 方法只应用到主要任务。例如，当在多实例任务上调用 [CloudTask.ListNodeFiles][net_task_listnodefiles] 方法时，只返回主要任务的文件。
+>
+>
 
-以下代码段演示如何获取子任务信息，以及从它们执行所在的节点请求文件的内容。
+以下代码片段演示如何获取子任务信息，以及从它们执行所在的节点请求文件的内容。
 
 csharp
 
@@ -220,8 +240,8 @@ csharp
 				await batchClient.PoolOperations.GetComputeNodeAsync(subtask.ComputeNodeInformation.PoolId,
 	                                                                 subtask.ComputeNodeInformation.ComputeNodeId);
 	
-	        NodeFile stdOutFile = await node.GetNodeFileAsync(subtask.ComputeNodeInformation.TaskRootDirectory + "\\" + Constants.StandardOutFileName);
-	        NodeFile stdErrFile = await node.GetNodeFileAsync(subtask.ComputeNodeInformation.TaskRootDirectory + "\\" + Constants.StandardErrorFileName);
+	        NodeFile stdOutFile = await node.GetNodeFileAsync(subtask.ComputeNodeInformation.TaskRootDirectory + "\" + Constants.StandardOutFileName);
+	        NodeFile stdErrFile = await node.GetNodeFileAsync(subtask.ComputeNodeInformation.TaskRootDirectory + "\" + Constants.StandardErrorFileName);
 	        stdOut = await stdOutFile.ReadAsStringAsync();
 	        stdErr = await stdErrFile.ReadAsStringAsync();
 	
@@ -241,11 +261,13 @@ GitHub 上的 [MultiInstanceTasks][github_mpi] 代码示例演示了如何通过
 ### 准备工作 <a name="preparation"></a>
 1. 执行 [How to compile and run a simple MS-MPI program][msmpi_howto]（如何编译和运行简单的 MS-MPI 程序）中的头两个步骤。这样即可满足下一步的先决条件。
 2. 生成 [MPIHelloWorld][helloworld_proj] 示例 MPI 程序的*发行* 版。该程序是将在计算节点上通过多实例任务运行的程序。
-3. 创建包含 `MPIHelloWorld.exe`（在步骤 2 构建）和 `MSMpiSetup.exe`（在步骤 1 下载）的 zip 文件。需在下一步将此 zip 文件作为应用程序包上载。
+3. 创建包含 `MPIHelloWorld.exe`（在步骤 2 构建）和 `MSMpiSetup.exe`（在步骤 1 下载）的 zip 文件。下一步需要将此 zip 文件作为应用程序包上载。
 4. 通过 [Azure 门户预览][portal]创建名为“MPIHelloWorld”的批处理[应用程序](/documentation/articles/batch-application-packages/)，并将在上一步创建的 zip 文件指定为“1.0”版应用程序包。有关详细信息，请参阅[上载和管理应用程序](/documentation/articles/batch-application-packages/#upload-and-manage-applications/)。
 
 > [AZURE.TIP]
 生成*发行*版 `MPIHelloWorld.exe`，这样就不需在应用程序包中包括任何其他依赖项（例如 `msvcp140d.dll` 或 `vcruntime140d.dll`）。
+>
+>
 
 ### 执行 <a name="execution"></a>
 1. 从 GitHub 下载 [azure-batch-samples][github_samples_zip]。
@@ -259,6 +281,8 @@ GitHub 上的 [MultiInstanceTasks][github_mpi] 代码示例演示了如何通过
 
 > [AZURE.TIP]
 如果没有 Visual Studio，可下载免费版 [Visual Studio Community][visual_studio]。
+>
+>
 
 `MultiInstanceTasks.exe` 的输出与下面类似：
 
@@ -342,4 +366,5 @@ GitHub 上的 [MultiInstanceTasks][github_mpi] 代码示例演示了如何通过
 
 [1]: ./media/batch-mpi/batch_mpi_01.png "多实例概述"
 
-<!---HONumber=Mooncake_1205_2016-->
+<!---HONumber=Mooncake_0306_2017-->
+<!---Update_Description: wording update -->

@@ -1,5 +1,5 @@
 <properties
-    pageTitle="Azure Batch 池中的 Linux 节点 | Azure"
+    pageTitle="在池中预配 Linux 计算节点 - Azure Batch | Azure"
     description="了解如何处理 Azure Batch 中 Linux 虚拟机池上的并行计算工作负荷。"
     services="batch"
     documentationcenter="python"
@@ -13,8 +13,8 @@
     ms.topic="article"
     ms.tgt_pltfrm="vm-linux"
     ms.workload="na"
-    ms.date="11/30/2016"
-    wacn.date="01/24/2017"
+    ms.date="01/23/2017"
+    wacn.date="03/14/2017"
     ms.author="tamram" />  
 
 
@@ -37,11 +37,11 @@
 Batch 服务使用[虚拟机规模集](/documentation/articles/virtual-machine-scale-sets-overview/)提供 Linux 计算节点。这些虚拟机的操作系统映像由 [Azure 应用商店][vm_marketplace]提供。配置虚拟机映像引用时，需指定应用商店虚拟机映像的属性。创建虚拟机映像引用时，需提供以下属性：
 
 | **映像引用属性** | **示例** |
-| ----------------- | ------------------------ |
-| 发布者 | Canonical |
-| 产品 | UbuntuServer |
-| SKU | 14\.04.4-LTS |
-| 版本 | 最新 |
+| --- | --- |
+| Publisher |Canonical |
+| Offer |UbuntuServer |
+| SKU |14\.04.4-LTS |
+| Version |latest |
 
 > [AZURE.TIP]
 可以在 [Navigate and select Linux virtual machine images in Azure with CLI or PowerShell](/documentation/articles/virtual-machines-linux-cli-ps-findimage?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json/)（使用 CLI 或 PowerShell 在 Azure 中导航和选择 Linux 虚拟机映像）中详细了解这些属性，以及如何列出应用商店映像。请注意，目前并非所有应用商店映像都与 Batch 兼容。有关详细信息，请参阅[节点代理 SKU](#node-agent-sku)。
@@ -207,7 +207,7 @@ csharp
 下表列出了本文上次更新时，与可用 Batch 节点代理兼容的应用商店虚拟机映像。请务必注意，此列表并非永久不变，因为可能随时会添加或删除映像和节点代理。建议 Batch 应用程序和服务始终使用 [list\_node\_agent\_skus][py_list_skus] (Python) 和 [ListNodeAgentSkus][net_list_skus] (Batch .NET)，从当前可用的 SKU 中做出决定和选择。
 
 > [AZURE.WARNING]
-> 以下列表可随时更改。请始终使用 Batch API 中提供的**列出节点代理 SKU** 方法来列出，然后在运行 Batch 作业时从兼容的虚拟机和节点代理 SKU 中做出选择。
+以下列表可随时更改。请始终使用 Batch API 中提供的**列出节点代理 SKU** 方法来列出，然后在运行 Batch 作业时从兼容的虚拟机和节点代理 SKU 中做出选择。
 >
 >
 
@@ -347,5 +347,5 @@ MSDN 上的 [Azure Batch 论坛][forum]是探讨 Batch 服务以及咨询其相�
 [vm_marketplace]: https://azure.microsoft.com/marketplace/virtual-machines/
 [vm_pricing]: /pricing/details/virtual-machines/
 
-<!---HONumber=Mooncake_0116_2017-->
+<!---HONumber=Mooncake_0306_2017-->
 <!---Update_Description: wording update -->

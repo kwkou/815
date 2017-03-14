@@ -1,5 +1,5 @@
 <properties
-    pageTitle="Batch 中的作业准备和清理 | Azure"
+    pageTitle="使用作业准备和释放任务 - Azure Batch | Azure"
     description="使用作业级准备任务最大程度地减少 Azure Batch 计算节点的数据传输，在完成作业时执行释放任务来清理节点。"
     services="batch"
     documentationcenter=".net"
@@ -13,8 +13,8 @@
     ms.topic="article"
     ms.tgt_pltfrm="vm-windows"
     ms.workload="big-compute"
-    ms.date="01/04/2017"
-    wacn.date="02/22/2017"
+    ms.date="01/23/2017"
+    wacn.date="03/14/2017"
     ms.author="tamram" />  
 
 
@@ -221,5 +221,5 @@ csharp
 
 [1]: ./media/batch-job-prep-release/portal-jobprep-01.png
 
-<!---HONumber=Mooncake_0213_2017-->
-<!---Update_Description: wording update -->
+<!---HONumber=Mooncake_0306_2017-->
+<!---Update_Description: update meta properties -->

@@ -1,5 +1,5 @@
 <properties
-    pageTitle="Azure Batch 的 Visual Studio 模板 | Azure"
+    pageTitle="使用 Visual Studio 模板快速启动 Batch 项目 - Azure | Azure"
     description="了解这些 Visual Studio 项目模板如何帮助在 Azure Batch 上实现和运行计算密集型工作负荷"
     services="batch"
     documentationcenter=".net"
@@ -13,8 +13,8 @@
     ms.topic="article"
     ms.tgt_pltfrm="vm-windows"
     ms.workload="big-compute"
-    ms.date="01/05/2017"
-    wacn.date="02/22/2017"
+    ms.date="01/23/2017"
+    wacn.date="03/14/2017"
     ms.author="tamram" />  
 
 
@@ -454,5 +454,5 @@ MSDN 上的 [Azure Batch 论坛][forum]是探讨 Batch 服务以及咨询其相�
 [solution_explorer01]: ./media/batch-visual-studio-templates/solution_explorer01.png
 [solution_explorer02]: ./media/batch-visual-studio-templates/solution_explorer02.png
 
-<!---HONumber=Mooncake_0213_2017-->
-<!---Update_Description: wording update -->
+<!---HONumber=Mooncake_0306_2017-->
+<!---Update_Description: update meta properties -->

@@ -1,5 +1,5 @@
 <properties
-    pageTitle="教程 - Azure Batch .NET 库入门 | Azure"
+    pageTitle="教程 - 使用适用于 .NET 的 Azure Batch 客户端库 | Azure"
     description="了解 Azure Batch 的基本概念，以及如何使用示例方案针对 Batch 服务进行开发。"
     services="batch"
     documentationcenter=".net"
@@ -13,8 +13,8 @@
     ms.topic="hero-article"
     ms.tgt_pltfrm="na"
     ms.workload="big-compute"
-    ms.date="01/13/2017"
-    wacn.date="02/22/2017"
+    ms.date="01/23/2017"
+    wacn.date="03/14/2017"
     ms.author="tamram" />
 
 # 适用于 .NET 的 Azure Batch 库入门
@@ -128,8 +128,7 @@ csharp
 
 ## <a name="step-1-create-storage-containers"></a>步骤 1：创建存储容器
 
-![在 Azure 存储中创建容器][1] 
-<br/>
+![在 Azure 存储中创建容器][1] <br/>
 
 Batch 包含的内置支持支持与 Azure 存储交互。存储帐户中的容器将为 Batch 帐户中运行的任务提供所需的文件。这些容器还提供存储任务生成的输出数据所需的位置。*DotNetTutorial* 客户端应用程序首先在 [Azure Blob 存储](/documentation/articles/storage-introduction/)中创建三个容器：
 
@@ -196,8 +195,7 @@ csharp
 >
 
 ## <a name="step-2-upload-task-application-and-data-files"></a>步骤 2：上载任务应用程序和数据文件
-![将任务应用程序和输入（数据）文件上载到容器][2] 
-<br/>
+![将任务应用程序和输入（数据）文件上载到容器][2] <br/>
 
 在文件上载操作中，*DotNetTutorial* 先定义**应用程序**和**输入**文件在本地计算机上的路径的集合，然后将这些文件上载到上一步骤创建的容器。
 
@@ -294,8 +292,7 @@ DotNetTutorial 示例应用程序不使用 JobPreparationTask 或 JobReleaseTask
 >
 
 ## <a name="step-3-create-batch-pool"></a>步骤 3：创建 Batch 池
-![创建 Batch 池][3] 
-<br/>
+![创建 Batch 池][3] <br/>
 
 Batch **池**是 Batch 执行作业任务时所在的计算节点（虚拟机）集合。
 
@@ -417,8 +414,7 @@ csharp
 创建作业后，可以添加任务来执行工作。
 
 ## <a name="step-5-add-tasks-to-job"></a>步骤 5：将任务添加到作业
-![将任务添加到作业][5]<br/> 
-*(1) 将任务添加到作业；(2) 将任务计划为在节点上运行；(3) 任务下载要处理的数据文件*
+![将任务添加到作业][5]<br/> *(1) 将任务添加到作业；(2) 将任务计划为在节点上运行；(3) 任务下载要处理的数据文件*
 
 Batch **任务**是在计算节点上执行的各个工作单位。任务有一个命令行，可运行在该命令行中指定的脚本或可执行文件。
 
@@ -509,8 +505,7 @@ csharp
 
 ## <a name="step-6-monitor-tasks"></a>步骤 6：监视任务
 
-![监视任务][6]<br/>
-*客户端应用程序将会：(1) 监视任务的完成和成功状态；(2) 监视将结果数据上载到 Azure 存储空间的任务*
+![监视任务][6]<br/>*客户端应用程序将会：(1) 监视任务的完成和成功状态；(2) 监视将结果数据上载到 Azure 存储空间的任务*
 
 任务在添加到作业后，将自动排入队列并计划在与作业关联的池中的计算节点上执行。根据你指定的设置，Batch 将为你处理所有任务排队、计划、重试和其他任务管理工作。
 
@@ -809,5 +804,5 @@ csharp
 [10]: ./media/batch-dotnet-get-started/credentials_storage_sm.png "门户中的存储空间凭据"
 [11]: ./media/batch-dotnet-get-started/batch_workflow_minimal_sm.png "Batch 解决方案工作流（精简流程图）"
 
-<!---HONumber=Mooncake_0213_2017-->
+<!---HONumber=Mooncake_0306_2017-->
 <!---Update_Description: wording and code update -->

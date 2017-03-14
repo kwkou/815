@@ -1,5 +1,5 @@
 <properties
-    pageTitle="Batch 服务的配额和限制 | Azure"
+    pageTitle="Azure Batch 服务的配额和限制 | Azure"
     description="了解默认的 Azure Batch 配额、限制和约束，以及如何请求提高配额"
     services="batch"
     documentationcenter=""
@@ -13,8 +13,8 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="01/05/2017"
-    wacn.date="02/22/2017"
+    ms.date="02/09/2017"
+    wacn.date="03/14/2017"
     ms.author="tamram" />  
 
 
@@ -28,12 +28,7 @@
 > 
 > 
 
-## 订阅配额
-| **资源** | **默认限制** | **最大限制** |
-| --- | --- | --- |
-| 每个区域每个订阅的 Batch 帐户数 |1 |50 |
-
-## Batch 帐户配额
+## 资源配额
 [AZURE.INCLUDE [azure-batch-limits](../../includes/azure-batch-limits.md)]
 
 ## 其他限制
@@ -59,17 +54,17 @@
 
 执行以下步骤，使用 [Azure 门户预览][portal]来请求提高配额。
 
-1. 在门户仪表板上选择“帮助 + 支持”磁贴，或单击门户右上角的问号 \(**?**\)。
-2. 选择“新建支持请求”\>“基本”。
+1. 在门户仪表板上选择“帮助 + 支持”磁贴，或单击门户右上角的问号 (**?**)。
+2. 选择“新建支持请求”>“基本”。
 3. 在“基本”边栏选项卡上：
    
-    a.“问题类型”\>“配额”
+    a.“问题类型”>“配额”
    
     b.选择你的订阅。
    
-    c.“配额类型”\>“Batch”
+    c.“配额类型”>“Batch”
    
-    d.“支持计划”\>“配额支持 - 已包括”
+    d.“支持计划”>“配额支持 - 已包括”
    
     单击“下一步”。
 4. 在“问题”边栏选项卡上：
@@ -100,5 +95,5 @@
 
 [account_quotas]: ./media/batch-quota-limit/accountquota_portal.PNG
 
-<!---HONumber=Mooncake_0213_2017-->
+<!---HONumber=Mooncake_0306_2017-->
 <!---Update_Description: wording update -->
