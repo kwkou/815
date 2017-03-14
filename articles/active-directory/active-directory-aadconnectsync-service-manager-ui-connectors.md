@@ -13,8 +13,8 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="01/09/2017"
-    wacn.date="02/13/2017"
+    ms.date="02/08/2017"
+    wacn.date="03/13/2017"
     ms.author="billmath" />
 
 # Azure AD Connect 同步：Synchronization Service Manager
@@ -73,15 +73,13 @@
 ![Sync Service Manager](./media/active-directory-aadconnectsync-service-manager-ui/csimport.png)
 “旧值”显示当前存储在系统中的数据，而“新值”显示从源系统收到但尚未应用的数据。在本例中，由于发生同步错误，因此无法应用更改。
 
-**错误** 
-对象出现问题时才会显示“错误”页面。有关如何[排查同步错误](/documentation/articles/active-directory-aadconnectsync-service-manager-ui-operations/#troubleshoot-errors-in-operations-tab/)的详细信息，请参阅“操作”页上的详细信息。
+**错误** 对象出现问题时才会显示“错误”页面。有关如何[排查同步错误](/documentation/articles/active-directory-aadconnectsync-service-manager-ui-operations/#troubleshoot-errors-in-operations-tab/)的详细信息，请参阅“操作”页上的详细信息。
 
 **沿袭** 
 “沿袭”选项卡显示连接器空间对象与 Metaverse 对象关联的方式。可以看到连接器上次从连接的系统导入更改的时间，以及应用哪些规则以便在 Metaverse 中填充数据。
 ![Sync Service Manager](./media/active-directory-aadconnectsync-service-manager-ui/cslineage.png) 
 在“操作”列中，可以看到有一个操作为“预配”的“入站”同步规则。这表示只要此连接器空间对象存在，就会保留 Metaverse 对象。如果同步规则列表显示的同步规则方向为“出站”和“预配”，则表示删除 Metaverse 对象时，也将删除此对象。
-![Sync Service Manager](./media/active-directory-aadconnectsync-service-manager-ui/cslineageout.png) 
-在“PasswordSync”列中，还会发现入站连接器空间可进行密码更改，因为有一个同步规则的值为 **True**。此密码接着会通过出站规则发送到 Azure AD。
+![Sync Service Manager](./media/active-directory-aadconnectsync-service-manager-ui/cslineageout.png) 在“PasswordSync”列中，还会发现入站连接器空间可进行密码更改，因为有一个同步规则的值为 **True**。此密码接着会通过出站规则发送到 Azure AD。
 
 从“沿袭”选项卡中，可以单击“Metaverse 对象属性”转到 Metaverse。[](#metaverse-object-properties)
 
@@ -93,8 +91,7 @@
 可以检查对象，以及哪一个规则适用于特定的属性流。
 ![Sync Service Manager](./media/active-directory-aadconnectsync-service-manager-ui/preview2.png)
 
-**日志**
-“日志”页用于查看密码同步状态和历史记录。
+**日志**“日志”页用于查看密码同步状态和历史记录。
 
 ### Metaverse 对象属性 <a name="metaverse-object-properties"></a>
 **属性**
@@ -110,5 +107,5 @@
 
 了解有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect/)的详细信息。
 
-<!---HONumber=Mooncake_0206_2017-->
+<!---HONumber=Mooncake_0306_2017-->
 <!--Update_Description: wording update-->

@@ -1,5 +1,5 @@
 <properties
-    pageTitle="Azure AD v2.0 AngularJS 入门 | Azure"
+    pageTitle="Azure AD v2.0 .NET AngularJS 单页应用入门 | Azure"
     description="如何构建一个使用个人 Microsoft 帐户和工作/学校帐户登录用户的 Angular JS 单页应用。"
     services="active-directory"
     documentationcenter=""
@@ -13,8 +13,8 @@
     ms.tgt_pltfrm="na"
     ms.devlang="javascript"
     ms.topic="article"
-    ms.date="01/07/2017"
-    wacn.date="02/15/2017"
+    ms.date="01/23/2017"
+    wacn.date="03/13/2017"
     ms.author="dastrock" />  
 
 
@@ -35,7 +35,7 @@ v2.0 终结点并不支持所有 Azure Active Directory 方案和功能。若要
 	git clone --branch skeleton https://github.com/AzureADQuickStarts/AppModelv2-SinglePageApp-AngularJS-DotNet.git
 
 
-该骨架应用包含简单 AngularJS 应用的重复使用代码，但是缺少与标识相关的所有部分。如果你不想要延用该应用，可以克隆或[下载](https://github.com/AzureADQuickStarts/AppModelv2-SinglePageApp-AngularJS-DotNet/archive/complete.zip)完整的示例。
+该骨架应用包含简单 AngularJS 应用的重复使用代码，但是缺少与标识相关的所有部分。如果不想延用该应用，可以克隆或[下载](https://github.com/AzureADQuickStarts/AppModelv2-SinglePageApp-AngularJS-DotNet/archive/complete.zip)完整的示例。
 
 
 	git clone https://github.com/AzureADSamples/SinglePageApp-AngularJS-DotNet.git
@@ -44,11 +44,11 @@ v2.0 终结点并不支持所有 Azure Active Directory 方案和功能。若要
 ## 注册应用
 首先，在[应用注册门户](https://apps.dev.microsoft.com/?referrer=/documentation/articles&deeplink=/appList)中创建应用，或遵循以下[详细步骤](/documentation/articles/active-directory-v2-app-registration/)。请确保：
 
-- 为应用程序添加 **Web** 平台。
+- 为应用添加 **Web** 平台。
 - 输入正确的**重定向 URI**。本示例的默认值为 `https://localhost:44326/`。
 - 保留启用“允许隐式流”复选框。
 
-复制分配给应用程序的“应用程序 ID”，因为稍后将要用到。
+复制分配给应用的“应用程序 ID”，因为稍后将要用到。
 
 ## 安装 adal.js
 若要开始，请导航到下载的项目并安装 adal.js。如果已安装 [bower](http://bower.io/)，只要运行以下命令即可。如有任何依赖版本不匹配的情况，只需选择较高的版本。
@@ -216,9 +216,9 @@ html
 
 
 ## 调用 REST API
-最后，获取一些令牌并调用 REST API，以创建、读取、更新和删除任务。知道吗？ *什么事*都不用做。Adal.js 将自动获取、缓存和刷新令牌。它还会将这些令牌附加到发往 REST API 的传出 AJAX 请求。
+最后，获取一些令牌并调用 REST API，以创建、读取、更新和删除任务。知道吗？ 你*什么事*都不用做。Adal.js 将自动获取、缓存和刷新令牌。它还会将这些令牌附加到发往 REST API 的传出 AJAX 请求。
 
-到底是如何做到这一点的呢？ 一切归功于神奇的 [AngularJS 拦截器](https://docs.angularjs.org/api/ng/service/$http)，它让 adal.js 能够转换传出和传入的 http 消息。此外，adal.js 假设作为窗口发送到同一个域的任何请求都应该使用与 AngularJS 应用相同的应用程序 ID 所用的令牌。这就是为什么我们在 Angular 应用和 NodeJS REST API 中使用同一应用程序 ID 的原因。当然，你可以重写此行为，并根据需要告知 adal.js 获取其他 REST API 的令牌 - 但是对于此简单方案，使用默认值即可。
+到底是如何做到这一点的呢？ 一切都归功于神奇的 [AngularJS 拦截器](https://docs.angularjs.org/api/ng/service/$http)，它让 adal.js 能够转换传出和传入的 http 消息。此外，adal.js 假设作为窗口发送到同一个域的任何请求都应该使用与 AngularJS 应用相同的应用程序 ID 所用的令牌。这就是为什么我们在 Angular 应用和 NodeJS REST API 中使用同一应用程序 ID 的原因。当然，你可以重写此行为，并根据需要告知 adal.js 获取其他 REST API 的令牌 - 但是对于此简单方案，使用默认值即可。
 
 下面代码段演示了如何轻松地从 Azure AD 发送包含持有者令牌的请求：
 
@@ -231,7 +231,7 @@ js
 	...
 
 
-祝贺你！ 你现已完成创建与 Azure AD 集成的单页面应用。佩服吧！该应用可对用户进行身份验证，使用 OpenID Connect 安全调用其后端 REST API，并获取有关用户的基本信息。它原本就支持来自 Azure AD 的具有个人 Microsoft 帐户或工作/学校帐户的任何用户。运行该应用，然后在浏览器中导航到 `https://localhost:44326/`。使用个人 Microsoft 帐户或工作/学校帐户登录。将任务添加到用户的待办事项列表，然后注销。尝试使用其他类型的帐户登录。如果需要一个 Azure AD 租户来创建工作/学校用户，请[在此处了解如何获取租户](/documentation/articles/active-directory-howto-tenant/)。
+祝贺你！ 你现已完成创建与 Azure AD 集成的单页面应用。佩服吧！该应用可对用户进行身份验证，使用 OpenID Connect 安全调用其后端 REST API，并获取有关用户的基本信息。它原本就支持来自 Azure AD 的具有个人 Microsoft 帐户或工作/学校帐户的任何用户。运行该应用，然后在浏览器中导航到 `https://localhost:44326/`。使用个人 Microsoft 帐户或工作/学校帐户登录。将任务添加到用户的待办事项列表，然后注销。尝试使用其他类型的帐户登录。如果需要一个 Azure AD 租户来创建工作/学校用户，请[在此处了解如何获取租户](/documentation/articles/active-directory-howto-tenant/)（免费）。
 
 如果要继续了解 v2.0 终结点，请返回 [v2.0 开发人员指南](/documentation/articles/active-directory-appmodel-v2-overview/)。有关更多资源，请查看：
 
@@ -243,5 +243,5 @@ js
 
 建议发生安全事件时获取相关通知，方法是访问[此页](https://technet.microsoft.com/security/dd252948)并订阅“安全公告通知”。
 
-<!---HONumber=Mooncake_0206_2017-->
+<!---HONumber=Mooncake_0306_2017-->
 <!--Update_Description: wording update-->

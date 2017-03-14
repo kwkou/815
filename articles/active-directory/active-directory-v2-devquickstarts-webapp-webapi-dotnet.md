@@ -1,12 +1,11 @@
 <properties
-    pageTitle="Azure AD v2.0 .NET Web 应用 | Azure"
+    pageTitle="Azure AD v2.0 .NET Web 应用调用 API 入门 | Azure"
     description="如何构建一个 .NET MVC Web 应用，以通过用于登录的 Microsoft 个人帐户和工作或学校帐户调用 Web 服务。"
     services="active-directory"
     documentationcenter=".net"
     author="dstrockis"
     manager="mbaldwin"
-    editor="" />  
-
+    editor="" />
 <tags
     ms.assetid="56be906e-71de-469d-9a5c-9fc08aae4223"
     ms.service="active-directory"
@@ -14,9 +13,9 @@
     ms.tgt_pltfrm="na"
     ms.devlang="dotnet"
     ms.topic="article"
-    ms.date="10/27/2016"
-    ms.author="dastrock" 
-    wacn.date="12/12/2016"/>  
+    ms.date="01/23/2017"
+    wacn.date="03/13/2017"
+    ms.author="dastrock" />  
 
 
 # 从 .NET Web 应用调用 API
@@ -109,25 +108,25 @@ C#
 
 - 首先，安装 MSAL 预览版：
 
-	PM> Install-Package Microsoft.Identity.Client -ProjectName TodoList-WebApp -IncludePrerelease
+		PM> Install-Package Microsoft.Identity.Client -ProjectName TodoList-WebApp -IncludePrerelease
 
 - 在 `App_Start\Startup.Auth.cs` 文件中为 MSAL 添加另一个 `using` 语句。
 - 现在，添加一个新方法，即 `OnAuthorizationCodeReceived` 事件处理程序。此处理程序将使用 MSAL 获取待办事项列表 API 的访问令牌，并将 MSAL 令牌缓存中的令牌存储起来以供稍后使用：
 
-C#
-
-	private async Task OnAuthorizationCodeReceived(AuthorizationCodeReceivedNotification notification)
-	{
-	        string userObjectId = notification.AuthenticationTicket.Identity.FindFirst("http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier").Value;
-	        string tenantID = notification.AuthenticationTicket.Identity.FindFirst("http://schemas.microsoft.com/identity/claims/tenantid").Value;
-	        string authority = String.Format(CultureInfo.InvariantCulture, aadInstance, tenantID, string.Empty);
-	        ClientCredential cred = new ClientCredential(clientId, clientSecret);
-
-	        // Here you ask for a token using the web app's clientId as the scope, since the web app and service share the same clientId.
-	        app = new ConfidentialClientApplication(Startup.clientId, redirectUri, cred, new NaiveSessionCache(userObjectId, notification.OwinContext.Environment["System.Web.HttpContextBase"] as HttpContextBase)) {};
-	        var authResult = await app.AcquireTokenByAuthorizationCodeAsync(new string[] { clientId }, notification.Code);
-	}
-	// ...
+	C#
+	
+		private async Task OnAuthorizationCodeReceived(AuthorizationCodeReceivedNotification notification)
+		{
+		        string userObjectId = notification.AuthenticationTicket.Identity.FindFirst("http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier").Value;
+		        string tenantID = notification.AuthenticationTicket.Identity.FindFirst("http://schemas.microsoft.com/identity/claims/tenantid").Value;
+		        string authority = String.Format(CultureInfo.InvariantCulture, aadInstance, tenantID, string.Empty);
+		        ClientCredential cred = new ClientCredential(clientId, clientSecret);
+	
+		        // Here you ask for a token using the web app's clientId as the scope, since the web app and service share the same clientId.
+		        app = new ConfidentialClientApplication(Startup.clientId, redirectUri, cred, new NaiveSessionCache(userObjectId, notification.OwinContext.Environment["System.Web.HttpContextBase"] as HttpContextBase)) {};
+		        var authResult = await app.AcquireTokenByAuthorizationCodeAsync(new string[] { clientId }, notification.Code);
+		}
+		// ...
 
 
 - 在 Web 应用中，MSAL 具有可扩展的令牌缓存，可用于存储令牌。此示例实现使用 http 会话存储来缓存令牌的 `NaiveSessionCache`。
@@ -146,49 +145,49 @@ C#
 
 - 在 `Index` 操作中，使用 MSAL 的 `AcquireTokenSilentAsync` 方法获取可用于读取待办事项列表服务数据的 access\_token：
 
-C#
-
-	...
-	string userObjectID = ClaimsPrincipal.Current.FindFirst("http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier").Value;
-	string tenantID = ClaimsPrincipal.Current.FindFirst("http://schemas.microsoft.com/identity/claims/tenantid").Value;
-	string authority = String.Format(CultureInfo.InvariantCulture, Startup.aadInstance, tenantID, string.Empty);
-	ClientCredential credential = new ClientCredential(Startup.clientId, Startup.clientSecret);
+	C#
 	
-	// Here you ask for a token using the web app's clientId as the scope, since the web app and service share the same clientId.
-	app = new ConfidentialClientApplication(Startup.clientId, redirectUri, credential, new NaiveSessionCache(userObjectID, this.HttpContext)){};
-	result = await app.AcquireTokenSilentAsync(new string[] { Startup.clientId });
-	// ...
-
+		// ...
+		string userObjectID = ClaimsPrincipal.Current.FindFirst("http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier").Value;
+		string tenantID = ClaimsPrincipal.Current.FindFirst("http://schemas.microsoft.com/identity/claims/tenantid").Value;
+		string authority = String.Format(CultureInfo.InvariantCulture, Startup.aadInstance, tenantID, string.Empty);
+		ClientCredential credential = new ClientCredential(Startup.clientId, Startup.clientSecret);
+		
+		// Here you ask for a token using the web app's clientId as the scope, since the web app and service share the same clientId.
+		app = new ConfidentialClientApplication(Startup.clientId, redirectUri, credential, new NaiveSessionCache(userObjectID, this.HttpContext)){};
+		result = await app.AcquireTokenSilentAsync(new string[] { Startup.clientId });
+		// ...
+	
 
 - 此示例接下来将生成的令牌添加到 HTTP GET 请求作为 `Authorization` 标头，让待办事项列表服务用于身份验证请求。
 - 如果待办事项列表服务返回 `401 Unauthorized` 响应，则表示 MSAL 的 access\_tokens 由于某种原因而失效。在此情况下，你应该删除所有来自 MSAL 缓存的 access\_tokens，并向用户显示消息告知可能需要再次登录，而这会重新启动令牌获取流。
 
-C#
-
-	// ...
-	// If the call failed with access denied, then drop the current access token from the cache,
-	// and show the user an error indicating they might need to sign-in again.
-	if (response.StatusCode == System.Net.HttpStatusCode.Unauthorized)
-	{
-	        app.AppTokenCache.Clear(Startup.clientId);
-
-	        return new RedirectResult("/Error?message=Error: " + response.ReasonPhrase + " You might need to sign in again.");
-	}
-	// ...
+	C#
+	
+		// ...
+		// If the call failed with access denied, then drop the current access token from the cache,
+		// and show the user an error indicating they might need to sign-in again.
+		if (response.StatusCode == System.Net.HttpStatusCode.Unauthorized)
+		{
+		        app.AppTokenCache.Clear(Startup.clientId);
+	
+		        return new RedirectResult("/Error?message=Error: " + response.ReasonPhrase + " You might need to sign in again.");
+		}
+		// ...
 
 
 - 同样，如果 MSAL 由于任何原因而无法返回 access\_token，则应再次指示用户登录。这就像获取任何 `MSALException` 一样简单：
 
-C#
-
-	// ...
-	catch (MsalException ee)
-	{
-	        // If MSAL could not get a token silently, show the user an error indicating they might need to sign in again.
-	        return new RedirectResult("/Error?message=An Error Occurred Reading To Do List: " + ee.Message + " You might need to log out and log back in.");
-	}
-	// ...
-
+	C#
+	
+		// ...
+		catch (MsalException ee)
+		{
+		        // If MSAL could not get a token silently, show the user an error indicating they might need to sign in again.
+		        return new RedirectResult("/Error?message=An Error Occurred Reading To Do List: " + ee.Message + " You might need to log out and log back in.");
+		}
+		// ...
+	
 
 - 完全一样的 `AcquireTokenSilentAsync` 调用在 `Create` 和 `Delete` 操作中实现。在 Web 应用中，只要应用程序有需要，就可以使用此 MSAL 方法获取 access\_tokens。MSAL 将为用户获取、缓存和刷新令牌。
 
@@ -205,4 +204,5 @@ C#
 ## 获取关于我们产品的安全更新
 建议发生安全事件时获取相关通知，方法是访问[此页](https://technet.microsoft.com/security/dd252948)并订阅“安全公告通知”。
 
-<!---HONumber=Mooncake_1205_2016-->
+<!---HONumber=Mooncake_0306_2017-->
+<!---Update_Description: wording update -->

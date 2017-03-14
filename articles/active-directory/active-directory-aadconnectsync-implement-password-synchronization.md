@@ -13,9 +13,9 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="12/21/2016"
-    wacn.date="02/13/2017"
-    ms.author="markvi;andkjell" />
+    ms.date="01/13/2017"
+    wacn.date="03/13/2017"
+    ms.author="markvi" />
 
 # 使用 Azure AD Connect 同步实现密码同步
 本主题提供所需的信息，帮助将用户密码从本地 Active Directory (AD) 同步到基于云的 Azure Active Directory (Azure AD)。
@@ -34,7 +34,7 @@
 - 减少技术支持成本
 
 
-密码同步是由 Azure AD Connect 同步实现的目录同步功能的扩展。若要在环境中使用密码同步，需要：
+密码同步是由 Azure AD Connect Sync 实现的目录同步功能的扩展。若要在环境中使用密码同步，需要：
 
 - 安装 Azure AD Connect
 - 配置本地 AD 与 Azure Active Directory 之间的目录同步
@@ -81,17 +81,14 @@ Active Directory 域服务以实际用户密码的哈希值表示形式存储密
 1. 密码复杂性策略
 2. 密码过期策略
 
-**密码复杂性策略**
-启用密码同步时，本地 Active Directory 中的密码复杂性策略会覆盖云中可能为同步的用户定义的复杂性策略。可以使用本地 Active Directory 的所有有效密码来访问 Azure AD 服务。
+**密码复杂性策略**启用密码同步时，本地 Active Directory 中的密码复杂性策略会覆盖云中可能为同步的用户定义的复杂性策略。可以使用本地 Active Directory 的所有有效密码来访问 Azure AD 服务。
 
 > [AZURE.NOTE]
 直接在云中创建的用户的密码仍受到云中定义的密码策略的约束。
 >
 >
 
-**密码过期策略**
-如果用户属于密码同步的范围，云帐户密码则设置为“永不过期”。
-可以继续使用已在本地环境中过期的同步密码来登录云服务。当你下次在本地环境中更改密码时，云密码将会更新。
+**密码过期策略**如果用户属于密码同步的范围，云帐户密码则设置为“永不过期”。可以继续使用已在本地环境中过期的同步密码来登录云服务。当你下次在本地环境中更改密码时，云密码将会更新。
 
 ### 覆盖已同步的密码
 管理员可以使用 Windows PowerShell 手动重置密码。
@@ -108,6 +105,7 @@ Active Directory 域服务以实际用户密码的哈希值表示形式存储密
 ![启用密码同步](./media/active-directory-aadconnectsync-implement-password-synchronization/usersignin.png)
 
 ### 密码同步和 FIPS <a name="password-synchronization-and-fips"></a>
+如果已经根据美国联邦信息处理标准 (FIPS) 锁定服务器，则已禁用 MD5。
 
 **若要为密码同步启用 MD5，请执行以下步骤：**
 
@@ -151,11 +149,19 @@ Active Directory 域服务以实际用户密码的哈希值表示形式存储密
 3. 选择用户所在的 **Active Directory 连接器**。
 4. 选择“搜索连接器空间”。
 5. 找到你要查找的用户。
-6. 选择“沿袭”选项卡，确保至少有一个同步规则的“密码同步”显示为 **True**。在默认配置中，同步规则的名称为 **In from AD - User AccountEnabled**。![有关用户的沿袭信息](./media/active-directory-aadconnectsync-implement-password-synchronization/cspasswordsync.png)
+6. 选择“沿袭”选项卡，确保至少有一个同步规则的“密码同步”显示为 **True**。在默认配置中，同步规则的名称为 **In from AD - User AccountEnabled**。
+
+	![有关用户的沿袭信息](./media/active-directory-aadconnectsync-implement-password-synchronization/cspasswordsync.png)
+
 7. 然后，从 Metaverse 到 Azure AD 连接器空间一直[跟踪用户](/documentation/articles/active-directory-aadconnectsync-service-manager-ui-connectors/#follow-an-object-and-its-data-through-the-system/)。连接器空间对象应存在一个“密码同步”设置为 **True** 的出站规则。在默认配置中，同步规则的名称为 **Out to AAD - User Join**。
-![用户的连接器空间属性](./media/active-directory-aadconnectsync-implement-password-synchronization/cspasswordsync2.png)
+
+	![用户的连接器空间属性](./media/active-directory-aadconnectsync-implement-password-synchronization/cspasswordsync2.png)
+
 8. 若要查看对象在过去一周的密码同步详细信息，请单击“日志...”。
-![对象日志详细信息](./media/active-directory-aadconnectsync-implement-password-synchronization/csobjectlog.png)
+	
+	![对象日志详细信息](./media/active-directory-aadconnectsync-implement-password-synchronization/csobjectlog.png)
+
+	如果对象日志为空，则 Azure AD Connect 不能从 Active Directory 读取密码哈希。查看错误的事件日志。
 
 状态列可能包含以下值：
 
@@ -174,6 +180,10 @@ Active Directory 域服务以实际用户密码的哈希值表示形式存储密
 如果未在 Azure AD 中启用该功能，或者未启用同步通道状态，请运行 Connect 安装向导。选择“自定义同步选项”并取消选择密码同步。此项更改会暂时禁用该功能。然后再次运行向导并重新启用密码同步。再次运行脚本，验证配置是否正确。
 
 如果脚本显示没有检测信号，请运行[“触发所有密码的完全同步”](#trigger-a-full-sync-of-all-passwords)中的脚本。在配置正确但密码不同步的其他一些情况下。也可以使用此脚本。
+
+如果使用自定义设置安装 Azure AD Connect，请确保已将“复制目录更改”和“复制所有目录更改”权限授予 AD 连接器使用的帐户。请参阅[帐户和权限](/documentation/articles/active-directory-aadconnect-accounts-permissions/#create-the-ad-ds-account/)，了解此帐户所需的所有权限。如果没有这些权限，此帐户将无权读取 Active Directory 中的密码哈希。
+
+然后查看应用程序事件日志。如果密码同步存在全局问题，并且服务正在运行，则如上述步骤所验证，应存在包含更多详细信息的错误。
 
 #### 获取密码同步设置的状态 <a name="get-the-status-of-password-sync-settings"></a>
 
@@ -248,5 +258,5 @@ Active Directory 域服务以实际用户密码的哈希值表示形式存储密
 - [Azure AD Connect Sync：自定义同步选项](/documentation/articles/active-directory-aadconnectsync-whatis/)
 - [将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect/)
 
-<!---HONumber=Mooncake_0206_2017-->
-<!--Update_Description: wording update-->
+<!---HONumber=Mooncake_0306_2017-->
+<!---Update_Description: wording update -->

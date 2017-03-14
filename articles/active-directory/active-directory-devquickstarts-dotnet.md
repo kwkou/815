@@ -13,8 +13,8 @@
     ms.tgt_pltfrm="na"
     ms.devlang="dotnet"
     ms.topic="article"
-    ms.date="01/07/2017"
-    wacn.date="02/07/2017"
+    ms.date="01/23/2017"
+    wacn.date="03/13/2017"
     ms.author="dastrock" />  
 
 
@@ -46,11 +46,11 @@
 -	在左侧的导航栏中单击“Active Directory”
 -	选择要在其中注册应用程序的租户。
 -	单击“应用程序”选项卡，然后在底部抽屉中单击“添加”。
--	根据提示创建一个新的“本机客户端应用程序”。
+-	根据提示创建一个新的**本机客户端应用程序**。
     -	应用程序的“名称”向最终用户描述你的应用程序
     -	“重定向 URI”是 Azure AD 要用来返回令牌响应的方案与字符串组合。输入特定于应用程序的值，例如 `http://DirectorySearcher`。
 -	完成注册后，AAD 将为应用分配唯一的客户端标识符。在后面的部分中将会用到此值，因此，请从“配置”选项卡复制此值。
-- 另外，请在“配置”选项卡中，找到“针对其他应用程序的权限”部分。对于“Azure Active Directory”应用程序，在“委托的权限”下添加“访问组织的目录”权限。这样，你的应用程序便可以在图形 API 中查询用户。
+- 另外，请在“配置”选项卡中，找到“针对其他应用程序的权限”部分。对于“Azure Active Directory”应用程序，在“委派的权限”下添加“访问组织的目录”权限。这样，你的应用程序便可以在图形 API 中查询用户。
 
 ## 2\.安装并配置 ADAL
 将应用程序注册到 Azure AD 后，可以安装 ADAL 并编写标识相关的代码。为了使 ADAL 能够与 Azure AD 通信，需要为 ADAL 提供一些有关应用注册的信息。
@@ -171,5 +171,5 @@ ADAL 遵守的基本原理是，每当应用程序需要访问令牌时，它只
 
 [AZURE.INCLUDE [active-directory-devquickstarts-additional-resources](../../includes/active-directory-devquickstarts-additional-resources.md)]
 
-<!---HONumber=Mooncake_0120_2017-->
+<!---HONumber=Mooncake_0306_2017-->
 <!---Update_Description: wording update -->

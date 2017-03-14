@@ -13,8 +13,8 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="identity"
-    ms.date="01/07/2017"
-    wacn.date="02/07/2017"
+    ms.date="02/08/2017"
+    wacn.date="03/13/2017"
     ms.author="dkershaw;bryanla" />
 
 # 了解 Azure Active Directory 应用程序清单
@@ -148,5 +148,5 @@
 [O365-SERVICE-DAEMON-APPS]: https://msdn.microsoft.com/office/office365/howto/building-service-apps-in-office-365
 [RBAC-CLOUD-APPS-AZUREAD]: http://www.dushyantgill.com/blog/2014/12/10/roles-based-access-control-in-cloud-applications-using-azure-ad/
 
-<!---HONumber=Mooncake_0120_2017-->
-<!---Update_Description: wording update -->
+<!---HONumber=Mooncake_0306_2017-->
+<!---Update_Description: update meta properties -->

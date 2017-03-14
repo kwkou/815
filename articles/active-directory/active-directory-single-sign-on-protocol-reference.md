@@ -13,8 +13,8 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="01/07/2017"
-    wacn.date="02/07/2017"
+    ms.date="02/08/2017"
+    wacn.date="03/13/2017"
     ms.author="priyamo" />  
 
 
@@ -45,8 +45,8 @@
 | Version |必填 |应为 **2.0**。 |
 | IssueInstant |必填 |这是具有 UTC 值和[往返格式（“o”）](https://msdn.microsoft.com/zh-cn/library/az4se3k1.aspx)的日期时间字符串。Azure AD 需要这种类型的日期时间值，但不评估或使用该值。 |
 | AssertionConsumerServiceUrl |可选 |如果提供，必须与 Azure AD 中云服务的 `RedirectUri` 匹配。 |
-| ForceAuthn |可选 |如果提供，应为 false。其他任何值都会导致错误。 |
-| IsPassive |可选 |如果提供，应为 false。其他任何值都会导致错误。 |
+| ForceAuthn |可选 | 一个布尔值。如果为 true，意味着用户将被强制重新验证身份，即使他们具有与 Azure AD 之间的有效会话。 |
+| IsPassive |可选 |一个布尔值，指定 Azure AD 是否应该在没有用户交互的情况下使用会话 Cookie（如果存在）以无提示方式验证用户身份。如果为 true，Azure AD 会尝试使用会话 Cookie 验证用户身份。 |
 
 其他所有 `AuthnRequest` 属性（例如 Consent、Destination、AssertionConsumerServiceIndex、AttributeConsumerServiceIndex 和 ProviderName）将被**忽略**。
 
@@ -75,8 +75,9 @@ Azure AD 还会忽略 `AuthnRequest` 中的 `Conditions` 元素。
 - `urn:oasis:names:tc:SAML:2.0:nameid-format:persistent`：Azure Active Directory 以成对标识符形式发出 NameID 声明。
 - `urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress`：Azure Active Directory 发出电子邮件地址格式的 NameID 声明。
 - `urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified`：此值允许 Azure Active Directory 选择声明格式。Azure Active Directory 以成对标识符形式发出 NameID。
+- `urn:oasis:names:tc:SAML:2.0:nameid-format:transient`：Azure Active Directory 以随机生成的值形式发出 NameID 声明，该值对当前的 SSO 操作是唯一的。这意味着该值是临时的，不能用于标识正在进行身份验证的用户。
 
-请不要包含 `SPNameQualifer` 属性。Azure AD 将忽略 `AllowCreate` 属性。
+Azure AD 将忽略 `AllowCreate` 属性。
 
 ### RequestAuthnContext
 `RequestedAuthnContext` 元素指定所需的身份验证方法。在发送到 Azure AD 的 `AuthnRequest` 元素中是可选的。Azure AD 只支持一个 `AuthnContextClassRef` 值：`urn:oasis:names:tc:SAML:2.0:ac:classes:Password`
@@ -268,5 +269,5 @@ Azure AD 为断言签名以响应成功登录。`Signature` 元素包含数字�
 		      </AuthnContext>
 		</AuthnStatement>
 
-<!---HONumber=Mooncake_0120_2017-->
+<!---HONumber=Mooncake_0306_2017-->
 <!---Update_Description: wording update -->

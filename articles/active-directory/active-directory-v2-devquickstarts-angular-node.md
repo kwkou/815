@@ -1,5 +1,5 @@
 <properties
-    pageTitle="Azure AD v2.0 AngularJS 入门 | Azure"
+    pageTitle="Azure AD v2.0 NodeJS AngularJS 单页应用入门 | Azure"
     description="如何构建一个使用个人 Microsoft 帐户和工作/学校帐户登录用户的 Angular JS 单页应用。"
     services="active-directory"
     documentationcenter=""
@@ -13,13 +13,12 @@
     ms.tgt_pltfrm="na"
     ms.devlang="javascript"
     ms.topic="article"
-    ms.date="01/07/2017"
-    wacn.date="02/15/2017"
+    ms.date="01/23/2017"
+    wacn.date="03/13/2017"
     ms.author="dastrock" />  
 
 
 # 将登录凭据添加到 AngularJS 单页应用 - NodeJS
-
 在本文中，我们将使用 Azure Active Directory v2.0 终结点将 Microsoft 支持的帐户的登录凭据添加到 AngularJS 应用。使用 v2.0 终结点可以在应用中执行单一集成，并使用个人和工作/学校帐户对用户进行身份验证。
 
 本示例是一个可在后端 REST API 存储任务的简单待办事项列表单页应用，使用 NodeJS 编写，并使用 Azure AD 的 OAuth 持有者令牌进行保护。AngularJS 应用将使用我们的开源 JavaScript 身份验证库 [adal.js](https://github.com/AzureAD/azure-activedirectory-library-for-js) 来处理整个登录过程，并获取用于调用 REST API 的令牌。可以应用相同的模式来验证其他 REST API，例如 [Microsoft Graph](https://graph.microsoft.com) 或 Azure资源管理器API。
@@ -30,7 +29,6 @@ v2.0 终结点并不支持所有 Azure Active Directory 方案和功能。若要
 > 
 
 ## 下载
-
 若要开始，需要下载并安装 [node.js](https://nodejs.org)。然后即可克隆或[下载](https://github.com/AzureADQuickStarts/AppModelv2-SinglePageApp-AngularJS-NodeJS/archive/skeleton.zip)骨架应用：
 
 
@@ -245,7 +243,7 @@ js
 	node server.js
 
 
-在浏览器中，导航到 `http://localhost:8080`。使用个人 Microsoft 帐户或工作/学校帐户登录。将任务添加到用户的待办事项列表，然后注销。尝试使用其他类型的帐户登录。如果需要一个 Azure AD 租户来创建工作/学校用户，请[在此处了解如何获取租户](/documentation/articles/active-directory-howto-tenant/)。
+在浏览器中，导航到 `http://localhost:8080`。使用个人 Microsoft 帐户或工作/学校帐户登录。将任务添加到用户的待办事项列表，然后注销。尝试使用其他类型的帐户登录。如果需要一个 Azure AD 租户来创建工作/学校用户，请[在此处了解如何获取租户](/documentation/articles/active-directory-howto-tenant/)（免费）。
 
 如果要继续了解 v2.0 终结点，请返回 [v2.0 开发人员指南](/documentation/articles/active-directory-appmodel-v2-overview/)。有关更多资源，请查看：
 
@@ -255,7 +253,7 @@ js
 
 ## 获取关于我们产品的安全更新
 
-建议获取有关何时会发生安全事件的通知，方法是访问[此页](https://technet.microsoft.com/security/dd252948)并订阅“安全公告通知”。
+建议发生安全事件时获取相关通知，方法是访问[此页](https://technet.microsoft.com/security/dd252948)并订阅“安全公告通知”。
 
-<!---HONumber=Mooncake_0206_2017-->
+<!---HONumber=Mooncake_0306_2017-->
 <!--Update_Description: wording update-->

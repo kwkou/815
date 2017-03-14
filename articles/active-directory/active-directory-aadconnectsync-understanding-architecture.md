@@ -1,25 +1,24 @@
 <properties
-   pageTitle="Azure AD Connect 同步：了解体系结构 | Azure"
-   description="本主题介绍 Azure AD Connect 同步的体系结构，并解释使用的术语。"
-   services="active-directory"
-   documentationCenter=""
-   authors="andkjell"
-   manager="stevenpo"
-   editor=""/>
-
+    pageTitle="Azure AD Connect 同步：了解体系结构 | Azure"
+    description="本主题介绍 Azure AD Connect 同步的体系结构，并解释使用的术语。"
+    services="active-directory"
+    documentationcenter=""
+    author="andkjell"
+    manager="femila"
+    editor="" />
 <tags
-   ms.service="active-directory"
-   ms.workload="identity"
-   ms.tgt_pltfrm="na"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.date="08/31/2016"
-   wacn.date="10/11/2016"
-   ms.author="billmath"/>
-
+    ms.assetid="465bcbe9-3bdd-4769-a8ca-f8905abf426d"
+    ms.service="active-directory"
+    ms.workload="identity"
+    ms.tgt_pltfrm="na"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.date="02/08/2017"
+    wacn.date="03/13/2017"
+    ms.author="billmath" />
 
 # Azure AD Connect 同步：了解体系结构
-本主题介绍 Azure AD Connect 同步的基本体系结构。在许多方面，它类似于其前身产品 MIIS 2003、ILM 2007 和 FIM 2010。Azure AD Connect 同步是这些技术的演进。如果熟悉上述任何早期技术，则也会熟悉本主题的内容。本主题很适合同步功能的新手。但是，不一定要了解本主题的详细信息才能成功自定义 Azure AD Connect 同步（在本主题中称为"同步引擎"）。
+本主题介绍 Azure AD Connect 同步的基本体系结构。在许多方面，它类似于其前身产品 MIIS 2003、ILM 2007 和 FIM 2010。Azure AD Connect 同步是这些技术的演进。如果熟悉上述任何早期技术，则也会熟悉本主题的内容。本主题很适合同步功能的新手。但是，不一定要了解本主题的详细信息才能成功自定义 Azure AD Connect 同步（在本主题中称为“同步引擎”）。
 
 ## 体系结构
 同步引擎为多个连接的数据源中存储的对象创建集成视图，并管理这些数据源中的标识信息。此集成视图的具体内容取决于从连接的数据源检索的标识信息，以及一组用于确定如何处理此信息的规则。
@@ -107,7 +106,7 @@
 
 每个占位符代表尚未导入同步引擎、但需要构造分层名称的对象的分层名称的组成部分（例如，组织单位）。占位符填补在连接的数据源中引用不是连接器空间中暂存对象的对象所产生的间距。
 
-同步引擎还使用占位符来存储尚未导入的引用对象。例如，如果已将同步配置为包含 *Abbie Spencer* 对象的管理器属性，并且接收的值是尚未导入的对象（例如 *CN=Lee Sperry,CN=Users,DC=fabrikam,DC=com* ），则管理器信息将存储为连接器空间中的占位符。如果稍后导入管理器对象，则表示此管理器的暂存对象将覆盖占位符对象。
+同步引擎还使用占位符来存储尚未导入的引用对象。例如，如果已将同步配置为包含 *Abbie Spencer* 对象的管理器属性，并且接收的值是尚未导入的对象（例如 *CN=Lee Sperry,CN=Users,DC=fabrikam,DC=com*），则管理器信息将存储为连接器空间中的占位符。如果稍后导入管理器对象，则表示此管理器的暂存对象将覆盖占位符对象。
 
 ### Metaverse 对象
 Metaverse 对象包含同步引擎具有的连接器空间中暂存对象的聚合视图。同步引擎使用导入对象中的信息创建 Metaverse 对象。可将多个连接器空间对象链接到单个 Metaverse 对象，但无法将连接器空间对象链接到多个 Metaverse 对象。
@@ -117,7 +116,7 @@ Metaverse 对象包含同步引擎具有的连接器空间中暂存对象的聚�
 为了将连接的数据源中的对象映射到 Metaverse 中对应的对象类型，同步引擎提供了可扩展的架构，其中包含一组预定义的对象类型和关联的属性。你可以为 Metaverse 对象创建新的对象类型和属性。属性可以是单值或多值属性，属性类型可以是字符串、引用、数字和布尔值。
 
 ### 暂存对象与 Metaverse 对象之间的关系
-在同步引擎命名空间中，数据流由暂存对象与 Metaverse 对象之间的链接关系来启用。链接到 Metaverse 对象的暂存对象称为**联接的对象**（或**连接器对象**）。未链接到 Metaverse 对象的暂存对象称为**脱离的对象**（或**断开连接器对象**）。之所以偏向于使用术语"联接"和"脱离"，是为了不与负责从连接的目录导入和导出数据的连接器相混淆。
+在同步引擎命名空间中，数据流由暂存对象与 Metaverse 对象之间的链接关系来启用。链接到 Metaverse 对象的暂存对象称为**联接的对象**（或**连接器对象**）。未链接到 Metaverse 对象的暂存对象称为**脱离的对象**（或**断开连接器对象**）。之所以偏向于使用术语“联接”和“脱离”，是为了不与负责从连接的目录导入和导出数据的连接器相混淆。
 
 占位符永远不会链接到 Metaverse 对象
 
@@ -220,7 +219,7 @@ Metaverse 对象包含同步引擎具有的连接器空间中暂存对象的聚�
 
 - **设置**
 - **取消预配**
-- **导出属性流**。
+- **导出属性流。**
 
 预配和取消预配都是对象级的操作。取消预配依赖于预配，因为只有预配可以启始它。当预配删除了 Metaverse 对象与导出对象之间的链接时，将触发取消预配。
 
@@ -256,4 +255,5 @@ Metaverse 对象包含同步引擎具有的连接器空间中暂存对象的聚�
 
 了解有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect/)的详细信息。
 
-<!---HONumber=Mooncake_0926_2016-->
+<!---HONumber=Mooncake_0306_2017-->
+<!---Update_Description: wording update -->

@@ -13,18 +13,18 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="identity"
-    ms.date="01/07/2017"
-    wacn.date="02/07/2017"
+    ms.date="02/08/2017"
+    wacn.date="03/13/2017"
     ms.author="mbaldwin" />
 
 # Azure Active Directory 代码示例
 [AZURE.INCLUDE [active-directory-devguide](../../includes/active-directory-devguide.md)]
 
-可以使用 Azure Active Directory (Azure AD) 向 Web 应用程序和 Web API 添加身份验证与授权。本部分提供了指向代码示例的链接，这些代码示例展示了它的工作原理以及你可以在应用程序中使用的代码片段。在代码示例页上，可以找到在要求、安装和设置方面提供帮助的详细自述主题。并且代码带有注释，可以帮助你理解关键部分。
+可以使用 Azure Active Directory (Azure AD) 向 Web 应用程序和 Web API 添加身份验证与授权。本部分提供指向示例的链接，这些示例展示了它的工作原理以及可以在应用程序中使用的代码片段。在代码示例页上，可以找到在要求、安装和设置方面提供帮助的详细自述主题。并且代码带有注释，可以帮助你理解关键部分。
 
 若要了解每个示例类型的基本方案，请参阅“Azure AD 的身份验证方案”。
 
-为 GitHub 上的示例做出补充：[Azure Active Directory 示例和文档](https://github.com/Azure-Samples?query=active-directory)。
+为 GitHub 上的示例做出补充：[Azure Active Directory 示例和文档](https://github.com/Azure-Samples?page=3&query=active-directory)。
 
 ## Web 浏览器到 Web 应用程序 <a name="web-browser-to-web-application"></a>
 
@@ -36,11 +36,6 @@
 | C#/.NET |[WebApp-MultiTenant-OpenIdConnect-DotNet](https://github.com/Azure-Samples/active-directory-dotnet-webapp-multitenant-openidconnect) |一个多租户 .NET MVC web 应用程序，使用 OpenID Connect（ASP.Net OpenID Connect OWIN 中间件）从多个 Azure AD 租户对用户进行身份验证。 |
 | C#/.NET |[WebApp-WSFederation-DotNet](https://github.com/Azure-Samples/active-directory-dotnet-webapp-wsfederation) |使用 WS-Federation（ASP.Net WS-Federation OWIN 中间件）从一个 Azure AD 租户对用户进行身份验证。 |
 
-
-
-
-
-
 ## 单页面应用程序 (SPA) <a name="single-page-application-spa"></a>
 
 此示例展示了如何编写受 Azure AD 保护的单页面应用程序。
@@ -48,7 +43,6 @@
 | 语言/平台 | 示例 | 说明 |
 | --- | --- | --- |
 | JavaScript、C#/.NET |[SinglePageApp-DotNet](https://github.com/Azure-Samples/active-directory-angularjs-singlepageapp) |使用适用于 JavaScript 的 ADAL 和 Azure AD 保护使用 ASP.NET Web API 后端实施的基于 AngularJS 的单页面应用。 |
-
 
 ## 本机应用程序到 Web API <a name="native-application-to-web-api"></a>
 
@@ -68,8 +62,6 @@
 | C#/Xamarin |[NativeClient-Xamarin-iOS](https://github.com/Azure-Samples/active-directory-xamarin-ios) |到适用于 iOS 的本机 Azure AD 身份验证库 (ADAL) 的一个 Xamarin 绑定。 |
 | C#/Xamarin |[NativeClient-MultiTarget-DotNet](https://github.com/Azure-Samples/active-directory-dotnet-native-multitarget) |一个 Xamarin 项目，它面向五个平台并且调用由 Azure AD 保护的 Web API。 |
 | C#/.NET |[NativeClient-Headless-DotNet](https://github.com/Azure-Samples/active-directory-dotnet-native-headless) |一个本机应用程序，它执行非交互身份验证并调用由 Azure AD 保护的 Web API。 |
-
-
 
 ## Web 应用程序到 Web API <a name="web-application-to-web-api"></a>
 
@@ -121,7 +113,7 @@
 | C#/.NET |[Azure AD 应用程序中基于角色和基于 ACL 的授权](http://go.microsoft.com/fwlink/?LinkId=331694) |在与 Azure AD 集成的应用程序中执行基于角色的授权 (RBAC) 和基于 ACL 的授权。 |
 | C#/.NET |[AAL - Windows 应用商店应用到 REST 服务 - 身份验证](http://go.microsoft.com/fwlink/?LinkId=330605) |使用适用于 Windows 应用商店 Beta 版的 [Azure AD 身份验证库 (ADAL)](/documentation/articles/active-directory-authentication-libraries/)（以前称为 AAL）向 Windows 应用商店应用添加用户身份验证功能。 |
 | C#/.NET |[ADAL - 本机应用到 REST 服务 - 通过浏览器对话框使用 AAD 进行身份验证](http://go.microsoft.com/fwlink/?LinkId=259814) |使用 [Azure AD 身份验证库 (ADAL)](/documentation/articles/active-directory-authentication-libraries/) 向 WPF 客户端添加用户身份验证功能。 |
-| C#/.NET |[ADAL - 本机应用到 REST 服务 - 通过浏览器对话框使用 ACS 进行身份验证](http://code.msdn.microsoft.com/AAL-Native-App-to-REST-de57f2cc) |使用 [Azure AD 身份验证库 (ADAL)](/documentation/articles/active-directory-authentication-libraries/) 和[访问控制服务 2.0 (ACS)](http://msdn.microsoft.com/zh-cn/library/azure/hh147631.aspx) 向 WPF 客户端添加用户身份验证功能。 |
+| C#/.NET | |使用 [Azure AD 身份验证库 (ADAL)](/documentation/articles/active-directory-authentication-libraries/) |
 | C#/.NET |[ADAL - 服务器到服务器的身份验证](http://go.microsoft.com/fwlink/?LinkId=259816) |使用 [Azure AD 身份验证库 (ADAL)](/documentation/articles/active-directory-authentication-libraries/) 保护从服务器端进程到 MVC4 Web API REST 服务的服务调用。 |
 | C#/.NET |[使用 Azure AD 将登录名添加到 Web 应用程序](https://github.com/Azure-Samples/active-directory-dotnet-webapp-openidconnect) |将 .NET 应用程序配置为根据 Azure AD 企业目录执行 Web 单一登录。 |
 | C#/.NET |[利用 Azure AD 开发多租户 Web 应用程序](https://github.com/Azure-Samples/active-directory-dotnet-webapp-multitenant-openidconnect) |使用 Azure AD 添加一个 .NET 应用程序的单一登录和目录访问功能，以便在多个组织中工作。 |
@@ -141,5 +133,5 @@
 
 [Azure AD 图形 API 帮助程序库](https://www.nuget.org/packages/Microsoft.Azure.ActiveDirectory.GraphClient)
 
-<!---HONumber=Mooncake_0120_2017-->
+<!---HONumber=Mooncake_0306_2017-->
 <!---Update_Description: wording update -->

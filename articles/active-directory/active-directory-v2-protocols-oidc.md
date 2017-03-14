@@ -1,4 +1,3 @@
-
 <properties
     pageTitle="Azure Active Directory v2.0 和 OpenID Connect 协议 | Azure"
     description="使用 OpenID Connect 身份验证协议的 Azure AD v2.0 实现构建 Web 应用程序。"
@@ -14,8 +13,8 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="01/07/2017"
-    wacn.date="02/13/2017"
+    ms.date="02/08/2017"
+    wacn.date="03/13/2017"
     ms.author="dastrock" />  
 
 
@@ -79,7 +78,7 @@ OpenID Connect 描述了元数据文档，该文档包含了应用执行登录�
 
 例如：
 
-	// Line breaks for legibility only
+	// Line breaks are for legibility only.
 	
 	GET https://login.microsoftonline.com/{tenant}/oauth2/v2.0/authorize?
 	client_id=6731de76-14a6-49ae-97bc-6eba6914391e
@@ -268,5 +267,5 @@ You can redirect the user to the `end_session_endpoint` listed in the OpenID Con
 
 获取授权代码和 ID 令牌之后，可将用户登录，并代表用户获取访问令牌。若要将用户登录，必须[完全根据说明](#validate-the-id-token)验证 ID 令牌。若要获取访问令牌，请遵循 [OAuth 协议文档](/documentation/articles/active-directory-v2-protocols-oauth-code/#request-an-access-token/)中所述的步骤。
 
-<!---HONumber=Mooncake_0206_2017-->
+<!---HONumber=Mooncake_0306_2017-->
 <!--Update_Description: wording update-->

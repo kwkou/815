@@ -1,26 +1,26 @@
 <properties
-   pageTitle="连接器版本发行历史记录 | Azure"
-   description="本主题列出了 Forefront Identity Manager (FIM) 和 Microsoft Identity Manager (MIM) 的连接器的所有版本"
-   services="active-directory"
-   documentationCenter=""
-   authors="AndKjell"
-   manager="stevenpo"
-   editor=""/>
-
+    pageTitle="连接器版本发行历史记录 | Azure"
+    description="本主题列出了 Forefront Identity Manager (FIM) 和 Microsoft Identity Manager (MIM) 的连接器的所有版本"
+    services="active-directory"
+    documentationcenter=""
+    author="AndKjell"
+    manager="femila"
+    editor="" />
 <tags
-   ms.service="active-directory"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="identity"
-   ms.date="08/17/2016"
-   wacn.date="10/11/2016"
-   ms.author="billmath"/>
+    ms.assetid="6a0c66ab-55df-4669-a0c7-1fe1a091a7f9"
+    ms.service="active-directory"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.tgt_pltfrm="na"
+    ms.workload="identity"
+    ms.date="02/08/2017"
+    wacn.date="03/13/2017"
+    ms.author="billmath" />
 
 # 连接器版本发行历史记录
 Forefront Identity Manager (FIM) 和 Microsoft Identity Manager (MIM) 的连接器会经常更新。
 
->[AZURE.NOTE]
+> [AZURE.NOTE]
 本主题仅适用于 FIM 和 MIM。Azure AD Connect 不支持这些连接器。
 
 本主题列出所有已发布的连接器版本。
@@ -37,31 +37,31 @@ Forefront Identity Manager (FIM) 和 Microsoft Identity Manager (MIM) 的连接�
 ## 1\.1.117.0
 发布时间：2016 年 3 月
 
-**新连接器**  
+**新连接器** 
 [泛型 SQL 连接器](/documentation/articles/active-directory-aadconnectsync-connector-genericsql/)的初始版本。
 
 **新功能：**
 
 - 通用 LDAP 连接器：
-    - 添加了对通过 Isode 进行增量导入的支持。
+  - 添加了对通过 Isode 进行增量导入的支持。
 - Web 服务连接器：
-    - 更新了 csEntryChangeResult 活动和 setImportErrorCode 活动，以允许将对象级别错误返回到同步引擎。
-    - 更新了 SAP6 和 SAP6User 模板，以使用新的对象级别错误功能。
+  - 更新了 csEntryChangeResult 活动和 setImportErrorCode 活动，以允许将对象级别错误返回到同步引擎。
+  - 更新了 SAP6 和 SAP6User 模板，以使用新的对象级别错误功能。
 - Lotus Domino 连接器：
-    - 导出时，每个通讯簿需要一个认证者。现在可以对所有认证者使用同一密码以简化管理。
+  - 导出时，每个通讯簿需要一个认证者。现在可以对所有认证者使用同一密码以简化管理。
 
 **已解决的问题：**
 
 - 通用 LDAP 连接器：
-    - 对于 IBM Tivoli DS，未正确检测到某些引用属性。
-    - 对于增量导入过程中的 Open LDAP，截去了字符串开头和结尾的空格。
-    - 对于 Novell 和 NetIQ，导出（在 OU/容器之间移动了对象，同时重命名了对象）失败。
+  - 对于 IBM Tivoli DS，未正确检测到某些引用属性。
+  - 对于增量导入过程中的 Open LDAP，截去了字符串开头和结尾的空格。
+  - 对于 Novell 和 NetIQ，导出（在 OU/容器之间移动了对象，同时重命名了对象）失败。
 - Web 服务连接器：
-    - 如果 Web 服务对于同一绑定具有多个终结点，则连接器未正确发现这些终结点。
+  - 如果 Web 服务对于同一绑定具有多个终结点，则连接器未正确发现这些终结点。
 - Lotus Domino 连接器：
-    - 将 fullName 属性导出到邮件数据库不正常工作。
-    - 同时从组中添加和删除成员的导出仅导出了所添加的成员。
-    - 如果 Notes Document 无效（isValid 属性设置为 false），则连接器将失败。
+  - 将 fullName 属性导出到邮件数据库不正常工作。
+  - 同时从组中添加和删除成员的导出仅导出了所添加的成员。
+  - 如果 Notes Document 无效（isValid 属性设置为 false），则连接器将失败。
 
 ## 较旧版本
 在 2016 年 3 月之前，连接器已发布为支持主题。
@@ -96,4 +96,5 @@ Forefront Identity Manager (FIM) 和 Microsoft Identity Manager (MIM) 的连接�
 
 了解有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect/)的详细信息。
 
-<!---HONumber=Mooncake_0926_2016-->
+<!---HONumber=Mooncake_0306_2017-->
+<!---Update_Description: update meta properties -->

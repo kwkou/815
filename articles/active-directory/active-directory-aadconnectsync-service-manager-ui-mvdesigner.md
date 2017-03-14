@@ -13,8 +13,8 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="01/09/2017"
-    wacn.date="02/13/2017"
+    ms.date="02/08/2017"
+    wacn.date="03/13/2017"
     ms.author="billmath" />
 
 # Azure AD Connect 同步：Synchronization Service Manager
@@ -29,5 +29,5 @@
 
 了解有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect/)的详细信息。
 
-<!---HONumber=Mooncake_0206_2017-->
-<!--Update_Description: wording update-->
+<!---HONumber=Mooncake_0306_2017-->
+<!---Update_Description: update meta properties -->
