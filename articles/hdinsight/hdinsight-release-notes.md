@@ -62,9 +62,9 @@ Spark 2.0.1 现可在 Spark 群集（HDInsight 版本 3.5）上使用。
 
 ## R Server on HDInsight 2016 年 8 月 17 日发行说明
 * R Server 8.0.5 - 此版本主要包含 Bug 修复。有关详细信息，请参阅 [R Server Release Notes](https://msdn.microsoft.com/microsoft-r/notes/r-server-notes)（R Server 发行说明）。
-* 边缘节点上的 AzureML 包 - 可以通过[此 R 包](https://cran.r-project.org/web/packages/AzureML/vignettes/getting_started.html)以 Azure ML Web 服务形式发布和使用 R 模型。
+* 边缘节点上的 AzureML 包 - 可以通过[此 R 包](https://cran.r-project.org/web/packages/AzureML/vignettes/getting_started.html)以 Azure ML Web 服务形式发布和使用 R 模型。有关详细信息，请参阅[“R Server on HDInsight 概述”](/documentation/articles/hdinsight-hadoop-r-server-overview/)一文的[“使模型具有可操作性”](/documentation/articles/hdinsight-hadoop-r-server-overview/#operationalize-a-model)部分。
 * [最常用的 100 个 R 包](https://github.com/metacran/cranlogs)的 Linux 依赖项 - 现已预装这些 Linux 包依赖项。
-* 将 R 包添加到数据节点时的 CRAN 存储库使用选项。
+* 将 R 包添加到数据节点时的 CRAN 存储库使用选项。有关详细信息，请参阅[“开始使用 R Server on HDInsight”](/documentation/articles/hdinsight-hadoop-r-server-get-started/)一文的[“安装 R 包”](/documentation/articles/hdinsight-hadoop-r-server-get-started/#install-r-packages)部分。
 * 改进在创建群集时进行 R Server 预配的可靠性。
 
 ## HDInsight 2016 年 8 月 1 日发行说明

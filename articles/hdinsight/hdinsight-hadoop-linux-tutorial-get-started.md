@@ -21,7 +21,7 @@
 
 # Hadoop 教程：开始使用 HDInsight 中的 Hadoop
 
-了解如何在 HDInsight 中创建 [Hadoop](http://hadoop.apache.org/) 群集，以及如何在 HDInsight 中运行 Hive 作业。[Apache Hive](https://hive.apache.org/) 是 Hadoop 生态系统中最热门的组件。目前 HDInsight 提供了六种不同的群集类型：[Hadoop](/documentation/articles/hdinsight-hadoop-introduction/)、[Spark](/documentation/articles/hdinsight-apache-spark-overview/)、[HBase](/documentation/articles/hdinsight-hbase-overview/)、[Storm](/documentation/articles/hdinsight-storm-overview/) 和 [Interactive Hive（预览版）](/documentation/articles/hdinsight-hadoop-use-interactive-hive/)。每个群集类型都支持一组不同的组件。所有六种群集类型都支持 Hive。有关 HDInsight 中受支持组件的列表，请参阅 [HDInsight 提供的 Hadoop 群集版本中有哪些新功能？](/documentation/articles/hdinsight-component-versioning/)
+了解如何在 HDInsight 中创建 [Hadoop](http://hadoop.apache.org/) 群集，以及如何在 HDInsight 中运行 Hive 作业。[Apache Hive](https://hive.apache.org/) 是 Hadoop 生态系统中最热门的组件。目前 HDInsight 提供了六种不同的群集类型：[Hadoop](/documentation/articles/hdinsight-hadoop-introduction/)、[Spark](/documentation/articles/hdinsight-apache-spark-overview/)、[HBase](/documentation/articles/hdinsight-hbase-overview/)、[Storm](/documentation/articles/hdinsight-storm-overview/)、[Interactive Hive（预览版）](/documentation/articles/hdinsight-hadoop-use-interactive-hive/)和 [R server](/documentation/articles/hdinsight-hadoop-r-server-overview/)。每个群集类型都支持一组不同的组件。所有六种群集类型都支持 Hive。有关 HDInsight 中受支持组件的列表，请参阅 [HDInsight 提供的 Hadoop 群集版本中有哪些新功能？](/documentation/articles/hdinsight-component-versioning/)
 
 [AZURE.INCLUDE [delete-cluster-warning](../../includes/hdinsight-delete-cluster-warning.md)]
 ## 先决条件
