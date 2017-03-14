@@ -157,7 +157,7 @@ Spark 2.0.1 现可在 Spark 群集（HDInsight 版本 3.5）上使用。
 
 | 标题 | 说明 | 受影响区域（例如服务、组件或 SDK） | 群集类型（例如 Spark、Hadoop、HBase 或 Storm） | JIRA（如果适用） |
 | --- | --- | --- | --- | --- |
-| Spark on HDInsight 已正式发布 |此版本改进了开源 Apache Spark on HDInsight 的可用性、可伸缩性和工作效率。<ul><li>行业领先的可用性 SLA (99.9%)，使之适用于要求严苛的企业工作负荷。</li><li>使用 Azure Data Lake Store 的可伸缩存储层。</li><li>生产力工具，适用于每个阶段的数据浏览和开发。使用自定义 Spark 内核的 Jupyter 笔记本允许进行交互式数据浏览；与 BI 仪表板（例如 Power BI、Tableau、Qlik）集成后，即可快速进行数据共享和持续进行报告；IntelliJ 插件是进行长期代码项目开发和调试的可靠选项。</li></ul> |服务 |Spark |不适用 |
+| Spark on HDInsight 已正式发布 |此版本改进了开源 Apache Spark on HDInsight 的可用性、可伸缩性和工作效率。<ul><li>行业领先的可用性 SLA (99.9%)，使之适用于要求严苛的企业工作负荷。</li><li>生产力工具，适用于每个阶段的数据浏览和开发。使用自定义 Spark 内核的 Jupyter 笔记本允许进行交互式数据浏览；与 BI 仪表板（例如 Power BI、Tableau、Qlik）集成后，即可快速进行数据共享和持续进行报告；IntelliJ 插件是进行长期代码项目开发和调试的可靠选项。</li></ul> |服务 |Spark |不适用 |
 | 用于 IntelliJ 的 HDInsight 工具 |这是用于 HDInsight Spark 群集的 IntelliJ IDEA 插件。它启用以下功能。<ul><li>在 Scala 和 Java 中轻松创建和编写 Spark 应用程序，提供对 IntelliSense、自动格式、错误检查等功能的一流创作支持。</li><li>在本地测试 Spark 应用程序。</li><li>将作业提交到 HDInsight Spark 群集并检索结果。</li><li>登录 Azure 并访问与 Azure 订阅关联的所有 Spark 群集。</li><li>导航 HDInsight Spark 群集的所有关联的存储资源。</li><li>导航 HDInsight Spark 群集的所有作业历史记录和作业信息。</li><li>通过台式计算机远程调试 Spark 作业。</li></ul> |工具 |Spark |不适用 |
 
 ## HDInsight 2016 年 5 月 13 日发行说明

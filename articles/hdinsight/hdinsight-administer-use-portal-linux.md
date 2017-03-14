@@ -83,7 +83,7 @@ HDInsight 使用各种 Hadoop 组件。有关已获得验证和支持的组件�
     * **属性**：查看群集属性。
     * **存储帐户**：查看存储帐户和密钥。存储帐户是在群集创建过程中进行配置。
     * **群集 AAD 标识**：
-    * **新建支持请求**：允许用户使用 Microsoft 支持创建支持票证。
+    * **新建支持请求**：允许用户使用 Azure.cn 支持创建支持票证。
 
 6. 单击“属性”：
    
@@ -191,7 +191,7 @@ HDInsight 群集可以有两个用户帐户。HDInsight 群集用户帐户（即
 > 
 > 
 
-1. 使用 HDInsight 群集用户凭据登录到 Ambari Web UI。默认的用户名为 **admin**。URL 为 **https://&lt;HDInsight Cluster Name>azurehdinsight.cn**。
+1. 使用 HDInsight 群集用户凭据登录到 Ambari Web UI。默认的用户名为 **admin**。URL 为 **https://&lt;HDInsight Cluster Name>.azurehdinsight.cn**。
 2. 在顶部菜单中单击“管理”，然后单击“管理 Ambari”。
 3. 在左侧菜单中，单击“用户”。
 4. 单击“管理”。
