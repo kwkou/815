@@ -5,7 +5,9 @@
     documentationcenter=""
     author="andkjell"
     manager="femila"
-    editor=""
+    editor=""/>
+
+<tags
     ms.assetid="e3ea53c8-3801-4acf-a297-0fb9bb1bf11d"
     ms.service="active-directory"
     ms.workload="identity"
@@ -13,7 +15,8 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="01/23/2017"
-    ms.author="markvi;andkjell" />  
+    ms.author="markvi;andkjell"
+    wacn.date="03/13/2017" />  
 
 
 # Azure AD Connect 同步：了解声明性设置表达式

@@ -34,8 +34,7 @@
 
 Azure AD 中的对象最多可以有 100 个目录扩展属性。最大长度为 250 个字符。如果属性值长度超过此限制，同步引擎会将其截断。
 
-在安装 Azure AD Connect 期间，将会注册可以使用这些属性的应用程序。可以在 Azure 门户预览中看到此应用程序。
-![架构扩展应用](./media/active-directory-aadconnectsync-feature-directory-extensions/extension3new.png)
+在安装 Azure AD Connect 期间，将会注册可以使用这些属性的应用程序。
 
 现在可以通过 Graph 使用这些属性：
 ![Graph](./media/active-directory-aadconnectsync-feature-directory-extensions/extension4.png)

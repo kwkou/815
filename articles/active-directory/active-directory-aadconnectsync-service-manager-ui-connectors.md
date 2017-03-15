@@ -68,14 +68,19 @@
 当你排查数据问题时，从源连接器空间到 Metaverse 再到目标连接器空间一直跟踪对象是一个关键过程，可从中了解为什么数据没有预期值。
 
 ### 连接器空间对象属性 <a name="connector-space-object-properties"></a>
+
 **导入** 
+
 当你打开 cs 对象时，顶端会出现数个选项卡。“导入”选项卡显示导入后暂存的数据。
 ![Sync Service Manager](./media/active-directory-aadconnectsync-service-manager-ui/csimport.png)
 “旧值”显示当前存储在系统中的数据，而“新值”显示从源系统收到但尚未应用的数据。在本例中，由于发生同步错误，因此无法应用更改。
 
-**错误** 对象出现问题时才会显示“错误”页面。有关如何[排查同步错误](/documentation/articles/active-directory-aadconnectsync-service-manager-ui-operations/#troubleshoot-errors-in-operations-tab/)的详细信息，请参阅“操作”页上的详细信息。
+**错误** 
+
+对象出现问题时才会显示“错误”页面。有关如何[排查同步错误](/documentation/articles/active-directory-aadconnectsync-service-manager-ui-operations/#troubleshoot-errors-in-operations-tab/)的详细信息，请参阅“操作”页上的详细信息。
 
 **沿袭** 
+
 “沿袭”选项卡显示连接器空间对象与 Metaverse 对象关联的方式。可以看到连接器上次从连接的系统导入更改的时间，以及应用哪些规则以便在 Metaverse 中填充数据。
 ![Sync Service Manager](./media/active-directory-aadconnectsync-service-manager-ui/cslineage.png) 
 在“操作”列中，可以看到有一个操作为“预配”的“入站”同步规则。这表示只要此连接器空间对象存在，就会保留 Metaverse 对象。如果同步规则列表显示的同步规则方向为“出站”和“预配”，则表示删除 Metaverse 对象时，也将删除此对象。
@@ -86,18 +91,25 @@
 所有选项卡的底部都有两个按钮：“预览”和“日志”。
 
 **预览** 
+
 “预览”页面可用于同步单个对象。如果你正在对某些客户同步规则进行故障排除，并且想要在单个对象上查看更改的效果，则此页面非常有用。可以在“完全同步”和“增量同步”之间选择。还可以在“生成预览”（仅在内存中保留更改）和“提交预览”（将暂存目标连接器空间的所有更改）之间选择。
 ![Sync Service Manager](./media/active-directory-aadconnectsync-service-manager-ui/preview1.png) 
 可以检查对象，以及哪一个规则适用于特定的属性流。
 ![Sync Service Manager](./media/active-directory-aadconnectsync-service-manager-ui/preview2.png)
 
-**日志**“日志”页用于查看密码同步状态和历史记录。
+**日志**
+
+“日志”页用于查看密码同步状态和历史记录。
 
 ### Metaverse 对象属性 <a name="metaverse-object-properties"></a>
+
 **属性**
+
 在“属性”选项卡中，可以看到值，以及是由哪一个连接器提供它。
 ![Sync Service Manager](./media/active-directory-aadconnectsync-service-manager-ui/mvattributes.png) 
+
 **连接器**
+
 “连接器”选项卡显示所有具有对象表示形式的连接器空间。
 ![Sync Service Manager](./media/active-directory-aadconnectsync-service-manager-ui/mvconnectors.png) 
 此选项卡也可让你导航到[连接器空间对象](#connector-space-object-properties)。

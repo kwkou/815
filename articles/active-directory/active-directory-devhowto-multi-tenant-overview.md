@@ -45,11 +45,11 @@ Azure AD 中的 Web 应用/API 注册默认为单租户。可以将注册转换�
 ## 将代码更新为向 /common 发送请求
 在单租户应用程序中，登录请求将发送到租户的登录终结点。以 contoso.partner.onmschina.cn 为例，终结点将是：
 
-    https://login.microsoftonline.com/contoso.partner.onmschina.cn
+    https://login.partner.microsoftonline.cn/contoso.partner.onmschina.cn
 
 发送到租户终结点的请求可以让该租户中的用户（或来宾）登录该租户中的应用程序。使用多租户应用程序时，应用程序事先并不知道用户来自哪个租户，因此无法将请求发送到租户的终结点。取而代之的是，请求将发送到在所有 Azure AD 租户之间多路复用的终结点：
 
-    https://login.microsoftonline.com/common
+    https://login.partner.microsoftonline.cn/common
 
 当 Azure AD 在 /common 终结点上收到请求时，将会使用户登录，因而可以发现用户来自哪个租户。/common 终结点可与 Azure AD 支持的所有身份验证协议配合使用：OpenID Connect、OAuth 2.0、SAML 2.0 和 WS 联合身份验证。
 

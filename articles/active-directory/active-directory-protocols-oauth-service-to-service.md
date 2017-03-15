@@ -38,7 +38,7 @@ OAuth 2.0 客户端凭据授权流允许 Web 服务（**机密客户端**）在�
 若要请求访问令牌，对特定于租户的 Azure AD 终结点使用 HTTP POST。
 
 
-	https://login.microsoftonline.com/<tenant id>/oauth2/token
+	https://login.partner.microsoftonline.cn/<tenant id>/oauth2/token
 
 
 ## 服务到服务访问令牌请求
@@ -56,7 +56,7 @@ OAuth 2.0 客户端凭据授权流允许 Web 服务（**机密客户端**）在�
 
 
 	POST contoso.com/oauth2/token HTTP/1.1
-	Host: login.microsoftonline.com
+	Host: login.partner.microsoftonline.cn
 	Content-Type: application/x-www-form-urlencoded
 
 	grant_type=client_credentials&client_id=625bc9f6-3bf6-4b6d-94ba-e97cf07a22de&client_secret=qkDwDJlDfig2IpeuUZYKH1Wb8q1V0ju6sILxQQqhJ+s=&resource=https%3A%2F%2Fservice.contoso.com%2F
