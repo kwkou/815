@@ -15,7 +15,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="backup-recovery"
     ms.date="02/12/2017"
-    wacn.date="03/10/2017"
+    wacn.date="03/15/2017"
     ms.author="bsiva" />  
 
 
@@ -39,7 +39,7 @@
 ## 先决条件
 以下是执行此部署所需的组件
 
-* **配置服务器**：将运行 Windows Server 2012 R2 的本地 VM 部署为配置服务器。默认情况下，部署配置服务器时将安装其他 Azure Site Recovery 组件（进程服务器和主目标服务器）。[了解详细信息](/documentation/articles/site-recovery-components/#replicate-vmware-vmsphysical-servers-to-azure)
+* **配置服务器**：将运行 Windows Server 2012 R2 的本地 VM 部署为配置服务器。默认情况下，部署配置服务器时将安装其他 Azure Site Recovery 组件（进程服务器和主目标服务器）。
 * **EC2 实例**：要迁移的 Amazon EC2 虚拟机实例。
 
 ## 部署步骤

@@ -70,7 +70,7 @@
 ![“取消”按钮](./media/site-recovery-monitoring-and-troubleshooting/image7.png)  
 
 
-## 监视虚拟机的复制运行状况
+## <a name="monitor-replication-health-for-virtual-machine"></a>监视虚拟机的复制运行状况
 可以使用 Azure 门户远程监视每个受保护的实体的 Azure Site Recovery 提供程序。单击“受保护的项”，然后单击“VMM 云”或“保护组”。“VMM 云”选项卡只适用于基于 Virtual Machine Manager 的部署。对于其他方案，受保护的实体位于“保护组”选项卡下。
 
 ![“VMM 云”和“保护组”选项](./media/site-recovery-monitoring-and-troubleshooting/image8.png)  

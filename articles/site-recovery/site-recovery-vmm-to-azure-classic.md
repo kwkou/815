@@ -15,7 +15,7 @@
     ms.devlang="na"
     ms.topic="hero-article"
     ms.date="02/06/2017"
-    wacn.date="03/10/2017"
+    wacn.date="03/15/2017"
     ms.author="raynew" />  
 
 
@@ -49,7 +49,7 @@ Azure Site Recovery 服务有助于业务连续性和灾难恢复 (BCDR) 策略�
 **先决条件** | **详细信息**
 --- | ---
 **Azure 帐户**| 需要一个 [Azure](https://azure.cn/) 帐户。可以从[试用版](/pricing/1rmb-trial/)开始。[详细了解](/pricing/details/site-recovery/) Site Recovery 定价。
-**Azure 存储** | <p>将需要使用 Azure 存储帐户存储复制的数据。复制的数据存储在 Azure 存储中，Azure VM 在发生故障转移时启动。</p><p>需要[标准异地冗余存储帐户](/documentation/articles//storage-redundancy#geo-redundant-storage)。该帐户必须位于 Site Recovery 服务所在的同一区域，并与同一订阅相关联。请注意，目前不支持复制到高级存储帐户，因此不应使用该功能。</p><p>[阅读](/documentation/articles/storage-introduction/)有关 Azure 存储的详细信息。</p>
+**Azure 存储** | <p>将需要使用 Azure 存储帐户存储复制的数据。复制的数据存储在 Azure 存储中，Azure VM 在发生故障转移时启动。</p><p>需要[标准异地冗余存储帐户](/documentation/articles/storage-redundancy/#geo-redundant-storage)。该帐户必须位于 Site Recovery 服务所在的同一区域，并与同一订阅相关联。请注意，目前不支持复制到高级存储帐户，因此不应使用该功能。</p><p>[阅读](/documentation/articles/storage-introduction/)有关 Azure 存储的详细信息。</p>
 **Azure 网络** | 需要一个 Azure 虚拟网络，以便发生故障转移时 Azure VM 能够连接到其中。Azure 虚拟网络必须位于 Site Recovery 保管库所在的同一区域中。
 
 ## 本地先决条件

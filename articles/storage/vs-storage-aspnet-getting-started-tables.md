@@ -14,7 +14,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="12/21/2016"
-    wacn.date="03/02/2017"
+    wacn.date="03/15/2017"
     ms.author="tarcher" />  
 
 
@@ -266,7 +266,7 @@ Azure 表存储使用户可以存储大量结构化数据。该服务是一个 N
 	![添加实体](./media/vs-storage-aspnet-getting-started-tables/add-entity-results.png)  
 
 
-	可按照[获取单个实体](#get-a-single-entity)部分中的步骤验证已添加该实体。还可使用 [Azure 存储资源管理器](/documentation/articles/vs-azure-tools-storage-manage-with-storage-explorer/)查看表的所有实体。
+	可按照[获取单个实体](#get-a-single-entity)部分中的步骤验证已添加该实体。
 
 ##<a name="add-a-batch-of-entities-to-a-table"></a> 向表添加一批实体
 
