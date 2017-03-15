@@ -1,6 +1,6 @@
 <properties
     pageTitle="使用双重验证的 Azure MFA 登录体验 | Azure"
-    description="本页将提供有关在何处查看 Azure MFA 支持的各种登录方法的指导。"
+    description="本页提供有关在何处查看 Azure MFA 支持的各种登录方法的指导。"
     keywords="用户身份验证, 登录体验, 使用手机登录, 使用办公电话登录"
     services="multi-factor-authentication"
     documentationcenter=""
@@ -14,8 +14,8 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="12/15/2016"
-    wacn.date="02/20/2017"
+    ms.date="02/02/2016"
+    wacn.date="03/14/2017"
     ms.author="kgremban" />  
 
 
@@ -93,5 +93,13 @@
 
 - 选择替代方法并登录。
 
-<!---HONumber=Mooncake_0213_2017-->
-<!--Update_Description: wording update-->
+## 后续步骤
+
+如果使用双重验证登录时遇到问题，请在[使用 Azure 多重身份验证时遇到问题](/documentation/articles/multi-factor-authentication-end-user-troubleshoot/)中获取详细信息。
+
+了解如何[管理双重验证设置](/documentation/articles/multi-factor-authentication-end-user-manage-settings/)。
+
+了解如何[开始使用 Microsoft 验证器应用](/documentation/articles/microsoft-authenticator-app-how-to/)，以便使用通知（而不是短信和电话呼叫）登录。
+
+<!---HONumber=Mooncake_0306_2017-->
+<!---Update_Description: wording update -->

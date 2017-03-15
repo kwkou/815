@@ -1,21 +1,21 @@
-<properties 
-	pageTitle="Azure 多重身份验证 - 后续步骤" 
-	description="这个有关 Azure 多重身份验证的页面介绍了使用 MFA 可以执行的后续步骤。其中包括报告、欺诈警报、一次性跳过、自定义语音消息、缓存，受信任的 IP 和应用密码。" 
-	services="multi-factor-authentication" 
-	documentationCenter="" 
-	authors="billmath" 
-	manager="stevenpo" 
-	editor="curtand"/>  
-
+<properties
+    pageTitle="配置 Azure MFA | Azure"
+    description="Azure 多重身份验证页介绍了使用 MFA 可以执行的后续步骤。其中包括报告、欺诈警报、一次性跳过、自定义语音消息、缓存，受信任的 IP 和应用密码。"
+    services="multi-factor-authentication"
+    documentationcenter=""
+    author="kgremban"
+    manager="femila"
+    editor="yossib" />
 <tags
-	ms.service="multi-factor-authentication"
-	ms.workload="identity"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="09/23/2016"
-	wacn.date="02/20/2017"
-	ms.author="kgremban"/>
+    ms.assetid="75af734e-4b12-40de-aba4-b68d91064ae8"
+    ms.service="multi-factor-authentication"
+    ms.workload="identity"
+    ms.tgt_pltfrm="na"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.date="02/15/2017"
+    wacn.date="03/14/2017"
+    ms.author="kgremban" />  
 
 # 配置 Azure 多重身份验证
 
@@ -23,9 +23,9 @@
 
 可以通过 “Manage service settings” 页访问多重身份验证。 请以管理员身份登录 Azure 管理门户，然后选择 “Active Directory” 选项。单击你的目录，然后单击“配置”选项卡。在“多重身份验证”部分下，单击 “Manage service settings”。
 
-功能| 说明| 涵盖的内容
-:------------- | :------------- | :------------- | 
-[可选择验证方法](#selectable-verification-methods)|允许你选择可供用户使用的身份验证方法。|有关启用或禁用特定身份验证方法（如呼叫或短信）的信息。
+功能| 说明|
+|:---- | :---- |
+[可选择验证方法](#selectable-verification-methods)|允许你选择可供用户使用的身份验证方法。|
 
 ## 可选择验证方法  <a name="selectable-verification-methods"></a>
 现在，可以选择当用户使用 Azure 多重身份验证时供用户使用的身份验证方法。此功能以前只提供了本地服务器版本。下表提供了可为用户启用或禁用的各种身份验证方法的简要概述。
@@ -48,4 +48,5 @@
 9. 单击“保存”。
 10. 单击“关闭”。
 
-<!---HONumber=Mooncake_1107_2016-->
+<!---HONumber=Mooncake_0306_2017-->
+<!---Update_Description: wording update -->

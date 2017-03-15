@@ -6,7 +6,6 @@
     author="kgremban"
     manager="femila"
     editor="pblachar, librown" />
-    
 <tags
     ms.assetid="f04d5bce-e99e-4f75-82d1-ef6369be3402"
     ms.service="multi-factor-authentication"
@@ -14,12 +13,15 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="01/06/2017"
-    wacn.date="02/20/2017"
+    ms.date="02/10/2017"
+    wacn.date="03/14/2017"
     ms.author="kgremban" />  
 
 
-# Microsoft Authenticator 应用常见问题解答
+# Microsoft 验证器应用常见问题
+
+本文解答我们收到的有关 Microsoft 验证器应用的常见问题。如果你的问题在此处没有解答，请访问 [Microsoft 验证器应用论坛](https://social.technet.microsoft.com/Forums/zh-cn/home?forum=MicrosoftAuthenticatorApp)。针对该应用的一个特定功能，我们编写了另一篇常见问题文章 - [有关使用手机登录的常见问题](/documentation/articles/microsoft-authenticator-app-phone-signin-faq/)。
+
 Microsoft Authenticator 应用替代了 Azure Authenticator 应用，建议使用 Azure 多重身份验证时使用该应用。此应用可用于 Windows Phone、Android 和 iOS。
 
 ## 常见问题
@@ -39,7 +41,7 @@ Microsoft Authenticator 应用可用于 [Windows Phone](http://go.microsoft.com/
 不适用，推送通知只适用于 Microsoft 帐户和 Azure Active Directory 帐户。如果您的工作单位或学校使用的是 Azure AD 帐户，则可能会禁用此功能。
 
 ### 从备份还原设备后，帐户代码丢失或失效。发生了什么情况？
-出于安全考虑，我们不会从应用备份还原帐户。如果从备份还原 iOS 应用，仍会显示帐户，但不可将其用于接收登录验证或生成安全代码。还原应用后，请删除并再次添加帐户。
+出于安全考虑，我们不会从应用备份还原帐户。还原应用后，请删除并再次添加帐户。
 
 ### 我有了一台新设备。如何从旧设备删除 Microsoft Authenticator 应用并将其迁移到新设备？
 将 Microsoft Authenticator 应用添加到新设备不会从任何其他设备将其自动删除。若要管理为帐户配置的设备，请访问用于管理双重验证的网站，选择删除旧应用。
@@ -51,10 +53,10 @@ Microsoft Authenticator 应用可用于 [Windows Phone](http://go.microsoft.com/
 - Windows Phone：从主屏幕中，选择“菜单”按钮，然后选择“编辑帐户”。点击帐户名称旁边的 **X**。
 - Android：从主屏幕中，选择“菜单”按钮，然后选择“编辑帐户”。点击帐户名称旁边的 **X**。
 
-如果拥有已注册到组织的 Android 设备，可能需要完成一个额外步骤才能删除帐户。在这些设备上，以设备管理员自动注册了 Microsoft Authenticator 应用。如果想要彻底卸载应用，需受先在应用设置中取消注册应用。
+如果拥有已注册到组织的设备，可能需要完成一个额外步骤才能删除帐户。在这些设备上，以设备管理员自动注册了 Microsoft Authenticator 应用。如果想要彻底卸载应用，需受先在应用设置中取消注册应用。
 
 ### 应用为什么要请求如此多的权限？
-我们的应用将请求的权限以及应用中如何使用这些权限的完整列表如下：
+下面是所需的权限以及如何在应用中使用这些权限的完整列表。会出现哪些特定的权限将取决于所用的手机类型。
 
 - **相机**：用户添加工作、学校或非 Microsoft 帐户时，应用使用相机来扫描 QR 码。
 - **联系人和手机**：用户使用个人 Microsoft 帐户登录时，应用将尝试通过查找手机上使用的现有帐户来简化过程。
@@ -69,14 +71,20 @@ Microsoft Authenticator 应用可用于 [Windows Phone](http://go.microsoft.com/
 - **完全网络访问**：此权限为发送验证身份的通知所需。
 - **在启动时运行**：如果用户重启手机，此权限可确保继续接收验证身份的通知。
 
+### 为何 Microsoft 验证器应用允许在不解锁设备的情况下批准请求？
+
+这是设计使然。双重验证要求提供两项证明：你知道的事和你拥有的物品。你知道的事是密码。你拥有的物品是你的手机（已在 Microsoft 验证器应用中经过设置，并已注册为 MFA 证明）。 因此，拥有手机和批准请求符合第二个身份验证因素的条件。
+
 ## 后续步骤
 
 ### 联系我们
-如果在此处找不到问题的答案，请告诉我们。转到 [Microsoft Authenticator 应用论坛](https://social.technet.microsoft.com/Forums/zh-cn/home?forum=MicrosoftAuthenticatorApp)发布问题并从社区获取帮助、在此页面留言，或[联系支持人员](https://support.microsoft.com/zh-cn/contactus)，我们会尽快回答相关问题。
+如果在此处找不到问题的答案，请告诉我们。转到 [Microsoft 验证器应用论坛](https://social.technet.microsoft.com/Forums/zh-cn/home?forum=MicrosoftAuthenticatorApp)发布问题并从社区获取帮助或者在此页面上留言，我们会尽快解答相关问题。
 
 
 ### 相关主题
 - 关于 Microsoft 帐户的[双重验证](https://support.microsoft.com/zh-cn/help/12408/microsoft-account-about-two-step-verification)
 - 为工作或学校帐户[设置双重验证时遇到问题](/documentation/articles/multi-factor-authentication-end-user-troubleshoot/)？
+- [使用 Microsoft 验证器从手机登录](/documentation/articles/microsoft-authenticator-app-phone-signin-faq/)
 
-<!---HONumber=Mooncake_0213_2017-->
+<!---HONumber=Mooncake_0306_2017-->
+<!---Update_Description: wording update -->
