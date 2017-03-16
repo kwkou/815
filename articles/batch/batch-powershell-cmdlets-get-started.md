@@ -14,7 +14,7 @@
     ms.tgt_pltfrm="powershell"
     ms.workload="big-compute"
     ms.date="01/23/2017"
-    wacn.date="03/14/2017"
+    wacn.date="03/16/2017"
     ms.author="tamram" />  
 
 
@@ -97,7 +97,7 @@ Batch 帐户名在资源组所在的 Azure 区域中必须唯一，长度为 3 �
 使用这些 cmdlet 时，除了传递 BatchContext 对象，还需要创建或传递包含详细的资源设置的对象，如以下示例所示。请参阅每个 cmdlet 的详细帮助说明来了解其他示例。
 
 ### 创建 Batch 池
-创建或更新 Batch 池时，为计算节点上的操作系统选择云服务配置或虚拟机配置（请参阅 [Batch 功能概述](/documentation/articles/batch-api-basics/#pool/)）。用户的选择将决定是使用其中一个 [Azure 来宾 OS 版本](/documentation/articles/cloud-services-guestos-update-matrix/#releases/)还是 Azure 应用商店中其中一个受支持的 Linux 或 Windows VM 映像为其计算节点创建映像。
+创建或更新 Batch 池时，为计算节点上的操作系统选择云服务配置或虚拟机配置（请参阅 [Batch 功能概述](/documentation/articles/batch-api-basics/#pool/)）。用户的选择将决定是使用其中一个 [Azure 来宾 OS 版本](/documentation/articles/cloud-services-guestos-update-matrix/)还是 Azure 应用商店中其中一个受支持的 Linux 或 Windows VM 映像为其计算节点创建映像。
 
 运行 **New-AzureBatchPool** 时，使用 PSCloudServiceConfiguration 或 PSVirtualMachineConfiguration 对象传递操作系统设置。例如，以下 cmdlet 可以在云服务配置中新建包含小型计算节点的 Batch 池，这些节点是使用系列 3 最新操作系统版本 (Windows Server 2012) 映像的。在此，**CloudServiceConfiguration** 参数指定 *$configuration* 变量作为 PSCloudServiceConfiguration 对象。**BatchContext** 参数将先前定义的变量 *$context* 指定为 BatchAccountContext 对象。
 

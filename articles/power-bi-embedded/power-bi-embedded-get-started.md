@@ -15,7 +15,7 @@
     ms.tgt_pltfrm="NA"
     ms.workload="powerbi"
     ms.date="02/06/2017"
-    wacn.date="03/14/2017"
+    wacn.date="03/16/2017"
     ms.author="asaxton" />  
 
 
@@ -56,7 +56,7 @@
 
 
 
-## 查看 Power BI API 访问密钥 <a name="view-access-keys"></a>
+## 查看 Power BI API 访问密钥 <a name="view-power-bi-api-access-keys"></a>
 调用 Power BI REST API 所需的最重要信息之一是**访问密钥**。这些访问密钥用于生成对 API 请求进行身份验证的**应用令牌**。要查看**访问密钥**，请单击“设置”边栏选项卡上的“访问密钥”。若要了解关于**应用令牌**的详细信息，请参阅[通过 Power BI Embedded 进行身份验证和授权](/documentation/articles/power-bi-embedded-app-token-flow/)。
 
    ![](./media/power-bi-embedded-get-started/access-keys.png)  

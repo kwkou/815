@@ -16,7 +16,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="11/11/2016"
-    wacn.date="01/06/2017"
+    wacn.date="03/16/2017"
     ms.author="andrl" />  
 
 
@@ -473,7 +473,7 @@ UDF 随后可以用在诸如下面示例的查询中：
         console.log("Error" , error);
     });
 
-## JavaScript 语言集成的查询 API
+## JavaScript 语言集成的查询 API <a name="javascript-language-integrated-query-api"></a>
 除了使用 DocumentDB 的 SQL 语法发起查询外，服务器端 SDK 还允许你在没有任何 SQL 知识的情况下使用流畅的 JavaScript 接口来执行优化的查询。JavaScript 查询 API 允许你使用与 ECMAScript5 的数组内置项类似的语法和如 lodash 等热门的 JavaScript 库，通过将谓词函数传递到可链的函数调用中以编程方式生成查询。使用 DocumentDB 的索引进行有效执行的 JavaScript 运行时将对查询进行分析。
 
 > [AZURE.NOTE] `__`（双下划线）是 `getContext().getCollection()` 的别名。

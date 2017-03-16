@@ -15,7 +15,7 @@
     ms.devlang="java"
     ms.topic="hero-article"
     ms.date="01/05/2017"
-    wacn.date="02/27/2017"
+    wacn.date="03/16/2017"
     ms.author="arramac" />  
 
 
@@ -189,6 +189,6 @@ DocumentDB 支持使用 [replaceDocument](http://azure.github.io/azure-documentd
 - 在 [DocumentDB 文档页](/documentation/services/documentdb/)的“Develop”（开发）部分中了解有关编程模型的详细信息。
 
 [documentdb-create-account]: /documentation/articles/documentdb-create-account/
-[keys]: media/documentdb-get-started/nosql-tutorial-keys.png
+[keys]: ./media/documentdb-get-started/nosql-tutorial-keys.png
 
 <!---HONumber=Mooncake_0220_2017-->

@@ -15,7 +15,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="12/15/2016"
-    wacn.date="02/20/2017"
+    wacn.date="03/16/2017"
     ms.author="kgremban" />  
 
 
@@ -76,7 +76,7 @@ Microsoft Authenticator 应用可用于 [Windows Phone](http://go.microsoft.com/
 ![帐户屏幕](./media/authenticator-app-how-to/accounts.png)  
 
 
-### 手动将帐户添加到应用
+### 手动将帐户添加到应用 <a name="add-an-account-to-the-app-manually"></a>
 1. 转到安全验证设置屏幕。有关如何访问此屏幕的信息，请参阅[更改安全设置](/documentation/articles/multi-factor-authentication-end-user-manage-settings/)。
 2. 选择“Set up”。
 

@@ -15,7 +15,7 @@
     ms.devlang="dotnet"
     ms.topic="hero-article"
     ms.date="12/25/2016"
-    wacn.date="02/27/2017"
+    wacn.date="03/16/2017"
     ms.author="syamk" />
 
 # <a name="_Toc395809351"></a>ASP.NET MVC 教程：使用 DocumentDB 开发 Web 应用程序
@@ -545,7 +545,7 @@
 
 在几秒钟内，Visual Studio 将完成 Web 应用程序发布并启动浏览器，你可从中查看在 Azure 中运行的简单作品！
 
-## <a name="Troubleshooting"></a>故障排除
+## <a name="troubleshooting"></a>故障排除
 
 如果尝试部署 Web 应用时收到“处理请求时发生错误”消息，请执行以下操作：
 

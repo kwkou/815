@@ -16,7 +16,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="12/20/2016"
-    wacn.date="02/27/2017"
+    wacn.date="03/16/2017"
     ms.author="dimakwan" />  
 
 
@@ -96,7 +96,7 @@ DocumentDB 数据库帐户是目前唯一可以使用 [Azure 资源管理器模�
 
 ### 创建或检索资源组
 
-若要创建 DocumentDB 帐户，首先需要一个资源组。如果已知道想要使用的资源组名称，请跳到[步骤 2](#create-documentdb-account-cli)。
+若要创建 DocumentDB 帐户，首先需要一个资源组。
 
 若要查看列有你当前所有的资源组的列表，请运行下列命令，并记下你想要使用的资源组名称：
 
@@ -482,7 +482,7 @@ DocumentDB 能够跨不同的 [Azure 区域](https://azure.microsoft.com/regions
 
 在此命令返回之后，该帐户会进入“正在更新”状态数分钟，然后才会更改为可供使用的“联机”状态。可以在 [Azure 门户预览](https://portal.azure.cn)中的“DocumentDB 帐户”边栏选项卡上检查帐户的状态。
 
-## 故障排除
+## 故障排除 <a name="troubleshooting"></a>
 
 如果在创建资源组或数据库帐户时收到错误（例如 `Deployment provisioning state was not successful`），有几个故障排除选项可供使用。
 
@@ -525,7 +525,7 @@ DocumentDB 能够跨不同的 [Azure 区域](https://azure.microsoft.com/regions
 <!--Reference style links - using these makes the source content way more readable than using inline links-->
 
 [distribute-globally]: /documentation/articles/documentdb-distribute-data-globally/
-[scaling-globally]: /documentation/articles/documentdb-distribute-data-globally/#scaling-across-the-planet/
+[scaling-globally]: /documentation/articles/documentdb-distribute-data-globally/
 
 <!---HONumber=Mooncake_0220_2017-->
 <!--Update_Description: wording and commands update-->

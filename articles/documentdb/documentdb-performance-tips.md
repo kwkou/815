@@ -16,7 +16,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="11/16/2016"
-    wacn.date="01/06/2017"
+    wacn.date="03/16/2017"
     ms.author="mimig" />
 
 # DocumentDB 性能提示
@@ -143,7 +143,7 @@ Azure DocumentDB 是一个快速、弹性的分布式数据库，可以在提供
 
     有关详细信息，请参阅 [DocumentDB indexing policies](/documentation/articles/documentdb-indexing-policies/)（DocumentDB 索引策略）。
 
-## 吞吐量  <a id="measure-rus"></a>
+## 吞吐量  <a id="throughput"></a>
 
 
 1. **测量和优化较低的每秒请求单位使用量**

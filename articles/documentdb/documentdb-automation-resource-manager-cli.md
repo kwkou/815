@@ -15,7 +15,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="1/11/2016"
-    wacn.date="02/27/2017"
+    wacn.date="03/16/2017"
     ms.author="mimig" />  
 
 
@@ -96,7 +96,7 @@ DocumentDB 数据库帐户是目前唯一可以使用资源管理器模板和 Az
 如果需要，可以键入 `azure config mode asm` 切换回到默认的命令集。
 
 ### 创建或检索资源组
-若要创建 DocumentDB 帐户，首先需要一个资源组。如果已知道想要使用的资源组名称，请跳到[步骤 2](#create-documentdb-account-cli)。
+若要创建 DocumentDB 帐户，首先需要一个资源组。
 
 若要查看列有当前所有的资源组的列表，请运行以下命令，并记下想要使用的资源组名称：
 
@@ -618,7 +618,7 @@ DocumentDB 能够跨不同的 Azure 区域[在全球分发数据][distribute-glo
 <!--Reference style links - using these makes the source content way more readable than using inline links-->
 
 [distribute-globally]: /documentation/articles/documentdb-distribute-data-globally/
-[scaling-globally]: /documentation/articles/documentdb-distribute-data-globally/#scaling-across-the-planet/
+[scaling-globally]: /documentation/articles/documentdb-distribute-data-globally/
 
 <!---HONumber=Mooncake_0220_2017-->
 <!--Update_Description: wording update-->

@@ -16,7 +16,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="11/16/2016"
-    wacn.date="01/06/2017"
+    wacn.date="03/16/2017"
     ms.author="jimpark; trinadhk; markgal" />  
 
 
@@ -36,7 +36,7 @@
 ## 开始之前
 若要将服务器或客户端备份到 Azure，你需要一个 Azure 帐户。如果没有帐户，只需几分钟的时间就能创建一个[试用帐户](/pricing/1rmb-trial/)。
 
-## 步骤 1：创建恢复服务保管库
+## 步骤 1：创建恢复服务保管库 <a name="step-1-create-a-recovery-services-vault"></a>
 恢复服务保管库是存储所有按时间创建的备份和恢复点的实体。恢复服务保管库还包含应用到受保护文件和文件夹的备份策略。在创建恢复服务保管库时，你还应选择适当的存储冗余选项。
 
 ### 创建恢复服务保管库

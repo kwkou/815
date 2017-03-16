@@ -15,7 +15,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="12/20/2016"
-    wacn.date="02/27/2017"
+    wacn.date="03/16/2017"
     ms.author="dimakwan" />  
 
 
@@ -184,7 +184,7 @@
 <!--Reference style links - using these makes the source content way more readable than using inline links-->
 
 [powershell-install-configure]:/documentation/articles/powershell-install-configure/
-[scaling-globally]: /documentation/articles/documentdb-distribute-data-globally/#scaling-across-the-planet/
+[scaling-globally]: /documentation/articles/documentdb-distribute-data-globally/
 [distribute-data-globally]:/documentation/articles/documentdb-distribute-data-globally/
 [azure-resource-groups]:/documentation/articles/resource-group-overview#resource-groups/
 [azure-resource-tags]:/documentation/articles/resource-group-using-tags/

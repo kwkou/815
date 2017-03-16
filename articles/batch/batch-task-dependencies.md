@@ -14,7 +14,7 @@
     ms.tgt_pltfrm="vm-windows"
     ms.workload="big-compute"
     ms.date="01/23/2017"
-    wacn.date="03/14/2017"
+    wacn.date="03/16/2017"
     ms.author="tamram" />
 
 # Azure Batch 中的任务依赖关系
@@ -66,7 +66,7 @@ csharp
 > 
 > 
 
-## 依赖关系方案
+## 依赖关系方案 <a name="dependency-scenarios"></a>
 可以在 Azure Batch 中使用三种基本任务依赖关系方案：一对一、一对多和任务 ID 范围依赖关系。可以组合这些方案以提供第四种方案：多对多。
 
 | 方案&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 示例 | |

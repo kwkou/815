@@ -14,7 +14,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="02/09/2017"
-    wacn.date="03/14/2017"
+    wacn.date="03/16/2017"
     ms.author="tamram" />  
 
 
@@ -41,7 +41,7 @@
 
 <sup>1</sup> 最大的块 Blob 大小的 Azure 存储空间限制
 
-## 查看 Batch 配额
+## 查看 Batch 配额 <a name="batch-account-quotas"></a>
 可在 [Azure 门户预览][portal]中查看 Batch 帐户配额。
 
 1. 在门户中选择“Batch 帐户”，然后选择所需的 Batch 帐户。

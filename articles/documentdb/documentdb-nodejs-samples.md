@@ -17,7 +17,7 @@
 	ms.topic="article"
 	ms.date="10/03/2016"
 	ms.author="moderakh"
-	wacn.date="01/19/2017"/>
+	wacn.date="03/16/2017"/>
 
 
 # DocumentDB Node.js 示例
@@ -103,7 +103,7 @@
 
 有关索引的详细信息，请参阅 [DocumentDB 索引策略](/documentation/articles/documentdb-indexing-policies/)。
 
-## 服务器端编程示例
+## 服务器端编程示例 <a name="server-side-programming-examples"></a>
 
 [ServerSideScripts](https://github.com/Azure/azure-documentdb-node/tree/master/samples/ServerSideScripts) 项目的 [app.js](https://github.com/Azure/azure-documentdb-node/blob/master/samples/ServerSideScripts/app.js) 文件演示如何执行以下任务。
 

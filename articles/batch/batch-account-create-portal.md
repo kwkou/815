@@ -14,7 +14,7 @@
     ms.devlang="na"
     ms.topic="get-started-article"
     ms.date="01/23/2016"
-    wacn.date="03/14/2017"
+    wacn.date="03/16/2017"
     ms.author="tamram" />  
 
 
@@ -71,7 +71,7 @@
 
 [AZURE.INCLUDE [batch-pricing-include](../../includes/batch-pricing-include.md)]
 
-## 链接的 Azure 存储帐户
+## 链接的 Azure 存储帐户 <a name="linked-azure-storage-account"></a>
 
 如前所述，可选择性地将常规用途的 Azure 存储帐户链接到批处理帐户。与[批处理文件约定 .NET](/documentation/articles/batch-task-output/) 库一样，Batch 的[应用程序包](/documentation/articles/batch-application-packages/)功能将使用 Azure Blob 存储。这些可选功能有助于部署批处理任务运行的应用程序，并保存它们生成的数据。
 

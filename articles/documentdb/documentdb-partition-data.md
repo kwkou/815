@@ -14,7 +14,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="12/14/2016"
-    wacn.date="01/23/2017"
+    wacn.date="03/16/2017"
     ms.author="arramac" />  
 
 
@@ -85,7 +85,7 @@ DocumentDB 存储文档时，它将基于分区键值在分区间均匀地分布
 > 
 > 
 
-## 单个分区和已分区的集合
+## 单个分区和已分区的集合 <a name="single-partition-and-partitioned-collections"></a>
 DocumentDB 支持创建单个分区和已分区的集合。
 
 - **已分区集合**可以跨多个分区并对支持的存储和吞吐量无限制。必须为集合指定分区键。
