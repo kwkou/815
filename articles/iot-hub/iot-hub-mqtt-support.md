@@ -207,7 +207,7 @@ request id 可以是消息属性值的任何有效值（如 [IoT 中心消息传
 [lnk-sample-csharp]: https://github.com/Azure/azure-iot-sdk-csharp/tree/master/device/samples
 [lnk-sample-python]: https://github.com/Azure/azure-iot-sdk-python/tree/master/device/samples
 [lnk-device-explorer]: https://github.com/Azure/azure-iot-sdk-csharp/blob/master/tools/DeviceExplorer
-[lnk-sas-tokens]: /documentation/articles/iot-hub-devguide-security/#use-sas-tokens-in-a-device-client
+[lnk-sas-tokens]: /documentation/articles/iot-hub-devguide-security/#use-sas-tokens-in-a-device-app
 [lnk-mqtt-devguide]: /documentation/articles/iot-hub-devguide-messaging/#notes-on-mqtt-support
 [lnk-azure-protocol-gateway]: /documentation/articles/iot-hub-protocol-gateway/
 
