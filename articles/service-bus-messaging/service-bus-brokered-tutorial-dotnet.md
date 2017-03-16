@@ -288,107 +288,107 @@ Azure 服务总线提供两个综合性消息传送解决方案：一是通过�
 此时，你的代码应如下所示：
 
 
-using System;
-using System.Collections.Generic;
-using System.Data;
-using System.IO;
-using System.Threading;
-using System.Threading.Tasks;
-using Microsoft.ServiceBus.Messaging;
-
-namespace Microsoft.ServiceBus.Samples
-{
-  public class Program
-  {
-    private static DataTable issues;
-    private static List<BrokeredMessage> MessageList;
-    private static string ServiceNamespace;
-    private static string sasKeyName = "RootManageSharedAccessKey";
-    private static string sasKeyValue;
-
-    static void Main(string[] args)
+    using System;
+    using System.Collections.Generic;
+    using System.Data;
+    using System.IO;
+    using System.Threading;
+    using System.Threading.Tasks;
+    using Microsoft.ServiceBus.Messaging;
+    
+    namespace Microsoft.ServiceBus.Samples
     {
-      // Populate test data
-      issues = ParseCSVFile();
-      MessageList = GenerateMessages(issues);
-
-      // Collect user input
-      CollectUserInput();
-
-      // Add this call
-      Task.WaitAll(Queue());
-    }
-
-    static async Task Queue()
-    {
-      // Create management credentials
-      TokenProvider credentials = TokenProvider.CreateSharedAccessSignatureTokenProvider(sasKeyName, sasKeyValue);
-      NamespaceManager namespaceClient = new NamespaceManager(ServiceBusEnvironment.CreateServiceUri("sb", "<yourNamespace>", string.Empty), credentials);
-    }
-
-    static DataTable ParseCSVFile()
-    {
-      DataTable tableIssues = new DataTable("Issues");
-      string path = @"..\..\data.csv";
-      try
+      public class Program
       {
-        using (StreamReader readFile = new StreamReader(path))
+        private static DataTable issues;
+        private static List<BrokeredMessage> MessageList;
+        private static string ServiceNamespace;
+        private static string sasKeyName = "RootManageSharedAccessKey";
+        private static string sasKeyValue;
+    
+        static void Main(string[] args)
         {
-          string line;
-          string[] row;
-
-          // create the columns
-          line = readFile.ReadLine();
-          foreach (string columnTitle in line.Split(','))
+          // Populate test data
+          issues = ParseCSVFile();
+          MessageList = GenerateMessages(issues);
+    
+          // Collect user input
+          CollectUserInput();
+    
+          // Add this call
+          Task.WaitAll(Queue());
+        }
+    
+        static async Task Queue()
+        {
+          // Create management credentials
+          TokenProvider credentials = TokenProvider.CreateSharedAccessSignatureTokenProvider(sasKeyName, sasKeyValue);
+          NamespaceManager namespaceClient = new NamespaceManager(ServiceBusEnvironment.CreateServiceUri("sb", "<yourNamespace>", string.Empty), credentials);
+        }
+    
+        static DataTable ParseCSVFile()
+        {
+          DataTable tableIssues = new DataTable("Issues");
+          string path = @"..\..\data.csv";
+          try
           {
-            tableIssues.Columns.Add(columnTitle);
+            using (StreamReader readFile = new StreamReader(path))
+            {
+              string line;
+              string[] row;
+    
+              // create the columns
+              line = readFile.ReadLine();
+              foreach (string columnTitle in line.Split(','))
+              {
+                tableIssues.Columns.Add(columnTitle);
+              }
+    
+              while ((line = readFile.ReadLine()) != null)
+              {
+                row = line.Split(',');
+                tableIssues.Rows.Add(row);
+              }
+            }
           }
-
-          while ((line = readFile.ReadLine()) != null)
+          catch (Exception e)
           {
-            row = line.Split(',');
-            tableIssues.Rows.Add(row);
+            Console.WriteLine("Error:" + e.ToString());
           }
+    
+          return tableIssues;
+        }
+    
+        static List<BrokeredMessage> GenerateMessages(DataTable issues)
+        {
+          // Instantiate the brokered list object
+          List<BrokeredMessage> result = new List<BrokeredMessage>();
+    
+          // Iterate through the table and create a brokered message for each row
+          foreach (DataRow item in issues.Rows)
+          {
+            BrokeredMessage message = new BrokeredMessage();
+            foreach (DataColumn property in issues.Columns)
+            {
+              message.Properties.Add(property.ColumnName, item[property]);
+            }
+            result.Add(message);
+          }
+          return result;
+        }
+    
+        static void CollectUserInput()
+        {
+          // User service namespace
+          Console.Write("Please enter the service namespace to use: ");
+          ServiceNamespace = Console.ReadLine();
+    
+          // Issuer key
+          Console.Write("Please enter the issuer key to use: ");
+          sasKeyValue = Console.ReadLine();
         }
       }
-      catch (Exception e)
-      {
-        Console.WriteLine("Error:" + e.ToString());
-      }
-
-      return tableIssues;
     }
-
-    static List<BrokeredMessage> GenerateMessages(DataTable issues)
-    {
-      // Instantiate the brokered list object
-      List<BrokeredMessage> result = new List<BrokeredMessage>();
-
-      // Iterate through the table and create a brokered message for each row
-      foreach (DataRow item in issues.Rows)
-      {
-        BrokeredMessage message = new BrokeredMessage();
-        foreach (DataColumn property in issues.Columns)
-        {
-          message.Properties.Add(property.ColumnName, item[property]);
-        }
-        result.Add(message);
-      }
-      return result;
-    }
-
-    static void CollectUserInput()
-    {
-      // User service namespace
-      Console.Write("Please enter the service namespace to use: ");
-      ServiceNamespace = Console.ReadLine();
-
-      // Issuer key
-      Console.Write("Please enter the issuer key to use: ");
-      sasKeyValue = Console.ReadLine();
-    }
-  }
-}
 
 
 ## 将消息发送到队列
@@ -400,40 +400,40 @@ namespace Microsoft.ServiceBus.Samples
 1. 首先创建队列。例如，将其命名为 `myQueue`，并在上一步的 `Queue()` 方法中添加的管理操作后面直接声明它：
 
 	
-    QueueDescription myQueue;
-
-    if (namespaceClient.QueueExists("IssueTrackingQueue"))
-    {
-        namespaceClient.DeleteQueue("IssueTrackingQueue");
-    }
-
-    myQueue = namespaceClient.CreateQueue("IssueTrackingQueue");
+        QueueDescription myQueue;
+    
+        if (namespaceClient.QueueExists("IssueTrackingQueue"))
+        {
+            namespaceClient.DeleteQueue("IssueTrackingQueue");
+        }
+    
+        myQueue = namespaceClient.CreateQueue("IssueTrackingQueue");
 	
 
 1. 在 `Queue()` 方法中，使用新创建的服务总线 URI 作为参数创建一个消息工厂对象。在上一步中添加的管理操作后面直接添加以下代码。请确保将 `<yourNamespace>` 替换为服务命名空间的名称：
 
 	
-	MessagingFactory factory = MessagingFactory.Create(ServiceBusEnvironment.CreateServiceUri("sb", "<yourNamespace>", string.Empty), credentials);
+    	MessagingFactory factory = MessagingFactory.Create(ServiceBusEnvironment.CreateServiceUri("sb", "<yourNamespace>", string.Empty), credentials);
 	
 
 3. 接下来，使用 [QueueClient](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.queueclient.aspx) 类创建队列对象。在最后一步中添加的代码后直接添加以下代码：
 
 	
-	QueueClient myQueueClient = factory.CreateQueueClient("IssueTrackingQueue");
+    	QueueClient myQueueClient = factory.CreateQueueClient("IssueTrackingQueue");
 	
 
 4. 然后添加以下代码，用于循环遍历你之前创建的中转消息列表，并将其中每条消息发送到队列。在上一步中的 `CreateQueueClient()` 声明后直接添加以下代码：
 	
 	
-	// Send messages
-	Console.WriteLine("Now sending messages to the queue.");
-	for (int count = 0; count < 6; count++)
-	{
-	    var issue = MessageList[count];
-	    issue.Label = issue.Properties["IssueTitle"].ToString();
-	    await myQueueClient.SendAsync(issue);
-	    Console.WriteLine(string.Format("Message sent: {0}, {1}", issue.Label, issue.MessageId));
-	}
+    	// Send messages
+    	Console.WriteLine("Now sending messages to the queue.");
+    	for (int count = 0; count < 6; count++)
+    	{
+    	    var issue = MessageList[count];
+    	    issue.Label = issue.Properties["IssueTitle"].ToString();
+    	    await myQueueClient.SendAsync(issue);
+    	    Console.WriteLine(string.Format("Message sent: {0}, {1}", issue.Label, issue.MessageId));
+    	}
 	
 
 ## 从队列接收消息
@@ -445,16 +445,16 @@ namespace Microsoft.ServiceBus.Samples
 在 `Queue()` 方法中，使用 [QueueClient.ReceiveAsync](https://msdn.microsoft.com/zh-cn/library/azure/dn130423.aspx) 方法循环访问队列和接收消息，并将每条消息输出到控制台。在上一步中添加的代码后直接添加以下代码：
 
 
-Console.WriteLine("Now receiving messages from Queue.");
-BrokeredMessage message;
-while ((message = await myQueueClient.ReceiveAsync(new TimeSpan(hours: 0, minutes: 1, seconds: 5))) != null)
-    {
-        Console.WriteLine(string.Format("Message received: {0}, {1}, {2}", message.SequenceNumber, message.Label, message.MessageId));
-        message.Complete();
-	
-        Console.WriteLine("Processing message (sleeping...)");
-        Thread.Sleep(1000);
-    }
+    Console.WriteLine("Now receiving messages from Queue.");
+    BrokeredMessage message;
+    while ((message = await myQueueClient.ReceiveAsync(new TimeSpan(hours: 0, minutes: 1, seconds: 5))) != null)
+        {
+            Console.WriteLine(string.Format("Message received: {0}, {1}, {2}", message.SequenceNumber, message.Label, message.MessageId));
+            message.Complete();
+    	
+            Console.WriteLine("Processing message (sleeping...)");
+            Thread.Sleep(1000);
+        }
 
 
 请注意，`Thread.Sleep` 只用来模拟消息处理，在实际消息传送应用程序中可能无需使用它。
