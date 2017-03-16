@@ -39,12 +39,12 @@
 
 4. 在“NoSQL \(DocumentDB\)”边栏选项卡顶部，单击顶部操作栏中的“+ 添加”。
 
-    ![“DocumentDB NoSQL”资源边栏选项卡上的“添加”按钮的屏幕截图](./media/documentdb-create-mongodb-account/add-documentdb-account.png)  
+    ![“DocumentDB NoSQL”资源边栏选项卡上的“添加”按钮的屏幕截图](./media/documentdb-create-mongodb-account/add-documentdb-account.PNG)  
 
 
 5. 在“DocumentDB 帐户”边栏选项卡中，为帐户指定所需的配置。
 
-	![新建具有 MongoDB 协议支持的 DocumentDB 的边栏选项卡屏幕截图](./media/documentdb-create-mongodb-account/create-documentdb-mongodb-account.PNG)
+	![新建具有 MongoDB 协议支持的 DocumentDB 的边栏选项卡屏幕截图](./media/documentdb-create-mongodb-account/create-documentdb-mongodb-account.png)
 
     - 在“ID”框中，输入一个名称用于标识帐户。对“ID”进行验证后，“ID”框中会出现一个绿色的复选标记。该“ID”值将成为 URI 中的主机名。“ID”只能包含小写字母、数字及“-”字符，且长度必须为 3 到 50 个字符。请注意， *documents.azure.com* 会追加到所选择的终结点名称，其结果将成为帐户终结点。
 
