@@ -15,7 +15,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="big-data"
     ms.date="12/14/2016"
-    wacn.date="01/25/2017"
+    wacn.date="03/16/2017"
     ms.author="cgronlun" />  
 
 
@@ -23,7 +23,7 @@
  本文简单介绍了 Azure HDInsight 上的 Hadoop 及其生态系统和大数据。了解 Hadoop 组件、常用术语以及大数据分析方案。
 
 ## HDInsight 上的 Hadoop 是什么？
-Hadoop 是指一个由开源软件组成的生态系统，其所构成的框架适用于对计算机群集上的大数据集进行分布式处理、存储和分析。Azure HDInsight 使 **Hortonworks 数据平台 (HDP)** 分发中的 Hadoop 组件能够在云中使用，可部署具有高可靠性和可用性的托管群集，并使用 Active Directory 提供企业级安全性和监管。
+Hadoop 是指一个由开源软件组成的生态系统，其所构成的框架适用于对计算机群集上的大数据集进行分布式处理、存储和分析。Azure HDInsight 使 **Hortonworks 数据平台 (HDP)** 分发中的 Hadoop 组件能够在云中使用，可部署具有高可靠性和可用性的托管群集。
 
 Apache Hadoop 是进行大数据处理的原始开源项目。下面是被视为 Hadoop 技术堆栈一部分的相关软件和实用程序的开发情况，包括 Apache Hive、Apache HBase、Apache Spark 等。有关详细信息，请参阅 [HDInsight 中的 Hadoop 生态系统概述](#overview)。
 

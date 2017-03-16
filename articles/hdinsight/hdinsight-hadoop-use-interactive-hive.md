@@ -16,7 +16,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="10/27/2016"
-	wacn.date="02/14/2017"
+	wacn.date="03/16/2017"
 	ms.author="jgao"/>  
 
 
@@ -58,7 +58,7 @@
 
 **若要查找 JDBC 连接字符串：**
 
-1.	使用以下 URL 登录到 Ambari：https://<ClusterName>.AzureHDInsight.net。
+1.	使用以下 URL 登录到 Ambari：https://\<ClusterName\>.AzureHDInsight.net。
 2.	在左侧菜单中，单击“Hive”。
 3.	单击突出显示图标以复制 URL：
 

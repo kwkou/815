@@ -15,7 +15,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="12/20/2016"
-    wacn.date="01/25/2017"
+    wacn.date="03/16/2017"
     ms.author="jgao" />
 
 # 使用 Azure 门户预览管理 HDInsight 中的 Hadoop 群集
@@ -92,7 +92,7 @@ HDInsight 使用各种 Hadoop 组件。有关已获得验证和支持的组件�
     * **主机名**：群集名称。
     * **群集 URL**。Ambari Web 界面的 URL。
     * **状态**：包括“已终止”、“已接受”、ClusterStorageProvisioned、AzureVMConfiguration、HDInsightConfiguration、“正常运行”、“正在运行”、“错误”、“正在删除”、“已删除”、“超时”、DeleteQueued、DeleteTimedout、DeleteError、PatchQueued、CertRolloverQueued、ResizeQueued、ClusterCustomization
-    * **区域**：Azure 位置。有关受支持的 Azure 位置的列表，请参阅 [HDInsight pricing](/pricing/details/hdinsight/)（HDInsight 定价）中的 **Region**（区域）下拉列表框。
+    * **区域**：Azure 位置。有关受支持的 Azure 位置的列表，请参阅 [HDInsight pricing](/pricing/details/hdinsight/)（HDInsight 定价）中的“上市地区”。
     * **创建日期**。
     * **操作系统**：**Windows** 或 **Linux**。
     * **类型**：Hadoop、HBase、Storm、Spark。

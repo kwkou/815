@@ -15,7 +15,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="big-data"
     ms.date="01/17/2017"
-    wacn.date="03/10/2017"
+    wacn.date="03/16/2017"
     ms.author="jgao" />  
 
 
@@ -42,9 +42,7 @@
    
     <a href="https://portal.azure.cn/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-hdinsight-linux-ssh-password%2Fazuredeploy.json" target="_blank"><img src="./media/hdinsight-hadoop-linux-tutorial-get-started/deploy-to-azure.png" alt="Deploy to Azure"></a>
 2. 输入或选择下列值：
-   
-    ![HDInsight Linux 入门之门户中的 Resource Manager 模板](./media/hdinsight-hadoop-linux-tutorial-get-started/hdinsight-linux-get-started-arm-template-on-portal.png)。
-   
+
     * **订阅**：选择你的 Azure 订阅。
     * **资源组**：创建新资源组或选择现有的资源组。资源组是 Azure 组件的容器。在此示例中，资源组包含 HDInsight 群集和依赖的 Azure 存储帐户。
     * **位置**：选择要创建群集的 Azure 位置。为获得更佳性能，请选择离你较近的位置。

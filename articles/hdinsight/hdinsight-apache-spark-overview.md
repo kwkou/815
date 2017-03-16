@@ -15,7 +15,7 @@
     ms.devlang="na"
     ms.topic="get-started-article"
     ms.date="01/03/2017"
-    wacn.date="01/25/2017"
+    wacn.date="03/16/2017"
     ms.author="nitinme" />
 
 # 概述：HDInsight Linux 上的 Apache Spark
@@ -37,7 +37,7 @@ Azure HDInsight 提供完全托管的 Spark 服务。在 HDInsight 上使用 Spa
 
 | 功能 | 说明 |
 | --- | --- |
-| 方便创建群集 |你可以使用 Azure 管理门户、Azure PowerShell 或 HDInsight .NET SDK，在几分钟之内于 HDInsight 上创建新的 Spark 群集。请参阅 [HDInsight 中的 Spark 群集入门](/documentation/articles/hdinsight-apache-spark-jupyter-spark-sql/) |
+| 方便创建群集 |你可以使用 Azure 门户预览、Azure PowerShell 或 HDInsight .NET SDK，在几分钟之内于 HDInsight 上创建新的 Spark 群集。请参阅 [HDInsight 中的 Spark 群集入门](/documentation/articles/hdinsight-apache-spark-jupyter-spark-sql/) |
 | 易于使用 |HDInsight 群集中的 Spark 包含预先配置的 Jupyter 笔记本。你可以使用这些笔记本执行交互式数据处理和可视化。Jupyter 笔记本的 URL 是 https://CLUSTERNAME.azurehdinsight.cn/jupyter。将 **CLUSTERNAME** 替换为 Spark HDInsight 群集的名称。 |
 | REST API |HDInsight 中的 Spark 包含 [Livy](https://github.com/cloudera/hue/tree/master/apps/spark/java#welcome-to-livy-the-rest-spark-server)，它是基于 REST-API 的 Spark 作业服务器，用于远程提交和监视正在运行的作业。 |
 | 与 Azure 服务集成 |HDInsight 上的 Spark 随附了 Azure 事件中心的连接器。客户还可以使用事件中心来生成流式处理应用程序。 |

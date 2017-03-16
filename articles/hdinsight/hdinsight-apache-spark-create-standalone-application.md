@@ -15,7 +15,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="10/28/2016"
-    wacn.date="02/20/2017"
+    wacn.date="03/16/2017"
     ms.author="nitinme" />
 
 # 创建要在 HDInsight Linux 上的 Apache Spark 群集中运行的独立 Scala 应用程序
@@ -104,11 +104,11 @@
             <scala.binary.version>2.10</scala.binary.version>
     2. 在 `<project><dependencies>` 中添加以下内容：
       
-           <dependency> 
-             <groupId>org.apache.spark</groupId> 
-             <artifactId>spark-core\_${scala.binary.version}</artifactId> 
-             <version>1.4.1</version> 
-           </dependency>
+            <dependency> 
+              <groupId>org.apache.spark</groupId> 
+              <artifactId>spark-core_${scala.binary.version}</artifactId> 
+              <version>1.4.1</version> 
+            </dependency>
       
       将更改保存到 pom.xml。
 10. 创建 .jar 文件。IntelliJ IDEA 允许创建 JAR，作为项目的一个项目 (artifact)。执行以下步骤。

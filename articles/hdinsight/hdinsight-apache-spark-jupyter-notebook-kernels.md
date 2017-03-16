@@ -15,7 +15,7 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="10/05/2016" 
-	wacn.date="02/14/2017" 
+	wacn.date="03/16/2017" 
 	ms.author="nitinme"/>
 
 
@@ -79,11 +79,11 @@
 	|-----------|---------------------------------|--------------|
 	| help | `%%help` | 生成所有可用 magic 的表，其中包含示例和说明 |
 	| info | `%%info` | 输出当前 Livy 终结点的会话信息 |
-	| 配置 | `%%configure -f`<br>`{"executorMemory": "1000M"`,<br>`"executorCores": 4`} | 配置用于创建会话的参数。如果已创建会话并且要删除然后重新创建该会话，则 force 标志 (-f) 是必需的。有关有效参数的列表，请查看 [Livy's POST /sessions Request Body](https://github.com/cloudera/livy#request-body)（Livy 的 POST /sessions 请求正文）。参数必须以 JSON 字符串传入，并且必须位于 magic 后面的下一行，如示例列中所示。 |
+	| configure | `%%configure -f`<br>`{"executorMemory": "1000M"`,<br>`"executorCores": 4`} | 配置用于创建会话的参数。如果已创建会话并且要删除然后重新创建该会话，则 force 标志 (-f) 是必需的。有关有效参数的列表，请查看 [Livy's POST /sessions Request Body](https://github.com/cloudera/livy#request-body)（Livy 的 POST /sessions 请求正文）。参数必须以 JSON 字符串传入，并且必须位于 magic 后面的下一行，如示例列中所示。 |
 	| sql | `%%sql -o <variable name>`<br> `SHOW TABLES` | 针对 sqlContext 执行 Hive 查询。如果传递了 `-o` 参数，则查询的结果将以 [Pandas](http://pandas.pydata.org/) 数据帧的形式保存在 %%local Python 上下文中。 |
 	| local | `%%local`<br>`a=1` | 后续行中的所有代码将在本地执行。代码必须是有效的 Python 代码。 |
-	| 日志 | `%%logs` | 输出当前 Livy 会话的日志。 |
-	| 删除 | `%%delete -f -s <session number>` | 删除当前 Livy 终结点的特定会话。请注意，无法删除针对内核本身启动的会话。 |
+	| logs | `%%logs` | 输出当前 Livy 会话的日志。 |
+	| delete | `%%delete -f -s <session number>` | 删除当前 Livy 终结点的特定会话。请注意，无法删除针对内核本身启动的会话。 |
 	| cleanup | `%%cleanup -f` | 删除当前 Livy 终结点的所有会话，包括此笔记本的会话。force 标志 -f 是必需的。 |
 
 	>[AZURE.NOTE] 除了 PySpark 内核添加的 magic 以外，还可以使用[内置的 IPython magic](https://ipython.org/ipython-doc/3/interactive/magics.html#cell-magics)（包括 `%%sh`）。可以使用 `%%sh` magic 在群集头节点上运行脚本和代码块。
