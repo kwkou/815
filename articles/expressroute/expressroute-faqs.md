@@ -53,19 +53,19 @@ ExpressRoute 目前支持大多数 Azure 服务。
 ExpressRoute 支持[两种路由域](/documentation/articles/expressroute-circuit-peerings/)，适用于各种类型的服务。
 
 专用对等互连
-* 虚拟网络，包括所有虚拟机和云服务
+ - 虚拟网络，包括所有虚拟机和云服务
 
 公共对等互连
-* 大多数 Azure 服务（有少数几个例外，例外的服务将在下面介绍）
-* Power BI
-* Dynamics 365 for Operations（以前称为 Dynamics AX Online）
+ - 大多数 Azure 服务（有少数几个例外，例外的服务将在下面介绍）
+ - Power BI
+ - Dynamics 365 for Operations（以前称为 Dynamics AX Online）
 
 
 ExpressRoute 不支持以下 Azure 服务
-* CDN
-* Visual Studio Team Services 负载测试
-* 多重身份验证
-* 流量管理器
+ - CDN
+ - Visual Studio Team Services 负载测试
+ - 多重身份验证
+ - 流量管理器
 
 ## 数据和连接
 

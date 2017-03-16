@@ -20,7 +20,7 @@
 
 # 适用于云解决方案提供商 (CSP) 的 ExpressRoute
 
-Microsoft 为传统经销商和分销商 (CSP) 提供超大规模的服务，允许他们为你的客户快速预配新服务和解决方案，而不需投资开发这些新服务。为了让云解决方案提供商 (CSP) 能够直接管理这些新服务，Azure 提供了相应的程序和 API，以便 CSP 代表你的客户管理  Azure 资源。其中一项资源就是 ExpressRoute。ExpressRoute 允许 CSP 将现有客户资源连接到 Azure 服务。ExpressRoute 是一种高速专用通信链路，可以链接到 Azure 中的服务。
+Azure 为传统经销商和分销商 (CSP) 提供超大规模的服务，允许他们为你的客户快速预配新服务和解决方案，而不需投资开发这些新服务。为了让云解决方案提供商 (CSP) 能够直接管理这些新服务，Azure 提供了相应的程序和 API，以便 CSP 代表你的客户管理  Azure 资源。其中一项资源就是 ExpressRoute。ExpressRoute 允许 CSP 将现有客户资源连接到 Azure 服务。ExpressRoute 是一种高速专用通信链路，可以链接到 Azure 中的服务。
 
 ExpresRoute 由一对可以实现高可用性的线路组成，这对线路连接到单个客户订阅，不能由多个客户共享。每个线路都会在不同的路由器中终止，目的是维持高可用性。
 
@@ -59,9 +59,10 @@ Azure 为 CSP 提供管理 Azure 客户订阅所需的 API，允许通过编程�
 ![替换文字](./media/expressroute-for-cloud-solution-providers/connect-to-model.png)
 
 如何选择这两种模式取决于你客户的需求，以及你目前提供 Azure 服务的具体需要。有关这些模型的详细信息以及关联的基于角色的访问控制、网络和标识设计模式在以下链接中有详尽介绍：
--	**基于角色的访问控制 (RBAC)** – RBAC 基于 Azure Active Directory。有关 Azure RBAC 的详细信息，请单击[此处](/documentation/articles/role-based-access-control-configure/)。
--	**网络** – 介绍有关 Azure 中网络的各种主题。
--	**Azure Active Directory (AAD)** – AAD 提供针对 Azure 和第三方 SaaS 应用程序的标识管理。有关 Azure AD 的详细信息，请单击[此处](/documentation/services/identity/)。  
+
+ - **基于角色的访问控制 (RBAC)** – RBAC 基于 Azure Active Directory。有关 Azure RBAC 的详细信息，请单击[此处](/documentation/articles/role-based-access-control-configure/)。
+ - **网络** – 介绍有关 Azure 中网络的各种主题。
+ - **Azure Active Directory (AAD)** – AAD 提供针对 Azure 和第三方 SaaS 应用程序的标识管理。有关 Azure AD 的详细信息，请单击[此处](/documentation/services/identity/)。  
 
 
 ## 网络速度

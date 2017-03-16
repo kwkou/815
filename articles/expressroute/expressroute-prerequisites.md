@@ -25,11 +25,10 @@
 
 - 使用中的有效 Azure 帐户。需有此帐户才能设置 ExpressRoute 线路。
 
-## 与连接服务提供商的关系
+## 连接服务提供商
+- 可以通过 [ExpressRoute 连接服务合作伙伴](/documentation/articles/expressroute-locations/)连接到 Azure 云。可以通过[三种方法](/documentation/articles/expressroute-introduction/#howtoconnect)在本地网络与 Azure 之间建立连接。
+- 即使提供商不是 ExpressRoute 连接服务合作伙伴，也可以通过[云交换服务提供商](/documentation/articles/expressroute-locations/)连接到 Azure 云。
 
-- 与支持列表中的连接服务提供商建立关系，通过这些提供商便于建立连接。你必须与连接服务提供商存在现有的业务关系。你需要确保通过连接服务提供商获得的服务与 ExpressRoute 兼容。
-- 如果你要使用某家网络服务提供商，但该提供商不在上面的列表中，你仍可以创建与 Azure 的连接。
-	- 请咨询你的网络服务提供商，让你的网络提供商将你的网络扩展到连接提供商。
 
 ## 在你的网络与连接服务提供商之间建立物理连接
 

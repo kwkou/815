@@ -218,7 +218,7 @@
 
 ### 更新 Azure 公共对等互连配置
 
-可以使用以下 cmdlet 来更新配置的任何部分
+可以使用以下 cmdlet 来更新配置的任何部分：
 
 	Set-AzureBGPPeering -AccessType Public -ServiceKey "*********************************" -PrimaryPeerSubnet "131.107.0.0/30" -SecondaryPeerSubnet "131.107.0.4/30" -PeerAsn 1234 -VlanId 600 -SharedKey "A1B2C3D4"
 

@@ -34,7 +34,7 @@ Azure ExpressRoute 可让你通过连接服务提供商所提供的专用连接�
 
 有关详细信息，请参阅 [ExpressRoute 常见问题](/documentation/articles/expressroute-faqs/)。
 
-## 如何使用 ExpressRoute 将我的网络连接到 Azure？
+## <a name="howtoconnect"></a> 如何使用 ExpressRoute 将我的网络连接到 Azure？
 
 有三种方法可以在本地网络与 Azure 云之间建立连接：
 
