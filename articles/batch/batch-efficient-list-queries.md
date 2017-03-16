@@ -56,20 +56,20 @@ csharp
 ## Filter、select 和 expand
 [Batch .NET][api_net] 和 [Batch REST][api_rest] API 可以减少列表中返回的项数以及针对每个查询返回的信息量。在执行列表查询时可以通过指定 **filter**、**select** 和 **expand** 字符串来实现此目的。
 
-### 筛选器
+### Filter
 filter 字符串是一个表达式，用于减少返回的项数。例如，只列出作业的运行中任务，或者只列出已做好运行任务准备的计算节点。
 
 - filter 字符串包含一个或多个表达式，其中一个表达式包含属性名称、运算符和值。可指定哪些属性取决于查询的每个实体类型，每个属性所支持的运算符也是这样。
 - 可以使用逻辑运算符 `and` 和 `or` 将多个表达式组合到一起。
 - 此示例性 filter 字符串仅列出正在运行的“render”任务：`(state eq 'running') and startswith(id, 'renderTask')`。
 
-### 选择
+### select
 select 字符串用于限制为每个项返回的属性值。你可以指定属性名称的列表，仅在查询结果中返回项目的这些属性值。
 
 - select 字符串包含逗号分隔的属性名称列表。你可以指定所查询实体类型的任意属性。
 - 此示例性的 select 字符串指定每个任务只应返回三项属性值：`id, state, stateTransitionTime`。
 
-### 展开
+### expand
 expand 字符串用于减少获取特定信息所需的 API 调用数。使用 expand 字符串时，单次 API 调用可以获取每个项目的更多信息。不必先获取实体的列表，然后请求列表中每个项目的信息。你可以使用 expand 字符串通过单次 API 调用获取相同的信息。API 调用数较少意味着性能较高。
 
 - 与 select 字符串类似，expand 字符串用于控制是否允许某些数据包括在列表查询结果中。
