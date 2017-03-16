@@ -23,9 +23,9 @@
 
 可以通过 “Manage service settings” 页访问多重身份验证。 请以管理员身份登录 Azure 管理门户，然后选择 “Active Directory” 选项。单击你的目录，然后单击“配置”选项卡。在“多重身份验证”部分下，单击 “Manage service settings”。
 
-|功能| 说明|
-|:---- | :---- |
-[可选择验证方法](#selectable-verification-methods)|允许你选择可供用户使用的身份验证方法。|
+| 功能 | 说明 |
+| :---- | :---- |
+| [可选择验证方法](#selectable-verification-methods) | 允许你选择可供用户使用的身份验证方法。 |
 
 ## 可选择验证方法  <a name="selectable-verification-methods"></a>
 现在，可以选择当用户使用 Azure 多重身份验证时供用户使用的身份验证方法。此功能以前只提供了本地服务器版本。下表提供了可为用户启用或禁用的各种身份验证方法的简要概述。
