@@ -16,11 +16,13 @@
     ms.tgt_pltfrm="na"
     ms.workload="data-management"
     ms.date="01/11/2017"
-    wacn.date="02/14/2017"
+    wacn.date="03/16/2017"
     ms.author="carlrab; janeng" />
 
 # SQL 数据库选项和性能：了解每个服务层提供的功能
-[Azure SQL 数据库](/documentation/articles/sql-database-technical-overview/)提供了三个具有多个性能级别的服务层（**基本**、**标准**和**高级**），用于处理不同的工作负荷。更高的性能级别提供不断增加的资源，旨在递增式提供更高的吞吐量。无需停机[即可动态更改服务层和性能级别](/documentation/articles/sql-database-scale-up/)。基本、标准和高级服务层都提供 99.99% 的运行时间 SLA、灵活的业务连续性选项、安全功能和按小时计费。
+[Azure SQL 数据库](/documentation/articles/sql-database-technical-overview/)提供了三个具有多个性能级别的服务层（**基本**、**标准**、**高级**和**高级 RS**），用于处理不同的工作负荷。更高的性能级别提供不断增加的资源，旨在递增式提供更高的吞吐量。无需停机[即可动态更改服务层和性能级别](/documentation/articles/sql-database-scale-up/)。基本、标准和高级服务层都提供 99.99% 的运行时间 SLA、灵活的业务连续性选项、安全功能和按小时计费。高级 RS 服务层提供和高级服务层相同的性能级别、安全功能和业务连续性，以及相对低的 SLA。
+
+>[AZURE.IMPORTANT]高级 RS 数据库运行的冗余副本的数量比标准和高级层的数据库低。所以当遇到服务失败时，你可能需要通过一个最多滞后5分钟的备份来恢复数据库。
 
 可以在所选[性能级别](/documentation/articles/sql-database-service-tiers/#single-database-service-tiers-and-performance-levels)上使用专用资源创建单一数据库。还可以在资源在数据库之间共享的[弹性池](/documentation/articles/sql-database-service-tiers/#elastic-pool-service-tiers-and-performance-in-edtus)中管理多个数据库。可用于单一数据库的资源以数据库事务单位 (DTU) 表示，可用于弹性池的资源则用弹性 DTU (eDTU) 表示。有关 DTU 和 eDTU 的详细信息，请参阅[什么是 DTU？](/documentation/articles/sql-database-what-is-a-dtu/)。
 
@@ -34,13 +36,18 @@
 | **基本** | 最适合小型数据库，通常支持在给定时间执行一个活动操作。示例包括用于开发或测试的数据库，或不常使用的小型应用程序。 |
 | **标准** |云应用程序的转到选项，提供低到中等的 IO 性能要求，并支持多个并发查询。示例包括工作组或 Web 应用程序。 |
 | **高级** | 专为高事务量设计，提供高 IO 性能要求，并支持许多并发用户。示例包括支持任务关键型应用程序的数据库。 |
+| **高级 RS** | 专为具有 IO 密集型工作负载但不需要最高可用性保证的客户设计。示例包括测试高性能工作负载，或分析数据库不是记录系统的工作负载。 |
 
 首先确定是要运行单一数据库，还是要运行共享资源的组数据库。查看[弹性池注意事项](/documentation/articles/sql-database-elastic-pool-guidance/)。若要确定服务层，首先确定所需的最小数据库功能：
 
-* 单个数据库的最大数据库大小（在高端性能级别，基本数据库最大 2 GB、标准数据库最大 250 GB、高级数据库 500 GB 到 1 TB）
-* 弹性池的最大总存储（基本池为 117 GB，标准池为 1200 GB，高级池为 750 GB）
-* 每个池的最大数据库数（基本池 400 个，标准池 400 个，高级池 50 个）
-* 数据库备份保留期（基本数据库 7 天、标准数据库和高级数据库 35 天）
+| **服务层功能** | **基本** | **标准** | **高级** | **高级 RS**|
+| :-- | --: | --: | --: | --: |
+| 单个数据库的最大数据库大小 | 2 GB | 250 GB | 4 TB*  | 500 GB  |
+| 弹性池的最大总存储 | 117 GB | 1200 GB | 750 GB | 750 GB |
+| 每个池的最大数据库数 | 400  | 400 | 50 | 50 |
+| 数据库备份保留期 | 7 days | 35 days | 35 days | 35 days |
+||||||
+
 
 确定最低服务层后，就可以确定数据库的性能级别（DTU 数）。标准 S2 和 S3 性能级别在许多情况下是好的起点。对于具有较高 CPU 或 IO 要求的数据库，高级性能级别是合适的起点。与最高的标准性能级别相比，高级性能级别提供更多 CPU 和至少高 10 倍的 IO。
 
