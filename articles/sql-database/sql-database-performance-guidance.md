@@ -1,4 +1,4 @@
-	<properties
+<properties
     pageTitle="Azure SQL 数据库以及单一数据库的性能 | Azure"
     description="本文可帮助用户确定为应用程序选择何种服务层，并建议通过多种方式调整应用程序，以便充分利用 Azure SQL 数据库。"
     services="sql-database"
