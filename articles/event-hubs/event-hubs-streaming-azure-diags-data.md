@@ -201,7 +201,7 @@ Visual Studio 提供最简单的路径供你部署应用程序和事件中心接
 	            string eventHubName = "<EventHub Name>";
 	            string storageAccountName = "<Storage Account Name>";
 	            string storageAccountKey = "<Storage Account Key>”;
-	            string storageConnectionString = string.Format("DefaultEndpointsProtocol=https;AccountName={0};AccountKey={1}", storageAccountName, storageAccountKey);
+	            string storageConnectionString = string.Format("DefaultEndpointsProtocol=https;AccountName={0};AccountKey={1};EndpointSuffix=core.chinacloudapi.cn", storageAccountName, storageAccountKey);
 	
 	            string eventProcessorHostName = Guid.NewGuid().ToString();
 	            EventProcessorHost eventProcessorHost = new EventProcessorHost(eventProcessorHostName, eventHubName, EventHubConsumerGroup.DefaultGroupName, eventHubConnectionString, storageConnectionString);

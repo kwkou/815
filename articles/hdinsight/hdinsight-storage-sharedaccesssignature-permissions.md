@@ -69,7 +69,7 @@ HDInsight 使用 Azure 存储 Blob 存储数据。HDInsight 必须对用作群�
 2. 在解决方案资源管理器中，右键单击“SASToken”项目并选择“属性”。
 3. 选择“设置”，并添加以下条目的值：
    
-    * StorageConnectionString：想要为其创建存储策略和 SAS 的存储帐户的连接字符串。其格式应为 `DefaultEndpointsProtocol=https;AccountName=myaccount;AccountKey=mykey`，其中 `myaccount` 是存储帐户名称，`mykey` 是存储帐户密钥。
+    * StorageConnectionString：想要为其创建存储策略和 SAS 的存储帐户的连接字符串。其格式应为 `DefaultEndpointsProtocol=https;AccountName=myaccount;AccountKey=mykey;EndpointSuffix=core.chinacloudapi.cn`，其中 `myaccount` 是存储帐户名称，`mykey` 是存储帐户密钥。
     * ContainerName：想要限制访问的存储帐户中的容器。
     * SASPolicyName：要创建的存储策略所用的名称。
     * FileToUpload：将上传到容器的文件的路径。

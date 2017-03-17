@@ -119,7 +119,7 @@ EventProcessorHost 是一个 Java 类，通过从事件中心管理持久检查�
     
     			final String storageAccountName = "---StorageAccountName----";
     			final String storageAccountKey = "---StorageAccountKey----";
-    			final String storageConnectionString = "DefaultEndpointsProtocol=https;AccountName=" + storageAccountName + ";AccountKey=" + storageAccountKey;
+    			final String storageConnectionString = "DefaultEndpointsProtocol=https;AccountName=" + storageAccountName + ";AccountKey=" + storageAccountKey+";EndpointSuffix=core.chinacloudapi.cn";
     			
     			ConnectionStringBuilder eventHubConnectionString = new ConnectionStringBuilder(namespaceName, eventHubName, sasKeyName, sasKey);
     			
