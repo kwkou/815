@@ -223,7 +223,7 @@ True/False 筛选器通常不被报告为受 LDAP 目录支持，并且可能出
 
 此外，也可以选择连接器应导入和导出的容器与 OU。
 
-### 配置定位点
+### 配置定位点 <a name="configure-anchors"></a>
 此页面始终有一个预配置值，并且无法更改。如果已识别服务器供应商，可以使用不可变的属性（例如对象的 GUID）填充定位点。如果供应商尚未检测到或者已知没有不可变属性，连接器将使用 dn（可分辨名称）作为定位点。
 
 ![anchors](./media/active-directory-aadconnectsync-connector-genericldap/anchors.png)

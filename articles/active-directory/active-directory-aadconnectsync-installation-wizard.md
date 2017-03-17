@@ -47,7 +47,7 @@
 
 单击“上一步”可以后退。如果选择“退出”，将关闭安装向导。
 
-## 自定义同步选项
+## 自定义同步选项 <a name="customize-synchronization-options"></a>
 此选项可用于更改同步配置。你会在自定义配置安装路径中看到一部分选项。即使最初使用的是快速安装，也会看到此选项。
 
 - [添加更多目录](/documentation/articles/active-directory-aadconnect-get-started-custom/#connect-your-directories/)。若要删除目录，请参阅[删除连接器](/documentation/articles/active-directory-aadconnectsync-service-manager-ui-connectors/#delete/)。
@@ -61,7 +61,7 @@
 - 更改不同林中对象的联接方法。
 - 启用基于组的筛选。
 
-## 刷新目录架构
+## 刷新目录架构 <a name="refresh-directory-schema"></a>
 如果已更改其中一个本地 AD DS 林中的架构，则应使用此选项。例如，你可能已安装 Exchange，或升级到包含设备对象的 Windows Server 2012 架构。在这种情况下，需指示 Azure AD Connect 从 AD DS 再次读取架构并更新其缓存。此操作还会重新生成同步规则。举例来说，如果你添加 Exchange 架构，配置中就会添加 Exchange 的同步规则。
 
 选择此选项时，将列出配置中的所有目录。可以保留默认设置，并刷新所有林或取消选择其中某些林。

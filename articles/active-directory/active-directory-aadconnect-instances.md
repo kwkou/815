@@ -39,7 +39,7 @@ Azure AD Connect 最常用于全球范围内的 Azure AD 和 Office 365 实例�
 - **密码写回**不可用。
 - 其他 Azure AD Premium 服务不可用。
 
-## Azure 政府版云
+## Azure 政府版云 <a name="microsoft-azure-government-cloud"></a>
 
 DirSync 的早期版本已支持该云。从 Azure AD Connect 的 1.1.180 版本起，将支持该云的新一代版本。这一代使用的是基于仅限美国的终结点，并具有不同的 URL 列表，可在你的代理服务器中打开。
 

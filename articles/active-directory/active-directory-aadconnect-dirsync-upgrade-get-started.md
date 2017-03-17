@@ -30,7 +30,7 @@ Azure AD Connect 是 DirSync 的后继产品。你将在本主题中了解可从
 > [AZURE.NOTE]
 启用新的 Azure AD Connect 服务器并开始将更改同步到 Azure AD 以后，不得通过回退来使用 DirSync 或 Azure AD Sync。不支持从 Azure AD Connect 降级到旧版客户端（包括 DirSync 和 Azure AD Sync），降级会导致 Azure AD 中的数据丢失等问题。
 
-如果不从 DirSync 升级，请参阅[相关文档](#related-documentation)，了解其他情况。
+如果不从 DirSync 升级，请参阅相关文档，了解其他情况。
 
 ## 从 DirSync 升级
 根据当前的 DirSync 部署，可以使用不同的升级选项。如果升级时间预计少于 3 小时，建议进行就地升级。如果升级时间预计超过 3 小时，建议在另一台服务器上进行并行部署。如果对象数超过 50,000 个，预计需要 3 个多小时才能完成升级。

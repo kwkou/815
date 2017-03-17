@@ -48,7 +48,7 @@ Azure AD Connect 使用现代身份验证（使用 ADAL 库）来进行身份验
 | *.microsoftonline.com |HTTPS/443 |用于配置 Azure AD 目录并导入/导出数据。 |
 
 ## 向导中的错误
-安装向导使用两种不同的安全上下文。在“连接到 Azure AD”页上，使用的是当前登录的用户。在“配置”页上，改为[运行同步引擎服务的帐户](/documentation/articles/active-directory-aadconnect-accounts-permissions/#azure-ad-connect-sync-service-accounts/)。如果有问题，该问题最可能出现在向导的“连接到 Azure AD”页上，因为代理配置是全局性的。
+安装向导使用两种不同的安全上下文。在“连接到 Azure AD”页上，使用的是当前登录的用户。在“配置”页上，改为[运行同步引擎服务的帐户](/documentation/articles/active-directory-aadconnect-accounts-permissions/#azure-ad-service-account/)。如果有问题，该问题最可能出现在向导的“连接到 Azure AD”页上，因为代理配置是全局性的。
 
 以下问题是在安装向导中遇到的最常见错误。
 

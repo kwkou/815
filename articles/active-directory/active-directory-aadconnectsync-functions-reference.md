@@ -120,7 +120,7 @@ CBool 函数基于计算的表达式返回布尔值
 如果两个属性具有相同的值，则返回 True。
 
 - - -
-### CDate
+### CDate <a name="cdate"></a>
 **说明：**
 CDate 函数通过字符串返回 UTC DateTime。DateTime 不是 Sync 中的原生属性类型，但被某些函数使用。
 
@@ -244,7 +244,7 @@ CNum 函数使用字符串并返回数值数据类型。
 `num CNum(str value)`
 
 - - -
-### CRef
+### CRef <a name="cref"></a>
 **说明：**
 将字符串转换为引用属性
 

@@ -79,7 +79,7 @@
 	    </system.net>
 
 
-- 如果代理服务器要求身份验证，则[服务帐户](/documentation/articles/active-directory-aadconnect-accounts-permissions/#azure-ad-connect-sync-service-accounts/)必须位于域中，且必须使用自定义的设置安装路径来指定[自定义服务帐户](/documentation/articles/active-directory-aadconnect-get-started-custom/#install-required-components/)。还需要对 machine.config 进行不同的更改。在 machine.config 中进行此更改之后，安装向导和同步引擎将响应来自代理服务器的身份验证请求。在所有安装向导页中（“配置”页除外）都使用已登录用户的凭据。在安装向导结束时的“配置”页上，上下文将切换到创建的[服务帐户](/documentation/articles/active-directory-aadconnect-accounts-permissions/#azure-ad-connect-sync-service-accounts/)。machine.config 节应如下所示。
+- 如果代理服务器要求身份验证，则[服务帐户](/documentation/articles/active-directory-aadconnect-accounts-permissions/#azure-ad-service-account/)必须位于域中，且必须使用自定义的设置安装路径来指定[自定义服务帐户](/documentation/articles/active-directory-aadconnect-get-started-custom/#install-required-components/)。还需要对 machine.config 进行不同的更改。在 machine.config 中进行此更改之后，安装向导和同步引擎将响应来自代理服务器的身份验证请求。在所有安装向导页中（“配置”页除外）都使用已登录用户的凭据。在安装向导结束时的“配置”页上，上下文将切换到创建的[服务帐户](/documentation/articles/active-directory-aadconnect-accounts-permissions/#azure-ad-service-account/)。machine.config 节应如下所示。
 
 
 	    <system.net>

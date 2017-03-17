@@ -97,7 +97,7 @@
 
     同样，保存 *name* 参数中的 GUID，在本例中为 **e7dd75bc-06f6-4e71-9014-ee96a929d099**。
 
-3. 最后，调用 [DELETE roleAssignments](/rest/api/authorization/roleassignments#RoleAssignments_DeleteById/)，其中 roleAssignmentId = 在步骤 2 中找到的名称 GUID。
+3. 最后，调用 DELETE roleAssignments，其中 roleAssignmentId = 在步骤 2 中找到的名称 GUID。
 
 ## 后续步骤
 

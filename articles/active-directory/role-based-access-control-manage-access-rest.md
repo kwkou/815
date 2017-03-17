@@ -26,7 +26,7 @@
 
 Azure 资源管理器 API 可帮助用户精细地管理对订阅和资源的访问。使用此功能，可以通过在特定范围内为 Active Directory 用户或服务主体分配某些角色来向其授予访问权限。
 
-## 列出所有角色分配
+## 列出所有角色分配 
 列出指定范围和子范围内的所有角色分配。
 
 要列出角色分配，必须对 `Microsoft.Authorization/roleAssignments/read` 操作具有范围内的访问权限。所有内置角色均有权访问此操作。
@@ -219,7 +219,7 @@ Azure 资源管理器 API 可帮助用户精细地管理对订阅和资源的访
 
 
 
-## 列出所有角色
+## 列出所有角色 <a name="list-all-roles"></a>
 列出指定范围内可用于分配的所有角色。
 
 若要列出角色，必须对 `Microsoft.Authorization/roleDefinitions/read` 操作具有范围内的访问权限。所有内置角色均有权访问此操作。

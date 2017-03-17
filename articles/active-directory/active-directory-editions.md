@@ -272,7 +272,7 @@ Microsoft 标识管理器服务器软件权限随 Windows Server 许可证（任
 |:---:|:---:|:---:|:---:|
 | &nbsp; | &nbsp; | ![勾选标记][12] | &nbsp; |
 
-#### 组帐户的自动密码滚动更新
+#### 组帐户的自动密码滚动更新 <a name="automatic-password-rollover-for-group-accounts"></a>
 **类型：**高级功能
 
 **可用性：**

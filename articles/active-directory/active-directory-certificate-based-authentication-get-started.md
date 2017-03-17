@@ -65,7 +65,7 @@
 - [iOS](/documentation/articles/active-directory-certificate-based-authentication-ios/)
 
 
-## 步骤 2：配置证书颁发机构 
+## 步骤 2：配置证书颁发机构 <a name="step-2-configure-the-certificate-authorities"></a>
 
 若要在 Azure Active Directory 中配置证书颁发机构，请为每个证书颁发机构上载以下内容：
 

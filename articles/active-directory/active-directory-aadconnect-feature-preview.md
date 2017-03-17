@@ -21,7 +21,7 @@
 # 有关预览版功能的详细信息
 本主题介绍如何使用当前以预览版形式提供的功能。
 
-## 组写回
+## 组写回 <a name="group-writeback"></a>
 可选功能中的组写回选项允许用户将 **Office 365 组**写回到安装有 Exchange 的林。这是永远在云中受控制的组。如果你有本地 Exchange，则可以将这些组写回到本地，使具有本地 Exchange 邮箱的用户可以从这些组发送和接收电子邮件。
 
 可在[此处](http://aka.ms/O365g)找到有关 Office 365 组及其用法的详细信息。
@@ -40,7 +40,7 @@ Office 365 组在本地 AD DS 中显示为分发组。你的本地 Exchange 服�
 > 
 >
 
-## 用户写回
+## 用户写回 <a name="user-writeback"></a>
 > [AZURE.IMPORTANT]
 Azure AD Connect 的 2015 年 8 月更新版中删除了用户写回预览版功能。如果你已启用此功能，现在应将它禁用。
 >
