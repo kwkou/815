@@ -15,7 +15,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="06/06/2016"
-    wacn.date="01/05/2017"
+    wacn.date="03/17/2017"
     ms.author="cephalin" />
 
 # 在 Azure App Service 中启用 Web 应用的诊断日志记录

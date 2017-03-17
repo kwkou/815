@@ -15,7 +15,7 @@
     ms.devlang="python"
     ms.topic="get-started-article"
     ms.date="07/07/2016"
-    wacn.date="12/05/2016"
+    wacn.date="03/17/2017"
     ms.author="huvalo" />
 
 # Azure 上具有 Python Tools 2.2 for Visual Studio 的 Django 和 MySQL
