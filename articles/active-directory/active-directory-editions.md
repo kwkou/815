@@ -330,7 +330,6 @@ Microsoft 标识管理器服务器软件权限随 Windows Server 许可证（任
 
 **可用的预览功能：**
 
-- [管理单元](/documentation/articles/active-directory-administrative-units-management/)
 - [iOS 上基于证书的身份验证](/documentation/articles/active-directory-certificate-based-authentication-ios/)
 - [Android 上基于证书的身份验证](/documentation/articles/active-directory-certificate-based-authentication-android/)
 
