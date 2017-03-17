@@ -24,6 +24,8 @@
 
 [AZURE.INCLUDE [create-account-and-websites-note](../../includes/create-account-and-websites-note.md)]
 
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-visual-studio-login-guide.md)]
+
 ## 所需操作
 在本教程，你将在[初学者项目][StarterProject]提供的简单会议列表应用程序中添加移动功能。以下屏幕截图显示了已完成的应用程序中的 ASP.NET 会话，如在 Internet Explorer 11 F12 开发人员工具的浏览器模拟器中所见。
 

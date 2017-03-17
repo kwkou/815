@@ -42,6 +42,8 @@
 >
 >
 
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-visual-studio-login-guide.md)]
+
 ## <a id="learn"></a>学习内容
 本教程介绍如何执行以下任务：
 

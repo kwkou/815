@@ -35,6 +35,8 @@
 
 [AZURE.INCLUDE [create-account-and-websites-note](../../includes/create-account-and-websites-note.md)]
 
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-visual-studio-login-guide.md)]
+
 ## 创建项目
 本节介绍使用样本模板创建 Visual Studio 项目。你将创建虚拟环境并安装所需软件包。你将创建一个使用 sqlite 的本地数据库。然后你将在本地运行应用程序。
 

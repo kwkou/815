@@ -42,6 +42,8 @@
 * Visual Studio 2013 Update 4 或更高版本
 * [Azure SDK 2.8.1 或更高版本](/downloads/)
 
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-visual-studio-login-guide.md)]
+
 ## <a name="bkmk_deploy"></a>创建 Web 应用并将其部署到 Azure
 1. 在 Visual Studio 中，单击“文件”>“新建”>“项目”。
 2. 选择“ASP.NET Web 应用程序”、为项目命名，然后单击“确定”。

@@ -37,6 +37,8 @@
 
 [AZURE.INCLUDE [create-account-and-websites-note](../../includes/create-account-and-websites-note.md)]
 
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-visual-studio-login-guide.md)]
+
 ## 创建项目
 在此部分中，我们使用样本模板创建 Visual Studio 项目。我们将创建虚拟环境并安装所需软件包。然后，我们使用默认内存中存储库在本地运行应用程序。
 

@@ -45,6 +45,8 @@
 
 [AZURE.INCLUDE [create-account-and-websites-note](../../includes/create-account-and-websites-note.md)]
 
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-visual-studio-login-guide.md)]
+
 ### 创建项目
 1. 启动 Visual Studio 2013。
 2. 在“文件”菜单中，单击“新建项目”。

@@ -27,6 +27,8 @@
 
 对于许多下游客户端（例如，Visual Studio 代码生成和 PowerApps 的“添加 API”流）而言，此 URL 必须可公开访问（不受用户或服务身份验证的保护）。这意味着，如果使用了应用服务身份验证并想要从应用本身内部公开 API 定义，则需要使用身份验证选项，允许匿名流量进入 API。有关详细信息，请参阅 [Authentication and authorization for App Service API Apps](/documentation/articles/app-service-api-authentication/)（应用服务 API 应用的身份验证和授权）。
 
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-visual-studio-login-guide.md)]
+
 ### 门户边栏选项卡
 
 可以在[Azure 门户预览的](https://portal.azure.cn/)“API 定义”边栏选项卡中查看和更改终结点 URL。

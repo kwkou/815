@@ -29,6 +29,8 @@ Azure WebJobs SDK 简化了许多 Web 作业编程任务。有关详细信息，
 
 [AZURE.INCLUDE [app-service-web-to-api-and-mobile](../../includes/app-service-web-to-api-and-mobile.md)]
 
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-visual-studio-login-guide.md)]
+
 ## <a name="acceptablefiles"></a>可接受的脚本或程序文件类型
 
 接受以下文件类型：

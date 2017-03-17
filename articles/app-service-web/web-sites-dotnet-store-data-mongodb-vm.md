@@ -38,6 +38,8 @@
 
 [AZURE.INCLUDE [create-account-and-websites-note](../../includes/create-account-and-websites-note.md)]
 
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-visual-studio-login-guide.md)]
+
 <a id="virtualmachine"></a>
 
 ## 创建虚拟机和安装 MongoDB

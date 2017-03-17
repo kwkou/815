@@ -26,6 +26,8 @@ Azure 提供内置诊断功能，可帮助调试[应用服务 Web 应用](/docum
 
 [AZURE.INCLUDE [app-service-web-to-api-and-mobile](../../includes/app-service-web-to-api-and-mobile.md)]
 
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-visual-studio-login-guide.md)]
+
 ## <a name="whatisdiag"></a>Web 服务器诊断和应用程序诊断
 应用服务 Web 应用为 Web 服务器和 Web 应用程序中的日志记录信息提供诊断功能。这些诊断功能按逻辑分为 **Web 服务器诊断**和**应用程序诊断**。
 
