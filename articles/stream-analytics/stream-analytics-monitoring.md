@@ -14,8 +14,8 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="data-services"
-    ms.date="01/05/2017"
-    wacn.date="02/24/2017"
+    ms.date="01/24/2017"
+    wacn.date="03/10/2017"
     ms.author="jeffstok" />
 
 # 了解流分析作业监视以及如何监视查询
@@ -51,7 +51,7 @@ Azure 门户提供了可用于监视和排查查询和作业性能问题的关�
 
 
 ## 获取帮助
-如需进一步的帮助，请尝试我们的 [Azure 流分析论坛](https://social.msdn.microsoft.com/Forums/zh-cn/home?forum=AzureStreamAnalytics)。
+如需进一步的帮助，请尝试我们的 [Azure 流分析论坛](https://social.msdn.microsoft.com/Forums/zh-cn/home?forum=AzureStreamAnalytics)
 
 ## 后续步骤
 * [Azure 流分析简介](/documentation/articles/stream-analytics-introduction/)
@@ -60,5 +60,5 @@ Azure 门户提供了可用于监视和排查查询和作业性能问题的关�
 * [Azure 流分析查询语言参考](https://msdn.microsoft.com/zh-cn/library/azure/dn834998.aspx)
 * [Azure 流分析管理 REST API 参考](https://msdn.microsoft.com/zh-cn/library/azure/dn835031.aspx)
 
-<!---HONumber=Mooncake_0220_2017-->
+<!---HONumber=Mooncake_0306_2017-->
 <!-- Update_Description: update meta properties; wording update -->

@@ -1,27 +1,22 @@
 <properties
-	pageTitle="流分析开窗函数简介 | Azure"
-	description="了解流分析中的三个开窗函数（翻转、跳跃、滑动）。"
-	keywords="翻转窗口, 滑动窗口, 跳跃窗口"
-	documentationCenter=""
-	services="stream-analytics"
-	authors="jeffstokes72"
-	manager="jhubbard"
-	editor="cgronlun"
-/>  
-
-
+    pageTitle="流分析开窗函数简介 | Azure"
+    description="了解流分析中的三个开窗函数（翻转、跳跃、滑动）。"
+    keywords="翻转窗口, 滑动窗口, 跳跃窗口"
+    documentationcenter=""
+    services="stream-analytics"
+    author="jeffstokes72"
+    manager="jhubbard"
+    editor="cgronlun" />
 <tags
-	ms.service="stream-analytics"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="data-services"
-	ms.date="09/26/2016"
-	wacn.date="11/14/2016"
-	ms.author="jeffstok"
-/>  
-
-
+    ms.assetid="0d8d8717-5d23-43f0-b475-af078ab4627d"
+    ms.service="stream-analytics"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.tgt_pltfrm="na"
+    ms.workload="data-services"
+    ms.date="01/24/2017"
+    wacn.date="03/10/2017"
+    ms.author="jeffstok" />  
 
 # 流分析开窗函数简介
 
@@ -50,14 +45,14 @@
 
 ## 获取开窗函数的帮助
 
-如需进一步的帮助，请尝试我们的 [Azure 流分析论坛](https://social.msdn.microsoft.com/Forums/en-US/home?forum=AzureStreamAnalytics)。
+如需进一步的帮助，请尝试我们的 [Azure 流分析论坛](https://social.msdn.microsoft.com/Forums/zh-cn/home?forum=AzureStreamAnalytics)
 
 ## 后续步骤
+* [Azure 流分析简介](/documentation/articles/stream-analytics-introduction/)
+* [Azure 流分析入门](/documentation/articles/stream-analytics-get-started/)
+* [缩放 Azure 流分析作业](/documentation/articles/stream-analytics-scale-jobs/)
+* [Azure 流分析查询语言参考](https://msdn.microsoft.com/zh-cn/library/azure/dn834998.aspx)
+* [Azure 流分析管理 REST API 参考](https://msdn.microsoft.com/zh-cn/library/azure/dn835031.aspx)
 
-- [Azure 流分析简介](/documentation/articles/stream-analytics-introduction/)
-- [Azure 流分析入门](/documentation/articles/stream-analytics-get-started/)
-- [缩放 Azure 流分析作业](/documentation/articles/stream-analytics-scale-jobs/)
-- [Azure 流分析查询语言参考](https://msdn.microsoft.com/zh-cn/library/azure/dn834998.aspx)
-- [Azure 流分析管理 REST API 参考](https://msdn.microsoft.com/zh-cn/library/azure/dn835031.aspx)
-
-<!---HONumber=Mooncake_1107_2016-->
+<!---HONumber=Mooncake_0306_2017-->
+<!--Update_Description:update meta properties;wording update-->

@@ -14,8 +14,8 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="data-services"
-    ms.date="01/05/2017"
-    wacn.date="02/24/2017"
+    ms.date="01/24/2017"
+    wacn.date="03/10/2017"
     ms.author="jeffstok" />
 
 # 流分析输出：存储、分析选项
@@ -41,7 +41,7 @@
 | 表 | 将写入输出的表名称。表名称区分大小写，并且该表的架构应与字段数量以及作业输出正在生成的字段类型完全匹配。 |
 
 > [AZURE.NOTE]
-目前，流分析中的作业输出支持 Azure SQL 数据库产品/服务。但是，不支持附加了数据库，运行 SQL Server 的 Azure 虚拟机。这在将来的版本中可能会有所改变。
+> 目前，流分析中的作业输出支持 Azure SQL 数据库产品/服务。但是，不支持附加了数据库，运行 SQL Server 的 Azure 虚拟机。这在将来的版本中可能会有所改变。
 > 
 > 
 
@@ -111,7 +111,7 @@ Blob 存储提供了一种经济高效且可缩放的解决方案，用于在云
 将事件中心数据流配置成输出时，需要使用几个参数。
 
 | 属性名称 | 说明 |
-|---------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| --- | --- |
 | 输出别名 | 该名称是在查询中使用的友好名称，用于将查询输出定向到此事件中心。 |
 | 服务总线命名空间 | 服务总线命名空间是包含一组消息传递实体的容器。创建新的事件中心后，还创建了服务总线命名空间 |
 | 事件中心 | 事件中心输出的名称 |
@@ -139,10 +139,11 @@ Blob 存储提供了一种经济高效且可缩放的解决方案，用于在云
 | 存储帐户密钥 | 与存储帐户关联的访问密钥。 |
 | 表名称 | 表的名称。如果表不存在，则会创建表。 |
 | 分区键 | 包含分区键的输出列的名称。分区键是某个给定表中分区的唯一标识符，分区键构成了实体主键的第一部分。分区键是一个最大为 1 KB 的字符串值。 |
-| 行键 | 包含行键的输出列的名称。行键是某个给定分区中实体的唯一标识符。行键构成了实体主键的第二部分。行键是一个最大为 1 KB 的字符串值。 |
+| 行键 |包含行键的输出列的名称。行键是某个给定分区中实体的唯一标识符。行键构成了实体主键的第二部分。行键是一个最大为 1 KB 的字符串值。 |
 | 批大小 | 批处理操作的记录数。通常情况下，默认值对于大多数作业来说已经足够。若要修改此设置，请参阅[表批处理操作规范](https://msdn.microsoft.com/zh-cn/library/microsoft.windowsazure.storage.table.tablebatchoperation.aspx)以获取详细信息。 |
 
-## 服务总线队列
+
+## <a id="service-bus-queues"></a> 服务总线队列
 
 <!-- azure/hh367516.aspx redirect to service-bus-queues-topics-subscriptions-->
 [服务总线队列](/documentation/articles/service-bus-queues-topics-subscriptions/)为一个或多个竞争使用方提供先入先出 (FIFO) 消息传递方式。通常情况下，接收方会按照消息添加到队列中的临时顺序来接收并处理消息，并且每条消息仅由一个消息使用方接收并处理。
@@ -178,8 +179,8 @@ Blob 存储提供了一种经济高效且可缩放的解决方案，用于在云
 | 编码 | 如果是 CSV 或 JSON 格式，则必须指定一种编码格式。目前只支持 UTF-8 这种编码格式 |
 | 分隔符 | 仅适用于 CSV 序列化。流分析支持大量的常见分隔符以对 CSV 格式的数据进行序列化。支持的值为逗号、分号、空格、制表符和竖线。 |
 
-<a name="documentdb"></a>
-## DocumentDB
+
+## <a name="documentdb"></a> DocumentDB
 
 [Azure DocumentDB](/home/features/documentdb/) 是完全托管的 NoSQL 文档数据库服务，提供针对无架构数据的查询和事务、可预测且可靠的性能，以及快速开发。
 
@@ -189,7 +190,7 @@ Blob 存储提供了一种经济高效且可缩放的解决方案，用于在云
 * **帐户名** - DocumentDB 帐户的名称或终结点 URI。
 * **帐户密钥** - DocumentDB 帐户的共享访问密钥。
 * **数据库** - DocumentDB 数据库名称。
-* **集合名称模式** - 要使用的集合的集合名称或其模式。可以使用可选的 {partition} 令牌（其中分区从 0 开始）构造集合名称格式。以下是有效的输入示例：1\) MyCollection - 必须存在一个名为“MyCollection”的集合。2\) MyCollection {partition} - 此类集合必须存在 -“MyCollection0”、“MyCollection1”、“MyCollection2”等。
+* **集合名称模式** - 要使用的集合的集合名称或其模式。可以使用可选的 {partition} 令牌（其中分区从 0 开始）构造集合名称格式。以下是有效的输入示例：1) MyCollection - 必须存在一个名为“MyCollection”的集合。2) MyCollection {partition} - 此类集合必须存在 -“MyCollection0”、“MyCollection1”、“MyCollection2”等。
 * **分区键** - 可选。仅当用户在其集合名称模式中使用 {parition} 令牌时，此项才需要。输出事件中的字段的名称，用于指定跨集合分区输出的键。对于单个集合输出，可使用任何任意输出列（例如 PartitionId）。
 * **文档 ID** - 可选。输出事件中的字段的名称，该字段用于指定插入或更新操作所基于的主键。
 
@@ -213,5 +214,5 @@ Blob 存储提供了一种经济高效且可缩放的解决方案，用于在云
 [stream.analytics.query.language.reference]: http://go.microsoft.com/fwlink/?LinkID=513299
 [stream.analytics.rest.api.reference]: http://go.microsoft.com/fwlink/?LinkId=517301
 
-<!---HONumber=Mooncake_0220_2017-->
+<!---HONumber=Mooncake_0306_2017-->
 <!-- Update_Description: update meta properties; wording update -->

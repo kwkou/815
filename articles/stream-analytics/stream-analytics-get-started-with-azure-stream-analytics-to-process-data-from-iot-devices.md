@@ -1,32 +1,29 @@
 <properties
-	pageTitle="开始使用 Azure 流分析处理来自 IoT 设备的数据 | Azure"
-	description="带流分析和实时数据处理的 IoT 传感器标记和数据流"
+    pageTitle="IoT 实时数据流和 Azure 流分析 | Azure"
+    description="带流分析和实时数据处理的 IoT 传感器标记和数据流"
     keywords="iot 解决方案, iot 入门"
-	services="stream-analytics"
-	documentationCenter=""
-	authors="jeffstokes72"
-	manager="jhubbard"
-	editor="cgronlun"
-/>  
-
-
+    services="stream-analytics"
+    documentationcenter=""
+    author="jeffstokes72"
+    manager="jhubbard"
+    editor="cgronlun" />
 <tags
-	ms.service="stream-analytics"
-	ms.devlang="na"
-	ms.topic="hero-article"
-	ms.tgt_pltfrm="na"
-	ms.workload="data-services"
-	ms.date="10/19/2016"
-	wacn.date="12/05/2016"
-	ms.author="jeffstok"
-/>
+    ms.assetid="3e829055-75ed-469f-91f5-f0dc95046bdb"
+    ms.service="stream-analytics"
+    ms.devlang="na"
+    ms.topic="hero-article"
+    ms.tgt_pltfrm="na"
+    ms.workload="data-services"
+    ms.date="01/24/2017"
+    wacn.date="03/10/2017"
+    ms.author="jeffstok" />
 
 # 开始使用 Azure 流分析处理来自 IoT 设备的数据
 在本教程中，会学习如何创建流处理逻辑，以从物联网 (IoT) 设备收集数据。我们会使用真实的物联网 (IoT) 用例来演示如何经济实惠地快速生成解决方案。
 
 ## 先决条件
--   [Azure 订阅](/pricing/1rmb-trial/)
--   可从 [GitHub](https://github.com/Azure/azure-stream-analytics/tree/master/Samples/GettingStarted) 下载示例查询和数据文件
+* [Azure 订阅](/pricing/1rmb-trial/)
+* 可从 [GitHub](https://github.com/Azure/azure-stream-analytics/tree/master/Samples/GettingStarted) 下载示例查询和数据文件
 
 ## 方案
 Contoso 是一家工业自动化公司，该公司已将其制造流程完全自动化。这家工厂中的设备配有可实时发送数据流的传感器。在此方案中，产品车间经理希望通过传感器数据获得实时见解，从而找到规律并采取措施。我们将对传感器数据使用流分析查询语言 (SAQL)，查找传入数据流的有趣规律。
@@ -50,7 +47,7 @@ Contoso 是一家工业自动化公司，该公司已将其制造流程完全自
 为了方便使用，本入门指南提供从实际 SensorTag 设备中捕获的示例数据文件。可以对示例数据运行查询并查看结果。在后续教程中，你将学习如何将你的作业连接到输入和输出并将其部署到 Azure 服务。
 
 ## 创建流分析作业
-1. 在 [Azure 门户预览](http://portal.azure.cn)中，单击加号，再在右侧的文本窗口中键入**流分析**。然后在结果列表中选择“流分析作业”。
+1. 在 [Azure 门户](http://portal.azure.cn)中，单击加号，再在右侧的文本窗口中键入**流分析**。然后在结果列表中选择“流分析作业”。
    
     ![创建新的流分析作业](./media/stream-analytics-get-started-with-iot-devices/stream-analytics-get-started-with-iot-devices-02.png)  
 
@@ -60,11 +57,11 @@ Contoso 是一家工业自动化公司，该公司已将其制造流程完全自
     ![新建流分析作业详细信息](./media/stream-analytics-get-started-with-iot-devices/stream-analytics-get-started-with-iot-devices-03.png)  
 
    
-       > [AZURE.NOTE]
-       > 只应为每个区域创建此存储帐户一次。跨该区域中创建的所有流分析作业共享此存储。
-       > 
-       > 
-       
+    > [AZURE.NOTE]
+    > 只应为每个区域创建此存储帐户一次。跨该区域中创建的所有流分析作业共享此存储。
+    > 
+    > 
+    
 4. 勾选框以将作业放在仪表板上，然后单击“创建”。
    
     ![正在创建作业](./media/stream-analytics-get-started-with-iot-devices/stream-analytics-get-started-with-iot-devices-03a.png)  
@@ -135,4 +132,5 @@ Contoso 是一家工业自动化公司，该公司已将其制造流程完全自
 ## 结束语
 本教程旨在演示如何编写不同的流分析查询语言查询，并在浏览器中查看结果。但是，这仅仅是一个开始。使用流分析还可以完成许多其他操作。流分析支持多种输入和输出，甚至可以使用 Azure 机器学习中的函数，因而是用于分析数据流的可靠工具。可以通过[学习路线图](https://azure.microsoft.com/documentation/learning-paths/stream-analytics/)开始详细了解流分析。有关如何编写查询的详细信息，请阅读有关[常用查询模式](/documentation/articles/stream-analytics-stream-analytics-query-patterns/)的文章。
 
-<!---HONumber=Mooncake_1128_2016-->
+<!---HONumber=Mooncake_0306_2017-->
+<!--Update_Description: update meta properties; wording update-->
