@@ -14,7 +14,7 @@
 	ms.devlang="dotnet" 
 	ms.topic="article" 
 	ms.date="06/01/2016" 
-	wacn.date="12/16/2016" 
+	wacn.date="03/17/2017" 
 	ms.author="tdykstra"/>
 
 # 如何通过 WebJobs SDK 使用 Azure Service Bus

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.workload="na"
 	ms.date="07/14/2016"
-	wacn.date="02/06/2017"
+	wacn.date="03/17/2017"
 	ms.author="sethm" />
 
 # 使用事件中心流式处理热路径中的 Azure 诊断数据

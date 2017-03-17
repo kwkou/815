@@ -15,7 +15,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="tbd"
    ms.date="11/30/2016"
-   wacn.date="01/03/2017"
+   wacn.date="03/17/2017"
    ms.author="v-six" />
 
 # 导致角色回收的常见问题

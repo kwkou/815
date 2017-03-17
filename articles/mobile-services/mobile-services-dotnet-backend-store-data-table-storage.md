@@ -14,7 +14,7 @@
 	ms.devlang="dotnet"
 	ms.topic="article"
 	ms.date="07/21/2016"
-	wacn.date="09/26/2016"
+	wacn.date="03/17/2017"
 	ms.author="glenga"/>
 
 # 构建使用表存储的 .NET 后端移动服务

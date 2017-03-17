@@ -14,7 +14,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="na"
    ms.date="02/29/2016"
-   wacn.date="12/26/2016"
+   wacn.date="03/17/2017"
    ms.author="robb" />
 
 # 在 Azure 应用程序中创建和使用性能计数器
