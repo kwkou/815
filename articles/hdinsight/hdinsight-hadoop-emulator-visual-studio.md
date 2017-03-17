@@ -14,7 +14,7 @@ ms.topic="article"
 ms.tgt_pltfrm="na"
 ms.workload="big-data"
 ms.date="11/15/2016"
-wacn.date="02/14/2017"
+wacn.date="03/17/2017"
 ms.author="larryfr"/>
 
 # 将用于 Visual Studio 的 Azure Data Lake 工具与 Hortonworks 沙盒配合使用
@@ -22,6 +22,8 @@ ms.author="larryfr"/>
 用于 Visual Studio 的 Azure Data Lake 工具包含用于处理常规 Hadoop 群集的工具，以及用于处理 Azure Data Lake 和 HDInsight 的工具。本文档提供将 Azure Data Lake 工具与本地虚拟机上运行的 Hortonworks 沙盒配合使用所要执行的步骤。
 
 借助 Hortonworks 沙盒可以在开发环境本地使用 Hadoop。开发一个解决方案后，如果想要大规模部署该解决方案，可以转移到 HDInsight 群集。
+
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-visual-studio-login-guide.md)]
 
 ## 先决条件
 
