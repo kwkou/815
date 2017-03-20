@@ -1,6 +1,6 @@
 <properties
-    pageTitle="使用 Azure 门户预览版部署 Azure 资源 | Azure"
-    description="使用 Azure 门户预览版和 Azure Resource Manager 部署资源。"
+    pageTitle="使用 Azure 门户预览部署 Azure 资源 | Azure"
+    description="使用 Azure 门户预览和 Azure Resource Manager 部署资源。"
     services="azure-resource-manager,azure-portal"
     documentationcenter=""
     author="tfitzmac"
@@ -18,16 +18,16 @@
     ms.author="tomfitz" />  
 
 
-# 使用 Resource Manager 模板和 Azure 门户预览版部署资源
+# 使用 Resource Manager 模板和 Azure 门户预览部署资源
 > [AZURE.SELECTOR]
 - [PowerShell](/documentation/articles/resource-group-template-deploy/)
 - [Azure CLI](/documentation/articles/resource-group-template-deploy-cli/)
 - [门户](/documentation/articles/resource-group-template-deploy-portal/)
 - [REST API](/documentation/articles/resource-group-template-deploy-rest/)
 
-本主题演示如何使用 [Azure 门户预览版](https://portal.azure.cn)和 [Azure Resource Manager](/documentation/articles/resource-group-overview/) 部署 Azure 资源。若要了解有关管理资源的信息，请参阅[通过门户管理 Azure 资源](/documentation/articles/resource-group-portal/)。
+本主题演示如何使用 [Azure 门户预览](https://portal.azure.cn)和 [Azure Resource Manager](/documentation/articles/resource-group-overview/) 部署 Azure 资源。若要了解有关管理资源的信息，请参阅[通过门户管理 Azure 资源](/documentation/articles/resource-group-portal/)。
 
-目前，并非每种服务都支持门户或资源管理器。要使用这些服务，需使用[经典管理门户](https://manage.windowsazure.cn)。若要了解每种服务的状态，请参阅 [Azure 门户预览版可用性图表](https://azure.microsoft.com/features/azure-portal/availability/)。
+目前，并非每种服务都支持门户或资源管理器。要使用这些服务，需使用[经典管理门户](https://manage.windowsazure.cn)。若要了解每种服务的状态，请参阅 [Azure 门户预览可用性图表](https://azure.microsoft.com/features/azure-portal/availability/)。
 
 ## <a name="create-resource-group"></a> 创建资源组
 1. 若要创建空资源组，请依次选择“新建”>“管理”>“资源组”。

@@ -44,7 +44,7 @@
 资源管理器提供了一种新方法来部署和管理您的解决方案。如果你使用早期的部署模型并想要了解这些更改，请参阅[了解资源管理器部署和经典部署](/documentation/articles/resource-manager-deployment-model/)。
 
 ## <a name="consistent-management-layer"></a> 一致的管理层
-Resource Manager 通过 Azure PowerShell、Azure CLI、Azure 门户预览版、REST API 和开发工具，为所执行的任务提供一致的管理层。所有工具使用一组通用操作。可以使用最合适的工具，并且可以换用这些工具而不发生混淆。
+Resource Manager 通过 Azure PowerShell、Azure CLI、Azure 门户预览、REST API 和开发工具，为所执行的任务提供一致的管理层。所有工具使用一组通用操作。可以使用最合适的工具，并且可以换用这些工具而不发生混淆。
 
 下图显示了这些工具如何与同等的 Azure Resource Manager API 交互。API 将请求传递给 Resource Manager 服务，后者对请求进行身份验证和授权。然后，Resource Manager 将请求路由到适当的资源提供程序。
 
@@ -174,7 +174,7 @@ Azure Resource Manager 会分析依赖关系，以确保按正确的顺序创建
 
 * [使用 Resource Manager 模板和 Azure PowerShell 部署资源](/documentation/articles/resource-group-template-deploy/)
 * [使用 Resource Manager 模板和 Azure CLI 部署资源](/documentation/articles/resource-group-template-deploy-cli/)
-* [使用 Resource Manager 模板和 Azure 门户预览版部署资源](/documentation/articles/resource-group-template-deploy-portal/)
+* [使用 Resource Manager 模板和 Azure 门户预览部署资源](/documentation/articles/resource-group-template-deploy-portal/)
 * [使用 Resource Manager 模板和 Resource Manager REST API 部署资源](/documentation/articles/resource-group-template-deploy-rest/)
 
 ## 标记
@@ -205,7 +205,7 @@ Azure Resource Manager 会分析依赖关系，以确保按正确的顺序创建
 
     azure resource list -t costCenter=Finance --json
 
-还可通过 Azure 门户预览版查看标记的资源。
+还可通过 Azure 门户预览查看标记的资源。
 
 订阅的[使用情况报告](/documentation/articles/billing-understand-your-bill/)包含标记名称和值，可让你根据标记划分成本。有关标记的详细信息，请参阅[使用标记来组织 Azure 资源](/documentation/articles/resource-group-using-tags/)。
 

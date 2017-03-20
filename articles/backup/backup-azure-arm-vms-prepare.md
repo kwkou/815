@@ -66,7 +66,7 @@ Azure 备份服务提供两种类型的保管库（备份保管库和恢复服�
 
 恢复服务保管库是用于存储在不同时间创建的备份和恢复点的实体。恢复服务保管库还包含与受保护虚拟机关联的备份策略。
 
-Azure 门户预览版目前不支持 Azure 中国区的恢复服务。若要创建恢复服务保管库，请遵循[此处](/documentation/articles/backup-azure-vms-automation/#create-a-recovery-services-vault/)的 PowerShell 步骤
+Azure 门户预览目前不支持 Azure 中国区的恢复服务。若要创建恢复服务保管库，请遵循[此处](/documentation/articles/backup-azure-vms-automation/#create-a-recovery-services-vault/)的 PowerShell 步骤
 
 ## 在虚拟机中安装 VM 代理
 

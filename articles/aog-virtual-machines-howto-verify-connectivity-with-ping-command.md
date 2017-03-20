@@ -18,7 +18,7 @@
 
 ## 前言
 
-文章[《使用 PsPing & PaPing 进行 TCP 端口连通性测试》](/documentation/articles/aog-virtual-network-tcp-psping-paping-connectivity/)中提到，ICMP 协议的数据包无法通过 Azure 的防火墙和负载平衡器，所以不能直接使用 Ping 来测试 Azure 中的虚拟机和服务的连通性。实际上，我们仍然能够通过一些特殊设置，使 ICMP 协议的数据包能够进出 Azure 中的虚拟机，来完成 Ping 测试。针对 Azure 云服务管理器 (ASM) 和 Azure 资源管理器 (ARM) 中的部署，设置方法有所不同，下文将分别进行介绍。
+文章[《使用 PsPing & PaPing 进行 TCP 端口连通性测试》](/documentation/articles/aog-virtual-network-tcp-psping-paping-connectivity/)中提到，ICMP 协议的数据包无法通过 Azure 的防火墙和负载均衡器，所以不能直接使用 Ping 来测试 Azure 中的虚拟机和服务的连通性。实际上，我们仍然能够通过一些特殊设置，使 ICMP 协议的数据包能够进出 Azure 中的虚拟机，来完成 Ping 测试。针对 Azure 云服务管理器 (ASM) 和 Azure 资源管理器 (ARM) 中的部署，设置方法有所不同，下文将分别进行介绍。
 
 ## ASM 虚拟机的设置方法
 
@@ -107,12 +107,12 @@ Azure 后台任务完成后，我们就能看到这条新添加的规则了。
 
 ## 更安全的 NSG 配置
 
-更安全的做法是，分别配置两条针对 TCP 和 UDP 的 DenyAll 的规则，优先级采用 4094 和 4095 ，然后为虚拟网络和 Azure 负载平衡器分别添加两条 AllowAll 的规则，优先级采用 4092 和 4093。最后为需要开放的端口配置更高优先级的规则。<br>
-这样既开放了需要的端口和 ICMP 规则，也又避免了其他端口被攻击的危险。如下图所示，我开放了 TCP-22 端口和 ICMP，同时允许虚拟网络和 Azure 负载平衡器与虚拟机的内部通信，其他所有访问都被 NSG 规则拒绝。如果还要添加新的端口，新建优先级高于 4092 的规则就可以了。
+更安全的做法是，分别配置两条针对 TCP 和 UDP 的 DenyAll 的规则，优先级采用 4094 和 4095 ，然后为虚拟网络和 Azure 负载均衡器分别添加两条 AllowAll 的规则，优先级采用 4092 和 4093。最后为需要开放的端口配置更高优先级的规则。<br>
+这样既开放了需要的端口和 ICMP 规则，也又避免了其他端口被攻击的危险。如下图所示，我开放了 TCP-22 端口和 ICMP，同时允许虚拟网络和 Azure 负载均衡器与虚拟机的内部通信，其他所有访问都被 NSG 规则拒绝。如果还要添加新的端口，新建优先级高于 4092 的规则就可以了。
 
 ![inbound-security-rules-4](./media/aog-virtual-machines-howto-verify-connectivity-with-ping-command/inbound-security-rules-4.png)
 
-其实虚拟网络和 Azure 负载平衡器的规则已经在默认规则（点击 **默认规则** 可以查看）里自动创建了，只不过优先级很低，分别为 65000 和 65001。所以我们需要再为它们创建优先级高于 DenyAllTCP 和 DenyAllUDP 的规则。
+其实虚拟网络和 Azure 负载均衡器的规则已经在默认规则（点击 **默认规则** 可以查看）里自动创建了，只不过优先级很低，分别为 65000 和 65001。所以我们需要再为它们创建优先级高于 DenyAllTCP 和 DenyAllUDP 的规则。
 
 ![inbound-security-rules-5](./media/aog-virtual-machines-howto-verify-connectivity-with-ping-command/inbound-security-rules-5.png)
 
