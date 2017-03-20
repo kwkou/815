@@ -36,7 +36,6 @@ Hadoop 群集由多个虚拟机（节点）组成，这些虚拟机用于对群�
 | [Storm](/documentation/articles/hdinsight-storm-overview/) |实时事件处理 |
 | [Spark](/documentation/articles/hdinsight-apache-spark-overview/) |内存中处理、交互式查询、微批流处理 |
 | [交互式 Hive（预览版）](/documentation/articles/hdinsight-hadoop-use-interactive-hive/) |内存中缓存用于实现交互式且更快的 Hive 查询 |
-| [Spark 上的 R Server（预览版）](/documentation/articles/hdinsight-hadoop-r-server-overview/) |各种不同的大数据统计信息、预测模型和机器学习功能 |
 
 每个群集类型在群集中具有自身的节点数目、在群集中使用自身的节点术语，对每个节点类型具有默认的 VM 大小。下表中的括号内列出了每个节点类型的节点数目。
 
@@ -53,16 +52,14 @@ Hadoop 群集由多个虚拟机（节点）组成，这些虚拟机用于对群�
 <!-- need to be verified -->
 
 
-| 群集类型 | Hadoop | HBase | Storm | Spark | R Server |
-| --- | --- | --- | --- | --- | --- |
-| 头：默认 VM 大小 |D3 v2 |D3 v2 |A3 |D12 v2 |D12 v2 |
-| 头：建议的 VM 大小 |D3 v2、D4 v2、D12 v2 |D3 v2、D4 v2、D12 v2 |A3、A4、A5 |D12 v2、D13 v2、D14 v2 |D12 v2、D13 v2、D14 v2 |
-| 辅助角色：默认 VM 大小 |D3 v2 |D3 v2 |D3 v2 |Windows：D12 v2；Linux：D4 v2 |Windows：D12 v2；Linux：D4 v2 |
-| 辅助角色：建议的 VM 大小 |D3 v2、D4 v2、D12 v2 |D3 v2、D4 v2、D12 v2 |D3 v2、D4 v2、D12 v2 |Windows：D12 v2、D13 v2、D14 v2；Linux：D4 v2、D12 v2、D13 v2、D14 v2 |Windows：D12 v2、D13 v2、D14 v2；Linux：D4 v2、D12 v2、D13 v2、D14 v2 |
-| Zookeeper：默认 VM 大小 | |A3 |A2 | | |
-| Zookeeper：建议的 VM 大小 | |A3、A4、A5 |A2、A3、A4 | | |
-| 边缘：默认 VM 大小 | | | | |Windows：D12 v2；Linux：D4 v2 |
-| 边缘：建议的 VM 大小 | | | | |Windows：D12 v2、D13 v2、D14 v2；Linux：D4 v2、D12 v2、D13 v2、D14 v2 |
+| 群集类型 | Hadoop | HBase | Storm | Spark |
+| --- | --- | --- | --- | --- |
+| 头：默认 VM 大小 |D3 v2 |D3 v2 |A3 |D12 v2 |
+| 头：建议的 VM 大小 |D3 v2、D4 v2、D12 v2 |D3 v2、D4 v2、D12 v2 |A3、A4、A5 |D12 v2、D13 v2、D14 v2 |
+| 辅助角色：默认 VM 大小 |D3 v2 |D3 v2 |D3 v2 |Windows：D12 v2；Linux：D4 v2 |
+| 辅助角色：建议的 VM 大小 |D3 v2、D4 v2、D12 v2 |D3 v2、D4 v2、D12 v2 |D3 v2、D4 v2、D12 v2 |Windows：D12 v2、D13 v2、D14 v2；Linux：D4 v2、D12 v2、D13 v2、D14 v2 |
+| Zookeeper：默认 VM 大小 | |A3 |A2 | |
+| Zookeeper：建议的 VM 大小 | |A3、A4、A5 |A2、A3、A4 | |
 
 > [AZURE.NOTE]
 头称为 Storm 群集类型的 *Nimbus*。辅助角色称为 HBase 群集类型的*区域*以及 Storm 群集类型的*监督程序*。

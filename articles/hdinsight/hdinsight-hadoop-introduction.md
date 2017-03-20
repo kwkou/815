@@ -41,7 +41,6 @@ HDInsight 提供以下群集类型：
 * **[Apache Hadoop](https://wiki.apache.org/hadoop)**：为可靠的数据存储提供了 [HDFS](#hdfs) 和一个简单的 [MapReduce](#mapreduce) 编程模型，以并行地处理和分析数据。
 * **[Apache Spark](http://spark.apache.org/)**：一种并行处理框架，支持内存中处理，以提升大数据分析应用程序的性能；Spark 适用于 SQL、流式数据处理和机器学习。请参阅[概述：什么是 HDInsight 中的 Apache Spark？](/documentation/articles/hdinsight-apache-spark-overview/)
 * **[Apache HBase](http://hbase.apache.org/)**：构建于 Hadoop 上的 NoSQL 数据库，用于为大量非结构化和半结构化数据（可能为数十亿行乘以数百万列）提供随机访问和高度一致性。请参阅 [HDInsight 中的 HBase 概述](/documentation/articles/hdinsight-hbase-overview/)。
-* **[Microsoft R Server](https://msdn.microsoft.com/microsoft-r/rserver)**：用于托管和管理并行分布式 R 进程的企业级服务器。它可让数据科研人员、统计人员和 R 程序员根据需要访问 HDInsight 上可缩放的分布式分析方法。请参阅 [HDInsight 上的 R Server 概述](/documentation/articles/hdinsight-hadoop-r-server-overview)。
 * **[Apache Storm](https://storm.incubator.apache.org/)**：一个分布式实时计算系统，用于快速处理大型数据流。Storm 以 HDInsight 中的托管群集形式提供。请参阅[使用 Storm 和 Hadoop 分析实时传感器数据](/documentation/articles/hdinsight-storm-sensor-data-analysis/)。
 * **[Apache Interactive Hive 预览版（AKA：Live Long and Process）](https://cwiki.apache.org/confluence/display/Hive/LLAP)**：内存中缓存用于实现交互式且更快的 Hive 查询。请参阅[在 HDInsight 中使用 Interactive Hive](/documentation/articles/hdinsight-hadoop-use-interactive-hive)。
 * **[使用脚本操作的自定义群集](/documentation/articles/hdinsight-hadoop-customize-cluster-linux/)**：使用在预配期间运行的脚本安装其他组件的群集。
@@ -176,7 +175,6 @@ HDInsight 群集支持以下特定于 Hadoop 生态系统的语言：
 * [HDInsight 文档](/documentation/services/hdinsight/)：Azure HDInsight 上的 Hadoop 文档页，包含文章、视频及其他资源的链接。
 * [HDInsight 中的 Hadoop 入门](/documentation/articles/hdinsight-hadoop-linux-tutorial-get-started/)：有关预配 HDInsight Hadoop 群集和运行示例 Hive 查询的快速入门教程。
 * [HDInsight 中的 Spark 入门](/documentation/articles/hdinsight-apache-spark-jupyter-spark-sql/)：介绍如何创建 Spark 群集和运行交互式 Spark SQL 查询的快速入门教程。
-* [在 HDInsight 上使用 R Server](/documentation/articles/hdinsight-hadoop-r-server-get-started/)：开始在 HDInsight 中使用 R Server。
 * [预配 HDInsight 群集](/documentation/articles/hdinsight-hadoop-provision-linux-clusters/)：了解如何通过 Azure 门户预览、Azure CLI 或 Azure PowerShell 预配 HDInsight Hadoop 群集。
 
 ### Apache Hadoop

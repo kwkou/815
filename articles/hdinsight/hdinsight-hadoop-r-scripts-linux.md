@@ -20,11 +20,6 @@
 # 在 HDInsight Hadoop 群集上安装并使用 R
 你可以使用**脚本操作**群集自定义在 HDInsight 上 Hadoop 中的任何类型的群集上安装 R。这样，数据科学家和分析人员便可使用 R 部署功能强大的 MapReduce/YARN 编程框架，以便在 HDInsight 中部署的 Hadoop 群集上处理大量数据。
 
-> [AZURE.IMPORTANT]
-HDInsight 的 [HDInsight](/pricing/details/hdinsight/) 产品/服务包括 HDInsight 群集中的 R Server。这将允许 R 脚本使用 MapReduce 和 Spark 运行分布式计算。有关详细信息，请参阅[Get started using R Server on HDInsight](/documentation/articles/hdinsight-hadoop-r-server-get-started/)（开始使用 HDInsight 上的 R Server）。
-> 
-> 
-
 ## 什么是 R？
 <a href="http://www.r-project.org/" target="_blank">统计计算的 R 项目</a>是一种用于统计计算的开放源代码语言和环境。R 提供了数百个内置统计函数及其自己的编程语言，该语言结合了各方面的函数编程和面向对象的编程。它还提供了各种图形功能。R 是面向各个领域最专业的统计学家和科学家的首选编程环境。
 

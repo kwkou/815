@@ -19,7 +19,7 @@
     ms.author="jgao" />
 
 # 在 HDInsight Hadoop 群集上安装并使用 R
-了解如何使用 R 通过脚本操作来自定义基于 Windows 的 HDInsight 群集，以及如何在 HDInsight 群集上使用 R。[HDInsight 产品/服务](/pricing/details/hdinsight/)包括 HDInsight 群集中的 R Server。这将允许 R 脚本使用 MapReduce 和 Spark 运行分布式计算。有关详细信息，请参阅[Get started using R Server on HDInsight](/documentation/articles/hdinsight-hadoop-r-server-get-started/)（开始使用 HDInsight 上的 R Server）。有关在基于 Linux 的群集中使用 R 的信息，请参阅[在 HDInsight Hadoop 群集 (Linux) 上安装和使用 R](/documentation/articles/hdinsight-hadoop-r-scripts-linux/)。
+了解如何使用 R 通过脚本操作来自定义基于 Windows 的 HDInsight 群集，以及如何在 HDInsight 群集上使用 R。有关在基于 Linux 的群集中使用 R 的信息，请参阅[在 HDInsight Hadoop 群集 (Linux) 上安装和使用 R](/documentation/articles/hdinsight-hadoop-r-scripts-linux/)。
 
 可以使用*脚本操作*，在 Azure HDInsight 的任何群集类型（Hadoop、Storm、HBase、Spark）上安装 R。用于在 HDInsight 群集上安装 R 的示例脚本可通过 [https://hdiconfigactions.blob.core.windows.net/rconfigactionv02/r-installer-v02.ps1](https://hdiconfigactions.blob.core.windows.net/rconfigactionv02/r-installer-v02.ps1) 上的只读 Azure 存储 Blob 获得。
 
