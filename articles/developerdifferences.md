@@ -13,7 +13,7 @@
 <tags 
     ms.service="multiple" 
     ms.date="" 
-    wacn.date="02/15/2017"/>
+    wacn.date="03/20/2017"/>
 
 
 # 中国区 Azure 应用程序开发说明
@@ -49,9 +49,9 @@
 
 ##<a name="confdevcomp"></a>设置开发计算机
 
-Visual Studio 支持在中国区 Azure 上开发，使用 Visual Studio 2015 update 3。[Downloads | Visual Studio Official Site](https://www.visualstudio.com/downloads/)
+Visual Studio 2015 支持在中国区 Azure 上开发，使用 Visual Studio 2015 update 3。[Downloads | Visual Studio Official Site](https://www.visualstudio.com/downloads/)
 
-## 安装 Visual Studio，连接中国区 Azure
+### 使用 Visual Studio 2015，连接中国区 Azure
 
 步骤如下：
 
@@ -94,6 +94,43 @@ Visual Studio 支持在中国区 Azure 上开发，使用 Visual Studio 2015 upd
 2. 双击 Azure.reg 文件，同意弹出信息，允许注册表值更改；
 
 3. 注册表值更改后，Visual Studio 的登录信息连接到中国区 Azure 服务。
+
+### 使用 Visual Studio 2017，连接中国区 Azure
+
+[Visual Studio 2017](https://www.visualstudio.com/) 刚刚发布，我们引入了新的方式来连接到中国区 Azure 服务。步骤如下：
+
+新建一个 JSON 文件 **AadProvider.Configuration.json**，文件内容如下：
+
+		{
+		"AuthenticationQueryParameters": null,
+		"AsmEndPoint": "https://management.core.chinacloudapi.cn",
+		"Authority": "https://login.chinacloudapi.cn/",
+		"AzureResourceManagementEndpoint": "https://management.chinacloudapi.cn/",
+		"AzureResourceManagementAudienceEndpoints": [ "https://management.core.chinacloudapi.cn/" ],
+		"ClientIdentifier": "872cd9fa-d31f-45e0-9eab-6e460a02d1f1",
+		"EnvironmentName": "Mooncake",
+		"GraphEndpoint": "https://graph.chinacloudapi.cn",
+		"MsaHomeTenantId": "f577cd82-810c-43f9-a1f6-0cc532871050",
+		"NativeClientRedirect": "urn:ietf:wg:oauth:2.0:oob",
+		"PortalEndpoint": "http://manage.windowsazure.cn",
+		"ResourceEndpoint": "https://management.core.chinacloudapi.cn/",
+		"ValidateAuthority": true,
+		"VisualStudioOnlineEndpoint": "https://app.vssps.visualstudio.com/",
+		"VisualStudioOnlineAudience": "499b84ac-1321-427f-aa17-267ca6975798"
+		}
+
+- **连接到中国区 Azure 服务**
+
+	1.	确保已登出并关闭 Visual Studio。
+	2.	删除 **%temp%\servicehub** 文件夹（详细路径为 **C:\Users\%USERPROFILE%\AppData\Local\Temp\servicehub**）。
+	3.	把前面新建的 JSON 文件 (**AadProvider.Configuration.json**) 拷贝到 **%localappdata%\.IdentityService\AadConfigurations**（详细路径为 **C:\Users\v-johch\AppData\Local\.IdentityService\AadConfigurations**, **AadConfigurations** 文件夹可能不存在，需要手动创建）。
+	4.	重启 VS 并添加中国 Azure 账户即可。
+
+- **切换回 Global Azure**
+
+	1.	确保已登出并关闭 Visual Studio。
+	2.	删除文件夹 **%localappdata%\.IdentityService\AadConfigurations**
+	3.	重启 VS 即可连接 Global Azure。
 
 ##实用场景示例
 
