@@ -126,9 +126,9 @@ BrokeredMessage receivedMessage = sc.Receive();
 
 有关更多信息，请参阅以下主题。
 
-- 有关概述，请参阅 [服务总线的共享访问签名身份验证](/documentation/articles/service-bus-shared-access-signature-authentication/)
+- 有关概述，请参阅 [服务总线的共享访问签名身份验证](/documentation/articles/service-bus-sas/)
 
-- [如何使用服务总线的共享访问签名身份验证](/documentation/articles/service-bus-shared-access-signature-authentication/)
+- [如何使用服务总线的共享访问签名身份验证](/documentation/articles/service-bus-sas/)
 
 ## 考虑使用 OnMessage 方法来避免“receive 循环”
 
