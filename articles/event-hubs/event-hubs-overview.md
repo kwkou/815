@@ -55,7 +55,7 @@ Azure 事件中心是一种事件处理服务，用于向云提供大规模的�
 
 向事件中心发送事件或数据的任何实体都称为*事件发布者*。事件发布者可以使用 HTTPS 或 AMQP 1.0 发布事件。事件发布者使用共享访问签名 (SAS) 令牌在事件中心上标识自身，并且可以包含唯一标识，或使用常见的 SAS 令牌，具体取决于方案的要求。
 
-有关使用 SAS 的详细信息，请参阅[使用服务总线进行共享访问签名身份验证](/documentation/articles/service-bus-shared-access-signature-authentication/)。
+有关使用 SAS 的详细信息，请参阅[使用服务总线进行共享访问签名身份验证](/documentation/articles/service-bus-sas/)。
 
 ### 常见的发布者任务
 
@@ -63,7 +63,7 @@ Azure 事件中心是一种事件处理服务，用于向云提供大规模的�
 
 #### 获取 SAS 令牌
 
-共享访问签名 (SAS) 是事件中心的身份验证机制。服务总线在命名空间和事件中心级别提供 SAS 策略。SAS 令牌是从 SAS 密钥生成的，它是以特定格式编码的 URL 的 SHA 哈希。使用密钥（策略）和令牌的名称，服务总线可以重新生成哈希，并因此对发送者进行身份验证。通常，为事件发布者创建的 SAS 令牌只对特定的事件中心具有**发送**权限。此 SAS 令牌 URL 机制是“发布者策略”中介绍的发布者标识的基础。有关使用 SAS 的详细信息，请参阅[使用服务总线进行共享访问签名身份验证](/documentation/articles/service-bus-shared-access-signature-authentication/)。
+共享访问签名 (SAS) 是事件中心的身份验证机制。服务总线在命名空间和事件中心级别提供 SAS 策略。SAS 令牌是从 SAS 密钥生成的，它是以特定格式编码的 URL 的 SHA 哈希。使用密钥（策略）和令牌的名称，服务总线可以重新生成哈希，并因此对发送者进行身份验证。通常，为事件发布者创建的 SAS 令牌只对特定的事件中心具有**发送**权限。此 SAS 令牌 URL 机制是“发布者策略”中介绍的发布者标识的基础。有关使用 SAS 的详细信息，请参阅[使用服务总线进行共享访问签名身份验证](/documentation/articles/service-bus-sas/)。
 
 #### 发布事件
 
@@ -153,7 +153,7 @@ Azure 事件中心是一种事件处理服务，用于向云提供大规模的�
 
 	//<my namespace>.servicebus.chinacloudapi.cn/<event hub name>/publishers/<my publisher name>
 
-不需要提前创建发布者名称，但它们必须与发布事件时使用的 SAS 令牌匹配，以确保发布者标识保持独立。有关 SAS 的详细信息，请参阅[使用服务总线进行共享访问签名身份验证](/documentation/articles/service-bus-shared-access-signature-authentication/)。使用发布者策略时，**PartitionKey** 值将设置为发布者名称。若要正常工作，这些值必须匹配。
+不需要提前创建发布者名称，但它们必须与发布事件时使用的 SAS 令牌匹配，以确保发布者标识保持独立。有关 SAS 的详细信息，请参阅[使用服务总线进行共享访问签名身份验证](/documentation/articles/service-bus-sas/)。使用发布者策略时，**PartitionKey** 值将设置为发布者名称。若要正常工作，这些值必须匹配。
 
 ## 摘要
 
