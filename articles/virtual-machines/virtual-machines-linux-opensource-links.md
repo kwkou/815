@@ -42,7 +42,7 @@
 
 - [在 Azure 中的 Linux 虚拟机上安装 LAMP 堆栈](/documentation/articles/virtual-machines-linux-create-lamp-stack/)
 - [Azure 虚拟机上的 Ruby on Rails Web 应用程序](/documentation/articles/virtual-machines-linux-classic-ruby-rails-web-app/)
-- [如何：为 AMQP 和服务总线安装 Apache Qpid Proton-C](/documentation/articles/service-bus-amqp-apache/)
+- [如何：为 AMQP 和服务总线安装 Apache Qpid Proton-C](/documentation/articles/service-bus-amqp-overview/)
 
 ### 数据库
 - [优化 Azure 上的 MySQL 的性能](/documentation/articles/virtual-machines-linux-classic-optimize-mysql/)
