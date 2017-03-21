@@ -1,5 +1,5 @@
 <properties
-    pageTitle="Azure 备份 - 使用 PowerShell 部署和管理 DPM 的备份 | Azure"
+    pageTitle="Azure 备份：使用 PowerShell 来备份 DPM 工作负荷 | Azure"
     description="了解如何使用 PowerShell 部署和管理 Data Protection Manager (DPM) 的 Azure 备份"
     services="backup"
     documentationcenter=""
@@ -13,13 +13,12 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="11/28/2016"
-    wacn.date="01/24/2017"
-    ms.author="jimpark; anuragm;trinadhk;markgal" />  
+    ms.date="1/23/2017"
+    wacn.date="03/20/2017"
+    ms.author="adigan;anuragm;trinadhk;markgal" />  
 
 
 # 使用 PowerShell 部署和管理 Data Protection Manager (DPM) 服务器的 Azure 备份
-
 > [AZURE.SELECTOR]
 - [ARM](/documentation/articles/backup-dpm-automation/)
 - [经典](/documentation/articles/backup-dpm-automation-classic/)
@@ -27,12 +26,11 @@
 本文说明如何使用 PowerShell 在 DPM 服务器上设置 Azure 备份，以及管理备份和恢复。
 
 ## 设置 PowerShell 环境
-
-[AZURE.INCLUDE [了解部署模型](../../includes/learn-about-deployment-models-include.md)]
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]
 
 在可以使用 PowerShell 管理 Data Protection Manager 的 Azure 备份之前，需要在 PowerShell 中设置适当的环境。在 PowerShell 会话开始时，请确保运行以下命令，以便导入正确的模块以及正确引用 DPM cmdlet：
 
-	PS C:\> & "C:\Program Files\Microsoft System Center 2012 R2\DPM\DPM\bin\DpmCliInitScript.ps1"
+	PS C:> & "C:\Program Files\Microsoft System Center 2012 R2\DPM\DPM\bin\DpmCliInitScript.ps1"
 
 	Welcome to the DPM Management Shell!
 
@@ -76,7 +74,10 @@
 
 4. 指定要使用的存储冗余类型；你可以使用[本地冗余存储 (LRS)](/documentation/articles/storage-redundancy/#locally-redundant-storage/) 或[异地冗余存储 (GRS)](/documentation/articles/storage-redundancy/#geo-redundant-storage/)。以下示例显示，testVault 的 -BackupStorageRedundancy 选项设置为 GeoRedundant。
 
-    > [AZURE.TIP] 许多 Azure 备份 cmdlet 要求使用恢复服务保管库对象作为输入。因此，在变量中存储备份恢复服务保管库对象可提供方便。
+   	> [AZURE.TIP]
+  	 许多 Azure 备份 cmdlet 要求使用恢复服务保管库对象作为输入。因此，在变量中存储备份恢复服务保管库对象可提供方便。
+   	>
+   	>
 
 		PS C:\> $vault1 = Get-AzureRmRecoveryServicesVault -Name "testVault"
 		PS C:\> Set-AzureRmRecoveryServicesBackupProperties  -vault $vault1 -BackupStorageRedundancy GeoRedundant
@@ -186,8 +187,8 @@ DPM 服务器在注册到恢复服务保管库后，会使用默认的订阅设�
 
 > [AZURE.IMPORTANT]
 请妥善保管设置好的通行短语，并保证其安全。如果没有此通行短语，则无法从 Azure 还原数据。
-> 
-> 
+>
+>
 
 此时，你应该已对 ```$setting``` 对象做出了全部所需的更改。请记得提交更改。
 
@@ -224,7 +225,7 @@ DPM 服务器在注册到恢复服务保管库后，会使用默认的订阅设�
 
 现在使用 [Get-DPMDatasource](https://technet.microsoft.com/zh-cn/library/hh881605) cmdlet 获取 ```$server``` 上的数据源列表。在本示例中，我们将筛选要为备份配置的卷 *D:*。然后，使用 [Add-DPMChildDatasource](https://technet.microsoft.com/zh-cn/library/hh881732) cmdlet 将此数据源添加到保护组。请记得使用 *modifiable* 保护组对象 ```$MPG``` 来完成添加。
 
-	PS C:\> $DS = Get-Datasource -ProductionServer $server -Inquire | where { $_.Name -contains "D:" }
+	PS C:\> $DS = Get-Datasource -ProductionServer $server -Inquire | where { $_.Name -contains "D:\" }
 
 	PS C:\> Add-DPMChildDatasource -ProtectionGroup $MPG -ChildDatasource $DS
 
@@ -289,6 +290,7 @@ DPM 服务器在注册到恢复服务保管库后，会使用默认的订阅设�
 
 ## 查看备份点
 可以使用 [Get-DPMRecoveryPoint](https://technet.microsoft.com/zh-cn/library/hh881746) cmdlet 来获取数据源的所有恢复点列表。在本示例中，我们将：
+
 - 获取 DPM 服务器上的和存储在数组 ```$PG``` 中的所有 PG
 - 获取对应于 ```$PG[0]``` 的数据源
 - 获取数据源的所有恢复点。
@@ -320,5 +322,5 @@ DPM 服务器在注册到恢复服务保管库后，会使用默认的订阅设�
 
 - 有关 DPM 到 Azure 备份的详细信息，请参阅 [DPM 备份简介](/documentation/articles/backup-azure-dpm-introduction-classic/)
 
-<!---HONumber=Mooncake_0116_2017-->
+<!---HONumber=Mooncake_0313_2017-->
 <!---Update_Description: wording update -->

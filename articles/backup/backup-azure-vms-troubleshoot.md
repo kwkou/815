@@ -1,5 +1,5 @@
 <properties
-    pageTitle="Azure 虚拟机备份疑难解答 | Azure"
+    pageTitle="排查 Azure 虚拟机的备份错误 | Azure"
     description="Azure 虚拟机备份和还原疑难解答"
     services="backup"
     documentationcenter=""
@@ -13,9 +13,9 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="12/20/2016"
-    wacn.date="02/21/2017"
-    ms.author="trinadhk;jimpark;" />
+    ms.date="01/18/2017"
+    wacn.date="03/20/2017"
+    ms.author="trinadhk;markgal;jpallavi;" />
 
 # Azure 虚拟机备份疑难解答
 > [AZURE.SELECTOR]
@@ -42,7 +42,8 @@
 | 找不到 Azure 虚拟机。 |如果主 VM 已删除，而备份策略仍继续查找用于执行备份的 VM，则会发生这种情况。若要修复此错误，请执行以下操作：<ol><li>使用相同的名称和相同的资源组名称[云服务名称]重新创建虚拟机，<br>（或者）<li>禁用对此 VM 的保护，这样就不会创建备份作业。</ol> |
 | 虚拟机上不存在虚拟机代理 - 请安装任何必备组件和 VM 代理，然后重启操作。 |[详细了解](#vm-agent)如何安装 VM 代理以及如何验证 VM 代理安装。 |
 | 快照操作因 VSS 编写器处于错误状态而失败 |需要重启处于错误状态的 VSS（卷影复制服务）编写器。若要完成此操作，请通过权限提升的命令提示符运行 _vssadmin list writers_。输出包含所有 VSS 编写器及其状态。对于每个状态不是“[1] 稳定”的 VSS 编写器，请通过权限提升的命令提示符运行以下命令，重启 VSS 编写器：<br>_net stop serviceName_<br>_net start serviceName_|
-| 快照操作因未能分析配置而失败 |发生这种情况的可能原因包括：MachineKeys 目录 (_%systemdrive%\\programdata\\microsoft\\crypto\\rsa\\machinekeys_) 的权限发生更改<br>请运行以下命令，验证 MachineKeys 目录的权限是否为默认权限：<br>_icacls %systemdrive%\\programdata\\microsoft\\crypto\\rsa\\machinekeys_<br><br>默认权限为：<br>Everyone:(R,W)<br>BUILTIN\\Administrators:(F)<br><br>如果在 MachineKeys 目录上看到的权限与默认权限不同，请按照以下步骤更正权限、删除证书并触发备份。<ol><li>修复 MachineKeys 目录上的权限。<br>在该目录中使用资源管理器安全属性和高级安全设置、将权限重置为默认值、从目录删除任何额外的（默认值以外的）用户对象，并确保“Everyone”权限对以下对象拥有特殊的访问权限：<br>-列出文件夹/读取数据<br>-读取属性<br>-读取扩展属性<br>-创建文件/写入数据<br>-创建文件夹/附加数据<br>-写入属性<br>-写入扩展属性<br>-读取权限<br><br><li>删除“颁发对象”字段为“Azure Service Management for Extensions”的证书<ul><li>[打开证书控制台](https://msdn.microsoft.com/zh-cn/library/ms788967(v=vs.110).aspx)<li>删除“颁发对象”字段为“Azure Service Management for Extensions”的证书（在“个人”->“证书”下）</ul><li>触发 VM 备份。</ol>|
+| 快照操作因未能分析配置而失败 |发生这种情况的可能原因包括：MachineKeys 目录 (_%systemdrive%\\programdata\\microsoft\\crypto\\rsa\\machinekeys_) 的权限发生更改<br>请运行以下命令，验证 MachineKeys 目录的权限是否为默认权限：<br>_icacls %systemdrive%\\programdata\\microsoft\\crypto\\rsa\\machinekeys_<br><br>默认权限为：<br>Everyone:(R,W)<br>BUILTIN\\Administrators:(F)<br><br>如果在 MachineKeys 目录上看到的权限与默认权限不同，请按照以下步骤更正权限、删除证书并触发备份。<ol><li>修复 MachineKeys 目录上的权限。<br>在该目录中使用资源管理器安全属性和高级安全设置、将权限重置为默认值、从目录删除任何额外的（默认值以外的）用户对象，并确保“Everyone”权限对以下对象拥有特殊的访问权限：<br>-列出文件夹/读取数据<br>-读取属性<br>-读取扩展属性<br>-创建文件/写入数据<br>-创建文件夹/附加数据<br>-写入属性<br>-写入扩展属性<br>-读取权限<br><br><li>删除“颁发对象”字段为“Azure Service Management for Extensions”的证书<ul><li>[打开证书控制台]https://msdn.microsoft.com/zh-cn/library/ms788967(v=vs.110).aspx)<li>删除“颁发对象”字段为“Azure Service Management for Extensions”的证书（在“个人”->“证书”下）</ul><li>触发 VM 备份。</ol>|
+| 验证失败，因为虚拟机仅使用 BEK 进行加密。仅可为同时使用 BEK 和 KEK 进行加密的虚拟机启用备份。 |虚拟机应同时使用 BitLocker 加密密钥和密钥加密密钥进行加密。之后，应启用备份。 |
 
 ## 作业
 | 错误详细信息 | 解决方法 |
@@ -112,9 +113,10 @@ VM 备份依赖于向底层存储发出快照命令。如果无法访问存储�
 		[HKEY_LOCAL_MACHINE\SOFTWARE\MICROSOFT\BCDRAGENT]
 		"USEVSSCOPYBACKUP"="TRUE"
 
-3.  由于在 RDP 中关闭了 VM，VM 状态报告不正确。<br>如果在 RDP 中关闭了虚拟机，请返回门户检查是否正确反映了 VM 的状态。如果没有，请在门户中使用 VM 仪表板上的“关机”选项关闭 VM。
-4.  如果四个以上的 VM 共享同一云服务，请配置多个备份策略以将备份时间错开，避免同时启动四个以上的 VM 备份。尝试使策略之间的备份开始时间相差一个小时。
-5.  VM 正在以高 CPU/内存使用率运行。<br> 如果虚拟机在运行时的 CPU 或内存使用率很高（超过 90%），快照任务将排队、延迟并最终超时。在这种情况下，请尝试进行按需备份。
+
+3. 由于在 RDP 中关闭了 VM，VM 状态报告不正确。<br>如果在 RDP 中关闭了虚拟机，请返回门户检查是否正确反映了 VM 的状态。如果没有，请在门户中使用 VM 仪表板上的“关机”选项关闭 VM。
+4. 如果四个以上的 VM 共享相同的云服务，请配置多个备份策略将备份时间错开，避免同时启动四个以上的 VM 备份。尝试使策略之间的备份开始时间相差一个小时。
+5. VM 正在以高 CPU/内存使用率运行。<br> 如果虚拟机在运行时的 CPU 或内存使用率很高（超过 90%），快照任务将排队、延迟并最终超时。在这种情况下，请尝试进行按需备份。
 
 ## 联网
 与所有扩展一样，备份扩展也需要访问公共 Internet 才能工作。无法访问公共 Internet 时，可能会出现以下各种情况：
@@ -140,5 +142,5 @@ VM 备份依赖于向底层存储发出快照命令。如果无法访问存储�
 >
 >
 
-<!---HONumber=Mooncake_0213_2017-->
+<!---HONumber=Mooncake_0313_2017-->
 <!---Update_Description: wording update -->

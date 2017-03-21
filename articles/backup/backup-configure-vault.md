@@ -1,13 +1,12 @@
 <properties
-    pageTitle="通过资源管理器部署模型使用 Azure 备份将 Windows Server 或客户端备份到 Azure | Azure"
+    pageTitle="将 Windows Server 备份到 Azure (资源管理器) | Azure"
     description="通过创建备份保管库、下载凭据、安装备份代理并完成文件和文件夹的初始备份，将 Windows 服务器或客户端备份到 Azure。"
     services="backup"
     documentationcenter=""
     author="markgalioto"
-    manager="cfreeman"
+    manager="carmonm"
     editor=""
-    keywords="备份保管库; 备份 Windows 服务器; 备份 windows;" />  
-
+    keywords="备份保管库; 备份 Windows 服务器; 备份 windows;" />
 <tags
     ms.assetid="7f5b1943-b3c1-4ddb-8fb7-3560533c68d5"
     ms.service="backup"
@@ -15,13 +14,12 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="11/16/2016"
-    wacn.date="03/16/2017"
-    ms.author="jimpark; trinadhk; markgal" />  
+    ms.date="2/16/2017"
+    wacn.date="03/20/2017"
+    ms.author="markgal;trinadhk;" />  
 
 
 # 通过资源管理器部署模型将 Windows Server 或客户端备份到 Azure
-
 > [AZURE.SELECTOR]
 - [资源管理器](/documentation/articles/backup-configure-vault/)
 - [经典部署模型](/documentation/articles/backup-configure-vault-classic/)
@@ -115,7 +113,7 @@
 
     可以计划每日（频率为一天最多三次）或每周备份。
 
-    ![Windows Server 备份项](./media/backup-configure-vault/specify-backup-schedule-close.png)  
+    ![Windows Server 备份项](./media/backup-configure-vault/specify-backup-schedule-close.png)
 
 
     >[AZURE.NOTE] 有关如何指定备份计划的详细信息，请参阅[使用 Azure 备份来取代磁带基础结构](/documentation/articles/backup-azure-backup-cloud-as-tape/)一文。
@@ -166,6 +164,7 @@
 ## 后续步骤
 有关备份 VM 或其他工作负荷的详细信息，请参阅：
 
-- 如果需要还原备份，请参阅[将文件还原到 Windows 计算机](/documentation/articles/backup-azure-restore-windows-server/)一文。
+- 备份文件和文件夹后，可以[管理保管库和服务器](/documentation/articles/backup-azure-manage-windows-server-classic/)。
 
-<!---HONumber=Mooncake_1212_2016-->
+<!---HONumber=Mooncake_0313_2017-->
+<!--Update_Description: wording update-->
