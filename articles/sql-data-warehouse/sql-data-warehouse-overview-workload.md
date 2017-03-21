@@ -1,21 +1,21 @@
 <properties
-   pageTitle="数据仓库工作负荷"
-   description="借助 SQL 数据仓库的弹性，你可以使用数据仓库单位 (DWU) 的可调缩放性扩大、收缩或暂停计算容量。本文介绍数据仓库指标以及它们如何与 DWU 相关。"
-   services="sql-data-warehouse"
-   documentationCenter="NA"
-   authors="barbkess"
-   manager="barbkess"
-   editor=""/>
-
+    pageTitle="了解 Azure SQL 数据仓库操作 | Azure"
+    description="借助 SQL 数据仓库的弹性，可以使用数据仓库单位 (DWU) 的可调缩放性增强、降低或暂停计算能力。本文介绍数据仓库指标以及它们如何与 DWU 相关。"
+    services="sql-data-warehouse"
+    documentationcenter="NA"
+    author="barbkess"
+    manager="jhubbard"
+    editor="" />
 <tags
-   ms.service="sql-data-warehouse"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="data-services"
-   ms.date="10/31/2016"
-   wacn.date="01/03/2017"
-   ms.author="barbkess;mausher;jrj;sonyama"/>
+    ms.assetid="cadffa9c-589d-4db7-888a-1f202a753bc5"
+    ms.service="sql-data-warehouse"
+    ms.devlang="NA"
+    ms.topic="article"
+    ms.tgt_pltfrm="NA"
+    ms.workload="data-services"
+    ms.date="10/31/2016"
+    wacn.date="03/20/2017"
+    ms.author="barbkess;mausher" />
 
 
 # 数据仓库工作负荷
@@ -26,9 +26,12 @@
 
 数据仓库的特点在于查询可以扫描数量较大的行和大范围的数据，还可以返回相对较大的结果用于分析和报告目的。与小规模事务级插入/更新/删除操作相比，可加载相对较大的数据也是数据仓库的特点。
 
-- 如果以扫描大量行或大范围数据所需的优化查询方式存储数据，数据仓库便能提供最佳性能。如果按列（而不是行）存储和搜索数据，这种扫描类型可以提供最佳效果。
+* 如果以扫描大量行或大范围数据所需的优化查询方式存储数据，数据仓库便能提供最佳性能。如果按列（而不是行）存储和搜索数据，这种扫描类型可以提供最佳效果。
 
->[AZURE.NOTE] 与用于报告和分析查询的传统二进制树相比，使用列存储的内存中列存储索引最大可将压缩量提升 10 倍，将查询性能提升 100 倍。我们将列存储索引视为在数据仓库中存储和扫描大量数据的标准。
+> [AZURE.NOTE]
+> 与用于报告和分析查询的传统二进制树相比，使用列存储的内存中列存储索引最大可将压缩量提升 10 倍，将查询性能提升 100 倍。我们将列存储索引视为在数据仓库中存储和扫描大量数据的标准。
+> 
+> 
 
 * 数据仓库与针对联机事务处理 (OLTP) 进行优化的系统存在不同的要求。OLTP 系统有许多插入、更新和删除操作。这些操作搜索表中的特定行。如果数据以逐行方式存储，表搜索便能提供最佳性能。可以使用分治法（称为二进制树或 btree 搜索）排序和快速搜索数据。
 
@@ -37,7 +40,10 @@
 
 * 传统上，加载过程称为 ETL，即提取、转换和加载。数据通常需要进行转换才能与数据仓库中的其他数据保持一致。以前，企业使用专用的 ETL 服务器执行转换。现在，若要进行如此快速的大规模并行处理，你可以先将数据载入 SQL 数据仓库，然后再执行转换。此过程称为提取、加载和转换 (ELT)，正逐渐成为数据仓库工作负荷的全新标准。
 
-> [AZURE.NOTE] 现在，你使用 SQL Server 2016 就能对 OLTP 表进行实时分析。尽管这不会取代数据仓库存储和分析数据的需求，但确实为执行实时分析提供了一种方式。
+> [AZURE.NOTE]
+> 现在，你使用 SQL Server 2016 就能对 OLTP 表进行实时分析。尽管这不会取代数据仓库存储和分析数据的需求，但确实为执行实时分析提供了一种方式。
+> 
+> 
 
 ### 报告和分析查询
 报告和分析查询通常根据几个条件分成小型、中型和大型，但通常是根据时间。在大多数数据仓库中，还有快速运行与长时间运行查询的混合工作负荷。在每种情况下，必须确定此混合方式以及它的频率（每小时、每天、月末、季末等等）。请务必了解混合查询工作负荷配合并发性可为数据仓库提供适当的容量计划。
@@ -57,16 +63,17 @@
 * 若要执行分析，可以在数据仓库中生成分析多维数据集，然后针对数据仓库运行分析，或是预先处理数据，然后再导出到分析服务器做进一步的分析。
 
 ## 后续步骤
-对 SQL 数据仓库有了初步的认识后，请继续了解如何快速[创建 SQL 数据仓库][]和[加载示例数据][]。
+对 SQL 数据仓库有了初步的认识后，请继续了解如何快速[创建 SQL 数据仓库][create a SQL Data Warehouse]和[加载示例数据][load sample data]。
 
 <!--Image references-->
 
 <!--Article references-->
-[加载示例数据]: /documentation/articles/sql-data-warehouse-load-sample-databases/
-[创建 SQL 数据仓库]: /documentation/articles/sql-data-warehouse-get-started-provision-powershell/
+[load sample data]: /documentation/articles/sql-data-warehouse-load-sample-databases/
+[create a SQL Data Warehouse]: /documentation/articles/sql-data-warehouse-get-started-provision/
 
 <!--MSDN references-->
 
 <!--Other web references-->
 
-<!---HONumber=Mooncake_Quality_Review_1230_2016-->
+<!---HONumber=Mooncake_0313_2017-->
+<!--Update_Description:update meta properties;wording update-->

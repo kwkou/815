@@ -1,29 +1,31 @@
 <properties
-   pageTitle="适用于 SQL 数据仓库和并行数据仓库大规模并行处理 (MPP) 系统的分布式数据和分布式表选项 | Azure"
-   description="了解如何分布数据以便进行大规模并行处理 (MPP)，以及在 Azure SQL 数据仓库和并行数据仓库中分布表的选项。"
-   services="sql-data-warehouse"
-   documentationCenter="NA"
-   authors="barbkess"
-   manager="barbkess"
-   editor=""/>  
-
-
+    pageTitle="分布式数据在 Azure SQL 数据仓库中的工作原理 | Azure"
+    description="了解如何分布数据以便进行大规模并行处理 (MPP)，以及在 Azure SQL 数据仓库和并行数据仓库中分布表的选项。"
+    services="sql-data-warehouse"
+    documentationcenter="NA"
+    author="barbkess"
+    manager="jhubbard"
+    editor="" />
 <tags
-   ms.service="sql-data-warehouse"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="NA"
-   ms.workload="data-services"
-   ms.date="10/31/2016"
-   wacn.date="12/12/2016"
-   ms.author="barbkess"/>  
+    ms.assetid="bae494a6-7ac5-4c38-8ca3-ab2696c63a9f"
+    ms.service="sql-data-warehouse"
+    ms.devlang="NA"
+    ms.topic="article"
+    ms.tgt_pltfrm="NA"
+    ms.workload="data-services"
+    ms.date="10/31/2016"
+    wacn.date="03/20/2017"
+    ms.author="barbkess" />  
 
 
 
 # 适用于大规模并行处理 (MPP) 的分布式数据和分布式表
 了解用户数据在 Azure SQL 数据仓库和并行数据仓库中是如何分布的，这些仓库是 Microsoft 的大规模并行处理 (MPP) 系统。设计数据仓库时，需考虑到有效使用分布式数据，充分利用 MPP 体系结构的查询处理优势。某些数据库设计选择可能会对查询性能有着重大影响。
 
->[AZURE.NOTE] Azure SQL 数据仓库和并行数据仓库使用相同的大规模并行处理 (MPP) 设计，但由于基础平台的不同，也存在一些区别。SQL 数据仓库是在 Azure 上运行的平台即服务 (PaaS)。并行数据仓库运行在分析平台系统 (APS) 上，后者是运行在 Windows Server 上的本地设备。
+> [AZURE.NOTE]
+Azure SQL 数据仓库和并行数据仓库使用相同的大规模并行处理 (MPP) 设计，但由于基础平台的不同，也存在一些区别。SQL 数据仓库是在 Azure 上运行的平台即服务 (PaaS)。并行数据仓库运行在分析平台系统 (APS) 上，后者是运行在 Windows Server 上的本地设备。
+> 
+> 
 
 ## 什么是分布式数据？
 在 SQL 数据仓库和并行数据仓库中，分布式数据是指存储在 MPP 系统的多个位置的用户数据。每个这样的位置都可以充当独立的存储和处理单元，对部分数据运行查询。若要并行运行查询以提高查询性能，则分布式数据是基础。
@@ -73,4 +75,5 @@
 ## 后续步骤
 若要有效地使用分布式表，请参阅 [Distributing tables in SQL Data Warehouse](/documentation/articles/sql-data-warehouse-tables-distribute/)（在 SQL 数据仓库中分布表）
 
-<!---HONumber=Mooncake_1205_2016-->
+<!---HONumber=Mooncake_0313_2017-->
+<!--Update_Description:update meta properties-->

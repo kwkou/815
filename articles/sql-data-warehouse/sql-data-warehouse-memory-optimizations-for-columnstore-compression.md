@@ -1,5 +1,5 @@
 <properties
-    pageTitle="内存优化 - Azure SQL 数据仓库中的列存储索引 | Azure"
+    pageTitle="提高 Azure SQL 中的列存储索引性能 | Azure"
     description="减少内存需求或增加可用内存，使列存储索引压缩到每个行组中的行数最大化。"
     services="sql-data-warehouse"
     documentationcenter="NA"
@@ -14,8 +14,9 @@
     ms.tgt_pltfrm="NA"
     ms.workload="data-services"
     ms.date="11/18/2016"
-    wacn.date="12/12/2016"
-    ms.author="shigu;barbkess" />
+    wacn.date="03/20/2017"
+    ms.author="shigu;barbkess" />  
+
 
 # 列存储压缩的内存优化
 
@@ -35,7 +36,7 @@
 
 如果内存不足，无法将至少 10,000 个行压缩到每个行组中，SQL 数据仓库将生成错误。
 
-有关批量加载的详细信息，请参阅[批量加载到聚集列存储索引中](https://msdn.microsoft.com/zh-CN/library/dn935008.aspx)。
+有关批量加载的详细信息，请参阅[批量加载到聚集列存储索引中](https://msdn.microsoft.com/zh-cn/library/dn935008.aspx)。
 
 ## 如何估算内存需求
 
@@ -52,7 +53,7 @@
 
 使用专为压缩文本设计的压缩方法来压缩长字符串。此压缩方法使用*词典*来存储文本模式。词典最大大小为 16 MB。行组中每个长字符串列只能有一个词典。
 
-有关列存储内存需求的深入讨论，请观看视频 [Azure SQL 数据仓库缩放：配置和指南](https://myignite.microsoft.com/videos/14822)。
+有关列存储内存需求的深入讨论，请观看视频 [Azure SQL Data Warehouse scaling: configuration and guidance](https://myignite.microsoft.com/videos/14822)（Azure SQL 数据仓库缩放：配置和指南）。
 
 ## 减少内存需求的方法
 
@@ -88,12 +89,10 @@
 
 若要减少内存压力，可使用 MAXDOP 查询提示，在每次分发中强制加载操作以串行模式运行。
 
-
-	CREATE TABLE MyFactSalesQuota 
-	WITH (DISTRIBUTION = ROUND_ROBIN)
-	AS SELECT * FROM FactSalesQUota 
-	OPTION (MAXDOP 1);
-
+    CREATE TABLE MyFactSalesQuota 
+    WITH (DISTRIBUTION = ROUND_ROBIN)
+    AS SELECT * FROM FactSalesQUota 
+    OPTION (MAXDOP 1);
 
 ## 分配更多内存的方法
 
@@ -124,4 +123,5 @@ DWU 大小和用户资源类共同确定用户查询可用的内存量。若要�
 
 <!--Other Web references-->
 
-<!---HONumber=Mooncake_1205_2016-->
+<!---HONumber=Mooncake_0313_2017-->
+<!--Update_Description:update meta properties;wording update-->
