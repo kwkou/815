@@ -1,5 +1,5 @@
 <properties
-    pageTitle="Azure 存储复制 | Azure"
+    pageTitle="Azure 存储中的数据复制 | Azure"
     description="复制 Azure 存储帐户中的数据以实现持久性和高可用性。复制选项包括本地冗余存储 (LRS)、异地冗余存储 (GRS) 和读取访问异地冗余存储 (RA-GRS)。"
     services="storage"
     documentationcenter=""
@@ -13,8 +13,8 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="12/08/2016"
-    wacn.date="01/06/2017"
+    ms.date="01/23/2017"
+    wacn.date="03/20/2017"
     ms.author="marsma" />
 
 # Azure 存储复制
@@ -66,7 +66,7 @@ LRS 的成本最低，与其他选项相比，存储的持久性最小。如果�
 注意事项：
 
 * 由于异步复制涉及延迟，因此在遇到区域性灾难时，如果无法从主要区域中恢复数据，则可能会丢失尚未复制到次要区域的更改。
-* 在 Azure 启动故障转移到次要区域之前，该副本不可用。
+* 在 Azure 启动故障转移到次要区域之前，该副本不可用。如果 Azure 启动了到次要区域的故障转移，则在故障转移完成以后，用户将具有该数据的读取和写入访问权限。有关详细信息，请参阅[灾难恢复指南](/documentation/articles/storage-disaster-recovery-guidance/)。
 * 如果应用程序想要从次要区域读取，用户应启用 RA-GRS。
 
 创建存储帐户时，可以为帐户选择主要区域。次要区域是根据主要区域确定的且无法更改。下表显示了配对的主要区域和次要区域。
@@ -85,9 +85,12 @@ LRS 的成本最低，与其他选项相比，存储的持久性最小。如果�
 注意事项：
 
 * 应用程序必须管理在使用 RA-GRS 时要与哪些终结点进行交互。
+* 由于异步复制涉及延迟，因此在遇到区域性灾难时，如果无法从主要区域中恢复数据，则可能会丢失尚未复制到次要区域的更改。
+* 如果 Azure 启动了到次要区域的故障转移，则在故障转移完成以后，用户将具有该数据的读取和写入访问权限。有关详细信息，请参阅[灾难恢复指南](/documentation/articles/storage-disaster-recovery-guidance/)。
 * 要实现高可用性时使用 RA-GRS。有关可伸缩性指南，请查看[性能核对清单](/documentation/articles/storage-performance-checklist/)。
 
 ## 后续步骤
+- [使用 RA-GRS 存储设计高度可用的应用程序](/documentation/articles/storage-designing-ha-apps-with-ragrs/)
 - [Azure 存储定价](/pricing/details/storage/)
 - [关于 Azure 存储帐户](/documentation/articles/storage-create-storage-account/)
 - [Azure 存储可伸缩性和性能目标](/documentation/articles/storage-scalability-targets/)
@@ -95,4 +98,5 @@ LRS 的成本最低，与其他选项相比，存储的持久性最小。如果�
 - [SOSP 论文 - Azure 存储空间：具有高度一致性的高可用云存储服务](http://blogs.msdn.com/b/windowsazurestorage/archive/2011/11/20/windows-azure-storage-a-highly-available-cloud-storage-service-with-strong-consistency.aspx)
  
 
-<!---HONumber=Mooncake_0103_2017-->
+<!---HONumber=Mooncake_0313_2017-->
+<!--Update_Description: add introduce to storage disaster recovery-->

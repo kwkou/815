@@ -8,14 +8,15 @@
 	editor="tysonn"/>
 
 <tags
-	ms.service="storage"
-	ms.workload="storage"
-	ms.tgt_pltfrm="na"
-	ms.devlang="dotnet"
-	ms.topic="article"
-	ms.date="08/03/2016"
-	wacn.date="12/19/2016"
-	ms.author="fryu;robinsh"/>
+    ms.assetid="0407adfc-2a41-4126-922d-b76e90b74563"
+    ms.service="storage"
+    ms.workload="storage"
+    ms.tgt_pltfrm="na"
+    ms.devlang="dotnet"
+    ms.topic="article"
+    ms.date="02/03/2017"
+    wacn.date="03/20/2017"
+    ms.author="robinsh" />
 
 # 启用 Azure 存储指标并查看指标数据
 
@@ -35,7 +36,8 @@
 1. 打开“设置”边栏选项卡，然后选择“诊断”。
 1. 确保“状态”设置为“打开”。
 1. 为要监视的服务选择指标。
-2. 指定用于指示指标和日志数据保留时长的保留策略。
+1. 指定用于指示指标和日志数据保留时长的保留策略。
+1. 选择“保存”。
 
 请注意，[Azure 门户预览](https://portal.azure.cn)目前不允许在存储帐户中配置分钟指标；必须通过 PowerShell 或编程方式启用分钟指标。
 
@@ -99,9 +101,10 @@
 在将存储分析指标配置为监视存储帐户后，存储分析将使用存储帐户在一组已知表中记录指标。可以将图表配置为每小时查看 [Azure 门户预览](https://portal.azure.cn)中的指标：
 
 1. 在 [Azure 门户预览](https://portal.azure.cn)中导航到存储帐户。
-2. 在“监视”部分中，单击“添加磁贴”以添加一个新图表。在“磁贴库”中，选择要查看的指标并将其拖到“监视”部分。
-3. 若要编辑要在图表中显示的指标，请单击“编辑”链接。可以通过选择或取消选择单个指标来进行添加或删除。
-4. 编辑完指标后，单击“保存”。
+1. 对于需要查看其指标的服务，请在“菜单”边栏选项卡中选择“指标”。
+1. 在要配置的图表上选择“编辑”。
+1. 在“编辑图表”边栏选项卡中，选择“时间范围”、“图表类型”以及要在图表中显示的指标。
+1. 选择“确定”
 
 若要下载指标供长期存储或本地分析，需执行以下操作：
 
@@ -131,7 +134,7 @@
 有关这些表的完整架构详细信息，请参阅[存储分析指标表架构](https://msdn.microsoft.com/zh-cn/library/azure/hh343264.aspx)。以下示例行仅显示一部分可用列，但也说明了“存储指标”保存这些指标的方式的一些重要特征：
 
 | PartitionKey | RowKey | Timestamp | TotalRequests | TotalBillableRequests | TotalIngress | TotalEgress | Availability | AverageE2ELatency | AverageServerLatency | PercentSuccess |
-|---------------|:------------------:|-----------------------------:|---------------|-----------------------|--------------|-------------|--------------|-------------------|----------------------|----------------|
+| --- |:---:| ---:| --- | --- | --- | --- | --- | --- | --- | --- |
 | 20140522T1100 | user;All | 2014-05-22T11:01:16.7650250Z | 7 | 7 | 4003 | 46801 | 100 | 104\.4286 | 6\.857143 | 100 |
 | 20140522T1100 | user;QueryEntities | 2014-05-22T11:01:16.7640250Z | 5 | 5 | 2694 | 45951 | 100 | 143\.8 | 7\.8 | 100 |
 | 20140522T1100 | user;QueryEntity | 2014-05-22T11:01:16.7650250Z | 1 | 1 | 538 | 633 | 100 | 3 | 3 | 100 |
@@ -144,7 +147,7 @@
 - 请求类型是 all（在这种情况下是摘要行）或可识别的特定 API，如 QueryEntity 或 UpdateEntity。
 
 
-上面的示例数据显示一分钟的所有记录（从上午 11:00 开始），因此，QueryEntities 请求数加 QueryEntity 请求数再加 UpdateEntity 请求数的和为 7，这是显示在 user:All 行上的总数。同样，通过计算 ((143.8 * 5) + 3 + 9)/7，可以在 user:All 行得到平均端到端延迟为 104.4286。
+上面的示例数据显示一分钟的所有记录（从上午 11:00 开始），因此 QueryEntities 请求数加 QueryEntity 请求数再加 UpdateEntity 请求数的和为 7，这是显示在 user:All 行上的总数。同样，通过计算 ((143.8 * 5) + 3 + 9)/7，可以在 user:All 行得到平均端到端延迟为 104.4286。
 
 应考虑在 [Azure 门户预览](https://portal.azure.cn)中的“监视”页上设置警报，以便存储指标自动通知存储服务行为中发生的任何重要更改。如果使用存储资源管理器工具下载这种采用分隔格式的指标数据，可使用 Microsoft Excel 分析该数据。有关可用存储资源管理器工具的列表，请参阅博客文章 [Azure 存储资源管理器](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/03/11/windows-azure-storage-explorers-2014.aspx)。
 
@@ -215,4 +218,4 @@
 ## 后续步骤：
 [启用存储日志记录和访问日志数据](https://msdn.microsoft.com/zh-cn/library/dn782840.aspx)
 
-<!---HONumber=Mooncake_Quality_Review_1202_2016-->
+<!---HONumber=Mooncake_0313_2017-->

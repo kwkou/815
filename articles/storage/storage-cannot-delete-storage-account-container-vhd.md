@@ -6,8 +6,7 @@
     author="genlin"
     manager="felixwu"
     editor="tysonn"
-    tags="storage" />  
-
+    tags="storage" />
 <tags
     ms.assetid="0f7a8243-d8dc-432a-9d37-1272a0cb3a5c"
     ms.service="storage"
@@ -15,8 +14,8 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="11/21/2016"
-    wacn.date="12/29/2016"
+    ms.date="02/08/2017"
+    wacn.date="03/20/2017"
     ms.author="genli" />  
 
 
@@ -34,29 +33,22 @@
 以下部分列出了试图删除 Azure 存储帐户、容器或 VHD 时可能收到的常见错误。
 
 ### 应用场景 1：无法删除存储帐户
-导航到 [Azure 门户预览](https://portal.azure.cn/)或 [Azure 经典管理门户](https://manage.windowsazure.cn/)中的存储帐户并选择“删除”时，可能会看到以下错误消息：
+导航到 [Azure 门户预览](https://portal.azure.cn/)中的经典存储帐户并选择“删除”时，可能会看到阻止删除存储帐户的对象列表：
 
-*存储帐户 StorageAccountName 包含 VM 映像。删除此存储帐户前，请确保已删除这些 VM 映像。*
+  ![图像：删除存储帐户时出错](./media/storage-cannot-delete-storage-account-container-vhd/newerror.png)  
 
-还可能看到此错误：
 
-**Azure 门户预览**：
+导航到 [Azure 经典管理门户](https://manage.windowsazure.cn/)中的存储帐户并选择“删除”时，可能会看到以下错误之一：
 
-*未能删除存储帐户 <vm-storage-account-name>。无法删除存储帐户 <vm-storage-account-name>：“存储帐户 <vm-storage-account-name> 具有一些活动的映像和/或磁盘。删除此存储帐户前，请确保删除这些映像和/或磁盘。”*
+- *存储帐户 StorageAccountName 包含 VM 映像。删除此存储帐户前，请确保已删除这些 VM 映像。*
 
-**Azure 经典管理门户**：
+- *未能删除存储帐户 <vm-storage-account-name>。无法删除存储帐户 <vm-storage-account-name>：“存储帐户 <vm-storage-account-name> 具有一些活动的映像和/或磁盘。删除此存储帐户前，请确保删除这些映像和/或磁盘。”*
 
-*存储帐户 <vm-storage-account-name> 具有活动的映像和/或磁盘，例如 xxxxxxxxx- xxxxxxxxx-O-209490240936090599。删除此存储帐户前，请确保删除这些映像和/或磁盘。*
+- *存储帐户 <vm-storage-account-name> 具有活动的映像和/或磁盘，例如 xxxxxxxxx- xxxxxxxxx-O-209490240936090599。删除此存储帐户前，请确保删除这些映像和/或磁盘。*
 
-或
+- *存储帐户 <vm-storage-account-name> 拥有 1 个具有活动的映像和/或磁盘项目的容器。删除此存储帐户前，请确保从映像存储库中删除这些项目*。
 
-**Azure 门户预览**：
-
-*存储帐户 <vm-storage-account-name> 拥有 1 个具有活动的映像和/或磁盘项目的容器。删除此存储帐户前，请确保从映像存储库中删除这些项目*。
-
-**Azure 经典管理门户**：
-
-*提交失败的存储帐户 <vm-storage-account-name> 拥有 1 个具有活动的映像和/或磁盘项目的容器。删除此存储帐户前，请确保从映像存储库中删除这些项目。当你试图删除某个存储帐户，但仍存在与之关联的活动磁盘时，你将看到一条告诉你有活动磁盘需要进行删除的消息*。
+- *提交失败的存储帐户 <vm-storage-account-name> 拥有 1 个具有活动的映像和/或磁盘项目的容器。删除此存储帐户前，请确保从映像存储库中删除这些项目。当你试图删除某个存储帐户，但仍存在与之关联的活动磁盘时，你将看到一条告诉你有活动磁盘需要进行删除的消息*。
 
 ### 应用场景 2：无法删除容器
 尝试删除存储容器时，可能会看到以下错误：
@@ -65,7 +57,7 @@
 
 或
 
-“以下虚拟机磁盘使用了此容器中的 Blob，因此无法删除该容器: VirtualMachineDiskName1、VirtualMachineDiskName2...”
+*“以下虚拟机磁盘使用了此容器中的 Blob，因此无法删除该容器: VirtualMachineDiskName1、VirtualMachineDiskName2...”*
 
 ### 应用场景 3：无法删除 VHD
 删除 VM 并随后尝试删除与 VHD 关联的 blob 后，可能会收到以下消息：
@@ -74,7 +66,7 @@
 
 或
 
-Blob ‘BlobName.vhd’ 已用作虚拟机磁盘 ‘VirtualMachineDiskName’，因此无法删除该 Blob。
+*Blob ‘BlobName.vhd’ 已用作虚拟机磁盘 ‘VirtualMachineDiskName’，因此无法删除该 Blob。*
 
 ## 解决方案
 若要解决最常见的问题，请尝试以下方法：
@@ -115,13 +107,15 @@ Blob ‘BlobName.vhd’ 已用作虚拟机磁盘 ‘VirtualMachineDiskName’，
 
 
 ### 步骤 2：删除任何阻止删除存储帐户或容器的 VM 映像
-1. 切换到 [Azure 经典管理门户](https://manage.windowsazure.CN/)。
+1. 切换到 [Azure 经典管理门户](https://manage.windowsazure.cn/)。
 2. 选择“虚拟机”>“映像”，然后删除与存储帐户、容器或 VHD 关联的映像。
 
     之后，再次尝试删除存储帐户、容器或 VHD。
 
-> [AZURE.WARNING]请在删除帐户之前务必备份你想要保存的任何内容。无法恢复已删除的存储帐户，也无法检索删除之前该存储帐户包含的任何内容。对于帐户中的任务资源也是如此：一旦删除 VHD、Blob、表、队列或文件，它将永久删除。确保该资源未使用。
-
+> [AZURE.WARNING]
+删除帐户前请务必备份要保存的任何内容。删除 VHD、blob、表、队列或文件后，它将被永久删除。确保该资源未使用。
+>
+>
 
 ## 有关已停止（已解除分配）的状态
 在经典部署模型中创建且已保留的虚拟机将在 [Azure 门户预览](https://portal.azure.cn/)或 [Azure 经典管理门户](https://manage.windowsazure.cn/)中具有“已停止（已解除分配）”的状态。
@@ -140,4 +134,5 @@ Blob ‘BlobName.vhd’ 已用作虚拟机磁盘 ‘VirtualMachineDiskName’，
 - [删除存储帐户](/documentation/articles/storage-create-storage-account/#delete-a-storage-account)
 - [如何在 Azure（PowerShell）中中断 Blob 存储的锁定租约](https://gallery.technet.microsoft.com/scriptcenter/How-to-break-the-locked-c2cd6492)
 
-<!---HONumber=Mooncake_1226_2016-->
+<!---HONumber=Mooncake_0313_2017-->
+<!--Update_Description: update "无法删除存储帐户" scenarios-->

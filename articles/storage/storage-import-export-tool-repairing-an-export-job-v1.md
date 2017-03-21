@@ -1,5 +1,5 @@
 <properties
-    pageTitle="修复导出作业 | Azure"
+    pageTitle="修复 Azure 导出作业 | Azure"
     description="了解如何使用 Azure 导入/导出服务修复已创建和运行的导出作业。"
     author="muralikk"
     manager="syadav"
@@ -14,8 +14,8 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="01/15/2017"
-    wacn.date="02/24/2017"
+    ms.date="01/23/2017"
+    wacn.date="03/20/2017"
     ms.author="muralikk" />  
 
 
@@ -155,4 +155,4 @@ G:\\pictures\\wild\\canyon.jpg.properties
 [修复导入作业](/documentation/articles/storage-import-export-tool-repairing-an-import-job-v1/)
 [排查 Azure 导入/导出工具问题](/documentation/articles/storage-import-export-tool-troubleshooting-v1/)
 
-<!---HONumber=Mooncake_0220_2017-->
+<!---HONumber=Mooncake_0313_2017-->

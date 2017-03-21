@@ -1,12 +1,11 @@
 <properties
-    pageTitle="将数据移入和移出 Azure 存储 | Azure"
-    description="本文概述了将数据移入和移出 Azure 存储的各种方法。"
+    pageTitle="将大量数据移进/移出 Azure 中的云存储 | Azure"
+    description="概述将数据移进和移出 Azure 存储的各种方法。"
     services="storage"
     documentationcenter=""
-    author="micurd"
-    manager="jahogg"
-    editor="tysonn" />  
-
+    author="JarrettRenshaw"
+    manager="msmets"
+    editor="tysonn" />
 <tags
     ms.assetid="5e3947a9-d99b-4108-9d57-3eb67c03e7ba"
     ms.service="storage"
@@ -14,9 +13,9 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="11/18/2016"
-    wacn.date="12/05/2016"
-    ms.author="micurd" />  
+    ms.date="01/30/2017"
+    wacn.date="03/20/2017"
+    ms.author="jarrettr" />  
 
 
 # 将数据移入和移出 Azure 存储
@@ -54,7 +53,10 @@ Azure CLI 提供了一组开源的跨平台命令，可以用于 Azure 服务。
 
 请参阅[通过 Azure 存储使用 Azure CLI](/documentation/articles/storage-azure-cli/)，了解详细信息。
 
+## 在慢速网络上移动大量数据
+与移动大量数据相关的最大挑战之一是传输时间。若要从 Azure 存储放入/取出数据而不支付网络成本或编写代码，那么 Azure 导入/导出是合适的解决方案。
 
+若要了解详细信息，请参阅 [Azure 导入/导出](/documentation/articles/storage-import-export-service/)。
 
 ## 备份数据
 
@@ -69,5 +71,9 @@ Azure CLI 提供了一组开源的跨平台命令，可以用于 Azure 服务。
 拥有本地工作负荷和应用程序时，需要让业务能够在发生灾难时继续运行的解决方案。Azure Site Recovery 可以处理虚拟机和物理服务器的复制、故障转移与恢复。复制的数据存储在 Azure 存储中，因此不再需要辅助现场数据中心。
 
 请参阅 [Azure Site Recovery](/documentation/articles/site-recovery-overview/) 了解详细信息。
+### 移动数据常见问题：
+## 能否在不复制的情况下，将 VHD 从一个区域迁移到另一个区域？
+若要在区域之间复制 VHD，唯一方式是在每个区域的存储帐户之间复制数据。为此，可以使用 AZCopy。请参阅“使用 AzCopy 命令行实用程序传输数据”，了解详细信息。如果是特别大量的数据，也可以使用 Azure 导入/导出。若要了解详细信息，请参阅 [Azure 导入/导出](/documentation/articles/storage-import-export-service/)。
 
-<!---HONumber=Mooncake_1128_2016-->
+<!---HONumber=Mooncake_0313_2017-->
+<!--Update_Description: add import/export service content-->

@@ -13,8 +13,8 @@
     ms.tgt_pltfrm="na"
     ms.devlang="dotnet"
     ms.topic="article"
-    ms.date="12/08/2016"
-    wacn.date="01/06/2017"
+    ms.date="1/19/2017"
+    wacn.date="03/20/2017"
     ms.author="robinsh" />
 
 # 在 Azure 存储空间中断时该怎么办
@@ -23,6 +23,10 @@ Azure 一直努力确保所提供的服务始终可用。但有时候，各种�
 
 ## 如何准备
 每个客户都应准备好自己的灾难恢复计划，这很重要。从存储中断进行恢复时，通常需要操作人员和自动化过程的参与，目的是在正常运行状态下重新激活你的应用程序。制定你自己的灾难恢复计划时，请参阅以下 Azure 文档：
+
+-   [Azure 应用程序的灾难恢复和高可用性](/documentation/articles/resiliency-disaster-recovery-high-availability-azure-applications/)
+
+-   [Azure 复原技术指南](/documentation/articles/resiliency-technical-guidance/)
 
 -   [Azure Site Recovery 服务](/home/features/site-recovery/)
 
@@ -53,27 +57,24 @@ Azure 一直努力确保所提供的服务始终可用。但有时候，各种�
 
 有关存储空间异地故障转移体验的一些观点：
 
--   只能通过 Azure 存储团队触发存储空间异地故障转移 – 不需客户操作。
-
--   针对 Blob、表、队列和文件的现有存储服务终结点在故障转移后保持不变；需要更新 DNS 条目才能从主要区域切换到次要区域。
-
--   在异地故障转移之前和过程中，由于灾难的影响，你将无法对存储帐户进行写入访问，但如果你的存储帐户已配置为 RA-GRS，你仍然可以从次要区域进行读取。
-
--   完成异地故障转移且传播 DNS 更改以后，将恢复你对存储帐户的读取和写入访问权限。你可以查询[存储帐户的“上次异地故障转移时间”](https://msdn.microsoft.com/zh-cn/library/azure/ee460802.aspx)以获取更多详细信息。
-
--   在故障转移之后，你的存储帐户完全可以正常使用，但处于“已降级”状态，因为实际上它是托管在独立区域中，不可能进行异地复制。为了缓解此风险，我们需要还原原始的主要区域，然后通过异地故障回复还原原始状态。如果原始的主要区域不可恢复，我们会分配其他次要区域。
-有关 Azure 存储异地复制基础结构的更多详细信息，请参阅存储团队博客中有关[冗余选项和 RA-GRS](https://blogs.msdn.microsoft.com/windowsazurestorage/2013/12/11/windows-azure-storage-redundancy-options-and-read-access-geo-redundant-storage/) 的文章。
+* 只能通过 Azure 存储团队触发存储空间异地故障转移 – 不需客户操作。
+* 针对 Blob、表、队列和文件的现有存储服务终结点在故障转移后保持不变；需要更新 DNS 条目才能从主要区域切换到次要区域。
+* 在异地故障转移之前和过程中，由于灾难的影响，你将无法对存储帐户进行写入访问，但如果你的存储帐户已配置为 RA-GRS，你仍然可以从次要区域进行读取。
+* 完成异地故障转移且传播 DNS 更改以后，将恢复对存储帐户的读取和写入访问权限；这将指向曾经是辅助终结点的位置。
+* 请注意，如果为存储帐户配置了 GRS 或 RA-GRS，则用户将具有写入访问权限。
+* 你可以查询[存储帐户的“上次异地故障转移时间”](https://msdn.microsoft.com/zh-cn/library/azure/ee460802.aspx)以获取更多详细信息。
+* 在故障转移之后，你的存储帐户完全可以正常使用，但处于“已降级”状态，因为实际上它是托管在独立区域中，不可能进行异地复制。为了缓解此风险，我们需要还原原始的主要区域，然后通过异地故障回复还原原始状态。如果原始的主要区域不可恢复，我们会分配其他次要区域。有关 Azure 存储异地复制基础结构的更多详细信息，请参阅存储团队博客中有关[冗余选项和 RA-GRS](https://blogs.msdn.microsoft.com/windowsazurestorage/2013/12/11/windows-azure-storage-redundancy-options-and-read-access-geo-redundant-storage/) 的文章。
 
 ##数据保护最佳实践
 
 可以通过一些推荐的方法定期备份你的存储数据。
 
--   VM 磁盘 – 使用 [Azure 备份服务](/home/features/back-up/)备份 Azure虚拟机使用的 VM 磁盘。
+* VM 磁盘 – 使用 [Azure 备份服务](/home/features/back-up/)备份 Azure虚拟机使用的 VM 磁盘。
+* 块 Blob – 使用 [AzCopy](/documentation/articles/storage-use-azcopy/)、[Azure PowerShell](/documentation/articles/storage-powershell-guide-full/) 或 [Azure 数据移动库](https://azure.microsoft.com/blog/introducing-azure-storage-data-movement-library-preview-2/)创建每个块 Blob 的[快照](https://msdn.microsoft.com/zh-cn/library/azure/hh488361.aspx)，或者将 Blob 复制到其他区域的其他存储帐户。
+* 表 – 使用 [AzCopy](/documentation/articles/storage-use-azcopy/) 将表数据导出到其他区域的其他存储帐户中。
+* 文件 – 使用 [AzCopy](/documentation/articles/storage-use-azcopy/) 或 [Azure PowerShell](/documentation/articles/storage-powershell-guide-full/) 将文件复制到其他区域的其他存储帐户。
 
--   块 Blob – 使用 [AzCopy](/documentation/articles/storage-use-azcopy/)、[Azure PowerShell](/documentation/articles/storage-powershell-guide-full/) 或 [Azure 数据移动库](https://azure.microsoft.com/blog/introducing-azure-storage-data-movement-library-preview-2/)创建每个块 Blob 的[快照](https://msdn.microsoft.com/zh-cn/library/azure/hh488361.aspx)，或者将 Blob 复制到其他区域的其他存储帐户。
+若要了解如何通过创建应用程序来充分利用 RA-GRS 功能，请参阅[使用 RA-GRS 存储设计高度可用的应用程序](/documentation/articles/storage-designing-ha-apps-with-ragrs/)
 
--   表 – 使用 [AzCopy](/documentation/articles/storage-use-azcopy/) 将表数据导出到其他区域的其他存储帐户中。
-
--   文件 – 使用 [AzCopy](/documentation/articles/storage-use-azcopy/) 或 [Azure PowerShell](/documentation/articles/storage-powershell-guide-full/) 将文件复制到其他区域的其他存储帐户。
-
-<!---HONumber=Mooncake_0103_2017-->
+<!---HONumber=Mooncake_0313_2017-->
+<!--Update_Description: add reference to resiliency guidance-->

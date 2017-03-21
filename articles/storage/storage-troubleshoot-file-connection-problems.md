@@ -6,8 +6,7 @@
     author="genlin"
     manager="felixwu"
     editor="na"
-    tags="storage" />  
-
+    tags="storage" />
 <tags
     ms.assetid="fbc5f600-131e-4b99-828a-42d0de85fff7"
     ms.service="storage"
@@ -15,8 +14,8 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="11/13/2016"
-    wacn.date="12/05/2016"
+    ms.date="02/15/2017"
+    wacn.date="03/20/2017"
     ms.author="genli" />  
 
 
@@ -27,11 +26,13 @@
 
 * [尝试打开文件时配额出错](#quotaerror)
 * [从 Windows 或 Linux 访问 Azure 文件存储时性能不佳](#slowboth)
+* [如何跟踪 Azure 文件存储中的读写操作](#traceop)
 
 **Windows 客户端问题**
 
 * [从 Windows 8.1 或 Windows Server 2012 R2 访问 Azure 文件存储时性能不佳](#windowsslow)
 * [尝试装载 Azure 文件共享时出现错误 53](#error53)
+* [尝试装载 Azure 文件共享时出现错误 87：参数不正确](#error87)
 * [Net use 成功，但未显示装载在 Windows 资源管理器上的 Azure 文件共享](#netuse)
 * [我的存储帐户包含“/”且 net use 命令失败](#slashfails)
 * [我的应用程序/服务无法访问装载的 Azure 文件驱动器。](#accessfiledrive)
@@ -40,28 +41,28 @@
 **Linux 客户端问题**
 
 * [将文件上传/复制到 Azure 文件时出现错误“正在将文件复制到不支持加密的目标”](#encryption)
-* [现有文件共享上出现“主机已关闭”错误，或者在装入点上执行列表命令时 shell 挂起](#errorhold)
+* [间歇性 IO 错误 - 在装载点上执行列表命令时，现有的文件共享上出现错误“主机已关闭”或外壳挂起](#errorhold)
 * [尝试在 Linux VM 上装载 Azure 文件时出现装入错误 115 ](#error15)
 * [Linux VM 在类似“ls”的命令中遇到随机延迟](#delayproblem)
+* [错误 112 - 超时错误](#error112)
+
+**从其他应用程序访问**
+
+* [是否可以通过 Web 作业引用应用程序的 Azure 文件共享？](#webjobs)
 
 <a id="quotaerror"></a>
 
 ## 尝试打开文件时配额出错
 在 Windows 中，将收到类似下文的错误消息：
 
-**1816 ERROR\_NOT\_ENOUGH\_QUOTA <--> 0xc0000044**
-
-**STATUS\_QUOTA\_EXCEEDED**
-
-**可用配额不足，无法处理此命令**
-
-**无效句柄值 GetLastError: 53**
+`1816 ERROR_NOT_ENOUGH_QUOTA <--> 0xc0000044`
+`STATUS_QUOTA_EXCEEDED`
+`Not enough quota is available to process this command`
+`Invalid handle value GetLastError: 53`
 
 在 Linux 中，将收到类似下文的错误消息：
 
-**<文件名> [权限被拒绝]**
-
-**已超出磁盘配额**
+`<filename> [permission denied]` `Disk quota exceeded`
 
 ### 原因
 问题原因是已达到文件所允许的并发打开句柄数上限。
@@ -74,8 +75,9 @@
 ## 从 Windows 或 Linux 访问文件存储时性能不佳
 * 如果没有特定的 I/O 大小下限要求，建议使用 1 MB 的 I/O 大小获得最佳性能。
 * 如果知道使用写入扩展的文件的最终大小，并且当尚未在文件上写入的尾部包含零时软件没有兼容性问题，请提前设置文件大小，而不是每次写入都是扩展写入。
-
-<a id="windowsslow"></a>
+* 使用正确的复制方法：
+      * 使用 AZCopy 在两个文件共享之间进行任何传输活动。有关更多详细信息，请参阅[使用 AzCopy 命令行实用工具传输数据](/documentation/articles/storage-use-azcopy/#file-copy)。
+      * 在文件共享与本地计算机之间使用 Robocopy。有关详细信息，请参阅 [多线程 Robocopy 加快复制速度](https://blogs.msdn.microsoft.com/granth/2009/12/07/multi-threaded-robocopy-for-faster-copies/)。<a id="windowsslow"></a>
 
 ## 从 Windows 8.1 或 Windows Server 2012 R2 访问文件存储时的性能不佳
 对于运行 Windows 8.1 或 Windows Server 2012 R2 的客户端，请确保安装有修补程序 [KB3114025](https://support.microsoft.com/zh-cn/kb/3114025)。该程序可提升创建和关闭句柄时的性能。
@@ -87,12 +89,17 @@
 
 如果已安装，将显示以下输出：
 
-**HKEY\_LOCAL\_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\LanmanWorkstation\\Parameters\\Policies**
-
-**{96c345ef-3cac-477b-8fcd-bea1a564241c} REG\_DWORD 0x1**
+`HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\LanmanWorkstation\Parameters\Policies` `{96c345ef-3cac-477b-8fcd-bea1a564241c}    REG_DWORD    0x1`
 
 > [AZURE.NOTE]自 2015 年 12 月起，Azure 应用商店中的 Windows Server 2012 R2 映像默认安装有修补程序 KB3114025。
 
+<a id="traceop"></a>
+
+### 如何跟踪 Azure 文件存储中的读写操作
+
+[Microsoft Message Analyzer](https://www.microsoft.com/zh-cn/download/details.aspx?id=44226) 能够以明文形式显示客户端的请求，并且有线请求和事务之间的关系良好（假设此处的 SMB 不是 REST）。其缺点在于，如果存在许多 IaaS VM 工作进程，则需要在每个客户端上运行此工具，因此十分耗时。
+
+如果将 Message Analyze 与 ProcMon 配合使用，就可以清楚了解负责事务的应用代码。
 
 <a id="additional"></a>
 
@@ -101,7 +108,7 @@
 
 <a id="error53"></a>
 
-## 尝试装载或卸载 Azure 文件共享时出现“错误 53”
+## 尝试装载或卸载 Azure 文件共享时出现“错误 53”或“错误 67”
 此问题的原因可能是：
 
 ### 原因 1
@@ -111,7 +118,7 @@
 通过满足 Windows 8、Windows Server 2012 或更高版本要求的客户端进行连接，或用于连接的虚拟机要与 Azure 文件共享所用的 Azure 存储帐户位于同一数据中心。
 
 ### 原因 2
-如果端口 445 到 Azure 文件数据中心的出站通信受阻，则在安装 Azure 文件共享时可能会出现“系统错误53”。请单击[此处](http://social.technet.microsoft.com/wiki/contents/articles/32346.azure-summary-of-isps-that-allow-disallow-access-from-port-445.aspx)，概要查看允许或禁止从端口 445 进行访问的 ISP。
+如果端口 445 到 Azure 文件数据中心的出站通信受阻，则在安装 Azure 文件共享时可能会出现“系统错误53”或“系统错误 67”。请单击[此处](http://social.technet.microsoft.com/wiki/contents/articles/32346.azure-summary-of-isps-that-allow-disallow-access-from-port-445.aspx)，概要查看允许或禁止从端口 445 进行访问的 ISP。
 
 Comcast 和某些 IT 组织阻止此端口。若要了解是否由此造成“系统错误 53”，可使用 Portqry 查询 TCP:445 终结点。如果 TCP:445 终结点显示为“已筛选”，则表示 TCP端口受阻。示例查询如下：
 
@@ -127,8 +134,9 @@ Comcast 和某些 IT 组织阻止此端口。若要了解是否由此造成“�
 ### 原因 2 的解决方案
 与 IT 组织配合，向 [Azure IP 范围](https://www.microsoft.com/en-us/download/details.aspx?id=42064)开放端口 445 出站。
 
+<a id="error87"></a>
 ### 原因 3
-如果在客户端上启用 NTLMv1 通信，也会收到“系统错误 53”。启用 NTLMv1 会降低客户端的安全性。因此，将阻止 Azure 文件的通信。若要验证这是否是错误原因，请验证以下注册表子项是否设为值 3：
+如果在客户端上启用 NTLMv1 通信，也会收到“系统错误 53 或系统错误 87”。启用 NTLMv1 会降低客户端的安全性。因此，将阻止 Azure 文件的通信。若要验证这是否是错误原因，请验证以下注册表子项是否设为值 3：
 
 HKLM\\SYSTEM\\CurrentControlSet\\Control\\Lsa > LmCompatibilityLevel。
 
@@ -233,13 +241,31 @@ Linux 分发尚不支持 SMB 3.0 中的加密功能。在某些分发中，用�
 ### 解决方案
 请检查“/etc/fstab”条目中的 **serverino**：
 
-//azureuser.file.core.chinacloudapi.cn/wms/comer on /home/sampledir type cifs (rw,nodev,relatime,vers=2.1,sec=ntlmssp,cache=strict,username=xxx,domain=X,
-file\_mode=0755,dir\_mode=0755,serverino,rsize=65536,wsize=65536,actimeo=1)
+//azureuser.file.core.chinacloudapi.cn/wms/comer on /home/sampledir type cifs (rw,nodev,relatime,vers=2.1,sec=ntlmssp,cache=strict,username=xxx,domain=X, file\_mode=0755,dir\_mode=0755,serverino,rsize=65536,wsize=65536,actimeo=1)
 
 如果 **serverino** 选项不存在，请选中 **serverino** 选项，卸载并再次装载 Azure 文件。
 
+<a id="error112"></a>
+## 错误 112 - 超时错误
+
+此错误指示出现通信故障，导致在使用“软”装载选项（默认设置）时无法重新与服务器建立 TCP 连接。
+
+### 原因
+
+此错误的原因可能是出现 Linux 重新连接问题，或者存在其他阻止重新连接的问题，例如网络错误。指定硬装载会强制客户端等到建立连接或者显式中断为止，可用于避免由于网络超时而引起的错误。但用户应注意，这可能会导致无限期等待，应在必要时停止连接。
+
+### 解决方法
+
+Linux 问题已得到修复，但更新尚未移植到 Linux 分发版。如果此问题是由 Linux 中的重新连接问题造成的，可以通过避免进入空闲状态来解决。若要实现此目的，可在 Azure 文件共享中保留一个文件并每隔 30 秒或更短时间向其写入数据。此操作必须为写入操作，例如在文件上重新写入创建/修改日期。否则可能会收到缓存结果，且操作可能不会触发连接。
+
+<a id="webjobs"></a>
+
+## 从其他应用程序访问
+### 是否可以通过 Web 作业引用应用程序的 Azure 文件共享？
+无法在 appservice 沙盒中装载 SMB 共享。一种可能的解决方法是将 Azure 文件共享映射为映射驱动器，并允许应用程序以驱动器号的形式访问它。
 ## 了解详细信息
 * [在 Windows 上开始使用 Azure 文件存储](/documentation/articles/storage-dotnet-how-to-use-files/)
 * [开始在 Linux 上使用 Azure 文件存储](/documentation/articles/storage-how-to-use-files-linux/)
 
-<!---HONumber=Mooncake_1128_2016-->
+<!---HONumber=Mooncake_0313_2017-->
+<!--Update_Description: add error traceop,error87,error112-->

@@ -1,5 +1,5 @@
 <properties
-    pageTitle="导入/导出服务清单文件格式 | Azure"
+    pageTitle="Azure 导入/导出清单文件格式 | Azure"
     description="了解驱动器清单文件的格式。清单文件描述 Azure Blob 存储中的 Blob 与构成导入/导出服务中导入或导出作业的驱动器上的文件之间的映射。"
     author="muralikk"
     manager="syadav"
@@ -13,12 +13,12 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="01/15/2017"
-    wacn.date="02/24/2017"
+    ms.date="01/23/2017"
+    wacn.date="03/20/2017"
     ms.author="muralikk" />  
 
 
-# 导入/导出服务清单文件格式
+# Azure 导入/导出服务清单文件格式
 驱动器清单文件描述 Azure Blob 存储中的 Blob 与构成导入或导出作业的驱动器上的文件之间的映射。对于某个导入操作而言，该清单文件作为驱动器准备过程的一部分创建，在将该驱动器送至 Azure 数据中心之前已存储在驱动器上。在导出操作过程中，Azure 导入/导出服务将在驱动器上创建并存储该清单。
   
 对于导入和导出作业而言，驱动器清单文件存储在导入或导出驱动器上；该文件不通过任何 API 操作传输到该服务。
@@ -130,4 +130,4 @@
 ## 另请参阅  
 [存储导入/导出 REST](https://docs.microsoft.com/zh-cn/rest/api/storageimportexport/)
 
-<!---HONumber=Mooncake_0220_2017-->
+<!---HONumber=Mooncake_0313_2017-->

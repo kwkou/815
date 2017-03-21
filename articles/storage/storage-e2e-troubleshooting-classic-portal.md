@@ -1,5 +1,5 @@
 <properties
-    pageTitle="使用 Azure 存储度量值和日志记录、AzCopy 和 Message Analyzer 进行端到端故障排除 | Azure"
+    pageTitle="使用诊断和 Message Analyzer 排查 Azure 存储的问题 | Azure"
     description="本教程演示如何使用 Azure 存储分析、AzCopy 和 Microsoft Message Analyzer 进行端到端故障排除"
     services="storage"
     documentationcenter="dotnet"
@@ -12,8 +12,8 @@
     ms.tgt_pltfrm="na"
     ms.devlang="dotnet"
     ms.topic="article"
-    ms.date="12/08/2016"
-    wacn.date="01/06/2017"
+    ms.date="01/23/2017"
+    wacn.date="03/20/2017"
     ms.author="robinsh" />
 
 # 使用 Azure 存储度量值和日志记录、AzCopy 和 Message Analyzer 进行端到端故障排除
@@ -336,7 +336,7 @@ Message Analyzer 将查找并选择搜索条件与客户端请求 ID 匹配的�
 在熟悉如何使用 Message Analyzer 分析日志数据后，你可以使用视图布局、颜色规则和搜索/筛选分析其他类型的错误。下表列出了你可能会遇到的一些问题，以及可用于查找这些问题的筛选条件。有关构造筛选器和 Message Analyzer 筛选语言的详细信息，请参阅[筛选消息数据](http://technet.microsoft.com/zh-cn/library/jj819365.aspx)。
 
 | 若要调查... | 使用筛选器表达式… | 将表达式应用到日志（客户端、服务器、网络、所有） |
-|------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------|
+| --- | --- | --- |
 | 队列上的消息传递出现意外延迟 | AzureStorageClientDotNetV4.Description 包含“Retrying failed operation.” | 客户端 |
 | PercentThrottlingError 的 HTTP 增加 | <p>HTTP.Response.StatusCode == 500</p><p>HTTP.Response.StatusCode == 503</p> | 网络 |
 | PercentTimeoutError 增加 | HTTP.Response.StatusCode == 500 | 网络 |
@@ -366,4 +366,4 @@ Message Analyzer 将查找并选择搜索条件与客户端请求 ID 匹配的�
  
  
 
-<!---HONumber=Mooncake_0103_2017-->
+<!---HONumber=Mooncake_0313_2017-->

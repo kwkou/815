@@ -1,22 +1,21 @@
 <properties
-	pageTitle="如何在 Azure 经典管理门户中创建、管理或删除存储帐户 | Azure"
-	description="创建新的存储帐户、管理帐户访问密钥，或删除 Azure 经典管理门户中的存储帐户。了解标准和高级存储帐户。"
-	services="storage"
-	documentationCenter=""
-	authors="robinsh"
-	manager="carmonm"
-	editor="tysonn"/>  
-
+    pageTitle="如何在 Azure 经典管理门户中创建、管理或删除存储帐户 | Azure"
+    description="在 Azure 门户预览中创建新的存储帐户、管理帐户访问密钥或删除存储帐户。了解标准和高级存储帐户。"
+    services="storage"
+    documentationcenter=""
+    author="robinsh"
+    manager="timlt"
+    editor="tysonn" />
 <tags
-	ms.service="storage"
-	ms.workload="storage"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="get-started-article"
-	ms.date="12/08/2016"
-	wacn.date="12/29/2016"
-	ms.author="micurd;robinsh"/>
-
+    ms.assetid="5e4f4360-3f81-4d63-a0b1-e7771b67af11"
+    ms.service="storage"
+    ms.workload="storage"
+    ms.tgt_pltfrm="na"
+    ms.devlang="na"
+    ms.topic="get-started-article"
+    ms.date="01/23/2017"
+    wacn.date="03/20/2017"
+    ms.author="robinsh" />
 
 # 关于 Azure 存储帐户
 
@@ -176,4 +175,4 @@ Azure 存储帐户将授权访问 Azure 存储中的 Azure Blob、队列、表�
 - 访问 [Azure 存储团队博客](http://blogs.msdn.com/b/windowsazurestorage/)。
 - [使用 AzCopy 命令行实用程序传输数据](/documentation/articles/storage-use-azcopy/)
 
-<!---HONumber=Mooncake_1226_2016-->
+<!---HONumber=Mooncake_0313_2017-->

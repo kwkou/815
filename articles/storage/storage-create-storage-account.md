@@ -1,22 +1,21 @@
 <properties
-	pageTitle="如何在 Azure 门户预览中创建、管理或删除存储帐户 | Azure"
-	description="创建新的存储帐户、管理帐户访问密钥，或删除 Azure 门户中的存储帐户。了解标准和高级存储帐户。"
-	services="storage"
-	documentationCenter=""
-	authors="robinsh"
-	manager="carmonm"
-	editor="tysonn"/>
-
+    pageTitle="如何在 Azure 门户预览中创建、管理或删除存储帐户 | Azure"
+    description="在 Azure 门户预览中创建新的存储帐户、管理帐户访问密钥或删除存储帐户。了解标准和高级存储帐户。"
+    services="storage"
+    documentationcenter=""
+    author="robinsh"
+    manager="timlt"
+    editor="tysonn" />
 <tags
-	ms.service="storage"
-	ms.workload="storage"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="get-started-article"
-	ms.date="12/08/2016"
-	wacn.date="12/29/2016"
-	ms.author="micurd;robinsh"/>
-
+    ms.assetid="87c37da0-6cc6-4d88-a330-ef2896a1531d"
+    ms.service="storage"
+    ms.workload="storage"
+    ms.tgt_pltfrm="na"
+    ms.devlang="na"
+    ms.topic="get-started-article"
+    ms.date="01/23/2017"
+    wacn.date="03/20/2017"
+    ms.author="robinsh" />
 
 # 关于 Azure 存储帐户
 
@@ -58,7 +57,7 @@ Azure 存储帐户提供唯一的命名空间来存储和访问你的 Azure 存�
 
 1. 登录到 [Azure 门户预览](https://portal.azure.cn)。
 
-2. 在“中心”菜单上，选择“新建”->“数据 + 存储”->“存储帐户”。
+2. 在“中心”菜单上，选择“新建”->“存储”->“存储帐户”。
 
 3. 输入你的存储帐户的名称。有关如何使用存储帐户名称在 Azure 存储空间中定位你的对象的详细信息，请参阅[存储帐户终结点](#storage-account-endpoints)。
 
@@ -137,7 +136,7 @@ Azure 存储帐户提供唯一的命名空间来存储和访问你的 Azure 存�
 
 若要删除与 Azure 虚拟机相关联的存储帐户，必须首先确保已删除所有虚拟机磁盘。如果不先删除虚拟机磁盘，则当你尝试删除存储帐户时，将看到如下错误消息：
 
-    未能删除存储帐户 <vm-storage-account-name>。无法删除存储帐户 <vm-storage-account-name>：“存储帐户 <vm-storage-account-name> 有一些活动映像和/或磁盘。请确保在删除此存储帐户前移除这些映像和/或磁盘。”。
+    	Failed to delete storage account <vm-storage-account-name>. Unable to delete storage account <vm-storage-account-name>: 'Storage account <vm-storage-account-name> has some active image(s) and/or disk(s). Ensure these image(s) and/or disk(s) are removed before deleting this storage account.'.
 
 如果存储帐户使用经典部署模型，你可以通过在 [Azure 经典管理门户](https://manage.windowsazure.cn)中执行以下步骤来删除虚拟机磁盘：
 
@@ -155,6 +154,6 @@ Azure 存储帐户提供唯一的命名空间来存储和访问你的 Azure 存�
 - [Azure 存储空间复制](/documentation/articles/storage-redundancy/)
 - [配置 Azure 存储空间连接字符串](/documentation/articles/storage-configure-connection-string/)
 - [使用 AzCopy 命令行实用程序传输数据](/documentation/articles/storage-use-azcopy/)
-- 访问 [Azure 存储空间团队博客](http://blogs.msdn.com/b/windowsazurestorage/)。
+- 访问 [Azure 存储团队博客](http://blogs.msdn.com/b/windowsazurestorage/)。
 
-<!---HONumber=Mooncake_1226_2016-->
+<!---HONumber=Mooncake_0313_2017-->

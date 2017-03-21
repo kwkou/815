@@ -1,12 +1,11 @@
 <properties
     pageTitle="为 Azure 导入/导出服务创建导入作业 | Azure"
     description="了解如何为 Azure 导入/导出服务创建导入作业"
-    author="renashahmsft"
-    manager="aungoo"
-    editor="tysonn"
+    author="muralikk"
+    manager="syadav"
+    editor="syadav"
     services="storage"
-    documentationcenter="" />  
-
+    documentationcenter="" />
 <tags
     ms.assetid="8b886e83-6148-4149-9d0f-5d48ec822475"
     ms.service="storage"
@@ -14,12 +13,13 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="12/16/2016"
-    wacn.date="01/06/2017"
-    ms.author="renash" />  
+    ms.date="01/23/2017"
+    wacn.date="03/20/2017"
+    ms.author="muralikk" />  
 
 
-# 创建导入作业
+
+# 为 Azure 导入/导出服务创建导入作业
 
 使用 REST API 为 Azure 导入/导出服务创建导入作业的过程包括以下步骤：
 
@@ -100,9 +100,10 @@
 > [AZURE.NOTE]必须通过支持的、可提供包裹跟踪号的承运人寄送驱动器。
 
 ## 使用寄送信息更新导入作业
-获取跟踪号后，请调用[更新作业属性](https://docs.microsoft.com/zh-CN/rest/api/storageimportexport/jobs#Jobs_Update)操作更新承运人名称、作业跟踪号以及运送回邮的承运人帐号。可以选择性地指定驱动器数量和寄送日期。
+获取跟踪号后，请调用[更新作业属性](https://docs.microsoft.com/zh-cn/rest/api/storageimportexport/jobs#Jobs_Update)操作更新承运人名称、作业跟踪号以及运送回邮的承运人帐号。可以选择性地指定驱动器数量和寄送日期。
 
 ## 另请参阅
 [使用导入/导出服务 REST API](/documentation/articles/storage-import-export-using-the-rest-api/)
 
-<!---HONumber=Mooncake_1226_2016-->
+<!---HONumber=Mooncake_0313_2017-->
+<!--Update_Description: update page title-->

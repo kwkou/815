@@ -1,5 +1,5 @@
 <properties
-    pageTitle="为 Azure 导入/导出服务的导入作业准备硬盘驱动器的示例工作流 | Azure"
+    pageTitle="为 Azure 导入作业准备硬盘驱动器的示例工作流 | Azure"
     description="参阅针对 Azure 导入/导出服务中的导入作业准备驱动器的整个过程演练"
     author="muralikk"
     manager="syadav"
@@ -13,8 +13,8 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="01/15/2017"
-    wacn.date="02/24/2017"
+    ms.date="01/23/2017"
+    wacn.date="03/20/2017"
     ms.author="muralikk" />  
 
 
@@ -27,7 +27,7 @@
 本示例将以下数据导入到名为 `mystorageaccount` 的 Azure 存储帐户：
 
 |位置|说明|数据大小|
-|---|---|---|
+|--------------|-----------------|-----|
 |H:\\Video|视频集合|12 TB|
 |H:\\Photo|照片集合|30 GB|
 |K:\\Temp\\FavoriteMovie.ISO|Blu-Ray™ 磁盘映像|25 GB|
@@ -135,4 +135,4 @@
 * [为导入作业准备硬盘驱动器](/documentation/articles/storage-import-export-tool-preparing-hard-drives-import/)
 * [常用命令快速参考](/documentation/articles/storage-import-export-tool-quick-reference/)
 
-<!---HONumber=Mooncake_0220_2017-->
+<!---HONumber=Mooncake_0313_2017-->

@@ -3,7 +3,7 @@
     description="使用 AzCopy 实用程序将数据移动或复制到 blob、表和文件内容或从 blob、表和文件内容移动或复制数据。从本地文件将数据复制到 Azure 存储，或者在存储帐户中或存储帐户之间复制数据。轻松地将数据迁移到 Azure 存储。"
     services="storage"
     documentationcenter=""
-    author="micurd"
+    author="seguler"
     manager="jahogg"
     editor="tysonn" />
 <tags
@@ -13,9 +13,9 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="11/28/2016"
-    wacn.date="01/06/2017"
-    ms.author="micurd" />
+    ms.date="01/30/2017"
+    wacn.date="03/20/2017"
+    ms.author="seguler" />
 
 # 使用 AzCopy 命令行实用程序传输数据
 ## 概述
@@ -494,13 +494,13 @@ AzCopy 会像在命令行上包括了所有单个参数一样来处理此命令�
 
 指定要从中复制数据的源。源可以是文件系统目录、blob 容器、blob 虚拟目录、存储文件共享、存储文件目录或 Azure 表。
 
-**适用对象**：Blob、文件、表
+**适用对象：**Blob、文件、表
 
 ### /Dest:"destination"
 
 指定要复制到的目标。目标可以是文件系统目录、blob 容器、blob 虚拟目录、存储文件共享、存储文件目录或 Azure 表。
 
-**适用对象**：Blob、文件、表
+**适用对象：**Blob、文件、表
 
 ### /Pattern:"file-pattern"
 
@@ -516,13 +516,13 @@ AzCopy 会像在命令行上包括了所有单个参数一样来处理此命令�
 
 未指定文件模式时使用的默认文件模式为 *.* （对于文件系统位置）或空前缀（对于 Azure 存储位置）。不支持指定多个文件模式。
 
-**适用对象**：Blob、文件
+**适用对象：**Blob、文件
 
 ### /DestKey:"storage-key"
 
 指定目标资源的存储帐户密钥。
 
-**适用对象**：Blob、文件、表
+**适用对象：**Blob、文件、表
 
 ### /DestSAS:"sas-token"
 
@@ -532,13 +532,13 @@ AzCopy 会像在命令行上包括了所有单个参数一样来处理此命令�
 
 如果源和目标都是 blob，则目标 blob 必须与源 blob 位于同一个存储帐户中。
 
-**适用对象**：Blob、文件、表
+**适用对象：**Blob、文件、表
 
 ### /SourceKey:"storage-key"
 
 指定源资源的存储帐户密钥。
 
-**适用对象**：Blob、文件、表
+**适用对象：**Blob、文件、表
 
 ### /SourceSAS:"sas-token"
 
@@ -548,19 +548,19 @@ AzCopy 会像在命令行上包括了所有单个参数一样来处理此命令�
 
 如果源是文件共享或表，必须提供一个键或某一 SAS。
 
-**适用对象**：Blob、文件、表
+**适用对象：**Blob、文件、表
 
 ### /S
 
 指定复制操作的递归模式。在递归模式下，AzCopy 将复制与指定的文件模式相匹配的所有 blob 或文件，包括子文件夹中的对象。
 
-**适用对象**：Blob、文件
+**适用对象：**Blob、文件
 
 ### /BlobType:"block" | "page" | "append"
 
 指定目标 Blob 是块 Blob、页 Blob 还是追加 Blob。仅在要上传 Blob 时，此选项才适用。否则将会发生错误。如果目标是一个 Blob 并且未指定此选项，则默认情况下 AzCopy 将创建块 Blob。
 
-**适用对象**：Blob
+**适用对象：**Blob
 
 ### /CheckMD5
 
@@ -570,7 +570,7 @@ AzCopy 会像在命令行上包括了所有单个参数一样来处理此命令�
 
 在将 Azure blob 或文件上传到服务后，AzCopy 始终会为其设置 Content-MD5 属性。
 
-**适用对象**：Blob、文件
+**适用对象：**Blob、文件
 
 ### /Snapshot
 
@@ -580,7 +580,7 @@ AzCopy 会像在命令行上包括了所有单个参数一样来处理此命令�
 
 默认情况下，不会复制快照。
 
-**适用对象**：Blob
+**适用对象：**Blob
 
 ### /V:[verbose-log-file]
 
@@ -588,7 +588,7 @@ AzCopy 会像在命令行上包括了所有单个参数一样来处理此命令�
 
 默认情况下，详细日志文件在 `%LocalAppData%\Microsoft\Azure\AzCopy` 中将被命名为 AzCopyVerbose.log。如果为此选项指定了现有的文件位置，详细日志则将追加到该文件中。
 
-**适用对象**：Blob、文件、表
+**适用对象：**Blob、文件、表
 
 ### /Z:[journal-file-folder]
 
@@ -606,7 +606,7 @@ AzCopy 始终支持对被中断的操作进行恢复。
 
 请注意，不支持通过由以前版本的 AzCopy 创建的日志文件来恢复操作。
 
-**适用对象**：Blob、文件、表
+**适用对象：**Blob、文件、表
 
 ### /@:"parameter-file"
 
@@ -618,13 +618,13 @@ AzCopy 始终支持对被中断的操作进行恢复。
 
 可以指定多个响应文件。但请注意，AzCopy 不支持嵌套的响应文件。
 
-**适用对象**：Blob、文件、表
+**适用对象：**Blob、文件、表
 
 ### /Y
 
 取消所有的 AzCopy 确认提示。
 
-**适用对象**：Blob、文件、表
+**适用对象：**Blob、文件、表
 
 ### /L
 
@@ -636,31 +636,31 @@ AzCopy 将使用此选项解释为在没有此选项 /L 的情况下，模拟运
 
 使用此选项时，AzCopy 需要此源位置的列出和读取权限。
 
-**适用对象**：Blob、文件
+**适用对象：**Blob、文件
 
 ### /MT
 
 将下载的文件的上次修改时间设置为与源 blob 或文件的上次修改时间相同。
 
-**适用对象**：Blob、文件
+**适用对象：**Blob、文件
 
 ### /XN
 
 排除较新的源资源。如果源的上次修改时间同于或晚于目标，将不会复制该资源。
 
-**适用对象**：Blob、文件
+**适用对象：**Blob、文件
 
 ### /XO
 
 排除较旧的源资源。如果源的上次修改时间同于或早于目标，将不会复制该资源。
 
-**适用对象**：Blob、文件
+**适用对象：**Blob、文件
 
 ### /A
 
 仅上传设置了存档属性的文件。
 
-**适用对象**：Blob、文件
+**适用对象：**Blob、文件
 
 ### /IA:[RASHCNETOI]
 
@@ -679,7 +679,7 @@ AzCopy 将使用此选项解释为在没有此选项 /L 的情况下，模拟运
 - O 表示脱机文件
 - I 表示未编制索引的文件
 
-**适用对象**：Blob、文件
+**适用对象：**Blob、文件
 
 ### /XA:[RASHCNETOI]
 
@@ -698,7 +698,7 @@ AzCopy 将使用此选项解释为在没有此选项 /L 的情况下，模拟运
 - O 表示脱机文件
 - I 表示未编制索引的文件
 
-**适用对象**：Blob、文件
+**适用对象：**Blob、文件
 
 ### /Delimiter:"delimiter"
 
@@ -708,7 +708,7 @@ AzCopy 将使用此选项解释为在没有此选项 /L 的情况下，模拟运
 
 此选项仅适用于下载 blob。
 
-**适用对象**：Blob
+**适用对象：**Blob
 
 ### /NC:"number-of-concurrent-operations"
 
@@ -718,19 +718,19 @@ AzCopy 将使用此选项解释为在没有此选项 /L 的情况下，模拟运
 
 并发操作的上限为 512。
 
-**适用对象**：Blob、文件、表
+**适用对象：**Blob、文件、表
 
 ### /SourceType:"Blob" | "Table"
 
 指定 `source` 资源是本地开发环境中可用的一个 Blob，在存储模拟器中运行。
 
-**适用对象**：Blob、表
+**适用对象：**Blob、表
 
 ### /DestType:"Blob" | "Table"
 
 指定 `destination` 资源是本地开发环境中可用的一个 Blob，在存储模拟器中运行。
 
-**适用对象**：Blob、表
+**适用对象：**Blob、表
 
 ### /PKRS:"key1#key2#key3#..."
 
@@ -746,7 +746,7 @@ AzCopy 将使用此选项解释为在没有此选项 /L 的情况下，模拟运
 
   [bb, last-partition-key]
 
-**适用对象**：表
+**适用对象：**表
 
 ### /SplitSize:"file-size"
 
@@ -756,7 +756,7 @@ AzCopy 将使用此选项解释为在没有此选项 /L 的情况下，模拟运
 
 如果将表数据导出到一个 blob，并且已导出文件的大小达到了 200 GB 的 blob 大小限制，AzCopy 则将拆分导出的文件，即使未指定此选项也是如此。
 
-**适用对象**：表
+**适用对象：**表
 
 ### /EntityOperation:"InsertOrSkip" | "InsertOrMerge" | "InsertOrReplace"
 
@@ -768,7 +768,7 @@ AzCopy 将使用此选项解释为在没有此选项 /L 的情况下，模拟运
 
 - InsertOrReplace - 替换现有实体，或者插入新实体（如果它不存在于表中）。
 
-**适用对象**：表
+**适用对象：**表
 
 ### /Manifest:"manifest-file"
 
@@ -778,7 +778,7 @@ AzCopy 将使用此选项解释为在没有此选项 /L 的情况下，模拟运
 
 在导入操作期间用于定位数据文件，此选项是必要的。
 
-**适用对象**：表
+**适用对象：**表
 
 ### /SyncCopy
 
@@ -788,7 +788,7 @@ AzCopy 默认情况下使用服务器端的异步复制。指定此选项以执�
 
 在 Blob 存储内复制文件、文件存储内复制文件或者从 Bolb 存储将文件复制到文件存储时，可使用此选项，反之亦然。
 
-**适用对象**：Blob、文件
+**适用对象：**Blob、文件
 
 ### /SetContentType:"content-type"
 
@@ -798,7 +798,7 @@ AzCopy 默认情况下使用服务器端的异步复制。指定此选项以执�
 
 如果指定此选项不带值，AzCopy 将根据 blob 或文件扩展名设置每个 blob 或文件的内容类型。
 
-**适用对象**：Blob、文件
+**适用对象：**Blob、文件
 
 ### /PayloadFormat:"JSON" | "CSV"
 
@@ -806,7 +806,7 @@ AzCopy 默认情况下使用服务器端的异步复制。指定此选项以执�
 
 如果未指定此选项，则默认情况下，AzCopy 以 JSON 格式导出表数据文件。
 
-**适用对象**：表
+**适用对象：**表
 
 ## 已知问题和最佳实践
 
@@ -857,4 +857,4 @@ AzCopy 旨在最大程度上利用计算机资源来加快数据传输，如果�
 - [AzCopy：使用跨帐户复制 Blob](http://blogs.msdn.com/b/windowsazurestorage/archive/2013/04/01/azcopy-using-cross-account-copy-blob.aspx)
 - [AzCopy：为 Azure Blob 上传/下载文件](http://blogs.msdn.com/b/windowsazurestorage/archive/2012/12/03/azcopy-uploading-downloading-files-for-windows-azure-blobs.aspx)
 
-<!---HONumber=Mooncake_0103_2017-->
+<!---HONumber=Mooncake_0313_2017-->

@@ -1,12 +1,11 @@
 <properties
-    pageTitle="使用增量快照备份和恢复 Azure 虚拟机 | Azure"
+    pageTitle="使用增量快照备份和恢复非托管 Azure VM 磁盘 | Azure"
     description="创建自定义解决方案，以使用增量快照备份和恢复 Azure 虚拟机磁盘。"
     services="storage"
     documentationcenter="na"
     author="aungoo-msft"
     manager="tadb"
-    editor="tysonn" />  
-
+    editor="tysonn" />
 <tags
     ms.assetid="3524b987-bd65-4e35-83e7-fbc2136643e5"
     ms.service="storage"
@@ -14,11 +13,12 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="11/17/2016"
-    wacn.date="12/26/2016"
-    ms.author="aungoo" />
+    ms.date="01/23/2017"
+    wacn.date="03/20/2017"
+    ms.author="aungoo" />  
 
-# 使用增量快照备份 Azure 虚拟机磁盘
+
+# 通过递增快照备份 Azure 非托管 VM 磁盘
 ## 概述
 Azure 存储提供创建 Blob 快照的功能。快照将捕获该时间点的 Blob 状态。本文介绍有关如何使用快照维护虚拟机磁盘备份的方案。如果你选择不使用 Azure 备份和恢复服务，但想要为虚拟机磁盘创建自定义备份策略，则可以使用此方法。
 
@@ -115,4 +115,4 @@ Blob 快照是在某个时间点捕获的 Blob 只读版本。在创建快照后
 - [创建 Blob 的快照](https://msdn.microsoft.com/zh-cn/library/azure/hh488361.aspx)
 - [Plan your VM Backup Infrastructure（规划 VM 备份基础结构）](/documentation/articles/backup-azure-vms-introduction/)
 
-<!---HONumber=Mooncake_Quality_Review_1215_2016-->
+<!---HONumber=Mooncake_0313_2017-->

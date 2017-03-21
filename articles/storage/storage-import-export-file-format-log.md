@@ -1,5 +1,5 @@
 <properties
-    pageTitle="导入/导出服务日志文件格式 | Azure"
+    pageTitle="Azure 导入/导出日志文件格式 | Azure"
     description="了解针对导入/导出服务作业执行步骤时创建的日志文件的格式"
     author="muralikk"
     manager="syadav"
@@ -13,12 +13,12 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="01/15/2017"
-    wacn.date="02/24/2017"
+    ms.date="01/23/2017"
+    wacn.date="03/20/2017"
     ms.author="muralikk" />  
 
 
-# 导入/导出服务日志文件格式
+# Azure 导入/导出服务日志文件格式
 当 Azure 导入/导出服务在执行导入作业或导出作业的过程中针对驱动器执行某个操作时，会将日志写入到与该作业关联的存储帐户中的块 Blob 中。
   
 导入/导出服务可能会写入两种日志：
@@ -357,4 +357,4 @@
 ## 另请参阅  
 [存储导入/导出 REST](https://docs.microsoft.com/zh-cn/rest/api/storageimportexport/)
 
-<!---HONumber=Mooncake_0220_2017-->
+<!---HONumber=Mooncake_0313_2017-->

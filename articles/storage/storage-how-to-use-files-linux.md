@@ -3,10 +3,9 @@
     description="按照此分步教程中的说明，在云中创建 Azure 文件共享。管理文件共享内容，并从运行 Linux 的 Azure 虚拟机 (VM) 或支持 SMB 3.0 的本地应用程序安装文件共享。"
     services="storage"
     documentationcenter="na"
-    author="mine-msft"
+    author="RenaShahMSFT"
     manager="aungoo"
-    editor="tysonn" />  
-
+    editor="tysonn" />
 <tags
     ms.assetid="6edc37ce-698f-4d50-8fc1-591ad456175d"
     ms.service="storage"
@@ -14,9 +13,9 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="10/18/2016"
-    wacn.date="12/05/2016"
-    ms.author="minet" />
+    ms.date="1/18/2017"
+    wacn.date="03/20/2017"
+    ms.author="renash" />
 
 # 如何通过 Linux 使用 Azure 文件存储
 ## 概述
@@ -86,6 +85,17 @@ Azure 文件存储使用标准 SMB 协议在云中提供文件共享。使用 Az
     Filesystem  Size  Used Avail Use% Mounted on
     //myaccountname.file.core.chinacloudapi.cn/mysharename  5.0T   64K  5.0T   1% /mnt/mountpoint
 
+如果使用 RHEL 7.3，则可以按如下所示装载文件：
+
+
+	azureuser@AzureconRedhat:~> sudo yum install cifs-utils
+	azureuser@AzureconRedhat:~> sudo mkdir /mnt/mountpoint
+	azureuser@AzureconRedhat:~> sudo mount -t cifs //myaccountname.file.core.chinacloudapi.cn/mysharename /mnt/mountpoint -o vers=3.0,user=myaccountname,password=StorageAccountKeyEndingIn==,dir_mode=0777,file_mode=0777
+	azureuser@AzureconRedhat:~> df -h /mnt/mountpoint
+	Filesystem  Size  Used Avail Use% Mounted on
+	//myaccountname.file.core.chinacloudapi.cn/mysharename  5.0T   64K  5.0T   1% /mnt/mountpoint
+
+
 ## 管理文件共享
 [Azure 门户预览](https://portal.azure.cn)提供用于管理 Azure 文件存储的用户界面。你可以从 Web 浏览器中执行以下操作：
 
@@ -124,4 +134,5 @@ Azure 文件存储使用标准 SMB 协议在云中提供文件共享。使用 Az
 - [Azure 文件服务简介](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/12/introducing-microsoft-azure-file-service.aspx)
 - [将连接保存到 Azure 文件中](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/27/persisting-connections-to-microsoft-azure-files.aspx)
 
-<!---HONumber=Mooncake_1128_2016-->
+<!---HONumber=Mooncake_0313_2017-->
+<!--Update_Description: add commands guide for RHEL 7.3-->

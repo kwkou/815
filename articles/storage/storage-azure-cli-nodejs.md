@@ -3,7 +3,7 @@
     description="了解如何将 Azure 命令行界面 (Azure CLI) 1.0 用于 Azure 存储，以便创建和管理存储帐户并处理 Azure blob 和文件。Azure CLI 是一个跨平台工具"
     services="storage"
     documentationcenter="na"
-    author="micurd"
+    author="seguler"
     manager="jahogg"
     editor="tysonn" />
 <tags
@@ -13,9 +13,9 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="01/10/2017"
-    wacn.date="03/02/2017"
-    ms.author="micurd" />  
+    ms.date="01/30/2017"
+    wacn.date="03/20/2017"
+    ms.author="seguler" />  
 
 
 # 将 Azure CLI 1.0 用于 Azure 存储
@@ -239,10 +239,11 @@ Azure 文件共享是 Azure 中的 SMB 文件共享。所有目录和文件都�
 可以在下面查找适用于存储资源的 Azure CLI 1.0 命令参考：
 
 * [Resource Manager 模式下的 Azure CLI 命令](/documentation/articles/azure-cli-arm-commands/#azure-storage-commands-to-manage-your-storage-objects)
-* [Azure 服务管理模式下的 Azure CLI 命令](/documentation/articles/virtual-machines-command-line-tools/#Commands_to_manage_your_Storage_objects)
+* [Azure 服务管理模式下的 Azure CLI 命令](/documentation/articles/xplat-cli-install/)
 
 
 
 [Image1]: ./media/storage-azure-cli/azure_command.png
 
-<!---HONumber=Mooncake_0220_2017-->
+<!---HONumber=Mooncake_0313_2017-->
+<!--Update_Description: update one link-->

@@ -1,12 +1,11 @@
 <properties
-    pageTitle="存储简介 | Azure"
+    pageTitle="Azure 存储简介 | Azure"
     description="Microsoft 的云中在线数据存储 - Azure 存储空间的概述。了解如何在应用程序中使用最佳的云存储解决方案。"
     services="storage"
     documentationcenter=""
-    author="tamram"
-    manager="carmonm"
-    editor="tysonn" />  
-
+    author="mmacy"
+    manager="timlt"
+    editor="tysonn" />
 <tags
     ms.assetid="a4a1bc58-ea14-4bf5-b040-f85114edc1f1"
     ms.service="storage"
@@ -14,9 +13,9 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="get-started-article"
-    ms.date="12/08/2016"
-    wacn.date="01/24/2017"
-    ms.author="tamram" />  
+    ms.date="02/02/2017"
+    wacn.date="03/20/2017"
+    ms.author="marsma" />  
 
 
 # Azure 存储简介
@@ -85,7 +84,7 @@ Blob 存储提供三种类型的 Blob：块 Blob、追加 Blob 和页 Blob（磁
 * 追加 Blob 类似于块 Blob，但针对追加追加操作进行了优化。追加 Blob 仅可以通过将新的块添加到末尾来进行更新。对于需要新数据只能写入到 Blob 结尾的情况，例如日志记录，追加 Blob 是一个不错的选择 。
 * 页 Blob 进行了相应的优化来表示 IaaS 磁盘和支持随机写入，并且最大可以为 1 TB。Azure 虚拟机网络连接的 IaaS 磁盘是一个 VHD，存储为页 Blob。
 
-
+对于网络限制使得通过线缆向 Blob 存储上传或从其下载数据不可行的每个大型数据集，你可以将硬盘驱动器发送到 21 世纪互联以直接通过数据中心导入或导出数据。请参阅[使用 Azure 导入/导出服务将数据传输到 Blob 存储中](/documentation/articles/storage-import-export-service/)。
 
 ## 表存储
 与前几代的必需软件相比，现代应用程序通常要求数据存储具有更高的可伸缩性和灵活性。表存储提供了具有高可用性且可大规模伸缩的存储，因此你的应用程序可以自动伸缩以满足用户需求。表存储是 Windows 的 NoSQL 键/属性存储 - 它具有无模式的设计，使其不同于传统的关系数据库。采用无模式的数据存储，可以很容易地随着你的应用程序需求的发展使数据适应存储。表存储易于使用，因此开发人员可以快速创建应用程序。对于所有类型的应用程序，都可以快速并经济高效地访问数据。对于相似的数据量，表存储的成本通常显著低于传统的 SQL。
@@ -157,7 +156,7 @@ Azure 文件存储提供了基于云的 SMB 文件共享，这样你可以将依
 
 AzCopy 在 [Azure 数据移动库](https://www.nuget.org/packages/Microsoft.Azure.Storage.DataMovement/)的基础上构建，当前以预览版提供。
 
-
+Azure 导入/导出服务通过邮寄给 Azure 数据中心的硬盘驱动器，提供将 Blob 数据导入存储帐户或将其从存储帐户中导出的方法。有关导入/导出服务的详细信息，请参阅[使用 Azure 导入/导出服务将数据传输到 Blob 存储中](/documentation/articles/storage-import-export-service/)。
 
 ## 定价
 [AZURE.INCLUDE [storage-account-billing-include](../../includes/storage-account-billing-include.md)]
@@ -200,8 +199,9 @@ Azure 存储空间资源可以通过任何发出 HTTP/HTTPS 请求的语言来�
 若要了解有关 Azure 存储空间的详细信息，请参阅以下资源：
 
 ### 文档
-
-- [Azure 存储文档](/documentation/services/storage/)
+- [Azure 存档文档](/documentation/services/storage/)
+- [创建存储帐户](/documentation/articles/storage-create-storage-account/)
+- [五分钟内开始使用 Azure 存储](/documentation/articles/storage-getting-started-guide/)
 
 ### 面向管理员
 
@@ -242,13 +242,9 @@ Azure 存储空间资源可以通过任何发出 HTTP/HTTPS 请求的语言来�
 
 ### 面向 Python 开发人员
 * [如何通过 Python 使用 Blob 存储](/documentation/articles/storage-python-how-to-use-blob-storage/)
-- [如何通过 Python 使用 Blob 存储](/documentation/articles/storage-python-how-to-use-blob-storage/)
 - [如何通过 Python 使用表存储](/documentation/articles/storage-python-how-to-use-table-storage/)
 - [如何通过 Python 使用队列存储](/documentation/articles/storage-python-how-to-use-queue-storage/)
+- [如何通过 Python 使用文件存储](/documentation/articles/storage-python-how-to-use-file-storage/)
 
-## 后续步骤
-
-* [创建存储帐户](/documentation/articles/storage-create-storage-account/)
-* [五分钟内开始使用 Azure 存储](/documentation/articles/storage-getting-started-guide/)
-
-<!---HONumber=Mooncake_1128_2016-->
+<!---HONumber=Mooncake_0313_2017-->
+<!--Update_Description: add reference to import/export service; remove duplicate link references-->

@@ -1,12 +1,11 @@
 <properties
     pageTitle="教程：在 Azure 存储中使用 Azure 密钥保管库加密和解密 Blob | Azure"
-    description="本教程指导用户如何将 Azure 存储的客户端加密与 Azure 密钥保管库配合使用来加密和解密 blob。"
+    description="如何将 Azure 存储的客户端加密与 Azure Key Vault 配合使用，以便加密和解密 Blob。"
     services="storage"
     documentationcenter=""
-    author="robinsh"
-    manager="carmonm"
-    editor="tysonn" />  
-
+    author="adhurwit"
+    manager="jasonsav"
+    editor="tysonn" />
 <tags
     ms.assetid="027e8631-c1bf-48c1-9d9b-f6843e88b583"
     ms.service="storage"
@@ -14,16 +13,16 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="required"
-    ms.date="10/18/2016"
-    wacn.date="12/05/2016"
-    ms.author="lakasa;robinsh" />  
+    ms.date="01/23/2017"
+    wacn.date="03/20/2017"
+    ms.author="adhurwit" />  
 
 
-# 教程：在 Azure 存储空间中使用 Azure 密钥保管库加密和解密 Blob
+# 教程：在 Azure 存储中使用 Azure 密钥保管库加密和解密 Blob
 ## 介绍
 本教程介绍如何结合使用客户端存储加密与 Azure 密钥保管库。其中将引导你使用这些技术在控制台应用程序中加密和解密 Blob。
 
-**估计完成时间**：20 分钟。
+**估计完成时间：**20 分钟。
 
 有关 Azure 密钥保管库的概述信息，请参阅[什么是 Azure 密钥保管库？](/documentation/articles/key-vault-whatis/)
 
@@ -194,7 +193,7 @@ RSA 密钥的私钥则保留在密钥保管库中，因此，为了进行解密�
 * SymmetricKey 中的密钥应采用 Base64 编码。
 * 用作 SymmetricKey 的密钥保管库密钥需要在密钥保管库中具有“application/octet-stream”内容类型。
 
-以下是使用 PowerShell 在密钥保管库中创建可用作 SymmetricKey 的密钥的示例。注意：硬编码值 $key 仅用于演示目的。在你自己的代码中需要生成此密钥。
+以下是使用 PowerShell 在密钥保管库中创建可用作 SymmetricKey 的密钥的示例。请注意，硬编码值 $key 仅用于演示目的。请在自己的代码中生成此密钥。
 
 	// Here we are making a 128-bit key so we have 16 characters.
 	// 	The characters are in the ASCII range of UTF8 so they are
@@ -216,10 +215,10 @@ RSA 密钥的私钥则保留在密钥保管库中，因此，为了进行解密�
 就这么简单。请尽情享受其中的乐趣！
 
 ## 后续步骤
-有关将 Azure 存储与 C# 配合使用的详细信息，请参阅[用于 .NET 的 Azure 存储客户端库](https://msdn.microsoft.com/zh-cn/library/azure/dn261237.aspx)。
+有关将 Azure 存储与 C# 配合使用的详细信息，请参阅[适用于 .NET 的 Azure 存储客户端库](https://msdn.microsoft.com/zh-cn/library/azure/dn261237.aspx)。
 
 有关 Blob REST API 的详细信息，请参阅 [Blob 服务 REST API](https://msdn.microsoft.com/zh-cn/library/azure/dd135733.aspx)。
 
 有关 Azure 存储的最新信息，请转到 [Azure 存储团队博客](http://blogs.msdn.com/b/windowsazurestorage/)。
 
-<!---HONumber=Mooncake_1128_2016-->
+<!---HONumber=Mooncake_0313_2017-->

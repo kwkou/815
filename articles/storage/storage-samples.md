@@ -1,5 +1,5 @@
 <properties
-    pageTitle="Azure 存储示例 | Azure"
+    pageTitle="Azure 存储代码示例 | Azure"
     description="查看、下载和运行 Azure 存储空间的示例代码和应用程序使用 .NET、Java、Node.js 和 C++ 存储客户端库发现 Blob、队列、表和文件的入门示例。"
     services="storage"
     documentationcenter="na"
@@ -13,8 +13,8 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="storage"
-    ms.date="01/12/2017"
-    wacn.date="02/24/2017"
+    ms.date="01/23/2017"
+    wacn.date="03/20/2017"
     ms.author="marsma" />
 
 # Azure 存储示例
@@ -75,5 +75,4 @@
 - [C++ 存储客户端库的源代码](https://github.com/Azure/azure-storage-cpp)
 - [C++ 客户端库参考](http://azure.github.io/azure-storage-cpp/)
 
-<!---HONumber=Mooncake_0220_2017-->
-<!--Update_Description: add storage sample references-->
+<!---HONumber=Mooncake_0313_2017-->

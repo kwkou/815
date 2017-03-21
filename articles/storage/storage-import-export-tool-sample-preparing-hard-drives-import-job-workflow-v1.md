@@ -1,12 +1,11 @@
 <properties
-    pageTitle="为导入作业准备硬盘驱动器的示例工作流 | Azure"
+    pageTitle="为 Azure 导入作业准备硬盘驱动器的示例工作流 | Azure"
     description="参阅为 Azure 导入/导出服务中的导入作业准备驱动器的整个过程演练"
     author="muralikk"
     manager="syadav"
     editor="tysonn"
     services="storage"
-    documentationcenter="" />  
-
+    documentationcenter="" />
 <tags
     ms.assetid="6eb1b1b7-c69f-4365-b5ef-3cd5e05eb72a"
     ms.service="storage"
@@ -14,8 +13,8 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="01/09/2017"
-    wacn.date="02/24/2017"
+    ms.date="01/23/2017"
+    wacn.date="03/20/2017"
     ms.author="muralikk" />  
 
 
@@ -168,4 +167,4 @@
 [为导入作业准备硬盘驱动器](/documentation/articles/storage-import-export-tool-preparing-hard-drives-import-v1/)  
 [常用命令快速参考](/documentation/articles/storage-import-export-tool-quick-reference-v1/)
 
-<!---HONumber=Mooncake_0220_2017-->
+<!---HONumber=Mooncake_0313_2017-->
