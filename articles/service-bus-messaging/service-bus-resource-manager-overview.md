@@ -1,5 +1,5 @@
 <properties
-    pageTitle="使用 Azure Resource Manager 模板创建服务总线资源 | Azure"
+    pageTitle="使用模板创建 Azure 服务总线资源 | Azure"
     description="使用 Azure Resource Manager 模板自动创建服务总线资源"
     services="service-bus"
     documentationCenter=".net"
@@ -13,9 +13,9 @@
     ms.topic="article"
     ms.tgt_pltfrm="dotnet"
     ms.workload="na"
-    ms.date="10/14/2016"
+    ms.date="01/18/2017"
     ms.author="sethm"
-    wacn.date="02/20/2017"/>  
+    wacn.date="03/20/2017"/>  
 
 
 # 使用 Azure Resource Manager 模板创建服务总线资源
@@ -25,7 +25,7 @@ Azure Resource Manager 模板可帮助你定义要为解决方案部署的资源
 
 >[AZURE.NOTE] 本文中的示例演示如何使用 Azure Resource Manager 来创建服务总线命名空间和消息实体（队列）。
 
-## 服务总线和事件中心 Resource Manager 模板
+## 服务总线 Resource Manager 模板
 这些服务总线 Azure Resource Manager 模板可供下载和部署。单击以下链接可获得有关每个链接的详细信息，其中包含指向 GitHub 上的模板的链接：
 
 - [创建服务总线命名空间](/documentation/articles/service-bus-resource-manager-namespace/)
@@ -226,5 +226,5 @@ Azure Resource Manager 模板可帮助你定义要为解决方案部署的资源
 [Azure 资源管理器概述]: /documentation/articles/resource-group-overview/
 [使用 Azure Resource Manager 模板部署资源]: /documentation/articles/resource-group-template-deploy/
 [Azure 快速入门模板库]: https://azure.microsoft.com/zh-cn/documentation/templates/?term=service+bus
-<!---HONumber=Mooncake_0213_2017-->
+<!---HONumber=Mooncake_0313_2017-->
 <!--Update_Description:update meta properties and wording-->

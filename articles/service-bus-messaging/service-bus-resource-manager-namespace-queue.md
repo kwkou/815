@@ -14,9 +14,9 @@
     ms.topic="article"
     ms.tgt_pltfrm="dotnet"
     ms.workload="na"
-    ms.date="10/14/2016"
+    ms.date="01/18/2017"
     ms.author="sethm;shvija"
-    wacn.date="12/26/2016"/>  
+    wacn.date="03/20/2017"/>  
 
 # 使用 Azure Resource Manager 模板创建服务总线命名空间和队列
 

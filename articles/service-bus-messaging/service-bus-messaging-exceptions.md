@@ -13,9 +13,9 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="na"
-    ms.date="12/21/2016"
+    ms.date="01/17/2017"
     ms.author="sethm"
-    wacn.date="02/20/2017" />  
+    wacn.date="03/20/2017" />  
 
 # 服务总线消息传送异常
 

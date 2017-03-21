@@ -9,8 +9,8 @@
 
 <tags
     ms.service="service-bus"
-    ms.date="10/04/2016"
-    wacn.date="12/02/2016"/>
+    ms.date="02/02/2017"
+    wacn.date="03/20/2017"/>
 
 # 服务总线事务处理概述
 

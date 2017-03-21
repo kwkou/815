@@ -8,8 +8,8 @@
     editor="" />
 <tags 
    ms.service="service-bus"
-    ms.date="10/03/2016"
-   wacn.date="01/04/2017" />
+    ms.date="02/15/2017"
+   wacn.date="03/20/2017" />
 
 # 创建使用服务总线队列的应用程序
 

@@ -13,9 +13,9 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="na"
-    ms.date="10/06/2016"
+    ms.date="02/16/2017"
     ms.author="sethm"
-    wacn.date="01/09/2017"/>  
+    wacn.date="03/20/2017"/>  
 
 
 # 服务总线定价和计费

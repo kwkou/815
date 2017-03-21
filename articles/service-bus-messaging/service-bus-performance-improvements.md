@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="使用服务总线提高性能的最佳实践 | Azure"
+   pageTitle="使用 Azure 服务总线提高性能的最佳实践 | Azure"
    description="介绍如何使用 Azure 服务总线在交换中转消息时优化性能。"
    services="service-bus"
    documentationCenter="na"
@@ -12,20 +12,19 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="na"
-    ms.date="10/25/2016"
+    ms.date="02/02/2017"
     ms.author="sethm"
     wacn.date="02/20/2017"/>  
 
 # 使用服务总线消息传送改进性能的最佳实践
-
-本主题介绍如何使用 Azure 服务总线消息传送在交换中转消息时优化性能。本主题的第一部分介绍有助于提高性能的各种不同机制。第二部分指导用户如何针对给定方案以能够提供最佳性能的方式使用服务总线。
+本文介绍如何使用 [Azure 服务总线消息传送](/documentation/services/service-bus/)在交换中转消息时优化性能。本主题的第一部分介绍有助于提高性能的各种不同机制。第二部分指导用户如何针对给定方案以能够提供最佳性能的方式使用服务总线。
 
 在本主题中，术语“客户端”是指任何访问服务总线的实体。客户端可以充当发送方或接收方的角色。术语“发送方”用于向服务总线队列或主题发送消息的服务总线队列或主题客户端。术语“接收方”是指从服务总线队列或订阅接收消息的服务总线队列或订阅客户端。
 
 以下部分介绍服务总线用以帮助提高性能的几个概念。
 
 ## 协议
-服务总线支持客户端通过三种协议发送和接收消息
+服务总线支持客户端通过三种协议之一发送和接收消息：
 
 1. 高级消息队列协议 (AMQP)
 2. 服务总线消息传送协议 (SBMP)
@@ -86,10 +85,9 @@ AMQP 和 SBMP 都很高效，因为只要存在消息工厂，就可以保持与
 服务总线不支持“接收并删除”操作的事务。此外，在客户端想要延迟消息或将其放入[死信队列](/documentation/articles/service-bus-dead-letter-queues/)的情况下，需要使用扫视-锁定语义。
 
 ## 客户端批处理
+客户端批处理使队列或主题客户端可以将发送消息的操作延迟特定的一段时间。如果客户端在这段时间内发送其他消息，则会将这些消息以单个批次传送。客户端批处理还使队列或订阅客户端将多个**完成**请求批处理为单个请求。批处理仅适用于异步**发送**和**完成**操作。同步操作会立即发送到服务总线服务。不会针对扫视或接收操作执行批处理，也不会跨客户端执行批处理。
 
-客户端批处理使队列或主题客户端可以将发送消息的操作延迟特定的一段时间。如果客户端在这段时间内发送其他消息，则会将这些消息以单个批次传送。客户端批处理还使队列/订阅客户端将多个**完成**请求批处理为单个请求。批处理仅适用于异步**发送**和**完成**操作。同步操作会立即发送到服务总线服务。不会针对扫视或接收操作执行批处理，也不会跨客户端执行批处理。
-
-如果批大小超出最大消息大小，将从该批中删除最后一个消息，并且客户端会立即发送该批次。最后一条消息将成为下一批的第一个消息。默认情况下，客户端的批处理间隔时间为 20 毫秒。可通过在创建消息工厂之前设置 [BatchFlushInterval][] 属性，更改批处理的间隔时间。此设置会影响此工厂创建的所有客户端。
+默认情况下，客户端的批处理间隔时间为 20 毫秒。可通过在创建消息工厂之前设置 [BatchFlushInterval][BatchFlushInterval] 属性，更改批处理的间隔时间。此设置会影响此工厂创建的所有客户端。
 
 若要禁用批处理，请将 [BatchFlushInterval][] 属性设置为 **TimeSpan.Zero**。例如：
 
@@ -101,8 +99,7 @@ AMQP 和 SBMP 都很高效，因为只要存在消息工厂，就可以保持与
 批处理不会影响可计费的消息操作的数目，且仅适用于服务总线客户端协议。HTTP 协议不支持批处理。
 
 ## 批处理存储访问
-
-为增加队列/主题/订阅的吞吐量，服务总线在写入其内部存储时会将多个消息进行批处理。如果在队列或主题上启用了此功能，则将消息批量写入到存储。如果在队列或订阅上启用了此功能，则从存储中批量删除消息。如果对实体启用了批量存储访问，服务总线会将有关此实体的存储写入操作延迟多达 20 毫秒的时间。在此间隔期间发生的其他存储操作将添加到此批中。批量存储访问仅影响**发送**和**完成**操作；接收操作不会受到影响。批量存储访问是实体上的一个属性。将跨所有启用了批量存储访问的实体实施批处理。
+为增加队列、主题或订阅的吞吐量，服务总线在写入其内部存储时会将多个消息进行批处理。如果在队列或主题上启用了此功能，则将消息批量写入到存储。如果在队列或订阅上启用了此功能，则从存储中批量删除消息。如果对实体启用了批量存储访问，服务总线会将有关此实体的存储写入操作延迟多达 20 毫秒的时间。在此间隔期间发生的其他存储操作将添加到此批中。批量存储访问仅影响**发送**和**完成**操作；接收操作不会受到影响。批量存储访问是实体上的一个属性。将跨所有启用了批量存储访问的实体实施批处理。
 
 创建新队列、主题或订阅时，将默认启用批量存储访问。若要禁用批量存储访问，请在创建实体之前将 [EnableBatchedOperations][] 属性设置为 **false**。例如：
 
@@ -150,11 +147,10 @@ AMQP 和 SBMP 都很高效，因为只要存在消息工厂，就可以保持与
 如果不能使用分区队列或主题，或不能由单个分区队列或主题处理预期负载，则必须使用多个消息传送实体。在使用多个实体时，为每个实体创建专用客户端，而不是针对所有实体使用同一个客户端。
 
 ## 开发和测试功能
-服务总线有一个专门用于开发的功能，此功能**切不可用于生产配置**。
 
-[TopicDescription.EnableFilteringMessagesBeforePublishing](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.topicdescription.enablefilteringmessagesbeforepublishing.aspx)
+服务总线有一个专门用于开发的功能，此功能**切不可用于生产配置**：[TopicDescription.EnableFilteringMessagesBeforePublishing][]。
 
-* 当将新的规则或筛选器添加到主题时，EnableFilteringMessagesBeforePublishing 可用于验证新的筛选器表达式是否按预期工作。
+将新的规则或筛选器添加到主题时，可使用 [TopicDescription.EnableFilteringMessagesBeforePublishing][] 验证新的筛选器表达式是否按预期工作。
 
 ## 方案
 
@@ -275,22 +271,21 @@ AMQP 和 SBMP 都很高效，因为只要存在消息工厂，就可以保持与
 -   将预提取计数设置为预期接收速率的 20 倍（以秒为单位）。这将减少服务总线客户端协议传输的数量。
 
 ## 后续步骤
+若要了解有关优化服务总线性能的详细信息，请参阅[分区消息传送实体][Partitioned messaging entities]。
 
-若要了解有关优化服务总线性能的详细信息，请参阅[分区消息传送实体][]。
+[QueueClient]: https://docs.microsoft.com/zh-cn/dotnet/api/microsoft.servicebus.messaging.queueclient
+[MessageSender]: https://docs.microsoft.com/zh-cn/dotnet/api/microsoft.servicebus.messaging.messagesender
+[MessagingFactory]: https://docs.microsoft.com/zh-cn/dotnet/api/microsoft.servicebus.messaging.messagingfactory
+[PeekLock]: https://docs.microsoft.com/zh-cn/dotnet/api/microsoft.servicebus.messaging.receivemode
+[ReceiveAndDelete]: https://docs.microsoft.com/zh-cn/dotnet/api/microsoft.servicebus.messaging.receivemode
+[BatchFlushInterval]: https://docs.microsoft.com/zh-cn/dotnet/api/microsoft.servicebus.messaging.netmessagingtransportsettings#Microsoft_ServiceBus_Messaging_NetMessagingTransportSettings_BatchFlushInterval
+[EnableBatchedOperations]: https://docs.microsoft.com/zh-cn/dotnet/api/microsoft.servicebus.messaging.queuedescription#Microsoft_ServiceBus_Messaging_QueueDescription_EnableBatchedOperations
+[QueueClient.PrefetchCount]: https://docs.microsoft.com/zh-cn/dotnet/api/microsoft.servicebus.messaging.queueclient#Microsoft_ServiceBus_Messaging_QueueClient_PrefetchCount
+[SubscriptionClient.PrefetchCount]: https://docs.microsoft.com/zh-cn/dotnet/api/microsoft.servicebus.messaging.subscriptionclient#Microsoft_ServiceBus_Messaging_SubscriptionClient_PrefetchCount
+[ForcePersistence]: https://docs.microsoft.com/zh-cn/dotnet/api/microsoft.servicebus.messaging.brokeredmessage#Microsoft_ServiceBus_Messaging_BrokeredMessage_ForcePersistence
+[EnablePartitioning]: https://docs.microsoft.com/zh-cn/dotnet/api/microsoft.servicebus.messaging.queuedescription#Microsoft_ServiceBus_Messaging_QueueDescription_EnablePartitioning
+[Partitioned messaging entities]: /documentation/articles/service-bus-partitioning/
+[TopicDescription.EnableFilteringMessagesBeforePublishing]: /dotnet/api/microsoft.servicebus.messaging.topicdescription#Microsoft_ServiceBus_Messaging_TopicDescription_EnableFilteringMessagesBeforePublishing
 
-  [QueueClient]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.queueclient.aspx
-  [MessageSender]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.messagesender.aspx
-  [MessagingFactory]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.messagingfactory.aspx
-  [PeekLock]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.receivemode.aspx
-  [ReceiveAndDelete]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.receivemode.aspx
-  [BatchFlushInterval]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.netmessagingtransportsettings.batchflushinterval.aspx
-  [EnableBatchedOperations]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.queuedescription.enablebatchedoperations.aspx
-  [QueueClient.PrefetchCount]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.queueclient.prefetchcount.aspx
-  [SubscriptionClient.PrefetchCount]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.subscriptionclient.prefetchcount.aspx
-  [ForcePersistence]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.forcepersistence.aspx
-  [EnablePartitioning]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.queuedescription.enablepartitioning.aspx
-  [分区消息传送实体]: /documentation/articles/service-bus-partitioning/
-  
-
-<!---HONumber=Mooncake_0116_2017-->
+<!---HONumber=Mooncake_0313_2017-->
 <!--Update_Description:update meta properties and wording-->

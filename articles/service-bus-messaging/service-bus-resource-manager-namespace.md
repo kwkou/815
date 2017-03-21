@@ -16,7 +16,7 @@
     ms.workload="na"
     ms.date="01/10/2017"
     ms.author="sethm;shvija"
-    wacn.date="02/20/2017"/>  
+    wacn.date="03/20/2017"/>  
 
 
 # 使用 Azure Resource Manager 模板创建服务总线命名空间

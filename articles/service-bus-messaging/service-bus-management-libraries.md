@@ -5,21 +5,21 @@
       cloud="na"
       documentationcenter="na"
       author="jtaubensee"
-      manager="sethm" />
+      manager="timlt" />
 <tags
     ms.assetid="ms.service: service-bus-messaging"
       ms.workload="na"
       ms.tgt_pltfrm="na"
       ms.devlang="dotnet"
       ms.topic="article"
-      ms.date="01/06/2016"
-      wacn.date="02/20/2017"
+      ms.date="1/6/2017"
+      wacn.date="03/20/2017"
       ms.author="jotaub" />  
 
 
 # 服务总线管理库
 
-服务总线管理库提供用于动态预配服务总线命名空间和实体的功能，因而适用于复杂部署和消息传送方案，这让用户能够以编程方式确定要预配的实体。这些库当前面向 .NET 提供。
+服务总线管理库可动态预配服务总线命名空间和实体。因而适用于复杂部署和消息传送方案，这让用户能够以编程方式确定要预配的实体。这些库当前面向 .NET 提供。
 
 ## 受支持的功能
 
@@ -36,11 +36,11 @@
 * [使用 Azure PowerShell 创建服务主体来访问资源](/documentation/articles/resource-group-authenticate-service-principal/)
 * [使用 Azure CLI 创建服务主体来访问资源](/documentation/articles/resource-group-authenticate-service-principal-cli/)
 
-前面的教程提供 `AppId`（客户端 ID）、`TenantId` 和 `ClientSecret`（身份验证密钥），管理库会使用它们进行身份验证。必须具有要在其中运行的资源组的“所有者”权限。
+这些教程提供 `AppId`（客户端 ID）、`TenantId` 和 `ClientSecret`（身份验证密钥），管理库会使用它们进行身份验证。必须具有要在其中运行的资源组的“所有者”权限。
 
 ## 编程模式
 
-所有服务总线资源的操纵模式都具有相似性，并遵循常用协议：
+所有服务总线资源的操纵模式都遵循常用协议：
 
 1. 使用 `Microsoft.IdentityModel.Clients.ActiveDirectory` 库从 Azure Active Directory 获取令牌。
 
@@ -79,4 +79,4 @@
 * [.NET 管理示例](https://github.com/Azure-Samples/service-bus-dotnet-management/)
 * [Microsoft.Azure.Management.ServiceBus 参考](https://docs.microsoft.com/en-us/dotnet/api/Microsoft.Azure.Management.ServiceBus)
 
-<!---HONumber=Mooncake_0213_2017-->
+<!---HONumber=Mooncake_0313_2017-->
