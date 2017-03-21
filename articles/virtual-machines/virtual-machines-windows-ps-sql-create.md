@@ -36,7 +36,7 @@
 * [Azure PowerShell](https://docs.microsoft.com/powershell/azureps-cmdlets-docs)，最低版本 1.4.0 或以上（本教程使用 1.5.0 版编写）。
     * 若要检索你的版本，请键入 **Get-Module Azure -ListAvailable**。
 
-## 配置订阅
+## <a name="configure-your-subscription"></a> 配置订阅
 打开 Windows PowerShell，并通过运行以下 cmdlet 访问 Azure 帐户。随后将出现一个用于输入凭据的登录屏幕。使用登录 Azure 门户预览时所用的相同电子邮件和密码。
 
     Add-AzureRmAccount -EnvironmentName AzureChinaCloud

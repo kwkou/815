@@ -9,7 +9,7 @@
     tags="azure-service-management" />
 <tags
     ms.assetid="9fc761b1-21ad-4d79-bebc-a2f094ec214d"
-    ms.service="virtual-machines-sql"
+    ms.service="virtual-machines-windows"
     ms.devlang="na"
     ms.custom="na"
     ms.topic="article"
@@ -258,7 +258,7 @@ S2D 支持两种类型的体系结构 - 聚合与超聚合。本文档中所述�
 
 1. 保存访问密钥和容器 URL。
 
-1. 配置 WSFC 群集仲裁见证。请参阅 [在用户界面中配置仲裁见证] (http://technet.microsoft.com/windows-server-docs/failover-clustering/deploy-cloud-witness#to-configure-cloud-witness-as-a-quorum-witness)。
+1. 配置 WSFC 群集仲裁见证。请参阅 [在用户界面中配置仲裁见证](http://technet.microsoft.com/windows-server-docs/failover-clustering/deploy-cloud-witness#to-configure-cloud-witness-as-a-quorum-witness)。
 
 ### 添加存储
 
