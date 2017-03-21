@@ -149,10 +149,10 @@ G:\\pictures\\wild\\canyon.jpg.properties
 工具将下载验证失败的所有组成部分，并将其重新写入驱动器上的同一文件。
   
 ## 另请参阅  
-[设置 Azure 导入/导出工具](/documentation/articles/storage-import-export-tool-setup-v1/)
-[为导入作业准备硬盘驱动器](/documentation/articles/storage-import-export-tool-preparing-hard-drives-import-v1/)
-[使用复制日志文件查看作业状态](/documentation/articles/storage-import-export-tool-reviewing-job-status-v1/)
-[修复导入作业](/documentation/articles/storage-import-export-tool-repairing-an-import-job-v1/)
-[排查 Azure 导入/导出工具问题](/documentation/articles/storage-import-export-tool-troubleshooting-v1/)
+- [设置 Azure 导入/导出工具](/documentation/articles/storage-import-export-tool-setup-v1/)
+- [为导入作业准备硬盘驱动器](/documentation/articles/storage-import-export-tool-preparing-hard-drives-import-v1/)
+- [使用复制日志文件查看作业状态](/documentation/articles/storage-import-export-tool-reviewing-job-status-v1/)
+- [修复导入作业](/documentation/articles/storage-import-export-tool-repairing-an-import-job-v1/)
+- [排查 Azure 导入/导出工具问题](/documentation/articles/storage-import-export-tool-troubleshooting-v1/)
 
 <!---HONumber=Mooncake_0313_2017-->

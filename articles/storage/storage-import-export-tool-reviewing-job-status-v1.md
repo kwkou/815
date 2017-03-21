@@ -32,10 +32,10 @@ Azure 导入/导出服务在处理与某个导入或导出作业关联的驱动�
  有关复制日志的格式以及状态代码的完整列表，请参阅[导入/导出服务日志文件格式](/documentation/articles/storage-import-export-file-format-log/)。
   
 ## 另请参阅  
- [设置 Azure 导入/导出工具](/documentation/articles/storage-import-export-tool-setup-v1/)
- [为导入作业准备硬盘驱动器](/documentation/articles/storage-import-export-tool-preparing-hard-drives-import-v1/)
- [修复导入作业](/documentation/articles/storage-import-export-tool-repairing-an-import-job-v1/)
- [修复导出作业](/documentation/articles/storage-import-export-tool-repairing-an-export-job-v1/)
- [排查 Azure 导入/导出工具问题](/documentation/articles/storage-import-export-tool-troubleshooting-v1/)
+ - [设置 Azure 导入/导出工具](/documentation/articles/storage-import-export-tool-setup-v1/)
+ - [为导入作业准备硬盘驱动器](/documentation/articles/storage-import-export-tool-preparing-hard-drives-import-v1/)
+ - [修复导入作业](/documentation/articles/storage-import-export-tool-repairing-an-import-job-v1/)
+ - [修复导出作业](/documentation/articles/storage-import-export-tool-repairing-an-export-job-v1/)
+ - [排查 Azure 导入/导出工具问题](/documentation/articles/storage-import-export-tool-troubleshooting-v1/)
 
 <!---HONumber=Mooncake_0313_2017-->

@@ -164,7 +164,7 @@
   
 ## 另请参阅  
 
-[为导入作业准备硬盘驱动器](/documentation/articles/storage-import-export-tool-preparing-hard-drives-import-v1/)  
-[常用命令快速参考](/documentation/articles/storage-import-export-tool-quick-reference-v1/)
+- [为导入作业准备硬盘驱动器](/documentation/articles/storage-import-export-tool-preparing-hard-drives-import-v1/)  
+- [常用命令快速参考](/documentation/articles/storage-import-export-tool-quick-reference-v1/)
 
 <!---HONumber=Mooncake_0313_2017-->

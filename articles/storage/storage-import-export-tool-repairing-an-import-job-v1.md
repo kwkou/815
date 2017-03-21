@@ -100,11 +100,11 @@ Azure 导入/导出服务可能无法将某些文件或某个文件的部分内�
   
 ## 另请参阅  
 
-[设置 Azure 导入/导出工具](/documentation/articles/storage-import-export-tool-setup-v1/)  
-[为导入作业准备硬盘驱动器](/documentation/articles/storage-import-export-tool-preparing-hard-drives-import-v1/)  
-[使用复制日志文件查看作业状态](/documentation/articles/storage-import-export-tool-reviewing-job-status-v1/)  
-[修复导出作业](/documentation/articles/storage-import-export-tool-repairing-an-export-job-v1/)  
-[排查 Azure 导入/导出工具问题](/documentation/articles/storage-import-export-tool-troubleshooting-v1/)
+- [设置 Azure 导入/导出工具](/documentation/articles/storage-import-export-tool-setup-v1/)  
+- [为导入作业准备硬盘驱动器](/documentation/articles/storage-import-export-tool-preparing-hard-drives-import-v1/)  
+- [使用复制日志文件查看作业状态](/documentation/articles/storage-import-export-tool-reviewing-job-status-v1/)  
+- [修复导出作业](/documentation/articles/storage-import-export-tool-repairing-an-export-job-v1/)  
+- [排查 Azure 导入/导出工具问题](/documentation/articles/storage-import-export-tool-troubleshooting-v1/)
 
 
 <!---HONumber=Mooncake_0313_2017-->

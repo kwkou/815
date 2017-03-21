@@ -617,10 +617,10 @@ Azure 存储服务分析现在支持用于文件存储的指标。使用指标�
     若要将大量文件传输到文件存储，建议使用 AzCopy、Azure Powershell (Windows) 或 Azure CLI (Linux/Unix)，因为这些工具已针对网络传输进行优化。
 15. **发布了修复 Azure 文件慢速性能问题的修补程序**
     
-    Windows 团队最近发布了一个修补程序，旨在修复客户从 Windows 8.1 计算机或 Windows Server 2012 R2 服务器访问 Azure 文件存储时遇到的慢速性能问题。有关详细信息，请查看相关的知识库文章：[Slow performance when you access Azure Files Storage from Windows 8.1 or Server 2012 R2](https://support.microsoft.com/zh-cn/kb/3114025)（从 Windows 8.1 或 Server 2012 R2 访问 Azure 文件存储时性能降低）。
+    Windows 团队最近发布了一个修补程序，旨在修复客户从 Windows 8.1 计算机或 Windows Server 2012 R2 服务器访问 Azure 文件存储时遇到的慢速性能问题。有关详细信息，请查看相关的知识库文章：[从 Windows 8.1 或 Server 2012 R2 访问 Azure 文件存储时性能降低](https://support.microsoft.com/zh-cn/kb/3114025)。
 16. **通过 IBM MQ 使用 Azure 文件存储**
     
-    IBM 已发布相关文档来指导 IBM MQ 客户通过其服务配置 Azure 文件存储。有关详细信息，请查阅 [How to setup IBM MQ Multi instance queue manager with Microsoft Azure File Service](https://github.com/ibm-messaging/mq-azure/wiki/How-to-setup-IBM-MQ-Multi-instance-queue-manager-with-Microsoft-Azure-File-Service)（如何通过 Microsoft Azure 文件服务设置 IBM MQ 多实例队列管理器）。
+    IBM 已发布相关文档来指导 IBM MQ 客户通过其服务配置 Azure 文件存储。有关详细信息，请查阅 [如何通过 Azure 文件服务设置 IBM MQ 多实例队列管理器](https://github.com/ibm-messaging/mq-azure/wiki/How-to-setup-IBM-MQ-Multi-instance-queue-manager-with-Microsoft-Azure-File-Service)。
 17. **如何排除 Azure 文件存储错误？**
     
     有关端到端故障排除指南你可以参考 [Azure 文件故障排除文章](/documentation/articles/storage-troubleshoot-file-connection-problems/)。

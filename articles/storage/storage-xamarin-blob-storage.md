@@ -235,6 +235,7 @@ Xamarin 使开发人员能够通过共享的 C# 代码库来使用其本机用�
 ## 后续步骤
 
 在本入门指南中，你学习了如何使用 Azure 存储在 Xamarin 中创建跨平台应用程序。本入门指南着重介绍 Blob 存储的情况。但是，还对 Blob 存储、表存储、文件存储和队列存储进行更多操作。请参阅以下文章以了解更多信息：
+
 - [通过 .NET 开始使用 Azure Blob 存储](/documentation/articles/storage-dotnet-how-to-use-blobs/)
 - [通过 .NET 开始使用 Azure 表存储](/documentation/articles/storage-dotnet-how-to-use-tables/)
 - [通过 .NET 开始使用 Azure 队列存储](/documentation/articles/storage-dotnet-how-to-use-queues/)
