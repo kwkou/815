@@ -149,7 +149,7 @@
 
 - 有关通过 .NET 客户端库部署资源的示例，请参阅 [Deploy resources using .NET libraries and a template](/documentation/articles/virtual-machines-windows-csharp-template/)（使用 .NET 库和模板部署资源）。
 - 有关部署应用程序的详细示例，请参阅 [Provision and deploy microservices predictably in Azure](/documentation/articles/app-service-deploy-complex-application-predictably/)（按可预见的方式在 Azure 中预配和部署微服务）。
-- 有关将解决方案部署到不同环境的指南，请参阅 [Development and test environments in Azure](/documentation/articles/solution-dev-test-environments/)（Azure 中的开发和测试环境）。
+<!--- 有关将解决方案部署到不同环境的指南，请参阅 [Development and test environments in Azure](/documentation/articles/solution-dev-test-environments/)（Azure 中的开发和测试环境）。-->
 - 若要了解 Azure Resource Manager 模板的节，请参阅 [Authoring templates](/documentation/articles/resource-group-authoring-templates/)（创作模板）。
 - 有关可在 Azure Resource Manager 模板中使用的函数列表，请参阅 [Template functions](/documentation/articles/resource-group-template-functions/)（模板函数）。
 

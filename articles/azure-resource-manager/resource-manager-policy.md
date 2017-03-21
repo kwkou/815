@@ -313,7 +313,7 @@ Azure 提供一些内置的策略定义，可减少需要定义的策略数目�
     }
 
 ## 后续步骤
-* 定义策略规则后，请将它分配到范围。有关策略分配的信息，请参阅[分配和管理策略](/documentation/articles/resource-manager-policy-create-assign/)。
+<!--* 定义策略规则后，请将它分配到范围。有关策略分配的信息，请参阅[分配和管理策略](/documentation/articles/resource-manager-policy-create-assign/)。-->
 * 如需了解企业如何使用 Resource Manager 对订阅进行有效管理，请参阅 [Azure 企业机架 - 规范性订阅管理](/documentation/articles/resource-manager-subscription-governance/)。
 * 该策略架构已在 [http://schema.management.azure.com/schemas/2015-10-01-preview/policyDefinition.json](http://schema.management.azure.com/schemas/2015-10-01-preview/policyDefinition.json) 中发布。
 
