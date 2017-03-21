@@ -1,33 +1,36 @@
 <properties
-    pageTitle="创建具有多个 NIC 的 Linux VM | Azure"
+    pageTitle="在 Azure 中创建具有多个 NIC 的 Linux VM | Azure"
     description="了解如何使用 Azure CLI 或 Resource Manager 模板创建附有多个 NIC 的 Linux VM。"
     services="virtual-machines-linux"
     documentationcenter=""
     author="iainfoulds"
     manager="timlt"
-    editor="" />  
-
+    editor="" />
 <tags
-    ms.assetid="5d2d04d0-fc62-45fa-88b1-61808a2bc691"
+    ms.assetid=""
     ms.service="virtual-machines-linux"
     ms.devlang="na"
     ms.topic="article"
     ms.tgt_pltfrm="vm-linux"
     ms.workload="infrastructure"
-    ms.date="10/27/2016"
-    wacn.date="12/20/2016"
+    ms.date="02/09/2017"
+    wacn.date="03/20/2017"
     ms.author="iainfou" />  
 
 
-# 创建具有多个 NIC 的 Linux VM
+# 使用 Azure CLI 1.0 创建具有多个 NIC 的 VM
 可以在 Azure 中创建附有多个虚拟网络接口 (NIC) 的虚拟机 (VM)。一种常见方案是为前端和后端连接使用不同的子网，或者为监视或备份解决方案使用一个专用网络。本文提供用于创建附有多个 NIC 的 VM 的快速命令。有关详细信息，包括如何在自己的 Bash 脚本中创建多个 NIC，请阅读 [Deploying multi-NIC VMs](/documentation/articles/virtual-network-deploy-multinic-arm-cli/)（部署具有多个 NIC 的 VM）。不同的 [VM 大小](/documentation/articles/virtual-machines-linux-sizes/)支持不同数目的 NIC，因此请相应地调整 VM 的大小。
 
 > [AZURE.WARNING]
 必须在创建 VM 时附加多个 NIC - 不能将 NIC 添加到现有 VM。可以[基于原始虚拟磁盘创建 VM](/documentation/articles/virtual-machines-linux-copy-vm/)，并在部署 VM 时创建多个 NIC。
-> 
-> 
 
-## 快速命令
+## 用于完成任务的 CLI 版本
+可使用以下 CLI 版本之一完成任务：
+
+- [Azure CLI 1.0](#create-supporting-resources)：用于经典部署模型和资源管理部署模型的 CLI
+- Azure CLI 2.0 - 不支持 Azure 中国区的虚拟机，因为 API 版本的缘故。
+
+## <a name="create-supporting-resources"></a> 创建支持资源
 确保已登录 [Azure CLI](/documentation/articles/xplat-cli-install/) 并使用 Resource Manager 模式：
 
     azure config mode arm
@@ -55,29 +58,8 @@
     azure network vnet subnet create -g myResourceGroup -e myVnet \
         -n mySubnetBackEnd -a 192.168.2.0/24
 
-创建两个 NIC，并将其中一个 NIC 附加到前端子网，将另一个 NIC 附加到后端子网。以下示例创建名为 `myNic1` 和 `myNic2` 的两个 NIC，并将其附加到子网：
-
-    azure network nic create -g myResourceGroup -l ChinaNorth \
-        -n myNic1 -m myVnet -k mySubnetFrontEnd
-    azure network nic create -g myResourceGroup -l ChinaNorth \
-        -n myNic2 -m myVnet -k mySubnetBackEnd
-
-最后，创建 VM 并附加前面创建的两个 NIC。以下示例创建名为 `myVM` 的 VM：
-
-    azure vm create \
-        --resource-group myResourceGroup \
-        --name myVM \
-        --location ChinaNorth \
-        --os-type linux \
-        --nic-names myNic1,myNic2 \
-        --vm-size Standard_DS2_v2 \
-        --storage-account-name mystorageaccount \
-        --image-urn UbuntuLTS \
-        --admin-username ops \
-        --ssh-publickey-file ~/.ssh/id_rsa.pub
-
-## 使用 Azure CLI 创建多个 NIC
-如果你以前曾经 Azure CLI 创建过 VM，则应该熟悉这些快速命令。创建一个 NIC 或多个 NIC 的过程是相同的。详细了解如何[使用 Azure CLI 部署多个 NIC](/documentation/articles/virtual-network-deploy-multinic-arm-cli/)，包括如何编写轮流创建所有 NIC 的过程脚本。
+## 创建和配置多个 NIC
+详细了解如何[使用 Azure CLI 部署多个 NIC](/documentation/articles/virtual-network-deploy-multinic-arm-cli/)，包括如何编写轮流创建所有 NIC 的过程脚本。
 
 以下示例创建两个名为 `myNic1` 和 `myNic2` 的两个 NIC，其中一个 NIC 将连接到每个子网：
 
@@ -86,7 +68,7 @@
     azure network nic create --resource-group myResourceGroup --location ChinaNorth \
         -n myNic2 --subnet-vnet-name myVnet --subnet-name mySubnetBackEnd
 
-通常，我们还会创建[网络安全组](/documentation/articles/virtual-networks-nsg/)或[负载均衡器](/documentation/articles/load-balancer-overview/)来帮助管理流量以及跨 VM 分布流量。这些命令与处理多个 NIC 时所用的命令也是一样的。以下示例创建名为 `myNetworkSecurityGroup` 的网络安全组：
+通常，我们还会创建[网络安全组](/documentation/articles/virtual-networks-nsg/)或[负载均衡器](/documentation/articles/load-balancer-overview/)来帮助管理流量以及跨 VM 分布流量。以下示例创建名为 `myNetworkSecurityGroup` 的网络安全组：
 
     azure network nsg create --resource-group myResourceGroup --location ChinaNorth \
         --name myNetworkSecurityGroup
@@ -98,6 +80,7 @@
     azure network nic set --resource-group myResourceGroup --name myNic2 \
         --network-security-group-name myNetworkSecurityGroup
 
+## 创建 VM 并附加 NIC
 创建 VM 时，可以指定多个 NIC。请不要使用 `--nic-name` 提供单个 NIC，而要使用 `--nic-names` 并提供 NIC 的逗号分隔列表。还需要谨慎选择 VM 的大小。可添加到 VM 的 NIC 数目有限制。详细了解 [Linux VM 大小](/documentation/articles/virtual-machines-linux-sizes/)。以下示例演示如何指定多个 NIC，然后指定可支持使用多个 NIC 的 VM 大小 (`Standard_DS2_v2`)：
 
     azure vm create \
@@ -109,7 +92,7 @@
         --vm-size Standard_DS2_v2 \
         --storage-account-name mystorageaccount \
         --image-urn UbuntuLTS \
-        --admin-username ops \
+        --admin-username azureuser \
         --ssh-publickey-file ~/.ssh/id_rsa.pub
 
 ## 使用 Resource Manager 模板创建多个 NIC
@@ -133,4 +116,5 @@ Azure Resource Manager 模板使用声明性 JSON 文件来定义环境。阅读
 
 请记住，不能将其他 NIC 添加到现有 VM，而必须在部署 VM 时创建所有 NIC。仔细规划部署，确保从一开始就建立了全部所需的网络连接。
 
-<!---HONumber=Mooncake_1212_2016-->
+<!---HONumber=Mooncake_0313_2017-->
+<!--Update_Description: add information about CLI 2.0-->

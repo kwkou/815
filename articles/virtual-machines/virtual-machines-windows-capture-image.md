@@ -14,15 +14,15 @@
     ms.tgt_pltfrm="vm-windows"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="10/20/2016"
-    wacn.date="01/05/2017"
+    ms.date="02/15/2017"
+    wacn.date="03/20/2017"
     ms.author="cynthn" />
 
 # 如何从通用化 Azure VM 捕获 VM 映像
 本文说明如何使用 Azure PowerShell 创建通用化 Azure VM 的映像。然后可以使用该映像来创建另一个 VM。该映像包含 OS 磁盘和附加到虚拟机的数据磁盘。该映像不包含虚拟网络资源，因此，创建新 VM 时需要设置这些资源。
 
 ## 先决条件
-* 必须已[通用化 VM](/documentation/articles/virtual-machines-windows-generalize-vhd/)。通用化 VM 时将删除所有个人帐户信息及其他某些数据，并准备好要用作映像的计算机。
+* 必须已[通用化 VM](/documentation/articles/virtual-machines-windows-generalize-vhd/)。通用化 VM 时将删除所有个人帐户信息及其他某些数据，并准备好要用作映像的计算机。还可以使用 `sudo waagent -deprovision+user` 通用化 Linux VM，然后使用 PowerShell 捕获该 VM。有关使用 CLI 捕获 VM 的信息，请参阅[如何使用 Azure CLI 通用化和捕获 Linux 虚拟机](/documentation/articles/virtual-machines-linux-capture-image/)
 * 需要安装 Azure PowerShell 1.0.x 版或更新版本。如果尚未安装 PowerShell，请参阅 [How to install and configure Azure PowerShell](https://docs.microsoft.com/powershell/azureps-cmdlets-docs)（如何安装和配置 Azure PowerShell）了解安装步骤。
 
 ## 登录到 Azure PowerShell
@@ -68,4 +68,5 @@
 ## 后续步骤
 * 现在，可以[从映像创建 VM](/documentation/articles/virtual-machines-windows-create-vm-generalized/)。
 
-<!---HONumber=Mooncake_1212_2016-->
+<!---HONumber=Mooncake_0313_2017-->
+<!--Update_Description: add information about capturing Linux vm-->

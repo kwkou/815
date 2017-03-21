@@ -16,8 +16,9 @@
     ms.tgt_pltfrm="vm-windows-sql-server"
     ms.workload="iaas-sql-server"
     ms.date="01/09/2017"
-    wacn.date="02/20/2017"
-    ms.author="mikeray" />
+    wacn.date="03/20/2017"
+    ms.author="mikeray" />  
+
 
 # 在不同区域中的 Azure 虚拟机上创建 SQL Server Always On 可用性组
 
@@ -27,13 +28,13 @@
 
 下图显示了 Azure 虚拟机上可用性组的常见部署：
 
-![Availability Group](./media/virtual-machines-windows-portal-sql-availability-group-dr/00-availability-group-basic.png)
+![可用性组](./media/virtual-machines-windows-portal-sql-availability-group-dr/00-availability-group-basic.png)  
 
-在此部署中，所有虚拟机位于一个 Azure 区域。在 SQL-1 和 SQL-2 上，可以使用自动故障转移为可用性组副本配置同步提交。可以使用[可用性组模板或教程](/documentation/articles/virtual-machines-windows-portal-sql-availability-group-overview/)构建此体系结构。
+在此部署中，所有虚拟机位于一个 Azure 区域。在 SQL-1 和 SQL-2 上，可以使用自动故障转移为可用性组副本配置同步提交。若要构建此体系结构，请参阅[可用性组模板或教程](/documentation/articles/virtual-machines-windows-portal-sql-availability-group-overview/)。
 
 如果无法访问 Azure 区域，此体系结构将很容易停机。为了解决此漏洞，可在不同的 Azure 区域添加一个副本。下图显示了新体系结构的大致形式：
 
-![Availability Group DR](./media/virtual-machines-windows-portal-sql-availability-group-dr/00-availability-group-basic-dr.png)
+![可用性组 DR](./media/virtual-machines-windows-portal-sql-availability-group-dr/00-availability-group-basic-dr.png)  
 
 上图显示了名为 SQL-3 的新虚拟机。SQL-3 位于不同的 Azure 区域中。SQL-3 已添加到 Windows Server 故障转移群集。SQL-3 可以托管可用性组副本。最后，请注意，SQL-3 所在的 Azure 区域具有一个新的 Azure 负载均衡器。
 
@@ -49,7 +50,10 @@
 
 下图显示了数据中心之间的网络通信方式。
 
-![Availability Group](./media/virtual-machines-windows-portal-sql-availability-group-dr/01-vpngateway-example.png)
+![可用性组](./media/virtual-machines-windows-portal-sql-availability-group-dr/01-vpngateway-example.png)  
+
+>[AZURE.IMPORTANT]
+在 Azure 区域之间复制数据时，使用此体系结构需支付出站数据费用。
 
 ## 创建远程副本
 
@@ -68,13 +72,13 @@
 
 1. [在新区域中创建 SQL Server 虚拟机](/documentation/articles/virtual-machines-windows-portal-sql-server-provision/)。
 
-1. [在新区域中的网络上创建 Azure 负载均衡器](/documentation/articles/virtual-machines-windows-portal-sql-alwayson-availability-groups-manual/#configure-internal-load-balancer)。
+1. [在新区域中的网络上创建 Azure 负载均衡器](/documentation/articles/virtual-machines-windows-portal-sql-availability-group-tutorial/#configure-internal-load-balancer)。
 
     此负载均衡器必须：
    
     - 与新虚拟机位于同一网络和子网中。
     - 对可用性组侦听器使用静态 IP 地址。
-    - 包括后端池，该池只由负载均衡器所在同一区域中的虚拟机构成。
+    - 包括后端池，该池只由负载均衡器所在区域中的虚拟机构成。
     - 使用特定于 IP 地址的 TCP 端口探测。
     - 具有特定于同一区域中 SQL Server 的负载均衡规则。
 
@@ -97,7 +101,7 @@
     - 使用远程数据中心内的网络。
     - 从新的 Azure 负载均衡器分配 IP 地址。
 
-1. 在 SQL Server 配置管理器中，[启用 Always On 可用性组](http://msdn.microsoft.com/zh-cn/library/ff878259.aspx)。
+1. 在 SQL Server 配置管理器中的新建 SQL Server 上，[启用 AlwaysOn 可用性组](http://msdn.microsoft.com/zh-cn/library/ff878259.aspx)。
 
 1. [在新 SQL Server 上打开防火墙端口](/documentation/articles/virtual-machines-windows-portal-sql-availability-group-prereq/#a-nameendpoint-firewall-configure-the-firewall-on-each-sql-server)。
 
@@ -118,8 +122,16 @@
 
 1. [在 PowerShell 中设置群集参数](/documentation/articles/virtual-machines-windows-portal-sql-availability-group-tutorial/#setparam)。
 
-    >[AZURE.IMPORTANT]
-    使用在新区域中的负载均衡器上配置的 IP 地址和探测端口运行 PowerShell 脚本。
+使用在新区域中的负载均衡器上配置的群集网络名称、IP 地址和探测端口运行 PowerShell 脚本。
+
+       $ClusterNetworkName = "<MyClusterNetworkName>" # The cluster name for the network in the new region (Use Get-ClusterNetwork on Windows Server 2012 of higher to find the name).
+       $IPResourceName = "<IPResourceName>" # The cluster name for the new IP Address resource.
+       $ILBIP = "<n.n.n.n>" # The IP Address of the Internal Load Balancer (ILB) in the new region. This is the static IP address for the load balancer you configured in the Azure portal preview.
+       [int]$ProbePort = <nnnnn> # The probe port you set on the ILB.
+   
+       Import-Module FailoverClusters
+   
+       Get-ClusterResource $IPResourceName | Set-ClusterParameter -Multiple @{"Address"="$ILBIP";"ProbePort"=$ProbePort;"SubnetMask"="255.255.255.255";"Network"="$ClusterNetworkName";"EnableDhcp"=0}
 
 ## 设置多个子网的连接
 
@@ -134,7 +146,7 @@
 若要测试侦听器与远程区域之间的连接，可将副本故障转移到远程区域。尽管副本是异步的，但故障转移存在丢失数据的可能性。若要故障转移并防止丢失数据，请将可用性模式更改为同步，将故障转移模式设置为自动。使用以下步骤：
 
 1. 在“对象资源管理器”中，连接到托管主副本的 SQL Server 实例。
-1. 在“AlwaysOn 可用性组”\>“可用性组”下面，右键单击你的可用性组，然后单击“属性”。
+1. 在“AlwaysOn 可用性组”>“可用性组”下面，右键单击你的可用性组，然后单击“属性”。
 1. 在“常规”页上的“可用性副本”下面，将 DR 站点中的辅助副本设置为使用“同步提交”可用性模式和“自动”故障转移模式。
 1. 如果在主副本所在的同一个站点中创建了辅助副本用于实现高可用性，请将此副本设置为“异步提交”和“手动”。
 1. 单击“确定”。
@@ -157,14 +169,15 @@
 
 有关详细信息，请参阅以下主题：
 
-- [执行可用性组的计划内手动故障转移 \(SQL Server\)](http://msdn.microsoft.com/zh-cn/library/hh231018.aspx)
-- [执行可用性组的强制手动故障转移 \(SQL Server\)](http://msdn.microsoft.com/zh-cn/library/ff877957.aspx)
+- [执行可用性组的计划内手动故障转移 (SQL Server)](http://msdn.microsoft.com/zh-cn/library/hh231018.aspx)
+- [执行可用性组的强制手动故障转移 (SQL Server)](http://msdn.microsoft.com/zh-cn/library/ff877957.aspx)
 
 ## 其他链接
 
 * [Always On 可用性组](http://msdn.microsoft.com/zh-cn/library/hh510230.aspx)
 * [Azure 虚拟机](/documentation/services/virtual-machines/windows/)
-* [Azure 负载均衡器](/documentation/articles/virtual-machines-windows-portal-sql-alwayson-availability-groups-manual/#configure-internal-load-balancer)
+* [Azure 负载均衡器](/documentation/articles/virtual-machines-windows-portal-sql-availability-group-tutorial/#configure-internal-load-balancer)
 * [Azure 可用性集](/documentation/articles/virtual-machines-windows-manage-availability/)
 
-<!---HONumber=Mooncake_0213_2017-->
+<!---HONumber=Mooncake_0313_2017-->
+<!--Update_Description: wording update-->

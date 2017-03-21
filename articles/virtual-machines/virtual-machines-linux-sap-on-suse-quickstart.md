@@ -15,8 +15,8 @@
     ms.topic="article"
     ms.tgt_pltfrm="vm-linux"
     ms.workload="infrastructure-services"
-    ms.date="09/15/2016"
-    wacn.date="01/20/2017"
+    ms.date="02/14/2017"
+    wacn.date="03/20/2017"
     ms.author="hermannd" />  
 
 
@@ -30,25 +30,31 @@
 
 应该使用 Azure Resource Manager 在 Azure 上完成所有新的测试和安装。若要通过 Azure PowerShell 或 Azure 命令行接口 (CLI) 查找 SUSE SLES 映像和版本，请使用以下命令。然后可以使用命令输出，例如，在 JSON 模板中定义 OS 映像以部署新的 SUSE Linux VM。这些 PowerShell 命令适用于 Azure PowerShell 1.0.1 和更高版本。
 
+虽然仍然可以使用适合 SAP 安装的标准 SLES 映像，但建议使用新的 SAP 版 SLES 映像，Azure 映像库现在提供这些新的映像。有关这些映像的详细信息，可参阅相应的 [Azure 应用商店页](https://azuremarketplace.microsoft.com/marketplace/apps/SUSE.SLES-SAP)或[关于 SAP 版 SLES 的 SUSE 常见问题网页](https://www.suse.com/products/sles-for-sap/frequently-asked-questions/)。
+
 * 查找现有发布服务器（包括 SUSE）：
 
-	   PS  : Get-AzureRmVMImagePublisher -Location "China East" | where-object { $_.publishername -like "*US*"  }
-	   CLI : azure vm image list-publishers chinaeast | grep "US"
+        PS  : Get-AzureRmVMImagePublisher -Location "China North"  | where-object { $_.publishername -like "*US*"  }
+        CLI : azure vm image list-publishers chinanorth | grep "US"
 
 * 从 SUSE 中查找现有产品/服务：
 
-	   PS  : Get-AzureRmVMImageOffer -Location "China East" -Publisher "SUSE"
-	   CLI: azure vm image list-offers chinaeast SUSE
+        PS  : Get-AzureRmVMImageOffer -Location "China North" -Publisher "SUSE"
+        CLI : azure vm image list-offers chinanorth SUSE
 
 * 查找 SUSE SLES 产品/服务：
 
-	   PS: Get-AzureRmVMImageSku -Location "China East" -Publisher "SUSE" -Offer "SLES"
-	   CLI: azure vm image list-skus chinaeast SUSE SLES
+        PS  : Get-AzureRmVMImageSku -Location "China North" -Publisher "SUSE" -Offer "SLES"
+        PS  : Get-AzureRmVMImageSku -Location "China North" -Publisher "SUSE" -Offer "SLES-SAP"
+        CLI : azure vm image list-skus chinanorth SUSE SLES
+        CLI : azure vm image list-skus chinanorth SUSE SLES-SAP
 
 * 查找特定版本的 SLES SKU：
 
-	   PS  : Get-AzureRmVMImage -Location "China East" -Publisher "SUSE" -Offer "SLES" -skus "12-SP1"
-	   CLI : azure vm image list chinaeast SUSE SLES 12-SP1
+        PS  : Get-AzureRmVMImage -Location "China North" -Publisher "SUSE" -Offer "SLES" -skus "12-SP2"
+        PS  : Get-AzureRmVMImage -Location "China North" -Publisher "SUSE" -Offer "SLES-SAP" -skus "12-SP2"
+        CLI : azure vm image list chinanorth SUSE SLES 12-SP2
+        CLI : azure vm image list chinanorth SUSE SLES-SAP 12-SP2
 
 ## 在 SUSE VM 中安装 WALinuxAgent
 名为 WALinuxAgent 的代理是 Azure 应用商店中 SLES 映像的一部分。有关如何手动安装该代理的信息（例如，从本地上载 SLES OS 虚拟硬盘 (VHD) 时），请参阅：
@@ -130,14 +136,14 @@ SUSE 提供了一个名为“sapconf”的包，该包可管理一组特定于 S
 
 对于 SLES 11：
 
-       zypper in -t pattern gnome
+    zypper in -t pattern gnome
 
 对于 SLES 12：
 
-       zypper in -t pattern gnome-basic
+    zypper in -t pattern gnome-basic
 
 ## 对云中 Linux 上 Oracle 的 SAP 支持
 在虚拟化环境中，对于 Linux 上的 Oracle 的支持受到限制。尽管本主题并非只针对 Azure，但了解相应信息非常重要。SAP 不支持 Azure 等公有云中的 SUSE 或 Red Hat 上的 Oracle。若要讨论此主题，请直接联系 Oracle。
 
-<!---HONumber=Mooncake_0116_2017-->
-<!--Update_Description: update meta properties & wording update-->
+<!---HONumber=Mooncake_0313_2017-->
+<!--Update_Description: wording update-->

@@ -1,5 +1,5 @@
 <properties
-    pageTitle="平台支持的从经典部署模型到 Azure Resource Manager 的 IaaS 资源迁移 | Azure"
+    pageTitle="将经典资源迁移到 Azure Resource Manager - 概述 | Azure"
     description="本文逐步讲解如何对资源进行平台支持的从经典部署模型到 Azure Resource Manager 的迁移"
     services="virtual-machines-windows"
     documentationcenter=""
@@ -7,16 +7,17 @@
     manager="timlt"
     editor=""
     tags="azure-resource-manager" />
-<tags 
+<tags
     ms.assetid="78492a2c-2694-4023-a7b8-c97d3708dcb7"
     ms.service="virtual-machines-windows"
     ms.workload="infrastructure-services"
     ms.tgt_pltfrm="vm-windows"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="08/22/2016"
-    wacn.date="03/06/2017"
-    ms.author="kasing" />
+    ms.date="01/23/2017"
+    wacn.date="03/20/2017"
+    ms.author="kasing" />  
+
 
 # 平台支持的从经典部署模型到 Azure Resource Manager 的 IaaS 资源迁移
 本文介绍如何才能将基础结构即服务 (IaaS) 资源从经典部署模型迁移到 Resource Manager 部署模型。用户可以阅读有关 [Azure Resource Manager 功能和优点](/documentation/articles/resource-group-overview/)的更多内容。本文详述了如何使用虚拟网络的站点到站点网关连接订阅中并存的两个部署模型中的资源。
@@ -32,8 +33,8 @@ Resource Manager 除了可让你通过模板部署复杂的应用程序之外，
 ## 将 IaaS 资源从经典模型迁移到 Resource Manager 的意义
 在详细了解详细信息之前，先看看 IaaS 资源的数据平面和管理平面操作之间的差异。
 
-* *管理平面* 描述进入管理平面或 API 修改资源的调用。例如，创建 VM、重启 VM 以及将虚拟网络更新成新子网等操作均可管理正在运行的资源。它们并不直接影响与实例之间的连接。
-* *数据平面* （应用程序）描述应用程序本身的运行时，并涉及与不通过 Azure API 的实例的交互。访问网站或从运行中的 SQL Server 实例或 MongoDB 服务器拉取数据，全都被视为数据平面或应用程序交互。从存储帐户复制 Blob，以及访问公共 IP 地址以通过 RDP 或 SSH 连接到虚拟机也属于数据平面。这些操作可让应用程序继续跨计算、网络和存储运行。
+* *管理平面*描述进入管理平面或 API 修改资源的调用。例如，创建 VM、重启 VM 以及将虚拟网络更新成新子网等操作均可管理正在运行的资源。它们并不直接影响与实例之间的连接。
+* *数据平面*（应用程序）描述应用程序本身的运行时，并涉及与不通过 Azure API 的实例的交互。访问网站或从运行中的 SQL Server 实例或 MongoDB 服务器拉取数据，全都被视为数据平面或应用程序交互。从存储帐户复制 Blob，以及访问公共 IP 地址以通过 RDP 或 SSH 连接到虚拟机也属于数据平面。这些操作可让应用程序继续跨计算、网络和存储运行。
 
 > [AZURE.NOTE]
 在某些迁移方案中，Azure 平台会停止、释放和重新启动虚拟机。这会造成短暂的数据平面停机。
@@ -136,6 +137,8 @@ Resource Manager 部署模型没有经典映像和磁盘的概念。迁移存储
 
 * 如果资源无法迁移，Azure 平台会列出不支持迁移该资源的所有原因。
 
+验证存储服务时，将在与存储帐户同名且追加了“-Migrated”的资源组中找到已迁移的帐户。例如，如果存储帐户名为“mystorage”，则将在名为“mystorage-Migrated”的资源组中找到支持 ARM 的资源，并且它将包含名为“mystorage”的存储帐户。
+
 ### 准备
 准备操作是迁移过程中的第二个步骤。此步骤的目标是要模拟将 IaaS 资源从经典资源转换为 Resource Manager 资源的过程，并以并排方式让此转换过程直观可见。
 
@@ -233,7 +236,7 @@ Resource Manager 部署模型没有经典映像和磁盘的概念。迁移存储
 
 在经典部署模型中为其显式提供名称的所有资源都会在迁移期间得到保留。在某些情况下，会创建新资源。例如：为每个 VM 创建网络接口。目前无法控制迁移期间所创建的这些新资源的名称。请在 [Azure 反馈论坛](http://feedback.azure.com)上针对此功能进行投票。
 
-**我收到一条消息，指出 *“VM 报告总体代理状态为‘未就绪’。因此，此 VM 无法迁移。请确保 VM 代理报告总体代理状态为‘就绪’”* 或 *“VM 包含未报告其状态的扩展。因此，此 VM 无法迁移。”***
+**我收到一条消息，指出*“VM 报告总体代理状态为‘未就绪’。因此，此 VM 无法迁移。请确保 VM 代理报告总体代理状态为‘就绪’”*或*“VM 包含未报告其状态的扩展。因此，此 VM 无法迁移。”***
 
 当 VM 未建立到 Internet 的出站连接时，将收到此消息。VM 代理使用出站连接访问 Azure 存储帐户，每隔五分钟更新一次代理状态。
 
@@ -246,4 +249,5 @@ Resource Manager 部署模型没有经典映像和磁盘的概念。迁移存储
 * [使用社区 PowerShell 脚本将经典虚拟机克隆到 Azure Resource Manager](/documentation/articles/virtual-machines-windows-migration-scripts/)
 * [查看最常见的迁移错误](/documentation/articles/virtual-machines-migration-errors/)
 
-<!---HONumber=Mooncake_1219_2016-->
+<!---HONumber=Mooncake_0313_2017-->
+<!--Update_Description: wording update-->

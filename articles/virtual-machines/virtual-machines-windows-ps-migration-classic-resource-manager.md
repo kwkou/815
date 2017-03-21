@@ -7,7 +7,7 @@
     manager="timlt"
     editor=""
     tags="azure-resource-manager" />
-<tags 
+<tags
     ms.assetid="2b3dff9b-2e99-4556-acc5-d75ef234af9c"
     ms.service="virtual-machines-windows"
     ms.workload="infrastructure-services"
@@ -15,8 +15,9 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="10/19/2016"
-    wacn.date="01/05/2017"
-    ms.author="cynthn" />
+    wacn.date="03/20/2017"
+    ms.author="cynthn" />  
+
 
 # 使用 Azure PowerShell 将 IaaS 资源从经典部署模型迁移到 Azure Resource Manager
 以下步骤演示了如何使用 Azure PowerShell 命令将基础结构即服务 (IaaS) 资源从经典部署模型迁移到 Azure Resource Manager 部署模型。
@@ -34,7 +35,7 @@
 * 如果你通过自动化脚本来部署目前的基础结构和应用程序，则可尝试使用这些脚本进行迁移，以便创建类似的测试性设置。也可以使用 Azure 门户预览设置示例环境。
 
 > [AZURE.IMPORTANT]
-目前不支持通过 ExpressRoute 网关和应用程序网关从经典部署模型迁移到 Resource Manager 部署模型。若要使用 ExpressRoute 网关或应用程序网关迁移经典虚拟网络，请在运行提交操作前删除网关，以便移动网络（可以在不删除 ExpressRoute 网关或应用程序网关的情况下运行准备步骤）。完成迁移后，请在 Azure Resource Manager 中重新连接网关。
+目前不支持通过应用程序网关从经典部署模型迁移到 Resource Manager 部署模型。若要使用应用程序网关迁移经典虚拟网络，请在运行提交操作前删除网关，以便移动网络（可以在不删除应用程序网关的情况下运行准备步骤）。完成迁移后，请在 Azure Resource Manager 中重新连接网关。如果要在网关和 ExpressRoute 线路在同一订阅中的情况下迁移 ExpressRoute 网关，必须联系技术支持。无法迁移连接到其他订阅中的 ExpressRoute 线路的 ExpressRoute 网关。在这种情况下，请删除 ExpressRoute 网关，迁移虚拟网络并重新创建网关。
 > 
 > 
 
@@ -127,7 +128,7 @@
             -DeploymentName $deploymentName -CreateNewVirtualNetwork
         $validate.ValidationMessages
 
-前一个命令会显示任何阻止迁移的警告和错误。如果验证成功，则可继续执行**准备**步骤：
+    前一个命令会显示任何阻止迁移的警告和错误。如果验证成功，则可继续执行**准备**步骤：
 
         Move-AzureService -Prepare -ServiceName $serviceName `
             -DeploymentName $deploymentName -CreateNewVirtualNetwork
@@ -140,13 +141,13 @@
         $vnetName = "myVirtualNetwork"
         $subnetName = "mySubNet"
 
-首先，使用以下命令验证用户是否可以迁移云服务：
+    首先，使用以下命令验证用户是否可以迁移云服务：
 
         $validate = Move-AzureService -Validate -ServiceName $serviceName `
             -DeploymentName $deploymentName -UseExistingVirtualNetwork -VirtualNetworkResourceGroupName $existingVnetRGName -VirtualNetworkName $vnetName -SubnetName $subnetName
         $validate.ValidationMessages
 
-前一个命令会显示任何阻止迁移的警告和错误。如果验证成功，则可继续执行以下准备步骤：
+    前一个命令会显示任何阻止迁移的警告和错误。如果验证成功，则可继续执行以下准备步骤：
 
         Move-AzureService -Prepare -ServiceName $serviceName -DeploymentName $deploymentName `
             -UseExistingVirtualNetwork -VirtualNetworkResourceGroupName $existingVnetRGName `
@@ -217,4 +218,5 @@
 * 若要使用 Azure PowerShell 将其他网络资源迁移到 Resource Manager，请通过 [Move-AzureNetworkSecurityGroup](https://msdn.microsoft.com/zh-cn/library/mt786729.aspx)、[Move-AzureReservedIP](https://msdn.microsoft.com/zh-cn/library/mt786752.aspx) 和 [Move-AzureRouteTable](https://msdn.microsoft.com/zh-cn/library/mt786718.aspx) 执行类似的步骤。
 * 若要通过开源脚本将 Azure 资源从经典部署模型迁移到 Resource Manager 部署模型，请参阅[迁移到 Azure Resource Manager 时使用的社区工具](/documentation/articles/virtual-machines-windows-migration-scripts/)
 
-<!---HONumber=Mooncake_1219_2016-->
+<!---HONumber=Mooncake_0313_2017-->
+<!--Update_Description: wording update-->

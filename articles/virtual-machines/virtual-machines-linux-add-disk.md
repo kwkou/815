@@ -15,9 +15,9 @@
     ms.workload="infrastructure-services"
     ms.tgt_pltfrm="vm-linux"
     ms.devlang="na"
-    ms.date="09/06/2016"
-    wacn.date="01/20/2017"
-    ms.author="rclaus" />
+    ms.date="02/02/2017"
+    wacn.date="03/20/2017"
+    ms.author="rasquill" />
 
 # 将磁盘添加到 Linux VM
 本文介绍如何将持久性磁盘附加到 VM 以保存数据 - 即使 VM 由于维护或调整大小而重新预配。若要添加磁盘，需要在 Resource Manager 模式下配置 [Azure CLI](/documentation/articles/xplat-cli-install/) (`azure config mode arm`)。
@@ -28,7 +28,8 @@
     azure vm disk attach-new myResourceGroup myVM 50
 
 ## 附加磁盘
-连接新的磁盘很快。键入 `azure vm disk attach-new myResourceGroup myVM sizeInGB` 可为 VM 创建和连接新的 GB 磁盘。如果你未显式标识存储帐户，则创建的所有磁盘都将位于 OS 磁盘所在的同一个存储帐户中。以下示例将一个 `50`GB 的磁盘附加到资源组 `myResourceGroup` 中名为 `myVM` 的 VM：
+
+如果允许在 VM 所在的存储帐户中创建磁盘，则可以快速附加新磁盘。键入 `azure vm disk attach-new` 可为 VM 创建和连接新的 GB 磁盘。如果你未显式标识存储帐户，则创建的所有磁盘都将位于 OS 磁盘所在的同一个存储帐户中。以下示例将一个 `50`GB 的磁盘附加到资源组 `myResourceGroup` 中名为 `myVM` 的 VM：
 
     azure vm disk attach-new myResourceGroup myVM 50
 
@@ -241,5 +242,5 @@
 * 为确保正确配置 Linux VM，请查看有关[优化 Linux 计算机性能](/documentation/articles/virtual-machines-linux-optimization/)的建议。
 * 可以添加更多的磁盘来扩展存储容量，[配置 RAID](/documentation/articles/virtual-machines-linux-configure-raid/) 来提高性能。
 
-<!---HONumber=Mooncake_0116_2017-->
+<!---HONumber=Mooncake_0313_2017-->
 <!--Update_Description: wording update-->

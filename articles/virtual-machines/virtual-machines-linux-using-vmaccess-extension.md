@@ -7,7 +7,7 @@
     manager="timlt"
     editor=""
     tags="azure-resource-manager" />
-<tags 
+<tags
     ms.assetid="261a9646-1f93-407e-951e-0be7226b3064"
     ms.service="virtual-machines-linux"
     ms.workload="infrastructure-services"
@@ -15,23 +15,30 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="10/25/2016"
-    wacn.date="12/20/2016"
-    ms.author="v-livech" />
+    wacn.date="03/20/2017"
+    ms.author="v-livech" />  
 
-# 管理用户、SSH，并使用 VMAccess 扩展检查或修复 Azure Linux VM 上的磁盘
+
+# 配合使用 VMAccess 扩展和 Azure CLI 1.0，管理用户、SSH 以及检查或修复 Azure Linux VM 上的磁盘
 本文说明如何使用 Azure VMAcesss 扩展检查或修复磁盘、重置用户访问权限、管理用户帐户，或重置 Linux 上的 SSHD 配置。本文需要以下条件：
 
 * 一个 Azure 帐户（[获取试用版](/pricing/1rmb-trial/)）
 * 已使用 `azure login -e AzureChinaCloud` 登录 [Azure CLI](/documentation/articles/xplat-cli-install/)。
-* Azure CLI *必须处于* Azure Resource Manager 模式 `azure config mode arm`。
+* Azure CLI *必须处于* Azure Resource Manager 模式`azure config mode arm`。
 
-## 快速命令
+## 用于完成任务的 CLI 版本
+可使用以下 CLI 版本之一完成任务：
+
+- [Azure CLI 1.0](#quick-commands) - 用于经典部署模型和资源管理部署模型（本文）的 CLI
+- Azure CLI 2.0 - 不支持 Azure 中国区的虚拟机，因为 API 版本的缘故。
+
+## <a name="quick-commands"></a> 快速命令
 有两种方法可在 Linux VM 上使用 VMAccess：
 
-* 使用 Azure CLI 以及所需的参数。
+* 使用 Azure CLI 1.0 以及所需的参数。
 * 使用 VMAccess 处理和操作的原始 JSON 文件。
 
-在快速命令部分，我们将使用 Azure CLI `azure vm reset-access` 方法。在以下命令示例中，请将包含“example”的值替换为自己环境中的值。
+在快速命令部分，我们将使用 Azure CLI 1.0 `azure vm reset-access` 方法。在以下命令示例中，请将包含“example”的值替换为自己环境中的值。
 
 ## 创建资源组和 Linux VM
 
@@ -128,7 +135,7 @@ Linux VM 上的磁盘显示错误。不知道怎样重置 Linux VM 的根密码�
 
     {
       "username":"root",
-      "password":"myNewPassword",   
+      "password":"myNewPassword"
     }
 
 结合以下参数执行 VMAccess 脚本：
@@ -147,7 +154,7 @@ Linux VM 上的磁盘显示错误。不知道怎样重置 Linux VM 的根密码�
 
     {
       "username":"myAdminUser",
-      "ssh_key":"ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCZ3S7gGp3rcbKmG2Y4vGZFMuMZCwoUzZNG1vHY7P2XV2x9FfAhy8iGD+lF8UdjFX3t5ebMm6BnnMh8fHwkTRdOt3LDQq8o8ElTBrZaKPxZN2thMZnODs5Hlemb2UX0oRIGRcvWqsd4oJmxsXa/Si98Wa6RHWbc9QZhw80KAcOVhmndZAZAGR+Wq6yslNo5TMOr1/ZyQAook5C4FtcSGn3Y+WczaoGWIxG4ZaWk128g79VIeJcIQqOjPodHvQAhll7qDlItVvBfMOben3GyhYTm7k4YwlEdkONm4yV/UIW0la1rmyztSBQIm9sZmSq44XXgjVmDHNF8UfCZ1ToE4r2SdwTmZv00T2i5faeYnHzxiLPA3Enub7iUo5IdwFArnqad7MO1SY1kLemhX9eFjLWN4mJe56Fu4NiWJkR9APSZQrYeKaqru4KUC68QpVasNJHbuxPSf/PcjF3cjO1+X+4x6L1H5HTPuqUkyZGgDO4ynUHbko4dhlanALcriF7tIfQR9i2r2xOyv5gxJEW/zztGqWma/d4rBoPjnf6tO7rLFHXMt/DVTkAfn5woYtLDwkn5FMyvThRmex3BDf0gujoI1y6cOWLe9Y5geNX0oj+MXg/W0cXAtzSFocstV1PoVqy883hNoeQZ3mIGB3Q0rIUm5d9MA2bMMt31m1g3Sin6EQ== myAdminUser@myVM",   
+      "ssh_key":"ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCZ3S7gGp3rcbKmG2Y4vGZFMuMZCwoUzZNG1vHY7P2XV2x9FfAhy8iGD+lF8UdjFX3t5ebMm6BnnMh8fHwkTRdOt3LDQq8o8ElTBrZaKPxZN2thMZnODs5Hlemb2UX0oRIGRcvWqsd4oJmxsXa/Si98Wa6RHWbc9QZhw80KAcOVhmndZAZAGR+Wq6yslNo5TMOr1/ZyQAook5C4FtcSGn3Y+WczaoGWIxG4ZaWk128g79VIeJcIQqOjPodHvQAhll7qDlItVvBfMOben3GyhYTm7k4YwlEdkONm4yV/UIW0la1rmyztSBQIm9sZmSq44XXgjVmDHNF8UfCZ1ToE4r2SdwTmZv00T2i5faeYnHzxiLPA3Enub7iUo5IdwFArnqad7MO1SY1kLemhX9eFjLWN4mJe56Fu4NiWJkR9APSZQrYeKaqru4KUC68QpVasNJHbuxPSf/PcjF3cjO1+X+4x6L1H5HTPuqUkyZGgDO4ynUHbko4dhlanALcriF7tIfQR9i2r2xOyv5gxJEW/zztGqWma/d4rBoPjnf6tO7rLFHXMt/DVTkAfn5woYtLDwkn5FMyvThRmex3BDf0gujoI1y6cOWLe9Y5geNX0oj+MXg/W0cXAtzSFocstV1PoVqy883hNoeQZ3mIGB3Q0rIUm5d9MA2bMMt31m1g3Sin6EQ== myAdminUser@myVM" 
     }
 
 结合以下参数执行 VMAccess 脚本：
@@ -159,7 +166,6 @@ Linux VM 上的磁盘显示错误。不知道怎样重置 Linux VM 的根密码�
       Microsoft.OSTCExtensions * \
       --private-config-path reset_ssh_key.json
 
-
 ### 使用 VMAccess 管理 Linux 上的用户帐户
 VMAccess 是一种 Python 脚本，可用于管理 Linux VM 上的用户，而不需要登录和使用 sudo 或根帐户。
 
@@ -169,9 +175,9 @@ VMAccess 是一种 Python 脚本，可用于管理 Linux VM 上的用户，而�
 
 
     {
-    "username":"myNewUser",
-    "ssh_key":"ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCZ3S7gGp3rcbKmG2Y4vGZFMuMZCwoUzZNG1vHY7P2XV2x9FfAhy8iGD+lF8UdjFX3t5ebMm6BnnMh8fHwkTRdOt3LDQq8o8ElTBrZaKPxZN2thMZnODs5Hlemb2UX0oRIGRcvWqsd4oJmxsXa/Si98Wa6RHWbc9QZhw80KAcOVhmndZAZAGR+Wq6yslNo5TMOr1/ZyQAook5C4FtcSGn3Y+WczaoGWIxG4ZaWk128g79VIeJcIQqOjPodHvQAhll7qDlItVvBfMOben3GyhYTm7k4YwlEdkONm4yV/UIW0la1rmyztSBQIm9sZmSq44XXgjVmDHNF8UfCZ1ToE4r2SdwTmZv00T2i5faeYnHzxiLPA3Enub7iUo5IdwFArnqad7MO1SY1kLemhX9eFjLWN4mJe56Fu4NiWJkR9APSZQrYeKaqru4KUC68QpVasNJHbuxPSf/PcjF3cjO1+X+4x6L1H5HTPuqUkyZGgDO4ynUHbko4dhlanALcriF7tIfQR9i2r2xOyv5gxJEW/zztGqWma/d4rBoPjnf6tO7rLFHXMt/DVTkAfn5woYtLDwkn5FMyvThRmex3BDf0gujoI1y6cOWLe9Y5geNX0oj+MXg/W0cXAtzSFocstV1PoVqy883hNoeQZ3mIGB3Q0rIUm5d9MA2bMMt31m1g3Sin6EQ== myNewUser@myVM",
-    "password":"myNewUserPassword",
+      "username":"myNewUser",
+      "ssh_key":"ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCZ3S7gGp3rcbKmG2Y4vGZFMuMZCwoUzZNG1vHY7P2XV2x9FfAhy8iGD+lF8UdjFX3t5ebMm6BnnMh8fHwkTRdOt3LDQq8o8ElTBrZaKPxZN2thMZnODs5Hlemb2UX0oRIGRcvWqsd4oJmxsXa/Si98Wa6RHWbc9QZhw80KAcOVhmndZAZAGR+Wq6yslNo5TMOr1/ZyQAook5C4FtcSGn3Y+WczaoGWIxG4ZaWk128g79VIeJcIQqOjPodHvQAhll7qDlItVvBfMOben3GyhYTm7k4YwlEdkONm4yV/UIW0la1rmyztSBQIm9sZmSq44XXgjVmDHNF8UfCZ1ToE4r2SdwTmZv00T2i5faeYnHzxiLPA3Enub7iUo5IdwFArnqad7MO1SY1kLemhX9eFjLWN4mJe56Fu4NiWJkR9APSZQrYeKaqru4KUC68QpVasNJHbuxPSf/PcjF3cjO1+X+4x6L1H5HTPuqUkyZGgDO4ynUHbko4dhlanALcriF7tIfQR9i2r2xOyv5gxJEW/zztGqWma/d4rBoPjnf6tO7rLFHXMt/DVTkAfn5woYtLDwkn5FMyvThRmex3BDf0gujoI1y6cOWLe9Y5geNX0oj+MXg/W0cXAtzSFocstV1PoVqy883hNoeQZ3mIGB3Q0rIUm5d9MA2bMMt31m1g3Sin6EQ== myNewUser@myVM",
+      "password":"myNewUserPassword"
     }
 
 结合以下参数执行 VMAccess 脚本：
@@ -189,7 +195,7 @@ VMAccess 是一种 Python 脚本，可用于管理 Linux VM 上的用户，而�
 
 
     {
-    "remove_user":"myDeletedUser",
+      "remove_user":"myDeletedUser"
     }
 
 结合以下参数执行 VMAccess 脚本：
@@ -231,4 +237,5 @@ VMAccess 是一种 Python 脚本，可用于管理 Linux VM 上的用户，而�
 
 [在创建期间使用 cloud-init 自定义 Linux VM](/documentation/articles/virtual-machines-linux-using-cloud-init/)
 
-<!---HONumber=Mooncake_1212_2016-->
+<!---HONumber=Mooncake_0313_2017-->
+<!--Update_Description: add information about CLI 2.0-->

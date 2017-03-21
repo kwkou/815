@@ -1,6 +1,3 @@
-
-
-
 Azure 上有多个标准大小可供选择。其中某些大小的注意事项包括：
 
 * D 系列的 VM 旨在运行需要更高计算能力和临时磁盘性能的应用程序。D 系列 VM 可为临时磁盘提供更快的处理器、更高的内存内核比和固态驱动器 (SSD)。有关详细信息，请参阅 Azure 博客[新的 D 系列虚拟机大小](https://azure.microsoft.com/blog/2014/09/22/new-d-series-virtual-machine-sizes/)上的公告。
@@ -32,24 +29,23 @@ ACU 只是一种规则。工作负荷的结果可能会有所不同。
 
 <br>  
 
-
 | SKU 系列 | ACU/核心 |
 | --- | --- |
-| [Standard\_A0](#a-series) |50 |
-| [Standard\_A1-4](#a-series) |100 |
-| [Standard\_A5-7](#a-series) |100 |
-| [Standard\_A1-8v2](#av2-series) |100 |
-| [Standard\_A2m-8mv2](#av2-series) |100 |
-| [D1-14](#d-series) |160 |
-| [D1-15v2](#dv2-series) |210 - 250* |
-| [DS1-14](#ds-series) |160 |
-| [DS1-15v2](#dsv2-series) |210-250* |
+| [A0](#a-series) |50 |
+| [A1-A4](#a-series) |100 个 |
+| [A5-A7](#a-series) |100 个 |
+| [A1\_v2-A8\_v2](#av2-series) |100 个 |
+| [A2m\_v2-A8m\_v2](#av2-series) |100 个 |
+| [D1-D14](#d-series) |160 |
+| [D1\_v2-D15\_v2](#dv2-series) |210 - 250* |
+| [DS1-DS14](#ds-series) |160 |
+| [DS1\_v2-DS15\_v2](#dsv2-series) |210-250* |
 | [F1-F16](#f-series) |210-250* |
 | [F1s-F16s](#fs-series) |210-250* |
 
 ACU 标有 *使用 Intel® Turbo 技术来增加 CPU 频率，并提升性能。提升量可能因 VM 大小、工作负荷和同一主机上运行的其他工作负荷而有所不同。
 
-## <a name="size-tables"></a> 大小表
+## <a name="size-tables"></a>大小表
 下表显示这些虚拟机提供的大小和容量。
 
 * 存储容量的单位为 GiB 或 1024^3 字节。比较以 GB（1000^3 字节）为单位的磁盘和以 GiB（1024^3 字节）为单位的磁盘时，请记住以 GiB 为单位的容量数显得更小。例如，1023 GiB = 1098.4 GB
@@ -72,15 +68,16 @@ ACU 标有 *使用 Intel® Turbo 技术来增加 CPU 频率，并提升性能。
 <br>  
 
 ## <a name="av2-series"></a> Av2 系列
-| 大小        | CPU 核心数 | 内存：GiB | 本地 SSD：GiB | 最大数据磁盘数 | 数据磁盘最大吞吐量：IOPS | 最大网卡数/网络带宽等级 |
+
+| 大小 | CPU 核心数 | 内存：GiB | 本地 SSD：GiB | 最大数据磁盘数 | 数据磁盘最大吞吐量：IOPS | 最大网卡数/网络带宽等级 |
 |-------------|-----------|--------------|-----------------------|----------------|--------------------|-----------------------|
-| Standard_A1_v2 | 1         | 2            | 10                   | 2              | 2x500              | 1/中              |
-| Standard_A2_v2 | 2         | 4            | 20                   | 4              | 4x500              | 2/中              |
-| Standard_A4_v2 | 4         | 8            | 40                   | 8              | 8x500              | 4/高                  |
-| Standard_A8_v2 | 8         | 16           | 80                   | 16             | 16x500             | 8/高                  |
-| Standard_A2m_v2 | 2        | 16           | 20                   | 4              | 4X500              | 2/中              |
-| Standard_A4m_v2 | 4        | 32           | 40                   | 8              | 8x500              | 4/高                  |
-| Standard_A8m_v2 | 8        | 64           | 80                   | 16             | 16x500             | 8/高                  |
+| Standard\_A1\_v2 | 1 | 2 | 10 | 2 | 2x500 | 1/中 |
+| Standard\_A2\_v2 | 2 | 4 | 20 | 4 | 4x500 | 2/中 |
+| Standard\_A4\_v2 | 4 | 8 | 40 | 8 | 8x500 | 4/高 |
+| Standard\_A8\_v2 | 8 | 16 | 80 | 16 | 16x500 | 8/高 |
+| Standard\_A2m\_v2 | 2 | 16 | 20 | 4 | 4X500 | 2/中 |
+| Standard\_A4m\_v2 | 4 | 32 | 40 | 8 | 8x500 | 4/高 |
+| Standard\_A8m\_v2 | 8 | 64 | 80 | 16 | 16x500 | 8/高 |
 
 ## <a name="d-series"></a>D 系列
 | 大小 | CPU 核心数 | 内存：GiB | 本地 SSD：GiB | 最大数据磁盘数 | 数据磁盘最大吞吐量：IOPS | 最大网卡数/网络带宽等级 |
@@ -96,7 +93,6 @@ ACU 标有 *使用 Intel® Turbo 技术来增加 CPU 频率，并提升性能。
 
 <br>  
 
-
 ## <a name="dv2-series"></a>Dv2 系列
 | 大小 | CPU 核心数 | 内存：GiB | 本地 SSD：GiB | 最大数据磁盘数 | 数据磁盘最大吞吐量：IOPS | 最大网卡数/网络带宽等级 |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -109,10 +105,11 @@ ACU 标有 *使用 Intel® Turbo 技术来增加 CPU 频率，并提升性能。
 | Standard\_D12\_v2 |4 |28 |200 |8 |8x500 |4/高 |
 | Standard\_D13\_v2 |8 |56 |400 |16 |16x500 |8/高 |
 | Standard\_D14\_v2 |16 |112 |800 |32 |32x500 |8/极高 |
-| Standard\_D15\_v2 |20 |140 |1,000 |40 |40x500 |8/极高* |
+| Standard\_D15\_v2** |20 |140 |1,000 |40 |40x500 |8/极高* |
+
+**实例对于专用于单个客户的硬件来说是独立的。
 
 <br>  
-
 
 ## <a name="ds-series" id="standard-tier-ds-series"></a>DS 系列*
 | 大小 | CPU 核心数 | 内存：GiB | 本地 SSD：GiB | 最大数据磁盘数 | 缓存磁盘最大吞吐量：IOPS / MBps（以 GiB 为单位的缓存大小） | 非缓存磁盘最大吞吐量：IOPS / MBps | 最大网卡数/网络带宽等级 |
@@ -130,10 +127,7 @@ MBps = 每秒 10^6 字节，GiB = 1024^3 字节。
 
 *DS 系列 VM 可能的最大磁盘吞吐量（IOPS 或 MBps）可能受限于附加磁盘的数量、大小和条带化。有关详细信息，请参阅[高级存储：适用于 Azure 虚拟机工作负荷的高性能存储](/documentation/articles/storage-premium-storage/)。
 
-
-
 <br>  
-
 
 ## <a name="dsv2-series"></a>DSv2 系列*
 | 大小 | CPU 核心数 | 内存：GiB | 本地 SSD：GiB | 最大数据磁盘数 | 缓存磁盘最大吞吐量：IOPS / MBps（以 GiB 为单位的缓存大小） | 非缓存磁盘最大吞吐量：IOPS / MBps | 最大网卡数/网络带宽等级 |
@@ -147,15 +141,13 @@ MBps = 每秒 10^6 字节，GiB = 1024^3 字节。
 | Standard\_DS12\_v2 |4 |28 |56 |8 |16,000 / 128 (144) |12,800 / 192 |4/高 |
 | Standard\_DS13\_v2 |8 |56 |112 |16 |32,000 / 256 (288) |25,600 / 384 |8/高 |
 | Standard\_DS14\_v2 |16 |112 |224 |32 |64,000 / 512 (576) |51,200 / 768 |8/极高 |
-| Standard\_DS15\_v2 |20 |140 |280 |40 |80,000 / 640 (720) |64,000 / 960 |8/极高** |
+| Standard\_DS15\_v2*** |20 |140 |280 |40 |80,000 / 640 (720) |64,000 / 960 |8/极高** |
 
 MBps = 每秒 10^6 字节，GiB = 1024^3 字节。
 
 *DSv2 系列 VM 可能的最大磁盘吞吐量（IOPS 或 MBps）可能受限于附加磁盘的数量、大小和条带化。有关详细信息，请参阅[高级存储：适用于 Azure 虚拟机工作负荷的高性能存储](/documentation/articles/storage-premium-storage/)。
 
-
-<br>  
-
+***实例对于专用于单个客户的硬件来说是独立的。<br>
 
 ## <a name="f-series"></a>F 系列
 | 大小 | CPU 核心数 | 内存：GiB | 本地 SSD：GiB | 最大数据磁盘数 | 磁盘最大吞吐量：IOPS | 最大网卡数/网络带宽等级 |
@@ -167,7 +159,6 @@ MBps = 每秒 10^6 字节，GiB = 1024^3 字节。
 | Standard\_F16 |16 |32 |256 |32 |32x500 |8/极高 |
 
 <br>  
-
 
 ## <a name="fs-series"></a>Fs 系列*
 | 大小 | CPU 核心数 | 内存：GiB | 本地 SSD：GiB | 最大数据磁盘数 | 缓存磁盘最大吞吐量：IOPS / MBps（以 GiB 为单位的缓存大小） | 非缓存磁盘最大吞吐量：IOPS / MBps | 最大网卡数/网络带宽等级 |
@@ -184,7 +175,6 @@ MBps = 每秒 10^6 字节，GiB = 1024^3 字节。
 
 <br>  
 
-
 ## 注意：使用 CLI 和 PowerShell 的标准 A0 - A4
 在经典部署模型中，CLI 和 PowerShell 中的一些 VM 大小名称略有不同：
 
@@ -197,4 +187,4 @@ MBps = 每秒 10^6 字节，GiB = 1024^3 字节。
 ## 后续步骤
 * 了解 [Azure 订阅和服务的限制、配额和约束](/documentation/articles/azure-subscription-service-limits/)。
 
-<!---HONumber=Mooncake_1212_2016-->
+<!---HONumber=Mooncake_0313_2017-->

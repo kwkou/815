@@ -11,19 +11,19 @@
     ms.assetid="601eebb1-fc2c-4f5b-9c05-0e6ffd0e5334"
     ms.service="virtual-machines-windows"
     ms.devlang="na"
-    ms.custom="na"
     ms.topic="article"
-    ms.tgt_pltfrm="na"
-    ms.workload="infrastructure-services"
-    ms.date="12/28/2016"
-    wacn.date="03/06/2017"
-    ms.author="mikeray" />
+    ms.tgt_pltfrm="vm-windows-sql-server"
+    ms.workload="iaas-sql-server"
+    ms.date="01/13/2017"
+    wacn.date="03/20/2017"
+    ms.author="mikeray" />  
+
 
 # Azure 虚拟机上的 SQL Server AlwaysOn 可用性组简介 #
 
 本文介绍 Azure 虚拟机上的 SQL Server 可用性组。
 
-Azure 虚拟机上的 AlwaysOn 可用性组类似于本地的 AlwaysOn 可用性组。有关详细信息，请参阅 [AlwaysOn 可用性组 \(SQL Server\)](http://msdn.microsoft.com/zh-cn/library/hh510230.aspx)。
+Azure 虚拟机上的 AlwaysOn 可用性组类似于本地的 AlwaysOn 可用性组。有关详细信息，请参阅 [AlwaysOn 可用性组 (SQL Server)](http://msdn.microsoft.com/zh-cn/library/hh510230.aspx)。
 
 下图阐述了 Azure 虚拟机中完整 SQL Server 可用性组的各个部分。
 
@@ -46,8 +46,9 @@ Azure 虚拟机中可用性组的主要区别是，Azure 虚拟机需要[负载�
 
 - [创建 AlwaysOn 可用性组来提高可用性和实现灾难恢复](/documentation/articles/virtual-machines-windows-portal-sql-availability-group-tutorial/)
 
-## 配置负载均衡器
+## 后续步骤
 
-[为可用性组侦听器创建负载均衡器](/documentation/articles/virtual-machines-windows-portal-sql-ps-alwayson-int-listener/)。
+[在不同区域中的 Azure 虚拟机上创建 SQL Server AlwaysOn 可用性组](/documentation/articles/virtual-machines-windows-portal-sql-availability-group-dr/)。
 
-<!---HONumber=Mooncake_0213_2017-->
+<!---HONumber=Mooncake_0313_2017-->
+<!--Update_Description: wording update-->

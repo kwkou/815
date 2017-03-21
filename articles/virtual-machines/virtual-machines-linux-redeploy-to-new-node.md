@@ -14,7 +14,7 @@
     ms.tgt_pltfrm="vm-linux"
     ms.workload="infrastructure"
     ms.date="12/16/2016"
-    wacn.date="01/20/2017"
+    wacn.date="03/20/2017"
     ms.author="iainfou" />  
 
 
@@ -24,8 +24,13 @@
 > [AZURE.NOTE]
 重新部署 VM 后，临时磁盘将丢失，与虚拟网络接口关联的动态 IP 地址将更新。
 
-## 使用 Azure CLI
-请确保在计算机上[已安装最新的 Azure CLI](/documentation/articles/xplat-cli-install/)，并且处于 Resource Manager 模式 (`azure config mode arm`)。
+可以使用以下选项之一重新部署 VM。只需选择一个选项即可重新部署 VM：
+
+- [Azure CLI 1.0](#azure-cli-10)
+- [Azure 门户预览](#using-azure-portal)
+
+## <a name="azure-cli-10"></a> Azure CLI 1.0
+安装[最新版 Azure CLI 1.0](/documentation/articles/xplat-cli-install/)，登录到 Azure 帐户，并确保使用 Resource Manager 模式 (`azure config mode arm`)。
 
 以下示例重新部署名为 `myResourceGroup` 的资源组中名为 `myVM` 的 VM：
 
@@ -36,5 +41,5 @@
 ## 后续步骤
 如果在连接 VM 时遇到问题，可以在[SSH 连接故障排除](/documentation/articles/virtual-machines-linux-troubleshoot-ssh-connection/)或[详细的 SSH 故障排除步骤](/documentation/articles/virtual-machines-linux-detailed-troubleshoot-ssh-connection/)中找到具体的帮助。如果无法访问在 VM 上运行的应用程序，还可以阅读 [应用程序故障排除问题](/documentation/articles/virtual-machines-linux-troubleshoot-app-connection/)。
 
-<!---HONumber=Mooncake_0116_2017-->
-<!--Update_Description: update meta properties & wording update-->
+<!---HONumber=Mooncake_0313_2017-->
+<!--Update_Description: wording update-->

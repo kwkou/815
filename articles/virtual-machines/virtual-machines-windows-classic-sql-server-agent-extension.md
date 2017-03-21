@@ -13,9 +13,9 @@
     ms.devlang="na"
     ms.topic="article"
     ms.tgt_pltfrm="vm-windows-sql-server"
-    ms.workload="infrastructure-services"
-    ms.date="10/27/2016"
-    wacn.date="02/24/2017"
+    ms.workload="iaas-sql-server"
+    ms.date="01/18/2017"
+    wacn.date="03/20/2017"
     ms.author="jroth" />
 
 # 适用于 SQL Server VM 的 SQL Server 代理扩展（经典）
@@ -23,10 +23,10 @@
 - [Resource Manager](/documentation/articles/virtual-machines-windows-sql-server-agent-extension/)
 - [经典](/documentation/articles/virtual-machines-windows-classic-sql-server-agent-extension/)
 
-SQL Server IaaS 代理扩展 \(SQLIaaSAgent\) 在 Azure 虚拟机上运行，可以自动执行管理任务。本主题概述了该扩展支持的服务以及有关安装、状态及删除的说明。
+SQL Server IaaS 代理扩展 (SQLIaaSAgent) 在 Azure 虚拟机上运行，可以自动执行管理任务。本主题概述了该扩展支持的服务以及有关安装、状态及删除的说明。
 
 > [AZURE.IMPORTANT] 
-Azure 提供两个不同的部署模型用于创建和处理资源：[Resource Manager 模型和经典模型](/documentation/articles/resource-manager-deployment-model/)。本文介绍如何使用经典部署模型。Azure 建议大多数新部署使用 Resource Manager 模型。若要查看本文的 Resource Manager 版本，请参阅[适用于 SQL Server VM 的 SQL Server 代理扩展 \(Resource Manager\)](/documentation/articles/virtual-machines-windows-sql-server-agent-extension/)。
+Azure 提供两个不同的部署模型用于创建和处理资源：[Resource Manager 模型和经典模型](/documentation/articles/resource-manager-deployment-model/)。本文介绍如何使用经典部署模型。Azure 建议大多数新部署使用 Resource Manager 模型。若要查看本文的 Resource Manager 版本，请参阅[适用于 SQL Server VM 的 SQL Server 代理扩展 (Resource Manager)](/documentation/articles/virtual-machines-windows-sql-server-agent-extension/)。
 
 ## <a name="supported-services"></a>支持的服务
 SQL Server IaaS 代理扩展支持以下管理任务：
@@ -77,18 +77,18 @@ SQL Server IaaS 代理扩展支持以下管理任务：
 > 
 
 ## 状态
-验证是否已安装扩展的方法之一是在 Azure 门户预览中查看代理状态。在虚拟机边栏选项卡中选择“所有设置”，然后单击“扩展”。随后应列出 **SQLIaaSAgent** 扩展。
+验证是否已安装扩展的方法之一是在 Azure 门户预览中查看代理状态。选择在虚拟机边栏选项卡中列出的虚拟机，然后单击“扩展”。随后应列出 **SQLIaaSAgent** 扩展。
 
-![Azure 门户预览中的 SQL Server IaaS 代理扩展](./media/virtual-machines-windows-classic-sql-server-agent-extension/azure-sql-server-iaas-agent-portal.png)
+![Azure 门户预览中的 SQL Server IaaS 代理扩展](./media/virtual-machines-windows-classic-sql-server-agent-extension/azure-sql-server-iaas-agent-portal.png)  
 
 还可使用 **Get-AzureVMSqlServerExtension** Azure Powershell cmdlet。
 
     Get-AzureVM -ServiceName "service" -Name "vmname" | Get-AzureVMSqlServerExtension
 
 ## 删除
-在 Azure 门户预览中，可以卸载扩展，方法是访问虚拟机属性的“扩展”边栏选项卡，单击其中的省略号，然后单击“删除”。
+在 Azure 门户预览中，可以卸载扩展，方法是访问虚拟机属性的“扩展”边栏选项卡，单击其中的省略号，然后单击“卸载”。
 
-![在 Azure 门户预览中卸载 SQL Server IaaS 代理扩展](./media/virtual-machines-windows-classic-sql-server-agent-extension/azure-sql-server-iaas-agent-uninstall.png)
+![在 Azure 门户预览中卸载 SQL Server IaaS 代理扩展](./media/virtual-machines-windows-classic-sql-server-agent-extension/azure-sql-server-iaas-agent-uninstall.png)  
 
 还可使用 **Remove-AzureVMSqlServerExtension** Powershell cmdlet。
 
@@ -99,5 +99,5 @@ SQL Server IaaS 代理扩展支持以下管理任务：
 
 有关在 Azure 虚拟机中运行 SQL Server 的详细信息，请参阅 [Azure 虚拟机中的 SQL Server 概述](/documentation/articles/virtual-machines-windows-sql-server-iaas-overview/)。
 
-<!---HONumber=Mooncake_0220_2017-->
+<!---HONumber=Mooncake_0313_2017-->
 <!--Update_Description: wording update-->

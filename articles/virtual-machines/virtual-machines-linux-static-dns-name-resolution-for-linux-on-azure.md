@@ -15,7 +15,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="12/05/2016"
-    wacn.date="01/13/2017"
+    wacn.date="03/20/2017"
     ms.author="v-livech" />  
 
 
@@ -28,9 +28,15 @@
 * [一个 Azure 帐户](/pricing/1rmb-trial/)
 * [SSH 公钥和私钥文件](/documentation/articles/virtual-machines-linux-mac-create-ssh-keys/)
 
-## 快速命令
+## 用于完成任务的 CLI 版本
+可使用以下 CLI 版本之一完成任务：
 
-如果需要快速完成任务，以下部分详细介绍所需的命令。本文档的余下部分（[从此处开始](/documentation/articles/virtual-machines-linux-static-dns-name-resolution-for-linux-on-azure/#detailed-walkthrough)）提供了每个步骤的更详细信息和上下文。
+- [Azure CLI 1.0](#quick-commands)：用于经典部署模型和资源管理部署模型（本文）的 CLI
+- Azure CLI 2.0 - 不支持 Azure 中国区的虚拟机，因为 API 版本的缘故。
+
+## <a name="quick-commands"></a> 快速命令
+
+如果需要快速完成任务，以下部分详细介绍所需的命令。本文档的余下部分（[从此处开始](#detailed-walkthrough)）提供了每个步骤的更详细信息和上下文。
 
 前提条件： 资源组、VNet、将 SSH 入站的 NSG、子网。
 
@@ -67,7 +73,7 @@ Azure 上的完整持续集成和持续部署 (CiCd) 基础结构需要某些服
 
 内部 DNS 名称仅在 Azure 虚拟网络内可解析。由于 DNS 名称是内部类，因此它们无法解析到外部 Internet，从而为基础结构提供了附加安全性。
 
-_将任何示例替换为你自己的命名_。
+_将任何示例替换为你自己的命名。_
 
 ## 创建资源组
 
@@ -158,4 +164,5 @@ Azure 非常灵活，但若要使用 DNS 名称进行 VM 名称解析，需要�
 * [Create your own custom environment for a Linux VM using Azure CLI commands directly（直接使用 Azure CLI 命令为 Linux VM 创建用户自己的自定义环境）](/documentation/articles/virtual-machines-linux-create-cli-complete/)
 * [使用模板在 Azure 上创建 Linux VM](/documentation/articles/virtual-machines-linux-create-ssh-secured-vm-from-template/)
 
-<!---HONumber=Mooncake_0109_2017-->
+<!---HONumber=Mooncake_0313_2017-->
+<!--Update_Description: add information about CLI 2.0-->

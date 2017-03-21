@@ -15,7 +15,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="11/28/2016"
-    wacn.date="01/20/2017"
+    wacn.date="03/20/2017"
     ms.author="iainfou" />  
 
 
@@ -42,7 +42,11 @@
 - [使用 Azure PowerShell 重置](#vmaccess-extension-and-powershell---classic)
 
 ## <a name="azure-portal---resource-manager"></a> Azure 门户预览 - Resource Manager
-通过单击“浏览”>“虚拟机”> 用户的 Windows 虚拟机 >“所有设置”>“重置密码”选择 VM。此时会显示密码重置边栏选项卡：
+若要展开门户菜单，请单击左上角的三个条形，然后单击“虚拟机”：
+
+![浏览 Azure VM](./media/virtual-machines-windows-reset-rdp/Portal-Select-VM.png)  
+
+选择 Windows 虚拟机，然后单击“支持 + 疑难解答”>“重置密码”。此时会显示密码重置边栏选项卡：
 
 ![密码重置页面](./media/virtual-machines-windows-reset-rdp/Portal-RM-PW-Reset-Windows.png)  
 
@@ -89,12 +93,16 @@
 如果仍无法远程连接到虚拟机，请参阅 [Troubleshoot Remote Desktop connections to a Windows-based Azure virtual machine](/documentation/articles/virtual-machines-windows-troubleshoot-rdp-connection/)（对与基于 Windows 的 Azure 虚拟机的远程桌面连接进行故障排除），了解更多尝试步骤。
 
 ## <a name="azure-portal---classic"></a> Azure 门户预览 - 经典
-对于使用经典部署模型创建的虚拟机，可以使用 [Azure 门户预览](https://portal.azure.cn)重置远程桌面服务。单击“浏览”>“虚拟机(经典)”> 用户的 Windows 虚拟机 >“重置远程...”。将显示以下页面。
+对于使用经典部署模型创建的虚拟机，可以使用 [Azure 门户预览](https://portal.azure.cn)重置远程桌面服务。若要展开门户菜单，请单击左上角的三个条形，然后单击“虚拟机(经典)”：
+
+![浏览 Azure VM](./media/virtual-machines-windows-reset-rdp/Portal-Select-Classic-VM.png)  
+
+选择 Windows 虚拟机，然后单击“重置远程...”。此时将显示以下用于重置远程桌面配置的对话框：
 
 ![重置 RDP 配置页面](./media/virtual-machines-windows-reset-rdp/Portal-RDP-Reset-Windows.png)  
 
 
-还可以尝试重置本地管理员帐户的名称和密码。单击“浏览”>“虚拟机(经典)”> 用户的 Windows 虚拟机 >“所有设置”>“重置密码”。将显示以下页面。
+还可以重置本地管理员帐户的用户名和密码。从 VM 中单击“支持 + 疑难解答”>“重置密码”。此时会显示密码重置边栏选项卡：
 
 ![密码重置页面](./media/virtual-machines-windows-reset-rdp/Portal-PW-Reset-Windows.png)  
 
@@ -150,5 +158,5 @@ VMAccess 扩展在虚拟机上运行两个命令：
 
 [对与基于 Windows 的 Azure 虚拟机的远程桌面连接进行故障排除](/documentation/articles/virtual-machines-windows-troubleshoot-rdp-connection/)
 
-<!---HONumber=Mooncake_0116_2017-->
-<!--Update_Description: update meta properties & wording update & update code-->
+<!---HONumber=Mooncake_0313_2017-->
+<!--Update_Description: wording update-->

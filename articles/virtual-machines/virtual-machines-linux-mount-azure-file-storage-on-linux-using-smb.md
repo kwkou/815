@@ -1,5 +1,5 @@
 <properties
-    pageTitle="使用 SMB 在 Linux VM 上装载 Azure 文件存储 | Azure"
+    pageTitle="通过 Azure CLI 1.0 使用 SMB 在 Linux VM 上装载 Azure 文件存储 | Azure"
     description="如何使用 SMB 在 Linux VM 上装载 Azure 文件存储。"
     services="virtual-machines-linux"
     documentationcenter="virtual-machines-linux"
@@ -14,11 +14,11 @@
     ms.tgt_pltfrm="vm-linux"
     ms.workload="infrastructure"
     ms.date="12/07/2016"
-    wacn.date="01/13/2017"
+    wacn.date="03/20/2017"
     ms.author="v-livech" />  
 
 
-# 使用 SMB 在 Linux VM 上装载 Azure 文件存储
+# 通过 Azure CLI 1.0 使用 SMB 在 Linux VM 上装载 Azure 文件存储
 
 本文说明如何使用 SMB 装载利用 Linux VM 上的 Azure 文件存储服务。Azure 文件存储使用标准 SMB 协议在云中提供文件共享。要求包括：
 
@@ -26,7 +26,13 @@
 
 - [SSH 公钥和私钥文件](/documentation/articles/virtual-machines-linux-mac-create-ssh-keys/)
 
-## 快速命令
+## 用于完成任务的 CLI 版本
+可使用以下 CLI 版本之一完成任务：
+
+- [Azure CLI 1.0](#quick-commands)：用于经典部署模型和资源管理部署模型（本文）的 CLI
+- Azure CLI 2.0 - 不支持 Azure 中国区的虚拟机，因为 API 版本的缘故。
+
+## <a name="quick-commands"></a> 快速命令
 
 如果需要快速完成任务，以下部分详细介绍所需的命令。本文档的余下部分（[从此处开始](/documentation/articles/virtual-machines-linux-mount-azure-file-storage-on-linux-using-smb/#detailed-walkthrough)）提供了每个步骤的更详细信息和上下文。
 
@@ -98,4 +104,5 @@ Azure 文件存储使用标准 SMB 协议在云中提供文件共享。并且使
 - [将磁盘添加到 Linux VM](/documentation/articles/virtual-machines-linux-add-disk/)
 - [使用 Azure CLI 加密 Linux VM 上的磁盘](/documentation/articles/virtual-machines-linux-encrypt-disks/)
 
-<!---HONumber=Mooncake_0109_2017-->
+<!---HONumber=Mooncake_0313_2017-->
+<!--Update_Description: add information about CLI 2.0-->

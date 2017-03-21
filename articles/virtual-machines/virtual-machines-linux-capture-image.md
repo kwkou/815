@@ -1,13 +1,12 @@
 <properties
-    pageTitle="捕获用作模板的 Linux VM | Azure"
+    pageTitle="捕获用作模板的 Azure Linux VM | Azure"
     description="了解如何捕获并通用化使用 Azure Resource Manager 部署模型创建的、基于 Linux 的 Azure 虚拟机 (VM) 的映像。"
     services="virtual-machines-linux"
     documentationcenter=""
     author="iainfoulds"
     manager="timlt"
     editor=""
-    tags="azure-resource-manager" />  
-
+    tags="azure-resource-manager" />
 <tags
     ms.assetid="e608116f-f478-41be-b787-c2ad91b5a802"
     ms.service="virtual-machines-linux"
@@ -15,20 +14,26 @@
     ms.tgt_pltfrm="vm-linux"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="10/25/2016"
-    wacn.date="01/05/2017"
+    ms.date="02/02/2017"
+    wacn.date="03/20/2017"
     ms.author="iainfou" />  
 
 
 # 捕获 Azure 上运行的 Linux 虚拟机
-遵循本文中的步骤可在 Resource Manager 部署模型中通用化和捕获 Azure Linux 虚拟机 (VM)。通用化 VM 时，需删除个人帐户信息，并准备好要用作映像的 VM。然后捕获 OS 的通用化虚拟硬盘 (VHD) 映像、附加数据磁盘的 VHD 以及新 VM 部署的 [Resource Manager 模板](/documentation/articles/resource-group-overview/)。
+遵循本文中的步骤可在 Resource Manager 部署模型中通用化和捕获 Azure Linux 虚拟机 (VM)。通用化 VM 时，需删除个人帐户信息，并准备好要用作映像的 VM。然后捕获 OS 的通用化虚拟硬盘 (VHD) 映像、附加数据磁盘的 VHD 以及新 VM 部署的 [Resource Manager 模板](/documentation/articles/resource-group-overview/)。本文详述了如何使用适用于 VM 的 Azure CLI 1.0 捕获 VM 映像。
 
 若要使用映像创建 VM，请为每个新 VM 设置网络资源，然后使用模板（JavaScript 对象表示法 (JSON) 文件）从捕获的 VHD 映像部署该 VM。这样，便可以如同使用 Azure 应用商店中的映像一样，复制该 VM 及其当前软件配置。
 
 > [AZURE.TIP]
 如果想要创建现有 Linux VM 的副本（包括其专用化备份或调试状态），请参阅[创建在 Azure 上运行的 Linux 虚拟机副本](/documentation/articles/virtual-machines-linux-copy-vm/)。如果想要从本地 VM 上载 Linux VHD，请参阅[上载自定义磁盘映像并从其创建 Linux VM](/documentation/articles/virtual-machines-linux-upload-vhd/)。
 
-## 开始之前
+## 用于完成任务的 CLI 版本
+可使用以下 CLI 版本之一完成任务：
+
+- [Azure CLI 1.0](#before-you-begin)：用于经典部署模型和资源管理部署模型（本文）的 CLI
+- Azure CLI 2.0 - 不支持 Azure 中国区的虚拟机，因为 API 版本的缘故。
+
+## <a name="before-you-begin"></a> 准备工作
 请确保符合以下先决条件：
 
 * **在 Resource Manager 部署模型中创建的 Azure VM** - 如果尚未创建 Linux VM，可以使用[门户](/documentation/articles/virtual-machines-linux-quick-create-portal/)、[Azure CLI](/documentation/articles/virtual-machines-linux-quick-create-cli/) 或 [Resource Manager 模板](/documentation/articles/virtual-machines-linux-cli-deploy-templates/)。
@@ -44,8 +49,8 @@
 
         sudo waagent -deprovision+user
 
-   > [AZURE.NOTE]
-   仅在要捕获为映像的 VM 上运行此命令。不保证映像中的所有敏感信息被清除，或者映像适合用于分发。
+    > [AZURE.NOTE]
+    仅在要捕获为映像的 VM 上运行此命令。不保证映像中的所有敏感信息被清除，或者映像适合用于分发。
  
 3. 键入 **y** 继续。添加 **-force** 参数即可免除此确认步骤。
 4. 完成该命令后，键入 **exit**。此步骤将关闭 SSH 客户端。
@@ -70,8 +75,8 @@
 
         azure vm capture -g myResourceGroup -n myVM -p myVHDNamePrefix -t myTemplate.json
 
-   > [AZURE.IMPORTANT]
-   默认情况下，映像 VHD 文件在原始 VM 所用的相同存储帐户中创建。使用*同一个存储帐户*来存储从映像创建的所有新 VM 的 VHD。
+    > [AZURE.IMPORTANT]
+    默认情况下，映像 VHD 文件在原始 VM 所用的相同存储帐户中创建。使用*同一个存储帐户*来存储从映像创建的所有新 VM 的 VHD。
 
 6. 若要查找捕获的映像的位置，请在文本编辑器中打开 JSON 模板。在 **storageProfile** 中，查找**系统**容器中**映像**的 **uri**。例如，OS 磁盘映像的 URI 类似于 `https://xxxxxxxxxxxxxx.blob.core.chinacloudapi.cn/system/Microsoft.Compute/Images/vhds/MyVHDNamePrefix-osDisk.xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx.vhd`
 
@@ -157,7 +162,7 @@
 * 使用修改后的模板 JSON 文件，在设置虚拟网络的资源组中创建部署。
 
 ### 使用快速入门模板
-如果要在从映像创建 VM 时自动设置网络，可在模板中指定这些资源。有关示例，请参阅 GitHub 中的 [101-vm-from-user-image 模板](https://github.com/Azure/azure-quickstart-templates/tree/master/101-vm-from-user-image)。此模板会从你的自定义映像创建 VM 以及必要的虚拟网络、公共 IP 地址和 NIC 资源。若要在 Azure 门户预览中演练使用该模板，请参阅 [How to create a virtual machine from a custom image using a Resource Manager template](http://codeisahighway.com/how-to-create-a-virtual-machine-from-a-custom-image-using-an-arm-template/)（如何使用 Resource Manager 模板从自定义映像创建虚拟机）。
+如果要在从映像创建 VM 时自动设置网络，可在模板中指定这些资源。有关示例，请参阅 GitHub 中的 [101-vm-from-user-image 模板](https://github.com/Azure/azure-quickstart-templates/tree/master/101-vm-from-user-image)。此模板会从你的自定义映像创建 VM 以及必要的虚拟网络、公共 IP 地址和 NIC 资源。若要在 Azure 门户预览中演练如何使用该模板，请参阅 [How to create a virtual machine from a custom image using a Resource Manager template](http://codeisahighway.com/how-to-create-a-virtual-machine-from-a-custom-image-using-an-arm-template/)（如何使用 Resource Manager 模板从自定义映像创建虚拟机）。
 
 ### 使用 azure vm create 命令
 通常，最简单的方法是使用 Resource Manager 模板从映像创建 VM。不过，也可以结合 **-Q** (**--image-urn**) 参数使用 **azure vm create** 命令*强制*创建 VM。如果使用此方法，则还要传递 **-d** (**--os-disk-vhd**) 参数来指定新 VM 的 OS .vhd 文件位置。此文件必须位于存储映像 VHD 文件的存储帐户的 vhds 容器中。该命令自动将新 VM 的 VHD 复制到 **vhds** 容器。
@@ -179,4 +184,5 @@
 ## 后续步骤
 要使用 CLI 管理 VM，请参阅[使用 Azure 资源管理器模板和 Azure CLI 部署和管理虚拟机](/documentation/articles/virtual-machines-linux-cli-deploy-templates/)中的任务。
 
-<!---HONumber=Mooncake_1212_2016-->
+<!---HONumber=Mooncake_0313_2017-->
+<!--Update_Description: add information about CLI 2.0-->

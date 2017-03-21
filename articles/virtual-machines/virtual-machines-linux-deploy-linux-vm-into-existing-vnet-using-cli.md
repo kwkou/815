@@ -1,5 +1,5 @@
 <properties
-    pageTitle="使用 CLI 将 Linux VM 部署到现有 Azure 虚拟网络 | Azure"
+    pageTitle="将 Linux VM 部署到现有网络 - Azure CLI | Azure"
     description="使用 CLI 将 Linux VM 部署到现有虚拟网络。"
     services="virtual-machines-linux"
     documentationcenter="virtual-machines"
@@ -15,7 +15,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="12/05/2016"
-    wacn.date="01/13/2017"
+    wacn.date="03/20/2017"
     ms.author="v-livech" />  
 
 
@@ -26,13 +26,19 @@
 - [一个 Azure 帐户](/pricing/1rmb-trial/)
 - [SSH 公钥和私钥文件](/documentation/articles/virtual-machines-linux-mac-create-ssh-keys/)
 
-## 快速命令
+## 用于完成任务的 CLI 版本
+可使用以下 CLI 版本之一完成任务：
+
+- [Azure CLI 1.0](#quick-commands)：用于经典部署模型和资源管理部署模型（本文）的 CLI
+- Azure CLI 2.0 - 不支持 Azure 中国区的虚拟机，因为 API 版本的缘故。
+
+## <a name="quick-commands"></a> 快速命令
 
 如果需要快速完成任务，以下部分详细介绍所需的命令。本文档的余下部分（[从此处开始](/documentation/articles/virtual-machines-linux-deploy-linux-vm-into-existing-vnet-using-cli/#detailed-walkthrough)）提供了每个步骤的更详细信息和上下文。
 
-前提条件： 资源组、VNet、将 SSH 入站的 NSG、子网。将任何示例替换为你自己的设置。
+前提条件：资源组、VNet、将 SSH 入站的 NSG、子网。将任何示例替换为你自己的设置。
 
-### 将 VM 部署到 VNet、NSG 中并连接 VNic
+### 将 VM 部署到虚拟网络基础结构中
 
     azure vm create myVM \
     -g myResourceGroup \
@@ -49,11 +55,11 @@
 
 ## <a name="detailed-walkthrough"></a> 详细演练
 
-建议 VNet 和 NSG 等 Azure 资产应该是静态的、很少部署的长期存在资源。部署 VNet 后，新部署可以重复使用它，而不会对基础结构产生任何负面影响。可以将 VNet 想像为传统硬件网络交换机，用户不需要为全新的硬件交换机配置每个部署。正确配置 VNet 后，在该 VNet 的整个生命周期中，我们可以继续反复将新的服务器部署到该 VNet，只需做很少的更改（如果有）。
+建议 VNet 和 NSG 等 Azure 资产应该是静态的、很少部署的长期存在资源。部署 VNet 后，新部署可以重复使用它，而不会对基础结构产生任何负面影响。考虑一下作为传统硬件网络交换机的 VNet 的情况。不需每个部署都配置全新的硬件交换机。正确配置 VNet 后，在该 VNet 的整个生命周期中，我们可以继续反复将新的服务器部署到该 VNet，只需做很少的更改（如果有）。
 
 ## 创建资源组
 
-首先，我们将创建资源组，以便组织在本演练中创建的所有内容。有关 Azure 资源组的详细信息，请参阅 [Azure Resource Manager 概述](/documentation/articles/resource-group-overview/)
+首先，我们创建资源组，以便组织在本演练中创建的所有内容。有关 Azure 资源组的详细信息，请参阅 [Azure Resource Manager 概述](/documentation/articles/resource-group-overview/)
 
     azure group create myResourceGroup \
     --location chinanorth
@@ -103,7 +109,6 @@ VNet 中的 VM 必须位于一个子网中。每个 VNet 可以有多个子网�
 
 现在，子网已添加到 VNet 中，并已与 NSG 和 NSG 规则相关联。
 
-
 ## 将 VNic 添加到子网
 
 虚拟网卡 (VNic) 很重要，因为用户可以通过将它们连接到不同的 VM 来重新使用它们，这使 VNic 保持作为静态资源，而 VM 可以是临时 VM。创建 VNic 并将其与上一步中创建的子网相关联。
@@ -140,4 +145,5 @@ VNet 中的 VM 必须位于一个子网中。每个 VNet 可以有多个子网�
 * [Create your own custom environment for a Linux VM using Azure CLI commands directly（直接使用 Azure CLI 命令为 Linux VM 创建用户自己的自定义环境）](/documentation/articles/virtual-machines-linux-create-cli-complete/)
 * [使用模板在 Azure 上创建 Linux VM](/documentation/articles/virtual-machines-linux-create-ssh-secured-vm-from-template/)
 
-<!---HONumber=Mooncake_0109_2017-->
+<!---HONumber=Mooncake_0313_2017-->
+<!--Update_Description: add information about CLI 2.0-->

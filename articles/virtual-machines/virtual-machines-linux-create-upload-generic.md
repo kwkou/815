@@ -14,8 +14,8 @@
     ms.tgt_pltfrm="vm-linux"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="12/02/2016"
-    wacn.date="01/20/2017"
+    ms.date="02/02/2017"
+    wacn.date="03/20/2017"
     ms.author="szark" />  
 
 
@@ -42,6 +42,8 @@
 
 ## <a id="linuxinstall" name="general-linux-installation-notes"></a> 常规 Linux 安装说明
 * Azure 不支持 VHDX 格式，仅支持**固定大小的 VHD**。可使用 Hyper-V 管理器或 convert-vhd cmdlet 将磁盘转换为 VHD 格式。如果你使用 VirtualBox，则意味着选择的是“固定大小”，而不是在创建磁盘时动态分配默认大小。
+* Azure 仅支持第 1 代虚拟机。可将第 1 代虚拟机从 VHDX 转换成 VHD 文件格式，并从动态扩展转换成固定大小磁盘。但无法更改虚拟机的代次。有关详细信息，请参阅[是否应在 HYPER-V 中创建第 1 代或第 2 代虚拟机？](https://technet.microsoft.com/windows-server-docs/compute/hyper-v/plan/should-i-create-a-generation-1-or-2-virtual-machine-in-hyper-v)
+* VHD 允许的最大大小为 1,023 GB。
 * 安装 Linux 系统时，*建议*使用标准分区而非 LVM（通常是许多安装的默认值）。这可以避免与克隆 VM 发生 LVM 名称冲突，尤其是在需要将 OS 磁盘连接到另一个同类 VM 进行故障排除时。可在数据磁盘上使用 [LVM](/documentation/articles/virtual-machines-linux-configure-lvm/) 或 [RAID](/documentation/articles/virtual-machines-linux-configure-raid/)。
 * 需要装载 UDF 文件系统的内核支持。在 Azure 上首次启动时，预配配置将通过附加到来宾的 UDF 格式媒体传递到 Linux VM。Azure Linux 代理必须能够装载 UDF 文件系统才能读取其配置和预配 VM。
 * 低于 2.6.37 的 Linux 内核版本不支持具有更大 VM 大小的 Hyper-V 上的 NUMA。此问题主要影响使用上游 Red Hat 2.6.32 内核的旧分发版，在 RHEL 6.6 (kernel-2.6.32-504) 中已解决。运行版本低于 2.6.37 的自定义内核的系统，或者版本低于 2.6.32-504 的基于 RHEL 的内核必须在 grub.conf 中的内核命令行上设置启动参数 `numa=off`。有关详细信息，请参阅 Red Hat [KB 436883](https://access.redhat.com/solutions/436883)。
@@ -92,7 +94,7 @@ qemu-img 版本 2.2.1 或更高版本中存在已知 bug，会导致 VHD 格式�
 
 3. 使用 $rounded\_size 调整 RAW 磁盘大小，如上述脚本所设置：
    
-        # qemu-img resize MyLinuxVM.raw $rounded\_size
+        # qemu-img resize MyLinuxVM.raw $rounded_size
 
 4. 现在，将 RAW 磁盘重新转换为固定大小 VHD：
    
@@ -100,7 +102,7 @@ qemu-img 版本 2.2.1 或更高版本中存在已知 bug，会导致 VHD 格式�
 
     或者，使用 qemu 版本 **2.6+** 提供 `force_size` 选项：
 
-        # qemu-img convert -f raw -o subformat=fixed,force\_size -O vpc MyLinuxVM.raw MyLinuxVM.vhd
+        # qemu-img convert -f raw -o subformat=fixed,force_size -O vpc MyLinuxVM.raw MyLinuxVM.vhd
 
 ## <a name="linux-kernel-requirements"></a> Linux 内核要求
 Hyper-V 和 Azure 的 Linux 集成服务 (LIS) 驱动程序会直接影响上游 Linux 内核。包括最新 Linux 内核版本（即 3.x）在内的许多分发已提供这些驱动程序，或以其他方式为其内核提供了这些驱动程序的向后移植版本。这些驱动程序会在上游内核中使用新的修补程序和功能进行不断更新，因此建议尽可能运行[认可的发行版](/documentation/articles/virtual-machines-linux-endorsed-distros/)以包含这些修补程序和更新。
@@ -140,6 +142,7 @@ Hyper-V 和 Azure 的 Linux 集成服务 (LIS) 驱动程序会直接影响上游
 * 在某些情况下，Azure Linux 代理可能与 NetworkManager 不兼容。分发提供的许多 RPM/Deb 包会将 NetworkManager 配置为与 waagent 包冲突，因此当你安装 Linux 代理包时将卸载 NetworkManager。
 
 ## 一般 Linux 系统要求
+
 * 修改 GRUB 或 GRUB2 中的内核引导行，以便包含以下参数。这还将确保所有控制台消息都发送到第一个串行端口，从而可以协助 Azure 支持人员调试问题：
   
         console=ttyS0,115200n8 earlyprintk=ttyS0,115200 rootdelay=300
@@ -150,13 +153,14 @@ Hyper-V 和 Azure 的 Linux 集成服务 (LIS) 驱动程序会直接影响上游
   
         rhgb quiet crashkernel=auto
   
-    图形和静默引导不适用于要将所有日志发送到串行端口的云环境。
-  
-    根据需要可以配置 `crashkernel` 选项，但请注意此参数会使 VM 中的可用内存量减少 128 MB 或更多，这在较小的 VM 上可能会出现问题。
+    图形和静默引导不适用于要将所有日志发送到串行端口的云环境。根据需要可以配置 `crashkernel` 选项，但请注意此参数会使 VM 中的可用内存量减少 128 MB 或更多，这在较小的 VM 上可能会出现问题。
+
 * 安装 Azure Linux 代理
   
     Azure Linux 代理是在 Azure 上设置 Linux 映像所必需的。许多分发将该代理提供为 RPM 或调试包（该包通常称为“WALinuxAgent”或“walinuxagent”）。还可以按照 [Linux 代理指南](/documentation/articles/virtual-machines-linux-agent-user-guide/)中的步骤手动安装该代理。
+
 * 请确保已安装 SSH 服务器且已将其配置为在引导时启动。这通常是默认设置。
+
 * 请勿在 OS 磁盘上创建交换空间
   
     Azure Linux 代理可使用在 Azure 上设置后附加到 VM 的本地资源磁盘自动配置交换空间。请注意，本地资源磁盘是*临时*磁盘，并可能在取消预配虚拟机时被清空。在安装 Azure Linux 代理（请参见前一步骤）后，相应地在 /etc/waagent.conf 中修改以下参数：
@@ -166,6 +170,7 @@ Hyper-V 和 Azure 的 Linux 集成服务 (LIS) 驱动程序会直接影响上游
         ResourceDisk.MountPoint=/mnt/resource
         ResourceDisk.EnableSwap=y
         ResourceDisk.SwapSizeMB=2048    ## NOTE: set this to whatever you need it to be.
+
 * 最后一步，请运行以下命令以取消设置虚拟机：
   
         # sudo waagent -force -deprovision
@@ -176,7 +181,8 @@ Hyper-V 和 Azure 的 Linux 集成服务 (LIS) 驱动程序会直接影响上游
     运行“waagent -force -deprovision”之后，在 Virtualbox 上可能看到以下错误：`[Errno 5] Input/output error`。此错误消息并不关键，可以忽略。
     > 
     > 
+
 * 然后，需要关闭虚拟机并将 VHD 上载到 Azure。
 
-<!---HONumber=Mooncake_0116_2017-->
-<!--Update_Description: update meta properties & wording update & add support for qemu 2.6+-->
+<!---HONumber=Mooncake_0313_2017-->
+<!--Update_Description: wording update-->

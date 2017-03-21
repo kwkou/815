@@ -14,18 +14,23 @@
     ms.topic="get-started-article"
     ms.tgt_pltfrm="vm-linux"
     ms.workload="infrastructure-services"
-    ms.date="01/03/2016"
-    wacn.date="03/01/2017"
+    ms.date="01/19/2017"
+    wacn.date="03/20/2017"
     ms.author="iainfou" />  
 
 
 # 在 Azure 中创建 Linux 虚拟机的不同方式
-在 Azure 中，可以使用习惯的工具和工作流灵活创建 Linux 虚拟机 \(VM\)。本文汇总了这些方法的差异，并举例说明如何创建 Linux VM。
+在 Azure 中，可以使用习惯的工具和工作流灵活创建 Linux 虚拟机 (VM)。本文汇总了这些方法的差异，并举例说明如何创建 Linux VM。
 
 ## Azure CLI
-Azure CLI 可通过 npm 包、提供发行版的程序包或 Docker 容器跨平台使用。你可以阅读更多有关[如何安装和配置 Azure CLI](/documentation/articles/xplat-cli-install/) 的信息。以下教程提供了有关使用 Azure CLI 的示例。阅读下面每篇文章，了解更多有关所示的 CLI 快速启动命令的更多详细信息：
+可使用以下 CLI 版本之一在 Azure 中创建 VM：
 
-* [Create a Linux VM from the Azure CLI for dev and test（从 Azure CLI 创建用于开发和测试的 Linux VM）](/documentation/articles/virtual-machines-linux-quick-create-cli/)
+- Azure CLI 1.0 - 用于经典部署模型和资源管理部署模型（本文）的 CLI
+- Azure CLI 2.0 - 不支持 Azure 中国区的虚拟机，因为 API 版本的缘故。
+
+Azure CLI 1.0 可通过 npm 包、提供发行版的程序包或 Docker 容器跨平台使用。你可以阅读更多有关[如何安装和配置 Azure CLI](/documentation/articles/xplat-cli-install/) 的信息。以下教程提供了有关使用 Azure CLI 1.0 的示例。阅读下面每篇文章，了解更多有关所示的 CLI 快速启动命令的更多详细信息：
+
+* [Create a Linux VM from the Azure CLI for dev and test（从 Azure CLI 创建用于开发和测试的 Linux VM）](/documentation/articles/virtual-machines-linux-quick-create-cli-nodejs/)
   
     * 以下示例使用名为 `azure_id_rsa.pub` 的公钥创建 CoreOS VM：
 
@@ -39,7 +44,7 @@ Azure CLI 可通过 npm 包、提供发行版的程序包或 Docker 容器跨平
             azure group create --name myResourceGroup --location ChinaNorth 
               --template-file /path/to/101-vm-sshkey/azuredeploy.json
 
-* [使用 Azure CLI 创建完整的 Linux 环境](/documentation/articles/virtual-machines-linux-create-cli-complete/)
+* [使用 Azure CLI 创建完整的 Linux 环境](/documentation/articles/virtual-machines-linux-create-cli-complete-nodejs/)
   
     * 包括在可用性集中创建负载均衡器和多个 VM。
 * [将磁盘添加到 Linux VM](/documentation/articles/virtual-machines-linux-add-disk/)
@@ -109,5 +114,5 @@ Azure CLI 可通过 npm 包、提供发行版的程序包或 Docker 容器跨平
 * 创建 Linux VM 后[添加数据磁盘](/documentation/articles/virtual-machines-linux-add-disk/)。
 * [重置密码或 SSH 密钥和管理用户](/documentation/articles/virtual-machines-linux-using-vmaccess-extension/)的快速步骤
 
-<!---HONumber=Mooncake_0213_2017-->
+<!---HONumber=Mooncake_0313_2017-->
 <!--Update_Description: add information about CLI 2.0-->
