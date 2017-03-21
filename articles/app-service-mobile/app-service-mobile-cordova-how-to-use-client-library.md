@@ -5,8 +5,7 @@
 	documentationCenter="javascript"
 	authors="adrianhall"
 	manager="erikre"
-	editor=""/>  
-
+	editor=""/>
 
 <tags
 	ms.service="app-service-mobile"
@@ -15,7 +14,7 @@
 	ms.devlang="javascript"
 	ms.topic="article"
 	ms.date="10/30/2016"
-	wacn.date="01/23/2017"
+	wacn.date="03/20/2017"
 	ms.author="adrianha"/>
 
 # 如何使用适用于 Azure 移动应用的 Apache Cordova 客户端库
@@ -41,7 +40,33 @@
 
 有关创建[第一个 Apache Cordova 应用]的详细信息，请参阅相关文档。
 
-[AZURE.INCLUDE [app-service-mobile-html-js-library.md](../../includes/app-service-mobile-html-js-library.md)]
+## <a name="ionic"></a>设置 Ionic v2 应用
+
+若要正确配置 Ionic v2 项目，首先需创建一个基本应用，并添加 Cordova 插件：
+
+
+	ionic start projectName --v2
+	cd projectName
+	ionic plugin add cordova-plugin-ms-azure-mobile-apps
+
+
+向 `app.component.ts` 中添加以下行以创建客户端对象：
+
+
+	declare var WindowsAzure: any;
+	var client = new WindowsAzure.MobileServiceClient("https://yoursite.azurewebsites.cn");
+
+
+现在可以在浏览器中生成并运行项目：
+
+
+	ionic platform add browser
+	ionic run browser
+
+
+Azure 移动应用 Cordova 插件同时支持 Ionic v1 和 v2 应用。只有 Ionic v2 应用需要额外的针对 `WindowsAzure` 对象的声明。
+
+[!INCLUDE [app-service-mobile-html-js-library.md](../../includes/app-service-mobile-html-js-library.md)]
 
 ## <a name="auth"></a>如何：对用户进行身份验证
 
@@ -157,5 +182,5 @@ Azure 应用服务支持使用各种外部标识提供者（包括 Microsoft 帐
 [cordova-plugin-inappbrowser]: https://www.npmjs.com/package/cordova-plugin-inappbrowser
 [Query object documentation]: https://msdn.microsoft.com/zh-cn/library/azure/jj613353.aspx
 
-<!---HONumber=Mooncake_0116_2017-->
+<!---HONumber=Mooncake_0313_2017-->
 <!--Update_Description:update wording-->
