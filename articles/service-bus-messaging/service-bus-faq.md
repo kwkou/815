@@ -156,9 +156,9 @@
 [使应用程序免受服务总线中断和灾难影响的最佳实践]: /documentation/articles/service-bus-outages-disasters/
 [Pricing overview]: /pricing/details/messaging/
 [配额概述]: /documentation/articles/service-bus-quotas/
-[此处]: /documentation/articles/service-bus-powershell-how-to-provision/#migrate-a-namespace-to-another-azure-subscription
+[此处]: https://docs.microsoft.com/en-us/powershell/resourcemanager/azurerm.servicebus/v0.0.2/azurerm.servicebus
 [Exceptions overview]: /documentation/articles/service-bus-messaging-exceptions/
 [异常概述]: /documentation/articles/service-bus-messaging-exceptions/
-[共享访问签名]: /documentation/articles/service-bus-sas-overview/
+[共享访问签名]: /documentation/articles/service-bus-sas/
 
 <!---HONumber=Mooncake_0313_2017-->

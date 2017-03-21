@@ -269,7 +269,7 @@
 - 从 [Azure 示例][]下载服务总线示例，或参阅[服务总线示例概述][]。
 
   [Azure 经典管理门户]: http://manage.windowsazure.cn
-  [使用服务总线进行共享访问签名身份验证]: /documentation/articles/service-bus-shared-access-signature-authentication/
+  [使用服务总线进行共享访问签名身份验证]: /documentation/articles/service-bus-sas/
   [Azure 示例]: https://code.msdn.microsoft.com/site/search?query=service%20bus&f%5B0%5D.Value=service%20bus&f%5B0%5D.Type=SearchText&ac=2
   [服务总线示例概述]: /documentation/articles/service-bus-samples/
 

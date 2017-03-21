@@ -25,7 +25,7 @@
 
 ## <a name="shared-access-signature-authentication"></a> 共享访问签名身份验证
 
-通过 [SAS 身份验证](/documentation/articles/service-bus-sas-overview/)，你可以向具有特定权限的用户授予对服务总线资源的访问权限。服务总线中的 SAS 身份验证涉及配置具有服务总线资源相关权限的加密密钥。客户端随后即可通过提供 SAS 令牌来获取该资源的访问权限，该令牌包括正在访问的资源 URI，以及一个由已配置的密钥签名的到期时间。
+通过 [SAS 身份验证](/documentation/articles/service-bus-sas/)，你可以向具有特定权限的用户授予对服务总线资源的访问权限。服务总线中的 SAS 身份验证涉及配置具有服务总线资源相关权限的加密密钥。客户端随后即可通过提供 SAS 令牌来获取该资源的访问权限，该令牌包括正在访问的资源 URI，以及一个由已配置的密钥签名的到期时间。
 
 可以在服务总线命名空间上配置用于 SAS 的密钥。该密钥将应用于该命名空间中的所有消息传送实体。你还可在服务总线队列和主题上配置密钥。服务总线中继也支持 SAS。
 
@@ -69,9 +69,9 @@ Azure.NET SDK 2.0 版和更高版本支持服务总线的 ACS 身份验证。此
 
 ## 后续步骤
 
-请继续阅读[使用服务总线进行共享访问签名身份验证](/documentation/articles/service-bus-shared-access-signature-authentication/)，了解有关 SAS 的更多详细信息。
+请继续阅读[使用服务总线进行共享访问签名身份验证](/documentation/articles/service-bus-sas/)，了解有关 SAS 的更多详细信息。
 
-有关服务总线中的 SAS 的高级概述，请参阅[共享访问签名](/documentation/articles/service-bus-sas-overview/)。
+有关服务总线中的 SAS 的高级概述，请参阅[共享访问签名](/documentation/articles/service-bus-sas/)。
 
 <!---HONumber=Mooncake_0213_2017-->
 <!--Update_Description:update meta properties and wording-->

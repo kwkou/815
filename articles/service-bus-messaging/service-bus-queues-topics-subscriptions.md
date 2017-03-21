@@ -78,7 +78,7 @@ Azure 服务总线支持一组基于云的、面向消息的中间件技术，�
 
 请注意，如果应用程序在处理消息之后，但在发出 **Complete** 请求之前发生崩溃，则在应用程序重新启动时会将该消息重新传送给它。此情况通常称作*至少处理一次*，即每条消息将至少被处理一次。但是，在某些情况下，同一消息可能会被重新传送。如果某个场景不允许重复处理，则应用程序中需要用于检测重复的其他逻辑，此要求可基于消息的 **MessageId** 属性来实现，该属性在多次传送尝试中保持不变。这称为*仅一次*处理。
 
-有关如何创建消息以及将消息发送至队列和从队列发送消息的详细信息及有效示例，请参阅[服务总线中转消息传送 .NET 教程](/documentation/articles/service-bus-brokered-tutorial-dotnet/)。
+有关如何创建消息以及将消息发送至队列和从队列发送消息的详细信息及有效示例，请参阅[服务总线中转消息传送 .NET 教程](/documentation/articles/service-bus-dotnet-get-started-with-queues/)。
 
 ## <a name="topics-and-subscriptions"></a> 主题和订阅
 
@@ -159,8 +159,8 @@ Azure 服务总线支持一组基于云的、面向消息的中间件技术，�
 有关使用服务总线消息传送的详细信息和示例，请参阅以下高级主题。
 
 - [服务总线消息传送概述](/documentation/articles/service-bus-messaging-overview/)
-- [服务总线中转消息传送 .NET 教程](/documentation/articles/service-bus-brokered-tutorial-dotnet/)
-- [服务总线中转消息传送 REST 教程](/documentation/articles/service-bus-brokered-tutorial-rest/)
+- [服务总线中转消息传送 .NET 教程](/documentation/articles/service-bus-dotnet-get-started-with-queues/)
+- [服务总线中转消息传送 REST 教程](/documentation/articles/service-bus-dotnet-get-started-with-queues/)
 - [主题筛选器示例](https://github.com/Azure-Samples/azure-servicebus-messaging-samples/tree/master/TopicFilters)
 - [中转消息传送：高级筛选器](http://code.msdn.microsoft.com/Brokered-Messaging-6b0d2749)
 

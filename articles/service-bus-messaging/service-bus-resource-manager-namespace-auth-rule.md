@@ -37,7 +37,7 @@
 
 利用此模板，你将为命名空间和消息传送实体（在此情况下为队列）部署服务总线授权规则。
 
-此模板使用[共享访问签名 (SAS)](/documentation/articles/service-bus-sas-overview/) 进行身份验证。SAS 使应用程序能够使用在命名空间或在关联了特定权限的消息传送实体（队列或主题）上配置的访问密钥向服务总线进行身份验证。然后可以使用此密钥生成 SAS 令牌，客户端反过来可用它向服务总线进行身份验证。
+此模板使用[共享访问签名 (SAS)](/documentation/articles/service-bus-sas/) 进行身份验证。SAS 使应用程序能够使用在命名空间或在关联了特定权限的消息传送实体（队列或主题）上配置的访问密钥向服务总线进行身份验证。然后可以使用此密钥生成 SAS 令牌，客户端反过来可用它向服务总线进行身份验证。
 
 若要自动运行部署，请单击以下按钮：
 
@@ -151,7 +151,7 @@
 
 现在，你已使用 Azure Resource Manager 创建并部署了资源，请通过查看以下文章了解如何管理这些资源：
 
-- [使用 PowerShell 管理服务总线](/documentation/articles/service-bus-powershell-how-to-provision/)
+- [使用 PowerShell 管理服务总线](https://docs.microsoft.com/en-us/powershell/resourcemanager/azurerm.servicebus/v0.0.2/azurerm.servicebus/)
 - [使用服务总线资源管理器管理服务总线资源](https://code.msdn.microsoft.com/Service-Bus-Explorer-f2abca5a)
 - [服务总线身份验证和授权](/documentation/articles/service-bus-authentication-and-authorization/)
 

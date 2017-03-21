@@ -13,7 +13,7 @@
 
 # 服务总线中继消息传送教程
 
-本教程介绍了如何使用服务总线“中继”功能，构建简单的服务总线客户端应用程序和服务。有关使用服务总线[中转消息传送](/documentation/articles/service-bus-messaging-overview/#Brokered-messaging)的相应教程，请参阅[服务总线中转消息传送 .NET 教程](/documentation/articles/service-bus-brokered-tutorial-dotnet/)。
+本教程介绍了如何使用服务总线“中继”功能，构建简单的服务总线客户端应用程序和服务。有关使用服务总线[中转消息传送](/documentation/articles/service-bus-messaging-overview/#Brokered-messaging)的相应教程，请参阅[服务总线中转消息传送 .NET 教程](/documentation/articles/service-bus-dotnet-get-started-with-queues/)。
 
 通过此教程，你可以了解创建服务总线客户端和服务应用程序所需的步骤。正如其 WCF 对应项，服务是公开一个或多个终结点的构造，其中每个终结点都公开一个或多个服务操作。服务的终结点用于指定可在其中找到服务的地址、包含客户端必须与服务进行通信的信息的绑定，以及定义服务向其客户端提供的功能的协定。WCF 和服务总线服务之间的主要区别在于：终结点在云中公开，而不是在本地计算机中公开。
 
@@ -775,7 +775,7 @@
 
 ## 后续步骤
 
-本教程介绍了如何使用服务总线“中继”功能，构建服务总线客户端应用程序和服务。有关使用服务总线[中转消息传送](/documentation/articles/service-bus-messaging-overview/#Brokered-messaging)的类似教程，请参阅[服务总线中转消息传送 .NET 教程](/documentation/articles/service-bus-brokered-tutorial-dotnet/)。
+本教程介绍了如何使用服务总线“中继”功能，构建服务总线客户端应用程序和服务。有关使用服务总线[中转消息传送](/documentation/articles/service-bus-messaging-overview/#Brokered-messaging)的类似教程，请参阅[服务总线中转消息传送 .NET 教程](/documentation/articles/service-bus-dotnet-get-started-with-queues/)。
 
 若要了解有关服务总线的详细信息，请参阅以下主题。
 

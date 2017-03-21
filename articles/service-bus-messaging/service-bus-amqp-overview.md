@@ -97,10 +97,10 @@ Azure 服务总线中对 AMQP 1.0 的支持意味着现在可以通过一系列�
 
 [0]: ./media/service-bus-amqp-overview/service-bus-amqp-1.png
 [使用 AMQP 通过 .NET 使用服务总线]: /documentation/articles/service-bus-amqp-dotnet/
-[使用 AMQP 通过 Java 使用服务总线]: /documentation/articles/service-bus-amqp-java/
-[使用 AMQP 通过 Python 使用服务总线]: /documentation/articles/service-bus-amqp-python/
-[使用 AMQP 通过 PHP 使用服务总线]: /documentation/articles/service-bus-amqp-php/
-[在 Azure Linux VM 上安装 Apache Qpid Proton-C]: /documentation/articles/service-bus-amqp-apache/
+[使用 AMQP 通过 Java 使用服务总线]: /documentation/articles/service-bus-java-how-to-use-jms-api-amqp/
+[使用 AMQP 通过 Python 使用服务总线]: /documentation/articles/service-bus-python-how-to-use-queues/
+[使用 AMQP 通过 PHP 使用服务总线]: /documentation/articles/service-bus-php-how-to-use-queues/
+[在 Azure Linux VM 上安装 Apache Qpid Proton-C]: /documentation/articles/service-bus-amqp-overview/
 [适用于 Windows Server 的服务总线中的 AMQP]: https://msdn.microsoft.com/zh-cn/library/dn574799.aspx
 
 <!---HONumber=Mooncake_Quality_Review_1230_2016-->

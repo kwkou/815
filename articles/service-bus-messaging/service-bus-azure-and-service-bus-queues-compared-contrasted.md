@@ -204,9 +204,9 @@ Azure 支持两种队列机制：**存储队列**和**服务总线队列**。
 
 ### 其他信息
 
-- 针对任一队列技术的每个请求都必须进行身份验证。不支持使用匿名访问的公共队列。使用 [SAS](/documentation/articles/service-bus-sas-overview/)，你可以通过发布只写 SAS、只读 SAS 甚至完全访问权限 SAS 来满足这种方案的需求。
+- 针对任一队列技术的每个请求都必须进行身份验证。不支持使用匿名访问的公共队列。使用 [SAS](/documentation/articles/service-bus-sas/)，你可以通过发布只写 SAS、只读 SAS 甚至完全访问权限 SAS 来满足这种方案的需求。
 
-- 存储队列提供的身份验证方案涉及使用对称密钥，该密钥是基于哈希的消息身份验证代码 (HMAC)，使用 SHA-256 算法计算并编码为 **Base64** 字符串。有关相应协议的详细信息，请参阅 [Azure 存储空间服务的身份验证](https://msdn.microsoft.com/zh-cn/library/azure/dd179428.aspx)。服务总线队列支持使用对称密钥的类似模型。有关详细信息，请参阅[使用服务总线进行共享访问签名身份验证](/documentation/articles/service-bus-shared-access-signature-authentication/)。
+- 存储队列提供的身份验证方案涉及使用对称密钥，该密钥是基于哈希的消息身份验证代码 (HMAC)，使用 SHA-256 算法计算并编码为 **Base64** 字符串。有关相应协议的详细信息，请参阅 [Azure 存储空间服务的身份验证](https://msdn.microsoft.com/zh-cn/library/azure/dd179428.aspx)。服务总线队列支持使用对称密钥的类似模型。有关详细信息，请参阅[使用服务总线进行共享访问签名身份验证](/documentation/articles/service-bus-sas/)。
 
 ## 结束语
 

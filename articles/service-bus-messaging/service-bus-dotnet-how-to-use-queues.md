@@ -239,7 +239,7 @@
   [Azure 经典管理门户]: http://manage.windowsazure.cn
   [7]: ./media/service-bus-dotnet-how-to-use-queues/getting-started-multi-tier-13.png
   [队列、主题和订阅]: /documentation/articles/service-bus-queues-topics-subscriptions/
-  [服务总线中转消息传送 .NET 教程]: /documentation/articles/service-bus-brokered-tutorial-dotnet/
+  [服务总线中转消息传送 .NET 教程]: /documentation/articles/service-bus-dotnet-get-started-with-queues/
   [Azure 示例]: https://code.msdn.microsoft.com/site/search?query=service%20bus&f%5B0%5D.Value=service%20bus&f%5B0%5D.Type=SearchText&ac=2
   [服务总线示例概述]: /documentation/articles/service-bus-samples/
   [GetSetting]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.cloudconfigurationmanager.getsetting.aspx

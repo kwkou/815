@@ -622,6 +622,6 @@ sql-filter 映射必须包含以下条目。
 * [针对服务总线分区队列和主题的 AMQP 1.0 支持]
 
 [服务总线 AMQP 概述]: /documentation/articles/service-bus-amqp-overview/
-[针对服务总线分区队列和主题的 AMQP 1.0 支持]: /documentation/articles/service-bus-partitioned-queues-and-topics-amqp-overview/
+[针对服务总线分区队列和主题的 AMQP 1.0 支持]: /documentation/articles/service-bus-amqp-protocol-guide/
 
 <!---HONumber=Mooncake_0116_2017-->

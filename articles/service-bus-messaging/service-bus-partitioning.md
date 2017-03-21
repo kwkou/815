@@ -143,7 +143,7 @@ Azure 服务总线使用多个消息中转站处理消息，并使用多个消�
   [MessagingFactorySettings.OperationTimeout]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.messagingfactorysettings.operationtimeout.aspx
   [OperationTimeout]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.messagingfactorysettings.operationtimeout.aspx
   [QueueDescription.ForwardTo]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.queuedescription.forwardto.aspx
-  [针对服务总线分区队列和主题的 AMQP 1.0 支持]: /documentation/articles/service-bus-partitioned-queues-and-topics-amqp-overview/
+  [针对服务总线分区队列和主题的 AMQP 1.0 支持]: /documentation/articles/service-bus-amqp-protocol-guide/
 
 <!---HONumber=Mooncake_0213_2017-->
 <!--Update_Description:update wording and link references-->

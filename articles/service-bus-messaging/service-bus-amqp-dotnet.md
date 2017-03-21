@@ -131,7 +131,7 @@ AMQP 1.0 支持在服务总线 SDK 2.1 版或更高版本中提供。为确保�
 [NuGet]: http://nuget.org/packages/WindowsAzure.ServiceBus/
 [Azure 门户预览]: https://portal.azure.cn
 [服务总线 AMQP 概述]: /documentation/articles/service-bus-amqp-overview/
-[针对服务总线分区队列和主题的 AMQP 1.0 支持]: /documentation/articles/service-bus-partitioned-queues-and-topics-amqp-overview/
+[针对服务总线分区队列和主题的 AMQP 1.0 支持]: /documentation/articles/service-bus-amqp-protocol-guide/
 [适用于 Windows Server 的服务总线中的 AMQP]: https://msdn.microsoft.com/zh-cn/library/dn574799.aspx
 
 <!---HONumber=Mooncake_0313_2017-->

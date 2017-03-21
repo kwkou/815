@@ -143,7 +143,7 @@
 ## 后续步骤
 现在，已使用 Azure Resource Manager 创建并部署了资源，请阅读以下文章了解如何管理这些资源：
 
-- [使用 PowerShell 管理服务总线](/documentation/articles/service-bus-powershell-how-to-provision/)
+- [使用 PowerShell 管理服务总线](https://docs.microsoft.com/en-us/powershell/resourcemanager/azurerm.servicebus/v0.0.2/azurerm.servicebus/)
 - [使用服务总线资源管理器管理服务总线资源](https://code.msdn.microsoft.com/Service-Bus-Explorer-f2abca5a)
 
   [创作 Azure Resource Manager 模板]: /documentation/articles/resource-group-authoring-templates/

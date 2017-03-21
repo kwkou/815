@@ -63,7 +63,7 @@
 
 ### 创建队列
 
-服务总线消息传送实体（队列和发布/订阅主题）的管理操作通过 [NamespaceManager](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.namespacemanager.aspx) 类执行。服务总线使用基于安全模型的[共享访问签名 (SAS)](/documentation/articles/service-bus-sas-overview/)。[TokenProvider](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.tokenprovider.aspx) 类代表具有内置工厂方法的安全令牌提供程序，这些方法可返回一些众所周知的令牌提供程序。我们将使用 [CreateSharedAccessSignatureTokenProvider](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.tokenprovider.createsharedaccesssignaturetokenprovider.aspx) 方法来保留 SAS 凭据。然后使用服务总线命名空间和令牌提供程序的基址构建 [NamespaceManager](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.namespacemanager.aspx) 实例。
+服务总线消息传送实体（队列和发布/订阅主题）的管理操作通过 [NamespaceManager](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.namespacemanager.aspx) 类执行。服务总线使用基于安全模型的[共享访问签名 (SAS)](/documentation/articles/service-bus-sas/)。[TokenProvider](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.tokenprovider.aspx) 类代表具有内置工厂方法的安全令牌提供程序，这些方法可返回一些众所周知的令牌提供程序。我们将使用 [CreateSharedAccessSignatureTokenProvider](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.tokenprovider.createsharedaccesssignaturetokenprovider.aspx) 方法来保留 SAS 凭据。然后使用服务总线命名空间和令牌提供程序的基址构建 [NamespaceManager](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.namespacemanager.aspx) 实例。
 
 [NamespaceManager](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.namespacemanager.aspx) 类提供了创建、枚举和删除消息传送实体的方法。此处显示的代码介绍了创建 [NamespaceManager](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.namespacemanager.aspx) 实例并用它创建 **DataCollectionQueue** 队列的方法。
 
