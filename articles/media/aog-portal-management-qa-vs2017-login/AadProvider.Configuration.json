@@ -1,0 +1,17 @@
+﻿{
+  "AuthenticationQueryParameters": null,
+  "AsmEndPoint": "https://management.core.chinacloudapi.cn",
+  "Authority": "https://login.chinacloudapi.cn/",
+  "AzureResourceManagementEndpoint": "https://management.chinacloudapi.cn/",
+  "AzureResourceManagementAudienceEndpoints": [ "https://management.core.chinacloudapi.cn/" ],
+  "ClientIdentifier": "872cd9fa-d31f-45e0-9eab-6e460a02d1f1",
+  "EnvironmentName": "Mooncake",
+  "GraphEndpoint": "https://graph.chinacloudapi.cn",
+  "MsaHomeTenantId": "f577cd82-810c-43f9-a1f6-0cc532871050",
+  "NativeClientRedirect": "urn:ietf:wg:oauth:2.0:oob",
+  "PortalEndpoint": "http://manage.windowsazure.cn",
+  "ResourceEndpoint": "https://management.core.chinacloudapi.cn/",
+  "ValidateAuthority": true,
+  "VisualStudioOnlineEndpoint": "https://app.vssps.visualstudio.com/",
+  "VisualStudioOnlineAudience": "499b84ac-1321-427f-aa17-267ca6975798"
+}
