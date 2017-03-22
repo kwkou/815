@@ -120,7 +120,7 @@
 - Visual Studio 2013<br/>
 - 安装 [Azure SDK](/downloads/?sdk=net)
 
-[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-visual-studio-login-guide.md)]
+[AZURE.INCLUDE [azure-sdk-developer-differences](../includes/azure-visual-studio-login-guide.md)]
 
 1. 首先以管理员身份，运行 Visual Studio 2013；  
 2. 点击 File -> New -> Project；   
