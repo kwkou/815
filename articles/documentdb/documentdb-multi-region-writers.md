@@ -1,5 +1,5 @@
 <properties
-    pageTitle="使用 Azure DocumentDB 构建多区域作者体系结构 | Azure"
+    pageTitle="使用 Azure DocumentDB 实现的多主数据库体系结构 | Azure"
     description="了解如何使用 Azure DocumentDB 来设计可实现跨多个地理区域进行本地读取和写入的应用程序结构。"
     services="documentdb"
     documentationcenter=""
@@ -13,18 +13,18 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="na"
-    ms.date="01/10/2016"
-    wacn.date="02/27/2017"
+    ms.date="01/25/2017"
+    wacn.date="03/22/2017"
     ms.author="arramac" />  
 
 
-# 使用 Azure DocumentDB 构建多区域作者体系结构
+# 使用 Azure DocumentDB 实现的多主数据库体系结构
 DocumentDB 支持全面的[全球复制](/documentation/articles/documentdb-distribute-data-globally/)，可将数据分布到多个区域，让用户在工作负荷中的任意位置以较低的延迟访问数据。此模型常用于发布者/使用者工作负荷。在这些工作负荷中，单个地理区域包含一个作者，其他（读取）区域包含分布于全球的读者。
 
 还可以使用 DocumentDB 的全球复制支持来构建作者和读者分布于全球的应用程序。本文档概述一种使用 Azure DocumentDB 为全球分布的作者实现本地写入和本地读取访问的模式。
 
 ## <a id="ExampleScenario"></a>内容发布 - 示例方案
-让我们借助一个真实的方案，介绍如何在 DocumentDB 中使用全球分布式多区域读写模式。假设已在 DocumentDB 上构建一个内容发布平台。为了向发布者和使用者提供良好的用户体验，此平台必须满足一些要求。
+让我们借助一个真实的方案，介绍如何在 DocumentDB 中使用全球分布式多区域/多主读写模式。假设已在 DocumentDB 上构建一个内容发布平台。为了向发布者和使用者提供良好的用户体验，此平台必须满足一些要求。
 
 - 作者和订户遍布全球
 - 作者必须将文章发布（写入）到本地（最近的）区域
@@ -135,7 +135,8 @@ DocumentDB 支持全面的[全球复制](/documentation/articles/documentdb-dist
 			} 
 		}
 		
-		//Reviewer Id public string UserId { get; set; }
+		//Reviewer Id 
+		public string UserId { get; set; }
 		public string ReviewText { get; set; }
 		
 		public int Rating { get; set; } }
@@ -165,7 +166,13 @@ DocumentDB 支持全面的[全球复制](/documentation/articles/documentdb-dist
 | `contentpubdatabase-usa.documents.azure.com` | `West US` |`North Europe` |
 | `contentpubdatabase-europe.documents.azure.com` | `North Europe` |`West US` |
 
-以下代码片段演示如何在 `China North` 区域中运行的 DAL 中初始化客户端。
+
+下图显示如何在使用此设置的典型应用程序中执行读取和写入：
+
+![Azure DocumentDB 多主体系结构](./media/documentdb-multi-region-writers/documentdb-multi-master.png)  
+
+
+以下代码片段演示如何在 `West US` 区域中运行的 DAL 中初始化客户端。
     
     ConnectionPolicy writeClientPolicy = new ConnectionPolicy { ConnectionMode = ConnectionMode.Direct, ConnectionProtocol = Protocol.Tcp };
     writeClientPolicy.PreferredLocations.Add(LocationNames.WestUS);
@@ -194,10 +201,10 @@ DocumentDB 支持全面的[全球复制](/documentation/articles/documentdb-dist
 | `contentpubdatabase-asia.documents.azure.com` | `Southeast Asia` |`North Europe` |`West US` |
 
 ## <a id="DataAccessImplementation"></a>数据访问层实现
-现在让我们看一下如何实现具有两个可写区域的应用程序的数据访问层 \(DAL\)。DAL 必须执行以下步骤：
+现在让我们看一下如何实现具有两个可写区域的应用程序的数据访问层 (DAL)。DAL 必须执行以下步骤：
 
 - 为每个帐户创建多个 `DocumentClient` 实例。在两个区域的情况下，每个 DAL 实例具有一个 `writeClient` 和一个 `readClient`。
-- 根据应用程序的部署区域来配置 `writeclient` 和 `readClient` 的终结点。例如，部署在 `China North` 中的 DAL 使用 `contentpubdatabase-usa.documents.azure.com` 执行写入。部署在 `NorthEurope` 中的 DAL 使用 `contentpubdatabase-europ.documents.azure.com` 执行写入。
+- 根据应用程序的部署区域来配置 `writeclient` 和 `readClient` 的终结点。例如，部署在 `West US` 中的 DAL 使用 `contentpubdatabase-usa.documents.azure.com` 执行写入。部署在 `NorthEurope` 中的 DAL 使用 `contentpubdatabase-europ.documents.azure.com` 执行写入。
 
 通过上述设置，可以实现数据访问方法。写入操作将写入转发到相应的 `writeClient`。
 
@@ -310,4 +317,5 @@ DocumentDB 支持全面的[全球复制](/documentation/articles/documentdb-dist
 - 了解 [DocumentDB 的全球一致性](/documentation/articles/documentdb-consistency-levels/)
 - 使用 [Azure DocumentDB SDK](/documentation/articles/documentdb-developing-with-multiple-regions/) 在多个区域中进行开发
 
-<!---HONumber=Mooncake_0220_2017-->
+<!---HONumber=Mooncake_0313_2017-->
+<!---Update_Description: wording update -->

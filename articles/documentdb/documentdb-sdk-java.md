@@ -1,11 +1,12 @@
 <properties
-    pageTitle="DocumentDB Java API 和 SDK | Azure"
+    pageTitle="Java API 和 SDK 资源 - Azure DocumentDB | Azure"
     description="了解有关 Java API 和 SDK 的全部信息，包括发布日期、停用日期和 DocumentDB Java SDK 各版本之间所做的更改。"
     services="documentdb"
     documentationcenter="java"
     author="rnagpal"
     manager="jhubbard"
     editor="cgronlun" />
+
 <tags
     ms.assetid="7861cadf-2a05-471a-9925-0fec0599351b"
     ms.service="documentdb"
@@ -13,9 +14,9 @@
     ms.tgt_pltfrm="na"
     ms.devlang="java"
     ms.topic="article"
-    ms.date="01/03/2017"
-    wacn.date="03/16/2017"
-    ms.author="rnagpal" />
+    ms.date="01/31/2017"
+    wacn.date="03/22/2017"
+    ms.author="khdang" />
 
 # DocumentDB API 和 SDK
 > [AZURE.SELECTOR]
@@ -46,9 +47,19 @@
 </table>
 
 ## 发行说明
+### <a name="1.9.5"/>[1\.9.5](http://mvnrepository.com/artifact/com.microsoft.azure/azure-documentdb/1.9.5)
+- 添加了对聚合查询（AVG、COUNT、MIN、MAX 和 SUM）的支持。
+- 添加了对更改源的支持。
+- 通过 RequestOptions.setPopulateQuotaInfo 添加了对集合配额信息的支持。
+- 通过 RequestOptions.setScriptLoggingEnabled 添加了对存储过程脚本日志记录的支持。
+- 修复了一个 Bug，该 Bug 导致 DirectHttps 模式的查询在遇到限制失败时可能会挂起。
+- 修复了会话一致性模式中的一个 Bug。
+- 修复了一个 Bug，该 Bug 可能在请求率很高时导致 HttpContext 中出现 NullReferenceException。
+- 改进了 DirectHttps 模式的性能。
+
 ### <a name="1.9.4"/>[1\.9.4](http://mvnrepository.com/artifact/com.microsoft.azure/azure-documentdb/1.9.4)
-- 使用 ConnectionPolicy.setProxy\(\) API 添加了基于简单客户端实例的代理支持。
-- 添加了 DocumentClient.close\(\) API 以正确关闭 DocumentClient 实例。
+- 使用 ConnectionPolicy.setProxy() API 添加了基于简单客户端实例的代理支持。
+- 添加了 DocumentClient.close() API 以正确关闭 DocumentClient 实例。
 - 通过从本机程序集（而非网关）派生查询计划，提高直接连接模式下的查询性能。
 - 设置 FAIL\_ON\_UNKNOWN\_PROPERTIES = false，使用户无需在其 POJO 中定义 JsonIgnoreProperties。
 - 重构了日志记录以使用 SLF4J。
@@ -85,14 +96,14 @@
 
 ### <a name="1.8.0"/>[1\.8.0](http://mvnrepository.com/artifact/com.microsoft.azure/azure-documentdb/1.8.0)
 - 添加了对多区域数据库帐户的支持。
-- 添加了对自动重试限制请求的支持，并提供了选项用于自定义最大重试次数和最大重试等待时间。请参阅 RetryOptions 和 ConnectionPolicy.getRetryOptions\(\)。
+- 添加了对自动重试限制请求的支持，并提供了选项用于自定义最大重试次数和最大重试等待时间。请参阅 RetryOptions 和 ConnectionPolicy.getRetryOptions()。
 - 弃用了基于 IPartitionResolver 的自定义分区代码。请使用分区集合来提高存储和吞吐量。
 
 ### <a name="1.7.1"/>[1\.7.1](http://mvnrepository.com/artifact/com.microsoft.azure/azure-documentdb/1.7.1)
 - 添加了对限制的重试策略支持。
 
 ### <a name="1.7.0"/>[1\.7.0](http://mvnrepository.com/artifact/com.microsoft.azure/azure-documentdb/1.7.0)
-- 添加了对文档的生存时间 \(TTL\) 支持。
+- 添加了对文档的生存时间 (TTL) 支持。
 
 ### <a name="1.6.0"/>[1\.6.0](http://mvnrepository.com/artifact/com.microsoft.azure/azure-documentdb/1.6.0)
 - 实现了[分区集合](/documentation/articles/documentdb-partition-data/)和[用户定义的性能级别](/documentation/articles/documentdb-performance-levels/)。
@@ -112,7 +123,7 @@
 
 ### <a name="1.2.0"/>[1\.2.0](http://mvnrepository.com/artifact/com.microsoft.azure/azure-documentdb/1.2.0)
 - 支持地理空间索引
-- 验证所有资源的 ID 属性。资源的 ID 不能包含 ？、/、\#、\\ 字符或以空格结尾。
+- 验证所有资源的 ID 属性。资源的 ID 不能包含 ？、/、#、\\ 字符或以空格结尾。
 - 为 ResourceResponse 添加了新标头“索引转换进度”。
 
 ### <a name="1.1.0"/>[1\.1.0](http://mvnrepository.com/artifact/com.microsoft.azure/azure-documentdb/1.1.0)
@@ -137,30 +148,31 @@ Azure DocumentDB SDK for Java 在 **1.0.0** 版之前的所有版本都将在 **
 
 | 版本 | 发布日期 | 停用日期 |
 | --- | --- | --- |
-| [1\.9.4](#1.9.4) |2016 年 12 月 24 日 |--- | 
+| [1\.9.5](#1.9.5) |2017 年 1 月 31 日 |--- | 
+| [1\.9.4](#1.9.4) |2016 年 11 月 24 日 |--- | 
 | [1\.9.3](#1.9.3) |2016 年 10 月 30 日 |--- | 
 | [1\.9.2](#1.9.2) |2016 年 10 月 28 日 |--- | 
 | [1\.9.1](#1.9.1) |2016 年 10 月 26 日 |--- | 
-| [1\.9.0](#1.9.0) |2016 年 10 月 3 日|--- | 
-| [1\.8.1](#1.8.1) | 2016 年 6 月 30 日 |--- | 
-| [1\.8.0](#1.8.0) | 2016 年 6 月 14 日 |--- | 
-| [1\.7.1](#1.7.1) | 2016 年 4 月 30 日 |--- | 
-| [1\.7.0](#1.7.0) | 2016 年 4 月 27 日 |--- | 
-| [1\.6.0](#1.6.0) | 2016 年 3 月 29 日 |--- | 
-| [1\.5.1](#1.5.1) | 2015 年 12 月 31 日 |---| 
-| [1\.5.0](#1.5.0) | 2015 年 12 月 4 日 |--- | 
-| [1\.4.0](#1.4.0) | 2015 年 10 月 5 日 |--- | 
-| [1\.3.0](#1.3.0) | 2015 年 10 月 5 日 |--- | 
-| [1\.2.0](#1.2.0) | 2015 年 8 月 5 日 |--- | 
-| [1\.1.0](#1.1.0) | 2015 年 7 月 9 日 |--- | 
+| [1\.9.0](#1.9.0) |2016 年 10 月 3 日 |--- | 
+| [1\.8.1](#1.8.1) |2016 年 6 月 30 日 |--- | 
+| [1\.8.0](#1.8.0) |2016 年 6 月 14 日 |--- | 
+| [1\.7.1](#1.7.1) |2016 年 4 月 30 日 |--- | 
+| [1\.7.0](#1.7.0) |2016 年 4 月 27 日 |--- | 
+| [1\.6.0](#1.6.0) |2016 年 3 月 29 日 |--- | 
+| [1\.5.1](#1.5.1) |2015 年 12 月 31 日 |--- | 
+| [1\.5.0](#1.5.0) |2015 年 12 月 4 日 |--- | 
+| [1\.4.0](#1.4.0) |2015 年 10 月 5 日 |--- | 
+| [1\.3.0](#1.3.0) |2015 年 10 月 5 日 |--- |
+| [1\.2.0](#1.2.0) |2015 年 8 月 5 日 |--- | 
+| [1\.1.0](#1.1.0) |2015 年 7 月 9 日 |--- | 
 | 1\.0.1           | 2015 年 5 月 12 日 |--- | 
-| [1\.0.0](#1.0.0) | 2015 年 4 月 7 日 |--- | 
-| 0.9.5-prelease | 2015 年 3 月 9 日 | 2016 年 2 月 29 日 | 
-|0.9.4-prelease | 2015 年 2 月 17 日 | 2016 年 2 月 29 日 | 
-|0.9.3-prelease | 2015 年 1 月 13 日 | 2016 年 2 月 29 日 | 
-|0.9.2-prelease | 2014 年 12 月 19 日 | 2016 年 2 月 29 日 | 
-|0.9.1-prelease | 2014 年 12 月 19 日 | 2016 年 2 月 29 日 | 
-|0.9.0-prelease | 2014 年 12 月 10 日 | 2016 年 2 月 29 日 |
+| [1\.0.0](#1.0.0) |2015 年 4 月 7 日 |--- | 
+| 0.9.5-prelease |2015 年 3 月 9 日 |2016 年 2 月 29 日 | 
+| 0.9.4-prelease |2015 年 2 月 17 日 |2016 年 2 月 29 日 | 
+| 0.9.3-prelease |2015 年 1 月 13 日 |2016 年 2 月 29 日 | 
+| 0.9.2-prelease |2014 年 12 月 19 日 |2016 年 2 月 29 日 | 
+| 0.9.1-prelease |2014 年 12 月 19 日 |2016 年 2 月 29 日 | 
+| 0.9.0-prelease |2014 年 12 月 10 日 |2016 年 2 月 29 日 |
 
 ## 常见问题
 [AZURE.INCLUDE [documentdb sdk 常见问题](../../includes/documentdb-sdk-faq.md)]
@@ -168,5 +180,5 @@ Azure DocumentDB SDK for Java 在 **1.0.0** 版之前的所有版本都将在 **
 ## 另请参阅
 若要了解有关 DocumentDB 的详细信息，请参阅 [Azure DocumentDB](/home/features/documentdb/) 服务页。
 
-<!---HONumber=Mooncake_0220_2017-->
-<!---Update_Description: add more content on "Release notes"  -->
+<!---HONumber=Mooncake_0313_2017-->
+<!---Update_Description: wording update -->

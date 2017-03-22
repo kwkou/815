@@ -14,8 +14,8 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="na"
-    ms.date="12/16/2016"
-    wacn.date="01/12/2017"
+    ms.date="01/22/2017"
+    wacn.date="03/22/2017"
     ms.author="tvoellm" />  
 
 
@@ -23,7 +23,7 @@
 
 [**下载模拟器**](https://aka.ms/documentdb-emulator)
 
-Azure DocumentDB 模拟器提供了一个模拟用于开发的 Azure DocumentDB 服务的本地环境，包括其使用的 SSL 连接。本文演示如何导出 SSL 证书以用于不与 Windows 证书存储集成的语言和运行时，例如 Java（它使用其自己的[证书存储](https://docs.oracle.com/cd/E19830-01/819-4712/ablqw/index.html)）和 Python（它使用 [套接字包装器](https://docs.python.org/2/library/ssl.html)）。可以在[使用 Azure DocumentDB 模拟器进行开发和测试](/documentation/articles/documentdb-nosql-local-emulator/)中了解有关模拟器的更多信息。
+Azure DocumentDB 模拟器提供了一个模拟用于开发的 Azure DocumentDB 服务的本地环境，包括其使用的 SSL 连接。本文演示如何导出 SSL 证书以用于不与 Windows 证书存储集成的语言和运行时，例如 Java（它使用自己的[证书存储](https://docs.oracle.com/cd/E19830-01/819-4712/ablqw/index.html)）、Python（它使用[套接字包装器](https://docs.python.org/2/library/ssl.html)）和 Node.js（它使用 [tlsSocket](https://nodejs.org/api/tls.html#tls_tls_connect_options_callback)）。可以在[使用 Azure DocumentDB 模拟器进行开发和测试](/documentation/articles/documentdb-nosql-local-emulator/)中了解有关模拟器的更多信息。
 
 ## 证书轮转
 
@@ -86,10 +86,15 @@ Azure DocumentDB 模拟器提供了一个模拟用于开发的 Azure DocumentDB 
 
 ## 如何在 Python 中使用证书
 
-默认情况下，连接到本地模拟器时，用于 DocumentDB 的 Python SDK 将不会尝试使用 SSL 证书。但是，如果要使用 SSL 验证，则可以按照 [Python 套接字包装器](https://docs.python.org/2/library/ssl.html)文档中的示例进行操作。
+默认情况下，用于 DocumentDB 的 [Python SDK（版本 2.0.0 或更高版本）](/documentation/articles/documentdb-sdk-python/)在连接到本地模拟器时不会尝试使用 SSL 证书。但是，如果要使用 SSL 验证，则可以按照 [Python 套接字包装器](https://docs.python.org/2/library/ssl.html)文档中的示例进行操作。
+
+## 如何在 Node.js 中使用证书
+
+默认情况下，用于 DocumentDB 的 [Node.js SDK（版本 1.10.1 或更高版本）](/documentation/articles/documentdb-sdk-node/)在连接到本地模拟器时不会尝试使用 SSL 证书。但是，如果要使用 SSL 验证，则可以按照 [Node.js 文档](https://nodejs.org/api/tls.html#tls_tls_connect_options_callback)中的示例进行操作。
 
 ## 后续步骤
 - 若要了解有关 DocumentDB 的详细信息，请参阅 [Azure DocumentDB 简介](/documentation/articles/documentdb-introduction/)。
 - 若要开始使用 DocumentDB 模拟器进行开发，请下载一个[支持的 DocumentDB SDK](/documentation/articles/documentdb-sdk-dotnet/)。
 
-<!---HONumber=Mooncake_0103_2017-->
+<!---HONumber=Mooncake_0313_2017-->
+<!---Update_Description: wording update -->

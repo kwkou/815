@@ -6,8 +6,7 @@
     documentationcenter=""
     author="mimig1"
     manager="jhubbard"
-    editor="monicar" />  
-
+    editor="monicar" />
 <tags
     ms.assetid="0e7f8488-7bb7-463e-b6fd-3ae91a02c03a"
     ms.service="documentdb"
@@ -15,15 +14,15 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="get-started-article"
-    ms.date="11/16/2016"
-    wacn.date="01/04/2017"
+    ms.date="02/10/2017"
+    wacn.date="03/22/2017"
     ms.author="mimig" />  
 
 
 # 如何使用 Azure 门户预览创建 DocumentDB NoSQL 帐户
->[AZURE.SELECTOR]
-[Azure 门户预览](/documentation/articles/documentdb-create-account/)
-[Azure CLI 和 Azure资源管理器](/documentation/articles/documentdb-automation-resource-manager-cli/)
+> [AZURE.SELECTOR]
+- [Azure 门户预览](/documentation/articles/documentdb-create-account/)
+- [Azure CLI 和 Azure资源管理器](/documentation/articles/documentdb-automation-resource-manager-cli/)
 
 若要使用 Azure DocumentDB 构建数据库，必须：
 
@@ -33,9 +32,9 @@
 可以使用 Azure 门户预览、Azure 资源管理器模板或 Azure 命令行接口 (CLI) 来创建 DocumentDB 帐户。本文说明如何使用 Azure 门户预览创建 DocumentDB 帐户。若要使用 Azure资源管理器或 Azure CLI 创建帐户，请参阅[自动创建 DocumentDB 数据库帐户](/documentation/articles/documentdb-automation-resource-manager-cli/)。
 
 1. 登录到 [Azure 门户预览](https://portal.azure.cn/)。
-2. 在跳转栏中，依次单击“新建”、“数据库”、“DocumentDB (NoSQL)”。
+2. 在左侧导航窗格中，依次单击“新建”、“数据库”、“NoSQL (DocumentDB)”。
 
-   ![屏幕截图：Azure 门户预览，其中突出显示“更多服务”和 DocumentDB (NoSQL)](./media/documentdb-create-account/create-nosql-db-databases-json-tutorial-1.png)  
+	![屏幕截图：Azure 门户预览，其中突出显示“更多服务”和 NoSQL (DocumentDB)](./media/documentdb-create-account/create-nosql-db-databases-json-tutorial-1.png)  
 
 3. 在“新建帐户”边栏选项卡中，为 DocumentDB 帐户指定所需的配置。
 
@@ -52,21 +51,20 @@
    - 使用“位置”指定在其中托管 DocumentDB 帐户的地理位置。
 4. 配置了新的 DocumentDB 帐户后，单击“创建”。若要检查部署状态，请查看“通知中心”。
 
-   ![快速创建数据库 — 通知中心的屏幕截图，其中显示正在创建 DocumentDB 帐户](./media/documentdb-create-account/create-nosql-db-databases-json-tutorial-4.png)  
+	![快速创建数据库 — 通知中心的屏幕截图，其中显示正在创建 DocumentDB 帐户](./media/documentdb-create-account/create-nosql-db-databases-json-tutorial-4.png)  
 
 
-   ![通知中心的屏幕截图，其中显示 DocumentDB 帐户已成功创建并且部署到资源组 — 在线数据库创建者通知](./media/documentdb-create-account/create-nosql-db-databases-json-tutorial-5.png)  
+	![通知中心的屏幕截图，其中显示 DocumentDB 帐户已成功创建并且部署到资源组 — 在线数据库创建者通知](./media/documentdb-create-account/create-nosql-db-databases-json-tutorial-5.png)  
 
 5. 创建 DocumentDB 帐户之后，即可使用其默认设置。DocumentDB 帐户的默认一致性设置为“会话”。可单击资源菜单中的“默认一致性”调整默认一致性。若要了解有关 DocumentDB 提供的一致性级别的详细信息，请参阅 [DocumentDB 中的一致性级别](/documentation/articles/documentdb-consistency-levels/)。
 
-   ![“资源组”边栏选项卡的屏幕截图 — 开始应用程序开发](./media/documentdb-create-account/create-nosql-db-databases-json-tutorial-6.png)  
+	![“资源组”边栏选项卡的屏幕截图 — 开始应用程序开发](./media/documentdb-create-account/create-nosql-db-databases-json-tutorial-6.png)  
 
 
-   ![“一致性级别”边栏选项卡的屏幕截图 — 会话一致性](./media/documentdb-create-account/create-nosql-db-databases-json-tutorial-7.png)
+	![“一致性级别”边栏选项卡的屏幕截图 — 会话一致性](./media/documentdb-create-account/create-nosql-db-databases-json-tutorial-7.png)
 
 [How to: Create a DocumentDB account]: #Howto
 [Next steps]: #NextSteps
-[documentdb-manage]: /documentation/articles/documentdb-manage/
 
 
 ## 后续步骤
@@ -88,4 +86,5 @@
 
 - [DocumentDB 分层资源模型和概念](/documentation/articles/documentdb-resources/)
 
-<!---HONumber=Mooncake_Quality_Review_1230_2016-->
+<!---HONumber=Mooncake_0313_2017-->
+<!---Update_Description: wording update -->

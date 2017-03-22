@@ -14,8 +14,8 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="11/23/2016"
-    wacn.date="01/23/2017"
+    ms.date="01/16/2017"
+    wacn.date="03/22/2017"
     ms.author="anhoh" />  
 
 
@@ -45,5 +45,5 @@
 - 请参阅[将 MongoChef 与具有 MongoDB 协议支持的 DocumentDB 帐户配合使用](/documentation/articles/documentdb-mongodb-mongochef/)教程，了解如何在 MongoChef 中的 DocumentDB 数据库和 MongoDB 应用之间创建连接。
 - 浏览具有 MongoDB 协议支持的 DocumentDB [示例](/documentation/articles/documentdb-mongodb-samples/)。
 
-<!---HONumber=Mooncake_0109_2017-->
-<!---Update_Description: add content to describe What is the benefit of using DocumentDB protocol -->
+<!---HONumber=Mooncake_0313_2017-->
+<!---Update_Description: update meta properties -->

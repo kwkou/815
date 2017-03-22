@@ -13,8 +13,8 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="na"
-    ms.date="01/10/2017"
-    wacn.date="02/27/2017"
+    ms.date="01/25/2017"
+    wacn.date="03/22/2017"
     ms.author="arramac" />  
 
 
@@ -228,18 +228,20 @@ DocumentDB 以透明方式公开吞吐量、延迟、一致性和可用性指标
 
 
 ## <a id="Next Steps"></a>后续步骤
-若要使用 Azure 门户预览实现 DocumentDB 帐户的全局复制，请参阅[如何使用 Azure 门户预览执行 DocumentDB 全局数据库复制](/documentation/articles/documentdb-portal-global-replication/)。
+- 若要使用 Azure 门户预览实现 DocumentDB 帐户的全局复制，请参阅[如何使用 Azure 门户预览执行 DocumentDB 全局数据库复制](/documentation/articles/documentdb-portal-global-replication/)。
+- 若要了解如何通过 DocumentDB 实现多主体系结构，请参阅[使用 Azure DocumentDB 实现的多主数据库体系结构](/documentation/articles/documentdb-multi-region-writers/)。
+- 若要深入了解 DocumentDB 中自动和手动故障转移如何工作，请参阅 [Azure DocumentDB 中的区域性故障转移](/documentation/articles/documentdb-regional-failovers/)。
 
 ## <a id="References"></a>参考
-1. Eric Brewer：[Towards Robust Distributed Systems](https://people.eecs.berkeley.edu/~brewer/cs262b-2004/PODC-keynote.pdf)（打造强大稳定的分布式系统）
-2. Eric Brewer：[CAP Twelve Years Later - How the rules have changed](http://informatik.unibas.ch/fileadmin/Lectures/HS2012/CS341/workshops/reportsAndSlides/PresentationKevinUrban.pdf)（十二年之后的 CAP - 规则如何改变）
-3. Gilbert, Lynch：- [Brewer&#39;s Conjecture and Feasibility of Consistent, Available, Partition Tolerant Web Services](http://www.glassbeam.com/sites/all/themes/glassbeam/images/blog/10.1.1.67.6951.pdf)（Brewer 的猜想以及一致、可用、分区容错的 Web 服务可行性）
-4. Daniel Abadi：[Consistency Tradeoffs in Modern Distributed Database Systems Design](http://cs-www.cs.yale.edu/homes/dna/papers/abadi-pacelc.pdf)（现代分布式数据库系统设计中的一致性取舍）
-5. Martin Kleppmann：[Please stop calling databases CP or AP](https://martin.kleppmann.com/2015/05/11/please-stop-calling-databases-cp-or-ap.html)（请不要再将数据库称作 CP 或 AP）
-6. Peter Bailis et al：[Probabilistic Bounded Staleness \(PBS\) for Practical Partial Quorums](http://vldb.org/pvldb/vol5/p776_peterbailis_vldb2012.pdf)（实用部分仲裁的概率有限过期 \(PBS\)）
-7. Naor 和 Wool：[Load, Capacity and Availability in Quorum Systems](http://www.cs.utexas.edu/~lorenzo/corsi/cs395t/04S/notes/naor98load.pdf)（仲裁系统中的负载、容量和可用性）
-8. Herlihy 和 Wing：[Lineralizability: A correctness condition for concurrent objects](http://cs.brown.edu/~mph/HerlihyW90/p463-herlihy.pdf)（线性化：并发对象的正确性条件）
+1. Eric Brewer：[Towards Robust Distributed Systems（打造强大稳定的分布式系统）](https://people.eecs.berkeley.edu/~brewer/cs262b-2004/PODC-keynote.pdf)
+2. Eric Brewer：[CAP Twelve Years Later - How the rules have changed（十二年之后的 CAP - 规则如何改变）](http://informatik.unibas.ch/fileadmin/Lectures/HS2012/CS341/workshops/reportsAndSlides/PresentationKevinUrban.pdf)
+3. Gilbert, Lynch：- [Brewer's Conjecture and Feasibility of Consistent, Available, Partition Tolerant Web Services](http://www.glassbeam.com/sites/all/themes/glassbeam/images/blog/10.1.1.67.6951.pdf)（Brewer 的猜想以及一致、可用、分区容错的 Web 服务可行性）
+4. Daniel Abadi：[Consistency Tradeoffs in Modern Distributed Database Systems Design（现代分布式数据库系统设计中的一致性取舍）](http://cs-www.cs.yale.edu/homes/dna/papers/abadi-pacelc.pdf)
+5. Martin Kleppmann：[Please stop calling databases CP or AP（请不要再将数据库称作 CP 或 AP）](https://martin.kleppmann.com/2015/05/11/please-stop-calling-databases-cp-or-ap.html)
+6. Peter Bailis et al：[Probabilistic Bounded Staleness (PBS) for Practical Partial Quorums（实用部分仲裁的概率有限过期 (PBS)）](http://vldb.org/pvldb/vol5/p776_peterbailis_vldb2012.pdf)
+7. Naor 和 Wool：[Load, Capacity and Availability in Quorum Systems（仲裁系统中的负载、容量和可用性）](http://www.cs.utexas.edu/~lorenzo/corsi/cs395t/04S/notes/naor98load.pdf)
+8. Herlihy 和 Wing：[Lineralizability: A correctness condition for concurrent objects（线性化：并发对象的正确性条件）](http://cs.brown.edu/~mph/HerlihyW90/p463-herlihy.pdf)
 9. Azure DocumentDB SLA（上次更新时间：2016 年 12 月）
 
-<!---HONumber=Mooncake_0220_2017-->
+<!---HONumber=Mooncake_0313_2017-->
 <!--Update_Description: wording update-->

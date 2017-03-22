@@ -14,8 +14,8 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="12/19/2016"
-    wacn.date="02/27/2017"
+    ms.date="02/15/2017"
+    wacn.date="03/22/2017"
     ms.author="anhoh" />  
 
 
@@ -28,7 +28,7 @@ DocumentDB 管理的数据库实体被称为**资源**。每个资源都通过�
 - 对照用户定义的资源，什么是系统定义的资源？
 - 如何对资源进行寻址？
 - 如何使用集合？
-- 如何使用存储过程、触发器和用户自定义函数 \(UDF\)？
+- 如何使用存储过程、触发器和用户自定义函数 (UDF)？
 
 ## 分层资源模型
 如下面的关系图所示，DocumentDB 分层**资源模型**由数据库帐户下的数组资源构成，每个帐户可通过一个逻辑且稳定的 URI 进行寻址。本文将一组资源称为一个**源**。
@@ -41,7 +41,7 @@ DocumentDB 提供了高效的 TCP 协议，该协议在其通信模型中也是 
 ![DocumentDB 分层资源模型][1]
 **分层资源模型**
 
-若要开始使用资源，必须使用 Azure 订阅[创建 DocumentDB 数据库帐户](/documentation/articles/documentdb-create-account/)。数据库帐户可以包含的一组**数据库**、每个数据库都包含多个**集合**，每个集合又包含**存储过程、触发器、UDF、文档**及相关**附件**。数据库也有关联的**用户**，每个用户都有一组**权限**，用于访问集合、存储过程、触发器、UDF、文档或附件。而数据库、用户、权限和集合就是系统定义的资源，其中已知的架构、文档和附件包含用户定义的任意 JSON 内容。
+若要开始使用资源，必须使用 Azure 订阅[创建数据库帐户](/documentation/articles/documentdb-create-account/)。数据库帐户可以包含的一组**数据库**、每个数据库都包含多个**集合**，每个集合又包含**存储过程、触发器、UDF、文档**及相关**附件**。数据库也有关联的**用户**，每个用户都有一组**权限**，用于访问集合、存储过程、触发器、UDF、文档或附件。而数据库、用户、权限和集合就是系统定义的资源，其中已知的架构、文档和附件包含用户定义的任意 JSON 内容。
 
 | 资源 | 说明 |
 | --- | --- |
@@ -60,41 +60,41 @@ DocumentDB 提供了高效的 TCP 协议，该协议在其通信模型中也是 
 资源（例如数据库帐户、数据库、集合、用户、权限、存储过程、触发器和 UDF）都具有固定的架构并且都称为系统资源。与此相反，文档和附件这一类资源的架构不受限制，这一类资源就是用户定义的资源。在 DocumentDB 中，系统和用户定义的资源均由符合标准的 JSON 表示并进行管理。所有系统或用户定义的资源都具有以下公共属性。
 
 > [AZURE.NOTE]
-请注意，资源中所有系统生成的属性在其 JSON 表示形式中前面都加有下划线 \(\_\)。
+请注意，资源中所有系统生成的属性在其 JSON 表示形式中前面都加有下划线 (\_)。
 > 
 > 
 
 <table>
     <tbody>
         <tr>
-	<td valign="top"><p><strong>属性</strong></p></td>
-	<td valign="top"><p><strong>是用户设置的还是系统生成的？</strong></p></td>
-	<td valign="top"><p><strong>目的</strong></p></td>
+            <td valign="top"><p><strong>属性</strong></p></td>
+            <td valign="top"><p><strong>是用户设置的还是系统生成的？</strong></p></td>
+            <td valign="top"><p><strong>目的</strong></p></td>
         </tr>
         <tr>
-	    <td valign="top"><p>_rid</p></td>
-	    <td valign="top"><p>系统生成的</p></td>
-	    <td valign="top"><p>系统生成的、资源的唯一分层标识符</p></td>
+            <td valign="top"><p>_rid</p></td>
+            <td valign="top"><p>系统生成的</p></td>
+            <td valign="top"><p>系统生成的、资源的唯一分层标识符</p></td>
         </tr>
         <tr>
-	    <td valign="top"><p>_etag</p></td>
-	    <td valign="top"><p>系统生成的</p></td>
-	    <td valign="top"><p>乐观并发控制所需的资源的 ETag</p></td>
+            <td valign="top"><p>_etag</p></td>
+            <td valign="top"><p>系统生成的</p></td>
+            <td valign="top"><p>乐观并发控制所需的资源的 ETag</p></td>
         </tr>
         <tr>
-	<td valign="top"><p>_ts</p></td>
-	<td valign="top"><p>系统生成的</p></td>
-	<td valign="top"><p>资源上次更新的时间戳</p></td>
+            <td valign="top"><p>_ts</p></td>
+            <td valign="top"><p>系统生成的</p></td>
+            <td valign="top"><p>资源上次更新的时间戳</p></td>
         </tr>
         <tr>
-	<td valign="top"><p>_self</p></td>
-	<td valign="top"><p>系统生成的</p></td>
-	<td valign="top"><p>资源的唯一可寻址 URI</p></td>
+            <td valign="top"><p>_self</p></td>
+            <td valign="top"><p>系统生成的</p></td>
+            <td valign="top"><p>资源的唯一可寻址 URI</p></td>
         </tr>
         <tr>
-	<td valign="top"><p>id</p></td>
-	<td valign="top"><p>系统生成的</p></td>
-	<td valign="top"><p>资源的用户定义的唯一名称（具有相同分区键值）。如果用户未指定 ID，系统将生成 ID</p></td>
+            <td valign="top"><p>id</p></td>
+            <td valign="top"><p>系统生成的</p></td>
+            <td valign="top"><p>资源的用户定义的唯一名称（具有相同分区键值）。如果用户未指定 ID，系统将生成 ID</p></td>
         </tr>
     </tbody>
 </table>
@@ -103,7 +103,7 @@ DocumentDB 提供了高效的 TCP 协议，该协议在其通信模型中也是 
 DocumentDB 不强制对 JSON 标准或特殊编码进行任何专有扩展；它使用符合标准的 JSON 文档。
 
 ### 对资源进行寻址
-所有资源都可通过 URI 寻址。资源的 **\_self** 属性的值表示资源的相对 URI。URI 的格式由 /\<feed\>/{\_rid} 路径段构成：
+所有资源都可通过 URI 寻址。资源的 **\_self** 属性的值表示资源的相对 URI。URI 的格式由 /<feed>/{\_rid} 路径段构成：
 
 | \_self 的值 | 说明 |
 | --- | --- |
@@ -135,16 +135,16 @@ DocumentDB REST API 支持资源寻址和由 ID 和 \_rid 属性提出的请求�
 <table border="0" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
-	<td valign="top"><p><strong>属性名称</strong></p></td>
-	<td valign="top"><p><strong>说明</strong></p></td>
+            <td valign="top"><p><strong>属性名称</strong></p></td>
+            <td valign="top"><p><strong>说明</strong></p></td>
         </tr>
         <tr>
-	<td valign="top"><p>一致性策略</p></td>
-	<td valign="top"><p>设置此属性来配置数据库帐户下的所有集合的默认一致性级别。你可以使用 [x-ms-consistency-level] 请求标头重写基于每个请求的一致性级别。<p><p>请注意，此属性仅适用于<i>用户定义的资源</i>。所有系统定义的资源都配置为支持具有高度一致性的读取/查询。</p></td>
+            <td valign="top"><p>一致性策略</p></td>
+            <td valign="top"><p>设置此属性来配置数据库帐户下的所有集合的默认一致性级别。你可以使用 [x-ms-consistency-level] 请求标头重写基于每个请求的一致性级别。<p><p>请注意，此属性仅适用于<i>用户定义的资源</i>。所有系统定义的资源都配置为支持具有高度一致性的读取/查询。</p></td>
         </tr>
         <tr>
-	<td valign="top"><p>授权密钥</p></td>
-	<td valign="top"><p>这些是提供对所有数据库帐户下的资源的管理访问权限的主要、次要和只读密钥。</p></td>
+            <td valign="top"><p>授权密钥</p></td>
+            <td valign="top"><p>这些是提供对所有数据库帐户下的资源的管理访问权限的主要、次要和只读密钥。</p></td>
         </tr>
     </tbody>
 </table>
@@ -182,7 +182,7 @@ DocumentDB 是真正无架构的数据库系统。无需为 JSON 文档假设或
 ### 配置集合的索引编制策略
 每个集合的索引编制策略都可以使你将性能和存储权衡与编制索引关联起来。你可以使用以下选项进行索引编制配置：
 
-- 选择是否让集合自动为所有文档编制索引。默认情况下，为所有文档自动编制索引。你可以选择关闭自动索引，并选择性地只将特定的文档添加到索引中。反过来，你也可以选择只排除特定的文档。可以通过将集合的 indexingPolicy 上的自动属性设置为 true 或 false，并在插入、替换或删除文档的同时使用 \[x-ms-indexingdirective\] 请求标头，从而实现此目的。
+- 选择是否让集合自动为所有文档编制索引。默认情况下，为所有文档自动编制索引。你可以选择关闭自动索引，并选择性地只将特定的文档添加到索引中。反过来，你也可以选择只排除特定的文档。可以通过将集合的 indexingPolicy 上的自动属性设置为 true 或 false，并在插入、替换或删除文档的同时使用 [x-ms-indexingdirective] 请求标头，从而实现此目的。
 - 选择是否要在索引中包括特定的路径或文档中的模式或从索引中将其排除。你可以通过分别设置集合中的 indexingPolicy 上的 includedPaths 和 excludedPaths 来实现这一点。你还可以配置用于特定路径模式的存储和性能权衡的范围和哈希查询。
 - 在同步（一致）和异步（延迟）索引更新之间进行选择。默认情况下，每次在集合中插入、替换或删除文档时同步更新索引。这个行为让查询能够使用与文档读取相同的一致性级别。虽然 DocumentDB 针对写入进行了优化，且支持文档持续写入，以及同步索引维护和提供一致的查询服务，但你也可以配置某些集合，使其索引延迟更新。延迟索引编制可大大提高写入性能，非常适合主要具有大量读取操作的集合的批量引入方案。
 
@@ -193,7 +193,7 @@ DocumentDB 是真正无架构的数据库系统。无需为 JSON 文档假设或
 
 1. 一小组查询操作，它自然映射到包括分层查询和投影的树结构。
 2. 一小部分关系操作，包括组合、筛选、投影、聚合和自联接。
-3. 基于纯 JavaScript 且结合 \(1\) 和 \(2\) 使用的 UDF。
+3. 基于纯 JavaScript 且结合 (1) 和 (2) 使用的 UDF。
 
 DocumentDB 查询模型尝试在功能、效率和简单性之间取得平衡。DocumentDB 数据库引擎在本机上进行编译和执行 SQL 查询语句。可以使用 [Azure DocumentDB REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn781481.aspx) 或任一[客户端 SDK](https://msdn.microsoft.com/zh-cn/library/azure/dn781482.aspx) 查询集合。.NET SDK 附带了 LINQ 提供程序。
 
@@ -205,7 +205,7 @@ DocumentDB 查询模型尝试在功能、效率和简单性之间取得平衡。
 ### 多文档事务
 数据库事务提供了一种安全且可预测的编程模型来处理数据的并发更改。在 RDBMS 中，编写业务逻辑的传统方法是编写**存储过程**和/或**触发器**，然后将它运到用于事务性执行的数据库服务器。在 RDBMS 中，需要应用程序编程人员来处理这两种不同的编程语言：
 
-- （非事务性）应用程序编程语言（例如 JavaScript、Python、C\#、Java 等。）
+- （非事务性）应用程序编程语言（例如 JavaScript、Python、C#、Java 等。）
 - 数据库在本机上执行的事务性编程语言 T-SQL
 
 由于 DocumentDB 致力于直接在数据库引擎中使用 JavaScript 和 JSON，因此，在存储过程和触发器方面，它为在集合上直接执行基于 JavaScript 的应用程序逻辑提供了直观编程模型。这样就可以实现以下两点：
@@ -272,7 +272,7 @@ DocumentDB 查询模型尝试在功能、效率和简单性之间取得平衡。
 
 可以使用 [Azure DocumentDB REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn781481.aspx) 或任一[客户端 SDK](https://msdn.microsoft.com/zh-cn/library/azure/dn781482.aspx) 轻松创建、删除、读取或枚举 DocumentDB 中的集合。DocumentDB 始终确保为读取或查询集合的元数据提供高度一致性。自动删除数据库，确保你不能访问任何文档、附件、存储过程、触发器和其中包含的 UDF。
 
-## 存储过程、触发器和用户自定义函数 \(UDF\)
+## 存储过程、触发器和用户自定义函数 (UDF)
 如前一节中所述，你可以编写应用程序逻辑以直接在数据库引擎内部的某个事务中运行。应用程序逻辑可以完全用 JavaScript 编写，并且可以作为存储过程、触发器或 UDF 来建模。存储过程或触发器内的 JavaScript 代码可以插入、替换、删除、读取或查询集合中的文档。但是，UDF 中的 JavaScript 却无法插入、替换或删除文档。UDF 可以枚举查询的结果集的文档，并生成另一个结果集。对于多租户，DocumentDB 将强制实施严格的基于保留项的资源监管。每个存储过程、触发器或 UDF 都可以获取固定量的操作系统资源来完成其工作。此外，存储过程、触发器或 UDF 不能针对外部 JavaScript 库进行链接，并且如果它们超出了分配给它们的资源预算，则将被列入方块列表。你可以通过使用 REST API 为集合注册存储过程、触发器或 UDF，也可以取消注册。注册时将预编译存储过程、触发器或 UDF，并将其存储为字节代码，以供以后执行。下一节说明了如何使用 DocumentDB JavaScript SDK 注册、执行和取消注册存储过程、触发器和 UDF。JavaScript SDK 相比于 [DocumentDB REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn781481.aspx) 是一个更简单的包装器。
 
 ### 注册存储过程
@@ -401,18 +401,17 @@ DocumentDB 查询模型尝试在功能、效率和简单性之间取得平衡。
             console.log("Error");
         });
 
-尽管上面的代码段演示了通过 [DocumentDB JavaScript SDK](https://github.com/Azure/azure-documentdb-js) 注册 \(POST\)、取消注册 \(PUT\)、读取/列出 \(GET\) 和执行 \(POST\)，但也可以使用 [REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn781481.aspx) 或其他[客户端 SDK](https://msdn.microsoft.com/zh-cn/library/azure/dn781482.aspx)。
-
+尽管上面的代码段演示了通过 [DocumentDB JavaScript SDK](https://github.com/Azure/azure-documentdb-js) 注册 (POST)、取消注册 (PUT)、读取/列出 (GET) 和执行 (POST)，但也可以使用 [REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn781481.aspx) 或其他[客户端 SDK](https://msdn.microsoft.com/zh-cn/library/azure/dn781482.aspx)。
 
 ## 文档  <a name="documents"></a>
-你可以插入、替换、删除、读取、枚举和查询集合中的任意 JSON 文档。DocumentDB 不强制要求任何架构，并且对集合中的文档进行查询也不需要辅助索引的支持。
+你可以插入、替换、删除、读取、枚举和查询集合中的任意 JSON 文档。DocumentDB 不强制要求任何架构，并且对集合中的文档进行查询也不需要辅助索引的支持。默认情况下，文档的最大大小为 2 MB。
 
 作为一种真正的开放式数据库服务，DocumentDB 不创建任何专用的数据类型（例如日期时间）或用于 JSON 文档的特定编码。请注意，DocumentDB 不需要任何特殊的 JSON 约定来对各种文档之间的关系进行编码；DocumentDB 的 SQL 语法提供了非常强大的分层和关系查询运算符以查询和投影文档，而无需任何特殊的注释，也不需要使用可分辨属性对文档间的关系进行编码。
 
 与所有其他资源一样，可以使用 REST API 或任一[客户端 SDK](https://msdn.microsoft.com/zh-cn/library/azure/dn781482.aspx) 轻松创建、替换、删除、读取、枚举和查询文档。删除文档将立即释放与所有嵌套附件相对应的配额。文档的读取一致性级别遵守数据库帐户中的一致性策略。可以根据你的应用程序的数据一致性要求在每个请求中重写此策略。查询文档时，读取一致性遵循集合上的索引编制模式设置。对于“一致性”，将遵循帐户的一致性策略。
 
 ## 附件和媒体
-DocumentDB 可通过 DocumentDB 存储二进制 blob/媒体，或将其存储到远程媒体存储区。对于被称为附件的特殊文档而言，它还可以用于表示媒体的元数据。DocumentDB 中的附件是引用存储在其他位置的媒体/blob 的特殊 \(JSON\) 文档。附件只是捕获存储在远程媒体存储中的媒体的元数据（例如位置、作者等）的特殊文档。
+DocumentDB 可通过 DocumentDB 存储二进制 blob/媒体（每个帐户最大 2 GB），或将其存储到远程媒体存储区。对于被称为附件的特殊文档而言，它还可以用于表示媒体的元数据。DocumentDB 中的附件是引用存储在其他位置的媒体/blob 的特殊 (JSON) 文档。附件只是捕获存储在远程媒体存储中的媒体的元数据（例如位置、作者等）的特殊文档。
 
 考虑到一款社交阅读应用程序，它使用 DocumentDB 来存储墨迹注释，以及与某位给定用户的电子书相关联的元数据（包含评论、重点、书签、评分、喜欢/厌恶，等等）。
 
@@ -440,8 +439,7 @@ DocumentDB 用户是指对权限进行分组的逻辑命名空间。DocumentDB �
 
 无论你选择的特定分片策略是什么，你都可以将实际用户建模为 DocumentDB 数据库中的用户并将细化的权限和每个用户关联起来。
 
-![用户集合][3]
-**分片策略和为用户建模**
+![用户集合][3]**分片策略和为用户建模**
 
 和所有其他资源一样，可以使用 REST API 或任一客户端 SDK 轻松创建、替换、删除、读取或枚举 DocumentDB 中的用户。DocumentDB 始终保证对读取或查询用户资源的元数据提供高度一致性。需要指出的是，自动删除用户可确保你不能访问其中所包含的任何权限。即使 DocumentDB 将权限配额声明为后台中已删除用户的一部分，你也仍然可以使用已删除的权限。
 
@@ -460,5 +458,5 @@ DocumentDB 用户是指对权限进行分组的逻辑命名空间。DocumentDB �
 [2]: ./media/documentdb-resources/resources2.png
 [3]: ./media/documentdb-resources/resources3.png
 
-<!---HONumber=Mooncake_0220_2017-->
+<!---HONumber=Mooncake_0313_2017-->
 <!---Update_Description: wording update -->

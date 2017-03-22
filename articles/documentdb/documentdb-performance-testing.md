@@ -6,8 +6,7 @@
     author="arramac"
     manager="jhubbard"
     editor=""
-    documentationcenter="" />  
-
+    documentationcenter="" />
 <tags
     ms.assetid="f4c96ebd-f53c-427d-a500-3f28fe7b11d0"
     ms.service="documentdb"
@@ -15,8 +14,8 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="10/27/2016"
-    wacn.date="12/27/2016"
+    ms.date="01/19/2017"
+    wacn.date="03/22/2017"
     ms.author="arramac" />  
 
 
@@ -32,7 +31,10 @@
 
 若要开始处理代码，请从 [DocumentDB 性能测试示例](https://github.com/Azure/azure-documentdb-dotnet/tree/master/samples/documentdb-benchmark)下载项目。
 
-> [AZURE.NOTE] 此应用程序的目标是演示使用少数客户端计算机从 DocumentDB 中提取更好性能的最佳做法。生成此应用程序的目的不是为了演示服务的峰值容量如何可以无限扩展。
+> [AZURE.NOTE]
+此应用程序的目标是演示使用少数客户端计算机从 DocumentDB 中提取更好性能的最佳做法。生成此应用程序的目的不是为了演示服务的峰值容量如何可以无限扩展。
+> 
+> 
 
 如果正在寻找用于提高 DocumentDB 性能的客户端配置选项，请参阅 [DocumentDB 性能提示](/documentation/articles/documentdb-performance-tips/)。
 
@@ -43,7 +45,10 @@
 
 **步骤 2：**在 App.config 中修改 EndpointUrl、AuthorizationKey、CollectionThroughput 和 DocumentTemplate（可选）的设置。
 
-> [AZURE.NOTE] 为集合预配高吞吐量之前，请参阅[定价页](/pricing/details/documentdb/)以估算每个集合的成本。DocumentDB 根据存储和吞吐量单独按小时计费，因此你可以通过在测试后删除或降低 DocumentDB 集合的吞吐量来节省成本。
+> [AZURE.NOTE]
+为集合预配高吞吐量之前，请参阅[定价页](/pricing/details/documentdb/)以估算每个集合的成本。DocumentDB 根据存储和吞吐量单独按小时计费，因此你可以通过在测试后删除或降低 DocumentDB 集合的吞吐量来节省成本。
+> 
+> 
 
 **步骤 3：**从命令行编译并运行控制台应用。你应会看到如下输出：
 
@@ -91,7 +96,7 @@
     DocumentDBBenchmark completed successfully.
 
 
-**步骤 4（如有必要）：**工具报告的吞吐量（RU/秒）应该等于或大于预配的集合吞吐量。如果情况并非如此，以较小的增量提高 DegreeOfParallelism 可帮助达到该限制。如果客户端应用的吞吐量达到持平状态，则在相同或不同计算机上启动多个应用程序实例可帮助在各个不同的实例中达到预配的限制。如果需要此步骤的帮助，请撰写电子邮件并将其发送到 askdocdb@microsoft.com 或填写支持票证。
+**步骤 4（如有必要）：**工具报告的吞吐量（RU/秒）应该等于或大于预配的集合吞吐量。如果情况并非如此，以较小的增量提高 DegreeOfParallelism 可帮助达到该限制。如果客户端应用的吞吐量达到持平状态，则在相同或不同计算机上启动多个应用程序实例可帮助在各个不同的实例中达到预配的限制。如果需要此步骤的帮助，请撰写电子邮件发送到 askdocdb@microsoft.com 或通过 [Azure 门户预览](https://portal.azure.cn)提交支持票证。
 
 让应用处于运行状态后，可以尝试不同的[编制索引策略](/documentation/articles/documentdb-indexing-policies/)和[一致性级别](/documentation/articles/documentdb-consistency-levels/)，以了解它们对吞吐量和延迟的影响。你也可以查看源代码，然后在自己的测试套件或生产应用程序中实施类似的配置。
 
@@ -106,4 +111,5 @@
 - [DocumentDB .NET samples（DocumentDB .NET 示例）](https://github.com/Azure/azure-documentdb-net)
 - [DocumentDB 性能提示博客](https://azure.microsoft.com/blog/2015/01/20/performance-tips-for-azure-documentdb-part-1-2/)
 
-<!---HONumber=Mooncake_1219_2016-->
+<!---HONumber=Mooncake_0313_2017-->
+<!---Update_Description: wording update -->

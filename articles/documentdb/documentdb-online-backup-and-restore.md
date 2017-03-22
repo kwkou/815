@@ -14,8 +14,8 @@
     ms.tgt_pltfrm="na"
     ms.devlang="multiple"
     ms.topic="article"
-    ms.date="01/04/2017"
-    wacn.date="02/27/2017"
+    ms.date="02/06/2017"
+    wacn.date="03/22/2017"
     ms.author="raprasa" />  
 
 
@@ -38,7 +38,7 @@ DocumentDB 旨在实现数据[全球分布](/documentation/articles/documentdb-d
 
 
 ## 完整的自动化联机备份
-糟糕，我不小心删除了集合或数据库！ 使用 DocumentDB，不仅仅是数据，还有数据备份都能获得高度冗余，可以弹性应对区域性的灾难。目前，大约每隔四个小时就会创建这些自动化备份一次。
+糟糕，我不小心删除了集合或数据库！ 使用 DocumentDB，不仅仅是数据，还有数据备份都能获得高度冗余，可以弹性应对区域性的灾难。目前，执行这些自动化备份的时间间隔约为 4 小时，并且始终会存储最新的 2 次备份。如果数据意外删除或损坏，请在 8 小时内[联系 Azure 支持人员](/support/contact/)。
 
 这些备份不会影响数据库操作的性能或可用性。DocumentDB 在后台创建备份，不使用预配的 RU 或影响性能，也不影响 NoSQL 数据库的可用性。
 
@@ -60,5 +60,5 @@ DocumentDB 旨在实现数据[全球分布](/documentation/articles/documentdb-d
 
 若要联系 Azure 支持，请[从 Azure 门户预览开具票证](https://portal.azure.cn/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade)。
 
-<!---HONumber=Mooncake_0220_2017-->
-<!--Update_Description: update meta properties-->
+<!---HONumber=Mooncake_0313_2017-->
+<!---Update_Description: wording update -->

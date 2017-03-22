@@ -1,10 +1,10 @@
 <properties
-    pageTitle="常见 DocumentDB 用例 | Azure"
+    pageTitle="Azure DocumentDB 的常见用例和 NoSQL 方案 | Azure"
     description="了解 DocumentDB 最常见的五个用例：用户生成的内容、事件日志记录、目录数据、用户首选项数据和物联网 (IoT)。"
     services="documentdb"
     author="h0n"
     manager="jhubbard"
-    editor="monicar"
+    editor=""
     documentationcenter="" />
 <tags
     ms.assetid="eca68a58-1a8c-4851-8cf8-6e4d2b889905"
@@ -13,8 +13,8 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="01/12/2017"
-    wacn.date="02/27/2017"
+    ms.date="01/31/2017"
+    wacn.date="03/22/2017"
     ms.author="hawong" />  
 
 
@@ -25,7 +25,7 @@
 
 - DocumentDB 的常见用例有哪些？
 - 对零售移动应用程序使用 DocumentDB 有什么好处？
-- 将 DocumentDB 用作物联网 \(IoT\) 系统的数据存储空间有什么好处？
+- 将 DocumentDB 用作物联网 (IoT) 系统的数据存储空间有什么好处？
 - 对 Web 和移动应用程序使用 DocumentDB 有什么好处？
 
 ## DocumentDB 的常见用例
@@ -64,7 +64,6 @@ IoT 用例在引入、处理和存储数据方法方面通常具有相同的模�
 
  ![Azure DocumentDB 零售订单参考体系结构](./media/documentdb-use-cases/documentdb-retail-orders.png)  
 
-
 ## 游戏
 数据库层是游戏应用程序的关键组件。新式游戏可在移动/控制台客户端执行图形处理，但需依赖云传输自定义的个性化内容，例如游戏中的统计数据、社交媒体集成以及高分排行榜。游戏通常需要单毫秒的读取和写入延迟，从而带来具有吸引力的游戏体验。新游戏启动和功能更新期间，游戏数据库需要具备很快的速度，并且要能够处理请求速率中的大量峰值。
 
@@ -74,7 +73,7 @@ DocumentDB 用于 [Next Games](http://www.nextgames.com/) 推出的[行尸走肉
 - DocumentDB 支持毫秒读取和写入，从而有助于避免在玩游戏期间出现任何延迟。
 - DocumentDB 的自动索引可对多个不同属性进行实时筛选，例如通过内部玩家 ID 或其 GameCenter、Facebook、Google ID 或基于玩家公会成员身份的查询对玩家进行定位。如果不构建复杂的索引或分区基础结构，就不可能实现这种操作。
 - 采用灵活的架构，就更容易实现游戏内聊天消息、玩家公会成员身份、已完成的挑战、高分排行榜以及社交图谱等社交功能。
-- DocumentDB 作为托管的平台即服务 \(PaaS\) 只需最少的设置和管理工作即可实现快速迭代和缩短上市时间。
+- DocumentDB 作为托管的平台即服务 (PaaS) 只需最少的设置和管理工作即可实现快速迭代和缩短上市时间。
 
 ![Azure DocumentDB 游戏参考体系结构](./media/documentdb-use-cases/documentdb-gaming-architecture.png)  
 
@@ -83,11 +82,11 @@ DocumentDB 用于 [Next Games](http://www.nextgames.com/) 推出的[行尸走肉
 DocumentDB 常用在 Web 和移动应用程序中，尤其适用于社交互动建模、与第三方服务集成以及打造丰富的个性化体验。
 
 ### 社交应用程序
-DocumentDB 的一个常见用例就是存储和查询 Web 和移动应用程序的用户生成内容 \(UGC\)，尤其是社交媒体应用程序。UGC 的部分示例包括聊天会话、推文、博客文章、评级和评论。通常情况下，社交媒体应用程序中的 UGC 混合了不受刚性结构约束的自由格式文本、属性、标记和关系。可将聊天、评论和帖子等内容存储在 DocumentDB 中，而无需转换或复杂对象关系映射层。可以轻易添加或修改数据属性以满足开发人员遍历应用程序代码的要求，从而促进快速开发。
+DocumentDB 的一个常见用例就是存储和查询 Web 和移动应用程序的用户生成内容 (UGC)，尤其是社交媒体应用程序。UGC 的部分示例包括聊天会话、推文、博客文章、评级和评论。通常情况下，社交媒体应用程序中的 UGC 混合了不受刚性结构约束的自由格式文本、属性、标记和关系。可将聊天、评论和帖子等内容存储在 DocumentDB 中，而无需转换或复杂对象关系映射层。可以轻易添加或修改数据属性以满足开发人员遍历应用程序代码的要求，从而促进快速开发。
 
 与第三方社交网络集成的应用程序必须响应这些网络中不断更改的架构。由于 DocumentDB 中的数据默认自动编制索引，因此可以随时查询数据。因此，这些应用程序可以根据其各自的需求灵活地检索投影。
 
-许多社交应用程序在全球范围内运行并表现出不可预测的使用模式。因此，应用程序层能根据用量需求缩放时，缩放数据存储的灵活性至关重要。可通过在 DocumentDB 帐户之下添加额外的数据分区来进行扩大。也可在多个区域中创建额外的 DocumentDB 帐户。有关 DocumentDB 服务区域可使用性的信息，请参阅 [Azure 区域](https://azure.microsoft.com/regions)。
+许多社交应用程序在全球范围内运行并表现出不可预测的使用模式。因此，应用程序层能根据用量需求缩放时，缩放数据存储的灵活性至关重要。可通过在 DocumentDB 帐户之下添加额外的数据分区来进行扩大。也可在多个区域中创建额外的 DocumentDB 帐户。有关 DocumentDB 服务区域可使用性的信息，请参阅 [Azure 区域](https://azure.microsoft.com/regions/#services)。
 
 ![Azure DocumentDB Web 应用参考体系结构](./media/documentdb-use-cases/documentdb-web.png)  
 
@@ -119,5 +118,5 @@ JSON 是一种用于呈现 UI 布局数据的有效格式，它不仅轻量而�
 - [Real Madrid](https://customers.microsoft.com/zh-cn/story/real-madrid-brings-the-stadium-closer-to-450-million-f)。皇家马德里足球俱乐部借助 Microsoft 云拉近体育场与全球 4.5 亿粉丝之间的距离。
 - [Tuku](https://customers.microsoft.com/zh-cn/story/tuku-makes-car-buying-fun-with-help-from-azure-services)。TUKU 借助 Azure 服务增加购买汽车的乐趣
 
-<!---HONumber=Mooncake_0220_2017-->
-<!--Update_Description: wording and link update-->
+<!---HONumber=Mooncake_0313_2017-->
+<!---Update_Description: wording update -->

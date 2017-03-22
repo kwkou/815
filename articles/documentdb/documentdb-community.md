@@ -1,5 +1,5 @@
 <properties
-    pageTitle="DocumentDB 社区和新闻 | Azure"
+    pageTitle="Azure DocumentDB 社区、新闻和活动 | Azure"
     description="加入 Azure DocumentDB 社区，在这里建立关系网，展示你的工作，磨练你的技能。"
     services="documentdb"
     documentationcenter=""
@@ -13,8 +13,8 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="data-services"
-    ms.date="01/10/2017"
-    wacn.date="02/27/2017"
+    ms.date="02/16/2017"
+    wacn.date="03/22/2017"
     ms.author="andrl" />  
 
 
@@ -73,18 +73,17 @@ fluent-plugin-documentdb 是用于输出到 Azure DocumentDB 的 Fluentd 插件�
 - [**重新访问的 DocumentDB 第 1 部分（共 2 部分）- 理论**](https://peterintheazuresky.wordpress.com/2016/02/19/documentdb-revisited-part-12-the-theory/) - *作者：Peter Mannerhult*
 - [**令人又爱又恨的 Azure 的 DocumentDB**](http://blog.falafel.com/4-what-to-love-and-hate-about-azures-documentdb/) - *作者：George Saadeh*
 - [**Azure DocumentDB 服务器端脚本**](https://www.simple-talk.com/cloud/cloud-data/azure-documentdb-server-side-scripting/) - *作者：Robert Sheldon*
-
 - **生产环境中的 Azure DocumentDB！**- *作者：Alexandre Walsh 和 Marc-Olivier Duval*
 - [**Azure 搜索索引器 - DocumentDB 查询（西班牙语）**](http://www.ealsur.com.ar/wp/index.php/2015/11/19/azure-search-indexers-documentdb-queries/)- *作者：Matthias Quaranta*
 - [**Azure DocumentDB SQL 查询基础知识（日语）**](http://beachside.hatenablog.com/entry/2015/12/06/000045)- *作者：Atsushi Yokohama*
 - [**数据点 - Aurelia 遇见 DocumentDB：匹配生成器之旅**](https://msdn.microsoft.com/magazine/mt620011.aspx) - *作者：Julie Lerman*
 - [**基础结构即代码和 Node.js + Azure DocumentDB 解决方案的连续部署**](http://www.talmeida.net/blog/2015/10/26/infrastructure-as-code-and-continuous-deployment-of-a-nodejs-azure-documentdb-solution) - *作者：Thiago Almedia*
 - [**为什么 DocumentDB 对于某些项目具有重要商业意义**](http://www.iquestllc.com/blogs/read/405/why-documentdb-makes-good-business-sense-for-some-projects) - *作者：Samuel Uresin*
-- [**Azure DocumentDB 开发向前推进 - 开发客户端类）\(1/2\)（日语）**](http://beachside.hatenablog.com/entry/2015/10/01/202734)- *作者：Atsushi Yokohama*
+- [**Azure DocumentDB 开发向前推进 - 开发客户端类）(1/2)（日语）**](http://beachside.hatenablog.com/entry/2015/10/01/202734)- *作者：Atsushi Yokohama*
 - [**使用 Azure DocumentDB 时需要了解的内容）（日语）**](http://beachside.hatenablog.com/entry/2015/10/01/202734)- *作者：Atsushi Yokohama*
 - [**在 Azure DocumentDB 中处理 RequestRateTooLarge 错误并测试性能**](http://blogs.msdn.com/b/bigdatasupport/archive/2015/09/02/dealing-with-requestratetoolarge-errors-in-azure-documentdb-and-testing-documentdb-performance.aspx) - *作者：Azim Uddin*
 - [**数据点 - Azure DocumentDB 概述**](https://msdn.microsoft.com/magazine/mt147238.aspx) - *作者：Julie Lerman*
-- [**配合 F\# 使用 DocumentDB**](https://jamessdixon.wordpress.com/2014/12/30/using-documentdb-with-f/) - *作者：Jamie Dixon*
+- [**配合 F# 使用 DocumentDB**](https://jamessdixon.wordpress.com/2014/12/30/using-documentdb-with-f/) - *作者：Jamie Dixon*
 - [**使用 DocumentDB 分析应用程序日志**](http://vincentlauzon.com/2015/09/06/analysing-application-logs-with-documentdb/) - *作者：Vincent-Philippe Lauzon*
 - [**Azure DocumentDB - 时间点备份**](http://softwarejuancarlos.com/2015/09/06/azure-documentdb-point-in-time-backups/) - *作者：Juan Carlos Sanchez*
 
@@ -95,7 +94,7 @@ fluent-plugin-documentdb 是用于输出到 Azure DocumentDB 的 Fluentd 插件�
 ### 在线课程
 | 学习合作伙伴 | 说明 |
 | --- | --- |
-| [![Microsoft 虚拟大学](./media/documentdb-community/mva.png)](https://mva.microsoft.com/training-courses/deploying-web-apps-to-azure-app-service-16629) |[**Microsoft Virtual Academy**](https://mva.microsoft.com/training-courses/deploying-web-apps-to-azure-app-service-16629) 向你提供培训，这些培训来自那些帮助构建 Azure DocumentDB 的人士。 |
+| [![Microsoft 虚拟大学](./media/documentdb-community/mva.png)](https://mva.microsoft.com/training-courses/azure-documentdb-planetscale-nosql-16847) |[**Microsoft Virtual Academy**](https://mva.microsoft.com/training-courses/azure-documentdb-planetscale-nosql-16847) 向你提供培训，这些培训来自那些帮助构建 Azure DocumentDB 的人士。 |
 | [![Pluralsight](./media/documentdb-community/pluralsight.png)](http://www.pluralsight.com/courses/azure-documentdb-introduction) |[**Pluralsight**](http://www.pluralsight.com/courses/azure-documentdb-introduction) 是提供 Azure 培训的重要 Microsoft 合作伙伴。如果你是一名 MSDN 订户，请使用你访问 Azure 培训的权益。 |
 | [![OpsGility](./media/documentdb-community/opsgility.png)](https://www.opsgility.com/courses/player/introduction_to_azure_documentdb) |[**OpsGility**](https://www.opsgility.com/courses/player/introduction_to_azure_documentdb) 提供有关 Azure 的深层次技术培训。在现场或通过远程教室获得由业内认可的培训师指导的培训。 |
 
@@ -132,5 +131,5 @@ DocumentDB 奇才是社区领导者，他们是帮助其他人充分利用他们
 
 想要成为 DocumentDB 奇才？ 由于是否能成为 DocumentDB 奇才并没有任何评判基准，因此我们会针对部分条件来评估，包括被提名人对在线论坛（例如 StackOverflow 和 MSDN；Wiki 和在线内容；会议和用户组；播客；网站；博客和社交媒体；以及文章与书籍）的贡献所产生的影响。如果想提名自己或其他人，[请向我们发送电子邮件](mailto:askdocdb@microsoft.com)。
 
-<!---HONumber=Mooncake_0220_2017-->
-<!---Update_Description: wording and link update -->
+<!---HONumber=Mooncake_0313_2017-->
+<!---Update_Description: wording update -->

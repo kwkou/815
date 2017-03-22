@@ -14,8 +14,8 @@
     ms.tgt_pltfrm="na"
     ms.devlang="rest-api"
     ms.topic="article"
-    ms.date="12/22/2016"
-    wacn.date="02/27/2017"
+    ms.date="01/25/2017"
+    wacn.date="03/22/2017"
     ms.author="arramac" />  
 
 
@@ -47,7 +47,7 @@ DocumentDB 中发生的更改可以保存、以异步方式进行处理，以及
 ![基于 Azure DocumentDB 的 lambda 引入和查询管道](./media/documentdb-change-feed/lambda.png)  
 
 
-可以使用 DocumentDB 接收和存储设备、传感器、基础架构和应用程序发出的事件数据，然后使用 [Azure 流分析](/documentation/articles/documentdb-search-indexer/)、[Apache Storm](/documentation/articles/hdinsight-storm-overview/) 实时处理这些事件。
+可以使用 DocumentDB 接收和存储设备、传感器、基础结构和应用程序发出的事件数据，然后使用 Azure 流分析、[Apache Storm](/documentation/articles/hdinsight-storm-overview/) 或 Apache Spark 实时处理这些事件。
 
 在 Web 应用和移动应用中，可以跟踪各种事件（例如，对客户配置文件、首选项或位置的更改），以触发特定的操作，例如，使用[应用服务](/home/features/app-service/)向客户的设备发送推送通知。例如，若要使用 DocumentDB 来构建游戏，可以使用更改源，根据已完成的游戏的分数实时更新排行榜。
 
@@ -75,7 +75,7 @@ DocumentDB 提供名为**集合**的弹性存储和吞吐量容器。集合中�
 ### ReadDocumentFeed API
 让我们简单了解一下 ReadDocumentFeed 的工作原理。DocumentDB 支持通过 `ReadDocumentFeed` API 读取集合中文档的源。例如，以下请求返回 `serverlogs` 集合中的文档页面。
 
-	GET https://mydocumentdb.documents.azure.com/dbs/smalldb/colls/smallcoll HTTP/1.1
+	GET https://mydocumentdb.documents.azure.com/dbs/smalldb/colls/serverlogs HTTP/1.1
 	x-ms-date: Tue, 22 Nov 2016 17:05:14 GMT
 	authorization: type%3dmaster%26ver%3d1.0%26sig%3dgo7JEogZDn6ritWhwc5hX%2fNTV4wwM1u9V2Is1H4%2bDRg%3d
 	Cache-Control: no-cache
@@ -180,15 +180,19 @@ DocumentDB 提供名为**集合**的弹性存储和吞吐量容器。集合中�
 
 可以使用支持的 [DocumentDB SDK](/documentation/articles/documentdb-sdk-dotnet/) 之一获取此值。例如，以下代码片段演示如何在 .NET 中检索分区键范围。
 
+    string pkRangesResponseContinuation = null;
     List<PartitionKeyRange> partitionKeyRanges = new List<PartitionKeyRange>();
-    FeedResponse<PartitionKeyRange> response;
 
     do
     {
-        response = await client.ReadPartitionKeyRangeFeedAsync(collection);
-        partitionKeyRanges.AddRange(response);
+        FeedResponse<PartitionKeyRange> pkRangesResponse = await client.ReadPartitionKeyRangeFeedAsync(
+            collectionUri, 
+            new FeedOptions { RequestContinuation = pkRangesResponseContinuation });
+
+        partitionKeyRanges.AddRange(pkRangesResponse);
+        pkRangesResponseContinuation = pkRangesResponse.ResponseContinuation;
     }
-    while (response.ResponseContinuation != null);
+    while (pkRangesResponseContinuation != null);
 
 DocumentDB 支持通过设置可选的 `x-ms-documentdb-partitionkeyrangeid` 标头按分区键范围检索文档。
 
@@ -197,7 +201,7 @@ ReadDocumentFeed 支持使用以下方案/任务对 DocumentDB 集合中的更�
 
 - 读取自始至终（从创建集合时开始）对文档所做的全部更改。
 - 读取从当前时间开始对文档所做的全部更改。
-- 通过集合的逻辑版本 \(ETag\) 读取对文档所做的全部更改。可以通过增量读取源请求根据返回的 ETag 设置使用者检查点。
+- 通过集合的逻辑版本 (ETag) 读取对文档所做的全部更改。可以通过增量读取源请求根据返回的 ETag 设置使用者检查点。
 
 这些更改包括文档插入和更新。若要捕获删除操作，必须在文档中使用“软删除”属性，或使用[内置的 TTL 属性](/documentation/articles/documentdb-time-to-live/)在更改源中发出待删除信号。
 
@@ -269,15 +273,19 @@ ReadDocumentFeed 支持使用以下方案/任务对 DocumentDB 集合中的更�
         string collection,
         Dictionary<string, string> checkpoints)
     {
+        string pkRangesResponseContinuation = null;
         List<PartitionKeyRange> partitionKeyRanges = new List<PartitionKeyRange>();
-        FeedResponse<PartitionKeyRange> pkRangesResponse;
 
         do
         {
-            pkRangesResponse = await client.ReadPartitionKeyRangeFeedAsync(collection);
+            FeedResponse<PartitionKeyRange> pkRangesResponse = await client.ReadPartitionKeyRangeFeedAsync(
+                collectionUri, 
+                new FeedOptions { RequestContinuation = pkRangesResponseContinuation });
+
             partitionKeyRanges.AddRange(pkRangesResponse);
+            pkRangesResponseContinuation = pkRangesResponse.ResponseContinuation;
         }
-        while (pkRangesResponse.ResponseContinuation != null);
+        while (pkRangesResponseContinuation != null);
 
         foreach (PartitionKeyRange pkRange in partitionKeyRanges)
         {
@@ -339,5 +347,5 @@ ReadDocumentFeed 支持使用以下方案/任务对 DocumentDB 集合中的更�
 - 详细了解 [DocumentDB 的资源模型和层次结构](/documentation/articles/documentdb-resources/)
 - 使用 [DocumentDB SDK](/documentation/articles/documentdb-sdk-dotnet/) 或 [REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn781481.aspx) 开始编写代码
 
-<!---HONumber=Mooncake_0220_2017-->
-<!--Update_Description: wording update-->
+<!---HONumber=Mooncake_0313_2017-->
+<!--Update_Description: wording and code update-->

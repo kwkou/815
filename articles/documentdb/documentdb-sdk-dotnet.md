@@ -1,5 +1,5 @@
 <properties
-    pageTitle="DocumentDB .NET API 和 SDK | Azure"
+    pageTitle=".NET API 和 SDK 资源 - Azure DocumentDB | Azure"
     description="了解有关 .NET API 和 SDK 的全部信息，包括发布日期、停用日期和 DocumentDB.NET SDK 各版本之间的更改。"
     services="documentdb"
     documentationcenter=".net"
@@ -13,8 +13,8 @@
     ms.tgt_pltfrm="na"
     ms.devlang="dotnet"
     ms.topic="article"
-    ms.date="12/22/2016"
-    wacn.date="02/27/2017"
+    ms.date="02/15/2017"
+    wacn.date="03/22/2017"
     ms.author="rnagpal" />
 
 # DocumentDB API 和 SDK
@@ -47,8 +47,20 @@
 
 ## 发行说明
 
-> [AZURE.NOTE]
-从版本 1.9.2 开始，如果主机进程为 32 位，在针对分区集合运行查询时，可能会出现 System.NotSupportedException。为了避免此异常，请确保主机进程为 64 位。有关详细信息，请参阅[疑难解答](#troubleshooting)。
+### <a name="1.12.0"/>[1\.12.0](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB/1.12.0)
+- 分区集合的最小吞吐量从 10,100 RU/s 下降到 2500 RU/s。
+
+### <a name="1.11.4"/>[1\.11.4](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB/1.11.4)
+- 修复了以下问题：32 位主机进程中某些分区查询失败。
+- 修复了以下问题：网关模式下，会话容器中不更新失败请求的标记。
+- 修复了以下问题：投影中调用 UDF 的查询在某些情况下失败。
+- 进行了客户端性能修复，以便提高请求的读取和写入吞吐量。
+
+### <a name="1.11.3"/>[1\.11.3](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB/1.11.3)
+- 修复了以下问题：会话容器中不更新失败请求的标记。
+- 添加了支持，使该 SDK 可用于 32 位主机进程。请注意，如果使用跨分区查询，建议使用 64 位主机进程以提高性能。
+- 改进了性能，可在 IN 表达式中使用大量分区键值进行查询。
+- 设置 PopulateQuotaInfo 请求时，在文档集合读取请求的 ResourceResponse 中填充了各种资源配额统计信息。
 
 ### <a name="1.11.1"/>[1\.11.1](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB/1.11.1)
 - 对 1.11.0 版本中引入的 CreateDocumentCollectionIfNotExistsAsync API 的轻微性能修复。
@@ -74,7 +86,7 @@
 - 已公开 ResourceResponse 类中的 ResponseStream 属性，使用该属性可直接访问响应中的基础流。
 
 ### <a name="1.9.4"/>[1\.9.4](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB/1.9.4)
-- 修改了 ResourceResponse、FeedResponse、StoredProcedureResponse 和 MediaResponse 类，以实现相应的公共接口，以便可以模拟它们进行测试驱动的部署 \(TDD\)。
+- 修改了 ResourceResponse、FeedResponse、StoredProcedureResponse 和 MediaResponse 类，以实现相应的公共接口，以便可以模拟它们进行测试驱动的部署 (TDD)。
 - 解决了使用自定义 JsonSerializerSettings 对象序列化数据时导致格式错误的分区键标头的问题。
 
 ### <a name="1.9.3"/>[1\.9.3](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB/1.9.3)
@@ -104,7 +116,7 @@
 - 向采用 RequestOptions 作为参数的基于 Uri 的 ExecuteStoredProcedureAsync 方法添加了重载。
 
 ### <a name="1.7.0"/>[1\.7.0](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB/1.7.0)
-- 对文档添加了生存时间 \(TTL\) 支持。
+- 对文档添加了生存时间 (TTL) 支持。
 
 ### <a name="1.6.3"/>[1\.6.3](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB/1.6.3)
 - 修复了用于将其打包为 Azure 云服务解决方案的一部分的 .NET SDK 的 Nuget 包中的 Bug。
@@ -113,34 +125,34 @@
 - 实现了[分区集合](/documentation/articles/documentdb-partition-data/)和[用户定义的性能级别](/documentation/articles/documentdb-performance-levels/)。
 
 ### <a name="1.5.3"/>[1\.5.3](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB/1.5.3)
-- **\[已修复\]** 查询 DocumentDB 终结点引发：“System.Net.Http.HttpRequestException: 将内容复制到流时出错”。
+- **[已修复]** 查询 DocumentDB 终结点引发：“System.Net.Http.HttpRequestException: 将内容复制到流时出错”。
 
 ### <a name="1.5.2"/>[1\.5.2](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB/1.5.2)
 - 扩展的 LINQ 支持，包括用于分页、条件表达式和范围比较的新运算符。
   - Take 运算符在 LINQ 中启用 SELECT TOP 行为
   - CompareTo 运算符使能够进行字符串范围比较
-  - Conditional \(?\) 和 coalesce 运算符 \(??\)
-- **\[已修复\]** 合并模型投影与 linq 查询中的 Where-In 时出现 ArgumentOutOfRangeException。[\#81](https://github.com/Azure/azure-documentdb-dotnet/issues/81)
+  - Conditional (?) 和 coalesce 运算符 (??)
+- **[已修复]** 合并模型投影与 linq 查询中的 Where-In 时出现 ArgumentOutOfRangeException。[#81](https://github.com/Azure/azure-documentdb-dotnet/issues/81)
 
 ### <a name="1.5.1"/>[1\.5.1](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB/1.5.1)
-- **\[已修复\]** 如果 Select 不是最后一个表达式，则 LINQ 提供程序假定没有投影，并且错误地生成 SELECT \*。[\#58](https://github.com/Azure/azure-documentdb-dotnet/issues/58)
+- **[已修复]** 如果 Select 不是最后一个表达式，则 LINQ 提供程序假定没有投影，并且错误地生成 SELECT *。[#58](https://github.com/Azure/azure-documentdb-dotnet/issues/58)
 
 ### <a name="1.5.0"/>[1\.5.0](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB/1.5.0)
 - 实现的 Upsert，已添加 UpsertXXXAsync 方法
 - 所有请求的性能改进
 - LINQ 提供程序支持字符串的条件、联合和 CompareTo 方法
-- **\[已修复\]** LINQ 提供程序 --\> 在列表上实现 Contains 方法以生成与 IEnumerable 和 Array 上相同的 SQL
-- **\[已修复\]** BackoffRetryUtility 再次使用相同的 HttpRequestMessage 而不是在重试时创建一个新的
-- **\[已过时\]** UriFactory.CreateCollection --\> 现在应使用 UriFactory.CreateDocumentCollection
+- **[已修复]** LINQ 提供程序 --> 在列表上实现 Contains 方法以生成与 IEnumerable 和 Array 上相同的 SQL
+- **[已修复]** BackoffRetryUtility 再次使用相同的 HttpRequestMessage 而不是在重试时创建一个新的
+- **[已过时]** UriFactory.CreateCollection --> 现在应使用 UriFactory.CreateDocumentCollection
 
 ### <a name="1.4.1"/>[1\.4.1](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB/1.4.1)
-- **\[已修复\]** 使用非 en 区域性信息（如 nl-NL 等）时出现本地化问题。
+- **[已修复]** 使用非 en 区域性信息（如 nl-NL 等）时出现本地化问题。
 
 ### <a name="1.4.0"/>[1\.4.0](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB/1.4.0)
 - 基于 ID 的路由
   - 用于协助构建基于 ID 的资源链接的新 UriFactory 帮助器
   - DocumentClient 上的新重载以采用 URI
-- 已在用于地理空间的 LINQ 中添加了 IsValid\(\) 和 IsValidDetailed\(\)
+- 已在用于地理空间的 LINQ 中添加了 IsValid() 和 IsValidDetailed()
 - 增强的LINQ 提供程序支持
   - **数学** - Abs、Acos、Asin、Atan、Ceiling、Cos、Exp、Floor、Log、Log10、Pow、Round、Sign、Sin、Sqrt、Tan、Truncate
   - **字符串** - Concat、Contains、EndsWith、IndexOf、Count、ToLower、TrimStart、Replace、Reverse、TrimEnd、StartsWith、SubString、ToUpper
@@ -150,23 +162,23 @@
 ### <a name="1.3.0"/>[1\.3.0](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB/1.3.0)
 - 添加了对修改索引策略的支持
   - DocumentClient 中的新 ReplaceDocumentCollectionAsync 方法
-  - ResourceResponse\<T\> 中的新 IndexTransformationProgress 属性，用于跟踪索引策略更改的百分比进度
+  - ResourceResponse<T> 中的新 IndexTransformationProgress 属性，用于跟踪索引策略更改的百分比进度
   - DocumentCollection.IndexingPolicy 现在是可变的
 - 添加了对空间索引和查询的支持
   - 用于序列化/反序列化空间类型（如点和多边形）的新 Microsoft.Azure.Documents.Spatial 命名空间
   - 用于索引存储在 DocumentDB 中的 GeoJSON 数据的新 SpatialIndex 类
-- **\[已修复\]**：linq 表达式生成的不正确的 SQL 查询 [\#38](https://github.com/Azure/azure-documentdb-net/issues/38)
+- **[已修复]**：linq 表达式生成的不正确的 SQL 查询 [#38](https://github.com/Azure/azure-documentdb-net/issues/38)
 
 ### <a name="1.2.0"/>[1\.2.0](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB/1.2.0)
 - 对 Newtonsoft.Json v5.0.7 的依赖关系
 - 更改为支持 Order By
   
-  - LINQ 提供程序支持 OrderBy\(\) 或 OrderByDescending\(\)
+  - LINQ 提供程序支持 OrderBy() 或 OrderByDescending()
   - 支持 Order By 的 IndexingPolicy
     
-        **注意：可能非常重大的更改** 
+    **注意：可能非常重大的更改**
     
-        如果你的现有代码使用自定义索引策略预配集合，那么你的现有代码将需要更新为支持新的 IndexingPolicy 类。 如果你没有任何自定义索引策略，此更改不会影响你。
+    如果你的现有代码使用自定义索引策略预配集合，那么你的现有代码将需要更新为支持新的 IndexingPolicy 类。如果你没有任何自定义索引策略，此更改不会影响你。
 
 ### <a name="1.1.0"/>[1\.1.0](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB/1.1.0)
 - 通过使用新的 HashPartitionResolver 和 RangePartitionResolver 类以及 IPartitionResolver 支持对数据进行分区
@@ -189,6 +201,9 @@ Microsoft 至少会在停用 SDK 的 **12 个月**之前发出通知，以便顺
 
 | 版本 | 发布日期 | 停用日期 |
 | --- | --- | --- |
+| [1\.12.0](#1.12.0) |2017 年 2 月 15 日 |--- | 
+| [1\.11.4](#1.11.4) |2017 年 2 月 6 日 |--- | 
+| [1\.11.3](#1.11.3) |2017 年 1 月 26 日 |--- | 
 | [1\.11.1](#1.11.1) |2016 年 12 月 21 日 |--- | 
 | [1\.11.0](#1.11.0) |2016 年 12 月 8 日 |--- | 
 | [1\.10.0](#1.10.0) |2016 年 9 月 27 日 |--- | 
@@ -196,8 +211,6 @@ Microsoft 至少会在停用 SDK 的 **12 个月**之前发出通知，以便顺
 | [1\.9.4](#1.9.4) |2016 年 8 月 24 日 |--- | 
 | [1\.9.3](#1.9.3) |2016 年 8 月 15 日 |--- | 
 | [1\.9.2](#1.9.2) |2016 年 7 月 23 日 |--- | 
-| 1.9.1 |已弃用 |--- | 
-| 1.9.0 |已弃用 |--- | 
 | [1\.8.0](#1.8.0) |2016 年 6 月 14 日 |--- | 
 | [1\.7.1](#1.7.1) |2016 年 5 月 6 日 |--- | 
 | [1\.7.0](#1.7.0) |2016 年 4 月 26 日 |--- | 
@@ -214,13 +227,6 @@ Microsoft 至少会在停用 SDK 的 **12 个月**之前发出通知，以便顺
 | [1\.1.0](#1.1.0) |2015 年 4 月 30 日 |--- | 
 | [1\.0.0](#1.0.0) |2015 年 4 月 8 日 |--- |
 
-## 故障排除 <a name="troubleshooting"></a>
-
-如果在 32 位进程中运行时遇到错误，指出无法从查询中提取分区路由信息，请在 Visual Studio 中执行以下操作：
-- 对于可执行应用程序，请在“项目”菜单中单击“项目名称”\|“属性...” 然后，在“生成”选项卡中清除“首选 32 位”框。
-- 对于 VSTest 测试项目，请在“测试”菜单中选择“测试设置”\|“默认处理器体系结构为 X64”。
-- 对于本地部署的 ASP.NET Web 应用程序，请在“工具”菜单中选择“选项”\|“项目和解决方案”\|“Web 项目”，然后选中“对网站和项目使用 64 位版本的 IIS Express”框。
-
 
 ## 常见问题
 [AZURE.INCLUDE [documentdb sdk 常见问题](../../includes/documentdb-sdk-faq.md)]
@@ -228,5 +234,5 @@ Microsoft 至少会在停用 SDK 的 **12 个月**之前发出通知，以便顺
 ## 另请参阅
 若要了解有关 DocumentDB 的详细信息，请参阅 [Azure DocumentDB](/home/features/documentdb/) 服务页。
 
-<!---HONumber=Mooncake_0220_2017-->
-<!---Update_Description: add content of "Release notes" and "Troubleshooting" -->
+<!---HONumber=Mooncake_0313_2017-->
+<!---Update_Description: wording update -->

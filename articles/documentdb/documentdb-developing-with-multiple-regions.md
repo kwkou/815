@@ -3,7 +3,7 @@
     description="了解如何从 Azure DocumentDB（完全托管的 NoSQL 数据库服务）访问多个区域中的数据。"
     services="documentdb"
     documentationcenter=""
-    author="kiratp"
+    author="mimig1"
     manager="jhubbard"
     editor="" />
 <tags
@@ -13,16 +13,14 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="na"
-    ms.date="12/09/2016"
-    wacn.date="01/23/2017"
-    ms.author="kipandya" />  
+    ms.date="02/09/2016"
+    wacn.date="03/22/2017"
+    ms.author="mimig" />  
 
 
 # 使用多区域 DocumentDB 帐户进行开发
-> [AZURE.NOTE]
-DocumentDB 数据库全局分发功能已正式推出，所有新建的 DocumentDB 帐户将自动启用该功能。我们正在努力为所有现有帐户启用全局分发，但在此之前，如果你要为你的帐户启用全局分发，请[与支持部门联系](https://portal.azure.cn/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade)，我们将会帮助你启用。
->
->
+
+## 介绍
 
 为了利用[全局分发](/documentation/articles/documentdb-distribute-data-globally/)，客户端应用程序可以指定要用于执行文档操作的区域优先顺序列表。可通过设置连接策略来实现此目的。SDK 将会根据 DocumentDB 帐户配置、当前区域可用性和指定的优先顺序列表，选择最佳的终结点来执行写入和读取操作。
 
@@ -84,10 +82,10 @@ SDK 会自动将所有写入请求发送到当前写入区域。
 >
 
 下面是 NodeJS/Javascript 的代码示例。Python 和 Java 将遵循相同的模式。
-	
+
 	// Creating a ConnectionPolicy object
 	var connectionPolicy = new DocumentBase.ConnectionPolicy();
-	    
+
 	// Setting read region selection preference, in the following order -
 	// 1 - West US
 	// 2 - East US
@@ -96,7 +94,8 @@ SDK 会自动将所有写入请求发送到当前写入区域。
 	    
 	// initialize the connection
 	var client = new DocumentDBClient(host, { masterKey: masterKey }, connectionPolicy);
-	
+
+
 
 ## REST
 数据库帐户在多个区域中可用后，客户端可以通过对以下 URI 执行 GET 请求来查询该帐户的可用性。
@@ -150,10 +149,9 @@ SDK 会自动将所有写入请求发送到当前写入区域。
 
 - [使用 DocumentDB 全局分发数据](/documentation/articles/documentdb-distribute-data-globally/)
 - [Consistency levels（一致性级别）](/documentation/articles/documentdb-consistency-levels/)
-- [How throughput works with multiple regions（多个区域中的吞吐量工作原理）](/documentation/articles/documentdb-manage/)
 - [Add regions using the Azure portal（使用 Azure 门户预览添加区域）](/documentation/articles/documentdb-portal-global-replication/)
 
 [regions]: https://azure.microsoft.com/regions/
 
-<!---HONumber=Mooncake_0109_2017-->
-<!---Update_Description: update code -->
+<!---HONumber=Mooncake_0313_2017-->
+<!---Update_Description: wording update -->

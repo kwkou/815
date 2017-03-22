@@ -15,7 +15,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="01/03/2017"
-    wacn.date="02/27/2017"
+    wacn.date="03/22/2017"
     ms.author="arramac" />
 
 # 对 DocumentDB 中的数据进行建模
@@ -397,5 +397,5 @@
 
 最后，有关多租户应用程序的数据建模和分片指导，请查阅[使用 Azure DocumentDB 扩展多租户应用程序](http://blogs.msdn.com/b/documentdb/archive/2014/12/03/scaling-a-multi-tenant-application-with-azure-documentdb.aspx)。
 
-<!---HONumber=Mooncake_0220_2017-->
-<!--Update_Description: wording update-->
+<!---HONumber=Mooncake_0313_2017-->
+<!---Update_Description: update meta properties -->

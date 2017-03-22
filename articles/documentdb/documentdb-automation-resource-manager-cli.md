@@ -14,8 +14,8 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="1/11/2016"
-    wacn.date="03/16/2017"
+    ms.date="1/11/2017"
+    wacn.date="03/22/2017"
     ms.author="mimig" />  
 
 
@@ -25,7 +25,7 @@
 - [Azure CLI 和 ARM](/documentation/articles/documentdb-automation-resource-manager-cli/)
 - [Azure PowerShell](/documentation/articles/documentdb-manage-account-with-powershell/)
 
-本文说明如何使用 Azure 资源管理器模板或直接使用 Azure 命令行接口 \(CLI\) 来创建 Azure DocumentDB 帐户。若要使用 Azure 门户预览创建 DocumentDB 帐户，请参阅[使用 Azure 门户预览创建 DocumentDB 数据库帐户](/documentation/articles/documentdb-create-account/)。
+本文说明如何使用 Azure 资源管理器模板或直接使用 Azure 命令行接口 (CLI) 来创建 Azure DocumentDB 帐户。若要使用 Azure 门户预览创建 DocumentDB 帐户，请参阅[使用 Azure 门户预览创建 DocumentDB 数据库帐户](/documentation/articles/documentdb-create-account/)。
 
 DocumentDB 数据库帐户是目前唯一可以使用资源管理器模板和 Azure CLI 创建的 DocumentDB 资源。
 
@@ -80,7 +80,7 @@ DocumentDB 数据库帐户是目前唯一可以使用资源管理器模板和 Az
     +
     info:    login command OK
 
-除了此处所述的交互式登录方法之外，还有一些其他的 Azure CLI 登录方法可供使用。有关其他方法的详细信息以及处理多个订阅的相关信息，请参阅[从 Azure 命令行接口 \(Azure CLI\) 连接到 Azure 订阅](/documentation/articles/xplat-cli-connect/)。
+除了此处所述的交互式登录方法之外，还有一些其他的 Azure CLI 登录方法可供使用。有关其他方法的详细信息以及处理多个订阅的相关信息，请参阅[从 Azure 命令行接口 (Azure CLI) 连接到 Azure 订阅](/documentation/articles/xplat-cli-connect/)。
 
 ### 切换到 Azure CLI 资源组模式
 默认情况下，Azure CLI 在服务管理模式下启动（**asm** 模式）。键入以下内容，切换到资源组模式。
@@ -129,7 +129,7 @@ DocumentDB 数据库帐户是目前唯一可以使用资源管理器模板和 Az
 
 如果遇到错误，请参阅[故障排除](#troubleshooting)。
 
-## 了解资源管理器模板和资源组
+## 了解 资源管理器模板和资源组
 大多数应用程序是通过不同资源类型的组合（例如，一个或多个 DocumentDB 帐户、存储帐户、虚拟网络或内容传送网络）构建而成的。默认 Azure 服务管理 API 和 Azure 门户预览使用基于服务的方法代表这些项。这种方法需要你单独部署和管理各个服务（或查找其他具备相同功能的工具），而不是当作单个逻辑部署单元。
 
 你可以利用 *Azure 资源管理器模板*将这些不同的资源声明为一个逻辑部署单元，然后进行部署和管理。请不要以命令方式告知 Azure 逐一部署命令，而应该在 JSON 文件中描述整个部署 - 所有资源及关联的配置以及部署参数 - 然后告诉 Azure 将这些资源视为一个组进行部署。
@@ -147,7 +147,7 @@ DocumentDB 数据库帐户是目前唯一可以使用资源管理器模板和 Az
 >
 >
 
-    azure resource create -g <resourcegroupname> -n <databaseaccountname> -r "Microsoft.DocumentDB/databaseAccounts" -o 2015-04-08 -l <resourcegrouplocation> -p "{\"databaseAccountOfferType\":\"Standard\",\"ipRangeFilter\":\"<ip-range-filter>\",\"locations\":["{\"locationName\":\"<databaseaccountlocation>\",\"failoverPriority\":\"<failoverPriority>\"}"]}"
+    azure resource create -g <resourcegroupname> -n <databaseaccountname> -r "Microsoft.DocumentDB/databaseAccounts" -o 2015-04-08 -l <resourcegrouplocation> -p "{"databaseAccountOfferType":"Standard","ipRangeFilter":"<ip-range-filter>","locations":["{"locationName":"<databaseaccountlocation>","failoverPriority":"<failoverPriority>"}"]}"
 
 - `<resourcegroupname>` 只能使用字母数字字符、句点、下划线、“-”字符和括号，且不能以句点结尾。
 - `<resourcegrouplocation>` 是当前资源组的区域。
@@ -157,7 +157,7 @@ DocumentDB 数据库帐户是目前唯一可以使用资源管理器模板和 Az
 
 输入示例：
 
-    azure resource create -g new_res_group -n samplecliacct -r "Microsoft.DocumentDB/databaseAccounts" -o 2015-04-08 -l chinanorth -p "{\"databaseAccountOfferType\":\"Standard\",\"ipRangeFilter\":\"\",\"locations\":["{\"locationName\":\"chinanorth\",\"failoverPriority\":\"0\"}"]}"
+    azure resource create -g new_res_group -n samplecliacct -r "Microsoft.DocumentDB/databaseAccounts" -o 2015-04-08 -l chinanorth -p "{"databaseAccountOfferType":"Standard","ipRangeFilter":"","locations":["{"locationName":"chinanorth","failoverPriority":"0"}"]}"
 
 若已预配新的帐户，这将生成以下输出：
 
@@ -418,7 +418,7 @@ DocumentDB 能够跨不同的 Azure 区域[在全球分发数据][distribute-glo
 >
 >
 
-    azure resource create -g <resourcegroupname> -n <databaseaccountname> -r "Microsoft.DocumentDB/databaseAccounts" -o 2015-04-08 -l <resourcegrouplocation> -p "{\"databaseAccountOfferType\":\"Standard\",\"ipRangeFilter\":\"<ip-range-filter>\",\"locations\":["{\"locationName\":\"<databaseaccountlocation1>\",\"failoverPriority\":\"<failoverPriority1>\"},{\"locationName\":\"<databaseaccountlocation2>\",\"failoverPriority\":\"<failoverPriority2>\"}"]}"
+    azure resource create -g <resourcegroupname> -n <databaseaccountname> -r "Microsoft.DocumentDB/databaseAccounts" -o 2015-04-08 -l <resourcegrouplocation> -p "{"databaseAccountOfferType":"Standard","ipRangeFilter":"<ip-range-filter>","locations":["{"locationName":"<databaseaccountlocation1>","failoverPriority":"<failoverPriority1>"},{"locationName":"<databaseaccountlocation2>","failoverPriority":"<failoverPriority2>"}"]}"
 
 - `<resourcegroupname>` 只能使用字母数字字符、句点、下划线、“-”字符和括号，且不能以句点结尾。
 - `<resourcegrouplocation>` 是当前资源组的区域。
@@ -428,7 +428,7 @@ DocumentDB 能够跨不同的 Azure 区域[在全球分发数据][distribute-glo
 
 输入示例：
 
-    azure resource create -g new_res_group -n samplecliacct -r "Microsoft.DocumentDB/databaseAccounts" -o 2015-04-08 -l chinanorth -p "{\"databaseAccountOfferType\":\"Standard\",\"ipRangeFilter\":\"\",\"locations\":["{\"locationName\":\"chinanorth\",\"failoverPriority\":\"0\"},{\"locationName\":\"ChinaEast\",\"failoverPriority\":\"1\"}"]}"
+    azure resource create -g new_res_group -n samplecliacct -r "Microsoft.DocumentDB/databaseAccounts" -o 2015-04-08 -l chinanorth -p "{"databaseAccountOfferType":"Standard","ipRangeFilter":"","locations":["{"locationName":"chinanorth","failoverPriority":"0"},{"locationName":"ChinaEast","failoverPriority":"1"}"]}"
 
 若已预配新的帐户，这将生成以下输出：
 
@@ -602,7 +602,7 @@ DocumentDB 能够跨不同的 Azure 区域[在全球分发数据][distribute-glo
 现在你已经有了 DocumentDB 帐户，下一步是创建 DocumentDB 数据库。你可以使用下面其中一项来创建数据库：
 
 - Azure 门户预览，如[使用 Azure 门户预览创建 DocumentDB 集合和数据库](/documentation/articles/documentdb-create-collection/)中所述。
-- C\# .NET 示例，位于 GitHub 上 [azure-documentdb-dotnet](https://github.com/Azure/azure-documentdb-net/tree/master/samples/code-samples) 存储库的 [DatabaseManagement](https://github.com/Azure/azure-documentdb-net/tree/master/samples/code-samples/DatabaseManagement) 项目中。
+- C# .NET 示例，位于 GitHub 上 [azure-documentdb-dotnet](https://github.com/Azure/azure-documentdb-net/tree/master/samples/code-samples) 存储库的 [DatabaseManagement](https://github.com/Azure/azure-documentdb-net/tree/master/samples/code-samples/DatabaseManagement) 项目中。
 - [DocumentDB SDK](https://msdn.microsoft.com/zh-cn/library/azure/dn781482.aspx)。DocumentDB 有 .NET、Java、Python、Node.js 和 JavaScript API SDK。
 
 创建数据库后，必须向数据库[添加一个或多个集合](/documentation/articles/documentdb-create-collection/)，然后向集合[添加文档](/documentation/articles/documentdb-view-json-document-explorer/)。
@@ -618,7 +618,7 @@ DocumentDB 能够跨不同的 Azure 区域[在全球分发数据][distribute-glo
 <!--Reference style links - using these makes the source content way more readable than using inline links-->
 
 [distribute-globally]: /documentation/articles/documentdb-distribute-data-globally/
-[scaling-globally]: /documentation/articles/documentdb-distribute-data-globally/
+[scaling-globally]: /documentation/articles/documentdb-distribute-data-globally/#scaling-across-the-planet/
 
-<!---HONumber=Mooncake_0220_2017-->
+<!---HONumber=Mooncake_0313_2017-->
 <!--Update_Description: wording update-->

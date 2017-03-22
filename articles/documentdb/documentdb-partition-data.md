@@ -13,8 +13,8 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="12/14/2016"
-    wacn.date="03/16/2017"
+    ms.date="02/09/2017"
+    wacn.date="03/22/2017"
     ms.author="arramac" />  
 
 
@@ -38,7 +38,7 @@
 
 例如，假设一个应用程序在 DocumentDB 中存储有关员工和部门的数据。我们选择 `"department"` 作为分区键属性，以便按部门扩展数据。在 DocumentDB 中的每个文档必须包含必需的 `"id"` 属性，该属性对每个具有相同分区键值（如 `"Marketing`"）的文档必须是唯一的。存储在集合中的每个文档都必须具有分区键和 ID 的唯一组合，例如 `{ "Department": "Marketing", "id": "0001" }`、`{ "Department": "Marketing", "id": "0002" }` 和 `{ "Department": "Sales", "id": "0001" }`。换言之，分区键、ID 的复合属性是集合的主键。
 
-### 分区键
+## 分区键
 选择分区键是设计时需要做出的一项重要决定。必须选择具有大范围值的 JSON 属性名，并且有望均匀地分布访问模式。分区键指定为 JSON 路径，例如 `/department` 表示属性部门。
 
 下表显示分区键定义和与每个定义相对应的 JSON 值的示例。
@@ -46,24 +46,24 @@
 <table border="0" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
-	    <td valign="top"><p><strong>分区键路径</strong></p></td>
-	    <td valign="top"><p><strong>说明</strong></p></td>
+            <td valign="top"><p><strong>分区键路径</strong></p></td>
+            <td valign="top"><p><strong>说明</strong></p></td>
         </tr>
         <tr>
-	    <td valign="top"><p>/department</p></td>
-	    <td valign="top"><p>对应 doc.department 的 JSON 值，其中 doc 指的是文档。</p></td>
+            <td valign="top"><p>/department</p></td>
+            <td valign="top"><p>对应 doc.department 的 JSON 值，其中 doc 指的是文档。</p></td>
         </tr>
         <tr>
-	    <td valign="top"><p>/properties/name</p></td>
-	    <td valign="top"><p>对应 doc.properties.name 的 JSON 值，其中 doc 指的是文档（嵌套属性）。</p></td>
+            <td valign="top"><p>/properties/name</p></td>
+            <td valign="top"><p>对应 doc.properties.name 的 JSON 值，其中 doc 指的是文档（嵌套属性）。</p></td>
         </tr>
         <tr>
-	    <td valign="top"><p>/id</p></td>
-	    <td valign="top"><p>对应 doc.id 的 JSON 值（ID 和分区键是相同属性）。</p></td>
+            <td valign="top"><p>/id</p></td>
+            <td valign="top"><p>对应 doc.id 的 JSON 值（ID 和分区键是相同属性）。</p></td>
         </tr>
         <tr>
-	    <td valign="top"><p>/"department name"</p></td>
-	    <td valign="top"><p>对应 doc["department name"] 的 JSON 值，其中 doc 指的是文档。</p></td>
+            <td valign="top"><p>/"department name"</p></td>
+            <td valign="top"><p>对应 doc["department name"] 的 JSON 值，其中 doc 指的是文档。</p></td>
         </tr>
     </tbody>
 </table>
@@ -75,8 +75,8 @@
 
 让我们看看分区键的选择如何影响应用程序的性能。
 
-### 分区和预配的吞吐量
-DocumentDB 旨在提供可预测的性能。创建集合时，可以根据**每秒的[请求单位](/documentation/articles/documentdb-request-units/) \(RU\) 数**保留吞吐量。会为每个请求分配请求单位费用，该费用与系统资源（如操作使用的 CPU 和 IO）的数量成正比。使用会话一致性读取 1 kB 文档将使用 1 请求单位。无论存储的项数或同时运行的并发请求数如何，读数都为 1 RU。较大的文档要求更高的请求单位，具体取决于大小。如果知道实体大小及为应用程序提供支持需要的读取次数，则可以为应用程序的读取需求配置准确的吞吐量。
+## 分区和预配的吞吐量
+DocumentDB 旨在提供可预测的性能。创建集合时，可以根据**每秒的[请求单位](/documentation/articles/documentdb-request-units/) (RU) 数**保留吞吐量。会为每个请求分配请求单位费用，该费用与系统资源（如操作使用的 CPU 和 IO）的数量成正比。使用会话一致性读取 1 kB 文档将使用 1 请求单位。无论存储的项数或同时运行的并发请求数如何，读数都为 1 RU。较大的文档要求更高的请求单位，具体取决于大小。如果知道实体大小及为应用程序提供支持需要的读取次数，则可以为应用程序的读取需求配置准确的吞吐量。
 
 DocumentDB 存储文档时，它将基于分区键值在分区间均匀地分布它们。吞吐量也均匀分布在可用分区中，即每个分区的吞吐量 =（每个集合的总吞吐量）/（分区的数目）。
 
@@ -85,11 +85,11 @@ DocumentDB 存储文档时，它将基于分区键值在分区间均匀地分布
 > 
 > 
 
-## 单个分区和已分区的集合 <a name="single-partition-and-partitioned-collections"></a>
+## 单区集合和分区集合 <a name="single-partition-and-partitioned-collections"></a>
 DocumentDB 支持创建单个分区和已分区的集合。
 
 - **已分区集合**可以跨多个分区并对支持的存储和吞吐量无限制。必须为集合指定分区键。
-- **单分区集合**具有较低的价格选项，但对存储和吞吐量上限有限制。无需为这些集合指定分区键。除预期仅会使用少量数据存储和请求的情况外，我们建议在所有方案中使用已分区集合，而不要使用单分区集合。
+- **单区集合**具有较低的价格选项，但对存储和吞吐量上限有限制。无需为这些集合指定分区键。除预期仅会使用少量数据存储和请求的情况外，我们建议在所有方案中使用已分区集合，而不要使用单区集合。
 
 ![DocumentDB 中的已分区集合][2]  
 
@@ -101,48 +101,47 @@ DocumentDB 支持创建单个分区和已分区的集合。
 <table border="0" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
-	    <td valign="top"><p></p></td>
-	    <td valign="top"><p><strong>单个分区集合</strong></p></td>
-	    <td valign="top"><p><strong>已分区集合</strong></p></td>
+            <td valign="top"><p></p></td>
+            <td valign="top"><p><strong>单个分区集合</strong></p></td>
+            <td valign="top"><p><strong>已分区集合</strong></p></td>
         </tr>
         <tr>
-	    <td valign="top"><p>分区键</p></td>
-	    <td valign="top"><p>无</p></td>
-	    <td valign="top"><p>必须</p></td>
+            <td valign="top"><p>分区键</p></td>
+            <td valign="top"><p>无</p></td>
+            <td valign="top"><p>必须</p></td>
         </tr>
         <tr>
-	    <td valign="top"><p>文档的主键</p></td>
-	    <td valign="top"><p>"id"</p></td>
-	    <td valign="top"><p>复合键 &lt;分区键> 和 "id"</p></td>
+            <td valign="top"><p>文档的主键</p></td>
+            <td valign="top"><p>"id"</p></td>
+            <td valign="top"><p>复合键 &lt;分区键> 和 "id"</p></td>
         </tr>
         <tr>
-	    <td valign="top"><p>最小存储</p></td>
-	    <td valign="top"><p>0 GB</p></td>
-	    <td valign="top"><p>0 GB</p></td>
+            <td valign="top"><p>最小存储</p></td>
+            <td valign="top"><p>0 GB</p></td>
+            <td valign="top"><p>0 GB</p></td>
         </tr>
         <tr>
-	    <td valign="top"><p>最大存储</p></td>
-	    <td valign="top"><p>10 GB</p></td>
-	    <td valign="top"><p>不受限制</p></td>
+            <td valign="top"><p>最大存储</p></td>
+            <td valign="top"><p>10 GB</p></td>
+            <td valign="top"><p>不受限制</p></td>
         </tr>
         <tr>
-	    <td valign="top"><p>最小吞吐量</p></td>
-	    <td valign="top"><p>400 个请求单位/秒</p></td>
-	    <td valign="top"><p>10,000 个请求单位/秒</p></td>
+            <td valign="top"><p>最小吞吐量</p></td>
+            <td valign="top"><p>400 个请求单位/秒</p></td>
+            <td valign="top"><p>2,500 个请求单位/秒</p></td>
         </tr>
         <tr>
-	    <td valign="top"><p>最大吞吐量</p></td>
-	    <td valign="top"><p>10,000 个请求单位/秒</p></td>
-	    <td valign="top"><p>不受限制</p></td>
+            <td valign="top"><p>最大吞吐量</p></td>
+            <td valign="top"><p>10,000 个请求单位/秒</p></td>
+            <td valign="top"><p>不受限制</p></td>
         </tr>
         <tr>
-	    <td valign="top"><p>API 版本</p></td>
-	    <td valign="top"><p>全部</p></td>
-	    <td valign="top"><p>API 2015-12-16 及更新版本</p></td>
+            <td valign="top"><p>API 版本</p></td>
+            <td valign="top"><p>全部</p></td>
+            <td valign="top"><p>API 2015-12-16 及更新版本</p></td>
         </tr>
     </tbody>
 </table>
-
 
 ## 使用 SDK  <a name="working-with-the-sdks"></a>
 
@@ -151,7 +150,7 @@ Azure DocumentDB 增加了对 [REST API 版本 2015-12-16](https://msdn.microsof
 ### 创建已分区集合
 下面的示例演示创建集合的 .NET 代码片段，以存储吞吐量为 20,000 个请求单位/秒的设备遥测数据。SDK 将设置 OfferThroughput 值（其反过来将设置 REST API 中的 `x-ms-offer-throughput` 请求标头）。这里，我们将 `/deviceId` 设为分区键。所选的分区键随集合元数据（如名称和索引策略）的其余部分一起保存。
 
-对于此示例，我们选取了 `deviceId`，因为我们知道：\(a\) 由于存在大量的设备，写入可以跨分区均匀地分步并且我们可以扩展数据库以引入海量数据，\(b\) 许多请求（如提取设备最近读取内容）仅限于单个 deviceId，并且可以从单个分区进行检索。
+对于此示例，我们选取了 `deviceId`，因为我们知道：(a) 由于存在大量的设备，写入可以跨分区均匀地分步并且我们可以扩展数据库以引入海量数据，(b) 许多请求（如提取设备最近读取内容）仅限于单个 deviceId，并且可以从单个分区进行检索。
 
     DocumentClient client = new DocumentClient(new Uri(endpoint), authKey);
     await client.CreateDatabaseAsync(new Database { Id = "db" });
@@ -170,11 +169,11 @@ Azure DocumentDB 增加了对 [REST API 版本 2015-12-16](https://msdn.microsof
 
 
 > [AZURE.NOTE]
-为了创建已分区集合，必须指定 \> 10,000 个请求单位/秒的吞吐量值。由于吞吐量是 100 的倍数，此值必须为 10,100 或更多。
+若要使用 SDK 创建已分区集合，必须指定大于或等于 10,100 RU/s 的吞吐量值。若要将分区集合的吞吐量值设置在 2,500 到 10,000 RU/s 之间，必须暂时使用 Azure 门户预览，因为该 SDK 中目前尚不提供这些新的较低值。
 > 
 > 
 
-此方法可对 DocumentDB 调用 REST API，且该服务将基于所请求的吞吐量设置分区数。随着性能需求的发展，可以更改集合的吞吐量。有关更多详细信息，请参阅[性能级别](/documentation/articles/documentdb-performance-levels/)。
+此方法可对 DocumentDB 调用 REST API，且该服务将基于所请求的吞吐量设置分区数。随着性能需求的发展，可以更改集合的吞吐量。
 
 ### 读取和写入文档
 现在，我们将数据插入 DocumentDB。以下的示例类包含设备读取和对 CreateDocumentAsync 的调用，以便将新设备读数插入到集合中。
@@ -247,7 +246,7 @@ Azure DocumentDB 增加了对 [REST API 版本 2015-12-16](https://msdn.microsof
         UriFactory.CreateDocumentCollectionUri("db", "coll"))
         .Where(m => m.MetricType == "Temperature" && m.DeviceId == "XMS-0001");
 
-下面的查询在分区键 \(DeviceId\) 上没有筛选器，并且以扇形展开到针对分区索引执行该查询的所有分区。请注意，必须指定 EnableCrossPartitionQuery（REST API 中的 `x-ms-documentdb-query-enablecrosspartition`）以使 SDK 跨分区执行查询。
+下面的查询在分区键 (DeviceId) 上没有筛选器，并且以扇形展开到针对分区索引执行该查询的所有分区。请注意，必须指定 EnableCrossPartitionQuery（REST API 中的 `x-ms-documentdb-query-enablecrosspartition`）以使 SDK 跨分区执行查询。
 
     // Query across partition keys
     IQueryable<DeviceReading> crossPartitionQuery = client.CreateDocumentQuery<DeviceReading>(
@@ -282,13 +281,15 @@ DocumentDB SDK 1.9.0 及更高版本支持并行查询执行选项，这些选�
 
 下一节中，我们将介绍如何从单个分区集合移动到已分区集合。
 
-### 从单个分区集合迁移到已分区集合 <a name="migrating-from-single-partition"></a>
-当使用单个分区集合的应用程序需要更高的吞吐量 \(\>10,000 RU/s\) 或更大的数据存储 \(\>10GB\) 时，可以使用 DocumentDB 数据迁移工具将单个分区集合中的数据迁移到已分区集合。
+
+
+## 从单个分区集合迁移到已分区集合 <a name="migrating-from-single-partition"></a> 
+当使用单个分区集合的应用程序需要更高的吞吐量 (>10,000 RU/s) 或更大的数据存储 (>10GB) 时，可以使用 [DocumentDB 数据迁移工具](http://www.microsoft.com/downloads/details.aspx?FamilyID=cda7703a-2774-4c07-adcc-ad02ddc1a44d)将单个分区集合中的数据迁移到已分区集合。
 
 从单个分区集合迁移到已分区集合
 
 1. 将单个分区集合中的数据导出到 JSON。有关其他详细信息，请参阅[导出到 JSON 文件](/documentation/articles/documentdb-import-data/#export-to-json-file/)。
-2. 将数据导入到使用分区键定义创建的、吞吐量超过 10,000 个请求单位/秒的已分区集合，如下例所示。有关其他详细信息，请参阅[导入到 DocumentDB](/documentation/articles/documentdb-import-data/#DocumentDBSeqTarget/)。
+2. 将数据导入到使用分区键定义创建的、吞吐量超过 2,500 个请求单位/秒的已分区集合，如下例所示。有关其他详细信息，请参阅[导入到 DocumentDB](/documentation/articles/documentdb-import-data/#DocumentDBSeqTarget/)。
 
 ![将数据迁移到 DocumentDB 中的已分区集合][3]  
 
@@ -308,7 +309,7 @@ DocumentDB SDK 1.9.0 及更高版本支持并行查询执行选项，这些选�
 所选的分区键应该权衡启用事务的需求与将实体分布到多个分区键（以确保可缩放的解决方案）的需求。一种极端情况，你可以为所有文档设置相同的分区键，但这可能会限制解决方案的可扩展性。另一种极端情况，你可以为每个文档指定唯一的分区键，这将实现高度可缩放性，但会阻止通过存储过程和触发器跨文档事务进行使用。理想的分区键可以使用高效查询，并具有足够多基数以确保解决方案是可缩放的。
 
 ### 避免存储和性能瓶颈
-选取一个属性以在大量相异值间分布写入也很重要。对相同分区键的请求不能超过单个分区的吞吐量，否则会受到限制。因此选取不会导致应用程序中**“热点”**的分区键很重要。单分区键的所有数据都必须存储在分区内，因此，还建议避免使用相同值具有大量数据的分区键。
+选取一个属性以在大量相异值间分布写入也很重要。对相同分区键的请求不能超过单个分区的吞吐量，否则会受到限制。因此选取不会导致应用程序中**“热点”**的分区键很重要。单区键的所有数据都必须存储在分区内，因此，还建议避免使用相同值具有大量数据的分区键。
 
 ### 适当的分区键的示例
 以下是有关如何选择应用程序分区键的几个示例：
@@ -325,7 +326,7 @@ DocumentDB 最常见的使用案例之一是记录和遥测。选取适当的分
 
 - 如果用例涉及长时间积累的小速率写入，并且需要按时间戳范围和其他筛选器进行查询，则使用时间戳（例如数据）汇总作为分区键是个好方法。这使你能够查询某日单个分区中的所有数据。
 - 如果工作负荷是更常见的写入密集型，应使用不基于时间戳的分区键，以使 DocumentDB 可以跨多个分区均匀地分布写入。此处，主机名、进程 ID、活动 ID 或其他具有较大基数的属性是不错的选择。
-- 第三种方法是混合型分区键，其中你有多个集合，一个用于每日/月，且分区键是类似主机名的粒度属性。这样做的好处是可以基于时间段设置不同的性能级别，例如，将当月的集合预配为更高的吞吐量，因为它维护读取和写入操作，而之前的月份吞吐量设置为较低的吞吐量，因为它们只维护读取。
+- 第三种方法是混合型分区键，其中你有多个集合，一个用于每日/月，且分区键是类似主机名的粒度属性。这样做的好处是可以基于时间段设置不同的吞吐量，例如，将当月的集合预配为更高的吞吐量，因为它维护读取和写入操作，而之前的月份吞吐量设置为较低的吞吐量，因为它们只维护读取。
 
 ### 分区和多租户
 如果要使用 DocumentDB 实现多租户应用程序，可通过两种主要模式使用 DocumentDB 实现租户，一种是一个租户一个分区键，另一种是一个租户一个集合。下面是每种模式的优缺点：
@@ -341,11 +342,10 @@ DocumentDB 最常见的使用案例之一是记录和遥测。选取适当的分
 - 使用 DocumentDB 执行缩放和性能测试。有关示例，请参阅[使用 Azure DocumentDB 进行性能和规模测试](/documentation/articles/documentdb-performance-testing/)。
 - 使用 [SDK](/documentation/articles/documentdb-sdk-dotnet/) 或 [REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn781481.aspx) 的编码入门
 - 了解 [DocumentDB 中预配的吞吐量](/documentation/articles/documentdb-performance-levels/)
-- 如果想要自定义应用程序执行分区的方式，可以插入自己的客户端分区实现。请参阅[客户端分区支持](/documentation/articles/documentdb-sharding/)。
 
 [1]: ./media/documentdb-partition-data/partitioning.png
 [2]: ./media/documentdb-partition-data/single-and-partitioned.png
 [3]: ./media/documentdb-partition-data/documentdb-migration-partitioned-collection.png
 
-<!---HONumber=Mooncake_0109_2017-->
+<!---HONumber=Mooncake_0313_2017-->
 <!---Update_Description: wording update -->

@@ -13,8 +13,8 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="na"
-    ms.date="01/10/2016"
-    wacn.date="02/27/2017"
+    ms.date="02/09/2017"
+    wacn.date="03/22/2017"
     ms.author="arramac" />  
 
 
@@ -119,4 +119,5 @@ Azure DocumentDB 支持显式和策略驱动型故障转移，方便用户在发
 - 使用 [Azure DocumentDB SDK](/documentation/articles/documentdb-developing-with-multiple-regions/) 在多个区域中进行开发
 - 了解如何使用 Azure DocumentDB 构建[多区域作者体系结构](/documentation/articles/documentdb-multi-region-writers/)
 
-<!---HONumber=Mooncake_0220_2017-->
+<!---HONumber=Mooncake_0313_2017-->
+<!---Update_Description: update meta properties -->
