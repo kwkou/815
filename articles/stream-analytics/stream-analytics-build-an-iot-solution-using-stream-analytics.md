@@ -274,7 +274,7 @@ PowerShell 脚本使用 TollApp 示例应用程序自动开始发送事件。你
 6. 源是**事件中心**。
 7. **服务总线命名空间**应是下拉列表中的 TollData。
 8. **事件中心名称**应设置为**条目**。
-9. **事件中心策略名称*是 **RootManageSharedAccessKey**（默认值）。
+9. **事件中心策略名称**是 **RootManageSharedAccessKey**（默认值）。
 10. 选择“JSON”作为“事件序列化格式”，选择“UTF8”作为“编码”。
    
     设置看起来类似于：

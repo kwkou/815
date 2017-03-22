@@ -36,13 +36,13 @@ Azure 流分析是一种完全托管的服务，可以在云中通过流式数�
 
         # Log in to your Azure account
         Add-AzureAccount -Environment AzureChinaCloud
-
+        
         # Select the Azure subscription you want to use to create the resource group
         Select-AzureSubscription -SubscriptionName <subscription name>
-
+        
             # If Stream Analytics has not been registered to the subscription, remove the remark symbol (#) to run the Register-AzureRMProvider cmdlet to register the provider namespace
             #Register-AzureRMProvider -Force -ProviderNamespace 'Microsoft.StreamAnalytics'
-
+        
         # Create an Azure resource group
         New-AzureResourceGroup -Name <YOUR RESOURCE GROUP NAME> -Location <LOCATION>
 
@@ -139,13 +139,13 @@ Azure 流分析是一种完全托管的服务，可以在云中通过流式数�
     string streamAnalyticsInputName = "<YOUR JOB INPUT NAME>";
     string streamAnalyticsOutputName = "<YOUR JOB OUTPUT NAME>";
     string streamAnalyticsTransformationName = "<YOUR JOB TRANSFORMATION NAME>";
-
+    
     // Get authentication token
     TokenCloudCredentials aadTokenCredentials =
         new TokenCloudCredentials(
             ConfigurationManager.AppSettings["SubscriptionId"],
             GetAuthorizationHeader());
-
+    
     // Create Stream Analytics management client
     StreamAnalyticsManagementClient client = new StreamAnalyticsManagementClient(aadTokenCredentials);
 

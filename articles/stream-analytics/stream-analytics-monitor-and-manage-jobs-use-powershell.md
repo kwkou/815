@@ -28,31 +28,31 @@
 
 Azure PowerShell 0.9.8：
 
- 		# Log in to your Azure account
-		Add-AzureAccount -Environment AzureChinaCloud
+        # Log in to your Azure account
+        Add-AzureAccount -Environment AzureChinaCloud
 
-		# Select the Azure subscription you want to use to create the resource group if you have more than one subscription on your account.
-		Select-AzureSubscription -SubscriptionName <subscription name>
- 
-		# If Stream Analytics has not been registered to the subscription, remove remark symbol below (#) to run the Register-AzureProvider cmdlet to register the provider namespace.
-		#Register-AzureProvider -Force -ProviderNamespace 'Microsoft.StreamAnalytics'
+        # Select the Azure subscription you want to use to create the resource group if you have more than one subscription on your account.
+        Select-AzureSubscription -SubscriptionName <subscription name>
 
-		# Create an Azure resource group
-		New-AzureResourceGroup -Name <YOUR RESOURCE GROUP NAME> -Location <LOCATION>
+        # If Stream Analytics has not been registered to the subscription, remove remark symbol below (#) to run the Register-AzureProvider cmdlet to register the provider namespace.
+        #Register-AzureProvider -Force -ProviderNamespace 'Microsoft.StreamAnalytics'
+
+        # Create an Azure resource group
+        New-AzureResourceGroup -Name <YOUR RESOURCE GROUP NAME> -Location <LOCATION>
 
 Azure PowerShell 1.0：
 
- 		# Log in to your Azure account
-		Login-AzureRmAccount -EnvironmentName AzureChinaCloud
+        # Log in to your Azure account
+        Login-AzureRmAccount -EnvironmentName AzureChinaCloud
 
         # Select the Azure subscription you want to use to create the resource group.
         Get-AzureRmSubscription -SubscriptionName "your sub" | Select-AzureRmSubscription
 
-		# If Stream Analytics has not been registered to the subscription, remove remark symbol below (#) to run the Register-AzureProvider cmdlet to register the provider namespace.
+        # If Stream Analytics has not been registered to the subscription, remove remark symbol below (#) to run the Register-AzureProvider cmdlet to register the provider namespace.
         #Register-AzureRmResourceProvider -Force -ProviderNamespace 'Microsoft.StreamAnalytics'
-		
-		# Create an Azure resource group
-		New-AzureRMResourceGroup -Name <YOUR RESOURCE GROUP NAME> -Location <LOCATION>
+
+        # Create an Azure resource group
+        New-AzureRMResourceGroup -Name <YOUR RESOURCE GROUP NAME> -Location <LOCATION>
 		
 
 > [AZURE.NOTE]

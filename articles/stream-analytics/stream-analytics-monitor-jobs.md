@@ -57,7 +57,7 @@
            <add key="ActiveDirectoryTenantId" value="YOUR TENANT ID" />
         </appSettings>
 
-将 *SubscriptionId* 和 *ActiveDirectoryTenantId* 的值替换为 Azure 订阅和租户 ID。可以通过运行以下 PowerShell cmdlet 来获取这些值：
+    将 *SubscriptionId* 和 *ActiveDirectoryTenantId* 的值替换为 Azure 订阅和租户 ID。可以通过运行以下 PowerShell cmdlet 来获取这些值：
 
         Get-AzureAccount
 
