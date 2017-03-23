@@ -23,10 +23,11 @@
 
 > [AZURE.SELECTOR]
 - [Redgate](/documentation/articles/sql-data-warehouse-load-with-redgate/)
-<!-- Data Factory not supported on Azure.cn-->
-<!-- - [Data Factory](/documentation/articles/sql-data-warehouse-get-started-load-with-azure-data-factory/)-->
 - [PolyBase](/documentation/articles/sql-data-warehouse-get-started-load-with-polybase/)
 - [BCP](/documentation/articles/sql-data-warehouse-load-with-bcp/)
+
+<!-- Data Factory not supported on Azure.cn-->
+<!-- [Data Factory](/documentation/articles/sql-data-warehouse-get-started-load-with-azure-data-factory/)-->
 
 本教程说明如何使用 AzCopy 和 PolyBase 将数据加载到 SQL 数据仓库。完成后，将了解如何：
 

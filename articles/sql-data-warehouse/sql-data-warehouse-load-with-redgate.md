@@ -22,10 +22,11 @@
 
 > [AZURE.SELECTOR]
 - [Redgate](/documentation/articles/sql-data-warehouse-load-with-redgate/)
-<!-- Data Factory not supported on Azure.cn-->
-<!-- - [Data Factory](/documentation/articles/sql-data-warehouse-get-started-load-with-azure-data-factory/)-->
 - [PolyBase](/documentation/articles/sql-data-warehouse-get-started-load-with-polybase/)
 - [BCP](/documentation/articles/sql-data-warehouse-load-with-bcp/)
+
+<!-- Data Factory not supported on Azure.cn-->
+<!-- - [Data Factory](/documentation/articles/sql-data-warehouse-get-started-load-with-azure-data-factory/)-->
 
 本教程介绍如何使用 [Redgate 的 Data Platform Studio](http://www.red-gate.com/products/azure-development/data-platform-studio/) (DPS) 将数据从本地 SQL Server 迁移到 Azure SQL 数据仓库。Data Platform Studio 应用了适当的兼容性修补程序和优化措施，可以快速启动 SQL 数据仓库操作。
 
