@@ -1,6 +1,6 @@
 <properties linkid="" urlDisplayName="" pageTitle="了解MySQL 数据库 on Azure服务限制- Azure 微软云" metaKeywords="Azure 云,技术文档,文档与资源,MySQL,数据库,服务限制,Azure MySQL, MySQL PaaS,Azure MySQL PaaS, Azure MySQL Service, Azure RDS" description="帮助您了解目前MySQL 数据库 on Azure 公共预览版期间的服务限制。如果您对某些操作存有疑问,欢迎联系技术支持。" metaCanonical="" services="MySQL" documentationCenter="Services" title="" authors="" solutions="" manager="" editor="" />
 
-<tags ms.service="mysql" ms.date="10/10/2016" wacn.date="10/10/2016" wacn.lang="cn" />
+<tags ms.service="mysql" ms.date="03/24/2017" wacn.date="03/24/2017" wacn.lang="cn" />
 
 > [AZURE.LANGUAGE]
 - [中文](/documentation/articles/mysql-database-operation-limitation/)
@@ -31,4 +31,4 @@ MySQL Database on Azure目前有如下几点限制，如果您有任何疑问，
 	* user
 	* proxies_priv
 
-7.	目前不支持MyISAM存储引擎
+7.	目前不支持MyISAM存储引擎，我们推荐用户使用InnoDB。除MyISAM外，其他非InnoDB引擎虽然可用，但不排除在某些特殊情况下可能出现问题。
