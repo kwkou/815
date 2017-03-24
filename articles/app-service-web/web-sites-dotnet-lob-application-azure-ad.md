@@ -15,7 +15,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="web"
     ms.date="09/01/2016"
-    wacn.date="03/17/2017"
+    wacn.date="03/24/2017"
     ms.author="cephalin" />
 
 # 使用 Azure Active Directory 身份验证创建业务线 Azure 应用
@@ -109,7 +109,7 @@
         "id": "/subscriptions/<Subscription id>/resourceGroups/<resource group>/providers/Microsoft.Web/sites/<you app>/config/authsettings",
         "name": "authsettings",
         "type": "Microsoft.Web/sites/config",
-        "location": "East Asia",
+        "location": "China East",
         "tags": {
             "hidden-related:/subscriptions/<Subscription id>/resourcegroups/<resource group>/providers/Microsoft.Web/serverfarms/<app service plan>": "empty"
         },
