@@ -7,7 +7,7 @@
       author="jtaubensee"
       manager="timlt" />
 <tags
-    ms.assetid="ms.service: service-bus-messaging"
+      ms.service="service-bus"
       ms.workload="na"
       ms.tgt_pltfrm="na"
       ms.devlang="dotnet"

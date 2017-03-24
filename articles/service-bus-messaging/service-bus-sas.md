@@ -1,14 +1,14 @@
 <properties
     pageTitle="Azure 服务总线的共享访问签名身份验证 | Azure"
     description="使用共享访问签名进行服务总线身份验证的概述中详细介绍了 Azure 服务总线的 SAS 身份验证。"
-    services="service-bus-messaging"
+    services="service-bus"
     documentationcenter="na"
     author="sethmanheim"
     manager="timlt"
     editor="" />
 <tags
     ms.assetid=""
-    ms.service="service-bus-messaging"
+    ms.service="service-bus"
     ms.devlang="na"
     ms.topic="article"
     ms.tgt_pltfrm="na"
