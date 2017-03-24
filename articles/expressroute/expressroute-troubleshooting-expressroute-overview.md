@@ -7,6 +7,7 @@
     manager="tracsman" />
 <tags
     ms.assetid="ms.service: expressroute"
+    ms.service="expressroute"
     ms.devlang="na"
     ms.topic="article"
     ms.tgt_pltfrm="na"

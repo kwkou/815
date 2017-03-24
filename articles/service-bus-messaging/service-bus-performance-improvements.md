@@ -285,7 +285,7 @@ AMQP 和 SBMP 都很高效，因为只要存在消息工厂，就可以保持与
 [ForcePersistence]: https://docs.microsoft.com/zh-cn/dotnet/api/microsoft.servicebus.messaging.brokeredmessage#Microsoft_ServiceBus_Messaging_BrokeredMessage_ForcePersistence
 [EnablePartitioning]: https://docs.microsoft.com/zh-cn/dotnet/api/microsoft.servicebus.messaging.queuedescription#Microsoft_ServiceBus_Messaging_QueueDescription_EnablePartitioning
 [Partitioned messaging entities]: /documentation/articles/service-bus-partitioning/
-[TopicDescription.EnableFilteringMessagesBeforePublishing]: /dotnet/api/microsoft.servicebus.messaging.topicdescription#Microsoft_ServiceBus_Messaging_TopicDescription_EnableFilteringMessagesBeforePublishing
+[TopicDescription.EnableFilteringMessagesBeforePublishing]: https://docs.microsoft.com/en-us/dotnet/api/microsoft.servicebus.messaging.topicdescription#Microsoft_ServiceBus_Messaging_TopicDescription_EnableFilteringMessagesBeforePublishing
 
 <!---HONumber=Mooncake_0313_2017-->
 <!--Update_Description:update meta properties and wording-->

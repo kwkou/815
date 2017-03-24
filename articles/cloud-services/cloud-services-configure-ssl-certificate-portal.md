@@ -130,7 +130,7 @@
 
 现在已更新服务定义和服务配置文件，请打包部署以上传到 Azure。如果使用的是 **cspack** ，请务必不要使用 **/generateConfigurationFile** 标志，因为这将覆盖你刚插入的证书信息。
 
-## 步骤 3：上传证书
+## <a name="step-3-upload-a-certificate"></a> 步骤 3：上传证书
 
 连接到该门户并...
 
