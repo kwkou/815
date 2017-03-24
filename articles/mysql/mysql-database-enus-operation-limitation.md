@@ -1,6 +1,6 @@
 <properties linkid="" urlDisplayName="" pageTitle="Understand the service limitations of MySQL Database on Azure – Azure cloud" metakeywords="Azure Cloud, technical documentation, documents and resources, MySQL, database, service restrictions and limitations, Azure MySQL, MySQL PaaS, Azure MySQL PaaS, Azure MySQL Service, Azure RDS" description="This article helps you understand the service limitations of MySQL Database on Azure during the period of this public preview version. Contact technical support if you have any questions about specific operations." metaCanonical="" services="MySQL" documentationCenter="Services" title="" authors="" solutions="" manager="" editor="" />
 
-<tags ms.service="mysql_en" ms.date="07/05/2016" wacn.date="07/05/2016" wacn.lang="en" />
+<tags ms.service="mysql_en" ms.date="03/24/2017" wacn.date="03/24/2017" wacn.lang="en" />
 
 > [AZURE.LANGUAGE]
 - [中文](/documentation/articles/mysql-database-operation-limitation/)
@@ -32,7 +32,7 @@ MySQL Database on Azure currently has the following limitations. If you have any
 	* proxies_priv
 
 7.	Data replication currently supports only data syncing between local and cloud servers, a feature that makes it easier for users to build hybrid cloud scenarios.
-8.	The MyISAM storage engine is currently not supported.
+8.	The MyISAM storage engine is currently not supported. Although other non-InnoDB engines (except MyISAM) are available, in some particular circumstances these non-InnoDB engines may have some problems.
 
 
 
