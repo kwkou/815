@@ -295,9 +295,9 @@ DPM 服务器在注册到恢复服务保管库后，会使用默认的订阅设�
 - 获取对应于 ```$PG[0]``` 的数据源
 - 获取数据源的所有恢复点。
 
-	PS C:\> $PG = Get-DPMProtectionGroup -DPMServerName "TestingServer"
-	PS C:\> $DS = Get-DPMDatasource -ProtectionGroup $PG[0]
-	PS C:\> $RecoveryPoints = Get-DPMRecoverypoint -Datasource $DS[0] -Online
+		PS C:\> $PG = Get-DPMProtectionGroup -DPMServerName "TestingServer"
+		PS C:\> $DS = Get-DPMDatasource -ProtectionGroup $PG[0]
+		PS C:\> $RecoveryPoints = Get-DPMRecoverypoint -Datasource $DS[0] -Online
 
 ## 还原 Azure 上受保护的数据
 还原数据是 ```RecoverableItem``` 对象和 ```RecoveryOption``` 对象的组合结果。在上一部分中，我们已获取数据源的备份点列表。

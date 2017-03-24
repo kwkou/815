@@ -83,11 +83,11 @@ VM 无法根据部署要求访问 Internet，或者现有的限制阻止其访�
 
 ### 解决方案
 
-对于 Windows 来宾：
+对于 Windows 用户：
 
 确认 iaasvmprovider 服务已启用，并且启动类型为*自动*。如果该服务的配置并非如此，请启用该服务以确定下一次备份是否成功。
 
-对于 Linux 来宾：
+对于 Linux 用户：
 
 VMSnapshot for Linux（备份使用的扩展）的最新版本是 1.0.91.0。
 
@@ -116,7 +116,7 @@ VM 备份依赖于向基础存储帐户发出快照命令。备份失败的原�
 | 由于在 RDP 中关闭了 VM，VM 状态报告不正确。 | 如果在远程桌面协议 (RDP) 中关闭了 VM，请检查门户，以确定 VM 状态是否正确。如果不正确，请在门户中使用 VM 仪表板上的“关闭”选项来关闭 VM。 |
 | 同一个云服务中的许多 VM 配置为同时备份。 | 最佳做法是将备份计划分给同一云服务中的 VM。 |
 | VM 在运行时使用了很高的 CPU 或内存。 | 如果 VM 在运行时使用了很高的 CPU（使用率超过 90%）或内存，快照任务将排入队列、延迟并最终超时。在这种情况下，请尝试进行按需备份。 |
-| VM 无法从 DHCP 获取主机/结构地址。 | 必须在来宾内启用 DHCP，才能正常进行 IaaS VM 备份。如果 VM 无法从 DHCP 响应 245 获取主机/结构地址，则无法下载或运行任何扩展。如果需要静态专用 IP 地址，你应该通过平台配置该 IP。VM 内的 DHCP 选项应保持启用。有关详细信息，请参阅[设置静态内部专用 IP](/documentation/articles/virtual-networks-reserved-private-ip/)。 |
+| VM 无法从 DHCP 获取主机/结构地址。 | 用户必须启用 DHCP，才能正常进行 IaaS VM 备份。如果 VM 无法从 DHCP 响应 245 获取主机/结构地址，则无法下载或运行任何扩展。如果需要静态专用 IP 地址，你应该通过平台配置该 IP。VM 内的 DHCP 选项应保持启用。有关详细信息，请参阅[设置静态内部专用 IP](/documentation/articles/virtual-networks-reserved-private-ip/)。 |
 
 <!---HONumber=Mooncake_0313_2017-->
 <!--Update_Description: wording update-->

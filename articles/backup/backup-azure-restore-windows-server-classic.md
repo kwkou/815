@@ -230,7 +230,7 @@
     ![加密](./media/backup-azure-restore-windows-server/alternatemachine_unmount_instantrestore.png)  
 
 
-    > [!重要事项] 如果不单击“卸载”，恢复卷将保持装载六个小时（从装载时算起）。装载卷时，不会运行任何备份操作。计划为在装载卷时运行的任何备份操作将在卸载恢复卷后运行。
+    > [AZURE.IMPORTANT] 如果不单击“卸载”，恢复卷将保持装载六个小时（从装载时算起）。装载卷时，不会运行任何备份操作。计划为在装载卷时运行的任何备份操作将在卸载恢复卷后运行。
     >
 
 
