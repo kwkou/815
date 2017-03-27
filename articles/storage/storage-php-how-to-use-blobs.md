@@ -14,7 +14,7 @@
     ms.devlang="PHP"
     ms.topic="article"
     ms.date="12/08/2016"
-    wacn.date="01/06/2017"
+    wacn.date="03/27/2017"
     ms.author="marsma" />
 
 # 如何通过 PHP 使用 Blob 存储
@@ -61,7 +61,7 @@ Azure Blob 存储是一种将非结构化数据作为对象/Blob 存储在云中
 
 对于访问实时服务：
 
-	DefaultEndpointsProtocol=[http|https];AccountName=[yourAccount];AccountKey=[yourKey];EndpointSuffix=core.chinacloudapi.cn
+	$connectionString = 'BlobEndpoint=http://<storage account name>.blob.core.chinacloudapi.cn/;QueueEndpoint=http:// <storage account name>.queue.core.chinacloudapi.cn/;TableEndpoint=http:// <storage account name>.table.core.chinacloudapi.cn/;AccountName=<storage account name>;AccountKey=<storage account key>'
 
 访问存储模拟器：
 
@@ -90,7 +90,7 @@ Azure Blob 存储是一种将非结构化数据作为对象/Blob 存储在云中
 
 	require_once 'vendor\autoload.php';
 
-	use WindowsAzure\Common\ServicesBuilder;
+	use MicrosoftAzure\Storage\Common\ServicesBuilder;
 	use MicrosoftAzure\Storage\Blob\Models\CreateContainerOptions;
 	use MicrosoftAzure\Storage\Blob\Models\PublicAccessType;
 	use MicrosoftAzure\Storage\Common\ServiceException;
