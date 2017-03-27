@@ -132,3 +132,4 @@ Tez 视图包含数据的前提是使用 Tez 引擎的作业当前正在运行�
 若要了解如何将 Ambari 与 HDInsight 配合使用，请参阅[使用 Ambari Web UI 管理 HDInsight 群集](/documentation/articles/hdinsight-hadoop-manage-ambari/)
 
 <!---HONumber=Mooncake_0320_2017-->
+<!--Update_Description: add note about windows cluster being abandoned-->

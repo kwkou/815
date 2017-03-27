@@ -180,3 +180,4 @@
 [AZURE.INCLUDE [virtual-network-multiple-ip-addresses-os-config.md](../../includes/virtual-network-multiple-ip-addresses-os-config.md)]
 
 <!---HONumber=Mooncake_0320_2017-->
+<!--Update_Description: add steps for registering preivew features-->

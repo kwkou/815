@@ -263,3 +263,4 @@
 现已成功创建 API 应用并在其中部署 Node.js API 代码。下一篇教程介绍如何[借助 CORS 从 JavaScript 客户端使用 API 应用](/documentation/articles/app-service-api-cors-consume-javascript/)。
 
 <!---HONumber=Mooncake_0320_2017-->
+<!--Update_Description: update steps for resetting git credential, and adding .gitignore configuration-->

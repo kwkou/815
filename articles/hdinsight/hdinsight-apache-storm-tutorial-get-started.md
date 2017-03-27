@@ -240,3 +240,4 @@ Storm UI 可以用于监视拓扑。
 [preview-portal]: https://portal.azure.cn/
 
 <!---HONumber=Mooncake_0320_2017-->
+<!--Update_Description: add note about windows cluster being abandoned-->

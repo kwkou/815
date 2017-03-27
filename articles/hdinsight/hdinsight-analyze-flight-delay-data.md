@@ -739,3 +739,4 @@ HiveQL 脚本将执行以下操作：
 [img-hdi-flightdelays-flow]: ./media/hdinsight-analyze-flight-delay-data/HDI.FlightDelays.Flow.png
 
 <!---HONumber=Mooncake_0320_2017-->
+<!--Update_Description: add note about windows cluster being abandoned-->

@@ -40,10 +40,6 @@ Azure 虚拟网络 (VNet) 是你自己的网络在云中的表示形式。它是
 ### 没有跨界连接的情况下是否可以使用 VNet？
 可以。可以在不使用混合连接的情况下使用 VNet。如果想要在 Azure 中运行 Microsoft Windows Server Active Directory 域控制器和 SharePoint 场，此功能特别有用。
 
-### 是否可以在 VNet 之间或者 VNet 与本地数据中心之间执行 WAN 优化？
-
-是的。可以通过 Azure 应用商店部署许多供应商提供 [WAN 优化网络虚拟设备](https://azure.microsoft.com/marketplace/?term=wan+optimization)。
-
 ## 配置
 
 ### 要使用哪些工具创建 VNet？
@@ -195,9 +191,6 @@ VNet 相互之间以及与 Azure 基础结构中托管的其他服务之间完�
 ### 是否可以限制入站或出站流量流向与 VNet 连接的资源？
 是的。可向 VNet 中的单个子网和/或附加到 VNet 的 NIC 应用[网络安全组](/documentation/articles/virtual-networks-nsg/)。
 
-### 是否可在与 VNet 连接的资源之间实施防火墙？
-是的。可以通过 Azure 应用商店部署许多供应商提供[防火墙网络虚拟设备](https://azure.microsoft.com/marketplace/?term=firewall)。
-
 ### 你们是否提供了有关保护 VNet 的信息？
 是的。有关详细信息，请参阅 [Azure 网络安全概述](/documentation/articles/security-network-overview/)一文。
 
@@ -213,3 +206,4 @@ VNet 相互之间以及与 Azure 基础结构中托管的其他服务之间完�
 - 使用 [Azure 命令行接口 (CLI)](/documentation/articles/azure-cli-arm-commands/#azure-network-commands-to-manage-network-resources) 来管理通过这两种部署模型部署的 VNet。
 
 <!---HONumber=Mooncake_0320_2017-->
+<!--Update_Description: wording update-->

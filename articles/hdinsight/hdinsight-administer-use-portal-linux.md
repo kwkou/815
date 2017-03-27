@@ -313,3 +313,4 @@ HDInsight 群集边栏选项卡的“使用情况”部分会显示相关信息�
 [image-hadoopcommandline]: ./media/hdinsight-administer-use-portal-linux/hdinsight-hadoop-command-line.png "Hadoop 命令行"
 
 <!---HONumber=Mooncake_0320_2017-->
+<!--Update_Description: wording update-->

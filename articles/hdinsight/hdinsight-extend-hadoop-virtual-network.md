@@ -335,3 +335,4 @@ HDInsight 不支持限制出站流量，仅限制入站流量。在定义包含 
 要了解有关 Azure 虚拟网络的详细信息，请参阅 [Azure 虚拟网络概述](/documentation/articles/virtual-networks-overview/)。
 
 <!---HONumber=Mooncake_0320_2017-->
+<!--Update_Description: wording update-->

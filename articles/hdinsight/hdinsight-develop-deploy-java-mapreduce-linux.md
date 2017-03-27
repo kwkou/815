@@ -294,3 +294,4 @@
 [powershell-PSCredential]: http://social.technet.microsoft.com/wiki/contents/articles/4546.working-with-passwords-secure-strings-and-credentials-in-windows-powershell.aspx
 
 <!---HONumber=Mooncake_0320_2017-->
+<!--Update_Description: wording update-->

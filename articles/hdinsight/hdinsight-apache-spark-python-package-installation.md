@@ -106,3 +106,4 @@
 * [跟踪和调试 HDInsight 中的 Apache Spark 群集上运行的作业](/documentation/articles/hdinsight-apache-spark-job-debugging/)
 
 <!---HONumber=Mooncake_0320_2017-->
+<!--Update_Description: add note about other magic, and add selector-->

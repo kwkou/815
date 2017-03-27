@@ -107,7 +107,7 @@ VNet 对等互连中的每个链接都有上述属性集。在门户中，可以
 
 6. 以用户 A 的身份登录到门户，导航到“VNET3”边栏选项卡，单击“对等互连”、选中“我知道我的资源 ID”复选框，然后采用下例中的格式键入 VNET5 的资源 ID：
    
-    /subscriptions/{SubscriptionID}/resourceGroups/{ResourceGroupName}/providers/Microsoft.Network/virtualNetworks/{VNETname}
+        /subscriptions/{SubscriptionID}/resourceGroups/{ResourceGroupName}/providers/Microsoft.Network/virtualNetworks/{VNETname}
    
     ![资源 ID](./media/virtual-networks-create-vnetpeering-arm-portal/figure12.png)  
 
@@ -159,3 +159,4 @@ VNet 对等互连中的每个链接都有上述属性集。在门户中，可以
 4. 在此状态下，在对等链接状态更改为已启动之前无法重新创建链接。建议先删除这两个链接，然后再重新创建 VNet 对等互连。
 
 <!---HONumber=Mooncake_0320_2017-->
+<!--Update_Description: wording update-->

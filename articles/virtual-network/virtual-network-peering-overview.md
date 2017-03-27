@@ -92,3 +92,4 @@ VNet 对等互连是一项特权操作。它是 VirtualNetworks 命名空间下�
 * [Azure Resource Manager 模板](/documentation/articles/virtual-networks-create-vnetpeering-arm-template-click/)
 
 <!---HONumber=Mooncake_0320_2017-->
+<!--Update_Description: wording update-->

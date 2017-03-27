@@ -51,3 +51,4 @@ HDInsight 群集计费在创建群集之后便会开始，删除群集后才会�
 将 **CLUSTERNAME** 替换为 HDInsight 群集的名称。
 
 <!---HONumber=Mooncake_0320_2017-->
+<!--Update_Description: wording update-->

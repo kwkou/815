@@ -66,9 +66,9 @@
     - 一个具有静态公共 IP 地址的公共 IP 地址资源
     - 一个具有公共 IP 地址资源和动态专用 IP 地址的 IP 配置
 
-        $myPublicIp1     = New-AzureRmPublicIpAddress -Name "myPublicIp1" -ResourceGroupName $myResourceGroup -Location $location -AllocationMethod Static
-        $IpConfigName1  = "IPConfig-1"
-        $IpConfig1      = New-AzureRmNetworkInterfaceIpConfig -Name $IpConfigName1 -Subnet $Subnet -PublicIpAddress $myPublicIp1 -Primary
+            $myPublicIp1     = New-AzureRmPublicIpAddress -Name "myPublicIp1" -ResourceGroupName $myResourceGroup -Location $location -AllocationMethod Static
+            $IpConfigName1  = "IPConfig-1"
+            $IpConfig1      = New-AzureRmNetworkInterfaceIpConfig -Name $IpConfigName1 -Subnet $Subnet -PublicIpAddress $myPublicIp1 -Primary
 
     请注意以上命令中的 `-Primary` 开关。为 NIC 分配多个 IP 配置时，必须将一个配置指定为 *Primary*。
 
@@ -219,3 +219,4 @@
 [AZURE.INCLUDE [virtual-network-multiple-ip-addresses-os-config.md](../../includes/virtual-network-multiple-ip-addresses-os-config.md)]
 
 <!---HONumber=Mooncake_0320_2017-->
+<!--Update_Description: add steps for registering preivew features-->

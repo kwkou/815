@@ -191,3 +191,4 @@
 [azure-create-storageaccount]: /documentation/articles/storage-create-storage-account/
 
 <!---HONumber=Mooncake_0320_2017-->
+<!--Update_Description: wording update-->

@@ -117,3 +117,4 @@ HTTP 终结点凭据是你针对 HDInsight 群集配置的 HTTP 用户凭据；S
 * [在 HDInsight 中使用空边缘节点](/documentation/articles/hdinsight-apps-use-edge-node/)：了解如何使用空边缘节点访问 HDInsight 群集、测试和托管 HDInsight 应用程序。
 
 <!---HONumber=Mooncake_0320_2017-->
+<!--Update_Description: wording update-->

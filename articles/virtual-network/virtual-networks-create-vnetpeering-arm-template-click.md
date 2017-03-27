@@ -389,3 +389,4 @@
     在经典虚拟网络与 Resource Manager VNet 之间建立对等互连后，应该可以从 VNET1 中的任一虚拟机向 VNET2 中的任一虚拟机发起连接，反之亦然。
 
 <!---HONumber=Mooncake_0320_2017-->
+<!--Update_Description: wording update-->

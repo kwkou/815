@@ -285,3 +285,4 @@
 [technetwiki-hive-error]: http://social.technet.microsoft.com/wiki/contents/articles/23047.hdinsight-hive-error-unable-to-rename.aspx
 
 <!---HONumber=Mooncake_0320_2017-->
+<!--Update_Description: add note about windows cluster being abandoned-->

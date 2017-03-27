@@ -30,7 +30,7 @@
 
 ## 模板说明
 
-部署模板后，即可使用不同配置值快速且一致地创建 Azure 资源。如果不熟悉 Azure Resource Manager 模板，请阅读 [Resource Manager 模板演练](/documentation/articles/resource-manager-template-walkthrough/)一文。本文使用[部署具有多个 IP 地址的 VM](https://azure.microsoft.com/resources/templates/101-vm-multiple-ipconfig) 模板。
+部署模板后，即可使用不同配置值快速且一致地创建 Azure 资源。如果不熟悉 Azure Resource Manager 模板，请阅读 [Resource Manager 模板演练](/documentation/articles/resource-manager-template-walkthrough/)一文。本文使用[部署具有多个 IP 地址的 VM](https://github.com/Azure/azure-quickstart-templates/tree/master/101-vm-multiple-ipconfig) 模板。
 
 <a name="resources"></a>部署模板时，会创建以下资源：
 
@@ -120,3 +120,4 @@
 [AZURE.INCLUDE [virtual-network-multiple-ip-addresses-os-config.md](../../includes/virtual-network-multiple-ip-addresses-os-config.md)]
 
 <!---HONumber=Mooncake_0320_2017-->
+<!--Update_Description: add steps for registering preivew features-->

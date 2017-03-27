@@ -86,3 +86,4 @@ Azure 使用 xml 文件定义适用于订阅的所有 VNet。可以下载并编�
     ![新建虚拟网络](./media/virtual-networks-create-vnet-classic-portal/vnet-create-portal-netcfg-figure6.png)  
 
 <!---HONumber=Mooncake_0320_2017-->
+<!--Update_Description: wording update-->

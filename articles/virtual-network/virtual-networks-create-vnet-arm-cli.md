@@ -180,3 +180,4 @@ Azure 有两个部署模型：Azure Resource Manager 和经典模型。Azure 建
 - 使用站点到站点虚拟专用网络 (VPN) 或 ExpressRoute 线路将虚拟网络连接到本地网络。通过阅读[使用站点到站点 VPN 将 VNet 连接到本地网络](/documentation/articles/vpn-gateway-howto-multi-site-to-site-resource-manager-portal/)和[将 VNet 链接到 ExpressRoute 线路](/documentation/articles/expressroute-howto-linkvnet-portal-resource-manager/)，了解操作方法。
 
 <!---HONumber=Mooncake_0320_2017-->
+<!--Update_Description: change to CLI 2.0-->

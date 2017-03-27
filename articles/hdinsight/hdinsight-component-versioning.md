@@ -127,3 +127,4 @@ SLA 用“支持窗口”来定义。“支持窗口”是指 HDInsight 群集�
 [zookeeper]: http://zookeeper.apache.org/
 
 <!---HONumber=Mooncake_0320_2017-->
+<!--Update_Description: wording update-->
