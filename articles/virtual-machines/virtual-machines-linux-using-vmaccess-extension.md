@@ -14,8 +14,8 @@
     ms.tgt_pltfrm="vm-linux"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="10/25/2016"
-    wacn.date="03/20/2017"
+    ms.date="02/16/2017"
+    wacn.date="03/24/2017"
     ms.author="v-livech" />  
 
 
@@ -238,4 +238,4 @@ VMAccess 是一种 Python 脚本，可用于管理 Linux VM 上的用户，而�
 [在创建期间使用 cloud-init 自定义 Linux VM](/documentation/articles/virtual-machines-linux-using-cloud-init/)
 
 <!---HONumber=Mooncake_0313_2017-->
-<!--Update_Description: add information about CLI 2.0-->
+<!--Update_Description: update meta data-->

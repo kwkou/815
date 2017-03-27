@@ -12,8 +12,8 @@
     ms.topic="article"
     ms.tgt_pltfrm="vm-linux"
     ms.workload="infrastructure"
-    ms.date="02/09/2017"
-    wacn.date="03/20/2017"
+    ms.date="02/16/2017"
+    wacn.date="03/24/2017"
     ms.author="iainfou" />  
 
 
@@ -193,4 +193,4 @@
 如果在连接到 VM 时遇到问题，请参阅 [Troubleshoot SSH connections to an Azure VM](/documentation/articles/virtual-machines-linux-troubleshoot-ssh-connection/)（排查 Azure VM 的 SSH 连接问题）。有关访问 VM 上运行的应用时遇到的问题，请参阅 [Troubleshoot application connectivity issues on a Linux VM](/documentation/articles/virtual-machines-linux-troubleshoot-app-connection/)（排查 Linux VM 上的应用程序连接问题）。
 
 <!---HONumber=Mooncake_0313_2017-->
-<!--Update_Description: add information about CLI 2.0-->
+<!--Update_Description: update meta data-->

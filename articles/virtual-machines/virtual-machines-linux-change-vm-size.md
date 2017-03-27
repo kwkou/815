@@ -14,8 +14,8 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="infrastructure-services"
-    ms.date="05/16/2016"
-    wacn.date="03/20/2017"
+    ms.date="02/10/2017"
+    wacn.date="03/24/2017"
     ms.author="mwasson" />
 
 # 如何调整 Linux VM 的大小
@@ -72,4 +72,4 @@
 [vm-sizes]: /documentation/articles/virtual-machines-linux-sizes/
 
 <!---HONumber=Mooncake_0313_2017-->
-<!--Update_Description: add information about CLI 2.0-->
+<!--Update_Description: update meta data-->

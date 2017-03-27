@@ -1,5 +1,5 @@
 <properties
-    pageTitle="在 Azure HDInsight 上的 Apache Spark 群集中将外部 python 包与 Jupyter 笔记本配合使用 | Azure"
+    pageTitle="脚本操作：在 Azure HDInsight 上安装适用于 Jupyter 笔记本的 Python 包 | Azure"
     description="逐步说明如何配置可在 HDInsight Spark 群集中使用的 Jupyter 笔记本，以使用外部 python 包。"
     services="hdinsight"
     documentationcenter=""
@@ -7,7 +7,7 @@
     manager="jhubbard"
     editor="cgronlun"
     tags="azure-portal" />
-<tags 
+<tags
     ms.assetid="21978b71-eb53-480b-a3d1-c5d428a7eb5b"
     ms.service="hdinsight"
     ms.workload="big-data"
@@ -15,12 +15,21 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="11/28/2016"
-    wacn.date="02/06/2017"
-    ms.author="nitinme" />
+    wacn.date="03/24/2017"
+    ms.author="nitinme" />  
 
-# 在 HDInsight Linux 上的 Apache Spark 群集中将外部 python 包与 Jupyter 笔记本配合使用
+
+# 在 HDInsight 上的 Apache Spark 群集中使用建本操作安装适用于 Jupyter 笔记本的外部 Python 包
+> [AZURE.SELECTOR]
+- [使用单元 magic](/documentation/articles/hdinsight-apache-spark-jupyter-notebook-use-external-packages/)
+- [使用脚本操作](/documentation/articles/hdinsight-apache-spark-python-package-installation/)
 
 了解如何使用脚本操作在 HDInsight (Linux) 上配置 Apache Spark 群集，以使用未现成包含在群集中的、由社区贡献的 **python** 外部包。
+
+> [AZURE.NOTE]
+此外可以通过使用 `%%configure` magic 配置 Jupyter 笔记本以使用外部包。请参阅[在 HDInsight 上的 Apache Spark 群集中将外部包与 Jupyter 笔记本配合使用](/documentation/articles/hdinsight-apache-spark-jupyter-notebook-use-external-packages/)，了解相关说明。
+> 
+> 
 
 可以在[包索引](https://pypi.python.org/pypi)中搜索可用包的完整列表。也可以从其他源获取可用包的列表。例如，可以安装通过 [Anaconda](https://docs.continuum.io/anaconda/pkg-docs) 或 [conda-forge](https://conda-forge.github.io/feedstocks.html) 提供的包。
 
@@ -30,10 +39,10 @@
 必须满足以下条件：
 
 * Azure 订阅。请参阅[获取 Azure 试用版](/pricing/1rmb-trial/)。
-* HDInsight Linux 上的 Apache Spark 群集。有关说明，请参阅[在 Azure HDInsight 中创建 Apache Spark 群集](/documentation/articles/hdinsight-apache-spark-jupyter-spark-sql/)。
+* HDInsight 上的 Apache Spark 群集。有关说明，请参阅 [Create Apache Spark clusters in Azure HDInsight](/documentation/articles/hdinsight-apache-spark-jupyter-spark-sql/)（在 Azure HDInsight 中创建 Apache Spark 群集）。
 
     > [AZURE.NOTE]
-    如果 HDInsight Linux 上还没有 Spark 群集，则可以在群集创建过程中运行脚本操作。访问有关[如何使用自定义脚本操作](/documentation/articles/hdinsight-hadoop-customize-cluster/)的文档。
+    如果 HDInsight Linux 上还没有 Spark 群集，则可以在群集创建过程中运行脚本操作。访问有关[如何使用自定义脚本操作](/documentation/articles/hdinsight-hadoop-customize-cluster-linux/)的文档。
     > 
     > 
 
@@ -41,7 +50,7 @@
 
 1. 在 [Azure 门户预览](https://portal.azure.cn/)上的启动板中，单击 Spark 群集的磁贴（如果已将它固定到启动板）。也可以在“全部浏览”>“HDInsight 群集”下导航到你的群集。
 
-2. 在 Spark 群集边栏选项卡中，单击“使用情况”下的“脚本操作”。运行用于在头节点和工作节点中安装 TensorFlow 的自定义操作。可以参考 https://hdiconfigactions.blob.core.windows.net/linuxtensorflow/tensorflowinstall.sh 中的 bash 脚本；访问有关[如何使用自定义脚本操作](/documentation/articles/hdinsight-hadoop-customize-cluster/)的文档。
+2. 在 Spark 群集边栏选项卡中，单击“使用情况”下的“脚本操作”。运行用于在头节点和工作节点中安装 TensorFlow 的自定义操作。可以参考 https://hdiconfigactions.blob.core.windows.net/linuxtensorflow/tensorflowinstall.sh 中的 bash 脚本；访问有关[如何使用自定义脚本操作](/documentation/articles/hdinsight-hadoop-customize-cluster-linux/)的文档。
 
     > [AZURE.NOTE]
     群集中有两个 python 安装。Spark 将使用位于 `/usr/bin/anaconda/bin` 中的 Anaconda python 安装。通过 `/usr/bin/anaconda/bin/pip` 和 `/usr/bin/anaconda/bin/conda` 在自定义操作中引用该安装。
@@ -62,16 +71,14 @@
 
     要复制的代码：
 
-	    import tensorflow as tf
-	    hello = tf.constant('Hello, TensorFlow!')
-	    sess = tf.Session()
-	    print(sess.run(hello))
+        import tensorflow as tf
+        hello = tf.constant('Hello, TensorFlow!')
+        sess = tf.Session()
+        print(sess.run(hello))
 
-	结果将如下所示：
+    结果将如下所示：
 	
-	![TensorFlow 代码执行](./media/hdinsight-apache-spark-python-package-installation/execution.png "执行 TensorFlow 代码")  
-
-
+    ![TensorFlow 代码执行](./media/hdinsight-apache-spark-python-package-installation/execution.png "执行 TensorFlow 代码")  
 
 
 ## <a name="seealso"></a>另请参阅
@@ -96,6 +103,6 @@
 
 ### 管理资源
 * [管理 Azure HDInsight 中 Apache Spark 群集的资源](/documentation/articles/hdinsight-apache-spark-resource-manager/)
-* [Track and debug jobs running on an Apache Spark cluster in HDInsight（跟踪和调试 HDInsight 中的 Apache Spark 群集上运行的作业）](/documentation/articles/hdinsight-apache-spark-job-debugging/)
+* [跟踪和调试 HDInsight 中的 Apache Spark 群集上运行的作业](/documentation/articles/hdinsight-apache-spark-job-debugging/)
 
-<!---HONumber=Mooncake_0103_2017-->
+<!---HONumber=Mooncake_0320_2017-->

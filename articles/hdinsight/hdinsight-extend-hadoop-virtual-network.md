@@ -13,8 +13,8 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="big-data"
-    ms.date="01/13/2017"
-    wacn.date="01/25/2017"
+    ms.date="02/08/2017"
+    wacn.date="03/24/2017"
     ms.author="larryfr" />
 
 # 使用 Azure 虚拟网络扩展 HDInsight 功能
@@ -76,7 +76,7 @@ Azure HDInsight 仅支持基于位置的虚拟网络，目前无法处理基于�
 
 ### 经典或 V2 虚拟网络
 
-基于 Windows 的群集需要经典虚拟网络，而基于 Linux 的群集需要 Azure Resource Manager 虚拟网络。如果没有正确的网络类型，则在创建群集时无法使用网络。
+基于 Linux 的群集需要 Azure Resource Manager 虚拟网络（基于 Windows 的群集需要经典虚拟网络）。如果没有正确的网络类型，创建群集时它将不能使用。
 
 如果计划创建的群集无法使用虚拟网络上的资源，可以创建群集使用的虚拟网络，并将其连接到不兼容的虚拟网络。然后，可以在所需的网络版本中创建群集，并且由于两个网络已联接，因此群集可以访问其他网络中的资源。有关如何连接经典虚拟网络和新虚拟网络的详细信息，请参阅[将经典 VNet 连接到新的 VNet](/documentation/articles/vpn-gateway-connect-different-deployment-models-portal/)。
 
@@ -107,7 +107,7 @@ HDInsight 不支持限制出站流量，仅限制入站流量。在定义包含 
 
 下例演示如何新建允许所需地址的网络安全组，并将该安全组应用到虚拟网络中的子网。
 
-以下步骤假设已创建要安装 HDInsight 的虚拟网络和子网。
+以下步骤假设已创建要安装 HDInsight 的虚拟网络和子网。请参阅[使用 Azure 门户预览创建虚拟网络](/documentation/articles/virtual-networks-create-vnet-arm-pportal/)。
 
 > [AZURE.IMPORTANT]
 请注意这些示例中使用的 `priority` 值；系统根据优先级按顺序针对网络流量测试规则。一旦某个规则与测试条件匹配并进行了应用，将不再测试其他规则。
@@ -198,10 +198,10 @@ HDInsight 不支持限制出站流量，仅限制入站流量。在定义包含 
 
 2. 使用以下命令将规则添加新网络安全组，以允许从 Azure HDInsight 运行状况和管理服务通过端口 443 发起的入站通信。将 **RESOURCEGROUPNAME** 替换为包含 Azure 虚拟网络的资源组的名称。
     
-        az network nsg rule create -g RESOURCEGROUPNAME --nsg-name hdisecure -n hdirule1 --protocol "*" --source-port-range "*" --destination-port-range "443" --source-address-prefix "168.61.49.99" --destination-address-prefix "VirtualNetwork" --access "Allow" --priority 300 --direction "Inbound"
-        az network nsg rule create -g RESOURCEGROUPNAME --nsg-name hdisecure -n hdirule2 --protocol "*" --source-port-range "*" --destination-port-range "443" --source-address-prefix "23.99.5.239" --destination-address-prefix "VirtualNetwork" --access "Allow" --priority 301 --direction "Inbound"
-        az network nsg rule create -g RESOURCEGROUPNAME --nsg-name hdisecure -n hdirule3 --protocol "*" --source-port-range "*" --destination-port-range "443" --source-address-prefix "168.61.48.131" --destination-address-prefix "VirtualNetwork" --access "Allow" --priority 302 --direction "Inbound"
-        az network nsg rule create -g RESOURCEGROUPNAME --nsg-name hdisecure -n hdirule4 --protocol "*" --source-port-range "*" --destination-port-range "443" --source-address-prefix "138.91.141.162" --destination-address-prefix "VirtualNetwork" --access "Allow" --priority 303 --direction "Inbound"
+        az network nsg rule create -g RESOURCEGROUPNAME --nsg-name hdisecure -n hdirule1 --protocol "*" --source-port-range "*" --destination-port-range "443" --source-address-prefix "168.61.49.99/24" --destination-address-prefix "VirtualNetwork" --access "Allow" --priority 300 --direction "Inbound"
+        az network nsg rule create -g RESOURCEGROUPNAME --nsg-name hdisecure -n hdirule2 --protocol "*" --source-port-range "*" --destination-port-range "443" --source-address-prefix "23.99.5.239/24" --destination-address-prefix "VirtualNetwork" --access "Allow" --priority 301 --direction "Inbound"
+        az network nsg rule create -g RESOURCEGROUPNAME --nsg-name hdisecure -n hdirule3 --protocol "*" --source-port-range "*" --destination-port-range "443" --source-address-prefix "168.61.48.131/24" --destination-address-prefix "VirtualNetwork" --access "Allow" --priority 302 --direction "Inbound"
+        az network nsg rule create -g RESOURCEGROUPNAME --nsg-name hdisecure -n hdirule4 --protocol "*" --source-port-range "*" --destination-port-range "443" --source-address-prefix "138.91.141.162/24" --destination-address-prefix "VirtualNetwork" --access "Allow" --priority 303 --direction "Inbound"
 
 3. 创建规则后，使用以下命令检索此网络安全组的唯一标识符：
 
@@ -209,7 +209,9 @@ HDInsight 不支持限制出站流量，仅限制入站流量。在定义包含 
 
     此命令将返回类似于以下文本的值：
 
-        "/subscriptions/55b1016c-0f27-43d2-b908-b8c373d6d52e/resourceGroups/mygroup/providers/Microsoft.Network/networkSecurityGroups/hdisecure"
+        "/subscriptions/SUBSCRIPTIONID/resourceGroups/RESOURCEGROUPNAME/providers/Microsoft.Network/networkSecurityGroups/hdisecure"
+
+    如果没有得到预期的结果，请在命令中的 ID两侧使用双引号。
 
 4. 使用以下命令将网络安全组应用于子网。将 __GUID__ 和 __RESOURCEGROUPNAME__ 值替换为从上一步骤返回的值。将 __VNETNAME__ 和 __SUBNETNAME__ 替换为创建 HDInsight 群集时要使用的虚拟网络名称和子网名称。
    
@@ -219,11 +221,11 @@ HDInsight 不支持限制出站流量，仅限制入站流量。在定义包含 
 
 > [AZURE.IMPORTANT]
 使用上述步骤只可访问 Azure 云上的 HDInsight 运行状况和管理服务。此操作可成功将 HDInsight 群集安装到子网，但默认阻止从虚拟网络外部访问 HDInsight 群集。如果要启用从虚拟网络外部进行访问，需要添加其他网络安全组规则。
-> <p>
+> <p> 
 > 例如，若要允许来自 Internet 的 SSH 访问，需要添加类似于下面的规则：
-> <p>
+> <p> 
 ><p> * Azure PowerShell - ```Add-AzureRmNetworkSecurityRuleConfig -Name "SSSH" -Description "SSH" -Protocol "*" -SourcePortRange "*" -DestinationPortRange "22" -SourceAddressPrefix "*" -DestinationAddressPrefix "VirtualNetwork" -Access Allow -Priority 304 -Direction Inbound```
-><p> * Azure CLI - ```az network nsg rule create -g RESOURCEGROUPNAME --nsg-name hdisecure -n hdirule4 --protocol "*" --source-port-range "*" --destination-port-range "22" --source-address-prefix "*" --destination-address-prefix "VirtualNetwork" --access "Allow" --priority 304 --direction "Inbound"```
+><p> * Azure CLI - ```az network nsg rule create -g RESOURCEGROUPNAME --nsg-name hdisecure -n hdirule5 --protocol "*" --source-port-range "*" --destination-port-range "22" --source-address-prefix "*" --destination-address-prefix "VirtualNetwork" --access "Allow" --priority 304 --direction "Inbound"```
 
 有关网络安全组的详细信息，请参阅[网络安全组概述](/documentation/articles/virtual-networks-nsg/)。有关在 Azure 虚拟网络中控制路由的详细信息，请参阅[用户定义的路由和 IP 转发](/documentation/articles/virtual-networks-udr-overview/)。
 
@@ -332,5 +334,4 @@ HDInsight 不支持限制出站流量，仅限制入站流量。在定义包含 
 
 要了解有关 Azure 虚拟网络的详细信息，请参阅 [Azure 虚拟网络概述](/documentation/articles/virtual-networks-overview/)。
 
-<!---HONumber=Mooncake_0120_2017-->
-<!--Update_Description: update from ASM to ARM-->
+<!---HONumber=Mooncake_0320_2017-->

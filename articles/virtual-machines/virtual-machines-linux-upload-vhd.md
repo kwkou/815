@@ -14,8 +14,8 @@
     ms.tgt_pltfrm="vm-linux"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="10/10/2016"
-    wacn.date="03/20/2017"
+    ms.date="02/02/2017"
+    wacn.date="03/24/2017"
     ms.author="iainfou" />  
 
 
@@ -204,4 +204,4 @@ Azure Resource Manager 模板是一个 JavaScript 对象表示法 (JSON) 文件�
 准备好并上载自定义虚拟磁盘之后，可以阅读有关[使用 Resource Manager 和模板](/documentation/articles/resource-group-overview/)的详细信息。你可能还需要向新 VM [添加数据磁盘](/documentation/articles/virtual-machines-linux-add-disk/)。如果需要访问在 VM 上运行的应用程序，请务必[打开端口和终结点](/documentation/articles/virtual-machines-linux-nsg-quickstart/)。
 
 <!---HONumber=Mooncake_0313_2017-->
-<!--Update_Description: add information about CLI 2.0-->
+<!--Update_Description: update meta data-->

@@ -13,8 +13,8 @@
     ms.topic="article"
     ms.tgt_pltfrm="vm-linux"
     ms.workload="infrastructure"
-    ms.date="02/09/2017"
-    wacn.date="03/20/2017"
+    ms.date="02/10/2017"
+    wacn.date="03/24/2017"
     ms.author="iainfou" />  
 
 
@@ -117,4 +117,4 @@ Azure Resource Manager 模板使用声明性 JSON 文件来定义环境。阅读
 请记住，不能将其他 NIC 添加到现有 VM，而必须在部署 VM 时创建所有 NIC。仔细规划部署，确保从一开始就建立了全部所需的网络连接。
 
 <!---HONumber=Mooncake_0313_2017-->
-<!--Update_Description: add information about CLI 2.0-->
+<!--Update_Description: update meta data-->

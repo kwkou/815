@@ -14,8 +14,8 @@
     ms.topic="get-started-article"
     ms.tgt_pltfrm="vm-linux"
     ms.workload="infrastructure-services"
-    ms.date="01/19/2017"
-    wacn.date="03/20/2017"
+    ms.date="01/03/2016"
+    wacn.date="03/24/2017"
     ms.author="iainfou" />  
 
 
@@ -115,4 +115,4 @@ Azure CLI 1.0 可通过 npm 包、提供发行版的程序包或 Docker 容器�
 * [重置密码或 SSH 密钥和管理用户](/documentation/articles/virtual-machines-linux-using-vmaccess-extension/)的快速步骤
 
 <!---HONumber=Mooncake_0313_2017-->
-<!--Update_Description: add information about CLI 2.0-->
+<!--Update_Description: update meta data->

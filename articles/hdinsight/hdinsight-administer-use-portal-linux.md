@@ -1,27 +1,28 @@
 <properties
-    pageTitle="使用 Azure 门户预览管理 HDInsight 中基于 Linux 的 Hadoop 群集 | Azure"
-    description="了解如何使用 Azure 门户预览创建和管理基于 Linux 的 HDInsight 群集。"
+    pageTitle="使用 Azure 门户预览管理 HDInsight 中的 Hadoop 群集 | Azure"
+    description="了解如何使用 Azure 门户预览创建和管理 HDInsight 群集。"
     services="hdinsight"
     documentationcenter=""
     author="mumian"
     manager="jhubbard"
     editor="cgronlun"
     tags="azure-portal" />
-<tags 
+<tags
     ms.assetid="5a76f897-02e8-4437-8f2b-4fb12225854a"
     ms.service="hdinsight"
     ms.workload="big-data"
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="12/20/2016"
-    wacn.date="03/16/2017"
-    ms.author="jgao" />
+    ms.date="01/17/2017"
+    wacn.date="03/24/2017"
+    ms.author="jgao" />  
+
 
 # 使用 Azure 门户预览管理 HDInsight 中的 Hadoop 群集
 [AZURE.INCLUDE [选择器](../../includes/hdinsight-portal-management-selector.md)]
 
-使用 [Azure 门户预览][azure-portal]可以管理 Azure HDInsight 中基于 Linux 的群集。使用选项卡选择器还可以了解如何使用其他工具管理 HDInsight 中的 Hadoop 群集。
+使用 [Azure 门户预览][azure-portal]可以在 Azure HDInsight 中管理 Hadoop 群集。使用选项卡选择器还可以了解如何使用其他工具管理 HDInsight 中的 Hadoop 群集。
 
 **先决条件**
 
@@ -40,13 +41,14 @@
      
         ![Azure 门户预览中的 HDInsight 群集按钮](./media/hdinsight-administer-use-portal-linux/azure-portal-hdinsight-button.png)  
 
+        如果没有看到 HDInsight 群集，请单击列表底部的“更多服务”，然后在“智能 + 分析”部分下单击“HDInsight群集”。
 
 ## 创建群集
 [AZURE.INCLUDE [delete-cluster-warning](../../includes/hdinsight-delete-cluster-warning.md)]
 
 HDInsight 使用各种 Hadoop 组件。有关已获得验证和支持的组件的列表，请参阅 [Azure HDInsight 包含哪个版本的 Hadoop？](/documentation/articles/hdinsight-component-versioning/)。有关创建群集的一般信息，请参阅 [Create Hadoop clusters in HDInsight](/documentation/articles/hdinsight-hadoop-provision-linux-clusters/)（在 HDInsight 中创建 Hadoop 群集）。
 
-## <a name="list-and-show-clusters"></a> 列出并显示群集
+## <a name="list-and-show-clusters"></a>列出并显示群集
 1. 登录到 [https://portal.azure.cn](https://portal.azure.cn)。
 2. 在左侧菜单中单击“HDInsight 群集”，列出现有群集。
 3. 单击群集名称。如果群集列表很长，可以使用页面顶部的筛选器。
@@ -57,12 +59,12 @@ HDInsight 使用各种 Hadoop 组件。有关已获得验证和支持的组件�
    
     **概述菜单**：
 
-    * **仪表板**、**群集仪表板**和 URL：这是访问群集仪表板（即，适用于基于 Linux 群集的 Ambari Web）的所有途径。
+    * **仪表板**：打开群集仪表板，对于基于 Linux 的群集该仪表板为 Ambari Web。
     * **安全 Shell**：显示使用安全 Shell (SSH) 连接与群集建立连接的说明。
     * **缩放群集**：可让你更改此群集的辅助角色节点数。
     * **删除**：删除群集。
 
-    **左侧菜单**
+    **左侧菜单**：
    
     * **活动日志**：显示和查询活动日志。
     * **访问控制 (IAM)**：使用角色分配。请参阅[使用角色分配来管理对 Azure 订阅资源的访问权限](/documentation/articles/role-based-access-control-configure/)。
@@ -102,7 +104,7 @@ HDInsight 使用各种 Hadoop 组件。有关已获得验证和支持的组件�
     * **工作节点大小**。
     * **头节点大小**。
 
-## <a name="delete-clusters"></a> 删除群集
+## <a name="delete-clusters"></a>删除群集
 删除群集不会删除默认的存储帐户或任何链接的存储帐户。可以使用相同的存储帐户和相同的元存储来重新创建群集。建议在重新创建群集时使用新的默认 Blob 容器。
 
 1. 登录到[门户][azure-portal]。
@@ -112,7 +114,7 @@ HDInsight 使用各种 Hadoop 组件。有关已获得验证和支持的组件�
 
 另请参阅 [Pause/shut down clusters](#pauseshut-down-clusters)（暂停/关闭群集）。
 
-## <a name="scale-clusters"></a> 缩放群集
+## <a name="scale-clusters"></a>缩放群集
 使用群集缩放功能，可更改 Azure HDInsight 中运行的群集使用的辅助节点数，而无需重新创建群集。
 
 > [AZURE.NOTE]
@@ -166,9 +168,9 @@ HDInsight 使用各种 Hadoop 组件。有关已获得验证和支持的组件�
 3. 单击“缩放群集”。
 4. 输入**辅助节点数**。Azure 订阅中的群集节点数量限制有所不同。要增加限制，可联系计费支持人员。成本信息将反映对节点数所做的更改。
    
-    ![HDInsight hadoop hbase storm spark 缩放](./media/hdinsight-administer-use-portal-linux/hdinsight.portal.scale.cluster.png)
+    ![HDInsight hadoop hbase storm spark 缩放](./media/hdinsight-administer-use-portal-linux/hdinsight.portal.scale.cluster.png)  
 
-## <a name="pauseshut-down-clusters"></a> 暂停/关闭群集
+## <a name="pauseshut-down-clusters"></a>暂停/关闭群集
 
 大多数 Hadoop 作业只是偶尔运行的批处理作业。大多数 Hadoop 群集都存在长时间不进行处理的情况。有了 HDInsight，可将数据存储在 Azure 存储空间，以便在不使用群集时可将其安全删除。此外，还需要支付 HDInsight 群集费用，即使未使用。由于群集费用高于存储空间费用数倍，因此在不使用群集时将其删除可以节省费用。
 
@@ -310,4 +312,4 @@ HDInsight 群集边栏选项卡的“使用情况”部分会显示相关信息�
 [azure-portal]: https://portal.azure.cn
 [image-hadoopcommandline]: ./media/hdinsight-administer-use-portal-linux/hdinsight-hadoop-command-line.png "Hadoop 命令行"
 
-<!---HONumber=Mooncake_0120_2017-->
+<!---HONumber=Mooncake_0320_2017-->

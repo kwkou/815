@@ -1,28 +1,33 @@
 <properties
-    pageTitle="在 HDInsight 上安装 Hadoop 应用程序 | Azure"
-    description="了解如何在 HDInsight 上安装 HDInsight 应用程序。"
+    pageTitle="在 Azure HDInsight 上安装第三方 Hadoop 应用程序 | Azure"
+    description="了解如何在 Azure HDInsight 上安装第三方 Hadoop 应用程序。"
     services="hdinsight"
     documentationcenter=""
     author="mumian"
     manager="jhubbard"
     editor="cgronlun"
     tags="azure-portal" />
-<tags 
+<tags
     ms.assetid="eaf5904d-41e2-4a5f-8bec-9dde069039c2"
     ms.service="hdinsight"
     ms.devlang="na"
     ms.topic="hero-article"
     ms.tgt_pltfrm="na"
     ms.workload="big-data"
-    ms.date="11/23/2016"
-    wacn.date="02/06/2017"
-    ms.author="jgao" />
+    ms.date="02/06/2017"
+    wacn.date="03/24/2017"
+    ms.author="jgao" />  
 
-# 安装 HDInsight 应用程序
-HDInsight 应用程序是用户可以在基于 Linux 的 HDInsight 群集上安装的应用程序。这些应用程序可能是 Microsoft、独立软件供应商 (ISV) 或你自己开发的。在本文中，你将了解如何安装已发布的应用程序。有关安装自己的应用程序的信息，请参阅[安装自定义 HDInsight 应用程序](/documentation/articles/hdinsight-apps-install-custom-applications/)。
 
-目前有三个已发布的应用程序：
+# 在 Azure HDInsight 上安装第三方 Hadoop 应用程序
 
+本文介绍如何在 Azure HDInsight 上安装已发布的第三方 Hadoop 应用程序。有关安装自己的应用程序的说明，请参阅[安装自定义 HDInsight 应用程序](/documentation/articles/hdinsight-apps-install-custom-applications/)。
+
+HDInsight 应用程序是用户可以在基于 Linux 的 HDInsight 群集上安装的应用程序。这些应用程序可能是 Microsoft、独立软件供应商 (ISV) 或你自己开发的。
+
+目前有四个已发布的应用程序：
+
+* **HDInsight 上的 DATAIKU DDS**：Dataiku DSS（数据科学工作室）是一种软件，它允许数据专业人员（数据科学家、业务分析师、开发人员等）构建原型、生成和部署将原始数据转换为有影响力的业务预测的高度特定服务。
 * **Datameer**：[Datameer](http://www.datameer.com/documentation/display/DAS50/Home?ls=Partners&lsd=Microsoft&c=Partners&cd=Microsoft) 提供一种交互方式，让分析师发现、分析和可视化大数据的结果。轻松拉进其他数据源，以发现新的关系并迅速获取所需的答案。
 * **用于 HDnsight 的 Streamsets 数据收集器**提供了一个全功能的集成开发环境 (IDE)，它允许用户设计、测试、部署和管理汇合流和批处理数据的全面互通引入管道，并提供各种流中转换 - 所有这些都无需编写自定义代码。
 
@@ -37,26 +42,26 @@ HDInsight 应用程序是用户可以在基于 Linux 的 HDInsight 群集上安�
 **安装 HDInsight 应用程序**
 
 1. 登录 [Azure 门户预览](https://portal.azure.cn)。
-2. 在左侧菜单中单击“HDInsight 群集”。如果未看到，请单击“浏览”，然后单击“HDInsight 群集”。
+2. 在左侧菜单中单击“HDInsight 群集”。如果未看到，请单击“更多服务”，然后单击“HDInsight 群集”。
 3. 单击某个 HDInsight 群集。如果没有群集，必须先创建一个。请参阅[创建群集](/documentation/articles/hdinsight-hadoop-linux-tutorial-get-started/#create-cluster)。
-4. 单击“配置”类别下的“应用程序”。此时可以看到已安装应用程序的列表（如果有）。
+4. 单击“配置”类别下的“应用程序”。此时可以看到已安装应用程序的列表（如果有）。如果找不到“应用程序”，这意味着没有适用于此版本 HDInsight 群集的应用程序。
    
-    ![hdinsight 应用程序门户菜单](./media/hdinsight-apps-install-applications/hdinsight-apps-portal-menu.png)  
+    ![HDInsight 应用程序门户菜单](./media/hdinsight-apps-install-applications/hdinsight-apps-portal-menu.png)  
 
 5. 单击边栏选项卡菜单中的“添加”。
    
-    ![hdinsight 应用程序已安装的应用](./media/hdinsight-apps-install-applications/hdinsight-apps-installed-apps.png)  
+    ![HDInsight 应用程序已安装的应用](./media/hdinsight-apps-install-applications/hdinsight-apps-installed-apps.png)  
 
    
     可以看到现有 HDInsight 应用程序的列表。
    
-    ![hdinsight 应用程序可用应用程序](./media/hdinsight-apps-install-applications/hdinsight-apps-list.png)  
+    ![HDInsight 应用程序可用应用程序](./media/hdinsight-apps-install-applications/hdinsight-apps-list.png)  
 
 6. 单击其中一个应用程序，接受法律条款，然后单击“选择”。
 
 可以通过门户通知查看安装状态（单击门户顶部的铃铛图标）。安装应用程序之后，应用程序会出现在“已安装的应用”边栏选项卡上。
 
-## <a name="install-applications-during-cluster-creation"></a> 在群集创建期间安装应用程序
+## <a name="install-applications-during-cluster-creation"></a>在群集创建期间安装应用程序
 你可以选择在创建群集时安装 HDInsight 应用程序。在此过程中，HDInsight 应用程序会在群集创建并处于运行状态后安装。下面的过程演示如何在创建群集时安装 HDInsight 应用程序。
 
 **安装 HDInsight 应用程序**
@@ -76,7 +81,7 @@ HDInsight 应用程序是用户可以在基于 Linux 的 HDInsight 群集上安�
 9. 单击“资源组”以选择现有的资源组，或单击“新建”以创建一个新的资源组
 10. 在“新建 HDInsight 群集”边栏选项卡上，确保选中“固定到启动板”，然后单击“创建”。
 
-## <a name="list-installed-hdinsight-apps-and-properties"></a> 列出已安装的 HDInsight 应用和属性
+## <a name="list-installed-hdinsight-apps-and-properties"></a>列出已安装的 HDInsight 应用和属性
 门户会显示群集的已安装 HDInsight 应用程序列表，以及每个已安装应用程序的属性。
 
 **列出 HDInsight 应用程序并显示属性**
@@ -86,7 +91,7 @@ HDInsight 应用程序是用户可以在基于 Linux 的 HDInsight 群集上安�
 3. 单击某个 HDInsight 群集。
 4. 在“设置”边栏选项卡中，单击“常规”类别下的“应用程序”。“已安装的应用”边栏选项卡将列出所有已安装的应用程序。
    
-    ![hdinsight 应用程序已安装的应用](./media/hdinsight-apps-install-applications/hdinsight-apps-installed-apps-with-apps.png)
+    ![HDInsight 应用程序已安装的应用](./media/hdinsight-apps-install-applications/hdinsight-apps-installed-apps-with-apps.png)
 5. 单击其中一个已安装的应用程序，以显示属性。属性边栏选项卡会列出：
    
     * 应用名称：应用程序名称。
@@ -111,4 +116,4 @@ HTTP 终结点凭据是你针对 HDInsight 群集配置的 HTTP 用户凭据；S
 * [Create Linux-based Hadoop clusters in HDInsight using Resource Manager templates](/documentation/articles/hdinsight-hadoop-create-linux-clusters-arm-templates/)（使用 Resource Manager 模板在 HDInsight 中创建基于 Linux 的 Hadoop 群集）：了解如何调用 Resource Manager 模板来创建 HDInsight 群集。
 * [在 HDInsight 中使用空边缘节点](/documentation/articles/hdinsight-apps-use-edge-node/)：了解如何使用空边缘节点访问 HDInsight 群集、测试和托管 HDInsight 应用程序。
 
-<!---HONumber=Mooncake_0103_2017-->
+<!---HONumber=Mooncake_0320_2017-->

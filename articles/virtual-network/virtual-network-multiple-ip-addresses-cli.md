@@ -15,7 +15,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="infrastructure-services"
     ms.date="11/17/2016"
-    wacn.date="01/13/2017"
+    wacn.date="03/24/2017"
     ms.author="annahar" />  
 
 
@@ -35,24 +35,42 @@
 
 1. 按照[安装和配置 Azure CLI](/documentation/articles/xplat-cli-install/) 一文中的步骤安装和配置 Azure CLI，并登录 Azure 帐户。
 
+2. 通过登录后在 PowerShell 中运行以下命令并选择相应的订阅来注册预览版：
+
+        Register-AzureRmProviderFeature -FeatureName AllowMultipleIpConfigurationsPerNic -ProviderNamespace Microsoft.Network
+
+        Register-AzureRmProviderFeature -FeatureName AllowLoadBalancingonSecondaryIpconfigs -ProviderNamespace Microsoft.Network
+    
+        Register-AzureRmResourceProvider -ProviderNamespace Microsoft.Network
+
+    请不要尝试完成剩余步骤，直至运行 ```Get-AzureRmProviderFeature``` 命令时看到以下输出：
+
+        FeatureName                            ProviderName      RegistrationState
+        -----------                            ------------      -----------------      
+        AllowLoadBalancingOnSecondaryIpConfigs Microsoft.Network Registered       
+        AllowMultipleIpConfigurationsPerNic    Microsoft.Network Registered       
+
+    >[AZURE.NOTE] 
+    这可能需要几分钟的时间。
+
 3. [创建资源组](/documentation/articles/virtual-machines-linux-create-cli-complete/#create-resource-groups-and-choose-deployment-locations)，然后创建[虚拟网络和子网](/documentation/articles/virtual-machines-linux-create-cli-complete/#create-a-virtual-network-and-subnet)。按如下所示，更改 ``` --address-prefixes ``` 和 ```--address-prefix``` 字段，满足本文列出的具体方案要求：
 
         --address-prefixes 10.0.0.0/16
         --address-prefix 10.0.0.0/24
 
     >[AZURE.NOTE] 
-    上面引用的文章使用“西欧”作为创建资源的位置，但本文使用“中国西北部”。相应更改位置。
+    上面引用的文章使用“中国北部”作为创建资源的位置，但本文使用“中国西北部”。相应更改位置。
 
 4. 为 VM [创建存储帐户](/documentation/articles/virtual-machines-linux-create-cli-complete/#create-a-storage-account)。
 
 5. 创建要分配给 NIC 的 NIC 和 IP 配置。可根据需要添加、删除或更改配置。方案所述的配置如下所示：
 
-	**IPConfig-1**
+    **IPConfig-1**
 
-	输入以下命令，创建：
+    输入以下命令，创建：
 
-	- 一个具有静态公共 IP 地址的公共 IP 地址资源
-	- 一个具有公共 IP 地址资源和动态专用 IP 地址的 IP 配置
+    - 一个具有静态公共 IP 地址的公共 IP 地址资源
+    - 一个具有公共 IP 地址资源和动态专用 IP 地址的 IP 配置
 
         azure network public-ip create --resource-group myResourceGroup --location chinaeast --name myPublicIP --domain-name-label mypublicdns --allocation-method Static
 
@@ -81,9 +99,7 @@
 6. [创建 Linux VM](/documentation/articles/virtual-machines-linux-create-cli-complete/#create-the-linux-vms)。请务必删除 ```  --availset-name myAvailabilitySet \ ``` 属性，此方案不需要它。根据方案使用相应的位置。
 
     >[AZURE.WARNING] 
-    > 如果选择的位置不支持 VM 大小，“创建 VM”一文中的步骤 6 会失败。运行以下命令，以便获取中国东部 VM 的完整列表，例如：
-    > `azure vm sizes --location chinaeast`
-    > 此位置名称可根据方案更改。
+    如果选择的位置不支持 VM 大小，“创建 VM”一文中的步骤 6 会失败。运行以下命令，以便获取中国东部 VM 的完整列表，例如：`azure vm sizes --location chinaeast` 此位置名称可根据方案更改。
 
     例如，若要将 VM 大小更改为标准 DS2 v2，只需在步骤 6 中将以下属性 ```  --vm-size Standard_DS3_v2``` 到添加 ``` azure vm create ``` 命令。
 
@@ -102,7 +118,7 @@
 3. 根据要求，完成以下任一部分中的步骤：
 
     **添加专用 IP 地址**
-    
+	
     若要将专用 IP 地址添加到 NIC，必须使用以下命令创建 IP 配置。如果想要添加动态专用 IP 地址，请在输入命令前删除 ```-PrivateIpAddress 10.0.0.7```。指定的静态 IP 地址必须是子网的未使用地址。
 
         azure network nic ip-config create --resource-group myResourceGroup --nic-name myNic1 --private-ip-address 10.0.0.7 --name IPConfig-4
@@ -110,7 +126,7 @@
     使用唯一配置名称和专用 IP 地址（用于具有静态 IP 地址的配置），根据需要创建多个配置。
 
     **添加公共 IP 地址**
-    
+	
     将公共 IP 地址关联到新 IP 配置或现有 IP 配置即可添加它。根据需要，完成以下任一部分中的步骤。
 
     > [AZURE.NOTE]
@@ -118,28 +134,27 @@
     >
 
     **将资源关联到新 IP 配置**
-    
+	
     每次在新 IP 配置中添加公共 IP 地址时，还必须添加专用 IP 地址，因为所有 IP 配置都必须具有专用 IP 地址。可添加现有公共 IP 地址资源，也可创建新的公共 IP 地址资源。若要新建，请输入以下命令：
 
           azure network public-ip create --resource-group myResourceGroup --location chinaeast --name myPublicIP3 --domain-name-label mypublicdns3
 
-     若要创建具有动态专用 IP 地址和关联的 *myPublicIP3* 公共 IP 地址资源的新 IP 配置，请输入以下命令：
+    若要创建具有动态专用 IP 地址和关联的 *myPublicIP3* 公共 IP 地址资源的新 IP 配置，请输入以下命令：
 
         azure network nic ip-config create --resource-group myResourceGroup --nic-name myNic --name IPConfig-4 --public-ip-name myPublicIP3
 
-    **将资源关联到现有 IP 配置**
-    公共 IP 地址资源仅可关联到尚未关联公共 IP 地址资源的 IP 配置。可输入以下命令，确定某个 IP 配置是否具有关联的公共 IP 地址：
+    **将资源关联到现有 IP 配置**公共 IP 地址资源仅可关联到尚未关联公共 IP 地址资源的 IP 配置。可输入以下命令，确定某个 IP 配置是否具有关联的公共 IP 地址：
 
         azure network nic ip-config list --resource-group myResourceGroup --nic-name myNic1
 
     在返回的输出中查找类似如下所示的行：
-    
+	
         Name               Provisioning state  Primary  Private IP allocation  Private IP version  Private IP address  Subnet    Public IP
         -----------------  ------------------  -------  ---------------------  ------------------  ------------------  --------  -----------
         default-ip-config  Succeeded           true     Dynamic                IPv4                10.0.0.4            mySubnet  myPublicIP
         IPConfig-2         Succeeded           false    Static                 IPv4                10.0.0.5            mySubnet  myPublicIP2
         IPConfig-3         Succeeded           false    Dynamic                IPv4                10.0.0.6            mySubnet
-     
+	 
     *IpConfig-3* 的**公共 IP** 列为空白，因此，当前没有公共 IP 地址资源与其关联。可将现有公共 IP 地址资源添加到 IpConfig-3，或输入以下命令进行创建：
 
         azure network public-ip create --resource-group  myResourceGroup --location chinaeast --name myPublicIP3 --domain-name-label mypublicdns3 --allocation-method Static
@@ -153,16 +168,15 @@
         azure network nic ip-config list --resource-group myResourceGroup --nic-name myNic1
 
     您应该会看到与下面类似的输出：
-    
+	
         Name               Provisioning state  Primary  Private IP allocation  Private IP version  Private IP address  Subnet    Public IP
         -----------------  ------------------  -------  ---------------------  ------------------  ------------------  --------  -----------
         default-ip-config  Succeeded           true     Dynamic                IPv4                10.0.0.4            mySubnet  myPublicIP
         IPConfig-2         Succeeded           false    Static                 IPv4                10.0.0.5            mySubnet  myPublicIP2
         IPConfig-3         Succeeded           false    Dynamic                IPv4                10.0.0.6            mySubnet  myPublicIP3
-
+     
 9. 根据本文[将 IP 地址添加到 VM 操作系统](#os-config)部分中的说明，将添加到 NIC 的专用 IP 地址添加到 VM 操作系统。请勿向操作系统添加公共 IP 地址。
 
 [AZURE.INCLUDE [virtual-network-multiple-ip-addresses-os-config.md](../../includes/virtual-network-multiple-ip-addresses-os-config.md)]
 
-<!---HONumber=Mooncake_0109_2017-->
-<!--Update_Description: Move multiple ip intro, scenario, and OS Config into include files-->
+<!---HONumber=Mooncake_0320_2017-->

@@ -15,7 +15,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="infrastructure-services"
     ms.date="11/30/2016"
-    wacn.date="01/13/2017"
+    wacn.date="03/24/2017"
     ms.author="annahar" />  
 
 
@@ -39,6 +39,24 @@
 
 ### <a name="coreadd"></a>核心步骤
 
+1. 通过登录后在 PowerShell 中运行以下命令并选择相应的订阅来注册预览版：
+
+        Register-AzureRmProviderFeature -FeatureName AllowMultipleIpConfigurationsPerNic -ProviderNamespace Microsoft.Network
+
+        Register-AzureRmProviderFeature -FeatureName AllowLoadBalancingonSecondaryIpconfigs -ProviderNamespace Microsoft.Network
+    
+        Register-AzureRmResourceProvider -ProviderNamespace Microsoft.Network
+
+    请不要尝试完成剩余步骤，直至运行 ```Get-AzureRmProviderFeature``` 命令时看到以下输出：
+
+        FeatureName                            ProviderName      RegistrationState
+        -----------                            ------------      -----------------      
+        AllowLoadBalancingOnSecondaryIpConfigs Microsoft.Network Registered       
+        AllowMultipleIpConfigurationsPerNic    Microsoft.Network Registered       
+
+    >[AZURE.NOTE] 
+    这可能需要几分钟的时间。
+	
 2. 根据需要浏览到 https://portal.azure.cn 的 Azure 门户预览并登录。
 3. 在门户中单击“更多服务”> 在筛选框中键入“虚拟机”，然后单击“虚拟机”。
 4. 在“虚拟机”边栏选项卡中单击要向其添加 IP 地址的 VM。在显示的虚拟机边栏选项卡中单击“网络接口”，然后选择要向其添加 IP 地址的网络接口。在下图所示的示例中，已从名为“myVM”的 VM 中选定名为“myNIC”的 NIC：
@@ -114,7 +132,7 @@
 
     > [AZURE.NOTE]
     即使没有向 IP 配置显式分配专用 IP 地址，也会自动分配一个，因为所有 IP 配置都必须有一个专用 IP 地址。
-   >
+    >
 
 4. 可以单击“添加”添加其他 IP 配置，也可以关闭所有打开的边栏选项卡，完成添加 IP 地址的操作。
 5. 将专用 IP 地址添加到 VM 操作系统，只需完成本文[将 IP 地址添加到 VM 操作系统](#os-config)部分针对操作系统的步骤即可。请勿向操作系统添加公共 IP 地址。
@@ -136,8 +154,6 @@
 
 4. 可以单击“添加”添加其他 IP 配置，也可以关闭所有打开的边栏选项卡，完成添加 IP 地址的操作。请勿向操作系统添加公共 IP 地址。
 
-
 [AZURE.INCLUDE [virtual-network-multiple-ip-addresses-os-config.md](../../includes/virtual-network-multiple-ip-addresses-os-config.md)]
 
-<!---HONumber=Mooncake_0109_2017-->
-<!--Update_Description: Move multiple ip intro, scenario, and OS Config into include files, add details to "add ip addresses to VM"-->
+<!---HONumber=Mooncake_0320_2017-->

@@ -14,8 +14,8 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="big-data"
-    ms.date="11/08/2016"
-    wacn.date="01/25/2017"
+    ms.date="02/13/2017"
+    wacn.date="03/24/2017"
     ms.author="larryfr" />
 
 # 使用 Hive JDBC 驱动程序连接到 Azure HDInsight 上的 Hive
@@ -31,6 +31,10 @@
 要完成本文中的步骤，需要：
 
 * HDInsight 群集上的 Hadoop。可以使用基于 Linux 或基于 Windows 的群集。
+
+    > [AZURE.IMPORTANT]
+    Linux 是在 HDInsight 3.4 版或更高版本上使用的唯一操作系统。有关详细信息，请参阅 [HDInsight 在 Windows 上弃用](/documentation/articles/hdinsight-component-versioning/#hdi-version-32-and-33-nearing-deprecation-date)。
+
 * [SQuirreL SQL](http://squirrel-sql.sourceforge.net/)。SQuirreL 是 JDBC 客户端应用程序。
 
 要生成和运行本文中链接的 Java 应用程序示例，需要以下软件。
@@ -72,7 +76,7 @@ SQuirreL SQL 是一个 JDBC 客户端，可用于通过 HDInsight 群集远程�
             将 **USERNAME** 替换为群集的 SSH 用户帐户名称。将 **CLUSTERNAME** 替换为 HDInsight 群集名称。
         
         > [AZURE.NOTE]
-        在 Windows 环境中，需要使用 PSCP 实用程序（而不是 scp）。可以从 [http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html) 安装该程序。
+        在 Windows 环境中，可能没有 `scp` 命令。如果是这样，请改用 PSCP 实用程序。可以从 [http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html) 安装该程序。
 
     * 对于**基于 Windows 的 HDInsight**，请使用以下步骤下载 jar 文件。
      
@@ -88,9 +92,9 @@ SQuirreL SQL 是一个 JDBC 客户端，可用于通过 HDInsight 群集远程�
 
         3. 连接后，将以下文件从远程桌面会话复制到本地计算机。将其放置在名为 `hivedriver` 的本地目录中。
         
-            * C:\apps\dist\hive-0.14.0.2.2.9.1-7\lib\hive-jdbc-0.14.0.2.2.9.1-7-standalone.jar
-            * C:\apps\dist\hadoop-2.6.0.2.2.9.1-7\share\hadoop\common\hadoop-common-2.6.0.2.2.9.1-7.jar
-            * C:\apps\dist\hadoop-2.6.0.2.2.9.1-7\share\hadoop\common\lib\hadoop-auth-2.6.0.2.2.9.1-7.jar
+            * C:\\apps\\dist\\hive-0.14.0.2.2.9.1-7\\lib\\hive-jdbc-0.14.0.2.2.9.1-7-standalone.jar
+            * C:\\apps\\dist\\hadoop-2.6.0.2.2.9.1-7\\share\\hadoop\\common\\hadoop-common-2.6.0.2.2.9.1-7.jar
+            * C:\\apps\\dist\\hadoop-2.6.0.2.2.9.1-7\\share\\hadoop\\common\\lib\\hadoop-auth-2.6.0.2.2.9.1-7.jar
           
             > [AZURE.NOTE]
             群集的路径和文件名中包含的版本号可能会有所不同。
@@ -189,5 +193,4 @@ SQuirreL SQL 是一个 JDBC 客户端，可用于通过 HDInsight 群集远程�
 * [将 Pig 与 HDInsight 配合使用](/documentation/articles/hdinsight-use-pig/)
 * [将 MapReduce 作业与 HDInsight 配合使用](/documentation/articles/hdinsight-use-mapreduce/)
 
-<!---HONumber=Mooncake_0120_2017-->
-<!--Update_Description: update from ASM to ARM-->
+<!---HONumber=Mooncake_0320_2017-->

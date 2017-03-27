@@ -1,9 +1,6 @@
-## 从 RM 部署模型到经典部署模型的对等虚拟网络
-
-在此方案中，在名为 **VNET1** 和 **VNET2** 的两个 VNet 之间创建对等网络，这两个 VNet 分别属于 Azure Resource Manager 部署模型和经典部署模型。
-
-> [AZURE.NOTE] 这两个虚拟网络必须位于同一订阅中。
+## <a name="x-model"></a>对通过不同部署模型创建的虚拟网络进行对等互连
+在此方案中，将在两个名为 **VNET1** 和 **VNET2** 的 VNet 中创建对等互连。VNET1 通过 Resource Manager 部署模型创建，VNET2 通过经典部署模型创建。
 
 ![asm 到 arm 部署方案](./media/virtual-networks-create-vnetpeering-scenario-asmtoarm-include/figure01.PNG)  
 
-<!---HONumber=Mooncake_1010_2016-->
+<!---HONumber=Mooncake_0320_2017-->

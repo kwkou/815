@@ -13,8 +13,8 @@
     ms.topic="article"
     ms.tgt_pltfrm="vm-linux"
     ms.workload="infrastructure"
-    ms.date="12/20/2016"
-    wacn.date="03/20/2017"
+    ms.date="02/14/2017"
+    wacn.date="03/24/2017"
     ms.author="iainfou" />  
 
 
@@ -151,4 +151,4 @@ MongoDB 为 Red Hat/CentOS、SUSE、Ubuntu 和 Debian 等 Linux 分发版[提供
 Azure Resource Manager 模板使用自定义脚本扩展在 VM 上下载并执行脚本。有关详细信息，请参阅[在 Linux 虚拟机上使用 Azure 自定义脚本扩展](/documentation/articles/virtual-machines-linux-extensions-customscript/)。
 
 <!---HONumber=Mooncake_0313_2017-->
-<!--Update_Description: add information about CLI 2.0-->
+<!--Update_Description: update meta data-->

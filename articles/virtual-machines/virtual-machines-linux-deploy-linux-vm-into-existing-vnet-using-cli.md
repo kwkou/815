@@ -14,8 +14,8 @@
     ms.tgt_pltfrm="vm-linux"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="12/05/2016"
-    wacn.date="03/20/2017"
+    ms.date="01/31/2017"
+    wacn.date="03/24/2017"
     ms.author="v-livech" />  
 
 
@@ -146,4 +146,4 @@ VNet 中的 VM 必须位于一个子网中。每个 VNet 可以有多个子网�
 * [使用模板在 Azure 上创建 Linux VM](/documentation/articles/virtual-machines-linux-create-ssh-secured-vm-from-template/)
 
 <!---HONumber=Mooncake_0313_2017-->
-<!--Update_Description: add information about CLI 2.0-->
+<!--Update_Description: update meta data-->

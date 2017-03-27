@@ -14,8 +14,8 @@
     ms.tgt_pltfrm="vm-linux"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="12/05/2016"
-    wacn.date="03/20/2017"
+    ms.date="02/16/2017"
+    wacn.date="03/24/2017"
     ms.author="v-livech" />  
 
 
@@ -165,4 +165,4 @@ Azure 非常灵活，但若要使用 DNS 名称进行 VM 名称解析，需要�
 * [使用模板在 Azure 上创建 Linux VM](/documentation/articles/virtual-machines-linux-create-ssh-secured-vm-from-template/)
 
 <!---HONumber=Mooncake_0313_2017-->
-<!--Update_Description: add information about CLI 2.0-->
+<!--Update_Description: update meta data-->

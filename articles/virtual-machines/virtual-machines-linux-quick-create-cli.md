@@ -13,8 +13,8 @@
     ms.topic="hero-article"
     ms.tgt_pltfrm="vm-linux"
     ms.workload="infrastructure"
-    ms.date="09/26/2016"
-    wacn.date="03/01/2017"
+    ms.date="01/13/2016"
+    wacn.date="03/24/2017"
     ms.author="v-livech" />  
 
 
@@ -196,4 +196,4 @@
 * [Create an SSH Secured Linux VM on Azure using templates（使用模板在 Azure 上创建受 SSH 保护的 Linux VM）](/documentation/articles/virtual-machines-linux-create-ssh-secured-vm-from-template/)
 
 <!---HONumber=Mooncake_0116_2017-->
-<!--Update_Description: add information about CLI 2.0-->
+<!--Update_Description: update meta data-->

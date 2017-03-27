@@ -13,8 +13,8 @@
     ms.tgt_pltfrm="vm-linux"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="07/28/2016"
-    wacn.date="03/20/2017"
+    ms.date="02/02/2017"
+    wacn.date="03/24/2017"
     ms.author="cynthn" />
 
 # 创建在 Azure 上运行的 Linux 虚拟机副本
@@ -102,4 +102,4 @@
 若要了解如何使用 Azure CLI 来管理新虚拟机，请参阅 [Azure CLI commands for the Azure Resource Manager](/documentation/articles/azure-cli-arm-commands/)（Azure Resource Manager 的 Azure CLI 命令）。
 
 <!---HONumber=Mooncake_0313_2017-->
-<!--Update_Description: add information about CLI 2.0-->
+<!--Update_Description: update meta data-->

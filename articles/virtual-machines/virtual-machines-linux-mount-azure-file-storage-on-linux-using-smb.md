@@ -13,8 +13,8 @@
     ms.topic="article"
     ms.tgt_pltfrm="vm-linux"
     ms.workload="infrastructure"
-    ms.date="12/07/2016"
-    wacn.date="03/20/2017"
+    ms.date="02/13/2017"
+    wacn.date="03/24/2017"
     ms.author="v-livech" />  
 
 
@@ -105,4 +105,4 @@ Azure 文件存储使用标准 SMB 协议在云中提供文件共享。并且使
 - [使用 Azure CLI 加密 Linux VM 上的磁盘](/documentation/articles/virtual-machines-linux-encrypt-disks/)
 
 <!---HONumber=Mooncake_0313_2017-->
-<!--Update_Description: add information about CLI 2.0-->
+<!--Update_Description: update meta data-->

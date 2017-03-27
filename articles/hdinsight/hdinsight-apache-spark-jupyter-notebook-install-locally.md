@@ -1,5 +1,5 @@
 <properties
-    pageTitle="在计算机上安装 Jupyter 笔记本并将它连接到 HDInsight Spark 群集 | Azure"
+    pageTitle="在本地安装 Jupyter 笔记本并连接到 Azure Spark 群集 | Azure"
     description="了解如何在计算机上本地安装 Jupyter 笔记本并将其连接到 Azure HDInsight 上的 Apache Spark 群集。"
     services="hdinsight"
     documentationcenter=""
@@ -7,18 +7,20 @@
     manager="jhubbard"
     editor="cgronlun"
     tags="azure-portal" />
-<tags 
+<tags
     ms.assetid="48593bdf-4122-4f2e-a8ec-fdc009e47c16"
     ms.service="hdinsight"
     ms.workload="big-data"
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="09/26/2016"
-    wacn.date="02/06/2017"
-    ms.author="nitinme" />
+    ms.date="01/17/2017"
+    wacn.date="03/24/2017"
+    ms.author="nitinme" />  
 
-# 在计算机上安装 Jupyter 笔记本并连接到 HDInsight Linux 上的 Apache Spark 群集
+
+# 在计算机上安装 Jupyter 笔记本并连接到 HDInsight 上的 Apache Spark 群集
+
 在本文中，你将了解如何安装具有自定义 PySpark（适用于 Python）以及具有 Spark（适用于 Scala）内核和 Spark magic 的 Jupyter 笔记本，然后将笔记本连接到 HDInsight 群集。在本地计算机上安装 Jupyter 的原因多种多样，同时这种安装也面临着多种难题。有关原因和难题的列表，请参阅本文末尾的[为何要在计算机上安装 Jupyter](#why-should-i-install-jupyter-on-my-computer)。
 
 在计算机上安装 Jupyter 和 Spark magic 包括三个重要步骤。
@@ -33,7 +35,7 @@
 此处所列的先决条件不适用于安装 Jupyter。这些先决条件适用于安装笔记本之后将 Jupyter 笔记本连接到 HDInsight 群集。
 
 * Azure 订阅。请参阅[获取 Azure 试用版](/pricing/1rmb-trial/)。
-* HDInsight Linux 上的 Apache Spark 群集。有关说明，请参阅 [Create Apache Spark clusters in Azure HDInsight](/documentation/articles/hdinsight-apache-spark-jupyter-spark-sql/)（在 Azure HDInsight 中创建 Apache Spark 群集）。
+* HDInsight 上的 Apache Spark 群集。有关说明，请参阅 [Create Apache Spark clusters in Azure HDInsight](/documentation/articles/hdinsight-apache-spark-jupyter-spark-sql/)（在 Azure HDInsight 中创建 Apache Spark 群集）。
 
 ## 在计算机上安装 Jupyter 笔记本
 必须先安装 Python 才能安装 Jupyter 笔记本。Python 和 Jupyter 都是作为 [Ananconda分发版](https://www.continuum.io/downloads)的一部分提供的。当你安装 Anaconda 时，实际上安装的是某个 Python 分发版。安装 Anaconda 之后，可通过运行一个命令来添加 Jupyter 安装。本部分提供必须遵循的说明。
@@ -88,7 +90,7 @@
 
         python -c "import base64; print(base64.b64encode('{YOURPASSWORD}'))"
 
-5. 在 `config.json` 中配置相应的检测信号设置：
+5. 在 `config.json` 中配置相应的检测信号设置。应将这些设置添加为与之前添加的 `kernel_python_credentials` 和 `kernel_scala_credentials` 片段相同的级别。有关如何以及在何处添加检测信号设置的示例，请参阅[示例 config.json](https://github.com/jupyter-incubator/sparkmagic/blob/master/sparkmagic/example_config.json)。
 
     * 对于 `sparkmagic 0.5.0`（群集 v3.4），包括：
 
@@ -116,8 +118,7 @@
         ![创建新的 Jupyter 笔记本](./media/hdinsight-apache-spark-jupyter-notebook-install-locally/jupyter-kernels.png "创建新的 Jupyter 笔记本")  
 
 
-            Click **PySpark**.
-
+        单击“PySpark”。
 
     2. 运行以下代码片段。
 
@@ -129,7 +130,7 @@
     >[AZURE.TIP]
     如果你想要更新笔记本配置以连接到不同的群集，请使用一组新值更新 config.json，如上述步骤 3 中所示。
 
-## <a name="why-should-i-install-jupyter-on-my-computer"></a> 为何要在计算机上安装 Jupyter？
+## <a name="why-should-i-install-jupyter-on-my-computer"></a>为何要在计算机上安装 Jupyter？
 你可能会出于多种原因而要在计算机上安装 Jupyter，然后将其连接到 HDInsight 上的 Spark 群集。
 
 * 尽管 Azure HDInsight 中的 Spark 群集上已提供 Jupyter 笔记本，但在计算机上安装 Jupyter 可以选择在本地创建笔记本，根据正在运行的群集测试你的应用程序，然后将笔记本上载到群集。若要将笔记本上载到群集，可以使用群集上运行的 Jupyter 笔记本来上载，或者将它们保存到与群集关联的存储帐户中的 /HdiNotebooks 文件夹。有关如何在群集上存储笔记本的详细信息，请参阅 [Jupyter 笔记本存储在何处？](/documentation/articles/hdinsight-apache-spark-jupyter-notebook-kernels/#where-are-the-notebooks-stored)
@@ -164,6 +165,6 @@
 
 ### 管理资源
 * [管理 Azure HDInsight 中 Apache Spark 群集的资源](/documentation/articles/hdinsight-apache-spark-resource-manager/)
-* [Track and debug jobs running on an Apache Spark cluster in HDInsight（跟踪和调试 HDInsight 中的 Apache Spark 群集上运行的作业）](/documentation/articles/hdinsight-apache-spark-job-debugging/)
+* [跟踪和调试 HDInsight 中的 Apache Spark 群集上运行的作业](/documentation/articles/hdinsight-apache-spark-job-debugging/)
 
-<!---HONumber=Mooncake_0103_2017-->
+<!---HONumber=Mooncake_0320_2017-->
