@@ -1,6 +1,6 @@
 <properties
-	pageTitle="云服务常见问题 | Azure"
-	description="有关云服务的常见问题。"
+	pageTitle="Azure 云服务角色常见问题解答 | Azure"
+	description="有关 Azure 云服务的常见问题解答。解答有关证书、Web 角色和辅助角色的一些常见问题。"
 	services="cloud-services"
 	documentationCenter=""
 	authors="Thraka"
@@ -15,15 +15,14 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="11/16/2016"
-	wacn.date="12/05/2016"
-	ms.author="adegeo"/>  
+	ms.author="adegeo"
+	wacn.date="03/24/2017"/>  
 
 
 # 云服务常见问题
 本文回答了一些关于 Azure 云服务的常见问题。你还可以访问 [Azure 支持 FAQ](http://go.microsoft.com/fwlink/?LinkID=185083) 了解一般的 Azure 定价和支持信息。还可以参阅[云服务 VM 大小页面](/documentation/articles/cloud-services-sizes-specs/)，了解大小信息。
 
 ## <a name="certificates"></a> 证书
-
 ### 应该在何处安装我的证书？
 
 - **My**  
@@ -57,7 +56,8 @@ Azure 会阻止删除正在使用的证书。需要删除使用该证书的部�
 
 ### 我在门户中找不到管理证书
 
-[管理证书](/documentation/articles/azure-api-management-certs/)仅在 Azure 经典经管门户中提供。
+[管理证书](/documentation/articles/azure-api-management-certs/)仅在 Azure 经典管理门户中提供。当前的 Azure 门户不使用管理证书。
+
 ### 如何禁用管理证书？
 
 [管理证书](/documentation/articles/azure-api-management-certs/)无法禁用。不想再使用它们时，可以通过 Azure 经典管理门户进行删除。
@@ -67,7 +67,7 @@ Azure 会阻止删除正在使用的证书。需要删除使用该证书的部�
 
 ## “安全”
 ### 禁用 SSL 3.0
-若要禁用 SSL 3.0 并使用 TLS 安全性，请创建此[博客](https://azure.microsoft.com/zh-CN/blog/how-to-disable-ssl-3-0-in-azure-websites-roles-and-virtual-machines/)文章中介绍的启动任务。
+若要禁用 SSL 3.0 并使用 TLS 安全性，请创建此博客文章中介绍的启动任务：https://azure.microsoft.com/zh-cn/blog/how-to-disable-ssl-3-0-in-azure-websites-roles-and-virtual-machines/
 
 ## 扩展云服务
 ### 我不能缩放超过 X 个实例
@@ -79,4 +79,4 @@ Azure 订阅对可以使用的内核数存在限制。如果已使用所有可�
 
 首先，请确保已打开想要为其保留 IP 的虚拟机实例。其次，请确保为过渡和生产部署使用保留 IP。**请勿**在部署升级过程中更改设置。
 
-<!---HONumber=Mooncake_1128_2016-->
+<!---HONumber=Mooncake_0320_2017-->

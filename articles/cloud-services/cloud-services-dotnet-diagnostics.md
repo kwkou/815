@@ -15,14 +15,14 @@
 	ms.devlang="dotnet"
 	ms.topic="article"
 	ms.date="01/25/2016"
-	wacn.date="12/12/2016"
+	wacn.date="03/24/2017"
 	ms.author="robb"/>
 
 
 
 # 在 Azure 云服务中启用 Azure 诊断
 
-
+有关 Azure 诊断的背景信息，请参阅 [Azure 诊断概述](/documentation/articles/azure-diagnostics/)。
 
 
 ## 如何在辅助角色中启用诊断
@@ -30,7 +30,7 @@
 本演练介绍如何实现使用 .NET EventSource 类发出遥测数据的 Azure 辅助角色。Azure Diagnostics 用于收集遥测数据，并将其存储在一个 Azure 存储帐户中。创建辅助角色时，Visual Studio 将在适用于 .NET 2.4 和更低版本的 Azure SDK 中，自动启用 Diagnostics 1.0 作为解决方案的一部分。以下说明介绍了创建辅助角色、从解决方案禁用 Diagnostics 1.0，以及在辅助角色中部署 Diagnostics 1.2 或 1.3 的过程。
 
 ### 先决条件
-本文假定你具有 Azure 订阅，并将 Visual Studio 2013 与 Azure SDK 结合使用。如果你没有 Azure 订阅，你可以注册[试用版][]。请确保 [安装和配置 Azure PowerShell 0.8.7 或更高版本][]。
+本文假定你具有 Azure 订阅，并将 Visual Studio 2013 与 Azure SDK 结合使用。如果你没有 Azure 订阅，你可以注册[试用版][]。确保 [安装和配置 Azure PowerShell 0.8.7 或更高版本][]。
 
 ### 步骤 1：创建辅助角色
 1.	启动 **Visual Studio 2013**。
@@ -123,6 +123,9 @@
 
 
 ### 步骤 3：部署辅助角色
+
+[AZURE.INCLUDE [cloud-services-wad-warning](../../includes/cloud-services-wad-warning.md)]
+
 1.	从 Visual Studio 中选择 **WadExample** 项目，然后从“生成”菜单中选择“发布”，以将辅助角色部署到 Azure。
 2.	选择你的订阅。
 3.	在“Azure 发布设置”对话框中，选择“新建...”。
@@ -167,7 +170,9 @@
 	
 
 ### 步骤 5：在辅助角色上安装 Diagnostics
-用于在 Web 或辅助角色上管理 Diagnostics 的 PowerShell cmdlet 为：`Set-AzureServiceDiagnosticsExtension`、`Get-AzureServiceDiagnosticsExtension` 和 `Remove-AzureServiceDiagnosticsExtension`。
+用于在 Web 或辅助角色上管理 Diagnostics 的 PowerShell cmdlet 为：
+
+    Set-AzureServiceDiagnosticsExtension、Get-AzureServiceDiagnosticsExtension 和 Remove-AzureServiceDiagnosticsExtension。
 
 1.	打开 Azure PowerShell。
 2.	执行脚本以在辅助角色上安装 Diagnostics（将 *StorageAccountKey* 替换为 wadexample 存储帐户的存储帐户密钥）：
@@ -182,7 +187,6 @@
 
 ### 步骤 6：查看遥测数据
 在 Visual Studio **服务器资源管理器**中，导航到 wadexample 存储帐户。在云服务大约运行 5 分钟后，你应该会看到表 **WADEnumsTable**、**WADHighFreqTable**、**WADMessageTable**、**WADPerformanceCountersTable** 和 **WADSetOtherTable**。双击其中一个表即可查看已收集的遥测数据。
-
 ![CloudServices\_diag\_tables](./media/cloud-services-dotnet-diagnostics/WadExampleTables.png)
 
 
@@ -190,13 +194,19 @@
 
 诊断配置文件定义启动诊断代理时用于初始化诊断配置设置的值。有关有效值和示例，请参阅[最新架构参考](https://msdn.microsoft.com/zh-cn/library/azure/mt634524.aspx)。
 
+## 故障排除
+
+如果遇到问题，请参阅 [Azure 诊断故障排除](/documentation/articles/azure-diagnostics-troubleshooting/)，以获得有关常见问题的帮助。
+
+## 后续步骤
+若要更改所收集的数据、进行故障排除或者了解有关诊断的常规信息，请参阅[与虚拟机相关的 Azure 诊断文章列表](/documentation/articles/azure-diagnostics/#cloud-services-using-azure-diagnostics)。
 
 
-[EventSource 类]: http://msdn.microsoft.com/zh-cn/library/system.diagnostics.tracing.eventsource(v=vs.110).aspx
+[EventSource Class]: http://msdn.microsoft.com/zh-cn/library/system.diagnostics.tracing.eventsource(v=vs.110).aspx
 
 [Debugging an Azure Application]: http://msdn.microsoft.com/zh-cn/library/windowsazure/ee405479.aspx
 [Collect Logging Data by Using Azure Diagnostics]: http://msdn.microsoft.com/zh-cn/library/windowsazure/gg433048.aspx
 [试用版]: /pricing/1rmb-trial/
 [安装和配置 Azure PowerShell 0.8.7 或更高版本]:  /documentation/articles/powershell-install-configure/
 
-<!---HONumber=Mooncake_Quality_Review_1118_2016-->
+<!---HONumber=Mooncake_0320_2017-->

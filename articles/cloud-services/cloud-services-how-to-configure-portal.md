@@ -15,7 +15,8 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="12/07/2016"
-	ms.author="adegeo"/>
+	ms.author="adegeo"
+	wacn.date="03/24/2017"/>
 
 # 如何配置云服务
 
@@ -39,8 +40,17 @@
 
 ![Azure 云服务设置边栏选项卡](./media/cloud-services-how-to-configure-portal/cs-settings-blade.png)
 
+
+### 管理来宾 OS 版本
+
+默认情况下，Azure 会定期将来宾 OS 更新为 OS 系列（在服务配置 (.cscfg) 中指定）中支持的最新映像，例如 Windows Server 2016。
+
+如果需要设定某一特定 OS 版本，可在“配置”边栏选项卡中进行设置。
+
+![设置 OS 版本](./media/cloud-services-how-to-configure-portal/cs-settings-config-guestosversion.png)  
+
 >[AZURE.NOTE]
-不能使用 **Azure 门户预览** 更改用于云服务的操作系统，仅可通过 [Azure 经典管理门户](http://manage.windowsazure.cn)更改此设置。详细信息见[此处](/documentation/articles/cloud-services-how-to-configure/#update-a-cloud-service-configuration-file)。
+> 选择特定 OS 版本会禁用自动 OS 更新，用户需要自行负责修补工作。务必确保角色实例可以接收更新，否则应用程序可能存在安全漏洞。
 
 ## 监视
 
@@ -60,13 +70,11 @@
 ![](./media/cloud-services-how-to-configure-portal/cs-alert-item.png)
 
 ### 配置从度量值磁贴进行的监视
-
 你可以单击“云服务”边栏选项卡的“监视”部分中的某个度量值磁贴，而不必使用“设置”>“警报规则”。
 
 ![云服务监视](./media/cloud-services-how-to-configure-portal/cs-monitoring.png)
 
 可以在此处自定义用于磁贴的图表，也可以添加警报规则。
-
 
 ## 重新启动、重置映像或远程桌面
 
@@ -82,30 +90,23 @@
 ![云服务实例按钮](./media/cloud-services-how-to-configure-portal/cs-instance-buttons.png)  
 
 
-
-
 ## 重新配置 .cscfg
 可能需要通过 [service config (cscfg)](/documentation/articles/cloud-services-model-and-package/#cscfg) 文件来重新配置云服务。首先，你需要下载 .cscfg 文件，对其进行修改，然后再上传该文件。
 
 1. 单击“设置”图标或“所有设置”链接以打开“设置”边栏选项卡。
 
     ![“设置”页](./media/cloud-services-how-to-configure-portal/cloud-service.png)
-
 2. 单击“配置”项。
 
     ![“配置”边栏选项卡](./media/cloud-services-how-to-configure-portal/cs-settings-config.png)
-
 3. 单击“下载”按钮。
 
     ![下载](./media/cloud-services-how-to-configure-portal/cs-settings-config-panel-download.png)
-
 4. 更新服务配置文件后，上传并应用配置更新：
 
     ![上传](./media/cloud-services-how-to-configure-portal/cs-settings-config-panel-upload.png)
-    
 5. 选择 .cscfg 文件，然后单击“确定”。
 
-			
 ## 后续步骤
 
 * 了解如何[部署云服务](/documentation/articles/cloud-services-how-to-create-deploy-portal/)。
@@ -113,4 +114,4 @@
 * [管理云服务](/documentation/articles/cloud-services-how-to-manage-portal/)。
 * 配置 [SSL 证书](/documentation/articles/cloud-services-configure-ssl-certificate-portal/)。
 
-<!---HONumber=Mooncake_1226_2016-->
+<!---HONumber=Mooncake_0320_2017-->

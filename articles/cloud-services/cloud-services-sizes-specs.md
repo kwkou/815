@@ -1,6 +1,6 @@
 <properties
- pageTitle="云服务的大小"
- description="列出 Azure 云服务 Web 角色和辅助角色的不同虚拟机大小。"
+ pageTitle="Azure 云服务的虚拟机大小"
+ description="列出 Azure 云服务 Web 角色和辅助角色的不同虚拟机大小（及 ID）。"
  services="cloud-services"
  documentationCenter=""
  authors="Thraka"
@@ -14,7 +14,7 @@
  ms.workload="tbd"
  ms.date="01/12/2017"
  ms.author="adegeo"
- wacn.date="01/25/2017"/>
+ wacn.date="03/24/2017"/>
 
 # 云服务的大小
 
@@ -165,5 +165,5 @@ ACU 标有 *使用 Intel® Turbo 技术来增加 CPU 频率，并提升性能。
 ## 后续步骤
 * 了解 [Azure 订阅和服务的限制、配额和约束](/documentation/articles/azure-subscription-service-limits/)。
 
-<!---HONumber=Mooncake_0120_2017-->
+<!---HONumber=Mooncake_0320_2017-->
 <!--Update_Description:update wording-->

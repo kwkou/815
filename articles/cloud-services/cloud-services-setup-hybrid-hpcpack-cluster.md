@@ -3,7 +3,7 @@
 	description="了解如何使用 Microsoft HPC Pack 和 Azure 设置小型的混合高性能计算 (HPC) 群集"
 	services="cloud-services"
 	documentationCenter=""
-	authors="dlepow"
+	author="dlepow"
 	manager="timlt"
 	editor=""
 	tags="azure-service-management,hpc-pack"/>
@@ -14,8 +14,8 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="07/14/2016"
-	wacn.date="12/12/2016"
+	ms.date="02/06/2017"
+	wacn.date="03/24/2017"/>  
 	ms.author="danlep"/>
 
 
@@ -28,12 +28,11 @@
 
 本教程展示了一种方法（有时称作群集“迸发至云”）来使用 Azure 中可缩放的按需计算资源运行计算密集型应用程序。
 
-本教程假定你之前未使用过计算群集或 HPC Pack。它只是为了出于演示目的帮助你快速部署混合群集。有关在生产环境中以更大规模部署混合 HPC Pack 群集的注意事项和步骤，请参阅[详细指南](http://go.microsoft.com/fwlink/p/?LinkID=200493)。有关使用 HPC Pack 的其他方案，包括在 Azure 虚拟机中自动执行群集部署，请参阅 [HPC cluster options with Microsoft HPC Pack in Azure（Azure 中 Microsoft HPC Pack 的 HPC 群集选项）](/documentation/articles/virtual-machines-windows-hpcpack-cluster-options/)。
-
+本教程假定用户之前未使用过计算群集或 HPC Pack 2012 R2。它只是为了出于演示目的帮助你快速部署混合群集。有关在生产环境中以更大规模部署混合 HPC Pack 群集或使用 HPC Pack 2016 的注意事项和步骤，请参阅[详细指南](http://go.microsoft.com/fwlink/p/?LinkID=200493)。有关使用 HPC Pack 的其他方案，包括在 Azure 虚拟机中自动执行群集部署，请参阅 [Azure 中 Microsoft HPC Pack 的 HPC 群集选项](/documentation/articles/virtual-machines-windows-hpcpack-cluster-options/)。
 
 ## 先决条件
 
-* **Azure 订阅** - 如果没有 Azure 订阅，花费几分钟即可创建[试用版](/pricing/1rmb-trial)。
+* **Azure 订阅**：如果没有 Azure 订阅，只需几分钟即可创建一个[试用帐户](/pricing/1rmb-trial)。
 
 * **运行 Windows Server 2012 R2 或 Windows Server 2012 的本地计算机** - 该计算机将是 HPC 群集的头节点。如果你尚未运行 Windows Server，可下载并安装[评估版](https://www.microsoft.com/evalcenter/evaluate-windows-server-2012-r2)。
 
@@ -45,6 +44,9 @@
 
 * **HPC Pack 2012 R2** - 免费[下载](https://www.microsoft.com/en-us/download/details.aspx?id=49922)最新版本的安装包，并将文件复制到头节点计算机或网络位置。选择语言与你所安装的 Windows Server 的语言相同的安装文件。
 
+    >[AZURE.NOTE]
+    > 如果要使用 HPC Pack 2016（而不是 HPC Pack 2012 R2），需进行其他配置。请参阅[详细指南](http://go.microsoft.com/fwlink/p/?LinkID=200493)。
+    > 
 * **域帐户** - 必须为此帐户配置头节点上的本地管理员权限，才能安装 HPC Pack。
 
 * **端口 443 上的 TCP 连接**：从头节点到 Azure。
@@ -89,7 +91,7 @@
 
 
 ## 准备 Azure 订阅
-使用 [Azure 经典管理门户](https://manage.windowsazure.cn)来执行以下 Azure 订阅步骤。之所以需要些步骤，是为了稍后可从本地头节点部署 Azure 节点。
+使用 [Azure 经典管理门户](https://manage.windowsazure.cn)来执行以下 Azure 订阅步骤。之所以需要些步骤，是为了稍后可从本地头节点部署 Azure 节点。以下部分将介绍详细过程。
 
 - 上传管理证书（为头节点和 Azure 间的安全连接所需）
 
@@ -310,12 +312,11 @@ HPC Pack 将在头节点上安装名为“默认 Microsoft HPC Azure 管理证�
 	本教程到此结束。
 
 ## 后续步骤
+* 浏览 [HPC Pack](https://technet.microsoft.com/library/cc514029) 的文档。
+* 若要以更大的规模设置混合 HPC Pack 群集部署，请参阅 [Burst to Azure Worker Role Instances with Microsoft HPC Pack](http://go.microsoft.com/fwlink/p/?LinkID=200493)（使用 Microsoft HPC Pack 迸发到 Azure 辅助角色实例）。
 
-- 参阅 [HPC Pack 2012 R2 和 HPC Pack 2012](http://go.microsoft.com/fwlink/p/?LinkID=263697) 的文档。
-
-- 若要以更大的规模设置混合 HPC Pack 群集部署，请参阅 [Burst to Azure Worker Role Instances with Microsoft HPC Pack](http://go.microsoft.com/fwlink/p/?LinkID=200493)（使用 Microsoft HPC Pack 迸发到 Azure 辅助角色实例）。
-
-- 有关 Azure 中的大型计算和 HPC 云解决方案范围的详细信息，请参阅 [Azure 中的大型计算：用于批处理和高性能计算 (HPC) 的技术资源](/documentation/articles/big-compute-resources/)。
+* 有关在 Azure 中创建 HPC Pack 群集的其他方法，包括使用 Azure Resource Manager 模板，请参阅[在 Azure 中使用 Microsoft HPC Pack 时的 HPC 群集选项](/documentation/articles/virtual-machines-windows-hpcpack-cluster-options/)。
+* 有关 Azure 中的大型计算和 HPC 云解决方案范围的详细信息，请参阅 [Azure 中的大型计算：用于批处理和高性能计算 (HPC) 的技术资源](/documentation/articles/big-compute-resources/)。
 
 
 [Overview]: ./media/cloud-services-setup-hybrid-hpcpack-cluster/hybrid_cluster_overview.png
@@ -355,4 +356,4 @@ HPC Pack 将在头节点上安装名为“默认 Microsoft HPC Azure 管理证�
 [stop_node4]: ./media/cloud-services-setup-hybrid-hpcpack-cluster/stop_node4.png
 [view_instances2]: ./media/cloud-services-setup-hybrid-hpcpack-cluster/view_instances2.png
 
-<!---HONumber=Mooncake_Quality_Review_1118_2016-->
+<!---HONumber=Mooncake_0320_2017-->

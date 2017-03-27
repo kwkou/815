@@ -14,7 +14,7 @@
 	ms.devlang="dotnet"
 	ms.topic="article"
 	ms.date="09/06/2016"
-	wacn.date="12/26/2016"
+	wacn.date="03/24/2017"
 	ms.author="adegeo"/>
 
 
@@ -24,9 +24,9 @@
 
 ## 在部署云服务过程中启用诊断扩展
 
-此方法适合持续集成类型的方案，在这些方案中可以启用诊断扩展作为部署云服务的一部分。创建新的云服务部署时，可以通过向 [New-AzureDeployment](https://msdn.microsoft.com/zh-cn/library/azure/mt589089.aspx) cmdlet 传入 *ExtensionConfiguration* 参数启用诊断扩展。*ExtensionConfiguration* 参数取值为可使用 [New-AzureServiceDiagnosticsExtensionConfig](https://msdn.microsoft.com/zh-cn/library/azure/mt589168.aspx) cmdlet 创建的诊断配置数组。
+此方法适合持续集成类型的方案，在这些方案中，可以在部署云服务的过程中启用诊断扩展。创建新的云服务部署时，可以通过向 [New-AzureDeployment](https://msdn.microsoft.com/zh-cn/library/azure/mt589089.aspx) cmdlet 传入 *ExtensionConfiguration* 参数启用诊断扩展。*ExtensionConfiguration* 参数取值为可使用 [New-AzureServiceDiagnosticsExtensionConfig](https://msdn.microsoft.com/zh-cn/library/azure/mt589168.aspx) cmdlet 创建的诊断配置数组。
 
-下例演示如何使用 WebRole 和 WorkerRole（每个都拥有不同的诊断配置）启用云服务的诊断。
+以下示例演示如何为某个云服务（其中的 WebRole 和 WorkerRole 拥有不同的诊断配置）启用诊断。
 
 	$service_name = "MyService"
 	$service_package = "CloudService.cspkg"
@@ -39,7 +39,7 @@
 	 
 	New-AzureDeployment -ServiceName $service_name -Slot Production -Package $service_package -Configuration $service_config -ExtensionConfiguration @($webrole_diagconfig,$workerrole_diagconfig) 
 
-如果诊断配置文件指定具有存储帐户名称的 StorageAccount 元素，则 New-AzureServiceDiagnosticsExtensionConfig cmdlet 将自动使用该存储帐户。要使其工作，存储帐户需要与要部署的云服务位于同一订阅中。
+如果诊断配置文件指定具有存储帐户名称的 `StorageAccount` 元素，则 `New-AzureServiceDiagnosticsExtensionConfig` cmdlet 自动使用该存储帐户。要使其工作，存储帐户需要与要部署的云服务位于同一订阅中。
 
 从 Azure SDK 2.6 开始，MSBuild 发布目标输出生成的扩展配置文件将包括基于服务配置文件 (.cscfg) 中指定的诊断配置字符串的存储帐户名称。以下脚本演示了在部署云服务时如何分析发布目标输出中的扩展配置文件并为每个角色配置诊断扩展。
 
@@ -82,9 +82,9 @@
 
 Visual Studio Online 使用类似的方法通过诊断扩展自动部署云服务。有关完整示例，请参阅 [Publish-AzureCloudDeployment.ps1](https://github.com/Microsoft/vso-agent-tasks/blob/master/Tasks/AzureCloudPowerShellDeployment/Publish-AzureCloudDeployment.ps1)。
 
-如果在诊断配置中未指定 StorageAccount，则需要将 StorageAccountName 参数传递给 cmdlet。如果指定了 StorageAccountName 参数，则 cmdlet 会始终使用该参数中指定的存储帐户，而不使用诊断配置文件中指定的存储帐户。
+如果在诊断配置中未指定 `StorageAccount`，则需要将 *StorageAccountName* 参数传递给 cmdlet。如果指定了 *StorageAccountName* 参数，则 cmdlet 会始终使用该参数中指定的存储帐户，而不使用诊断配置文件中指定的存储帐户。
 
-如果诊断存储帐户与云服务在不同订阅中，则需要将 StorageAccountName 和 StorageAccountKey 参数显式传递给 cmdlet。当诊断存储帐户在同一订阅中时，不需要 StorageAccountKey 参数，因为 cmdlet 可以在启用诊断扩展时自动查询和设置密钥值。但是，如果诊断存储帐户在不同订阅中，则 cmdlet 可能无法自动获取密钥，需要通过 StorageAccountKey 参数显式指定该密钥。
+如果诊断存储帐户与云服务在不同的订阅中，则需要将 *StorageAccountName* 和 *StorageAccountKey* 参数显式传递给 cmdlet。当诊断存储帐户在同一订阅中时，不需要 *StorageAccountKey* 参数，因为 cmdlet 可以在启用诊断扩展时自动查询和设置密钥值。但是，如果诊断存储帐户在不同的订阅中，则 cmdlet 可能无法自动获取密钥，需要通过 *StorageAccountKey* 参数显式指定该密钥。
 
 	$webrole_diagconfig = New-AzureServiceDiagnosticsExtensionConfig -Role "WebRole" -DiagnosticsConfigurationPath $webrole_diagconfigpath -StorageAccountName $diagnosticsstorage_name -StorageAccountKey $diagnosticsstorage_key
 	$workerrole_diagconfig = New-AzureServiceDiagnosticsExtensionConfig -Role "WorkerRole" -DiagnosticsConfigurationPath $workerrole_diagconfigpath -StorageAccountName $diagnosticsstorage_name -StorageAccountKey $diagnosticsstorage_key
@@ -94,6 +94,7 @@ Visual Studio Online 使用类似的方法通过诊断扩展自动部署云服�
 
 可以使用 [Set-AzureServiceDiagnosticsExtension](https://msdn.microsoft.com/zh-cn/library/azure/mt589140.aspx) cmdlet 在已运行的云服务上启用或更新诊断配置。
 
+[AZURE.INCLUDE [cloud-services-wad-warning](../../includes/cloud-services-wad-warning.md)]
 
 	$service_name = "MyService"
 	$webrole_diagconfigpath = "MyService.WebRole.PubConfig.xml" 
@@ -124,8 +125,8 @@ Visual Studio Online 使用类似的方法通过诊断扩展自动部署云服�
 
 ## 后续步骤
 
-- 有关使用 Azure 诊断和其他方法排查问题的详细说明，请参阅[在 Azure 云服务和虚拟机中启用诊断](/documentation/articles/cloud-services-dotnet-diagnostics)。
+- 有关使用 Azure 诊断和其他方法排查问题的详细说明，请参阅[在 Azure 云服务和虚拟机中启用诊断](/documentation/articles/cloud-services-dotnet-diagnostics/)。
 - [诊断配置架构](https://msdn.microsoft.com/zh-cn/library/azure/dn782207.aspx)介绍了诊断扩展的各种 XML 配置选项。
-- 若要了解如何为虚拟机启用诊断扩展，请参阅[使用 Azure Resource Manager 模板创建具有监视和诊断功能的 Windows 虚拟机](/documentation/articles/virtual-machines-windows-extensions-diagnostics-template)
+- 若要了解如何为虚拟机启用诊断扩展，请参阅[使用 Azure Resource Manager 模板创建具有监视和诊断功能的 Windows 虚拟机](/documentation/articles/virtual-machines-windows-extensions-diagnostics-template/)
 
-<!---HONumber=Mooncake_Quality_Review_1215_2016-->
+<!---HONumber=Mooncake_0320_2017-->
