@@ -4,7 +4,7 @@
 当你不再需要附加到虚拟机 (VM) 的数据磁盘时，你可以轻松地分离它。将磁盘从 VM 分离时，不会从存储中删除该磁盘。若果你希望再次使用磁盘上的现有数据，可以将其重新附加到相同的 VM 或另一个 VM。
 
 > [AZURE.NOTE]
-Azure 中的 VM 使用不同类型的磁盘 - 操作系统磁盘、本地临时磁盘和可选数据磁盘。有关详细信息，请参阅[关于虚拟机的磁盘和 VHD](/documentation/articles/virtual-machines-linux-about-disks-vhds/)。除非你同时也删除 VM，否则不能分离操作系统磁盘。
+Azure 中的 VM 使用不同类型的磁盘 - 操作系统磁盘、本地临时磁盘和可选数据磁盘。有关详细信息，请参阅[关于虚拟机的磁盘和 VHD](/documentation/articles/storage-about-disks-and-vhds-linux/)。除非你同时也删除 VM，否则不能分离操作系统磁盘。
 
 ## 找到磁盘
 在从 VM 中分离磁盘之前，你需要先确定 LUN 号（要分离的磁盘的标识符）。为此，请执行以下步骤：

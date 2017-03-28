@@ -35,7 +35,7 @@ Azure 提供一整套服务，可让你将本地数据中心扩展到 Azure，�
 <a id="compute"></a>
 ## 计算
 
-使用本地 Hyper-V 的客户可以将现有的虚拟机“提起并移动”到 Azure 和运行 Windows Server 2012（或更高版本）的服务提供程序，而不需要对 VM 进行更改或转换 VM 格式。有关详细信息，请参阅 [About disks and VHDs for Azure virtual machines（关于 Azure 虚拟机的磁盘和 VHD）](/documentation/articles/virtual-machines-linux-about-disks-vhds/)。
+使用本地 Hyper-V 的客户可以将现有的虚拟机“提起并移动”到 Azure 和运行 Windows Server 2012（或更高版本）的服务提供程序，而不需要对 VM 进行更改或转换 VM 格式。有关详细信息，请参阅 [About disks and VHDs for Azure virtual machines（关于 Azure 虚拟机的磁盘和 VHD）](/documentation/articles/storage-about-disks-and-vhds-linux/)。
 
 ## Azure Site Recovery
 

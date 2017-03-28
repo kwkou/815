@@ -2,7 +2,7 @@
 
 
 
-有关磁盘的详细信息，请参阅[关于虚拟机的磁盘和 VHD](/documentation/articles/virtual-machines-linux-about-disks-vhds/)。
+有关磁盘的详细信息，请参阅[关于虚拟机的磁盘和 VHD](/documentation/articles/storage-about-disks-and-vhds-linux/)。
 
 ## <a id="attachempty"></a> 附加空磁盘
 1. 打开 Azure CLI 并[连接到 Azure 订阅](/documentation/articles/xplat-cli-connect/)。确保你处于 Azure 服务管理模式 (`azure config mode asm`) 下。
