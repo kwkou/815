@@ -39,16 +39,16 @@
     ![MonitoringOptions](./media/storage-monitor-storage-account/stg-enable-metrics-01.png)  
 
 
-   可为每个服务启用两种类型的指标，新存储帐户默认已启用这两种指标：
+    可为每个服务启用两种类型的指标，新存储帐户默认已启用这两种指标：
 
-   * **聚合**：收集入口/出口、可用性、延迟和成功百分比等指标。系统将聚合 Blob、队列、表和文件服务的这些指标。
-   * **按 API**：除了聚合指标以外，还在 Azure 存储服务 API 中为每项存储操作收集一组相同的指标。
+    * **聚合**：收集入口/出口、可用性、延迟和成功百分比等指标。系统将聚合 Blob、队列、表和文件服务的这些指标。
+    * **按 API**：除了聚合指标以外，还在 Azure 存储服务 API 中为每项存储操作收集一组相同的指标。
 
-   若要设置数据保留策略，请移动“保留期(天)”滑块，或输入数据的保留天数（1 到 365 天）。新存储帐户的默认保留期为 7 天。如果不需要设置保留策略，请输入零。如果没有保留策略，则由用户自行决定是否删除监视数据。
+    若要设置数据保留策略，请移动“保留期(天)”滑块，或输入数据的保留天数（1 到 365 天）。新存储帐户的默认保留期为 7 天。如果不需要设置保留策略，请输入零。如果没有保留策略，则由用户自行决定是否删除监视数据。
 
-   > [AZURE.WARNING] 
-   手动删除指标数据会产生费用。陈旧的分析数据（超过保留策略的数据）将被系统删除，不会产生费用。建议根据要将帐户的存储分析数据保留多长时间来设置保留策略。有关详细信息，请参阅[启用存储指标时需要支付多少费用？](/documentation/articles/storage-enable-and-view-metrics/#what-charges-do-you-incur-when-you-enable-storage-metrics)
-   >
+    > [AZURE.WARNING] 
+    手动删除指标数据会产生费用。陈旧的分析数据（超过保留策略的数据）将被系统删除，不会产生费用。建议根据要将帐户的存储分析数据保留多长时间来设置保留策略。有关详细信息，请参阅[启用存储指标时需要支付多少费用？](/documentation/articles/storage-enable-and-view-metrics/#what-charges-do-you-incur-when-you-enable-storage-metrics)
+    >
 
 1. 完成监视配置后，选择“保存”。
 
@@ -66,24 +66,24 @@ Azure 存储使用[表存储](/documentation/articles/storage-introduction/#tabl
 
 1. 首先在 Azure 门户预览中显示存储指标图表。可以在**存储帐户边栏选项卡**以及各个服务（Blob、队列、表和文件）的“指标”边栏选项卡中找到图表。
 
-   本示例使用**存储帐户边栏选项卡**中显示的以下图表：
+    本示例使用**存储帐户边栏选项卡**中显示的以下图表：
 
-   ![在 Azure 门户预览中选择图表](./media/storage-monitor-storage-account/stg-customize-chart-00.png)  
+    ![在 Azure 门户预览中选择图表](./media/storage-monitor-storage-account/stg-customize-chart-00.png)  
 
 
 1. 接下来，单击图表中的任意位置打开“指标”边栏选项卡。选择“编辑图表”打开“编辑图表”边栏选项卡。
 
-   ![图表边栏选项卡中的编辑图表按钮](./media/storage-monitor-storage-account/stg-customize-chart-01.png)  
+    ![图表边栏选项卡中的编辑图表按钮](./media/storage-monitor-storage-account/stg-customize-chart-01.png)  
 
 
 1. 在“编辑图表”边栏选项卡中，选择要在图表中显示的指标“时间范围”，以及要显示其指标的**服务**（Blob、队列、表或文件）。此处，我们已选择要显示 Blob 服务在过去一周的指标：
 
-   ![在“编辑图表”边栏选项卡中选择时间范围和服务](./media/storage-monitor-storage-account/stg-customize-chart-02.png)  
+    ![在“编辑图表”边栏选项卡中选择时间范围和服务](./media/storage-monitor-storage-account/stg-customize-chart-02.png)  
 
 
 1. 选择要在图表中显示的各个**指标**，然后单击“确定”。例如，此处我们已选择显示 *ContainerCount* 和 *ObjectCount* 指标：
 
-   ![在“编辑图表”边栏选项卡选择单个指标](./media/storage-monitor-storage-account/stg-customize-chart-03.png)  
+    ![在“编辑图表”边栏选项卡选择单个指标](./media/storage-monitor-storage-account/stg-customize-chart-03.png)  
 
 
 图表设置不会影响存储帐户中监视数据的收集、聚合或存储，而只会影响指标数据的显示。
