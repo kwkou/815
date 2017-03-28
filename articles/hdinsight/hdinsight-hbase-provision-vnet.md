@@ -245,7 +245,7 @@
 
 * [开始使用 HDInsight](/documentation/articles/hdinsight-hadoop-tutorial-get-started-windows/)
 * [在 HDInsight 中使用空边缘节点](/documentation/articles/hdinsight-apps-use-edge-node/)
-* [在 HDInsight 中配置 HBase 复制](/documentation/articles/hdinsight-hbase-geo-replication/)
+* [在 HDInsight 中配置 HBase 复制](/documentation/articles/hdinsight-hbase-replication/)
 * [在 HDInsight 中创建 Hadoop 群集](/documentation/articles/hdinsight-provision-clusters/)
 * [开始在 HDInsight 中将 HBase 与 Hadoop 配合使用](/documentation/articles/hdinsight-hbase-tutorial-get-started/)
 * [虚拟网络概述][vnet-overview]
@@ -286,7 +286,6 @@
 [hdinsight-use-sqoop]: /documentation/articles/hdinsight-use-sqoop/
 [hdinsight-power-query]: /documentation/articles/hdinsight-connect-excel-power-query/
 [hdinsight-hive-odbc]: /documentation/articles/hdinsight-connect-excel-hive-ODBC-driver/
-[hdinsight-hbase-replication-dns]: /documentation/articles/hdinsight-hbase-geo-replication-configure-DNS/
 
 [img-dns-surffix]: ./media/hdinsight-hbase-provision-vnet-v1/DNSSuffix.png
 [img-primary-dns-suffix]: ./media/hdinsight-hbase-provision-vnet-v1/PrimaryDNSSuffix.png

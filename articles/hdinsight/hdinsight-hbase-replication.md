@@ -237,10 +237,9 @@ HBase 复制使用 ZooKeeper VM 的 IP 地址。必须为目标 HBase ZooKeeper 
 * [在 Azure 虚拟网络中创建 HBase 群集][hdinsight-hbase-provision-vnet]
 * [使用 HDInsight (Hadoop) 中的 Storm 和 HBase 分析传感器数据][hdinsight-sensor-data]
 
-[hdinsight-hbase-geo-replication-vnet]: /documentation/articles/hdinsight-hbase-geo-replication-configure-vnets/
-[hdinsight-hbase-geo-replication-dns]: /documentation/articles/hdinsight-hbase-geo-replication-configure-VNet/
+[hdinsight-hbase-replication-dns]: /documentation/articles/hdinsight-hbase-replication-configure-VNet/
 
-[img-vnet-diagram]: ./media/hdinsight-hbase-geo-replication/HDInsight.HBase.Replication.Network.diagram.png
+[img-vnet-diagram]: ./media/hdinsight-hbase-replication/HDInsight.HBase.Replication.Network.diagram.png
 
 [powershell-install]: https://docs.microsoft.com/powershell/azureps-cmdlets-docs
 [hdinsight-hbase-get-started]: /documentation/articles/hdinsight-hbase-tutorial-get-started-linux/

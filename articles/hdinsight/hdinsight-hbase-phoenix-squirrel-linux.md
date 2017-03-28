@@ -69,7 +69,7 @@
 HBase 是构建于 Hadoop 上的 Apache 开源 NoSQL 数据库，用于为大量非结构化和半结构化数据提供随机访问和高度一致性。
 - [在 Azure 虚拟网络上设置 HBase 群集][hdinsight-hbase-provision-vnet]：
 通过虚拟网络集成，可以将 HBase 群集部署到应用程序所在的虚拟网络，以便应用程序直接与 HBase 进行通信。
-- [在 HDInsight 中配置 HBase 地域复制](/documentation/articles/hdinsight-hbase-geo-replication/)： 了解如何跨两个 Azure 数据中心配置 HBase 复制。 
+- [在 HDInsight 中配置 HBase 地域复制](/documentation/articles/hdinsight-hbase-replication/)： 了解如何跨两个 Azure 数据中心配置 HBase 复制。 
 
 [azure-portal]: https://manage.windowsazure.cn
 [vnet-point-to-site-connectivity]: https://msdn.microsoft.com/zh-cn/library/azure/09926218-92ab-4f43-aa99-83ab4d355555#BKMK_VNETPT
