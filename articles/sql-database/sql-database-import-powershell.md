@@ -1,37 +1,30 @@
-<properties 
-    pageTitle="使用 PowerShell 导入 BACPAC 文件以创建 Azure SQL 数据库 | Azure" 
+<properties
+    pageTitle="使用 PowerShell 导入 BACPAC 文件以创建 Azure SQL 数据库 | Azure"
     description="使用 PowerShell 导入 BACPAC 文件以创建 Azure SQL 数据库"
     services="sql-database"
-    documentationCenter=""
-    authors="stevestein"
+    documentationcenter=""
+    author="stevestein"
     manager="jhubbard"
-    editor=""/>
-
+    editor="" />
 <tags
+    ms.assetid="8d78da13-43fe-4447-92e0-0a41d0321fd4"
     ms.service="sql-database"
+    ms.custom="migrate and move"
     ms.devlang="NA"
     ms.topic="article"
     ms.tgt_pltfrm="powershell"
     ms.workload="data-management"
-    ms.date="08/31/2016"
-    wacn.date="12/19/2016"
-    ms.author="sstein"/>  
+    ms.date="02/07/2017"
+    wacn.date="03/24/2017"
+    ms.author="sstein" />  
 
 
-# 使用 PowerShell 导入 BACPAC 文件以创建新的 Azure SQL 数据库
 
-**单一数据库**
-
-> [AZURE.SELECTOR]
-- [PowerShell](/documentation/articles/sql-database-import-powershell/)
-- [SSMS](/documentation/articles/sql-database-cloud-migrate-compatible-import-bacpac-ssms/)
-- [SqlPackage](/documentation/articles/sql-database-cloud-migrate-compatible-import-bacpac-sqlpackage/)
+# 使用 PowerShell 导入 BACPAC 文件以创建 Azure SQL 数据库
 
 本文说明如何使用 PowerShell 通过导入 [BACPAC](https://msdn.microsoft.com/zh-cn/library/ee210546.aspx#Anchor_4) 文件来创建 Azure SQL 数据库。
 
-数据库通过从 Azure 存储 Blob 容器导入的 BACPAC 文件 (.bacpac) 创建。如果 Azure 存储中没有 BACPAC 文件，请参阅[使用 PowerShell 将 Azure SQL 数据库存档到 BACPAC 文件](/documentation/articles/sql-database-export-powershell/)。如果已有一个 BACPAC 文件但该文件不在 Azure 存储中，[使用 AzCopy 轻松将它上传到 Azure 存储帐户](/documentation/articles/storage-use-azcopy/#blob-upload)。
-
-> [AZURE.NOTE] Azure SQL 数据库会自动为你可以还原的每个用户数据库创建和维护备份。有关详细信息，请参阅 [SQL 数据库自动备份](/documentation/articles/sql-database-automated-backups/)。
+## 先决条件
 
 
 若要导入 SQL 数据库，需要以下内容：
@@ -49,7 +42,7 @@
 
 有几个变量需要你将示例值替换为你的数据库和存储帐户的特定值。
 
-服务器名称应是上一步骤选择的订阅中当前存在的服务器。它应该是要在其中创建数据库的服务器。不支持直接将数据库导入弹性池。但是可以先导入到单一数据库，然后将该数据库移入池中。
+服务器名称应是上一步骤选择的订阅中当前存在的服务器。它应该是要在其中创建数据库的服务器。不支持直接将数据库导入弹性池。但是可以先作为单一数据库导入，然后将该数据库移入池中。
 
 数据库名称是要为新数据库赋予的名称。
 
@@ -68,7 +61,7 @@ Blob 名称是要从中创建数据库的现有 BACPAC 文件的名称。需要�
     $StorageKey = "primaryaccesskey"
 
 
-运行 [Get-Credential](https://msdn.microsoft.com/zh-cn/library/hh849815.aspx) cmdlet 会打开一个窗口，要求输入用户名和密码。请输入 SQL 数据库服务器的管理员登录名和密码（上述 $ServerName），而不是 Azure 帐户的用户名和密码。
+运行 [Get-Credential](https://msdn.microsoft.com/zh-cn/library/azure/hh849815(v=azure.300).aspx) cmdlet 会打开一个窗口，要求输入用户名和密码。请输入 SQL 数据库服务器的管理员登录名和密码（上述 $ServerName），而不是 Azure 帐户的用户名和密码。
 
     $credential = Get-Credential
 
@@ -109,7 +102,9 @@ Blob 名称是要从中创建数据库的现有 BACPAC 文件的名称。需要�
 
 
 ## 后续步骤
+* 若要了解如何连接到导入的 SQL 数据库并对其进行查询，请参阅[使用 SQL Server Management Studio 连接到 SQL 数据库并执行示例 T-SQL 查询](/documentation/articles/sql-database-connect-query-ssms/)。
+* 如需 SQL Server 客户顾问团队编写的有关使用 BACPAC 文件进行迁移的博客，请参阅 [使用 BACPAC 文件从 SQL Server 迁移到 Azure SQL 数据库](https://blogs.msdn.microsoft.com/sqlcat/2016/10/20/migrating-from-sql-server-to-azure-sql-database-using-bacpac-files/)。
+* 如需 SQL Server 数据库完整迁移过程的介绍（包括性能建议），请参阅[将 SQL Server 数据库迁移到 Azure SQL 数据库](/documentation/articles/sql-database-cloud-migrate/)。
 
-- 若要了解如何连接到并查询导入的 SQL 数据库，请参阅[使用 SQL Server Management Studio 连接到 SQL 数据库并执行示例 T-SQL 查询](/documentation/articles/sql-database-connect-query-ssms/)
-
-<!---HONumber=Mooncake_Quality_Review_1202_2016-->
+<!---HONumber=Mooncake_0320_2017-->
+<!--Update_Description: link references update-->

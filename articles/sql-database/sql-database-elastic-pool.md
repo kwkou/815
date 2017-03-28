@@ -4,7 +4,7 @@
     keywords="弹性池,sql 数据库"
     services="sql-database"
     documentationcenter=""
-    author="CarlRabeler"
+    author="ddove"
     manager="jhubbard"
     editor="" />
 <tags
@@ -12,20 +12,21 @@
     ms.service="sql-database"
     ms.custom="multiple databases"
     ms.devlang="NA"
-    ms.date="01/11/2017"
-    wacn.date="01/25/2017"
-    ms.author="CarlRabeler"
+    ms.date="02/01/2017"
+    wacn.date="03/24/2017"
+    ms.author="ddove"
     ms.workload="data-management"
-    ms.topic="get-started-article"
+    ms.topic="article"
     ms.tgt_pltfrm="NA" />  
 
 
-# 什么是 Azure 弹性池？
-SQL DB 弹性池是一种简单的低成本高效益的解决方案，用于管理使用模式变化很大且不可预测的多个数据库的性能目标。
+# 什么是 Azure SQL 弹性池？
+可以在 Azure 逻辑服务器上为 SQL 弹性池提供固定数目和固定价格的 eDTU，在该服务器上的数据库池中共享。SQL DB 弹性池是一种简单的低成本高效益的解决方案，用于管理使用模式变化很大且不可预测的多个数据库的性能目标。
 
-[AZURE.NOTE]弹性池在中国北部和中国东部公开上市 (GA)。
-
-
+> [AZURE.NOTE]
+>弹性池在所有 Azure 区域中均已正式发布 (GA)，但印度西部除外，这些区域当前仅发布了预览版。将尽快在此区域中正式发布弹性池。
+>
+>
 
 ## 工作原理
 
@@ -92,10 +93,12 @@ SQL DB 弹性池是一种简单的低成本高效益的解决方案，用于管�
 
 对于具有异地还原无法提供的更强烈的恢复要求的应用程序，可使用 [Azure 门户预览](/documentation/articles/sql-database-geo-replication-portal/)、[PowerShell](/documentation/articles/sql-database-geo-replication-powershell/) 或 [Transact-SQL](/documentation/articles/sql-database-geo-replication-transact-sql/) 配置活动异地复制。
 
+## 其他资源
+* [Microsoft 虚拟大学视频课程：Azure SQL 数据库弹性功能](https://mva.microsoft.com/zh-cn/training-courses/elastic-database-capabilities-with-azure-sql-db-16554)
 
 <!--Image references-->
 
 [1]: ./media/sql-database-elastic-pool/databases.png
 
-<!---HONumber=Mooncake_0120_2017-->
-<!--update: wording update-->
+<!---HONumber=Mooncake_0320_2017-->
+<!--Update_Description: add link reference to MVA resource-->

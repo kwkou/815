@@ -10,11 +10,11 @@
     ms.service="sql-database"
     ms.custom="servers"
     ms.devlang="na"
-    ms.topic="get-started-article"
+    ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="data-management"
-    ms.date="11/28/2016"
-    wacn.date="01/20/2017"
+    ms.date="02/01/2017"
+    wacn.date="03/24/2017"
     ms.author="carlrab" />  
 
 
@@ -23,7 +23,7 @@
 本主题提供使用 Azure SQL 逻辑服务器的注意事项和指南。有关 Azure SQL 数据库的信息，请参阅 [SQL 数据库](/documentation/articles/sql-database-overview/)。
 
 ## 什么是 Azure SQL 数据库逻辑服务器？
-Azure SQL 数据库逻辑服务器充当多个数据库的中心管理点。在 SQL 数据库中，服务器是一个逻辑构造，它不同于在本地环境中可能很熟悉的 SQL Server 实例。具体而言，SQL 数据库服务对数据库相对于其逻辑服务器的位置不做出任何保证，并且不公开任何实例级访问权限或功能。有关 Azure SQL 逻辑服务器的详细信息，请参阅[逻辑服务器](/documentation/articles/sql-database-server-overview/)。
+Azure SQL 数据库逻辑服务器充当多个数据库的中心管理点。在 SQL 数据库中，服务器是一个逻辑构造，它不同于在本地环境中可能很熟悉的 SQL Server 实例。具体而言，SQL 数据库服务对数据库相对于其逻辑服务器的位置不做出任何保证，并且不公开任何实例级访问权限或功能。
 
 Azure 数据库逻辑服务器：
 
@@ -48,7 +48,7 @@ Azure 数据库逻辑服务器：
 - **身份验证和授权**：Azure SQL 数据库支持 SQL 身份验证和 Azure Active Directory 身份验证（但存在某些限制）- 请参阅[使用 Azure Active Directory 身份验证连接到 SQL 数据库](/documentation/articles/sql-database-aad-authentication/)了解身份验证。可以通过服务器的 master 数据库或直接连接到用户数据库，连接到 Azure SQL 数据库并向其进行身份验证。有关详细信息，请参阅[在 Azure SQL 数据库中管理数据库和登录名](/documentation/articles/sql-database-manage-logins/)。不支持 Windows 身份验证。
 - **TDS**：Azure SQL 数据库支持表格格式数据流 (TDS) 协议客户端 7.3 版或更高版本。
 - **TCP/IP**：只允许 TCP/IP 连接。
-- **SQL 数据库防火墙**：为了帮助保护你的数据，在你指定哪些计算机具有访问权限之前，SQL 数据库防火墙将禁止所有对数据库服务器或其数据库的访问。请参阅[防火墙](/documentation/articles/sql-database-firewall-configure/)
+- **SQL 数据库防火墙**：为了保护用户数据，在用户指定哪些计算机具有访问权限之前，SQL 数据库防火墙将禁止所有对数据库服务器或其数据库的访问。请参阅[防火墙](/documentation/articles/sql-database-firewall-configure/)
 
 ## 支持哪些排序规则？
 
@@ -65,10 +65,9 @@ Azure SQL 数据库（包括 master 数据库）使用的默认数据库排序�
 ## 如何管理逻辑服务器？
 
 可以使用几种方法管理 Azure SQL 数据库逻辑服务器：
-
 - [Azure 门户](/documentation/articles/sql-database-manage-portal/)
 - [PowerShell](/documentation/articles/sql-database-manage-powershell/)
-- [REST](https://docs.microsoft.com/zh-CN/rest/api/sql/)
+- [REST](https://docs.microsoft.com/zh-cn/rest/api/sql/)
 
 ## 后续步骤
 
@@ -76,8 +75,9 @@ Azure SQL 数据库（包括 master 数据库）使用的默认数据库排序�
 - 有关支持的功能的信息，请参阅[功能](/documentation/articles/sql-database-features/)
 - 有关 Azure SQL 数据库的概述，请参阅 [SQL 数据库概述](/documentation/articles/sql-database-overview/)
 - 有关 Transact-SQL 支持和差异的信息，请参阅 [Azure SQL 数据库 Transact-SQL 差异](/documentation/articles/sql-database-transact-sql-information/)。
-- 基于**服务层**，了解有关特定资源配额和限制的信息。有关服务层的概述，请参阅 [SQL 数据库服务层](/documentation/articles/sql-database-service-tiers/)。
-- 有关与安全相关的指导原则，请参阅 [Azure SQL 数据库安全指导原则和限制](/documentation/articles/sql-database-security-guidelines/)。
+- 按**服务层**了解具体的资源配额和限制。有关服务层的概述，请参阅 [SQL 数据库服务层](/documentation/articles/sql-database-service-tiers/)。
+- 有关安全性的概述，请参阅 [Azure SQL 数据库安全性概述](/documentation/articles/sql-database-security-overview/)。
 - 有关驱动程序可用性和 SQL 数据库支持的信息，请参阅 [用于 SQL 数据库和 SQL Server 的连接库](/documentation/articles/sql-database-libraries/)。
 
-<!---HONumber=Mooncake_0116_2017-->
+<!---HONumber=Mooncake_0320_2017-->
+<!--Update_Description: wording update-->

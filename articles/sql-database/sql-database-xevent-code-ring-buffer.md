@@ -1,24 +1,23 @@
-<properties 
-	pageTitle="SQL 数据库的 XEvent 环形缓冲区代码 | Azure" 
-	description="提供一个 Transact-SQL 代码示例，以帮助你快速轻松地在 Azure SQL 数据库中使用环形缓存区目标。" 
-	services="sql-database" 
-	documentationCenter="" 
-	authors="MightyPen" 
-	manager="jhubbard" 
-	editor="" 
-	tags=""/>
-
-
-<tags 
-	ms.service="sql-database" 
-	ms.workload="data-management" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="08/23/2016" 
-	wacn.date="10/17/2016" 
-	ms.author="genemi"/>  
-
+<properties
+    pageTitle="SQL 数据库的 XEvent 环形缓冲区代码 | Azure"
+    description="提供一个 Transact-SQL 代码示例，以帮助你快速轻松地在 Azure SQL 数据库中使用环形缓存区目标。"
+    services="sql-database"
+    documentationcenter=""
+    author="MightyPen"
+    manager="jhubbard"
+    editor=""
+    tags="" />
+<tags
+    ms.assetid="2510fb3f-c8f2-437a-8f49-9d5f6c96e75b"
+    ms.service="sql-database"
+    ms.custom="monitor and tune"
+    ms.workload="data-management"
+    ms.tgt_pltfrm="na"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.date="02/03/2017"
+    wacn.date="03/24/2017"
+    ms.author="genemi" />  
 
 
 # SQL 数据库中扩展事件的环形缓冲区目标代码
@@ -27,9 +26,7 @@
 
 你需要完整的代码示例以最简单快速的方式在测试期间捕获和报告扩展事件的信息。扩展事件数据最简单的目标是[环形缓冲区目标](http://msdn.microsoft.com/zh-cn/library/ff878182.aspx)。
 
-
 本主题演示一个 Transact-SQL 代码示例：
-
 
 1. 创建一个包含要演示的数据的表。
 
@@ -54,11 +51,11 @@
 ## 先决条件
 
 
-- Azure 帐户和订阅。你可以注册[试用版](/pricing/1rmb-trial)。
+- Azure 帐户和订阅。可注册以便[试用](/pricing/1rmb-trial)。
 
 
-- 可以在其中创建表的任何数据库。
- - 你可以选择快速[创建一个 **AdventureWorksLT** 演示数据库](/documentation/articles/sql-database-get-started/)。
+- 可在其中创建表的任何数据库。
+ - 可选择快速[创建 **AdventureWorksLT** 演示数据库](/documentation/articles/sql-database-get-started/)。
 
 
 - SQL Server Management Studio (ssms.exe)，最好是每月更新版。
@@ -363,7 +360,7 @@
 - [SQL 数据库中扩展事件的注意事项](/documentation/articles/sql-database-xevent-db-diff-from-svr/)，对比 Azure SQL 数据库与 Microsoft SQL Server 的扩展事件的某些方面。
 
 
-可通过以下链接访问有关扩展事件的其他代码示例主题。不过，你必须定期检查所有示例，以确定这些示例是针对 Microsoft SQL Server 还是 Azure SQL 数据库。然后，你可以在运行示例时确定是否要做出细微的更改。
+可通过以下链接访问有关扩展事件的其他代码示例主题。不过，必须定期检查所有示例，以确定这些示例是针对 Microsoft SQL Server 还是 Azure SQL 数据库。然后，你可以在运行示例时确定是否要做出细微的更改。
 
 
 - Azure SQL 数据库的代码示例：[SQL 数据库中扩展事件的事件文件目标代码](/documentation/articles/sql-database-xevent-code-event-file/)
@@ -376,4 +373,4 @@
 - Code sample for SQL Server: [Find the Objects That Have the Most Locks Taken on Them](http://msdn.microsoft.com/zh-cn/library/bb630355.aspx)
 -->
 
-<!---HONumber=Mooncake_1010_2016-->
+<!---HONumber=Mooncake_0320_2017-->

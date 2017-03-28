@@ -1,35 +1,24 @@
 <properties
-	pageTitle="使用 T-SQL 配置 Azure SQL 数据库服务器级别和数据库级别防火墙规则 | Azure"
-	description="了解如何为访问 Azure SQL 数据库的 IP 地址配置防火墙。"
-	services="sql-database"
-	documentationCenter=""
-	authors="BYHAM"
-	manager="jhubbard"
-	editor=""/>
-
-
+    pageTitle="T-SQL：Azure SQL 数据库防火墙规则 | Azure"
+    description="了解如何针对使用 Transact-SQL 访问 Azure SQL 数据库的 IP 地址，配置服务器级和数据库级防火墙规则。"
+    services="sql-database"
+    documentationcenter=""
+    author="BYHAM"
+    manager="jhubbard"
+    editor="" />
 <tags
-	ms.service="sql-database"
-	ms.workload="data-management"
-	ms.tgt_pltfrm="na"
-	ms.devlang="dotnet"
-	ms.topic="article" 
-	ms.date="08/30/2016" 
-	wacn.date="12/26/2016"
-	ms.author="rickbyh"/>  
-
-
+    ms.assetid="71e692a1-5e2f-4a18-a6d6-527b849cf68e"
+    ms.service="sql-database"
+    ms.custom="authentication and authorization"
+    ms.workload="data-management"
+    ms.tgt_pltfrm="na"
+    ms.devlang="dotnet"
+    ms.topic="article"
+    ms.date="02/07/2017"
+    wacn.date="03/24/2017"
+    ms.author="rickbyh" />
 
 #<a name="manage-server-level-firewall-rules-through-transact-sql"></a> 使用 T-SQL 配置 Azure SQL 数据库服务器级别和数据库级别防火墙规则
-
-
-> [AZURE.SELECTOR]
-- [概述](/documentation/articles/sql-database-firewall-configure/)
-- [Azure 门户预览](/documentation/articles/sql-database-configure-firewall-settings/)
-- [TSQL](/documentation/articles/sql-database-configure-firewall-settings-tsql/)
-- [PowerShell](/documentation/articles/sql-database-configure-firewall-settings-powershell/)
-- [REST API](/documentation/articles/sql-database-configure-firewall-settings-rest/)
-
 
 Azure SQL 数据库使用防火墙规则，以便允许连接到服务器和数据库。可在 Azure SQL 数据库服务器中为 master 数据库或用户数据库定义服务器级别和数据库级别防火墙设置，从而有选择地允许对数据库的访问。
 
@@ -37,8 +26,7 @@ Azure SQL 数据库使用防火墙规则，以便允许连接到服务器和数�
 
 
 ## 服务器级别防火墙规则
-
-只有服务器级别主体登录名或 Azure Active Directory 管理员才能使用 Transact-SQL 创建服务器级别防火墙规则。
+只有 Azure SQL 服务器管理员登录名或 Azure Active Directory 管理员才能使用 Transact-SQL 创建服务器级防火墙规则。
 
 1. 启动查询窗口，并使用 SQL Server Management Studio 连接到虚拟 master 数据库。
 2. 可以从查询窗口选择、创建、更新或删除服务器级别防火墙规则。
@@ -75,18 +63,24 @@ Azure SQL 数据库使用防火墙规则，以便允许连接到服务器和数�
 
 有关这些存储过程的详细信息，请参阅 [sp\_set\_database\_firewall\_rule](https://msdn.microsoft.com/zh-cn/library/dn270010.aspx) 和 [sp\_delete\_database\_firewall\_rule](https://msdn.microsoft.com/zh-cn/library/dn270030.aspx)。
 
+> [AZURE.NOTE]
+>如需演示如何使用数据库级防火墙的教程，请参阅 [SQL 身份验证和授权](/documentation/articles/sql-database-control-access-sql-authentication-get-started/)。
+>
+
+
 ## 后续步骤
+有关如何使用其他方式创建服务器级防火墙规则的指导文章，请参阅：
 
-有关如何使用其他方式创建服务器级别防火墙规则的指导文章，请参阅：
-
-- [使用 Azure 门户预览配置 Azure SQL 数据库服务器级别防火墙规则](/documentation/articles/sql-database-configure-firewall-settings/)
-- [使用 PowerShell 配置 Azure SQL 数据库服务器级别防火墙规则](/documentation/articles/sql-database-configure-firewall-settings-powershell/)
-- [使用 REST API 配置 Azure SQL 数据库服务器级别防火墙规则](/documentation/articles/sql-database-configure-firewall-settings-rest/) 有关创建数据库的教程，请参阅[使用 Azure 门户在几分钟内创建 SQL 数据库](/documentation/articles/sql-database-get-started/)。有关从开放源代码或第三方应用程序连接到 Azure SQL 数据库的帮助信息，请参阅 [SQL 数据库的客户端快速入门代码示例](https://msdn.microsoft.com/zh-cn/library/azure/ee336282.aspx)。若要了解如何导航到数据库，请参阅[管理数据库的访问和登录安全](/documentation/articles/sql-database-manage-logins/)。
+- [使用 Azure 门户预览配置 Azure SQL 数据库服务器级防火墙规则](/documentation/articles/sql-database-configure-firewall-settings/)
+- [使用 PowerShell 配置 Azure SQL 数据库服务器级防火墙规则](/documentation/articles/sql-database-configure-firewall-settings-powershell/)
+- [使用 REST API 配置 Azure SQL 数据库服务器级防火墙规则](/documentation/articles/sql-database-configure-firewall-settings-rest/) 
+有关创建数据库的教程，请参阅[你的第一个 Azure SQL 数据库](/documentation/articles/sql-database-get-started/)。有关从开放源代码或第三方应用程序连接到 Azure SQL 数据库的帮助信息，请参阅 [SQL 数据库的客户端快速入门代码示例](https://msdn.microsoft.com/zh-cn/library/azure/ee336282.aspx)。若要了解如何导航到数据库，请参阅[管理数据库的访问和登录安全](/documentation/articles/sql-database-manage-logins/)。
 
 
 ## 其他资源
 
-- [保护数据库的安全](/documentation/articles/sql-database-security/)
+- [保护数据库的安全](/documentation/articles/sql-database-security-overview/)
 - [SQL Server 数据库引擎和 Azure SQL 数据库安全中心](https://msdn.microsoft.com/zh-cn/library/bb510589)
 
-<!---HONumber=Mooncake_Quality_Review_1215_2016-->
+<!---HONumber=Mooncake_0320_2017-->
+<!--Update_Description: add note for configuring database level filewall-->

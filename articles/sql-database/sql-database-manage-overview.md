@@ -1,21 +1,22 @@
 <properties
-    pageTitle="概述: SQL 数据库的管理工具 | Azure"
-    description="比较用于管理 Azure SQL 数据库的工具和选项"
+    pageTitle="概述：SQL 数据库的管理工具 | Azure"
+    description="比较管理 Azure SQL 数据库的工具和选项"
     services="sql-database"
     documentationcenter=""
-    author="stevestein"
+    author="CarlRabeler"
     manager="jhubbard"
     editor="" />
 <tags
     ms.assetid="37767380-975f-4dee-a28d-80bc2036dda3"
     ms.service="sql-database"
+    ms.custom="overview"
     ms.workload="data-management"
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="10/24/2016"
-    wacn.date="12/19/2016"
-ms.author="sstein" />
+    ms.date="02/01/2017"
+    wacn.date="03/24/2017"
+    ms.author="carlrab" />
 
 # 概述：SQL 数据库的管理工具
 本主题探讨并比较用于管理 Azure SQL 数据库的工具和选项，便于用户挑选适合作业、业务以及自身需求的工具。选择合适的工具取决于所管理的数据库数量、任务以及执行任务的频率。
@@ -32,9 +33,9 @@ SQL Server Management Studio (SSMS) 和 SQL Server Data Tools (SSDT) 是在计�
 
 
 ## PowerShell
-你可以使用 PowerShell 管理数据库和弹性数据库池，并自动执行 Azure 资源部署。Azure 建议在生产环境中使用此工具来管理大量的数据库并自动进行部署和资源更改。
+可以使用 PowerShell 管理数据库和弹性池，并自动执行 Azure 资源部署。Azure 建议在生产环境中使用此工具来管理大量的数据库并自动进行部署和资源更改。
 
-有关详细信息，请参阅[使用 PowerShell 管理 SQL 数据库](/documentation/articles/sql-database-command-line-tools/)
+有关详细信息，请参阅[使用 PowerShell 管理 SQL 数据库](/documentation/articles/sql-database-manage-powershell/)
 
 ## 弹性数据库工具
 使用弹性数据库工具执行如下操作：
@@ -47,4 +48,5 @@ SQL Server Management Studio (SSMS) 和 SQL Server Data Tools (SSDT) 是在计�
 * [Azure 自动化](/documentation/services/automation/)
 * [Azure 计划程序](/documentation/services/scheduler/)
 
-<!---HONumber=Mooncake_1212_2016-->
+<!---HONumber=Mooncake_0320_2017-->
+<!--Update_Description: update one link reference-->

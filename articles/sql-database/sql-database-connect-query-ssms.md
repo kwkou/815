@@ -16,17 +16,12 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="11/22/2016"
-    wacn.date="01/20/2017"
+    ms.date="02/01/2017"
+    wacn.date="03/24/2017"
     ms.author="sstein;carlrab" />  
 
 
 # 使用 SQL Server Management Studio 连接到 SQL 数据库并执行示例 T-SQL 查询
-
-> [AZURE.SELECTOR]
-- [Visual Studio](/documentation/articles/sql-database-connect-query/)
-- [SSMS](/documentation/articles/sql-database-connect-query-ssms/)
-- [Excel](/documentation/articles/sql-database-connect-excel/)
 
 本文介绍如何使用 SQL Server Management Studio (SSMS) 连接到 Azure SQL 数据库。成功连接以后，即可运行简单的 Transact-SQL (T-SQL) 查询，验证与数据库的通信。
 
@@ -38,7 +33,7 @@
 
     ![SQL Server Management Studio](./media/sql-database-get-started/ssms.png)  
 
-3. 在“连接到服务器”对话框中，输入使用 SQL Server 身份验证连接到 SQL Server 的必要信息。
+3. 在“连接到服务器”对话框中，输入使用 SQL Server 身份验证连接到 SQL Server 所需的信息。
 
     ![连接到服务器](./media/sql-database-get-started/connect-to-server.png)  
 
@@ -52,7 +47,7 @@
 
 6. 右键单击该数据库，然后单击“新建查询”。
 
-    ![使用 ssms 新建示例数据库查询](./media/sql-database-get-started/new-sample-db-query-ssms.png)  
+    ![使用 ssms 新建示例 db 查询](./media/sql-database-get-started/new-sample-db-query-ssms.png)  
 
 7. 在查询窗口中，键入以下查询：
 
@@ -64,15 +59,16 @@
 
 
 > [AZURE.Tip]
-有关教程，请参阅 [SQL 数据库教程：创建服务器、服务器级防火墙规则、示例数据库、数据库级防火墙规则并连接到 SQL Server](/documentation/articles/sql-database-get-started/)。
+>如需教程，请参阅[教程：使用 Azure 门户预览和 SQL Server Management Studio 预配和访问 Azure SQL 数据库](/documentation/articles/sql-database-get-started/)。
 >
 
 ## 后续步骤
 
 - 可以按照与 SQL Server 基本相同的方法，使用 T-SQL 语句来创建和管理 Azure 中的数据库。如果已熟悉如何使用 SQL Server 的 T-SQL，请参阅 [Azure SQL 数据库 Transact-SQL 信息](/documentation/articles/sql-database-transact-sql-information/)，了解差异摘要。
 - 如果不熟悉 T-SQL，请参阅[教程：编写 Transact-SQL 语句](https://msdn.microsoft.com/zh-cn/library/ms365303.aspx)和 [Transact-SQL 参考（数据库引擎）](https://msdn.microsoft.com/zh-cn/library/bb510741.aspx)。
-- 若要开始创建数据库用户和数据库用户管理员，请参阅 [Azure SQL 数据库安全性入门](/documentation/articles/sql-database-get-started-security/)
+- 有关 SQL Server 身份验证的入门教程，请参阅 [SQL 身份验证和授权](/documentation/articles/sql-database-control-access-sql-authentication-get-started/)
+- 有关 Azure Active Directory 身份验证的入门教程，请参阅 [Azure AD 身份验证和授权](/documentation/articles/sql-database-control-access-aad-authentication-get-started/)
 - 有关 SSMS 的详细信息，请参阅[使用 SQL Server Management Studio](https://msdn.microsoft.com/zh-cn/library/ms174173.aspx)。
 
-<!---HONumber=Mooncake_0116_2017-->
-<!--update: update SSMS install steps/pics-->
+<!---HONumber=Mooncake_0320_2017-->
+<!--update: update and add link references-->

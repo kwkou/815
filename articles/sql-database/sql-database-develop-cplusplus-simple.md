@@ -5,17 +5,17 @@
     documentationcenter=""
     author="asthana86"
     manager="danmoth"
-    editor="" />  
-
+    editor="" />
 <tags
     ms.assetid="07d9e0b1-3234-4f17-a252-a7559160a9db"
     ms.service="sql-database"
+    ms.custom="development"
     ms.workload="drivers"
     ms.tgt_pltfrm="na"
     ms.devlang="cpp"
     ms.topic="article"
-    ms.date="11/01/2016"
-    wacn.date="12/19/2016"
+    ms.date="02/03/2017"
+    wacn.date="03/24/2017"
     ms.author="tobiast" />  
 
 
@@ -138,10 +138,10 @@ Azure 目前有两个用于托管 SQL Server 工作负荷的选项：Azure SQL �
 
 ## 后续步骤
 * 参阅 [SQL 数据库开发概述](/documentation/articles/sql-database-develop-overview/)
-* [ODBC API 参考](https://msdn.microsoft.com/zh-cn/library/ms714562(v=vs.85).aspx)详细信息
+* [ODBC API 参考](https://docs.microsoft.com/sql/odbc/reference/syntax/odbc-api-reference/)详细信息
 
 ## 其他资源
 * [多租户 SaaS 应用程序和 Azure SQL 数据库的设计模式](/documentation/articles/sql-database-design-patterns-multi-tenancy-saas-applications/)
 * 浏览所有 [SQL 数据库的功能](/home/features/sql-database/)
 
-<!---HONumber=Mooncake_1212_2016-->
+<!---HONumber=Mooncake_0320_2017-->

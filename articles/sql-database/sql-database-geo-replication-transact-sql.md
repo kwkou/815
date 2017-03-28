@@ -5,8 +5,7 @@
     documentationCenter=""
     authors="CarlRabeler"
     manager="jhubbard"
-    editor=""/>  
-
+    editor=""/>
 
 <tags
     ms.service="sql-database"
@@ -14,18 +13,13 @@
     ms.topic="article"
     ms.tgt_pltfrm="NA"
     ms.workload="NA"
-    ms.date="10/13/2016"
-    wacn.date="12/26/2016"
+    ms.date="02/01/2017"
+    wacn.date="03/24/2016"
     ms.author="carlrab"/>  
 
 
-# 使用 Transact-SQL 为 Azure SQL 数据库配置异地复制
 
-> [AZURE.SELECTOR]
-- [概述](/documentation/articles/sql-database-geo-replication-overview/)
-- [Azure 门户预览](/documentation/articles/sql-database-geo-replication-portal/)
-- [PowerShell](/documentation/articles/sql-database-geo-replication-powershell/)
-- [T-SQL](/documentation/articles/sql-database-geo-replication-transact-sql/)
+# 使用 Transact-SQL 为 Azure SQL 数据库配置活动异地复制
 
 本文说明如何使用 Transact-SQL 为 Azure SQL 数据库配置活动异地复制。
 
@@ -46,7 +40,7 @@
 
 ## 添加辅助数据库
 
-可以使用 **ALTER DATABASE** 语句在伙伴服务器上创建异地复制的辅助数据库。在包含要复制的数据库服务器的 master 数据库上执行此语句。异地复制数据库（“主数据库”）具备与要复制的数据库相同的名称，并且默认与主数据库具有相同的服务级别。辅助数据库可以是可读或不可读的，并且可以是单一数据库或弹性数据库。有关详细信息，请参阅 [ALTER DATABASE (Transact-SQL)](https://msdn.microsoft.com/zh-cn/library/mt574871.aspx) 和[服务层](/documentation/articles/sql-database-service-tiers/)。创建辅助数据库并设定种子之后，数据将开始以异步方式从主数据库复制。以下步骤说明如何使用 Management Studio 配置异地复制。提供使用单一数据库或弹性数据库创建不可读和可读辅助数据库的步骤。
+可以使用 **ALTER DATABASE** 语句在伙伴服务器上创建异地复制的辅助数据库。在包含要复制的数据库服务器的 master 数据库上执行此语句。异地复制数据库（“主数据库”）具备与要复制的数据库相同的名称，并且默认与主数据库具有相同的服务级别。辅助数据库可以是可读或不可读的，并且可以是单一数据库或弹性池。有关详细信息，请参阅 [ALTER DATABASE (Transact-SQL)](https://msdn.microsoft.com/zh-cn/library/mt574871.aspx) 和[服务层](/documentation/articles/sql-database-service-tiers/)。创建辅助数据库并设定种子之后，数据将开始以异步方式从主数据库复制。以下步骤说明如何使用 Management Studio 配置异地复制。提供使用单一数据库或弹性池创建不可读和可读辅助数据库的步骤。
 
 > [AZURE.NOTE] 如果指定的伙伴服务器上的数据库的名称与主数据库相同，该命令会失败。
 
@@ -84,11 +78,8 @@
 
 4. 单击“执行”运行查询。
 
-
-
-### 添加不可读的辅助数据库（弹性数据库）
-
-可以使用以下步骤将不可读的辅助数据库创建为弹性数据库。
+### 添加不可读的辅助数据库（弹性池）
+可以使用以下步骤将不可读的辅助数据库创建为弹性池。
 
 1. 在 Management Studio 中，连接到 Azure SQL 数据库逻辑服务器。
 
@@ -102,10 +93,8 @@
 
 4. 单击“执行”运行查询。
 
-
-
-### 添加可读的辅助数据库（弹性数据库）
-可以使用以下步骤将可读的辅助数据库创建为弹性数据库。
+### 添加可读的辅助数据库（弹性池）
+可以使用以下步骤将可读的辅助数据库创建为弹性池。
 
 1. 在 Management Studio 中，连接到 Azure SQL 数据库逻辑服务器。
 
@@ -138,11 +127,11 @@
 
 4. 单击“执行”运行查询。
 
-## 监视异地复制配置和运行状况
+## 监视活动异地复制配置和运行状况
 
 监视任务包括监视异地复制配置和监视数据复制运行状况。可以使用 master 数据库中的 **sys.dm\_geo\_replication\_links** 动态管理视图返回 Azure SQL 数据库逻辑服务器上每个数据库的所有现有复制链接的相关信息。此视图包含一行针对主数据库和辅助数据库之间每个复制链接的内容。可以使用 **sys.dm\_replication\_link\_status** 动态管理视图针对当前参与复制链接的每个 Azure SQL 数据库返回该行。这包括主数据库和辅助数据库。如果给定主数据库有多个连续复制链接，此表将包含一行针对每种关系的内容。该视图是在所有数据库（包括逻辑 master）中创建的。但是，在逻辑 master 中查询此视图会返回空集。可以使用 **sys.dm\_operation\_status** 动态管理视图来显示所有数据库操作的状态，包括复制链接的状态。有关详细信息，请参阅 [sys.geo\_replication\_links（Azure SQL 数据库）](https://msdn.microsoft.com/zh-cn/library/mt575501.aspx)、[sys.dm\_geo\_replication\_link\_status（Azure SQL 数据库）](https://msdn.microsoft.com/zh-cn/library/mt575504.aspx)和 [sys.dm\_operation\_status（Azure SQL 数据库）](https://msdn.microsoft.com/zh-cn/library/dn270022.aspx)。
 
-使用以下步骤监视异地复制合作关系。
+使用以下步骤监视活动异地复制合作关系。
 
 1. 在 Management Studio 中，连接到 Azure SQL 数据库逻辑服务器。
 
@@ -168,7 +157,7 @@
 
 ## 将不可读辅助数据库升级为可读辅助数据库
 
-非可读辅助数据库类型将于 2017 年 4 月停用，现有的非可读数据库将自动升级到可读辅助数据库。如果目前使用的是不可读辅助数据库，但想要将其升级为可读辅助数据库，可以针对每个辅助数据库执行下列简单步骤。
+2017 年 4 月将停用非可读辅助类型数据库，现有的非可读数据库将自动升级到可读辅助数据库。如果目前使用的是不可读辅助数据库，但想要将其升级为可读辅助数据库，可以针对每个辅助数据库执行下列简单步骤。
 
 > [AZURE.IMPORTANT] 并没有自助升级方法能够将不可读辅助数据库就地升级为可读辅助数据库。如果删除唯一的辅助数据库，主数据库将会维持未受保护的状态，直到新的辅助数据库完全同步为止。如果应用程序 SLA 要求主数据库始终受到保护，应该考虑在其他服务器中创建并行辅助数据库，然后再应用上述升级步骤。请注意，每个主数据库最多可以有 4 个辅助数据库。
 
@@ -190,4 +179,5 @@
 - 若要深入了解活动异地复制，请参阅[活动异地复制](/documentation/articles/sql-database-geo-replication-overview/)
 - 有关业务连续性的概述和应用场景，请参阅[业务连续性概述](/documentation/articles/sql-database-business-continuity/)
 
-<!---HONumber=Mooncake_Quality_Review_1215_2016-->
+<!---HONumber=Mooncake_0320_2017-->
+<!--Update_Description: update "弹性数据库" to "弹性池"-->

@@ -1,5 +1,5 @@
 <properties
-    pageTitle="SQL 数据库身份验证和授权 | Azure"
+    pageTitle="Azure SQL 登录名和用户 | Azure"
     description="了解 SQL 数据库安全管理，特别是如何通过服务器级的主体帐户管理数据库的访问和登录安全。"
     keywords="sql 数据库安全,数据库安全管理,登录安全,数据库安全,数据库访问权限"
     services="sql-database"
@@ -13,11 +13,11 @@
     ms.service="sql-database"
     ms.custom="authentication and authorization"
     ms.devlang="na"
-    ms.topic="get-started-article"
+    ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="data-management"
-    ms.date="01/06/2017"
-    wacn.date="01/25/2017"
+    ms.date="01/23/2017"
+    wacn.date="03/24/2017"
     ms.author="rickbyh" />  
 
 
@@ -27,6 +27,11 @@
 
 >[AZURE.NOTE]  
  本主题适用于 Azure SQL 服务器，同时也适用于在 Azure SQL 服务器中创建的 SQL 数据库和 SQL 数据仓库数据库。为简单起见，在提到 SQL 数据库和 SQL 数据仓库时，本文统称 SQL 数据库。
+
+> [AZURE.TIP]
+>有关如何使用 SQL Server 身份验证的教程，请参阅[教程：SQL Server 身份验证](/documentation/articles/sql-database-control-access-sql-authentication-get-started/)。有关如何使用 Azure Active Directory 身份验证的教程，请参阅[教程：AAD 身份验证](/documentation/articles/sql-database-control-access-aad-authentication-get-started/)。
+>
+
 
 ## 非受限管理帐户
 有两个充当管理员的管理帐户（**服务器管理员**和 **Active Directory 管理员**）。若要在 SQL 服务器中识别这些管理员帐户，请打开 Azure 门户预览并导航到 SQL 服务器的属性。
@@ -71,7 +76,7 @@
 除了上述服务器级管理角色以外，SQL 数据库还在可以添加用户帐户的 master 数据库中提供了两个受限的管理角色，这些角色可授予创建数据库或管理登录名的权限。
 
 ### 数据库创建者
-其中一个管理角色是 **dbmanager** 角色。此角色的成员可以创建新数据库。若要使用此角色，请在 `master` 数据库中创建一个用户，然后将该用户添加到 **dbmanager** 数据库角色。该用户可以是包含的数据库用户，也可以是 master 数据库中基于 SQL Server 登录名的用户。
+其中一个管理角色是 **dbmanager** 角色。此角色的成员可以创建新数据库。若要使用此角色，请在 `master` 数据库中创建一个用户，然后将该用户添加到 **dbmanager** 数据库角色。若要创建数据库，用户必须是 master 数据库中基于 SQL Server 登录名的用户，或者是基于 Azure Active Directory 用户的包含数据库用户。
 
 1.	使用管理员帐户连接到 master 数据库。
 2.	可选步骤：使用 [CREATE LOGIN](https://msdn.microsoft.com/zh-cn/library/ms189751.aspx) 语句创建 SQL Server 身份验证登录名。示例语句：
@@ -154,7 +159,8 @@
 ### 注意事项和限制
 管理 SQL 数据库中的登录名和用户时，请注意以下事项：
 
-* 执行 `CREATE/ALTER/DROP DATABASE` 语句时，必须连接到 **master** 数据库。不能更改或删除 master 数据库中与**服务器管理员**登录名相对应的数据库用户。
+* 执行 `CREATE/ALTER/DROP DATABASE` 语句时，必须连接到 **master** 数据库。
+* 不能更改或删除与**服务器管理员**登录名相对应的数据库用户。
 * 美国英语是**服务器管理员**登录名的默认语言。
 * 只有管理员（**服务器管理员**登录名或 Azure AD 管理员）和 **master** 数据库中 **dbmanager** 数据库角色的成员才有权执行 `CREATE DATABASE` 和 `DROP DATABASE` 语句。
 * 执行 `CREATE/ALTER/DROP LOGIN` 语句时，必须连接到 master 数据库。但不建议使用登录名。改用包含的数据库用户。
@@ -183,8 +189,8 @@
 - 有关教程，请参阅 [SQL 安全入门](/documentation/articles/sql-database-control-access-sql-authentication-get-started/)
 - 有关视图和存储过程的信息，请参阅[创建视图和存储过程](https://msdn.microsoft.com/zh-cn/library/ms365311.aspx)
 - 有关授予数据库对象访问权限的信息，请参阅[授予数据库对象访问权限](https://msdn.microsoft.com/zh-cn/library/ms365327.aspx)
-- 有关使用 SQL Server 身份验证的教程，请参阅 [SQL 数据库教程：SQL Server 身份验证、登录名和用户帐户、数据库角色、权限、服务器级防火墙规则和数据库级防火墙规则](/documentation/articles/sql-database-control-access-sql-authentication-get-started/)。
-- 有关使用 Azure Active Directory 身份验证的教程，请参阅 [SQL 数据库教程：AAD 身份验证、登录名和用户帐户、数据库角色、权限、服务器级防火墙规则和数据库级防火墙规则](/documentation/articles/sql-database-control-access-aad-authentication-get-started/)。
+- 有关如何使用 SQL Server 身份验证的教程，请参阅[教程：SQL Server 身份验证](/documentation/articles/sql-database-control-access-sql-authentication-get-started/)。
+- 有关如何使用 Azure Active Directory 身份验证的教程，请参阅[教程：AAD 身份验证](/documentation/articles/sql-database-control-access-aad-authentication-get-started/)。
 
-<!---HONumber=Mooncake_0120_2017-->
-<!--Update_Description: whole content update-->
+<!---HONumber=Mooncake_0320_2017-->
+<!--Update_Description: wording update-->

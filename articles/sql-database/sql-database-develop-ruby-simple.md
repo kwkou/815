@@ -1,25 +1,22 @@
 <properties
-	pageTitle="使用 Ruby 连接到 SQL 数据库"
-	description="提供可运行的用于连接到 Azure SQL 数据库的 Ruby 代码示例。"
-	services="sql-database"
-	documentationCenter=""
-	authors="ajlam"
-	manager="jhubbard"
-	editor=""/>  
-
-
-
+    pageTitle="使用 Ruby 连接到 SQL 数据库 | Azure"
+    description="提供可运行的用于连接到 Azure SQL 数据库的 Ruby 代码示例。"
+    services="sql-database"
+    documentationcenter=""
+    author="ajlam"
+    manager="jhubbard"
+    editor="" />
 <tags
-	ms.service="sql-database"
-	ms.workload="drivers"
-	ms.tgt_pltfrm="na"
-	ms.devlang="ruby"
-	ms.topic="article"
-	ms.date="10/03/2016"
-	wacn.date="12/26/2016"
-	ms.author="andrela"/>  
-
-
+    ms.assetid="94fec528-58ba-4352-ba0d-25ae4b273e90"
+    ms.service="sql-database"
+    ms.custom="development"
+    ms.workload="drivers"
+    ms.tgt_pltfrm="na"
+    ms.devlang="ruby"
+    ms.topic="article"
+    ms.date="02/03/2017"
+    wacn.date="03/24/2017"
+    ms.author="andrela" />
 
 # 使用 Ruby 连接到 SQL 数据库 
 
@@ -30,8 +27,7 @@
 本主题说明如何使用 Ruby 来连接和查询 Azure SQL 数据库。可以从 Windows、Ubuntu Linux 或 Mac 平台运行此示例。
 
 ## 步骤 1：配置开发环境
-
-[使用 TinyTDS Ruby Driver for SQL Server 的先决条件](https://msdn.microsoft.com/zh-cn/library/mt711041.aspx)
+[使用 TinyTDS Ruby Driver for SQL Server 的先决条件](https://docs.microsoft.com/sql/connect/ruby/step-1-configure-development-environment-for-ruby-development/)
 
 ## 步骤 2：创建 SQL 数据库
 
@@ -42,17 +38,16 @@
 [AZURE.INCLUDE [sql-database-include-connection-string-details-20-portalshots](../../includes/sql-database-include-connection-string-details-20-portalshots.md)]
 
 ## 步骤 4：运行示例代码
-
-[“使用 Ruby 连接到 SQL”概念证明](http://msdn.microsoft.com/zh-cn/library/mt715797.aspx)
+[“使用 Ruby 连接到 SQL”概念证明](https://docs.microsoft.com/sql/connect/ruby/step-3-proof-of-concept-connecting-to-sql-using-ruby/)
 
 ## 后续步骤
 
 * 参阅 [SQL 数据库开发概述](/documentation/articles/sql-database-develop-overview/)
-* 有关 [Microsoft Ruby Driver for SQL Server](https://msdn.microsoft.com/zh-cn/library/mt691981.aspx) 的详细信息
+* 有关 [Microsoft Ruby Driver for SQL Server](https://docs.microsoft.com/sql/connect/ruby/ruby-driver-for-sql-server/) 的详细信息
 
 ## 其他资源 
 
-* [包含 Azure SQL 数据库的多租户 SaaS 应用程序的设计模式](/documentation/articles/sql-database-design-patterns-multi-tenancy-saas-applications/)
+* [多租户 SaaS 应用程序和 Azure SQL 数据库的设计模式](/documentation/articles/sql-database-design-patterns-multi-tenancy-saas-applications/)
 * 浏览所有 [SQL 数据库功能](/home/features/sql-database/)
 
-<!---HONumber=Mooncake_Quality_Review_1215_2016-->
+<!---HONumber=Mooncake_0320_2017-->

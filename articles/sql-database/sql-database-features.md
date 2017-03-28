@@ -14,8 +14,8 @@
     ms.topic="get-started-article"
     ms.tgt_pltfrm="na"
     ms.workload="data-management"
-    ms.date="11/28/2016"
-    wacn.date="01/20/2017"
+    ms.date="02/01/2017"
+    wacn.date="03/24/2017"
     ms.author="carlrab; jognanay" />  
 
 
@@ -41,7 +41,7 @@ Azure SQL 数据库中的每个数据库都与逻辑服务器相关联。数据�
 
 
 > [AZURE.TIP]
-若要测试现有数据库与 Azure SQL 数据库的兼容性，请参阅[验证 Azure SQL 数据库兼容性](/documentation/articles/sql-database-cloud-migrate-fix-compatibility-issues-ssdt/)。
+若要测试现有数据库与 Azure SQL 数据库的兼容性，请参阅[将 SQL Server 数据库迁移到 Azure](/documentation/articles/sql-database-cloud-migrate/)。
 >
 
 | **功能** | **SQL Server** | **Azure SQL 数据库** | 
@@ -125,7 +125,7 @@ Azure SQL 数据库中的每个数据库都与逻辑服务器相关联。数据�
 | SQL Server 集成服务 (SSIS) | [支持](https://msdn.microsoft.com/zh-cn/library/ms141026.aspx) | 不支持 - 请参阅 [Azure 数据工厂](https://azure.microsoft.com/services/data-factory/) |
 | SQL Server PowerShell | [支持](https://msdn.microsoft.com/zh-cn/library/hh245198.aspx) | [支持](https://msdn.microsoft.com/zh-cn/library/hh245198.aspx) |
 | SQL Server 事件探查器 | [支持](https://msdn.microsoft.com/zh-cn/library/ms181091.aspx) | 不支持 - 请参阅[扩展事件](https://msdn.microsoft.com/zh-cn/library/ms181091.aspx) |
-| SQL Server 复制 | [支持](https://msdn.microsoft.com/zh-cn/library/ms151198.aspx) | [仅限事务复制和快照复制订阅服务器](/documentation/articles/sql-database-cloud-migrate-compatible-using-transactional-replication/) |
+| SQL Server 复制 | [支持](https://msdn.microsoft.com/zh-cn/library/ms151198.aspx) | [仅限事务复制和快照复制订阅服务器](/documentation/articles/sql-database-cloud-migrate/) |
 | SQL Server Reporting Services (SSRS) | [支持](https://msdn.microsoft.com/zh-cn/library/ms159106.aspx) | 不支持 |
 | 存储过程 | [支持](https://msdn.microsoft.com/zh-cn/library/ms190782.aspx) | [支持](https://msdn.microsoft.com/zh-cn/library/ms190782.aspx) |
 | 系统存储函数 | [支持](https://msdn.microsoft.com/zh-cn/library/ff848780.aspx) | [某些](https://msdn.microsoft.com/zh-cn/library/ff848780.aspx) |
@@ -148,8 +148,9 @@ Azure SQL 数据库中的每个数据库都与逻辑服务器相关联。数据�
 - 有关 Azure SQL 逻辑服务器的概述，请参阅 [SQL 数据库逻辑服务器概述](/documentation/articles/sql-database-server-overview/)
 - 有关 Azure SQL 数据库的概述，请参阅 [SQL 数据库概述](/documentation/articles/sql-database-overview/)
 - 有关 Transact-SQL 支持和差异的信息，请参阅 [Azure SQL 数据库 Transact-SQL 差异](/documentation/articles/sql-database-transact-sql-information/)。
-- 基于**服务层**，了解有关特定资源配额和限制的信息。有关服务层的概述，请参阅 [SQL 数据库服务层](/documentation/articles/sql-database-service-tiers/)。
-- 有关与安全相关的指导原则，请参阅 [Azure SQL 数据库安全指导原则和限制](/documentation/articles/sql-database-security-guidelines/)。
+- 按**服务层**了解具体的资源配额和限制。有关服务层的概述，请参阅 [SQL 数据库服务层](/documentation/articles/sql-database-service-tiers/)。
+- 有关安全性的概述，请参阅 [Azure SQL 数据库安全性概述](/documentation/articles/sql-database-security-overview/)。
 - 有关驱动程序可用性和 SQL 数据库支持的信息，请参阅 [用于 SQL 数据库和 SQL Server 的连接库](/documentation/articles/sql-database-libraries/)。
 
-<!---HONumber=Mooncake_0116_2017-->
+<!---HONumber=Mooncake_0320_2017-->
+<!--Update_Description: link references update-->

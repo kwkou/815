@@ -1,23 +1,23 @@
 <properties
-	pageTitle="修复 SQL 连接错误和暂时性错误 | Azure"
-	description="了解如何排查、诊断和防止 Azure SQL 数据库中的 SQL 连接错误或暂时性错误。"
-	keywords="SQL 连接, 连接字符串, 连接问题, 暂时性错误, 连接错误"
-	services="sql-database"
-	documentationCenter=""
-	authors="dalechen"
-	manager="felixwu"
-	editor=""/>
-
+    pageTitle="修复 SQL 连接错误和暂时性错误 | Azure"
+    description="了解如何排查、诊断和防止 Azure SQL 数据库中的 SQL 连接错误或暂时性错误。"
+    keywords="SQL 连接, 连接字符串, 连接问题, 暂时性错误, 连接错误"
+    services="sql-database"
+    documentationcenter=""
+    author="dalechen"
+    manager="cshepard"
+    editor="" />
 <tags
-	ms.service="sql-database"
-	ms.workload="sql-database"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="09/20/2016"
-	wacn.date="12/19/2016"
-	ms.author="daleche"/>  
-
+    ms.assetid="efb35451-3fed-4264-bf86-72b350f67d50"
+    ms.service="sql-database"
+    ms.custom="troubleshoot"
+    ms.workload="sql-database"
+    ms.tgt_pltfrm="na"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.date="01/20/2017"
+    wacn.date="03/24/2017"
+    ms.author="daleche" />
 
 # 排查、诊断和防止 SQL 数据库中的 SQL 连接错误和暂时性错误
 
@@ -199,7 +199,7 @@
 ### 连接：连接字符串
 
 
-连接到 Azure SQL 数据库所需的连接字符串与连接到 Microsoft SQL Server 所需的字符串稍有不同。可以从 [Azure 经典管理门户](https://manage.windowsazure.cn)复制数据库的连接字符串。
+连接到 Azure SQL 数据库所需的连接字符串与连接到 Microsoft SQL Server 所需的字符串稍有不同。可以从 [Azure 门户预览](https://portal.azure.cn/)复制数据库的连接字符串。
 
 
 [AZURE.INCLUDE [sql-database-include-connection-string-20-portalshots](../../includes/sql-database-include-connection-string-20-portalshots.md)]
@@ -210,7 +210,7 @@
 ### 连接：IP 地址
 
 
-必须将 SQL 数据库服务器配置为接受来自托管客户端程序的计算机 IP 地址的通信。为此，可以通过 [Azure 经典管理门户](https://manage.windowsazure.cn)编辑防火墙设置。
+必须将 SQL 数据库服务器配置为接受来自托管客户端程序的计算机 IP 地址的通信。为此，可以通过 [Azure 门户预览](https://portal.azure.cn/)编辑防火墙设置。
 
 
 如果你忘记了配置 IP 地址，你的程序将失败，并显示简单的错误消息，指出所需的 IP 地址。
@@ -219,7 +219,7 @@
 [AZURE.INCLUDE [sql-database-include-ip-address-22-v12portal](../../includes/sql-database-include-ip-address-22-v12portal.md)]
 
 
-有关详细信息，请参阅[如何：在 SQL 数据库上配置防火墙设置](/documentation/articles/sql-database-configure-firewall-settings-powershell/)
+有关详细信息，请参阅：[如何：在 SQL 数据库上配置防火墙设置](/documentation/articles/sql-database-configure-firewall-settings/)
 
 
 <a id="c-connection-ports" name="c-connection-ports"></a>
@@ -308,7 +308,7 @@ ADO.NET 4.6.1：
  - （将示例值更改为你的 IP 地址。）
 
 
-在 Windows 上，[PortQry.exe](http://www.microsoft.com/en-us/download/details.aspx?id=17148) 实用程序可能很有用。以下是在 Azure SQL 数据库服务器上查询端口情况，以及在便携式计算机上运行的的示例执行：
+在 Windows 上，[PortQry.exe](http://www.microsoft.com/en-us/download/details.aspx?id=17148) 实用程序可能很有用。以下是在 Azure SQL 数据库服务器上查询端口情况，以及在便携式计算机上运行了哪个端口的示例执行：
  
 
 
@@ -354,7 +354,7 @@ Enterprise Library 6 (EntLib60) 提供了 .NET 托管类来帮助进行日志记
 
 
 | 日志查询 | 说明 |
-| :-- | :-- |
+|:--- |:--- |
 | `SELECT e.*`<br/>`FROM sys.event_log AS e`<br/>`WHERE e.database_name = 'myDbName'`<br/>`AND e.event_category = 'connectivity'`<br/>`AND 2 >= DateDiff`<br/>&nbsp;&nbsp;`(hour, e.end_time, GetUtcDate())`<br/>`ORDER BY e.event_category,`<br/>&nbsp;&nbsp;`e.event_type, e.end_time;` | [sys.event\_log](http://msdn.microsoft.com/zh-cn/library/dn270018.aspx) 视图提供了个别事件的相关信息，包括可能导致暂时性错误或连接失败的一些事件。<br/><br/>理想的情况下，可以将 **start\_time** 或 **end\_time** 值与有关客户端程序何时遇到问题的信息相关联。<br/><br/>**提示：**必须连接到 **master** 数据库才能运行此操作。 |
 | `SELECT c.*`<br/>`FROM sys.database_connection_stats AS c`<br/>`WHERE c.database_name = 'myDbName'`<br/>`AND 24 >= DateDiff`<br/>&nbsp;&nbsp;`(hour, c.end_time, GetUtcDate())`<br/>`ORDER BY c.end_time;` | [sys.database\_connection\_stats](http://msdn.microsoft.com/zh-cn/library/dn269986.aspx) 视图针对其他诊断提供事件类型的聚合计数。<br/><br/>**提示：**必须连接到 **master** 数据库才能运行此操作。 |
 
@@ -562,4 +562,5 @@ Enterprise Library 6 (EntLib60) 是 .NET 类的框架，可帮助你实施云服
 
 - [*重试*是 Apache 2.0 授权的通用重试库，它以 **Python** 编写，可以简化向几乎任何程序添加重试行为的任务。](https://pypi.python.org/pypi/retrying)
 
-<!---HONumber=Mooncake_Quality_Review_1202_2016-->
+<!---HONumber=Mooncake_0320_2017-->
+<!--Update_Description: update classic portal entry to Ibiza portal entry-->

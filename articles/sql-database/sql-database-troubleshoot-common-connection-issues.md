@@ -1,22 +1,22 @@
 <properties
-	pageTitle="排查 Azure SQL 数据库的常见连接问题"
-	description="识别和解决 Azure SQL 数据库常见连接错误的步骤。"
-	services="sql-database"
-	documentationCenter=""
-	authors="dalechen"
-	manager="felixwu"
-	editor=""/>
-
+    pageTitle="排查 Azure SQL 数据库的常见连接问题"
+    description="识别和解决 Azure SQL 数据库常见连接错误的步骤。"
+    services="sql-database"
+    documentationcenter=""
+    author="dalechen"
+    manager="cshepard"
+    editor="" />
 <tags
-	ms.service="sql-database"
-	ms.workload="data-management"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="08/31/2016"
-	wacn.date="12/26/2016"
-	ms.author="daleche"/>  
-
+    ms.assetid="ac463d1c-aec8-443d-b66e-fa5eadcccfa8"
+    ms.service="sql-database"
+    ms.custom="troubleshoot"
+    ms.workload="data-management"
+    ms.tgt_pltfrm="na"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.date="01/20/2017"
+    wacn.date="03/24/2017"
+    ms.author="daleche" />
 
 # 排查 Azure SQL 数据库的连接问题
 
@@ -53,17 +53,15 @@
 <a id="troubleshoot-the-persistent-errors" name="troubleshoot-the-persistent-errors"></a>
 
 ##<a id="troubleshoot-the-persistent-errors"></a> 对永久性错误（非暂时性错误）进行故障排除
-
 如果应用程序一直无法连接到 Azure SQL 数据库，通常表示下列其中一项出现了问题：
 
-- 防火墙配置。Azure SQL 数据库或客户端防火墙阻止了与 Azure SQL 数据库的连接。
-- 客户端上重新配置了网络：例如，使用了新的 IP 地址或代理服务器。
-- 用户失误：例如，连接参数（例如连接字符串中的服务器名称）键入错误。
+* 防火墙配置。Azure SQL 数据库或客户端防火墙阻止了与 Azure SQL 数据库的连接。
+* 客户端上重新配置了网络：例如，使用了新的 IP 地址或代理服务器。
+* 用户失误：例如，连接参数（例如连接字符串中的服务器名称）键入错误。
 
 ### 解决永久性连接问题的步骤
-
-1.	设置[防火墙规则](/documentation/articles/sql-database-configure-firewall-settings-powershell/)以允许客户端 IP 地址。
-2.	在客户端与 Internet 之间的所有防火墙上，确保为出站连接打开端口 1433。请参阅[配置 Windows 防火墙以允许 SQL Server 访问](https://msdn.microsoft.com/zh-cn/library/cc646023.aspx)，以获取更多指导。
+1. 	设置[防火墙规则](/documentation/articles/sql-database-configure-firewall-settings/)以允许客户端 IP 地址。若要进行临时测试，可设置一项防火墙规则，使用 0.0.0.0 作为起始 IP 地址范围，使用 255.255.255.255 作为结束 IP 地址范围。这样会使服务器向所有 IP 地址开放。如果这解决了连接问题，请删除该规则，然后创建一项防火墙规则，对 IP 地址或地址范围进行适当的限制。
+2. 	在客户端与 Internet 之间的所有防火墙上，确保为出站连接打开端口 1433。请查看[将 Windows 防火墙配置为允许 SQL Server 访问](https://msdn.microsoft.com/zh-cn/library/cc646023.aspx)和[混合标识所需的端口和协议](/documentation/articles/active-directory-aadconnect-ports/)，了解与更多端口相关的更多指针，以便根据需要打开这些端口进行 Azure Active Directory 身份验证。
 3.	验证连接字符串和其他连接设置。请参阅[连接问题主题](/documentation/articles/sql-database-connectivity-issues/#connections-to-azure-sql-database)中的“连接字符串”部分。
 4.	在仪表板中检查服务运行状况。如果认为存在区域性的中断，请参阅[从中断恢复](/documentation/articles/sql-database-disaster-recovery/)，以了解恢复到新区域的步骤。
 
@@ -74,7 +72,7 @@
 
 
 | &nbsp; | 标题 | 说明 |
-| --: | :-- | :-- |
+| ---:|:--- |:--- |
 | 1 | [排查 Azure SQL 数据库的连接问题](/documentation/articles/sql-database-troubleshoot-common-connection-issues/) | 这是对 Azure SQL 数据库中的连接问题进行故障排除的登陆页面。该页面介绍如何识别并解决 Azure SQL 数据库中的暂时性错误和永久性或非暂时性错误。 |
 | 2 | [排查、诊断和防止 SQL 数据库中的 SQL 连接错误和暂时性错误](/documentation/articles/sql-database-connectivity-issues/) | 了解如何排查、诊断和防止 Azure SQL 数据库中的 SQL 连接错误或暂时性错误。 |
 | 3 | 暂时性错误处理的一般指南 | 介绍连接到 Azure SQL 数据库时的暂时性错误处理的一般指南。 |
@@ -83,14 +81,10 @@
 | 6 | [SQL 数据库客户端应用程序的 SQL 错误代码：数据库连接错误和其他问题](/documentation/articles/sql-database-develop-error-messages/) | 介绍有关 SQL 数据库客户端应用程序的 SQL 错误代码的信息，例如常见的数据库连接错误、数据库复制问题和常规错误。 |
 | 7 | [Azure SQL 数据库的单一数据库性能指导](/documentation/articles/sql-database-performance-guidance/) | 提供了帮助确定适用于用户应用程序的服务层的指导。还提供了调整应用程序以充分利用 Azure SQL 数据库的建议。 |
 | 8 | [SQL 数据库开发概述](/documentation/articles/sql-database-develop-overview/) | 提供了各项技术的代码示例的链接，可使用这些技术连接到 Azure SQL 数据库并与之进行交互。 |
-| 9 | “升级到 Azure SQL 数据库 v12”页面（[Azure 门户预览](/documentation/articles/sql-database-upgrade-server-portal/)、[PowerShell](/documentation/articles/sql-database-upgrade-server-powershell/)） | 提供有关使用 Azure 门户预览或 PowerShell 将现有 Azure SQL 数据库 V11 服务器和数据库升级到 Azure SQL 数据库 V12 的指导。 |
-
 
 ## 后续步骤
 
-- [对 Azure SQL 数据库性能问题进行故障排除](/documentation/articles/sql-database-troubleshoot-performance/)
-- [对 Azure SQL 数据库权限问题进行故障排除](/documentation/articles/sql-database-troubleshoot-permissions/)
-- [参阅有关 Azure SQL 数据库服务的所有主题](/documentation/articles/sql-database-index-all-articles/)
+* [对 Azure SQL 数据库性能问题进行故障排除](/documentation/articles/sql-database-troubleshoot-performance/)
 
 
 
@@ -99,4 +93,5 @@
 - [SQL 数据库开发概述](/documentation/articles/sql-database-develop-overview/)
 - [SQL 数据库和 SQL Server 的连接库](/documentation/articles/sql-database-libraries/)
 
-<!---HONumber=Mooncake_Quality_Review_1215_2016-->
+<!---HONumber=Mooncake_0320_2017-->
+<!--Update_Description: link references clean-->

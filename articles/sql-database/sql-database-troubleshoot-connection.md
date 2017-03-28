@@ -1,26 +1,25 @@
 <properties
-	pageTitle="服务器上的数据库当前不可用，请连接到 SQL 数据库 | Azure"
-	description="对应用程序连接到 SQL 数据库时发生的“服务器上的数据库当前不可用”错误进行排查。"
-	services="sql-database"
-	documentationCenter=""
-	authors="dalechen"
-	manager="felixwu"
-	editor=""
-	keywords="服务器上的数据库当前不可用, 连接到 SQL 数据库"/>  
-
-
+    pageTitle="服务器上的数据库当前不可用，请连接到 SQL 数据库 | Azure"
+    description="对应用程序连接到 SQL 数据库时发生的“服务器上的数据库当前不可用”错误进行排查。"
+    services="sql-database"
+    documentationcenter=""
+    author="dalechen"
+    manager="cshepard"
+    editor=""
+    keywords="服务器上的数据库当前不可用, 连接到 SQL 数据库" />
 <tags
-	ms.service="sql-database"
-	ms.workload="data-management"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="09/21/2016"
-	wacn.date="12/26/2016"
-	ms.author="daleche"/>
+    ms.assetid="f61999ac-d46b-448a-8830-3b04978d84ec"
+    ms.service="sql-database"
+    ms.custom="troubleshoot"
+    ms.workload="data-management"
+    ms.tgt_pltfrm="na"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.date="01/20/2017"
+    wacn.date="03/24/2017"
+    ms.author="daleche" />
 
 # 连接到 SQL 数据库时发生“服务器上的数据库当前不可用”错误
-[AZURE.INCLUDE [support-disclaimer](../../includes/support-disclaimer.md)]
 
 应用程序连接到 Azure SQL 数据库时，收到以下错误消息：
 
@@ -42,4 +41,4 @@
 - 如果收到其他错误，请评估[错误信息](/documentation/articles/sql-database-develop-error-messages/)，以便获取有关原因的线索。
 - 如果问题持续出现，请访问[排查 Azure SQL 数据库的常见连接问题](/documentation/articles/sql-database-troubleshoot-common-connection-issues/)中的指南。
 
-<!---HONumber=Mooncake_Quality_Review_1215_2016-->
+<!---HONumber=Mooncake_0320_2017-->

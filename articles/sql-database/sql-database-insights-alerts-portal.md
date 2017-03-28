@@ -14,8 +14,8 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="11/15/2016"
-    wacn.date="01/20/2017"
+    ms.date="02/01/2017"
+    wacn.date="03/24/2017"
     ms.author="carlrab" />  
 
 
@@ -120,5 +120,4 @@
 * 详细了解 [Azure 自动化 Runbook](/documentation/articles/automation-starting-a-runbook/)。
 * [大致了解指标收集](/documentation/articles/insights-how-to-customize-monitoring/)以确保你的服务可用且响应迅速。
 
-<!---HONumber=Mooncake_0116_2017-->
-<!--update: wording update-->
+<!---HONumber=Mooncake_0320_2017-->

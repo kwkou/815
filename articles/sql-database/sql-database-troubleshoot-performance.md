@@ -1,27 +1,26 @@
 <properties
-	pageTitle="SQL 数据库性能优化提示 | Azure"
-	description="有关通过评估和改进来调整 Azure SQL 数据库性能的提示。"
-	services="sql-database"
-	documentationCenter=""
-	authors="v-shysun"
-	manager="felixwu"
-	editor=""
-	keywords="sql 性能优化, 数据库性能优化, sql 性能优化提示, sql 数据库性能优化"/>  
-
+    pageTitle="SQL 数据库性能优化提示 | Azure"
+    description="有关通过评估和改进来调整 Azure SQL 数据库性能的提示。"
+    services="sql-database"
+    documentationcenter=""
+    author="v-shysun"
+    manager="felixwu"
+    editor=""
+    keywords="sql 性能优化, 数据库性能优化, sql 性能优化提示, sql 数据库性能优化" />
 <tags
-	ms.service="sql-database"
-	ms.workload="data-management"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="09/13/2016"
-	wacn.date="12/26/2016"
-	ms.author="v-shysun"/>  
-
+    ms.assetid="eb7b3f66-3b33-4e1b-84fb-424a928a6672"
+    ms.service="sql-database"
+    ms.custom="monitor and tune"
+    ms.workload="data-management"
+    ms.tgt_pltfrm="na"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.date="02/07/2017"
+    wacn.date="03/24/2017"
+    ms.author="v-shysun" />
 
 # SQL 数据库性能调整提示
-可随时更改单个数据库的[服务层](/documentation/articles/sql-database-service-tiers/)或增加弹性数据库池的 eDTU 以提高性能，但可能需要首先确定提升和优化查询性能的机会。缺少索引与查询优化不足是数据库性能不佳的常见原因。本文提供在 SQL 数据库中执行性能优化的指南。
-
+可随时更改独立数据库的[服务层](/documentation/articles/sql-database-service-tiers/)或增加弹性池的 eDTU 以提高性能，但可能需要首先确定提升和优化查询性能的机会。缺少索引与查询优化不足是数据库性能不佳的常见原因。本文提供在 SQL 数据库中执行性能优化的指南。
 
 
 ## 评估和优化数据库性能的步骤
@@ -34,7 +33,7 @@
 
 
 ## 使用更多资源提高数据库性能的步骤
-1.	对于单个数据库，可根据需要[更改服务层](/documentation/articles/sql-database-scale-up/)以提高数据库性能。
-2.	对于多个数据库，请考虑使用[弹性数据库池](/documentation/articles/sql-database-elastic-pool-guidance/)自动调整资源规模。
+1.	对于独立数据库，可根据需要[更改服务层](/documentation/articles/sql-database-service-tiers/)以提高数据库性能。
+2.	对于多个数据库，请考虑使用[弹性池](/documentation/articles/sql-database-elastic-pool-guidance/)自动调整资源规模。
 
-<!---HONumber=Mooncake_Quality_Review_1215_2016-->
+<!---HONumber=Mooncake_0320_2017-->

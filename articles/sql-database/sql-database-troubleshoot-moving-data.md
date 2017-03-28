@@ -1,22 +1,22 @@
 <properties
-	pageTitle="在服务器之间或订阅之间移动数据库，以及将数据库移入和移出 Azure。"
-	description="在 Azure SQL 数据库中复制、移动和迁移数据与数据库的快速步骤。"
-	services="sql-database"
-	documentationCenter=""
-	authors="v-shysun"
-	manager="felixwu"
-	editor=""/>
-
+    pageTitle="在服务器之间或订阅之间移动数据库，以及将数据库移入和移出 Azure。"
+    description="在 Azure SQL 数据库中复制、移动和迁移数据与数据库的快速步骤。"
+    services="sql-database"
+    documentationcenter=""
+    author="v-shysun"
+    manager="felixwu"
+    editor="" />
 <tags
-	ms.service="sql-database"
-	ms.workload="data-management"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="09/13/2016"
-	wacn.date="12/26/2016"
-	ms.author="v-shysun"/>  
-
+    ms.assetid="dea01868-5757-41e2-826c-ec26361a339c"
+    ms.service="sql-database"
+    ms.custom="migrate and move"
+    ms.workload="data-management"
+    ms.tgt_pltfrm="na"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.date="02/07/2017"
+    wacn.date="03/24/2017"
+    ms.author="v-shysun" />
 
 # 在服务器之间或订阅之间移动数据库，以及将数据库移入和移出 Azure
 
@@ -32,4 +32,4 @@
 ## 创建数据库副本以便在 Azure 外部使用
 - [导出 BACPAC 文件。](/documentation/articles/sql-database-export/)
 
-<!---HONumber=Mooncake_Quality_Review_1215_2016-->
+<!---HONumber=Mooncake_0320_2017-->

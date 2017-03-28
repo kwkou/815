@@ -14,8 +14,8 @@
     ms.tgt_pltfrm="na"
     ms.devlang="python"
     ms.topic="article"
-    ms.date="01/03/2016"
-    wacn.date="02/14/2017"
+    ms.date="02/03/2017"
+    wacn.date="03/24/2017"
     ms.author="meetb" />
 
 # 使用 Python 连接到 SQL 数据库
@@ -34,14 +34,14 @@
 
 ## 步骤 2：配置开发环境
 ### **Mac OS**
-打开终端并导航到要在其中创建 python 脚本的目录。输入以下命令安装 **brew**、**FreeTDS** 和 **pyodbc**。pyodbc 使用 FreeTDS on MacOS 连接到 SQL 数据库。
+打开终端并导航到要在其中创建 python 脚本的目录。输入以下命令以安装 **brew**、**适用于 Mac 的 Microsoft ODBC 驱动程序** 和 **pyodbc**。pyodbc 使用 Linux 上的 Microsoft ODBC 驱动程序连接到 SQL 数据库。
 
-    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-    brew uninstall FreeTDS #if you have an existing installed FreeTDS
-    brew update
-    brew doctor
-    brew install freetds --with-unixodbc
-    sudo pip install pyodbc==3.1.1
+	ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+	brew tap microsoft/msodbcsql https://github.com/Microsoft/homebrew-msodbcsql
+	brew update
+	brew install msodbcsql 
+	#for silent install ACCEPT_EULA=y brew install msodbcsql
+	sudo pip install pyodbc==3.1.1
 
 ### **Linux (Ubuntu)**
 打开终端并导航到要在其中创建 python 脚本的目录。输入以下命令安装**适用于 Linux 的 Microsoft ODBC 驱动程序**和 **pyodbc**。pyodbc 使用 Linux 上的 Microsoft ODBC 驱动程序连接到 SQL 数据库。
@@ -76,9 +76,6 @@
     database = 'yourdatabase'
     username = 'yourusername'
     password = 'yourpassword'
-    #for mac
-    #driver = '{/usr/local/lib/libtdsodbc.so}'
-    #for linux of windows
     driver= '{ODBC Driver 13 for SQL Server}'
     cnxn = pyodbc.connect('DRIVER='+driver+';PORT=1433;SERVER='+server+';PORT=1443;DATABASE='+database+';UID='+username+';PWD='+ password)
     cursor = cnxn.cursor()
@@ -95,9 +92,6 @@
     database = 'yourdatabase'
     username = 'yourusername'
     password = 'yourpassword'
-    #for mac
-    driver = '{/usr/local/lib/libtdsodbc.so}'
-    #for linux or windows
     driver= '{ODBC Driver 13 for SQL Server}'
     cnxn = pyodbc.connect('DRIVER='+driver+';PORT=1433;SERVER='+server+';PORT=1443;DATABASE='+database+';UID='+username+';PWD='+ password)
     cursor = cnxn.cursor()
@@ -109,7 +103,6 @@
 
 
 ### 插入一行，传递参数，然后检索生成的主键
-
 在 SQL 数据库中，可以使用 [IDENTITY](https://msdn.microsoft.com/zh-cn/library/ms186775.aspx) 属性和 [SEQUENCE](https://msdn.microsoft.com/zh-cn/library/ff878058.aspx) 对象自动生成[主键](https://msdn.microsoft.com/zh-cn/library/ms179610.aspx)值。
 
     import pyodbc
@@ -117,9 +110,6 @@
     database = 'yourdatabase'
     username = 'yourusername'
     password = 'yourpassword'
-    #for mac
-    #driver = '{/usr/local/lib/libtdsodbc.so}'
-    #for linux or windows
     driver= '{ODBC Driver 13 for SQL Server}'
     cnxn = pyodbc.connect('DRIVER='+driver+';PORT=1433;SERVER='+server+';PORT=1443;DATABASE='+database+';UID='+username+';PWD='+ password)
     cursor = cnxn.cursor()
@@ -144,9 +134,6 @@
     database = 'yourdatabase'
     username = 'yourusername'
     password = 'yourpassword'
-    #for mac
-    #driver = '{/usr/local/lib/libtdsodbc.so}'
-    #for linux or windows
     driver= '{ODBC Driver 13 for SQL Server}'
     cnxn = pyodbc.connect('DRIVER='+driver+';PORT=1433;SERVER='+server+';PORT=1443;DATABASE='+database+';UID='+username+';PWD='+ password)
     cursor = cnxn.cursor()
@@ -157,7 +144,7 @@
 ## 后续步骤
 
 * 参阅 [SQL 数据库开发概述](/documentation/articles/sql-database-develop-overview/)
-* 有关 [Microsoft Python Driver for SQL Server](https://msdn.microsoft.com/zh-cn/library/mt652092.aspx) 的详细信息
+* 有关 [Microsoft Python Driver for SQL Server](https://docs.microsoft.com/sql/connect/python/python-driver-for-sql-server/) 的详细信息
 * 访问 [Python 开发人员中心](/develop/python/)。
 
 ## 其他资源 
@@ -165,5 +152,4 @@
 * [多租户 SaaS 应用程序和 Azure SQL 数据库的设计模式](/documentation/articles/sql-database-design-patterns-multi-tenancy-saas-applications/)
 * 浏览所有 [SQL 数据库的功能](/home/features/sql-database/)
 
-<!---HONumber=Mooncake_0120_2017-->
-<!--Update_Description: whole content update(steps, scripts)-->
+<!---HONumber=Mooncake_0320_2017-->

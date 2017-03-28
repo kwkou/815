@@ -1,25 +1,23 @@
-<properties 
-	pageTitle="SQL 数据库中的扩展事件 | Azure" 
-	description="介绍 Azure SQL 数据库中的扩展事件 (XEvents)，以及这些事件会话与 Microsoft SQL Server 中的事件会话的细微差别。"
-	services="sql-database" 
-	documentationCenter="" 
-	authors="MightyPen" 
-	manager="jhubbard" 
-	editor="" 
-	tags=""/>
-
-
+<properties
+    pageTitle="SQL 数据库中的扩展事件 | Azure"
+    description="介绍 Azure SQL 数据库中的扩展事件 (XEvents)，以及这些事件会话与 Microsoft SQL Server 中的事件会话的细微差别。"
+    services="sql-database"
+    documentationcenter=""
+    author="MightyPen"
+    manager="jhubbard"
+    editor=""
+    tags="" />
 <tags
-	ms.service="sql-database"
-	ms.workload="data-management"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="08/23/2016"
-	wacn.date="12/26/2016"
-	ms.author="genemi"/>  
-
-
+    ms.assetid="3b28cf15-f820-4b3c-8310-908d6d5b9d0c"
+    ms.service="sql-database"
+    ms.custom="monitor and tune"
+    ms.workload="data-management"
+    ms.tgt_pltfrm="na"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.date="02/03/2017"
+    wacn.date="03/24/2017"
+    ms.author="genemi" />
 
 # SQL 数据库中的扩展事件
 
@@ -27,26 +25,18 @@
 
 本主题说明 Azure SQL 数据库中的扩展事件与 Microsoft SQL server 中的扩展事件在实现方式上的细微差别。
 
-
 - SQL 数据库 V12 在 2015 年下半年推出了扩展事件功能。
 - SQL Server 自 2008 年即已推出扩展事件。
 - SQL 数据库上的扩展事件功能集是强大的 SQL Server 功能子集。
 
-
 *XEvents* 不是正式名称，有时在博客或其他非正式场合表示“扩展的事件”。
-
-
-> [AZURE.NOTE] 从 2015 年 10 月开始，扩展事件会话功能已在 Azure SQL 数据库的预览级激活。正式发布 (GA) 日期尚未确定。
-
 
 下面提供了 Azure SQL 数据库和 Microsoft SQL Server 的扩展事件的其他相关信息：
 
 - [快速入门：SQL Server 中的扩展事件](http://msdn.microsoft.com/zh-cn/library/mt733217.aspx)
 - [扩展事件](http://msdn.microsoft.com/zh-cn/library/bb630282.aspx)
 
-
 ## 先决条件
-
 
 本主题假设读者了解以下内容：
 
@@ -57,7 +47,6 @@
 - Microsoft SQL Server 中的[扩展事件](http://msdn.microsoft.com/zh-cn/library/bb630282.aspx)。
  - 有关扩展事件的许多文档都适用于 SQL Server 和 SQL 数据库。
 
-
 选择事件文件作为[目标](#AzureXEventsTargets)时，事先了解以下项目会很有帮助：
 
 
@@ -67,9 +56,7 @@
 - PowerShell
  - [对 Azure 存储空间使用 Azure PowerShell](/documentation/articles/storage-powershell-guide-full/) - 提供有关 PowerShell 和 Azure 存储服务的综合信息。
 
-
 ## 代码示例
-
 
 相关主题提供了两个代码示例：
 
@@ -122,7 +109,7 @@ Azure SQL 数据库具有支持扩展事件的[动态管理视图 (DMV)](http://
 
 
 | DMV 的名称 | 说明 |
-| :-- | :-- |
+|:--- |:--- |
 | **sys.dm\_xe\_database\_session\_event\_actions** | 返回有关事件会话操作的信息。 |
 | **sys.dm\_xe\_database\_session\_events** | 返回有关会话事件的信息。 |
 | **sys.dm\_xe\_database\_session\_object\_columns** | 显示绑定到会话的对象的配置值。 |
@@ -261,13 +248,11 @@ Azure SQL 数据库具有支持扩展事件的[动态管理视图 (DMV)](http://
 
 - [CREATE CREDENTIAL (Transact-SQL)](http://msdn.microsoft.com/zh-cn/library/ms189522.aspx)
 - [CREATE EVENT SESSION (Transact-SQL)](http://msdn.microsoft.com/zh-cn/library/bb677289.aspx)
+- [Jonathan Kehayias 撰写的有关 Microsoft SQL Server 中扩展事件的博客文章](http://www.sqlskills.com/blogs/jonathan/category/extended-events/)
 
-
-- [Jonathan Kehayias 撰写的有关 Microsoft SQL Server 中扩展事件的博客文章](http://www.sqlskills.com/blogs/jonathan/category/extended-events)
 
 
 可通过以下链接访问有关扩展事件的其他代码示例主题。不过，必须定期检查所有示例，以确定这些示例是针对 Microsoft SQL Server 还是 Azure SQL 数据库。然后，你可以在运行示例时确定是否要做出细微的更改。
-
 
 <!--
 ('lock_acquired' event.)
@@ -276,4 +261,4 @@ Azure SQL 数据库具有支持扩展事件的[动态管理视图 (DMV)](http://
 - Code sample for SQL Server: [Find the Objects That Have the Most Locks Taken on Them](http://msdn.microsoft.com/zh-cn/library/bb630355.aspx)
 -->
 
-<!---HONumber=Mooncake_Quality_Review_1215_2016-->
+<!---HONumber=Mooncake_0320_2017-->

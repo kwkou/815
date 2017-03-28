@@ -1,5 +1,5 @@
 <properties
-    pageTitle="Azure SQL 数据库常见问题"
+    pageTitle="Azure SQL 数据库常见问题解答 | Azure"
     description="客户就云数据库、Azure SQL 数据库、Microsoft 的关系数据库管理系统 (RDBMS) 和云中“数据库即服务”经常提出的问题的解答。"
     services="sql-database"
     documentationcenter=""
@@ -14,12 +14,28 @@
     ms.topic="article"
     ms.tgt_pltfrm="NA"
     ms.workload="data-management"
-    ms.date="12/19/2016"
-    wacn.date="01/20/2017"
+    ms.date="02/06/2017"
+    wacn.date="03/24/2017"
     ms.author="sashan;carlrab" />  
 
 
 # SQL 数据库常见问题
+
+## SQL 数据库的最新版本是什么？
+SQL 数据库的最新版本为 V12。版本 V11 已停用。
+
+## SQL 数据库的 SLA 是什么？
+我们保证至少在 99.99% 的时间内客户将能够在其单个或弹性“基本”、“标准”或“高级”版 Azure SQL 数据库与我们的 Internet 网关之间保持连接。有关详细信息，请参阅 [SLA](/support/legal/sla/)。
+
+## 如何重置服务器管理员的密码？
+在 [Azure 门户预览](https://portal.azure.cn)中，单击“SQL Server”，从列表中选择服务器，然后单击“重置密码”。
+
+## 如何管理数据库和登录名？
+请参阅[管理数据库和登录名](/documentation/articles/sql-database-manage-logins/)。
+
+## 如何确保只允许经过授权的 IP 地址访问服务器？
+请参阅[如何：在 SQL 数据库上配置防火墙设置](/documentation/articles/sql-database-configure-firewall-settings/)。
+
 ## SQL 数据库的使用情况如何体现在我的帐单上？
 SQL 数据库以可预测的每小时费率收费，同时根据服务层 + 单一数据库的性能级别或每一弹性池的 eDTU 数计费。实际使用量是每小时按比例计算的，因此帐单可能会显示小时的小数部分。例如，如果某个数据库在一个月内存在了 12 小时，则帐单将显示 0.5 天的使用量。服务层 + 性能级别和每个池的 eDTU 数在帐单中进行了划分，以便查看单个月份中使用数据库的天数。
 
@@ -46,7 +62,7 @@ SQL 数据库以可预测的每小时费率收费，同时根据服务层 + 单�
 
 * 弹性池一创建即计费，即使池中没有数据库。
 * 弹性池按小时计费。该计量频率与单一数据库性能级别的计量频率相同。
-* 如果将弹性池的大小调整为新的 eDTU 量，在调整操作完成之前，不会按新的 eDTU 量计费。这种计费所遵循的模式与更改单一数据库的性能级别所遵循的模式相同。
+* 如果将弹性池的大小调整为新的 eDTU 数，在调整操作完成之前，不会按新的 eDTU 数计费。这种计费所遵循的模式与更改单一数据库的性能级别所遵循的模式相同。
 * 弹性池的价格取决于池的 eDTU 数量。弹性池的价格与池内弹性数据库的数目和使用率无关。
 * 价格的计算公式为：（池 eDTU 的数量）x（每 eDTU 的单位价格）。
 
@@ -73,12 +89,10 @@ SQL 数据库以可预测的每小时费率收费，同时根据服务层 + 单�
 次数随意。
 
 ## 更改单一数据库的服务层次或性能级别，或将数据库移入和移出弹性池需要多长时间？
-更改数据库的服务层和移入和移出池需要在平台上以后台操作的形式复制数据库。更改服务层可能需要几分钟至几小时的时间，具体取决于数据库的大小。这两种情况下，数据库在移动期间保持联机和可用。有关更改单一数据库的详细信息，请参阅[更改数据库的服务层](/documentation/articles/sql-database-scale-up/)。
+更改数据库的服务层和移入和移出池需要在平台上以后台操作的形式复制数据库。更改服务层可能需要几分钟至几小时的时间，具体取决于数据库的大小。这两种情况下，数据库在移动期间保持联机和可用。有关更改单一数据库的详细信息，请参阅[更改数据库的服务层](/documentation/articles/sql-database-service-tiers/)。
 
 ## 何时应该使用单一数据库或弹性数据库？ 
-一般而言，弹性池针对典型的[软件即服务 (SaaS) 应用程序模式](/documentation/articles/sql-database-design-patterns-multi-tenancy-saas-applications/)而设计，该模式中每个客户或租户有一个数据库。购买单独的数据库并超量预配以满足每个数据库的可变和峰值需求通常不够经济高效。使用池可以管理池的整体性能，数据库将自动扩展和收缩。
-
-如果 Azure 的智能引擎发现了担保数据库的使用模式，则建议使用池。有关详细信息，请参阅 [SQL 数据库定价层建议](/documentation/articles/sql-database-service-tier-advisor/)。有关在单一数据库与弹性数据库之间进行选择的详细指导，请参阅[弹性池的价格和性能注意事项](/documentation/articles/sql-database-elastic-pool-guidance/)。
+一般而言，弹性池针对典型的[软件即服务 (SaaS) 应用程序模式](/documentation/articles/sql-database-design-patterns-multi-tenancy-saas-applications/)而设计，该模式中每个客户或租户有一个数据库。购买单独的数据库并超量预配以满足每个数据库的可变和峰值需求通常不够经济高效。使用池可以管理池的整体性能，数据库将自动扩展和收缩。如果 Azure 的智能引擎发现了担保数据库的使用模式，则建议使用池。有关详细信息，请参阅[弹性池指南](/documentation/articles/sql-database-elastic-pool-guidance/)。
 
 ## 具有高达备份存储的最大已预配数据库存储两倍的容量是什么意思？ 
 备份存储是与用于[时间点还原](/documentation/articles/sql-database-recovery-using-backups/#point-in-time-restore)和[异地还原](/documentation/articles/sql-database-recovery-using-backups/#geo-restore)的自动数据库备份关联的存储。Azure SQL 数据库提供了高达备份存储的最大已预配数据库存储两倍的容量，不需要支付额外的成本。例如，如果拥有一个标准 DB 实例并且预配的 DB 大小为 250 GB，则会提供 500 GB 的备份存储并且不额外收费。如果数据库超过提供的备份存储，则可以选择与 Azure 支持联系来缩短保留期，或针对按标准读取访问地域冗余存储 (RA-GRS) 费率计费的额外备份存储支付费用。有关 RA-GRS 计费的更多信息，请参阅“存储定价详细信息”。
@@ -101,5 +115,5 @@ Azure SQL Web 和企业数据库现已停用。基本、标准、高级和弹性
 ## 哪些工具可用于监视主数据库与地域辅助数据库之间的复制延迟？
 我们通过 DMV 显示主数据库与地域辅助数据库之间的实时复制延迟。有关详细信息，请参阅 [sys.dm\_geo\_replication\_link\_status](https://msdn.microsoft.com/zh-cn/library/mt575504.aspx)。
 
-<!---HONumber=Mooncake_0116_2017-->
-<!--update: add section "弹性池计费和定价信息"; translation update "弹性数据库池" to "弹性池"-->
+<!---HONumber=Mooncake_0320_2017-->
+<!--update: add several new common questions-->
