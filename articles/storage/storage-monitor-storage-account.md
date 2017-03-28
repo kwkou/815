@@ -127,7 +127,7 @@ Azure 存储使用[表存储](/documentation/articles/storage-introduction/#tabl
 1. 选择“类别”>“监视”。
 1. 将图表磁贴拖放到要显示的指标所在的仪表板中。针对要在仪表板上显示的所有指标重复上述步骤。在下图中，为了方便演示，已突出显示“Blob - 请求总数”图表，但可将所有图表放置在仪表板上。
 
-   ![在 Azure 门户预览中的磁贴库](./media/storage-monitor-storage-account/stg-customize-dashboard-01.png)  
+    ![在 Azure 门户预览中的磁贴库](./media/storage-monitor-storage-account/stg-customize-dashboard-01.png)  
 
 1. 添加完图表后，请选择仪表板顶部附近的“完成自定义”。
 
