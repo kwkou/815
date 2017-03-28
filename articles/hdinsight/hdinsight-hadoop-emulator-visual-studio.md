@@ -13,8 +13,8 @@ ms.devlang="na"
 ms.topic="article"
 ms.tgt_pltfrm="na"
 ms.workload="big-data"
-ms.date="11/15/2016"
-wacn.date="03/17/2017"
+ms.date="02/10/2017"
+wacn.date="03/28/2017"
 ms.author="larryfr"/>
 
 # 将用于 Visual Studio 的 Azure Data Lake 工具与 Hortonworks 沙盒配合使用

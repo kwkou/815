@@ -14,8 +14,8 @@
     ms.tgt_pltfrm="vm-windows"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="08/22/2016"
-    wacn.date="01/20/2017"
+    ms.date="1/23/2017"
+    wacn.date="03/28/2017"
     ms.author="kasing" />
 
 # 有关平台支持的从经典部署模型到 Azure Resource Manager 的迁移的技术深入探讨

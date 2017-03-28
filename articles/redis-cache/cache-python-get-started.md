@@ -13,8 +13,8 @@
 	ms.topic="hero-article"
 	ms.tgt_pltfrm="cache-redis"
 	ms.workload="tbd"
-	ms.date="01/06/2017"
-	wacn.date="03/01/2017"
+	ms.date="02/10/2017"
+	wacn.date="03/28/2017"
 	ms.author="sdanie"/>  
 
 

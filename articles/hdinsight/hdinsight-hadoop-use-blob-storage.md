@@ -15,8 +15,8 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="get-started-article"
-    ms.date="09/06/2016"
-    wacn.date="01/25/2017"
+    ms.date="02/06/2017"
+    wacn.date="03/28/2017"
     ms.author="jgao" />
 
 # 将 HDFS 兼容的 Azure Blob 存储与 HDInsight 中的 Hadoop 配合使用

@@ -14,8 +14,8 @@
 	ms.tgt_pltfrm="vm-windows"
 	ms.devlang="na"
 	ms.topic="get-started-article"
-	ms.date="09/27/2016"
-	wacn.date="11/21/2016"
+	ms.date="01/20/2017"
+	wacn.date="03/28/2017"
 	ms.author="cynthn"/>
 
 #关于 Azure 中的 Windows 虚拟机 

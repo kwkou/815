@@ -13,8 +13,8 @@
     ms.topic="article"
     ms.tgt_pltfrm="vm-windows-sql-server"
     ms.workload="infrastructure-services"
-    ms.date="11/11/2016"
-    wacn.date="02/24/2017"
+    ms.date="01/31/2017"
+    wacn.date="03/28/2017"
     ms.author="ninarn" />  
 
 

@@ -14,8 +14,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="vm-windows"
    ms.workload="infrastructure-services"
-   ms.date="11/14/2016"
-   wacn.date="12/30/2016"
+   ms.date="102/09/2017"
+   wacn.date="03/28/2017"
    ms.author="iainfou"/>
 
 # 在 Azure 门户预览中创建完全限定的域名

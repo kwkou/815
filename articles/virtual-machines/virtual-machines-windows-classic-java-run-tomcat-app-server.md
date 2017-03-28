@@ -14,8 +14,8 @@
 	ms.tgt_pltfrm="vm-windows"
 	ms.devlang="Java"
 	ms.topic="article"
-	ms.date="12/22/2016"
-	wacn.date="03/01/2017"
+	ms.date="01/23/2017"
+	wacn.date="03/28/2017"
 	ms.author="robmcm"/>
 
 # 如何在使用经典部署模型创建的虚拟机上运行 Java 应用程序服务器

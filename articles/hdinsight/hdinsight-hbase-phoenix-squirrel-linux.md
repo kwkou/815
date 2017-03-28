@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="09/02/2016"
+	ms.date="02/06/2017"
 	wacn.date="03/28/2017"/>
 
 # 将 Apache Phoenix 与 HDinsight 中基于 Linux 的 HBase 群集配合使用  

@@ -14,8 +14,8 @@
 	ms.tgt_pltfrm="vm-windows"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="12/16/2016"
-	wacn.date="01/25/2017"
+	ms.date="01/24/2017"
+	wacn.date="03/28/2017"
 	ms.author="iainfou"/>
 
 # 基础结构命名准则

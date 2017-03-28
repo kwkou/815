@@ -14,8 +14,8 @@
 	ms.tgt_pltfrm="vm-windows"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="12/15/2015"
-	wacn.date="06/07/2016"
+	ms.date="1/23/2017"
+	wacn.date="03/28/2017"
 	ms.author="saurabh"/>
 
 # 使用 Azure 资源管理器模板创建具有监视和诊断功能的 Windows 虚拟机

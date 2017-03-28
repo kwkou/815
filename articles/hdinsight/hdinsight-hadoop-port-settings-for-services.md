@@ -13,8 +13,8 @@ ms.devlang="na"
 ms.topic="article"
 ms.tgt_pltfrm="na"
 ms.workload="big-data"
-ms.date="10/03/2016"
-wacn.date="02/14/2017"
+ms.date="01/17/2017"
+wacn.date="03/28/2017"
 ms.author="larryfr"/>
 
 # HDInsight 使用的端口和 URI

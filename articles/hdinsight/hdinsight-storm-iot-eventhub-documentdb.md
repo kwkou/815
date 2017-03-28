@@ -13,8 +13,8 @@ ms.devlang="java"
 ms.topic="article"
 ms.tgt_pltfrm="na"
 ms.workload="big-data"
-ms.date="11/08/2016"
-wacn.date="12/30/2016"
+ms.date="02/09/2017"
+wacn.date="03/28/2017"
 ms.author="larryfr"/>
 
 # 使用 Apache Storm on HDInsight 处理 Azure 事件中心的车辆传感器数据

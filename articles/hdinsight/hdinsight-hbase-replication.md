@@ -12,8 +12,8 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="big-data"
-    ms.date="12/21/2016"
-    wacn.date="01/25/2017"
+    ms.date="02/07/2017"
+    wacn.date="03/28/2017"
     ms.author="jgao" />
 
 # 配置 HBase 复制

@@ -14,8 +14,8 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="09/02/2016"
-    wacn.date="01/25/2017"
+    ms.date="02/06/2017"
+    wacn.date="03/28/2017"
     ms.author="jgao" />
 
 # 使用 Bootstrap 自定义 HDInsight 群集

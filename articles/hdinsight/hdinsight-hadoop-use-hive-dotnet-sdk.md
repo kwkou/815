@@ -14,8 +14,8 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="12/16/2016"
-    wacn.date="01/25/2017"
+    ms.date="02/09/2017"
+    wacn.date="03/28/2017"
     ms.author="jgao" />
 
 # 使用 HDInsight .NET SDK 运行 Hive 查询

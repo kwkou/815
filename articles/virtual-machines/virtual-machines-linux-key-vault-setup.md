@@ -14,8 +14,8 @@
 	ms.tgt_pltfrm="vm-linux"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="05/31/2016"
-	wacn.date="07/11/2016"
+	ms.date="01/24/2017"
+	wacn.date="03/28/2017"
 	ms.author="singhkay"/>
 
 # 在 Azure Resource Manager 中为虚拟机设置密钥保管库

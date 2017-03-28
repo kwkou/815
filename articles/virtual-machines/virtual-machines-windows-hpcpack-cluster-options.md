@@ -14,8 +14,8 @@
     ms.topic="article"
     ms.tgt_pltfrm="vm-windows"
     ms.workload="big-compute"
-    ms.date="11/17/2016"
-    wacn.date="01/20/2017"
+    ms.date="02/06/2017"
+    wacn.date="03/28/2017"
     ms.author="danlep" />
 
 # 在 Azure 中使用 HPC Pack 创建和管理 Windows HPC 群集时可用的选项

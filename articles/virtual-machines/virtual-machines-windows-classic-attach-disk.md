@@ -15,7 +15,7 @@
 	ms.tgt_pltfrm="vm-windows"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="06/27/2016"
+	ms.date="01/23/2017"
 	wacn.date="03/28/2017"
 	ms.author="cynthn"/>
 

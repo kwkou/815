@@ -13,8 +13,8 @@
 	ms.tgt_pltfrm="cache-redis" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="01/06/2017" 
-	wacn.date="03/01/2017" 
+	ms.date="01/23/2017" 
+	wacn.date="03/28/2017" 
 	ms.author="sdanie"/>
 
 # 如何使用 Azure 命令行界面 (Azure CLI) 创建和管理 Azure Redis 缓存

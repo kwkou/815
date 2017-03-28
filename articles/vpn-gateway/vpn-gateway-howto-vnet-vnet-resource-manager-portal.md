@@ -14,8 +14,8 @@
     ms.topic="hero-article"
     ms.tgt_pltfrm="na"
     ms.workload="infrastructure-services"
-    ms.date="10/25/2016"
-    wacn.date="12/26/2016"
+    ms.date="01/23/2017"
+    wacn.date="03/28/2017"
     ms.author="cherylmc" />
 
 # 使用 Azure 门户预览配置 VNet 到 VNet 连接
