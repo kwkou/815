@@ -67,7 +67,8 @@
 
 1. 打开服务器的“SQL Server”边栏选项卡，在“概述”页中查看信息。
 
-   ![Azure 门户预览中的服务器管理员帐户](./media/sql-database-control-access-sql-authentication-get-started/sql_admin_portal.png)  
+   	![Azure 门户预览中的服务器管理员帐户](./media/sql-database-control-access-sql-authentication-get-started/sql_admin_portal.png)  
+
 2. 记下逻辑服务器上服务器管理员的名称。
 
 3. 如果不记得密码，请单击“重置密码”设置新密码。
@@ -80,21 +81,25 @@
 
 1. 打开 SQL Server Management Studio，使用 SQL Server 身份验证和服务器管理员帐户以服务器管理员的身份连接到服务器。
 
-   ![连接到服务器](./media/sql-database-get-started/connect-to-server.png)  
+   	![连接到服务器](./media/sql-database-get-started/connect-to-server.png)  
+
 2. 单击“连接”。
 
-   ![已连接到服务器](./media/sql-database-get-started/connected-to-server.png)  
+   	![已连接到服务器](./media/sql-database-get-started/connected-to-server.png)  
+
 3. 在对象资源管理器中展开“安全性”，然后展开“登录名”查看服务器的现有登录名 - 新服务器上的唯一登录名就是服务器管理员帐户的登录名。
 
-   ![服务器管理员登录名](./media/sql-database-control-access-sql-authentication-get-started/server_admin_login.png)  
+   	![服务器管理员登录名](./media/sql-database-control-access-sql-authentication-get-started/server_admin_login.png) 
+
 4. 在对象资源管理器中，依次展开“数据库”、“系统数据库”、“master”、“安全性”、“用户”，查看为此数据库的服务器管理员登录名创建的用户帐户。
 
-   ![服务器管理员的 master 数据库用户帐户](./media/sql-database-control-access-sql-authentication-get-started/master_database_user_account_for_server_admin.png)  
+   	![服务器管理员的 master 数据库用户帐户](./media/sql-database-control-access-sql-authentication-get-started/master_database_user_account_for_server_admin.png)  
 
 
-   > [AZURE.NOTE]
-   >有关“用户”节点中显示的其他用户帐户的信息，请参阅[主体](https://msdn.microsoft.com/zh-cn/library/ms181127.aspx)。
-   >
+   	> [AZURE.NOTE]
+   	>有关“用户”节点中显示的其他用户帐户的信息，请参阅[主体](https://msdn.microsoft.com/zh-cn/library/ms181127.aspx)。
+   	>
+
 5. 在对象资源管理器中右键单击“master”，然后单击“新建查询”打开一个连接到 master 数据库的查询窗口。
 6. 在查询窗口中执行以下查询，返回有关执行查询的用户的信息。
 
@@ -102,7 +107,8 @@
 		SELECT USER;
 
 
-   ![在 master 数据库中选择用户查询](./media/sql-database-control-access-sql-authentication-get-started/select_user_query_in_master_database.png)  
+   	![在 master 数据库中选择用户查询](./media/sql-database-control-access-sql-authentication-get-started/select_user_query_in_master_database.png)  
+
 7. 在查询窗口中执行以下查询，返回有关 **master** 数据库中 sqladmin 用户权限的信息。
 
 
@@ -123,15 +129,17 @@
 		WHERE p.name = 'sqladmin';
 
 
-   ![master 数据库中的服务器管理员权限](./media/sql-database-control-access-sql-authentication-get-started/server_admin_permissions_in_master_database.png)  
+   	![master 数据库中的服务器管理员权限](./media/sql-database-control-access-sql-authentication-get-started/server_admin_permissions_in_master_database.png)  
 
 
-   >[AZURE.NOTE]
-   >服务器管理员有权连接到 master 数据库、创建登录名和用户、从 sys.sql\_logins 表中选择信息，以及将用户添加到 dbmanager 和 dbcreator 数据库角色。这些权限是对授予公共角色的权限的补充（所有用户从这些公共角色权限继承权限，例如，从特定的表中选择信息的权限）。有关详细信息，请参阅[权限](https://msdn.microsoft.com/zh-cn/library/ms191291.aspx)。
-   >
+   	>[AZURE.NOTE]
+   	>服务器管理员有权连接到 master 数据库、创建登录名和用户、从 sys.sql\_logins 表中选择信息，以及将用户添加到 dbmanager 和 dbcreator 数据库角色。这些权限是对授予公共角色的权限的补充（所有用户从这些公共角色权限继承权限，例如，从特定的表中选择信息的权限）。有关详细信息，请参阅[权限](https://msdn.microsoft.com/zh-cn/library/ms191291.aspx)。
+   	>
+
 8. 在对象资源管理器中，依次展开“blankdb”、“安全性”、“用户”，查看为此数据库（以及每个用户数据库）中的服务器管理员登录名创建的用户帐户。
 
-   ![blankdb 中的用户帐户](./media/sql-database-control-access-sql-authentication-get-started/user_accounts_in_blankdb.png)  
+   	![blankdb 中的用户帐户](./media/sql-database-control-access-sql-authentication-get-started/user_accounts_in_blankdb.png)  
+
 9. 在对象资源管理器中右键单击“blankdb”，然后单击“新建查询”。
 
 10. 在查询窗口中执行以下查询，返回有关执行查询的用户的信息。
@@ -140,7 +148,8 @@
 		SELECT USER;
 
 
-   ![在 blankdb 数据库中选择用户查询](./media/sql-database-control-access-sql-authentication-get-started/select_user_query_in_blankdb_database.png)  
+   	![在 blankdb 数据库中选择用户查询](./media/sql-database-control-access-sql-authentication-get-started/select_user_query_in_blankdb_database.png)  
+
 11. 在查询窗口中执行以下查询，返回有关 dbo 用户权限的信息。
 
 
@@ -161,12 +170,12 @@
 		WHERE p.name = 'dbo';
 
 
-   ![blankdb 数据库中的服务器管理员权限](./media/sql-database-control-access-sql-authentication-get-started/server_admin_permissions_in_blankdb_database.png)  
+   	![blankdb 数据库中的服务器管理员权限](./media/sql-database-control-access-sql-authentication-get-started/server_admin_permissions_in_blankdb_database.png)  
 
 
-   > [AZURE.NOTE]
-   >dbo 用户是公共角色的成员，也是 db\_owner 固定数据库角色的成员。有关详细信息，请参阅[数据库级角色](https://msdn.microsoft.com/zh-cn/library/ms189121.aspx)。
-   >
+   	> [AZURE.NOTE]
+   	>dbo 用户是公共角色的成员，也是 db\_owner 固定数据库角色的成员。有关详细信息，请参阅[数据库级角色](https://msdn.microsoft.com/zh-cn/library/ms189121.aspx)。
+   	>
 
 ## 创建具有 SELECT 权限的新用户
 
@@ -183,7 +192,8 @@
 		CREATE USER user1
 		WITH PASSWORD = 'p@ssw0rd';
 
-   ![新用户 user1 sqldbtutorialdb](./media/sql-database-control-access-sql-authentication-get-started/new_user_user1_aw.png)  
+   	![新用户 user1 sqldbtutorialdb](./media/sql-database-control-access-sql-authentication-get-started/new_user_user1_aw.png)  
+
 3. 在查询窗口中执行以下查询，返回有关 user1 的权限的信息。
 
 
@@ -204,30 +214,33 @@
 		WHERE p.name = 'user1';
 
 
-   ![用户数据库中的新用户权限](./media/sql-database-control-access-sql-authentication-get-started/new_user_permissions_in_user_database.png)  
+   	![用户数据库中的新用户权限](./media/sql-database-control-access-sql-authentication-get-started/new_user_permissions_in_user_database.png)  
 
 
-   > [AZURE.NOTE]
-   >数据库中的新用户只拥有从公共角色继承的权限。
-   >
+   	> [AZURE.NOTE]
+   	>数据库中的新用户只拥有从公共角色继承的权限。
+   	>
+
 4. 以只拥有从公共角色继承的权限的 **user1** 身份，使用 **EXECUTE AS USER** 语句执行以下查询，尝试查询 sqldbtutorialdb 数据库中的 SalesLT.ProductCategory 表。
 
 		EXECUTE AS USER = 'user1'; SELECT * FROM [SalesLT].[ProductCategory]; REVERT;
 
 
-   ![无 select 权限](./media/sql-database-control-access-sql-authentication-get-started/no_select_permissions.png)  
+   	![无 select 权限](./media/sql-database-control-access-sql-authentication-get-started/no_select_permissions.png)  
 
 
-   > [AZURE.NOTE]
-   >默认情况下，公共角色不会授予对用户对象的 **SELECT** 权限。
-   >
+   	> [AZURE.NOTE]
+   	>默认情况下，公共角色不会授予对用户对象的 **SELECT** 权限。
+   	>
+
 5. 执行以下语句，向 **user1** 授予对 SalesLT.ProductCategory 表的 **SELECT** 权限。
 
  
 		GRANT SELECT ON OBJECT::[SalesLT].[ProductCategory] to user1;
 
 
-   ![授予 select 权限](./media/sql-database-control-access-sql-authentication-get-started/grant_select_permissions.png)  
+   	![授予 select 权限](./media/sql-database-control-access-sql-authentication-get-started/grant_select_permissions.png)  
+
 6. 以 **user1** 的身份执行以下查询可以成功查询 sqldbtutorialdb 数据库中的 SalesLT.ProductCategory 表。
 
 
@@ -236,7 +249,7 @@
 		REVERT;
 
 
-   ![select 权限](./media/sql-database-control-access-sql-authentication-get-started/select_permissions.png)  
+   	![select 权限](./media/sql-database-control-access-sql-authentication-get-started/select_permissions.png)  
 
 
 ## 使用 T-SQL 创建数据库级防火墙规则
@@ -255,18 +268,24 @@
 
 2. 在“连接到服务器”窗口中，输入服务器名称和身份验证信息，以便使用 **user1** 帐户通过 SQL Server 身份验证进行连接。
     
-   ![在不使用防火墙规则的情况下以 user1 身份进行连接 1](./media/sql-database-control-access-sql-authentication-get-started/connect-user1_no_rule1.png)  
+   	![在不使用防火墙规则的情况下以 user1 身份进行连接 1](./media/sql-database-control-access-sql-authentication-get-started/connect-user1_no_rule1.png)  
+
 3. 单击“选项”指定要连接到的数据库，然后在“连接属性”选项卡上的“连接到数据库”下拉框中键入 **sqldbtutorialdb**。
    
-   ![在不使用防火墙规则的情况下以 user1 身份进行连接 2](./media/sql-database-control-access-sql-authentication-get-started/connect-user1_no_rule2.png)  
+   	![在不使用防火墙规则的情况下以 user1 身份进行连接 2](./media/sql-database-control-access-sql-authentication-get-started/connect-user1_no_rule2.png)  
+
 4. 单击“连接”。
 
    此时会出现一个对话框，告知从中尝试连接到 SQL 数据库的计算机上不存在允许访问该数据库的防火墙规则。
 
-   ![在不使用防火墙规则的情况下以 user1 身份进行连接 4](./media/sql-database-control-access-sql-authentication-get-started/connect-user1_no_rule4.png)  
+   	![在不使用防火墙规则的情况下以 user1 身份进行连接 4](./media/sql-database-control-access-sql-authentication-get-started/connect-user1_no_rule4.png)  
+
 5. 复制此对话框中的客户端 IP 地址，以便在步骤 8 中使用。
+
 6. 单击“确定”关闭错误对话框，但不要关闭“连接到服务器”对话框。
+
 7. 切换回到已创建服务器级防火墙规则的计算机。
+
 8. 以服务器管理员的身份连接到 SSMS 中的 sqldbtutorialdb 数据库，然后执行以下语句，使用步骤 5 中的 IP 地址（或地址范围）创建数据库级防火墙。
 
 
@@ -274,18 +293,21 @@
 			@start_ip_address = 'x.x.x.x', @end_ip_address = 'x.x.x.x';
 
 
-   ![添加防火墙规则](./media/sql-database-control-access-sql-authentication-get-started/user1_add_rule_aw.png)  
+   	![添加防火墙规则](./media/sql-database-control-access-sql-authentication-get-started/user1_add_rule_aw.png)  
+
 9. 再次切换计算机，然后在“连接到服务器”对话框中单击“连接”，以 user1 身份连接到 sqldbtutorialdb。
 
-   > [AZURE.NOTE]
-   >创建数据库级防火墙规则后，它最长可能需要 5 分钟才会激活。
-   >
+   	> [AZURE.NOTE]
+   	>创建数据库级防火墙规则后，它最长可能需要 5 分钟才会激活。
+   	>
+
 10. 成功连接后，在对象资源管理器中展开“数据库”。可以看到，**user1** 只能查看 **sqldbtutorialdb** 数据库。
 
-   ![使用防火墙规则以 user1 身份进行连接 1](./media/sql-database-control-access-sql-authentication-get-started/connect-user1_rule1.png)  
+   	![使用防火墙规则以 user1 身份进行连接 1](./media/sql-database-control-access-sql-authentication-get-started/connect-user1_rule1.png)  
+
 11. 依次展开“sqldbtutorialdb”、“表”。可以看到，user1 仅有权查看单个表，即 **SalesLT.ProductCategory** 表。
 
-   ![以 user1 的身份建立连接并查看对象 1](./media/sql-database-control-access-sql-authentication-get-started/connect-user1_view_objects1.png)  
+   	![以 user1 的身份建立连接并查看对象 1](./media/sql-database-control-access-sql-authentication-get-started/connect-user1_view_objects1.png)  
 
 
 ## 创建名为 db\_owner 的新用户和数据库级防火墙规则

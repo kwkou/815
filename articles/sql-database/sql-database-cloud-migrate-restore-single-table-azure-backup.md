@@ -26,19 +26,21 @@
 ## 准备步骤：重命名表，并还原数据库的一个副本
 1. 确定 Azure SQL 数据库中你要替换为还原的副本的表。使用 Microsoft SQL Management Studio 重命名此表。例如，将此表重命名为 &lt;table name&gt;\_old。
    
-   > [AZURE.NOTE]
-   >为了避免受到阻止，请确保要重命名的表没有任何正在运行的活动。如果你遇到问题，请确保在维护时段内执行此过程。
-   >
+    > [AZURE.NOTE]
+    >为了避免受到阻止，请确保要重命名的表没有任何正在运行的活动。如果你遇到问题，请确保在维护时段内执行此过程。
+    >
 2. 使用[时间点还原](/documentation/articles/sql-database-recovery-using-backups/#point-in-time-restore)步骤，将数据库的一个备份还原到想要恢复到的一个时间点。
 
-   > [AZURE.NOTE]
-   >还原的数据库的名称的格式为 DBName+TimeStamp；例如，**Adventureworks2012\_2016-01-01T22-12Z**。此步骤不会覆盖服务器上现有的数据库名称。这是一项安全措施，目的是让用户在删除其当前数据库之前确认还原的数据库，然后重命名此还原的数据库供生产之用。
+    > [AZURE.NOTE]
+    >还原的数据库的名称的格式为 DBName+TimeStamp；例如，**Adventureworks2012\_2016-01-01T22-12Z**。此步骤不会覆盖服务器上现有的数据库名称。这是一项安全措施，目的是让用户在删除其当前数据库之前确认还原的数据库，然后重命名此还原的数据库供生产之用。
    
 ## 使用 SQL 数据库迁移工具从还原的数据库中复制表
 1. 下载并安装 [SQL 数据库迁移向导](https://sqlazuremw.codeplex.com)。
 
 2. 打开 SQL 数据库迁移向导，在“选择处理”页上选择“分析/迁移数据库”，然后单击“下一步”。
-![SQL 数据库迁移向导 - 选择处理](./media/sql-database-cloud-migrate-restore-single-table-azure-backup/1.png)
+
+    ![SQL 数据库迁移向导 - 选择处理](./media/sql-database-cloud-migrate-restore-single-table-azure-backup/1.png)
+    
 3. 在“连接到服务器”对话框中应用以下设置：
 
    * 服务器名称：**你的 SQL Server**
@@ -47,11 +49,12 @@
    * 密码：**你的密码**
    * 数据库：**Master DB（列出所有数据库）**
    
-   > [AZURE.NOTE]
-   >默认情况下，此向导保存你的登录信息。如果不想保存，请选择“忘记登录信息”。
-   >
+    > [AZURE.NOTE]
+    >默认情况下，此向导保存你的登录信息。如果不想保存，请选择“忘记登录信息”。
+    >
    
     ![SQL Database Migration wizard - Select Source - step 1](./media/sql-database-cloud-migrate-restore-single-table-azure-backup/2.png)
+    
 4. 在“选择源”对话框中，选择“准备步骤”部分中的还原的数据库名称作为你的源，然后单击“下一步”。
 
 	![SQL 数据库迁移向导 - 选择源 - 步骤 2](./media/sql-database-cloud-migrate-restore-single-table-azure-backup/3.png)
