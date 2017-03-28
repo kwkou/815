@@ -7,7 +7,7 @@
 <h3>针对包含客户端标记和脚本、服务器端脚本和数据库的 Web 应用程序</h3>
 <h3>教程：<a href="/documentation/articles/web-sites-nodejs-develop-deploy-mac/">部署网站</a></h3>
 <p>了解如何使用 Azure 门户创建新的 Azure 网站，为该网站设置 Git 存储库，然后使用 Git 将 Node.js 应用程序发布到该网站。</p>
-<h3>教程：<a href="/documentation/articles/web-sites-nodejs-use-webmatrix/">使用 WebMatrix 部署网站</a></h3>
+<h3>教程：<a href="https://www.microsoft.com/web/webmatrix/">使用 WebMatrix 部署网站</a></h3>
 <p>WebMatrix 是用于创建 Web 应用程序的轻型 Windows IDE。它包含多个用于创建 Node.js 应用程序的模板，以及 JavaScript 自动完成功能。在本教程中，你将了解如何创建 Node.js 应用程序，然后将该应用程序部署到 Azure 网站。</p>
 <h3>如何：<a href="/documentation/articles/web-sites-custom-domain-name/">为 Azure 网站配置自定义域名</a></h3>
 <p>当你创建网站时，Azure 会提供 chinacloudsites.cn 域的友好子域，以便你的用户可以使用类似 http://&lt;mysite&gt;.chinacloudsites.cn. 的 URL 访问你的网站。但是，如果你将网站配置为标准模式，则可将该网站映射到你自己的域名，例如 contoso.com。</p>

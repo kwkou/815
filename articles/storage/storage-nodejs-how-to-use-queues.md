@@ -321,6 +321,6 @@ ACL 是使用一组访问策略实施的，每个策略都有一个关联的 ID�
 
   [使用 Windows PowerShell 生成 Node.js 应用程序并将其部署到 Azure 云服务]: /documentation/articles/cloud-services-nodejs-develop-deploy-app/
   [Azure 存储团队博客]: http://blogs.msdn.com/b/windowsazurestorage/
-  [使用 Web Matrix 生成 Node.js Web 应用并将其部署到 Azure]: /documentation/articles/web-sites-nodejs-use-webmatrix/
+  [使用 Web Matrix 生成 Node.js Web 应用并将其部署到 Azure]: https://www.microsoft.com/web/webmatrix/
 
 <!---HONumber=Mooncake_0103_2017-->
