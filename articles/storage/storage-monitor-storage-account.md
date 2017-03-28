@@ -22,11 +22,7 @@
 [Azure 存储分析](/documentation/articles/storage-analytics/)提供所有存储服务的指标，以及 Blob、队列和表的日志。可以使用 [Azure 门户预览](https://portal.azure.cn)来配置要为帐户记录哪些指标和日志，并配置图表来提供指标数据的可视表示形式。
 
 > [AZURE.NOTE]
-<p>在 Azure 门户预览中检查监视数据会产生相关的费用。有关详细信息，请参阅[存储分析和计费](https://docs.microsoft.com/rest/api/storageservices/fileservices/Storage-Analytics-and-Billing)。
->
-> <p>Azure 文件存储目前支持存储分析指标，但尚不支持日志记录。
->
-
+><p>在 Azure 门户预览中检查监视数据会产生相关的费用。有关详细信息，请参阅[存储分析和计费](https://docs.microsoft.com/rest/api/storageservices/fileservices/Storage-Analytics-and-Billing)。<p>Azure 文件存储目前支持存储分析指标，但尚不支持日志记录。
 > 有关使用存储分析及其他工具来识别、诊断和排查 Azure 存储相关问题的深入指导，请参阅[监视、诊断和排查 Azure 存储问题](/documentation/articles/storage-monitoring-diagnosing-troubleshooting/)。
 >
 
