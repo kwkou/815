@@ -14,7 +14,7 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="10/28/2016" 
-	wacn.date="12/30/2016" 
+	wacn.date="03/28/2017" 
 	ms.author="tdykstra"/>
 
 # Azure Web 作业文档资源
@@ -41,7 +41,6 @@ Azure 门户预览中的 Web 作业仪表板提供了强大的管理功能，可
 * [如何通过 WebJobs SDK 使用 Azure Blob 存储](/documentation/articles/websites-dotnet-webjobs-sdk-storage-blobs-how-to/)
 * [如何通过 WebJobs SDK 使用 Azure 表存储](/documentation/articles/websites-dotnet-webjobs-sdk-storage-tables-how-to/)
 * [如何通过 WebJobs SDK 使用 Azure 服务总线](/documentation/articles/websites-dotnet-webjobs-sdk-service-bus/)
-* [如何将 WebHooks 与 WebJobs SDK 配合使用，并提供 GitHub、IFTTT 和 HTTP 的示例](https://github.com/Azure/azure-webjobs-sdk-extensions/wiki/WebHooks-Walkthrough)
 * [Azure WebJobs SDK 快速参考（PDF 下载）](https://jhaleyfiles2016.blob.core.windows.net/public/Azure%20WebJobs%20SDK%20Cheat%20Sheet%202014.pdf)
 * [GitHub 中的 Web 作业设置文档](https://github.com/projectkudu/kudu/wiki/Web-jobs)。
 * [Pranav Rastogi 提供的 Azure Web 作业更新 - 1.1 版中的可扩展性](https://channel9.msdn.com/Shows/Cloud+Cover/Episode-183-Azure-WebJobs-Update-with-Pranav-Rastogi)

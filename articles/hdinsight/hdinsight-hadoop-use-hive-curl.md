@@ -14,8 +14,8 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="big-data"
-    ms.date="09/07/2016"
-    wacn.date="01/25/2017"
+    ms.date="01/17/2017"
+    wacn.date="03/28/2017"
     ms.author="larryfr" />
 
 # 使用 Curl 在 HDInsight 中以 Hadoop 运行 Hive 查询
@@ -166,7 +166,6 @@
 
 如果将 Tez 与 Hive 配合使用，请参阅以下文档，了解调试信息：
 
-* [在基于 Windows 的 HDInsight 上使用 Tez UI](/documentation/articles/hdinsight-debug-tez-ui/)
 * [Use the Ambari Tez view on Linux-based HDInsight（在基于 Linux 的 HDInsight 上使用 Ambari Tez 视图）](/documentation/articles/hdinsight-debug-ambari-tez-view/)
 
 [hdinsight-sdk-documentation]: http://msdn.microsoft.com/zh-cn/library/dn479185.aspx

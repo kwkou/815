@@ -161,7 +161,7 @@ RBAC 不限制已登录到 VM 的用户可以执行的操作。这些权限由�
 [blob-storage]: /documentation/articles/storage-introduction/
 [boot-diagnostics]: https://azure.microsoft.com/blog/boot-diagnostics-for-virtual-machines-v2/
 [cname-record]: https://en.wikipedia.org/wiki/CNAME_record
-[data-disk]: /documentation/articles/virtual-machines-windows-about-disks-vhds/
+[data-disk]: /documentation/articles/storage-about-disks-and-vhds-windows/
 [enable-monitoring]: /documentation/articles/insights-how-to-use-diagnostics/
 [fqdn]: /documentation/articles/virtual-machines-windows-portal-create-fqdn/
 [github-folder]: http://github.com/mspnp/reference-architectures/tree/master/guidance-compute-single-vm

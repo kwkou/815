@@ -15,10 +15,10 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="10/05/2016"
-    wacn.date="03/16/2017"
+    wacn.date="03/28/2017"
     ms.author="nitinme" />
 
-# 机器学习：结合使用 MLlib 与 HDInsight Linux 上的 Apache Spark 群集对食品检测数据进行预测分析
+# 机器学习：结合使用 MLlib 与 HDInsight 上的 Apache Spark 群集对食品检测数据进行预测分析
 > [AZURE.TIP]
 本教程也可用作在 HDInsight 中创建的 Spark (Linux) 群集上的 Jupyter 笔记本。笔记本体验将通过笔记本本身运行 Python 代码段。若要在笔记本中执行本教程，请创建 Spark 群集，启动 Jupyter 笔记本 (`https://CLUSTERNAME.azurehdinsight.cn/jupyter`)，然后运行 **Python** 文件夹下的笔记本“Spark 机器学习 - 使用 MLLib.ipynb 对食品检测数据进行预测分析”。
 >
@@ -177,7 +177,7 @@
 
     ![SQL 查询输出](./media/hdinsight-apache-spark-machine-learning-mllib-ipython/query.output.png "SQL 查询输出")  
 
-    有关 `%%sql` 幻数以及可在 PySpark 内核中使用的其他幻数的详细信息，请参阅 [Kernels available on Jupyter notebooks with Spark HDInsight clusters](/documentation/articles/hdinsight-apache-spark-jupyter-notebook-kernels/#why-should-i-use-the-pyspark-or-spark-kernels)（包含 Spark HDInsight 群集的 Jupyter 笔记本上可用的内核）。
+    有关 `%%sql` 幻数以及可在 PySpark 内核中使用的其他幻数的详细信息，请参阅 [Kernels available on Jupyter notebooks with Spark HDInsight clusters](/documentation/articles/hdinsight-apache-spark-jupyter-notebook-kernels/#choose-between-the-kernels)（包含 Spark HDInsight 群集的 Jupyter 笔记本上可用的内核）。
 1. 还可以使用 Matplotlib（用于构建数据可视化效果的库）创建绘图。因为该绘图必须从本地保存的 **countResultsdf** 数据帧创建，所以代码片段必须以 `%%local` 幻数开头。这可确保代码在 Jupyter 服务器上本地运行。
 
         %%local

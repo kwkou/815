@@ -1,5 +1,5 @@
 <properties
-    pageTitle="使用 Azure Resource Manager 模板创建应用程序网关 | Azure"
+    pageTitle="创建 Azure 应用程序网关 - 模板 | Azure"
     description="本页提供有关使用 Azure Resource Manager 模板创建 Azure 应用程序网关的说明"
     documentationcenter="na"
     services="application-gateway"
@@ -14,8 +14,8 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="infrastructure-services"
-    ms.date="12/12/2016"
-    wacn.date="01/03/2017"
+    ms.date="01/23/2017"
+    wacn.date="03/28/2017"
     ms.author="gwallace" />
 
 # 使用 Azure Resource Manager 模板创建应用程序网关

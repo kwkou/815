@@ -15,7 +15,7 @@
 	ms.devlang="python" 
 	ms.topic="article" 
 	ms.date="08/04/2015" 
-	wacn.date="01/05/2017" 
+	wacn.date="03/28/2017" 
 	ms.author="huvalo"/>
 
 
@@ -105,17 +105,17 @@
 
 1.  在 *C:\\inetpub\\wwwroot\\helloworld\\helloworld* 目录中创建一个名为 **views.py** 的新文件。这会包含呈现“hello world”页面的视图。启动编辑器并输入以下代码：
 
-		from django.http import HttpResponse
-		def home(request):
-    		html = "<html><body>Hello World!</body></html>"
-    		return HttpResponse(html)
+        from django.http import HttpResponse
+        def home(request):
+            html = "<html><body>Hello World!</body></html>"
+            return HttpResponse(html)
 
 1.  将 urls.py 文件的内容替换为以下代码。
 
-		from django.conf.urls import patterns, url
-		urlpatterns = patterns('',
-			url(r'^$', 'helloworld.views.home', name='home'),
-		)
+        from django.conf.urls import patterns, url
+        urlpatterns = patterns('',
+            url(r'^$', 'helloworld.views.home', name='home'),
+        )
 
 ## 配置 IIS
 

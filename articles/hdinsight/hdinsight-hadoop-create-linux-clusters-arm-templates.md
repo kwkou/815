@@ -1,5 +1,5 @@
 <properties
-   pageTitle="使用 Azure Resource Manager 模板在 HDInsight 中创建基于 Linux 的 Hadoop 群集 | Azure"
+   pageTitle="使用模板创建 Azure HDInsight (Hadoop) | Azure"
    	description="了解如何使用 Azure Resource Manager 模板创建 Azure HDInsight 的群集。"
    services="hdinsight"
    documentationCenter=""
@@ -15,14 +15,14 @@
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
    ms.date="09/02/2016"
-   wacn.date="02/06/2017"
+   wacn.date="03/28/2017"
    ms.author="jgao"/>
 
 # 使用 Azure Resource Manager 模板在 HDInsight 中创建基于 Linux 的 Hadoop 群集
 
-[AZURE.INCLUDE [选择器](../../includes/hdinsight-selector-create-clusters.md)]
+[AZURE.INCLUDE [选择器](../../includes/hdinsight-create-linux-cluster-selector.md)]
 
-了解如何使用 Azure Resource Manager (ARM) 模板创建 HDInsight 群集。有关详细信息，请参阅 [Deploy an application with Azure Resource Manager template](/documentation/articles/resource-group-template-deploy/)（使用 Azure Resource Manager 模板部署应用程序）。有关其他群集创建工具和功能，请单击本页顶部的相应选项卡，或参阅[群集创建方法](/documentation/articles/hdinsight-hadoop-provision-linux-clusters/#cluster-creation-methods)。
+了解如何使用 Azure Resource Manager 模板创建 HDInsight 群集。有关详细信息，请参阅 [Deploy an application with Azure Resource Manager template](/documentation/articles/resource-group-template-deploy/)（使用 Azure Resource Manager 模板部署应用程序）。有关其他群集创建工具和功能，请单击本页顶部的相应选项卡，或参阅[群集创建方法](/documentation/articles/hdinsight-hadoop-provision-linux-clusters/#cluster-creation-methods)。
 
 ##先决条件：
 
@@ -61,7 +61,7 @@
     门户将根据配置创建 Resource Manager 模板。
 ## <a name="deploy-with-powershell"></a> 使用 PowerShell 进行部署
 
-以下过程创建基于 Linux 的 HDInsight 群集。
+以下过程在 HDInsight 创建 Hadoop 群集。
 
 **使用 Resource Manager 模板部署群集**
 

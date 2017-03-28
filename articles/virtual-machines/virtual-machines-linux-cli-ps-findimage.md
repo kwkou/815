@@ -16,23 +16,14 @@
    ms.tgt_pltfrm="vm-linux"
    ms.workload="infrastructure"
    ms.date="08/23/2016"
-   wacn.date="10/25/2016"
+   wacn.date="03/28/2017"
    ms.author="rasquill"/>
 
 # 使用 Azure CLI 来选择 Linux 虚拟机映像
 
 > [AZURE.NOTE] Azure 具有用于创建和处理资源的两个不同的部署模型：[资源管理器和经典](/documentation/articles/resource-manager-deployment-model/)。本文介绍如何使用 Resource Manager 部署模型。Azure 建议对大多数新的部署使用该模型，而不是经典部署模型。
 
-## 常用 Linux 映像表
-
-| PublisherName | 产品 | SKU |
-|:---------------------------------|:-------------------------------------------|:---------------------------------|:--------------------|
-| credativ                         | Debian                                     | 8                                | 
-| SUSE                             | openSUSE                                   | 13.2                             |
-| SUSE                             | SLES                                       | 12-SP1                           |
-| OpenLogic                        | CentOS                                     | 7.1                              |
-| Canonical                        | UbuntuServer                               | 14.04.3-LTS                      |
-| CoreOS                           | CoreOS                                     | Stable                           |
+[AZURE.INCLUDE [azure-cli-2-azurechinacloud-environment-parameter](../../includes/azure-cli-2-azurechinacloud-environment-parameter.md)]
 
 [AZURE.INCLUDE [virtual-machines-common-cli-ps-findimage](../../includes/virtual-machines-common-cli-ps-findimage.md)]
 

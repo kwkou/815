@@ -15,7 +15,7 @@
     ms.tgt_pltfrm="vm-windows-sql-server"
     ms.workload="infrastructure-services"
     ms.date="09/26/2016"
-    wacn.date="02/24/2017"
+    wacn.date="03/28/2017"
     ms.author="jroth" />  
 
 
@@ -67,9 +67,9 @@ Azure 提供两个不同的部署模型用于创建和处理资源：[Resource M
         $serviceName = "mycloudservicename"
 2. 然后使用以下脚本来配置和启用 AKV 集成。
    
-       $secureakv =  $spSecret | ConvertTo-SecureString -AsPlainText -Force
-       $akvs = New-AzureVMSqlServerKeyVaultCredentialConfig -Enable -CredentialName $credname -AzureKeyVaultUrl $akvURL -ServicePrincipalName $spName -ServicePrincipalSecret $secureakv
-       Get-AzureVM -ServiceName $serviceName -Name $vmName | Set-AzureVMSqlServerExtension -KeyVaultCredentialSettings $akvs | Update-AzureVM
+        $secureakv =  $spSecret | ConvertTo-SecureString -AsPlainText -Force
+        $akvs = New-AzureVMSqlServerKeyVaultCredentialConfig -Enable -CredentialName $credname -AzureKeyVaultUrl $akvURL -ServicePrincipalName $spName -ServicePrincipalSecret $secureakv
+        Get-AzureVM -ServiceName $serviceName -Name $vmName | Set-AzureVMSqlServerExtension -KeyVaultCredentialSettings $akvs | Update-AzureVM
 
 SQL IaaS 代理扩展将使用此新配置来更新 SQL VM。
 

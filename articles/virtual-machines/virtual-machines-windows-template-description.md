@@ -15,7 +15,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="01/04/2017"
-    wacn.date="02/20/2017"
+    wacn.date="03/28/2017"
     ms.author="davidmu" />  
 
 
@@ -286,7 +286,7 @@ Resource Manager 将同时部署所有不依赖于其他所要部署的资源的
 
 ## 磁盘和映像
    
-在 Azure 中，vhd 文件可以表示[磁盘或映像](/documentation/articles/virtual-machines-windows-about-disks-vhds/)。如果 vhd 文件中的操作系统专用于特定的 VM，则该文件称为磁盘。如果 vhd 文件中的操作系统经过通用化，用于创建许多 VM，则该文件称为映像。
+在 Azure 中，vhd 文件可以表示[磁盘或映像](/documentation/articles/storage-about-disks-and-vhds-windows/)。如果 vhd 文件中的操作系统专用于特定的 VM，则该文件称为磁盘。如果 vhd 文件中的操作系统经过通用化，用于创建许多 VM，则该文件称为映像。
     
 ### 从平台映像创建新虚拟机和新磁盘
 

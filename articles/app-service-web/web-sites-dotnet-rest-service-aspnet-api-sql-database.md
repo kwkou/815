@@ -1,5 +1,5 @@
 <properties
-    pageTitle="在 Azure App Service 中使用 ASP.NET Web API 和 SQL 数据库创建 REST 服务"
+    pageTitle="在 Azure 中使用 ASP.NET Web API 和 SQL 数据库创建 REST 服务"
     description="本教程将向你介绍如何通过使用 Visual Studio 将使用 ASP.NET Web API 的应用部署到 Azure Web 应用。"
     services="app-service\web"
     documentationcenter=".net"
@@ -16,7 +16,7 @@
     ms.devlang="dotnet"
     ms.topic="article"
     ms.date="02/29/2016"
-    wacn.date="03/17/2017"
+    wacn.date="03/28/2017"
     ms.author="riande" />  
 
 

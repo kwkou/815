@@ -15,7 +15,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="09/06/2016"
-    wacn.date="01/20/2017"
+    wacn.date="03/28/2017"
     ms.author="rclaus" />  
 
 
@@ -105,7 +105,7 @@
 
         sudo mkfs -t ext3 /dev/md127
 
-    c.**SLES 11 和 openSUSE** - 启用 boot.md 并创建 mdadm.conf
+    c.**SLES 11** - 启用 boot.md 并创建 mdadm.conf
 
         sudo -i chkconfig --add boot.md
         sudo echo 'DEVICE /dev/sd*[0-9]' >> /etc/mdadm.conf
@@ -133,7 +133,7 @@
 
         UUID=aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee  /data  ext4  defaults  0  2
 
-    或者，在 **SLES 11 和 openSUSE** 中：
+    或者，在 **SLES 11** 中：
 
         /dev/disk/by-uuid/aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee  /data  ext3  defaults  0  2
 

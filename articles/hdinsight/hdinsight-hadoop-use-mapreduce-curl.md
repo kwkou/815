@@ -14,8 +14,8 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="big-data"
-    ms.date="09/27/2016"
-    wacn.date="01/25/2017"
+    ms.date="01/17/2017"
+    wacn.date="03/28/2017"
     ms.author="larryfr" />  
 
 
@@ -28,13 +28,11 @@
 
 > [AZURE.NOTE]
 如果你已熟悉如何使用基于 Linux 的 Hadoop 服务器，但刚接触 HDInsight，请参阅[基于 Linux 的 HDInsight 上的 Hadoop 须知信息](/documentation/articles/hdinsight-hadoop-linux-information/)。
-> 
-> 
 
 ## <a id="prereq"></a>先决条件
 要完成本文中的步骤，需要：
 
-* HDInsight 群集上的 Hadoop（基于 Linux 或 Windows）
+* HDInsight 群集上的 Hadoop
 * [Curl](http://curl.haxx.se/)
 * [jq](http://stedolan.github.io/jq/)
 

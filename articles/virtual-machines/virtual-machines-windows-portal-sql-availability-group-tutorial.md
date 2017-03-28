@@ -16,7 +16,7 @@
     ms.tgt_pltfrm="vm-windows-sql-server"
     ms.workload="iaas-sql-server"
     ms.date="01/10/2016"
-    wacn.date="02/20/2017"
+    wacn.date="03/28/2017"
     ms.author="mikeray" />
 
 # 创建 Always On 可用性组来提高可用性和实现灾难恢复
@@ -314,7 +314,7 @@
 
 此时，已在两个 SQL Server 实例上创建了包含副本的可用性组。可在实例之间移动可用性组。由于没有创建侦听器，目前无法连接到可用性组。在 Azure 虚拟机中，侦听器需要负载均衡器。下一步是在 Azure 中创建负载均衡器。
 
-## 创建 Azure 负载均衡器
+## <a name="configure-internal-load-balancer"></a> 创建 Azure 负载均衡器
 
 在 Azure 虚拟机上， SQL Server 可用性组需要负载均衡器。负载均衡器保存可用性组侦听器的 IP 地址。本部分概述如何在 Azure 门户预览中创建负载均衡器。
 
@@ -342,8 +342,6 @@
     ![创建负载均衡器](./media/virtual-machines-windows-portal-sql-availability-group-tutorial/84-createloadbalancer.png)  
 
 1. 单击“创建”创建负载均衡器。
-
-## <a name="configure-internal-load-balancer"></a> 配置负载均衡器
 
 若要配置负载均衡器，需要创建后端池、探测，并设置负载均衡规则。请在 Azure 门户预览中执行这些操作。
 

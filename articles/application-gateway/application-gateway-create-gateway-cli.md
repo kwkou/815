@@ -1,5 +1,5 @@
 <properties
-    pageTitle="在 Resource Manager 中使用 Azure CLI 创建应用程序网关 | Azure"
+    pageTitle="创建 Azure 应用程序网关 - Azure CLI | Azure"
     description="了解如何在 Resource Manager 中使用 Azure CLI 创建应用程序网关"
     services="application-gateway"
     documentationcenter="na"
@@ -15,8 +15,8 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="infrastructure-services"
-    ms.date="12/12/2016"
-    wacn.date="01/25/2017"
+    ms.date="01/23/2017"
+    wacn.date="03/28/2017"
     ms.author="gwallace" />  
 
 

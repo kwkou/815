@@ -1,5 +1,5 @@
 <properties
-    pageTitle="在 HDInsight 中使用 Hadoop Sqoop | Azure"
+    pageTitle="使用 PowerShell 和 HDInsight 运行 Sqoop 作业 | Azure"
     description="了解如何从工作站使用 Azure PowerShell 在 Hadoop 群集和 Azure SQL 数据库之间运行 Sqoop 导入和导出。"
     editor="cgronlun"
     manager="jhubbard"
@@ -14,8 +14,8 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="09/02/2016"
-    wacn.date="01/25/2017"
+    ms.date="02/06/2017"
+    wacn.date="03/28/2017"
     ms.author="jgao" />
 
 # 使用 HDInsight 中的 Azure PowerShell for Hadoop 运行 Sqoop 作业

@@ -1,5 +1,5 @@
 <properties
-    pageTitle="HDInsight 中的 Apache Spark 概述 | Azure"
+    pageTitle="Azure HDInsight 中的 Apache Spark 概述 | Azure"
     description="介绍 HDInsight 中的 Apache Spark，以及可在应用程序中使用 HDInsight 上的 Spark 的情况。"
     services="hdinsight"
     documentationcenter=""
@@ -15,20 +15,20 @@
     ms.devlang="na"
     ms.topic="get-started-article"
     ms.date="01/03/2017"
-    wacn.date="03/16/2017"
+    wacn.date="03/28/2017"
     ms.author="nitinme" />
 
-# 概述：HDInsight Linux 上的 Apache Spark
+# 概述：HDInsight 上的 Apache Spark
 <a href="http://spark.apache.org/" target="_blank">Apache Spark</a> 是一种开放源代码并行处理框架，支持内存中处理，以提升大数据分析应用程序的性能。Spark 处理引擎是专为速度、易用性和复杂分析打造的产品。Spark 的内存中计算功能使其成为机器学习和图形计算中的迭代算法的最佳选择。Spark 也能与 Azure Blob 存储 (WASB) 兼容，因此你可以轻松地通过 Spark 处理存储在 Azure 中的现有数据。
 
 在 HDInsight 中创建 Spark 群集时，即会创建已安装并配置了 Spark 的 Azure 计算资源。在 HDInsight 中创建 Spark 群集只需要约十分钟。系统将要处理的数据存储在 Azure Blob 存储中。请参阅[将 Azure Blob 存储与 HDInsight 配合使用][hdinsight-storage]。
 
 ![Azure HDInsight 上的 Apache Spark](./media/hdinsight-apache-spark-overview/hdispark.architecture.png "Azure HDInsight 上的 Apache Spark")
 
-**想要开始在 Azure HDInsight 上使用 Apache Spark 吗？** 请参阅[快速入门：使用 Jupyter 在 HDInsight Linux 上创建 Spark 群集并运行示例应用程序](/documentation/articles/hdinsight-apache-spark-jupyter-spark-sql/)。
+**想要开始在 Azure HDInsight 上使用 Apache Spark 吗？** 请参阅[快速入门：使用 Jupyter 在 HDInsight 上创建 Spark 群集并运行示例应用程序](/documentation/articles/hdinsight-apache-spark-jupyter-spark-sql/)。
 
 > [AZURE.NOTE]
-有关当前版本的已知问题和限制列表，请参阅[Azure HDInsight (Linux) 中 Apache Spark 的已知问题](/documentation/articles/hdinsight-apache-spark-jupyter-spark-sql/)。
+有关当前版本的已知问题和限制列表，请参阅[Azure HDInsight 中 Apache Spark 的已知问题](/documentation/articles/hdinsight-apache-spark-jupyter-spark-sql/)。
 > 
 > 
 

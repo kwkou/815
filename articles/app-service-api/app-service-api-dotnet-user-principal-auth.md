@@ -14,7 +14,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="06/30/2016"
-	wacn.date="02/21/2017"
+	wacn.date="03/28/2017"
 	ms.author="rachelap"/>
 
 # Azure 应用服务中 API 应用的用户身份验证
@@ -216,7 +216,7 @@
 
 对 ToDoListAngular 项目中的文件进行以下更改。
 
-1. 打开 *index.html* 文件。
+1. 打开 *index.cshtml* 文件。
 
 2. 取消注释引用适用于 JS 的 Active Directory 身份验证库 (ADAL) 脚本的代码行。
 

@@ -14,9 +14,9 @@
     ms.tgt_pltfrm="vm-linux"
     ms.devlang="na"
     ms.topic="get-started-article"
-    ms.date="12/14/2016"
-    wacn.date="01/20/2017"
-    ms.author="v-livech" />
+    ms.date="2/6/2016"
+    wacn.date="03/28/2017"
+    ms.author="rasquill" />
 
 # 为 Linux VM 创建 SSH 公钥和私钥对
 
@@ -28,36 +28,11 @@
 
 SSH 密钥默认保留在 `~/.ssh` 目录中。如果没有 `~/.ssh` 目录，`ssh-keygen` 命令将使用正确的权限为你创建一个。`-N` cli 标志是用于加密 SSH 私钥的密码，*不*是用户密码。
 
-    ssh-keygen \
-    -t rsa \
-    -b 2048 \
-    -C "ahmet@myserver" \
-    -f ~/.ssh/id_rsa \
-    -N mypassword
-
-现在，`~/.ssh` 目录中包含 `id_rsa` 和 `id_rsa.pub` SSH 密钥对。
-
-    ls -al ~/.ssh
-
-请验证 `ssh-agent` 是否正在运行：
-
-    eval "$(ssh-agent -s)"
+    ssh-keygen -t rsa -b 2048 -f ~/.ssh/id_rsa -N mypassword
 
 将新创建的密钥添加到 `ssh-agent`：
 
     ssh-add ~/.ssh/id_rsa
-
-如果已创建 VM，可以使用以下命令将新的 SSH 公钥安装到 Linux VM：
-
-    ssh-copy-id -i ~/.ssh/id_rsa.pub ahmet@myserver
-
-使用密钥而不是密码测试登录：
-
-    ssh -o PreferredAuthentications=publickey -o PubkeyAuthentication=yes -i ~/.ssh/id_rsa ahmet@myserver
-    Last login: Tue April 12 07:07:09 2016 from 66.215.22.201
-    $
-
-如果未提示你输入 SSH 私钥密码或 VM 的登录密码，则 SSH 已成功配置。
 
 ## 详细演练
 

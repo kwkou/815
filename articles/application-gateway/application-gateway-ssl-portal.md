@@ -1,5 +1,5 @@
 <properties
-   pageTitle="使用门户配置可以进行 SSL 卸载的应用程序网关 | Azure"
+   pageTitle="配置 SSL 卸载 - Azure 应用程序网关 - Azure 门户预览 | Azure"
    description="本页说明了如何使用门户创建支持 SSL 卸载的应用程序网关"
    documentationCenter="na"
    services="application-gateway"
@@ -13,7 +13,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
    ms.date="12/16/2016"
-   wacn.date="01/25/2017"
+   wacn.date="03/28/2017"
    ms.author="gwallace"/>  
 
 

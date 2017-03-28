@@ -16,7 +16,7 @@
    ms.tgt_pltfrm="vm-linux"
    ms.workload="infrastructure-services"
    ms.date="09/22/2016"
-   wacn.date="01/05/2017"
+   wacn.date="03/28/2017"
    ms.author="nepeters"/>  
 
 
@@ -169,7 +169,7 @@ Azure CLI 命令：
         "autoUpgradeMinorVersion": true,
         "settings": {
           "fileUris": [
-            "https://gist.github.com/ahmetalpbalkan/b5d4a856fe15464015ae87d5587a4439/raw/466f5c30507c990a4d5a2f5c79f901fa89a80841/hello.sh
+            "https://gist.github.com/ahmetalpbalkan/b5d4a856fe15464015ae87d5587a4439/raw/466f5c30507c990a4d5a2f5c79f901fa89a80841/hello.sh"
           ]              
         },
         "protectedSettings": {
@@ -188,7 +188,7 @@ Azure CLI 命令：
 
 Azure 脚本扩展生成一个日志，位置如下。
 
-    /var/log/azure/customscript/handler.log
+    /var/log/azure/custom-script/handler.log
 
 也可以使用 Azure CLI 来检索自定义脚本扩展的执行状态。
 

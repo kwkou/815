@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Azure 自动化错误处理 | Azure"
+   pageTitle="Azure 自动化常见错误处理 | Azure"
    description="本文提供了排查并解决常见 Azure 自动化错误的基本错误处理步骤。"
    services="automation"
    documentationCenter=""
@@ -16,8 +16,8 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="infrastructure-services"
-    ms.date="12/12/2016"
-    wacn.date="01/18/2017"
+    ms.date="01/24/2017"
+    wacn.date="03/28/2017"
     ms.author="sngun; v-reagie" />  
 
 

@@ -1,5 +1,5 @@
 <properties
-    pageTitle="使用 Visual Studio 将 ASP.NET 应用部署到 Azure App Service | Azure"
+    pageTitle="使用 Visual Studio 将 ASP.NET 应用部署到 Azure | Azure"
     description="了解如何使用 Visual Studio 将 ASP.NET Web 项目部署到 Azure App Service 中的新 Web 应用。"
     services="app-service\web"
     documentationcenter=".net"
@@ -15,7 +15,7 @@
     ms.devlang="dotnet"
     ms.topic="get-started-article"
     ms.date="12/16/2016"
-    wacn.date="02/21/2017"
+    wacn.date="03/28/2017"
     ms.author="rachelap" />
 
 # 使用 Visual Studio 将 ASP.NET Web 应用部署到 Azure App Service

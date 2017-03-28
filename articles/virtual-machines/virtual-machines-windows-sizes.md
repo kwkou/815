@@ -16,11 +16,11 @@ ms.service="virtual-machines-windows"
  ms.tgt_pltfrm="vm-windows"
  ms.workload="infrastructure-services"
  ms.date="11/15/2016"
- wacn.date="12/30/2016"
+ wacn.date="03/28/2017"
  ms.author="cynthn"/>  
 
 
-# Azure 中虚拟机的大小
+# Azure 中 Windows 虚拟机的大小
 
 本文介绍可用于运行 Windows 应用和工作负荷的 Azure 虚拟机的可用大小与选项。此外，还提供在计划使用这些资源时要考虑的部署注意事项。本文也适用于 [Linux 虚拟机](/documentation/articles/virtual-machines-linux-sizes/)。
 

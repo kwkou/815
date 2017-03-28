@@ -15,7 +15,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="1/11/2017"
-    wacn.date="02/24/2017"
+    wacn.date="03/28/2017"
     ms.author="glimoli;genli" />  
 
 
@@ -122,7 +122,7 @@
 
         REG DELETE "HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp\SSLCertificateSHA1Hash"
 
-有关配置 RDP 侦听器证书的详细信息，请参阅 [Listener Certificate Configurations in Windows Server](https://blogs.technet.microsoft.com/askperf/2014/05/28/listener-certificate-configurations-in-windows-server-2012-2012-r2/)（Windows Server 中的侦听器证书配置）
+    有关配置 RDP 侦听器证书的详细信息，请参阅 [Listener Certificate Configurations in Windows Server](https://blogs.technet.microsoft.com/askperf/2014/05/28/listener-certificate-configurations-in-windows-server-2012-2012-r2/)（Windows Server 中的侦听器证书配置）
 2. 配置 RDP 服务的 [KeepAlive](https://technet.microsoft.com/zh-cn/library/cc957549.aspx) 值：
 
         REG ADD "HKLM\SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services" /v KeepAliveEnable /t REG_DWORD  /d 1 /f

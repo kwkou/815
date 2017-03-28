@@ -1,5 +1,5 @@
 <properties
-   pageTitle="使用 Azure Resource Manager 创建、启动或删除应用程序网关 | Azure"
+   pageTitle="创建和管理 Azure 应用程序网关 - PowerShell | Azure"
    description="本页提供有关使用 Azure Resource Manager 创建、配置、启动和删除 Azure 应用程序网关的说明"
    documentationCenter="na"
    services="application-gateway"
@@ -13,8 +13,8 @@
    ms.topic="hero-article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="12/12/2016"
-   wacn.date="01/25/2017"
+   ms.date="01/23/2017"
+   wacn.date="03/28/2017"
    ms.author="gwallace"/>
 
 

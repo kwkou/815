@@ -16,13 +16,13 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="11/18/2016"
-	wacn.date="01/25/2017"
+	wacn.date="03/28/2017"
 	ms.author="cynthn"/>  
 
 
 # 关于 Azure 虚拟机的磁盘和 VHD
 
-就像其他任何计算机一样，Azure 中的虚拟机将磁盘用作存储操作系统、应用程序和数据的位置。所有 Azure 虚拟机都至少有两个磁盘，即 Linux 操作系统磁盘（对于 Linux VM）和临时磁盘。操作系统磁盘基于映像创建，操作系统磁盘和该映像实际上都存储在 Azure 存储帐户中的虚拟硬盘 (VHD) 内。虚拟机还可以有一个或多个数据磁盘，而这些磁盘也存储为 VHD。本文也适用于 [Windows 虚拟机](/documentation/articles/virtual-machines-windows-about-disks-vhds/)。
+就像其他任何计算机一样，Azure 中的虚拟机将磁盘用作存储操作系统、应用程序和数据的位置。所有 Azure 虚拟机都至少有两个磁盘，即 Linux 操作系统磁盘（对于 Linux VM）和临时磁盘。操作系统磁盘基于映像创建，操作系统磁盘和该映像实际上都存储在 Azure 存储帐户中的虚拟硬盘 (VHD) 内。虚拟机还可以有一个或多个数据磁盘，而这些磁盘也存储为 VHD。本文也适用于 [Windows 虚拟机](/documentation/articles/storage-about-disks-and-vhds-windows/)。
 
 [AZURE.INCLUDE [了解部署模型](../../includes/learn-about-deployment-models-both-include.md)]
 

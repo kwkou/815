@@ -1,5 +1,5 @@
 <properties
-    pageTitle="使用 Azure Resource Manager 创建和配置具有内部负载均衡器 (ILB) 的应用程序网关 | Azure"
+    pageTitle="使用具有内部负载均衡器的 Azure 应用程序网关 - PowerShell | Azure"
     description="本页提供有关使用 Azure Resource Manager 创建、配置、启动和删除具有内部负载均衡器 (ILB) 的 Azure 应用程序网关的说明"
     documentationcenter="na"
     services="application-gateway"
@@ -14,8 +14,8 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="infrastructure-services"
-    ms.date="12/14/2016"
-    wacn.date="01/03/2017"
+    ms.date="01/23/2017"
+    wacn.date="03/28/2017"
     ms.author="gwallace" />  
 
 

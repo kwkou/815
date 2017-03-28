@@ -15,7 +15,7 @@
     ms.devlang="na"
     ms.topic="get-started-article"
     ms.date="10/20/2016"
-    wacn.date="12/20/2016"
+    wacn.date="03/28/2017"
     ms.author="davidmu" />
 
 # Azure 中的 Windows 虚拟机概述
@@ -67,7 +67,7 @@ Azure 根据 VM 的大小和操作系统按[小时价格](/pricing/details/virtu
 订阅附带默认的[配额限制](/documentation/articles/azure-subscription-service-limits/)，在为项目部署大量 VM 时，这些限制可能会造成影响。每个订阅的当前限制是每区域 20 个 VM。可以开具支持票证来请求提高限制。
 
 ### 操作系统磁盘和映像
-虚拟机使用[虚拟硬盘 (VHD)](/documentation/articles/virtual-machines-windows-about-disks-vhds/) 来存储其操作系统 (OS) 和数据。VHD 还可用于存储映像，你可以选择某个映像来安装 OS。
+虚拟机使用[虚拟硬盘 (VHD)](/documentation/articles/storage-about-disks-and-vhds-windows/) 来存储其操作系统 (OS) 和数据。VHD 还可用于存储映像，你可以选择某个映像来安装 OS。
 
 Azure 提供许多应用商店映像，这些映像可配合各种版本和类型的 Windows Server 操作系统使用。应用商店映像由映像发布者、产品、SKU 和版本（通常指定为最新版本）标识。
 

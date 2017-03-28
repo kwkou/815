@@ -1,5 +1,5 @@
 <properties
-    pageTitle="将 BI 工具与 HDInsight 上的 Apache Spark 配合使用 | Azure"
+    pageTitle="将 BI 工具与 Azure HDInsight 上的 Apache Spark 配合使用 | Azure"
     description="逐步介绍如何在 Apache Spark 上使用笔记本，基于原始数据创建架构并将其保存为 Hive 表，然后使用 BI 工具分析 Hive 表中的数据"
     services="hdinsight"
     documentationcenter=""
@@ -15,10 +15,10 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="01/06/2017"
-    wacn.date="01/25/2017"
+    wacn.date="03/28/2017"
     ms.author="nitinme" />
 
-# 将 BI 工具与 HDInsight Linux 上的 Apache Spark 群集配合使用
+# 将 BI 工具与 Azure HDInsight 上的 Apache Spark 群集配合使用
 了解如何使用 Azure HDInsight 中的 Apache Spark 执行以下操作：
 
 * 获取原始示例数据并将其保存为 Hive 表
@@ -31,7 +31,7 @@
 你必须具有以下各项：
 
 * Azure 订阅。请参阅[获取 Azure 试用版](/pricing/1rmb-trial/)。
-* HDInsight Linux 上的 Apache Spark 群集。有关说明，请参阅 [Create Apache Spark clusters in Azure HDInsight](/documentation/articles/hdinsight-apache-spark-jupyter-spark-sql/)（在 Azure HDInsight 中创建 Apache Spark 群集）。
+* HDInsight 上的 Apache Spark 群集。有关说明，请参阅 [Create Apache Spark clusters in Azure HDInsight](/documentation/articles/hdinsight-apache-spark-jupyter-spark-sql/)（在 Azure HDInsight 中创建 Apache Spark 群集）。
 * 安装 Microsoft Spark ODBC 驱动程序的计算机（HDInsight 上的 Spark 需要驱动程序才能使用 Tableau）。可从[此处](http://go.microsoft.com/fwlink/?LinkId=616229)安装该驱动程序。
 * [Power BI](http://www.powerbi.com/) 或 [Tableau Desktop](http://www.tableau.com/products/desktop) 等 BI 工具。可以从 [http://www.powerbi.com/](http://www.powerbi.com/) 获取免费的 Power BI 预览版订阅。
 
@@ -78,7 +78,7 @@
         dfw = DataFrameWriter(hvacTable)
         dfw.saveAsTable('hvac')
 
-1. 验证创建表是否成功。可以使用 `%%sql` 幻数直接运行 Hive 查询。有关 `%%sql` 幻数以及可在 PySpark 内核中使用的其他幻数的详细信息，请参阅 [Kernels available on Jupyter notebooks with Spark HDInsight clusters](/documentation/articles/hdinsight-apache-spark-jupyter-notebook-kernels/#why-should-i-use-the-pyspark-or-spark-kernels)（包含 Spark HDInsight 群集的 Jupyter 笔记本上可用的内核）。
+1. 验证创建表是否成功。可以使用 `%%sql` 幻数直接运行 Hive 查询。有关 `%%sql` 幻数以及可在 PySpark 内核中使用的其他幻数的详细信息，请参阅 [Kernels available on Jupyter notebooks with Spark HDInsight clusters](/documentation/articles/hdinsight-apache-spark-jupyter-notebook-kernels/#choose-between-the-kernels)（包含 Spark HDInsight 群集的 Jupyter 笔记本上可用的内核）。
 
         %%sql
         SHOW TABLES

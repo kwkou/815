@@ -1,5 +1,5 @@
 <properties
-	pageTitle="通过 Memcache 协议将 Azure App Service 中的 Web 应用连接到 Redis 缓存 | Azure"
+	pageTitle="通过 Memcache 协议将 App Service Web 应用连接到 Redis 缓存 | Azure"
 	description="使用 Memcache 协议将 Azure App Service 中的 Web 应用连接到 Redis 缓存"
 	services="app-service\web"
 	documentationCenter="php"
@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="windows"
 	ms.workload="na"
 	ms.date="02/29/2016"
-	wacn.date="01/05/2017"
+	wacn.date="03/28/2017"
 	ms.author="cfowler"/>
 
 # 通过 Memcache 协议将 Azure App Service 中的 Web 应用连接到 Redis 缓存

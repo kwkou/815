@@ -16,7 +16,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="09/27/2016"
-	wacn.date="01/05/2017"
+	wacn.date="03/28/2017"
 	ms.author="davidmu"/>  
 
 
@@ -189,39 +189,6 @@
                               True          OK  OK
                               
 有关虚拟机的可用大小列表，请参阅 [Sizes for virtual machines in Azure](/documentation/articles/virtual-machines-windows-sizes/)（Azure 中的虚拟机大小）。
-
-## <a name="add-a-data-disk-to-a-virtual-machine"></a> 将数据磁盘添加到虚拟机
-
-此示例演示了如何将数据磁盘添加到现有的虚拟机。
-
-    $vm = Get-AzureRmVM -ResourceGroupName $rgName -Name $vmName
-    Add-AzureRmVMDataDisk -VM $vm -Name "disk-name" -VhdUri "https://mystore1.blob.core.chinacloudapi.cn/vhds/datadisk1.vhd" -LUN 0 -Caching ReadWrite -DiskSizeinGB 1 -CreateOption Empty
-    Update-AzureRmVM -ResourceGroupName $rgName -VM $vm
-
-添加的磁盘未进行初始化。若要初始化该磁盘，可以登录到该磁盘，然后通过磁盘管理进行初始化。如果在创建磁盘时在其上安装了 WinRM 和证书，则可以通过远程 PowerShell 初始化该磁盘。还可以使用自定义脚本扩展：
-
-    $location = "location-name"
-    $scriptName = "script-name"
-    $fileName = "script-file-name"
-    Set-AzureRmVMCustomScriptExtension -ResourceGroupName $rgName -Location $locName -VMName $vmName -Name $scriptName -TypeHandlerVersion "1.4" -StorageAccountName "mystore1" -StorageAccountKey "primary-key" -FileName $fileName -ContainerName "scripts"
-
-脚本文件可以包含类似如下所示代码初始化磁盘：
-
-    $disks = Get-Disk |   Where partitionstyle -eq 'raw' | sort number
-
-    $letters = 70..89 | ForEach-Object { ([char]$_) }
-    $count = 0
-    $labels = @("data1","data2")
-
-    foreach($d in $disks) {
-        $driveLetter = $letters[$count].ToString()
-        $d | 
-        Initialize-Disk -PartitionStyle MBR -PassThru |
-        New-Partition -UseMaximumSize -DriveLetter $driveLetter |
-        Format-Volume -FileSystem NTFS -NewFileSystemLabel $labels[$count] `
-            -Confirm:$false -Force 
-        $count++
-    }
 
 ## 后续步骤
 

@@ -1,5 +1,5 @@
 <properties
-    pageTitle="在 Azure App Service 中开始使用 Node.js Web 应用 | Azure"
+    pageTitle="为 Azure App Service 开发 Node.js Web 应用 | Azure"
     description="学习如何将 Node.js 应用程序部署到 Azure App Service 中的 Web 应用。"
     services="app-service\web"
     documentationcenter="nodejs"
@@ -15,11 +15,11 @@
     ms.devlang="nodejs"
     ms.topic="get-started-article"
     ms.date="12/16/2016"
-    wacn.date="01/03/2017"
+    wacn.date="03/28/2017"
     ms.author="cephalin" />  
 
 
-# 在 Azure App Service 中 Node.js Web 应用入门
+# 为 Azure App Service 开发 Node.js Web 应用
 [AZURE.INCLUDE [选项卡](../../includes/app-service-web-get-started-nav-tabs.md)]
 
 [AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-sdk-developer-differences.md)]
@@ -108,13 +108,13 @@
    
         az appservice web deployment user set --user-name <username> --password <password>
 
-3. 创建新的[资源组](/documentation/articles/resource-group-overview/)。对于本 PHP 教程，不需要实际知道它是什么。
+3. 创建新的[资源组](/documentation/articles/resource-group-overview/)。对于本 node.js 教程，不需要实际知道它是什么。
 
         az group create --location "<location>" --name my-nodejs-app-group
 
     若要查看可用于 `<location>` 的可能值，请使用 `az appservice list-locations` CLI 命令。
 
-3. 创建新的“免费”[应用服务计划](/documentation/articles/azure-web-sites-web-hosting-plans-in-depth-overview/)。对于本 PHP 教程，只需知道不用为此计划中的 Web 应用付费即可。
+3. 创建新的“免费”[应用服务计划](/documentation/articles/azure-web-sites-web-hosting-plans-in-depth-overview/)。对于本 node.js 教程，只需知道不用为此计划中的 Web 应用付费即可。
 
         az appservice plan create --name my-nodejs-appservice-plan --resource-group my-nodejs-app-group --sku FREE
 

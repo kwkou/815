@@ -15,7 +15,7 @@
 	ms.devlang="dotnet" 
 	ms.topic="article" 
 	ms.date="03/21/2016" 
-	wacn.date="02/21/2017" 
+	wacn.date="03/28/2017" 
 	ms.author="riande"/> 
 
 
@@ -127,7 +127,7 @@
 1. 将 *Layout.cshtml* 文件中的 ActionLink 替换为以下代码。
 
 
-	@Html.ActionLink("CM Demo", "Index", "Contacts", new { area = "" }, new { @class = "navbar-brand" })
+        @Html.ActionLink("CM Demo", "Index", "Contacts", new { area = "" }, new { @class = "navbar-brand" })
 		           
 
 	确保将第三个参数从“Home”更改为“Contacts”。上面的标记会在每个页面上创建一个“Contacts”链接，以转到 Contacts 控制器的 Index 方法。将页眉和页脚中的应用程序名称从“My ASP.NET Application”和“Application name”更改为“Contact Manager”和“CM Demo”。

@@ -16,7 +16,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="06/27/2016"
-	wacn.date="12/16/2016"
+	wacn.date="03/28/2017"
 	ms.author="cynthn"/>
 
 # 将数据磁盘附加到使用经典部署模型创建的 Windows 虚拟机
@@ -25,7 +25,7 @@
 
 如果需要其他数据磁盘，可将空磁盘或现有的数据磁盘附加到 VM。在这两种情况下，磁盘是驻留在 Azure 存储帐户中的 .vhd 文件。如果是新磁盘，在附加磁盘之后，你也需要将它初始化，使其可供 Windows VM 使用。
 
-有关磁盘的更多详细信息，请参阅[关于虚拟机的磁盘和 VHD](/documentation/articles/virtual-machines-windows-about-disks-vhds/)。
+有关磁盘的更多详细信息，请参阅[关于虚拟机的磁盘和 VHD](/documentation/articles/storage-about-disks-and-vhds-windows/)。
 
 
 [AZURE.INCLUDE [howto-attach-disk-windows-linux](../../includes/howto-attach-disk-windows-linux.md)]
@@ -54,7 +54,7 @@
 
 [如何从 Windows 虚拟机分离磁盘](/documentation/articles/virtual-machines-windows-classic-detach-disk/)
 
-[关于虚拟机的磁盘和 VHD](/documentation/articles/virtual-machines-windows-about-disks-vhds/)
+[关于虚拟机的磁盘和 VHD](/documentation/articles/storage-about-disks-and-vhds-windows/)
 
 [logon]: /documentation/articles/virtual-machines-windows-classic-connect-logon/
 

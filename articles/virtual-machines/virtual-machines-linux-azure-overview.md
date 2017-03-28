@@ -15,7 +15,7 @@
    ms.tgt_pltfrm="vm-linux"
    ms.workload="infrastructure"
    ms.date="09/14/2016"
-   wacn.date="12/16/2016"
+   wacn.date="03/28/2017"
    ms.author="v-livech"/>  
 
 
@@ -72,29 +72,26 @@ Microsoft 与合作伙伴紧密合作，以确保及时更新可用映像并针�
 ## 在 Azure 上获取安装程序
 若要开始使用 Azure，需要 Azure 帐户、已安装 Azure CLI 和一对 SSH 公钥和私钥。
 
-## 注册帐户
+### 注册帐户
 使用 Azure 云的第一步是注册 Azure 帐户。若要开始，请转到 [Azure 帐户注册](/pricing/1rmb-trial/)页。
 
-## 安装 CLI
+### 安装 CLI
 使用新的 Azure 帐户，可以立即开始使用 Azure 门户预览（一个基于 Web 的管理面板）。若要通过命令行管理 Azure 云，请安装 `azure-cli`。在 Mac 或 Linux 工作站上安装 [Azure CLI](/documentation/articles/xplat-cli-install/)。
 
-## 创建 SSH 密钥对
+### 创建 SSH 密钥对
 现在已有 Azure 帐户、Azure Web 门户和 Azure CLI。下一步是创建 SSH 密钥对，使用它可以通过 SSH 连接到 Linux 而无需使用密码。[在 Linux 和 Mac 上创建 SSH 密钥](/documentation/articles/virtual-machines-linux-mac-create-ssh-keys/)可启用无密码登录并实现更高的安全性。
 
-## 开始在 Azure 中使用 Linux
-设置 Azure 帐户、安装 Azure CLI 并创建 SSH 密钥后，现在便可以开始在 Azure 云中构建基础结构了。第一个任务是创建几个 VM。
-
-## 在 CLI 上创建 VM
+### 在 CLI 上创建 VM
 在 CLI 上创建 Linux VM 是一种部署 VM 的快速方法，无需离开正在使用的终端。可以在 Web 门户上指定的所有内容都通过命令行标志或开关提供。
 
 - [使用 CLI 创建 Linux VM](/documentation/articles/virtual-machines-linux-quick-create-cli/)
 
-## 在门户中创建 VM
+### 在门户中创建 VM
 通过在 Azure Web 门户上创建 Linux VM，可以轻松地指向和单击用于访问部署的各个选项。如果不使用命令行标记或开关，你还能查看包含各种选项和设置的良好 Web 布局。通过命令行界面提供的所有功能同样也通过门户提供。
 
 - [使用门户创建 Linux VM](/documentation/articles/virtual-machines-linux-quick-create-portal/)
 
-## 不使用密码通过 SSH 登录
+### 不使用密码通过 SSH 登录
 VM 现在正在 Azure 上运行，用户可以登录。使用密码通过 SSH 登录既不安全耗时也长。使用 SSH 密钥是最安全且最快捷的登录方式。通过门户或 CLI 创建 Linux VM 时，有两种身份验证选择。如果为 SSH 选择密码，则 Azure 会将 VM 配置为允许通过密码登录。如果选择使用 SSH 公钥，则 Azure 会将 VM 配置为只允许通过 SSH 密钥登录，并禁止密码登录。若要通过只允许 SSH 密钥登录来保护 Linux VM，请在门户或 CLI 中创建 VM 的过程中使用 SSH 公钥选项。
 
 - [通过配置 SSHD 禁用 Linux VM 上的 SSH 密码](/documentation/articles/virtual-machines-linux-mac-disable-ssh-password-usage/)

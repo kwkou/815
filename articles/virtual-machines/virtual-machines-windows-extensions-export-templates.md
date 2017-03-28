@@ -15,7 +15,7 @@
     ms.tgt_pltfrm="vm-windows"
     ms.workload="infrastructure-services"
     ms.date="12/05/2016"
-    wacn.date="01/13/2017"
+    wacn.date="03/28/2017"
     ms.author="nepeters" />  
 
 
@@ -134,17 +134,17 @@ Azure Resource Manager 自动化脚本生成一个 Resource Manager 模板、一
         }
     }
 
-如果使用模板参数提供属性值，则需创建这些参数。为受保护的设置值创建模板参数时，请确保使用 `SecureObject` 参数类型，以便保护敏感值。如需详细了解如何使用参数，请参阅[创作 Azure Resource Manager 模板](/documentation/articles/resource-group-authoring-templates/)。
+如果使用模板参数提供属性值，则需创建这些参数。为受保护的设置值创建模板参数时，请确保使用 `SecureString` 参数类型，以便保护敏感值。如需详细了解如何使用参数，请参阅[创作 Azure Resource Manager 模板](/documentation/articles/resource-group-authoring-templates/)。
 
 以 `IaasDiagnostic` 扩展为例，将在 Resource Manager 模板的参数部分创建以下参数。
 
     "storageAccountName": {
         "defaultValue": null,
-        "type": "SecureObject"
+        "type": "SecureString"
     },
     "storageAccountKey": {
         "defaultValue": null,
-        "type": "SecureObject"
+        "type": "SecureString"
     }
 
 目前可以使用任何模板部署方法部署此模板。

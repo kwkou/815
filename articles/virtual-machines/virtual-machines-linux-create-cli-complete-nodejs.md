@@ -15,7 +15,7 @@
     ms.tgt_pltfrm="vm-linux"
     ms.workload="infrastructure"
     ms.date="10/24/2016"
-    wacn.date="01/13/2017"
+    wacn.date="03/28/2017"
     ms.author="iainfou" />  
 
 
@@ -184,7 +184,7 @@
         --storage-account-name mystorageaccount \
         --image-urn canonical:UbuntuServer:16.04.0-LTS:latest \
         --ssh-publickey-file ~/.ssh/id_rsa.pub \
-        --admin-username ops
+        --admin-username azureuser
 
 创建第二个 Linux VM。以下示例创建名为 `myVM2` 的 VM：
 
@@ -200,7 +200,7 @@
         --storage-account-name mystorageaccount \
         --image-urn canonical:UbuntuServer:16.04.0-LTS:latest \
         --ssh-publickey-file ~/.ssh/id_rsa.pub \
-        --admin-username ops
+        --admin-username azureuser
 
 使用 JSON 分析器验证构建的所有组件：
 
@@ -980,7 +980,7 @@ Azure 资源组是逻辑部署实体，包含用于启用资源部署逻辑管�
       --storage-account-name mystorageaccount \
       --image-urn canonical:UbuntuServer:16.04.0-LTS:latest \
       --ssh-publickey-file ~/.ssh/id_rsa.pub \
-      --admin-username ops
+      --admin-username azureuser
 
 输出：
 
@@ -1001,7 +1001,7 @@ Azure 资源组是逻辑部署实体，包含用于启用资源部署逻辑管�
 
 可以使用默认的 SSH 密钥立即连接到 VM。请确保指定适当的端口，因为我们要通过负载均衡器传递流量。（对于第一个 VM，设置 NAT 规则以将端口 4222 转发到 VM。）
 
-    ssh ops@mypublicdns.chinanorth.chinacloudapp.cn -p 4222
+    ssh azureuser@mypublicdns.chinanorth.chinacloudapp.cn -p 4222
 
 输出：
 
@@ -1021,7 +1021,7 @@ Azure 资源组是逻辑部署实体，包含用于启用资源部署逻辑管�
     0 packages can be updated.
     0 updates are security updates.
 
-    ops@myVM1:~$
+    azureuser@myVM1:~$
 
 以相同的方式继续创建第二个 VM：
 
@@ -1037,7 +1037,7 @@ Azure 资源组是逻辑部署实体，包含用于启用资源部署逻辑管�
       --storage-account-name mystorageaccount \
       --image-urn canonical:UbuntuServer:16.04.0-LTS:latest \
       --ssh-publickey-file ~/.ssh/id_rsa.pub \
-      --admin-username ops
+      --admin-username azureuser
 
 现在，可以使用 `azure vm show myResourceGroup myVM1` 命令检查创建的内容。此时，已在 Azure 中运行了一个位于负载均衡器后面的 Ubuntu VM，只能使用 SSH 密钥对登录到该 VM（因为密码已禁用）。可以安装 nginx 或 httpd、部署 Web 应用，以及查看流量是否通过虚拟机规模集流向两个 VM。
 
@@ -1074,7 +1074,7 @@ Azure 资源组是逻辑部署实体，包含用于启用资源部署逻辑管�
     data:
     data:    OS Profile:
     data:      Computer Name                 :myVM1
-    data:      User Name                     :ops
+    data:      User Name                     :azureuser
     data:      Linux Configuration:
     data:        Disable Password Auth       :true
     data:

@@ -15,7 +15,7 @@
     ms.tgt_pltfrm="vm-linux"
     ms.workload="infrastructure-services"
     ms.date="04/15/2015"
-    wacn.date="02/20/2017"
+    wacn.date="03/28/2017"
     ms.author="asabbour" />  
 
 
@@ -131,13 +131,13 @@ Azure 有两种用于创建和处理资源的不同部署模型：[Azure Resourc
 
     c.创建一个符号链接，将旧目录指向 RAID 分区中的新位置。
 
-          ln -s /mnt/data/mysql /var/lib/mysql
+           ln -s /mnt/data/mysql /var/lib/mysql
 
 5. [SELinux 干扰群集操作](http://galeracluster.com/documentation-webpages/configuration.html#selinux)，所以在当前会话中有必要将其禁用。编辑 `/etc/selinux/config`，禁止其随后重新启动。
 
-            setenforce 0
+        setenforce 0
 
-       然后编辑 `/etc/selinux/config` 以设置 `SELINUX=permissive`
+    然后编辑 `/etc/selinux/config` 以设置 `SELINUX=permissive`
 6. 验证 MySQL 是否运行。
 
     a.启动 MySQL。

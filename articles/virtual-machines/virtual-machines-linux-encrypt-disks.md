@@ -15,7 +15,7 @@
     ms.tgt_pltfrm="vm-linux"
     ms.workload="infrastructure"
     ms.date="10/11/2016"
-    wacn.date="12/20/2016"
+    wacn.date="03/28/2017"
     ms.author="iainfou" />  
 
 
@@ -73,7 +73,7 @@
 
 按如下所示加密磁盘，在整个过程中请输入自己的参数名称：
 
-    azure vm enable-disk-encryption --resource-group myResourceGroup --vm-name myVM \
+    azure vm enable-disk-encryption --resource-group myResourceGroup --name myVM \
       --aad-client-id myApplicationID --aad-client-secret myApplicationPassword \
       --disk-encryption-key-vault-url myKeyVaultVaultURI \
       --disk-encryption-key-vault-id myKeyVaultID \
@@ -83,7 +83,7 @@
 
 在加密过程中，Azure CLI 不提供详细错误。有关其他故障排除信息，请查看 `/var/log/azure/Microsoft.OSTCExtensions.AzureDiskEncryptionForLinux/0.x.x.x/extension.log`。由于上述命令包含许多变量，你可能不太明白为何进程会失败，为此，我们提供了如下所示的完整命令示例：
 
-    azure vm enable-disk-encryption -g myResourceGroup -n MyVM \
+    azure vm enable-disk-encryption --resource-group myResourceGroup --name myVM \
       --aad-client-id 147bc426-595d-4bad-b267-58a7cbd8e0b6 \
       --aad-client-secret P@ssw0rd! \
       --disk-encryption-key-vault-url https://myKeyVault.vault.chinacloudapi.cn/ \ 
@@ -218,7 +218,7 @@ Linux VM 上的虚拟磁盘是使用 [dm-crypt](https://wikipedia.org/wiki/Dm-cr
 
 由于上述命令包含许多变量，下面提供了一个完整的命令示例供参考：
 
-    azure vm enable-disk-encryption -g myResourceGroup -n MyVM \
+    azure vm enable-disk-encryption --resource-group myResourceGroup --name myVM \
       --aad-client-id 147bc426-595d-4bad-b267-58a7cbd8e0b6 \
       --aad-client-secret P@ssw0rd! \
       --disk-encryption-key-vault-url https://myKeyVault.vault.chinacloudapi.cn/ \ 
@@ -243,7 +243,7 @@ Linux VM 上的虚拟磁盘是使用 [dm-crypt](https://wikipedia.org/wiki/Dm-cr
 
 重新运行上述命令来加密虚拟磁盘，不过这次请添加 `--sequence-version` 参数，以便递增第一次运行中使用的值，如下所示：
 
-    azure vm enable-disk-encryption --resource-group myResourceGroup --vm-name myVM \
+    azure vm enable-disk-encryption --resource-group myResourceGroup --name myVM \
       --aad-client-id myApplicationID --aad-client-secret myApplicationPassword \
       --disk-encryption-key-vault-url myKeyVaultVaultURI \
       --disk-encryption-key-vault-id myKeyVaultID \

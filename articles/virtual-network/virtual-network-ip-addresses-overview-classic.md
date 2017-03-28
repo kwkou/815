@@ -16,7 +16,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="infrastructure-services"
     ms.date="02/11/2016"
-    wacn.date="12/26/2016"
+    wacn.date="03/28/2017"
     ms.author="jdial" />
 
 # Azure 中的 IP 地址（经典）
@@ -166,13 +166,13 @@ Azure [应用程序网关](/documentation/articles/application-gateway-introduct
 | | 资源 | 经典 | 资源管理器 |
 | --- | --- | --- | --- |
 | **公共 IP 地址** |VM |称为 ILPIP（仅限动态） |称为公共 IP（动态或静态） |
-| | |分配到 IaaS VM 或 PaaS 角色实例 |与 VM 的 NIC 关联 |
-| | 面向 Internet 的负载均衡器 |称为 VIP（动态）或保留 IP（静态） |称为公共 IP（动态或静态） |
-| | |分配到云服务 |与负载均衡器的前端配置关联 |
+| |分配到 IaaS VM 或 PaaS 角色实例 |与 VM 的 NIC 关联 | |
+| 面向 Internet 的负载均衡器 |称为 VIP（动态）或保留 IP（静态） |称为公共 IP（动态或静态） | |
+| |分配到云服务 |与负载均衡器的前端配置关联 | |
 | | | | |
 | **专用 IP 地址** |VM |称为 DIP |称为专用 IP 地址 |
-| | |分配到 IaaS VM 或 PaaS 角色实例 |分配到 VM 的 NIC |
-| | 内部负载均衡器 (ILB) |分配到 ILB（动态或静态） |分配到 ILB 的前端配置（动态或静态） |
+| |分配到 IaaS VM 或 PaaS 角色实例 |分配到 VM 的 NIC | |
+| 内部负载均衡器 (ILB) |分配到 ILB（动态或静态） |分配到 ILB 的前端配置（动态或静态） | |
 
 ## 后续步骤
 * 通过经典管理门户[使用静态专用 IP 地址部署 VM](/documentation/articles/virtual-networks-static-private-ip-classic-pportal/)。

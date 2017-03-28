@@ -1,5 +1,5 @@
 <properties
-    pageTitle="为 HDInsight Linux 上的 Apache Spark 群集安装 Zeppelin 笔记本 | Azure"
+    pageTitle="使用脚本操作为 Azure HDInsight 上的 Spark 群集安装 Zeppelin 笔记本 | Azure"
     description="逐步说明如何在 HDInsight Linux 上的 Spark 群集中安装和使用 Zeppelin 笔记本。"
     services="hdinsight"
     documentationcenter=""
@@ -14,10 +14,10 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="01/04/2017"
-    wacn.date="01/25/2017"
+    wacn.date="03/28/2017"
     ms.author="nitinme" />
 
-# 为 HDInsight Linux 上的 Apache Spark 群集安装 Zeppelin 笔记本
+# 为 HDInsight 上的 Apache Spark 群集安装 Zeppelin 笔记本
 了解如何在 Apache Spark 群集上安装 Zeppelin 笔记本，以及如何使用 Zeppelin 笔记本运行 Spark 作业。
 
 [AZURE.INCLUDE [hdinsight-linux-acn-version.md](../../includes/hdinsight-linux-acn-version.md)]
@@ -30,7 +30,7 @@
 **先决条件：**
 
 * 在开始学习本教程之前，你必须有一个 Azure 订阅。请参阅[获取 Azure 试用版](/pricing/1rmb-trial/)。
-* Apache Spark 群集。有关说明，请参阅 [Create Apache Spark clusters in Azure HDInsight](/documentation/articles/hdinsight-apache-spark-jupyter-spark-sql/)（在 Azure HDInsight 中创建 Apache Spark 群集）。
+* HDInsight 上的 Apache Spark 群集。有关说明，请参阅 [Create Apache Spark clusters in Azure HDInsight](/documentation/articles/hdinsight-apache-spark-jupyter-spark-sql/)（在 Azure HDInsight 中创建 Apache Spark 群集）。
 * SSH 客户端。对于 Linux 和 Unix 分发版或 Macintosh OS X，操作系统已随附 `ssh` 命令。对于 Windows，我们建议使用 [PuTTY](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html)。
 
     > [AZURE.NOTE]

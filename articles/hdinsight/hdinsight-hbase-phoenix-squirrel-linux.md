@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="在 HDInsight 中使用 Apache Phoenix 和 SQuirreL | Azure" 
+   pageTitle="在 Azure HDInsight (HBase) 中使用 Apache Phoenix 和 SQuirreL | Azure" 
    description="了解如何在 HDInsight 中使用 Apache Phoenix，以及如何在工作站上安装和配置 SQuirreL 以连接到 HDInsight 中的 HBase 群集。" 
    services="hdinsight" 
    documentationCenter="" 
@@ -10,7 +10,7 @@
 <tags
 	ms.service="hdinsight"
 	ms.date="09/02/2016"
-	wacn.date="02/14/2017"/>
+	wacn.date="03/28/2017"/>
 
 # 将 Apache Phoenix 与 HDinsight 中基于 Linux 的 HBase 群集配合使用  
 

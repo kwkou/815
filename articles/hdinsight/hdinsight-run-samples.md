@@ -14,8 +14,8 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="10/21/2016"
-    wacn.date="01/25/2017"
+    ms.date="02/14/2017"
+    wacn.date="03/28/2017"
     ms.author="jgao" />  
 
 
@@ -52,7 +52,7 @@ Web 上有许多介绍 Hadoop 相关技术（例如基于 Java 的 MapReduce 编
     > [AZURE.IMPORTANT]
     Azure PowerShell 对于使用 Azure Service Manager 管理 HDInsight 资源的支持已**弃用**，将于 2017 年 1 月 1 日删除。本文档中的步骤使用的是与 Azure Resource Manager 兼容的新 HDInsight cmdlet。
     ><p>
-    > 请按照 [Install and configure Azure PowerShell](https://docs.microsoft.com/powershell/azureps-cmdlets-docs)（安装和配置 Azure PowerShell）中的步骤安装最新版本的 Azure PowerShell。如果你的脚本需要修改才能使用与 Azure Resource Manager 兼容的新 cmdlet，请参阅[迁移到适用于 HDInsight 群集的基于 Azure Resource Manager 的开发工具](/documentation/articles/hdinsight-hadoop-development-using-azure-resource-manager/)，了解详细信息。
+    > 请按照 [Install and configure Azure PowerShell](https://docs.microsoft.com/powershell/azureps-cmdlets-docs)（安装和配置 Azure PowerShell）中的步骤安装最新版本的 Azure PowerShell。如果你的脚本需要修改才能使用与 Azure Resource Manager 兼容的新 cmdlet，请参阅[迁移到适用于 HDInsight 群集的基于 Azure Resource Manager 的开发工具](/documentation/articles/hdinsight-hadoop-development-using-azure-resource-manager/)。
 
 ## <a name="hdinsight-sample-wordcount" id="word-count-java"></a>字数统计 - Java
 若要提交 MapReduce 项目，请先创建 MapReduce 作业定义。在作业定义中，指定 MapReduce 程序 jar 文件和 jar 文件的位置（即，* *wasbs:///example/jars/hadoop-mapreduce-examples.jar**）、类名和参数。Wordcount MapReduce 程序采用两个参数：用于字数统计的源文件，以及输出的位置。
@@ -133,8 +133,6 @@ Hadoop 向 MapReduce 提供流式处理 API，利用它，可以采用 Java 以�
 如果为**化简器**指定可执行文件，则当初始化化简器时，每个化简器任务都会将此可执行文件作为一个单独的进程启动。当化简器任务运行时，它将其输入键/值对转换为行，并将这些行馈送到进程的 [stdin][stdin-stdout-stderr]。
 
 同时，化简器从进程的 [stdout][stdin-stdout-stderr] 中收集面向行的输出。然后将每行转换为一个键/值对（作为化简器的输出收集）。默认情况下，一行的前缀直至第一个制表符是键，而该行的剩余部分（不包括制表符）是值。
-
-有关 Hadoop 流式处理接口的详细信息，请参阅 [Hadoop 流式处理][hadoop-streaming]。
 
 **提交 C# 流式处理字数统计作业**
 
@@ -598,7 +596,7 @@ wc.cs 文件中的化简器代码使用 [StreamReader][streamreader] 对象从 c
     final FileSystem fs = FileSystem.get(jobConf);
     if (fs.exists(TMP_DIR)) {
     throw new IOException("Tmp directory " + fs.makeQualified(TMP_DIR)
-    + " already exists. Please remove it first.");
+    + " already exists. Remove it first.");
     }
     if (!fs.mkdirs(inDir)) {
     throw new IOException("Cannot create input directory " + inDir);

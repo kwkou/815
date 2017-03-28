@@ -15,8 +15,8 @@
 	ms.tgt_pltfrm="vm-windows"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="08/16/2016"
-	wacn.date="12/20/2016"
+	ms.date="01/17/2017"
+	wacn.date="03/28/2017"
 	ms.author="cynthn"/>  
 
 
@@ -121,7 +121,7 @@ Azure 存储帐户可为操作系统磁盘和任何数据磁盘提供存储空�
 
 ## <a name="what-are-the-password-requirements-when-creating-a-vm"></a> 创建 VM 时，密码有什么要求？
 
-密码的长度必须为 8 到 123 个字符，并满足以下 4 个复杂性要求中的 3 个要求：
+密码的长度必须为 12 到 123 个字符，并满足以下 4 个复杂性要求中的 3 个要求：
 
 - 具有小写字符
 - 具有大写字符
@@ -131,13 +131,22 @@ Azure 存储帐户可为操作系统磁盘和任何数据磁盘提供存储空�
 不允许使用以下密码：
 
 不允许使用以下密码：
+
 <table>
-	<tr>
-		<td style="text-align:center">abc@123</td><td style="text-align:center">P@$$w0rd</td><td style="text-align:center">P@ssw0rd</td><td style="text-align:center">P@ssword123</td><td style="text-align:center">Pa$$word</td>
-	</tr>
-	<tr>
-		<td style="text-align:center">pass@word1</td><td style="text-align:center">Password!</td><td style="text-align:center">Password1</td><td style="text-align:center">Password22</td><td style="text-align:center">iloveyou!</td>
-	</tr>
+    <tr>
+        <td>abc@123 </td>
+        <td>P@$$w0rd </td>
+        <td>P@ssw0rd </td>
+        <td>P@ssword123 </td>
+        <td>Pa$$word </td>
+    </tr>
+    <tr>
+        <td>pass@word1 </td>
+        <td>Password! </td>
+        <td>Password1 </td>
+        <td>Password22 </td>
+        <td>iloveyou! </td>
+    </tr>
 </table>
 
 ## 我的 windows 虚拟机为何会被自动重启？

@@ -15,7 +15,7 @@
 	ms.devlang="nodejs"
 	ms.topic="article"
 	ms.date="12/22/2016"
-	wacn.date="03/01/2017"
+	wacn.date="03/28/2017"
 	ms.author="robmcm"/>
 
 # 使用 Azure 表服务的 Node.js Web 应用
@@ -491,7 +491,7 @@
 
 1. 输入以下命令：
 
-		azure account download
+        azure login -e AzureChinaCloud
 
 	此命令启动浏览器并导航到下载页面。如果出现提示，请使用与 Azure 订阅关联的帐户登录。
 

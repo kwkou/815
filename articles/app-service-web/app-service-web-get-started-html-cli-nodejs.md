@@ -1,5 +1,5 @@
 <properties
-    pageTitle="在 5 分钟内将第一个 Web 应用部署到 Azure | Azure"
+    pageTitle="在 5 分钟内将第一个 HTML Web 应用部署到 Azure | Azure"
     description="了解如何部署示例应用，轻松地在应用服务中运行 Web 应用。快速进行实际的开发，立即查看结果。"
     services="app-service\web"
     documentationcenter=""
@@ -14,11 +14,11 @@
     ms.devlang="na"
     ms.topic="hero-article"
     ms.date="01/04/2017"
-    wacn.date="02/10/2017"
+    wacn.date="03/28/2017"
     ms.author="cephalin" />  
 
 
-# 在 5 分钟内将第一个 Web 应用部署到 Azure
+# 在 5 分钟内将第一个 HTML Web 应用部署到 Azure
 > [AZURE.SELECTOR]
 - [第一个 HTML 站点](/documentation/articles/app-service-web-get-started-html-cli-nodejs/)
 - [第一个 .NET 应用](/documentation/articles/app-service-web-get-started-dotnet-cli-nodejs/)

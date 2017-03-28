@@ -1,6 +1,6 @@
 <!-- Ibiza portal: tested -->
 
-## 如何在 Azure 门户预览中创建经典 VNet
+## <a name="how-to-create-a-classic-vnet-in-the-azure-portal"></a> 如何在 Azure 门户预览中创建经典 VNet
 
 若要基于上述方案创建经典 VNet，请执行以下步骤。
 

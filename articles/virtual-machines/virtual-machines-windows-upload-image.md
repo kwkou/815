@@ -16,7 +16,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="10/10/2016"
-	wacn.date="01/05/2017"
+	wacn.date="03/28/2017"
 	ms.author="cynthn"/>  
 
 
@@ -25,7 +25,7 @@
 
 本文介绍如何创建和上传用于创建 Azure VM 的 Windows 虚拟硬盘 (VHD)。可以从通用 VM 或专用 VM 上传 VHD。
 
-有关 Azure 中的磁盘和 VHD 的更多详细信息，请参阅 [About disks and VHDs for virtual machines](/documentation/articles/virtual-machines-linux-about-disks-vhds/)（关于虚拟机的磁盘和 VHD）。
+有关 Azure 中的磁盘和 VHD 的更多详细信息，请参阅 [About disks and VHDs for virtual machines](/documentation/articles/storage-about-disks-and-vhds-windows/)（关于虚拟机的磁盘和 VHD）。
 
 
 ## 准备 VM 

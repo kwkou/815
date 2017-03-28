@@ -1,5 +1,5 @@
 <properties
-    pageTitle="在 Azure 中打开 Linux VM 的端口和终结点 | Azure"
+    pageTitle="使用 Azure CLI 1.0 打开 Linux VM 的端口和终结点 | Azure"
     description="了解如何使用 Azure Resource Manager 部署模型和 Azure CLI 1.0 在 Linux VM 上打开端口/创建终结点"
     services="virtual-machines-linux"
     documentationcenter=""
@@ -12,12 +12,12 @@
     ms.topic="article"
     ms.tgt_pltfrm="vm-linux"
     ms.workload="infrastructure-services"
-    ms.date="10/27/2016"
-    wacn.date="01/13/2017"
+    ms.date="02/09/2017"
+    wacn.date="03/28/2017"
     ms.author="iainfou" />  
 
 
-# 在 Azure 中打开 Linux VM 的端口和终结点
+# 使用 Azure CLI 1.0 在 Azure 中打开 Linux VM 的端口和终结点
 通过在子网或 VM 网络接口上创建网络筛选器可为 Azure 中的虚拟机 (VM) 打开端口或创建终结点。将这些筛选器（控制入站和出站流量）放在网络安全组中，并附加到将接收流量的资源。让我们在端口 80 上使用 Web 流量的常见示例。本文说明如何使用 Azure CLI 1.0 打开 VM 的端口。
 
 

@@ -1,5 +1,5 @@
 <properties
-   pageTitle="使用门户为应用程序网关创建基于路径的规则 | Azure"
+   pageTitle="创建基于路径的规则 - Azure 应用程序网关 - Azure 门户预览 | Azure"
    description="了解如何使用门户为应用程序网关创建基于路径的规则"
    services="application-gateway"
    documentationCenter="na"
@@ -15,8 +15,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="12/13/2016"
-   wacn.date="01/25/2017"
+   ms.date="01/23/2017"
+   wacn.date="03/28/2017"
    ms.author="gwallace" />  
 
 

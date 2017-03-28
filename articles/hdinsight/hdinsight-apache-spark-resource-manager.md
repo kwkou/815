@@ -1,6 +1,6 @@
 <properties
-    pageTitle="使用 Resource Manager 向 HDInsight 中的 Apache Spark 群集分配资源 | Azure"
-    description="了解如何对 HDInsight 上的 Apache Spark 群集使用 Resource Manager，以提高性能。"
+    pageTitle="为 Azure HDInsight 中的 Apache Spark 群集分配资源 | Azure"
+    description="了解如何对 Azure HDInsight 上的 Apache Spark 群集使用 Resource Manager，以提高性能。"
     services="hdinsight"
     documentationcenter=""
     author="nitinme"
@@ -15,10 +15,10 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="01/03/2017"
-    wacn.date="01/25/2017"
+    wacn.date="03/28/2017"
     ms.author="nitinme" />
 
-# 管理 HDInsight Linux 上 Apache Spark 群集的资源
+# 管理 Azure HDInsight 上 Apache Spark 群集的资源
 在本文中，你将了解如何访问与 Spark 群集关联的界面，例如 Ambari UI、YARN UI 和 Spark History Server。你还将了解如何优化群集配置以获得最佳性能。
 
 **先决条件：**
@@ -26,7 +26,7 @@
 你必须具有以下各项：
 
 * Azure 订阅。请参阅[获取 Azure 试用版](/pricing/1rmb-trial/)。
-* HDInsight Linux 上的 Apache Spark 群集。有关说明，请参阅[在 Azure HDInsight 中创建 Apache Spark 群集](/documentation/articles/hdinsight-apache-spark-jupyter-spark-sql/)。
+* HDInsight 上的 Apache Spark 群集。有关说明，请参阅[在 Azure HDInsight 中创建 Apache Spark 群集](/documentation/articles/hdinsight-apache-spark-jupyter-spark-sql/)。
 
 ## 如何启动 Ambari Web UI？
 1. 在 [Azure 门户预览](https://portal.azure.cn/)上的启动板中，单击 Spark 群集的磁贴（如果已将它固定到启动板）。也可以在“全部浏览”>“HDInsight 群集”下导航到你的群集。

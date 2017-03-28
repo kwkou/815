@@ -15,7 +15,7 @@
     ms.devlang="python"
     ms.topic="article"
     ms.date="01/12/2017"
-    wacn.date="01/25/2017"
+    wacn.date="03/28/2017"
     ms.author="larryfr" />
 
 # 在 HDInsight 中将 Python 与 Hive 和 Pig 配合使用
@@ -76,7 +76,6 @@ HDInsight 还包含 Jython，后者是用 Java 编写的 Python 实现。Pig 无
 下面是该 HiveQL 示例使用的 **streaming.py** 文件。
 
     #!/usr/bin/env python
-
     import sys
     import string
     import hashlib
@@ -84,7 +83,7 @@ HDInsight 还包含 Jython，后者是用 Java 编写的 Python 实现。Pig 无
     while True:
         line = sys.stdin.readline()
         if not line:
-        break
+            break
 
         line = string.strip(line, "\n ")
         clientid, devicemake, devicemodel = string.split(line, "\t")
@@ -139,10 +138,10 @@ HDInsight 还包含 Jython，后者是用 Java 编写的 Python 实现。Pig 无
 
     @outputSchema("log: {(date:chararray, time:chararray, classname:chararray, level:chararray, detail:chararray)}")
     def create_structure(input):
-    if (input.startswith('java.lang.Exception')):
-        input = input[21:len(input)] + ' - java.lang.Exception'
-    date, time, classname, level, detail = input.split(' ', 4)
-    return date, time, classname, level, detail
+        if (input.startswith('java.lang.Exception')):
+            input = input[21:len(input)] + ' - java.lang.Exception'
+        date, time, classname, level, detail = input.split(' ', 4)
+        return date, time, classname, level, detail
 
 > [AZURE.NOTE]
 安装时不必要考虑“pig\_util”，脚本会自动使用该选项。
@@ -189,8 +188,8 @@ HDInsight 还包含 Jython，后者是用 Java 编写的 Python 实现。Pig 无
 
         add file wasbs:///streaming.py;
         SELECT TRANSFORM (clientid, devicemake, devicemodel)
-          USING 'python streaming.py' AS
-          (clientid string, phoneLabel string, phoneHash string)
+            USING 'python streaming.py' AS
+            (clientid string, phoneLabel string, phoneHash string)
         FROM hivesampletable
         ORDER BY clientid LIMIT 50;
 
@@ -249,7 +248,16 @@ HDInsight 还包含 Jython，后者是用 Java 编写的 Python 实现。Pig 无
 1. 使用 Python 示例 [streaming.py](#streamingpy) 和 [pig\_python.py](#jythonpy) 在开发计算机上创建文件的本地副本。
 2. 使用以下 PowerShell 脚本将 **streaming.py** 和 **pig\_python.py** 文件上传到服务器。在脚本的前三行中，替换 Azure HDInsight 群集的名称，以及 **streaming.py** 和 **pig\_python.py** 文件的路径。
 
-        $clusterName = YourHDIClusterName
+        # Login to your Azure subscription
+        # Is there an active Azure subscription?
+        $sub = Get-AzureRmSubscription -ErrorAction SilentlyContinue
+        if(-not($sub))
+        {
+            Add-AzureRmAccount -EnvironmentName AzureChinaCloud
+        }
+
+        # Get cluster info
+        $clusterName = Read-Host -Prompt "Enter the HDInsight cluster name"
         $pathToStreamingFile = "C:\path\to\streaming.py"
         $pathToJythonFile = "C:\path\to\pig_python.py"
 
@@ -288,21 +296,17 @@ HDInsight 还包含 Jython，后者是用 Java 编写的 Python 实现。Pig 无
 #### Hive
 以下脚本将运行 **streaming.py** 脚本。在运行前，它将提示你输入 HDInsight 群集的 HTTPs/Admin 帐户信息。
 
-    # Replace 'YourHDIClusterName' with the name of your cluster
-    $clusterName = YourHDIClusterName
-    $creds=Get-Credential
-    #Get the cluster info so we can get the resource group, storage, etc.
-    $clusterInfo = Get-AzureRmHDInsightCluster -ClusterName $clusterName
-    $resourceGroup = $clusterInfo.ResourceGroup
-    $storageAccountName=$clusterInfo.DefaultStorageAccount.split('.')[0]
-    $container=$clusterInfo.DefaultStorageContainer
-    $storageAccountKey=(Get-AzureRmStorageAccountKey `
-        -Name $storageAccountName `
-        -ResourceGroupName $resourceGroup)[0].Value
-    #Create a storage content and upload the file
-    $context = New-AzureStorageContext `
-        -StorageAccountName $storageAccountName `
-        -StorageAccountKey $storageAccountKey
+    # Login to your Azure subscription
+    # Is there an active Azure subscription?
+    $sub = Get-AzureRmSubscription -ErrorAction SilentlyContinue
+    if(-not($sub))
+    {
+        Add-AzureRmAccount -EnvironmentName AzureChinaCloud
+    }
+
+    # Get cluster info
+    $clusterName = Read-Host -Prompt "Enter the HDInsight cluster name"
+    $creds=Get-Credential -Message "Enter the login for the cluster"
 
     # If using a Windows-based HDInsight cluster, change the USING statement to:
     # "USING 'D:\Python27\python.exe streaming.py' AS " +
@@ -329,18 +333,12 @@ HDInsight 还包含 Jython，后者是用 Java 编写的 Python 实现。Pig 无
     # Get-AzureRmHDInsightJobOutput `
     #   -Clustername $clusterName `
     #   -JobId $job.JobId `
-    #   -DefaultContainer $container `
-    #   -DefaultStorageAccountName $storageAccountName `
-    #   -DefaultStorageAccountKey $storageAccountKey `
     #   -HttpCredential $creds `
     #   -DisplayOutputType StandardError
     Write-Host "Display the standard output ..." -ForegroundColor Green
     Get-AzureRmHDInsightJobOutput `
         -Clustername $clusterName `
         -JobId $job.JobId `
-        -DefaultContainer $container `
-        -DefaultStorageAccountName $storageAccountName `
-        -DefaultStorageAccountKey $storageAccountKey `
         -HttpCredential $creds
 
 **Hive** 作业的输出应该如下所示：
@@ -357,25 +355,19 @@ HDInsight 还包含 Jython，后者是用 Java 编写的 Python 实现。Pig 无
 > [AZURE.NOTE]
 使用 PowerShell 远程提交作业时，无法使用 C Python 作为解释器。
 
-    # Replace 'YourHDIClusterName' with the name of your cluster
-    $clusterName = YourHDIClusterName
+    # Login to your Azure subscription
+    # Is there an active Azure subscription?
+    $sub = Get-AzureRmSubscription -ErrorAction SilentlyContinue
+    if(-not($sub))
+    {
+        Add-AzureRmAccount -EnvironmentName AzureChinaCloud
+    }
 
-    $creds = Get-Credential
-    #Get the cluster info so we can get the resource group, storage, etc.
-    $clusterInfo = Get-AzureRmHDInsightCluster -ClusterName $clusterName
-    $resourceGroup = $clusterInfo.ResourceGroup
-    $storageAccountName=$clusterInfo.DefaultStorageAccount.split('.')[0]
-    $container=$clusterInfo.DefaultStorageContainer
-    $storageAccountKey=(Get-AzureRmStorageAccountKey `
-        -Name $storageAccountName `
-        -ResourceGroupName $resourceGroup)[0].Value
+    # Get cluster info
+    $clusterName = Read-Host -Prompt "Enter the HDInsight cluster name"
+    $creds=Get-Credential -Message "Enter the login for the cluster"
 
-    #Create a storage content and upload the file
-    $context = New-AzureStorageContext `
-        -StorageAccountName $storageAccountName `
-        -StorageAccountKey $storageAccountKey
-
-    $PigQuery = "Register wasbs:///jython.py using jython as myfuncs;" +
+    $PigQuery = "Register wasbs:///pig_python.py using jython as myfuncs;" +
                 "LOGS = LOAD 'wasbs:///example/data/sample.log' as (LINE:chararray);" +
                 "LOG = FILTER LOGS by LINE is not null;" +
                 "DETAILS = foreach LOG generate myfuncs.create_structure(LINE);" +
@@ -395,20 +387,14 @@ HDInsight 还包含 Jython，后者是用 Java 编写的 Python 实现。Pig 无
         -HttpCredential $creds
     # Uncomment the following to see stderr output
     # Get-AzureRmHDInsightJobOutput `
-        -Clustername $clusterName `
-        -JobId $job.JobId `
-        -DefaultContainer $container `
-        -DefaultStorageAccountName $storageAccountName `
-        -DefaultStorageAccountKey $storageAccountKey `
-        -HttpCredential $creds `
-        -DisplayOutputType StandardError
+    #    -Clustername $clusterName `
+    #    -JobId $job.JobId `
+    #    -HttpCredential $creds `
+    #    -DisplayOutputType StandardError
     Write-Host "Display the standard output ..." -ForegroundColor Green
     Get-AzureRmHDInsightJobOutput `
         -Clustername $clusterName `
         -JobId $job.JobId `
-        -DefaultContainer $container `
-        -DefaultStorageAccountName $storageAccountName `
-        -DefaultStorageAccountKey $storageAccountKey `
         -HttpCredential $creds
 
 **Pig** 作业的输出应该如下所示：
@@ -440,9 +426,6 @@ HDInsight 还包含 Jython，后者是用 Java 编写的 Python 实现。Pig 无
     # Get-AzureRmHDInsightJobOutput `
             -Clustername $clusterName `
             -JobId $job.JobId `
-            -DefaultContainer $container `
-            -DefaultStorageAccountName $storageAccountName `
-            -DefaultStorageAccountKey $storageAccountKey `
             -HttpCredential $creds `
             -DisplayOutputType StandardError
 

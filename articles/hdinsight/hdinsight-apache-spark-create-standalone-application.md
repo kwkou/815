@@ -1,5 +1,5 @@
 <properties
-    pageTitle="创建要在 HDInsight Spark 群集中运行的独立 scala 应用程序 | Azure"
+    pageTitle="创建要在 Azure Spark 群集中运行的独立 Scala 应用程序 | Azure"
     description="了解如何创建要在 HDInsight Spark 群集中运行的独立 Spark 应用程序。"
     services="hdinsight"
     documentationcenter=""
@@ -15,10 +15,10 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="10/28/2016"
-    wacn.date="03/16/2017"
+    wacn.date="03/28/2017"
     ms.author="nitinme" />
 
-# 创建要在 HDInsight Linux 上的 Apache Spark 群集中运行的独立 Scala 应用程序
+# 创建要在 HDInsight 上的 Apache Spark 群集中运行的独立 Scala 应用程序
 本文提供有关结合使用 Maven 和 IntelliJ IDEA 开发在 Scala 中编写的独立 Spark 应用程序的分步指南。本文将 Apache Maven 用作生成系统，并从 IntelliJ IDEA 提供的 Scala 现有 Maven 原型开始。粗略来说，在 IntelliJ IDEA 中创建 Scala 应用程序需要以下步骤：
 
 * 将 Maven 用作生成系统。
@@ -30,7 +30,7 @@
 **先决条件**
 
 * Azure 订阅。请参阅[获取 Azure 试用版](/pricing/1rmb-trial/)。
-* HDInsight Linux 上的 Apache Spark 群集。有关说明，请参阅[在 Azure HDInsight 中创建 Apache Spark 群集](/documentation/articles/hdinsight-apache-spark-jupyter-spark-sql/)。
+* HDInsight 上的 Apache Spark 群集。有关说明，请参阅[在 Azure HDInsight 中创建 Apache Spark 群集](/documentation/articles/hdinsight-apache-spark-jupyter-spark-sql/)。
 * Oracle Java 开发工具包。可以从[此处](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)安装它。
 * Java IDE。本文使用 IntelliJ IDEA 15.0.1。可以从[此处](https://www.jetbrains.com/idea/download/)安装它。
 

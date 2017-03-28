@@ -15,7 +15,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="12/15/2015"
-    wacn.date="02/20/2017"
+    wacn.date="03/28/2017"
     ms.author="ningk" />  
 
 
@@ -263,7 +263,7 @@ Tomcat 用 Java 编写。有两种类型的 Java 开发工具包 \(JDK\)：OpenJ
 #### 解决方案
 
 * 如果 Tomcat 侦听端口与发往虚拟机的流量的终结点专用端口不同，则需要将该专用端口更改为与 Tomcat 侦听端口相同。
-2. 如果此问题由防火墙/iptables 导致，请将以下行添加到 /etc/sysconfig/iptables。只有 https 流量才需要第二行：
+* 如果此问题由防火墙/iptables 导致，请将以下行添加到 /etc/sysconfig/iptables。只有 https 流量才需要第二行：
 
         -A INPUT -p tcp -m tcp --dport 80 -j ACCEPT
 

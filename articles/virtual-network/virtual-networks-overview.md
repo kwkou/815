@@ -15,12 +15,12 @@
     ms.tgt_pltfrm="na"
     ms.workload="infrastructure-services"
     ms.date="03/15/2016"
-    wacn.date="12/26/2016"
+    wacn.date="03/28/2017"
     ms.author="jdial" />  
 
 
 # 虚拟网络
-Azure 虚拟网络 (VNet) 是你自己的网络在云中的表示形式。它是对专用于你的订阅的 Azure 云进行的逻辑隔离。你可以完全控制该网络中的 IP 地址块、DNS 设置、安全策略和路由表。你还可以进一步将 VNet 细分成各个子网，并启动 Azure IaaS 虚拟机 (VM) 和/或[云服务（PaaS 角色实例）](/documentation/articles/cloud-services-choose-me/)。此外，还可以使用 Azure 中提供的[连接选项](/documentation/articles/vpn-gateway-about-vpngateways/#site-to-site-and-multi-site)之一将虚拟网络连接到本地网络。实际上，你可以将网络扩展到 Azure，对 IP 地址块进行完全的控制，并享受企业级 Azure 带来的好处。
+Azure 虚拟网络 (VNet) 是你自己的网络在云中的表示形式。它是对专用于你的订阅的 Azure 云进行的逻辑隔离。你可以完全控制该网络中的 IP 地址块、DNS 设置、安全策略和路由表。你还可以进一步将 VNet 细分成各个子网，并启动 Azure IaaS 虚拟机 (VM) 和/或[云服务（PaaS 角色实例）](/documentation/articles/cloud-services-choose-me/)。此外，还可以使用 Azure 中提供的[连接选项](/documentation/articles/vpn-gateway-about-vpngateways/#site-to-site-and-multi-site-connections)之一将虚拟网络连接到本地网络。实际上，你可以将网络扩展到 Azure，对 IP 地址块进行完全的控制，并享受企业级 Azure 带来的好处。
 
 若要更好地了解 VNet，请看下图，其中显示了简化的本地网络。
 
@@ -42,9 +42,9 @@ Azure 虚拟网络 (VNet) 是你自己的网络在云中的表示形式。它是
 * **隔离**。VNet 彼此之间完全隔离。这使你可以为使用相同 CIDR 地址块的开发、测试和生产创建单独的网络。
 * **访问公共 Internet**。默认情况下，VNet 中的所有 IaaS VM 和 PaaS 角色实例都可以访问公共 Internet。可以通过使用网络安全组 (NSG) 来控制访问。
 * **访问 VNet 中的 VM**。PaaS 角色实例和 IaaS VM 可以在同一虚拟网络中启动，并可使用专用 IP 地址互相连接（即使它们位于不同子网），而无需配置网关或使用公共 IP 地址。
-* **名称解析**。Azure 为部署在 VNet 中的 IaaS VM 和 PaaS 角色实例提供内部名称解析。你还可以部署自己的 DNS 服务器，并将 VNet 配置为使用这些服务器。
+* **名称解析**。Azure 为部署在 VNet 中的 IaaS VM 和 PaaS 角色实例提供[内部名称解析](/documentation/articles/virtual-networks-name-resolution-for-vms-and-role-instances/)。你还可以部署自己的 DNS 服务器，并将 VNet 配置为使用这些服务器。
 * **安全性**。进出虚拟机的流量以及 VNet 中的 PaaS 角色实例都可使用网络安全组进行控制。
-* **连接**。可以使用网关或 VNet 对等互连使 VNet 相互连接。VNet 可以通过站点到站点 VPN 网络或 Azure ExpressRoute 连接到本地数据中心。若要了解有关站点到站点 VPN 连接的详细信息，请访问[关于 VPN 网关](/documentation/articles/vpn-gateway-about-vpngateways/#site-to-site-and-multi-site)。若要了解有关 ExpressRoute 的详细信息，请访问 [ExpressRoute 技术概述](/documentation/articles/expressroute-introduction/)。若要了解有关 VNet 对等互连的详细信息，请访问 [VNet 对等互连](/documentation/articles/virtual-network-peering-overview/)。
+* **连接**。可以使用网关或 VNet 对等互连使 VNet 相互连接。VNet 可以通过站点到站点 VPN 网络或 Azure ExpressRoute 连接到本地数据中心。若要了解有关站点到站点 VPN 连接的详细信息，请访问[关于 VPN 网关](/documentation/articles/vpn-gateway-about-vpngateways/#site-to-site-and-multi-site-connections)。若要了解有关 ExpressRoute 的详细信息，请访问 [ExpressRoute 技术概述](/documentation/articles/expressroute-introduction/)。若要了解有关 VNet 对等互连的详细信息，请访问 [VNet 对等互连](/documentation/articles/virtual-network-peering-overview/)。
   
   > [AZURE.NOTE]
   请确保在将任何 IaaS VM 或 PaaS 角色实例部署到 Azure 环境之前创建 VNet。基于 ARM 的 VM 需要 VNet，如果你未指定现有 VNet，Azure 将创建其 CIDR 地址块可能会与本地网络冲突的默认 VNet。使你无法将 VNet 连接到本地网络。

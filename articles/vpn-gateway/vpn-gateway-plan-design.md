@@ -16,7 +16,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="infrastructure-services"
     ms.date="10/18/2016"
-    wacn.date="01/09/2017"
+    wacn.date="03/28/2017"
     ms.author="cherylmc" />  
 
 
@@ -116,7 +116,7 @@ VPN 网关需要一个特定的子网，称为网关子网。所有网关子网�
 
 **强制隧道关系图**
 
-![强制隧道连接](./media/vpn-gateway-plan-design/forced-tunnel.png "强制隧道")  
+![强制隧道连接](./media/vpn-gateway-plan-design/forced-tunneling-diagram.png)  
 
 
 可以使用不同的工具在这两种部署模型中配置强制隧道连接。有关详细信息，请参阅下表。我们将在由可用于此配置的新文章、新部署模型和其他工具时更新此表。当有文章可用时，我们将从表中直接链接到该文章。

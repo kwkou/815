@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="跟踪和调试 HDInsight 中的 Apache Spark 群集上运行的作业 | Azure" 
+	pageTitle="调试 Azure HDInsight 中的 Apache Spark 群集上运行的作业 | Azure" 
 	description="使用 YARN UI、Spark UI 和 Spark History Server 来跟踪和调试 Azure HDInsight 中的 Spark 群集上运行的作业" 
 	services="hdinsight" 
 	documentationCenter="" 
@@ -10,10 +10,10 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="08/25/2016"
-	wacn.date="02/14/2017"/>
+	ms.date="02/06/2017"
+	wacn.date="03/28/2017"/>
 
-# 跟踪和调试 HDInsight Linux 中的 Apache Spark 群集上运行的作业
+# 跟踪和调试 HDInsight 中的 Apache Spark 群集上运行的作业
 
 在本文中，你将了解如何使用 YARN UI、Spark UI 和 Spark History Server 来跟踪和调试 Spark 作业。在此过程中，我们将使用 Spark 群集中提供的笔记本启动 Spark 作业，相关信息请参阅 **Machine learning: Predictive analysis on food inspection data using MLLib**（机器学习：使用 MLLib 对食物检测数据进行预测分析）。你也可以执行以下步骤来跟踪使用任何其他方法（例如 **spark-submit**）提交的应用程序。
 
@@ -22,7 +22,7 @@
 必须满足以下条件：
 
 - Azure 订阅。请参阅[获取 Azure 试用版](/pricing/1rmb-trial/)。
-- HDInsight Linux 上的 Apache Spark 群集。有关说明，请参阅 [Create Apache Spark clusters in Azure HDInsight](/documentation/articles/hdinsight-apache-spark-jupyter-spark-sql/)（在 Azure HDInsight 中创建 Apache Spark 群集）。
+- HDInsight 上的 Apache Spark 群集。有关说明，请参阅 [Create Apache Spark clusters in Azure HDInsight](/documentation/articles/hdinsight-apache-spark-jupyter-spark-sql/)（在 Azure HDInsight 中创建 Apache Spark 群集）。
 - 应已开始运行笔记本，相关信息请参阅 **[Machine learning: Predictive analysis on food inspection data using MLLib](/documentation/articles/hdinsight-apache-spark-machine-learning-mllib-ipython)**（机器学习：使用 MLLib 对食品检测数据进行预测分析））。有关如何运行此笔记本的说明，请单击以下链接。
 
 ## 在 YARN UI 中跟踪应用程序

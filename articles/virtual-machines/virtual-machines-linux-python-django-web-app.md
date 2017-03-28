@@ -15,7 +15,7 @@
 	ms.devlang="python" 
 	ms.topic="article" 
 	ms.date="11/17/2015" 
-	wacn.date="06/13/2016" 
+	wacn.date="03/28/2017" 
 	ms.author="huvalo"/>
 	
 # Linux VM 上的 Django Hello World Web 应用程序
@@ -87,17 +87,17 @@ Ubuntu Linux VM 已预安装了 Python 2.7，但它没有安装 Apache 或 Djang
 
 1.  在 **/var/www/helloworld/helloworld** 目录中创建一个名为 **views.py** 的新文件。这会包含呈现“hello world”页面的视图。启动编辑器并输入以下代码：
 		
-		from django.http import HttpResponse
-		def home(request):
-    		html = "<html><body>Hello World!</body></html>"
-    		return HttpResponse(html)
+        from django.http import HttpResponse
+        def home(request):
+            html = "<html><body>Hello World!</body></html>"
+            return HttpResponse(html)
 
 1.  现在，将 **urls.py** 文件的内容替换为以下代码：
 
-		from django.conf.urls import patterns, url
-		urlpatterns = patterns('',
-			url(r'^$', 'helloworld.views.home', name='home'),
-		)
+        from django.conf.urls import patterns, url
+        urlpatterns = patterns('',
+            url(r'^$', 'helloworld.views.home', name='home'),
+        )
 
 
 ## 设置 Apache

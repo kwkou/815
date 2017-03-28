@@ -15,7 +15,7 @@
     ms.tgt_pltfrm="vm-multiple"
     ms.workload="big-compute"
     ms.date="12/29/2016"
-    wacn.date="02/20/2017"
+    wacn.date="03/28/2017"
     ms.author="danlep" />  
 
 
@@ -37,9 +37,9 @@
     
             Import-AzurePublishSettingsFile -PublishSettingsFile <publish settings file>
 
-* **在头节点上配置 Azure 管理证书**。如果你有 .cer 文件，将其导入至 CurrentUser\\My certificate store，然后为 Azure 环境（AzureCloud 或 AzureChinaCloud）运行以下 Azure PowerShell cmdlet：
+    * **在头节点上配置 Azure 管理证书**。如果你有 .cer 文件，将其导入至 CurrentUser\\My certificate store，然后为 Azure 环境（AzureCloud 或 AzureChinaCloud）运行以下 Azure PowerShell cmdlet：
 
-        Set-AzureSubscription -SubscriptionName <Sub Name> -SubscriptionId <Sub ID> -Certificate (Get-Item Cert:\CurrentUser\My\<Cert Thrumbprint>) -Environment <AzureCloud | AzureChinaCloud>
+            Set-AzureSubscription -SubscriptionName <Sub Name> -SubscriptionId <Sub ID> -Certificate (Get-Item Cert:\CurrentUser\My\<Cert Thrumbprint>) -Environment <AzureCloud | AzureChinaCloud>
 
 ## 添加计算节点 VM
 使用 **Add-HpcIaaSNode.ps1** 脚本添加计算节点。

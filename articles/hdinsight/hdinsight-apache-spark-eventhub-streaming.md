@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="使用 Azure 事件中心和 HDInsight 中的 Apache Spark 处理流数据 | Azure" 
+	pageTitle="使用 Azure 事件中心和 Azure HDInsight 中的 Apache Spark 处理流数据 | Azure" 
 	description="逐步说明如何向 Azure 事件中心发送数据流，然后使用 scala 应用程序在 Spark 接收这些事件" 
 	services="hdinsight" 
 	documentationCenter="" 
@@ -15,12 +15,12 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="09/30/2016" 
-	wacn.date="02/06/2017" 
+	wacn.date="03/28/2017" 
 	ms.author="nitinme"/>  
 
 
 
-# Spark Streaming：在 HDInsight Linux 上使用 Apache Spark 群集处理来自 Azure 事件中心的事件
+# Spark Streaming：在 HDInsight 上使用 Apache Spark 群集处理来自 Azure 事件中心的事件
 
 Spark Streaming 可以扩展核心 Spark API，以生成可缩放、高吞吐量、容错的流处理应用程序。可以从许多来源引入数据。在本文中，我们将使用 Azure 事件中心来引入数据。事件中心是高度可缩放的引入系统，每秒可以引入数以百万计的事件。
 
@@ -33,7 +33,7 @@ Spark Streaming 可以扩展核心 Spark API，以生成可缩放、高吞吐量
 必须满足以下条件：
 
 - Azure 订阅。请参阅[获取 Azure 试用版](/pricing/1rmb-trial/)。
-- Apache Spark 群集。有关说明，请参阅 [Create Apache Spark clusters in Azure HDInsight](/documentation/articles/hdinsight-apache-spark-jupyter-spark-sql/)（在 Azure HDInsight 中创建 Apache Spark 群集）。
+- HDInsight 中的 Apache Spark 群集。有关说明，请参阅 [Create Apache Spark clusters in Azure HDInsight](/documentation/articles/hdinsight-apache-spark-jupyter-spark-sql/)（在 Azure HDInsight 中创建 Apache Spark 群集）。
 - Oracle Java 开发工具包。可以从[此处](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)安装它。
 - Java IDE。本文使用 IntelliJ IDEA 15.0.1。可以从[此处](https://www.jetbrains.com/idea/download/)安装它。
 - 适用于 SQL Server v4.1 或更高版本的 Microsoft JDBC 驱动程序。必须需要此插件将事件数据写入 SQL Server 数据库。可以从[此处](https://msdn.microsoft.com/sqlserver/aa937724.aspx)安装它。

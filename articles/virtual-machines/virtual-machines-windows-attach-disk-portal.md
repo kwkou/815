@@ -15,7 +15,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="11/28/2016"
-    wacn.date="02/20/2017"
+    wacn.date="03/28/2017"
     ms.author="cynthn" />  
 
 
@@ -27,7 +27,7 @@
 * 对于新磁盘，不需要首先进行创建，因为 Azure 将在附加磁盘时创建该磁盘。
 * 对于现有磁盘，Azure 存储帐户中必须要有可用的 .vhd 文件。你可以使用已经存在的 .vhd（如果该磁盘没有附加到另一虚拟机），也可以将自己的 .vhd 文件上载到存储帐户。
 
-还可以[使用 Powershell 附加数据磁盘](/documentation/articles/virtual-machines-windows-ps-manage/#add-a-data-disk-to-a-virtual-machine)。
+还可以[使用 Powershell 附加数据磁盘](/documentation/articles/virtual-machines-windows-attach-disk-ps/)。
 
 ## 查找虚拟机
 1. 登录 [Azure 门户预览](https://portal.azure.cn/)。

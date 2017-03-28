@@ -15,7 +15,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="11/14/2016"
-	wacn.date="12/30/2016"
+	wacn.date="03/28/2017"
 	ms.author="iainfou"/>
 
 
@@ -23,7 +23,7 @@
 
 [AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]
 
-本主题介绍如何通过 Azure CLI 使用经典部署模型创建*自定义*虚拟机（VM）。我们将使用 Azure 上可用**映像**中的 Linux 映像。Azure CLI 命令提供以下配置选项以及其他配置选项：
+本主题介绍如何通过 Azure CLI 1.0 使用经典部署模型创建*自定义*虚拟机（VM）。我们将使用 Azure 上可用**映像**中的 Linux 映像。Azure CLI 1.0 命令提供以下配置选项以及其他配置选项：
 
 - 将 VM 连接到虚拟网络
 - 将 VM 添加到现有云服务

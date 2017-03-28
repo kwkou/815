@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="10/05/2016"
-	wacn.date="02/14/2017"/>
+	ms.date="02/06/2017"
+	wacn.date="03/28/2017"/>
 
 # 迁移到适用于 HDInsight 群集的基于 Azure Resource Manager 的开发工具
 
@@ -40,8 +40,6 @@ Azure CLI 提供的用于通过 Azure 服务管理 (ASM) 使用 HDInsight 的基
 * `azure hdinsight cluster resize` - 动态更改群集中的辅助角色节点数目
 * `azure hdinsight cluster enable-http-access` - 启用对群集的 HTTPs 访问（默认为打开）
 * `azure hdinsight cluster disable-http-access` - 禁用对群集的 HTTPs 访问
-* `azure hdinsight-enable-rdp-access` - 在基于 Windows 的 HDInsight 群集上启用远程桌面协议
-* `azure hdinsight-disable-rdp-access` - 在基于 Windows 的 HDInsight 群集上禁用远程桌面协议
 * `azure hdinsight script-action` - 在群集上提供用于创建/管理脚本操作的命令
 * `azure hdinsight config` - 提供用于创建配置文件的命令，该配置文件可与 `hdinsight cluster create` 命令一起使用以提供配置信息。
 
@@ -325,7 +323,7 @@ Azure PowerShell ARM cmdlet 可与 ASM cmdlet 一同安装。两种模式下的 
                 Location = "China North",
                 ClusterType = "Hadoop",
                 Version = "3.1",
-                OSType = OSType.Windows,
+                OSType = OSType.Linux,
                 DefaultStorageAccountName = "mystorage.blob.core.chinacloudapi.cn",
                 DefaultStorageAccountKey =
                     "O9EQvp3A3AjXq/W27rst1GQfLllhp0gUeiUUn2D8zX2lU3taiXSSfqkZlcPv+nQcYUxYw==",

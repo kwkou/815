@@ -1,5 +1,5 @@
 <properties
-    pageTitle="使用跨平台 Azure CLI 在 HDInsight 中的 Linux 上创建 Hadoop、HBase 或 Storm 群集 | Azure"
+    pageTitle="使用 CLI 创建 Azure HDInsight (Hadoop) | Azure"
     description="了解如何使用跨平台 Azure CLI、Azure Resource Manager 模板和 Azure REST API 创建 HDInsight 群集。可以指定群集类型（Hadoop、HBase 或 Storm），或使用脚本来安装自定义组件。"
     services="hdinsight"
     documentationcenter=""
@@ -15,12 +15,12 @@
     ms.tgt_pltfrm="na"
     ms.workload="big-data"
     ms.date="01/12/2017"
-    wacn.date="01/25/2017"
+    wacn.date="03/28/2017"
     ms.author="larryfr" />
 
 # 使用 Azure CLI 创建 HDInsight 群集
 
-[AZURE.INCLUDE [选择器](../../includes/hdinsight-selector-create-clusters.md)]
+[AZURE.INCLUDE [选择器](../../includes/hdinsight-create-linux-cluster-selector.md)]
 
 Azure CLI 是一个跨平台命令行实用工具，可用于管理 Azure 服务。将它与 Azure Resource Manager 模板配合使用可以创建 HDInsight 群集，以及关联的存储帐户和其他服务。
 

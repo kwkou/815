@@ -1,5 +1,5 @@
 <properties
-    pageTitle="使用 Livy 远程提交 Spark 作业 | Azure"
+    pageTitle="在 Azure HDInsight 使用 Livy 远程提交 Spark 作业 | Azure"
     description="了解如何在 HDInsight 中使用 Livy 来远程提交 Spark 作业。"
     services="hdinsight"
     documentationcenter=""
@@ -15,10 +15,10 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="11/28/2016"
-    wacn.date="02/06/2017"
+    wacn.date="03/28/2017"
     ms.author="nitinme" />
 
-# 使用 Livy 向 HDInsight Linux 上的 Apache Spark 群集远程提交作业
+# 使用 Livy 向 HDInsight 上的 Apache Spark 群集远程提交作业
 Azure HDInsight 上的 Apache Spark 群集包含 Livy，这是一个 REST 接口，用于向 Spark 群集远程提交作业。有关详细文档，请参阅 [Livy](https://github.com/cloudera/hue/tree/master/apps/spark/java#welcome-to-livy-the-rest-spark-server)。
 
 你可以使用 Livy 运行交互式 Spark shell，或提交要在 Spark 上运行的批处理作业。本文介绍如何使用 Livy 提交批处理作业。以下语法使用 Curl 向 Livy 终结点发出 REST 调用。
@@ -28,7 +28,7 @@ Azure HDInsight 上的 Apache Spark 群集包含 Livy，这是一个 REST 接口
 你必须具有以下各项：
 
 * Azure 订阅。请参阅[获取 Azure 试用版](/pricing/1rmb-trial/)。
-* HDInsight Linux 上的 Apache Spark 群集。有关说明，请参阅[在 Azure HDInsight 中创建 Apache Spark 群集](/documentation/articles/hdinsight-apache-spark-jupyter-spark-sql/)。
+* HDInsight 上的 Apache Spark 群集。有关说明，请参阅[在 Azure HDInsight 中创建 Apache Spark 群集](/documentation/articles/hdinsight-apache-spark-jupyter-spark-sql/)。
 
 ## 提交批处理作业
 在提交批处理作业之前，必须将应用程序 jar 上载到与群集关联的群集存储。可以使用命令行实用工具 [**AzCopy**](/documentation/articles/storage-use-azcopy/) 来执行此操作。可以使用其他许多客户端来上载数据。有关详细信息，请参阅[在 HDInsight 中上载 Hadoop 作业的数据](/documentation/articles/hdinsight-upload-data/)。

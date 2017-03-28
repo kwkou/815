@@ -15,7 +15,7 @@
     ms.tgt_pltfrm="vm-windows"
     ms.workload="infrastructure-services"
     ms.date="12/08/2016"
-    wacn.date="02/24/2017"
+    wacn.date="03/28/2017"
     ms.author="nepeters" />
 
 # 适用于 Windows 的虚拟机扩展和功能
@@ -43,7 +43,7 @@ Azure 虚拟机扩展是小型应用程序，可在Azure 虚拟机上提供部�
 ### Azure VM 代理
 Azure VM 代理可管理 Azure 虚拟机与 Azure 结构控制器之间的交互。VM 代理负责部署和管理 Azure 虚拟机的许多功能层面，包括运行 VM 扩展。Azure VM 代理预先安装在 Azure 应用商店映像上，并可安装在支持的操作系统上。
 
-有关支持的操作系统和安装说明的信息，请参阅 [Azure 虚拟机代理](/documentation/articles/virtual-machines-windows-classic-agents-and-extensions/)。
+有关支持的操作系统和安装说明的信息，请参阅 [Azure 虚拟机代理](/documentation/articles/virtual-machines-windows-agent-user-guide/)。
 
 ## 发现 VM 扩展
 有许多不同的 VM 扩展可与 Azure 虚拟机配合使用。若要查看完整列表，请使用 Azure Resource Manager PowerShell 模块运行以下命令。运行此命令时请确保指定所需的位置。

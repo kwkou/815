@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="vm-windows"
     ms.workload="infrastructure"
     ms.date="12/13/2016"
-    wacn.date="01/13/2017"
+    wacn.date="03/28/2017"
     ms.author="iainfou" />  
 
 
@@ -113,7 +113,7 @@
 
         Get-Disk
 
-以下示例输出显示虚拟硬盘连接了磁盘 **2**。（也可使用 `Get-Volume` 查看驱动器号）：
+    以下示例输出显示虚拟硬盘连接了磁盘 **2**。（也可使用 `Get-Volume` 查看驱动器号）：
 
         Number   Friendly Name   Serial Number   HealthStatus   OperationalStatus   Total Size   Partition
                                                                                                  Style
@@ -133,7 +133,7 @@
 
         Set-Disk -Number 2 -IsOffline $True
 
-再次使用 `Get-Disk` 确认磁盘现已设置为脱机。下面的示例输出显示磁盘现已设置为脱机：
+    再次使用 `Get-Disk` 确认磁盘现已设置为脱机。下面的示例输出显示磁盘现已设置为脱机：
 
         Number   Friendly Name   Serial Number   HealthStatus   OperationalStatus   Total Size   Partition
                                                                                                  Style

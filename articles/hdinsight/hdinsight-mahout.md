@@ -15,7 +15,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="01/13/2017"
-    wacn.date="01/25/2017"
+    wacn.date="03/28/2017"
     ms.author="larryfr" />  
 
 
@@ -79,9 +79,6 @@ user-ratings.txt 中包含的数据具有 `userID`、`movieID`、`userRating` �
 
 > [AZURE.NOTE]
 此文件将提示你输入用于连接到 HDInsight 群集和运行作业的信息。完成作业和下载 output.txt 文件可能需要几分钟时间。
-
-    # Script should stop on failures
-    $ErrorActionPreference = "Stop"
 
     # Login to your Azure subscription
     # Is there an active Azure subscription?
@@ -155,9 +152,6 @@ user-ratings.txt 中包含的数据具有 `userID`、`movieID`、`userRating` �
     Get-AzureRmHDInsightJobOutput `
             -Clustername $clusterName `
             -JobId $job.JobId `
-            -DefaultContainer $container `
-            -DefaultStorageAccountName $storageAccountName `
-            -DefaultStorageAccountKey $storageAccountKey `
             -HttpCredential $creds `
             -DisplayOutputType StandardError
 
@@ -321,9 +315,6 @@ Mahout 作业不会将输出返回到 STDOUT。而是会将其作为 **part-r-00
 Mahout 作业不清理在处理期间创建的临时文件。此外，作业将不会覆盖现有的输出文件。
 
 若要避免运行 Mahout 作业时出错，请在每次运行作业之前删除临时文件和输出文件，或者使用唯一的临时目录名称和输出目录名称。使用以下 PowerShell 脚本删除本文档前面的脚本创建的文件：
-
-    # Script should stop on failures
-    $ErrorActionPreference = "Stop"
 
     # Login to your Azure subscription
     # Is there an active Azure subscription?

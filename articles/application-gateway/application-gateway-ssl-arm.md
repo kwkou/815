@@ -1,5 +1,5 @@
 <properties
-    pageTitle="使用 Azure Resource Manager 配置应用程序网关以进行 SSL 卸载 | Azure"
+    pageTitle="配置 SSL 卸载 - Azure 应用程序网关 - PowerShell | Azure"
     description="本页提供有关使用 Azure Resource Manager 创建支持 SSL 卸载的应用程序网关的说明"
     documentationcenter="na"
     services="application-gateway"
@@ -15,7 +15,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="infrastructure-services"
     ms.date="12/16/2016"
-    wacn.date="01/25/2017"
+    wacn.date="03/28/2017"
     ms.author="gwallace" />
 
 # 使用 Azure Resource Manager 配置应用程序网关以进行 SSL 卸载

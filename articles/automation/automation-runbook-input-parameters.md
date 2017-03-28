@@ -14,7 +14,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
    ms.date="10/11/2016"
-   wacn.date="01/18/2017"
+   wacn.date="03/28/2017"
    ms.author="sngun"/>  
 
 
@@ -113,16 +113,16 @@ Runbook 有多种启动方式：通过 Azure 经典管理门户、webhook、Powe
             return response.Job;
         }
 
-若要启动此方法，请创建一个字典来存储 Runbook 参数（**VMName** 和 **resourceGroupName**）及其值。然后启动 Runbook。以下 C# 代码段用于调用上面定义的方法。
+    若要启动此方法，请创建一个字典来存储 Runbook 参数（**VMName** 和 **resourceGroupName**）及其值。然后启动 Runbook。以下 C# 代码段用于调用上面定义的方法。
 
-    IDictionary<string, string> RunbookParameters = new Dictionary<string, string>();
+        IDictionary<string, string> RunbookParameters = new Dictionary<string, string>();
 
-    // Add parameters to the dictionary.
-    RunbookParameters.Add("VMName", "WSVMClassic");
-    RunbookParameters.Add("resourceGroupName", "WSSC1");
+        // Add parameters to the dictionary.
+        RunbookParameters.Add("VMName", "WSVMClassic");
+        RunbookParameters.Add("resourceGroupName", "WSSC1");
 
-    //Call the StartRunbook method with parameters
-    StartRunbook("Get-AzureVMGraphical", RunbookParameters);
+        //Call the StartRunbook method with parameters
+        StartRunbook("Get-AzureVMGraphical", RunbookParameters);
 
 #### 使用 REST API 启动 Runbook 并分配参数
 

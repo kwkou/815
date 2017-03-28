@@ -15,7 +15,7 @@
     ms.devlang="na"
     ms.topic="hero-article"
     ms.date="01/04/2017"
-    wacn.date="03/01/2017"
+    wacn.date="03/28/2017"
     ms.author="cephalin" />  
 
 
@@ -46,7 +46,7 @@
 ## 部署 Web 应用
 让我们将 Web 应用部署到 Azure App Service。
 
-1. 打开新的 Windows 命令提示符、PowerShell 窗口、Linux shell 或 OS X 终端。运行 `git --version` 和 `azure --version`，验证计算机上是否已安装 Git 和 Azure CLI。
+1. 打开新的 Windows 命令提示符、PowerShell 窗口、Linux shell 或 OS X 终端。运行 `git --version` 和 `az --version`，验证计算机上是否已安装 Git 和 Azure CLI。
    
     ![在 Azure 中测试第一个 Web 应用的 CLI 工具安装](./media/app-service-web-get-started/1-test-tools-2.0.png)
    

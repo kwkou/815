@@ -15,15 +15,12 @@
     ms.devlang="na"
     ms.topic="get-started-article"
     ms.date="11/23/2016"
-    wacn.date="02/06/2017"
+    wacn.date="03/28/2017"
     ms.author="jgao" />
 
-# HBase 教程：开始在 HDInsight 中将 Apache HBase 与基于 Linux 的 Hadoop 配合使用
-[AZURE.INCLUDE [hbase-selector](../../includes/hdinsight-hbase-selector.md)]
+# HBase 教程：开始使用在 HDInsight 中的 Apache HBase
 
 了解如何使用 Hive 在 HDInsight 中创建 HBase 群集、创建 HBase 表和查询表。有关 HBase 的一般信息，请参阅 [HDInsight HBase 概述][hdinsight-hbase-overview]。
-
-本文档中的信息针对基于 Linux 的 HDInsight 群集。有关基于 Windows 的群集的信息，请使用页面顶部的选项卡选择器进行切换。
 
 [AZURE.INCLUDE [delete-cluster-warning](../../includes/hdinsight-delete-cluster-warning.md)]
 
@@ -208,7 +205,7 @@ HBase 提供了多种将数据载入表中的方法。有关详细信息，请�
         -X PUT "https://<ClusterName>.azurehdinsight.cn/hbaserest/Contacts1/false-row-key" \
         -H "Accept: application/json" \
         -H "Content-Type: application/json" \
-        -d "{\"Row\":{\"key\":\"MTAwMA==\",\"Cell\":{\"column\":\"UGVyc29uYWw6TmFtZQ==\", \"$\":\"Sm9obiBEb2xl\"}}}" \
+        -d "{\"Row\":[{\"key\":\"MTAwMA==\",\"Cell\":[{\"column\":\"UGVyc29uYWw6TmFtZQ==\", \"$\":\"Sm9obiBEb2xl\"}]}]}" \
         -v
    
     必须使用 base64 来为 -d 参数中指定的值编码。在本示例中：

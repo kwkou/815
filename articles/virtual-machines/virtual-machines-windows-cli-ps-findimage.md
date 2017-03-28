@@ -16,7 +16,7 @@
    ms.tgt_pltfrm="vm-windows"
    ms.workload="infrastructure"
    ms.date="08/23/2016"
-   wacn.date="10/25/2016"
+   wacn.date="03/28/2017"
    ms.author="rasquill"/>
 
 # 使用 Windows PowerShell 和 Azure CLI 来浏览和选择 Windows 虚拟机映像
@@ -33,6 +33,7 @@
 | MicrosoftWindowsServer           | WindowsServer                              | Windows-Server-Technical-Preview |
 | MicrosoftWindowsServerHPCPack    | WindowsServerHPCPack                       | 2012R2                           |
 
+[AZURE.INCLUDE [azure-cli-2-azurechinacloud-environment-parameter](../../includes/azure-cli-2-azurechinacloud-environment-parameter.md)]
 
 [AZURE.INCLUDE [virtual-machines-common-cli-ps-findimage](../../includes/virtual-machines-common-cli-ps-findimage.md)]
 

@@ -15,7 +15,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="web"
     ms.date="10/24/2016"
-    wacn.date="01/03/2017"
+    wacn.date="03/28/2017"
     ms.author="sumuth" />
 
 # 对 Web 应用有效使用 DevOps 环境
@@ -104,7 +104,7 @@
          */
         $table_prefix = 'wp_';
 
-设置如以上代码中所述的安全密钥可帮助防止 Web 应用受到黑客攻击，因此请使用唯一值。如果需要为代码中提及的安全密钥生成字符串，可[转到自动生成器](https://api.wordpress.org/secret-key/1.1/salt)，创建新的键/值对。
+    设置如以上代码中所述的安全密钥可帮助防止 Web 应用受到黑客攻击，因此请使用唯一值。如果需要为代码中提及的安全密钥生成字符串，可[转到自动生成器](https://api.wordpress.org/secret-key/1.1/salt)，创建新的键/值对。
 
 4. 复制 `wp-config.azure.php` 中的以下代码：
 

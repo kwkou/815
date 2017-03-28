@@ -1,5 +1,5 @@
 <properties
-    pageTitle="Apache Storm 教程：HDInsight 上基于 Linux 的 Storm 入门 | Azure"
+    pageTitle="Azure HDInsight 上 Apache Storm 入门 | Azure"
     description="开始在基于 Linux 的 HDInsight 上使用 Apache Storm 和 Storm 初学者示例进行大数据分析。了解如何使用 Storm 实时处理数据。"
     keywords="apache storm,apache storm 教程,大数据分析,storm 初学者"
     services="hdinsight"
@@ -15,7 +15,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="big-data"
     ms.date="01/12/2017"
-    wacn.date="02/14/2017"
+    wacn.date="03/28/2017"
     ms.author="larryfr" />
 
 # Apache Storm 教程：用于在 HDInsight 上进行大数据分析的 Storm 初学者示例入门

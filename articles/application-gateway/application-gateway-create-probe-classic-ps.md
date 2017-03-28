@@ -1,5 +1,5 @@
 <properties
-    pageTitle="在经典部署模型中使用 PowerShell 创建应用程序网关的自定义探测 | Azure"
+    pageTitle="创建自定义探测 - Azure 应用程序网关 - PowerShell 经典 | Azure"
     description="了解如何使用经典部署模型中的 PowerShell 创建应用程序网关的自定义探测"
     services="application-gateway"
     documentationcenter="na"
@@ -15,8 +15,8 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="infrastructure-services"
-    ms.date="12/13/2016"
-    wacn.date="01/09/2017"
+    ms.date="01/23/2017"
+    wacn.date="03/28/2017"
     ms.author="gwallace" />
 
 # 使用 PowerShell 创建 Azure 应用程序网关（经典）的自定义探测

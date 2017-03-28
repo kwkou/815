@@ -1,7 +1,7 @@
 <!-- need to be verified -->
 
 
-1. 使用[从 Azure CLI 连接到 Azure](/documentation/articles/xplat-cli-connect/)中列出的步骤登录到 Azure 订阅。
+1. 使用[从 Azure CLI 连接到 Azure 1.0](/documentation/articles/xplat-cli-connect/)中列出的步骤登录到 Azure 订阅。
 
 2. 确保使用经典部署模式，如下所示：
 
@@ -42,6 +42,6 @@
         azure vm start myVM
 
 ## 后续步骤
-有关所有这些 Azure CLI 虚拟机命令的详细信息，请参阅[使用经典部署 API 的 Azure CLI](/documentation/articles/virtual-machines-command-line-tools/)。
+有关所有这些 Azure CLI 1.0 虚拟机命令的详细信息，请参阅[使用经典部署 API 的 Azure CLI](/documentation/articles/virtual-machines-command-line-tools/)。
 
 <!---HONumber=Mooncake_1212_2016-->

@@ -15,7 +15,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="09/27/2016"
-	wacn.date="01/05/2017"
+	wacn.date="03/28/2017"
 	ms.author="cynthn"/>
 
 
@@ -30,7 +30,7 @@
 
 ## 其他资源
 
-[关于虚拟机的磁盘和 VHD](/documentation/articles/virtual-machines-windows-about-disks-vhds/)
+[关于虚拟机的磁盘和 VHD](/documentation/articles/storage-about-disks-and-vhds-windows/)
 
 [如何将数据磁盘附加到 Windows 虚拟机](/documentation/articles/virtual-machines-windows-classic-attach-disk/)
 

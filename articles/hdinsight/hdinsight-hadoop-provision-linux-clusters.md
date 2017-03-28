@@ -14,12 +14,12 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="big-data"
-    ms.date="12/07/2016"
-    wacn.date="01/25/2017"
+    ms.date="02/17/2017"
+    wacn.date="03/28/2017"
     ms.author="jgao" />
 
-# 在 HDInsight 中创建基于 Linux 的 Hadoop 群集
-[AZURE.INCLUDE [选择器](../../includes/hdinsight-selector-create-clusters.md)]
+# 在 HDInsight 中创建 Hadoop 群集
+[AZURE.INCLUDE [选择器](../../includes/hdinsight-create-linux-cluster-selector.md)]
 
 Hadoop 群集由多个虚拟机（节点）组成，这些虚拟机用于对群集中的任务进行分布式处理。Azure 对各个节点的安装和配置的实现细节进行抽象，因此只需提供常规配置信息。本文介绍这些配置设置。
 

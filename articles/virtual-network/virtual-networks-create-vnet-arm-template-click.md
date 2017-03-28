@@ -15,7 +15,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="infrastructure-services"
     ms.date="03/15/2016"
-    wacn.date="02/20/2017"
+    wacn.date="03/28/2017"
     ms.author="jdial" />
 
 # 使用模板创建虚拟网络
@@ -109,9 +109,9 @@ Azure 有两个部署模型：Azure Resource Manager 和经典模型。Azure 建
 
         New-AzureRmResourceGroup -Name TestRG -Location chinaeast
 
-此命令在中国北部 Azure 区域创建一个名为 *TestRG* 的资源组。有关资源组的详细信息，请访问 [Azure 资源管理器概述](/documentation/articles/resource-group-overview/)。
+    此命令在中国北部 Azure 区域创建一个名为 *TestRG* 的资源组。有关资源组的详细信息，请访问 [Azure 资源管理器概述](/documentation/articles/resource-group-overview/)。
 
-	Expected output:
+	预期输出：
 
         ResourceGroupName : TestRG
         Location          : chinaeast
@@ -128,7 +128,7 @@ Azure 有两个部署模型：Azure Resource Manager 和经典模型。Azure 建
         New-AzureRmResourceGroupDeployment -Name TestVNetDeployment -ResourceGroupName TestRG `
         -TemplateFile C:\ARM\azuredeploy.json -TemplateParameterFile C:\ARM\azuredeploy-parameters.json
 
-预期输出：
+    预期输出：
    
         DeploymentName    : TestVNetDeployment
         ResourceGroupName : TestRG
@@ -152,7 +152,7 @@ Azure 有两个部署模型：Azure Resource Manager 和经典模型。Azure 建
 
         Get-AzureRmVirtualNetwork -ResourceGroupName TestRG -Name TestVNet
 
-预期输出：
+    预期输出：
 
         Name              : TestVNet
         ResourceGroupName : TestRG

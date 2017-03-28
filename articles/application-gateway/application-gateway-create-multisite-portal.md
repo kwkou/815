@@ -1,5 +1,5 @@
 <properties
-    pageTitle="在 Azure 门户预览中配置托管多个站点的现有应用程序网关 | Azure"
+    pageTitle="托管多个站点的现有应用程序网关 | Azure"
     description="此页说明了如何通过 Azure 门户预览配置现有的 Azure 应用程序网关，以便在同一网关托管多个 Web 应用程序。"
     documentationcenter="na"
     services="application-gateway"
@@ -14,8 +14,8 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="infrastructure-services"
-    ms.date="12/12/2016"
-    wacn.date="02/21/2017"
+    ms.date="01/23/2017"
+    wacn.date="03/28/2017"
     ms.author="gwallace" />  
 
 

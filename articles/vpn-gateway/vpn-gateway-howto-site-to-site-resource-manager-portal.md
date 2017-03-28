@@ -16,7 +16,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="infrastructure-services"
     ms.date="10/14/2016"
-    wacn.date="01/03/2017"
+    wacn.date="03/28/2017"
     ms.author="cherylmc" />  
 
 
@@ -28,7 +28,7 @@
 
 本文逐步讲解如何使用 Azure Resource Manager 部署模型和 Azure 门户预览创建虚拟网络和连接到本地网络的站点到站点 VPN 网关连接。站点到站点连接可以用于跨界和混合配置。
 
-![图表](./media/vpn-gateway-howto-site-to-site-resource-manager-portal/s2srmportal.png)  
+![图表](./media/vpn-gateway-howto-site-to-site-resource-manager-portal/site-to-site-diagram.png)  
 
 
 ### 用于站点到站点连接的部署模型和方法

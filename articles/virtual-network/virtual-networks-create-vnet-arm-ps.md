@@ -16,7 +16,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="infrastructure-services"
     ms.date="01/03/2017"
-    wacn.date="03/01/2017"
+    wacn.date="03/28/2017"
     ms.author="jdial" />  
 
 
@@ -31,6 +31,7 @@ Azure 有两个部署模型：Azure Resource Manager 和经典模型。Azure 建
 - [门户](/documentation/articles/virtual-networks-create-vnet-arm-pportal/)
 - [PowerShell](/documentation/articles/virtual-networks-create-vnet-arm-ps/)
 - [CLI](/documentation/articles/virtual-networks-create-vnet-arm-cli/)
+- [模板](/documentation/articles/virtual-networks-create-vnet-arm-template-click/)
 - [门户（经典）](/documentation/articles/virtual-networks-create-vnet-classic-pportal/)
 - [PowerShell（经典）](/documentation/articles/virtual-networks-create-vnet-classic-netcfg-ps/)
 - [CLI（经典）](/documentation/articles/virtual-networks-create-vnet-classic-cli/)

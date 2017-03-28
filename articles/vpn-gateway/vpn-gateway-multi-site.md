@@ -16,7 +16,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
    ms.date="05/11/2016"
-   wacn.date="01/05/2017"
+   wacn.date="03/28/2017"
    ms.author="yushwang" />  
 
 
@@ -95,7 +95,7 @@
 
 ## <a name="export"></a>2.导出网络配置文件 
 
-导出网络配置文件。导出的文件将用于配置新的多站点设置。如需有关如何导出文件的说明，请参阅以下文章中的相应部分：[How to create a VNet using a network configuration file in the Azure Portal Preview](/documentation/articles/virtual-networks-create-vnet-classic-portal/#how-to-create-a-vnet-using-a-network-config-file-in-the-azure-portal)（如何在 Azure 门户预览中使用网络配置文件创建 VNet）。
+导出网络配置文件。导出的文件将用于配置新的多站点设置。如需有关如何导出文件的说明，请参阅以下文章中的相应部分：[How to create a classic VNet in the Azure Portal Preview](/documentation/articles/virtual-networks-create-vnet-classic-pportal/#how-to-create-a-classic-vnet-in-the-azure-portal)（如何在 Azure 门户预览中创建经典 VNet）。
 
 ## 3\.打开网络配置文件
 
@@ -169,7 +169,7 @@
 
 ## 5\.导入网络配置文件
 
-导入网络配置文件。在导入这个包含更改的文件时，将会添加新的隧道。这些隧道将使用你前面创建的动态网关。如需有关如何导入文件的说明，请参阅以下文章中的相应部分：[How to create a VNet using a network configuration file in the Azure Portal Preview](/documentation/articles/virtual-networks-create-vnet-classic-portal/#how-to-create-a-vnet-using-a-network-config-file-in-the-azure-portal)（如何在 Azure 门户预览中使用网络配置文件创建 VNet）。
+导入网络配置文件。在导入这个包含更改的文件时，将会添加新的隧道。这些隧道将使用你前面创建的动态网关。如需有关如何导入文件的说明，请参阅以下文章中的相应部分：[How to create a classic VNet in the Azure Portal Preview](/documentation/articles/virtual-networks-create-vnet-classic-pportal/#how-to-create-a-classic-vnet-in-the-azure-portal)（如何在 Azure 门户预览中创建经典 VNet）。
 
 ## 6\.下载密钥
 

@@ -13,8 +13,8 @@
     ms.tgt_pltfrm="cache-redis"
     ms.devlang="na"
     ms.topic="hero-article"
-    ms.date="01/06/2017"
-    wacn.date="03/01/2017"
+    ms.date="01/27/2017"
+    wacn.date="03/28/2017"
     ms.author="sdanie" />
 
 # 如何使用 Redis 缓存创建 Web 应用
@@ -63,7 +63,7 @@
 
 ## 创建 Visual Studio 项目
 1. 打开 Visual Studio，然后依次单击“文件”、“新建”、“项目”。
-2. 展开“模板”列表中的“Visual C#”节点，选择“云”，然后单击“ASP.NET Web 应用程序”。确保选中“.NET Framework 4.5.2”。在“名称”框中键入“ContosoTeamStats”，然后单击“确定”。
+2. 展开“模板”列表中的“Visual C#”节点，选择“云”，然后单击“ASP.NET Web 应用程序”。确保选中“.NET Framework 4.5.2” 或更高。在“名称”框中键入“ContosoTeamStats”，然后单击“确定”。
    
     ![创建项目][cache-create-project]  
 

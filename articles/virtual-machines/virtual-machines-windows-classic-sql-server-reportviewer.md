@@ -15,7 +15,7 @@
     ms.tgt_pltfrm="vm-windows-sql-server"
     ms.workload="infrastructure-services"
     ms.date="10/04/2016"
-    wacn.date="02/24/2017"
+    wacn.date="03/28/2017"
     ms.author="asaxton" />  
 
 
@@ -45,8 +45,6 @@ ReportViewer 控件随 Visual Studio Standard Edition 或更高版本提供。�
 ><p>Azure 中不支持在本地处理模式下配置的 ReportViewer。
 > 
 > 
-
-请查看白皮书 [Reporting Services 报表查看器控件和基于 Azure 虚拟机的报表服务器](http://download.microsoft.com/download/2/2/0/220DE2F1-8AB3-474D-8F8B-C998F7C56B5D/Reporting%20Services%20report%20viewer%20control%20and%20Azure%20VM%20based%20report%20servers.docx)。
 
 ## 将程序集添加到部署包
 当在本地托管 ASP.NET 应用程序时，在 Visual Studio 安装过程中 ReportViewer 程序集通常直接安装在 IIS 服务器的全局程序集缓存 \(GAC\) 中，可以由应用程序直接访问。但在云中托管 ASP.NET 应用程序时，Azure 不允许将任何内容安装到 GAC 中，因此必须确保 ReportViewer 程序集可供应用程序本地使用。你可以通过在你的项目中添加它们的引用并将它们配置为以本地方式复制来实现此操作。

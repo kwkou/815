@@ -16,7 +16,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="big-data"
     ms.date="11/02/2016"
-    wacn.date="01/25/2017"
+    wacn.date="03/28/2017"
     ms.author="jgao" />  
 
 
@@ -46,10 +46,10 @@
         * 包含 [Update 4](https://www.microsoft.com/download/details.aspx?id=44921) 的 Visual Studio 2013 Community/Professional/Premium/Ultimate
         * Visual Studio 2015 (Community/Enterprise)
     
-    > [AZURE.NOTE]
-    目前，用于 Visual Studio 的 Data Lake 工具仅有英文版本。
-    > 
-    > 
+        > [AZURE.NOTE]
+        目前，用于 Visual Studio 的 Data Lake 工具仅有英文版本。
+        > 
+        > 
 
 ## <a name="install-data-lake-tools-for-visual-studio"></a> 安装用于 Visual Studio 的 Data Lake 工具
 可以使用 [Web 平台安装程序](https://www.microsoft.com/web/downloads/)来安装 Data Lake 工具。你必须选择与你的 Visual Studio 版本匹配的版本。如果尚未安装 Visual Studio，则可使用 [Web 平台安装程序](https://www.microsoft.com/web/downloads/)安装最新 Visual Studio Community 和 Azure SDK：

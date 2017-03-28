@@ -13,7 +13,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
    ms.date="02/08/2016"
-   wacn.date="06/06/2016"
+   wacn.date="03/28/2017"
    ms.author="jdial" />
 
 # 规划和设计 Azure 虚拟网络
@@ -124,7 +124,7 @@ VNet 包含以下属性。
 
 - **用于子网中的所有 NIC 的专用 IP 地址不足**。如果你的子网地址空间未包含子网中的 NIC 数所对应的足够 IP 地址，则需要创建多个子网。请记住，Azure 保留每个子网中的 5 个专用 IP 地址，这些 IP 地址不能使用：地址空间的第一个和最后一个地址（用于子网地址和多播）和 3 个要内部使用的地址（用于 DHCP 和 DNS 目的）。 
 - **安全性**。你可以使用子网将 VM 组彼此分离以用于具有多层结构的工作负荷，并对这些子网应用不同的[网络安全组 (NSG)](/documentation/articles/virtual-networks-nsg/#subnets)。
-- **混合连接**。你可以使用 VPN 网关和到 ExpressRoute 线路来将 VNet 彼此[连接](/documentation/articles/vpn-gateway-plan-design/)，并连接到本地数据中心。VPN 网关和 ExpressRoute 线路需要创建其自己的子网。
+- **混合连接**。你可以使用 VPN 网关和到 ExpressRoute 线路来将 VNet 彼此[连接](/documentation/articles/vpn-gateway-about-vpngateways/#site-to-site-and-multi-site-connections)，并连接到本地数据中心。VPN 网关和 ExpressRoute 线路需要创建其自己的子网。
 - **虚拟设备**。可以在 Azure VNet 中使用虚拟设备，如防火墙、WAN 加速器或 VPN 网关。这样做时，需要[路由流量](/documentation/articles/virtual-networks-udr-overview/)到这些设备，并将其隔离在它们自己的子网中。
 
 ### 子网和 NSG 设计模式

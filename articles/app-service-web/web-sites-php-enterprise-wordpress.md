@@ -1,5 +1,5 @@
 <properties
-    pageTitle="Azure App Service 上的企业级 WordPress | Azure"
+    pageTitle="Azure 上的企业级 WordPress | Azure"
     description="了解如何在 Azure App Service 上托管企业级 WordPress 网站"
     services="app-service\web"
     documentationcenter=""
@@ -15,10 +15,10 @@
     ms.tgt_pltfrm="na"
     ms.workload="web"
     ms.date="10/24/2016"
-    wacn.date="01/03/2017"
+    wacn.date="03/28/2017"
     ms.author="sumuth" />
 
-# Azure App Service 上的企业级 WordPress
+# Azure 上的企业级 WordPress
 Azure App Service 为大规模的关键任务 [WordPress][wordpress] 站点提供了一个可缩放、安全且易用的环境。Microsoft 自身在运营 [Office][officeblog] 和 [Bing][bingblog] 博客等企业级网站。本文说明如何使用 Azure App Service 的 Web 应用功能，建立和维护一个可处理大量访客、基于云的企业级 WordPress 站点。
 
 ## <a name="planning"></a>体系结构与规划
