@@ -84,14 +84,14 @@ Azure IoT 套件[预配置解决方案][lnk-preconfigured-solutions]结合了多
 
 1. 选择“设备”可显示此解决方案的设备列表。
 
-   ![在解决方案门户中查看设备列表][img-devicelist]  
+    ![在解决方案门户中查看设备列表][img-devicelist]  
 
 
 1. 设备列表最初显示预配过程创建的 25 个模拟设备。可向解决方案添加更多的模拟设备和物理设备。
 
 1. 若要查看设备详细信息，请在设备列表中选择一个设备。
 
-   ![在解决方案门户中查看设备详细信息][img-devicedetails]  
+    ![在解决方案门户中查看设备详细信息][img-devicedetails]  
 
 
 “设备详细信息”面板包含六个部分：
@@ -203,7 +203,7 @@ Azure IoT 套件[预配置解决方案][lnk-preconfigured-solutions]结合了多
 
 可以选择“列编辑器”来自定义设备列表中显示的信息。可以添加和删除用于显示报告属性和标记值的列。此外，可将列重新排序和重命名：
 
-   ![设备列表中的列编辑器图标][img-columneditor]  
+    ![设备列表中的列编辑器图标][img-columneditor]  
 
 
 ### 自定义设备图标
@@ -212,12 +212,12 @@ Azure IoT 套件[预配置解决方案][lnk-preconfigured-solutions]结合了多
 
 1. 选择铅笔图标打开设备的“编辑图像”面板：
 
-   ![打开设备图像编辑器][img-startimageedit]  
+    ![打开设备图像编辑器][img-startimageedit]  
 
 
 1. 上载新图像或使用现有的某个图像，然后选择“保存”：
 
-   ![编辑设备图像编辑器][img-imageedit]  
+    ![编辑设备图像编辑器][img-imageedit]  
 
 
 1. 选择的图像随即显示在设备的“图标”列中。
@@ -349,7 +349,7 @@ Azure IoT 套件[预配置解决方案][lnk-preconfigured-solutions]结合了多
 
 1. 在所选设备的“设备详细信息”窗格中选择“命令”：
 
-   ![仪表板中的设备命令][img-devicecommands]  
+    ![仪表板中的设备命令][img-devicecommands]  
 
 
 1. 从命令列表中选择“PingDevice”。
@@ -358,7 +358,7 @@ Azure IoT 套件[预配置解决方案][lnk-preconfigured-solutions]结合了多
 
 1. 你可以在命令历史记录中查看命令的状态。
 
-   ![仪表板中的命令状态][img-pingcommand]  
+    ![仪表板中的命令状态][img-pingcommand]  
 
 
 解决方案会跟踪其发送的每个命令的状态。结果最初为“挂起”。当设备报告它已执行命令时，结果会设置为“成功”。

@@ -181,119 +181,119 @@ IoT 中心序列化程序客户端库使用模型来指定设备与 IoT 中心�
    - 取消初始化所有资源。
 
       
-          void remote_monitoring_run(void)
-          {
-            if (platform_init() != 0)
-            {
-              printf("Failed to initialize the platform.\n");
-            }
-            else
-            {
-              if (SERIALIZER_REGISTER_NAMESPACE(Contoso) == NULL)
+              void remote_monitoring_run(void)
               {
-                printf("Unable to SERIALIZER_REGISTER_NAMESPACE\n");
-              }
-              else
-              {
-                IOTHUB_CLIENT_HANDLE iotHubClientHandle = IoTHubClient_CreateFromConnectionString(connectionString, MQTT_Protocol);
-                if (iotHubClientHandle == NULL)
+                if (platform_init() != 0)
                 {
-                  printf("Failure in IoTHubClient_CreateFromConnectionString\n");
+                  printf("Failed to initialize the platform.\n");
                 }
                 else
                 {
-          #ifdef MBED_BUILD_TIMESTAMP
-                  // For mbed add the certificate information
-                  if (IoTHubClient_SetOption(iotHubClientHandle, "TrustedCerts", certificates) != IOTHUB_CLIENT_OK)
+                  if (SERIALIZER_REGISTER_NAMESPACE(Contoso) == NULL)
                   {
-                      printf("Failed to set option \"TrustedCerts\"\n");
-                  }
-          #endif // MBED_BUILD_TIMESTAMP
-                  Thermostat* thermostat = IoTHubDeviceTwin_CreateThermostat(iotHubClientHandle);
-                  if (thermostat == NULL)
-                  {
-                    printf("Failure in IoTHubDeviceTwin_CreateThermostat\n");
+                    printf("Unable to SERIALIZER_REGISTER_NAMESPACE\n");
                   }
                   else
                   {
-                    /* Set values for reported properties */
-                    thermostat->Config.TemperatureMeanValue = 55.5;
-                    thermostat->Config.TelemetryInterval = 3;
-                    thermostat->Device.DeviceState = "normal";
-                    thermostat->Device.Location.Latitude = 47.642877;
-                    thermostat->Device.Location.Longitude = -122.125497;
-                    thermostat->System.Manufacturer = "Contoso Inc.";
-                    thermostat->System.FirmwareVersion = "2.22";
-                    thermostat->System.InstalledRAM = "8 MB";
-                    thermostat->System.ModelNumber = "DB-14";
-                    thermostat->System.Platform = "Plat 9.75";
-                    thermostat->System.Processor = "i3-7";
-                    thermostat->System.SerialNumber = "SER21";
-                    /* Specify the signatures of the supported direct methods */
-                    thermostat->SupportedMethods = "{\"Reboot\": \"Reboot the device\", \"InitiateFirmwareUpdate--FwPackageURI-string\": \"Updates device Firmware. Use parameter FwPackageURI to specifiy the URI of the firmware file\"}";
-    
-                    /* Send reported properties to IoT Hub */
-                    if (IoTHubDeviceTwin_SendReportedStateThermostat(thermostat, deviceTwinCallback, NULL) != IOTHUB_CLIENT_OK)
+                    IOTHUB_CLIENT_HANDLE iotHubClientHandle = IoTHubClient_CreateFromConnectionString(connectionString, MQTT_Protocol);
+                    if (iotHubClientHandle == NULL)
                     {
-                      printf("Failed sending serialized reported state\n");
+                      printf("Failure in IoTHubClient_CreateFromConnectionString\n");
                     }
                     else
                     {
-                      printf("Send DeviceInfo object to IoT Hub at startup\n");
-          
-                      thermostat->ObjectType = "DeviceInfo";
-                      thermostat->IsSimulatedDevice = 0;
-                      thermostat->Version = "1.0";
-                      thermostat->DeviceProperties.HubEnabledState = 1;
-                      thermostat->DeviceProperties.DeviceID = (char*)deviceId;
-    
-                      unsigned char* buffer;
-                      size_t bufferSize;
-    
-                      if (SERIALIZE(&buffer, &bufferSize, thermostat->ObjectType, thermostat->Version, thermostat->IsSimulatedDevice, thermostat->DeviceProperties) != CODEFIRST_OK)
+              #ifdef MBED_BUILD_TIMESTAMP
+                      // For mbed add the certificate information
+                      if (IoTHubClient_SetOption(iotHubClientHandle, "TrustedCerts", certificates) != IOTHUB_CLIENT_OK)
                       {
-                        (void)printf("Failed serializing DeviceInfo\n");
+                          printf("Failed to set option \"TrustedCerts\"\n");
+                      }
+              #endif // MBED_BUILD_TIMESTAMP
+                      Thermostat* thermostat = IoTHubDeviceTwin_CreateThermostat(iotHubClientHandle);
+                      if (thermostat == NULL)
+                      {
+                        printf("Failure in IoTHubDeviceTwin_CreateThermostat\n");
                       }
                       else
                       {
-                        sendMessage(iotHubClientHandle, buffer, bufferSize);
-                      }
-    
-                      /* Send telemetry */
-                      thermostat->Temperature = 50;
-                      thermostat->ExternalTemperature = 55;
-                      thermostat->Humidity = 50;
-                      thermostat->DeviceId = (char*)deviceId;
-    
-                      while (1)
-                      {
-                        unsigned char*buffer;
-                        size_t bufferSize;
-    
-                        (void)printf("Sending sensor value Temperature = %f, Humidity = %f\n", thermostat->Temperature, thermostat->Humidity);
-    
-                        if (SERIALIZE(&buffer, &bufferSize, thermostat->DeviceId, thermostat->Temperature, thermostat->Humidity, thermostat->ExternalTemperature) != CODEFIRST_OK)
+                        /* Set values for reported properties */
+                        thermostat->Config.TemperatureMeanValue = 55.5;
+                        thermostat->Config.TelemetryInterval = 3;
+                        thermostat->Device.DeviceState = "normal";
+                        thermostat->Device.Location.Latitude = 47.642877;
+                        thermostat->Device.Location.Longitude = -122.125497;
+                        thermostat->System.Manufacturer = "Contoso Inc.";
+                        thermostat->System.FirmwareVersion = "2.22";
+                        thermostat->System.InstalledRAM = "8 MB";
+                        thermostat->System.ModelNumber = "DB-14";
+                        thermostat->System.Platform = "Plat 9.75";
+                        thermostat->System.Processor = "i3-7";
+                        thermostat->System.SerialNumber = "SER21";
+                        /* Specify the signatures of the supported direct methods */
+                        thermostat->SupportedMethods = "{\"Reboot\": \"Reboot the device\", \"InitiateFirmwareUpdate--FwPackageURI-string\": \"Updates device Firmware. Use parameter FwPackageURI to specifiy the URI of the firmware file\"}";
+        
+                        /* Send reported properties to IoT Hub */
+                        if (IoTHubDeviceTwin_SendReportedStateThermostat(thermostat, deviceTwinCallback, NULL) != IOTHUB_CLIENT_OK)
                         {
-                          (void)printf("Failed sending sensor value\r\n");
+                          printf("Failed sending serialized reported state\n");
                         }
                         else
                         {
-                          sendMessage(iotHubClientHandle, buffer, bufferSize);
+                          printf("Send DeviceInfo object to IoT Hub at startup\n");
+              
+                          thermostat->ObjectType = "DeviceInfo";
+                          thermostat->IsSimulatedDevice = 0;
+                          thermostat->Version = "1.0";
+                          thermostat->DeviceProperties.HubEnabledState = 1;
+                          thermostat->DeviceProperties.DeviceID = (char*)deviceId;
+        
+                          unsigned char* buffer;
+                          size_t bufferSize;
+        
+                          if (SERIALIZE(&buffer, &bufferSize, thermostat->ObjectType, thermostat->Version, thermostat->IsSimulatedDevice, thermostat->DeviceProperties) != CODEFIRST_OK)
+                          {
+                            (void)printf("Failed serializing DeviceInfo\n");
+                          }
+                          else
+                          {
+                            sendMessage(iotHubClientHandle, buffer, bufferSize);
+                          }
+        
+                          /* Send telemetry */
+                          thermostat->Temperature = 50;
+                          thermostat->ExternalTemperature = 55;
+                          thermostat->Humidity = 50;
+                          thermostat->DeviceId = (char*)deviceId;
+        
+                          while (1)
+                          {
+                            unsigned char*buffer;
+                            size_t bufferSize;
+        
+                            (void)printf("Sending sensor value Temperature = %f, Humidity = %f\n", thermostat->Temperature, thermostat->Humidity);
+        
+                            if (SERIALIZE(&buffer, &bufferSize, thermostat->DeviceId, thermostat->Temperature, thermostat->Humidity, thermostat->ExternalTemperature) != CODEFIRST_OK)
+                            {
+                              (void)printf("Failed sending sensor value\r\n");
+                            }
+                            else
+                            {
+                              sendMessage(iotHubClientHandle, buffer, bufferSize);
+                            }
+        
+                            ThreadAPI_Sleep(1000);
+                          }
+        
+                          IoTHubDeviceTwin_DestroyThermostat(thermostat);
                         }
-    
-                        ThreadAPI_Sleep(1000);
                       }
-    
-                      IoTHubDeviceTwin_DestroyThermostat(thermostat);
+                      IoTHubClient_Destroy(iotHubClientHandle);
                     }
+                    serializer_deinit();
                   }
-                  IoTHubClient_Destroy(iotHubClientHandle);
                 }
-                serializer_deinit();
+                platform_deinit();
               }
-            }
-            platform_deinit();
-          }
     
    
     下面提供了发送到预配置解决方案的示例**遥测**消息供参考：

@@ -186,61 +186,61 @@
    * 开始发送遥测数据。
 
     
-	    client.open(function (err) {
-	        if (err) {
-	            printErrorFor('open')(err);
-	        } else {
-	            console.log('Sending device metadata:\n' + JSON.stringify(deviceMetaData));
-	            client.sendEvent(new Message(JSON.stringify(deviceMetaData)), printErrorFor('send metadata'));
-
-	            // Create device twin
-	            client.getTwin(function(err, twin) {
-	                if (err) {
-	                    console.error('Could not get device twin');
-	                } else {
-	                    console.log('Device twin created');
-
-	                    twin.on('properties.desired', function(delta) {
-	                        console.log('Received new desired properties:');
-	                        console.log(JSON.stringify(delta));
-	                    });
-
-	                    // Send reported properties
-	                    twin.properties.reported.update(reportedProperties, function(err) {
-	                        if (err) throw err;
-	                        console.log('twin state reported');
-	                    });
-
-	                    // Register handlers for direct methods
-	                    client.onDeviceMethod('Reboot', onReboot);
-	                    client.onDeviceMethod('InitiateFirmwareUpdate', onInitiateFirmwareUpdate);
-	                }
-	            });
-
-	            // Start sending telemetry
-	            var sendInterval = setInterval(function () {
-	                temperature += generateRandomIncrement();
-	                externalTemperature += generateRandomIncrement();
-	                humidity += generateRandomIncrement();
-
-	                var data = JSON.stringify({
-	                    'DeviceID': deviceId,
-	                    'Temperature': temperature,
-	                    'Humidity': humidity,
-	                    'ExternalTemperature': externalTemperature
-	                });
-
-	                console.log('Sending device event data:\n' + data);
-	                client.sendEvent(new Message(data), printErrorFor('send event'));
-	            }, 5000);
-
-	            client.on('error', function (err) {
-	                printErrorFor('client')(err);
-	                if (sendInterval) clearInterval(sendInterval);
-	                client.close(printErrorFor('client.close'));
-	            });
-	        }
-	    });
+    	    client.open(function (err) {
+    	        if (err) {
+    	            printErrorFor('open')(err);
+    	        } else {
+    	            console.log('Sending device metadata:\n' + JSON.stringify(deviceMetaData));
+    	            client.sendEvent(new Message(JSON.stringify(deviceMetaData)), printErrorFor('send metadata'));
+    
+    	            // Create device twin
+    	            client.getTwin(function(err, twin) {
+    	                if (err) {
+    	                    console.error('Could not get device twin');
+    	                } else {
+    	                    console.log('Device twin created');
+    
+    	                    twin.on('properties.desired', function(delta) {
+    	                        console.log('Received new desired properties:');
+    	                        console.log(JSON.stringify(delta));
+    	                    });
+    
+    	                    // Send reported properties
+    	                    twin.properties.reported.update(reportedProperties, function(err) {
+    	                        if (err) throw err;
+    	                        console.log('twin state reported');
+    	                    });
+    
+    	                    // Register handlers for direct methods
+    	                    client.onDeviceMethod('Reboot', onReboot);
+    	                    client.onDeviceMethod('InitiateFirmwareUpdate', onInitiateFirmwareUpdate);
+    	                }
+    	            });
+    
+    	            // Start sending telemetry
+    	            var sendInterval = setInterval(function () {
+    	                temperature += generateRandomIncrement();
+    	                externalTemperature += generateRandomIncrement();
+    	                humidity += generateRandomIncrement();
+    
+    	                var data = JSON.stringify({
+    	                    'DeviceID': deviceId,
+    	                    'Temperature': temperature,
+    	                    'Humidity': humidity,
+    	                    'ExternalTemperature': externalTemperature
+    	                });
+    
+    	                console.log('Sending device event data:\n' + data);
+    	                client.sendEvent(new Message(data), printErrorFor('send event'));
+    	            }, 5000);
+    
+    	            client.on('error', function (err) {
+    	                printErrorFor('client')(err);
+    	                if (sendInterval) clearInterval(sendInterval);
+    	                client.close(printErrorFor('client.close'));
+    	            });
+    	        }
+    	    });
     
 
 1. 保存对 **remote\_monitoring.js** 文件所做的更改。

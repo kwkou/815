@@ -23,8 +23,9 @@
 
 ### 在哪里可以找到预配置解决方案的源代码？
 源代码存储在以下 GitHub 存储库中：
-* [远程监视预配置解决方案][lnk-remote-monitoring-github]
-* [预见性维护预配置解决方案][lnk-predictive-maintenance-github]
+
+- [远程监视预配置解决方案][lnk-remote-monitoring-github]
+- [预见性维护预配置解决方案][lnk-predictive-maintenance-github]
 
 ### 如何更新到最新版的远程监视预配置解决方案，以便使用 IoT 中心设备管理功能？
 * 如果从 https://www.azureiotsuite.cn/ 站点部署预配置解决方案，则始终会部署最新版解决方案的新实例。

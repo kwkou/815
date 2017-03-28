@@ -52,7 +52,7 @@
 1. 在计算机上的适当文件夹中，使用以下命令克隆 Parson GitHub 存储库：
 
 
-	git clone https://github.com/kgabis/parson.git
+	    git clone https://github.com/kgabis/parson.git
 
 
 1. 将 parson.h 和 parson.c 文件从 Parson 存储库的本地副本复制到 **RMDevice** 项目文件夹。
