@@ -74,16 +74,14 @@
 
 3. 单击“创建”打开“新建 SQL 服务器(逻辑服务器)”边栏选项卡。
 
-    ![新建-逻辑 sql server](./media/sql-database-get-started/new-logical-sql-server.png)  
+    ![新建-逻辑 sql server](./media/sql-database-get-started/new-logical-sql-server.png)
 
-3. 在“服务器名称”文本框中，提供新逻辑服务器的有效名称。绿色复选标记表示提供的名称有效。
+4. 在“服务器名称”文本框中，提供新逻辑服务器的有效名称。绿色复选标记表示提供的名称有效。
     
-    ![新建服务器名称](./media/sql-database-get-started/new-server-name.png)  
-
+    ![新建服务器名称](./media/sql-database-get-started/new-server-name.png)
 
     > [AZURE.IMPORTANT]
-    新服务器的完全限定名称必须唯一，格式为：**<服务器名称>.database.chinacloudapi.cn**。在本教程稍后的步骤中，需要使用此完全限定的服务器名称连接到服务器和数据库。
-    >
+    >新服务器的完全限定名称必须唯一，格式为：**<服务器名称>.database.chinacloudapi.cn**。在本教程稍后的步骤中，需要使用此完全限定的服务器名称连接到服务器和数据库。
     
 4. 在“服务器管理员登录名”文本框中，提供此服务器的 SQL 身份验证登录名的用户名。此登录名也称为服务器主体登录名。绿色复选标记表示提供的名称有效。
     

@@ -35,12 +35,9 @@
 4. 在数据库页面的顶部，选择“还原”：
    
    ![还原 Azure SQL 数据库](./media/sql-database-point-in-time-restore-portal/restore.png)  
-
 5. 在“还原”页上，选择要将数据库还原到的日期和时间（UTC 时间），然后单击“确定”：
    
    ![还原 Azure SQL 数据库](./media/sql-database-point-in-time-restore-portal/restore-details.png)  
-
-
 6. 在上一步中单击“确定”后，单击页面右上方的通知图标，然后单击“还原 SQL 数据库”通知以显示详细信息。
    
     ![还原 Azure SQL 数据库](./media/sql-database-point-in-time-restore-portal/notification-icon.png)  

@@ -30,9 +30,9 @@
 2. 在对象资源管理器中，打开“数据库”节点，展开“系统数据库”文件夹，右键单击“master”，然后单击“新建查询”。
 3. 使用 **CREATE DATABASE** 语句可创建数据库。有关详细信息，请参阅 [CREATE DATABASE（SQL 数据库）](https://msdn.microsoft.com/zh-cn/library/dn268335.aspx)。以下语句将创建名为 **myTestDB** 的数据库，并指定它是默认大小上限为 250 GB 的“标准 S0 版本”数据库。
   
-      CREATE DATABASE myTestDB
-      (EDITION='Standard',
-       SERVICE_OBJECTIVE='S0');
+        CREATE DATABASE myTestDB
+        (EDITION='Standard',
+        SERVICE_OBJECTIVE='S0');
 
 4. 单击“执行”运行查询。
 5. 在对象资源管理器中，右键单击“数据库”节点，然后单击“刷新”在对象资源管理器中查看新的数据库。

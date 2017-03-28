@@ -26,9 +26,9 @@
 		
 1. 确认你安装了最新版本的 SQL Server Management Studio。Management Studio 的新版本将每月更新一次，以与 Azure 门户的更新保持同步。
    		
-   > [AZURE.IMPORTANT]		
-   >建议始终使用最新版本的 Management Studio 以与 Azure 和 SQL 数据库的更新保持同步。[最新版本的 SSMS](https://msdn.microsoft.com/zh-cn/library/mt238290.aspx)。
-   > 		
+    > [AZURE.IMPORTANT]		
+    >建议始终使用最新版本的 Management Studio 以与 Azure 和 SQL 数据库的更新保持同步。[最新版本的 SSMS](https://msdn.microsoft.com/zh-cn/library/mt238290.aspx)。
+    > 		
  		
  2. 打开 Management Studio 并连接到你在对象资源管理器中的源数据库。
     		

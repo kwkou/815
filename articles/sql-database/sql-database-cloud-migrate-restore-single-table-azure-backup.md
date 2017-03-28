@@ -29,7 +29,6 @@
    > [AZURE.NOTE]
    >为了避免受到阻止，请确保要重命名的表没有任何正在运行的活动。如果你遇到问题，请确保在维护时段内执行此过程。
    >
-
 2. 使用[时间点还原](/documentation/articles/sql-database-recovery-using-backups/#point-in-time-restore)步骤，将数据库的一个备份还原到想要恢复到的一个时间点。
 
    > [AZURE.NOTE]
@@ -52,11 +51,10 @@
    >默认情况下，此向导保存你的登录信息。如果不想保存，请选择“忘记登录信息”。
    >
    
-     ![SQL Database Migration wizard - Select Source - step 1](./media/sql-database-cloud-migrate-restore-single-table-azure-backup/2.png)
+    ![SQL Database Migration wizard - Select Source - step 1](./media/sql-database-cloud-migrate-restore-single-table-azure-backup/2.png)
 4. 在“选择源”对话框中，选择“准备步骤”部分中的还原的数据库名称作为你的源，然后单击“下一步”。
 
 	![SQL 数据库迁移向导 - 选择源 - 步骤 2](./media/sql-database-cloud-migrate-restore-single-table-azure-backup/3.png)
-
 5. 在“选择对象”对话框中，选择“选择特定的数据库对象”选项，然后选择你想要迁移到目标服务器的表。
 ![SQL 数据库迁移向导 - 选择对象](./media/sql-database-cloud-migrate-restore-single-table-azure-backup/4.png)
 

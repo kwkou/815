@@ -27,7 +27,7 @@
 
 ## 配置 Blob 审核
 
-1. 启动 [Azure 门户预览](https://portal.azure.cn) (https://portal.azure.cn)。
+1. 启动 [Azure 门户预览](https://portal.azure.cn)。
 2. 导航到要审核的 SQL 数据库/SQL Server 的“设置”边栏选项卡。在“设置”边栏选项卡中，选择“审核和威胁检测”。
 
     ![导航窗格](./media/sql-database-auditing-get-started/1_auditing_get_started_settings.png)  
@@ -53,7 +53,7 @@
 >在设置“表审核”之前，请检查使用的是否为“下层客户端”[](/documentation/articles/sql-database-auditing-and-dynamic-data-masking-downlevel-clients/)。此外，如果有严格的防火墙设置，请注意，在启用表审核时[会更改数据库的 IP 终结点](/documentation/articles/sql-database-auditing-and-dynamic-data-masking-downlevel-clients/)。
 >
 
-1. 启动 [Azure 门户预览](https://portal.azure.cn) (https://portal.azure.cn)。
+1. 启动 [Azure 门户预览](https://portal.azure.cn) 。
 2. 导航到要审核的 SQL 数据库/SQL Server 的“设置”边栏选项卡。在“设置”边栏选项卡中，选择“审核和威胁检测”（*[请参阅“Blob 审核”部分中的屏幕截图](#auditing-screenshot)*）。
 3. 在数据库审核配置边栏选项卡中，可以选中“从服务器继承设置”复选框，指定根据数据库服务器的设置对数据库进行审核。如果选中此选项，将会看到“查看服务器审核设置”链接，可以使用该链接在此上下文中查看或修改服务器审核设置。
 

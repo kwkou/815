@@ -57,8 +57,6 @@
 3. 在“SQL 数据库”边栏选项卡中单击“定价层(缩放 DTU)”：
    
    ![定价层](./media/sql-database-manage-single-database-portal/new-tier.png)  
-
-
 4. 选择新层，然后单击“选择”：
    
    单击“选择”将提交更改定价层的缩放请求。根据数据库的大小，缩放操作可能需要一些时间才能完成（请参阅本文顶部的信息）。
@@ -69,11 +67,9 @@
    > 
    
    ![选择定价层](./media/sql-database-manage-single-database-portal/choose-tier.png)  
-
 5. 单击右上角中的通知图标（铃铛）：
    
    ![通知](./media/sql-database-manage-single-database-portal/scale-notification.png)
-   
 6. 单击通知文本打开详细信息窗格，可在其中查看请求状态。
 
 ## 后续步骤

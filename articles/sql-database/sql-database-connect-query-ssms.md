@@ -58,7 +58,7 @@
     ![使用 ssms 新建示例数据库查询系统对象](./media/sql-database-get-started/new-sample-db-query-objects-ssms.png)  
 
 
-> [AZURE.Tip]
+> [AZURE.TIP]
 >如需教程，请参阅[教程：使用 Azure 门户预览和 SQL Server Management Studio 预配和访问 Azure SQL 数据库](/documentation/articles/sql-database-get-started/)。
 >
 

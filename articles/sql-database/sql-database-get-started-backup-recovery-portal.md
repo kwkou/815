@@ -63,17 +63,17 @@
 
 1. 打开数据库 **sqldbtutorialdb** 的“SQL 数据库”边栏选项卡。
 
-   ![新建示例 db 边栏选项卡](./media/sql-database-get-started/new-sample-db-blade.png)  
+    ![新建示例 db 边栏选项卡](./media/sql-database-get-started/new-sample-db-blade.png)  
 
 
 2. 在工具栏上，单击“还原”。
 
-   ![还原工具栏](./media/sql-database-get-started-backup-recovery/restore-toolbar.png)  
+    ![还原工具栏](./media/sql-database-get-started-backup-recovery/restore-toolbar.png)  
 
 
 3. 在“还原”边栏选项卡上，查看最早还原点。
 
-   ![最早还原点](./media/sql-database-get-started-backup-recovery/oldest-restore-point.png)  
+    ![最早还原点](./media/sql-database-get-started-backup-recovery/oldest-restore-point.png)  
 
 
 ## 将数据库还原到以前的时间点
@@ -82,38 +82,38 @@
 
 1. 在数据库的“还原”边栏选项卡上，查看要还原到的新数据库的默认名称（此名称是附加了时间戳的现有数据库名称），以便将数据库还原到较早的时间点。此名称会随后续步骤中指定的时间而变化。
 
-   ![还原的数据库的名称](./media/sql-database-get-started-backup-recovery/restored-database-name.png)  
+    ![还原的数据库的名称](./media/sql-database-get-started-backup-recovery/restored-database-name.png)  
 
 
 2. 单击“还原点(UTC)”输入框中的“日历”图标。
 
-   ![还原点](./media/sql-database-get-started-backup-recovery/restore-point.png)  
+    ![还原点](./media/sql-database-get-started-backup-recovery/restore-point.png)  
 
 
 2. 在日历上，选择保持期内的一个日期
 
-   ![还原点日期](./media/sql-database-get-started-backup-recovery/restore-point-date.png)  
+    ![还原点日期](./media/sql-database-get-started-backup-recovery/restore-point-date.png)  
 
 
 3. 在“还原点(UTC)”输入框中，指定所选日期的一个时间，以便将数据库中的数据从自动化数据库备份还原到该时间点。
 
-   ![还原点时间](./media/sql-database-get-started-backup-recovery/restore-point-time.png)  
+    ![还原点时间](./media/sql-database-get-started-backup-recovery/restore-point-time.png)  
 
 
-   >[AZURE.NOTE]
-   >请注意，数据库名称已随所选日期和时间而变化。另请注意，不能更改要在特定时间点还原到其上的服务器。若要还原到其他服务器，请使用[异地还原](/documentation/articles/sql-database-disaster-recovery/#recover-using-geo-restore)。
-   >
+    >[AZURE.NOTE]
+    >请注意，数据库名称已随所选日期和时间而变化。另请注意，不能更改要在特定时间点还原到其上的服务器。若要还原到其他服务器，请使用[异地还原](/documentation/articles/sql-database-disaster-recovery/#recover-using-geo-restore)。
+    >
 
 4. 单击“确定”将数据库还原到以前的某个时间点的新数据库。
 
 5. 在工具栏上，单击通知图标可查看还原作业的状态。
 
-   ![还原作业进度](./media/sql-database-get-started-backup-recovery/restore-job-progress.png)  
+    ![还原作业进度](./media/sql-database-get-started-backup-recovery/restore-job-progress.png)  
 
 
 6. 在还原作业完成后，打开“SQL 数据库”边栏选项卡可查看新还原的数据库。
 
-   ![还原的数据库](./media/sql-database-get-started-backup-recovery/restored-database.png)  
+    ![还原的数据库](./media/sql-database-get-started-backup-recovery/restored-database.png)  
 
 
 > [AZURE.NOTE]
