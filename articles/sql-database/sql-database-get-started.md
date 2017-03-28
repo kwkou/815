@@ -56,7 +56,7 @@
    
    ![登录](./media/sql-database-get-started/login.png)  
 
-##<a name="create-logical-server-bk"><a> 新建 SQL 逻辑服务器
+##<a name="create-logical-server-bk"></a> 新建 SQL 逻辑服务器
 
 本过程中的步骤说明如何在所选区域中的 Azure 门户预览上创建逻辑服务器。逻辑服务器是可在其中创建 SQL 数据库的对象，也是可在其中创建防火墙规则，使用户能够通过 Azure SQL 数据库防火墙进行连接的对象。
 
