@@ -18,71 +18,71 @@ IoT 中心序列化程序客户端库使用模型来指定设备与 IoT 中心�
    - 可以响应通过解决方案门户调用的 **Reboot** 和 **InitiateFirmwareUpdate** 直接方法。设备使用报告的属性发送有关其支持的直接方法的信息。
    
     
-	    // Define the Model
-	    BEGIN_NAMESPACE(Contoso);
-
-	    /* Reported properties */
-	    DECLARE_STRUCT(SystemProperties,
-	      ascii_char_ptr, Manufacturer,
-	      ascii_char_ptr, FirmwareVersion,
-	      ascii_char_ptr, InstalledRAM,
-	      ascii_char_ptr, ModelNumber,
-	      ascii_char_ptr, Platform,
-	      ascii_char_ptr, Processor,
-	      ascii_char_ptr, SerialNumber
-	    );
-
-	    DECLARE_STRUCT(LocationProperties,
-	      double, Latitude,
-	      double, Longitude
-	    );
-
-	    DECLARE_STRUCT(ReportedDeviceProperties,
-	      ascii_char_ptr, DeviceState,
-	      LocationProperties, Location
-	    );
-
-	    DECLARE_MODEL(ConfigProperties,
-	      WITH_REPORTED_PROPERTY(double, TemperatureMeanValue),
-	      WITH_REPORTED_PROPERTY(uint8_t, TelemetryInterval)
-	    );
-
-	    /* Part of DeviceInfo */
-	    DECLARE_STRUCT(DeviceProperties,
-	      ascii_char_ptr, DeviceID,
-	      _Bool, HubEnabledState
-	    );
-
-	    DECLARE_DEVICETWIN_MODEL(Thermostat,
-	      /* Telemetry (temperature, external temperature and humidity) */
-	      WITH_DATA(double, Temperature),
-	      WITH_DATA(double, ExternalTemperature),
-	      WITH_DATA(double, Humidity),
-	      WITH_DATA(ascii_char_ptr, DeviceId),
-
-	      /* DeviceInfo */
-	      WITH_DATA(ascii_char_ptr, ObjectType),
-	      WITH_DATA(_Bool, IsSimulatedDevice),
-	      WITH_DATA(ascii_char_ptr, Version),
-	      WITH_DATA(DeviceProperties, DeviceProperties),
-
-	      /* Device twin properties */
-	      WITH_REPORTED_PROPERTY(ReportedDeviceProperties, Device),
-	      WITH_REPORTED_PROPERTY(ConfigProperties, Config),
-	      WITH_REPORTED_PROPERTY(SystemProperties, System),
-
-	      WITH_DESIRED_PROPERTY(double, TemperatureMeanValue, onDesiredTemperatureMeanValue),
-	      WITH_DESIRED_PROPERTY(uint8_t, TelemetryInterval, onDesiredTelemetryInterval),
-
-	      /* Direct methods implemented by the device */
-	      WITH_METHOD(Reboot),
-	      WITH_METHOD(InitiateFirmwareUpdate, ascii_char_ptr, FwPackageURI),
-
-	      /* Register direct methods with solution portal */
-	      WITH_REPORTED_PROPERTY(ascii_char_ptr_no_quotes, SupportedMethods)
-	    );
-
-	    END_NAMESPACE(Contoso);
+    	    // Define the Model
+    	    BEGIN_NAMESPACE(Contoso);
+    
+    	    /* Reported properties */
+    	    DECLARE_STRUCT(SystemProperties,
+    	      ascii_char_ptr, Manufacturer,
+    	      ascii_char_ptr, FirmwareVersion,
+    	      ascii_char_ptr, InstalledRAM,
+    	      ascii_char_ptr, ModelNumber,
+    	      ascii_char_ptr, Platform,
+    	      ascii_char_ptr, Processor,
+    	      ascii_char_ptr, SerialNumber
+    	    );
+    
+    	    DECLARE_STRUCT(LocationProperties,
+    	      double, Latitude,
+    	      double, Longitude
+    	    );
+    
+    	    DECLARE_STRUCT(ReportedDeviceProperties,
+    	      ascii_char_ptr, DeviceState,
+    	      LocationProperties, Location
+    	    );
+    
+    	    DECLARE_MODEL(ConfigProperties,
+    	      WITH_REPORTED_PROPERTY(double, TemperatureMeanValue),
+    	      WITH_REPORTED_PROPERTY(uint8_t, TelemetryInterval)
+    	    );
+    
+    	    /* Part of DeviceInfo */
+    	    DECLARE_STRUCT(DeviceProperties,
+    	      ascii_char_ptr, DeviceID,
+    	      _Bool, HubEnabledState
+    	    );
+    
+    	    DECLARE_DEVICETWIN_MODEL(Thermostat,
+    	      /* Telemetry (temperature, external temperature and humidity) */
+    	      WITH_DATA(double, Temperature),
+    	      WITH_DATA(double, ExternalTemperature),
+    	      WITH_DATA(double, Humidity),
+    	      WITH_DATA(ascii_char_ptr, DeviceId),
+    
+    	      /* DeviceInfo */
+    	      WITH_DATA(ascii_char_ptr, ObjectType),
+    	      WITH_DATA(_Bool, IsSimulatedDevice),
+    	      WITH_DATA(ascii_char_ptr, Version),
+    	      WITH_DATA(DeviceProperties, DeviceProperties),
+    
+    	      /* Device twin properties */
+    	      WITH_REPORTED_PROPERTY(ReportedDeviceProperties, Device),
+    	      WITH_REPORTED_PROPERTY(ConfigProperties, Config),
+    	      WITH_REPORTED_PROPERTY(SystemProperties, System),
+    
+    	      WITH_DESIRED_PROPERTY(double, TemperatureMeanValue, onDesiredTemperatureMeanValue),
+    	      WITH_DESIRED_PROPERTY(uint8_t, TelemetryInterval, onDesiredTelemetryInterval),
+    
+    	      /* Direct methods implemented by the device */
+    	      WITH_METHOD(Reboot),
+    	      WITH_METHOD(InitiateFirmwareUpdate, ascii_char_ptr, FwPackageURI),
+    
+    	      /* Register direct methods with solution portal */
+    	      WITH_REPORTED_PROPERTY(ascii_char_ptr_no_quotes, SupportedMethods)
+    	    );
+    
+    	    END_NAMESPACE(Contoso);
     
 
 ## 实现设备的行为

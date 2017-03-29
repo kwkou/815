@@ -1,6 +1,6 @@
 <properties
    pageTitle="在 mbed 上使用 C 连接设备 | Azure"
-   description="介绍如何使用在 mbed 设备上运行的以 C 编写的应用程序将设备连接到 Azure IoT 套件预配置远程监视解决方案。"
+   description="介绍如何使用在 mbed 设备上运行的以 C 编写的应用程序将设备连接到 Azure IoT 套件预配置远程监视解决方案"
    services=""
    suite="iot-suite"
    documentationCenter="na"
