@@ -59,8 +59,8 @@
 创建应用的第一步是通过 [Azure 门户预览](https://portal.azure.cn)创建 Web 应用。
 
 1. 登录到 Azure 门户预览，然后单击左下角的“新建”按钮。
-3. 在搜索框中，键入“python”。
-4. 在搜索结果中，选择“Bottle”，然后单击“创建”。
+2. 单击“Web + 移动”。
+3. 单击”Web 应用”。
 5. 配置新的 Bottle 应用，如为其创建新的应用服务计划和新的资源组。然后单击“创建”。
 6. 按照[从本地 Git 部署到 Azure App Service](/documentation/articles/app-service-deploy-local-git/) 的说明为新创建的 Web 应用配置 Git 发布。
  
