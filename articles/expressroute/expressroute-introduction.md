@@ -19,13 +19,13 @@
 
 # ExpressRoute 技术概述
 
-Azure ExpressRoute 可让你通过连接服务提供商所提供的专用连接，将本地网络扩展到 Azure 云。使用 ExpressRoute 可与 Azure云服务建立连接。可以从任意位置之间的 (IP VPN) 网络、点到点以太网或在共置设施上通过连接服务提供商的虚拟交叉连接来建立这种连接。ExpressRoute 连接不通过公共 Internet 。与通过 Internet 的典型连接相比，ExpressRoute 连接提供更高的可靠性、更快的速度、更低的延迟和更高的安全性。
+Azure ExpressRoute 可让你通过连接服务提供商所提供的专用连接，将本地网络扩展到 Azure 云。使用 ExpressRoute 可与 Azure云服务建立连接。ExpressRoute 连接不通过公共 Internet 。与通过 Internet 的典型连接相比，ExpressRoute 连接提供更高的可靠性、更快的速度、更低的延迟和更高的安全性。
 
 ![](./media/expressroute-introduction/expressroute-basic.png)
 
 **主要优势包括：**
 
-- 通过连接服务提供商在本地网络与 Azure 云之间建立第 3 层连接。可以从任意位置之间的 (IPVPN) 网络、点到点以太网，或通过以太网交换经由虚拟交叉连接来建立这种连接。
+- 通过连接服务提供商在本地网络与 Azure 云之间建立第 3 层连接。可以点到点以太网，或通过以太网交换经由虚拟交叉连接来建立这种连接。
 - 跨地缘政治区域中的所有区域连接到 Azure 云服务。
 - 通过 ExpressRoute 高级版附加组件从全球连接到所有区域的 Azure 服务。
 - 通过行业标准协议 (BGP) 在你的网络与 Azure 之间进行动态路由。
