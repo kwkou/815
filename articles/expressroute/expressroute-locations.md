@@ -13,9 +13,13 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="01/12/2017"
-   wacn.date="03/03/2017"
+   ms.date="02/13/2017"
+   wacn.date="03/24/2017"
    ms.author="cherylmc" />
+
+> [AZURE.SELECTOR]
+- [按提供商列出的位置](/documentation/articles/expressroute-locations/)
+- [按位置列出的提供商](/documentation/articles/expressroute-locations-providers/)
 
 
 # ExpressRoute 合作伙伴和对等位置

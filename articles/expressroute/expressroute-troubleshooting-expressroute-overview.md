@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="infrastructure-services"
     ms.date="1/5/2017"
-    wacn.date="02/24/2017"
+    wacn.date="03/24/2017"
     ms.author="rambala" />  
 
 
@@ -399,9 +399,9 @@ Azure 门户中存在一个已知的 Bug，即如果是由服务提供商进行�
 
 <!--Link References-->
 
-[Support]: https://portal.azure.cn/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade
+[Support]: /support/support-ticket-form/?l=zh-cn
 [CreateCircuit]: /documentation/articles/expressroute-howto-circuit-portal-resource-manager
 [CreatePeering]: /documentation/articles/expressroute-howto-routing-portal-resource-manager
 [OldPortal]: https://manage.windowsazure.cn
 
-<!---HONumber=Mooncake_0220_2017-->
+<!---HONumber=Mooncake_0320_2017-->

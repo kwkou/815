@@ -4,7 +4,7 @@
    documentationCenter="na"
    services="expressroute"
    authors="cherylmc"
-   manager="carmonm"
+   manager="timlt"
    editor=""/>
 <tags
    ms.service="expressroute"
@@ -12,8 +12,8 @@
    ms.topic="article" 
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="11/21/2016"
-   wacn.date="01/03/2017"
+   ms.date="02/01/2017"
+   wacn.date="03/24/2017"
    ms.author="cherylmc"/>
 
 # ExpressRoute 常见问题

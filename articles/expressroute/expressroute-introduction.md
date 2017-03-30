@@ -1,10 +1,10 @@
 <properties 
-   pageTitle="ExpressRoute 简介 | Azure"
-   description="本页提供 ExpressRoute 服务的概述，包括 ExpressRoute 连接的工作原理。"
+   pageTitle="ExpressRoute 概述：通过专用连接将本地网络扩展到 Azure | Azure"
+   description="此 ExpressRoute 技术概述介绍 ExpressRoute 连接如何通过专用连接将本地网络扩展到 Azure。"
    documentationCenter="na"
    services="expressroute"
    authors="cherylmc"
-   manager="carmonm"
+   manager="timlt"
    editor=""/>
 <tags 
    ms.service="expressroute"
@@ -12,18 +12,22 @@
    ms.topic="get-started-article" 
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services" 
-   ms.date="10/10/2016" 
-   wacn.date="01/04/2017"
+   ms.date="02/09/2017"
+   wacn.date="03/24/2017"
    ms.author="cherylmc"/>
 
 
 # ExpressRoute 技术概述
+Azure ExpressRoute 可让你通过连接服务提供商所提供的专用连接，将本地网络扩展到 Azure 云。使用 ExpressRoute 可与 Azure云服务建立连接。
 
-Azure ExpressRoute 可让你通过连接服务提供商所提供的专用连接，将本地网络扩展到 Azure 云。使用 ExpressRoute 可与 Azure云服务建立连接。ExpressRoute 连接不通过公共 Internet 。与通过 Internet 的典型连接相比，ExpressRoute 连接提供更高的可靠性、更快的速度、更低的延迟和更高的安全性。
+ExpressRoute 连接不通过公共 Internet 。与通过 Internet 的典型连接相比，ExpressRoute 连接提供更高的可靠性、更快的速度、更低的延迟和更高的安全性。
 
-![](./media/expressroute-introduction/expressroute-basic.png)
+有关使用 ExpressRoute 将本地网络连接到 Azure 的详细信息，请参阅 [ExpressRoute 连接模型](/documentation/articles/expressroute-connectivity-models/)。
 
-**主要优势包括：**
+![](./media/expressroute-introduction/expressroute-connection-overview-diagram.png)  
+
+
+## 主要优势
 
 - 通过连接服务提供商在本地网络与 Azure 云之间建立第 3 层连接。可以通过点到点以太网，或通过以太网交换经由虚拟交叉连接来建立这种连接。
 - 跨地缘政治区域中的所有区域连接到 Azure 云服务。
@@ -32,33 +36,9 @@ Azure ExpressRoute 可让你通过连接服务提供商所提供的专用连接�
 - 在每个对等位置提供内置冗余以提高可靠性。
 - 连接运行时间 [SLA](/support/legal/sla/)。
 
-有关详细信息，请参阅 [ExpressRoute 常见问题](/documentation/articles/expressroute-faqs/)。
+有关详细信息，请参阅 [ExpressRoute 常见问题解答](/documentation/articles/expressroute-faqs/)。
 
-## <a name="howtoconnect"></a> 如何使用 ExpressRoute 将我的网络连接到 Azure？
-
-有三种方法可以在本地网络与 Azure 云之间建立连接：
-
-### 共置于云交换位置
-
-如果你所在的位置提供云交换设施，则你可以订购虚拟交叉连接，以通过共同租用提供商的以太网交换连接到 Azure 云。共同租用提供商可以在共置设施中的基础结构与 Azure 云之间提供第 2 层交叉连接或托管的第 3 层交叉连接。
-
-### 点到点以太网连接 
-
-你可以通过点到点以太网链路，将本地数据中心/办公室连接到 Azure 云。点到点以太网提供商可以在你的站点与 Azure 云之间提供第 2 层连接或托管的第 3 层连接。
-
-### 任意位置之间的 (IPVPN) 网络
-
-你可以将 WAN 集成到 Azure 云。 Azure 云可与你的 WAN 互连，就如同它是其他任何一个分支机构。在上述连接模型中，ExpressRoute 功能与特性完全相同。
-
-连接服务提供商可以提供一个或多个连接模型。你可以咨询连接服务提供商以选择最合适的模型。
-
-![](./media/expressroute-introduction/expressroute-connectivitymodels.png)
-
-
-
-## ExpressRoute 功能
-
-ExpressRoute 支持以下特性和功能：
+## 功能
 
 ### 第 3 层连接
 
@@ -83,8 +63,9 @@ Azure 采用行业标准动态路由协议 (BGP)，在本地网络、Azure 中�
 
 例如，如果你在北京通过 ExpressRoute 连接到 Azure，则就能够访问在上海托管的所有 Azure 云服务。
 
-### 支持的带宽选项
 
+
+### 带宽选项
 你可以购买各种带宽的 ExpressRoute 线路。支持的带宽列表如下。请务必咨询连接服务提供商，以获取他们支持的带宽列表。
 
 - 50 Mbps
@@ -97,12 +78,10 @@ Azure 采用行业标准动态路由协议 (BGP)，在本地网络、Azure 中�
 - 10 Gbps
 
 ### 动态调整带宽
-
-你可以在不中断连接的情况下增大 ExpressRoute 线路带宽（尽最大努力）。
+可以在不中断连接的情况下增大 ExpressRoute 线路带宽（尽最大努力）。
 
 ### 弹性计费模式
-
-你可以选择最适合自己的计费模式。请从以下计费模式中选择。有关详细信息，请参阅 [ExpressRoute 常见问题](/documentation/articles/expressroute-faqs/)页。
+你可以选择最适合自己的计费模式。请从以下计费模式中选择。有关详细信息，请参阅 [ExpressRoute 常见问题解答](/documentation/articles/expressroute-faqs/)。
 
 - **无限制数据**。ExpressRoute 线路按月计费，所有入站和出站数据传输不收取费用。 
 - **计量数据**。ExpressRoute 线路按月计费。所有入站数据传输免费。出站数据传输按每 GB 数据传输计费。数据传输费率根据区域不同而异。
@@ -113,13 +92,14 @@ Azure 采用行业标准动态路由协议 (BGP)，在本地网络、Azure 中�
 
 ## 后续步骤
 
+- 了解 [ExpressRoute 连接模型](/documentation/articles/expressroute-connectivity-models/)。
 - 了解 ExpressRoute 连接和路由域。请参阅 [ExpressRoute 线路和路由域](/documentation/articles/expressroute-circuit-peerings/)。
 - 查找服务提供商。请参阅 [ExpressRoute 合作伙伴和对等位置](/documentation/articles/expressroute-locations/)。
 - 确保符合所有先决条件。请参阅 [ExpressRoute 先决条件](/documentation/articles/expressroute-prerequisites/)。
 - 请参阅[路由](/documentation/articles/expressroute-routing/)的要求。
 - 配置 ExpressRoute 连接。
-	- [创建 ExpressRoute 线路](/documentation/articles/expressroute-howto-circuit-classic/)
-	- [配置路由](/documentation/articles/expressroute-howto-routing-classic/)
-	- [将 VNet 链接到 ExpressRoute 线路](/documentation/articles/expressroute-howto-linkvnet-classic/)
+	- [创建 ExpressRoute 线路](/documentation/articles/expressroute-howto-circuit-portal-resource-manager/)
+	- [配置路由](/documentation/articles/expressroute-howto-routing-portal-resource-manager/)
+	- [将 VNet 链接到 ExpressRoute 线路](/documentation/articles/expressroute-howto-linkvnet-portal-resource-manager/)
 
-<!---HONumber=Mooncake_Quality_Review_1230_2016-->
+<!---HONumber=Mooncake_0320_2017-->

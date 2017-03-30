@@ -13,8 +13,8 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="10/10/2016"
-   wacn.date="10/31/2016"
+   ms.date="01/27/2017"
+   wacn.date="03/24/2017"
    ms.author="charwen"/>  
 
 
@@ -33,4 +33,4 @@
 
 
 
-<!---HONumber=Mooncake_1024_2016-->
+<!---HONumber=Mooncake_0320_2017-->

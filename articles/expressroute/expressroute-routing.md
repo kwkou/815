@@ -13,8 +13,8 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="01/03/2017"
-   wacn.date="03/03/2017"
+   ms.date="01/27/2017"
+   wacn.date="03/24/2017"
    ms.author="ganesr"/>  
 
 
@@ -71,7 +71,6 @@ Microsoft 将为 Azure 公共对等互连和 Azure 专用对等互连使用 AS 1
 ExpressRoute 不能配置为传输路由器。必须依赖连接服务提供商的传输路由服务。
 
 ## <a name="advertising-default-routes"></a> 播发默认路由
-
 只有 Azure 专用对等互连会话允许默认路由。在这种情况下，可将所有流量从关联的虚拟网络路由到用户网络。在专用对等互连中播发默认路由会导致阻止来自 Azure 的 Internet 路径。必须依赖企业网络边缘，为 Azure 中托管的服务往返路由 Internet 的流量。
 
  若要启用与其他 Azure 服务和基础结构服务的连接，必须确保已准备下列其中一项：
@@ -80,6 +79,8 @@ ExpressRoute 不能配置为传输路由器。必须依赖连接服务提供商�
  - 使用用户定义的路由可为需要 Internet 连接的每个子网建立 Internet 连接。
 
 **注意：**播发默认路由会中断 Windows 和其他 VM 许可证激活。请按照[此处](http://blogs.msdn.com/b/mast/archive/2015/05/20/use-azure-custom-routes-to-enable-kms-activation-with-forced-tunneling.aspx)的说明来解决此问题。
+
+
 
 ## BGP 社区支持
 本部分概述如何配合 ExpressRoute 使用 BGP 社区。Azure 将播发公共互连路径中的路由，并将路由标记为适当的社区值。下面将介绍这种方案的理由和有关社区值的详细信息。但是，Azure 不遵循向 Azure 播发的路由的任何标记社区值。
@@ -106,4 +107,4 @@ Azure 不遵循你设置的任何 BGP 社区值。你需要为每个对等互连
 	- [为经典部署模型配置路由](/documentation/articles/expressroute-howto-routing-classic/)或[为 Resource Manager 部署模型配置路由](/documentation/articles/expressroute-howto-routing-arm/)
 	- [将经典 VNet 链接到 ExpressRoute 线路](/documentation/articles/expressroute-howto-linkvnet-classic/)或[将 Resource Manager VNet 链接到 ExpressRoute 线路](/documentation/articles/expressroute-howto-linkvnet-arm/)
 
-<!---HONumber=Mooncake_1226_2016-->
+<!---HONumber=Mooncake_0320_2017-->

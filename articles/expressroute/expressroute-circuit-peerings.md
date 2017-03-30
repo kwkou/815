@@ -4,7 +4,7 @@
    documentationCenter="na"
    services="expressroute"
    authors="cherylmc"
-   manager="carolz"
+   manager="timlt"
    editor=""/>
 <tags 
    ms.service="expressroute"
@@ -13,7 +13,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services" 
    ms.date="10/10/2016" 
-   wacn.date="01/11/2017"
+   wacn.date="03/24/2017"
    ms.author="cherylmc"/>
 
 # ExpressRoute 线路和路由域

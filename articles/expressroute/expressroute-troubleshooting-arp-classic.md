@@ -1,6 +1,6 @@
-<properties 
-   pageTitle="ExpressRoute 故障排除指南 - 获取 ARP 表 | Azure"
-   description="此页说明了如何为 ExpressRoute 线路获取 ARP 表"
+<properties
+   pageTitle="ExpressRoute 故障排除指南：获取 ARP 表 | Azure"
+   description="此页说明了如何为 ExpressRoute 线路获取 ARP 表。"
    documentationCenter="na"
    services="expressroute"
    authors="ganesr"
@@ -12,12 +12,12 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="10/11/2016"
-   wacn.date="12/05/2016"
+   ms.date="01/30/2017"
+   wacn.date="03/24/2017"
    ms.author="ganesr"/>
 
 
-#ExpressRoute 故障排除指南 - 在经典部署模型中获取 ARP 表
+# ExpressRoute 故障排除指南：在经典部署模型中获取 ARP 表
 
 > [AZURE.SELECTOR]
 [PowerShell - Resource Manager](/documentation/articles/expressroute-troubleshooting-arp-resource-manager/)
@@ -25,7 +25,7 @@
 
 本文将指导你完成为 Azure ExpressRoute 线路获取地址解析协议 (ARP) 表的步骤。
 
->[AZURE.IMPORTANT] 本文档旨在帮助你诊断和修复简单问题。它不是为了替代 Azure 支持部门。如果你使用以下指南无法解决问题，请使用 [Azure 帮助+支持](https://portal.azure.cn/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade)建立支持请求。
+>[AZURE.IMPORTANT] 本文档旨在帮助你诊断和修复简单问题。它不是为了替代 Azure 支持部门。如果你使用以下指南无法解决问题，请[在线申请支持](/support/support-ticket-form/?l=zh-cn)建立支持请求。
 
 ## 地址解析协议 (ARP) 和 ARP 表
 ARP 是 [RFC 826](https://tools.ietf.org/html/rfc826) 中定义的第 2 层协议。ARP 用于将以太网地址（MAC 地址）映射到 IP 地址。
@@ -64,7 +64,7 @@ ARP 表可帮助验证第 2 层配置，并可针对第 2 层的基本连接问�
 ### Azure 专用对等互连的 ARP 表
 以下 cmdlet 提供 Azure 专用对等互连的 ARP 表：
 
-		# Required Variables
+		# Required variables
 		$ckt = "<your Service Key here>
 
 		# ARP table for Azure private peering--primary path
@@ -84,7 +84,7 @@ ARP 表可帮助验证第 2 层配置，并可针对第 2 层的基本连接问�
 ### Azure 公共对等互连的 ARP 表：
 以下 cmdlet 提供 Azure 公共对等互连的 ARP 表：
 
-		# Required Variables
+		# Required variables
 		$ckt = "<your Service Key here>
 
 		# ARP table for Azure public peering--primary path
@@ -149,4 +149,4 @@ ARP 表可帮助验证第 2 层配置，并可针对第 2 层的基本连接问�
  - 通过查看输入/输出中的字节数来验证数据传输。
  - 如果仍然遇到问题，请使用 [Azure 帮助+支持](https://portal.azure.cn/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade)建立支持请求。
 
-<!---HONumber=Mooncake_0704_2016-->
+<!---HONumber=Mooncake_0320_2017-->

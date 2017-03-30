@@ -1,10 +1,10 @@
 <properties
-   pageTitle="ExpressRoute 位置 | Azure"
+   pageTitle="位置和连接提供商：Azure ExpressRoute | Azure"
    description="本文详细介绍了提供服务的区域以及如何连接到 Azure 区域。"
    services="expressroute"
    documentationCenter="na"
-   authors="cherylmc"
-   manager="carmonm"
+   author="cherylmc"
+   manager="timlt"
    editor="" />
 <tags
    ms.service="expressroute"
@@ -12,13 +12,16 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="01/12/2017"
-   wacn.date="02/24/2017"
+   ms.date="02/13/2017"
+   wacn.date="03/24/2017"
    ms.author="cherylmc" />  
 
 
 # ExpressRoute 合作伙伴和对等位置
 
+> [AZURE.SELECTOR]
+- [按提供商列出的位置](/documentation/articles/expressroute-locations/)
+- [按位置列出的提供商](/documentation/articles/expressroute-locations-providers/)
 本文中的表格提供有关 ExpressRoute 连接服务提供商、ExpressRoute 地理覆盖范围、通过 ExpressRoute 支持的 Azure 云服务以及 ExpressRoute 系统集成商 \(SI\) 的信息。
 
 ## <a name="partners"></a>ExpressRoute 连接服务提供商
@@ -57,6 +60,7 @@
 - 确保符合所有先决条件。请参阅 [ExpressRoute 先决条件](/documentation/articles/expressroute-prerequisites/)。
 
 <!--Image References-->
+
 [0]: ./media/expressroute-locations/expressroute-locations-map.png "位置地图"
 
-<!---HONumber=Mooncake_0220_2017-->
+<!---HONumber=Mooncake_0320_2017-->
