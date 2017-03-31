@@ -1,20 +1,20 @@
 <properties 
     pageTitle="事件中心常见问题 (FAQ) | Azure"
-    description="事件中心 FAQ"
+    description="事件中心常见问题"
     services="event-hubs"
-    documentationCenter="na"
-    authors="sethmanheim"
+    documentationcenter="na"
+    author="sethmanheim"
     manager="timlt"
-    editor="" />  
-
-<tags 
+    editor="" />
+<tags
+    ms.assetid="bfa10984-eb22-4671-861a-f377a90d9372"
     ms.service="event-hubs"
     ms.devlang="na"
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="na"
     ms.date="12/07/2016"
-    wacn.date="01/23/2017"
+    wacn.date="03/24/2017"
     ms.author="sethm" />
 
 # 事件中心常见问题
@@ -77,15 +77,19 @@
 
 若要详细了解我们的 SLA，请参阅[服务级别协议](/support/legal/sla/)页面。
 
+## 诊断日志
+
+事件中心支持两种类型的[诊断日志](/documentation/articles/event-hubs-diagnostic-logs/)：存档错误日志和操作日志；这两种日志都用 json 表示并可以通过 Azure 门户预览启用。
+
 ## 后续步骤
 
-若要了解有关事件中心的详细信息，请参阅以下文章：
+访问以下链接可以了解有关事件中心的详细信息：
 
-- [事件中心概述][]
-- [使用事件中心的完整示例应用程序][]
+* [事件中心概述](/documentation/articles/event-hubs-what-is-event-hubs/)
+* [创建事件中心](/documentation/articles/event-hubs-create/)
 
-[事件中心概述]: /documentation/articles/event-hubs-overview/
-[使用事件中心的完整示例应用程序]: https://code.msdn.microsoft.com/Service-Bus-Event-Hub-286fd097
+[Event Hubs overview]: /documentation/articles/event-hubs-overview/
+[sample application that uses Event Hubs]: https://code.msdn.microsoft.com/Service-Bus-Event-Hub-286fd097
 
 <!---HONumber=Mooncake_0116_2017-->
-<!--Update_Description:update wording-->
+<!--Update_Description:update meta properties;update wording;update link reference-->

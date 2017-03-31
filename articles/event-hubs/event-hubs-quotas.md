@@ -1,20 +1,20 @@
-<properties 
-    pageTitle="Microsoft Azure 事件中心配额和限制 | Azure"
+<properties
+    pageTitle="Azure 事件中心配额和限制 | Azure"
     description="Azure 事件中心的限制和配额"
     services="event-hubs"
-    documentationCenter="na"
-    authors="sethmanheim"
+    documentationcenter="na"
+    author="sethmanheim"
     manager="timlt"
-    editor="" />  
-
-<tags 
+    editor="" />
+<tags
+    ms.assetid="b9855dd5-f007-4dd2-89d1-aa6f9b241dc0"
     ms.service="event-hubs"
     ms.devlang="na"
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="na"
-    ms.date="12/05/2016"
-    wacn.date="01/23/2017"
+    ms.date="1/25/2016"
+    wacn.date="03/24/2017"
     ms.author="sethm" />  
 
 
@@ -22,7 +22,14 @@
 
 本部分列出 Azure 事件中心的基本配额和限制。
 
-[AZURE.INCLUDE [service-bus-quotas-table](../../includes/event-hubs-limits.md)]
+[AZURE.INCLUDE [event-hubs-limits](../../includes/event-hubs-limits.md)]
 
-<!---HONumber=Mooncake_1031_2016-->
-<!--Update_Description:update meta properties-->
+## 后续步骤
+访问以下链接可以了解有关事件中心的详细信息：
+
+* [事件中心概述](/documentation/articles/event-hubs-what-is-event-hubs/)
+* [创建事件中心](/documentation/articles/event-hubs-create/)
+* [事件中心常见问题](/documentation/articles/event-hubs-faq/)
+
+<!---HONumber=Mooncake_0320_2017-->
+<!--Update_Description:update meta properties;wording update;update include link reference-->

@@ -1,5 +1,5 @@
 <properties
-    pageTitle="使用 Azure Resource Manager 模板创建包含事件中心和使用者组的事件中心命名空间 | Azure"
+    pageTitle="使用模板创建 Azure 事件中心命名空间和使用者组 | Azure"
     description="使用 Azure Resource Manager 模板创建包含事件中心和使用者组的事件中心命名空间"
     services="event-hubs"
     documentationcenter=".net"
@@ -14,7 +14,7 @@
     ms.tgt_pltfrm="dotnet"
     ms.workload="na"
     ms.date="11/21/2016"
-    wacn.date="02/24/2017"
+    wacn.date="03/24/2017"
     ms.author="sethm;shvija" />  
 
 
@@ -41,7 +41,7 @@
 
 [![部署到 Azure](./media/event-hubs-resource-manager-namespace-event-hub/deploybutton.png)](https://portal.azure.cn/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F201-event-hubs-create-event-hub-and-consumer-group%2Fazuredeploy.json)
 
-## Parameters
+## 参数
 
 使用 Azure 资源管理器，可以定义在部署模板时想要指定的值的参数。该模板具有一个名为 `Parameters` 的部分，其中包含所有参数值。你应该为随着要部署的项目或要部署到的环境而变化的值定义参数。不要为永远保持不变的值定义参数。模板中的每个参数值定义所部署的资源。
 
@@ -63,7 +63,6 @@
     "type": "string"
     }
 
-
 ### eventHubConsumerGroupName
 
 为事件中心创建的使用者组的名称。
@@ -79,7 +78,6 @@
     "apiVersion": {
     "type": "string"
     }
-
 
 ## 要部署的资源
 
@@ -134,10 +132,16 @@
 
 ## Azure CLI
 
-
     azure config mode arm
     
-    azure group deployment create \<my-resource-group\> \<my-deployment-name\> --template-uri https://raw.githubusercontent.com/azure/azure-quickstart-templates/master/201-event-hubs-create-event-hub-and-consumer-group/azuredeploy.json
+    azure group deployment create \<my-resource-group\> \<my-deployment-name\> --template-uri [https://raw.githubusercontent.com/azure/azure-quickstart-templates/master/201-event-hubs-create-event-hub-and-consumer-group/azuredeploy.json][]
+
+## 后续步骤
+访问以下链接可以了解有关事件中心的详细信息：
+
+* [事件中心概述](/documentation/articles/event-hubs-what-is-event-hubs/)
+* [创建事件中心](/documentation/articles/event-hubs-create/)
+* [事件中心常见问题](/documentation/articles/event-hubs-faq/)
 
 [Authoring Azure Resource Manager templates]: /documentation/articles/resource-group-authoring-templates/
 [Azure Quickstart Templates]: https://github.com/Azure/azure-quickstart-templates/?term=event+hubs
@@ -145,5 +149,5 @@
 [Using the Azure CLI for Mac, Linux, and Windows with Azure Resource Management]: /documentation/articles/xplat-cli-azure-resource-manager/
 [Event Hub and consumer group template]: https://github.com/Azure/azure-quickstart-templates/blob/master/201-event-hubs-create-event-hub-and-consumer-group/
 
-<!---HONumber=Mooncake_0220_2017-->
-<!-- Update_Description: update meta properties; wording update -->
+<!---HONumber=Mooncake_0320_2017-->
+<!-- Update_Description: update meta properties; wording update; add next steps feature -->
