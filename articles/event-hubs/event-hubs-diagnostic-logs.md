@@ -124,7 +124,7 @@ category | OperationalLogs
 ## 后续步骤
 * [事件中心简介](/documentation/articles/event-hubs-what-is-event-hubs/)
 * [事件中心 API 概述](/documentation/articles/event-hubs-api-overview/)
-* [事件中心入门](/documentation/articles/event-hubs-csharp-ephcs-getstarted/)
+* [事件中心入门](/documentation/articles/event-hubs-dotnet-standard-getstarted-send/)
 
 <!---HONumber=Mooncake_0320_2017-->
 <!--Update_Description:new article of diagnostic log of event hubs-->

@@ -45,7 +45,7 @@ Azure 诊断提供了灵活的方法用于收集来自云服务虚拟机 (VM) �
 * 应用程序中使用 *.wadcfgx* 文件和以下任一方法的 Azure 诊断现有配置：
   * Visual Studio：[为 Azure 云服务和虚拟机配置诊断](/documentation/articles/vs-azure-tools-diagnostics-for-cloud-services-and-virtual-machines/)
   * Windows PowerShell：[使用 PowerShell 在 Azure 云服务中启用诊断](/documentation/articles/cloud-services-diagnostics-powershell/)
-* 根据[事件中心入门](/documentation/articles/event-hubs-csharp-ephcs-getstarted/)文章预配的事件中心命名空间
+* 根据[事件中心入门](/documentation/articles/event-hubs-dotnet-standard-getstarted-send/)文章预配的事件中心命名空间
 
 ## 将 Azure 诊断连接到事件中心接收器
 默认情况下，Azure 诊断始终将日志和指标接收到 Azure 存储帐户。通过将一个新的 **Sinks** 节添加到 *.wadcfgx* 文件的 **PublicConfig** 节中的 **WadCfg** 元素，应用程序可以额外接收到事件中心。在 Visual Studio 中，*.wadcfgx* 文件存储于以下路径：“云服务项目”>“角色”>“(RoleName)”>“diagnostics.wadcfgx”文件。
@@ -142,7 +142,7 @@ Visual Studio 提供最简单的路径供你部署应用程序和事件中心接
 
 如前文所述，侦听和处理事件中心数据有许多用例。
 
-一种简单的方法是创建小型测试控制台应用程序用于侦听事件中心并列显输出流。可在控制台应用程序中插入以下代码（更多详情请参见[事件中心入门](/documentation/articles/event-hubs-csharp-ephcs-getstarted/)。
+一种简单的方法是创建小型测试控制台应用程序用于侦听事件中心并列显输出流。可在控制台应用程序中插入以下代码（更多详情请参见[事件中心入门](/documentation/articles/event-hubs-dotnet-standard-getstarted-send/)。
 
 请注意，控制台应用程序必须包含[事件处理器主机 Nuget 包](https://www.nuget.org/packages/Microsoft.Azure.ServiceBus.EventProcessorHost/)。
 

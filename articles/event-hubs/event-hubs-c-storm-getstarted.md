@@ -70,7 +70,7 @@
 <!-- Links -->
 [Azure classic portal]: https://manage.windowsazure.cn/
 [Event Processor Host]: https://www.nuget.org/packages/Microsoft.Azure.ServiceBus.EventProcessorHost
-[事件中心概述]: /documentation/articles/event-hubs-overview/
+[事件中心概述]: /documentation/articles/event-hubs-what-is-event-hubs/
 
 [Apache Storm]: https://storm.incubator.apache.org
 [HDInsight Storm overview]: /documentation/articles/hdinsight-storm-overview/

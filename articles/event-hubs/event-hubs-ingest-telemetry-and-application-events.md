@@ -19,14 +19,14 @@
 
 ## 探究
 
-- [事件中心](/documentation/articles/event-hubs-overview/)
+- [事件中心](/documentation/articles/event-hubs-what-is-event-hubs/)
 - [事件中心定价详细信息](/pricing/details/event-hubs/)
 - [事件中心可用性和支持常见问题](/documentation/articles/event-hubs-faq/)
 - [事件寻源模式](http://msdn.microsoft.com/zh-cn/library/dn589792.aspx)
  
 ## 构建
 
-- [事件中心入门](/documentation/articles/event-hubs-csharp-ephcs-getstarted/)
+- [事件中心入门](/documentation/articles/event-hubs-dotnet-standard-getstarted-send/)
 - [事件中心 REST API 参考](https://msdn.microsoft.com/zh-cn/library/azure/dn790674.aspx)
 - [事件中心代码示例](https://github.com/Azure-Samples/)
  

@@ -81,7 +81,7 @@
 
 <!-- Links -->
 
-[Event Hubs overview]: /documentation/articles/event-hubs-overview/
+[Event Hubs overview]: /documentation/articles/event-hubs-what-is-event-hubs/
 
 ## 后续步骤
 访问以下链接可以了解有关事件中心的详细信息：

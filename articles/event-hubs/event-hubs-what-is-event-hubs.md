@@ -153,7 +153,7 @@ Azure 事件中心是一种事件处理服务，可提供云规模的事件与�
 * [事件中心编程指南](/documentation/articles/event-hubs-programming-guide/)
 * [事件中心常见问题](/documentation/articles/event-hubs-faq/)
 
-[Event Hubs tutorial]: /documentation/articles/event-hubs-csharp-ephcs-getstarted/
+[Event Hubs tutorial]: /documentation/articles/event-hubs-dotnet-standard-getstarted-send/
 [使用事件中心的完整示例应用程序]: https://code.msdn.microsoft.com/Service-Bus-Event-Hub-286fd097
 [Azure 门户]: https://portal.azure.cn
 

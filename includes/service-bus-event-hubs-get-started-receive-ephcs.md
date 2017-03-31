@@ -121,7 +121,7 @@
 
 <!-- Links -->
 
-[事件中心概述]: /documentation/articles/event-hubs-overview/
+[事件中心概述]: /documentation/articles/event-hubs-what-is-event-hubs/
 [事件中心编程指南]: /documentation/articles/event-hubs-programming-guide/
 [扩大事件处理]: https://code.msdn.microsoft.com/windowsazure/Service-Bus-Event-Hub-45f43fc3
 [经过扩展的事件处理]: https://code.msdn.microsoft.com/windowsazure/Service-Bus-Event-Hub-45f43fc3

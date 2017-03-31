@@ -79,7 +79,7 @@
 ## 后续步骤
 若要了解有关事件中心的详细信息，请访问以下链接：
 
-* [事件中心概述](/documentation/articles/event-hubs-overview/)
+* [事件中心概述](/documentation/articles/event-hubs-what-is-event-hubs/)
 * [事件中心 API 概述](/documentation/articles/event-hubs-api-overview/)
 
 [Azure portal]: https://portal.azure.cn/

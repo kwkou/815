@@ -178,7 +178,7 @@
 [1]: ./media/event-hubs-archive-python/event-hubs-python1.png
 [About Azure storage accounts]: /documentation/articles/storage-create-storage-account/
 [Visual Studio Code]: https://code.visualstudio.com/
-[Event Hubs overview]: /documentation/articles/event-hubs-overview/
+[Event Hubs overview]: /documentation/articles/event-hubs-what-is-event-hubs/
 [sample application that uses Event Hubs]: https://code.msdn.microsoft.com/Service-Bus-Event-Hub-286fd097
 [Scale out Event Processing with Event Hubs]: https://code.msdn.microsoft.com/Service-Bus-Event-Hub-45f43fc3
 

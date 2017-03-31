@@ -32,7 +32,7 @@ Azure 事件中心可用于处理网站、应用程序和设备中的大量数�
     > [AZURE.IMPORTANT]
     Linux 是在 HDInsight 3.4 版或更高版本上使用的唯一操作系统。有关详细信息，请参阅 [HDInsight 在 Windows 上弃用](/documentation/articles/hdinsight-component-versioning/#hdi-version-32-and-33-nearing-deprecation-date)。
 
-* 一个 [Azure 事件中心](/documentation/articles/event-hubs-csharp-ephcs-getstarted/)。
+* 一个 [Azure 事件中心](/documentation/articles/event-hubs-dotnet-standard-getstarted-send/)。
 
 * [Oracle Java Developer Kit (JDK) 版本 7](https://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html) 或同等版本，例如 [OpenJDK](http://openjdk.java.net/)。
 

@@ -108,7 +108,7 @@ Azure 事件中心安全模型满足以下要求：
 - [SAS 概述]
 - [使用事件中心的完整示例应用程序]
 
-[事件中心概述]: /documentation/articles/event-hubs-overview/
+[事件中心概述]: /documentation/articles/event-hubs-what-is-event-hubs/
 [使用事件中心的完整示例应用程序]: https://code.msdn.microsoft.com/Service-Bus-Event-Hub-286fd097
 [SAS 概述]: /documentation/articles/service-bus-sas-overview/
 

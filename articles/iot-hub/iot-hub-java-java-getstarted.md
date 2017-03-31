@@ -485,9 +485,9 @@ IoT 中心标识注册表仅存储用于实现 IoT 中心安全访问的设备�
 <!-- Links -->
 [lnk-transient-faults]: https://msdn.microsoft.com/zh-cn/library/hh680901(v=pandp.50).aspx
 
-[lnk-eventhubs-tutorial]: /documentation/articles/event-hubs-csharp-ephcs-getstarted/
+[lnk-eventhubs-tutorial]: /documentation/articles/event-hubs-dotnet-standard-getstarted-send/
 [lnk-devguide-identity]: /documentation/articles/iot-hub-devguide-identity-registry/
-[lnk-event-hubs-overview]: /documentation/articles/event-hubs-overview/
+[lnk-event-hubs-overview]: /documentation/articles/event-hubs-what-is-event-hubs/
 
 [lnk-process-d2c-tutorial]: /documentation/articles/iot-hub-csharp-csharp-process-d2c/
 

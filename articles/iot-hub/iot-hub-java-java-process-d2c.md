@@ -221,10 +221,10 @@ IoT 中心对许多设备平台和语言（包括 C、Java 和 JavaScript）提�
 
 <!-- Links -->
 [关于 Azure 存储]: /documentation/articles/storage-create-storage-account/#create-a-storage-account
-[事件中心入门]: /documentation/articles/event-hubs-java-ephjava-getstarted/
+[事件中心入门]: /documentation/articles/event-hubs-java-get-started-send/
 [Azure 存储可缩放性指导原则]: /documentation/articles/storage-scalability-targets/
 [Azure Block Blobs]: https://msdn.microsoft.com/zh-cn/library/azure/ee691964.aspx
-[事件中心]: /documentation/articles/event-hubs-overview/
+[事件中心]: /documentation/articles/event-hubs-what-is-event-hubs/
 [Event Hubs Programming Guide]: https://github.com/Azure/azure-event-hubs/blob/master/java/readme.md
 [Transient Fault Handling]: https://msdn.microsoft.com/zh-cn/library/hh680901(v=pandp.50).aspx
 

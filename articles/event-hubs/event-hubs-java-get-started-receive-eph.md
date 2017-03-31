@@ -217,7 +217,7 @@ EventProcessorHost 是一个 Java 类，通过从事件中心管理持久检查�
 
 <!-- Links -->
 
-[Event Hubs overview]: /documentation/articles/event-hubs-overview/
+[Event Hubs overview]: /documentation/articles/event-hubs-what-is-event-hubs/
 [Azure Storage account]: /documentation/articles/storage-create-storage-account/
 [Azure Classic Management Portal]: http://manage.windowsazure.cn
 [Maven Package]: https://search.maven.org/#search%7Cga%7C1%7Ca%3A%22azure-eventhubs-eph%22
@@ -235,7 +235,7 @@ EventProcessorHost 是一个 Java 类，通过从事件中心管理持久检查�
 
 <!-- Links -->
 
-[Event Hubs overview]: /documentation/articles/event-hubs-overview/
+[Event Hubs overview]: /documentation/articles/event-hubs-what-is-event-hubs/
 
 <!---HONumber=Mooncake_0320_2017-->
 <!--Update_Description:new article about how to receiving event from Azure event hubs with Java-->

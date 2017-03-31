@@ -105,7 +105,7 @@
 <!-- Links -->
 
 [Event Processor Host]: https://www.nuget.org/packages/Microsoft.Azure.ServiceBus.EventProcessorHost
-[Event Hubs overview]: /documentation/articles/event-hubs-overview/
+[Event Hubs overview]: /documentation/articles/event-hubs-what-is-event-hubs/
 
 <!---HONumber=Mooncake_0320_2017-->
 <!--Update_Description:new article about how to send event to event hubs with dotnet-->

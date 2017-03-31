@@ -167,7 +167,7 @@ Azure 事件中心提供缩放性超高的事件与遥测处理服务，可用�
 - [使用事件中心的完整示例应用程序]
 
 [Azure 经典管理门户]: http://manage.windowsazure.cn
-[事件中心教程]: /documentation/articles/event-hubs-csharp-ephcs-getstarted/
+[事件中心教程]: /documentation/articles/event-hubs-dotnet-standard-getstarted-send/
 [使用事件中心的完整示例应用程序]: https://github.com/Azure-Samples/
 
 <!---HONumber=Mooncake_0116_2017-->

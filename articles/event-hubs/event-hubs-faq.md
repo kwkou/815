@@ -88,7 +88,7 @@
 * [事件中心概述](/documentation/articles/event-hubs-what-is-event-hubs/)
 * [创建事件中心](/documentation/articles/event-hubs-create/)
 
-[Event Hubs overview]: /documentation/articles/event-hubs-overview/
+[Event Hubs overview]: /documentation/articles/event-hubs-what-is-event-hubs/
 [sample application that uses Event Hubs]: https://code.msdn.microsoft.com/Service-Bus-Event-Hub-286fd097
 
 <!---HONumber=Mooncake_0116_2017-->

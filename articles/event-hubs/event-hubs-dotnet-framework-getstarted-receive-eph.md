@@ -145,7 +145,7 @@
 
 <!-- Links -->
 
-[Event Hubs Overview]: /documentation/articles/event-hubs-overview/
+[Event Hubs Overview]: /documentation/articles/event-hubs-what-is-event-hubs/
 [Event Hubs Programming Guide]: /documentation/articles/event-hubs-programming-guide/
 [Azure Storage account]: /documentation/articles/storage-create-storage-account/
 [EventProcessorHost]: https://docs.microsoft.com/zh-cn/dotnet/api/microsoft.servicebus.messaging.eventprocessorhost
@@ -168,7 +168,7 @@
 <!-- Links -->
 
 [Event Processor Host]: https://www.nuget.org/packages/Microsoft.Azure.ServiceBus.EventProcessorHost
-[Event Hubs overview]: /documentation/articles/event-hubs-overview/
+[Event Hubs overview]: /documentation/articles/event-hubs-what-is-event-hubs/
 [Scale out Event Processing with Event Hubs]: https://code.msdn.microsoft.com/Service-Bus-Event-Hub-45f43fc3
 
 <!---HONumber=Mooncake_0320_2017-->

@@ -18,7 +18,7 @@
 
 ## 探究
 
-- [事件中心](/documentation/articles/event-hubs-overview/)
+- [事件中心](/documentation/articles/event-hubs-what-is-event-hubs/)
 - [分片模式](http://msdn.microsoft.com/zh-cn/library/dn589797.aspx)
 - [服务总线和 AMQP 1.0](/documentation/articles/service-bus-amqp-overview/)
 - [服务总线简介](/home/features/messaging/)

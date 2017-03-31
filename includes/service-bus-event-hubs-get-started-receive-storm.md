@@ -220,7 +220,7 @@
 	此类创建新事件中心喷管，并使用配置文件中的属性对它进行实例化。请务必注意：此示例创建喷管的数量与事件中心中分区的数量相同，以便使用该事件中心允许的最大并行度。
 
 <!-- Links -->
-[事件中心概述]: /documentation/articles/event-hubs-overview/
+[事件中心概述]: /documentation/articles/event-hubs-what-is-event-hubs/
 [HDInsight Storm]: /documentation/articles/hdinsight-storm-overview/
 [HDInsight 传感器分析教程]: /documentation/articles/hdinsight-storm-sensor-data-analysis/
 
