@@ -20,6 +20,7 @@
 
 # 事件中心 .NET Standard API 概述
 本文汇总了一些重要的事件中心 .NET Standard 客户端 API。目前，有两个 .NET Standard 客户端库：
+
 * [Microsoft.Azure.EventHubs](https://docs.microsoft.com/zh-cn/dotnet/api/microsoft.azure.eventhubs)
   *  此库提供所有基本运行时操作。
 * [Microsoft.Azure.EventHubs.Processor](https://docs.microsoft.com/zh-cn/dotnet/api/microsoft.azure.eventhubs.processor)

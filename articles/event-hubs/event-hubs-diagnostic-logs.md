@@ -23,6 +23,7 @@
 
 ## 介绍
 事件中心公开两种类型的日志：
+
 * [活动日志](/documentation/articles/monitoring-overview-activity-logs/)：始终启用，提供针对作业执行的操作的深入信息；
 * [诊断日志](/documentation/articles/monitoring-overview-of-diagnostic-logs/)：用户可配置的日志，提供作业发生的所有情况的更多深入信息，包括从创建作业开始，到更新、运行作业，直到删除作业为止的所有信息。
 
