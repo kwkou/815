@@ -144,9 +144,9 @@ PeekLock 模式 API：[Peek-Lock Message](https://docs.microsoft.com/en-us/rest/
         return message;
     }
 
-完整代码：[SBRestApiDemo](https://github.com/allenhula/azure-china-get-started/tree/master/ServiceBus/CSharp/SBRestApiDemo)。
+完整代码：[SBRestApiDemo](https://github.com/wacn/AOG-CodeSample/tree/master/ServiceBus/CSharp/SBRestApiDemo/)。
 
 ## 更多资源
 
-- [从策略生成共享访问令牌（SAS Token）](https://www.azure.cn/documentation/articles/service-bus-sas-overview/#bookmark-2)
-- [服务总线REST API](https://docs.microsoft.com/en-us/rest/api/servicebus/service-bus-runtime-rest)
+- [从策略生成共享访问令牌（SAS Token）](/documentation/articles/service-bus-sas-overview/#bookmark-2)
+- [服务总线REST API](https://docs.microsoft.com/en-us/rest/api/servicebus/service-bus-runtime-rest/)
