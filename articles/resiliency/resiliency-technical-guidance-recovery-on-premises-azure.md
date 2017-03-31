@@ -15,7 +15,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="na"
     ms.date="08/18/2016"
-    wacn.date="02/20/2017"
+    wacn.date="03/24/2017"
     ms.author="aglick" />
 
 # Azure 复原技术指南：从本地恢复到 Azure
@@ -27,22 +27,19 @@ Azure 提供一整套服务，可让你将本地数据中心扩展到 Azure，�
 * **存储**：StorSimple 可将文件系统扩展到 Azure 存储空间。Azure 备份服务提供将文件和 SQL 数据库备份到 Azure 存储空间的功能。
 * **数据库复制**：使用 SQL 2014（或更高版本）可用性组，可以为本地数据实现高可用性和灾难恢复。
 
-<a id="networking"></a>
-## 联网
+## <a id="networking"></a> 联网
 
 可以使用 Azure 虚拟网络在 Azure 中创建一个逻辑上独立的部分，并可使用 IPsec 连接将其连接到本地数据中心或单个客户端计算机。通过虚拟网络，可轻松地利用 Azure 中按需可缩放的基础架构，同时可连接到本地数据和应用程序，包括 Windows Server、大型机和 UNIX 上运行的系统。有关详细信息，请参阅 [Azure 网络文档](/documentation/articles/virtual-networks-overview/)。
 
-<a id="compute"></a>
-## 计算
+## <a id="compute"></a> 计算
 
-使用本地 Hyper-V 的客户可以将现有的虚拟机“提起并移动”到 Azure 和运行 Windows Server 2012（或更高版本）的服务提供程序，而不需要对 VM 进行更改或转换 VM 格式。有关详细信息，请参阅 [About disks and VHDs for Azure virtual machines（关于 Azure 虚拟机的磁盘和 VHD）](/documentation/articles/storage-about-disks-and-vhds-linux/)。
+使用本地 Hyper-V 的客户可以将现有虚拟机“提起并移动”到 Azure 和运行 Windows Server 2012（或更高版本）的服务提供程序，而不需要对 VM 进行更改或转换 VM 格式。有关详细信息，请参阅 [About disks and VHDs for Azure virtual machines](/documentation/articles/storage-about-disks-and-vhds-linux/)（关于 Azure 虚拟机的磁盘和 VHD）。
 
 ## Azure Site Recovery
 
 如果你希望作为一项服务 (DRaaS) 的灾难恢复，Azure 提供了 [Azure Site Recovery](/home/features/site-recovery/)。Azure Site Recovery 为 VMware、Hyper-V 和物理服务器提供全面的保护。借助 Azure Site Recovery，可以使用另一台本地服务器或 Azure 作为恢复站点。有关 Azure Site Recovery 的详细信息，请参阅 [Azure Site Recovery 文档](/home/features/site-recovery/)。
 
-<a id="storage"></a>
-## 存储
+## <a id="storage"></a> 存储
 
 可以使用多个选项将 Azure 用作本地数据的备份站点。
 
@@ -58,8 +55,7 @@ Azure 备份让你可以使用 Windows Server 2012（或更高版本）、Window
 
 有关详细信息，请参阅 [What is Azure Backup?](/documentation/articles/backup-introduction-to-azure-backup/)（什么是 Azure 备份？）和 [Configure Azure Backup for DPM data](https://technet.microsoft.com/zh-cn/library/jj728752.aspx)（为 DPM 数据配置 Azure 备份）。
 
-<a id="database"></a>
-## 数据库
+## <a id="database"></a> 数据库
 
 可使用 AlwaysOn 可用性组、数据库镜像、日志传送以及备份和还原与 Azure Blob 存储配合使用，在混合 IT 环境中为 SQL Server 数据库提供灾难恢复解决方案。所有这些解决方案都使用 Azure 虚拟机上运行的 SQL Server。
 
@@ -111,5 +107,5 @@ AlwaysOn 可用性组可在本地和云中都有数据库副本的混合 IT 环�
 
 本文是着重介绍 [Azure 复原技术指南](/documentation/articles/resiliency-technical-guidance/)的系列教程的一部分。本系列教程的下一篇文章是[Recovery from data corruption or accidental deletion](/documentation/articles/resiliency-technical-guidance-recovery-data-corruption/)（数据损坏或意外删除后进行恢复）。
 
-<!---HONumber=Mooncake_0213_2017-->
+<!---HONumber=Mooncake_0320_2017-->
 <!-- Update_Description: update meta properties; wording update-->
