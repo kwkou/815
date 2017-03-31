@@ -26,4 +26,5 @@
 
 <sup>1</sup>有关其他 VM 大小的限制，请参阅 [VM 大小](/documentation/articles/virtual-machines-linux-sizes/)。
 
-<!---HONumber=Mooncake_0313_2017-->
+<!---HONumber=Mooncake_0320_2017-->
+<!-- Update_Description: wording update -->
