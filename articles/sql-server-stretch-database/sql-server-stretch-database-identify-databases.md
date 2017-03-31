@@ -1,5 +1,5 @@
 <properties
-    pageTitle="通过运行 Stretch Database 顾问来识别 Stretch Database 的数据库和表 | Azure"
+    pageTitle="标识 Stretch Database 的数据库和表 - Azure | Azure"
     description="了解如何识别符合 Stretch Database 条件的数据库和表。"
     services="sql-server-stretch-database"
     documentationcenter=""
@@ -14,7 +14,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="01/05/2017"
-    wacn.date="02/10/2017"
+    wacn.date="03/24/2017"
     ms.author="douglasl" />  
 
 
@@ -62,5 +62,5 @@
 [对数据库启用 Stretch Database](/documentation/articles/sql-server-stretch-database-enable-database/)
 [对表启用 Stretch Database](/documentation/articles/sql-server-stretch-database-enable-table/)
 
-<!---HONumber=Mooncake_0206_2017-->
-<!-- Update_Description: wording update; meta data; update link reference -->
+<!---HONumber=Mooncake_0320_2017-->
+<!-- Update_Description:update meta properties -->
