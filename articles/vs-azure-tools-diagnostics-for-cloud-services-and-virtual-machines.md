@@ -227,7 +227,8 @@ Azure 诊断的配置方法有如下数种：
 3. 在表查看器中打开诊断表，然后查看所收集的数据。对于 IIS 日志和自定义日志，可以打开 Blob 容器。在下表中，可以找到包含所需数据的表或 Blob 容器。除了该日志文件的数据，表条目还包含 EventTickCount、DeploymentId、Role 和 RoleInstance，可帮助确定数据来自哪个虚拟机和角色，是何时生成的。
    
 	|诊断数据 |说明 |位置 | 
-	|--- |--- |--- | |应用程序日志 |代码通过调用 System.Diagnostics.Trace 类的方法生成的日志。|WADLogsTable | 
+	|--- |--- |--- | 
+	|应用程序日志 |代码通过调用 System.Diagnostics.Trace 类的方法生成的日志。|WADLogsTable | 
 	|事件日志 |此数据来自虚拟机上的 Windows 事件日志。Windows 将信息存储在这些日志，但应用程序和服务还使用它们来报告错误或记录信息。|WADWindowsEventLogsTable | 
 	|性能计数器 |可以收集虚拟机上可用的任何性能计数器上的数据。操作系统提供性能计数器，其中包含多种统计数据，例如内存使用率和处理器时间。|WADPerformanceCountersTable | 
 	|基础结构日志 |这些日志从诊断基础结构自身生成。|WADDiagnosticInfrastructureLogsTable | 

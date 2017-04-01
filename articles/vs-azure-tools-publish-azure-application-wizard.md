@@ -91,7 +91,7 @@
    
     如果想要能够远程连接到服务，请选中“为所有角色启用远程桌面”复选框。此选项主要用于故障排除。选中此复选框后，会显示“远程桌面配置”对话框。选择“设置”链接以更改配置。
    
-    选中“为所有 Web 角色启用 Web 部署”复选框，启用服务的 Web 部署。只有启用了远程桌面才能使用此功能。有关详细信息，请参阅[[使用 Azure Tools 发布云服务](https://msdn.microsoft.com/zh-cn/library/azure/ff683672.aspx)](https://msdn.microsoft.com/zh-cn/library/azure/ff683672.aspx)。有关 Web 部署的详细信息，请参阅[[使用 Azure Tools 发布云服务](https://msdn.microsoft.com/zh-cn/library/azure/ff683672.aspx)](https://msdn.microsoft.com/zh-cn/library/azure/ff683672.aspx)。
+    选中“为所有 Web 角色启用 Web 部署”复选框，启用服务的 Web 部署。只有启用了远程桌面才能使用此功能。有关详细信息，请参阅[使用 Azure Tools 发布云服务](https://msdn.microsoft.com/zh-cn/library/azure/ff683672.aspx)。有关 Web 部署的详细信息，请参阅[使用 Azure Tools 发布云服务](https://msdn.microsoft.com/zh-cn/library/azure/ff683672.aspx)。
 5. 选择“高级设置”选项卡。在“部署标签”字段中，接受默认名称，或输入所选的名称。若要将日期附加到部署标签，请保留选中相应的复选框。
    
     ![发布向导的第三个屏幕](./media/vs-azure-tools-publish-azure-application-wizard/IC749014.png)  
