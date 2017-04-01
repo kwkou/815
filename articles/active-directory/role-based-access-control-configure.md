@@ -14,8 +14,8 @@
 	ms.topic="get-started-article"
 	ms.tgt_pltfrm="na"
 	ms.workload="identity"
-	ms.date="10/10/2016"
-	wacn.date="11/08/2016"
+	ms.date="02/17/2017"
+	wacn.date="03/31/2017"
 	ms.author="kgremban"/>  
 
 

@@ -13,8 +13,8 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="08/04/2016"
-	wacn.date="09/28/2016"
+	ms.date="01/23/2017"
+	wacn.date="03/31/2017"
 	ms.author="kgremban"/>  
 
 # 管理云中 Azure 多重身份验证的用户设置

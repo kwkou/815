@@ -14,8 +14,8 @@
   ms.tgt_pltfrm="na"
   ms.devlang="na"
   ms.topic="article"
-  ms.date="09/27/2016"
-  wacn.date="12/30/2016"
+  ms.date="01/10/2017"
+  wacn.date="03/31/2017"
   ms.author="jimpark;trinadhk;pullabhk;markgal"/>
 
 # 准备使用 Azure 备份服务器来备份工作负荷

@@ -13,8 +13,8 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="08/04/2016"
-	wacn.date="02/20/2017"
+	ms.date="02/16/2017"
+	wacn.date="03/31/2017"
 	ms.author="kgremban"/>
 
 # Azure 多重身份验证中的用户状态
