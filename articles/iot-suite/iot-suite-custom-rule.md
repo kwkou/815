@@ -6,8 +6,7 @@
     documentationcenter=""
     author="dominicbetts"
     manager="timlt"
-    editor="" />  
-
+    editor="" />
 <tags
     ms.assetid="562799dc-06ea-4cdd-b822-80d1f70d2f09"
     ms.service="iot-suite"
@@ -15,8 +14,8 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="na"
-    ms.date="12/14/2016"
-    wacn.date="01/25/2017"
+    ms.date="03/09/2017"
+    wacn.date="03/31/2017"
     ms.author="dobett" />  
 
 
@@ -32,7 +31,7 @@
 
 * 一个有效的 Azure 订阅。如果没有帐户，只需花费几分钟就能创建一个试用帐户。有关详细信息，请参阅 [Azure 试用][lnk_free_trial]。
 * [Node.js][lnk-node] 0.12.x 版本或更高版本，用于创建模拟设备。
-* Microsoft Visual Studio 2015，用于使用新规则修改预配置解决方案后端。
+* Visual Studio 2015 或 Visual Studio 2017，用于使用新规则修改预配置解决方案后端。
 
 [AZURE.INCLUDE [iot-suite-provision-remote-monitoring](../../includes/iot-suite-provision-remote-monitoring.md)]
 
@@ -213,4 +212,4 @@
 [lnk-builtin-rule]: /documentation/articles/iot-suite-getstarted-preconfigured-solutions/#add-a-rule-for-the-new-device
 [lnk-dynamic-telemetry]: /documentation/articles/iot-suite-dynamic-telemetry/
 
-<!---HONumber=Mooncake_1226_2016-->
+<!---HONumber=Mooncake_0327_2017-->

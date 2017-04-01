@@ -269,7 +269,7 @@ Azure IoT 套件[预配置解决方案][lnk-preconfigured-solutions]结合了多
 ![禁用并删除设备][img-disable]  
 
 
-### 添加规则
+### <a name="add-a-rule-for-the-new-device"> 添加规则
 
 刚才添加的新设备没有规则。在本节中，你将添加一个规则，以便在新设备所报告的温度超过 47 度时触发警报。在开始之前，请注意仪表板上新设备的遥测历史记录显示设备温度绝不会超过 45 度。
 
