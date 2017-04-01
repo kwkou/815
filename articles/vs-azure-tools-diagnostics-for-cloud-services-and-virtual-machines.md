@@ -192,7 +192,7 @@ Azure 诊断的配置方法有如下数种：
   ![ETW 日志](./media/vs-azure-tools-diagnostics-for-cloud-services-and-virtual-machines/IC766025.png)  
 
 
-  支持在 ASP.NET 中通过 [System.Diagnostics.aspx](https://msdn.microsoft.com/zh-cn/library/system.diagnostics(v=vs.110) 命名空间中的类来使用 ETW 框架。Microsoft.WindowsAzure.Diagnostics 命名空间继承自标准 [System.Diagnostics.aspx](https://msdn.microsoft.com/zh-cn/library/system.diagnostics(v=vs.110) 类并对其进行了扩展，在 Azure 环境中，可以通过该命名空间将 [System.Diagnostics.aspx](https://msdn.microsoft.com/zh-cn/library/system.diagnostics(v=vs.110) 用作日志记录框架。有关详细信息，请参阅[控制 Azure 中的日志记录和跟踪](https://msdn.microsoft.com/magazine/ff714589.aspx)以及[在 Azure 云服务和虚拟机中启用诊断](/documentation/articles/cloud-services-dotnet-diagnostics/)。
+  支持在 ASP.NET 中通过 [System.Diagnostics.aspx](https://msdn.microsoft.com/zh-cn/library/system.diagnostics(v=vs.110)) 命名空间中的类来使用 ETW 框架。Microsoft.WindowsAzure.Diagnostics 命名空间继承自标准 [System.Diagnostics.aspx](https://msdn.microsoft.com/zh-cn/library/system.diagnostics(v=vs.110)) 类并对其进行了扩展，在 Azure 环境中，可以通过该命名空间将 [System.Diagnostics.aspx](https://msdn.microsoft.com/zh-cn/library/system.diagnostics(v=vs.110)) 用作日志记录框架。有关详细信息，请参阅[控制 Azure 中的日志记录和跟踪](https://msdn.microsoft.com/magazine/ff714589.aspx)以及[在 Azure 云服务和虚拟机中启用诊断](/documentation/articles/cloud-services-dotnet-diagnostics/)。
 
 ### 故障转储
 如果要捕获有关角色实例何时发生故障的信息，请选中“启用故障转储的传输”复选框。（由于 ASP.NET 能够处理大多数异常，因此故障转储通常仅对辅助角色有用。） 你可以增加或减少专用于故障转储的存储空间的百分比，方法是更改“目录配额(%)”值。你可以更改将故障转储存储到的存储容器，还可以选择要捕获“完整”转储还是“微型”转储。
