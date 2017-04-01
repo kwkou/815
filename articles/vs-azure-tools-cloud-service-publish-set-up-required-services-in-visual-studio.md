@@ -6,6 +6,7 @@
     author="TomArcher"
     manager="douge"
     editor="" />
+
 <tags
     ms.assetid="92ee2f9e-ec49-4c7a-900d-620abe5e9d8a"
     ms.service="multiple"
@@ -97,10 +98,10 @@
 8. 选择“输入存储帐户凭据”链接。
 9. 在“帐户名称”框中，输入存储帐户的名称。
 
-   > [AZURE.NOTE]
-   登录到 [Azure 经典管理门户](https://manage.windowsazure.cn)，然后选择“存储”按钮。门户将显示存储帐户的列表。如果你选择一个帐户，将打开该帐户的页面。从中可以复制存储帐户的名称。如果你正在使用以前版本的经典管理门户，存储帐户的名称将显示在“存储帐户”视图中。若要复制此名称，请在此视图的“属性”窗口中突出显示它，然后按 Ctrl+C 键。若要将此名称粘贴到 Visual Studio 中，请选择“帐户名称”文本框，然后按 Ctrl+V 键。
-   >
-   >
+	   > [AZURE.NOTE]
+	   登录到 [Azure 经典管理门户](https://manage.windowsazure.cn)，然后选择“存储”按钮。门户将显示存储帐户的列表。如果你选择一个帐户，将打开该帐户的页面。从中可以复制存储帐户的名称。如果你正在使用以前版本的经典管理门户，存储帐户的名称将显示在“存储帐户”视图中。若要复制此名称，请在此视图的“属性”窗口中突出显示它，然后按 Ctrl+C 键。若要将此名称粘贴到 Visual Studio 中，请选择“帐户名称”文本框，然后按 Ctrl+V 键。
+	   >
+	   >
 10. 在“帐户密钥”框中，输入主密钥，或从 [Azure 经典管理门户](https://manage.windowsazure.cn)中复制并粘贴此密钥。若要复制此密钥，请执行以下操作：
 
     1. 在相应存储帐户的页面底部，选择“管理密钥”按钮。
@@ -112,10 +113,10 @@
        - **使用 HTTPS**建立安全连接。例如，`https://<accountname>.blob.core.chinacloudapi.cn`。
        - 为三项服务分别**指定自定义终结点**。然后，可将这些终结点键入特定服务的字段中。
 
-         > [AZURE.NOTE]
-         如果你创建自定义终结点，则可以创建更复杂的连接字符串。当你使用此字符串格式时，可以指定包含已为 Blob 服务的存储帐户注册的自定义域名存储服务终结点。你还可以通过共享访问签名只授予对单个容器中的 Blob 资源的访问权限。有关如何创建自定义终结点的详细信息，请参阅[配置 Azure 存储空间连接字符串](/documentation/articles/storage-configure-connection-string/)。
-         >
-         >
+	         > [AZURE.NOTE]
+	         如果你创建自定义终结点，则可以创建更复杂的连接字符串。当你使用此字符串格式时，可以指定包含已为 Blob 服务的存储帐户注册的自定义域名存储服务终结点。你还可以通过共享访问签名只授予对单个容器中的 Blob 资源的访问权限。有关如何创建自定义终结点的详细信息，请参阅[配置 Azure 存储空间连接字符串](/documentation/articles/storage-configure-connection-string/)。
+	         >
+	         >
 11. 若要保存这些连接字符串更改，请选择“确定”按钮，然后选择工具栏上的“保存”按钮。保存这些更改后，可以通过在代码中使用 [GetConfigurationSettingValue](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.serviceruntime.roleenvironment.getconfigurationsettingvalue.aspx) 获取此连接字符串的值。将应用程序发布到 Azure 时，请选择包含连接字符串的 Azure 存储帐户的服务配置。发布应用程序后，验证应用程序是否按预期方式针对 Azure 存储服务正常工作
 
 ## 后续步骤

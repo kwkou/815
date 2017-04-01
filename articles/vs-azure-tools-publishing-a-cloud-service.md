@@ -49,17 +49,17 @@
    2. 在“打包 Azure 应用程序”对话框中，选择要为其创建包的服务配置，然后选择生成配置。
    3. （可选）若要在发布云服务后为它启用远程桌面，请选择“为所有角色启用远程桌面”复选框，然后选择“设置”链接，配置远程桌面。如果你要在发布云服务之后对其进行调试，请选中“为所有角色启用远程调试器”以启用远程调试。
       
-      有关详细信息，请参阅[将远程桌面与 Azure 角色一起使用](/documentation/articles/vs-azure-tools-remote-desktop-roles/)。
+		有关详细信息，请参阅[将远程桌面与 Azure 角色一起使用](/documentation/articles/vs-azure-tools-remote-desktop-roles/)。
    4. 若要创建该包，请选择“打包”链接。
       
-      文件资源管理器将显示新创建包的文件位置。可复制此位置，以便能够通过 [Azure 经典管理门户](https://manage.windowsazure.cn)使用它。
+		文件资源管理器将显示新创建包的文件位置。可复制此位置，以便能够通过 [Azure 经典管理门户](https://manage.windowsazure.cn)使用它。
    5. 若要将此包发布到部署环境，必须在创建云服务时使用此位置作为“包位置”，且必须通过 [Azure 经典管理门户](https://manage.windowsazure.cn)将此包部署到环境中。
 3. （可选）若要取消部署过程，请在活动日志中的行项目快捷菜单中选择“取消并删除”。这会停止部署过程，并从 Azure 中删除部署环境。
    
-   > [AZURE.NOTE]
-   若要在完成部署后删除此部署环境，必须使用 [Azure 经典管理门户](https://manage.windowsazure.cn)。
-   > 
-   > 
+	> [AZURE.NOTE]
+	若要在完成部署后删除此部署环境，必须使用 [Azure 经典管理门户](https://manage.windowsazure.cn)。
+	> 
+	> 
 4. （可选）启动角色实例后，Visual Studio 会自动在服务器资源管理器的“云服务”节点中显示部署环境。你可以从此位置查看单个角色实例的状态。请参阅[使用云资源管理器管理 Azure 资源](/documentation/articles/vs-azure-tools-resources-managing-with-cloud-explorer/)。下图显示仍处于“正在初始化”状态的角色实例：
    
     ![VST\_DeployComputeNode](./media/vs-azure-tools-publishing-a-cloud-service/IC744134.png)  
@@ -112,13 +112,13 @@
    
    1. 若要连接到正在运行 Web 角色的虚拟机，请选择“云资源管理器”或“服务器资源管理器”中的 Web 角色实例，然后选择“使用远程桌面连接”。有关如何连接到虚拟机的详细步骤，请参阅[将远程桌面与 Azure 角色一起使用](/documentation/articles/vs-azure-tools-remote-desktop-roles/)。
       
-      浏览器将提示你下载 .RDP 文件。
+		浏览器将提示你下载 .RDP 文件。
    2. 若要添加 SSL 证书，请在 IIS 管理器中打开管理服务。在 IIS Manager 中，通过在“操作”窗格中打开“绑定”链接来启用 SSL。此时会显示“添加站点绑定”对话框。选择“添加”，然后在“类型”下拉列表中选择“HTTPS”。在“SSL 证书”列表中，选择已上传到 [Azure 经典管理门户](https://manage.windowsazure.cn)并已由 CA 签名的 SSL 证书。有关详细信息，请参阅 [Configure Connection Settings for the Management Service](http://go.microsoft.com/fwlink/?LinkId=215824)（配置管理服务的连接设置）。
       
-      > [AZURE.NOTE]
-      如果添加受信任的 SSL 证书，“发布向导”中不再会显示黄色警告三角形。
-      > 
-      > 
+		> [AZURE.NOTE]
+		如果添加受信任的 SSL 证书，“发布向导”中不再会显示黄色警告三角形。
+		> 
+		> 
 
 ## 在服务包中包含文件
 你可能需要在服务包中包括特定文件，以便这些文件在为角色创建的虚拟机上可用。例如，你可能希望将启动脚本使用的 .exe 或 .msi 文件添加到你的服务包。或者，你可能需要添加 Web 角色或辅助角色项目所需的程序集。若要包括文件，必须将文件添加到 Azure 应用程序的解决方案。
@@ -130,10 +130,10 @@
    2. 若要将程序集添加到项目，请打开“引用”文件夹的快捷菜单，然后选择“添加引用”。此时将显示“添加引用”对话框。
    3. 选择想要添加的引用，然后选择“确定”按钮。
       
-      该引用会添加到“引用”文件夹下的列表中。
+		该引用会添加到“引用”文件夹下的列表中。
    4. 打开添加的程序集的快捷菜单，然后选择“属性”。此时会显示“属性”窗口。
       
-      若要将此程序集包含在服务包中，请在“本地复制”列表中选择“True”。
+		若要将此程序集包含在服务包中，请在“本地复制”列表中选择“True”。
 2. 在“解决方案资源管理器”中，打开缺少已引用程序集的项目的项目节点。
 3. 若要将程序集添加到项目，请打开“引用”文件夹的快捷菜单，然后选择“添加引用”。此时会显示“添加引用”对话框。
 4. 选择想要添加的引用，然后选择“确定”按钮。

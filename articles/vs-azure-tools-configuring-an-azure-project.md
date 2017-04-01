@@ -39,15 +39,15 @@
 ## 配置 Azure 云服务项目
 1. 若要从“解决方案资源管理器”中配置云服务项目，请打开云服务项目的快捷菜单，然后选择“属性”。
    
-   Visual Studio 编辑器中将显示包含云服务项目名称的页面。
+	Visual Studio 编辑器中将显示包含云服务项目名称的页面。
 2. 选择“开发”选项卡。
 3. 为确保不意外删除 Azure 中的现有部署，在删除现有部署列表之前的显示的提示中，请选择“True”。
 4. 若要选择在本地运行或调试云服务时要使用的服务配置，请在“服务配置”列表中选择服务配置。
    
-   > [AZURE.NOTE]
-   如过你想创建要使用的服务配置，请参阅“如何：管理服务配置和配置文件”。如过你想修改角色的服务配置，请参阅[如何使用 Visual Studio 配置 Azure 云服务的角色](/documentation/articles/vs-azure-tools-configure-roles-for-cloud-service/)。
-   > 
-   > 
+	> [AZURE.NOTE]
+	如过你想创建要使用的服务配置，请参阅“如何：管理服务配置和配置文件”。如过你想修改角色的服务配置，请参阅[如何使用 Visual Studio 配置 Azure 云服务的角色](/documentation/articles/vs-azure-tools-configure-roles-for-cloud-service/)。
+	> 
+	> 
 5. 若要在本地运行或调试云服务时启动 Azure 存储模拟器，请在“启动 Azure 存储模拟器”中选择“True”。
 6. 为确保在出现包验证错误时无法进行发布，请在“将警告视为错误”中选择“True”。
 7. 为确保 Web 角色每次在 IIS Express 中本地启动时都使用同一端口，请在“使用 Web 项目端口”中选择“True”。若要为特定 Web 项目使用特定端口，请打开该 Web 项目的快捷菜单，依次选择“属性”选项卡、“Web”选项卡，然后在“IIS Express”部分的“项目 URL”设置中更改端口号。例如，输入 `http://localhost:14020` 作为项目 URL。

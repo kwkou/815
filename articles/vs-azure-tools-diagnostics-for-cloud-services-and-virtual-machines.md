@@ -108,10 +108,10 @@ Azure 诊断的配置方法有如下数种：
     ![安装 Azure 虚拟机扩展](./media/vs-azure-tools-diagnostics-for-cloud-services-and-virtual-machines/IC766024.png)  
 
    
-   > [AZURE.NOTE]
-   其他诊断扩展可用于虚拟机。有关详细信息，请参阅“Azure VM 扩展和功能”。
-   > 
-   > 
+	> [AZURE.NOTE]
+	其他诊断扩展可用于虚拟机。有关详细信息，请参阅“Azure VM 扩展和功能”。
+	> 
+	> 
 5. 选择“添加”按钮以添加扩展，并查看其“诊断配置”对话框。
 6. 选择“配置”按钮以指定存储帐户，然后选择“确定”按钮。
    
@@ -226,14 +226,15 @@ Azure 诊断的配置方法有如下数种：
     在“云资源管理器”或“服务器资源管理器”中，打开部署的关联存储帐户。
 3. 在表查看器中打开诊断表，然后查看所收集的数据。对于 IIS 日志和自定义日志，可以打开 Blob 容器。在下表中，可以找到包含所需数据的表或 Blob 容器。除了该日志文件的数据，表条目还包含 EventTickCount、DeploymentId、Role 和 RoleInstance，可帮助确定数据来自哪个虚拟机和角色，是何时生成的。
    
-   |诊断数据 |说明 |位置 | 
-   |--- |--- |--- | |应用程序日志 |代码通过调用 System.Diagnostics.Trace 类的方法生成的日志。|WADLogsTable | 
-   |事件日志 |此数据来自虚拟机上的 Windows 事件日志。Windows 将信息存储在这些日志，但应用程序和服务还使用它们来报告错误或记录信息。|WADWindowsEventLogsTable | 
-   |性能计数器 |可以收集虚拟机上可用的任何性能计数器上的数据。操作系统提供性能计数器，其中包含多种统计数据，例如内存使用率和处理器时间。|WADPerformanceCountersTable | 
-   |基础结构日志 |这些日志从诊断基础结构自身生成。|WADDiagnosticInfrastructureLogsTable | 
-   |IIS 日志 |这些日志记录 Web 请求。如果云服务获取大量流量，那么这些日志会非常长，因此应仅在需要时收集和存储此数据。|可以在 blob 容器中的部署、角色和实例路径下的 wad-iis-failedreqlogs 中找到失败的请求日志。在 wad-iis-logfiles 下可以找到完整日志。每个文件的条目都在 WADDirectories 表中形成。| 
-   |故障转储 |此信息提供云服务的进程（通常为辅助角色）的二进制映像。| wad-crush-dumps blob 容器 | 
-   |自定义日志文件 |预定义的数据的日志。|可以在代码中指定存储帐户中自定义日志文件的位置。例如，可以指定自定义 blob 容器。|
+	|诊断数据 |说明 |位置 | 
+	|--- |--- |--- | |应用程序日志 |代码通过调用 System.Diagnostics.Trace 类的方法生成的日志。|WADLogsTable | 
+	|事件日志 |此数据来自虚拟机上的 Windows 事件日志。Windows 将信息存储在这些日志，但应用程序和服务还使用它们来报告错误或记录信息。|WADWindowsEventLogsTable | 
+	|性能计数器 |可以收集虚拟机上可用的任何性能计数器上的数据。操作系统提供性能计数器，其中包含多种统计数据，例如内存使用率和处理器时间。|WADPerformanceCountersTable | 
+	|基础结构日志 |这些日志从诊断基础结构自身生成。|WADDiagnosticInfrastructureLogsTable | 
+	|IIS 日志 |这些日志记录 Web 请求。如果云服务获取大量流量，那么这些日志会非常长，因此应仅在需要时收集和存储此数据。|可以在 blob 容器中的部署、角色和实例路径下的 wad-iis-failedreqlogs 中找到失败的请求日志。在 wad-iis-logfiles 下可以找到完整日志。每个文件的条目都在 WADDirectories 表中形成。| 
+	|故障转储 |此信息提供云服务的进程（通常为辅助角色）的二进制映像。| wad-crush-dumps blob 容器 | 
+	|自定义日志文件 |预定义的数据的日志。|可以在代码中指定存储帐户中自定义日志文件的位置。例如，可以指定自定义 blob 容器。|
+
 4. 如有任何类型的数据出现截断，可以尝试增大该数据类型的缓冲区，或是缩短从虚拟机到存储帐户的数据传输间隔。
 5. （可选）间或清除存储帐户中的数据，降低整体存储开销。
 6. 进行完整部署时，diagnostics.cscfg 文件（Azure SDK 2.5 中为 .wadcfgx）将在 Azure 中更新，云服务将拾取对诊断配置的所有更改。如果你改为更新现有部署，则不会在 Azure 中更新 .cscfg 文件。但仍可按照下一部分中的步骤更改诊断设置。有关执行完整部署和更新现有部署的详细信息，请参阅[发布 Azure 应用程序向导](/documentation/articles/vs-azure-tools-publish-azure-application-wizard/)。

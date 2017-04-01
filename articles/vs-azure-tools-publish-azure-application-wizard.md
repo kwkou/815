@@ -1,4 +1,4 @@
-<properties
+	<properties
     pageTitle="发布 Azure 应用程序向导 | Azure"
     description="发布 Azure 应用程序向导"
     services="visual-studio-online"
@@ -36,10 +36,10 @@
 
 4. 将云服务项目添加到解决方案后，请再次打开同一个快捷菜单并选择“发布”。
 
-> [AZURE.NOTE]
-确保使用管理员凭据启动 Visual Studio（以管理员身份运行）。
-> 
-> 
+	> [AZURE.NOTE]
+	确保使用管理员凭据启动 Visual Studio（以管理员身份运行）。
+	> 
+	> 
 
 1. 准备好发布应用程序时，请打开 Azure 云服务项目的快捷菜单，然后选择“发布”。以下步骤演示了发布 Azure 应用程序向导。
 

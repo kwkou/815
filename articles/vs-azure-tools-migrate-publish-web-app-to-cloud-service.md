@@ -41,9 +41,9 @@
 
 ## 启用要部署到 Azure 的 Web 应用程序
 ### 启用要部署到 Azure 的 Web 应用程序
-1. 若要启用要部署到 Azure 的 Web 应用程序，请在解决方案中打开 Web 项目的快捷菜单，然后选择“添加 Azure 部署项目”。
+   若要启用要部署到 Azure 的 Web 应用程序，请在解决方案中打开 Web 项目的快捷菜单，然后选择“添加 Azure 部署项目”。
 
-    执行以下操作：
+   执行以下操作：
 
    - 将名为 `<name of the web project>.Azure` 的 Azure 项目添加到应用程序的解决方案中。
    - 将 Web 项目的 Web 角色添加到此 Azure 项目中。
@@ -70,10 +70,10 @@
 ### 为连接字符串使用 Web 角色中的 SQL 数据库实例
 1. 若要在 [Azure 经典管理门户](https://manage.windowsazure.cn)中创建 SQL 数据库的实例，请执行以下文章中所述的步骤：[Create a SQL Database Server](http://go.microsoft.com/fwlink/?LinkId=225109)（创建 SQL 数据库服务器）。
 
-   > [AZURE.NOTE]
-   为 SQL 数据库实例设置防火墙规则时，必须选中“允许其他 Azure 服务访问此服务器”复选框。
-   >
-   >
+	> [AZURE.NOTE]
+	为 SQL 数据库实例设置防火墙规则时，必须选中“允许其他 Azure 服务访问此服务器”复选框。
+	>
+	>
 2. 若要创建用于连接字符串的 SQL 数据库实例，请在下一部分中执行以下文章中所述的步骤：[Create a SQL Database](http://go.microsoft.com/fwlink/?LinkId=225110)（创建 SQL 数据库）。
 3. 若要复制 ADO.NET 连接字符串以用作你的连接字符串，请在[ Azure 经典管理门户](https://manage.windowsazure.cn)中执行以下步骤。
 
@@ -81,13 +81,13 @@
    2. 若要显示可用的 SQL 数据库实例，请选择“SQL 数据库”节点。
    3. 若要显示数据库的属性，请选择该数据库。此时将显示“属性”视图。
 
-      > [AZURE.NOTE]
-      如果未显示“属性”视图，可能需要使用分隔符打开它。
-      >
-      >
+		> [AZURE.NOTE]
+		如果未显示“属性”视图，可能需要使用分隔符打开它。
+		>
+		>
    4. 若要查看连接字符串，请选择“视图”旁边的省略号 (...) 按钮。
 
-      此时将显示“连接字符串”对话框。
+		此时将显示“连接字符串”对话框。
    5. 若要复制 ADO.NET 连接字符串，请突出显示文本，然后按 Ctrl+C 键。
    6. 若要关闭对话框，请选择“关闭”按钮。
 4. 若要替换 web.config 文件中的连接字符串，改用此 SQL 数据库实例，请打开 web.config 文件，突出显示现有的连接字符串条目，然后按 Ctrl+V 键。该 SQL 数据库实例的 ADO.NET 连接字符串会替换现有连接字符串。
@@ -122,19 +122,19 @@
 
     此时将显示“发布 Azure 应用程序”对话框，Visual Studio 将启动部署过程。有关如何发布应用程序的详细信息，请参阅 [Publishing a Cloud Service using the Azure Tools](/documentation/articles/vs-azure-tools-publishing-a-cloud-service/)（使用 Azure Tools 发布云服务）中的 **Publish an Azure Application from Visual Studio**（从 Visual Studio 发布 Azure 应用程序）部分。
 
-   > [AZURE.NOTE]
-   你还可以从 Azure 项目发布 Web 应用程序。为此，请打开 Azure 项目的快捷菜单，然后选择“发布”。
-   >
-   >
+	> [AZURE.NOTE]
+	你还可以从 Azure 项目发布 Web 应用程序。为此，请打开 Azure 项目的快捷菜单，然后选择“发布”。
+	>
+	>
 4. 若要查看部署进度，可以查看“Azure 活动日志”窗口。当启动部署过程时，将自动显示此日志。可在活动日志中展开行项以显示详细信息，如下图所示：
 
     ![VST\_AzureActivityLog](./media/vs-azure-tools-migrate-publish-web-app-to-cloud-service/IC744149.png)
 5. （可选）若要取消部署过程，请打开活动日志中的行项目的快捷菜单，并选择“取消并删除”。这会停止部署过程，并从 Azure 中删除部署环境。
 
-   > [AZURE.NOTE]
-   若要在完成部署后删除此部署环境，必须使用 [Azure 经典管理门户](https://manage.windowsazure.cn)。
-   >
-   >
+	> [AZURE.NOTE]
+	若要在完成部署后删除此部署环境，必须使用 [Azure 经典管理门户](https://manage.windowsazure.cn)。
+	>
+	>
 6. （可选）启动角色实例后，Visual Studio 将自动在“云资源管理器”的“Azure 计算”节点中显示部署环境。可以从此位置查看单个角色实例的状态。
 
     下图显示“服务器资源管理器”中仍处于“正在初始化”状态中的角色实例：
@@ -144,20 +144,20 @@
 
     下表列出了有关如何从 Azure 启动特定 Web 应用程序，或者使用 Azure 计算模拟器在本地运行或调试 Web 应用程序的详细信息：
 
-   |Web 应用程序类型 |在本地使用计算模拟器进行运行/调试 |在 Azure 中运行 | 
-   |--- |--- |--- | 
-   |ASP.NET Web 应用程序 |在菜单栏上，选择“调试”、“开始调试”（键盘：选择 **F5** 键。）。 |选择“Azure 活动日志”的“部署”选项卡中显示的 URL 超链接在浏览器中加载起始页。 | 
-   |ASP.NET MVC 2 Web 应用程序 |在菜单栏上，选择“调试”、“开始调试”（键盘：选择 **F5** 键。）。 |选择“Azure 活动日志”的“部署”选项卡中显示的 URL 超链接在浏览器中加载起始页。 | 
-   |ASP.NET MVC 3 Web 应用程序 |在菜单栏上，选择“调试”、“开始调试”（键盘：选择 **F5** 键。）。 |选择“Azure 活动日志”的“部署”选项卡中显示的 URL 超链接在浏览器中加载起始页。 | 
-   |ASP.NET MVC 4 Web 应用程序 |在菜单栏上，选择“调试”、“开始调试”（键盘：选择 **F5** 键。）。 |选择“Azure 活动日志”的“部署”选项卡中显示的 URL 超链接在浏览器中加载起始页。 | 
-   |ASP.NET 空 Web 应用程序 |必须在应用程序中添加一个 .aspx 页，将其设为你的 Web 项目的起始页。然后在菜单栏上，选择“调试”、“开始调试”（键盘：选择 **F5** 键。）。|如果应用程序中包含默认的 .aspx 页，请选择“Azure 活动日志”的“部署”选项卡中显示的 URL 超链接，随即在浏览器中加载此页。如果有不同的 .aspx 页，则需要使用以下格式的 url 导航到特定页：`<url for deployment>/<name of page>.aspx` | 
-   |Silverlight 应用程序 |在菜单栏上，选择“调试”、“开始调试”（键盘：选择 **F5** 键。）。 |需要使用以下格式的 url 导航到应用程序的特定页：`<url for deployment>/<name of page>.aspx` | 
-   |Silverlight 商业应用程序 |在菜单栏上，选择“调试”、“开始调试”（键盘：选择 **F5** 键。）。 |需要使用以下格式的 url 导航到应用程序的特定页：`<url for deployment>/<name of page>.aspx` | 
-   |Silverlight 导航应用程序 |在菜单栏上，选择“调试”、“开始调试”（键盘：选择 **F5** 键。）。 |需要使用以下格式的 url 导航到应用程序的特定页：`<url for deployment>/<name of page>.aspx` | 
-   |WCF 服务应用程序 |必须将 .svc 文件设置为 WCF 服务项目的起始页。然后在菜单栏上，选择“调试”、“开始调试”（键盘：选择 **F5** 键。）。 |需要使用以下格式的 url 导航到应用程序的 svc 文件：`<url for deployment>/<name of service file>.svc` | 
-   |WCF 工作流服务应用程序 |必须将 .svc 文件设置为 WCF 服务项目的起始页。然后在菜单栏上，选择“调试”、“开始调试”（键盘：选择 **F5** 键。）。 |需要使用以下格式的 url 导航到应用程序的 svc 文件：`<url for deployment>/<name of service file>.svc` | 
-   |ASP.NET 动态实体 |在菜单栏上，选择“调试”、“开始调试”（键盘：选择 **F5** 键。）。 |必须更新连接字符串（请参阅下一节）。你还需要使用以下格式的 url 导航到应用程序的特定页： `<url for deployment>/<name of page>.aspx` | 
-   |ASP.NET 动态数据 Linq to SQL |在菜单栏上，选择“调试”、“开始调试”（键盘：选择 **F5** 键。）。 |必须遵循以下过程中的步骤：在应用程序中使用 SQL Azure 数据库（请参阅本主题中的前面部分）。另外，需要使用以下格式的 URL 导航到应用程序的特定页：`<url for deployment>/<name of page>.aspx` |
+	|Web 应用程序类型 |在本地使用计算模拟器进行运行/调试 |在 Azure 中运行 | 
+	|--- |--- |--- | 
+	|ASP.NET Web 应用程序 |在菜单栏上，选择“调试”、“开始调试”（键盘：选择 **F5** 键。）。 |选择“Azure 活动日志”的“部署”选项卡中显示的 URL 超链接在浏览器中加载起始页。 | 
+	|ASP.NET MVC 2 Web 应用程序 |在菜单栏上，选择“调试”、“开始调试”（键盘：选择 **F5** 键。）。 |选择“Azure 活动日志”的“部署”选项卡中显示的 URL 超链接在浏览器中加载起始页。 | 
+	|ASP.NET MVC 3 Web 应用程序 |在菜单栏上，选择“调试”、“开始调试”（键盘：选择 **F5** 键。）。 |选择“Azure 活动日志”的“部署”选项卡中显示的 URL 超链接在浏览器中加载起始页。 | 
+	|ASP.NET MVC 4 Web 应用程序 |在菜单栏上，选择“调试”、“开始调试”（键盘：选择 **F5** 键。）。 |选择“Azure 活动日志”的“部署”选项卡中显示的 URL 超链接在浏览器中加载起始页。 | 
+	|ASP.NET 空 Web 应用程序 |必须在应用程序中添加一个 .aspx 页，将其设为你的 Web 项目的起始页。然后在菜单栏上，选择“调试”、“开始调试”（键盘：选择 **F5** 键。）。|如果应用程序中包含默认的 .aspx 页，请选择“Azure 活动日志”的“部署”选项卡中显示的 URL 超链接，随即在浏览器中加载此页。如果有不同的 .aspx 页，则需要使用以下格式的 url 导航到特定页：`<url for deployment>/<name of page>.aspx` | 
+	|Silverlight 应用程序 |在菜单栏上，选择“调试”、“开始调试”（键盘：选择 **F5** 键。）。 |需要使用以下格式的 url 导航到应用程序的特定页：`<url for deployment>/<name of page>.aspx` | 
+	|Silverlight 商业应用程序 |在菜单栏上，选择“调试”、“开始调试”（键盘：选择 **F5** 键。）。 |需要使用以下格式的 url 导航到应用程序的特定页：`<url for deployment>/<name of page>.aspx` | 
+	|Silverlight 导航应用程序 |在菜单栏上，选择“调试”、“开始调试”（键盘：选择 **F5** 键。）。 |需要使用以下格式的 url 导航到应用程序的特定页：`<url for deployment>/<name of page>.aspx` | 
+	|WCF 服务应用程序 |必须将 .svc 文件设置为 WCF 服务项目的起始页。然后在菜单栏上，选择“调试”、“开始调试”（键盘：选择 **F5** 键。）。 |需要使用以下格式的 url 导航到应用程序的 svc 文件：`<url for deployment>/<name of service file>.svc` | 
+	|WCF 工作流服务应用程序 |必须将 .svc 文件设置为 WCF 服务项目的起始页。然后在菜单栏上，选择“调试”、“开始调试”（键盘：选择 **F5** 键。）。 |需要使用以下格式的 url 导航到应用程序的 svc 文件：`<url for deployment>/<name of service file>.svc` | 
+	|ASP.NET 动态实体 |在菜单栏上，选择“调试”、“开始调试”（键盘：选择 **F5** 键。）。 |必须更新连接字符串（请参阅下一节）。你还需要使用以下格式的 url 导航到应用程序的特定页： `<url for deployment>/<name of page>.aspx` | 
+	|ASP.NET 动态数据 Linq to SQL |在菜单栏上，选择“调试”、“开始调试”（键盘：选择 **F5** 键。）。 |必须遵循以下过程中的步骤：在应用程序中使用 SQL Azure 数据库（请参阅本主题中的前面部分）。另外，需要使用以下格式的 URL 导航到应用程序的特定页：`<url for deployment>/<name of page>.aspx` |
 
 ## 为 ASP.NET 动态实体更新连接字符串
 ### 为 ASP.NET 动态实体更新连接字符串

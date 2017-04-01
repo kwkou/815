@@ -46,15 +46,15 @@ ASP.NET 会话状态支持多种不同的会话状态数据存储选项：InProc
 AP1000
 
 ### 说明
-在 [Run()](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.serviceruntime.roleentrypoint.run.aspx) 方法外部创建异步方法（例如 [await](https://msdn.microsoft.com/zh-cn/library/hh156528.aspx)），然后从 [Run()](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.serviceruntime.roleentrypoint.run.aspx) 调用异步方法。将 [[Run()](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.serviceruntime.roleentrypoint.run.aspx)](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.serviceruntime.roleentrypoint.run.aspx) 声明为异步方法会导致辅助角色进入 restart 循环。
+在 [Run()](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.serviceruntime.roleentrypoint.run.aspx) 方法外部创建异步方法（例如 [await](https://msdn.microsoft.com/zh-cn/library/hh156528.aspx)），然后从 [Run()](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.serviceruntime.roleentrypoint.run.aspx) 调用异步方法。将 [Run()](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.serviceruntime.roleentrypoint.run.aspx) 声明为异步方法会导致辅助角色进入 restart 循环。
 
 请通过 [Azure 代码分析反馈](http://go.microsoft.com/fwlink/?LinkId=403771)来分享你的看法和意见。
 
 ### 原因
-在 [Run()](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.serviceruntime.roleentrypoint.run.aspx) 方法内部调用异步方法会导致云服务运行时回收辅助角色。当辅助角色启动时，所有程序执行将在 [Run()](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.serviceruntime.roleentrypoint.run.aspx) 方法内发生。退出 [Run()](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.serviceruntime.roleentrypoint.run.aspx) 方法会导致辅助角色重新启动。当辅助角色运行时调用异步方法时，将在异步方法之后调度所有操作，然后返回。这会导致辅助角色从 [[[[Run()](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.serviceruntime.roleentrypoint.run.aspx)](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.serviceruntime.roleentrypoint.run.aspx)](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.serviceruntime.roleentrypoint.run.aspx)](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.serviceruntime.roleentrypoint.run.aspx) 方法退出并重新启动。在下一轮执行时，辅助角色再次调用异步方法并重新启动，导致辅助角色再次回收。
+在 [Run()](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.serviceruntime.roleentrypoint.run.aspx) 方法内部调用异步方法会导致云服务运行时回收辅助角色。当辅助角色启动时，所有程序执行将在 [Run()](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.serviceruntime.roleentrypoint.run.aspx) 方法内发生。退出 [Run()](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.serviceruntime.roleentrypoint.run.aspx) 方法会导致辅助角色重新启动。当辅助角色运行时调用异步方法时，将在异步方法之后调度所有操作，然后返回。这会导致辅助角色从 [Run()](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.serviceruntime.roleentrypoint.run.aspx) 方法退出并重新启动。在下一轮执行时，辅助角色再次调用异步方法并重新启动，导致辅助角色再次回收。
 
 ### 解决方案
-将所有异步操作放在 [Run()](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.serviceruntime.roleentrypoint.run.aspx) 方法的外部。然后从 [[Run()](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.serviceruntime.roleentrypoint.run.aspx)](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.serviceruntime.roleentrypoint.run.aspx) 方法内部调用重新构造的异步方法，例如 RunAsync() .wait。Azure 代码分析工具可帮助解决此问题。
+将所有异步操作放在 [Run()](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.serviceruntime.roleentrypoint.run.aspx) 方法的外部。然后从 [Run()](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.serviceruntime.roleentrypoint.run.aspx) 方法内部调用重新构造的异步方法，例如 RunAsync() .wait。Azure 代码分析工具可帮助解决此问题。
 
 以下代码段演示了此问题的代码修复过程：
 

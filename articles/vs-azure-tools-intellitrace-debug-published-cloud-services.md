@@ -39,10 +39,10 @@ IntelliTrace 仅适用于调试方案，而不应用于生产部署。
     随即显示“发布 Azure 应用程序”向导。
 3. 若想要当在云中发布应用程序时，收集其 IntelliTrace 日志，请选择“启用 IntelliTrace”复选框。
    
-   > [AZURE.NOTE]
-   发布 Azure 应用程序时，可启用 IntelliTrace 或分析。二者不能同时启用。
-   > 
-   > 
+	> [AZURE.NOTE]
+	发布 Azure 应用程序时，可启用 IntelliTrace 或分析。二者不能同时启用。
+	> 
+	> 
 4. 若要自定义基本的 IntelliTrace 配置，请选择“设置”超链接。
    
     “IntelliTrace 设置”对话框将出现，如下图所示。您可以指定要记录的事件、是否收集调用信息、要收集其日志的模块和过程，以及分配给记录的空间量。有关 IntelliTrace 的详细信息，请参阅[使用 IntelliTrace 进行调试](https://msdn.microsoft.com/zh-cn/library/dd264915.aspx)。
