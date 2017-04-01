@@ -9,8 +9,8 @@
 
 <tags
 	ms.service="cloud-services"
-	ms.date="05/02/2016"
-	wacn.date="05/17/2016"/>
+	ms.date="12/14/2017"
+	wacn.date="03/31/2017"/>
 
 # 为 Azure 云服务配置自定义域名
 
