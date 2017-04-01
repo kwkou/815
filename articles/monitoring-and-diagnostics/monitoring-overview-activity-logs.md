@@ -14,9 +14,9 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="02/02/2017"
-	ms.author="johnkem"  
-	wacn.date="03/03/2017"/>
+	ms.date="03/02/2017"
+	ms.author="johnkem"
+	wacn.date="03/31/2017"/>  
 
 
 # Azure 活动日志概述
@@ -25,29 +25,38 @@
 
 可通过 Azure 门户预览、CLI、PowerShell cmdlet 和 Azure Monitor REST API 从活动日志检索事件。
 
+
 > [AZURE.WARNING]
-Azure 活动日志主要适用于 Azure Resource Manager 中发生的活动，而不适用于那些使用经典/RDFE 模型的活动。请注意，某些经典资源类型在 Azure Resource Manager 中有代理资源提供程序（例如，Microsoft.ClassicCompute）。如果用户使用这些代理资源提供程序通过 Azure Resource Manager 与经典资源类型交互，相关操作将出现在活动日志中。如果用户在经典门户中或以其他方式不通过 Azure Resource Manager 代理与经典资源类型交互，则用户操作将只会记录在操作日志中，只能在经典门户中访问操作日志。
+Azure 活动日志主要适用于 Azure Resource Manager 中发生的活动。它不跟踪使用经典/RDFE 模型的资源。某些经典资源类型在 Azure Resource Manager 中有代理资源提供程序（例如，Microsoft.ClassicCompute）。如果使用这些代理资源提供程序通过 Azure Resource Manager 与经典资源类型交互，相关操作将出现在活动日志中。如果你在经典门户中与经典资源类型交互，或以其他方式不通过 Azure Resource Manager 代理与经典资源类型交互，则你的操作只会记录在操作日志中。操作日志只能在经典门户中访问。
 >
 >
 ## 可以对活动日志执行的操作
 可以对活动日志执行的部分操作如下：
 
-- 在 **Azure 门户预览**中查询和查看活动日志。
-- 通过 REST API、PowerShell Cmdlet 或 CLI 查询活动日志。
-- [创建触发活动日志事件的电子邮件或 webhook 警报。](/documentation/articles/insights-auditlog-to-webhook-email/)
-- [将活动日志保存到**存储帐户**进行存档或手动检查](/documentation/articles/monitoring-archive-activity-log/)。可以使用“日志配置文件”指定保留时间（天）。
-- 在 PowerBI 中使用 [**PowerBI 内容包**](https://powerbi.microsoft.com/zh-cn/documentation/powerbi-content-pack-azure-audit-logs/)分析活动日志。
-- [将活动日志流式传输到**事件中心**](/documentation/articles/monitoring-stream-activity-logs-event-hubs/)，方便第三方服务或自定义分析解决方案（例如 PowerBI）引入。
+![Azure 活动日志](./media/monitoring-overview-activity-logs/Activity_Log_Overview_v3.png)  
 
-只要配置设置的用户同时拥有两个订阅的相应 RBAC 访问权限，存储帐户或事件中心命名空间就不必与订阅发出日志位于同一订阅中。
+
+
+* [创建触发活动日志事件的电子邮件或 webhook 警报。](/documentation/articles/insights-auditlog-to-webhook-email/)
+* [将活动日志流式传输到**事件中心**](/documentation/articles/monitoring-stream-activity-logs-event-hubs/)，方便第三方服务或自定义分析解决方案（例如 PowerBI）引入。
+* 在 PowerBI 中使用 [**PowerBI 内容包**](https://powerbi.microsoft.com/zh-cn/documentation/powerbi-content-pack-azure-audit-logs/)分析活动日志。
+* [将活动日志保存到**存储帐户**进行存档或手动检查](/documentation/articles/monitoring-archive-activity-log/)。可以使用“日志配置文件”指定保留时间（天）。
+* 在 **Azure 门户**中查询和查看活动日志。
+* 通过 PowerShell Cmdlet、CLI 或 REST API 查询活动日志。
+
+
+可以使用与发出日志的存储帐户或事件中心命名空间不在同一订阅中的存储帐户或事件中心命名空间。配置设置的用户必须对这两个订阅具有相应的 RBAC 访问权限。
 
 ## <a name="export-the-activity-log-with-log-profiles"></a> 使用日志配置文件导出活动日志
 **日志配置文件**控制如何导出活动日志。可以使用日志配置文件配置：
 
-- 应将活动日志发送到何处：存储帐户或事件中心
-- 应该发送哪些事件类别（Write、Delete、Action）。*请注意，日志配置文件的上下文中“category”的含义不同于活动日志事件中“category”属性的含义。日志配置文件中的“category”表示操作类型（Write、Delete、Action），而活动日志事件中的“category”属性则表示事件的源或类型（Administration、ServiceHealth、Alert 等）。*
-- 应该导出哪些区域（位置）
-- 应该将活动日志保留在存储帐户中多长时间 – 保留期为 0 天表示永久保留日志。如果不需永久保留，则可将该值设置为 1 到 2147483647 之间的任意天数。如果设置了保留策略，但禁止将日志存储在存储帐户中（例如，如果仅选择事件中心或 OMS 选项），则保留策略无效。
+* 应将活动日志发送到何处：存储帐户或事件中心
+* 应该发送哪些事件类别（Write、Delete、Action）。*在日志配置文件和活动日志事件中，“类别”的含义并不相同。在日志配置文件中，“类别”代表操作类型（写入、删除、操作）。在活动日志事件中，“类别”属性代表事件的源或类型（例如，管理、ServiceHealth、警报等）。*
+* 应该导出哪些区域（位置）
+* 活动日志应在存储帐户中保留多长时间。
+    - 保留期为 0 天意味着永久保留日志。如果不需永久保留，则可将该值设置为 1 到 2147483647 之间的任意天数。
+    - 如果设置了保留策略，但禁止将日志存储在存储帐户中（例如，如果仅选择事件中心或 OMS 选项），则保留策略无效。
+    - 保留策略按天应用，因此在一天结束时 (UTC)，将会删除当天已超过保留策略期限的日志。例如，假设保留策略的期限为一天，则在今天开始时，将会删除前天的日志。
 
 可通过门户中“活动日志”边栏选项卡的“导出”选项配置这些设置。还可[使用 Azure Monitor REST API](https://msdn.microsoft.com/library/azure/dn931927.aspx)、PowerShell cmdlet 或 CLI 以编程方式配置这些设置。一个订阅只能有一个日志配置文件。
 
@@ -233,5 +242,5 @@ Azure 活动日志主要适用于 Azure Resource Manager 中发生的活动，�
 - [详细了解活动日志（以前称为审核日志）](/documentation/articles/resource-group-audit/)
 - [将 Azure 活动日志流式传输到事件中心](/documentation/articles/monitoring-stream-activity-logs-event-hubs/)
 
-<!---HONumber=Mooncake_0227_2017-->
+<!---HONumber=Mooncake_0327_2017-->
 <!--Update_Description:update wording and link references-->
