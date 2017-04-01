@@ -15,6 +15,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="na"
    ms.date="08/18/2016"
+   wacn.date="02/20/2017"
    ms.author="aglick"/>
 
 #Azure 复原技术指南 - 数据损坏或意外删除后进行恢复
