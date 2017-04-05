@@ -1,6 +1,6 @@
 <properties
-    pageTitle="将 Hyper-V VM 复制到 Azure | Azure"
-    description="介绍如何部署 Azure Site Recovery，以便使用 Azure 门户协调不受 VMM 管理的本地 Hyper-V VM 到 Azure 的复制、故障转移和恢复"
+    pageTitle="将 Hyper-V VM 复制到 Azure  | Azure"
+    description="说明如何通过协调将本地 Hyper-V VM 复制、故障转移和恢复到 Azure"
     services="site-recovery"
     documentationcenter=""
     author="rayne-wiselman"
@@ -13,10 +13,9 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="storage-backup-recovery"
-    ms.date="01/23/2017"
-    wacn.date="02/15/2017"
-    ms.author="raynew" />  
-
+    ms.date="03/05/2017"
+    wacn.date="03/31/2017"
+    ms.author="raynew" />
 
 # 结合使用 Azure Site Recovery 和 Azure 门户将 Hyper-V 虚拟机（不带 VMM）复制到 Azure
 
@@ -25,46 +24,11 @@
 - [Azure 经典](/documentation/articles/site-recovery-hyper-v-site-to-azure-classic/)
 - [PowerShell - Resource Manager](/documentation/articles/site-recovery-deploy-with-powershell-resource-manager/)
 
-欢迎使用 Azure Site Recovery 服务！
-
-Site Recovery 是能够帮助实现业务连续性和灾难恢复 (BCDR) 策略的 Azure 服务。Site Recovery 可以协调从本地物理服务器和虚拟机到云 (Azure) 或辅助数据中心的复制。当主要位置发生故障时，可以故障转移到辅助位置，使应用和工作负荷保持可用。当主要位置恢复正常时，你可以故障回复到主要位置。有关详细信息，请参阅[什么是 Site Recovery？](/documentation/articles/site-recovery-overview/)
-
-本文介绍如何在 Azure 门户中使用 Azure Site Recovery 将本地 Hyper-V 虚拟机复制或迁移到 Azure。在此方案中，Hyper-V 服务器不在 VMM 云中托管。当主站点不可用时，通过部署复制将 VM 故障转移到 Azure；当主站点回到正常运行状态时，将 VM 从 Azure 故障回复到本地。若要将 VM 迁移到 Azure（没有故障回复），请完成本文中的步骤。然后，在运行成功的测试性故障转移以后，即可执行计划内故障转移来完成迁移。
 
 
+本文介绍如何在 Azure 门户预览中使用 [Azure Site Recovery](/documentation/articles/site-recovery-overview/) 将本地 Hyper-V 虚拟机复制到 Azure。
 
-## 快速参考
-
-对于完整部署，我们强烈建议遵循本文中的所有步骤。但如果时间不够，可以进行下述快速操作。
- 
- **区域** | **详细信息**
- --- | --- 
- **部署方案** | 使用 Azure 门户将 Hyper-V VM（不在 VMM 云中）复制到 Azure 
- **本地要求** | 一个或多个 Hyper-V 服务器，至少运行 Windows Server 2012 R2 并启用最新更新和 Hyper-V 角色，或者运行 Microsoft Hyper-V Server 2012 R2 并启用最新更新。<br/><br/> Hyper-V 主机需可访问 Internet，并且能够直接或通过代理访问特定的 URL。[完整详细信息](#on-premises-prerequisites)。 
- **本地限制** | 不支持基于 HTTPS 的代理
- **提供程序/代理** | 在部署过程中，将在 Hyper-V 主机上安装 Azure Site Recovery 提供程序和恢复服务代理。 
- **Azure 要求** | Azure 帐户<br/><br/> 恢复服务保管库 <br/><br/> 保管库区域中有 LRS 或 GRS 存储帐户<br/><br/> 标准存储帐户<br/><br/> 保管库区域中有 Azure 虚拟网络。[完整详细信息](#azure-prerequisites)。 
- **Azure 限制** | 如果使用 GRS，需要使用另一个 LRS 帐户进行日志记录<br/><br/> 在 Azure 门户中创建的存储帐户不能跨资源组移动，不管是在相同的订阅还是不同的订阅中。<br/><br/> 不支持高级存储。<br/><br/> 用于 Site Recovery 的 Azure 网络不能跨资源组移动，不管是在相同的订阅还是不同的订阅中。 
- **VM 复制** | VM 必须符合 [Azure 先决条件](/documentation/articles/site-recovery-best-practices/#azure-virtual-machine-requirements)<br/><br/> 
- **复制限制** | 无法复制使用静态 IP 地址运行 Linux 的 Hyper-V VM。<br/><br/> 可以从复制中排除特定的磁盘，但不能排除 OS 磁盘。
- **部署步骤** | **1)** 创建恢复服务保管库 -> **2)** 创建 Hyper-V 站点，其中包括所有 Hyper-V 主机 -> **3)** 设置 Hyper-V 主机 -> **4**) 准备 Azure（订阅、存储、网络）-> **5)** 配置复制设置 -> **6)** 启用复制 -> **7)** 测试复制和故障转移。**8)** 若要进行迁移，请运行计划内故障转移。 
-
-## Azure 部署模型
-
-Azure 提供两种不同的[部署模型](/documentation/articles/resource-manager-deployment-model/)用于创建和处理资源：Azure Resource Manager 模型和经典模型。Azure 还有两个门户 - 支持经典部署模型的 [Azure 经典门户](https://manage.windowsazure.cn/)，以及支持两种部署模型的 [Azure 门户](https://portal.azure.cn/)。
-
- 本文介绍如何在 Azure 门户中部署，该门户提供更简化的部署体验。经典门户可以用于维护现有的保管库。无法使用经典门户创建新的保管库。
-
-## 企业中的 Site Recovery
-
-组织需要制定 BCDR 策略确定应用和数据如何在计划和非计划停机期间保持运行和可用，并尽快恢复正常运行情况。Site Recovery 的作用如下：
- 
- - 在 Hyper-V VM 上运行的企业应用的异地保护。
- - 提供单个位置设置、管理和监视复制、故障转移以及恢复。
- - 轻松故障转移到 Azure，以及从 Azure 故障回复（还原）到本地站点中的 Hyper-V 主机服务器。
- - 包含多个 VM 的恢复计划，使分层的应用程序工作负荷能够一起故障转移。
-
-
+可以将 Hyper-V VM 复制到 Azure 存储，将 VM 故障转移到 Azure（如果主站点不可用）。可以访问 Azure 中的工作负荷，并在本地恢复正常运行时故障回复到本地。也可根据本文的说明将 VM 迁移到 Azure。在迁移方案中，你需要复制并故障转移 VM，但不需要再次对其执行故障回复操作。
 
 
 
@@ -72,7 +36,7 @@ Azure 提供两种不同的[部署模型](/documentation/articles/resource-manag
 方案组件如下：
 
 - **Hyper-V 主机或群集**：本地 Hyper-V 主机服务器或群集。在 Site Recovery 部署期间，运行所要保护的 VM 的 Hyper-V 主机将聚集到逻辑 Hyper-V 站点中。
-- **Azure Site Recovery 提供程序和恢复服务代理**：部署期间在 Hyper-V 主机服务器上安装 Azure Site Recovery 提供程序和 Microsoft Azure 恢复服务代理。提供程序通过 HTTPS 443 与 Azure Site Recovery 通信，以复制协调过程。默认情况下，Hyper-V 主机服务器上的代理通过 HTTPS 443 将数据复制到 Azure 存储。
+- **Azure Site Recovery 提供程序和恢复服务代理**：部署期间在 Hyper-V 主机服务器上安装 Azure Site Recovery 提供程序和 Azure 恢复服务代理。提供程序通过 HTTPS 443 与 Azure Site Recovery 通信，以复制协调过程。默认情况下，Hyper-V 主机服务器上的代理通过 HTTPS 443 将数据复制到 Azure 存储。
 - **Azure**：需要 Azure 订阅、Azure 存储帐户来存储复制的数据，并需要 Azure 虚拟网络，使 Azure VM 能够在故障转移后连接到网络。
 
 ![Hyper-V 站点体系结构](./media/site-recovery-hyper-v-site-to-azure/architecture.png)
@@ -98,7 +62,7 @@ Azure 提供两种不同的[部署模型](/documentation/articles/resource-manag
 ## 虚拟机先决条件
 **先决条件** | **详细信息**
 --- | ---
-**受保护的 VM** | 在故障转移 VM 之前，需确保要分配到 Azure VM 的名称符合 [Azure 先决条件](/documentation/articles/site-recovery-best-practices/#azure-virtual-machine-requirements)。可以在启用 VM 的复制后修改此名称。<br/><br/> 受保护计算机上单个磁盘的容量不应超过 1023 GB。一台 VM 最多可以有 64 个磁盘（因此最大容量为 64 TB）。<br/><br/> 不支持共享的磁盘来宾群集。<br/><br/> 如果源 VM 有 NIC 组合，它在故障转移到 Azure 之后将转换成单个 NIC。<br/><br/>不保护带静态 IP 地址且运行 Linux 的 VM。
+**受保护的 VM** | 在故障转移 VM 之前，需确保要分配到 Azure VM 的名称符合 [Azure 先决条件](/documentation/articles/site-recovery-support-matrix-to-azure/#failed-over-azure-vm-requirements)。可以在启用 VM 的复制后修改此名称。<br/><br/> 受保护计算机上单个磁盘的容量不应超过 1023 GB。一台 VM 最多可以有 64 个磁盘（因此最大容量为 64 TB）。<br/><br/> 不支持共享的磁盘来宾群集。<br/><br/> 如果源 VM 有 NIC 组合，它在故障转移到 Azure 之后将转换成单个 NIC。<br/><br/>不保护带静态 IP 地址且运行 Linux 的 VM。
 
 ## 准备部署
 若要准备部署，需要：
@@ -148,16 +112,13 @@ Site Recovery 提供的“入门”体验可帮助你尽快完成部署。“快
 
 在“入门”中，选择要复制的计算机类型，以及要复制到的位置。设置本地服务器、Azure 存储帐户和网络。创建复制策略并执行容量计划。设置好基础结构之后，可以启用 VM 复制。可对特定计算机运行故障转移，或创建恢复计划以故障转移多个计算机。
 
-选择部署 Site Recovery 的方式，以开始“快速启动”。根据复制要求，“入门”流程会稍有不同。
-
-
+选择部署 Site Recovery 的方式，以开始“快速启动”。根据复制要求，“快速启动”流程会稍有不同。
 
 ## 步骤 1：选择保护目标
-
 选择要复制的内容以及要复制到的位置。
 
-1. 在“恢复服务保管库”边栏选项卡中选择保管库，然后单击“设置”。
-2. 在“设置”>“快速启动”中，单击“Site Recovery”>“步骤 1: 准备基础结构”>“保护目标”。
+1. 在“恢复服务保管库”中，选择保管库。
+2. 在“快速启动”中，单击“Site Recovery”>“步骤 1: 准备基础结构”>“保护目标”。
 
 	![选择目标](./media/site-recovery-hyper-v-site-to-azure/choose-goals.png)  
 
@@ -204,18 +165,18 @@ Site Recovery 提供的“入门”体验可帮助你尽快完成部署。“快
 
 5\. 在“代理设置”中，指定将安装在服务器上的提供程序如何通过 Internet 连接到 Azure Site Recovery。
 
-- 如果你希望提供程序直接进行连接，请选择“不使用代理直接连接”。
-- 如果希望使用当前已在服务器上设置的代理进行连接，请选择“使用现有代理设置进行连接”。
-- 如果现有代理要求身份验证，或者你希望使用自定义代理进行提供程序连接，请选择“使用自定义代理设置进行连接”。
-- 如果你使用自定义代理，则需指定地址、端口和凭据
-- 如果使用代理，请确保允许通过该代理访问[先决条件](#on-premises-prerequisites)中所述的 URL。
+	* 如果希望提供程序直接进行连接，请选择“不使用代理直接连接”。
+	* 如果希望使用当前已在服务器上设置的代理进行连接，请选择“使用现有代理设置进行连接”。
+	* 如果现有代理要求身份验证，或者你希望使用自定义代理进行提供程序连接，请选择“使用自定义代理设置进行连接”。 
+	* 如果使用自定义代理，则需指定地址、端口和凭据
+	* 如果使用代理，请确保允许通过该代理访问[先决条件](#on-premises-prerequisites)中所述的 URL。
 
 	![Internet](./media/site-recovery-hyper-v-site-to-azure/provider7.PNG)  
 
 
 6\. 安装完成后，单击“注册”，在保管库中注册服务器。![安装位置](./media/site-recovery-hyper-v-site-to-azure/provider2.png)
 
-7\. 完成注册后，Azure Site Recovery 将检索 Hyper-V 服务器中的元数据，该服务器将显示在“设置”>“Site Recovery 基础结构”>“Hyper-V 主机”边栏选项卡上。
+7. 完成注册后，Azure Site Recovery 将检索 Hyper-V 服务器中的元数据，该服务器将显示在“Site Recovery 基础结构”>“Hyper-V 主机”边栏选项卡上。
 
 
 ### 命令行安装
@@ -230,15 +191,20 @@ Site Recovery 提供的“入门”体验可帮助你尽快完成部署。“快
 3. 运行此命令安装组件：
 
 			C:\ASR> setupdr.exe /i
+4. 然后运行以下命令在保管库中注册服务器：
 
-4. 然后运行以下命令在保管库中注册服务器：CD C:\\Program Files\\Microsoft Azure Site Recovery Provider\\ C:\\Program Files\\Microsoft Azure Site Recovery Provider> DRConfigurator.exe /r /Friendlyname <friendly name of the server> /Credentials <path of the credentials file>，其中：
+            CD C:\Program Files\Microsoft Azure Site Recovery Provider\
+            C:\Program Files\Microsoft Azure Site Recovery Provider> DRConfigurator.exe /r  /Friendlyname <friendly name of the server> /Credentials <path of the credentials file>
 
-- **/Credentials**：用于指定注册密钥文件所在位置的必需参数
-- **/FriendlyName**：在 Azure Site Recovery 门户中显示的 Hyper-V 主机服务器名称的必需参数。
-- **/proxyAddress**：可选参数，用于指定代理服务器的地址。
-- **/proxyport**：可选参数，用于指定代理服务器的端口。
-- **/proxyUsername**：可选参数，用于指定代理服务器用户名（如果代理服务器要求身份验证）。
-- **/proxyPassword**：可选参数，用于指定密码，以便通过代理服务器进行身份验证（如果代理服务器要求身份验证）。
+<br/> 
+其中：
+
+* **/Credentials**：用于指定注册密钥文件所在位置的必需参数
+* **/FriendlyName**：在 Azure Site Recovery 门户中显示的 Hyper-V 主机服务器名称的必需参数。
+* **/proxyAddress**：可选参数，用于指定代理服务器的地址。
+* **/proxyport**：可选参数，用于指定代理服务器的端口。
+* **/proxyUsername**：可选参数，用于指定代理服务器用户名（如果代理服务器要求身份验证）。
+* **/proxyPassword**：可选参数，用于指定密码，以便通过代理服务器进行身份验证（如果代理服务器要求身份验证）。
 
 ## 步骤 3：设置目标环境
 
@@ -248,7 +214,7 @@ Site Recovery 提供的“入门”体验可帮助你尽快完成部署。“快
 
 3. Site Recovery 将检查是否有一个或多个兼容的 Azure 存储帐户和网络。
 
-  	![存储](./media/site-recovery-vmware-to-azure/enable-rep3.png))
+  	![存储](./media/site-recovery-vmware-to-azure/enable-rep3.png)  
 
 
 4. 如果尚未创建存储帐户并想使用 Resource Manager 创建一个，请单击“+存储帐户”以内联方式执行该操作。在“创建存储帐户”边栏选项卡中，指定帐户名、类型、订阅和位置。该帐户应位于与恢复服务保管库相同的位置。
@@ -258,7 +224,7 @@ Site Recovery 提供的“入门”体验可帮助你尽快完成部署。“快
 
 	如果想要使用经典模型创建存储帐户，请[在 Azure 门户中](/documentation/articles/storage-create-storage-account-classic-portal/)执行该操作。
 	
-5.	如果尚未创建 Azure 网络并想使用 Resource Manager 创建一个，请单击“+网络”以内联方式执行该操作。在“创建虚拟网络”边栏选项卡上，指定网络名称、地址范围、子网详细信息、订阅和位置。该网络应位于与恢复服务保管库相同的位置。
+如果尚未创建 Azure 网络并想使用 Resource Manager 创建一个，请单击“+网络”以内联方式执行该操作。在“创建虚拟网络”边栏选项卡上，指定网络名称、地址范围、子网详细信息、订阅和位置。该网络应位于与恢复服务保管库相同的位置。
 
 	![网络](./media/site-recovery-hyper-v-site-to-azure/gs-createnetwork.png)  
 
@@ -275,21 +241,21 @@ Site Recovery 提供的“入门”体验可帮助你尽快完成部署。“快
 2. 在“创建和关联策略”中指定策略名称。
 3. 在“复制频率”中，指定要在初始复制后复制增量数据的频率（每隔 30 秒、5 或 15 分钟）。
 4. 在“恢复点保留期”中，针对每个恢复点指定保留期的时长（以小时为单位）。受保护的计算机可以恢复到某个时段内的任意时间点。
-5. 在“应用一致性快照频率”中，指定创建包含应用程序一致性快照的恢复点的频率（1-12 小时）。Hyper-V 使用两种类型的快照 — 标准快照，它提供整个虚拟机的增量快照；应用程序一致性快照，它生成虚拟机内的应用程序数据的时间点快照。与应用程序一致的快照使用卷影复制服务 (VSS) 来确保应用程序在拍摄快照时处于一致状态。请注意，如果启用了与应用程序一致的快照，它将影响在源虚拟机上运行的应用程序的性能。请确保你设置的值小于你配置的额外恢复点的数目。
+5. 在“应用一致性快照频率”中，指定创建包含应用程序一致性快照的恢复点的频率（1-12 小时）。Hyper-V 使用两种类型的快照 — 标准快照，它提供整个虚拟机的增量快照；应用程序一致性快照，它生成虚拟机内的应用程序数据的时间点快照。与应用程序一致的快照使用卷影复制服务 (VSS) 来确保应用程序在拍摄快照时处于一致状态。请注意，如果你启用了与应用程序一致的快照，它将影响在源虚拟机上运行的应用程序的性能。请确保你设置的值小于你配置的额外恢复点的数目。
 6. 在“初始复制开始时间”中，指定开始初始复制的时间。复制通过 Internet 带宽进行，因此你可能需要将它安排在非繁忙时间。然后，单击“确定”。
 
 	![复制策略](./media/site-recovery-hyper-v-site-to-azure/gs-replication2.png)  
 
 
-当创建新策略时，该策略自动与 Hyper-V 站点关联。单击**“确定”**。可以在“设置”>“复制”> 策略名称 >“关联 Hyper-V 站点”中，将一个 Hyper-V 站点（以及其中的 VM）与多个复制策略关联。
+当创建新策略时，该策略自动与 Hyper-V 站点关联。单击“确定”。可以在“复制”> 策略名称 >“关联 Hyper-V 站点”中，将一个 Hyper-V 站点（以及其中的 VM）与多个复制策略关联。
 
-## 步骤 5：容量计划
+## 步骤 5：容量规划
 你已经设置了基本基础结构，现在可以考虑容量计划并确定是否需要额外的资源。
 
-Site Recovery 提供 Capacity Planner 帮助你为源环境、站点恢复组件、网络和存储分配适当的资源。可以在快速模式下运行 Planner，以便根据 VM、磁盘和存储的平均数量进行估计；或者在详细模式下运行 Planner，以输入工作负荷级别的数据。开始之前，需要满足以下条件：
+Site Recovery 提供 Capacity Planner，帮助你为源环境、站点恢复组件、网络和存储分配适当的资源。可以在快速模式下运行 Planner，以便根据 VM、磁盘和存储的平均数量进行估计；或者在详细模式下运行 Planner，以输入工作负荷级别的数据。开始之前，需要满足以下条件：
 
-- 收集有关复制环境的信息，包括 VM 数、每个 VM 的磁盘数和每个磁盘的存储。
-- 估计复制数据的每日更改（变动）率。可以使用 [Hyper-V 副本 Capacity Planner](https://www.microsoft.com/download/details.aspx?id=39057) 来帮助执行此操作。
+* 收集有关复制环境的信息，包括 VM 数、每个 VM 的磁盘数和每个磁盘的存储。
+* 估计复制数据的每日更改（变动）率。可以使用 [Hyper-V 副本 Capacity Planner](https://www.microsoft.com/download/details.aspx?id=39057) 来帮助执行此操作。
 
 1.	单击“下载”以下载该工具，然后开始运行。[阅读](/documentation/articles/site-recovery-capacity-planner/)该工具随附的文章。
 2.	完成后，请在“是否已运行 Capacity Planner?”中选择“是”。
@@ -301,11 +267,10 @@ Site Recovery 提供 Capacity Planner 帮助你为源环境、站点恢复组件
 
 可以使用 Capacity Planner 工具计算复制（初始复制，然后是增量复制）所需的带宽。若要控制复制所用的带宽量，可以使用几个选项：
 
-- **限制带宽**：复制到 Azure 的 Hyper-V 流量经过特定的 Hyper-V 主机。可以在主机服务器上限制带宽。
-- **调整带宽**：可以使用几个注册表项来控制用于复制的带宽。
+* **限制带宽**：复制到 Azure 的 Hyper-V 流量经过特定的 Hyper-V 主机。可以在主机服务器上限制带宽。
+* **调整带宽**：可以使用几个注册表项来控制用于复制的带宽。
 
 #### 限制带宽
-
 1. 在 Hyper-V 主机服务器上打开 Microsoft Azure 备份 MMC 管理单元。默认情况下，Microsoft Azure 备份的快捷方式位于桌面上或 C:\\Program Files\\Microsoft Azure Recovery Services Agent\\bin\\wabadmin 中。
 2. 在管理单元中，单击“更改属性”。
 3. 在“限制”选项卡上，选择“为备份操作启用 Internet 带宽使用限制”，然后设置工作时间和非工作时间的限制。有效范围为每秒 512 Kbps 到 102 Mbps。
@@ -320,22 +285,18 @@ Site Recovery 提供 Capacity Planner 帮助你为源环境、站点恢复组件
 
 **Set-OBMachineSetting -NoThrottle** 表示不需要限制。
 
-
 #### 影响网络带宽
-
 1. 在注册表中导航到 **HKEY\_LOCAL\_MACHINE\\SOFTWARE\\Microsoft\\Microsofte Azure Backup\\Replication**。
-	- 若要影响复制磁盘上的带宽流量，请修改 **UploadThreadsPerVM** 值，或者创建该项（如果不存在）。
-	- 若要影响用于从 Azure 故障回复流量的带宽，请修改 **DownloadThreadsPerVM** 值。
+   * 若要影响复制磁盘上的带宽流量，请修改 **UploadThreadsPerVM** 值，或者创建该项（如果不存在）。
+   * 若要影响用于从 Azure 故障回复流量的带宽，请修改 **DownloadThreadsPerVM** 值。
 2. 默认值为 4。在“过度预配型”网络中，这些注册表项需要更改，不能使用默认值。最大值为 32。监视流量以优化值。
 
 ## 步骤 6：启用复制
-
 现在，请按如下所述启用复制：
 
 1. 单击“步骤 2: 复制应用程序”>“源”。首次启用复制后，请在保管库中单击“+复制”，对其他计算机启用复制。
 
-	![启用复制](./media/site-recovery-hyper-v-site-to-azure/enable-replication.png)  
-
+    ![启用复制](./media/site-recovery-hyper-v-site-to-azure/enable-replication.png)  
 
 2. 在“源”边栏选项卡中选择 Hyper-V 站点。然后，单击“确定”。
 3. 在“目标”中，选择保管库订阅，以及故障转移后要在 Azure 中使用的故障转移模型（经典或资源管理）。
@@ -349,33 +310,33 @@ Site Recovery 提供 Capacity Planner 帮助你为源环境、站点恢复组件
 
     ![启用复制](./media/site-recovery-hyper-v-site-to-azure/enable-replication5-for-exclude-disk.png)  
 
-7. 在“属性”>“配置属性”中，选择所选 VM 的操作系统和 OS 磁盘。默认选择 VM 的所有磁盘进行复制。可能需要从复制中排除磁盘，避免将不需要的数据复制到 Azure，从而减少带宽消耗。例如，可能不需要复制包含临时数据的磁盘，或者在重新启动计算机或应用程序时会刷新数据（例如 pagefile.sys 或 Microsoft SQL Server tempdb）的磁盘。取消选中磁盘即可将磁盘从复制中排除。验证 Azure VM 名称（目标名称）是否符合 [Azure 虚拟机要求](/documentation/articles/site-recovery-best-practices/#azure-virtual-machine-requirements)并根据需要对其进行修改。然后，单击“确定”。可以稍后再设置其他属性。
+7. 在“属性”>“配置属性”中，选择所选 VM 的操作系统和 OS 磁盘。默认选择 VM 的所有磁盘进行复制。可能需要从复制中排除磁盘，避免将不需要的数据复制到 Azure，从而减少带宽消耗。例如，可能不需要复制包含临时数据的磁盘，或者在重新启动计算机或应用程序时会刷新数据（例如 pagefile.sys 或 Microsoft SQL Server tempdb）的磁盘。取消选中磁盘即可将磁盘从复制中排除。验证 Azure VM 名称（目标名称）是否符合 [Azure 虚拟机要求](/documentation/articles/site-recovery-support-matrix-to-azure/#failed-over-azure-vm-requirements)并根据需要对其进行修改。然后，单击“确定”。可以稍后再设置其他属性。
 
  	![启用复制](./media/site-recovery-hyper-v-site-to-azure/enable-replication6-with-exclude-disk.png)  
 
 
 	 > [AZURE.NOTE]
-	 > 
-	 > * 只能从复制中排除基本磁盘。不能排除 OS 磁盘，也不建议排除动态磁盘。ASR 无法识别来宾 VM 中的 VHD 磁盘是基本磁盘还是动态磁盘。如果未排除所有依赖性动态卷磁盘，则会将受保护的动态磁盘视为故障转移 VM 上的故障磁盘，该磁盘上的数据无法访问。
+	 >
+	 > * 只能从复制中排除基本磁盘。不能排除 OS 磁盘，并且不建议排除动态磁盘。Site Recovery 无法在来宾 VM 内识别 VHD 磁盘是基本磁盘还是动态磁盘。如果未排除所有相关动态卷磁盘，则受保护的动态磁盘会在故障转移 VM 时显示为故障磁盘，且无法访问该磁盘上的数据。
 	> * 启用复制后，无法添加或删除要复制的磁盘。如果想要添加或排除磁盘，需要禁用 VM 保护，然后重新启用保护。
 	> * 如果某个应用程序需要有排除的磁盘才能正常运行，则故障转移到 Azure 之后，需要在 Azure 中手动创建该磁盘，以便复制的应用程序可以运行。也可将 Azure
 	> * 自动化集成到恢复计划中，以便在故障转移计算机期间创建磁盘。
-	> * 在 Azure 中手动创建的磁盘不会进行故障回复。例如，如果直接在 Azure VM 中故障转移三个磁盘并创建两个，则只会将进行过故障转移的三个磁盘从 Azure 故障回复到 Hyper-V。不能包括在故障回复过程中或从 Hyper-V 到 Azure 的反向复制过程中手动创建的磁盘。
+	> * 在 Azure 中手动创建的磁盘不会执行故障回复。例如，如果直接在 Azure VM 中故障转移三个磁盘并创建两个，则只会将进行过故障转移的三个磁盘从 Azure 故障回复到 Hyper-V。不能包括在故障回复过程中或从 Hyper-V 到 Azure 的反向复制过程中手动创建的磁盘。
 	>
 	>   	
 
-8. 在“复制设置”>“配置复制设置”中，选择要应用于受保护 VM 的复制策略。然后，单击“确定”。可以在“设置”>“复制策略”>“策略名称”>“编辑设置”中修改复制策略。应用的更改将用于已在复制的计算机和新计算机。
+8. 在“复制设置”>“配置复制设置”中，选择要应用于受保护 VM 的复制策略。然后，单击“确定”。可以在“复制策略”> 策略名称 >“编辑设置”中修改复制策略。应用的更改将用于已在复制的计算机和新计算机。
 
 	![启用复制](./media/site-recovery-hyper-v-site-to-azure/enable-replication7.png)  
 
 
-可以在“设置”>“作业”>“Site Recovery 作业”中，跟踪“启用保护”作业的进度。在“完成保护”作业运行之后，计算机就可以进行故障转移了。
+可以在“作业”>“Site Recovery 作业”中，跟踪“启用保护”作业的进度。在“完成保护”作业运行之后，计算机就可以进行故障转移了。
 
 ### 查看和管理 VM 属性
 
 建议你验证源计算机的属性。
 
-1. 单击“设置”>“受保护的项”>“复制的项”，然后选择计算机。
+1. 在“受保护的项”中，单击“复制的项”，然后选择计算机。
 
 	![启用复制](./media/site-recovery-hyper-v-site-to-azure/test-failover1.png)  
 
@@ -386,13 +347,14 @@ Site Recovery 提供 Capacity Planner 帮助你为源环境、站点恢复组件
 
 3. 在“计算和网络”>“计算属性”中，可以指定 Azure VM 名称和目标大小。根据需要修改名称，使其符合 Azure 要求。你还可以查看和修改目标网络、子网，以及要分配到 Azure VM 的 IP 地址的相关信息。注意以下事项：
 
-	- 可以设置目标 IP 地址。如果未提供地址，故障转移的计算机将使用 DHCP。如果设置了无法用于故障转移的地址，故障转移将会失败。如果地址可用于测试故障转移网络，则同一个目标 IP 地址可用于测试故障转移。
-	- 网络适配器数目根据你为目标虚拟机指定的大小确定，如下所示：
+   * 可以设置目标 IP 地址。如果未提供地址，故障转移的计算机将使用 DHCP。如果设置了无法用于故障转移的地址，故障转移将会失败。如果地址可用于测试故障转移网络，则同一个目标 IP 地址可用于测试故障转移。
+   * 网络适配器数目根据你为目标虚拟机指定的大小来确定，如下所述：
 
-		- 如果源计算机上的网络适配器数小于或等于目标计算机大小允许的适配器数，则目标的适配器数将与源相同。
-		- 如果源虚拟机的适配器数大于目标大小允许的数目，则使用目标大小允许的最大数目。
-		- 例如，如果源计算机有两个网络适配器，而目标计算机大小支持四个，则目标计算机将有两个适配器。如果源计算机有两个适配器，但支持的目标大小只支持一个，则目标计算机只有一个适配器。
-		- 如果 VM 有多个网络适配器，它们将全部连接到同一个网络。
+     * 如果源计算机上的网络适配器数小于或等于目标计算机大小允许的适配器数，则目标的适配器数将与源相同。
+     * 如果源虚拟机的适配器数大于目标大小允许的数目，则使用目标大小允许的最大数目。
+     * 例如，如果源计算机有两个网络适配器，而目标计算机大小支持四个，则目标计算机将有两个适配器。如果源计算机有两个适配器，但支持的目标大小只支持一个，则目标计算机只有一个适配器。
+     * 如果 VM 有多个网络适配器，它们将全部连接到同一个网络。
+     * 如果虚拟机有多个网络适配器，列表中显示的第一个适配器将成为 Azure 虚拟机中的*默认*网络适配器。
 
 	![启用复制](./media/site-recovery-hyper-v-site-to-azure/test-failover4.png)
 
@@ -401,7 +363,6 @@ Site Recovery 提供 Capacity Planner 帮助你为源环境、站点恢复组件
 
 
 ### 准备在故障转移后连接到 Azure VM
-
 如果想要在故障转移后使用 RDP 连接到 Azure VM，请确保执行以下操作：
 
 **故障转移之前在本地计算机上**：
@@ -434,13 +395,13 @@ Site Recovery 提供 Capacity Planner 帮助你为源环境、站点恢复组件
 ## 步骤 7：运行测试故障转移
 为了对部署进行测试，你可以针对单个虚拟机或单个恢复计划（其中包含一个或多个虚拟机）运行测试故障转移。
 
-1. 若要故障转移单个计算机，请在“设置”>“复制的项”中，单击“VM”>“+测试性故障转移”图标。
-1. 若要故障转移某个恢复计划，请在“设置”>“恢复计划”中，右键单击该计划 >“测试性故障转移”。若要创建恢复计划，请[遵循这些说明](/documentation/articles/site-recovery-create-recovery-plans/)。
-1. 在“测试性故障转移”中，选择 Azure VM 在故障转移之后要连接到的 Azure 网络。
-1. 单击“确定”开始故障转移。若要跟踪进度，可以单击 VM 以打开其属性，或者在保管库名称 >“设置”>“作业”>“Site Recovery 作业”中选择“测试性故障转移”作业。
-1. 故障转移完成后，还应该能够看到副本 Azure 计算机显示在 Azure 门户的“虚拟机”中。应确保 VM 的大小适当、已连接到相应的网络，并且正在运行。
-1. 如果[已准备好故障转移后的连接](#prepare-to-connect-to-azure-vms-after-failover)，应该能够连接到 Azure VM。
-1. 完成后，单击恢复计划中的“清理测试故障转移”。在“说明”中，记录并保存与测试故障转移相关联的任何观测结果。这会删除测试故障转移期间创建的虚拟机。
+1. 若要故障转移单个计算机，请在“复制的项”中，单击“VM”>“+测试性故障转移”图标。
+2. 若要故障转移某个恢复计划，请在“恢复计划”中，右键单击该计划 >“测试故障转移”。若要创建恢复计划，请[遵循这些说明](/documentation/articles/site-recovery-create-recovery-plans/)。
+3. 在“测试性故障转移”中，选择 Azure VM 在故障转移之后要连接到的 Azure 网络。
+4. 单击“确定”开始故障转移。若要跟踪进度，可以单击 VM 以打开其属性，或者在保管库名称 >“作业”>“Site Recovery 作业”中选择“测试性故障转移”作业。
+5. 故障转移完成后，还应该能够看到副本 Azure 计算机显示在 Azure 门户的“虚拟机”中。应确保 VM 的大小适当、已连接到相应的网络，并且正在运行。
+6. 如果[已准备好故障转移后的连接](#prepare-to-connect-to-azure-vms-after-failover)，应该能够连接到 Azure VM。
+7. 完成后，单击恢复计划中的“清理测试故障转移”。在“说明”中，记录并保存与测试故障转移相关联的任何观测结果。这会删除测试故障转移期间创建的虚拟机。
 
 有关详细信息，请参阅[到 Azure 的测试故障转移](/documentation/articles/site-recovery-test-failover-to-azure/)文档。
 
@@ -449,7 +410,7 @@ Site Recovery 提供 Capacity Planner 帮助你为源环境、站点恢复组件
 
 完成你的计算机的初始复制后，可以根据需要调用故障转移。Site Recovery 支持各种类型的故障转移 - 测试故障转移、计划的故障转移和非计划的故障转移。[详细了解](/documentation/articles/site-recovery-failover/)不同类型的故障转移，以及有关何时和如何执行其中每种故障转移的详细说明。
 
-> [AZURE.NOTE] 如果目的是将虚拟机迁移到 Azure，我们强烈建议使用[计划的故障转移操作](/documentation/articles/site-recovery-failover/#run-a-planned-failover-primary-to-secondary)，将虚拟机迁移到 Azure。使用测试故障转移在 Azure 中验证已迁移的应用程序后，请使用[完成迁移](#Complete-migration-of-your-virtual-machines-to-Azure)中所述的步骤完成虚拟机迁移。不需要执行提交或删除。“完成迁移”可以完成迁移、去除对虚拟机的保护，并使虚拟机不再产生 Azure Site Recovery 费用。
+> [AZURE.NOTE] 如果目的是将虚拟机迁移到 Azure，我们强烈建议使用[计划的故障转移操作](/documentation/articles/site-recovery-failover/)，将虚拟机迁移到 Azure。使用测试故障转移在 Azure 中验证已迁移的应用程序后，请使用[完成迁移](#Complete-migration-of-your-virtual-machines-to-Azure)中所述的步骤完成虚拟机迁移。不需要执行提交或删除。“完成迁移”可以完成迁移、去除对虚拟机的保护，并使虚拟机不再产生 Azure Site Recovery 费用。
 
 
 ### 运行计划的故障转移
@@ -480,23 +441,21 @@ Site Recovery 提供 Capacity Planner 帮助你为源环境、站点恢复组件
 >[AZURE.NOTE] 以下步骤仅适用于将虚拟机迁移到 Azure
 
 1. 按[此处](/documentation/articles/site-recovery-failover/)所述执行计划的故障转移
-2. 在“设置”>“复制的项”中，右键单击虚拟机并选择“完成迁移”
+2. 在“复制的项”中，右键单击虚拟机并选择“完成迁移”
 
-    ![completemigration](./media/site-recovery-hyper-v-site-to-azure/migrate.png)  
+    ![完成迁移](./media/site-recovery-hyper-v-site-to-azure/migrate.png)  
 
-3. 单击“确定”完成迁移。若要跟踪进度，可以单击 VM 打开其属性，或者在“设置”>“Site Recovery 作业”中使用“完成迁移”作业。
-
+3. 单击“确定”完成迁移。若要跟踪进度，可以单击 VM 打开其属性，或者在“Site Recovery 作业”中使用“完成迁移”作业。
 
 ## 监视部署
-
 下面是监视 Site Recovery 部署的配置设置、状态和运行状况的方式：
 
 1. 单击保管库名称以访问“概要”仪表板。在此仪表板中，可以看到 Site Recovery 作业、复制状态、恢复计划、服务器运行状况和事件。可以自定义“概要”以显示最有用的磁贴和布局，包括其他 Site Recovery 和备份保管库的状态。
 
-	![概要](./media/site-recovery-hyper-v-site-to-azure/essentials.png)  
-
+    ![概要](./media/site-recovery-hyper-v-site-to-azure/essentials.png)  
 
 2. 在“运行状况”磁贴中，可以监视发生问题的站点服务器，以及 Site Recovery 在过去 24 小时内引发的事件。
-3. 可以在“复制的项”、“恢复计划”和“Site Recovery 作业”磁贴中管理和监视复制。可通过“设置”->“作业”->“Site Recovery 作业”深入了解作业。
+3. 可以在“复制的项”、“恢复计划”和“Site Recovery 作业”磁贴中管理和监视复制。可通过“作业”>“Site Recovery 作业”钻取到不同的作业以获取更多详细信息。
 
-<!---HONumber=Mooncake_0206_2017-->
+<!---HONumber=Mooncake_0327_2017-->
+<!--Update_Description: wording update-->
