@@ -39,7 +39,6 @@
 
 **部署** | **支持**
 --- | ---
-**VMware VM/物理服务器** | vSphere 6.0、5.5 或具有最新更新的 5.1
 **Hyper V（有 Virtual Machine Manager）** | System Center Virtual Machine Manager 2016 和 System Center Virtual Machine Manager 2012 R2
 
   >[AZURE.NOTE]目前不支持混合使用 Windows Server 2016 和 2012 R2 主机的 System Center Virtual Machine Manager 2016 云。
@@ -48,7 +47,6 @@
 
 **部署** | **支持**
 --- | ---
-**VMware VM/物理服务器** | vCenter 5.5 或 6.0（仅支持 5.5 功能）
 **Hyper V（无 Virtual Machine Manager）** | Windows Server 2016、具有最新更新的 Windows Server 2012 R2
 **Hyper V（有 Virtual Machine Manager）** | Windows Server 2016、具有最新更新的 Windows Server 2012 R2。<br/><br/> Windows Server 2016 主机应由 System Center Virtual Machine Manager 2016 管理。
 
@@ -73,7 +71,7 @@
 
 **配置** | **物理服务器** | **Hyper V（无 Virtual Machine Manager）** | **Hyper V（有 Virtual Machine Manager）**
 --- | --- | --- | ---
-NIC 组合 | <p>是</p><p>在物理机中不受支持</p>| 是 | 是
+NIC 组合 | 在物理机中不受支持| 是 | 是
 VLAN | 是 | 是 | 是
 IPv4 | 是 | 是 | 是
 IPv6 | 否 | 否 | 否

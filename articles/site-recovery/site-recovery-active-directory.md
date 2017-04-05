@@ -198,4 +198,4 @@ Sysvol 和 Netlogon 共享不可用
 阅读[我可以保护哪些工作负荷？](/documentation/articles/site-recovery-workload/)详细了解如何使用 Azure Site Recovery 保护企业工作负荷。
 
 <!---HONumber=Mooncake_0327_2017-->
-<!--Update_Description:--add DC prerequisites for test failover; add common issues of test failover and troubleshooting commands >
+<!--Update_Description:--add DC prerequisites for test failover; add common issues of test failover and troubleshooting commands -->
