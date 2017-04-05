@@ -40,9 +40,9 @@
 
 测试单个 TCP 流 10 秒：
 
-接收方参数：ntttcp -r -t 10 -P 1
+接收方参数：`ntttcp -r -t 10 -P 1`
 
-发送方参数：ntttcp -s10.27.33.7 -t 10 -n 1 -P 1
+发送方参数：`ntttcp -s10.27.33.7 -t 10 -n 1 -P 1`
 
 > [AZURE.NOTE]
 以上示例应仅用于确认配置。本文档稍后会介绍测试的有效示例。
@@ -63,25 +63,25 @@
 
 允许 ntttcp 通过 Windows 防火墙，如下所示：
 
-netsh advfirewall firewall add rule program=<PATH>\\ntttcp.exe name="ntttcp" protocol=any dir=in action=allow enable=yes profile=ANY
+    netsh advfirewall firewall add rule program=<PATH>\ntttcp.exe name="ntttcp" protocol=any dir=in action=allow enable=yes profile=ANY
 
 例如，如果已将 ntttcp.exe 复制到“c:\\tools”文件夹中，则此命令为：
 
-netsh advfirewall firewall add rule program=c:\\tools\\ntttcp.exe name="ntttcp" protocol=any dir=in action=allow enable=yes profile=ANY
+    netsh advfirewall firewall add rule program=c:\tools\ntttcp.exe name="ntttcp" protocol=any dir=in action=allow enable=yes profile=ANY
 
 #### 运行 NTTTCP 测试
 
 在接收方上启动 NTTTCP（**从 CMD 运行**，而不是从 PowerShell 运行）：
 
-ntttcp -r -m [2*#num\_cores],*,a.b.c.r -t 300
+    ntttcp -r -m [2*#num_cores],*,a.b.c.r -t 300
 
 如果 VM 有四个核心且 IP 地址为 10.0.0.4，则为如下所示：
 
-ntttcp -r -m 8,*,10.0.0.4 -t 300
+    ntttcp -r -m 8,*,10.0.0.4 -t 300
 
 在发送方上启动 NTTTCP（**从 CMD 运行**，而不是从 PowerShell 运行）：
 
-ntttcp -s -m 8,*,10.0.0.4 -t 300
+    ntttcp -s -m 8,*,10.0.0.4 -t 300
 
 等待结果。
 

@@ -61,7 +61,7 @@
 
     预期输出：
 
-       {
+        {
             "publicIp": {
                 "idleTimeoutInMinutes": 4,
                 "ipAddress": "52.176.43.167",
@@ -69,7 +69,7 @@
                 "publicIPAllocationMethod": "Static",
                 "resourceGuid": "79e8baa3-33ce-466a-846c-37af3c721ce1"
             }
-        }
+         }
 
    * `--resource-group`：将在其中创建公共 IP 的资源组的名称。
    * `--name`：公共 IP 的名称。

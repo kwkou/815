@@ -38,7 +38,7 @@
 本文适用于通过 Azure Resource Manager 部署模型创建的 VM 和 NIC。Azure 建议通过 Resource Manager 部署模型创建资源，而不是通过经典部署模型。如果不熟悉两种模型之间的区别，请阅读[了解 Azure 部署模型](/documentation/articles/resource-manager-deployment-model/)一文。
 
 本文的剩余部分提供了所有 NIC 相关任务的执行步骤。每节分别列出了：
-- 在 Azure 门户预览中完成任务的步骤。要完成这些步骤，必须登录 [Azure 门户预览](http://portal.azure.cn)。如果没有帐户，请注册[试用帐户](https://azure.microsoft.com/free)。
+- 在 Azure 门户预览中完成任务的步骤。要完成这些步骤，必须登录 [Azure 门户预览](http://portal.azure.cn)。如果没有帐户，请注册[试用帐户](/pricing/1rmb-trial/)。
 - 使用 Azure PowerShell 完成任务的命令，内附命令参考链接。请完成[如何安装和配置 Azure PowerShell](https://docs.microsoft.com/powershell/azureps-cmdlets-docs) 文章中的步骤，安装和配置 PowerShell。若要获取 PowerShell 命令的帮助，请在示例中键入 `get-help <command> -full`。
 - 使用 Azure 命令行接口 (CLI) 完成任务的命令，内附命令参考链接。请完成[如何安装和配置 Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli) 文章中的步骤安装 Azure CLI。若要获取 CLI 命令的帮助，请键入 `az <command> -h`。
 
@@ -121,7 +121,7 @@ Azure 门户预览会使用动态专用 IP 地址创建名为 **ipconfig1** 的�
 - 接收未流向某 IP 地址的网络流量，该地址被分配给 NIC 获得任意 IP 配置。
 - 发送其源 IP 地址与分配给其某个 IP 配置的地址不同的网络流量。
 
-对于接收 VM 需转发的流量的 VM，必须向其附加的每个 NIC 启用该设置。无论 VM 上附加了一个或多个 NIC，其均可转发流量。IP 转发是一项 Azure 设置，但 VM 还必须运行可转发流量的应用程序，如防火墙、WAN 优化和负载均衡应用程序。当 VM 运行网络应用程序时，VM 通常被称为网络虚拟设备 (NVA)。有关 NVA 的部署准备列表，可查看 [Azure 应用商店](https://azuremarketplace.microsoft.com/marketplace/apps/category/networking?page=1&subcategories=appliances)。IP 转发通常用于用户定义的路由。若要详细了解用户定义的路由，请参阅[用户定义的路由](/documentation/articles/virtual-networks-udr-overview/)一文。
+对于接收 VM 需转发的流量的 VM，必须向其附加的每个 NIC 启用该设置。无论 VM 上附加了一个或多个 NIC，其均可转发流量。IP 转发是一项 Azure 设置，但 VM 还必须运行可转发流量的应用程序，如防火墙、WAN 优化和负载均衡应用程序。当 VM 运行网络应用程序时，VM 通常被称为网络虚拟设备 (NVA)。IP 转发通常用于用户定义的路由。若要详细了解用户定义的路由，请参阅[用户定义的路由](/documentation/articles/virtual-networks-udr-overview/)一文。
 
 若要更改 NIC 的 IP 转发设置，请完成以下步骤：
 
@@ -177,7 +177,7 @@ Azure DHCP 服务器将 NIC 的主 IP 配置的专用 IP 地址分配到 VM 操�
 在以下场景中，有必要为 NIC 分配多个 IP 地址：
 - 在一台服务器上托管具有不同 IP 地址和 SSL 证书的多个网站或服务。
 - VM 用作网络虚拟设备，例如防火墙或负载均衡器。
-- 能够将任何 NIC 的任意专用 IP 地址添加到 Azure 负载均衡器后端池。过去，只有主 NIC 的主 IP 地址才能添加到后端池。若要了解有关如何对多个 IP 配置进行负载均衡的详细信息，请阅读[对多个 IP 配置进行负载均衡](/documentation/articles/load-balancer-multiple-ip/)一文。目前，仅可在预览版中将辅助 NIC 中的辅助 IP 配置或 IP 配置添加到后端池。该功能的可用性和可靠性可能不及正式版本中的此类功能。该功能不受支持，能力可能会受约束，并且可能不是在所有 Azure 位置都可用。有关此功能可用性和状态的最新通知，请查看 [Azure 虚拟网络更新](https://azure.microsoft.com/updates/?product=virtual-network)页面。
+- 能够将任何 NIC 的任意专用 IP 地址添加到 Azure 负载均衡器后端池。过去，只有主 NIC 的主 IP 地址才能添加到后端池。若要了解有关如何对多个 IP 配置进行负载均衡的详细信息，请阅读[对多个 IP 配置进行负载均衡](/documentation/articles/load-balancer-multiple-ip/)一文。目前，仅可在预览版中将辅助 NIC 中的辅助 IP 配置或 IP 配置添加到后端池。该功能的可用性和可靠性可能不及正式版本中的此类功能。该功能不受支持，能力可能会受约束，并且可能不是在所有 Azure 位置都可用。
 
 仅可在订阅中使用有限数量的公共 IP 地址，且仅可向 NIC 分配一定数量的专用 IP 地址。若要详细了解这些限制，请参阅 [Azure 限制](/documentation/articles/azure-subscription-service-limits/#azure-resource-manager-virtual-networking-limits)一文。
 
@@ -186,7 +186,7 @@ Azure DHCP 服务器将 NIC 的主 IP 配置的专用 IP 地址分配到 VM 操�
 可在 [Azure 限制](/documentation/articles/azure-subscription-service-limits/#azure-resource-manager-virtual-networking-limits)文章列出的限制内，向 NIC 添加必要的 IP 配置。
 
 >[AZURE.NOTE]
-目前仅可在预览版中向 NIC 添加辅助 IP 配置。该功能的可用性和可靠性可能不及正式版本中的此类功能。该功能不受支持，能力可能会受约束，并且可能不是在所有 Azure 位置都可用。有关此功能可用性和状态的最新通知，请查看 [Azure 虚拟网络更新](https://azure.microsoft.com/updates/?product=virtual-network)页面。
+目前仅可在预览版中向 NIC 添加辅助 IP 配置。该功能的可用性和可靠性可能不及正式版本中的此类功能。该功能不受支持，能力可能会受约束，并且可能不是在所有 Azure 位置都可用。
 
 若要向 NIC 添加 IP 配置，请完成以下步骤：
  
@@ -287,7 +287,7 @@ Azure DHCP 服务器将 NIC 的主 IP 配置的专用 IP 地址分配到 VM 操�
 - 默认情况下，来自 VM 的所有出站流量均发送至分配给主 NIC 的主 IP 配置的 IP 地址。当然，可控制将哪个 IP 地址用于 VM 操作系统中的出站流量。
 - 以前，同一可用性集中的所有 VM 均需具有单个或多个 NIC。现在，同一可用性集中可存在带任意数量 NIC 的 VM。但仅可在创建 VM 时将其添加到可用性集。若要详细了解可用性集，请参阅[在 Azure 中管理 Windows 虚拟机可用性](/documentation/articles/virtual-machines-windows-manage-availability/#configure-multiple-virtual-machines-in-an-availability-set-for-redundancy)一文。
 - 虽然附加到同一 VM 的 NIC 可连接到 VNet 中的不同子网，但 NIC 必须全部连接到同一个 VNet。
-- 可将任意主/辅助 NIC 的 IP 配置的任意 IP 地址添加到 Azure 负载均衡器后端池。过去，只有主 NIC 的主 IP 地址才能添加到后端池。目前，仅可在预览版中向后端池添加辅助 NIC 中的 IP 地址。该功能的可用性和可靠性可能不及正式版本中的此类功能。该功能不受支持，能力可能会受约束，并且可能不是在所有 Azure 位置都可用。有关此功能可用性和状态的最新通知，请查看 [Azure 虚拟网络更新](https://azure.microsoft.com/updates/?product=virtual-network)页面。
+- 可将任意主/辅助 NIC 的 IP 配置的任意 IP 地址添加到 Azure 负载均衡器后端池。过去，只有主 NIC 的主 IP 地址才能添加到后端池。目前，仅可在预览版中向后端池添加辅助 NIC 中的 IP 地址。该功能的可用性和可靠性可能不及正式版本中的此类功能。该功能不受支持，能力可能会受约束，并且可能不是在所有 Azure 位置都可用。
 
 ### <a name="vm-create"></a>在创建虚拟机时附加一个或多个 NIC
 

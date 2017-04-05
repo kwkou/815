@@ -28,7 +28,7 @@
 本文介绍了如何使用公共 IP 地址。本文适用于通过 Azure Resource Manager 部署模型部署的资源。虽然可将公共 IP 地址分配给通过经典部署模型部署的资源，但这些地址的应用方式与通过 Resource Manager 部署的资源不同。如果不熟悉两种模型之间的区别，请阅读[了解 Azure 部署模型](/documentation/articles/resource-manager-deployment-model/)一文。
 
 本文的剩余部分列出了相应步骤，引导你完成所有公共 IP 地址相关任务。每节分别列出了：
-- 在 Azure 门户预览中完成任务的步骤。要完成这些步骤，必须登录 [Azure 门户预览](http://portal.azure.cn)。如果没有帐户，请注册[试用帐户](https://azure.microsoft.com/free)。
+- 在 Azure 门户预览中完成任务的步骤。要完成这些步骤，必须登录 [Azure 门户预览](http://portal.azure.cn)。如果没有帐户，请注册[试用帐户](/pricing/1rmb-trial/)。
 - 使用 Azure PowerShell 完成任务的命令，内附命令参考链接。请完成[如何安装和配置 Azure PowerShell](https://docs.microsoft.com/powershell/azureps-cmdlets-docs) 文章中的步骤，安装和配置 PowerShell。若要获取 PowerShell 命令的帮助，请在示例中键入 `get-help <command> -full`。
 - 使用 Azure 命令行接口 (CLI) 完成任务的命令，内附命令参考链接。请完成[如何安装和配置 Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli) 文章中的步骤安装 Azure CLI。若要获取 CLI 命令的帮助，请键入 `az <command> -h`。
 
