@@ -1,22 +1,22 @@
----
-title: 使用 Azure Site Recovery 保护 Active Directory 和 DNS | Microsoft Docs
-description: 本文介绍如何使用 Azure Site Recovery 为 Active Directory 实现灾难恢复解决方案。
-services: site-recovery
-documentationcenter: ''
-author: prateek9us
-manager: gauravd
-editor: ''
+<properties
+    pageTitle="使用 Azure Site Recovery 保护 Active Directory 和 DNS | Azure"
+    description="本文介绍如何使用 Azure Site Recovery 为 Active Directory 实现灾难恢复解决方案。"
+    services="site-recovery"
+    documentationcenter=""
+    author="prateek9us"
+    manager="gauravd"
+    editor="" />
+<tags
+    ms.assetid="af1d9b26-1956-46ef-bd05-c545980b72dc"
+    ms.service="site-recovery"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.tgt_pltfrm="na"
+    ms.workload="storage-backup-recovery"
+    ms.date="3/17/2017"
+    wacn.date="03/31/2017"
+    ms.author="pratshar" />
 
-ms.assetid: af1d9b26-1956-46ef-bd05-c545980b72dc
-ms.service: site-recovery
-ms.devlang: na
-ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: storage-backup-recovery
-ms.date: 3/17/2017
-ms.author: pratshar
-
----
 # 使用 Azure Site Recovery 保护 Active Directory 和 DNS
 企业应用程序，例如 SharePoint、Dynamics AX 和 SAP，都依赖于 Active Directory 和 DNS 基础结构才能正常工作。在为应用程序创建灾难恢复解决方案时，请务必记住，需要先保护和恢复 Active Directory 与 DNS，再保护和恢复其他应用程序组件，以确保灾难发生时一切可正常工作。
 

@@ -3,7 +3,7 @@
     description="本文介绍 Azure Site Recovery 部署的最佳做法"
     services="site-recovery"
     documentationCenter=""
-    author="rayne-wiselman""
+    author="rayne-wiselman"
     manager="cfreeman"
     editor=""
     ROBOTS="NOINDEX, NOFOLLOW"
