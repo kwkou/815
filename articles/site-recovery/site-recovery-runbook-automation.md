@@ -5,8 +5,7 @@
     documentationcenter=""
     author="ruturaj"
     manager="gauravd"
-    editor="" />  
-
+    editor="" />
 <tags
     ms.assetid="ecece14d-5f92-4596-bbaf-5204addb95c2"
     ms.service="site-recovery"
@@ -14,8 +13,8 @@
     ms.tgt_pltfrm="na"
     ms.topic="article"
     ms.workload="required"
-    ms.date="02/06/2017"
-    wacn.date="03/10/2017"
+    ms.date="02/22/2017"
+    wacn.date="03/31/2017"
     ms.author="ruturajd@microsoft.com" />
 
 # 将 Azure 自动化 Runbook 添加到恢复计划
@@ -23,7 +22,7 @@
 
 如果尚未听说过 Azure 自动化，请在[此处](/home/features/automation/)注册。阅读有关 [Azure 站点恢复](/home/features/site-recovery/) 的详细信息，并在[此处](/blog/?p=166264)了解如何使用恢复计划来协调到 Azure 的恢复。
 
-在本教程中，我们将了解如何将 Azure 自动化 Runbook 集成到恢复计划中。我们将自动执行以前需要手动干预的简单任务，并了解如何将多步骤恢复转换成单击恢复操作。我们还将了解如何解决出错的简单脚本。
+在本教程中，我们将了解如何将 Azure 自动化 Runbook 集成到恢复计划中。我们会自动执行以前需要手动干预的简单任务，并了解如何将多步骤恢复转换成单击恢复操作。
 
 ## 在 Azure 中保护应用程序
 
@@ -313,4 +312,4 @@ CloudServiceName | 要在其下创建虚拟机的 Azure 云服务名称。
 
 [Azure 自动化示例脚本](http://gallery.technet.microsoft.com/scriptcenter/site/search?f[0].Type=User&f[0].Value=SC%20Automation%20Product%20Team&f[0].Text=SC%20Automation%20Product%20Team "Azure 自动化示例脚本")
 
-<!---HONumber=Mooncake_0306_2017-->
+<!---HONumber=Mooncake_0327_2017-->

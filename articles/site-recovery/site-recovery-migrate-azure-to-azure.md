@@ -13,14 +13,12 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="01/23/2017"
-    wacn.date="03/10/2017"
+    ms.date="02/19/2017"
+    wacn.date="03/31/2017"
     ms.author="raynew" />
 
-#  使用 Azure Site Recovery 在 Azure 区域之间迁移 Azure IaaS 虚拟机
-
+# 使用 Azure Site Recovery 在 Azure 区域之间迁移 Azure IaaS 虚拟机
 ## 概述
-
 欢迎使用 Azure Site Recovery！ 如果想要在 Azure 区域之间迁移 Azure VM，请参阅此文章。在开始之前，请注意：
 
 - **目前仅能从一个区域迁移到另一个区域。可以将 VM 从一个 Azure 区域故障转移到另一个 Azure 区域，但不能重新对其进行故障回复。**
@@ -62,4 +60,4 @@
 
 若要详细了解其他复制方案，请参阅[什么是 Azure Site Recovery？](/documentation/articles/site-recovery-overview/)
 
-<!---HONumber=Mooncake_0306_2017-->
+<!---HONumber=Mooncake_0327_2017-->

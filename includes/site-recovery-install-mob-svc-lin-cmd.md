@@ -29,4 +29,4 @@
 sudo ./install -t both -a host -R Agent -d /usr/local/ASR -i 192.168.2.53 -p 443 -s y -c https -P /tmp/MobSvc.passphrase
 ```
 
-<!---HONumber=Mooncake_0206_2017-->
+<!---HONumber=Mooncake_0327_2017-->

@@ -3,8 +3,8 @@
     description="Azure Site Recovery 可以协调虚拟机和物理服务器的复制、故障转移与恢复。了解有关故障转移到 Azure 或辅助数据中心的信息。"
     services="site-recovery"
     documentationcenter=""
-    author="rayne-wiselman"
-    manager="jwhit"
+    author="prateek9us"
+    manager="gauravd"
     editor="" />
 <tags
     ms.assetid="44813a48-c680-4581-a92e-cecc57cc3b1e"
@@ -13,10 +13,9 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="storage-backup-recovery"
-    ms.date="1/04/2017"
-    wacn.date="02/14/2017"
-    ms.author="raynew" />  
-
+    ms.date="2/15/2017"
+    wacn.date="03/31/2017"
+    ms.author="pratshar" />
 
 # Site Recovery 中的故障转移
 
@@ -165,5 +164,4 @@ Azure 到 Hyper-V 站点 | 不支持 | 支持 | 不支持
 	>[AZURE.NOTE] 如果在“数据同步”步骤中取消故障回复作业，则本地 VM 将处于损坏状态。这是因为数据同步将 Azure VM 磁盘中的最新数据复制到本地数据磁盘上，在同步完成之前，磁盘数据并不处于一致状态。如果在取消数据同步后启动本地 VM，则可能无法启动。重新触发故障转移以完成数据同步。
  
 
-<!---HONumber=Mooncake_0206_2017-->
-<!--Update_Description: remove the content of "运行测试故障转移", replace with a reference to a dedicated article; wording update-->
+<!---HONumber=Mooncake_0327_2017-->

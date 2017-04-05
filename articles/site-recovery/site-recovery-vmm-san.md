@@ -1,12 +1,11 @@
 <properties
-    pageTitle="使用 Azure Site Recovery 和 SAN 复制 VMM 中的 Hyper-V VM | Azure"
-    description="本文介绍了如何通过 Azure Site Recovery 使用 SAN 复制在两个站点之间复制 Hyper-V 虚拟机。"
+    pageTitle="通过 Azure Site Recovery 使用 SAN 复制 VMM 中的 Hyper-V VM | Azure"
+    description="本文介绍如何通过 Azure Site Recovery 使用 SAN 复制在两个站点之间复制 Hyper-V 虚拟机。"
     services="site-recovery"
     documentationcenter=""
     author="rayne-wiselman"
     manager="jwhit"
-    editor="" />  
-
+    editor="" />
 <tags
     ms.assetid="eb480459-04d0-4c57-96c6-9b0829e96d65"
     ms.service="site-recovery"
@@ -14,18 +13,16 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="01/24/2017"
-    wacn.date="03/15/2017"
-    ms.author="raynew" />  
-
+    ms.date="02/19/2017"
+    wacn.date="03/31/2017"
+    ms.author="raynew" />
 
 # 使用 Azure Site Recovery 和 SAN 将 VMM 云中的 Hyper-V VM 复制到辅助站点
 
 
-若要部署 [Azure Site Recovery](/documentation/articles/site-recovery-overview/) 来管理从 Hyper-V VM（在 System Center Virtual Machine Manager 云中管理）到辅助 VMM 站点的复制，请参考本文。
+如果需要部署 [Azure Site Recovery](/documentation/articles/site-recovery-overview/) 以便在经典管理门户中使用 Azure Site Recovery 来管理从 Hyper-V VM（在 System Center Virtual Machine Manager 云中管理）到辅助 VMM 站点的复制，请参考本文。在新 Azure 门户中无法使用此方案。
 
 
-本文包含某个方案的概述、有关在 VMM 中配置 SAN 存储的说明，以及有关在 Site Recovery 门户中设置复制的指导。文章结尾部分介绍了如何测试故障转移，以确保一切都按预期进行。
 
 
 
@@ -207,7 +204,7 @@
 
    * 如果要使用自定义代理，请在安装提供程序之前进行设置。当配置自定义代理设置时，会运行测试来检查代理连接。
    * 如果确定要使用自定义代理，或者默认代理要求进行身份验证，则应输入代理详细信息，包括地址和端口。
-   * 应可从 VMM 服务器访问这些 URL。
+   * 应当可从 VMM 服务器访问必需的 URL。
    * 如果使用自定义代理，系统将使用指定的代理凭据自动创建一个 VMM 运行方式帐户 (DRAProxyAccount)。对代理服务器进行配置以便该帐户可以通过身份验证。可在 VMM 控制台中修改运行方式帐户设置（“设置”>“安全”>“运行方式帐户”>“DRAProxyAccount”）。必须重新启动 VMM 服务才能让更改生效。
 10. 在“注册密钥”中，选择从门户下载并复制到 VMM 服务器的密钥。
 11. 在“保管库名称”中，验证将要在其中注册服务器的保管库的名称。
@@ -344,7 +341,7 @@ Site Recovery、VMM 和 SMI-S 提供程序会设置目标站点存储 LUN，并�
     ![选择虚拟机](./media/site-recovery-vmm-san/r-plan-vm.png)  
 
 4. 创建恢复计划后，它将出现在“恢复计划”选项卡上的列表中。选择计划，然后选择“测试故障转移”。
-5. 在“确认测试故障转移”页面上，选择“无”。启用此选项后，故障转移副本 VM 不会连接到任何网络。这会测试 VM 是否按预期方式进行故障转移，但不会测试网络环境。有关其他网络选项的详细信息，请参阅 [Site Recovery 故障转移](/documentation/articles/site-recovery-failover/#run-a-test-failover)。
+5. 在“确认测试故障转移”页面上，选择“无”。启用此选项后，故障转移副本 VM 不会连接到任何网络。这会测试 VM 是否按预期方式进行故障转移，但不会测试网络环境。有关其他网络选项的详细信息，请参阅 [Site Recovery 故障转移](/documentation/articles/site-recovery-failover/)。
 
 
 	![选择测试网络](./media/site-recovery-vmm-san/test-fail1.png)
@@ -374,5 +371,5 @@ Site Recovery、VMM 和 SMI-S 提供程序会设置目标站点存储 LUN，并�
 
 运行测试性故障转移检查环境是否按预期运行之后，请参阅 [Site Recovery 故障转移](/documentation/articles/site-recovery-failover/)，了解不同类型的故障转移。
 
-<!---HONumber=Mooncake_0306_2017-->
-<!--Update_Description: whole content wording refine-->
+<!---HONumber=Mooncake_0327_2017-->
+<!--Update_Description: wording update-->
