@@ -1,268 +1,253 @@
-<properties 
-   pageTitle="如何在 ARM 模式下使用 CLI 设置静态专用 IP | Azure"
-   description="了解静态 IP (DIP) 以及如何在 ARM 模式下使用 CLI 对其进行管理"
-   services="virtual-network"
-   documentationCenter="na"
-   authors="telmosampaio"
-   manager="carmonm"
-   editor="tysonn"
-   tags="azure-resource-manager"
-/>
-<tags 
-   ms.service="virtual-network"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
-   ms.date="03/15/2016"
-   wacn.date="12/26/2016"
-   ms.author="jdial" />
+<properties
+    pageTitle="为 VM 配置专用 IP 地址 - Azure CLI 2.0 | Azure"
+    description="了解如何使用 Azure 命令行接口 (CLI) 2.0 为虚拟机配置专用 IP 地址。"
+    services="virtual-network"
+    documentationcenter="na"
+    author="jimdial"
+    manager="timlt"
+    editor="tysonn"
+    tags="azure-resource-manager" />
+<tags
+    ms.assetid="40b03a1a-ea00-454c-b716-7574cea49ac0"
+    ms.service="virtual-network"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.tgt_pltfrm="na"
+    ms.workload="infrastructure-services"
+    ms.date="02/16/2017"
+    wacn.date="03/31/2017"
+    ms.author="jdial"
+    ms.custom="H1Hack27Feb2017" />  
 
-# 如何在 Azure CLI 中设置静态专用 IP 地址
+
+# 使用 Azure CLI 2.0 为虚拟机配置专用 IP 地址
 
 [AZURE.INCLUDE [virtual-networks-static-private-ip-selectors-arm-include](../../includes/virtual-networks-static-private-ip-selectors-arm-include.md)]
 
+## 用于完成任务的 CLI 版本 
+
+可使用以下 CLI 版本之一完成任务：
+
+- [Azure CLI 1.0](/documentation/articles/virtual-networks-static-private-ip-cli-nodejs/)：用于经典部署模型和资源管理部署模型的 CLI
+- [Azure CLI 2.0](#specify-a-static-private-ip-address-when-creating-a-vm) - 下一代 CLI，适用于资源管理部署模型（详见本文）
+
 [AZURE.INCLUDE [virtual-networks-static-private-ip-intro-include](../../includes/virtual-networks-static-private-ip-intro-include.md)]
 
->[AZURE.IMPORTANT]在使用 Azure 资源之前，请务必了解 Azure 当前使用两种部署模型：资源管理器部署模型和经典部署模型。在使用任何 Azure 资源之前，请确保你了解[部署模型和工具](/documentation/articles/azure-classic-rm/)。可以通过单击本文顶部的选项卡来查看不同工具的文档。本文介绍资源管理器部署模型。你还可以[管理经典部署模型中的静态专用 IP 地址](/documentation/articles/virtual-networks-static-private-ip-classic-cli/)。
+[AZURE.INCLUDE [azure-arm-classic-important-include](../../includes/azure-arm-classic-important-include.md)]
+
+本文介绍 Resource Manager 部署模型。你还可以[管理经典部署模型中的静态专用 IP 地址](/documentation/articles/virtual-networks-static-private-ip-classic-cli/)。
 
 [AZURE.INCLUDE [virtual-networks-static-ip-scenario-include](../../includes/virtual-networks-static-ip-scenario-include.md)]
 
-以下示例 Azure CLI 命令需要已创建的简单环境。若要按本文档所示运行命令，首先需要构建[创建 VNet](/documentation/articles/virtual-networks-create-vnet-arm-cli/) 中所述的测试环境。
+> [AZURE.NOTE]
+下面的 Azure CLI 2.0 命令示例需要一个已创建好的简单环境。若要按本文档所示运行命令，首先需要构建[创建 VNet](/documentation/articles/virtual-networks-create-vnet-arm-cli/) 中所述的测试环境。
 
-## 如何在创建 VM 时指定静态专用 IP 地址
+## <a name="specify-a-static-private-ip-address-when-creating-a-vm"></a> 在创建 VM 时指定静态专用 IP 地址
+
 若要在名为 *TestVNet* 的 VNet 的 *FrontEnd* 子网中使用静态专用 IP *192.168.1.101* 创建名为 *DNS01* 的 VM，请按照以下步骤进行操作：
 
-1. 如果从未使用过 Azure CLI，请参阅[安装和配置 Azure CLI](/documentation/articles/xplat-cli-install/)，并按照说明进行操作，直到选择 Azure 帐户和订阅。
+1. 如果还未安装，请安装和配置最新版 [Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-az-cli2)，并使用 [az login](https://docs.microsoft.com/cli/azure/#login) 登录到 Azure 帐户。
 
-2. 运行 **azure config mode** 命令以切换到资源管理器模式，如下所示。
+2. 通过 [azure network public-ip create](https://docs.microsoft.com/cli/azure/network/public-ip#create) 命令为该 VM 创建公共 IP。在输出后显示的列表说明了所用的参数。
 
-		azure config mode arm
+    > [AZURE.NOTE]
+    根据你的环境，可能需在该步骤及后续步骤中使用不同的参数值。
 
-	预期输出：
+        az network public-ip create \
+        --name TestPIP \
+        --resource-group TestRG \
+        --location chinaeast \
+        --allocation-method Static
 
-		info:    New mode is arm
+    预期输出：
 
-3. 运行 **azure network public-ip create** 以为该 VM 创建公共 IP。输出后显示的列表阐释了所用参数。
+       {
+            "publicIp": {
+                "idleTimeoutInMinutes": 4,
+                "ipAddress": "52.176.43.167",
+                "provisioningState": "Succeeded",
+                "publicIPAllocationMethod": "Static",
+                "resourceGuid": "79e8baa3-33ce-466a-846c-37af3c721ce1"
+            }
+        }
 
-		azure network public-ip create -g TestRG -n TestPIP -l centralus
-	
-	预期输出：
+   * `--resource-group`：将在其中创建公共 IP 的资源组的名称。
+   * `--name`：公共 IP 的名称。
+   * `--location`：将在其中创建公共 IP 的 Azure 区域。
 
-		info:    Executing command network public-ip create
-		+ Looking up the public ip "TestPIP"
-		+ Creating public ip address "TestPIP"
-		+ Looking up the public ip "TestPIP"
-		data:    Id                              : /subscriptions/628dad04-b5d1-4f10-b3a4-dc61d88cf97c/resourceGroups/TestRG/providers/Microsoft.Network/publicIPAddresses/TestPIP
-		data:    Name                            : TestPIP
-		data:    Type                            : Microsoft.Network/publicIPAddresses
-		data:    Location                        : centralus
-		data:    Provisioning state              : Succeeded
-		data:    Allocation method               : Dynamic
-		data:    Idle timeout                    : 4
-		info:    network public-ip create command OK
+3. 运行 [az network nic create](https://docs.microsoft.com/cli/azure/network/nic#create) 命令，创建具有静态专用 IP 的 NIC。在输出后显示的列表说明了所用的参数。
 
-	- **-g（或 --resource-group）**。将在其中创建公共 IP 的资源组的名称。
-	- **-n（或 --name）**。公共 IP 的名称。
-	- **-l（或 --location）**。将在其中创建公共 IP 的 Azure 区域。对于我们的方案，为 *centralus*。
+        az network nic create \
+        --resource-group TestRG \
+        --name TestNIC \
+        --location chinaeast \
+        --subnet FrontEnd \
+        --private-ip-address 192.168.1.101 \
+        --vnet-name TestVNet
 
-3. 运行 **azure network nic create** 命令，创建具有静态专用 IP 的 NIC。输出后显示的列表阐释了所用参数。
+    预期输出：
 
-		azure network nic create -g TestRG -n TestNIC -l centralus -a 192.168.1.101 -m TestVNet -k FrontEnd
+        {
+            "newNIC": {
+                "dnsSettings": {
+                "appliedDnsServers": [],
+                "dnsServers": []
+                },
+                "enableIPForwarding": false,
+                "ipConfigurations": [
+                {
+                    "etag": "W/"<guid>"",
+                    "id": "/subscriptions/<guid>/resourceGroups/TestRG/providers/Microsoft.Network/networkInterfaces/TestNIC/ipConfigurations/ipconfig1",
+                    "name": "ipconfig1",
+                    "properties": {
+                    "primary": true,
+                    "privateIPAddress": "192.168.1.101",
+                    "privateIPAllocationMethod": "Static",
+                    "provisioningState": "Succeeded",
+                    "subnet": {
+                        "id": "/subscriptions/<guid>/resourceGroups/TestRG/providers/Microsoft.Network/virtualNetworks/TestVNet/subnets/FrontEnd",
+                        "resourceGroup": "TestRG"
+                    }
+                    },
+                    "resourceGroup": "TestRG"
+                }
+                ],
+                "provisioningState": "Succeeded",
+                "resourceGuid": "<guid>"
+            }
+        }
 
-	预期输出：
+    参数：
 
-		+ Looking up the network interface "TestNIC"
-		+ Looking up the subnet "FrontEnd"
-		+ Creating network interface "TestNIC"
-		+ Looking up the network interface "TestNIC"
-		data:    Id                              : /subscriptions/628dad04-b5d1-4f10-b3a4-dc61d88cf97c/resourceGroups/TestRG/providers/Microsoft.Network/networkInterfaces/TestNIC
-		data:    Name                            : TestNIC
-		data:    Type                            : Microsoft.Network/networkInterfaces
-		data:    Location                        : centralus
-		data:    Provisioning state              : Succeeded
-		data:    Enable IP forwarding            : false
-		data:    IP configurations:
-		data:      Name                          : NIC-config
-		data:      Provisioning state            : Succeeded
-		data:      Private IP address            : 192.168.1.101
-		data:      Private IP Allocation Method  : Static
-		data:      Subnet                        : /subscriptions/628dad04-b5d1-4f10-b3a4-dc61d88cf97c/resourceGroups/TestRG/providers/Microsoft.Network/virtualNetworks/TestVNet/subnets/FrontEnd
-		data:
-		info:    network nic create command OK
+    * `--private-ip-address`：NIC 的静态专用 IP 地址。
+    * `--vnet-name`：要在其中创建 NIC 的 VNet 的名称。
+    * `--subnet`：要在其中创建 NIC 的子网的名称。
 
-	- **-a（或 --private-ip-address）**。NIC 的静态专用 IP 地址。
-	- **-m（或 --subnet-vnet-name）**。将在其中创建 NIC 的 VNet 的名称。
-	- **-k（或 --subnet-name）**。将在其中创建 NIC 的子网的名称。
+4. 运行 [azure vm create](https://docs.microsoft.com/cli/azure/vm/nic#create) 命令，使用上面创建的公共 IP 和 NIC 创建 VM。输出后显示的列表阐释了所用参数。
 
-4. 运行 **azure vm create** 命令，使用上面创建的公共 IP 和 NIC 创建 VM。输出后显示的列表阐释了所用参数。
+        az vm create \
+        --resource-group TestRG \
+        --name DNS01 \
+        --location chinaeast \
+        --image Debian \
+        --admin-username adminuser \
+        --ssh-key-value ~/.ssh/id_rsa.pub \
+        --nics TestNIC
 
-		azure vm create -g TestRG -n DNS01 -l centralus -y Windows -f TestNIC -i TestPIP -F TestVNet -j FrontEnd -o vnetstorage -q bd507d3a70934695bc2128e3e5a255ba__RightImage-Windows-2012R2-x64-v14.2 -u adminuser -p AdminP@ssw0rd
+    预期输出：
 
-	预期输出：
+        {
+            "fqdns": "",
+            "id": "/subscriptions/<guid>/resourceGroups/TestRG/providers/Microsoft.Compute/virtualMachines/DNS01",
+            "location": "chinaeast",
+            "macAddress": "00-0D-3A-92-C1-66",
+            "powerState": "VM running",
+            "privateIpAddress": "192.168.1.101",
+            "publicIpAddress": "",
+            "resourceGroup": "TestRG"
+        }
 
-		info:    Executing command vm create
-		+ Looking up the VM "DNS01"
-		info:    Using the VM Size "Standard_A1"
-		warn:    The image "bd507d3a70934695bc2128e3e5a255ba__RightImage-Windows-2012R2-x64-v14.2" will be used for VM
-		info:    The [OS, Data] Disk or image configuration requires storage account
-		+ Looking up the storage account vnetstorage
-		+ Looking up the NIC "TestNIC"
-		info:    Found an existing NIC "TestNIC"
-		info:    Found an IP configuration with virtual network subnet id "/subscriptions/628dad04-b5d1-4f10-b3a4-dc61d88cf97c/resourceGroups/TestRG/providers/Microsoft.Network/virtualNetworks/TestVNet/subnets/FrontEnd" in the NIC "TestNIC"
-		info:    Found public ip parameters, trying to setup PublicIP profile
-		+ Looking up the public ip "TestPIP"
-		info:    Found an existing PublicIP "TestPIP"
-		info:    Configuring identified NIC IP configuration with PublicIP "TestPIP"
-		+ Updating NIC "TestNIC"
-		+ Looking up the NIC "TestNIC"
-		+ Creating VM "DNS01"
-		info:    vm create command OK
+   基本 [az vm create](https://docs.microsoft.com/cli/azure/vm#create) 参数之外的参数。
 
-	- **-y（或 --os-type）**。VM 的操作系统类型，可以为 *Windows* 或 *Linux*。
-	- **-f（或 --nic-name）**。VM 将使用的 NIC 的名称。
-	- **-i（或 --public-ip-name）**。VM 将使用的公共 IP 的名称。
-	- **-F（或 --vnet-name）**。将在其中创建 VM 的 VNet 的名称。
-	- **-j（或 --vnet-subnet-name）**。将在其中创建 VM 的子网的名称。
+   * `--nics`：VM 附加到的 NIC 的名称。
+   
+## 检索 VM 的静态专用 IP 地址信息
 
-## 如何检索 VM 的静态专用 IP 地址信息
+若要查看所创建的静态专用 IP 地址，请运行以下 Azure CLI 命令并观察 *Private IP alloc-method* 和 *Private IP address* 的值：
 
-若要查看使用上面的脚本创建的 VM 的静态专用 IP 地址信息，请运行以下 Azure CLI 命令并观察 *Private IP alloc-method* 和 *Private IP address* 的值：
-
-	azure vm show -g TestRG -n DNS01
+    az vm show -g TestRG -n DNS01 --show-details --query 'privateIps'
 
 预期输出：
 
-	info:    Executing command vm show
-	+ Looking up the VM "DNS01"
-	+ Looking up the NIC "TestNIC"
-	+ Looking up the public ip "TestPIP
-	data:    Id                              :/subscriptions/628dad04-b5d1-4f10-b3a4-dc61d88cf97c/resourceGroups/TestRG/providers/Microsoft.Compute/virtualMachines/DNS01
-	data:    ProvisioningState               :Succeeded
-	data:    Name                            :DNS01
-	data:    Location                        :centralus
-	data:    Type                            :Microsoft.Compute/virtualMachines
-	data:
-	data:    Hardware Profile:
-	data:      Size                          :Standard_A1
-	data:
-	data:    Storage Profile:
-	data:      Source image:
-	data:        Id                          :/628dad04-b5d1-4f10-b3a4-dc61d88cf97c/services/images/bd507d3a70934695bc2128e3e5a255ba__RightImage-Windows-2012R2-x64-v14.2
-	data:
-	data:      OS Disk:
-	data:        OSType                      :Windows
-	data:        Name                        :cli08d7bd987a0112a8-os-1441774961355
-	data:        Caching                     :ReadWrite
-	data:        CreateOption                :FromImage
-	data:        Vhd:
-	data:          Uri                       :https://vnetstorage2.blob.core.chinacloudapi.cn/vhds/cli08d7bd987a0112a8-os-1441774961355vhd
-	data:
-	data:    OS Profile:
-	data:      Computer Name                 :DNS01
-	data:      User Name                     :adminuser
-	data:      Windows Configuration:
-	data:        Provision VM Agent          :true
-	data:        Enable automatic updates    :true
-	data:
-	data:    Network Profile:
-	data:      Network Interfaces:
-	data:        Network Interface #1:
-	data:          Id                        :/subscriptions/628dad04-b5d1-4f10-b3a4-dc61d88cf97c/resourceGroups/TestRG/providers/Microsoft.Network/networkInterfaces/TestNIC
-	data:          Primary                   :true
-	data:          MAC Address               :00-0D-3A-90-1A-A8
-	data:          Provisioning State        :Succeeded
-	data:          Name                      :TestNIC
-	data:          Location                  :centralus
-	data:            Private IP alloc-method :Static
-	data:            Private IP address      :192.168.1.101
-	data:            Public IP address       :40.122.213.159
-	info:    vm show command OK
+    "192.168.1.101"
 
-## 如何从 VM 中删除静态专用 IP 地址
-无法在用于 Resource Manager 的 Azure CLI 中删除 NIC 的静态专用 IP 地址。必须创建使用动态 IP 的新 NIC，从 VM 删除以前的 NIC，然后将新 NIC 添加到 VM。若要更改上述命令使用的 VM 的 NIC，请执行以下步骤。
-	
-1. 运行 **azure network nic create** 命令以使用动态 IP 分配创建新 NIC。请注意，这次不需要指定 IP 地址。
+若要显示该 VM 的 NIC 的具体 IP 信息，请具体查询 NIC：
 
-		azure network nic create -g TestRG -n TestNIC2 -l centralus -m TestVNet -k FrontEnd
+    az network nic show \
+    -g testrg \
+    -n testnic \
+    --query 'ipConfigurations[0].{PrivateAddress:privateIpAddress,IPVer:privateIpAddressVersion,IpAllocMethod:p
+    rivateIpAllocationMethod,PublicAddress:publicIpAddress}'
 
-	预期输出：
+输出类似于：
 
-		info:    Executing command network nic create
-		+ Looking up the network interface "TestNIC2"
-		+ Looking up the subnet "FrontEnd"
-		+ Creating network interface "TestNIC2"
-		+ Looking up the network interface "TestNIC2"
-		data:    Id                              : /subscriptions/628dad04-b5d1-4f10-b3a4-dc61d88cf97c/resourceGroups/TestRG/providers/Microsoft.Network/networkInterfaces/TestNIC2
-		data:    Name                            : TestNIC2
-		data:    Type                            : Microsoft.Network/networkInterfaces
-		data:    Location                        : centralus
-		data:    Provisioning state              : Succeeded
-		data:    Enable IP forwarding            : false
-		data:    IP configurations:
-		data:      Name                          : NIC-config
-		data:      Provisioning state            : Succeeded
-		data:      Private IP address            : 192.168.1.6
-		data:      Private IP Allocation Method  : Dynamic
-		data:      Subnet                        : /subscriptions/628dad04-b5d1-4f10-b3a4-dc61d88cf97c/resourceGroups/TestRG/providers/Microsoft.Network/virtualNetworks/TestVNet/subnets/FrontEnd
-		data:
-		info:    network nic create command OK
+    {
+        "IPVer": "IPv4",
+        "IpAllocMethod": "Static",
+        "PrivateAddress": "192.168.1.101",
+        "PublicAddress": null
+    }
+
+## 从 VM 中删除静态专用 IP 地址
+
+无法在用于 Resource Manager 部署的 Azure CLI 中删除 NIC 的静态专用 IP 地址。必须具备以下条件：
+- 创建使用动态 IP 的新 NIC
+- 在新建的 NIC 的 VM 上设置 NIC。
+
+若要更改上述命令使用的 VM NIC，请执行以下步骤。
+
+1. 运行 **azure network nic create** 命令，通过具有新 IP 地址的动态 IP 分配创建新 NIC。请注意，由于未指定任何 IP 地址，因此分配方法为**动态**。
+
+        az network nic create     \
+        --resource-group TestRG     \
+        --name TestNIC2     \
+        --location chinaeast     \
+        --subnet FrontEnd    \
+        --vnet-name TestVNet
+
+    预期输出：
+
+        {
+            "newNIC": {
+                "dnsSettings": {
+                "appliedDnsServers": [],
+                "dnsServers": []
+                },
+                "enableIPForwarding": false,
+                "ipConfigurations": [
+                {
+                    "etag": "W/"<guid>"",
+                    "id": "/subscriptions/<guid>/resourceGroups/TestRG/providers/Microsoft.Network/networkInterfaces/TestNIC2/ipConfigurations/ipconfig1",
+                    "name": "ipconfig1",
+                    "properties": {
+                    "primary": true,
+                    "privateIPAddress": "192.168.1.4",
+                    "privateIPAllocationMethod": "Dynamic",
+                    "provisioningState": "Succeeded",
+                    "subnet": {
+                        "id": "/subscriptions/<guid>/resourceGroups/TestRG/providers/Microsoft.Network/virtualNetworks/TestVNet/subnets/FrontEnd",
+                        "resourceGroup": "TestRG"
+                    }
+                    },
+                    "resourceGroup": "TestRG"
+                }
+                ],
+                "provisioningState": "Succeeded",
+                "resourceGuid": "0808a61c-476f-4d08-98ee-0fa83671b010"
+            }
+        }
 
 2. 运行 **azure vm set** 命令以更改 VM 使用的 NIC。
 
-		azure vm set -g TestRG -n DNS01 -N TestNIC2
+        azure vm set -g TestRG -n DNS01 -N TestNIC2
 
-	预期输出：
+    预期输出：
 
-		info:    Executing command vm set
-		+ Looking up the VM "DNS01"
-		+ Looking up the NIC "TestNIC2"
-		+ Updating VM "DNS01"
-		info:    vm set command OK
+        [
+            {
+                "id": "/subscriptions/0e220bf6-5caa-4e9f-8383-51f16b6c109f/resourceGroups/TestRG/providers/Microsoft.Network/networkInterfaces/TestNIC3",
+                "primary": true,
+                "resourceGroup": "TestRG"
+            }
+        ]
 
-3. 如果需要，请运行 **azure network nic delete** 命令以删除旧 NIC。
-
-		azure network nic delete -g TestRG -n TestNIC --quiet
-
-	预期输出：
-
-		info:    Executing command network nic delete
-		+ Looking up the network interface "TestNIC"
-		+ Deleting network interface "TestNIC"
-		info:    network nic delete command OK
-
-## 如何将静态专用 IP 地址添加到现有 VM
-若要将静态专用 IP 地址添加到使用上面的脚本创建的 VM 所使用的 NIC，请运行以下命令：
-
-	azure network nic set -g TestRG -n TestNIC2 -a 192.168.1.101
-
-预期输出：
-
-	info:    Executing command network nic set
-	+ Looking up the network interface "TestNIC2"
-	+ Updating network interface "TestNIC2"
-	+ Looking up the network interface "TestNIC2"
-	data:    Id                              : /subscriptions/628dad04-b5d1-4f10-b3a4-dc61d88cf97c/resourceGroups/TestRG/providers/Microsoft.Network/networkInterfaces/TestNIC2
-	data:    Name                            : TestNIC2
-	data:    Type                            : Microsoft.Network/networkInterfaces
-	data:    Location                        : centralus
-	data:    Provisioning state              : Succeeded
-	data:    MAC address                     : 00-0D-3A-90-29-25
-	data:    Enable IP forwarding            : false
-	data:    Virtual machine                 : /subscriptions/628dad04-b5d1-4f10-b3a4-dc61d88cf97c/resourceGroups/TestRG/providers/Microsoft.Compute/virtualMachines/DNS01
-	data:    IP configurations:
-	data:      Name                          : NIC-config
-	data:      Provisioning state            : Succeeded
-	data:      Private IP address            : 192.168.1.101
-	data:      Private IP Allocation Method  : Static
-	data:      Subnet                        : /subscriptions/628dad04-b5d1-4f10-b3a4-dc61d88cf97c/resourceGroups/TestRG/providers/Microsoft.Network/virtualNetworks/TestVNet/subnets/FrontEnd
-	data:
-	info:    network nic set command OK
-
+    > [AZURE.NOTE]
+    如果 VM 的空间足以拥有多个 NIC，请运行 **azure network nic delete** 命令删除旧版 NIC。
+   
 ## 后续步骤
+* 了解[保留公共 IP](/documentation/articles/virtual-networks-reserved-public-ip/) 地址。
+* 了解[实例层级公共 IP (ILPIP)](/documentation/articles/virtual-networks-instance-level-public-ip/) 地址。
+* 查阅[保留 IP REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn722420.aspx)。
 
-- 了解[保留公共 IP](/documentation/articles/virtual-networks-reserved-public-ip/) 地址。
-- 了解[实例层级公共 IP (ILPIP)](/documentation/articles/virtual-networks-instance-level-public-ip/) 地址。
-- 查阅[保留 IP REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn722420.aspx)。
-
-<!---HONumber=Mooncake_Quality_Review_1215_2016-->
+<!---HONumber=Mooncake_0327_2017-->
+<!--Update_Description: change from CLI 1.0 to CLI 2.0-->

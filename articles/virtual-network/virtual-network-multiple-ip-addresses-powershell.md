@@ -15,7 +15,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="infrastructure-services"
     ms.date="11/30/2016"
-    wacn.date="03/24/2017"
+    wacn.date="03/31/2017"
     ms.author="jdial;annahar" />  
 
 
@@ -66,9 +66,9 @@
     - 一个具有静态公共 IP 地址的公共 IP 地址资源
     - 一个具有公共 IP 地址资源和动态专用 IP 地址的 IP 配置
 
-            $myPublicIp1     = New-AzureRmPublicIpAddress -Name "myPublicIp1" -ResourceGroupName $myResourceGroup -Location $location -AllocationMethod Static
-            $IpConfigName1  = "IPConfig-1"
-            $IpConfig1      = New-AzureRmNetworkInterfaceIpConfig -Name $IpConfigName1 -Subnet $Subnet -PublicIpAddress $myPublicIp1 -Primary
+        $myPublicIp1     = New-AzureRmPublicIpAddress -Name "myPublicIp1" -ResourceGroupName $myResourceGroup -Location $location -AllocationMethod Static
+        $IpConfigName1  = "IPConfig-1"
+        $IpConfig1      = New-AzureRmNetworkInterfaceIpConfig -Name $IpConfigName1 -Subnet $Subnet -PublicIpAddress $myPublicIp1 -Primary
 
     请注意以上命令中的 `-Primary` 开关。为 NIC 分配多个 IP 配置时，必须将一个配置指定为 *Primary*。
 
@@ -81,7 +81,7 @@
     更改所创建子网上的可用有效地址后的 **$IPAddress** 变量的值。若要检查地址 10.0.0.5 在子网上是否可用，请输入命令 `Test-AzureRmPrivateIPAddressAvailability -IPAddress 10.0.0.5 -VirtualNetwork $myVnet`。如果该地址可用，输出会返回 *True*。如果不可用，输出会返回 *False* 以及可用地址的列表。输入以下命令，创建具有一个静态公共 IP 地址和一个静态专用 IP 地址的新公共 IP 地址资源和新 IP 配置：
 
         $IpConfigName2 = "IPConfig-2"
-        $IPAddress     = 10.0.0.5
+        $IPAddress     = "10.0.0.5"
         $myPublicIp2   = New-AzureRmPublicIpAddress -Name "myPublicIp2" -ResourceGroupName $myResourceGroup `
         -Location $location -AllocationMethod Static
         $IpConfig2     = New-AzureRmNetworkInterfaceIpConfig -Name $IpConfigName2 `
@@ -120,6 +120,7 @@
 完成以下步骤即可将专用和公共 IP 地址添加到 NIC。以下部分的示例假定用户的 VM 已完成本文[方案](#Scenario)中描述的三项 IP 配置，但这不是必需的。
 
 1. 打开 PowerShell 命令提示符，在单个 PowerShell 会话中完成本部分余下的步骤。如果尚未安装并配置 PowerShell，请先完成[How to install and configure Azure PowerShell](https://docs.microsoft.com/powershell/azureps-cmdlets-docs)（如何安装和配置 Azure PowerShell）一文中所述的步骤。
+2. 按照**创建具有多个 IP 地址的 VM** 部分中的步骤 2，注册公共预览版。
 3. 将以下 $Variable 的“值”更改为要向其添加 IP 地址的 NIC 的名称，以及 NIC 所在的资源组和位置：
 
         $NICname         = "myNIC"
@@ -218,5 +219,5 @@
 
 [AZURE.INCLUDE [virtual-network-multiple-ip-addresses-os-config.md](../../includes/virtual-network-multiple-ip-addresses-os-config.md)]
 
-<!---HONumber=Mooncake_0320_2017-->
-<!--Update_Description: add steps for registering preivew features-->
+<!---HONumber=Mooncake_0327_2017-->
+<!--Update_Description: wording update-->

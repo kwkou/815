@@ -14,8 +14,8 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="big-data"
-    ms.date="02/08/2017"
-    wacn.date="03/10/2017"
+    ms.date="03/03/2017"
+    wacn.date="03/31/2017"
     ms.author="larryfr" />
 
 # 使用 HDInsight 中的 .NET SDK for Hadoop 运行 Pig 作业
@@ -34,40 +34,27 @@ HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 中使用 HDInsi
     > [AZURE.IMPORTANT]
     Linux 是在 HDInsight 3.4 版或更高版本上使用的唯一操作系统。有关详细信息，请参阅 [HDInsight 在 Windows 上弃用](/documentation/articles/hdinsight-component-versioning/#hdi-version-32-and-33-nearing-deprecation-date)。
 
-* Visual Studio 2012、2013 或 2015
+* Visual Studio 2012、2013、2015 或 2017。
 
-## <a id="create"></a>创建应用程序
+## <a id="create"></a> 创建应用程序
 
 HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 中使用 HDInsight 群集的操作。
 
 1. 从 Visual Studio 的“文件”菜单中选择“新建”，然后选择“项目”。
 
-2. 对于新项目，请键入或选择以下值。
+2. 对于新项目，请键入或选择以下值：
    
-    <table>
-    <tr>
-    <th>属性</th>
-    <th>值</th>
-    </tr>
-    <tr>
-    <th>类别</th>
-    <th>模板/Visual C#/Windows</th>
-    </tr>
-    <tr>
-    <th>模板</th>
-    <th>控制台应用程序</th>
-    </tr>
-    <tr>
-    <th>名称</th>
-    <th>SubmitPigJob</th>
-    </tr>
-    </table>
+   | 属性 | 值 | 
+   | ------ | ------ | 
+   | 类别 | 模板/Visual C#/Windows | 
+   | 模板 | 控制台应用程序 | 
+   | 名称 | SubmitPigJob |
 
 3. 单击“确定”以创建该项目。
 
 4. 从“工具”菜单中，选择“库包管理器”或“Nuget 包管理器”，然后选择“包管理器控制台”。
 
-5. 在控制台中运行以下命令，安装 .NET SDK 包。
+5. 若要安装 .NET SDK 包，请使用以下命令：
    
         Install-Package Microsoft.Azure.Management.HDInsight.Job
 
@@ -124,9 +111,9 @@ HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 中使用 HDInsi
             }
         }
 
-7. 按 **F5** 启动应用程序。
+7. 若要启动应用程序，请按 **F5**。
 
-8. 按 **ENTER** 退出应用程序。
+8. 若要退出应用程序，请按 **ENTER**。
 
 ## <a id="summary"></a>摘要
 
@@ -134,16 +121,14 @@ HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 中使用 HDInsi
 
 ## <a id="nextsteps"></a>后续步骤
 
-有关 HDInsight 中的 Pig 的一般信息。
+有关 HDInsight 中的 Pig 的信息，请参阅[将 Pig 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-pig/)。
 
-* [将 Pig 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-pig/)
-
-有关 HDInsight 上的 Hadoop 的其他使用方法的信息。
+有关如何使用 HDInsight 上的 Hadoop 的详细信息，请参阅以下文档：
 
 * [将 Hive 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-hive/)
 * [将 MapReduce 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-mapreduce/)
 
 [preview-portal]: https://portal.azure.cn/
 
-<!---HONumber=Mooncake_0306_2017-->
-<!--Update_Description: add information about HDInsight Windows is going to be abandoned and update some code-->
+<!---HONumber=Mooncake_0327_2017-->
+<!--Update_Description: wording update-->

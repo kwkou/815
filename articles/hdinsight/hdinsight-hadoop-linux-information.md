@@ -15,7 +15,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="big-data"
     ms.date="02/02/2017"
-    wacn.date="03/10/2017"
+    wacn.date="03/31/2017"
     ms.author="larryfr" />  
 
 
@@ -48,13 +48,13 @@ Linux 是在 HDInsight 3.4 版或更高版本上使用的唯一操作系统。�
 
     curl -u admin:PASSWORD -G "https://CLUSTERNAME.azurehdinsight.cn/api/v1/clusters/CLUSTERNAME/hosts" | jq '.items[].Hosts.host_name'
 
-将 **PASSWORD** 替换为管理员帐户的密码，将 **CLUSTERNAME** 替换为群集的名称。这会返回一个 JSON 文档，其中包含群集中主机的列表，然后 jq 会拉取群集中每个主机的 `host_name` 元素值。
+将 **PASSWORD** 替换为管理员帐户的密码，将 **CLUSTERNAME** 替换为群集的名称。此命令会返回一个 JSON 文档，其中包含群集中主机的列表，然后 jq 会拉取群集中每个主机的 `host_name` 元素值。
 
-若需查找特定服务的节点的名称，可查询 Ambari 以获取该组件。例如，若需查找 HDFS 名称节点的主机，请使用以下命令。
+若需查找特定服务的节点的名称，可查询 Ambari 以获取该组件。例如，若需查找 HDFS 名称节点的主机，请使用以下命令：
 
     curl -u admin:PASSWORD -G "https://CLUSTERNAME.azurehdinsight.cn/api/v1/clusters/CLUSTERNAME/services/HDFS/components/NAMENODE" | jq '.host_components[].HostRoles.host_name'
 
-此请求会返回一个描述该服务的 JSON 文档，然后 jq 就会只拉取主机的 `host_name` 值。
+此命令会返回一个描述该服务的 JSON 文档，然后 jq 就会只拉取主机的 `host_name` 值。
 
 ## 对服务的远程访问
 
@@ -65,7 +65,7 @@ Linux 是在 HDInsight 3.4 版或更高版本上使用的唯一操作系统。�
     身份验证是纯文本身份验证 - 始终使用 HTTPS 来帮助确保连接是安全的。
 
     > [AZURE.IMPORTANT]
-    虽然可以直接通过 Internet 访问群集的 Ambari，但若要使用某些功能，则需要根据访问群集所用的内部域名的节点来达到目的。由于这是内部域名且未公开，因此，在尝试通过 Internet 访问某些功能时，可能会出现“找不到服务器”的错误。
+    虽然可以直接通过 Internet 访问群集的 Ambari，但若要使用某些功能，则需要根据访问群集所用的内部域名的节点来达到目的。由于内部域名无法公开访问，因此，在尝试通过 Internet 访问某些功能时，可能会出现“找不到服务器”的错误。
     ><p>
     > 若要使用 Ambari web UI 的全部功能，请使用 SSH 隧道通过代理将 Web 流量传送到群集头节点。请参阅[使用 SSH 隧道访问 Ambari Web UI、ResourceManager、JobHistory、NameNode、Oozie 和其他 Web UI](/documentation/articles/hdinsight-linux-ambari-ssh-tunnel/)
 
@@ -93,23 +93,25 @@ Linux 是在 HDInsight 3.4 版或更高版本上使用的唯一操作系统。�
 Hadoop 相关文件可在群集节点上的 `/usr/hdp` 中找到。此目录包含以下子目录：
 
 * **2.2.4.9-1**：此目录是根据 HDInsight 使用的 Hortonworks 数据平台版本命名的，因此你的群集上的编号可能不同于此处列出的编号。
-* **current**：此目录包含 **2.2.4.9-1** 目录下的目录的链接，有了此目录，你每次访问某个文件时，便不需要键入版本号（可能会变化）。
+* **当前**：此目录包含 **2.2.4.9-1** 目录下的子目录的链接。由于存在此目录，因此每次要访问某个文件时，不需键入版本号（可能会更改）。
 
-示例数据和 JAR 文件可以在 Hadoop 分布式文件系统 (HDFS) 或 Azure Blob 存储上的 `/example` 和 `/HdiSamples` 处找到。
+示例数据和 JAR 文件可以在 Hadoop 分布式文件系统上的 `/example` 和 `/HdiSamples` 处找到。
 
-## HDFS 和 Blob 存储
+## HDFS 和 Azure 存储
 
-在大部分的 Hadoop 分发中，HDFS 受群集中计算机上的本地存储的支持。尽管这种方式很有效率，但用于基于云的解决方案时可能费用高昂，因为计算资源以小时或分钟为单位计费。
+在大部分的 Hadoop 分发中，HDFS 受群集中计算机上的本地存储的支持。尽管使用本地存储很有效率，但用于基于云的解决方案时可能费用高昂，因为计算资源以小时或分钟为单位计费。
 
-HDInsight 使用 Azure Blob 存储作为默认存储。这可以提供以下优点：
+HDInsight 使用 Azure 存储中的 Blob 作为默认存储。此服务具有以下优点：
 
 * 成本低廉的长期存储
 * 可从外部服务访问，例如网站、文件上载/下载实用程序、各种语言 SDK 和 Web 浏览器
 
-> [AZURE.IMPORTANT]
-Blob 存储容量最多为 4.75 TB，而单个 Blob（从 HDInsight 角度来说是文件）大小最多为 195 GB。
+> [AZURE.WARNING]
+HDInsight 仅支持__常规用途__ Azure 存储帐户。当前不支持 __Blob 存储__帐户类型。
 
-使用 Azure 存储时，通常不需要从 HDInsight 执行任何特殊操作即可访问数据。例如，以下命令会列出 `/example/data` 文件夹中的文件：
+Azure 存储帐户容量最多为 4.75 TB，而单个 Blob（从 HDInsight 角度来说是文件）大小最多为 195 GB。有关详细信息，请参阅 [Understanding blobs](https://docs.microsoft.com/rest/api/storageservices/fileservices/understanding-block-blobs--append-blobs--and-page-blobs)（了解 Blob）。
+
+使用 Azure 存储时，不需要从 HDInsight 执行任何特殊操作即可访问数据。例如，以下命令列出 `/example/data` 文件夹中的文件：
 
     hdfs dfs -ls /example/data
 
@@ -117,7 +119,7 @@ Blob 存储容量最多为 4.75 TB，而单个 Blob（从 HDInsight 角度来说
 
 在访问文件时，一些命令可能需要用户将方案指定为 URI 的一部分。例如，Storm-HDFS 组件需要用户指定方案。使用非默认存储（作为“额外”存储添加到群集的存储）时，必须始终将方案用作 URI 的一部分。
 
-使用 __Blob 存储__时，方案可为以下其中一种：
+使用 __Azure 存储__时，请使用以下 URI 方案之一：
 
 * `wasb:///`：使用未经加密的通信访问默认存储。
 
@@ -134,7 +136,7 @@ Blob 存储容量最多为 4.75 TB，而单个 Blob（从 HDInsight 角度来说
 > [AZURE.NOTE]
 以上代码返回应用到服务器的第一个配置 (`service_config_version=1`)，其中包含此信息。如果要检索创建群集后修改的值，可能需要列出配置版本并检索最新版本。
 
-此命令将返回类似于以下的值：
+此命令返回类似于以下内容的值：
 
 * 如果使用的是 Azure 存储帐户，则为 `wasbs://<container-name>@<account-name>.blob.core.chinacloudapi.cn`。
 
@@ -206,10 +208,10 @@ Blob 存储容量最多为 4.75 TB，而单个 Blob（从 HDInsight 角度来说
 
 ## 如何安装 Hue（或其他 Hadoop 组件）？
 
-HDInsight 是一项托管服务，这意味着如果检测到问题，Azure 可能会自动破坏并重新预配群集中的节点。因此，不建议直接在群集节点上手动安装内容。请在需要安装以下内容时改用 [HDInsight 脚本操作](/documentation/articles/hdinsight-hadoop-customize-cluster/)：
+HDInsight 是托管服务。如果 Azure 检测到群集存在问题，则可能会删除故障节点，再创建一个节点来代替。如果在群集上手动进行安装，则在进行此操作时，安装内容不会保留。请改用 [HDInsight 脚本操作](/documentation/articles/hdinsight-hadoop-customize-cluster/)。脚本操作可用于进行以下更改：
 
-* 服务或网站，例如 Spark 或 Hue。
-* 需要在群集的多个节点上进行配置更改的组件。例如，必需的环境变量、创建日志记录目录，或者创建配置文件。
+* 安装和配置服务或网站，例如 Spark 或 Hue。
+* 安装和配置需要在群集的多个节点上进行配置更改的组件。例如，必需的环境变量、创建日志记录目录，或者创建配置文件。
 
 脚本操作是在群集预配期间运行的 Bash 脚本，可用于在群集上安装和配置其他组件。提供了用于安装以下组件的示例脚本：
 
@@ -230,9 +232,9 @@ HDInsight 是一项托管服务，这意味着如果检测到问题，Azure 可�
 ><p>
 > ```find / -name *componentname*.jar 2>/dev/null```  
 ><p>
-> 这会返回任何匹配的 jar 文件的路径。
+> 此命令会返回任何匹配的 jar 文件的路径。
 
-如果群集已经以独立 jar 文件的形式提供了某个版本的组件，但用户需要使用其他版本，则可将新版组件上载到群集，然后尝试在作业中使用该组件。
+如需使用群集随附版本之外的版本，则可上载新版组件，并在作业中试用。
 
 > [AZURE.WARNING]
 完全支持通过 HDInsight 群集提供的组件，Azure 支持部门将帮助找出并解决与这些组件相关的问题。
@@ -246,5 +248,5 @@ HDInsight 是一项托管服务，这意味着如果检测到问题，Azure 可�
 * [将 Pig 与 HDInsight 配合使用](/documentation/articles/hdinsight-use-pig/)
 * [将 MapReduce 作业与 HDInsight 配合使用](/documentation/articles/hdinsight-use-mapreduce/)
 
-<!---HONumber=Mooncake_0306_2017-->
-<!--Update_Description: add information about HDInsight Windows is going to be abandoned and update the details of "HDFS and Storage"-->
+<!---HONumber=Mooncake_0327_2017-->
+<!--Update_Description: wording update-->

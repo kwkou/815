@@ -14,7 +14,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="infrastructure-services"
     ms.date="01/17/2017"
-    wacn.date="03/03/2017"
+    wacn.date="03/31/2017"
     ms.author="gwallace" />  
 
 
@@ -115,6 +115,10 @@ Azure 应用程序网关是服务形式的应用程序传送控制器 (ADC)，�
 **问：自定义探测的 Host 字段是什么意思？**
 
 Host 字段指定要将探测数据发送到的名称。仅在应用程序网关上配置了多站点的情况下适用，否则使用“127.0.0.1”。此值不同于 VM 主机名，它采用 <协议>://<主机>:<端口><路径> 格式。
+
+**问：应用程序网关是否还支持多租户后端？**
+
+否，当前应用程序网关会保留传入主机标头，并将同一标头发送到后端。如果后端需要不同的标头，则此标头将不起作用。同样，如果后端是多租户后端并已启用端到端 SSL，则后端需要在 SNI 扩展名中包含服务器名称。在端到端 SSL 方案中，应用程序网关当前未在后端请求中发送 SNI 标头，这会导致探测和数据路径问题。
 
 ## 性能
 
@@ -231,4 +235,5 @@ TLS\_RSA\_WITH\_3DES\_EDE\_CBC\_SHA
 
 若要了解有关应用程序网关的详细信息，请访问 [Introduction to Application Gateway](/documentation/articles/application-gateway-introduction/)（应用程序网关简介）。
 
-<!---HONumber=Mooncake_0227_2017-->
+<!---HONumber=Mooncake_0327_2017-->
+<!--Update_Description: add a question about multi-tenant backend-->

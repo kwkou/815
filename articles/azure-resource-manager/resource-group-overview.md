@@ -177,7 +177,7 @@ Azure Resource Manager 会分析依赖关系，以确保按正确的顺序创建
 * [使用 Resource Manager 模板和 Azure 门户预览部署资源](/documentation/articles/resource-group-template-deploy-portal/)
 * [使用 Resource Manager 模板和 Resource Manager REST API 部署资源](/documentation/articles/resource-group-template-deploy-rest/)
 
-## 标记
+## <a name="tags"></a> 标记
 资源管理器提供了标记功能，让你根据管理或计费要求为资源分类。如果你有一系列复杂的资源组和资源，并想要以最有利的方式可视化这些资产，则可以使用标记。例如，你可以标记组织中充当类似角色或者属于同一部门的资源。如果不使用标记，组织中的用户可以创建多个资源，这可能会使将来的标识和管理变得困难。例如，你可能会希望删除特定项目的所有资源。如果这些资源没有针对项目进行标记，则必须手动查找它们。标记是降低不必要的订阅成本的重要方法。
 
 资源不需要驻留在同一个资源组中就能共享一个标记。你可以创建自己的标记分类，以确保组织中的所有用户使用公用的标记，避免用户无意中应用稍有不同的标记（如“dept”而不是“department”）。
@@ -209,7 +209,7 @@ Azure Resource Manager 会分析依赖关系，以确保按正确的顺序创建
 
 订阅的[使用情况报告](/documentation/articles/billing-understand-your-bill/)包含标记名称和值，可让你根据标记划分成本。有关标记的详细信息，请参阅[使用标记来组织 Azure 资源](/documentation/articles/resource-group-using-tags/)。
 
-## 访问控制
+## <a name="access-control"></a> 访问控制
 资源管理器可让你控制谁有权访问组织的特定操作。Resource Manager 原生地在管理平台中集成了基于角色的访问控制 (RBAC)，并向资源组中的所有服务应用该访问控制。
 
 使用基于角色的访问控制时，必须了解两个主要概念：
@@ -244,7 +244,7 @@ Azure 还提供资源特定的多种角色。一些常见的角色包括：
 
 你可以显式锁定关键资源，以防止用户删除或修改这些资源。有关详细信息，请参阅[使用 Azure 资源管理器锁定资源](/documentation/articles/resource-group-lock-resources/)。
 
-## 活动日志
+## <a name="activity-logs"></a> 活动日志
 Resource Manager 记录所有创建、修改或删除资源的操作。在进行故障排除或监视组织中的用户如何修改资源时，可以使用活动日志来查找错误。若要查看日志，请在资源组的“设置”边栏选项卡中选择“活动日志”。可以按照许多不同的值筛选日志，包括哪位用户启动了操作。有关使用活动日志的信息，请参阅[通过查看活动日志管理 Azure 资源](/documentation/articles/resource-group-audit/)。
 
 ## 自定义的策略

@@ -14,8 +14,8 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="02/08/2017"
-    wacn.date="03/10/2017"
+    ms.date="03/10/2017"
+    wacn.date="03/31/2017"
     ms.author="larryfr" />
 
 # 使用脚本操作自定义基于 Linux 的 HDInsight 群集
@@ -38,7 +38,7 @@ HDInsight 提供一个称为**脚本操作**的配置选项，该选项可调用
 
 ## 访问控制
 
-如果用户在使用 Azure 订阅（例如公司所有的订阅）时不是管理员/所有者，则必须确保其 Azure 登录名至少具有**参与者**访问权限，能够访问包含 HDInsight 群集的 Azure 资源组。
+如果使用的是你不是管理员/所有者的 Azure 订阅（例如公司所有的订阅），则必须确保你的 Azure 帐户至少具有**参与者**访问权限，才能访问包含 HDInsight 群集的 Azure 资源组。
 
 另外，如果用户创建的是 HDInsight 群集，至少对 Azure 订阅具有**参与者**访问权限的用户必须之前已注册 HDInsight 的提供程序。对订阅具有参与者访问权限的用户首次在订阅上创建资源时，会进行提供程序注册。不[使用 REST 注册提供程序](https://msdn.microsoft.com/zh-cn/library/azure/dn790548.aspx)创建资源也可完成该操作。
 
@@ -49,21 +49,24 @@ HDInsight 提供一个称为**脚本操作**的配置选项，该选项可调用
 
 ## 了解脚本操作
 
-脚本操作只是一个提供 URI 和参数的 Bash 脚本，该脚本在 HDInsight 群集节点上运行。下面是脚本操作的特征和功能。
+脚本操作只是一个提供 URI 和参数的 Bash 脚本。该脚本在 HDInsight 群集节点上运行。下面是脚本操作的特征和功能。
 
 * 必须存储在可从 HDInsight 群集访问的 URI 上。下面是可能的存储位置：
 
-    * 本身是 HDInsight 群集之主要存储帐户或其他存储帐户的 **Blob 存储帐户**。由于在创建群集期间，已将这两种存储帐户的访问权限都授予 HDInsight，因此这些存储帐户提供一个使用非公共脚本操作的方式。
+    * **Azure 存储帐户**中的 blob 是 HDInsight 群集的主要存储帐户或其他存储帐户。由于在创建群集期间，已将这两种存储帐户的访问权限都授予 HDInsight，因此这些存储帐户提供一个使用非公共脚本操作的方式。
 
-    * https://www.azure.cn/documentation/services/service-bus/，例如 Azure Blob、GitHub、OneDrive、Dropbox 等。
+    * 公共文件共享服务，例如 Azure Blob、GitHub、OneDrive、Dropbox 等。
 
         有关存储在 Blob 容器（可公开读取）中的脚本的 URI 示例，请参阅[示例脚本操作脚本](#example-script-action-scripts)部分。
+
+        > [AZURE.WARNING]
+        HDInsight 仅支持__常规用途__ Azure 存储帐户。当前不支持 __Blob 存储__帐户类型。
 
 * 可以限制为**只对特定的节点类型运行**，例如头节点或辅助角色节点。
 
 * 可以是**持久化**或**即席**。
 
-    **持久化**脚本是应用到辅助角色节点的脚本，并且在扩展群集时，在创建的新节点上自动运行。
+    **持久化**脚本是应用到工作节点的脚本，并且在扩展群集时，在创建的新节点上自动运行。
 
     持久化脚本还会将更改应用到其他节点类型（例如头节点），但从功能方面看，持久保存脚本的唯一原因就是它将应用到扩展群集时所创建的新辅助角色节点。
 
@@ -95,7 +98,7 @@ HDInsight 提供一个称为**脚本操作**的配置选项，该选项可调用
 
 下图演示了在创建过程中执行脚本操作的时间：
 
-![群集创建过程中的 HDInsight 群集自定义和阶段][img-hdi-cluster-states]
+![群集创建过程中的 HDInsight 群集自定义和阶段][img-hdi-cluster-states]  
 
 在配置 HDInsight 时运行脚本。在此阶段，脚本在群集中的所有指定节点上并行运行，并且在节点上使用 root 权限运行。
 
@@ -107,7 +110,7 @@ HDInsight 提供一个称为**脚本操作**的配置选项，该选项可调用
 > [AZURE.IMPORTANT]
 脚本操作必须在 60 分钟内完成，否则将会超时。在群集预配期间，脚本将与其他安装和配置进程一同运行。争用 CPU 时间和网络带宽等资源可能导致完成脚本所需的时间要长于在开发环境中所需的时间。
 ><p>
-> 若要让运行脚本所花费的时间降到最低，请避免从源下载和编译应用程序等任务。应预先编译应用程序，并将二进制文件存储在 Azure Blob 存储中，这样可将其快速下载到群集。
+> 若要让运行脚本所花费的时间降到最低，请避免从源下载和编译应用程序等任务。应预先编译应用程序，并将二进制文件存储在 Azure 存储中，以便将其快速下载到群集。
 
 ### <a name="apply-a-script-action-to-a-running-cluster"></a>正在运行的群集上的脚本操作
 
@@ -646,7 +649,7 @@ HDInsight 服务提供两种类型的开源组件：
 > [AZURE.WARNING]
 完全支持通过 HDInsight 群集提供的组件，Azure 支持部门将帮助找出并解决与这些组件相关的问题。
 ><p>
-> 自定义组件可获得合理范围的支持，有助于进一步解决问题。这可能会促进解决问题，或要求使用可用的开源技术渠道，在渠道中可找到该技术的深厚的专业知识。有许多可以使用的社区站点，例如：[HDInsight 的 MSDN 论坛](https://social.msdn.microsoft.com/Forums/azure/zh-cn/home?forum=hdinsight)和 [Azure CSDN](http://azure.csdn.net)。此外，Apache 项目在 [http://apache.org](http://apache.org) 上提供了项目站点，例如 [Hadoop](http://hadoop.apache.org/)。
+> 自定义组件可获得合理范围的支持，有助于进一步解决问题。这可能会促进解决问题，或要求使用可用的开源技术渠道，在渠道中可找到该技术的深厚的专业知识。例如，有许多可以使用的社区站点，例如：[HDInsight 的 MSDN 论坛](https://social.msdn.microsoft.com/Forums/azure/zh-cn/home?forum=hdinsight)和 [Azure CSDN](http://azure.csdn.net)。此外，Apache 项目在 [http://apache.org](http://apache.org) 上提供了项目站点，例如 [Hadoop](http://hadoop.apache.org/)。
 
 HDInsight 服务可提供多种方法使用自定义组件。无论在群集上使用或安装组件的方式如何，均适用相同级别的支持。以下是可在 HDInsight 群集上使用自定义组件的最常见方法列表：
 
@@ -672,9 +675,9 @@ HDInsight 服务可提供多种方法使用自定义组件。无论在群集上�
 
 3. 查找“操作”列中包含 **run\_customscriptaction** 的条目。这些条目是在运行脚本操作时创建的。
 
-    ![操作的屏幕截图](./media/hdinsight-hadoop-customize-cluster-linux/ambariscriptaction.png)
+    ![操作的屏幕截图](./media/hdinsight-hadoop-customize-cluster-linux/ambariscriptaction.png)  
 
-    选择此条目，并通过链接向下钻取以查看在群集上运行该脚本时生成的 STDOUT 和 STDERR 输出。
+    选择此 run\\customscriptaction 条目，并通过链接向下钻取以查看 STDOUT 和 STDERR 输出。当脚本运行时，会生成此输出，并且可能包含有用信息。
 
 ### 从默认的存储帐户访问日志
 
@@ -715,7 +718,7 @@ HDInsight 服务可提供多种方法使用自定义组件。无论在群集上�
 
 ### 无法导入名称 BlobService
 
-__症状__：脚本操作失败，且在 Ambari 查看操作时会显示类似于以下的错误：
+__症状__：脚本操作失败，且在 Ambari 中查看操作时会显示类似于以下的错误：
 
     Traceback (most recent call list):
       File "/var/lib/ambari-agent/cache/custom_actions/scripts/run_customscriptaction.py", line 21, in <module>
@@ -757,5 +760,5 @@ __解决方案__：若要解决此错误，请使用 `ssh` 手动连接到每个
 
 [img-hdi-cluster-states]: ./media/hdinsight-hadoop-customize-cluster-linux/HDI-Cluster-state.png "群集创建过程中的阶段"
 
-<!---HONumber=Mooncake_0306_2017-->
-<!--Update_Description: add information about HDInsight Windows is going to be abandoned and add a troubleshooting for a storage error-->
+<!---HONumber=Mooncake_0327_2017-->
+<!--Update_Description: wording update-->

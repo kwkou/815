@@ -14,8 +14,8 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="1/18/2017"
-    wacn.date="03/10/2017"
+    ms.date="2/28/2017"
+    wacn.date="03/31/2017"
     ms.author="nitinme" />
 
 # Azure HDInsight 上的 Hadoop 组件发行说明
@@ -23,7 +23,13 @@
 [AZURE.INCLUDE [hdinsight-linux-acn-version.md](../../includes/hdinsight-linux-acn-version.md)]
 
 > [AZURE.IMPORTANT]
-Linux 是在 HDInsight 3.4 版或更高版本上使用的唯一操作系统。有关详细信息，请参阅 [HDInsight 在 Windows 上弃用](/documentation/articles/hdinsight-component-versioning/#hdi-version-32-and-33-nearing-deprecation-date)。
+Linux 是在 HDInsight 3.4 版或更高版本上使用的唯一操作系统。有关详细信息，请参阅 [HDInsight 版本控制文章](/documentation/articles/hdinsight-component-versioning/#hdi-version-32-and-33-nearing-deprecation-date)。
+
+##HDInsight 3.6 预览版中的 Spark 2.1 的 2017 年 2 月 28 日发行说明
+* [Spark 2.1](http://spark.apache.org/releases/spark-release-2-1-0.html) 改进了以前版本中存在的许多稳定性和可用性问题。它还带来了针对所有 Spark 工作负荷（如 Spark Core、SQL、ML 和流式处理）的新功能。
+* 结构化流式处理通过支持事件时间水印和 Kafka 0.10 连接器提高了可伸缩性。
+* 现在使用新的可缩放分区处理机制处理 Spark SQL 分区。有关如何升级，请参阅[此处](http://spark.apache.org/releases/spark-release-2-1-0.html)的更多详细信息。
+* Azure HDInsight 3.6 预览版中的 Spark 2.1 目前不支持使用 ODBC 驱动程序的 BI 工具连接。
 
 ##Spark 2.0.1 on HDInsight 3.5 2016 年 11 月 18 日发行说明
 Spark 2.0.1 现可在 Spark 群集（HDInsight 版本 3.5）上使用。
@@ -1510,5 +1516,5 @@ SQL Server 的 Java 数据库连接 (JDBC) 驱动程序由 HDInsight 在内部�
 [hdinsight-install-spark]: /documentation/articles/hdinsight-hadoop-spark-install/
 [hdinsight-r-scripts]: /documentation/articles/hdinsight-hadoop-r-scripts/
 
-<!---HONumber=Mooncake_0306_2017-->
-<!--Update_Description: add information about HDInsight Windows is going to be abandoned-->
+<!---HONumber=Mooncake_0327_2017-->
+<!--Update_Description: wording update-->

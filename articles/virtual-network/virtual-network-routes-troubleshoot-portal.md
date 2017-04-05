@@ -94,7 +94,7 @@
 
 有关强制隧道和路由评估的更多故障排除方案，请阅读本文的[注意事项](/documentation/articles/virtual-network-routes-troubleshoot-portal/#Considerations)部分。
 
-### 查看网络接口的有效路由
+### <a name="view-effective-routes-for-a-network-interface"></a> 查看网络接口的有效路由
 
 如果网络流量流受到特定网络接口 (NIC) 的影响，可以直接查看 NIC 上有效路由的完整列表。若要查看应用到 NIC 的聚合路由，请完成以下步骤：
 

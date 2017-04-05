@@ -98,7 +98,7 @@
 
 	打开与 VM 的 RDP 连接或使用 PsPing 工具，确认 TCP 端口 3389 是否已打开。有关 PsPing 的详细信息，请阅读 [PsPing 下载页](https://technet.microsoft.com/sysinternals/psping.aspx)。
 
-### 查看网络接口的有效安全规则
+### <a name="view-effective-security-rules-for-a-network-interface"></a> 查看网络接口的有效安全规则
 
 如果特定的 NIC 影响了 VM 流量流，可以完成以下步骤，从网络接口上下文查看 NIC 的完整有效规则列表：
 

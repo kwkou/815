@@ -14,8 +14,8 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="big-data"
-    ms.date="02/16/2017"
-    wacn.date="03/10/2017"
+    ms.date="02/23/2017"
+    wacn.date="03/31/2017"
     ms.author="larryfr" />  
 
 
@@ -52,15 +52,15 @@ HDInsight 上的 Ambari REST API 的基本 URI 为 https://CLUSTERNAME.azurehdin
 
 > [AZURE.IMPORTANT]
 URI 的完全限定域名 (FQDN) 部分 (CLUSTERNAME.azurehdinsight.cn) 中的群集名称不区分大小写，但 URI 中的其他部分则区分大小写。例如，如果群集命名为 `MyCluster`，则有效的 URI 如下所示：
-> <p> 
+> <p>  
 > `https://mycluster.azurehdinsight.cn/api/v1/clusters/MyCluster`  
 ><p>
 > `https://MyCluster.azurehdinsight.cn/api/v1/clusters/MyCluster`  
-> <p> 
+> <p>  
 > 下面的 URI 返回一个错误，因为第二个出现的名称的大小写不正确。
-> <p> 
+> <p>  
 > `https://mycluster.azurehdinsight.cn/api/v1/clusters/mycluster`  
-> <p>
+><p>
 > `https://MyCluster.azurehdinsight.cn/api/v1/clusters/mycluster`  
 
 
@@ -78,8 +78,8 @@ URI 的完全限定域名 (FQDN) 部分 (CLUSTERNAME.azurehdinsight.cn) 中的�
 本文档中的 Bash 示例作出以下假设：
 ><p>
 ><p> *群集的登录名是 `admin` 的默认值。
-><p> * `$PASSWORD` 包含 HDInsight 登录命令的密码。可使用 `PASSWORD='mypassword'` 设置该值。
-><p> * `$CLUSTERNAME` 包含群集名称。可使用 `set CLUSTERNAME='clustername'` 设置该值。
+<p> * `$PASSWORD` 包含 HDInsight 登录命令的密码。可使用 `PASSWORD='mypassword'` 设置该值。
+<p> * `$CLUSTERNAME` 包含群集名称。可使用 `set CLUSTERNAME='clustername'` 设置该值。
 
     $resp = Invoke-WebRequest -Uri "https://$clusterName.azurehdinsight.cn/api/v1/clusters/$clusterName" `
         -Credential $creds
@@ -89,7 +89,7 @@ URI 的完全限定域名 (FQDN) 部分 (CLUSTERNAME.azurehdinsight.cn) 中的�
 本文档中的 PowerShell 示例作出以下假设：
 ><p>
 ><p> * `$creds` 是一个凭据对象，包含用于群集的管理员登录名和密码。通过使用 `$creds = Get-Credential -UserName "admin" -Message "Enter the HDInsight login"` 并在系统提示时提供密码，可设置该值。
-><p> * `$clusterName` 是一个包含群集名称的字符串。可使用 `$clusterName="clustername"` 设置该值。
+<p> * `$clusterName` 是一个包含群集名称的字符串。可使用 `$clusterName="clustername"` 设置该值。
 
 两个示例均返回一个 JSON 文档，该文档以类似于如下示例的信息开头：
 
@@ -189,7 +189,7 @@ PowerShell 3.0 及更高版本提供 `ConvertFrom-Json` cmdlet，它会将 JSON 
 ><p>
 > 有关使用 HDInsight 和虚拟网络的详细信息，请参阅[通过使用自定义 Azure 虚拟网络扩展 HDInsight 功能](/documentation/articles/hdinsight-extend-hadoop-virtual-network/)。
 
-必须首先知道主机的 FQDN 才可获取其 IP 地址。拥有 FQDN 后即可获取主机的 IP 地址。下面的示例首先会向 Ambari 查询所有主机节点的 FQDN，然后再向 Ambari 查询每个主机的 IP 地址。
+必须知道主机的 FQDN 才可获取其 IP 地址。拥有 FQDN 后即可获取主机的 IP 地址。下面的示例首先会向 Ambari 查询所有主机节点的 FQDN，然后再向 Ambari 查询每个主机的 IP 地址。
 
     for HOSTNAME in $(curl -u admin:$PASSWORD -sS -G "https://$CLUSTERNAME.azurehdinsight.cn/api/v1/clusters/$CLUSTERNAME/hosts" | jq -r '.items[].Hosts.host_name')
     do
@@ -237,7 +237,48 @@ PowerShell 3.0 及更高版本提供 `ConvertFrom-Json` cmdlet，它会将 JSON 
 > [AZURE.NOTE]
 [Azure PowerShell](https://docs.microsoft.com/powershell/) 提供的 `Get-AzureRmHDInsightCluster` cmdlet 还返回群集的存储信息。
 
-## <a name="example-update-ambari-configuration"></a>示例：更新 Ambari 配置
+## 示例：获取配置
+
+1. 获取可用于群集的配置。
+
+        curl -u admin:$PASSWORD -sS -G "https://$CLUSTERNAME.azurehdinsight.cn/api/v1/clusters/$CLUSTERNAME?fields=Clusters/desired_configs"
+
+    <br/>  
+
+        Invoke-WebRequest -Uri "https://$clusterName.azurehdinsight.cn/api/v1/clusters/$clusterName`?fields=Clusters/desired_configs" `
+            -Credential $creds
+
+    该示例返回一个 JSON 文档，其中包含群集上安装的组件的当前配置（由 *tag* 值标识）。下面的示例是从 Spark 群集类型返回的数据摘录。
+
+        "spark-metrics-properties" : {
+            "tag" : "INITIAL",
+            "user" : "admin",
+            "version" : 1
+        },
+        "spark-thrift-fairscheduler" : {
+            "tag" : "INITIAL",
+            "user" : "admin",
+            "version" : 1
+        },
+        "spark-thrift-sparkconf" : {
+            "tag" : "INITIAL",
+            "user" : "admin",
+            "version" : 1
+        }
+
+2. 获取你感兴趣的组件的配置。在以下示例中，将 `INITIAL` 替换为从上一个请求返回的标记值。
+
+        curl -u admin:$PASSWORD -sS -G "https://$CLUSTERNAME.azurehdinsight.cn/api/v1/clusters/$CLUSTERNAME/configurations?type=core-site&tag=INITIAL"
+
+<br/>  
+
+        $resp = Invoke-WebRequest -Uri "https://$clusterName.azurehdinsight.cn/api/v1/clusters/$clusterName/configurations?type=core-site&tag=INITIAL" `
+            -Credential $creds
+        $resp.Content
+
+    This example returns a JSON document containing the current configuration for the `core-site` component.
+
+## <a name="example-update-ambari-configuration"></a> 示例：更新配置
 
 1. 获取当前配置，即 Ambari 存储为“所需配置”的配置：
 
@@ -292,7 +333,7 @@ PowerShell 3.0 及更高版本提供 `ConvertFrom-Json` cmdlet，它会将 JSON 
 
     * 删除 `href`、`version` 和 `Config` 元素，因为提交新配置时不需要这些元素。
 
-    * 添加值为 `version#################` 的新 `tag` 元素。数字部分基于当前日期。每个配置必须有唯一的标记。
+    * 添加值为 `version#################` 的 `tag` 元素。数字部分基于当前日期。每个配置必须有唯一的标记。
      
     最后，数据将保存到 `newconfig.json` 文档。该文档结构类似于下面的示例：
 
@@ -444,5 +485,5 @@ PowerShell 3.0 及更高版本提供 `ConvertFrom-Json` cmdlet，它会将 JSON 
 
 有关 REST API 的完整参考，请参阅 [Ambari API 参考 V1](https://github.com/apache/ambari/blob/trunk/ambari-server/docs/api/v1/index.md)。
 
-<!---HONumber=Mooncake_0306_2017-->
-<!--Update_Description: adding more details and adding powershell rest solution-->
+<!---HONumber=Mooncake_0327_2017-->
+<!--Update_Description: add "Example: Get configuration"-->

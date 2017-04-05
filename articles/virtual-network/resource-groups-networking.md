@@ -5,8 +5,7 @@
     documentationcenter="na"
     author="jimdial"
     manager="carmonm"
-    editor="tysonn" />  
-
+    editor="tysonn" />
 <tags
     ms.assetid="79bf09da-4809-45cb-8d21-705616ef24dc"
     ms.service="virtual-network"
@@ -15,12 +14,12 @@
     ms.tgt_pltfrm="na"
     ms.workload="infrastructure-services"
     ms.date="03/15/2016"
-    wacn.date="12/26/2016"
+    wacn.date="03/31/2017"
     ms.author="jdial" />  
 
 
 # 网络资源提供程序
-要在当今社会获得业务成功，需要满足的一个基本需求就是，能够以灵活、弹性、安全且可重复的方式生成和管理可识别大型网络的应用程序。使用 Azure 资源管理器 (ARM) 可以在资源组中部署单个资源集合，从而可以创建此类应用程序。此类资源将通过 ARM 下的各种资源提供程序进行管理。
+要在当今社会获得业务成功，需要满足的一个基本需求就是，能够以灵活、弹性、安全且可重复的方式生成和管理可识别大型网络的应用程序。使用 Azure Resource Manager 可以创建此类应用程序，作为资源组中的单个资源集合。此类资源通过 Resource Manager 下的各种资源提供程序进行管理。
 
 Azure 资源管理器依靠不同的资源提供程序提供对你的资源的访问。主要有三个资源提供程序：网络、存储和计算。本文档讨论网络资源提供程序的特点和优点，包括：
 
@@ -32,14 +31,14 @@ Azure 资源管理器依靠不同的资源提供程序提供对你的资源的�
 * **快速自定义** - 你可以使用声明式模板为部署启用可重复的快速自定义。
 * **可重复自定义** - 你可以使用声明式模板为部署启用可重复的快速自定义。
 * **管理界面** - 可以任意使用以下一个界面来管理你的资源：
-  * 基于 REST 的 API
-  * PowerShell
-  * .NET SDK
-  * Node.JS SDK
-  * Java SDK
-  * Azure CLI
-  * 门户预览
-  * ARM 模板语言
+    * 基于 REST 的 API
+    * PowerShell
+    * .NET SDK
+    * Node.JS SDK
+    * Java SDK
+    * Azure CLI
+    * 门户预览
+    * Resource Manager 模板语言
 
 ## 网络资源
 现在，你可以单独管理网络资源，而不用通过单个计算资源（虚拟机）对其进行统一管理。这可确保在资源组中编写复杂的大规模基础结构时获得更高的弹性和灵活性。
@@ -53,7 +52,7 @@ Azure 资源管理器依靠不同的资源提供程序提供对你的资源的�
 
 | 属性 | 说明 | 示例值 |
 | --- | --- | --- |
-| **name** |唯一的资源名称。每个资源类型都有自己的命名限制。 |PIP01、VM01、NIC01 |
+| **名称** |唯一的资源名称。每个资源类型都有自己的命名限制。 |PIP01、VM01、NIC01 |
 | **位置** |资源所在的 Azure 区域 |chinanorth、chinaeast |
 | **id** |唯一的基于 URI 的标识 |/subscriptions/<subGUID>/resourceGroups/TestRG/providers/Microsoft.Network/publicIPAddresses/TestPIP |
 
@@ -101,8 +100,8 @@ Rest API 符合 HTTP 1.1 协议规范。下面显示了该 API 的常规 URI 结
 
 请求和响应都符合 JSON 负载格式。
 
-### ARM 模板语言
-除了强制性管理资源（通过 API 或 SDK）以外，还可以使用 ARM 模板语言以声明性编程方式构建和管理网络资源。
+### Resource Manager 模板语言
+除了强制性管理资源（通过 API 或 SDK）以外，还可以使用 Resource Manager 模板语言以声明性编程方式生成和管理网络资源。
 
 下面提供了模板的示例表示形式 -
 
@@ -229,24 +228,33 @@ Rest API 符合 HTTP 1.1 协议规范。下面显示了该 API 的常规 URI 结
       }
     }
 
-
 使用模板的主要优势在于：
 
-* 可以声明性方式在资源组中构建复杂的基础结构。创建资源的协调（包括依赖关系管理）由 ARM 处理。
+* 可以声明性方式在资源组中构建复杂的基础结构。创建资源的业务流程（包括依赖关系管理）由 Resource Manager 处理。
 * 可以在多个不同区域和一个区域中重复创建基础结构，只需更改参数即可。
 * 声明性方式可以缩短构建模板和推出基础结构的周期时间。
 
 有关示例模板，请参阅 [Azure 快速入门模板](https://github.com/Azure/azure-quickstart-templates)。
 
-有关 ARM 模板语言的详细信息，请参阅 [Azure 资源管理器模板语言](/documentation/articles/resource-group-authoring-templates/)。
+有关 Resource Manager 模板语言的详细信息，请参阅 [Azure Resource Manager 模板语言](/documentation/articles/resource-group-authoring-templates/)。
 
 上面的示例模板使用虚拟网络和子网资源。下面列出了可以使用的其他一些网络资源：
 
 ### 使用模板
-可以使用 PowerShell 或 AzureCLI，将服务从模板部署到 Azure。若要从 GitHub 中的模板部署服务，请下载[模板](https://github.com/Azure/azure-quickstart-templates/tree/master/101-vnet-two-subnets)，执行一些必要的修改，然后使用 Azure CLI 进行部署。
+你可以使用 PowerShell、AzureCLI 或通过在 GitHub 中执行单击部署，从模板向 Azure 部署服务。若要在 GitHub 中从模板部署服务，请执行以下步骤：
+
+1. 从 GitHub 打开 template3 文件。例如，打开“包含两个子网的虚拟网络”[](https://github.com/Azure/azure-quickstart-templates/tree/master/101-vnet-two-subnets)，查看模板。（请勿单击“部署到 Azure”，因为该项是针对全球 Azure 的）
+2. 此处单击“部署到 Azure”，然后使用凭据登录到 Azure 门户预览[](https://portal.azure.cn/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-vnet-two-subnets%2Fazuredeploy.json)。
+3. 验证模板，然后单击“保存”。
+4. 单击“编辑参数”并为 vnet 和子网选择一个位置，例如“中国北部”。
+5. 根据需要更改 **ADDRESSPREFIX** 和 **SUBNETPREFIX** 参数，然后单击“确定”。
+6. 单击“选择资源组”，然后单击要将 vnet 和子网添加到的资源组。或者，可以通过单击“或新建”创建新的资源组。
+7. 单击“创建”。请注意磁贴显示了“正在设置模板部署”。完成部署后，你将看到一个类似于下面的屏幕。
+
+![示例模板部署](./media/resource-groups-networking/Figure6.png)  
+
 
 >[AZURE.NOTE] 必须修改从 GitHub 存储库“azure-quickstart-templates”下载的模板，以适应 Azure 中国云环境。例如，替换某些终结点（将“blob.core.windows.net”替换为“blob.core.chinacloudapi.cn”，将“cloudapp.azure.com”替换为“chinacloudapp.cn”）；更改某些不受支持的 VM 映像；更改某些不受支持的 VM 大小。
-
 
 ## 后续步骤
 [Azure 资源管理器模板语言](/documentation/articles/resource-group-authoring-templates/)
@@ -257,4 +265,5 @@ Rest API 符合 HTTP 1.1 协议规范。下面显示了该 API 的常规 URI 结
 
 [Azure Resource Manager 概述](/documentation/articles/resource-group-overview/)
 
-<!---HONumber=Mooncake_1219_2016-->
+<!---HONumber=Mooncake_0327_2017-->
+<!--Update_Description: wording update-->

@@ -1,13 +1,12 @@
 <properties
     pageTitle="排查应用程序网关的网关无效 (502) 错误 | Azure"
-    description="了解如何排查应用程序网关 502 错误"
+    description="了解如何排查应用程序网关的 502 错误"
     services="application-gateway"
     documentationcenter="na"
     author="amitsriva"
     manager="rossort"
     editor=""
-    tags="azure-resource-manager" />  
-
+    tags="azure-resource-manager" />
 <tags
     ms.assetid="1d431ead-d318-47d8-b3ad-9c69f7e08813"
     ms.service="application-gateway"
@@ -16,7 +15,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="infrastructure-services"
     ms.date="12/16/2016"
-    wacn.date="01/09/2017"
+    wacn.date="03/31/2017"
     ms.author="amsriva" />  
 
 
@@ -32,6 +31,9 @@
 * 自定义运行状况探测的配置无效或不正确。
 * 请求超时，或用户请求出现连接问题。
 
+> [AZURE.NOTE]
+应用程序网关会保留传入主机标头，并将同一标头发送到后端。如果后端需要不同的标头，则此标头将不起作用。同样，如果后端是多租户后端并已启用端到端 SSL，则后端需要在 SNI 扩展名中包含服务器名称。在端到端 SSL 方案中，应用程序网关当前未在后端请求中发送 SNI 标头，这会导致探测和数据路径问题。
+
 ## BackendAddressPool 为空
 
 ### 原因
@@ -44,7 +46,7 @@
 
     Get-AzureRmApplicationGateway -Name "SampleGateway" -ResourceGroupName "ExampleResourceGroup"
 
-上述 cmdlet 的输出应包含非空后端地址池。以下示例中返回了两个池，其中配置了后端 VM 的 FQDN 或 IP 地址。BackendAddressPool 的预配状态必须是 'Succeeded'。
+上述 cmdlet 的输出应包含非空后端地址池。以下示例中返回了两个池，其中配置了后端 VM 的 FQDN 或 IP 地址。BackendAddressPool 的预配状态必须是“Succeeded”。
 
 BackendAddressPoolsText：
 
@@ -74,7 +76,7 @@ BackendAddressPoolsText：
 
 ### 原因
 
-如果 BackendAddressPool 的所有实例都运行不正常，则应用程序网关不包含任何要将用户请求路由到其中的后端。当后端实例运行正常但尚未部署所需的应用程序时，也可能会发生此情况。
+如果 BackendAddressPool 的所有实例都运行不正常，则应用程序网关不会包含任何要将用户请求路由到其中的后端。当后端实例运行正常但尚未部署所需的应用程序时，也可能会发生此情况。
 
 ### 解决方案
 
@@ -92,7 +94,7 @@ BackendAddressPoolsText：
  |URL 路径 |
 | 时间间隔 |30 |探测间隔（秒） |
 | 超时 |30 |探测超时（秒） |
-| 不正常阈值 |3 |探测重试计数。连续探测失败计数达到不正常阈值后，将后端服务器标记为故障。 |
+| 不正常阈值 |3 |探测重试计数。连续探测失败计数达到不正常阈值后，后端服务器将标记为故障。 |
 
 ### 解决方案
 
@@ -117,14 +119,14 @@ BackendAddressPoolsText：
 | 路径 |探测的相对路径。有效路径以“/”开头。探测将发送到 <协议>://<主机>:<端口><路径> |
 | 时间间隔 |探测间隔（秒）。这是每两次连续探测之间的时间间隔。 |
 | 超时 |探测超时（秒）。如果在此超时期间内未收到有效响应，则将探测标记为失败。 |
-| 不正常阈值 |探测重试计数。连续探测失败计数达到不正常阈值后，将后端服务器标记为故障。 |
+| 不正常阈值 |探测重试计数。连续探测失败计数达到不正常阈值后，后端服务器将标记为故障。 |
 
 ### 解决方案
 
 根据上表验证是否已正确配置自定义运行状况探测。除了上述故障排除步骤以外，另请确保符合以下要求：
 
 * 确保已根据[指南](/documentation/articles/application-gateway-create-probe-ps/)正确指定了探测。
-* 如果在应用程序网关中设置了单站点，则默认情况下，除非已在自定义探测中进行配置，否则应将主机名指定为“127.0.0.1”。
+* 如果应用程序网关针对单站点而配置，则默认情况下，除非已在自定义探测中进行其他配置，否则应将主机名指定为“127.0.0.1”。
 * 确保对 http://\<主机>:<端口><路径> 的调用返回 HTTP 结果代码 200。
 * 确保 Interval、Time-out 和 UnhealtyThreshold 都在可接受的范围内。
 
@@ -138,10 +140,11 @@ BackendAddressPoolsText：
 
 应用程序网关允许用户通过 BackendHttpSetting 配置此设置，然后可将此设置应用到不同的池。不同的后端池可以有不同的 BackendHttpSetting，因此可配置不同的请求超时。
 
-    New-AzureRmApplicationGatewayBackendHttpSettings -Name 'Setting01' -Port 80 -Protocol Http -CookieBasedAffinity Enabled -RequestTimeout 60
+        New-AzureRmApplicationGatewayBackendHttpSettings -Name 'Setting01' -Port 80 -Protocol Http -CookieBasedAffinity Enabled -RequestTimeout 60
 
 ## 后续步骤
 
 如果上述步骤无法解决问题，请开具[支持票证](/support/contact/)。
 
-<!---HONumber=Mooncake_Quality_Review_0104_2017-->
+<!---HONumber=Mooncake_0327_2017-->
+<!--Update_Description: add a note about host header-->

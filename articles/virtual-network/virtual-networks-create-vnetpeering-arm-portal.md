@@ -15,7 +15,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="infrastructure-services"
     ms.date="09/14/2016"
-    wacn.date="03/24/2017"
+    wacn.date="03/31/2017"
     ms.author="narayan;annahar" />  
 
 
@@ -81,7 +81,7 @@ VNet 对等互连中的每个链接都有上述属性集。在门户中，可以
 [AZURE.INCLUDE [virtual-networks-create-vnet-scenario-crosssub-include](../../includes/virtual-networks-create-vnetpeering-scenario-crosssub-include.md)]
 
 1. 从浏览器导航到 http://portal.azure.cn，根据需要使用 Azure 帐户登录。
-2. 在此示例中，用户 A 具有订阅 A 的管理权限，用户 B 具有订阅 B 的管理权限。
+2. 在此示例中，用户 A 具有订阅 A 的管理权限，用户 B 具有订阅 B 的管理权限。两个订阅均与同一 Azure Active Directory 租户关联。无法在与不同 Azure Active Directory 租户关联的订阅之间创建对等互连。
 3. 在门户中，单击“浏览”，然后选择“虚拟网络”。单击要设置对等互连的 VNet。
 4. 在所选 VNet 的边栏选项卡中，依次单击“访问控制”和“添加”，如下图中所示：
 
@@ -107,7 +107,7 @@ VNet 对等互连中的每个链接都有上述属性集。在门户中，可以
 
 6. 以用户 A 的身份登录到门户，导航到“VNET3”边栏选项卡，单击“对等互连”、选中“我知道我的资源 ID”复选框，然后采用下例中的格式键入 VNET5 的资源 ID：
    
-        /subscriptions/{SubscriptionID}/resourceGroups/{ResourceGroupName}/providers/Microsoft.Network/virtualNetworks/{VNETname}
+    /subscriptions/{SubscriptionID}/resourceGroups/{ResourceGroupName}/providers/Microsoft.Network/virtualNetworks/{VNETname}
    
     ![资源 ID](./media/virtual-networks-create-vnetpeering-arm-portal/figure12.png)  
 
@@ -158,5 +158,5 @@ VNet 对等互连中的每个链接都有上述属性集。在门户中，可以
     ![删除2](./media/virtual-networks-create-vnetpeering-arm-portal/figure16.png)
 4. 在此状态下，在对等链接状态更改为已启动之前无法重新创建链接。建议先删除这两个链接，然后再重新创建 VNet 对等互连。
 
-<!---HONumber=Mooncake_0320_2017-->
+<!---HONumber=Mooncake_0327_2017-->
 <!--Update_Description: wording update-->

@@ -159,7 +159,7 @@ StackExchange.Redis 有很多选项。本部分将介绍一些常用设置。有
 * **重试**
   * 对于 ConnectRetry 和 ConnectTimeout，一般指导原则是快速失败并重试。该指导原则取决于工作负荷，以及客户端发出 Redis 命令和接收响应平均花费的时间。
     * 让 StackExchange.Redis 自动重新连接，而不是检查连接状态，然后由你自己重新连接。**避免使用 ConnectionMultiplexer.IsConnected 属性**。
-    * 雪球效应 - 有时可能会遇到这样的问题：不断地重试，但问题不断累积，导致永远无法恢复。如果出现雪球效应，则应根据 Microsoft 模式和实践小组发布的[一般重试指导原则](https://github.com/mspnp/azure-guidance/blob/master/Retry-Policies.md)中所述，考虑使用指数退让重试算法。
+    * 雪球效应 - 有时可能会遇到这样的问题：不断地重试，但问题不断累积，导致永远无法恢复。如果出现雪球效应，则应根据 Microsoft 模式，考虑使用指数退让重试算法。
 * **超时值**
     * 根据工作负荷相应地设置值。如果要存储较大值，应将超时设置为较大值。
     * 将 `AbortOnConnectFail` 设置为 false，让 StackExchange.Redis 为你重新连接。

@@ -31,7 +31,7 @@ Azure 提供用于创建和处理资源的两种部署模型：[Resource Manager
 
 如果熟悉经典部署模型，请参阅 [经典部署与 Resource Manager IP 寻址间的差异](/documentation/articles/virtual-network-ip-addresses-overview-classic/#differences-between-resource-manager-and-classic-deployments)。
 
-## 公共 IP 地址
+## <a name="public-ip-addresses"></a> 公共 IP 地址
 公共 IP 地址允许 Azure 资源与 Internet 以及面向公众的 Azure 服务（例如 [Azure Redis 缓存](/home/features/redis-cache/)、[Azure 事件中心](/home/features/event-hubs/)、[SQL 数据库](/documentation/articles/sql-database-technical-overview/)和 [Azure 存储](/documentation/articles/storage-introduction/)）通信。
 
 在 Azure Resource Manager 中，[公共 IP](/documentation/articles/resource-groups-networking/#public-ip-address) 地址是具有其自身属性的资源。可以将公共 IP 地址资源与以下任意资源相关联：

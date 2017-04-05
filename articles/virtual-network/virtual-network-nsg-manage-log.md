@@ -15,7 +15,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="infrastructure-services"
     ms.date="01/31/2017"
-    wacn.date="03/28/2017"
+    wacn.date="03/31/2017"
     ms.author="jdial" />  
 
 
@@ -29,7 +29,14 @@
 > [AZURE.NOTE]
 诊断日志仅适用于通过 Azure Resource Manager 部署模型部署的 NSG。对于通过经典部署模型部署的 NSG，不能启用诊断日志记录。若要更好地了解两种模型，请参阅[了解 Azure 部署模型](/documentation/articles/resource-manager-deployment-model/)一文。
 
-对于通过任一 Azure 部署模型创建的 NSG，默认情况下启用活动日志记录（以前称为审核或操作日志）。若要确定已针对活动日志中的 NSG 完成了哪些操作，请查找包含以下资源类型的条目：Microsoft.ClassicNetwork/networkSecurityGroups、Microsoft.ClassicNetwork/networkSecurityGroups/securityRules、Microsoft.Network/networkSecurityGroups、Microsoft.Network/networkSecurityGroups/securityRules。若要详细了解活动日志，请阅读 [Azure 活动日志概述](/documentation/articles/monitoring-overview-activity-logs/)一文。
+对于通过任一 Azure 部署模型创建的 NSG，默认情况下启用活动日志记录（以前称为审核或操作日志）。若要在活动日志中确定完成了哪些 NSG 相关操作，请查看含有以下资源类型的条目：
+
+- Microsoft.ClassicNetwork/networkSecurityGroups
+- Microsoft.ClassicNetwork/networkSecurityGroups/securityRules
+- Microsoft.Network/networkSecurityGroups
+- Microsoft.Network/networkSecurityGroups/securityRules
+
+若要详细了解活动日志，请阅读 [Azure 活动日志概述](/documentation/articles/monitoring-overview-activity-logs/)一文。
 
 ## 启用诊断日志记录
 
@@ -107,5 +114,5 @@
             }
     }
 
-<!---HONumber=Mooncake_0206_2017-->
-<!--Update_Description: delete contents about audit log and add PowerShell and CLI steps of diagnostic log-->
+<!---HONumber=Mooncake_0327_2017-->
+<!--Update_Description: wording update-->

@@ -5,9 +5,8 @@
     services="app-service"
     documentationcenter=""
     author="yochay"
-    manager="wpickett"
-    editor="" />  
-
+    manager="erikre"
+    editor="" />
 <tags
     ms.assetid="ae74fc32-969e-4580-8d61-02c922f1f184"
     ms.service="app-service"
@@ -15,15 +14,15 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="hero-article"
-    ms.date="02/10/2016"
-    wacn.date="12/05/2016"
-    ms.author="yochay" />  
+    ms.date="02/23/2017"
+    wacn.date="03/31/2017"
+    ms.author="yochayk" />  
 
 
 # 应用服务工作方式
 Azure 应用服务是一项云服务，旨在解决工程师目前面临的实际问题。应用服务主要考虑如何大幅提高开发人员的工作效率，同时又不影响云级别的应用程序交付需求。
 
-应用服务还提供创建企业级业务线应用程序所需的功能和框架，同时为开发人员提供最常用的开发语言（例如，Microsoft .NET、Java、PHP、Node.js 和 Python）。开发人员可以通过应用服务执行下述操作：
+应用服务还提供创建企业业务线应用程序所需的功能和框架。应用服务让你使用最常用的开发语言（包括 Java、PHP、Node.js、Python 和 Microsoft .NET 语言）开发应用。通过应用服务，可以：
 
 * 构建高度可缩放的 Web 应用。
 * 通过一组易用的移动功能（例如，数据后端、用户身份验证和推送通知），快速构建移动应用后端。
@@ -39,8 +38,20 @@ Azure 应用服务是一项云服务，旨在解决工程师目前面临的实�
 * **缩放应用**。使用多个选项之一，根据流量和资源使用情况自动对服务进行水平缩放和垂直缩放。配置专用环境，专用于用户的应用。
 * **维护应用**。使用多个调试和诊断功能来预测问题，并通过自动修复和实时调试等功能来实时、有效地解决它们，或者在事后通过分析日志和内存转储予以解决。
 
-总而言之，应用服务功能可以让开发人员专注于代码，快速进入一个稳定且伸缩性极强的生产状态。利用 API 应用功能，开发人员可以构建实际的企业应用程序，顺利实现业务解决方案从本地到云的集成。
+总而言之，应用服务功能可以让开发人员专注于代码，快速达到一个稳定且伸缩性极强的生产状态。利用 API 应用功能，开发人员可以构建实际的企业应用程序，顺利实现业务解决方案从本地到云的集成。
 
-[AZURE.INCLUDE [app-service-blueprint-how-app-service-works](../../includes/app-service-blueprint-how-app-service-works.md)]
+## 后续步骤
 
-<!---HONumber=Mooncake_1128_2016-->
+若要了解有关应用服务的详细信息，请参阅以下主题之一：
+
+* [什么是 Azure App Service？](/documentation/articles/app-service-value-prop-what-is/)
+    * [Web 应用](/documentation/articles/app-service-web-overview/)
+    * [移动应用](/documentation/articles/app-service-mobile-value-prop/)
+    * [API 应用](/documentation/articles/app-service-api-apps-why-best-platform/)
+* [Azure App Service 体系结构（演示文稿）](http://www.slideshare.net/maartenba/windows-azure-web-sites-things-they-dont-teach-kids-in-school-comunity-day-2013)
+* [Azure App Service、云服务和虚拟机比较](/documentation/articles/choose-web-site-cloud-service-vm/)
+* [了解应用服务计划](/documentation/articles/azure-web-sites-web-hosting-plans-in-depth-overview/)
+* [Azure App Service 开发堆栈支持](https://azure.microsoft.com/blog/windows-azure-websites-development-stacks-support/)
+
+<!---HONumber=Mooncake_0327_2017-->
+<!--Update_Description: move contents from an include file-->

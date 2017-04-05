@@ -7,18 +7,20 @@
     manager="jhubbard"
     editor="cgronlun"
     tags="azure-portal" />
-<tags 
+<tags
     ms.assetid="a6a16405-a4a7-4151-9bbf-ab26972216c5"
     ms.service="hdinsight"
     ms.devlang="na"
     ms.topic="get-started-article"
     ms.tgt_pltfrm="na"
     ms.workload="big-data"
-    ms.date="01/12/2017"
-    wacn.date="01/25/2017"
-    ms.author="larryfr" />
+    ms.date="02/27/2017"
+    wacn.date="03/31/2017"
+    ms.author="larryfr"
+    ms.custom="H1Hack27Feb2017" />  
 
-# 在 Windows、Linux、Unix 或 OS X 上将 SSH 与 HDInsight (Hadoop) 配合使用
+
+# 在 Windows 10 上的 Bash、Linux、Unix 或 OS X 中将 SSH 与 HDInsight (Hadoop) 配合使用
 > [AZURE.SELECTOR]
 - [PuTTY (Windows)](/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows/)
 - [SSH（Windows、Linux、Unix、OS X）](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix/)
@@ -38,13 +40,11 @@ SSH 是一种加密网络协议，可用于通过不安全的网络来与远程�
 * __ssh__：可用于建立远程命令行会话和创建隧道的常规 SSH 客户端。
 * __scp__：可以使用 SSH 协议在本地系统与远程系统之间复制文件的实用工具。
 
-在 Windows 10 Anniversary Edition 推出之前，Windows 一直都未有 SSH 客户端。此版本的 Windows 包含面向开发人员的 Bash on Windows 10 功能，提供 `ssh`、`scp` 和其他 Linux 命令。有关使用 Bash on Windows 10 的详细信息，请参阅 [Bash on Ubuntu on Windows](https://msdn.microsoft.com/commandline/wsl/about)（Windows 上的 Ubuntu Bash）。
+Windows 10 周年纪念版提供 Bash 作为开发人员功能。它提供了 `ssh`、`scp` 和其他 Linux 命令。有关使用 Bash on Windows 10 的详细信息，请参阅 [Bash on Ubuntu on Windows](https://msdn.microsoft.com/commandline/wsl/about)（Windows 上的 Ubuntu Bash）。
 
 如果你使用的是 Windows 但无法访问 Bash on Windows 10，我们建议使用以下 SSH 客户端：
 
 * [适用于 Windows 的 Git](https://git-for-windows.github.io/)：提供 `ssh` 和 `scp` 命令行实用工具。
-* [PuTTY](http://www.chiark.greenend.org.uk/~sgtatham/putty/)：提供图形 SSH 客户端。
-* [MobaXterm](http://mobaxterm.mobatek.net/)：提供图形 SSH 客户端。
 * [Cygwin](https://cygwin.com/)：提供 `ssh` 和 `scp` 命令行实用工具。
 
 > [AZURE.NOTE]
@@ -60,7 +60,7 @@ SSH 是一种加密网络协议，可用于通过不安全的网络来与远程�
 
 * **私钥**是使用 SSH 客户端登录时，为了验证自己的身份而提供给 HDInsight 群集的凭据。请保护好私钥，不要透露给其他人。
 
-    为私钥创建通行短语可以进一步提高安全性。在使用密钥之前，必须提供此通行短语。
+    为私钥创建通行短语可以进一步提高安全性。如果你使用密码，必须在使用 SSH 进行身份验证时输入它。
 
 ### 创建公钥和私钥
 
@@ -87,7 +87,7 @@ SSH 是一种加密网络协议，可用于通过不安全的网络来与远程�
 * __id\_rsa__：此文件包含私钥。
 
     > [AZURE.WARNING]
-    必须限制对此文件的访问，防止有人未经授权访问公钥保护的服务。
+    需限制对此文件的访问，防止有人未经授权访问公钥保护的服务。
 
 * __id\_rsa.pub__：此文件包含公钥。创建 HDInsght 群集时需要用到此文件。
 
@@ -111,7 +111,7 @@ SSH 是一种加密网络协议，可用于通过不安全的网络来与远程�
 
 尽管创建群集后可将其他 SSH 用户添加到群集，但我们不建议这样做。
 
-* 必须手动将新 SSH 用户添加到群集中的每个节点。
+* 需要将新的 SSH 用户添加到群集中的每个节点。
 
 * 新 SSH 用户对 HDInsight 的访问权限与默认用户相同。无法根据 SSH 用户帐户限制访问 HDInsight 中的数据或作业。
 
@@ -141,7 +141,7 @@ SSH 是一种加密网络协议，可用于通过不安全的网络来与远程�
 
 ### 连接到其他节点
 
-辅助角色节点和 Zookeeper 节点不能直接从群集外部访问，但可以从群集头节点或边缘节点访问。下面是进行这种访问的一种步骤：
+辅助角色节点和 Zookeeper 节点不能直接从群集外部访问，但可以从群集头节点或边缘节点访问。下面是连接到其他节点的常规步骤：
 
 1. 使用 SSH 连接到头节点或边缘节点：
 
@@ -187,12 +187,12 @@ SSH 是一种加密网络协议，可用于通过不安全的网络来与远程�
 
 ## <a id="tunnel"></a>SSH 隧道
 
-可以使用 SSH 来以隧道方式将本地请求（例如 Web 请求）传送到 HDInsight 群集。然后，请求将路由到请求的资源，就像其源自 HDInsight 群集头节点一样。
+可以使用 SSH 来以隧道方式将本地请求（例如 Web 请求）传送到 HDInsight 群集。请求将转发到群集，然后在群集中对其进行解析。
 
 > [AZURE.IMPORTANT]
 访问某些 Hadoop 服务的 Web UI 需要使用 SSH 隧道。例如，作业历史记录 UI 或资源管理器 UI 只能使用 SSH 隧道访问。
 
-有关创建和使用 SSH 隧道的详细信息，请参阅 [Use SSH Tunneling to access Ambari web UI, JobHistory, NameNode, Oozie, and other web UI's](/documentation/articles/hdinsight-linux-ambari-ssh-tunnel/)（使用 SSH 隧道访问 Ambari Web UI、JobHistory、NameNode、Oozie 和其他 Web UI）。
+有关创建和使用 SSH 隧道的详细信息，请参阅 [Use SSH Tunneling to access Ambari web UI, JobHistory, NameNode, Oozie, and other web UIs](/documentation/articles/hdinsight-linux-ambari-ssh-tunnel/)（使用 SSH 隧道访问 Ambari Web UI、JobHistory、NameNode、Oozie 和其他 Web UI）。
 
 ## 后续步骤
 
@@ -204,4 +204,5 @@ SSH 是一种加密网络协议，可用于通过不安全的网络来与远程�
 
 [preview-portal]: https://portal.azure.cn/
 
-<!---HONumber=Mooncake_0120_2017-->
+<!---HONumber=Mooncake_0327_2017-->
+<!--Update_Description: wording update-->

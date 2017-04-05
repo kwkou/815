@@ -7,19 +7,21 @@
     manager="jhubbard"
     editor="cgronlun"
     tags="azure-portal" />
-<tags 
+<tags
     ms.service="hdinsight"
     ms.devlang=""
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="big-data"
-    ms.date="11/28/2016"
-    wacn.date="02/06/2017"
-    ms.author="larryfr" />
+    ms.date="02/23/2017"
+    wacn.date="03/31/2017"
+    ms.author="larryfr"
+    ms.custom="H1Hack27Feb2017" />  
 
-# 将其他 Azure 存储帐户添加到 HDInsight
 
-了解如何使用脚本操作将其他 Azure 存储帐户添加到现有 HDInsight 群集。
+# 将其他存储帐户添加到 HDInsight
+
+了解如何使用脚本操作将其他 Azure 存储帐户添加到使用 Linux 作为操作系统的现有 HDInsight 群集。
 
 > [AZURE.IMPORTANT]
 本文档中的信息是关于在创建群集后将其他存储添加到群集。有关在群集创建过程中添加其他存储帐户的信息，请参阅[创建基于 Linux 的 HDInsight 群集](/documentation/articles/hdinsight-hadoop-provision-linux-clusters/#use-additional-storage)文档的__使用其他存储__部分。
@@ -40,7 +42,7 @@
 
 * 使用密钥验证该存储帐户是否存在并且是否可以访问。
 
-* 使用群集凭据对密钥进行加密。这可以使 HDInsight 用户无法轻松地从 Ambari 提取并使用存储帐户密钥。
+* 使用群集凭据对密钥进行加密。
 
 * 将存储帐户添加到 core-site.xml 文件中。
 
@@ -70,9 +72,9 @@ __要求__：
 
 ### Azure 门户预览或工具中未显示存储帐户
 
-在 Azure 门户预览中查看 HDInsight 群集时，选择“属性”下的存储帐户项不会显示通过此脚本操作添加的存储帐户。Azure PowerShell 和 Azure CLI 也不显示其他存储帐户。
+在 Azure 门户预览中查看 HDInsight 群集时，选择“属性”下的“存储帐户”项不显示通过此脚本操作添加的存储帐户。Azure PowerShell 和 Azure CLI 也不显示其他存储帐户。
 
-这是因为该脚本只修改群集的 core-site.xml 配置。使用 Azure 管理 API 检索群集信息时，当前未使用此信息。
+之所以未显示存储信息是因为该脚本只修改群集的 core-site.xml 配置。使用 Azure 管理 API 检索群集信息时，未使用此信息。
 
 若要使用此脚本查看添加到群集的存储帐户信息，请使用 Ambari REST API。以下命令演示如何使用 [cURL (http://curl.haxx.se/)](http://curl.haxx.se/) 和 [jq (https://stedolan.github.io/jq/)](https://stedolan.github.io/jq/) 通过 Ambari 检索和分析 JSON 数据：
 
@@ -92,13 +94,11 @@ Bash
 
 ### 更改密钥后，无法访问存储
 
-如果更改了存储帐户的密钥，HDInsight 将不再能够访问存储帐户。
+如果更改了存储帐户的密钥，HDInsight 将不再能够访问存储帐户。HDInsight 使用群集的 core-site.xml 中缓存的密钥副本。必须更新此缓存的副本，使其匹配新密钥。
 
-这是因为群集的 core-site.xml 中存储的密钥是旧密钥。
+再次运行脚本操作__不__会更新密钥，因为脚本会检查该存储帐户的条目是否已存在。如果该条目已存在，则它不执行任何更改。
 
-重新运行脚本操作__不__会更新密钥，因为脚本会检查该存储帐户的条目是否已存在。如果存在，它不进行任何更改。
-
-若要解决此问题，必须删除存储帐户的现有条目。可以按照以下步骤来执行此操作：
+若要解决此问题，必须删除存储帐户的现有条目。使用以下步骤删除现有条目：
 
 1. 在 Web 浏览器中，打开 HDInsight 群集的 Ambari Web UI。该 URI 为 https://CLUSTERNAME.azurehdinsight.cn。将 __CLUSTERNAME__ 替换为群集名称。
 
@@ -106,7 +106,7 @@ Bash
 
 2. 从页面左侧的服务列表中选择“HDFS”。然后选择页中心的“配置”选项卡。
 
-3. 在“筛选器...”字段中，输入值“fs.azure.account”。这将返回已添加到群集的任何其他存储帐户的条目。有两种类型的条目：__keyprovider__ 和 __key__。这两种条目都将在密钥名称中包含存储帐户的名称。
+3. 在“筛选器...”字段中，输入值“fs.azure.account”。这将返回已添加到群集的任何其他存储帐户的条目。有两种类型的条目：__keyprovider__ 和 __key__。这两种条目都在密钥名称中包含存储帐户的名称。
 
     以下是名为 __mystorage__ 的存储帐户的示例条目：
 
@@ -127,6 +127,7 @@ Bash
 
 ## 后续步骤
 
-在本文档中，已学习如何将其他存储帐户添加到现有 HDInsight 群集。有关脚本操作的详细信息，请参阅 [Customize Linux-based HDInsight clusters using script action](/documentation/articles/hdinsight-hadoop-customize-cluster-linux/)（使用脚本操作自定义基于 Linux 的 HDInsight 群集）
+你已学习如何将其他存储帐户添加到现有 HDInsight 群集。有关脚本操作的详细信息，请参阅 [Customize Linux-based HDInsight clusters using script action](/documentation/articles/hdinsight-hadoop-customize-cluster-linux/)（使用脚本操作自定义基于 Linux 的 HDInsight 群集）
 
-<!---HONumber=Mooncake_0103_2017-->
+<!---HONumber=Mooncake_0327_2017-->
+<!--Update_Description: wording update-->

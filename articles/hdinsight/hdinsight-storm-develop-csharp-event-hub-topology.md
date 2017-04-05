@@ -13,8 +13,8 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="big-data"
-    ms.date="01/12/2017"
-    wacn.date="01/25/2017"
+    ms.date="03/01/2017"
+    wacn.date="03/31/2017"
     ms.author="larryfr" />
 
 # 使用 Storm on HDInsight 从 Azure 事件中心处理事件 (C#)
@@ -47,9 +47,9 @@ Azure 事件中心可处理网站、应用和设备的大量数据。借助事�
 [AZURE.INCLUDE [hdinsight-linux-acn-version.md](../../includes/hdinsight-linux-acn-version.md)]
 
 > [AZURE.IMPORTANT]
-Linux 是在 HDInsight 3.4 或更高版本上使用的唯一操作系统。有关详细信息，请参阅 [HDInsight 在 Windows 上弃用](/documentation/articles/hdinsight-component-versioning/#hdi-version-32-and-33-nearing-deprecation-date)。
+Linux 是在 HDInsight 3.4 版或更高版本上使用的唯一操作系统。有关详细信息，请参阅 [HDInsight 在 Windows 上弃用](/documentation/articles/hdinsight-component-versioning/#hdi-version-32-and-33-nearing-deprecation-date)。
 
-HDInsight 3.4 及更高版本使用 Mono 运行 C# 拓扑。大多数功能会兼容 Mono，但应查看 [Mono 兼容性](http://www.mono-project.com/docs/about-mono/compatibility/)文档，了解可能的不兼容性。
+HDInsight 3.4 及更高版本使用 Mono 运行 C# 拓扑。大多数功能适用于 Mono。但应查看 [Mono 兼容性](http://www.mono-project.com/docs/about-mono/compatibility/)文档，了解可能的不兼容性。
 
 C# 拓扑还必须针对 .NET 4.5 运行。
 
@@ -60,17 +60,17 @@ Microsoft 提供一组 Java 组件，适用于与 Storm 拓扑中的 Azure 事�
 > [AZURE.IMPORTANT]
 虽然组件是以 Java 编写的，但可通过 C# 拓扑轻松使用它们。
 
-将要使用的组件主要有：
+此示例使用了以下组件：
 
 * __EventHubSpout__：从事件中心读取数据。
 * __EventHubBolt__：将数据写入事件中心。
 * __EventHubSpoutConfig__：用于配置 EventHubSpout。
 * __EventHubBoltConfig__：用于配置 EventHubBolt。
-* __UnicodeEventDataScheme__：用于配置 Spout，以便从事件中心进行读取时使用 UTF-8 编码。如果不使用此组件，Spout 将默认设置为 String 编码。
+* __UnicodeEventDataScheme__：用于配置 Spout，以便从事件中心进行读取时使用 UTF-8 编码。默认编码为字符串。
 
 ### Spout 用法示例
 
-SCP.NET 提供将 EventHubSpout 添加到拓扑的专用方法。与使用泛型方法添加 Java 组件相比，这些方法可以更轻松地添加 Spout。以下示例演示了如何使用 SCP.NET 所提供的 __SetEventHubSpout__ 和 EventHubSpoutConfig 方法创建新的 Spout：
+SCP.NET 提供了用于将 EventHubSpout 添加到拓扑的方法。与使用泛型方法添加 Java 组件相比，这些方法可以更轻松地添加 Spout。以下示例演示了如何使用 SCP.NET 所提供的 __SetEventHubSpout__ 和 EventHubSpoutConfig 方法创建 Spout：
 
     topologyBuilder.SetEventHubSpout(
         "EventHubSpout",
@@ -87,12 +87,12 @@ SCP.NET 提供将 EventHubSpout 添加到拓扑的专用方法。与使用泛型
         // Parallelism hint for this component. Should be set to the partition count.
         eventHubPartitions);
 
-上面的示例创建了名为 __EventHubSpout__ 的全新 Spout 组件，并将其配置为与事件中心通信。请注意，组件的并行度提示设置为事件中心的分区数。因此，Storm 可以为每个分区创建一个组件实例。
+上面的示例创建了名为 __EventHubSpout__ 的全新 Spout 组件，并将其配置为与事件中心通信。组件的并行度提示设置为事件中心的分区数。此设置允许 Storm 为每个分区创建一个组件实例。
 
 > [AZURE.WARNING]
-从 2017 年 1 月 1 日开始，使用 SetEventHubSpout 和 EventHubSpoutConfig 方法创建的 Spout 可以在从事件中心读取数据时使用 String 编码。若需使用 UTF-8 编码，请参阅以下示例。
+从 2017 年 1 月 1 日开始，使用 SetEventHubSpout 和 EventHubSpoutConfig 方法创建的 Spout 可以在从事件中心读取数据时使用 String 编码。
 
-也可在创建 Spout 时使用泛型 JavaCompoentConstructor 方法。以下示例演示如何使用 JavaComponentConstructor 方法创建新的 Spout。它还演示了如何将 Spout 配置为使用 UTF-8 编码而非 String 编码来读取数据：
+创建 Spout 时，也可使用泛型 JavaComponentConstructor 方法。以下示例演示如何使用 JavaComponentConstructor 方法创建 Spout。它还演示了如何将 Spout 配置为使用 UTF-8 编码而非 String 来读取数据。
 
     // Create an instance of UnicodeEventDataScheme
     var schemeConstructor = new JavaComponentConstructor("com.microsoft.eventhubs.spout.UnicodeEventDataScheme");
@@ -130,7 +130,7 @@ UnicodeEventDataScheme 仅在 9.5 版事件中心组件中提供，该版本可�
 
 ### Bolt 用法示例
 
-必须使用 JavaComponmentConstructor 方法创建 Bolt 的实例。以下示例演示如何创建和配置 EventHubBolt 的新实例：
+使用 JavaComponmentConstructor 方法创建 Bolt 的实例。以下示例演示如何创建和配置 EventHubBolt 的新实例：
 
     //Create constructor for the Java bolt
     JavaComponentConstructor constructor =
@@ -156,7 +156,7 @@ UnicodeEventDataScheme 仅在 9.5 版事件中心组件中提供，该版本可�
         shuffleGrouping("Spout"); //Consume data from spout
 
 > [AZURE.NOTE]
-该示例使用作为字符串传递的 Clojure 表达式，而不是像 Spout 示例那样使用 JavaComponentConstructor 创建单独的 EventHubBoltConfig。任一方法均可使用；请使用自己感觉最合适的方法。
+该示例使用以字符串形式传递的 Clojure 表达式，而不是像 Spout 示例那样使用 JavaComponentConstructor 创建 EventHubBoltConfig。上述任一方法均有效。使用最适合你的方法。
 
 ## 下载已完成的项目
 
@@ -167,9 +167,9 @@ UnicodeEventDataScheme 仅在 9.5 版事件中心组件中提供，该版本可�
 * 一个 [3\.5 版 Apache Storm on HDInsight 群集](/documentation/articles/hdinsight-apache-storm-tutorial-get-started/)
 
     > [AZURE.WARNING]
-    本文档中使用的示例需要 3.5 版 Storm on HDInsight。在旧式群集上的 Storm 版本与 HDInsight 3.5 随附的 Storm 版本之间，用于核心 Storm 组件的类名存在变化。如需此示例的版本（兼容旧式群集），请参阅 [https://github.com/Azure-Samples/hdinsight-dotnet-java-storm-eventhub/releases](https://github.com/Azure-Samples/hdinsight-dotnet-java-storm-eventhub/releases)。
+    本文档中使用的示例需要 3.5 版 Storm on HDInsight。由于重大类名更改，该示例不适用于旧版 HDInsight。如需此示例的版本（兼容旧式群集），请参阅 [https://github.com/Azure-Samples/hdinsight-dotnet-java-storm-eventhub/releases](https://github.com/Azure-Samples/hdinsight-dotnet-java-storm-eventhub/releases)。
 
-* [Azure 事件中心](/documentation/articles/event-hubs-dotnet-standard-getstarted-send/)
+* [Azure 事件中心](/documentation/articles/event-hubs-csharp-ephcs-getstarted/)
 
 * [Azure .NET SDK](/downloads/)
 
@@ -184,15 +184,15 @@ UnicodeEventDataScheme 仅在 9.5 版事件中心组件中提供，该版本可�
 
 Spout 和 Bolt 以名为 **eventhubs-storm-spout-#.#-jar-with-dependencies.jar** 的单个 Java 存档 (.jar) 文件的形式分发，其中 #.# 是文件的版本。
 
-兼容 3.5 版 Storm on HDInsight 的 jar 文件版本可从 [https://github.com/hdinsight/hdinsight-storm-examples/blob/master/lib/eventhubs/](https://github.com/hdinsight/hdinsight-storm-examples/blob/master/lib/eventhubs/) 下载。
+若要将此解决方案与 HDInsight 3.5 配合使用，请使用 0.9.5 版 jar 文件，该文件可从 [https://github.com/hdinsight/hdinsight-storm-examples/blob/master/lib/eventhubs/](https://github.com/hdinsight/hdinsight-storm-examples/blob/master/lib/eventhubs/) 获得。
 
-创建名为 `eventhubspout` 的新目录，然后将文件保存到该目录中。
+创建名为 `eventhubspout` 的目录，然后将文件保存到该目录中。
 
 ## 配置事件中心
 
-事件中心是此示例的数据源。使用[事件中心入门](/documentation/articles/event-hubs-dotnet-standard-getstarted-send/)文档的“创建事件中心” 部分中的信息。
+事件中心是此示例的数据源。使用[事件中心入门](/documentation/articles/event-hubs-csharp-ephcs-getstarted/)文档的“创建事件中心” 部分中的信息。
 
-1. 创建事件中心后，在 Azure 门户预览中查看“EventHub”边栏选项卡，然后选择“共享访问策略”。使用“+ 添加”条目添加以下策略：
+1. 创建事件中心后，在 Azure 门户预览中查看“事件中心”边栏选项卡，然后选择“共享访问策略”。选择“+ 添加”添加以下策略：
    
     | 名称 | 权限 |
     | --- | --- |
@@ -208,7 +208,7 @@ Spout 和 Bolt 以名为 **eventhubs-storm-spout-#.#-jar-with-dependencies.jar**
 
 1. 如果尚未安装最新版本的 HDInsight Tools for Visual Studio，请参阅 [Get started using HDInsight Tools for Visual Studio](/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started/)（开始使用 HDInsight Tools for Visual Studio）。
 
-2. 从 [eventhub-storm-hybrid](https://github.com/Azure-Samples/hdinsight-dotnet-java-storm-eventhub) 下载解决方案。打开解决方案，花一些时间查看 **EventHubWriter** 项目的代码。
+2. 从 [eventhub-storm-hybrid](https://github.com/Azure-Samples/hdinsight-dotnet-java-storm-eventhub) 下载解决方案。
 
 3. 在 **EventHubWriter** 项目中，打开 **App.config** 文件。使用此前配置的事件中心提供的信息，填充以下项的值：
    
@@ -224,9 +224,9 @@ Spout 和 Bolt 以名为 **eventhubs-storm-spout-#.#-jar-with-dependencies.jar**
 
 ## 配置 EventHubReader
 
-1. 打开 **EventHubReader** 项目，花点时间查看代码。
+1. 打开 **EventHubReader** 项目。
 
-2. 打开 **EventHubWriter** 的 **App.config**。使用此前配置的事件中心提供的信息，填充以下项的值：
+2. 打开 **EventHubReader** 的 **App.config**。使用此前配置的事件中心提供的信息，填充以下项的值：
    
     | 键 | 值 |
     | --- | --- |
@@ -249,9 +249,9 @@ Spout 和 Bolt 以名为 **eventhubs-storm-spout-#.#-jar-with-dependencies.jar**
     ![提交对话框的图像](./media/hdinsight-storm-develop-csharp-event-hub-topology/submit.png)  
 
 
-3. 提交拓扑后，将会出现“Storm 拓扑查看器”。选择左窗格中的 **EventHubReader** 拓扑，以查看该拓扑的统计信息。目前，不会发生任何情况，因为尚未将任何事件写入事件中心。
+3. 提交拓扑后，将会显示“Storm 拓扑查看器”。若要查看有关拓扑的信息，请选择左窗格中的 **EventHubReader** 拓扑。
    
-    ![示例存储视图](./media/hdinsight-storm-develop-csharp-event-hub-topology/topologyviewer.png)
+    ![示例存储视图](./media/hdinsight-storm-develop-csharp-event-hub-topology/topologyviewer.png)  
 
 4. 在“解决方案资源管理器”中，右键单击“EventHubReader”项目，然后选择“提交到 Storm on HDInsight”。
 
@@ -261,14 +261,13 @@ Spout 和 Bolt 以名为 **eventhubs-storm-spout-#.#-jar-with-dependencies.jar**
 
 7. 在“Storm 拓扑查看器”中，选择“EventHubReader”拓扑。
 
-8. 在图形视图中，双击“LogBolt”组件。此时会打开 Bolt 的“组件摘要”页。
+8. 若要打开 Bolt 的**组件摘要**，请双击图中的 **LogBolt** 组件。
 
-9. 在“执行器”部分，选择“端口”列中的一个链接。此时会显示由组件记录的信息。记录的信息类似于以下内容：
+9. 在“执行器”部分，选择“端口”列中的一个链接。此时会显示由组件记录的信息。记录的信息类似于以下文本：
    
-        2016-10-20 13:26:44.186 m.s.s.b.ScpNetBolt [INFO] Processing tuple: source: com.microsoft.eventhubs.spout.EventHubSpout:7, stream: default, id: {5769732396213255808=520853934697489134}, [{"deviceId":3,"deviceValue":1379915540}]
-        2016-10-20 13:26:44.234 m.s.s.b.ScpNetBolt [INFO] Processing tuple: source: com.microsoft.eventhubs.spout.EventHubSpout:7, stream: default, id: {7154038361491319965=4543766486572976404}, [{"deviceId":3,"deviceValue":459399321}]
-        2016-10-20 13:26:44.335 m.s.s.b.ScpNetBolt [INFO] Processing tuple: source: com.microsoft.eventhubs.spout.EventHubSpout:6, stream: default, id: {513308780877039680=-7571211415704099042}, [{"deviceId":5,"deviceValue":845561159}]
-        2016-10-20 13:26:44.445 m.s.s.b.ScpNetBolt [INFO] Processing tuple: source: com.microsoft.eventhubs.spout.EventHubSpout:7, stream: default, id: {-2409895457033895206=5479027861202203517}, [{"deviceId":8,"deviceValue":2105860655}]
+        2017-03-02 14:51:29.255 m.s.p.TaskHost [INFO] Received C# STDOUT: 2017-03-02 14:51:29,255 [1] INFO  EventHubReader_LogBolt [(null)] - Received data: {"deviceValue":1830978598,"deviceId":"8566ccbc-034d-45db-883d-d8a31f34068e"}
+        2017-03-02 14:51:29.283 m.s.p.TaskHost [INFO] Received C# STDOUT: 2017-03-02 14:51:29,283 [1] INFO  EventHubReader_LogBolt [(null)] - Received data: {"deviceValue":1756413275,"deviceId":"647a5eff-823d-482f-a8b4-b95b35ae570b"}
+        2017-03-02 14:51:29.313 m.s.p.TaskHost [INFO] Received C# STDOUT: 2017-03-02 14:51:29,312 [1] INFO  EventHubReader_LogBolt [(null)] - Received data: {"deviceValue":1108478910,"deviceId":"206a68fa-8264-4d61-9100-bfdb68ee8f0a"}
 
 ## 停止拓扑
 
@@ -282,11 +281,11 @@ Spout 和 Bolt 以名为 **eventhubs-storm-spout-#.#-jar-with-dependencies.jar**
 
 ## 后续步骤
 
-在本文档中，已学习如何使用 C# 拓扑中的 Java 事件中心 Spout 和 Bolt 处理 Azure 事件中心中的数据。要了解有关创建 C# 拓扑的详细信息，请参阅以下主题。
+在本文档中，已学习如何使用 C# 拓扑中的 Java 事件中心 Spout 和 Bolt 处理 Azure 事件中心中的数据。若要了解有关创建 C# 拓扑的详细信息，请参阅以下文档：
 
-* [使用 Visual Studio 开发适用于 Apache Storm on HDInsight 的 C# 拓扑](/documentation/articles/hdinsight-storm-develop-csharp-visual-studio-topology/)
+* [使用 Visual Studio 开发 Apache Storm on HDInsight 的 C# 拓扑](/documentation/articles/hdinsight-storm-develop-csharp-visual-studio-topology/)
 * [SCP 编程指南](/documentation/articles/hdinsight-storm-scp-programming-guide/)
 * [Storm on HDInsight 的示例拓扑](/documentation/articles/hdinsight-storm-example-topology/)
 
-<!---HONumber=Mooncake_0120_2017-->
-<!--Update_Description: update from ASM to ARM-->
+<!---HONumber=Mooncake_0327_2017-->
+<!--Update_Description: wording update-->

@@ -14,8 +14,8 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="02/06/2017"
-    wacn.date="03/28/2017"
+    ms.date="02/22/2017"
+    wacn.date="03/31/2017"
     ms.author="jgao" />
 
 # 使用 Bootstrap 自定义 HDInsight 群集
@@ -40,20 +40,17 @@
 * webhcat-site.xml
 * yarn-site.xml
 
-群集无法保留重置映像所造成的更改。有关重置映像的详细信息，请参阅[由于操作系统升级而重新启动角色实例](http://blogs.msdn.com/b/kwill/archive/2012/09/19/role-instance-restarts-due-to-os-upgrades.aspx)。若要在群集生存期保留更改，你可以在创建过程中使用 HDInsight 群集自定义。这是更改群集的配置，以及发生这些 Azure 重置映像、重新引导和重新启动事件后保留配置的推荐方法。这些配置更改将在服务启动之前应用，因此无需重新启动服务。
-
-Bootstrap 的使用方式有 3 种：
+bootstrap 的使用方式有 3 种：
 
 * 使用 Azure PowerShell
-  
-    [AZURE.INCLUDE [upgrade-powershell](../../includes/hdinsight-use-latest-powershell.md)]
 * 使用 .NET SDK
 * 使用 Azure Resource Manager 模板
+
+[AZURE.INCLUDE [upgrade-powershell](../../includes/hdinsight-use-latest-powershell.md)]
 
 有关在创建时在 HDInsight 群集上安装其他组件的信息，请参阅：
 
 * [使用脚本操作 (Linux) 自定义 HDInsight 群集](/documentation/articles/hdinsight-hadoop-customize-cluster-linux/)
-* [使用脚本操作自定义 HDInsight 群集 (Windows)](/documentation/articles/hdinsight-hadoop-customize-cluster/)
 
 ## <a name="use-azure-powershell"></a> 使用 Azure PowerShell
 以下 PowerShell 代码将自定义 Hive 配置：
@@ -74,8 +71,8 @@ Bootstrap 的使用方式有 3 种：
         -Location $location `
         -ClusterSizeInNodes $clusterSizeInNodes `
         -ClusterType Hadoop `
-        -OSType Windows `
-        -Version "3.2" `
+        -OSType Linux `
+        -Version "3.5" `
         -HttpCredential $httpCredential `
         -Config $config 
 
@@ -84,7 +81,7 @@ Bootstrap 的使用方式有 3 种：
 **若要验证更改，请执行以下操作：**
 
 1. 登录到 [Azure 门户预览](https://portal.azure.cn)。
-2. 在左窗格中，单击“浏览”，然后单击“HDInsight 群集”。
+2. 在左侧菜单中，单击“HDInsight 群集”。如果看不到该项，请先单击“更多服务”。
 3. 单击刚刚使用 PowerShell 脚本创建的群集。
 4. 单击边栏选项卡顶部的“仪表板”打开 Ambari UI。
 5. 在左侧菜单中，单击“Hive”。
@@ -126,7 +123,7 @@ Bootstrap 的使用方式有 3 种：
         }
     }
 
-![hdinsight hadoop, 自定义群集, bootstrap, azure resource manager 模板](./media/hdinsight-hadoop-customize-cluster-bootstrap/hdinsight-customize-cluster-bootstrap-arm.png)  
+![HDInsight Hadoop, 自定义群集, bootstrap, Azure Resource Manager 模板](./media/hdinsight-hadoop-customize-cluster-bootstrap/hdinsight-customize-cluster-bootstrap-arm.png)  
 
 
 ## 另请参阅
@@ -255,5 +252,5 @@ Bootstrap 的使用方式有 3 种：
 
     #endregion
 
-<!---HONumber=Mooncake_0120_2017-->
-<!--Update_Description: update from ASM to ARM-->
+<!---HONumber=Mooncake_0327_2017-->
+<!--Update_Description: wording update-->

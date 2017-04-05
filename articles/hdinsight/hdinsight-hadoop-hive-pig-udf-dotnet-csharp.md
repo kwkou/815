@@ -14,8 +14,8 @@
     ms.tgt_pltfrm="na"
     ms.devlang="dotnet"
     ms.topic="article"
-    ms.date="02/08/2017"
-    wacn.date="03/10/2017"
+    ms.date="03/02/2017"
+    wacn.date="03/31/2017"
     ms.author="larryfr" />  
 
 
@@ -42,30 +42,35 @@ Hive 和 Pig 非常适合处理 Azure HDInsight 中的数据，但有时你需�
 
     * Visual Studio 2015
 
+    * Visual Studio 2017
+
 * HDInsight 群集上的 Hadoop - 有关创建群集的步骤，请参阅[设置 HDInsight 群集](/documentation/articles/hdinsight-provision-clusters/)
 
-* Hadoop Tools for Visual Studio。有关安装和配置该工具的步骤，请参阅[开始使用 HDInsight Hadoop Tools for Visual Studio](/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started/)。
+* 用于 Visual Studio 的 Hadoop 工具或用于 Visual Studio 的 Data Lake 工具。有关安装和配置该工具的步骤，请参阅[开始使用 HDInsight Hadoop Tools for Visual Studio](/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started/)。
+
+    > [AZURE.NOTE]
+    通过在安装过程中选择“Azure 开发”工作负荷，可将 Data Lake 工具安装在 Visual Studio 2017 中。
 
 [AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-visual-studio-login-guide.md)]
 
 ## HDInsight 的 .NET
 
-基于 Windows 的 HDInsight 群集上会默认安装 .NET 通用语言运行时 (CLR) 和框架。这允许你将 C# 应用程序与 Hive 和 Pig 流式处理配合使用（通过 stdout/stdin 在 Hive/Pig 与 C# 应用程序之间传递数据）。
+基于 Windows 的 HDInsight 群集上会默认安装 .NET 通用语言运行时 (CLR) 和框架。.NET CLR 允许你将 C# 应用程序与 Hive 和 Pig 流式处理配合使用（通过 stdout/stdin 在 Hive/Pig 与 C# 应用程序之间传递数据）。
 
 > [AZURE.NOTE]
 当前不支持在基于 Linux 的 HDInsight 群集上运行 .NET Framework UDF。
 
 ## .NET 和流式处理
 
-流式处理涉及 Hive 和 Pig 将数据通过 stdout 传递到外部应用程序，并通过 stdin 接收结果。对于 C# 应用程序，这可以通过 `Console.ReadLine()` 和 `Console.WriteLine()` 非常轻松地实现。
+流式处理涉及 Hive 和 Pig 将数据通过 stdout 传递到外部应用程序，并通过 stdin 接收结果。对于 C# 应用程序，使用 `Console.ReadLine()` 和 `Console.WriteLine()`。
 
-因为 Hive 和 Pig 在运行时需要调用应用程序，因此，应当为你的 C# 项目使用**控制台应用程序**模板。
+由于 Hive 和 Pig 需要在运行时调用应用程序，因此，应当对 C# 项目使用“控制台应用(.NET Framework)”模板。
 
 ## Hive 和 C&#35;
 
 ### 创建 C# 项目
 
-1. 打开 Visual Studio 并创建一个新解决方案。对于项目类型，选择“控制台应用程序”，并将新项目命名为“HiveCSharp”。
+1. 打开 Visual Studio 并创建一个解决方案。对于项目类型，选择“控制台应用(.NET Framework)”，并将新项目命名为“HiveCSharp”。
 
 2. 将 **Program.cs** 的内容替换为以下内容：
 
@@ -130,12 +135,12 @@ Hive 和 Pig 非常适合处理 Azure HDInsight 中的数据，但有时你需�
 
     ![显示群集存储帐户的服务器资源管理器](./media/hdinsight-hadoop-hive-pig-udf-dotnet-csharp/storage.png)  
 
-5. 双击群集的“默认容器”。这将打开一个新窗口，其中显示了默认容器的内容。
+5. 双击群集的**默认容器**可查看默认容器的内容。
 6. 单击上载图标，然后浏览到 **HiveCSharp** 项目的 **bin\\debug** 文件夹。最后，选择 HiveCSharp.exe 文件并单击“确定”。
 
     ![上载图标](./media/hdinsight-hadoop-hive-pig-udf-dotnet-csharp/upload.png)  
 
-7. 上载完成后，你将能够通过 Hive 查询使用应用程序。
+7. 上载完成后，可以通过 Hive 查询使用应用程序。
 
 ### Hive 查询
 
@@ -145,7 +150,7 @@ Hive 和 Pig 非常适合处理 Azure HDInsight 中的数据，但有时你需�
 
 3. 右键单击你已将“HiveCSharp”应用程序部署到的群集，然后选择“编写 Hive 查询”。
 
-4. 请使用以下内容执行 Hive 查询：
+4. 请使用以下文本执行 Hive 查询：
 
         add file wasbs:///HiveCSharp.exe;
 
@@ -155,7 +160,7 @@ Hive 和 Pig 非常适合处理 Azure HDInsight 中的数据，但有时你需�
         FROM hivesampletable
         ORDER BY clientid LIMIT 50;
 
-    这将从 `hivesampletable` 中选择 `clientid`、`devicemake` 和 `devicemodel` 字段并将这些字段传递到 HiveCSharp.exe 应用程序。该查询预期应用程序返回三个字段，它们将存储为 `clientid`、`phoneLabel` 和 `phoneHash`。该查询还预期在默认存储容器的根目录中找到 HiveCSharp.exe (`add file wasbs:///HiveCSharp.exe`)。
+    此查询将从 `hivesampletable` 中选择 `clientid`、`devicemake` 和 `devicemodel` 字段并将这些字段传递到 HiveCSharp.exe 应用程序。该查询预期应用程序返回三个字段，它们将存储为 `clientid`、`phoneLabel` 和 `phoneHash`。该查询还预期在默认存储容器的根目录中找到 HiveCSharp.exe (`add file wasbs:///HiveCSharp.exe`)。
 
 5. 单击“提交”将作业提交到 HDInsight 群集。此时将打开“Hive 作业摘要”窗口。
 
@@ -165,9 +170,9 @@ Hive 和 Pig 非常适合处理 Azure HDInsight 中的数据，但有时你需�
 
 ### 创建 C# 项目
 
-1. 打开 Visual Studio 并创建一个新解决方案。对于项目类型，选择“控制台应用程序”，并将新项目命名为“PigUDF”。
+1. 打开 Visual Studio 并创建一个解决方案。对于项目类型，选择“控制台应用程序”，并将新项目命名为“PigUDF”。
 
-2. 将 **Program.cs** 文件的内容替换为以下内容：
+2. 将 **Program.cs** 文件的内容替换为以下代码：
 
         using System;
 
@@ -215,9 +220,9 @@ Hive 和 Pig 非常适合处理 Azure HDInsight 中的数据，但有时你需�
         cd %PIG_HOME%
         bin\pig
 
-    系统将为你提供 `grunt>` 提示符。
+    将显示 `grunt>` 提示符。
     
-3. 输入以下命令以使用 .NET Framework 应用程序运行简单的 Pig 作业：
+3. 输入以下命令以使用 .NET Framework 应用程序运行 Pig 作业：
 
         DEFINE streamer `pigudf.exe` SHIP('pigudf.exe');
         LOGS = LOAD 'wasbs:///example/data/sample.log' as (LINE:chararray);
@@ -230,7 +235,7 @@ Hive 和 Pig 非常适合处理 Azure HDInsight 中的数据，但有时你需�
     > [AZURE.NOTE]
     用于流式处理的应用程序名称在使用别名时必须用 `（反引号）字符括起来，当与 `SHIP` 一起使用时必须用 '（单引号）括起来。
 
-4. 输入最后一行后，该作业应该启动。最终，它将返回类似于以下内容的输出：
+4. 输入最后一行后，该作业应该启动。它返回类似于以下文本的输出：
 
         (2012-02-03 20:11:56 SampleClass5 [WARN] problem finding id 1358451042 - java.lang.Exception)
         (2012-02-03 20:11:56 SampleClass5 [DEBUG] detail for id 1976092771)
@@ -242,11 +247,11 @@ Hive 和 Pig 非常适合处理 Azure HDInsight 中的数据，但有时你需�
 
 在本文档中，你了解了如何在 HDInsight 上通过 Hive 和 Pig 使用 .NET Framework 应用程序。如果希望了解如何将 Python 与 Hive 和 Pig 配合使用，请参阅[在 HDInsight 中将 Python 与 Hive 和 Pig 配合使用](/documentation/articles/hdinsight-python/)。
 
-要了解使用 Pig、Hive 的其他方式以及如何使用 MapReduce，请参阅以下文章：
+若要了解使用 Pig 和 Hive 的其他方式以及如何使用 MapReduce，请参阅以下文档：
 
 * [将 Hive 与 HDInsight 配合使用](/documentation/articles/hdinsight-use-hive/)
 * [将 Pig 与 HDInsight 配合使用](/documentation/articles/hdinsight-use-pig/)
 * [将 MapReduce 与 HDInsight 配合使用](/documentation/articles/hdinsight-use-mapreduce/)
 
-<!---HONumber=Mooncake_0306_2017-->
-<!--Update_Description: add information about HDInsight Windows is going to be abandoned-->
+<!---HONumber=Mooncake_0327_2017-->
+<!--Update_Description: wording update and add visual studio 2017-->

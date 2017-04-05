@@ -1,13 +1,12 @@
 <properties
-    pageTitle="使用 Azure CLI 管理 NSG | Azure"
-    description="了解如何使用 Azure CLI 管理现有 NSG。"
+    pageTitle="管理网络安全组 — Azure CLI 2.0 | Azure"
+    description="了解如何使用 Azure 命令行接口 (CLI) 2.0 管理网络安全组。"
     services="virtual-network"
     documentationcenter="na"
     author="jimdial"
-    manager="carmonm"
+    manager="timlt"
     editor=""
-    tags="azure-resource-manager" />  
-
+    tags="azure-resource-manager" />
 <tags
     ms.assetid="ed17d314-07e6-4c7f-bcf1-a8a2535d7c14"
     ms.service="virtual-network"
@@ -15,14 +14,22 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="infrastructure-services"
-    ms.date="03/14/2016"
-    wacn.date="12/26/2016"
-    ms.author="jdial" />  
+    ms.date="02/21/2017"
+    wacn.date="03/31/2017"
+    ms.author="jdial"
+    ms.custom="H1Hack27Feb2017" />  
 
 
-# 使用 Azure CLI 管理 NSG
+# 使用 Azure CLI 2.0 管理网络安全组
 
 [AZURE.INCLUDE [virtual-network-manage-arm-selectors-include.md](../../includes/virtual-network-manage-nsg-arm-selectors-include.md)]
+
+## 用于完成任务的 CLI 版本 
+
+可使用以下 CLI 版本之一完成任务：
+
+- [Azure CLI 1.0](/documentation/articles/virtual-network-manage-nsg-cli-nodejs/)：用于经典部署模型和资源管理部署模型的 CLI
+- [Azure CLI 2.0](#View-existing-NSGs) - 下一代 CLI，适用于资源管理部署模型（详见本文）
 
 [AZURE.INCLUDE [virtual-network-manage-nsg-intro-include.md](../../includes/virtual-network-manage-nsg-intro-include.md)]
 
@@ -32,292 +39,269 @@ Azure 具有两种不同的部署模型，用于创建和处理资源：[Resourc
 
 [AZURE.INCLUDE [virtual-network-manage-nsg-arm-scenario-include.md](../../includes/virtual-network-manage-nsg-arm-scenario-include.md)]
 
-[AZURE.INCLUDE [azure-cli-prerequisites-include.md](../../includes/azure-cli-prerequisites-include.md)]
+## 先决条件
+如果还未安装，请安装和配置最新版 [Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-az-cli2)，并使用 [az login](https://docs.microsoft.com/cli/azure/#login) 登录到 Azure 帐户。
 
-## 检索信息
-可以查看你的现有 NSG、检索现有 NSG 的规则和查找与 NSG 关联的资源。
+## <a name="View-existing-NSGs"></a> 查看现有 NSG
+若要查看特定资源组中的 NSG 的列表，请使用 `-o table` 输出格式运行 [az network nsg list](https://docs.microsoft.com/cli/azure/network/nsg#list) 命令：
 
-### 查看现有 NSG
-若要查看特定资源组中 NSG 的列表，请运行 `azure network nsg list` 命令，如下所示。
-
-    azure network nsg list --resource-group RG-NSG
+    az network nsg list -g RG-NSG -o table
 
 预期输出：
 
-    info:    Executing command network nsg list
-    + Getting the network security groups
-    data:    Name          Location
-    data:    ------------  --------
-    data:    NSG-BackEnd   chinanorth
-    data:    NSG-FrontEnd  chinanorth
-    info:    network nsg list command OK
+    Location    Name          ProvisioningState    ResourceGroup    ResourceGuid
+    ----------  ------------  -------------------  ---------------  ------------------------------------
+    chinaeast   NSG-BackEnd   Succeeded            RG-NSG           <guid>
+    chinaeast   NSG-FrontEnd  Succeeded            RG-NSG           <guid>
 
-### 列出 NSG 的所有规则
-若要查看名为 **NSG-FrontEnd** 的 NSG 的规则，请运行 `azure network nsg show` 命令，如下所示。
+## 列出 NSG 的所有规则
+若要查看名为 **NSG-FrontEnd** 的 NSG 规则，请使用 [JMESPATH 查询筛选器](https://docs.microsoft.com/cli/azure/query-az-cli2)和 `-o table` 输出格式运行 [az network nsg show](https://docs.microsoft.com/cli/azure/network/nsg#show) 命令：
 
-    azure network nsg show --resource-group RG-NSG --name NSG-FrontEnd
+        az network nsg show \
+        --resource-group RG-NSG \
+        --name NSG-FrontEnd \
+        --query '[defaultSecurityRules[],securityRules[]][].{Name:name,Desc:description,Access:access,Direction:direction,DestPortRange:destinationPortRange,DestAddrPrefix:destinationAddressPrefix,SrcPortRange:sourcePortRange,SrcAddrPrefix:sourceAddressPrefix}' \
+        -o table
 
 预期输出：
 
-    info:    Executing command network nsg show
-    + Looking up the network security group "NSG-FrontEnd"
-    data:    Id                              : /subscriptions/[Subscription Id]/resourceGroups/RG-NSG/providers/Microsoft.Network/networkSecurityGroups/NSG-FrontEnd
-    data:    Name                            : NSG-FrontEnd
-    data:    Type                            : Microsoft.Network/networkSecurityGroups
-    data:    Location                        : chinanorth
-    data:    Provisioning state              : Succeeded
-    data:    Tags                            : displayName=NSG - Front End
-    data:    Security group rules:
-    data:    Name                           Source IP          Source Port  Destination IP  Destination Port  Protocol  Direction  Access  Priority
-    data:    -----------------------------  -----------------  -----------  --------------  ----------------  --------  ---------  ------  --------
-    data:    rdp-rule                       Internet           *            *               3389              Tcp       Inbound    Allow   100
-    data:    web-rule                       Internet           *            *               80                Tcp       Inbound    Allow   101
-    data:    AllowVnetInBound               VirtualNetwork     *            VirtualNetwork  *                 *         Inbound    Allow   65000
-    data:    AllowAzureLoadBalancerInBound  AzureLoadBalancer  *            *               *                 *         Inbound    Allow   65001
-    data:    DenyAllInBound                 *                  *            *               *                 *         Inbound    Deny    65500
-    data:    AllowVnetOutBound              VirtualNetwork     *            VirtualNetwork  *                 *         Outbound   Allow   65000
-    data:    AllowInternetOutBound          *                  *            Internet        *                 *         Outbound   Allow   65001
-    data:    DenyAllOutBound                *                  *            *               *                 *         Outbound   Deny    65500
-    info:    network nsg show command OK
-
+    Name                           Desc                                                    Access    Direction    DestPortRange    DestAddrPrefix    SrcPortRange    SrcAddrPrefix
+    -----------------------------  ------------------------------------------------------  --------  -----------  ---------------  ----------------  --------------  -----------------
+    AllowVnetInBound               Allow inbound traffic from all VMs in VNET              Allow     Inbound      *                VirtualNetwork    *               VirtualNetwork
+    AllowAzureLoadBalancerInBound  Allow inbound traffic from azure load balancer          Allow     Inbound      *                *                 *               AzureLoadBalancer
+    DenyAllInBound                 Deny all inbound traffic                                Deny      Inbound      *                *                 *               *
+    AllowVnetOutBound              Allow outbound traffic from all VMs to all VMs in VNET  Allow     Outbound     *                VirtualNetwork    *               VirtualNetwork
+    AllowInternetOutBound          Allow outbound traffic from all VMs to Internet         Allow     Outbound     *                Internet          *               *
+    DenyAllOutBound                Deny all outbound traffic                               Deny      Outbound     *                *                 *               *
+    rdp-rule                                                                               Allow     Inbound      3389             *                 *               Internet
+    web-rule                                                                               Allow     Inbound      80               *                 *               Internet
 > [AZURE.NOTE]
-还可以使用 `azure network nsg rule list --resource-group RG-NSG --nsg-name NSG-FrontEnd` 列出 **NSG-FrontEnd** NSG 中的规则。
+还可以使用 [az network nsg rule list](https://docs.microsoft.com/cli/azure/network/nsg/rule#list) 仅列出 NSG 中的自定义规则。
 >
 
-### <a name="View-NSGs-associations"></a>查看 NSG 关联项
+## <a name="View-NSGs-associations"></a>查看 NSG 关联项
 
-若要查看与 **NSG-FrontEnd** NSG 关联的资源，请运行 `azure network nsg show` 命令，如下所示。请注意，唯一的区别是 **--json** 参数的使用。
+若要查看与 **NSG-FrontEnd** NSG 关联的资源，请运行 `az network nsg show` 命令，如下所示。
 
-    azure network nsg show --resource-group RG-NSG --name NSG-FrontEnd --json
+    az network nsg show -g RG-NSG -n nsg-frontend --query '[subnets,networkInterfaces]'
 
 查找 **NetworkInterfaces** 和 **Subnets** 属性，如下所示：
 
-	"networkInterfaces": [],
-	...
-	"subnets": [
-		{
-			"id": "/subscriptions/[Subscription Id]/resourceGroups/RG-NSG/providers/Microsoft.Network/virtualNetworks/TestVNet/subnets/FrontEnd"
-		}
-	],
-	...
+    [
+      [
+        {
+          "addressPrefix": null,
+          "etag": null,
+          "id": "/subscriptions/<guid>/resourceGroups/RG-NSG/providers/Microsoft.Network/virtualNetworks/TestVNET/subnets/FrontEnd",
+          "ipConfigurations": null,
+          "name": null,
+          "networkSecurityGroup": null,
+          "provisioningState": null,
+          "resourceGroup": "RG-NSG",
+          "resourceNavigationLinks": null,
+          "routeTable": null
+        }
+      ],
+      null
+    ]
 
 在上述示例中，NSG 不与任何网络接口 (NIC) 关联，而是与名为 **FrontEnd** 的子网关联。
 
-## 管理规则
-可向现有 NSG 添加规则、编辑现有规则和删除规则。
-
-### 添加规则
+## 添加规则
 若要向 **NSG-FrontEnd** NSG 添加允许来自任何计算机的**入站**流量流入端口 **443** 的规则，请输入以下命令：
 
-    azure network nsg rule create --resource-group RG-NSG \
-        --nsg-name NSG-FrontEnd \
-        --name allow-https \
-        --description "Allow access to port 443 for HTTPS" \
-        --protocol Tcp \
-        --source-address-prefix * \
-        --source-port-range * \
-        --destination-address-prefix * \
-        --destination-port-range 443 \
-        --access Allow \
-        --priority 102 \
-        --direction Inbound
+    az network nsg rule create  \
+    --resource-group RG-NSG \
+    --nsg-name NSG-FrontEnd  \
+    --name allow-https \
+    --description "Allow access to port 443 for HTTPS" \
+    --access Allow \
+    --protocol Tcp  \
+    --direction Inbound \
+    --priority 102 \
+    --source-address-prefix "*"  \
+    --source-port-range "*"  \
+    --destination-address-prefix "*" \
+    --destination-port-range "443"
 
 预期输出：
 
-	info:    Executing command network nsg rule create
-	+ Looking up the network security rule "allow-https"
-	+ Creating a network security rule "allow-https"
-	+ Looking up the network security group "NSG-FrontEnd"
-	data:    Id                              : /subscriptions/[Subscription Id]/resourceGroups/RG-NSG/providers/Microsoft.Network/networkSecurityGroups/NSG-FrontEnd/securityRules/allow-https
-	data:    Name                            : allow-https
-	data:    Type                            : Microsoft.Network/networkSecurityGroups/securityRules
-	data:    Provisioning state              : Succeeded
-	data:    Description                     : Allow access to port 443 for HTTPS
-	data:    Source IP                       : *
-	data:    Source Port                     : *
-	data:    Destination IP                  : *
-	data:    Destination Port                : 443
-	data:    Protocol                        : Tcp
-	data:    Direction                       : Inbound
-	data:    Access                          : Allow
-	data:    Priority                        : 102
-	info:    network nsg rule create command OK
+    {
+      "access": "Allow",
+      "description": "Allow access to port 443 for HTTPS",
+      "destinationAddressPrefix": "*",
+      "destinationPortRange": "443",
+      "direction": "Inbound",
+      "etag": "W/\"<guid>\"",
+      "id": "/subscriptions/<guid>/resourceGroups/RG-NSG/providers/Microsoft.Network/networkSecurityGroups/NSG-FrontEnd/securityRules/allow-https",
+      "name": "allow-https",
+      "priority": 102,
+      "protocol": "Tcp",
+      "provisioningState": "Succeeded",
+      "resourceGroup": "RG-NSG",
+      "sourceAddressPrefix": "*",
+      "sourcePortRange": "*"
+    }
 
-### 更改规则
-若要将上面创建的规则更改为仅允许来自 **Internet** 的入站流量，请运行以下命令：
+## 更改规则
+若要将上面创建的规则更改为仅允许来自 **Internet** 的入站流量，请运行 [az network nsg rule update](https://docs.microsoft.com/cli/azure/network/nsg/rule#update) 命令：
 
-    azure network nsg rule set --resource-group RG-NSG \
-        --nsg-name NSG-FrontEnd \
-        --name allow-https \
-        --source-address-prefix Internet
+    az network nsg rule update \
+    --resource-group RG-NSG \
+    --nsg-name NSG-FrontEnd \
+    --name allow-https \
+    --source-address-prefix Internet
 
 预期输出：
 
-    info:    Executing command network nsg rule set
-    + Looking up the network security group "NSG-FrontEnd"
-    + Setting a network security rule "allow-https"
-    + Looking up the network security group "NSG-FrontEnd"
-    data:    Id                              : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/RG-NSG/providers/Microsoft.Network/networkSecurityGroups/NSG-FrontEnd/securityRules/allow-https
-    data:    Name                            : allow-https
-    data:    Type                            : Microsoft.Network/networkSecurityGroups/securityRules
-    data:    Provisioning state              : Succeeded
-    data:    Description                     : Allow access to port 443 for HTTPS
-    data:    Source IP                       : Internet
-    data:    Source Port                     : *
-    data:    Destination IP                  : *
-    data:    Destination Port                : 443
-    data:    Protocol                        : Tcp
-    data:    Direction                       : Inbound
-    data:    Access                          : Allow
-    data:    Priority                        : 102
-    info:    network nsg rule set command OK
+    {
+    "access": "Allow",
+    "description": "Allow access to port 443 for HTTPS",
+    "destinationAddressPrefix": "*",
+    "destinationPortRange": "443",
+    "direction": "Inbound",
+    "etag": "W/\"<guid>\"",
+    "id": "/subscriptions/<guid>/resourceGroups/RG-NSG/providers/Microsoft.Network/networkSecurityGroups/NSG-FrontEnd/securityRules/allow-https",
+    "name": "allow-https",
+    "priority": 102,
+    "protocol": "Tcp",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "RG-NSG",
+    "sourceAddressPrefix": "Internet",
+    "sourcePortRange": "*"
+    }
 
-### 删除规则
+## 删除规则
 若要删除上面创建的规则，请运行以下命令：
 
-    azure network nsg rule delete --resource-group RG-NSG \
-        --nsg-name NSG-FrontEnd \
-        --name allow-https \
-        --quiet
+    az network nsg rule delete \
+    --resource-group RG-NSG \
+    --nsg-name NSG-FrontEnd \
+    --name allow-https
 
-> [AZURE.NOTE]
-`--quiet` 参数可确保无需确认删除。
->
+## 将 NSG 关联到 NIC
+若要将 **NSG-FrontEnd** NSG 关联到 **TestNICWeb1** NIC，请使用 [az network nic update](https://docs.microsoft.com/cli/azure/network/nic#update) 命令：
 
-预期输出：
-
-    info:    Executing command network nsg rule delete
-    + Looking up the network security group "NSG-FrontEnd"
-    + Deleting network security rule "allow-https"
-    info:    network nsg rule delete command OK
-
-## 管理关联项
-可将 NSG 关联到子网和 NIC。还可取消 NSG 与任何相关联的资源之间的关联。
-
-### 将 NSG 关联到 NIC
-若要将 **NSG-FrontEnd** NSG 关联到 **TestNICWeb1** NIC，请运行以下命令：
-
-    azure network nic set --resource-group RG-NSG \
-        --name TestNICWeb1 \
-        --network-security-group-name NSG-FrontEnd
+    az network nic update \
+    --resource-group RG-NSG \
+    --name TestNICWeb1 \
+    --network-security-group NSG-FrontEnd    
 
 预期输出：
 
-    info:    Executing command network nic set
-    + Looking up the network interface "TestNICWeb1"
-    + Looking up the network security group "NSG-FrontEnd"
-    + Updating network interface "TestNICWeb1"
-    + Looking up the network interface "TestNICWeb1"
-    data:    Id                              : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/RG-NSG/providers/Microsoft.Network/networkInterfaces/TestNICWeb1
-    data:    Name                            : TestNICWeb1
-    data:    Type                            : Microsoft.Network/networkInterfaces
-    data:    Location                        : chinanorth
-    data:    Provisioning state              : Succeeded
-    data:    MAC address                     : 00-0D-3A-30-A1-F8
-    data:    Enable IP forwarding            : false
-    data:    Tags                            : displayName=NetworkInterfaces - Web
-    data:    Network security group          : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/RG-NSG/providers/Microsoft.Network/networkSecurityGroups/NSG-FrontEnd
-    data:    Virtual machine                 : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/RG-NSG/providers/Microsoft.Compute/virtualMachines/Web1
-    data:    IP configurations:
-    data:      Name                          : ipconfig1
-    data:      Provisioning state            : Succeeded
-    data:      Public IP address             : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/RG-NSG/providers/Microsoft.Network/publicIPAddresses/TestPIPWeb1
-    data:      Private IP address            : 192.168.1.5
-    data:      Private IP Allocation Method  : Dynamic
-    data:      Subnet                        : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/RG-NSG/providers/Microsoft.Network/virtualNetworks/TestVNet/subnets/FrontEnd
-    data:
-    info:    network nic set command OK
+    {
+      "dnsSettings": {
+        "appliedDnsServers": [],
+        "dnsServers": [],
+        "internalDnsNameLabel": null,
+        "internalDomainNameSuffix": "k0wkaguidnqrh0ud.gx.internal.chinacloudapp.cn",
+        "internalFqdn": null
+      },
+      "enableAcceleratedNetworking": false,
+      "enableIpForwarding": false,
+      "etag": "W/\"<guid>\"",
+      "id": "/subscriptions/<guid>/resourceGroups/RG-NSG/providers/Microsoft.Network/networkInterfaces/TestNICWeb1",
+      "ipConfigurations": [
+        {
+          "applicationGatewayBackendAddressPools": null,
+          "etag": "W/\"<guid>\"",
+          "id": "/subscriptions/<guid>/resourceGroups/RG-NSG/providers/Microsoft.Network/networkInterfaces/TestNICWeb1/ipConfigurations/ipconfig1",
+          "loadBalancerBackendAddressPools": null,
+          "loadBalancerInboundNatRules": null,
+          "name": "ipconfig1",
+          "primary": true,
+          "privateIpAddress": "192.168.1.6",
+          "privateIpAddressVersion": "IPv4",
+          "privateIpAllocationMethod": "Static",
+          "provisioningState": "Succeeded",
+          "publicIpAddress": null,
+          "resourceGroup": "RG-NSG",
+          "subnet": {
+            "addressPrefix": null,
+            "etag": null,
+            "id": "/subscriptions/<guid>/resourceGroups/RG-NSG/providers/Microsoft.Network/virtualNetworks/TestVNet/subnets/FrontEnd",
+            "ipConfigurations": null,
+            "name": null,
+            "networkSecurityGroup": null,
+            "provisioningState": null,
+            "resourceGroup": "RG-NSG",
+            "resourceNavigationLinks": null,
+            "routeTable": null
+          }
+        }
+      ],
+      "location": "chinaeast",
+      "macAddress": "00-0D-3A-91-A9-60",
+      "name": "TestNICWeb1",
+      "networkSecurityGroup": {
+        "defaultSecurityRules": null,
+        "etag": null,
+        "id": "/subscriptions/<guid>/resourceGroups/RG-NSG/providers/Microsoft.Network/networkSecurityGroups/NSG-FrontEnd",
+        "location": null,
+        "name": null,
+        "networkInterfaces": null,
+        "provisioningState": null,
+        "resourceGroup": "RG-NSG",
+        "resourceGuid": null,
+        "securityRules": null,
+        "subnets": null,
+        "tags": null,
+        "type": null
+      },
+      "primary": null,
+      "provisioningState": "Succeeded",
+      "resourceGroup": "RG-NSG",
+      "resourceGuid": "<guid>",
+      "tags": {},
+      "type": "Microsoft.Network/networkInterfaces",
+      "virtualMachine": null
+    }
 
-### <a name="Dissociate-an-NSG-from-a-NIC"></a>取消 NSG 与 NIC 之间的关联
+## <a name="Dissociate-an-NSG-from-a-NIC"></a>取消 NSG 与 NIC 之间的关联
 
-若要取消 **NSG-FrontEnd** NSG 与 **TestNICWeb1** NIC 之间的关联，请运行以下命令：
+若要从 **TestNICWeb1** NIC 取消关联 **NSG-FrontEnd** NSG，请再次运行 [az network nsg rule update](https://docs.microsoft.com/cli/azure/network/nsg/rule#update) 命令，但将 `--network-security-group` 参数替换为一个空字符串 (`""`)。
 
-    azure network nic set --resource-group RG-NSG --name TestNICWeb1 --network-security-group-id ""
+    az network nic update --resource-group RG-NSG --name TestNICWeb3 --network-security-group ""
 
-> [AZURE.NOTE]
-请注意 `network-security-group-id` 参数的 ""（空）值。这就是删除 NSG 关联项的方式。不能对 `network-security-group-name` 参数执行相同操作。
-> 
+在输出中，`networkSecurityGroup` 项设置为 null。
 
-预期结果：
+## <a name="Dissociate-an-NSG-from-a-subnet"></a>取消 NSG 与子网之间的关联
+若要从 **FrontEnd** 子网取消关联 **NSG-FrontEnd** NSG，请再次运行 [az network nsg rule update](https://docs.microsoft.com/cli/azure/network/nsg/rule#update) 命令，但将 `--network-security-group` 参数替换为一个空字符串 (`""`)。
 
-    info:    Executing command network nic set
-    + Looking up the network interface "TestNICWeb1"
-    + Updating network interface "TestNICWeb1"
-    + Looking up the network interface "TestNICWeb1"
-    data:    Id                              : /subscriptions/[Subscription Id]/resourceGroups/RG-NSG/providers/Microsoft.Network/networkInterfaces/TestNICWeb1
-    data:    Name                            : TestNICWeb1
-    data:    Type                            : Microsoft.Network/networkInterfaces
-    data:    Location                        : chinanorth
-    data:    Provisioning state              : Succeeded
-    data:    MAC address                     : 00-0D-3A-30-A1-F8
-    data:    Enable IP forwarding            : false
-    data:    Tags                            : displayName=NetworkInterfaces - Web
-    data:    Virtual machine                 : /subscriptions/[Subscription Id]/resourceGroups/RG-NSG/providers/Microsoft.Compute/virtualMachines/Web1
-    data:    IP configurations:
-    data:      Name                          : ipconfig1
-    data:      Provisioning state            : Succeeded
-    data:      Public IP address             : /subscriptions/[Subscription Id]/resourceGroups/RG-NSG/providers/Microsoft.Network/publicIPAddresses/TestPIPWeb1
-    data:      Private IP address            : 192.168.1.5
-    data:      Private IP Allocation Method  : Dynamic
-    data:      Subnet                        : /subscriptions/[Subscription Id]/resourceGroups/RG-NSG/providers/Microsoft.Network/virtualNetworks/TestVNet/subnets/FrontEnd
-    data:
-    info:    network nic set command OK
+    az network vnet subnet update \
+    --resource-group RG-NSG \
+    --vnet-name testvnet \
+    --name FrontEnd \
+    --network-security-group ""
 
-### <a name="Dissociate-an-NSG-from-a-subnet"></a>取消 NSG 与子网之间的关联
-若要取消 **NSG-FrontEnd** NSG 与 **FrontEnd** 子网之间的关联，请运行以下命令：
+在输出中，`networkSecurityGroup` 项设置为 null。
 
-    azure network vnet subnet set --resource-group RG-NSG \
-        --vnet-name TestVNet \
-        --name FrontEnd \
-        --network-security-group-id ""
+## 将 NSG 关联到子网
+若要再次将 **NSG-FrontEnd** NSG 关联到 **FrontEnd** 子网，请运行以下命令：
 
-预期输出：
+    az network vnet subnet update \
+    --resource-group RG-NSG \
+    --vnet-name testvnet \
+    --name FrontEnd \
+    --network-security-group NSG-FrontEnd
 
-    info:    Executing command network vnet subnet set
-    + Looking up the subnet "FrontEnd"
-    + Setting subnet "FrontEnd"
-    + Looking up the subnet "FrontEnd"
-    data:    Id                              : /subscriptions/[Subscription Id]/resourceGroups/RG-NSG/providers/Microsoft.Network/virtualNetworks/TestVNet/subnets/FrontEnd
-    data:    Type                            : Microsoft.Network/virtualNetworks/subnets
-    data:    ProvisioningState               : Succeeded
-    data:    Name                            : FrontEnd
-    data:    Address prefix                  : 192.168.1.0/24
-    data:    IP configurations:
-    data:      /subscriptions/[Subscription Id]/resourceGroups/RG-NSG/providers/Microsoft.Network/networkInterfaces/TestNICWeb2/ipConfigurations/ipconfig1
-    data:      /subscriptions/[Subscription Id]/resourceGroups/RG-NSG/providers/Microsoft.Network/networkInterfaces/TestNICWeb1/ipConfigurations/ipconfig1
-    data:
-    info:    network vnet subnet set command OK
+在输出中，`networkSecurityGroup` 项具有类似的值：
 
-### 将 NSG 关联到子网
-若要再次将 **NSG-FrontEnd** NSG 关联到 **FronEnd** 子网，请运行以下命令：
-
-    azure network vnet subnet set --resource-group RG-NSG \
-        --vnet-name TestVNet \
-        --name FrontEnd \
-        --network-security-group-name NSG-FronEnd
-
-> [AZURE.NOTE]
-上述命令能起作用是因为 **NSG-FrontEnd** NSG 与虚拟网络 **TestVNet** 处于同一个资源组中。如果 NSG 在不同的资源组中，则需要改用 `--network-security-group-id` 参数，并提供 NSG 的完整 ID。可通过运行 `azure network nsg show --resource-group RG-NSG --name NSG-FrontEnd --json` 并查找 **id** 属性来检索 ID。
-> 
-
-预期输出：
-
-        info:    Executing command network vnet subnet set
-        + Looking up the subnet "FrontEnd"
-        + Looking up the network security group "NSG-FrontEnd"
-        + Setting subnet "FrontEnd"
-        + Looking up the subnet "FrontEnd"
-        data:    Id                              : /subscriptions/[Subscription Id]/resourceGroups/RG-NSG/providers/Microsoft.Network/virtualNetworks/TestVNet/subnets/FrontEnd
-        data:    Type                            : Microsoft.Network/virtualNetworks/subnets
-        data:    ProvisioningState               : Succeeded
-        data:    Name                            : FrontEnd
-        data:    Address prefix                  : 192.168.1.0/24
-        data:    Network security group          : [object Object]
-        data:    IP configurations:
-        data:      /subscriptions/[Subscription Id]resourceGroups/RG-NSG/providers/Microsoft.Network/networkInterfaces/TestNICWeb2/ipConfigurations/ipconfig1
-        data:      /subscriptions/[Subscription Id]/resourceGroups/RG-NSG/providers/Microsoft.Network/networkInterfaces/TestNICWeb1/ipConfigurations/ipconfig1
-        data:
-        info:    network vnet subnet set command OK
+    "networkSecurityGroup": {
+        "defaultSecurityRules": null,
+        "etag": null,
+        "id": "/subscriptions/0e220bf6-5caa-4e9f-8383-51f16b6c109f/resourceGroups/RG-NSG/providers/Microsoft.Network/networkSecurityGroups/NSG-FrontEnd",
+        "location": null,
+        "name": null,
+        "networkInterfaces": null,
+        "provisioningState": null,
+        "resourceGroup": "RG-NSG",
+        "resourceGuid": null,
+        "securityRules": null,
+        "subnets": null,
+        "tags": null,
+        "type": null
+      }
 
 ## 删除 NSG
 仅当 NSG 不与任何资源关联时，才能删除 NSG。若要删除 NSG，请按照以下步骤进行操作。
@@ -327,16 +311,10 @@ Azure 具有两种不同的部署模型，用于创建和处理资源：[Resourc
 3. 如果 NSG 关联到任意子网，请为每个子网运行 `azure network vnet subnet set`，如[取消 NSG 与子网之间的关联](#Dissociate-an-NSG-from-a-subnet)中所示。
 4. 若要删除 NSG，请运行以下命令：
 
-        azure network nsg delete --resource-group RG-NSG --name NSG-FrontEnd --quiet
-
-    预期输出：
-
-		info:    Executing command network nsg delete
-		+ Looking up the network security group "NSG-FrontEnd"
-		+ Deleting network security group "NSG-FrontEnd"
-		info:    network nsg delete command OK
+        az network nsg delete --resource-group RG-NSG --name NSG-FrontEnd
 
 ## 后续步骤
 * 为 NSG [启用日志记录](/documentation/articles/virtual-network-nsg-manage-log/)。
 
-<!---HONumber=Mooncake_1219_2016-->
+<!---HONumber=Mooncake_0327_2017-->
+<!--Update_Description: change from CLI 1.0 to CLI 2.0-->

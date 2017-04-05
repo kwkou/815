@@ -15,8 +15,8 @@
     ms.topic="get-started-article"
     ms.tgt_pltfrm="na"
     ms.workload="big-data"
-    ms.date="02/06/2017"
-    wacn.date="03/28/2017"
+    ms.date="03/07/2017"
+    wacn.date="03/31/2017"
     ms.author="jgao" />  
 
 
@@ -24,9 +24,9 @@
 
 [AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-sdk-developer-differences.md)]
 
-了解如何使用用于 Visual Studio 的 Data Lake (HDInsight) 工具连接到 HDInsight 群集和提交 Hive 查询。有关使用 HDInsight 的详细信息，请参阅 [HDInsight 简介][hdinsight.introduction]和[开始使用 HDInsight][hdinsight.get.started]。有关连接到 Storm 群集的详细信息，请参阅[使用 Visual Studio 在 HDInsight 上针对 Apache Storm 开发 C# 拓扑][hdinsight.storm.visual.studio.tools]。
+了解如何使用用于 Visual Studio 的 Data Lake (HDInsight) 工具连接到 HDInsight 群集和提交 Hive 查询。
 
-用于 Visual Studio 的 Data Lake 工具可用于访问 HDInsight。
+用于 Visual Studio 的 Data Lake 工具可用于访问 Data Lake Analytics 和 HDInsight。但是，Data Lake Analytics 在 Azure 中国区中尚不可用。
 
 [AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-visual-studio-login-guide.md)]
 
@@ -34,25 +34,20 @@
 
 若要完成本教程并使用 Visual Studio 中的 Data Lake 工具，需要以下项：
 
-* Azure HDInsight 群集：基于 Linux 或 Windows 的群集可用于本文档中的步骤。有关创建群集的详细信息，请参阅下列主题之一：
-  
-    * [开始使用基于 Linux 的 HDInsight](/documentation/articles/hdinsight-hadoop-linux-tutorial-get-started/)
-    * [开始使用基于 Windows 的 HDInsight](/documentation/articles/hdinsight-hadoop-tutorial-get-started-windows/)
+* Azure HDInsight 群集：若要创建一个，请参阅[使用基于 Linux 的 HDInsight 入门](/documentation/articles/hdinsight-hadoop-linux-tutorial-get-started/)
 * 安装有以下软件的工作站：
   
-    * Windows 8.1、Windows 8 或 Windows 7
-    * Visual Studio（以下版本之一）：
+    * Windows 10、Windows 8.1、Windows 8 或 Windows 7。
+    * Visual Studio 2013/2015/2017。
     
-        * 包含 [Update 4](https://www.microsoft.com/download/details.aspx?id=44921) 的 Visual Studio 2013 Community/Professional/Premium/Ultimate
-        * Visual Studio 2015 (Community/Enterprise)
-    
-        > [AZURE.NOTE]
-        目前，用于 Visual Studio 的 Data Lake 工具仅有英文版本。
-        > 
-        > 
+    > [AZURE.NOTE]
+    目前，用于 Visual Studio 的 Data Lake 工具仅有英文版本。
+    > 
+    > 
 
 ## <a name="install-data-lake-tools-for-visual-studio"></a> 安装用于 Visual Studio 的 Data Lake 工具
-可以使用 [Web 平台安装程序](https://www.microsoft.com/web/downloads/)来安装 Data Lake 工具。你必须选择与你的 Visual Studio 版本匹配的版本。如果尚未安装 Visual Studio，则可使用 [Web 平台安装程序](https://www.microsoft.com/web/downloads/)安装最新 Visual Studio Community 和 Azure SDK：
+
+默认情况下，为 Visual Studio 2017 安装 Data Lake Tools。对于旧版本，可以使用 [Web 平台安装程序](https://www.microsoft.com/web/downloads/)安装它。你必须选择与你的 Visual Studio 版本匹配的版本。如果尚未安装 Visual Studio，则可使用 [Web 平台安装程序](https://www.microsoft.com/web/downloads/)安装最新 Visual Studio Community 和 Azure SDK：
 
 ![用于 Visual Studio 的 Data Lake 工具 Web 平台安装程序。][1]  
 
@@ -287,5 +282,5 @@ Data Lake 工具支持显示 Tez 执行引擎运行的 Hive 作业的性能图�
 
 [apache.hive]: http://hive.apache.org
 
-<!---HONumber=Mooncake_0120_2017-->
-<!--Update_Description: update from ASM to ARM-->
+<!---HONumber=Mooncake_0327_2017-->
+<!--Update_Description: wording update-->

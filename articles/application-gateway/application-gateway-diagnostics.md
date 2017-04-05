@@ -15,7 +15,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="infrastructure-services"
     ms.date="01/17/2017"
-    wacn.date="03/03/2017"
+    wacn.date="03/31/2017"
     ms.author="amitsriva" />  
 
 
@@ -34,7 +34,7 @@ Azure 提供使用日志记录和指标来监视资源的功能。应用程序�
 应用程序网关提供通过门户、PowerShell 和 CLI 监视后端池各成员运行状况的功能。也可通过性能诊断日志查找后端池的聚合运行状况摘要。后端运行状况报告反映了应用程序网关运行状况探测到后端实例的输出。如果探测成功且可向后端提供流量，则可认为运行状况正常，否则不正常。
 
 > [AZURE.IMPORTANT]
-如果应用程序网关子网上存在 NSG，则应在应用程序网关实例上打开端口范围 65503-65534。
+如果应用程序网关子网上存在 NSG，则应在应用程序网关子网上向后端池成员打开端口范围 65503-65534。这些端口是后端运行状况正常工作所必需的。
 
 ### 通过门户查看后端运行状况
 
@@ -305,5 +305,5 @@ Azure 默认生成此日志（以前称为“操作日志”）。日志在 Azur
 [9]: ./media/application-gateway-diagnostics/figure9.png
 [10]: ./media/application-gateway-diagnostics/figure10.png
 
-<!---HONumber=Mooncake_0227_2017-->
-<!--update desciption: add "backend health"-->
+<!---HONumber=Mooncake_0327_2017-->
+<!--Update_Description: wording update-->

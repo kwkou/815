@@ -14,33 +14,32 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="big-data"
-    ms.date="02/09/2017"
-    wacn.date="03/10/2017"
+    ms.date="03/01/2017"
+    wacn.date="03/31/2017"
     ms.author="larryfr" />
 
 # 使用 Power BI 直观显示 Apache Storm 拓扑中的数据
 
+Power BI 允许以可视方式将数据显示为报表。本文档提供了如何使用 Apache Storm on HDInsight 为 Power BI 生成数据的示例。
+
 [AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-sdk-developer-differences.md)]
 
-Power BI 允许以可视方式将数据显示为报表。使用适用于 Storm on HDInsight 的 Visual Studio 模板，可以轻松地将 Apache Storm on HDInsight 群集上运行的拓扑中的数据存储到 SQL Azure，然后使用 Power BI 将数据可视化。
 
 [AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-visual-studio-login-guide.md)]
 
-在本文档中，将学习如何使用 Power BI 基于 Apache Storm 生成的数据创建报表，然后将其存储到 Azure SQL 数据库中。
-
 > [AZURE.NOTE]
 虽然本文档中的步骤依赖于带 Visual Studio 的 Windows 开发环境，但是也可将编译的项目提交到基于 Linux 或 Windows 的 HDInsight 群集。仅在 2016 年 10 月 28 日以后创建的基于 Linux 的群集支持 SCP.NET 拓扑。
-> <p>
-> 若要将 C# 拓扑与基于 Linux 的群集一起使用，必须将项目所使用的 Microsoft.SCP.Net.SDK NuGet 包更新为 0.10.0.6 或更高版本。包的版本还必须与 HDInsight 上安装的 Storm 的主要版本相符。例如，Storm on HDInsight 版本 3.3 和 3.4 使用 Storm 版本 0.10.x，而 HDInsight 3.5 使用 Storm 1.0.x。
-> <p>
-> 基于 Linux 的群集上的 C# 拓扑必须使用 .NET 4.5，并使用要在 HDInsight 群集上运行的 Mono。大多数功能会正常运行，但应查看 [Mono 兼容性](http://www.mono-project.com/docs/about-mono/compatibility/)文档，了解可能的不兼容性。
-> <p>
-> 如需此项目的 Java 版本（也适用于基于 Linux 或基于 Windows 的群集），请参阅[使用 Storm on HDInsight 从 Azure 事件中心处理事件 (Java)](/documentation/articles/hdinsight-storm-develop-java-event-hub-topology/)。
+> <p> 
+> 若要将 C# 拓扑用于基于 Linux 的群集，请将项目所使用的 Microsoft.SCP.Net.SDK NuGet 包更新为 0.10.0.6 版或更高版本。包的版本还必须与 HDInsight 上安装的 Storm 的主要版本相符。例如，Storm on HDInsight 版本 3.3 和 3.4 使用 Storm 版本 0.10.x，而 HDInsight 3.5 使用 Storm 1.0.x。
+> <p> 
+> 基于 Linux 的群集上的 C# 拓扑必须使用 .NET 4.5，并使用要在 HDInsight 群集上运行的 Mono。大多数功能适用。但应查看 [Mono 兼容性](http://www.mono-project.com/docs/about-mono/compatibility/)文档，了解可能的不兼容性。
+> 
+> <p>如需此项目的 Java 版本（适用于基于 Linux 或基于 Windows 的 HDInsight），请参阅[使用 Storm on HDInsight 处理 Azure 事件中心中的事件 (Java)](/documentation/articles/hdinsight-storm-develop-java-event-hub-topology/)。
 
 ## 先决条件
 
 * 具有 [Power BI](https://powerbi.com) 访问权限的 Azure Active Directory 用户。
-* HDInsight 群集。有关创建新群集的信息，请参阅 [Storm on HDInsight 入门](/documentation/articles/hdinsight-apache-storm-tutorial-get-started-linux/)。
+* HDInsight 群集。有关详细信息，请参阅 [Get started with Storm on HDInsight](/documentation/articles/hdinsight-apache-storm-tutorial-get-started-linux/)（Storm on HDInsight 入门）。
 
     > [AZURE.IMPORTANT]
     Linux 是在 HDInsight 3.4 版或更高版本上使用的唯一操作系统。有关详细信息，请参阅 [HDInsight 在 Windows 上弃用](/documentation/articles/hdinsight-component-versioning/#hdi-version-32-and-33-nearing-deprecation-date)。
@@ -50,6 +49,7 @@ Power BI 允许以可视方式将数据显示为报表。使用适用于 Storm o
     * Visual Studio 2012 [Update 4](http://www.microsoft.com/download/details.aspx?id=39305)
     * Visual Studio 2013 [Update 4](http://www.microsoft.com/download/details.aspx?id=44921) 或 [Visual Studio 2013 Community](http://download.microsoft.com/download/7/1/B/71BA74D8-B9A0-4E6C-9159-A8335D54437E/vs_community.exe)
     * [Visual Studio 2015](https://www.visualstudio.com/downloads/download-visual-studio-vs.aspx)
+    * Visual Studio 2017（任何版本）
 
 * HDInsight Tools for Visual Studio：有关安装方面的信息，请参阅 [HDInsight Tools for Visual Studio 入门](/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started/)。
 
@@ -57,13 +57,13 @@ Power BI 允许以可视方式将数据显示为报表。使用适用于 Storm o
 
 本示例包含随机生成 Internet Information Services (IIS) 日志数据的 C# Storm 拓扑。将此数据写入 SQL 数据库，随后用于在 Power BI 中生成报表。
 
-以下是实现本示例的主要功能的文件列表。
+以下文件实现了此示例的主要功能：
 
 * **SqlAzureBolt.cs**：将 Storm 拓扑中生成的信息写入 SQL 数据库。
 * **IISLogsTable.sql**：Transact-SQL 语句，用于生成存储数据的数据库。
 
 > [AZURE.WARNING]
-在 HDInsight 群集上启动该拓扑前，必须先在 SQL 数据库中创建表。
+在 HDInsight 群集上启动拓扑前，请先在 SQL 数据库中创建表。
 
 ## 下载示例
 
@@ -71,13 +71,11 @@ Power BI 允许以可视方式将数据显示为报表。使用适用于 Storm o
 
 ## 创建数据库
 
-1. 按照 [SQL Database tutorial](/documentation/articles/sql-database-get-started/)（SQL 数据库教程）文档中的步骤创建新 SQL 数据库。
+1. 若要创建数据库，请按照 [SQL 数据库教程](/documentation/articles/sql-database-get-started/)文档中的步骤进行操作。
 
 2. 按照 [Connect to a SQL Database with Visual Studio](/documentation/articles/sql-database-connect-query/)（使用 Visual Studio 连接到 SQL 数据库）文档中的步骤连接到数据库。
 
-3. 在“对象资源管理器”中，右键单击数据库，然后创建**新查询**。将下载的项目中包含的 **IISLogsTable.sql** 文件的内容粘贴到查询窗口中，然后按 Ctrl+Shift+E 执行查询。将会已成功完成命令的消息。
-   
-    完成此操作后，数据库中会出现名为 **IISLOGS** 的新表。
+3. 在对象资源管理器中，右键单击数据库，然后选择“新建查询”。将下载的项目中包含的 **IISLogsTable.sql** 文件的内容粘贴到查询窗口中，然后按 Ctrl+Shift+E 执行查询。应收到“命令已成功完成”消息。
 
 ## 配置示例
 
@@ -97,20 +95,20 @@ Power BI 允许以可视方式将数据显示为报表。使用适用于 Storm o
    
     > [AZURE.NOTE]
     “Storm 群集”下拉对话框中填充服务器名称可能需要几秒钟时间。
-    > <p>
+    > <p> 
     > 如果出现提示，请输入 Azure 订阅的登录凭据。如果有多个订阅，请登录包含 Storm on HDInsight 群集的订阅。
 
-2. 成功提交拓扑后，应该会出现群集的“Storm 拓扑”。从列表中选择 SqlAzureWriterTopology 条目，以查看有关正在运行的拓扑的信息。
+2. 提交拓扑后，将会显示“拓扑查看器”。若要查看此拓扑，请从列表中选择 SqlAzureWriterTopology 条目。
    
-    ![拓扑，已选择的拓扑](./media/hdinsight-storm-power-bi-topology/topologyview.png)
+    ![拓扑，已选择的拓扑](./media/hdinsight-storm-power-bi-topology/topologyview.png)  
    
     可以使用此视图查看有关拓扑的信息，或双击条目（例如 SqlAzureBolt）以查看拓扑中组件的具体信息。
 
-3. 在拓扑运行几分钟后，请返回用于创建数据库的 SQL 查询窗口。将现有语句替换为以下内容。
+3. 在拓扑运行几分钟后，请返回用于创建数据库的 SQL 查询窗口。将现有语句替换为以下查询：
    
         select * from iislogs;
    
-    按 Ctrl+Shift+E 执行查询，应显示类似如下的结果。
+    按 Ctrl+Shift+E 执行查询，应显示类似如下的结果：
    
         1    2016-05-27 17:57:14.797    255.255.255.255    /bar    GET    200
         2    2016-05-27 17:57:14.843    127.0.0.1    /spam/eggs    POST    500
@@ -119,7 +117,7 @@ Power BI 允许以可视方式将数据显示为报表。使用适用于 Storm o
         5    2016-05-27 17:57:14.853    10.9.8.7    /bar    GET    200
         6    2016-05-27 17:57:14.857    192.168.1.1    /spam    DELETE    200
    
-    这是从 Storm 拓扑写入的数据。
+    已从 Storm 拓扑写入此数据。
 
 ## 创建报告
 
@@ -136,23 +134,23 @@ Power BI 允许以可视方式将数据显示为报表。使用适用于 Storm o
  
 5. 连接后，将显示一个名称与连接的数据库相同的新数据集。选择该数据集以开始设计报表。
 
-6. 在“字段”中，展开“IISLOGS”条目。选中“URISTEM”对应的复选框。这将创建一个新报表，列出数据库中记录的 URI 词干（/foo、/bar 等）。
+6. 在“字段”中，展开“IISLOGS”条目。选中“URISTEM”对应的复选框。这将创建一个报表，其中列出数据库中记录的 URI 词干（/foo、/bar 等）。
    
-    ![创建报表](./media/hdinsight-storm-power-bi-topology/createreport.png)
+    ![创建报表](./media/hdinsight-storm-power-bi-topology/createreport.png)  
 
 7. 接下来，将“方法”拖到报表中。报表将更新，以列出词干和用于 HTTP 请求的对应 HTTP 方法。
    
     ![添加方法数据](./media/hdinsight-storm-power-bi-topology/uristemandmethod.png)
 
-8. 从“可视化”列中选择“字段”图标，然后选择“值”部分中“方法”旁边的向下箭头。从显示的列表中选择“计数”。随后将更改报表以列出特定 URI 的访问次数。
+8. 从“可视化”列中选择“字段”图标，然后选择“值”部分中“方法”旁边的向下箭头。从显示的列表中选择“计数”。这将更改报表以列出特定 URI 的访问次数计数。
    
-    ![更改为方法计数](./media/hdinsight-storm-power-bi-topology/count.png)
+    ![更改为方法计数](./media/hdinsight-storm-power-bi-topology/count.png)  
 
 9. 接下来，选择“堆积柱形图”以更改信息的显示方式。
    
-    ![更改为堆积图](./media/hdinsight-storm-power-bi-topology/stackedcolumn.png)
+    ![更改为堆积图](./media/hdinsight-storm-power-bi-topology/stackedcolumn.png)  
 
-10. 创建所需的报表后，使用菜单中的“保存”项输入名称并保存报表。
+10. 若要保存报表，请选择“保存”并输入报表的名称。
 
 ## 停止拓扑
 
@@ -174,5 +172,5 @@ Power BI 允许以可视方式将数据显示为报表。使用适用于 Storm o
 
 * [Storm on HDInsight 的示例拓扑](/documentation/articles/hdinsight-storm-example-topology/)
 
-<!---HONumber=Mooncake_0306_2017-->
-<!--Update_Description: add information about HDInsight Windows is going to be abandoned-->
+<!---HONumber=Mooncake_0327_2017-->
+<!--Update_Description: wording update-->

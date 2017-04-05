@@ -178,7 +178,7 @@
 
     ![SQL 查询输出](./media/hdinsight-apache-spark-custom-library-website-log-analysis/sql.output.png "SQL 查询输出")  
 
-    有关 `%%sql` 幻数以及可在 PySpark 内核中使用的其他幻数的详细信息，请参阅 [Kernels available on Jupyter notebooks with Spark HDInsight clusters](/documentation/articles/hdinsight-apache-spark-jupyter-notebook-kernels/#why-should-i-use-the-pyspark-or-spark-kernels)（包含 Spark HDInsight 群集的 Jupyter 笔记本上可用的内核）。
+    有关 `%%sql` 幻数以及可在 PySpark 内核中使用的其他幻数的详细信息，请参阅 [Kernels available on Jupyter notebooks with Spark HDInsight clusters](/documentation/articles/hdinsight-apache-spark-jupyter-notebook-kernels/#parameters-supported-with-the-sql-magic)（包含 Spark HDInsight 群集的 Jupyter 笔记本上可用的内核）。
 7. 现可使用 Matplotlib（用于构造数据效果可视化的库）创建绘图。因为必须从本地保存的 **averagetime** 数据帧中创建绘图，所以代码片段必须以 `%%local` 幻数开头。这可确保代码在 Jupyter 服务器上本地运行。
 
         %%local

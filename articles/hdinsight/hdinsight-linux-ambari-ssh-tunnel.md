@@ -13,8 +13,8 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="big-data"
-    ms.date="02/08/2017"
-    wacn.date="03/10/2017"
+    ms.date="03/06/2017"
+    wacn.date="03/31/2017"
     ms.author="larryfr" />
 
 # 使用 SSH 隧道访问 Ambari Web UI、JobHistory、NameNode、Oozie 和其他 Web UI
@@ -48,7 +48,14 @@ Ambari 中的多个菜单在没有 SSH 隧道的情况下无法完全填充，�
     > [AZURE.NOTE]
     如果想要使用 `ssh` 或 PuTTY 以外的 SSH 客户端，请参阅客户端的文档，以了解如何建立 SSH 隧道。
 
-* 可配置为使用 SOCKS 代理的 Web 浏览器
+* 可配置为使用 SOCKS5 代理的 Web 浏览器。
+
+    > [AZURE.WARNING]
+    内置于 Windows 的 SOCKS 代理不支持 SOCKS5，并且不适用于本文档中的步骤。以下浏览器依赖于 Windows 代理设置，当前不适用于本文档中的步骤：
+    > <p>
+    ><p> * Microsoft Edge <p> * Microsoft Internet Explorer
+    ><p>
+    ><p> Google Chrome 也依赖于 Windows 代理设置。但是，可以安装支持 SOCKS5 的扩展。我们建议使用 [FoxyProxy Standard](https://chrome.google.com/webstore/detail/foxyproxy-standard/gcknhkkoolaabfmlnjonogaaifnjlfnp)。
 
 ## <a name="usessh"></a>使用 SSH 命令创建隧道
 
@@ -87,7 +94,7 @@ Ambari 中的多个菜单在没有 SSH 隧道的情况下无法完全填充，�
 
     * **动态** - 启用动态 SOCKS 代理路由。
      
-     ![隧道选项图像](./media/hdinsight-linux-ambari-ssh-tunnel/puttytunnel.png)
+        ![隧道选项图像](./media/hdinsight-linux-ambari-ssh-tunnel/puttytunnel.png)
 
 4. 单击“添加”以添加设置，然后单击“打开”以打开 SSH 连接。
 
@@ -95,8 +102,8 @@ Ambari 中的多个菜单在没有 SSH 隧道的情况下无法完全填充，�
 
 ## 从浏览器使用隧道
 
-> [AZURE.NOTE]
-本部分中的步骤使用 FireFox 浏览器，因为它在 Linux、Unix、Macintosh OS X 和 Windows 系统上均可任意使用。其他支持使用 SOCKS 代理的新式浏览器也可正常工作。
+> [AZURE.IMPORTANT]
+本部分中的步骤使用 Mozilla FireFox 浏览器，因为它在所有平台中提供相同的代理设置。其他新式浏览器（如 Google Chrome）可能需要 FoxyProxy 等扩展才能使用隧道。
 
 1. 将浏览器配置为使用 **localhost** 和在创建隧道时使用的端口作为 **SOCKS v5** 代理。Firefox 中的设置如下所示。如果使用的端口不是 9876，请将端口更改为所用的端口：
    
@@ -125,7 +132,7 @@ Ambari 中的多个菜单在没有 SSH 隧道的情况下无法完全填充，�
    
     > [AZURE.NOTE]
     如果 Internet 连接速度较慢或者头节点非常繁忙，则选择“快速链接”时，可能会看到等待指针而不是菜单。如果是这样，请等待一两分钟，让系统从服务器接收数据，然后再次尝试列出节点列表。
-    > <p> 
+    > <p>  
     > 如果显示器分辨率较低或者浏览器窗口没有最大化，则“快速链接”菜单中的某些项可能在屏幕右侧截断。如果是这样，请使用鼠标展开菜单，然后使用向右箭头键向右滚动屏幕，查看菜单的余下内容。
     > 
     > 
@@ -139,6 +146,7 @@ Ambari 中的多个菜单在没有 SSH 隧道的情况下无法完全填充，�
     > 
 
 ## 后续步骤
+
 学会如何创建和使用 SSH 隧道后，请参阅以下链接，了解如何通过 Ambari 监视和管理群集：
 
 * [Manage HDInsight clusters by using Ambari（使用 Ambari 管理 HDInsight 群集）](/documentation/articles/hdinsight-hadoop-manage-ambari/)
@@ -148,5 +156,5 @@ Ambari 中的多个菜单在没有 SSH 隧道的情况下无法完全填充，�
 * [在 Linux、Unix 或 OS X 中的 HDInsight 上将 SSH 与基于 Linux 的 Hadoop 配合使用](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix/)
 * [在 Windows 中的 HDInsight 上将 SSH 与基于 Linux 的 Hadoop 配合使用](/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows/)
 
-<!---HONumber=Mooncake_0306_2017-->
-<!--Update_Description: add information about HDInsight Windows is going to be abandoned-->
+<!---HONumber=Mooncake_0327_2017-->
+<!--Update_Description: wording update-->
