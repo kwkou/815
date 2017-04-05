@@ -13,8 +13,8 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="identity"
-    ms.date="02/08/2017"
-    wacn.date="03/13/2017"
+    ms.date="03/08/2017"
+    wacn.date="04/05/2017"
     ms.author="billmath" />
 
 # 连接器版本发行历史记录
@@ -34,11 +34,65 @@ Forefront Identity Manager (FIM) 和 Microsoft Identity Manager (MIM) 的连接�
 - [PowerShell 连接器](/documentation/articles/active-directory-aadconnectsync-connector-powershell/)参考文档
 - [Lotus Domino 连接器](/documentation/articles/active-directory-aadconnectsync-connector-domino/)参考文档
 
+## 1\.1.443.0
+
+发布时间：2017 年 3 月
+
+### 增强功能
+- 泛型 SQL：</br>
+**方案症状：**SQL 连接器有一个众所周知的限制，即只允许引用一个对象类型，并且需要对成员进行交叉引用。</br> 
+**解决方案说明：**在选择了“*”选项的引用的处理步骤中，对象类型的所有组合都会返回给同步引擎。
+
+	>[AZURE.IMPORTANT]
+	- 这将创建许多占位符
+	- 必须确保命名跨对象类型唯一。
+
+
+- 泛型 LDAP：</br>
+**方案：**
+如果在特定分区中只选择了数个容器，则会在整个分区中进行搜索。特定的将通过同步服务进行筛选，但不通过 MA 进行筛选，后者可能导致性能下降。</br>
+
+ **解决方案说明：**更改了 GLDAP 连接器的代码，以便浏览所有容器，在每个容器中搜索对象，不必在整个分区进行搜索。
+
+
+- Lotus Domino：
+
+  **方案：**支持 Domino 邮件删除功能，允许在导出过程中进行个人删除。</br>**解决方案：**支持配置邮件删除功能，允许在导出过程中进行个人删除。
+
+### 已解决的问题：
+- 泛型 Web 服务：
+ - 通过 WebService 配置工具在默认 SAP wsconfig 项目中更改服务 URL 时，会发生以下错误：找不到部分路径
+
+      ``'C:\Users\cstpopovaz\AppData\Local\Temp\2\e2c9d9b0-0d8a-4409-b059-dceeb900a2b3\b9bedcc0-88ac-454c-8c69-7d6ea1c41d17\cfg.config\cloneconfig.xml'. ``  
+
+
+- 泛型 LDAP：
+ - 修复了泛型 SQL 水印增量导入时多值属性无法导入的 Bug
+ - GLDAP 连接器看不到 AD LDS 中的所有属性
+ - 从 LDAP 目录架构中检测不到 UPN 属性时，向导中断
+ - 在完全导入过程中，当未选择“objectclass”属性时，增量导入失败，但未显示发现错误
+ - “配置分区和层次结构”配置页未显示任何对象的类型与泛型 LDAP MA 中 Novel 服务器的分区相同。仅显示了 RootDSE 分区中的对象。
+
+
+- 泛型 SQL：
+ - 导出多值属性的已删除\\添加值时，这些值不是在数据源中删除\\添加的。
+
+
+- Lotus Notes：
+ - 特定字段“全名”在 Metaverse 中显示正确，但在导出到 Notes 时，属性的值为 Null 或空。
+ - 修复了“认证者重复”错误
+ - 如果在 Lotus Domino 连接器上选择了没有任何数据的对象以及其他对象，则在执行完全导入时会收到发现错误。
+ - 如果在 Lotus Domino 连接器上运行增量导入，则在运行结束时，Microsoft.IdentityManagement.MA.LotusDomino.Service.exe 服务有时会返回应用程序错误。
+ - 组成员身份总体运行正常，并且可以进行保留，但在通过运行导出操作尝试从成员身份中删除用户时，会显示更新成功，但用户并未从 Lotus Notes 的成员身份中实际删除。
+ - 在 Lotus MA 的配置 GUI 中添加了一个选项，允许选择“追加底部的项”作为导出模式，以便在多值属性的导出过程中追加底部的新项。
+ - 连接器会添加所需的逻辑，以便从邮件文件夹和 ID 保管库中删除文件。
+ - 删除不适用于跨 NAB 成员的成员身份。
+ - 应可从多值属性中成功删除值
+
 ## 1\.1.117.0
 发布时间：2016 年 3 月
 
-**新连接器** 
-[泛型 SQL 连接器](/documentation/articles/active-directory-aadconnectsync-connector-genericsql/)的初始版本。
+**新连接器** [泛型 SQL 连接器](/documentation/articles/active-directory-aadconnectsync-connector-genericsql/)的初始版本。
 
 **新功能：**
 
@@ -96,5 +150,5 @@ Forefront Identity Manager (FIM) 和 Microsoft Identity Manager (MIM) 的连接�
 
 了解有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect/)的详细信息。
 
-<!---HONumber=Mooncake_0306_2017-->
-<!---Update_Description: update meta properties -->
+<!---HONumber=Mooncake_0327_2017-->
+<!---Update_Description: wording update -->

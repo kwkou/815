@@ -12,8 +12,8 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="01/10/2017"
-    wacn.date="02/07/2017"
+    ms.date="02/22/2017"
+    wacn.date="04/05/2017"
     ms.author="markvi" />
 
 # 有关 Azure Active Directory 中应用程序管理的文章索引
@@ -53,7 +53,7 @@
 | 使用 SAML 协议的联合应用的故障排除指南 |[排查基于 SAML 的单一登录问题](/documentation/articles/active-directory-saml-debugging/) |
 | 如何设置应用的证书过期日期，以及如何续订证书 |[在 Azure Active Directory 中管理用于联合单一登录的证书](/documentation/articles/active-directory-sso-certs/) |
 
-联合单一登录适用于所有版本的 Azure AD，每个用户最多十个应用。[Azure AD 高级版](/pricing/details/identity/)支持无限数目的应用程序。如果组织拥有 [Azure AD 基本版](/pricing/details/identity/)或 [Azure AD 高级版](/pricing/details/identity/)，则可以使用组来分配对联合应用程序的访问权限。
+联合单一登录适用于所有版本的 Azure AD，每个用户最多十个应用。
 
 ### 基于密码的单一登录：非联合应用的帐户共享和 SSO
 为了实现单一登录到不支持联合身份验证的应用程序，Azure AD 提供了密码管理功能，可安全地将密码存储到 SaaS 应用并自动将用户登录到这些应用。你可以轻松分发新建帐户的凭据，并与多人共享团队帐户。用户无需知道他们有权访问的帐户凭据。
@@ -62,10 +62,10 @@
 |:---:| --- |
 | 基于密码的 SSO 工作原理简介以及简要的技术概述 |[使用 Azure AD 进行基于密码的单一登录](/documentation/articles/active-directory-appssoaccess-whatis/#password-based-single-sign-on/) |
 | 与共享帐户相关的方案以及 Azure AD 如何解决这些问题的摘要 |[使用 Azure AD 共享帐户](/documentation/articles/active-directory-sharing-accounts/) |
-| 自动定期更改特定应用的密码 |[自动密码滚动更新（预览版）](https://blogs.technet.microsoft.com/enterprisemobility/2015/02/20/azure-ad-automated-password-roll-over-for-facebook-twitter-and-linkedin-now-in-preview/) |
+| 自动定期更改特定应用的密码 | 自动密码滚动更新（预览版）|
 | Internet Explorer 版本的 Azure AD 密码管理扩展功能的部署和故障排除指南 |如何使用组策略部署 Internet Explorer 的访问面板扩展 <br /><br /> 排查 Internet Explorer 访问面板扩展问题 |
 
-基于密码的单一登录适用于所有版本的 Azure AD，每个用户最多十个应用。[Azure AD 高级版](/pricing/details/identity/) 支持无限数目的应用程序。如果组织拥有 [Azure AD 基本版](/pricing/details/identity/)或 [Azure AD 高级版](/pricing/details/identity/)，则可以使用组来分配对应用程序的访问权限。自动密码滚动更新是一项 [Azure AD 高级版](/pricing/details/identity/)功能。
+基于密码的单一登录适用于所有版本的 Azure AD，每个用户最多十个应用。自动密码滚动更新是一项 Azure AD 高级版功能。
 
 
 ### 在 Azure AD 与本地 AD 之间启用单一登录
@@ -83,8 +83,20 @@ Azure AD Connect 适用于[所有版本的 Azure Active Directory](/pricing/deta
 
 ## 应用和 Azure AD
 
-###构建与 Azure AD 集成的应用程序
+### 自动设置和取消设置 SaaS 应用中的用户帐户
+自动执行创建、维护和删除 SaaS 应用程序，如 Dropbox、Salesforce、ServiceNow 等中的用户标识。在 Azure AD 与 SaaS 应用之间匹配和同步现有标识，并在用户离开组织时自动禁用帐户以控制访问。
 
+| 文章指南 | |
+|:---:| --- |
+| 了解其工作原理，并查找常见问题的解答 | |
+| 配置如何在 Azure AD 与 SaaS 应用程序之间映射信息 | 自定义属性映射 <br><br> 编写属性映射表达式 |
+| 如何对支持 SCIM 协议的任何应用启用自动设置 |[对启用 SCIM 的任何应用设置自动化用户预配](/documentation/articles/active-directory-scim-provisioning/) |
+| 获取有关设置失败的通知 | 设置通知 |
+| 根据应用程序的属性值限制可以设置应用程序的人员 | 复制筛选器 |
+
+自动用户设置适用于所有版本的 Azure AD，每个用户最多十个应用。
+
+### 构建与 Azure AD 集成的应用程序
 如果你的组织正在开发或维护业务线 (LoB) 应用程序，或者如果你是 Azure Active Directory 客户的应用开发人员，以下教程可帮助你将应用程序与 Azure AD 集成。
 
 | 文章指南 | |
@@ -96,28 +108,15 @@ Azure AD Connect 适用于[所有版本的 Azure Active Directory](/pricing/deta
 
 ## 管理对应用程序的访问
 
-###使用组和自助服务管理谁可以访问哪些应用
-
-为了帮助管理谁有权访问哪些资源，Azure Active Directory 可让你使用组设置分配和权限级别。IT 可以选择启用自助功能，以便在需要时，用户可以直接请求权限。
-
-| 文章指南 | |
-| :---: | --- |
-| Azure AD 访问管理功能的概述 | [有关管理对应用的访问的简介](/documentation/articles/active-directory-managing-access-to-apps/)<br /><br />|
-
-
-
-
-
-###访问面板：用于访问应用和自助功能的门户
-
-用户可以在 Azure AD 访问面板上启动应用程序和访问自助功能，而自助功能可让用户管理自己的应用程序和组成员资格。除了访问面板外，以下列表还包括其他用于访问启用 SSO 的应用程序的选项。
+### 访问面板：用于访问应用和自助功能的门户
+用户可以在 Azure AD 访问面板上启动应用程序和访问自助功能，而自助功能可让用户管理自己的应用程序和组成员资格。除了访问面板外，以下列表还包括其他用于访问启用 SSO 的应用的选项。
 
 | 文章指南 | |
 |:---:| --- |
 | 用于将单一登录应用部署到用户的各种选项比较 |[为用户部署 Azure AD 集成的应用程序](/documentation/articles/active-directory-appssoaccess-whatis/#deploying-azure-ad-integrated-applications-to-users/) |
 | 访问面板及其移动对应产品 MyApps 的概述 | 访问面板和 MyApps 简介 <br /> - [iOS](https://itunes.apple.com/us/app/my-apps-azure-active-directory/id824048653?mt=8)<br /> - [Android](https://play.google.com/store/apps/details?id=com.microsoft.myapps) |
-| 如何从 Office 365 网站访问 Azure AD 应用 |[使用 Office 365 应用启动程序](https://support.office.com/zh-cn/article/Meet-the-Office-365-app-launcher-79f12104-6fed-442f-96a0-eb089a3f476a) |
-| 如何从 Intune Managed Browser 移动应用访问 Azure AD 应用 |[Intune Managed Browser](https://technet.microsoft.com/zh-cn/library/dn878029.aspx)<br /> - [iOS](https://itunes.apple.com/us/app/microsoft-intune-managed-browser/id943264951?mt=8)<br /> - [Android](https://play.google.com/store/apps/details?id=com.microsoft.intune.mam.managedbrowser) |
+| 如何从 Office 365 网站访问 Azure AD 应用 |[使用 Office 365 应用启动程序](https://support.office.com/en-us/article/Meet-the-Office-365-app-launcher-79f12104-6fed-442f-96a0-eb089a3f476a) |
+| 如何从 Intune Managed Browser 移动应用访问 Azure AD 应用 |[Intune Managed Browser](https://technet.microsoft.com/en-us/library/dn878029.aspx)<br /> - [iOS](https://itunes.apple.com/us/app/microsoft-intune-managed-browser/id943264951?mt=8)<br /> - [Android](https://play.google.com/store/apps/details?id=com.microsoft.intune.mam.managedbrowser) |
 | 如何使用深层链接访问 Azure AD 应用和启动单一登录 |[获取应用的直接登录链接](/documentation/articles/active-directory-appssoaccess-whatis/#direct-sign-on-links-for-federated-password-based-or-existing-apps/) |
 
 访问面板适用于[所有版本的 Azure Active Directory](/pricing/details/identity/)。
@@ -129,5 +128,5 @@ Azure AD Connect 适用于[所有版本的 Azure Active Directory](/pricing/deta
 
 [Azure 多重身份验证](/home/features/multi-factor-authentication/)
 
-<!---HONumber=Mooncake_0120_2017-->
+<!---HONumber=Mooncake_0327_2017-->
 <!---Update_Description: wording update -->

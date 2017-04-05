@@ -14,7 +14,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="1/31/2017"
-    wacn.date="03/07/2017"
+    wacn.date="04/05/2017"
     ms.author="vakarand" />  
 
 
@@ -145,9 +145,12 @@ Azure Active Directory 架构不允许两个或更多个对象的以下属性使
    - **smtp:bob@contoso.com**
 4. 已将新用户 **Bob Taylor** 添加到本地 Active Directory。
 5. Bob Taylor 的 **UserPrincipalName** 设置为 **bobt@contoso.com**。
-6. **Bob Taylor** 还具有以下 **ProxyAddresses** 属性值：i. smtp:bobt@contoso.com，ii. smtp:bob.taylor@contoso.com
+6. **Bob Taylor** 还具有以下 **ProxyAddresses** 属性值：
+i. smtp:bobt@contoso.com，
+ii. smtp:bob.taylor@contoso.com
 7. Bob Taylor 的对象已成功与 Azure AD 同步。
-8. 管理员决定使用以下值更新 Bob Taylor 的 **ProxyAddresses** 属性：i. **smtp:bob@contoso.com**
+8. 管理员决定使用以下值更新 Bob Taylor 的 **ProxyAddresses** 属性：
+i. **smtp:bob@contoso.com**
 9. Azure AD 将尝试使用上述值更新 Bob Taylor 在 Azure AD 中的对象，但该操作将会失败，因为 ProxyAddresses 值已分配给 Bob Smith，从而导致“AttributeValueMustBeUnique”错误。
 
 #### 如何解决 AttributeValueMustBeUnique 错误
@@ -167,8 +170,7 @@ Azure Active Directory 架构不允许两个或更多个对象的以下属性使
 在允许将数据写入目录之前，Azure Active Directory 会对数据本身强制实施各种限制。这是为了确保最终用户尽可能获得最佳体验，同时可以使用依赖于此数据的应用程序。
 
 #### 方案
-a.UserPrincipalName 属性值包含无效/不支持的字符。
-b.UserPrincipalName 属性不符合所需的格式。
+a.UserPrincipalName 属性值包含无效/不支持的字符。b.UserPrincipalName 属性不符合所需的格式。
 
 #### 如何解决 IdentityDataValidationFailed 错误
 a.确保 userPrincipalName 属性包含支持的字符并使用所需的格式。
@@ -192,8 +194,7 @@ a.确保 userPrincipalName 属性包含支持的字符并使用所需的格式�
 #### 如何解决
 如果用户的 UserPrincipalName 后缀已从 bob@**contoso.com** 更新为 bob@**fabrikam.com**，并且 **contoso.com** 和 **fabrikam.com** 都是**联合域**，则执行以下步骤可以解决同步错误
 
-1. 在 Azure AD 中将用户的 UserPrincipalName 从 bob@contoso.com 更新为 bob@contoso.partner.onmschina.cn。可以在 Azure AD PowerShell 模块中使用以下 PowerShell 命令：
-`Set-MsolUserPrincipalName -UserPrincipalName bob@contoso.com -NewUserPrincipalName bob@contoso.partner.onmschina.cn`
+1. 在 Azure AD 中将用户的 UserPrincipalName 从 bob@contoso.com 更新为 bob@contoso.partner.onmschina.cn。可以在 Azure AD PowerShell 模块中使用以下 PowerShell 命令：`Set-MsolUserPrincipalName -UserPrincipalName bob@contoso.com -NewUserPrincipalName bob@contoso.partner.onmschina.cn`
 2. 允许下一个同步周期尝试同步。这一次，同步将会成功，并且会按预期将 Bob 的 UserPrincipalName 更新为 bob@fabrikam.com。
 
 #### 相关文章
@@ -204,13 +205,15 @@ a.确保 userPrincipalName 属性包含支持的字符并使用所需的格式�
 当某个属性超过 Azure Active Directory 架构设置的允许大小限制、长度限制或计数限制时，同步操作会导致 **LargeObject** 或 **ExceededAllowedLength** 同步错误。通常，此错误发生在以下属性上
 
 - userCertificate
+- userSMIMECertificate
 - thumbnailPhoto
 - proxyAddresses
 
 ### 可能的方案
-1. Bob 的 userCertificate 属性存储了过多的分配给 Bob 的证书。其中可能包括旧的或过期的证书。硬性限制为 50 个证书，但建议让证书数目低于 25。
-2. 在 Active Directory 中为 Bob 设置的 thumbnailPhoto 过大，无法在 Azure AD 中同步。
-3. 在 Active Directory 中自动填充 ProxyAddresses 属性期间，为某个对象分配了 500 个以上的 ProxyAddresses。
+1. Bob 的 userCertificate 属性存储了过多的分配给 Bob 的证书。其中可能包括旧的或过期的证书。硬限制为 15 个证书。
+2. Bob 的 userSMIMECertificate 属性存储了过多分配给 Bob 的证书。其中可能包括旧的或过期的证书。硬限制为 15 个证书。
+3. 在 Active Directory 中为 Bob 设置的 thumbnailPhoto 过大，无法在 Azure AD 中同步。
+4. 在 Active Directory 中自动填充 ProxyAddresses 属性期间，为某个对象分配了 500 个以上的 ProxyAddresses。
 
 ### 如何解决
 1. 确保导致错误的属性在允许的限制范围内。
@@ -219,5 +222,5 @@ a.确保 userPrincipalName 属性包含支持的字符并使用所需的格式�
 - [Locate Active Directory Objects in Active Directory Administrative Center（在 Active Directory 管理中心查找 Active Directory 对象）](https://technet.microsoft.com/zh-cn/library/dd560661.aspx)
 - [How to query Azure Active Directory for an object using Azure Active Directory PowerShell（如何使用 Azure Active Directory PowerShell 在 Azure Active Directory 中查询对象）](https://msdn.microsoft.com/zh-cn/library/azure/jj151815.aspx)
 
-<!---HONumber=Mooncake_0227_2017-->
+<!---HONumber=Mooncake_0327_2017-->
 <!---Update_Description: wording update -->

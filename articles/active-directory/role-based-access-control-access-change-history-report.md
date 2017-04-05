@@ -13,11 +13,12 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="identity"
-    ms.date="02/17/2017"
-    wacn.date="03/07/2017"
-    ms.author="kgremban" />
+    ms.date="02/27/2017"
+    wacn.date="04/05/2017"
+    ms.author="kgremban" />  
 
-# 创建访问权限更改历史记录报告
+
+# 为基于角色的访问控制创建访问报告
 无论何时授予或撤销订阅中的访问权限，更改都将记录在 Azure 事件中。可创建访问权限更改历史记录报告来查看过去 90 天的所有更改。
 
 ## 使用 Azure PowerShell 创建报告
@@ -61,5 +62,5 @@
 - 使用 [Azure RBAC 中的自定义角色](/documentation/articles/role-based-access-control-custom-roles/)
 - 了解如何[使用 powershell 管理 Azure RBAC](/documentation/articles/role-based-access-control-manage-access-powershell/)
 
-<!---HONumber=Mooncake_0227_2017-->
+<!---HONumber=Mooncake_0327_2017-->
 <!---Update_Description: wording update -->

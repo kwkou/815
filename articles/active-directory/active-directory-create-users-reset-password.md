@@ -13,13 +13,14 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="02/13/2017"
-    wacn.date="03/07/2017"
-    ms.author="curtand" />
+    ms.date="02/27/2017"
+    wacn.date="04/05/2017"
+    ms.author="curtand" />  
 
-# 已重置用户的密码
 
-无论你是回复在锁定后请求密码的用户，还是只专注于日常安全维护，有时你需要重置用户的密码。Azure Active Directory (Azure AD) 让这项操作变得简单。
+# 在 Azure 经典管理门户中重置用户的密码
+
+如果用户忘记密码且已被锁定，或者在执行例行安全维护时，Azure Active Directory (Azure AD) 可简化重置用户密码的过程。
 
 1. 打开你的目录。
 2. 选择“用户”选项卡，然后选择要更改的用户的显示名称。
@@ -32,5 +33,5 @@
 - [管理 Azure AD](/documentation/articles/active-directory-administer/)
 - [在 Azure AD 中管理密码](/documentation/articles/active-directory-manage-passwords/)
 
-<!---HONumber=Mooncake_0227_2017-->
+<!---HONumber=Mooncake_0327_2017-->
 <!--Update_Description: update meta properties -->

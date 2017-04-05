@@ -13,12 +13,12 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="identity"
-    ms.date="01/31/2017"
-    wacn.date="03/07/2017"
+    ms.date="02/21/2017"
+    wacn.date="04/05/2017"
     ms.author="kgremban" />  
 
 
-# Azure RBAC 中的自定义角色
+# 为 Azure 基于角色的访问控制创建自定义角色
 如果没有符合你特定访问需求的内置角色，可在 Azure 基于角色的访问控制 (RBAC) 中创建自定义角色。可以使用 [Azure PowerShell](/documentation/articles/role-based-access-control-manage-access-powershell/)、[Azure 命令行接口](/documentation/articles/role-based-access-control-manage-access-azure-cli/) (CLI) 和 [REST API](/documentation/articles/role-based-access-control-manage-access-rest/) 创建自定义角色。与内置角色一样，可以将自定义角色分配到订阅、资源组和资源范围内的用户、组和应用程序。自定义角色存储在 Azure AD 租户中，并且可以在将该租户用作其 Azure AD 目录的所有订阅之间共享。
 
 下面是用于监视和重新启动虚拟机的自定义角色的一个示例：
@@ -104,16 +104,20 @@
 ## 自定义角色的访问控制
 自定义角色的 **AssignableScopes** 属性还能控制谁可以查看、修改和删除角色。
 
-- 谁可以创建自定义角色？ 订阅、资源组和资源的所有者（和用户访问管理员）可以创建能在这些范围中使用的自定义角色。创建角色的用户需要能够执行角色的所有 **AssignableScopes** 上的 `Microsoft.Authorization/roleDefinition/write` 操作。
-- 谁可以修改自定义角色？ 订阅、资源组和资源的所有者（和用户访问管理员）可以修改这些范围中的自定义角色。用户需要能够执行自定义角色的所有 **AssignableScopes** 上的 `Microsoft.Authorization/roleDefinition/write` 操作。
-- 谁可以查看自定义角色？ Azure RBAC 中的所有内置角色都允许查看可以进行分配的角色。范围中能够执行 `Microsoft.Authorization/roleDefinition/read` 操作的用户可以查看能在该范围中进行分配的 RBAC 角色。
+- 谁可以创建自定义角色？ 
+订阅、资源组和资源的所有者（和用户访问管理员）可以创建能在这些范围中使用的自定义角色。创建角色的用户需要能够执行角色的所有 **AssignableScopes** 上的 `Microsoft.Authorization/roleDefinition/write` 操作。
+- 谁可以修改自定义角色？ 
+订阅、资源组和资源的所有者（和用户访问管理员）可以修改这些范围中的自定义角色。用户需要能够执行自定义角色的所有 **AssignableScopes** 上的 `Microsoft.Authorization/roleDefinition/write` 操作。
+- 谁可以查看自定义角色？ 
+Azure RBAC 中的所有内置角色都允许查看可以进行分配的角色。范围中能够执行 `Microsoft.Authorization/roleDefinition/read` 操作的用户可以查看能在该范围中进行分配的 RBAC 角色。
 
 ## 另请参阅
+- [基于角色的访问控制](/documentation/articles/role-based-access-control-configure/)：Azure 门户预览中的 RBAC 入门。
 - 了解如何通过以下方式管理访问权限：
   - [PowerShell](/documentation/articles/role-based-access-control-manage-access-powershell/)
   - [Azure CLI](/documentation/articles/role-based-access-control-manage-access-azure-cli/)
   - [REST API](/documentation/articles/role-based-access-control-manage-access-rest/)
 - [内置角色](/documentation/articles/role-based-access-built-in-roles/)：获取有关 RBAC 中的标准角色的详细信息。
 
-<!---HONumber=Mooncake_0227_2017-->
+<!---HONumber=Mooncake_0327_2017-->
 <!---Update_Description: wording update -->

@@ -13,8 +13,8 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="02/15/2017"
-    wacn.date="03/07/2017"
+    ms.date="02/22/2017"
+    wacn.date="04/05/2017"
     ms.author="curtand" />  
 
 
@@ -22,7 +22,7 @@
 本文介绍与 Azure AD 目录中存储的用户帐户关联的各种密码策略和复杂性要求。
 
 > [AZURE.IMPORTANT]
-**你是否因登录时遇到问题而浏览至此？** 如果是这样，[可按以下方式更改和重置你的密码](/documentation/articles/active-directory-passwords-update-your-own-password/)。
+**你是否因登录时遇到问题而浏览至此？** 如果是这样，[可按以下方式更改和重置你的密码](/documentation/articles/active-directory-passwords-update-your-own-password/#how-to-reset-your-password/)。
 >
 >
 
@@ -51,16 +51,15 @@
 | 帐户锁定 |10 次登录尝试失败（错误密码）之后，用户会被锁定一分钟。后续的错误登录尝试会增加用户被锁定的时间。 |
 
 ## 后续步骤
-- **你是否因登录时遇到问题而浏览至此？** 如果是这样，[可按以下方式更改和重置你的密码](/documentation/articles/active-directory-passwords-update-your-own-password/)。
+- **你是否因登录时遇到问题而浏览至此？** 如果是这样，[可按以下方式更改和重置你的密码](/documentation/articles/active-directory-passwords-update-your-own-password/#how-to-reset-your-password/)。
 - [从任意位置管理密码](/documentation/articles/active-directory-passwords/)
 - [密码管理的工作原理](/documentation/articles/active-directory-passwords-how-it-works/)
 - [密码管理入门](/documentation/articles/active-directory-passwords-getting-started/)
 - [自定义密码管理](/documentation/articles/active-directory-passwords-customize/)
 - [密码管理最佳实践](/documentation/articles/active-directory-passwords-best-practices/)
-- [如何使用密码管理报告获取 Operational Insights](/documentation/articles/active-directory-passwords-get-insights/)
 - [密码管理常见问题](/documentation/articles/active-directory-passwords-faq/)
 - [排查密码管理问题](/documentation/articles/active-directory-passwords-troubleshoot/)
 - [了解详细信息](/documentation/articles/active-directory-passwords-learn-more/)
 
-<!---HONumber=Mooncake_0227_2017-->
-<!---Update_Description: wording update -->
+<!---HONumber=Mooncake_0327_2017-->
+<!---Update_Description: link update -->

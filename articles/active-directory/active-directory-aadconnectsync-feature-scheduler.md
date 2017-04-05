@@ -13,8 +13,8 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="identity"
-    ms.date="02/08/2017"
-    wacn.date="03/13/2017"
+    ms.date="02/28/2017"
+    wacn.date="04/05/2017"
     ms.author="billmath" />
 
 # Azure AD Connect 同步：计划程序
@@ -37,7 +37,7 @@ Azure AD Connect 同步会使用计划程序同步本地目录中发生的更改
 ## 计划程序配置
 若要查看当前配置设置，请转到 PowerShell 并运行 `Get-ADSyncScheduler`。它显示的内容如此图所示：
 
-![GetSyncScheduler](./media/active-directory-aadconnectsync-feature-scheduler/getsynccyclesettings.png)  
+![GetSyncScheduler](./media/active-directory-aadconnectsync-feature-scheduler/getsynccyclesettings2016.png)  
 
 
 如果你在运行此 cmdlet 时看到“此同步命令或 cmdlet 不可用”，则 PowerShell 模块未加载。如果在 PowerShell 限制级别高于默认设置的域控制器或服务器上运行 Azure AD Connect，则可能会发生这种问题。如果你看到此错误，则运行 `Import-Module ADSync` 可使该 cmdlet 可用。
@@ -50,7 +50,8 @@ Azure AD Connect 同步会使用计划程序同步本地目录中发生的更改
 - **PurgeRunHistoryInterval**。操作日志应保留的时间。可以在同步服务管理器中查看这些日志。默认设置是保留这些日志 7 天。
 - **SyncCycleEnabled**。指示计划程序是否正在运行导入、同步和导出过程作为其操作的一部分。
 - **MaintenanceEnabled**。显示是否启用了维护过程。它会更新证书/密钥，并清除操作日志。
-- **IsStagingModeEnabled**。显示是否启用了[暂存模式](/documentation/articles/active-directory-aadconnectsync-operations/#staging-mode/)。如果启用此设置，它会取消运行导出，但仍运行导入和同步。
+- **StagingModeEnabled**。显示是否启用了[暂存模式](/documentation/articles/active-directory-aadconnectsync-operations/#staging-mode/)。如果启用此设置，它会取消运行导出，但仍运行导入和同步。
+- **SchedulerSuspended**。在升级过程中由 Connect 设置，以暂时阻止计划程序运行。
 
 你可以使用 `Set-ADSyncScheduler` 更改上述一些设置。可以修改以下参数：
 
@@ -59,6 +60,8 @@ Azure AD Connect 同步会使用计划程序同步本地目录中发生的更改
 - PurgeRunHistoryInterval
 - SyncCycleEnabled
 - MaintenanceEnabled
+
+在早期版本的 Azure AD Connect 中，**isStagingModeEnabled** 已在 Set-ADSyncScheduler 中公开。**不支持**设置此属性。属性 **SchedulerSuspended** 只应通过 Connect 修改。**不支持**直接使用 PowerShell 设置此属性。
 
 计划程序配置存储在 Azure AD 中。如果设有暂存服务器，主服务器上的任何更改还将影响暂存服务器（IsStagingModeEnabled 除外）。
 
@@ -85,9 +88,7 @@ d - 天，HH - 小时，mm - 分钟，ss - 秒
 ## 启动计划程序
 默认情况下，计划程序每 30 分钟运行一次。在某些情况下，可能想要在已计划的周期之间运行同步周期，或者需要运行不同的类型。
 
-**增量同步周期** 
-
-增量同步周期包括以下步骤：
+**增量同步周期** 增量同步周期包括以下步骤：
 
 - 在所有连接器上增量导入
 - 在所有连接器上增量同步
@@ -95,9 +96,7 @@ d - 天，HH - 小时，mm - 分钟，ss - 秒
 
 有时可能有必须立即同步的紧急更改，这就是为什么需要手动运行周期的原因。如果需要手动运行周期，则从 PowerShell 运行 `Start-ADSyncSyncCycle -PolicyType Delta`。
 
-**完全同步周期** 
-
-如果进行了以下任一配置更改，则需要运行完全同步周期（也称为Initial）：
+**完全同步周期** 如果进行了以下任一配置更改，则需要运行完全同步周期（也称为Initial）：
 
 - 从源目录中添加了更多要导入的对象或属性
 - 更改了同步规则
@@ -171,5 +170,5 @@ d - 天，HH - 小时，mm - 分钟，ss - 秒
 
 了解有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect/)的详细信息。
 
-<!---HONumber=Mooncake_0306_2017-->
+<!---HONumber=Mooncake_0327_2017-->
 <!---Update_Description: wording update -->

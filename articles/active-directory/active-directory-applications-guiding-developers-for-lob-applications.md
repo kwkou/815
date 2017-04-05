@@ -1,5 +1,5 @@
 <properties
-    pageTitle="为 Azure AD 开发 LOB 应用 | Azure"
+    pageTitle="为 Azure AD 开发应用 | Azure"
     description="本文专门为 IT 专业人员编写，提供有关将 Azure 应用程序与 Active Directory 集成的指导。"
     services="active-directory"
     documentationcenter=""
@@ -13,12 +13,12 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="02/06/2017"
-    wacn.date="03/07/2017"
+    ms.date="02/27/2017"
+    wacn.date="04/05/2017"
     ms.author="kgremban" />  
 
 
-# Azure AD 和应用程序：开发业务线应用
+# 开发适用于 Azure Active Directory 的业务线应用
 本指南概要介绍如何开发适用于 Azure Active Directory (AD) 的业务线 (LoB) 应用程序，目标受众为 Active Directory/Office 365 全局管理员。
 
 ## 概述
@@ -74,5 +74,5 @@
 - [使用 Azure AD 管理对应用的访问](/documentation/articles/active-directory-managing-access-to-apps/)
 - [有关 Azure Active Directory 中应用程序管理的文章索引](/documentation/articles/active-directory-apps-index/)
 
-<!---HONumber=Mooncake_0227_2017-->
+<!---HONumber=Mooncake_0327_2017-->
 <!---Update_Description: wording update -->

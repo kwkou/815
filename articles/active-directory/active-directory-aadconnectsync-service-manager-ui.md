@@ -13,11 +13,13 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="02/08/2017"
-    wacn.date="03/13/2017"
-    ms.author="billmath" />
+    ms.date="02/27/2017"
+    wacn.date="04/05/2017"
+    ms.author="billmath"
+    ms.custom="H1Hack27Feb2017" />  
 
-# Azure AD Connect 同步：Synchronization Service Manager
+
+# Azure AD Connect Synchronization Service Manager UI 简介
 
 ![Sync Service Manager](./media/active-directory-aadconnectsync-service-manager-ui/ssmui.png)  
 
@@ -34,5 +36,5 @@
 
 了解有关[将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect/)的详细信息。
 
-<!---HONumber=Mooncake_0306_2017-->
+<!---HONumber=Mooncake_0327_2017-->
 <!---Update_Description: update meta properties -->

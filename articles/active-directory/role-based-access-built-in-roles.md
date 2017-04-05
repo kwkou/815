@@ -13,12 +13,12 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="identity"
-    ms.date="01/31/2017"
-    wacn.date="03/07/2017"
+    ms.date="02/21/2017"
+    wacn.date="04/05/2017"
     ms.author="kgremban" />  
 
 
-# RBAC：内置角色
+# Azure 基于角色的访问控制的内置角色
 Azure 基于角色的访问控制 (RBAC) 附带以下可分配到用户、组和服务的内置角色。不能修改内置角色的定义。但是，可以创建 [Azure RBAC 中的自定义角色](/documentation/articles/role-based-access-control-custom-roles/)，以满足组织的特定需要。
 
 ## Azure 中的角色
@@ -641,9 +641,10 @@ Azure 角色定义不断演化。本文尽可能地保持处于最新状态，�
 | Microsoft.Web/sites/* |创建和管理网站（站点创建还需要对关联的应用服务计划有写入权限） |
 
 ## 另请参阅
+- [基于角色的访问控制](/documentation/articles/role-based-access-control-configure/)：RBAC 入门。
 - [Azure RBAC 中的自定义角色](/documentation/articles/role-based-access-control-custom-roles/)：了解如何创建自定义角色，以满足访问需要。
 - [创建访问权限更改历史记录报告](/documentation/articles/role-based-access-control-access-change-history-report/)：记录 RBAC 中的角色分配更改。
 - [基于角色的访问控制故障排除](/documentation/articles/role-based-access-control-troubleshooting/)：获取解决常见问题的建议。
 
-<!---HONumber=Mooncake_0227_2017-->
+<!---HONumber=Mooncake_0327_2017-->
 <!---Update_Description: wording update -->

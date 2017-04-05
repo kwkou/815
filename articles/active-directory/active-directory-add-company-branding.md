@@ -13,8 +13,8 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="get-started-article"
-    ms.date="02/13/2017"
-    wacn.date="03/07/2017"
+    ms.date="03/03/2017"
+    wacn.date="04/05/2017"
     ms.author="curtand" />  
 
 
@@ -217,5 +217,5 @@ Azure AD 中的某些可自定义的元素具有多个用例。只需为每个�
 [8]: ./media/active-directory-add-company-branding/APBranding.png
 [9]: ./media/active-directory-add-company-branding/hidekmsi.png
 
-<!---HONumber=Mooncake_0227_2017-->
-<!---Update_Description: wording update -->
+<!---HONumber=Mooncake_0327_2017-->
+<!---Update_Description: update meta properties -->

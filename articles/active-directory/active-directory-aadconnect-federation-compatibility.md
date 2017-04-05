@@ -13,8 +13,8 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="02/07/2017"
-    wacn.date="03/07/2017"
+    ms.date="03/01/2017"
+    wacn.date="04/05/2017"
     ms.author="billmath" />
 
 # Azure AD 联合身份验证兼容性列表
@@ -55,6 +55,7 @@ Oxford Computer Group 仅测试了这些单一登录方案的联合身份验证�
 - [Dell One Identity Cloud Access Manager v7.1](#dell-one-identity-cloud-access-manager-v71)
 - [AuthAnvil Single Sign On 4.5](#authavil-single-sign-on-45)
 - [Sailpoint IdentityNow](#sailpoint-identitynow)
+- [NetIQ Access Manager 4.x](#netiq-access-manager-4x)
 
 > [AZURE.IMPORTANT]
 由于这些是第三方产品，Microsoft 不会对与这些标识提供程序相关的问题和疑问提供支持，例如部署、配置、故障排除、最佳实践等方面的问题和疑问。如果需要获得支持或者存在有关这些标识提供程序的疑问，请直接联系提供支持的第三方。
@@ -248,7 +249,7 @@ BIG-IP with Access Policy Manager (APM) BIG-IP ver.11.3x - 11.6x 实施广泛使
 
 有关如何将 STS 配置为向 Active Directory 用户提供单一登录体验的说明，请从[此处](http://www.f5.com/pdf/deployment-guides/microsoft-office-365-idp-dg.pdf)下载 pdf 文件，以获取 BIG-IP Access Policy Manager 的说明。
 
-## VMware Workspace Portal version 2.1 <a name="vmware-workspace-portal-version-21"></a>
+## VMware Workspace Portal 2.1 版 <a name="vmware-workspace-portal-version-21"></a>
 VMware Workspace Portal version 2.1 实施广泛使用的 WS 联合身份验证/WS-Trust 标识标准，以提供单一登录和属性交换框架。
 
 下面是此单一登录体验的方案支持对照表：
@@ -274,7 +275,7 @@ Sign&go 5.3 实施广泛使用的 WS 联合身份验证/WS-Trust 标识标准，
 
 Sign&go 5.3 支持通过配置 Kerberos 约定实现 Kerberos 身份验证。如需此配置的帮助，请联系 Ilex 或查看[此处](http://www.ilex-international.com/docs/sign&go_wsfederation_en.pdf)的设置指南。
 
-## IceWall Federation Version 3.0 <a name="icewall-federation-version-30"></a>
+## IceWall Federation 3.0 版 <a name="icewall-federation-version-30"></a>
 IceWall Federation Version 3.0 实施广泛使用的 WS 联合身份验证/WS-Trust 标识标准，以提供单一登录和属性交换框架。
 
 下面是此单一登录体验的方案支持对照表：
@@ -341,5 +342,18 @@ Sailpoint IdentityNow 实施广泛使用的 WS 联合身份验证/WS-Trust 标�
 
 有关详细信息，请参阅 [Sailpoint IdentityNow。](https://www.sailpoint.com/idaas-identity-as-a-service-identitynow/)
 
-<!---HONumber=Mooncake_0227_2017-->
+## NetIQ Access Manager 4.x <a name="netiq-access-manager-4x"></a>
+NetIQ Access Manager 实施广泛使用的 WS 联合身份验证/WS-Trust 标识标准，以提供单一登录和属性交换框架。
+
+下面是此单一登录体验的方案支持对照表：
+
+| 客户端 | 支持 | 异常 |
+| --- | --- | --- |
+| 基于 Web 的客户端（如 Exchange Web Access 和 SharePoint Online） |支持 |无|
+| 富客户端应用程序（如 Lync、Office Subscription、CRM） |支持 |无|
+| 多重格式电子邮件客户端（如 Outlook 和 ActiveSync） |支持 |无 |
+
+有关详细信息，请参阅 [NetIQ Access Manager](https://www.netiq.com/documentation/access-manager-43/admin/data/b65ogn0.html#b12iqp0m)
+
+<!---HONumber=Mooncake_0327_2017-->
 <!---Update_Description: wording update -->

@@ -6,7 +6,6 @@
     author="AndKjell"
     manager="femila"
     editor="" />
-
 <tags
     ms.assetid="fd8ccef3-6605-47ba-9219-e0c74ffc0ec9"
     ms.service="active-directory"
@@ -14,8 +13,8 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="02/08/2017"
-    wacn.date="03/13/2017"
+    ms.date="03/10/2017"
+    wacn.date="04/05/2017"
     ms.author="billmath" />  
 
 
@@ -120,7 +119,9 @@
 - 不列出多值属性和布尔属性。
 - DN 和定位点不能使用相同的属性，除非已在“连接”页面上选择“DN 是定位点”。
 - 如果已在“连接”页面上选择“DN 是定位点”，此页面只需要 DN 属性。此属性也用作定位点属性。
-![schema3b](./media/active-directory-aadconnectsync-connector-genericsql/schema3b.png)
+	
+	![schema3b](./media/active-directory-aadconnectsync-connector-genericsql/schema3b.png)  
+
 
 ### 架构 4（定义属性类型、引用和方向）
 使用此页面可以配置每个属性的属性类型，如整数、二进制数或布尔值和方向。“架构 2”页面中的所有属性都列出，包括多值属性。
@@ -128,8 +129,7 @@
 ![schema4a](./media/active-directory-aadconnectsync-connector-genericsql/schema4a.png)
 
 - **DataType**：用于将属性类型映射到同步引擎所知的属性类型。默认使用在 SQL 架构中检测到的相同类型，但 DateTime 和 Reference 不容易检测。因此，需要指定 **DateTime** 或 **Reference**。
-- **方向**：可以设置 Import、Export 或 ImportExport 的属性方向。ImportExport 是默认值。
-![schema4b](./media/active-directory-aadconnectsync-connector-genericsql/schema4b.png)
+- **方向**：可以设置 Import、Export 或 ImportExport 的属性方向。ImportExport 是默认值。![schema4b](./media/active-directory-aadconnectsync-connector-genericsql/schema4b.png)
 
 说明：
 
@@ -144,10 +144,28 @@
 
 如果使用“DN 是定位点”，则必须使用相同的对象类型作为引用的源对象类型。不能引用其他对象类型。
 
+>[AZURE.NOTE]
+从 2017 年 3 月更新开始，现在提供一个“*”选项，选中此选项后，将导入所有可能的成员类型。
+
+![globalparameters3](./media/active-directory-aadconnectsync-connector-genericsql/any-option.png)  
+
+
+
+导入后，你将看到如下图所示的内容：
+
+  ![globalparameters3](./media/active-directory-aadconnectsync-connector-genericsql/after-import.png)  
+
+
+
+
 ### 全局参数
 “全局参数”页面用于设置增量导入、日期/时间格式，以及密码方法。
 
-![globalparameters1](./media/active-directory-aadconnectsync-connector-genericsql/globalparameters1.png)
+![globalparameters1](./media/active-directory-aadconnectsync-connector-genericsql/globalparameters1.png)  
+
+
+>[AZURE.IMPORTANT]
+ “*”又称为*“任何选项”* 不能在导出/删除操作期间使用。
 
 泛型 SQL 连接器支持使用以下增量导入方法：
 
@@ -215,8 +233,7 @@
 - 在“联接条件”中键入“员工”与“部门”之间的联接条件，例如 `Employee.DEPTID=Department.DepartmentID`。
 ![runstep2](./media/active-directory-aadconnectsync-connector-genericsql/runstep2.png)
 
-**存储过程** 
-![runstep3](./media/active-directory-aadconnectsync-connector-genericsql/runstep3.png)
+**存储过程** ![runstep3](./media/active-directory-aadconnectsync-connector-genericsql/runstep3.png)
 
 - 如果有大量的数据，建议实现存储过程的分页。
 - 若要让存储过程支持分页，需要提供起始索引和结束索引。请参阅：[有效进行大量数据的分页](https://msdn.microsoft.com/zh-cn/library/bb445504.aspx)。
@@ -225,8 +242,7 @@
 - 泛型 SQL 连接器还支持从 Microsoft SQL Server 中链接服务器的导入操作。如果要从链接的服务器中的表检索信息，则以 `[ServerName].[Database].[Schema].[TableName]` 格式提供表。
 - 泛型 SQL 连接器仅支持在运行步骤信息和架构检测之间具有类似结构（包括别名和数据类型）的对象。如果架构中选择的对象与在运行步骤提供的信息不同，则 SQL 连接器无法支持此类方案。
 
-**SQL 查询** 
-![runstep4](./media/active-directory-aadconnectsync-connector-genericsql/runstep4.png)
+**SQL 查询** ![runstep4](./media/active-directory-aadconnectsync-connector-genericsql/runstep4.png)
 
 ![runstep5](./media/active-directory-aadconnectsync-connector-genericsql/runstep5.png)  
 
@@ -281,5 +297,5 @@
 ## 故障排除
 - 有关如何启用记录来排查连接器问题的信息，请参阅[如何启用连接器的 ETW 跟踪](http://go.microsoft.com/fwlink/?LinkId=335731)。
 
-<!---HONumber=Mooncake_0306_2017-->
+<!---HONumber=Mooncake_0327_2017-->
 <!---Update_Description: wording update -->

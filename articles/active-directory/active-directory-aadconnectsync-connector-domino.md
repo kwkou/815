@@ -13,8 +13,8 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="02/08/2017"
-    wacn.date="03/07/2017"
+    ms.date="03/10/2017"
+    wacn.date="04/05/2017"
     ms.author="billmath" />
 
 # Lotus Domino 连接器技术参考
@@ -96,23 +96,19 @@ IBM Lotus Notes 客户端和 Domino 服务器使用 Notes 远程过程调用 (NR
 ### 客户端软件安装和配置
 在服务器上安装连接器**之前**，必须先安装 Lotus Notes。
 
-安装时，请务必执行“单用户安装”。默认的“多用户安装”无法进行。
-![Notes1](./media/active-directory-aadconnectsync-connector-domino/notes1.png)
+安装时，请务必执行“单用户安装”。默认的“多用户安装”无法进行。![Notes1](./media/active-directory-aadconnectsync-connector-domino/notes1.png)
 
-在功能页面上，请只安装所需的 Lotus Notes 功能和“客户端单一登录”。必须要有单一登录，连接器才能登录到 Domino 服务器。
-![Notes2](./media/active-directory-aadconnectsync-connector-domino/notes2.png)
+在功能页面上，请只安装所需的 Lotus Notes 功能和“客户端单一登录”。必须要有单一登录，连接器才能登录到 Domino 服务器。![Notes2](./media/active-directory-aadconnectsync-connector-domino/notes2.png)
 
 **注意：**请启动 Lotus Notes 一次，且启动时所使用的用户必须位于与将作为连接器服务帐户的帐户同一服务器上。此外请务必在服务器上关闭 Lotus Notes 客户端。客户端不能在连接器尝试连接到 Domino 服务器的同时运行。
 
 ### 创建连接器
-若要创建 Lotus Domino 连接器，请在“同步服务”中选择“管理代理”和“创建”。选择“Lotus Domino (Microsoft)”连接器。
-![CreateConnector](./media/active-directory-aadconnectsync-connector-domino/createconnector.png)
+若要创建 Lotus Domino 连接器，请在“同步服务”中选择“管理代理”和“创建”。选择“Lotus Domino (Microsoft)”连接器。![CreateConnector](./media/active-directory-aadconnectsync-connector-domino/createconnector.png)
 
 如果同步服务版本提供配置“体系结构”的功能，请确保连接器设为默认值，以便在“进程”中运行。
 
 ### 连接
-在“连接”页面中，必须指定 Lotus Domino 服务器名称，然后输入登录凭据。
-![连接](./media/active-directory-aadconnectsync-connector-domino/connectivity.png)
+在“连接”页面中，必须指定 Lotus Domino 服务器名称，然后输入登录凭据。![连接](./media/active-directory-aadconnectsync-connector-domino/connectivity.png)
 
 Domino 服务器属性支持两种服务器名称格式：
 
@@ -137,12 +133,17 @@ ServerName/DirectoryName 格式是此属性的首选格式，因为它可在连�
 当你单击“下一步”时，将验证 UserID 和密码配置参数。
 
 ### 全局参数
-在“全局参数”页面中，可以配置时区与导入和导出操作的选项。
-![全局参数](./media/active-directory-aadconnectsync-connector-domino/globalparameters.png)
+在“全局参数”页面中，可以配置时区与导入和导出操作的选项。![全局参数](./media/active-directory-aadconnectsync-connector-domino/globalparameters.png)
 
 “Domino 服务器时区”参数定义 Domino 服务器的位置。
 
 必须要有此配置选项才能支持增量导入操作，因为它可让同步服务判断最后两次导入之间的更改。
+
+>[AZURE.NOTE]
+从 2017 年 3 月更新开始，“全局参数”屏幕包括在删除用户的过程中删除用户的邮件数据库的选项。
+
+![删除用户的邮箱](./media/active-directory-aadconnectsync-connector-domino/AdminP.png)  
+
 
 #### 导入设置和方法
 “完整导入执行方法”具有以下选项：
@@ -219,8 +220,7 @@ Lotus Domino 中有许多属性具有多个值。相对应的 Metaverse 属性�
 - CN=Greg Winston/OU=Contoso/O=Americas,NAB=names.nsf
 - CN=John Smith/OU=Contoso/O=Americas,NAB=names.nsf
 
-**导出**
-导入操作选项支持两种模式：
+**导出**导入操作选项支持两种模式：
 
 - 默认
 - 多值转换为单值
@@ -249,12 +249,10 @@ Lotus Domino 中有许多属性具有多个值。相对应的 Metaverse 属性�
 如果只要导入，则不必指定任何认证者。
 
 ### 配置预配层次结构
-配置 Lotus Domino 连接器时，可以跳过此对话框页面。Lotus Domino 连接器不支持层次结构预配。
-![预配层次结构](./media/active-directory-aadconnectsync-connector-domino/provisioninghierarchy.png)
+配置 Lotus Domino 连接器时，可以跳过此对话框页面。Lotus Domino 连接器不支持层次结构预配。![预配层次结构](./media/active-directory-aadconnectsync-connector-domino/provisioninghierarchy.png)
 
 ### 配置分区和层次结构
-在配置数据分区和层次结构时，必须选择名为 NAB=names.nsf 的主要通讯簿。除了主要通讯簿，还可以选择辅助通讯簿（如果有）。
-![分区](./media/active-directory-aadconnectsync-connector-domino/partitions.png)
+在配置数据分区和层次结构时，必须选择名为 NAB=names.nsf 的主要通讯簿。除了主要通讯簿，还可以选择辅助通讯簿（如果有）。![分区](./media/active-directory-aadconnectsync-connector-domino/partitions.png)
 
 ### 选择属性
 配置属性时，必须选择前缀为 **\_MMS\_** 的所有属性。在对 Lotus Domino 预配新对象时，必须有这些属性。
@@ -307,11 +305,9 @@ Person 对象代表组织和组织单位中的用户。除了默认属性，Domi
 
 有关设置资源保留数据库的详细信息，请参阅 [Setting up the Resource Reservations database](https://www-01.ibm.com/support/knowledgecenter/SSKTMJ_8.0.1/com.ibm.help.domino.admin.doc/DOC/H_SETTING_UP_THE_RESOURCE_RESERVATIONS_DATABASE.html)（设置资源保留数据库）。
 
-**创建、更新和删除资源**
-Lotus Domino 连接器在资源保留数据库中执行创建、更新和删除操作。将资源创建为 Names.nsf 中的文档（即主要通讯簿）。有关编辑和删除资源的详细信息，请参阅 [Editing and deleting Resource documents](http://publib.boulder.ibm.com/infocenter/domhelp/v8r0/index.jsp?topic=/com.ibm.help.domino.admin85.doc/H_EDITING_AND_DELETING_RESOURCE_DOCUMENTS.html)（编辑和删除“资源”文档）。
+**创建、更新和删除资源**Lotus Domino 连接器在资源保留数据库中执行创建、更新和删除操作。将资源创建为 Names.nsf 中的文档（即主要通讯簿）。有关编辑和删除资源的详细信息，请参阅 [Editing and deleting Resource documents](http://publib.boulder.ibm.com/infocenter/domhelp/v8r0/index.jsp?topic=/com.ibm.help.domino.admin85.doc/H_EDITING_AND_DELETING_RESOURCE_DOCUMENTS.html)（编辑和删除“资源”文档）。
 
-**资源的导入和导出操作**
-与其他任何对象类型一样，可以在同步服务中导入和导出资源。在配置期间选择对象类型作为资源。为了成功执行导出操作，你应该具有资源类型、会议数据库和站点名称的详细信息。
+**资源的导入和导出操作**与其他任何对象类型一样，可以在同步服务中导入和导出资源。在配置期间选择对象类型作为资源。为了成功执行导出操作，你应该具有资源类型、会议数据库和站点名称的详细信息。
 
 ### 邮件数据库
 邮件数据库是旨在接收邮件的数据库。此数据库是未与任何特定 Lotus Domino 用户帐户相关联（也就是没有自己的 ID 文件和密码）的 Lotus Domino 邮箱。邮件数据库具有关联的唯一 UserID（“短名称”），并有自己的电子邮件地址。
@@ -341,8 +337,7 @@ Lotus Domino 连接器在资源保留数据库中执行创建、更新和删除�
 
 Lotus Domino 连接器只支持使用 HTTP 密码的操作。
 
-若要执行密码管理，应该在管理代理设计器中启用连接器的密码管理。若要启用密码管理，请在“配置扩展”对话框页面上选择“启用密码管理”。
-![配置扩展](./media/active-directory-aadconnectsync-connector-domino/configureextensions.png)
+若要执行密码管理，应该在管理代理设计器中启用连接器的密码管理。若要启用密码管理，请在“配置扩展”对话框页面上选择“启用密码管理”。![配置扩展](./media/active-directory-aadconnectsync-connector-domino/configureextensions.png)
 
 Lotus Domino 连接器支持对 Internet 密码执行以下操作：
 
@@ -486,5 +481,5 @@ Domino 连接器依赖**目录助手**功能来查找辅助通讯簿。如果辅
 ## 故障排除
 - 有关如何启用记录来排查连接器问题的信息，请参阅[如何启用连接器的 ETW 跟踪](http://go.microsoft.com/fwlink/?LinkId=335731)。
 
-<!---HONumber=Mooncake_0227_2017-->
+<!---HONumber=Mooncake_0327_2017-->
 <!---Update_Description: wording update -->
