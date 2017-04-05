@@ -45,7 +45,7 @@
    
     ![选择日期](./media/backup-azure-restore-vms/select-date.png)
    
-    单击日历控件中的日期后，当日可用的恢复点将显示在下面的恢复点表中。“时间”列指示生成快照的时间。“类型”列显示恢复点的[一致性](/documentation/articles/backup-azure-vms/#consistency-of-recovery-points/)。表标题在括号中显示该日期可用的恢复点数目。
+    单击日历控件中的日期后，当日可用的恢复点将显示在下面的恢复点表中。“时间”列指示生成快照的时间。“类型”列显示恢复点的[一致性](/documentation/articles/backup-azure-vms/)。表标题在括号中显示该日期可用的恢复点数目。
    
     ![恢复点](./media/backup-azure-restore-vms/recovery-points.png)
 3. 从“恢复点”表中选择恢复点，然后单击“下一步”箭头转到下一个屏幕。

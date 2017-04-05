@@ -88,7 +88,7 @@ S1、S2 和 S3 性能级别无法提供 DocumentDB 单区集合具备的灵活�
 
 可通过 Azure 门户预览或编程方式从 S1、S2 和 S3 性能级别迁移到单区集合。可在 8 月 1 日之前自行执行此操作，以享用单区集合提供的灵活吞吐量选项；否则，我们将在 2017 年 7 月 31 日代你迁移集合。
 
-**使用 Azure 门户预览迁移到单区集合**
+**使用 Azure 门户预览迁移到单区集合** <a name="changing-performance-levels-using-the-azure-portal"></a>
 
 1. 在 [**Azure 门户预览**](https://portal.azure.cn)中，单击 **NoSQL (DocumentDB)**，然后选择要修改的 DocumentDB 帐户。
  

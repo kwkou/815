@@ -46,7 +46,7 @@ Azure 诊断扩展可将此数据传输到 Azure 存储帐户。可以将这些�
 ## Web 应用
 请注意，Web Apps 不使用 Azure 诊断。请在 [Web 应用](/documentation/articles/web-sites-enable-diagnostic-log/)中查找相应的信息
 
-## 使用 Azure 诊断的云服务
+## 使用 Azure 诊断的云服务 <a name="cloud-services-using-azure-diagnostics"></a>
 请参阅
 - [如何使用 Azure 诊断监视云服务](/documentation/articles/cloud-services-how-to-monitor/)
 - [在云服务应用程序中设置 Azure 诊断](/documentation/articles/cloud-services-dotnet-diagnostics/)

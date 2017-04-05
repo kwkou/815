@@ -618,7 +618,7 @@ DocumentDB 能够跨不同的 Azure 区域[在全球分发数据][distribute-glo
 <!--Reference style links - using these makes the source content way more readable than using inline links-->
 
 [distribute-globally]: /documentation/articles/documentdb-distribute-data-globally/
-[scaling-globally]: /documentation/articles/documentdb-distribute-data-globally/#scaling-across-the-planet/
+[scaling-globally]: /documentation/articles/documentdb-distribute-data-globally/
 
 <!---HONumber=Mooncake_0313_2017-->
 <!--Update_Description: wording update-->
