@@ -48,7 +48,7 @@ Azure 采用行业标准动态路由协议 (BGP)，在本地网络、Azure 中�
 
 每个 ExpressRoute 线路有两道连接，用于从连接服务提供商/你的网络边缘连接到两个 Azure 企业边缘路由器 (MSEE)。 Azure 要求从连接服务提供商/你的一端建立双重 BGP 连接 – 各自连接到每个 MSEE。你可以选择不要在你的一端部署冗余设备/以太网路线。但是，连接服务提供商会使用冗余设备，确保以冗余方式将你的连接移交给 Azure。冗余的第 3 层连接配置是 Azure [SLA](/support/legal/sla/) 生效的条件。
 
-### 与 Azure 云服务建立连接
+### <a name="howtoconnect"></a> 与 Azure 云服务建立连接
 
 通过 ExpressRoute 连接可访问以下服务。
 

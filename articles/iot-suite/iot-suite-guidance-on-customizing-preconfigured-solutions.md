@@ -98,7 +98,7 @@ Azure IoT 套件提供的预配置解决方案演示了套件中的服务如何�
 
 请注意，**SetPointTempPropertyName** 是定义为“Config.SetPointTemp”的常量。
 
-### 将新方法支持添加到模拟器
+### <a name="add-support-for-a-new-method-to-the-simulator"></a> 将新方法支持添加到模拟器
 可以自定义模拟器，以添加对新[方法（直接方法）][lnk-direct-methods]的支持。需要执行两个重要步骤：
 
 - 模拟器必须在预配置解决方案中向 IoT 中心告知方法的详细信息。

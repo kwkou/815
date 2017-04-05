@@ -76,7 +76,7 @@ Azure IoT 套件[预配置解决方案][lnk-preconfigured-solutions]结合了多
 
 
 > [AZURE.NOTE]
-> 这些警报是通过预配置解决方案中包含的规则生成的。当设备发送的温度值超过 60 时，该规则会生成警报。可以通过在左侧菜单中选择“规则”和“操作”来定义自己的规则和操作。[](#add-a-rule)[](#add-an-action)
+> 这些警报是通过预配置解决方案中包含的规则生成的。当设备发送的温度值超过 60 时，该规则会生成警报。可以通过在左侧菜单中选择“[规则](#add-a-rule-for-the-new-device)”和“操作”来定义自己的规则和操作。
 
 ## 查看设备
 
@@ -269,7 +269,7 @@ Azure IoT 套件[预配置解决方案][lnk-preconfigured-solutions]结合了多
 ![禁用并删除设备][img-disable]  
 
 
-### <a name="add-a-rule-for-the-new-device"> 添加规则
+### <a name="add-a-rule-for-the-new-device"></a> 添加规则
 
 刚才添加的新设备没有规则。在本节中，你将添加一个规则，以便在新设备所报告的温度超过 47 度时触发警报。在开始之前，请注意仪表板上新设备的遥测历史记录显示设备温度绝不会超过 45 度。
 
@@ -309,7 +309,7 @@ Azure IoT 套件[预配置解决方案][lnk-preconfigured-solutions]结合了多
 
 
 
-### 管理筛选器
+### <a name="add-a-filter"></a> 管理筛选器
 
 在设备列表中，可以创建、保存和重新加载筛选器，以显示与中心连接的设备的自定义列表。若要创建筛选器，请执行以下操作：
 
