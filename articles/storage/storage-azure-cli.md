@@ -15,9 +15,9 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="01/04/2017"
-    wacn.date="02/24/2017"
-    ms.author="micurd" />  
+    ms.date="02/18/2017"
+    wacn.date="03/31/2017"
+    ms.author="marsma" />  
 
 
 # 将 Azure CLI 用于 Azure 存储服务

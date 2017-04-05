@@ -3,10 +3,9 @@
     description="使用 Azure Blob 存储（对象存储）将非结构化数据存储在云中。"
     services="storage"
     documentationcenter=".net"
-    author="dineshmurthy"
+    author="seguler"
     manager="jahogg"
-    editor="tysonn" />  
-
+    editor="tysonn" />
 <tags
     ms.assetid="53844120-1c48-4e2f-8f77-5359ed0147a4"
     ms.service="storage"
@@ -14,9 +13,9 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="11/16/2016"
-    wacn.date="12/05/2016"
-    ms.author="dineshm" />
+    ms.date="02/28/2017"
+    wacn.date="03/31/2017"
+    ms.author="seguler" />
 
 # 如何通过 C++ 使用 Blob 存储  
 
@@ -48,8 +47,8 @@ Azure Blob 存储是一种将非结构化数据作为对象/Blob 存储在云中
 ## 配置你的应用程序以访问 Blob 存储  
 将以下 include 语句添加到 C++ 文件的顶部，你要在此使用 Azure 存储 API 来访问 blob：
 
-	#include "was/storage_account.h"
-	#include "was/blob.h"
+	include <was/storage_account.h>
+	include <was/blob.h>
 
 ## 设置 Azure 存储连接字符串
 Azure 存储客户端使用存储连接字符串来存储用于访问数据管理服务的终结点和凭据。在客户端应用程序中运行时，必须提供以下格式的存储连接字符串，并对 *AccountName* 和 *AccountKey* 值使用 [Azure 门户预览](https://portal.azure.cn)中列出的存储帐户的名称和存储帐户的存储访问密钥。有关存储帐户和访问密钥的信息，请参阅[关于 Azure 存储帐户](/documentation/articles/storage-create-storage-account/)。此示例演示如何声明一个静态字段以保存连接字符串：
@@ -241,6 +240,6 @@ Azure Blob 存储支持块 Blob 和页 Blob。大多数情况下，推荐使用�
 -	[使用 C++ 列出 Azure 存储资源](/documentation/articles/storage-c-plus-plus-enumeration/)
 -	[适用于 C++ 的存储空间客户端库参考](http://azure.github.io/azure-storage-cpp)
 -	[Azure 存档文档](/documentation/services/storage/)
-- [使用 AzCopy 命令行实用程序传输数据](/documentation/articles/storage-use-azcopy/)
+- [使用 AzCopy 命令行实用工具传输数据](/documentation/articles/storage-use-azcopy/)
 
-<!---HONumber=Mooncake_1128_2016-->
+<!---HONumber=Mooncake_0327_2017-->

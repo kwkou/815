@@ -1,12 +1,11 @@
 <properties
-    pageTitle="使用存储分析收集日志和指标数据 | Azure"
+    pageTitle="使用 Azure 存储分析收集日志和指标数据 | Azure"
     description="使用存储分析，可以跟踪所有存储服务的指标数据，还可针对 Blob、队列和表存储收集日志。"
     services="storage"
     documentationcenter=""
     author="robinsh"
     manager="timlt"
-    editor="tysonn" />  
-
+    editor="tysonn" />
 <tags
     ms.assetid="7894993b-ca42-4125-8f17-8f6dfe3dca76"
     ms.service="storage"
@@ -14,12 +13,12 @@
     ms.tgt_pltfrm="na"
     ms.devlang="dotnet"
     ms.topic="article"
-    ms.date="12/08/2016"
-    wacn.date="12/29/2016"
+    ms.date="03/03/2017"
+    wacn.date="03/31/2017"
     ms.author="robinsh" />
 
 # 存储分析
-## 概述
+
 Azure 存储分析执行日志记录并为存储帐户提供指标数据。可以使用此数据为存储帐户跟踪请求、分析使用趋势和诊断问题。
 
 若要使用存储分析，必须为每个要监视的服务单独启用它。可以从 [Azure 门户预览](https://portal.azure.cn/)中启用它。有关详细信息，请参阅[在 Azure 门户预览中监视存储帐户](/documentation/articles/storage-monitor-storage-account/)。还可以通过 REST API 或客户端库以编程方式启用存储分析。使用[获取 Blob 服务属性](https://msdn.microsoft.com/zh-cn/library/hh452239.aspx)、[获取队列服务属性](https://msdn.microsoft.com/zh-cn/library/hh452243.aspx)、[获取表服务属性](https://msdn.microsoft.com/zh-cn/library/hh452238.aspx)和[获取文件服务属性](https://msdn.microsoft.com/zh-cn/library/mt427369.aspx)操作来为每个服务启用存储分析。
@@ -40,26 +39,20 @@ Azure 存储分析执行日志记录并为存储帐户提供指标数据。可�
 ### 记录经过身份验证的请求
 将记录以下类型的已经过身份验证的请求：
 
-- 成功的请求。
-
-- 失败的请求，包括超时、限制、网络、授权和其他错误。
-
-- 使用共享访问签名 (SAS) 的请求，包括失败和成功的请求。
-
-- 分析数据的请求。
+* 成功的请求。
+* 失败的请求，包括超时、限制、网络、授权和其他错误。
+* 使用共享访问签名 (SAS) 的请求，包括失败和成功的请求。
+* 分析数据的请求。
 
 不会记录存储分析本身发出的请求，如创建或删除日志。[存储分析记录的操作和状态消息](https://msdn.microsoft.com/zh-cn/library/hh343260.aspx)及[存储分析日志格式](https://msdn.microsoft.com/zh-cn/library/hh343259.aspx)主题中提供了所记录数据的完整列表。
 
 ### 记录匿名请求
 将记录以下类型的匿名请求：
 
-- 成功的请求。
-
-- 服务器错误。
-
-- 客户端和服务器的超时错误。
-
-- 失败的 GET 请求，错误代码为 304（未修改）。
+* 成功的请求。
+* 服务器错误。
+* 客户端和服务器的超时错误。
+* 失败的 GET 请求，错误代码为 304（未修改）。
 
 不会记录所有其他失败的匿名请求。[存储分析记录的操作和状态消息](https://msdn.microsoft.com/zh-cn/library/hh343260.aspx)及[存储分析日志格式](https://msdn.microsoft.com/zh-cn/library/hh343259.aspx)主题中提供了所记录数据的完整列表。
 
@@ -109,26 +102,20 @@ Azure 存储分析执行日志记录并为存储帐户提供指标数据。可�
 
 下表显示了使用前述示例的完整示例元数据。
 
-- LogType=write
-
-- StartTime=2011-07-31T18:21:46Z
-
-- EndTime=2011-07-31T18:22:09Z
-
-- LogVersion=1.0
+* LogType=write
+* StartTime=2011-07-31T18:21:46Z
+* EndTime=2011-07-31T18:22:09Z
+* LogVersion=1.0
 
 ### 访问日志记录数据
-
 可以使用 Blob 服务 API（包括 Azure 托管库提供的 .NET API）访问 `$logs` 容器中的所有数据。存储帐户管理员可以读取和删除日志，但不能创建或更新日志。在查询日志时，可以使用日志的元数据和日志名称。给定小时的日志可能顺序不正确，但元数据始终指定日志中日志条目的时间范围。因此，搜索特定日志时，可以使用日志名称和元数据的组合。
 
 ## 关于存储分析指标
-
 存储分析可存储一些指标，这些指标包括有关存储服务请求的聚合事务统计信息和容量数据。在 API 操作级别以及存储服务级别报告事务，并在存储服务级别报告容量。指标数据可用于分析存储服务使用情况，诊断对存储服务所发出请求的问题，提高使用服务的应用程序的性能。
 
 若要使用存储分析，必须为每个要监视的服务单独启用它。可以从 [Azure 门户预览](https://portal.azure.cn/)中启用它。有关详细信息，请参阅[在 Azure 门户预览中监视存储帐户](/documentation/articles/storage-monitor-storage-account/)。还可以通过 REST API 或客户端库以编程方式启用存储分析。使用**获取服务属性**操作为每项服务启用存储分析。
 
 ### 事务指标
-
 对于每个存储服务和请求的 API 操作，将以小时或分钟为间隔记录一组可靠的数据，其中包括入口/出口、可用性、错误和分类请求百分比。可以在[存储分析指标表架构](https://msdn.microsoft.com/zh-cn/library/hh343264.aspx)主题中查看事务详细信息的完整列表。
 
 在两个级别记录事务数据 – 服务级别和 API 操作级别。在服务级别，汇总所有请求的 API 操作的统计信息将每小时写入一次表中条目，即使未向服务发出请求也是如此。在 API 操作级别，仅当在该小时内请求操作时才将统计信息写入条目。
@@ -143,11 +130,9 @@ Azure 存储分析执行日志记录并为存储帐户提供指标数据。可�
 
 每天记录存储帐户的 Blob 服务的容量数据，并写入两个表中条目。一个条目提供用户数据的统计信息，另一个条目提供有关存储分析所使用的 `$logs` Blob 容器的统计信息。`$MetricsCapacityBlob` 表包含以下统计信息：
 
-- **Capacity**：存储帐户的 Blob 服务使用的存储量（字节）。
-
-- **ContainerCount**：存储帐户的 Blob 服务中的 Blob 容器数。
-
-- **ObjectCount**：存储帐户的 Blob 服务中的提交和未提交的块或页 Blob 数量。
+* **Capacity**：存储帐户的 Blob 服务使用的存储量（字节）。
+* **ContainerCount**：存储帐户的 Blob 服务中的 Blob 容器数。
+* **ObjectCount**：存储帐户的 Blob 服务中的提交和未提交的块或页 Blob 数量。
 
 有关容量指标的详细信息，请参阅[存储分析指标表架构](https://msdn.microsoft.com/zh-cn/library/hh343264.aspx)。
 
@@ -170,13 +155,12 @@ Azure 存储分析执行日志记录并为存储帐户提供指标数据。可�
 指标表中的所有数据都可以使用表服务 API 进行访问，包括 Azure 托管库提供的 .NET API。存储帐户管理员可以读取和删除表中条目，但不能创建或更新表中条目。
 
 ## 存储分析计费
-存储分析由存储帐户所有者启用，并非默认启用。所有度量数据是由存储帐户服务写入的。因此，存储分析执行的每个写入操作都是计费的。此外，度量数据使用的存储量也是计费的。
+所有度量数据是由存储帐户服务写入的。因此，存储分析执行的每个写入操作都是计费的。此外，度量数据使用的存储量也是计费的。
 
 存储分析执行的以下操作都是计费的：
 
-- 为日志记录创建 Blob 的请求。
-
-- 为度量创建表中条目的请求。
+* 为日志记录创建 Blob 的请求。
+* 为度量创建表中条目的请求。
 
 如果配置了数据保留策略，则存储分析删除以前的日志记录和度量数据时，不会对删除事务收取费用。不过，从客户端删除事务将进行计费。有关保留策略的详细信息，请参阅[设置存储分析数据保留策略](https://msdn.microsoft.com/zh-cn/library/azure/hh343263.aspx)。
 
@@ -187,7 +171,6 @@ Azure 存储分析执行日志记录并为存储帐户提供指标数据。可�
 查看存储分析数据时，可以使用[存储分析记录的操作和状态消息](https://msdn.microsoft.com/zh-cn/library/azure/hh343260.aspx)主题中的表来确定计费的请求。然后，可以将日志和度量数据与状态消息进行比较，查看是否对特定请求收取了费用。也可以使用前述主题中的表来调查存储服务或各个 API 操作的可用性。
 
 ## 后续步骤
-
 ### 设置存储分析
 - [在 Azure 门户预览中监视存储帐户](/documentation/articles/storage-monitor-storage-account/)
 - [启用和配置存储分析](https://msdn.microsoft.com/zh-cn/library/hh360996.aspx)
@@ -202,4 +185,4 @@ Azure 存储分析执行日志记录并为存储帐户提供指标数据。可�
 - [存储分析指标表架构](https://msdn.microsoft.com/zh-cn/library/hh343264.aspx)
 - [存储分析记录的操作和状态消息](https://msdn.microsoft.com/zh-cn/library/hh343260.aspx)
 
-<!---HONumber=Mooncake_1226_2016-->
+<!---HONumber=Mooncake_0327_2017-->
