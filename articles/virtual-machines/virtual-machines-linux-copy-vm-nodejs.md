@@ -26,7 +26,7 @@
 可使用以下 CLI 版本之一完成任务：
 
 - Azure CLI 1.0 - 用于经典部署模型和资源管理部署模型（本文）的 CLI
-- Azure CLI 2.0 - 不支持 Azure 中国区的虚拟机。
+- [Azure CLI 2.0（预览版）](/documentation/articles/virtual-machines-linux-copy-vm/)- 下一代 CLI，适用于资源管理部署模型。
 
 ## 开始之前
 在开始执行相关步骤前，请先确保符合以下先决条件：

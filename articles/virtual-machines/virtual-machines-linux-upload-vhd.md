@@ -1,13 +1,13 @@
 <properties
-    pageTitle="使用 Azure CLI 1.0 上载自定义 Linux 映像 | Azure"
-    description="使用 Resource Manager 部署模型和 Azure CLI 1.0 创建包含自定义 Linux 映像的虚拟硬盘 (VHD) 并将其上载到 Azure。"
+    pageTitle="使用 Azure CLI 2.0（预览版）上载自定义 Linux 磁盘 | Azure"
+    description="使用 Resource Manager 部署模型和 Azure CLI 2.0（预览版）创建虚拟硬盘 (VHD) 并将其上载到 Azure"
     services="virtual-machines-linux"
     documentationcenter=""
     author="iainfoulds"
     manager="timlt"
     editor="tysonn"
     tags="azure-resource-manager" />
-<tags
+<tags 
     ms.assetid="a8c7818f-eb65-409e-aa91-ce5ae975c564"
     ms.service="virtual-machines-linux"
     ms.workload="infrastructure-services"
@@ -15,59 +15,86 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="02/02/2017"
-    wacn.date="04/06/2017"
-    ms.author="iainfou" />  
+    wacn.date="03/24/2017"
+    ms.author="iainfou" />
 
-
-# 使用 Azure CLI 1.0 上载自定义磁盘映像并从其创建 Linux VM
-本文说明如何使用 Resource Manager 部署模型将虚拟硬盘 (VHD) 上载到 Azure，并从此自定义映像创建 Linux VM。利用这一功能，你可以安装和配置 Linux 分发版，以满足你的需求，然后使用该 VHD 快速创建 Azure 虚拟机 (VM)。
+# 使用 Azure CLI 2.0（预览版）上载自定义磁盘并从其创建 Linux VM
+本文说明如何使用 Resource Manager 部署模型将虚拟硬盘 (VHD) 上载到 Azure，并从此自定义磁盘创建 Linux VM。利用这一功能，你可以安装和配置 Linux 分发版，以满足你的需求，然后使用该 VHD 快速创建 Azure 虚拟机 (VM)。
 
 ## 用于完成任务的 CLI 版本
 可使用以下 CLI 版本之一完成任务：
 
-- [Azure CLI 1.0](#quick-commands)：用于经典部署模型和资源管理部署模型（本文）的 CLI
-- Azure CLI 2.0 - 不支持 Azure 中国区的虚拟机。
+- [Azure CLI 1.0](/documentation/articles/virtual-machines-linux-upload-vhd-nodejs/)：用于经典部署模型和资源管理部署模型的 CLI
+- [Azure CLI 2.0（预览版）](#quick-commands)：用于资源管理部署模型（本文）的下一代 CLI
 
 ## <a name="quick-commands"></a> 快速命令
-如果需要快速完成任务，请参阅以下部分，其中详细说明了用于将 VM 上载到 Azure 的基本命令。本文档的余下部分（[从此处开始](#requirements)）提供了每个步骤的更详细信息和上下文。
+如果需要快速完成任务，请参阅以下部分，其中详细说明了用于将 VHD 上载到 Azure 的基本命令。本文档的余下部分（[从此处开始](#requirements)）提供了每个步骤的更详细信息和上下文。
 
-确保已登录 [Azure CLI 1.0](/documentation/articles/xplat-cli-install/) 并使用 Resource Manager 模式：
+确保已安装最新的 [Azure CLI 2.0（预览版）](https://docs.microsoft.com/cli/azure/install-az-cli2)并已使用 [az login](https://docs.microsoft.com/cli/azure/#login) 登录到 Azure 帐户。
 
-    azure config mode arm
+[AZURE.INCLUDE [azure-cli-2-azurechinacloud-environment-parameter](../../includes/azure-cli-2-azurechinacloud-environment-parameter.md)]
 
-在以下示例中，请将示例参数名称替换为你自己的值。示例参数名称包括 `myResourceGroup`、`mystorageaccount` 和 `myimages`。
+在以下示例中，请将示例参数名称替换为你自己的值。示例参数名称包括 `myResourceGroup`、`mystorageaccount` 和 `mydisks`。
 
-首先创建一个资源组。以下示例在 `WestUs` 位置创建一个名为 `myResourceGroup` 的资源组：
+首先，使用 [az group create](https://docs.microsoft.com/cli/azure/group#create) 创建资源组。以下示例在 `WestUs` 位置创建名为 `myResourceGroup` 的资源组：
 
-    azure group create myResourceGroup --location "ChinaNorth"
+    az group create --name myResourceGroup --location chinanorth
 
-创建一个用于存放虚拟磁盘的存储帐户。以下示例创建一个名为 `mystorageaccount` 的存储帐户：
+使用 [az storage account create](https://docs.microsoft.com/cli/azure/storage/account#create) 创建一个用于存放虚拟磁盘的存储帐户。即使根据 [Azure 托管磁盘](/documentation/articles/storage-managed-disks-overview/)概述使用 Azure 托管磁盘，也需要先创建一个用作 VHD 上载目标的存储帐户，然后再将 VHD 转换为托管磁盘。以下示例创建一个名为 `mystorageaccount` 的存储帐户：
 
-    azure storage account create mystorageaccount --resource-group myResourceGroup \
-        --location "ChinaNorth" --kind Storage --sku-name PLRS
+    az storage account create --resource-group myResourceGroup --location chinanorth \
+      --name mystorageaccount --kind Storage --sku Standard_LRS
 
-列出存储帐户的访问密钥。记下 `key1`：
+使用 [az storage account keys list](https://docs.microsoft.com/cli/azure/storage/account/keys#list) 列出存储帐户的访问密钥。记下 `key1`：
 
-    azure storage account keys list mystorageaccount --resource-group myResourceGroup
+    az storage account keys list --resource-group myResourceGroup --account-name mystorageaccount
 
-使用得到的存储密钥在存储帐户中创建一个容器。以下示例使用来自 `key1` 的存储密钥值创建一个名为 `myimages` 的容器：
+运行 [az storage container create](https://docs.microsoft.com/cli/azure/storage/container#create) 使用获取的存储密钥在存储帐户中创建一个容器。以下示例使用来自 `key1` 的存储密钥值创建一个名为 `mydisks` 的容器：
 
-    azure storage container create --account-name mystorageaccount \
-        --account-key key1 --container myimages
+    az storage container create --account-name mystorageaccount \
+        --account-key key1 --name mydisks
 
-最后，将 VHD 上载到创建的容器。在 `/path/to/disk/mydisk.vhd` 下指定 VHD 的本地路径：
+最后，使用 [az storage blob upload](https://docs.microsoft.com/cli/azure/storage/blob#upload) 将 VHD 上载到创建的容器。在 `/path/to/disk/mydisk.vhd` 下指定 VHD 的本地路径：
 
-    azure storage blob upload --blobtype page --account-name mystorageaccount \
-        --account-key key1 --container myimages /path/to/disk/mydisk.vhd
+    az storage blob upload --account-name mystorageaccount \
+        --account-key key1 --container-name mydisks --type page \
+        --file /path/to/disk/mydisk.vhd --name myDisk.vhd
 
-现在，可以[使用 Resource Manager 模板](https://github.com/Azure/azure-quickstart-templates/tree/master/201-vm-specialized-vhd)从上载的虚拟磁盘创建 VM。也可以使用 CLI 指定磁盘的 URI (`--image-urn`)。以下示例使用前面上载的虚拟磁盘创建一个名为 `myVM` 的 VM：
+### Azure 托管磁盘
+可以使用 Azure 托管磁盘或非托管磁盘创建 VM。托管磁盘由 Azure 平台处理，无需任何准备或位置来存储它们。有关 Azure 托管磁盘的详细信息，请参阅 [Azure 托管磁盘概述](/documentation/articles/storage-managed-disks-overview/)。若要从 VHD 创建 VM，请先使用 [az disk create](https://docs.microsoft.com/cli/azure/disk/create) 将 VHD 转换为托管磁盘：
 
-    azure vm create myVM -l "ChinaNorth" --resource-group myResourceGroup \
-        --image-urn https://mystorageaccount.blob.core.chinacloudapi.cn/myimages/mydisk.vhd
+    az disk create --resource-group myResourceGroup --name myManagedDisk \
+      --source https://mystorageaccount.blob.core.chinacloudapi.cn/mydisks/myDisk.vhd
 
-目标存储帐户必须与上载虚拟磁盘的目标位置相同。还需要指定或根据提示输入 `azure vm create` 命令所需的所有其他参数，例如虚拟网络、公共 IP 地址、用户名和 SSH 密钥。阅读有关[可用 CLI Resource Manager 参数](/documentation/articles/azure-cli-arm-commands/#azure-vm-commands-to-manage-your-azure-virtual-machines)的详细信息。
+使用 [az disk list](https://docs.microsoft.com/cli/azure/disk/list) 获取创建的托管磁盘的 URI：
 
-## <a name="requirements"></a>要求
+    az disk list --resource-group myResourceGroup \
+      --query '[].{Name:name,URI:creationData.sourceUri}' --output table
+
+输出类似于以下示例：
+
+    Name               URI
+    -----------------  ----------------------------------------------------------------------------------------------------
+    myUMDiskFromVHD    https://vhdstoragezw9.blob.core.chinacloudapi.cn/system/Microsoft.Compute/Images/vhds/my_image-osDisk.vhd
+
+现在，使用 [az vm create](https://docs.microsoft.com/cli/azure/vm#create) 创建 VM，并指定托管磁盘的 URI (`--image`)。以下示例使用基于上载的 VHD 创建的托管磁盘创建名为 `myVM` 的 VM：
+
+    az vm create --resource-group myResourceGroup --location chinanorth \
+        --name myVM --storage-account mystorageaccount --custom-os-disk-type linux \
+        --admin-username azureuser --ssh-key-value ~/.ssh/id_rsa.pub \
+        --image https://vhdstoragezw9.blob.core.chinacloudapi.cn/system/Microsoft.Compute/Images/vhds/my_image-osDisk.vhd
+
+### 非托管磁盘
+若要使用非托管磁盘创建 VM，请使用 [az vm create](https://docs.microsoft.com/cli/azure/vm#create) 指定磁盘的 URI (`--image`)。以下示例使用前面上载的虚拟磁盘创建一个名为 `myVM` 的 VM：
+
+    az vm create --resource-group myResourceGroup --location chinanorth \
+        --name myVM --storage-account mystorageaccount --custom-os-disk-type linux \
+        --admin-username azureuser --ssh-key-value ~/.ssh/id_rsa.pub \
+        --image https://mystorageaccount.blob.core.chinacloudapi.cn/mydisk/myDisks.vhd
+
+目标存储帐户必须与上载虚拟磁盘的目标位置相同。还需要指定或根据提示输入 **az vm create** 命令所需的所有其他参数，例如虚拟网络、公共 IP 地址、用户名和 SSH 密钥。阅读有关[可用 CLI Resource Manager 参数](/documentation/articles/azure-cli-arm-commands/#azure-vm-commands-to-manage-your-azure-virtual-machines)的详细信息。
+
+## <a name="requirements"></a> 要求
 若要完成以下步骤，需要：
 
 * **在 .vhd 文件中安装 Linux 操作系统** — 将 [Azure 认可的 Linux 分发版](/documentation/articles/virtual-machines-linux-endorsed-distros/)（或参阅[关于未认可的分发版的信息](/documentation/articles/virtual-machines-linux-create-upload-generic/)）安装在 VHD 格式的虚拟磁盘中。可以使用多种工具创建 VM 和 VHD：
@@ -79,17 +106,15 @@ Azure 不支持更新的 VHDX 格式。创建 VM 时，请将 VHD 指定为映�
 > 
 > 
 
-* 从自定义映像创建的 VM 必须位于映像本身所在的存储帐户中
-    * 创建存储帐户和容器，以存放自定义映像以及所创建的 VM
-    * 创建所有 VM 之后，可以安全地删除映像
+* 从自定义磁盘创建的 VM 必须位于磁盘本身所在的存储帐户中
+    * 创建存储帐户和容器，用于存放自定义磁盘以及所创建的 VM
+    * 创建所有 VM 之后，可以安全地删除磁盘
 
-确保已登录 [Azure CLI 1.0](/documentation/articles/xplat-cli-install/) 并使用 Resource Manager 模式：
+确保已安装最新的 [Azure CLI 2.0（预览版）](https://docs.microsoft.com/cli/azure/install-az-cli2)并已使用 [az login](https://docs.microsoft.com/cli/azure/#login) 登录到 Azure 帐户。
 
-    azure config mode arm
+在以下示例中，请将示例参数名称替换为你自己的值。示例参数名称包括 `myResourceGroup`、`mystorageaccount` 和 `mydisks`。
 
-在以下示例中，请将示例参数名称替换为你自己的值。示例参数名称包括 `myResourceGroup`、`mystorageaccount` 和 `myimages`。
-
-## <a id="prepimage"></a>准备要上载的映像
+## <a id="prepimage"></a>准备要上载的磁盘
 Azure 支持各种 Linux 分发版（请参阅 [认可的分发版](/documentation/articles/virtual-machines-linux-endorsed-distros/)）。以下文章将指导你准备 Azure 上支持的各种 Linux 分发版：
 
 * **[基于 CentOS 的分发版](/documentation/articles/virtual-machines-linux-create-upload-centos/)**
@@ -104,28 +129,32 @@ Azure 支持各种 Linux 分发版（请参阅 [认可的分发版](/documentati
 
 > [AZURE.NOTE]
 只有使用某个认可的分发版且在配置详细信息中“支持的版本”下指定了 [Azure 认可的 Linux 分发版](/documentation/articles/virtual-machines-linux-endorsed-distros/)时，[Azure 平台 SLA](/support/sla/virtual-machines/) 才适用于运行 Linux 的 VM。
+> 
+> 
 
 ## 创建资源组
-资源组以逻辑方式将所有 Azure 资源（例如虚拟网络和存储）聚集在一起，以支持虚拟机。可以在这里了解有关 [Azure 资源组](/documentation/articles/resource-group-overview/)的详细信息。在上载自定义磁盘映像并创建 VM 之前，首先需要创建一个资源组。
+资源组以逻辑方式将所有 Azure 资源（例如虚拟网络和存储）聚集在一起，以支持虚拟机。有关资源组的详细信息，请参阅[资源组概述](/documentation/articles/resource-group-overview/)。在上载自定义磁盘和创建 VM 之前，首先需要使用 [az group create](https://docs.microsoft.com/cli/azure/group#create) 创建一个资源组。
 
-以下示例在 `ChinaNorth` 位置创建一个名为 `myResourceGroup` 的资源组：
+以下示例在 `chinanorth` 位置创建名为 `myResourceGroup` 的资源组：[Azure 托管磁盘概述](/documentation/articles/storage-managed-disks-overview/)
 
-    azure group create myResourceGroup --location "ChinaNorth"
+    az group create --name myResourceGroup --location chinanorth
 
 ## 创建存储帐户
-VM 以页 Blob 形式存储在存储帐户中。可以在这里了解有关 [Azure Blob 存储](/documentation/articles/storage-introduction/#blob-storage)的详细信息。为自定义磁盘映像和 VM 创建存储帐户。从自定义磁盘映像创建的所有 VM 都必须位于该映像所在的存储帐户中。
+创建 VM 时，可以使用 Azure 托管磁盘或非托管磁盘。托管磁盘由 Azure 平台处理，无需任何准备或位置来存储它们。非托管磁盘以页 Blob 形式存储在存储帐户中。有关详细信息，请参阅 [Azure 托管磁盘概述](/documentation/articles/storage-managed-disks-overview/)或 [Azure Blob 存储](/documentation/articles/storage-introduction/#blob-storage)。即使使用托管磁盘，也需要先创建一个用作 VHD 上载目标的存储帐户，然后再将 VHD 转换为托管磁盘。
+
+可以使用 [az storage account create](https://docs.microsoft.com/cli/azure/storage/account#create) 为自定义磁盘和 VM 创建存储帐户。从自定义磁盘创建的、使用非托管磁盘的所有 VM 都必须位于该磁盘所在的同一存储帐户中。可在订阅中的任何资源组内创建使用托管磁盘的 VM。
 
 以下示例在前面创建的资源组中创建一个名为 `mystorageaccount` 的存储帐户：
 
-    azure storage account create mystorageaccount --resource-group myResourceGroup \
-        --location "ChinaNorth" --kind Storage --sku-name PLRS
+    az storage account create --resource-group myResourceGroup --location chinanorth \
+      --name mystorageaccount --kind Storage --sku Standard_LRS
 
 ## 列出存储帐户密钥
-Azure 将为每个存储帐户生成两个 512 位的访问密钥。在向存储帐户进行身份验证以执行操作（例如执行写入操作）时，将使用这些访问密钥。可以在这里了解有关[管理对存储的访问](/documentation/articles/storage-create-storage-account/#manage-your-storage-account)的详细信息。你可以使用 `azure storage account keys list` 命令查看访问密钥。
+Azure 将为每个存储帐户生成两个 512 位的访问密钥。在向存储帐户进行身份验证以执行操作（例如执行写入操作）时，将使用这些访问密钥。可以在这里了解有关[管理对存储的访问](/documentation/articles/storage-create-storage-account/#manage-your-storage-account)的详细信息。可以使用 [az storage account keys list](https://docs.microsoft.com/cli/azure/storage/account/keys#list) 查看访问密钥。
 
 查看创建的存储帐户的访问密钥：
 
-    azure storage account keys list mystorageaccount --resource-group myResourceGroup
+    az storage account keys list --resource-group myResourceGroup --account-name mystorageaccount
 
 输出类似于：
 
@@ -140,39 +169,67 @@ Azure 将为每个存储帐户生成两个 512 位的访问密钥。在向存储
 记下 `key1`，因为你将在后续步骤中使用它与存储帐户进行交互。
 
 ## 创建存储容器
-就像你创建各种目录以便通过逻辑方式整理本地文件系统一样，你可以在存储帐户内创建容器来整理虚拟磁盘和映像。一个存储帐户可以包含任意数目的容器。
+在存储帐户中创建用于整理磁盘的容器的方式，与创建各种目录以便有条理地整理本地文件系统的方式相同。一个存储帐户可以包含任意数目的容器。可以使用 [az storage container create](https://docs.microsoft.com/cli/azure/storage/container#create) 创建容器。
 
-以下示例创建一个名为 `myimages` 的容器，并指定了上一步骤中获取的访问密钥 (`key1`) ：
+以下示例创建一个名为 `mydisks` 的容器，并指定了上一步骤中获取的访问密钥 (`key1`) ：
 
-    azure storage container create --account-name mystorageaccount \
-        --account-key key1 --container myimages
+    az storage container create --account-name mystorageaccount \
+        --account-key key1 --name mydisks
 
 ## 上载 VHD
-现在可以真正地上载自定义磁盘映像。与 VM 所用的所有虚拟磁盘一样，需要上载自定义磁盘映像并将其作为页 Blob 存储。
+现在，使用 [az storage blob upload](https://docs.microsoft.com/cli/azure/storage/blob#upload) 上载自定义磁盘。可以页 Blob 的形式上载和存储自定义磁盘。
 
-指定访问密钥、在上一步中创建的容器，以及自定义磁盘映像在本地计算机上的路径：
+指定访问密钥、在上一步中创建的容器，以及自定义磁盘在本地计算机上的路径：
 
-    azure storage blob upload --blobtype page --account-name mystorageaccount \
-        --account-key key1 --container myimages /path/to/disk/mydisk.vhd
+    az storage blob upload --account-name mystorageaccount \
+        --account-key key1 --container-name mydisks --type page \
+        --file /path/to/disk/mydisk.vhd --name myDisk.vhd
 
-## 从自定义映像创建 VM
-从自定义磁盘映像创建 VM 时，需指定磁盘映像的 URI。确保目标存储帐户与用于存储自定义磁盘映像的位置相匹配。可以使用 Azure CLI 或 Resource Manager JSON 模板创建 VM。
+## 从自定义磁盘创建 VM
+同样，可以使用 Azure 托管磁盘或非托管磁盘创建 VM。对于这两种类型的 VM，请在创建 VM 时指定托管磁盘或非托管磁盘的 URI。对于非托管磁盘，请确保目标存储帐户与自定义磁盘的存储位置匹配。可以使用 Azure 2.0（预览版）或 Resource Manager JSON 模板创建 VM。
 
-### 使用 Azure CLI 创建 VM
-在 `azure vm create` 命令中指定 `--image-urn` 参数，指向自定义磁盘映像。确保 `--storage-account-name` 与用于存储自定义磁盘映像的存储帐户匹配。不需要使用与自定义磁盘映像相同的容器来存储 VM。上载自定义磁盘映像之前，请确保使用前面步骤中所述的相同方式创建更多容器。
+### Azure CLI 2.0（预览版）- Azure 托管磁盘
+若要从 VHD 创建 VM，请先使用 [az disk create](https://docs.microsoft.com/cli/azure/disk/create) 将 VHD 转换为托管磁盘。以下示例从已上载到命名存储帐户和容器的 VHD 创建名为 `myManagedDisk` 的托管磁盘：
 
-以下示例从自定义磁盘映像创建一个名为 `myVM` 的 VM：
+    az disk create --resource-group myResourceGroup --name myManagedDisk \
+      --source https://mystorageaccount.blob.core.chinacloudapi.cn/mydisks/myDisk.vhd
 
-    azure vm create myVM -l "ChinaNorth" --resource-group myResourceGroup \
-        --image-urn https://mystorageaccount.blob.core.chinacloudapi.cn/myimages/mydisk.vhd
-        --storage-account-name mystorageaccount
+使用 [az disk list](https://docs.microsoft.com/cli/azure/disk/list) 获取创建的托管磁盘的 URI：
 
-仍需要指定或根据提示输入 `azure vm create` 命令所需的所有其他参数，例如虚拟网络、公共 IP 地址、用户名和 SSH 密钥。阅读有关[可用的 CLI Resource Manager 参数](/documentation/articles/azure-cli-arm-commands/#azure-vm-commands-to-manage-your-azure-virtual-machines)的详细信息。
+    az disk list --resource-group myResourceGroup \
+      --query '[].{Name:name,URI:creationData.sourceUri}' --output table
 
-### 使用 JSON 模板创建 VM
+输出类似于以下示例：
+
+    Name               URI
+    -----------------  ----------------------------------------------------------------------------------------------------
+    myUMDiskFromVHD    https://vhdstoragezw9.blob.core.chinacloudapi.cn/system/Microsoft.Compute/Images/vhds/my_image-osDisk.vhd
+
+现在，使用 [az vm create](https://docs.microsoft.com/cli/azure/vm#create) 创建 VM，并指定托管磁盘的 URI (`--image`)。以下示例使用基于上载的 VHD 创建的托管磁盘创建名为 `myVM` 的 VM：
+
+    az vm create --resource-group myResourceGroup --location chinanorth \
+        --name myVM --storage-account mystorageaccount --custom-os-disk-type linux \
+        --admin-username azureuser --ssh-key-value ~/.ssh/id_rsa.pub \
+        --image https://vhdstoragezw9.blob.core.chinacloudapi.cn/system/Microsoft.Compute/Images/vhds/my_image-osDisk.vhd
+
+### Azure 2.0（预览版）- 非托管磁盘
+若要使用非托管磁盘创建 VM，请使用 [az vm create](https://docs.microsoft.com/cli/azure/vm#create) 指定磁盘的 URI (`--image`)。以下示例使用前面上载的虚拟磁盘创建一个名为 `myVM` 的 VM：
+
+在 [az vm create](https://docs.microsoft.com/cli/azure/vm#create) 中指定 `--image` 参数，指向自定义磁盘。确保 `--storage-account` 与用于存储自定义磁盘的存储帐户匹配。不需要使用与自定义磁盘相同的容器来存储 VM。上载自定义磁盘之前，请确保使用前面步骤中所述的相同方式创建任何附加容器。
+
+以下示例从自定义磁盘创建名为 `myVM` 的 VM：
+
+    az vm create --resource-group myResourceGroup --location chinanorth \
+        --name myVM --storage-account mystorageaccount --custom-os-disk-type linux \
+        --admin-username azureuser --ssh-key-value ~/.ssh/id_rsa.pub \
+        --image https://mystorageaccount.blob.core.chinacloudapi.cn/mydisks/myDisk.vhd
+
+仍需要指定或根据提示输入 **az vm create** 命令所需的所有其他参数，例如用户名和 SSH 密钥。
+
+### Resource Manager 模板 - 非托管磁盘
 Azure Resource Manager 模板是一个 JavaScript 对象表示法 (JSON) 文件，它定义了你希望生成的环境。这些模板细分为不同的资源提供程序，如计算或网络。你可以使用现有模板，也可以编写自己的模板。阅读有关[使用 Resource Manager 和模板](/documentation/articles/resource-group-overview/)的详细信息。
 
-在模板的 `Microsoft.Compute/virtualMachines` 提供程序中有一个 `storageProfile` 节点，其中包含 VM 的配置详细信息。需要编辑的两个主要参数为 `image` 和 `vhd` URI，它们指向自定义磁盘映像和新 VM 的虚拟磁盘。下面显示了使用自定义磁盘映像的 JSON 示例：
+在模板的 `Microsoft.Compute/virtualMachines` 提供程序中有一个 `storageProfile` 节点，其中包含 VM 的配置详细信息。需要编辑的两个主要参数为 `image` 和 `vhd` URI，它们指向自定义磁盘和新 VM 的虚拟磁盘。下面显示了使用自定义磁盘的 JSON 示例：
 
     "storageProfile": {
               "osDisk": {
@@ -181,7 +238,7 @@ Azure Resource Manager 模板是一个 JavaScript 对象表示法 (JSON) 文件�
                 "caching": "ReadWrite",
                 "createOption": "FromImage",
                 "image": {
-                  "uri": "https://mystorageaccount.blob.core.chinacloudapi.cn/myimages/mydisk.vhd"
+                  "uri": "https://mystorageaccount.blob.core.chinacloudapi.cn/mydisks/myDisk.vhd"
                 },
                 "vhd": {
                   "uri": "https://mystorageaccount.blob.core.chinacloudapi.cn/vhds/newvmname.vhd"
@@ -190,18 +247,17 @@ Azure Resource Manager 模板是一个 JavaScript 对象表示法 (JSON) 文件�
 
 可以使用[此现有模板从自定义映像创建 VM](https://github.com/Azure/azure-quickstart-templates/tree/master/101-vm-from-user-image)，或阅读有关[创建自己的 Azure Resource Manager 模板](/documentation/articles/resource-group-authoring-templates/)的信息。
 
-一旦配置了模板，就可以使用 `azure group deployment create` 命令创建 VM。使用 `--template-uri` 参数指定 JSON 模板的 URI：
+配置模板后，使用 [az group deployment create](https://docs.microsoft.com/cli/azure/group/deployment#create) 创建 VM。使用 `--template-uri` 参数指定 JSON 模板的 URI：
 
-    azure group deployment create --resource-group myResourceGroup
-        --template-uri https://uri.to.template/mytemplate.json
+    az group deployment create --resource-group myNewResourceGroup \
+      --template-uri https://uri.to.template/mytemplate.json
 
 如果在计算机上以本地方式存储了一个 JSON 文件，则可以改用 `--template-file` 参数：
 
-    azure group deployment create --resource-group myResourceGroup
-        --template-file /path/to/mytemplate.json
+    az group deployment create --resource-group myNewResourceGroup \
+      --template-file /path/to/mytemplate.json
 
 ## 后续步骤
 准备好并上载自定义虚拟磁盘之后，可以阅读有关[使用 Resource Manager 和模板](/documentation/articles/resource-group-overview/)的详细信息。你可能还需要向新 VM [添加数据磁盘](/documentation/articles/virtual-machines-linux-add-disk/)。如果需要访问在 VM 上运行的应用程序，请务必[打开端口和终结点](/documentation/articles/virtual-machines-linux-nsg-quickstart/)。
 
-<!---HONumber=Mooncake_0313_2017-->
-<!--Update_Description: update meta data-->
+<!---HONumber=Mooncake_0320_2017-->

@@ -27,8 +27,6 @@
 - [Azure CLI 1.0](/documentation/articles/virtual-machines-linux-nsg-quickstart-nodejs/)：用于经典部署模型和资源管理部署模型的 CLI
 - [Azure CLI 2.0（预览版）](#quick-commands)：用于资源管理部署模型（本文）的下一代 CLI
 
-> [AZURE.NOTE] CLI 2.0 在 Azure 中国还不能用来管理 Azure 虚拟机，不过管理 Azure 网络是没有问题的。
-
 [AZURE.INCLUDE [azure-cli-2-azurechinacloud-environment-parameter](../../includes/azure-cli-2-azurechinacloud-environment-parameter.md)]
 
 ## <a name="quick-commands"></a> 快速命令

@@ -28,7 +28,7 @@
 可使用以下 CLI 版本之一完成任务：
 
 - [Azure CLI 1.0](#create-supporting-resources)：用于经典部署模型和资源管理部署模型的 CLI
-- Azure CLI 2.0 - 不支持 Azure 中国区的虚拟机。
+- [Azure CLI 2.0（预览版）](/documentation/articles/virtual-machines-linux-multiple-nics/)：用于资源管理部署模型的下一代 CLI
 
 ## <a name="create-supporting-resources"></a> 创建支持资源
 确保已登录 [Azure CLI](/documentation/articles/xplat-cli-install/) 并使用 Resource Manager 模式：

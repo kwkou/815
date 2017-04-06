@@ -1,12 +1,12 @@
 <properties
-    pageTitle="通过 Azure CLI 1.0 使用 SMB 在 Linux VM 上装载 Azure 文件存储 | Azure"
-    description="如何使用 SMB 在 Linux VM 上装载 Azure 文件存储。"
+    pageTitle="使用 SMB 在 Linux VM 上装载 Azure 文件存储 | Azure"
+    description="如何通过 Azure CLI 2.0（预览版）使用 SMB 在 Linux VM 上装载 Azure 文件存储"
     services="virtual-machines-linux"
     documentationcenter="virtual-machines-linux"
     author="vlivech"
     manager="timlt"
     editor="" />
-<tags
+<tags 
     ms.assetid=""
     ms.service="virtual-machines-linux"
     ms.devlang="NA"
@@ -14,13 +14,12 @@
     ms.tgt_pltfrm="vm-linux"
     ms.workload="infrastructure"
     ms.date="02/13/2017"
-    wacn.date="04/06/2017"
-    ms.author="v-livech" />  
+    wacn.date="03/24/2017"
+    ms.author="v-livech" />
 
+# 通过 Azure CLI 2.0（预览版）使用 SMB 在 Linux VM 上装载 Azure 文件存储
 
-# 通过 Azure CLI 1.0 使用 SMB 在 Linux VM 上装载 Azure 文件存储
-
-本文说明如何使用 SMB 装载利用 Linux VM 上的 Azure 文件存储服务。Azure 文件存储使用标准 SMB 协议在云中提供文件共享。要求包括：
+本文介绍如何通过 SMB 装载利用 Linux VM 上的 Azure 文件存储服务。Azure 文件存储使用标准 SMB 协议在云中提供文件共享。要求包括：
 
 - [一个 Azure 帐户](/pricing/1rmb-trial/)
 
@@ -29,24 +28,26 @@
 ## 用于完成任务的 CLI 版本
 可使用以下 CLI 版本之一完成任务：
 
-- [Azure CLI 1.0](#quick-commands)：用于经典部署模型和资源管理部署模型（本文）的 CLI
-- Azure CLI 2.0 - 不支持 Azure 中国区的虚拟机。
+- [Azure CLI 1.0](/documentation/articles/virtual-machines-linux-mount-azure-file-storage-on-linux-using-smb-nodejs/)：用于经典部署模型和资源管理部署模型的 CLI
+- [Azure CLI 2.0（预览版）](#quick-commands)：用于资源管理部署模型（本文）的下一代 CLI
+
+[AZURE.INCLUDE [azure-cli-2-azurechinacloud-environment-parameter](../../includes/azure-cli-2-azurechinacloud-environment-parameter.md)]
 
 ## <a name="quick-commands"></a> 快速命令
 
 如果需要快速完成任务，以下部分详细介绍所需的命令。本文档的余下部分（[从此处开始](/documentation/articles/virtual-machines-linux-mount-azure-file-storage-on-linux-using-smb/#detailed-walkthrough)）提供了每个步骤的更详细信息和上下文。
 
-先决条件：资源组、VNet、将 SSH 入站的 NSG、子网、Azure 存储帐户、Azure 存储帐户密钥、Azure 文件存储共享和 Linux VM。将任何示例替换为你自己的设置。
+先决条件：资源组、VNet、将 SSH 入站的 NSG、子网、Azure 存储帐户、Azure 存储帐户密钥、Azure 文件存储共享和 Linux VM。将任何示例替换为你自己的值。
 
-为本地装载创建目录
+为本地装载创建目录，如下所示：
 
     mkdir -p /mnt/mymountpoint
 
-将 Azure 文件存储 SMB 共享装载到装入点
+将 Azure 文件存储 SMB 共享装载到装入点，如下所示：
 
     sudo mount -t cifs //myaccountname.file.core.chinacloudapi.cn/mysharename /mymountpoint -o vers=3.0,username=myaccountname,password=StorageAccountKeyEndingIn==,dir_mode=0777,file_mode=0777
 
-若要在重新启动后保留装载，请向 `/etc/fstab` 添加一行
+若要在重新启动后保留装载，请向 `/etc/fstab` 添加一行，如下所示：
 
     //myaccountname.file.core.chinacloudapi.cn/mysharename /mymountpoint cifs vers=3.0,username=myaccountname,password=StorageAccountKeyEndingIn==,dir_mode=0777,file_mode=0777
 
@@ -58,43 +59,56 @@ Azure 文件存储使用标准 SMB 协议在云中提供文件共享。并且使
 
 在此详细的演练中，我们创建所需的先决条件，即先创建 Azure 文件存储共享，然后通过 SMB 将其装载到 Linux VM 上。
 
-## 创建 Azure 存储帐户
+首先，使用 [az group create](https://docs.microsoft.com/cli/azure/group#create) 创建保存文件共享的资源组。以下示例在 `China North` 位置创建名为 `myResourceGroup` 的资源组：
 
-    azure storage account create myStorageAccount \
-    --sku-name lrs \
-    --kind storage \
-    -l chinanorth \
-    -g myResourceGroup
+    az group create --name myResourceGroup --location chinanorth
+
+## 创建 Azure 存储帐户
+接下来，使用 [az storage account create](https://docs.microsoft.com/cli/azure/storage/account#create) 创建存储实际文件的存储帐户。以下示例使用 `Standard_LRS` 存储 SKU 创建名为 `mystorageaccount` 的存储帐户：
+
+    az storage account create --resource-group myResourceGroup \
+        --name mystorageaccount \
+        --location chinanorth \
+        --sku Standard_LRS
 
 ## 显示存储帐户密钥
 
 创建存储帐户时，将成对创建 Azure 存储帐户密钥。之所以成对创建存储帐户密钥是为了不中断任何服务就可轮换密钥。将密钥轮换到密钥对中的第二个密钥后，将创建新的密钥对。新的存储帐户密钥始终成对创建，可确保始终至少有一个未使用的存储密钥可以轮换到。
 
-    azure storage account keys list myStorageAccount \
-    --resource-group myResourceGroup
+使用 [az storage account keys list](https://docs.microsoft.com/cli/azure/storage/account/keys#list) 查看存储帐户密钥。以下示例列出名为 `mystorageaccount` 的存储帐户的存储帐户密钥：
+
+    az storage account keys list --resource-group myResourceGroup \
+        --account-name mystorageaccount
+
+若要提取单个密钥，请使用 `--query` 标志。以下示例提取第一个密钥 (`[0]`)：
+
+    az storage account keys list --resource-group myResourceGroup \
+        --account-name mystorageaccount \
+        --query '[0].{Key:value}' --output tsv
 
 ## 创建 Azure 文件存储共享
 
-创建包含 SMB 共享的文件存储共享。配额始终以千兆字节 (GB) 为单位。
+使用 [az storage share create](https://docs.microsoft.com/cli/azure/storage/share#create) 创建包含 SMB 共享的文件存储共享。配额始终以千兆字节 (GB) 为单位。传入前面的 **az storage account keys list** 命令中的某个密钥。以下示例创建名称为 `mystorageshare` 且配额为 `10`GB 的共享：
 
-    azure storage share create mystorageshare \
-    --quota 10 \
-    --account-name myStorageAccount \
-    --account-key nPOgPR<--snip-->4Q==
+    az storage share create --name mystorageshare \
+        --quota 10 \
+        --account-name mystorageaccount \
+        --account-key nPOgPR<--snip-->4Q==
 
 ## 创建装入点目录
 
-在 Linux 文件系统上需要有要将 SMB 共享装载到的本地目录。写入到本地装载目录或从本地装载目录读取的任何内容都将转发到 Azure 文件存储上托管的 SMB 共享。
+在 Linux 文件系统上需要有要将 SMB 共享装载到的本地目录。写入到本地装载目录或从本地装载目录读取的任何内容都将转发到 Azure 文件存储上托管的 SMB 共享。以下示例在 `/mnt/mymountdirectory` 创建本地目录：
 
     sudo mkdir -p /mnt/mymountdirectory
 
 ## 装载 SMB 共享
+将 SMB 共享装载到所创建的本地目录，如下所示。提供你自己的存储帐户用户名和存储帐户密钥作为装载凭据，如下所示：
 
-    sudo mount -t cifs //myStorageAccount.file.core.chinacloudapi.cn/mystorageshare /mnt/mymountdirectory -o vers=3.0,username=myStorageAccount,password=myStorageAccountkey,dir_mode=0777,file_mode=0777
+    sudo mount -t cifs //myStorageAccount.file.core.chinacloudapi.cn/mystorageshare /mnt/mymountdirectory -o vers=3.0,username=mystorageaccount,password=mystorageaccountkey,dir_mode=0777,file_mode=0777
 
 ## 重新启动后保留 SMB 装载
 
-重新启动 Linux VM 后，已装载的 SMB 共享会在关闭过程中卸载。若要在启动时重新装载 SMB 共享，必须向 Linux `/etc/fstab` 添加一行。Linux 使用 `fstab` 文件列出它需要在启动期间装载哪些文件系统。添加 SMB 共享可确保 Azure 文件存储共享是 Linux VM 的永久装载文件系统。使用 `cloud-init` 可以将 Azure 文件存储 SMB 共享添加到新的 VM。
+重新启动 Linux VM 后，已装载的 SMB 共享会在关闭过程中卸载。若要在启动时重新装载 SMB 共享，请向 Linux `/etc/fstab` 添加一行。Linux 使用 `fstab` 文件列出它需要在启动期间装载哪些文件系统。添加 SMB 共享可确保 Azure 文件存储共享是 Linux VM 的永久装载文件系统。使用 `cloud-init` 可以将 Azure 文件存储 SMB 共享添加到新的 VM。
 
     //myaccountname.file.core.chinacloudapi.cn/mysharename /mymountpoint cifs vers=3.0,username=myaccountname,password=StorageAccountKeyEndingIn==,dir_mode=0777,file_mode=0777
 
@@ -104,5 +118,4 @@ Azure 文件存储使用标准 SMB 协议在云中提供文件共享。并且使
 - [将磁盘添加到 Linux VM](/documentation/articles/virtual-machines-linux-add-disk/)
 - [使用 Azure CLI 加密 Linux VM 上的磁盘](/documentation/articles/virtual-machines-linux-encrypt-disks/)
 
-<!---HONumber=Mooncake_0313_2017-->
-<!--Update_Description: update meta data-->
+<!---HONumber=Mooncake_0320_2017-->
