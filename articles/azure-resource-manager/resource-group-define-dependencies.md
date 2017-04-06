@@ -14,7 +14,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="na"
     ms.date="01/03/2017"
-    wacn.date="03/03/2017"
+    wacn.date="03/31/2017"
     ms.author="tomfitz" />  
 
 # 定义在 Azure Resource Manager 模板中部署资源的顺序
@@ -52,7 +52,7 @@ Resource Manager 将评估资源之间的依赖关系，并根据其依赖顺序
       "[concat('Microsoft.Network/virtualNetworks/', variables('virtualNetworkName'))]"
     ]
 
-尽管你可能倾向使用 dependsOn 来映射资源之间的关系，但请务必了解这么做的理由。例如，若要记录资源的互连方式，那么，dependsOn 方法并不合适。部署之后，无法查询 dependsOn 元素中定义的资源。通过使用 dependsOn，可以影响部署时间，因为 Resource Manager 不会并行部署两个具有依赖关系的资源。若要记录资源之间的关系，请改为使用[资源链接](/documentation/articles/resource-group-link-resources/)。
+尽管你可能倾向使用 dependsOn 来映射资源之间的关系，但请务必了解这么做的理由。例如，若要记录资源的互连方式，那么，dependsOn 方法并不合适。部署之后，无法查询 dependsOn 元素中定义的资源。通过使用 dependsOn，可以影响部署时间，因为 Resource Manager 不会并行部署两个具有依赖关系的资源。若要记录资源之间的关系，请改为使用[资源链接](https://docs.microsoft.com/zh-cn/rest/api/resources/resourcelinks)。
 
 ## 子资源
 资源属性允许指定与所定义的资源相关的子资源。子资源总共只能定义五级。请务必注意子资源和父资源之间不能创建隐式依赖关系。如果您需要在父级资源后部署子资源，则必须使用 dependsOn 属性明确声明该依赖关系。
@@ -146,5 +146,5 @@ Resource Manager 可在模板验证过程中确定循环依赖项。如果收到
 * 若要了解有关创建 Azure 资源管理器模板的信息，请参阅[创作模板](/documentation/articles/resource-group-authoring-templates/)。
 * 有关模板的可用函数列表，请参阅[模板函数](/documentation/articles/resource-group-template-functions/)。
 
-<!---HONumber=Mooncake_0227_2017-->
-<!-- Update_Description: update meta properties; wording update -->
+<!---HONumber=Mooncake_0327_2017-->
+<!-- Update_Description: update meta properties; wording update; update reference link-->

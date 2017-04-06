@@ -14,8 +14,8 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="get-started-article"
-    ms.date="10/20/2016"
-    wacn.date="12/26/2016"
+    ms.date="03/03/2017"
+    wacn.date="03/31/2017"
     ms.author="tomfitz" />
 
 # 从现有资源导出 Azure Resource Manager 模板
@@ -28,14 +28,14 @@
 
 本主题演示这两种方法。
 
-在本教程中，用户需要登录到 Azure 门户预览，创建存储帐户，然后导出该存储帐户的模板。需添加虚拟网络以修改资源组。最后，需导出表示其当前状态的新模板。尽管本文重点介绍简化的基础结构，但你也可以使用这些相同的步骤为更复杂的解决方案导出模板。
+在本教程中，你将登录到 Azure 门户预览，创建存储帐户，然后导出该存储帐户的模板。需添加虚拟网络以修改资源组。最后，需导出表示其当前状态的新模板。尽管本文重点介绍简化的基础结构，但你也可以使用这些相同的步骤为更复杂的解决方案导出模板。
 
 ## 创建存储帐户
 1. 在 [Azure 门户预览](https://portal.azure.cn)中，选择“新建”>“存储”>“存储帐户”。
    
       ![创建存储](./media/resource-manager-export-template/create-storage.png)  
 
-2. 使用名称 **storage**、你的姓名缩写和日期创建存储帐户。存储帐户名称在 Azure 中必须是唯一的。如果名称已使用，则会显示错误消息，指出名称已使用。可尝试改变名称。对于资源组，可创建新的资源组，然后将其命名为 **ExportGroup**。可以对其他属性使用默认值。选择“创建”。
+2. 使用名称 **storage**、你的姓名缩写和日期创建存储帐户。存储帐户名称在 Azure 中必须是唯一的。如果名称已使用，则会显示错误消息，指出名称已使用。可尝试改变名称。对于资源组，选择“新建”并将其命名为 **ExportGroup**。可以对其他属性使用默认值。选择“创建”。
    
       ![提供存储的值](./media/resource-manager-export-template/provide-storage-values.png)  
 
@@ -57,9 +57,10 @@
     1. **模板** - 定义解决方案基础结构的模板。通过门户创建存储帐户时，Resource Manager 使用模板来部署该存储帐户，并保存该模板供将来参考。
     2. **参数** - 可用于在部署过程中传入值的参数文件。它包含在首次部署期间提供的值，但你可以在重新部署该模板时更改其中任何值。
     3. **CLI** - 可用于部署该模板的 Azure 命令行界面 (CLI) 脚本文件。
-    4. **PowerShell** - 可用于部署该模板的 Azure PowerShell 脚本文件。
-    5. **.NET** - 可用于部署该模板的 .NET 类。
-    6. **Ruby** - 可用于部署模板的 Ruby 类。
+    4. **CLI 2.0** - 可用于部署该模板的 Azure 命令行接口 (CLI) 脚本文件。
+    5. **PowerShell** - 可用于部署该模板的 Azure PowerShell 脚本文件。
+    6. **.NET** - 可用于部署该模板的 .NET 类。
+    7. **Ruby** - 可用于部署模板的 Ruby 类。
       
     可通过边栏选项卡上的链接获取这些文件。默认情况下，边栏选项卡将显示模板。
       
@@ -195,7 +196,7 @@
 
 在此部分，用户将向导出的模板添加参数，以便在将这些资源部署到其他环境时，可以重新使用该模板。用户还将向模板添加某些功能，以减少在部署模板时遇到错误的可能性。用户不再需要为存储帐户构思唯一名称。模板会创建唯一名称。用户需限制可以为存储帐户类型指定的值，使之局限于有效的选项。
 
-1. 选择“编辑”以自定义模板。
+1. 若要自定义模板，请选择“编辑”。
    
      ![显示模板](./media/resource-manager-export-template/show-template.png)  
 
@@ -311,7 +312,7 @@
 更新后的参数文件仅为没有默认值的参数提供值。如果你需要不同于默认值的值，则可以为其他参数提供值。
 
 ## <a name="fix-export-issues"></a> 修复导出问题
-并非所有资源类型都支持导出模板功能。具体而言，Resource Manager 不会导出某些资源类型，以防止公开敏感数据。例如，如果你的站点配置中有一个连接字符串，你可能不希望其显式显示在导出的模板中。你可以手动将缺失的资源添加回模板中，从而解决这个问题。
+并非所有资源类型都支持导出模板功能。具体而言，Resource Manager 不会导出某些资源类型，以防止公开敏感数据。例如，如果你的站点配置中有一个连接字符串，你可能不希望其显式显示在导出的模板中。若要解决此问题，请手动将缺少的资源添加回模板。
 
 > [AZURE.NOTE]
 仅当从资源组而不是从部署历史记录中导出时，才会遇到导出问题。如果你的上一个部署能够准确地代表资源组的当前状态，则应从部署历史记录而非资源组中导出模板。只有在你已对资源组进行更改且该更改未在单个模板中定义的情况下，才应从资源组导出。
@@ -460,4 +461,5 @@
 * 若要了解如何通过 PowerShell 导出模板，请参阅 [Using Azure PowerShell with Azure Resource Manager](/documentation/articles/powershell-azure-resource-manager/)（将 Azure PowerShell 与 Azure Resource Manager 配合使用）。
 * 若要了解如何通过 Azure CLI 导出模板，请参阅 [Use the Azure CLI for Mac, Linux, and Windows with Azure Resource Manager](/documentation/articles/xplat-cli-azure-resource-manager/)（将用于 Mac、Linux 和 Windows 的 Azure CLI 与 Azure Resource Manager 配合使用）。
 
-<!---HONumber=Mooncake_1219_2016-->
+<!---HONumber=Mooncake_0327_2017-->
+<!--Update_Description:update meta properties;wording update-->

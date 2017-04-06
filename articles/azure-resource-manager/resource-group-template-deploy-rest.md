@@ -13,8 +13,8 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="na"
-    ms.date="01/13/2017"
-    wacn.date="01/25/2017"
+    ms.date="03/10/2017"
+    wacn.date="03/31/2017"
     ms.author="tomfitz" />  
 
 
@@ -60,26 +60,26 @@
             "properties": {
               "templateLink": {
                 "uri": "http://mystorageaccount.blob.core.chinacloudapi.cn/templates/template.json",
-                "contentVersion": "1.0.0.0",
+                "contentVersion": "1.0.0.0"
               },
               "mode": "Incremental",
               "parametersLink": {
                 "uri": "http://mystorageaccount.blob.core.chinacloudapi.cn/templates/parameters.json",
-                "contentVersion": "1.0.0.0",
+                "contentVersion": "1.0.0.0"
               }
             }
           }
    
-      如果想要记录响应内容或/和请求内容，请在请求中包括 **debugSetting**。
+    如果想要记录响应内容或/和请求内容，请在请求中包括 **debugSetting**。
    
         "debugSetting": {
           "detailLevel": "requestContent, responseContent"
         }
    
-      可以将存储帐户设置为使用共享访问签名 (SAS) 令牌。有关详细信息，请参阅 [Delegating Access with a Shared Access Signature](https://docs.microsoft.com/rest/api/storageservices/fileservices/delegating-access-with-a-shared-access-signature)（使用共享访问签名委托访问权限）。
+    可以将存储帐户设置为使用共享访问签名 (SAS) 令牌。有关详细信息，请参阅 [Delegating Access with a Shared Access Signature](https://docs.microsoft.com/rest/api/storageservices/fileservices/delegating-access-with-a-shared-access-signature)（使用共享访问签名委托访问权限）。
 5. 获取模板部署的状态。有关详细信息，请参阅[获取有关模板部署的信息](https://docs.microsoft.com/rest/api/resources/deployments#Deployments_Get)。
    
-          GET https://management.chinacloudapi.cn/subscriptions/<YourSubscriptionId>/resourcegroups/<YourResourceGroupName>/providers/Microsoft.Resources/deployments/<YourDeploymentName>?api-version=2015-01-01
+        GET https://management.chinacloudapi.cn/subscriptions/<YourSubscriptionId>/resourcegroups/<YourResourceGroupName>/providers/Microsoft.Resources/deployments/<YourDeploymentName>?api-version=2015-01-01
            <common headers>
 
 ## <a name="parameter-file"></a> 参数文件
@@ -94,5 +94,5 @@
 * 如需了解企业如何使用 Resource Manager 对订阅进行有效管理，请参阅 [Azure 企业机架 - 规范性订阅管理](/documentation/articles/resource-manager-subscription-governance/)。
 * 有关自动化部署的四部分系列教程，请参阅[将应用程序自动部署到 Azure 虚拟机](/documentation/articles/virtual-machines-windows-dotnet-core-1-landing/)。此系列教程介绍了应用程序体系结构、访问与安全性、可用性与缩放性，以及应用程序部署。
 
-<!---HONumber=Mooncake_0120_2017-->
-<!-- Update_Description: update meta properties ; wording update ; update link reference -->
+<!---HONumber=Mooncake_0327_2017-->
+<!-- Update_Description: update meta properties ; wording update ; remove the comma in code block -->

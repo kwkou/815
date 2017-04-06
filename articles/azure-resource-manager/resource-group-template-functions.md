@@ -13,8 +13,8 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="na"
-    ms.date="11/22/2016"
-    wacn.date="01/06/2017"
+    ms.date="03/14/2017"
+    wacn.date="03/31/2017"
     ms.author="tomfitz" />
 
 # Azure 资源管理器模板函数
@@ -94,7 +94,6 @@
       }
     ]
 
-
 ### <a id="div"></a> div
 `div(operand1, operand2)`  
 
@@ -148,7 +147,6 @@
     "variables": { 
         "intValue": "[int(parameters('appId'))]"
     }
-
 
 ### <a id="mod"></a> mod
 `mod(operand1, operand2)`  
@@ -313,7 +311,6 @@
         }
     }
 
-
 ### <a id="lengthstring"></a> length - string
 `length(string)`  
 
@@ -334,7 +331,6 @@
     "variables": { 
         "nameLength": "[length(parameters('appName'))]"
     }
-
 
 ### <a id="padleft"></a> padLeft
 `padLeft(valueToPad, totalLength, paddingCharacter)`  
@@ -415,7 +411,6 @@
         "value": "[skip(parameters('first'),parameters('second'))]"
       }
     }
-
 
 ### <a id="split"></a> split
 `split(inputString, delimiterString)`  
@@ -643,8 +638,6 @@
         "type": "Microsoft.Storage/storageAccounts", 
         ...
 
-
-
 ### <a id="uri"></a> uri
 `uri (baseUri, relativeUri)`  
 
@@ -689,16 +682,15 @@
 
     "parameters": {
         "firstarray": {
-            type: "array"
+          "type": "array"
         }
         "secondarray": {
-            type: "array"
+          "type": "array"
         }
-     },
-     "variables": {
-         "combinedarray": "[concat(parameters('firstarray'), parameters('secondarray'))]
-     }
-
+    },
+    "variables": {
+        "combinedarray": "[concat(parameters('firstarray'), parameters('secondarray'))]"
+    }
 
 ### <a id="length"></a> length - array
 `length(array)`  
@@ -862,7 +854,7 @@
 
     "variables": {  
         "sharedTemplateUrl": "[uri(deployment().properties.templateLink.uri, 'shared-resources.json')]"  
-    }  
+    }
 
 ### <a id="parameters"></a> parameters
 `parameters (parameterName)`  
@@ -939,11 +931,13 @@
 | resourceName 或 resourceIdentifier |是 |String |资源的唯一标识符。 |
 | apiVersion |是 |String |资源运行时状态的 API 版本。通常采用 **yyyy-mm-dd** 格式。 |
 
-以 **list** 开头的任何操作都可用作模板中的函数。可用操作不仅包括 **listKeys**，也包括 **list**、**listAdminKeys** 和 **listStatus** 等操作。若要确定有列表操作的资源类型，请使用以下 PowerShell 命令：
+以 **list** 开头的任何操作都可用作模板中的函数。可用操作不仅包括 **listKeys**，也包括 **list**、**listAdminKeys** 和 **listStatus** 等操作。若要确定哪些资源类型具有列表操作，请参阅资源提供程序的 [REST API 操作](https://docs.microsoft.com/zh-cn/rest/api/)。
 
-    Get-AzureRmProviderOperation -OperationSearchString *  | where {$_.Operation -like "*list*"} | FT Operation
+若要查找资源提供程序的列表操作，请使用以下 PowerShell cmdlet：
 
-或者，使用 Azure CLI 来检索列表。以下示例将检索 **apiapps** 的所有操作，并使用 JSON 实用工具 [jq](http://stedolan.github.io/jq/download/) 来只筛选出 list 操作。
+    Get-AzureRmProviderOperation -OperationSearchString "Microsoft.Storage/*" | where {$_.Operation -like "*list*"} | FT Operation
+
+若要查找资源提供程序的列表操作，请使用以下 Azure CLI 命令和 JSON 实用程序 [jq](http://stedolan.github.io/jq/download/) 来仅筛选列表操作：
 
     azure provider operations show --operationSearchString */apiapps/* --json | jq ".[] | select (.operation | contains("list"))"
 
@@ -956,7 +950,7 @@
         "value": "[listKeys(resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccountName')), '2016-01-01')]", 
         "type" : "object" 
       } 
-    } 
+    }
 
 ListKeys 返回的对象采用以下格式：
 
@@ -1181,4 +1175,5 @@ ListKeys 返回的对象采用以下格式：
 * 若要在创建资源类型时迭代指定的次数，请参阅[在 Azure 资源管理器中创建多个资源实例](/documentation/articles/resource-group-create-multiple/)
 * 若要查看如何部署已创建的模板，请参阅[使用 Azure 资源管理器模板部署应用程序](/documentation/articles/resource-group-template-deploy/)
 
-<!---HONumber=Mooncake_0103_2017-->
+<!---HONumber=Mooncake_0327_2017-->
+<!--Update_Description:update meta properties; wording update-->

@@ -13,8 +13,8 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="na"
-    ms.date="11/16/2016"
-    wacn.date="01/25/2017"
+    ms.date="03/10/2017"
+    wacn.date="03/31/2017"
     ms.author="tomfitz" />  
 
 
@@ -25,80 +25,71 @@
 - [门户](/documentation/articles/resource-group-template-deploy-portal/)
 - [REST API](/documentation/articles/resource-group-template-deploy-rest/)
 
-本主题介绍如何将 Azure CLI 与 Resource Manager 模板配合使用向 Azure 部署资源。你的模板可以是本地文件或是可通过 URI 访问的外部文件。如果模板驻留在存储帐户中，你可以限制对该模板的访问，并在部署过程中提供共享访问签名 (SAS) 令牌。
+本主题介绍如何将 [Azure CLI 2.0](https://docs.microsoft.com/zh-cn/cli/azure/install-az-cli2) 与 Resource Manager 模板配合使用向 Azure 部署资源。你的模板可以是本地文件或是可通过 URI 访问的外部文件。如果模板驻留在存储帐户中，你可以限制对该模板的访问，并在部署过程中提供共享访问签名 (SAS) 令牌。
 
-> [AZURE.TIP]
-> 有关在部署过程中调试错误的帮助，请参阅：
-> 
-> * [查看部署操作](/documentation/articles/resource-manager-deployment-operations/)，了解如何获取有助于排查错误的信息
-> * [排查使用 Azure Resource Manager 将资源部署到 Azure 时的常见错误](/documentation/articles/resource-manager-common-deployment-errors/)，了解如何解决常见的部署错误
-> 
-> 
+## <a name="deploy"></a> 部署
 
-## 快速部署步骤
-若要快速开始进行部署，请使用以下命令：
+* 若要快速开始部署，请使用以下命令部署带内联参数的本地模板：
 
-    azure group create -n examplegroup -l "China North"
-    azure group deployment create -f "c:\MyTemplates\example.json" -e "c:\MyTemplates\example.params.json" -g examplegroup -n exampledeployment
+        az login
+        az account set --subscription {subscription-id}
 
-这些命令创建资源组，并将模板部署到该资源组。模板文件和参数文件都是本地文件。如果该操作成功，则一切准备就绪，可以部署资源了。不过，可以使用更多选项来指定要部署的资源。本文其余部分介绍了部署过程中可用的所有选项。
+        az group create --name ExampleGroup --location "China North"
+        az group deployment create \
+          --name ExampleDeployment \
+          --resource-group ExampleGroup \
+          --template-file storage.json \
+          --parameters '{"storageNamePrefix":{"value":"contoso"},"storageSKU":{"value":"Standard_GRS"}}'
+
+    部署可能需要几分钟才能完成。完成之后，你将看到一条包含以下结果的消息：
+
+        "provisioningState": "Succeeded",
+
+* 仅当要使用非默认订阅时，才需要 `az account set` 命令。若要查看所有订阅及其 ID，请使用：
+
+        az account list
+
+* 若要部署外部模板，请使用 **template-uri** 参数：
+
+        az group deployment create \
+           --name ExampleDeployment \
+           --resource-group ExampleGroup \
+           --template-uri "https://raw.githubusercontent.com/exampleuser/MyTemplates/master/storage.json" \
+           --parameters '{"storageNamePrefix":{"value":"contoso"},"storageSKU":{"value":"Standard_GRS"}}'
+
+* 若要在文件中传递参数值，请使用：
+
+        az group deployment create \
+           --name ExampleDeployment \
+           --resource-group ExampleGroup \
+           --template-file storage.json \
+           --parameters @storage.parameters.json
+
+    参数文件必须采用以下格式：
+
+        {
+         "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+         "contentVersion": "1.0.0.0",
+         "parameters": {
+            "storageNamePrefix": {
+                "value": "contoso"
+            },
+            "storageSKU": {
+                "value": "Standard_GRS"
+            }
+         }
+        }
 
 [AZURE.INCLUDE [resource-manager-deployments](../../includes/resource-manager-deployments.md)]
 
-## <a name="deploy"></a> 部署
-如果你以前没有对资源管理器使用过 Azure CLI，请参阅[将适用于 Mac、Linux 和 Windows 的 Azure CLI 与 Azure 资源管理配合使用](/documentation/articles/xplat-cli-azure-resource-manager/)。
+若要使用完整模式，请使用 mode 参数：
 
-1. 登录到你的 Azure 帐户。提供凭据后，该命令将返回你的登录结果。
-
-        azure login -e AzureChinaCloud
-
-2. 如果有多个订阅，请提供要用于部署的订阅 ID。
-
-        azure account set <YourSubscriptionNameOrId>
-
-4. 部署模板时，必须指定将包含已部署资源的资源组。如果有要部署到的现有资源组，可以跳过此步骤，然后使用该资源组。
-   
-     若要创建资源组，请提供资源组的名称和位置。提供资源组的位置是因为资源组存储与资源有关的元数据。出于合规性原因，你可能会想要指定该元数据的存储位置。一般情况下，建议指定大部分资源将驻留的位置。使用相同位置可简化模板。
-
-        azure group create -n ExampleResourceGroup -l "China North"
-
-    将返回新资源组的摘要。
-   
-5. 在执行部署之前先运行 **azure group template validate** 命令验证部署。测试部署时，请提供与执行部署时所提供的完全相同的参数（如下一步中所示）。
-
-        azure group template validate -f <PathToTemplate> -p "{\"ParameterName\":{\"value\":\"ParameterValue\"}}" -g ExampleResourceGroup
-
-6. 若要将资源部署到资源组，请运行 **azure group deployment create** 命令并提供所需的参数。参数包括部署的名称、资源组的名称、模板的路径或 URL，以及方案所需的任何其他参数。如果未指定 **mode** 参数，则使用默认值 **Incremental**。若要运行完整部署，请将 **mode** 设置为 **Complete**。使用完整模式时要小心，因为可能会无意中删除不在模板中的资源。
-   
-     若要部署本地模板，请使用 **template-file** 参数：
-
-        azure group deployment create --resource-group examplegroup --template-file "c:\MyTemplates\example.json"
-
-    若要部署外部模板，请使用 **template-uri** 参数：
-
-        azure group deployment create --resource-group examplegroup --template-uri "https://raw.githubusercontent.com/exampleuser/MyTemplates/master/example.json"
-
-    前面的两个示例不包括参数值。可以在[参数](#parameters)部分了解传递参数值的选项。现在，可通过以下语法提示用户提供参数值：
-
-        info:    Executing command group deployment create
-        info:    Supply values for the following parameters
-        firstParameters:  <type here>
-
-    部署资源组后，将看到部署摘要。摘要包含 **ProvisioningState**，指示部署是否成功。
-
-        + Initializing template configurations and parameters
-        + Creating a deployment
-        info:    Created template deployment "example"
-        + Waiting for deployment to complete
-        +
-        +
-        data:    DeploymentName     : example
-        data:    ResourceGroupName  : examplegroup
-        data:    ProvisioningState  : Succeeded
-
-7. 如果要记录可能帮助你排查任何部署错误的有关部署的其他信息，请使用 **debug-setting** 参数。你可以指定在对部署操作进行日志记录时记录请求内容或/和响应内容。
-
-        azure group deployment create --debug-setting All -f <PathToTemplate> -e <PathToParameterFile> -g examplegroup -n exampleDeployment
+        az group deployment create \
+        --name ExampleDeployment \
+        --mode Complete \
+        --resource-group ExampleGroup \
+        --template-file storage.json \
+        --parameters '{"storageNamePrefix":{"value":"contoso"},"storageSKU":{"value":"Standard_GRS"}}'
 
 ## 使用 SAS 令牌从存储空间部署模板
 可以将模板添加到存储帐户，并在部署过程中使用 SAS 令牌链接到这些模板。
@@ -109,56 +100,183 @@
 > 
 
 ### 将专用模板添加到存储帐户
-以下步骤用于为模板设置存储帐户：
+以下示例设置专用存储帐户容器并上载模板：
 
-1. 创建资源组。
-
-        azure group create -n "ManageGroup" -l "chinanorth"
-
-2. 创建存储帐户。存储帐户名称必须在 Azure 中唯一，因此，请为帐户提供自己的名称。
-
-        azure storage account create -g ManageGroup -l "chinanorth" --sku-name LRS --kind Storage storagecontosotemplates
-
-3. 为存储帐户和密钥设置变量。
-
-        export AZURE_STORAGE_ACCOUNT=storagecontosotemplates
-        export AZURE_STORAGE_ACCESS_KEY={storage_account_key}
-
-4. 创建容器。权限设置为“关闭”，这意味着只有所有者可以访问该容器。
-
-        azure storage container create --container templates -p Off 
-
-5. 将模板添加到该容器。
-
-        azure storage blob upload --container templates -f c:\MyTemplates\azuredeploy.json
+    az group create --name "ManageGroup" --location "China East"
+    az storage account create \
+        --resource-group ManageGroup \
+        --location "China East" \
+        --sku Standard_LRS \
+        --kind Storage \
+        --name {your-unique-name}
+    connection=$(az storage account show-connection-string \
+        --resource-group ManageGroup \
+        --name {your-unique-name} \
+        --query connectionString)
+    az storage container create \
+        --name templates \
+        --public-access Off \
+        --connection-string $connection
+    az storage blob upload \
+        --container-name templates \
+        --file vmlinux.json \
+        --name vmlinux.json \
+        --connection-string $connection
 
 ### 在部署期间提供 SAS 令牌
-若要在存储帐户中部署专用模板，请检索 SAS 令牌，并将其包括在模板的 URI 中。
+若要在存储帐户中部署专用模板，请生成 SAS 令牌，并将其包括在模板的 URI 中。设置到期时间以允许足够的时间来完成部署。
 
-1. 创建具有读取权限和到期时间的 SAS 令牌来限制访问。设置到期时间以允许足够的时间来完成部署。检索包括 SAS 令牌的模板的完整 URI。
-
-        expiretime=$(date -I'minutes' --date "+30 minutes")
-        fullurl=$(azure storage blob sas create --container templates --blob azuredeploy.json --permissions r --expiry $expiretimetime --json  | jq ".url")
-
-2. 通过提供包括 SAS 令牌的 URI 来部署该模板。
-
-        azure group deployment create --template-uri $fullurl -g ExampleResourceGroup
+    seconds='@'$(( $(date +%s) + 1800 ))
+    expiretime=$(date +%Y-%m-%dT%H:%MZ --date=$seconds)
+    connection=$(az storage account show-connection-string \
+        --resource-group ManageGroup \
+        --name {your-unique-name} \
+        --query connectionString)
+    token=$(az storage blob generate-sas \
+        --container-name templates \
+        --name vmlinux.json \
+        --expiry $expiretime \
+        --permissions r \
+        --output tsv \
+        --connection-string $connection)
+    url=$(az storage blob url \
+        --container-name templates \
+        --name vmlinux.json \
+        --output tsv \
+        --connection-string $connection)
+    az group deployment create --resource-group ExampleGroup --template-uri $url?$token
 
 有关将 SAS 令牌与链接模板配合使用的示例，请参阅[将已链接的模版与 Azure Resource Manager 配合使用](/documentation/articles/resource-group-linked-templates/)。
 
-## <a name="parameters"></a> 参数
+## 调试
 
-可以使用以下选项提供参数值：
-   
-- 使用内联参数。每个参数采用以下格式：`"ParameterName": { "value": "ParameterValue" }`。以下示例显示带转义符的参数。
+若要查看有关失败的部署操作的信息，请使用：
 
-        azure group deployment create -f <PathToTemplate> -p "{\"ParameterName\":{\"value\":\"ParameterValue\"}}" -g ExampleResourceGroup -n ExampleDeployment
+    az group deployment operation list --resource-group ExampleGroup --name vmlinux --query "[*].[properties.statusMessage]"
 
-- 使用参数文件。
+有关解决常见部署错误的提示，请参阅[排查使用 Azure Resource Manager 时的常见 Azure 部署错误](/documentation/articles/resource-manager-common-deployment-errors/)。
 
-        azure group deployment create -f "c:\MyTemplates\example.json" -e "c:\MyTemplates\example.params.json" -g ExampleResourceGroup -n ExampleDeployment
+## 完整部署脚本
 
-[AZURE.INCLUDE [resource-manager-parameter-file](../../includes/resource-manager-parameter-file.md)]
+以下示例显示用于部署[导出模板](/documentation/articles/resource-manager-export-template/)功能生成的模板的 Azure CLI 2.0 脚本：
+
+    #!/bin/bash
+    set -euo pipefail
+    IFS=$'\n\t'
+
+    # -e: immediately exit if any command has a non-zero exit status
+    # -o: prevents errors in a pipeline from being masked
+    # IFS new value is less likely to cause confusing bugs when looping arrays or arguments (e.g. $@)
+
+    usage() { echo "Usage: $0 -i <subscriptionId> -g <resourceGroupName> -n <deploymentName> -l <resourceGroupLocation>" 1>&2; exit 1; }
+
+    declare subscriptionId=""
+    declare resourceGroupName=""
+    declare deploymentName=""
+    declare resourceGroupLocation=""
+
+    # Initialize parameters specified from command line
+    while getopts ":i:g:n:l:" arg; do
+        case "${arg}" in
+            i)
+                subscriptionId=${OPTARG}
+                ;;
+            g)
+                resourceGroupName=${OPTARG}
+                ;;
+            n)
+                deploymentName=${OPTARG}
+                ;;
+            l)
+                resourceGroupLocation=${OPTARG}
+                ;;
+            esac
+    done
+    shift $((OPTIND-1))
+
+    #Prompt for parameters is some required parameters are missing
+    if [[ -z "$subscriptionId" ]]; then
+        echo "Subscription Id:"
+        read subscriptionId
+        [[ "${subscriptionId:?}" ]]
+    fi
+
+    if [[ -z "$resourceGroupName" ]]; then
+        echo "ResourceGroupName:"
+        read resourceGroupName
+        [[ "${resourceGroupName:?}" ]]
+    fi
+
+    if [[ -z "$deploymentName" ]]; then
+        echo "DeploymentName:"
+        read deploymentName
+    fi
+
+    if [[ -z "$resourceGroupLocation" ]]; then
+        echo "Enter a location below to create a new resource group else skip this"
+        echo "ResourceGroupLocation:"
+        read resourceGroupLocation
+    fi
+
+    #templateFile Path - template file to be used
+    templateFilePath="template.json"
+
+    if [ ! -f "$templateFilePath" ]; then
+        echo "$templateFilePath not found"
+        exit 1
+    fi
+
+    #parameter file path
+    parametersFilePath="parameters.json"
+
+    if [ ! -f "$parametersFilePath" ]; then
+        echo "$parametersFilePath not found"
+        exit 1
+    fi
+
+    if [ -z "$subscriptionId" ] || [ -z "$resourceGroupName" ] || [ -z "$deploymentName" ]; then
+        echo "Either one of subscriptionId, resourceGroupName, deploymentName is empty"
+        usage
+    fi
+
+    #login to azure using your credentials
+    az account show 1> /dev/null
+
+    if [ $? != 0 ];
+    then
+        az login
+    fi
+
+    #set the default subscription id
+    az account set --name $subscriptionId
+
+    set +e
+
+    #Check for existing RG
+    az group show $resourceGroupName 1> /dev/null
+
+    if [ $? != 0 ]; then
+        echo "Resource group with name" $resourceGroupName "could not be found. Creating new resource group.."
+        set -e
+        (
+            set -x
+            az resource group create --name $resourceGroupName --location $resourceGroupLocation 1> /dev/null
+        )
+        else
+        echo "Using existing resource group..."
+    fi
+
+    #Start deployment
+    echo "Starting deployment..."
+    (
+        set -x
+        az resource group deployment create --name $deploymentName --resource-group $resourceGroupName --template-file $templateFilePath --parameters $parametersFilePath
+    )
+
+    if [ $?  == 0 ];
+     then
+        echo "Template has been successfully deployed"
+    fi
 
 ## 后续步骤
 * 有关通过 .NET 客户端库部署资源的示例，请参阅 [Deploy resources using .NET libraries and a template](/documentation/articles/virtual-machines-windows-csharp-template/)（使用 .NET 库和模板部署资源）。
@@ -168,5 +286,5 @@
 * 如需了解企业如何使用 Resource Manager 对订阅进行有效管理，请参阅 [Azure 企业机架 - 规范性订阅管理](/documentation/articles/resource-manager-subscription-governance/)。
 * 有关自动化部署的四部分系列教程，请参阅[将应用程序自动部署到 Azure 虚拟机](/documentation/articles/virtual-machines-windows-dotnet-core-1-landing/)。此系列教程介绍了应用程序体系结构、访问与安全性、可用性与缩放性，以及应用程序部署。
 
-<!---HONumber=Mooncake_0120_2017-->
-<!-- Update_Description: update meta properties ; wording update ; update link reference -->
+<!---HONumber=Mooncake_0327_2017-->
+<!-- Update_Description:update meta properties; wording update; update link reference; add new feature of debug and whole deployment of Azure CLI 2.0  -->

@@ -14,7 +14,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="12/05/2016"
-    wacn.date="03/03/2017"
+    wacn.date="03/31/2017"
     ms.author="tomfitz" />  
 
 # 使用 Azure PowerShell 和 Resource Manager 管理资源
@@ -45,14 +45,14 @@
     Get-Module -ListAvailable -Name AzureRm.Resources | Select Version
 
 <!-- Append the domain name before powershell subdirectory-->
-本主题已针对版本 3.3.0 更新。如果使用更旧的版本，体验可能与本主题中所示步骤不完全相同。有关此版本中 cmdlet 的文档，请参阅 [AzureRM.Resources 模块](https://docs.microsoft.com/powershell/resourcemanager/azurerm.resources/v3.3.0/azurerm.resources)。
+本主题已针对版本 3.3.0 更新。如果使用更旧的版本，体验可能与本主题中所示步骤不完全相同。有关此版本中 cmdlet 的文档，请参阅 [AzureRM.Resources 模块](https://docs.microsoft.com/zh-cn/powershell/resourcemanager/azurerm.resources/v3.3.0/azurerm.resources)。
 
 ## 登录到 Azure 帐户
 处理解决方案之前，必须登录到帐户。
 
-若要登录到 Azure 帐户，请使用 **Add-AzureRmAccount -EnvironmentName AzureChinaCloud** cmdlet。
+若要登录到 Azure 帐户，请使用 **Login-AzureRmAccount -EnvironmentName AzureChinaCloud** cmdlet。
 
-    Add-AzureRmAccount -EnvironmentName AzureChinaCloud
+    Login-AzureRmAccount -EnvironmentName AzureChinaCloud
 
 该 cmdlet 将提示您提供您的 Azure 帐户的登录凭据。登录后它会下载你的帐户设置，供 Azure PowerShell 使用。
 
@@ -183,7 +183,7 @@
 2. 可以查看代表解决方案的 JavaScript 对象表示法 (JSON)，以此熟悉模板语法。
 
 > [AZURE.NOTE]
-导出模板功能处于预览状态，并非所有的资源类型目前都支持导出模板。尝试导出模板时，你可能会看到一个错误，指出未导出某些资源。如果需要，你可以在下载模板之后，在模板中手动定义这些资源。
+> 导出模板功能处于预览状态，并非所有的资源类型目前都支持导出模板。尝试导出模板时，你可能会看到一个错误，指出未导出某些资源。如果需要，你可以在下载模板之后，在模板中手动定义这些资源。
 >
 >
 
@@ -223,5 +223,5 @@
 * 可以将现有资源移动到新的资源组。有关示例，请参阅[将资源移动到新的资源组或订阅中](/documentation/articles/resource-group-move-resources/)。
 * 如需了解企业如何使用 Resource Manager 对订阅进行有效管理，请参阅 [Azure 企业机架 - 规范性订阅管理](/documentation/articles/resource-manager-subscription-governance/)。
 
-<!---HONumber=Mooncake_0227_2017-->
-<!--Update_Description: update meta properties; wording update; update link reference -->
+<!---HONumber=Mooncake_0327_2017-->
+<!--Update_Description: update meta properties; wording update; update code about Login-AzureRmAccount-->

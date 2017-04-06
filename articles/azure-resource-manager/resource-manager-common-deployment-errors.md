@@ -15,8 +15,8 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="na"
-    ms.date="01/18/2017"
-    wacn.date="03/03/2017"
+    ms.date="03/15/2017"
+    wacn.date="03/31/2017"
     ms.author="tomfitz" />  
 
 
@@ -46,6 +46,7 @@
 * [授权失败](#authorization-failed)
 * [BadRequest](#badrequest)
 * [DeploymentFailed](#deploymentfailed)
+* [DisallowedOperation](#disallowedoperation)
 * [InvalidContentLink](#invalidcontentlink)
 * [InvalidTemplate](#invalidtemplate)
 * [MissingSubscriptionRegistration](#noregisteredproviderfound)
@@ -85,12 +86,13 @@
 
 - 若要对虚拟机使用 REST API，请发送以下请求：
 
-        GET https://management.chinacloudapi.cn/subscriptions/{subscription-id}/providers/Microsoft.Compute/skus?api-version=2016-03-30
+        GET
+        https://management.chinacloudapi.cn/subscriptions/{subscription-id}/providers/Microsoft.Compute/skus?api-version=2016-03-30
 
-     它会用以下格式返回可用的 SKU 和区域：
+    它会用以下格式返回可用的 SKU 和区域：
 
         {
-            "value": [
+	        "value": [
 	          {
 	            "resourceType": "virtualMachines",
 	            "name": "Standard_A0",
@@ -112,12 +114,35 @@
 	            "restrictions": []
 	          },
 	          ...
-            ]
+	        ]
         }    
 
     如果在该区域或满足业务需求的备用区域中找不到合适的 SKU，请与 [Azure 支持](https://portal.azure.cn/#create/Microsoft.Support)联系。
 
+### <a name="disallowedoperation"></a> DisallowedOperation
 
+    Code: DisallowedOperation
+    Message: The current subscription type is not permitted to perform operations on any provider 
+    namespace. Please use a different subscription.
+
+如果收到此错误，则指示你使用的是不允许访问 Azure Active Directory 之外的任何 Azure 服务的订阅。当你需要访问经典管理门户，但不允许你部署资源时，可以使用此类型的订阅。若要解决此问题，必须使用有权部署资源的订阅。
+
+若要使用 PowerShell 查看可用订阅，请使用：
+
+    Get-AzureRmSubscription
+
+而若要设置当前订阅，请使用：
+
+    Set-AzureRmContext -SubscriptionName {subscription-name}
+
+若要使用 Azure CLI 2.0 查看可用订阅，请使用：
+
+    az account list
+
+而若要设置当前订阅，请使用：
+
+    az account set --subscription {subscription-name}
+	
 ### <a name="invalidtemplate"></a> InvalidTemplate
 
 此错误可由多种不同类型的错误导致。
@@ -338,31 +363,36 @@
 
 若要查看是否已注册提供程序，请使用 `azure provider list` 命令。
 
-    azure provider list
+    az provider list
 
-若要注册资源提供程序，请使用 `azure provider register` 命令，并指定要注册的 *命名空间* 。
+若要注册资源提供程序，请使用 `azure provider register` 命令，并指定要注册的*命名空间*。
 
-    azure provider register Microsoft.Cdn
+    az provider register --namespace Microsoft.Cdn
 
-若要查看资源提供程序支持的位置和 API 版本，请使用：
+若要查看资源类型支持的位置和 API 版本，请使用：
 
-    azure provider show -n Microsoft.Compute --json > compute.json
+    az provider show -n Microsoft.Web --query "resourceTypes[?resourceType=='sites'].locations"
 
 ### <a id="quotaexceeded" name="operationnotallowed"></a> QuotaExceeded 和 OperationNotAllowed
 部署超出配额（可能是根据资源组、订阅、帐户和其他范围指定的）时，可能会遇到问题。例如，订阅可能配置为限制某个区域的核心数目。如果尝试部署超过允许核心数目的虚拟机，将收到指出超过配额的错误消息。有关完整的配额信息，请参阅 [Azure 订阅和服务限制、配额与约束](/documentation/articles/azure-subscription-service-limits/)。
 
 若要检查订阅的核心配额，可以使用 Azure CLI 中的 `azure vm list-usage` 命令。以下示例显示，试用帐户的核心配额为 4 ：
 
-    azure vm list-usage
+    az vm list-usage --location "China East"
 
 将返回：
 
-    info:    Executing command vm list-usage
-    Location: chinanorth
-    data:    Name   Unit   CurrentValue  Limit
-    data:    -----  -----  ------------  -----
-    data:    Cores  Count  0             4
-    info:    vm list-usage command OK
+    [
+      {
+        "currentValue": 0,
+        "limit": 2000,
+        "name": {
+          "localizedValue": "Availability Sets",
+          "value": "availabilitySets"
+        }
+      },
+      ...
+    ]
 
 如果在中国北部区域部署一个会创建四个以上的核心的模板，将出现类似如下的部署错误：
 
@@ -408,11 +438,11 @@
 
 在 **PowerShell** 中以 **Id** 参数形式提供该策略标识符即可检索有关阻止部署的策略的详细信息。
 
-    (Get-AzureRmPolicyAssignment -Id "/subscriptions/{guid}/providers/Microsoft.Authorization/policyDefinitions/regionPolicyDefinition").Properties.policyRule | ConvertTo-Json
+    (Get-AzureRmPolicyDefinition -Id "/subscriptions/{guid}/providers/Microsoft.Authorization/policyDefinitions/regionPolicyDefinition").Properties.policyRule | ConvertTo-Json
 
-在 **Azure CLI** 中，请提供策略定义的名称：
+在 **Azure CLI 2.0** 中，请提供策略定义的名称：
 
-    azure policy definition show regionPolicyDefinition --json
+    az policy definition show --name regionPolicyAssignment
 
 有关策略的详细信息，请参阅[使用策略来管理资源和控制访问](/documentation/articles/resource-manager-policy/)。
 
@@ -442,17 +472,11 @@
 
     此信息可帮助确定模板中某个值的设置是否错误。
 
-- Azure CLI
+- Azure CLI 2.0
 
-    在 Azure CLI 中，将 **--debug-setting** 参数设置为 All、ResponseContent 或 RequestContent。
+    使用以下命令检查部署操作：
 
-        azure group deployment create --debug-setting All -f c:\Azure\Templates\storage.json -g examplegroup -n ExampleDeployment
-
-    使用以下命令检查记录的请求和响应内容：
-
-        azure group deployment operation list --resource-group examplegroup --name ExampleDeployment --json
-
-    此信息可帮助确定模板中某个值的设置是否错误。
+        az group deployment operation list --resource-group ExampleGroup --name vmlinux
 
 - 嵌套模板
 
@@ -576,7 +600,7 @@ Resource Manager 可在模板验证过程中确定循环依赖项。它会返回
 | 服务 | 文章 |
 | --- | --- |
 | 自动化 |[Azure 自动化中常见错误的疑难解答提示](/documentation/articles/automation-troubleshooting-automation-errors/) |
-| Service Fabric |[排查在 Azure Service Fabric 上部署服务时遇到的常见问题](/documentation/articles/service-fabric-diagnostics-troubleshoot-common-scenarios/) |
+| Service Fabric |[监视和诊断 Azure Service Fabric 应用程序](/documentation/articles/service-fabric-diagnostics-overview/) |
 | 站点恢复 |[监视虚拟机和物理服务器的保护及其故障排除](/documentation/articles/site-recovery-monitoring-and-troubleshooting/) |
 | 存储 |[对 Azure 存储进行监视、诊断和故障排除](/documentation/articles/storage-monitoring-diagnosing-troubleshooting/) |
 | SQL 数据库 |[排查 Azure SQL 数据库的连接问题](/documentation/articles/sql-database-troubleshoot-common-connection-issues/) |
@@ -586,5 +610,5 @@ Resource Manager 可在模板验证过程中确定循环依赖项。它会返回
 * 若要了解审核操作，请参阅 [Audit operations with Resource Manager](/documentation/articles/resource-group-audit/)（使用 Resource Manager 执行审核操作）。
 * 若要了解部署期间为确定错误执行哪些操作，请参阅 [View deployment operations](/documentation/articles/resource-manager-deployment-operations/)（查看部署操作）。
 
-<!---HONumber=Mooncake_0227_2017-->
-<!-- Update_Description: update meta properties; update link reference; add DeploymentFailed errorcode  -->
+<!---HONumber=Mooncake_0327_2017-->
+<!-- Update_Description: update meta properties; update link reference; add DisallowedOperation errorcode; add code with Azure CLI 2.0 syntax  -->

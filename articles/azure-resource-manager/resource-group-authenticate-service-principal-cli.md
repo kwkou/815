@@ -14,9 +14,8 @@
     ms.tgt_pltfrm="multiple"
     ms.workload="na"
     ms.date="01/17/2017"
-    wacn.date="03/03/2017"
+    wacn.date="03/31/2017"
     ms.author="tomfitz" />
-
 
 # 使用 Azure CLI 创建服务主体来访问资源
 > [AZURE.SELECTOR]
@@ -71,7 +70,7 @@
         * 应用的名称
         * 应用主页的 URL
         * 用于标识应用的 URI 的逗号分隔列表
-        * password
+        * 密码
 
     如以下命令所示：
 
@@ -114,7 +113,7 @@
     将返回：
 
         info:    Executing command account show
-        data:    Name                        : Windows Azure MSDN - Visual Studio Ultimate
+        data:    Name                        : Microsoft Azure MSDN - Visual Studio Ultimate
         data:    ID                          : {guid}
         data:    State                       : Enabled
         data:    Tenant ID                   : {guid}
@@ -230,7 +229,7 @@
     将返回：
 
         info:    Executing command account show
-        data:    Name                        : Windows Azure MSDN - Visual Studio Ultimate
+        data:    Name                        : Microsoft Azure MSDN - Visual Studio Ultimate
         data:    ID                          : {guid}
         data:    State                       : Enabled
         data:    Tenant ID                   : {guid}
@@ -318,5 +317,5 @@
 * 有关将应用程序集成到 Azure 以管理资源的详细步骤，请参阅 [Developer's guide to authorization with the Azure Resource Manager API](/documentation/articles/resource-manager-api-authentication/)（使用 Azure Resource Manager API 进行授权的开发人员指南）。
 * 若要获取有关使用证书和 Azure CLI 的详细信息，请参阅 [Certificate-based authentication with Azure Service Principals from Linux command line](http://blogs.msdn.com/b/arsen/archive/2015/09/18/certificate-based-auth-with-azure-service-principals-from-linux-command-line.aspx)（从 Linux 命令行对 Azure 服务主体进行基于证书的身份验证）。
 
-<!---HONumber=Mooncake_0227_2017-->
+<!---HONumber=Mooncake_0327_2017-->
 <!-- Update_Description: update meta properties; wording update -->

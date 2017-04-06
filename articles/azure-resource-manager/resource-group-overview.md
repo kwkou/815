@@ -13,10 +13,9 @@
     ms.topic="get-started-article"
     ms.tgt_pltfrm="na"
     ms.workload="na"
-    ms.date="01/12/2017"
-    wacn.date="01/25/2017"
+    ms.date="03/06/2017"
+    wacn.date="03/31/2017"
     ms.author="tomfitz" />
-
 
 # Azure 资源管理器概述
 应用程序的基础结构通常由许多组件构成：可能有虚拟机、存储帐户和虚拟网络，或 Web 应用、数据库、数据库服务器和第三方服务。这些组件不会以独立的实体出现，而是以单个实体的相关部件和依赖部件出现。如果你希望以组的方式部署、管理和监视这些这些组件，那么，你可以使用 Azure 资源管理器以组的方式处理解决方案中的资源。可以通过一个协调的操作为解决方案部署、更新或删除所有资源。可以使用一个模板来完成部署，该模板适用于不同的环境，例如测试、过渡和生产。资源管理器提供安全、审核和标记功能，以帮助你在部署后管理资源。
@@ -30,7 +29,7 @@
 * **Resource Manager 模板** — 一个 JavaScript 对象表示法 (JSON) 文件，用于定义一个或多个要部署到资源组的资源。它也会定义所部署资源之间的依赖关系。使用模板能够以一致方式反复部署资源。请参阅[模板部署](#template-deployment)。
 * **声明性语法** - 一种语法，允许你声明“以下是我想要创建的项目”，而不需要编写一系列编程命令来进行创建。Resource Manager 模板便是声明性语法的其中一个示例。在该文件中，你可以定义要部署到 Azure 的基础结构的属性。
 
-## <a name="the-benefits-of-using-resource-manager"></a> 使用资源管理器的优势
+## <a name="the-benefits-of-using-resource-manager"></a> 使用 Resource Manager 的优势
 资源管理器提供多种优势：
 
 * 可以以组的形式部署、管理和监视解决方案的所有资源，而不是单独处理这些资源。
@@ -90,9 +89,9 @@ Resource Manager 通过 Azure PowerShell、Azure CLI、Azure 门户预览、REST
 
     Get-AzureRmResourceProvider -ListAvailable
 
-如果使用 Azure CLI，则可以运行以下命令检索所有资源提供程序：
+如果使用 Azure CLI 2.0，请使用以下命令检索所有资源提供程序：
 
-    azure provider list
+    az provider list
 
 可以浏览返回的列表，找到需要使用的资源提供程序。
 
@@ -100,9 +99,9 @@ Resource Manager 通过 Azure PowerShell、Azure CLI、Azure 门户预览、REST
 
     (Get-AzureRmResourceProvider -ProviderNamespace Microsoft.Compute).ResourceTypes
 
-如果使用 Azure CLI，请运行以下命令检索 Microsoft.Compute 支持的资源类型、位置和 API 版本：
+如果使用 Azure CLI 2.0，请使用以下命令检索 Microsoft.Compute 支持的资源类型、位置和 API 版本：
 
-    azure provider show Microsoft.Compute --json > c:\Azure\compute.json
+    az provider show --namespace Microsoft.Compute
 
 有关详细信息，请参阅 [Resource Manager 提供程序、区域、API 版本和架构](/documentation/articles/resource-manager-supported-services/)。
 
@@ -126,7 +125,7 @@ Resource Manager 处理模板的方式与处理其他任何请求一样（请参
         "properties": {
         }
       }
-      ]
+    ]
 
 它会将该定义转换为以下 REST API 操作，然后，该操作将发送到 Microsoft.Storage 资源提供程序：
 
@@ -201,9 +200,9 @@ Azure Resource Manager 会分析依赖关系，以确保按正确的顺序创建
 
     Find-AzureRmResource -TagName costCenter -TagValue Finance
 
-或者运行以下 Azure CLI 命令：
+或者运行以下 Azure CLI 2.0 命令：
 
-    azure resource list -t costCenter=Finance --json
+    az resource list --tag costCenter=Finance
 
 还可通过 Azure 门户预览查看标记的资源。
 
@@ -304,6 +303,10 @@ Azure SDK 适用于多种语言和平台。每种语言实现可通过其生态�
 * [管理 Azure 资源和资源组](https://github.com/Azure-Samples/resource-manager-ruby-resources-and-groups/)
 * [使用模板部署启用 SSH 的 VM](https://github.com/Azure-Samples/resource-manager-ruby-template-deployment/)
 
+除了这些示例，还可以通过库模板搜索示例。
+
+[.NET](https://github.com/Azure-Samples/?service=azure-resource-manager&platform=dotnet) | [Java](https://github.com/Azure-Samples/?service=azure-resource-manager&platform=java) | [Node.js](https://github.com/Azure-Samples/?service=azure-resource-manager&platform=nodejs) | [Python](https://github.com/Azure-Samples/?service=azure-resource-manager&platform=python) | [Ruby](https://github.com/Azure-Samples/?service=azure-resource-manager&platform=ruby)
+
 ## 后续步骤
 * 有关使用模板的简单介绍，请参阅 [Export an Azure Resource Manager template from existing resources](/documentation/articles/resource-manager-export-template/)（从现有资源导出 Azure Resource Manager 模板）。
 * 有关创建模板的更全面演练，请参阅 [Resource Manager Template Walkthrough](/documentation/articles/resource-manager-template-walkthrough/)（Resource Manager 模板演练）。
@@ -311,7 +314,9 @@ Azure SDK 适用于多种语言和平台。每种语言实现可通过其生态�
 * 有关将 Visual Studio 与 Resource Manager 配合使用的信息，请参阅 [Creating and deploying Azure resource groups through Visual Studio](/documentation/articles/vs-azure-tools-resource-groups-deployment-projects-create-deploy/)（通过 Visual Studio 创建和部署 Azure 资源组）。
 * 有关将 VS Code 与 Resource Manager 配合使用的信息，请参阅 [Working with Azure Resource Manager Templates in Visual Studio Code](/documentation/articles/resource-manager-vs-code/)（在 Visual Studio Code 中使用 Azure Resource Manager 模板）。
 
+下面是本概述主题的演示视频：
+[演示视频](https://channel9.msdn.com/Blogs/Azure-Documentation-Shorts/Azure-Resource-Manager-Overview/player)
 [powershellref]: https://docs.microsoft.com/powershell/resourcemanager/azurerm.resources/v3.2.0/azurerm.resources
 
-<!---HONumber=Mooncake_0120_2017-->
-<!-- Update_Description: update meta properties ; wording update ; update link reference -->
+<!---HONumber=Mooncake_0327_2017-->
+<!-- Update_Description: update meta properties; wording update; update code with Azure CLI 2.0 syntax; add video with normal reference-->

@@ -14,7 +14,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="na"
     ms.date="01/17/2017"
-    wacn.date="03/03/2017"
+    wacn.date="03/31/2017"
     ms.author="tomfitz" />
 
 # Azure Resource Manager 与经典部署：了解部署模型和资源状态
@@ -96,7 +96,7 @@ Azure 在 2014 年引入了 Resource Manager，增加了资源组这一概念。
     ![Web 应用](./media/resource-manager-deployment-model/resource-manager-type.png)  
 
 
-## <a name="classic-deployment-characteristics"></a> 经典部署的特性
+## <a name="classic-deployment-characteristics"></a> 经典部署特性
 您也可能知道经典部署模型就是服务管理模型。
 
 在经典部署模型中创建的资源具有以下共同特性：
@@ -199,5 +199,5 @@ Azure 在 2014 年引入了 Resource Manager，增加了资源组这一概念。
 * 若要演练如何创建用于定义虚拟机、存储帐户和虚拟网络的模板，请参阅 [Resource Manager 模板演练](/documentation/articles/resource-manager-template-walkthrough/)。
 * 若要查看用于部署模板的命令，请参阅[使用 Azure 资源管理器模板部署应用程序](/documentation/articles/resource-group-template-deploy/)。
 
-<!---HONumber=Mooncake_0227_2017-->
+<!---HONumber=Mooncake_0327_2017-->
 <!-- Update_Description:update meta properties; wording update -->

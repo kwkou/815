@@ -1,5 +1,5 @@
 <properties
-    pageTitle="连接 Azure 部署相关模板 | Azure"
+    pageTitle="用于 Azure 部署的链接模板 | Azure"
     description="介绍如何使用 Azure 资源管理器模板中的链接模板创建一个模块化的模板的解决方案。演示如何传递参数值、指定参数文件和动态创建的 URL。"
     services="azure-resource-manager"
     documentationcenter="na"
@@ -13,8 +13,8 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="na"
-    ms.date="11/28/2016"
-    wacn.date="03/03/2017"
+    ms.date="03/14/2017"
+    wacn.date="03/31/2017"
     ms.author="tomfitz" />  
 
 # 部署 Azure 资源时使用链接模板
@@ -23,7 +23,7 @@
 可以将参数从主模板传递到链接的模板，并可以直接将这些参数映射到由调用模板公开提供的参数或变量。链接模板还可以将输出变量传递回源模板中，启用模板之间的双向数据交换。
 
 ## 链接到模板
-通过在主模板内添加部署源，从而在两个模板间创建指向链接模板的链接。对链接模版的 URI 设置 **templateLink** 属性。您可以通过直接在您的模板中指定值或通过链接到参数文件，为链接模板提供参数值。以下示例使用 **parameters** 属性直接指定参数值。
+通过在主模板内添加部署源，从而在两个模板间创建指向链接模板的链接。对链接模版的 URI 设置 **templateLink** 属性。可以直接在模板中或参数文件中为链接模板提供参数值。以下示例使用 **parameters** 属性直接指定参数值。
 
     "resources": [ 
       { 
@@ -76,7 +76,7 @@ Resource Manager 服务必须能够访问链接的模板。无法为链接的模
         }
     ],
 
-即使令牌作为安全字符串传入，链接模板的 URI（包括 SAS 令牌）也将记录在该资源组的部署操作中。若要限制公开，请设置令牌的到期时间。
+即使令牌作为安全字符串传入，链接模板的 URI（包括 SAS 令牌）也将记录在部署操作中。若要限制公开，请设置令牌的到期时间。
 
 Resource Manager 会将每个链接模板作为单独的部署来处理。在资源组的部署历史记录中，可看到父模板和嵌套模板的分别部署。
 
@@ -276,19 +276,34 @@ URI 将解析成名为 **existingStorageAccount.json** 或 **newStorageAccount.j
 
     Set-AzureRmCurrentStorageAccount -ResourceGroupName ManageGroup -Name storagecontosotemplates
     $token = New-AzureStorageContainerSASToken -Name templates -Permission r -ExpiryTime (Get-Date).AddMinutes(30.0)
-    New-AzureRmResourceGroupDeployment -ResourceGroupName ExampleGroup -TemplateUri ("https://storagecontosotemplates.blob.core.chinacloudapi.cn/templates/parent.json" + $token) -containerSasToken $token
+    $url = (Get-AzureStorageBlob -Container templates -Blob parent.json).ICloudBlob.uri.AbsoluteUri
+    New-AzureRmResourceGroupDeployment -ResourceGroupName ExampleGroup -TemplateUri ($url + $token) -containerSasToken $token
 
-在 Azure CLI 中，你使用以下代码获取容器的令牌并部署模板。目前，使用包括 SAS 令牌的模板 URI 时必须提供部署的名称。
+在 Azure CLI 2.0 中，使用以下代码获取容器的令牌并部署模板：
 
-    expiretime=$(date -I'minutes' --date "+30 minutes")  
-    azure storage container sas create --container templates --permissions r --expiry $expiretime --json | jq ".sas" -r
-    azure group deployment create -g ExampleGroup --template-uri "https://storagecontosotemplates.blob.core.chinacloudapi.cn/templates/parent.json?{token}" -n tokendeploy  
-
-系统将提示用户提供 SAS 令牌作为参数。需要在令牌的前面加上 **?**。
+    seconds='@'$(( $(date +%s) + 1800 ))
+    expiretime=$(date +%Y-%m-%dT%H:%MZ --date=$seconds)
+    connection=$(az storage account show-connection-string \
+        --resource-group ManageGroup \
+        --name storagecontosotemplates \
+        --query connectionString)
+    token=$(az storage container generate-sas \
+        --name templates \
+        --expiry $expiretime \
+        --permissions r \
+        --output tsv \
+        --connection-string $connection)
+    url=$(az storage blob url \
+        --container-name templates \
+        --name parent.json \
+        --output tsv \
+        --connection-string $connection)
+    parameter='{"containerSasToken":{"value":"?'$token'"}}'
+    az group deployment create --resource-group ExampleGroup --template-uri $url?$token --parameters $parameter
 
 ## 后续步骤
 * 若要了解如何为资源定义部署顺序，请参阅 [Defining dependencies in Azure Resource Manager templates](/documentation/articles/resource-group-define-dependencies/)（在 Azure Resource Manager 模板中定义依赖关系）
 * 若要了解如何定义一个资源而创建多个实例，请参阅 [Create multiple instances of resources in Azure Resource Manager](/documentation/articles/resource-group-create-multiple/)（在 Azure Resource Manager 中创建多个资源实例）
 
-<!---HONumber=Mooncake_0227_2017-->
-<!--Update_Description:update meta properties; wording update-->
+<!---HONumber=Mooncake_0327_2017-->
+<!--Update_Description:update meta properties; wording update; new feature about fetching the token and deploying template with Azure CLI 2.0-->

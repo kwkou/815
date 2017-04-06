@@ -14,7 +14,7 @@
     ms.tgt_pltfrm="multiple"
     ms.workload="na"
     ms.date="01/17/2017"
-    wacn.date="03/03/2017"
+    wacn.date="03/31/2017"
     ms.author="tomfitz" />  
 
 
@@ -71,7 +71,7 @@
 
 1. 登录到你的帐户。
 
-        Add-AzureRmAccount -EnvironmentName AzureChinaCloud
+        Login-AzureRmAccount -EnvironmentName AzureChinaCloud
 
 2. 通过提供显示名称，用于描述应用程序的 URI，用于标识应用程序的 URI，以及应用程序标识的密码来创建新 Active Directory 应用程序。
 
@@ -104,9 +104,9 @@
 
         New-AzureRmRoleAssignment -RoleDefinitionName Reader -ServicePrincipalName $app.ApplicationId
 
-如果帐户没有足够权限来分配角色，将看到一条错误消息。该消息声明用户的帐户“无权在作用域 '/subscriptions/{guid}' 执行操作 'Microsoft.Authorization/roleAssignments/write'”。
+    如果帐户没有足够权限来分配角色，将看到一条错误消息。该消息声明用户的帐户“无权在作用域 '/subscriptions/{guid}' 执行操作 'Microsoft.Authorization/roleAssignments/write'”。
 
-就这么简单！ AD 应用程序和服务主体设置完毕。下一部分演示如何通过 PowerShell 使用凭据进行登录。如果要在代码应用程序中使用凭据，可以跳到[示例应用程序](#sample-applications)。
+    就这么简单！ AD 应用程序和服务主体设置完毕。下一部分演示如何通过 PowerShell 使用凭据进行登录。如果要在代码应用程序中使用凭据，可以跳到[示例应用程序](#sample-applications)。
 
 ### <a name="provide-credentials-through-powershell"></a> 通过 PowerShell 提供凭据
 现在，需要以应用程序方式登录以执行相应操作。
@@ -117,7 +117,7 @@
 
 2. 系统会提示你输入凭据。对于用户名，请使用在创建应用程序时使用的 `ApplicationId`。对于密码，请使用你在创建帐户时指定的密码。
    
-     ![输入凭据](./media/resource-group-authenticate-service-principal/arm-get-credential.png)  
+    ![输入凭据](./media/resource-group-authenticate-service-principal/arm-get-credential.png)  
 
 3. 以服务主体方式登录时，需提供 AD 应用所在目录的租户 ID。租户是 Active Directory 的实例。如果只有一个订阅，可以使用：
 
@@ -129,9 +129,9 @@
 
 4. 通过指定此帐户为服务主体并提供凭据对象来以服务主体身份登录。
 
-        Add-AzureRmAccount -EnvironmentName AzureChinaCloud -Credential $creds -ServicePrincipal -TenantId $tenant
+        Login-AzureRmAccount -EnvironmentName AzureChinaCloud -Credential $creds -ServicePrincipal -TenantId $tenant
 
-现在，你已作为所创建 Active Directory 应用程序的服务主体进行身份验证。
+    现在，你已作为所创建 Active Directory 应用程序的服务主体进行身份验证。
 
 ### 保存访问令牌来简化登录
 若要避免每次登录时都需要提供服务主体凭据，可保存访问令牌。
@@ -186,7 +186,8 @@
 
     然后，生成证书。
 
-        $cert = New-SelfSignedCertificateEx -Subject "CN=exampleapp" -KeySpec "Exchange" -FriendlyName "exampleapp"
+        New-SelfSignedCertificateEx  -StoreLocation CurrentUser -StoreName My -Subject "CN=exampleapp" -KeySpec "Exchange" -FriendlyName "exampleapp"
+        $cert = Get-ChildItem -path Cert:\CurrentUser\my | where {$PSitem.Subject -eq 'CN=exampleapp' }
 
 有了证书，可以继续创建 AD 应用。
 
@@ -197,7 +198,7 @@
 
 2. 登录到你的 Azure 帐户。
 
-        Add-AzureRmAccount -EnvironmentName AzureChinaCloud
+        Login-AzureRmAccount -EnvironmentName AzureChinaCloud
 
 3. 通过提供显示名称，用于描述应用程序的 URI，用于标识应用程序的 URI，以及应用程序标识的密码来创建新 Active Directory 应用程序。
    
@@ -252,7 +253,7 @@
 
 若要在脚本中进行身份验证，请指定帐户为服务主体，并提供证书指纹、应用程序 ID 和租户 ID。若要使脚本自动化，可以将这些值存储为环境变量并在执行操作期间检索它们，或者可以将其包含在脚本中。
 
-    Add-AzureRmAccount -EnvironmentName AzureChinaCloud -ServicePrincipal -CertificateThumbprint $cert.Thumbprint -ApplicationId $app.ApplicationId -TenantId $tenant
+    Login-AzureRmAccount -EnvironmentName AzureChinaCloud -ServicePrincipal -CertificateThumbprint $cert.Thumbprint -ApplicationId $app.ApplicationId -TenantId $tenant
 
 现在，你已作为所创建 Active Directory 应用程序的服务主体进行身份验证。
 
@@ -305,5 +306,5 @@
 * 有关应用程序和服务主体的详细说明，请参阅[应用程序对象和服务主体对象](/documentation/articles/active-directory-application-objects/)。
 * 有关 Active Directory 身份验证的详细信息，请参阅 [Azure AD 的身份验证方案](/documentation/articles/active-directory-authentication-scenarios/)。
 
-<!---HONumber=Mooncake_0227_2017-->
-<!-- Update_Description: update meta properties ; wording update -->
+<!---HONumber=Mooncake_0327_2017-->
+<!-- Update_Description: update meta properties; wording update; update code on Login-AzureRmAccount -->

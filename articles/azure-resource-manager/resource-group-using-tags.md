@@ -14,7 +14,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="02/15/2017"
-    wacn.date="03/03/2017"
+    wacn.date="03/31/2017"
     ms.author="tomfitz" />  
 
 
@@ -43,9 +43,9 @@
 
 [AZURE.INCLUDE [resource-manager-tag-resources-powershell](../../includes/resource-manager-tag-resources-powershell.md)]
 
-## Azure CLI 2.0（预览版）
+## Azure CLI 2.0
 
-使用 Azure CLI 2.0（预览版），可以向资源和资源组添加标记，以及按标记值查询资源。
+使用 Azure CLI 2.0，可以向资源和资源组添加标记，以及按标记值查询资源。
 
 每次将标记应用到资源或资源组时，都会覆盖该资源或资源组上的现有标记。因此，必须根据资源或资源组是否具有要保留的现有标记，使用不同的方法。若要将标记添加到：
 
@@ -105,4 +105,4 @@
 * 如需了解企业如何使用 Resource Manager 对订阅进行有效管理，请参阅 [Azure 企业机架 - 规范性订阅管理](/documentation/articles/resource-manager-subscription-governance/)。
 
 <!---HONumber=Mooncake_0227_2017-->
-<!-- Update_Description: update meta properties; update link reference; add Azure CLI 2.0 preview code to add tag to the resouce or resource group -->
+<!-- Update_Description: update meta properties; wording update -->

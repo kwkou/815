@@ -14,7 +14,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="na"
     ms.date="02/16/2017"
-    wacn.date="03/03/2017"
+    wacn.date="03/31/2017"
     ms.author="tomfitz" />  
 
 
@@ -75,7 +75,7 @@
 
 ## <a id="azure-cli"></a> Azure CLI
 
-1. 若要安装 Azure CLI，请参阅[安装 Azure CLI 2.0（预览版）](https://docs.microsoft.com/cli/azure/install-az-cli2)。
+1. 若要安装 Azure CLI，请参阅[安装 Azure CLI 2.0](https://docs.microsoft.com/zh-cn/cli/azure/install-az-cli2)。
 
 2. 若要快速开始进行部署，请使用以下命令：
 
@@ -161,5 +161,5 @@
 * 有关使用 PowerShell 部署模板的详细信息，请参阅[使用 Resource Manager 模板和 Azure PowerShell 部署资源](/documentation/articles/resource-group-template-deploy/)。
 * 有关使用 Azure CLI 部署模板的详细信息，请参阅[使用 Resource Manager 模板和 Azure CLI 部署资源](/documentation/articles/resource-group-template-deploy-cli/)。
 
-<!---HONumber=Mooncake_0227_2017-->
-<!--Update_Description: New article about the quickstare on depolying resouce to azure -->
+<!---HONumber=Mooncake_0327_2017-->
+<!--Update_Description:update meta properties; wording update -->

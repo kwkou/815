@@ -13,8 +13,8 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="na"
-    ms.date="11/02/2016"
-    wacn.date="03/03/2017"
+    ms.date="02/24/2017"
+    wacn.date="03/31/2017"
     ms.author="tomfitz" />  
 
 # 在 Azure Resource Manager 模板中部署多个资源实例
@@ -159,11 +159,11 @@
                 "location": "[resourceGroup().location]",
                 "properties": {
                     "accountType": "Standard_LRS"
-                 },
+                },
                 "copy": { 
-                     "name": "storagecopy", 
-                     "count": 3 
-                  }
+                    "name": "storagecopy", 
+                    "count": 3 
+                }
             },
             {
                 "apiVersion": "2015-06-15", 
@@ -197,13 +197,9 @@
         }
     }]
 
-若要创建数据集的多个实例，请将数据集移出数据工厂。数据集必须与数据工厂位于同一层级，但仍属数据工厂的子资源。可以通过 **type** 和 **name** 属性保留数据集和数据工厂之间的关系。由于类型无法从其在模板中的位置推断，因此必须按以下格式提供完全限定的类型：
+若要创建数据集的多个实例，请将数据集移出数据工厂。数据集必须与数据工厂位于同一层级，但仍属数据工厂的子资源。可以通过 **type** 和 **name** 属性保留数据集和数据工厂之间的关系。由于类型不再可以从其在模板中的位置推断，因此必须按以下格式提供完全限定的类型：`{resource-provider-namespace}/{parent-resource-type}/{child-resource-type}`。
 
- **{resource-provider-namespace}/{parent-resource-type}/{child-resource-type}**
-
-若要与数据工厂的实例建立父/子关系，提供的数据集的名称应包含父资源名称。名称使用以下格式：
-
-**{parent-resource-name}/{child-resource-name}**。
+若要与数据工厂的实例建立父/子关系，提供的数据集的名称应包含父资源名称。使用以下格式：`{parent-resource-name}/{child-resource-name}`。
 
 以下示例演示实现过程：
 
@@ -536,5 +532,5 @@
 * 如需可在模板中使用的所有函数，请参阅 [Azure Resource Manager 模板函数](/documentation/articles/resource-group-template-functions/)。
 * 若要了解如何部署模板，请参阅[使用 Azure 资源管理器模板部署应用程序](/documentation/articles/resource-group-template-deploy/)。
 
-<!---HONumber=Mooncake_0227_2017-->
+<!---HONumber=Mooncake_0327_2017-->
 <!--Update_Description: update meta properties; wording update -->
