@@ -50,8 +50,6 @@ S2D 支持两种类型的体系结构 - 聚合与超聚合。本文档中所述�
 
 可以在 Azure 中基于模板创建整个解决方案。GitHub [Azure 快速入门模板](https://github.com/MSBrett/azure-quickstart-templates/tree/master/sql-server-2016-fci-existing-vnet-and-ad)中提供了一个模板示例。此示例不是针对任何特定工作负荷设计的，也没有针对任何特定工作负荷进行测试。运行该模板可以使用与域连接的 S2D 存储创建 SQL Server FCI。可以评估该模板，并根据用途对其进行修改。
 
-> [AZURE.NOTE] 此模板是针对全球 Azure 编写的。它使用的 API 版本在 Azure 中国区尚不受支持。如果需要使用此模板，请使用具有以下 SHA 的版本：`9cb630b9d314fdf909191bf96fb248355845dd16`。
-
 ## 开始之前
 
 在继续下一步之前，需要掌握一些知识并做好一些准备工作。

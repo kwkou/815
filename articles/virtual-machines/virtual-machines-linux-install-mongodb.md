@@ -29,7 +29,7 @@
 可使用以下 CLI 版本之一完成任务：
 
 - Azure CLI 1.0 - 用于经典部署模型和资源管理部署模型（本文）的 CLI
-- Azure CLI 2.0 - 不支持 Azure 中国区的虚拟机，因为 API 版本的缘故。
+- Azure CLI 2.0 - 不支持 Azure 中国区的虚拟机。
 
 ## <a name="manually-install-and-configure-mongodb-on-a-vm"></a> 在 VM 上手动安装和配置 MongoDB
 MongoDB 为 Red Hat/CentOS、SUSE、Ubuntu 和 Debian 等 Linux 分发版[提供了安装说明](https://docs.mongodb.com/manual/administration/install-on-linux/)。以下示例使用 `~/.ssh/id_rsa.pub` 中存储的 SSH 密钥创建 `CentOS` VM。出现提供存储帐户名称、DNS 名称和管理员凭据的提示时，请输入所需的信息：

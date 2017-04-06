@@ -23,7 +23,7 @@
 本文说明如何使用 Azure 命令行接口 (CLI) 的 `azure vm quick-create` 命令在 Azure 上快速部署 Linux 虚拟机 (VM)。`quick-create` 命令在基本的安全基础结构内部署 VM，用户可以将其用于快速构建某一概念的原型或进行测试。
 
 > [AZURE.NOTE]
-因为 API 版本的问题， CLI 2.0 在 Azure 中国还不支持 Azure 虚拟机。
+CLI 2.0 在 Azure 中国还不支持 Azure 虚拟机。
 
 本文要求满足以下条件：
 

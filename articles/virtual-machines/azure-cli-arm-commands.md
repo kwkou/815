@@ -23,7 +23,7 @@
 本文提供经常用于在 Azure Resource Manager 部署模型中创建和管理 Azure 资源的 Azure 命令行接口 (CLI) 命令的语法和选项。通过在 Resource Manager (arm) 模式下运行 CLI 可以访问这些命令。本参考内容并不完整，CLI 版本可能会显示稍微不同的命令或参数。有关 Azure 资源和资源组的一般概述，请参阅 [Azure Resource Manager 概述](/documentation/articles/resource-group-overview/)。
 
 > [AZURE.NOTE]
-本文介绍 Azure CLI（有时称为 Azure CLI 1.0）中的 Resource Manager 模式命令。若要使用 Resource Manager 模式，还可试用 [Azure CLI 2.0（预览版）](https://docs.microsoft.com/cli/azure/install-az-cli2)，这是我们的下一代多平台 CLI，但是因为 API 版本的问题， CLI 2.0 在 Azure 中国还不支持 Azure 虚拟机和 Azure 存储。了解有关[旧版和新版 Azure CLI](https://docs.microsoft.com/cli/azure/old-and-new-clis) 的详细信息。
+本文介绍 Azure CLI（有时称为 Azure CLI 1.0）中的 Resource Manager 模式命令。若要使用 Resource Manager 模式，还可试用 [Azure CLI 2.0（预览版）](https://docs.microsoft.com/cli/azure/install-az-cli2)，这是我们的下一代多平台 CLI。了解有关[旧版和新版 Azure CLI](https://docs.microsoft.com/cli/azure/old-and-new-clis) 的详细信息。
 >
 
 若要开始，请先[安装 Azure CLI](/documentation/articles/xplat-cli-install/) 并[连接到 Azure 订阅](/documentation/articles/xplat-cli-connect/)。

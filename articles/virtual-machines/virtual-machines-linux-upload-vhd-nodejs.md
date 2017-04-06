@@ -26,7 +26,7 @@
 可使用以下 CLI 版本之一完成任务：
 
 - [Azure CLI 1.0](#quick-commands)：用于经典部署模型和资源管理部署模型（本文）的 CLI
-- Azure CLI 2.0 - 不支持 Azure 中国区的虚拟机，因为 API 版本的缘故。
+- Azure CLI 2.0 - 不支持 Azure 中国区的虚拟机。
 
 ## <a name="quick-commands"></a> 快速命令
 如果需要快速完成任务，请参阅以下部分，其中详细说明了用于将 VM 上载到 Azure 的基本命令。本文档的余下部分（[从此处开始](#requirements)）提供了每个步骤的更详细信息和上下文。

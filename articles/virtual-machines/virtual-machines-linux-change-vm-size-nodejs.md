@@ -30,7 +30,7 @@
 可使用以下 CLI 版本之一完成任务：
 
 - [Azure CLI 1.0](#resize-a-linux-vm)：用于经典部署模型和资源管理部署模型（本文）的 CLI
-- Azure CLI 2.0 - 由于 API 版本的缘故，不支持 Azure 中国区的虚拟机。
+- Azure CLI 2.0 - 不支持 Azure 中国区的虚拟机。
 
 ## <a name="resize-a-linux-vm"></a>调整 Linux VM 的大小
 若要调整 VM 的大小，请执行以下步骤。

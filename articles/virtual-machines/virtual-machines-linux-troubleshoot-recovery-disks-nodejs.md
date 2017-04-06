@@ -24,7 +24,7 @@
 可使用以下 CLI 版本之一完成任务：
 
 - [Azure CLI 1.0](#recovery-process-overview)：用于经典部署模型和资源管理部署模型（本文）的 CLI
-- Azure CLI 2.0 - 不支持 Azure 中国区的虚拟机，因为 API 版本的缘故。
+- Azure CLI 2.0 - 不支持 Azure 中国区的虚拟机。
 
 ## <a name="recovery-process-overview"></a> 恢复过程概述
 故障排除过程如下：
