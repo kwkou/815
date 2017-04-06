@@ -16,7 +16,7 @@
     ms.tgt_pltfrm="vm-windows-sql-server"
     ms.workload="iaas-sql-server"
     ms.date="01/11/2017"
-    wacn.date="03/20/2017"
+    wacn.date="04/06/2017"
     ms.author="mikeray" />  
 
 

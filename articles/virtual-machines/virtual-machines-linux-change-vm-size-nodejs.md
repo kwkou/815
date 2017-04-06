@@ -15,7 +15,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="infrastructure-services"
     ms.date="05/16/2016"
-    wacn.date="03/20/2017"
+    wacn.date="04/06/2017"
     ms.author="mwasson" />
 
 # 如何调整 Linux VM 的大小
