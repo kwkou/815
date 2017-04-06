@@ -281,7 +281,7 @@
     /subscriptions/{guid}/resourceGroups/destinationgroup/providers/Microsoft.Web/sites/examplesite
     [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): y
 
-## <a name="use-azure-cli"></a> 使用 Azure CLI 2.0（预览版）
+## <a name="use-azure-cli"></a> 使用 Azure CLI 2.0
 若要将现有资源移到另一个资源组或订阅，请使用 `az resource move` 命令。提供要移动的资源的资源 ID。可以使用以下命令获取资源 ID：
 
     az resource show -g sourceGroup -n storagedemo --resource-type "Microsoft.Storage/storageAccounts" --query id
