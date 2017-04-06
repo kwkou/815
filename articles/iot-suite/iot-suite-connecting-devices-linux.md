@@ -167,5 +167,5 @@ IoT 中心客户端库使用 Parson JSON 分析器分析消息有效负载。在
 
 [AZURE.INCLUDE [iot-suite-visualize-connecting](../../includes/iot-suite-visualize-connecting.md)]
 
-<!---HONumber=Mooncake_0327_2017-->
-<!--Update_Description:update wording-->
+<!---HONumber=Mooncake_0406_2017-->
+<!--Update_Description:replace with chinese menu-->

@@ -145,5 +145,5 @@
 [lnk-mbed-getstarted]: https://developer.mbed.org/platforms/FRDM-K64F/#getting-started-with-mbed
 [lnk-mbed-pcconnect]: https://developer.mbed.org/platforms/FRDM-K64F/#pc-configuration
 
-<!---HONumber=Mooncake_0327_2017-->
-<!--Update_Description:update wording-->
+<!---HONumber=Mooncake_0406_2017-->
+<!--Update_Description:replace with chinese menu-->

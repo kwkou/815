@@ -102,5 +102,5 @@
 
 [lnk-c-project-properties]: https://msdn.microsoft.com/zh-cn/library/669zx6zc.aspx
 
-<!---HONumber=Mooncake_0327_2017-->
-<!--Update_Description:update meta properties-->
+<!---HONumber=Mooncake_0406_2017-->
+<!--Update_Description:replace with chinese menu-->
