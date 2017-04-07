@@ -14,7 +14,7 @@
     ms.devlang="na"
     ms.topic="get-started-article"
     ms.date="03/14/2017"
-    wacn.date="03/31/2017"
+    wacn.date="04/06/2017"
     ms.author="raynew" />
 
 # Azure Site Recovery 的工作原理
@@ -152,7 +152,7 @@
 
 ## 后续步骤
 
-- [详细了解](/documentation/articles/site-recovery-hyper-v-azure-architecture/) Hyper-V 复制工作流。
+
 - [检查先决条件](/documentation/articles/site-recovery-prereq/)
 
 <!---HONumber=Mooncake_0327_2017-->

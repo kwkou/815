@@ -45,7 +45,7 @@
 >有关示例脚本，请参阅[创建 SQL 数据库 PowerShell 脚本](/documentation/articles/sql-database-get-started-powershell/)。
 >
 
-## 更改单一数据库的服务层和性能级别
+##<a name="change-the-service-tier-and-performance-level-of-a-single-database"></a> 更改单一数据库的服务层和性能级别
 
 运行 [Set-AzureRmSqlDatabase](https://msdn.microsoft.com/zh-cn/library/azure/mt619433(v=azure.300).aspx) cmdlet 并将 **-RequestedServiceObjectiveName** 设置为所需定价层的性能级别；例如 *S0*、*S1*、*S2*、*S3*、*P1*、*P2*...
 

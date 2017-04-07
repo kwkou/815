@@ -16,7 +16,7 @@
     ms.devlang="na"
     ms.topic="hero-article"
     ms.date="12/08/2016"
-    wacn.date="03/24/2017"
+    wacn.date="04/06/2017"
     ms.author="carlrab" />  
 
 
@@ -28,9 +28,7 @@
 
 **时间估计**：本教程大约需要 30 分钟才能完成（假定用户已满足先决条件）。
 
-> [AZURE.TIP]
->也可以在使用 [PowerShell](/documentation/articles/sql-database-get-started-backup-recovery-powershell/) 的入门教程中执行这些任务。
->
+
 
 ## 先决条件
 

@@ -251,7 +251,7 @@ AzCopy 命令的基本语法是：
 
 	AzCopy /Source:C:\myfolder /Dest:https://myaccount.file.core.chinacloudapi.cn/myfileshare/ /DestKey:key /Pattern:ab* /S
 
-## 文件：复制
+##<a name="file-copy"></a> 文件：复制
 
 ### 跨文件共享复制
 

@@ -25,7 +25,7 @@
 
 有关审核的概述，请参阅 [SQL 数据库审核](/documentation/articles/sql-database-auditing/)。
 
-## 配置 Blob 审核
+##<a name="auditing-screenshot"></a> 配置 Blob 审核
 
 1. 启动 [Azure 门户预览](https://portal.azure.cn)。
 2. 导航到要审核的 SQL 数据库/SQL Server 的“设置”边栏选项卡。在“设置”边栏选项卡中，选择“审核和威胁检测”。

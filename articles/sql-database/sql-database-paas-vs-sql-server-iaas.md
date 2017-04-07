@@ -16,7 +16,7 @@
     ms.devlang="na"
     ms.topic="get-started-article"
     ms.date="02/01/2017"
-    wacn.date="03/24/2017"
+    wacn.date="04/06/2017"
     ms.author="carlrab" />
 
 # 选择云 SQL Server 选项：Azure SQL (PaaS) 数据库或 Azure VM 上的 SQL Server (IaaS)
@@ -71,7 +71,7 @@ Azure 虚拟机上的 SQL Server 经过优化，适合用于迁移现有的 SQL 
 | | | |
 | **资源：** |不想要利用 IT 资源来配置和管理基础结构，而想要专注于应用程序层。 |可将某些 IT 资源用于配置和管理。提供的某些自动化功能大大简化了这些任务。 |
 | **总拥有成本：** |消除硬件成本并减少管理成本。 |消除硬件成本。 |
-|**业务连续性：**|除了内置的容错基础结构功能以外，Azure SQL 数据库还提供可提高业务连续性的功能，例如[自动备份](/documentation/articles/sql-database-automated-backups/)、[时间点还原](/documentation/articles/sql-database-recovery-using-backups/#point-in-time-restore)、[异地还原](/documentation/articles/sql-database-recovery-using-backups/#geo-restore)和[活动异地复制](/documentation/articles/sql-database-active-geo-replication/)。有关详细信息，请参阅 [SQL 数据库业务连续性概述](/documentation/articles/sql-database-business-continuity/)。|Azure VM 上的 SQL Server 允许设置高可用性和灾难恢复解决方案，以满足数据库的具体需求。因此，可以构建针对应用程序高度优化的系统。可以按需求自行测试并运行故障转移。有关详细信息，请参阅 [Azure 虚拟机中 SQL Server 的高可用性和灾难恢复](/documentation/articles/virtual-machines-windows-sql-high-availability-dr/)。|
+|**业务连续性：**|除了内置的容错基础结构功能以外，Azure SQL 数据库还提供可提高业务连续性的功能，例如[自动备份](/documentation/articles/sql-database-automated-backups/)、[时间点还原](/documentation/articles/sql-database-recovery-using-backups/#point-in-time-restore)、[异地还原](/documentation/articles/sql-database-recovery-using-backups/#geo-restore)和[活动异地复制](/documentation/articles/sql-database-geo-replication-overview/)。有关详细信息，请参阅 [SQL 数据库业务连续性概述](/documentation/articles/sql-database-business-continuity/)。|Azure VM 上的 SQL Server 允许设置高可用性和灾难恢复解决方案，以满足数据库的具体需求。因此，可以构建针对应用程序高度优化的系统。可以按需求自行测试并运行故障转移。有关详细信息，请参阅 [Azure 虚拟机中 SQL Server 的高可用性和灾难恢复](/documentation/articles/virtual-machines-windows-sql-high-availability-dr/)。|
 |**混合云：**|本地应用程序可以访问 Azure SQL 数据库中的数据。|借助 Azure VN 上的 SQL Server，应用程序可以一部分在云中运行，一部分在本地运行。例如，可以通过 [Azure 虚拟网络](/documentation/articles/virtual-networks-overview/)，将本地网络和 Active Directory 域扩展到云中。此外，可以使用 [Azure 中的 SQL Server 数据文件功能](http://msdn.microsoft.com/zh-cn/library/dn385720.aspx)，将本地数据文件存储在 Azure 存储空间中。有关详细信息，请参阅 [SQL Server 2014 混合云简介](http://msdn.microsoft.com/zh-cn/library/dn606154.aspx)。|
 | | 支持使用 [SQL Server 事务复制](https://msdn.microsoft.com/zh-cn/library/mt589530.aspx)作为订阅服务器来复制数据。|完全支持 [SQL Server 事务复制](https://msdn.microsoft.com/zh-cn/library/mt589530.aspx)、[AlwaysOn 可用性组](/documentation/articles/virtual-machines-windows-sql-high-availability-dr/)、集成服务，并支持使用日志传送来复制数据。此外，完全支持传统的 SQL Server 备份|
 | | | |
@@ -118,7 +118,7 @@ Azure 虚拟机上的 SQL Server 经过优化，适合用于迁移现有的 SQL 
 
 对许多企业来说，决定过渡到到云服务的关键在于降低管理复杂度。使用 **SQL 数据库**，Microsoft 可以管理底层硬件，自动复制所有数据以提供高可用性，配置及升级数据库软件，管理负载均衡，并在发生服务器故障时执行透明的故障转移。你可以继续管理数据库，但不再需要管理数据库引擎、服务器操作系统或硬件。可以继续管理的项目示例包括数据库和登录、索引和查询优化，以及审核和安全性。
 
-使用 **Azure VM 上的 SQL Server**，可以完全掌控操作系统和 SQL Server 实例配置。使用 VM，可以决定何时更新/升级操作系统与数据库软件，以及何时安装任何其他软件（例如防病毒软件）。提供的某些自动化功能可以大大简化修补、备份和高可用性。此外，你还可以控制 VM 的大小、磁盘数目及其存储配置。Azure 允许根据需要更改 VM 的大小。有关信息，请参阅 [Azure 的虚拟机和云服务大小](/documentation/articles//virtual-machines-windows-sizes/)。
+使用 **Azure VM 上的 SQL Server**，可以完全掌控操作系统和 SQL Server 实例配置。使用 VM，可以决定何时更新/升级操作系统与数据库软件，以及何时安装任何其他软件（例如防病毒软件）。提供的某些自动化功能可以大大简化修补、备份和高可用性。此外，你还可以控制 VM 的大小、磁盘数目及其存储配置。Azure 允许根据需要更改 VM 的大小。有关信息，请参阅 [Azure 的虚拟机和云服务大小](/documentation/articles/virtual-machines-windows-sizes/)。
 
 ### 服务级别协议 (SLA)
 

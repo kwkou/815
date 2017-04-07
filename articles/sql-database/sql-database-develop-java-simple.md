@@ -15,7 +15,7 @@
     ms.devlang="java"
     ms.topic="article"
     ms.date="02/03/2017"
-    wacn.date="03/24/2017"
+    wacn.date="04/06/2017"
     ms.author="lbosq" />
 
 # 在 Windows 上配合使用 Java 和 JDBC 连接到 SQL 数据库
@@ -52,7 +52,7 @@
 ## 其他资源 
 
 * [多租户 SaaS 应用程序和 Azure SQL 数据库的设计模式](/documentation/articles/sql-database-design-patterns-multi-tenancy-saas-applications/)
-* 浏览所有 [SQL 数据库功能](/home/features/sql-databases/)
+* 浏览所有 [SQL 数据库功能](/home/features/sql-database/)
 
 <!---HONumber=Mooncake_0320_2017-->
 <!--Update_Description: wording update-->

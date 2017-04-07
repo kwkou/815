@@ -47,7 +47,7 @@ Site Recovery 与 Microsoft 应用程序集成，其中包括 SharePoint、Excha
 -  丰富的自动化库，提供特定于应用程序的生产就绪型脚本，可以下载并与恢复计划集成。
 
 
-##<a id="workload-guidance-summary"></a>工作负荷摘要
+##<a id="workload-guidance-summary"></a><a name="workload-summary"></a>工作负荷摘要
 
 
 站点恢复可复制受支持计算机上运行的任何应用。此外，我们已经与产品团队合作执行其他特定于应用的测试。
@@ -88,7 +88,7 @@ SQL Server 是本地数据中心许多业务应用的数据服务基础。站点
 
 [详细了解](/documentation/articles/site-recovery-sql/)如何保护 SQL Server。
 
-##<a name="sharepoint"></a>保护 SharePoint
+##<a name="sharepoint"></a><a name="protect-sharepoint"></a>保护 SharePoint
 
 Azure Site Recovery 可帮助保护 SharePoint 部署，如下所示：
 
@@ -101,7 +101,7 @@ Azure Site Recovery 可帮助保护 SharePoint 部署，如下所示：
 
 
 
-##<a id="dynamics-ax"></a>Dynamics AX
+##<a id="dynamics-ax"></a><a name="protect-dynamics-ax"></a>Dynamics AX
 Azure Site Recovery 可通过以下方式帮助保护 Dynamics AX ERP 解决方案：
 
 - 协调整个 Dynamics AX 环境（Web 和 AOS 层、数据库层、SharePoint）到 Azure 或到辅助站点的复制。
@@ -110,7 +110,7 @@ Azure Site Recovery 可通过以下方式帮助保护 Dynamics AX ERP 解决方�
 
 [详细了解](https://gallery.technet.microsoft.com/Dynamics-AX-DR-Solution-b2a76281)如何保护 Dynamic AX。
 
-##<a id="rds"></a>RDS 
+##<a id="rds"></a><a name="protect-rds"></a>RDS 
 远程桌面服务 (RDS) 允许虚拟桌面基础结构 (VDI)、基于会话的桌面和应用程序，让用户能够在任何地方工作。使用 Azure Site Recovery 可以：
 
 - 将托管或非托管的共用虚拟桌面复制到辅助站点，并将远程应用程序和会话复制到辅助站点或 Azure。
@@ -127,7 +127,7 @@ Azure Site Recovery 可通过以下方式帮助保护 Dynamics AX ERP 解决方�
 
 
 
-##<a id="exchange"></a>Exchange
+##<a id="exchange"></a><a name="protect-exchange"></a>Exchange
 Site Recovery 可按如下所示帮助保护 Exchange：
 
 - 对于小型 Exchange 部署，例如单一服务器或独立服务器，Site Recovery 可以复制和故障转移到 Azure 或辅助站点。
@@ -138,7 +138,7 @@ Site Recovery 可按如下所示帮助保护 Exchange：
 [详细了解](https://gallery.technet.microsoft.com/Exchange-DR-Solution-using-11a7dcb6)如何保护 Exchange。
 
 
-##<a id="sap"></a>SAP
+##<a id="sap"></a><a name="protect-sap"></a>SAP
 按如下所示使用 Site Recovery 保护 SAP 部署：
 
 - 通过将不同的部署层复制到 Azure 或辅助站点保护整个 SAP 部署。

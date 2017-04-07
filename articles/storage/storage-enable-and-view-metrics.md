@@ -201,7 +201,7 @@
 
 
 
-## 启用存储指标时，需要支付多少费用？
+##<a name="what-charges-do-you-incur-when-you-enable-storage-metrics"></a> 启用存储指标时，需要支付多少费用？
 
 为指标创建表实体的写入请求，按适用于所有 Azure 存储操作的标准费率收费。
 

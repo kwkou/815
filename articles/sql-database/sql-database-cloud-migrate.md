@@ -20,7 +20,7 @@
     ms.author="carlrab" />  
 
 
-# 将 SQL Server 数据库迁移到云中的 SQL 数据库
+#<a name="migrate-a-compatible-sql-server-database-to-sql-database"></a> 将 SQL Server 数据库迁移到云中的 SQL 数据库
 本文介绍两种将 SQL Server 2005 或更高版本的数据库迁移到 Azure SQL 数据库的主要方法。第一种方法相对简单，但迁移过程中需要一段时间（可能较长）的停机。第二种方法更复杂，但在迁移过程中的停机时间大大缩短。
 
 两种方法均需确保源数据库兼容 Azure SQL 数据库。使用 SQL 数据库 V12 时，除了要解决服务器级操作和跨数据库操作的相关问题之外，还要解决与 SQL Server 的[功能对等性](/documentation/articles/sql-database-features/)问题。依赖[部分支持或不受支持的函数](/documentation/articles/sql-database-transact-sql-information/)的数据库和应用程序需要进行某种程度的[重新设计来修复这些不兼容性](/documentation/articles/sql-database-cloud-migrate/#resolving-database-migration-compatibility-issues)，然后才能迁移 SQL Server 数据库。
@@ -100,7 +100,7 @@
 3. 快照创建操作在完成之前会锁定关联的表，因此，请适当地计划好快照。
 4. Azure SQL 数据库中仅支持推送订阅。只能从源数据库添加订阅服务器。
 
-## 解决数据库迁移的兼容性问题
+##<a name="fix-database-migration-compatibility-issues"></a><a name="resolving-database-migration-compatibility-issues"></a> 解决数据库迁移的兼容性问题
 根据源数据库中的 SQL Server 版本以及正在迁移的数据库复杂性，可能会发现各种不同的不兼容性问题。旧版 SQL Server 的兼容性问题更多。除了使用所选搜索引擎的目标 Internet 搜索以外，还可以使用以下资源：
 
 * [Azure SQL 数据库中不支持的 SQL Server 数据库功能](/documentation/articles/sql-database-transact-sql-information/)

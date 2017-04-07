@@ -16,7 +16,7 @@
     ms.tgt_pltfrm="NA"
     ms.workload="data-management"
     ms.date="02/08/2017"
-    wacn.date="03/24/2017"
+    wacn.date="04/06/2017"
     ms.author="carlrab" />  
 
 
@@ -39,7 +39,6 @@
 | 教程 | 说明 |
 | --- | --- | 
 | [使用 Azure 门户预览进行备份和还原](/documentation/articles/sql-database-get-started-backup-recovery-portal/) | 此教程介绍如何使用 Azure 门户预览查看备份、还原到某个时间点，以及通过 Azure 恢复服务保管库的备份进行还原
-| [使用 PowerShell 进行备份和还原](/documentation/articles/sql-database-get-started-backup-recovery-powershell/) | 此教程介绍如何使用 PowerShell 查看备份、还原到某个时间点，以及通过 Azure 恢复服务保管库的备份进行还原
 | | |
 
 ## 分片的数据库

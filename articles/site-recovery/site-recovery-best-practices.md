@@ -16,7 +16,7 @@
     ms.devlang="na"
     ms.topic="get-started-article"
     ms.date="03/14/2017"
-    wacn.date=""
+    wacn.date="03/31/2017"
     ms.author="raynew" />
 
 # 准备部署 Azure Site Recovery
@@ -54,7 +54,7 @@
 
 
 
-## Azure 虚拟机要求
+##<a name="azure-virtual-machine-requirements"></a> Azure 虚拟机要求
 
 可以部署站点恢复以复制运行受 Azure 支持的任何操作系统的虚拟机和物理服务器。这包括大多数的 Windows 和 Linux 版本。需确保你想要保护的本地虚拟机符合 Azure 请求。
 

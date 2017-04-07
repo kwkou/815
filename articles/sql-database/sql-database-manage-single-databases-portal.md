@@ -49,7 +49,7 @@
     ![新建示例 db 边栏选项卡](./media/sql-database-get-started/new-sample-db-blade.png)  
 
 
-## 更改单一数据库的服务层和性能级别
+##<a name="change-the-service-tier-and-performance-level-of-a-single-database"></a> 更改单一数据库的服务层和性能级别
 打开要增加或减少的数据库的 SQL 数据库边栏选项卡：
 
 1. 在 [Azure 门户预览](https://portal.azure.cn)中，依次单击“更多服务”>“SQL 数据库”。

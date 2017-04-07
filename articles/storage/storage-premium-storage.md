@@ -14,7 +14,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="02/06/2017"
-    wacn.date="03/20/2017"
+    wacn.date="04/06/2017"
     ms.author="ramankum" />  
 
 
@@ -54,7 +54,7 @@ Azure VM 可附加多个高级存储磁盘，使应用程序可具有每个 VM �
 
 Azure 使用存储帐户作为未托管磁盘的容器。如果使用未托管磁盘创建 Azure DS、DSv2 或 Fs VM 并选择高级存储帐户，操作系统和数据磁盘会存储在该存储帐户中。
 
-## 支持高级存储的 VM
+##<a name="premium-storage-supported-vms"></a> 支持高级存储的 VM
 高级存储支持 DS 系列和 DSv2 系列 VM。可以将标准和高级存储磁盘用于这些 VM。但不能在不兼容高级存储的 VM 系列中使用高级存储磁盘。
 
 有关可用 Azure VM 类型和 Windows VM 大小的信息，请参阅 [Windows VM 大小](/documentation/articles/virtual-machines-windows-sizes/)。有关 Linux VM 的 VM 类型和大小的信息，请参阅 [Linux VM 大小](/documentation/articles/virtual-machines-linux-sizes/)。
@@ -177,7 +177,7 @@ Azure 使用存储帐户作为未托管磁盘的容器。如果使用未托管�
 
 
 
-## 在高级存储中使用 Linux VM
+##<a name="create-and-use-a-premium-storage-account-for-a-virtual-machine-data-disk"></a> 在高级存储中使用 Linux VM
 请参考以下重要说明，以了解如何在高级存储上配置 Linux VM：
 
 * 对于缓存设置为“ReadOnly”或“None”的所有高级存储磁盘，必须在装入文件系统时禁用“屏障”，以实现高级存储的伸放性目标。对于这种情况不需要屏障，因为写入高级存储磁盘对于这些缓存设置是持久的。在成功完成写入请求时，数据已写入到持久存储。请根据文件系统，使用以下方法之一来禁用“屏障”：
@@ -230,7 +230,7 @@ Azure 使用存储帐户作为未托管磁盘的容器。如果使用未托管�
 
 有关高级存储、高级存储支持的 VM 磁盘的定价详细信息，请参阅：
 
-* [Azure 存储定价](pricing/details/storage/)
+* [Azure 存储定价](/pricing/details/storage/)
 * [虚拟机定价](/pricing/details/virtual-machines/)
 
 

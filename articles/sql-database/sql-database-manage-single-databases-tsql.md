@@ -38,7 +38,7 @@
 5. 在对象资源管理器中，右键单击“数据库”节点，然后单击“刷新”在对象资源管理器中查看新的数据库。
 
 
-## 更改单一数据库的服务层和性能级别
+##<a name="change-the-service-tier-and-performance-level-of-a-single-database"></a> 更改单一数据库的服务层和性能级别
 使用 [Transact-SQL (T-SQL)](https://msdn.microsoft.com/zh-cn/library/mt574871.aspx) 更改数据库最大大小
 
 > [AZURE.TIP]

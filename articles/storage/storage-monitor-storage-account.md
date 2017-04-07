@@ -60,7 +60,7 @@
 Azure 存储使用[表存储](/documentation/articles/storage-introduction/#table-storage)来存储存储帐户的指标，将指标存储在帐户中的表内。有关详细信息，请参阅：[指标的存储方式](/documentation/articles/storage-analytics/#how-metrics-are-stored)
 >
 
-## 自定义指标图表
+##<a name="how-to-customize-metrics-charts"></a><a name="how-to-add-metrics-to-the-metrics-table"></a> 自定义指标图表
 
 使用以下过程选择要在指标图表中查看哪些存储指标。
 

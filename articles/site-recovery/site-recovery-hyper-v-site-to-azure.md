@@ -362,7 +362,7 @@ Site Recovery 提供 Capacity Planner，帮助你为源环境、站点恢复组�
 
 
 
-### 准备在故障转移后连接到 Azure VM
+###<a name="prepare-to-connect-to-azure-vms-after-failover"></a> 准备在故障转移后连接到 Azure VM
 如果想要在故障转移后使用 RDP 连接到 Azure VM，请确保执行以下操作：
 
 **故障转移之前在本地计算机上**：

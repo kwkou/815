@@ -31,7 +31,7 @@
 **经典管理门户** | 仅限维护模式。无法创建新的保管库。 | 不支持 | 仅限维护模式
 **PowerShell** | 不支持 | 不支持 | 支持
 
-## 本地服务器
+##<a name="on-premises-servers"></a> 本地服务器
 
 ### 虚拟化服务器
 
@@ -49,7 +49,7 @@
 **Hyper-V（不包含 VMM）** | 不是复制到辅助站点时的受支持配置
 **Hyper-V（有 VMM）** |<p> Windows Server 2016 和具有最新更新的 Windows Server 2012 R2。</p><p> Windows Server 2016 主机应由 VMM 2016 管理。</p>
 
-## 复制计算机 OS 版本支持
+##<a name="support-for-replicated-machine-os-versions"></a> 复制计算机 OS 版本支持
 下表总结了使用 Azure Site Recovery 时遇到的各种部署方案中的操作系统支持。此支持适用于在所述的 OS 上运行的任何工作负荷。
 
 **物理服务器** | **Hyper-V（包含 VMM）**

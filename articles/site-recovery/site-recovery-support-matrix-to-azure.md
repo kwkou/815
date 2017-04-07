@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="storage-backup-recovery"
     ms.date="01/25/2017"
-    wacn.date="03/03/2017"
+    wacn.date="04/06/2017"
     ms.author="rajanaki" />  
 
 
@@ -33,7 +33,7 @@
 **PowerShell** | 目前不支持。 | 支持 | 支持
 
 
-## 数据中心管理服务器支持
+##<a name="support-for-datacenter-management-servers"></a> 数据中心管理服务器支持
 
 ### 虚拟化管理实体
 
@@ -52,7 +52,7 @@
 
   >[AZURE.NOTE]目前不支持混合使用主机（运行 Windows Server 2016 和 2012 R2）的 Hyper-V 站点。
 
-## 复制计算机 OS 版本支持
+##<a name="support-for-replicated-machine-os-versions"></a> 复制计算机 OS 版本支持
 
 复制到 Azure 时，受保护的虚拟机必须符合 [Azure 要求](/documentation/articles/site-recovery-best-practices/#azure-virtual-machine-requirements)。下表总结了使用 Azure Site Recovery 时的各种部署方案中的复制操作系统支持。此支持适用于在所述的 OS 上运行的任何工作负荷。
 
@@ -151,13 +151,13 @@ GRS | 是 | 是 | 是
 可用性集 | 否 | 否 | 否
 HUB | 是 | 是 | 是
 
-## 故障转移 Azure VM 要求
+##<a name="failed-over-azure-vm-requirements"></a> 故障转移 Azure VM 要求
 
 可以部署 Site Recovery 以复制运行受 Azure 支持的任何操作系统的虚拟机和物理服务器。这包括大多数的 Windows 和 Linux 版本。复制到 Azure 时，想要复制的本地 VM 必须符合以下 Azure 要求。
 
 **实体** | **要求** | **详细信息**
 --- | --- | ---
-**来宾操作系统** | <p>对于从 Hyper-V 到 Azure 的复制，Site Recovery 支持 [Azure 支持](https://technet.microsoft.com/zh-cn/library/cc794868%28v=ws.10%29.aspx)的所有操作系统。</p><p> 对于物理服务器复制：请检查 Windows 和 Linux [先决条件](/documentation/articles/site-recovery-vmware-to-azure-classic/#before-you-start-deployment) | 如果不支持，先决条件检查将会失败。
+**来宾操作系统** | 对于从 Hyper-V 到 Azure 的复制，Site Recovery 支持 [Azure 支持](https://technet.microsoft.com/zh-cn/library/cc794868%28v=ws.10%29.aspx)的所有操作系统。 | 如果不支持，先决条件检查将会失败。
 **来宾操作系统体系结构** | 64 位 | 如果不支持，先决条件检查将会失败
 **操作系统磁盘大小** | 最大 1023 GB | 如果不支持，先决条件检查将会失败
 **操作系统磁盘计数** | 1 | 如果不支持，先决条件检查将会失败。
