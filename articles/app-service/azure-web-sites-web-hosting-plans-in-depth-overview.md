@@ -29,7 +29,7 @@
 - 实例大小（小、中、大）
 - SKU（免费、共享、基本、标准、高级）
 
-[Azure App Service](/documentation/articles/app-service-changes-existing-services/) 中的 Web 应用、移动应用、Function App 或 API 应用均在应用服务计划中运行。同一订阅、区域和资源组中的应用可共享应用服务计划。
+[Azure App Service](/documentation/articles/app-service-changes-existing-services/) 中的 Web 应用、移动应用或 API 应用均在应用服务计划中运行。同一订阅、区域和资源组中的应用可共享应用服务计划。
 
 分配给**应用服务计划**的所有应用程序共享其定义的资源，这样可以在托管多个应用时节省成本。
 

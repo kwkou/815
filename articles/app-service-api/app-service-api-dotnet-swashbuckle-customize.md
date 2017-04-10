@@ -1,4 +1,3 @@
-
 <properties 
 	pageTitle="自定义 Swashbuckle 生成的 API 定义" 
 	description="了解如何自定义 Swashbuckle 针对 Azure 应用服务中的 API 应用生成的 Swagger API 定义。" 

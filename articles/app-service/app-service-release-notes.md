@@ -22,7 +22,7 @@
 
 本文档包含用于 .NET 2.5.1 的 Azure SDK 版本的发行说明。
 
-##用于 .NET 2.5.1 的 Azure SDK 发行说明
+## 用于 .NET 2.5.1 的 Azure SDK 发行说明
 
 下面是用于 .NET 2.5.1 的 Azure SDK 中的新功能和更新。
 
@@ -49,7 +49,7 @@
 
 [AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-visual-studio-login-guide.md)]
 
-##<a id="known_issues_2_5_1"></a> 用于 .NET 2.5.1 的 Azure SDK 的已知问题和限制
+## <a id="known_issues_2_5_1"></a> 用于 .NET 2.5.1 的 Azure SDK 的已知问题和限制
 
 - Azure API 应用以移动应用部署目标的方式呈现。在后续版本发布之前，Web 应用应该是移动应用的唯一目标。
 - Azure API 应用预配可能会成功，但偶尔会无法更新“Azure 应用服务活动”窗口中的进度。解决办法是在 Azure 门户预览中查看新的 Azure API 应用的状态。
