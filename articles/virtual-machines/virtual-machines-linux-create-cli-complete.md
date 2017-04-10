@@ -189,7 +189,7 @@
 
 在以下示例中，请将示例参数名称替换为你自己的值。示例参数名称包括 `myResourceGroup`、`mystorageaccount` 和 `myVM`。
 
-## 创建资源组并选择部署位置
+## <a name="create-resource-groups-and-choose-deployment-locations"></a> 创建资源组并选择部署位置
 Azure 资源组是逻辑部署实体，包含用于启用资源部署逻辑管理的配置信息和元数据。使用 [az group create](https://docs.microsoft.com/cli/azure/group#create) 创建资源组。以下示例在 `chinanorth` 位置创建名为 `myResourceGroup` 的资源组：
 
     az group create --name myResourceGroup --location chinanorth
@@ -206,7 +206,7 @@ Azure 资源组是逻辑部署实体，包含用于启用资源部署逻辑管�
       "tags": null
     }
 
-## 创建存储帐户
+## <a name="create-a-storage-account"></a> 创建存储帐户
 
 使用非托管磁盘，需要为 VM 磁盘和想要添加的其他任何数据磁盘创建存储帐户。
 
@@ -890,7 +890,7 @@ Azure 资源组是逻辑部署实体，包含用于启用资源部署逻辑管�
 
 有关详细信息，请阅读[管理 VM 可用性](/documentation/articles/virtual-machines-linux-manage-availability/)。
 
-## 创建 Linux VM
+## <a name="create-the-linux-vms"></a> 创建 Linux VM
 现已创建用于支持可访问 Internet 的 VM 的网络资源。接下来，我们创建 VM 并使用不含密码的 SSH 密钥保护其安全。在此情况下，我们需要基于最新的 LTS 创建 Ubuntu VM。我们将根据 [finding Azure VM images](/documentation/articles/virtual-machines-linux-cli-ps-findimage/)（查找 Azure VM 映像）中所述，使用 [az vm image list](https://docs.microsoft.com/cli/azure/vm/image#list) 来查找该映像信息。
 
 我们还指定要用于身份验证的 SSH 密钥。如果没有任何 SSH 密钥，可以按照[这些说明](/documentation/articles/virtual-machines-linux-mac-create-ssh-keys/)创建 SSH 密钥。或者，可以在创建 VM 之后，使用 `--admin-password` 方法对 SSH 连接进行身份验证。此方法通常不太安全。
