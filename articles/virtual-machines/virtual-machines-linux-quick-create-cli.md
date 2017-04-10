@@ -14,11 +14,11 @@
     ms.tgt_pltfrm="vm-linux"
     ms.workload="infrastructure"
     ms.date="01/13/2016"
-    wacn.date="03/24/2017"
+    wacn.date="04/10/2017"
     ms.author="rasquill" />
 
 # 使用 Azure CLI 2.0 预览版 (az.py) 创建 Linux VM
-本文介绍如何通过托管磁盘和本机存储帐户中的磁盘在 Azure CLI 2.0（预览版）中使用 [az vm create](https://docs.microsoft.com/cli/azure/vm#create) 命令在 Azure 上快速部署 Linux 虚拟机 (VM)。
+本文介绍如何通过非托管磁盘和本机存储帐户中的磁盘在 Azure CLI 2.0（预览版）中使用 [az vm create](https://docs.microsoft.com/cli/azure/vm#create) 命令在 Azure 上快速部署 Linux 虚拟机 (VM)。
 
 > [AZURE.NOTE] 
 > Azure CLI 2.0 预览版是下一代的多平台 CLI。[试用。](https://docs.microsoft.com/cli/azure/install-az-cli2)
@@ -39,68 +39,7 @@
 
 ## 使用托管磁盘
 
-若要使用 Azure 托管磁盘，必须使用支持此类磁盘的区域。首先，键入 [az group create](https://docs.microsoft.com/cli/azure/group#create) 创建包含所有已部署资源的资源组：
-
-     az group create -n myResourceGroup -l chinanorth
-
-输出如下所示（如果需要，可以指定一个不同的 `--output` 选项来查看其他格式）：
-
-    {
-      "id": "/subscriptions/<guid>/resourceGroups/myResourceGroup",
-      "location": "chinanorth",
-      "managedBy": null,
-      "name": "myResourceGroup",
-      "properties": {
-        "provisioningState": "Succeeded"
-      },
-      "tags": null
-    }
-
-### 创建 VM 
-现在，可以创建 VM 及其环境。请记得将 `--public-ip-address-dns-name` 值替换为唯一值；下面的值可能已被使用。
-
-    az vm create \
-    --image credativ:Debian:8:latest \
-    --admin-username azureuser \
-    --ssh-key-value ~/.ssh/id_rsa.pub \
-    --public-ip-address-dns-name manageddisks \
-    --resource-group myResourceGroup \
-    --location chinanorth \
-    --name myVM
-
-输出如下所示。请注意通过 **ssh** 连接到 VM 时使用的 `publicIpAddress` 或 `fqdn` 值。
-
-    {
-      "fqdn": "manageddisks.chinanorth.chinacloudapp.cn",
-      "id": "/subscriptions/<guid>/resourceGroups/myResourceGroup/providers/Microsoft.Compute/virtualMachines/myVM",
-      "macAddress": "00-0D-3A-32-E9-41",
-      "privateIpAddress": "10.0.0.4",
-      "publicIpAddress": "104.42.127.53",
-      "resourceGroup": "myResourceGroup"
-    }
-
-使用输出中列出的公共 IP 地址或完全限定域名 (FQDN) 登录到 VM。
-
-    ssh ops@manageddisks.chinanorth.chinacloudapp.cn
-
-根据所选的分发版，应会显示类似于下面的输出：
-
-    The authenticity of host 'manageddisks.chinanorth.chinacloudapp.cn (134.42.127.53)' can't be established.
-    RSA key fingerprint is c9:93:f5:21:9e:33:78:d0:15:5c:b2:1a:23:fa:85:ba.
-    Are you sure you want to continue connecting (yes/no)? yes
-    Warning: Permanently added 'manageddisks.chinanorth.chinacloudapp.cn' (RSA) to the list of known hosts.
-    Enter passphrase for key '/home/ops/.ssh/id_rsa':
-
-    The programs included with the Debian GNU/Linux system are free software;
-    the exact distribution terms for each program are described in the
-    individual files in /usr/share/doc/*/copyright.
-
-    Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
-    permitted by applicable law.
-    Last login: Fri Jan 13 14:44:21 2017 from net-37-117-240-123.cust.vodafonedsl.it
-    ops@myVM:~$ 
-
-请参阅[后续步骤](#next-steps)，了解可以使用托管磁盘通过新 VM 完成的其他事项。
+Azure 托管磁盘在 Azure 中国暂时还不适用。
 
 ## 使用非托管磁盘 
 

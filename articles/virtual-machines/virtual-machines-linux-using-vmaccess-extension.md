@@ -15,7 +15,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="02/16/2017"
-    wacn.date="03/24/2017"
+    wacn.date="04/10/2017"
     ms.author="v-livech" />
 
 # 配合使用 VMAccess 扩展和 Azure CLI 2.0（预览版）管理用户和 SSH 以及检查或修复 Linux VM 上的磁盘

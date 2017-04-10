@@ -15,7 +15,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="02/09/2017"
-    wacn.date="04/06/2017"
+    wacn.date="04/10/2017"
     ms.author="iainfou" />  
 
 
@@ -31,7 +31,7 @@
 可使用以下 CLI 版本之一完成任务：
 
 - [Azure CLI 1.0](#before-you-begin)：用于经典部署模型和资源管理部署模型（本文）的 CLI
-- [Azure CLI 2.0（预览版）- Azure 托管磁盘](/documentation/articles/virtual-machines-linux-capture-image/) - 适用于资源管理部署模型的下一代 CLI
+- Azure CLI 2.0 - 目前，在 Azure 中国区不支持捕获虚拟机。
 
 ## <a name="before-you-begin"></a> 准备工作
 请确保符合以下先决条件：

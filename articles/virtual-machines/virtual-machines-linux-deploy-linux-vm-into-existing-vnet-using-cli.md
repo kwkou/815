@@ -15,7 +15,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="01/31/2017"
-    wacn.date="03/24/2017"
+    wacn.date="04/10/2017"
     ms.author="iainfou" />
 
 # 使用 Azure CLI 2.0（预览版）将 Linux VM 部署到现有虚拟网络
@@ -133,7 +133,7 @@ Linux VM 需要从 Internet 访问，因此需要允许通过网络将入站端�
 
 使用 [az vm create](https://docs.microsoft.com/cli/azure/vm#create) 创建 VM。有关可在 Azure CLI 2.0（预览版）中用来部署完整 VM 的标志的详细信息，请参阅[使用 Azure CLI 创建完整的 Linux 环境](/documentation/articles/virtual-machines-linux-create-cli-complete/)。
 
-以下示例使用 Azure 托管磁盘创建 VM。这些磁盘由 Azure 平台处理，无需任何准备或位置来存储它们。有关托管磁盘的详细信息，请参阅 [Azure 托管磁盘概述](/documentation/articles/storage-managed-disks-overview/)。如果想要使用非托管磁盘，请参阅下面的附加说明。
+以下示例使用 Azure 非托管磁盘创建 VM。
 
     az vm create \
         --resource-group myResourceGroup \
@@ -141,10 +141,7 @@ Linux VM 需要从 Internet 访问，因此需要允许通过网络将入站端�
         --image Debian \
         --admin-username azureuser \
         --ssh-key-value ~/.ssh/id_rsa.pub \
-        --nics myNic
-
-如果使用托管磁盘，请跳过此步骤。如果想要使用非托管磁盘，需将以下附加参数添加到上述命令，在名为 `mystorageaccount` 的存储帐户中创建非托管磁盘：
-
+        --nics myNic \
         --use-unmanaged-disk \
         --storage-account mystorageaccount
 

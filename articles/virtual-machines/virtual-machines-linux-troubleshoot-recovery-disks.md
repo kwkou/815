@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="vm-linux"
     ms.workload="infrastructure"
     ms.date="02/16/2017"
-    wacn.date="03/24/2017"
+    wacn.date="04/10/2017"
     ms.author="iainfou" />
 
 # 通过使用 Azure CLI 2.0（预览版）将 OS 磁盘附加到恢复 VM 来排查 Linux VM 问题
@@ -124,7 +124,7 @@
 
 2. 现在从 VM 中分离虚拟硬盘。退出故障排除 VM 的 SSH 会话。使用 [az vm unmanaged-disk list](https://docs.microsoft.com/cli/azure/vm/unmanaged-disk#list) 列出附加到故障排除 VM 的数据磁盘。以下示例列出附加到名为 `myResourceGroup` 的资源组中名为 `myVMRecovery` 的 VM 的数据磁盘：
 
-        azure vm unmanaged-disk list --resource-group myResourceGroup --vm-name myVMRecovery \
+        az vm unmanaged-disk list --resource-group myResourceGroup --vm-name myVMRecovery \
             --query '[].{Disk:vhd.uri}' --output table
 
     记下现有虚拟硬盘的名称。例如，URI 为 **https://mystorageaccount.blob.core.chinacloudapi.cn/vhds/myVM.vhd** 的磁盘的名称为 **myVHD**。
@@ -140,7 +140,7 @@
 - https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-vm-specialized-vhd/azuredeploy.json  
 
 
-该模板使用此前的命令中的 VHD URI 部署 VM。使用 [az group deployment create](https://docs.microsoft.com/cli/azure/vm/deployment#create) 部署模板。将 URI 提供给原始 VHD，然后指定 OS 类型、VM 大小、VM 名称，如下所示：
+该模板使用此前的命令中的 VHD URI 部署 VM。使用 [az group deployment create](https://docs.microsoft.com/cli/azure/group/deployment#create) 部署模板。将 URI 提供给原始 VHD，然后指定 OS 类型、VM 大小、VM 名称，如下所示：
 
     az group deployment create --resource-group myResourceGroup --name myDeployment \
       --parameters '{"osDiskVhdUri": {"value": "https://mystorageaccount.blob.core.chinacloudapi.cn/vhds/myVM.vhd"},

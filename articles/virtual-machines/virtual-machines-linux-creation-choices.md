@@ -15,7 +15,7 @@
     ms.tgt_pltfrm="vm-linux"
     ms.workload="infrastructure-services"
     ms.date="01/03/2016"
-    wacn.date="03/24/2017"
+    wacn.date="04/10/2017"
     ms.author="iainfou" />
 
 # 创建 Linux VM 的不同方式，包括 Azure CLI 2.0（预览版）
@@ -39,7 +39,7 @@
 
           az group create --name myResourceGroup --location chinanorth
 
-    * 以下示例使用 [az vm create](https://docs.microsoft.com/cli/azure/vm#create)、最新 Debian 映像、Azure 托管磁盘以及名为 `id_rsa.pub` 的公钥创建名为 `myVM` 的 VM：
+    * 以下示例使用 [az vm create](https://docs.microsoft.com/cli/azure/vm#create)、最新 Debian 映像、Azure 非托管磁盘以及名为 `id_rsa.pub` 的公钥创建名为 `myVM` 的 VM：
 
             az vm create \
             --image credativ:Debian:8:latest \
@@ -48,9 +48,8 @@
             --public-ip-address-dns-name myPublicDNS \
             --resource-group myResourceGroup \
             --location chinanorth \
-            --name myVM
-
-        * 如果希望使用非托管磁盘，请向上述命令添加 `--use-unmanaged-disks` 标志。将为你创建存储帐户。有关详细信息，请参阅 [Azure 托管磁盘概述](/documentation/articles/storage-managed-disks-overview/)。
+            --name myVM \
+            --use-unmanaged-disk
 
 * [使用 Azure 模板创建受保护的 Linux VM](/documentation/articles/virtual-machines-linux-create-ssh-secured-vm-from-template/)
   

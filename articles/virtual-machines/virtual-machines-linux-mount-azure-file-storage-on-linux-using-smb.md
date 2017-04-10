@@ -14,7 +14,7 @@
     ms.tgt_pltfrm="vm-linux"
     ms.workload="infrastructure"
     ms.date="02/13/2017"
-    wacn.date="03/24/2017"
+    wacn.date="04/10/2017"
     ms.author="v-livech" />
 
 # 通过 Azure CLI 2.0（预览版）使用 SMB 在 Linux VM 上装载 Azure 文件存储

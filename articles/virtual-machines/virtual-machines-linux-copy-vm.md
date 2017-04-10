@@ -14,7 +14,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="02/02/2017"
-    wacn.date="03/24/2017"
+    wacn.date="04/10/2017"
     ms.author="cynthn" />
 
 # 使用 Azure CLI 2.0（预览版）创建 Linux 虚拟机的副本
@@ -40,31 +40,10 @@
     az vm deallocate --resource-group myResourceGroup --name myVM
 
 ## 复制 VM
-若要复制 VM，请创建底层虚拟硬盘的副本。可以使用此过程创建包含与源 VM 相同的配置和设置的专用 VM。Azure 托管磁盘和非托管磁盘的虚拟磁盘复制过程不同。托管磁盘由 Azure 平台处理，无需任何准备或位置来存储它们。托管磁盘属于顶层资源，因此更容易使用 - 可以直接复制磁盘资源。有关 Azure 托管磁盘的详细信息，请参阅 [Azure 托管磁盘概述](/documentation/articles/storage-managed-disks-overview/)。根据源 VM 的存储类型，在下面选择适当的步骤之一：
+若要复制 VM，请创建底层虚拟硬盘的副本。可以使用此过程创建包含与源 VM 相同的配置和设置的专用 VM。
 
-- [托管磁盘](#managed-disks)
+- 托管磁盘 - 在 Azure 中国暂时还不适用。
 - [非托管磁盘](#unmanaged-disks)
-
-### <a name="managed-disks"></a> 托管磁盘
-使用 [az vm list](https://docs.microsoft.com/cli/azure/vm#list) 列出每个 VM 及其 OS 托管磁盘的名称。以下示例列出名为 `myResourceGroup` 的资源组中的所有 VM：
-
-    az vm list -g myTestRG --query '[].{Name:name,DiskName:storageProfile.osDisk.name}' --output table
-
-输出类似于以下示例：
-
-    Name    DiskName
-    ------  --------
-    myVM    myDisk
-
-通过使用 [az disk create](https://docs.microsoft.com/cli/azure/disk#create) 创建新的托管磁盘来复制磁盘。以下示例基于名为 `myDisk` 的托管磁盘创建名为 `myCopiedDisk` 的磁盘：
-
-    az disk create --resource-group myResourceGroup --name myCopiedDisk --source myDisk
-
-现在请使用 [az disk list](https://docs.microsoft.com/cli/azure/disk#list) 验证资源组中的托管磁盘。以下示例列出名为 `myResourceGroup` 的资源组中的托管磁盘：
-
-    az disk list --resource-group myResourceGroup --output table
-
-转到[创建和查看虚拟网络设置](#set-up-the-virtual-network)。
 
 ### <a name="unmanaged-disks"></a> 非托管磁盘
 若要创建 VHD 的副本，需要使用 Azure 存储帐户密钥和磁盘 URI。使用 [az storage account keys list](https://docs.microsoft.com/cli/azure/storage/account/keys#list) 查看存储帐户密钥。以下示例列出名为 `myResourceGroup` 的资源组中名为 `mystorageaccount` 的存储帐户的密钥：
@@ -116,16 +95,7 @@
         --vnet-name myVnet --subnet mySubnet
 
 ## <a name="create-a-vm"></a> 创建 VM
-现在，可以使用 [az vm create](https://docs.microsoft.com/cli/azure/vm#create) 创建 VM。托管磁盘与非托管磁盘的磁盘复制过程稍有不同。请使用以下适当命令之一创建 VM。
-
-### 托管磁盘
-使用 [az vm create](https://docs.microsoft.com/cli/azure/vm#create) 创建 VM。将复制的托管磁盘指定为 OS 磁盘 (`--attach-os-disk`)，如下所示：
-
-    az vm create --resource-group myResourceGroup --name myCopiedVM \
-        --admin-username azureuser --ssh-key-value ~/.ssh/id_rsa.pub \
-        --nics myNic --size Standard_DS1_v2 --os-type Linux \
-        --image UbuntuLTS
-        --attach-os-disk myCopiedDisk
+现在，可以使用 [az vm create](https://docs.microsoft.com/cli/azure/vm#create) 创建 VM。
 
 ### 非托管磁盘
 使用 [az vm create](https://docs.microsoft.com/cli/azure/vm#create) 创建 VM。指定通过 **az storage blob copy start** (`--image`) 创建复制的磁盘时使用的存储帐户、容器名称和 VHD，如下所示：

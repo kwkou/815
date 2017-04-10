@@ -15,7 +15,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="02/16/2017"
-    wacn.date="03/24/2017"
+    wacn.date="04/10/2017"
     ms.author="v-livech" />
 
 # 在 Azure 中创建虚拟网络接口卡以及使用内部 DNS 进行 VM 名称解析
@@ -50,7 +50,7 @@
         --internal-dns-name jenkins
 
 ### 部署 VM 并连接 vNic
-使用 [az vm create](https://docs.microsoft.com/cli/azure/vm#create) 创建 VM。在部署到 Azure 期间，`--nics` 标志将 VNic 连接到 VM。以下示例使用 Azure 托管磁盘创建名为 `myVM` 的 VM，并附加在上一步骤中创建的名为 `myNic` 的 vNic：
+使用 [az vm create](https://docs.microsoft.com/cli/azure/vm#create) 创建 VM。在部署到 Azure 期间，`--nics` 标志将 VNic 连接到 VM。以下示例使用 Azure 非托管磁盘创建名为 `myVM` 的 VM，并附加在上一步骤中创建的名为 `myNic` 的 vNic：
 
     az vm create \
         --resource-group myResourceGroup \
@@ -58,7 +58,8 @@
         --nics myNic \
         --image UbuntuLTS \
         --admin-username azureuser \
-        --ssh-key-value ~/.ssh/id_rsa.pub
+        --ssh-key-value ~/.ssh/id_rsa.pub \
+        --use-unmanaged-disk
 
 ## <a name="detailed-walkthrough"></a> 详细演练
 
@@ -135,7 +136,7 @@ Azure 非常灵活，但若要使用 DNS 名称进行 VM 名称解析，需要�
 ## 将 VM 部署到虚拟网络基础结构中
 现在，我们已有一个虚拟网络和子网、一个充当防火墙的网络安全组（可以通过阻止所有入站流量（用于 SSH 的端口 22 除外）来保护子网），以及一个 vNic。现在，可在此现有网络基础结构中部署 VM。
 
-使用 [az vm create](https://docs.microsoft.com/cli/azure/vm#create) 创建 VM。以下示例使用 Azure 托管磁盘创建名为 `myVM` 的 VM，并附加在上一步骤中创建的名为 `myNic` 的 vNic：
+使用 [az vm create](https://docs.microsoft.com/cli/azure/vm#create) 创建 VM。以下示例使用 Azure 非托管磁盘创建名为 `myVM` 的 VM，并附加在上一步骤中创建的名为 `myNic` 的 vNic：
 
     az vm create \
         --resource-group myResourceGroup \
@@ -143,7 +144,8 @@ Azure 非常灵活，但若要使用 DNS 名称进行 VM 名称解析，需要�
         --nics myNic \
         --image UbuntuLTS \
         --admin-username azureuser \
-        --ssh-key-value ~/.ssh/id_rsa.pub
+        --ssh-key-value ~/.ssh/id_rsa.pub \
+        --use-unmanaged-disk
 
 通过使用 CLI 标志调用现有资源，我们指示 Azure 将 VM 部署在现有网络内部。重述一遍，VNet 和子网一经部署，便可在 Azure 区域内保留为静态或永久资源。
 

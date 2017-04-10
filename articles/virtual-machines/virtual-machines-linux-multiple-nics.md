@@ -14,7 +14,7 @@
     ms.tgt_pltfrm="vm-linux"
     ms.workload="infrastructure"
     ms.date="02/10/2017"
-    wacn.date="03/24/2017"
+    wacn.date="04/10/2017"
     ms.author="iainfou" />
 
 # 使用 Azure CLI 2.0（预览版）创建具有多个 NIC 的 VM
@@ -70,7 +70,7 @@
 ## 创建 VM 并附加 NIC
 创建 VM 时，请使用 `--nics` 指定所创建的 NIC。还需要谨慎选择 VM 的大小。可添加到 VM 的 NIC 数目有限制。详细了解 [Linux VM 大小](/documentation/articles/virtual-machines-linux-sizes/)。
 
-使用 [az vm create](https://docs.microsoft.com/cli/azure/vm#create) 创建 VM。以下示例使用 [Azure 托管磁盘](/documentation/articles/storage-managed-disks-overview/)创建名为 `myVM` 的 VM：
+使用 [az vm create](https://docs.microsoft.com/cli/azure/vm#create) 创建 VM。以下示例使用 Azure 非托管磁盘创建名为 `myVM` 的 VM：
 
     az vm create \
         --resource-group myResourceGroup \
@@ -79,7 +79,8 @@
         --size Standard_DS2_v2 \
         --admin-username azureuser \
         --ssh-key-value ~/.ssh/id_rsa.pub \
-        --nics myNic1 myNic2
+        --nics myNic1 myNic2 \
+        --use-unmanaged-disk
 
 ## 使用 Resource Manager 模板创建多个 NIC
 Azure Resource Manager 模板使用声明性 JSON 文件来定义环境。阅读 [Azure Resource Manager 概述](/documentation/articles/resource-group-overview/)。Resource Manager 模板可让你在部署期间创建资源的多个实例，例如，创建多个 NIC。使用 *copy* 指定要创建的实例数：
