@@ -183,9 +183,8 @@
         </tbody></table>
 
 ## 后续步骤
-如果你对自助服务密码重置 (SSPR) 有其他疑问，请与管理员联系，或使用下面的链接。
+如果有其他疑问，请与管理员联系，或使用下面的链接。
 
-- [需要注册 SSPR 信息?](https://login.partner.microsoftonline.cn)
 - [无法访问帐户?](https://passwordreset.microsoftonline.com)
 - [Office 365 密码重置信息](https://support.office.com/zh-cn/article/Reset-user-passwords-in-Office-365-3254c031-04c9-44f1-8fda-2563847a6b31?ui=en-us&rs=en-us&ad=US)
 - [访问面板](https://login.partner.microsoftonline.cn)

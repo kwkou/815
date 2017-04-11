@@ -1002,7 +1002,7 @@
               <p>PasswordResetService</p>
             </td>
             <td>
-              <p>此事件表示连接到租户的服务总线实例时发生错误。发生此错误可能是因为你在本地环境中阻止了出站连接。请检查防火墙以确保允许基于 TCP 443 的连接或者到 <a href="https://ssprsbprodncu-sb.accesscontrol.windows.net/">https://ssprsbprodncu-sb.accesscontrol.windows.net/</a> 的连接，然后重试。如果仍然有问题，请尝试禁用再重新启用密码写回。</p>
+              <p>此事件表示连接到租户的服务总线实例时发生错误。发生此错误可能是因为你在本地环境中阻止了出站连接。请检查防火墙以确保允许基于 TCP 443 的连接或者到 <a href="https://login.partner.microsoftonline.cn/">https://login.partner.microsoftonline.cn/</a> 的连接，然后重试。如果仍然有问题，请尝试禁用再重新启用密码写回。</p>
             </td>
           </tr>
           <tr>
@@ -1128,7 +1128,7 @@
               <p>PasswordResetService</p>
             </td>
             <td>
-              <p>此事件表示本地服务无法正确地与密码重置 web 服务通信以启动登记过程。这可能是由防火墙规则导致的，也可能是因为获取租户的授权令牌时出现问题。若要解决此问题，请确保没有阻止基于 TCP 443 和 TCP 9350-9354 的出站连接或者到 <a href="https://ssprsbprodncu-sb.accesscontrol.windows.net/">https://ssprsbprodncu-sb.accesscontrol.windows.net/</a> 的出站连接，并确保用来登记的 AAD 管理员帐户不是联合的。</p>
+              <p>此事件表示本地服务无法正确地与密码重置 web 服务通信以启动登记过程。这可能是由防火墙规则导致的，也可能是因为获取租户的授权令牌时出现问题。若要解决此问题，请确保没有阻止基于 TCP 443 和 TCP 9350-9354 的出站连接或者到 <a href="https://login.partner.microsoftonline.cn/">https://login.partner.microsoftonline.cn/</a> 的出站连接，并确保用来登记的 AAD 管理员帐户不是联合的。</p>
             </td>
           </tr>
           <tr>
@@ -1156,7 +1156,7 @@
               <p>PasswordResetService</p>
             </td>
             <td>
-              <p>此事件表示本地服务无法正确地与密码重置 web 服务通信以启动卸载过程。这可能是由防火墙规则导致的，也可能是因为获取租户的授权令牌时出现问题。若要解决此问题，请确保没有阻止基于 443 的出站连接或者到 <a href="https://ssprsbprodncu-sb.accesscontrol.windows.net/">https://ssprsbprodncu-sb.accesscontrol.windows.net/</a> 的出站连接，并确保用来卸载的 AAD 管理员帐户不是联合的。</p>
+              <p>此事件表示本地服务无法正确地与密码重置 web 服务通信以启动卸载过程。这可能是由防火墙规则导致的，也可能是因为获取租户的授权令牌时出现问题。若要解决此问题，请确保没有阻止基于 443 的出站连接或者到 <a href="https://login.partner.microsoftonline.cn/">https://login.partner.microsoftonline.cn/</a> 的出站连接，并确保用来卸载的 AAD 管理员帐户不是联合的。</p>
             </td>
           </tr>
           <tr>

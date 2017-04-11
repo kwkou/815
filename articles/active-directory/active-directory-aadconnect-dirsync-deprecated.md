@@ -6,6 +6,7 @@
     author="andkjell"
     manager="femila"
     editor="" />
+
 <tags
     ms.assetid="bd68fb88-110b-4d76-978a-233e15590803"
     ms.service="active-directory"
@@ -16,7 +17,6 @@
     ms.date="02/27/2017"
     wacn.date="04/05/2017"
     ms.author="billmath"
-    wacn.date="04/05/2017" 
     ms.custom="H1Hack27Feb2017" />  
 
 

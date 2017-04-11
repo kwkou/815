@@ -126,10 +126,10 @@ Azure 也很适合替代其他情况下成本高昂的灾难恢复 (DR) 站点�
 - 就本地 DC 来说，建议使用静态 IP 地址。静态 IP 地址只能使用 Azure PowerShell 配置。有关详细信息，请参阅 [Static internal IP address for VMs](http://azure.microsoft.com/blog/static-internal-ip-address-for-virtual-machines/)（VM 的静态内部 IP 地址）。如果你使用监视系统或其他解决方案来检查来宾操作系统中的静态 IP 地址配置，则可以为 VM 的网络适配器属性分配同一静态 IP 地址。但请注意，如果 VM 正在进行服务修复或已在经典管理门户中关闭并且其地址已解除分配，则该网络适配器将被放弃。在这种情况下，需要重置来宾中的静态 IP 地址。
 - 在虚拟网络上部署 VM 并不意味着（或要求）连回本地网络；虚拟网络仅产生这种可能性。必须创建一个虚拟网络，供 Azure 与本地网络之间进行专用通信。需要在本地网络上部署 VPN 终结点。打开的 VPN 从 Azure 通向本地网络。有关详细信息，请参阅 [Virtual Network Overview](/documentation/articles/virtual-networks-overview/)（虚拟网络概述）和 [Configure a Site-to-Site VPN in the Azure Portal](/documentation/articles/vpn-gateway-site-to-site-create/)（在 Azure 门户预览中配置站点到站点 VPN）。
 
-> [AZURE.NOTE]
-有一个[创建点到站点 VPN](/documentation/articles/vpn-gateway-point-to-site-create/) 的选项可将单独的基于 Windows 的计算机直接连接到 Azure 虚拟网络。
-> 
-> 
+	> [AZURE.NOTE]
+	有一个[创建点到站点 VPN](/documentation/articles/vpn-gateway-point-to-site-create/) 的选项可将单独的基于 Windows 的计算机直接连接到 Azure 虚拟网络。
+	> 
+	> 
 
 - 无论是否创建虚拟网络，Azure 均按传出流量收费，而不按传入流量收费。选择各种 Windows Server Active Directory 设计都会影响部署生成多少传出流量。例如，部署只读域控制器 (RODC) 将限制传出流量，因为它在出站时不进行复制。但部署 RODC 的决定将需要根据是否需要对 DC 执行写入操作以及站点中的应用程序和服务与 RODC 的[兼容性](https://technet.microsoft.com/zh-cn/library/cc755190)来进行权衡。有关流量收费的详细信息，请参阅 [Azure pricing at-a-glance](/pricing/)（Azure 价格一览表）。
 - 虽然可以全面控制 Azure 上要用于本地 VM 的服务器资源（如 RAM 数量、磁盘大小等），但仍必须从预先配置的服务器大小的列表中进行选择。对于 DC，除了操作系统磁盘之外，还需要数据磁盘以存储 Windows Server Active Directory 数据库。
@@ -288,10 +288,10 @@ SharePoint 部署在 Azure 虚拟机上，并且该应用程序不依赖企业�
 #### 方案注意事项和技术领域如何适用于方案
 - [网络拓扑](#BKMK_NetworkTopology)：创建 Azure 虚拟网络并[配置跨界连接](/documentation/articles/vpn-gateway-site-to-site-create/)。
   
-  > [AZURE.NOTE]
-  对于每个 Windows Server AD FS 证书，确保在 Azure 上运行的 Windows Server AD FS 实例可访问在证书模板和所得证书中定义的 URL。这可能需要与 PKI 基础结构的各部分具有跨界连接。例如，如果 CRL 的终结点基于 LDAP，并以独占方式托管在本地，则将需要跨界连接。如果这样不可取，则可能必须使用可通过 Internet 访问其 CRL 的 CA 颁发的证书。
-  > 
-  > 
+	> [AZURE.NOTE]
+	对于每个 Windows Server AD FS 证书，确保在 Azure 上运行的 Windows Server AD FS 实例可访问在证书模板和所得证书中定义的 URL。这可能需要与 PKI 基础结构的各部分具有跨界连接。例如，如果 CRL 的终结点基于 LDAP，并以独占方式托管在本地，则将需要跨界连接。如果这样不可取，则可能必须使用可通过 Internet 访问其 CRL 的 CA 颁发的证书。
+	> 
+	> 
 - [云服务配置](#BKMK_CloudSvcConfig)：确保有两个云服务以提供两个经过负载均衡的虚拟 IP 地址。第一个云服务的虚拟 IP 地址将定向到端口 80 和 443 上的两个 Windows Server AD FS 代理 VM。Windows Server AD FS 代理 VM 将配置为指向面向 Windows Server AD FS STS 的本地负载均衡器的 IP 地址。第二个云服务的虚拟 IP 地址将再次定向到端口 80 和 443 上两个运行 Web 前端的 VM。配置自定义探测以确保负载均衡器将流量仅定向到正常运行的 Windows Server AD FS 代理和 Web 前端 VM。
 - [联合服务器配置](#BKMK_FedSrvConfig)：将 Windows Server AD FS 配置为联合服务器 (STS) 以为在云中创建的 Windows Server Active Directory 林生成安全令牌。设置联合声明提供程序与要从其接受身份的不同合作伙伴的信任关系，然后配置信赖方与要向其生成令牌的不同应用程序的信任关系。
   

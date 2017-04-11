@@ -94,7 +94,7 @@ Azure AD 提供另一组管理员角色来管理与目录和标识相关的功�
 
 - - -
 ## 密码管理
-**问：是否可以使用 Azure AD 密码写回但不使用密码同步？ （在这种情况下，是否可以结合密码写回使用 Azure AD 自助服务密码重置 (SSPR)，而不将密码存储在云中？）**
+**问：是否可以使用 Azure AD 密码写回但不使用密码同步？**
 
 **答：**无需将 Active Directory 密码同步到 Azure AD 即可启用写回。在联合环境中，Azure AD 单一登录 (SSO) 依赖本地目录对用户进行身份验证。在这种情况下，并不需要在 Azure AD 中跟踪本地密码。
 
@@ -114,9 +114,7 @@ Azure AD 提供另一组管理员角色来管理与目录和标识相关的功�
 - - -
 **问：如果尝试更改 Office 365/Azure AD 密码时忘记了现有的密码，该怎么办？**
 
-**答：**对于这种情况，有几个选项。在可行的情况下，使用自助服务密码重置 (SSPR)。SSPR 是否适用取决于其配置方式。有关详细信息，请参阅[密码重置门户的工作原理](/documentation/articles/active-directory-passwords-learn-more/#how-does-the-password-reset-portal-work/)。
-
-对于 Office 365 用户，管理员可以使用[重置用户密码](https://support.office.com/zh-cn/article/Admins-Reset-user-passwords-7A5D073B-7FAE-4AA5-8F96-9ECD041ABA9C?ui=en-us&rs=en-us&ad=US)中所述的步骤重置密码。
+**答：**对于 Office 365 用户，管理员可以使用[重置用户密码](https://support.office.com/zh-cn/article/Admins-Reset-user-passwords-7A5D073B-7FAE-4AA5-8F96-9ECD041ABA9C?ui=en-us&rs=en-us&ad=US)中所述的步骤重置密码。
 
 对于 Azure AD 帐户，管理员可以使用以下选项之一重置密码：
 
