@@ -51,6 +51,6 @@ template.json 文件是模板。
 
 ## 后续步骤
 
-若要详细了解如何使用模板部署资源，请参阅 [Resource Manager template walkthrough](/documentation/articles/resource-manager-template-walkthrough/)（Resource Manager 模板演练）。
+<!-- resource-manager-template-walkthrough oboslete -->
 
 <!---HONumber=Mooncake_1114_2016-->

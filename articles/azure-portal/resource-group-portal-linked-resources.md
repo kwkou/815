@@ -27,12 +27,13 @@
 
 ## 如何链接我的资源？
 
-当你通过门户预览或者通过 Azure PowerShell 或 Azure CLI 部署模板来创建资源时，就会自动为某些依赖资源创建链接。你还可以使用[链接资源 REST API](https://msdn.microsoft.com/zh-cn/library/azure/mt238499.aspx) 或者通过在模板中声明关系，以编程方式链接资源。如需使用链接资源的完整介绍，请参阅[在 Azure 资源管理器中链接资源](/documentation/articles/resource-group-link-resources/)。
+当你通过门户预览或者通过 Azure PowerShell 或 Azure CLI 部署模板来创建资源时，就会自动为某些依赖资源创建链接。你还可以使用[链接资源 REST API](https://msdn.microsoft.com/zh-cn/library/azure/mt238499.aspx) 或者通过在模板中声明关系，以编程方式链接资源。
+
 
 ## 后续步骤
 
 - 有关编写 Azure 资源管理器模板的简介，请参阅[创作模板](/documentation/articles/resource-group-authoring-templates/)。
-- 若要深入了解有关在资源之间创建链接的详细信息，请参阅[在 Azure 资源管理器中链接资源](/documentation/articles/resource-group-link-resources/)。
 - 若要了解如何通过门户预览使用资源组，请参阅[使用 Azure 门户预览管理 Azure 资源](/documentation/articles/resource-group-portal/)。
+<!-- resource-group-link-resources obsolete link-->
 
 <!---HONumber=Mooncake_0503_2016-->

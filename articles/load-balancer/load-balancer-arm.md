@@ -41,8 +41,6 @@ Azure Resource Manager 可让你使用声明性模板预配应用程序。在单
 
 模板可包含以下项的定义：虚拟机、虚拟网络、可用性集、网络接口 (NIC)、存储帐户、负载均衡器、网络安全组和公开 IP。模板可用于创建复杂应用程序所需的一切内容。模板文件可签入到内容管理系统进行版本控制和协作。
 
-[详细了解模板](/documentation/articles/resource-manager-template-walkthrough/)
-
 [详细了解网络资源](/documentation/articles/resource-groups-networking/)
 
 有关使用 Azure Load Balancer 的快速入门模板，可参阅 [GitHub 存储库](https://github.com/Azure/azure-quickstart-templates)（托管社区生成的一组模板）。

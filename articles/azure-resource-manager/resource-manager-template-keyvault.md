@@ -65,7 +65,7 @@
 | 名称 |字符串<br />必需<br />在 Azure 中唯一的名称。<br /><br />要创建的密钥保管库的名称。请考虑在命名约定中使用 [uniqueString](/documentation/articles/resource-group-template-functions/#uniquestring) 函数来创建唯一名称，如以下示例中所示。 |
 | location |字符串<br />必需<br />密钥保管库的有效区域。若要确定有效的区域，请参阅[支持的区域](/documentation/articles/resource-manager-supported-services/#supported-regions)。<br /><br />托管密钥保管库的区域。 |
 | properties |对象<br />必需<br />[properties 对象](#properties)<br /><br />一个对象，用于指定要创建的密钥保管库的类型。 |
-| 资源 |数组<br />可选<br />允许的值：[密钥保管库机密资源](/documentation/articles/resource-manager-template-keyvault-secret/)<br /><br />密钥保管库的子资源。 |
+| 资源 |数组<br />可选<br /> |
 
 <a id="properties" /></a>
 

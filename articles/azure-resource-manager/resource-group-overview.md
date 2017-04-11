@@ -108,7 +108,7 @@ Resource Manager 通过 Azure PowerShell、Azure CLI、Azure 门户预览、REST
 ## <a name="template-deployment"></a> 模板部署
 使用 Resource Manager 可以创建一个模板（采用 JSON 格式），用于定义 Azure 解决方案的基础结构和配置。使用模板可以在解决方案的整个生命周期内重复部署该解决方案，确保以一致的状态部署资源。从门户创建解决方案时，该解决方案将自动包含部署模板。你无需从头开始创建模板，因为你可以从解决方案的模板着手，并根据你的特定需求自定义该模板。可以通过导出资源组的当前状态或查看特定部署所用的模板，来检索现有资源组的模板。查看[导出的模板](/documentation/articles/resource-manager-export-template/)是了解模板语法的有效方法。
 
-有关模板格式及其构造方法的详细信息，请参阅 [Authoring Azure Resource Manager Templates](/documentation/articles/resource-group-authoring-templates/)（创作 Azure Resource Manager 模板）和 [Resource Manager Template Walkthrough](/documentation/articles/resource-manager-template-walkthrough/)（Resource Manager 模板演练）。
+有关模板格式及其构造方法的详细信息，请参阅 [Authoring Azure Resource Manager Templates](/documentation/articles/resource-group-authoring-templates/)（创作 Azure Resource Manager 模板）。
 
 Resource Manager 处理模板的方式与处理其他任何请求一样（请参阅[一致的管理层](#consistent-management-layer)中的图像）。它会分析模板，并将其语法转换为相应资源提供程序所需的 REST API 操作。例如，当 Resource Manager 收到具有以下资源定义的模板时：
 
@@ -309,10 +309,8 @@ Azure SDK 适用于多种语言和平台。每种语言实现可通过其生态�
 
 ## 后续步骤
 * 有关使用模板的简单介绍，请参阅 [Export an Azure Resource Manager template from existing resources](/documentation/articles/resource-manager-export-template/)（从现有资源导出 Azure Resource Manager 模板）。
-* 有关创建模板的更全面演练，请参阅 [Resource Manager Template Walkthrough](/documentation/articles/resource-manager-template-walkthrough/)（Resource Manager 模板演练）。
 * 若要了解可以在模板中使用的函数，请参阅[模板函数](/documentation/articles/resource-group-template-functions/)
 * 有关将 Visual Studio 与 Resource Manager 配合使用的信息，请参阅 [Creating and deploying Azure resource groups through Visual Studio](/documentation/articles/vs-azure-tools-resource-groups-deployment-projects-create-deploy/)（通过 Visual Studio 创建和部署 Azure 资源组）。
-* 有关将 VS Code 与 Resource Manager 配合使用的信息，请参阅 [Working with Azure Resource Manager Templates in Visual Studio Code](/documentation/articles/resource-manager-vs-code/)（在 Visual Studio Code 中使用 Azure Resource Manager 模板）。
 
 下面是本概述主题的演示视频：
 [演示视频](https://channel9.msdn.com/Blogs/Azure-Documentation-Shorts/Azure-Resource-Manager-Overview/player)

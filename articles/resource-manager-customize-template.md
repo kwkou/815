@@ -226,7 +226,6 @@
 
 ## 后续步骤
 
-- [Resource Manager 模板演练](/documentation/articles/resource-manager-template-walkthrough/)在本文中学习的内容的基础上构建，它将为更复杂的解决方案创建模板。它可帮助你了解有关可用资源的更多信息以及如何确定要提供的值。
 - 若要了解如何通过 PowerShell 导出模板，请参阅[将 Azure PowerShell 与 Azure Resource Manager 配合使用](/documentation/articles/powershell-azure-resource-manager/)。
 - 若要了解如何通过 Azure CLI 导出模板，请参阅[将适用于 Mac、Linux 和 Windows 的 Azure CLI 与 Azure Resource Manager 配合使用](/documentation/articles/xplat-cli-azure-resource-manager/)。
 - 若要了解如何构造模板，请参阅[创作 Azure Resource Manager 模板](/documentation/articles/resource-group-authoring-templates/)。

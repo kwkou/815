@@ -26,7 +26,7 @@
 
 ## 部署密钥保管库和机密
 
-可通过 Resource Manager 模板部署密钥保管库和密钥。有关示例，请参阅[密钥保管库模板](/documentation/articles/resource-manager-template-keyvault/)和[密钥保管库密钥模板](/documentation/articles/resource-manager-template-keyvault-secret/)。请在创建密钥保管库时将 **enabledForTemplateDeployment** 属性设置为 **true**，以便从其他 Resource Manager 模板引用它。
+可通过 Resource Manager 模板部署密钥保管库和密钥。请在创建密钥保管库时将 **enabledForTemplateDeployment** 属性设置为 **true**，以便从其他 Resource Manager 模板引用它。
 
 或者，可通过 Azure 门户预览创建密钥保管库和密钥。
 

@@ -160,7 +160,7 @@
 
     如果未提供匹配的语法，该模板将生成一个意外的值。
 
-    当你收到此类错误时，请仔细检查表达式语法。考虑使用 [Visual Studio](/documentation/articles/vs-azure-tools-resource-groups-deployment-projects-create-deploy/) 或 [Visual Studio Code](/documentation/articles/resource-manager-vs-code/) 这样的 JSON 编辑器，以便在出现语法错误时发出警告。
+    当你收到此类错误时，请仔细检查表达式语法。考虑使用 [Visual Studio](/documentation/articles/vs-azure-tools-resource-groups-deployment-projects-create-deploy/) 这样的 JSON 编辑器，以便在出现语法错误时发出警告。
 
 - 段长度不正确
 
