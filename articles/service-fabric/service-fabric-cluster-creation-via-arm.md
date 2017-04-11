@@ -15,7 +15,7 @@
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
    ms.date="12/08/2016"
-   wacn.date="01/20/2017"
+   wacn.date="04/11/2017"
    ms.author="chackdan"/>  
 
 
@@ -445,7 +445,7 @@ Service Fabric 群集提供其管理功能的各种入口点，包括基于 Web 
 
 
 	{
-	    "$schema": "http://schema.management.chinacloudapi.cn/schemas/2015-01-01/deploymentParameters.json#",
+	    "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
 	    "contentVersion": "1.0.0.0",
 	    "parameters": { 
 	        ...
