@@ -232,7 +232,7 @@ SQL Server Express 版本的虚拟机映像不会自动启用 TCP/IP 协议。�
 
 | 参数 | 说明 | 示例 |
 | --- | --- | --- |
-| **密钥保管库 URL** |密钥保管库的位置。 |https://contosokeyvault.vault.chinacloudapi.cn/  
+| **密钥保管库 URL** |密钥保管库的位置。 |https://contosokeyvault.vault.azure.cn/  
  |
 | **主体名称** |Azure Active Directory 服务主体名称。该名称也称为客户端 ID。 |fde2b411-33d5-4e11-af04eb07b669ccf2 |
 | **主体密码** |Azure Active Directory 服务主体密码。该密码也称为客户端密码。 |9VTJSQwzlFepD8XODnzy8n2V01Jd8dAjwm/azF1XDKM= |

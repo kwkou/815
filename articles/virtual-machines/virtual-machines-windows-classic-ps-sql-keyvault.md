@@ -47,7 +47,7 @@ Azure 提供两个不同的部署模型用于创建和处理资源：[Resource M
 
 | 参数 | 说明 | 示例 |
 | --- | --- | --- |
-| **$akvURL** |**密钥保管库 URL** |“https://contosokeyvault.vault.chinacloudapi.cn/” |
+| **$akvURL** |**密钥保管库 URL** |“https://contosokeyvault.vault.azure.cn/” |
 | **$spName** |**服务主体名称** |“fde2b411-33d5-4e11-af04eb07b669ccf2” |
 | **$spSecret** |**服务主体密码** |“9VTJSQwzlFepD8XODnzy8n2V01Jd8dAjwm/azF1XDKM =” |
 | **$credName** |**凭据名称**：AKV 集成在 SQL Server 内创建一个凭据，使 VM 具有对密钥保管库的访问权限。为此凭据选择一个名称。 |“mycred1” |
@@ -59,7 +59,7 @@ Azure 提供两个不同的部署模型用于创建和处理资源：[Resource M
 
 1. 在 Azure PowerShell 中，首先使用特定的值配置输入参数，如本主题前面各节中所述。下面的脚本就是一个示例。
    
-        $akvURL = "https://contosokeyvault.vault.chinacloudapi.cn/"
+        $akvURL = "https://contosokeyvault.vault.azure.cn/"
         $spName = "fde2b411-33d5-4e11-af04eb07b669ccf2"
         $spSecret = "9VTJSQwzlFepD8XODnzy8n2V01Jd8dAjwm/azF1XDKM="
         $credName = "mycred1"

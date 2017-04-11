@@ -86,9 +86,9 @@
     azure vm enable-disk-encryption --resource-group myResourceGroup --name myVM \
       --aad-client-id 147bc426-595d-4bad-b267-58a7cbd8e0b6 \
       --aad-client-secret P@ssw0rd! \
-      --disk-encryption-key-vault-url https://myKeyVault.vault.chinacloudapi.cn/ \ 
+      --disk-encryption-key-vault-url https://myKeyVault.vault.azure.cn/ \ 
       --disk-encryption-key-vault-id /subscriptions/guid/resourceGroups/myResourceGroup/providers/Microsoft.KeyVault/vaults/myKeyVault \
-      --key-encryption-key-url https://myKeyVault.vault.chinacloudapi.cn/keys/myKey/6f5fe9383f4e42d0a41553ebc6a82dd1 \
+      --key-encryption-key-url https://myKeyVault.vault.azure.cn/keys/myKey/6f5fe9383f4e42d0a41553ebc6a82dd1 \
       --key-encryption-key-vault-id /subscriptions/guid/resourceGroups/myResoureGroup/providers/Microsoft.KeyVault/vaults/myKeyVault \
       --volume-type Data
 
@@ -221,9 +221,9 @@ Linux VM 上的虚拟磁盘是使用 [dm-crypt](https://wikipedia.org/wiki/Dm-cr
     azure vm enable-disk-encryption --resource-group myResourceGroup --name myVM \
       --aad-client-id 147bc426-595d-4bad-b267-58a7cbd8e0b6 \
       --aad-client-secret P@ssw0rd! \
-      --disk-encryption-key-vault-url https://myKeyVault.vault.chinacloudapi.cn/ \ 
+      --disk-encryption-key-vault-url https://myKeyVault.vault.azure.cn/ \ 
       --disk-encryption-key-vault-id /subscriptions/guid/resourceGroups/myResourceGroup/providers/Microsoft.KeyVault/vaults/myKeyVault \
-      --key-encryption-key-url https://myKeyVault.vault.chinacloudapi.cn/keys/myKey/6f5fe9383f4e42d0a41553ebc6a82dd1 \
+      --key-encryption-key-url https://myKeyVault.vault.azure.cn/keys/myKey/6f5fe9383f4e42d0a41553ebc6a82dd1 \
       --key-encryption-key-vault-id /subscriptions/guid/resourceGroups/myResoureGroup/providers/Microsoft.KeyVault/vaults/myKeyVault \
       --volume-type Data
 

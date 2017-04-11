@@ -83,7 +83,7 @@
 预配 VM 时，Microsoft.Compute 资源提供程序需要指向密钥保管库中密钥的 URL。这将使 Microsoft.Compute 资源提供程序能够下载密钥，并在 VM 上创建等效证书。
 
 >[AZURE.NOTE] 密钥 URL 需要同时包含版本。示例 URL 类似如下
-https://contosovault.vault.chinacloudapi.cn:443/secrets/contososecret/01h9db0df2cd4300a20ence585a6s7ve
+https://contosovault.vault.azure.cn:443/secrets/contososecret/01h9db0df2cd4300a20ence585a6s7ve
 
 
 #### 模板
