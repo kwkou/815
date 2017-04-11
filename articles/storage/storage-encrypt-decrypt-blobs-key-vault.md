@@ -14,7 +14,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="required"
     ms.date="01/23/2017"
-    wacn.date="03/20/2017"
+    wacn.date="04/10/2017"
     ms.author="adhurwit" />  
 
 
@@ -143,7 +143,7 @@
 	// Retrieve the key that you created previously.
 	// The IKey that is returned here is an RsaKey.
 	// Remember that we used the names contosokeyvault and testrsakey1.
-    var rsa = cloudResolver.ResolveKeyAsync("https://contosokeyvault.vault.chinacloudapi.cn/keys/TestRSAKey1", CancellationToken.None).GetAwaiter().GetResult();
+    var rsa = cloudResolver.ResolveKeyAsync("https://contosokeyvault.vault.azure.cn/keys/TestRSAKey1", CancellationToken.None).GetAwaiter().GetResult();
 
 
 	// Now you simply use the RSA key to encrypt by setting it in the BlobEncryptionPolicy.
@@ -209,7 +209,7 @@ RSA 密钥的私钥则保留在密钥保管库中，因此，为了进行解密�
 在控制台应用程序中，可以使用与之前相同的调用将此密钥作为 SymmetricKey 进行检索。
 
 	SymmetricKey sec = (SymmetricKey) cloudResolver.ResolveKeyAsync(
-    	"https://contosokeyvault.vault.chinacloudapi.cn/secrets/TestSecret2/", 
+    	"https://contosokeyvault.vault.azure.cn/secrets/TestSecret2/", 
         CancellationToken.None).GetAwaiter().GetResult();
 
 就这么简单。请尽情享受其中的乐趣！

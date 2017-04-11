@@ -10,7 +10,7 @@
 <tags
    ms.service="service-fabric"
    ms.date="05/27/2016"
-   wacn.date="01/17/2017"/>
+   wacn.date="04/10/2017"/>
 
 # 使用证书保护 Azure 上的 Service Fabric 群集
 
@@ -79,7 +79,7 @@ Azure Service Fabric 群集是你拥有的资源。为了防止未经授权访�
 
 	SourceVault /Resource ID of the key vault :  /subscriptions/35389201-c0b3-405e-8a23-9f1450994307/resourceGroups/chackdankeyvault4doc/providers/Microsoft.KeyVault/vaults/chackdankeyvault4doc
 
-	Certificate URL /URL to the certificate location in the key vault : https://chackdankeyvalut4doc.vault.chinacloudapi.cn:443/secrets/chackdantestcertificate3/ebc8df6300834326a95d05d90e0701ea
+	Certificate URL /URL to the certificate location in the key vault : https://chackdankeyvalut4doc.vault.azure.cn:443/secrets/chackdantestcertificate3/ebc8df6300834326a95d05d90e0701ea
 
 
 现在你已拥有设置安全群集所需的信息。请转到步骤 3。
@@ -115,7 +115,7 @@ Azure Service Fabric 群集是你拥有的资源。为了防止未经授权访�
 
 	SourceVault /Resource ID of the key vault : /subscriptions/35389201-c0b3-405e-8a23-9f1450994307/resourceGroups/chackdankeyvault4doc/providers/Microsoft.KeyVault/vaults/chackdankeyvault4doc
 
-	Certificate URL /URL to the certificate location in the key vault: https://chackdankeyvalut4doc.vault.chinacloudapi.cn:443/secrets/chackdantestcertificate3/fvc8df6300834326a95d05d90e0720ea
+	Certificate URL /URL to the certificate location in the key vault: https://chackdankeyvalut4doc.vault.azure.cn:443/secrets/chackdantestcertificate3/fvc8df6300834326a95d05d90e0720ea
 
 
 ## 步骤 3：设置安全群集
@@ -140,10 +140,10 @@ Azure Service Fabric 群集是你拥有的资源。为了防止未经授权访�
 - **证书 URL**：这是密钥保管库中证书所上载到的位置 URL。其格式应该是：
 
 	
-    	https://<name of the vault>.vault.chinacloudapi.cn:443/secrets/<exact location>
+    	https://<name of the vault>.vault.azure.cn:443/secrets/<exact location>
 	
 	
-    	https://chackdan-kmstest-eastus.vault.chinacloudapi.cn:443/secrets/MyCert/6b5cc15a753644e6835cb3g3486b3812
+    	https://chackdan-kmstest-eastus.vault.azure.cn:443/secrets/MyCert/6b5cc15a753644e6835cb3g3486b3812
 	
 
 - **证书指纹**：这是证书的指纹，可以在前面指定的 URL 中找到。

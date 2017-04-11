@@ -92,7 +92,7 @@ Service Fabric 使用 X.509 证书保护群集，提供应用程序安全功能�
 		Resource Group Name              : mycluster-keyvault
 		Location                         : China East
 		Resource ID                      : /subscriptions/<guid>/resourceGroups/mycluster-keyvault/providers/Microsoft.KeyVault/vaults/myvault
-		Vault URI                        : https://myvault.vault.chinacloudapi.cn
+		Vault URI                        : https://myvault.vault.azure.cn
 		Tenant ID                        : <guid>
 		SKU                              : Standard
 		Enabled For Deployment?          : False
@@ -166,7 +166,7 @@ Service Fabric 使用 X.509 证书保护群集，提供应用程序安全功能�
 如果收到如下所示的错误，这通常意味着资源 URL 发生冲突，因此，请更改 keyvault 名称。
 
 
-	Set-AzureKeyVaultSecret : The remote name could not be resolved: 'chinaeastkv.vault.chinacloudapi.cn'
+	Set-AzureKeyVaultSecret : The remote name could not be resolved: 'chinaeastkv.vault.azure.cn'
 	At C:\Users\chackdan\Documents\GitHub\Service-Fabric\Scripts\ServiceFabricRPHelpers\ServiceFabricRPHelpers.psm1:440 char:11
 	+ $secret = Set-AzureKeyVaultSecret -VaultName $VaultName -Name $Certif ...
 	+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -221,7 +221,7 @@ Service Fabric 使用 X.509 证书保护群集，提供应用程序安全功能�
 如果收到如下所示的错误，这通常意味着资源 URL 发生冲突，因此，请更改 keyvault 名称、RG 名称等。
 
 <p><font color="red">
-Set-AzureKeyVaultSecret : The remote name could not be resolved: 'chinaeastkv.vault.chinacloudapi.cn'
+Set-AzureKeyVaultSecret : The remote name could not be resolved: 'chinaeastkv.vault.azure.cn'
 At C:\Users\chackdan\Documents\GitHub\Service-Fabric\Scripts\ServiceFabricRPHelpers\ServiceFabricRPHelpers.psm1:440 char:11
 + $secret = Set-AzureKeyVaultSecret -VaultName $VaultName -Name $Certif ...
 +           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -250,7 +250,7 @@ At C:\Users\chackdan\Documents\GitHub\Service-Fabric\Scripts\ServiceFabricRPHelp
 	Value : /subscriptions/6c653126-e4ba-52cd-a1dd-f8bf96ae7a47/resourceGroups/chackochinaeastkv/providers/Microsoft.KeyVault/vaults/chinaeastkv1
 
 	Name  : CertificateURL
-	Value : https://chinaeastkv1.vault.chinacloudapi.cn:443/secrets/chackonewcertificate1/ee247291e45d405b8c8bbf81782d12bd
+	Value : https://chinaeastkv1.vault.azure.cn:443/secrets/chackonewcertificate1/ee247291e45d405b8c8bbf81782d12bd
 
 
 
@@ -462,7 +462,7 @@ Service Fabric 群集提供其管理功能的各种入口点，包括基于 Web 
 	            "value": "My"
 	        },
 	        "applicationCertificateUrlValue": {
-	            "value": "https://myvault.vault.chinacloudapi.cn:443/secrets/myapplicationcert/2e035058ae274f869c4d0348ca100f08"
+	            "value": "https://myvault.vault.azure.cn:443/secrets/myapplicationcert/2e035058ae274f869c4d0348ca100f08"
 	        },
 	        "sourceVaultvalue": {
 	            "value": "/subscriptions/<guid>/resourceGroups/mycluster-keyvault/providers/Microsoft.KeyVault/vaults/myvault"

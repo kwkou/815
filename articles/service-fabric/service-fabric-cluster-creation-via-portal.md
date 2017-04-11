@@ -17,7 +17,7 @@
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
    ms.date="09/21/2016"
-   wacn.date="01/04/2017"
+   wacn.date="04/10/2017"
    ms.author="vturecek"/>  
 
 
@@ -94,7 +94,7 @@ Service Fabric 使用 X.509 证书保护群集。Azure 密钥保管库用于管�
 		Resource Group Name              : mycluster-keyvault
 		Location                         : China East
 		Resource ID                      : /subscriptions/<guid>/resourceGroups/mycluster-keyvault/providers/Microsoft.KeyVault/vaults/myvault
-		Vault URI                        : https://myvault.vault.chinacloudapi.cn
+		Vault URI                        : https://myvault.vault.azure.cn
 		Tenant ID                        : <guid>
 		SKU                              : Standard
 		Enabled For Deployment?          : False
@@ -283,7 +283,7 @@ Service Fabric 使用 X.509 证书保护群集。Azure 密钥保管库用于管�
 	值：/subscriptions/<guid>/resourceGroups/mycluster-keyvault/providers/Microsoft.KeyVault/vaults/myvault
 
 	名称：CertificateURL 
-	值：https://myvault.vault.chinacloudapi.cn:443/secrets/mycert/4d087088df974e869f1c0978cb100e47
+	值：https://myvault.vault.azure.cn:443/secrets/mycert/4d087088df974e869f1c0978cb100e47
 
 
 - 选中“配置高级设置”复选框，输入**管理客户端**和**只读客户端**的客户端证书。在这些字段中，输入管理客户端证书的指纹和只读用户客户端证书的指纹（如果适用）。当管理员尝试连接群集时，仅当他们的证书指纹与此处输入的指纹值匹配时，才被授予访问权限。

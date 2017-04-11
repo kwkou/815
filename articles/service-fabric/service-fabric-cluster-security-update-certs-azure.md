@@ -14,7 +14,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="na"
     ms.date="01/11/2017"
-    wacn.date="02/20/2017"
+    wacn.date="04/10/2017"
     ms.author="chackdan" />  
 
 
@@ -76,7 +76,7 @@
 	    "secCertificateUrlValue": {
 	      "type": "string",
 	      "metadata": {
-	        "description": "Refers to the location URL in your key vault where the certificate was uploaded, it is should be in the format of https://<name of the vault>.vault.chinacloudapi.cn:443/secrets/<exact location>"
+	        "description": "Refers to the location URL in your key vault where the certificate was uploaded, it is should be in the format of https://<name of the vault>.vault.azure.cn:443/secrets/<exact location>"
 	      }
 	    },
 
@@ -194,7 +194,7 @@
 	      "value": "thumbprint value"
 	    },
 	    "secCertificateUrlValue": {
-	      "value": "Refers to the location URL in your key vault where the certificate was uploaded, it is should be in the format of https://<name of the vault>.vault.chinacloudapi.cn:443/secrets/<exact location>"
+	      "value": "Refers to the location URL in your key vault where the certificate was uploaded, it is should be in the format of https://<name of the vault>.vault.azure.cn:443/secrets/<exact location>"
 	     },
 
 
