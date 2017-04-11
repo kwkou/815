@@ -14,7 +14,7 @@
     ms.devlang="na"
     ms.topic="hero-article"
     ms.date="01/07/2017"
-    wacn.date="03/16/2017"
+    wacn.date="04/11/2017"
     ms.author="ambapat" />  
 
 
@@ -64,7 +64,7 @@ Azure 密钥保管库是可以在 Azure资源管理器部署模型中使用的 A
 | 访问平面 | 访问终结点 | 操作 | 访问控制机制 |
 | --- | --- | --- | --- |
 | 管理平面 |**全球：**<br>management.azure.com:443<br><br> **Azure China：**<br>management.chinacloudapi.cn:443<br><br> **Azure US Government：**<br>management.usgovcloudapi.net:443<br><br> **Azure Germany：**<br>management.microsoftazure.de:443 |创建/读取/更新/删除密钥保管库<br>设置密钥保管库的访问策略<br>设置密钥保管库的标记 |Azure资源管理器基于角色的访问控制 \(RBAC\) |
-| 数据平面 |**全球：**<br> &lt;vault-name&gt;.vault.chinacloudapi.cn:443<br><br> **Azure China：**<br> &lt;vault-name&gt;.vault.azure.cn:443<br><br> **Azure US Government：**<br> &lt;vault-name&gt;.vault.usgovcloudapi.net:443<br><br> **Azure Germany：**<br> &lt;vault-name&gt;.vault.microsoftazure.de:443 |密钥：解密、加密、解包密钥、包装密钥、验证、签名、获取、列出、更新、创建、导入、删除、备份、还原<br><br>机密：获取、列出、设置、删除 |密钥保管库访问策略 |
+| 数据平面 |**全球：**<br> &lt;vault-name&gt;.vault.azure.net:443<br><br> **Azure China：**<br> &lt;vault-name&gt;.vault.azure.cn:443<br><br> **Azure US Government：**<br> &lt;vault-name&gt;.vault.usgovcloudapi.net:443<br><br> **Azure Germany：**<br> &lt;vault-name&gt;.vault.microsoftazure.de:443 |密钥：解密、加密、解包密钥、包装密钥、验证、签名、获取、列出、更新、创建、导入、删除、备份、还原<br><br>机密：获取、列出、设置、删除 |密钥保管库访问策略 |
 
 管理平面访问控制与数据平面访问控制相互独立。例如，如果想要授权应用程序使用密钥保管库中的密钥，只需使用密钥保管库访问策略授予数据平面访问权限，而不需要向此应用程序授予管理平面访问权限。相反，如果希望用户有权读取保管库属性和标记但无权访问密钥、机密或证书，则可以使用 RBAC 向此用户授予“读取”访问权限，而不需要授予数据平面访问权限。
 

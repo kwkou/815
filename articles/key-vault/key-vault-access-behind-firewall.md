@@ -14,7 +14,7 @@
     ms.devlang="na"
     ms.topic="hero-article"
     ms.date="01/07/2017"
-    wacn.date="02/27/2017"
+    wacn.date="04/11/2017"
     ms.author="ambapat" />  
 
 
@@ -24,7 +24,7 @@
 
 - 通过 Azure Active Directory \(Azure AD\) 进行身份验证。
 - 管理 Azure 密钥保管库。这包括通过 Azure资源管理器创建、读取、更新、删除和设置访问策略。
-- 通过密钥保管库特定终结点（例如 https://yourvaultname.vault.chinacloudapi.cn），访问和管理密钥保管库自身存储的对象（密钥和机密）。
+- 通过密钥保管库特定终结点（例如 https://yourvaultname.vault.azure.cn），访问和管理密钥保管库自身存储的对象（密钥和机密）。
 
 根据配置和环境，会有一些变化。
 
@@ -55,7 +55,7 @@
 
 | 操作类型 | 终结点：端口 |
 | --- | --- |
-| 操作包括：对密钥的加密操作；创建、读取、更新和删除密钥和机密；设置或获取密钥保管库对象（密钥或机密）上的标记和其他属性 |**全球：**<br> &lt;vault-name&gt;.vault.chinacloudapi.cn:443<br><br> **Azure China：**<br> &lt;vault-name&gt;.vault.azure.cn:443<br><br> **Azure US Government：**<br> &lt;vault-name&gt;.vault.usgovcloudapi.net:443<br><br> **Azure Germany：**<br> &lt;vault-name&gt;.vault.microsoftazure.de:443 |
+| 操作包括：对密钥的加密操作；创建、读取、更新和删除密钥和机密；设置或获取密钥保管库对象（密钥或机密）上的标记和其他属性 |**全球：**<br> &lt;vault-name&gt;.vault.azure.net:443<br><br> **Azure China：**<br> &lt;vault-name&gt;.vault.azure.cn:443<br><br> **Azure US Government：**<br> &lt;vault-name&gt;.vault.usgovcloudapi.net:443<br><br> **Azure Germany：**<br> &lt;vault-name&gt;.vault.microsoftazure.de:443 |
 
 ## IP 地址范围
 密钥保管库服务使用其他 Azure 资源，例如 PaaS 基础结构。因此，不可能提供密钥保管库服务终结点在任意特定时间会有的特定 IP 地址范围。如果防火墙仅支持 IP 地址范围，请参阅 [Azure Datacenter IP Ranges](https://www.microsoft.com/en-us/download/details.aspx?id=41653)（Azure 数据中心 IP 范围）文档。对于身份验证和标识 \(Azure Active Directory\)，应用程序必须能够连接到[身份验证和标识地址](https://support.office.com/article/Office-365-URLs-and-IP-address-ranges-8548a211-3fe7-47cb-abb1-355ea5aa88a2)中所述的终结点。

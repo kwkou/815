@@ -16,7 +16,7 @@
     ms.devlang="na"
     ms.topic="hero-article"
     ms.date="10/24/2016"
-    wacn.date="12/13/2016"
+    wacn.date="04/11/2017"
     ms.author="cabailey" />  
 
 
@@ -78,7 +78,7 @@
 ## <a id="resource"></a>创建新的资源组
 使用 Azure 资源管理器时，会在资源组中创建所有相关资源。在本教程中，我们将创建名为 **ContosoResourceGroup** 的新资源组：
 
-    New-AzureRmResourceGroup -Name 'ContosoResourceGroup' -Location 'China East Site 2'
+    New-AzureRmResourceGroup -Name 'ContosoResourceGroup' -Location 'China East'
 
 
 ## <a id="vault"></a>创建密钥保管库
@@ -86,12 +86,12 @@
 
 例如，如果使用的保管库名称为 **ContosoKeyVault**，资源组名称为 **ContosoResourceGroup**，位置为**中国东部站点 2**，请键入：
 
-    New-AzureRmKeyVault -VaultName 'ContosoKeyVault' -ResourceGroupName 'ContosoResourceGroup' -Location 'China East Site 2'
+    New-AzureRmKeyVault -VaultName 'ContosoKeyVault' -ResourceGroupName 'ContosoResourceGroup' -Location 'China East'
 
 此 cmdlet 的输出会显示你刚刚创建的密钥保管库属性。两个最重要的属性是：
 
 - **保管库名称**：在本示例中为 **ContosoKeyVault**。你将在其他密钥保管库 cmdlet 中使用此名称。
-- **保管库 URI**：在本示例中为 https://contosokeyvault.vault.chinacloudapi.cn/。通过其 REST API 使用保管库的应用程序必须使用此 URI。
+- **保管库 URI**：在本示例中为 https://contosokeyvault.vault.azure.cn/。通过其 REST API 使用保管库的应用程序必须使用此 URI。
 
 你的 Azure 帐户现已获取在此密钥保管库上执行任何作业的授权。而且没有其他人有此授权。
 
@@ -112,7 +112,7 @@
     $key = Add-AzureKeyVaultKey -VaultName 'ContosoKeyVault' -Name 'ContosoFirstKey' -KeyFilePath 'c:\softkey.pfx' -KeyFilePassword $securepfxpwd
 
 
-现在，你可以通过使用密钥的 URI，引用已创建或上载到 Azure 密钥保管库的密钥。使用 **https://ContosoKeyVault.vault.chinacloudapi.cn/keys/ContosoFirstKey** 可始终获取当前版本，而使用 **https://ContosoKeyVault.vault.chinacloudapi.cn/keys/ContosoFirstKey/cgacf4f763ar42ffb0a1gca546aygd87** 可获取此特定版本。
+现在，你可以通过使用密钥的 URI，引用已创建或上载到 Azure 密钥保管库的密钥。使用 **https://ContosoKeyVault.vault.azure.cn/keys/ContosoFirstKey** 可始终获取当前版本，而使用 **https://ContosoKeyVault.vault.azure.cn/keys/ContosoFirstKey/cgacf4f763ar42ffb0a1gca546aygd87** 可获取此特定版本。
 
 若要显示此密钥的 URI，请键入：
 
@@ -126,7 +126,7 @@
 
     $secret = Set-AzureKeyVaultSecret -VaultName 'ContosoKeyVault' -Name 'SQLPassword' -SecretValue $secretvalue
 
-现在，你可以通过使用密码的 URI，引用已添加到 Azure 密钥保管库的此密码。使用 **https://ContosoVault.vault.chinacloudapi.cn/secrets/SQLPassword** 可始终获取当前版本，而使用 **https://ContosoVault.vault.chinacloudapi.cn/secrets/SQLPassword/90018dbb96a84117a0d2847ef8e7189d** 可获取此特定版本。
+现在，你可以通过使用密码的 URI，引用已添加到 Azure 密钥保管库的此密码。使用 **https://ContosoVault.vault.azure.cn/secrets/SQLPassword** 可始终获取当前版本，而使用 **https://ContosoVault.vault.azure.cn/secrets/SQLPassword/90018dbb96a84117a0d2847ef8e7189d** 可获取此特定版本。
 
 若要显示此机密的 URI，请键入：
 

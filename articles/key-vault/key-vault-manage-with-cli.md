@@ -14,7 +14,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="01/07/2017"
-    wacn.date="02/27/2017"
+    wacn.date="04/11/2017"
     ms.author="bruceper" />  
 
 
@@ -125,7 +125,7 @@
 此命令的输出会显示你刚刚创建的密钥保管库的属性。两个最重要的属性是：
 
 - **名称**：在本示例中为 ContosoKeyVault。你将在其他密钥保管库 cmdlet 中使用此名称。
-- **vaultUri**：在本示例中为 https://contosokeyvault.vault.chinacloudapi.cn。通过其 REST API 使用保管库的应用程序必须使用此 URI。
+- **vaultUri**：在本示例中为 https://contosokeyvault.vault.azure.cn。通过其 REST API 使用保管库的应用程序必须使用此 URI。
 
 你的 Azure 帐户现已获取在此密钥保管库上执行任何作业的授权。而且没有其他人有此授权。
 
@@ -138,13 +138,13 @@
 
     azure keyvault key import --vault-name 'ContosoKeyVault' --key-name 'ContosoFirstKey' --pem-file './softkey.pem' --password 'PaSSWORD' --destination software
 
-现在，你可以通过使用密钥的 URI，引用已创建或上载到 Azure 密钥保管库的密钥。使用 **https://ContosoKeyVault.vault.chinacloudapi.cn/keys/ContosoFirstKey** 可始终获取当前版本，而使用 **https://ContosoKeyVault.vault.chinacloudapi.cn/keys/ContosoFirstKey/cgacf4f763ar42ffb0a1gca546aygd87** 可获取此特定版本。
+现在，你可以通过使用密钥的 URI，引用已创建或上载到 Azure 密钥保管库的密钥。使用 **https://ContosoKeyVault.vault.azure.cn/keys/ContosoFirstKey** 可始终获取当前版本，而使用 **https://ContosoKeyVault.vault.azure.cn/keys/ContosoFirstKey/cgacf4f763ar42ffb0a1gca546aygd87** 可获取此特定版本。
 
 若要将名为 SQLPassword 且其 Azure 密钥保管库的值为 Pa$$w0rd 的机密添加到保管库，请键入以下内容：
 
     azure keyvault secret set --vault-name 'ContosoKeyVault' --secret-name 'SQLPassword' --value 'Pa$$w0rd'
 
-现在，你可以通过使用密码的 URI，引用已添加到 Azure 密钥保管库的此密码。使用 **https://ContosoVault.vault.chinacloudapi.cn/secrets/SQLPassword** 可始终获取当前版本，而使用 **https://ContosoVault.vault.chinacloudapi.cn/secrets/SQLPassword/90018dbb96a84117a0d2847ef8e7189d** 可获取此特定版本。
+现在，你可以通过使用密码的 URI，引用已添加到 Azure 密钥保管库的此密码。使用 **https://ContosoVault.vault.azure.cn/secrets/SQLPassword** 可始终获取当前版本，而使用 **https://ContosoVault.vault.azure.cn/secrets/SQLPassword/90018dbb96a84117a0d2847ef8e7189d** 可获取此特定版本。
 
 让我们查看一下刚刚创建的密钥或机密：
 
