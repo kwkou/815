@@ -14,7 +14,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="02/22/2017"
-    wacn.date="04/05/2017"
+    wacn.date="04/11/2017"
     ms.author="curtand" />  
 
 
@@ -53,13 +53,6 @@
 ## 后续步骤
 - **你是否因登录时遇到问题而浏览至此？** 如果是这样，[可按以下方式更改和重置你的密码](/documentation/articles/active-directory-passwords-update-your-own-password/#how-to-reset-your-password/)。
 - [从任意位置管理密码](/documentation/articles/active-directory-passwords/)
-- [密码管理的工作原理](/documentation/articles/active-directory-passwords-how-it-works/)
-- [密码管理入门](/documentation/articles/active-directory-passwords-getting-started/)
-- [自定义密码管理](/documentation/articles/active-directory-passwords-customize/)
-- [密码管理最佳实践](/documentation/articles/active-directory-passwords-best-practices/)
-- [密码管理常见问题](/documentation/articles/active-directory-passwords-faq/)
-- [排查密码管理问题](/documentation/articles/active-directory-passwords-troubleshoot/)
-- [了解详细信息](/documentation/articles/active-directory-passwords-learn-more/)
 
 <!---HONumber=Mooncake_0327_2017-->
 <!---Update_Description: link update -->

@@ -147,7 +147,6 @@
 | Exchange 混合部署 |Exchange 混合部署功能使 Exchange 邮箱能够在本地和 Office 365 中共存。Azure AD Connect 将特定的[属性](/documentation/articles/active-directory-aadconnectsync-attributes-synchronized/#exchange-hybrid-writeback/)集从 Azure AD 同步回本地目录。 |
 | Azure AD 应用程序和属性筛选 |通过启用 Azure AD 应用和属性筛选，可以定制同步的属性集。此选项将在向导中额外添加两个配置页。有关详细信息，请参阅 [Azure AD 应用程序和属性筛选](#azure-ad-app-and-attribute-filtering)。 |
 | 密码同步 |如果选择了联合作为登录解决方案，则可以启用此选项。然后，可将密码同步用作备份选项。若要了解其他信息，请参阅[密码同步](/documentation/articles/active-directory-aadconnectsync-implement-password-synchronization/)。</br></br>如果选择了直通身份验证，则默认情况下启用此选项，以确保支持旧客户端，并将其作为备用选项。若要了解其他信息，请参阅[密码同步](/documentation/articles/active-directory-aadconnectsync-implement-password-synchronization/)。|
-| 密码写回 |通过启用密码写回，源自 Azure AD 的密码更改将写回到本地目录。若要了解详细信息，请参阅[密码管理入门](/documentation/articles/active-directory-passwords-getting-started/)。 |
 | 组写回 |如果你使用了“Office 365 组”功能，则可以在本地 Active Directory 中呈现这些组。仅当本地 Active Directory 中存在 Exchange 时，才可以使用此选项。若要了解详细信息，请参阅[组写回](/documentation/articles/active-directory-aadconnect-feature-preview/#group-writeback/)。 |
 | 目录扩展属性同步 |通过启用目录扩展属性同步，可将指定的属性同步到 Azure AD。若要了解详细信息，请参阅[目录扩展](/documentation/articles/active-directory-aadconnectsync-feature-directory-extensions/)。 |
 

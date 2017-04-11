@@ -88,8 +88,6 @@ Azure AD Connect 随附了多个可以选择启用或已按默认启用的功能
 
 [密码同步](/documentation/articles/active-directory-aadconnectsync-implement-password-synchronization/)可将 Active Directory 中的密码哈希同步到 Azure AD。最终用户可以在本地与云中使用相同的密码，但只需在一个位置管理此密码。由于它使用本地 Active Directory，因此用户还可以使用自己的密码策略。
 
-[密码写回](/documentation/articles/active-directory-passwords-getting-started/)可让用户在云中更改和重置其密码，及应用本地密码策略。
-
 [防止意外删除](/documentation/articles/active-directory-aadconnectsync-feature-prevent-accidental-deletes/)功能默认为打开，它可以保护云目录，避免同时进行多次删除。默认情况下，每运行一次可以进行 500 次删除。可以根据组织大小更改此设置。
 
 使用快速设置安装时，将默认启用[自动升级](/documentation/articles/active-directory-aadconnect-feature-automatic-upgrade/)，确保 Azure AD Connect 始终保持最新版本。
@@ -99,7 +97,6 @@ Azure AD Connect 随附了多个可以选择启用或已按默认启用的功能
 | --- | --- |
 |配置筛选 | [Azure AD Connect 同步：配置筛选](/documentation/articles/active-directory-aadconnectsync-configure-filtering/)|
 |密码同步 | [Azure AD Connect 同步：实现密码同步](/documentation/articles/active-directory-aadconnectsync-implement-password-synchronization/)|
-|密码写回 | [密码管理入门](/documentation/articles/active-directory-passwords-getting-started/)|
 |防止意外删除 | [Azure AD Connect 同步：防止意外删除](/documentation/articles/active-directory-aadconnectsync-feature-prevent-accidental-deletes/)|
 |自动升级 | [Azure AD Connect：自动升级](/documentation/articles/active-directory-aadconnect-feature-automatic-upgrade/)|
 

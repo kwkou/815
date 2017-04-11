@@ -38,7 +38,7 @@
 |:---:| --- |
 | 联合单一登录 |[基于 SAML 的单一登录疑难解答](/documentation/articles/active-directory-saml-debugging/) |
 | 基于密码的单一登录 | Internet Explorer 访问面板扩展疑难解答 |
-| 本地 AD 与 Azure AD 之间的单一登录 |[密码同步疑难解答](/documentation/articles/active-directory-aadconnectsync-implement-password-synchronization/#troubleshooting-password-synchronization/)<br /><br />[密码写回疑难解答](/documentation/articles/active-directory-passwords-troubleshoot/#troubleshoot-password-writeback/) |
+| 本地 AD 与 Azure AD 之间的单一登录 |[密码同步疑难解答](/documentation/articles/active-directory-aadconnectsync-implement-password-synchronization/#troubleshooting-password-synchronization/) |
 
 ## 单一登录 (SSO)
 ### 联合单一登录：使用一个标识登录多个应用程序
@@ -76,7 +76,6 @@
 | Azure AD Connect 中提供的单一登录选项概述，以及管理混合环境的相关信息 |[Azure AD Connect 中的用户登录选项](/documentation/articles/active-directory-aadconnect-user-signin/) |
 | 同时使用本地 Active Directory 和 Azure Active Directory 管理环境的一般指导 | [将本地标识与 Azure Active Directory 集成](/documentation/articles/active-directory-aadconnect/) |
 | 有关使用密码同步启用 SSO 的指导 |[使用 Azure AD Connect 实现密码同步](/documentation/articles/active-directory-aadconnectsync-implement-password-synchronization/)<br /><br />[密码同步疑难解答](https://support.microsoft.com/zh-cn/kb/2855271) |
-| 有关使用密码写回启用 SSO 的指导 |[Azure AD 中的密码管理入门](/documentation/articles/active-directory-passwords-getting-started/)<br /><br />[密码写回疑难解答](/documentation/articles/active-directory-passwords-troubleshoot/#troubleshoot-password-writeback/) |
 | 有关使用第三方标识提供程序启用 SSO 的指南 |[可用于启用单一登录的兼容第三方标识提供程序列表](https://aka.ms/ssoproviders) |
 
 Azure AD Connect 适用于[所有版本的 Azure Active Directory](/pricing/details/identity/)。Azure AD 自助密码重置适用于 [Azure AD 基本版](/pricing/details/identity/)和 [Azure AD 高级版](/pricing/details/identity/)。对本地 AD 进行密码写回是一项 [Azure AD 高级版](/pricing/details/identity/)功能。

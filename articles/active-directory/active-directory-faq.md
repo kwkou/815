@@ -98,19 +98,11 @@ Azure AD 提供另一组管理员角色来管理与目录和标识相关的功�
 
 **答：**无需将 Active Directory 密码同步到 Azure AD 即可启用写回。在联合环境中，Azure AD 单一登录 (SSO) 依赖本地目录对用户进行身份验证。在这种情况下，并不需要在 Azure AD 中跟踪本地密码。
 
-- - -
-**问：需要多长时间才能将密码写回到 Active Directory 本地？**
 
-**答：**密码写回实时运行。
 
-若要了解详细信息，请参阅[密码管理入门](/documentation/articles/active-directory-passwords-getting-started/)。
 
-- - -
-**问：是否可以对管理员管理的密码使用密码写回？**
 
-**答：**可以。如果已启用密码写回，管理员执行的密码操作将写回到本地环境。
 
-有关密码相关问题的详细解答，请参阅[密码管理常见问题](/documentation/articles/active-directory-passwords-faq/)。
 - - -
 **问：如果尝试更改 Office 365/Azure AD 密码时忘记了现有的密码，该怎么办？**
 

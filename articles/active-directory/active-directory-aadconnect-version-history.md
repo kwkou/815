@@ -200,10 +200,6 @@ Azure Active Directory 团队会定期更新 Azure AD Sync 的新特性和功能
 - 可以禁用同步规则。
 - 可以将“AuthoritativeNull”定义为同步规则中的新文本。
 
-**新的预览功能：**
-
-- 支持 [Azure AD 域服务](/documentation/articles/active-directory-passwords-getting-started/#enable-users-to-reset-or-change-their-ad-passwords/)密码同步。
-
 **新的受支持方案：**
 
 - 支持多个本地 Exchange 组织。有关详细信息，请参阅[包含多个 Active Directory 林的混合部署](https://technet.microsoft.com/zh-cn/library/jj873754.aspx)。
