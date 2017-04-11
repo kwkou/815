@@ -193,7 +193,7 @@ Service Fabric 使用 X.509 证书保护群集，提供应用程序安全功能�
 	Value : /subscriptions/<guid>/resourceGroups/chinaeast-mykeyvault/providers/Microsoft.KeyVault/vaults/mychinaeastvault
 
 	Name  : CertificateURL
-	Value : https://mychinaeastvault.vault.azure.net:443/secrets/mycert/4d087088df974e869f1c0978cb100e47
+	Value : https://mychinaeastvault.vault.azure.cn:443/secrets/mycert/4d087088df974e869f1c0978cb100e47
 
 
 **记下上面的三个字符串 - CertificateThumbprint、SourceVault 和 CertificateURL。** 需要使用这些字符串来设置安全的 Service Fabric 群集，用于应用程序安全的任何应用程序证书也需要这些字符串。如果没有在某个位置保存这三个字符串，很难在稍后通过查询 keyvault 获取它们。
