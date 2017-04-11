@@ -1,6 +1,6 @@
 <properties
-    pageTitle="使用 PlayReady 和/或 Widevine 动态通用加密 | Azure"
-    description="Azure 媒体服务允许传送受 Microsoft PlayReady DRM 保护的 MPEG-DASH 流、平滑流式处理流和 HTTP 实时流式处理 (HLS) 流。它还允许你传送通过 Widevine DRM 加密的 DASH。本主题说明如何使用 PlayReady 和 Widevine DRM 动态加密。"
+    pageTitle="使用 PlayReady 动态通用加密 | Azure"
+    description="Azure 媒体服务允许传送受 Microsoft PlayReady DRM 保护的 MPEG-DASH 流、平滑流式处理流和 HTTP 实时流式处理 (HLS) 流。本主题说明如何使用 PlayReady DRM 动态加密。"
     services="media-services"
     documentationcenter=""
     author="juliako"
@@ -14,30 +14,28 @@
     ms.devlang="na"
     ms.topic="get-started-article"
     ms.date="01/05/2017"
-    wacn.date="02/24/2017"
+    wacn.date="04/10/2017"
     ms.author="juliako" />  
 
 
 
-#使用 PlayReady 和/或 Widevine DRM 动态通用加密
+#使用 PlayReady DRM 动态通用加密
 
 > [AZURE.SELECTOR]
 - [.NET](/documentation/articles/media-services-protect-with-drm/)
 - [Java](https://github.com/southworkscom/azure-sdk-for-media-services-java-samples)
 - [PHP](https://github.com/Azure/azure-sdk-for-php/tree/master/examples/MediaServices)
 
-Azure 媒体服务允许传送受 [Microsoft PlayReady DRM](https://www.microsoft.com/playready/overview/) 保护的 MPEG-DASH 流、平滑流式处理流和 HTTP 实时流式处理 (HLS) 流。它还允许传送通过 Widevine DRM 许可证加密的 DASH 流。PlayReady 和 Widevine 都是按通用加密 (ISO/IEC 23001-7 CENC) 规范加密的。可通过 [AMS .NET SDK](https://www.nuget.org/packages/windowsazure.mediaservices/)（从版本 3.5.1 开始）或 REST API 来配置 AssetDeliveryConfiguration 以使用 Widevine。
+Azure 媒体服务允许传送受 [Microsoft PlayReady DRM](https://www.microsoft.com/playready/overview/) 保护的 MPEG-DASH 流、平滑流式处理流和 HTTP 实时流式处理 (HLS) 流。PlayReady 是按通用加密 (ISO/IEC 23001-7 CENC) 规范加密的。
 
-媒体服务提供传送 PlayReady 和 Widevine DRM 许可证的服务。媒体服务还提供用于配置所需权限和限制的 API，这样当用户播放受保护的内容时，PlayReady 或者 Widevine DRM 运行时便会强制实施这些权限和限制。当用户请求受 DRM 保护的内容时，播放器应用程序将从 AMS 许可证服务请求许可证。如果播放器已获授权，AMS 许可证服务将向播放器颁发许可证。PlayReady 或者 Widevine 许可证包含客户端播放器用来对内容进行解密和流式传输的解密密钥。
+媒体服务提供传送 PlayReady DRM 许可证的服务。媒体服务还提供用于配置所需权限和限制的 API，这样当用户播放受保护的内容时，PlayReady DRM 运行时便会强制实施这些权限和限制。当用户请求受 DRM 保护的内容时，播放器应用程序将从 AMS 许可证服务请求许可证。如果播放器已获授权，AMS 许可证服务将向播放器颁发许可证。PlayReady 许可证包含客户端播放器用来对内容进行解密和流式传输的解密密钥。
 
-
-还可以通过以下 AMS 合作伙伴来交付 Widevine 许可证：[EZDRM](http://ezdrm.com/)、[castLabs](http://castlabs.com/company/partners/azure/)。有关详细信息，请参阅：与 [castLabs](/documentation/articles/media-services-castlabs-integration/) 集成。
 
 媒体服务支持通过多种方式对发出密钥请求的用户进行授权。内容密钥授权策略可能受到一种或多种授权限制：开放或令牌限制。令牌限制策略必须附带由安全令牌服务 (STS) 颁发的令牌。媒体服务支持采用[简单 Web 令牌](https://msdn.microsoft.com/zh-cn/library/gg185950.aspx#BKMK_2) (SWT) 格式和 [JSON Web 令牌](https://msdn.microsoft.com/zh-cn/library/gg185950.aspx#BKMK_3) (JWT) 格式的令牌。有关详细信息，请参阅“配置内容密钥授权策略”。
 
 为了充分利用动态加密，资产必须包含一组多码率 MP4 文件或多码率平滑流源文件。还需要配置资产的传送策略（本主题稍后所述）。然后，根据流式处理 URL 中指定的格式，按需流式处理服务器将确保使用选定的协议来传送流。因此，只需以单一存储格式存储文件并为其付费，然后媒体服务就会基于客户端的每个请求构建并提供相应的 HTTP 响应。
 
-开发应用程序以传送受多个 DRM（例如 PlayReady 和 Widevine）保护的媒体的开发人员可以参考本主题。本主题介绍如何使用授权策略来配置 PlayReady 许可证传送服务，确保只有经过授权的客户端才能接收 PlayReady 或 Widevine 许可证。此外，还介绍如何通过 DASH 使用 PlayReady 或 Widevine DRM 进行动态加密。
+开发应用程序以传送受多个 DRM（例如 PlayReady）保护的媒体的开发人员可以参考本主题。本主题介绍如何使用授权策略来配置 PlayReady 许可证传送服务，确保只有经过授权的客户端才能接收 PlayReady 许可证。此外，还介绍如何通过 DASH 使用 PlayReady DRM 进行动态加密。
 
 >[AZURE.NOTE]
 创建 AMS 帐户时，系统会将**默认**流式处理终结点以“已停止”状态添加到用户的帐户。若要开始对内容进行流式处理并利用动态打包和动态加密功能，必须确保要从其流式获取内容的流式处理终结点处于“正在运行”状态。
@@ -55,8 +53,8 @@ Azure 媒体服务允许传送受 [Microsoft PlayReady DRM](https://www.microsof
 1. 创建内容密钥并将其与编码资产相关联。在媒体服务中，内容密钥包含资产的加密密钥。
 1. 配置内容密钥授权策略。必须配置内容密钥授权策略，并且客户端必须遵守该策略，才能将内容密钥传送到客户端。
 
-在创建内容密钥授权策略时，需要指定以下信息：传送方法（PlayReady 或 Widevine）、限制（开放或令牌），以及用于定义如何将密钥传送到客户端的密钥传送类型的具体信息（[PlayReady](/documentation/articles/media-services-playready-license-template-overview/) 或 [Widevine](/documentation/articles/media-services-widevine-license-template-overview/) 许可证模板）。
-1. 为资产配置传送策略。传送策略配置包括：传送协议（例如 MPEG DASH、HLS、平滑流式处理或全部）、动态加密类型（例如常用加密）、PlayReady 或 Widevine 许可证获取 URL。
+在创建内容密钥授权策略时，需要指定以下信息：传送方法（PlayReady）、限制（开放或令牌），以及用于定义如何将密钥传送到客户端的密钥传送类型的具体信息（[PlayReady](/documentation/articles/media-services-playready-license-template-overview/) 许可证模板）。
+1. 为资产配置传送策略。传送策略配置包括：传送协议（例如 MPEG DASH、HLS、平滑流式处理或全部）、动态加密类型（例如常用加密）、PlayReady 许可证获取 URL。
 
 可将不同的策略应用到同一资产上的每个协议。例如，可以将 PlayReady 加密应用到平滑流/DASH，并将 AES 信封应用到 HLS。将阻止流式处理传送策略中未定义的任何协议（例如，添加仅将 HLS 指定为协议的单个策略）。如果你根本没有定义任何传送策略，则情况不是这样。此时，将允许所有明文形式的协议。
 1. 创建 OnDemand 定位符以获取流式处理 URL。
@@ -73,7 +71,6 @@ Azure 媒体服务允许传送受 [Microsoft PlayReady DRM](https://www.microsof
 
 如果添加或更新资产的传送策略，则必须删除关联的定位符（如果有）并创建新定位符。
 
-使用 Widevine 和 Azure 媒体服务加密时的限制：目前不支持使用多个内容密钥。
 
 ##创建资产并将文件上传到资产
 
@@ -140,7 +137,7 @@ Azure 媒体服务允许传送受 [Microsoft PlayReady DRM](https://www.microsof
 ##<a id="example"></a>示例
 
 
-以下示例演示了适用于 .Net 的 Azure 媒体服务 SDK 版本 3.5.2 中引入的功能（具体而言，定义 Widevine 许可证模板并从 Azure 媒体服务请求 Widevine 许可证的功能）。以下 Nuget 包命令用于安装该包：
+以下示例演示了适用于 .Net 的 Azure 媒体服务 SDK 版本 3.5.2 中引入的功能。以下 Nuget 包命令用于安装该包：
 
 	PM> Install-Package windowsazure.mediaservices -Version 3.5.2
 
@@ -178,7 +175,6 @@ Azure 媒体服务允许传送受 [Microsoft PlayReady DRM](https://www.microsof
 		using Microsoft.WindowsAzure.MediaServices.Client;
 		using Microsoft.WindowsAzure.MediaServices.Client.ContentKeyAuthorization;
 		using Microsoft.WindowsAzure.MediaServices.Client.DynamicEncryption;
-		using Microsoft.WindowsAzure.MediaServices.Client.Widevine;
 		using Newtonsoft.Json;
 		
 		namespace DynamicEncryptionWithDRM
@@ -272,7 +268,7 @@ Azure 媒体服务允许传送受 [Microsoft PlayReady DRM](https://www.microsof
 		            }
 		
 		            // You can use the http://amsplayer.azurewebsites.net/azuremediaplayer.html player to test streams.
-		            // Note that DASH works on IE 11 (via PlayReady), Edge (via PlayReady), Chrome (via Widevine).
+		            // Note that DASH works on IE 11 (via PlayReady), Edge (via PlayReady).
 		             
 		            string url = GetStreamingOriginLocator(encodedAsset);
 		            Console.WriteLine("Encrypted DASH URL: {0}/manifest(format=mpd-time-csf)", url);
@@ -374,20 +370,13 @@ Azure 媒体服务允许传送受 [Microsoft PlayReady DRM](https://www.microsof
 		                }
 		            };
 		
-		            // Configure PlayReady and Widevine license templates.
+		            // Configure PlayReady license templates.
 		            string PlayReadyLicenseTemplate = ConfigurePlayReadyLicenseTemplate();
-		
-		            string WidevineLicenseTemplate = ConfigureWidevineLicenseTemplate();
 		
 		            IContentKeyAuthorizationPolicyOption PlayReadyPolicy =
 		                _context.ContentKeyAuthorizationPolicyOptions.Create("",
 		                    ContentKeyDeliveryType.PlayReadyLicense,
 		                        restrictions, PlayReadyLicenseTemplate);
-		
-		            IContentKeyAuthorizationPolicyOption WidevinePolicy =
-		                _context.ContentKeyAuthorizationPolicyOptions.Create("", 
-		                    ContentKeyDeliveryType.Widevine, 
-		                    restrictions, WidevineLicenseTemplate);
 		
 		            IContentKeyAuthorizationPolicy contentKeyAuthorizationPolicy = _context.
 		                        ContentKeyAuthorizationPolicies.
@@ -396,7 +385,6 @@ Azure 媒体服务允许传送受 [Microsoft PlayReady DRM](https://www.microsof
 		
 		
 		            contentKeyAuthorizationPolicy.Options.Add(PlayReadyPolicy);
-		            contentKeyAuthorizationPolicy.Options.Add(WidevinePolicy);
 		            // Associate the content key authorization policy with the content key.
 		            contentKey.AuthorizationPolicyId = contentKeyAuthorizationPolicy.Id;
 		            contentKey = contentKey.UpdateAsync().Result;
@@ -416,20 +404,13 @@ Azure 媒体服务允许传送受 [Microsoft PlayReady DRM](https://www.microsof
 		                }
 		            };
 		
-		            // Configure PlayReady and Widevine license templates.
+		            // Configure PlayReady license templates.
 		            string PlayReadyLicenseTemplate = ConfigurePlayReadyLicenseTemplate();
-		
-		            string WidevineLicenseTemplate = ConfigureWidevineLicenseTemplate();
 		
 		            IContentKeyAuthorizationPolicyOption PlayReadyPolicy =
 		                _context.ContentKeyAuthorizationPolicyOptions.Create("Token option",
 		                    ContentKeyDeliveryType.PlayReadyLicense,
 		                        restrictions, PlayReadyLicenseTemplate);
-		
-		            IContentKeyAuthorizationPolicyOption WidevinePolicy =
-		                _context.ContentKeyAuthorizationPolicyOptions.Create("Token option",
-		                    ContentKeyDeliveryType.Widevine,
-		                        restrictions, WidevineLicenseTemplate);
 		
 		            IContentKeyAuthorizationPolicy contentKeyAuthorizationPolicy = _context.
 		                        ContentKeyAuthorizationPolicies.
@@ -437,7 +418,6 @@ Azure 媒体服务允许传送受 [Microsoft PlayReady DRM](https://www.microsof
 		                        Result;
 		
 		            contentKeyAuthorizationPolicy.Options.Add(PlayReadyPolicy);
-		            contentKeyAuthorizationPolicy.Options.Add(WidevinePolicy);
 		
 		            // Associate the content key authorization policy with the content key
 		            contentKey.AuthorizationPolicyId = contentKeyAuthorizationPolicy.Id;
@@ -505,55 +485,15 @@ Azure 媒体服务允许传送受 [Microsoft PlayReady DRM](https://www.microsof
 		            return MediaServicesLicenseTemplateSerializer.Serialize(responseTemplate);
 		        }
 		
-		
-		        private static string ConfigureWidevineLicenseTemplate()
-		        {
-		            var template = new WidevineMessage
-		            {
-		                allowed_track_types = AllowedTrackTypes.SD_HD,
-		                content_key_specs = new[]
-		                {
-		                    new ContentKeySpecs
-		                    {
-		                        required_output_protection = new RequiredOutputProtection { hdcp = Hdcp.HDCP_NONE},
-		                        security_level = 1,
-		                        track_type = "SD"
-		                    }
-		                },
-		                policy_overrides = new
-		                {
-		                    can_play = true,
-		                    can_persist = true,
-		                    can_renew = false
-		                }
-		            };
-		
-		            string configuration = JsonConvert.SerializeObject(template);
-		            return configuration;
-		        }
-		
 		        static public void CreateAssetDeliveryPolicy(IAsset asset, IContentKey key)
 		        {
 		            // Get the PlayReady license service URL.
 		            Uri acquisitionUrl = key.GetKeyDeliveryUrl(ContentKeyDeliveryType.PlayReadyLicense);
-			    
-			        // GetKeyDeliveryUrl for Widevine attaches the KID to the URL.
-			        // For example: https://amsaccount1.keydelivery.mediaservices.chinacloudapi.cn/Widevine/?KID=268a6dcb-18c8-4648-8c95-f46429e4927c.  
-			        // The WidevineBaseLicenseAcquisitionUrl (used below) also tells Dynamaic Encryption 
-			        // to append /? KID =< keyId > to the end of the url when creating the manifest.
-			        // As a result Widevine license acquisition URL will have KID appended twice, 
-			        // so we need to remove the KID that in the URL when we call GetKeyDeliveryUrl.
-			
-		            Uri widevineUrl = key.GetKeyDeliveryUrl(ContentKeyDeliveryType.Widevine);
-		            UriBuilder uriBuilder = new UriBuilder(widevineUrl);
-		            uriBuilder.Query = String.Empty;
-		            widevineUrl = uriBuilder.Uri;
 		
 		            Dictionary<AssetDeliveryPolicyConfigurationKey, string> assetDeliveryPolicyConfiguration =
 		                new Dictionary<AssetDeliveryPolicyConfigurationKey, string>
 		                {
-		                    {AssetDeliveryPolicyConfigurationKey.PlayReadyLicenseAcquisitionUrl, acquisitionUrl.ToString()},
-		                    {AssetDeliveryPolicyConfigurationKey.WidevineBaseLicenseAcquisitionUrl, widevineUrl.ToString()}
+		                    {AssetDeliveryPolicyConfigurationKey.PlayReadyLicenseAcquisitionUrl, acquisitionUrl.ToString()}
 		
 		                };
 		
@@ -624,13 +564,6 @@ Azure 媒体服务允许传送受 [Microsoft PlayReady DRM](https://www.microsof
 		}
 
 
-
-
-##另请参阅
-
-
-
-[使用 AMS 配置 Widevine 打包](http://mingfeiy.com/how-to-configure-widevine-packaging-with-azure-media-services)
 
 
 <!---HONumber=Mooncake_0220_2017-->

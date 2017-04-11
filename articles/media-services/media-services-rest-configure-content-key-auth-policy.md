@@ -14,7 +14,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="01/23/2017"
-    wacn.date="03/10/2017"
+    wacn.date="04/10/2017"
     ms.author="juliako" />
 
 #动态加密：配置内容密钥授权策略
@@ -23,7 +23,7 @@
 
 ##概述
 
-借助 Azure 媒体服务，你可以传送使用高级加密标准 (AES)（使用 128 位加密密钥）和 PlayReady 或 Widevine DRM 加密的内容。媒体服务还提供了用于向已授权客户端传送密钥和 PlayReady/Widevine 许可证的服务。
+借助 Azure 媒体服务，你可以传送使用高级加密标准 (AES)（使用 128 位加密密钥）和 PlayReady DRM 加密的内容。媒体服务还提供了用于向已授权客户端传送密钥和 PlayReady 许可证的服务。
 
 如果你需要媒体服务来加密资产，则需要将加密密钥（**CommonEncryption** 或 **EnvelopeEncryption**）与资产相关联（如[此处](/documentation/articles/media-services-rest-create-contentkey/)所述），同时配置密钥的授权策略（如本文所述）。
 
@@ -463,8 +463,7 @@
     {
         None = 0,
         PlayReadyLicense = 1,
-        BaselineHttp = 2,
-        Widevine = 3
+        BaselineHttp = 2
     }
 
 

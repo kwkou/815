@@ -14,7 +14,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="01/05/2017"
-    wacn.date="02/24/2017"
+    wacn.date="04/10/2017"
     ms.author="juliako;mingfeiy" />
 
 # 动态加密：配置内容密钥授权策略
@@ -23,9 +23,9 @@
 
 ##概述
 
-Azure 媒体服务允许传送受高级加密标准 (AES)（使用 128 位加密密钥）或受 [Microsoft PlayReady DRM](https://www.microsoft.com/playready/overview/) 保护的 MPEG-DASH 流、平滑流式处理流和 HTTP 实时流式处理 (HLS) 流。AMS 还允许传送通过 Widevine DRM 加密的 DASH 流。PlayReady 和 Widevine 都是按通用加密 (ISO/IEC 23001-7 CENC) 规范加密的。
+Azure 媒体服务允许传送受高级加密标准 (AES)（使用 128 位加密密钥）或受 [Microsoft PlayReady DRM](https://www.microsoft.com/playready/overview/) 保护的 MPEG-DASH 流、平滑流式处理流和 HTTP 实时流式处理 (HLS) 流。PlayReady 是按通用加密 (ISO/IEC 23001-7 CENC) 规范加密的。
 
-媒体服务还提供了**密钥\\许可证传送服务**，客户端可从中获取 AES 密钥或 PlayReady/Widevine 许可证，以用于播放加密的内容。
+媒体服务还提供了**密钥\\许可证传送服务**，客户端可从中获取 AES 密钥或 PlayReady 许可证，以用于播放加密的内容。
 
 如果要使用媒体服务来加密资产，需要将加密密钥（**CommonEncryption** 或 **EnvelopeEncryption**）与资产相关联（如[此处](/documentation/articles/media-services-dotnet-create-contentkey/)所述），并配置密钥的授权策略（如本文所述）。
 
@@ -239,7 +239,7 @@ Azure 媒体服务允许传送受高级加密标准 (AES)（使用 128 位加密
 
 使用 PlayReady 保护内容时，需要在授权策略中指定的项目之一是用于定义 [PlayReady 许可证模板](/documentation/articles/media-services-playready-license-template-overview/)的 XML 字符串。在适用于 .NET 的媒体服务 SDK 中，**PlayReadyLicenseResponseTemplate** 和 **PlayReadyLicenseTemplate** 类可帮助定义 PlayReady 许可证模板。
 
-[本主题](/documentation/articles/media-services-protect-with-drm/)演示如何使用 **PlayReady** 和 **Widevine** 加密你的内容。
+[本主题](/documentation/articles/media-services-protect-with-drm/)演示如何使用 **PlayReady** 加密你的内容。
 
 ###开放限制
 	
@@ -414,8 +414,7 @@ Azure 媒体服务允许传送受高级加密标准 (AES)（使用 128 位加密
     {
       None = 0,
       PlayReadyLicense = 1,
-      BaselineHttp = 2,
-      Widevine = 3
+      BaselineHttp = 2
     }
 
 ###<a id="TokenType"></a>TokenType

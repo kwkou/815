@@ -14,7 +14,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="01/05/2017"
-    wacn.date="02/24/2017"
+    wacn.date="04/10/2017"
     ms.author="juliako" />  
 
 
@@ -273,14 +273,7 @@ MPEG DASH
 	{"Name":"AssetDeliveryPolicy","AssetDeliveryProtocol":1,"AssetDeliveryPolicyType":4,"AssetDeliveryConfiguration":"[{"Key":2,"Value":"https:\\/\\/amsaccount1.keydelivery.mediaservices.chinacloudapi.cn\/PlayReady\/"}]"}
 
 
-若要使用 Widevine DRM 保护你的内容，请更新 AssetDeliveryConfiguration 值以使用 WidevineLicenseAcquisitionUrl（其值为 7），并指定许可证交付服务的 URL。可通过以下 AMS 合作伙伴来帮助交付 Widevine 许可证：[EZDRM](http://ezdrm.com/)、[castLabs](http://castlabs.com/company/partners/azure/)
 
-例如：
- 
-	
-	{"Name":"AssetDeliveryPolicy","AssetDeliveryProtocol":2,"AssetDeliveryPolicyType":4,"AssetDeliveryConfiguration":"[{"Key":7,"Value":"https:\\/\\/example.net\/WidevineLicenseAcquisition\/"}]"}
-
->[AZURE.NOTE]使用 Widevine 加密时，只能使用 DASH 传送。请确保在资产传送协议中指定 DASH (2)。
   
 ###将资产与资产传送策略相链接
 
@@ -382,13 +375,7 @@ MPEG DASH
         /// Use MPEG Baseline HTTP key protocol.
         ///
         </summary>
-        BaselineHttp = 2,
-
-        /// <summary>
-        /// Use Widevine License acquistion protocol
-        ///
-        </summary>
-        Widevine = 3
+        BaselineHttp = 2
 
     }
 
@@ -434,12 +421,7 @@ MPEG DASH
         /// <summary>
         /// The initialization vector to use for envelope encryption.
         /// </summary>
-        EnvelopeEncryptionIV,
-
-        /// <summary>
-        /// Widevine DRM acquisition url
-        /// </summary>
-        WidevineLicenseAcquisitionUrl
+        EnvelopeEncryptionIV
     }
 
 <!---HONumber=Mooncake_0220_2017-->

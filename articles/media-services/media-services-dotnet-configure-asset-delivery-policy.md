@@ -14,7 +14,7 @@
     ms.devlang="dotnet"
     ms.topic="article"
     ms.date="01/05/2017"
-    wacn.date="02/24/2017"
+    wacn.date="04/10/2017"
     ms.author="juliako;mingfeiy" />
 
 #使用 .NET SDK 配置资产传送策略
@@ -107,32 +107,19 @@ MPEG DASH
             assetDeliveryPolicy.AssetDeliveryPolicyType);
     }
 
-Azure 媒体服务还允许你添加 Widevine 加密。以下示例演示将 PlayReady 和 Widevine 添加到资产传送策略。
+以下示例演示将 PlayReady 添加到资产传送策略。
 
 
     static public void CreateAssetDeliveryPolicy(IAsset asset, IContentKey key)
     {
     	// Get the PlayReady license service URL.
         Uri acquisitionUrl = key.GetKeyDeliveryUrl(ContentKeyDeliveryType.PlayReadyLicense);
-        
 
-        // GetKeyDeliveryUrl for Widevine attaches the KID to the URL.
-        // For example: https://amsaccount1.keydelivery.mediaservices.chinacloudapi.cn/Widevine/?KID=268a6dcb-18c8-4648-8c95-f46429e4927c.  
-        // The WidevineBaseLicenseAcquisitionUrl (used below) also tells Dynamaic Encryption 
-        // to append /? KID =< keyId > to the end of the url when creating the manifest.
-        // As a result Widevine license acquisition URL will have KID appended twice, 
-        // so we need to remove the KID that in the URL when we call GetKeyDeliveryUrl.
-
-        Uri widevineUrl = key.GetKeyDeliveryUrl(ContentKeyDeliveryType.Widevine);
-        UriBuilder uriBuilder = new UriBuilder(widevineUrl);
-        uriBuilder.Query = String.Empty;
-        widevineUrl = uriBuilder.Uri;
 
         Dictionary<AssetDeliveryPolicyConfigurationKey, string> assetDeliveryPolicyConfiguration =
             new Dictionary<AssetDeliveryPolicyConfigurationKey, string>
         {
-            {AssetDeliveryPolicyConfigurationKey.PlayReadyLicenseAcquisitionUrl, acquisitionUrl.ToString()},
-            {AssetDeliveryPolicyConfigurationKey.WidevineLicenseAcquisitionUrl, widevineUrl.ToString()}
+            {AssetDeliveryPolicyConfigurationKey.PlayReadyLicenseAcquisitionUrl, acquisitionUrl.ToString()}
 
         };
 
@@ -148,7 +135,6 @@ Azure 媒体服务还允许你添加 Widevine 加密。以下示例演示将 Pla
 
     }
 
->[AZURE.NOTE]使用 Widevine 加密时，只能使用 DASH 传送。请确保在资产传送协议中指定 DASH。
 
 
 ##DynamicEnvelopeEncryption 资产传送策略 
@@ -288,11 +274,6 @@ Azure 媒体服务还允许你添加 Widevine 加密。以下示例演示将 Pla
         /// </summary>
         BaselineHttp = 2,
 
-        /// <summary>
-        /// Use Widevine License acquistion protocol
-        ///
-        </summary>
-        Widevine = 3
 
     }
 
@@ -338,10 +319,6 @@ Azure 媒体服务还允许你添加 Widevine 加密。以下示例演示将 Pla
         /// </summary>
         EnvelopeEncryptionIV,
 
-        /// <summary>
-        /// Widevine DRM acquisition url
-        /// </summary>
-        WidevineLicenseAcquisitionUrl
     }
 
 <!---HONumber=Mooncake_0220_2017-->

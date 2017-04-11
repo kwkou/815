@@ -14,7 +14,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="01/23/2017"
-    wacn.date="03/10/2017"
+    wacn.date="04/10/2017"
     ms.author="juliako" />  
 
 
@@ -111,7 +111,7 @@
 	
 	>[AZURE.NOTE]如果要传送使用 FairPlay + 另一个 DRM 加密的流，则必须配置单独的传送策略
 	>
-	>- 一个 IAssetDeliveryPolicy 用来将 DASH 配置为 CENC（PlayReady 和 WideVine）并将平滑配置为 PlayReady。
+	>- 一个 IAssetDeliveryPolicy 用来将 DASH 配置为 CENC（PlayReady）并将平滑配置为 PlayReady。
 	>- 另一个 IAssetDeliveryPolicy 用来配置 HLS 的 FairPlay
 
 1. 创建 OnDemand 定位符以获取流式处理 URL。
@@ -134,7 +134,7 @@
 - 如果只将一个加密应用到资产，则无需在 URL 中指定加密类型。
 - 加密类型区分大小写。
 - 可以指定以下加密类型：
-	- **cenc**：通用加密（Playready 或 Widevine）
+	- **cenc**：通用加密（Playready）
 	- **cbc aapl**：Fairplay
 	- **cbc**：AES 信封加密。
 

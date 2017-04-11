@@ -14,14 +14,14 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="01/23/2017"
-    wacn.date="03/10/2017"
+    wacn.date="04/10/2017"
     ms.author="juliako" />  
 
 
 #保护内容概述
 
 
-使用 Azure 媒体服务，可以在媒体从离开计算机到存储、处理和传送的整个过程中确保其安全。借助媒体服务，可以传送使用高级加密标准（AES，使用 128 位加密密钥）或任何主要 DRM（Microsoft PlayReady、Google Widevine 和 Apple FairPlay）动态加密的实时和点播内容。媒体服务还提供用于向已授权客户端传送 AES 密钥和 DRM（PlayReady、Widevine 和 FairPlay）许可证的服务。
+使用 Azure 媒体服务，可以在媒体从离开计算机到存储、处理和传送的整个过程中确保其安全。借助媒体服务，可以传送使用高级加密标准（AES，使用 128 位加密密钥）或任何主要 DRM（Microsoft PlayReady 和 Apple FairPlay）动态加密的实时和点播内容。媒体服务还提供用于向已授权客户端传送 AES 密钥和 DRM（PlayReady 和 FairPlay）许可证的服务。
 
 下图演示 AMS 支持的内容保护工作流。
 
@@ -35,7 +35,7 @@
 
 ##动态加密
 
-Azure 媒体服务支持传送使用 AES 明文密钥和 DRM 加密（Microsoft PlayReady、Google Widevine 和 Apple FairPlay）动态加密的内容。
+Azure 媒体服务支持传送使用 AES 明文密钥和 DRM 加密（Microsoft PlayReady 和 Apple FairPlay）动态加密的内容。
 
 当前可以加密以下流格式：HLS、MPEG DASH 和平滑流。无法加密渐进式下载。
 
@@ -66,7 +66,7 @@ Azure 媒体服务支持传送使用 AES 明文密钥和 DRM 加密（Microsoft 
 
 ##许可证和密钥传送服务
 
-媒体服务提供用于向已授权客户端传送 DRM（PlayReady、Widevine、FairPlay）许可证和 AES 明文密钥的服务。可以使用 REST API 或用于 .NET 的媒体服务 SDK 来配置许可证和密钥的授权与身份验证策略。
+媒体服务提供用于向已授权客户端传送 DRM（PlayReady、FairPlay）许可证和 AES 明文密钥的服务。可以使用 REST API 或用于 .NET 的媒体服务 SDK 来配置许可证和密钥的授权与身份验证策略。
 
 ##令牌限制
 
@@ -84,7 +84,7 @@ Azure 媒体服务支持传送使用 AES 明文密钥和 DRM 加密（Microsoft 
 - 如果只将一个加密应用到资产，则无需在 URL 中指定加密类型。
 - 加密类型区分大小写。
 - 可以指定以下加密类型：
-	- **cenc**：通用加密（Playready 或 Widevine）
+	- **cenc**：通用加密（Playready）
 	- **cbc aapl**：Fairplay
 	- **cbc**：AES 信封加密。
 
@@ -93,13 +93,12 @@ Azure 媒体服务支持传送使用 AES 明文密钥和 DRM 加密（Microsoft 
 以下主题演示如何在存储中保护内容、以动态方式传送加密的流媒体、使用 AMS 密钥/许可证传送服务
 
 - [使用 AES 进行保护](/documentation/articles/media-services-protect-with-aes128/)
-- [使用 PlayReady 和/或 Widevine 进行保护](/documentation/articles/media-services-protect-with-drm/)
+- [使用 PlayReady 进行保护](/documentation/articles/media-services-protect-with-drm/)
 - [使用 Apple FairPlay 和/或 PlayReady 流式传输受保护的 HLS 内容](/documentation/articles/media-services-protect-hls-with-fairplay/)
 
 ### 其他方案
 
 - [如何将 Azure PlayReady 许可证服务与自己的加密程序/流式处理服务器集成](http://mingfeiy.com/integrate-azure-playready-license-service-encryptorstreaming-server)。
-- [使用 castLabs 将 DRM 许可证传送到 Azure 媒体服务](/documentation/articles/media-services-castlabs-integration/)
 
 >[AZURE.NOTE]
 目前不支持使用外部 DRM 服务器（技术）并从 AMS 进行流式传输的方案。
