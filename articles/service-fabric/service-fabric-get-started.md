@@ -14,7 +14,7 @@
     ms.tgt_pltfrm="NA"
     ms.workload="NA"
     ms.date="02/14/2017"
-    wacn.date="03/03/2017"
+    wacn.date="04/11/2017"
     ms.author="ryanwi, mikhegn" />
 
 # 准备开发环境
@@ -44,20 +44,20 @@
 
 ## 安装 SDK 和工具
 ### 使用 Visual Studio 2017 RC
-Service Fabric 工具是 Visual Studio 2017 RC 中 Azure 开发和管理工作负荷的一部分。在 Visual Studio 安装过程中启用此工作负荷。此外，需要使用 Web 平台安装程序安装 Microsoft Azure Service Fabric SDK。
+Service Fabric 工具是 Visual Studio 2017 RC 中 Azure 开发和管理工作负荷的一部分。在 Visual Studio 安装过程中启用此工作负荷。此外，需要使用 Web 平台安装程序安装 Azure Service Fabric SDK。
 
 [AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-visual-studio-login-guide.md)]
 
-* [安装 Microsoft Azure Service Fabric SDK][core-sdk]
+* [安装 Azure Service Fabric SDK][core-sdk]
 
 ### 使用 Visual Studio 2015（需要安装 Visual Studio 2015 Update 2 或更高版本）
 对于 Visual Studio 2015，使用 Web 平台安装程序将 Service Fabric 工具和 SDK 一起安装：
 
-* [安装 Microsoft Azure Service Fabric SDK 和工具][full-bundle-vs2015]
+* [安装 Azure Service Fabric SDK 和工具][full-bundle-vs2015]
 
 ### 仅安装 SDK
 如果只需要 SDK，则安装此包：
-* [安装 Microsoft Azure Service Fabric SDK][core-sdk]
+* [安装 Azure Service Fabric SDK][core-sdk]
 
 > [AZURE.WARNING]
 在安装过程中使用这些启动链接，或者在 Chrome 浏览器中使用这些链接时，客户会遇到报告的错误。这些错误是 Web 平台安装程序中的已知问题，我们正在着手解决。请尝试以下解决方法：

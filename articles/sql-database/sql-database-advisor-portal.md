@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="使用 Azure 门户预览的 Azure SQL 数据库顾问 | Microsoft Azure" 
+   pageTitle="使用 Azure 门户预览的 Azure SQL 数据库顾问 | Azure" 
    description="可以在 Azure 门户预览中使用 Azure SQL 数据库顾问查看和实施为你的现有 SQL 数据库提供的建议，这些建议可以提高当前查询性能。" 
    services="sql-database" 
    documentationCenter="" 

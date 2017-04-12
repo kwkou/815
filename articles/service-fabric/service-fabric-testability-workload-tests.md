@@ -1,5 +1,5 @@
 <properties
-   pageTitle="自定义测试方案 | Microsoft Azure"
+   pageTitle="自定义测试方案 | Azure"
    description="如何针对常规/非常规故障强化你的服务。"
    services="service-fabric"
    documentationCenter=".net"

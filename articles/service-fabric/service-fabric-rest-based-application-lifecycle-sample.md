@@ -1,6 +1,6 @@
 <properties
     pageTitle="基于 REST 的应用程序生命周期示例 | Azure"
-    description="一个 Microsoft Azure Service Fabric 示例，通过使用 Service Fabric REST 接口来显示应用程序生命周期。"
+    description="一个 Azure Service Fabric 示例，通过使用 Service Fabric REST 接口来显示应用程序生命周期。"
     services="service-fabric"
     documentationcenter=".net"
     author="rwike77"

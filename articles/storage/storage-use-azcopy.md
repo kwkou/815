@@ -38,7 +38,7 @@ AzCopy 命令的基本语法是：
 
 打开一个命令窗口，然后导航到计算机上的 AzCopy 安装目录，该位置存放着可执行的 `AzCopy.exe`。如果需要，可以将 AzCopy 安装位置添加到系统路径。默认情况下，AzCopy 安装到 `%ProgramFiles(x86)%\Microsoft SDKs\Azure\AzCopy` 或 `%ProgramFiles%\Microsoft SDKs\Azure\AzCopy`。
 
-以下示例演示了将数据复制到 Microsoft Azure Blob、文件和表以及从这些位置复制数据的各种情况。请参阅 [AzCopy 参数](#azcopy-parameters)部分，了解每个示例中使用的参数的详细说明。
+以下示例演示了将数据复制到 Azure Blob、文件和表以及从这些位置复制数据的各种情况。请参阅 [AzCopy 参数](#azcopy-parameters)部分，了解每个示例中使用的参数的详细说明。
 
 ## Blob：下载
 ### 下载单个 blob

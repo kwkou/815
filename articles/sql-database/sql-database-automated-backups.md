@@ -24,7 +24,7 @@ This topic is annotated with TEMPLATE guidelines for FEATURE TOPICS.
 Metadata guidelines
 
 pageTitle
-    60 characters or less. Includes name of the feature - primary benefit. Not the same as H1. Its 60 characters or fewer including all characters between the quotes and the Microsoft Azure site identifier.
+    60 characters or less. Includes name of the feature - primary benefit. Not the same as H1. Its 60 characters or fewer including all characters between the quotes and the Azure site identifier.
 
 description
     115-145 characters. Duplicate of the first sentence in the introduction. This is the abstract of the article that displays under the title when searching in Bing or Google. 

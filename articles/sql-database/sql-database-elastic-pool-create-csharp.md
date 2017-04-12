@@ -48,9 +48,9 @@
 若要使用 C# 创建 SQL 数据库，请加载所需的管理库（使用[包管理器控制台](http://docs.nuget.org/Consume/Package-Manager-Console)）：
 
 1. 单击“工具”>“NuGet 包管理器”>“包管理器控制台”。
-2. 键入 `Install-Package Microsoft.Azure.Management.Sql –Pre` 安装 [Microsoft Azure SQL 管理库](https://www.nuget.org/packages/Microsoft.Azure.Management.Sql)。
-3. 键入 `Install-Package Microsoft.Azure.Management.ResourceManager –Pre` 安装 [Microsoft Azure Resource Manager 库](https://www.nuget.org/packages/Microsoft.Azure.Management.ResourceManager)。
-4. 键入 `Install-Package Microsoft.Azure.Common.Authentication –Pre` 安装 [Microsoft Azure 常用身份验证库](https://www.nuget.org/packages/Microsoft.Azure.Common.Authentication)。
+2. 键入 `Install-Package Microsoft.Azure.Management.Sql –Pre` 安装 [Azure SQL 管理库](https://www.nuget.org/packages/Microsoft.Azure.Management.Sql)。
+3. 键入 `Install-Package Microsoft.Azure.Management.ResourceManager –Pre` 安装 [Azure Resource Manager 库](https://www.nuget.org/packages/Microsoft.Azure.Management.ResourceManager)。
+4. 键入 `Install-Package Microsoft.Azure.Common.Authentication –Pre` 安装 [Azure 常用身份验证库](https://www.nuget.org/packages/Microsoft.Azure.Common.Authentication)。
 
 
 

@@ -1,5 +1,5 @@
 <properties
-   pageTitle="可测试性概述 | Microsoft Azure"
+   pageTitle="可测试性概述 | Azure"
    description="本文介绍 Service Fabric 中用于针对服务引入故障和运行测试方案的可测试性子系统。"
    services="service-fabric"
    documentationCenter=".net"

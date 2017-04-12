@@ -100,13 +100,13 @@ Azure Site Recovery 服务有助于业务连续性和灾难恢复 (BCDR) 策略�
 
 	![“快速启动”图标](./media/site-recovery-vmm-to-azure-classic/qs-icon.png)
 
-2. 在下拉列表中，选择“本地 VMM 站点与 Microsoft Azure 之间”。
+2. 在下拉列表中，选择“本地 VMM 站点与 Azure 之间”。
 3. 在“准备 VMM 服务器”中，单击“生成注册密钥”文件。密钥文件将自动生成并且自生成后在 5 天内有效。如果用户不是从 VMM 服务器访问 Azure 门户，需要将此文件复制到服务器。
 
 	![注册密钥](./media/site-recovery-vmm-to-azure-classic/register-key.png)
 
 ## 步骤 3：安装 Azure Site Recovery 提供程序
-1. 在“快速启动”>“准备 VMM 服务器”中，单击“下载用于在 VMM 服务器上安装的 Microsoft Azure Site Recovery 提供程序”，获取最新版本的提供程序安装文件。
+1. 在“快速启动”>“准备 VMM 服务器”中，单击“下载用于在 VMM 服务器上安装的 Azure Site Recovery 提供程序”，获取最新版本的提供程序安装文件。
 2. 在源 VMM 服务器上运行此文件。
 
 	>[AZURE.NOTE] 如果 VMM 部署到群集中并且用户是首次安装该提供程序，请将其安装在一个活动节点上并完成安装以在保管库中注册 VMM 服务器。然后，在其他节点上安装该提供程序。请注意，如果用户是在升级提供程序，需要在所有节点上进行升级，因为所有节点都应当运行相同的提供程序版本。

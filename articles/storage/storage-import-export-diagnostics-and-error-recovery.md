@@ -1,6 +1,6 @@
 <properties
     pageTitle="导入/导出作业的诊断和错误恢复 | Azure"
-    description="了解如何为 Microsoft Azure 导入/导出服务作业启用详细日志记录"
+    description="了解如何为 Azure 导入/导出服务作业启用详细日志记录"
     author="muralikk"
     manager="syadav"
     editor="tysonn"

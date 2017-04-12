@@ -1,6 +1,6 @@
 <properties
     pageTitle="在本地监视和诊断使用 Azure Service Fabric 编写的服务 | Azure"
-    description="了解如何监视和诊断本地开发计算机上使用 Microsoft Azure Service Fabric 编写的服务。"
+    description="了解如何监视和诊断本地开发计算机上使用 Azure Service Fabric 编写的服务。"
     services="service-fabric"
     documentationcenter=".net"
     author="mani-ramaswamy"
@@ -14,7 +14,7 @@
     ms.tgt_pltfrm="NA"
     ms.workload="NA"
     ms.date="11/14/2016"
-    wacn.date="12/26/2016"
+    wacn.date="04/11/2016"
     ms.author="subramar" />
 
 # 在本地计算机开发安装过程中监视和诊断服务

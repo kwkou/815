@@ -1,6 +1,6 @@
 <properties
     pageTitle="备份 Azure 导入/导出驱动器清单 | Azure"
-    description="了解如何自动备份 Microsoft Azure 导入/导出服务的驱动器清单。"
+    description="了解如何自动备份 Azure 导入/导出服务的驱动器清单。"
     author="muralikk"
     manager="syadav"
     editor="tysonn"

@@ -1,6 +1,6 @@
 <properties
     pageTitle="为导入作业准备硬盘驱动器 | Azure"
-    description="了解如何为 Microsoft Azure 导入-导出服务的导入作业准备一个或多个硬盘驱动器"
+    description="了解如何为 Azure 导入-导出服务的导入作业准备一个或多个硬盘驱动器"
     author="muralikk"
     manager="syadav"
     editor="tysonn"

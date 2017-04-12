@@ -86,7 +86,7 @@ Azure Site Recovery 服务有助于业务连续性和灾难恢复 (BCDR) 策略�
 
 ## 步骤 3：安装 Azure Site Recovery 提供程序
 
-4. 在“快速启动”页面上的“准备 VMM 服务器”中，单击“下载用于在 VMM 服务器上安装的 Microsoft Azure Site Recovery 提供程序”来获取最新版本的提供程序安装文件。
+4. 在“快速启动”页面上的“准备 VMM 服务器”中，单击“下载用于在 VMM 服务器上安装的 Azure Site Recovery 提供程序”来获取最新版本的提供程序安装文件。
 
 2. 在源 VMM 服务器上运行此文件。
 

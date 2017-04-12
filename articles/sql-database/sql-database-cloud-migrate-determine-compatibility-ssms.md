@@ -1,7 +1,7 @@
 <properties
     pageTitle="SSMS：Azure SQL Server 数据库兼容性 | Azure"
     description="在本文中，你将了解如何使用 SQL Server Management Studio 中的“导出数据层应用程序”向导确定要迁移到 SQL 数据库的 SQL Server 数据库是否兼容。"
-    keywords="Microsoft Azure SQL 数据库, 数据库迁移, SQL 数据库兼容性, 导出数据层应用程序向导"
+    keywords="Azure SQL 数据库, 数据库迁移, SQL 数据库兼容性, 导出数据层应用程序向导"
     services="sql-database"
     documentationcenter=""
     author="CarlRabeler"

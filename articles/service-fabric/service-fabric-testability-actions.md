@@ -1,6 +1,6 @@
 <properties
     pageTitle="Azure 微服务中的模拟故障 | Azure"
-    description="本文介绍了 Microsoft Azure Service Fabric 中的可测试性操作。"
+    description="本文介绍了 Azure Service Fabric 中的可测试性操作。"
     services="service-fabric"
     documentationcenter=".net"
     author="motanv"

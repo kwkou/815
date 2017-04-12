@@ -50,7 +50,7 @@
 
 	<?xml version="1.0" encoding="UTF-8"?>  
 	<Metadata>  
-	    <UploadMethod>Microsoft Azure Import/Export Service</UploadMethod>  
+	    <UploadMethod>Azure Import/Export Service</UploadMethod>  
 	    <DataSetName>SampleData</DataSetName>  
 	    <CreationDate>10/1/2013</CreationDate>  
 	</Metadata>  

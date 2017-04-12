@@ -1,6 +1,6 @@
 <properties
     pageTitle="取消/删除 Azure 导入/导出作业 | Azure"
-    description="了解如何取消和删除 Microsoft Azure 导入/导出服务的作业"
+    description="了解如何取消和删除 Azure 导入/导出服务的作业"
     author="muralikk"
     manager="syadav"
     editor="tysonn"

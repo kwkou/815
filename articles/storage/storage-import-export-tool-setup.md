@@ -71,7 +71,7 @@ Azure 导入/导出工具由以下文件组成：
 若要输出命令帮助，请不带参数运行该工具：
 
 
-	WAImportExport, a client tool for Microsoft Azure Import/Export Service. Microsoft (c) 2013
+	WAImportExport, a client tool for Azure Import/Export Service. Microsoft (c) 2013
 
 
 	Copy directories and/or files with a new copy session:

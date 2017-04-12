@@ -114,9 +114,9 @@ Azure Blob 存储是一种将非结构化数据作为对象/Blob 存储在云中
 - [Python 开发人员中心](/develop/python/)
 - [Azure 存储服务 REST API](http://msdn.microsoft.com/zh-cn/library/azure/dd179355)
 - [Azure 存储团队博客]
-- [Microsoft Azure Storage SDK for Python]
+- [Azure Storage SDK for Python]
 
 [Azure 存储团队博客]: http://blogs.msdn.com/b/windowsazurestorage/
-[Microsoft Azure Storage SDK for Python]: https://github.com/Azure/azure-storage-python
+[Azure Storage SDK for Python]: https://github.com/Azure/azure-storage-python
 
 <!---HONumber=Mooncake_0103_2017-->

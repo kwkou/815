@@ -20,7 +20,7 @@
 
 
 # 设计用于灾难恢复的网络
-本文面向 IT 专业人员，他们负责构建、实施和支持业务连续性和灾难恢复 (BCDR) 基础结构，而且想要利用 Microsoft Azure Site Recovery (ASR) 来支持并增强其 BCDR 服务。本白皮书将讨论 System Center Virtual Machine Manager 服务器部署的实际注意事项、外延式子网与子网故障转移的优缺点比较，以及如何构建 Azure 中虚拟站点的灾难恢复。
+本文面向 IT 专业人员，他们负责构建、实施和支持业务连续性和灾难恢复 (BCDR) 基础结构，而且想要利用 Azure Site Recovery (ASR) 来支持并增强其 BCDR 服务。本白皮书将讨论 System Center Virtual Machine Manager 服务器部署的实际注意事项、外延式子网与子网故障转移的优缺点比较，以及如何构建 Azure 中虚拟站点的灾难恢复。
 
 ## 概述
 

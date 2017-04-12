@@ -47,7 +47,7 @@
 `5TB + 30GB + 25GB + 10GB = 5TB + 65GB`  
 
   
-对于本示例，两个 3TB 的硬盘驱动器应该足够。但是，由于源目录 `H:\Video` 包含 5TB 数据，而单个硬盘驱动器的容量仅为 3TB，因此在运行 Microsoft Azure 导入/导出工具之前，需要将 `H:\Video` 分解为两个小目录：`H:\Video1` 和 `H:\Video2`。此步骤将生成以下源目录：
+对于本示例，两个 3TB 的硬盘驱动器应该足够。但是，由于源目录 `H:\Video` 包含 5TB 数据，而单个硬盘驱动器的容量仅为 3TB，因此在运行 Azure 导入/导出工具之前，需要将 `H:\Video` 分解为两个小目录：`H:\Video1` 和 `H:\Video2`。此步骤将生成以下源目录：
   
 |位置|大小|目标虚拟目录或 Blob|  
 |--------------|----------|-------------------------------------------|  
@@ -73,7 +73,7 @@
   
 此外，可为所有文件设置以下元数据：
   
--   **UploadMethod：**Microsoft Azure 导入/导出服务
+-   **UploadMethod：**Azure 导入/导出服务
   
 -   **DataSetName：**SampleData
   
@@ -84,7 +84,7 @@
 
 	<?xml version="1.0" encoding="UTF-8"?>  
 	<Metadata>  
-	    <UploadMethod>Microsoft Azure Import/Export Service</UploadMethod>  
+	    <UploadMethod>Azure Import/Export Service</UploadMethod>  
 	    <DataSetName>SampleData</DataSetName>  
 	    <CreationDate>10/1/2013</CreationDate>  
 	</Metadata>  
@@ -160,7 +160,7 @@
 	WAImportExport.exe PrepImport /j:SecondDrive.jrn /id:BlueRayIso /srcfile:K:\Temp\BlueRay.ISO /dstblob:favorite/BlueRay.ISO /MetadataFile:c:\WAImportExport\SampleMetadata.txt /PropertyFile:c:\WAImportExport\SampleProperties.txt  
 
   
-复制会话完成后，可断开两个驱动器与复制计算机的连接，然后将其寄送到相应的 Microsoft Azure 数据中心。在 [Azure 管理门户](https://manage.windowsazure.CN/)中创建导入作业时，将上载两个日记文件：`FirstDrive.jrn` 和 `SecondDrive.jrn`。
+复制会话完成后，可断开两个驱动器与复制计算机的连接，然后将其寄送到相应的 Azure 数据中心。在 [Azure 管理门户](https://manage.windowsazure.CN/)中创建导入作业时，将上载两个日记文件：`FirstDrive.jrn` 和 `SecondDrive.jrn`。
   
 ## 另请参阅  
 

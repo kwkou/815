@@ -1,6 +1,6 @@
 <properties
     pageTitle="授予到 Azure SQL 数据库的访问权限 | Azure"
-    description="了解如何授予到 Microsoft Azure SQL 数据库的访问权限。"
+    description="了解如何授予到 Azure SQL 数据库的访问权限。"
     services="sql-database"
     documentationcenter=""
     author="BYHAM"

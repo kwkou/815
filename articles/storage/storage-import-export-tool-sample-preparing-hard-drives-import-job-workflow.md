@@ -78,7 +78,7 @@
 
 此外，可为所有文件设置以下元数据：
 
-* **UploadMethod：**Microsoft Azure 导入/导出服务
+* **UploadMethod：**Azure 导入/导出服务
 * **DataSetName：**SampleData
 * **CreationDate：**10/1/2013
 
@@ -87,7 +87,7 @@
 
 	<?xml version="1.0" encoding="UTF-8"?>
 	<Metadata>
-	    <UploadMethod>Microsoft Azure Import/Export Service</UploadMethod>
+	    <UploadMethod>Azure Import/Export Service</UploadMethod>
 	    <DataSetName>SampleData</DataSetName>
 	    <CreationDate>10/1/2013</CreationDate>
 	</Metadata>

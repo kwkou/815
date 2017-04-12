@@ -96,7 +96,7 @@ Azure 导入/导出服务还可以在导出过程中将清单文件保存到某�
 	<DriveManifest Version="2011-10-01">  
 	  <Drive>  
 	    <DriveId>9WM35C3U</DriveId>  
-	    <ClientCreator>Microsoft Azure Import/Export service</ClientCreator>  
+	    <ClientCreator>Azure Import/Export service</ClientCreator>  
 	    <BlobList>
 	      <Blob>  
 	        <BlobPath>pictures/city/redmond.jpg</BlobPath>  

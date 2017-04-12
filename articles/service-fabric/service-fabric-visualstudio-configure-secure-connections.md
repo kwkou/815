@@ -1,5 +1,5 @@
 <properties
-   pageTitle="配置受 Service Fabric 群集支持的安全连接 | Microsoft Azure"
+   pageTitle="配置受 Service Fabric 群集支持的安全连接 | Azure"
    description="了解如何使用 Visual Studio 来配置 Azure Service Fabric 群集支持的安全连接。"
    services="service-fabric"
    documentationCenter="na"

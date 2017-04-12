@@ -1,6 +1,6 @@
 <properties
     pageTitle="为 Azure 导入/导出服务创建导出作业 | Azure"
-    description="了解如何为 Microsoft Azure 导入/导出服务创建导出作业"
+    description="了解如何为 Azure 导入/导出服务创建导出作业"
     author="muralikk"
     manager="syadav"
     editor="tysonn"
