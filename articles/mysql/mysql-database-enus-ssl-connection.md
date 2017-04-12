@@ -1,6 +1,6 @@
 <properties linkid="" urlDisplayName="" pageTitle="Use SSL to securely access MySQL Database on Azure – Azure cloud" metaKeywords="Azure Cloud, technical documentation, documents and resources, MySQL, database, connection pool, Azure MySQL, MySQL PaaS, Azure MySQL PaaS, Azure MySQL Service, Azure RDS" description="Using Secure Sockets Layer (SSL) SSL encryption to access databases helps ensure that your access is secure. This article explains how to download and configure SSL certificates. MySQL Database on Azure currently supports the use of public keys to perform encryption and verification on the server side." metaCanonical="" services="MySQL" documentationCenter="Services" title="" authors="" solutions="" manager="" editor="" />
 
-<tags ms.service="mysql_en" ms.date="07/05/2016" wacn.date="07/05/2016" wacn.lang="en" />
+<tags ms.service="mysql_en" ms.date="04/12/2017" wacn.date="04/12/2017" wacn.lang="en" />
 
 > [AZURE.LANGUAGE]
 - [中文](/documentation/articles/mysql-database-ssl-connection/)
@@ -13,50 +13,57 @@ Using Secure Sockets Layer (SSL) encryption to access databases helps ensure tha
 
 When you create a MySQL Database on Azure instance, we strongly recommend that you put the database instance in the same region as other Azure services. This helps ensure their security even if you do not use SSL encryption.
 
+## Step 1: Download cert file to your local drive
 
-## Step 1: Download the public key certificates for an SSL connection
-[Click to download ](https://www.wosign.com/root/WS_CA1_NEW.crt)the SSL certificate locally.
+Visit DigiCert official site to download DigiCertGlobalRootCA.cer Root CA. <[Click to download](https://www.digicert.com/CACerts/DigiCertGlobalRootCA.crt)>
 
-## Step 2: Use SSL to connect to a server on MySQL Database on Azure
+## Step 2: Download and install OpenSSL
+<[Click to download](http://slproweb.com/download/Win32OpenSSL_Light-1_1_0e.exe)>
 
-You can configure either by using the MySQL client or by using functions.
+## Step 3: Move local file to OpenSSL directory
 
-### Configure by using the MySQL client
-For example, using MySQL.exe, use the --ssl-ca parameter to specify a public key certificate when you create the connection. For more information about SSL connections, see “Using SSL for secure connections”.
+Move the Root CA downloaded in Step 1 to …\OpenSSL-Win32\bin directory.
 
-Reference examples:
+## Step 4: Transform the cert file into pem format
 
-mysql.exe --ssl-ca=WS\_CA1\_NEW.crt -h mysqlservices.chinacloudapp.cn -u ssltest%test -p
+The downloaded cert file is in cer format. Use openssl.exe commandline tool installed in Step 2 to transform it into pem format:
 
-![mysql.exe database access][1]
+	OpenSSL>x509 -inform DEV -in DigiCertGlobalRootCA.cer -out DigiCertGlobalRootCA.pem
 
-Once the connection is successful, you can use the status command to view the client-side SSL connection properties. If the SSL parameter value is **Cipher in use**, then you have successfully created the SSL connection. If the SSL parameter is **Not in use**, then the connection is still a non-SSL connection.
+## Step 5: Bind the pem cert file with your application
 
-![Verification][6]
+Bind the pem file generated in Step 4 with your application. This article provides examples of how to bind the file with mysql command line interface and MySQL Workbench GUI tool.
 
->[AZURE.NOTE] **MySQL on Azure created an SSL secure connection between the proxy server and the client, so while SSL-related global variables or session variables on the server remain set to DISABLED, the entire communication process has actually already been encrypted with TLSv1.**
+### Initiate SSL connection via mysql command line interface
 
-Using MySQL Workbench as an example, use the **Parameters** tab to set up the connection string for accessing the database, as shown in the following image.
+Take example of mysql.exe command line interface. When creating SSL connection, please use --ssl-ca parameter to define cert file:
 
-![Configuring the connection string][2]
+	mysql.exe --ssl-ca=C:\OpenSSL-Win32\bin\DigiCertGlobalRootCA.pem -h mysql4doc.mysqldb.chinacloudapi.cn -u mysql4doc%admin -p
 
-Configure the SSL certificate by using the fields in the **SSL** tab.
+After successfully connected to the server, use status command to verify SSL connection. If SSL parameter shows "Cipher in use", it means the SSL connection is successfully created.
 
-![Configuring SSL certificates][3]
+![mysql-ssl-connection](./media/mysql-database-ssl-connection/5-1_mysql-ssl-connection.png)
+
+>[AZURE.NOTE] **MySQL Database on Azure created an SSL secure connection between the proxy server and the client, so while SSL-related global variables or session variables on the server remain set to DISABLED, the entire communication process has actually already been encrypted with TLSv1.**
+
+### Initiate SSL connection via MySQL Workbench GUI tool
+
+MySQL Workbench is a commonly used GUI tool for DBMS. You can configure SSL connection through SSL tab of **Setup New Connection** or **Manage Server Connections** dialogue box.
+
+![workbench-ssl-connection](./media/mysql-database-ssl-connection/5-2_workbench-ssl-connection.png)
 
 > **Notes**
 > 
-> In the **Use SSL** field, select **If available**. Otherwise this may cause the configuration to fail. You may see **SSL not enabled** during the test connection process, but disregard this. Click **OK** to connect to the database.
+> 1. In the **Use SSL** field, select **If available**. Otherwise this may cause the configuration to fail. You may see **SSL not enabled** during the test connection process, but disregard this. Click **OK** to connect to the database.
 >
-> ![errormessage][4]
->
-
-> MySQL Workbench 6.3.5 uses SSL encryption by default, but involves certain compatibility issues. For specific solutions, see [Common client compatibility issues](/documentation/articles/mysql-database-compatibilityinquiry/).
+> 2. MySQL Workbench 6.3.5 uses SSL encryption by default, but involves certain compatibility issues. For specific solutions, see [Common client compatibility issues](/documentation/articles/mysql-database-compatibilityinquiry/).
 
 > **Tip:** The current certificate supports MySQL.exe 5.5.44 and 5.6.25 and subsequent versions.
-> 
+
+
 ### Configure by using functions
-For example, using Python, you can see from the following sample code how to configure by using functions.
+
+Here is a Python example of configuring SSL connection.
 
 ![python SSL access][5]
 
@@ -64,11 +71,4 @@ For example, using Python, you can see from the following sample code how to con
 
 <!--Image references-->
 
-[1]: ./media/mysql-database-ssl-connection/ssl-001.png
-[2]: ./media/mysql-database-ssl-connection/ssl-002.png
-[3]: ./media/mysql-database-ssl-connection/ssl-003.png
-[4]: ./media/mysql-database-ssl-connection/ssl-004.png
 [5]: ./media/mysql-database-ssl-connection/ssl-005.png
-[6]: ./media/mysql-database-ssl-connection/ssl-006.png
-
-<!---HONumber=Acom_0218_2016_MySql-->
