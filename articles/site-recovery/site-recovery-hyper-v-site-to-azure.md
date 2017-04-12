@@ -271,7 +271,7 @@ Site Recovery 提供 Capacity Planner，帮助你为源环境、站点恢复组�
 * **调整带宽**：可以使用几个注册表项来控制用于复制的带宽。
 
 #### 限制带宽
-1. 在 Hyper-V 主机服务器上打开 Microsoft Azure 备份 MMC 管理单元。默认情况下，Microsoft Azure 备份的快捷方式位于桌面上或 C:\\Program Files\\Microsoft Azure Recovery Services Agent\\bin\\wabadmin 中。
+1. 在 Hyper-V 主机服务器上打开 Azure 备份 MMC 管理单元。默认情况下，Azure 备份的快捷方式位于桌面上或 C:\\Program Files\\Microsoft Azure Recovery Services Agent\\bin\\wabadmin 中。
 2. 在管理单元中，单击“更改属性”。
 3. 在“限制”选项卡上，选择“为备份操作启用 Internet 带宽使用限制”，然后设置工作时间和非工作时间的限制。有效范围为每秒 512 Kbps 到 102 Mbps。
 
