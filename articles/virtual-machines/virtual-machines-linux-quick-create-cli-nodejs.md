@@ -1,5 +1,5 @@
 <properties
-    pageTitle="使用 Azure CLI 创建 Linux VM | Azure"
+    pageTitle="使用 Azure CLI 快速创建 Linux VM | Azure"
     description="使用 Azure CLI 在 Azure 上为 NodeJs 创建 Linux VM。"
     services="virtual-machines-linux"
     documentationcenter=""
@@ -18,7 +18,7 @@
     ms.author="v-livech" />  
 
 
-# Create a Linux VM using the Azure CLI（使用 Azure CLI 创建 Linux VM）
+# 使用 Azure CLI 快速创建 Linux VM
 
 本文说明如何使用 Azure 命令行接口 (CLI) 的 `azure vm quick-create` 命令在 Azure 上快速部署 Linux 虚拟机 (VM)。`quick-create` 命令在基本的安全基础结构内部署 VM，用户可以将其用于快速构建某一概念的原型或进行测试。
 
