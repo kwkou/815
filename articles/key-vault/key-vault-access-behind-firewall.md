@@ -58,7 +58,7 @@
 | 操作包括：对密钥的加密操作；创建、读取、更新和删除密钥和机密；设置或获取密钥保管库对象（密钥或机密）上的标记和其他属性 |**全球：**<br> &lt;vault-name&gt;.vault.azure.net:443<br><br> **Azure China：**<br> &lt;vault-name&gt;.vault.azure.cn:443<br><br> **Azure US Government：**<br> &lt;vault-name&gt;.vault.usgovcloudapi.net:443<br><br> **Azure Germany：**<br> &lt;vault-name&gt;.vault.microsoftazure.de:443 |
 
 ## IP 地址范围
-密钥保管库服务使用其他 Azure 资源，例如 PaaS 基础结构。因此，不可能提供密钥保管库服务终结点在任意特定时间会有的特定 IP 地址范围。如果防火墙仅支持 IP 地址范围，请参阅 [Azure Datacenter IP Ranges](https://www.microsoft.com/en-us/download/details.aspx?id=41653)（Azure 数据中心 IP 范围）文档。对于身份验证和标识 \(Azure Active Directory\)，应用程序必须能够连接到[身份验证和标识地址](https://support.office.com/article/Office-365-URLs-and-IP-address-ranges-8548a211-3fe7-47cb-abb1-355ea5aa88a2)中所述的终结点。
+密钥保管库服务使用其他 Azure 资源，例如 PaaS 基础结构。因此，不可能提供密钥保管库服务终结点在任意特定时间会有的特定 IP 地址范围。如果防火墙仅支持 IP 地址范围，请参阅 [Azure Datacenter IP Ranges](https://www.microsoft.com/en-us/download/details.aspx?id=42064)（Azure 数据中心 IP 范围）文档。对于身份验证和标识 \(Azure Active Directory\)，应用程序必须能够连接到[身份验证和标识地址](https://support.office.com/article/Office-365-URLs-and-IP-address-ranges-8548a211-3fe7-47cb-abb1-355ea5aa88a2)中所述的终结点。
 
 ## 后续步骤
 如果在密钥保管库方面有任何问题，请访问 [Azure 密钥保管库论坛](https://social.msdn.microsoft.com/Forums/zh-cn/home?forum=AzureKeyVault)。

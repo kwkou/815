@@ -63,7 +63,7 @@ Azure 具有两种不同的部署模型，用于创建和处理资源：[Resourc
 
         # The following option allocates a static public IP address to the resource. If you do not specify it, the address is
         # allocated dynamically. The address is assigigned to the resource from a pool of IP adresses unique to each Azure regions.
-        # Download and view the file from https://www.microsoft.com/download/details.aspx?id=41653 to see the ranges for each region.
+        # Download and view the file from https://www.microsoft.com/download/details.aspx?id=42064 to see the ranges for each region.
         --allocation-method Static \
 
         --dns-name $DnsName \

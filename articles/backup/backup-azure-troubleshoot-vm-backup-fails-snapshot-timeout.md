@@ -37,7 +37,7 @@ VM 无法根据部署要求访问 Internet，或者现有的限制阻止其访�
 若要解决此问题，请尝试此处列出的方法之一。
 #### 允许访问 Azure 数据中心 IP 范围
 
-1. 获取允许访问的 [Azure 数据中心 IP 列表](https://www.microsoft.com/en-us/download/details.aspx?id=41653)。
+1. 获取允许访问的 [Azure 数据中心 IP 列表](https://www.microsoft.com/en-us/download/details.aspx?id=42064)。
 2. 通过在 Azure VM 上提升的 PowerShell 窗口中运行 **New-NetRoute cmdlet**，取消阻止 IP。以管理员身份运行该 cmdlet。
 3. 若要允许访问 IP，如果你有网络安全组，请向其添加规则。
 
