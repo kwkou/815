@@ -48,86 +48,86 @@
 
 要创建的服务总线命名空间的名称。
 
-```
-"serviceBusNamespaceName": {
-"type": "string"
-}
-```
+
+    "serviceBusNamespaceName": {
+    "type": "string"
+    }
+
 
 ### serviceBusEventHubName
 
 在服务总线命名空间中创建的事件中心的名称。
 
-```
-"serviceBusEventHubName": {
-"type": "string"
-}
-```
+
+    "serviceBusEventHubName": {
+    "type": "string"
+    }
+
 
 ### serviceBusConsumerGroupName
 
 为服务总线命名空间中的事件中心创建的使用者组的名称。
 
-```
-"serviceBusConsumerGroupName": {
-"type": "string"
-}
-```
+
+    "serviceBusConsumerGroupName": {
+    "type": "string"
+    }
+
 
 ### serviceBusApiVersion
 
 模板的服务总线 API 版本。
 
-```
-"serviceBusApiVersion": {
-"type": "string"
-}
-```
+
+    "serviceBusApiVersion": {
+    "type": "string"
+    }
+
 
 ## 要部署的资源
 
 创建包含事件中心和使用者组的**事件中心**类型的服务总线命名空间。
 
-```
-"resources": [
-        {
-            "apiVersion": "[variables('ehVersion')]",
-            "name": "[parameters('serviceBusNamespaceName')]",
-            "type": "Microsoft.ServiceBus/Namespaces",
-            "location": "[variables('location')]",
-            "kind": "EventHub",
-            "sku": {
-                "name": "StandardSku",
-                "tier": "Standard"
-            },
-            "resources": [
-                {
-                    "apiVersion": "[variables('ehVersion')]",
-                    "name": "[parameters('serviceBusEventHubName')]",
-                    "type": "EventHubs",
-                    "dependsOn": [
-                        "[concat('Microsoft.ServiceBus/namespaces/', parameters('serviceBusNamespaceName'))]"
-                    ],
-                    "properties": {
-                        "path": "[parameters('serviceBusEventHubName')]"
-                    },
-                    "resources": [
-                        {
-                            "apiVersion": "[variables('ehVersion')]",
-                            "name": "[parameters('serviceBusConsumerGroupName')]",
-                            "type": "ConsumerGroups",
-                            "dependsOn": [
-                                "[parameters('serviceBusEventHubName')]"
-                            ],
-                            "properties": {
+
+    "resources": [
+            {
+                "apiVersion": "[variables('ehVersion')]",
+                "name": "[parameters('serviceBusNamespaceName')]",
+                "type": "Microsoft.ServiceBus/Namespaces",
+                "location": "[variables('location')]",
+                "kind": "EventHub",
+                "sku": {
+                    "name": "StandardSku",
+                    "tier": "Standard"
+                },
+                "resources": [
+                    {
+                        "apiVersion": "[variables('ehVersion')]",
+                        "name": "[parameters('serviceBusEventHubName')]",
+                        "type": "EventHubs",
+                        "dependsOn": [
+                            "[concat('Microsoft.ServiceBus/namespaces/', parameters('serviceBusNamespaceName'))]"
+                        ],
+                        "properties": {
+                            "path": "[parameters('serviceBusEventHubName')]"
+                        },
+                        "resources": [
+                            {
+                                "apiVersion": "[variables('ehVersion')]",
+                                "name": "[parameters('serviceBusConsumerGroupName')]",
+                                "type": "ConsumerGroups",
+                                "dependsOn": [
+                                    "[parameters('serviceBusEventHubName')]"
+                                ],
+                                "properties": {
+                                }
                             }
-                        }
-                    ]
-                }
-            ]
-        }
-    ]
-```
+                        ]
+                    }
+                ]
+            }
+        ]
+
 
 ## 运行部署的命令
 
@@ -135,24 +135,24 @@
 
 ## PowerShell
 
-```
-New-AzureRmResourceGroupDeployment -ResourceGroupName \<resource-group-name\> -TemplateFile https://raw.githubusercontent.com/azure/azure-quickstart-templates/master/201-servicebus-create-eventhub-and-consumergroup/azuredeploy.json
-```
+
+    New-AzureRmResourceGroupDeployment -ResourceGroupName \<resource-group-name\> -TemplateFile https://raw.githubusercontent.com/azure/azure-quickstart-templates/master/201-servicebus-create-eventhub-and-consumergroup/azuredeploy.json
+
 
 ## Azure CLI
 
-```
-azure config mode arm
 
-azure group deployment create \<my-resource-group\> \<my-deployment-name\> --template-uri [https://raw.githubusercontent.com/azure/azure-quickstart-templates/master/201-servicebus-create-eventhub-and-consumergroup/azuredeploy.json][]
-```
+    azure config mode arm
+    
+    azure group deployment create \<my-resource-group\> \<my-deployment-name\> --template-uri [https://raw.githubusercontent.com/azure/azure-quickstart-templates/master/201-servicebus-create-eventhub-and-consumergroup/azuredeploy.json][]
+
 
 ## 后续步骤
 
 现在，你已使用 Azure Resource Manager 创建并部署了资源，请通过查看以下文章了解如何管理这些资源：
 
 - [使用 Azure 自动化管理 Azure Service Bus](/documentation/articles/service-bus-management-libraries/)
-- [使用 PowerShell 管理事件中心](https://docs.microsoft.com/en-us/powershell/resourcemanager/azurerm.servicebus/v0.0.2/azurerm.servicebus/)
+- [使用 PowerShell 管理事件中心](https://docs.microsoft.com/en-us/powershell/module/azurerm.servicebus/?view=azurermps-3.8.0)
 - [使用服务总线资源管理器管理事件中心资源](https://code.msdn.microsoft.com/Service-Bus-Explorer-f2abca5a)
 
   [创作 Azure Resource Manager 模板]: /documentation/articles/resource-group-authoring-templates/

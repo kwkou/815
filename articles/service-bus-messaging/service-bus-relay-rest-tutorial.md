@@ -230,7 +230,7 @@
 
 1. 在“解决方案资源管理器”中，双击“App.config”文件以在 Visual Studio 编辑器中将其打开。
 
-	该 **App.config** 文件与 WCF 配置文件类似，包括服务名称、终结点（即服务总线公开的、让客户端和主机相互通信的位置）和绑定（用于通信的协议类型）。此处的主要差别在于，配置的服务终结点是指 [WebHttpRelayBinding](https://msdn.microsoft.com/zh-cn/library/microsoft.servicebus.webhttprelaybinding.aspx) 绑定，它不是 .NET Framework 的一部分。
+	该 **App.config** 文件与 WCF 配置文件类似，包括服务名称、终结点（即服务总线公开的、让客户端和主机相互通信的位置）和绑定（用于通信的协议类型）。此处的主要差别在于，配置的服务终结点是指 [WebHttpRelayBinding](https://docs.microsoft.com/zh-cn/dotnet/api/microsoft.servicebus.webhttprelaybinding?redirectedfrom=MSDN&view=azureservicebus-4.0.0#microsoft_servicebus_webhttprelaybinding) 绑定，它不是 .NET Framework 的一部分。
 
 2. `<system.serviceModel>` XML 元素是一个 WCF 元素，用于定义一个或多个服务。在这里，它用于定义服务名称和终结点。在 `<system.serviceModel>` 元素的下面（仍在 `<system.serviceModel>` 中）添加具有以下内容的 `<bindings>` 元素。这样就定义了应用程序中使用的绑定。你可以定义多个绑定，但在本教程中，你只要定义一个绑定。
 
@@ -245,7 +245,7 @@
 		</bindings>
 	
   
-	此步骤定义了一个服务总线 [WebHttpRelayBinding](https://msdn.microsoft.com/zh-cn/library/microsoft.servicebus.webhttprelaybinding.aspx) 绑定，其中的 **relayClientAuthenticationType** 为 **None**。此设置表明使用此绑定的终结点将不需要客户端凭据。
+	此步骤定义了一个服务总线 [WebHttpRelayBinding](https://docs.microsoft.com/zh-cn/dotnet/api/microsoft.servicebus.webhttprelaybinding?redirectedfrom=MSDN&view=azureservicebus-4.0.0#microsoft_servicebus_webhttprelaybinding) 绑定，其中的 **relayClientAuthenticationType** 为 **None**。此设置表明使用此绑定的终结点将不需要客户端凭据。
 
 5. 在 `<bindings>` 元素后面添加 `<services>` 元素。与绑定类似，可以在单个配置文件中定义多个服务。但是，在本教程中，你只要定义一个服务。
 

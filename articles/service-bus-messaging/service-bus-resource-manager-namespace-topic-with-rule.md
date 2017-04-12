@@ -157,7 +157,7 @@
 [Learn more about Service Bus topics and subscriptions]: /documentation/articles/service-bus-queues-topics-subscriptions/
 [Using Azure PowerShell with Azure Resource Manager]: /documentation/articles/powershell-azure-resource-manager/
 [Using the Azure CLI for Mac, Linux, and Windows with Azure Resource Management]: /documentation/articles/xplat-cli-azure-resource-manager/
-[Azure Resources Naming Conventions]: https://azure.microsoft.com/zh-CN/documentation/articles/guidance-naming-conventions/
+[Azure Resources Naming Conventions]: https://docs.microsoft.com/en-us/azure/architecture/best-practices/naming-conventions/
 [Service Bus namespace with topic, subscription, and rule]: https://github.com/Azure/azure-quickstart-templates/blob/master/201-servicebus-create-topic-subscription-rule/
 [Service Bus queues, topics, and subscriptions]: /documentation/articles/service-bus-queues-topics-subscriptions/
 

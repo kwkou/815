@@ -28,11 +28,11 @@
 
 可以在事务作用域内执行的操作如下所示：
 
-- **[QueueClient](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.queueclient.aspx), [MessageSender](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.messagesender.aspx), [TopicClient](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.topicclient.aspx)**：Send, SendAsync, SendBatch, SendBatchAsync 
+- **[QueueClient](https://docs.microsoft.com/zh-cn/dotnet/api/microsoft.servicebus.messaging.queueclient?redirectedfrom=MSDN&view=azureservicebus-4.0.0#microsoft_servicebus_messaging_queueclient), [MessageSender](https://docs.microsoft.com/zh-cn/dotnet/api/microsoft.servicebus.messaging.messagesender?redirectedfrom=MSDN&view=azureservicebus-4.0.0#microsoft_servicebus_messaging_messagesender), [TopicClient](https://docs.microsoft.com/zh-cn/dotnet/api/microsoft.servicebus.messaging.topicclient?redirectedfrom=MSDN&view=azureservicebus-4.0.0#microsoft_servicebus_messaging_topicclient)**：Send, SendAsync, SendBatch, SendBatchAsync 
 
-- **[BrokeredMessage](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.brokeredmessage.aspx)**：Complete, CompleteAsync, Abandon, AbandonAsync, Deadletter, DeadletterAsync, Defer, DeferAsync, RenewLock, RenewLockAsync
+- **[BrokeredMessage](https://docs.microsoft.com/zh-cn/dotnet/api/microsoft.servicebus.messaging.brokeredmessage?redirectedfrom=MSDN&view=azureservicebus-4.0.0#microsoft_servicebus_messaging_brokeredmessage)**：Complete, CompleteAsync, Abandon, AbandonAsync, Deadletter, DeadletterAsync, Defer, DeferAsync, RenewLock, RenewLockAsync
 
-不包括接收操作，因为假定应用程序在某个接收循环内使用 [ReceiveMode.PeekLock](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.receivemode.aspx) 模式或通过 [OnMessage](https://msdn.microsoft.com/zh-cn/library/azure/dn369601.aspx) 回调获取消息，而且只有那时才打开用于处理消息的事务作用域。
+不包括接收操作，因为假定应用程序在某个接收循环内使用 [ReceiveMode.PeekLock](https://docs.microsoft.com/zh-cn/dotnet/api/microsoft.servicebus.messaging.receivemode?redirectedfrom=MSDN&view=azureservicebus-4.0.0#microsoft_servicebus_messaging_receivemode) 模式或通过 [OnMessage](https://docs.microsoft.com/zh-cn/dotnet/api/microsoft.servicebus.messaging.messagereceiver?redirectedfrom=MSDN&view=azureservicebus-4.0.0#Microsoft_ServiceBus_Messaging_MessageReceiver_OnMessage_System_Action_Microsoft_ServiceBus_Messaging_BrokeredMessage__Microsoft_ServiceBus_Messaging_OnMessageOptions_) 回调获取消息，而且只有那时才打开用于处理消息的事务作用域。
 
 然后，消息的处置（完成、放弃、死信、延迟）将在事务作用域内进行，并依赖于在事务处理的整体结果。
 
@@ -46,28 +46,28 @@
 
 若要设置此类传输，需创建通过传输队列以目标队列为目标的消息发送方。你还将设置接收方，以便从该同一队列提取消息。例如：
 
-```
-var sender = this.messagingFactory.CreateMessageSender(destinationQueue, myQueueName);
-var receiver = this.messagingFactory.CreateMessageReceiver(myQueueName);
-```
+
+    var sender = this.messagingFactory.CreateMessageSender(destinationQueue, myQueueName);
+    var receiver = this.messagingFactory.CreateMessageReceiver(myQueueName);
+
 
 简单事务处理随后使用这些元素，如以下示例所示：
 
-```
-var msg = receiver.Receive();
 
-using (scope = new TransactionScope())
-{
-    // Do whatever work is required 
+    var msg = receiver.Receive();
+    
+    using (scope = new TransactionScope())
+    {
+        // Do whatever work is required 
+    
+        var newmsg = ... // package the result 
+    
+        msg.Complete(); // mark the message as done
+        sender.Send(newmsg); // forward the result
+    
+        scope.Complete(); // declare the transaction done
+    } 
 
-    var newmsg = ... // package the result 
-
-    msg.Complete(); // mark the message as done
-    sender.Send(newmsg); // forward the result
-
-    scope.Complete(); // declare the transaction done
-} 
-```
 
 ## 后续步骤
 

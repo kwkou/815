@@ -28,7 +28,7 @@ Azure 服务总线支持一组基于云的、面向消息的中间件技术，�
 
 使用队列在消息创建方与使用方之间中继可在各组件之间提供固有的松散耦合。由于创建方和使用方互不相识，因此，可升级使用方，而不会对创建方产生任何影响。
 
-创建队列是一个多步骤过程。可以通过 [Microsoft.ServiceBus.NamespaceManager](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.namespacemanager.aspx) 类执行服务总线消息传送实体（队列和主题）的管理操作，该类可通过提供服务总线命名空间的基址和用户凭据进行构建。[NamespaceManager](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.namespacemanager.aspx) 提供了创建、枚举和删除消息传送实体的方法。在使用 SAS 名称和密钥创建 [Microsoft.ServiceBus.TokenProvider](https://msdn.microsoft.com/library/azure/microsoft.servicebus.tokenprovider.aspx) 对象和服务命名空间管理对象后，可以使用 [Microsoft.ServiceBus.NamespaceManager.CreateQueue](https://msdn.microsoft.com/zh-cn/library/azure/hh293157.aspx) 方法创建队列。例如：
+创建队列是一个多步骤过程。可以通过 [Microsoft.ServiceBus.NamespaceManager](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.namespacemanager.aspx) 类执行服务总线消息传送实体（队列和主题）的管理操作，该类可通过提供服务总线命名空间的基址和用户凭据进行构建。[NamespaceManager](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.namespacemanager.aspx) 提供了创建、枚举和删除消息传送实体的方法。在使用 SAS 名称和密钥创建 [Microsoft.ServiceBus.TokenProvider](https://docs.microsoft.com/en-us/dotnet/api/microsoft.servicebus.tokenprovider?redirectedfrom=MSDN&view=azureservicebus-4.0.0#microsoft_servicebus_tokenprovider) 对象和服务命名空间管理对象后，可以使用 [Microsoft.ServiceBus.NamespaceManager.CreateQueue](https://docs.microsoft.com/zh-cn/dotnet/api/microsoft.servicebus.namespacemanager?redirectedfrom=MSDN&view=azureservicebus-4.0.0#Microsoft_ServiceBus_NamespaceManager_CreateQueue_Microsoft_ServiceBus_Messaging_QueueDescription_) 方法创建队列。例如：
 
 
 		// Create management credentials
@@ -117,7 +117,7 @@ Azure 服务总线支持一组基于云的、面向消息的中间件技术，�
 		}
 
 
-与队列类似，可使用 [SubscriptionClient](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.subscriptionclient.aspx) 对象而不是 [QueueClient](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.queueclient.aspx) 对象接收来自订阅的消息。创建订阅客户端，将主题的名称、订阅的名称和（可选）接收模式作为参数传递。例如，对于**库存**订阅：
+与队列类似，可使用 [SubscriptionClient](https://docs.microsoft.com/zh-cn/dotnet/api/microsoft.servicebus.messaging.subscriptionclient?redirectedfrom=MSDN&view=azureservicebus-4.0.0#microsoft_servicebus_messaging_subscriptionclient) 对象而不是 [QueueClient](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.queueclient.aspx) 对象接收来自订阅的消息。创建订阅客户端，将主题的名称、订阅的名称和（可选）接收模式作为参数传递。例如，对于**库存**订阅：
 
 
 		// Create the subscription client
@@ -153,7 +153,7 @@ Azure 服务总线支持一组基于云的、面向消息的中间件技术，�
 
 通过应用此订阅筛选器，只有 `StoreName` 属性设置为 `Store1` 的消息将复制到 `Dashboard` 订阅的虚拟队列。
 
-有关可能的筛选器值的详细信息，请参阅有关 [SqlFilter](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.sqlfilter.aspx) 和 [SqlRuleAction](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.sqlruleaction.aspx) 类的文档。另请参阅[中转消息传送：高级筛选器](http://code.msdn.microsoft.com/Brokered-Messaging-6b0d2749)和[主题筛选器](https://github.com/Azure-Samples/azure-servicebus-messaging-samples/tree/master/TopicFilters)示例。
+有关可能的筛选器值的详细信息，请参阅有关 [SqlFilter](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.sqlfilter.aspx) 和 [SqlRuleAction](https://docs.microsoft.com/zh-cn/dotnet/api/microsoft.servicebus.messaging.sqlruleaction?redirectedfrom=MSDN&view=azureservicebus-4.0.0#microsoft_servicebus_messaging_sqlruleaction) 类的文档。另请参阅[中转消息传送：高级筛选器](http://code.msdn.microsoft.com/Brokered-Messaging-6b0d2749)和[主题筛选器](https://github.com/Azure-Samples/azure-servicebus-messaging-samples/tree/master/TopicFilters)示例。
 
 ## 后续步骤
 有关使用服务总线消息传送的详细信息和示例，请参阅以下高级主题。

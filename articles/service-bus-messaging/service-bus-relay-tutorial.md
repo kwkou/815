@@ -167,7 +167,7 @@
 
 ### 定义服务主机的配置
 
-1. 配置文件非常类似于 WCF 配置文件。该配置文件包括服务名称、终结点（即，服务总线公开的、让客户端和主机相互通信的位置）和绑定（用于通信的协议类型）。此处的主要差别在于，配置的服务终结点是指 [NetTcpRelayBinding](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.nettcprelaybinding.aspx) 绑定，它不是 .NET Framework 的一部分。[NetTcpRelayBinding](https://docs.microsoft.com/en-us/dotnet/api/microsoft.servicebus.nettcprelaybinding?redirectedfrom=MSDN#microsoft_servicebus_nettcprelaybinding) 是通过服务总线定义的绑定之一。
+1. 配置文件非常类似于 WCF 配置文件。该配置文件包括服务名称、终结点（即，服务总线公开的、让客户端和主机相互通信的位置）和绑定（用于通信的协议类型）。此处的主要差别在于，配置的服务终结点是指 [NetTcpRelayBinding](https://docs.microsoft.com/zh-cn/dotnet/api/microsoft.servicebus.nettcprelaybinding?redirectedfrom=MSDN&view=azureservicebus-4.0.0#microsoft_servicebus_nettcprelaybinding) 绑定，它不是 .NET Framework 的一部分。[NetTcpRelayBinding](https://docs.microsoft.com/en-us/dotnet/api/microsoft.servicebus.nettcprelaybinding?redirectedfrom=MSDN#microsoft_servicebus_nettcprelaybinding) 是通过服务总线定义的绑定之一。
 
 1. 在**解决方案资源管理器**中，双击 App.config 文件以在 Visual Studio 编辑器中将其打开。
 
@@ -258,7 +258,7 @@
 
 	随后将使用 SAS 密钥来访问你的服务总线项目。命名空间作为参数传递给 `CreateServiceUri` 以创建服务 URI。
 
-4. 使用 [TransportClientEndpointBehavior](https://msdn.microsoft.com/zh-cn/library/microsoft.servicebus.transportclientendpointbehavior.aspx) 对象声明你将使用 SAS 密钥作为凭据类型。在最后一步中添加的代码后直接添加以下代码。
+4. 使用 [TransportClientEndpointBehavior](https://docs.microsoft.com/zh-cn/dotnet/api/microsoft.servicebus.transportclientendpointbehavior?redirectedfrom=MSDN&view=azureservicebus-4.0.0#microsoft_servicebus_transportclientendpointbehavior) 对象声明你将使用 SAS 密钥作为凭据类型。在最后一步中添加的代码后直接添加以下代码。
 
 	
 		TransportClientEndpointBehavior sasCredential = new TransportClientEndpointBehavior();
@@ -285,7 +285,7 @@
 		ServiceBusEnvironment.SystemConnectivity.Mode = ConnectivityMode.AutoDetect;
 	
 
-	连接模式描述服务用于与服务总线进行通信的协议；连接模式为 HTTP 或 TCP。使用默认设置 `AutoDetect`，服务尝试通过 TCP（如果可用）或 HTTP（如果 TCP 不可用）连接到服务总线。请注意这与服务为客户端通信指定的协议不同。为客户端通信指定的协议由所使用的绑定所决定。例如，服务可以使用指定其终结点（公开在服务总线上）的 [BasicHttpRelayBinding](https://msdn.microsoft.com/zh-cn/library/microsoft.servicebus.basichttprelaybinding.aspx) 绑定通过 HTTP 与客户端通信。同一个服务可以指定 **ConnectivityMode.AutoDetect**，以便服务通过 TCP 与服务总线通信。
+	连接模式描述服务用于与服务总线进行通信的协议；连接模式为 HTTP 或 TCP。使用默认设置 `AutoDetect`，服务尝试通过 TCP（如果可用）或 HTTP（如果 TCP 不可用）连接到服务总线。请注意这与服务为客户端通信指定的协议不同。为客户端通信指定的协议由所使用的绑定所决定。例如，服务可以使用指定其终结点（公开在服务总线上）的 [BasicHttpRelayBinding](https://docs.microsoft.com/zh-cn/dotnet/api/microsoft.servicebus.basichttprelaybinding?redirectedfrom=MSDN&view=azureservicebus-4.0.0#microsoft_servicebus_basichttprelaybinding) 绑定通过 HTTP 与客户端通信。同一个服务可以指定 **ConnectivityMode.AutoDetect**，以便服务通过 TCP 与服务总线通信。
 
 2. 使用之前在本部分中创建的 URI 创建服务主机。
 
@@ -295,7 +295,7 @@
 
 	该服务主机是可实例化服务的 WCF 对象。在这里你将传递想要创建的服务类型（`EchoService` 类型），以及想要公开服务的地址。
 
-3. 在 Program.cs 文件的顶部，添加对 [System.ServiceModel.Description](https://msdn.microsoft.com/zh-cn/library/system.servicemodel.description.aspx) 和 [Microsoft.ServiceBus.Description](https://msdn.microsoft.com/zh-cn/library/microsoft.servicebus.description.aspx) 的引用。
+3. 在 Program.cs 文件的顶部，添加对 [System.ServiceModel.Description](https://msdn.microsoft.com/zh-cn/library/system.servicemodel.description.aspx) 和 [Microsoft.ServiceBus.Description](https://docs.microsoft.com/zh-cn/dotnet/api/microsoft.servicebus.description?redirectedfrom=MSDN&view=azureservicebus-4.0.0#microsoft_servicebus_description) 的引用。
 
 	
 		using System.ServiceModel.Description;

@@ -60,10 +60,10 @@ IoT 中心客户端库使用 Parson JSON 分析器分析消息有效负载。在
 
 将 **parson.c** 和 **parson.h** 文件从 Parson 存储库的本地副本复制到 **remote\_monitoring/parson** 文件夹。
 
-1. 在文本编辑器中，打开 **remote\_monitoring.c** 文件。添加以下 `#include` 语句：
+在文本编辑器中，打开 **remote\_monitoring.c** 文件。添加以下 `#include` 语句：
 
     
-            #include "iothubtransportmqtt.h"
+        #include "iothubtransportmqtt.h"
 	    #include "schemalib.h"
 	    #include "iothub_client.h"
 	    #include "serializer_devicetwin.h"
