@@ -5,5 +5,3 @@
 - [PHP](/documentation/articles/sql-database-develop-php-simple/)
 - [Python](/documentation/articles/sql-database-develop-python-simple/)
 - [Ruby](/documentation/articles/sql-database-develop-ruby-simple/)
-
-<!---HONumber=Mooncake_0530_2016-->
