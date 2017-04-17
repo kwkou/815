@@ -130,5 +130,5 @@
 - [服务总线基础知识](/documentation/articles/service-bus-fundamentals-hybrid-solutions/)
 - [服务总线体系结构](/documentation/articles/service-bus-architecture/)
 
-<!---HONumber=Mooncake_Quality_Review_0125_2017-->
-<!--Update_Description:update meta properties--> 
+
+<!--Update_Description:update wording and  meta properties--> 

@@ -426,3 +426,6 @@
   [sbacom]: /documentation/services/service-bus/  
   [sbacomqhowto]: /documentation/articles/service-bus-dotnet-get-started-with-queues/  
   [mutitierstorage]: https://code.msdn.microsoft.com/Windows-Azure-Multi-Tier-eadceb36
+  
+  
+  <!--Update_Description:update wording -->

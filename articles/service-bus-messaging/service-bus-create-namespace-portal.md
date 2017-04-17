@@ -39,3 +39,6 @@
 
 [create-namespace-using-arm]: /documentation/articles/service-bus-resource-manager-overview/
 [github-samples]: https://github.com/Azure-Samples/azure-servicebus-messaging-samples
+
+
+<!--Update_Description:update wording -->

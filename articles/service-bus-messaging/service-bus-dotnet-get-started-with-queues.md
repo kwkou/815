@@ -180,3 +180,6 @@
 <!--Reference style links - using these makes the source content way more readable than using inline links-->
 
 [github-samples]: https://github.com/Azure-Samples/azure-servicebus-messaging-samples
+
+
+<!--Update_Description:update wording and code-->

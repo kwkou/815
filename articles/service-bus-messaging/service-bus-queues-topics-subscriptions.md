@@ -148,5 +148,5 @@ Azure 服务总线支持一组基于云的、面向消息的中间件技术，�
 - [主题筛选器示例](https://github.com/Azure-Samples/azure-servicebus-messaging-samples/tree/master/TopicFilters)
 - [中转消息传送：高级筛选器](http://code.msdn.microsoft.com/Brokered-Messaging-6b0d2749)
 
-<!---HONumber=Mooncake_0213_2017-->
-<!--Update_Description:update wording and delete the section of event-hubs-->
+
+<!--Update_Description:update wording-->

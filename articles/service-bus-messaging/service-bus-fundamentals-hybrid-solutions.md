@@ -121,5 +121,5 @@
 [3]: ./media/service-bus-fundamentals-hybrid-solutions/SvcBus_03_topicsandsubscriptions.png
 [4]: ./media/service-bus-fundamentals-hybrid-solutions/SvcBus_04_relay.png
 
-<!---HONumber=Mooncake_0213_2017-->
+
 <!--Update_Description:update wording and link references-->

@@ -230,4 +230,4 @@ Azure 支持两种队列机制：**存储队列**和**服务总线队列**。
 [Azure 经典管理门户]: http://manage.windowsazure.cn
  
 
-<!---HONumber=Mooncake_Quality_Review_1230_2016-->
+<!--Update_Description:update wording -->
