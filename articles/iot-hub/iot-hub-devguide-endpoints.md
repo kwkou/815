@@ -5,7 +5,8 @@
     documentationcenter=".net"
     author="dominicbetts"
     manager="timlt"
-    editor="" />
+    editor=""
+    translationtype="Human Translation" />
 <tags
     ms.assetid="57ba52ae-19c6-43e4-bc6c-d8a5c2476e95"
     ms.service="iot-hub"
@@ -14,13 +15,15 @@
     ms.tgt_pltfrm="na"
     ms.workload="na"
     ms.date="01/31/2017"
-    wacn.date="03/10/2017"
-    ms.author="dobett" />  
+    wacn.date="04/17/2017"
+    ms.author="dobett"
+    ms.sourcegitcommit="7cc8d7b9c616d399509cd9dbdd155b0e9a7987a8"
+    ms.openlocfilehash="5bca1dededbeec3ebeb5efe744042a0bf7f7a533"
+    ms.lasthandoff="04/07/2017" />
 
-
-# 参考 - IoT 中心终结点
-## 内置 IoT 中心终结点列表
-Azure IoT 中心属于多租户服务，向各种执行组件公开功能。下图显示了 IoT 中心公开的各种终结点。
+# <a name="reference---iot-hub-endpoints"></a>参考 - IoT 中心终结点
+## <a name="list-of-built-in-iot-hub-endpoints"></a>内置 IoT 中心终结点列表
+Azure IoT 中心属于多租户服务，向各种执行组件公开功能。 下图显示了 IoT 中心公开的各种终结点。
 
 ![IoT 中心终结点][img-endpoints]
 
@@ -33,7 +36,7 @@ Azure IoT 中心属于多租户服务，向各种执行组件公开功能。下�
 * **设备终结点**。对于标识注册表中预配的每个设备，IoT 中心公开设备可用来发送和接收消息的一组终结点：
   
   * *发送设备到云的消息*。使用此终结点[发送设备到云的消息][lnk-d2c]。
-  * *接收云到设备的消息*设备使用此终结点接收目标[云到设备的消息][lnk-c2d]。
+  * *接收云到设备的消息*。 设备使用此终结点接收面向[云到设备的消息][lnk-c2d]。
   * *启动文件上载*。设备使用此终结点接收来自 IoT 中心的 Azure 存储 SAS URI，以便[上载文件][lnk-upload]。
   * *检索并更新设备孪生的属性*。设备使用此终结点访问其[设备孪生][lnk-twins]的属性。
   * *接收直接方法请求*。设备使用此终结点侦听[直接方法][lnk-methods]的请求。
@@ -47,13 +50,14 @@ Azure IoT 中心属于多租户服务，向各种执行组件公开功能。下�
   * *发送云到设备的消息并接收传递确认*。这些终结点可让解决方案后端发送可靠的[云到设备的消息][lnk-c2d]，以及接收对应的传送或过期确认。
   * *接收文件通知*。此消息传递终结点允许你在设备成功上传文件时接收通知。
   * *直接方法调用*。此终结点允许后端服务调用设备上的[直接方法][lnk-methods]。
+  * *接收操作监视事件*。 此终结点可以用于接收操作监视事件，前提是已将 IoT 中心配置为发出这些事件。 如需更多详细信息，请参阅 [IoT 中心操作监视][lnk-operations-mon]。
 
-[Azure IoT SDK][lnk-sdks] 一文介绍了可用于访问这些终结点的各种方式。
+[Azure IoT SDK][lnk-sdks] 一文介绍了访问这些终结点的各种方法。
 
 最后请务必注意，所有的 IoT 中心终结点都使用 [TLS][lnk-tls] 协议，且绝不会在未加密/不安全的通道上公开任何终结点。
 
-## 自定义终结点
-可将订阅中的现有 Azure 服务链接到用作消息路由终结点的 IoT 中心。这些终结点充当服务终结点，并用作消息路由的接收器。设备无法直接写入附加终结点。若要了解有关消息路由的详细信息，请参阅[通过 IoT 中心发送和接收消息][lnk-devguide-messaging]中的开发人员指南条目。
+## <a name="custom-endpoints"></a>自定义终结点
+可将订阅中的现有 Azure 服务链接到用作消息路由终结点的 IoT 中心。 这些终结点充当服务终结点，并用作消息路由的接收器。 设备无法直接写入附加终结点。 若要了解有关消息路由的详细信息，请参阅 [通过 IoT 中心发送和接收消息][lnk-devguide-messaging]中的开发人员指南条目。
 
 IoT 中心当前支持将以下 Azure 服务作为附加终结点：
 
@@ -72,8 +76,7 @@ IoT 中心需要这些服务终结点的写入权限，以便使用消息路由�
 
 可以使用 [Azure IoT 网关 SDK][lnk-gateway-sdk] 实现现场网关。此 SDK 提供特定功能，例如能够在同一个 IoT 中心连接上多路复用来自多个设备的通信。
 
-## 后续步骤
-
+## <a name="next-steps"></a>后续步骤
 此 IoT 中心开发人员指南中的其他参考主题包括：
 
 - [设备孪生和作业的 IoT 中心查询语言][lnk-devguide-query]
@@ -108,6 +111,6 @@ IoT 中心需要这些服务终结点的写入权限，以便使用消息路由�
 [lnk-devguide-query]: /documentation/articles/iot-hub-devguide-query-language/
 [lnk-devguide-mqtt]: /documentation/articles/iot-hub-mqtt-support/
 [lnk-devguide-messaging]: /documentation/articles/iot-hub-devguide-messaging/
+[lnk-operations-mon]: /documentation/articles/iot-hub-operations-monitoring/
 
-<!---HONumber=Mooncake_0306_2017-->
 <!--Update_Description:update wording-->

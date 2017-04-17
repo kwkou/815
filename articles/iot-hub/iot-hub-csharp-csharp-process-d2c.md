@@ -5,7 +5,8 @@
     documentationcenter=".net"
     author="dominicbetts"
     manager="timlt"
-    editor="" />
+    editor=""
+    translationtype="Human Translation" />
 <tags
     ms.assetid="5177bac9-722f-47ef-8a14-b201142ba4bc"
     ms.service="iot-hub"
@@ -14,16 +15,18 @@
     ms.tgt_pltfrm="na"
     ms.workload="na"
     ms.date="01/31/2017"
-    wacn.date="03/10/2017"
-    ms.author="dobett" />  
+    wacn.date="04/17/2017"
+    ms.author="dobett"
+    ms.sourcegitcommit="7cc8d7b9c616d399509cd9dbdd155b0e9a7987a8"
+    ms.openlocfilehash="ec6a3ce1ef484f55d73bddd9fa512627f7210a63"
+    ms.lasthandoff="04/07/2017" />
 
-
-# 使用路由处理 IoT 中心设备到云消息 \(.NET\)
+# <a name="process-iot-hub-device-to-cloud-messages-using-routes-net"></a>使用路由处理 IoT 中心设备到云消息 (.NET)
 
 [AZURE.INCLUDE [iot-hub-selector-process-d2c](../../includes/iot-hub-selector-process-d2c.md)]
 
-## 介绍
-Azure IoT 中心是一项完全托管的服务，可在数百万台设备和单个解决方案后端之间实现安全可靠的双向通信。其他教程（[IoT 中心入门]和[使用 IoT 中心发送云到设备的消息][lnk-c2d]）介绍了如何使用 IoT 中心的设备到云和云到设备的基本消息传递功能。
+## <a name="introduction"></a>介绍
+Azure IoT 中心是一项完全托管的服务，可在数百万个设备和一个解决方案后端之间实现安全可靠的双向通信。 其他教程（[IoT 中心入门]和[使用 IoT 中心发送“云到设备”消息][lnk-c2d]）介绍了如何使用 IoT 中心的“设备到云”和“云到设备”的基本消息传递功能。
 
 本教程以 [IoT 中心入门]教程为基础，说明如何以基于配置的轻松方式，使用路由规则发送设备到云消息。本教程介绍如何隔离需要解决方案后端立即执行操作以进行进一步处理的消息。例如，设备可能将发送一条警报消息，触发在 CRM 系统中插入票证。与此相反，数据点消息仅送入分析引擎。例如，设备中存储便于日后分析的温度遥测是数据点消息。
 
@@ -34,24 +37,23 @@ Azure IoT 中心是一项完全托管的服务，可在数百万台设备和单�
 * **read-critical-queue**，从附加到 IoT 中心的服务总线队列中取消模拟设备应用发送的关键消息的排队。
 
 > [AZURE.NOTE]
-IoT 中心对许多设备平台和语言（包括 C、Java 和 JavaScript）提供 SDK 支持。若要了解如何将本教程中的模拟设备替换为物理设备，以及如何将设备连接到 IoT 中心，请参阅 [Azure IoT 开发人员中心]。
+> IoT 中心对许多设备平台和语言（包括 C、Java 和 JavaScript）提供 SDK 支持。 若要了解如何将本教程中的模拟设备替换为物理设备，以及如何将设备连接到 IoT 中心，请参阅 [Azure IoT 开发人员中心]。
 > 
 > 
 
-要完成本教程，需要具备以下先决条件：
+若要完成本教程，您需要以下各项：
 
-* Microsoft Visual Studio 2015。
+* Visual Studio 2015 或 Visual Studio 2017。
 * 有效的 Azure 帐户。<br/>如果没有帐户，只需花费几分钟就能创建一个[帐户](/pricing/1rmb-trial/)。
 
 应具备 [Azure 存储]和 [Azure 服务总线]的一些基础知识。
 
-## 从模拟设备应用发送交互式消息
-在本部分中，会修改 [IoT 中心入门]教程中创建的模拟设备应用，以便不定期地发送需要立即处理的消息。
+## <a name="send-interactive-messages-from-a-simulated-device-app"></a>从模拟设备应用发送交互式消息
+在本部分中，会修改 [IoT 中心入门]教程中创建的模拟设备应用，不定期发送需要立即处理的消息。
 
-1. 在 Visual Studio 的 **SimulatedDevice** 项目中，将 `SendDeviceToCloudMessagesAsync` 方法替换为以下代码。
-   
-    
-        private static async void SendDeviceToCloudMessagesAsync()
+在 Visual Studio 的 **SimulatedDevice** 项目中，将 `SendDeviceToCloudMessagesAsync` 方法替换为以下代码：
+
+    private static async void SendDeviceToCloudMessagesAsync()
         {
             double avgWindSpeed = 10; // m/s
             Random rand = new Random();
@@ -101,7 +103,7 @@ IoT 中心对许多设备平台和语言（包括 C、Java 和 JavaScript）提�
     > 
     > 
 
-## 向 IoT 中心添加一个队列并向其路由消息
+## <a name="add-a-queue-to-your-iot-hub-and-route-messages-to-it"></a>向 IoT 中心添加一个队列并向其路由消息
 本部分的操作：
 
 * 创建服务总线队列。
@@ -116,41 +118,34 @@ IoT 中心对许多设备平台和语言（包括 C、Java 和 JavaScript）提�
     
     ![IoT 中心的终结点][30]  
 
+3. 在“终结点”边栏选项卡中，单击顶部的“添加”，将队列添加到 IoT 中心。 将终结点命名为“CriticalQueue”，并使用下拉列表选择“服务总线队列”、队列所在的服务总线命名空间和队列名称。 完成后，单击底部的“**保存**”。
 
-3. 在“终结点”边栏选项卡中，单击顶部的“添加”，将队列添加到 IoT 中心。将终结点命名为“CriticalQueue”，并使用下拉列表选择“服务总线队列”、队列所在的服务总线命名空间和队列名称。完成后，单击底部的“保存”。
-    
-    ![添加终结点][31]  
+    ![添加终结点][31]
 
-    
-4. 现在单击 IoT 中心的“路由”。单击边栏选项卡顶部的“添加”，创建将消息路由到刚添加的队列的路由规则。选择“DeviceTelemetry”作为数据源。输入 `level="critical"` 作为条件，然后选择刚添加为自定义终结点的队列作为路由规则终结点。完成后，单击底部的“保存”。
-    
-    ![添加路由][32]  
+4. 现在单击 IoT 中心的“路由”  。 单击边栏选项卡顶部的“添加”  ，创建将消息路由到刚添加的队列的路由规则。 选择“DeviceTelemetry”  作为数据源。 输入 `level="critical"` 作为条件，然后选择刚添加为自定义终结点的队列作为路由规则终结点。  。
 
-    
-    请确保回退路由设为“开”。此值是 IoT 中心的默认配置。
-    
-    ![回退路由][33]  
+    ![添加路由][32]
 
+    请确保回退路由设为“开” 。 此值是 IoT 中心的默认配置。
 
-## 从队列终结点读取
+    ![回退路由][33]
+
+## <a name="read-from-the-queue-endpoint"></a>从队列终结点读取
 在本部分中，会从队列终结点读取消息。
 
-1. 在当前的 Visual Studio 解决方案中，使用“控制台应用程序”项目模板创建 Visual C# Windows 项目。将项目命名为 **ReadCriticalQueue**。
+1. 在 Visual Studio 中，使用“控制台应用(.NET Framework)”项目模板将 Visual C# Windows 经典桌面项目添加到当前解决方案。 将项目命名为 **ReadCriticalQueue**。
 
-2. 在“解决方案资源管理器”中，右键单击 **ReadCriticalQueue** 项目，然后单击“管理 NuGet 包”。此操作会显示“NuGet 包管理器”窗口。
+2. 在解决方案资源管理器中，右键单击 **ReadCriticalQueue** 项目，然后单击“管理 NuGet 包”。 此操作将显示“**NuGet 包管理器**”窗口。
 
-3. 搜索 **WindowsAzure.ServiceBus**，单击“安装”并接受使用条款。此操作会下载和安装 Azure 服务总线及其所有依赖项，并添加对它的引用。
+3. 搜索“**WindowsAzure.ServiceBus**”，单击“**安装**”，并接受使用条款。 此操作会下载和安装 Azure 服务总线及其所有依赖项，并添加对它的引用。
 
-4. 在 **Program.cs** 文件的顶部添加以下 **using** 语句：
-   
-    
+4. 在 **Program.cs** 文件顶部添加以下 **using** 语句：
+
         using System.IO;
         using Microsoft.ServiceBus.Messaging;
-    
 
-5. 最后，在 **Main** 方法中添加以下行。将连接字符串替换为队列的 **Listen** 权限：
-   
-    
+5. 最后，将下面的行添加到 **Main** 方法。 将连接字符串替换为队列的 **Listen** 权限：
+
         Console.WriteLine("Receive critical messages. Ctrl-C to exit.\n");
         var connectionString = "{service bus listen string}";
         var queueName = "{queue name}";
@@ -166,18 +161,16 @@ IoT 中心对许多设备平台和语言（包括 C、Java 和 JavaScript）提�
             });
             
         Console.ReadLine();
-    
 
-## 运行应用程序
+## <a name="run-the-applications"></a>运行应用程序
 现在，你已准备就绪，可以运行应用程序了。
 
-1. 在 Visual Studio 的解决方案资源管理器中，右键单击你的解决方案并选择“设置启动项目”。选择“多个启动项目”，然后为 **ReadDeviceToCloudMessages**、**SimulatedDevice** 和 **ReadCriticalQueue** 项目选择“启动”作为操作。
-2. 按 **F5** 启动 3 个控制台应用。**ReadDeviceToCloudMessages** 应用仅拥有 **SimulatedDevice** 应用程序发送的非关键消息，而 **ReadCriticalQueue** 应用仅拥有关键消息。
-   
-   ![3 个控制台应用][50]  
+1. 在 Visual Studio 的解决方案资源管理器中，右键单击你的解决方案并选择“**设置启动项目**”。 选择“多个启动项目”，然后为 **ReadDeviceToCloudMessages**、**SimulatedDevice** 和 **ReadCriticalQueue** 项目选择“启动”作为操作。
+2. 按 **F5** 启动三个控制台应用。 **ReadDeviceToCloudMessages** 应用仅拥有 **SimulatedDevice** 应用程序发送的非关键消息，而 **ReadCriticalQueue** 应用仅拥有关键消息。
 
+   ![3 个控制台应用][50]
 
-## 后续步骤
+## <a name="next-steps"></a>后续步骤
 在本教程中，介绍了如何使用 IoT 中心的消息路由功能可靠地分派设备到云的消息。
 
 通过[如何使用 IoT 中心发送云到设备的消息][lnk-c2d]，了解如何将消息从解决方案后端发送到设备。
@@ -217,15 +210,15 @@ IoT 中心对许多设备平台和语言（包括 C、Java 和 JavaScript）提�
 [lnk-service-fabric]: /documentation/services/service-fabric/
 [lnk-stream-analytics]: /documentation/services/stream-analytics/
 [lnk-event-hubs]: /documentation/services/event-hubs/
-[Transient Fault Handling]: https://msdn.microsoft.com/library/hh675232.aspx
+[Transient Fault Handling]: https://msdn.microsoft.com/zh-cn/library/hh675232.aspx
 
 <!-- Links -->
 
 [About Azure Storage]: /documentation/articles/storage-create-storage-account/#create-a-storage-account
-[Get Started with Event Hubs]: /documentation/articles/event-hubs-dotnet-standard-getstarted-send/
+[Get Started with Event Hubs]: /documentation/articles/event-hubs-csharp-ephcs-getstarted/
 [Azure Storage scalability Guidelines]: /documentation/articles/storage-scalability-targets/
 [Azure Block Blobs]: https://msdn.microsoft.com/zh-cn/library/azure/ee691964.aspx
-[Event Hubs]: /documentation/articles/event-hubs-what-is-event-hubs/
+[Event Hubs]: /documentation/articles/event-hubs-overview/
 [EventProcessorHost]: http://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.eventprocessorhost(v=azure.95).aspx
 [Event Hubs Programming Guide]: /documentation/articles/event-hubs-programming-guide/
 [Transient Fault Handling]: https://msdn.microsoft.com/zh-cn/library/hh680901(v=pandp.50).aspx
@@ -235,5 +228,4 @@ IoT 中心对许多设备平台和语言（包括 C、Java 和 JavaScript）提�
 [lnk-c2d]: /documentation/articles/iot-hub-csharp-csharp-process-d2c/
 [lnk-suite]: /documentation/services/iot-suite/
 
-<!---HONumber=Mooncake_0306_2017-->
 <!--Update_Description:update wording and code-->

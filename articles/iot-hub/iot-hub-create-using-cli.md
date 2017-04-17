@@ -1,77 +1,65 @@
 <properties
     pageTitle="使用 Azure CLI (az.py) 创建 IoT 中心 | Azure"
-    description="如何使用跨平台的 Azure CLI 2.0（预览版）(az.py) 创建 Azure IoT 中心。"
+    description="如何使用跨平台的 Azure CLI 2.0 (az.py) 创建 Azure IoT 中心。"
     services="iot-hub"
     documentationcenter=".net"
     author="dominicbetts"
     manager="timlt"
-    editor="" />
+    editor=""
+    translationtype="Human Translation" />
 <tags
-    ms.assetid="ms.service: iot-hub"
+    ms.assetid=""
+    ms.service="iot-hub"
     ms.devlang="multiple"
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="na"
-    ms.date="12/15/2016"
-    wacn.date="01/13/2017"
-    ms.author="dobett" />  
+    ms.date="03/16/2017"
+    wacn.date="04/17/2017"
+    ms.author="dobett"
+    ms.sourcegitcommit="7cc8d7b9c616d399509cd9dbdd155b0e9a7987a8"
+    ms.openlocfilehash="99dc90d9cb29730726876404e849119f1db73fc9"
+    ms.lasthandoff="04/07/2017" />
 
-
-# 使用 Azure CLI 2.0（预览版）创建 IoT 中心
+# <a name="create-an-iot-hub-using-the-azure-cli-20"></a>使用 Azure CLI 2.0 创建 IoT 中心
 
 [AZURE.INCLUDE [iot-hub-resource-manager-selector](../../includes/iot-hub-resource-manager-selector.md)]
 
-## 介绍
+## <a name="introduction"></a>介绍
 
-可使用 Azure CLI 2.0（预览版）\(az.py\) 以编程方式创建和管理 Azure IoT 中心。本文说明如何使用 Azure CLI 2.0（预览版）\(az.py\) 创建 IoT 中心。
+可使用 Azure CLI 2.0 (az.py) 以编程方式创建和管理 Azure IoT 中心。 本文介绍如何使用 Azure CLI 2.0 (az.py) 创建 IoT 中心。
 
-可使用以下 CLI 版本之一完成任务：
+可以使用以下 CLI 版本之一完成任务：
 
-* [Azure CLI \(azure.js\)](/documentation/articles/iot-hub-create-using-cli-nodejs/)：用于经典部署模型和资源管理部署模型的 CLI。
-* Azure CLI 2.0（预览版）\(az.py\)：用于本文中所述的资源管理部署模型的下一代 CLI。
+* [Azure CLI (azure.js)](/documentation/articles/iot-hub-create-using-cli-nodejs/) - 适用于经典部署模型和资源管理部署模型的 CLI。
+* Azure CLI 2.0 (az.py) - 适用于本文中所述的资源管理部署模型的下一代 CLI。
 
-要完成本教程，需要具备以下先决条件：
+若要完成本教程，需要以下各项：
 
-* 有效的 Azure 帐户。如果没有帐户，只需花费几分钟就能创建一个[帐户][lnk-free-trial]。
+* 有效的 Azure 帐户。如果没有帐户，只需几分钟即可创建一个[试用帐户][lnk-free-trial]。
 * [Azure CLI 2.0（预览版）][lnk-CLI-install]。
 
-## 登录并设置 Azure 帐户
+## <a name="sign-in-and-set-your-azure-account"></a>登录并设置 Azure 帐户
 
 登录 Azure 帐户，并将 Azure CLI 配置为与 IoT 中心资源配合使用。
 
 1. 在命令提示符中，运行 [login 命令][lnk-login-command]：
-    
+
         az login
 
     按照说明使用代码进行身份验证，并通过 Web 浏览器登录 Azure 帐户。
     
     [AZURE.INCLUDE [azure-cli-2-azurechinacloud-environment-parameter](../../includes/azure-cli-2-azurechinacloud-environment-parameter.md)]
 
-2. 如果有多个 Azure 订阅，登录 Azure 可获得与凭据关联的所有 Azure 帐户的访问权限。使用以下[命令，列出可供使用的 Azure 帐户][lnk-az-account-command]：
-    
-    
+2. 如果有多个 Azure 订阅，登录 Azure 可获得与凭据关联的所有 Azure 帐户的访问权限。 使用以下 [命令，列出可供使用的 Azure 帐户][lnk-az-account-command] ：
+
         az account list 
-    
 
-    使用以下命令，选择想要用于运行命令以创建 IoT 中心的订阅。可使用上一命令输出中的订阅名称或 ID：
+    使用以下命令，选择想要用于运行命令以创建 IoT 中心的订阅。 可使用上一命令输出中的订阅名称或 ID：
 
-    
         az account set --subscription {your subscription name or id}
-    
 
-3. 安装 Azure CLI *iot 组件* 。运行以下[命令，添加 iot 组件][lnk-az-addcomponent-command]：
-    
-    
-        az component update --add iot
-    
-
-4. 必须注册 IoT 提供程序才能部署 IoT 资源。运行以下[命令，注册 IoT 提供程序][lnk-az-register-command]：
-    
-    
-        az provider register -namespace Microsoft.Devices
-    
-
-## 创建 IoT 中心
+## <a name="create-an-iot-hub"></a>创建 IoT 中心
 
 使用 Azure CLI 创建资源组，然后添加 IoT 中心。
 
@@ -97,23 +85,19 @@ IoT 中心的名称必须全局唯一。上一命令在计费的 S1 定价层中
 >
 >
 
-## 删除 IoT 中心
+## <a name="remove-an-iot-hub"></a>删除 IoT 中心
 
 可使用 Azure CLI [删除单个资源][lnk-az-resource-command]（例如 IoT 中心），或删除资源组及其所有资源（包括任何 IoT 中心）。
 
 若要删除 IoT 中心，请运行以下命令：
 
-
-	az resource delete --name {your iot hub name} --resource-group {your resource group name} --resource-type Microsoft.Devices/IotHubs
-
+    az resource delete --name {your iot hub name} --resource-group {your resource group name} --resource-type Microsoft.Devices/IotHubs
 
 若要删除资源组及其所有资源，请运行以下命令：
 
+    az group delete --name {your resource group name}
 
-	az group delete --name {your resource group name}
-
-
-## 后续步骤
+## <a name="next-steps"></a>后续步骤
 若要详细了解如何开发 IoT 中心，请参阅以下文章：
 
 * [IoT 中心开发人员指南][lnk-devguide]
@@ -136,5 +120,4 @@ IoT 中心的名称必须全局唯一。上一命令在计费的 S1 定价层中
 [lnk-devguide]: /documentation/articles/iot-hub-devguide/
 [lnk-portal]: /documentation/articles/iot-hub-create-through-portal/
 
-<!---HONumber=Mooncake_0109_2017-->
 <!--Update_Description:update wording and code-->
