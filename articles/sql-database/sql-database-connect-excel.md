@@ -36,9 +36,9 @@
 
 2. 在页面顶部的菜单栏中单击“数据”，单击“从其他源”，然后单击“从 SQL Server”。
    
-   ![选择数据源：将 Excel 连接到 SQL 数据库。](./media/sql-database-connect-excel/excel_data_source.png)
+    ![选择数据源：将 Excel 连接到 SQL 数据库。](./media/sql-database-connect-excel/excel_data_source.png)
    
-   “数据连接”向导打开。
+    “数据连接”向导打开。
 
 3. 在“连接到数据库服务器”对话框中，以格式 <*服务器名称*>**.database.chinacloudapi.cn** 键入要连接到的 SQL 数据库的**服务器名称**。 例如 **adworkserver.database.chinacloudapi.cn**。
 
