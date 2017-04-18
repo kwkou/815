@@ -70,13 +70,14 @@
 若要在 Azure 门户预览中异地还原数据库，请执行以下步骤：
 
 1. 转到 [Azure 门户预览](https://portal.azure.cn)。
+
 2. 在屏幕左侧选择“**+新建**” > “**数据库**” > “**SQL 数据库**”：
    
-   ![还原 Azure SQL 数据库](./media/sql-database-geo-restore-portal/new-sql-database.png)
+    ![还原 Azure SQL 数据库](./media/sql-database-geo-restore-portal/new-sql-database.png)
    
 3. 选择“备份”  作为源，然后选择要还原的备份。 指定数据库名称、要将数据库还原到其中的服务器，然后单击“创建” ：
    
-   ![还原 Azure SQL 数据库](./media/sql-database-geo-restore-portal/geo-restore.png)
+    ![还原 Azure SQL 数据库](./media/sql-database-geo-restore-portal/geo-restore.png)
 
 4. 单击页面右上方的通知图标，监视还原操作的状态。
 
