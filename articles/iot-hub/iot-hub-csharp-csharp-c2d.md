@@ -77,10 +77,11 @@ Azure IoT 中心是一项完全托管的服务，有助于在数百万台设备�
 
     对 `CompleteAsync()` 的调用将通知 IoT 中心，指出已成功处理消息。 可以安全地从设备队列中删除该消息。 如果因故导致设备应用无法完成消息处理作业，IoT 中心将再传递一次。 因此设备应用中的消息处理逻辑必须是幂等的，以便多次接收同一消息会生成相同的结果。 应用程序也可以暂时放弃消息，让 IoT 中心将消息保留在队列中以供将来使用。 或者，应用程序可以拒绝消息，以永久性从队列中删除该消息。 有关云到设备消息生命周期的详细信息，请参阅 [IoT 中心开发人员指南][IoT Hub developer guide - C2D]。
 
-   > [AZURE.NOTE]
-   > 使用 HTTP 而不使用 MQTT 或 AMQP 作为传输时，`ReceiveAsync` 方法将立即返回。 使用 HTTP 的云到设备消息支持的模式为，间歇连接设备且不经常检查消息（频率低于 25 分钟一次）。 发出更多 HTTP 接收会导致 IoT 中心限制请求。 有关 MQTT、AMQP 和 HTTP 支持之间的差异，以及 IoT 中心限制的详细信息，请参阅 [IoT 中心开发人员指南][IoT Hub developer guide - C2D]。
-   > 
-   > 
+     > [AZURE.NOTE]
+     > 使用 HTTP 而不使用 MQTT 或 AMQP 作为传输时，`ReceiveAsync` 方法将立即返回。 使用 HTTP 的云到设备消息支持的模式为，间歇连接设备且不经常检查消息（频率低于 25 分钟一次）。 发出更多 HTTP 接收会导致 IoT 中心限制请求。 有关 MQTT、AMQP 和 HTTP 支持之间的差异，以及 IoT 中心限制的详细信息，请参阅 [IoT 中心开发人员指南][IoT Hub developer guide - C2D]。
+     > 
+     > 
+     
 2. 在 **Main** 方法中的 `Console.ReadLine()` 行前面添加以下方法：
 
         ReceiveC2dAsync();
@@ -94,12 +95,14 @@ Azure IoT 中心是一项完全托管的服务，有助于在数百万台设备�
 1. 在当前的 Visual Studio 解决方案中，使用“控制台应用程序”项目模板创建一个 Visual C# 桌面应用项目。 将项目命名为 **SendCloudToDevice**。
 
     ![Visual Studio 中的新项目][20]
+    
 2. 在“解决方案资源管理器”中，右键单击该解决方案，然后单击“为解决方案管理 NuGet 包...” 。 
 
     此操作将打开“管理 NuGet 包”窗口。
+    
 3. 搜索“Microsoft.Azure.Devices”，然后单击“安装”并接受使用条款。 
 
-    此操作会下载、安装 [Azure IoT 服务 SDK NuGet 包]并添加对它的引用。
+    此操作会下载、安装 [Azure IoT 服务 SDK NuGet 包][Azure IoT - Service SDK NuGet package]并添加对它的引用。
 
 4. 在 **Program.cs** 文件顶部添加以下 `using` 语句：
 

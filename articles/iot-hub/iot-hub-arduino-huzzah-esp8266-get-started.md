@@ -111,15 +111,15 @@
 
    * Windows 7 或更高版本：以管理员身份启动命令提示符。 运行以下命令安装 iothub explorer：
 
-         npm install -g iothub-explorer
+          npm install -g iothub-explorer
 
    * Ubuntu 16.04 或更高版本：使用快捷键 Ctrl+Alt+T 打开终端，然后运行以下命令：
 
-         sudo npm install -g iothub-explorer
+          sudo npm install -g iothub-explorer
 
    * macOS 10.1 或更高版本：打开终端，然后运行以下命令：
 
-         npm install -g iothub-explorer
+          npm install -g iothub-explorer
 
 1. 运行以下命令登录到 IoT 中心：
 
@@ -168,18 +168,18 @@
         ls -l /dev/ttyUSB*
         ls -l /dev/ttyACM*
 
-   将返回以下输出之一：
+    将返回以下输出之一：
 
-   * crw-rw---- 1 root uucp xxxxxxxx
-   * crw-rw---- 1 root dialout xxxxxxxx
+    * crw-rw---- 1 root uucp xxxxxxxx
+    * crw-rw---- 1 root dialout xxxxxxxx
 
-   请注意，在输出中，`uucp` 或 `dialout` 是 USB 端口的组所有者名称。
+    请注意，在输出中，`uucp` 或 `dialout` 是 USB 端口的组所有者名称。
 
 1. 运行以下命令，将用户添加到该组中：
 
         sudo usermod -a -G <group-owner-name> <username>
 
-   `<group-owner-name>` 是在上一步骤中获取的组所有者名称。 `<username>` 是你的 Ubuntu 用户名。
+    `<group-owner-name>` 是在上一步骤中获取的组所有者名称。 `<username>` 是你的 Ubuntu 用户名。
 
 1. 从 Ubuntu 中注销，然后再次登录，使更改生效。
 
@@ -208,7 +208,7 @@
 1. 在“Preferences”（首选项）对话框中，单击“Additional Boards Manager URLs”（其他 Boards Manager URL）文本框旁边的图标。
 1. 在弹出窗口中输入以下 URL，然后单击“OK”（确定）。
 
-   `http://arduino.esp8266.com/stable/package_esp8266com_index.json`
+        `http://arduino.esp8266.com/stable/package_esp8266com_index.json`
 
     ![指向 arduino ide 中的包 url](./media/iot-hub-arduino-huzzah-esp8266-get-started/11_arduino-ide-package-url.png)
 

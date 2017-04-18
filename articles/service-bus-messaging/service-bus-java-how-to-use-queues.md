@@ -190,4 +190,4 @@ Service Bus 提供了相关功能来帮助你轻松地从应用程序错误或�
   [Queues, topics, and subscriptions]: /documentation/articles/service-bus-queues-topics-subscriptions/
   [BrokeredMessage]: https://docs.microsoft.com/en-us/dotnet/api/microsoft.servicebus.messaging.brokeredmessage
   
-  <!--Update_Description:update wording -->
+  <!--Update_Description:update wording-->

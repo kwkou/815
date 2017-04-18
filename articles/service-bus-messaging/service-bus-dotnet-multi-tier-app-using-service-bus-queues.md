@@ -128,79 +128,81 @@
 
 1. 在 Visual Studio 的 OnlineOrder.cs 文件中将现有命名空间定义替换为以下代码：
 
-       namespace FrontendWebRole.Models
-       {
-           public class OnlineOrder
-           {
-               public string Customer { get; set; }
-               public string Product { get; set; }
-           }
-       }
+        namespace FrontendWebRole.Models
+        {
+            public class OnlineOrder
+            {
+                public string Customer { get; set; }
+                public string Product { get; set; }
+            }
+        }
 
 2. 在“解决方案资源管理器”中，双击“Controllers\HomeController.cs”。 **using** 语句以包括针对你刚创建的模型以及服务总线的命名空间。
 
-       using FrontendWebRole.Models;
-       using Microsoft.ServiceBus.Messaging;
-       using Microsoft.ServiceBus;
+        using FrontendWebRole.Models;
+        using Microsoft.ServiceBus.Messaging;
+        using Microsoft.ServiceBus;
 
 3. 仍在 Visual Studio 的 HomeController.cs 文件中，将现有命名空间定义替换为以下代码。 此代码包含用于处理将项提交到队列这一任务的方法。
 
-       namespace FrontendWebRole.Controllers
-       {
-           public class HomeController : Controller
-           {
-               public ActionResult Index()
-               {
-                   // Simply redirect to Submit, since Submit will serve as the
-                   // front page of this application.
-                   return RedirectToAction("Submit");
-               }
+        namespace FrontendWebRole.Controllers
+        {
+            public class HomeController : Controller
+            {
+                public ActionResult Index()
+                {
+                    // Simply redirect to Submit, since Submit will serve as the
+                    // front page of this application.
+                    return RedirectToAction("Submit");
+                }
    
-               public ActionResult About()
-               {
-                   return View();
-               }
+                public ActionResult About()
+                {
+                    return View();
+                }
    
-               // GET: /Home/Submit.
-               // Controller method for a view you will create for the submission
-               // form.
-               public ActionResult Submit()
-               {
-                   // Will put code for displaying queue message count here.
+                // GET: /Home/Submit.
+                // Controller method for a view you will create for the submission
+                // form.
+                public ActionResult Submit()
+                {
+                    // Will put code for displaying queue message count here.
    
-                   return View();
-               }
+                    return View();
+                }
    
-               // POST: /Home/Submit.
-               // Controller method for handling submissions from the submission
-               // form.
-               [HttpPost]
-               // Attribute to help prevent cross-site scripting attacks and
-               // cross-site request forgery.  
-               [ValidateAntiForgeryToken]
-               public ActionResult Submit(OnlineOrder order)
-               {
-                   if (ModelState.IsValid)
-                   {
-                       // Will put code for submitting to queue here.
+                // POST: /Home/Submit.
+                // Controller method for handling submissions from the submission
+                // form.
+                [HttpPost]
+                // Attribute to help prevent cross-site scripting attacks and
+                // cross-site request forgery.  
+                [ValidateAntiForgeryToken]
+                public ActionResult Submit(OnlineOrder order)
+                {
+                    if (ModelState.IsValid)
+                    {
+                        // Will put code for submitting to queue here.
    
-                       return RedirectToAction("Submit");
-                   }
-                   else
-                   {
-                       return View(order);
-                   }
-               }
-           }
-       }
+                        return RedirectToAction("Submit");
+                    }
+                    else
+                    {
+                        return View(order);
+                    }
+                }
+            }
+        }
 
 4. 在“生成”菜单中，单击“生成解决方案”以测试工作的准确性。
 5. 现在，为前面创建的 `Submit()` 方法创建视图。 在 `Submit()` 方法（不带任何参数的 `Submit()` 的重载函数）中右键单击，然后选择“添加视图”。
    
-   ![][14]
+    ![][14]
+    
 6. 此时将显示一个用于创建视图的对话框。 在“模板”列表中，选择“创建”。 在“模型类”列表中，单击“OnlineOrder”类。
    
-   ![][15]
+    ![][15]
+    
 7. 单击 **“添加”**。
 8. 现在，请更改应用程序的显示名称。 在“解决方案资源管理器”中，双击“views/shared\\_Layout.cshtml”文件以在 Visual Studio 编辑器中将其打开。
 9. 将每一处 **My ASP.NET Application** 替换为 **LITWARE'S Products**。

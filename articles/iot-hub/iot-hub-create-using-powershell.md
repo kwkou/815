@@ -88,7 +88,7 @@
 现在，已使用 PowerShell cmdlet 部署了 IoT 中心，接下来可以进一步进行探索：
 
 * 发现其他[可用于 IoT 中心的 PowerShell cmdlet][lnk-iothub-cmdlets]。
-* 阅读了解 [IoT 中心资源提供程序 REST API][lnk-rest-api] 的相关功能。
+
 
 若要详细了解如何开发 IoT 中心，请参阅以下文章：
 
@@ -104,7 +104,7 @@
 [lnk-powershell-install]: https://docs.microsoft.com/zh-cn/powershell/azureps-cmdlets-docs
 [lnk-iothub-cmdlets]: https://docs.microsoft.com/zh-cn/powershell/resourcemanager/azurerm.iothub/v1.3.0/azurerm.iothub
 [lnk-rm-install]: https://docs.microsoft.com/zh-cn/powershell/resourcemanager/
-[lnk-rest-api]: https://msdn.microsoft.com/zh-cn/library/mt589014.aspx
+
 
 [lnk-c-sdk]: /documentation/articles/iot-hub-device-sdk-c-intro/
 [lnk-sdks]: /documentation/articles/iot-hub-devguide-sdks/

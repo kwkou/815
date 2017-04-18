@@ -114,7 +114,7 @@
 - 如何使用 [Service Bus 队列](/documentation/articles/service-bus-dotnet-get-started-with-queues/)。
 - 如何使用[服务总线主题](/documentation/articles/service-bus-dotnet-how-to-use-topics-subscriptions/)。
 - 如何使用[服务总线中继](/documentation/articles/service-bus-dotnet-how-to-use-relay/)。
-- [服务总线示例](/documentation/articles/service-bus-samples/)
+- [服务总线示例](/documentation/articles/service-bus-samples/)。
 
 [1]: ./media/service-bus-fundamentals-hybrid-solutions/SvcBus_01_architecture.png
 [2]: ./media/service-bus-fundamentals-hybrid-solutions/SvcBus_02_queues.png

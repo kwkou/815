@@ -60,7 +60,7 @@
 
 ### <a name="create-a-console-application"></a>创建控制台应用程序
 
-1. 启动 Visual Studio 并创建新的控制台应用程序。
+启动 Visual Studio 并创建新的控制台应用程序。
 
 ### <a name="add-the-service-bus-nuget-package"></a>添加服务总线 NuGet 包
 

@@ -119,14 +119,14 @@
 ## <a name="create-a-simulated-device-app"></a>创建模拟设备应用程序
 在本部分，用户需
 
-* 创建一个 Node.js 控制台应用，用于响应通过云调用的直接方法
-* 触发模拟的设备重启
-* 使用报告属性，允许通过设备孪生查询标识设备及其上次重启的时间
+ - 创建一个 Node.js 控制台应用，用于响应通过云调用的直接方法
+ - 触发模拟的设备重启
+ - 使用报告属性，允许通过设备孪生查询标识设备及其上次重启的时间
+
 
 
 1. 新建名为 **manageddevice** 的空文件夹。在 **manageddevice** 文件夹的命令提示符处，使用以下命令创建 package.json 文件。接受所有默认值：
    
-    
         npm init
     
 2. 在 **manageddevice** 文件夹的命令提示符处，运行下述命令以安装 **azure-iot-device** 设备 SDK 包和 **azure-iot-device-mqtt** 包：

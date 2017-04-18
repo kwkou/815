@@ -60,14 +60,14 @@
 * *标头* ，其中包含身份验证、请求 ID、内容类型和内容编码
 * 透明的 JSON *正文* ，采用以下格式：
 
-    {
-        "methodName": "reboot",
-        "responseTimeoutInSeconds": 200,
-        "payload": {
-            "input1": "someInput",
-            "input2": "anotherInput"
+        {
+            "methodName": "reboot",
+            "responseTimeoutInSeconds": 200,
+            "payload": {
+                "input1": "someInput",
+                "input2": "anotherInput"
+            }
         }
-    }
 
 超时以秒为单位。 如果未设置超时，则默认为 30 秒。
 

@@ -54,7 +54,7 @@
 2. 在解决方案资源管理器中，右键单击“CreateDeviceIdentity”项目，然后单击“管理 NuGet 包”。
 3. 在“NuGet 包管理器”窗口中，选择“浏览”，搜索 **microsoft.azure.devices**，选择“安装”以安装 **Microsoft.Azure.Devices** 包，然后接受使用条款。 该过程将下载、安装 [Azure IoT 服务 SDK][lnk-nuget-service-sdk] NuGet 包及其依赖项并添加对它的引用。
 
-    	![“NuGet 包管理器”窗口][11]
+    ![“NuGet 包管理器”窗口][11]
 	
 4. 在 **Program.cs** 文件顶部添加以下 `using` 语句：
    
@@ -238,7 +238,6 @@ IoT 中心标识注册表仅存储用于实现 IoT 中心安全访问的设备�
 若要继续了解 IoT 中心入门知识并浏览其他 IoT 方案，请参阅：
 
 * [连接你的设备][lnk-connect-device]
-* [设备管理入门][lnk-device-management]
 * [IoT 网关 SDK 入门][lnk-gateway-SDK]
 
 若要了解如何扩展 IoT 解决方案和如何大规模处理设备到云的消息，请参阅 [Process device-to-cloud messages][lnk-process-d2c-tutorial] （处理设备到云的消息）教程。
@@ -268,7 +267,7 @@ IoT 中心标识注册表仅存储用于实现 IoT 中心安全访问的设备�
 [lnk-device-nuget]: https://www.nuget.org/packages/Microsoft.Azure.Devices.Client/
 [lnk-transient-faults]: https://msdn.microsoft.com/zh-cn/library/hh680901(v=pandp.50).aspx
 [lnk-connected-service]: https://visualstudiogallery.msdn.microsoft.com/e254a3a5-d72e-488e-9bd3-8fee8e0cd1d6
-[lnk-device-management]: /documentation/articles/iot-hub-device-management-get-started/
+
 [lnk-gateway-SDK]: /documentation/articles/iot-hub-linux-gateway-sdk-get-started/
 [lnk-connect-device]: /develop/iot/
 
