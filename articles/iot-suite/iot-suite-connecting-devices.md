@@ -1,6 +1,6 @@
 <properties
    pageTitle="在 Windows 上使用 C 连接设备 | Azure"
-   description="介绍如何使用在 Windows 上运行的以 C 编写的应用程序将设备连接到 Azure IoT 套件预配置远程监视解决方案"
+   description="介绍如何使用在 Windows 上运行的以 C 编写的应用程序将设备连接到 Azure IoT 套件预配置远程监控解决方案"
    services=""
    suite="iot-suite"
    documentationCenter="na"
@@ -21,12 +21,12 @@
 
 
 
-# 将设备连接到远程监视预配置解决方案 (Windows)
+# 将设备连接到远程监控预配置解决方案 (Windows)
 
 [AZURE.INCLUDE [iot-suite-selector-connecting](../../includes/iot-suite-selector-connecting.md)]
 
 ## 在 Windows 上创建 C 示例解决方案
-以下步骤说明如何创建一个客户端应用程序来与远程监视预配置解决方案通信。此应用程序以 C 编写，在 Windows 上生成和运行。
+以下步骤说明如何创建一个客户端应用程序来与远程监控预配置解决方案通信。此应用程序以 C 编写，在 Windows 上生成和运行。
 
 在 Visual Studio 2015 或 Visual Studio 2017 中创建初学者项目并添加 IoT 中心设备客户端 NuGet 包：
 

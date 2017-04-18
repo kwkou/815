@@ -19,11 +19,11 @@
     ms.author="dobett" />  
 
 
-# 在远程监视预配置解决方案中创建自定义规则
+# 在远程监控预配置解决方案中创建自定义规则
 
 ## 介绍
 
-在预配置解决方案中，可以配置[在设备的遥测值达到特定阈值时触发的规则][lnk-builtin-rule]。[配合使用动态遥测和远程监视预配置解决方案][lnk-dynamic-telemetry]说明了如何向解决方案添加自定义遥测值，如 ExternalTemperature。本文演示如何在解决方案中为动态遥测类型创建自定义规则。
+在预配置解决方案中，可以配置[在设备的遥测值达到特定阈值时触发的规则][lnk-builtin-rule]。[配合使用动态遥测和远程监控预配置解决方案][lnk-dynamic-telemetry]说明了如何向解决方案添加自定义遥测值，如 ExternalTemperature。本文演示如何在解决方案中为动态遥测类型创建自定义规则。
 
 本教程使用模拟 Node.js 的简单设备来生成动态遥测，并发送到预配置解决方案后端。然后在 **RemoteMonitoring** Visual Studio 解决方案中添加自定义规则，并将此自定义后端部署到 Azure 订阅。
 
@@ -203,7 +203,7 @@
 ## 后续步骤
 现在已经了解了如何创建自定义规则，还可以了解关于预配置解决方案的更多内容：
 
-- [远程监视预配置解决方案中的设备信息元数据][lnk-devinfo]。
+- [远程监控预配置解决方案中的设备信息元数据][lnk-devinfo]。
 
 [lnk-devinfo]: /documentation/articles/iot-suite-remote-monitoring-device-info/
 

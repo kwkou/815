@@ -36,7 +36,7 @@ Azure IoT 套件预配置解决方案是你可以使用订阅部署到 Azure 的
 
 | 解决方案 | 数据引入 | 设备标识 | 设备管理 | 命令和控制 | 规则和操作 | 预测分析 |
 | --- | --- | --- | --- | --- | --- | --- |
-| [远程监视][lnk-getstarted-preconfigured] |是 |是 |是 |是 |是 |- | 
+| [远程监控][lnk-getstarted-preconfigured] |是 |是 |是 |是 |是 |- | 
 | [主动维护][lnk-predictive-maintenance] |是 |是 |- |是 |是 |是 |
 
 * *数据提取*：向云中大规模输入数据。
@@ -67,13 +67,13 @@ Azure IoT 套件预配置解决方案是你可以使用订阅部署到 Azure 的
 
 有关这些不同方法的比较，请参阅[云到设备的通信指南][lnk-c2d-guidance]。
 
-在预配置解决方案中，当设备首次连接到 IoT 中心时，会向中心发送设备信息消息，该消息枚举了设备可以响应的方法。在远程监视预配置解决方案中，模拟设备支持以下方法：
+在预配置解决方案中，当设备首次连接到 IoT 中心时，会向中心发送设备信息消息，该消息枚举了设备可以响应的方法。在远程监控预配置解决方案中，模拟设备支持以下方法：
 
 * *启动固件更新*：此方法在设备上启动异步任务以执行固件更新。此异步任务使用报告的属性将状态更新传送给解决方案仪表板。
 * *重新启动*：此方法使模拟设备重新启动。
 * *FactoryReset*：此方法会触发模拟设备上的出厂设置恢复。
 
-在预配置解决方案中，当设备首次连接到 IoT 中心时，会向中心发送设备信息消息，该消息枚举设备可以响应的命令。在远程监视预配置解决方案中，模拟设备支持以下命令：
+在预配置解决方案中，当设备首次连接到 IoT 中心时，会向中心发送设备信息消息，该消息枚举设备可以响应的命令。在远程监控预配置解决方案中，模拟设备支持以下命令：
 
 * *Ping 设备*：设备通过确认响应此命令。此命令对于检查设备是否仍然活动且正在侦听很有用。
 * *开始遥测*：指示设备开始发送遥测数据。
@@ -148,7 +148,7 @@ IoT 中心通过服务端遥测数据读取终结点使收到的遥测数据可�
 
 有关 IoT 解决方案体系结构的详细信息，请参阅 [Azure IoT services: Reference Architecture（Azure IoT 服务：参考体系结构）][lnk-refarch]。
 
-现在你已了解什么是预配置解决方案，接下来你可以通过部署*远程监视* 预配置解决方案来开始入门，请参阅：[Get started with the preconfigured solutions][lnk-getstarted-preconfigured]（预配置解决方案入门）。
+现在你已了解什么是预配置解决方案，接下来你可以通过部署*远程监控* 预配置解决方案来开始入门，请参阅：[Get started with the preconfigured solutions][lnk-getstarted-preconfigured]（预配置解决方案入门）。
 
 [img-remote-monitoring-arch]: ./media/iot-suite-what-are-preconfigured-solutions/remote-monitoring-arch1.png
 [img-dashboard]: ./media/iot-suite-what-are-preconfigured-solutions/dashboard.png

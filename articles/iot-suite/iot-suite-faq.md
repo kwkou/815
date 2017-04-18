@@ -24,18 +24,18 @@
 ### 在哪里可以找到预配置解决方案的源代码？
 源代码存储在以下 GitHub 存储库中：
 
-- [远程监视预配置解决方案][lnk-remote-monitoring-github]
-- [预见性维护预配置解决方案][lnk-predictive-maintenance-github]
+- [远程监控预配置解决方案][lnk-remote-monitoring-github]
+- [预测性维护预配置解决方案][lnk-predictive-maintenance-github]
 
-### 如何更新到最新版的远程监视预配置解决方案，以便使用 IoT 中心设备管理功能？
+### 如何更新到最新版的远程监控预配置解决方案，以便使用 IoT 中心设备管理功能？
 * 如果从 https://www.azureiotsuite.cn/ 站点部署预配置解决方案，则始终会部署最新版解决方案的新实例。
 * 如果使用命令行部署预配置解决方案，可以使用新代码更新现有部署。请参阅 GitHub [存储库][lnk-remote-monitoring-github]中的[云部署][lnk-cloud-deployment]。
 
-### 如何向远程监视预配置解决方案添加新设备方法的支持？
+### 如何向远程监控预配置解决方案添加新设备方法的支持？
 请参阅[自定义预配置解决方案][lnk-customize]一文中的[向模拟器添加新方法的支持][lnk-add-method]部分。
 
 ### 模拟设备忽略所需属性更改，这是什么原因？
-在远程监视预配置解决方案中，模拟设备代码仅使用所需的属性 **Desired.Config.TemperatureMeanValue** 和 **Desired.Config.TelemetryInterval** 来更新报告的属性。将忽略所有其他的所需属性更改请求。
+在远程监控预配置解决方案中，模拟设备代码仅使用所需的属性 **Desired.Config.TemperatureMeanValue** 和 **Desired.Config.TelemetryInterval** 来更新报告的属性。将忽略所有其他的所需属性更改请求。
 
 ### 我的设备未显示在解决方案仪表板的设备列表中，这是什么原因？
 解决方案仪表板中的设备列表使用查询来返回设备列表。目前，查询返回的设备数不能超过 1 万个。可以尝试让查询的搜索条件更具限制性。
@@ -62,7 +62,7 @@
 ### 后续步骤
 你还可以浏览 IoT 套件预配置的解决方案的一些其他特性和功能：
 
-- [预见性维护预配置解决方案概述][lnk-predictive-overview]
+- [预测性维护预配置解决方案概述][lnk-predictive-overview]
 - [从头开始保障 IoT 安全][lnk-security-groundup]
 
 [lnk-predictive-overview]: /documentation/articles/iot-suite-predictive-overview/

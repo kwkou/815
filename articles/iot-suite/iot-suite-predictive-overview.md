@@ -1,6 +1,6 @@
 <properties
-    pageTitle="预见性维护预配置解决方案 | Azure"
-    description="介绍 Azure IoT 套件预见性维护预配置解决方案。"
+    pageTitle="预测性维护预配置解决方案 | Azure"
+    description="介绍 Azure IoT 套件预测性维护预配置解决方案。"
     services=""
     suite="iot-suite"
     documentationcenter=""
@@ -19,16 +19,16 @@
     ms.author="dobett" />  
 
 
-# 预见性维护预配置解决方案概述
+# 预测性维护预配置解决方案概述
 
-*预见性维护* [预配置解决方案][lnk_preconfigured_solutions]是 [ Azure IoT 套件][lnk_iot_suite]预配置解决方案之一。此解决方案将实时设备遥测收集与使用 [Microsoft R Server](https://www.microsoft.com/en-sa/cloud-platform/r-server)创建的预测模型相集成。
+*预测性维护* [预配置解决方案][lnk_preconfigured_solutions]是 [ Azure IoT 套件][lnk_iot_suite]预配置解决方案之一。此解决方案将实时设备遥测收集与使用 [Microsoft R Server](https://www.microsoft.com/en-sa/cloud-platform/r-server)创建的预测模型相集成。
 
-使用 Azure IoT 套件，企业可以快速方便地连接和监视资产，实时分析数据。预见性维护预配置解决方案会利用该数据及丰富的仪表板与可视化效果，为用户提供新的信息，提升其效率及增加收入来源。
+使用 Azure IoT 套件，企业可以快速方便地连接和监视资产，实时分析数据。预测性维护预配置解决方案会利用该数据及丰富的仪表板与可视化效果，为用户提供新的信息，提升其效率及增加收入来源。
 
 ## 应用场景
 Fabrikam 是一家区域性航空公司，致力于以优惠的价格为客户提供优质的体验。维护问题是造成航班延误的原因之一，而飞机引擎维护又是其中最为棘手的项目。因为必须严防飞行期间发生引擎故障，所以 Fabrikam 不仅会定期检查其引擎，而且会恪守所安排的维护计划。但因为飞机引擎的问题不一，所以有一些引擎维护工作并非必要。更重要的是，若在执行维护工作之前发生问题，可能会造成飞机停飞。这些问题会造成严重的损失，而飞机所在地点若正好缺少适当的技术人员或备用零件，将更为严重。
 
-Fabrikam 飞机的引擎由各种传感器进行检测，这些传感器监视飞行期间的引擎状况。Fabrikam 使用预见性维护预配置解决方案收集飞行期间所收集的传感器数据。经过多年累积引擎运行数据和故障数据之后，Fabrikam 的数据科学家制作出了一个模型，可以预测飞机引擎的剩余使用寿命 (RUL)。他们从四个引擎传感器的数据中，找出了数据之间的相关性，而其中一个引擎更潜藏了最终会导致引擎故障的问题。Fabrikam 现在除了继续执行定期检查来确保安全之外，还会在每次飞行后，使用模型来计算每个引擎的 RUL。该模型使用飞行期间从引擎收集的遥测数据。Fabrikam 现在可以预测未来的故障点，并预先规划维护和维修工作。
+Fabrikam 飞机的引擎由各种传感器进行检测，这些传感器监视飞行期间的引擎状况。Fabrikam 使用预测性维护预配置解决方案收集飞行期间所收集的传感器数据。经过多年累积引擎运行数据和故障数据之后，Fabrikam 的数据科学家制作出了一个模型，可以预测飞机引擎的剩余使用寿命 (RUL)。他们从四个引擎传感器的数据中，找出了数据之间的相关性，而其中一个引擎更潜藏了最终会导致引擎故障的问题。Fabrikam 现在除了继续执行定期检查来确保安全之外，还会在每次飞行后，使用模型来计算每个引擎的 RUL。该模型使用飞行期间从引擎收集的遥测数据。Fabrikam 现在可以预测未来的故障点，并预先规划维护和维修工作。
 
 > [AZURE.NOTE]
 该解决方案模型使用实际的引擎损耗数据。
@@ -41,19 +41,19 @@ Fabrikam 飞机的引擎由各种传感器进行检测，这些传感器监视�
 
 库存控制管理员会收到维护计划，因此可以优化其订单流程和备用零件库存。所有这些因素不仅让 Fabrikam 可以将飞机停飞的时间降至最低，还可以降低运营成本，同时确保了乘客与乘务员的安全。
 
-若要了解 [Azure IoT 套件][lnk_iot_suite]如何提供这些功能，客户需要先了解预见性维护，请查看此[信息图][lnk_infographic]。
+若要了解 [Azure IoT 套件][lnk_iot_suite]如何提供这些功能，客户需要先了解预测性维护，请查看此[信息图][lnk_infographic]。
 
-## 如何生成预见性维护解决方案
+## 如何生成预测性维护解决方案
 
 Azure 基于公开的数据<sup>[1]</sup> 构建了飞机引擎的[回归模型][lnk_regression_model]，并发布了有关如何使用该模型的分步指南。
 
-Azure IoT 预见性维护预配置解决方案使用通过此模板创建的回归模型。该模型将部署到 Azure 订阅，通过自动生成的 API 公开。该解决方案包含代表 4 个（共 100 个）引擎和 4 个（共 21 个）传感器数据流的测试数据的子集，可通过定型模型提供精确的结果。
+Azure IoT 预测性维护预配置解决方案使用通过此模板创建的回归模型。该模型将部署到 Azure 订阅，通过自动生成的 API 公开。该解决方案包含代表 4 个（共 100 个）引擎和 4 个（共 21 个）传感器数据流的测试数据的子集，可通过定型模型提供精确的结果。
 
 *[1] A. Saxena and K. Goebel (2008)."Turbofan Engine Degradation Simulation Data Set", NASA Ames Prognostics Data Repository (http://ti.arc.nasa.gov/tech/dash/pcoe/prognostic-data-repository/), NASA Ames Research Center, Moffett Field, CA*
 
-## 预见性维护入门
+## 预测性维护入门
 
-本教程介绍如何预配预见性维护解决方案。其中还逐步讲解了预见性维护解决方案的基本功能。可以通过随预配置解决方案一起部署的解决方案仪表板来访问其中的多项功能。
+本教程介绍如何预配预测性维护解决方案。其中还逐步讲解了预测性维护解决方案的基本功能。可以通过随预配置解决方案一起部署的解决方案仪表板来访问其中的多项功能。
 
 需要有效的 Azure 订阅才能完成此教程。
 
@@ -62,7 +62,7 @@ Azure IoT 预见性维护预配置解决方案使用通过此模板创建的回�
 
 1. 使用 Azure 帐户凭据登录到 [azureiotsuite.cn][lnk-azureiotsuite]，然后单击“+”创建解决方案。
 1. 单击“选择预测维护”磁贴。
-1. 为预见性维护预配置解决方案输入**解决方案名称**。
+1. 为预测性维护预配置解决方案输入**解决方案名称**。
 1. 选择要用于预配解决方案的“区域”和“订阅”。
 1. 单击“创建解决方案”开始预配过程。运行此过程通常需要花费几分钟时间。
 
@@ -95,7 +95,7 @@ Azure IoT 预见性维护预配置解决方案使用通过此模板创建的回�
 
 本部分逐步讲解解决方案 UI。
 
-### 预见性维护仪表板
+### 预测性维护仪表板
 Web 应用程序中的此页面会使用 PowerBI JavaScript 控件（请参阅 [PowerBI-visuals repository][lnk-powerbi]（PowerBI 可视化效果存储库））以可视化方式呈现：
 
 * blob 存储中流分析作业的输出数据。
@@ -132,9 +132,9 @@ RUL 小于 160 时（出于演示目的而选择的任意阈值），解决方�
 
 ## 后续步骤
 
-若要了解有关 Azure IoT 如何实现预见性维护方案的详细信息，请阅读 [Capture value from the Internet of Things][lnk_capture_value]（捕获物联网的价值）。
+若要了解有关 Azure IoT 如何实现预测性维护方案的详细信息，请阅读 [Capture value from the Internet of Things][lnk_capture_value]（捕获物联网的价值）。
 
-[演练][lnk-predictive-walkthrough]预见性维护预配置解决方案。
+[演练][lnk-predictive-walkthrough]预测性维护预配置解决方案。
 
 你还可以浏览 IoT 套件预配置的解决方案的一些其他特性和功能：
 

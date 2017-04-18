@@ -1,6 +1,6 @@
 <properties
    pageTitle="在 mbed 上使用 C 连接设备 | Azure"
-   description="介绍如何使用在 mbed 设备上运行的以 C 编写的应用程序将设备连接到 Azure IoT 套件预配置远程监视解决方案"
+   description="介绍如何使用在 mbed 设备上运行的以 C 编写的应用程序将设备连接到 Azure IoT 套件预配置远程监控解决方案"
    services=""
    suite="iot-suite"
    documentationCenter="na"
@@ -20,13 +20,13 @@
    ms.author="dobett"/>
 
 
-# 将设备连接到远程监视预配置解决方案 (mbed)
+# 将设备连接到远程监控预配置解决方案 (mbed)
 
 [AZURE.INCLUDE [iot-suite-selector-connecting](../../includes/iot-suite-selector-connecting.md)]
 
 ## 生成并运行 C 示例解决方案
 
-以下说明介绍用于将[启用 mbed 的 Freescale FRDM-K64F][lnk-mbed-home] 设备连接到远程监视解决方案的步骤。
+以下说明介绍用于将[启用 mbed 的 Freescale FRDM-K64F][lnk-mbed-home] 设备连接到远程监控解决方案的步骤。
 
 ### 将 mbed 设备连接到网络和桌面计算机
 
@@ -38,7 +38,7 @@
 
 ### 创建 mbed 项目并导入示例代码
 
-执行以下步骤，向 mbed 项目添加一些示例代码。导入远程监视初学者项目，然后将项目更改为使用 MQTT 协议而不是 AMQP 协议。目前，需要通过 MQTT 协议使用 IoT 中心的设备管理功能。
+执行以下步骤，向 mbed 项目添加一些示例代码。导入远程监控初学者项目，然后将项目更改为使用 MQTT 协议而不是 AMQP 协议。目前，需要通过 MQTT 协议使用 IoT 中心的设备管理功能。
 
 1. 在 Web 浏览器中，转到 mbed.org [开发人员站点](https://developer.mbed.org/)。如果尚未注册，则会看到一个用于创建帐户的选项（它是免费的）。否则，使用你的帐户凭据登录。然后在页面右上角单击“编译器”。通过此操作将转到“工作区”界面。
 

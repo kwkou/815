@@ -113,7 +113,7 @@ Microsoft Azure IoT 套件根据设计内建安全措施，启用安全的资产
 
 你还可以浏览 IoT 套件预配置的解决方案的一些其他特性和功能：
 
-- [预见性维护预配置解决方案概述][lnk-predictive-overview]
+- [预测性维护预配置解决方案概述][lnk-predictive-overview]
 - [有关 IoT 套件的常见问题][lnk-faq]
 
 可以在 IoT 中心开发人员指南的[控制 IoT 中心的访问权限][lnk-devguide-security]中阅读 IoT 中心安全性的相关信息。

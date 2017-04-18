@@ -27,16 +27,16 @@ Azure IoT 套件提供的预配置解决方案演示了套件中的服务如何�
 ## 查找源代码
 预配置解决方案的源代码可在以下 GitHub 存储库获得：
 
-- 远程监视：[https://www.github.com/Azure/azure-iot-remote-monitoring](https://github.com/Azure/azure-iot-remote-monitoring)
-- 预见性维护：[https://github.com/Azure/azure-iot-predictive-maintenance](https://github.com/Azure/azure-iot-predictive-maintenance)
+- 远程监控：[https://www.github.com/Azure/azure-iot-remote-monitoring](https://github.com/Azure/azure-iot-remote-monitoring)
+- 预测性维护：[https://github.com/Azure/azure-iot-predictive-maintenance](https://github.com/Azure/azure-iot-predictive-maintenance)
 
 提供预配置解决方案源代码的目的，在于演示实现使用 Azure IoT 套件的 IoT 解决方案的端到端功能时所采用的模式和做法。你可以找到有关如何在 GitHub 存储库中生成和部署解决方案的详细信息。
 
 ## 更改预配置规则
 
-远程监视解决方案包含三个 [Azure 流分析](/home/features/stream-analytics)作业，这些作业可处理解决方案中的设备信息、遥测数据及规则逻辑。
+远程监控解决方案包含三个 [Azure 流分析](/home/features/stream-analytics)作业，这些作业可处理解决方案中的设备信息、遥测数据及规则逻辑。
 
-[远程监视预配置解决方案演练](/documentation/articles/iot-suite-remote-monitoring-sample-walkthrough/)深入介绍了这三个流分析作业及其语法。
+[远程监控预配置解决方案演练](/documentation/articles/iot-suite-remote-monitoring-sample-walkthrough/)深入介绍了这三个流分析作业及其语法。
 
 你可以直接编辑这些作业以更改逻辑，或添加特定于你的方案的逻辑。你可以按以下方式查找流分析作业：
  
@@ -50,7 +50,7 @@ Azure IoT 套件提供的预配置解决方案演示了套件中的服务如何�
 
 6. 启动作业
 
-> [AZURE.NOTE] 远程监视仪表板依赖特定数据，因此更改作业可能会导致仪表板出现故障。
+> [AZURE.NOTE] 远程监控仪表板依赖特定数据，因此更改作业可能会导致仪表板出现故障。
 
 ## 添加自己的规则
 
@@ -59,12 +59,12 @@ Azure IoT 套件提供的预配置解决方案演示了套件中的服务如何�
 ## 自定义设备
 最常见的扩展活动之一是使用方案特定的设备。使用设备的方法有数种。这些方法包括更改模拟设备以符合你的方案，或使用 [IoT 设备 SDK][IoT Device SDK] 将物理设备连接到解决方案。
 
-有关添加设备的分步指南，请参阅 [Iot 套件连接设备](/documentation/articles/iot-suite-connecting-devices/)一文和[远程监视 C SDK 示例](https://github.com/Azure/azure-iot-sdk-c/tree/master/serializer/samples/remote_monitoring)。本示例旨在配合远程监视预配置解决方案使用。
+有关添加设备的分步指南，请参阅 [Iot 套件连接设备](/documentation/articles/iot-suite-connecting-devices/)一文和[远程监控 C SDK 示例](https://github.com/Azure/azure-iot-sdk-c/tree/master/serializer/samples/remote_monitoring)。本示例旨在配合远程监控预配置解决方案使用。
 
 ### 创建自己的模拟设备
-[远程监视解决方案源代码](https://github.com/Azure/azure-iot-remote-monitoring)中包含 .NET 模拟器。此模拟器是解决方案中预配的模拟器，可以对其进行更改以发送不同的元数据、遥测数据和响应不同的命令和方法。
+[远程监控解决方案源代码](https://github.com/Azure/azure-iot-remote-monitoring)中包含 .NET 模拟器。此模拟器是解决方案中预配的模拟器，可以对其进行更改以发送不同的元数据、遥测数据和响应不同的命令和方法。
 
-远程监视预配置解决方案模拟器中的预配置模拟器是发出温度和湿度遥测的冷却设备。派生 GitHub 存储库后，可以修改 [Simulator.WebJob](https://github.com/Azure/azure-iot-remote-monitoring/tree/master/Simulator/Simulator.WebJob) 项目中的模拟器。
+远程监控预配置解决方案模拟器中的预配置模拟器是发出温度和湿度遥测的冷却设备。派生 GitHub 存储库后，可以修改 [Simulator.WebJob](https://github.com/Azure/azure-iot-remote-monitoring/tree/master/Simulator/Simulator.WebJob) 项目中的模拟器。
 
 ### 模拟设备的可用位置
 默认的位置集为中国北京。可以 [SampleDeviceFactory.cs][lnk-sample-device-factory] 中更改这些位置。
@@ -104,7 +104,7 @@ Azure IoT 套件提供的预配置解决方案演示了套件中的服务如何�
 - 模拟器必须在预配置解决方案中向 IoT 中心告知方法的详细信息。
 - 模拟器必须包含相应的代码，以便在通过解决方案资源管理器中的“设备详细信息”面板或者通过作业调用该方法时，能够处理方法调用。
 
-远程监视预配置解决方案使用*报告的属性*向 IoT 中心发送受支持方法的详细信息。解决方案后端维护每个设备支持的所有方法的列表，以及方法调用的历史记录。可在解决方案门户中查看有关设备的这些信息以及调用方法。
+远程监控预配置解决方案使用*报告的属性*向 IoT 中心发送受支持方法的详细信息。解决方案后端维护每个设备支持的所有方法的列表，以及方法调用的历史记录。可在解决方案门户中查看有关设备的这些信息以及调用方法。
 
 为了告知 IoT 中心某个设备支持某个方法，设备必须将该方法的详细信息添加到报告的属性中的 **SupportedMethods** 节点：
 
@@ -282,8 +282,8 @@ Azure IoT 套件提供的预配置解决方案演示了套件中的服务如何�
 
 若要详细了解自定义预配置解决方案的选项，请参阅：
 
-- [配合使用动态遥测和远程监视预配置解决方案][lnk-dynamic]
-- [远程监视预配置解决方案中的设备信息元数据][lnk-devinfo]
+- [配合使用动态遥测和远程监控预配置解决方案][lnk-dynamic]
+- [远程监控预配置解决方案中的设备信息元数据][lnk-devinfo]
 
 [lnk-dynamic]: /documentation/articles/iot-suite-dynamic-telemetry/
 [lnk-devinfo]: /documentation/articles/iot-suite-remote-monitoring-device-info/

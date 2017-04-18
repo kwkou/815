@@ -1,6 +1,6 @@
 <properties
    pageTitle="在 Linux 上使用 C 连接设备 | Azure"
-   description="介绍如何使用在 Linux 上运行的以 C 编写的应用程序将设备连接到 Azure IoT 套件预配置远程监视解决方案"
+   description="介绍如何使用在 Linux 上运行的以 C 编写的应用程序将设备连接到 Azure IoT 套件预配置远程监控解决方案"
    services=""
    suite="iot-suite"
    documentationCenter="na"
@@ -19,12 +19,12 @@
    ms.author="dobett"/>
 
 
-# 将设备连接到远程监视预配置解决方案 (Linux)
+# 将设备连接到远程监控预配置解决方案 (Linux)
 
 [AZURE.INCLUDE [iot-suite-selector-connecting](../../includes/iot-suite-selector-connecting.md)]
 
 ## 生成并运行示例 C 客户端 Linux
-以下步骤说明如何创建一个客户端应用程序来与远程监视预配置解决方案通信。此应用程序以 C 编写，在 Ubuntu Linux 上生成和运行。
+以下步骤说明如何创建一个客户端应用程序来与远程监控预配置解决方案通信。此应用程序以 C 编写，在 Ubuntu Linux 上生成和运行。
 若要完成这些步骤，你需要一个运行 Ubuntu 版本 15.04 或 15.10 的设备。继续操作之前，请使用以下命令在 Ubuntu 设备上安装必备组件包：
 
     sudo apt-get install cmake gcc g++

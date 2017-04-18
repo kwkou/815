@@ -1,6 +1,6 @@
 <properties
    pageTitle="使用 Node.js 连接设备 | Azure"
-   description="介绍如何使用以 Node.js 编写的应用程序将设备连接到 Azure IoT 套件预配置远程监视解决方案。"
+   description="介绍如何使用以 Node.js 编写的应用程序将设备连接到 Azure IoT 套件预配置远程监控解决方案。"
    services=""
    suite="iot-suite"
    documentationCenter="na"
@@ -21,7 +21,7 @@
 
 
 
-# 将设备连接到远程监视预配置解决方案 (Node.js)
+# 将设备连接到远程监控预配置解决方案 (Node.js)
 
 [AZURE.INCLUDE [iot-suite-selector-connecting](../../includes/iot-suite-selector-connecting.md)]
 
@@ -51,7 +51,7 @@
 	    var Message = require('azure-iot-device').Message;
 
 
-1. 在 `require` 语句之后添加以下变量声明。将占位符值 [Device Id] 和 [Device Key] 替换为在远程监视解决方案仪表板中记下的设备值。使用解决方案仪表板中的 IoT 中心主机名替换 [IoTHub Name]。例如，如果 IoT 中心主机名是 **contoso.azure-devices.cn**，则将 [IoTHub Name] 替换为 **contoso**：
+1. 在 `require` 语句之后添加以下变量声明。将占位符值 [Device Id] 和 [Device Key] 替换为在远程监控解决方案仪表板中记下的设备值。使用解决方案仪表板中的 IoT 中心主机名替换 [IoTHub Name]。例如，如果 IoT 中心主机名是 **contoso.azure-devices.cn**，则将 [IoTHub Name] 替换为 **contoso**：
 
 
 	    var connectionString = 'HostName=[IoTHub Name].azure-devices.cn;DeviceId=[Device Id];SharedAccessKey=[Device Key]';
