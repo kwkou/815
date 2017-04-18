@@ -123,10 +123,11 @@ Azure 具有两种不同的部署模型，用于创建和处理资源：[Resourc
         --admin-username $Username \
 
         # If creating a Windows VM, remove the next line and you'll be prompted for the password you want to configure for the VM.
-        --ssh-key-value $SshKeyValue
+        --ssh-key-value $SshKeyValue \
+        --use-unmanaged-disk
 
     除了创建 VM，该脚本还创建：
-    - 单个高级托管磁盘（默认情况下），但对于可以创建的磁盘类型，可以有其他选择。有关详细信息，请阅读[使用 Azure CLI 2.0 创建 Linux VM](/documentation/articles/virtual-machines-linux-quick-create-cli/) 一文。
+    - 使用非托管磁盘，并自动创建 Azure 存储账户。有关详细信息，请阅读[使用 Azure CLI 2.0 创建 Linux VM](/documentation/articles/virtual-machines-linux-quick-create-cli/) 一文。
     - 虚拟网络、子网、NIC 和公共 IP 地址资源。也可以使用*现有*虚拟网络、子网、NIC 或公共 IP 地址资源。若要了解如何使用现有网络资源，而不是创建其他资源，请输入 `az vm create -h`。
 
 ## <a name = "validate"></a>验证 VM 创建和公共 IP 地址

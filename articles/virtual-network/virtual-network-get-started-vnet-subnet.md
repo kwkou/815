@@ -105,7 +105,6 @@ VNet 和子网创建完毕后，即可创建 VM。虽然两个 VM 可运行 Azur
 
     |**设置**|**值**|**详细信息**|
     |---|---|---|
-    |**存储：使用托管磁盘**|*是*||
     |**虚拟网络**| 选择“MyVNet”|可选择要创建的 VM 所在的同一位置下的任意 VNet。若要详细了解 VNet 和子网，请参阅[虚拟网络](/documentation/articles/virtual-networks-overview/)一文。|
     |**子网**|选择“前端”|可选择 VNet 中的任意子网。|
     |**公共 IP 地址**|接受默认值|公共 IP 地址允许通过 Internet 连接到 VM。若要详细了解公共 IP 地址，请参阅 [IP 地址](/documentation/articles/virtual-network-ip-addresses-overview-arm/#public-ip-addresses)一文。|
@@ -139,7 +138,6 @@ VNet 和子网创建完毕后，即可创建 VM。虽然两个 VM 可运行 Azur
 
     |**设置**|**值**|**详细信息**|
     |----|----|---|
-    |**存储：使用托管磁盘**|*是*||
     |**虚拟网络**|选择“MyVNet”|可选择要创建的 VM 所在的同一位置下的任意 VNet。|
     |**子网**|单击“子网”框，然后在“选择子网”边栏选项卡选择“后端”|可选择 VNet 中的任意子网。|
     |**公共 IP 地址**|无 - 单击默认地址，然后在“选择公共 IP 地址”边栏选项卡中单击“无”|若没有公共 IP 地址，就只能通过连接到同一 VNet 的其他 VM 连接到此 VM。不能直接从 Internet 连接到该 VM。|

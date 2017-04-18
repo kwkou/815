@@ -69,7 +69,8 @@ Azure 托管磁盘在 Azure 中国暂时还不适用。
     az vm create --resource-group myResourceGroup --location chinanorth \
         --name myVM --storage-account mystorageaccount --custom-os-disk-type linux \
         --admin-username azureuser --ssh-key-value ~/.ssh/id_rsa.pub \
-        --image https://mystorageaccount.blob.core.chinacloudapi.cn/mydisk/myDisks.vhd
+        --image https://mystorageaccount.blob.core.chinacloudapi.cn/mydisk/myDisks.vhd \
+        --use-unmanaged-disk
 
 目标存储帐户必须与上载虚拟磁盘的目标位置相同。还需要指定或根据提示输入 **az vm create** 命令所需的所有其他参数，例如虚拟网络、公共 IP 地址、用户名和 SSH 密钥。阅读有关[可用 CLI Resource Manager 参数](/documentation/articles/azure-cli-arm-commands/#azure-vm-commands-to-manage-your-azure-virtual-machines)的详细信息。
 
@@ -177,7 +178,8 @@ Azure 将为每个存储帐户生成两个 512 位的访问密钥。在向存储
     az vm create --resource-group myResourceGroup --location chinanorth \
         --name myVM --storage-account mystorageaccount --custom-os-disk-type linux \
         --admin-username azureuser --ssh-key-value ~/.ssh/id_rsa.pub \
-        --image https://mystorageaccount.blob.core.chinacloudapi.cn/mydisks/myDisk.vhd
+        --image https://mystorageaccount.blob.core.chinacloudapi.cn/mydisks/myDisk.vhd \
+        --use-unmanaged-disk
 
 仍需要指定或根据提示输入 **az vm create** 命令所需的所有其他参数，例如用户名和 SSH 密钥。
 

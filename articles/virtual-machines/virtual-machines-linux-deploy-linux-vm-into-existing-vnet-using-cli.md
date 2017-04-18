@@ -50,7 +50,8 @@
         --image Debian \
         --admin-username azureuser \
         --ssh-key-value ~/.ssh/id_rsa.pub \
-        --nics myNic
+        --nics myNic \
+        --use-unmanaged-disk
 
 ## <a name="detailed-walkthrough"></a> 详细演练
 

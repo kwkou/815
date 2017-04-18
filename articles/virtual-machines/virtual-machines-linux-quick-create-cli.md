@@ -73,6 +73,7 @@ Azure 托管磁盘在 Azure 中国暂时还不适用。
     --location chinanorth \
     --name myVM \
     --use-native-disk
+    --use-unmanaged-disk
 
 输出如下所示。请注意通过 **ssh** 连接到 VM 时使用的 `publicIpAddress` 或 `fqdn` 值。
 

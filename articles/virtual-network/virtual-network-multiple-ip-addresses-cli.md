@@ -150,9 +150,11 @@
         --size $VmSize \
         --nics $NicName \
         --admin-username $Username \
-        --ssh-key-value $SshKeyValue
+        --ssh-key-value $SshKeyValue \
+        --use-unmanaged-disk
 
-    除了使用带 3 个 IP 配置的 NIC 创建 VM，脚本还会创建：- 单个高级托管磁盘（默认）；但也可选择创建其他磁盘类型。有关详细信息，请阅读[使用 Azure CLI 2.0 创建Linux VM](/documentation/articles/virtual-machines-linux-quick-create-cli/)一文。
+    除了使用带 3 个 IP 配置的 NIC 创建 VM，脚本还会创建：
+    - 使用非托管磁盘，并自动创建 Azure 存储账户。有关详细信息，请阅读[使用 Azure CLI 2.0 创建Linux VM](/documentation/articles/virtual-machines-linux-quick-create-cli/)一文。
     - 具有 1 个子网和 2 个公共 IP 地址的虚拟网络。或者，可使用*现有的*虚拟网络、子网、NIC 或公共 IP 地址资源。若要了解如何使用现有网络资源，而不是创建其他资源，请输入 `az vm create -h`。
 
     > [AZURE.NOTE]

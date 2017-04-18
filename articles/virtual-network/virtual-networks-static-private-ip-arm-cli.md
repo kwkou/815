@@ -133,6 +133,7 @@
         --admin-username adminuser \
         --ssh-key-value ~/.ssh/id_rsa.pub \
         --nics TestNIC
+        --use-unmanaged-disk
 
     预期输出：
 

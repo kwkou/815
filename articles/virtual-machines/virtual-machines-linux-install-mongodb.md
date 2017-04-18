@@ -47,7 +47,8 @@ MongoDB 为 Red Hat/CentOS、SUSE、Ubuntu 和 Debian 等 Linux 分发版[提供
         --image CentOS \
         --admin-username azureuser \
         --ssh-key-value ~/.ssh/id_rsa.pub \
-        --public-ip-address-dns-name mypublicdns
+        --public-ip-address-dns-name mypublicdns \
+        --use-unmanaged-disk
 
 使用 VM 的公共 DNS 地址登录到 VM。可以使用 [az vm show](https://docs.microsoft.com/cli/azure/vm#show) 查看公共 DNS 地址：
 

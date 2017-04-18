@@ -15,7 +15,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="01/03/2017"
-    wacn.date="04/06/2017"
+    wacn.date="04/17/2017"
     ms.author="danlep" />  
 
 
@@ -813,87 +813,6 @@ CLI 的 Azure Resource Manager 模式与 Azure 服务管理模式互斥。即，
     -g, --resource-group <resource-group>  the name of the resource group
     -l, --lb-name <lb-name>                the name of the load balancer
     -n, --name <name>                      the name of the backend address pool
-    -s, --subscription <subscription>      the subscription identifier
-
-<BR>  
-
-    network lb address-pool add [options] <resource-group> <lb-name> <name>
-
-负载均衡器根据后端地址池范围来确定哪些资源正在使用 Azure Resource Manager 来从其终结点路由传入的网络流量。创建并命名后端地址池范围后（请参阅命令“azure network lb address-pool create”），需要添加现在由名为“网络接口”的资源定义的终结点。
-
-若要配置后端地址范围，至少需要一个“网络接口”（有关更多详细信息，请参阅“azure network lb nic”命令行）。
-
-在以下示例中，使用以前创建的“nic1”网络接口来创建后端地址池范围。
-
-    azure network lb address-pool add -g myresourcegroup -l mylb -n mybackendpool -a nic1
-
-    info:    Executing command network lb address-pool add
-    + Looking up the load balancer "mylb"
-    + Getting network interfaces
-    + Updating network interface "nic1"
-    + Looking up the load balancer "mylb"
-    data:    Id:                        /subscriptions/###############################/resourceGroups/myresourcegroup/providers/Microsoft.Network/loadBalancers/mylb/backendAddressPools/mybackendpool
-    data:    Name:                      mybackendpool
-    data:    Type:                      Microsoft.Network/loadBalancers/backendAddressPools
-    data:    Provisioning state:        Succeeded
-    data:    Backend IP configurations:
-    data:     id=/subscriptions/###############################/resourceGroups/myresourcegroup/providers/Microsoft.Network/networkInterfaces/nic1/ipConfigurations/NIC-config
-    data:    Load balancing rules:
-    data:
-    info:    network lb address-pool add command OK
-
-参数选项：
-
-    -h, --help                             output usage information
-    -v, --verbose                          use verbose output
-    --json                                 use json output
-    -g, --resource-group <resource-group>  the name of the resource group
-    -l, --lb-name <lb-name>                the name of the load balancer
-    -n, --name <name>                      the name of the backend address pool
-    -i, --vm-id <vm-id>                    the virtual machine identifier.
-    e.g. "/subscriptions/<subscription-id>/resourceGroups/<resource-group-name>/providers/Microsoft.Compute/virtualMachines/<vm-name>,/subscriptions/<subscription-id>/resourceGroups/<resource-group-name>/providers/Microsoft.Compute/virtualMachines/<vm-name>"
-    -m, --vm-name <vm-name>                the name of the virtual machine
-    -d, --nic-id <nic-id>                  the network interface identifier.
-    e.g. ""/subscriptions/<subscription-id>/resourceGroups/<resource-group-name>/providers/Microsoft.Network/networkInterfaces/<nic-name>"
-    -a, --nic-name <nic-name>              the name of the network interface
-    -s, --subscription <subscription>      the subscription identifier
-
-<BR>  
-
-    network lb address-pool remove [options] <resource-group> <lb-name> <name>
-
-从后端 IP 地址池范围中删除网络接口。
-
-    azure network lb address-pool remove -g myresourcegroup -l mylb -n mybackendpool -a nic1
-
-    info:    Executing command network lb address-pool remove
-    + Looking up the load balancer "mylb"
-    + Getting network interfaces
-    + Updating network interface "nic1"
-    + Looking up the load balancer "mylb"
-    data:    Id:                        /subscriptions/###############################/resourceGroups/myresourcegroup/providers/Microsoft.Network/loadBalancers/mylb/backendAddressPools/mybackendpool
-    data:    Name:                      mybackendpool
-    data:    Type:                      Microsoft.Network/loadBalancers/backendAddressPools
-    data:    Provisioning state:        Succeeded
-    data:    Backend IP configurations:
-    data:    Load balancing rules:
-    data:
-    info:    network lb address-pool remove command OK
-
-参数选项：
-
-    -h, --help                             output usage information
-    -v, --verbose                          use verbose output
-    --json                                 use json output
-    -g, --resource-group <resource-group>  the name of the resource group
-    -l, --lb-name <lb-name>                the name of the load balancer
-    -n, --name <name>                      the name of the backend address pool
-    -i, --vm-id <vm-id>                    the virtual machine identifier.
-    e.g. "/subscriptions/<subscription-id>/resourceGroups/<resource-group-name>/providers/Microsoft.Compute/virtualMachines/<vm-name>,/subscriptions/<subscription-id>/resourceGroups/<resource-group-name>/providers/Microsoft.Compute/virtualMachines/<vm-name>"
-    -m, --vm-name <vm-name>                the name of the virtual machine
-    -d, --nic-id <nic-id>                  the network interface identifier.
-    e.g. ""/subscriptions/<subscription-id>/resourceGroups/<resource-group-name>/providers/Microsoft.Network/networkInterfaces/<nic-name>"
-    -a, --nic-name <nic-name>              the name of the network interface
     -s, --subscription <subscription>      the subscription identifier
 
 <BR>  

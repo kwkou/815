@@ -158,7 +158,7 @@ BGP 是通常在 Internet 上使用的，用于在两个或更多网络之间交
 此练习将继续生成图中所示的配置。请务必将值替换为要用于配置的值。
 
 	$RG5           = "TestBGPRG5"
-	$Location5     = "China East 2"
+	$Location5     = "China East"
 	$LNGName5      = "Site5"
 	$LNGPrefix50   = "10.52.255.254/32"
 	$LNGIP5        = "Your_VPN_Device_IP"

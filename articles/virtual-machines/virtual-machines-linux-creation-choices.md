@@ -64,11 +64,6 @@
     * 包括在可用性集中创建负载均衡器和多个 VM。
 
 * [将磁盘添加到 Linux VM](/documentation/articles/virtual-machines-linux-add-disk/)
-  
-    * 以下示例使用 [az vm disk attach-new](https://docs.microsoft.com/cli/azure/vm/disk#attach-new) 向名为 `myVM` 的现有 VM 添加 5Gb 名为 `myDataDisk.vhd` 的非托管磁盘：
-
-          az vm disk attach-new --resource-group myResourceGroup --vm-name myVM \
-            --disk-size 5 --vhd https://mystorageaccount.blob.core.chinacloudapi.cn/vhds/myDataDisk.vhd
 
 ## Azure 门户预览
 在 [Azure 门户预览](https://portal.azure.cn)中可以快速创建 VM，因为不需要在系统上安装任何组件。使用 Azure 门户预览创建 VM：

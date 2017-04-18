@@ -72,7 +72,7 @@ Azure 具有两种不同的部署模型，用于创建和处理资源：[Resourc
 
     Name                 : WEB1
     ResourceGroupName    : RG101
-    Location             : chinaeast2
+    Location             : chinaeast
     Id                   : /subscriptions/[Subscription Id]/resourceGroups/RG101/providers/M
                            icrosoft.Network/networkSecurityGroups/WEB1
     Etag                 : W/"[Id]"

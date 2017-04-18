@@ -152,10 +152,11 @@ Azure 具有两种不同的部署模型，用于创建和处理资源：[Resourc
         --size $VmSize \
         --nics $Nic1Name $Nic2Name \
         --admin-username $Username \
-        --ssh-key-value $SshKeyValue
+        --ssh-key-value $SshKeyValue \
+        --use-unmanaged-disk
 
     除了创建具有两个 NIC 的 VM，该脚本还创建：
-    - 单个高级托管磁盘（默认情况下），但对于可以创建的磁盘类型，可以有其他选择。有关详细信息，请阅读[使用 Azure CLI 2.0 创建 Linux VM](/documentation/articles/virtual-machines-linux-quick-create-cli/) 一文。
+    - 使用非托管磁盘，并自动创建 Azure 存储账户。有关详细信息，请阅读[使用 Azure CLI 2.0 创建 Linux VM](/documentation/articles/virtual-machines-linux-quick-create-cli/) 一文。
     - 一个包含两个子网和单个公共 IP 地址的虚拟网络。也可以使用*现有*虚拟网络、子网、NIC 或公共 IP 地址资源。若要了解如何使用现有网络资源，而不是创建其他资源，请输入 `az vm create -h`。
 
 ## <a name = "validate"></a>验证 VM 创建和 NIC
