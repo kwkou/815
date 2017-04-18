@@ -94,10 +94,10 @@
 
 1. 在“编辑器”窗口的空查询窗口中，输入以下查询：
 
-       SELECT pc.Name as CategoryName, p.name as ProductName
-       FROM [SalesLT].[ProductCategory] pc
-       JOIN [SalesLT].[Product] p
-       ON pc.productcategoryid = p.productcategoryid;
+        SELECT pc.Name as CategoryName, p.name as ProductName
+        FROM [SalesLT].[ProductCategory] pc
+        JOIN [SalesLT].[Product] p
+        ON pc.productcategoryid = p.productcategoryid;
 
 3. 按 **CTRL+SHIFT+E** 从 Product 表和 ProductCategory 表检索数据。
 
@@ -109,23 +109,23 @@
 
 1. 在“编辑器”窗口中删除以前的查询，然后输入以下查询：
 
-       INSERT INTO [SalesLT].[Product]
-               ( [Name]
-               , [ProductNumber]
-               , [Color]
-               , [ProductCategoryID]
-               , [StandardCost]
-               , [ListPrice]
-               , [SellStartDate]
-               )
-         VALUES
-               ('myNewProduct'
-               ,123456789
-               ,'NewColor'
-               ,1
-               ,100
-               ,100
-               ,GETDATE() );
+        INSERT INTO [SalesLT].[Product]
+                ( [Name]
+                , [ProductNumber]
+                , [Color]
+                , [ProductCategoryID]
+                , [StandardCost]
+                , [ListPrice]
+                , [SellStartDate]
+                )
+            VALUES
+                ('myNewProduct'
+                ,123456789
+                ,'NewColor'
+                ,1
+                ,100
+                ,100
+                ,GETDATE() );
 
 3. 按 **CTRL+SHIFT+E** 在 Product 表中插入新行。
 
@@ -135,9 +135,9 @@
 
 1.  在“编辑器”窗口中删除以前的查询，然后输入以下查询：
 
-       UPDATE [SalesLT].[Product]
-       SET [ListPrice] = 125
-       WHERE Name = 'myNewProduct';
+        UPDATE [SalesLT].[Product]
+        SET [ListPrice] = 125
+        WHERE Name = 'myNewProduct';
 
 3. 按 **CTRL+SHIFT+E** 更新 Product 表中的指定行。
 
@@ -147,8 +147,8 @@
 
 1. 在“编辑器”窗口中删除以前的查询，然后输入以下查询：
 
-       DELETE FROM [SalesLT].[Product]
-       WHERE Name = 'myNewProduct';
+        DELETE FROM [SalesLT].[Product]
+        WHERE Name = 'myNewProduct';
 
 3. 按 **CTRL+SHIFT+E** 删除 Product 表中的指定行。
 

@@ -24,19 +24,21 @@
     ms.lasthandoff="04/07/2017" />
 
 # <a name="what-is-sql-database-introduction-to-sql-database"></a>什么是 SQL 数据库？ SQL 数据库简介
-SQL 数据库是云中的关系数据库服务，它基于行业领先的 Microsoft SQL Server 引擎，能够处理任务关键型工作负荷。 SQL 数据库在多个服务级别提供可预测的性能、支持在不停机的情况下进行缩放、内置业务连续性和数据保护 — 所有这些功能几乎都不需要管理。 凭借这些功能，客户可将注意力集中在如何快速进行应用开发、加快推向市场，而无需将宝贵的时间和资源投入在管理虚拟机和基础结构上。 SQL 数据库基于 [SQL Server](https://msdn.microsoft.com/zh-cn/library/bb545450.aspx) 引擎，支持现有的 SQL Server 工具、库和 API。 因此，无需学习新的技能，就能轻松开发新解决方案，迁移现有 SQL Server 解决方案，将现有 SQL Server 解决方案扩展到 Microsoft 云中。
+SQL 数据库是云中的关系数据库服务，它基于行业领先的 Microsoft SQL Server 引擎，能够处理任务关键型工作负荷。 SQL 数据库在多个服务级别提供可预测的性能、支持在不停机的情况下进行缩放、内置业务连续性和数据保护 — 所有这些功能几乎都不需要管理。 凭借这些功能，客户可将注意力集中在如何快速进行应用开发、加快推向市场，而无需将宝贵的时间和资源投入在管理虚拟机和基础结构上。 SQL 数据库基于 [SQL Server](https://msdn.microsoft.com/zh-cn/library/bb545450.aspx) 引擎，支持现有的 SQL Server 工具、库和 API。 因此，无需学习新的技能，就能轻松开发新解决方案，迁移现有 SQL Server 解决方案，将现有 SQL Server 解决方案扩展到云中。
 
 本文将介绍 SQL 数据库在性能、缩放性和易管理性方面的核心概念与功能，并提供链接让你进一步了解详细信息。 请参阅这些快速入门，以便尽快入门：
+
  - [在 Azure 门户预览中创建 SQL 数据库](/documentation/articles/sql-database-get-started-portal/)  
  - [使用 Azure CLI 创建 SQL 数据库](/documentation/articles/sql-database-get-started-cli/)
  - [使用 PowerShell 创建 SQL 数据库](/documentation/articles/sql-database-get-started-powershell/)
 
 如需一组 Azure CLI 和 PowerShell 的示例，请参阅：
+
  - [适用于 Azure SQL 数据库的 Azure CLI 示例](/documentation/articles/sql-database-cli-samples/)
  - [适用于 Azure SQL 数据库的 Azure PowerShell 示例](/documentation/articles/sql-database-powershell-samples/)
 
 ## <a name="adjust-performance-and-scale-without-downtime"></a>无需停机即可调整性能和规模
-Azure SQL 数据库服务提供三个服务层：基本、标准和高级。 每个服务层提供[不同级别的性能和功能](/documentation/articles/sql-database-service-tiers/)，以支持从轻型到重型的数据库工作负荷。 可以在小型数据库中构建第一个应用，每个月只需花费少量的资金。然后可以根据解决方案的需要，随时手动或以编程方式[更改服务层](/documentation/articles/sql-database-service-tiers/)。 这不会给应用或客户造成任何停机。 动态可伸缩性可让数据库以透明方式响应快速变化的资源要求，使用户只需为用到的资源付费。
+Azure SQL 数据库服务提供四个服务层：基本、标准、高级和高级 RS。 每个服务层提供[不同级别的性能和功能](/documentation/articles/sql-database-service-tiers/)，以支持从轻型到重型的数据库工作负荷。 可以在小型数据库中构建第一个应用，每个月只需花费少量的资金。然后可以根据解决方案的需要，随时手动或以编程方式[更改服务层](/documentation/articles/sql-database-service-tiers/)。 这不会给应用或客户造成任何停机。 动态可伸缩性可让数据库以透明方式响应快速变化的资源要求，使用户只需为用到的资源付费。
 
 ## <a name="elastic-pools-to-maximize-resource-utilization"></a>弹性池可以最大化资源利用率
 许多业务和应用只要能够创建单一数据库并按需调高或调低性能即可，尤其是当使用模式相对容易预测时。 但如果有无法预测的使用模式，则管理成本和业务模式就会变得相当困难。 [弹性池](/documentation/articles/sql-database-elastic-pool/)旨在解决此问题。 概念很简单。 可以向池而不是单个数据库分配性能资源，并且仅需为池的总体性能资源付费，而无需为单一数据库的性能付费。 使用弹性池时，不需要在资源需求波动时担心如何上下调节数据库性能。 入池的数据库可根据需要使用弹性池的性能资源。 入池的数据库会使用该池，但不会超出其限制，因此即使单个数据库的使用情况仍不可预测，成本也仍是可预测的。 此外，你可以 [向池添加和删除数据库](/documentation/articles/sql-database-elastic-pool-manage-portal/)，将应用从少量数据库扩展到数千个，而一切费用不会超出由你控制的预算范围。 最后，还可以控制池中数据库可用的资源量上限与下限，确保池中不会有任何数据库使用所有的池资源，每个入池数据库的可用资源量都有最低保障。 若要深入了解如何通过弹性池设计 SaaS 应用程序的模式，请参阅 [具有 Azure SQL 数据库的多租户 SaaS 应用程序的设计模式](/documentation/articles/sql-database-design-patterns-multi-tenancy-saas-applications/)。

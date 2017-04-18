@@ -97,7 +97,7 @@ SSMS 提供了一个向导，通过设置 CMK、CEK 和已加密列即可轻松�
 
 1. 展开“数据库” > “Clinic” > “表”。
 2. 右键单击“患者”表，然后选择“加密列”以打开始终加密向导：
-   
+
     ![加密列](./media/sql-database-always-encrypted/encrypt-columns.png)
 
 始终加密向导包括以下部分：**列选择**、**主密钥配置** (CMK)、**验证**和**摘要**。
@@ -109,7 +109,7 @@ SSMS 提供了一个向导，通过设置 CMK、CEK 和已加密列即可轻松�
 
 将 **SSN** 列的“加密类型”设置为“确定”，并将 **BirthDate** 列设置为“随机”。 单击"Next"。
 
-    ![加密列](./media/sql-database-always-encrypted/column-selection.png)
+![加密列](./media/sql-database-always-encrypted/column-selection.png)
 
 ### <a name="master-key-configuration"></a>主密钥配置
 **主密钥配置**页是设置 CMK 和选择密钥存储提供程序（在其中存储 CMK）的地方。 目前，可以将 CMK 存储在 Windows 证书存储、Azure 密钥保管库或硬件安全模块 (HSM) 中。 本教程演示如何将密钥存储在 Windows 证书存储中。

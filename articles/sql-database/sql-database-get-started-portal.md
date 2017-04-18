@@ -88,10 +88,10 @@ SQL 数据库服务会创建一个防火墙，阻止外部应用程序和工具�
 
 5. 完成身份验证后，在查询窗口中键入所选查询，例如以下查询：
 
-       SELECT pc.Name as CategoryName, p.name as ProductName
-       FROM SalesLT.ProductCategory pc
-       JOIN SalesLT.Product p
-       ON pc.productcategoryid = p.productcategoryid;
+        SELECT pc.Name as CategoryName, p.name as ProductName
+        FROM SalesLT.ProductCategory pc
+        JOIN SalesLT.Product p
+        ON pc.productcategoryid = p.productcategoryid;
 
 6. 单击“运行”，然后在“结果”窗格中查看查询结果。
 

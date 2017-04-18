@@ -99,7 +99,7 @@ Azure SQL 数据库中的每个数据库都与逻辑服务器相关联。 数据
 | 内存中优化 | [支持](https://msdn.microsoft.com/zh-cn/library/dn133186.aspx) | [仅限 Premium Edition](https://msdn.microsoft.com/zh-cn/library/dn133186.aspx) |
 | 作业 | [SQL Server 代理](https://msdn.microsoft.com/zh-cn/library/ms189237.aspx) | 不支持 |
 | JSON 数据支持 | [支持](https://msdn.microsoft.com/zh-cn/library/dn921897.aspx) | [支持](/documentation/articles/sql-database-json-features/) |
-| 语言元素 | [支持](https://msdn.microsoft.com/zh-cn/library/ff848807.aspx) | [大多数](https://msdn.microsoft.com/zh-cn/library/ff848807.aspx) |  
+| 语言元素 | [支持](https://msdn.microsoft.com/zh-cn/library/ff848807.aspx) | [大多数](https://msdn.microsoft.com/zh-cn/library/ff848807.aspx) | 
 | 链接的服务器 | [支持](https://msdn.microsoft.com/zh-cn/library/ms188279.aspx) | 不支持 - 请参阅[弹性查询](/documentation/articles/sql-database-elastic-query-horizontal-partitioning/) |
 | 日志传送 | [支持](https://msdn.microsoft.com/zh-cn/library/ms187103.aspx) | 不支持 - 请参阅[活动异地复制](/documentation/articles/sql-database-geo-replication-overview/) |
 | 管理命令 | [支持](https://msdn.microsoft.com/zh-cn/library/ms190286.aspx)| [不支持](https://msdn.microsoft.com/zh-cn/library/ms190286.aspx) |
@@ -109,7 +109,7 @@ Azure SQL 数据库中的每个数据库都与逻辑服务器相关联。 数据
 | 联机索引操作 | [支持](https://msdn.microsoft.com/zh-cn/library/ms177442.aspx) | [按服务层限制的事务大小](https://msdn.microsoft.com/zh-cn/library/ms177442.aspx) |
 | 运算符 | [支持](https://msdn.microsoft.com/zh-cn/library/ms174986.aspx) | [大多数](https://msdn.microsoft.com/zh-cn/library/ms174986.aspx) |
 | 数据库时间点还原 | [支持](https://msdn.microsoft.com/zh-cn/library/ms179451.aspx) | [支持](/documentation/articles/sql-database-recovery-using-backups/#point-in-time-restore) |
-| Polybase | [支持](https://msdn.microsoft.com/zh-cn/library/mt143171.aspx) | [不支持]
+| Polybase | [支持](https://msdn.microsoft.com/zh-cn/library/mt143171.aspx) | 不支持|
 | 基于策略的管理 | [支持](https://msdn.microsoft.com/zh-cn/library/bb510667.aspx) | 不支持 |
 | 谓词 | [支持](https://msdn.microsoft.com/zh-cn/library/ms189523.aspx) | [大多数](https://msdn.microsoft.com/zh-cn/library/ms189523.aspx)
 | R 服务 | [支持](https://msdn.microsoft.com/zh-cn/library/mt604845.aspx)
@@ -139,7 +139,7 @@ Azure SQL 数据库中的每个数据库都与逻辑服务器相关联。 数据
 | 临时表 | [本地和全局](https://msdn.microsoft.com/zh-cn/library/ms174979.aspx#Anchor_4) | [仅限本地](https://msdn.microsoft.com/zh-cn/library/ms174979.aspx#Anchor_4) |
 | 临时表 | [支持](https://msdn.microsoft.com/zh-cn/library/dn935015.aspx) | [支持](/documentation/articles/sql-database-temporal-tables/) |
 | 事务语句 | [支持](https://msdn.microsoft.com/zh-cn/library/ms174377.aspx) | [支持](https://msdn.microsoft.com/zh-cn/library/ms174377.aspx) |
-| 变量 | [支持](https://msdn.microsoft.com/zh-cn/library/ff848809.aspx) | | [支持](https://msdn.microsoft.com/zh-cn/library/ff848809.aspx) | 
+| 变量 | [支持](https://msdn.microsoft.com/zh-cn/library/ff848809.aspx) | [支持](https://msdn.microsoft.com/zh-cn/library/ff848809.aspx) | 
 | 透明数据加密 (TDE)  | [支持](https://msdn.microsoft.com/zh-cn/library/bb934049.aspx) | [支持](https://msdn.microsoft.com/dn948096.aspx) |
 | Windows Server 故障转移群集 | [支持](https://msdn.microsoft.com/zh-cn/library/hh270278.aspx) | 不支持 - 请参阅[活动异地复制](/documentation/articles/sql-database-geo-replication-overview/) |
 | XML 索引 | [支持](http://msdn.microsoft.com/zh-cn/library/bb934097.aspx) | [支持](http://msdn.microsoft.com/zh-cn/library/bb934097.aspx) |

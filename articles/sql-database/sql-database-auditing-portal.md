@@ -142,7 +142,7 @@ Blob 审核日志以 blob 文件集合的形式保存在名为“**sqldbauditlog
 
     ![导航窗格][12]
 
-* 或者，可以借助以[可下载 Excel 电子表格形式](http://go.microsoft.com/fwlink/?LinkId=403540)提供的预配置报告模板来快速分析日志数据。 若要对审核日志使用模板，需要安装 Excel 2013 或更高版本以及 Power Query (http://www.microsoft.com/download/details.aspx?id=39379)。
+* 或者，可以借助以[可下载 Excel 电子表格形式](http://go.microsoft.com/fwlink/?LinkId=403540)提供的预配置报告模板来快速分析日志数据。 若要对审核日志使用模板，需要安装 Excel 2013 或更高版本以及 [Power Query](http://www.microsoft.com/download/details.aspx?id=39379)。
 
 * 还可以使用 Power Query 将审核日志从 Azure 存储帐户直接导入 Excel 模板。 然后可以浏览审核记录，并在日志数据顶部创建仪表板和报表。
 

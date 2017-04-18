@@ -74,10 +74,10 @@
 1. 在“对象资源管理器”中，右键单击“mySampleDatabase”，然后单击“新建查询”。 此时会打开一个空白查询窗口，该窗口连接到数据库。
 2. 在查询窗口中，输入以下查询：
 
-       SELECT pc.Name as CategoryName, p.name as ProductName
-       FROM [SalesLT].[ProductCategory] pc
-       JOIN [SalesLT].[Product] p
-       ON pc.productcategoryid = p.productcategoryid;
+        SELECT pc.Name as CategoryName, p.name as ProductName
+        FROM [SalesLT].[ProductCategory] pc
+        JOIN [SalesLT].[Product] p
+        ON pc.productcategoryid = p.productcategoryid;
 
 3. 在工具栏中，单击“执行”从 Product 表和 ProductCategory 表检索数据。
 
@@ -90,23 +90,23 @@
 1. 在工具栏上，单击“新建查询”。 此时会打开一个连接到数据库的空查询窗口。
 2. 在查询窗口中，输入以下查询：
 
-       INSERT INTO [SalesLT].[Product]
-               ( [Name]
-               , [ProductNumber]
-               , [Color]
-               , [ProductCategoryID]
-               , [StandardCost]
-               , [ListPrice]
-               , [SellStartDate]
-               )
-         VALUES
-               ('myNewProduct'
-               ,123456789
-               ,'NewColor'
-               ,1
-               ,100
-               ,100
-               ,GETDATE() );
+        INSERT INTO [SalesLT].[Product]
+                ( [Name]
+                , [ProductNumber]
+                , [Color]
+                , [ProductCategoryID]
+                , [StandardCost]
+                , [ListPrice]
+                , [SellStartDate]
+                )
+            VALUES
+                ('myNewProduct'
+                ,123456789
+                ,'NewColor'
+                ,1
+                ,100
+                ,100
+                ,GETDATE() );
 
 3. 在工具栏上单击“执行”，将新行插入 Product 表。
 
@@ -119,9 +119,9 @@
 1. 在工具栏上，单击“新建查询”。 此时会打开一个连接到数据库的空查询窗口。
 2. 在查询窗口中，输入以下查询：
 
-       UPDATE [SalesLT].[Product]
-       SET [ListPrice] = 125
-       WHERE Name = 'myNewProduct';
+        UPDATE [SalesLT].[Product]
+        SET [ListPrice] = 125
+        WHERE Name = 'myNewProduct';
 
 3. 在工具栏上单击“执行”，更新 Product 表中的指定行。
 
@@ -134,8 +134,8 @@
 1. 在工具栏上，单击“新建查询”。 此时会打开一个连接到数据库的空查询窗口。
 2. 在查询窗口中，输入以下查询：
 
-       DELETE FROM [SalesLT].[Product]
-       WHERE Name = 'myNewProduct';
+        DELETE FROM [SalesLT].[Product]
+        WHERE Name = 'myNewProduct';
 
 3. 在工具栏上单击“执行”，删除 Product 表中的指定行。
 

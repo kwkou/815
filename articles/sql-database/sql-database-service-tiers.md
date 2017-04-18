@@ -56,7 +56,7 @@
 确定最低服务层后，就可以确定数据库的性能级别（DTU 数）。 通常情况下，一开始可以使用标准 S2 和 S3 性能级别。 对于具有较高 CPU 或 IO 要求的数据库，高级性能级别是合适的起点。 与最高的标准性能级别相比，高级性能级别提供更多 CPU 和至少高 10 倍的 IO。
 
 ## <a name="single-database-service-tiers-and-performance-levels"></a>单一数据库服务层和性能级别
-对于单一数据库，每个服务层内都具有多个性能级别。 可以使用 [Azure 门户预览预览版](/documentation/articles/sql-database-manage-single-databases-portal/)、[PowerShell](/documentation/articles/sql-database-manage-single-databases-powershell/)、[Transact-SQL](/documentation/articles/sql-database-manage-single-databases-tsql/)、C# 和 REST API 灵活选择最适合工作负荷要求的级别。 
+对于单一数据库，每个服务层内都具有多个性能级别。 可以使用 [Azure 门户预览](/documentation/articles/sql-database-manage-single-databases-portal/)、[PowerShell](/documentation/articles/sql-database-manage-single-databases-powershell/)、[Transact-SQL](/documentation/articles/sql-database-manage-single-databases-tsql/)、C# 和 REST API 灵活选择最适合工作负荷要求的级别。 
 
 尽管有多个托管的数据库，你的数据库仍可确保获得一组资源，并且数据库的预期性能特征不受影响。
 

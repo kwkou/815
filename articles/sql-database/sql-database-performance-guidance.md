@@ -212,6 +212,7 @@ Azure SQL 数据库在每个服务器的 **master** 数据库的 **sys.resource_
         WHERE database_name = 'userdb1' AND start_time > DATEADD(day, -7, GETDATE());
 
     如果对于三个资源维度中的任何一个维度，此查询返回的值小于 99.9%，请考虑转到下一个更高的性能级别，或使用应用程序优化技术来减少 SQL 数据库上的负载。
+    
 4. 本练习还应将未来预计的工作负荷增加考虑在内。
 
 ## <a name="tune-your-application"></a>优化应用程序

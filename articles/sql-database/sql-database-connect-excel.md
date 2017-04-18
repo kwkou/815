@@ -38,6 +38,7 @@
    ![选择数据源：将 Excel 连接到 SQL 数据库。](./media/sql-database-connect-excel/excel_data_source.png)
    
    “数据连接”向导打开。
+
 3. 在“连接到数据库服务器”对话框中，以格式 <*服务器名称*>**.database.chinacloudapi.cn** 键入要连接到的 SQL 数据库的**服务器名称**。 例如 **adworkserver.database.chinacloudapi.cn**。
 4. 在“登录凭据”下，单击“使用以下用户名和密码”，键入在创建 SQL 数据库服务器时为其设置的**用户名**和**密码**，然后单击“下一步”。
    
@@ -47,11 +48,13 @@
    > 根据你的网络环境，你可能无法连接；如果 SQL 数据库服务器不允许来自客户端 IP 地址的流量，你可能会断开连接。 转到 [Azure 门户预览](https://portal.azure.cn/)，依次单击“SQL Server”、你的服务器、“设置”下面的“防火墙”，然后添加客户端 IP 地址。 有关详细信息，请参阅 [如何配置防火墙设置](/documentation/articles/sql-database-configure-firewall-settings/) 。
    > 
    > 
+
 5. 在“选择数据库和表”对话框中，从列表中选择要使用的数据库，然后单击要使用的表或视图（我们选择了 **vGetAllCategories**），然后单击“下一步”。
    
     ![选择数据库和表。](./media/sql-database-connect-excel/select-database-and-table.png)
    
     此时将打开“保存数据连接文件并完成”对话框，请在其中提供 Excel 使用的 Office 数据库连接 (*.odc) 文件的相关信息。 你可以保留默认值，或自定义选择项。
+
 6. 你可以保留默认值，但要特意记下“文件名”。 “说明”、“友好名称”和“搜索关键字”可帮助你和其他用户记住要连接的项和查找连接。 如果你希望将连接信息存储在 odc 文件中以便在连接时进行更新，请单击“始终尝试使用此文件来刷新数据”，然后单击“完成”。
    
     ![保存 odc 文件](./media/sql-database-connect-excel/save-odc-file.png)

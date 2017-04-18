@@ -39,14 +39,16 @@
 3. 选择要还原的数据库。
 4. 在数据库页面的顶部，选择“还原” ：
    
-   ![还原 Azure SQL 数据库](./media/sql-database-point-in-time-restore-portal/restore.png)
+    ![还原 Azure SQL 数据库](./media/sql-database-point-in-time-restore-portal/restore.png)
+
 5. 在“**还原**”页上，选择要将数据库还原到的日期和时间（UTC 时间），然后单击“**确定**”：
    
-   ![还原 Azure SQL 数据库](./media/sql-database-point-in-time-restore-portal/restore-details.png)
+    ![还原 Azure SQL 数据库](./media/sql-database-point-in-time-restore-portal/restore-details.png)
 
 6. 在上一个步骤中单击“**确定**”后，单击页面右上方的通知图标，然后单击“**正在还原 SQL 数据库**”通知了解详细信息。
    
     ![还原 Azure SQL 数据库](./media/sql-database-point-in-time-restore-portal/notification-icon.png)
+
 7. “还原 SQL 数据库”页面随即打开，显示有关还原状态的信息。 可以单击行项查看更多详细信息：
    
     ![还原 Azure SQL 数据库](./media/sql-database-point-in-time-restore-portal/inprogress.png)
@@ -71,6 +73,7 @@
 2. 在屏幕左侧选择“**+新建**” > “**数据库**” > “**SQL 数据库**”：
    
    ![还原 Azure SQL 数据库](./media/sql-database-geo-restore-portal/new-sql-database.png)
+   
 3. 选择“备份”  作为源，然后选择要还原的备份。 指定数据库名称、要将数据库还原到其中的服务器，然后单击“创建” ：
    
    ![还原 Azure SQL 数据库](./media/sql-database-geo-restore-portal/geo-restore.png)

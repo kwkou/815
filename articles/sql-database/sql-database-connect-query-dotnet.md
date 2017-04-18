@@ -53,7 +53,8 @@
         string strConn = "<connection string>";
         using (var connection = new SqlConnection(strConn))
         {
-       connection.Open();
+        
+        connection.Open();
 
         SqlCommand selectCommand = new SqlCommand("", connection);
         selectCommand.CommandType = CommandType.Text;
