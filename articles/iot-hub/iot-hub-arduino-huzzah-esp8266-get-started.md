@@ -111,15 +111,15 @@
 
    * Windows 7 或更高版本：以管理员身份启动命令提示符。 运行以下命令安装 iothub explorer：
 
-          npm install -g iothub-explorer
+           npm install -g iothub-explorer
 
    * Ubuntu 16.04 或更高版本：使用快捷键 Ctrl+Alt+T 打开终端，然后运行以下命令：
 
-          sudo npm install -g iothub-explorer
+           sudo npm install -g iothub-explorer
 
    * macOS 10.1 或更高版本：打开终端，然后运行以下命令：
 
-          npm install -g iothub-explorer
+           npm install -g iothub-explorer
 
 1. 运行以下命令登录到 IoT 中心：
 
