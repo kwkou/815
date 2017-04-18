@@ -44,12 +44,12 @@
 
 4. 在“登录凭据”下，单击“使用以下用户名和密码”，键入在创建 SQL 数据库服务器时为其设置的**用户名**和**密码**，然后单击“下一步”。
    
-   ![键入服务器名称和登录凭据](./media/sql-database-connect-excel/connect-to-server.png)
+    ![键入服务器名称和登录凭据](./media/sql-database-connect-excel/connect-to-server.png)
    
-   > [AZURE.TIP]
-   > 根据你的网络环境，你可能无法连接；如果 SQL 数据库服务器不允许来自客户端 IP 地址的流量，你可能会断开连接。 转到 [Azure 门户预览](https://portal.azure.cn/)，依次单击“SQL Server”、你的服务器、“设置”下面的“防火墙”，然后添加客户端 IP 地址。 有关详细信息，请参阅 [如何配置防火墙设置](/documentation/articles/sql-database-configure-firewall-settings/) 。
-   > 
-   > 
+    > [AZURE.TIP]
+    > 根据你的网络环境，你可能无法连接；如果 SQL 数据库服务器不允许来自客户端 IP 地址的流量，你可能会断开连接。 转到 [Azure 门户预览](https://portal.azure.cn/)，依次单击“SQL Server”、你的服务器、“设置”下面的“防火墙”，然后添加客户端 IP 地址。 有关详细信息，请参阅 [如何配置防火墙设置](/documentation/articles/sql-database-configure-firewall-settings/) 。
+    > 
+    > 
 
 5. 在“选择数据库和表”对话框中，从列表中选择要使用的数据库，然后单击要使用的表或视图（我们选择了 **vGetAllCategories**），然后单击“下一步”。
    
