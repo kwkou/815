@@ -6,7 +6,8 @@
     author="kumudd"
     manager="timlt"
     editor=""
-    tags="azure-service-management" />
+    tags="azure-service-management"
+    translationtype="Human Translation" />
 <tags
     ms.assetid="becbbbde-a118-4269-9444-d3153f00bf34"
     ms.service="load-balancer"
@@ -15,11 +16,13 @@
     ms.tgt_pltfrm="na"
     ms.workload="infrastructure-services"
     ms.date="01/23/2017"
-    wacn.date="03/03/2017"
-    ms.author="kumud" />  
+    wacn.date="04/17/2017"
+    ms.author="kumud"
+    ms.sourcegitcommit="7cc8d7b9c616d399509cd9dbdd155b0e9a7987a8"
+    ms.openlocfilehash="6519254a2e988af5d20672df2470511a1403cb0d"
+    ms.lasthandoff="04/07/2017" />
 
-
-# 开始使用 Azure CLI 创建内部负载均衡器（经典）
+# <a name="get-started-creating-an-internal-load-balancer-classic-using-the-azure-cli"></a>开始使用 Azure CLI 创建内部负载均衡器（经典）
 > [AZURE.SELECTOR]
 - [PowerShell](/documentation/articles/load-balancer-get-started-ilb-classic-ps/)
 - [Azure CLI](/documentation/articles/load-balancer-get-started-ilb-classic-cli/)
@@ -28,11 +31,11 @@
 [AZURE.INCLUDE [load-balancer-get-started-ilb-intro-include.md](../../includes/load-balancer-get-started-ilb-intro-include.md)]
 
 > [AZURE.IMPORTANT]
-Azure 具有两种不同的部署模型，用于创建和处理资源：[Resource Manager 模型和经典模型](/documentation/articles/resource-manager-deployment-model/)。本文介绍使用经典部署模型的情况。Azure 建议大多数新部署使用 Resource Manager 模型。了解如何[使用 Resource Manager 模型执行这些步骤](/documentation/articles/load-balancer-get-started-ilb-arm-cli/)。
+> Azure 具有用于创建和处理资源的两个不同的部署模型：[Resource Manager 和经典](/documentation/articles/resource-manager-deployment-model/)。  本文介绍使用经典部署模型的情况。 Azure 建议大多数新部署使用 Resource Manager 模型。 了解如何[使用 Resource Manager 模型执行这些步骤](/documentation/articles/load-balancer-get-started-ilb-arm-cli/)。
 
 [AZURE.INCLUDE [load-balancer-get-started-ilb-scenario-include.md](../../includes/load-balancer-get-started-ilb-scenario-include.md)]
 
-## 为虚拟机创建内部负载均衡器集
+## <a name="to-create-an-internal-load-balancer-set-for-virtual-machines"></a>为虚拟机创建内部负载均衡器集
 
 若要创建内部负载均衡器集和要将其流量发送到的服务器，必须执行以下操作：
 
@@ -40,7 +43,7 @@ Azure 具有两种不同的部署模型，用于创建和处理资源：[Resourc
 2. 添加与虚拟机对应的终结点以接收传入流量。
 3. 配置将发送要进行负载均衡的流量的服务器，以将其流量发送到内部负载均衡实例的虚拟 IP (VIP) 地址。
 
-## 使用 CLI 逐步创建内部负载均衡器
+## <a name="step-by-step-creating-an-internal-load-balancer-using-cli"></a>使用 CLI 逐步创建内部负载均衡器
 
 本指南演示如何基于上述方案创建内部负载均衡器。
 
@@ -53,23 +56,23 @@ Azure 具有两种不同的部署模型，用于创建和处理资源：[Resourc
 
         info:    New mode is asm
 
-## 创建终结点和负载均衡器集
+## <a name="create-endpoint-and-load-balancer-set"></a>创建终结点和负载均衡器集
 
-此方案假定虚拟机“DB1”和“DB2”在一个名为“mytestcloud”的云服务中。这两个虚拟机均使用一个包含子网“subnet-1”的名为“testvnet”的虚拟网络。
+此方案假定虚拟机“DB1”和“DB2”在一个名为“mytestcloud”的云服务中。 这两个虚拟机均使用一个包含子网“subnet-1”的名为“testvnet”的虚拟网络。
 
 本指南将使用端口 1433 作为专用端口和本地端口创建内部负载均衡器集。
 
 这是一种常见方案，其中在使用内部负载均衡器的后端有 SQL 虚拟机，以确保不会使用公共 IP 地址直接公开数据库服务器。
 
-### 步骤 1
+### <a name="step-1"></a>步骤 1
 
-使用 `azure network service internal-load-balancer add` 创建内部负载均衡器集。
+使用 `azure network service internal-load-balancer add`创建内部负载均衡器集。
 
     azure service internal-load-balancer add --serviceName mytestcloud --internalLBName ilbset --subnet-name subnet-1 --static-virtualnetwork-ipaddress 192.168.2.7
 
-有关详细信息，请查看 `azure service internal-load-balancer --help`。
+有关详细信息，请查看 `azure service internal-load-balancer --help` 。
 
-你可以使用命令 `azure service internal-load-balancer list`*云服务名称*查看内部负载均衡器属性。
+你可以使用命令 `azure service internal-load-balancer list` *云服务名称*查看内部负载均衡器属性。
 
 下面是数据的示例：
 
@@ -81,15 +84,15 @@ Azure 具有两种不同的部署模型，用于创建和处理资源：[Resourc
     data:    ilbset  Private  subnet-1    192.168.2.7
     info:    service internal-load-balancer list command OK
 
-### 步骤 2
+### <a name="step-2"></a>步骤 2
 
-当你添加第一个终结点时，可配置内部负载均衡器集。在此步骤中，你会将终结点、虚拟机和探测器端口关联到内部负载均衡器集。
+当你添加第一个终结点时，可配置内部负载均衡器集。 在此步骤中，你会将终结点、虚拟机和探测器端口关联到内部负载均衡器集。
 
     azure vm endpoint create db1 1433 --local-port 1433 --protocol tcp --probe-port 1433 --probe-protocol tcp --probe-interval 300 --probe-timeout 600 --internal-load-balancer-name ilbset
 
-### 步骤 3
+### <a name="step-3"></a>步骤 3
 
-使用 `azure vm show`*虚拟机名称*验证负载均衡器配置
+使用 `azure vm show` *虚拟机名称*
 
     azure vm show DB1
 
@@ -142,27 +145,26 @@ Azure 具有两种不同的部署模型，用于创建和处理资源：[Resourc
     data:    Network Endpoints 2 loadBalancerName "ilbset"
     info:    vm show command OK
 
-## 为虚拟机创建远程桌面终结点
+## <a name="create-a-remote-desktop-endpoint-for-a-virtual-machine"></a>为虚拟机创建远程桌面终结点
 
-你可以使用 `azure vm endpoint create` 创建远程桌面终结点，将网络流量从公共端口转发到特定虚拟机的本地端口。
+你可以使用 `azure vm endpoint create`创建远程桌面终结点，将网络流量从公共端口转发到特定虚拟机的本地端口。
 
     azure vm endpoint create web1 54580 -k 3389
 
-## 从负载均衡器中删除虚拟机
+## <a name="remove-virtual-machine-from-load-balancer"></a>从负载均衡器中删除虚拟机
 
-可以通过删除关联的终结点从内部负载均衡器集中删除虚拟机。删除终结点后，虚拟机将不再属于该负载均衡器集。
+可以通过删除关联的终结点从内部负载均衡器集中删除虚拟机。 删除终结点后，虚拟机将不再属于该负载均衡器集。
 
-使用上面的示例，你可以使用命令 `azure vm endpoint delete` 从内部负载均衡器“ilbset”中删除为虚拟机“DB1”创建的终结点。
+使用上面的示例，你可以使用命令 `azure vm endpoint delete`从内部负载均衡器“ilbset”中删除为虚拟机“DB1”创建的终结点。
 
     azure vm endpoint delete DB1 tcp-1433-1433
 
-有关详细信息，请查看 `azure vm endpoint --help`。
+有关详细信息，请查看 `azure vm endpoint --help` 。
 
-## 后续步骤
+## <a name="next-steps"></a>后续步骤
 
 [使用源 IP 关联配置负载均衡器分发模式](/documentation/articles/load-balancer-distribution-mode/)
 
-[为负载均衡器配置空闲 TCP 超时设置](/documentation/articles/load-balancer-tcp-idle-timeout/)
+[配置负载均衡器的空闲 TCP 超时设置](/documentation/articles/load-balancer-tcp-idle-timeout/)
 
-<!---HONumber=Mooncake_0227_2017-->
 <!--Update_Description: update meta properties; wording update -->
