@@ -265,14 +265,14 @@ PowerShell 脚本使用 TollApp 示例应用程序自动开始发送事件。 �
 6. 源是 **事件中心**。
 7. **服务总线命名空间**应是下拉菜单中的 TollData。
 8. **事件中心名称**应设置为**条目**。
-9. **事件中心策略名称*是 **RootManageSharedAccessKey**（默认值）。
-10. 选择“JSON”作为“事件序列化格式”，选择“UTF8”作为“编码”。
+9. **事件中心策略名称**是 **RootManageSharedAccessKey**（默认值）。
+10. 选择**JSON**作为**事件序列化格式**，选择**UTF8**作为**编码**。
 
     设置看起来类似于：
 
     ![事件中心设置](./media/stream-analytics-build-an-iot-solution-using-stream-analytics/image28.png)
 
-10. 单击页面底部的“创建”  完成向导。
+11. 单击页面底部的**创建**完成向导。
 
     现在，已创建入口流，可执行相同的步骤来创建出口流。 请确保输入如以下屏幕截图所示的值。
 
@@ -283,29 +283,29 @@ PowerShell 脚本使用 TollApp 示例应用程序自动开始发送事件。 �
     ![Azure 门户中定义的输入流](./media/stream-analytics-build-an-iot-solution-using-stream-analytics/image32.png)
 
     接下来，为包含汽车注册数据的 blob 文件添加引用数据输入。
-11. 单击“添加”，然后执行与流输入相同的过程，但不同的是要选择“引用数据”而不是“数据流”，并且“输入别名”是“注册”。
+12. 单击**添加**，然后执行与流输入相同的过程，但不同的是要选择**引用数据**而不是**数据流**，并且**输入别名**是**注册**。
 
-12. 存储帐户以 **tolldata** 开头。 容器名称应为 **tolldata**，**路径模式**应为 **registration.json**。 此文件名区分大小写，且应该全为**小写**。
+13. 存储帐户以 **tolldata** 开头。 容器名称应为 **tolldata**，**路径模式**应为 **registration.json**。 此文件名区分大小写，且应该全为**小写**。
 
     ![博客存储设置](./media/stream-analytics-build-an-iot-solution-using-stream-analytics/image34.png)
 
-13. 单击“创建”  完成向导。
+14. 单击**创建**完成向导。
 
 现在，已定义所有输入。
 
 ## <a name="define-output"></a>定义输出
-1. 在“流分析作业概述”窗格中，选择“输出” 。
+1. 在流分析作业概述窗格中，选择**输出** 。
 
     ![“输出”选项卡和“添加输出”选项](./media/stream-analytics-build-an-iot-solution-using-stream-analytics/image37.png)
 
-2. 单击 **“添加”**。
-3. 将“输出别名”设置为“output”，然后将“接收器”设置为“SQL 数据库”。
-3. 选择本文“从 Visual Studio 连接到数据库”部分中使用的服务器名称。 数据库名称为 **TollDataDB**。
-4. 在“用户名”字段中输入“tolladmin”、在“密码”字段中输入“123toll!” ，并在“表”字段中输入“TollDataRefJoin”。
+2. 单击**添加**。
+3. 将**输出别名**设置为“output”，然后将**接收器**设置为**SQL 数据库**。
+4. 选择本文“从 Visual Studio 连接到数据库”部分中使用的服务器名称。 数据库名称为 **TollDataDB**。
+5. 在**用户名**字段中输入**tolladmin**、在**密码**字段中输入**123toll!** ，并在**表**字段中输入**TollDataRefJoin**。
 
     ![SQL 数据库设置](./media/stream-analytics-build-an-iot-solution-using-stream-analytics/image38.png)  
 
-5. 单击“创建” 。
+6. 单击“创建” 。
 
 ## <a name="azure-stream-analytics-query"></a>Azure 流分析查询
 “查询”选项卡包含转换传入数据的 SQL 查询。
@@ -342,13 +342,13 @@ PowerShell 脚本使用 TollApp 示例应用程序自动开始发送事件。 �
 * Registration.json
 
 ## <a name="question-1-number-of-vehicles-entering-a-toll-booth"></a>问题 1：进入某个收费亭的车辆数目
-1. 打开 Azure 门户，转到创建的 Azure 流分析作业。 单击“查询”选项卡，并粘贴前一部分中的查询。
+1. 打开 Azure 门户，转到创建的 Azure 流分析作业。 单击**查询**选项卡，并粘贴前一部分中的查询。
 
-2. 若要根据示例数据验证此查询，请单击 ... 符号，再选择“上传文件中的示例数据”，将数据上传到 EntryStream 输入。
+2. 若要根据示例数据验证此查询，请单击 ... 符号，再选择**上传文件中的示例数据**，将数据上传到 EntryStream 输入。
 
     ![Entry.json 文件的屏幕截图](./media/stream-analytics-build-an-iot-solution-using-stream-analytics/image41.png)  
 
-3. 在显示的窗格中，选择本地计算机上的文件 (Entry.json)，然后单击“确定”。“测试”图标现将变亮且可单击。
+3. 在显示的窗格中，选择本地计算机上的文件 (Entry.json)，然后单击**确定**。**测试**图标现将变亮且可单击。
 
     ![Entry.json 文件的屏幕截图](./media/stream-analytics-build-an-iot-solution-using-stream-analytics/image42.png)  
 
@@ -369,7 +369,7 @@ PowerShell 脚本使用 TollApp 示例应用程序自动开始发送事件。 �
 
 1. 若要测试此查询，请在作业的**查询**上更新该查询。 按上文输入 **EntryStream** 的方式为 **ExitStream** 添加测试文件。
 
-2. 单击“测试”。
+2. 单击**测试**。
 
 3. 选中测试查询的复选框，然后查看输出：
 
@@ -395,11 +395,11 @@ Azure 流分析可以使用静态数据快照来与临时数据流联接。 若�
 ## <a name="start-the-stream-analytics-job"></a>启动流分析作业
 现在可以完成配置并启动作业。 保存问题 3 中的查询，这将生成与输出表 **TollDataRefJoin** 架构匹配的输出。
 
-转到作业“仪表板”并单击“启动”。
+转到作业**仪表板**并单击**启动**。
 
 ![作业仪表板中“开始”按钮的屏幕截图](./media/stream-analytics-build-an-iot-solution-using-stream-analytics/image48.png)
 
-在打开的对话框中，将“开始输出”时间更改为“自定义时间”。 将时间更改为早于当前时间一个小时。 此更改可确保从本教程开始生成事件后，来自事件中心的所有事件都得到处理。 现单击“开始”  按钮以开始作业。
+在打开的对话框中，将**开始输出**时间更改为**自定义时间**。 将时间更改为早于当前时间一个小时。 此更改可确保从本教程开始生成事件后，来自事件中心的所有事件都得到处理。 现单击**开始**按钮以开始作业。
 
 ![自定义时间选择](./media/stream-analytics-build-an-iot-solution-using-stream-analytics/image49.png)
 
@@ -408,8 +408,8 @@ Azure 流分析可以使用静态数据快照来与临时数据流联接。 若�
 ![作业状态的屏幕截图](./media/stream-analytics-build-an-iot-solution-using-stream-analytics/image50.png)
 
 ## <a name="check-results-in-visual-studio"></a>在 Visual Studio 中检查结果
-1. 打开 Visual Studio 服务器资源管理器，然后右键单击“TollDataRefJoin”  表。
-2. 单击“显示表数据”  ，查看作业的输出。
+1. 打开 Visual Studio 服务器资源管理器，然后右键单击**TollDataRefJoin**表。
+2. 单击**显示表数据**，查看作业的输出。
 
     ![服务器资源管理器中的“显示表数据”选择](./media/stream-analytics-build-an-iot-solution-using-stream-analytics/image51.jpg)
 
@@ -428,16 +428,16 @@ Azure 流分析设计为能够弹性缩放，以便处理大量数据。 Azure �
 
     ![选择 6 个流式处理单位的屏幕截图](./media/stream-analytics-build-an-iot-solution-using-stream-analytics/image52.png)
 
-3. 转到“输出”选项卡，然后将 SQL 表名称更改为“TollDataTumblingCountPartitioned”。
+3. 转到**输出**选项卡，然后将 SQL 表名称更改为“TollDataTumblingCountPartitioned”。
 
 如果此时启动作业，Azure 流分析可将工作分散到更多计算资源上，并实现更高的吞吐量。 请注意，TollApp 应用程序还会发送已按 TollId 分区的事件。
 
 ## <a name="monitor"></a>监视
-“监视器”区域包含正在运行的作业的相关统计信息。 首次需要配置，才能使用同一区域中的存储帐户（按本文档其余部分命名收费站）。   
+**监视器**区域包含正在运行的作业的相关统计信息。 首次需要配置，才能使用同一区域中的存储帐户（按本文档其余部分命名收费站）。   
 
 ![监视器屏幕截图](./media/stream-analytics-build-an-iot-solution-using-stream-analytics/monitoring.png)
 
-还可通过作业仪表板的“设置”区域访问“活动日志”。
+还可通过作业仪表板的**设置**区域访问**活动日志**。
 
 ## <a name="conclusion"></a>结束语
 本教程介绍 Azure 流分析服务。 其中演示如何为流分析作业配置输入和输出。 本教程还使用收费站数据方案来解释数据空间不断变化时所引发的常见问题类型，以及如何在 Azure 流分析中使用类似于 SQL 的简单查询来解决这些问题。 本教程介绍用于处理临时数据的 SQL 扩展构造。 其中说明如何联接不同的数据流、如何使用静态参考数据来扩充数据流，以及如何扩大查询来获得更高的吞吐量。
@@ -450,7 +450,7 @@ Azure 流分析设计为能够弹性缩放，以便处理大量数据。 Azure �
 
     Setup.ps1 脚本创建两个事件中心以及一个 SQL 数据库。 以下说明可帮助你在本教程结束时清理资源。
 
-2. 在 PowerShell 窗口中键入“.\\Cleanup.ps1”，启动用于删除本教程所用资源的脚本。
+2. 在 PowerShell 窗口中键入**.\\Cleanup.ps1**，启动用于删除本教程所用资源的脚本。
    
     > [AZURE.NOTE]
     > 资源按名称标识。在确认删除之前，请确保仔细检查每个项。

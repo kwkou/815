@@ -194,5 +194,5 @@
 * [事件中心常见问题](/documentation/articles/event-hubs-faq/)
 <!-- Image Reference-->
 [1]：./media/event-hubs-dotnet-standard-getstarted-send/netcore.png
-
+    
 <!--Update_Description:update meta properties;wording update;add content about hot to create a console application-->

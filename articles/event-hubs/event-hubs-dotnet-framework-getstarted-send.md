@@ -44,9 +44,9 @@
 
     ![](./media/event-hubs-dotnet-framework-getstarted-send/create-sender-csharp1.png)
 
-2. 在解决方案资源管理器中，右键单击“Sender”项目，然后单击“为解决方案管理 NuGet 包”。 
+2. 在解决方案资源管理器中，右键单击**Sender**项目，然后单击**为解决方案管理 NuGet 包**。 
 
-3. 单击“浏览”选项卡，然后搜索 `Azure Service Bus`。 单击“安装” 并接受使用条款。 
+3. 单击**浏览**选项卡，然后搜索 `Azure Service Bus`。 单击**安装**并接受使用条款。 
 
     ![](./media/event-hubs-dotnet-framework-getstarted-send/create-sender-csharp2.png)
 

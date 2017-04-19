@@ -36,8 +36,8 @@
 
 ##<a name="prerequisites"></a>先决条件
 本示例假设已有一个名为 *contosofabrikam* 的、使用以下配置的资源组：
- -  在名为 *myAvailset* 的同一个可用性集中包含名为 *myVNet* 的虚拟网络，以及名为 *VM1* 和 *VM2* 的两个 VM。 
- - 每个 VM 包含主要 NIC 和辅助 NIC。 主要 NIC 名为 *VM1NIC1* 和 *VM2NIC1*，辅助 NIC 名为 *VM1NIC2* 和 *VM2NIC2*。 有关创建具有多个 NIC 的 VM 的详细信息，请参阅[使用 PowerShell 创建具有多个 NIC 的 VM](/documentation/articles/virtual-network-deploy-multinic-arm-ps/)。
+- 在名为 *myAvailset* 的同一个可用性集中包含名为 *myVNet* 的虚拟网络，以及名为 *VM1* 和 *VM2* 的两个 VM。
+- 每个 VM 包含主要 NIC 和辅助 NIC。 主要 NIC 名为 *VM1NIC1* 和 *VM2NIC1*，辅助 NIC 名为 *VM1NIC2* 和 *VM2NIC2*。 有关创建具有多个 NIC 的 VM 的详细信息，请参阅[使用 PowerShell 创建具有多个 NIC 的 VM](/documentation/articles/virtual-network-deploy-multinic-arm-ps/)。
 
 ## <a name="steps-to-load-balance-on-multiple-ip-configurations"></a>在多个 IP 配置上进行负载平衡的步骤
 
@@ -99,7 +99,7 @@
 6. 按如下所示为两个 VM 添加目标网络 IP 配置（参阅图 2）：  
     1. 对于“目标虚拟机”，请选择要添加到后端池的 VM（例如 VM1 或 VM2）。
     2. 对于“网络 IP 配置”，请选择该 VM 的辅助 NIC IP 配置（例如 VM1NIC2-ipconfig2 或 VM2NIC2-ipconfig2）。
-    ![负载均衡方案图](./media/load-balancer-multiple-ip/lb-backendpool.PNG)
+    ![负载均衡方案图](./media/load-balancer-multiple-ip/lb-backendpool.png)
 
         **图 2**：使用后端池配置负载均衡器  
 7. 单击 **“确定”**。

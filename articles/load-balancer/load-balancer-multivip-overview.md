@@ -56,7 +56,7 @@ Azure 负载均衡器允许在相同的负载均衡器配置中混用这两种�
 在此方案中，前端 VIP 的配置如下：
 
 | VIP | IP 地址 | 协议 | 端口 |
-| --- | --- | --- | --- |
+| ------ | ------ | ------ | ------ |
 | ![VIP](./media/load-balancer-multivip-overview/load-balancer-rule-green.png) 1 |65.52.0.1 |TCP |80 |
 | ![VIP](./media/load-balancer-multivip-overview/load-balancer-rule-purple.png) 2 |*65.52.0.2* |TCP |80 |
 
@@ -65,14 +65,14 @@ DIP 是入站流量的目标。 在后端池中，每个 VM 公开 DIP 上唯一
 我们定义了两个规则：
 
 | 规则 | 映射前端 | 目标后端池 |
-| --- | --- | --- |
+| ------ | ------ | ------ |
 | 1 |![VIP](./media/load-balancer-multivip-overview/load-balancer-rule-green.png) VIP1:80 |![后端](./media/load-balancer-multivip-overview/load-balancer-rule-green.png) DIP1:80, ![后端](./media/load-balancer-multivip-overview/load-balancer-rule-green.png) DIP2:80 |
 | 2 |![VIP](./media/load-balancer-multivip-overview/load-balancer-rule-purple.png) VIP2:80 |![后端](./media/load-balancer-multivip-overview/load-balancer-rule-purple.png) DIP1:81, ![后端](./media/load-balancer-multivip-overview/load-balancer-rule-purple.png) DIP2:81 |
 
 现在，Azure 负载均衡器的完整映射如下：
 
 | 规则 | VIP IP 地址 | 协议 | 端口 | 目标 | 端口 |
-| --- | --- | --- | --- | --- | --- |
+| ------ | ------ | ------ | ------ | ------ | ------ |
 | ![规则](./media/load-balancer-multivip-overview/load-balancer-rule-green.png) 1 |65.52.0.1 |TCP |80 |DIP IP 地址 |80 |
 | ![规则](./media/load-balancer-multivip-overview/load-balancer-rule-purple.png) 2 |65.52.0.2 |TCP |80 |DIP IP 地址 |81 |
 

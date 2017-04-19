@@ -33,30 +33,6 @@
 
 ![负载均衡应用场景图像](./media/load-balancer-multiple-ip/lb-multi-ip.PNG)
 
-##  <a name="limitations"></a> 限制
-
-现在，只有使用 Azure PowerShell 和 Azure CLI 才能对辅助 IP 配置进行负载均衡配置。 该限制是暂时性的，以后随时可能更改。 重新访问此页以检查更新。
-
-[AZURE.INCLUDE [virtual-network-preview](../../includes/virtual-network-preview.md)]
-
-通过登录后在 PowerShell 中运行以下命令并选择相应的订阅来注册预览版：
-
-    Register-AzureRmProviderFeature -FeatureName AllowMultipleIpConfigurationsPerNic -ProviderNamespace Microsoft.Network
-
-    Register-AzureRmProviderFeature -FeatureName AllowLoadBalancingonSecondaryIpconfigs -ProviderNamespace Microsoft.Network
-
-    Register-AzureRmResourceProvider -ProviderNamespace Microsoft.Network
-
-请不要尝试完成剩余步骤，直至运行 ```Get-AzureRmProviderFeature``` 命令时看到以下输出：
-
-    FeatureName                            ProviderName      RegistrationState
-    -----------                            ------------      -----------------      
-    AllowLoadBalancingOnSecondaryIpConfigs Microsoft.Network Registered       
-    AllowMultipleIpConfigurationsPerNic    Microsoft.Network Registered       
-
->[AZURE.NOTE] 
->这可能需要几分钟的时间。
-
 ## <a name="steps-to-load-balance-on-multiple-ip-configurations"></a>在多个 IP 配置上进行负载均衡的步骤
 
 按照以下步骤来实现本文所概述的场景：
