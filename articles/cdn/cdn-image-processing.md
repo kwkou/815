@@ -119,22 +119,22 @@ Azure CDN 图片服务是作为 Azure CDN 服务的一个增值功能引入的�
 | 操作名 | 语法 | 备注 |
 |:----------|:-------------------------------------------------------------|:-------------------------------------|
 | 缩放和裁剪 | <p>`{Percentage}p`,`{Height}h`,`{Width}w`,`{ScaleType}e`,`{Cut}c`,`{HandleIfLarger}l`,`{Red}-{Green}-{Blue}bgc`。若要使用 `{Red}-{Green}-{Blue}bgc` 参数，请必须与 `{ScaleType}e`及`{Height}h`,`{Width}w` 参数一起使用。详情请参阅下方表格</p> ||
-| 高级裁剪 | `{x}-{y}-{Width}-{Height}a`, 其中 `{x}` 和 `{y}` 分别定义了裁剪开始位置的横纵坐标（以原图左上角的像素为原点）,`{Width}` 和 `{Height}` 分别定义了裁剪区域的宽高, 取值 1-4096 | 原图范围以外的裁剪开始位置将导致 400`Bad Request`，超过原图范围或指定宽高为零的裁剪将裁减到原图结束位置 |
-| 区域裁剪 | `{Width}x{Height}-{Position}`rc, 其中 `{Width}` 和 `{Height}` 分别定义了裁剪区域的宽高, 取值 0-4096，裁剪将按照 `{Position}` 定义的对其方式进行，不同取值的含义请参阅下方表格| 定义比原图尺寸更大的宽高值将导致返回原图,为空或为零的 `Height` 或 `Width` 表示使用原图的宽或高 |
-| 内切圆 | `{Radius}-{Type}ci`, 其中 `{Radius}` 指定了内切圆的半径,`{Type}`: 为取值0或1的整数，若为 1，则将图像裁剪为能容纳内切圆的最小正方形后返回，否则不进行裁剪 ||
-| 圆角矩形 | `{Radius}-2ci`, 其中 `{Radius}` 指定了圆角的半径 | 圆角半径不得大于原图最短边边长的一半 |
-| 索引裁剪 | `{length}x-{index}ic` 或 `{length}y-{index}ic`,分别对应以横坐标或纵坐标进行切片，将返回前若干片 Slice 组成的图像，其中 `{Length}` 为切片的宽度，`{index}` 为返回的切片的序号 | 切片序号从零开始，大于原图的切片设定将使得原图被返回 |
-| 旋转 | `{Degree}r`, 其中 `{Degree}` 为图片顺时针旋转的度数 ||
-| 锐化 | `{Degree}sh`, 其中 `{Degree}` 为指定锐化程度的非负整数 ||
-| 模糊 | `{Radius}-{Sigma}bl`, 其中 `{Radius}` 为模糊半径，`{Sigma}` 为模糊标准差 ||
-| 亮度与对比度 | `{Brightness}b`,`{Contrast}d`, 其中 `{Brightness}` 为一个可以为负的整数，表示亮度相对原图进行的调整, 同时 `{Contrast}` 是一个可以为负的整数，表示对比度相对原图进行的调整 ||
-| 图像质量 | `{Degree}q`, 其中 `{Degree}` 为表示图像质量的整数值，取值0-100 | 当且仅当输出格式为 `jpg/jpeg` 时有效 |
-| 格式转换 | `.{format}`, 其中 `{format}` 为目标格式 | 目前支持的格式包括 `jpg`,`jpeg`,`png`,`webp` 及 `gif` |
-| 渐进显示 | `{Setting}pr`, 其中 `{Setting}` 是一个取值0-1的整数，当其为1时，图像将随着加载的进行渐进呈现给用户 | 当且仅当输出格式为 `jpg/jpeg` 时有效 |
-| 图片信息 | `info`, 返回 JSON 格式图片信息，详情请参阅下方对应小节 | 不得与其他参数共用 |
-| 图片EXIF信息 | `exif`, 返回 JSON 格式图片 EXIF 信息，详情请参阅下方 API 示例 | 不得与其他参数共用 |
-| 图片主色调 | `imageAve`, 返回 JSON 格式图片主色调信息，详情请参阅下方对应小节 | 不得与其他参数共用 |
-| 管道 | `{Process1}`&#124;`{Process2}`, 其中 `Process1` 与 `Process2` 均为`处理字符串`并且图片会先被按照 `Process1` 定义的操作流程进行处理，而后按照 `Process2` 所定义的操作流程进行处理 | `Process` 可以为`图片信息``EXIF 信息`及`图片主色调`以外的任何上述参数 |
+| 高级裁剪 | <p>`{x}-{y}-{Width}-{Height}a`, 其中 `{x}` 和 `{y}` 分别定义了裁剪开始位置的横纵坐标（以原图左上角的像素为原点）,`{Width}` 和 `{Height}` 分别定义了裁剪区域的宽高, 取值 1-4096 </p>| <p>原图范围以外的裁剪开始位置将导致 400`Bad Request`，超过原图范围或指定宽高为零的裁剪将裁减到原图结束位置 </p>|
+| 区域裁剪 | <p>`{Width}x{Height}-{Position}`rc, 其中 `{Width}` 和 `{Height}` 分别定义了裁剪区域的宽高, 取值 0-4096，裁剪将按照 `{Position}` 定义的对其方式进行，不同取值的含义请参阅下方表格</p>| <p>定义比原图尺寸更大的宽高值将导致返回原图,为空或为零的 `Height` 或 `Width` 表示使用原图的宽或高</p> |
+| 内切圆 | <p>`{Radius}-{Type}ci`, 其中 `{Radius}` 指定了内切圆的半径,`{Type}`: 为取值0或1的整数，若为 1，则将图像裁剪为能容纳内切圆的最小正方形后返回，否则不进行裁剪</p> ||
+| 圆角矩形 | <p>`{Radius}-2ci`, 其中 `{Radius}` 指定了圆角的半径</p> | 圆角半径不得大于原图最短边边长的一半 |
+| 索引裁剪 |<p> `{length}x-{index}ic` 或 `{length}y-{index}ic`,分别对应以横坐标或纵坐标进行切片，将返回前若干片 Slice 组成的图像，其中 `{Length}` 为切片的宽度，`{index}` 为返回的切片的序号</p> | 切片序号从零开始，大于原图的切片设定将使得原图被返回 |
+| 旋转 |<p> `{Degree}r`, 其中 `{Degree}` 为图片顺时针旋转的度数</p> ||
+| 锐化 | <p>`{Degree}sh`, 其中 `{Degree}` 为指定锐化程度的非负整数</p> ||
+| 模糊 |<p> `{Radius}-{Sigma}bl`, 其中 `{Radius}` 为模糊半径，`{Sigma}` 为模糊标准差</p> ||
+| 亮度与对比度 | <p>`{Brightness}b`,`{Contrast}d`, 其中 `{Brightness}` 为一个可以为负的整数，表示亮度相对原图进行的调整, 同时 `{Contrast}` 是一个可以为负的整数，表示对比度相对原图进行的调整</p> ||
+| 图像质量 | <p>`{Degree}q`, 其中 `{Degree}` 为表示图像质量的整数值，取值0-100</p> | <p>当且仅当输出格式为 `jpg/jpeg` 时有效</p> |
+| 格式转换 | <p>`.{format}`, 其中 `{format}` 为目标格式</p> | <p>目前支持的格式包括 `jpg`,`jpeg`,`png`,`webp` 及 `gif`</p> |
+| 渐进显示 | <p>`{Setting}pr`, 其中 `{Setting}` 是一个取值0-1的整数，当其为1时，图像将随着加载的进行渐进呈现给用户</p> | <p>当且仅当输出格式为 `jpg/jpeg` 时有效 </p>|
+| 图片信息 | <p>`info`, 返回 JSON 格式图片信息，详情请参阅下方对应小节</p> | 不得与其他参数共用 |
+| 图片EXIF信息 |<p> `exif`, 返回 JSON 格式图片 EXIF 信息，详情请参阅下方 API 示例 </p>| 不得与其他参数共用 |
+| 图片主色调 | <p>`imageAve`, 返回 JSON 格式图片主色调信息，详情请参阅下方对应小节</p> | 不得与其他参数共用 |
+| 管道 | <p>`{Process1}`&#124;`{Process2}`, 其中 `Process1` 与 `Process2` 均为`处理字符串`并且图片会先被按照 `Process1` 定义的操作流程进行处理，而后按照 `Process2` 所定义的操作流程进行处理</p>| <p>`Process` 可以为`图片信息``EXIF 信息`及`图片主色调`以外的任何上述参数</p> |
 | 水印 | 请参阅下方对应小节 | 不得与其他参数共同存在于管道的同一阶段中 |
 
 
@@ -144,12 +144,12 @@ Azure CDN 图片服务是作为 Azure CDN 服务的一个增值功能引入的�
 
 | 名称 | 描述 |
 | :---- | :---------------------------------------------------------------------------------------------- |
-| `{Percentage}` | 取值 1-1000 的整数，表示对宽高进行的处理 |
-| `{Height}`,`{Width}` | 所需图像的高度值和宽度值，必须为不得超过尺寸限制的非负整数 |
-| `{ScaleType}` | 定义缩放模式的整数，详细介绍请参阅下方表格 |
-| `{Cut}` | 值为 0 或 1 的整数，默认为 0 即不进行其他操作，为1则自动裁剪原图至指定尺寸 |
-| `{HandleIfLarger}` | 值为 0 或 1 的整数，默认为1即允许将图片缩放至大于原图的尺寸，为 0 则当指定尺寸大于原图时采用原图尺寸 |
-| `{Red}`,`{Green}` 及 `{Blue}` | 取值 0-255 的整数数值，分别代表 RGB 色彩空间下填充的颜色红、绿、蓝三通道上的值 |
+| <p>`{Percentage}`</p> | 取值 1-1000 的整数，表示对宽高进行的处理 |
+| <p>`{Height}`,`{Width}`</p> | 所需图像的高度值和宽度值，必须为不得超过尺寸限制的非负整数 |
+| <p>`{ScaleType}`</p> | 定义缩放模式的整数，详细介绍请参阅下方表格 |
+| <p>`{Cut}`</p> | 值为 0 或 1 的整数，默认为 0 即不进行其他操作，为1则自动裁剪原图至指定尺寸 |
+|<p> `{HandleIfLarger}`</p> | 值为 0 或 1 的整数，默认为1即允许将图片缩放至大于原图的尺寸，为 0 则当指定尺寸大于原图时采用原图尺寸 |
+| <p>`{Red}`,`{Green}` 及 `{Blue}`</p> | 取值 0-255 的整数数值，分别代表 RGB 色彩空间下填充的颜色红、绿、蓝三通道上的值 |
 
 __注意__
 
@@ -191,15 +191,15 @@ __注意__
 
 响应体示例
 
-```json
-{
-    "Width": 221,
-    "Height": 284,
-    "Size": 119540,
-    "AveColor": null,
-    "MimeType": "Jpeg"
-}
-```
+
+    {
+        "Width": 221,
+        "Height": 284,
+        "Size": 119540,
+        "AveColor": null,
+        "MimeType": "Jpeg"
+    }
+
 
 ### 图片主色调响应体
 
@@ -211,11 +211,11 @@ __注意__
 
 #### 响应体示例
 
-```json
-{
-    "RGB": "273B2A"
-}
-```
+json
+    {
+        "RGB": "273B2A"
+    }
+
 
 ### 示例 （持续更新中）
 
@@ -225,76 +225,76 @@ __注意__
 
 #### 1. 将原始图片缩小到原来的 60%：
 
-```
-http://imgprocess.yourcompany.cn/container_name/img_name.jpg?basic=60p
-```
+
+    http://imgprocess.yourcompany.cn/container_name/img_name.jpg?basic=60p
+
 
 ![][4]
 
 #### 2. 将原始图片进行圆角矩形处理（圆角半径为 20）：
 
-```
-http://imgprocess.yourcompany.cn/container_name/img_name.jpg?basic=20-2ci
-```
+
+    http://imgprocess.yourcompany.cn/container_name/img_name.jpg?basic=20-2ci
+
 
 ![][5]
 
 #### 3. 将原始图片先缩小到原来的 60%，然后再进行圆角处理（圆角半径为 20）：
 
-```
-http://imgprocess.yourcompany.cn/container_name/img_name.jpg?basic=60p_20-2ci 
-```
+
+    http://imgprocess.yourcompany.cn/container_name/img_name.jpg?basic=60p_20-2ci 
+
 
 ![][6]
 
 
 #### 4. 获取图片信息：
 
-```
-http://imgprocess.yourcompany.cn/container_name/img_name.jpg?basic=info
-```
 
-```json
-{
-    "Width": 800,
-    "Height": 400,
-    "Size": 87341,
-    "AveColor": null,
-    "MimeType": "Jpeg"
-}
-```
+    http://imgprocess.yourcompany.cn/container_name/img_name.jpg?basic=info
+
+
+json
+    {
+        "Width": 800,
+        "Height": 400,
+        "Size": 87341,
+        "AveColor": null,
+        "MimeType": "Jpeg"
+    }
+
 
 #### 5. 获取图片的 EXIF 信息：
 
-```
-http://imgprocess.yourcompany.cn/container_name/img_name.jpg?basic=exif
-```
 
-```json
-{
-    "Orientation": 1,
-    "XResolution": 72.0,
-    "YResolution": 72.0,
-    "ResolutionUnit": 2,
-    "Software": "Adobe Photoshop CS5 Windows",
-    "DateTime": "2014:04:15 16:43:14",
-    "ColorSpace": 1,
-    "PixelXDimension": 800,
-    "PixelYDimension": 400
-}
-```
+    http://imgprocess.yourcompany.cn/container_name/img_name.jpg?basic=exif
+
+
+json
+    {
+        "Orientation": 1,
+        "XResolution": 72.0,
+        "YResolution": 72.0,
+        "ResolutionUnit": 2,
+        "Software": "Adobe Photoshop CS5 Windows",
+        "DateTime": "2014:04:15 16:43:14",
+        "ColorSpace": 1,
+        "PixelXDimension": 800,
+        "PixelYDimension": 400
+    }
+
 
 #### 6. 获取图片主色调：
 
-```
-http://imgprocess.yourcompany.cn/container_name/img_name.jpg?basic=imageAve
-```
 
-```json
-{
-    "RGB": "0296C8"
-}
-```
+    http://imgprocess.yourcompany.cn/container_name/img_name.jpg?basic=imageAve
+
+
+json
+    {
+        "RGB": "0296C8"
+    }
+
 
 
 ### 水印操作
@@ -306,11 +306,11 @@ http://imgprocess.yourcompany.cn/container_name/img_name.jpg?basic=imageAve
 | watermark | 定义水印类型的整数，取值 1-3，详细释义请参阅下方表格 |
 | p | 定义水印位置的整数，取值 1-9，详细释义请参阅下方表格 |
 | s | 定义水印透明度的整数，取值 0-100 |
-| text | 定义水印文本内容的经过 `Base64` 编码的字符串 |
-| type | 定义水印文本所采用字体的名称经过 `Base64` 编码的字符串，支持字体请参阅下方表格 |
-| color | 定义水印文本颜色的经过 `Base64` 编码的 8 位 RGB 色彩空间下的六位十六进制数字。比如`白色`，值为`ffffff`，`Base64` 编码后为 `ZmZmZmZm`, |
+| text | <p>定义水印文本内容的经过 `Base64` 编码的字符串</p> |
+| type | <p>定义水印文本所采用字体的名称经过 `Base64` 编码的字符串，支持字体请参阅下方表格</p> |
+| color | <p>定义水印文本颜色的经过 `Base64` 编码的 8 位 RGB 色彩空间下的六位十六进制数字。比如`白色`，值为`ffffff`，`Base64` 编码后为 `ZmZmZmZm`, </p>|
 | size | 定义水印文本字号的正整数 |
-| object | 图片水印所使用图片的文件名经过 `Base64` 编码的字符串 |
+| object | <p>图片水印所使用图片的文件名经过 `Base64` 编码的字符串</p> |
 
 **注意** 
 
@@ -377,25 +377,25 @@ http://imgprocess.yourcompany.cn/container_name/img_name.jpg?basic=imageAve
 
 #### 1. 将原始图片加入水印图片：
 
-```
-http://imgprocess.yourcompany.cn/container_name/img_name.jpg?basic=watermark=1;p=3;s=50;object=Y29udGFpbmVyX25hbWUvd2F0ZXJtYXJrLmpwZw==
-```
+
+    http://imgprocess.yourcompany.cn/container_name/img_name.jpg?basic=watermark=1;p=3;s=50;object=Y29udGFpbmVyX25hbWUvd2F0ZXJtYXJrLmpwZw==
+
 
 ![][7]
 
 #### 2. 将原始图片先缩小到原来的 60%，然后再进行圆角处理（圆角半径为 20），最后加入图片水印（注意此处使用管道**|**操作符）：
 
-```
-http://imgprocess.yourcompany.cn/container_name/img_name.jpg?basic=60p_20-2ci|watermark=1;p=3;s=50;object=Y29udGFpbmVyX25hbWUvd2F0ZXJtYXJrLmpwZw==
-```
+
+    http://imgprocess.yourcompany.cn/container_name/img_name.jpg?basic=60p_20-2ci|watermark=1;p=3;s=50;object=Y29udGFpbmVyX25hbWUvd2F0ZXJtYXJrLmpwZw==
+
 
 ![][8]
 
 #### 3. 将原始图片先缩小到原来的 60%，然后再进行圆角处理（圆角半径为 20），最后加入文字水印（注意此处使用管道**|**操作符），文字内容为 “Azure China CDN”，字体为“微软雅黑”：
 
-```
-http://imgprocess.yourcompany.cn/container_name/img_name.jpg?basic=60p_20-2ci|watermark=2;p=3;s=50;text=QXp1cmUgQ2hpbmEgQ0RO;type=bWljcm9zb2Z0eWFoZWk=
-```
+
+    http://imgprocess.yourcompany.cn/container_name/img_name.jpg?basic=60p_20-2ci|watermark=2;p=3;s=50;text=QXp1cmUgQ2hpbmEgQ0RO;type=bWljcm9zb2Z0eWFoZWk=
+
 
 ![][10]
 
