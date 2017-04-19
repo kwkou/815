@@ -212,6 +212,7 @@ __注意__
 #### 响应体示例
 
 json
+
     {
         "RGB": "273B2A"
     }
@@ -255,6 +256,7 @@ json
 
 
 json
+
     {
         "Width": 800,
         "Height": 400,
@@ -271,6 +273,7 @@ json
 
 
 json
+
     {
         "Orientation": 1,
         "XResolution": 72.0,
@@ -291,6 +294,7 @@ json
 
 
 json
+
     {
         "RGB": "0296C8"
     }
