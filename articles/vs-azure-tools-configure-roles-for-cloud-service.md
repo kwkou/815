@@ -5,7 +5,9 @@
     documentationcenter="na"
     author="TomArcher"
     manager="douge"
-    editor="" />
+    editor=""
+    translationtype="Human Translation" />
+
 <tags
     ms.assetid="d397ef87-64e5-401a-aad5-7f83f1022e16"
     ms.service="multiple"
@@ -13,314 +15,259 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="multiple"
-    ms.date="11/11/2016"
-    wacn.date="03/30/2017"
-    ms.author="tarcher" />
+    ms.date="03/06/2017"
+    wacn.date="04/17/2017"
+    ms.author="tarcher"
+    ms.sourcegitcommit="7cc8d7b9c616d399509cd9dbdd155b0e9a7987a8"
+    ms.openlocfilehash="5c2261aea7844757bfa773bcd304bc4c40f3c458"
+    ms.lasthandoff="04/07/2017" />
 
-# 使用 Visual Studio 配置 Azure 云服务的角色
-一个 Azure 云服务可以有一个辅助角色或 Web 角色。对于每个角色，需要定义该角色的设置方式，并配置该角色的运行方式。云服务信息存储在以下文件中：
+# <a name="configure-azure-cloud-service-roles-with-visual-studio"></a>使用 Visual Studio 配置 Azure 云服务角色
+一个 Azure 云服务可以有一个辅助角色或 Web 角色。 对于每个角色，需要定义该角色的设置方式，并配置该角色的运行方式。 
 
-- **ServiceDefinition.csdef**
-  
-    服务定义文件定义了云服务的运行时设置，包括需要什么角色、终结点和虚拟机大小。当角色正在运行时，无法更改此文件中存储的任何数据。
-- **ServiceConfiguration.cscfg**
-  
-    服务配置文件则配置了角色有多少实例在运行以及为角色定义的设置的值。当角色正在运行时，可以更改此文件中存储的数据。
+云服务信息存储在以下文件中：
 
-若要能够存储角色运行方式设置的不同值，可选择多种服务配置。对于每个部署环境可使用不同的服务配置。例如，可以在本地服务配置中设置存储帐户连接字符串以使用本地 Azure 存储模拟器并在云中创建另一个服务配置以使用 Azure 存储空间。
+- **ServiceDefinition.csdef** - 服务定义文件定义了云服务的运行时设置，包括需要什么角色、终结点和虚拟机大小。 当角色正在运行时，无法更改 `ServiceDefinition.csdef` 中存储的任何数据。
+- **ServiceConfiguration.cscfg** - 服务配置文件则配置了角色有多少实例在运行以及为角色定义的设置的值。 当角色正在运行时，可以更改 `ServiceConfiguration.cscfg` 中存储的数据。
 
-在 Visual Studio 中创建一个新的 Azure 云服务时，默认情况下将创建两个服务配置。这些配置将添加到 Azure 项目中。命名的配置：
+若要存储用于控制角色运行方式的设置的不同值，可以定义多个服务配置。 对于每个部署环境可使用不同的服务配置。 例如，可以在本地服务配置中设置存储帐户连接字符串以使用本地 Azure 存储模拟器并在云中创建另一个服务配置以使用 Azure 存储。
 
-- ServiceConfiguration.Cloud.cscfg
-- ServiceConfiguration.Local.cscfg
+在 Visual Studio 中创建 Azure 云服务时，系统会自动创建两个服务配置并将其添加到 Azure 项目中：
 
-## 配置 Azure 云服务
-可从 Visual Studio 中的解决方案资源管理器配置 Azure 云服务，如下图所示。
+- `ServiceConfiguration.Cloud.cscfg`
+- `ServiceConfiguration.Local.cscfg`
 
-![配置云服务](./media/vs-azure-tools-configure-roles-for-cloud-service/IC713462.png)
+## <a name="configure-an-azure-cloud-service"></a>配置 Azure 云服务
+可从 Visual Studio 中的解决方案资源管理器配置 Azure 云服务，如以下步骤所述：
 
-### 配置 Azure 云服务
-1. 若要从“解决方案资源管理器”配置 Azure 项目的每个角色，请在 Azure 项目打开角色的快捷菜单，然后选择“属性”。
-   
-    包含角色名称的页将显示在 Visual Studio 编辑器中。该页面显示“配置”选项卡的字段。
-2. 在“服务配置”列表中，选择你要编辑的服务配置名称。
-   
-    如果要对角色的所有服务配置进行更改，则可选择“所有配置”。
-   
-   > [AZURE.IMPORTANT]
-   如果要选择特定的服务配置，需禁用一些属性，因为其只能设置为所有配置。若要编辑这些属性，必须选择“所有配置”。
-   > 
-   > 
-   
-现在可选择选项卡以更新在该视图上任意启动的属性。
+1. 在 Visual Studio 中打开 Azure 云服务项目
 
-## 更改角色实例的数目
-若要提高云服务的性能，可根据用户或某个特定角色的预期负载的数目，更改正在运行的角色实例的数目。当云服务在 Azure 中运行时，将为每个角色实例创建单独的虚拟机。这将会影响部署此云服务的计费。有关计费的详细信息，请参阅[了解你的 Azure 帐单](/documentation/articles/billing-understand-your-bill/)。
+2. 在“解决方案资源管理器”中右键单击项目，然后从上下文菜单中选择“属性”。
 
-### 更改角色的实例数目
-1. 选择“配置”选项卡。
-2. 在“服务配置”列表中，选择你要更新的服务配置。
-   
-	   > [AZURE.NOTE]
-	   可为特定的服务配置或所有的配置设置实例计数。
-	   > 
-	   > 
-3. 在“实例计数”文本框中，键入想要启动此角色的实例数。
-   
-	   > [AZURE.NOTE]
-	   当你将云服务发布到 Azure 时，每个实例将在单独的虚拟机上运行。
-	   > 
-	   > 
-4. 选择工具栏中的“保存”按钮，将这些更改保存到服务配置文件。
+	![解决方案资源管理器中的项目上下文菜单](./media/vs-azure-tools-configure-roles-for-cloud-service/solution-explorer-project-context-menu.png)
 
-## 管理存储帐户的连接字符串
-可添加、删除或修改服务配置的连接字符串。对于不同的服务的配置，你可能需要不同的连接字符串。例如，你可能希望本地服务配置的本地连接字符串，该本地服务配置具有 `UseDevelopmentStorage=true` 值。你可能还希望将云服务配置为使用 Azure 中的存储帐户。
+3. 在项目的属性页中，选择“开发”选项卡。 
+
+	![项目属性页 - 开发选项卡](./media/vs-azure-tools-configure-roles-for-cloud-service/project-properties-development-tab.png)
+
+4. 在“服务配置”列表中，选择要编辑的服务配置名称。 （若要对角色的所有服务配置进行更改，请选择“所有配置”。）
+
+	> [AZURE.IMPORTANT]
+	> 如果要选择特定的服务配置，需禁用一些属性，因为其只能设置为所有配置。 若要编辑这些属性，必须选择“所有配置”。
+	> 
+	> 
+
+	![Azure 云服务的服务配置列表](./media/vs-azure-tools-configure-roles-for-cloud-service/cloud-service-service-configuration-property.png)
+
+## <a name="change-the-number-of-role-instances"></a>更改角色实例的数目
+若要提高云服务的性能，可根据用户或某个特定角色的预期负载的数目，更改正在运行的角色实例的数目。 当云服务在 Azure 中运行时，将为每个角色实例创建单独的虚拟机。 这会影响部署此云服务的计费。 有关计费的详细信息，请参阅 [了解你的 Azure 帐单](/documentation/articles/billing-understand-your-bill/)。
+
+1. 在 Visual Studio 中打开 Azure 云服务项目
+
+2. 在“解决方案资源管理器”中，展开项目节点。 在“角色”节点下，右键单击要更新的角色，然后从上下文菜单中选择“属性”。
+
+	![解决方案资源管理器中的 Azure 角色上下文菜单](./media/vs-azure-tools-configure-roles-for-cloud-service/solution-explorer-azure-role-context-menu.png)
+
+3. 选择“配置”选项卡。
+
+	![配置选项卡](./media/vs-azure-tools-configure-roles-for-cloud-service/role-configuration-properties-page.png)
+
+4. 在“服务配置”列表中，选择要更新的服务配置。
+
+	![服务配置列表](./media/vs-azure-tools-configure-roles-for-cloud-service/role-configuration-properties-page-select-configuration.png)
+
+5. 在“实例计数”文本框中，键入想要启动此角色的实例数。 将云服务发布到 Azure 时，每个实例将在单独的虚拟机上运行。
+
+	![更新实例计数](./media/vs-azure-tools-configure-roles-for-cloud-service/role-configuration-properties-page-instance-count.png)
+
+6. 从 Visual Studio 工具栏中，选择“保存”。
+
+## <a name="manage-connection-strings-for-storage-accounts"></a>管理存储帐户的连接字符串
+可添加、删除或修改服务配置的连接字符串。 例如，你可能希望本地服务配置的本地连接字符串，该本地服务配置具有 `UseDevelopmentStorage=true` 值。 你可能还希望将云服务配置为使用 Azure 中的存储帐户。
 
 > [AZURE.WARNING]
-当输入存储帐户连接字符串的 Azure 存储帐户关键信息时，此信息存储在本地服务配置文件中。但是，此信息当前未存储为加密文本。
+> 当输入存储帐户连接字符串的 Azure 存储帐户关键信息时，此信息存储在本地服务配置文件中。 但是，此信息当前未存储为加密文本。
 > 
 > 
 
-由于每个服务配置使用不同的值，当你将云服务发布到 Azure 时，不必在云服务中使用不同的连接字符串或修改你的代码。可以在代码中对连接字符串使用同一名称，但值会不同，该值基于在生成云服务或发布云服务时选择的服务配置。
+由于每个服务配置使用不同的值，当你将云服务发布到 Azure 时，不必在云服务中使用不同的连接字符串或修改你的代码。 可以在代码中对连接字符串使用同一名称，但值会不同，该值基于在生成云服务或发布云服务时选择的服务配置。
 
-### 管理存储帐户的连接字符串
+1. 在 Visual Studio 中打开 Azure 云服务项目
+
+2. 在“解决方案资源管理器”中，展开项目节点。 在“角色”节点下，右键单击要更新的角色，然后从上下文菜单中选择“属性”。
+
+	![解决方案资源管理器中的 Azure 角色上下文菜单](./media/vs-azure-tools-configure-roles-for-cloud-service/solution-explorer-azure-role-context-menu.png)
+
+3. 选择“设置”选项卡。
+
+	![“设置”选项卡](./media/vs-azure-tools-configure-roles-for-cloud-service/project-properties-settings-tab.png)
+
+4. 在“服务配置”列表中，选择要更新的服务配置。
+
+	![服务配置](./media/vs-azure-tools-configure-roles-for-cloud-service/project-properties-settings-tab-select-configuration.png)
+
+5. 若要添加连接字符串，请选择“添加设置”。
+
+	![添加连接字符串](./media/vs-azure-tools-configure-roles-for-cloud-service/project-properties-settings-tab-add-setting.png)
+
+6. 将新设置添加到列表后，使用所需的信息更新列表中的行。
+
+    ![新连接字符串](./media/vs-azure-tools-configure-roles-for-cloud-service/project-properties-settings-tab-add-setting-new-setting.png)
+
+    - **名称** - 输入连接字符串要使用的名称。
+    - **类型** - 从下拉列表中选择“连接字符串”。
+    - **值** - 可以直接在“值”单元格中输入连接字符串，或者选择省略号 (...) 打开“创建存储连接字符串”对话框。  
+
+7. 在“创建存储连接字符串”对话框中，为“连接方式”选择一个选项。 然后，遵照所选选项的说明操作：
+
+    - **Azure 存储模拟器** - 如果选择此选项，对话框中的剩余设置将被禁用，因为这些设置仅适用于 Azure。 选择“确定” 。
+    - **你的订阅** - 如果选择此选项，请使用下拉列表选择并登录到 Microsoft 帐户，或添加 Microsoft 帐户。 选择 Azure 订阅和 Azure 存储帐户。 选择“确定”。
+    - **手动输入的凭据** - 输入存储帐户名称，以及主密钥或辅助密钥。 为“连接”选择一个选项（对于大多数方案，建议使用 HTTPS。）选择“确定”。
+
+8. 若要删除某个连接字符串，请选择该连接字符串，然后选择“删除设置”。
+
+9. 从 Visual Studio 工具栏中，选择“保存”。
+
+## <a name="programmatically-access-a-connection-string"></a>以编程方式访问连接字符串
+
+以下步骤说明如何使用 C# 以编程方式访问连接字符串。
+
+1. 将以下 using 指令添加到要在其中使用该设置的 C# 文件中：
+
+        using Microsoft.WindowsAzure;
+        using Microsoft.WindowsAzure.Storage;
+        using Microsoft.WindowsAzure.ServiceRuntime;
+
+2. 以下代码演示有关如何访问连接字符串的示例。 将 &lt;ConnectionStringName> 占位符替换为适当的值。 
+
+        // Setup the connection to Azure Storage
+        var storageAccount = CloudStorageAccount.Parse(RoleEnvironment.GetConfigurationSettingValue("<ConnectionStringName>"));
+
+## <a name="add-custom-settings-to-use-in-your-azure-cloud-service"></a>将要使用的自定义设置添加到 Azure 云服务中
+服务配置文件中的自定义设置可让你为特定服务配置的字符串添加名称和值。 你可以选择使用此设置来配置云服务中的功能，具体方法是：读取设置的值，然后使用该值来控制你的代码中的逻辑。 无需重新生成服务包就可更改这些服务配置值；运行云服务时也可以进行更改。 设置发生更改时，你的代码可以检查通知。 请参阅 [RoleEnvironment.Changing 事件](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.serviceruntime.roleenvironment.changing.aspx)。
+
+可添加、移除或修改服务配置的自定义设置。 对于不同的服务的配置，你可能需要这些字符串的不同值。
+
+由于每个服务配置使用不同的值，当你将云服务发布到 Azure 时，不必在云服务中使用不同的字符串或修改你的代码。 可以在代码中对字符串使用同一名称，但值会不同，该值基于在生成云服务或发布云服务时选择的服务配置。
+
+1. 在 Visual Studio 中打开 Azure 云服务项目
+
+1. 在“解决方案资源管理器”中，展开项目节点。 在“角色”节点下，右键单击要更新的角色，然后从上下文菜单中选择“属性”。
+
+    ![解决方案资源管理器中的 Azure 角色上下文菜单](./media/vs-azure-tools-configure-roles-for-cloud-service/solution-explorer-azure-role-context-menu.png)
+
 1. 选择“设置”选项卡。
-2. 在“服务配置”列表中，选择你要更新的服务配置。
-   
-   	> [AZURE.NOTE]
-   	可更新特定服务配置的连接字符串，但是，如果需要添加或删除连接字符串，则必须选择“所有配置”。
-   	> 
-   	> 
-3. 若要添加连接字符串，请选择“添加设置”按钮。一个新条目将添加到列表中。
-4. 在“名称”文本框中，键入你想要用于连接字符串的名称。
-5. 在“类型”下拉列表中，选择“连接字符串”。
-6. 若要更改连接字符串的值，请选择省略号 (...) 按钮。此时将显示“创建存储连接字符串”对话框。
-7. 若要使用本地存储帐户模拟器，请选择“Azure 存储模拟器”选项按钮，然后选择“确定”按钮。
-8. 若要使用 Azure 中的存储帐户，请选择“你的订阅”选项并选择所需的存储帐户。
-9. 若要使用自定义凭据，请选择“手动输入的凭据”选项按钮。输入存储帐户名称和主密钥或辅助密钥。有关如何创建存储帐户以及如何在“创建存储连接字符串”对话框中输入存储帐户详细信息的更多信息，请参阅[准备从 Visual Studio 发布或部署 Azure 应用程序](/documentation/articles/vs-azure-tools-cloud-service-publish-set-up-required-services-in-visual-studio/)。
-10. 若要删除某个连接字符串，请选择该连接字符串，然后选择“删除设置”按钮。
-11. 选择工具栏中的“保存”图标，将这些更改保存到服务配置文件。
-12. 若要访问服务配置文件中的连接字符串，必须获取配置设置的值。以下代码显示了这样一个示例：当用户从 Azure 云服务 Web 角色的 Default.aspx 页中选择 **Button1** 时，将使用服务配置文件中的连接字符串 `MyConnectionString` 创建 blob 存储区并上载数据。将以下 using 语句添加到 Default.aspx.cs：
-    
-     ```
-     using Microsoft.WindowsAzure;
-     using Microsoft.WindowsAzure.Storage;
-     using Microsoft.WindowsAzure.ServiceRuntime;
-     ```
-13. 在设计视图中打开 Default.aspx.cs，然后从工具箱添加一个按钮。将以下代码添加到 `Button1_Click` 方法中。此代码使用 `GetConfigurationSettingValue` 为连接字符串获取服务配置文件中的值。然后，存储帐户中创建一个连接字符串 `MyConnectionString` 引用的 Blob。最后，程序将文本添加到该 Blob。
-    
-     ```
-     protected void Button1_Click(object sender, EventArgs e)
-     {
-         // Setup the connection to Azure Storage
-         var storageAccount = CloudStorageAccount.Parse(RoleEnvironment.GetConfigurationSettingValue("MyConnectionString"));
-         var blobClient = storageAccount.CreateCloudBlobClient();
-         // Get and create the container
-         var blobContainer = blobClient.GetContainerReference("quicklap");
-         blobContainer.CreateIfNotExists();
-         // upload a text blob
-         var blob = blobContainer.GetBlockBlobReference(Guid.NewGuid().ToString());
-         blob.UploadText("Hello Azure");
-    
-     }
-     ```
 
-## 将要使用的自定义设置添加到 Azure 云服务中
-服务配置文件中的自定义设置可让你为特定服务配置的字符串添加名称和值。你可以选择使用此设置来配置云服务中的功能，具体方法是：读取设置的值，然后使用该值来控制你的代码中的逻辑。无需重新生成服务包就可更改这些服务配置值；运行云服务时也可以进行更改。设置发生更改时，你的代码可以检查通知。请参阅 [RoleEnvironment.Changing 事件](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.serviceruntime.roleenvironment.changing.aspx)。
+    ![“设置”选项卡](./media/vs-azure-tools-configure-roles-for-cloud-service/project-properties-settings-tab.png)
 
-可添加、移除或修改服务配置的自定义设置。对于不同的服务的配置，你可能需要这些字符串的不同值。
+1. 在“服务配置”列表中，选择要更新的服务配置。
 
-由于每个服务配置使用不同的值，当你将云服务发布到 Azure 时，不必在云服务中使用不同的字符串或修改你的代码。可以在代码中对字符串使用同一名称，但值会不同，该值基于在生成云服务或发布云服务时选择的服务配置。
+    ![服务配置列表](./media/vs-azure-tools-configure-roles-for-cloud-service/project-properties-settings-tab-select-configuration.png)
 
-### 将要使用的自定义设置添加到 Azure 云服务
-1. 选择“设置”选项卡。
-2. 在“服务配置”列表中，选择你要更新的服务配置。
-   
-	> [AZURE.NOTE]
-	可更新特定服务配置的字符串，但是，如果需要添加或删除字符串，则必须选择“所有配置”。
-	> 
-	> 
-3. 若要添加字符串，请选择“添加设置”按钮。一个新条目将添加到列表中。
-4. 在“名称”文本框中，键入你想要用于字符串的名称。
-5. 在“类型”下拉列表中，选择“字符串”。
-6. 若要添加或更改字符串的值，请在“值”文本框中键入新值。
-7. 若要删除某个字符串，请选择该字符串，然后选择“删除设置”按钮。
-8. 选择工具栏中的“保存”按钮，将这些更改保存到服务配置文件。
-9. 若要访问服务配置文件中的字符串，必须获取配置设置的值。
-   
-    需确保将以下 using 语句添加到 Default.aspx.cs，如前一过程中所述：
-   
-    ```
-    using Microsoft.WindowsAzure;
-    using Microsoft.WindowsAzure.Storage;
-    using Microsoft.WindowsAzure.ServiceRuntime;
-    ```
-10. 将以下代码添加到 `Button1_Click` 方法，以使用访问连接字符串的相同方式来访问此字符串。然后代码可以根据所用服务配置文件的设置字符串值来执行一些特定代码。
-    
-     ```
-     var settingValue = RoleEnvironment.GetConfigurationSettingValue("MySetting");
-     if (settingValue == “ThisValue”)
-     {
-     // Perform these lines of code
-     }
-     ```
+1. 若要添加自定义设置，请选择“添加设置”。
 
-## 管理每个角色实例的本地存储
-可以为角色的每个实例添加本地文件系统存储。可在此处存储其他角色不需要访问的本地数据。不需要保存到表、Blob 或 SQL 数据库存储的任何数据都可以存储在此处。例如，可以使用此本地存储缓存可能需要再次使用的数据。角色的其他实例无法访问此处存储的数据。
+    ![添加自定义设置](./media/vs-azure-tools-configure-roles-for-cloud-service/project-properties-settings-tab-add-setting.png)
 
-本地存储设置将应用到所有服务配置。你只能添加、删除或修改所有服务配置的本地存储。
+1. 将新设置添加到列表后，使用所需的信息更新列表中的行。
 
-### 管理每个角色实例的本地存储
+    ![新的自定义设置](./media/vs-azure-tools-configure-roles-for-cloud-service/project-properties-settings-tab-add-setting-new-setting.png)
+
+    - **名称** - 输入设置名称。
+    - **类型** - 从下拉列表中选择“字符串”。
+    - **值** - 输入设置值。 可以直接在“值”单元格中输入值，或者选择省略号 (...)，然后在“编辑字符串”对话框中输入值。  
+
+1. 若要删除某个自定义设置，选择该设置，然后选择“删除设置”。
+
+1. 从 Visual Studio 工具栏中，选择“保存”。
+
+## <a name="programmatically-access-a-custom-settings-value"></a>以编程方式访问自定义设置的值
+
+以下步骤说明如何使用 C# 以编程方式访问自定义设置。
+
+1. 将以下 using 指令添加到要在其中使用该设置的 C# 文件中：
+
+        using Microsoft.WindowsAzure;
+        using Microsoft.WindowsAzure.Storage;
+        using Microsoft.WindowsAzure.ServiceRuntime;
+
+1. 以下代码演示有关如何访问自定义设置的示例。 将 &lt;SettingName> 占位符替换为适当的值。 
+
+        var settingValue = RoleEnvironment.GetConfigurationSettingValue("<SettingName>");
+
+## <a name="manage-local-storage-for-each-role-instance"></a>管理每个角色实例的本地存储
+可以为角色的每个实例添加本地文件系统存储。 存储了数据的其他角色实例或其他角色无法访问该存储中存储的数据。  
+
+1. 在 Visual Studio 中打开 Azure 云服务项目
+
+1. 在“解决方案资源管理器”中，展开项目节点。 在“角色”节点下，右键单击要更新的角色，然后从上下文菜单中选择“属性”。
+
+    ![解决方案资源管理器中的 Azure 角色上下文菜单](./media/vs-azure-tools-configure-roles-for-cloud-service/solution-explorer-azure-role-context-menu.png)
+
 1. 选择“本地存储”选项卡。
-2. 在“服务配置”列表中，选择“所有配置”。
-3. 若要添加本地存储条目，请选择“添加本地存储”按钮。一个新条目将添加到列表中。
-4. 在“名称”文本框中，键入要用于此本地存储的名称。
-5. 在“大小”文本框中，键入此本地存储所需的大小（以 MB 为单位）。
-6. 若要在回收此角色的虚拟机时将此本地存储中的数据删除，请选中“角色回收时清理”复选框。
-7. 若要编辑现有的本地存储条目，请选择需要更新的行。然后可以按前面步骤中所述编辑字段。
-8. 若要删除某个本地存储条目，请在列表中选择该存储条目，然后选择“删除本地存储”按钮。
-9. 若要将这些更改保存到服务配置文件，请选择工具栏上的“保存”图标。
-10. 若要访问已添加到服务配置文件的本地存储，必须获取本地资源配置设置的值。使用以下代码行访问此值，创建名为 **MyStorageTest.txt** 的文件，然后将一行测试数据写入该文件。可以将此代码添加到前面过程中使用的 `Button_Click` 方法。
-11. 需确保将以下 using 语句添加到 Default.aspx.cs：
-    
-     ```
-     using System.IO;
-     using System.Text;
-     ```
-12. 将以下代码添加到 `Button1_Click` 方法中。这将在本地存储中创建文件并将测试数据写入该文件。
-    
-     ```
-     // Retrieve an object that points to the local storage resource
-     LocalResource localResource = RoleEnvironment.GetLocalResource("LocalStorage1");
-    
-     //Define the file name and path
-     string[] paths = { localResource.RootPath, "MyStorageTest.txt" };
-     String filePath = Path.Combine(paths);
-    
-     using (FileStream writeStream = File.Create(filePath))
-     {
-           Byte[] textToWrite = new UTF8Encoding(true).GetBytes("Testing Web role storage");
-           writeStream.Write(textToWrite, 0, textToWrite.Length);
-     }
-     ```
-13. （可选）若要查看在本地运行云服务时创建的此文件，请使用以下步骤：
-    
-    1. 运行 Web 角色，然后选择“Button1”确保调用 `Button1_Click` 中的代码。
-    2. 在通知区域中，打开 Azure 图标的快捷菜单并选择“显示计算模拟器 UI”。此时将显示“Azure 计算模拟器”对话框。
-    3. 选择 Web 角色。
-    4. 在菜单栏上，选择“工具”、“打开本地存储”。此时将显示“Windows 资源管理器”窗口。
-    5. 在菜单栏上的“搜索”文本框中输入 **MyStorageTest.txt**，然后按 **Enter** 开始搜索。
-       
-		文件将显示在搜索结果中。
-    6. 若要查看文件的内容，请打开文件的快捷菜单并选择“打开”。
 
-## 收集云服务诊断数据
-你可以为 Azure 云服务收集诊断数据。此数据将添加到存储帐户。对于不同的服务的配置，你可能需要不同的连接字符串。例如，对于具有 UseDevelopmentStorage=true 值的本地服务配置，你可能想要使用本地存储帐户。你可能还希望将云服务配置为使用 Azure 中的存储帐户。有关 Azure 诊断的详细信息，请参阅“Collect Logging Data by Using Azure Diagnostics”（使用 Azure 诊断收集日志记录数据）。
+    ![本地存储选项卡](./media/vs-azure-tools-configure-roles-for-cloud-service/role-local-storage-tab.png)
 
-> [AZURE.NOTE]
-本地服务已配置为使用本地资源。如果使用云服务配置来发布 Azure 云服务，在发布时指定的连接字符串也将用于诊断连接字符串，除非已指定连接字符串。如果你使用 Visual Studio 打包云服务，不会更改服务配置中的连接字符串。
-> 
-> 
+1. 在“服务配置”列表中，确保已选择“所有配置”，因为本地存储设置将应用到所有服务配置。 使用其他任何值会导致禁用页面上的所有输入字段。 
 
-### 收集云服务诊断数据
-1. 选择“配置”选项卡。
-2. 在“服务配置”列表中，选择你要更新的服务配置或选择“所有配置”。
-   
-	   > [AZURE.NOTE]
-	   你可以更新特定服务配置的存储帐户，但如果想要启用或禁用诊断，则必须选择“所有配置”。
-	   > 
-	   > 
-3. 若要启用诊断，请选中“启用诊断”复选框。
-4. 若要更改存储帐户的值，请选择省略号 (...) 按钮。
-   
-	此时将显示“创建存储连接字符串”对话框。
-5. 若要使用本地连接字符串，请选择 Azure 存储模拟器选项，然后选择“确定”按钮。
-6. 若要使用与 Azure 订阅关联的存储帐户，请选择“你的订阅”选项。
-7. 若要使用本地连接字符串的存储帐户，请选择“手动输入的凭据”选项。
-   
-    有关如何创建存储帐户以及如何在“创建存储连接字符串”对话框中输入存储帐户详细信息的信息，请参阅[准备从 Visual Studio 发布或部署 Azure 应用程序](/documentation/articles/vs-azure-tools-cloud-service-publish-set-up-required-services-in-visual-studio/)。
-8. 在“帐户名称”中选择你要使用的存储帐户。
-   
-    如果手动输入存储帐户凭据，请在“帐户密钥”中复制或键入你的主密钥。可从 [Azure 经典管理门户](https://manage.windowsazure.cn)复制此密钥。若要复制此密钥，请在 [Azure 经典管理门户](https://manage.windowsazure.cn)的“存储帐户”视图中遵循以下步骤：
-   
-   1. 选择要用于云服务的存储帐户。
-   2. 选择位于屏幕底部的“管理访问密钥”按钮。此时将显示“管理访问密钥”对话框。
-   3. 若要复制访问密钥，请选择“复制到剪贴板”按钮。现在可以将此密钥粘贴到“帐户密钥”字段中。
-9. 若要使用提供的存储帐户作为将云服务发布到 Azure 时的诊断（和缓存）连接字符串，请选中“在发布到 Azure 时使用 Azure 存储帐户凭据更新诊断和缓存的开发存储连接字符串”复选框。
-10. 选择工具栏中的“保存”按钮，将这些更改保存到服务配置文件。
+    ![服务配置列表](./media/vs-azure-tools-configure-roles-for-cloud-service/role-local-storage-tab-service-configuration.png)
 
-## 更改用于每个角色的虚拟机大小
-你可以设置每个角色的虚拟机大小。只能针对所有服务配置设置此大小。如果选择较小的计算机大小，将分配较少的 CPU 核心、内存和本地磁盘存储空间。分配的带宽也将较小。有关这些大小和分配的资源的详细信息，请参阅[云服务的大小](/documentation/articles/cloud-services-sizes-specs/)。
+1. 若要添加本地存储条目，请选择“添加本地存储”。
 
-在 Azure 中每个虚拟机所需的资源将影响在 Azure 中运行云服务的成本。有关 Azure 计费的详细信息，请参阅[了解你的 Azure 帐单](/documentation/articles/billing-understand-your-bill/)。
+    ![添加本地存储](./media/vs-azure-tools-configure-roles-for-cloud-service/role-local-storage-tab-add-local-storage.png)
 
-### 更改虚拟机的大小
-1. 选择“配置”选项卡。
-2. 在“服务配置”列表中，选择“所有配置”。
-3. 若要选择此角色的虚拟机大小，请从“VM 大小”列表中选择适当的大小。
-4. 选择工具栏中的“保存”按钮，将这些更改保存到服务配置文件。
+1. 将新的本地存储项添加到列表后，使用所需的信息更新列表中的行。
 
-## 管理角色的终结点和证书
-可通过指定协议、端口号和（针对 HTTPS）SSL 证书信息来配置网络终结点。2012 年 6 月以前的版本支持 HTTP、HTTPS 和 TCP。2012 年 6 月版支持上述协议和 UDP。不能将 UDP 用于计算模拟器中的输入终结点。只能将该协议用于内部终结点。
+    ![新的本地存储项](./media/vs-azure-tools-configure-roles-for-cloud-service/role-local-storage-tab-new-local-storage.png)
 
-若要提高 Azure 云服务的安全性，可以创建使用 HTTPS 协议的终结点。例如，如果你有一个云服务，由客户用于采购订单，你希望通过使用 SSL 确保客户的信息是安全的。
+    - **名称** - 输入新本地存储要使用的名称。
+    - **大小(MB)** - 输入新本地存储的所需大小，以 MB 为单位。
+    - **角色回收时清理** - 选择此选项可在回收该角色的虚拟机时删除新本地存储中的数据。
 
-你还可以添加可在内部或外部使用的终结点。外部终结点称为输入终结点。输入终结点可为用户提供云服务的另一个访问点。如果你有一个 WCF 服务，你可能要公开使用 Web 角色的内部终结点来访问此服务。
+1. 若要删除某个本地存储项，请选择该项，然后选择“删除本地存储”。
 
-> [AZURE.IMPORTANT]
-只能针对所有服务配置更新终结点。
-> 
-> 
+1. 从 Visual Studio 工具栏中，选择“保存”。
 
-如果添加 HTTPS 终结点，需要使用 SSL 证书。为此，你可以将证书与所有服务配置的角色相关联，并将其用于终结点。
+## <a name="programmatically-accessing-local-storage"></a>以编程方式访问本地存储
 
-> [AZURE.IMPORTANT]
-这些证书不会与服务一起打包。必须通过 [Azure 经典管理门户](https://manage.windowsazure.cn)将证书分别上传到 Azure。
-> 
-> 
+本部分演示如何通过编写测试文本文件 `MyLocalStorageTest.txt`，使用 C# 以编程方式访问本地存储。  
 
-与服务配置关联的任何管理证书仅当云服务在 Azure 中运行时适用。当云服务在本地开发环境中运行时，将使用由 Azure 计算模拟器管理的标准证书。
+### <a name="write-a-text-file-to-local-storage"></a>将文本文件写入本地存储
 
-### 将证书添加到角色
-1. 选择“证书”选项卡。
-2. 在“服务配置”列表中，选择“所有配置”。
-   
-   	> [AZURE.NOTE]
-   	若要添加或删除证书，必须选择“所有配置”。可以根据需要更新特定服务配置的名称和指纹。
-   	> 
-   	> 
-3. 若要添加此角色的证书，请选择“添加证书”按钮。一个新条目将添加到列表中。
-4. 在“名称”文本框中，输入证书的名称。
-5. 在“存储位置”列表中，选择要添加的证书所在的位置。
-6. 在“存储名称”列表中，选择要用于选择证书的存储。
-7. 若要添加证书，请选择省略号 (...) 按钮。此时将显示“Windows 安全性”对话框。
-8. 从列表中选择要使用的证书，然后选择“确定”按钮。
-   
-   	> [AZURE.NOTE]
-   	当你添加来自证书存储区中的证书时，系统会自动将任何中间证书添加到配置设置。若要正确为服务配置 SSL，还必须将这些中间证书上载到 Azure。
-   	> 
-   	> 
-9. 若要删除某个证书，请选择该证书，然后选择“删除证书”按钮。
-10. 选择工具栏中的“保存”图标，将这些更改保存到服务配置文件。
+以下代码示例演示如何将文本文件写入本地存储。 将 &lt;LocalStorageName> 占位符替换为适当的值。 
 
-### 管理角色的终结点
-1. 选择“终结点”选项卡。
-2. 在“服务配置”列表中，选择“所有配置”。
-3. 若要添加终结点，请选择“添加终结点”按钮。一个新条目将添加到列表中。
-4. 在“名称”文本框中，键入你想要用于此终结点的名称。
-5. 从“类型”列表中选择所需的终结点类型。
-6. 从“协议”列表中选择所需终结点的协议。
-7. 如果它是输入终结点，请在“公共端口”文本框中输入要使用的公共端口。
-8. 在“专用端口”文本框中键入要使用的专用端口。
-9. 如果终结点需要 https 协议，请在“SSL 证书名称”列表中选择要使用的证书。
-   
-   	> [AZURE.NOTE]
-   	此列表将显示你在“证书”选项卡中为此角色添加的证书。
-   	> 
-   	> 
-10. 选择工具栏中的“保存”按钮，将这些更改保存到服务配置文件。
+    // Retrieve an object that points to the local storage resource
+    LocalResource localResource = RoleEnvironment.GetLocalResource("<LocalStorageName>");
 
-## 后续步骤
-阅读[配置 Azure 项目](/documentation/articles/vs-azure-tools-configuring-an-azure-project/)以详细了解 Visual Studio 中的 Azure 项目。阅读[架构参考](https://msdn.microsoft.com/zh-cn/library/azure/dd179398)以详细了解云服务架构。
+    //Define the file name and path
+    string[] paths = { localResource.RootPath, "MyLocalStorageTest.txt" };
+    String filePath = Path.Combine(paths);
 
-<!---HONumber=Mooncake_0320_2017-->
+    using (FileStream writeStream = File.Create(filePath))
+    {
+        Byte[] textToWrite = new UTF8Encoding(true).GetBytes("Testing Web role storage");
+        writeStream.Write(textToWrite, 0, textToWrite.Length);
+    }
+
+
+### <a name="find-a-file-written-to-local-storage"></a>查找已写入本地存储的文件
+
+若要查看上一部分中的代码创建的文件，请执行以下步骤：
+
+1.  在 Windows 通知区域中，右键单击 Azure 图标，然后从上下文菜单中选择“显示计算模拟器 UI”。 
+
+    ![显示 Azure 计算模拟器](./media/vs-azure-tools-configure-roles-for-cloud-service/show-compute-emulator.png)
+
+1. 选择 Web 角色。
+
+    ![Azure 计算模拟器](./media/vs-azure-tools-configure-roles-for-cloud-service/compute-emulator.png)
+
+1. 在“Azure 计算模拟器”菜单中，选择“工具” > “打开本地存储”。
+
+    ![打开本地存储菜单项](./media/vs-azure-tools-configure-roles-for-cloud-service/compute-emulator-open-local-store-menu.png)
+
+1. Windows 资源管理器窗口打开时，请在“搜索”文本框中输入“MyLocalStorageTest.txt”，然后按 **Enter** 开始搜索。 
+
+## <a name="next-steps"></a>后续步骤
+阅读[配置 Azure 项目](/documentation/articles/vs-azure-tools-configuring-an-azure-project/)以详细了解 Visual Studio 中的 Azure 项目。 阅读 [架构参考](https://msdn.microsoft.com/zh-cn/library/azure/dd179398)以详细了解云服务架构。
+
+<!-- Update_Description: wording update -->

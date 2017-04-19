@@ -5,7 +5,9 @@
     documentationcenter="na"
     author="TomArcher"
     manager="douge"
-    editor="" />
+    editor=""
+    translationtype="Human Translation" />
+
 <tags
     ms.assetid="ec580df7-3dcc-45a9-a1d9-8c110678dfb5"
     ms.service="multiple"
@@ -13,45 +15,49 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="na"
-    ms.date="11/11/2016"
-    wacn.date="03/30/2017"
-    ms.author="tarcher" />  
+    ms.date="03/19/2017"
+    wacn.date="04/17/2017"
+    ms.author="tarcher"
+    ms.sourcegitcommit="7cc8d7b9c616d399509cd9dbdd155b0e9a7987a8"
+    ms.openlocfilehash="3fae3db0a1d731b8c12b3dd3d4dfc18c4fdda181"
+    ms.lasthandoff="04/07/2017" />
 
+# <a name="creating-an-azure-project-with-visual-studio"></a>使用 Visual Studio 创建 Azure 项目
+Azure Tools for Visual Studio 提供了可用于创建 Azure 云服务的项目模板。 创建项目后，可通过 Visual Studio 调试、配置云服务，并将其部署到 Azure。
 
-# 使用 Visual Studio 创建 Azure 项目
-Azure Tools for Visual Studio 提供可用于创建 Azure 云服务的模板。这些工具还可帮助你配置、调试云服务并将其部署到 Azure。
+## <a name="steps-to-create-an-azure-cloud-service-project-in-visual-studio"></a>在 Visual Studio 中创建 Azure 云服务项目的步骤
+本节将介绍如何在 Visual Studio 中创建具有一个或多个 Web 角色的 Azure 云服务项目。  
 
-Azure 云服务解决方案包含以下类型的项目：
+1. 以管理员身份启动 Visual Studio。
 
-- **Azure 项目**
-  
-    Azure 项目与解决方案中的角色项目具有关联。它还包括服务定义和服务配置文件。服务定义文件定义了应用程序的运行时设置，包括所需角色、终结点和虚拟机大小。服务配置文件配置了角色的运行中实例数以及为角色定义的设置值。有关这些设置的详细信息，请参阅[如何：使用 Visual Studio 配置 Azure 云服务的角色](/documentation/articles/vs-azure-tools-configure-roles-for-cloud-service/)。
-- **Web 角色项目**
-  
-    辅助角色执行后台处理。辅助角色可与存储服务和其他基于 Internet 的服务通信。一个辅助角色可以有任意数量的 HTTP、HTTPS 或 TCP 终结点。
-  
-  - **ASP.NET Web 角色**，用于生成具有 Web 前端的 ASP.NET 应用程序
-  - **ASP.NET MVC5 Web 角色**
-  - **ASP.NET MVC4 Web 角色**
-  - **ASP.NET MVC3 Web 角色**
-  - **WCF 服务 Web 角色**，用于生成 WCF 服务
-  - **Silverlight 商业应用程序 Web 角色**（需要 Visual Studio 2012）
-- **缓存辅助角色**
-  
-    为应用程序提供专用缓存的角色。
-- **具有服务总线队列的辅助角色**
+2. 在主菜单中，选择“文件” > “新建” > “项目”。
 
-    提供消息队列功能以便与辅助进程通信的服务总线队列。有关详细信息，请参阅[如何使用服务总线队列](/documentation/articles/service-bus-dotnet-how-to-use-queues/)。
+3. 从 Visual C# 或 Visual Basic 项目模板节点中选择“云”，然后从模板列表中选择“Azure 云服务”。
 
-## 在 Visual Studio 中创建 Azure 云服务项目
-1. 以管理员身份启动 Microsoft Visual Studio。
-2. 在菜单栏上，依次选择“文件”、“新建”、“项目”。
-3. 在“项目类型”窗格中，从 Visual C# 或 Visual Basic 项目模板节点选择“云”。
-4. 在“模板”窗格中，选择“Azure 云服务”。
-5. 指定要用于开发项目的 .NET Framework 版本。
-6. 输入项目的名称和位置以及解决方案的名称。选择“确定”按钮。
-7. 在“新建 Azure 项目”对话框中，选择要添加的角色，然后选择右箭头按钮以将其添加到解决方案。你可以根据需要添加任意多个角色。
-8. 若要重命名已添加到项目的角色，请在“新建 Azure 项目”对话框中将鼠标悬停在该角色上，然后选择该角色右侧的“重命名”图标。还可在添加角色后在解决方案内对其进行重命名。
+	![新建 Azure 云服务](./media/vs-azure-tools-azure-project-create/new-project-wizard-for-cloud-service.png)
 
-<!---HONumber=Mooncake_0320_2017-->
+4. 指定要用于开发项目的 .NET Framework 版本。
+
+5. 输入项目的名称和位置以及解决方案的名称。 
+
+6. 选择“确定” 。
+
+7. 在“新建 Azure 云服务”对话框中，选择要添加的角色，然后选择右箭头按钮以将其添加到解决方案。
+
+	![选择新的 Azure 云服务角色](./media/vs-azure-tools-azure-project-create/new-cloud-service.png)
+
+8. 若要重命名已添加的角色，请在“新建 Azure 云服务”对话框中将鼠标悬停在该角色上，然后从上下文菜单中选择“重命名”。 还可在添加角色后在解决方案（**解决方案资源管理器**中）内对其进行重命名。
+
+	![重命名 Azure 云服务角色](./media/vs-azure-tools-azure-project-create/new-cloud-service-rename.png)
+
+Visual Studio Azure 项目与解决方案中的角色项目具有关联。 该项目还包括服务定义文件和服务配置文件：
+
+- **服务定义文件** - 定义了应用程序的运行时设置，包括所需角色、终结点和虚拟机大小。 
+- **服务配置文件** - 配置了角色有多少实例在运行以及为角色定义的设置的值。 
+
+有关这些文件的详细信息，请参阅[使用 Visual Studio 配置 Azure 云服务的角色](/documentation/articles/vs-azure-tools-configure-roles-for-cloud-service/)。
+
+## <a name="next-steps"></a>后续步骤
+- [使用 Visual Studio 管理 Azure 云服务项目中的角色](/documentation/articles/vs-azure-tools-cloud-service-project-managing-roles/)
+
 <!-- Update_Description: wording update -->
