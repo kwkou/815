@@ -1,22 +1,22 @@
-Azure CDN 图片服务 RESTful API 文档
-==
+<properties linkid="dev-net-common-tasks-cdn" urlDisplayName="CDN" pageTitle="Azure China CDN image processing" metaKeywords="Azure CDN, Azure CDN, Azure blobs, Azure caching, Azure add-ons, 缓存刷新, 内容预取, 日志下载, 缓存规则, CDN 助文档, CDN技术文档, CDN" description="Learn how to use advanced features of Azure CDN management portal to manage CDN endpoint" metaCanonical="" services="" documentationCenter=".NET" title="" authors="" solutions="" manager="" editor="" />
+<tags ms.service="cdn"
+    ms.date="4/19/2017"
+    wacn.date="4/19/2017"
+    wacn.lang="cn"
+    />
+> [AZURE.LANGUAGE]
 
-对应API版本`v1`
+#Azure CDN 图片服务 RESTful API 文档
 
+##简介
 
-
-
-简介
---
 
 Azure CDN图片服务是由Azure CDN服务提供的一个可靠、安全且经济的图片处理服务。
 
 通过Azure CDN图片服务，用户可以利用Azure CDN服务，在任何时间、从任何位置和设备获取处理过的图片版本。
 
 
-
-
-### 服务说明
+## 服务说明
 
 Azure CDN图片服务是作为Azure CDN服务的一个增值功能引入的，所以使用Azure CDN图片服务的前提是首先创建一个名为“图片处理”加速类型的CDN加速节点。**图片服务本身无法作为一个单独Azure服务来使用**。
 
@@ -33,20 +33,20 @@ Azure CDN图片服务是作为Azure CDN服务的一个增值功能引入的，�
 ##### 3. 处理后的图片尺寸不得大于 4096 * 4096 像素, 且任意边边长不得大于 4096*4 像素
 
 
-### 服务创建流程
+## 服务创建流程
 
 
 “图片处理”加速类型的CDN节点仅限于在[Azure新的管理门户](https://portal.azure.cn/)中创建
 
 
-#### 1. 创建CDN Profile
+### 1. 创建CDN Profile
 
 ![][1]
 
 这一步的Azure订阅选择注意要和第一步创建Azure Storage账户所使用的订阅保持一致，如果图片是存储在Azure Storage中。
 “Price Tier”选择上图所示的S1，S1包含新增加的“image processing”加速类型。
 
-#### 2. 创建图片处理类型的CDN加速节点
+### 2. 创建图片处理类型的CDN加速节点
 
 ![][2]
 
@@ -55,29 +55,29 @@ Azure CDN图片服务是作为Azure CDN服务的一个增值功能引入的，�
 等这个CDN加速节点配置完成后，用户可以将自定义域名CNAME到Azure CDN平台。CNAME生效之后，就可以进行图片处理操作了。
 后续的所有原始图片以及经过处理后的图片都是经过CDN加速的。
 
-#### 3. 验证图片可以访问
+### 3. 验证图片可以访问
 
 在进行接下来的具体图片处理之前，我们先来验证一下到目前为止的所有配置是否生效（如果原始图片存储在非Azure Storage存储账号下的用户，请直接查看3.3；如果原始图片存储在Azure Storage里面，请参考3.1,3.2,3.3）：
 
-##### 3.1 创建Azure Storage 账户并选择Azure Storage账户作为源站
+#### 3.1 创建Azure Storage 账户并选择Azure Storage账户作为源站
 
 创建Azure Storage账户请参见 [创建存储账户](https://www.azure.cn/documentation/articles/storage-create-storage-account/)
 
 也可以不创建新的Azure Storage账户，使用一个现有的。
 
-##### 3.2 上传原始图片
+#### 3.2 上传原始图片
 
 创建好Azure Storage账户之后，用户就可以将原始图片上传到Blob当中。
 
 这里提供两种上传方式：
 
-######  - [通过Azure新版管理门户直接上传](https://portal.azure.cn)
+#####  - [通过Azure新版管理门户直接上传](https://portal.azure.cn)
 
-######  - [通过Azure Storage API](https://www.azure.cn/documentation/articles/storage-dotnet-how-to-use-blobs/)
+#####  - [通过Azure Storage API](https://www.azure.cn/documentation/articles/storage-dotnet-how-to-use-blobs/)
 
-######  - [Microsoft Azure Storage Explorer](http://storageexplorer.com/)
+#####  - [Microsoft Azure Storage Explorer](http://storageexplorer.com/)
 
-##### 3.3 访问验证
+#### 3.3 访问验证
 
 1.  假设用户的原始图片访问链接为：` http://yourstorageaccount.blob.core.chinacloudapi.cn/container_name/img_name.jpg ` （首先确认此链接可以访问，即相应的container和blob文件是可以公开访问的）
 
@@ -87,7 +87,7 @@ Azure CDN图片服务是作为Azure CDN服务的一个增值功能引入的，�
 图片处理
 --
 
-### 图片处理访问规则
+## 图片处理访问规则
 
 通过如下URL进行访问：
 
@@ -104,17 +104,17 @@ http://your_CDN_custom_domain/container_name/image_object?basic=<处理字符串
 具体的`处理字符串`的解释如下。
 
 
-### 图片处理语法
+## 图片处理语法
 
 
-#### `处理字符串`的详细定义
+### `处理字符串`的详细定义
 
 `处理字符串`是若干个形如`{值}{参数关键字}`参数的组合，每个参数之间由`_`相互连接；
 
 若需要进行格式转换则`Process String`必须以`.{目标格式扩展名}`结尾
 
 
-#### 支持的基本图片操作（参数）
+### 支持的基本图片操作（参数）
 
 
 | 操作名 | 语法 | 备注 |
@@ -139,9 +139,9 @@ http://your_CDN_custom_domain/container_name/image_object?basic=<处理字符串
 | 水印 | 请参阅下方对应小节 | 不得与其他参数共同存在于管道的同一阶段中 |
 
 
-#### 缩放和裁剪
+### 缩放和裁剪
 
-##### 参数
+#### 参数
 
 | 名称 | 描述 |
 | :---- | :---------------------------------------------------------------------------------------------- |
@@ -166,7 +166,7 @@ __注意__
 
 * _背景色必须与`{ScaleType}`4 共同使用_
 
-##### 缩放模式
+#### 缩放模式
 
 | 值 | 表现 |
 | :---- | :--------------------------------------------------------------------------------------- |
@@ -179,7 +179,7 @@ __注意__
 
 
 
-#### 图片信息响应体
+### 图片信息响应体
 
 包含至少以下字段的JSON对象:
 
@@ -202,7 +202,7 @@ __注意__
 }
 ```
 
-#### 图片主色调响应体
+### 图片主色调响应体
 
 包含至少以下字段的JSON对象:
 
@@ -210,7 +210,7 @@ __注意__
 |:--- | :--------------------------------- | 
 | RGB | RGB色彩空间下十六进制表示的图片主色调 |
 
-##### 响应体示例
+#### 响应体示例
 
 ```json
 {
@@ -218,13 +218,13 @@ __注意__
 }
 ```
 
-#### 示例 （持续更新中）
+### 示例 （持续更新中）
 
 假设 ` http://imgprocess.yourcompany.cn/container_name/img_name.jpg ` 是经过Azure CDN加速的原始图片URL
 
 ![][3]
 
-##### 1. 将原始图片缩小到原来的60%：
+#### 1. 将原始图片缩小到原来的60%：
 
 ```
 http://imgprocess.yourcompany.cn/container_name/img_name.jpg?basic=60p
@@ -232,7 +232,7 @@ http://imgprocess.yourcompany.cn/container_name/img_name.jpg?basic=60p
 
 ![][4]
 
-##### 2. 将原始图片进行圆角矩形处理（圆角半径为20）：
+#### 2. 将原始图片进行圆角矩形处理（圆角半径为20）：
 
 ```
 http://imgprocess.yourcompany.cn/container_name/img_name.jpg?basic=20-2ci
@@ -240,7 +240,7 @@ http://imgprocess.yourcompany.cn/container_name/img_name.jpg?basic=20-2ci
 
 ![][5]
 
-##### 3. 将原始图片先缩小到原来的60%，然后再进行圆角处理（圆角半径为20）：
+#### 3. 将原始图片先缩小到原来的60%，然后再进行圆角处理（圆角半径为20）：
 
 ```
 http://imgprocess.yourcompany.cn/container_name/img_name.jpg?basic=60p_20-2ci 
@@ -249,7 +249,7 @@ http://imgprocess.yourcompany.cn/container_name/img_name.jpg?basic=60p_20-2ci
 ![][6]
 
 
-##### 4. 获取图片信息：
+#### 4. 获取图片信息：
 
 ```
 http://imgprocess.yourcompany.cn/container_name/img_name.jpg?basic=info
@@ -265,7 +265,7 @@ http://imgprocess.yourcompany.cn/container_name/img_name.jpg?basic=info
 }
 ```
 
-##### 5. 获取图片的EXIF信息：
+#### 5. 获取图片的EXIF信息：
 
 ```
 http://imgprocess.yourcompany.cn/container_name/img_name.jpg?basic=exif
@@ -285,7 +285,7 @@ http://imgprocess.yourcompany.cn/container_name/img_name.jpg?basic=exif
 }
 ```
 
-##### 6. 获取图片主色调：
+#### 6. 获取图片主色调：
 
 ```
 http://imgprocess.yourcompany.cn/container_name/img_name.jpg?basic=imageAve
@@ -298,7 +298,7 @@ http://imgprocess.yourcompany.cn/container_name/img_name.jpg?basic=imageAve
 ```
 
 
-#### 水印操作
+### 水印操作
 
 水印功能的`处理字符串`是一个可以包含以下字段的 Query String：
 
@@ -320,14 +320,14 @@ http://imgprocess.yourcompany.cn/container_name/img_name.jpg?basic=imageAve
 * Base64的编码转换可以使用在线工具直接处理，比如[base64encode](https://www.base64encode.org/)
 * 文本内容和文件名区分大小写，进行base64转码时需要注意
 
-##### 水印类型
+#### 水印类型
 
 | 值 | 释义 |
 | :---- | :---- |
 | 1 | 图片水印 |
 | 2 | 文字水印 |
 
-##### 水印位置
+#### 水印位置
 
 | 值 | 释义 |
 | :---- | :---- |
@@ -341,7 +341,7 @@ http://imgprocess.yourcompany.cn/container_name/img_name.jpg?basic=imageAve
 | 8 | 底部 |
 | 9 | 右下 |
 
-##### 支持字体
+#### 支持字体
 
 | 名称 | 释义 | Base64编码 |
 |:------  |:--------|:----------------------|
@@ -370,13 +370,13 @@ http://imgprocess.yourcompany.cn/container_name/img_name.jpg?basic=imageAve
 
 
 
-##### 示例
+#### 示例
 
 假设水印图片文件存在用 `container_name/watermark.jpg`，其对应的Base64编码为 `Y29udGFpbmVyX25hbWUvd2F0ZXJtYXJrLmpwZw==`
 
 ![][9]
 
-##### 1. 将原始图片加入水印图片：
+#### 1. 将原始图片加入水印图片：
 
 ```
 http://imgprocess.yourcompany.cn/container_name/img_name.jpg?basic=watermark=1;p=3;s=50;object=Y29udGFpbmVyX25hbWUvd2F0ZXJtYXJrLmpwZw==
@@ -384,7 +384,7 @@ http://imgprocess.yourcompany.cn/container_name/img_name.jpg?basic=watermark=1;p
 
 ![][7]
 
-##### 2. 将原始图片先缩小到原来的60%，然后再进行圆角处理（圆角半径为20），最后加入图片水印（注意此处使用管道**|**操作符）：
+#### 2. 将原始图片先缩小到原来的60%，然后再进行圆角处理（圆角半径为20），最后加入图片水印（注意此处使用管道**|**操作符）：
 
 ```
 http://imgprocess.yourcompany.cn/container_name/img_name.jpg?basic=60p_20-2ci|watermark=1;p=3;s=50;object=Y29udGFpbmVyX25hbWUvd2F0ZXJtYXJrLmpwZw==
@@ -392,7 +392,7 @@ http://imgprocess.yourcompany.cn/container_name/img_name.jpg?basic=60p_20-2ci|wa
 
 ![][8]
 
-##### 3. 将原始图片先缩小到原来的60%，然后再进行圆角处理（圆角半径为20），最后加入文字水印（注意此处使用管道**|**操作符），文字内容为“Azure China CDN”，字体为“微软雅黑”：
+#### 3. 将原始图片先缩小到原来的60%，然后再进行圆角处理（圆角半径为20），最后加入文字水印（注意此处使用管道**|**操作符），文字内容为“Azure China CDN”，字体为“微软雅黑”：
 
 ```
 http://imgprocess.yourcompany.cn/container_name/img_name.jpg?basic=60p_20-2ci|watermark=2;p=3;s=50;text=QXp1cmUgQ2hpbmEgQ0RO;type=bWljcm9zb2Z0eWFoZWk=
