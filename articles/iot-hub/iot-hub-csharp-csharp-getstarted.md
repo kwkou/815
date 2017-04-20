@@ -259,7 +259,7 @@ IoT 中心标识注册表仅存储用于实现 IoT 中心安全访问的设备�
 [lnk-free-trial]: /pricing/1rmb-trial/
 [lnk-portal]: https://portal.azure.cn/
 [lnk-eventhubs-tutorial]: /documentation/articles/event-hubs-csharp-ephcs-getstarted/
-[lnk-devguide-identity]: /documentation/articles/iot-hub-devguide/#identityregistry
+[lnk-devguide-identity]: /documentation/articles/iot-hub-devguide-identity-registry/
 [lnk-servicebus-nuget]: https://www.nuget.org/packages/WindowsAzure.ServiceBus
 [lnk-event-hubs-overview]: /documentation/articles/event-hubs-overview/
 
