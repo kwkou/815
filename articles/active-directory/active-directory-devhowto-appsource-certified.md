@@ -32,10 +32,10 @@
 1. 请先阅读有关 [在 Azure AD 身份验证方案中使用浏览器到 Web 应用的方案][AAD-Auth-Scenarios-Browser-To-WebApp]的文章。  
 2. 接下来，请阅读 Azure AD [Web 应用程序快速入门指南][AAD-QuickStart-Web-Apps]，其中演示了如何实现登录，并随附了代码示例。 
 
-   > [AZURE.TIP]
-   > 欢迎试用新的 [开发人员门户](https://identity.microsoft.com/Docs/Web) 预览版，只需花费几分钟时间，它就能帮助你开始使用 Azure Active Directory！  在开发人员门户中，可以逐步完成注册应用并将 Azure AD 集成到代码的整个过程。  完成上述过程后，将会创建一个可对租户中的用户进行身份验证的简单应用程序，以及一个可以接受令牌和执行验证的后端。
-   > 
-   > 
+	> [AZURE.TIP]
+	> 欢迎试用新的 [开发人员门户](https://identity.microsoft.com/Docs/Web) 预览版，只需花费几分钟时间，它就能帮助你开始使用 Azure Active Directory！  在开发人员门户中，可以逐步完成注册应用并将 Azure AD 集成到代码的整个过程。  完成上述过程后，将会创建一个可对租户中的用户进行身份验证的简单应用程序，以及一个可以接受令牌和执行验证的后端。
+	> 
+	> 
 3. 若要了解如何在 Azure AD 中实现多租户登录模式，请查看 [How to sign in any Azure Active Directory (AD) user using the multi-tenant application pattern][AAD-Howto-Multitenant-Overview]（如何使用多租户应用程序模式将任何 Azure Active Directory (AD) 用户登录）。
 
 ## <a name="related-content"></a>相关内容
