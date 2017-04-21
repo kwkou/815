@@ -42,7 +42,7 @@ https://msdn.microsoft.com/zh-cn/library/mt589035.aspx
                           "id": "/subscriptions/{subscriptionid}/resourceGroups/myrg1/providers/Microsoft.KeyVault/vaults/mykeyvault1"
               },
               "vaultCertificates": [ {
-                          "certificateUrl": "https://mykeyvault1.vault.chinacloudapi.cn/secrets/{secretname}/{secret-version}",
+                          "certificateUrl": "https://mykeyvault1.vault.azure.cn/secrets/{secretname}/{secret-version}",
                       "certificateStore": "certificateStoreName"
               } ]
             } ]
@@ -80,7 +80,7 @@ PowerShell 命令：
                     },
                     "vaultCertificates": [
                       {
-                        "certificateUrl": "https://mikhegnvault.vault.chinacloudapi.cn:443/secrets/VMSSCert/20709ca8faee4abb84bc6f4611b088a4",
+                        "certificateUrl": "https://mikhegnvault.vault.azure.cn:443/secrets/VMSSCert/20709ca8faee4abb84bc6f4611b088a4",
                         "certificateStore": "My"
                       }
                     ]
@@ -189,7 +189,7 @@ Win RM 证书引用必须在 OS 配置文件的机密属性中存在。
 
 如果想要将保管库证书添加到现有密钥（应是唯一一个机密对象），可按以下 PowerShell 示例中所示执行此操作：
 
-    $newVaultCertificate = New-AzureRmVmssVaultCertificateConfig -CertificateStore MY -CertificateUrl https://sansunallapps1.vault.chinacloudapi.cn:443/secrets/dg-private-enc/55fa0332edc44a84ad655298905f1809
+    $newVaultCertificate = New-AzureRmVmssVaultCertificateConfig -CertificateStore MY -CertificateUrl https://sansunallapps1.vault.azure.cn:443/secrets/dg-private-enc/55fa0332edc44a84ad655298905f1809
 
     $vmss.VirtualMachineProfile.OsProfile.Secrets[0].VaultCertificates.Add($newVaultCertificate)
 
@@ -207,13 +207,13 @@ CRP 组件不会持久保留任何客户机密。 如果停止解除分配规模
 
 横向扩展时不会发生此问题，因为结构中包含机密的缓存副本（至少在单结构租户模型中是这样）。
 
-### <a name="why-do-we-have-to-specify-the-exact-location-for-the-certificate-url-as-referenced-here-per-httpswwwazurecndocumentationarticlesservice-fabric-cluster-security"></a>为何需要按以下网页中所述，为证书 URL 指定确切的位置：https://www.azure.cn/documentation/articles/service-fabric-cluster-security/、https://\<name of the vault\>.vault.chinacloudapi.cn:443/secrets/\<exact location\>
+### <a name="why-do-we-have-to-specify-the-exact-location-for-the-certificate-url-as-referenced-here-per-httpswwwazurecndocumentationarticlesservice-fabric-cluster-security"></a>为何需要按以下网页中所述，为证书 URL 指定确切的位置：https://www.azure.cn/documentation/articles/service-fabric-cluster-security/、https://\<name of the vault\>.vault.azure.cn:443/secrets/\<exact location\>
 
 根据 KeyVault 文档，在未指定版本的情况下，get-secret REST API 应返回机密的最新版本：
 
 方法 | 代码
 --- | ---
-GET | https://mykeyvault.vault.chinacloudapi.cn/secrets/{secret-name}/{secret-version}?api-version={api-version}
+GET | https://mykeyvault.vault.azure.cn/secrets/{secret-name}/{secret-version}?api-version={api-version}
 
 请将 {secret-name} 替换为要检索的机密的名称，将 {secret-version} 替换为该机密的版本。 可以不包含机密版本，在这种情况下，将检索当前版本。
 

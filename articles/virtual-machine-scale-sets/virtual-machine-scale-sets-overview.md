@@ -79,10 +79,7 @@
     Add-AzureRmAutoscaleSetting -Location $location -Name "autosetting1" -ResourceGroup $rgname -TargetResourceId /subscriptions/$subid/resourceGroups/$rgname/providers/Microsoft.Compute/virtualMachineScaleSets/$vmssname -AutoscaleProfiles $profile1
 
 ## <a name="monitoring-your-scale-set"></a>监视规模集
-[Azure 门户预览](https://portal.azure.cn)列出规模集并显示其属性。 该门户还支持管理操作，这些操作既可在规模集上执行，也可在规模集中的各个 VM 上执行。 该门户还提供了一个可自定义的资源使用情况图。 如果需要查看或编辑 Azure 资源的基础 JSON 定义，则还可使用 [Azure 资源浏览器](https://resources.azure.com)。 规模集是 Microsoft.Compute Azure 资源提供程序下的资源，因此可以在此站点中展开以下链接来查看它们：
-
-**订阅 -> 你的订阅 -> resourceGroups -> 提供程序 -> Microsoft.Compute -> virtualMachineScaleSets -> 你的规模集 -> 等等**
-
+[Azure 门户预览版](https://portal.azure.cn)列出规模集并显示其属性。 该门户还支持管理操作，这些操作既可在规模集上执行，也可在规模集中的各个 VM 上执行。 该门户还提供了一个可自定义的资源使用情况图。
 ## <a name="scale-set-scenarios"></a>规模集方案
 本部分列出了一些典型的规模集方案。 一些高级 Azure 服务（如批处理、Service Fabric、Azure 容器服务）使用这些方案。
 
