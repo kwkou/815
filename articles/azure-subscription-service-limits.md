@@ -30,9 +30,7 @@
 
 > [AZURE.NOTE]
 > 如果想要提高限制或配额，使其超出**默认限制**，可以[打开免费的联机客户支持请求](https://azure.microsoft.com/zh-cn/blog/2014/06/04/azure-limits-quotas-increase-requests/)。 无法将限制提高到超过下表中显示的 **最大限制** 值。 如果没有 **最大限制** 列，则资源没有可调整的限制。 
-> 
-> 1 元试用订阅不符合增加限制或配额的条件。 如果有 1 元试用订阅，可将其升级到 [即用即付](https://azure.microsoft.com/offers/ms-azr-0003p/) 订阅。 
-> 
+
 
 ## <a name="limits-and-the-azure-resource-manager"></a>限制和 Azure 资源管理器
 现在可以将多个 Azure 资源合并到单个 Azure 资源组中。 在使用资源组时，以前针对全局的限制会通过 Azure 资源管理器在区域级别进行管理。 有关 Azure 资源组的详细信息，请参阅 [Azure资源管理器概述](/documentation/articles/resource-group-overview/)。
