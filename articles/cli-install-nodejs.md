@@ -8,7 +8,7 @@
     services="virtual-machines-linux,virtual-network,storage,azure-resource-manager"
     tags="azure-resource-manager,azure-service-management"
     translationtype="Human Translation" />
-    
+
 <tags
     ms.assetid="bdb776c8-7a76-4f3a-887c-236b4fffee10"
     ms.service="multiple"
