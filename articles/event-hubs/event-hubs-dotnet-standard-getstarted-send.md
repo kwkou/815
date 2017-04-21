@@ -192,7 +192,8 @@
 * [事件中心概述](/documentation/articles/event-hubs-what-is-event-hubs/)
 * [创建事件中心](/documentation/articles/event-hubs-create/)
 * [事件中心常见问题](/documentation/articles/event-hubs-faq/)
+
 <!-- Image Reference-->
-[1]： ./media/event-hubs-dotnet-standard-getstarted-send/netcore.png
+[1]: ./media/event-hubs-dotnet-standard-getstarted-send/netcore.png
     
 <!--Update_Description:update meta properties;wording update;add content about hot to create a console application-->
