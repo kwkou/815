@@ -37,7 +37,7 @@
   
     * 以下示例使用 [az group create](https://docs.microsoft.com/cli/azure/group#create) 创建名为 `myResourceGroup` 的资源组：
 
-          az group create --name myResourceGroup --location chinanorth
+            az group create --name myResourceGroup --location chinanorth
 
     * 以下示例使用 [az vm create](https://docs.microsoft.com/cli/azure/vm#create)、最新 Debian 映像、Azure 非托管磁盘以及名为 `id_rsa.pub` 的公钥创建名为 `myVM` 的 VM：
 
@@ -55,7 +55,7 @@
   
     * 以下示例使用 [az group deployment create](https://docs.microsoft.com/cli/azure/group/deployment#create) 通过存储在 GitHub 上的模板创建 VM：
 
-          az group deployment create --resource-group myResourceGroup \ 
+            az group deployment create --resource-group myResourceGroup \ 
             --template-uri https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-vm-sshkey/azuredeploy.json \
             --parameters @myparameters.json
 
@@ -103,7 +103,6 @@
 | CoreOS |CoreOS |CoreOS |Stable |最新 |
 | Debian |credativ |Debian |8 |最新 |
 | openSUSE |SUSE |openSUSE |13\.2 |最新 |
-| RHEL |Redhat |RHEL |7\.2 |最新 |
 | SLES |SLES |SLES |12-SP1 |最新 |
 | UbuntuLTS |Canonical |UbuntuServer |14\.04.3-LTS |最新 |
 

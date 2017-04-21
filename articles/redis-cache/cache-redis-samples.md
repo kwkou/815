@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="Azure Redis 缓存示例 | Azure" 
-	description="了解如何使用 Azure Redis Cache" 
+	description="了解如何使用 Azure Redis 缓存" 
 	services="redis-cache" 
 	documentationCenter="" 
 	authors="steved0x" 
@@ -17,13 +17,13 @@
 	wacn.date="03/28/2017" 
 	ms.author="sdanie"/>
 
-# Azure Redis Cache 示例 
+# Azure Redis 缓存示例 
 
-本主题提供了 Azure Redis Cache 示例的列表，涵盖了诸如连接到缓存、从缓存中读取数据以及向其中写入数据、以及使用 ASP.NET Redis Cache 提供程序之类的方案。有些示例是可下载的项目，有些示例提供了分步指南并包含代码片段但没有链接到可下载的项目。
+本主题提供了 Azure Redis 缓存示例的列表，涵盖了诸如连接到缓存、从缓存中读取数据以及向其中写入数据、以及使用 ASP.NET Redis 缓存提供程序之类的方案。有些示例是可下载的项目，有些示例提供了分步指南并包含代码片段但没有链接到可下载的项目。
 
 ## Hello world 示例
 
-本部分中的示例显示了使用各种语言和 Redis 客户端连接到 Azure Redis Cache 实例、从缓存中读取数据以及向其中写入数据方面的基础知识。
+本部分中的示例显示了使用各种语言和 Redis 客户端连接到 Azure Redis 缓存实例、从缓存中读取数据以及向其中写入数据方面的基础知识。
 
 [Hello world](https://github.com/rustd/RedisSamples/tree/master/HelloWorld) 示例展示了如何使用 [StackExchange.Redis](https://github.com/StackExchange/StackExchange.Redis) .NET 客户端执行不同的缓存操作。
 
@@ -44,22 +44,22 @@
 
 [在缓存中处理 .NET 对象](/documentation/articles/cache-dotnet-how-to-use-azure-redis-cache/#work-with-net-objects-in-the-cache)演示了如何对 .NET 对象进行序列化以便可以将其写入到 Azure Redis 缓存实例以及从中进行读取。
 
-## 将 Redis Cache 用作 ASP.NET SignalR 的扩展基架
+## 将 Redis 缓存用作 ASP.NET SignalR 的扩展基架
 
 [将 Redis 缓存用作 ASP.NET SignalR 的扩展基架](https://github.com/rustd/RedisSamples/tree/master/RedisAsSignalRBackplane)示例演示了如何将 Azure Redis 缓存用作 SignalR 基架。有关基架的更多信息，请参阅[采用 Redis 的 SignalR 扩展](http://www.asp.net/signalr/overview/performance/scaleout-with-redis)。
 
-## Redis Cache 客户查询示例
+## Redis 缓存客户查询示例
 
 此示例对从缓存访问数据与从持久存储访问数据时的性能进行了比较。此示例有两个项目。
 
--	[展示 Redis Cache 如何通过对数据进行缓存提高性能](https://github.com/rustd/RedisSamples/tree/master/RedisCacheCustomerQuerySample)
+-	[展示 Redis 缓存如何通过对数据进行缓存提高性能](https://github.com/rustd/RedisSamples/tree/master/RedisCacheCustomerQuerySample)
 -	[为进行展示创立数据库和缓存](https://github.com/rustd/RedisSamples/tree/master/SeedCacheForCustomerQuerySample)
 
 ## ASP.NET 会话状态和输出缓存
 
 [使用 Azure Redis 缓存存储 ASP.NET SessionState 和 OutputCache](https://github.com/rustd/RedisSamples/tree/master/SessionState_OutputCaching) 示例演示了如何使用 Azure Redis 缓存通过为 Redis 使用 SessionState 和 OutputCache 提供程序来存储 ASP.NET 会话和输出缓存。
 
-## 使用 MAML 管理 Azure Redis Cache
+## 使用 MAML 管理 Azure Redis 缓存
 
 [使用 Azure Management Libraries 管理 Azure Redis 缓存](https://github.com/rustd/RedisSamples/tree/master/ManageCacheUsingMAML)示例展示了如何使用 Azure Management Libraries 来管理（创建/更新/删除）你的缓存。
 

@@ -207,8 +207,7 @@ CRP 组件不会持久保留任何客户机密。 如果停止解除分配规模
 
 横向扩展时不会发生此问题，因为结构中包含机密的缓存副本（至少在单结构租户模型中是这样）。
 
-### <a name="why-do-we-have-to-specify-the-exact-location-for-the-certificate-url-as-referenced-here-per-httpswwwazurecndocumentationarticlesservice-fabric-cluster-security"></a>为何需要按以下网页中所述，为证书 URL 指定确切的位置：https://www.azure.cn/documentation/articles/service-fabric-cluster-security/、 
-https://<name of the vault>.vault.chinacloudapi.cn:443/secrets/<exact location>
+### <a name="why-do-we-have-to-specify-the-exact-location-for-the-certificate-url-as-referenced-here-per-httpswwwazurecndocumentationarticlesservice-fabric-cluster-security"></a>为何需要按以下网页中所述，为证书 URL 指定确切的位置：https://www.azure.cn/documentation/articles/service-fabric-cluster-security/、https://\<name of the vault\>.vault.chinacloudapi.cn:443/secrets/\<exact location\>
 
 根据 KeyVault 文档，在未指定版本的情况下，get-secret REST API 应返回机密的最新版本：
 

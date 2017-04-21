@@ -30,7 +30,7 @@
 
 如果在本文运行多个命令，以下变量可能对你有用：
 
-- $location - 虚拟机的位置。 可以使用 [Get-AzureRmLocation](https://docs.microsoft.com/zh-cn/powershell/resourcemanager/azurerm.resources/v3.5.0/get-azurermlocation) 查找适合你的[地理区域](https://azure.microsoft.com/regions/)。
+- $location - 虚拟机的位置。 可以使用 [Get-AzureRmLocation](https://docs.microsoft.com/zh-cn/powershell/resourcemanager/azurerm.resources/v3.5.0/get-azurermlocation) 查找适合你的地理区域。
 - $myResourceGroup - 包含虚拟机的资源组的名称。
 - $myVM - 虚拟机的名称。
 

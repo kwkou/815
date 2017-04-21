@@ -38,9 +38,9 @@
 
 * 在现有 VM 上部署 LAMP
 
-    # Two commands: one updates packages, the other installs Apache, MySQL, and PHP
-    user@ubuntu$ sudo apt-get update
-    user@ubuntu$ sudo apt-get install apache2 mysql-server php5 php5-mysql
+        # Two commands: one updates packages, the other installs Apache, MySQL, and PHP
+        user@ubuntu$ sudo apt-get update
+        user@ubuntu$ sudo apt-get install apache2 mysql-server php5 php5-mysql
 
 ## <a name="deploy-lamp-on-new-vm-walkthrough"></a>在新的 VM 上部署 LAMP 的演练
 可以首先创建一个包含新 VM 的[资源组](/documentation/articles/resource-group-overview/)：

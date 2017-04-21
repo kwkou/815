@@ -28,8 +28,6 @@
 ## <a name="what-can-i-run-on-an-azure-vm"></a>可以在 Azure VM 上运行哪些程序？
 所有订户都可以在 Azure 虚拟机上运行服务器软件。 有关在 Azure 中运行 Microsoft 服务器软件的支持策略的信息，请参阅 [Microsoft server software support for Azure Virtual Machines](https://support.microsoft.com/zh-cn/kb/2721672)（对 Azure 虚拟机中的 Microsoft 服务器软件的支持）
 
-MSDN Azure 权益订户以及 MSDN 开发和测试即用即付订户可使用某些版本的 Windows 7、Windows 8.1 和 Windows 10 执行开发和测试任务。 有关详细信息（包括说明和限制），请参阅[适用于 MSDN 订户的 Windows 客户端映像](https://azure.microsoft.com/zh-cn/blog/2014/05/29/windows-client-images-on-azure/)。 
-
 ## <a name="how-much-storage-can-i-use-with-a-virtual-machine"></a>虚拟机可以使用多少存储空间？
 每个数据磁盘的容量高达 1 TB。 可以使用的数据磁盘数取决于虚拟机大小。 有关详细信息，请参阅[虚拟机大小](/documentation/articles/virtual-machines-windows-sizes/)。
 

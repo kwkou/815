@@ -9,7 +9,7 @@
     translationtype="Human Translation" />
 <tags
     ms.assetid=""
-    ms.service="virtual-machines"
+    ms.service="virtual-machines-windows"
     ms.devlang="na"
     ms.topic="article"
     ms.tgt_pltfrm="vm-windows"

@@ -53,7 +53,7 @@
 
 [AZURE.INCLUDE [app-service-web-deploy-web-host](../../includes/app-service-web-deploy-web-host.md)]
 
-### Redis Cache
+### Redis 缓存
 
 创建用于 Web 应用的 Azure Redis 缓存。缓存的名称在 **cacheName** 变量中指定。
 

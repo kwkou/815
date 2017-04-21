@@ -50,7 +50,7 @@
 
 * 一台兼容的 VPN 设备和能够对其进行配置的人员。 请参阅 [关于 VPN 设备](/documentation/articles/vpn-gateway-about-vpn-devices/)。 如果不熟悉 VPN 设备的配置，或者不熟悉本地网络配置中的 IP 地址范围，则需咨询能够为你提供此类详细信息的人员。
 * 一个用于 VPN 设备的面向外部的公共 IPv4 IP 地址。 此 IP 地址不得位于 NAT 之后。
-* Azure 订阅。 如果没有 Azure 订阅，可以注册一个[免费帐户](/pricing/free-trial)。
+* Azure 订阅。 如果没有 Azure 订阅，可以注册一个[一元帐户](/pricing/1rmb-trial)。
 * 目前需要使用 PowerShell 来指定共享密钥和创建 VPN 网关连接。 安装最新版本的 Azure 服务管理 (SM) PowerShell cmdlet。 有关详细信息，请参阅[如何安装和配置 Azure PowerShell](https://docs.microsoft.com/zh-cn/powershell/azureps-cmdlets-docs)。 使用 PowerShell 进行此配置时，请确保以管理员身份运行。 
 
 > [AZURE.NOTE]

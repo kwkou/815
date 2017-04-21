@@ -21,7 +21,7 @@
     ms.openlocfilehash="690e73e5842057c22e6db8d865b49a0fbfc1b7a5"
     ms.lasthandoff="04/06/2017" />
 
-# <a name="how-to-use-azure-redis-cache"></a>如何使用 Azure Redis Cache
+# <a name="how-to-use-azure-redis-cache"></a>如何使用 Azure Redis 缓存
 > [AZURE.SELECTOR]
 - [.NET](/documentation/articles/cache-dotnet-how-to-use-azure-redis-cache/)
 - [ASP.NET](/documentation/articles/cache-web-app-howto/)

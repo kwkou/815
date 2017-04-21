@@ -33,7 +33,7 @@
 ## <a name="azure-redis-cache-basics"></a>Azure Redis 缓存基础知识
 本部分中的常见问题介绍了 Azure Redis 缓存的一些基础知识。
 
-* [什么是 Azure Redis Cache？](#what-is-azure-redis-cache)
+* [什么是 Azure Redis 缓存？](#what-is-azure-redis-cache)
 * [使用 Azure Redis 缓存？](#how-can-i-get-started-with-azure-redis-cache)
 
 下面的常见问题介绍了有关 Azure Redis 缓存的基本概念和问题，并在另一个常见问题部分列出了相应回答。
@@ -80,7 +80,7 @@
 ## <a name="prior-cache-offering-faqs"></a>有关之前缓存产品的常见问题
 * [哪种 Azure 缓存产品适合我？](#which-azure-cache-offering-is-right-for-me)
 
-### <a name="what-is-azure-redis-cache"></a> 什么是 Azure Redis Cache？
+### <a name="what-is-azure-redis-cache"></a> 什么是 Azure Redis 缓存？
 Azure Redis 缓存以常用的开放源 [Redis 缓存](http://redis.io)为基础。 这使你可以访问安全、专用的 Redis 缓存，该缓存由 Azure.cn 管理并可从 Azure 内的任何应用程序进行访问。 有关更详细的概述，请参阅 Azure.cn 上的 [Azure Redis 缓存](/home/features/redis-cache/)产品页。
 
 ### <a name="how-can-i-get-started-with-azure-redis-cache"></a> 使用 Azure Redis 缓存？

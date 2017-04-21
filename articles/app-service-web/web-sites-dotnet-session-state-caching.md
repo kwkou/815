@@ -23,9 +23,9 @@
 
 [AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-sdk-developer-differences.md)]
 
-本主题介绍如何将 Azure Redis Cache 服务（预览版）用于会话状态。
+本主题介绍如何将 Azure Redis 缓存服务（预览版）用于会话状态。
 
-如果 ASP.NET Web 应用程序使用会话状态，则需要设置外部会话状态提供程序（可以是 Redis Cache 服务或 SQL Server 会话状态提供程序）。如果使用会话状态，但未使用外部提供程序，则只能使用 Web 应用程序的一个实例。Redis Cache 服务是最快和最简单的启用方式。
+如果 ASP.NET Web 应用程序使用会话状态，则需要设置外部会话状态提供程序（可以是 Redis 缓存服务或 SQL Server 会话状态提供程序）。如果使用会话状态，但未使用外部提供程序，则只能使用 Web 应用程序的一个实例。Redis 缓存服务是最快和最简单的启用方式。
 
 [AZURE.INCLUDE [app-service-web-to-api-and-mobile](../../includes/app-service-web-to-api-and-mobile.md)] 
 
@@ -86,7 +86,7 @@
     if (objValue != null)
        strValue = (string)objValue;	
 
-还可以使用 Redis Cache 在 Web 应用程序中缓存对象。有关详细信息，请参阅 [15 分钟学会创建包含 Azure Redis 缓存的 MVC 影片应用](http://azure.microsoft.com/blog/2014/06/05/mvc-movie-app-with-azure-redis-cache-in-15-minutes/)。
+还可以使用 Redis 缓存在 Web 应用程序中缓存对象。有关详细信息，请参阅 [15 分钟学会创建包含 Azure Redis 缓存的 MVC 影片应用](http://azure.microsoft.com/blog/2014/06/05/mvc-movie-app-with-azure-redis-cache-in-15-minutes/)。
 有关如何使用 ASP.NET 会话状态的详细信息，请参阅 [ASP.NET 会话状态概述][]。
 
   

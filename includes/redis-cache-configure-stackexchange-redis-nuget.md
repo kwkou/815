@@ -12,7 +12,7 @@
 
 ![StackExchange.Redis NuGet 程序包](./media/redis-cache-configure-stackexchange-redis-nuget/redis-cache-stackexchange-redis.png)
 
-NuGet 程序包会给客户端应用程序下载并添加所需的程序集引用，以访问带 StackExchange.Redis 缓存客户端的 Azure Redis Cache。
+NuGet 程序包会给客户端应用程序下载并添加所需的程序集引用，以访问带 StackExchange.Redis 缓存客户端的 Azure Redis 缓存。
 
 >[AZURE.NOTE] 如果以前已将项目配置为使用 StackExchange.Redis，则可以通过 **NuGet 包管理器**检查该包是否有更新。若要检查并安装 StackExchange.Redis NuGet 包的更新版本，请在“NuGet 包管理器”窗口中单击“更新”。如果 StackExchange.Redis NuGet 包有可用更新，则可以更新项目以使用更新后的版本。
 

@@ -140,7 +140,7 @@ cmdlet 的运行结果可以按顺序通过管道传送。 下面是一个示例
 
 ## <a name="create-from-a-template"></a>从模板创建
 
-可使用 Azure Resource Manager 模板部署虚拟机规模集。 可以创建你自己的模板，也可以使用[模板存储库](https://azure.microsoft.com/resources/templates/?term=vmss)中的模板。 可以直接将这些模板部署到 Azure 订阅。
+可使用 Azure Resource Manager 模板部署虚拟机规模集。 可以创建你自己的模板，也可以使用[模板存储库](https://www.github.com/Azure/azure-quickstart-templates/)中的模板。 可以直接将这些模板部署到 Azure 订阅。
 
 >[AZURE.NOTE]
 >若要创建自己的模板，请创建 _.json_ 文本文件。 有关如何创建和自定义模板的常规信息，请参阅 [Azure Resource Manager 模板](/documentation/articles/resource-group-authoring-templates/)。

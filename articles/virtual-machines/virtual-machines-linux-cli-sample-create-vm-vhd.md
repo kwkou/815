@@ -29,7 +29,9 @@
 本示例将 ssh 公钥替换为用户的公钥，因此用户可以访问 VM。
 
 用户需要可引导 VHD。
-可以从 https://azclisamples.blob.core.chinacloudapi.cn/vhds/sample.vhd 下载我们所使用的 VHD，也可以使用自己的 VHD。 脚本会查找 `~/sample.vhd`。
+可以从 https://azclisamples.blob.core.windows.net/vhds/sample.vhd 下载我们所使用的 VHD，也可以使用自己的 VHD。 脚本会查找 `~/sample.vhd`。
+
+[AZURE.INCLUDE [azure-cli-2-azurechinacloud-environment-parameter](../../includes/azure-cli-2-azurechinacloud-environment-parameter.md)]
 
 此示例在 Bash shell 中正常工作。 有关在 Windows 客户端上运行 Azure CLI 脚本的选项，请参阅[在 Windows 中运行 Azure CLI](/documentation/articles/virtual-machines-windows-cli-options/)。
 

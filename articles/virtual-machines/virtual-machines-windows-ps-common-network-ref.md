@@ -30,7 +30,7 @@
 
 如果运行本文中的多个命令，以下一些变量可能将对你有用：
 
-- $location - 网络资源的位置。 可以使用 [Get-AzureRmLocation](https://docs.microsoft.com/zh-cn/powershell/resourcemanager/azurerm.resources/v3.5.0/get-azurermlocation) 查找适合你的[地理区域](https://azure.microsoft.com/regions/)。
+- $location - 网络资源的位置。 可以使用 [Get-AzureRmLocation](https://docs.microsoft.com/zh-cn/powershell/resourcemanager/azurerm.resources/v3.5.0/get-azurermlocation) 查找适合你的地理区域。
 - $myResourceGroup - 网络资源所在的资源组名称。
 
 ## <a name="create-network-resources"></a>创建网络资源

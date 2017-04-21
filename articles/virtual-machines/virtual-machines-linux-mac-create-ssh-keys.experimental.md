@@ -69,7 +69,7 @@ SSH 密钥默认保留在 `~/.ssh` 目录中。  如果你没有 `~/.ssh` 目录
 
 `ssh-keygen` = 用于创建密钥的程序
 
-`-t rsa` = 要创建的密钥的类型，采用 RSA 格式 [wikipedia](https://en.wikipedia.org/wiki/RSA_(cryptosystem)
+`-t rsa` = 要创建的密钥的类型，采用 RSA 格式 [wikipedia](https://en.wikipedia.org/wiki/RSA_(cryptosystem))
 
 `-b 2048` = 密钥的位数
 

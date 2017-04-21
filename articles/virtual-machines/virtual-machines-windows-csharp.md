@@ -119,7 +119,7 @@
 
     - 将以 *my* 开头的所有资源名称替换为对你的环境有意义的名称。
     - 将 *subscriptionId* 替换为订阅标识符。 在 Azure 门户预览的“订阅”边栏选项卡上，可找到订阅标识符。
-    - 将 *location* 替换为想要在其中创建资源的 [Azure 区域](https://azure.microsoft.com/regions/)。
+    - 将 *location* 替换为想要在其中创建资源的 Azure 区域。
     - 将 *adminName* 替换为虚拟机上管理员帐户的名称。
     - 将 *adminPassword* 替换为管理员帐户密码。
 

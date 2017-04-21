@@ -103,7 +103,7 @@
     - 将 *myResourceGroup* 替换为要创建的资源组的名称。
     - 将 *subscriptionId* 替换为订阅标识符。 在 Azure 门户预览的“订阅”边栏选项卡上，可找到订阅标识符。
     - 将 *deploymentName* 替换为部署的名称。
-    - 将 *location* 替换为想要在其中创建资源的 [Azure 区域](https://azure.microsoft.com/regions/)。
+    - 将 *location* 替换为想要在其中创建资源的 Azure 区域。
 
 2. 将以下方法添加到 Program 类，以创建资源组：
 

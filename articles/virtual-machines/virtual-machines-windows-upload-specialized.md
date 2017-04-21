@@ -34,7 +34,6 @@
 
 * 有关各种 VM 大小的定价信息，请参阅[虚拟机定价](/pricing/details/virtual-machines/#Windows)。
 * 有关存储定价的信息，请参阅[存储定价](/pricing/details/storage/blob/)。 
-* 如需了解 Azure 区域中各种 VM 大小的可用性，请参阅 [可用产品（按区域）](https://azure.microsoft.com/regions/services/)。
 * 若要查看 Azure VM 的一般限制，请参阅 [Azure 订阅和服务限制、配额与约束](/documentation/articles/azure-subscription-service-limits/)。
 
 ## <a name="before-you-begin"></a>开始之前
