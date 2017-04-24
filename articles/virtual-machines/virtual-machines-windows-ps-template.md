@@ -27,7 +27,8 @@
 
 本文介绍如何使用 PowerShell 部署 Azure Resource Manager 模板。 [此模板](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-vm-simple-windows/azuredeploy.json) 将在包含单个子网的新虚拟网络上部署运行 Windows Server 的单个虚拟机。
 
-有关虚拟机资源的详细说明，请参阅 [Azure Resource Manager 模板中的虚拟机](/documentation/articles/virtual-machines-windows-template-description/)。 有关模板中所有资源的详细信息，请参阅 [Azure Resource Manager 模板演练](/documentation/articles/resource-manager-template-walkthrough/)。
+有关虚拟机资源的详细说明，请参阅 [Azure Resource Manager 模板中的虚拟机](/documentation/articles/virtual-machines-windows-template-description/)。
+<!--resource-manager-template-walkthrough oboslete-->
 
 执行本文中的步骤大约需要 5 分钟时间。
 
