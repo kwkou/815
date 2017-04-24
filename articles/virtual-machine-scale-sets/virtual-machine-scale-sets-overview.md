@@ -60,7 +60,7 @@
     $vmss.Sku.Capacity = 10
     Update-AzureRmVmss -ResourceGroupName resourcegroupname -Name scalesetname -VirtualMachineScaleSet $vmss
 
-若要通过 Azure Resource Manager 模板增加或减少规模集中的虚拟机数，请更改 *capacity* 属性并重新部署模板。 这种操作很简单，因此可以方便地将规模集与 Azure 自动缩放集成，或者在需要定义不受 Azure 自动缩放支持的自定义缩放事件时，方便地编写你自己的自定义缩放层。 
+若要通过 Azure Resource Manager 模板增加或减少规模集中的虚拟机数，请更改 *capacity* 属性并重新部署模板。 这种操作很简单，因此可以方便地将规模集与 Azure 自动规模集成，或者在需要定义不受 Azure 自动缩放支持的自定义缩放事件时，方便地编写你自己的自定义缩放层。 
 
 若要重新部署 Azure Resource Manager 模板以更改容量，则可定义一个小得多的 模板，只包括“SKU”属性数据包和更新的容量。 [此处](https://github.com/Azure/azure-quickstart-templates/tree/master/201-vmss-scale-existing)显示了一个示例。
 
@@ -79,7 +79,7 @@
     Add-AzureRmAutoscaleSetting -Location $location -Name "autosetting1" -ResourceGroup $rgname -TargetResourceId /subscriptions/$subid/resourceGroups/$rgname/providers/Microsoft.Compute/virtualMachineScaleSets/$vmssname -AutoscaleProfiles $profile1
 
 ## <a name="monitoring-your-scale-set"></a>监视规模集
-[Azure 门户预览版](https://portal.azure.cn)列出规模集并显示其属性。 该门户还支持管理操作，这些操作既可在规模集上执行，也可在规模集中的各个 VM 上执行。 该门户还提供了一个可自定义的资源使用情况图。
+[Azure 门户预览](https://portal.azure.cn)列出规模集并显示其属性。 该门户还支持管理操作，这些操作既可在规模集上执行，也可在规模集中的各个 VM 上执行。 该门户还提供了一个可自定义的资源使用情况图。
 ## <a name="scale-set-scenarios"></a>规模集方案
 本部分列出了一些典型的规模集方案。 一些高级 Azure 服务（如批处理、Service Fabric、Azure 容器服务）使用这些方案。
 
@@ -131,10 +131,6 @@
 **问：** 哪些 Azure 区域支持规模集？
 
 **答：** 所有区域都支持规模集。
-
-**问：** 如何使用自定义映像创建规模集？
-
-**答：** 根据自定义映像 VHD 创建托管磁盘，然后在规模集模板中引用该磁盘。 这是一个示例：[https://github.com/chagarw/MDPP/tree/master/101-vmss-custom-os](https://github.com/chagarw/MDPP/tree/master/101-vmss-custom-os)。
 
 **问：** 如果我将规模集容量从 20 减少到 15，将删除哪些 VM？
 

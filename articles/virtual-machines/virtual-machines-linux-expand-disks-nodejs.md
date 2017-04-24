@@ -28,7 +28,7 @@
 可使用以下 CLI 版本之一完成任务：
 
 - [Azure CLI 1.0](#prerequisites) - 适用于经典部署模型和资源管理部署模型（本文）的 CLI
-- [Azure CLI 2.0](/documentation/articles/virtual-machines-linux-expand-disks/) - 适用于资源管理部署模型的下一代 CLI
+- Azure CLI 2.0 - 由于托管磁盘在 Azure 中国暂时还不能使用，所以此功能不能用 CLI 2.0 实现
 
 ## <a name="prerequisites"></a>先决条件
 需要安装[最新的 Azure CLI 1.0](/documentation/articles/cli-install-nodejs/)，然后按如下所示，使用 Resource Manager 模式登录 [Azure 帐户](/pricing/1rmb-trial/)：

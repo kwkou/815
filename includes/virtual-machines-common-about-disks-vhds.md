@@ -16,7 +16,7 @@
 
 ## 数据磁盘
 
-数据磁盘是附加到虚拟机的 VHD，用于存储应用程序数据或其他需要保留的数据。数据磁盘注册为 SCSI 驱动器并且带有所选择的字母标记。每个数据磁盘的最大容量为 1023 GB。虚拟机的大小决定了可附加的磁盘数目，以及可用来托管磁盘的存储类型。
+数据磁盘是附加到虚拟机的 VHD，用于存储应用程序数据或其他需要保留的数据。数据磁盘注册为 SCSI 驱动器并且带有所选择的字母标记。每个数据磁盘的最大容量为 1023 GB。虚拟机的大小决定了可附加的磁盘数目。
 
 >[AZURE.NOTE] 有关虚拟机容量的更多详细信息，请参阅 [Linux 虚拟机的大小](/documentation/articles/virtual-machines-linux-sizes/)或 [Windows 虚拟机的大小](/documentation/articles/virtual-machines-windows-sizes/)。
 

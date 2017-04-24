@@ -1,45 +1,51 @@
 <properties
-    pageTitle="使用 Azure CLI 2.0（预览版）复制 Linux VM | Azure"
-    description="了解如何使用 Azure CLI 2.0（预览版）在 Resource Manager 部署模型中创建 Azure Linux 虚拟机的副本"
+    pageTitle="使用 Azure CLI 2.0 复制 Linux VM | Azure"
+    description="了解如何使用 Azure CLI 2.0 和非托管磁盘创建 Azure Linux VM 的副本。"
     services="virtual-machines-linux"
     documentationcenter=""
     author="cynthn"
     manager="timlt"
-    tags="azure-resource-manager" />
-<tags 
+    tags="azure-resource-manager"
+    translationtype="Human Translation" />
+<tags
     ms.assetid="770569d2-23c1-4a5b-801e-cddcd1375164"
     ms.service="virtual-machines-linux"
     ms.workload="infrastructure-services"
     ms.tgt_pltfrm="vm-linux"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="02/02/2017"
-    wacn.date="04/10/2017"
-    ms.author="cynthn" />
+    ms.date="03/10/2017"
+    wacn.date="04/24/2017"
+    ms.author="cynthn"
+    ms.sourcegitcommit="a114d832e9c5320e9a109c9020fcaa2f2fdd43a9"
+    ms.openlocfilehash="7c4f6b1ddac26659057bcee15690ae5657dddbcd"
+    ms.lasthandoff="04/14/2017" />
 
-# 使用 Azure CLI 2.0（预览版）创建 Linux 虚拟机的副本
-本文说明如何使用 Resource Manager 部署模型创建运行 Linux 的 Azure 虚拟机 (VM) 副本。首先，通过操作系统和数据磁盘复制到新容器，然后设置网络资源并创建虚拟机。
+# <a name="create-a-copy-of-a-linux-vm-by-using-azure-cli-20-and-managed-disks"></a>使用 Azure CLI 2.0 和非托管磁盘创建 Azure Linux VM 的副本
 
-还可以[上载自定义磁盘映像并从中创建 VM](/documentation/articles/virtual-machines-linux-upload-vhd/)。
+本文说明了如何使用 Azure CLI 2.0 和 Azure Resource Manager 部署模型创建运行 Linux 的 Azure 虚拟机 (VM) 的副本。 还可以使用 [Azure CLI 1.0](/documentation/articles/virtual-machines-linux-copy-vm-nodejs/) 执行这些步骤。
 
-## 用于完成任务的 CLI 版本
-可使用以下 CLI 版本之一完成任务：
+还可以[上载 VHD 并从中创建 VM](/documentation/articles/virtual-machines-linux-upload-vhd/)。
 
-- [Azure CLI 1.0](/documentation/articles/virtual-machines-linux-copy-vm-nodejs/) - 适用于经典部署模型和资源管理部署模型的 CLI
-- Azure CLI 2.0（预览版）- 下一代 CLI，适用于本文介绍的资源管理部署模型。
+## <a name="prerequisites"></a>先决条件
 
-## 先决条件
-- 需要安装最新的 [Azure CLI 2.0（预览版）](https://docs.microsoft.com/cli/azure/install-az-cli2)并使用 [az login](https://docs.microsoft.com/cli/azure/#login) 登录到 Azure 帐户。
-- 需要使用一个 Azure VM 作为副本的源。
+-   安装 [Azure CLI 2.0](https://docs.microsoft.com/zh-cn/cli/azure/install-az-cli2)
+
+-   使用 [az login](https://docs.microsoft.com/zh-cn/cli/azure/#login) 登录到一个 Azure 帐户。
+
+-   使用一个 Azure VM 作为你的副本的来源。
 
 [AZURE.INCLUDE [azure-cli-2-azurechinacloud-environment-parameter](../../includes/azure-cli-2-azurechinacloud-environment-parameter.md)]
 
-## 停止 VM
-使用 [az vm deallocate](https://docs.microsoft.com/cli/azure/vm#deallocate) 解除分配源 VM。以下示例解除分配名为 `myResourceGroup` 的资源组中名为 `myVM` 的 VM：
+## <a name="step-1-stop-the-source-vm"></a>步骤 1：停止源 VM
+
+使用 [az vm deallocate](https://docs.microsoft.com/zh-cn/cli/azure/vm#deallocate) 解除分配源 VM。
+以下示例解除分配资源组**myResourceGroup** 中名为 **myVM** 的 VM：
 
     az vm deallocate --resource-group myResourceGroup --name myVM
 
-## 复制 VM
+## <a name="step-2-copy-the-source-vm"></a>步骤 2：复制源 VM
+
 若要复制 VM，请创建底层虚拟硬盘的副本。可以使用此过程创建包含与源 VM 相同的配置和设置的专用 VM。
 
 - 托管磁盘 - 在 Azure 中国暂时还不适用。
@@ -76,28 +82,34 @@
         --source-uri https://mystorageaccount.blob.core.chinacloudapi.cn/vhds/myVHD.vhd \
         --destination-container vhds --destination-blob myCopiedVHD.vhd
 
-## <a name="set-up-the-virtual-network"></a> 设置虚拟网络
-以下步骤可创建新的虚拟网络、子网、公共 IP 地址和虚拟网络接口卡 (NIC)。这些步骤是可选的。在复制 VM 以进行故障排除或执行其他部署时，你可能不想要使用现有虚拟网络中的 VM。如果想要为复制的 VM 创建虚拟网络基础结构，请遵循后续几个步骤，否则请直接跳到[创建 VM](#create-a-vm)。
+## <a name="step-3-set-up-a-virtual-network"></a>步骤 3：设置虚拟网络
 
-使用 [az network vnet create](https://docs.microsoft.com/cli/azure/network/vnet#create) 创建虚拟网络。以下示例创建名为 `myVnet` 的虚拟网络和名为 `mySubnet` 的子网：
+以下可选步骤可创建新的虚拟网络、子网、公共 IP 地址和虚拟网络接口卡 (NIC)。
 
-    az network vnet create --resource-group myResourceGroup --location chinanorth --name myVnet \
-        --address-prefix 192.168.0.0/16 --subnet-name mySubnet --subnet-prefix 192.168.1.0/24
+在复制 VM 来完成故障排除或其他部署操作时，用户可能不希望使用现有虚拟网络中的 VM。
 
-使用 [az network public-ip create](https://docs.microsoft.com/cli/azure/network/public-ip#create) 创建一个公共 IP。以下示例创建名为 `myPublicIP`、DNS 名称为 `mypublicdns` 的公共 IP。（DNS 名称必须唯一，因此，请提供自己的唯一名称。）
+如果希望为复制的 VM 创建虚拟网络基础结构，请按后续几个步骤操作。 如果不希望创建虚拟网络，请跳到[步骤 4：创建 VM](#step-4-create-a-vm)。
 
-    az network public-ip create --resource-group myResourceGroup --location chinanorth \
-        --name myPublicIP --dns-name mypublicdns --allocation-method static --idle-timeout 4
+1.  使用 [az network vnet create](https://docs.microsoft.com/zh-cn/cli/azure/network/vnet#create) 创建虚拟网络。 以下示例创建一个名为 **myVnet** 的虚拟网络和一个名为 **mySubnet** 的子网：
 
-使用 [az network nic create](https://docs.microsoft.com/cli/azure/network/nic#create) 创建网络接口卡 (NIC)。以下示例创建名为 `myNic` 的、已附加到 `mySubnet` 子网的 NIC：
+        az network vnet create --resource-group myResourceGroup --location chinanorth --name myVnet \
+            --address-prefix 192.168.0.0/16 --subnet-name mySubnet --subnet-prefix 192.168.1.0/24
 
-    az network nic create --resource-group myResourceGroup --location chinanorth --name myNic \
-        --vnet-name myVnet --subnet mySubnet
+1.  使用 [az network public-ip create](https://docs.microsoft.com/zh-cn/cli/azure/network/public-ip#create) 创建公共 IP。 以下示例创建一个名为 **myPublicIP** 的公共 IP，其 DNS 名称为 **mypublicdns**。 （DNS 名称必须唯一，因此请提供唯一名称。）
 
-## <a name="create-a-vm"></a> 创建 VM
-现在，可以使用 [az vm create](https://docs.microsoft.com/cli/azure/vm#create) 创建 VM。
+        az network public-ip create --resource-group myResourceGroup --location chinanorth \
+            --name myPublicIP --dns-name mypublicdns --allocation-method static --idle-timeout 4
 
-### 非托管磁盘
+1.  使用 [az network nic create](https://docs.microsoft.com/zh-cn/cli/azure/network/nic#create) 创建 NIC。
+    以下示例创建一个附加到 **mySubnet** 子网且名为 **myNic** 的 NIC：
+
+        az network nic create --resource-group myResourceGroup --location chinanorth --name myNic \
+            --vnet-name myVnet --subnet mySubnet --public-ip-address myPublicIP
+
+## <a name="step-4-create-a-vm"></a>步骤 4：创建 VM
+
+现在可使用 [az vm create](https://docs.microsoft.com/zh-cn/cli/azure/vm#create) 创建 VM。
+
 使用 [az vm create](https://docs.microsoft.com/cli/azure/vm#create) 创建 VM。指定通过 **az storage blob copy start** (`--image`) 创建复制的磁盘时使用的存储帐户、容器名称和 VHD，如下所示：
 
     az vm create --resource-group myResourceGroup --name myCopiedVM  \
@@ -106,7 +118,7 @@
         --image https://mystorageaccount.blob.core.chinacloudapi.cn/vhds/myCopiedVHD.vhd \
         --use-unmanaged-disk
 
-## 后续步骤
-若要了解如何使用 Azure CLI 来管理新虚拟机，请参阅 [Azure CLI commands for the Azure Resource Manager](/documentation/articles/azure-cli-arm-commands/)（Azure Resource Manager 的 Azure CLI 命令）。
+## <a name="next-steps"></a>后续步骤
 
-<!---HONumber=Mooncake_0320_2017-->
+若要了解如何使用 Azure CLI 管理新 VM，请参阅 [Azure Resource Manager 的 Azure CLI 命令](/documentation/articles/azure-cli-arm-commands/)。
+<!--Update_Description: wording update-->

@@ -59,4 +59,6 @@ Azure 命令行接口 (CLI) 提供的命令行和脚本编写环境用于创建�
 
 [用于 Azure 虚拟机的 CLI 示例](/documentation/articles/virtual-machines-linux-cli-samples/)
 
+[用于 Azure Web 应用的 CLI 示例](/documentation/articles/app-service-cli-samples/)
+
 [用于 Azure SQL 的 CLI 示例](/documentation/articles/sql-database-cli-samples/)

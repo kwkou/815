@@ -1,141 +1,122 @@
 <properties
-	pageTitle="在 Linux 虚拟机上部署 LAMP | Azure"
-	description="了解如何在 Linux VM 上安装 LAMP 堆栈"
-	services="virtual-machines-linux"
-	documentationCenter="virtual-machines"
-	authors="jluk"
-	manager="squillace"
-	editor=""
-	tags="azure-resource-manager"/>
-
+    pageTitle="在 Azure 中的 Linux 虚拟机上部署 LAMP | Azure"
+    description="了解如何在 Azure 中的 Linux VM 上安装 LAMP 堆栈"
+    services="virtual-machines-linux"
+    documentationcenter="virtual-machines"
+    author="jluk"
+    manager="timlt"
+    editor=""
+    tags="azure-resource-manager"
+    translationtype="Human Translation" />
 <tags
-	ms.service="virtual-machines-linux"
-	ms.workload="infrastructure-services"
-	ms.tgt_pltfrm="vm-linux"
-	ms.devlang="NA"
-	ms.topic="article"
-	ms.date="06/07/2016"
-	wacn.date="12/26/2016"
-	ms.author="jluk"/>
+    ms.assetid="6c12603a-e391-4d3e-acce-442dd7ebb2fe"
+    ms.service="virtual-machines-linux"
+    ms.workload="infrastructure-services"
+    ms.tgt_pltfrm="vm-linux"
+    ms.devlang="NA"
+    ms.topic="article"
+    ms.date="2/21/2017"
+    wacn.date="04/24/2017"
+    ms.author="juluk"
+    ms.sourcegitcommit="a114d832e9c5320e9a109c9020fcaa2f2fdd43a9"
+    ms.openlocfilehash="f2875bcd093bf9cd79ea17d6c999bddf932886fb"
+    ms.lasthandoff="04/14/2017" />
 
-# 在 Azure 上部署 LAMP 堆栈
-本文将介绍如何在 Azure 上部署 Apache Web 服务器、MySQL 和 PHP（LAMP 堆栈）。你需要一个 Azure 帐户（[获取试用版](/pricing/1rmb-trial/)）和[连接到 Azure 帐户](/documentation/articles/xplat-cli-connect/)的 [Azure CLI](/documentation/articles/xplat-cli-install/)。
+# <a name="deploy-lamp-stack-on-azure"></a>在 Azure 上部署 LAMP 堆栈
+本文介绍如何在 Azure 上部署 Apache web 服务器、MySQL 和 PHP（LAMP 堆栈）。 用户需要 Azure 帐户（[获取试用版](/pricing/1rmb-trial/)）和 [Azure CLI 2.0](https://docs.microsoft.com/zh-cn/cli/azure/install-az-cli2)。 还可以使用 [Azure CLI 1.0](/documentation/articles/virtual-machines-linux-create-lamp-stack-nodejs/) 执行这些步骤。
 
-本文介绍了两种方法用于安装所涉及的 LAMP：
+## <a name="quick-command-summary"></a>快速命令摘要
 
-## 快速命令摘要
+1. 在本地计算机上根据需要保存和编辑 [azuredeploy.parameters.json 文件](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/lamp-app/azuredeploy.parameters.json)。
+2. 通过运行以下两个命令创建资源组，然后部署模板：
 
-1) 在新的 VM 上部署 LAMP
+    az group create -l chinanorth -n myResourceGroup
+    az group deployment create -g myResourceGroup \
+        --template-uri https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/lamp-app/azuredeploy.json \
+        --parameters @filepathToParameters.json
 
-	# One command to create a resource group holding a VM with LAMP already on it
-	$ azure group create -n uniqueResourceGroup -l chinanorth --template-uri https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/lamp-app/azuredeploy.json
+### <a name="deploy-lamp-on-existing-vm"></a>在现有 VM 上部署 LAMP
+以下命令更新包，然后安装 Apache、MySQL 和 PHP：
 
-2) 在现有 VM 上部署 LAMP
+    sudo apt-get update
+    sudo apt-get install apache2 mysql-server php5 php5-mysql
 
-	# Two commands: one updates packages, the other installs Apache, MySQL, and PHP
-	user@ubuntu$ sudo apt-get update
-	user@ubuntu$ sudo apt-get install apache2 mysql-server php5 php5-mysql
+## <a name="deploy-lamp-on-new-vm-walkthrough"></a>在新的 VM 上部署 LAMP 的演练
 
+1. 使用 [az group create](https://docs.microsoft.com/zh-cn/cli/azure/group#create) 创建资源组，使之包含新的 VM：
 
-## 在新的 VM 上部署 LAMP 的演练
+    az group create -l chinanorth -n myResourceGroup
 
-首先创建一个包含 VM 的新[资源组](/documentation/articles/resource-group-overview/)：
+若要创建 VM 本身，可以使用在 [GitHub 上的此处](https://github.com/Azure/azure-quickstart-templates/tree/master/lamp-app)找到的已编写好的 Azure Resource Manager 模板。
 
-    $ azure group create uniqueResourceGroup chinanorth
-    info:    Executing command group create
-    info:    Getting resource group uniqueResourceGroup
-    info:    Creating resource group uniqueResourceGroup
-    info:    Created resource group uniqueResourceGroup
-    data:    Id:                  /subscriptions/########-####-####-####-############/resourceGroups/uniqueResourceGroup
-    data:    Name:                uniqueResourceGroup
-    data:    Location:            chinanorth
-    data:    Provisioning State:  Succeeded
-    data:    Tags: null
-    data:
-    info:    group create command OK
+2. 在本地计算机上保存 [azuredeploy.parameters.json 文件](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/lamp-app/azuredeploy.parameters.json)。
+3. 将 **azuredeploy.parameters.json** 文件编辑成首选的输入。
+4. 使用 [az group deployment create] 部署模板，引用下载的 json 文件：
 
-要创建 VM，可以使用在[此处的 GitHub 上](https://github.com/Azure/azure-quickstart-templates/tree/master/lamp-app)找到的已写入的 Azure Resource Manager 模板。
+    az group deployment create -g myResourceGroup \
+        --template-uri https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/lamp-app/azuredeploy.json \
+        --parameters @filepathToParameters.json
 
-    $ azure group deployment create --template-uri https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/lamp-app/azuredeploy.json uniqueResourceGroup uniqueLampName
+输出类似于以下示例：
 
-你会看到提示输入更多内容的响应：
+    {
+    "id": "/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/myResourceGroup/providers/Microsoft.Resources/deployments/azuredeploy",
+    "name": "azuredeploy",
+    "properties": {
+        "correlationId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+        "debugSetting": null,
+    }
+    ...
+    "provisioningState": "Succeeded",
+    "template": null,
+    "templateLink": {
+        "contentVersion": "1.0.0.0",
+        "uri": "https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/lamp-app/azuredeploy.json"
+        },
+        "timestamp": "2017-02-22T00:05:51.860411+00:00"
+    },
+    "resourceGroup": "myResourceGroup"
+    }
 
-    info:    Executing command group deployment create
-    info:    Supply values for the following parameters
-    storageAccountNamePrefix: lampprefix
-    location: chinanorth
-    adminUsername: someUsername
-    adminPassword: somePassword
-    mySqlPassword: somePassword
-    dnsLabelPrefix: azlamptest
-    info:    Initializing template configurations and parameters
-    info:    Creating a deployment
-    info:    Created template deployment "uniqueLampName"
-    info:    Waiting for deployment to complete
-    data:    DeploymentName     : uniqueLampName
-    data:    ResourceGroupName  : uniqueResourceGroup
-    data:    ProvisioningState  : Succeeded
-    data:    Timestamp          :
-    data:    Mode               : Incremental
-    data:    CorrelationId      : d51bbf3c-88f1-4cf3-a8b3-942c6925f381
-    data:    TemplateLink       : https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/lamp-app/azuredeploy.json
-    data:    ContentVersion     : 1.0.0.0
-    data:    DeploymentParameters :
-    data:    Name                      Type          Value
-    data:    ------------------------  ------------  -----------
-    data:    storageAccountNamePrefix  String        lampprefix
-    data:    location                  String        chinanorth
-    data:    adminUsername             String        someUsername
-    data:    adminPassword             SecureString  undefined
-    data:    mySqlPassword             SecureString  undefined
-    data:    dnsLabelPrefix            String        azlamptest
-    data:    ubuntuOSVersion           String        14.04.2-LTS
-    info:    group deployment create command OK
+现在你已创建已安装 LAMP 的 Linux VM。 可以根据需要跳转到[验证是否已成功安装 LAMP](#verify-lamp-successfully-installed) 来验证此安装。
 
-现在你已创建已安装 LAMP 的 Linux VM。如有需要，你也可以跳转到 [验证是否已成功安装 LAMP] 来验证此安装。
+## <a name="deploy-lamp-on-existing-vm-walkthrough"></a>在现有 VM 上部署 LAMP 的演练
+如果需要有关创建 Linux VM 方面的帮助，可以转到[此处了解如何创建 Linux VM](/documentation/articles/virtual-machines-linux-quick-create-cli/)。 接下来，需通过 SSH 登录 Linux VM。 如果需要有关创建 SSH 密钥方面的帮助，可以转到[此处了解如何在 Linux/Mac 上创建 SSH 密钥](/documentation/articles/virtual-machines-linux-mac-create-ssh-keys/)。
+如果已有 SSH 密钥，请继续操作，使用 `ssh azureuser@mypublicdns.chinanorth.chinacloudapp.cn` 从命令行通过 SSH 登录 Linux VM。
 
-## 在现有 VM 上部署 LAMP 的演练
+现在你是在 Linux VM 中操作，我们可以指导你在基于 Debian 的分发版上安装 LAMP 堆栈。 对于其他 Linux 分发版，确切的命令可能会有所不同。
 
-如果你需要有关创建 Linux VM 方面的帮助，可以转到[此处以了解如何创建 Linux VM](/documentation/articles/virtual-machines-linux-quick-create-cli/)。
-接下来，你需要通过 SSH 登录 Linux VM。如果你需要有关创建 SSH 密钥方面的帮助，可以转到[此处以了解如何在 Linux/Mac 上创建 SSH 密钥](/documentation/articles/virtual-machines-linux-mac-create-ssh-keys/)。
-如果你已经有 SSH 密钥，则继续并使用 `ssh username@uniqueDNS` 通过 SSH 登录 Linux VM。
-
-既然你正在使用 Linux VM，我们将向你介绍如何在基于 Debian 的分发版上安装 LAMP 堆栈。对于其他 Linux 分发版，确切的命令可能会有所不同。
-
-#### 在 Debian/Ubuntu 上安装
-
-你将需要安装以下程序包：`apache2`、`mysql-server`、`php5` 和 `php5-mysql`。你可以通过直接获取这些程序包或使用 Tasksel 进行安装。下面列出了这两种方法的说明。
+#### <a name="installing-on-debianubuntu"></a>在 Debian/Ubuntu 上安装
+需要安装以下程序包：`apache2`、`mysql-server`、`php5`、`php5-mysql`。 可以直接使用这些包来安装，也可以使用 Tasksel 来安装。
 在安装之前，需要下载并更新包列表。
 
-    user@ubuntu$ sudo apt-get update
-    
-##### 单个包
+    sudo apt-get update
+
+##### <a name="individual-packages"></a>单个包
 使用 apt-get：
 
-	user@ubuntu$ sudo apt-get install apache2 mysql-server php5 php5-mysql
+    sudo apt-get install apache2 mysql-server php5 php5-mysql
 
-##### 使用 Tasksel
+##### <a name="using-tasksel"></a>使用 tasksel
 此外，你可以下载 Tasksel，它是一个 Debian/Ubuntu 工具，可将多个相关包作为协同“任务”安装到你的系统中。
 
-    user@ubuntu$ sudo apt-get install tasksel
-    user@ubuntu$ sudo tasksel install lamp-server
+    sudo apt-get install tasksel
+    sudo tasksel install lamp-server
 
-运行上述任一选项以后，系统会提示你安装这些程序包以及多个其他的依赖项。按“y”再按“Enter”即可继续，然后再遵循任何其他的提示为 MySQL 设置一个管理密码。此时会安装最低要求的 PHP 扩展，这些扩展是通过 MySQL 使用 PHP 所需的。
+运行上述任一选项以后，系统会提示用户安装这些包以及各种其他的依赖项。 若要为 MySQL 设置一个管理密码，可按“y”再按“Enter”继续，然后再遵循任何其他的提示进行操作。 此股从会安装最低要求的 PHP 扩展，这些扩展是通过 MySQL 使用 PHP 所必需的。 
 
 ![][1]
 
 运行以下命令即可查看以程序包形式提供的其他 PHP 扩展：
 
-	user@ubuntu$ apt-cache search php5
+    apt-cache search php5
 
-
-#### 创建 info.php 文档
-
+#### <a name="create-infophp-document"></a>创建 info.php 文档
 现在你可以通过在命令行中键入 `apache2 -v`、`mysql -v` 或 `php -v` 来检查 Apache、MySQL 和 PHP 的版本。
 
-如果你想要进行进一步的检测，可以创建在浏览器中查看的快速 PHP 信息页。通过以下命令使用 Nano 文本编辑器创建一个新的文件：
+如果你想要进行进一步的检测，可以创建在浏览器中查看的快速 PHP 信息页。 通过以下命令使用 Nano 文本编辑器创建一个文件：
 
-    user@ubuntu$ sudo nano /var/www/html/info.php
+    sudo nano /var/www/html/info.php
 
 在 GNU Nano 文本编辑器中，添加以下行：
 
@@ -147,28 +128,25 @@
 
 使用此命令重启 Apache，以便所有新安装都生效。
 
-    user@ubuntu$ sudo service apache2 restart
+    sudo service apache2 restart
 
-## 验证是否已成功安装 LAMP
-
-现在你可以转到 http://youruniqueDNS/info.php 检查你刚在浏览器中创建的 PHP 信息页，如下所示。
+## <a name="verify-lamp-successfully-installed"></a>验证是否已成功安装 LAMP
+现在，用户可以查看所创建的 PHP 信息页，只需打开浏览器并转到 http://youruniqueDNS/info.php 即可。 应如下图所示。
 
 ![][2]
 
-你可以通过转到 http://youruniqueDNS/ 并查看 Apache2 Ubuntu 默认页来检查 Apache 安装。你应看到如下内容。
+可以通过转到 http://youruniqueDNS/ 查看 Apache2 Ubuntu 默认页来检查 Apache 安装。 输出类似于以下示例：
 
 ![][3]
 
 恭喜，你刚刚在 Azure VM 上安装了 LAMP 堆栈！
 
-## 后续步骤
-
+## <a name="next-steps"></a>后续步骤
 签出 LAMP 堆栈上的 Ubuntu 文档：
 
-- [https://help.ubuntu.com/community/ApacheMySQLPHP](https://help.ubuntu.com/community/ApacheMySQLPHP)
+* [https://help.ubuntu.com/community/ApacheMySQLPHP](https://help.ubuntu.com/community/ApacheMySQLPHP)
 
 [1]: ./media/virtual-machines-linux-deploy-lamp-stack/configmysqlpassword-small.png
 [2]: ./media/virtual-machines-linux-deploy-lamp-stack/phpsuccesspage.png
 [3]: ./media/virtual-machines-linux-deploy-lamp-stack/apachesuccesspage.png
-
-<!---HONumber=Mooncake_Quality_Review_1215_2016-->
+<!--Update_Description: change from CLI 1.0 to CLI 2.0-->

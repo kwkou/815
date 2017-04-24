@@ -32,7 +32,7 @@
 ## <a name="install-new-software-on-a-platform-image-at-deployment-time"></a>部署时在平台映像中安装新软件
 在本文的语境中，平台映像是指从 Azure 应用商店获取的操作系统映像，例如 Ubuntu 16.04、Windows Server 2012 R2 等。
 
-可以使用 [VM 扩展](/documentation/articles/virtual-machines-windows-extensions-features/)在平台映像中安装新软件。 VM 扩展是部署 VM 时运行的软件。 可以使用自定义脚本扩展，在部署时运行所需的任何代码。 [这](https://github.com/Azure/azure-quickstart-templates/tree/master/201-vmss-windows-webapp-dsc-autoscale)是一个示例 Azure Resource Manager 模板。该模板使用 [Azure Desired State Configuration (DSC) 扩展](/documentation/articles/virtual-machine-scale-sets-dsc/)来安装 IIS 以及与 Azure 自动缩放集成的 .NET MVC 应用程序。
+可以使用 [VM 扩展](/documentation/articles/virtual-machines-windows-extensions-features/)在平台映像中安装新软件。 VM 扩展是部署 VM 时运行的软件。 可以使用自定义脚本扩展，在部署时运行所需的任何代码。 [这](https://github.com/Azure/azure-quickstart-templates/tree/master/201-vmss-windows-webapp-dsc-autoscale)是一个示例 Azure Resource Manager 模板。该模板使用 [Azure Desired State Configuration (DSC) 扩展](/documentation/articles/virtual-machine-scale-sets-dsc/)来安装 IIS 以及与 Azure 自动规模集成的 .NET MVC 应用程序。
 
 此方法的优点是在应用程序代码与 OS 之间提供某种程度的隔离，可以单独维护应用程序。 当然，这也意味着会出现更多的运动组件，如果脚本需要下载和配置的项很多，VM 部署时间也可能更长。
 

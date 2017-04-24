@@ -1,12 +1,13 @@
 <properties
-    pageTitle="捕获用作模板的 Azure Linux VM | Azure"
-    description="了解如何捕获并通用化使用 Azure Resource Manager 部署模型创建的、基于 Linux 的 Azure 虚拟机 (VM) 的映像。"
+    pageTitle="使用 Azure CLI 1.0 捕获 Linux VM | Azure"
+    description="如何使用由 Azure CLI 1.0 创建的非托管磁盘，捕获和通用化基于 Linux 的 Azure 虚拟机 (VM) 的映像"
     services="virtual-machines-linux"
     documentationcenter=""
     author="iainfoulds"
     manager="timlt"
     editor=""
-    tags="azure-resource-manager" />
+    tags="azure-resource-manager"
+    translationtype="Human Translation" />
 <tags
     ms.assetid="e608116f-f478-41be-b787-c2ad91b5a802"
     ms.service="virtual-machines-linux"
@@ -15,9 +16,11 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="02/02/2017"
-    wacn.date="04/10/2017"
-    ms.author="iainfou" />  
-
+    wacn.date="04/24/2017"
+    ms.author="iainfou"
+    ms.sourcegitcommit="a114d832e9c5320e9a109c9020fcaa2f2fdd43a9"
+    ms.openlocfilehash="c68a781303eaf5d011acc24a19c0186f492ea0c3"
+    ms.lasthandoff="04/14/2017" />
 
 # 捕获 Azure 上运行的 Linux 虚拟机
 遵循本文中的步骤可在 Resource Manager 部署模型中通用化和捕获 Azure Linux 虚拟机 (VM)。通用化 VM 时，需删除个人帐户信息，并准备好要用作映像的 VM。然后捕获 OS 的通用化虚拟硬盘 (VHD) 映像、附加数据磁盘的 VHD 以及新 VM 部署的 [Resource Manager 模板](/documentation/articles/resource-group-overview/)。本文详述了如何使用适用于 VM 的 Azure CLI 1.0 捕获 VM 映像。
@@ -185,4 +188,4 @@
 要使用 CLI 管理 VM，请参阅[使用 Azure 资源管理器模板和 Azure CLI 部署和管理虚拟机](/documentation/articles/virtual-machines-linux-cli-deploy-templates/)中的任务。
 
 <!---HONumber=Mooncake_0313_2017-->
-<!--Update_Description: add information about CLI 2.0-->
+<!--Update_Description: meta data update->
