@@ -29,7 +29,7 @@
 
 在开始这些步骤之前，请启动 [Synchronization Service Manager](/documentation/articles/active-directory-aadconnectsync-service-manager-ui/)。
 
-## 操作
+## 操作 <a name="operations"></a>
 Synchronization Service Manager 中的“操作”选项卡是你应当从中开始故障排除的位置。“操作”选项卡显示最新操作的结果。
 ![Sync Service Manager](./media/active-directory-aadconnectsync-troubleshoot-object-not-syncing/operations.png)
 
@@ -60,7 +60,7 @@ Synchronization Service Manager 中的“操作”选项卡是你应当从中开
 
 如果错误本身未提供足够的信息，则请查看数据本身。你可以单击具有对象标识符的链接并继续对[连接器空间导入的对象](#cs-import)进行故障排除。
 
-## 连接器空间对象属性
+## 连接器空间对象属性 <a name="connector-space-object-properties"></a>
 如果在“操作”选项卡中未发现任何错误，则接下来检查 Active Directory 中的连接器空间对象，然后检查 metaverse，最后检查 Azure AD。[](#operations)在此路径中，你应当会发现问题所在。
 
 ### 搜索连接器空间中的对象
@@ -78,14 +78,14 @@ Synchronization Service Manager 中的“操作”选项卡是你应当从中开
 
 这些对象是由其他同步引擎或者是由具有不同筛选配置的同步引擎创建的。此视图是不再受管理的**孤立**对象的列表。你应当复查此列表并考虑使用 [Azure AD PowerShell](http://aka.ms/aadposh) cmdlet 删除这些对象。
 
-### 连接器空间导入
+### 连接器空间导入 <a name="cs-import"></a>
 当打开连接器空间对象时，顶端会出现数个选项卡。“导入”选项卡显示导入后暂存的数据。
 ![连接器空间对象](./media/active-directory-aadconnectsync-troubleshoot-object-not-syncing/csobject.png)
 “旧值”显示当前存储在 Connect 中的数据，而“新值”显示从源系统收到但尚未应用的数据。如果对象上没有错误，则不会处理更改。
 
 **错误** 
 ![连接器空间对象](./media/active-directory-aadconnectsync-troubleshoot-object-not-syncing/cssyncerror.png)
-只有当对象存在问题时才会显示“同步错误”选项卡。有关详细信息，请参阅[排查同步错误](#troubleshoot-errors-in-operations-tab)。
+只有当对象存在问题时才会显示“同步错误”选项卡。
 
 ### 连接器空间沿袭
 “沿袭”选项卡显示连接器空间对象与 Metaverse 对象有何关联。可以看到连接器上次从连接的系统导入更改的时间，以及应用哪些规则以便在 Metaverse 中填充数据。
@@ -98,7 +98,7 @@ Synchronization Service Manager 中的“操作”选项卡是你应当从中开
 
 在“PasswordSync”列中，还会发现入站连接器空间可进行密码更改，因为有一个同步规则的值为 **True**。此密码接着会通过出站规则发送到 Azure AD。
 
-从“沿袭”选项卡中，可以单击“Metaverse 对象属性”转到 Metaverse。[](#mv-attributes)
+从“沿袭”选项卡中，可以单击“Metaverse 对象属性”转到 Metaverse。
 
 所有选项卡的底部都有两个按钮：“预览”和“日志”。
 
@@ -111,8 +111,8 @@ Synchronization Service Manager 中的“操作”选项卡是你应当从中开
 ### 日志
 “日志”页用来查看密码同步状态和历史记录。有关详细信息，请参阅[排查密码同步问题](/documentation/articles/active-directory-aadconnectsync-troubleshoot-password-synchronization/)。
 
-## Metaverse 对象属性
-通常，最好从源 Active Directory [连接器空间](#connector-space)开始搜索。但是也可以从 metaverse 开始搜索。
+## Metaverse 对象属性 <a name="metaverse-object-properties"></a>
+通常，最好从源 Active Directory [连接器空间](#connector-space-object-properties)开始搜索。但是也可以从 metaverse 开始搜索。
 
 ### 搜索 Metaverse 中的对象
 在 **Synchronization Service Manager** 中，单击“Metaverse 搜索”。创建一个用于查找用户的查询。你可以搜索通用属性，例如 accountName (sAMAccountName) 和 userPrincipalName。有关详细信息，请参阅 [Metaverse 搜索](/documentation/articles/active-directory-aadconnectsync-service-manager-ui-mvsearch/)。
@@ -122,12 +122,12 @@ Synchronization Service Manager 中的“操作”选项卡是你应当从中开
 
 如果未找到对象，则说明它尚未到达 metaverse。继续在 Active Directory [连接器空间](#connector-space-object-properties)中搜索对象。可能是同步期间发生的错误阻止了对象来到 metaverse，也有可能是因为应用了筛选器。
 
-### Metaverse 属性
+### Metaverse 属性 <a name="MV-attributes"></a>
 在“属性”选项卡中，可以看到值，以及是哪个连接器提供了值。![Sync Service Manager](./media/active-directory-aadconnectsync-troubleshoot-object-not-syncing/mvobject.png)
 
 如果对象未同步，请在 metaverse 中查看以下属性：
 - 属性 **cloudFiltered** 是否存在并设置为 **true**？ 如果是，则说明它已根据[基于属性的筛选](/documentation/articles/active-directory-aadconnectsync-configure-filtering/#attribute-based-filtering/)中的步骤进行了筛选。
-- 属性 **sourceAnchor** 是否存在？ 如果不存在，你是否有帐户资源林拓扑？ 如果对象被识别为链接的邮箱（属性 **msExchRecipientTypeDetails** 的值为 2），则 sourceAnchor 由具有已启用了 Active Directory 帐户的林提供。请确保主帐户已正确导入并同步。主帐户必须列在对象的[连接器](#mv-connectors)中。
+- 属性 **sourceAnchor** 是否存在？ 如果不存在，你是否有帐户资源林拓扑？ 如果对象被识别为链接的邮箱（属性 **msExchRecipientTypeDetails** 的值为 2），则 sourceAnchor 由具有已启用了 Active Directory 帐户的林提供。请确保主帐户已正确导入并同步。主帐户必须列在对象的连接器中。
 
 ### Metaverse 连接器
 “连接器”选项卡显示具有对象表示形式的所有连接器空间。

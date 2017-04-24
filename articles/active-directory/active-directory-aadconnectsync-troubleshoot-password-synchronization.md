@@ -24,18 +24,18 @@
 - 如果遇到密码都未同步的问题，请参阅[排查未同步任何密码的问题](#no-passwords-are-synchronized)。
 - 如果单个对象出现问题，请参阅[排查一个对象的密码同步问题](#one-object-is-not-synchronizing-passwords)。
 
-## 没有同步任何密码
+## 没有同步任何密码 <a name="no-passwords-are-synchronized"></a>
 请执行下列步骤，确定没有同步任何密码的原因：
 
 1. Connect 服务器是否处于[暂存模式](/documentation/articles/active-directory-aadconnectsync-operations/#staging-mode/)？ 处于暂存模式的服务器不同步任何密码。
 2. 运行[获取密码同步设置的状态](#get-the-status-of-password-sync-settings)部分的脚本。这样可以大致了解密码同步配置。![PowerShell 脚本从密码同步设置中返回的输出](./media/active-directory-aadconnectsync-troubleshoot-password-synchronization/psverifyconfig.png)
 3. 如果未在 Azure AD 中启用该功能，或者未启用同步通道状态，请运行 Connect 安装向导。选择“自定义同步选项”并取消选择密码同步。此项更改会暂时禁用该功能。然后再次运行向导并重新启用密码同步。再次运行脚本，验证配置是否正确。
 4. 查看错误的事件日志。查找下述事件，这些事件指示存在问题：
-    1. 源：“目录同步”ID：0、611、652、655 如果看到此类信息，则存在连接问题。事件日志消息包含存在问题的林信息。有关详细信息，请参阅[连接问题](#连接问题)
+    1. 源：“目录同步”ID：0、611、652、655 如果看到此类信息，则存在连接问题。事件日志消息包含存在问题的林信息。有关详细信息，请参阅[连接问题](#connectivity-errors)
 5. 如果看不到检测信号，或者其他方式都没有作用，则可运行[触发所有密码的完全同步](#trigger-a-full-sync-of-all-passwords)。只应运行该脚本一次。
 6. 阅读[排查一个不同步密码的对象的问题](#one-object-is-not-synchronizing-passwords)部分。
 
-### 连接问题
+### 连接问题 <a name="connectivity-errors"></a>
 
 1. 是否可以通过 Azure AD 进行连接？
 2. 该帐户是否有读取全部域中的密码哈希所需的权限？ 如果是使用“快速”设置安装的 Connect，则权限应该是正确的。如果是使用自定义安装，则需手动设置权限。
@@ -46,7 +46,7 @@
 3. 域控制器是否可供 Azure AD Connect 访问？ 如果 Connect 服务器不能连接到所有域控制器，则应配置“只使用首选域控制器”。![AD 连接器所使用的域控制器](./media/active-directory-aadconnectsync-troubleshoot-password-synchronization/preferreddc.png) 返回到 **Synchronization Service Manager** 和“配置目录分区”。在“选择目录分区”中选择域，选中“只使用首选域控制器”复选框，然后单击“配置”。在列表中，输入应该由 Connect 用来进行密码同步的域控制器。同一列表也用于导入和导出。针对所有域执行这些步骤。
 4. 如果脚本显示没有检测信号，请运行“触发所有密码的完全同步”中的脚本。[](#trigger-a-full-sync-of-all-passwords)
 
-## 一个对象不同步密码
+## 一个对象不同步密码 <a name="one-object-is-not-synchronizing-passwords"></a>
 可以通过检查对象的状态，轻松排查密码同步问题。
 
 1. 首先打开“Active Directory 用户和计算机”。找到该用户并检查是否未选择“用户必须在下次登录时更改密码”。![Active Directory 效率密码](./media/active-directory-aadconnectsync-troubleshoot-password-synchronization/adprodpassword.png)如果已选择，请要求该用户登录并更改密码。临时密码不会同步到 Azure AD。
@@ -63,7 +63,7 @@
     10. 单击“连接器”选项卡。确保显示可连接到本地 AD 和 Azure AD 的连接器。![Metaverse 信息](./media/active-directory-aadconnectsync-troubleshoot-password-synchronization/mvconnectors.png)
     11. 选择代表 Azure AD 的行，然后单击“属性”。单击“沿袭”选项卡。连接器空间对象应存在一个“密码同步”设置为 **True** 的出站规则。在默认配置中，同步规则的名称为 **Out to AAD - User Join**。![用户的连接器空间属性](./media/active-directory-aadconnectsync-troubleshoot-password-synchronization/cspasswordsync2.png)
 
-### 密码同步日志
+### 密码同步日志 <a name="password-sync-log"></a>
 状态列可能包含以下值：
 
 | 状态 | 说明 |
@@ -77,7 +77,7 @@
 
 ## 用于故障排除的脚本
 
-### 获取密码同步设置的状态
+### 获取密码同步设置的状态 <a name="get-the-status-of-password-sync-settings"></a>
 
 	Import-Module ADSync
 	$connectors = Get-ADSyncConnector
@@ -131,7 +131,7 @@
 	Write-Host
  
 
-#### 触发所有密码的完全同步
+#### 触发所有密码的完全同步 <a name="trigger-a-full-sync-of-all-passwords"></a>
 > [AZURE.NOTE]
 只应运行该脚本一次。如需运行该脚本多次，则属其他问题。请与 Microsoft 支持部门联系，让其帮助你排查问题。
 

@@ -92,7 +92,7 @@
 ## <a name="consent"></a>同意
 [资源所有者](#resource-owner)授权给[客户端应用程序](#client-application)，让其通过特定[权限](#permissions)代表资源所有者访问受保护资源的过程。 根据客户端请求的权限，要求管理员或用户同意分别允许其组织/个人数据的访问权限。 请注意，在[多租户](#multi-tenant-application)方案中，应用程序的[服务主体](#service-principal-object)也会记录在同意方用户的租户中。
 
-## <a name="id-token"></a>ID 令牌
+## <a name="ID-token"></a>ID 令牌
 [授权服务器](#authorization-server)的[授权终结点](#authorization-endpoint)提供的 [OpenID Connect][OpenIDConnect-ID-Token] [安全令牌](#security-token)，其中包含与最终用户[资源所有者](#resource-owner)的身份验证相关的[声明](#claim)。 与访问令牌一样，ID 令牌也以数字签名的 [JSON Web 令牌 (JWT)][JWT] 来表示。 不过，与访问令牌不同的是，ID 令牌的声明并不用于与资源访问相关的用途（具体地说，是访问控制）。
 
 有关详细信息，请参阅 [Azure AD token reference][AAD-Tokens-Claims] （Azure AD 令牌参考）。

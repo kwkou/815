@@ -157,7 +157,7 @@ Active Directory 域服务以实际用户密码的哈希值表示形式存储密
 
 	![有关用户的沿袭信息](./media/active-directory-aadconnectsync-implement-password-synchronization/cspasswordsync.png)
 
-7. 然后，从 Metaverse 到 Azure AD 连接器空间一直[跟踪用户](/documentation/articles/active-directory-aadconnectsync-service-manager-ui-connectors/#follow-an-object-and-its-data-through-the-system/)。连接器空间对象应存在一个“密码同步”设置为 **True** 的出站规则。在默认配置中，同步规则的名称为 **Out to AAD - User Join**。
+7. 然后，从 Metaverse 到 Azure AD 连接器空间一直[跟踪用户](/documentation/articles/active-directory-aadconnectsync-service-manager-ui-connectors/)。连接器空间对象应存在一个“密码同步”设置为 **True** 的出站规则。在默认配置中，同步规则的名称为 **Out to AAD - User Join**。
 
 	![用户的连接器空间属性](./media/active-directory-aadconnectsync-implement-password-synchronization/cspasswordsync2.png)
 

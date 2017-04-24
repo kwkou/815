@@ -20,7 +20,6 @@
 # 如何更新自己的密码
 如果不确定如何管理自己的工作或学校帐户密码，来这里就对了！ 请阅读以下内容，了解如何执行常见的步骤，例如更改密码、重置密码或注册密码重置。
 
-- [**如何从 Office 365 更改密码**](#how-to-change-your-password-from-o365)
 - [**如何从访问面板更改密码**](#how-to-change-your-password-from-the-access-panel)
 - [**如何重置密码**](#how-to-reset-your-password)
 - [**如何解锁帐户**](#how-to-unlock-your-account)

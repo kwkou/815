@@ -36,15 +36,8 @@
 | 支持的方案 |[Azure AD 密码重置有何用途？](#what-is-possible-with-azure-ad-password-reset) |
 | 为何要使用它？ |[为何使用 Azure AD 密码重置？](#why-use-azure-ad-password-reset) |
 | 定价和可用性 |[定价和可用性](#pricing-and-availability) |
-| 启用密码重置 |[为用户启用密码重置](#enable-password-reset-for-your-users) |
-| 自定义密码重置的工作方式 |[自定义密码重置行为](#customize-password-reset-behavior) |
-| 向我的用户推广密码重置 |[将用户配置为使用密码重置](#configure-your-users-to-use-password-reset) |
-| 查看报告 |[使用集成式报告查看密码重置活动](#view-password-reset-activity-with-integrated-reports) |
 | 重置用户的密码 |[管理用户的密码](#manage-your-users-passwords) |
 | 设置组织的密码策略 |[设置密码策略](#set-password-policies) |
-| 排查问题 |[排查问题](#troubleshoot-a-problem) |
-| 常见问题 |[阅读常见问题](#read-a-faq) |
-| 技术详细信息 |[了解技术详细信息](#understand-the-technical-details) |
 | 新发布的功能 |[最新服务更新](#recent-service-updates) |
 | 其他文档的链接 |[密码重置文档的链接](#links-to-password-reset-documentation) |
 
