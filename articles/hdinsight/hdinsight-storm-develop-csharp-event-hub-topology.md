@@ -169,7 +169,7 @@ UnicodeEventDataScheme 仅在 9.5 版事件中心组件中提供，该版本可�
     > [AZURE.WARNING]
     本文档中使用的示例需要 3.5 版 Storm on HDInsight。由于重大类名更改，该示例不适用于旧版 HDInsight。如需此示例的版本（兼容旧式群集），请参阅 [https://github.com/Azure-Samples/hdinsight-dotnet-java-storm-eventhub/releases](https://github.com/Azure-Samples/hdinsight-dotnet-java-storm-eventhub/releases)。
 
-* [Azure 事件中心](/documentation/articles/event-hubs-csharp-ephcs-getstarted/)
+* [Azure 事件中心](/documentation/articles/event-hubs-dotnet-standard-getstarted-send/)
 
 * [Azure .NET SDK](/downloads/)
 
@@ -190,7 +190,7 @@ Spout 和 Bolt 以名为 **eventhubs-storm-spout-#.#-jar-with-dependencies.jar**
 
 ## 配置事件中心
 
-事件中心是此示例的数据源。使用[事件中心入门](/documentation/articles/event-hubs-csharp-ephcs-getstarted/)文档的“创建事件中心” 部分中的信息。
+事件中心是此示例的数据源。使用[事件中心入门](/documentation/articles/event-hubs-dotnet-standard-getstarted-send/)文档的“创建事件中心” 部分中的信息。
 
 1. 创建事件中心后，在 Azure 门户预览中查看“事件中心”边栏选项卡，然后选择“共享访问策略”。选择“+ 添加”添加以下策略：
    

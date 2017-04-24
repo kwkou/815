@@ -215,10 +215,10 @@ Azure IoT 中心是一项完全托管的服务，可在数百万个设备和一�
 <!-- Links -->
 
 [About Azure Storage]: /documentation/articles/storage-create-storage-account/#create-a-storage-account
-[Get Started with Event Hubs]: /documentation/articles/event-hubs-csharp-ephcs-getstarted/
+[Get Started with Event Hubs]: /documentation/articles/event-hubs-dotnet-standard-getstarted-send/
 [Azure Storage scalability Guidelines]: /documentation/articles/storage-scalability-targets/
 [Azure Block Blobs]: https://msdn.microsoft.com/zh-cn/library/azure/ee691964.aspx
-[Event Hubs]: /documentation/articles/event-hubs-overview/
+[Event Hubs]: /documentation/articles/event-hubs-what-is-event-hubs/
 [EventProcessorHost]: http://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.eventprocessorhost(v=azure.95).aspx
 [Event Hubs Programming Guide]: /documentation/articles/event-hubs-programming-guide/
 [Transient Fault Handling]: https://msdn.microsoft.com/zh-cn/library/hh680901(v=pandp.50).aspx
