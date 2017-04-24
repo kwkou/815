@@ -1,26 +1,27 @@
-<properties 
-   pageTitle="关于 ExpressRoute 虚拟网络网关 | Azure"
-   description="了解 ExpressRoute 的虚拟网络网关。"
-   services="expressroute"
-   documentationCenter="na"
-   authors="cherylmc"
-   manager="carmonm"
-   editor=""
-   tags="azure-resource-manager, azure-service-management"/>  
+<properties
+    pageTitle="关于 ExpressRoute 虚拟网络网关 | Azure"
+    description="了解 ExpressRoute 的虚拟网络网关。"
+    services="expressroute"
+    documentationCenter="na"
+    authors="cherylmc"
+    manager="carmonm"
+    editor=""
+    tags="azure-resource-manager, azure-service-management"
+    translationtype="Human Translation" />
+<tags
+    ms.service="expressroute"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.tgt_pltfrm="na"
+    ms.workload="infrastructure-services"
+    ms.date="03/20/2017"
+    ms.author="cherylmc"
+    wacn.date="04/24/2017"
+    ms.sourcegitcommit="a114d832e9c5320e9a109c9020fcaa2f2fdd43a9"
+    ms.openlocfilehash="66ef625947f8cb0aecc75ee5e1609950057e137c"
+    ms.lasthandoff="04/14/2017" />
 
-<tags 
-   ms.service="expressroute"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
-   ms.date="12/01/2016"
-   wacn.date="10/31/2016"
-   ms.author="cherylmc" />  
-
-
-# 关于 ExpressRoute 的虚拟网络网关
-
+# <a name="about-virtual-network-gateways-for-expressroute"></a>关于 ExpressRoute 的虚拟网络网关
 
 虚拟网络网关用于在 Azure 虚拟网络和本地位置之间发送网络流量。配置 ExpressRoute 连接时，必须创建并配置虚拟网络网关和虚拟网络网关连接。
 
@@ -43,6 +44,10 @@
 
 [AZURE.INCLUDE [expressroute-table-aggthroughput](../../includes/expressroute-table-aggtput-include.md)]
 
+> [AZURE.IMPORTANT]
+> 应用程序吞吐量取决于多种因素，例如端到端延迟和应用程序打开的流量数。 表中的数字表示应用程序在理想环境下理论上可达到的上限。 
+> 
+>
 
 ## <a name="resources"></a>REST API 和 PowerShell cmdlet
 
@@ -53,8 +58,7 @@
 |[PowerShell](https://msdn.microsoft.com/zh-cn/library/mt270335.aspx)|[PowerShell](https://msdn.microsoft.com/zh-cn/library/mt163510.aspx)|
 |[REST API](https://msdn.microsoft.com/zh-cn/library/jj154113.aspx)|[REST API](https://msdn.microsoft.com/zh-cn/library/mt163859.aspx)|
 
-
-## 后续步骤
+## <a name="next-steps"></a>后续步骤
 
 有关可用连接配置的详细信息，请参阅 [ExpressRoute 概述](/documentation/articles/expressroute-introduction/)。
 
@@ -64,6 +68,6 @@
 
 
 
- 
+ <!--Update_Description:update wording-->
 
 <!---HONumber=Mooncake_1024_2016-->
