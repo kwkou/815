@@ -30,7 +30,7 @@ Azure 应用程序网关以服务形式提供应用程序传送控制器 (ADC)�
 
 应用程序网关当前支持具有以下功能的第 7 层应用程序传送：
 
-* **[Web 应用程序防火墙（预览版）](/documentation/articles/application-gateway-webapplicationfirewall-overview/)**- Azure 应用程序网关中的 Web 应用程序防火墙 (WAF) 可保护 Web 应用程序，使其免受常见 Web 攻击的威胁，例如 SQL 注入、跨站点脚本攻击和会话劫持。
+* **[Web 应用程序防火墙（预览版）](/documentation/articles/application-gateway-web-application-firewall-overview/)**- Azure 应用程序网关中的 Web 应用程序防火墙 (WAF) 可保护 Web 应用程序，使其免受常见 Web 攻击的威胁，例如 SQL 注入、跨站点脚本攻击和会话劫持。
 * **HTTP 负载均衡** - 应用程序网关提供轮循机制负载均衡。负载均衡在第 7 层完成，仅用于 HTTP(S) 流量。
 * **基于 cookie 的会话相关性** - 想要在同一后端保留用户会话时，此功能十分有用。借助受网关管理的 cookie，应用程序网关能够将来自用户会话的后续流量转到同一后端进行处理。在会话状态是为用户会话而本地保存在后端服务器的情况下，此功能十分重要。
 * **[安全套接字层 (SSL) 卸载](/documentation/articles/application-gateway-ssl-arm/)** - 此功能让 Web 服务器免于执行解密 HTTPS 流量的高成本任务。通过在应用程序网关终止 SSL 连接，并将请求转发到未加密的服务器，Web 服务器不用承担解密的负担。应用程序网关会重新加密响应，然后再将它发回客户端。在后端与 Azure 中的应用程序网关位于同一安全虚拟网络中的情况下，此功能十分有用。

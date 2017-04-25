@@ -284,7 +284,7 @@ SSL 2.0 和 SSL 3.0 默认处于禁用状态且无法启用。这些版本被视
 
 ## 后续步骤
 
-请参阅 [Web 应用程序防火墙概述](/documentation/articles/application-gateway-webapplicationfirewall-overview/)，了解如何通过应用程序网关的 Web 应用程序防火墙强化 Web 应用程序的安全
+请参阅 [Web 应用程序防火墙概述](/documentation/articles/application-gateway-web-application-firewall-overview/)，了解如何通过应用程序网关的 Web 应用程序防火墙强化 Web 应用程序的安全
 
 [scenario]: ./media/application-gateway-end-to-end-ssl-powershell/scenario.png
 
