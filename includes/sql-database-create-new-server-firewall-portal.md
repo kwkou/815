@@ -36,6 +36,6 @@ As of circa 2016-04-11, the following topics might include this include:
     ![添加客户端 IP](./media/sql-database-get-started/save-firewall-rule.png)  
 
 
-> [AZURE.Tip] 有关教程，请参阅 [SQL 数据库教程：创建服务器、服务器级防火墙规则、示例数据库、数据库级防火墙规则并连接到 SQL Server](/documentation/articles/sql-database-get-started/)。
+> [AZURE.TIP] 有关教程，请参阅 [SQL 数据库教程：创建服务器、服务器级防火墙规则、示例数据库、数据库级防火墙规则并连接到 SQL Server](/documentation/articles/sql-database-get-started/)。
 
 <!---HONumber=Mooncake_0116_2017-->

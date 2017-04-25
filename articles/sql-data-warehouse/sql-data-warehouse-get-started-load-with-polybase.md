@@ -201,16 +201,16 @@ PolyBase 使用外部表访问 Azure Blob 存储中的数据。 由于数据不�
 * 若要将数据载入新表，请运行 [CREATE TABLE AS SELECT (Transact-SQL)][CREATE TABLE AS SELECT (Transact-SQL)] 语句。 新表将包含查询中指定的列。 列的数据类型将与外部表定义中的数据类型匹配。
 * 若要将数据载入现有表，请使用 [INSERT...SELECT (Transact-SQL)][INSERT...SELECT (Transact-SQL)] 语句。
 
-    -- 将数据从 Azure Blob 存储加载到 SQL 数据仓库
+        -- 将数据从 Azure Blob 存储加载到 SQL 数据仓库
 
-    CREATE TABLE dbo.DimDate2
-    WITH
-    (   
-        CLUSTERED COLUMNSTORE INDEX,
-        DISTRIBUTION = ROUND_ROBIN
-    )
-    AS
-    SELECT * FROM [dbo].[DimDate2External];
+        CREATE TABLE dbo.DimDate2
+        WITH
+        (   
+                CLUSTERED COLUMNSTORE INDEX,
+                DISTRIBUTION = ROUND_ROBIN
+        )
+        AS
+        SELECT * FROM [dbo].[DimDate2External];
 
 ## <a name="step-4-create-statistics-on-your-newly-loaded-data"></a>步骤 4：基于新加载的数据创建统计信息
 SQL 数据仓库不会自动创建或自动更新统计信息。 因此，若要实现较高的查询性能，必须在首次加载后基于每个表的每个列创建统计信息。 此外，在对数据做出重大更改后，必须更新统计信息。
