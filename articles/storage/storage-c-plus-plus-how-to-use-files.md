@@ -1,39 +1,39 @@
 <properties
-	pageTitle="如何通过 C++ 使用文件存储 | Azure"
-	description="使用 Azure 文件存储在云中存储文件数据。"
-	services="storage"
-	documentationCenter=".net"
-	authors="seguler"
-	manager="jahogg"
-	editor="tysonn" />  
+    pageTitle="如何通过 C++ 使用文件存储 | Azure"
+    description="使用 Azure 文件存储在云中存储文件数据。"
+    services="storage"
+    documentationcenter=".net"
+    author="seguler"
+    manager="jahogg"
+    editor="tysonn"
+    translationtype="Human Translation" />
+<tags
+    ms.assetid="a1e8c99e-47a6-43a9-9541-c9262eb00b38"
+    ms.service="storage"
+    ms.workload="storage"
+    ms.tgt_pltfrm="na"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.date="02/28/2017"
+    wacn.date="04/24/2017"
+    ms.author="seguler"
+    ms.sourcegitcommit="a114d832e9c5320e9a109c9020fcaa2f2fdd43a9"
+    ms.openlocfilehash="7474a07034e464d8f0c6438ecda7c4042d21e886"
+    ms.lasthandoff="04/14/2017" />
 
-
-<tags ms.service="storage"
-	ms.workload="storage"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="10/10/2016"
-	wacn.date="11/07/2016"
-	ms.author="seguler;robinsh" />  
-
-
-# 如何通过 C++ 使用文件存储
-
+# <a name="how-to-use-file-storage-from-c"></a>如何通过 C++ 使用文件存储
 [AZURE.INCLUDE [storage-selector-file-include](../../includes/storage-selector-file-include.md)]
 [AZURE.INCLUDE [storage-file-overview-include](../../includes/storage-file-overview-include.md)]
 
-## 关于本教程
-
-在本教程中，会学习如何针对 Azure 文件存储服务执行基本操作。通过以 C++ 编写的示例，学习如何创建共享和目录，以及如何上传、列出和删除文件。如果不熟悉 Azure 文件存储服务，学习后续部分的概念对于理解示例会很有帮助。
+## <a name="about-this-tutorial"></a>关于本教程
+在本教程中，会学习如何针对 Azure 文件存储服务执行基本操作。 通过以 C++ 编写的示例，学习如何创建共享和目录，以及如何上传、列出和删除文件。 如果不熟悉 Azure 文件存储服务，学习后续部分的概念对于理解示例会有帮助。
 
 [AZURE.INCLUDE [storage-file-concepts-include](../../includes/storage-file-concepts-include.md)]
 
 [AZURE.INCLUDE [storage-create-account-include](../../includes/storage-create-account-include.md)]
 
-## 创建 C++ 应用程序
-
-若要生成示例，需要安装用于 C++ 的 Azure 存储客户端库 2.4.0。此外，你应该已经创建了一个 Azure 存储帐户。
+## <a name="create-a-c-application"></a>创建 C++ 应用程序
+若要生成示例，需要安装用于 C++ 的 Azure 存储客户端库 2.4.0。 此外，你应该已经创建了一个 Azure 存储帐户。
 
 若要安装用于 C++ 的 Azure 存储客户端 2.4.0，可以使用以下方法之一：
 
@@ -43,32 +43,28 @@
 
 	Install-Package wastorage
 
-## 设置应用程序以使用文件存储
-
+## <a name="set-up-your-application-to-use-file-storage"></a>设置应用程序以使用文件存储
 将以下 include 语句添加到 C++ 文件的顶部，会在此使用 Azure 存储 API 来访问文件：
 
-	#include "was/storage_account.h"
-	#include "was/file.h"
+    #include <was/storage_account.h>
+    #include <was/file.h>
 
-## 设置 Azure 存储连接字符串
-
-若要使用文件存储，你需要连接到你的 Azure 存储帐户。第一步是配置连接字符串，我们会使用该字符串连接到存储帐户。为此，我们需要定义一个静态变量。
+## <a name="set-up-an-azure-storage-connection-string"></a>设置 Azure 存储连接字符串
+若要使用文件存储，你需要连接到你的 Azure 存储帐户。 第一步是配置连接字符串，我们会使用该字符串连接到存储帐户。 为此，我们需要定义一个静态变量。
 
 	// Define the connection-string with your values.
 	const utility::string_t 
 	storage_connection_string(U("DefaultEndpointsProtocol=https;AccountName=your_storage_account;AccountKey=your_storage_account_key;EndpointSuffix=core.chinacloudapi.cn"));
 
-## 连接到 Azure 存储帐户
-
-可以使用 **cloud\_storage\_account** 类来表示您的存储帐户信息。若要从存储连接字符串中检索您的存储帐户信息，您可以使用 **parse** 方法。
+## <a name="connecting-to-an-azure-storage-account"></a>连接到 Azure 存储帐户
+可使用 **cloud_storage_account** 类来表示存储帐户信息。 若要从存储连接字符串中检索存储帐户信息，可以使用 **parse** 方法。
 
 	// Retrieve storage account from connection string.	
 	azure::storage::cloud_storage_account storage_account = 
 	  azure::storage::cloud_storage_account::parse(storage_connection_string);
 
-## 如何：创建共享
-
-文件存储中的所有文件和目录都位于名为 **Share** 的容器内。存储帐户可以拥有无数的共享，只要帐户容量允许。若要获得共享及其内容的访问权限，你需要使用文件存储客户端。
+## <a name="how-to-create-a-share"></a>如何：创建共享
+文件存储中的所有文件和目录都位于名为 **Share**的容器内。 存储帐户可以拥有无数的共享，只要帐户容量允许。 若要获得共享及其内容的访问权限，你需要使用文件存储客户端。
 
 	// Create the file storage client.
 	azure::storage::cloud_file_client file_client = 
@@ -80,7 +76,7 @@
 	azure::storage::cloud_file_share share = 
       file_client.get_share_reference(_XPLATSTR("my-sample-share"));
 
-若要创建共享，可使用 **cloud\_file\_share** 对象的 **create\_if\_not\_exists** 方法。
+若要创建共享，可使用 **cloud_file_share** 对象的 **create_if_not_exists** 方法。
 
 	if (share.create_if_not_exists()) {	
 		std::wcout << U("New share created") << std::endl;	
@@ -88,11 +84,10 @@
 
 此时，**share** 保留对名为 **my-sample-share** 的共享的引用。
 
-## 如何：上载文件
+## <a name="how-to-upload-a-file"></a>如何：上载文件
+Azure 文件存储共享至少包含文件所在的根目录。 在本部分，你将学习如何将文件从本地存储上载到共享所在的根目录。
 
-Azure 文件存储共享至少包含文件所在的根目录。在本部分，你将学习如何将文件从本地存储上载到共享所在的根目录。
-
-上载文件的第一步是获取对文件所在的目录的引用。为此，需要调用共享对象的 **get\_root\_directory\_reference** 方法。
+上载文件的第一步是获取对文件所在的目录的引用。 为此，需要调用共享对象的 **get_root_directory_reference** 方法。
 
 	//Get a reference to the root directory for the share.
 	azure::storage::cloud_file_directory root_dir = share.get_root_directory_reference();
@@ -117,9 +112,8 @@ Azure 文件存储共享至少包含文件所在的根目录。在本部分，�
 	  root_dir.get_file_reference(_XPLATSTR("my-sample-file-3"));
 	file4.upload_from_file(_XPLATSTR("DataFile.txt"));	
 
-## 如何：创建目录
-
-也可以将文件置于子目录中，不必将其全部置于根目录中，以便对存储进行有效的组织。Azure 文件存储服务可以创建任意数目的目录，只要你的帐户允许。下面的代码会在根目录下创建一个名为 **my-sample-directory** 的目录，以及一个名为 **my-sample-subdirectory** 的子目录。
+## <a name="how-to-create-a-directory"></a>如何：创建目录
+也可以将文件置于子目录中，不必将其全部置于根目录中，以便对存储进行有效的组织。 Azure 文件存储服务允许你创建帐户允许的任意数目的目录。 下面的代码会在根目录下创建一个名为 **my-sample-directory** 的目录，以及一个名为 **my-sample-subdirectory** 的子目录。
 	
 	// Retrieve a reference to a directory
 	azure::storage::cloud_file_directory directory = share.get_directory_reference(_XPLATSTR("my-sample-directory"));
@@ -132,9 +126,8 @@ Azure 文件存储共享至少包含文件所在的根目录。在本部分，�
 	  directory.get_subdirectory_reference(_XPLATSTR("my-sample-subdirectory"));
 	subdirectory.create_if_not_exists();
 
-## 如何：列出共享中的文件和目录
-
-通过针对 **cloud\_file\_directory** 引用调用 **list\_files\_and\_directories**，可以轻松获取共享中文件和目录的列表。若要访问返回的 **list\_file\_and\_directory\_item** 的丰富属性和方法集，必须调用 **list\_file\_and\_directory\_item.as\_file** 方法以获取 **cloud\_file** 对象，或调用 **list\_file\_and\_directory\_item.as\_directory** 方法以获取 **cloud\_file\_directory** 对象。
+## <a name="how-to-list-files-and-directories-in-a-share"></a>如何：列出共享中的文件和目录
+通过针对 **cloud_file_directory** 引用调用 **list_files_and_directories**，可以轻松获取共享内文件和目录的列表。 若要访问返回的 **list_file_and_directory_item** 的丰富属性和方法集，必须调用 **list_file_and_directory_item.as_file** 方法以获取 **cloud_file** 对象，或调用 **list_file_and_directory_item.as_directory** 方法以获取 **cloud_file_directory** 对象。
 
 下面的代码演示如何检索和输出共享的根目录中每一项的 URI。
 
@@ -158,11 +151,10 @@ Azure 文件存储共享至少包含文件所在的根目录。在本部分，�
 	}
 	
 
-## 如何：下载文件
+## <a name="how-to-download-a-file"></a>如何：下载文件
+若要下载文件，请先检索文件引用，然后调用 **download_to_stream** 方法，将文件内容传输到流对象，随后可将该流对象保存到本地本件。 也可使用 **download_to_file** 方法将文件的内容下载到本地文件。 可使用 **download_text** 方法，以文本字符串形式下载文件的内容。
 
-若要下载文件，请先检索文件引用，然后调用 **download\_to\_stream** 方法，以将文件内容传输到流对象，随后可将该流对象保存到本地本件。或者，可以使用 **download\_to\_file** 方法将文件的内容下载到本地文件。可以使用 **download\_text** 方法以文本字符串形式下载文件的内容。
-
-下面的示例使用 **download\_to\_stream** 和 **download\_text** 方法，演示如何下载之前部门中创建的文件。
+下面的示例使用 **download_to_stream** 和 **download_text** 方法，演示如何下载之前部分中创建的文件。
 
 	// Download as text
 	azure::storage::cloud_file text_file = 
@@ -182,9 +174,8 @@ Azure 文件存储共享至少包含文件所在的根目录。在本部分，�
 	outfile.write((char *)&data[0], buffer.size());
 	outfile.close();
 
-## 如何：删除文件
-
-另一项常见的文件存储操作是删除文件。下面的代码删除存储在根目录下的名为 my-sample-file-3 的文件。
+## <a name="how-to-delete-a-file"></a>如何：删除文件
+另一项常见的文件存储操作是删除文件。 下面的代码删除存储在根目录下的名为 my-sample-file-3 的文件。
 
 	// Get a reference to the root directory for the share.	
 	azure::storage::cloud_file_share share = 
@@ -198,8 +189,7 @@ Azure 文件存储共享至少包含文件所在的根目录。在本部分，�
 	
 	file.delete_file_if_exists();
 
-## 如何：删除目录
-
+## <a name="how-to-delete-a-directory"></a>如何：删除目录
 删除目录很简单，但需注意的是，不能删除仍然包含文件或其他目录的目录。
 	
 	// Get a reference to the share.
@@ -219,9 +209,8 @@ Azure 文件存储共享至少包含文件所在的根目录。在本部分，�
 	
 	directory.delete_directory_if_exists();
 
-## 如何：删除共享
-
-删除共享时，可针对 cloud\_file\_share 对象调用 **delete\_if\_exists** 方法。以下是具有此类功能的示例代码。
+## <a name="how-to-delete-a-share"></a>如何：删除共享
+删除共享时，可针对 cloud_file_share 对象调用 **delete_if_exists** 方法。 以下是具有此类功能的示例代码。
 	
 	// Get a reference to the share.
 	azure::storage::cloud_file_share share = 
@@ -230,9 +219,8 @@ Azure 文件存储共享至少包含文件所在的根目录。在本部分，�
 	// delete the share if exists
 	share.delete_share_if_exists();
 
-## 设置文件共享的最大大小
-
-可以使用 GB 作为单位设置文件的配额（或最大大小）。你还可以查看共享当前存储了多少数据。
+## <a name="set-the-maximum-size-for-a-file-share"></a>设置文件共享的最大大小
+可以使用 GB 作为单位设置文件的配额（或最大大小）。 你还可以查看共享当前存储了多少数据。
 
 通过设置一个共享的配额，可以限制在该共享上存储的文件的总大小。如果共享上文件的总大小超过在共享上设定的配额，则客户端将不能增加现有文件的大小或创建新文件，除非这些文件是空的。
 
@@ -260,9 +248,8 @@ Azure 文件存储共享至少包含文件所在的根目录。在本部分，�
 	
 	}
 
-## 为文件或文件共享生成共享访问签名
-
-可以为文件共享或单个文件生成共享访问签名 (SAS)。还可以在文件共享上创建一个共享访问策略以管理共享访问签名。建议创建共享访问策略，因为它提供了一种在受到威胁时撤消 SAS 的方式。
+## <a name="generate-a-shared-access-signature-for-a-file-or-file-share"></a>为文件或文件共享生成共享访问签名
+可以为文件共享或单个文件生成共享访问签名 (SAS)。 还可以在文件共享上创建一个共享访问策略以管理共享访问签名。 建议创建共享访问策略，因为它提供了一种在受到威胁时撤消 SAS 的方式。
 
 以下示例在一个共享上创建共享访问策略，然后使用该策略为共享中的一个文件提供 SAS 约束。
 
@@ -327,16 +314,12 @@ Azure 文件存储共享至少包含文件所在的根目录。在本部分，�
 	
 	}
 
-有关创建和使用共享访问签名的详细信息，请参阅[使用共享访问签名 (SAS)](/documentation/articles/storage-dotnet-shared-access-signature-part-1/)。
+若要深入了解如何创建和使用共享访问签名，请参阅[使用共享访问签名 (SAS)](/documentation/articles/storage-dotnet-shared-access-signature-part-1/)。
 
-## 后续步骤
-
+## <a name="next-steps"></a>后续步骤
 若要了解有关 Azure 存储空间的详细信息，请参阅以下资源：
 
--   [适用于 C++ 的存储客户端库 ](https://github.com/Azure/azure-storage-cpp)
-
--   [Azure 存储空间资源管理器](http://go.microsoft.com/fwlink/?LinkID=822673&clcid=0x409)
-
--   [Azure 存储空间文档](/documentation/services/storage/)
-
-<!---HONumber=Mooncake_1031_2016-->
+* [适用于 C++ 的存储客户端库](https://github.com/Azure/azure-storage-cpp)
+* [Azure 存储空间资源管理器](http://go.microsoft.com/fwlink/?LinkID=822673&clcid=0x409)
+* [Azure 存储空间文档](/documentation/services/storage/)
+<!--Update_Description: wording update; add anchors to H2 titles-->
