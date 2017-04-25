@@ -31,12 +31,12 @@
 
 在以下示例中，请将示例参数名称替换为自己的值。 示例参数名称包括 `myResourceGroup`、`myNetworkSecurityGroup` 和 `myVnet`。
 
-使用 [az 网络 nsg 创建](https://docs.microsoft.com/zh-cn/cli/azure/network/nsg#create)创建网络安全组。 以下示例在 `chinanorth` 位置创建一个名为 `myNetworkSecurityGroup` 的网络安全组：
+使用 [az network nsg create](https://docs.microsoft.com/zh-cn/cli/azure/network/nsg#create)创建网络安全组。 以下示例在 `chinanorth` 位置创建一个名为 `myNetworkSecurityGroup` 的网络安全组：
 
     az network nsg create --resource-group myResourceGroup --location chinanorth \
         --name myNetworkSecurityGroup
 
-借助 [az 网络 nsg 规则创建](https://docs.microsoft.com/zh-cn/cli/azure/network/nsg/rule#create)添加规则以允许 HTTP 流量流向 Web 服务器（或者根据自己的情况（例如 SSH 访问或数据库连接）来调整此规则）。 以下示例创建一个名为 `myNetworkSecurityGroupRule` 的规则，以允许端口 80 上的 TCP 流量：
+借助 [az network nsg rule create](https://docs.microsoft.com/zh-cn/cli/azure/network/nsg/rule#create)添加规则以允许 HTTP 流量流向 Web 服务器（或者根据自己的情况（例如 SSH 访问或数据库连接）来调整此规则）。 以下示例创建一个名为 `myNetworkSecurityGroupRule` 的规则，以允许端口 80 上的 TCP 流量：
 
     az network nsg rule create --resource-group myResourceGroup \
         --nsg-name myNetworkSecurityGroup --name myNetworkSecurityGroupRule \
@@ -44,12 +44,12 @@
         --source-address-prefix '*' --source-port-range '*' \
         --destination-address-prefix '*' --destination-port-range 80 --access allow
 
-借助 [az 网络 nic 更新](https://docs.microsoft.com/zh-cn/cli/azure/network/nic#update)将网络安全组与 VM 的网络接口 (NIC) 相关联。 以下示例将名为 `myNic` 的现有 NIC 与名为 `myNetworkSecurityGroup` 的网络安全组相关联：
+借助 [az network nic update](https://docs.microsoft.com/zh-cn/cli/azure/network/nic#update)将网络安全组与 VM 的网络接口 (NIC) 相关联。 以下示例将名为 `myNic` 的现有 NIC 与名为 `myNetworkSecurityGroup` 的网络安全组相关联：
 
     az network nic update --resource-group myResourceGroup --name myNic \
         --network-security-group myNetworkSecurityGroup
 
-或者，也可以借助 [az 网络 vnet 子网更新](https://docs.microsoft.com/zh-cn/cli/azure/network/vnet/subnet#update)将网络安全组与虚拟网络的子网相关联，而不是只与单个 VM 上的网络接口相关联。 以下示例将 `myVnet` 虚拟网络中名为 `mySubnet` 的现有子网与名为 `myNetworkSecurityGroup` 的网络安全组相关联：
+或者，也可以借助 [az network vnet subnet update](https://docs.microsoft.com/zh-cn/cli/azure/network/vnet/subnet#update)将网络安全组与虚拟网络的子网相关联，而不是只与单个 VM 上的网络接口相关联。 以下示例将 `myVnet` 虚拟网络中名为 `mySubnet` 的现有子网与名为 `myNetworkSecurityGroup` 的网络安全组相关联：
 
     az network vnet subnet update --resource-group myResourceGroup \
         --vnet-name myVnet --name mySubnet --network-security-group myNetworkSecurityGroup

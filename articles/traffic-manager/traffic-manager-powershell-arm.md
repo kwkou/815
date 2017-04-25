@@ -237,11 +237,11 @@ Disable-AzureRmTrafficManagerProfile cmdlet 将提示确认。 可以使用使�
 
         Enable-AzureRmTrafficManagerEndpoint -Name MyEndpoint -Type AzureEndpoints -ProfileName MyProfile -ResourceGroupName MyRG
 
-同样，若要禁用流量管理器终结点，请执行以下操作：
+    同样，若要禁用流量管理器终结点，请执行以下操作：
 
-    Disable-AzureRmTrafficManagerEndpoint -Name MyEndpoint -Type AzureEndpoints -ProfileName MyProfile -ResourceGroupName MyRG -Force
+        Disable-AzureRmTrafficManagerEndpoint -Name MyEndpoint -Type AzureEndpoints -ProfileName MyProfile -ResourceGroupName MyRG -Force
 
-与 `Disable-AzureRmTrafficManagerProfile` 一样，`Disable-AzureRmTrafficManagerEndpoint` cmdlet 也会提示你进行确认。 可以使用“-Force”参数取消该提示。
+    与 `Disable-AzureRmTrafficManagerProfile` 一样，`Disable-AzureRmTrafficManagerEndpoint` cmdlet 也会提示你进行确认。 可以使用“-Force”参数取消该提示。
 
 ## <a name="delete-a-traffic-manager-endpoint"></a>删除流量管理器终结点
 

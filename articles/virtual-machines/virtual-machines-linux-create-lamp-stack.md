@@ -30,10 +30,10 @@
 1. 在本地计算机上根据需要保存和编辑 [azuredeploy.parameters.json 文件](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/lamp-app/azuredeploy.parameters.json)。
 2. 通过运行以下两个命令创建资源组，然后部署模板：
 
-    az group create -l chinanorth -n myResourceGroup
-    az group deployment create -g myResourceGroup \
-        --template-uri https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/lamp-app/azuredeploy.json \
-        --parameters @filepathToParameters.json
+        az group create -l chinanorth -n myResourceGroup
+        az group deployment create -g myResourceGroup \
+            --template-uri https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/lamp-app/azuredeploy.json \
+            --parameters @filepathToParameters.json
 
 ### <a name="deploy-lamp-on-existing-vm"></a>在现有 VM 上部署 LAMP
 以下命令更新包，然后安装 Apache、MySQL 和 PHP：
@@ -45,17 +45,17 @@
 
 1. 使用 [az group create](https://docs.microsoft.com/zh-cn/cli/azure/group#create) 创建资源组，使之包含新的 VM：
 
-    az group create -l chinanorth -n myResourceGroup
+        az group create -l chinanorth -n myResourceGroup
 
-若要创建 VM 本身，可以使用在 [GitHub 上的此处](https://github.com/Azure/azure-quickstart-templates/tree/master/lamp-app)找到的已编写好的 Azure Resource Manager 模板。
+    若要创建 VM 本身，可以使用在 [GitHub 上的此处](https://github.com/Azure/azure-quickstart-templates/tree/master/lamp-app)找到的已编写好的 Azure Resource Manager 模板。
 
 2. 在本地计算机上保存 [azuredeploy.parameters.json 文件](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/lamp-app/azuredeploy.parameters.json)。
 3. 将 **azuredeploy.parameters.json** 文件编辑成首选的输入。
 4. 使用 [az group deployment create] 部署模板，引用下载的 json 文件：
 
-    az group deployment create -g myResourceGroup \
-        --template-uri https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/lamp-app/azuredeploy.json \
-        --parameters @filepathToParameters.json
+        az group deployment create -g myResourceGroup \
+            --template-uri https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/lamp-app/azuredeploy.json \
+            --parameters @filepathToParameters.json
 
 输出类似于以下示例：
 

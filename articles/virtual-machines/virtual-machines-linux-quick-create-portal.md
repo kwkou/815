@@ -70,7 +70,7 @@
 
 3. 运行以下命令创建 SSH 会话。 将连接字符串替换为从 Azure 门户预览复制的值。
 
-    ssh <replace with IP address>
+        ssh <replace with IP address>
 
 ## <a name="delete-virtual-machine"></a>删除虚拟机
 

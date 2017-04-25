@@ -70,6 +70,8 @@
 - 创建名为 `mySubnetPool`
 - 创建一个名为 `myBackEndPool` 的后端 IP 池
 
+<br/>
+
     az network lb create --resource-group myResourceGroup --location chinanorth \
       --name myLoadBalancer --public-ip-address myPublicIP \
       --frontend-ip-name myFrontEndPool --backend-pool-name myBackEndPool

@@ -64,7 +64,7 @@
 
 * 资源组名称（通常适用于第一个 Azure 资源组的任何字符串）
 * VM 名称
-* 位置（`chinanorth` 或 `chinanorth` 都是合理的默认值）
+* 位置（`chinanorth` 或 `chinaeast` 都是合理的默认值）
 * linux（为了让 Azure 知道用户需要哪个 OS）
 * username
 

@@ -2,7 +2,5 @@
 
 运行脚本示例后，可以使用以下命令删除资源组、应用服务应用以及所有相关资源。
 
-azurecli
-
     az group delete --name myResourceGroup
 

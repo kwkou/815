@@ -27,11 +27,9 @@
 
 必要时，请使用 [Azure PowerShell 指南](https://docs.microsoft.com/zh-cn/powershell/azureps-cmdlets-docs/)中的说明安装 Azure PowerShell。 同时，请确保：
 
-- 已使用 `az login` 命令创建与 Azure 的连接。
+- 已使用 `Login-AzureRmAccount -EnvironmentName AzureChinaCloud` 命令创建与 Azure 的连接。
 - 你可以访问域注册机构的 DNS 配置页。
 - 你有要上载和绑定的 SSL 证书的有效 .PFX 文件及其密码。
-
-[AZURE.INCLUDE [azure-cli-2-azurechinacloud-environment-parameter](../../includes/azure-cli-2-azurechinacloud-environment-parameter.md)]
 
 ## <a name="sample-script"></a>示例脚本
 
