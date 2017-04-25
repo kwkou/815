@@ -179,16 +179,16 @@
 2. 在 **simulateddevice** 文件夹的命令提示符处，运行下述命令以安装 **azure-iot-device** 设备 SDK 包和 **azure-iot-device-mqtt** 包：
    
     
-	npm install azure-iot-device azure-iot-device-mqtt --save
+	    npm install azure-iot-device azure-iot-device-mqtt --save
     
 3. 在 **simulateddevice** 文件夹中，利用文本编辑器创建 **SimulatedDevice.js** 文件。
 4. 在 **SimulatedDevice.js** 文件的开头添加以下 `require` 语句：
    
-    
-	'use strict';
-   
-	var clientFromConnectionString = require('azure-iot-device-mqtt').clientFromConnectionString;
-	var Message = require('azure-iot-device').Message;
+        
+    	'use strict';
+       
+    	var clientFromConnectionString = require('azure-iot-device-mqtt').clientFromConnectionString;
+    	var Message = require('azure-iot-device').Message;
     
 5. 添加 **connectionString** 变量，并使用它创建一个**客户端**实例。 将 **{youriothostname}** 替换为在 *创建 IoT 中心* 部分创建的 IoT 中心名称。 将 **{yourdevicekey}** 替换为在 *创建设备标识* 部分中生成的设备密钥值：
    

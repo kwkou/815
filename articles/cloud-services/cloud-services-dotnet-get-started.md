@@ -572,7 +572,7 @@ ContosoAdsContext 类指定 DbSet 集合中使用的 Ad 类，实体框架将存
 
 ### <a name="contosoadsweb---layoutcshtml"></a>ContosoAdsWeb - \_Layout.cshtml
 
-*_Layout.cshtml* 文件设置页眉和页脚中的应用程序，并创建“广告”菜单项。
+*_Layout.cshtml*  文件设置页眉和页脚中的应用程序，并创建“广告”菜单项。
 
 ### <a name="contosoadsweb---viewshomeindexcshtml"></a>ContosoAdsWeb - Views\Home\Index.cshtml
 

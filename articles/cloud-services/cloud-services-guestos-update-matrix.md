@@ -182,7 +182,7 @@ Windows Server 2016 将于 2016 年 11 月 1 日作为 OS 系列 5 推出，提�
 ## <a name="how-it-works"></a> 来宾 OS 系统更新过程
 本页包含有关即将发布的来宾 OS 版本的信息。客户已表明想知道什么时候发行版本，因为如果未设为“自动”更新，他们的云服务角色将重新启动。来宾 OS 发行版本通常会在每月第二个星期二发布 MSRC 更新之后的至少 5 天发布。新版本包含针对每个来宾 OS 系列的所有相关 MSRC 修补程序。
 
-Azure 不断地发布更新。来宾 OS 只不过是此类更新的其中一种。一个发行版本会受到许多因素影响，不胜列举。此外，Azure 实际上在成千上万的计算机上运行。这意味着无法提供重新启动你角色的准确日期和时间。我们将使用最新信息更新[来宾 OS 更新 RSS 源][rss]，但会考虑到其时间和近似时间范围。我们意识到这对于客户构成问题，并正在致力于限制重新启动或为重新启动定时的计划。
+Azure 不断地发布更新。来宾 OS 只不过是此类更新的其中一种。一个发行版本会受到许多因素影响，不胜列举。此外，Azure 实际上在成千上万的计算机上运行。这意味着无法提供重新启动你角色的准确日期和时间。我们将使用最新信息更新来宾 OS 更新 RSS 源，但会考虑到其时间和近似时间范围。我们意识到这对于客户构成问题，并正在致力于限制重新启动或为重新启动定时的计划。
 
 在发布新的来宾 OS 发行版本时，可能需要一段时间才能在 Azure 中完全传播。在将服务更新为新的来宾 OS 时，将重新启动这些服务以满足更新域限制。设置为使用“自动”更新的服务将先获取发行版本。在更新后，将会在 Azure 经典管理门户中看到为你的服务列出新的来宾 OS 版本。在此期间，可能会发布再发行版本。某些版本可能需要较长的部署时间，可能不会在正式发行日期后的几个星期内执行自动升级重新启动。在来宾 OS 可用后，你可以从门户或配置文件中显式选择该版本。
 
@@ -195,7 +195,6 @@ Azure 不断地发布更新。来宾 OS 只不过是此类更新的其中一种�
 
 [Install .NET on a Cloud Service Role]: /documentation/articles/cloud-services-dotnet-install-dotnet/?WT.mc_id=azurebg_email_Trans_963_RevisedNET_Update
 [Azure Guest OS Update Settings]: /documentation/articles/cloud-services-how-to-configure/
-[rss]: http://sxp.microsoft.com/feeds/3.0/msdntn/WindowsAzureOSUpdates
 [ssl3 announcement]: http://azure.microsoft.com/blog/2014/12/09/azure-security-ssl-3-0-update/
 [Microsoft Security Advisory 3009008]: https://technet.microsoft.com/zh-cn/library/security/3009008.aspx
 [ssl3-fixit]: http://go.microsoft.com/?linkid=9863266

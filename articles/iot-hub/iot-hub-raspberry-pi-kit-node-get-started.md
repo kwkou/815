@@ -25,7 +25,7 @@
     ms.lasthandoff="04/14/2017" />
 
 # <a name="connect-your-raspberry-pi-3-device-to-your-iot-hub-using-nodejs"></a>使用 Node.js 将 Raspberry Pi 3 设备连接到 IoT 中心
-[AUZRE.SELECTOR]
+[AZURE.SELECTOR]
 - [Node.JS](/documentation/articles/iot-hub-raspberry-pi-kit-node-get-started/)
 - [C](/documentation/articles/iot-hub-raspberry-pi-kit-c-get-started/)
 

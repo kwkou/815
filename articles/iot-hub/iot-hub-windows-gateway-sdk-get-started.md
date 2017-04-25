@@ -37,8 +37,8 @@
     生成脚本将 **logger.dll** 放在 **build\\modules\\logger\\Debug** 文件夹中，将 **hello_world.dll** 放在 **build\\modules\\hello_world\\Debug** 文件夹中。 按以下 JSON 设置文件中所示，将这些路径用于 **module path** 值。
 2. Hello_world_sample 过程使用 JSON 配置文件的路径作为命令行中的参数。 以下示例 JSON 文件已在 **azure-iot-gateway-sdk\samples\hello_world\src\hello_world_win.json** 中作为存储库的一部分提供。 除非你修改了生成脚本，将模块或示例可执行文件放置在非默认位置，否则，此脚本将按原样运行。 
 
-   > [AZURE.NOTE]
-   > 模块路径相对 hello_world_sample.exe 所在的目录。 示例 JSON 配置文件默认为在当前工作目录中写入“log.txt”。
+    > [AZURE.NOTE]
+    > 模块路径相对 hello_world_sample.exe 所在的目录。 示例 JSON 配置文件默认为在当前工作目录中写入“log.txt”。
 
         {
           "modules": [
