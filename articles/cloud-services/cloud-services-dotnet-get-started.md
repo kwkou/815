@@ -330,7 +330,7 @@ Web 角色项目和辅助角色项目的 azure 存储帐户连接字符串存储
 
 	![摘要步骤](./media/cloud-services-dotnet-get-started/pubsummary.png)
 
-   “Azure 活动日志”窗口将在 Visual Studio 中打开。
+    “Azure 活动日志”窗口将在 Visual Studio 中打开。
 
 5. 单击右箭头图标以展开部署详细信息。
 
