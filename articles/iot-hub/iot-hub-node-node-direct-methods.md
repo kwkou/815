@@ -1,11 +1,12 @@
 <properties
     pageTitle="Azure IoT 中心直接方法 (Node) | Azure"
-    description="如何使用 Azure IoT 中心直接方法。使用 Azure IoT SDK for Node.js 实现包含直接方法的模拟设备应用和调用直接方法的服务应用。"
+    description="如何使用 Azure IoT 中心直接方法。 使用 Azure IoT SDK for Node.js 实现包含直接方法的模拟设备应用和调用直接方法的服务应用。"
     services="iot-hub"
     documentationcenter=""
     author="nberdy"
     manager="timlt"
-    editor="" />
+    editor=""
+    translationtype="Human Translation" />
 <tags
     ms.assetid="ea9c73ca-7778-4e38-a8f1-0bee9d142f04"
     ms.service="iot-hub"
@@ -14,33 +15,35 @@
     ms.tgt_pltfrm="na"
     ms.workload="na"
     ms.date="01/11/2017"
-    wacn.date="02/10/2017"
-    ms.author="nberdy" />  
+    wacn.date="04/24/2017"
+    ms.author="nberdy"
+    ms.sourcegitcommit="a114d832e9c5320e9a109c9020fcaa2f2fdd43a9"
+    ms.openlocfilehash="f7ac52363ea34484fa8a148e6e0ff5041a871ec7"
+    ms.lasthandoff="04/14/2017" />
 
-
-# 使用直接方法 \(Node\)
+# <a name="use-direct-methods-on-your-iot-device-with-nodejs"></a>通过 Node.js 使用 IoT 设备上的直接方法
 [AZURE.INCLUDE [iot-hub-selector-c2d-methods](../../includes/iot-hub-selector-c2d-methods.md)]
 
-在本教程结束时，你将拥有两个 Node.js 控制台应用：
+在本教程结束时，将会创建两个 Node.js 控制台应用：
 
 * **CallMethodOnDevice.js**，用于在模拟设备应用上调用方法并显示响应。
 * **SimulatedDevice.js**，可使用前面创建的设备标识连接到 IoT 中心，并响应通过云调用的方法。
 
 > [AZURE.NOTE]
-[Azure IoT SDK][lnk-hub-sdks] 文章介绍了 Azure IoT SDK，这些 SDK 可用于构建在设备和解决方案后端运行的应用程序。
+> [Azure IoT SDK][lnk-hub-sdks] 文章介绍了 Azure IoT SDK，这些 SDK 可用于构建在设备和解决方案后端运行的应用程序。
 > 
 > 
 
 要完成本教程，需要具备以下先决条件：
 
 * Node.js 0.10.x 或更高版本。
-* 有效的 Azure 帐户。（如果没有帐户，只需花费几分钟就能创建一个[帐户][lnk-free-trial]。）
+* 有效的 Azure 帐户。 （如果没有帐户，只需花费几分钟就能创建一个[帐户][lnk-free-trial]。）
 
 [AZURE.INCLUDE [iot-hub-get-started-create-hub](../../includes/iot-hub-get-started-create-hub.md)]
 
 [AZURE.INCLUDE [iot-hub-get-started-create-device-identity](../../includes/iot-hub-get-started-create-device-identity.md)]
 
-## 创建模拟设备应用程序
+## <a name="create-a-simulated-device-app"></a>创建模拟设备应用程序
 在本部分，用户需创建一个 Node.js 控制台应用，用于响应通过云调用的方法。
 
 1. 新建名为 **simulateddevice** 的空文件夹。在 **simulateddevice** 文件夹的命令提示符处，使用以下命令创建 package.json 文件。接受所有默认值：
@@ -52,8 +55,8 @@
    
     
         npm install azure-iot-device azure-iot-device-mqtt --save
-    
-3. 在 **simulateddevice** 文件夹中，利用文本编辑器创建新的 **SimulatedDevice.js** 文件。
+
+3. 在 **SimulatedDevice.js** 文件夹中，利用文本编辑器创建新的 **simulateddevice** 文件。
 4. 在 **SimulatedDevice.js** 文件的开头添加以下 `require` 语句：
    
     
@@ -61,10 +64,9 @@
        
         var Mqtt = require('azure-iot-device-mqtt').Mqtt;
         var DeviceClient = require('azure-iot-device').Client;
-    
-5. 添加 **connectionString** 变量，并使用它创建 **DeviceClient** 实例。将 **{device connection string}** 替换为在“创建设备标识”部分创建的设备连接字符串：
-   
-    
+
+5. 添加 **connectionString** 变量，并使用它创建 **DeviceClient** 实例。 将 **{device connection string}** 替换为在“创建设备标识”部分生成的设备连接字符串：
+
         var connectionString = '{device connection string}';
         var client = DeviceClient.fromConnectionString(connectionString, Mqtt);
     
@@ -98,11 +100,11 @@
 8. 保存并关闭 **SimulatedDevice.js** 文件。
 
 > [AZURE.NOTE]
-为简单起见，本教程不实现任何重试策略。在生产代码中，应按 MSDN 文章 [Transient Fault Handling][lnk-transient-faults]（暂时性故障处理）中所述实施重试策略（例如连接重试）。
+> 为简单起见，本教程不实现任何重试策略。 在生产代码中，应按 MSDN 文章 [Transient Fault Handling][lnk-transient-faults]（暂时性故障处理）中所述实施重试策略（例如连接重试）。
 > 
 > 
 
-## 调用设备上的方法
+## <a name="call-a-method-on-a-device"></a>调用设备上的方法
 在此部分中，会创建一个 Node.js 控制台应用，该应用在模拟设备应用上调用方法并随后显示响应。
 
 1. 新建名为 **callmethodondevice** 的空文件夹。在 **callmethodondevice** 文件夹的命令提示符处，使用以下命令创建 package.json 文件。接受所有默认值：
@@ -155,7 +157,7 @@
     
 8. 保存并关闭 **CallMethodOnDevice.js** 文件。
 
-## 运行应用
+## <a name="run-the-apps"></a>运行应用
 现在，已准备就绪，可以运行应用。
 
 1. 在 **simulateddevice** 文件夹的命令提示符处运行以下命令，开始侦听从 IoT 中心发出的方法调用：
@@ -178,8 +180,8 @@
    
     ![][9]  
 
+## <a name="next-steps"></a>后续步骤
 
-## 后续步骤
 本教程中，在 Azure 门户预览中配置了新的 IoT 中心，然后在 IoT 中心的标识注册表中创建了设备标识。你已通过此设备标识启用模拟设备应用的相关功能，使之能够响应通过云调用的方法。你还创建了一个应用，用于调用设备上的方法并显示来自设备的响应。
 
 若要继续了解 IoT 中心入门知识并浏览其他 IoT 方案，请参阅：
@@ -190,16 +192,14 @@
 若要了解如何扩展 IoT 解决方案并在多个设备上计划方法调用，请参阅 [Schedule and broadcast jobs][lnk-tutorial-jobs]（计划和广播作业）教程。
 
 <!-- Images. -->
-
 [7]: ./media/iot-hub-node-node-direct-methods/run-simulated-device.png
 [8]: ./media/iot-hub-node-node-direct-methods/run-callmethodondevice.png
 [9]: ./media/iot-hub-node-node-direct-methods/methods-output.png
 
 <!-- Links -->
-
 [lnk-transient-faults]: https://msdn.microsoft.com/zh-cn/library/hh680901(v=pandp.50).aspx
 
-[lnk-dev-setup]: https://github.com/Azure/azure-iot-sdks/blob/master/doc/get_started/node-devbox-setup.md
+[lnk-dev-setup]: https://github.com/Azure/azure-iot-sdk-node/tree/master/doc/node-devbox-setup.md
 
 [lnk-hub-sdks]: /documentation/articles/iot-hub-devguide-sdks/
 [lnk-free-trial]: /pricing/1rmb-trial/
@@ -214,5 +214,4 @@
 [Process Device-to-Cloud messages]: /documentation/articles/iot-hub-csharp-csharp-process-d2c/
 [IoT 中心入门]: /documentation/articles/iot-hub-node-node-getstarted/
 
-<!---HONumber=Mooncake_0109_2017-->
 <!--Update_Description:update meta properties-->

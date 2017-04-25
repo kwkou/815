@@ -13,8 +13,8 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="na"
-    ms.date="12/15/2016"
-    wacn.date="01/13/2017"
+    ms.date="03/16/2017"
+    wacn.date="04/24/2017"
     ms.author="dobett" />  
 
 
@@ -192,5 +192,4 @@ Azure IoT 中心是一项完全托管的服务，有助于在数百万台设备�
 [Azure 门户预览]: https://portal.azure.cn
 [Azure IoT Suite]: /documentation/services/iot-suite/
 
-<!---HONumber=Mooncake_0109_2017-->
-<!--Update_Description:update wording-->
+<!--Update_Description:update meta properties-->

@@ -13,8 +13,8 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="na"
-    ms.date="12/06/2016"
-    wacn.date="01/13/2017"
+    ms.date="02/24/2017"
+    wacn.date="04/24/2017"
     ms.author="dobett" />  
 
 
@@ -158,5 +158,5 @@ Azure 具有用于创建和处理资源的两个不同的部署模型：[Azure R
 
 [lnk-gateway]: /documentation/articles/iot-hub-linux-gateway-sdk-simulated-device/
 
-<!---HONumber=Mooncake_0109_2017-->
-<!--Update_Description:update wording-->
+
+<!--Update_Description:update meta properties-->
