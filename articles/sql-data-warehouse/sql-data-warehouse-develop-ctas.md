@@ -117,7 +117,7 @@ Create Table As Select (`CTAS`) 是所提供的最重要的 T-SQL 功能之一�
 > 
 > 
 
-## 使用 CTAS 解决不支持的功能
+## <a name="using-ctas-to-work-around-unsupported-features"></a>使用 CTAS 解决不支持的功能
 `CTAS` 还可用于解决以下多种不支持的功能。这往往是一种经过证实的双赢局面，因为代码不但能够兼容，而且通常可以在 SQL 数据仓库中更快速执行。这是完全并行化设计的结果。可以使用 CTAS 解决的方案包括：
 
 * UPDATE 中的 ANSI JOIN

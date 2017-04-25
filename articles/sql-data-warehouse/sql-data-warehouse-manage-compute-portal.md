@@ -27,7 +27,7 @@
 - [REST](/documentation/articles/sql-data-warehouse-manage-compute-rest-api/)
 - [TSQL](/documentation/articles/sql-data-warehouse-manage-compute-tsql/)
 
-## 缩放计算能力
+## <a name="scale-compute-power"></a>缩放计算能力
 
 [AZURE.INCLUDE [SQL Data Warehouse scale DWUs description（SQL 数据仓库缩放 DWU 说明）](../../includes/sql-data-warehouse-scale-dwus-description.md)]
 
