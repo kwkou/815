@@ -130,6 +130,10 @@
 
 通过 Azure 门户预览，此方案为现有应用程序网关配置多站点支持至此操作完毕。
 
+## 后续步骤
+
+通过[应用程序网关 - Web 应用程序防火墙](/documentation/articles/application-gateway-webapplicationfirewall-overview/)了解如何保护网站
+
 <!--Image references-->
 
 [1]: ./media/application-gateway-create-multisite-portal/figure1.png

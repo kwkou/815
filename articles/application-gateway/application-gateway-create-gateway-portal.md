@@ -178,6 +178,8 @@ Azure 应用程序网关需要自己的子网。在创建虚拟网络时，请�
 
 访问[配置 SSL 卸载](/documentation/articles/application-gateway-ssl-portal/)，了解如何配置 SSL 卸载并从 Web 服务器中剥离开销较高的 SSL 解密
 
+了解如何使用应用程序网关的 [Web 应用程序防火墙](/documentation/articles/application-gateway-webapplicationfirewall-overview/)功能保护应用程序。
+
 <!--Image references-->
 
 [1]: ./media/application-gateway-create-gateway-portal/figure1.png
