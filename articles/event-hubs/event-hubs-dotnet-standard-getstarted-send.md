@@ -24,7 +24,7 @@
 # <a name="get-started-sending-messages-to-event-hubs-in-net-standard"></a>在 .NET Standard 中将消息发送到事件中心入门
 
 > [AZURE.NOTE]
-> [GitHub](https://github.com/Azure/azure-event-hubs/tree/master/samples/SampleSender) 上提供了此示例。
+> [GitHub](https://github.com/Azure/azure-event-hubs/tree/master/samples/DotNet/Microsoft.Azure.EventHubs/SampleSender) 上提供了此示例。
 
 本教程演示如何编写 .NET Core 控制台应用程序，以将一组消息发送到事件中心。 可以按原样运行 [GitHub](https://github.com/Azure/azure-event-hubs/tree/master/samples/SampleSender) 解决方案，并将 `EhConnectionString` 和 `EhEntityPath` 字符串替换为事件中心的值，也可以按照本教程中的步骤创建自己的解决方案。
 

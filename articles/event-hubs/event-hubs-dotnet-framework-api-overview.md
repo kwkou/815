@@ -21,7 +21,7 @@
 # 事件中心 .NET Framework API 概述
 本文汇总了一些重要的事件中心 .NET Framework 客户端 API。有两个类别：管理 API 和运行时 API。运行时 API 包括发送和接收消息所需的全部操作。借助管理操作，可以通过创建、更新和删除实体来管理事件中心实体状态。
 
-监视方案跨越管理操作和运行时操作。有关 .NET API 的详细参考文档，请参阅[服务总线 .NET](/dotnet/api) 和 [EventProcessorHost API](/dotnet/api) 参考。
+监视方案跨越管理操作和运行时操作。有关 .NET API 的详细参考文档，请参阅[服务总线 .NET](https://docs.microsoft.com/zh-cn/dotnet/api/) 和 [EventProcessorHost API](https://docs.microsoft.com/zh-cn/dotnet/api/) 参考。
 
 ## 管理 API
 若要执行以下管理操作，必须对事件中心命名空间具有**管理**权限：
@@ -164,7 +164,7 @@
 下面提供了 .NET API 参考：
 
 * [Microsoft.ServiceBus.Messaging](http://docs.microsoft.com/zh-cn/dotnet/api/microsoft.servicebus.messaging)
-* [Microsoft.Azure.ServiceBus.EventProcessorHost](http://docs.microsoft.com/zh-cn/dotnet/api/microsoft.azure.servicebus.eventprocessorhost)
+<!-- Wrong reference here * [Microsoft.Azure.ServiceBus.EventProcessorHost](http://docs.microsoft.com/zh-cn/dotnet/api/microsoft.azure.servicebus.eventprocessorhost)-->
 
 <!---HONumber=Mooncake_0320_2017-->
 <!--Update_Description:new article about dotnet framework api for event hubs-->

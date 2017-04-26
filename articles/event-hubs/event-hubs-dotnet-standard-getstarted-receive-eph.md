@@ -24,7 +24,7 @@
 # <a name="get-started-receiving-messages-with-the-event-processor-host-in-net-standard"></a>使用 .NET Standard 中的事件处理程序主机接收消息入门
 
 > [AZURE.NOTE]
-> [GitHub](https://github.com/Azure/azure-event-hubs/tree/master/samples/SampleEphReceiver) 上提供了此示例。
+> [GitHub](https://github.com/Azure/azure-event-hubs/tree/master/samples/DotNet/Microsoft.Azure.EventHubs/SampleEphReceiver) 上提供了此示例。
 
 本教程显示如何编写 .NET Core 控制台应用程序，以使用 **EventProcessorHost** 从事件中心接收消息。 可以按原样运行 [GitHub](https://github.com/Azure/azure-event-hubs/tree/master/samples/SampleEphReceiver) 解决方案，并将字符串替换为事件中心和存储帐户的值，也可以按照本教程中的步骤创建自己的解决方案。 
 

@@ -32,7 +32,7 @@
 | --- | --- | --- | --- |
 | 批处理 |是 |[Batch REST](https://docs.microsoft.com/rest/api/batchservice) | |
 | 动态生命周期服务 |是 | | |
-| 规模集 |是 |[规模集 REST](https://docs.microsoft.com/rest/api/compute/virtualmachinescalesets) |[规模集资源](https://github.com/Azure/azure-quickstart-templates/search?utf8=%E2%9C%93&q=virtualMachineScaleSets&type=Code) |
+| 规模集 |是 |[规模集 REST](https://docs.microsoft.com/zh-cn/rest/api/virtualmachinescalesets/) |[规模集资源](https://github.com/Azure/azure-quickstart-templates/search?utf8=%E2%9C%93&q=virtualMachineScaleSets&type=Code) |
 | Service Fabric |是 |[Service Fabric Rest](https://docs.microsoft.com/rest/api/servicefabric) | [Service Fabric 架构](https://github.com/Azure/azure-resource-manager-schemas/blob/master/schemas/2016-09-01/Microsoft.ServiceFabric.json) [Microsoft.ServiceFabric](https://github.com/Azure/azure-quickstart-templates/search?utf8=%E2%9C%93&q=%22Microsoft.ServiceFabric%22&type=Code) |
 | 虚拟机 |是 |[VM REST](https://docs.microsoft.com/rest/api/compute/virtualmachines) |[VM 资源](https://github.com/Azure/azure-quickstart-templates/search?utf8=%E2%9C%93&q=%22Microsoft.Compute%2Fvirtualmachines%22&type=Code) |
 | 虚拟机（经典）|有限制 |- |- |
@@ -122,7 +122,7 @@ Azure Active Directory 可以使用 Resource Manager 为订阅启用基于角色
 ## 资源管理器
 | 功能 | 已启用资源管理器 | REST API | 模板格式 |
 | --- | --- | --- | --- |
-| 授权 |是 |[授权 REST](https://docs.microsoft.com/rest/api/authorization) | [角色分配](/documentation/articles/active-directory-users-assign-role-azure-portal/)<br/>[Microsoft.Authorization](https://github.com/Azure/azure-quickstart-templates/search?utf8=%E2%9C%93&q=%22Microsoft.Authorization%22&type=Code) |
+| 授权 |是 |[授权 REST](https://docs.microsoft.com/rest/api/authorization) | [Microsoft.Authorization](https://github.com/Azure/azure-quickstart-templates/search?utf8=%E2%9C%93&q=%22Microsoft.Authorization%22&type=Code) |
 | 资源 |是 |[资源 REST](https://docs.microsoft.com/rest/api/resources) | [Microsoft.Resources](https://github.com/Azure/azure-quickstart-templates/search?utf8=%E2%9C%93&q=%22Microsoft.Resources%22&type=Code) |
 
 ## <a name="resource-providers-and-types"></a> 资源提供程序和类型
@@ -198,7 +198,7 @@ Azure Active Directory 可以使用 Resource Manager 为订阅启用基于角色
 
     az provider show --namespace Microsoft.Web --query "resourceTypes[?resourceType=='sites'].locations"
 
-## 支持的 API 版本
+## <a name="supported-api-versions"></a> 支持的 API 版本
 部署模板时，必须指定要用于创建每个资源的 API 版本。API 版本对应于资源提供程序发布的 REST API 操作版本。资源提供程序启用新功能时，会发布 REST API 的新版本。因此，在模板中指定的 API 版本会影响你可以在模板中指定的属性。通常，在创建模板时，需要选择最新的 API 版本。对于现有模板，你可以决定是要继续使用以前的 API 版本，还是要选择最新版本来更新模板以利用新功能。
 
 ### 门户
