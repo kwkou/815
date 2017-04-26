@@ -1,11 +1,12 @@
 <properties
     pageTitle="使用 PlayReady 动态通用加密 | Azure"
-    description="Azure 媒体服务允许传送受 Microsoft PlayReady DRM 保护的 MPEG-DASH 流、平滑流式处理流和 HTTP 实时流式处理 (HLS) 流。本主题说明如何使用 PlayReady DRM 动态加密。"
+    description="Azure 媒体服务允许你传送受 Microsoft PlayReady DRM 保护的 MPEG-DASH 流、平滑流式处理流和 HTTP 实时流式处理 (HLS) 流。"
     services="media-services"
     documentationcenter=""
     author="juliako"
     manager="erikre"
-    editor="" />
+    editor=""
+    translationtype="Human Translation" />
 <tags
     ms.assetid="548d1a12-e2cb-45fe-9307-4ec0320567a2"
     ms.service="media-services"
@@ -13,133 +14,124 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="get-started-article"
-    ms.date="01/05/2017"
-    wacn.date="04/10/2017"
-    ms.author="juliako" />  
+    ms.date="03/16/2017"
+    wacn.date="04/24/2017"
+    ms.author="juliako"
+    ms.sourcegitcommit="a114d832e9c5320e9a109c9020fcaa2f2fdd43a9"
+    ms.openlocfilehash="0ed5680a59ac884c112a9dfbce5ca561b7967deb"
+    ms.lasthandoff="04/14/2017" />
 
-
-
-#使用 PlayReady DRM 动态通用加密
-
+# <a name="using-playready-dynamic-common-encryption"></a>使用 PlayReady 动态通用加密
 > [AZURE.SELECTOR]
 - [.NET](/documentation/articles/media-services-protect-with-drm/)
 - [Java](https://github.com/southworkscom/azure-sdk-for-media-services-java-samples)
 - [PHP](https://github.com/Azure/azure-sdk-for-php/tree/master/examples/MediaServices)
 
-Azure 媒体服务允许传送受 [Microsoft PlayReady DRM](https://www.microsoft.com/playready/overview/) 保护的 MPEG-DASH 流、平滑流式处理流和 HTTP 实时流式处理 (HLS) 流。PlayReady 是按通用加密 (ISO/IEC 23001-7 CENC) 规范加密的。
+Azure 媒体服务允许你传送受 [Microsoft PlayReady DRM](https://www.microsoft.com/playready/overview/) 保护的 MPEG-DASH 流、平滑流式处理流和 HTTP 实时流式处理 (HLS) 流。 PlayReady 是按通用加密 (ISO/IEC 23001-7 CENC) 规范加密的。
 
-媒体服务提供传送 PlayReady DRM 许可证的服务。媒体服务还提供用于配置所需权限和限制的 API，这样当用户播放受保护的内容时，PlayReady DRM 运行时便会强制实施这些权限和限制。当用户请求受 DRM 保护的内容时，播放器应用程序将从 AMS 许可证服务请求许可证。如果播放器已获授权，AMS 许可证服务将向播放器颁发许可证。PlayReady 许可证包含客户端播放器用来对内容进行解密和流式传输的解密密钥。
+媒体服务提供了用于传送 PlayReady DRM 许可证的服务。 媒体服务还提供用于配置所需权限和限制的 API，这样当用户播放受保护的内容时，PlayReady DRM 运行时便会强制实施这些权限和限制。 当用户请求受 DRM 保护的内容时，播放器应用程序将从 AMS 许可证服务请求许可证。 如果播放器已获授权，AMS 许可证服务将向播放器颁发许可证。 PlayReady 许可证包含客户端播放器用来对内容进行解密和流式传输的解密密钥。
 
+媒体服务支持通过多种方式对发出密钥请求的用户进行授权。 内容密钥授权策略可能受到一种或多种授权限制：开放或令牌限制。 令牌限制策略必须附带由安全令牌服务 (STS) 颁发的令牌。 媒体服务支持采用[简单 Web 令牌](https://msdn.microsoft.com/zh-cn/library/gg185950.aspx#BKMK_2) (SWT) 格式和 [JSON Web 令牌](https://msdn.microsoft.com/zh-cn/library/gg185950.aspx#BKMK_3) (JWT) 格式的令牌。 有关详细信息，请参阅“配置内容密钥授权策略”。
 
-媒体服务支持通过多种方式对发出密钥请求的用户进行授权。内容密钥授权策略可能受到一种或多种授权限制：开放或令牌限制。令牌限制策略必须附带由安全令牌服务 (STS) 颁发的令牌。媒体服务支持采用[简单 Web 令牌](https://msdn.microsoft.com/zh-cn/library/gg185950.aspx#BKMK_2) (SWT) 格式和 [JSON Web 令牌](https://msdn.microsoft.com/zh-cn/library/gg185950.aspx#BKMK_3) (JWT) 格式的令牌。有关详细信息，请参阅“配置内容密钥授权策略”。
+为了充分利用动态加密，你的资产必须包含一组多码率 MP4 文件或多码率平滑流源文件。 你还需要为资产配置传送策略（在本主题后面部分介绍）。 然后，根据你在流 URL 中指定的格式，按需流式处理服务器将确保使用你选定的协议来传送流。 因此，你只需以单一存储格式存储文件并为其付费，然后媒体服务就会基于客户端的每个请求构建并提供相应的 HTTP 响应。
 
-为了充分利用动态加密，资产必须包含一组多码率 MP4 文件或多码率平滑流源文件。还需要配置资产的传送策略（本主题稍后所述）。然后，根据流式处理 URL 中指定的格式，按需流式处理服务器将确保使用选定的协议来传送流。因此，只需以单一存储格式存储文件并为其付费，然后媒体服务就会基于客户端的每个请求构建并提供相应的 HTTP 响应。
-
-开发应用程序以传送受多个 DRM（例如 PlayReady）保护的媒体的开发人员可以参考本主题。本主题介绍如何使用授权策略来配置 PlayReady 许可证传送服务，确保只有经过授权的客户端才能接收 PlayReady 许可证。此外，还介绍如何通过 DASH 使用 PlayReady DRM 进行动态加密。
+开发应用程序以传送受多个 DRM（例如 PlayReady）保护的媒体的开发人员可以参考本主题。 本主题介绍如何使用授权策略来配置 PlayReady 许可证传送服务，确保只有经过授权的客户端才能接收 PlayReady。 此外，还介绍如何通过 DASH 使用 PlayReady 进行动态加密。
 
 >[AZURE.NOTE]
-创建 AMS 帐户时，系统会将**默认**流式处理终结点以“已停止”状态添加到用户的帐户。若要开始对内容进行流式处理并利用动态打包和动态加密功能，必须确保要从其流式获取内容的流式处理终结点处于“正在运行”状态。
+>创建 AMS 帐户后，会将一个处于“已停止”状态的**默认**流式处理终结点添加到帐户。 若要开始流式传输内容并利用动态打包和动态加密，要从中流式传输内容的流式处理终结点必须处于“正在运行”状态。 
 
-##下载示例
+## <a name="download-sample"></a>下载示例
+可以从 [此处](https://github.com/Azure-Samples/media-services-dotnet-dynamic-encryption-with-drm)下载本文所述的示例。
 
-可以从[此处](https://github.com/Azure-Samples/media-services-dotnet-dynamic-encryption-with-drm)下载本文所述的示例。
-
-##配置动态通用加密和 DRM 许可证传送服务
+## <a name="configuring-dynamic-common-encryption-and-drm-license-delivery-services"></a>配置动态通用加密和 DRM 许可证传送服务
 
 下面是使用 PlayReady 保护资产时需要执行的常规步骤，这些步骤使用媒体服务许可证传送服务，也使用动态加密。
 
 1. 创建资产并将文件上传到资产。
-1. 将包含文件的资产编码为自适应比特率 MP4 集。
-1. 创建内容密钥并将其与编码资产相关联。在媒体服务中，内容密钥包含资产的加密密钥。
-1. 配置内容密钥授权策略。必须配置内容密钥授权策略，并且客户端必须遵守该策略，才能将内容密钥传送到客户端。
+2. 将包含文件的资产编码为自适应比特率 MP4 集。
+3. 创建内容密钥并将其与编码资产相关联。 在媒体服务中，内容密钥包含资产的加密密钥。
+4. 配置内容密钥授权策略。 你必须配置内容密钥授权策略，客户端必须遵守该策略，才能将内容密钥传送到客户端。
 
-在创建内容密钥授权策略时，需要指定以下信息：传送方法（PlayReady）、限制（开放或令牌），以及用于定义如何将密钥传送到客户端的密钥传送类型的具体信息（[PlayReady](/documentation/articles/media-services-playready-license-template-overview/) 许可证模板）。
-1. 为资产配置传送策略。传送策略配置包括：传送协议（例如 MPEG DASH、HLS、平滑流式处理或全部）、动态加密类型（例如常用加密）、PlayReady 许可证获取 URL。
+    在创建内容密钥授权策略时，需要指定以下信息：传送方法 (PlayReady)、限制（开放或令牌），以及用于定义如何将密钥传送到客户端的密钥传送类型的具体信息（[PlayReady](/documentation/articles/media-services-playready-license-template-overview/) 许可证模板）。
 
-可将不同的策略应用到同一资产上的每个协议。例如，可以将 PlayReady 加密应用到平滑流/DASH，并将 AES 信封应用到 HLS。将阻止流式处理传送策略中未定义的任何协议（例如，添加仅将 HLS 指定为协议的单个策略）。如果你根本没有定义任何传送策略，则情况不是这样。此时，将允许所有明文形式的协议。
-1. 创建 OnDemand 定位符以获取流式处理 URL。
+5. 为资产配置传送策略。 传送策略配置包括：传送协议（例如 MPEG DASH、HLS、平滑流式处理或所有这些协议）、动态加密类型（例如常用加密）、PlayReady 许可证获取 URL。
 
-可在主题末尾找到完整的 .NET 示例。
+    你可以将不同的策略应用到同一资产上的每个协议。 例如，可以将 PlayReady 加密应用到平滑流/DASH，将 AES 信封应用到 HLS。 将阻止流式处理传送策略中未定义的任何协议（例如，添加仅将 HLS 指定为协议的单个策略）。 如果你根本没有定义任何传送策略，则情况不是这样。 此时，将允许所有明文形式的协议。
 
-下图演示了上述工作流。在图中，使用令牌进行了身份验证。
+6. 创建 OnDemand 定位符以获取流 URL。
+
+你可以在主题末尾找到完整的 .NET 示例。
+
+下图演示了上述工作流。 在图中，使用令牌进行了身份验证。
 
 ![使用 PlayReady 进行保护](./media/media-services-content-protection-overview/media-services-content-protection-with-drm.png)
 
 本主题的余下部分提供了详细说明、代码示例和主题链接，向你演示如何完成上述任务。
 
-##当前限制
+## <a name="current-limitations"></a>当前限制
+如果你添加或更新资产的传送策略，则必须删除关联的定位符（如果有）并创建新定位符。
 
-如果添加或更新资产的传送策略，则必须删除关联的定位符（如果有）并创建新定位符。
 
+## <a name="create-an-asset-and-upload-files-into-the-asset"></a>创建资产并将文件上载到资产
+为了对视频进行管理、编码和流式处理，必须首先将内容上传到 Azure 媒体服务中。上传完成后，相关内容即安全地存储在云中供后续处理和流式处理。
 
-##创建资产并将文件上传到资产
+有关详细信息，请参阅 [将文件上载到媒体服务帐户](/documentation/articles/media-services-dotnet-upload-files/)。
 
-为了对视频进行管理、编码和流式处理，必须首先将内容上传到 Azure 媒体服务中。完成上传后，相关内容即安全地存储在云中供后续处理和流式处理。
-
-有关详细信息，请参阅[将文件上载到媒体服务帐户](/documentation/articles/media-services-dotnet-upload-files/)。
-
-##将包含文件的资产编码为自适应比特率 MP4 集。
-
-使用动态加密时，只需创建包含一组多码率 MP4 文件或多码率平滑流源文件的资产。然后，按需流式处理服务器会确保你以选定的协议按清单和分段请求中的指定格式接收流。因此，只需以单一存储格式存储文件并为其付费，然后媒体服务服务就会基于客户端的请求构建并提供相应响应。有关详细信息，请参阅[动态打包概述](/documentation/articles/media-services-dynamic-packaging-overview/)主题。
+## <a name="encode-the-asset-containing-the-file-to-the-adaptive-bitrate-mp4-set"></a>将包含文件的资产编码为自适应比特率 MP4 集。
+使用动态加密时，你只需创建包含一组多码率 MP4 文件或多码率平滑流源文件的资产。 然后，按需流式处理服务器会确保你以选定的协议按清单和分段请求中的指定格式接收流。 因此，你只需以单一存储格式存储文件并为其付费，然后媒体服务服务就会基于客户端的请求构建并提供相应响应。 有关详细信息，请参阅 [动态打包概述](/documentation/articles/media-services-dynamic-packaging-overview/) 主题。
 
 有关如何编码的说明，请参阅[如何使用 Media Encoder Standard 对资产进行编码](/documentation/articles/media-services-dotnet-encode-with-media-encoder-standard/)。
 
-
-##<a id="create_contentkey"></a>创建内容密钥并将其与编码资产相关联
-
+## <a id="create_contentkey"></a>创建内容密钥并将其与编码资产相关联
 在媒体服务中，内容密钥包含用于加密资产的密钥。
 
-有关详细信息，请参阅[创建内容密钥](/documentation/articles/media-services-dotnet-create-contentkey/)。
+有关详细信息，请参阅 [创建内容密钥](/documentation/articles/media-services-dotnet-create-contentkey/)。
 
+## <a id="configure_key_auth_policy"></a>配置内容密钥授权策略
+媒体服务支持通过多种方式对发出密钥请求的用户进行身份验证。 你必须配置内容密钥授权策略，客户端（播放器）必须遵守该策略，才能将密钥传送到客户端。 内容密钥授权策略可能受到一种或多种授权限制：开放或令牌限制。
 
-##<a id="configure_key_auth_policy"></a>配置内容密钥授权策略
+有关详细信息，请参阅 [配置内容密钥授权策略](/documentation/articles/media-services-dotnet-configure-content-key-auth-policy/#playready-dynamic-encryption)。
 
-媒体服务支持通过多种方式对发出密钥请求的用户进行身份验证。必须配置内容密钥授权策略，并且客户端（播放器）必须遵守该策略，才能将密钥传送到客户端。内容密钥授权策略可能受到一种或多种授权限制：开放或令牌限制。
-
-有关详细信息，请参阅[配置内容密钥授权策略](/documentation/articles/media-services-dotnet-configure-content-key-auth-policy/#playready-dynamic-encryption)。
-
-##<a id="configure_asset_delivery_policy"></a>配置资产传送策略 
-
-为资产配置传送策略。资产传送策略配置包括：
+## <a id="configure_asset_delivery_policy"></a>配置资产传送策略
+为资产配置传送策略。 资产传送策略配置包括：
 
 * DRM 许可证获取 URL。
 * 资产传送协议（例如 MPEG DASH、HLS、平滑流式处理或全部）。
 * 动态加密类型（在本示例中为“常用加密”）。
 
-有关详细信息，请参阅[配置资产传送策略](/documentation/articles/media-services-rest-configure-asset-delivery-policy/)。
+有关详细信息，请参阅 [配置资产传送策略 ](/documentation/articles/media-services-rest-configure-asset-delivery-policy/)。
 
-##<a id="create_locator"></a>创建 OnDemand 流定位符以获取流 URL
+## <a id="create_locator"></a>创建 OnDemand 流定位符以获取流 URL
+需要为用户提供平滑流、DASH 或 HLS 的流 URL。
 
-需要为用户提供平滑流、DASH 或 HLS 的流式处理 URL。
+> [AZURE.NOTE]
+> 如果你添加或更新资产的传送策略，则必须删除现有定位符（如果有）并创建新定位符。
+>
+>
 
->[AZURE.NOTE]如果添加或更新资产的传送策略，则必须删除现有定位符（如果有）并创建新定位符。
+有关如何发布资产和生成流 URL 的说明，请参阅 [生成流 URL](/documentation/articles/media-services-deliver-streaming-content/)。
 
-有关如何发布资产和生成流 URL 的说明，请参阅[生成流 URL](/documentation/articles/media-services-deliver-streaming-content/)。
-
-##获取测试令牌
-
+## <a name="get-a-test-token"></a>获取测试令牌
 获取用于密钥授权策略的基于令牌限制的测试令牌。
 
-	// Deserializes a string containing an Xml representation of a TokenRestrictionTemplate
-	// back into a TokenRestrictionTemplate class instance.
-	TokenRestrictionTemplate tokenTemplate = 
-	    TokenRestrictionTemplateSerializer.Deserialize(tokenTemplateString);
-	
-	// Generate a test token based on the data in the given TokenRestrictionTemplate.
-	//The GenerateTestToken method returns the token without the word “Bearer” in front
-	//so you have to add it in front of the token string. 
-	string testToken = TokenRestrictionTemplateSerializer.GenerateTestToken(tokenTemplate);
-	Console.WriteLine("The authorization token is:\nBearer {0}", testToken);
+    // Deserializes a string containing an Xml representation of a TokenRestrictionTemplate
+    // back into a TokenRestrictionTemplate class instance.
+    TokenRestrictionTemplate tokenTemplate =
+        TokenRestrictionTemplateSerializer.Deserialize(tokenTemplateString);
 
-	
+    // Generate a test token based on the data in the given TokenRestrictionTemplate.
+    //The GenerateTestToken method returns the token without the word “Bearer” in front
+    //so you have to add it in front of the token string.
+    string testToken = TokenRestrictionTemplateSerializer.GenerateTestToken(tokenTemplate);
+    Console.WriteLine("The authorization token is:\nBearer {0}", testToken);
+
+
 你可以使用 [AMS Player](http://amsplayer.azurewebsites.net/azuremediaplayer.html) 来测试你的流。
 
-##<a id="example"></a>示例
+## <a id="example"></a>示例
+以下示例演示的功能已引入用于 .Net 的 Azure 媒体服务 SDK - 版本 3.5.2。 以下 Nuget 包命令用于安装该包：
 
-
-以下示例演示了适用于 .Net 的 Azure 媒体服务 SDK 版本 3.5.2 中引入的功能。以下 Nuget 包命令用于安装该包：
-
-	PM> Install-Package windowsazure.mediaservices -Version 3.5.2
+    PM> Install-Package windowsazure.mediaservices -Version 3.5.2
 
 
 1. 创建新的控制台项目。
@@ -163,7 +155,9 @@ Azure 媒体服务允许传送受 [Microsoft PlayReady DRM](https://www.microsof
 		</configuration>
 
 7. 使用本部分中所示的代码覆盖 Program.cs 文件中的代码。
-	
+
+    >[AZURE.NOTE]
+    >不同 AMS 策略的策略限制为 1,000,000 个（例如，对于定位器策略或 ContentKeyAuthorizationPolicy）。 如果始终使用相同的日期/访问权限，则应使用相同的策略 ID，例如，用于要长期就地保留的定位符的策略（非上传策略）。 有关详细信息，请参阅[此](/documentation/articles/media-services-dotnet-manage-entities/#limit-access-policies)主题。
 	请务必将变量更新为指向输入文件所在的文件夹。
 		
 		using System;
@@ -566,5 +560,4 @@ Azure 媒体服务允许传送受 [Microsoft PlayReady DRM](https://www.microsof
 
 
 
-<!---HONumber=Mooncake_0220_2017-->
-<!--Update_Description: add note for creating AMS account-->
+<!--Update_Description: add notes for limits access policy; wording update; add anchors to H2 titles-->

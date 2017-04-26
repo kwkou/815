@@ -1,46 +1,50 @@
 <properties
-	pageTitle="Hyperlapse 媒体文件与 Azure Media Hyperlapse"
-	description="Azure Media Hyperlapse 可以使用第一人称视角或运动相机内容创建流畅缩时视频。本主题说明如何使用 Media Indexer。"
-	services="media-services"
-	documentationCenter=""
-	authors="asolanki"
-	manager="johndeu"
-	editor=""/>
-
+    pageTitle="Hyperlapse 媒体文件与 Azure Media Hyperlapse | Azure"
+    description="Azure Media Hyperlapse 可以使用第一人称视角或运动相机内容创建流畅缩时视频。 本主题说明如何使用 Media Indexer。"
+    services="media-services"
+    documentationcenter=""
+    author="asolanki"
+    manager="johndeu"
+    editor=""
+    translationtype="Human Translation" />
 <tags
-	ms.service="media-services"
-	ms.workload="media"
-	ms.tgt_pltfrm="na"
-	ms.devlang="dotnet"
-	ms.topic="article"
-	ms.date="09/19/2016"  
-	wacn.date="11/21/2016"  
-	ms.author="adsolank"/>  
+    ms.assetid="37d54db6-9cf3-4ae9-b3c6-0d29c744e965"
+    ms.service="media-services"
+    ms.workload="media"
+    ms.tgt_pltfrm="na"
+    ms.devlang="dotnet"
+    ms.topic="article"
+    ms.date="03/02/2017"
+    wacn.date="04/24/2017"
+    ms.author="adsolank"
+    ms.sourcegitcommit="a114d832e9c5320e9a109c9020fcaa2f2fdd43a9"
+    ms.openlocfilehash="a8802e4e8192022137960754a13ce5896fe95c72"
+    ms.lasthandoff="04/14/2017" />
 
+# <a name="hyperlapse-media-files-with-azure-media-hyperlapse"></a>Hyperlapse 媒体文件与 Azure Media Hyperlapse
+Azure Media Hyperlapse 是可以使用第一人称视角或运动相机内容创建流畅缩时视频的媒体处理器 (MP)。  Azure 媒体服务的基于云的 Microsoft Hyperlapse 与 [Microsoft Research 的桌面 Hyperlapse Pro 和手机版 Hyperlapse Mobile](http://aka.ms/hyperlapse) 相似，它运用大规模的 Azure 媒体服务媒体处理平台来实现水平缩放，以及并行化批量 Hyperlapse 处理。
 
-# Hyperlapse 媒体文件与 Azure Media Hyperlapse
+> [AZURE.IMPORTANT]
+> Microsoft Hyperlapse 最适合用于通过移动相机拍摄第一人称视角内容。  尽管静态相机镜头仍可运行，但 Azure 媒体 Hyperlapse 媒体处理器无法保证其他类型内容的性能及质量。  若要深入了解 Azure 媒体服务的 Microsoft Hyperlapse 并观看一些示例视频，请查看公开预览版的[简介博客文章](http://aka.ms/azurehyperlapseblog)。
+> 
+> 
 
-Azure Media Hyperlapse 是可以使用第一人称视角或运动相机内容创建流畅缩时视频的媒体处理器 (MP)。Azure 媒体服务的基于云的 Microsoft Hyperlapse 与 [Microsoft Research 的桌面 Hyperlapse Pro 和手机版 Hyperlapse Mobile](http://aka.ms/hyperlapse) 相似，它运用大规模的 Azure 媒体服务媒体处理平台来实现水平缩放，以及并行化批量 Hyperlapse 处理。
+Azure Media Hyperlapse 作业接受输入 MP4、MOV 或 WMV 资产文件以及配置文件，以指定视频中要缩时的帧及其速度（例如前 10,000 帧的速度为 2x）。  输出是输入视频经过稳定和缩时转译的结果。
 
->[AZURE.IMPORTANT]Microsoft Hyperlapse 最适合用于通过移动相机拍摄第一人称视角内容。尽管静态相机镜头仍可运行，但 Azure 媒体 Hyperlapse 媒体处理器无法保证其他类型内容的性能及质量。若要深入了解 Azure 媒体服务的 Microsoft Hyperlapse 并观看一些示例视频，请查看公开预览版的[简介博客文章](http://aka.ms/azurehyperlapseblog)。
+有关最新的 Azure Media Hyperlapse 更新，请参阅 [媒体服务博客](https://azure.microsoft.com/zh-cn/blog/topics/media-services/)。
 
-Azure Media Hyperlapse 作业接受输入 MP4、MOV 或 WMV 资产文件以及配置文件，以指定视频中要缩时的帧及其速度（例如前 10,000 帧的速度为 2x）。输出是输入视频经过稳定和缩时转译的结果。
+## <a name="hyperlapse-an-asset"></a>将资产进行 Hyperlapse 处理
 
+首先，请将所需的输入文件上传到 Azure 媒体服务。 
 
+### <a id="configuration"></a>Hyperlapse 的配置预设
+内容上传到媒体服务帐户后，需要构造配置预设。  下表说明了用户指定的字段：
 
-## 将资产进行 Hyperlapse 处理
-
-首先，请将所需的输入文件上传到 Azure 媒体服务。若要深入了解有关上传和管理内容的概念，请阅读[内容管理文章](/documentation/articles/media-services-manage-content/#upload)。
-
-###  <a id="configuration"></a>Hyperlapse 的配置预设
-
-内容上传到媒体服务帐户后，需要构造配置预设。下表说明了用户指定的字段：
-
- 字段 | 说明
--------|-------------
-StartFrame|应开始 Microsoft Hyperlapse 处理时所在的帧。
-NumFrames|要处理的帧数
-Speed|用于加速输入视频的倍数。
+| 字段 | 说明 |
+| --- | --- |
+| StartFrame |应开始 Microsoft Hyperlapse 处理时所在的帧。 |
+| NumFrames |要处理的帧数 |
+| Speed |用于加速输入视频的倍数。 |
 
 下面是采用 JSON 和 XML 格式且符合要求的配置文件示例：
 
@@ -72,8 +76,7 @@ Speed|用于加速输入视频的倍数。
 		}
 	}
 
-###  <a id="sample_code"></a>包含 AMS .NET SDK 的 Microsoft Hyperlapse
-
+### <a id="sample_code"></a> 包含 AMS .NET SDK 的 Microsoft Hyperlapse
 以下方法将媒体文件上传为资产，然后使用 Azure Media Hyperlapse 媒体处理器来创建作业。
 
 > [AZURE.NOTE] 为了使代码正常工作，应该事先在名为“context”的作用域中创建 CloudMediaContext。若要了解详细信息，请阅读[内容管理文章](/documentation/articles/media-services-dotnet-get-started/)。
@@ -194,26 +197,12 @@ Speed|用于加速输入视频的倍数。
 	}
 
 ### <a id="file_types"></a>支持的文件类型
+* MP4
+* MOV
+* WMV
 
-- MP4
-- MOV
-- WMV
-
-
-
-
-
-
-
-
-
-
-
-
-##相关链接
-
+## <a name="related-links"></a>相关链接
 [Azure 媒体服务分析概述](/documentation/articles/media-services-analytics-overview/)
 
 [Azure 媒体分析演示](http://azuremedialabs.azurewebsites.net/demos/Analytics.html)
-
-<!---HONumber=Mooncake_Quality_Review_1202_2016-->
+<!--Update_Description:add latest update reference for Microsoft Hyperlapse-->
