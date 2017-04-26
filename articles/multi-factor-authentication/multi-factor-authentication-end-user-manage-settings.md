@@ -76,6 +76,6 @@
 
 ## <a name="next-steps"></a>后续步骤
 - 在[使用多重身份验证时遇到问题](/documentation/articles/multi-factor-authentication-end-user-troubleshoot/)中获得疑难解答提示和帮助
-- 为不支持多重身份验证的任何应用设置[应用密码](/documentation/articles/multi-factor-authentication-end-user-app-passwords/)。
+
 
 <!---Update_Description: wording update -->
