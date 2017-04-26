@@ -1,12 +1,12 @@
 <properties
-    pageTitle="手机版 Microsoft Authenticator 应用 | Azure"
+    pageTitle="Microsoft Authenticator 应用手机版 | Microsoft 文档"
     description="了解如何升级到最新版本的 Azure Authenticator。"
     services="multi-factor-authentication"
     documentationcenter=""
     author="kgremban"
     manager="femila"
-    editor="curtland" />
-    
+    editor="curtland"
+    translationtype="Human Translation" />
 <tags
     ms.assetid="3065a1ee-f253-41f0-a68d-2bd84af5ffba"
     ms.service="multi-factor-authentication"
@@ -14,29 +14,36 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="12/15/2016"
-    wacn.date="03/16/2017"
-    ms.author="kgremban" />  
+    ms.date="12/25/2016"
+    wacn.date="04/24/2017"
+    ms.author="kgremban"
+    ms.custom="H1Hack27Feb2017"
+    ms.sourcegitcommit="a114d832e9c5320e9a109c9020fcaa2f2fdd43a9"
+    ms.openlocfilehash="c5049647e45c4987a0af289ad122b0f91e5e9b11"
+    ms.lasthandoff="04/14/2017" />
 
-
-# Microsoft Authenticator
+# <a name="get-started-with-the-microsoft-authenticator-app"></a>Microsoft 验证器应用入门
 Microsoft Authenticator 应用在 Azure 帐户（例如，bsimon@contoso.partner.onmschina.cn）、本地工作帐户（例如，bsimon@contoso.com）或 Microsoft 帐户（例如，bsimon@outlook.com）中提供附加安全级别。
 
 该应用以下面两种方式之一工作：
 
-- **通知**。该应用通过将通知推送到智能手机或平板电脑，可帮助防止对帐户进行未经授权的访问，以及停止欺诈性交易。可以直接查看通知，如果该通知是合法的，则选择“验证”。否则，可以选择“拒绝”。有关拒绝通知的信息，请参阅“如何针对多重身份验证使用拒绝并报告欺诈功能”。
-- **密码及验证码**。该应用可用作生成 OAuth 验证码所需的软件令牌。出现提示时，在登录屏幕中输入该应用提供的代码，以及用户名和密码。验证码提供了第二种形式的身份验证。
+- **通知**。 该应用通过将通知推送到智能手机或平板电脑，可帮助防止对帐户进行未经授权的访问，以及停止欺诈性交易。 可以直接查看通知，如果该通知是合法的，则选择“验证” 。 否则，可以选择“拒绝” 。 有关拒绝通知的信息，请参阅“如何针对多重身份验证使用拒绝并报告欺诈功能”。
+- **密码及验证码**。 该应用可用作生成 OAuth 验证码所需的软件令牌。 输入用户名和密码后，在登录屏幕中输入该应用提供的代码。 验证码提供了第二种形式的身份验证。
 
-随着 Microsoft Authenticator 应用的发布，将取代旧的 Azure Authenticator 应用。可以继续使用 Azure Authenticator 应用，不过，如果决定过渡到新的 Microsoft Authenticator 应用，本文可提供帮助。
+Microsoft 验证器应用将替换 Azure 验证器应用。  可以继续使用 Azure Authenticator 应用，不过，如果决定过渡到新的 Microsoft Authenticator 应用，本文可提供帮助。  
 
-## 安装应用
+## <a name="install-the-app"></a>安装应用
 Microsoft Authenticator 应用可用于 [Windows Phone](http://go.microsoft.com/fwlink/?Linkid=825071)、[Android](http://go.microsoft.com/fwlink/?Linkid=825072) 和 [IOS](http://go.microsoft.com/fwlink/?Linkid=825073)。
 
-## 将帐户添加到应用
+## <a name="add-accounts-to-the-app"></a>将帐户添加到应用
 对于要添加到 Microsoft Authenticator 应用的每个帐户，使用以下过程之一。
 
-### 使用 QR 码扫描仪将帐户添加到应用
-1. 转到安全验证设置屏幕。有关如何访问此屏幕的信息，请参阅[更改安全设置](/documentation/articles/multi-factor-authentication-end-user-manage-settings/)。
+### <a name="add-a-personal-microsoft-account-to-the-app"></a>将个人 Microsoft 帐户添加到应用
+
+对于个人 Microsoft 帐户（用于登录到 Outlook.com、Xbox、Skype 等的帐户），只需在 Microsoft 验证器应用中登录到你的帐户。
+
+### <a name="add-a-work-or-school-account-to-the-app-using-the-qr-code-scanner"></a>使用 QR 码扫描仪将工作或学校帐户添加到应用
+1. 转到安全验证设置屏幕。  有关如何访问此屏幕的信息，请参阅[更改安全设置](/documentation/articles/multi-factor-authentication-end-user-manage-settings/#where-to-find-the-settings-page/)。
 2. 选择“Set up”。
 
     ![安全验证设置屏幕上的“配置”按钮](./media/authenticator-app-how-to/azureauthe.png)  
@@ -75,9 +82,8 @@ Microsoft Authenticator 应用可用于 [Windows Phone](http://go.microsoft.com/
 
 ![帐户屏幕](./media/authenticator-app-how-to/accounts.png)  
 
-
-### 手动将帐户添加到应用 <a name="add-an-account-to-the-app-manually"></a>
-1. 转到安全验证设置屏幕。有关如何访问此屏幕的信息，请参阅[更改安全设置](/documentation/articles/multi-factor-authentication-end-user-manage-settings/)。
+### <a name="add-an-account-to-the-app-manually"></a>手动将帐户添加到应用
+1. 转到安全验证设置屏幕。  有关如何访问此屏幕的信息，请参阅[更改安全设置](/documentation/articles/multi-factor-authentication-end-user-manage-settings/)。
 2. 选择“Set up”。
 
     ![安全验证设置屏幕上的“配置”按钮](./media/authenticator-app-how-to/azureauthe.png)  
@@ -111,26 +117,15 @@ Microsoft Authenticator 应用可用于 [Windows Phone](http://go.microsoft.com/
 
 ![帐户屏幕](./media/authenticator-app-how-to/accounts.png)  
 
+### <a name="add-an-account-to-the-app-using-touch-id"></a>使用 Touch ID 将帐户添加到应用
+iOS 上的 Microsoft Authenticator 应用支持 Touch ID。  Azure 多重身份验证允许组织对设备要求提供 PIN。 使用 Touch ID，iOS 用户无需输入 PIN。 而是可以扫描其指纹，然后选择“批准” 。
 
-### 使用 Touch ID 将帐户添加到应用
-iOS 上的 Microsoft Authenticator 应用支持 Touch ID。Azure 多重身份验证允许组织对设备要求提供 PIN。使用 Touch ID，iOS 用户无需输入 PIN。而是可以扫描其指纹，然后选择“批准”。
+使用 Microsoft Authenticator 设置 Touch ID 的过程很简单。 已完成使用 PIN 的普通验证问题。 如果设备支持 Touch ID，Microsoft Authenticator 将自动为该帐户设置它。
 
-使用 Microsoft Authenticator 设置 Touch ID 的过程很简单。已完成使用 PIN 的普通验证问题。如果设备支持 Touch ID，Microsoft Authenticator 将自动为该帐户设置它。
-
-![验证 Touch ID 设置](./media/authenticator-app-how-to/touchid1.png)  
-
+![验证 Touch ID 设置](./media/authenticator-app-how-to/touchid1.png)
 
 随后，需要验证登录时，请选择收到的推送通知，并扫描指纹而不是输入 PIN。
 
-![推送通知](./media/authenticator-app-how-to/touchid2.png)  
+![推送通知](./media/authenticator-app-how-to/touchid2.png)
 
-
-## 卸载旧的 Azure Authentication 应用
-将所有帐户添加到新应用后，可以从手机中卸载旧应用。
-
-## 删除帐户
-若要从 Microsoft Authenticator 应用中删除帐户，请选择帐户，然后选择“删除”。
-
-![“删除”按钮](./media/authenticator-app-how-to/remove.png)  
-
-<!---HONumber=Mooncake_0213_2017-->
+<!---Update_Description: wording update -->

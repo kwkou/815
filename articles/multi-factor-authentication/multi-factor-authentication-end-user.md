@@ -1,5 +1,5 @@
 <properties
-    pageTitle="双重验证入门 | Azure"
+    pageTitle="多重身份验证入门 | Azure"
     description="Azure 多重身份验证页有助于最终用户开始使用 Azure 多重身份验证。"
     services="multi-factor-authentication"
     documentationcenter=""

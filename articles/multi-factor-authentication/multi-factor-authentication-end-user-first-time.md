@@ -1,6 +1,6 @@
 <properties
-    pageTitle="为工作或学校帐户设置双重验证 | Azure"
-    description="公司配置 Azure 多重身份验证时，会提示你注册双重验证。了解如何进行设置。"
+    pageTitle="为工作或学校帐户设置多重身份验证 | Azure"
+    description="公司配置 Azure 多重身份验证时，会提示你注册多重身份验证。了解如何进行设置。"
     services="multi-factor-authentication"
     keywords="如何使用 azure 目录, 云中的 active directory, active directory 教程"
     documentationcenter=""
@@ -20,15 +20,15 @@
     ms.author="kgremban" />  
 
 
-# 将我的帐户设置为使用双重验证
-双重验证是一种额外的安全步骤，可使帐户更难被其他人攻破，从而帮助保护帐户。如果正在阅读本文，可能会收到来自工作或学校管理员的有关多重身份验证的电子邮件。或者，也许会在尝试登录时收到消息，要求你设置其他安全性验证。如果是这种情况，**在完成自动注册过程之前将无法登录**。
+# 将我的帐户设置为使用多重身份验证
+多重身份验证是一种额外的安全步骤，可使帐户更难被其他人攻破，从而帮助保护帐户。如果正在阅读本文，可能会收到来自工作或学校管理员的有关多重身份验证的电子邮件。或者，也许会在尝试登录时收到消息，要求你设置其他安全性验证。如果是这种情况，**在完成自动注册过程之前将无法登录**。
 
-本文可帮助你设置**工作或学校帐户**。如果想为自己的个人 Microsoft 帐户启用双重验证，请参阅[关于双重验证](https://support.microsoft.com/zh-cn/help/12408/microsoft-account-about-two-step-verification)。
+本文可帮助你设置**工作或学校帐户**。如果想为自己的个人 Microsoft 帐户启用多重身份验证，请参阅[关于多重身份验证](https://support.microsoft.com/zh-cn/help/12408/microsoft-account-about-two-step-verification)。
 
 ## 确定如何使用多重身份验证
-双重验证的工作原理是在登录时提示你输入两条标识。首先，我们会像往常一样要求你输入用户名和密码。然后，我们会联系已知的属于你的电话，并确认登录尝试是否合法。
+多重身份验证的工作原理是在登录时提示你输入两条标识。首先，我们会像往常一样要求你输入用户名和密码。然后，我们会联系已知的属于你的电话，并确认登录尝试是否合法。
 
-若要开始设置过程，请尝试按往常的方式登录帐户。如果管理员已将帐户配置为使用双重验证，系统会提示你开始自动注册过程。单击“立即设置”开始执行此过程。
+若要开始设置过程，请尝试按往常的方式登录帐户。如果管理员已将帐户配置为使用多重身份验证，系统会提示你开始自动注册过程。单击“立即设置”开始执行此过程。
 
 ![设置](./media/multi-factor-authentication-end-user-first-time/first.png)  
 
@@ -97,7 +97,7 @@
 4. 单击“Done”（完成）。
 
 ## 后续步骤
-- 更改首选选项并[管理双重验证的设置](/documentation/articles/multi-factor-authentication-end-user-manage-settings/)
+- 更改首选选项并[管理多重身份验证的设置](/documentation/articles/multi-factor-authentication-end-user-manage-settings/)
 - 查看[Microsoft Authenticator 应用](/documentation/articles/microsoft-authenticator-app-how-to/)文章，了解快速、安全的身份验证（即便没有手机网络服务）。
 
 <!---HONumber=Mooncake_0213_2017-->
