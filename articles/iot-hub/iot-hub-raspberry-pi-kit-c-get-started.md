@@ -27,7 +27,7 @@
 - [Node.JS](/documentation/articles/iot-hub-raspberry-pi-kit-node-get-started/)
 - [C](/documentation/articles/iot-hub-raspberry-pi-kit-c-get-started/)
 
-在本教程中，用户将开始学习基础知识，了解如何使用运行 Raspbian 的 Raspberry Pi 3，然后学习如何使用 [Azure IoT 中心](/documentation/articles/iot-hub-what-is-iot-hub/)将设备无缝连接到云。有关 Windows 10 IoT Core 的示例，请访问 [Windows 开发人员中心](http://www.windowsondevices.com/)。
+在本教程中，用户将开始学习基础知识，了解如何使用运行 Raspbian 的 Raspberry Pi 3， 然后将学习如何使用 [Azure IoT 中心](/documentation/articles/iot-hub-what-is-iot-hub/)将设备无缝连接到云。 有关 Windows 10 IoT Core 的示例，请访问 [Windows 开发人员中心](http://www.windowsondevices.com/)。
 
 > [AZURE.NOTE]
 > 希望使用 Docker，还是希望在主机上生成源代码？ 如果希望使用 Docker，请试用 [GitHub](https://github.com/Azure-Samples/iot-hub-c-raspberrypi-docker) 上基于 Docker 的解决方案。
