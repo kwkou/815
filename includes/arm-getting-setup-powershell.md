@@ -28,7 +28,7 @@
 
 打开 Azure PowerShell 命令提示符，然后使用此命令登录到 Azure。
 
-	Login-AzureRmAccount -Environment $(Get-AzureRmEnvironemnt -Name AzureChinaCloud)
+	Login-AzureRmAccount -EnvironmentName AzureChinaCloud
 
 如果有多个 Azure 订阅，你可以使用此命令列出 Azure 订阅。
 
@@ -50,7 +50,7 @@
 通过在 Azure PowerShell 命令提示符下运行以下命令设置当前的 Azure 订阅。将引号内的所有内容（包括 < and > 字符）替换为相应的名称。
 
 	$subscr="<SubscriptionName from the display of Get-AzureRmSubscription>"
-	Select-AzureRmSubscription -SubscriptionName $subscr -Current
+	Select-AzureRmSubscription -SubscriptionName $subscr
 
 有关 Azure 订阅和帐户的详细信息，请参阅[如何：连接到你的订阅](/documentation/articles/powershell-install-configure/#Connect)。
 
