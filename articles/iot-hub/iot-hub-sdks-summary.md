@@ -22,9 +22,7 @@ Azure IoT 设备 SDK 包含的代码可帮助构建连接到 Azure IoT 中心服
 
 以下 IoT 设备 SDK 可以从 GitHub 进行下载：
 
-- [适用于 C 的 Azure IoT 设备 SDK][]，采用 ANSI C (C99) 编写，具有可移植性和广泛的平台兼容性。
 - 适用于 .NET 的 Azure IoT 设备 SDK
-- [适用于 Java 的 Azure IoT 设备 SDK][]
 - 适用于 Python 2.7 的 Azure IoT 设备 SDK
 
 ### 操作系统平台和硬件兼容性
@@ -37,9 +35,6 @@ Azure IoT 设备 SDK 包含的代码可帮助构建连接到 Azure IoT 中心服
 
 Azure IoT 服务 SDK 包含的代码可帮助构建直接与 IoT 中心进行交互以管理设备和安全性的应用程序。
 
-可从 GitHub 下载以下 IoT 服务 SDK：
-
-- [适用于 Java 的 Azure IoT 服务 SDK][]
 
 ## Azure IoT 网关 SDK
 
@@ -53,9 +48,6 @@ Azure IoT 服务 SDK 包含的代码可帮助构建直接与 IoT 中心进行交
 
 - [物联网 (IoT) .NET][]
 - [IoT 中心 REST][]
-- [适用于 C 的 Azure IoT 设备 SDK][]
-- [适用于 Java 的 Azure IoT 设备 SDK][]
-- [适用于 Java 的 Azure IoT 服务 SDK][]
 - [Azure IoT 网关 SDK][]
 
 ## 后续步骤
@@ -68,10 +60,9 @@ Azure IoT 服务 SDK 包含的代码可帮助构建直接与 IoT 中心进行交
 
 
 [Azure IoT SDK]: https://github.com/Azure/azure-iot-sdks/blob/master/readme.md
-[适用于 C 的 Azure IoT 设备 SDK]: https://github.com/Azure/azure-iot-sdks/blob/master/c/readme.md
 [适用于 .NET 的 Azure IoT 设备 SDK]: https://github.com/Azure/azure-iot-sdks/blob/master/csharp/device/readme.md
-[适用于 Java 的 Azure IoT 设备 SDK]: https://github.com/Azure/azure-iot-sdks/blob/master/java/device/readme.md
-[适用于 Java 的 Azure IoT 服务 SDK]: https://github.com/Azure/azure-iot-sdks/blob/master/java/service/readme.md
+
+
 [适用于 Node.js 的 Azure IoT 设备 SDK]: https://github.com/Azure/azure-iot-sdks/blob/master/node/device/readme.md
 [适用于 Node.js 的 Azure IoT 服务 SDK]: https://github.com/Azure/azure-iot-sdks/blob/master/node/service/README.md
 [适用于 Python 2.7 的 Azure IoT 设备 SDK]: https://github.com/Azure/azure-iot-sdks/blob/master/python/device/readme.md
@@ -80,11 +71,9 @@ Azure IoT 服务 SDK 包含的代码可帮助构建直接与 IoT 中心进行交
 [Azure IoT Gateway SDK]: https://github.com/Azure/azure-iot-gateway-sdk/blob/master/README.md
 
 [物联网 (IoT) .NET]: https://msdn.microsoft.com/zh-cn/library/mt488521.aspx
-[适用于 C 的 Azure IoT 设备 SDK]: http://azure.github.io/azure-iot-sdks/c/api_reference/index.html
-[适用于 Java 的 Azure IoT 设备 SDK]: http://azure.github.io/azure-iot-sdks/java/device/api_reference/index.html
+
 [适用于 Node.js 的 Azure IoT 设备 SDK]: http://azure.github.io/azure-iot-sdks/node/api_reference/azure-iot-device/1.0.3/index.html
 [IoT 中心 REST]: https://msdn.microsoft.com/zh-cn/library/mt548492.aspx
-[适用于 Java 的 Azure IoT 服务 SDK]: http://azure.github.io/azure-iot-sdks/java/service/api_reference/index.html
 [适用于 Node.js 的 Azure IoT 服务 SDK]: http://azure.github.io/azure-iot-sdks/node/api_reference/azure-iothub/1.0.3/index.html
 [Azure IoT 网关 SDK]: http://azure.github.io/azure-iot-gateway-sdk/api_reference/c/html/
 [lnk-design]: /documentation/articles/iot-hub-guidance/

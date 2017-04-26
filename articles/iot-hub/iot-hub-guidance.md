@@ -74,7 +74,7 @@ IoT 解决方案存储有关单个设备的数据，例如：
 3. 令牌服务返回令牌。使用 `/devices/{deviceId}` 作为 `resourceURI`（其中 `deviceId` 是要身份验证的设备），并根据 [IoT 中心开发人员指南的安全部分][lnk-devguide-security]创建令牌。令牌服务使用共享访问策略来构造令牌。
 4. 设备直接通过 IoT 中心使用令牌。
 
-> [AZURE.NOTE] 可以使用 .NET 类 [SharedAccessSignatureBuilder][lnk-dotnet-sas] 或 Java 类 [IotHubServiceSasToken][lnk-java-sas] 在令牌服务中创建令牌。
+> [AZURE.NOTE] 可以使用 .NET 类 [SharedAccessSignatureBuilder][lnk-dotnet-sas] 或 Java 类 IotHubServiceSasToken 在令牌服务中创建令牌。
 
 令牌服务可以根据需要设置令牌过期日期。令牌过期时，IoT 中心将断开设备连接。然后，设备必须向令牌服务请求新令牌。如果使用过短的过期时间，会增加设备与令牌服务上的负载。
 
@@ -121,7 +121,7 @@ IoT 解决方案存储有关单个设备的数据，例如：
 [lnk-portal]: https://portal.azure.cn
 [lnk-devguide-messaging]: /documentation/articles/iot-hub-devguide-messaging/
 [lnk-dotnet-sas]: https://msdn.microsoft.com/zh-cn/library/microsoft.azure.devices.common.security.sharedaccesssignaturebuilder.aspx
-[lnk-java-sas]: http://azure.github.io/azure-iot-sdks/java/service/api_reference/com/microsoft/azure/iot/service/auth/IotHubServiceSasToken.html
+
 [IoT 中心配额与限制]: /documentation/articles/iot-hub-devguide-quotas-throttling/
 [lnk-gateway-sdk]: https://github.com/Azure/azure-iot-gateway-sdk
 [lnk-mqtt]: /documentation/articles/iot-hub-mqtt-support/

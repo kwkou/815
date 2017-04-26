@@ -28,7 +28,7 @@
 
 本文中所述的所有内容都基于**序列化程序** SDK 示例。如果你想要遵循这些内容，请参阅适用于 C 语言的 Azure IoT 设备 SDK 中包含的 **simplesample\_amqp** 和 **simplesample\_http** 应用程序。
 
-可以在 GitHub 存储库中找到[**适用于 C 语言的 Azure IoT 设备 SDK**](https://github.com/Azure/azure-iot-sdk-c)，可以在 [C API 参考](http://azure.github.io/azure-iot-sdks/c/api_reference/index.html)中查看 API 的详细信息。
+可以在 GitHub 存储库中找到[**适用于 C 语言的 Azure IoT 设备 SDK**](https://github.com/Azure/azure-iot-sdk-c)，可以在 C API 参考中查看 API 的详细信息。
 
 ## 建模语言
 

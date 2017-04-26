@@ -220,7 +220,7 @@ IoT 中心[操作监视](/documentation/articles/iot-hub-operations-monitoring/)
 连接到云服务时使用重试策略来处理 [暂时性错误][]。
 
 ## <a name="routing-rules"></a> 路由规则
-在 IoT 中心配置[路由规则](/documentation/articles/iot-hub-devguide-messaging/#device-to-cloud-configuration-options)，将设备到云消息路由到[内置终结点](#built-in-endpoints)或[自定义终结点](#custom-endpoints)，以供解决方案后端处理。
+在 IoT 中心配置路由规则，将设备到云消息路由到[内置终结点](#built-in-endpoints)或[自定义终结点](#custom-endpoints)，以供解决方案后端处理。
 
 ## SASL PLAIN
 SASL PLAIN 是一种协议， [AMQP](#advanced-message-queue-protocol) 协议使用它传输安全令牌。

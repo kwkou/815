@@ -28,7 +28,7 @@
 
 我们将使用 **IoTHubClient** SDK 示例来阐释这些主题。如果想要继续，请参阅适用于 C 的 Azure IoT 设备 SDK 中随附的 **iothub\_client\_sample\_http** 和 **iothub\_client\_sample\_amqp** 应用程序。以下部分所述的所有内容都将通过这些示例来演示。
 
-可以在 GitHub 存储库中找到[**适用于 C 语言的 Azure IoT 设备 SDK**](https://github.com/Azure/azure-iot-sdk-c)，可以在 [C API 参考](http://azure.github.io/azure-iot-sdks/c/api_reference/index.html)中查看 API 的详细信息。
+可以在 GitHub 存储库中找到[**适用于 C 语言的 Azure IoT 设备 SDK**](https://github.com/Azure/azure-iot-sdk-c)，可以在 C API 参考中查看 API 的详细信息。
 
 ## 较低级别 API
 

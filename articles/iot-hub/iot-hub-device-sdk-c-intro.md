@@ -28,7 +28,7 @@ SDK 已在许多平台上进行了测试（有关详细信息，请参阅[平台
 本文将介绍适用于 C 语言的 Azure IoT 设备 SDK 的体系结构。我们将演示如何初始化设备库，将事件发送到 IoT 中心，以及从 IoT 中心接收消息。本文中的信息应足以让你开始使用 SDK，但同时也提供了有关库的其他信息的链接。
 
 ## SDK 体系结构
-可以在 GitHub 存储库中找到[**适用于 C 语言的 Azure IoT 设备 SDK**](https://github.com/Azure/azure-iot-sdk-c)，可以在 [C API 参考](http://azure.github.io/azure-iot-sdks/c/api_reference/index.html)中查看 API 的详细信息。
+可以在 GitHub 存储库中找到[**适用于 C 语言的 Azure IoT 设备 SDK**](https://github.com/Azure/azure-iot-sdk-c)，可以在 C API 参考中查看 API 的详细信息。
 
 在此存储库的 **master** 分支中可找到最新版本的库：
 

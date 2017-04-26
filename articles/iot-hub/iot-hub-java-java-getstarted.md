@@ -470,9 +470,9 @@
 <!-- Links -->
 [lnk-transient-faults]: https://msdn.microsoft.com/zh-cn/library/hh680901(v=pandp.50).aspx
 
-[lnk-eventhubs-tutorial]: /documentation/articles/event-hubs-csharp-ephcs-getstarted/
+[lnk-eventhubs-tutorial]: /documentation/articles/event-hubs-dotnet-standard-getstarted-send/
 [lnk-devguide-identity]: /documentation/articles/iot-hub-devguide-identity-registry/
-[lnk-event-hubs-overview]: /documentation/articles/event-hubs-overview/
+[lnk-event-hubs-overview]: /documentation/articles/event-hubs-what-is-event-hubs/
 
 [lnk-dev-setup]: https://github.com/Azure/azure-iot-sdk-java
 [lnk-process-d2c-tutorial]: /documentation/articles/iot-hub-csharp-csharp-process-d2c/
