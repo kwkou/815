@@ -26,7 +26,7 @@
 > 
 
 ### 先决条件
-* 基于 Windows 的 HDInsight 群集。请参阅[在 HDInsight 中创建基于 Windows 的 Hadoop 群集](/documentation/articles/hdinsight-provision-clusters/)。
+* 基于 Windows 的 HDInsight 群集。请参阅[在 HDInsight 中创建基于 Windows 的 Hadoop 群集](/documentation/articles/hdinsight-hadoop-provision-linux-clusters/)。
 
 ## YARN Timeline Server
 <a href="http://hadoop.apache.org/docs/r2.4.0/hadoop-yarn/hadoop-yarn-site/TimelineServer.html" target="_blank">YARN Timeline Server</a> 通过两个不同接口提供完成应用程序的通用信息，以及架构特定应用程序信息。具体而言：

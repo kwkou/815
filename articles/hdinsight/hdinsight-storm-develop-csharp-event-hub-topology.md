@@ -164,7 +164,7 @@ UnicodeEventDataScheme 仅在 9.5 版事件中心组件中提供，该版本可�
 
 ### 先决条件
 
-* 一个 [3\.5 版 Apache Storm on HDInsight 群集](/documentation/articles/hdinsight-apache-storm-tutorial-get-started/)
+* 一个 [3\.5 版 Apache Storm on HDInsight 群集](/documentation/articles/hdinsight-apache-storm-tutorial-get-started-linux/)
 
     > [AZURE.WARNING]
     本文档中使用的示例需要 3.5 版 Storm on HDInsight。由于重大类名更改，该示例不适用于旧版 HDInsight。如需此示例的版本（兼容旧式群集），请参阅 [https://github.com/Azure-Samples/hdinsight-dotnet-java-storm-eventhub/releases](https://github.com/Azure-Samples/hdinsight-dotnet-java-storm-eventhub/releases)。

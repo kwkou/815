@@ -99,7 +99,7 @@ VM 使用下表中的资源，创建 VM 时，这些资源必须存在，否则�
 | [存储帐户](/documentation/articles/storage-create-storage-account/) |是 |VM 需要使用存储帐户来存储其虚拟硬盘。 |
 | [虚拟网络](/documentation/articles/virtual-networks-overview/) |是 |VM 必须是虚拟网络的成员。 |
 | [公共 IP 地址](/documentation/articles/virtual-network-ip-addresses-overview-arm/) |否 |可以向 VM 分配一个公共 IP 地址，以便远程访问它。 |
-| [网络接口](/documentation/articles/virtual-network-network-interface-overview/) |是 |VM 需要使用网络接口在网络中通信。 |
+| [网络接口](/documentation/articles/virtual-network-network-interface/) |是 |VM 需要使用网络接口在网络中通信。 |
 | [数据磁盘数](/documentation/articles/virtual-machines-windows-attach-disk-portal/) |否 |VM 可以包含数据磁盘，以便扩展存储功能。 |
 
 ## 如何创建第一个 VM？
@@ -111,7 +111,7 @@ VM 使用下表中的资源，创建 VM 时，这些资源必须存在，否则�
 | --- | --- |
 | Azure 门户预览 |[使用门户创建运行 Windows 的虚拟机](/documentation/articles/virtual-machines-windows-hero-tutorial/) |
 | 模板 |[使用 Resource Manager 模板创建 Windows 虚拟机](/documentation/articles/virtual-machines-windows-ps-template/) |
-| Azure PowerShell |[使用 PowerShell 创建 Windows VM](/documentation/articles/virtual-machines-windows-ps-create/) |
+| Azure PowerShell |[使用 PowerShell 创建 Windows VM](/documentation/articles/virtual-machines-windows-quick-create-powershell/) |
 | 客户端 SDK |[使用 C# 部署 Azure 资源](/documentation/articles/virtual-machines-windows-csharp/) |
 | REST API |[创建或更新 VM](https://docs.microsoft.com/zh-cn/rest/api/compute/virtualmachines/virtualmachines-create-or-update) |
 

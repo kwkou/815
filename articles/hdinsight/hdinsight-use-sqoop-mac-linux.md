@@ -177,7 +177,7 @@
 * [将数据上载到 HDInsight][hdinsight-upload-data]：了解将数据上载到 HDInsight/Azure Blob 存储的其他方法。
 
 [hdinsight-versions]: /documentation/articles/hdinsight-component-versioning/
-[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters/
+[hdinsight-provision]: /documentation/articles/hdinsight-hadoop-provision-linux-clusters/
 [hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-linux-tutorial-get-started/
 [hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage/
 [hdinsight-analyze-flight-data]: /documentation/articles/hdinsight-analyze-flight-delay-data/

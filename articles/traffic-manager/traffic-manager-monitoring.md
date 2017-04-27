@@ -195,7 +195,7 @@ Azure 不提供有关过去终结点运行状况的历史信息，也不提供�
 
 ## 后续步骤
 
-了解[流量管理器工作原理](/documentation/articles/traffic-manager-how-traffic-manager-works/)
+了解[流量管理器工作原理](/documentation/articles/traffic-manager-overview/)
 
 详细了解流量管理器支持的[流量路由方法](/documentation/articles/traffic-manager-routing-methods/)
 

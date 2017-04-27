@@ -272,7 +272,7 @@
 
 [hdinsight-use-oozie]: /documentation/articles/hdinsight-use-oozie-linux-mac/
 [hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive/
-[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters/
+[hdinsight-provision]: /documentation/articles/hdinsight-hadoop-provision-linux-clusters/
 [hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage/
 [hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data/
 [hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-linux-tutorial-get-started/

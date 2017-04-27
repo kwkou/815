@@ -26,7 +26,7 @@
 **相关文章**
 
 * [在 HDInsight Hadoop 群集 (Linux) 上安装和使用 R](/documentation/articles/hdinsight-hadoop-r-scripts-linux/)
-* [在 HDInsight 中创建 Hadoop 群集](/documentation/articles/hdinsight-provision-clusters/)：有关如何创建 HDInsight 群集的一般信息
+* [在 HDInsight 中创建 Hadoop 群集](/documentation/articles/hdinsight-hadoop-provision-linux-clusters/)：有关如何创建 HDInsight 群集的一般信息
 * [使用脚本操作自定义 HDInsight 群集][hdinsight-cluster-customize]：有关如何使用脚本操作自定义 HDInsight 群集的一般信息
 * [为 HDInsight 开发脚本操作脚本](/documentation/articles/hdinsight-hadoop-script-actions/)
 
@@ -96,7 +96,7 @@ R 与 Azure Blob 存储 (WASB) 兼容，这样，存储在此的数据可以在 
 
 ## 另请参阅
 * [在 HDInsight Hadoop 群集 (Linux) 上安装和使用 R](/documentation/articles/hdinsight-hadoop-r-scripts-linux/)
-* [在 HDInsight 中创建 Hadoop 群集](/documentation/articles/hdinsight-provision-clusters/)：有关如何创建 HDInsight 群集的一般信息
+* [在 HDInsight 中创建 Hadoop 群集](/documentation/articles/hdinsight-hadoop-provision-linux-clusters/)：有关如何创建 HDInsight 群集的一般信息
 * [使用脚本操作自定义 HDInsight 群集][hdinsight-cluster-customize]：有关如何使用脚本操作自定义 HDInsight 群集的一般信息
 * [为 HDInsight 开发脚本操作脚本](/documentation/articles/hdinsight-hadoop-script-actions/)
 * [在 HDInsight 群集上安装和使用 Spark][hdinsight-install-spark]：有关安装 Spark 的脚本操作示例
@@ -104,7 +104,7 @@ R 与 Azure Blob 存储 (WASB) 兼容，这样，存储在此的数据可以在 
 * [在 HDInsight 群集上安装 Solr](/documentation/articles/hdinsight-hadoop-solr-install-linux/)：有关如何安装 Solr 的脚本操作示例。
 
 [powershell-install-configure]: https://docs.microsoft.com/powershell/azureps-cmdlets-docs
-[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters/
+[hdinsight-provision]: /documentation/articles/hdinsight-hadoop-provision-linux-clusters/
 [hdinsight-cluster-customize]: /documentation/articles/hdinsight-hadoop-customize-cluster-linux/
 [hdinsight-install-spark]: /documentation/articles/hdinsight-apache-spark-jupyter-spark-sql/
 

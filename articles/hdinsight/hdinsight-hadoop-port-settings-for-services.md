@@ -49,7 +49,7 @@ HDInsight 群集中的所有节点都在 Azure 虚拟网络中，无法直接从
 
 | 服务 | 端口 | 协议 |群集类型 | 说明 |
 | ------------ | ---- |  ----------- | --- | ----------- |
-| Stargate | 443 | HTTPS | HBase | HBase REST API。请参阅 [Get started using HBase](/documentation/articles/hdinsight-hbase-tutorial-get-started/)（开始使用 HBase） |
+| Stargate | 443 | HTTPS | HBase | HBase REST API。请参阅 [Get started using HBase](/documentation/articles/hdinsight-hbase-tutorial-get-started-linux/)（开始使用 HBase） |
 | Livy | 443 | HTTPS | Spark | Spark REST API。请参阅 [Submit Spark jobs remotely using Livy](/documentation/articles/hdinsight-apache-spark-livy-rest-interface/)（使用 Livy 远程提交 Spark 作业） |
 | Storm | 443 | HTTPS | Storm | Storm Web UI。请参阅 [Deploy and manage Storm topologies on HDInsight](/documentation/articles/hdinsight-storm-deploy-monitor-topology/)（在 HDInsight 上部署和管理 Storm 拓扑）
 

@@ -59,7 +59,7 @@
     > [AZURE.NOTE]
     HDInsight Tools for Visual Studio 不支持 Visual Studio Express
 
-* Apache Storm on HDInsight 群集：参阅 [Apache Storm on HDInsight 入门](/documentation/articles/hdinsight-apache-storm-tutorial-get-started/)了解创建群集的步骤。
+* Apache Storm on HDInsight 群集：参阅 [Apache Storm on HDInsight 入门](/documentation/articles/hdinsight-apache-storm-tutorial-get-started-linux/)了解创建群集的步骤。
 
     > [AZURE.IMPORTANT]
     Linux 是在 HDInsight 3.4 版或更高版本上使用的唯一操作系统。有关详细信息，请参阅 [HDInsight 在 Windows 上弃用](/documentation/articles/hdinsight-component-versioning/#hdi-version-32-and-33-nearing-deprecation-date)。
@@ -707,7 +707,7 @@ SCP.Net 版本 0.9.4.203 引入了专用于事件中心 Spout（从事件中心�
 
 **Apache HBase on HDInsight**
 
-* [HBase on HDInsight 入门](/documentation/articles/hdinsight-hbase-tutorial-get-started/)
+* [HBase on HDInsight 入门](/documentation/articles/hdinsight-hbase-tutorial-get-started-linux/)
 
 <!---HONumber=Mooncake_0327_2017-->
 <!--Update_Description: wording update-->

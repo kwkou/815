@@ -107,7 +107,7 @@ Azure 内部负载均衡器是一种面向 Azure 内部的负载均衡器。只�
 
 ![S2S VPN](./media/aog-general-azure-concept/S2S-VPN.png)
 ## <a id="traffic-manager"></a>Traffic Manager / 流量管理器
-Azure 流量管理器用于控制用户流量的分布，根据需要将用户流量分布到在全球不同数据中心运行的服务终结点。流量管理器支持的服务终结点包括 Azure VM、Web Apps 和云服务。也可将流量管理器用于外部的非 Azure 终结点。流量管理器在DNS级别工作。它使用 DNS 响应将客户端引导到相应的服务终结点。然后客户端直接连接到服务终结点，不通过流量管理器进行连接。流量管理器不是代理，它看不到流量在客户端和服务之间传递。更多详细请阅读[这篇文章](/documentation/articles/traffic-manager-overview/)，[这篇文章](/documentation/articles/traffic-manager-how-traffic-manager-works/)是其工作原理。
+Azure 流量管理器用于控制用户流量的分布，根据需要将用户流量分布到在全球不同数据中心运行的服务终结点。流量管理器支持的服务终结点包括 Azure VM、Web Apps 和云服务。也可将流量管理器用于外部的非 Azure 终结点。流量管理器在DNS级别工作。它使用 DNS 响应将客户端引导到相应的服务终结点。然后客户端直接连接到服务终结点，不通过流量管理器进行连接。流量管理器不是代理，它看不到流量在客户端和服务之间传递。更多详细请阅读[这篇文章](/documentation/articles/traffic-manager-overview/)，[这篇文章](/documentation/articles/traffic-manager-overview/)是其工作原理。
 ## <a id="vip"></a>VIP / Virtual IP address / 虚拟 IP
 虚拟 IP 是允许你从外部访问在 Azure 中部署的资源的 IP 地址。它可以被用于云服务，IaaS 虚拟机，PaaS 角色实例，和应用程序网关。如果需要为 Azure 资源分配虚拟 IP 地址，该 IP 地址将动态地从资源的创建位置中的可用公共 IP 地址池中分配。停止该资源时，此 IP 地址将被释放。对于需要使用固定 IP 的资源，可以使用静态（保留）IP 来实现。
 

@@ -1073,7 +1073,7 @@ Apache Mahout 是 Apache Hadoop 的机器学习库。Mahout 包含用于处理�
 </tr>
 <tr>
 <td><a href = "/documentation/articles/hdinsight-hadoop-customize-cluster" target="_blank">群集自定义正式发布</a></td>
-<td><p>自定义可让你自定义 Azure HDInsight 群集，以搭配使用 Apache Hadoop 生态系统的项目。使用这项新功能，现在可以试验并部署 Hadoop 项目到 Azure HDInsight。这通过启用“脚本操作”功能启用，该功能可以使用自定义脚本，以任意方式修改 Hadoop 群集。此自定义适用于所有类型的 HDInsight 群集，包括 Hadoop、HBase 和 Storm。为了演示这项强大功能，我们记录了过程以安装流行的 <a href = "/documentation/articles/hdinsight-hadoop-spark-install" target="_blank">Spark</a>、<a href = "/documentation/articles/hdinsight-hadoop-r-scripts" target="_blank">R</a><a href = "/documentation/articles/hdinsight-hadoop-solr-install" target="_blank">、Solr</a> 和 <a href = "/documentation/articles/hdinsight-hadoop-giraph-install" target="_blank">Giraph</a> 模块。这个版本还添加了让客户通过 Azure 门户预览指定其自定义脚本操作的功能、提供如何使用帮助器方法生成自定义脚本操作的指导和最佳作法，并提供有关如何测试脚本操作的指导。</p></td>
+<td><p>自定义可让你自定义 Azure HDInsight 群集，以搭配使用 Apache Hadoop 生态系统的项目。使用这项新功能，现在可以试验并部署 Hadoop 项目到 Azure HDInsight。这通过启用“脚本操作”功能启用，该功能可以使用自定义脚本，以任意方式修改 Hadoop 群集。此自定义适用于所有类型的 HDInsight 群集，包括 Hadoop、HBase 和 Storm。为了演示这项强大功能，我们记录了过程以安装流行的 <a href = "/documentation/articles/hdinsight-apache-spark-jupyter-spark-sql" target="_blank">Spark</a>、<a href = "/documentation/articles/hdinsight-hadoop-r-scripts" target="_blank">R</a><a href = "/documentation/articles/hdinsight-hadoop-solr-install" target="_blank">、Solr</a> 和 <a href = "/documentation/articles/hdinsight-hadoop-giraph-install" target="_blank">Giraph</a> 模块。这个版本还添加了让客户通过 Azure 门户预览指定其自定义脚本操作的功能、提供如何使用帮助器方法生成自定义脚本操作的指导和最佳作法，并提供有关如何测试脚本操作的指导。</p></td>
 <td>功能正式发布</td>
 <td>全部</td>
 <td>不适用</td>
@@ -1205,7 +1205,7 @@ Apache Mahout 是 Apache Hadoop 的机器学习库。Mahout 包含用于处理�
 > [AZURE.NOTE]
 为了演示群集自定义所提供的新功能，此过程使用脚本操作在所述的群集上安装 Spark 和 R 模块。有关详细信息，请参阅：
 
-* [在 HDInsight 群集上安装和使用 Spark 1.0](/documentation/articles/hdinsight-hadoop-spark-install/)
+* [在 HDInsight 群集上安装和使用 Spark 1.0](/documentation/articles/hdinsight-apache-spark-jupyter-spark-sql/)
 * [在 HDInsight Hadoop 群集上安装并使用 R](/documentation/articles/hdinsight-hadoop-r-scripts/)
 
 ## HDInsight 2014 年 11 月 7 日发行说明
@@ -1513,7 +1513,7 @@ SQL Server 的 Java 数据库连接 (JDBC) 驱动程序由 HDInsight 在内部�
 
 [webpi-link]: http://go.microsoft.com/?linkid=9811175&clcid=0x409
 
-[hdinsight-install-spark]: /documentation/articles/hdinsight-hadoop-spark-install/
+[hdinsight-install-spark]: /documentation/articles/hdinsight-apache-spark-jupyter-spark-sql/
 [hdinsight-r-scripts]: /documentation/articles/hdinsight-hadoop-r-scripts/
 
 <!---HONumber=Mooncake_0327_2017-->

@@ -163,7 +163,7 @@ Azure 有两个部署模型：Azure Resource Manager 和经典模型。Azure 建
 
 了解如何连接：
 
-- 通过阅读[创建 Windows VM](/documentation/articles/virtual-machines-windows-ps-create/)一文，将虚拟机 (VM) 连接到虚拟网络。可选择将 VM 连接到现有 VNet 和子网，而不按文章中的步骤创建 VNet 和子网。
+- 通过阅读[创建 Windows VM](/documentation/articles/virtual-machines-windows-quick-create-powershell/)一文，将虚拟机 (VM) 连接到虚拟网络。可选择将 VM 连接到现有 VNet 和子网，而不按文章中的步骤创建 VNet 和子网。
 - 通过阅读[连接 VNet](/documentation/articles/vpn-gateway-vnet-vnet-rm-ps/) 一文将虚拟网络连接到其他虚拟网络。
 - 使用站点到站点虚拟专用网络 (VPN) 或 ExpressRoute 线路将虚拟网络连接到本地网络。通过阅读[使用站点到站点 VPN 将 VNet 连接到本地网络](/documentation/articles/vpn-gateway-howto-multi-site-to-site-resource-manager-portal/)和[将 VNet 链接到 ExpressRoute 线路](/documentation/articles/expressroute-howto-linkvnet-arm/)文章，了解操作方法。
 
