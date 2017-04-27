@@ -30,13 +30,16 @@ Service Fabric 为**适用于 Java 开发人员的 Eclipse IDE** 提供插件，
 1. 请确保已安装最新 Eclipse **Neon** 和最新 Buildship（1.0.17 或更高版本）。 可以通过“帮助”>“安装详细信息”检查已安装组件的版本。 可以使用[此处][buildship-update]的说明更新 Buildship。 若要检查 Eclipse Neon 是否为最新版本并根据情况进行更新，可转到“帮助 => 检查更新”。
 
 2. 若要安装 Service Fabric 插件，请选择“帮助 => 安装新软件...”
-  1. 在“使用”文本框中，输入：``http://dl.windowsazure.com/eclipse/servicefabric``
-  2. 单击“添加”。
 
-  ![适用于 Service Fabric 的 Eclipse Neon 插件][sf-eclipse-plugin-install]
+    1. 在“使用”文本框中，输入：`http://dl.windowsazure.com/eclipse/servicefabric`
 
-  3. 选择 Service Fabric 插件，然后单击“下一步”。
-  4. 继续执行安装并接受最终用户许可协议。
+    2. 单击“添加”。
+
+        ![适用于 Service Fabric 的 Eclipse Neon 插件][sf-eclipse-plugin-install]
+
+    3. 选择 Service Fabric 插件，然后单击“下一步”。
+
+    4. 继续执行安装并接受最终用户许可协议。
 
 如果已安装 Service Fabric Eclipse 插件，请确保使用的是最新版本。 若要检查是否可以进一步进行更新，可转到“帮助 => 安装详细信息”。 然后，在已安装插件的列表中搜索 Service Fabric 并单击“更新”。 如果存在任何挂起的更新，则会提取并安装该更新。
 

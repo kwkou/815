@@ -20,8 +20,10 @@
     ms.sourcegitcommit="a114d832e9c5320e9a109c9020fcaa2f2fdd43a9"
     ms.openlocfilehash="3cf8121b2afbb00a3e67dd6fca26671613db1e23"
     ms.lasthandoff="04/14/2017" />
-[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-sdk-developer-differences.md)]
+
 # <a name="prepare-your-development-environment"></a>准备开发环境
+[AZURE.INCLUDE [azure-sdk-developer-differences](../../includes/azure-sdk-developer-differences.md)]
+
 > [AZURE.SELECTOR]
 - [Windows](/documentation/articles/service-fabric-get-started/)
 - [Linux](/documentation/articles/service-fabric-get-started-linux/)
