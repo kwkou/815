@@ -35,7 +35,7 @@
 - [Azure CLI 2.0](/documentation/articles/virtual-machines-linux-mount-azure-file-storage-on-linux-using-smb-nodejs/) - 适用于资源管理部署模型的下一代 CLI
 
 ## <a name="quick-commands"></a> 快速命令
-若要快速完成任务，请按照本部分的步骤执行操作。 如下更多详细信息和上下文，请从[“详细演练”](/documentation/articles/virtual-machines-linux-mount-azure-file-storage-on-linux-using-smb/#detailed-walkthrough)部分开始。
+若要快速完成任务，请按照本部分的步骤执行操作。 如下更多详细信息和上下文，请从[“详细演练”](#detailed-walkthrough)部分开始。
 
 ### <a name="prerequisites"></a>先决条件
 * 资源组

@@ -93,7 +93,7 @@ Azure 托管磁盘在 Azure 中国暂时还不适用。
 在以下示例中，请将示例参数名称替换为自己的值。 示例参数名称包括 `myResourceGroup`、`mystorageaccount` 和 `mydisks`。
 
 ## <a id="prepimage"></a> 准备要上载的磁盘
-Azure 支持各种 Linux 分发（请参阅 [Endorsed Distributions](/documentation/articles/virtual-machines-linux-endorsed-distros/)（认可的分发））。 以下文章将指导你如何准备 Azure 上支持的各种 Linux 分发：
+Azure 支持各种 Linux 分发（请参阅[认可的分发](/documentation/articles/virtual-machines-linux-endorsed-distros/)）。 以下文章将指导你如何准备 Azure 上支持的各种 Linux 分发：
 
 * **[基于 CentOS 的分发版](/documentation/articles/virtual-machines-linux-create-upload-centos/)**
 * **[Debian Linux](/documentation/articles/virtual-machines-linux-debian-create-upload-vhd/)**

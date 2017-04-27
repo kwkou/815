@@ -79,7 +79,7 @@
         -Name $nsgName -SecurityRules $rdpRule
 
 
-有关终结点和 NSG 规则的详细信息，请参阅 [Opening ports to a VM in Azure using PowerShell](/documentation/articles/virtual-machines-windows-nsg-quickstart-powershell/)（使用 PowerShell 在 Azure 中打开 VM 端口）。
+有关终结点和 NSG 规则的详细信息，请参阅[使用 PowerShell 在 Azure 中打开 VM 端口](/documentation/articles/virtual-machines-windows-nsg-quickstart-powershell/)。
 
 ## <a name="set-the-vm-name-and-size"></a>设置 VM 名称和大小
 
@@ -146,5 +146,5 @@
     $vmList.Name
 
 ## <a name="next-steps"></a>后续步骤
-若要登录到新虚拟机，请在[门户](https://portal.azure.cn)中浏览到该 VM，单击“连接”，然后打开远程桌面 RDP 文件。 使用原始虚拟机的帐户凭据登录到新虚拟机。 有关详细信息，请参阅 [How to connect and log on to an Azure virtual machine running Windows](/documentation/articles/virtual-machines-windows-connect-logon/)（如何连接并登录到运行 Windows 的 Azure 虚拟机）。
+若要登录到新虚拟机，请在[门户](https://portal.azure.cn)中浏览到该 VM，单击“连接”，然后打开远程桌面 RDP 文件。 使用原始虚拟机的帐户凭据登录到新虚拟机。 有关详细信息，请参阅[如何连接并登录到运行 Windows 的 Azure 虚拟机](/documentation/articles/virtual-machines-windows-connect-logon/)。
 <!--Update_Description: wording update-->

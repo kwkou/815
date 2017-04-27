@@ -24,7 +24,7 @@
 
 本主题包括用于 .NET 的 Azure SDK 版本 2.9 和 2.9.6 的发行说明。
 
-##<a name="azure-sdk-for-net-296-release-summary"></a>用于 .NET 的 Azure SDK 2.9.6 版本摘要
+## <a name="azure-sdk-for-net-296-release-summary"></a>用于 .NET 的 Azure SDK 2.9.6 版本摘要
 
 发布日期：2016 年 11 月 16 日
 

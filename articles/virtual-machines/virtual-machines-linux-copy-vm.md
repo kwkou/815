@@ -112,7 +112,7 @@
 
 使用 [az vm create](https://docs.microsoft.com/cli/azure/vm#create) 创建 VM。指定通过 **az storage blob copy start** (`--image`) 创建复制的磁盘时使用的存储帐户、容器名称和 VHD，如下所示：
 
-    az vm create --resource-group myResourceGroup --name myCopiedVM  \
+    az vm create --resource-group myResourceGroup --name myCopiedVM \
         --admin-username azureuser --ssh-key-value ~/.ssh/id_rsa.pub \
         --nics myNic --size Standard_DS1_v2 --os-type Linux \
         --image https://mystorageaccount.blob.core.chinacloudapi.cn/vhds/myCopiedVHD.vhd \

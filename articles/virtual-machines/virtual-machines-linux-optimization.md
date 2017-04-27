@@ -113,7 +113,7 @@
     echo 'echo noop >/sys/block/sda/queue/scheduler' >> /etc/rc.local
 
 ## <a name="using-software-raid-to-achieve-higher-iops"></a>使用软件 RAID 来实现更高的 I/Ops
-如果工作负荷所需的 IOps 超过单个磁盘的极限，则需要使用包含多个磁盘的软件 RAID 配置。 由于 Azure 已在本地结构层执行磁盘复原，因此可以通过 RAID-0 条带化配置获得最高级别的性能。  在 Azure 环境中预配和创建磁盘，将这些磁盘附加到 Linux VM，然后分区、格式化并装入驱动器。  有关在 Azure 中针对 Linux VM 配置软件 RAID 设置的详细信息，请参阅 **[Configuring Software RAID on Linux](/documentation/articles/virtual-machines-linux-configure-raid/)**（在 Linux 上配置软件 RAID）文档。
+如果工作负荷所需的 IOps 超过单个磁盘的极限，则需要使用包含多个磁盘的软件 RAID 配置。 由于 Azure 已在本地结构层执行磁盘复原，因此可以通过 RAID-0 条带化配置获得最高级别的性能。  在 Azure 环境中预配和创建磁盘，将这些磁盘附加到 Linux VM，然后分区、格式化并装入驱动器。  有关在 Azure 中针对 Linux VM 配置软件 RAID 设置的详细信息，请参阅**[在 Linux 上配置软件 RAID](/documentation/articles/virtual-machines-linux-configure-raid/)** 文档。
 
 ## <a name="next-steps"></a>后续步骤
 请记住，如同有关优化的所有文章中所述，需要在每次更改之前和之后执行测试，以衡量更改所造成的影响。  优化是一个逐序渐进的过程，在环境中不同的计算机上会产生不同的效果。  对某一项配置有用的做法不一定适用于其他配置。

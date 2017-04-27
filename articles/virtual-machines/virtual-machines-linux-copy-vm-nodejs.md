@@ -103,5 +103,5 @@
             https://mystorageaccountname.blob.core.chinacloudapi.cn:8080/mycontainername/myVHD.vhd 
 
 ## <a name="next-steps"></a>后续步骤
-若要了解如何使用 Azure CLI 管理新虚拟机，请参阅 [Azure CLI commands for the Azure Resource Manager](/documentation/articles/azure-cli-arm-commands/)（Azure Resource Manager 的 Azure CLI 命令）。
+若要了解如何使用 Azure CLI 管理新虚拟机，请参阅 [Azure Resource Manager 的 Azure CLI 命令](/documentation/articles/azure-cli-arm-commands/)。
 <!--Update_Description: wording update-->

@@ -45,7 +45,7 @@ Azure 元数据服务会公开在 VM 中使用 REST 终结点运行虚拟机的�
 计划事件将显示到云服务中的所有虚拟机或可用性集中的所有虚拟机上。 因此，应查看事件中的“资源”字段以确定哪些 VM 将会受到影响。 
 
 ### <a name="discover-the-endpoint"></a>发现终结点
-当虚拟机是在虚拟网络 (VNet) 中创建时，可以从不可路由的 IP 169.254.169.254 使用元数据服务。否则，在适用于云服务和经典 VM 的默认情况下，需要通过其他逻辑来发现要使用的终结点。 请参阅此示例，了解如何[发现主机终结点] (https://github.com/azure-samples/virtual-machines-python-scheduled-events-discover-endpoint-for-non-vnet-vm)
+当虚拟机是在虚拟网络 (VNet) 中创建时，可以从不可路由的 IP 169.254.169.254 使用元数据服务。否则，在适用于云服务和经典 VM 的默认情况下，需要通过其他逻辑来发现要使用的终结点。 请参阅此示例，了解如何[发现主机终结点](https://github.com/azure-samples/virtual-machines-python-scheduled-events-discover-endpoint-for-non-vnet-vm)
 
 ### <a name="versioning"></a>版本控制 
 元数据服务通过以下格式使用版本控制 API：http://{ip}/metadata/{version}/scheduledevents 建议你的服务使用以下网址提供的最新版本：http://{ip}/metadata/latest/scheduledevents

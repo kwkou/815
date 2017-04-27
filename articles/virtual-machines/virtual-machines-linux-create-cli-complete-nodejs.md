@@ -667,7 +667,7 @@ Azure 资源组是逻辑部署实体，包含用于启用资源部署逻辑管�
     info:    network lb rule create command OK
 
 ## <a name="create-a-load-balancer-health-probe"></a>创建负载均衡器运行状况探测
-运行状况探测定期检查受负载均衡器后面的 VM，以确保它们可以根据定义操作和响应请求。 否则，将从操作中删除这些 VM，确保不会将用户定向到它们。 可以针对运行状况探测定义自定义检查，以及间隔和超时值。 有关运行状况探测的详细信息，请参阅 [Load Balancer probes](/documentation/articles/load-balancer-custom-probe-overview/)（负载均衡器探测）。 以下示例创建名为 `myHealthProbe`的 TCP 运行状况探测：
+运行状况探测定期检查受负载均衡器后面的 VM，以确保它们可以根据定义操作和响应请求。 否则，将从操作中删除这些 VM，确保不会将用户定向到它们。 可以针对运行状况探测定义自定义检查，以及间隔和超时值。 有关运行状况探测的详细信息，请参阅[负载均衡器探测](/documentation/articles/load-balancer-custom-probe-overview/)。 以下示例创建名为 `myHealthProbe`的 TCP 运行状况探测：
 
     azure network lb probe create --resource-group myResourceGroup \
       --lb-name myLoadBalancer --name myHealthProbe --protocol "tcp" \

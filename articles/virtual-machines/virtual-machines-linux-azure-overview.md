@@ -29,7 +29,7 @@ Azure 正在不断集结各种集成的公有云服务，包括分析、虚拟�
 我们宣布了行业领先的单实例虚拟机服务级别协议：可用性达到 99.9%（前提是为所有磁盘使用高级存储部署 VM）。  为了使部署符合标准 99.95% 的 VM 服务级别协议，仍需要在可用性集中部署两个或更多个运行工作负荷的 VM。 这可确保 VM 分布在我们数据中心内的多个容错域，并使用不同的维护时段部署到主机。 完整 [Azure SLA](/support/sla/virtual-machines/) 说明了 Azure 作为整体的保证可用性。 
 
 ## <a name="azure-virtual-machines--instances"></a>Azure 虚拟机和实例
-Azure 支持运行由多家合作伙伴提供和维护的众多热门 Linux 分发版。  可以在 Azure 应用商店中找到 Red Hat Enterprise、CentOS、Debian、Ubuntu、CoreOS、RancherOS 和 FreeBSD 等分发版。 我们积极与各大 Linux 社区合作以便为 [Azure 认可的 Linux 分发版](/documentation/articles/virtual-machines-linux-endorsed-distros/)列表添加更多成员。
+Azure 支持运行由多家合作伙伴提供和维护的众多热门 Linux 分发版。  可以在 Azure 应用商店中找到 CentOS、Debian、Ubuntu、CoreOS 和 FreeBSD 等分发版。 我们积极与各大 Linux 社区合作以便为 [Azure 认可的 Linux 分发版](/documentation/articles/virtual-machines-linux-endorsed-distros/)列表添加更多成员。
 
 如果首选的 Linux 分发版目前不在库中，可以通过[在 Azure 中创建和上载 Linux VHD](/documentation/articles/virtual-machines-linux-create-upload-generic/) 来“自带 Linux”VM。
 
@@ -38,7 +38,7 @@ Azure 支持运行由多家合作伙伴提供和维护的众多热门 Linux 分�
 ## <a name="vm-sizes"></a>VM 大小
 在 Azure 中部署 VM 时，将从一系列大小中选择一个适合工作负荷的 VM 大小。 大小还会影响虚拟机的处理能力、内存和存储容量。 收费的依据是 VM 的运行时长及其消耗的分配资源量。 [虚拟机大小](/documentation/articles/virtual-machines-linux-sizes/)的完整列表。
 
-下面是从我们提供的系列（A、D、DS、G 和 GS）之一中选择 VM 大小的基本指导原则。
+下面是从我们提供的系列（A、D 和 DS）之一中选择 VM 大小的基本指导原则。
 
 * A 系列 VM 是高性价比的入门级 VM，适用于轻度工作负荷和开发/测试方案。 所有区域都广泛提供此系列 VM，它们可用于连接和使用虚拟机可用的所有标准资源。
 * D 系列 VM 旨在运行需要更高计算能力和临时磁盘性能的应用程序。 D 系列 VM 为临时磁盘提供更快的处理器、更高的内存内核比和固态驱动器 (SSD)。

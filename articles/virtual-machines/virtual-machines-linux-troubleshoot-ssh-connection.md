@@ -209,6 +209,6 @@ SSHD 配置本身可能有误或服务遇到错误。 你可以重置 SSHD 以�
 
 ## <a name="additional-resources"></a>其他资源
 * 如果在执行后续步骤之后仍然无法通过 SSH 连接到 VM，请参阅[更详细的故障排除步骤](/documentation/articles/virtual-machines-linux-detailed-troubleshoot-ssh-connection/)，查看其他可以解决问题的步骤。
-* 有关对应用程序访问进行故障排除的详细信息，请参阅 [Troubleshoot access to an application running on an Azure virtual machine](/documentation/articles/virtual-machines-linux-troubleshoot-app-connection/)（对在 Azure 虚拟机上运行的应用程序的访问进行故障排除）
+* 有关对应用程序访问进行故障排除的详细信息，请参阅[对在 Azure 虚拟机上运行的应用程序的访问进行故障排除](/documentation/articles/virtual-machines-linux-troubleshoot-app-connection/)
 * 有关对使用经典部署模型创建的虚拟机进行故障排除的详细信息，请参阅[如何为基于 Linux 的虚拟机重置密码或 SSH](/documentation/articles/virtual-machines-linux-classic-reset-access/)。
 <!--Update_Description: wording update-->
