@@ -17,7 +17,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="03/07/2017"
-    wacn.date="04/17/2017"
+    wacn.date="04/27/2017"
     ms.author="byvinyal"
     ms.sourcegitcommit="7cc8d7b9c616d399509cd9dbdd155b0e9a7987a8"
     ms.openlocfilehash="a740e80ef3aa8c20c63f9de5d3690b3c01e5e525"
@@ -52,7 +52,6 @@
 - [Azure Redis Cache](#azure-redis-cache-limits)
 - [备份](#backup-limits)
 - [批处理](#batch-limits)
-- [CDN](#cdn-limits)
 - [云服务](#cloud-services-limits)
 - [DocumentDB](#documentdb-limits)
 - [事件中心](#event-hubs-limits)
@@ -143,7 +142,7 @@
 [AZURE.INCLUDE [azure-cloud-services-limits](../includes/azure-cloud-services-limits.md)]
 
 ### <a name="app-service-limits"></a>App Service 限制
-以下 App Service 限制包括 Web Apps、Mobile Apps、API Apps 和 Logic Apps 的限制。
+以下 App Service 限制包括 Web Apps、Mobile Apps 和 API Apps 的限制。
 
 [AZURE.INCLUDE [azure-websites-limits](../includes/azure-websites-limits.md)]
 
@@ -159,9 +158,6 @@ DocumentDB 是一个全规模数据库，该数据库对吞吐量和存储进行
 
 ### <a name="media-services-limits"></a>媒体服务限制
 [AZURE.INCLUDE [azure-mediaservices-limits](../includes/azure-mediaservices-limits.md)]
-
-### <a name="cdn-limits"></a>CDN 限制
-[AZURE.INCLUDE [cdn-limits](../includes/cdn-limits.md)]
 
 ### <a name="mobile-services-limits"></a>移动服务限制
 [AZURE.INCLUDE [mobile-services-limits](../includes/mobile-services-limits.md)]
