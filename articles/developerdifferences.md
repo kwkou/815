@@ -129,7 +129,7 @@ Visual Studio 2015 支持在中国区 Azure 上开发，使用 Visual Studio 201
 - **切换回 Global Azure**
 
 	1.	确保已登出并关闭 Visual Studio。
-	2.	删除文件夹 **%localappdata%\.IdentityService\AadConfigurations**
+	2.	删除文件夹 **%localappdata%\\.IdentityService\AadConfigurations**
 	3.	重启 VS 即可连接 Global Azure。
 
 ##实用场景示例
