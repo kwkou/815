@@ -14,8 +14,8 @@
     ms.topic="article"
     ms.tgt_pltfrm="vm-windows-sql-server"
     ms.workload="infrastructure-services"
-    ms.date="10/25/2016"
-    wacn.date="02/20/2017"
+    ms.date="03/14/2017"
+    wacn.date="04/27/2017"
     ms.author="jroth" />  
 
 

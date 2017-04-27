@@ -15,8 +15,8 @@
     ms.topic="article"
     ms.tgt_pltfrm="vm-windows-sql-server"
     ms.workload="iaas-sql-server"
-    ms.date="01/10/2016"
-    wacn.date="03/28/2017"
+    ms.date="03/17/2017"
+    wacn.date="04/27/2017"
     ms.author="mikeray" />
 
 # 创建 Always On 可用性组来提高可用性和实现灾难恢复

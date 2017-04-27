@@ -14,8 +14,8 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="11/28/2016"
-    wacn.date="03/28/2017"
+    ms.date="03/07/2017"
+    wacn.date="04/27/2017"
     ms.author="nitinme" />
 
 # 使用 Livy 向 HDInsight 上的 Apache Spark 群集远程提交作业

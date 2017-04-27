@@ -15,8 +15,8 @@ ms.service="virtual-machines-windows"
  ms.topic="article"
  ms.tgt_pltfrm="vm-windows"
  ms.workload="infrastructure-services"
- ms.date="02/09/2017"
- wacn.date="03/28/2017"
+ ms.date="03/10/2017"
+ wacn.date="04/27/2017"
  ms.author="cynthn"/>  
 
 

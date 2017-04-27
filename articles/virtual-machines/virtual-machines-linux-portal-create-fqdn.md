@@ -14,8 +14,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="vm-linux"
    ms.workload="infrastructure-services"
-   ms.date="02/09/2017"
-   wacn.date="03/28/2017"
+   ms.date="03/14/2017"
+   wacn.date="04/27/2017"
    ms.author="iainfou"/>
 
 # 在 Azure 门户预览中创建完全限定的域名

@@ -14,8 +14,8 @@
 	ms.tgt_pltfrm="vm-windows"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="11/14/2016"
-	wacn.date="12/30/2016"
+	ms.date="03/06/2017"
+	wacn.date="04/27/2017"
 	ms.author="cynthn"/>
 
 # 管理虚拟机的可用性

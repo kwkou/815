@@ -14,8 +14,8 @@
     ms.topic="hero-article"
     ms.tgt_pltfrm="na"
     ms.workload="big-data"
-    ms.date="09/14/2016"
-    wacn.date="03/24/2017"
+    ms.date="02/22/2017"
+    wacn.date="04/27/2017"
     ms.author="jgao" />  
 
 

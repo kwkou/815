@@ -14,8 +14,8 @@
     ms.tgt_pltfrm="vm-windows-sql-server"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="01/11/2017"
-    wacn.date="02/20/2017"
+    ms.date="02/22/2017"
+    wacn.date="04/27/2017"
     ms.author="carlasab" />
 
 # 将 SQL Server 数据库迁移到 Azure VM 中的 SQL Server

@@ -14,8 +14,8 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="01/09/2017"
-    wacn.date="01/25/2017"
+    ms.date="02/28/2017"
+    wacn.date="04/27/2017"
     ms.author="jgao" />
 
 # 在 HDInsight Hadoop 群集上安装并使用 R

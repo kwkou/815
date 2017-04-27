@@ -14,8 +14,8 @@
     ms.tgt_pltfrm="vm-windows"
     ms.devlang="na"
     ms.topic="get-started-article"
-    ms.date="01/03/2017"
-    wacn.date="02/20/2017"
+    ms.date="03/01/2017"
+    wacn.date="04/27/2017"
     ms.author="davidmu" />  
 
 

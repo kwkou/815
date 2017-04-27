@@ -14,8 +14,8 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="11/15/2016"
-    wacn.date="02/06/2017"
+    ms.date="02/22/2017"
+    wacn.date="04/27/2017"
     ms.author="jgao" />
 
 # 使用 Ambari API 在 HDInsight 中监视 Hadoop 群集

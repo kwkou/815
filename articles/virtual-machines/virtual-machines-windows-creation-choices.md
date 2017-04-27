@@ -14,8 +14,8 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="vm-windows"
 	ms.workload="infrastructure-services"
-	ms.date="09/27/2016"
-	wacn.date="12/12/2016"
+	ms.date="03/02/2017"
+	wacn.date="04/27/2017"
 	ms.author="cynthn"/>
 
 # 使用 Resource Manager 创建 Windows 虚拟机的不同方法

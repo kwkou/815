@@ -14,8 +14,8 @@
     ms.topic="article"
     ms.tgt_pltfrm="vm-windows"
     ms.workload="infrastructure-services"
-    ms.date="12/08/2016"
-    wacn.date="03/28/2017"
+    ms.date="03/06/2017"
+    wacn.date="04/27/2017"
     ms.author="nepeters" />
 
 # 适用于 Windows 的虚拟机扩展和功能

@@ -14,8 +14,8 @@
 	ms.tgt_pltfrm="vm-linux"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="08/24/2016"
-	wacn.date="10/25/2016"
+	ms.date="02/23/2017"
+	wacn.date="04/27/2017"
 	ms.author="szark"/>
 
 # 为 Azure 准备 Oracle Linux 虚拟机

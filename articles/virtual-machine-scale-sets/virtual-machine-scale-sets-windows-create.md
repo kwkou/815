@@ -15,8 +15,8 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="get-started-article"
-    ms.date="10/18/2016"
-    wacn.date="03/06/2017"
+    ms.date="02/21/2017"
+    wacn.date="04/27/2017"
     ms.author="davidmu" />  
 
 
