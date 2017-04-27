@@ -24,7 +24,7 @@ Tez UI 是一个网页，可用于了解和调试在基于 Windows 的 HDInsight
 本文档中的步骤需要使用 Windows 的 HDInsight 群集。Linux 是在 HDInsight 3.4 版或更高版本上使用的唯一操作系统。有关详细信息，请参阅 [HDInsight 在 Windows 上弃用](/documentation/articles/hdinsight-component-versioning/#hdi-version-32-and-33-nearing-deprecation-date)。
 
 ## 先决条件
-* 基于 Windows 的 HDInsight 群集。有关新建群集的步骤，请参阅[开始使用基于 Windows 的 HDInsight](/documentation/articles/hdinsight-hadoop-linux-tutorial-get-started/)。
+* 基于 Windows 的 HDInsight 群集。有关新建群集的步骤，请参阅[开始使用基于 Windows 的 HDInsight](/documentation/articles/hdinsight-hadoop-tutorial-get-started-windows/)。
   
     > [AZURE.IMPORTANT]
     Tez UI 只在 2016 年 2 月 8 日以后创建的基于 Windows 的 HDInsight 群集上提供。

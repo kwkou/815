@@ -273,7 +273,7 @@
 [virtual-machines-linux-tutorial]: /documentation/articles/virtual-machines-linux-quick-create-cli/
 [virtual-machines-linux-update-agent]: /documentation/articles/virtual-machines-linux-update-agent/
 [virtual-machines-manage-availability]: /documentation/articles/virtual-machines-windows-manage-availability/
-[virtual-machines-ps-create-preconfigure-windows-resource-manager-vms]: /documentation/articles/virtual-machines-windows-quick-create-powershell/
+[virtual-machines-ps-create-preconfigure-windows-resource-manager-vms]: /documentation/articles/virtual-machines-windows-ps-create/
 [virtual-machines-sizes]: /documentation/articles/virtual-machines-windows-sizes/
 [virtual-machines-windows-classic-ps-sql-alwayson-availability-groups]: /documentation/articles/virtual-machines-windows-classic-ps-sql-alwayson-availability-groups/
 [virtual-machines-windows-classic-ps-sql-int-listener]: /documentation/articles/virtual-machines-windows-classic-ps-sql-int-listener/

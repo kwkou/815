@@ -34,7 +34,7 @@
 * **配备 Azure PowerShell 的工作站**。请参阅[安装和使用 Azure PowerShell](/documentation/articles/powershell-install-configure/)。
 
 ## 在虚拟网络上创建 HBase 群集
-在本部分中，通过 [Azure Resource Manager 模板](/documentation/articles/resource-group-template-deploy/)在 Azure 虚拟网络中使用从属 Azure 存储帐户创建基于 Linux 的 HBase 群集。对于其他群集创建方法以及了解设置，请参阅 [Create HDInsight clusters](/documentation/articles/hdinsight-hadoop-provision-linux-clusters/)（创建 HDInsight 群集）。有关使用模板在 HDInsight 中创建 Hadoop 群集的详细信息，请参阅[使用 Azure Resource Manager 模板在 HDInsight 中创建 Hadoop 群集](/documentation/articles/hdinsight-hadoop-create-linux-clusters-arm-templates/)
+在本部分中，通过 [Azure Resource Manager 模板](/documentation/articles/resource-group-template-deploy/)在 Azure 虚拟网络中使用从属 Azure 存储帐户创建基于 Linux 的 HBase 群集。对于其他群集创建方法以及了解设置，请参阅 [Create HDInsight clusters](/documentation/articles/hdinsight-provision-clusters/)（创建 HDInsight 群集）。有关使用模板在 HDInsight 中创建 Hadoop 群集的详细信息，请参阅[使用 Azure Resource Manager 模板在 HDInsight 中创建 Hadoop 群集](/documentation/articles/hdinsight-hadoop-create-windows-clusters-arm-templates/)
 
 > [AZURE.NOTE]
 某些属性已在模板中硬编码。例如：
@@ -71,7 +71,7 @@
 
 完成教程之后，可能要删除群集。有了 HDInsight，可将数据存储在 Azure 存储空间，以便在不使用群集时可将其安全删除。此外，还需要支付 HDInsight 群集费用，即使未使用。由于群集费用高于存储空间费用数倍，因此在不使用群集时将其删除可以节省费用。有关删除群集的说明，请参阅[使用 Azure 门户预览在 HDInsight 中管理 Hadoop 群集](/documentation/articles/hdinsight-administer-use-management-portal/#delete-clusters)。
 
-要开始处理新 HBase 群集，可以按照[开始在 HDInsight 中将 HBase 与 Hadoop 配合使用](/documentation/articles/hdinsight-hbase-tutorial-get-started-linux/)中的步骤操作。
+要开始处理新 HBase 群集，可以按照[开始在 HDInsight 中将 HBase 与 Hadoop 配合使用](/documentation/articles/hdinsight-hbase-tutorial-get-started/)中的步骤操作。
 
 ## 使用 HBase Java RPC API 连接到 HBase 群集。
 1. 将基础结构即服务 (IaaS) 虚拟机创建到相同的 Azure 虚拟网络和子网中。有关创建新 IaaS 虚拟机的说明，请参阅[创建运行 Windows Server 的虚拟机](/documentation/articles/virtual-machines-windows-hero-tutorial/)。按照本文档中的步骤操作时，必须使用以下内容进行网络配置：
@@ -243,18 +243,18 @@
 ## 后续步骤
 在本教程中，你已学习了如何创建 HBase 群集。要了解更多信息，请参阅以下文章：
 
-* [开始使用 HDInsight](/documentation/articles/hdinsight-hadoop-linux-tutorial-get-started/)
+* [开始使用 HDInsight](/documentation/articles/hdinsight-hadoop-tutorial-get-started-windows/)
 * [在 HDInsight 中使用空边缘节点](/documentation/articles/hdinsight-apps-use-edge-node/)
 * [在 HDInsight 中配置 HBase 复制](/documentation/articles/hdinsight-hbase-replication/)
-* [在 HDInsight 中创建 Hadoop 群集](/documentation/articles/hdinsight-hadoop-provision-linux-clusters/)
-* [开始在 HDInsight 中将 HBase 与 Hadoop 配合使用](/documentation/articles/hdinsight-hbase-tutorial-get-started-linux/)
+* [在 HDInsight 中创建 Hadoop 群集](/documentation/articles/hdinsight-provision-clusters/)
+* [开始在 HDInsight 中将 HBase 与 Hadoop 配合使用](/documentation/articles/hdinsight-hbase-tutorial-get-started/)
 * [虚拟网络概述][vnet-overview]
 
 [1]: /home/features/networking/
 [2]: http://technet.microsoft.com/zh-cn/library/ee176961.aspx
 [3]: http://technet.microsoft.com/zh-cn/library/hh847889.aspx
 
-[hbase-get-started]: /documentation/articles/hdinsight-hbase-tutorial-get-started-linux/
+[hbase-get-started]: /documentation/articles/hdinsight-hbase-tutorial-get-started/
 [vnet-overview]: /documentation/articles/virtual-networks-overview/
 [vm-create]: /documentation/articles/virtual-machines-windows-hero-tutorial/
 
@@ -278,8 +278,8 @@
 
 
 [hdinsight-customize-cluster]: /documentation/articles/hdinsight-hadoop-customize-cluster-v1/
-[hdinsight-provision]: /documentation/articles/hdinsight-hadoop-provision-linux-clusters/
-[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-linux-tutorial-get-started/
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters/
+[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows/
 [hdinsight-storage-powershell]: /documentation/articles/hdinsight-hadoop-use-blob-storage/#powershell
 [hdinsight-analyze-flight-delay-data]: /documentation/articles/hdinsight-analyze-flight-delay-data/
 [hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage/

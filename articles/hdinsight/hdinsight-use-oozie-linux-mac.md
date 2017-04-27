@@ -679,9 +679,9 @@ Oozie UI 对于排查 Oozie 作业问题很有帮助，因为它可让你轻松�
 [hdinsight-oozie-coordinator-time]: /documentation/articles/hdinsight-use-oozie-coordinator-time/
 [hdinsight-versions]: /documentation/articles/hdinsight-component-versioning/
 [hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage/
-[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-linux-tutorial-get-started/
+[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows/
 [hdinsight-use-sqoop]: /documentation/articles/hdinsight-use-sqoop-mac-linux/
-[hdinsight-provision]: /documentation/articles/hdinsight-hadoop-provision-linux-clusters/
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters/
 [hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data/
 [hdinsight-use-mapreduce]: /documentation/articles/hdinsight-use-mapreduce/
 [hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive/

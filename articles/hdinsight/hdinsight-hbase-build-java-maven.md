@@ -29,7 +29,7 @@
 ## 要求
 * [Java 平台 JDK](http://www.oracle.com/technetwork/java/javase/downloads/index.html) 7 或更高版本
 * [Maven](http://maven.apache.org/)
-* [装有 HBase 的基于 Windows 的 HDInsight 群集](/documentation/articles/hdinsight-hbase-tutorial-get-started-linux/#create-hbase-cluster)
+* [装有 HBase 的基于 Windows 的 HDInsight 群集](/documentation/articles/hdinsight-hbase-tutorial-get-started/#create-hbase-cluster)
 
     [AZURE.INCLUDE [hdinsight-linux-acn-version.md](../../includes/hdinsight-linux-acn-version.md)]
 

@@ -52,7 +52,7 @@
     >[AZURE.NOTE] 
     这可能需要几分钟的时间。
 
-3. 完成[创建 Windows VM](/documentation/articles/virtual-machines-windows-quick-create-powershell/) 一文中的步骤 1-4。请不要完成步骤 5（创建公共 IP 资源和网络接口）。如果更改该文中使用的任何变量的名称，请同样更改剩余步骤中的变量名称。若要创建 Linux VM，请选择 Linux 操作系统，而不要选择 Windows。
+3. 完成[创建 Windows VM](/documentation/articles/virtual-machines-windows-ps-create/) 一文中的步骤 1-4。请不要完成步骤 5（创建公共 IP 资源和网络接口）。如果更改该文中使用的任何变量的名称，请同样更改剩余步骤中的变量名称。若要创建 Linux VM，请选择 Linux 操作系统，而不要选择 Windows。
 4. 键入以下命令，创建一个变量，用于存储“创建 Windows VM”一文的步骤 4（创建 VNet）中创建的子网对象：
 
         $SubnetName = $mySubnet.Name
@@ -102,7 +102,7 @@
     > [AZURE.NOTE]
     尽管本文将所有 IP 配置都分配给一个 NIC，但还可将多个 IP 配置分配给 VM 中的任何 NIC。若要了解如何创建具有多个 NIC 的 VM，请阅读[创建具有多个 NIC 的 VM](/documentation/articles/virtual-network-deploy-multinic-arm-ps/) 一文。
 
-7. 完成[创建 VM](/documentation/articles/virtual-machines-windows-quick-create-powershell/) 一文的步骤 6。
+7. 完成[创建 VM](/documentation/articles/virtual-machines-windows-ps-create/) 一文的步骤 6。
 
     > [AZURE.WARNING]
     在以下情况中，“创建 VM”一文中的步骤 6 会失败：

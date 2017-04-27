@@ -35,7 +35,7 @@
 ![解决方案体系结构关系图](./media/hdinsight-hive-analyze-sensor-data/hvac-architecture.png)  
 
 ## 先决条件
-* HDInsight (Hadoop) 群集：有关创建群集的信息，请参阅[在 HDInsight 中预配 Hadoop 群集](/documentation/articles/hdinsight-hadoop-provision-linux-clusters/)。
+* HDInsight (Hadoop) 群集：有关创建群集的信息，请参阅[在 HDInsight 中预配 Hadoop 群集](/documentation/articles/hdinsight-provision-clusters/)。
 * Microsoft Excel 2013
   
     > [AZURE.NOTE]

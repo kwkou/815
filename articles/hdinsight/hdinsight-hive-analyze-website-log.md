@@ -52,7 +52,7 @@
 ## 后续步骤
 尝试以下示例：[通过将 Hive 与 HDInsight 配合使用分析传感器数据](/documentation/articles/hdinsight-hive-analyze-sensor-data/)。
 
-[hdinsight-provision]: /documentation/articles/hdinsight-hadoop-provision-linux-clusters/
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters/
 [hdinsight-sensor-data-sample]: /documentation/articles/hdinsight-use-hive-sensor-data-analysis/
 
 [img-hdi-weblogs-sample]: ./media/hdinsight-hive-analyze-website-log/hdinsight-weblogs-sample.png

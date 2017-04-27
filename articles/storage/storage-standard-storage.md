@@ -129,7 +129,7 @@ Azure 标准存储为运行不区分延迟的工作负荷提供可靠、低成�
 * [创建存储帐户](/documentation/articles/storage-create-storage-account/)
 
 
-* [使用 Resource Manager 和 PowerShell 创建 VM](/documentation/articles/virtual-machines-windows-quick-create-powershell/)
+* [使用 Resource Manager 和 PowerShell 创建 VM](/documentation/articles/virtual-machines-windows-ps-create/)
 
 * [使用 Azure CLI 2.0 创建 Linux VM](/documentation/articles/virtual-machines-linux-quick-create-cli/)
 <!--Update_Description: remove managed disk related content;add anchors to H2 titles-->

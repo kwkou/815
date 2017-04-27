@@ -134,7 +134,7 @@ Azure Blob 存储是 HDInsight 的默认存储，因此也可以使用 HiveQL �
 > ```set hive.execution.engine=tez;```  
 
 ><p> 
-> 你可为每个查询提交此值，只需将它放置在查询的开头即可。你也可以在创建群集时设置配置值，而在群集上将此值默认为打开。可以在[预配 HDInsight 群集](/documentation/articles/hdinsight-hadoop-provision-linux-clusters/)中找到详细信息。
+> 你可为每个查询提交此值，只需将它放置在查询的开头即可。你也可以在创建群集时设置配置值，而在群集上将此值默认为打开。可以在[预配 HDInsight 群集](/documentation/articles/hdinsight-provision-clusters/)中找到详细信息。
 > 
 > 
 
@@ -203,7 +203,7 @@ Linux 是在 HDInsight 3.4 或更高版本上使用的唯一操作系统。有�
 
 [hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage/
 
-[hdinsight-provision]: /documentation/articles/hdinsight-hadoop-provision-linux-clusters/
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters/
 [hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically/
 [hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data/
 

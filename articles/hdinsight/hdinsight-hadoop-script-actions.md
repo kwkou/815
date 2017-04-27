@@ -292,9 +292,9 @@ HDInsight 提供了多个脚本用于在 HDInsight 群集上安装附加组件�
 * [在 HDInsight 群集上安装并使用 Solr](/documentation/articles/hdinsight-hadoop-solr-install/)
 * [在 HDInsight 群集上安装并使用 Giraph](/documentation/articles/hdinsight-hadoop-giraph-install/)
 
-[hdinsight-provision]: /documentation/articles/hdinsight-hadoop-provision-linux-clusters/
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters/
 [hdinsight-cluster-customize]: /documentation/articles/hdinsight-hadoop-customize-cluster/
-[hdinsight-install-spark]: /documentation/articles/hdinsight-apache-spark-jupyter-spark-sql/
+[hdinsight-install-spark]: /documentation/articles/hdinsight-hadoop-spark-install/
 [hdinsight-r-scripts]: /documentation/articles/hdinsight-hadoop-r-scripts/
 [powershell-install-configure]: /documentation/articles/powershell-install-configure/
 

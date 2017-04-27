@@ -302,7 +302,7 @@ HDInsight 群集边栏选项卡的“使用情况”部分会显示相关信息�
 
 * [使用 Azure PowerShell 管理 HDInsight](/documentation/articles/hdinsight-administer-use-powershell/)
 * [使用 Azure CLI 管理 HDInsight](/documentation/articles/hdinsight-administer-use-command-line/)
-* [创建 HDInsight 群集](/documentation/articles/hdinsight-hadoop-provision-linux-clusters/)
+* [创建 HDInsight 群集](/documentation/articles/hdinsight-provision-clusters/)
 * [在 HDInsight 中使用 Hive](/documentation/articles/hdinsight-use-hive/)
 * [在 HDInsight 中使用 Pig](/documentation/articles/hdinsight-use-pig/)
 * [Use Sqoop in HDInsight（在 HDInsight 中使用 Sqoop）](/documentation/articles/hdinsight-use-sqoop/)

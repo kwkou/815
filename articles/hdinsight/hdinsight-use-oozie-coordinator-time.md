@@ -707,7 +707,7 @@ HDInsight 群集版本 3.0 仅支持 *wasb://* 语法。较早的 *asv://* 语�
 [hdinsight-admin-portal]: /documentation/articles/hdinsight-administer-use-management-portal/
 
 [hdinsight-use-sqoop]: /documentation/articles/hdinsight-use-sqoop/
-[hdinsight-provision]: /documentation/articles/hdinsight-hadoop-provision-linux-clusters/
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters/
 [hdinsight-admin-powershell]: /documentation/articles/hdinsight-administer-use-powershell/
 [hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data/
 [hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive/

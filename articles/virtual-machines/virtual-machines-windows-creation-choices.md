@@ -39,7 +39,7 @@
 
 如果喜欢在命令外壳中工作，可以使用 Azure PowerShell。
 
-- [使用 PowerShell 创建 Windows VM](/documentation/articles/virtual-machines-windows-quick-create-powershell/)
+- [使用 PowerShell 创建 Windows VM](/documentation/articles/virtual-machines-windows-ps-create/)
 
 
 ## Visual Studio

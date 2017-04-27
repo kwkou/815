@@ -22,7 +22,7 @@
 
 增加群集中的辅助节点数目，即可利用更多并行运行的映射器和化简器。在 HDInsight 中，可通过两种方式增加扩大的数目：
 
-- 在预配时，可以使用 Azure 门户预览、Azure PowerShell 或跨平台命令行界面指定辅助节点的数目。有关详细信息，请参阅[设置 HDInsight 群集](/documentation/articles/hdinsight-hadoop-provision-linux-clusters/)。以下屏幕显示了 Azure 门户预览上的辅助节点配置：
+- 在预配时，可以使用 Azure 门户预览、Azure PowerShell 或跨平台命令行界面指定辅助节点的数目。有关详细信息，请参阅[设置 HDInsight 群集](/documentation/articles/hdinsight-provision-clusters/)。以下屏幕显示了 Azure 门户预览上的辅助节点配置：
 
 	![scaleout\_1][image-hdi-optimize-hive-scaleout_1]
 

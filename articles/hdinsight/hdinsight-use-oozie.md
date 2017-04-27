@@ -637,7 +637,7 @@ Azure PowerShell 目前不提供任何用于定义 Oozie 作业的 cmdlet。可�
 [hdinsight-admin-portal]: /documentation/articles/hdinsight-administer-use-management-portal/
 
 [hdinsight-use-sqoop]: /documentation/articles/hdinsight-use-sqoop/
-[hdinsight-provision]: /documentation/articles/hdinsight-hadoop-provision-linux-clusters/
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters/
 [hdinsight-admin-powershell]: /documentation/articles/hdinsight-administer-use-powershell/
 [hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data/
 [hdinsight-use-mapreduce]: /documentation/articles/hdinsight-use-mapreduce/

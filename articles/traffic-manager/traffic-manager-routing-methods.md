@@ -82,7 +82,7 @@ Azure 门户预览支持配置加权流量路由。  也可以使用 Resource Ma
 
 流量管理器在 Internet 延迟表中查找传入 DNS 请求的源 IP 地址。 流量管理器在处理该 IP 地址范围的请求时保持最低延迟的 Azure 数据中心内选择一个可用终结点，然后在 DNS 响应中返回该终结点。
 
-如[流量管理器工作原理](/documentation/articles/traffic-manager-overview/)中所述，流量管理器不会直接从客户端接收 DNS 查询。 DNS 查询来自客户端配置使用的递归 DNS 服务。 因此，用于确定“最靠近”终结点的 IP 地址不是客户端的 IP 地址，而是递归 DNS 服务的 IP 地址。 在实践中，此 IP 地址是客户端的适当代理。
+如[流量管理器工作原理](/documentation/articles/traffic-manager-how-traffic-manager-works/)中所述，流量管理器不会直接从客户端接收 DNS 查询。 DNS 查询来自客户端配置使用的递归 DNS 服务。 因此，用于确定“最靠近”终结点的 IP 地址不是客户端的 IP 地址，而是递归 DNS 服务的 IP 地址。 在实践中，此 IP 地址是客户端的适当代理。
 
 流量管理器定期更新 Internet 延迟表，反映全国 Internet 的变化以及新的 Azure 区域。 但是，由于 Internet 上的负载会实时变化，应用程序性能也会随之变化。 “性能”流量路由不会监视给定服务终结点上的负载。 但是，如果某个终结点变得不可用，则流量管理器不会在 DNS 查询响应中包括该终结点。
 

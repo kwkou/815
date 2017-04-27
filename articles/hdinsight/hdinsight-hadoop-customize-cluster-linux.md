@@ -150,7 +150,7 @@ HDInsight 提供一个称为**脚本操作**的配置选项，该选项可调用
 
 ### 在创建群集期间从 Azure 门户预览使用脚本操作
 
-1. 根据 [Create Hadoop clusters in HDInsight](/documentation/articles/hdinsight-hadoop-provision-linux-clusters/)（在 HDInsight 中创建 Hadoop 群集）中所述开始创建群集。
+1. 根据 [Create Hadoop clusters in HDInsight](/documentation/articles/hdinsight-provision-clusters/)（在 HDInsight 中创建 Hadoop 群集）中所述开始创建群集。
 2. 在“脚本操作”边栏选项卡的“可选配置”下，单击“添加脚本操作”可提供有关脚本操作的详细信息，如下所示：
 
     ![使用脚本操作自定义群集](./media/hdinsight-hadoop-customize-cluster-linux/HDI.CreateCluster.8.png)

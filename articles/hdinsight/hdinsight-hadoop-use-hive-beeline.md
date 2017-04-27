@@ -234,7 +234,7 @@ Beeline 还可用于运行包含 HiveQL 语句的文件。使用以下步骤创�
 
 [putty]: http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html
 
-[hdinsight-provision]: /documentation/articles/hdinsight-hadoop-provision-linux-clusters/
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters/
 [hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically/
 [hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data/
 

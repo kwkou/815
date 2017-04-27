@@ -145,7 +145,7 @@ HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 中使用 HDInsi
 * [将 Sqoop 与 HDInsight 配合使用](/documentation/articles/hdinsight-use-sqoop-mac-linux/)
 * [创建非交互式身份验证 .NET HDInsight 应用程序](/documentation/articles/hdinsight-create-non-interactive-authentication-dotnet-applications/)
 
-[hdinsight-provision]: /documentation/articles/hdinsight-hadoop-provision-linux-clusters/
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters/
 [hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-linux-tutorial-get-started/
 
 <!---HONumber=Mooncake_0120_2017-->

@@ -134,10 +134,10 @@ bootstrap 的使用方式有 3 种：
 * [在 HDInsight 群集上安装并使用 Solr](/documentation/articles/hdinsight-hadoop-solr-install/)
 * [在 HDInsight 群集上安装并使用 Giraph](/documentation/articles/hdinsight-hadoop-giraph-install/)
 
-[hdinsight-install-spark]: /documentation/articles/hdinsight-apache-spark-jupyter-spark-sql/
+[hdinsight-install-spark]: /documentation/articles/hdinsight-hadoop-spark-install/
 [hdinsight-install-r]: /documentation/articles/hdinsight-hadoop-r-scripts/
 [hdinsight-write-script]: /documentation/articles/hdinsight-hadoop-script-actions/
-[hdinsight-provision-cluster]: /documentation/articles/hdinsight-hadoop-provision-linux-clusters/
+[hdinsight-provision-cluster]: /documentation/articles/hdinsight-provision-clusters/
 [powershell-install-configure]: https://docs.microsoft.com/powershell/azureps-cmdlets-docs
 
 [img-hdi-cluster-states]: ./media/hdinsight-hadoop-customize-cluster/HDI-Cluster-state.png "群集创建期间的阶段"

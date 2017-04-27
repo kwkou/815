@@ -24,7 +24,7 @@
 ## 先决条件
 在安装和配置 MongoDB 之前，需要创建一个 VM，并且最好将一个磁盘添加到该 VM。请参阅以下文章创建 VM 并向其添加数据磁盘：
 
-* [使用 Azure 门户预览创建 Windows Server VM](/documentation/articles/virtual-machines-windows-hero-tutorial/) 或[使用 Azure PowerShell 创建 Windows Server VM](/documentation/articles/virtual-machines-windows-quick-create-powershell/)
+* [使用 Azure 门户预览创建 Windows Server VM](/documentation/articles/virtual-machines-windows-hero-tutorial/) 或[使用 Azure PowerShell 创建 Windows Server VM](/documentation/articles/virtual-machines-windows-ps-create/)
 * [使用 Azure 门户预览将数据磁盘附加到 Windows Server VM](/documentation/articles/virtual-machines-windows-attach-disk-portal/) 或[使用 Azure PowerShell 将数据磁盘附加到 Windows Server VM](https://msdn.microsoft.com/zh-cn/library/mt603673.aspx)
 
 使用远程桌面[登录到 Windows Server VM](/documentation/articles/virtual-machines-windows-connect-logon/)，开始安装和配置 MongoDB。

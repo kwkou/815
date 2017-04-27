@@ -49,7 +49,7 @@ Azure 虚拟网络 (VNet) 是你自己的网络在云中的表示形式。它是
 ## 虚拟 NIC
 网络接口 (NIC) 是虚拟机 (VM) 与基础软件网络之间互相连接的桥梁。本文解释什么是网络接口，以及在 Azure Resource Manager 部署模型中如何使用它。
 
-* [虚拟网络接口概述](/documentation/articles/virtual-network-network-interface/)
+* [虚拟网络接口概述](/documentation/articles/virtual-network-network-interface-overview/)
 
 ## 虚拟 NIC 和 DNS 标签
 如果你想要持久保留某台服务器，但该服务器充当过渡用的设备，经常被撤掉然后又重新部署，那么，可以在 NIC 上使用 DNS 标签，以便在 VNET 中持久保留其名称。使用以下文章中的详细步骤，可以创建一个使用静态 IP 的、名称持久保留的 NIC。

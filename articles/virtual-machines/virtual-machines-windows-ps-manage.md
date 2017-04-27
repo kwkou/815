@@ -258,7 +258,7 @@ Azure 中国目前暂时不支持托管磁盘
 ## <a name="next-steps"></a>后续步骤
 
 - 如果部署出现问题，可以参阅[排查使用 Azure Resource Manager 时的常见 Azure 部署错误](/documentation/articles/resource-manager-common-deployment-errors/)
-- 阅读[使用 Resource Manager 和 PowerShell 创建 Windows VM](/documentation/articles/virtual-machines-windows-quick-create-powershell/)，了解如何使用 Azure PowerShell 创建虚拟机
+- 阅读[使用 Resource Manager 和 PowerShell 创建 Windows VM](/documentation/articles/virtual-machines-windows-ps-create/)，了解如何使用 Azure PowerShell 创建虚拟机
 - 参考 [使用 Resource Manager 模板创建 Windows 虚拟机](/documentation/articles/virtual-machines-windows-ps-template/)
 
 <!--Update_Description: wording update-->
