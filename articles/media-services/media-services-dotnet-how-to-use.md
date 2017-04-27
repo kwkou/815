@@ -61,19 +61,19 @@
 8. 在 .NET Framework 程序集下，找到并选择 System.Configuration 程序集，然后按“确定”。
 9. 打开 App.config 文件（如果该文件未按默认添加到项目中，请添加）并在该文件中添加 *appSettings* 节。如以下示例中所示设置 Azure 媒体服务帐户名和帐户密钥的值。
 
-若要获取**帐户名**和**帐户密钥**信息，请打开“Azure 经典管理门户”，选择你的媒体服务帐户，然后单击“管理密钥”按钮。
+    若要获取**帐户名**和**帐户密钥**信息，请打开“Azure 经典管理门户”，选择你的媒体服务帐户，然后单击“管理密钥”按钮。
 
 
-	<configuration>
-	...
-	  <appSettings>
-	    <add key="MediaServicesAccountName" value="Media-Services-Account-Name" />
-	    <add key="MediaServicesAccountKey" value="Media-Services-Account-Key" />
-	  </appSettings>
-	  
-	</configuration>
+    	<configuration>
+    	...
+    	  <appSettings>
+    	    <add key="MediaServicesAccountName" value="Media-Services-Account-Name" />
+    	    <add key="MediaServicesAccountKey" value="Media-Services-Account-Key" />
+    	  </appSettings>
+    	  
+    	</configuration>
 
-1. 使用以下代码覆盖位于 Program.cs 文件开头的现有 **using** 语句。
+10. 使用以下代码覆盖位于 Program.cs 文件开头的现有 **using** 语句。
 
 		using System;
 		using System.Collections.Generic;
