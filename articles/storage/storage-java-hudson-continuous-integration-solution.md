@@ -47,14 +47,14 @@ Hudson 通过允许开发人员轻松地集成其代码更改以及自动和频�
   
     如果你当前没有 Hudson CI 解决方案，可以使用以下技术运行一个 Hudson CI 解决方案：
   
-  1. 在已启用 Java 的计算机上，从 <http://hudson-ci.org/> 下载 Hudson WAR。
-  2. 在打开到包含 Hudson WAR 的文件夹的命令提示符下，运行 Hudson WAR。 例如，如果你下载了版本 3.1.2：
+    1. 在已启用 Java 的计算机上，从 <http://hudson-ci.org/> 下载 Hudson WAR。
+    2. 在打开到包含 Hudson WAR 的文件夹的命令提示符下，运行 Hudson WAR。 例如，如果你下载了版本 3.1.2：
      
-      `java -jar hudson-3.1.2.war`
+        `java -jar hudson-3.1.2.war`
 
-  3. 在浏览器中，打开 `http://localhost:8080/`。 这将打开 Hudson 仪表板。
-  4. 首次使用 Hudson 时，在以下网址完成初始设置：`http://localhost:8080/`。
-  5. 完成初始设置后，取消运行 Hudson WAR 的实例，再次启动 Hudson WAR，然后重新打开 Hudson 仪表板 (`http://localhost:8080/`)，本仪表板可用于安装和配置 Azure 存储插件。
+    3. 在浏览器中，打开 `http://localhost:8080/`。 这将打开 Hudson 仪表板。
+    4. 首次使用 Hudson 时，在以下网址完成初始设置：`http://localhost:8080/`。
+    5. 完成初始设置后，取消运行 Hudson WAR 的实例，再次启动 Hudson WAR，然后重新打开 Hudson 仪表板 (`http://localhost:8080/`)，本仪表板可用于安装和配置 Azure 存储插件。
      
       虽然典型 Hudson CI 解决方案将设置为作为一个服务运行，但在本教程中，通过命令行运行 Hudson war 就足够了。
 * 一个 Azure 帐户。 可在 <https://www.azure.cn> 中注册 Azure 帐户。

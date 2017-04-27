@@ -47,12 +47,12 @@ Jenkins 通过允许开发人员轻松地集成其代码更改以及自动和频
   
     如果你当前没有 Jenkins CI 解决方案，可以使用以下技术运行一个 Jenkins CI 解决方案：
   
-  1. 在已启用 Java 的计算机上，从 <http://jenkins-ci.org> 下载 jenkins.war。
-  2. 在打开到包含 jenkins.war 的文件夹的命令提示符处，运行：
+    1. 在已启用 Java 的计算机上，从 <http://jenkins-ci.org> 下载 jenkins.war。
+    2. 在打开到包含 jenkins.war 的文件夹的命令提示符处，运行：
      
-      `java -jar jenkins.war`
+        `java -jar jenkins.war`
 
-  3. 在浏览器中，打开 `http://localhost:8080/`。 这将打开 Jenkins 仪表板，用于安装并配置 Azure 存储插件。
+    3. 在浏览器中，打开 `http://localhost:8080/`。 这将打开 Jenkins 仪表板，用于安装并配置 Azure 存储插件。
      
       虽然典型 Jenkins CI 解决方案将设置为作为一个服务运行，但在本教程中，通过命令行运行 Jenkins war 就足够了。
 - 一个 Azure 帐户。 可在 <http://www.azure.cn> 中注册 Azure 帐户。

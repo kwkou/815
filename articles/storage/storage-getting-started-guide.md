@@ -44,7 +44,9 @@
 拥有帐户之后，即可以在 Visual Studio 中使用 Azure 快速启动示例项目之一创建一个简单的 Azure 存储空间应用程序。 本教程重点介绍 Azure 存储空间的示例项目：**Azure 存储： Blobs**、**Azure 存储：文件**、**Azure 存储：队列**以及 **Azure 存储：表**：
 
 1. 启动 Visual Studio。
+
 2. 在“文件”菜单上，单击“新建项目”
+
 3. 在“新建项目”对话框中，单击“已安装” > “模板” > “Visual C#” > “云” > “快速启动” > “数据服务”。
    
    a.在“解决方案资源管理器”中，右键单击项目文件夹下的“引用”文件夹，然后单击“添加引用”。 选择以下模板之一：**Azure 存储： Blobs****Azure 存储：文件****Azure 存储：队列**或 **Azure 存储：表**
@@ -53,7 +55,7 @@
    
    c. 为你的项目指定一个名称并创建新的 Visual Studio 解决方案，如下所示：
 
-    ![Azure 快速启动][Image1]
+   ![Azure 快速启动][Image1]
 
 你可能想要在运行应用程序之前检查源代码。 若要查看代码，请在 Visual Studio 中的“查看”菜单上选择“解决方案资源管理器”。 然后双击 Program.cs 文件。
 
@@ -61,15 +63,18 @@
 
 1. 在 Visual Studio 中的“查看”菜单上，选择“解决方案资源管理器”。 打开 **App.config** 文件并注释掉 Azure 存储模拟器的连接字符串：
 
-   `<!--<add key="StorageConnectionString" value = "UseDevelopmentStorage=true;"/>-->`
+    `<!--<add key="StorageConnectionString" value = "UseDevelopmentStorage=true;"/>-->`
 
 2. 在 App.config 文件中取消注释 Azure 存储服务的连接字符串，并用帐户凭据替换 `[AccountName]` 和 `[AccountKey]`：
 
-   `<add key="StorageConnectionString" value="DefaultEndpointsProtocol=https;AccountName=[AccountName];AccountKey=[AccountKey];EndpointSuffix=core.chinacloudapi.cn"`
+    `<add key="StorageConnectionString" value="DefaultEndpointsProtocol=https;AccountName=[AccountName];AccountKey=[AccountKey];EndpointSuffix=core.chinacloudapi.cn"`
 
-   若要检索存储帐户访问密钥，请参阅 [管理存储访问密钥](/documentation/articles/storage-create-storage-account/#manage-your-storage-access-keys)。
+    若要检索存储帐户访问密钥，请参阅 [管理存储访问密钥](/documentation/articles/storage-create-storage-account/#manage-your-storage-access-keys)。
+
 3. 在 App.config 文件中提供存储帐户名称和访问密钥后,在“文件” 菜单中，单击“全部保存”以保存所有项目文件。
+
 4. 在“生成”菜单中，单击“生成解决方案”。
+
 5. 在“调试”菜单中，按 **F11** 逐步运行该解决方案，或按 **F5** 运行该解决方案。
 
 ## <a name="run-your-first-azure-storage-application-locally-against-the-azure-storage-emulator"></a>使用 Azure 存储模拟器在本地运行你的第一个 Azure 存储空间应用程序
@@ -91,7 +96,7 @@
 
 4. 在 Visual Studio 中的“查看”菜单上，选择“解决方案资源管理器”。 打开 App.config 文件并注释掉 Azure 存储帐户的连接字符串（如果已添加）。 然后取消注释 Azure 存储模拟器的连接字符串：
 
-   `<add key="StorageConnectionString" value = "UseDevelopmentStorage=true;"/>`
+    `<add key="StorageConnectionString" value = "UseDevelopmentStorage=true;"/>`
 
 你可能想要在运行应用程序之前检查源代码。 若要查看代码，请在 Visual Studio 中的“查看”菜单上选择“解决方案资源管理器”。 然后双击 Program.cs 文件。
 
