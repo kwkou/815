@@ -204,7 +204,7 @@
 
 ## 创建虚拟机
 
-有关创建虚拟机和分配 NIC 的指南，请参阅[使用 PowerShell 创建 Azure VM](/documentation/articles/virtual-machines-windows-ps-create/)。
+有关创建虚拟机和分配 NIC 的指南，请参阅[使用 PowerShell 创建 Azure VM](/documentation/articles/virtual-machines-windows-quick-create-powershell/)。
 
 ## 向负载均衡器添加网络接口
 

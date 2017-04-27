@@ -263,8 +263,8 @@ HDInsight 群集提供以下 HTTP Web 服务（所有这些服务都有 REST 样
 [azure-trial]: /pricing/1rmb-trial/
 
 [hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-linux-tutorial-get-started/
-[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters/
-[hdinsight-provision-custom-options]: /documentation/articles/hdinsight-provision-clusters/#configuration
+[hdinsight-provision]: /documentation/articles/hdinsight-hadoop-provision-linux-clusters/
+[hdinsight-provision-custom-options]: /documentation/articles/hdinsight-hadoop-provision-linux-clusters/#configuration
 [hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically/
 
 [hdinsight-admin-cli]: /documentation/articles/hdinsight-administer-use-command-line/

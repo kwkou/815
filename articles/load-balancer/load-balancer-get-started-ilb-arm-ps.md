@@ -220,7 +220,7 @@ Azure 资源管理器要求所有资源组指定一个位置。此位置将用�
 
 使用命令 Add-AzureRmVMNetworkInterface 将 NIC 分配给虚拟机。
 
-可以按照以下文档找到相关分步说明，以创建虚拟机并将其分配给 NIC：[使用 PowerShell 创建 Azure VM](/documentation/articles/virtual-machines-windows-ps-create/)。
+可以按照以下文档找到相关分步说明，以创建虚拟机并将其分配给 NIC：[使用 PowerShell 创建 Azure VM](/documentation/articles/virtual-machines-windows-quick-create-powershell/)。
 
 ## 添加网络接口
 

@@ -132,7 +132,7 @@ Hive 命令提供了一种简单的方法，可以交互方式在 HDInsight 群�
 
 
 
-[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters/
+[hdinsight-provision]: /documentation/articles/hdinsight-hadoop-provision-linux-clusters/
 [hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically/
 [hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data/
 

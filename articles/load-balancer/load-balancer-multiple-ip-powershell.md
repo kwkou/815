@@ -43,18 +43,18 @@
         $location = "chinaeast".
         $myResourceGroup = "contosofabrikam"
 
-    有关详细信息，请参阅[创建资源组](/documentation/articles/virtual-machines-windows-ps-create/)中的第 2 步。
+    有关详细信息，请参阅[创建资源组](/documentation/articles/virtual-machines-windows-quick-create-powershell/)中的第 2 步。
 
 3. [创建可用性集](/documentation/articles/virtual-machines-windows-create-availability-set/)来包含 VM。 对于此场景，请使用以下命令：
 
         New-AzureRmAvailabilitySet -ResourceGroupName "contosofabrikam" -Name "myAvailset" -Location "China North"
 
-4. 按照[创建 Windows VM](/documentation/articles/virtual-machines-windows-ps-create/) 中步骤 3 至 5 的说明准备创建具有单个 NIC 的 VM。 执行步骤 6.1，使用以下命令而不是步骤 6.2：
+4. 按照[创建 Windows VM](/documentation/articles/virtual-machines-windows-quick-create-powershell/) 中步骤 3 至 5 的说明准备创建具有单个 NIC 的 VM。 执行步骤 6.1，使用以下命令而不是步骤 6.2：
 
         $availset = Get-AzureRmAvailabilitySet -ResourceGroupName "contosofabrikam" -Name "myAvailset"
         New-AzureRmVMConfig -VMName "VM1" -VMSize "Standard_DS1_v2" -AvailabilitySetId $availset.Id
 
-    然后完成[创建 Windows VM](/documentation/articles/virtual-machines-windows-ps-create/) 的步骤 6.3 至 6.8。
+    然后完成[创建 Windows VM](/documentation/articles/virtual-machines-windows-quick-create-powershell/) 的步骤 6.3 至 6.8。
 
 5. 向每个 VM 中添加另一个 IP 配置。 按照[将多个 IP 地址分配给虚拟机](/documentation/articles/virtual-network-multiple-ip-addresses-powershell/#add)文章中的说明执行操作。 请使用以下配置设置：
 

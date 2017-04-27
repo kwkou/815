@@ -102,7 +102,7 @@
 
 ## 后续步骤
 * [安装 IIS](/documentation/articles/virtual-machines-windows-hero-role/) 即可试用新的 VM。本教程还介绍如何使用网络安全组 \(NSG\) 对传入 Web 流量打开端口 80。
-* 也可以[使用 PowerShell 创建 Windows VM](/documentation/articles/virtual-machines-windows-ps-create/) 或[使用 Azure CLI 创建 Linux 虚拟机](/documentation/articles/virtual-machines-linux-quick-create-cli/)。
+* 也可以[使用 PowerShell 创建 Windows VM](/documentation/articles/virtual-machines-windows-quick-create-powershell/) 或[使用 Azure CLI 创建 Linux 虚拟机](/documentation/articles/virtual-machines-linux-quick-create-cli/)。
 * 如果对部署自动化感兴趣，请参阅 [Create a Windows virtual machine by using a Resource Manager template](/documentation/articles/virtual-machines-windows-ps-template/)（使用 Resource Manager 模板创建 Windows 虚拟机）。
 
 <!---HONumber=Mooncake_0220_2017-->

@@ -244,7 +244,7 @@ HBase 复制使用 ZooKeeper VM 的 IP 地址。必须为目标 HBase ZooKeeper 
 [powershell-install]: https://docs.microsoft.com/powershell/azureps-cmdlets-docs
 [hdinsight-hbase-get-started]: /documentation/articles/hdinsight-hbase-tutorial-get-started-linux/
 [hdinsight-manage-portal]: /documentation/articles/hdinsight-administer-use-management-portal/
-[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters/
+[hdinsight-provision]: /documentation/articles/hdinsight-hadoop-provision-linux-clusters/
 [hdinsight-sensor-data]: /documentation/articles/hdinsight-storm-sensor-data-analysis/
 [hdinsight-hbase-overview]: /documentation/articles/hdinsight-hbase-overview/
 [hdinsight-hbase-provision-vnet]: /documentation/articles/hdinsight-hbase-provision-vnet/

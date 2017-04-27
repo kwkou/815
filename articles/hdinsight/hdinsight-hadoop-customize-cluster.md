@@ -59,7 +59,7 @@ HDInsight 提供了多个脚本用于在 HDInsight 群集上安装以下组件�
 ## 使用 Azure 门户预览调用脚本
 **在 Azure 门户预览中**
 
-1. 根据 [Create Hadoop clusters in HDInsight](/documentation/articles/hdinsight-provision-clusters/)（在 HDInsight 中创建 Hadoop 群集）中所述开始创建群集。
+1. 根据 [Create Hadoop clusters in HDInsight](/documentation/articles/hdinsight-hadoop-provision-linux-clusters/)（在 HDInsight 中创建 Hadoop 群集）中所述开始创建群集。
 2. 在“脚本操作”边栏选项卡的“可选配置”下，单击“添加脚本操作”，提供有关脚本操作的详细信息，如下所示：
 
     ![使用脚本操作自定义群集](./media/hdinsight-hadoop-customize-cluster/HDI.CreateCluster.8.png "使用脚本操作自定义群集")  
@@ -317,10 +317,10 @@ HDInsight 服务可提供多种方法使用自定义组件。无论在群集上�
 * [在 HDInsight 群集上安装并使用 Solr](/documentation/articles/hdinsight-hadoop-solr-install/)
 * [在 HDInsight 群集上安装并使用 Giraph](/documentation/articles/hdinsight-hadoop-giraph-install/)
 
-[hdinsight-install-spark]: /documentation/articles/hdinsight-hadoop-spark-install/
+[hdinsight-install-spark]: /documentation/articles/hdinsight-apache-spark-jupyter-spark-sql/
 [hdinsight-install-r]: /documentation/articles/hdinsight-hadoop-r-scripts/
 [hdinsight-write-script]: /documentation/articles/hdinsight-hadoop-script-actions/
-[hdinsight-provision-cluster]: /documentation/articles/hdinsight-provision-clusters/
+[hdinsight-provision-cluster]: /documentation/articles/hdinsight-hadoop-provision-linux-clusters/
 [powershell-install-configure]: https://docs.microsoft.com/powershell/azureps-cmdlets-docs
 
 [img-hdi-cluster-states]: ./media/hdinsight-hadoop-customize-cluster/HDI-Cluster-state.png "群集创建期间的阶段"

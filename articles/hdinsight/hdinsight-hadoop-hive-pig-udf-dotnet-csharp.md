@@ -44,7 +44,7 @@ Hive 和 Pig 非常适合处理 Azure HDInsight 中的数据，但有时你需�
 
     * Visual Studio 2017
 
-* HDInsight 群集上的 Hadoop - 有关创建群集的步骤，请参阅[设置 HDInsight 群集](/documentation/articles/hdinsight-provision-clusters/)
+* HDInsight 群集上的 Hadoop - 有关创建群集的步骤，请参阅[设置 HDInsight 群集](/documentation/articles/hdinsight-hadoop-provision-linux-clusters/)
 
 * 用于 Visual Studio 的 Hadoop 工具或用于 Visual Studio 的 Data Lake 工具。有关安装和配置该工具的步骤，请参阅[开始使用 HDInsight Hadoop Tools for Visual Studio](/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started/)。
 

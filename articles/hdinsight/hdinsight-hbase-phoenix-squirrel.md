@@ -276,7 +276,7 @@ Phoenix 驱动程序 jar 文件位于 HBase 群集上。根据具体的版本，
 [vnet-point-to-site-connectivity]: /documentation/articles/vpn-gateway-howto-point-to-site-classic-azure-portal/
 
 [hdinsight-versions]: /documentation/articles/hdinsight-component-versioning/
-[hdinsight-hbase-get-started]: /documentation/articles/hdinsight-hbase-tutorial-get-started/
+[hdinsight-hbase-get-started]: /documentation/articles/hdinsight-hbase-tutorial-get-started-linux/
 [hdinsight-manage-portal]: /documentation/articles/hdinsight-administer-use-management-portal/#connect-to-clusters-using-rdp
 [hdinsight-hbase-provision-vnet]: /documentation/articles/hdinsight-hbase-provision-vnet/
 [hdinsight-hbase-overview]: /documentation/articles/hdinsight-hbase-overview/

@@ -35,7 +35,7 @@
 **相关文章**
 
 * [在 HDInsight Hadoop 群集 (Linux) 上安装和使用 Solr](/documentation/articles/hdinsight-hadoop-solr-install-linux/)
-* [在 HDInsight 中创建 Hadoop 群集](/documentation/articles/hdinsight-provision-clusters/)：有关创建 HDInsight 群集的一般信息。
+* [在 HDInsight 中创建 Hadoop 群集](/documentation/articles/hdinsight-hadoop-provision-linux-clusters/)：有关创建 HDInsight 群集的一般信息。
 * [使用脚本操作自定义 HDInsight 群集][hdinsight-cluster-customize]：有关使用脚本操作自定义 HDInsight 群集的一般信息。
 * [为 HDInsight 开发脚本操作脚本](/documentation/articles/hdinsight-hadoop-script-actions/)。
 
@@ -43,7 +43,7 @@
 <a href="http://lucene.apache.org/solr/features.html" target="_blank">Apache Solr</a> 是一种企业搜索平台，用于对数据实现功能强大的全文搜索。虽然 Hadoop 可用于存储和管理大量数据，但是，Apache Solr 提供了快速检索数据的搜索功能。
 
 ## 使用门户安装 Solr
-1. 如[在 HDInsight 中创建 Hadoop 群集](/documentation/articles/hdinsight-provision-clusters/)中所述，使用“自定义创建”选项开始创建群集。
+1. 如[在 HDInsight 中创建 Hadoop 群集](/documentation/articles/hdinsight-hadoop-provision-linux-clusters/)中所述，使用“自定义创建”选项开始创建群集。
 2. 在向导的“脚本操作”页上，单击“添加脚本操作”，以提供有关脚本操作的详细信息，如下所示：
 
     ![使用脚本操作自定义群集](./media/hdinsight-hadoop-solr-install/hdi-script-action-solr.png "使用脚本操作自定义群集")
@@ -170,7 +170,7 @@
 
 ## 另请参阅
 * [在 HDInsight Hadoop 群集 (Linux) 上安装和使用 Solr](/documentation/articles/hdinsight-hadoop-solr-install-linux/)
-* [在 HDInsight 中创建 Hadoop 群集](/documentation/articles/hdinsight-provision-clusters/)：有关创建 HDInsight 群集的一般信息。
+* [在 HDInsight 中创建 Hadoop 群集](/documentation/articles/hdinsight-hadoop-provision-linux-clusters/)：有关创建 HDInsight 群集的一般信息。
 * [使用脚本操作自定义 HDInsight 群集][hdinsight-cluster-customize]：有关使用脚本操作自定义 HDInsight 群集的一般信息。
 * [为 HDInsight 开发脚本操作脚本](/documentation/articles/hdinsight-hadoop-script-actions/)。
 * [在 HDInsight 群集上安装和使用 Spark][hdinsight-install-spark]：有关安装 Spark 的脚本操作示例。
@@ -178,9 +178,9 @@
 * [在 HDInsight 群集上安装 Giraph](/documentation/articles/hdinsight-hadoop-giraph-install/)：有关安装 Giraph 的脚本操作示例。
 
 [powershell-install-configure]: https://docs.microsoft.com/powershell/azureps-cmdlets-docs
-[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters/
+[hdinsight-provision]: /documentation/articles/hdinsight-hadoop-provision-linux-clusters/
 [hdinsight-install-r]: /documentation/articles/hdinsight-hadoop-r-scripts/
-[hdinsight-install-spark]: /documentation/articles/hdinsight-hadoop-spark-install/
+[hdinsight-install-spark]: /documentation/articles/hdinsight-apache-spark-jupyter-spark-sql/
 [hdinsight-cluster-customize]: /documentation/articles/hdinsight-hadoop-customize-cluster/
 
 <!---HONumber=Mooncake_0306_2017-->

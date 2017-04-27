@@ -155,7 +155,7 @@
 
 ## 后续步骤
 
-详细了解[流量管理器工作原理](/documentation/articles/traffic-manager-how-traffic-manager-works/)
+详细了解[流量管理器工作原理](/documentation/articles/traffic-manager-overview/)
 
 了解如何[创建流量管理器配置文件](/documentation/articles/traffic-manager-manage-profiles/)
 

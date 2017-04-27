@@ -283,7 +283,7 @@ Sqoop 是一种专用于在 Hadoop 和关系数据库之间传输数据的工具
 
 [hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive/
 [hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig/
-[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters/
+[hdinsight-provision]: /documentation/articles/hdinsight-hadoop-provision-linux-clusters/
 
 [sqldatabase-create-configure]: /documentation/articles/sql-database-get-started/
 
