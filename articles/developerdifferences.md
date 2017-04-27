@@ -123,7 +123,7 @@ Visual Studio 2015 支持在中国区 Azure 上开发，使用 Visual Studio 201
 
 	1.	确保已登出并关闭 Visual Studio。
 	2.	删除 **%temp%\servicehub** 文件夹（详细路径为 **C:\Users\%USERPROFILE%\AppData\Local\Temp\servicehub**）。
-	3.	把前面新建的 JSON 文件 (**AadProvider.Configuration.json**) 拷贝到 **%localappdata%\.IdentityService\AadConfigurations**（详细路径为 **C:\Users\v-johch\AppData\Local\.IdentityService\AadConfigurations**, **AadConfigurations** 文件夹可能不存在，需要手动创建）。
+	3.	把前面新建的 JSON 文件 (**AadProvider.Configuration.json**) 拷贝到 **%localappdata%\\.IdentityService\AadConfigurations**（详细路径为 **C:\Users\%localappdata%\AppData\Local\.IdentityService\AadConfigurations**, **AadConfigurations** 文件夹可能不存在，需要手动创建）。
 	4.	重启 VS 并添加中国 Azure 账户即可。
 
 - **切换回 Global Azure**
