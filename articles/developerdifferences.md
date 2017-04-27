@@ -13,7 +13,7 @@
 <tags 
     ms.service="multiple" 
     ms.date="" 
-    wacn.date="03/20/2017"/>
+    wacn.date="04/27/2017"/>
 
 
 # 中国区 Azure 应用程序开发说明
