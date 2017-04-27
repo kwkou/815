@@ -14,9 +14,9 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="tbd" 
-   ms.date="01/10/2017"
+   ms.date="1/10/2017"
    ms.author="raiye"
-   wacn.date="01/25/2017"/>  
+   wacn.date="04/27/2017"/>  
 
 
 # Azure 来宾 OS 

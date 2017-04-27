@@ -14,9 +14,9 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="12/08/2016"
+	ms.date="03/06/2017"
 	ms.author="ashwink"
-	wacn.date="01/03/2017"/>  
+	wacn.date="04/27/2017"/>  
 
 
 # Azure Monitor PowerShell 快速启动示例

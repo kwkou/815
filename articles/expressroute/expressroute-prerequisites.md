@@ -12,8 +12,8 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="01/06/2017"
-   wacn.date="03/03/2017"
+   ms.date="1/6/2017"
+   wacn.date="04/27/2017"
    ms.author="cherylmc"/>
 
 
