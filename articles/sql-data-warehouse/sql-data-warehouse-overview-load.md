@@ -130,6 +130,6 @@ SQL 数据仓库支持通过 PolyBase 从 HDInsight 加载数据。 该过程和
 <!--MSDN references-->
 
 <!--Other Web references-->
-[Import/Export]: https://azure.microsoft.com/documentation/articles/storage-import-export-service/
+[Import/Export]: /documentation/articles/storage-import-export-service/
 
 <!--Update_Description:update meta properties;wording update-->
