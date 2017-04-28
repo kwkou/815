@@ -46,12 +46,12 @@
     
         ![3](./media/multi-factor-authentication-end-user-manage/3.png)     
     
-    - 还可以选择“移动电话”，以便安装执行验证的“Azure 身份验证应用”。
+    - 还可以选择“移动电话应用”，以便安装执行验证的“Azure 身份验证应用”。
     
         ![4](./media/multi-factor-authentication-end-user-manage/4.png) 
 
 
-## <a name="i-want-to-change-my-phone-number-or-add-a-secondary-number"></a>我想要更改我的电话号码，或添加次要号码
+## <a name="i-want-to-change-my-phone-number-or-add-a-secondary-number"></a>我想要更改我的电话号码
 
 若要更改电话号码，可执行以下步骤。
 
