@@ -15,7 +15,7 @@
     ms.tgt_pltfrm="NA"
     ms.workload="powerbi"
     ms.date="02/06/2017"
-    wacn.date="03/14/2017"
+    wacn.date="04/28/2017"
     ms.author="asaxton" />  
 
 
@@ -354,7 +354,7 @@ URI 片段 **32960a09-6366-4208-a8bb-9e0678cdbb9d** 是 workspaceId，查询参�
 	      "id": "2027efc6-a308-4632-a775-b9a9186f087c",
 	      "name": "mydataset01",
 	      "webUrl": "https://app.powerbi.com/reports/2027efc6-a308-4632-a775-b9a9186f087c",
-	      "embedUrl": "https://embedded.powerbi.com/appTokenReportEmbed?reportId=2027efc6-a308-4632-a775-b9a9186f087c",
+	      "embedUrl": "https://embedded.powerbi.cn/appTokenReportEmbed?reportId=2027efc6-a308-4632-a775-b9a9186f087c",
 	      "isFromPbix": false
 	    }
 	  ]
@@ -428,7 +428,7 @@ URI 片段 **32960a09-6366-4208-a8bb-9e0678cdbb9d** 是 workspaceId，查询参�
 	        (function () {
 	          document.getElementById('btnView').onclick = function() {
 	            var iframe = document.getElementById('ifrTile');
-	            iframe.src = 'https://embedded.powerbi.com/appTokenReportEmbed?reportId=2027efc6-a308-4632-a775-b9a9186f087c';
+	            iframe.src = 'https://embedded.powerbi.cn/appTokenReportEmbed?reportId=2027efc6-a308-4632-a775-b9a9186f087c';
 	            iframe.onload = function() {
 	              var msgJson = {
 	                action: "loadReport",

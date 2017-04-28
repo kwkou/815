@@ -16,7 +16,7 @@
     ms.tgt_pltfrm="NA"
     ms.workload="powerbi"
     ms.date="03/11/2017"
-    wacn.date="04/24/2017"
+    wacn.date="04/28/2017"
     ms.author="asaxton"
     ms.sourcegitcommit="a114d832e9c5320e9a109c9020fcaa2f2fdd43a9"
     ms.openlocfilehash="f462b6ad638a13c0620351f7584a665d9a476f3b"
@@ -61,7 +61,7 @@
         var config= {
             type: 'report',
             accessToken: 'eyJ0eXAiO...Qron7qYpY9MI',
-            embedUrl: 'https://embedded.powerbi.com/appTokenReportEmbed',
+            embedUrl: 'https://embedded.powerbi.cn/appTokenReportEmbed',
             id:  '5dac7a4a-4452-46b3-99f6-a25915e0fe55',
             permissions: models.Permissions.All /*both save & save as buttons will be visible*/,
             viewMode: models.ViewMode.Edit,
@@ -110,7 +110,7 @@
   
     var embedConfiguration = {
             accessToken: 'eyJ0eXAiO...Qron7qYpY9MJ',
-            embedUrl: 'https://embedded.powerbi.com/appTokenReportEmbed',
+            embedUrl: 'https://embedded.powerbi.cn/appTokenReportEmbed',
             reportId: '5dac7a4a-4452-46b3-99f6-a25915e0fe54',
         };
     

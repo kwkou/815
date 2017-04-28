@@ -16,7 +16,7 @@
     ms.tgt_pltfrm="NA"
     ms.workload="powerbi"
     ms.date="03/11/2017"
-    wacn.date="04/24/2017"
+    wacn.date="04/28/2017"
     ms.author="asaxton"
     ms.sourcegitcommit="a114d832e9c5320e9a109c9020fcaa2f2fdd43a9"
     ms.openlocfilehash="018846f965d37f42c9551b0db7e7fe818f2a8180"
@@ -56,7 +56,7 @@ Power BI Embedded 使用嵌入令牌，即经过 HMAC 签名的 JSON Web 令牌�
 
 ## <a name="create-a-new-blank-report"></a>创建新的空白报表
 
-若要创建新报表，应提供 create 配置。 此配置应包含访问令牌、embedURL，以及用于创建报表的 datasetID。 这就需要安装 [Power BI JavaScript NuGet 包](https://www.nuget.org/packages/Microsoft.PowerBI.JavaScript/)。 https://embedded.powerbi.com/appTokenReportEmbed 即为 embedUrl。
+若要创建新报表，应提供 create 配置。 此配置应包含访问令牌、embedURL，以及用于创建报表的 datasetID。 这就需要安装 [Power BI JavaScript NuGet 包](https://www.nuget.org/packages/Microsoft.PowerBI.JavaScript/)。 https://embedded.powerbi.cn/appTokenReportEmbed 即为 embedUrl。
 
 > [AZURE.NOTE]
 > 可以使用 [JavaScript 报表嵌入示例](https://microsoft.github.io/PowerBI-JavaScript/demo/)测试功能。 我们还提供了适用于不同操作的代码示例。
@@ -71,7 +71,7 @@ Power BI Embedded 使用嵌入令牌，即经过 HMAC 签名的 JSON Web 令牌�
   
     var embedCreateConfiguration = {
             accessToken: 'eyJ0eXAiO...Qron7qYpY9MI',
-            embedUrl: 'https://embedded.powerbi.com/appTokenReportEmbed',
+            embedUrl: 'https://embedded.powerbi.cn/appTokenReportEmbed',
             datasetId: '5dac7a4a-4452-46b3-99f6-a25915e0fe55',
         };
     
@@ -112,7 +112,7 @@ Power BI Embedded 使用嵌入令牌，即经过 HMAC 签名的 JSON Web 令牌�
   
     var embedConfiguration = {
             accessToken: 'eyJ0eXAiO...Qron7qYpY9MJ',
-            embedUrl: 'https://embedded.powerbi.com/appTokenReportEmbed',
+            embedUrl: 'https://embedded.powerbi.cn/appTokenReportEmbed',
             reportId: '5dac7a4a-4452-46b3-99f6-a25915e0fe54',
         };
     
@@ -139,7 +139,7 @@ Power BI Embedded 使用嵌入令牌，即经过 HMAC 签名的 JSON Web 令牌�
   
     var embedCreateConfiguration = {
             accessToken: 'eyJ0eXAiO...Qron7qYpY9MI',
-            embedUrl: 'https://embedded.powerbi.com/appTokenReportEmbed',
+            embedUrl: 'https://embedded.powerbi.cn/appTokenReportEmbed',
             datasetId: '5dac7a4a-4452-46b3-99f6-a25915e0fe55',
         };
     
@@ -169,7 +169,7 @@ Power BI Embedded 使用嵌入令牌，即经过 HMAC 签名的 JSON Web 令牌�
         
         var embedConfiguration = {
             accessToken: newToken ,
-            embedUrl: 'https://embedded.powerbi.com/appTokenReportEmbed',
+            embedUrl: 'https://embedded.powerbi.cn/appTokenReportEmbed',
             reportId: newReportId,
         };
 

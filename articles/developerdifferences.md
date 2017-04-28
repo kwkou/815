@@ -13,7 +13,7 @@
 <tags 
     ms.service="multiple" 
     ms.date="" 
-    wacn.date="04/27/2017"/>
+    wacn.date="04/28/2017"/>
 
 
 # 中国区 Azure 应用程序开发说明
@@ -217,6 +217,7 @@ AAD Graph API | https://graph.windows.net| https://graph.chinacloudapi.cn
 Azure 认知服务 | https://api.projectoxford.ai/face/v1.0 | https://api.cognitive.azure.cn/face/v1.0
 SQL 数据库导入/导出服务映射端点 | | <p>1. 中国东部：[https://sh1prod-dacsvc.chinacloudapp.cn/dacwebservice.svc](https://sh1prod-dacsvc.chinacloudapp.cn/dacwebservice.svc) </p><p> 2. 中国北部：[https://bj1prod-dacsvc.chinacloudapp.cn/dacwebservice.svc](https://bj1prod-dacsvc.chinacloudapp.cn/dacwebservice.svc)</p>
 Power BI Embedded | https://api.powerbi.com | https://api.powerbi.cn
+Power BI Embedded | https://embedded.powerbi.com | https://embedded.powerbi.cn
 O365 | https://login.microsoftonline.com | https://login.partner.microsoftonline.cn
 Device Login | https://aka.ms/devicelogin | https://aka.ms/deviceloginchina 或者 https://login.chinacloudapi.cn/common/oauth2/deviceauth
 Documentdb | documents.azure.com | documents.azure.cn

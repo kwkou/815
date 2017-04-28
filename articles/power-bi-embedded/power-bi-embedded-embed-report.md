@@ -16,7 +16,7 @@
     ms.tgt_pltfrm="NA"
     ms.workload="powerbi"
     ms.date="03/11/2017"
-    wacn.date="04/24/2017"
+    wacn.date="04/28/2017"
     ms.author="asaxton"
     ms.sourcegitcommit="a114d832e9c5320e9a109c9020fcaa2f2fdd43a9"
     ms.openlocfilehash="eb937b587cbca86289f82debe8950b59a2e29539"
@@ -103,7 +103,7 @@ Power BI Embedded 使用嵌入令牌，即经过 HMAC 签名的 JSON Web 令牌�
 
 ## <a name="embed-using-javascript"></a>使用 JavaScript 嵌入
 
-获取访问令牌和报表 ID 后，我们使用 JavaScript 来嵌入报表。 这就需要安装 [Power BI JavaScript NuGet 包](https://www.nuget.org/packages/Microsoft.PowerBI.JavaScript/)。 https://embedded.powerbi.com/appTokenReportEmbed 即为 embedUrl。
+获取访问令牌和报表 ID 后，我们使用 JavaScript 来嵌入报表。 这就需要安装 [Power BI JavaScript NuGet 包](https://www.nuget.org/packages/Microsoft.PowerBI.JavaScript/)。 https://embedded.powerbi.cn/appTokenReportEmbed 即为 embedUrl。
 
 > [AZURE.NOTE]
 > 可以使用 [JavaScript 报表嵌入示例](https://microsoft.github.io/PowerBI-JavaScript/demo/)测试功能。 我们还提供了适用于不同操作的代码示例。
@@ -121,7 +121,7 @@ Power BI Embedded 使用嵌入令牌，即经过 HMAC 签名的 JSON Web 令牌�
         type: 'report',
         accessToken: 'eyJ0eXAiO...Qron7qYpY9MI',
         id: '5dac7a4a-4452-46b3-99f6-a25915e0fe55',
-        embedUrl: 'https://embedded.powerbi.com/appTokenReportEmbed'
+        embedUrl: 'https://embedded.powerbi.cn/appTokenReportEmbed'
     };
 
     var $reportContainer = $('#reportContainer');
