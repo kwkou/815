@@ -50,7 +50,7 @@
 1. [下载最新的 PowerShell](https://github.com/Azure/azure-powershell/releases)（要求的最低版本：1.0.0）
 2. 通过 **Switch-AzureMode** commandlet 切换到 *AzureResourceManager* 模式，从而启用 Azure 备份 commandlet：
 
-    PS C:\> Switch-AzureMode AzureResourceManager
+		PS C:\> Switch-AzureMode AzureResourceManager
 
 使用 PowerShell 可以自动化以下设置和注册任务：
 
@@ -294,9 +294,9 @@ DPM 服务器在注册到恢复服务保管库后，会使用默认的订阅设�
 - 获取对应于 ```$PG[0]```
 - 获取数据源的所有恢复点。
 
-    PS C:\> $PG = Get-DPMProtectionGroup -DPMServerName "TestingServer"
-    PS C:\> $DS = Get-DPMDatasource -ProtectionGroup $PG[0]
-    PS C:\> $RecoveryPoints = Get-DPMRecoverypoint -Datasource $DS[0] -Online
+    	PS C:\> $PG = Get-DPMProtectionGroup -DPMServerName "TestingServer"
+    	PS C:\> $DS = Get-DPMDatasource -ProtectionGroup $PG[0]
+    	PS C:\> $RecoveryPoints = Get-DPMRecoverypoint -Datasource $DS[0] -Online
 
 ## <a name="restore-data-protected-on-azure"></a>还原 Azure 上受保护的数据
 还原数据是 ```RecoverableItem``` 对象和 ```RecoveryOption``` 对象的组合结果。 在上一部分中，我们已获取数据源的备份点列表。
@@ -307,13 +307,13 @@ DPM 服务器在注册到恢复服务保管库后，会使用默认的订阅设�
 - 使用 ```Get-DPMRecoveryPoint``` cmdlet 获取备份点的数组。
 - 选择要从中还原的备份点。
 
-    PS C:\> $RecoveryOption = New-DPMRecoveryOption -HyperVDatasource -TargetServer "HVDCenter02" -RecoveryLocation AlternateHyperVServer -RecoveryType Recover -TargetLocation "C:\VMRecovery"
+    	PS C:\> $RecoveryOption = New-DPMRecoveryOption -HyperVDatasource -TargetServer "HVDCenter02" -RecoveryLocation AlternateHyperVServer -RecoveryType Recover -TargetLocation "C:\VMRecovery"
 
-    PS C:\> $PG = Get-DPMProtectionGroup -DPMServerName "TestingServer"
-    PS C:\> $DS = Get-DPMDatasource -ProtectionGroup $PG[0]
-    PS C:\> $RecoveryPoints = Get-DPMRecoverypoint -Datasource $DS[0] -Online
+    	PS C:\> $PG = Get-DPMProtectionGroup -DPMServerName "TestingServer"
+    	PS C:\> $DS = Get-DPMDatasource -ProtectionGroup $PG[0]
+    	PS C:\> $RecoveryPoints = Get-DPMRecoverypoint -Datasource $DS[0] -Online
 
-    PS C:\> Restore-DPMRecoverableItem -RecoverableItem $RecoveryPoints[0] -RecoveryOption $RecoveryOption
+    	PS C:\> Restore-DPMRecoverableItem -RecoverableItem $RecoveryPoints[0] -RecoveryOption $RecoveryOption
 
 可针对任何数据源类型轻松扩展这些命令。
 
