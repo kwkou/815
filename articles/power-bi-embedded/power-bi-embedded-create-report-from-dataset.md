@@ -182,13 +182,13 @@ Power BI Embedded 使用嵌入令牌，即经过 HMAC 签名的 JSON Web 令牌�
 
 ## <a name="see-also"></a>另请参阅
 
-[示例入门](/documentation/articles/power-bi-embedded-get-started-sample/)  
-[保存报表](/documentation/articles/power-bi-embedded-save-reports/)  
-[嵌入报表](/documentation/articles/power-bi-embedded-embed-report/)  
-[在 Power BI Embedded 中进行身份验证和授权](/documentation/articles/power-bi-embedded-app-token-flow/)  
-[Power BI Desktop](https://powerbi.microsoft.com/documentation/powerbi-desktop-get-the-desktop/)  
-[JavaScript 嵌入示例](https://microsoft.github.io/PowerBI-JavaScript/demo/)  
-[Power BI Core NuGut 包](https://www.nuget.org/packages/Microsoft.PowerBI.Core/)  
-[Power BI JavaScript 包](https://www.nuget.org/packages/Microsoft.PowerBI.JavaScript/)  
-有更多问题？ [试用 Power BI 社区](http://community.powerbi.com/)
+- [示例入门](/documentation/articles/power-bi-embedded-get-started-sample/)  
+- [保存报表](/documentation/articles/power-bi-embedded-save-reports/)  
+- [嵌入报表](/documentation/articles/power-bi-embedded-embed-report/)  
+- [在 Power BI Embedded 中进行身份验证和授权](/documentation/articles/power-bi-embedded-app-token-flow/)  
+- [Power BI Desktop](https://powerbi.microsoft.com/documentation/powerbi-desktop-get-the-desktop/)  
+- [JavaScript 嵌入示例](https://microsoft.github.io/PowerBI-JavaScript/demo/)  
+- [Power BI Core NuGut 包](https://www.nuget.org/packages/Microsoft.PowerBI.Core/)  
+- [Power BI JavaScript 包](https://www.nuget.org/packages/Microsoft.PowerBI.JavaScript/)  
+- 有更多问题？ [试用 Power BI 社区](http://community.powerbi.com/)
 

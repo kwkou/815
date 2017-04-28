@@ -107,12 +107,12 @@
 
 ## <a name="see-also"></a>另请参阅
 
-[示例入门](/documentation/articles/power-bi-embedded-get-started-sample/)  
-[嵌入报表](/documentation/articles/power-bi-embedded-embed-report/)  
-[在 Power BI Embedded 中进行身份验证和授权](/documentation/articles/power-bi-embedded-app-token-flow/)  
-[CreateReportEmbedToken](https://docs.microsoft.com/dotnet/api/microsoft.powerbi.security.powerbitoken?redirectedfrom=MSDN#methods_)  
-[JavaScript 嵌入示例](https://microsoft.github.io/PowerBI-JavaScript/demo/)  
-[PowerBI-CSharp Git 存储库](https://github.com/Microsoft/PowerBI-CSharp)  
-[PowerBI-Node Git 存储库](https://github.com/Microsoft/PowerBI-Node)  
-有更多问题？ [试用 Power BI 社区](http://community.powerbi.com/)
+- [示例入门](/documentation/articles/power-bi-embedded-get-started-sample/)  
+- [嵌入报表](/documentation/articles/power-bi-embedded-embed-report/)  
+- [在 Power BI Embedded 中进行身份验证和授权](/documentation/articles/power-bi-embedded-app-token-flow/)  
+- [CreateReportEmbedToken](https://docs.microsoft.com/dotnet/api/microsoft.powerbi.security.powerbitoken?redirectedfrom=MSDN#methods_)  
+- [JavaScript 嵌入示例](https://microsoft.github.io/PowerBI-JavaScript/demo/)  
+- [PowerBI-CSharp Git 存储库](https://github.com/Microsoft/PowerBI-CSharp)  
+- [PowerBI-Node Git 存储库](https://github.com/Microsoft/PowerBI-Node)  
+- 有更多问题？ [试用 Power BI 社区](http://community.powerbi.com/)
 

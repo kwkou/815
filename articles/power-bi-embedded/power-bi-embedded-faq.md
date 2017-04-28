@@ -90,10 +90,10 @@ Power BI Embedded 服务使用“应用令牌”进行身份验证和授权，�
 可以立即开始体验免费版！ 如果拥有 Azure 订阅，现在就可以直接从 Azure 门户预览预配 Power BI Embedded。  也可以创建自己的 [Azure 帐户](/pricing/1rmb-trial/)。 一旦 Power BI Embedded 服务预配完毕，就可以直接轻松使用 Power BI REST API，或使用 [GitHub](https://www.nuget.org/profiles/powerbi)上提供的开发人员 SDK。 关于如何使用开发人员 SDK 提供的示例。
 
 ## <a name="see-also"></a>另请参阅
+- [什么是 Power BI Embedded](/documentation/articles/power-bi-embedded-what-is-power-bi-embedded/)
+- [Power BI Embedded 入门](/documentation/articles/power-bi-embedded-get-started/)
+- [示例入门](/documentation/articles/power-bi-embedded-get-started-sample/)   
+- [JavaScript 嵌入示例](https://microsoft.github.io/PowerBI-JavaScript/demo/)  
+- 有更多问题？ [试用 Power BI 社区](http://community.powerbi.com/)
 
-[什么是 Power BI Embedded](/documentation/articles/power-bi-embedded-what-is-power-bi-embedded/)
-[Power BI Embedded 入门](/documentation/articles/power-bi-embedded-get-started/)
-[示例入门](/documentation/articles/power-bi-embedded-get-started-sample/)   
-[JavaScript 嵌入示例](https://microsoft.github.io/PowerBI-JavaScript/demo/)  
-有更多问题？ [试用 Power BI 社区](http://community.powerbi.com/)
 <!--Update_Description: wording update-->

@@ -171,11 +171,11 @@ scp: {scopesClaim} scopesClaim 可以是一个字符串或字符串数组，指�
 
 ## <a name="see-also"></a>另请参阅
 
-[CreateReportEmbedToken](https://docs.microsoft.com/dotnet/api/microsoft.powerbi.security.powerbitoken?redirectedfrom=MSDN#methods_)  
-[Power BI Embedded 示例入门](/documentation/articles/power-bi-embedded-get-started-sample/)  
-[常见 Power BI Embedded 方案](/documentation/articles/power-bi-embedded-scenarios/)  
-[Power BI Embedded 入门](/documentation/articles/power-bi-embedded-get-started/)  
-[PowerBI-CSharp Git 存储库](https://github.com/Microsoft/PowerBI-CSharp)  
-有更多问题？ [试用 Power BI 社区](http://community.powerbi.com/)
+- [CreateReportEmbedToken](https://docs.microsoft.com/dotnet/api/microsoft.powerbi.security.powerbitoken?redirectedfrom=MSDN#methods_)  
+- [Power BI Embedded 示例入门](/documentation/articles/power-bi-embedded-get-started-sample/)  
+- [常见 Power BI Embedded 方案](/documentation/articles/power-bi-embedded-scenarios/)  
+- [Power BI Embedded 入门](/documentation/articles/power-bi-embedded-get-started/)  
+- [PowerBI-CSharp Git 存储库](https://github.com/Microsoft/PowerBI-CSharp)  
+- 有更多问题？ [试用 Power BI 社区](http://community.powerbi.com/)
 
 <!--Update_Description: wording update-->

@@ -73,14 +73,14 @@ Power BI Embedded 是一项 **Azure 服务** ，使 ISV 能够在其自己的应
 
 ## <a name="see-also"></a>另请参阅
 
-[常见 Power BI Embedded 方案](/documentation/articles/power-bi-embedded-scenarios/)  
-[Power BI Embedded 入门](/documentation/articles/power-bi-embedded-get-started/)  
-[示例入门](/documentation/articles/power-bi-embedded-get-started-sample/)  
-[嵌入报表](/documentation/articles/power-bi-embedded-embed-report/)  
-[在 Power BI Embedded 中进行身份验证和授权](/documentation/articles/power-bi-embedded-app-token-flow/)  
-[JavaScript 嵌入示例](https://microsoft.github.io/PowerBI-JavaScript/demo/)  
-[PowerBI-CSharp Git 存储库](https://github.com/Microsoft/PowerBI-CSharp)  
-[PowerBI-Node Git 存储库](https://github.com/Microsoft/PowerBI-Node)  
-有更多问题？ [试用 Power BI 社区](http://community.powerbi.com/)
+- [常见 Power BI Embedded 方案](/documentation/articles/power-bi-embedded-scenarios/)  
+- [Power BI Embedded 入门](/documentation/articles/power-bi-embedded-get-started/)  
+- [示例入门](/documentation/articles/power-bi-embedded-get-started-sample/)  
+- [嵌入报表](/documentation/articles/power-bi-embedded-embed-report/)  
+- [在 Power BI Embedded 中进行身份验证和授权](/documentation/articles/power-bi-embedded-app-token-flow/)  
+- [JavaScript 嵌入示例](https://microsoft.github.io/PowerBI-JavaScript/demo/)  
+- [PowerBI-CSharp Git 存储库](https://github.com/Microsoft/PowerBI-CSharp)  
+- [PowerBI-Node Git 存储库](https://github.com/Microsoft/PowerBI-Node)  
+- 有更多问题？ [试用 Power BI 社区](http://community.powerbi.com/)
 
 <!--Update_Description: wording update-->

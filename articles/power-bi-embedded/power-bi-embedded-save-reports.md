@@ -122,11 +122,11 @@
 
 ## <a name="see-also"></a>另请参阅
 
-[示例入门](/documentation/articles/power-bi-embedded-get-started-sample/)  
-[嵌入报表](/documentation/articles/power-bi-embedded-embed-report/)  
-[从数据集创建新报表](/documentation/articles/power-bi-embedded-create-report-from-dataset/)  
-[在 Power BI Embedded 中进行身份验证和授权](/documentation/articles/power-bi-embedded-app-token-flow/)  
-[Power BI Desktop](https://powerbi.microsoft.com/documentation/powerbi-desktop-get-the-desktop/)  
-[JavaScript 嵌入示例](https://microsoft.github.io/PowerBI-JavaScript/demo/)  
-有更多问题？ [试用 Power BI 社区](http://community.powerbi.com/)
+- [示例入门](/documentation/articles/power-bi-embedded-get-started-sample/)  
+- [嵌入报表](/documentation/articles/power-bi-embedded-embed-report/)  
+- [从数据集创建新报表](/documentation/articles/power-bi-embedded-create-report-from-dataset/)  
+- [在 Power BI Embedded 中进行身份验证和授权](/documentation/articles/power-bi-embedded-app-token-flow/)  
+- [Power BI Desktop](https://powerbi.microsoft.com/documentation/powerbi-desktop-get-the-desktop/)  
+- [JavaScript 嵌入示例](https://microsoft.github.io/PowerBI-JavaScript/demo/)  
+- 有更多问题？ [试用 Power BI 社区](http://community.powerbi.com/)
 
