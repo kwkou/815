@@ -17,7 +17,7 @@
    ms.workload="na"
    ms.date="02/20/2017"
    ms.author="dobett"
-   wacn.date="03/28/2017"/>  
+   wacn.date="05/02/2017"/>  
 
 
 
@@ -27,7 +27,7 @@
 
 ## 创建 node.js 示例解决方案
 
-请确保已在开发计算机上安装 Node.js 0.10.x 或更高版本。若要检查版本，可在命令行中运行 `node --version`。
+请确保已在开发计算机上安装 Node.js 0.11.5 或更高版本。若要检查版本，可在命令行中运行 `node --version`。
 
 1. 在开发计算机上创建名为 **RemoteMonitoring** 的文件夹。在命令行环境中导航到此文件夹。
 
@@ -257,4 +257,4 @@
 [lnk-github-prepare]: https://github.com/Azure/azure-iot-sdk-node/blob/master/doc/node-devbox-setup.md
 
 <!---HONumber=Mooncake_0406_2017-->
-<!--Update_Description:replace with chinese menu-->
+<!--Update_Description:update node.js version-->
