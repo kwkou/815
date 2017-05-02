@@ -21,7 +21,7 @@
 
 ##概述
 
-Azure 存储提供一套完善的安全功能，这些功能相辅相成，让开发人员能够生成安全的应用程序。存储帐户本身可以通过基于角色的访问控制和 Azure Active Directory 来保护。在应用程序和 Azure 之间传输数据时，可以使用[客户端加密](/documentation/articles/storage-client-side-encryption/)、HTTPS 或 SMB 3.0 来保护数据。使用[存储服务加密 (SSE)](/documentation/articles/storage-service-encryption/) 写入 Azure 存储时，可将数据设置为自动加密。可以使用[共享访问签名](/documentation/articles/storage-dotnet-shared-access-signature-part-1/)来授予对 Azure 存储中数据对象的委派访问权限。
+Azure 存储提供一套完善的安全功能，这些功能相辅相成，让开发人员能够生成安全的应用程序。存储帐户本身可以通过基于角色的访问控制和 Azure Active Directory 来保护。在应用程序和 Azure 之间传输数据时，可以使用[客户端加密](/documentation/articles/storage-client-side-encryption/)、HTTPS 或 SMB 3.0 来保护数据。使用[存储服务加密 (SSE)](/documentation/articles/storage-service-encryption/) 写入 Azure 存储时，可将数据设置为自动加密。可以使用 Azure 磁盘加密将虚拟机所用的 OS 和数据磁盘设置为进行加密。可以使用[共享访问签名](/documentation/articles/storage-dotnet-shared-access-signature-part-1/)来授予对 Azure 存储中数据对象的委派访问权限。
 
 本文将概述其中可用于 Azure 存储的每项安全功能。提供了详述每项功能的文章的链接，让你能够轻松深入每个主题。
 
@@ -395,7 +395,30 @@ SSE 允许请求存储服务在将数据写入 Azure 存储时自动加密数据
 
     此文介绍客户端加密，并提供使用存储客户端库从四个存储服务加密和解密资源的示例。此外介绍了 Azure 密钥保管库。
 
+###使用 Azure 磁盘加密来加密虚拟机所用的磁盘
 
+Azure 磁盘加密是一项新功能，目前以预览版提供。此功能允许加密 IaaS 虚拟机使用的 OS 磁盘和数据磁盘。对于 Windows，驱动器是使用行业标准 BitLocker 加密技术加密的。对于 Linux，磁盘是使用 DM-Crypt 技术加密的。它与 Azure 密钥保管库集成，可用于控制和管理磁盘加密密钥。
+
+Azure 磁盘加密解决方案支持以下三种客户加密方案：
+
+-   在通过客户加密的 VHD 文件和客户提供的加密密钥（存储在 Azure 密钥保管库中）创建的新 IaaS VM 上启用加密。
+
+-   在通过 Azure 应用商店创建的新 IaaS VM 上启用加密。
+
+-   在 Azure 中已运行的现有 IaaS VM 上启用加密。
+
+>[AZURE.NOTE] 对已在 Azure 中运行的 Linux VM，或从 Azure 应用商店中的映像新建的 Linux VM，当前不支持 OS 磁盘的加密。仅本地加密并上传到 Azure 的 VM 支持对 Linux VM 的 OS 卷加密。此限制仅适用于 OS 磁盘；支持对 Linux VM 的数据卷加密。
+
+在 Azure 中启用时，该解决方案支持以下适用于公共预览版的 IaaS VM：
+
+-   与 Azure 密钥保管库集成
+
+-   标准 [A、D 系列 IaaS VM](/pricing/details/virtual-machines/)
+
+-   在使用 [Azure 资源管理器](/documentation/articles/resource-group-overview/)模型创建的 IaaS VM 上启用加密
+
+
+此功能可确保虚拟机磁盘上的所有数据在 Azure 存储中静态加密。
 
 ####资源
 
@@ -403,8 +426,8 @@ SSE 允许请求存储服务在将数据写入 Azure 存储时自动加密数据
 
     此文介绍 Azure 磁盘加密预览版，并提供下载白皮书的链接。
 
-###Azure SSE 和客户端加密的比较
-<!--
+###Azure 磁盘加密、SSE 和客户端加密的比较
+
 ####IaaS VM 及其 VHD 文件
 
 对于 IaaS VM 使用的磁盘，建议使用 Azure 磁盘加密。可以启用 SSE 来加密在 Azure 存储中用于备份这些磁盘的 VHD 文件，但它只将加密新写入的数据。这意味着，如果创建 VM，然后对保存 VHD 文件的存储帐户启用 SSE，则只将加密更改，而不会加密原始 VHD 文件。
@@ -415,10 +438,9 @@ SSE 允许请求存储服务在将数据写入 Azure 存储时自动加密数据
 
 如果本地存在未加密 VHD，可将其作为自定义映像上传到库并从中预配 VM。如果使用 Resource Manager 模板执行此操作，可以要求它在启动 VM 时打开 Azure 磁盘加密。
 
-添加数据磁盘并将其装载到 VM 时，可在该数据磁盘上开启 Azure 磁盘加密。它先在本地加密该数据磁盘，然后服务管理层将会对存储进行延迟写入，如此即可加密存储内容。-->
+添加数据磁盘并将其装载到 VM 时，可在该数据磁盘上开启 Azure 磁盘加密。它先在本地加密该数据磁盘，然后服务管理层将会对存储进行延迟写入，如此即可加密存储内容。
 
-####客户端加密####
-
+#### 客户端加密
 客户端加密是加密数据的最安全方法，因为它将在传输前加密数据，并加密静态数据。但是，它需要向使用存储的应用程序添加代码，这可能不是理想行为。在这些情况下，可以针对传输中的数据使用 HTTPs，并使用 SSE 来加密静态数据。
 
 通过客户端加密，可以加密表中条目、消息队列和 Blob。使用 SSE 只可以加密 Blob。如果需要将表和队列数据加密，应该使用客户端加密。
@@ -604,3 +626,4 @@ Azure 存储允许启用 CORS – 跨域资源共享。对于每个存储帐户�
 	此文介绍如何在较旧的 Windows 计算机中使用 FIPS 模式。
 
 <!---HONumber=Mooncake_0103_2017-->
+<!--Update_Description:add disk encryption related content-->
