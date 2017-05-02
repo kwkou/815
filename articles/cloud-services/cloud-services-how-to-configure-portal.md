@@ -90,7 +90,7 @@
 ![云服务实例按钮](./media/cloud-services-how-to-configure-portal/cs-instance-buttons.png)  
 
 
-## 重新配置 .cscfg
+## <a name="reconfigure-your-cscfg"></a> 重新配置 .cscfg
 可能需要通过 [service config (cscfg)](/documentation/articles/cloud-services-model-and-package/#cscfg) 文件来重新配置云服务。首先，你需要下载 .cscfg 文件，对其进行修改，然后再上传该文件。
 
 1. 单击“设置”图标或“所有设置”链接以打开“设置”边栏选项卡。

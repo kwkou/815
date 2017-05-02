@@ -1,6 +1,6 @@
 <properties
-    pageTitle="Azure 虚拟机规模集：现有虚拟网络模板 | Azure"
-    description="了解如何使用现有虚拟网络创建规模集模板"
+    pageTitle="引用 Azure 规模集模板中的虚拟网络 | Azure"
+    description="如何将虚拟网络添加到现有 Azure 虚拟机规模集模板"
     services="virtual-machine-scale-sets"
     documentationcenter=""
     author="gatneil"
@@ -16,17 +16,17 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="3/06/2017"
-    wacn.date="04/17/2017"
+    wacn.date="05/02/2017"
     ms.author="negat"
-    ms.sourcegitcommit="e0e6e13098e42358a7eaf3a810930af750e724dd"
-    ms.openlocfilehash="b74469ba7edc427d8e86dfd8cfa88a7e710be9ef"
-    ms.lasthandoff="04/06/2017" />
+    ms.sourcegitcommit="78da854d58905bc82228bcbff1de0fcfbc12d5ac"
+    ms.openlocfilehash="3bff289e88eae1889c7a324092bf7d66493d9cd4"
+    ms.lasthandoff="04/22/2017" />
 
-# <a name="about-this-article"></a>关于本文
+# <a name="add-reference-to-a-virtual-network-to-an-azure-scale-set-template"></a>将虚拟网络引用添加到 Azure 规模集模板
 
 本文介绍了如何修改[最小可行规模集模板](/documentation/articles/virtual-machine-scale-sets-mvss-start/)，以便部署到现有虚拟网络而非创建新的虚拟网络。
 
-## <a name="modifying-the-minimum-viable-scale-set-to-deploy-into-an-existing-virtual-network"></a>修改最小可行规模集模板以部署到现有虚拟网络
+## <a name="change-the-template-definition"></a>更改模板定义
 
 可以[在此处](https://raw.githubusercontent.com/gatneil/mvss/minimum-viable-scale-set/azuredeploy.json)查看最小可行规模集模板，可以[在此处](https://raw.githubusercontent.com/gatneil/mvss/existing-vnet/azuredeploy.json)查看用于将规模集部署到现有虚拟网络的模板。 让我们逐一查看创建此模板 (`git diff master minimum-viable-scale-set`) 时使用的差异内容：
 
@@ -95,3 +95,5 @@
 ## <a name="next-steps"></a>后续步骤
 
 [AZURE.INCLUDE [mvss-next-steps-include](../../includes/mvss-next-steps.md)]
+
+<!--Update_Description: wording update-->

@@ -1,53 +1,56 @@
-<properties 
-   pageTitle="配置性能流量路由方法 | Azure"
-   description="本文将帮助你在流量管理器中配置性能流量路由方法"
-   services="traffic-manager"
-   documentationCenter=""
-   authors="joaoma"
-   manager="carmonm"
-   editor="tysonn" />
-<tags 
-   ms.service="traffic-manager"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
-   ms.date="10/18/2016"
-   wacn.date="01/09/2017"
-   ms.author="sewhee" />
+<properties
+    pageTitle="使用 Azure 流量管理器配置性能流量路由方法 | Azure"
+    description="本文介绍了如何配置流量管理器以将流量路由到终结点并保证最低延迟"
+    services="traffic-manager"
+    documentationcenter=""
+    author="kumudd"
+    manager="timlt"
+    editor=""
+    translationtype="Human Translation" />
+<tags
+    ms.assetid="6dca6de1-18f7-4962-bd98-6055771fab22"
+    ms.service="traffic-manager"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.tgt_pltfrm="na"
+    ms.workload="infrastructure-services"
+    ms.date="03/20/2017"
+    wacn.date="05/02/2017"
+    ms.author="kumud"
+    ms.sourcegitcommit="78da854d58905bc82228bcbff1de0fcfbc12d5ac"
+    ms.openlocfilehash="3c1d0c85d6adab4edf38bd6aa1e0308396e57d59"
+    ms.lasthandoff="04/22/2017" />
 
-# 配置性能流量路由方法
+# <a name="configure-the-performance-traffic-routing-method"></a>配置性能流量路由方法
 
-若要对分布在全国不同数据中心（也称为区域）的云服务和 Web 应用（终结点）进行流量路由，可以将传入的流量从发出请求的客户端定向到延迟最低的终结点。通常，延迟最低的数据中心对应于地理距离最短的终结点。使用“性能”流量路由方法可以基于最低延迟进行分发，但无法考虑网络配置或负载中的实时变化。有关流量管理器提供的各种流量路由方法的详细信息，请参阅[关于流量管理器流量路由方法](/documentation/articles/traffic-manager-routing-methods/)。
+使用性能流量路由方法可将流量定向到客户端网络中延迟最低的终结点。 通常，延迟最低的数据中心就是地理距离最短的终结点。 此流量路由方法无法考虑网络配置或负载的实时变化。
 
-## 根据最低延迟在一组终结点之间路由流量：
+##  <a name="to-configure-performance-routing-method"></a>配置性能路由方法
 
-1. 在经典管理门户中，在左窗格中，单击流量管理器图标以打开“流量管理器”窗格。如果尚未创建流量管理器配置文件，请参阅[管理流量管理器配置文件](/documentation/articles/traffic-manager-manage-profiles/)来了解创建基本的流量管理器配置文件的步骤。
-2. 在经典管理门户的“流量管理器”窗格中，找到包含你要修改的设置的流量管理器配置文件，然后单击配置文件名称右侧的箭头。这将打开配置文件的设置页面。
-3. 在你的配置文件页面上，单击页面顶部的“终结点”并验证你要在配置中包括的服务终结点是否都存在。有关在配置文件中添加或删除终结点的步骤，请参阅[在流量管理器中管理终结点](/documentation/articles/traffic-manager-endpoints/)。
-4. 在你的配置文件页面上，单击顶部的“配置”以打开配置页面。
-5. 对于“流量路由方法设置”，验证流量路由方法是否是“性能”。如果不是，请在下拉列表中单击“性能”。
-6. 验证是否已正确配置了“监视设置”。监视可确保不会向处于脱机状态的终结点发送流量。为了监视终结点，必须指定路径和文件名。注意，正斜杠“/”是有效的相对路径条目，表示该文件位于根目录（默认值）中。有关监视的详细信息，请参阅[关于流量管理器监视](/documentation/articles/traffic-manager-monitoring/)。
-7. 完成你的配置更改后，单击页面底部的“保存”。
-8. 测试你的配置更改。有关详细信息，请参阅[测试流量管理器设置](/documentation/articles/traffic-manager-testing-settings/)。
-9. 在流量管理器配置文件完成设置并正常工作后，在你的权威 DNS 服务器上编辑 DNS 记录以将你的公司域名指向流量管理器域名。有关如何执行此操作的详细信息，请参阅[将公司 Internet 域指向流量管理器域](/documentation/articles/traffic-manager-point-internet-domain/)。
+1. 在浏览器中，登录 [Azure 门户预览](http://portal.azure.cn)。 如果还没有帐户，可注册 [1 个月期限的免费试用版](/pricing/1rmb-trial/)。 
+2. 在门户的搜索栏中，搜索“流量管理器配置文件”，然后单击要为其配置路由方法的配置文件名称。
+3. 在“流量管理器配置文件”边栏选项卡中，检查要包含在配置中的云服务和网站是否都存在。
+4. 在“设置”部分，单击“配置”，然后在“配置”边栏选项卡中完成如下操作：
+    1. 对于“流量路由方法设置”和“路由方法”，请选择“性能”。
+    2. 为此配置文件中的所有终结点设置相同的“终结点监视器设置”，如下所示：
+        1. 选择相应的“协议”，并指定“端口”号。 
+        2. 对于“路径”，请键入正斜杠 */*。 若要监视终结点，必须指定路径和文件名。 正斜杠“/”是有效的相对路径条目，表示文件位于根目录（默认位置）中。
+        3. 在页面顶部，单击“保存”。
+5.  按如下方式测试配置更改：
+    1.    在门户的搜索栏中，搜索流量管理器配置文件名称，然后在显示的结果中单击该流量管理器配置文件。
+    2.    在“流量管理器配置文件”边栏选项卡中，单击“概述”。
+    3.    “流量管理器配置文件”边栏选项卡将显示新建的流量管理器配置文件的 DNS 名称。 任意客户端（例如通过 Web 浏览器导航到此名称）均可使用此名称路由到根据路由类型确定的相应终结点。 在此情况下，所有请求均通过客户端网络路由到终结点并保证最低延迟。
+6. 流量管理器配置文件正常工作后，请在权威 DNS 服务器上编辑 DNS 记录，将公司域名指向流量管理器域名。
 
-## 后续步骤
+![使用流量管理器配置性能流量路由方法][1]
 
+## <a name="next-steps"></a>后续步骤
 
-[将公司 Internet 域指向流量管理器域](/documentation/articles/traffic-manager-point-internet-domain/)
+- 了解[加权流量路由方法](/documentation/articles/traffic-manager-configure-weighted-routing-method/)。
+- 了解[优先级路由方法](/documentation/articles/traffic-manager-configure-priority-routing-method/)。
+- 了解如何[测试流量管理器设置](/documentation/articles/traffic-manager-testing-settings/)。
 
-[流量管理器路由方法](/documentation/articles/traffic-manager-routing-methods/)
+<!--Image references-->
+[1]: ./media/traffic-manager-performance-routing-method/traffic-manager-performance-routing-method.png
 
-[配置故障转移路由方法](/documentation/articles/traffic-manager-configure-failover-routing-method/)
-
-[配置轮循机制路由方法](/documentation/articles/traffic-manager-configure-round-robin-routing-method/)
-
-[流量管理器降级状态疑难解答](/documentation/articles/traffic-manager-troubleshooting-degraded/)
-
-[流量管理器 - 禁用、启用或删除配置文件](/documentation/articles/disable-enable-or-delete-a-profile/)
-
-[流量管理器 - 禁用或启用终结点](/documentation/articles/disable-or-enable-an-endpoint/)
- 
-
-<!---HONumber=Mooncake_Quality_Review_0104_2017-->
+<!--Update_Description: change from classic portal to new portal-->

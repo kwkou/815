@@ -15,11 +15,11 @@
     ms.tgt_pltfrm="cache-redis"
     ms.workload="tbd"
     ms.date="03/08/2017"
-    wacn.date="04/17/2017"
+    wacn.date="05/02/2017"
     ms.author="sdanie"
-    ms.sourcegitcommit="c534da1c22f35a66729001f5eb07906670a060fa"
-    ms.openlocfilehash="3612c0495e2f0c097895d9191a9355d0f9d86d02"
-    ms.lasthandoff="04/07/2017" />
+    ms.sourcegitcommit="78da854d58905bc82228bcbff1de0fcfbc12d5ac"
+    ms.openlocfilehash="b3850085b778f502ac5b0dfada958ecf51672c08"
+    ms.lasthandoff="04/22/2017" />
 
 # <a name="how-to-configure-azure-redis-cache"></a>如何配置 Azure Redis 缓存
 本主题介绍如何查看和更新 Azure Redis 缓存实例的配置，并介绍了 Azure Redis 缓存实例的默认 Redis 服务器配置。
@@ -90,7 +90,7 @@ Azure Redis 缓存在“设置”边栏选项卡上提供以下设置。
 * [密钥空间通知（高级设置）](#keyspace-notifications-advanced-settings)
 
 #### <a name="access-ports"></a> 访问端口
-默认情况下，为新缓存禁用非 SSL 访问。若要启用非 SSL 端口，请对“高级设置”边栏选项卡中的“仅允许通过 SSL 访问”单击“否”，然后单击“保存”。
+默认情况下，为新缓存禁用非 SSL 访问。 要启用非 SSL 端口，请对“高级设置”边栏选项卡中的“仅允许通过 SSL 访问”单击“否”，然后单击“保存”。
 
 ![Redis 缓存访问端口](./media/cache-configure/redis-cache-access-ports.png)
 
@@ -319,17 +319,17 @@ Azure 门户预览中的“用户”部分对基于角色的访问控制 (RBAC) 
 > 无法使用 `StackExchange.Redis.IServer.ConfigSet` 方法更改本部分中的设置。 如果使用此部分中的任一命令调用此方法，将引发如下异常：  
 ><p> 
 > `StackExchange.Redis.RedisServerException: ERR unknown command 'CONFIG'`
-><p> 任何可配置的值（例如 **max-memory-policy**）都可以通过 Azure 门户预览或命令行管理工具（例如 Azure CLI 或 PowerShell）进行配置。> 
+><p> 任何可配置的值（例如 **max-memory-policy**）都可以通过 Azure 门户预览或命令行管理工具（例如 Azure CLI 或 PowerShell）进行配置。
 
 | 设置 | 默认值 | 说明 |
 | --- | --- | --- |
-| 数据库 |16 |默认的数据库数为 16，但可以根据定价层配置不同数目。<sup>1</sup> 默认数据库是 DB 0，可以基于每个连接使用 `connection.GetDatabase(dbid)`（其中 dbid 是介于 `0` 和 `databases - 1` 之间的数字）选择其他数据库。 |
-| maxclients |取决于定价层<sup>2</sup> |这是同一时间内允许的最大已连接客户端数。 一旦达到该限制，Redis 将在关闭所有新连接的同时发送“达到客户端最大数量”的错误。 |
-| maxmemory-policy |volatile-lru |Maxmemory 策略是达到 maxmemory（创建缓存时所选缓存服务的大小）时，Redis 将根据它选择要删除内容的设置。 Azure Redis 缓存的默认设置为 volatile-lru，此设置使用 LRU 算法删除具有过期设置的密钥。 可以在 Azure 门户预览中配置此设置。 有关详细信息，请参阅 [Maxmemory-policy 和 maxmemory-reserved](#maxmemory-policy-and-maxmemory-reserved)。 |
-| maxmemory-samples |3 |LRU 和最小 TTL 算法不是精确算法而是近似算法（为了节省内存），因此还可以选择示例大小进行检查。 例如，对于默认设置，Redis 将检查三个密钥并选取最近使用较少的一个。 |
-| lua-time-limit |5,000 |Lua 脚本的最大执行时间（以毫秒为单位）。 如果达到最大执行时间，Redis 将记录达到最大允许时间后仍继续执行的脚本，并将开始在查询答复时出现错误。 |
-| lua-event-limit |500 |这是脚本事件队列的最大大小。 |
-| client-output-buffer-limit normalclient-output-buffer-limit pubsub |0 0 032mb 8mb 60 |客户端输出缓冲区限制可用于强制断开处于某种原因（一个常见原因是发布/订阅客户端处理消息的速度慢于发布者提供消息的速度）而未从服务器快速读取数据的客户端的连接。 有关详细信息，请参阅 [http://redis.io/topics/clients](http://redis.io/topics/clients)。 |
+| `databases` |16 |默认的数据库数为 16，但可以根据定价层配置不同数目。<sup>1</sup> 默认数据库是 DB 0，可以基于每个连接使用 `connection.GetDatabase(dbid)`（其中 `dbid` 是介于 `0` 和 `databases - 1` 之间的数字）选择其他数据库。 |
+| `maxclients` |取决于定价层<sup>2</sup> |这是同一时间内允许的最大已连接客户端数。 一旦达到该限制，Redis 将在关闭所有新连接的同时返回“达到客户端最大数量”的错误。 |
+| `maxmemory-policy` |`volatile-lru` |Maxmemory 策略是达到 `maxmemory`（创建缓存时所选缓存服务的大小）时，Redis 将根据它选择要删除内容的设置。 Azure Redis 缓存的默认设置为 `volatile-lru`，此设置使用 LRU 算法删除具有过期设置的密钥。 可以在 Azure 门户预览中配置此设置。 有关详细信息，请参阅 [Maxmemory-policy 和 maxmemory-reserved](#maxmemory-policy-and-maxmemory-reserved)。 |
+| `maxmemory-sample`s |3 |LRU 算法和最小 TTL 算法都是近似算法而不是精确算法，这是为了节省内存。 默认情况下，Redis 会检查三个密钥并选取最近使用较少的一个。 |
+| `lua-time-limit` |5,000 |Lua 脚本的最大执行时间（以毫秒为单位）。 如果达到最大执行时间，Redis 会记录达到最大允许时间后仍继续执行的脚本，并开始在查询答复时出现错误。 |
+| `lua-event-limit` |500 |脚本事件队列的最大大小。 |
+| `client-output-buffer-limit` `normalclient-output-buffer-limit` `pubsub` |0 0 032mb 8mb 60 |客户端输出缓冲区限制可用于强制断开处于某种原因（一个常见原因是发布/订阅客户端处理消息的速度慢于发布者提供消息的速度）而未从服务器快速读取数据的客户端的连接。 有关详细信息，请参阅 [http://redis.io/topics/clients](http://redis.io/topics/clients)。 |
 
 <a name="databases"></a>
 <sup>1</sup>每个 Azure Redis 缓存定价层的 `databases` 限制是不同的，可以在创建缓存时进行设置。 如果在创建缓存期间未指定 `databases` 设置，则默认值为 16。
@@ -376,16 +376,15 @@ Azure 门户预览中的“用户”部分对基于角色的访问控制 (RBAC) 
 ## <a name="redis-commands-not-supported-in-azure-redis-cache"></a> Azure Redis 缓存中不支持的 Redis 命令
 > [AZURE.IMPORTANT]
 > 因为 Azure Redis 缓存实例的配置和管理由 Microsoft 进行管理，所以禁用了以下命令。 如果尝试调用它们，将收到一条类似于 `"(error) ERR unknown command"` 的错误消息。
-><p> 
-><p> * BGREWRITEAOF
-><p> * BGSAVE
-><p> * CONFIG
-><p> * DEBUG
-><p> * MIGRATE
-><p> * SAVE
-><p> * SHUTDOWN
-><p> * SLAVEOF
-><p> * CLUSTER - 群集写命令已禁用，但允许使用只读群集命令。
+> * BGREWRITEAOF
+> * BGSAVE
+> * CONFIG
+> * DEBUG
+> * MIGRATE
+> * SAVE
+> * SHUTDOWN
+> * SLAVEOF
+> * CLUSTER - 群集写命令已禁用，但允许使用只读群集命令。
 
 有关 Redis 命令的详细信息，请参阅 [http://redis.io/commands](http://redis.io/commands)。
 
@@ -394,10 +393,9 @@ Azure 门户预览中的“用户”部分对基于角色的访问控制 (RBAC) 
 
 > [AZURE.IMPORTANT]
 > Redis 控制台无法使用 VNET、群集和数据库（数据库 0 除外）。 
-><p> 
-><p> * [VNET](/documentation/articles/cache-how-to-premium-vnet/) - 如果缓存是 VNET 的一部分，则只有 VNET 中的客户端可以访问缓存。 Redis 控制台使用的 redis cli.exe 客户端承载于不属于 VNET 的 VM 上，因此该控制台无法连接到你的缓存。
-><p> * [群集](/documentation/articles/cache-how-to-premium-clustering/) - Redis 控制台使用目前不支持群集的 redis-cli.exe 客户端。 GitHub 上 Redis 存储库的[不稳定](http://redis.io/download)分支中的 redis-cli 实用程序在使用 `-c` 开关启动时，会实现基本支持。 有关详细信息，请参阅 [http://redis.io](http://redis.io) 上 [Redis cluster tutorial](http://redis.io/topics/cluster-tutorial)（Redis 群集教程）中的[Playing with the cluster](http://redis.io/topics/cluster-tutorial#playing-with-the-cluster)（操作群集）。
-><p> * 每次提交命令时，Redis 控制台都会新建一个与数据库 0 的连接。 不能使用 `SELECT` 命令选择其他数据库，因为每当有命令时数据库都将重置为 0。 有关运行 Redis 命令（包括更改为不同的数据库）的信息，请参阅[如何运行 Redis 命令？](/documentation/articles/cache-faq/#how-can-i-run-redis-commands)
+> * [VNET](/documentation/articles/cache-how-to-premium-vnet/) - 如果缓存是 VNET 的一部分，则只有 VNET 中的客户端可以访问缓存。 Redis 控制台使用的 redis cli.exe 客户端承载于不属于 VNET 的 VM 上，因此该控制台无法连接到你的缓存。
+> * [群集](/documentation/articles/cache-how-to-premium-clustering/) - Redis 控制台使用目前不支持群集的 redis-cli.exe 客户端。 GitHub 上 Redis 存储库的[不稳定](http://redis.io/download)分支中的 redis-cli 实用程序在使用 `-c` 开关启动时，会实现基本支持。 有关详细信息，请参阅 [http://redis.io](http://redis.io) 上 [Redis cluster tutorial](http://redis.io/topics/cluster-tutorial)（Redis 群集教程）中的[Playing with the cluster](http://redis.io/topics/cluster-tutorial#playing-with-the-cluster)（操作群集）。
+> * 每次提交命令时，Redis 控制台都会新建一个与数据库 0 的连接。 不能使用 `SELECT` 命令选择其他数据库，因为每当有命令时数据库都将重置为 0。 有关运行 Redis 命令（包括更改为不同的数据库）的信息，请参阅[如何运行 Redis 命令？](/documentation/articles/cache-faq/#how-can-i-run-redis-commands)
 
 要访问 Redis 控制台，则从“Redis 缓存”边栏选项卡单击“控制台”。
 
@@ -418,4 +416,5 @@ Azure 门户预览中的“用户”部分对基于角色的访问控制 (RBAC) 
 
 ## <a name="next-steps"></a>后续步骤
 * 有关使用 Redis 命令的详细信息，请参阅[如何运行 Redis 命令？](/documentation/articles/cache-faq/#how-can-i-run-redis-commands)
-<!--Update_Description: roll back Azure Portal Preview steps-->
+
+<!--Update_Description: wording update-->

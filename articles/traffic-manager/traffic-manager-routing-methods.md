@@ -14,22 +14,22 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="infrastructure-services"
-    ms.date="03/16/2017"
-    wacn.date="04/17/2017"
+    ms.date="03/22/2017"
+    wacn.date="05/02/2017"
     ms.author="kumud"
-    ms.sourcegitcommit="e0e6e13098e42358a7eaf3a810930af750e724dd"
-    ms.openlocfilehash="6c3aa0c85b79c041b08e859b63d703de4198ec9f"
-    ms.lasthandoff="04/06/2017" />
+    ms.sourcegitcommit="78da854d58905bc82228bcbff1de0fcfbc12d5ac"
+    ms.openlocfilehash="6fd97863aa9e103b3691f2e212a5aee86159e599"
+    ms.lasthandoff="04/22/2017" />
 
 # <a name="traffic-manager-routing-methods"></a>流量管理器路由方法
 
 Azure 流量管理器支持使用三种流量路由方法来确定如何将网络流量路由到不同的服务终结点。 流量管理器将流量路由方法应用于它收到的每个 DNS 查询。 流量路由方法确定要在 DNS 响应中返回哪个终结点。
 
-流量管理器中提供了三种流量路由方法：
+流量管理器中提供了四种流量路由方法：
 
-* **优先级：** 如果想要使用主服务终结点来处理所有流量，并提供备份来防范主终结点或备份终结点不可用的情况，可以选择“优先级”。
+* **优先级：**如果想要使用主服务终结点来处理所有流量，并提供备份来防范主终结点或备份终结点不可用的情况，可以选择“优先级”。
 * **加权：** 如果想要跨一组终结点来分配流量，不管是平均分配还是根据所定义的权重进行分配，可以选择“加权”。
-* **性能** ：如果终结点位于不同的地理位置，并且你希望最终用户依据最低网络延迟使用“最近的”终结点，可以选择“性能”。
+* **性能：**如果终结点位于不同的地理位置，并且你希望最终用户依据最低网络延迟使用“最近的”终结点，可以选择“性能”。
 
 所有流量管理器配置文件都包括监视终结点运行状况以及终结点自动故障转移的设置。 有关详细信息，请参阅[流量管理器终结点监视](/documentation/articles/traffic-manager-monitoring/)。 一个流量管理器配置文件只能使用一种流量路由方法。 你可以随时为配置文件选择其他流量路由方法。 一分钟内即可应用所做的更改，不会导致停机。 可以通过嵌套式流量管理器配置文件来组合使用多种流量路由方法。 使用嵌套可以启用复杂且灵活的流量路由配置，满足更大、更复杂应用程序的需求。 有关详细信息，请参阅[嵌套式流量管理器配置文件](/documentation/articles/traffic-manager-nested-profiles/)。
 
@@ -60,7 +60,7 @@ Azure 流量管理器支持使用三种流量路由方法来确定如何将网�
 * 将应用程序迁移到 Azure：创建包含 Azure 终结点和外部终结点的配置文件。 调整终结点的权重，优先选择新终结点。
 * 适用于更多容量的云爆发：通过将本地部署放在流量管理器配置文件之后，快速将本地部署扩展到云中。 当你需要在云中获得额外的容量时，可以添加或启用更多终结点，并指定哪部分流量将流向每个终结点。
 
-Azure 门户预览支持配置加权流量路由。  也可以使用 Resource Manager 版本的 Azure PowerShell、CLI 和 REST API 配置权重。
+Azure 门户预览支持加权流量路由的配置。  也可以使用 Resource Manager 版本的 Azure PowerShell、CLI 和 REST API 配置权重。
 
 必须知道，客户端及其用来解析 DNS 名称的递归 DNS 服务器会缓存 DNS 响应。 这种缓存可能会影响到加权流量分布。 如果客户端和递归 DNS 服务器的数目较大，流量分布将按预期工作。 但是，如果客户端或递归 DNS 服务器的数目较小，缓存可能会严重影响流量分布。
 
@@ -82,7 +82,7 @@ Azure 门户预览支持配置加权流量路由。  也可以使用 Resource Ma
 
 流量管理器在 Internet 延迟表中查找传入 DNS 请求的源 IP 地址。 流量管理器在处理该 IP 地址范围的请求时保持最低延迟的 Azure 数据中心内选择一个可用终结点，然后在 DNS 响应中返回该终结点。
 
-如[流量管理器工作原理](/documentation/articles/traffic-manager-overview/)中所述，流量管理器不会直接从客户端接收 DNS 查询。 DNS 查询来自客户端配置使用的递归 DNS 服务。 因此，用于确定“最靠近”终结点的 IP 地址不是客户端的 IP 地址，而是递归 DNS 服务的 IP 地址。 在实践中，此 IP 地址是客户端的适当代理。
+如[流量管理器工作原理](/documentation/articles/traffic-manager-overview/#how-traffic-manager-works)中所述，流量管理器不会直接从客户端接收 DNS 查询。 DNS 查询来自客户端配置使用的递归 DNS 服务。 因此，用于确定“最靠近”终结点的 IP 地址不是客户端的 IP 地址，而是递归 DNS 服务的 IP 地址。 在实践中，此 IP 地址是客户端的适当代理。
 
 流量管理器定期更新 Internet 延迟表，反映全国 Internet 的变化以及新的 Azure 区域。 但是，由于 Internet 上的负载会实时变化，应用程序性能也会随之变化。 “性能”流量路由不会监视给定服务终结点上的负载。 但是，如果某个终结点变得不可用，则流量管理器不会在 DNS 查询响应中包括该终结点。
 
@@ -98,14 +98,11 @@ Azure 门户预览支持配置加权流量路由。  也可以使用 Resource Ma
 
 了解如何使用[流量管理器终结点监视](/documentation/articles/traffic-manager-monitoring/)开发高可用性应用程序
 
-了解如何[创建流量管理器配置文件](/documentation/articles/traffic-manager-manage-profiles/)
+了解如何[创建流量管理器配置文件](/documentation/articles/traffic-manager-create-profile/)
 
 <!--Image references-->
 [1]: ./media/traffic-manager-routing-methods/priority.png
 [2]: ./media/traffic-manager-routing-methods/weighted.png
 [3]: ./media/traffic-manager-routing-methods/performance.png
-[4]: ./media/traffic-manager-nested-profiles/figure-1.png
-[5]: ./media/traffic-manager-nested-profiles/figure-2.png
-[6]: ./media/traffic-manager-nested-profiles/figure-3.png
 
 <!--Update_Description: wording update-->

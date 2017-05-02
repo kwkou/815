@@ -41,7 +41,7 @@ VPN 网关连接需依赖于多个具有特定设置的资源。 大多数资源
 ###<a name="deployment-model"></a>部署模型
 配置 VPN 网关时，采取的步骤取决于用于创建虚拟网络的部署模型。 例如，如果使用经典部署模型创建了 VNet，将使用经典部署模型的指导原则和说明来创建及配置 VPN 网关设置。 有关部署模型的详细信息，请参阅 [了解 Resource Manager 和经典部署模型](/documentation/articles/resource-manager-deployment-model/)。
 
-## <a name="diagrams"></a>连接拓扑图
+## <a name="diagrams" id="a-namediagramsaconnection-topology-diagrams"></a>连接拓扑图
 必须知道，VPN 网关连接可以使用不同的配置。 必须确定哪种配置最适合自己的需要。 在下面的部分中，可以查看有关以下 VPN 网关连接的信息和拓扑示意图：以下部分包含一些表格，其中列出了：
 
 * 可用的部署模型
