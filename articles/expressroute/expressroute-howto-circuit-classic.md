@@ -38,7 +38,7 @@
 [AZURE.INCLUDE [vpn-gateway-clasic-rm](../../includes/vpn-gateway-classic-rm-include.md)]
 
 ## <a name="before-you-begin"></a>开始之前
-### <a name="step-1-review-the-prerequisites-and-workflow-articles"></a>步骤 1。 查看先决条件和工作流文章
+### <a name="step-1-review-the-prerequisites-and-workflow-articles"></a>步骤 1. 查看先决条件和工作流文章
 
 在开始配置之前，请务必查看[先决条件](/documentation/articles/expressroute-prerequisites/)和[工作流](/documentation/articles/expressroute-workflows/)。
 
@@ -61,10 +61,10 @@
 
 4. 接下来，使用以下 cmdlet 将 Azure 订阅添加到经典部署模型的 PowerShell。
 
-    Add-AzureAccount -Environment AzureChinaCloud
+        Add-AzureAccount -Environment AzureChinaCloud
 
 ## <a name="create-and-provision-an-expressroute-circuit"></a>创建和预配 ExpressRoute 线路
-### <a name="step-1-import-the-powershell-modules-for-expressroute"></a>步骤 1。 为 ExpressRoute 导入 PowerShell 模块
+### <a name="step-1-import-the-powershell-modules-for-expressroute"></a>步骤 1. 为 ExpressRoute 导入 PowerShell 模块
  在开始使用 ExpressRoute cmdlet 之前，必须将 Azure 和 ExpressRoute 模块导入 PowerShell 会话（如果尚未导入）。 将模块从其安装位置导入本地计算机。 根据模块的安装方法，该位置可能与下例中所示不同。 请根据需要修改示例。  
 
     Import-Module 'C:\Program Files (x86)\Microsoft SDKs\Azure\PowerShell\ServiceManagement\Azure\Azure.psd1'
@@ -87,7 +87,7 @@ PowerShell cmdlet `Get-AzureDedicatedCircuitServiceProvider` 将返回此信息�
 
 现在，已经准备创建 ExpressRoute 线路。
 
-### <a name="step-3-create-an-expressroute-circuit"></a>步骤 3。 创建 ExpressRoute 线路
+### <a name="step-3-create-an-expressroute-circuit"></a>步骤 3. 创建 ExpressRoute 线路
 以下示例演示如何在北京通过 Beijing Telecom Ethernet 创建 200-Mbps 的 ExpressRoute 线路。如果使用其他提供商和其他设置，请在发出请求时替换该信息。
 
 >[AZURE.IMPORTANT] 从发出服务密钥时开始，将对 ExpressRoute 线路进行计费。确保在连接服务提供商准备预配线路时执行此操作。
@@ -95,11 +95,11 @@ PowerShell cmdlet `Get-AzureDedicatedCircuitServiceProvider` 将返回此信息�
 
 下面是请求新的服务密钥的示例：
 
-		#Creating a new circuit
-		$Bandwidth = 200
-		$CircuitName = "21vDemo"
-		$ServiceProvider = "Beijing Telecom Ethernet"
-		$Location = "Beijing"
+	#Creating a new circuit
+	$Bandwidth = 200
+	$CircuitName = "21vDemo"
+	$ServiceProvider = "Beijing Telecom Ethernet"
+	$Location = "Beijing"
 
 	New-AzureDedicatedCircuit -CircuitName $CircuitName -ServiceProviderName $ServiceProvider -Bandwidth $Bandwidth -Location $Location -sku Standard -BillingType MeteredData
 
@@ -110,7 +110,7 @@ PowerShell cmdlet `Get-AzureDedicatedCircuitServiceProvider` 将返回此信息�
 
 响应将包含服务密钥。可以通过运行以下命令获取所有这些参数的详细说明。
 
-		Get-Help New-AzureDedicatedCircuit -detailed 
+	Get-Help New-AzureDedicatedCircuit -detailed 
 
 ### <a name="step-4-list-all-the-expressroute-circuits"></a>步骤 4. 列出所有 ExpressRoute 线路
 可以运行 `Get-AzureDedicatedCircuit` 命令，获取创建的所有 ExpressRoute 线路的列表：
@@ -146,7 +146,7 @@ PowerShell cmdlet `Get-AzureDedicatedCircuitServiceProvider` 将返回此信息�
 
     	get-help get-azurededicatedcircuit -detailed
 
-### <a name="step-5-send-the-service-key-to-your-connectivity-provider-for-provisioning"></a>步骤 5。 将服务密钥发送给连接服务提供商进行预配
+### <a name="step-5-send-the-service-key-to-your-connectivity-provider-for-provisioning"></a>步骤 5. 将服务密钥发送给连接服务提供商进行预配
 
 ServiceProviderProvisioningState 提供有关服务提供商端当前预配状态的信息。 状态提供 Microsoft 端的状态。 有关线路预配状态的详细信息，请参阅[工作流](/documentation/articles/expressroute-workflows/#expressroute-circuit-provisioning-states)一文。
 
@@ -191,7 +191,7 @@ ExpressRoute 线路必须处于以下状态时才能使用：
 > 
 > 
 
-### <a name="step-8-link-a-virtual-network-to-an-expressroute-circuit"></a>步骤 8。 将虚拟网络链接到 ExpressRoute 线路
+### <a name="step-8-link-a-virtual-network-to-an-expressroute-circuit"></a>步骤 8. 将虚拟网络链接到 ExpressRoute 线路
 
 接下来，将虚拟网络链接到 ExpressRoute 线路。 有关分步说明，请参阅[将 ExpressRoute 线路链接到虚拟网络](/documentation/articles/expressroute-howto-linkvnet-classic/)。 如需使用经典部署模型为 ExpressRoute 创建虚拟网络，请参阅[为 ExpressRoute 创建虚拟网络](/documentation/articles/expressroute-howto-vnet-portal-classic/) 
 

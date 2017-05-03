@@ -21,7 +21,7 @@
     ms.openlocfilehash="fceb0beb8d35648c8787189c7c321a6cfaa757f3"
     ms.lasthandoff="04/22/2017" />
 
-# <a name="create-metric-alerts-in-azure-monitor-for-azure-services---azure-portal"></a>在 Azure Monitor 中为 Azure 服务创建指标警报 - Azure 门户
+# <a name="create-metric-alerts-in-azure-monitor-for-azure-services---azure-portal"></a>在 Azure Monitor 中为 Azure 服务创建指标警报 - Azure 门户预览
 > [AZURE.SELECTOR]
 - [门户预览](/documentation/articles/insights-alerts-portal/)
 - [PowerShell](/documentation/articles/insights-alerts-powershell/)
@@ -49,7 +49,7 @@
 - [命令行接口 (CLI)](/documentation/articles/insights-alerts-command-line-interface/) 
 - [Azure 监视器 REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn931945.aspx)
 
-## <a name="create-an-alert-rule-on-a-metric-with-the-azure-portal"></a>使用 Azure 门户创建指标的警报规则
+## <a name="create-an-alert-rule-on-a-metric-with-the-azure-portal"></a>使用 Azure 门户预览创建指标的警报规则
 
 1. 在[门户预览](https://portal.azure.cn/)中，找到想要监视的资源并选中它。
 

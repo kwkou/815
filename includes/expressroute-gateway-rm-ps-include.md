@@ -44,7 +44,7 @@
 
 5. 设置配置。
 
-			Set-AzureRmVirtualNetwork -VirtualNetwork $vnet
+		Set-AzureRmVirtualNetwork -VirtualNetwork $vnet
 
 6. 将网关子网赋值。
 

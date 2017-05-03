@@ -75,7 +75,7 @@
 	- 要为其设置警报的资源的**资源 ID**
 	- 可用于该资源的**指标定义**
 	
-    获取资源 ID 的一种方法是使用 Azure 门户预览。 假设已创建该资源，在门户预览中选中它。 然后在下一个边栏选项卡中，选择“设置”分区下的“属性”。 *资源 ID* 是下一个边栏选项卡中的字段。 另一种方法是使用 [Azure Resource Explorer](https://resources.azure.cn/)（Azure 资源浏览器）。
+    获取资源 ID 的一种方法是使用 Azure 门户预览。 假设已创建该资源，在门户预览中选中它。 然后在下一个边栏选项卡中，选择“设置”分区下的“属性”。 *资源 ID* 是下一个边栏选项卡中的字段。 
     下面是 Web 应用的一个示例资源 ID：
   
 
@@ -89,7 +89,7 @@
      PT1M 是可用度量的粒度（1分钟间隔）。 使用不同的粒度可以提供不同的指标选项。
 4. 若要创建基于指标的警报规则，请使用以下形式的命令：
  
-	    **azure insights alerts rule metric set** *[options] &lt;ruleName&gt; &lt;location&gt; &lt;resourceGroup&gt; &lt;windowSize&gt; &lt;operator&gt; &lt;threshold&gt; &lt;targetResourceId&gt; &lt;metricName&gt; &lt;timeAggregationOperator&gt;*
+	**azure insights alerts rule metric set** *[options] &lt;ruleName&gt; &lt;location&gt; &lt;resourceGroup&gt; &lt;windowSize&gt; &lt;operator&gt; &lt;threshold&gt; &lt;targetResourceId&gt; &lt;metricName&gt; &lt;timeAggregationOperator&gt;*
 	
     以下示例设置了一个关于网站资源的警报。 当在 5 分钟内持续收到任何流量以及再次在 5 分钟内未收到任何流量时，警报将触发。 
 
@@ -113,7 +113,7 @@
 
 8. 若要删除规则，请使用以下格式的命令： 
 
-	    **insights alerts rule delete** [options] &lt;resourceGroup&gt; &lt;ruleName&gt;
+	**insights alerts rule delete** [options] &lt;resourceGroup&gt; &lt;ruleName&gt;
 
     这些命令将删除在本文前面创建的规则。
 

@@ -57,12 +57,14 @@ ExpressRoute 支持[两种路由域](/documentation/articles/expressroute-circui
 * 虚拟网络，包括所有虚拟机和云服务
 
 ### <a name="public-peering"></a>公共对等互连
+
  - 大多数 Azure 服务（有少数几个例外，例外的服务将在下面介绍）
  - Power BI
  - Dynamics 365 for Operations（以前称为 Dynamics AX Online）
 
 
 ExpressRoute 不支持以下 Azure 服务
+
  - CDN
  - Visual Studio Team Services 负载测试
  - 多重身份验证
@@ -192,7 +194,7 @@ ExpressRoute 高级版是下面列出的功能的集合。
 * 对于专用对等互连，将路由表限制从 4000 个路由提升为 10,000 个路由。
 * 已增加可连接到 ExpressRoute 线路的 VNet 数（默认数为 10 个）。 有关详细信息，请参阅下表。
 * 通过 Microsoft 核心网络建立全局连接。 现在，可以将一个地缘政治区域中的 VNet 链接到另一个区域中的 ExpressRoute 线路。 **示例：**可以将欧洲西部创建的 VNet 链接到硅谷创建的 ExpressRoute 线路。 **其他示例：**在公共对等互连中，会播发来自其他地缘政治区域的前缀，以便你可以进行连接，例如，通过硅谷的线路连接到欧洲西部地区的 SQL Azure。
-* 连接到 Office 365 服务和 CRM Online。
+
 
 ### <a name="how-many-vnets-can-i-link-to-an-expressroute-circuit-if-i-enabled-expressroute-premium"></a>如果启用 ExpressRoute 高级版，可将多少个 VNet 链接到 ExpressRoute 线路？
 下表显示了 ExpressRoute 限制和每条 ExpressRoute 线路的 VNet 数。

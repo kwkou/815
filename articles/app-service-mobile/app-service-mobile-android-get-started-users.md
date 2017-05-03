@@ -84,5 +84,6 @@
 <!-- URLs. -->
 [Get started with Mobile Apps]: /documentation/articles/app-service-mobile-android-get-started/
 [移动应用入门]: /documentation/articles/app-service-mobile-android-get-started/
+[Azure 门户预览]: https://portal.azure.cn
 
 <!---HONumber=Mooncake_0116_2017-->

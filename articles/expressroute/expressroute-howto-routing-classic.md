@@ -64,7 +64,7 @@
 
 4. 接下来，使用以下 cmdlet 将 Azure 订阅添加到经典部署模型的 PowerShell。
 
-    Add-AzureAccount -Environment AzureChinaCloud
+        Add-AzureAccount -Environment AzureChinaCloud
 
 
 ## <a name="azure-private-peering"></a>Azure 专用对等互连
@@ -81,7 +81,7 @@
 
 2. **创建 ExpressRoute 线路。**
 	
-	请按说明创建 [ExpressRoute 线路](/documentation/articles/expressroute-howto-circuit-classic/)，并由连接服务提供商进行预配。如果你的连接服务提供商提供第 3 层托管服务，你可以请求连接服务提供商为你启用 Azure 专用对等互连。在此情况下，你不需要遵循后续部分中所列的说明。但是，如果你的连接服务提供商不为你管理路由，请在创建线路之后遵循以下说明。
+    请按说明创建 [ExpressRoute 线路](/documentation/articles/expressroute-howto-circuit-classic/)，并由连接服务提供商进行预配。如果你的连接服务提供商提供第 3 层托管服务，你可以请求连接服务提供商为你启用 Azure 专用对等互连。在此情况下，你不需要遵循后续部分中所列的说明。但是，如果你的连接服务提供商不为你管理路由，请在创建线路之后遵循以下说明。
 
 3. **检查 ExpressRoute 线路以确保它已预配。**
 

@@ -28,28 +28,30 @@
 
     此方法将用户 ID 和令牌存储在标记为私有的首选项文件中。 这可保护对缓存的访问，这样设备上的其他应用便无权访问此令牌。 因为应用的首选项已经过沙盒处理。 但是，如果有人获取了设备的访问权，则它们可能会通过其他方式获得对令牌缓存的访问权。
 
-   > [AZURE.NOTE]
-   > 如果使用令牌访问的数据非常敏感，并且有人可能会获得设备的访问权限，则可以使用加密进一步保护令牌。 但是，完全安全的解决方案超出了本教程的范围并且取决于具体的安全要求。
-   >
-   >
+    > [AZURE.NOTE]
+    > 如果使用令牌访问的数据非常敏感，并且有人可能会获得设备的访问权限，则可以使用加密进一步保护令牌。 但是，完全安全的解决方案超出了本教程的范围并且取决于具体的安全要求。
+    >
+    >
+    
 4. 在 ToDoActivity.java 文件中，为 `loadUserTokenCache` 方法添加下面的定义。
 
-        private boolean loadUserTokenCache(MobileServiceClient client)
-        {
-            SharedPreferences prefs = getSharedPreferences(SHAREDPREFFILE, Context.MODE_PRIVATE);
-            String userId = prefs.getString(USERIDPREF, null);
-            if (userId == null)
-                return false;
-            String token = prefs.getString(TOKENPREF, null);
-            if (token == null)
-                return false;
+         private boolean loadUserTokenCache(MobileServiceClient client)
+         {
+             SharedPreferences prefs = getSharedPreferences(SHAREDPREFFILE, Context.MODE_PRIVATE);
+             String userId = prefs.getString(USERIDPREF, null);
+             if (userId == null)
+                 return false;
+             String token = prefs.getString(TOKENPREF, null);
+             if (token == null)
+                 return false;
 
-            MobileServiceUser user = new MobileServiceUser(userId);
-            user.setAuthenticationToken(token);
-            client.setCurrentUser(user);
+             MobileServiceUser user = new MobileServiceUser(userId);
+             user.setAuthenticationToken(token);
+             client.setCurrentUser(user);
 
-            return true;
-        }
+             return true;
+         }
+         
 5. 在 *ToDoActivity.java* 文件中，将 `authenticate` 方法替换为下面这种使用令牌缓存的方法。 如果要使用的帐户不是 MicrosoftAccount 帐户，请更改登录提供者。
 
         private void authenticate() {

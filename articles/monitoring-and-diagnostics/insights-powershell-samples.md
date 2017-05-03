@@ -87,7 +87,7 @@
 
 若要查看特定警报规则的历史记录，可以使用 `Get-AzureRmAlertHistory` cmdlet，同时会传入警报规则的资源 ID。
 
-		Get-AzureRmAlertHistory -ResourceId /subscriptions/s1/resourceGroups/rg1/providers/microsoft.insights/alertrules/myalert -StartTime 2016-03-1 -Status Activated
+	Get-AzureRmAlertHistory -ResourceId /subscriptions/s1/resourceGroups/rg1/providers/microsoft.insights/alertrules/myalert -StartTime 2016-03-1 -Status Activated
 
 `Get-AzureRmAlertHistory` Cmdlet 支持各种参数。有关详细信息，请参阅 [Get-AlertHistory](https://msdn.microsoft.com/zh-cn/library/mt282453.aspx)。
 
@@ -135,7 +135,8 @@
 |将电子邮件发送给所有者、参与者和读者|	-SendToServiceOwners|
 
 创建电子邮件操作
-		$actionEmail = New-AzureRmAlertRuleEmail -CustomEmail myname@company.com
+
+	$actionEmail = New-AzureRmAlertRuleEmail -CustomEmail myname@company.com
 
 创建 Webhook 操作
 

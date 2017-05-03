@@ -125,7 +125,7 @@
 
 		Set-AzureVNetConfig -ConfigurationPath 'C:\NetworkConfig.xml'
 
-4. <a name="gw"></a> 创建 ExpressRoute 网关。请务必将 GatewaySKU 指定为 *Standard* 、 *HighPerformance*  或 *UltraPerformance* ，并将 GatewayType 指定为 *DynamicRouting*。
+4. <a name="gw"></a>创建 ExpressRoute 网关。请务必将 GatewaySKU 指定为 *Standard* 、 *HighPerformance*  或 *UltraPerformance* ，并将 GatewayType 指定为 *DynamicRouting*。
 
 	使用以下示例，将值替换为你自己的值。
 
@@ -169,7 +169,7 @@
    > 
    > 
    
-    使用下面的示例，并将值替换为你自己的值。
+   使用下面的示例，并将值替换为你自己的值。
    
         New-AzureLocalNetworkGateway -GatewayName MyLocalNetwork -IpAddress <MyLocalGatewayIp> -AddressSpace <MyLocalNetworkAddress>
    
@@ -178,7 +178,7 @@
    > 
    > 
 
-	若要检索虚拟网络网关设置（包括网关 ID 和公共 IP），请使用 `Get-AzureVirtualNetworkGateway` cmdlet。请参阅以下示例。
+   若要检索虚拟网络网关设置（包括网关 ID 和公共 IP），请使用 `Get-AzureVirtualNetworkGateway` cmdlet。请参阅以下示例。
 
 		Get-AzureLocalNetworkGateway
 
@@ -222,23 +222,25 @@
 	`Get-AzureVNetConfig -ExportToFile "C:\NetworkConfig.xml"`
 
 4. 编辑网络配置文件架构，使网关子网为 /27 或更短的前缀（例如 /26 或 /25）。请参阅以下示例。
-   > [AZURE.NOTE]
-   > 如果你因为虚拟网络中没有剩余足够的 IP 地址而无法增加网关子网大小，则需增加 IP 地址空间。 有关配置架构的详细信息，请参阅 [Azure 虚拟网络配置架构](https://msdn.microsoft.com/zh-cn/library/azure/jj157100.aspx)。
-   > 
-   > 
+
+    > [AZURE.NOTE]
+    > 如果你因为虚拟网络中没有剩余足够的 IP 地址而无法增加网关子网大小，则需增加 IP 地址空间。 有关配置架构的详细信息，请参阅 [Azure 虚拟网络配置架构](https://msdn.microsoft.com/zh-cn/library/azure/jj157100.aspx)。
+    > 
+    > 
+    
           <Subnet name="GatewaySubnet">
             <AddressPrefix>10.17.159.224/27</AddressPrefix>
           </Subnet>
 
 5. 如果以前的网关是站点到站点 VPN，则还必须将连接类型更改为**“专用”**。
 
-		         <Gateway>
-		          <ConnectionsToLocalNetwork>
-		            <LocalNetworkSiteRef name="MyLocalNetwork">
-		              <Connection type="Dedicated" />
-		            </LocalNetworkSiteRef>
-		          </ConnectionsToLocalNetwork>
-		        </Gateway>
+		   <Gateway>
+		     <ConnectionsToLocalNetwork>
+		       <LocalNetworkSiteRef name="MyLocalNetwork">
+		          <Connection type="Dedicated" />
+		        </LocalNetworkSiteRef>
+		     </ConnectionsToLocalNetwork>
+		   </Gateway>
 
 6. 此时，你将拥有不带网关的虚拟网络。若要创建新网关并完成连接，可以转到[步骤 4 - 创建 ExpressRoute 网关](#gw)（可以在前一组步骤中找到）。
 

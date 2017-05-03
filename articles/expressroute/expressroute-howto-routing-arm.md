@@ -24,10 +24,9 @@
 
 # <a name="create-and-modify-peering-for-an-expressroute-circuit-using-powershell"></a>使用 PowerShell 创建和修改 ExpressRoute 线路的对等互连
 > [AZURE.SELECTOR]
-> [Resource Manager - Azure 门户](/documentation/articles/expressroute-howto-routing-portal-resource-manager/)
-
-> *[Resource Manager - PowerShell](/documentation/articles/expressroute-howto-routing-arm/)
-> *[经典 - PowerShell](/documentation/articles/expressroute-howto-routing-classic/)
+> - [Resource Manager - Azure 门户预览](/documentation/articles/expressroute-howto-routing-portal-resource-manager/)
+> - [Resource Manager - PowerShell](/documentation/articles/expressroute-howto-routing-arm/)
+> - [经典 - PowerShell](/documentation/articles/expressroute-howto-routing-classic/)
 >
 >
 
@@ -127,13 +126,13 @@
 	
 	可以运行以下 cmdlet 为线路配置 Azure 专用对等互连。
 
-          	Add-AzureRmExpressRouteCircuitPeeringConfig -Name "AzurePrivatePeering" -ExpressRouteCircuit $ckt -PeeringType AzurePrivatePeering -PeerASN 100 -PrimaryPeerAddressPrefix "10.0.0.0/30" -SecondaryPeerAddressPrefix "10.0.0.4/30" -VlanId 200
+        Add-AzureRmExpressRouteCircuitPeeringConfig -Name "AzurePrivatePeering" -ExpressRouteCircuit $ckt -PeeringType AzurePrivatePeering -PeerASN 100 -PrimaryPeerAddressPrefix "10.0.0.0/30" -SecondaryPeerAddressPrefix "10.0.0.4/30" -VlanId 200
 
 		Set-AzureRmExpressRouteCircuit -ExpressRouteCircuit $ckt
 
 	如果选择使用 MD5 哈希，则可以使用以下 cmdlet。
 
-          	Add-AzureRmExpressRouteCircuitPeeringConfig -Name "AzurePrivatePeering" -ExpressRouteCircuit $ckt -PeeringType AzurePrivatePeering -PeerASN 100 -PrimaryPeerAddressPrefix "10.0.0.0/30" -SecondaryPeerAddressPrefix "10.0.0.4/30" -VlanId 200  -SharedKey "A1B2C3D4"
+        Add-AzureRmExpressRouteCircuitPeeringConfig -Name "AzurePrivatePeering" -ExpressRouteCircuit $ckt -PeeringType AzurePrivatePeering -PeerASN 100 -PrimaryPeerAddressPrefix "10.0.0.0/30" -SecondaryPeerAddressPrefix "10.0.0.4/30" -VlanId 200  -SharedKey "A1B2C3D4"
 
      
    > [AZURE.IMPORTANT]
@@ -144,9 +143,9 @@
 ### <a name="to-view-azure-private-peering-details"></a>查看 Azure 专用对等互连详细信息
 可以使用以下 cmdlet 来获取配置详细信息。
 
-		$ckt = Get-AzureRmExpressRouteCircuit -Name "ExpressRouteARMCircuit" -ResourceGroupName "ExpressRouteResourceGroup"
+	$ckt = Get-AzureRmExpressRouteCircuit -Name "ExpressRouteARMCircuit" -ResourceGroupName "ExpressRouteResourceGroup"
 
-		Get-AzureRmExpressRouteCircuitPeeringConfig -Name "AzurePrivatePeering" -Circuit $ckt	
+	Get-AzureRmExpressRouteCircuitPeeringConfig -Name "AzurePrivatePeering" -Circuit $ckt	
 
 ### <a name="to-update-azure-private-peering-configuration"></a>更新 Azure 专用对等互连配置
 
@@ -264,9 +263,9 @@
 ### <a name="to-view-azure-public-peering-details"></a>查看 Azure 公共对等互连详细信息
 可以使用以下 cmdlet 来获取配置详细信息：
 
-		$ckt = Get-AzureRmExpressRouteCircuit -Name "ExpressRouteARMCircuit" -ResourceGroupName "ExpressRouteResourceGroup"
+	$ckt = Get-AzureRmExpressRouteCircuit -Name "ExpressRouteARMCircuit" -ResourceGroupName "ExpressRouteResourceGroup"
 
-		Get-AzureRmExpressRouteCircuitPeeringConfig -Name "AzurePublicPeering" -Circuit $ckt
+	Get-AzureRmExpressRouteCircuitPeeringConfig -Name "AzurePublicPeering" -Circuit $ckt
 
 ### <a name="to-update-azure-public-peering-configuration"></a>更新 Azure 公共对等互连配置
 可以使用以下 cmdlet 来更新配置的任何部分：
