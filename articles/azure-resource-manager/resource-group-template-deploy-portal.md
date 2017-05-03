@@ -84,7 +84,7 @@
    
     ![创建模板](./media/resource-group-template-deploy-portal/show-custom-template.png)  
 
-    在编辑器中，添加用于定义要部署的资源的 JSON 语法。 完成后，选择“保存”  。 有关编写 JSON 语法的指导，请参阅 [Resource Manager 模板演练](/documentation/articles/resource-manager-template-walkthrough/)。
+    在编辑器中，添加用于定义要部署的资源的 JSON 语法。 完成后，选择“保存”  。 有关编写 JSON 语法的指导，请参阅 [创建第一个 Azure Resource Manager 模板](/documentation/articles/resource-manager-create-first-template/)。
 
     ![编辑模板](./media/resource-group-template-deploy-portal/edit-template.png)  
 

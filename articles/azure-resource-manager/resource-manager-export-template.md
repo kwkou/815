@@ -169,7 +169,7 @@
 
 3. 可以通过多个选项继续使用此模板。 可以下载模板，然后通过 JSON 编辑器在本地使用该模板。 也可将模板保存到库，并通过门户使用它。
    
-    如果喜欢使用 [VS Code](/documentation/articles/resource-manager-vs-code/) 或 [Visual Studio](/documentation/articles/vs-azure-tools-resource-groups-deployment-projects-create-deploy/) 等 JSON 编辑器，可本地下载模板并使用该编辑器。 如果不使用 JSON 编辑器进行设置，可通过门户编辑模板。 本主题的其余部分假设用户已在门户中将模板保存到库。 但无论使用本地 JSON 编辑器还是通过门户，都要对模板进行相同的语法更改。
+    如果喜欢使用 [VS Code](/documentation/articles/resource-manager-create-first-template/) 或 [Visual Studio](/documentation/articles/vs-azure-tools-resource-groups-deployment-projects-create-deploy/) 等 JSON 编辑器，可本地下载模板并使用该编辑器。 如果不使用 JSON 编辑器进行设置，可通过门户编辑模板。 本主题的其余部分假设用户已在门户中将模板保存到库。 但无论使用本地 JSON 编辑器还是通过门户，都要对模板进行相同的语法更改。
 
     若要在本地使用，请选择“下载”。
 

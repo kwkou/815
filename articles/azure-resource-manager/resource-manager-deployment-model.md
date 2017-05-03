@@ -201,7 +201,7 @@ Azure 在 2014 年引入了 Resource Manager，增加了资源组这一概念。
 可以在 [Azure Resource Manager 快速入门模板](https://github.com/Azure/azure-quickstart-templates/)（Azure Resource Manager 快速启动模板）中找到一系列广泛的初学者模板。
 
 ## <a name="next-steps"></a>后续步骤
-* 若要演练如何创建用于定义虚拟机、存储帐户和虚拟网络的模板，请参阅 [Resource Manager 模板演练](/documentation/articles/resource-manager-template-walkthrough/)。
+* 若要演练如何创建用于定义虚拟机、存储帐户和虚拟网络的模板，请参阅 [创建第一个 Azure Resource Manager 模板](/documentation/articles/resource-manager-create-first-template/)。
 * 若要查看用于部署模板的命令，请参阅[使用 Azure Resource Manager 模板部署应用程序](/documentation/articles/resource-group-template-deploy/)。
 
 <!-- Update_Description:update meta properties; wording update -->
