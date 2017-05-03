@@ -1,24 +1,27 @@
 <properties
-   pageTitle="优化 ExpressRoute 路由 | Azure"
-   description="本页详细介绍了在客户可以通过多个 ExpressRoute 线路在 Azure 与客户的公司网络之间进行连接时，如何优化路由。"
-   documentationCenter="na"
-   services="expressroute"
-   authors="charwen"
-   manager="carmonm"
-   editor=""/>  
-
+    pageTitle="优化 ExpressRoute 路由 | Azure"
+    description="本页详细说明当 Azure 与企业网络之间存在多个 ExpressRoute 连接线路时如何优化路由。"
+    documentationcenter="na"
+    services="expressroute"
+    author="charwen"
+    manager="carmonm"
+    editor=""
+    translationtype="Human Translation" />
 <tags
-   ms.service="expressroute"
-   ms.devlang="na"
-   ms.topic="get-started-article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
-   ms.date="01/27/2017"
-   wacn.date="03/24/2017"
-   ms.author="charwen"/>  
+    ms.assetid="fca53249-d9c3-4cff-8916-f8749386a4dd"
+    ms.service="expressroute"
+    ms.devlang="na"
+    ms.topic="get-started-article"
+    ms.tgt_pltfrm="na"
+    ms.workload="infrastructure-services"
+    ms.date="04/06/2017"
+    wacn.date="05/02/2017"
+    ms.author="charwen"
+    ms.sourcegitcommit="78da854d58905bc82228bcbff1de0fcfbc12d5ac"
+    ms.openlocfilehash="493a5ffcdff1dd44f6eb46af91b4ebaa8786d16e"
+    ms.lasthandoff="04/22/2017" />
 
-
-# 优化 ExpressRoute 路由
+# <a name="optimize-expressroute-routing"></a>优化 ExpressRoute 路由
 当你有多个 ExpressRoute 线路时，可以通过多个路径连接到 Azure。结果就是，你所采用的路由可能不是最理想的 - 也就是说，你的流量可能会经历较长的路径才能到达 Azure，而 Azure 的流量也可能会经历较长的路径才能到达你的网络。网络路径越长，延迟越严重。延迟对应用程序性能和用户体验有直接影响。本文将详述此问题，并说明如何使用标准路由技术来优化路由。
 
 ## 非最优路由情况 
