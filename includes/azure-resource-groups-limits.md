@@ -7,5 +7,6 @@
 | 标记数（按资源或资源组） |15 |15 |
 | 标记键长度 |512 |512 |
 | 标记值长度 |256 |256 |
+| 已导出模板中的资源 |200 |200 |
 
-<!---HONumber=Mooncake_0103_2017-->
+<!--Update_Description: Add the last row of Exporting Limit of Resource Manager is 200-->

@@ -1,33 +1,36 @@
 <properties
     pageTitle="使用 Azure CLI 和模板部署资源 | Azure"
-    description="使用 Azure Resource Manager 和 Azure CLI 将资源部署到 Azure。资源在 Resource Manager 模板中定义。"
+    description="使用 Azure Resource Manager 和 Azure CLI 将资源部署到 Azure。 资源在 Resource Manager 模板中定义。"
     services="azure-resource-manager"
     documentationcenter="na"
     author="tfitzmac"
     manager="timlt"
-    editor="tysonn" />
+    editor="tysonn"
+    translationtype="Human Translation" />
 <tags
     ms.assetid="493b7932-8d1e-4499-912c-26098282ec95"
     ms.service="azure-resource-manager"
-    ms.devlang="na"
+    ms.devlang="azurecli"
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="na"
     ms.date="03/10/2017"
-    wacn.date="03/31/2017"
-    ms.author="tomfitz" />  
+    wacn.date="05/02/2017"
+    ms.author="tomfitz"
+    ms.sourcegitcommit="78da854d58905bc82228bcbff1de0fcfbc12d5ac"
+    ms.openlocfilehash="924b4ab45e7c58a28a1527fed4682fcb297b581a"
+    ms.lasthandoff="04/22/2017" />
 
-
-# 使用 Resource Manager 模板和 Azure CLI 部署资源
+# <a name="deploy-resources-with-resource-manager-templates-and-azure-cli"></a>使用 Resource Manager 模板和 Azure CLI 部署资源
 > [AZURE.SELECTOR]
 - [PowerShell](/documentation/articles/resource-group-template-deploy/)
 - [Azure CLI](/documentation/articles/resource-group-template-deploy-cli/)
 - [门户](/documentation/articles/resource-group-template-deploy-portal/)
 - [REST API](/documentation/articles/resource-group-template-deploy-rest/)
 
-本主题介绍如何将 [Azure CLI 2.0](https://docs.microsoft.com/zh-cn/cli/azure/install-az-cli2) 与 Resource Manager 模板配合使用向 Azure 部署资源。你的模板可以是本地文件或是可通过 URI 访问的外部文件。如果模板驻留在存储帐户中，你可以限制对该模板的访问，并在部署过程中提供共享访问签名 (SAS) 令牌。
+本主题介绍了如何将 [Azure CLI 2.0](https://docs.microsoft.com/zh-cn/cli/azure/install-az-cli2) 与 Resource Manager 模板配合使用来将资源部署到 Azure。  你的模板可以是本地文件或是可通过 URI 访问的外部文件。 如果模板驻留在存储帐户中，你可以限制对该模板的访问，并在部署过程中提供共享访问签名 (SAS) 令牌。
 
-## <a name="deploy"></a> 部署
+## <a name="deploy"></a>部署
 
 * 若要快速开始部署，请使用以下命令部署带内联参数的本地模板：
 
@@ -41,11 +44,11 @@
           --template-file storage.json \
           --parameters '{"storageNamePrefix":{"value":"contoso"},"storageSKU":{"value":"Standard_GRS"}}'
 
-    部署可能需要几分钟才能完成。完成之后，你将看到一条包含以下结果的消息：
+    部署可能需要几分钟才能完成。 完成之后，你将看到一条包含以下结果的消息：
 
         "provisioningState": "Succeeded",
 
-* 仅当要使用非默认订阅时，才需要 `az account set` 命令。若要查看所有订阅及其 ID，请使用：
+* 仅当要使用非默认订阅时，才需要 `az account set` 命令。 若要查看所有订阅及其 ID，请使用：
 
         az account list
 
@@ -85,21 +88,21 @@
 若要使用完整模式，请使用 mode 参数：
 
         az group deployment create \
-        --name ExampleDeployment \
-        --mode Complete \
-        --resource-group ExampleGroup \
-        --template-file storage.json \
-        --parameters '{"storageNamePrefix":{"value":"contoso"},"storageSKU":{"value":"Standard_GRS"}}'
+            --name ExampleDeployment \
+            --mode Complete \
+            --resource-group ExampleGroup \
+            --template-file storage.json \
+            --parameters '{"storageNamePrefix":{"value":"contoso"},"storageSKU":{"value":"Standard_GRS"}}'
 
-## 使用 SAS 令牌从存储空间部署模板
+## <a name="deploy-template-from-storage-with-sas-token"></a>使用 SAS 令牌从存储空间部署模板
 可以将模板添加到存储帐户，并在部署过程中使用 SAS 令牌链接到这些模板。
 
 > [AZURE.IMPORTANT]
-通过执行以下步骤，只有帐户所有者可以访问包含模板的 blob。但是，如果为 blob 创建 SAS 令牌，则拥有该 URI 的任何人都可以访问 blob。如果其他用户截获了该 URI，则此用户可以访问该模板。使用 SAS 令牌是限制对模板的访问的好方法，但不应直接在模板中包括密码等敏感数据。
+> 通过执行以下步骤，只有帐户所有者可以访问包含模板的 blob。 但是，如果为 blob 创建 SAS 令牌，则拥有该 URI 的任何人都可以访问 blob。 如果其他用户截获了该 URI，则此用户可以访问该模板。 使用 SAS 令牌是限制对模板的访问的好方法，但不应直接在模板中包括密码等敏感数据。
 > 
 > 
 
-### 将专用模板添加到存储帐户
+### <a name="add-private-template-to-storage-account"></a>将专用模板添加到存储帐户
 以下示例设置专用存储帐户容器并上载模板：
 
     az group create --name "ManageGroup" --location "China East"
@@ -123,7 +126,7 @@
         --name vmlinux.json \
         --connection-string $connection
 
-### 在部署期间提供 SAS 令牌
+### <a name="provide-sas-token-during-deployment"></a>在部署期间提供 SAS 令牌
 若要在存储帐户中部署专用模板，请生成 SAS 令牌，并将其包括在模板的 URI 中。设置到期时间以允许足够的时间来完成部署。
 
     seconds='@'$(( $(date +%s) + 1800 ))
@@ -148,7 +151,7 @@
 
 有关将 SAS 令牌与链接模板配合使用的示例，请参阅[将已链接的模版与 Azure Resource Manager 配合使用](/documentation/articles/resource-group-linked-templates/)。
 
-## 调试
+## <a name="debug"></a>调试
 
 若要查看有关失败的部署操作的信息，请使用：
 
@@ -156,9 +159,9 @@
 
 有关解决常见部署错误的提示，请参阅[排查使用 Azure Resource Manager 时的常见 Azure 部署错误](/documentation/articles/resource-manager-common-deployment-errors/)。
 
-## 完整部署脚本
+## <a name="complete-deployment-script"></a>完整部署脚本
 
-以下示例显示用于部署[导出模板](/documentation/articles/resource-manager-export-template/)功能生成的模板的 Azure CLI 2.0 脚本：
+以下示例显示了用于部署由[导出模板](/documentation/articles/resource-manager-export-template/)功能所生成模板的 Azure CLI 2.0 脚本：
 
     #!/bin/bash
     set -euo pipefail
@@ -278,13 +281,13 @@
         echo "Template has been successfully deployed"
     fi
 
-## 后续步骤
-* 有关通过 .NET 客户端库部署资源的示例，请参阅 [Deploy resources using .NET libraries and a template](/documentation/articles/virtual-machines-windows-csharp-template/)（使用 .NET 库和模板部署资源）。
+## <a name="next-steps"></a>后续步骤
+* 有关通过 .NET 客户端库部署资源的示例，请参阅[使用 .NET 库和模板部署资源](/documentation/articles/virtual-machines-windows-csharp-template/)。
 * 若要在模板中定义参数，请参阅[创作模板](/documentation/articles/resource-group-authoring-templates/#parameters)。
 <!--* 有关将解决方案部署到不同环境的指南，请参阅 [Development and test environments in Azure](/documentation/articles/solution-dev-test-environments/)（Azure 中的开发和测试环境）。-->
 * 有关使用 KeyVault 引用来传递安全值的详细信息，请参阅[在部署期间传递安全值](/documentation/articles/resource-manager-keyvault-parameter/)。
-* 如需了解企业如何使用 Resource Manager 对订阅进行有效管理，请参阅 [Azure 企业机架 - 规范性订阅管理](/documentation/articles/resource-manager-subscription-governance/)。
-* 有关自动化部署的四部分系列教程，请参阅[将应用程序自动部署到 Azure 虚拟机](/documentation/articles/virtual-machines-windows-dotnet-core-1-landing/)。此系列教程介绍了应用程序体系结构、访问与安全性、可用性与缩放性，以及应用程序部署。
+* 如需了解企业如何使用 Resource Manager 对订阅进行有效管理，请参阅 [Azure 企业基架 - 出于合规目的监管订阅](/documentation/articles/resource-manager-subscription-governance/)。
+* 有关自动部署的四部分系列，请参阅[将应用程序自动部署到 Azure 虚拟机](/documentation/articles/virtual-machines-windows-dotnet-core-1-landing/)。 此系列教程介绍了应用程序体系结构、访问与安全性、可用性与缩放性，以及应用程序部署。
 
-<!---HONumber=Mooncake_0327_2017-->
-<!-- Update_Description:update meta properties; wording update; update link reference; add new feature of debug and whole deployment of Azure CLI 2.0  -->
+
+<!-- Update_Description:update meta properties; wording update; update link reference-->
