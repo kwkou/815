@@ -7,7 +7,7 @@
 
 1. 使用远程桌面连接到该虚拟机后，从虚拟机上的“开始”菜单打开 Internet Explorer。
 2. 选择右上角的“工具”按钮。  在“Internet 选项”中，选择“安全”选项卡，然后选择“受信任的站点”图标，最后单击“站点”按钮。 将 *https://\*.mongodb.org* 添加到受信任站点列表中。
-3. 转到“下载 - MongoDB”[](https://www.mongodb.com/download-center#community)。
+3. 转到[下载 - MongoDB](https://www.mongodb.com/download-center#community)。
 4. 查找**社区服务器**的**当前稳定版本**，在 Windows 专栏中选择最新 **64 位**版本。 下载，然后运行 MSI 安装程序。
 5. MongoDB 通常安装在 C:\Program Files\MongoDB 下。 在桌面上搜索环境变量并将 MongoDB 二进制文件路径添加到 PATH 变量。 例如，可在计算机上的 C:\Program Files\MongoDB\Server\3.4\bin 中找到这些二进制文件。
 6. 在上述步骤中创建的数据磁盘（例如 **F:** 盘）中创建 MongoDB 数据和日志目录。 从“开始”中，选择“命令提示符”以打开命令提示符窗口。  键入：

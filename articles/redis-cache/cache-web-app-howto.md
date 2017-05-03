@@ -55,14 +55,14 @@
 
 * [建立 Azure 帐户](/pricing/1rmb-trial/?WT.mc_id=redis_cache_hero)。 获取可用来尝试付费版 Azure 服务的信用额度。 即使在信用额度用完之后，你也可以保留帐户并使用免费的 Azure 服务和功能。
 
-### <a name="visual-studio-2015-with-the-azure-sdk-for-net"></a> 包含用于 .NET 的 Azure SDK 的 Visual Studio 2017
+### <a name="visual-studio-2017-with-the-azure-sdk-for-net"></a> 包含用于 .NET 的 Azure SDK 的 Visual Studio 2017
 本教程专为配合使用 Visual Studio 2017 和[用于 .NET 的 Azure SDK](https://www.visualstudio.com/news/releasenotes/vs2017-relnotes#azuretools) 编写。 Azure SDK 2.9.5 随附在 Visual Studio 安装程序中。
 
 如果安装了 Visual Studio 2015，则可遵循适用于 [Azure SDK for .NET](/documentation/articles/dotnet-sdk/) 2.8.2 或更高版本的教程。 [单击此处下载最新的用于 Visual Studio 2015 的 Azure SDK](http://go.microsoft.com/fwlink/?linkid=518003)。 如果尚未安装 Visual Studio，则会随 SDK 一起自动安装。 某些屏幕看起来可能与本教程中显示的插图不同。
 
 如果有 Visual Studio 2013，则可以 [下载最新的 Azure SDK for Visual Studio 2013](http://go.microsoft.com/fwlink/?LinkID=324322)。 某些屏幕看起来可能与本教程中显示的插图不同。
 
-## <a name="create-the-visual-studio-project" id="visual-studio-2017-with-the-azure-sdk-for-net"></a>创建 Visual Studio 项目
+## <a name="create-the-visual-studio-project"></a>创建 Visual Studio 项目
 1. 打开 Visual Studio，然后依次单击“文件”、“新建”、“项目”。
 2. 展开“模板”列表中的“Visual C#”节点，选择“云”，然后单击“ASP.NET Web 应用程序”。 确保选中“.NET Framework 4.5.2”或更高版本。  在“名称”框中键入“ContosoTeamStats”，然后单击“确定”。
 
