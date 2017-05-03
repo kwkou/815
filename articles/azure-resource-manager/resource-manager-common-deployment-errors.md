@@ -45,7 +45,7 @@
 本主题介绍以下错误代码：
 
 * [AccountNameInvalid](#accountnameinvalid)
-* [授权失败](#authorization-failed)
+* [AuthorizationFailed](#authorization-failed)
 * [BadRequest](#badrequest)
 * [DeploymentFailed](#deploymentfailed)
 * [DisallowedOperation](#disallowedoperation)
@@ -445,7 +445,7 @@
 
 有关策略的详细信息，请参阅[使用策略来管理资源和控制访问](/documentation/articles/resource-manager-policy/)。
 
-### <a name="authorization-failed"></a> 授权失败
+### <a name="authorization-failed"></a> AuthorizationFailed
 你可能在部署期间收到错误，因为尝试部署资源的帐户或服务主体没有执行这些操作的访问权限。 Azure Active Directory 可让你或你的系统管理员非常精确地控制哪些标识可以访问哪些资源。 例如，如果你的帐户已分配到“读取者”角色，则无法创建资源。 在此情况下，将会出现一条错误消息，指出授权失败。
 
 有关基于角色的访问控制的详细信息，请参阅 [Azure Role-Based Access Control](/documentation/articles/role-based-access-control-configure/)（Azure 基于角色的访问控制）。

@@ -24,7 +24,7 @@
 # <a name="design-patterns-for-azure-resource-manager-templates-when-deploying-complex-solutions"></a>部署复杂解决方案时 Azure Resource Manager 模板的设计模式
 使用基于 Azure Resource Manager 模板的灵活方法，可以快速、一致地部署复杂的拓扑。 随着核心产品的发展，你可以轻松地调整这些部署或适应外来方案或客户的变化。
 
-本主题是包含更多内容的白皮书的一部分。 若要阅读完整的白皮书，请下载 [World Class Azure Resource Manager Templates Considerations and Proven Practices](http://download.microsoft.com/download/8/E/1/8E1DBEFA-CECE-4DC9-A813-93520A5D7CFE/World Class ARM Templates - Considerations and Proven Practices.pdf)（一流的 Azure Resource Manager 模板注意事项和成熟的做法）。
+本主题是包含更多内容的白皮书的一部分。 若要阅读完整的白皮书，请下载 [World Class Azure Resource Manager Templates Considerations and Proven Practices](http://download.microsoft.com/download/8/E/1/8E1DBEFA-CECE-4DC9-A813-93520A5D7CFE/World%20Class%20ARM%20Templates%20-%20Considerations%20and%20Proven%20Practices.pdf)（一流的 Azure Resource Manager 模板注意事项和成熟的做法）。
 
 模板结合了底层 Azure 资源管理器的优点，以及 JavaScript 对象表示法 (JSON) 的自适应性和易读性。 使用模板可以：
 
