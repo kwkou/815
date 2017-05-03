@@ -39,7 +39,7 @@
 
 检查帐户是否有足够权限的最简方法是使用门户。 请参阅[检查所需的权限](/documentation/articles/resource-group-create-service-principal-portal/#required-permissions)。
 
-现在转到[密码](#create-service-principal-with-password)或[证书](#create-service-principal-with-certificate)身份验证部分。
+现在转到[密码](#create-service-principal-with-password)或[证书](#create-service-principal-with-certificate-from-certificate-authority)身份验证部分。
 
 ## <a name="create-service-principal-with-password"></a>使用密码创建服务主体
 以下脚本为应用程序创建标识，然后将该标识分配到指定范围的“参与者”角色：

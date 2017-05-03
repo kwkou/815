@@ -242,7 +242,7 @@
    
      有关连接到虚拟机的详细信息，请参阅：
    
-    * [在 Azure 中运行用于 N 层体系结构的 VM](/documentation/articles/guidance-compute-n-tier-vm/)
+    <!--* [在 Azure 中运行用于 N 层体系结构的 VM](/documentation/articles/guidance-compute-n-tier-vm/)-->
     * [在 Azure Resource Manager 中设置对 VM 的 WinRM 访问](/documentation/articles/virtual-machines-windows-winrm/)
     * [使用 Azure 门户预览实现对 VM 的外部访问](/documentation/articles/virtual-machines-windows-nsg-quickstart-portal/)
     * [使用 PowerShell 对 VM 实现外部访问](/documentation/articles/virtual-machines-windows-nsg-quickstart-powershell/)

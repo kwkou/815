@@ -55,9 +55,9 @@
 3. 将该文件另存为 **azuredeploy.json**。 
 
 ## <a name="add-storage-account"></a>添加存储帐户
-1. 若要定义用于部署的存储帐户，请将该存储帐户添加到模板的 **resources** 节。 若要查找适用于存储帐户的值，请参阅[存储帐户模板参考](/documentation/articles/microsoft/.storage/storageaccounts)。 复制针对存储帐户显示的 JSON。 
+1. 若要定义用于部署的存储帐户，请将该存储帐户添加到模板的 **resources** 节。 <!--若要查找适用于存储帐户的值，请参阅[存储帐户模板参考](/documentation/articles/microsoft/.storage/storageaccounts)。 复制针对存储帐户显示的 JSON。 -->
 
-3. 将该 JSON 粘贴到模板的 **resources** 节中，如以下示例所示： 
+2. 将该 JSON 粘贴到模板的 **resources** 节中，如以下示例所示： 
 
         {
             "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
