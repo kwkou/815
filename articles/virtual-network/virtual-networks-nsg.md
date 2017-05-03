@@ -34,7 +34,7 @@ NSG 包含以下属性：
 | 属性 | 说明 | 约束 | 注意事项 |
 | --- | --- | --- | --- |
 | Name |NSG 的名称 |必须在区域内唯一。<br/>可以包含字母、数字、下划线、句点和连字符。<br/>必须以字母或数字开头。<br/>必须以字母、数字或下划线结尾。<br/>不能超过 80 个字符。 |由于你可能需要创建多个 NSG，因此请确保设置命名约定，以便轻松标识 NSG 的功能。 |
-| 区域 |在其中创建 NSG 的 Azure [区域](https://azure.microsoft.com/regions)。 |只能将多个 NSG 关联到该 NSG 所在区域中的资源。 |若要了解一个区域可以有多少 NSG，请阅读 [Azure 限制](/documentation/articles/azure-subscription-service-limits/#virtual-networking-limits-classic)一文。|
+| 区域 |在其中创建 NSG 的 Azure 区域。 |只能将多个 NSG 关联到该 NSG 所在区域中的资源。 |若要了解一个区域可以有多少 NSG，请阅读 [Azure 限制](/documentation/articles/azure-subscription-service-limits/#virtual-networking-limits-classic)一文。|
 | 资源组 |NSG 所在的[资源组](/documentation/articles/resource-group-overview/#resource-groups)。 |虽然 NSG 存在于一个资源组中，但可将其关联到任意资源组中的资源，只要该资源与 NSG 属于同一 Azure 区域。 |资源组用于以部署单元的形式集中管理多个资源。<br/>可以考虑将 NSG 与相关联的资源组合在一起。 |
 | 规则 |入站或出站规则，用于定义允许或拒绝的具体流量。 | |请参阅本文的 [NSG 规则](#Nsg-rules)部分。 |
 
@@ -142,7 +142,7 @@ NSG 包含两组规则：入站规则和出站规则。 在每组中，规则的
 了解[规划](#Planning)部分问题的答案以后，请查看以下部分的内容，然后再定义 NSG：
 
 ### <a name="Limits"></a> 限制
-订阅中的 NSG 数目以及每个 NSG 的规则数目均存在限制。 有关限制的详细信息，请阅读 [Azure limits](/documentation/articles/azure-subscription-service-limits/#networking-limits)（Azure 限制）一文。
+订阅中的 NSG 数目以及每个 NSG 的规则数目均存在限制。 有关限制的详细信息，请阅读 [Azure 限制](/documentation/articles/azure-subscription-service-limits/#networking-limits)一文。
 
 ### <a name="vnet-and-subnet-design"></a>VNet 和子网设计
 由于 NSG 可以应用于子网，因此你可以通过按子网来组合资源以及将 NSG 应用到子网来尽量减少 NSG 的数量。  如果你决定将 NSG 应用到子网，你可能会发现，现有的 VNet 和子网不是通过所要的 NSG 定义的。 为了支持 NSG 设计以及将新资源部署到新子网，可能需要定义新的 VNet 和子网。 然后，你才能定义一个迁移策略，将现有资源移到新子网。 

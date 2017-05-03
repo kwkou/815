@@ -78,8 +78,8 @@ NuGet 包会下载并添加所需的程序集引用，并将以下节添加到 w
     * 默认情况下，将为新缓存禁用非 SSL 端口。 为此设置指定 true 可使用 SSL 端口。 有关启用非 SSL 端口的详细信息，请参阅[配置缓存](/documentation/articles/cache-configure/)主题中的[访问端口](/documentation/articles/cache-configure/#access-ports)部分。
 * **databaseId** - 指定要用于缓存输出数据的数据库。 如果未指定，则使用默认值 0。
 * **applicationName** - 密钥存储在 Redis 中作为 `<AppName>_<SessionId>_Data`。 此命名方案使多个应用程序可以共享同一密钥。 此参数是可选的，如果未提供它，则使用默认值。
-* **connectionTimeoutInMilliseconds** - 此设置允许你覆盖 StackExchange.Redis 客户端中的 connectTimeout 设置。 如果未指定，则使用默认 connectTimeout 设置 5000。 有关详细信息，请参阅 [StackExchange.Redis 配置模型](http://go.microsoft.com/fwlink/?LinkId=398705)。
-* **operationTimeoutInMilliseconds** - 此设置允许你覆盖 StackExchange.Redis 客户端中的 syncTimeout 设置。 如果未指定，则使用默认 syncTimeout 设置 1000。 有关详细信息，请参阅 [StackExchange.Redis 配置模型](http://go.microsoft.com/fwlink/?LinkId=398705)。
+* **connectionTimeoutInMilliseconds** - 此设置允许你覆盖 StackExchange.Redis 客户端中的 connectTimeout 设置。 如果未指定，则使用默认 connectTimeout 设置 5000。
+* **operationTimeoutInMilliseconds** - 此设置允许你覆盖 StackExchange.Redis 客户端中的 syncTimeout 设置。 如果未指定，则使用默认 syncTimeout 设置 1000。
 
 将 OutputCache 指令添加到希望为其缓存输出的每个页面中。
 

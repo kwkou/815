@@ -136,9 +136,9 @@
  
 >[AZURE.NOTE]
 >* 有关命令行部署的信息，请参阅[启用 Azure Web 作业的命令行或连续传送](https://azure.microsoft.com/blog/2014/08/18/enabling-command-line-or-continuous-delivery-of-azure-webjobs/)。
-><p>* 如果配置了*“定期作业”*并将周期频率设置为某个分钟数，Azure 计划程序服务则不是免费的。其他频率（小时数、天数等）是免费的。
-><p>* 如果已部署某个 Web 作业，之后想要更改该 Web 作业的类型并重新部署，则要删除 webjobs-publish-settings.json 文件。这将导致 Visual Studio 再次显示发布选项，从而让你能够更改 Web 作业的类型。
-><p>* 如果部署了某个 Web 作业，并随后将运行模式从连续更改为非连续（反之亦然），则在重新部署时，Visual Studio 将在 Azure 中创建新的 Web 作业。如果更改了其他计划设置但保持运行模式不变，或在计划模式与按需模式之间切换，则 Visual Studio 会更新现有的作业，而不是创建新的作业。
+>* 如果配置了*“定期作业”*并将周期频率设置为某个分钟数，Azure 计划程序服务则不是免费的。其他频率（小时数、天数等）是免费的。
+>* 如果已部署某个 Web 作业，之后想要更改该 Web 作业的类型并重新部署，则要删除 webjobs-publish-settings.json 文件。这将导致 Visual Studio 再次显示发布选项，从而让你能够更改 Web 作业的类型。
+>* 如果部署了某个 Web 作业，并随后将运行模式从连续更改为非连续（反之亦然），则在重新部署时，Visual Studio 将在 Azure 中创建新的 Web 作业。如果更改了其他计划设置但保持运行模式不变，或在计划模式与按需模式之间切换，则 Visual Studio 会更新现有的作业，而不是创建新的作业。
 
 ## <a id="publishsettings"></a>webjob-publish-settings.json
 

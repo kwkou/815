@@ -10,7 +10,7 @@
     translationtype="Human Translation" />
 <tags
     ms.assetid="155924e6-00d5-4a8c-ba99-5189f300464a"
-    ms.service="cache-redis"
+    ms.service="cache"
     ms.devlang="azurecli"
     ms.topic="article"
     ms.tgt_pltfrm="na"

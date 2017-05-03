@@ -29,6 +29,7 @@
 ![网络示意图](./media/virtual-networks-overview/virtual-network-overview.png)
 
 若要了解有关以下 Azure 虚拟网络功能的详细信息，请单击功能：
+
 - **[隔离：](#isolation)**VNet 之间彼此隔离。 你可以为使用相同 CIDR 地址块的开发、测试和生产创建单独的 VNet。 相反地，你也可以创建使用不同 CIDR 地址的多个 VNet 并将网络连接在一起。 可将一个 VNet 分为多个子网。 Azure 为连接到 VNet 的 VM 和云服务角色实例提供内部名称解析。 可选择配置 VNet 来使用自己的 DNS 服务器，而不使用 Azure 内部名称解析。
 - **[Internet 连接：](#internet)**默认情况下，所有 Azure 虚拟机 (VM) 和连接到 VNet 的云服务角色实例都具有 Internet 访问权限。 根据需要，还可对特定资源启用入站访问。
 - **[Azure 资源连接：](#within-vnet)**云服务和 VM 等 Azure 资源可连接到同一 VNet。 即使资源在不同的子网中，也可使用专用 IP 地址连接彼此。 Azure 提供子网、VNet 和本地网络之间的默认路由，因此无需配置和管理路由。
@@ -40,6 +41,7 @@
 ## <a name = "isolation"></a>网络隔离和细分
 
 可在每个 Azure [订阅](/documentation/articles/azure-glossary-cloud-terminology/#subscription)和 Azure 区域中实现多个 VNet。 每个 VNet 与其他 VNet 隔离。 对于每个 VNet，可执行以下操作：
+
 - 使用公共和专用 (RFC 1918) 地址指定自定义专用 IP 地址空间。 Azure 从分配的地址空间中向连接到 VNet 的资源分配一个专用 IP 地址。
 - 将 VNet 细分为一个或多个子网，并向每个子网分配一部分 VNet 地址空间。
 - 使用 Azure 提供的名称解析或指定你自己的 DNS 服务器以供连接到 VNet 的资源使用。 若要了解 VNet 中名称解析的详细信息，请阅读 [VM 和云服务的名称解析](/documentation/articles/virtual-networks-name-resolution-for-vms-and-role-instances/)一文。
@@ -55,12 +57,14 @@
 ## <a name="connect-vnets"></a>连接虚拟网络
 
 VNet 之间可相互连接，因此，连接到任意一个 VNet 的资源都可与 VNet 之间的每个资源进行通信。 可使用以下两个中任意一个选项或使用这两个选项相互连接 VNet：
+
 - **对等互连：**使连接到相同 Azure 位置中不同 Azure VNet 的资源可相互进行通信。 如果资源连接到同一 VNet，则 VNet 之间的带宽和延迟相同。 若要了解对等互连的详细信息，请阅读[虚拟网络对等互连](/documentation/articles/virtual-network-peering-overview/)一文。
 - **VNet 到 VNet连接：**可使资源连接到相同或不同 Azure 位置中的不同 Azure VNet。 与对等互连不同，VNet 之间的带宽有一定限制，因为流量必须流经 Azure VPN 网关。 若要深入了解通过 VNet 到 VNet 连接进行 VNet 连接，请阅读[配置 VNet 到 VNet 连接](/documentation/articles/vpn-gateway-howto-vnet-vnet-resource-manager-portal/)一文。
 
 ## <a name="connect-on-premises"></a>连接到本地网络
 
 可组合使用以下任何选项将本地网络连接到 VNet：
+
 - **点到站点虚拟网络 (VPN)：**在连接到网络的单台电脑和 VNet 之间建立连接。 这种连接类型适用于刚开始使用 Azure 的人员或开发人员，因为该连接类型仅需对现有网络作出极少更改或不做任何更改。 此连接使用 SSTP 协议在电脑和 VNet 之间通过 Internet 提供加密通信。 由于流量遍历 Internet，因此点到站点 VPN 的延迟不可预测且经过加密。
 - **站点到站点 VPN：**在 VPN 设备和 Azure VPN 网关之间建立连接。 此连接类型可使授权的任何本地资源访问 VNet。 此连接是一个 IPSec/IKE VPN，该 VPN 通过 Internet 在本地设备和 Azure VPN 网关之间提供加密通信。 由于流量遍历 Internet，因此站点到站点连接的延迟不可预测。
 - **Azure ExpressRoute：**通过 ExpressRoute 合作伙伴在网络和 Azure 之间建立连接。 此连接是专用连接。 流量不会遍历 Internet。 由于流量未遍历 Internet 且未加密，因此 ExpressRoute 连接的延迟不可预测。
@@ -69,12 +73,14 @@ VNet 之间可相互连接，因此，连接到任意一个 VNet 的资源都可
 
 ## <a name="filtering"></a>筛选网络流量
 可使用以下两个选项中任意一个或同时使用这两个方案筛选子网之间的网络流量：
+
 - **网络安全组 (NSG)：**每个 NSG 可包含多个入站和出站安全规则，通过这些规则可按源和目标 IP 地址、端口和协议筛选流量。 可将 NSG 应用到一个 VM 中的每个 NIC。 也可将 NSG 应用到 NIC 或其他 Azure 资源所连接的子网。 有关 NSG 的详细信息，请参阅[网络安全组](/documentation/articles/virtual-networks-nsg/)一文。
 - **网络虚拟设备 (NVA)：**NVA 是运行软件的 VM，软件可执行网络功能，例如防火墙。 查看 [Azure 应用商店](https://azuremarketplace.microsoft.com/marketplace/apps/category/networking?page=1&subcategories=appliances)中可用 NVA 列表。 NVA 也可用于提供 WAN 优化和其他网络流量功能。 NVA 通常与用户定义路由或 BGP 路由配合使用。 还可使用 NVA 筛选 VNet 之间的流量。
 
 ## <a name="routing"></a>路由网络流量
 
 默认情况下，Azure 会创建路由表，这些路由表可使连接到 VNet 中任何子网的资源相互进行通信。 可使用以下两个选项中任意一个或同时使用二者替代 Azure 创建的默认路由：
+
 - **用户定义路由：**可创建自定义路由表，其中包含可对每个子网控制流量路由位置的路由。 若要详细了解用户定义的路由，请阅读[用户定义的路由](/documentation/articles/virtual-networks-udr-overview/)一文。
 - **BGP 路由：**如果使用 Azure VPN 网关或 ExpressRoute 连接将 VNet 连接到本地网络，则可将 BGP 路由传播到 VNet。
 

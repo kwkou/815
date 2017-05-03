@@ -26,7 +26,7 @@
 
 >[AZURE.NOTE] 
 >1. 为了让密钥保管库能与 Azure Resource Manager 虚拟机搭配使用，必须将密钥保管库上的 **EnabledForDeployment** 属性设置为 true。可以在各种客户端中执行此操作。
-><p>2.需要在与虚拟机相同的订阅和位置中创建密钥保管库。
+>2. 需要在与虚拟机相同的订阅和位置中创建密钥保管库。
 
 ## 使用 PowerShell 设置密钥保管库
 若要使用 PowerShell 创建密钥保管库，请参阅 [Azure 密钥保管库入门](/documentation/articles/key-vault-get-started/#vault)。

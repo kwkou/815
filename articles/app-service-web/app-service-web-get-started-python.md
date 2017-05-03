@@ -34,7 +34,7 @@
 运行本示例之前，请在本地安装以下必备组件：
 
 1. [下载并安装 git](https://git-scm.com/)
-1. [下载并安装 Python](https://Python.net)
+1. [下载并安装 Python](http://Python.net)
 1. 下载并安装 [Azure CLI 2.0](https://docs.microsoft.com/zh-cn/cli/azure/install-azure-cli)
 
 ## <a name="download-the-sample"></a>下载示例
@@ -101,10 +101,10 @@
 > 应用服务计划表示用于托管应用的物理资源集合。 分配到应用服务计划的所有应用程序将共享该计划定义的资源，在托管多个应用时可以节省成本。
 > <br/>
 > 应用服务计划定义：
-> * 区域（中国北部、中国东部）
-> * 实例大小（小、中、大）
-> * 规模计数（一个、两个、三个实例，等等）
-> * SKU（免费、共享、基本、标准、高级）
+><p> * 区域（中国北部、中国东部）
+><p> * 实例大小（小、中、大）
+><p> * 规模计数（一个、两个、三个实例，等等）
+><p> * SKU（免费、共享、基本、标准、高级）
 >
 
 以下示例使用**标准**定价层在 Linux Workers 中创建名为 `quickStartPlan` 的应用服务计划。
@@ -163,7 +163,7 @@
 
 ## <a name="configure-to-use-python"></a>配置为使用 Python
 
-使用 [az appservice web config update](https://docs.microsoft.com/zh-cn/cli/azure/app-service-web/config#update) 命令将 Web 应用配置为使用 Python 版本 `7.0.x`。
+使用 [az appservice web config update](https://docs.microsoft.com/zh-cn/cli/azure/appservice/web/config#update) 命令将 Web 应用配置为使用 Python 版本 `7.0.x`。
 
 > [AZURE.TIP]
 > 以这种方式设置 Python 版本会使用平台提供的默认容器。如果你想要使用自己的容器，请参阅 [az appservice web config container update](https://docs.microsoft.com/zh-cn/cli/azure/appservice/web/config/container#update) 命令的 CLI 参考文章。

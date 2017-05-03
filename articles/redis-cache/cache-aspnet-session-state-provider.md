@@ -83,8 +83,8 @@ NuGet 包会下载并添加所需的程序集引用，并将以下节添加到 w
 * **retryTimeoutInMilliseconds** - 将在此时间间隔内重试失败的操作，以毫秒为单位指定。 首次重试在 20 毫秒后进行，然后重试每隔一秒进行，直到 retryTimeoutInMilliseconds 间隔到期。 在此时间间隔过后，将立即重试操作最后一次。 如果操作仍失败，则会将异常返回给调用方，具体取决于 throwOnError 设置。 默认值为 0，这意味着不重试。
 * **databaseId** - 指定要用于缓存输出数据的数据库。 如果未指定，则使用默认值 0。
 * **applicationName** - 密钥存储在 Redis 中作为 `{<Application Name>_<Session ID>}_Data`。 此命名方案使多个应用程序可以共享同一密钥。 此参数是可选的，如果未提供它，则使用默认值。
-* **connectionTimeoutInMilliseconds** - 此设置允许你覆盖 StackExchange.Redis 客户端中的 connectTimeout 设置。 如果未指定，则使用默认 connectTimeout 设置 5000。 有关详细信息，请参阅 [StackExchange.Redis 配置模型](http://go.microsoft.com/fwlink/?LinkId=398705)。
-* **operationTimeoutInMilliseconds** - 此设置允许你覆盖 StackExchange.Redis 客户端中的 syncTimeout 设置。 如果未指定，则使用默认 syncTimeout 设置 1000。 有关详细信息，请参阅 [StackExchange.Redis 配置模型](http://go.microsoft.com/fwlink/?LinkId=398705)。
+* **connectionTimeoutInMilliseconds** - 此设置允许你覆盖 StackExchange.Redis 客户端中的 connectTimeout 设置。 如果未指定，则使用默认 connectTimeout 设置 5000。
+* **operationTimeoutInMilliseconds** - 此设置允许你覆盖 StackExchange.Redis 客户端中的 syncTimeout 设置。 如果未指定，则使用默认 syncTimeout 设置 1000。
 
 有关这些属性的详细信息，请参阅 [宣布推出适用于 Redis 的 ASP.NET 会话状态提供程序](http://blogs.msdn.com/b/webdev/archive/2014/05/12/announcing-asp-net-session-state-provider-for-redis-preview-release.aspx)中的原始博客文章公告。
 

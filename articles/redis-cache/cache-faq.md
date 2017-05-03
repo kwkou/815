@@ -340,7 +340,7 @@ CLR 线程池具有两种类型的线程 —“辅助角色”和“I/O 完成�
 
 如何配置此设置：
 
-* 在 ASP.NET 中，可在 web.config 中的 `<processModel>` 配置元素下使用[“minIoThreads”配置设置]["minIoThreads" configuration setting]。 如果在 Azure 网站内部运行，则此设置不会通过配置选项进行公开。 但是，你应该仍然能够通过 global.asax.cs 中的 Application_Start 方法以编程方式配置此设置置（请参阅下文）。
+* 在 ASP.NET 中，可在 web.config 中的 `<processModel>` 配置元素下使用“minIoThreads”配置设置。 如果在 Azure 网站内部运行，则此设置不会通过配置选项进行公开。 但是，你应该仍然能够通过 global.asax.cs 中的 Application_Start 方法以编程方式配置此设置置（请参阅下文）。
 
     > [AZURE.NOTE] 
     > 此配置元素中指定的值是*按核心*设置。 例如，如果使用 4 核计算机，并且希望 minIOThreads 设置在运行时为 200，则使用 `<processModel minIoThreads="50"/>`。
@@ -414,5 +414,4 @@ Redis 取得成功的另一个重要方面是围绕它构建了健康而充满�
 ### <a name="in-role-cache"></a>角色中缓存
 [角色中缓存已于 2016 年 11 月 30 日停用。](https://azure.microsoft.com/zh-cn/blog/azure-managed-cache-and-in-role-cache-services-to-be-retired-on-11-30-2016/)
 
-["minIoThreads" configuration setting]: https://msdn.microsoft.com/zh-cn/library/vstudio/7w2sway1(v=vs.100).aspx
 <!--Update_Description: wording update-->

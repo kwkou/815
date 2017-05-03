@@ -91,8 +91,8 @@
 
 > [AZURE.TIP]
 > 使用以下链接了解有关 Azure Monitor 的详细信息：
-> - [Azure Monitor 入门](/documentation/articles/monitoring-overview/)
-> - [Azure 门户预览仪表板](/documentation/articles/azure-portal-dashboards/)
+> <p> - [Azure Monitor 入门](/documentation/articles/monitoring-overview/)
+> <p> - [Azure 门户预览仪表板](/documentation/articles/azure-portal-dashboards/)
 
 ## <a name="alerts"></a> 步骤 3 - 配置警报
 
@@ -110,7 +110,7 @@
 
 > [AZURE.TIP]
 > 使用以下链接了解有关 Azure 警报的详细信息：
-> - [对指标执行操作](/documentation/articles/monitoring-overview/)
+> <p> - [对指标执行操作](/documentation/articles/monitoring-overview/)
 
 ## <a name="logging"></a> 步骤 4 - 日志记录
 使用日志记录可以收集 Web 应用的**应用程序诊断**日志和 **Web 服务器诊断**日志。

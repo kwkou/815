@@ -147,7 +147,7 @@
 
 **问：** 在一个规模集中使用多个扩展时，是否可以强制规定执行序列？
 
-**答：** 不能直接强制执行，但对于 customScript 扩展，脚本可以等待另一个扩展来完成操作（[例如通过监视扩展日志](https://github.com/Azure/azure-quickstart-templates/blob/master/201-vmss-lapstack-autoscale/install_lap.sh)）。 在 [Extension Sequencing in Azure VM Scale Sets](https://msftstack.wordpress.com/2016/05/12/extension-sequencing-in-azure-vm-scale-sets/)（Azure VM 规模集中的扩展序列）博客文章中可以获取有关扩展序列的其他指导。
+**答：** 不能直接强制执行，但对于 customScript 扩展，脚本可以等待另一个扩展来完成操作。 在 [Extension Sequencing in Azure VM Scale Sets](https://msftstack.wordpress.com/2016/05/12/extension-sequencing-in-azure-vm-scale-sets/)（Azure VM 规模集中的扩展序列）博客文章中可以获取有关扩展序列的其他指导。
 
 **问：** 规模集是否适用于 Azure 可用性集？
 

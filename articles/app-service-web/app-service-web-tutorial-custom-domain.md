@@ -52,7 +52,7 @@
 
 ![在门户中导航到 Azure 应用](./media/app-service-web-tutorial-custom-domain/select-app.png)
 
-现已进入应用的_边栏选项卡_（一个水平打开的门户页）。  
+现已进入应用的 _边栏选项卡_ （一个水平打开的门户页）。  
 
 ### <a name="check-the-pricing-tier"></a>检查定价层
 在默认打开的“概述”页中，检查以确保应用不是位于**免费**层。

@@ -48,7 +48,7 @@
 -	带有[用于 .NET 的 Azure SDK](http://go.microsoft.com/fwlink/p/?linkid=323510&clcid=0x409) 的 Visual Studio 2015如果使用 Visual Studio，步骤可能有所不同。
 
 > [AZURE.NOTE] 完成本教程需要有一个 Azure 帐户：
-> + 可以[注册一个 Azure 帐户](/pricing/1rmb-trial/) — 获取可用来试用付费版 Azure 服务的信用额度，用完信用额度后，仍可以保留帐户和使用免费的 Azure 服务（如 Web 应用）。
+> 可以[注册一个 Azure 帐户](/pricing/1rmb-trial/) — 获取可用来试用付费版 Azure 服务的信用额度，用完信用额度后，仍可以保留帐户和使用免费的 Azure 服务（如 Web 应用）。
 
 ##<a name="deploy-a-web-app-to-azure-with-an-integrated-cdn-endpoint"></a> 将 Web 应用部署到具有集成 CDN 终结点的 Azure ##
 

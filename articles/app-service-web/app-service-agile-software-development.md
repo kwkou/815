@@ -70,7 +70,7 @@
 	-	[PowerShell](https://technet.microsoft.com/zh-cn/library/bb978526.aspx)
 
 > [AZURE.NOTE] 完成本教程需要有一个 Azure 帐户：
-> + 可以[注册一个 Azure 帐户](/pricing/1rmb-trial/) — 获取可用来试用付费版 Azure 服务的信用额度，甚至在用完信用额度后，仍可以保留帐户和使用免费的 Azure 服务（如 Web 应用）。
+> 可以[注册一个 Azure 帐户](/pricing/1rmb-trial/) — 获取可用来试用付费版 Azure 服务的信用额度，甚至在用完信用额度后，仍可以保留帐户和使用免费的 Azure 服务（如 Web 应用）。
 
 ## 设置生产环境 ##
 
