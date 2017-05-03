@@ -5,7 +5,7 @@
     wacn.lang="cn"
     />
  
-# Azure CDN API签名机制
+# CDN API签名机制
 
 Azure CDN服务会对每个访问请求进行身份验证，需要使用HTTPS协议提交请求，并在请求中包含签名信息。
 
