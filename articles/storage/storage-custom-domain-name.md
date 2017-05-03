@@ -112,35 +112,35 @@
 
 * 命令格式：
 
-      az storage account update \
-          --name <storage-account-name> \
-          --resource-group <resource-group-name> \
-          --custom-domain ""
+          az storage account update \
+              --name <storage-account-name> \
+              --resource-group <resource-group-name> \
+              --custom-domain ""
 
 * 命令示例：
 
-      az storage account update \
-          --name mystorageaccount \
-          --resource-group myresourcegroup \
-          --custom-domain ""
-
+          az storage account update \
+              --name mystorageaccount \
+              --resource-group myresourcegroup \
+              --custom-domain ""
+    
 ### <a name="powershell"></a>PowerShell
 
 使用 [Set-AzureRmStorageAccount](https://docs.microsoft.com/zh-cn/powershell/module/azurerm.storage/Set-AzureRmStorageAccount) PowerShell cmdlet ，并为 `-CustomDomainName` 参数值指定一个空字符串 (`""`) 以删除自定义域注册。
 
 * 命令格式：
 
-      Set-AzureRmStorageAccount `
-          -ResourceGroupName "<resource-group-name>" `
-          -AccountName "<storage-account-name>" `
-          -CustomDomainName ""
+          Set-AzureRmStorageAccount `
+              -ResourceGroupName "<resource-group-name>" `
+              -AccountName "<storage-account-name>" `
+              -CustomDomainName ""
 
 * 命令示例：
 
-      Set-AzureRmStorageAccount `
-          -ResourceGroupName "myresourcegroup" `
-          -AccountName "mystorageaccount" `
-          -CustomDomainName ""
+          Set-AzureRmStorageAccount `
+              -ResourceGroupName "myresourcegroup" `
+              -AccountName "mystorageaccount" `
+              -CustomDomainName ""
 
 ### <a name="azure-portal-preview"></a>Azure 门户预览
 
