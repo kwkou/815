@@ -7,7 +7,7 @@
  
 # Azure CDN API签名机制
 
-Azure CDN服务会对每个访问请求进行身份验证，需要使用HTTPS协议提交请求，并在请求中包含签名信息。字符编码为UTF-8。
+Azure CDN服务会对每个访问请求进行身份验证，需要使用HTTPS协议提交请求，并在请求中包含签名信息。
 
 Azure CDN通过对签名参数使用Key Value进行HMAC-SHA 256散列算法计算生成token，从而进行身份验证。签名信息以Authorization请求头发送，格式为"AzureCDN {Key ID}:{token}"。
 
@@ -100,7 +100,8 @@ func calculateAuthorizationHeader(requestURL, requestTimeStamp, keyID, keyValue,
 
 ### C Sharp
 ```
-public static string CalculateAuthorizationHeader(string requestUrl, string requestDate, string key, string httpMethod)
+{
+	public static string CalculateAuthorizationHeader(string requestUrl, string requestDate, string key, string httpMethod)
 {
           Uri requestUri = new Uri(requestUrl);
 
@@ -136,5 +137,7 @@ public static string CalculateAuthorizationHeader(string requestUrl, string requ
 
               return sbinary;
           }
+	}
 }
 ```
+
