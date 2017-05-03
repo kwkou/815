@@ -25,7 +25,7 @@
 
 本文介绍如何创建“优先级”路由类型的配置文件以将用户路由到两个 Azure Web 应用终结点。 通过使用“优先级”路由类型，所有流量将路由到第一个终结点，而第二个终结点将保留为备份。 因此，如果第一个终结点处于不正常状态，则可以将用户路由到第二个终结点。
 
-在本文中，两个以前创建的 Azure Web 应用终结点将关联到这个新创建的流量管理器配置文件。 若要详细了解如何创建 Azure Web 应用终结点，请访问[“Azure Web 应用文档”页](/documentation/services/app-service-web/)。 可以添加任何具有 DNS 名称且可通过公共 Internet 访问的终结点，例如，我们将使用 Azure Web 应用终结点。
+在本文中，两个以前创建的 Azure Web 应用终结点将关联到这个新创建的流量管理器配置文件。 若要详细了解如何创建 Azure Web 应用终结点，请访问[“Azure Web 应用文档”页](/documentation/services/app-service/web/)。 可以添加任何具有 DNS 名称且可通过公共 Internet 访问的终结点，例如，我们将使用 Azure Web 应用终结点。
 
 ### <a name="create-a-traffic-manager-profile"></a>创建流量管理器配置文件
 1. 在浏览器中，登录 [Azure 门户预览](http://portal.azure.cn)。 如果还没有帐户，可注册 [1 个月期限的试用版](/pricing/1rmb-trial/)。 

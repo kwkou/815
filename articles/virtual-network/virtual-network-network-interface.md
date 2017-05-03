@@ -77,7 +77,7 @@ Azure 门户预览会使用动态专用 IP 地址创建名为 **ipconfig1** 的�
 |**工具**|**命令**|
 |:---|:---|
 |**CLI**|[az network nic create](https://docs.microsoft.com/zh-cn/cli/azure/network/nic#create)|
-|**PowerShell**|[New-AzureRmNetworkInterface](https://docs.microsoft.com/zh-cn/powershell/resourcemanager/azurerm.network/v3.4.0/new-azurermnetworkinterface/cli/azure/network/nic#create)|
+|**PowerShell**|[New-AzureRmNetworkInterface](https://docs.microsoft.com/zh-cn/powershell/resourcemanager/azurerm.network/v3.4.0/new-azurermnetworkinterface)|
 
 ### <a name="view-nics"></a>查看和更改网络接口及设置
 

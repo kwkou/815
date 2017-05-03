@@ -114,8 +114,6 @@ Azure Redis 缓存非常容易上手。 若要开始使用，需要首先设置�
         }
     }
 
-有关高级连接配置选项的详细信息，请参阅 [StackExchange.Redis 配置模型][StackExchange.Redis configuration model]。
-
 [AZURE.INCLUDE [redis-cache-create](../../includes/redis-cache-access-keys.md)]
 
 建立连接后，通过调用 `ConnectionMultiplexer.GetDatabase` 方法返回对 Redis 缓存数据库的引用。 从 `GetDatabase` 方法返回的对象是一个轻型直通对象，不需要存储。
@@ -252,8 +250,6 @@ Azure Redis 缓存可以缓存 .NET 对象以及基元数据类型，但在缓�
 [How to: Set the Cacheability of an ASP.NET Page Declaratively]: http://msdn.microsoft.com/zh-cn/library/zd1ysf1y.aspx
 [How to: Set a Page's Cacheability Programmatically]: http://msdn.microsoft.com/zh-cn/library/z852zf6b.aspx
 [Configure a cache in Azure Redis Cache]: http://msdn.microsoft.com/zh-cn/library/azure/dn793612.aspx
-
-[StackExchange.Redis configuration model]: http://github.com/StackExchange/StackExchange.Redis/blob/master/Docs/Configuration.md
 
 [Work with .NET objects in the cache]: /documentation/articles/cache-dotnet-how-to-use-azure-redis-cache/#working-with-caches
 

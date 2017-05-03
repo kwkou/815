@@ -155,7 +155,7 @@
 > [AZURE.IMPORTANT]
 > 启用日志记录会对应用程序的性能和资源利用率造成影响。 对于生产方案，建议使用错误日志。 仅当需要调查问题时，才启用更详细的日志记录。
 
- ### <a name="web-server-diagnostics"></a>Web 服务器诊断
+### <a name="web-server-diagnostics"></a>Web 服务器诊断
 应用服务可以收集三种不同类型的服务器日志：
 
 - **Web 服务器日志记录** 
