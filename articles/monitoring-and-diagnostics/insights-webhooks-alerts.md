@@ -1,47 +1,44 @@
 <properties
-	pageTitle="针对 Azure 指标警报配置 webhook | Azure"
-	description="将 Azure 警报重新路由到其他非 Azure 系统。"
-	authors="kamathashwin"
-	manager=""
-	editor=""
-	services="monitoring-and-diagnostics"
-	documentationCenter="monitoring-and-diagnostics"/>
-
+    pageTitle="针对 Azure 指标警报配置 webhook | Azure"
+    description="将 Azure 警报重新路由到其他非 Azure 系统。"
+    author="kamathashwin"
+    manager="carmonm"
+    editor=""
+    services="monitoring-and-diagnostics"
+    documentationcenter="monitoring-and-diagnostics"
+    translationtype="Human Translation" />
 <tags
-	ms.service="monitoring-and-diagnostics"
-	ms.workload="na"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="01/07/2017"
-	ms.author="ashwink"
-	wacn.date="03/03/2017"/>  
+    ms.assetid="8b3ae540-1d19-4f3d-a635-376042f8a5bb"
+    ms.service="monitoring-and-diagnostics"
+    ms.workload="na"
+    ms.tgt_pltfrm="na"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.date="04/03/2017"
+    ms.author="ashwink"
+    wacn.date="05/02/2017"
+    ms.sourcegitcommit="78da854d58905bc82228bcbff1de0fcfbc12d5ac"
+    ms.openlocfilehash="02267b3b059f3769882b774e2f3e741a74a1c81b"
+    ms.lasthandoff="04/22/2017" />
 
-
-# 针对 Azure 度量值警报配置 webhook
+# <a name="configure-a-webhook-on-an-azure-metric-alert"></a>针对 Azure 度量值警报配置 webhook
 
 通过 webhook 可以将 Azure 警报通知路由到其他系统，以便进行后续处理或自定义操作。可以针对警报使用 webhook，以将警报路由到可以发送短信、记录 Bug、通过聊天/消息通知团队，或执行任意数量的其他操作的服务。本文介绍如何针对 Azure 度量值警报设置 webhook，以及 HTTP POST 对 Webhook 的有效负载情况。有关 Azure 活动日志警报（事件警报）的设置和架构的信息，[请参阅本页](/documentation/articles/insights-auditlog-to-webhook-email/)。
 
 Azure 警报会将警报内容以 JSON 格式（架构定义如下）HTTP POST 到创建警报时提供的 webhook URI。此 URI 必须是有效的 HTTP 或 HTTPS 终结点。激活警报时，Azure 会针对每个请求发布一个条目。
 
-## 通过门户预览配置 webhook
+## <a name="configuring-webhooks-via-the-portal"></a>通过门户预览配置 webhook
 
 可在[门户预览](https://portal.azure.cn/)的“创建/更新警报”屏幕上添加或更新 webhook URI。
 
 ![添加警报规则](./media/insights-webhooks-alerts/Alertwebhook.png)  
 
+还可以使用 [Azure PowerShell Cmdlet](/documentation/articles/insights-powershell-samples/#create-alert-rules)、[跨平台 CLI](/documentation/articles/insights-cli-samples/#work-with-alerts) 或 [Azure Monitor REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn933805.aspx) 将警报配置为发布到 webhook URI。
 
-还可以使用 [Azure PowerShell Cmdlet](/documentation/articles/insights-powershell-samples/#create-alert-rules)、[跨平台 CLI](/documentation/articles/insights-cli-samples/#work-with-alerts) 或 [Insights REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn933805.aspx) 将警报配置为发布到 webhook URI。
+## <a name="authenticating-the-webhook"></a>对 webhook 进行身份验证
+Webhook 可以使用基于令牌的授权进行身份验证。 保存的 Webhook URI 具有令牌 ID，例如 `https://mysamplealert/webcallback?tokenid=sometokenid&someparameter=somevalue`
 
-## 对 webhook 进行身份验证
-
-Webhook 可以使用以下任一方法进行身份验证：
-
-1. **基于令牌的授权** - 保存的 webhook URI 具有令牌 ID，例如 `https://mysamplealert/webcallback?tokenid=sometokenid&someparameter=somevalue`
-2. **基于密码的授权** - 保存的 webhook URI 具有用户名和密码，例如 `https://userid:password@mysamplealert/webcallback?someparamater=somevalue&foo=bar`
-
-## 负载架构
-
+## <a name="payload-schema"></a>负载架构
 POST 操作对于所有基于度量值的警报包含以下 JSON 有效负载和架构。
 
 		{
@@ -102,15 +99,13 @@ POST 操作对于所有基于度量值的警报包含以下 JSON 有效负载和
 |portalLink |Y | |指向门户资源摘要页的直接链接。|
 |properties |N |可选 |一组包含事件详细信息的 `<Key, Value>` 对（即 `Dictionary<String, String>`）。properties 字段是可选的。在自定义 UI 或基于逻辑应用的工作流中，用户可以输入键/值，该键/值可通过有效负载传递。将自定义属性传递回 webhook 的替代方法是通过 webhook URI 本身（作为查询参数）|
 
+> [AZURE.NOTE]
+> 仅可以使用 [Azure Monitor REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn933805.aspx) 设置属性字段。
+>
+>
 
->[AZURE.NOTE] 只能使用 [Azure Monitor REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn933805.aspx) 设置属性字段。
-
-## 后续步骤
-
-- [对 Azure 警报执行 Azure 自动化脚本 (Runbook)](http://go.microsoft.com/fwlink/?LinkId=627081)
-- [使用逻辑应用通过 Twilio 从 Azure 警报发送短信](https://github.com/Azure/azure-quickstart-templates/tree/master/201-alert-to-text-message-with-logic-app)
-- [使用逻辑应用从 Azure 警报发送 Slack 消息](https://github.com/Azure/azure-quickstart-templates/tree/master/201-alert-to-slack-with-logic-app)
-- [使用逻辑应用从 Azure 警报将消息发送到 Azure 队列](https://github.com/Azure/azure-quickstart-templates/tree/master/201-alert-to-queue-with-logic-app)
+## <a name="next-steps"></a>后续步骤
+- [Execute Azure Automation scripts (Runbooks) on Azure alerts](http://go.microsoft.com/fwlink/?LinkId=627081)（对 Azure 警报执行 Azure 自动化脚本 (Runbook)）
 
 <!---HONumber=Mooncake_0227_2017-->
-<!--Update_Description:update wording -->
+<!--Update_Description:update wording and delete unavailable references -->

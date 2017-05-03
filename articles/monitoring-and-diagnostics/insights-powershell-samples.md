@@ -16,7 +16,7 @@
 	ms.topic="article"
 	ms.date="03/06/2017"
 	ms.author="ashwink"
-	wacn.date="04/27/2017"/>  
+	wacn.date="05/02/2017"/>  
 
 
 # Azure Monitor PowerShell 快速启动示例
