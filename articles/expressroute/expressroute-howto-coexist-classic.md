@@ -164,21 +164,21 @@
 
 7. 创建一个本地站点 VPN 网关实体。 此命令不会配置本地 VPN 网关， 而是允许你提供本地网关设置（如公共 IP 和本地地址空间），以便 Azure VPN 网关可以连接到它。
    
-   > [AZURE.IMPORTANT]
-   > netcfg 中未定义站点到站点 VPN 的本地站点。 而是，必须使用此 cmdlet 指定本地站点参数。 不能使用门户或 netcfg 文件定义它。
-   > 
-   > 
+    > [AZURE.IMPORTANT]
+    > netcfg 中未定义站点到站点 VPN 的本地站点。 而是，必须使用此 cmdlet 指定本地站点参数。 不能使用门户或 netcfg 文件定义它。
+    > 
+    > 
    
-   使用下面的示例，并将值替换为你自己的值。
+    使用下面的示例，并将值替换为你自己的值。
    
         New-AzureLocalNetworkGateway -GatewayName MyLocalNetwork -IpAddress <MyLocalGatewayIp> -AddressSpace <MyLocalNetworkAddress>
    
-   > [AZURE.NOTE]
-   > 如果你的本地网络具有多个路由，你可以通过数组的形式将其全部传入。  $MyLocalNetworkAddress = @("10.1.2.0/24","10.1.3.0/24","10.2.1.0/24")  
-   > 
-   > 
+    > [AZURE.NOTE]
+    > 如果你的本地网络具有多个路由，你可以通过数组的形式将其全部传入。  $MyLocalNetworkAddress = @("10.1.2.0/24","10.1.3.0/24","10.2.1.0/24")  
+    > 
+    > 
 
-   若要检索虚拟网络网关设置（包括网关 ID 和公共 IP），请使用 `Get-AzureVirtualNetworkGateway` cmdlet。请参阅以下示例。
+    若要检索虚拟网络网关设置（包括网关 ID 和公共 IP），请使用 `Get-AzureVirtualNetworkGateway` cmdlet。请参阅以下示例。
 
 		Get-AzureLocalNetworkGateway
 
