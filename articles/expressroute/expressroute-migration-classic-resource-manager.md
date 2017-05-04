@@ -63,7 +63,7 @@
     Get-AzureVNetConfig -ExportToFile C:\virtualnetworkconfig.xml
 
       
-必须确保从要迁移的虚拟网络中删除对 <ConnectionsToLocalNetwork> 的所有引用。 以下代码片段演示了示例网络配置：
+必须确保从要迁移的虚拟网络中删除对  &lt;ConnectionsToLocalNetwork&gt;  的所有引用。 以下代码片段演示了示例网络配置：
 
         <VirtualNetworkSite name="MyVNet" Location="East US">
             <AddressSpace>
@@ -84,7 +84,7 @@
         </VirtualNetworkSite>
 
  
-如果 <ConnectionsToLocalNetwork> 不为空，请删除其下的引用，然后重新提交网络配置。 可以运行以下 PowerShell cmdlet 来实现此目的：
+如果 &lt;ConnectionsToLocalNetwork&gt; 不为空，请删除其下的引用，然后重新提交网络配置。 可以运行以下 PowerShell cmdlet 来实现此目的：
 
     Set-AzureVNetConfig -ConfigurationPath c:\virtualnetworkconfig.xml
 
