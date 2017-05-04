@@ -5,7 +5,17 @@
     wacn.lang="cn"
     />
 
-# 节点管理-更新缓存策略
+# 节点管理-设置缓存规则
+
+通过该API可以针对目录，文件名和全路径配置缓存规则。
+
+* 根据目录进行配置：目录必须以 "/" 开头，比如： "/pic", "/doc", "/htdoc/data" 等等。后台会匹配指定目录下的所有文件，包括子目录*
+* 根据文件后缀配置：常用文件后缀名，比如："jpg", "png", "gif", "txt", "m4v", "mp3" 等等。后台会匹配 所有文件夹下 指定的文件后缀。
+* 根据全路径配置：用来指定 一个文件，必须以 "/" 开头。比如："/sites/doc/example.doc"。注意：如果用户填的全路径是"/"，则它匹配首页。
+
+>注意 用户填写配置规则时，字符串中不要包含 “{”, “}”, “(”, “)”, “[”, “]”, “.”, “?", “*”, “\”, “^”, “$” 等特殊字符。
+
+>注意 **时间填为0表示禁止缓存，不缓存规则优先执行。**
 
 ## 请求
 <table width="100%" border="1" cellspacing="0" cellpadding="0">
@@ -36,25 +46,13 @@
 </table>
 
 ### 请求 Headers
-<table width="100%" border="1" cellspacing="0" cellpadding="0">
-  <th align="left"><strong>请求包头</strong>
-    </td>
-  <th align="left"><strong>描述</strong>
-    </td>
 
-  <tr>
-    <td>x-azurecdn-request-date</td>
-    <td>必填。符合yyyy-MM-dd hh:mm:ss格式的UTC当前请求时间</td>
-  </tr>
-  <tr>
-    <td>Authorization</td>
-    <td>必填。授权头，具体算法见授权请求头计算。</td>
-  </tr>
-  <tr>
-    <td>content-type</td>
-    <td>必填。application/json</td>
-  </tr>
-</table>
+| 请求包头 | 描述 |
+|:-----------|:-----------|
+| x-azurecdn-request-date | 必填。符合yyyy-MM-dd hh:mm:ss格式的UTC当前请求时间 |
+| Authorization | 必填。授权头请参考[CDN API签名机制](https://www.azure.cn/documentation/articles/cdn-api-signature/) |
+| content-type | 必填。application/json |
+
 
 ### 请求 Body
 ```

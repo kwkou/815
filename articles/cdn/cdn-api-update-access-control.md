@@ -5,7 +5,12 @@
     wacn.lang="cn"
     />
 
-# 节点管理-更新访问控制规则
+# 节点管理-配置访问控制规则
+
+通过访问控制管理，用户可以设置配置Referer黑白名单，从而实现防盗链。
+
+- 如果设置了黑名单，那么当Referer在黑名单里面的时候，不允许访问，其他情况可以访问。
+- 如果设置了白名单，那么只有当Referer是白名单中的域名时，才可以访问 。
 
 ## 请求
 <table width="100%" border="1" cellspacing="0" cellpadding="0">
@@ -36,25 +41,12 @@
   </table>
 
 ### 请求 Headers
-<table width="100%" border="1" cellspacing="0" cellpadding="0">
-  <th align="left"><strong>请求包头</strong>
-    </td>
-  <th align="left"><strong>描述</strong>
-    </td>
 
-  <tr>
-    <td>x-azurecdn-request-date</td>
-    <td>必填。符合yyyy-MM-dd hh:mm:ss格式的UTC当前请求时间</td>
-  </tr>
-  <tr>
-    <td>Authorization</td>
-    <td>必填。授权头，具体算法见授权请求头计算。</td>
-  </tr>
-  <tr>
-    <td>content-type</td>
-    <td>必填。application/json</td>
-  </tr>
-</table>
+| 请求包头 | 描述 |
+|:-----------|:-----------|
+| x-azurecdn-request-date | 必填。符合yyyy-MM-dd hh:mm:ss格式的UTC当前请求时间 |
+| Authorization | 必填。授权头请参考[CDN API签名机制](https://www.azure.cn/documentation/articles/cdn-api-signature/) |
+| content-type | 必填。application/json |
 
 ### 请求 Body
 ```

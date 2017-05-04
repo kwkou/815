@@ -8,6 +8,15 @@
 
 # 节点管理-创建节点
 
+通过该API可以创建CDN节点。
+
+>注意 为终结点创建的配置将不能立即可用：
+
+>首先需要审核所提供的自定义域名和ICP编号是否匹配、有效。这个过程需要最多一个工作日的时间来完成。
+如果ICP审核没有通过，您需要删除之前创建的这个CDN终结点，然后使用正确的自定义域名和ICP编号重新创建。
+如果ICP审核通过，CDN服务最多需要 60 分钟时间进行注册以便通过 CDN 网络传播。与此同时，您还需要按照界面上的提示信息配置CNAME映射信息，这样才可以最终通过自定义域名访问CDN缓存内容。
+通过该API可以创建CDN节点。
+
 ## 请求
 <table width="100%" border="1" cellspacing="0" cellpadding="0">
   <th align="left"><strong>方法</strong>
@@ -33,25 +42,13 @@
 </table>
 
 ### 请求 Headers
-<table width="100%" border="1" cellspacing="0" cellpadding="0">
-  <th align="left"><strong>请求包头</strong>
-    </td>
-  <th align="left"><strong>描述</strong>
-    </td>
 
-  <tr>
-    <td>x-azurecdn-request-date</td>
-    <td>必填。符合yyyy-MM-dd hh:mm:ss格式的UTC当前请求时间</td>
-  </tr>
-  <tr>
-    <td>Authorization</td>
-    <td>必填。授权头，具体算法见授权请求头计算。</td>
-  </tr>
-  <tr>
-    <td>content-type</td>
-    <td>必填。application/json</td>
-  </tr>
-</table>
+| 请求包头 | 描述 |
+|:-----------|:-----------|
+| x-azurecdn-request-date | 必填。符合yyyy-MM-dd hh:mm:ss格式的UTC当前请求时间 |
+| Authorization | 必填。授权头请参考[CDN API签名机制](https://www.azure.cn/documentation/articles/cdn-api-signature/) |
+| content-type | 必填。application/json |
+
 
 ### 请求 Body
 创建CDN节点，需写明一下参数，JSON示例文件如下：

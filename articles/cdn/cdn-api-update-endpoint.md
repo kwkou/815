@@ -7,6 +7,8 @@
 
 # 节点管理-更新节点信息
 
+通过该API可以修改源站域名或者Host Header。Host Header表示 CDN 回源时，HTTP 请求头中的 HOST 字段的值。这个值一般是域名形式的字符串，被源站用来识别是否与源站服务器上配置的域名相同。
+
 ## 请求
 <table width="100%" border="1" cellspacing="0" cellpadding="0">
   <th align="left"><strong>方法</strong>
@@ -36,25 +38,13 @@
 </table>
 
 ### 请求 Headers
-<table width="100%" border="1" cellspacing="0" cellpadding="0">
-  <th align="left"><strong>请求包头</strong>
-    </td>
-  <th align="left"><strong>描述</strong>
-    </td>
 
-  <tr>
-    <td>x-azurecdn-request-date</td>
-    <td>必填。符合yyyy-MM-dd hh:mm:ss格式的UTC当前请求时间</td>
-  </tr>
-  <tr>
-    <td>Authorization</td>
-    <td>必填。授权头，具体算法见授权请求头计算。</td>
-  </tr>
-  <tr>
-    <td>content-type</td>
-    <td>必填。application/json</td>
-  </tr>
-</table>
+| 请求包头 | 描述 |
+|:-----------|:-----------|
+| x-azurecdn-request-date | 必填。符合yyyy-MM-dd hh:mm:ss格式的UTC当前请求时间 |
+| Authorization | 必填。授权头请参考[CDN API签名机制](https://www.azure.cn/documentation/articles/cdn-api-signature/) |
+| content-type | 必填。application/json |
+
 
 ### 请求 Body
 更新源站

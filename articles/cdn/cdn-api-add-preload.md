@@ -5,7 +5,11 @@
     wacn.lang="cn"
     />
 
-# 内容预取-添加内容预取
+# 预加载-添加内容预取
+
+预加载是指预先将指定URL的内容从源站缓存到CDN节点，这样可以消除用户第一次访问该资源时的等待时间。预加载一般被用在进行大文件分发时的场景，可以有效的提升用户访问体验。
+
+可以对单个文件或者多个文件配置内容预取（预加载）。
 
 ## 请求
 <table width="100%" border="1" cellspacing="0" cellpadding="0">
@@ -36,27 +40,16 @@
 </table>
 
 ### 请求 Headers
-<table width="100%" border="1" cellspacing="0" cellpadding="0">
-  <th align="left"><strong>请求包头</strong>
-    </td>
-  <th align="left"><strong>描述</strong>
-    </td>
 
-  <tr>
-    <td>x-azurecdn-request-date</td>
-    <td>必填。符合yyyy-MM-dd hh:mm:ss格式的UTC当前请求时间</td>
-  </tr>
-  <tr>
-    <td>Authorization</td>
-    <td>必填。授权头，具体算法见授权请求头计算。</td>
-  </tr>
-  <tr>
-    <td>content-type</td>
-    <td>必填。application/json</td>
-  </tr>
-</table>
+| 请求包头 | 描述 |
+|:-----------|:-----------|
+| x-azurecdn-request-date | 必填。符合yyyy-MM-dd hh:mm:ss格式的UTC当前请求时间 |
+| Authorization | 必填。授权头请参考[CDN API签名机制](https://www.azure.cn/documentation/articles/cdn-api-signature/) |
+| content-type | 必填。application/json |
+
 
 ### 请求 Body
+
 添加内容预取，需写明一下参数，JSON示例文件如下：
 ```
 {
