@@ -9,11 +9,11 @@
 
 Azure CDN服务会对每个访问请求进行身份验证，需要使用HTTPS协议提交请求，并在请求中包含签名信息。
 
-Azure CDN通过对签名参数使用Key Value进行HMAC-SHA 256散列算法计算生成token，从而进行身份验证。签名信息以Authorization请求头发送，格式为"AzureCDN {Key ID}:{token}"。
+Azure CDN通过对签名参数使用Key Value进行HMAC-SHA 256散列算法计算生成签名，从而进行身份验证。签名信息以Authorization请求头发送，格式为"AzureCDN {Key ID}:{token}"。
 
 Key ID和Key Value可以到[Azure CDN新版管理门户](https://www.azure.cn/documentation/articles/cdn-management-v2-portal-how-to-use/)的密钥管理处申请和管理。**签名参数**部分包括：请求绝对路径，用 ", "连接起来的排序过的查询参数，请求的UTC时间戳，大写的请求方法。以上几部分用回车换行连接。
 
-## Token生成示例
+## Authorization请求头生成示例
 
 ### Python
 ```
@@ -100,8 +100,7 @@ func calculateAuthorizationHeader(requestURL, requestTimeStamp, keyID, keyValue,
 
 ### C Sharp
 ```
-{
-	public static string CalculateAuthorizationHeader(string requestUrl, string requestDate, string key, string httpMethod)
+public static string CalculateAuthorizationHeader(string requestUrl, string requestDate, string key, string httpMethod)
 {
           Uri requestUri = new Uri(requestUrl);
 
@@ -137,7 +136,6 @@ func calculateAuthorizationHeader(requestURL, requestTimeStamp, keyID, keyValue,
 
               return sbinary;
           }
-	}
 }
 ```
 
