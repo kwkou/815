@@ -92,7 +92,7 @@
          <li>Web: 网页加速</li>
          <li>Download：下载加速</li>
          <li>VOD：点播加速</li>
-         <li>LieStreaming：直播加速</li>
+         <li>LiveStreaming：直播加速</li>
          <li>ImageProcessing：图片处理加速</li>
       </ul>
     </td>
