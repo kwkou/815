@@ -257,7 +257,7 @@ Azure 有两种用于创建和处理资源的不同部署模型：[Azure Resourc
         --ssh 23
         --vm-name mariadb2
         --connect mariadbha mariadb-galera-image azureuser
-  对于 MariaDB3：
+    对于 MariaDB3：
 
         azure vm create
         --virtual-network-name mariadbvnet

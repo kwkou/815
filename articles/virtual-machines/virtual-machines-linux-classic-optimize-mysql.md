@@ -34,7 +34,7 @@ Azure 有两种用于创建和处理资源的不同部署模型：[Azure Resourc
 
 可能还需要考虑区块大小。通常，区块越大，开销越低，对于大型写入操作尤其如此。不过，区块太大时，可能会有额外的开销，导致用户无法利用 RAID。当前的默认大小为 512 KB，已被证明是大多数常见生产环境的最佳大小。有关详细信息，请参阅[附录 C](#AppendixC)。
 
-对于不同的虚拟机类型，可添加的磁盘数量存在多种限制。[Virtual machine and cloud service sizes for Azure]((/documentation/articles/cloud-services-sizes-specs/)（Azure 的虚拟机和云服务大小）中详细介绍了这些限制。可以选择设置磁盘较少的 RAID，不过，在本文的 RAID 示例中，需要附加 4 个数据磁盘。
+对于不同的虚拟机类型，可添加的磁盘数量存在多种限制。[Virtual machine and cloud service sizes for Azure](/documentation/articles/cloud-services-sizes-specs/)（Azure 的虚拟机和云服务大小）中详细介绍了这些限制。可以选择设置磁盘较少的 RAID，不过，在本文的 RAID 示例中，需要附加 4 个数据磁盘。
 
 本文假定你已经创建 Linux 虚拟机，并且安装和配置了 MYSQL。有关入门的详细信息，请参阅“如何在 Azure 上安装 MySQL”。
 
