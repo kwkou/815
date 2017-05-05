@@ -19,7 +19,7 @@
     ms.author="tamram"
     ms.custom="H1Hack27Feb2017"
     ms.sourcegitcommit="a114d832e9c5320e9a109c9020fcaa2f2fdd43a9"
-    ms.openlocfilehash="61f82d6cefa62f0bec62fc5362e9338c198de430"
+    ms.openlocfilehash="61f82d6cefa62f0bec62fc5362e9338c198de430" 
     ms.lasthandoff="04/14/2017" />
 
 # <a name="get-started-with-the-batch-sdk-for-python"></a>适用于 Python 的 Batch SDK 入门
@@ -100,15 +100,25 @@ Batch Python 教程代码示例由两个 Python 脚本和若干数据文件组�
 ![Batch 示例工作流][8]<br/>
 
 [**步骤 1.**](#step-1-create-storage-containers) 在 Azure Blob 存储中创建**容器**。<br/>
-[**步骤 2.**](#step-2-upload-task-script-and-data-files) 将任务脚本和输入文件上载到容器。<br/>
-[**步骤 3.**](#step-3-create-batch-pool) 创建批处理**池**。<br/>
-  &nbsp;&nbsp;&nbsp;&nbsp;**3a.** 池 **StartTask** 在节点加入池时将任务脚本 (python_tutorial_task.py) 下载到节点。<br/>
-[**步骤 4.**](#step-4-create-batch-job) 创建批处理**作业**。<br/>
-[**步骤 5.**](#step-5-add-tasks-to-job) 将 **任务** 添加到作业。<br/>
+ 
+[**步骤 2.**](#step-2-upload-task-script-and-data-files) 将任务脚本和输入文件上载到容器。<br/> 
+
+[**步骤 3.**](#step-3-create-batch-pool) 创建 Batch **池**。<br/>
+
+  &nbsp;&nbsp;&nbsp;&nbsp;**3a.** 池 **StartTask** 在节点加入池时将任务脚本 (python\_tutorial\_task.py) 下载到节点。<br/> 
+
+[**步骤 4.**](#step-4-create-batch-job) 创建 Batch **作业**。<br/> 
+
+[**步骤 5.**](#step-5-add-tasks-to-job) 将**任务**添加到作业。<br/>
+
   &nbsp;&nbsp;&nbsp;&nbsp;**5a.** 任务计划在节点上执行。<br/>
-    &nbsp;&nbsp;&nbsp;&nbsp;**5b.** 每项任务从 Azure 存储下载其输入数据，然后开始执行。<br/>
+
+  &nbsp;&nbsp;&nbsp;&nbsp;**5b.** 每项任务从 Azure 存储空间下载其输入数据，然后开始执行。<br/> 
+
 [**步骤 6.**](#step-6-monitor-tasks) 监视任务。<br/>
-  &nbsp;&nbsp;&nbsp;&nbsp;**6a.** 当任务完成时，会将其输出数据上载到 Azure 存储。<br/>
+
+  &nbsp;&nbsp;&nbsp;&nbsp;**6a.** 当任务完成时，会将其输出数据上载到 Azure 存储空间。<br/> 
+
 [**步骤 7.**](#step-7-download-task-output) 从存储空间下载任务输出。
 
 如前所述，并非每个 Batch 解决方案都会执行这些具体步骤，此类方案可能包含更多步骤，但本示例将演示 Batch 方案中的常见过程。
@@ -453,12 +463,12 @@ Batch **任务** 是在计算节点上执行的各个工作单位。 任务有�
 4. **storagecontainer**：输出文件应上传到的存储容器的名称。
 5. **sastoken**：共享访问签名 (SAS)，提供对 Azure 存储中**输出**容器的写访问权限。 *Python_tutorial_task.py* 脚本在创建其 BlockBlobService 引用时使用此共享访问签名。 此参数提供对容器的写访问权限，且不需要存储帐户的访问密钥。
 
-    # NOTE: Taken from python_tutorial_task.py
+		# NOTE: Taken from python_tutorial_task.py
 
-    # Create the blob client using the container's SAS token.
-    # This allows us to create a client that provides write
-    # access only to the container.
-    blob_client = azureblob.BlockBlobService(account_name=args.storageaccount,
+		# Create the blob client using the container's SAS token.
+    	# This allows us to create a client that provides write
+    	# access only to the container.
+    	blob_client = azureblob.BlockBlobService(account_name=args.storageaccount,
                                              sas_token=args.sastoken)
 
 ## <a name="step-6-monitor-tasks"></a>步骤 6：监视任务

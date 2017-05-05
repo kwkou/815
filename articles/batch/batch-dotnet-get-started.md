@@ -65,16 +65,26 @@
 
 ![Batch 示例工作流][8]<br/>
 
-[**步骤 1.**](#step-1-create-storage-containers) 在 Azure Blob 存储中创建**容器**。<br/>
+[**步骤 1.**](#step-1-create-storage-containers) 在 Azure Blob 存储中创建**容器**。<br/> 
+
 [**步骤 2.**](#step-2-upload-task-application-and-data-files) 将任务应用程序文件和输入文件上载到容器。<br/>
-[**步骤 3.**](#step-3-create-batch-pool) 创建批处理**池**。<br/>
-  &nbsp;&nbsp;&nbsp;&nbsp;**3a.** 池 **StartTask** 在节点加入池时将任务二进制文件 (TaskApplication) 下载到节点。<br/>
-[**步骤 4.**](#step-4-create-batch-job) 创建批处理**作业**。<br/>
-[**步骤 5.**](#step-5-add-tasks-to-job) 将 **任务** 添加到作业。<br/>
+ 
+[**步骤 3.**](#step-3-create-batch-pool) 创建 Batch **池**。<br/>
+
+  &nbsp;&nbsp;&nbsp;&nbsp;**3a.** 池 **StartTask** 在节点加入池时将任务二进制文件 (TaskApplication) 下载到节点。<br/> 
+
+[**步骤 4.**](#step-4-create-batch-job) 创建 Batch **作业**。<br/> 
+
+[**步骤 5.**](#step-5-add-tasks-to-job) 将**任务**添加到作业。<br/>
+
   &nbsp;&nbsp;&nbsp;&nbsp;**5a.** 任务计划在节点上执行。<br/>
-    &nbsp;&nbsp;&nbsp;&nbsp;**5b.** 每项任务从 Azure 存储下载其输入数据，然后开始执行。<br/>
+
+  &nbsp;&nbsp;&nbsp;&nbsp;**5b.** 每项任务从 Azure 存储空间下载其输入数据，然后开始执行。<br/> 
+
 [**步骤 6.**](#step-6-monitor-tasks) 监视任务。<br/>
-  &nbsp;&nbsp;&nbsp;&nbsp;**6a.** 当任务完成时，会将其输出数据上载到 Azure 存储。<br/>
+
+  &nbsp;&nbsp;&nbsp;&nbsp;**6a.** 当任务完成时，会将其输出数据上载到 Azure 存储空间。<br/> 
+
 [**步骤 7.**](#step-7-download-task-output) 从存储空间下载任务输出。
 
 如前所述，并非每个 Batch 解决方案都执行这些具体步骤，此类方案可能包含更多步骤，但 *DotNetTutorial* 示例应用程序将演示 Batch 方案中的常见过程。
@@ -156,7 +166,7 @@ Batch 包含的内置支持支持与 Azure 存储空间交互。 存储帐户中
     await CreateContainerIfNotExistAsync(blobClient, inputContainerName);
     await CreateContainerIfNotExistAsync(blobClient, outputContainerName);
 
-<div/>
+<br/>
 
     private static async Task CreateContainerIfNotExistAsync(
         CloudBlobClient blobClient,

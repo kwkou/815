@@ -572,8 +572,8 @@ Batch 评估上述代码行后，会以值的向量形式返回样本范围。 �
   - 如果这两个值均为 0（表示过去 60 分钟没有正在运行或处于活动状态的任务），则池大小将设置为 0。
   - 如果其中一个值大于零，则不进行任何更改。
 
-    string now = DateTime.UtcNow.ToString("r");
-    string formula = string.Format(@"
+    	string now = DateTime.UtcNow.ToString("r");
+    	string formula = string.Format(@"
         $TargetDedicated = {1};
         lifespan         = time() - time(""{0}"");
         span             = TimeInterval_Minute * 60;
