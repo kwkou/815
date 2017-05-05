@@ -126,6 +126,7 @@ Synchronization Service Manager 中的“操作”选项卡是你应当从中开
 ![Sync Service Manager](./media/active-directory-aadconnectsync-troubleshoot-object-not-syncing/mvobject.png)  
 
 如果未能同步对象，可查看 metaverse 中的以下属性：
+
 - 属性“cloudFiltered”是否存在并设置为“true”？ 如果是，则已根据[基于属性的筛选](/documentation/articles/active-directory-aadconnectsync-configure-filtering/#attribute-based-filtering/)中的步骤对其进行筛选。
 - 属性 **sourceAnchor** 是否存在？ 如果不存在，你是否拥有帐户资源林拓扑？ 如果对象被标识为链接的邮箱（属性“msExchRecipientTypeDetails”的值为 2），则由具有已启用的 Active Directory 帐户的林提供 sourceAnchor。 请确保已正确导入和同步主帐户。 主帐户必须列在对象的 [连接器](#mv-connectors) 中。
 

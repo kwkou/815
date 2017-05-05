@@ -33,6 +33,7 @@ Azure AD Connect 要求使用 SQL Server 数据库来存储标识数据。 可�
 
 ## <a name="short-term-recovery-steps"></a>短期恢复步骤
 本部分提供的步骤用于回收 DB 空间，该空间是 Azure AD Connect Synchronization Service 恢复运行所必需的。 步骤包括：
+
 1. [确定 Synchronization Service 状态](#determine-the-synchronization-service-status)
 2. [收缩数据库](#shrink-the-database)
 3. [删除运行历史记录数据](#delete-run-history-data)

@@ -42,6 +42,7 @@
 ## <a name="step-1-provide-ad-fs-farm-information"></a>步骤 1：提供 AD FS 场信息
 
 Azure AD Connect 尝试通过以下方式自动获取有关 AD FS 场的信息：
+
 1. 从 AD FS（Windows Server 2016 或更高版本）查询场信息。
 2. 引用之前运行的信息（通过 Azure AD Connect 存储在本地）。
 
