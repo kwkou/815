@@ -45,6 +45,7 @@
 ## <a name="next-steps"></a>后续步骤
 
 有关 DocumentDB：MongoDB 的 API 的信息已集成到整个 DocumentDB 文档中，但以下是几个帮助你入门的指南：
+
 - 若要了解如何获取帐户连接字符串信息，请参阅[连接到 MongoDB 帐户](/documentation/articles/documentdb-connect-mongodb-account/)教程。
 - 若要了解如何在 MongoChef 中创建 DocumentDB 数据库和 MongoDB 应用之间的连接，请参阅[将 MongoChef 与 DocumentDB 配合使用](/documentation/articles/documentdb-mongodb-mongochef/)教程。
 - 按照[将数据迁移到具有 MongoDB 协议支持的 DocumentDB](/documentation/articles/documentdb-mongodb-migrate/) 教程将数据导入到 MongoDB 的 API 数据库。
