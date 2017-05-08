@@ -104,7 +104,7 @@
 
 2. 保存配置后，复制“资源 ID”和“授权密钥”。
 
-    ![授权密钥](./media/expressroute-howto-linkvnet-portal-resource-manager/authkey.png)
+    ![授权密钥](./media/expressroute-howto-linkvnet-portal-resource-manager/AuthKey.png)
 
 **删除连接授权**
 

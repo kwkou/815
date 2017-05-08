@@ -32,7 +32,7 @@ Azure 门户提供了两种创建和部署云服务的方法：“快速创建�
 
 本文介绍如何使用“快速创建”方法创建新的云服务，然后使用“上传”在 Azure 中上传和部署云服务包。使用此方法时，Azure 门户会在进行操作时提供方便的链接供你完成所有要求。如果创建云服务时还准备部署该云服务，则可以使用“自定义创建”同时执行这两项操作。
 
-> [AZURE.NOTE] 如果计划从 Visual Studio Team Services (VSTS) 发布云服务，请使用“快速创建”，然后从“Azure 快速启动”或仪表板设置 VSTS 发布。有关详细信息，请参阅[使用 Visual Studio Team Services 向 Azure 持续交付][TFSTutorialForCloudService]，或查看“快速启动”页的帮助。
+> [AZURE.NOTE] 如果计划从 Visual Studio Team Services (VSTS) 发布云服务，请使用“快速创建”，然后从“Azure 快速启动”或仪表板设置 VSTS 发布。
 
 ## 概念
 要将应用程序部署为 Azure 中的云服务，需要以下三个组件：
@@ -62,7 +62,7 @@ Azure 门户提供了两种创建和部署云服务的方法：“快速创建�
 
 - 如果尚未安装 Azure SDK，请单击“安装 Azure SDK”以打开[ Azure 下载页](/downloads/)，然后下载希望用于开发代码的相应语言的 SDK。（也可以稍后执行此操作。）
 
-- 如果任何角色实例需要证书，请创建这些证书。云服务需要带有私钥的 .pfx 文件。可以在创建和部署云服务时[将这些证书上传到 Azure]()。
+- 如果任何角色实例需要证书，请创建这些证书。云服务需要带有私钥的 .pfx 文件。
 
 - 如果计划将云服务部署到关联组，请创建地缘组。可以使用地缘组将云服务和其他 Azure 服务部署到某个区域中的同一位置。你可以在 Azure 经典门户的“网络”区域中的“地缘组”页上创建地缘组。
 
@@ -112,7 +112,6 @@ Azure 门户提供了两种创建和部署云服务的方法：“快速创建�
     ![云服务\_速览](./media/cloud-services-how-to-create-deploy-portal/running.png)
 
 
-[TFSTutorialForCloudService]: http://go.microsoft.com/fwlink/?LinkID=251796
 
 ## 后续步骤
 

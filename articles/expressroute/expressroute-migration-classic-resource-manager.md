@@ -170,4 +170,3 @@
 * [平台支持的从经典部署模型到 Azure Resource Manager 的 IaaS 资源迁移](/documentation/articles/virtual-machines-windows-migration-classic-resource-manager/)
 * [有关平台支持的从经典部署模型到 Azure Resource Manager 部署模型的迁移的技术深入探讨](/documentation/articles/virtual-machines-windows-migration-classic-resource-manager-deep-dive/)
 * [常见问题解答：平台支持的从经典部署模型到 Azure Resource Manager 部署模型的 IaaS 资源迁移](/documentation/articles/virtual-machines-windows-migration-classic-resource-manager/)
-* [查看最常见的迁移错误和缓解措施](/documentation/articles/migration-classic-resource-manager-errors/)
