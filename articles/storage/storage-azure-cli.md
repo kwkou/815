@@ -110,7 +110,7 @@ Azure CLI 提供了一组开源且跨平台的命令，这些命令可以用于 
 
         export AZURE_STORAGE_CONNECTION_STRING=<connection_string>
 
-## 创建并管理 blob
+## <a name="create-and-manage-blobs"></a> 创建并管理 blob
 Azure Blob 存储是用于存储大量非结构化数据（例如文本或二进制数据）的服务，这些数据可通过 HTTP 或 HTTPS 从世界各地进行访问。本部分假设你已熟悉 Azure Blob 存储的概念。有关详细信息，请参阅[通过 .NET 开始使用 Azure Blob 存储](/documentation/articles/storage-dotnet-how-to-use-blobs/)和[Blob 服务概念](http://msdn.microsoft.com/zh-cn/library/azure/dd179376.aspx)。
 
 ### 创建容器
