@@ -138,6 +138,6 @@ Media Encoder Standard 使用[此处](/documentation/articles/media-services-mes
 
 
 ## <a name="see-also"></a>另请参阅
-[如何使用 Media Encoder Standard 通过 .NET 来生成缩略图](/documentation/articles/media-services-dotnet-generate-thumbnail-with-mes/)
-[媒体服务编码概述](/documentation/articles/media-services-encode-asset/)
+- [如何使用 Media Encoder Standard 通过 .NET 来生成缩略图](/documentation/articles/media-services-dotnet-generate-thumbnail-with-mes/)
+- [媒体服务编码概述](/documentation/articles/media-services-encode-asset/)
 <!--Update_Description:update MSDN links to A.cn links;add anchors to subtitles-->
