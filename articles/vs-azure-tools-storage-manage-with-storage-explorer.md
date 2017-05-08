@@ -13,8 +13,8 @@
 	ms.topic="get-started-article"
 	ms.tgt_pltfrm="na"
 	ms.workload="na"
-	ms.date="08/17/2016"
-    wacn.date="04/27/2017"
+	ms.date="11/18/2016"
+    wacn.date="05/02/2017"
 	ms.author="tarcher" />
 
 # 存储资源管理器（预览版）入门

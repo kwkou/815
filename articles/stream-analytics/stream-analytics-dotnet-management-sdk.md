@@ -14,8 +14,8 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="data-services"
-    ms.date="01/24/2017"
-    wacn.date="03/10/2017"
+    ms.date="03/06/2017"
+    wacn.date="05/02/2017"
     ms.author="jeffstok" />  
 
 # 管理 .NET SDK：设置和运行使用 .NET 版 Azure 流分析 API 的分析作业
