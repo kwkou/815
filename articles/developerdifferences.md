@@ -141,13 +141,13 @@ Visual Studio 2015 支持在中国区 Azure 上开发，使用 Visual Studio 201
 
 2. 使用 Azure CLI 生成认证文件并保存至本地。
 
-    a. 使用 `az cloud set --name AzureChinaCloud`  链接中国区 Azure。
+    a. 使用 `az cloud set --name AzureChinaCloud`  连接中国区 Azure。
 
     b. 使用 `az login -u <account email> -p <account password>` 替换其中的账号和密码，登陆 Azure。
 
-    c. 如果在中国区 Azure 有多个订阅账户 Subscription，使用 `az account set --subscription <subscirption name>` 选择用来生产认证信息的订阅账户。
+    c. 如果在中国区 Azure 有多个订阅账户 Subscription，使用 `az account set --subscription <subscirption name>` 选择用来生成认证信息的订阅账户。
 
-    d. 使用以下命令，生产认证文件 my.azureauth 并保存于本地。 `curl -L https://raw.githubusercontent.com/Azure/azure-sdk-for-java/master/tools/authgen.py | python > my.azureauth`
+    d. 使用以下命令，生成认证文件 my.azureauth 并保存于本地。 `curl -L https://raw.githubusercontent.com/Azure/azure-sdk-for-java/master/tools/authgen.py | python > my.azureauth`
 
 3. 在 Eclipse 或 IntelliJ 中，选择基于文件的方式登陆，并上传步骤 2 中生成的认证文件。
 
