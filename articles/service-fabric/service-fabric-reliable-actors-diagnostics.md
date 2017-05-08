@@ -85,7 +85,7 @@ Reliable Actors 运行时定义以下性能计数器类别。
 
 在上述示例中，`ivoicemailboxactor.leavemessageasync` 是方法名称，`2` 是生成以供运行时内部使用的 32 位 ID，`89383d32-e57e-4a9b-a6ad-57c6792aa521` 是 Service Fabric 分区 ID 的字符串表示形式，`635650083804480486` 是生成以供运行时内部使用的 64 位 ID。
 
-## 事件和性能计数器的列表
+##<a name="list-of-events-and-performance-counters"></a> 事件和性能计数器的列表
 
 ###<a name="actor-method-events-and-performance-counters"></a> 执行组件方法事件和性能计数器
 Reliable Actors 运行时发出与 [Actor 方法](/documentation/articles/service-fabric-reliable-actors-introduction/)相关的以下事件。

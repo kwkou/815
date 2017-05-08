@@ -22,7 +22,7 @@
 # 自定义 Service Fabric 群集设置和结构升级策略
 本文档说明如何为 Service Fabric 群集自定义各种结构设置和结构升级策略。可以使用门户或 Azure Resource Manager 模板完成自定义。
 
-## 可以自定义的结构设置
+##<a name="fabric-settings-that-you-can-customize"></a> 可以自定义的结构设置
 下面是可以自定义的结构设置：
 
 ### 节名称：Diagnostics

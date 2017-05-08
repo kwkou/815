@@ -210,7 +210,7 @@
 	
 	    }
 	}
-## 限制访问策略数 
+##<a name="limit-access-policies"></a> 限制访问策略数 
 
 >[AZURE.NOTE]
 各种不同的 AMS 策略（例如定位器策略或 ContentKeyAuthorizationPolicy）的数目限制为 1,000,000 个。如果用户始终使用相同的日期/访问权限，则应使用同一策略 ID。定位器策略就是这样的例子，这些策略（非上载策略）可长时间置于一个位置。

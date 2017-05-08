@@ -15,7 +15,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="na"
     ms.date="03/15/2017"
-    wacn.date="04/24/2017"
+    wacn.date="05/08/2017"
     ms.author="ryanwi"
     ms.sourcegitcommit="a114d832e9c5320e9a109c9020fcaa2f2fdd43a9"
     ms.openlocfilehash="e6476288fbc845f894576ae68525d8897fdbc503"
@@ -265,7 +265,7 @@
 	Connect-ServiceFabricCluster $ConnectArgs
 
 
-然后可运行其他 PowerShell 命令来处理此群集。 例如，运行 [Get-ServiceFabricNode](https://docs.microsoft.com/zh-cn/powershell/servicefabric/vlatest/get-servicefabricnode.md) 可显示此安全群集上的节点列表。
+然后可运行其他 PowerShell 命令来处理此群集。 例如，运行 [Get-ServiceFabricNode](https://docs.microsoft.com/zh-cn/powershell/servicefabric/vlatest/get-servicefabricnode) 可显示此安全群集上的节点列表。
 
 
 若要删除群集，请连接到已下载 Service Fabric 程序包的群集上的节点、打开命令行，然后导航到程序包文件夹。 现在运行以下命令：

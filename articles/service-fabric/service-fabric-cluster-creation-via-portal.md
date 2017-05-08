@@ -39,7 +39,7 @@
 
 安全的群集是防止未经授权访问管理操作的群集，这些操作包括部署、升级和删除应用程序、服务及其包含的数据。 不安全的群集是任何人都可以随时连接并执行管理操作的群集。 尽管可以创建不安全的群集，但 **强烈建议创建安全的群集**。 不安全的群集 **无法在事后受到保护** - 要保护群集，必须创建新群集。
 
-无论群集是 Linux 群集还是 Windows 群集，创建安全群集的思路都一样。 有关创建安全 Linux 群集的详细信息和帮助器脚本，请参阅[在 Linux 上创建安全群集](/documentation/articles/service-fabric-cluster-creation-via-arm/#secure-linux-cluster)。 可以按[在 Azure 门户预览中创建群集](#create-cluster-portal)部分中所述，将所提供的帮助器脚本获取的参数直接输入到门户中。
+无论群集是 Linux 群集还是 Windows 群集，创建安全群集的思路都一样。 有关创建安全 Linux 群集的详细信息和帮助器脚本，请参阅[在 Linux 上创建安全群集](/documentation/articles/service-fabric-cluster-creation-via-arm/)。 可以按[在 Azure 门户预览中创建群集](#create-cluster-portal)部分中所述，将所提供的帮助器脚本获取的参数直接输入到门户中。
 
 ## <a name="log-in-to-azure"></a>登录到 Azure
 本指南使用 [Azure PowerShell][azure-powershell]。 开始新的 PowerShell 会话时，请登录到 Azure 帐户并选择订阅，然后执行 Azure 命令。
@@ -196,7 +196,7 @@ Service Fabric 使用 X.509 证书保护群集。 Azure 密钥保管库用于管
 
 </a "create-cluster-portal" ></a>
 
-## <a name="create-cluster-in-the-azure-portal-preview"></a>在 Azure 门户预览中创建群集
+## <a name="create-cluster-in-the-azure-portal-preview"></a><a name="create-cluster-portal"></a>在 Azure 门户预览中创建群集
 ### <a name="search-for-the-service-fabric-cluster-resource"></a>搜索 Service Fabric 群集资源
 ![在 Azure 门户预览中搜索 Service Fabric 群集模板。][SearchforServiceFabricClusterTemplate]
 
@@ -264,7 +264,7 @@ Service Fabric 使用 X.509 证书保护群集。 Azure 密钥保管库用于管
 
 * 选中“**配置高级设置**”复选框，输入**管理客户端**和**只读客户端**的客户端证书。 在这些字段中，输入管理客户端证书的指纹和只读用户客户端证书的指纹（如果适用）。 当管理员尝试连接群集时，仅当他们的证书指纹与此处输入的指纹值匹配时，才被授予访问权限。  
 
-#### <a name="4-summary"></a>4.摘要
+#### <a name="4-summary"></a><a name="step-4--complete-the-cluster-creation"></a>4.摘要
 ![显示“正在部署 Service Fabric 群集”的开始面板屏幕截图。 ][Notifications]
 
 若要完成群集创建过程，请单击“**摘要**”查看提供的配置，或下载将用于部署群集的 Azure Resource Manager 模板。 在提供所有必需的设置后，“**确定**”按钮将会启用，只需单击它即可启动群集创建过程。

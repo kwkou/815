@@ -17,7 +17,7 @@
     ms.tgt_pltfrm="sql-database"
     ms.workload="database"
     ms.date="03/16/2017"
-    wacn.date="04/17/2017"
+    wacn.date="05/08/2017"
     ms.author="janeng"
     ms.sourcegitcommit="7cc8d7b9c616d399509cd9dbdd155b0e9a7987a8"
     ms.openlocfilehash="eb513c8801d974078fc6e290a58c04c6e93a43c4"
@@ -85,11 +85,11 @@
 
 | 命令 | 说明 |
 |---|---|
-| [az group create](/cli/azure/group#create) | 创建用于存储所有资源的资源组。 |
-| [az sql server create](/cli/azure/sql/server#create) | 创建用于托管 SQL 数据库的逻辑服务器。 |
-| [az sql server firewall create](/cli/azure/sql/server/firewall#create) | 创建一个防火墙规则，以允许从输入的 IP 地址范围访问服务器上的所有 SQL 数据库。 |
-| [az sql db create](/cli/azure/sql/db#create) | 在逻辑服务器中创建 SQL 数据库。 |
-| [az group delete](/cli/azure/resource#delete) | 删除资源组，包括所有嵌套的资源。 |
+| [az group create](https://docs.microsoft.com/cli/azure/group#create) | 创建用于存储所有资源的资源组。 |
+| [az sql server create](https://docs.microsoft.com/cli/azure/sql/server#create) | 创建用于托管 SQL 数据库的逻辑服务器。 |
+| [az sql server firewall create](https://docs.microsoft.com/cli/azure/sql/server/firewall#create) | 创建一个防火墙规则，以允许从输入的 IP 地址范围访问服务器上的所有 SQL 数据库。 |
+| [az sql db create](https://docs.microsoft.com/cli/azure/sql/db#create) | 在逻辑服务器中创建 SQL 数据库。 |
+| [az group delete](https://docs.microsoft.com/cli/azure/resource#delete) | 删除资源组，包括所有嵌套的资源。 |
 
 ## <a name="next-steps"></a>后续步骤
 

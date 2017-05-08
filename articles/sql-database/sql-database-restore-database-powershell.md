@@ -17,7 +17,7 @@
     ms.tgt_pltfrm="sql-database"
     ms.workload="database"
     ms.date="03/07/2017"
-    wacn.date="04/17/2017"
+    wacn.date="05/08/2017"
     ms.author="janeng"
     ms.sourcegitcommit="7cc8d7b9c616d399509cd9dbdd155b0e9a7987a8"
     ms.openlocfilehash="08b6892f996a426896ece1ffc6f63bdc6b173022"
@@ -106,7 +106,7 @@
 | [Restore-AzureRmSqlDatabase](https://docs.microsoft.com/zh-cn/powershell/resourcemanager/azurerm.sql/v2.5.0/restore-azurermsqldatabase) | 还原 SQL 数据库。 |
 |[Remove-AzureRmSqlDatabase](https://docs.microsoft.com/zh-cn/powershell/resourcemanager/azurerm.sql/v2.5.0/remove-azurermsqldatabase) | 删除 Azure SQL 数据库。 |
 | [Get-AzureRmSqlDeletedDatabaseBackup](https://docs.microsoft.com/zh-cn/powershell/resourcemanager/azurerm.sql/v2.5.0/get-azurermsqldeleteddatabasebackup) | 获取可以还原的已删除数据库。 |
-| [Remove-AzureRmResourceGroup]() | 删除资源组，包括所有嵌套的资源。 |
+| Remove-AzureRmResourceGroup] | 删除资源组，包括所有嵌套的资源。 |
 
 ## <a name="next-steps"></a>后续步骤
 

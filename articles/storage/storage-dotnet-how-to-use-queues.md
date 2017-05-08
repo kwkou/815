@@ -26,7 +26,7 @@
 
 [AZURE.INCLUDE [storage-check-out-samples-dotnet](../../includes/storage-check-out-samples-dotnet.md)]
 
-## <a name="overview"></a>概述
+## <a name="overview"></a><a name="what-is"></a>概述
 Azure 队列存储用于在应用程序组件之间进行云消息传送。 在设计应用程序以实现可伸缩性时，通常要将各个应用程序组件分离，使其可以独立地进行伸缩。 队列存储提供的异步消息传送适用于在应用程序组件之间进行通信，无论这些应用程序组件是运行在云中、桌面上、本地服务器上还是移动设备上。 队列存储还支持管理异步任务以及构建过程工作流。
 
 ### <a name="about-this-tutorial"></a>关于本教程
