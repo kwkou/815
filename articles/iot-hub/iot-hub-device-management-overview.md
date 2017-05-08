@@ -13,8 +13,8 @@
     ms.topic="get-started-article"
     ms.tgt_pltfrm="na"
     ms.workload="na"
-    ms.date="10/03/2016"
-    wacn.date="01/13/2017"
+    ms.date="03/09/2017"
+    wacn.date="05/02/2017"
     ms.author="briz" />  
 
 
