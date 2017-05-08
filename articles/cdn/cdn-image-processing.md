@@ -1,11 +1,11 @@
 <properties linkid="dev-net-common-tasks-cdn" urlDisplayName="CDN" pageTitle="Azure China CDN image processing" metaKeywords="Azure CDN, Azure CDN, Azure blobs, Azure caching, Azure add-ons, 缓存刷新, 内容预取, 日志下载, 缓存规则, CDN 助文档, CDN技术文档, CDN" description="Learn how to use advanced features of Azure CDN management portal to manage CDN endpoint" metaCanonical="" services="" documentationCenter=".NET" title="" authors="" solutions="" manager="" editor="" />
 <tags ms.service="cdn"
-    ms.date="4/19/2017"
-    wacn.date="4/19/2017"
+    ms.date="5/8/2017"
+    wacn.date="5/8/2017"
     wacn.lang="cn"
     />
 
-# Azure CDN 图片服务 RESTful API 文档
+# Azure CDN 图片服务
 
 ## 简介
 
@@ -19,7 +19,7 @@ Azure CDN图片服务是由Azure CDN服务提供的一个可靠、安全且经�
 
 Azure CDN 图片服务是作为 Azure CDN 服务的一个增值功能引入的，所以使用 Azure CDN 图片服务的前提是首先创建一个名为“图片处理”加速类型的 CDN 加速节点。**图片服务本身无法作为一个单独 Azure 服务来使用**。
 
-目前Azure CDN图片服务没有提供相应的图形化管理界面，相应的CDN加速节点创建好之后，所有的图片处理请求目前都是通过RESTful API的形式来提供访问。直接引用CDN加速域名加上控制图片尺寸、裁剪模式以及质量等图片处理参数，即可访问经过处理的图片版本。
+目前Azure CDN图片服务没有提供相应的图形化管理界面，相应的CDN加速节点创建好之后，直接引用CDN加速域名加上控制图片尺寸、裁剪模式以及质量等图片处理参数，即可访问经过处理的图片版本。
 
 
 
