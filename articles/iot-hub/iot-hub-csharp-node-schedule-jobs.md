@@ -14,24 +14,24 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="na"
-    ms.date="02/24/2017"
-    wacn.date="04/17/2017"
+    ms.date="03/30/2017"
+    wacn.date="05/08/2017"
     ms.author="juanpere"
-    ms.sourcegitcommit="7cc8d7b9c616d399509cd9dbdd155b0e9a7987a8"
-    ms.openlocfilehash="2f1199d1cded08ddd99b5d0a8f7f8ccafc697576"
-    ms.lasthandoff="04/07/2017" />
+    ms.sourcegitcommit="2c4ee90387d280f15b2f2ed656f7d4862ad80901"
+    ms.openlocfilehash="713f0e6404d96caeb64654ed979a117895c2b3d1"
+    ms.lasthandoff="04/28/2017" />
 
 # <a name="schedule-and-broadcast-jobs"></a>计划和广播作业
 [AZURE.INCLUDE [iot-hub-selector-schedule-jobs](../../includes/iot-hub-selector-schedule-jobs.md)]
 
 ## <a name="introduction"></a>介绍
-Azure IoT 中心是一项完全托管的服务，允许后端应用创建和跟踪用于计划和更新数百万个设备的作业。  作业可以用于以下操作：
+Azure IoT 中心是一项完全托管的服务，允许后端应用创建和跟踪用于计划和更新数百万台设备的作业。  作业可以用于以下操作：
 
 * 更新所需属性
 * 更新标记
 * 调用直接方法
 
-从概念上讲，作业包装这些操作之一，并跟踪针对一组设备执行（由设备孪生查询定义）的进度。例如，通过使用作业，后端应用可以对 10,000 个设备调用重新启动方法（由设备孪生查询指定并安排在将来执行）。该应用程序随后可以在其中每个设备接收和执行重新启动方法时跟踪进度。
+从概念上讲，作业包装这些操作之一，并跟踪针对一组设备执行（由设备孪生查询定义）的进度。  例如，后端应用可使用作业重启 10,000 台设备（由设备孪生查询指定并计划在将来执行）。  它随后可以在其中每个设备接收和执行重新启动方法时跟踪进度。
 
 可在以下文章中了解有关所有这些功能的详细信息：
 
@@ -49,12 +49,11 @@ Azure IoT 中心是一项完全托管的服务，允许后端应用创建和跟�
 
 **ScheduleJob**，它在模拟设备应用中调用直接方法，并通过作业更新设备孪生所需的属性。
 
-要完成本教程，需要具备以下先决条件：
+若要完成本教程，需要以下各项：
 
-* Microsoft Visual Studio 2015。
-* Node.js 版本 0.12.x 或更高版本。
-* [准备开发环境][lnk-dev-setup]介绍了如何在 Windows 或 Linux 上安装本教程所用的 Node.js。
-* 有效的 Azure 帐户。（如果没有帐户，只需花费几分钟就能创建一个[免费帐户][lnk-free-trial]。）
+* Visual Studio 2015 或 Visual Studio 2017。
+* Node.js 版本 0.12.x 或更高版本。 [准备开发环境][lnk-dev-setup]一文介绍了如何在 Windows 或 Linux 上安装本教程所用的 Node.js。
+* 有效的 Azure 帐户。 如果没有帐户，可以创建一个[试用帐户][lnk-free-trial]，只需几分钟即可完成。
 
 [AZURE.INCLUDE [iot-hub-get-started-create-hub](../../includes/iot-hub-get-started-create-hub.md)]
 
@@ -69,13 +68,18 @@ Azure IoT 中心是一项完全托管的服务，允许后端应用创建和跟�
 
 
 2. 在“解决方案资源管理器”中，右键单击“ScheduleJob”项目，然后单击“管理 NuGet 包”。
-3. 在“NuGet 包管理器”窗口中，选择“浏览”，搜索 **microsoft.azure.devices**，选择“安装”以安装 **Microsoft.Azure.Devices** 包，然后接受使用条款。 该过程将下载、安装 [Azure IoT 服务 SDK][lnk-nuget-service-sdk] NuGet 包及其依赖项并添加对它的引用。
+1. 在“NuGet 包管理器”窗口中，选择“浏览”，搜索 **microsoft.azure.devices**，选择“安装”以安装 **Microsoft.Azure.Devices** 包，然后接受使用条款。 此步骤将下载、安装 [Azure IoT 服务 SDK][lnk-nuget-service-sdk] NuGet 包及其依赖项并添加对它的引用。
 
 	![“NuGet 包管理器”窗口][img-servicenuget]  
 
 4. 在 **Program.cs** 文件顶部添加以下 `using` 语句：
    
         using Microsoft.Azure.Devices;
+        using Microsoft.Azure.Devices.Shared;
+
+1. 如果默认语句中不存在下面的 `using` 语句，请添加该语句。
+
+        using System.Threading.Tasks;
         
 5. 将以下字段添加到 **Program** 类。将占位符替换为在上一部分中为中心创建的 IoT 中心连接字符串。
    
@@ -147,8 +151,8 @@ Azure IoT 中心是一项完全托管的服务，允许后端应用创建和跟�
         MonitorJob(twinUpdateJobId).Wait();
         Console.WriteLine("Press ENTER to exit.");
         Console.ReadLine();
-                   
-10. 生成解决方案。
+
+1. 在“解决方案资源管理器”中，打开“设置启动项目...”，并确保 **ScheduleJob** 项目的“操作”为“启动”。 生成解决方案。
 
 ## <a name="create-a-simulated-device-app"></a>创建模拟设备应用程序
 在本部分中，创建响应云调用的直接方法的 Node.js 控制台应用，这将触发模拟的设备重新启动并使用报告属性启用设备孪生查询，以标识设备和及其上次重新启动的时间。
@@ -157,10 +161,9 @@ Azure IoT 中心是一项完全托管的服务，允许后端应用创建和跟�
    
     
         npm init
-    
-2. 在 **simDevice** 文件夹的命令提示符处，运行下述命令以安装 **azure-iot-device** 设备 SDK 包和 **azure-iot-device-mqtt** 包：
-   
-    
+
+1. 在 **simDevice** 文件夹的命令提示符处，运行下述命令以安装 **azure-iot-device** 和 **azure-iot-device-mqtt** 包：
+
         npm install azure-iot-device azure-iot-device-mqtt --save
 
 3. 在 **simDevice.js** 文件夹中，利用文本编辑器创建新的 **simDevice** 文件。
@@ -172,7 +175,7 @@ Azure IoT 中心是一项完全托管的服务，允许后端应用创建和跟�
         var Client = require('azure-iot-device').Client;
         var Protocol = require('azure-iot-device-mqtt').Mqtt;
 
-5. 添加 **connectionString** 变量，并使用它创建一个**客户端**实例。  
+1. 添加 **connectionString** 变量，并使用它创建一个**客户端**实例。 请确保使用适合的值替换占位符。
 
         var connectionString = 'HostName={youriothostname};DeviceId={yourdeviceid};SharedAccessKey={yourdevicekey}';
         var client = Client.fromConnectionString(connectionString, Protocol);
@@ -221,9 +224,11 @@ Azure IoT 中心是一项完全托管的服务，允许后端应用创建和跟�
     
         node simDevice.js
 
-2. 运行 C# 控制台应用 **ScheduleJob** - 右键单击“ScheduleJob”项目，然后依次选择“调试”和“启动新实例”。
+1. 通过右键单击“ScheduleJob”项目，然后依次选择“调试”和“启动新实例”，运行 C# 控制台应用 **ScheduleJob**。
 
 3. 会出现设备和后端应用的输出。
+
+    ![运行应用以计划作业][img-schedulejobs]
 
 ## <a name="next-steps"></a>后续步骤
 在本教程中，使用了作业来安排用于设备的直接方法以及设备孪生属性的更新。
@@ -232,11 +237,12 @@ Azure IoT 中心是一项完全托管的服务，允许后端应用创建和跟�
 
 [教程：如何进行固件更新][lnk-fwupdate]
 
-若要继续完成 IoT 中心的入门内容，请参阅 [IoT 网关 SDK 入门][lnk-gateway-SDK]。
+若要继续完成 IoT 中心入门内容，请参阅 [IoT 网关 SDK 入门][lnk-gateway-SDK]。
 
 <!-- images -->
 [img-servicenuget]: ./media/iot-hub-csharp-node-schedule-jobs/servicesdknuget.png
 [img-createapp]: ./media/iot-hub-csharp-node-schedule-jobs/createnetapp.png
+[img-schedulejobs]: ./media/iot-hub-csharp-node-schedule-jobs/schedulejobs.png
 
 [lnk-get-started-twin]: /documentation/articles/iot-hub-node-node-twin-getstarted/
 [lnk-twin-props]: /documentation/articles/iot-hub-node-node-twin-how-to-configure/

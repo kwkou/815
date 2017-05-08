@@ -15,7 +15,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="na"
     ms.date="03/07/2017"
-    wacn.date="04/24/2017"
+    wacn.date="05/08/2017"
     ms.author="dobett"
     ms.sourcegitcommit="a114d832e9c5320e9a109c9020fcaa2f2fdd43a9"
     ms.openlocfilehash="94db2ba8bb6997485b07d23a40cfb37a234f0260"
@@ -91,36 +91,29 @@ Azure IoT 中心是一项完全托管的服务，有助于在数百万台设备�
 1. 在命令提示符处使用以下命令，创建名为 **send-c2d-messages** 的 Maven 项目。 请注意，此命令是一条很长的命令：
 
         mvn archetype:generate -DgroupId=com.mycompany.app -DartifactId=send-c2d-messages -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
-    
 
 2. 在命令提示符下，导航到新的 send-c2d-messages 文件夹。
+3. 使用文本编辑器，打开 send-c2d-messages 文件夹中的 pom.xml 文件，并在 **dependencies** 节点中添加以下依赖项。 这样即可使用应用程序中的 **iothub-java-service-client** 包来与 IoT 中心服务通信：
 
-3. 使用文本编辑器，打开 send-c2d-messages 文件夹中的 pom.xml 文件，并在 **dependencies** 节点中添加以下依赖项。这样即可使用应用程序中的 **iothub-java-service-client** 包来与 IoT 中心服务通信：
-
-    
         <dependency>
           <groupId>com.microsoft.azure.sdk.iot</groupId>
           <artifactId>iot-service-client</artifactId>
-          <version>1.0.15</version>
+          <version>1.2.18</version>
         </dependency>
 
     > [AZURE.NOTE]
     > 可以使用 [Maven 搜索][lnk-maven-service-search]检查是否有最新版本的 **iot-service-client**。
 
 4. 保存并关闭 pom.xml 文件。
-
 5. 使用文本编辑器打开 send-c2d-messages\src\main\java\com\mycompany\app\App.java 文件。
-
 6. 在该文件中添加以下 **import** 语句：
 
-        import com.microsoft.azure.sdk.iot.service.sdk.*;
+        import com.microsoft.azure.sdk.iot.service.*;
         import java.io.IOException;
         import java.net.URISyntaxException;
-    
 
 7. 将以下类级变量添加到 **App** 类，并将 **{yourhubconnectionstring}** 和 **{yourdeviceid}** 替换为前面记下的值：
 
-    
         private static final String connectionString = "{yourhubconnectionstring}";
         private static final String deviceId = "{yourdeviceid}";
         private static final IotHubServiceClientProtocol protocol = IotHubServiceClientProtocol.AMQPS;

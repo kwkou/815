@@ -1,11 +1,12 @@
 <properties
     pageTitle="使用 Azure IoT 中心设备孪生属性 (.NET/Node) | Azure"
-    description="如何使用 Azure IoT 中心设备孪生配置设备。使用适用于 Node.js 的 Azure IoT 设备 SDK 实现模拟设备应用，并使用适用于 .NET 的 Azure IoT 服务 SDK 实现可使用设备孪生更改设备配置的服务应用。"
+    description="如何使用 Azure IoT 中心设备孪生配置设备。 使用适用于 Node.js 的 Azure IoT 设备 SDK 实现模拟设备应用，并使用适用于 .NET 的 Azure IoT 服务 SDK 实现可使用设备孪生更改设备配置的服务应用。"
     services="iot-hub"
     documentationcenter=".net"
     author="fsautomata"
     manager="timlt"
-    editor="" />
+    editor=""
+    translationtype="Human Translation" />
 <tags
     ms.assetid="3c627476-f982-43c9-bd17-e0698c5d236d"
     ms.service="iot-hub"
@@ -13,39 +14,41 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="na"
-    ms.date="09/13/2016"
-    wacn.date="01/13/2017"
-    ms.author="elioda" />  
+    ms.date="03/30/2017"
+    wacn.date="05/08/2017"
+    ms.author="elioda"
+    ms.sourcegitcommit="2c4ee90387d280f15b2f2ed656f7d4862ad80901"
+    ms.openlocfilehash="3e74db5825098cf7821654328a5132b8936e2019"
+    ms.lasthandoff="04/28/2017" />
 
-
-# 使用所需属性配置设备
+# <a name="use-desired-properties-to-configure-devices"></a>使用所需属性配置设备
 [AZURE.INCLUDE [iot-hub-selector-twin-how-to-configure](../../includes/iot-hub-selector-twin-how-to-configure.md)]
 
-在本教程结束时，你将拥有两个 Node.js 控制台应用：
+在本教程结束时，将会创建两个控制台应用：
 
 * **SimulateDeviceConfiguration.js**，一个模拟设备应用，它等待所需配置更新并报告模拟配置更新过程的状态。
 * **SetDesiredConfigurationAndQuery**，一个 .NET 后端应用，用于在设备上设置所需配置并查询配置更新过程。
 
 > [AZURE.NOTE]
-[Azure IoT SDK][lnk-hub-sdks] 文章介绍了可用于构建设备和后端应用的 Azure IoT SDK。
+> [Azure IoT SDK][lnk-hub-sdks] 文章介绍了可用于构建设备和后端应用的 Azure IoT SDK。
 > 
 > 
 
 完成本教程需具备以下条件：
 
-+ Microsoft Visual Studio 2015。
++ Visual Studio 2015 或 Visual Studio 2017。
 
-+ Node.js 0.10.x 或更高版本。
++ Node.js 版本 0.10.x 或更高版本。
 
-+ 有效的 Azure 帐户。（如果没有帐户，只需花费几分钟就能创建一个[帐户][lnk-free-trial]。）
++ 有效的 Azure 帐户。 （如果你没有帐户，只需花费几分钟就能创建一个 [试用帐户][lnk-free-trial]。）
 
-如果按照[设备孪生入门][lnk-twin-tutorial]教程操作，你就已拥有一个 IoT 中心和一个 **myDeviceId** 设备标识；因此可跳到[创建模拟设备应用][lnk-how-to-configure-createapp]部分。
+如果已按照 [设备孪生入门][lnk-twin-tutorial] 教程执行了操作，则现在已有一个 IoT 中心和一个名为 **myDeviceId** 的设备标识。 在这种情况下，可以跳到 [创建模拟设备应用][lnk-how-to-configure-createapp] 部分。
 
 [AZURE.INCLUDE [iot-hub-get-started-create-hub](../../includes/iot-hub-get-started-create-hub.md)]
 
 [AZURE.INCLUDE [iot-hub-get-started-create-device-identity](../../includes/iot-hub-get-started-create-device-identity.md)]
 
-## 创建模拟设备应用
+## <a name="create-the-simulated-device-app"></a>创建模拟设备应用
 
 在此部分，用户需创建一个 Node.js 控制台应用，该应用可作为 **myDeviceId** 连接到中心并等待所需配置更新，然后针对模拟配置更新过程报告更新。
 
@@ -54,12 +57,12 @@
     
         npm init
     
-2. 在 **simulatedeviceconfiguration** 文件夹的命令提示符处，运行以下命令来安装 **azure-iot-device** 和 **azure-iot-device-mqtt** 包：
+1. 在 **simulatedeviceconfiguration** 文件夹的命令提示符处，运行下述命令以安装 **azure-iot-device** 和 **azure-iot-device-mqtt** 包：
    
     
         npm install azure-iot-device azure-iot-device-mqtt --save
     
-3. 在 **simulatedeviceconfiguration** 文件夹中使用文本编辑器新建 **SimulateDeviceConfiguration.js** 文件。
+3. 使用文本编辑器，在 **simulatedeviceconfiguration** 文件夹中创建新的 **SimulateDeviceConfiguration.js** 文件。
 4. 将以下代码添加到 **SimulateDeviceConfiguration.js** 文件，并将 **{device connection string}** 占位符替换为创建 **myDeviceId** 设备标识时复制的设备连接字符串：
    
         'use strict';
@@ -94,16 +97,16 @@
             }
         });
    
-    **Client** 对象会公开从设备与设备孪生进行交互所需的所有方法。前面的代码在初始化 **Client** 对象后会检索 **myDeviceId** 的设备孪生，并在所需属性上附加用于更新的处理程序。该处理程序通过比较 configId 来验证是否存在实际配置更改请求，然后调用启动配置更改的方法。
+    **客户端**对象公开从设备与设备孪生进行交互所需的所有方法。 此代码将初始化 **Client** 对象，然后检索 **myDeviceId** 的设备孪生，并在所需属性上附加用于更新的处理程序。 该处理程序通过比较 configId 验证是否有实际的配置更改，然后调用用于启动配置更改的方法。
    
-    请注意，为简单起见，前面的代码对初始配置使用硬编码默认值。实际应用可能会从本地存储加载该配置。
+    请注意，为了简单起见，此代码使用初始配置的硬编码默认值。 实际的应用可能会从本地存储加载该配置。
    
        > [AZURE.IMPORTANT]
-       所需属性更改事件始终在设备连接时发出一次，请确保在执行任何操作之前检查所需属性中是否存在实际更改。
+       > 连接设备时，始终发出一次所需的属性更改事件。 执行任何操作之前，请确保检查所需属性是否进行过实际更改。
        > 
        > 
        
-5. 在进行 `client.open()` 调用前添加以下方法：
+1. 在 `client.open()` 调用前添加以下方法：
    
             var initConfigChange = function(twin) {
                 var currentTelemetryConfig = twin.properties.reported.telemetryConfig;
@@ -145,14 +148,14 @@
             };
             
    
-    **initConfigChange** 方法使用配置更新请求更新本地设备孪生对象的报告属性，并将状态设置为“等待中”，然后更新服务的设备孪生。成功更新设备孪生后，它会模拟在执行 **completeConfigChange** 期间终止的长时间运行的进程。此方法会更新本地克隆报告属性，将状态设置为 **Success** 并删除 **pendingConfig** 对象。然后，它会更新服务的设备孪生。
-   
-    请注意，为了节省带宽，在更新报告属性时，请仅指定要修改的属性（在上面的代码中名为 **patch**），而不要替换整个文档。
-   
-       > [AZURE.NOTE]
-       本教程不模拟并发配置更新的任何行为。某些配置更新过程可能无法在更新运行期间适应目标配置的更改，另外一些过程可能必须对更改进行排队，还有一些过程可能会拒绝更改并显示错误条件。请务必考虑特定配置过程的所需行为，并在启动配置更改之前添加相应的逻辑。
-       > 
-       > 
+    **initConfigChange** 方法使用配置更新请求更新本地设备孪生对象的报告属性，并将状态设置为“等待中”，然后更新服务的设备孪生。 成功更新设备孪生后，它会模拟在执行 **completeConfigChange** 期间终止的长时间运行的进程。 此方法更新本地报告属性，将状态设置为“成功”并删除 **pendingConfig** 对象。 然后，它会更新服务的设备孪生。
+
+    请注意，为了节省带宽，仅通过指定要修改的属性（在上述代码中名为 **patch**）而不是替换整个文档来更新报告属性。
+
+   > [AZURE.NOTE]
+   > 本教程不模拟并发配置更新的任何行为。 某些配置更新进程在更新运行过程中可能能够适应目标配置的更改，某些配置更新进程则可能必须将它们排队，某些配置更新进程会拒绝它们并显示错误情况。 请确保考虑你的特定配置过程所需的行为，并在开始配置更改之前添加相应的逻辑。
+   > 
+   > 
        
 
 6. 运行设备应用：
@@ -161,18 +164,17 @@
    
     此时会显示消息`retrieved device twin`。使应用保持运行状态。
 
-## 创建服务应用
-在本节中，用户需创建一个 .NET 控制台应用，以便通过新的遥测配置对象在与 **myDeviceId** 关联的设备孪生上更新*所需属性*。该应用随后会查询存储在 IoT 中心的设备孪生，并显示设备的所需配置与报告配置之间的差异。
+## <a name="create-the-service-app"></a>创建服务应用
+在本节中，用户需创建一个 .NET 控制台应用，以便通过新的遥测配置对象在与 *myDeviceId* 关联的设备孪生上更新 **所需属性** 。 然后，它查询存储在 IoT 中心的设备孪生，并显示该设备的所需配置和报告配置之间的差异。
 
-1. 在 Visual Studio 中，使用“控制台应用程序”项目模板将 Visual C# Windows 经典桌面项目添加到当前解决方案。将项目命名为 **SetDesiredConfigurationAndQuery**。
-   
-    ![新的 Visual C# Windows 经典桌面项目][img-createapp]  
+1. 在 Visual Studio 中，使用“ **控制台应用程序** ”项目模板将 Visual C# Windows 经典桌面项目添加到当前解决方案。 **SetDesiredConfigurationAndQuery**。
 
-2. 在“解决方案资源管理器”中，右键单击“SetDesiredConfigurationAndQuery”项目，然后单击“管理 NuGet 包”。
-3. 在“Nuget 包管理器”窗口中，选择“浏览”，搜索 **microsoft.azure.devices**，选择“安装”以安装 **Microsoft.Azure.Devices** 包，然后接受使用条款。此过程将下载、安装 [Microsoft Azure IoT Service SDK][lnk-nuget-service-sdk]（Microsoft Azure IoT 服务 SDK）NuGet 包及其依赖项并添加对它的引用。
-   
-    ![“NuGet 包管理器”窗口][img-servicenuget]  
+    ![新的 Visual C# Windows 经典桌面项目][img-createapp]
+2. 在“解决方案资源管理器”中，右键单击“**SetDesiredConfigurationAndQuery**”项目，然后单击“**管理 NuGet 包**”。
+1. 在“NuGet 包管理器”窗口中，选择“浏览”，搜索 **microsoft.azure.devices**，选择“安装”以安装 **Microsoft.Azure.Devices** 包，然后接受使用条款。 该过程将下载、安装 [Azure IoT 服务 SDK][lnk-nuget-service-sdk] Nuget 包及其依赖项并添加对它的引用。
 
+    ![NuGet 包管理器窗口][img-servicenuget]
+    
 4. 在 **Program.cs** 文件顶部添加以下 `using` 语句：
    
         using Microsoft.Azure.Devices;
@@ -216,13 +218,14 @@
             }
         }
    
-    **Registry** 对象会公开从服务与设备孪生进行交互所需的所有方法。前面的代码在初始化 **Registry** 对象后检索 **myDeviceId** 的设备孪生，并使用新的遥测配置对象更新其所需属性。然后，该代码会每隔 10 秒钟查询一次存储在 IoT 中心的设备孪生，并打印所需的和报告的遥测配置。请参阅 [IoT Hub query language][lnk-query]（IoT 中心查询语言），了解如何跨所有设备生成丰富的报告。
+
+    **Registry** 对象公开从服务与设备孪生进行交互所需的所有方法。 此代码将初始化 **Registry** 对象，然后检索 **myDeviceId** 的设备孪生，并使用新的遥测配置对象更新其所需属性。
+    然后，该代码会每隔 10 秒钟查询一次存储在 IoT 中心的设备孪生，并打印所需遥测配置和报告遥测配置。 若要了解如何在所有设备中生成丰富的报告，请参阅 [IoT 中心查询语言][lnk-query]。
    
-       > [AZURE.IMPORTANT]
-       为了方便用户查看，此应用程序每 10 秒查询 IoT 中心一次。使用查询跨多个设备生成面向用户的报表，而不检测更改。如果解决方案需要设备事件的实时通知，请使用[设备到云的消息][lnk-d2c]。
-       > 
-       > 
-       
+   > [AZURE.IMPORTANT]
+   > 为进行说明，此应用程序每 10 秒查询 IoT 中心一次。 使用查询跨多个设备生成面向用户的报表，而不检测更改。 如果解决方案需要设备事件的实时通知，请使用 [设备到云的消息][lnk-d2c]。
+   > 
+   > 
 7. 最后，在 **Main** 方法中添加以下行：
    
             registryManager = RegistryManager.CreateFromConnectionString(connectionString);

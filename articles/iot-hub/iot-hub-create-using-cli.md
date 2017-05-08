@@ -10,16 +10,16 @@
 <tags
     ms.assetid=""
     ms.service="iot-hub"
-    ms.devlang="multiple"
+    ms.devlang="azurecli"
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="na"
-    ms.date="03/16/2017"
-    wacn.date="04/17/2017"
+    ms.date="03/23/2017"
+    wacn.date="05/08/2017"
     ms.author="dobett"
-    ms.sourcegitcommit="7cc8d7b9c616d399509cd9dbdd155b0e9a7987a8"
-    ms.openlocfilehash="99dc90d9cb29730726876404e849119f1db73fc9"
-    ms.lasthandoff="04/07/2017" />
+    ms.sourcegitcommit="2c4ee90387d280f15b2f2ed656f7d4862ad80901"
+    ms.openlocfilehash="5cf453781736a41a4db49d68c21a5da1257d227e"
+    ms.lasthandoff="04/28/2017" />
 
 # <a name="create-an-iot-hub-using-the-azure-cli-20"></a>使用 Azure CLI 2.0 创建 IoT 中心
 
@@ -37,11 +37,11 @@
 若要完成本教程，需要以下各项：
 
 * 有效的 Azure 帐户。如果没有帐户，只需几分钟即可创建一个[试用帐户][lnk-free-trial]。
-* [Azure CLI 2.0（预览版）][lnk-CLI-install]。
+* [Azure CLI 2.0][lnk-CLI-install]。
 
 ## <a name="sign-in-and-set-your-azure-account"></a>登录并设置 Azure 帐户
 
-登录 Azure 帐户，并将 Azure CLI 配置为与 IoT 中心资源配合使用。
+登录到 Azure 帐户，然后选择订阅。
 
 1. 在命令提示符中，运行 [login 命令][lnk-login-command]：
 
@@ -81,7 +81,7 @@
     
 
 > [AZURE.NOTE]
-IoT 中心的名称必须全局唯一。上一命令在计费的 S1 定价层中创建 IoT 中心。有关详细信息，请参阅 [Azure IoT 中心定价][lnk-iot-pricing]。
+> IoT 中心的名称必须全局唯一。 上一命令在计费的 S1 定价层中创建 IoT 中心。 有关详细信息，请参阅 [Azure IoT 中心定价][lnk-iot-pricing]。
 >
 >
 
@@ -91,7 +91,7 @@ IoT 中心的名称必须全局唯一。上一命令在计费的 S1 定价层中
 
 若要删除 IoT 中心，请运行以下命令：
 
-    az resource delete --name {your iot hub name} --resource-group {your resource group name} --resource-type Microsoft.Devices/IotHubs
+    az iot hub delete --name {your iot hub name} --resource-group {your resource group name}
 
 若要删除资源组及其所有资源，请运行以下命令：
 

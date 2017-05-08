@@ -14,22 +14,25 @@
     ms.topic="get-started-article"
     ms.tgt_pltfrm="na"
     ms.workload="na"
-    ms.date="11/23/2016"
-    wacn.date="04/24/2017"
+    ms.date="03/28/2017"
+    wacn.date="05/08/2017"
     ms.author="andbuc"
-    ms.sourcegitcommit="a114d832e9c5320e9a109c9020fcaa2f2fdd43a9"
-    ms.openlocfilehash="60c68d81de2c89dc99b7dce10d7f3c6d965742e8"
-    ms.lasthandoff="04/14/2017" />
+    ms.custom="H1Hack27Feb2017"
+    ms.sourcegitcommit="2c4ee90387d280f15b2f2ed656f7d4862ad80901"
+    ms.openlocfilehash="ec657bf8f540ac5bc9fd8d818b17a400004797a7"
+    ms.lasthandoff="04/28/2017" />
 
 # <a name="explore-the-iot-gateway-sdk-architecture-on-linux"></a>探索 Linux 上的 IoT 网关 SDK 体系结构
+
 [AZURE.INCLUDE [iot-hub-gateway-sdk-getstarted-selector](../../includes/iot-hub-gateway-sdk-getstarted-selector.md)]
 
 ## <a name="how-to-build-the-sample"></a>如何生成示例
+
 开始之前，必须 [设置开发环境][lnk-setupdevbox] ，以便在 Linux 上使用 SDK。
 
 1. 打开 shell。
-2. 浏览到本地 **azure-iot-gateway-sdk** 存储库副本中的根文件夹。
-3. 运行 **tools/build.sh** 脚本。 此脚本使用 **cmake** 实用工具在 **azure-iot-gateway-sdk** 存储库本地副本的根文件夹中创建一个名为 **build** 的文件夹，并生成一个生成文件。 然后，该脚本将生成解决方案并跳过单元测试和端到端测试。 如果想要生成并运行单元测试，请添加 **--run-unittests** 参数。 如果想要生成并运行端到端测试，请添加 **--run-e2e-tests**。
+1. 浏览到本地 **azure-iot-gateway-sdk** 存储库副本中的根文件夹。
+1. 运行 **tools/build.sh** 脚本。 此脚本使用 **cmake** 实用工具在 **azure-iot-gateway-sdk** 存储库本地副本的根文件夹中创建一个名为 **build** 的文件夹，并生成一个生成文件。 然后，该脚本将生成解决方案并跳过单元测试和端到端测试。 如果想要生成并运行单元测试，请添加 **--run-unittests** 参数。 如果想要生成并运行端到端测试，请添加 **--run-e2e-tests**。
 
 > [AZURE.NOTE]
 > 每次运行 **build.sh** 脚本时，都会删除 **azure-iot-gateway-sdk** 存储库本地副本的根文件夹中的 **build** 文件夹并重新生成。
@@ -37,13 +40,14 @@
 > 
 
 ## <a name="how-to-run-the-sample"></a>如何运行示例
-1. **build.sh** 脚本在 **azure-iot-gateway-sdk** 存储库的本地副本内的 **build** 文件夹中生成输出。 该文件夹中包含本示例中使用的两个模块。
 
-    生成脚本将 **liblogger.so** 放在 **build/modules/logger/** 文件夹中，将 **libhello_world.so** 放在 **build/modules/hello_world/** 文件夹中。 按如下 JSON 设置文件所示，将这些路径用于 **module path** 值。
-2. Hello_world_sample 过程使用 JSON 配置文件的路径作为命令行中的参数。 **azure-iot-gateway-sdk/samples/hello_world/src/hello_world_win.json** 上的存储库中已提供示例 JSON 文件，下面也复制了该文件的内容。 除非你修改了生成脚本，将模块或示例可执行文件放置在非默认位置，否则，可按原样运行此脚本。
+1. **build.sh** 脚本在 **azure-iot-gateway-sdk** 存储库的本地副本内的 **build** 文件夹中生成输出。 该输出包括此示例中使用的两个模块。
+
+    生成脚本将 **liblogger.so** 放在 **build/modules/logger/** 文件夹中，将 **libhello\_world.so** 放在 **build/modules/hello_world/** 文件夹中。 按以下示例 JSON 设置文件中所示，将这些路径用于 **module path** 值。
+1. hello\_world\_sample 过程使用 JSON 配置文件的路径作为命令行参数。 以下示例 JSON 文件在 SDK 存储库的以下路径中提供：**samples/hello\_world/src/hello\_world\_lin.json**。 除非你修改了生成脚本，将模块或示例可执行文件放置在非默认位置，否则，此配置文件可按原样工作。
 
    > [AZURE.NOTE]
-   > 模块路径相对于当前工作目录（hello_world_sample 可执行文件的启动位置），而不相对于可执行文件所在的目录。 示例 JSON 配置文件默认为在当前工作目录中写入“log.txt”。
+   > 模块路径相对于从中启动 hello\_world\_sample 可执行文件的当前工作目录，而不是可执行文件所在的目录。 示例 JSON 配置文件默认为在当前工作目录中写入“log.txt”。
 
         {
             "modules" :
@@ -78,10 +82,10 @@
             ]
         }
 
-3. 浏览到 **azure-iot-gateway-sdk/build** 文件夹。
-4. 运行以下命令：
+1. 导航到 **build** 文件夹。
+1. 运行以下命令：
 
-       ./build/samples/hello_world/hello_world_sample ./samples/hello_world/src/hello_world_lin.json
+   `./samples/hello_world/hello_world_sample ./../samples/hello_world/src/hello_world_lin.json`
 
 [AZURE.INCLUDE [iot-hub-gateway-sdk-getstarted-code](../../includes/iot-hub-gateway-sdk-getstarted-code.md)]
 

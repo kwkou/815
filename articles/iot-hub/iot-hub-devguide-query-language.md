@@ -5,7 +5,8 @@
     documentationcenter=".net"
     author="fsautomata"
     manager="timlt"
-    editor="" />
+    editor=""
+    translationtype="Human Translation" />
 <tags
     ms.assetid="851a9ed3-b69e-422e-8a5d-1d79f91ddf15"
     ms.service="iot-hub"
@@ -14,19 +15,22 @@
     ms.tgt_pltfrm="na"
     ms.workload="na"
     ms.date="09/30/2016"
-    wacn.date="03/10/2017"
-    ms.author="elioda" />  
+    wacn.date="05/08/2017"
+    ms.author="elioda"
+    ms.sourcegitcommit="2c4ee90387d280f15b2f2ed656f7d4862ad80901"
+    ms.openlocfilehash="47a07144040d296daacf05635d66ef7c73654faf"
+    ms.lasthandoff="04/28/2017" />
 
-
-# 参考 - 设备孪生和作业的 IoT 中心查询语言
-## 概述
-IoT 中心提供类似于 SQL 的强大语言用于检索有关[设备孪生][lnk-twins]和[作业][lnk-jobs]的信息。本文内容：
+# <a name="reference---iot-hub-query-language-for-device-twins-and-jobs"></a>参考 - 设备孪生和作业的 IoT 中心查询语言
+## <a name="overview"></a>概述
+IoT 中心提供类似于 SQL 的强大语言，用于检索有关[设备孪生][lnk-twins]和[作业][lnk-jobs]的信息。 本文内容：
 
 * IoT 中心查询语言的主要功能简介，以及
 * 语言的详细说明。
 
-## <a name="getting-started-with-device-twin-queries"></a> 设备孪生查询入门
-[设备孪生][lnk-twins]可以包含标记和属性形式的任意 JSON 对象。通过 IoT 中心，可将设备孪生作为包含所有设备孪生信息的 JSON 文档进行查询。例如，假设 IoT 中心设备孪生采用以下结构：
+## <a name="get-started-with-device-twin-queries"></a>设备孪生查询入门
+[设备孪生][lnk-twins] 可以包含标记和属性形式的任意 JSON 对象。 通过 IoT 中心，可将设备孪生作为包含所有设备孪生信息的 JSON 文档进行查询。
+例如，假设 IoT 中心设备孪生采用以下结构：
 
         {                                                                      
             "deviceId": "myDeviceId",                                            
@@ -65,12 +69,13 @@ IoT 中心提供类似于 SQL 的强大语言用于检索有关[设备孪生][ln
             }                                                                    
         }
 
-IoT 中心将设备孪生公开为名为**设备**的文档集合。因此，以下查询将检索设备孪生的整个集：
+IoT 中心将设备孪生公开为名为 **设备**的文档集合。
+因此，以下查询将检索设备孪生的整个集：
 
         SELECT * FROM devices
 
 > [AZURE.NOTE]
-> [Azure IoT SDKs][lnk-hub-sdks] 支持将大量结果分页：
+> [Azure IoT SDK][lnk-hub-sdks] 支持将大量结果分页：
 >
 >
 
@@ -123,7 +128,7 @@ IoT 中心允许使用任意条件检索设备孪生筛选结果。例如，
 
 上述示例阐释了以下情景：3 个设备报告配置成功，2 个设备仍在应用配置，1 个设备报告错误。
 
-### C# 示例
+### <a name="c-example"></a>C# 示例
 查询功能由 [C# 服务 SDK][lnk-hub-sdks] 在 **RegistryManager** 类中公开。下面是一个简单的查询示例：
 
         var query = registryManager.CreateQuery("SELECT * FROM devices", 100);
@@ -136,10 +141,12 @@ IoT 中心允许使用任意条件检索设备孪生筛选结果。例如，
             }
         }
 
-请注意如何使用页面大小（最大 1000）实例化 **query** 对象，然后通过调用 **GetNextAsTwinAsync** 方法多次来检索多个页面。请注意，查询对象会公开多个 **Next\***，具体取决于查询所需的反序列化选项（如设备孪生或作业对象）或者使用投影时要用的普通 JSON。
+请注意如何使用页面大小（最大 1000）实例化 **query** 对象，然后通过调用 **GetNextAsTwinAsync** 方法多次来检索多个页面。
+请注意，查询对象会公开多个 **Next\***，具体取决于查询所需的反序列化选项（如设备孪生或作业对象）或者使用投影时要用的普通 JSON。
 
-### Node.js 示例
-查询功能由[适用于 Node.js 的 Azure IoT 服务 SDK][lnk-hub-sdks] 在 **Registry** 对象中公开。下面是一个简单的查询示例：
+### <a name="nodejs-example"></a>Node.js 示例
+查询功能由 [适用于 Node.js 的 Azure IoT 服务 SDK][lnk-hub-sdks] 在 **Registry** 对象中公开。
+下面是一个简单的查询示例：
 
         var query = registry.createQuery('SELECT * FROM devices', 100);
         var onResults = function(err, results) {
@@ -158,13 +165,20 @@ IoT 中心允许使用任意条件检索设备孪生筛选结果。例如，
         };
         query.nextAsTwin(onResults);
 
-请注意如何使用页面大小（最大 1000）实例化 **query** 对象，然后通过调用 **nextAsTwin** 方法多次来检索多个页面。请注意，查询对象会公开多个 **Next\***，具体取决于查询所需的反序列化选项（如设备孪生或作业对象）或者使用投影时要用的普通 JSON。
+请注意如何使用页面大小（最大 1000）实例化 **query** 对象，然后通过调用 **nextAsTwin** 方法多次来检索多个页面。
+请注意，查询对象会公开多个 **next\***，具体取决于查询所需的反序列化选项（如设备孪生或作业对象）或者使用投影时要用的普通 JSON。
 
-### 限制
+### <a name="limitations"></a>限制
+> [AZURE.IMPORTANT]
+> 关于设备孪生中的最新值，查询结果可能有几分钟的延迟。 如果按 ID 查询单个设备孪生，将始终优先使用检索设备孪生 API，它始终包含最新值并具有较高的限制。
+>
+>
+
 目前，仅支持在基元类型（无对象）之间进行比较，例如，仅在这些属性具有基元值时才支持 `... WHERE properties.desired.config = properties.reported.config`。
 
-## 作业查询入门
-使用[作业][lnk-jobs]可对一组设备执行操作。每个设备孪生包含名为**作业**的集合中该设备参与的作业的信息。从逻辑上讲，
+## <a name="get-started-with-jobs-queries"></a>作业查询入门
+[Jobs][lnk-jobs] 可对一组设备执行操作。 每个设备孪生包含名为 **作业**的集合中该设备参与的作业的信息。
+从逻辑上讲，
 
         {                                                                      
             "deviceId": "myDeviceId",                                            
@@ -205,7 +219,9 @@ IoT 中心允许使用任意条件检索设备孪生筛选结果。例如，
         SELECT * FROM devices.jobs
         WHERE devices.jobs.deviceId = 'myDeviceId'
 
-请注意此查询如何提供每个返回的作业的设备特定状态（可能还会提供直接方法响应）。还可针对 **devices.jobs** 集合中的所有对象属性，使用任意布尔条件进行筛选。例如，以下查询：
+请注意此查询如何提供每个返回的作业的设备特定状态（可能还会提供直接方法响应）。
+还可针对 **devices.jobs** 集合中的所有对象属性，使用任意布尔条件进行筛选。
+例如，以下查询：
 
         SELECT * FROM devices.jobs
         WHERE devices.jobs.deviceId = 'myDeviceId'
@@ -220,16 +236,16 @@ IoT 中心允许使用任意条件检索设备孪生筛选结果。例如，
         SELECT * FROM devices.jobs
         WHERE devices.jobs.jobId = 'myJobId'
 
-### 限制
+### <a name="limitations"></a>限制
 目前，对 **devices.jobs** 的查询不支持：
 
 * 投影，因此仅可使用 `SELECT *`。
 * 引用设备孪生和作业属性的条件（参见上一节）。
 * 执行聚合，例如 count、avg、group by。
 
-## 设备到云的消息路由查询表达式入门
+## <a name="get-started-with-device-to-cloud-message-routes-query-expressions"></a>设备到云的消息路由查询表达式入门
 
-可通过设备到云的路由配置 IoT 中心，根据按各消息计算的表达式将设备到云的消息分派给不同的终结点。
+可通过 [设备到云的路由][lnk-devguide-messaging-routes]配置 IoT 中心，根据按各消息计算的表达式将设备到云的消息分派给不同的终结点。
 
 在克隆和作业查询中，路由[条件][lnk-query-expressions]使用相同的 IoT 中心查询语言作为条件。假设以下 JSON 表示形式，根据消息属性评估路由条件：
 
@@ -251,7 +267,9 @@ IoT 中心允许使用任意条件检索设备孪生筛选结果。例如，
             "userProperty2": ""
         }
 
-消息系统属性以 `'$'` 符号作为前缀。始终可以通过属性名称访问用户属性。如果用户属性名恰好与系统属性同名（例如 `$to`），则将使用 `$to` 表达式检索用户属性。始终可以使用方括号 (`{}`) 访问系统属性：例如，可以使用表达式 `{$to}` 访问系统属性 `to`。括在括号中的属性名称始终检索相应的系统属性。
+消息系统属性以 `'$'` 符号作为前缀。
+用户属性始终使用其名称进行访问。 如果用户属性名恰好与系统属性（例如 `$to`）完全一致，则将使用 `$to` 表达式检索用户属性。
+始终可以使用括号 `{}` 访问系统属性：例如，可以使用表达式 `{$to}` 访问系统属性 `to`。 将属性名称括在括号中始终可检索相应的系统属性。
 
 请记住，属性名称不区分大小写。
 
@@ -274,15 +292,15 @@ IoT 中心允许使用任意条件检索设备孪生筛选结果。例如，
 
 请参阅[表达式和条件][lnk-query-expressions]部分，了解受支持的运算符和函数的完整列表。
 
-## IoT 中心查询基础知识
-每个 IoT 中心查询包括 SELECT 和 FROM 子句，以及可选的 WHERE 和 GROUP BY 子句。每个查询针对 JSON 文档的集合（例如，设备孪生）运行。FROM 子句指示要迭代的文档集合（**devices** 或 **devices.jobs**）。然后，应用 WHERE 子句中的筛选器。使用聚合时，根据 GROUP BY 子句中的指定将此步骤的结果分组；对于每个组，将根据 SELECT 子句中的指定生成一行。
+## <a name="basics-of-an-iot-hub-query"></a>IoT 中心查询基础知识
+每个 IoT 中心查询包括 SELECT 和 FROM 子句，以及可选的 WHERE 和 GROUP BY 子句。 每个查询针对 JSON 文档的集合（例如，设备孪生）运行。 FROM 子句指示要迭代的文档集合（**devices** 或 **devices.jobs**）。 然后，应用 WHERE 子句中的筛选器。 使用聚合时，根据 GROUP BY 子句中的指定将此步骤的结果分组；对于每个组，将根据 SELECT 子句中的指定生成一行。
 
         SELECT <select_list>
         FROM <from_specification>
         [WHERE <filter_condition>]
         [GROUP BY <group_specification>]
 
-## FROM 子句
+## <a name="from-clause"></a>FROM 子句
 **FROM <from\_specification>** 子句只能采用两个值：**FROM devices** - 查询设备孪生；**FROM devices.jobs** - 查询每个设备上的作业详细信息。
 
 ## <a name="where-clause"></a> WHERE 子句
@@ -290,8 +308,9 @@ IoT 中心允许使用任意条件检索设备孪生筛选结果。例如，
 
 [表达式和条件][lnk-query-expressions]部分中介绍了允许的条件。
 
-## SELECT 子句
-SELECT 子句 (**SELECT <select_list>**) 是必需的，用于指定要从查询中检索的值。它指定用于生成新 JSON 对象的 JSON 值。对于 FROM 集合中已筛选子集（且可选择性分组）的每个元素，投影阶段将生成一个新 JSON 对象，其由 SELECT 子句中指定的值构造而成。
+## <a name="select-clause"></a>SELECT 子句
+SELECT 子句 (**SELECT <select_list>**) 是必需的，用于指定要从查询中检索的值。 它指定用于生成新 JSON 对象的 JSON 值。
+对于 FROM 集合中已筛选子集（且可选择性分组）的每个元素，投影阶段将生成一个新 JSON 对象，其由 SELECT 子句中指定的值构造而成。
 
 SELECT 子句的语法如下：
 
@@ -313,11 +332,11 @@ SELECT 子句的语法如下：
             | min(<projection_element>)
             | max(<projection_element>)
 
-其中，**attribute\_name** 引用 FROM 集合中 JSON 文档的任一属性。在[设备孪生查询入门][lnk-query-getstarted]部分中可以找到 SELECT 子句的一些示例。
+其中，**attribute_name** 引用 FROM 集合中 JSON 文档的任一属性。 在[设备孪生查询入门][lnk-query-getstarted]部分可以找到 SELECT 子句的一些示例。
 
 目前，仅支持在针对设备孪生执行的聚合查询中使用除 **SELECT *** 以外的选择子句。
 
-## GROUP BY 子句
+## <a name="group-by-clause"></a>GROUP BY 子句
 **GROUP BY <group\_specification>** 子句是可选步骤，可在 WHERE 子句中指定的筛选器后和在 SELECT 中指定的投影前执行该子句。它根据属性值来分组文档。这些组用于生成 SELECT 子句中指定的聚合值。
 
 下面是使用 GROUP BY 的查询示例：
@@ -344,7 +363,7 @@ GROUP BY 的正式语法为：
 * 求值为 JSON 类型的实例（例如布尔值、数字、字符串、数组或对象），以及
 * 由设备 JSON 文档中的操作数据以及使用内置运算符和函数的常量定义。
 
-*条件*是求值为布尔值的表达式。除布尔值 **true** 以外的任何常量均被视为 **false**（包括 **null**、**undefined**、任何对象或数组实例、任何字符串，当然还有布尔值 **false**）。
+条件是求值为布尔值的表达式。 除布尔值 **true** 以外的任何常量均被视为 **false**（包括 **null**、**undefined**、任何对象或数组实例、任何字符串，当然还有布尔值 **false**）。
 
 表达式的语法为：
 
@@ -440,22 +459,22 @@ GROUP BY 的正式语法为：
 | ENDS\_WITH(x, y) | 返回一个布尔值，指示第一个字符串表达式是否以第二个字符串表达式结尾。 |
 | CONTAINS(x,y) | 返回一个布尔值，该值指示第一个字符串表达式是否包含第二个字符串表达式。 |
 
-## 后续步骤
-了解如何使用 [Azure IoT SDK][lnk-hub-sdks] 在应用中执行查询。
+## <a name="next-steps"></a>后续步骤
+了解如何使用 [Azure IoT SDK][lnk-hub-sdks]在应用中执行查询。
 
 [lnk-query-where]: /documentation/articles/iot-hub-devguide-query-language/#where-clause
 [lnk-query-expressions]: /documentation/articles/iot-hub-devguide-query-language/#expressions-and-conditions
-[lnk-query-getstarted]: /documentation/articles/iot-hub-devguide-query-language/#getting-started-with-device-twin-queries
+[lnk-query-getstarted]: /documentation/articles/iot-hub-devguide-query-language/#get-started-with-device-twin-queries
 
 [lnk-twins]: /documentation/articles/iot-hub-devguide-device-twins/
 [lnk-jobs]: /documentation/articles/iot-hub-devguide-jobs/
 [lnk-devguide-endpoints]: /documentation/articles/iot-hub-devguide-endpoints/
 [lnk-devguide-quotas]: /documentation/articles/iot-hub-devguide-quotas-throttling/
 [lnk-devguide-mqtt]: /documentation/articles/iot-hub-mqtt-support/
-[lnk-devguide-messaging-routes]: /documentation/articles/iot-hub-devguide-messaging/#device-to-cloud-configuration-options
+[lnk-devguide-messaging-routes]: /documentation/articles/iot-hub-devguide-messaging/#routing-rules
 [lnk-devguide-messaging-format]: /documentation/articles/iot-hub-devguide-messaging/#message-format
 
 [lnk-hub-sdks]: /documentation/articles/iot-hub-devguide-sdks/
 
-<!---HONumber=Mooncake_0306_2017-->
+
 <!--Update_Description:update wording and code-->

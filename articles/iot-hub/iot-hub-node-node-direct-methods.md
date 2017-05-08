@@ -14,12 +14,13 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="na"
-    ms.date="01/11/2017"
-    wacn.date="04/24/2017"
+    ms.date="04/05/2017"
+    wacn.date="05/08/2017"
     ms.author="nberdy"
-    ms.sourcegitcommit="a114d832e9c5320e9a109c9020fcaa2f2fdd43a9"
-    ms.openlocfilehash="f7ac52363ea34484fa8a148e6e0ff5041a871ec7"
-    ms.lasthandoff="04/14/2017" />
+    ms.custom="H1Hack27Feb2017"
+    ms.sourcegitcommit="2c4ee90387d280f15b2f2ed656f7d4862ad80901"
+    ms.openlocfilehash="b28f398b50145202513c2aa5189ce9fd75f698e5"
+    ms.lasthandoff="04/28/2017" />
 
 # <a name="use-direct-methods-on-your-iot-device-with-nodejs"></a>通过 Node.js 使用 IoT 设备上的直接方法
 [AZURE.INCLUDE [iot-hub-selector-c2d-methods](../../includes/iot-hub-selector-c2d-methods.md)]
@@ -46,22 +47,19 @@
 ## <a name="create-a-simulated-device-app"></a>创建模拟设备应用程序
 在本部分，用户需创建一个 Node.js 控制台应用，用于响应通过云调用的方法。
 
-1. 新建名为 **simulateddevice** 的空文件夹。在 **simulateddevice** 文件夹的命令提示符处，使用以下命令创建 package.json 文件。接受所有默认值：
-   
-    
+1. 新建名为 **simulateddevice**的空文件夹。 在命令提示符下使用以下命令，在 **simulateddevice** 文件夹中创建一个 package.json 文件。 接受所有默认值：
+
         npm init
-    
+
 2. 在 **simulateddevice** 文件夹的命令提示符处，运行下述命令以安装 **azure-iot-device** 设备 SDK 包和 **azure-iot-device-mqtt** 包：
-   
-    
+
         npm install azure-iot-device azure-iot-device-mqtt --save
 
 3. 在 **SimulatedDevice.js** 文件夹中，利用文本编辑器创建新的 **simulateddevice** 文件。
 4. 在 **SimulatedDevice.js** 文件的开头添加以下 `require` 语句：
-   
-    
+
         'use strict';
-       
+
         var Mqtt = require('azure-iot-device-mqtt').Mqtt;
         var DeviceClient = require('azure-iot-device').Client;
 
@@ -69,13 +67,12 @@
 
         var connectionString = '{device connection string}';
         var client = DeviceClient.fromConnectionString(connectionString, Mqtt);
-    
+
 6. 添加以下函数，实现设备上的方法：
-   
-    
+
         function onWriteLine(request, response) {
             console.log(request.payload);
-       
+
             response.send(200, 'Input was written to log.', function(err) {
                 if(err) {
                     console.error('An error ocurred when sending a method response:\n' + err.toString());
@@ -84,10 +81,9 @@
                 }
             });
         }
-    
+
 7. 打开与 IoT 中心的连接并开始初始化方法侦听器：
-   
-    
+
         client.open(function(err) {
             if (err) {
                 console.error('could not open IotHub client');
@@ -96,7 +92,7 @@
                 client.onDeviceMethod('writeLine', onWriteLine);
             }
         });
-    
+
 8. 保存并关闭 **SimulatedDevice.js** 文件。
 
 > [AZURE.NOTE]
@@ -107,45 +103,39 @@
 ## <a name="call-a-method-on-a-device"></a>调用设备上的方法
 在此部分中，会创建一个 Node.js 控制台应用，该应用在模拟设备应用上调用方法并随后显示响应。
 
-1. 新建名为 **callmethodondevice** 的空文件夹。在 **callmethodondevice** 文件夹的命令提示符处，使用以下命令创建 package.json 文件。接受所有默认值：
-   
-    
+1. 新建名为 **callmethodondevice** 的空文件夹。 在 **callmethodondevice** 文件夹的命令提示符处，使用以下命令创建 package.json 文件。 接受所有默认值：
+
         npm init
-    
+
 2. 在 **callmethodondevice** 文件夹的命令提示符处，运行以下命令以安装 **azure-iothub** 包：
-   
-    
+
         npm install azure-iothub --save
-    
+
 3. 使用文本编辑器，在 **callmethodondevice** 文件夹中创建 **CallMethodOnDevice.js** 文件。
 4. 在 **CallMethodOnDevice.js** 文件的开头添加以下 `require` 语句：
-   
-    
+
         'use strict';
-       
+
         var Client = require('azure-iothub').Client;
-    
+
 5. 添加以下变量声明，并将占位符值替换为中心的 IoT 中心连接字符串：
-   
-    
+
         var connectionString = '{iothub connection string}';
         var methodName = 'writeLine';
         var deviceId = 'myDeviceId';
-    
+
 6. 创建客户端，以便打开到 IoT 中心的连接。
-   
-    
+
         var client = Client.fromConnectionString(connectionString);
-    
+
 7. 添加以下函数，以便调用设备方法并将设备响应输出到控制台：
-   
-    
+
         var methodParams = {
             methodName: methodName,
-            payload: 'a line to be written',
+            payload: 'hello world',
             timeoutInSeconds: 30
         };
-       
+
         client.invokeDeviceMethod(deviceId, methodParams, function (err, result) {
             if (err) {
                 console.error('Failed to invoke method \'' + methodName + '\': ' + err.message);
@@ -154,31 +144,25 @@
                 console.log(JSON.stringify(result, null, 2));
             }
         });
-    
+
 8. 保存并关闭 **CallMethodOnDevice.js** 文件。
 
 ## <a name="run-the-apps"></a>运行应用
 现在，已准备就绪，可以运行应用。
 
 1. 在 **simulateddevice** 文件夹的命令提示符处运行以下命令，开始侦听从 IoT 中心发出的方法调用：
-   
-    
+
         node SimulatedDevice.js
-    
-   
-    ![][7]  
 
+    ![][7]
 2. 在 **callmethodondevice** 文件夹的命令提示符处运行以下命令，开始监视 IoT 中心：
-   
-    
-        node CallMethodOnDevice.js 
-    
-   
-    ![][8]  
 
+        node CallMethodOnDevice.js 
+
+    ![][8]
 3. 此时会看到设备通过输出消息对方法进行响应，而调用该方法的应用程序则会显示来自设备的响应：
-   
-    ![][9]  
+
+    ![][9]
 
 ## <a name="next-steps"></a>后续步骤
 
@@ -189,7 +173,7 @@
 * [IoT 中心入门]
 * [Schedule jobs on multiple devices（在多台设备上计划作业）][lnk-devguide-jobs]
 
-若要了解如何扩展 IoT 解决方案并在多个设备上计划方法调用，请参阅 [Schedule and broadcast jobs][lnk-tutorial-jobs]（计划和广播作业）教程。
+若要了解如何扩展 IoT 解决方案并在多个设备上计划方法调用，请参阅 [Schedule and broadcast jobs][lnk-tutorial-jobs] （计划和广播作业）教程。
 
 <!-- Images. -->
 [7]: ./media/iot-hub-node-node-direct-methods/run-simulated-device.png

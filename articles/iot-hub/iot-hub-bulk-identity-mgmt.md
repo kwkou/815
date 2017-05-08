@@ -14,12 +14,12 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="na"
-    ms.date="01/04/2017"
-    wacn.date="04/17/2017"
+    ms.date="04/06/2017"
+    wacn.date="05/08/2017"
     ms.author="dobett"
-    ms.sourcegitcommit="7cc8d7b9c616d399509cd9dbdd155b0e9a7987a8"
-    ms.openlocfilehash="00fbabc0cf4fbea683f3812414dc1fd95aafb002"
-    ms.lasthandoff="04/07/2017" />
+    ms.sourcegitcommit="2c4ee90387d280f15b2f2ed656f7d4862ad80901"
+    ms.openlocfilehash="c7fbb723183736f19183cd32d15e1f924b9e8e3e"
+    ms.lasthandoff="04/28/2017" />
 
 # <a name="manage-your-iot-hub-device-identities-in-bulk"></a>批量管理 IoT 中心设备标识
 每个 IoT 中心都有一个标识注册表，可用于在服务中创建每个设备的资源（例如包含即时云到设备消息的队列）。 标识注册表还可用于控制对面向设备的终结点的访问。 本文介绍如何从标识注册表批量导入和导出设备标识。
@@ -29,9 +29,10 @@
 **RegistryManager** 类包括使用**作业**框架的 **ExportDevicesAsync** 和 **ImportDevicesAsync** 方法。 这些方法可让你导出、导入和同步整个 IoT 中心标识注册表。
 
 ## <a name="what-are-jobs"></a>什么是作业？
-标识注册表操作使用 **作业** 系统的前提是操作符合以下条件：
 
-* 相较标准运行时操作，其执行时间可能很长，或
+当操作出现以下情况时，标识注册表操作使用“作业”系统：
+
+* 相较标准运行时操作，其执行时间可能很长。
 * 向用户返回大量数据。
 
 针对这些情况（而不是针对在操作结果处等待或阻塞的单个 API 调用），操作将以异步方式创建该 IoT 中心的**作业**。 然后，操作立即返回 **JobProperties** 对象。
@@ -44,7 +45,8 @@
 > [AZURE.NOTE]
 > 若要在 C# 代码中使用 **RegistryManager** 类，请将 **Microsoft.Azure.Devices** NuGet 包添加到项目。 **RegistryManager** 类位于 **Microsoft.Azure.Devices** 命名空间。
 
-然后，你可以通过使用 **RegistryManager** 类，查询使用返回的 **JobProperties** 元数据的**作业**的状态。
+
+可使用 **RegistryManager** 类，查询使用返回的 **JobProperties** 元数据的**作业**的状态。
 
 以下 C# 代码段演示如何每隔五秒轮询一次以查看作业是否已完成执行：
 
@@ -65,7 +67,7 @@
 
 ## <a name="export-devices"></a>导出设备
 
-使用 **ExportDevicesAsync** 方法将整个 IoT 中心标识注册表导出到使用[共享访问签名](https://msdn.microsoft.com/zh-cn/library/ee395415.aspx)的 [Azure 存储](/documentation/services/storage/) Blob 容器。
+使用 **ExportDevicesAsync** 方法，将整个 IoT 中心标识注册表导出到使用[共享访问签名](/documentation/articles/storage-security-guide/#data-plane-security)的 [Azure 存储](/documentation/services/storage/) Blob 容器。
 
 此方法可让你在所控制的 Blob 容器中创建可靠的设备信息备份。
 
@@ -166,7 +168,7 @@
 可以在每个设备的导入序列化数据中使用可选 **importMode** 属性来控制每个设备的导入过程。 **importMode** 属性具有以下选项：
 
 | importMode |  说明 |
-| -------- | ----------- |
+| --- | --- |
 | **createOrUpdate** | 如果不存在具有指定 **ID**的设备，则表示是新注册的设备。 <br/>如果设备已存在，则以所提供的输入数据覆盖现有信息，而不管 **ETag** 值为何。 |
 | **create** | 如果不存在具有指定 **ID**的设备，则表示是新注册的设备。 <br/>如果设备已存在，则在日志文件中写入错误。 |
 | **update** | 如果具有指定 **id** 的设备已存在，则使用提供的输入数据覆盖现有信息，与 **ETag** 值无关。 <br/>如果设备不存在，则在日志文件中写入错误。 |
@@ -295,7 +297,7 @@
 		}
 
 
-## <a name="getting-the-container-sas-uri"></a>获取容器 SAS URI
+## <a name="get-the-container-sas-uri"></a>获取容器 SAS URI
 
 下面的代码示例演示如何使用 Blob 容器的读取、写入和删除权限生成 [SAS URI](/documentation/articles/storage-dotnet-shared-access-signature-part-2/)：
 
