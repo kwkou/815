@@ -1,5 +1,5 @@
 <properties
-    pageTitle="使用 REST 按需传送内容入门 | Azure"
+    pageTitle="开始使用 REST 按需传送内容 | Azure"
     description="本教程介绍了使用 Azure 媒体服务和 REST API 实现点播内容传送应用程序的步骤。"
     services="media-services"
     documentationcenter=""
@@ -15,11 +15,11 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="03/01/2017"
-    wacn.date="04/24/2017"
+    wacn.date="05/08/2017"
     ms.author="juliako"
-    ms.sourcegitcommit="a114d832e9c5320e9a109c9020fcaa2f2fdd43a9"
-    ms.openlocfilehash="74489e62445dacc8e689462b39b63558c6a8b492"
-    ms.lasthandoff="04/14/2017" />
+    ms.sourcegitcommit="2c4ee90387d280f15b2f2ed656f7d4862ad80901"
+    ms.openlocfilehash="a3f24c90912ce9a06ae7a13a7691d17c6cda193e"
+    ms.lasthandoff="04/28/2017" />
 
 # <a name="get-started-with-delivering-content-on-demand-using-rest"></a>开始使用 REST 传送点播内容
 [AZURE.INCLUDE [media-services-selector-get-started](../../includes/media-services-selector-get-started.md)]
@@ -51,35 +51,29 @@
 5. 使用 REST API 发布资产并获取流式处理和渐进式下载 URL。
 6. 播放内容。
 
-有关此主题中使用的 AMS REST 实体的详细信息，请参阅 [Azure 媒体服务 REST API 参考](https://docs.microsoft.com/en-us/rest/api/media/mediaservice)。另请参阅 [Azure 媒体服务概念](/documentation/articles/media-services-concepts/)。
+>[AZURE.NOTE]
+>不同 AMS 策略的策略限制为 1,000,000 个（例如，对于定位器策略或 ContentKeyAuthorizationPolicy）。 如果始终使用相同的日期/访问权限，则应使用相同的策略 ID，例如，用于要长期就地保留的定位符的策略（非上传策略）。 有关详细信息，请参阅[此](/documentation/articles/media-services-dotnet-manage-entities/#limit-access-policies)主题。
 
-## <a id="create_ams"></a>使用门户创建媒体服务帐户
 
-1. 在 [Azure 经典管理门户][]中，依次单击“新建”、“媒体服务”和“快速创建”。
-   
-	![媒体服务快速创建](./media/media-services-rest-get-started/wams-QuickCreate.png)
+若要深入了解本主题中使用的 AMS REST 实体，请参阅 [Azure 媒体服务 REST API 参考](https://docs.microsoft.com/zh-cn/rest/api/media/services/azure-media-services-rest-api-reference)。 也可参阅 [Azure 媒体服务概念](/documentation/articles/media-services-concepts/)。
 
-2. 在“名称”中，输入新帐户的名称。媒体服务帐户名称由小写字母或数字构成（不含空格），长度为 3 - 24 个字符。
+## <a name="start-streaming-endpoints-using-the-azure-classic-management-portal"></a>使用 Azure 经典管理门户启动流式处理终结点
 
-3. 在“区域”中，选择将用于存储媒体服务帐户的元数据记录的地理区域。下拉列表中仅显示可用的媒体服务区域。
+使用 Azure 媒体服务时，最常见的场景之一是通过自适应比特率流式处理来传送视频。 媒体服务提供动态打包，可按媒体服务支持的流格式（MPEG DASH、HLS、平滑流式处理）及时传送自适应比特率 MP4 编码内容，而无需存储上述各种流格式的预打包版本。
 
-4. 在“存储帐户”中，选择一个存储帐户以便为媒体服务帐户中的媒体内容提供 Blob 存储。你可以选择位于媒体服务帐户所在的地理区域内的现有存储帐户，也可以创建一个新的存储帐户。将在同一区域内创建一个新的存储帐户。
+>[AZURE.NOTE]
+>创建 AMS 帐户后，会将一个处于“已停止”状态的**默认**流式处理终结点添加到帐户。 若要开始流式传输内容并利用动态打包和动态加密，要从中流式传输内容的流式处理终结点必须处于“正在运行”状态。
 
-5. 如果你创建了一个新的存储帐户，请在“新建存储帐户名称”中输入该存储帐户的名称。适用于存储帐户名的规则对媒体服务帐户同样适用。
+若要启动流式处理终结点，请执行以下操作：
 
-6. 单击窗体底部的“快速创建”。
+1. 在 [Azure 经典管理门户](https://manage.windowsazure.cn/)登录。
+2. 单击“流式处理终结点”。 
+3. 单击默认的流式处理终结点。 
 
-	可以在窗口底部的消息区域中监视过程的状态。
+    此时会显示“默认流式处理终结点详细信息”窗口。
 
-	成功创建帐户后，状态将更改为“活动”。
-	
-	在页面底部，将出现“管理密钥”按钮。当你单击此按钮时，将会显示一个对话框，其中包含媒体服务帐户名以及主密钥和辅助密钥。你需要有帐户名和主密钥信息，才能以编程方式访问媒体服务帐户。
-
-	
-	![“媒体服务”页](./media/media-services-rest-get-started/wams-mediaservices-page.png)
-
-	当你双击帐户名时，默认情况下将显示“快速启动”页。可从此页执行某些管理任务，而这些管理任务也可从该门户的其他页执行。例如，你可以从此页上传视频文件，也可以从“内容”页执行此操作。
-
+4. 单击“启动”图标。
+5. 单击“保存”按钮保存更改。
 
 ## <a id="connect"></a>使用 REST API 连接到媒体服务帐户
 访问 Azure 媒体服务时需要以下两项内容：由 Azure 访问控制服务 (ACS) 提供的访问令牌和媒体服务本身的 URI。 在创建这些请求时，可以使用任何想要的方法，前提是在调用媒体服务时指定了正确的标头值，并且正确地传入了访问令牌。
@@ -151,7 +145,7 @@
 
 确保监视访问令牌的“expires_in”值，并在必要时使用新令牌更新你的 REST API 调用。
 
-###<a name="connecting-to-the-media-services-uri"></a>连接到媒体服务 URI
+### <a name="connecting-to-the-media-services-uri"></a>连接到媒体服务 URI
 
 
 用于上传和下载资产文件的根 URI 为 https://yourstorageaccount.blob.core.chinacloudapi.cn/ ，其中的存储帐户名为你在媒体服务帐户设置期间使用的同一帐户名。
@@ -1011,4 +1005,3 @@ MPEG DASH 的流 URL 采用以下格式：
 若要流式处理视频，请使用 [Azure 媒体服务播放器](http://amsplayer.azurewebsites.net/azuremediaplayer.html)。
 
 若要测试渐进式下载，请将 URL 粘贴到浏览器（例如 IE、Chrome、Safari）中。
-<!--Update_Description: wording update;add anchors to H2 titles-->
