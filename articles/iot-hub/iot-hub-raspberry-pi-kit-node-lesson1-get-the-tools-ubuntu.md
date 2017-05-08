@@ -14,8 +14,8 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="na"
-    ms.date="11/28/2016"
-    wacn.date="01/13/2017"
+    ms.date: 3/21/2017
+    wacn.date="05/08/2017"
     ms.author="xshi" />  
 
 # 获取工具 (Ubuntu 16.04)
