@@ -10,13 +10,18 @@
 
 <tags
 	ms.service="open-source-mongodb"
-	wacn.date="08/10/2016"/>
+	wacn.date="05/09/2017"/>
 
 #在 Azure 虚拟机上快速搭建 MongoDB 集群
 
 [MongoDB](https://www.mongodb.org/) 是目前在 NoSQL 市场上非常受欢迎的一个数据库，本文介绍如何使用 Azure PowerShell 和 Azure CLI 在 Azure 虚拟机上搭建单节点 MongoDB（测试使用）和包含主从复制以及分片集群的多节点 MongoDB（生产环境使用）。
 
 >[AZURE.NOTE]目前脚本仅支持 CentOS (6.5, 6.6, 6.7, 7.0, 7.1, 7.2)。
+
+##说明
+
+* 目前脚本仅支持 CentOS(6.5, 6.6, 6.7, 7.0, 7.1, 7.2)。
+* 搭建包含主从复制以及分片集群的多节点 MongoDB（生产环境使用）需要多台机器，需要至少 6 核以上资源。
 
 
 ##准备步骤 
@@ -63,10 +68,10 @@ PowerShell脚本运行注意事项
 
 创建过程大概需要6分钟，运行成功后会出现如下提示：    
 
-		Deploy MongoDB on VM mongodb11 (CentOS 6.5) in China North successfully.
-		To connect using the mongo shell:
-		% mongo mongodbserver.chinanorth.cloudapp.chinacloudapi.cn:27017/test
-  
+    Deploy MongoDB on VM mongodb11 (CentOS 6.5) in China East successfully.
+    To connect using the mongo shell:
+    % mongo mongodbserver.chinaeast.cloudapp.chinacloudapi.cn:27017/test
+
 
 **Azure CLI 方式**   
 你需要在安装好 Azure CLI 的机器上，运行如下命令下载 azuredeploy.parameters.json 参数配置文件：  
@@ -77,17 +82,36 @@ PowerShell脚本运行注意事项
 
 		vi azuredeploy.parameters.json 
 
-然后运行如下命令即可安装 CentOS 虚拟机和单节点 MongoDB，创建过程大概需要6分钟：  
+然后运行如下命令即可安装 CentOS 虚拟机和单节点 MongoDB，创建过程大概需要 6 分钟：  
 
 		$TemplateUri="http://msmirrors.blob.core.chinacloudapi.cn/mongodb/mongodb-single-node/azuredeploy.json"
 		azure group deployment create rg1 DeployMongoDB --template-uri $TemplateUri –e azuredeploy.parameters.json
  
 
-按照上述任意一种方式创建完 MongoDB 后，即可使用如下命令连接 MongoDB:  
+按照上述任意一种方式创建完 MongoDB后，可先使用如下命令通过 ssh 连接 vm:
   
-		mongo mongodbserver.chinanorth.cloudapp.chinacloudapi.cn:27017/test 
+		ssh mongodbserver.chinaeast.cloudapp.chinacloudapi.cn
 
-你也可以直接登录 MongoDB 服务器进行其它操作，更多操作请参考 [MongoDB 官方帮助文档](https://docs.mongodb.com/manual/mongo/)。  
+详细连接方式请参考 [Window 中使用 ssh 密钥，Linux/Mac 中使用 ssh 密钥](/documentation/articles/virtual-machines-linux-mac-create-ssh-keys/)。
+
+输入之前设定的用户名和密码登录，然后运行 mongo 命令直接连接上本地 mongodb 服务器：
+
+    mongo mongodbserver.chinaeast.cloudapp.chinacloudapi.cn:27017/test
+
+连接成功后会出现以下提示：
+
+        MongoDB shell version：3.2.12
+	Connecting to ：mongodbserver.chinaeast.cloudapp.chinacloudapi.cn/27017/test
+	Welcome to the MongoDB shell.
+
+成功连接本地 mongodb 服务器后，可使用 mongo shell 语言进行数据库相关操作，例如：
+
+	db.foo.insert( { a : 27018 } )  
+        db.foo.find() 
+	show collections
+
+更多操作请参考 [MongoDB 官方帮助文档](https://docs.mongodb.com/manual/mongo/)。
+
 ###2.	在Azure虚拟机上搭建包含主从复制节点的 MongoDB    
 默认情况下，以下脚本将创建3台 CentOS 虚机，组成一个 MongoDB 复制集，该复制集将包含一个 Pirmary 节点和2个 Secondary 节点，架构如下图所示：  
 
@@ -103,13 +127,14 @@ PowerShell脚本运行注意事项
     
 创建过程大概需要10分钟，运行成功后会出现如下提示：   
 
-	Deploy MongoDB Replica Set successfully.
-	To connect primary node using the mongo shell:
-	% mongo mongoreplicaset.chinanorth.cloudapp.chinacloudapi.cn:27017
-	To connect secondary node0 using the mongo shell:
-	% mongo mongoreplicasetsecondary0.chinanorth.cloudapp.chinacloudapi.cn:27017
-	To connect secondary node1 using the mongo shell:
-	% mongo mongoreplicasetsecondary1.chinanorth.cloudapp.chinacloudapi.cn:27017
+    Deploy MongoDB Replica Set successfully.
+    To connect primary node using the mongo shell:
+    % mongo mongoreplicaset.chinaeast.cloudapp.chinacloudapi.cn:27017
+    To connect secondary node0 using the mongo shell:
+    % mongo mongoreplicasetsecondary0.chinaeast.cloudapp.chinacloudapi.cn:27017
+    To connect secondary node1 using the mongo shell:
+    % mongo mongoreplicasetsecondary1.chinaeast.cloudapp.chinacloudapi.cn:27017
+
   
 **Azure CLI 方式** 
 
@@ -130,7 +155,7 @@ PowerShell脚本运行注意事项
 
 按照上述任意一种方式创建完 MongoDB 后，即可使用如下命令连接 MongoDB 主服务器: 
  
-		mongo mongodbserver.chinanorth.cloudapp.chinacloudapi.cn:27017/test 
+		mongo mongodbserver.chinaeast.cloudapp.chinacloudapi.cn:27017/test 
   
 你也可以直接登录 MongoDB 服务器查看状态，运行如下命令：  
 
@@ -230,11 +255,11 @@ PowerShell脚本运行注意事项
 
 按照上述任意一种方式创建完 MongoDB 后，即可使用如下命令连接 MongoDB 主服务器:   
 
-		mongo mongodbserver.chinanorth.cloudapp.chinacloudapi.cn:27017/test   
+		mongo mongodbserver.chinaeast.cloudapp.chinacloudapi.cn:27017/test   
 
 你也可以直接登录 MongoDB 服务器查看状态，运行如下命令：    
 
-		$mongo -u mongoadmin -p “YOUR-PASSWORD”  --eval 'db.runCommand({listshards:1})'
+		$mongo -u mongoadmin -p “YOUR-PASSWORD” admin --eval 'db.runCommand({listshards:1})'
 		MongoDB shell version: 3.2.6
 		connecting to: admin
 		{

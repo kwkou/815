@@ -10,7 +10,7 @@
 <tags
 	ms.service="open-source-website"
 	ms.date=""
-	wacn.date="06/14/2016"/>
+	wacn.date="05/09/2017"/>
 
 #使用 Zabbix 监控 MySQL
 
@@ -58,7 +58,9 @@
 
     执行 ‘show master status’结果类似下图。我们之后会用到 ‘File’ 和 ‘Position’ 的信息
     
-  ![](./media/open-source-azure-virtual-machines-linux-configure-zabbix-3/1.png)
+    ![](./media/open-source-azure-virtual-machines-linux-configure-zabbix-3/1.png)
+
+    注意：按以上步骤首次安装 mariadb，root 用户密码默认为空，可在安装完成后运行 [MYSQL 安全配置向导](https://mariadb.com/kb/en/mariadb/mysql_secure_installation/)进行包括 root 用户密码在内的一系列初始设置。
  
 10.	去到 mysql 从服务器，执行
 
@@ -74,7 +76,7 @@
 
     show slave status\G 会显示主从复制状态，结果类似下图
 
-  ![](./media/open-source-azure-virtual-machines-linux-configure-zabbix-3/2.png)
+    ![](./media/open-source-azure-virtual-machines-linux-configure-zabbix-3/2.png)
  
     我们检查 “Slave_IO_Running” 和“Slave_SQL_Running”, 如果都是 “Yes”, 通常意味着主从复制正常工作
 
@@ -93,7 +95,7 @@
 
     如果结果类似下图，表明数据同步正常
     
-  ![](./media/open-source-azure-virtual-machines-linux-configure-zabbix-3/3.png)
+    ![](./media/open-source-azure-virtual-machines-linux-configure-zabbix-3/3.png)
  
 
 我们现在可以继续下一步了: 配置 zabbix ，使用 zabbix mysql 模板监控 mysql 状态。步骤如下
@@ -320,15 +322,15 @@
 
     如果出现下面的问题
     
-  ![](./media/open-source-azure-virtual-machines-linux-configure-zabbix-3/4.png)
+    ![](./media/open-source-azure-virtual-machines-linux-configure-zabbix-3/4.png)
  
     在导入时不勾选 “Template Screens” ，如下图。然后点“import”
     
-  ![](./media/open-source-azure-virtual-machines-linux-configure-zabbix-3/5.png)
+    ![](./media/open-source-azure-virtual-machines-linux-configure-zabbix-3/5.png)
  
     当关联模板到mysql 主服务器时，选择如下
     
-  ![](./media/open-source-azure-virtual-machines-linux-configure-zabbix-3/6.png)
+    ![](./media/open-source-azure-virtual-machines-linux-configure-zabbix-3/6.png)
  
 8.	去到 mysql 主服务器，执行如下
 
@@ -336,17 +338,14 @@
 
 9.	现在您可以检查 mysql 状态了。打开 http://zabbix server ip/zabbix, 登录, 点击 “Monitoring” -- > “Graphs” -- > 选择 mysql 主服务器和一个想要查看的图形，比如 “MySQL Connections/Threads”
  
-  ![](./media/open-source-azure-virtual-machines-linux-configure-zabbix-3/7.png)
+    ![](./media/open-source-azure-virtual-machines-linux-configure-zabbix-3/7.png)
 
 
 现在设置主从复制监控. 步骤如下:
 
 1.	在 mysql 从服务器上执行如下命令, 记住用 mysql 主服务器的真实 IP
 
-    $ mysql -uroot -p<password>
-    grant replication client on *.* to 'zabbix'@'mysql master ip' identified by 'zabbix';
-    flush privileges;
-    exit
+     	$ mysql -uroot -p grant replication client on * .* to ‘zabbix’@‘mysql master ip’ identified by ‘zabbix’; flush privileges; exit
 
 2.	去到 mysql 主服务器，创建文件 /usr/local/zabbix/bin/check_mysql_replication.sh, 内容如下。记住用真实的从服务器的IP替代 mysqlslaveip
 
@@ -368,30 +367,30 @@
 
 6.	打开网址 http://zabbix server ip/zabbix, 登录，为 mysql 主服务器添加监控项。点击 “Configuration” -- > “Hosts” -- > 点击mysql主服务器的’items’
 
-  ![](./media/open-source-azure-virtual-machines-linux-configure-zabbix-3/8.png)
+    ![](./media/open-source-azure-virtual-machines-linux-configure-zabbix-3/8.png)
  
 7.	点击 ‘Create item’ , 定义名字, 设置key为 ‘mysql.replication’, 点击“Save”
 
-  ![](./media/open-source-azure-virtual-machines-linux-configure-zabbix-3/9.png)
+    ![](./media/open-source-azure-virtual-machines-linux-configure-zabbix-3/9.png)
  
 8.	创建触发器. 定义触发器名, 选择 ‘check_mysql_replication’ 项目
 
-  ![](./media/open-source-azure-virtual-machines-linux-configure-zabbix-3/10.png)
+    ![](./media/open-source-azure-virtual-machines-linux-configure-zabbix-3/10.png)
  
 9.	设置表达式如下，然后点击 “Insert”
 
-  ![](./media/open-source-azure-virtual-machines-linux-configure-zabbix-3/11.png)
+    ![](./media/open-source-azure-virtual-machines-linux-configure-zabbix-3/11.png)
  
 10.	设置级别，然后点击 “Save”
 
-  ![](./media/open-source-azure-virtual-machines-linux-configure-zabbix-3/12.png)
+    ![](./media/open-source-azure-virtual-machines-linux-configure-zabbix-3/12.png)
  
 11.	验证。 在mysql从服务器上，stop slave, 然后看 zabbix 是否监控到了。可以看到确实监控到。
 
-  ![](./media/open-source-azure-virtual-machines-linux-configure-zabbix-3/13.png)
+    ![](./media/open-source-azure-virtual-machines-linux-configure-zabbix-3/13.png)
  
 12.	检查您的邮箱。收到邮件内容类似下图
 
-  ![](./media/open-source-azure-virtual-machines-linux-configure-zabbix-3/14.png)
+    ![](./media/open-source-azure-virtual-machines-linux-configure-zabbix-3/14.png)
  
 

@@ -10,11 +10,11 @@
 <tags
 	ms.service="open-source-website"
 	ms.date=""
-	wacn.date="06/14/2016"/>
+	wacn.date="05/09/2017"/>
  
 #使用 Zabbix 监控 Nginx
 
-1.	Nginx server 必须安装 zabbix agent 软件包，以及打开10050,10051和它的服务端口，比如80. 然后启动 zabbix agent 进程，添加到监控列表。
+1.	Nginx server 必须安装 zabbix agent 软件包，以及打开10050,10051和它的服务端口，比如80. 然后启动 zabbix agent 进程，添加到监控列表。详细操作流程请参照 [zabbix agent 安装指南](/documentation/articles/open-source-azure-virtual-machines-linux-configure-zabbix-1#install-zabbix-agent)。
 
 2.	查看 nginx server 是否安装了 http_stub_status 模块. 使用 nginx -V 命令检查. 如果没有，重新编译。下面是一个简单示例 (CentOS 7 为例)
 
@@ -60,7 +60,7 @@
     
 7.	检查 nginx 连接状态. 打开 http://nginx server ip/nginx_status
 
-  ![](./media/open-source-azure-virtual-machines-linux-configure-zabbix-2/31.png)
+    ![](./media/open-source-azure-virtual-machines-linux-configure-zabbix-2/31.png)
  
 8.	Zabbix agent 设置。创建目录
 
@@ -135,27 +135,27 @@
 
 14.	点击“Configuration” -- > “Templates” -- > “Import”
  
-  ![](./media/open-source-azure-virtual-machines-linux-configure-zabbix-2/32.png)
+    ![](./media/open-source-azure-virtual-machines-linux-configure-zabbix-2/32.png)
 
 15.	点击 “Browse” -- >选择模板文件, 这里我们选择下载下来的 “nginx_status 2.0.xml”, 点击 “Import”
 
-  ![](./media/open-source-azure-virtual-machines-linux-configure-zabbix-2/33.png)
+    ![](./media/open-source-azure-virtual-machines-linux-configure-zabbix-2/33.png)
  
 16.	点击 ‘Configuration’ -- > ‘Hosts’ -- > 选择 nginx server
  
-  ![](./media/open-source-azure-virtual-machines-linux-configure-zabbix-2/34.png)
+    ![](./media/open-source-azure-virtual-machines-linux-configure-zabbix-2/34.png)
 
 17.	点击 “Templates” -- > “Select” -- > 选择 “Nginx Status” 模板 , 点击“Select”, 然后点击 “Add” -- > “Save”
 
-  ![](./media/open-source-azure-virtual-machines-linux-configure-zabbix-2/35.png)
+    ![](./media/open-source-azure-virtual-machines-linux-configure-zabbix-2/35.png)
  
 18.	然后我们发现 nginx server 的 nginx 状态已经被监控。去到 “Monitoring” -- > “Graphs” -- > 选择 nginx server, 选择“Nginx Socket Status” 图, 会看到类似下图
 
-  ![](./media/open-source-azure-virtual-machines-linux-configure-zabbix-2/36.png)
+    ![](./media/open-source-azure-virtual-machines-linux-configure-zabbix-2/36.png)
  
 19.	您也可以选择 “Nginx Clients Status” 图。
 
-  ![](./media/open-source-azure-virtual-machines-linux-configure-zabbix-2/37.png)
+    ![](./media/open-source-azure-virtual-machines-linux-configure-zabbix-2/37.png)
  
 
 

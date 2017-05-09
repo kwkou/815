@@ -10,7 +10,7 @@
 <tags
    ms.service="open-source-website"  
    ms.date=""
-   wacn.date="08/10/2016"/>
+   wacn.date="05/09/2017"/>
 
 
 # 在 Azure Linux 虚拟机上手动安装配置 Zabbix 监控服务
@@ -48,8 +48,10 @@ Zabbix 的四种监控方式：Agent, SNMP, JMX, IPMI
 
 1. 关闭 selinux
 
-        $sudo setenforce 0
+ 	$sudo setenforce 0
         $sudo sed -i 's/^SELINUX=.*/SELINUX=disabled/' /etc/sysconfig/selinux
+ 	$sudo reboot
+
         
 2. 关闭 firewalld 和 iptables
 
@@ -236,14 +238,10 @@ Zabbix 的四种监控方式：Agent, SNMP, JMX, IPMI
         LogFile=/var/log/zabbix_agentd.log
         Hostname=zabbix agent VM hostname           #这里是指 zabbix agent 所在虚拟机主机名
 
-7.	编辑 /usr/local/zabbix/etc/zabbix_agent.conf, 修改下列项
-
-        Server=zabbix server ip                        #这里是指真实的 zabbix server 的 IP
-    
-8.	创建日志文件
-    
-        $ sudo touch /var/log/zabbix_agentd.log
+7.	创建日志文件
+ 	$ sudo touch /var/log/zabbix_agentd.log
         $ sudo chown zabbix:zabbix /var/log/zabbix_agentd.log
+
     
 9.	启动进程
     
@@ -290,14 +288,10 @@ Zabbix 的四种监控方式：Agent, SNMP, JMX, IPMI
         LogFile=/var/log/zabbix_agentd.log
         Hostname=zabbix agent VM hostname            #这里指 zabbix agent 所在虚拟机主机名
     
-7.	编辑 /usr/local/zabbix/etc/zabbix_agent.conf, 修改以下行
-
-        Server=zabbix server ip                        #这里是指真实的 zabbix server 的 IP
-    
-8.	创建日志文件
-    
-        $ sudo touch /var/log/zabbix_agentd.log
+7.	创建日志文件
+ 	$ sudo touch /var/log/zabbix_agentd.log
         $ sudo chown zabbix:zabbix /var/log/zabbix_agentd.log
+
     
 9.	编辑 /etc/rc.local, 添加下行
 
@@ -344,14 +338,10 @@ Zabbix 的四种监控方式：Agent, SNMP, JMX, IPMI
         LogFile=/var/log/zabbix_agentd.log
         Hostname=zabbix agent VM hostname            #这里指 zabbix agent 所在虚拟机主机名
     
-7.	编辑 /usr/local/zabbix/etc/zabbix_agent.conf, 修改以下行
-
-        Server=zabbix server ip                        #这里是指真实的 zabbix server 的 IP
-    
-8.	创建日志文件
-    
-        $ sudo touch /var/log/zabbix_agentd.log
+7.	创建日志文件
+ 	$ sudo touch /var/log/zabbix_agentd.log
         $ sudo chown zabbix:zabbix /var/log/zabbix_agentd.log
+
     
 9.	启动进程
     
