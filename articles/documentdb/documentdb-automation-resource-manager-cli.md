@@ -1,5 +1,5 @@
 <properties
-    pageTitle="DocumentDB 自动化 - Azure CLI 2.0 | Azure"
+    pageTitle="DocumentDB 自动化 - Azure CLI 2.0 | Microsoft 文档"
     description="使用 Azure CLI 2.0 管理 DocumentDB 数据库帐户。 DocumentDB 是用于 JSON 数据的云端 NoSQL 数据库。"
     services="documentdb"
     author="dmakwana"
@@ -8,20 +8,19 @@
     tags="azure-resource-manager"
     documentationcenter=""
     translationtype="Human Translation" />
-
 <tags
     ms.assetid="6158c27f-6b9a-404e-a234-b5d48c4a5b29"
     ms.service="documentdb"
     ms.workload="data-services"
     ms.tgt_pltfrm="na"
-    ms.devlang="na"
+    ms.devlang="azurecli"
     ms.topic="article"
-    ms.date="02/17/2017"
-    wacn.date="04/17/2017"
+    ms.date="04/04/2017"
+    wacn.date="05/08/2017"
     ms.author="dimakwan"
-    ms.sourcegitcommit="7cc8d7b9c616d399509cd9dbdd155b0e9a7987a8"
-    ms.openlocfilehash="03d9dcb2eb9ba2a60bde7c1cfb403a82c39e8619"
-    ms.lasthandoff="04/07/2017" />
+    ms.sourcegitcommit="2c4ee90387d280f15b2f2ed656f7d4862ad80901"
+    ms.openlocfilehash="2ec439e7c6790a3830a8c7303cde5013196b2f94"
+    ms.lasthandoff="04/28/2017" />
 
 # <a name="automate-azure-documentdb-account-management-using-azure-cli-20"></a>使用 Azure CLI 2.0 自动管理 Azure DocumentDB 帐户
 > [AZURE.SELECTOR]
@@ -91,6 +90,7 @@
 
 ### <a name="notes"></a>说明
 - 位置必须是已正式推出 DocumentDB 的区域。 [Azure 区域页面](https://azure.microsoft.com/regions/#services)提供当前的区域列表。
+- 若要启用门户访问，请在 ip-range-filter 中包含你所在区域的 Azure 门户预览的 IP 地址（按照[配置 IP 访问控制策略](/documentation/articles/documentdb-firewall-support/#configure-ip-policy/)中的指定）。
 
 ## <a id="update-documentdb-account-cli"></a> 更新 DocumentDB 数据库帐户
 
@@ -171,6 +171,18 @@
 
     az documentdb list-keys -g rg-test -n docdb-test
 
+## <a id="list-connection-strings-cli"></a> 列出连接字符串
+
+对于 MongoDB 帐户，可以使用以下命令检索将 MongoDB 应用连接到数据库帐户的连接字符串。
+
+    Arguments
+        --name -n           [Required]: Name of the DocumentDB database account.
+        --resource-group -g [Required]: Name of the resource group.
+
+示例：
+
+    az documentdb list-connection-strings -g rg-test -n docdb-test
+
 ## <a id="regenerate-account-key-cli"></a> 重新生成帐户密钥
 
 你应定期将访问密钥更改为你的 DocumentDB 帐户，使你的连接更安全。 分配了两个访问密钥，你可以使用一个访问密钥保持与 DocumentDB 帐户的连接，同时，你可以重新生成另一个访问密钥。
@@ -187,7 +199,7 @@
 
 ## <a id="modify-failover-priority-cli"></a> 修改 DocumentDB 数据库帐户的故障转移优先级
 
-对于多区域数据库帐户，可以更改 DocumentDB 数据库帐户所在的各个区域的故障转移优先级。 若要深入了解 DocumentDB 数据库帐户中的故障转移，请参阅 [使用 DocumentDB 全局分配数据][distribute-data-globally]。
+对于多区域数据库帐户，可以更改 DocumentDB 数据库帐户所在的各个区域的故障转移优先级。 若要深入了解 DocumentDB 数据库帐户中的故障转移，请参阅[使用 DocumentDB 全局分配数据](/documentation/articles/documentdb-distribute-data-globally/)。
 
     Arguments
         --name -n           [Required]: Name of the DocumentDB database account.
@@ -208,11 +220,13 @@
 
 创建数据库后，必须向数据库[添加一个或多个集合](/documentation/articles/documentdb-create-collection/)，然后向集合[添加文档](/documentation/articles/documentdb-view-json-document-explorer/)。
 
+
 当集合中有文档后，可以使用门户中的[查询资源管理器](/documentation/articles/documentdb-query-collections-query-explorer/)、[REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn781481.aspx) 或某个 [SDK](https://msdn.microsoft.com/zh-cn/library/azure/dn781482.aspx)针对文档使用 [DocumentDB SQL](/documentation/articles/documentdb-sql-query/) [执行查询](/documentation/articles/documentdb-sql-query/#ExecutingSqlQueries/)。
 
 若要详细了解 DocumentDB，请浏览以下资源：
 
 - [DocumentDB 资源模型和概念](/documentation/articles/documentdb-resources/)
+
 
 <!--Reference style links - using these makes the source content way more readable than using inline links-->
 [scaling-globally]:/documentation/articles/documentdb-distribute-data-globally/#scaling-across-the-planet/

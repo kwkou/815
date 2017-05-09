@@ -15,7 +15,7 @@
     ms.devlang="dotnet"
     ms.topic="hero-article"
     ms.date="03/28/2017"
-    wacn.date="05/02/2017"
+    wacn.date="05/08/2017"
     ms.author="arramac"
     ms.sourcegitcommit="2c4ee90387d280f15b2f2ed656f7d4862ad80901"
     ms.openlocfilehash="1d7ba28a86f655933c9dd980d60cec189bec114d"
@@ -116,7 +116,7 @@
 
 在 Azure 门户预览中，导航到 DocumentDB 帐户，然后单击“密钥” 。
 
-从门户中复制该 URI 并将它粘贴到 program.cs 文件中的 `<your endpoint URI>` 。 然后从门户复制主密钥，并将其粘贴到 `<your key>`中。 如果使用 Azure DocumentDB 模拟器，请使用 `https://localhost:8081` 作为终结点，并使用 [How to develop using the DocumentDB Emulator](/documentation/articles/documentdb-nosql-local-emulator/)（如何使用 DocumentDB 模拟器进行开发）中所述的具有完善定义的授权密钥。 请务必删除 < 和 >，但保留终结点和密钥的双引号。
+从门户中复制该 URI 并将它粘贴到 program.cs 文件中的 `<your endpoint URI>` 。 然后从门户复制主密钥，并将其粘贴到 `<your key>`中。 如果使用 Azure DocumentDB 模拟器，请使用 `https://localhost:8081` 作为终结点，并使用 [How to develop using the DocumentDB Emulator](/documentation/articles/documentdb-nosql-local-emulator/)（如何使用 DocumentDB 模拟器 进行开发）中所述的具有完善定义的授权密钥。 请务必删除 < 和 >，但保留终结点和密钥的双引号。
 
 ![NoSQL 教程用于创建 C# 控制台应用程序的 Azure 门户预览的屏幕截图。 显示 DocumentDB 帐户，在“DocumentDB 帐户”边栏选项卡上突出显示“ACTIVE”中心、“键”按钮，在“键”边栏选项卡上突出显示 URI、主键、辅键的值][keys]
 
@@ -204,8 +204,8 @@
 
 	await this.CreateDatabaseIfNotExists("FamilyDB_oa");
 
- 	// ADD THIS PART TO YOUR CODE
- 	await this.client.CreateDocumentCollectionIfNotExistsAsync(UriFactory.CreateDatabaseUri("FamilyDB_oa"), new DocumentCollection { Id = "FamilyCollection_oa" });
+	// ADD THIS PART TO YOUR CODE
+	await this.client.CreateDocumentCollectionIfNotExistsAsync(UriFactory.CreateDatabaseUri("FamilyDB_oa"), new DocumentCollection { Id = "FamilyCollection_oa" });
 
 按“DocumentDBGettingStarted”按钮运行应用程序。
 
@@ -562,4 +562,4 @@ DocumentDB 支持删除 JSON 文档。
 [documentdb-create-account]: /documentation/articles/documentdb-create-account/
 [keys]: ./media/documentdb-dotnetcore-get-started/nosql-tutorial-keys.png
 
-<!---Update_Description: wording update -->
+<!---Update_Description: update meta properties -->

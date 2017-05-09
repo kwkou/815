@@ -15,12 +15,12 @@
     ms.tgt_pltfrm="na"
     ms.devlang="rest-api"
     ms.topic="article"
-    ms.date="03/20/2017"
-    wacn.date="04/17/2017"
+    ms.date="03/23/2017"
+    wacn.date="05/08/2017"
     ms.author="arramac"
-    ms.sourcegitcommit="7cc8d7b9c616d399509cd9dbdd155b0e9a7987a8"
-    ms.openlocfilehash="0d7e40419b9d3404fad864fd06682733e1d749aa"
-    ms.lasthandoff="04/07/2017" />
+    ms.sourcegitcommit="2c4ee90387d280f15b2f2ed656f7d4862ad80901"
+    ms.openlocfilehash="098a73cb3652bdda45c745b06c583216abad8c9b"
+    ms.lasthandoff="04/28/2017" />
 
 # <a name="working-with-the-change-feed-support-in-azure-documentdb"></a>使用 Azure DocumentDB 中的更改源支持
 [Azure DocumentDB](/documentation/articles/documentdb-introduction/) 是快速灵活的 NoSQL 数据库服务，用于存储大量事务与操作数据，读取和写入时的延迟为个位数的毫秒且可预测。 它非常适合用于 IoT、游戏、零售和操作日志记录应用程序。 这些应用程序中的一种常见设计模式是跟踪对 DocumentDB 数据所做的更改、更新具体化的视图、执行实时分析、将数据存档到冷存储，以及在发生特定事件时根据这些更改触发通知。 使用 DocumentDB 的 **更改源支持** ，可以针对其中的每种模式构建高效、可缩放的解决方案。
@@ -75,7 +75,7 @@ DocumentDB 提供名为**集合**的弹性存储和吞吐量容器。 集合中�
 ### <a name="readdocumentfeed-api"></a>ReadDocumentFeed API
 让我们简单了解一下 ReadDocumentFeed 的工作原理。 DocumentDB 支持通过 `ReadDocumentFeed` API 读取集合中文档的源。 例如，以下请求返回 `serverlogs` 集合中的文档页面。 
 
-    GET https://mydocumentdb.documents.azure.com/dbs/smalldb/colls/serverlogs HTTP/1.1
+    GET https://mydocumentdb.documents.azure.cn/dbs/smalldb/colls/serverlogs HTTP/1.1
     x-ms-date: Tue, 22 Nov 2016 17:05:14 GMT
     authorization: type%3dmaster%26ver%3d1.0%26sig%3dgo7JEogZDn6ritWhwc5hX%2fNTV4wwM1u9V2Is1H4%2bDRg%3d
     Cache-Control: no-cache
@@ -83,7 +83,7 @@ DocumentDB 提供名为**集合**的弹性存储和吞吐量容器。 集合中�
     User-Agent: Microsoft.Azure.Documents.Client/1.10.27.5
     x-ms-version: 2016-07-11
     Accept: application/json
-    Host: mydocumentdb.documents.azure.com
+    Host: mydocumentdb.documents.azure.cn
 
 可以使用 `x-ms-max-item-count` 限制结果；可以通过使用前一响应中返回的 `x-ms-continuation` 标头重新提交请求来恢复读取。 在单个客户端中执行时，`ReadDocumentFeed` 将以串行方式循环访问各分区的结果。 
 
@@ -111,13 +111,13 @@ DocumentDB 提供名为**集合**的弹性存储和吞吐量容器。 集合中�
 ### <a name="retrieving-partition-key-ranges-for-a-collection"></a>检索集合的分区键范围
 可以通过请求集合中的 `pkranges` 资源来检索分区键范围。 例如，以下请求检索 `serverlogs` 集合的分区键范围列表：
 
-    GET https://querydemo.documents.azure.com/dbs/bigdb/colls/serverlogs/pkranges HTTP/1.1
+    GET https://querydemo.documents.azure.cn/dbs/bigdb/colls/serverlogs/pkranges HTTP/1.1
     x-ms-date: Tue, 15 Nov 2016 07:26:51 GMT
     authorization: type%3dmaster%26ver%3d1.0%26sig%3dEConYmRgDExu6q%2bZ8GjfUGOH0AcOx%2behkancw3LsGQ8%3d
     x-ms-consistency-level: Session
     x-ms-version: 2016-07-11
     Accept: application/json
-    Host: querydemo.documents.azure.com
+    Host: querydemo.documents.azure.cn
 
 此请求返回以下响应，其中包含有关分区键范围的元数据：
 
@@ -240,7 +240,7 @@ ReadDocumentFeed 支持使用以下方案/任务对 DocumentDB 集合中的更�
 
 以下示例请求通过逻辑版本/ ETag `28535` 和分区键范围 `16` 返回集合中发生的所有增量更改：
 
-    GET https://mydocumentdb.documents.azure.com/dbs/bigdb/colls/bigcoll/docs HTTP/1.1
+    GET https://mydocumentdb.documents.azure.cn/dbs/bigdb/colls/bigcoll/docs HTTP/1.1
     x-ms-max-item-count: 1
     If-None-Match: "28535"
     A-IM: Incremental feed
@@ -249,7 +249,7 @@ ReadDocumentFeed 支持使用以下方案/任务对 DocumentDB 集合中的更�
     authorization: type%3dmaster%26ver%3d1.0%26sig%3dzdpL2QQ8TCfiNbW%2fEcT88JHNvWeCgDA8gWeRZ%2btfN5o%3d
     x-ms-version: 2016-07-11
     Accept: application/json
-    Host: mydocumentdb.documents.azure.com
+    Host: mydocumentdb.documents.azure.cn
 
 更改已按分区键范围内每个分区键值中的时间排序。 无法保证各分区键值中的顺序一致。 如果结果太多，无法在一个页面中显示，可以使用 `If-None-Match` 标头（其值等于前一响应中的 `etag`）重新提交请求来阅读下一页结果。 如果在存储过程或触发器中以事务方式插入或更新了多个文档，这些文档都会在同一个响应页面中返回。
 
@@ -319,6 +319,7 @@ ReadDocumentFeed 支持使用以下方案/任务对 DocumentDB 集合中的更�
     // Returns only the two documents created above.
     checkpoints = await GetChanges(client, collection, checkpoints);
 
+
 还可以筛选更改源 - 使用客户端逻辑有选择性地处理事件即可。 例如，以下代码片段使用客户端 LINQ 专门处理设备传感器发送的温度更改事件。
 
     FeedResponse<DeviceReading> readChangesResponse = query.ExecuteNextAsync<DeviceReading>().Result;
@@ -344,12 +345,57 @@ ReadDocumentFeed 支持使用以下方案/任务对 DocumentDB 集合中的更�
 
 经过一段时间后，就会建立平衡。 通过这种动态功能，可以向使用者应用基于 CPU 的自动缩放，以实现向上扩展和向下缩减。 如果 DocumentDB 中的更改提供速率超过了使用者可以处理的速率，则可使用使用者的 CPU 增大功能来实现辅助角色实例数的自动缩放。
 
-ChangeFeedProcessorHost 类还使用单独的 DocumentDB 租约集合实现了检查点机制。 此机制按分区存储偏移量，使每个使用者都能确定前一个使用者的最后一个检查点是什么。 当分区通过租约在节点之间转移时，正是这个同步机制在促进负载转移。
+`ChangeFeedProcessorHost` 类还使用单独的 DocumentDB 租约集合实现了检查点机制。 此机制按分区存储偏移量，使每个使用者都能确定前一个使用者的最后一个检查点是什么。 当分区通过租约在节点之间转移时，正是这个同步机制在促进负载转移。
+
+
+以下是用于将更改打印到控制台的简单更改源处理器主机的代码片段：
+
+        class DocumentFeedObserver : IChangeFeedObserver
+        {
+            private static int s_totalDocs = 0;
+            public Task OpenAsync(ChangeFeedObserverContext context)
+            {
+                Console.WriteLine("Worker opened, {0}", context.PartitionKeyRangeId);
+                return Task.CompletedTask;  // Requires targeting .NET 4.6+.
+            }
+            public Task CloseAsync(ChangeFeedObserverContext context, ChangeFeedObserverCloseReason reason)
+            {
+                Console.WriteLine("Worker closed, {0}", context.PartitionKeyRangeId);
+                return Task.CompletedTask;
+            }
+            public Task ProcessEventsAsync(IReadOnlyList<Document> docs, ChangeFeedObserverContext context)
+            {
+                Console.WriteLine("Change feed: total {0} doc(s)", Interlocked.Add(ref s_totalDocs, docs.Count));
+                return Task.CompletedTask;
+            }
+        }
+
+以下代码片段演示如何注册新主机以侦听 DocumentDB 集合的更改。 在这里我们配置单独的集合，以管理跨多个使用者的分区的租约：
+
+        string hostName = Guid.NewGuid().ToString();
+        DocumentCollectionInfo documentCollectionLocation = new DocumentCollectionInfo
+        {
+            Uri = new Uri("https://YOUR_SERVICE.documents.azure.cn:443/"),
+            MasterKey = "YOUR_SECRET_KEY==",
+            DatabaseName = "db1",
+            CollectionName = "documents"
+        };
+
+        DocumentCollectionInfo leaseCollectionLocation = new DocumentCollectionInfo
+        {
+            Uri = new Uri("https://YOUR_SERVICE.documents.azure.cn:443/"),
+            MasterKey = "YOUR_SECRET_KEY==",
+            DatabaseName = "db1",
+            CollectionName = "leases"
+        };
+
+        ChangeFeedEventHost host = new ChangeFeedEventHost(hostName, documentCollectionLocation, leaseCollectionLocation);
+        await host.RegisterObserverAsync<DocumentFeedObserver>();
 
 本文逐步讲解了 DocumentDB 的更改源支持，以及如何使用 DocumentDB REST API 和/或 SDK 跟踪对 DocumentDB 数据所做的更改。 
 
 ## <a name="next-steps"></a>后续步骤
-- 尝试运行 [Github 上提供的 DocumentDB 更改源代码示例](https://github.com/Azure/azure-documentdb-dotnet/tree/master/samples/code-samples/ChangeFeed)
+- 尝试 [GitHub 上的 DocumentDB 更改源代码示例](https://github.com/Azure/azure-documentdb-dotnet/tree/master/samples/code-samples/ChangeFeed)
 - 详细了解 [DocumentDB 的资源模型和层次结构](/documentation/articles/documentdb-resources/)
 - 使用 [DocumentDB SDK](/documentation/articles/documentdb-sdk-dotnet/) 或 [REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn781481.aspx) 开始编写代码
 

@@ -1,5 +1,5 @@
 <properties
-    pageTitle="Azure DocumentDB Java API、SDK 和资源 | Azure"
+    pageTitle="Azure DocumentDB Java API、SDK 和资源 | Microsoft 文档"
     description="了解有关 Java API 和 SDK 的全部信息，包括发布日期、停用日期和 DocumentDB Java SDK 各版本之间所做的更改。"
     services="documentdb"
     documentationcenter="java"
@@ -7,7 +7,6 @@
     manager="jhubbard"
     editor="cgronlun"
     translationtype="Human Translation" />
-    
 <tags
     ms.assetid="7861cadf-2a05-471a-9925-0fec0599351b"
     ms.service="documentdb"
@@ -15,13 +14,13 @@
     ms.tgt_pltfrm="na"
     ms.devlang="java"
     ms.topic="article"
-    ms.date="02/22/2017"
-    wacn.date="04/17/2017"
+    ms.date="03/16/2017"
+    wacn.date="05/08/2017"
     ms.author="khdang"
     ms.custom="H1Hack27Feb2017"
-    ms.sourcegitcommit="7cc8d7b9c616d399509cd9dbdd155b0e9a7987a8"
-    ms.openlocfilehash="2b4795c56c3a4800e17e4b924e8fef4e05a536e7"
-    ms.lasthandoff="04/07/2017" />
+    ms.sourcegitcommit="2c4ee90387d280f15b2f2ed656f7d4862ad80901"
+    ms.openlocfilehash="0ce6322bcecac09a675bbc73e38aa693afecce19"
+    ms.lasthandoff="04/28/2017" />
 
 # <a name="documentdb-java-sdk-release-notes-and-resources"></a>DocumentDB Java SDK：发行说明和资源
 > [AZURE.SELECTOR]
@@ -34,8 +33,7 @@
 - [REST 资源提供程序](https://docs.microsoft.com/zh-cn/rest/api/documentdbresourceprovider/)
 - [SQL](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx)
 
-## DocumentDB Java API 和 SDK
-<table>  
+<table>
 
 
 <tr><td>**SDK 下载**</td><td><a href="http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22com.microsoft.azure%22%20AND%20a%3A%22azure-documentdb%22">Maven</a></td></tr>
@@ -52,6 +50,11 @@
 </table>
 
 ## <a name="release-notes"></a>发行说明
+
+### <a name="a-name11001100httpmvnrepositorycomartifactcommicrosoftazureazure-documentdb1100"></a><a name="1.10.0"/>[1.10.0](http://mvnrepository.com/artifact/com.microsoft.azure/azure-documentdb/1.10.0)
+- 启用了对吞吐量低至 2,500 RU/秒并且缩放增量为 100 RU/秒的分区集合的支持。
+- 修复了本机程序集中的 bug，该 bug 在某些查询中可能会导致 NullRef 异常。
+
 ### <a name="a-name196196httpmvnrepositorycomartifactcommicrosoftazureazure-documentdb196"></a><a name="1.9.6"/>[1.9.6](http://mvnrepository.com/artifact/com.microsoft.azure/azure-documentdb/1.9.6)
 - 修复了查询引擎配置中可能会导致网关模式下查询异常的 Bug。
 - 修复了会话容器中的一些 Bug，这些 Bug 可能会在创建集合后立即导致“找不到所有者资源”请求异常。
@@ -157,6 +160,7 @@ Microsoft 至少会在停用 SDK 的 **12 个月**之前发出通知，以便顺
 
 | 版本 | 发布日期 | 停用日期 |
 | --- | --- | --- |
+| [1.10.0](#1.10.0) |2017 年 3 月 11 日 |--- |
 | [1.9.6](#1.9.6) |2017 年 2 月 21 日 |--- |
 | [1.9.5](#1.9.5) |2017 年 1 月 31 日 |--- |
 | [1.9.4](#1.9.4) |2016 年 11 月 24 日 |--- |

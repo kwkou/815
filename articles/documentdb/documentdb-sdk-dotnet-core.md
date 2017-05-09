@@ -1,13 +1,12 @@
 <properties
-    pageTitle="Azure DocumentDB .NET Core API、SDK 和资源 | Azure"
-    description="了解有关 .NET Core API 和 SDK 的全部信息，包括发布日期、停用日期和 DocumentDB.NET Core SDK 各版本之间的更改。"
+    pageTitle="Azure DocumentDB .NET Core API、SDK 和资源 | Microsoft 文档"
+    description="了解有关 .NET Core API 和 SDK 的全部信息，包括发布日期、停用日期和 DocumentDB .NET Core SDK 各版本之间的更改。"
     services="documentdb"
     documentationcenter=".net"
     author="rnagpal"
     manager="jhubbard"
     editor="cgronlun"
     translationtype="Human Translation" />
-    
 <tags
     ms.assetid="f899b314-26ac-4ddb-86b2-bfdf05c2abf2"
     ms.service="documentdb"
@@ -15,13 +14,13 @@
     ms.tgt_pltfrm="na"
     ms.devlang="dotnet"
     ms.topic="article"
-    ms.date="03/20/2017"
-    wacn.date="04/17/2017"
+    ms.date="03/29/2017"
+    wacn.date="05/08/2017"
     ms.author="rnagpal"
     ms.custom="H1Hack27Feb2017"
-    ms.sourcegitcommit="7cc8d7b9c616d399509cd9dbdd155b0e9a7987a8"
-    ms.openlocfilehash="f2ac24f9d43733c3565e4590aa536a63f214b1a9"
-    ms.lasthandoff="04/07/2017" />
+    ms.sourcegitcommit="2c4ee90387d280f15b2f2ed656f7d4862ad80901"
+    ms.openlocfilehash="3e1859e80d483223c47f78ef2ebec8e0c9dfeef9"
+    ms.lasthandoff="04/28/2017" />
 
 # <a name="documentdb-net-core-sdk-release-notes-and-resources"></a>DocumentDB .NET Core SDK：发行说明和资源
 > [AZURE.SELECTOR]
@@ -34,8 +33,7 @@
 - [REST 资源提供程序](https://docs.microsoft.com/zh-cn/rest/api/documentdbresourceprovider/)
 - [SQL](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx)
 
-## DocumentDB .NET Core API 和 SDK
-<table>  
+<table>
 
 
 <tr><td>**SDK 下载**</td><td><a href="https://www.nuget.org/packages/Microsoft.Azure.DocumentDB.Core/">NuGet</a></td></tr>
@@ -57,6 +55,14 @@ DocumentDB .NET Core SDK 具有与最新版 [DocumentDB.NET SDK](/documentation/
 
 > [AZURE.NOTE] 
 > DocumentDB .NET Core SDK 与通用 Windows 平台 (UWP) 应用尚不兼容。 如果不支持 UWP 应用的 .NET Core SDK 感兴趣，请向 [askdocdb@microsoft.com](mailto:askdocdb@microsoft.com) 发送电子邮件。
+
+### <a name="a-name121121httpswwwnugetorgpackagesmicrosoftazuredocumentdbcore121"></a><a name="1.2.1"/>[1.2.1](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB.Core/1.2.1)
+
+- 修复了在 ASP.NET 上下文内使用时，在某些异步 API 中导致死锁的问题。
+
+### <a name="a-name120120httpswwwnugetorgpackagesmicrosoftazuredocumentdbcore120"></a><a name="1.2.0"/>[1.2.0](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB.Core/1.2.0)
+
+- 修复程序，用于使 SDK 更具弹性，以便在某些情况下自动故障转移。
 
 ### <a name="a-name112112httpswwwnugetorgpackagesmicrosoftazuredocumentdbcore112"></a><a name="1.1.2"/>[1.1.2](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB.Core/1.1.2)
 
@@ -95,6 +101,8 @@ DocumentDB .NET Core 预览版 SDK 与最新版 [DocumentDB.NET SDK](/documentat
 
 | 版本 | 发布日期 | 停用日期 |
 | --- | --- | --- |
+| [1.2.1](#1.2.1) |2017 年 3 月 29 日 |--- |
+| [1.2.0](#1.2.0) |2017 年 3 月 25 日 |--- |
 | [1.1.2](#1.1.2) |2017 年 3 月 20 日 |--- |
 | [1.1.1](#1.1.1) |2017 年 3 月 14 日 |--- |
 | [1.1.0](#1.1.0) |2017 年 2 月 16 日 |--- |

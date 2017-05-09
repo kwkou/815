@@ -1,5 +1,5 @@
 <properties
-    pageTitle="Azure DocumentDB .NET SDK 和资源 | Azure"
+    pageTitle="Azure DocumentDB .NET SDK 和资源 | Microsoft 文档"
     description="了解有关 .NET API 和 SDK 的全部信息，包括发布日期、停用日期和 DocumentDB.NET SDK 各版本之间的更改。"
     services="documentdb"
     documentationcenter=".net"
@@ -7,7 +7,6 @@
     manager="jhubbard"
     editor="cgronlun"
     translationtype="Human Translation" />
-    
 <tags
     ms.assetid="8e239217-9085-49f5-b0a7-58d6e6b61949"
     ms.service="documentdb"
@@ -15,13 +14,13 @@
     ms.tgt_pltfrm="na"
     ms.devlang="dotnet"
     ms.topic="article"
-    ms.date="03/20/2017"
-    wacn.date="04/17/2017"
+    ms.date="03/29/2017"
+    wacn.date="05/08/2017"
     ms.author="rnagpal"
     ms.custom="H1Hack27Feb2017"
-    ms.sourcegitcommit="7cc8d7b9c616d399509cd9dbdd155b0e9a7987a8"
-    ms.openlocfilehash="beb0aa77e15983774b528678e4f110088250ee88"
-    ms.lasthandoff="04/07/2017" />
+    ms.sourcegitcommit="2c4ee90387d280f15b2f2ed656f7d4862ad80901"
+    ms.openlocfilehash="c2e0580c22ea2a77567df8e3ce3ce3bf3a4f3570"
+    ms.lasthandoff="04/28/2017" />
 
 # <a name="documentdb-net-sdk-download-and-release-notes"></a>DocumentDB .NET SDK：下载和发行说明
 > [AZURE.SELECTOR]
@@ -34,8 +33,7 @@
 - [REST 资源提供程序](https://docs.microsoft.com/zh-cn/rest/api/documentdbresourceprovider/)
 - [SQL](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx)
 
-## DocumentDB .NET API 和 SDK
-<table>  
+<table>
 
 
 <tr><td>**SDK 下载**</td><td><a href="https://www.nuget.org/packages/Microsoft.Azure.DocumentDB/">NuGet</a></td></tr>
@@ -52,6 +50,12 @@
 </table>
 
 ## <a name="release-notes"></a>发行说明
+
+### <a name="a-name11311131httpswwwnugetorgpackagesmicrosoftazuredocumentdb1131"></a><a name="1.13.1"/>[1.13.1](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB/1.13.1)
+- 修复了在 ASP.NET 上下文内使用时，在某些异步 API 中导致死锁的问题。
+
+### <a name="a-name11301130httpswwwnugetorgpackagesmicrosoftazuredocumentdb1130"></a><a name="1.13.0"/>[1.13.0](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB/1.13.0)
+- 修复程序，用于使 SDK 更具弹性，以便在某些情况下自动故障转移。
 
 ### <a name="a-name11221122httpswwwnugetorgpackagesmicrosoftazuredocumentdb1122"></a><a name="1.12.2"/>[1.12.2](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB/1.12.2)
 - 修复偶尔导致 WebException 的问题：无法解析远程名称。
@@ -189,12 +193,12 @@
 ### <a name="a-name120120httpswwwnugetorgpackagesmicrosoftazuredocumentdb120"></a><a name="1.2.0"/>[1.2.0](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB/1.2.0)
 - 对 Newtonsoft.Json v5.0.7 的依赖关系 
 - 更改为支持 Order By
-
+  
   - LINQ 提供程序支持 OrderBy() 或 OrderByDescending() 
   - 支持 Order By 的 IndexingPolicy 
-
+    
     **注意：可能非常重大的更改** 
-
+    
     如果你的现有代码使用自定义索引策略预配集合，那么你的现有代码将需要更新为支持新的 IndexingPolicy 类。 如果你没有任何自定义索引策略，此更改不会影响你。
 
 ### <a name="a-name110110httpswwwnugetorgpackagesmicrosoftazuredocumentdb110"></a><a name="1.1.0"/>[1.1.0](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB/1.1.0)
@@ -217,6 +221,8 @@ Microsoft 至少会在停用 SDK 的 **12 个月**之前发出通知，以便顺
 
 | 版本 | 发布日期 | 停用日期 |
 | --- | --- | --- |
+| [1.13.1](#1.13.1) |2017 年 3 月 29 日 |--- |
+| [1.13.0](#1.13.0) |2017 年 3 月 24 日 |--- |
 | [1.12.2](#1.12.2) |2017 年 3 月 20 日 |--- |
 | [1.12.1](#1.12.1) |2017 年 3 月 14 日 |--- |
 | [1.12.0](#1.12.0) |2017 年 2 月 15 日 |--- |
@@ -244,6 +250,7 @@ Microsoft 至少会在停用 SDK 的 **12 个月**之前发出通知，以便顺
 | [1.2.0](#1.2.0) |2015 年 7 月 6 日 |--- |
 | [1.1.0](#1.1.0) |2015 年 4 月 30 日 |--- |
 | [1.0.0](#1.0.0) |2015 年 4 月 8 日 |--- |
+
 
 ## <a name="faq"></a>常见问题
 [AZURE.INCLUDE [documentdb-sdk-faq](../../includes/documentdb-sdk-faq.md)]

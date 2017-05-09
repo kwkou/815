@@ -8,7 +8,6 @@
     manager="jhubbard"
     editor="monicar"
     translationtype="Human Translation" />
-    
 <tags
     ms.assetid="a73b4ab3-0786-42fd-b59b-555fce09db6e"
     ms.service="documentdb"
@@ -16,12 +15,12 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="02/22/2017"
-    wacn.date="04/17/2017"
+    ms.date="04/08/2017"
+    wacn.date="05/08/2017"
     ms.author="arramac"
-    ms.sourcegitcommit="7cc8d7b9c616d399509cd9dbdd155b0e9a7987a8"
-    ms.openlocfilehash="17af5c9cb0d4df7f52d879d9f7d2d25a2836b93f"
-    ms.lasthandoff="04/07/2017" />
+    ms.sourcegitcommit="2c4ee90387d280f15b2f2ed656f7d4862ad80901"
+    ms.openlocfilehash="68fa95920aa332cec15b2578f04b4a612327697b"
+    ms.lasthandoff="04/28/2017" />
 
 # <a name="sql-query-and-sql-syntax-in-documentdb"></a>DocumentDB 中的 SQL 查询和 SQL 语法
 Azure DocumentDB 通过将 SQL（结构化查询语言）用作 JSON 查询语言来支持查询文档。 DocumentDB 是真正无架构的。 凭借其对数据库引擎内 JSON 数据模型的直接承诺，它可以提供 JSON 文档的自动索引，而无需显式架构或创建辅助索引。 
@@ -121,6 +120,7 @@ Azure DocumentDB 通过将 SQL（结构化查询语言）用作 JSON 查询语�
         "isRegistered": true
     }]
 
+
 现在，考虑我们需要将 JSON 输出的格式重新设置为另一种不同的形式。 地址的城市名称与省/自治区/直辖市名称相同时，此查询使用两个选定的字段 Name 和 City 表示新的 JSON 对象。 在这种情况下，“NY, NY”匹配。
 
 **查询**    
@@ -138,6 +138,7 @@ Azure DocumentDB 通过将 SQL（结构化查询语言）用作 JSON 查询语�
         }
     }]
 
+
 下一个查询返回 ID与按居住城市排序的 `WakefieldFamily` 匹配的家庭中所有子女的给定名称。
 
 **查询**
@@ -154,6 +155,7 @@ Azure DocumentDB 通过将 SQL（结构化查询语言）用作 JSON 查询语�
       { "givenName": "Jesse" }, 
       { "givenName": "Lisa"}
     ]
+
 
 我们希望通过我们目前已看到的示例让你注意到 DocumentDB 查询语言一些值得注意的方面：  
 
@@ -184,6 +186,7 @@ Azure DocumentDB 通过将 SQL（结构化查询语言）用作 JSON 查询语�
     [FROM <from_specification>] 
     [WHERE <filter_condition>]
     [ORDER BY <sort_specification]    
+
 
 ## <a id="FromClause"></a>FROM 子句
 `FROM <from_specification>` 子句是可选的，除非稍后在查询中对源进行筛选或投影。 此子句的目的在于指定必须对其执行查询的数据源。 通常情况下，整个集合作为源，但可以将集合的子集指定为源。 
@@ -247,6 +250,7 @@ Azure DocumentDB 通过将 SQL（结构化查询语言）用作 JSON 查询语�
       "NY"
     ]
 
+
 ## <a id="WhereClause"></a>WHERE 子句
 WHERE 子句（**`WHERE <filter_condition>`**）可选。 它指定由源提供的 JSON 文档必须满足的条件，以便作为结果的一部分包含在内。 任何 JSON 文档必须将指定的条件评估为“true”以作为结果。 WHERE 子句由索引层使用，以确定可以作为结果的一部分的源文档的绝对最小子集。 
 
@@ -267,6 +271,7 @@ WHERE 子句（**`WHERE <filter_condition>`**）可选。 它指定由源提供�
         "city": "seattle"
       }
     }]
+
 
 上面的示例演示了一个简单的等式查询。 DocumentDB SQL 还支持各种标量表达式。 最常使用的是二进制和一元表达式。 来自源 JSON 对象的属性引用也是有效的表达式。 
 
@@ -295,6 +300,7 @@ WHERE 子句（**`WHERE <filter_condition>`**）可选。 它指定由源提供�
 </tr>
 </table>  
 
+
 让我们查看一些使用二进制运算符的查询。
 
     SELECT * 
@@ -309,6 +315,7 @@ WHERE 子句（**`WHERE <filter_condition>`**）可选。 它指定由源提供�
     FROM Families.children[0] c
     WHERE c.grade >= 5     -- matching grades == 5
 
+
 也支持一元运算符 +、-、~ 和 NOT，它们可在查询中使用，如下例所示：
 
     SELECT *
@@ -318,6 +325,8 @@ WHERE 子句（**`WHERE <filter_condition>`**）可选。 它指定由源提供�
     SELECT *
     FROM Families.children[0] c
     WHERE (-c.grade = -5)  -- matching grades == 5
+
+
 
 除了二进制和一元运算符以外，还允许使用属性引用。 例如，`SELECT * FROM Families f WHERE f.isRegistered` 返回包含 `isRegistered` 属性的文档，其中的属性值等于 JSON `true` 值。 任何其他值（false、null、Undefined、`<number>`、`<string>`、`<object>`、`<array>` 等等）都会导致源文档被排除在结果之外。 
 
@@ -580,6 +589,7 @@ IN 关键字可用于检查指定的值是否与列表中的任意值匹配。 �
     FROM Families f
     WHERE f["id"] = "AndersenFamily"
 
+
 ## <a id="SelectClause"></a>SELECT 子句
 SELECT 子句 (**`SELECT <select_list>`**) 是强制性的，用于指定要从查询中检索的值，就如在 ANSI-SQL 中一样。 将在源文档顶端上筛选出来的子集传递给投影阶段，在其中检索指定的 JSON 值并为每个传递给它的输出构造新的 JSON 对象。 
 
@@ -601,6 +611,7 @@ SELECT 子句 (**`SELECT <select_list>`**) 是强制性的，用于指定要从�
       }
     }]
 
+
 ### <a name="nested-properties"></a>嵌套属性
 在下面的示例中，我们将投影两个嵌套的属性 `f.address.state` 和 `f.address.city`。
 
@@ -616,6 +627,7 @@ SELECT 子句 (**`SELECT <select_list>`**) 是强制性的，用于指定要从�
       "state": "WA", 
       "city": "seattle"
     }]
+
 
 投影也支持 JSON 表达式，如下例所示。
 
@@ -634,6 +646,7 @@ SELECT 子句 (**`SELECT <select_list>`**) 是强制性的，用于指定要从�
         "name": "AndersenFamily"
       }
     }]
+
 
 让我们看看此处的 `$1` 角色。 `SELECT` 子句需要创建 JSON 对象，并且由于没有提供任何密钥，因此我们使用以 `$1` 开头的隐式参数变量名。 例如，此查询返回了两个隐式参数变量，标为 `$1` 和 `$2`。
 
@@ -655,6 +668,7 @@ SELECT 子句 (**`SELECT <select_list>`**) 是强制性的，用于指定要从�
         "name": "AndersenFamily"
       }
     }]
+
 
 ### <a name="aliasing"></a>别名
 现在让我们使用值的显示别名对上面的示例进行扩展。 AS 是用于别名的关键字。 请注意，将第二个值投影为 `NameInfo`时，它如显示的那样是可选的。 
@@ -681,6 +695,7 @@ SELECT 子句 (**`SELECT <select_list>`**) 是强制性的，用于指定要从�
       }
     }]
 
+
 ### <a name="scalar-expressions"></a>标量表达式
 除了属性引用之外，SELECT 子句还支持标量表达式，如常量、算术表达式和逻辑表达式等。例如，下面是一个简单的“Hello World”查询。
 
@@ -694,6 +709,7 @@ SELECT 子句 (**`SELECT <select_list>`**) 是强制性的，用于指定要从�
       "$1": "Hello World"
     }]
 
+
 下面是一个使用标量表达式的更复杂的示例。
 
 **查询**
@@ -705,6 +721,7 @@ SELECT 子句 (**`SELECT <select_list>`**) 是强制性的，用于指定要从�
     [{
       "$1": 1.33333
     }]
+
 
 在下面的示例中，标量表达式的结果是布尔。
 
@@ -723,6 +740,7 @@ SELECT 子句 (**`SELECT <select_list>`**) 是强制性的，用于指定要从�
         "AreFromSameCityState": true
       }
     ]
+
 
 ### <a name="object-and-array-creation"></a>对象和数组创建
 DocumentDB SQL 的另一个重要功能是数组/对象创建。 请注意，在上一个示例中，我们已创建了一个新的 JSON 对象。 同样，也可以构造数组，如下例所示。
@@ -762,6 +780,7 @@ DocumentDB SQL 的另一个重要功能是数组/对象创建。 请注意，在
       "Hello World"
     ]
 
+
 下面的查询在结果中返回不带 `"address"` 标签的 JSON 值。
 
 **查询**
@@ -797,6 +816,7 @@ DocumentDB SQL 的另一个重要功能是数组/对象创建。 请注意，在
       "WA",
       "NY"
     ]
+
 
 ### <a name="-operator"></a>* 运算符
 支持使用特殊运算符 (*) 按原样投影文档。 在使用时，它必须仅为投影的字段。 当类似 `SELECT * FROM Families f` 的查询有效时，`SELECT VALUE * FROM Families f ` 和 `SELECT *, f.id FROM Families f ` 无效。
@@ -1073,6 +1093,7 @@ TOP 关键字可用于限制来自查询中的值的数量。 将 TOP 与 ORDER 
     [{
     }]
 
+
 下面的示例中，联接位于文档根和 `children` 子根之间。 这是两个 JSON 对象之间的叉积。 子女是一个数组的事实在 JOIN 中无效，因为我们正在处理的是子女数组的单一根。 因此，由于每个带有数组的文档的叉积仅生成一个文档，因此结果仅包含两个结果。
 
 **查询**
@@ -1091,6 +1112,7 @@ TOP 关键字可用于限制来自查询中的值的数量。 将 TOP 与 ORDER 
         "id": "WakefieldFamily"
       }
     ]
+
 
 下面的示例演示了更传统的联接：
 
@@ -1113,6 +1135,8 @@ TOP 关键字可用于限制来自查询中的值的数量。 将 TOP 与 ORDER 
         "id": "WakefieldFamily"
       }
     ]
+
+
 
 首先要注意的是 **JOIN** 子句的 `from_source` 是迭代器。 因此，在此示例中的流程如下：  
 
@@ -1155,6 +1179,8 @@ JOIN 真正实用的地方是通过以其他方式难以投影的形式基于叉
       }
     ]
 
+
+
 此示例是前面示例的自然扩展，且执行双联接。 因此，可将叉积视为下面的伪代码。
 
     for-each(Family f in Families)
@@ -1196,6 +1222,7 @@ JOIN 真正实用的地方是通过以其他方式难以投影的形式基于叉
        "petName": "Shadow"
       }
     ]
+
 
 ## <a id="JavaScriptIntegration"></a>JavaScript 集成
 DocumentDB 根据存储过程和触发器，为对集合直接执行基于 JavaScript 的应用程序逻辑提供编程模型。 这允许以下两种情况：
@@ -1259,6 +1286,7 @@ DocumentDB 根据存储过程和触发器，为对集合直接执行基于 JavaS
         "city": "Seattle"
     }]
 
+
 从本质上来说，UDF 是有效的标量表达式且可在投影和筛选器中使用。 
 
 要扩展 UDF 的功能，让我们看看使用条件逻辑的另一个示例：
@@ -1283,6 +1311,7 @@ DocumentDB 根据存储过程和触发器，为对集合直接执行基于 JavaS
                 UriFactory.CreateDocumentCollectionUri("testdb", "families"), 
                 seaLevelUdf);
 
+
 以下是使用 UDF 的一个示例。
 
 **查询**
@@ -1302,6 +1331,7 @@ DocumentDB 根据存储过程和触发器，为对集合直接执行基于 JavaS
         "seaLevel": 410
       }
     ]
+
 
 如之前的示例所的，UDF 使用 DocumentDB SQL 集成 JavaScript 语言的功能以通过丰富的可编程接口执行复杂的过程，并在内置 JavaScript 运行时功能的帮助下，执行条件逻辑。
 
@@ -1361,6 +1391,7 @@ DocumentDB 还支持使用许多内置函数进行常见操作，这些函数可
 
 ### <a name="mathematical-functions"></a>数学函数
 每个数学函数均执行一个计算，通常基于作为参数提供的输出值，并返回数值。 以下是受支持的内置数学函数表。
+
 
 | 使用情况 | 说明 |
 |----------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -1506,6 +1537,7 @@ DocumentDB 还支持使用许多内置函数进行常见操作，这些函数可
       "id": "AndersenFamily",
       "location": "seattle,WA"
     }]
+
 
 也可在 WHERE 子句中使用字符串函数来筛选结果，如下例所示：
 
@@ -1666,6 +1698,7 @@ LINQ 是一个 .NET 编程模型，它将计算表示为对对象流的查询。
     Address address = new Address { state = "NY", county = "Manhattan", city = "NY" };
     Family family = new Family { Id = "WakefieldFamily", parents = new Parent [] { mother, father}, children = new Child[] { child }, isRegistered = false };
 
+
 **JSON**  
 
     {
@@ -1696,6 +1729,8 @@ LINQ 是一个 .NET 编程模型，它将计算表示为对对象流的查询。
         "isRegistered": false
     };
 
+
+
 ### <a name="linq-to-sql-translation"></a>LINQ 到 SQL 转换
 DocumentDB 查询提供程序执行从 LINQ 查询到 DocumentDB SQL 查询的最有效映射。 在以下描述中，我们假设读者对 LINQ 已经有了一个基本的了解。
 
@@ -1710,8 +1745,8 @@ DocumentDB 查询提供程序执行从 LINQ 查询到 DocumentDB SQL 查询的�
 		family.children[n].grade; //n is an int variable
      
 - 算术表达式 - 这些表达式包含数值和布尔值上的常用算术表达式。 有关完整列表，请参阅 SQL 规范。
-
-     	2 * family.children[0].grade;    x + y;
+  
+		2 * family.children[0].grade;    x + y;
 - 字符串比较表达式 - 这些表达式包含字符串值与某些常量字符串值的比较。  
 
 		mother.familyName == "Smith";    
@@ -1730,6 +1765,7 @@ DocumentDB 查询提供程序执行从 LINQ 查询到 DocumentDB SQL 查询的�
 - **Where**：筛选器转换为 SQL WHERE，且支持 &&、|| 和 ! 与 SQL 运算符之间的转换
 - **SelectMany**：允许将数组展开到 SQL JOIN 子句。 可以用于链/嵌套表达式以对数组元素进行筛选
 - **OrderBy 和 OrderByDescending**：转换为 ORDER BY 升序/降序
+- 用于聚合的 **Count**、**Sum**、**Min**、**Max** 和 **Average** 运算符及其异步等效项 **CountAsync**、**SumAsync**、**MinAsync**、**MaxAsync** 和 **AverageAsync**。
 - **CompareTo**：转换为范围比较。 通常用于字符串，因为它们在 .NET 中不可进行比较
 - **Take**：转换为 SQL TOP，用于限制查询中的结果
 - **数学函数**：支持从 .NET 的 Abs、Acos、Asin、Atan、Ceiling、Cos、Exp、Floor、Log、Log10、Pow、Round、Sign、Sin、Sqrt、Tan 和 Truncate 转换为等效的 SQL 内置函数。
@@ -1738,11 +1774,6 @@ DocumentDB 查询提供程序执行从 LINQ 查询到 DocumentDB SQL 查询的�
 - **地理空间扩展函数**：支持从 stub 方法 Distance、Within、IsValid 和 IsValidDetailed 转换为等效的 SQL 内置函数。
 - **用户定义的函数扩展函数**：支持从 stub 方法 UserDefinedFunctionProvider.Invoke 转换为相应的用户的定义函数。
 - **其他**：支持联合与条件运算符的转换。 可以根据上下文将 Contains 转换为字符串 CONTAINS、ARRAY_CONTAINS 或 SQL IN。
-
-> [AZURE.NOTE]
-> 聚合运算符 **Count、Sum、Min、Max 和 Average** 目前不受支持，但可以在未来版本的 SDK 中使用。  
-> 
-> 
 
 ### <a name="sql-query-operators"></a>SQL 查询运算符
 以下示例演示了一些标准 LINQ 查询运算符是如何转换为 DocumentDB 查询的。
@@ -1759,14 +1790,19 @@ DocumentDB 查询提供程序执行从 LINQ 查询到 DocumentDB SQL 查询的�
     SELECT VALUE f.parents[0].familyName
     FROM Families f
 
+
+
 **LINQ Lambda 表达式**
 
     input.Select(family => family.children[0].grade + c); // c is an int variable
+
 
 **SQL** 
 
     SELECT VALUE f.children[0].grade + c
     FROM Families f 
+
+
 
 **LINQ Lambda 表达式**
 
@@ -1776,11 +1812,14 @@ DocumentDB 查询提供程序执行从 LINQ 查询到 DocumentDB SQL 查询的�
         grade = family.children[0].grade + 3
     });
 
+
 **SQL** 
 
     SELECT VALUE {"name":f.children[0].familyName, 
                   "grade": f.children[0].grade + 3 }
     FROM Families f
+
+
 
 #### <a name="selectmany-operator"></a>SelectMany 运算符
 语法为 `input.SelectMany(x => f(x))`，其中 `f` 是返回集合类型的标量表达式。
@@ -1793,6 +1832,8 @@ DocumentDB 查询提供程序执行从 LINQ 查询到 DocumentDB SQL 查询的�
 
     SELECT VALUE child
     FROM child IN Families.children
+
+
 
 #### <a name="where-operator"></a>Where 运算符
 语法为 `input.Where(x => f(x))`，其中 `f` 是返回布尔值的标量表达式。
@@ -1807,6 +1848,8 @@ DocumentDB 查询提供程序执行从 LINQ 查询到 DocumentDB SQL 查询的�
     FROM Families f
     WHERE f.parents[0].familyName = "Smith" 
 
+
+
 **LINQ Lambda 表达式**
 
     input.Where(
@@ -1819,6 +1862,7 @@ DocumentDB 查询提供程序执行从 LINQ 查询到 DocumentDB SQL 查询的�
     FROM Families f
     WHERE f.parents[0].familyName = "Smith"
     AND f.children[0].grade < 3
+
 
 ### <a name="composite-sql-queries"></a>复合 SQL 查询
 可以将以上运算符组合在一起，形成功能更强大的查询。 由于 DocumentDB 支持嵌套的集合，因此可以连接或嵌套运算符组合。
@@ -1837,6 +1881,8 @@ DocumentDB 查询提供程序执行从 LINQ 查询到 DocumentDB SQL 查询的�
     FROM Families f
     WHERE f.parents[0].familyName = "Smith"
 
+
+
 **LINQ Lambda 表达式**
 
     input.Where(family => family.children[0].grade > 3)
@@ -1847,6 +1893,8 @@ DocumentDB 查询提供程序执行从 LINQ 查询到 DocumentDB SQL 查询的�
     SELECT VALUE f.parents[0].familyName
     FROM Families f
     WHERE f.children[0].grade > 3
+
+
 
 **LINQ Lambda 表达式**
 
@@ -1859,6 +1907,8 @@ DocumentDB 查询提供程序执行从 LINQ 查询到 DocumentDB SQL 查询的�
     FROM Families f
     WHERE ({grade: f.children[0].grade}.grade > 3)
 
+
+
 **LINQ Lambda 表达式**
 
     input.SelectMany(family => family.parents)
@@ -1869,6 +1919,8 @@ DocumentDB 查询提供程序执行从 LINQ 查询到 DocumentDB SQL 查询的�
     SELECT *
     FROM p IN Families.parents
     WHERE p.familyName = "Smith"
+
+
 
 #### <a name="nesting"></a>嵌套
 语法为 `input.SelectMany(x=>x.Q())`，其中 Q 是 `Select`、`SelectMany` 或 `Where` 运算符。
@@ -1886,6 +1938,7 @@ DocumentDB 查询提供程序执行从 LINQ 查询到 DocumentDB SQL 查询的�
     FROM Families f
     JOIN p IN f.parents
 
+
 **LINQ Lambda 表达式**
 
     input.SelectMany(family => 
@@ -1898,6 +1951,8 @@ DocumentDB 查询提供程序执行从 LINQ 查询到 DocumentDB SQL 查询的�
     JOIN c IN f.children
     WHERE c.familyName = "Jeff"
 
+
+
 **LINQ Lambda 表达式**
 
     input.SelectMany(family => family.children.Where(
@@ -1909,6 +1964,7 @@ DocumentDB 查询提供程序执行从 LINQ 查询到 DocumentDB SQL 查询的�
     FROM Families f
     JOIN c IN f.children
     WHERE c.familyName = f.parents[0].familyName
+
 
 ## <a id="ExecutingSqlQueries"></a>执行 SQL 查询
 DocumentDB 通过一个 REST API 来公开资源，任何可以发出 HTTP/HTTPS 请求的语言都可以调用该 REST API。 此外，DocumentDB 还为多种常用语言（如 .NET、Node.js、JavaScript 和 Python）提供编程库。 REST API 和各种库均支持通过 SQL 进行查询。 除了 SQL 之外，.NET SDK 还支持 LINQ 查询。
@@ -1935,6 +1991,7 @@ DocumentDB 通过 HTTP 提供开放的 RESTful 编程模型。 可以使用 Azur
             {"name": "@familyId", "value": "AndersenFamily"}         
         ] 
     }
+
 
 **结果**
 
@@ -1986,6 +2043,7 @@ DocumentDB 通过 HTTP 提供开放的 RESTful 编程模型。 可以使用 Azur
        "count":1
     }
 
+
 第二个示例演示了从联接中返回多个结果的更复杂的查询。
 
 **请求**
@@ -2006,6 +2064,7 @@ DocumentDB 通过 HTTP 提供开放的 RESTful 编程模型。 可以使用 Azur
                   JOIN p in c.pets",     
         "parameters": [] 
     }
+
 
 **结果**
 
@@ -2078,6 +2137,7 @@ DocumentDB 通过 HTTP 提供开放的 RESTful 编程模型。 可以使用 Azur
         Console.WriteLine("\tRead {0} from LINQ lambda", family);
     }
 
+
 此示例比较了每个文档内等式的两个属性，并使用匿名投影。 
 
     foreach (var family in client.CreateDocumentQuery(collectionLink,
@@ -2104,6 +2164,7 @@ DocumentDB 通过 HTTP 提供开放的 RESTful 编程模型。 可以使用 Azur
         Console.WriteLine("\tRead {0} from LINQ lambda", family);
     }
 
+
 下面的示例中演示了通过 LINQ SelectMany 表示的联接。
 
     foreach (var pet in client.CreateDocumentQuery(collectionLink,
@@ -2125,6 +2186,8 @@ DocumentDB 通过 HTTP 提供开放的 RESTful 编程模型。 可以使用 Azur
     {
         Console.WriteLine("\tRead {0} from LINQ lambda", pet);
     }
+
+
 
 .NET 客户端自动遍历 foreach 块中所有的查询结果页，如上所示。 REST API 部分介绍的查询选项也适用于 CreateDocumentQuery 方法中使用 `FeedOptions` 和 `FeedResponse` 的 .NET SDK。 可使用 `MaxItemCount` 设置控制页面的数量。 
 
