@@ -109,21 +109,21 @@
 
 1. 在终端中运行以下命令：
 
-       ls -l /dev/ttyUSB*
-       ls -l /dev/ttyACM*
+        ls -l /dev/ttyUSB*
+        ls -l /dev/ttyACM*
 
-   将返回以下输出之一：
+    将返回以下输出之一：
 
-   * crw-rw---- 1 root uucp xxxxxxxx
-   * crw-rw---- 1 root dialout xxxxxxxx
+    * crw-rw---- 1 root uucp xxxxxxxx
+    * crw-rw---- 1 root dialout xxxxxxxx
 
-   请注意，在输出中，`uucp` 或 `dialout` 是 USB 端口的组所有者名称。
+    请注意，在输出中，`uucp` 或 `dialout` 是 USB 端口的组所有者名称。
 
 1. 运行以下命令，将用户添加到该组中：
 
-       sudo usermod -a -G <group-owner-name> <username>
+        sudo usermod -a -G <group-owner-name> <username>
 
-   `<group-owner-name>` 是在上一步骤中获取的组所有者名称。 `<username>` 是你的 Ubuntu 用户名。
+    `<group-owner-name>` 是在上一步骤中获取的组所有者名称。 `<username>` 是你的 Ubuntu 用户名。
 
 1. 需要注销 Ubuntu，然后重新登录，更改才会显示。
 
@@ -139,24 +139,24 @@
 1. 转到用于存储示例应用程序的文件夹。
 1. 运行以下命令：
 
-       git clone https://github.com/Azure-Samples/iot-hub-Feather-M0-WiFi-client-app.git
+        git clone https://github.com/Azure-Samples/iot-hub-Feather-M0-WiFi-client-app.git
 
-在 Arduino IDE 中安装 Feather M0 WiFi 的程序包：
+    在 Arduino IDE 中安装 Feather M0 WiFi 的程序包：
 
 1. 打开存储示例应用程序的文件夹。
 1. 在 Arduino IDE 中打开 app 文件夹中的 app.ino 文件。
 
-   ![在 Arduino IDE 中打开示例应用程序](./media/iot-hub-adafruit-feather-m0-wifi-get-started/6_arduino-ide-open-sample-app.png)
+    ![在 Arduino IDE 中打开示例应用程序](./media/iot-hub-adafruit-feather-m0-wifi-get-started/6_arduino-ide-open-sample-app.png)
 
 1. 依次单击“工具” > “开发板” > “开发板管理器”，然后安装 `Arduino SAMD Boards` 版本 `1.6.2` 或更高版本 
 
-   开发板管理器指示已安装了版本 `1.6.2` 或更高版本的 `Arduino SAMD Boards`。
+    开发板管理器指示已安装了版本 `1.6.2` 或更高版本的 `Arduino SAMD Boards`。
 
-   ![已安装 esp8266 包](./media/iot-hub-adafruit-feather-m0-wifi-get-started/7_arduino-ide-package-url.png)
+    ![已安装 esp8266 包](./media/iot-hub-adafruit-feather-m0-wifi-get-started/7_arduino-ide-package-url.png)
 
 1. 依次单击“工具” > “开发板” > “Adafruit M0 WiFi”。
 
-1. 安装驱动程序（仅限 Windows），插入 Feather 时可能需要安装驱动程序，单击“此处”[](https://github.com/adafruit/Adafruit_Windows_Drivers/releases/download/1.1/adafruit_drivers.exe)下载驱动程序安装程序。
+1. 安装驱动程序（仅限 Windows），插入 Feather 时可能需要安装驱动程序，单击“[此处](https://github.com/adafruit/Adafruit_Windows_Drivers/releases/download/1.1/adafruit_drivers.exe)“下载驱动程序安装程序。
    按照以下步骤安装所需的驱动程序。
 
 ### <a name="install-necessary-libraries"></a>安装所需的库
@@ -180,9 +180,9 @@
 1. 打开 `app` 文件夹中的 `config.h` 文件。
 1. 找到以下代码行并将值从 `false` 更改为 `true`：
 
-       define SIMULATED_DATA true
+        define SIMULATED_DATA true
 
-   ![将示例应用程序配置为使用模拟数据](./media/iot-hub-adafruit-feather-m0-wifi-get-started/8_arduino-ide-configure-app-use-simulated-data.png)
+    ![将示例应用程序配置为使用模拟数据](./media/iot-hub-adafruit-feather-m0-wifi-get-started/8_arduino-ide-configure-app-use-simulated-data.png)
 
 1. 使用 `Control-s` 保存文件。
 
@@ -200,12 +200,15 @@
 1. 在左侧下拉列表中选择“No line ending”（无行尾）。
 1. 在右侧下拉列表中选择“115200 baud”（115200 波特率）。
 1. 在串行监视器窗口顶部的输入框中输入以下信息（如果系统要求提供），然后单击“Send”（发送）。
+
    * Wi-Fi SSID
    * Wi-Fi 密码
    * 设备连接字符串
 
 > [AZURE.NOTE]
 > 凭据信息将存储在 Feather M0 WiFi 的 EEPROM 中。 如果在 Feather M0 WiFi 开发板上单击重置按钮，示例应用程序将询问是否要擦除这些信息。 输入 `Y` 擦除这些信息。 按提示再次提供这些信息。
+>
+>
 
 ### <a name="verify-the-sample-application-is-running-successfully"></a>验证示例应用程序是否成功运行
 

@@ -244,7 +244,7 @@ BLE 模块通过 BlueZ 堆栈与蓝牙硬件通信。 需要 BlueZ 5.37 版才�
 Raspberry Pi 3 上有 IoT 网关 SDK 存储库的完整副本时，可以从包含该 SDK 的文件夹使用以下命令生成它：
 
 
-./tools/build.sh
+    ./tools/build.sh
 
 ### <a name="configure-and-run-the-ble-sample-on-your-raspberry-pi-3"></a>在 Raspberry Pi 3 上配置并运行 BLE 示例
 

@@ -44,8 +44,8 @@
     生成脚本将 **liblogger.so** 放在 **build/modules/logger/** 文件夹中，将 **libhello\_world.so** 放在 **build/modules/hello_world/** 文件夹中。 按以下示例 JSON 设置文件中所示，将这些路径用于 **module path** 值。
 1. hello\_world\_sample 过程使用 JSON 配置文件的路径作为命令行参数。 以下示例 JSON 文件在 SDK 存储库的以下路径中提供：**samples/hello\_world/src/hello\_world\_lin.json**。 除非你修改了生成脚本，将模块或示例可执行文件放置在非默认位置，否则，此配置文件可按原样工作。
 
-   > [AZURE.NOTE]
-   > 模块路径相对于从中启动 hello\_world\_sample 可执行文件的当前工作目录，而不是可执行文件所在的目录。 示例 JSON 配置文件默认为在当前工作目录中写入“log.txt”。
+    > [AZURE.NOTE]
+    > 模块路径相对于从中启动 hello\_world\_sample 可执行文件的当前工作目录，而不是可执行文件所在的目录。 示例 JSON 配置文件默认为在当前工作目录中写入“log.txt”。
 
         {
             "modules" :

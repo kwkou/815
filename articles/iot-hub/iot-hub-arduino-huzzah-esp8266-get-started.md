@@ -132,11 +132,11 @@
 
 3. 运行以下命令登录到 IoT 中心：
 
-       iothub-explorer login [your IoT hub connection string]
+        iothub-explorer login [your IoT hub connection string]
 
 4. 注册新设备。 在下一示例中，`deviceID` 为 `new-device`。 通过运行以下命令获取其连接字符串。
 
-       iothub-explorer create new-device --connection-string
+        iothub-explorer create new-device --connection-string
 
 记下已注册设备的连接字符串。 之后将用到它。
 
@@ -218,7 +218,7 @@
 
         git clone https://github.com/Azure-Samples/iot-hub-feather-huzzah-client-app.git
 
-在 Arduino IDE 中安装 Feather HUZZAH ESP8266 的包：
+    在 Arduino IDE 中安装 Feather HUZZAH ESP8266 的包：
 
 1. 打开存储示例应用程序的文件夹。
 1. 在 Arduino IDE 中打开 app 文件夹中的 app.ino 文件。
@@ -236,7 +236,7 @@
 1. 在“Preference”（首选项）对话框中，单击“OK”（确定）。
 1. 单击“Tools”（工具） > “Board”（开发板） > “Boards Manager”，然后搜索 esp8266。
 
-   Boards Manager 指示 ESP8266 安装了版本 2.2.0 或更高版本。
+    Boards Manager 指示 ESP8266 安装了版本 2.2.0 或更高版本。
 
     ![已安装 esp8266 包](./media/iot-hub-arduino-huzzah-esp8266-get-started/12_arduino-ide-esp8266-installed.png)
 

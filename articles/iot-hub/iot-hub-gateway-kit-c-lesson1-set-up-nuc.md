@@ -75,7 +75,7 @@
 
     以下是命令输出的示例。
 
-   ![显示 Intel NUC IP 的 ifconfig 输出](media/iot-hub-gateway-kit-lessons/lesson1/ifconfig.png)
+    ![显示 Intel NUC IP 的 ifconfig 输出](media/iot-hub-gateway-kit-lessons/lesson1/ifconfig.png)
 
 
     在此示例中，`inet addr:` 后面的值是计划从主计算机远程连接到 Intel NUC 时所需的 IP 地址。
@@ -85,8 +85,9 @@
     - [PuTTY](http://www.putty.org/) for Windows。
     - Ubuntu 或 macOS 上的内置 SSH 客户端。
 
-   通过主计算机在 Intel NUC 上执行操作更高效。 需要 Intel NUC 的 IP 地址、用户名和密码才能通过 SSH 客户端与它建立连接。 下面是在 macOS 使用 SSH 客户端的示例。
-   ![在 macOS 上运行的 SSH 客户端](./media/iot-hub-gateway-kit-lessons/lesson1/ssh.png)
+    通过主计算机在 Intel NUC 上执行操作更高效。 需要 Intel NUC 的 IP 地址、用户名和密码才能通过 SSH 客户端与它建立连接。 下面是在 macOS 使用 SSH 客户端的示例。
+    
+    ![在 macOS 上运行的 SSH 客户端](./media/iot-hub-gateway-kit-lessons/lesson1/ssh.png)
 
 ## <a name="install-the-azure-iot-gateway-sdk-package"></a>安装 Azure IoT 网关 SDK 包
 
@@ -96,11 +97,11 @@ Azure IoT 网关 SDK 包中包含 SDK 及其依赖项的预编译二进制文件
 
 1. 在终端窗口中运行以下命令，添加 IoT 云存储库：
 
-       rpm --import http://iotdk.intel.com/misc/iot_pub2.key
-       smart channel --add IoT_Cloud type=rpm-md name="IoT_Cloud" baseurl=http://iotdk.intel.com/repos/iot-cloud/wrlinux7/rcpl13/ -y
-       smart channel --add WR_Repo type=rpm-md baseurl=https://distro.windriver.com/release/idp-3-xt/public_feeds/WR-IDP-3-XT-Intel-Baytrail-public-repo/RCPL13/corei7_64/
+        rpm --import http://iotdk.intel.com/misc/iot_pub2.key
+        smart channel --add IoT_Cloud type=rpm-md name="IoT_Cloud" baseurl=http://iotdk.intel.com/repos/iot-cloud/wrlinux7/rcpl13/ -y
+        smart channel --add WR_Repo type=rpm-md baseurl=https://distro.windriver.com/release/idp-3-xt/public_feeds/WR-IDP-3-XT-Intel-Baytrail-public-repo/RCPL13/corei7_64/
 
-   > 提示“是否包括此通道?”时，输入“y”
+    > 提示“是否包括此通道?”时，输入“y”
 
     `rpm` 命令导入 rpm 密钥。`smart channel` 命令将 rpm 通道添加到智能包管理器。运行 `smart update` 命令前，将看到如下输出。
 
@@ -108,7 +109,7 @@ Azure IoT 网关 SDK 包中包含 SDK 及其依赖项的预编译二进制文件
 
 2. 执行智能更新命令：
 
-       smart update
+        smart update
 
 3. 运行以下命令安装 Azure IoT 网关包：
 
@@ -116,7 +117,7 @@ Azure IoT 网关 SDK 包中包含 SDK 及其依赖项的预编译二进制文件
 		smart install packagegroup-cloud-azure -y
    
 
-   `packagegroup-cloud-azure` 是包的名称。 `smart install` 命令用于安装包。
+    `packagegroup-cloud-azure` 是包的名称。 `smart install` 命令用于安装包。
 
     > 如果出现“公钥不可用”错误，请运行以下命令
 
@@ -125,7 +126,7 @@ Azure IoT 网关 SDK 包中包含 SDK 及其依赖项的预编译二进制文件
 
     > 如果看到此错误：“无任何包提供 util-linux-dev”，则重新启动 Intel NUC
 
-   安装此包后，Intel NUC 可用作网关。
+    安装此包后，Intel NUC 可用作网关。
 
 ## <a name="run-the-azure-iot-gateway-sdk-helloworld-sample-application"></a>运行 Azure IoT 网关 SDK“hello_world”示例应用程序
 

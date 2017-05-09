@@ -46,7 +46,8 @@
 		   az storage account show-connection-string -g iot-sample -n {storage name}
    
 
-   第一个命令检索第二个命令中使用的 `storage name` 来获取连接字符串。 使用 `iot-sample` 作为 `{resource group name}` 的值（如果未更改该值）。
+    第一个命令检索第二个命令中使用的 `storage name` 来获取连接字符串。 使用 `iot-sample` 作为 `{resource group name}` 的值（如果未更改该值）。
+    
 2. 通过运行以下命令在 Visual Studio Code 中打开配置文件 `config-arduino.json`：
 
    

@@ -301,15 +301,15 @@ IoT 中心允许使用任意条件检索设备孪生筛选结果。例如，
         [GROUP BY <group_specification>]
 
 ## <a name="from-clause"></a>FROM 子句
-**FROM <from\_specification>** 子句只能采用两个值：**FROM devices** - 查询设备孪生；**FROM devices.jobs** - 查询每个设备上的作业详细信息。
+**FROM &lt;from\_specification&gt;** 子句只能采用两个值：**FROM devices** - 查询设备孪生；**FROM devices.jobs** - 查询每个设备上的作业详细信息。
 
 ## <a name="where-clause"></a> WHERE 子句
-**WHERE <filter\_condition>** 子句是可选的。它指定要将 FROM 集合中的 JSON 文档内含在结果中时需满足的一项或多项条件。任何 JSON 文档必须将指定的条件求值为“true”才能包含在结果中。
+**WHERE &lt;filter\_condition&gt;** 子句是可选的。它指定要将 FROM 集合中的 JSON 文档内含在结果中时需满足的一项或多项条件。任何 JSON 文档必须将指定的条件求值为“true”才能包含在结果中。
 
 [表达式和条件][lnk-query-expressions]部分中介绍了允许的条件。
 
 ## <a name="select-clause"></a>SELECT 子句
-SELECT 子句 (**SELECT <select_list>**) 是必需的，用于指定要从查询中检索的值。 它指定用于生成新 JSON 对象的 JSON 值。
+SELECT 子句 (**SELECT &gt;select_list&gt;**) 是必需的，用于指定要从查询中检索的值。 它指定用于生成新 JSON 对象的 JSON 值。
 对于 FROM 集合中已筛选子集（且可选择性分组）的每个元素，投影阶段将生成一个新 JSON 对象，其由 SELECT 子句中指定的值构造而成。
 
 SELECT 子句的语法如下：
@@ -337,7 +337,7 @@ SELECT 子句的语法如下：
 目前，仅支持在针对设备孪生执行的聚合查询中使用除 **SELECT *** 以外的选择子句。
 
 ## <a name="group-by-clause"></a>GROUP BY 子句
-**GROUP BY <group\_specification>** 子句是可选步骤，可在 WHERE 子句中指定的筛选器后和在 SELECT 中指定的投影前执行该子句。它根据属性值来分组文档。这些组用于生成 SELECT 子句中指定的聚合值。
+**GROUP BY &lt;group\_specification&gt;** 子句是可选步骤，可在 WHERE 子句中指定的筛选器后和在 SELECT 中指定的投影前执行该子句。它根据属性值来分组文档。这些组用于生成 SELECT 子句中指定的聚合值。
 
 下面是使用 GROUP BY 的查询示例：
 

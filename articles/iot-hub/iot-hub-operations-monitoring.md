@@ -195,7 +195,7 @@ IoT 中心上的监视终结点是与事件中心兼容的终结点。 可使用
 
 若要连接到监视终结点，需要一个连接字符串和终结点名称。 以下步骤介绍如何在门户中查找必需的值：
 
-1. 在门户中，导航到 IoT 中心资源边栏选项卡。
+1. 在门户预览中，导航到 IoT 中心资源边栏选项卡。
 
 1. 选择“操作监视”，记下“与事件中心兼容的名称”和“与事件中心兼容的终结点”值：
 
@@ -213,53 +213,53 @@ IoT 中心上的监视终结点是与事件中心兼容的终结点。 可使用
 
 * 将监视终结点名称占位符替换为之前记下的“与事件中心兼容的名称”值。
 
-    class Program
-    {
-        static string connectionString = "{your monitoring endpoint connection string}";
-        static string monitoringEndpointName = "{your monitoring endpoint name}";
-        static EventHubClient eventHubClient;
-
-        static void Main(string[] args)
+        class Program
         {
-            Console.WriteLine("Monitoring. Press Enter key to exit.\n");
-
-            eventHubClient = EventHubClient.CreateFromConnectionString(connectionString, monitoringEndpointName);
-            var d2cPartitions = eventHubClient.GetRuntimeInformation().PartitionIds;
-            CancellationTokenSource cts = new CancellationTokenSource();
-            var tasks = new List<Task>();
-
-            foreach (string partition in d2cPartitions)
+            static string connectionString = "{your monitoring endpoint connection string}";
+            static string monitoringEndpointName = "{your monitoring endpoint name}";
+            static EventHubClient eventHubClient;
+    
+            static void Main(string[] args)
             {
-                tasks.Add(ReceiveMessagesFromDeviceAsync(partition, cts.Token));
+                Console.WriteLine("Monitoring. Press Enter key to exit.\n");
+    
+                eventHubClient = EventHubClient.CreateFromConnectionString(connectionString, monitoringEndpointName);
+                var d2cPartitions = eventHubClient.GetRuntimeInformation().PartitionIds;
+                CancellationTokenSource cts = new CancellationTokenSource();
+                var tasks = new List<Task>();
+    
+                foreach (string partition in d2cPartitions)
+                {
+                    tasks.Add(ReceiveMessagesFromDeviceAsync(partition, cts.Token));
+                }
+    
+                Console.ReadLine();
+                Console.WriteLine("Exiting...");
+                cts.Cancel();
+                Task.WaitAll(tasks.ToArray());
             }
-
-            Console.ReadLine();
-            Console.WriteLine("Exiting...");
-            cts.Cancel();
-            Task.WaitAll(tasks.ToArray());
-        }
-
-        private static async Task ReceiveMessagesFromDeviceAsync(string partition, CancellationToken ct)
-        {
-            var eventHubReceiver = eventHubClient.GetDefaultConsumerGroup().CreateReceiver(partition, DateTime.UtcNow);
-            while (true)
+    
+            private static async Task ReceiveMessagesFromDeviceAsync(string partition, CancellationToken ct)
             {
-                if (ct.IsCancellationRequested)
+                var eventHubReceiver = eventHubClient.GetDefaultConsumerGroup().CreateReceiver(partition, DateTime.UtcNow);
+                while (true)
                 {
-                    await eventHubReceiver.CloseAsync();
-                    break;
-                }
-
-                EventData eventData = await eventHubReceiver.ReceiveAsync(new TimeSpan(0,0,10));
-
-                if (eventData != null)
-                {
-                    string data = Encoding.UTF8.GetString(eventData.GetBytes());
-                    Console.WriteLine("Message received. Partition: {0} Data: '{1}'", partition, data);
+                    if (ct.IsCancellationRequested)
+                    {
+                        await eventHubReceiver.CloseAsync();
+                        break;
+                    }
+    
+                    EventData eventData = await eventHubReceiver.ReceiveAsync(new TimeSpan(0,0,10));
+    
+                    if (eventData != null)
+                    {
+                        string data = Encoding.UTF8.GetString(eventData.GetBytes());
+                        Console.WriteLine("Message received. Partition: {0} Data: '{1}'", partition, data);
+                    }
                 }
             }
         }
-    }
 
 ## <a name="next-steps"></a>后续步骤
 若要进一步探索 IoT 中心的功能，请参阅：

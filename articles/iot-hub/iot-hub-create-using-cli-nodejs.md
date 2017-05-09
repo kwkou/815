@@ -37,12 +37,10 @@
 * 有效的 Azure 帐户。 如果没有帐户，可以创建一个[试用帐户][lnk-free-trial]，只需几分钟即可完成。
 * [Azure CLI 0.10.4][lnk-CLI-install] 或更高版本。 如果已经安装 Azure CLI，则可在命令提示符处使用以下命令验证当前版本：
 
-    azure --version
+        azure --version
 
 > [AZURE.NOTE]
-> Azure 提供了用于创建和使用资源的两个不同部署模型：[Azure Resource Manager 模型和经典模型](/documentation/articles/resource-manager-deployment-model/)。 Azure CLI 必须处于 Azure Resource Manager 模式：
-> 
-> `azure config mode arm`
+> Azure 提供了用于创建和使用资源的两个不同部署模型：[Azure Resource Manager 模型和经典模型](/documentation/articles/resource-manager-deployment-model/)。 Azure CLI 必须处于 Azure Resource Manager 模式： `azure config mode arm` 。
 > 
 
 ## <a name="set-your-azure-account-and-subscription"></a>设置 Azure 帐户和订阅

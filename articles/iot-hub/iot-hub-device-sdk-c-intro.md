@@ -231,69 +231,69 @@ Windows 版本的 **iothub\_client\_sample\_mqtt** 应用程序包含以下 Visu
 * 检索消息内容。
 * 从消息中检索任何自定义属性。
 
-    static IOTHUBMESSAGE_DISPOSITION_RESULT ReceiveMessageCallback(IOTHUB_MESSAGE_HANDLE message, void* userContextCallback)
-    {
-        int* counter = (int*)userContextCallback;
-        const char* buffer;
-        size_t size;
-        MAP_HANDLE mapProperties;
-        const char* messageId;
-        const char* correlationId;
-
-        // Message properties
-        if ((messageId = IoTHubMessage_GetMessageId(message)) == NULL)
+        static IOTHUBMESSAGE_DISPOSITION_RESULT ReceiveMessageCallback(IOTHUB_MESSAGE_HANDLE message, void* userContextCallback)
         {
-            messageId = "<null>";
-        }
-
-        if ((correlationId = IoTHubMessage_GetCorrelationId(message)) == NULL)
-        {
-            correlationId = "<null>";
-        }
-
-        // Message content
-        if (IoTHubMessage_GetByteArray(message, (const unsigned char**)&buffer, &size) != IOTHUB_MESSAGE_OK)
-        {
-            (void)printf("unable to retrieve the message data\r\n");
-        }
-        else
-        {
-            (void)printf("Received Message [%d]\r\n Message ID: %s\r\n Correlation ID: %s\r\n Data: <<<%.*s>>> & Size=%d\r\n", *counter, messageId, correlationId, (int)size, buffer, (int)size);
-            // If we receive the work 'quit' then we stop running
-            if (size == (strlen("quit") * sizeof(char)) && memcmp(buffer, "quit", size) == 0)
+            int* counter = (int*)userContextCallback;
+            const char* buffer;
+            size_t size;
+            MAP_HANDLE mapProperties;
+            const char* messageId;
+            const char* correlationId;
+    
+            // Message properties
+            if ((messageId = IoTHubMessage_GetMessageId(message)) == NULL)
             {
-                g_continueRunning = false;
+                messageId = "<null>";
             }
-        }
-
-        // Retrieve properties from the message
-        mapProperties = IoTHubMessage_Properties(message);
-        if (mapProperties != NULL)
-        {
-            const char*const* keys;
-            const char*const* values;
-            size_t propertyCount = 0;
-            if (Map_GetInternals(mapProperties, &keys, &values, &propertyCount) == MAP_OK)
+    
+            if ((correlationId = IoTHubMessage_GetCorrelationId(message)) == NULL)
             {
-                if (propertyCount > 0)
+                correlationId = "<null>";
+            }
+    
+            // Message content
+            if (IoTHubMessage_GetByteArray(message, (const unsigned char**)&buffer, &size) != IOTHUB_MESSAGE_OK)
+            {
+                (void)printf("unable to retrieve the message data\r\n");
+            }
+            else
+            {
+                (void)printf("Received Message [%d]\r\n Message ID: %s\r\n Correlation ID: %s\r\n Data: <<<%.*s>>> & Size=%d\r\n", *counter, messageId, correlationId, (int)size, buffer, (int)size);
+                // If we receive the work 'quit' then we stop running
+                if (size == (strlen("quit") * sizeof(char)) && memcmp(buffer, "quit", size) == 0)
                 {
-                    size_t index;
-
-                    printf(" Message Properties:\r\n");
-                    for (index = 0; index < propertyCount; index++)
-                    {
-                        (void)printf("\tKey: %s Value: %s\r\n", keys[index], values[index]);
-                    }
-                    (void)printf("\r\n");
+                    g_continueRunning = false;
                 }
             }
+    
+            // Retrieve properties from the message
+            mapProperties = IoTHubMessage_Properties(message);
+            if (mapProperties != NULL)
+            {
+                const char*const* keys;
+                const char*const* values;
+                size_t propertyCount = 0;
+                if (Map_GetInternals(mapProperties, &keys, &values, &propertyCount) == MAP_OK)
+                {
+                    if (propertyCount > 0)
+                    {
+                        size_t index;
+    
+                        printf(" Message Properties:\r\n");
+                        for (index = 0; index < propertyCount; index++)
+                        {
+                            (void)printf("\tKey: %s Value: %s\r\n", keys[index], values[index]);
+                        }
+                        (void)printf("\r\n");
+                    }
+                }
+            }
+    
+            /* Some device specific action code goes here... */
+            (*counter)++;
+            return IOTHUBMESSAGE_ACCEPTED;
         }
-
-        /* Some device specific action code goes here... */
-        (*counter)++;
-        return IOTHUBMESSAGE_ACCEPTED;
-    }
-
+    
 使用 **IoTHubMessage\_GetByteArray** 函数来检索消息（在本示例中是一个字符串）。
 
 ### <a name="uninitialize-the-library"></a>取消初始化库
@@ -507,7 +507,7 @@ Windows 版本的 **iothub\_client\_sample\_mqtt** 应用程序包含以下 Visu
 在模型中定义操作时，需要实现当设备接收相应的消息时调用的函数。例如，如果模型定义了此操作：
 
 
-WITH_ACTION(SetAirResistance, int, Position)
+    WITH_ACTION(SetAirResistance, int, Position)
 
 使用此签名定义函数：
 
