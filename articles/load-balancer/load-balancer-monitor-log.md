@@ -3,7 +3,7 @@
     pageTitle="监视负载均衡器的操作、事件和计数器 | Azure"
     description="了解如何为 Azure 负载均衡器启用警报事件以及探测运行状况日志记录"
     services="load-balancer"
-    documentationCenter="na"
+    documentationcenter="na"
     author="kumudd"
     manager="timlt"
     tags="azure-resource-manager"
@@ -16,11 +16,11 @@
     ms.tgt_pltfrm="na"
     ms.workload="infrastructure-services"
     ms.date="10/24/2016"
-    wacn.date="04/17/2017"
+    wacn.date="05/08/2017"
     ms.author="kumud"
-    ms.sourcegitcommit="7cc8d7b9c616d399509cd9dbdd155b0e9a7987a8"
-    ms.openlocfilehash="e2b065a3ac46b866c7775fab679fc0ee3379b543"
-    ms.lasthandoff="04/07/2017" />
+    ms.sourcegitcommit="2c4ee90387d280f15b2f2ed656f7d4862ad80901"
+    ms.openlocfilehash="2b55b55dd3cb7ee54566ef151627effd8f0d8bd3"
+    ms.lasthandoff="04/28/2017" />
 
 # <a name="log-analytics-for-azure-load-balancer"></a>Azure 负载均衡器的 Log Analytics
 
@@ -63,7 +63,7 @@
 
 默认生成审核日志。 日志在 Azure 的事件日志存储区中保留 90 天。 通过阅读[查看事件和审核日志](/documentation/articles/insights-debugging-with-events/)一文可了解有关这些日志的详细信息。
 
-## <a name="alert-event-log"></a> 警报事件日志
+## <a name="alert-event-log"></a>警报事件日志
 
 只有基于每个负载均衡器启用了此日志，才会生成此日志。 事件以 JSON 格式记录，并存储在启用日志记录时指定的存储帐户中。 下面是事件的示例。
 

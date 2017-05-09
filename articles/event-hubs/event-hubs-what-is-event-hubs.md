@@ -14,12 +14,12 @@
     ms.topic="get-started-article"
     ms.tgt_pltfrm="na"
     ms.workload="na"
-    ms.date="03/07/2017"
-    wacn.date="04/17/2017"
+    ms.date="03/31/2017"
+    wacn.date="05/08/2017"
     ms.author="sethm; babanisa"
-    ms.sourcegitcommit="7cc8d7b9c616d399509cd9dbdd155b0e9a7987a8"
-    ms.openlocfilehash="f753ef0aec0e2b2b5cf104d98265c59312487e79"
-    ms.lasthandoff="04/07/2017" />
+    ms.sourcegitcommit="2c4ee90387d280f15b2f2ed656f7d4862ad80901"
+    ms.openlocfilehash="55917df44200b416528b9bb8f77eadafcaf1f33a"
+    ms.lasthandoff="04/28/2017" />
 
 # <a name="what-is-azure-event-hubs"></a>什么是 Azure 事件中心？
 事件中心是一个高度可缩放的数据流平台，每秒能引入数百万个事件。 可使用任何实时分析提供程序或批处理/存储适配器转换和存储发送到事件中心的数据。 由于能够以较低的延迟和极高的规模提供发布订阅功能，事件中心可以充当大数据的“入口”。
@@ -34,9 +34,9 @@
 事件中心还支持移动应用中的行为跟踪、从 Web 场中采集流量信息、控制台游戏中的游戏内事件捕获，或者从工业机器或互联汽车中收集遥测数据。
 
 ## <a name="azure-event-hubs-overview"></a>Azure 事件中心概述
-事件中心在解决方案体系结构中所扮演的常见角色是充当事件管道的“前门”，通常称为 *事件引入器*。 事件引入器是位于事件发布者与事件使用者之间的组件或服务，可以将事件流的生成与这些事件的使用分离开来。
+事件中心在解决方案体系结构中所扮演的常见角色是充当事件管道的“前门”，通常称为 *事件引入器*。 事件引入器是位于事件发布者与事件使用者之间的组件或服务，可以将事件流的生成与这些事件的使用分离开来。 下图显示了此体系结构：
 
-![事件中心](./media/event-hubs-what-is-event-hubs/event_hubs_full_pipeline.png)  
+![事件中心](./media/event-hubs-what-is-event-hubs/event_hubs_full_pipeline.png)
 
 Azure 事件中心是一种事件处理服务，用于提供云规模的事件与遥测引入，具有较低的延迟和较高的可靠性。 事件中心提供消息流处理功能，其特征不同于传统的企业消息传送。 事件中心功能围绕高吞吐量和事件处理方案而构建。 因此，事件中心未实现可用于消息传递实体（如主题）的某些消息传递功能。
 
@@ -101,6 +101,8 @@ Azure 事件中心是一种事件处理服务，用于提供云规模的事件�
     //[my namespace].servicebus.chinacloudapi.cn/[event hub name]/[Consumer Group #1]
     //[my namespace].servicebus.chinacloudapi.cn/[event hub name]/[Consumer Group #2]
 
+下图显示了事件中心流处理体系结构：
+
 ![事件中心](./media/event-hubs-what-is-event-hubs/event_hubs_architecture.png)
 
 ### <a name="stream-offsets"></a>流偏移量
@@ -117,7 +119,7 @@ Azure 事件中心是一种事件处理服务，用于提供云规模的事件�
 所有事件中心使用者都通过 AMQP 1.0 会话和状态感知双向信道进行连接。 每个分区都提供一个 AMQP 1.0 会话，方便传输按分区隔离的事件。
 
 #### <a name="connect-to-a-partition"></a>连接到分区
-在连接到分区时，常见的做法是使用租用机制来协调读取者与特定分区的连接。 这样，便可以做到一个使用者组中每分区只有一个活动的读取者。 使用 .NET 客户端的 [EventProcessorHost](https://www.nuget.org/packages/Microsoft.Azure.ServiceBus.EventProcessorHost) 类可以简化检查点、租用和读取者管理功能。 事件处理程序主机是智能使用者代理。
+在连接到分区时，常见的做法是使用租用机制来协调读取者与特定分区的连接。 这样，便可以做到一个使用者组中每分区只有一个活动的读取者。 使用 .NET 客户端的 [EventProcessorHost](https://docs.microsoft.com/zh-cn/dotnet/api/microsoft.servicebus.messaging.eventprocessorhost) 类可以简化检查点、租用和读取者管理功能。 事件处理程序主机是智能使用者代理。
 
 #### <a name="read-events"></a>读取事件
 为特定分区建立 AMQP 1.0 会话和链接后，事件中心服务会将事件传送到 AMQP 1.0 客户端。 与 HTTP GET 等基于提取的机制相比，此传送机制可以实现更高的吞吐量和更低的延迟。 将事件发送到客户端时，每个事件数据实例将包含重要的元数据，例如，用于简化对事件序列执行的检查点操作的偏移量和序列号。
@@ -163,4 +165,4 @@ Azure 事件中心是一种事件处理服务，用于提供云规模的事件�
 [Azure 门户]: https://portal.azure.cn
 
 
-<!--Update_Description:update meta properties;wording update-->
+<!--Update_Description:update meta properties;wording update；update reference link-->

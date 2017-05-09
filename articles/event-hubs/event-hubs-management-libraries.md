@@ -5,7 +5,8 @@
     cloud="na"
     documentationcenter="na"
     author="jtaubensee"
-    manager="timlt" />
+    manager="timlt"
+    translationtype="Human Translation" />
 <tags
     ms.assetid=""
     ms.service="event-hubs"
@@ -13,32 +14,34 @@
     ms.tgt_pltfrm="na"
     ms.devlang="dotnet"
     ms.topic="article"
-    ms.date="1/6/2017"
-    wacn.date="03/24/2017"
-    ms.author="jotaub;sethm" />  
+    ms.date="4/10/2017"
+    wacn.date="05/08/2017"
+    ms.author="jotaub;sethm"
+    ms.sourcegitcommit="2c4ee90387d280f15b2f2ed656f7d4862ad80901"
+    ms.openlocfilehash="0fadb5c3724bdfadb30f5b479ea7f8545549d063"
+    ms.lasthandoff="04/28/2017" />
 
+# <a name="event-hubs-management-libraries"></a>事件中心管理库
 
-# 事件中心管理库
+事件中心管理库可以动态设置事件中心命名空间和实体。 这样可以实现复杂的部署和消息传递方案，以便能够以编程方式确定要设置的实体。 这些库目前可用于 .NET。
 
-事件中心管理库可动态预配事件中心命名空间和实体。因而适用于复杂部署和消息传送方案，这让用户能够以编程方式确定要预配的实体。这些库当前面向 .NET 提供。
-
-## 受支持的功能
+## <a name="supported-functionality"></a>受支持的功能
 
 * 创建、更新、删除命名空间
 * 事件中心创建、更新、删除
 * 资源组创建、更新、删除
 
-## 先决条件
+## <a name="prerequisites"></a>先决条件
 
-若要开始使用事件中心管理库，必须使用 Azure Active Directory (AAD) 进行身份验证。AAD 要求以提供 Azure 资源访问权限的服务主体身份进行身份验证。有关创建服务主体的信息，请参阅以下文章之一：
+若要开始使用事件中心管理库，必须使用 Azure Active Directory (AAD) 进行身份验证。 AAD 要求以提供 Azure 资源访问权限的服务主体身份进行身份验证。 有关创建服务主体的信息，请参阅以下文章之一：  
 
-* [使用 Azure 门户预览创建可访问资源的 Active Directory 应用程序和服务主体](/documentation/articles/resource-group-create-service-principal-portal/)
+* [使用 Azure 门户创建可访问资源的 Active Directory 应用程序和服务主体](/documentation/articles/resource-group-create-service-principal-portal/)
 * [使用 Azure PowerShell 创建服务主体来访问资源](/documentation/articles/resource-group-authenticate-service-principal/)
 * [使用 Azure CLI 创建服务主体来访问资源](/documentation/articles/resource-group-authenticate-service-principal-cli/)
 
-这些教程提供 `AppId`（客户端 ID）、`TenantId` 和 `ClientSecret`（身份验证密钥），管理库会使用它们进行身份验证。必须具有要在其中运行的资源组的“所有者”权限。
+这些教程将提供 `AppId`（客户端 ID）、`TenantId` 和 `ClientSecret`（身份验证密钥），这些都将用于管理库进行的身份验证。 必须具有要在其中运行的资源组的“所有者”权限。
 
-## 编程模式
+## <a name="programming-pattern"></a>编程模式
 
 所有事件中心资源的操纵模式都遵循常用协议：
 
@@ -70,9 +73,8 @@
 
         await ehClient.EventHubs.CreateOrUpdateAsync(resourceGroupName, namespaceName, EventHubName, ehParams);
 
-## 后续步骤
+## <a name="next-steps"></a>后续步骤
 * [.NET 管理示例](https://github.com/Azure-Samples/event-hubs-dotnet-management/)
-* [Microsoft.Azure.Management.EventHub 参考](https://docs.microsoft.com/zh-cn/dotnet/api/Microsoft.Azure.Management.EventHub)
+* [Microsoft.Azure.Management.EventHub 引用](http://docs.microsoft.com/zh-cn/dotnet/api/Microsoft.Azure.Management.EventHub)
 
-<!---HONumber=Mooncake_0320_2017-->
 <!-- Update_Description: update meta properties;wording update;update link reference-->

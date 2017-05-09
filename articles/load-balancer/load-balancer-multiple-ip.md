@@ -15,11 +15,11 @@
     ms.tgt_pltfrm="na"
     ms.workload="infrastructure-services"
     ms.date="03/22/2017"
-    wacn.date="04/17/2017"
+    wacn.date="05/08/2017"
     ms.author="kumud"
-    ms.sourcegitcommit="7cc8d7b9c616d399509cd9dbdd155b0e9a7987a8"
-    ms.openlocfilehash="54b086cdbde6c36824f5bd62406589a32fe6c980"
-    ms.lasthandoff="04/07/2017" />
+    ms.sourcegitcommit="2c4ee90387d280f15b2f2ed656f7d4862ad80901"
+    ms.openlocfilehash="2dcb34a7c86444fcc02836d9b7cd3f7a98d21e1d"
+    ms.lasthandoff="04/28/2017" />
 
 # <a name="load-balancing-on-multiple-ip-configurations-using-the-azure-portal"></a>使用 Azure 门户对多个 IP 配置进行负载均衡
 > [AZURE.SELECTOR]
@@ -27,16 +27,12 @@
 - [PowerShell](/documentation/articles/load-balancer-multiple-ip-powershell/)
 - [CLI](/documentation/articles/load-balancer-multiple-ip-cli/)
 
-本文介绍如何将 Azure 负载均衡器用于辅助网络接口 (NIC) 的多个 IP 地址。 目前，对一个 NIC 的多个 IP 地址的支持是预览版的功能。 以下场景说明了如何通过负载均衡器使用此功能。
-
-在此方案中，有两个运行 Windows 的 VM，每个 VM 有一个主 NIC 和一个辅助 NIC。 每个辅助 NIC 具有两个 IP 配置。 每个 VM 托管网站 contoso.com 和 fabrikam.com。 每个网站都绑定到辅助 NIC 的一个 IP 配置。 我们使用 Azure 负载均衡器公开两个前端 IP 地址，每个地址分别对应于一个网站，从而将流量分发到网站的各个 IP 配置。 此场景中两个前端以及两个后端池 IP 地址都使用相同的端口号。
+本文介绍如何针对辅助网络接口 (NIC) 上的多个 IP 地址使用 Azure 负载均衡器。本方案包含两个运行 Windows 的 VM，每个 VM 包含主要 NIC 和辅助 NIC。 每个辅助 NIC 具有两个 IP 配置。 每个 VM 托管网站 contoso.com 和 fabrikam.com。 每个网站都绑定到辅助 NIC 的一个 IP 配置。 我们使用 Azure 负载均衡器公开两个前端 IP 地址，每个地址分别对应于一个网站，从而将流量分发到网站的各个 IP 配置。 此场景中两个前端以及两个后端池 IP 地址都使用相同的端口号。
 
 ![负载均衡应用场景图像](./media/load-balancer-multiple-ip/lb-multi-ip.PNG)  
 
-
 ##<a name="prerequisites"></a>先决条件
 本示例假设已有一个名为 *contosofabrikam* 的、使用以下配置的资源组：
-
 - 在名为 *myAvailset* 的同一个可用性集中包含名为 *myVNet* 的虚拟网络，以及名为 *VM1* 和 *VM2* 的两个 VM。 
 - 每个 VM 包含主要 NIC 和辅助 NIC。 主要 NIC 名为 *VM1NIC1* 和 *VM2NIC1*，辅助 NIC 名为 *VM1NIC2* 和 *VM2NIC2*。 有关创建具有多个 NIC 的 VM 的详细信息，请参阅[使用 PowerShell 创建具有多个 NIC 的 VM](/documentation/articles/virtual-network-deploy-multinic-arm-ps/)。
 
@@ -48,7 +44,7 @@
 
 对于虚拟网络中的每个 VM，请按如下所述为辅助 NIC 添加 IP 配置：  
 
-1. 从浏览器导航到 Azure 门户预览版：http://portal.azure.cn，并使用 Azure 帐户登录。
+1. 从浏览器导航到 Azure 门户：http://portal.azure.cn，并使用 Azure 帐户登录。
 2. 在屏幕的左上方单击“资源组”图标，然后单击 VM 所在的资源组（例如 *contosofabrikam*）。 此时将显示“资源组”边栏选项卡，其中列出了 VM 的所有资源以及网络接口。
 3. 针对每个 VM 的辅助 NIC，请按如下所述添加 IP 配置：
     1. 选择要将 IP 配置添加到的网络接口。
@@ -126,10 +122,10 @@
 8. 完成负载均衡规则配置后，这两个规则（*HTTPc* 和 *HTTPf*）将显示在负载均衡器的“负载均衡规则”边栏选项卡中。
 
 ### <a name="step-7-configure-dns-records"></a>步骤 7：配置 DNS 记录
-最后，必须将 DNS 资源记录配置为指向各自的负载均衡器的前端 IP 地址。 <!-- 可以在 Azure DNS 中托管域。 有关将 Azure DNS 与负载均衡器配合使用的详细信息，请参阅[将 Azure DNS 与其他 Azure 服务配合使用](/documentation/articles/dns-for-azure-services/)。-->
+最后，必须将 DNS 资源记录配置为指向各自的负载均衡器的前端 IP 地址。
 
 ## <a name="next-steps"></a>后续步骤
 - 若要深入了解如何在 Azure 中结合使用负载均衡服务，请参阅[在 Azure 中使用负载均衡服务](/documentation/articles/traffic-manager-load-balancing-azure/)。
 - 若要了解如何在 Azure 中使用不同类型的日志对负载均衡器进行管理和故障排除，请参阅 [Azure 负载均衡器的 Log Analytics](/documentation/articles/load-balancer-monitor-log/)。
 
-<!--Update_Description:udpate meta properties; new whole content configuration for setup the load balancer with multiple IP-->
+<!--Update_Description:udpate meta properties;wording update-->

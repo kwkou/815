@@ -15,11 +15,11 @@
     ms.tgt_pltfrm="na"
     ms.workload="infrastructure-services"
     ms.date="10/31/2016"
-    wacn.date="04/17/2017"
+    wacn.date="05/08/2017"
     ms.author="kumud"
-    ms.sourcegitcommit="7cc8d7b9c616d399509cd9dbdd155b0e9a7987a8"
-    ms.openlocfilehash="ed1fab7cf1e0ea85b03c9f2e141dffa1245cb0bf"
-    ms.lasthandoff="04/07/2017" />
+    ms.sourcegitcommit="2c4ee90387d280f15b2f2ed656f7d4862ad80901"
+    ms.openlocfilehash="6e87350b658750b767403ae0c44fee940a284083"
+    ms.lasthandoff="04/28/2017" />
 
 # <a name="understanding-outbound-connections-in-azure"></a>了解 Azure 中的出站连接
 
@@ -61,10 +61,15 @@ SNAT 端口是可能会被耗尽的有限资源。 因此了解它们的使用�
 
     nslookup myip.opendns.com resolver1.opendns.com
 
-## <a name="preventing-public-connectivity"></a> 阻止公共连接
+## <a name="preventing-public-connectivity"></a>阻止公共连接
 
 有时允许 VM 创建出站流是不可取的，或者可能需要管理哪些目标可以通过出站流进行访问。 在此情况下，使用[网络安全组 (NSG)](/documentation/articles/virtual-networks-nsg/) 管理 VM 可以访问的目标。 将 NSG 应用于负载均衡的 VM 时，需要注意[默认标记](/documentation/articles/virtual-networks-nsg/#default-tags)和[默认规则](/documentation/articles/virtual-networks-nsg/#default-rules)。
 
 必须确保 VM 可以接收来自 Azure 负载均衡器的运行状况探测请求。 如果 NSG 阻止来自 AZURE_LOADBALANCER 默认标记的运行状况探测请求，那么 VM 的运行状况探测程序将失败，并且 VM 被标记为停机。 负载均衡器停止向此 VM 发送新流。
 
-<!--Update_Description:update meta properties;wording update-->
+## <a name="limitations"></a>限制
+
+尽管不保证，但当前可用的最大 SNAT 端口数为 64,511（65,535 - 1024 个特权端口）。  这不会直接转换为连接数，有关何时和如何分配 SNAT 端口以及如何管理此可耗尽资源的详细信息，请参见上文。
+
+如果[多个（公共）IP 地址与一个负载均衡器关联](/documentation/articles/load-balancer-multivip-overview/)，则所有这些公共 IP 地址皆是出站流的候选项。
+<!--Update_Description:wording update; add Limitations content block-->

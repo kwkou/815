@@ -14,43 +14,43 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="na"
-    ms.date="03/01/2017"
-    wacn.date="04/17/2017"
-    ms.author="jotaub"
-    ms.sourcegitcommit="7cc8d7b9c616d399509cd9dbdd155b0e9a7987a8"
-    ms.openlocfilehash="5772c3723cfb9ba827d9ccd2ad4c05fe4ea854d2"
-    ms.lasthandoff="04/07/2017" />
+    ms.date="03/27/2017"
+    wacn.date="05/08/2017"
+    ms.author="jotaub;sethm"
+    ms.sourcegitcommit="2c4ee90387d280f15b2f2ed656f7d4862ad80901"
+    ms.openlocfilehash="d00e41fc56c3a3602aca7d90147e0cfc3c1c90dd"
+    ms.lasthandoff="04/28/2017" />
 
 # <a name="get-started-sending-messages-to-event-hubs-in-net-standard"></a>在 .NET Standard 中将消息发送到事件中心入门
 
 > [AZURE.NOTE]
 > [GitHub](https://github.com/Azure/azure-event-hubs/tree/master/samples/DotNet/Microsoft.Azure.EventHubs/SampleSender) 上提供了此示例。
 
-本教程演示如何编写 .NET Core 控制台应用程序，以将一组消息发送到事件中心。 可以按原样运行 [GitHub](https://github.com/Azure/azure-event-hubs/tree/master/samples/DotNet/Microsoft.Azure.EventHubs/SampleSender) 解决方案，并将 `EhConnectionString` 和 `EhEntityPath` 字符串替换为事件中心的值，也可以按照本教程中的步骤创建自己的解决方案。
+本教程演示如何编写 .NET Core 控制台应用程序，以将一组消息发送到事件中心。 可以按原样运行 [GitHub](https://github.com/Azure/azure-event-hubs/tree/master/samples/DotNet/Microsoft.Azure.EventHubs/SampleSender) 解决方案，并将 `EhConnectionString` 和 `EhEntityPath` 字符串替换为事件中心的值。 或者，可以按照本教程中的步骤创建自己的解决方案。
 
 ## <a name="prerequisites"></a>先决条件
 
-1. [Microsoft Visual Studio 2015 或 2017](http://www.visualstudio.com)。 本教程中的示例使用 Visual Studio 2015，但也支持 Visual Studio 2017。
+* [Microsoft Visual Studio 2015 或 2017](http://www.visualstudio.com)。 本教程中的示例使用 Visual Studio 2017，但也支持 Visual Studio 2015。
 
-2. [.NET Core Visual Studio 2015 或 2017 工具](http://www.microsoft.com/net/core)。
+* [.NET Core Visual Studio 2015 或 2017 工具](http://www.microsoft.com/net/core)。
 
-3. Azure 订阅。
+* Azure 订阅。
 
-4. 事件中心命名空间。
+* 事件中心命名空间。
 
-为将消息发送到事件中心，我们将使用 Visual Studio 编写 C# 控制台应用程序。
+为了将消息发送到事件中心，我们将使用 Visual Studio 编写 C# 控制台应用程序。
 
 ## <a name="create-an-event-hubs-namespace-and-an-event-hub"></a>创建事件中心命名空间和事件中心
 
-第一步是使用 [Azure 门户](https://portal.azure.cn)创建事件中心类型的命名空间，并获取应用程序与事件中心进行通信所需的管理凭据。 若要创建命名空间和事件中心，请按照[本文](/documentation/articles/event-hubs-create/)中的步骤进行操作，然后继续执行以下步骤。
+第一步是使用 [Azure 门户](https://portal.azure.cn)创建事件中心类型的命名空间，并获取应用程序与事件中心进行通信所需的管理凭据。 若要创建命名空间和事件中心，请按照[本文](/documentation/articles/event-hubs-create/)中的步骤操作，然后继续执行以下步骤。
 
 ## <a name="create-a-console-application"></a>创建控制台应用程序
 
 启动 Visual Studio。 在“文件”菜单中，单击“新建”，然后单击“项目”。 创建 .NET Core 控制台应用程序。
 
-![][1]
+![新建项目][1]
 
-## <a name="add-the-event-hubs-nuget-package"></a>添加事件中心 NuGet 程序包
+## <a name="add-the-event-hubs-nuget-package"></a>添加事件中心 NuGet 包
 
 将 [`Microsoft.Azure.EventHubs`](https://www.nuget.org/packages/Microsoft.Azure.EventHubs/) NuGet 包添加到项目。
 
@@ -60,6 +60,7 @@
 
         using Microsoft.Azure.EventHubs;
         using System.Text;
+        using System.Threading.Tasks;
 
 2. 向 `Program` 类添加常量作为事件中心连接字符串和实体路径（单个事件中心名称）。将括号中的占位符替换为在创建事件中心时获得的相应值。
 
@@ -71,8 +72,8 @@
 
         private static async Task MainAsync(string[] args)
         {
-            // Creates an EventHubsConnectionStringBuilder object from a the connection string, and sets the EntityPath.
-            // Typically the connection string should have the Entity Path in it, but for the sake of this simple scenario
+            // Creates an EventHubsConnectionStringBuilder object from the connection string, and sets the EntityPath.
+            // Typically, the connection string should have the Entity Path in it, but for the sake of this simple scenario
             // we are using the connection string from the namespace.
             var connectionStringBuilder = new EventHubsConnectionStringBuilder(EhConnectionString)
             {
@@ -113,7 +114,7 @@
             Console.WriteLine($"{numMessagesToSend} messages sent.");
         }
 
-5. 向 `Program` 类中的 `Main` 方法添加以下代码。
+5. 在 `Program` 类的 `Main` 方法中添加以下代码。
 
         MainAsync(args).GetAwaiter().GetResult();
 
@@ -139,8 +140,8 @@
 
                 private static async Task MainAsync(string[] args)
                 {
-                    // Creates an EventHubsConnectionStringBuilder object from a the connection string, and sets the EntityPath.
-                    // Typically the connection string should have the Entity Path in it, but for the sake of this simple scenario
+                    // Creates an EventHubsConnectionStringBuilder object from  the connection string, and sets the EntityPath.
+                    // Typically, the connection string should have the Entity Path in it, but for the sake of this simple scenario
                     // we are using the connection string from the namespace.
                     var connectionStringBuilder = new EventHubsConnectionStringBuilder(EhConnectionString)
                     {
@@ -196,4 +197,4 @@
 <!-- Image Reference-->
 [1]: ./media/event-hubs-dotnet-standard-getstarted-send/netcore.png
     
-<!--Update_Description:update meta properties;wording update;add content about hot to create a console application-->
+<!--Update_Description:update meta properties;wording update;add namespace in console application-->
