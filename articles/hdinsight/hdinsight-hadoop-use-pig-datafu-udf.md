@@ -118,3 +118,5 @@ DataFu 是适用于 Hadoop 的开放源代码库的集合。 在本文档中，�
 
 * [Apache DataFu Pig 指南](http://datafu.incubator.apache.org/docs/datafu/guide.html)。
 * [将 Pig 与 HDInsight 配合使用](/documentation/articles/hdinsight-use-pig/)
+
+<!--Update_Description: wording update-->

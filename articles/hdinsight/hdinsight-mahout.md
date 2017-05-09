@@ -399,3 +399,5 @@ Mahout 作业不清理在处理期间创建的临时文件。 此外，作业不
 [connect]: ./media/hdinsight-mahout/connect.png
 [hadoopcli]: ./media/hdinsight-mahout/hadoopcli.png
 [tools]: https://github.com/Blackmist/hdinsight-tools
+
+<!--Update_Description: wording update-->

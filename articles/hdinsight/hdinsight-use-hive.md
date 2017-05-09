@@ -228,3 +228,5 @@ HDInsight 可以使用各种方法运行 HiveQL 作业。 使用下表来确定�
 [powershell-here-strings]: http://technet.microsoft.com/zh-cn/library/ee692792.aspx
 
 [cindygross-hive-tables]: http://blogs.msdn.com/b/cindygross/archive/2013/02/06/hdinsight-hive-internal-and-external-tables-intro.aspx
+
+<!--Update_Description: wording update-->

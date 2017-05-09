@@ -241,3 +241,5 @@ Ambari REST API 可通过 Internet 提供，公共网关可将请求路由到当
 [preview-portal]: https://portal.azure.cn/
 [azure-powershell]: https://docs.microsoft.com/zh-cn/powershell/azureps-cmdlets-docs
 [azure-cli]: /documentation/articles/cli-install-nodejs/
+
+<!--Update_Description: wording update-->

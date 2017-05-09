@@ -268,3 +268,5 @@ Beeline 是一个命令行工具，包含在 HDInsight 群集的头节点上。 
 [hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data/
 
 [powershell-here-strings]: http://technet.microsoft.com/zh-cn/library/ee692792.aspx
+
+<!--Update_Description: wording update-->

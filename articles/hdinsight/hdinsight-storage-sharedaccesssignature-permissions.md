@@ -194,7 +194,7 @@ HDInsight 使用 Azure 存储 Blob 存储数据。 HDInsight 必须对用作群�
 * 对于 **基于 Windows** 的 HDInsight 群集，请使用远程桌面连接到群集。 有关详细信息，请参阅[使用 RDP 连接到 HDInsight](/documentation/articles/hdinsight-administer-use-management-portal/#connect-to-clusters-using-rdp)。
 
     连接后，使用桌面上的“Hadoop 命令行”  图标打开命令提示符。
-* 对于**基于 Linux** 的 HDInsight 群集，请使用 SSH 连接到群集。 有关详细信息，请参阅 [Use SSH with HDInsight](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix/)（对 HDInsight 使用 SSH）。
+* 对于**基于 Linux** 的 HDInsight 群集，请使用 SSH 连接到群集。 有关详细信息，请参阅[对 HDInsight 使用 SSH](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix/)。
 
 连接到群集后，使用以下步骤验证是否只能读取和列出 SAS 存储帐户中的项：
 
@@ -255,3 +255,5 @@ HDInsight 使用 Azure 存储 Blob 存储数据。 HDInsight 必须对用作群�
 * [将 MapReduce 与 HDInsight 配合使用](/documentation/articles/hdinsight-use-mapreduce/)
 
 [powershell]: https://docs.microsoft.com/zh-cn/powershell/azureps-cmdlets-docs
+
+<!--Update_Description: wording update-->

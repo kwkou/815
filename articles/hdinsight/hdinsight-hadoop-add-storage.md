@@ -131,3 +131,5 @@ Bash
 ## <a name="next-steps"></a>后续步骤
 
 你已学习如何将其他存储帐户添加到现有 HDInsight 群集。 有关脚本操作的详细信息，请参阅[使用脚本操作自定义基于 Linux 的 HDInsight 群集](/documentation/articles/hdinsight-hadoop-customize-cluster-linux/)
+
+<!--Update_Description: wording update-->

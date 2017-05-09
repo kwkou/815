@@ -129,7 +129,7 @@ Azure 门户预览会公开大部分的群集属性。 使用 Azure Resource Man
 
     参考以下内容了解此边栏选项卡顶部的图标。
 
-    *  “概览”边栏选项卡提供有关该群集的基本信息，如名称、所属的资源组、位置、操作系统、群集仪表板 URL 等。
+    * **概览** 边栏选项卡提供有关该群集的基本信息，如名称、所属的资源组、位置、操作系统、群集仪表板 URL 等。
     * **仪表板** 可将你定向到与群集关联的 Ambari 门户。
     * **安全外壳**：使用 SSH 访问群集时所需的信息。
     * **缩放群集** 可增加与群集关联的辅助角色节点数。
@@ -165,3 +165,5 @@ Azure 门户预览会公开大部分的群集属性。 使用 Azure Resource Man
 * [Spark 和 BI：使用 HDInsight 中的 Spark 和 BI 工具执行交互式数据分析](/documentation/articles/hdinsight-apache-spark-use-bi-tools/)
 * [Spark 和机器学习：使用 HDInsight 中的 Spark 预测食品检查结果](/documentation/articles/hdinsight-apache-spark-machine-learning-mllib-ipython/)
 * [Spark 流式处理：使用 HDInsight 中的 Spark 生成实时流式处理应用程序](/documentation/articles/hdinsight-apache-spark-eventhub-streaming/)
+
+<!--Update_Description: wording update-->

@@ -23,7 +23,7 @@
     ms.openlocfilehash="8b66388d4b55b505661b6a70de32651061ee9fe7"
     ms.lasthandoff="04/28/2017" />
 
-#<a name="get-started-with-the-storm-starter-samples-for-big-data-analytics-on-linux-based-hdinsight"></a>用于在基于 Linux 的 HDInsight 上进行大数据分析的 Storm 初学者示例入门
+# <a name="get-started-with-the-storm-starter-samples-for-big-data-analytics-on-linux-based-hdinsight"></a>用于在基于 Linux 的 HDInsight 上进行大数据分析的 Storm 初学者示例入门
 
 Apache Storm 是一个可扩展的、具有容错能力的分布式实时计算系统，用于处理数据流。 使用 Azure HDInsight 上的 Storm，你可以创建一个基于云的、用于实时执行大数据分析的 Storm 群集。
 
@@ -211,3 +211,5 @@ Storm UI 提供一个 Web 界面用于处理正在运行的拓扑，你的 HDIns
 [azureportal]: https://manage.windowsazure.cn/
 [hdinsight-provision]: /documentation/articles/hdinsight-hadoop-provision-linux-clusters/
 [preview-portal]: https://portal.azure.cn/
+
+<!--Update_Description: wording update-->

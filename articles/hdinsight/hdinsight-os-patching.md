@@ -66,3 +66,5 @@
 
 * [在创建群集期间使用脚本操作](/documentation/articles/hdinsight-hadoop-customize-cluster-linux/#use-a-script-action-during-cluster-creation)
 * [将脚本操作应用到正在运行的群集](/documentation/articles/hdinsight-hadoop-customize-cluster-linux/#apply-a-script-action-to-a-running-cluster)
+
+<!--Update_Description: wording update-->

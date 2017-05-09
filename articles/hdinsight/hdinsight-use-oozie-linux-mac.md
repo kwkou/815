@@ -701,3 +701,5 @@ Oozie UI 对于排查 Oozie 作业问题很有帮助，因为它可让你轻松�
 [img-runworkflow-output]: ./media/hdinsight-use-oozie/HDI.UseOozie.RunWF.Output.png
 
 [technetwiki-hive-error]: http://social.technet.microsoft.com/wiki/contents/articles/23047.hdinsight-hive-error-unable-to-rename.aspx
+
+<!--Update_Description: wording update-->

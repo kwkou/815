@@ -314,3 +314,5 @@ HDInsight 群集边栏选项卡的“使用情况”部分会显示相关信息�
 
 [azure-portal]: https://portal.azure.cn
 [image-hadoopcommandline]: ./media/hdinsight-administer-use-portal-linux/hdinsight-hadoop-command-line.png "Hadoop 命令行"
+
+<!--Update_Description: wording update-->

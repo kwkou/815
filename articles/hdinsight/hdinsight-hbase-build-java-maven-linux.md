@@ -663,3 +663,5 @@ __从 `ssh` 会话__：
 __从 Azure PowerShell__：
 
 `Start-HBaseExample -className com.microsoft.examples.DeleteTable -clusterName hdinsightclustername`
+
+<!--Update_Description: wording update-->

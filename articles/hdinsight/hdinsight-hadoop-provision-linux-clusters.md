@@ -302,3 +302,5 @@ HDInsight 群集与其默认存储帐户必须位于相同的 Azure 位置。
 | [cURL](/documentation/articles/hdinsight-hadoop-create-linux-clusters-curl-rest/) |&nbsp; |✔ |✔ |&nbsp; |✔ |✔ |
 | [.NET SDK](/documentation/articles/hdinsight-hadoop-create-linux-clusters-dotnet-sdk/) |&nbsp; |&nbsp; |&nbsp; |✔ |✔ |✔ |
 | [Azure Resource Manager 模板](/documentation/articles/hdinsight-hadoop-create-linux-clusters-arm-templates/) |&nbsp; |✔ |&nbsp; |&nbsp; |✔ |✔ |
+
+<!--Update_Description: wording update-->

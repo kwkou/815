@@ -91,3 +91,5 @@ YARN ResourceManager UI 在群集头节点上运行，并可通过 Ambari Web UI
 [T-file]:https://issues.apache.org/jira/secure/attachment/12396286/TFile%20Specification%2020081217.pdf
 [binary-format]:https://issues.apache.org/jira/browse/HADOOP-3315
 [YARN-concepts]:http://hortonworks.com/blog/apache-hadoop-yarn-concepts-and-applications/
+
+<!--Update_Description: wording update-->

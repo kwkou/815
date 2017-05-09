@@ -218,3 +218,5 @@ Mahout 作业不删除在处理作业时创建的临时数据。 在示例作业
 [connect]: ./media/hdinsight-mahout/connect.png
 [hadoopcli]: ./media/hdinsight-mahout/hadoopcli.png
 [tools]: https://github.com/Blackmist/hdinsight-tools
+
+<!--Update_Description: wording update-->

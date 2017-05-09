@@ -423,3 +423,5 @@ Python 可以使用 **sys** 模块从 STDIN 读取数据，并使用 **print** �
 * [将 Hive 与 HDInsight 配合使用](/documentation/articles/hdinsight-use-hive/)
 * [将 Pig 与 HDInsight 配合使用](/documentation/articles/hdinsight-use-pig/)
 * [将 MapReduce 作业与 HDInsight 配合使用](/documentation/articles/hdinsight-use-mapreduce/)
+
+<!--Update_Description: wording update-->

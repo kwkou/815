@@ -141,3 +141,5 @@ Tez 视图提供进程的历史信息，还提供正在运行的进程的相关�
 有关 Tez 的更详细的技术信息，请参阅 [Hortonworks 的 Tez 页](http://hortonworks.com/hadoop/tez/)。
 
 有关如何将 Ambari 与 HDInsight 配合使用的详细信息，请参阅[使用 Ambari Web UI 管理 HDInsight 群集](/documentation/articles/hdinsight-hadoop-manage-ambari/)
+
+<!--Update_Description: wording update-->

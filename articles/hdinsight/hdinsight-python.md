@@ -462,3 +462,5 @@ Python 脚本文件在 C Python 与 Jython 之间很类似，唯一的差别在�
 * [将 Hive 与 HDInsight 配合使用](/documentation/articles/hdinsight-use-hive/)
 * [将 Pig 与 HDInsight 配合使用](/documentation/articles/hdinsight-use-pig/)
 * [将 MapReduce 与 HDInsight 配合使用](/documentation/articles/hdinsight-use-mapreduce/)
+
+<!--Update_Description: wording update-->

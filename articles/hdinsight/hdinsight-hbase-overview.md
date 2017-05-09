@@ -66,7 +66,6 @@ HDInsight 实施利用 HBase 的横向扩展架构来提供表自动分片、使
 
 ## <a name="see-also"></a>另请参阅
 * [Apache HBase](https://hbase.apache.org/)
-* [Bigtable：针对结构化数据的分布式存储系统](http://research.google.com/archive/bigtable.html)
 
 [hbase-provision-vnet]: /documentation/articles/hdinsight-hbase-provision-vnet/
 
@@ -85,3 +84,5 @@ HDInsight 实施利用 HBase 的横向扩展架构来提供表自动分片、使
 [azure-create-storageaccount]: /documentation/articles/storage-create-storage-account/
 
 [apache-hadoop]: http://hadoop.apache.org/
+
+<!--Update_Description: wording update-->

@@ -146,9 +146,9 @@ HDInsight 服务是一种托管服务，并需要在预配期间和运行时访�
 
 **示例：Azure 资源管理模板**
 
-使用 [Azure 快速启动模板](https://azure.microsoft.com/resources/templates/)中的以下资源管理模板在 VNet 中创建具备安全网络配置的 HDInsight 群集：
+使用 [Azure 快速启动模板](https://github.com/azure/azure-quickstart-templates)中的以下资源管理模板在 VNet 中创建具备安全网络配置的 HDInsight 群集：
 
-[在 VNet 中部署安全的 Azure VNet 和 HDInsight Hadoop 群集](https://azure.microsoft.com/resources/templates/101-hdinsight-secure-vnet/)
+[在 VNet 中部署安全的 Azure VNet 和 HDInsight Hadoop 群集](https://github.com/azure/azure-quickstart-templates/tree/master/101-hdinsight-secure-vnet/)
 
 **示例：Azure PowerShell**
 
@@ -310,3 +310,5 @@ __Azure CLI__
 * [将 Sqoop 与 HDInsight 中的 Hadoop 配合使用](/documentation/articles/hdinsight-use-sqoop-mac-linux/)
 
 若要了解有关 Azure 虚拟网络的详细信息，请参阅 [Azure 虚拟网络概述](/documentation/articles/virtual-networks-overview/)。
+
+<!--Update_Description: wording update-->

@@ -101,3 +101,5 @@
 ## <a name="next-steps"></a>后续步骤
 
 有关使用 Hive 的详细信息，请参阅[将 Hive 与 HDInsight 配合使用](/documentation/articles/hdinsight-use-hive/)
+
+<!--Update_Description: wording update-->

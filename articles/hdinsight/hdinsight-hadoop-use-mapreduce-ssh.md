@@ -112,3 +112,5 @@
 
 * [将 Hive 与 Hadoop on HDInsight 配合使用](/documentation/articles/hdinsight-use-hive/)
 * [将 Pig 与 Hadoop on HDInsight 配合使用](/documentation/articles/hdinsight-use-pig/)
+
+<!--Update_Description: wording update-->

@@ -397,3 +397,5 @@ HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET Framework 应用
 * [使用.NET SDK 在 HDInsight 中运行 Pig 作业](/documentation/articles/hdinsight-hadoop-use-pig-dotnet-sdk/)
 * [使用.NET SDK 在 HDInsight 中运行 Sqoop 作业](/documentation/articles/hdinsight-hadoop-use-sqoop-dotnet-sdk/)
 * [在 HDInsight 中运行 Oozie 作业](/documentation/articles/hdinsight-use-oozie/)
+
+<!--Update_Description: wording update-->

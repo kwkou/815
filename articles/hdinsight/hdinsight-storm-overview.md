@@ -82,7 +82,7 @@ Storm on HDInsight 具有下述重要优势：
 
 * __安全外壳 (SSH) 连接__：可以使用 SSH 通过 Internet 访问 HDInsight 群集的头节点。 可以使用 SSH 直接在群集上运行命令。
 
-    有关详细信息，请参阅 [Use SSH with HDInsight](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix/)（对 HDInsight 使用 SSH）。
+    有关详细信息，请参阅[对 HDInsight 使用 SSH](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix/)。
 
 * __Web 连接__：HDInsight 群集提供 Ambari Web UI。 可以使用 Ambari Web UI 在群集上轻松监视、配置和管理服务。 Storm on HDInsight 还提供 Storm UI。 可以使用 Storm UI，通过浏览器监视和管理 Storm 拓扑的运行。
 
@@ -161,7 +161,7 @@ Storm 可以提供不同级别的有保证的消息处理。 例如，基本的 
 
 ### <a name="ibasicbolt"></a>IBasicBolt
 
-读取输入元组，发出零个或多个元组，然后在执行方法结束时立即询问输入元组，这种模式非常普通。 Storm 提供 [IBasicBolt](https://storm.apache.org/apidocs/backtype/storm/topology/IBasicBolt.html) 接口来自动执行这种模式。
+读取输入元组，发出零个或多个元组，然后在执行方法结束时立即询问输入元组，这种模式非常普通。 Storm 提供 [IBasicBolt](http://storm.apache.org/releases/0.10.1/javadocs/backtype/storm/topology/IBasicBolt.html) 接口来自动执行这种模式。
 
 ### <a name="joins"></a>联接
 
@@ -206,3 +206,5 @@ Storm 使用 Apache Log4j 来记录信息。 默认情况下，将记录大量�
 [samoa]: http://yahooeng.tumblr.com/post/65453012905/introducing-samoa-an-open-source-platform-for-mining
 [apachetutorial]: https://storm.apache.org/documentation/Tutorial.html
 [gettingstarted]: /documentation/articles/hdinsight-apache-storm-tutorial-get-started-linux/
+
+<!--Update_Description: wording update-->

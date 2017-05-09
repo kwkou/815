@@ -170,3 +170,5 @@
 [hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data/
 
 [powershell-here-strings]: http://technet.microsoft.com/zh-cn/library/ee692792.aspx
+
+<!--Update_Description: wording update-->

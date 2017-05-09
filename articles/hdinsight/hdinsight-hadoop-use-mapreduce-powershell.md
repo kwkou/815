@@ -186,3 +186,5 @@ Azure PowerShell 提供了一种简单方法，可让你在 HDInsight 群集上�
 
 * [将 Hive 与 Hadoop on HDInsight 配合使用](/documentation/articles/hdinsight-use-hive/)
 * [将 Pig 与 Hadoop on HDInsight 配合使用](/documentation/articles/hdinsight-use-pig/)
+
+<!--Update_Description: wording update-->

@@ -43,9 +43,9 @@ HDInsight 群集中的所有节点都在 Azure 虚拟网络中，无法直接从
 
 | 服务 | 端口 | 协议 | 说明 |
 | --- | --- | --- | --- | --- |
-| sshd |22 |SSH |将客户端连接到主头节点上的 sshd。 有关详细信息，请参阅 [对 HDInsight 使用 SSH](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix/)。 |
-| sshd |22 |SSH |将客户端连接到边缘节点上的 sshd。 有关详细信息，请参阅 [对 HDInsight 使用 SSH](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix/)。 |
-| sshd |23 |SSH |将客户端连接到辅助头节点上的 sshd。 有关详细信息，请参阅 [Use SSH with HDInsight](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix/)。 |
+| sshd |22 |SSH |将客户端连接到主头节点上的 sshd。 有关详细信息，请参阅[对 HDInsight 使用 SSH](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix/)。 |
+| sshd |22 |SSH |将客户端连接到边缘节点上的 sshd。 有关详细信息，请参阅[对 HDInsight 使用 SSH](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix/)。 |
+| sshd |23 |SSH |将客户端连接到辅助头节点上的 sshd。 有关详细信息，请参阅[对 HDInsight 使用 SSH](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix/)。 |
 | Ambari |443 |HTTPS |Ambari Web UI。 请参阅[使用 Ambari Web UI 管理 HDInsight](/documentation/articles/hdinsight-hadoop-manage-ambari/) |
 | Ambari |443 |HTTPS |Ambari REST API。 请参阅[使用 Ambari REST API 管理 HDInsight](/documentation/articles/hdinsight-hadoop-manage-ambari-rest-api/) |
 | WebHCat |443 |HTTPS |HCatalog REST API。 请参阅[将 Hive 与 Curl 配合使用](/documentation/articles/hdinsight-hadoop-use-pig-curl/)、[将 Pig 与 Curl 配合使用](/documentation/articles/hdinsight-hadoop-use-pig-curl/)、[将 MapReduce 与 Curl 配合使用](/documentation/articles/hdinsight-hadoop-use-mapreduce-curl/) |
@@ -144,3 +144,4 @@ HDInsight 群集中的所有节点都在 Azure 虚拟网络中，无法直接从
 | 区域服务器 |所有辅助角色节点 |16020 |&nbsp; |&nbsp; |
 | &nbsp; |&nbsp; |2181 |&nbsp; |客户端用来连接 ZooKeeper 的端口 |
 
+<!--Update_Description: wording update-->

@@ -153,3 +153,5 @@ Hue 是一组 Web 应用程序，用来与 Hadoop 群集交互。 你可以使�
 [powershell-install-configure]: /documentation/articles/install-configure-powershell-linux/
 [hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-linux/
 [hdinsight-cluster-customize]: /documentation/articles/hdinsight-hadoop-customize-cluster-linux/
+
+<!--Update_Description: wording update-->

@@ -460,7 +460,7 @@ HDInsight .NET SDK 提供客户端库，可简化从 .NET 应用程序中使用 
 
 ## <a name="apply-a-script-action-to-a-running-cluster"></a>将脚本操作应用到正在运行的群集
 
-本部分提供可以将脚本操作应用到正在运行 HDInsight 群集的不同方式示例 - 从 Azure 门户预览、使用 PowerShell cmdlet、使用跨平台 Azure CLI，以及使用 .NET SDK。 本部分中使用的持久化脚本操作将现有 Azure 存储帐户添加到正在运行的群集。 也可以使用其他脚本操作，请参阅 [Example Script Action scripts](#example-script-action-scripts)（示例脚本操作脚本）。
+本部分提供可以将脚本操作应用到正在运行 HDInsight 群集的不同方式示例 - 从 Azure 门户预览、使用 PowerShell cmdlet、使用跨平台 Azure CLI，以及使用 .NET SDK。 本部分中使用的持久化脚本操作将现有 Azure 存储帐户添加到正在运行的群集。 也可以使用其他脚本操作，请参阅[示例脚本操作脚本](#example-script-action-scripts)。
 
 ### <a name="apply-a-script-action-to-a-running-cluster-from-the-azure-portal-preview"></a>从 Azure 门户预览将脚本操作应用到正在运行的群集
 
@@ -760,3 +760,5 @@ __解决方法__：若要解决此错误，请使用 `ssh` 手动连接到每个
 * [将其他存储添加到 HDInsight 群集中](/documentation/articles/hdinsight-hadoop-add-storage/)
 
 [img-hdi-cluster-states]: ./media/hdinsight-hadoop-customize-cluster-linux/HDI-Cluster-state.png "群集创建过程中的阶段"
+
+<!--Update_Description: wording update-->

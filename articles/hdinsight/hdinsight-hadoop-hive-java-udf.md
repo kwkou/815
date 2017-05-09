@@ -226,3 +226,5 @@
 有关使用 Hive 的其他方式，请参阅[将 HDInsight 与 Hive 配合使用](/documentation/articles/hdinsight-use-hive/)。
 
 有关 Hive 用户定义函数的详细信息，请参阅 apache.org 网站上的 Hive wiki 的 [Hive 运算符和用户定义函数](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+UDF) 部分。
+
+<!--Update_Description: wording update-->

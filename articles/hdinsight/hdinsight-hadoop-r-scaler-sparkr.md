@@ -518,4 +518,6 @@ AirOnTime08to12CSV airlines 公用数据集包含美国境内从 1987 年 10 月
 
 - [Apache SparkR 文档](https://spark.apache.org/docs/2.1.0/sparkr.html)
 
-- [SparkR 概述](https://docs.databricks.com/spark/latest/sparkr/overview.html)
+- [SparkR Overview](https://docs.databricks.com/spark/latest/sparkr/overview.html) （SparkR 概述）
+
+<!--Update_Description: wording update-->

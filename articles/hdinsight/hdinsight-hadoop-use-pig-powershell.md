@@ -152,3 +152,5 @@ Azure PowerShell 提供了一种简单方法，可在 HDInsight 群集上运行 
 
 * [将 Hive 与 Hadoop on HDInsight 配合使用](/documentation/articles/hdinsight-use-hive/)
 * [将 MapReduce 与 HDInsight 上的 Hadoop 配合使用](/documentation/articles/hdinsight-use-mapreduce/)
+
+<!--Update_Description: wording update-->

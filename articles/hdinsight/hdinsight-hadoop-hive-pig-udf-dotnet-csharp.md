@@ -260,3 +260,5 @@ Hive 和 Pig 都可以将数据传递到外部应用程序以进行处理。 此
 * [将 Hive 与 HDInsight 配合使用](/documentation/articles/hdinsight-use-hive/)
 * [将 Pig 与 HDInsight 配合使用](/documentation/articles/hdinsight-use-pig/)
 * [将 MapReduce 与 HDInsight 配合使用](/documentation/articles/hdinsight-use-mapreduce/)
+
+<!--Update_Description: wording update-->

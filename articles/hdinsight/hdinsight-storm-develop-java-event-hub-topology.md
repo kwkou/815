@@ -402,3 +402,5 @@ HdfsBolt 一般用于将数据存储到 Hadoop 分布式文件系统 (HDFS)。 �
 ## <a name="next-steps"></a>后续步骤
 
 * [Storm on HDInsight 的示例拓扑](/documentation/articles/hdinsight-storm-example-topology/)
+
+<!--Update_Description: wording update-->

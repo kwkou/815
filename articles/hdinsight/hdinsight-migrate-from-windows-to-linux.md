@@ -273,3 +273,5 @@ Oozie 工作流支持 shell 操作。 shell 操作将默认 shell 用于操作�
 * [了解如何创建基于 Linux 的 HDInsight 群集](/documentation/articles/hdinsight-hadoop-provision-linux-clusters/)
 * [使用 SSH 连接到 HDInsight](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix/)
 * [使用 Ambari 管理基于 Linux 的群集](/documentation/articles/hdinsight-hadoop-manage-ambari/)
+
+<!--Update_Description: wording update-->

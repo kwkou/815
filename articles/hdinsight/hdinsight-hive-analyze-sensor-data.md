@@ -64,3 +64,5 @@
     ![入门库映像](./media/hdinsight-hive-analyze-sensor-data/getting-started-gallery.png)
 
 3. 按照网页上提供的说明完成该示例。
+
+<!--Update_Description: wording update-->

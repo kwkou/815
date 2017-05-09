@@ -749,3 +749,5 @@ Trident 是 Storm 提供的高级抽象。 它支持有状态处理。 Trident �
 * [使用 Visual Studio 开发 Apache Storm on HDInsight 的 C# 拓扑](/documentation/articles/hdinsight-storm-develop-csharp-visual-studio-topology/)
 
 如需更多 Storm 拓扑示例，请访问 [Storm on HDInsight 示例拓扑](/documentation/articles/hdinsight-storm-example-topology/)。
+
+<!--Update_Description: wording update-->
