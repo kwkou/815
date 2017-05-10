@@ -1,6 +1,6 @@
 <properties linkid="" urlDisplayName="" pageTitle="Use Windows PowerShell to manage MySQL Database on Azure – Azure cloud" metaKeywords="Azure Cloud, technical documentation, documents and resources, MySQL, database, beginner’s guide, Azure MySQL, MySQL PaaS, Azure MySQL PaaS, Azure MySQL Service, Azure RDS" description="This article explains how to use Windows PowerShell to do more with MySQL Database on Azure, including create, view, delete, and modify operations." metaCanonical="" services="MySQL" documentationCenter="Services" title="" authors="sofia" solutions="" manager="" editor="" />
 
-<tags ms.service="mysql_en" ms.date="03/24/2017" wacn.date="03/24/2017" wacn.lang="en" />
+<tags ms.service="mysql_en" ms.date="05/10/2017" wacn.date="05/10/2017" wacn.lang="en" />
 
 > [AZURE.LANGUAGE]
 - [中文](/documentation/articles/mysql-database-commandlines/)
@@ -18,6 +18,7 @@ Use PowerShell to do more with MySQL Database on Azure, including creating, view
 - [Operations: View](#view)
 - [Operations: Modify](#set)
 - [Operations: Delete](#delete)
+- [Operations: Miscellaneous](#miscellaneous)
 
 ## <a id="gettoknow"></a>1. Understand Azure resource templates and resource groups
 
@@ -121,9 +122,15 @@ Edit and run the following commands to view all firewall rules for a specific se
 ```
  Get-AzureRmResource -ResourceType "Microsoft.MySql/servers/firewallRules" -Name testPSH -ApiVersion 2015-09-01 -ResourceGroupName resourcegroupChinaEast
 ```
+### 3\.7 View slowlogs
+Edit and run the following commands to view all slowlogs for a specific server in the current resource group.
 
+```
+Get-AzureRmResource -ResourceType "Microsoft.MySql/servers/slowlogs" -Name testPSH -ApiVersion 2015-09-01 -ResourceGroupName resourcegroupChinaEast
+```
 ## <a id="set"></a>4. Modify operations
 Use the **Set** command to carry out configuration tasks, such as changing account passwords, modifying permissions, and altering certain server parameters.
+
 ### 4\.1 Modify account passwords
 Edit and run the following commands to change the password for a specific account.
 
@@ -229,7 +236,7 @@ Refer to the definitions in the following JSON file for modifications to other p
 ```
 Set-AzureRmResource -ResourceType "Microsoft.MySql/servers " -ResourceName testPSH -ApiVersion 2015-09-01 -ResourceGroupName resourcegroupChinaEast -SkuObject @{name="MS4"} -UsePatchSemantics
 ```
-	
+
 ## <a id="delete"></a>5. Remove operations
 Use the **Remove** command to delete MySQL servers, databases, users, backups, and firewall rules.
 ### 5\.1 Delete servers
@@ -267,6 +274,28 @@ Edit and run the following commands to delete a specific backup file.
 Remove-AzureRmResource -ResourceType "Microsoft.MySql/servers/backups" -ResourceName testPSH/back1 -ApiVersion 2015-09-01 -ResourceGroupName resourcegroupChinaEast 
 ```
 
+## <a id="miscellaneous"></a>6 Miscellaneous operations
 
+### 6\.1 Restart a server
+Edit and run the following commands to restart a specific server in the current resource group.
+
+```
+Set-AzureRmResource -ResourceType "Microsoft.MySql/servers" -ResourceName testPSH -ApiVersion 2015-09-01 -ResourceGroupName resourcegroupChinaEast -PropertyObject @{setRestart='true'} -UsePatchSemantics
+```
+
+### 6\.2 Download slowlogs
+Edit and run the following commands to download specific slowlog for a specific server in the current resource group.
+
+```
+Set-AzureRmResource -ResourceType "Microsoft.MySql/servers/slowlogs" -ResourceName testPSH/testslowlogname -ApiVersion 2015-09-01 -ResourceGroupName resourcegroupChinaEast -PropertyObject @{copyDestinationContainerUri=”your container uri";CopyDestinationSasToken="your container sasToken"} -UsePatchSemantics
+```
+
+Here is the smaple code to download the slowlog with the paramenter.
+
+```$account = Get-AzureStorageAccount -StorageAccountName teststorageaccountname
+$container = New-AzureStorageContainer -Context $account.Context -Name newcontainer
+$sasToken = New-AzureStorageContainerSASToken -Name $container.Name -Permission rcw -StartTime (Get-Date).AddDays(-1) -Protocol HttpsOnly -ExpiryTime (Get-Date).AddDays(1) -Context $account.Context
+Set-AzureRmResource -ResourceType "Microsoft.MySql/servers/slowlogs" -ResourceName testPSH/testslowlogname -ApiVersion 2015-09-01 -ResourceGroupName resourcegroupChinaEast -PropertyObject @{copyDestinationContainerUri=”$($container.CloudBlobContainer.Uri.AbsoluteUri)";CopyDestinationSasToken="$sasToken"} -UsePatchSemantics
+```
 
 <!---HONumber=Acom_0218_2016_MySql-->

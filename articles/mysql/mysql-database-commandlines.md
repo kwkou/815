@@ -1,6 +1,6 @@
 <properties linkid="" urlDisplayName="" pageTitle="使用PowerShell管理MySQL Database on Azure - Azure 微软云" metaKeywords="Azure 云,技术文档,文档与资源,MySQL,数据库,入门指南,Azure MySQL, MySQL PaaS,Azure MySQL PaaS, Azure MySQL Service, Azure RDS,Azure MySQL PowerShell" description="本文介绍如何通过PowerShell实现更多MySQL Database on Azure的查询、创建、修改、删除等操作。" metaCanonical="" services="MySQL" documentationCenter="Services" title="" authors="sofia" solutions="" manager="" editor="" />  
 
-<tags ms.service="mysql" ms.date="03/24/2017" wacn.date="03/24/2017" wacn.lang="cn" />
+<tags ms.service="mysql" ms.date="05/10/2017" wacn.date="05/10/2017" wacn.lang="cn" />
 
 > [AZURE.LANGUAGE]
 - [中文](/documentation/articles/mysql-database-commandlines/)
@@ -20,6 +20,7 @@
 - [查看操作](#view)
 - [修改操作](#set)
 - [删除操作](#delete)
+- [其它操作](#miscellaneous)
 
 ## <a id="gettoknow"></a>1. 了解 Azure 资源模板和资源组
 
@@ -125,6 +126,13 @@ Get-AzureRmResource -ResourceType "Microsoft.MySql/servers"  -ApiVersion 2015-01
 
 ```
  Get-AzureRmResource -ResourceType "Microsoft.MySql/servers/firewallRules" -Name testPSH -ApiVersion 2015-09-01 -ResourceGroupName resourcegroupChinaEast
+```
+
+###3.7 查看慢查询日志
+编辑运行以下命令，查看当前资源组内某个服务器的所有慢查询日志：
+
+```
+Get-AzureRmResource -ResourceType "Microsoft.MySql/servers/slowlogs" -Name testPSH -ApiVersion 2015-09-01 -ResourceGroupName resourcegroupChinaEast
 ```
 
 ## <a id="set"></a>4. 修改操作
@@ -235,7 +243,6 @@ Set-AzureRmResource -ResourceType "Microsoft.MySql/servers" -ResourceName testPS
 ```
 Set-AzureRmResource -ResourceType "Microsoft.MySql/servers " -ResourceName testPSH -ApiVersion 2015-09-01 -ResourceGroupName resourcegroupChinaEast -SkuObject @{name="MS4"} -UsePatchSemantics
 ```
-
 	
 ## <a id="delete"></a>5. 删除操作
 通过Remove指令可以删除MySQL服务器、数据库、用户、备份、防火墙规则等。
@@ -272,6 +279,29 @@ Remove-AzureRmResource -ResourceType "Microsoft.MySql/servers/users" -ResourceNa
 
 ```
 Remove-AzureRmResource -ResourceType "Microsoft.MySql/servers/backups" -ResourceName testPSH/back1 -ApiVersion 2015-09-01 -ResourceGroupName resourcegroupChinaEast 
+```
+## <a id="miscellaneous"></a>6 其它操作
+
+### 6\.1 Restart a server
+编辑运行以下命令，重启当前资源组中的服务器。
+
+```
+Set-AzureRmResource -ResourceType "Microsoft.MySql/servers" -ResourceName testPSH -ApiVersion 2015-09-01 -ResourceGroupName resourcegroupChinaEast -PropertyObject @{setRestart='true'} -UsePatchSemantics
+```
+
+### 6\.2 Download slowlogs
+编辑运行以下命令，下载当前资源组中特定服务器的指定慢查询日志。
+
+```
+Set-AzureRmResource -ResourceType "Microsoft.MySql/servers/slowlogs" -ResourceName testPSH/testslowlogname -ApiVersion 2015-09-01 -ResourceGroupName resourcegroupChinaEast -PropertyObject @{copyDestinationContainerUri=”your container uri";CopyDestinationSasToken="your container sasToken"} -UsePatchSemantics
+```
+
+以下为带参数下载慢查询日志的代码示例。
+
+```$account = Get-AzureStorageAccount -StorageAccountName teststorageaccountname
+$container = New-AzureStorageContainer -Context $account.Context -Name newcontainer
+$sasToken = New-AzureStorageContainerSASToken -Name $container.Name -Permission rcw -StartTime (Get-Date).AddDays(-1) -Protocol HttpsOnly -ExpiryTime (Get-Date).AddDays(1) -Context $account.Context
+Set-AzureRmResource -ResourceType "Microsoft.MySql/servers/slowlogs" -ResourceName testPSH/testslowlogname -ApiVersion 2015-09-01 -ResourceGroupName resourcegroupChinaEast -PropertyObject @{copyDestinationContainerUri=”$($container.CloudBlobContainer.Uri.AbsoluteUri)";CopyDestinationSasToken="$sasToken"} -UsePatchSemantics
 ```
 
 随着MySQL Database on Azure提供的功能增多，我们也会陆续更新相应的PowerShell指南。
