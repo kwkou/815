@@ -13,7 +13,7 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="na"
-    ms.date: 3/21/2017
+    ms.date="3/21/2017"
     wacn.date="05/08/2017"
     ms.author="xshi" />  
 

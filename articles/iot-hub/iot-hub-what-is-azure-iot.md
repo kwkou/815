@@ -14,7 +14,7 @@
  ms.topic="get-started-article"
  ms.tgt_pltfrm="na"
  ms.workload="na"
- ms.date: 03/24/2017
+ ms.date="03/24/2017"
  wacn.date="05/08/2017"
  ms.author="dobett"/>  
 
