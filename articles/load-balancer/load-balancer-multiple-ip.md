@@ -33,6 +33,7 @@
 
 ##<a name="prerequisites"></a>先决条件
 本示例假设已有一个名为 *contosofabrikam* 的、使用以下配置的资源组：
+
 - 在名为 *myAvailset* 的同一个可用性集中包含名为 *myVNet* 的虚拟网络，以及名为 *VM1* 和 *VM2* 的两个 VM。 
 - 每个 VM 包含主要 NIC 和辅助 NIC。 主要 NIC 名为 *VM1NIC1* 和 *VM2NIC1*，辅助 NIC 名为 *VM1NIC2* 和 *VM2NIC2*。 有关创建具有多个 NIC 的 VM 的详细信息，请参阅[使用 PowerShell 创建具有多个 NIC 的 VM](/documentation/articles/virtual-network-deploy-multinic-arm-ps/)。
 

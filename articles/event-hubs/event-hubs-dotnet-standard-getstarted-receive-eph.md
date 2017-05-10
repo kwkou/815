@@ -64,6 +64,7 @@
 ## <a name="add-the-event-hubs-nuget-package"></a>添加事件中心 NuGet 包
 
 将以下 NuGet 包添加到项目：
+
 * [`Microsoft.Azure.EventHubs`](https://www.nuget.org/packages/Microsoft.Azure.EventHubs/)
 * [`Microsoft.Azure.EventHubs.Processor`](https://www.nuget.org/packages/Microsoft.Azure.EventHubs.Processor/)
 
@@ -75,7 +76,7 @@
 
         using Microsoft.Azure.EventHubs;
         using Microsoft.Azure.EventHubs.Processor;
-	using System.Threading.Tasks;
+        using System.Threading.Tasks;
 
 3. 实现 `IEventProcessor` 接口。 将 `SimpleEventProcessor` 类的全部内容替换为以下代码：
 

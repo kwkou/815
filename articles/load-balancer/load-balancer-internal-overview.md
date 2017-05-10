@@ -22,7 +22,7 @@
     ms.openlocfilehash="7a50970a9fd381744592d51986f5474d4e248782"
     ms.lasthandoff="04/28/2017" />
 
-# <a name="internal-load-balancer-overview"></a>Internal load balancer overview（内部负载均衡器概述）
+# <a name="internal-load-balancer-overview"></a>内部负载均衡器概述
 
 与面向 Internet 的负载均衡器不同，内部负载均衡器 (ILB) 仅将流量定向到云服务内的资源，或使用 VPN 来访问 Azure 基础结构。 该基础结构限制了对云服务或虚拟网络的负载均衡虚拟 IP 地址 (VIP) 的访问，不会直接将这些地址公开给 Internet 终结点。 这让内部业务线 (LOB) 应用程序能够在 Azure 中运行，并可实现在云内或从本地资源访问这些应用程序。
 

@@ -136,15 +136,15 @@ Visual Studio 将打开并创建新的 Integration Services (SSIS) 项目。 然
     7. 在“连接管理器”对话框中，单击“确定”，以返回到“配置 ADO.NET 连接管理器”对话框。
 5. 在“配置 ADO.NET 连接管理器”对话框中，单击“确定”，以返回到“ADO.NET 目标编辑器”。
 6. 在“ADO.NET 目标编辑器”中，单击“使用表或视图”列表旁的“新建”，以打开“创建表”对话框来创建具有与源表相匹配的列列表的新目标表。
-   
-    ![][12a]  
+
+    ![][12a]
 7. 在“创建列表”对话框中，执行以下操作。
-   
+
     1. 将目标表的名称更改为 **SalesOrderDetail**。
     2. 删除 **rowguid** 列。 SQL 数据仓库不支持 **uniqueidentifier** 数据类型。
     3. 将 **LineTotal** 列的数据类型更改为 **money**。SQL 数据仓库不支持 **decimal** 数据类型。 有关受支持的数据类型，请参阅 [CREATE TABLE（Azure SQL 数据仓库，并行数据仓库）][CREATE TABLE (Azure SQL Data Warehouse, Parallel Data Warehouse)]。
-      
-       ![][12b]  
+
+        ![][12b]
     4. 单击“确定”以创建表并返回到“ADO.NET 目标编辑器”。
 8. 在“ADO.NET 目标编辑器”中，选择“映射”选项卡以查看如何将源中的列映射到目标中的列。
 

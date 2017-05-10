@@ -31,7 +31,7 @@ Azure 负载均衡器将传入流量的公用 IP 地址和端口号映射到虚�
 
 下图显示了公用和专用 TCP 端口 80 的加密 Web 流量的负载均衡终结点，由三个虚拟机共享。 三台虚拟机位于负载均衡集中。
 
-![公共负载均衡器示例](./media/load-balancer-internet-overview/IC727496.png))
+![公共负载均衡器示例](./media/load-balancer-internet-overview/IC727496.png)
 
 图 1 - Web 流量的负载均衡终结点
 
