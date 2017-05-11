@@ -10,13 +10,11 @@
 
 <tags
 	ms.service="open-source-mongodb"
-	wacn.date="05/09/2017"/>
+	wacn.date="05/11/2017"/>
 
 #在 Azure 虚拟机上快速搭建 MongoDB 集群
 
 [MongoDB](https://www.mongodb.org/) 是目前在 NoSQL 市场上非常受欢迎的一个数据库，本文介绍如何使用 Azure PowerShell 和 Azure CLI 在 Azure 虚拟机上搭建单节点 MongoDB（测试使用）和包含主从复制以及分片集群的多节点 MongoDB（生产环境使用）。
-
->[AZURE.NOTE]目前脚本仅支持 CentOS (6.5, 6.6, 6.7, 7.0, 7.1, 7.2)。
 
 ##说明
 
@@ -62,7 +60,7 @@ PowerShell脚本运行注意事项
 默认情况下，以下脚本将创建1台 CentOS 虚机，构成一个单节点 MongoDB。
 以下将介绍两种方式搭建 MongoDB：
 **Azure PowerShell 方式**  
-你需要下载 PowerShell 脚本 [mongodb-singlenode-deploy.ps1](http://mirrors.blob.core.chinacloudapi.cn/mongodb/mongodb-singlenode-deploy.ps1)，按照以下示例运行 mongodb-install-centos.ps1 脚本，即可在资源组 rg1 中生成一台 CentOS 虚拟机，接着会在该虚机上安装单节点 MongoDB。  
+你需要下载 PowerShell 脚本 [mongodb-singlenode-deploy.ps1](http://msmirrors.blob.core.chinacloudapi.cn/mongodb/mongodb-singlenode-deploy.ps1)，按照以下示例运行 mongodb-install-centos.ps1 脚本，即可在资源组 rg1 中生成一台 CentOS 虚拟机，接着会在该虚机上安装单节点 MongoDB。  
 
 		PS C:\mongodb> .\mongodb-singlenode-deploy.ps1 -ResourceGroupName rg1 -AdminUserName azureuser -AdminPassword “YOUR-PASSWORD”  -CentosVersion 6.5 -VmName mongodbserver
 
@@ -100,15 +98,15 @@ PowerShell脚本运行注意事项
 
 连接成功后会出现以下提示：
 
-        MongoDB shell version：3.2.12
-	Connecting to ：mongodbserver.chinaeast.cloudapp.chinacloudapi.cn/27017/test
-	Welcome to the MongoDB shell.
+    MongoDB shell version：3.2.12
+    Connecting to ：mongodbserver.chinaeast.cloudapp.chinacloudapi.cn/27017/test
+    Welcome to the MongoDB shell.
 
 成功连接本地 mongodb 服务器后，可使用 mongo shell 语言进行数据库相关操作，例如：
 
-	db.foo.insert( { a : 27018 } )  
-        db.foo.find() 
-	show collections
+    db.foo.insert( { a : 27018 } )
+    db.foo.find()
+    show collections
 
 更多操作请参考 [MongoDB 官方帮助文档](https://docs.mongodb.com/manual/mongo/)。
 
@@ -121,7 +119,7 @@ PowerShell脚本运行注意事项
 
 **Azure PowerShell 方式**  
 
-你需要下载 PowerShell 脚本 [mongodb-replica-set-deploy.ps1](http://mirrors.blob.core.chinacloudapi.cn/mongodb/mongodb-replica-set-deploy.ps1)，按照以下示例运行 mongodb-replica-set-deploy.ps1 脚本，即可在资源组 rg1 中生成多台 CentOS 虚拟机，接着会在该虚机上搭建具备主从复制节点的 MongoDB。    
+你需要下载 PowerShell 脚本 [mongodb-replica-set-deploy.ps1](http://msmirrors.blob.core.chinacloudapi.cn/mongodb/mongodb-replica-set-deploy.ps1)，按照以下示例运行 mongodb-replica-set-deploy.ps1 脚本，即可在资源组 rg1 中生成多台 CentOS 虚拟机，接着会在该虚机上搭建具备主从复制节点的 MongoDB。    
 
 		PS C:\mongodb>.\mongodb-replica-set-deploy.ps1 -ResourceGroupName rg1 -CentosVersion 7.2 -AdminUsername azureuser -AdminPassword “YOUR-PASSWORD” -MongoUsername mongoadmin -MongoPassword “YOUR-PASSWORD” -DNSNamePrefix mongoreplicaset
     
@@ -231,7 +229,7 @@ PowerShell脚本运行注意事项
 
 **Azure PowerShell 方式**  
 
-你需要下载PowerShell脚本 [mongodb-sharding-deploy.ps1](http://mirrors.blob.core.chinacloudapi.cn/mongodb/mongodb-sharding-deploy.ps1)，按照以下示例运行 mongodb-sharding-deploy.ps1 脚本，即可在资源组rg1中生成多台 CentOS 虚拟机，接着会在该虚机上搭建具备主从复制节点及分片集群的 MongoDB，创建过程大概需要1小时15分钟。  
+你需要下载PowerShell脚本 [mongodb-sharding-deploy.ps1](http://msmirrors.blob.core.chinacloudapi.cn/mongodb/mongodb-sharding-deploy.ps1)，按照以下示例运行 mongodb-sharding-deploy.ps1 脚本，即可在资源组rg1中生成多台 CentOS 虚拟机，接着会在该虚机上搭建具备主从复制节点及分片集群的 MongoDB，创建过程大概需要1小时15分钟。  
 
 
 		PS C:\mongodb>.\mongodb-sharding-deploy.ps1 -ResourceGroupName rg1 -CentosVersion 7.2 -AdminUsername azureuser -AdminPassword “YOUR-PASSWORD” -MongoUsername mongoadmin -MongoPassword “YOUR-PASSWORD” -DNSNamePrefix mongoshard

@@ -10,7 +10,7 @@
 <tags
    ms.service="open-source-website"  
    ms.date=""
-   wacn.date="05/09/2017"/>
+   wacn.date="05/11/2017"/>
 
 
 # 在 Azure Linux 虚拟机上手动安装配置 Zabbix 监控服务
@@ -48,9 +48,9 @@ Zabbix 的四种监控方式：Agent, SNMP, JMX, IPMI
 
 1. 关闭 selinux
 
- 	$sudo setenforce 0
+        $sudo setenforce 0
         $sudo sed -i 's/^SELINUX=.*/SELINUX=disabled/' /etc/sysconfig/selinux
- 	$sudo reboot
+        $sudo reboot
 
         
 2. 关闭 firewalld 和 iptables
@@ -145,7 +145,7 @@ Zabbix 的四种监控方式：Agent, SNMP, JMX, IPMI
         $sudo /etc/init.d/zabbix_agentd start
         $ sudo sed -i '$a /etc/init.d/zabbix_server start\n/etc/init.d/zabbix_agentd start' /etc/rc.local
         
-11.	打开端口 80, 10050, 10051. 请参考链接[创建终结点](/documentation/articles/virtual-machines-linux-classic-setup-endpoints/)打开这些端口
+11.	打开端口 80, 10050, 10051. 请参考链接[创建终结点](/documentation/articles/virtual-machines-windows-nsg-quickstart-portal/)打开这些端口
 12.	Zabbix server web 端配置. 打开网址 *http://zabbix server ip/zabbix*  
     Zabbix server ip 是您的 zabbix server 虚拟机的 IP 地址。打开的页面如下图所示
 
@@ -350,7 +350,7 @@ Zabbix 的四种监控方式：Agent, SNMP, JMX, IPMI
         $ sudo chkconfig zabbix_agentd on
         $ sudo /etc/init.d/zabbix_agentd
     
-10.	打开端口10050, 10051. 请参考链接[创建终结点](/documentation/articles/virtual-machines-linux-classic-setup-endpoints/)
+10.	打开端口10050, 10051. 请参考链接[创建终结点](/documentation/articles/virtual-machines-windows-nsg-quickstart-portal/)
 
 当 zabbix agent 安装和启动之后，我们就可以把这些需要监控的虚拟机监控起来了！
 

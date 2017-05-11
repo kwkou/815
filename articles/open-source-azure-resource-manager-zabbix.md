@@ -10,7 +10,7 @@
 <tags
    ms.service="open-source-website"  
    ms.date=""
-   wacn.date="05/09/2017"/>
+   wacn.date="05/11/2017"/>
 
 
 # 使用 Azure 资源管理器自动部署 Zabbix 监控服务
@@ -119,18 +119,31 @@ Azure Cli:
 各参数含义如下：
 
 existingStorageAccountName: 监控服务器使用的存储账号，必须已经存在并位于同一资源组当中，可以在已部署的资源列表中看到，通常为 ’<ClusterName>sto’  
+
 existingVirtualNetworkName: 监控服务器将要连接到的虚拟网络名，必需已经存在并位于同一资源组当中，可以在已部署的资源列表中看到，通常为 ’<ClusterName>vnet’  
+
 existingSubnetName: 监控服务器所连接到的虚拟网络子网络名，Zabbix 监控客户端也会被安装到连接到该子网络的所有虚拟机上(可选，默认值为 ’default’)  
+
 monitorVmName: 监控服务器虚拟机的名称  
+
 monitorVmUsername: 监控服务器虚拟机的管理员用户名(可选，默认为 ’monitoruser’)  
+
 monitorVmPassword: 监控服务器虚拟机的管理员密码  
+
 mysqlHost: Zabbix 服务端所使用的 MySql 数据库主机名。如果值为 ’localhost’，则会在监控服务器上创建新的 MySql 实例；如果指定其他值，则视为连接到已有 MySql 服务器（可选，默认为 ’localhost’）  
+
 mysqlDbName: Zabbix 服务端所使用的 MySql 数据库名(可选，默认为 ’zabbixdb’)  
+
 mysqlUser: Zabbix 服务端所使用的 MySql 数据库用户名（可选，默认为 ’zabbixuser’）  
+
 mysqlPassword: Zabbix 服务端所使用的 MySql 数据库密码  
+
 smtpServer: 邮件通知服务所使用的 smtp 服务器名，如为空则不启用邮件通知服务（可选，默认为空）  
+
 smtpUser: 邮件通知服务所使用的 smtp 用户名，如为空则不启用邮件通知服务（可选，默认为空）  
+
 smtpPassword: 邮件通知服务所使用的 smtp 密码（可选，默认为空）  
+
 notificationReceiver: 邮件通知服务的收件人地址（可选，默认为空）  
 
 
