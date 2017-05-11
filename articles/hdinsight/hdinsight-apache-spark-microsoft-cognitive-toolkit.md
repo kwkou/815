@@ -85,7 +85,7 @@
 
 3. 从 Jupyter 笔记本中，单击右上角的“上传”，然后导航至克隆 GitHub 存储库的位置。
 
-    ![将 Jupyter 笔记本上传到 Azure HDInsight Spark 群集](./media/hdinsight-apache-spark-microsoft-cognitive-toolkit.md/hdinsight-microsoft-cognitive-toolkit-load-jupyter-notebook.png "Upload Jupyter notebook to Azure HDInsight Spark cluster")
+    ![将 Jupyter 笔记本上传到 Azure HDInsight Spark 群集](./media/hdinsight-apache-spark-microsoft-cognitive-toolkit/hdinsight-microsoft-cognitive-toolkit-load-jupyter-notebook.png "Upload Jupyter notebook to Azure HDInsight Spark cluster")
 
 4. 再次单击“上传”。
 
