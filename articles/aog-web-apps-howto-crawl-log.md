@@ -41,7 +41,7 @@
 
         armclient.exe POST "/subscriptions/<sub>/resourceGroups/<RG>/providers/Microsoft.Web/sites/<site>/networkTrace/start?duration=<seconds>&api-version=2015-06-01"
 
-[AZURE.NOTE] 对 SubID、资源组名称 RG、网站名称 site、duration(最大设置为 300，目前只允许抓取最长 5 分钟的网络包) 进行替换，这些信息可以在新 portal 中网站预览页面看到。
+    [AZURE.NOTE] 对 SubID、资源组名称 RG、网站名称 site、duration(最大设置为 300，目前只允许抓取最长 5 分钟的网络包) 进行替换，这些信息可以在新 portal 中网站预览页面看到。
 
 5. 抓包完成以后，日志会出现在 \home\logfiles\networktrace 目录下。
 
