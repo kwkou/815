@@ -48,6 +48,7 @@
 1. 在 Visual Studio 或 Xamarin Studio 中，从名称中包含 **Portable** 的项目（该项目是可移植类库项目）中打开 App.cs，然后添加以下 `using` 语句：
    
         using System.Threading.Tasks;
+        
 2. 在 App.cs 中，在 `App` 类定义前添加以下 `IAuthenticate` 接口定义。
 
 	    public interface IAuthenticate
@@ -139,9 +140,9 @@
             var message = string.Empty;
             try
             {
-                // Sign in with Microsoft login using a server-managed flow.
+                // Sign in with MicrosoftAccount login using a server-managed flow.
                 user = await TodoItemManager.DefaultManager.CurrentClient.LoginAsync(this,
-                    MobileServiceAuthenticationProvider.Microsoft);
+                    MobileServiceAuthenticationProvider.MicrosoftAccount);
                 if (user != null)
                 {
                     message = string.Format("you are now signed-in as {0}.",
@@ -164,7 +165,7 @@
         }
 
 
-	如果使用的是 Microsoft 以外的其他标识提供者，请为 [MobileServiceAuthenticationProvider] 选择其他值。
+	如果使用的是 MicrosoftAccount 以外的其他标识提供者，请为 [MobileServiceAuthenticationProvider] 选择其他值。
 
 6. 在 **MainActivity** 类的 **OnCreate** 方法中调用 `LoadApplication()` 之前添加以下代码：
 
@@ -185,9 +186,11 @@
    
         using Microsoft.WindowsAzure.MobileServices;
         using System.Threading.Tasks;
+        
 4. 更新 **AppDelegate** 类，以实现 **IAuthenticate** 接口，如下所示：
    
         public partial class AppDelegate : global::Xamarin.Forms.Platform.iOS.FormsApplicationDelegate, IAuthenticate
+        
 5. 通过添加 **MobileServiceUser** 字段和 **IAuthenticate** 接口所需的 **Authenticate** 方法，更新 **AppDelegate** 类，如下所示：
    
         // Define a authenticated user.
@@ -199,12 +202,12 @@
             var message = string.Empty;
             try
             {
-                // Sign in with Microsoft login using a server-managed flow.
+                // Sign in with MicrosoftAccount login using a server-managed flow.
                 if (user == null)
                 {
                     user = await TodoItemManager.DefaultManager.CurrentClient
                         .LoginAsync(UIApplication.SharedApplication.KeyWindow.RootViewController,
-                        MobileServiceAuthenticationProvider.Microsoft);
+                        MobileServiceAuthenticationProvider.MicrosoftAccount);
                     if (user != null)
                     {
                         message = string.Format("You are now signed-in as {0}.", user.UserId);
@@ -224,13 +227,14 @@
             return success;
         }
 
-	如果使用的是 Microsoft 以外的其他标识提供者，请为 [MobileServiceAuthenticationProvider] 选择其他值。
+	如果使用的是 MicrosoftAccount 以外的其他标识提供者，请为 [MobileServiceAuthenticationProvider] 选择其他值。
 
 6. 在 **FinishedLaunching** 方法中调用 `LoadApplication()` 之前添加以下代码行：
 
         App.Init(this);
    
     该代码可确保验证器在应用加载前进行初始化。
+    
 7. 重新生成应用，运行它，然后使用所选的身份验证提供者登录，并验证是否能够以经过身份验证的用户身份访问数据。
 
 ## 向 Windows 8.1（包括 Phone）应用项目添加身份验证
@@ -250,6 +254,7 @@
 4. 更新 **MainPage** 类，以实现 **IAuthenticate** 接口，如下所示：
    
         public sealed partial class MainPage : IAuthenticate
+        
 5. 通过添加 **MobileServiceUser** 字段和 **IAuthenticate** 接口所需的 **Authenticate** 方法，更新 **MainPage** 类，如下所示：
    
         // Define a authenticated user.
@@ -262,11 +267,11 @@
 
             try
             {
-                // Sign in with Microsoft login using a server-managed flow.
+                // Sign in with MicrosoftAccount login using a server-managed flow.
                 if (user == null)
                 {
                     user = await TodoItemManager.DefaultManager.CurrentClient
-                        .LoginAsync(MobileServiceAuthenticationProvider.Microsoft);
+                        .LoginAsync(MobileServiceAuthenticationProvider.MicrosoftAccount);
                     if (user != null)
                     {
 						success = true;
@@ -287,7 +292,7 @@
         }
 
 
-	如果使用的是 Microsoft 以外的其他标识提供者，请为 [MobileServiceAuthenticationProvider] 选择其他值。
+	如果使用的是 MicrosoftAccount 以外的其他标识提供者，请为 [MobileServiceAuthenticationProvider] 选择其他值。
 
 6. 在 **MainPage** 类的构造函数中调用 `LoadApplication()` 之前添加以下代码行：
 
@@ -297,12 +302,14 @@
     将 `<your_Portable_Class_Library_namespace>` 替换为可移植类库的命名空间。
    
     若要修改 WinApp 项目，请跳到步骤 8。下一步仅适用于 WinPhone81 项目，其中需要完成登录回调。
+    
 2. （可选）在 **WinPhone81** 应用项目中，打开 App.xaml.cs 并添加以下 `using` 语句：
    
         using Microsoft.WindowsAzure.MobileServices;
         using <your_Portable_Class_Library_namespace>;
    
     将 `<your_Portable_Class_Library_namespace>` 替换为可移植类库的命名空间。
+    
 3. 若要使用 **WinPhone81** 或 **WinApp**，请将以下 **OnActivated** 方法重写添加到 **App** 类：
    
        protected override void OnActivated(IActivatedEventArgs args)

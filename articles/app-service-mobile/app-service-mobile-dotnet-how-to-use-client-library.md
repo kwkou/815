@@ -221,9 +221,9 @@ C# 中对应的类型化客户端类型为以下类：
 
 在实际应用中，可以搭配页导航控件或类似的 UI 使用类似于上述示例的查询，在页之间导航。
 
->[AZURE.NOTE]若要替代移动应用后端中的 50 行限制，还必须将 [EnableQueryAttribute] 应用到公共 GET 方法，并指定分页行为。将以下语句应用到该方法后，最大返回行数将设置为 1000：
+>[AZURE.NOTE]若要替代移动应用后端中的 50 行限制，还必须将 [EnableQueryAttribute] 应用到公共 GET 方法，并指定分页行为。将以下语句应用到该方法后，最大返回行数将设置为 1000：[EnableQuery(MaxTop=1000)]
 >
->    [EnableQuery(MaxTop=1000)]
+>    
 
 ### <a name="selecting"></a>如何选择特定的列
 
@@ -753,7 +753,7 @@ InvokeApiAsync\(\) 方法将“/api/”预置到要调用的 API，除非该 API
 有关详细信息，请参阅 [Windows Live SDK] 文档。
 
 ###<a name="serverflow"></a>服务器托管的身份验证
-注册标识提供者后，使用提供者的 [MobileServiceAuthenticationProvider] 值对 [MobileServiceClient] 调用 [LoginAsync] 方法。例如，以下代码使用 Microsoft 启动服务器流登录。
+注册标识提供者后，使用提供者的 [MobileServiceAuthenticationProvider] 值对 [MobileServiceClient] 调用 [LoginAsync] 方法。例如，以下代码使用 MicrosoftAccount 启动服务器流登录。
 
 	private MobileServiceUser user;
 	private async System.Threading.Tasks.Task Authenticate()
@@ -764,7 +764,7 @@ InvokeApiAsync\(\) 方法将“/api/”预置到要调用的 API，除非该 API
 			try
 			{
 				user = await client
-					.LoginAsync(MobileServiceAuthenticationProvider.Microsoft);
+					.LoginAsync(MobileServiceAuthenticationProvider.MicrosoftAccount);
 				message =
 					string.Format("You are now logged in - {0}", user.UserId);
 			}
@@ -779,7 +779,7 @@ InvokeApiAsync\(\) 方法将“/api/”预置到要调用的 API，除非该 API
 		}
 	}
 
-如果使用的标识提供者不是 Microsoft，请将上述 [MobileServiceAuthenticationProvider] 的值更改为提供者的值。
+如果使用的标识提供者不是 MicrosoftAccount ，请将上述 [MobileServiceAuthenticationProvider] 的值更改为提供者的值。
 
 
 在服务器流中，Azure 应用服务可以通过显示所选提供者的登录页来管理 OAuth 身份验证。标识提供者返回后，Azure 应用服务会生成一个应用服务身份验证令牌。[LoginAsync 方法]返回 [MobileServiceUser]，后者提供已经过身份验证的用户的 [UserId]，以及 JSON Web 令牌 (JWT) 形式的 [MobileServiceAuthenticationToken]。可以缓存此令牌，并在它过期之前重复使用。有关详细信息，请参阅[缓存身份验证令牌](#caching)。
@@ -787,22 +787,22 @@ InvokeApiAsync\(\) 方法将“/api/”预置到要调用的 API，除非该 API
 ### <a name="caching"></a>缓存身份验证令牌
 在某些情况下，存储提供者提供的身份验证令牌可避免在首次成功身份验证后调用登录方法。Windows 应用商店和 UWP 应用可以使用 [PasswordVault] 在成功登录后缓存当前身份验证令牌，如下所示：
 
-	await client.LoginAsync(MobileServiceAuthenticationProvider.Microsoft);		
+	await client.LoginAsync(MobileServiceAuthenticationProvider.MicrosoftAccount);		
 
 	PasswordVault vault = new PasswordVault();
-	vault.Add(new PasswordCredential("Microsoft", client.currentUser.UserId, 
+	vault.Add(new PasswordCredential("MicrosoftAccount", client.currentUser.UserId, 
 		client.currentUser.MobileServiceAuthenticationToken));
 
 UserId 值存储为凭据的 UserName，令牌存储为 Password。在后续启动时，可以检查 **PasswordVault** 中的缓存凭据。以下示例使用找到的缓存凭据，否则尝试再次向后端进行身份验证：
 
 	// Try to retrieve stored credentials.
-	var creds = vault.FindAllByResource("Microsoft").FirstOrDefault();
+	var creds = vault.FindAllByResource("MicrosoftAccount").FirstOrDefault();
 	if (creds != null)
 	{
 		// Create the current user from the stored credentials.
 		client.currentUser = new MobileServiceUser(creds.UserName);
 		client.currentUser.MobileServiceAuthenticationToken = 
-			vault.Retrieve("Microsoft", creds.UserName).Password;
+			vault.Retrieve("MicrosoftAccount", creds.UserName).Password;
 	}
 	else
 	{
@@ -812,18 +812,18 @@ UserId 值存储为凭据的 UserName，令牌存储为 Password。在后续启�
 注销用户时，还必须删除存储的凭据，如下所示：
 
 	client.Logout();
-	vault.Remove(vault.Retrieve("Microsoft", client.currentUser.UserId));
+	vault.Remove(vault.Retrieve("MicrosoftAccount", client.currentUser.UserId));
 
 Xamarin 应用使用 [Xamarin.Auth API] 将证书安全存储在 **Account** 对象中。有关使用这些 API 的示例，请参阅 [ContosoMoments photo sharing sample](https://github.com/azure-appservice-samples/ContosoMoments)（ContosoMoments 照片分享示例）中的 [AuthStore.cs] 代码文件。
 
-使用客户端托管的身份验证时，也可以缓存从提供程序（例如 Microsoft）获取的访问令牌。可以提供此令牌，从后端请求新的身份验证令牌，如下所示：
+使用客户端托管的身份验证时，也可以缓存从提供程序（例如 MicrosoftAccount ）获取的访问令牌。可以提供此令牌，从后端请求新的身份验证令牌，如下所示：
 
 	var token = new JObject();
 	// Replace <your_access_token_value> with actual value of your access token
 	token.Add("access_token", "<your_access_token_value>");
 
 	// Authenticate using the access token.
-	await client.LoginAsync(MobileServiceAuthenticationProvider.Microsoft, token);
+	await client.LoginAsync(MobileServiceAuthenticationProvider.MicrosoftAccount, token);
 
 
 ##<a name="pushnotifications"></a>推送通知
@@ -936,7 +936,7 @@ Xamarin 应用需要一些额外的代码才能注册 iOS 或 Android 平台上�
 	    IMobileServiceTable<TodoItem> todoTable = client.GetTable<TodoItem>();
 	    var newItem = new TodoItem { Text = "Hello world", Complete = false };
 	    await todoTable.InsertAsync(newItem);
-}
+    }
 
     public class MyHandler : DelegatingHandler
     {

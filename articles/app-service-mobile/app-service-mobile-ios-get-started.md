@@ -23,7 +23,7 @@
 
 ## 概述
 
-本教程说明如何将云后端服务 [Azure 移动应用](/documentation/articles/app-service-mobile-value-prop/)添加到 iOS 应用。首先将创建新的移动后端。然后，使用一个简单的_待办事项列表_ iOS 应用在 Azure 中存储数据。
+本教程说明如何将云后端服务 [Azure 移动应用](/documentation/articles/app-service-mobile-value-prop/)添加到 iOS 应用。首先将创建新的移动后端。然后，使用一个简单的 _待办事项列表_ iOS 应用在 Azure 中存储数据。
 
 ## 先决条件
 

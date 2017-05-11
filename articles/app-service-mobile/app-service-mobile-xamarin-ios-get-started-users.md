@@ -59,7 +59,7 @@
         {
             try
             {
-                user = await client.LoginAsync(view, MobileServiceAuthenticationProvider.Microsoft);
+                user = await client.LoginAsync(view, MobileServiceAuthenticationProvider.MicrosoftAccount);
             }
             catch (Exception ex)
             {
@@ -67,7 +67,9 @@
             }
         }
 
-	>[AZURE.NOTE] 如果使用的标识提供者不是 Microsoft，请将传递给上述 **LoginAsync** 的值更改为下列其中一项：_MicrosoftAccount_ 或 _WindowsAzureActiveDirectory_ 。
+	>[AZURE.NOTE] 如果使用的标识提供者不是 MicrosoftAccount ，请将传递给上述 **LoginAsync** 的值更改为： _WindowsAzureActiveDirectory_ 。
+	>
+	>
 
 3. 打开 **QSTodoListViewController.cs**。修改 **ViewDidLoad** 的方法定义，删除接近结尾处对 **RefreshAsync()** 的调用：
 

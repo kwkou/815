@@ -570,9 +570,9 @@ Select 函数的参数是要返回的表列的字符串名称。
 
 ### <a name="caching"></a>如何向应用程序添加身份验证代码
 
-以下代码使用 Microsoft 提供程序启动服务器流登录过程：
+以下代码使用 MicrosoftAccount 提供程序启动服务器流登录过程：
 
-	MobileServiceUser user = mClient.login(MobileServiceAuthenticationProvider.Microsoft);
+	MobileServiceUser user = mClient.login(MobileServiceAuthenticationProvider.MicrosoftAccount);
 
 使用 **getUserId** 方法从 **MobileServiceUser** 获取已登录用户的 ID。有关如何使用 Futures 调用异步登录 API 的示例，请参阅 [Get started with authentication]（身份验证入门）。
 
@@ -616,13 +616,13 @@ Select 函数的参数是要返回的表列的字符串名称。
 
 3. 将以下代码添加到应用程序并进行以下替换：
 
-* 将 **INSERT-AUTHORITY-HERE** 替换为在其中预配了应用程序的租户的名称。格式应为 https://login.chinacloudapi.cn/contoso.partner.onmschina.cn。可以在 [Azure 经典管理门户] 中 Azure Active Directory 的“域”选项卡复制此值。
+* 将 **INSERT-AUTHORITY-HERE** 替换为在其中预配了应用程序的租户的名称。格式应为 https://login.chinacloudapi.cn/contoso.partner.onmschina.cn。 可以在 [Azure 经典管理门户] 中 Azure Active Directory 的“域”选项卡复制此值。
 
 * 将 **INSERT-RESOURCE-ID-HERE** 替换移动应用后端的客户端 ID。可以在门户中“Azure Active Directory 设置”下面的“高级”选项卡获取客户端 ID。
 
 * 将 **INSERT-CLIENT-ID-HERE** 替换为从本机客户端应用程序复制的客户端 ID。
 
-* 将 **INSERT-REDIRECT-URI-HERE** 替换为站点的 _/.auth/login/done_ 终结点（使用 HTTPS 方案）。此值应类似于 \_https://contoso.chinacloudsites.cn/.auth/login/done_。
+* 将 **INSERT-REDIRECT-URI-HERE** 替换为站点的 _/.auth/login/done_ 终结点（使用 HTTPS 方案）。此值应类似于 _https://contoso.chinacloudsites.cn/.auth/login/done_ 。
 
 		private AuthenticationContext mContext;
 		private void authenticate() {

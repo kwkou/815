@@ -50,9 +50,9 @@
 	            var success = false;
 	            try
 	            {
-	                // Sign in with Microsoft login using a server-managed flow.
+	                // Sign in with MicrosoftAccount login using a server-managed flow.
 	                user = await client.LoginAsync(this,
-	                    MobileServiceAuthenticationProvider.Microsoft);
+	                    MobileServiceAuthenticationProvider.MicrosoftAccount);
 	                CreateAndShowDialog(string.Format("you are now logged in - {0}",
 	                    user.UserId), "Logged in!");
 
@@ -79,9 +79,9 @@
             }
         }
 
-    此代码创建一个新方法（用于对用户进行身份验证）和新“登录”按钮的方法处理程序。上面示例代码中的用户使用 Microsoft 登录进行身份验证。对话框用于在进行身份验证后显示用户 ID。
+    此代码创建一个新方法（用于对用户进行身份验证）和新“登录”按钮的方法处理程序。上面示例代码中的用户使用 MicrosoftAccount 登录进行身份验证。对话框用于在进行身份验证后显示用户 ID。
 
-    > [AZURE.NOTE] 如果使用的标识提供者不是 Microsoft，请将传递给上述 **LoginAsync** 的值更改为下列其中一项： _MicrosoftAccount_  或 _WindowsAzureActiveDirectory_ 。
+    > [AZURE.NOTE] 如果使用的标识提供者不是 MicrosoftAccount ，请将传递给上述 **LoginAsync** 的值更改为：  _WindowsAzureActiveDirectory_ 。
 
 3. 在 **OnCreate** 方法中，删除或注释掉以下代码行：
 

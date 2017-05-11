@@ -163,56 +163,55 @@
 
 当使用脱机同步功能时，请定义三个系统表和一个数据表。
 
-    ### 系统表
+### 系统表
 
-    **MS\_TableOperations**
+**MS\_TableOperations** 
 
-    ![MS\_TableOperations 表属性][defining-core-data-tableoperations-entity]
+![MS\_TableOperations 表属性][defining-core-data-tableoperations-entity]
 
-    | 属性 | 类型 |
-    |----------- |   ------    |
-    | id | Integer 64 |
-    | itemId | 字符串 |
-    | properties | 二进制数据 |
-    | 表 | 字符串 |
-    | tableKind | 16 位整数 |
+| 属性 | 类型 |
+|----------- |   ------    |
+| id | Integer 64 |
+| itemId | 字符串 |
+| properties | 二进制数据 |
+| 表 | 字符串 |
+| tableKind | 16 位整数 |
 
-    <br>**MS\_TableOperationErrors**
+<br> **MS\_TableOperationErrors** 
 
-    ![MS\_TableOperationErrors 表属性][defining-core-data-tableoperationerrors-entity]  
+![MS\_TableOperationErrors 表属性][defining-core-data-tableoperationerrors-entity]  
 
-    | 属性 | 类型 |
-    |----------- |   ------    |
-    | id | 字符串 |
-    | operationId | 64 位整数 |
-    | 属性 | 二进制数据 |
-    | tableKind | 16 位整数 |
+| 属性 | 类型 |
+|----------- |   ------    |
+| id | 字符串 |
+| operationId | 64 位整数 |
+| 属性 | 二进制数据 |
+| tableKind | 16 位整数 |
 
-    <br>**MS\_TableConfig**
+<br>**MS\_TableConfig**
 
-    ![][defining-core-data-tableconfig-entity]
+![][defining-core-data-tableconfig-entity]
 
-    | 属性 | 类型 |
-    |----------- |   ------    |
-    | id | 字符串 |
-    | key | 字符串 |
-    | keyType | 64 位整数 |
-    | 表 | 字符串 |
-    | value | 字符串 |
+| 属性 | 类型 |
+|----------- |   ------    |
+| id | 字符串 |
+| key | 字符串 |
+| keyType | 64 位整数 |
+| 表 | 字符串 |
+| value | 字符串 |
 
-    ### 数据表
+### 数据表
 
-    **TodoItem**
+**TodoItem**
 
-    | 属性 | 类型 | 注意 |
-    |-----------   |  ------ | -------------------------------------------------------|
-    | id | 字符串（标记为必需） | 远程存储中的主键 |
-    | complete | 布尔 | todo 项字段 |
-    | text | 字符串 | todo 项字段 |
-    | createdAt | 日期 | （可选）映射到 createdAt 系统属性 |
-    | updatedAt | 日期 | （可选）映射到 updatedAt 系统属性 |
-    | 版本 | 字符串 | （可选）用于检测冲突，映射到版本 |
-
+| 属性 | 类型 | 注意 |
+|-----------   |  ------ | -------------------------------------------------------|
+| id | 字符串（标记为必需） | 远程存储中的主键 |
+| complete | 布尔 | todo 项字段 |
+| text | 字符串 | todo 项字段 |
+| createdAt | 日期 | （可选）映射到 createdAt 系统属性 |
+| updatedAt | 日期 | （可选）映射到 updatedAt 系统属性 |
+| 版本 | 字符串 | （可选）用于检测冲突，映射到版本 |
 
 ## <a name="setup-sync"></a>更改应用的同步行为
 本节将修改应用，使其在启动应用或插入和更新项时不进行同步。仅在按下刷新手势按钮时进行同步。
