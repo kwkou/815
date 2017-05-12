@@ -51,6 +51,7 @@ Spark 到 DocumentDB 的连接器能使 Azure DocumentDB 充当 Apache Spark 作
 本文将帮助你使用 Python（通过 pyDocumentDB）和 scala 接口运行一些简单的示例。
 
 可使用两种方法连接 Apache Spark 和 Azure DocumentDB：
+
 - 通过 [Azure DocumentDB Python SDK](https://github.com/Azure/azure-documentdb-python) 使用 pyDocumentDB。
 - 利用 [Azure DocumentDB Java SDK](https://github.com/Azure/azure-documentdb-java) 创建基于 Java 的 Spark 到 DocumentDB 的连接器。
 

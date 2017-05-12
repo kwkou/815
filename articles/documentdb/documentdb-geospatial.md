@@ -236,7 +236,7 @@ DocumentDB 还支持执行反向查询，即可以为 DocumentDB 中的多边形
 
 ST_ISVALID 和 ST_ISVALIDDETAILED 可用来检查空间对象是否有效。 例如，下列查询检查纬度值 (-132.8) 超出范围的点的有效性。 ST_ISVALID 仅返回一个布尔值，ST_ISVALIDDETAILED 则返回布尔值和字符串，字符串中包含被视为无效的原因。
 
-** 查询 **
+**查询**
 
     SELECT ST_ISVALID({ "type": "Point", "coordinates": [31.9, -132.8] })
 
