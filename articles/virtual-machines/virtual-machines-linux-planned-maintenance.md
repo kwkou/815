@@ -1,38 +1,38 @@
 <properties
-	pageTitle="Linux VM 的计划内维护 | Azure"
-	description="了解什么是 Azure 计划内维护以及它如何影响正在 Azure 中运行的 Linux 虚拟机。"
-	services="virtual-machines-linux"
-	documentationCenter=""
-	authors="drewm"
-	manager="timlt"
-	editor=""
-	tags="azure-service-management,azure-resource-manager"/>
-
+    pageTitle="Azure 中 Liunx VM 的计划内维护 | Azure"
+    description="了解什么是 Azure 计划内维护以及它如何影响正在 Azure 中运行的 Windows 虚拟机。"
+    services="virtual-machines-linux"
+    documentationcenter=""
+    author=""
+    manager="timlt"
+    editor=""
+    tags="azure-resource-manager,azure-service-management" />
 <tags
-	ms.service="virtual-machines-linux"
-	ms.workload="infrastructure-services"
-	ms.tgt_pltfrm="vm-linux"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="03/01/2017"
-	wacn.date="04/27/2017"
-	ms.author="drewm"/>
+    ms.assetid=""
+    ms.service="virtual-machines-linux"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.tgt_pltfrm="vm-linux"
+    ms.workload="infrastructure-services"
+    ms.date="03/27/2017"
+    wacn.date="05/15/2017"
+    ms.author=""
+    ms.translationtype="Human Translation"
+    ms.sourcegitcommit="457fc748a9a2d66d7a2906b988e127b09ee11e18"
+    ms.openlocfilehash="7753e3e88ec09fdc0b83c307db9da85c2e6d7648"
+    ms.contentlocale="zh-cn"
+    ms.lasthandoff="05/05/2017" />
 
+# <a name="planned-maintenance-for-linux-virtual-machines"></a>Linux 虚拟机的计划维护 
 
-# Azure 中 Linux 虚拟机的计划内维护
+Azure 在全球范围内定期执行更新，以提高虚拟机所基于的主机基础结构的可靠性、性能及安全性。 此类更新包括修补主机环境（OS、虚拟机监控程序以及主机上部署的各种代理）中的软件组件、升级网络组件以及硬件解除授权等多项内容。
 
-了解什么事 Azure 计划内维护，以及它怎么影响你的 Linux 虚拟机的可用性。这篇文章同样适用于 [Windows 虚拟机](/documentation/articles/virtual-machines-windows-planned-maintenance/)。
+大多数此类更新在执行时不会影响托管的虚拟机或云服务。
 
-[AZURE.INCLUDE [了解部署模型](../../includes/learn-about-deployment-models-both-include.md)]
+但是，也会存在更新对托管的虚拟机产生影响的情况：
 
-## Azure 为何要执行计划内维护
+-   使用就地 VM 迁移的 VM 保留维护会描述一种类型的更新，其中虚拟机在维护期间不会被重启。
 
-Azure 在全球范围内定期执行更新，以提高虚拟机所基于的主机基础结构的可靠性、性能及安全性。其中许多更新在执行时不会对虚拟机或云服务产生任何影响，其中包括内存保留更新。
+-   VM 重启维护，维护时需要重启或重新部署到托管虚拟机。
 
-不过，有些更新就需要重新启动虚拟机，以便向基础结构应用所需的更新。虚拟机会在我们修补基础结构时关闭，之后再重新启动。
-
-请注意，有两类维护可能会影响虚拟机的可用性：计划内维护和计划外维护。本页介绍 Azure 如何执行计划内维护。有关计划外维护的详细信息，请参阅[了解计划内与计划外维护](/documentation/articles/virtual-machines-linux-manage-availability/)。
-
-[AZURE.INCLUDE [virtual-machines-common-planned-maintenance](../../includes/virtual-machines-common-planned-maintenance.md)]
-
-<!---HONumber=Mooncake_0321_2016-->
+请注意，本页介绍 Azure 如何执行计划内维护。 有关非计划事件（故障）的详细信息，请参阅[管理虚拟机的可用性](/documentation/articles/virtual-machines-windows-manage-availability/)。

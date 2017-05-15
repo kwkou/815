@@ -6,8 +6,7 @@
     author="iainfoulds"
     manager="timlt"
     editor=""
-    tags="azure-resource-manager"
-    translationtype="Human Translation" />
+    tags="azure-resource-manager" />
 <tags
     ms.assetid="f9449f58-664b-4d5d-82f6-84c5d083047f"
     ms.service="virtual-machines-windows"
@@ -16,12 +15,14 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="03/17/2017"
-    wacn.date="04/17/2017"
+    wacn.date="05/15/2017"
     ms.author="iainfou"
     ms.custom="H1Hack27Feb2017"
-    ms.sourcegitcommit="e0e6e13098e42358a7eaf3a810930af750e724dd"
-    ms.openlocfilehash="ecd6b0713b546b1ee06222edd902984a96e33c0d"
-    ms.lasthandoff="04/06/2017" />
+    ms.translationtype="Human Translation"
+    ms.sourcegitcommit="457fc748a9a2d66d7a2906b988e127b09ee11e18"
+    ms.openlocfilehash="a6438a65d4062312d517c9c8de9ca4ebb7d27e12"
+    ms.contentlocale="zh-cn"
+    ms.lasthandoff="05/05/2017" />
 
 # <a name="azure-availability-sets-guidelines-for-windows-vms"></a>适用于 Windows VM 的 Azure 可用性集准则
 
@@ -55,6 +56,5 @@ Azure 中的底层基础结构分为多个硬件群集。 每个硬件群集可�
 
 使用非托管磁盘时，在存储层针对高可用性设计应用程序。 最佳实践是为可用性集中的每个 VM 使用单独的存储帐户。 将与同一 VM 关联的所有磁盘（OS 和数据）放置在同一存储帐户中。 向存储帐户中添加更多 VHD 时，考虑存储帐户[限制](/documentation/articles/storage-scalability-targets/)。
 
-## <a name="next-steps"></a> 后续步骤
+## <a name="next-steps"></a>后续步骤
 [AZURE.INCLUDE [virtual-machines-windows-infrastructure-guidelines-next-steps](../../includes/virtual-machines-windows-infrastructure-guidelines-next-steps.md)]
-<!--Update_Description: wording update-->

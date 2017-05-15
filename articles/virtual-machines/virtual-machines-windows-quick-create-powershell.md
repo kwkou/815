@@ -6,27 +6,30 @@
     author="neilpeterson"
     manager="timlt"
     editor="tysonn"
-    tags="azure-resource-manager"
-    translationtype="Human Translation" />
+    tags="azure-resource-manager" />
 <tags
     ms.assetid=""
     ms.service="virtual-machines-windows"
     ms.devlang="na"
-    ms.topic="article"
+    ms.topic="hero-article"
     ms.tgt_pltfrm="vm-windows"
     ms.workload="infrastructure"
-    ms.date="03/14/2017"
-    wacn.date="04/17/2017"
+    ms.date="04/03/2017"
+    wacn.date="05/15/2017"
     ms.author="nepeters"
-    ms.sourcegitcommit="e0e6e13098e42358a7eaf3a810930af750e724dd"
-    ms.openlocfilehash="3dbc944f4f7e407166c0f9a046022cd33076695a"
-    ms.lasthandoff="04/06/2017" />
+    ms.translationtype="Human Translation"
+    ms.sourcegitcommit="457fc748a9a2d66d7a2906b988e127b09ee11e18"
+    ms.openlocfilehash="da44851f58b46e8c635823ca436b1dbda9cb8b91"
+    ms.contentlocale="zh-cn"
+    ms.lasthandoff="05/05/2017" />
 
 # <a name="create-a-windows-virtual-machine-with-powershell"></a>使用 PowerShell 创建 Windows 虚拟机
 
-Azure PowerShell 模块用于从 PowerShell 命令行或脚本创建和管理 Azure 资源。 本指南详细说明了如何使用 PowerShell 创建运行 Windows Server 2016 的 Azure 虚拟机。 
+Azure PowerShell 模块用于从 PowerShell 命令行或脚本创建和管理 Azure 资源。 本指南详细说明了如何使用 PowerShell 创建运行 Windows Server 2016 的 Azure 虚拟机。  部署完成后，我们将连接到服务器并安装 IIS。  
 
-在开始之前，请确保已安装了 Azure PowerShell 模块的最新版本。 有关详细信息，请参阅[如何安装和配置 Azure PowerShell](https://docs.microsoft.com/zh-cn/powershell/azureps-cmdlets-docs)。
+如果没有 Azure 订阅，可在开始前创建一个[试用帐户](/pricing/1rmb-trial/)。
+
+另请确保已安装了 Azure PowerShell 模块的最新版本。 有关详细信息，请参阅[如何安装和配置 Azure PowerShell](https://docs.microsoft.com/zh-cn/powershell/azureps-cmdlets-docs)。
 
 ## <a name="log-in-to-azure"></a>登录 Azure
 
@@ -42,7 +45,8 @@ Azure PowerShell 模块用于从 PowerShell 命令行或脚本创建和管理 Az
 
 ## <a name="create-networking-resources"></a>创建网络资源
 
-创建虚拟网络、子网和公共 IP 地址。 这些资源用来与虚拟机建立网络连接，以及连接到 Internet。
+### <a name="create-a-virtual-network-subnet-and-a-public-ip-address"></a>创建虚拟网络、子网和公共 IP 地址。 
+这些资源用来与虚拟机建立网络连接，以及连接到 Internet。
 
     # Create a subnet configuration
     $subnetConfig = New-AzureRmVirtualNetworkSubnetConfig -Name mySubnet -AddressPrefix 192.168.1.0/24
@@ -55,18 +59,25 @@ Azure PowerShell 模块用于从 PowerShell 命令行或脚本创建和管理 Az
     $pip = New-AzureRmPublicIpAddress -ResourceGroupName myResourceGroup -Location chinanorth `
     -AllocationMethod Static -IdleTimeoutInMinutes 4 -Name "mypublicdns$(Get-Random)"
 
-创建网络安全组和网络安全组规则。 网络安全组使用入站和出站规则保护虚拟机。 在本例中，将为端口 3389 创建一个入站规则，该规则允许传入的远程桌面连接。
+### <a name="create-a-network-security-group-and-a-network-security-group-rule"></a>创建网络安全组和网络安全组规则。 
+网络安全组使用入站和出站规则保护虚拟机。 在本例中，将为端口 3389 创建一个入站规则，该规则允许传入的远程桌面连接。  我们还需要为端口 80 创建入站规则，以允许传入的 Web 流量。
 
     # Create an inbound network security group rule for port 3389
     $nsgRuleRDP = New-AzureRmNetworkSecurityRuleConfig -Name myNetworkSecurityGroupRuleRDP  -Protocol Tcp `
     -Direction Inbound -Priority 1000 -SourceAddressPrefix * -SourcePortRange * -DestinationAddressPrefix * `
     -DestinationPortRange 3389 -Access Allow
 
+    # Create an inbound network security group rule for port 80
+    $nsgRuleWeb = New-AzureRmNetworkSecurityRuleConfig -Name myNetworkSecurityGroupRuleWWW  -Protocol Tcp `
+    -Direction Inbound -Priority 1001 -SourceAddressPrefix * -SourcePortRange * -DestinationAddressPrefix * `
+    -DestinationPortRange 80 -Access Allow
+
     # Create a network security group
     $nsg = New-AzureRmNetworkSecurityGroup -ResourceGroupName myResourceGroup -Location chinanorth `
-    -Name myNetworkSecurityGroup -SecurityRules $nsgRuleRDP
+    -Name myNetworkSecurityGroup -SecurityRules $nsgRuleRDP,$nsgRuleWeb
 
-为虚拟机创建网卡。 网卡将虚拟机连接到子网、网络安全组和公共 IP 地址。
+### <a name="create-a-network-card-for-the-virtual-machine"></a>为虚拟机创建网卡。 
+网卡将虚拟机连接到子网、网络安全组和公共 IP 地址。
 
     # Create a virtual network card and associate with public IP address and NSG
     $nic = New-AzureRmNetworkInterface -Name myNic -ResourceGroupName myResourceGroup -Location chinanorth `
@@ -80,7 +91,7 @@ Azure PowerShell 模块用于从 PowerShell 命令行或脚本创建和管理 Az
     $cred = Get-Credential
 
     # Create a virtual machine configuration
-    $vmConfig = New-AzureRmVMConfig -VMName myVM -VMSize Standard_D1 | `
+    $vmConfig = New-AzureRmVMConfig -VMName myVM -VMSize Standard_DS2 | `
     Set-AzureRmVMOperatingSystem -Windows -ComputerName myVM -Credential $cred | `
     Set-AzureRmVMSourceImage -PublisherName MicrosoftWindowsServer -Offer WindowsServer -Skus 2016-Datacenter -Version latest | `
     Add-AzureRmVMNetworkInterface -Id $nic.Id
@@ -93,13 +104,25 @@ Azure PowerShell 模块用于从 PowerShell 命令行或脚本创建和管理 Az
 
 在部署完成后，创建到虚拟机的远程桌面连接。
 
-运行以下命令，以返回虚拟机的公共 IP 地址。
+运行以下命令，以返回虚拟机的公共 IP 地址。  需记下此 IP 地址，以便在后续步骤中使用浏览器连接到它测试 Web 连接。
 
     Get-AzureRmPublicIpAddress -ResourceGroupName myResourceGroup | Select IpAddress
 
-使用以下命令创建到虚拟机的远程桌面连接。 将 IP 地址替换为你的虚拟机的公共 IP 地址。 出现提示时，输入创建虚拟机时使用的凭据。
+使用以下命令创建与虚拟机的远程桌面会话。 将 IP 地址替换为你的虚拟机的 `publicIPAddress`。 出现提示时，输入创建虚拟机时使用的凭据。
 
-    mstsc /v:<Public IP Address>
+    mstsc /v:<publicIpAddress>
+
+## <a name="install-iis-via-powershell"></a>通过 PowerShell 安装 IIS
+
+现在，你已登录到 Azure VM，可以使用单行 PowerShell 安装 IIS，并启用本地防火墙规则以允许 Web 流量。  打开 PowerShell 提示符并运行以下命令：
+
+    Install-WindowsFeature -name Web-Server -IncludeManagementTools
+
+## <a name="view-the-iis-welcome-page"></a>查看 IIS 欢迎页
+
+IIS 已安装，并且现在已从 Internet 打开 VM 上的端口 80 - 你可以使用所选的 Web 浏览器查看默认的 IIS 欢迎页。 请务必使用前面记录的 `publicIpAddress` 访问默认页面。 
+
+![IIS 默认站点](./media/virtual-machines-windows-quick-create-powershell/default-iis-website.png) 
 
 ## <a name="delete-virtual-machine"></a>删除虚拟机
 
