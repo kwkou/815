@@ -87,7 +87,7 @@ Azure IoT 服务 SDK 包含的代码可帮助生成直接与 IoT 中心进行交
 - [适用于 Java 的 Azure IoT 服务 SDK][lnk-java-service-ref]
 - [适用于 Node.js 的 Azure IoT 设备 SDK][lnk-node-ref]
 - [适用于 Node.js 的 Azure IoT 服务 SDK][lnk-node-service-ref]
-- [Azure IoT 网关 SDK][lnk-gateway-ref]
+
 
 ## <a name="next-steps"></a>后续步骤
 此 IoT 中心开发人员指南中的其他参考主题包括：
@@ -119,7 +119,7 @@ Azure IoT 服务 SDK 包含的代码可帮助生成直接与 IoT 中心进行交
 [lnk-rest-ref]: https://docs.microsoft.com/zh-cn/rest/api/iothub/
 [lnk-java-service-ref]: https://docs.microsoft.com/java/api/com.microsoft.azure.sdk.iot.service.auth
 [lnk-node-service-ref]: https://azure.github.io/azure-iot-sdk-node/azure-iothub/1.1.9/index.html
-[lnk-gateway-ref]: http://azure.github.io/azure-iot-gateway-sdk/api_reference/c/html/
+
 
 [lnk-devguide-endpoints]: /documentation/articles/iot-hub-devguide-endpoints/
 [lnk-devguide-quotas]: /documentation/articles/iot-hub-devguide-quotas-throttling/

@@ -270,8 +270,8 @@ IoT 中心上的监视终结点是与事件中心兼容的终结点。 可使用
 <!-- Links and images -->
 [1]: ./media/iot-hub-operations-monitoring/enable-OM-1.png
 [2]: ./media/iot-hub-operations-monitoring/enable-OM-2.png
-[img-endpoints]: media/iot-hub-operations-monitoring/monitoring-endpoint.png
-[img-service-key]: media/iot-hub-operations-monitoring/service-key.png
+[img-endpoints]: ./media/iot-hub-operations-monitoring/monitoring-endpoint.png
+[img-service-key]: ./media/iot-hub-operations-monitoring/service-key.png
 
 [lnk-get-started]: /documentation/articles/iot-hub-csharp-csharp-getstarted/
 [lnk-diagnostic-metrics]: /documentation/articles/iot-hub-metrics/

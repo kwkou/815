@@ -231,7 +231,7 @@ PublishSettings 文件将下载到计算机。此文件通常名为 _站点名�
   3. 单击“设置”，然后单击“计划”。
   4. 为周期选择“一次”，然后单击“保存”
 
-按需作业位于 `App_Data/config/scripts/scheduler post-migration` 中。建议将所有按需作业转换为 [Web 作业]或 [函数]。编写新的计划程序作业作为 [Web 作业]或 [函数]。
+按需作业位于 `App_Data/config/scripts/scheduler post-migration` 中。建议将所有按需作业转换为 [Web 作业]或函数。编写新的计划程序作业作为 [Web 作业]或函数。
 
 ### <a name="notification-hubs"></a>通知中心
 

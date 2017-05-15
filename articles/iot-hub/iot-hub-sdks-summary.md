@@ -40,7 +40,7 @@ Azure IoT 服务 SDK 包含的代码可帮助构建直接与 IoT 中心进行交
 
 此 Azure IoT 网关 SDK 包含创建 IoT 网关解决方案的基础结构和模块。你可以扩展此 SDK 来创建适用于任何端到端场景的网关。
 
-你可以从 GitHub 下载 [Azure IoT 网关 SDK][]。
+
 
 ## 联机 API 参考文档
 
@@ -48,7 +48,7 @@ Azure IoT 服务 SDK 包含的代码可帮助构建直接与 IoT 中心进行交
 
 - [物联网 (IoT) .NET][]
 - [IoT 中心 REST][]
-- [Azure IoT 网关 SDK][]
+
 
 ## 后续步骤
 
@@ -75,7 +75,6 @@ Azure IoT 服务 SDK 包含的代码可帮助构建直接与 IoT 中心进行交
 [适用于 Node.js 的 Azure IoT 设备 SDK]: http://azure.github.io/azure-iot-sdks/node/api_reference/azure-iot-device/1.0.3/index.html
 [IoT 中心 REST]: https://msdn.microsoft.com/zh-cn/library/mt548492.aspx
 [适用于 Node.js 的 Azure IoT 服务 SDK]: http://azure.github.io/azure-iot-sdks/node/api_reference/azure-iothub/1.0.3/index.html
-[Azure IoT 网关 SDK]: http://azure.github.io/azure-iot-gateway-sdk/api_reference/c/html/
 [lnk-design]: /documentation/articles/iot-hub-guidance/
 [lnk-gateway]: /documentation/articles/iot-hub-linux-gateway-sdk-simulated-device/
 [lnk-portal]: /documentation/articles/iot-hub-manage-through-portal/
