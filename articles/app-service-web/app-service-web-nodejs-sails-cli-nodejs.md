@@ -161,7 +161,7 @@
 
 1. [创建具有 MongoDB 协议支持的 DocumentDB 帐户](/documentation/articles/documentdb-create-mongodb-account/)。
 2. [创建 DocumentDB 集合和数据库](/documentation/articles/documentdb-create-collection/)。集合的名称不重要，但从 Sails.js 连接时需要数据库的名称。
-3. [查找 DocumentDB 数据库的连接信息](/documentation/articles/documentdb-connect-mongodb-account/#a-idgetcustomconnectiona-get-the-mongodb-connection-string-to-customize)。
+3. [查找 DocumentDB 数据库的连接信息](/documentation/articles/documentdb-connect-mongodb-account/#GetCustomConnection)。
 2. 从命令行终端安装 MongoDB 适配器：
 
         npm install sails-mongo --save

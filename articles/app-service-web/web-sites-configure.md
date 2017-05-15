@@ -136,7 +136,7 @@ Web 应用可能会使用根据 URL 路由的模块，而不是提供静态内�
 
 ### SSL 
 
-在“基本”或“标准”模式下，你可为自定义域上载 SSL 证书。有关详细信息，请参阅[为 Web 应用启用 HTTPS]。
+在“基本”或“标准”模式下，你可为自定义域上载 SSL 证书。有关详细信息，请参阅[为 Web 应用启用 HTTPS](/documentation/articles/web-sites-configure-ssl-certificate/)。
 
 若要查看上传的证书，请单击“所有设置”>“自定义域和 SSL”。
 
