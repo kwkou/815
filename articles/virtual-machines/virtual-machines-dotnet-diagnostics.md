@@ -8,7 +8,7 @@
     editor="" />
 <tags
     ms.assetid="dfaabc7a-23e7-4af0-8369-f504d2915b3d"
-    ms.service="virtual-machines"
+    ms.service="virtual-machines-windows"
     ms.workload="na"
     ms.tgt_pltfrm="na"
     ms.devlang="dotnet"
