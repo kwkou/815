@@ -1,9 +1,5 @@
 
 
-## 基于 Windows 的虚拟机的注意事项
-
-请参阅 [Oracle 虚拟机映像的其他注意事项](/documentation/articles/virtual-machines-windows-classic-oracle-considerations/)，了解基于 Windows Server 的 Azure 虚拟机上的 Oracle 软件限制。
-
 ## 准备 Oracle Linux 虚拟机
 
 [为 Azure 准备 Oracle Linux 虚拟机](/documentation/articles/virtual-machines-linux-oracle-create-upload-vhd/)将逐步引导你满足先决条件，并为 Oracle Linux 6.4 + 和 Oracle Linux 7.0 + 创建虚拟机。

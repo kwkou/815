@@ -29,7 +29,7 @@ Oracle 数据防护支持对 Oracle 数据库实施数据保护和灾难恢复�
 
 此外，本教程假设你满足以下先决条件：
 
-- 已经查看 [Oracle Virtual Machine images - Miscellaneous Considerations](/documentation/articles/virtual-machines-windows-classic-oracle-considerations/)（Oracle 虚拟机映像 - 其他注意事项）主题中的“高可用性和灾难恢复注意事项”部分。Azure 支持独立的 Oracle 数据库实例，但目前不支持 Oracle 真正应用程序群集 (Oracle RAC)。
+- Azure 支持独立的 Oracle 数据库实例，但目前不支持 Oracle 真正应用程序群集 (Oracle RAC)。
 
 
 - 已在 Azure 中使用由平台提供的同一 Oracle 企业版映像创建了两个虚拟机 (VM)。确保这些虚拟机位于[相同的云服务](/documentation/articles/virtual-machines-windows-load-balance/)和相同的虚拟网络中，可以通过持久性专用 IP 地址相互访问。另外，建议将 VM 放在同一[可用性集](/documentation/articles/virtual-machines-windows-manage-availability/)中，以便 Azure 将它们置于不同的容错域和升级域中。Oracle 数据防护仅适用于 Oracle 数据库企业版。每个虚拟机必须至少具有 2 GB 内存和 5 GB 磁盘空间。有关由平台提供的 VM 大小的最新信息，请参阅 [Virtual Machine Sizes for Azure](/documentation/articles/virtual-machines-windows-sizes/)（Azure 的虚拟机大小）。如果需要为 VM 提供更多的磁盘卷，可以附加更多的磁盘。有关信息，请参阅 [How to Attach a Data Disk to a Virtual Machine](/documentation/articles/virtual-machines-windows-classic-attach-disk/)（如何将数据磁盘附加到虚拟机）。

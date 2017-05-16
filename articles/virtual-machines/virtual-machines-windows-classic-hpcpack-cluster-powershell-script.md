@@ -248,7 +248,6 @@
 
 ## 后续步骤
 * 尝试在群集上运行测试工作负荷。例如，请参阅 HPC Pack [入门指南](https://technet.microsoft.com/zh-cn/library/jj884144)。
-* 有关编写群集部署脚本和运行 HPC 工作负荷的教程，请参阅[开始在 Azure 中使用 HPC Pack 群集运行 Excel 和 SOA 工作负荷](/documentation/articles/virtual-machines-windows-excel-cluster-hpcpack/)。
 * 尝试使用 HPC Pack 的工具来启动、停止、添加和删除所创建群集中的计算节点。请参阅[在 Azure 中管理 HPC Pack 群集的计算节点](/documentation/articles/virtual-machines-windows-classic-hpcpack-cluster-node-manage/)。
 * 若要完成设置以将本地计算机中的作业提交到群集，请参阅[将本地计算机中的 HPC 作业提交到 Azure 中的 HPC Pack 群集](/documentation/articles/virtual-machines-windows-hpcpack-cluster-submit-jobs/)。
 

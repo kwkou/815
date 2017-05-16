@@ -27,7 +27,7 @@ Oracle GoldenGate 包含以下主要组件：Extract、Data Pump、Replicat、Tr
 
 此外，本教程假设你满足以下先决条件：
 
-- 你已经查看 [Oracle 虚拟机映像 - 其他注意事项](/documentation/articles/virtual-machines-windows-classic-oracle-considerations/)主题中的“高可用性和灾难恢复注意事项”部分。请注意，Azure 支持独立的 Oracle 数据库实例，但目前不支持 Oracle 真正应用程序群集 (Oracle RAC)。
+- 请注意，Azure 支持独立的 Oracle 数据库实例，但目前不支持 Oracle 真正应用程序群集 (Oracle RAC)。
 
 - 你已从 [Oracle 下载](http://www.oracle.com/us/downloads/index.html)网站下载了 Oracle GoldenGate 软件。你已选择产品包“Oracle Fusion Middleware – Data Integration”。然后，你已选择适用于 Oracle 11g 数据库的 Oracle GoldenGate on Oracle v11.2.1 Media Pack for Microsoft Windows x64（64 位）。接下来，请下载 Oracle GoldenGate V11.2.1.0.3 for Oracle 11g 64bit on Windows 2008（64 位）。
 
