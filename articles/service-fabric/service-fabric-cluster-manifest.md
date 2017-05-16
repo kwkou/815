@@ -70,7 +70,7 @@
 | **节点配置** | **说明** |
 | --- | --- |
 | nodeName |你可以为节点提供任何友好名称。 |
-| iPAddress |打开命令窗口并键入 `ipconfig`，找出节点的 IP 地址。记下 IPV4 地址，并将其分配给 **iPAddress** 变量。 |
+| iPAddress |<p>打开命令窗口并键入 `ipconfig`，找出节点的 IP 地址。记下 IPV4 地址，并将其分配给 **iPAddress** 变量。</p> |
 | nodeTypeRef |可以为每个节点分配不同的节点类型。[节点类型](#nodetypes)在以下节中定义。 |
 | faultDomain |容错域可让群集管理员定义可能因共享的物理依赖项而同时发生故障的物理节点。 |
 | upgradeDomain |升级域描述几乎在相同时间关闭以进行 Service Fabric 升级的节点集。你可以选择将哪些节点分配到哪些升级域，因为这不受任何物理要求的限制。 |

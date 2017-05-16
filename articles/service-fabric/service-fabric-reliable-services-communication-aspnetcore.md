@@ -288,8 +288,8 @@ Kestrel 无法使用 ServiceManifest.xml 中 `Endpoint` 配置的自动端口分
 |  |  | **说明** |
 | --- | --- | --- |
 | Web 服务器 | WebListener | 如果仅向 Intranet 等受信任的网络公开服务，则可以使用 Kestrel。 否则，WebListener 是首选选项。 |
-| 端口配置 | 静态 | 应在 ServiceManifest.xml 的 `Endpoints` 配置中配置已知静态端口，例如为 HTTP 配置 80 或为 HTTPS 配置 443。 |
-| ServiceFabricIntegrationOptions | 无 | 配置 Service Fabric 集成中间件时应使用 `ServiceFabricIntegrationOptions.None` 选项，以使服务不会验证传入请求是否具有唯一标识符。 应用程序的外部用户不会知道中间件使用的唯一标识信息。 |
+| 端口配置 | 静态 | <p>应在 ServiceManifest.xml 的 `Endpoints` 配置中配置已知静态端口，例如为 HTTP 配置 80 或为 HTTPS 配置 443。</p> |
+| ServiceFabricIntegrationOptions | 无 | <p>配置 Service Fabric 集成中间件时应使用 `ServiceFabricIntegrationOptions.None` 选项，以使服务不会验证传入请求是否具有唯一标识符。 应用程序的外部用户不会知道中间件使用的唯一标识信息。</p> |
 | 实例计数 | -1 | 通常使用情况下，应将实例计数设置设置为“-1”，以使实例在从负载均衡器接收流量的所有节点上可用。 |
 
 如果多个外部公开的服务共享相同的节点集，则应使用唯一但稳定的 URL 路径。 这可以通过修改配置 IWebHost 时提供的 URL 来实现。 请注意这仅适用于 WebListener。
@@ -320,7 +320,7 @@ Kestrel 无法使用 ServiceManifest.xml 中 `Endpoint` 配置的自动端口分
 
 |  |  | **说明** |
 | --- | --- | --- |
-| Web 服务器 | Kestrel | `WebListenerCommunicationListener` 不能用于副本在其中共享主机进程的有状态服务。 |
+| Web 服务器 | Kestrel | <p>`WebListenerCommunicationListener` 不能用于副本在其中共享主机进程的有状态服务。</p> |
 | 端口配置 | 动态分配 | 有状态服务的多个副本可能会共享主机进程或主机操作系统，因此将需要唯一端口。 |
 | ServiceFabricIntegrationOptions | UseUniqueServiceUrl | 通过动态端口分配，此设置可以防止前面所述的错误标识问题。 |
 

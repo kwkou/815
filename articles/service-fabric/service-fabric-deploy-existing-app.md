@@ -97,7 +97,9 @@ Visual Studio 提供 Service Fabric 服务模板来帮助你将来宾可执行�
      * `CodePackage` 指定将应用程序包的根目录（如上述文件结构中的 `GuestService1Pkg` 目录所示）设为工作目录。
      * `Work` 指定将文件放置在 Work 子目录中。
 4. 为服务命名，然后单击“确定” 。
+
 5. 如果服务需要使用终结点进行通信，现在可以在 ServiceManifest.xml 文件中添加协议、端口和类型。 例如： `<Endpoint Name="NodeAppTypeEndpoint" Protocol="http" Port="3000" UriScheme="http" PathSuffix="myapp/" Type="Input" />`。
+
 6. 接下来，可以通过在 Visual Studio 中调试解决方案，针对本地群集使用打包和发布操作。 准备就绪后，可以将应用程序发布到远程群集，或者将解决方案签入源代码管理。
 7. 请转到本文末尾，了解如何查看 Service Fabric Explorer 中运行的来宾可执行文件服务。
 
@@ -334,7 +336,9 @@ Service Fabric 服务可以采用各种“配置”进行部署。 例如，可�
 用于在 Linux 上创建和部署来宾可执行文件的过程与部署 csharp 或 java 应用程序相同。 
 
 1. 在终端中，键入 `yo azuresfguest`。
+
 2. 为应用程序命名。
+
 3. 选择第一个服务的类型并将其命名。 为来宾可执行文件选择“来宾二进制文件”（并为容器选择“来宾容器”），提供详细信息，其中包括可执行文件的路径和必须调用的参数。
 
 Yeoman 已创建应用程序包，其中包含相应的应用程序和清单文件，以及安装和卸载脚本。

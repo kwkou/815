@@ -67,13 +67,13 @@ Service Fabric 不是在 OS X 上以本机方式运行。为了运行本地 Serv
 
     	vagrant up
 
-   此步骤下载预配置的 VM 映像、在本地将它启动，然后在其中设置一个本地 Service Fabric 群集。 此过程预计需要几分钟时间。 如果成功完成安装，输出中会出现一条消息，指示群集正在启动。
+    此步骤下载预配置的 VM 映像、在本地将它启动，然后在其中设置一个本地 Service Fabric 群集。 此过程预计需要几分钟时间。 如果成功完成安装，输出中会出现一条消息，指示群集正在启动。
 
     ![群集安装将在 VM 设置后启动][cluster-setup-script]
 
->[AZURE.TIP]
-> 如果 VM 下载耗时过长，可以使用 wget 或 curl 下载，也可通过浏览器下载，只需导航到文件 `Vagrantfile` 中通过 **config.vm.box_url** 指定的链接即可。 将其下载到本地以后，请编辑 `Vagrantfile`，以便指向下载了映射的本地路径。 例如，如果已将映像下载到 /home/users/test/azureservicefabric.tp8.box，则请将 **config.vm.box_url** 设置为该路径。
->
+    >[AZURE.TIP]
+    > 如果 VM 下载耗时过长，可以使用 wget 或 curl 下载，也可通过浏览器下载，只需导航到文件 `Vagrantfile` 中通过 **config.vm.box_url** 指定的链接即可。 将其下载到本地以后，请编辑 `Vagrantfile`，以便指向下载了映射的本地路径。 例如，如果已将映像下载到 /home/users/test/azureservicefabric.tp8.box，则请将 **config.vm.box_url** 设置为该路径。
+    >
 
 5. 导航到 http://192.168.50.50:19080/Explorer 的 Service Fabric Explorer（假设保留了默认的专用网络 IP 地址），测试是否已正确安装群集。
 

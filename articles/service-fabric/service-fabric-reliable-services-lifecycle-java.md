@@ -43,9 +43,11 @@
 启动无状态服务的生命周期非常直接了当。 下面是事件的顺序：
 
 1. 构造服务
+
 2. 然后，并行发生两个事件：
     - 调用 `StatelessService.createServiceInstanceListeners()`，打开返回的所有侦听器（针对每个侦听器调用 `CommunicationListener.openAsync()`）
     - 调用服务的 runAsync 方法 (`StatelessService.runAsync()`)
+
 3. 调用服务的 onOpenAsync 方法（如果存在）（具体而言，将调用 `StatelessService.onOpenAsync()`。 这是一种不常见的重写，但这种调用是可行的）。
 
 必须注意，用于创建和打开侦听器与 runAsync 的调用之间没有一定的顺序。 可在启动 runAsync 之前打开侦听器。 同样，在通信侦听器打开甚至构造之前，即可结束调用 runAsync。 如果需要进行任何同步，这是实现器的任务。 常见解决方法：
@@ -59,7 +61,9 @@
 1. 并行
     - 关闭所有已打开的侦听器（针对每个侦听器调用 `CommunicationListener.closeAsync()`）
     - 取消传递给 `runAsync()` 的取消标记（检查取消标记的 `isCancelled` 属性是否返回 true，如果调用标记的 `throwIfCancellationRequested` 方法，则会返回 `CancellationException`）
+
 2. 针对每个侦听器完成 `closeAsync()` 并且完成 `runAsync()` 后，将调用服务的 `StatelessService.onCloseAsync()` 方法（如果存在）（这也是一种不常见的重写）。
+
 3. 完成 `StatelessService.onCloseAsync()` 后，销毁服务对象
 
 ## <a name="notes-on-service-lifecycle"></a>有关服务生命周期的说明

@@ -67,7 +67,7 @@
 
     	.\CreateServiceFabricCluster.ps1 -ClusterConfigFilePath .\ClusterConfig.Unsecure.MultiMachine.json
 
-此脚本将远程配置 Service Fabric 群集，应在部署进行时报告进度。
+    此脚本将远程配置 Service Fabric 群集，应在部署进行时报告进度。
 
 9. 大约一分钟后，可以使用某个计算机 IP 地址（例如通过使用 `http://10.1.0.5:19080/Explorer/index.html`）连接到 Service Fabric Explorer，以便检查群集是否正常运行。 
 

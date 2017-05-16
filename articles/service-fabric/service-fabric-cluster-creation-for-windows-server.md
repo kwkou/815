@@ -67,33 +67,33 @@
 1. 从独立包文件夹中运行 *TestConfiguration.ps1* 脚本，以验证写入的配置文件：  
 
 
-	.\TestConfiguration.ps1 -ClusterConfigFilePath .\ClusterConfig.json
+	    .\TestConfiguration.ps1 -ClusterConfigFilePath .\ClusterConfig.json
 
 
-可看到如下输出： 如果底部字段“Passed”的返回值为“True”，那么已通过完整性检查，并且根据输入配置群集看似可以部署。
+    可看到如下输出： 如果底部字段“Passed”的返回值为“True”，那么已通过完整性检查，并且根据输入配置群集看似可以部署。
 
 
 
-	Trace folder already exists. Traces will be written to existing trace folder: C:\temp\Microsoft.Azure.ServiceFabric.WindowsServer\DeploymentTraces
-	Running Best Practices Analyzer...
-	Best Practices Analyzer completed successfully.
-
-
-	LocalAdminPrivilege        : True
-	IsJsonValid                : True
-	IsCabValid                 : True
-	RequiredPortsOpen          : True
-	RemoteRegistryAvailable    : True
-	FirewallAvailable          : True
-	RpcCheckPassed             : True
-	NoConflictingInstallations : True
-	FabricInstallable          : True
-	Passed                     : True
+    	Trace folder already exists. Traces will be written to existing trace folder: C:\temp\Microsoft.Azure.ServiceFabric.WindowsServer\DeploymentTraces
+    	Running Best Practices Analyzer...
+    	Best Practices Analyzer completed successfully.
+    
+    
+    	LocalAdminPrivilege        : True
+    	IsJsonValid                : True
+    	IsCabValid                 : True
+    	RequiredPortsOpen          : True
+    	RemoteRegistryAvailable    : True
+    	FirewallAvailable          : True
+    	RpcCheckPassed             : True
+    	NoConflictingInstallations : True
+    	FabricInstallable          : True
+    	Passed                     : True
 
 
 2. 创建群集：运行 *CreateServiceFabricCluster.ps1* 脚本，以便在配置中的每台计算机上部署 Service Fabric 群集。 
 
-	.\CreateServiceFabricCluster.ps1 -ClusterConfigFilePath .\ClusterConfig.json -AcceptEULA
+        .\CreateServiceFabricCluster.ps1 -ClusterConfigFilePath .\ClusterConfig.json -AcceptEULA
 
 
 > [AZURE.NOTE]

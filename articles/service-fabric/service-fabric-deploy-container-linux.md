@@ -51,8 +51,11 @@ Service Fabric 应用程序可以包含一个或多个容器，每个容器都�
 
 ## <a name="create-the-application"></a>创建应用程序
 1. 在终端中，键入 `yo azuresfguest`。
+
 2. 对于框架，选择“容器”。
+
 3. 为应用程序命名 - 例如 SimpleContainerApp
+
 4. 从 DockerHub 存储库提供容器映像的 URL。 此映像参数采用的格式为 [repo]/[image name]
 
 ![适用于容器的 Service Fabric Yeoman 生成器][sf-yeoman]  

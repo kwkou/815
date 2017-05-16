@@ -61,6 +61,7 @@ Service Fabric 工具是 Visual Studio 2017 中 Azure 开发和管理工作负�
 
 ### <a name="sdk-installation-only"></a>仅安装 SDK
 如果只需要 SDK，则安装此包：
+
 * [安装 Azure Service Fabric SDK][core-sdk]
 
 > [AZURE.WARNING]
@@ -71,6 +72,7 @@ Service Fabric 工具是 Visual Studio 2017 中 Azure 开发和管理工作负�
 > 对此给你带来的不便，我们深表歉意。 
 
 当前版本包括：
+
 * Service Fabric SDK 2.5.216
 * Service Fabric 运行时 5.5.216
 * Visual Studio 2015 工具 1.5.50311.1
