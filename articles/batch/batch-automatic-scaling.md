@@ -5,8 +5,7 @@
     documentationcenter=""
     author="tamram"
     manager="timlt"
-    editor="tysonn"
-    translationtype="Human Translation" />
+    editor="tysonn" />
 <tags
     ms.assetid="c624cdfc-c5f2-4d13-a7d7-ae080833b779"
     ms.service="batch"
@@ -14,24 +13,33 @@
     ms.topic="article"
     ms.tgt_pltfrm="vm-windows"
     ms.workload="multiple"
-    ms.date="02/27/2017"
-    wacn.date="04/24/2017"
+    ms.date="04/03/2017"
     ms.author="tamram"
     ms.custom="H1Hack27Feb2017"
-    ms.sourcegitcommit="a114d832e9c5320e9a109c9020fcaa2f2fdd43a9"
-    ms.openlocfilehash="0dee7578b80057497cd854693d2c444da4294cbc"
-    ms.lasthandoff="04/14/2017" />
+    wacn.date="05/15/2017"
+    ms.translationtype="Human Translation"
+    ms.sourcegitcommit="3ff18e6f95d8bbc27348658bc5fce50c3320cf0a"
+    ms.openlocfilehash="511bddb240f030897db00964b70fcec1f80b8435"
+    ms.contentlocale="zh-cn"
+    ms.lasthandoff="05/15/2017" />
 
 # <a name="create-an-automatic-scaling-formula-for-scaling-compute-nodes-in-a-batch-pool"></a>创建用于缩放 Batch 池中的计算节点的自动缩放公式
 
-使用自动缩放，Azure Batch 可以根据所定义的参数在池中动态添加或删除计算节点。 还可以通过自动调整你的应用程序使用的计算能力（当工作的任务要求提高时增加节点，当任务要求降低时删除节点）来节省时间和金钱。
+使用自动缩放，Azure Batch 可以根据所定义的参数在池中动态添加或删除计算节点。 可以通过自动调整应用程序使用的计算节点数来节省时间和资金。 自动缩放使你可以随着作业的任务需求增加而添加节点，以及在需求降低时删除节点。
 
-可通过将定义的*自动缩放公式*与计算节点池相关联（例如，使用 [Batch .NET](/documentation/articles/batch-dotnet-get-started/) 库中的 [PoolOperations.EnableAutoScale][net_enableautoscale] 方法），对计算节点池启用自动缩放。 然后，Batch 服务将使用此公式来确定执行工作负荷所需的计算节点数目。 Batch 将会响应定期收集的服务指标数据样本，并根据公式按可配置的间隔调整池中的计算节点数。
+可以通过将计算节点池与你定义的自动缩放公式关联，来启用该池的自动缩放。 例如，在 Batch.NET 中，可以使用 [PoolOperations.EnableAutoScale][net_enableautoscale] 方法。 Batch 服务会使用自动缩放公式确定执行工作负荷所需的计算节点数。 Batch 会响应定期收集的服务指标数据。 Batch 使用此指标数据，基于你的公式并按可配置的间隔来调整池中的计算节点数。
 
-可以在创建池时启用自动缩放，也可以对现有池启用该功能。 你还可以更改已启用“自动缩放”功能的池的现有公式。 Batch 可让你在将公式分配给池之前先评估公式，以及监视自动缩放运行的状态。
+可以在创建池时启用自动缩放，也可以对现有池启用该功能。 你还可以更改已启用“自动缩放”功能的池的现有公式。 Batch 使你可以在将公式分配给池之前先评估公式，以及监视自动缩放运行的状态。
+
+本文讨论构成自动缩放公式的各个实体，包括变量、运算符、操作和函数。 你会了解如何在 Batch 中获取各种计算资源和任务度量值。 你可以使用这些度量值，根据资源使用情况和任务状态对池的节点计数进行智能化调整。 然后，你将了解如何使用 Batch REST 和 .NET API 构建公式以及对池启用自动缩放。 最后，我们将讨论几个示例公式。
+
+> [AZURE.IMPORTANT]
+> 每个 Azure Batch 帐户都受限于可以用于处理的最大核心数（以及由此确定的计算节点数）。 Batch 服务只创建最多达到该核心数限制的新节点。 Batch 服务可能达不到自动缩放公式所指定的目标计算节点数。 请参阅 [Azure Batch 服务的配额和限制](/documentation/articles/batch-quota-limit/)了解有关查看和提高帐户配额的信息。
+> 
+> 
 
 ## <a name="automatic-scaling-formulas"></a>自动缩放公式
-自动缩放公式是你定义的字符串值，其中包含分配给池的 [autoScaleFormula][rest_autoscaleformula] 元素 (Batch REST) 或 [CloudPool.AutoScaleFormula][net_cloudpool_autoscaleformula] 属性 (Batch .NET) 的一个或多个语句。 将公式分配到池后，Batch 服务将使用公式来确定池中可供下一个处理间隔使用的目标计算节点数（稍后将详细说明间隔）。 公式是一个字符串，其大小不能超过 8 KB，最多可以包含 100 个以分号分隔的语句，可以包括换行符和注释。
+自动缩放公式是一个你定义的包含一个或多个语句的字符串值。 自动缩放公式会分配给池的 [autoScaleFormula][rest_autoscaleformula] 元素 (Batch REST) 或 [CloudPool.AutoScaleFormula][net_cloudpool_autoscaleformula] 属性 (Batch .NET)。 Batch 服务使用你的公式来确定池中可供下一个处理间隔使用的目标计算节点数。 公式是一个字符串，其大小不能超过 8 KB，最多可以包含 100 个以分号分隔的语句，可以包括换行符和注释。
 
 可以将自动缩放公式视为使用 Batch 自动缩放“语言”。 公式语句是自由形式的表达式，可以包括服务定义的变量（由 Batch 服务定义的变量）和用户定义的变量（你定义的变量）。 公式语句可以通过内置类型、运算符和函数对这些值执行各种操作。 例如，语句可以采用以下格式：
 
@@ -42,22 +50,27 @@
     $variable1 = function1($ServiceDefinedVariable);
     $variable2 = function2($OtherServiceDefinedVariable, $variable1);
 
-在公式中使用这些语句的目标是达到池应缩放到的计算节点数--即**专用节点**的**目标**数。 此数目可以大于、小于或等于池中当前的节点数目。 Batch 按特定的时间间隔（下文讨论了[自动缩放时间间隔](#automatic-scaling-interval)）对池的自动缩放公式求值。 然后，它会将池中节点的目标数目调整成在求值时自动缩放公式所指定的数目。
+在自动缩放公式中包含这些语句，以便达到池应缩放到的计算节点数--即**专用节点**的**目标**数。 此数目可以大于、小于或等于池中当前的节点数目。 Batch 按特定的时间间隔（下文讨论了[自动缩放时间间隔](#automatic-scaling-interval)）对池的自动缩放公式求值。 Batch 会将池中节点的目标数目调整成在求值时自动缩放公式所指定的数目。
 
-举个简单的例子，以下两行自动缩放公式根据活动任务数目指定应该调整的节点数目（最多 10 个计算节点）：
+### <a name="sample-autoscale-formula"></a>示例自动缩放公式
 
-    $averageActiveTaskCount = avg($ActiveTasks.GetSample(TimeInterval_Minute * 15));
-    $TargetDedicated = min(10, $averageActiveTaskCount);
+下面是可以进行调整以适用于大多数方案的自动缩放公式示例。 示例公式中的变量 `startingNumberOfVMs` 和 `maxNumberofVMs` 可以根据需要进行调整。
 
-本文的后续部分将介绍构成自动缩放公式的各个实体，包括变量、运算符、操作和函数。 你会了解如何在 Batch 中获取各种计算资源和任务度量值。 你可以使用这些度量值，根据资源使用情况和任务状态对池的节点计数进行智能化调整。 然后，你将了解如何使用 Batch REST 和 .NET API 构建公式以及对池启用自动缩放。 最后，我们将讨论几个示例公式。
+    startingNumberOfVMs = 1;
+    maxNumberofVMs = 25;
+    pendingTaskSamplePercent = $PendingTasks.GetSamplePercent(180 * TimeInterval_Second);
+    pendingTaskSamples = pendingTaskSamplePercent < 70 ? startingNumberOfVMs : avg($PendingTasks.GetSample(180 * TimeInterval_Second));
+    $TargetDedicated=min(maxNumberofVMs, pendingTaskSamples);
 
-> [AZURE.IMPORTANT]
-> 每个 Azure Batch 帐户都受限于可以用于处理的最大核心数（以及由此确定的计算节点数）。 Batch 服务最多将创建达到该核心数限制的节点数。 因此，它可能达不到公式所指定的目标计算节点数。 请参阅 [Azure Batch 服务的配额和限制](/documentation/articles/batch-quota-limit/)了解有关查看和提高帐户配额的信息。
-> 
-> 
+对于此自动缩放公式，最初使用单个 VM 创建池。 $PendingTasks 指标定义正在运行或已排队的任务数。 该公式查找过去 180 秒内的平均挂起任务数，并相应地设置 TargetDedicated。 该公式确保 TargetDedicated 从不超过 25 个 VM。 提交新任务时，池会自动增大。 任务完成时，VM 会逐个变为可用状态，自动缩放公式会收缩池。
 
 ## <a name="variables"></a>变量
-可在自动缩放公式中同时使用“服务定义”和“用户定义”的变量。 服务定义的变量内置在 Batch 服务中，有些是可读写的，有些是只读的。 用户定义变量是用户定义的变量。 在上面的两行示例公式中，`$TargetDedicated` 是服务定义的变量，而 `$averageActiveTaskCount` 是用户定义的变量。
+可在自动缩放公式中同时使用“服务定义”和“用户定义”的变量。 服务定义的变量内置在 Batch 服务中，有些是可读写的，有些是只读的。 用户定义变量是用户定义的变量。 在上一节中所示的示例公式中，`$TargetDedicated` 和 `$PendingTasks` 是服务定义的变量。 变量 `startingNumberOfVMs` 和 `maxNumberofVMs` 是用户定义的变量。
+
+> [AZURE.NOTE]
+> 服务定义的变量始终前面带有美元符号 ($)。 对于用户定义的变量，美元符号是可选的。
+>
+>
 
 下表显示了 Batch 服务定义的读写和只读变量。
 
@@ -65,7 +78,7 @@
 
 | 可读写的服务定义变量 | 说明 |
 | --- | --- |
-| $TargetDedicated |池的**专用计算节点**的**目标**数。 这是池应该缩放到的计算节点数目。 它是一个“目标”数目，因为池可能达不到此目标节点数目。 如果在池达到初始目标之前节点的目标数目被后续的自动缩放评估再次修改，则可能会发生这种情况。 如果在达到节点的目标数目之前达到了 Batch 帐户的节点或核心配额，则也可能会发生这种情况。 |
+| $TargetDedicated |池的**专用计算节点****目标**数是池应扩展到的计算节点数。 它是一个“目标”数目，因为池可能达不到此目标节点数目。 例如，如果在池达到初始目标之前节点的目标数被后续自动缩放评估再次修改，则池可能不会达到目标节点数。 如果在达到节点的目标数目之前达到了 Batch 帐户的节点或核心配额，则也可能会发生这种情况。 |
 | $NodeDeallocationOption |从池中删除计算节点时发生的操作。 可能的值包括：<ul><li>**requeue**--立即终止任务并将其放回作业队列，以便重新计划这些任务。<li>**terminate**--立即终止任务并将其从作业队列中删除。<li>**taskcompletion**--等待当前运行的任务完成，然后从池中删除节点。<li>**retaineddata**--等待清理节点上的本地任务保留的所有数据，然后从池中删除节点。</ul> |
 
 可以**获取**这些服务定义的变量的值，以根据 Batch 服务中的指标进行调整：
@@ -91,7 +104,7 @@
 | $CurrentDedicated |当前的专用计算节点数。 |
 
 > [AZURE.TIP]
-> 上面所示的服务定义的只读变量是一些 *对象* ，它们提供了各种方法来访问与其相关的数据。 有关详细信息，请参阅下面的 [获取样本数据](#getsampledata) 。
+> 上面所示的服务定义的只读变量是一些*对象*，它们提供了各种方法来访问与其相关的数据。 有关详细信息，请参阅下面的[获取样本数据](#getsampledata)。
 > 
 > 
 
@@ -177,7 +190,7 @@
 
 `doubleVecList := ( (double | doubleVec)+(, (double | doubleVec) )* )?`
 
-*doubleVecList* 值在计算之前将转换为单个 *doubleVec*。 例如，如果 `v = [1,2,3]`，则调用 `avg(v)` 相当于调用 `avg(1,2,3)`。 调用 `avg(v, 7)` 相当于调用 `avg(1,2,3,7)`。
+doubleVecList 值在计算之前将转换为单个 doubleVec。 例如，如果 `v = [1,2,3]`，则调用 `avg(v)` 相当于调用 `avg(1,2,3)`。 调用 `avg(v, 7)` 相当于调用 `avg(1,2,3,7)`。
 
 ## <a name="getsampledata"></a>获取样本数据
 自动缩放公式使用 Batch 服务提供的度量值数据（样本）。 公式根据服务所提供的值来扩大或缩小池的大小。 上述服务定义的变量是可提供各种方法来访问与该对象关联的数据的对象。 例如，以下表达式显示了一个用于获取过去五分钟 CPU 使用率的请求：
@@ -209,7 +222,7 @@ Batch 服务定期获取任务和资源指标的样本，使其可供自动缩�
 
 你的自动缩放公式将对池进行扩大和缩小操作--添加节点或删除节点。 由于节点耗费资金，你需要确保公式所使用的智能分析方法采用了足够的数据。 因此，建议你在公式中使用趋势类型的分析。 此类型的分析将根据所收集样本的 *范围* 来扩大和缩小你的池。
 
-为此，请使用 `GetSample(interval look-back start, interval look-back end)` 返回样本的 **向量** ：
+为此，请使用 `GetSample(interval look-back start, interval look-back end)` 返回样本的**向量**：
 
     $runningTasksSample = $RunningTasks.GetSample(1 * TimeInterval_Minute, 6 * TimeInterval_Minute);
 
@@ -219,14 +232,14 @@ Batch 评估上述代码行后，会以值的向量形式返回样本范围。 �
 
 收集样本向量后，便可使用 `min()`、`max()` 和 `avg()` 等函数从所收集的范围派生有意义的值。
 
-为了提高安全性，如果特定时间段小于特定的样本百分比，可强制公式求值失败。 强制公式求值失败会指示 Batch 在无法提供指定百分比的样本数时停止进一步的公式求值--不更改池大小。 若要指定求值成功所需的样本百分比，请将其指定为 `GetSample()`的第三个参数。 下面指定要求 75% 的样本：
+为了提高安全性，如果特定时间段小于特定的样本百分比，可强制公式求值失败。 强制公式求值失败会指示 Batch 在无法提供指定百分比的样本数时停止进一步的公式求值。 在这种情况下，不更改池大小。 若要指定求值成功所需的样本百分比，请将其指定为 `GetSample()` 的第三个参数。 下面指定要求 75% 的样本：
 
     $runningTasksSample = $RunningTasks.GetSample(60 * TimeInterval_Second, 120 * TimeInterval_Second, 75);
 
-此外，由于先前提到的样本可用性延迟问题，请务必记得指定回查开始时间早于一分钟的时间范围。 这是由于样本需要花大约一分钟的时间才能传播到整个系统，因此通常无法使用 `(0 * TimeInterval_Second, 60 * TimeInterval_Second)` 范围内的样本。 同样地，可以使用 `GetSample()` 百分比参数来强制实施特定样本百分比要求。
+由于样本可用性可能存在延迟，因此请务必始终指定回查开始时间早于一分钟的时间范围。 样本需要花大约一分钟的时间才能传播到整个系统，因此可能无法使用 `(0 * TimeInterval_Second, 60 * TimeInterval_Second)` 范围内的样本。 同样地，可以使用 `GetSample()` 百分比参数来强制实施特定样本百分比要求。
 
 > [AZURE.IMPORTANT]
-> **强烈建议****不要仅依赖自动缩放公式中的 `GetSample(1)`**。 这是因为， `GetSample(1)` 基本上只是向 Batch 服务表明：“不论多久以前获取最后一个样本，请将它提供给我。 ” 由于它只是单个样本，而且可能是较旧的样本，因此可能无法代表最近任务或资源状态的全貌。 如果使用 `GetSample(1)`，请确保它是更大语句的一部分，而不是公式所依赖的唯一数据点。
+> **强烈建议****不要仅依赖自动缩放公式中的 `GetSample(1)`**。 这是因为，`GetSample(1)` 基本上只是向 Batch 服务表明：“不论多久以前检索最后一个样本，请将它提供给我。” 由于它只是单个样本，而且可能是较旧的样本，因此可能无法代表最近任务或资源状态的全貌。 如果使用 `GetSample(1)`，请确保它是更大语句的一部分，而不是公式所依赖的唯一数据点。
 > 
 > 
 
@@ -572,16 +585,16 @@ Batch 评估上述代码行后，会以值的向量形式返回样本范围。 �
   - 如果这两个值均为 0（表示过去 60 分钟没有正在运行或处于活动状态的任务），则池大小将设置为 0。
   - 如果其中一个值大于零，则不进行任何更改。
 
-    	string now = DateTime.UtcNow.ToString("r");
-    	string formula = string.Format(@"
-        $TargetDedicated = {1};
-        lifespan         = time() - time(""{0}"");
-        span             = TimeInterval_Minute * 60;
-        startup          = TimeInterval_Minute * 10;
-        ratio            = 50;
-
-        $TargetDedicated = (lifespan > startup ? (max($RunningTasks.GetSample(span, ratio), $ActiveTasks.GetSample(span, ratio)) == 0 ? 0 : $TargetDedicated) : {1});
-        ", now, 4);
+	    	string now = DateTime.UtcNow.ToString("r");
+	    	string formula = string.Format(@"
+	        $TargetDedicated = {1};
+	        lifespan         = time() - time(""{0}"");
+	        span             = TimeInterval_Minute * 60;
+	        startup          = TimeInterval_Minute * 10;
+	        ratio            = 50;
+	
+	        $TargetDedicated = (lifespan > startup ? (max($RunningTasks.GetSample(span, ratio), $ActiveTasks.GetSample(span, ratio)) == 0 ? 0 : $TargetDedicated) : {1});
+	        ", now, 4);
 
 ## <a name="next-steps"></a>后续步骤
 - [通过并发节点任务最大限度地提高 Azure Batch 计算资源的利用率](/documentation/articles/batch-parallel-node-tasks/)详细说明了如何在池中的计算节点上同时执行多个任务。 除了自动缩放以外，此功能还可帮助降低某些工作负荷的作业持续时间，从而节省资金。
