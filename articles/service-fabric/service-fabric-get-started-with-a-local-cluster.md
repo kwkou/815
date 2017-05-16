@@ -5,8 +5,7 @@
     documentationcenter=".net"
     author="rwike77"
     manager="timlt"
-    editor=""
-    translationtype="Human Translation" />
+    editor="" />
 <tags
     ms.assetid="60a1f6a5-5478-46c0-80a8-18fe62da17a8"
     ms.service="service-fabric"
@@ -14,12 +13,14 @@
     ms.topic="get-started-article"
     ms.tgt_pltfrm="NA"
     ms.workload="NA"
-    ms.date="03/15/2017"
-    wacn.date="04/24/2017"
+    ms.date="04/07/2017"
+    wacn.date="05/15/2017"
     ms.author="ryanwi;mikhegn"
-    ms.sourcegitcommit="a114d832e9c5320e9a109c9020fcaa2f2fdd43a9"
-    ms.openlocfilehash="a806c975ce07f00cc298f826d2c32188c65381f8"
-    ms.lasthandoff="04/14/2017" />
+    ms.translationtype="Human Translation"
+    ms.sourcegitcommit="457fc748a9a2d66d7a2906b988e127b09ee11e18"
+    ms.openlocfilehash="5663987de03ee369f81eaf68b1f838ed8106468f"
+    ms.contentlocale="zh-cn"
+    ms.lasthandoff="05/05/2017" />
 
 # <a name="get-started-with-deploying-and-upgrading-applications-on-your-local-cluster"></a>在本地群集上部署和升级应用程序入门
 Azure Service Fabric SDK 包含完整的本地开发环境，可让你快速地在本地群集上开始部署和管理应用程序。 本文介绍如何从 Windows PowerShell 创建本地群集、将现有应用程序部署到该群集，然后将该应用程序升级到新版本。
@@ -247,4 +248,4 @@ Service Fabric SDK 包含一组丰富的框架以及用于创建应用程序的�
 [sfe-delete-application]: ./media/service-fabric-get-started-with-a-local-cluster/sfe-delete-application.png
 [cluster-setup-success-1-node]: ./media/service-fabric-get-started-with-a-local-cluster/cluster-setup-success-1-node.png
 [switch-cluster-mode]: ./media/service-fabric-get-started-with-a-local-cluster/switch-cluster-mode.png
-<!--Update_Description:wording update;add anchors to sub titles-->
+<!--Update_Description:wording update-->

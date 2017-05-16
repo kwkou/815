@@ -5,8 +5,7 @@
     documentationcenter=".net"
     author="mcoskun"
     manager="timlt"
-    editor="masnider,vturecek"
-    translationtype="Human Translation" />
+    editor="masnider,vturecek" />
 <tags
     ms.assetid="62857523-604b-434e-bd1c-2141ea4b00d1"
     ms.service="service-fabric"
@@ -14,12 +13,14 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="required"
-    ms.date="3/1/2017"
-    wacn.date="04/24/2017"
+    ms.date="3/27/2017"
+    wacn.date="05/15/2017"
     ms.author="mcoskun"
-    ms.sourcegitcommit="a114d832e9c5320e9a109c9020fcaa2f2fdd43a9"
-    ms.openlocfilehash="d8d4cc1fa8c6dc81be8b6bf274bacf192ba30c1b"
-    ms.lasthandoff="04/14/2017" />
+    ms.translationtype="Human Translation"
+    ms.sourcegitcommit="457fc748a9a2d66d7a2906b988e127b09ee11e18"
+    ms.openlocfilehash="0a1ead43d1f9e091e7a055a778d805e72d880c7b"
+    ms.contentlocale="zh-cn"
+    ms.lasthandoff="05/05/2017" />
 
 # <a name="introduction-to-reliable-collections-in-azure-service-fabric-stateful-services"></a>Azure Service Fabric 有状态服务中的可靠集合简介
 可靠集合可让你编写高度可用、可缩放且低延迟的云应用程序，就像编写单计算机应用程序一样。 **Microsoft.ServiceFabric.Data.Collections** 命名空间中的类提供一组自动使状态具备高可用性的全新集合。 开发人员只需面向可靠集合 API 编程，并让可靠集合管理复制状态和本地状态。
@@ -146,7 +147,8 @@ Reliable Collections 负责保存到该点为止的状态。
 * 切勿在另一个事务的 `using` 语句内创建事务，因为它可能会导致死锁。
 * 务必确保您的 `IComparable<TKey>` 实现是正确的。 系统采用其上的依赖关系以合并检查点。
 * 意图更新某项而读取该项时，切勿更新锁以防止出现某类死锁。
-* 请考虑使用备份和还原功能进行灾难恢复。
+* 请考虑保留 80 KB 以下的项（例如 Reliable Dictionary 的 TKey + TValue）：越小越好。 这将减少大型对象堆的使用量，并降低磁盘和网络 IO 的要求。 在许多情况下，还会减少在只更新一小部分值时复制的重复数据。 在 Reliable Dictionary 中实现此效果的常用方法是将一行划分为多行。 
+* 请考虑使用备份和还原功能来进行灾难恢复。
 * 避免在同一事务中混合使用单个实体操作和多个实体操作（例如 `GetCountAsync`、`CreateEnumerableAsync`），因为它们的隔离级别不同。
 * 务必处理 InvalidOperationException。 系统可能出于各种原因中止用户事务。 例如，当可靠状态管理器将其角色从“主要”更改为其他角色时，或者当长时间运行的事务阻止截断事务日志时。 在这类情况下，用户可能会收到 InvalidOperationException，指示其事务已终止。 假设用户未请求终止事务，那么，处理此异常的最佳方式是释放事务，然后检查是否发出了取消令牌（或者是否更改了副本的角色），如果没有，则创建新的事务并重试。  
 
@@ -169,4 +171,4 @@ Reliable Collections 负责保存到该点为止的状态。
 * [Service Fabric Web API 服务入门](/documentation/articles/service-fabric-reliable-services-communication-webapi/)
 * [Reliable Services 编程模型的高级用法](/documentation/articles/service-fabric-reliable-services-advanced-usage/)
 * [Reliable Collections 的开发人员参考](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicefabric.data.collections.aspx)
-<!--Update_Description:wording update;add anchors to sub titles-->
+<!--Update_Description:add one more tip for "建议"-->

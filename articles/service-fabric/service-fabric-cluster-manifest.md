@@ -42,7 +42,7 @@
 
 <a id="clusternodes"></a>
 
-## 群集上的节点
+##<a name="nodes-on-the-cluster"></a> 群集上的节点
 可以使用 **nodes** 节配置 Service Fabric 群集上的节点，如以下代码片段所示。
 
     "nodes": [{
@@ -75,7 +75,7 @@
 | faultDomain |容错域可让群集管理员定义可能因共享的物理依赖项而同时发生故障的物理节点。 |
 | upgradeDomain |升级域描述几乎在相同时间关闭以进行 Service Fabric 升级的节点集。你可以选择将哪些节点分配到哪些升级域，因为这不受任何物理要求的限制。 |
 
-## 群集属性
+##<a name="cluster-properties"></a> 群集属性
 ClusterConfig.JSON 中的 **properties** 节用于配置群集，如下所示。
 
 <a id="reliability"></a>

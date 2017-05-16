@@ -109,7 +109,7 @@
 
 <a id="connectsecureclusterfabricclient"></a>
 
-## 使用 FabricClient API 连接到群集
+##<a name="connect-to-a-cluster-using-the-fabricclient-apis"></a> 使用 FabricClient API 连接到群集
 Service Fabric SDK 为群集管理提供 [FabricClient](https://docs.microsoft.com/dotnet/api/system.fabric.fabricclient) 类。若要使用 FabricClient API，请获取 Microsoft.ServiceFabric NuGet 包。
 
 ### 连接到不安全的群集

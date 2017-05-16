@@ -5,8 +5,7 @@
     documentationcenter=".net"
     author="BharatNarasimman"
     manager="timlt"
-    editor="vturecek"
-    translationtype="Human Translation" />
+    editor="vturecek" />
 <tags
     ms.assetid="47f5c1c1-8fc8-4b80-a081-bc308f3655d3"
     ms.service="service-fabric"
@@ -14,12 +13,14 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="required"
-    ms.date="02/23/2017"
-    wacn.date="04/24/2017"
+    ms.date="04/07/2017"
+    wacn.date="05/15/2017"
     ms.author="bharatn"
-    ms.sourcegitcommit="a114d832e9c5320e9a109c9020fcaa2f2fdd43a9"
-    ms.openlocfilehash="5cf533309a535bdeb9ae7deef5084ae4d111b833"
-    ms.lasthandoff="04/14/2017" />
+    ms.translationtype="Human Translation"
+    ms.sourcegitcommit="457fc748a9a2d66d7a2906b988e127b09ee11e18"
+    ms.openlocfilehash="7b719db402f65c74e6ff3d3f6c77a6f31a13498a"
+    ms.contentlocale="zh-cn"
+    ms.lasthandoff="05/05/2017" />
 
 # <a name="reverse-proxy-in-azure-service-fabric"></a>Azure Service Fabric 中的反向代理
 Azure Service Fabric 中内置的反向代理可以访问 Service Fabric 群集中用于公开 HTTP 终结点的微服务。
@@ -288,11 +289,10 @@ Service Fabric 中的反向代理在群集的所有节点上运行。 它会代�
 > 在现有群集上使用不同于群集证书的证书来启用反向代理时，请在启用反向代理之前在群集上安装反向代理证书并更新 ACL。 在执行步骤 1-4 开始部署以启用反向代理之前，请使用上述设置完成 [Azure Resource Manager 模板](/documentation/articles/service-fabric-cluster-creation-via-arm/)部署。
 
 ## <a name="next-steps"></a>后续步骤
-* 参阅 [GitHub 上的示例项目](https://github.com/Azure-Samples/service-fabric-dotnet-getting-started/tree/master/Services/WordCount)中服务之间的 HTTP 通信示例。
+* 参阅 [GitHub 上的示例项目](https://github.com/Azure-Samples/service-fabric-dotnet-getting-started)中服务之间的 HTTP 通信示例。
 * [使用 Reliable Services 远程控制执行远程过程调用](/documentation/articles/service-fabric-reliable-services-communication-remoting/)
 * [Reliable Services 中使用 OWIN 的 Web API](/documentation/articles/service-fabric-reliable-services-communication-webapi/)
 * [使用 Reliable Services 的 WCF 通信](/documentation/articles/service-fabric-reliable-services-communication-wcf/)
 
 [0]: ./media/service-fabric-reverseproxy/external-communication.png
 [1]: ./media/service-fabric-reverseproxy/internal-communication.png
-<!--Update_Description: update reverse proxy URI description;content structure adjustment-->
