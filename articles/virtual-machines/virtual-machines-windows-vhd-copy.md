@@ -92,3 +92,5 @@ Azure 门户预览中该 VM 的“状态”将从“已停止”更改为“已�
 
 ## <a name="next-steps"></a>后续步骤
 * 可通过[将 VHD 的副本作为 OS 磁盘附加到 VM](/documentation/articles/virtual-machines-windows-create-vm-specialized/) 创建新 VM。
+
+<!--Update_Description: wording update-->

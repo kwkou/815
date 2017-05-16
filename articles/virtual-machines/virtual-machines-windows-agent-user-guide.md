@@ -76,3 +76,5 @@ Azure VM 代理默认安装在任何通过 Azure 库映像部署的 Windows 虚�
 ## <a name="upgrade-the-vm-agent"></a>升级 VM 代理
 
 适用于 Windows 的 Azure VM 代理会自动升级。 新虚拟机在部署到 Azure 后会获得最新 VM 代理。 应手动更新自定义 VM 映像，使之包括新的 VM 代理。
+
+<!--Update_Description: wording update-->

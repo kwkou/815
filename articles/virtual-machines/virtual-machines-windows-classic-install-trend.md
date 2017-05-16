@@ -91,3 +91,5 @@
 <!-- Link references -->
 [如何登录到运行 Windows Server 的虚拟机]: /documentation/articles/virtual-machines-windows-classic-connect-logon/
 [Azure VM 扩展和功能]: /documentation/articles/virtual-machines-windows-extensions-features/
+
+<!--Update_Description: wording update-->

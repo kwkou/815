@@ -47,6 +47,9 @@
 了解有关 [Azure 计算单元 (ACU)](/documentation/articles/virtual-machines-windows-acu/) 如何帮助你跨 Azure SKU 比较计算性能的详细信息。
 
 了解关于可用的各种 VM 大小的详细信息：
+
 - [常规用途](/documentation/articles/virtual-machines-windows-sizes-general/)
 - [计算优化](/documentation/articles/virtual-machines-windows-sizes-compute/)
 - [内存优化](/documentation/articles/virtual-machines-windows-sizes-memory/)
+
+<!--Update_Description: separated into 3 articles-->

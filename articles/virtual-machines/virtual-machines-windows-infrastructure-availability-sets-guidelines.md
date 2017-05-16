@@ -58,3 +58,5 @@ Azure 中的底层基础结构分为多个硬件群集。 每个硬件群集可�
 
 ## <a name="next-steps"></a>后续步骤
 [AZURE.INCLUDE [virtual-machines-windows-infrastructure-guidelines-next-steps](../../includes/virtual-machines-windows-infrastructure-guidelines-next-steps.md)]
+
+<!--Update_Description: wording update-->

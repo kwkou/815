@@ -59,3 +59,5 @@
 
 ## <a name="next-steps"></a>后续步骤
 如果想要重新使用数据磁盘，只需将它[附加到另一个 VM](/documentation/articles/virtual-machines-windows-attach-disk-portal/)
+
+<!--Update_Description: wording update-->

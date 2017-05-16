@@ -61,3 +61,5 @@
 
 ## <a name="next-steps"></a>后续步骤
 可以在资源组和订阅之间移动许多不同类型的资源。 有关详细信息，请参阅[将资源移到新资源组或订阅](/documentation/articles/resource-group-move-resources/)。
+
+<!--Update_Description: wording update-->

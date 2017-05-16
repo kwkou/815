@@ -109,3 +109,5 @@ NGINX 已安装，并且现在已从 Internet 打开 VM 上的端口 80 - 可以
 [创建高可用性虚拟机教程](/documentation/articles/virtual-machines-linux-create-cli-complete/)
 
 [浏览 VM 部署 CLI 示例](/documentation/articles/virtual-machines-linux-cli-samples/)
+
+<!--Update_Description: add "opening port 80" and "installing NGINX" -->

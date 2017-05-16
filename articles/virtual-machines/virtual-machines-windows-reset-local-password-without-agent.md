@@ -141,3 +141,5 @@
 
 ## <a name="next-steps"></a>后续步骤
 如果仍然无法使用远程桌面建立连接，请参阅 [RDP 故障排除指南](/documentation/articles/virtual-machines-windows-troubleshoot-rdp-connection/)。 [详细的 RDP 故障排除指南](/documentation/articles/virtual-machines-windows-detailed-troubleshoot-rdp/)探讨的是故障排除方法而不是具体的步骤。 也可以通过[提出 Azure 支持请求](/support/contact/)来获得人工协助。
+
+<!--Update_Description: wording update-->

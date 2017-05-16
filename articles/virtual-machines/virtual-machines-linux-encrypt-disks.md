@@ -229,3 +229,5 @@ Linux VM 上的虚拟磁盘是使用 [dm-crypt](https://wikipedia.org/wiki/Dm-cr
 
 ## <a name="next-steps"></a>后续步骤
 * 有关管理 Azure 密钥保管库的详细信息，包括删除加密密钥和保管库，请参阅 [Manage Key Vault using CLI](/documentation/articles/key-vault-manage-with-cli/)（使用 CLI 管理密钥保管库）。
+
+<!--Update_Description: change to CLI 2.0-->

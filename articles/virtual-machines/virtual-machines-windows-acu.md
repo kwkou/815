@@ -28,6 +28,7 @@
 [AZURE.INCLUDE [virtual-machines-common-acu](../../includes/virtual-machines-common-acu.md)]
 
 有关各种大小的详细信息，请访问以下链接：
+
 - [通用](/documentation/articles/virtual-machines-windows-sizes-general/)
 - [内存优化](/documentation/articles/virtual-machines-windows-sizes-memory/)
 - [计算优化](/documentation/articles/virtual-machines-windows-sizes-compute/)

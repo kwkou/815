@@ -27,9 +27,9 @@
 本文介绍可用于运行 Linux 应用和工作负荷的 Azure 虚拟机的可用大小与选项。 此外，还提供在计划使用这些资源时要考虑的部署注意事项。 本文也适用于 [Windows 虚拟机](/documentation/articles/virtual-machines-windows-sizes/)。
 
 > [AZURE.IMPORTANT]
-> * 有关不同大小的定价信息，请参阅[虚拟机定价](/pricing/details/virtual-machines/)。 
-> * 若要查看 Azure VM 的一般限制，请参阅 [Azure 订阅和服务限制、配额与约束](/documentation/articles/azure-subscription-service-limits/)。
-> * 了解有关 [Azure 计算单元 (ACU)](/documentation/articles/virtual-machines-windows-acu/) 如何帮助你跨 Azure SKU 比较计算性能的详细信息。
+><p> * 有关不同大小的定价信息，请参阅[虚拟机定价](/pricing/details/virtual-machines/)。 
+><p> * 若要查看 Azure VM 的一般限制，请参阅 [Azure 订阅和服务限制、配额与约束](/documentation/articles/azure-subscription-service-limits/)。
+><p> * 了解有关 [Azure 计算单元 (ACU)](/documentation/articles/virtual-machines-windows-acu/) 如何帮助你跨 Azure SKU 比较计算性能的详细信息。
 > 
 > 
 
@@ -46,6 +46,9 @@
 了解有关 [Azure 计算单元 (ACU)](/documentation/articles/virtual-machines-windows-acu/) 如何帮助你跨 Azure SKU 比较计算性能的详细信息。
 
 了解关于可用的各种 VM 大小的详细信息：
+
 - [常规用途](/documentation/articles/virtual-machines-linux-sizes-general/)
 - [计算优化](/documentation/articles/virtual-machines-linux-sizes-compute/)
 - [内存优化](/documentation/articles/virtual-machines-linux-sizes-memory/)
+
+<!--Update_Description: separated into 3 articles-->

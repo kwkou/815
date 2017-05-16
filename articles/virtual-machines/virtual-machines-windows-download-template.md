@@ -50,3 +50,5 @@ template.json 文件是模板。
 
 ## <a name="next-steps"></a>后续步骤
 若要详细了解如何使用模板部署资源，请参阅 [Resource Manager 模板演练](/documentation/articles/resource-manager-create-first-template/)。
+
+<!--Update_Description: wording update-->

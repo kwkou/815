@@ -36,3 +36,5 @@ Azure 在全球范围内定期执行更新，以提高虚拟机所基于的主�
 -   VM 重启维护，维护时需要重启或重新部署到托管虚拟机。
 
 请注意，本页介绍 Azure 如何执行计划内维护。 有关非计划事件（故障）的详细信息，请参阅[管理虚拟机的可用性](/documentation/articles/virtual-machines-windows-manage-availability/)。
+
+<!--Update_Description: wording update-->

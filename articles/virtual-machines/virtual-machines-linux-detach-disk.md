@@ -1,6 +1,6 @@
 <properties
     pageTitle="从 Linux VM 中分离数据磁盘 - Azure | Azure"
-    description="了解如何使用 CLI 2.0 或 Azure 门户预览从 Azure 虚拟机中分离数据磁盘。"
+    description="了解如何使用 CLI 1.0 或 Azure 门户预览从 Azure 虚拟机中分离数据磁盘。"
     services="virtual-machines-linux"
     documentationcenter=""
     author="cynthn"
@@ -34,9 +34,9 @@
 
 若果你希望再次使用磁盘上的现有数据，可以将其重新附加到相同的虚拟机或另一个虚拟机。  
 
-## <a name="detach-a-data-disk-using-cli-20"></a>使用 CLI 2.0 分离数据磁盘
+## <a name="detach-a-data-disk-using-cli-20"></a>使用 CLI 1.0 分离数据磁盘
 
-    az vm disk detach -g myResourceGroup --vm-name myVm -n myDataDisk
+    azure vm disk detach -g myResourceGroup --vm-name myVm --lun <data disk lun>
 
 磁盘保留在存储中，但不再附加到虚拟机。
 

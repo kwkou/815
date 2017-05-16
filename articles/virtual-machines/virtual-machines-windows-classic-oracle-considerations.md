@@ -90,3 +90,5 @@ Oracle Real 应用程序群集 (RAC) 用于减少本地多节点群集配置中�
 
     在此 JDK 6 和 7 的映像中提供的 JDK 以及从中派生的虚拟机和映像只能在 Azure 中使用。
 * **64 位 JDK。** Azure 提供的 Oracle WebLogic Server 虚拟机映像和 Oracle JDK 虚拟机映像包含 64 位版本的 Windows Server 和 JDK。
+
+<!--Update_Description: wording update-->

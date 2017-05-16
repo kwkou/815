@@ -135,3 +135,5 @@ IIS 已安装，并且现在已从 Internet 打开 VM 上的端口 80 - 你可�
 [安装角色和配置防火墙教程](/documentation/articles/virtual-machines-windows-hero-role/)
 
 [浏览 VM 部署 PowerShell 示例](/documentation/articles/virtual-machines-windows-powershell-samples/)
+
+<!--Update_Description: add "opening port 80" and "installing IIS"-->

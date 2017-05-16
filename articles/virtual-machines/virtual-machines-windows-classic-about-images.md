@@ -49,3 +49,5 @@
 
 ## <a name="next-steps"></a>后续步骤
 还可以[使用 Azure 门户预览创建 Windows 计算机](/documentation/articles/virtual-machines-windows-classic-tutorial/)。
+
+<!--Update_Description: wording update-->

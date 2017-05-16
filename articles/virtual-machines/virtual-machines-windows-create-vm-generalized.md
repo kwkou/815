@@ -155,3 +155,5 @@ VHD 使用的 URI 采用以下格式：https://**mystorageaccount**.blob.core.ch
 
 ## <a name="next-steps"></a>后续步骤
 若要使用 Azure PowerShell 管理新虚拟机，请参阅[使用 Azure Resource Manager 与 PowerShell 来管理虚拟机](/documentation/articles/virtual-machines-windows-ps-manage/)。
+
+<!--Update_Description: wording update-->

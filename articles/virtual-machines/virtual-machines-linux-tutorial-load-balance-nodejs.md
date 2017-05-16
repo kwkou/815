@@ -31,6 +31,8 @@
 
     az login
 
+[AZURE.INCLUDE [azure-cli-2-azurechinacloud-environment-parameter](../../includes/azure-cli-2-azurechinacloud-environment-parameter.md)]
+
 Azure 资源组是在其中部署和管理 Azure 资源的逻辑容器。 需要使用 [](https://docs.microsoft.com/zh-cn/cli/azure/group#create) 创建一个资源组才能创建任何其他 Azure 资源。 以下示例在 `chinanorth` 位置创建名为 `myResourceGroup` 的资源组：
 
     az group create --name myResourceGroup --location chinanorth

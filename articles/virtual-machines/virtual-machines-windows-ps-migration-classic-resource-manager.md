@@ -273,3 +273,5 @@
 * [用于帮助将 IaaS 资源从经典部署模型迁移到 Azure Resource Manager 部署模型的社区工具](/documentation/articles/virtual-machines-windows-migration-scripts/)
 * [查看最常见的迁移错误](/documentation/articles/virtual-machines-windows-migration-classic-resource-manager-errors/)
 * [查看有关将 IaaS 资源从经典部署模型迁移到 Azure Resource Manager 部署模型的最常见问题](/documentation/articles/virtual-machines-windows-migration-classic-resource-manager-faq/)
+
+<!--Update_Description: wording update-->

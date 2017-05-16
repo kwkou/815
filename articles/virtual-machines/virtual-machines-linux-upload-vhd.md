@@ -215,3 +215,4 @@ Azure Resource Manager 模板是一个 JavaScript 对象表示法 (JSON) 文件�
 
 ## <a name="next-steps"></a>后续步骤
 准备好并上传自定义虚拟磁盘之后，可以阅读有关[使用 Resource Manager 和模板](/documentation/articles/resource-group-overview/)的详细信息。 可能还需要向新 VM [添加数据磁盘](/documentation/articles/virtual-machines-linux-add-disk/)。 如果需要访问在 VM 上运行的应用程序，请务必[打开端口和终结点](/documentation/articles/virtual-machines-linux-nsg-quickstart/)。
+<!--Update_Description: wording update-->

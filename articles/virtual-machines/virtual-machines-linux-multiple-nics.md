@@ -98,3 +98,5 @@ Azure Resource Manager 模板使用声明性 JSON 文件来定义环境。 可�
 
 ## <a name="next-steps"></a>后续步骤
 尝试创建具有多个 NIC 的 VM 时，请查看 [Lnux VM 大小](/documentation/articles/virtual-machines-linux-sizes/)。 注意每个 VM 大小支持的 NIC 数目上限。
+
+<!--Update_Description: wording update-->
