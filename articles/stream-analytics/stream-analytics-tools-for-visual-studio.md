@@ -133,9 +133,9 @@
 
 此文件夹包含以下文件：
 
-• Entry.json 
-• Exit.json 
-• Registration.json
+* Entry.json 
+* Exit.json 
+* Registration.json
 
 ## 问题：进入收费亭的汽车数目
 在项目中，双击“Script.asaql”在编辑器中打开该脚本，然后将上一部分中的脚本粘贴到编辑器中。查询编辑器支持 Intellisense、语法颜色设置和错误标记。
@@ -211,7 +211,7 @@
     ![服务器资源管理器中的“显示表数据”选择](./media/stream-analytics-tools-for-vs/stream-analytics-tools-for-vs-check-results.jpg)
 
 ### <a name="view-job-metrics"></a>查看作业指标
-可在“作业指标”中找到一些基本的作业统计信息。 
+可在“作业指标”中找到一些基本的作业统计信息。
 
 ![作业指标](./media/stream-analytics-tools-for-vs/stream-analytics-tools-for-vs-job-metrics-01.png)
 
@@ -228,7 +228,6 @@
 ## <a name="export-an-existing-job-to-a-project"></a>将现有作业导出到项目
 可使用两种方法将现有作业导出到项目。
 1. 在“服务器资源管理器”中的“流分析作业”节点下面右键单击作业节点。 在上下文菜单中单击“导出到新的流分析项目”。
-
     ![导出作业](./media/stream-analytics-tools-for-vs/stream-analytics-tools-for-vs-export-job-01.png)
 
     “解决方案资源管理器”中会显示生成的项目。
