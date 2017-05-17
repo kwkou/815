@@ -227,6 +227,7 @@
 
 ## <a name="export-an-existing-job-to-a-project"></a>将现有作业导出到项目
 可使用两种方法将现有作业导出到项目。
+
 1. 在“服务器资源管理器”中的“流分析作业”节点下面右键单击作业节点。 在上下文菜单中单击“导出到新的流分析项目”。
     ![导出作业](./media/stream-analytics-tools-for-vs/stream-analytics-tools-for-vs-export-job-01.png)
 
