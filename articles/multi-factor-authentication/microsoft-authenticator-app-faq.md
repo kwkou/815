@@ -5,8 +5,7 @@
     documentationcenter=""
     author="kgremban"
     manager="femila"
-    editor="pblachar, librown"
-    translationtype="Human Translation" />
+    editor="librown" />
 <tags
     ms.assetid="f04d5bce-e99e-4f75-82d1-ef6369be3402"
     ms.service="multi-factor-authentication"
@@ -14,12 +13,15 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="02/17/2017"
-    wacn.date="04/24/2017"
+    ms.date="03/17/2017"
     ms.author="kgremban"
-    ms.sourcegitcommit="a114d832e9c5320e9a109c9020fcaa2f2fdd43a9"
-    ms.openlocfilehash="d9279ce9c0688c09d643f011fd7bdecb6559214f"
-    ms.lasthandoff="04/14/2017" />
+    ms.custom="end-user"
+    wacn.date="05/15/2017"
+    ms.translationtype="Human Translation"
+    ms.sourcegitcommit="3ff18e6f95d8bbc27348658bc5fce50c3320cf0a"
+    ms.openlocfilehash="4a71237ce05eaccd30d94f8803493fc2bf2af6c0"
+    ms.contentlocale="zh-cn"
+    ms.lasthandoff="05/15/2017" />
 
 # <a name="microsoft-authenticator-app-faq"></a>Microsoft 验证器应用常见问题
 
@@ -73,7 +75,7 @@ Microsoft Authenticator 应用替代了 Azure Authenticator 应用，建议使�
 
 ### <a name="why-does-the-microsoft-authenticator-app-allow-you-to-approve-a-request-without-unlocking-the-device"></a>为何 Microsoft 验证器应用允许在不解锁设备的情况下批准请求？
 
-这是设计使然。 多重身份验证要求提供两项证明：你知道的事和你拥有的物品。 你知道的事是密码。 你拥有的物品是你的手机（已在 Microsoft 验证器应用中经过设置，并已注册为 MFA 证明）。因此，拥有手机和批准请求符合第二个身份验证因素的条件。 
+这是设计使然。 多重身份验证要求提供两项证明：你知道的事和你拥有的物品。 你知道的事是密码。 你拥有的物品是你的手机（已在 Microsoft 验证器应用中经过设置，并已注册为 MFA 证明）。因此，拥有手机和批准请求符合第二个身份验证因素的标准。 
 
 ## <a name="next-steps"></a>后续步骤
 

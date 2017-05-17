@@ -6,8 +6,7 @@
     documentationcenter=""
     author="kgremban"
     manager="femila"
-    editor="yossib"
-    translationtype="Human Translation" />
+    editor="yossib" />
 <tags
     ms.assetid="d3372d9a-9ad1-4609-bdcf-2c4ca9679a3b"
     ms.service="multi-factor-authentication"
@@ -15,12 +14,15 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="02/23/2017"
-    wacn.date="04/24/2017"
+    ms.date="03/23/2017"
     ms.author="kgremban"
-    ms.sourcegitcommit="a114d832e9c5320e9a109c9020fcaa2f2fdd43a9"
-    ms.openlocfilehash="588a90188774fc5b968695337be8dc9789616d11"
-    ms.lasthandoff="04/14/2017" />
+    ms.custom="end-user"
+    wacn.date="05/15/2017"
+    ms.translationtype="Human Translation"
+    ms.sourcegitcommit="3ff18e6f95d8bbc27348658bc5fce50c3320cf0a"
+    ms.openlocfilehash="7537eeb5b052f6e578615b31734cac40b0333c3d"
+    ms.contentlocale="zh-cn"
+    ms.lasthandoff="05/15/2017" />
 
 # <a name="manage-your-settings-for-two-step-verification"></a>管理多重身份验证设置
 本文回答有关如何更新多重身份验证或多重身份验证的设置的问题。 如果在登录帐户时遇到问题，请参阅[使用多重身份验证时遇到问题](/documentation/articles/multi-factor-authentication-end-user-troubleshoot/)获取疑难解答帮助。
@@ -34,24 +36,24 @@
 
     ![1](./media/multi-factor-authentication-end-user-manage/1.png)  
 
-    输入用户帐户和密码，然后单击 “Sign in”。    
+    输入用户帐户和密码，然后单击“登录”。    
 
 2. 选择所需的验证。
 
     - 默认值为“身份验证电话”，你可以选择接收短信或通话。
         
-		![2](./media/multi-factor-authentication-end-user-manage/2.png)  
+        ![2](./media/multi-factor-authentication-end-user-manage/2.png)  
 
     - 也可以选择“办公电话”。
     
         ![3](./media/multi-factor-authentication-end-user-manage/3.png)     
     
-    - 还可以选择“移动电话应用”，以便安装执行验证的“Azure 身份验证应用”。
+    - 还可以选择“移动电话”，以便安装执行验证的“Azure 身份验证应用”。
     
         ![4](./media/multi-factor-authentication-end-user-manage/4.png) 
 
 
-## <a name="i-want-to-change-my-phone-number-or-add-a-secondary-number"></a>我想要更改我的电话号码
+## <a name="i-want-to-change-my-phone-number"></a>我想要更改我的电话号码
 
 若要更改电话号码，可执行以下步骤。
 

@@ -16,7 +16,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="03/02/2017"
-    wacn.date="04/24/2017"
+    wacn.date=""
     ms.author="kgremban"
     ms.sourcegitcommit="a114d832e9c5320e9a109c9020fcaa2f2fdd43a9"
     ms.openlocfilehash="d3a1002d2cb9a19423250650725f43fbd2b7db51"
@@ -27,14 +27,14 @@
 > 本文旨在逐步讲解典型的登录体验。 有关登录的帮助或者要排查问题，请参阅[使用 Azure 多重身份验证时遇到问题](/documentation/articles/multi-factor-authentication-end-user-troubleshoot/)。
 
 ## <a name="what-will-your-sign-in-experience-be"></a>你的登录体验是怎样的？
-根据登录和使用多重身份验证的方式（拨打电话、身份验证应用或短信），你的登录体验将有所不同。 请选择最适当地描述了你的活动的选项：
+根据所选择的多重身份验证（拨打电话、身份验证应用或短信），你的登录体验将有所不同。 请选择最适当地描述了你的活动的选项：
 
-| 正在执行什么操作？ | 说明 |
-|:--- |:--- |
-| [使用手机或办公电话登录](#signing-in-with-mobile-or-office-phone) |这是使用手机或办公电话登录时可以预期的情况。 |
-| [使用通知通过 Microsoft Authenticator 应用登录](#signing-in-with-the-microsoft-authenticator-app-using-notification) |这是将通知与 Microsoft Authenticator 应用配合使用时可以预期的情况。 |
-| [使用验证码通过 Microsoft Authenticator 应用登录](#signing-in-with-the-microsoft-authenticator-app-using-verification-code) |这是将验证码与 Microsoft Authenticator 应用配合使用时可以预期的情况。 |
-| [使用替代方法登录](#signing-in-with-an-alternate-method) |说明使用替代方法时可以预期的情况。 |
+| 你如何登录？ | 
+| --- |
+| [通过拨打我的手机或办公电话](#signing-in-with-a-phone-call) |
+| [通过向我的手机发送短信](#signing-in-with-a-text-message)
+| [使用来自 Microsoft 验证器应用的通知](#signing-in-with-the-microsoft-authenticator-app-using-notification) |
+| [使用备用方法，因为我暂时无法使用首选方法](#signing-in-with-an-alternate-method) |
 
 ## 电话登录 <a name="signing-in-with-a-phone-call"></a>
 以下信息介绍通过拨打你的手机或办公电话进行多重身份验证的体验。
