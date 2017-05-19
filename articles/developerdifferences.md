@@ -13,7 +13,7 @@
 <tags 
     ms.service="multiple" 
     ms.date="" 
-    wacn.date="05/08/2017"/>
+    wacn.date="05/19/2017"/>
 
 
 # 中国区 Azure 应用程序开发说明
@@ -135,7 +135,7 @@ Visual Studio 2015 支持在中国区 Azure 上开发，使用 Visual Studio 201
 ## <a name="use-china-azure-with-java"></a>Java 用户使用中国区 Azure 
 
 ### Java 用户使用 Eclipse 或 IntelliJ，连接中国区 Azure
-目前需要开发者使用 Azure CLI 生成认证文件，在 Eclipse 或 IntelliJ 中选择基于文件的方式登陆，并上传此认证文件，即可完成连接。步骤如下：
+目前需要开发者使用 Azure CLI 生成认证文件，在 Eclipse 或 IntelliJ 中选择基于文件的方式登陆，并上传此认证文件，即可完成连接 ( 参考 [Azure SDK 相关页](https://github.com/Azure/azure-sdk-for-java/blob/master/AUTH.md#creating-a-service-principal-in-azure) )。步骤如下：
 
 1. 请首先安装 Azure CLI，版本要求 2.0 及以上。[Azure CLI Installation](https://docs.microsoft.com/zh-cn/cli/azure/install-azure-cli) | [Azure CLI 安装指南](/documentation/articles/xplat-cli-install/)
 
@@ -151,13 +151,13 @@ Visual Studio 2015 支持在中国区 Azure 上开发，使用 Visual Studio 201
 
 3. 在 Eclipse 或 IntelliJ 中，选择基于文件的方式登陆，并上传步骤 2 中生成的认证文件。
 
-    a. 请确认已在 Eclipse 或 IntelliJ 中安装 Azure Toolkit 插件。 [Eclipse 指南](/documentation/articles/azure-toolkit-for-eclipse-installation/) | [IntelliJ 指南](/documentation/articles/azure-toolkit-for-intellij-installation/)
+    a. 请确认已在 Eclipse 或 IntelliJ 中安装或更新至最新版本的 Azure Toolkit 插件。 [Eclipse 指南](/documentation/articles/azure-toolkit-for-eclipse-installation/) | [IntelliJ 指南](/documentation/articles/azure-toolkit-for-intellij-installation/)
     
     b. 在 Azure Sign In 窗口选择 Automated 作为登陆方式，并上传步骤 2 中生成的认证文件 my.azureauth。
 
     ![12](./media/developerdifferences/developerdifferences-12.png)
 
-    c. 点击登陆，即可连接中国区 Azure。如遇问题，可进一步参考 [Azure SDK 相关页](https://github.com/Azure/azure-sdk-for-java/blob/master/AUTH.md#creating-a-service-principal-in-azure)。
+    c. 点击登陆，即可连接中国区 Azure。如遇问题，可在 [Azure Toolkit 相关页](https://github.com/Microsoft/azure-tools-for-java)提出并标记 Mooncake 标签。
 ##实用场景示例
 
 ###云浏览器
