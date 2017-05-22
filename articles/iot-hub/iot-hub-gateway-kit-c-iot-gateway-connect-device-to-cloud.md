@@ -74,13 +74,13 @@
 
         power on
 
-   ![在 IoT 网关上通过 bluetoothctl 打开蓝牙控制器](./media/iot-hub-iot-gateway-connect-device-to-cloud/8_power-on-bluetooth-controller-at-bluetooth-shell-bluetoothctl.png)
+    ![在 IoT 网关上通过 bluetoothctl 打开蓝牙控制器](./media/iot-hub-iot-gateway-connect-device-to-cloud/8_power-on-bluetooth-controller-at-bluetooth-shell-bluetoothctl.png)
 
 1. 通过运行以下命令，开始扫描附近的蓝牙设备：
 
         scan on
 
-   ![通过 bluetoothctl 扫描附近的蓝牙设备](./media/iot-hub-iot-gateway-connect-device-to-cloud/9_start-scan-nearby-bluetooth-devices-at-bluetooth-shell-bluetoothctl.png)
+    ![通过 bluetoothctl 扫描附近的蓝牙设备](./media/iot-hub-iot-gateway-connect-device-to-cloud/9_start-scan-nearby-bluetooth-devices-at-bluetooth-shell-bluetoothctl.png)
 
 1. 按 SensorTag 上的“配对”按钮。 SensorTag 上的绿色 LED 灯将闪烁。
 1. 在蓝牙 shell 上，应该看到已找到 SensorTag。 记下 SensorTag 的 MAC 地址。 在此示例中，SensorTag 的 MAC 地址是 `24:71:89:C0:7F:82`。
@@ -88,7 +88,7 @@
 
         scan off
 
-   ![通过 bluetoothctl 停止扫描附近的蓝牙设备](./media/iot-hub-iot-gateway-connect-device-to-cloud/10_stop-scanning-nearby-bluetooth-devices-at-bluetooth-shell-bluetoothctl.png)
+    ![通过 bluetoothctl 停止扫描附近的蓝牙设备](./media/iot-hub-iot-gateway-connect-device-to-cloud/10_stop-scanning-nearby-bluetooth-devices-at-bluetooth-shell-bluetoothctl.png)
 
 ### <a name="initiate-a-bluetooth-connection-from-the-iot-gateway-to-the-sensortag"></a>启动从 IoT 网关到 SensorTag 的蓝牙连接
 
@@ -96,14 +96,14 @@
 
         connect <MAC address>
 
-   ![通过 bluetoothctl 连接到 SensorTag](./media/iot-hub-iot-gateway-connect-device-to-cloud/11_connect-to-sensortag-at-bluetooth-shell-bluetoothctl.png)
+    ![通过 bluetoothctl 连接到 SensorTag](./media/iot-hub-iot-gateway-connect-device-to-cloud/11_connect-to-sensortag-at-bluetooth-shell-bluetoothctl.png)
 
 1. 通过运行以下命令，从 SensorTag 断开连接，并退出蓝牙 shell：
 
         disconnect
         exit
 
-   ![通过 bluetoothctl 从 SensorTag 断开连接](./media/iot-hub-iot-gateway-connect-device-to-cloud/12_disconnect-from-sensortag-at-bluetooth-shell-bluetoothctl.png)
+    ![通过 bluetoothctl 从 SensorTag 断开连接](./media/iot-hub-iot-gateway-connect-device-to-cloud/12_disconnect-from-sensortag-at-bluetooth-shell-bluetoothctl.png)
 
 已成功启用 SensorTag 和 IoT 网关之间的连接。
 
@@ -126,19 +126,19 @@ Azure IoT 网关 SDK 提供低耗电蓝牙 (BLE) 的示例应用程序。 该示
 
 1. 在配置文件中，填写以下值：
 
-   **IoTHubName**：IoT 中心的名称。
+    **IoTHubName**：IoT 中心的名称。
 
-   **IoTHubSuffix**：从记下的设备连接字符串的主键中获取 IoTHubSuffix。 确保获取的是设备连接字符串的主键，而非 IoT 中心连接字符串的主键。 设备连接字符串的主键采用 `HostName=IOTHUBNAME.IOTHUBSUFFIX;DeviceId=DEVICEID;SharedAccessKey=SHAREDACCESSKEY` 的格式。
+    **IoTHubSuffix**：从记下的设备连接字符串的主键中获取 IoTHubSuffix。 确保获取的是设备连接字符串的主键，而非 IoT 中心连接字符串的主键。 设备连接字符串的主键采用 `HostName=IOTHUBNAME.IOTHUBSUFFIX;DeviceId=DEVICEID;SharedAccessKey=SHAREDACCESSKEY` 的格式。
 
-   **Transport**：默认值为 `amqp`。 此值在传输期间显示协议。 它可以是 `http`、`amqp` 或 `mqtt`。
+    **Transport**：默认值为 `amqp`。 此值在传输期间显示协议。 它可以是 `http`、`amqp` 或 `mqtt`。
 
-   **macAddress**：记下的 SensorTag 的 MAC 地址。
+    **macAddress**：记下的 SensorTag 的 MAC 地址。
 
-   **deviceID**：在 IoT 中心内创建的设备的 ID。
+    **deviceID**：在 IoT 中心内创建的设备的 ID。
 
-   **deviceKey**：设备连接字符串的主键。
+    **deviceKey**：设备连接字符串的主键。
 
-   ![完成 BLE 示例应用程序的配置文件](./media/iot-hub-iot-gateway-connect-device-to-cloud/13_edit-config-file-of-ble-sample.png)
+    ![完成 BLE 示例应用程序的配置文件](./media/iot-hub-iot-gateway-connect-device-to-cloud/13_edit-config-file-of-ble-sample.png)
 
 1. 按 `ESC` 并键入 `:wq` 以保存文件。
 

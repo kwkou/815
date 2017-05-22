@@ -69,7 +69,7 @@
 
 ### <a name="create-your-azure-iot-hub-in-the-azure-portal"></a>在 Azure 门户中创建 Azure IoT 中心
 
-1. 登录到 [Azure 门户](https://portal.azure.cn/)。
+1. 登录到 [Azure 门户预览](https://portal.azure.cn/)。
 1. 单击“新建” > “物联网” > “IoT 中心”。
 
     ![创建 IoT 中心](./media/iot-hub-sparkfun-thing-dev-get-started/3_iot-hub-creation.png)
@@ -114,15 +114,15 @@
 
     * Windows 7 或更高版本：以管理员身份启动命令提示符。 运行以下命令安装 iothub explorer：
 
-         npm install -g iothub-explorer
+          npm install -g iothub-explorer
 
     * Ubuntu 16.04 或更高版本：使用快捷键 Ctrl+Alt+T 打开终端，然后运行以下命令：
 
-         sudo npm install -g iothub-explorer
+          sudo npm install -g iothub-explorer
 
     * macOS 10.1 或更高版本：打开终端，然后运行以下命令：
 
-         npm install -g iothub-explorer
+          npm install -g iothub-explorer
 
 1. 运行以下命令登录到 IoT 中心：
 
@@ -201,7 +201,7 @@
 
         git clone https://github.com/Azure-Samples/iot-hub-SparkFun-ThingDev-client-app.git
 
-在 Arduino IDE 中安装 Sparkfun ESP8266 Thing Dev 的程序包：
+    在 Arduino IDE 中安装 Sparkfun ESP8266 Thing Dev 的程序包：
 
 1. 打开存储示例应用程序的文件夹。
 1. 在 Arduino IDE 中打开 app 文件夹中的 app.ino 文件。
@@ -212,7 +212,7 @@
 1. 在“Preferences”（首选项）对话框中，单击“Additional Boards Manager URLs”（其他 Boards Manager URL）文本框旁边的图标。
 1. 在弹出窗口中输入以下 URL，然后单击“OK”（确定）。
 
-   `http://arduino.esp8266.com/stable/package_esp8266com_index.json`
+    `http://arduino.esp8266.com/stable/package_esp8266com_index.json`
 
     ![指向 arduino ide 中的包 url](./media/iot-hub-sparkfun-thing-dev-get-started/11_arduino-ide-package-url.png)
 

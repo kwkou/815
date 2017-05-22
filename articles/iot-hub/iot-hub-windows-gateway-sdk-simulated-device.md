@@ -170,6 +170,7 @@
 
 [lnk-devguide]: /documentation/articles/iot-hub-devguide/
 [lnk-create-hub]: /documentation/articles/iot-hub-create-through-portal/
+[lnk-securing]: /documentation/articles/iot-hub-security-ground-up/
 
 <!---HONumber=Mooncake_0306_2017-->
 <!--Update_Description:update wording-->

@@ -2,7 +2,8 @@
 
 1. 在 [Azure 门户预览](https://portal.azure.cn/)中，依次单击“新建” > “物联网” > “IoT 中心”。
 
-   ![在 Azure 门户中创建 IoT 中心](../articles/iot-hub/media/iot-hub-create-hub-and-device/1_create-azure-iot-hub-portal.png)
+    ![在 Azure 门户中创建 IoT 中心](../articles/iot-hub/media/iot-hub-create-hub-and-device/1_create-azure-iot-hub-portal.png)
+   
 1. 在“IoT 中心”窗格中，输入 IoT 中心的以下信息：
 
     **名称**：它是 IoT 中心的名称。 如果输入的名称有效，将显示一个绿色复选标记。

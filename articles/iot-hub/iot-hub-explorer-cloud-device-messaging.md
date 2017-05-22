@@ -53,7 +53,7 @@
 1. 打开控制台窗口。
 1. 运行以下命令：
 
-       iothub-explorer monitor-events <device-id> --login <IoTHubConnectionString>
+        iothub-explorer monitor-events <device-id> --login <IoTHubConnectionString>
 
    > [AZURE.NOTE]
    > 从 IoT 中心获取 `<device-id>` 和 `<IoTHubConnectionString>`。 确保已完成以前的教程。
@@ -65,11 +65,11 @@
 1. 打开控制台窗口。
 1. 运行以下命令，在 IoT 中心内启动一个会话：
 
-       iothub-explorer login <IoTHubConnectionString>
+        iothub-explorer login <IoTHubConnectionString>
 
 1. 运行以下命令，将消息发送到设备：
 
-       iothub-explorer send <device-id> <message>
+        iothub-explorer send <device-id> <message>
 
 该命令将闪烁连接到设备的 LED，然后将消息发送到设备。
 

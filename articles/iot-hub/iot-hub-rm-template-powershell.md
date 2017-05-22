@@ -46,20 +46,20 @@
 在 PowerShell 命令提示符中，输入以下命令以登录 Azure 订阅：
 
 
-		Login-AzureRmAccount -Environment $(Get-AzureRmEnvironment -Name AzureChinaCloud)
+	Login-AzureRmAccount -Environment $(Get-AzureRmEnvironment -Name AzureChinaCloud)
 
 
 可以使用以下命令来发现可部署 IoT 中心的位置和当前支持的 API 版本：
 
 
-		((Get-AzureRmResourceProvider -ProviderNamespace Microsoft.Devices).ResourceTypes | Where-Object ResourceTypeName -eq IoTHubs).Locations
-		((Get-AzureRmResourceProvider -ProviderNamespace Microsoft.Devices).ResourceTypes | Where-Object ResourceTypeName -eq IoTHubs).ApiVersions
+	((Get-AzureRmResourceProvider -ProviderNamespace Microsoft.Devices).ResourceTypes | Where-Object ResourceTypeName -eq IoTHubs).Locations
+	((Get-AzureRmResourceProvider -ProviderNamespace Microsoft.Devices).ResourceTypes | Where-Object ResourceTypeName -eq IoTHubs).ApiVersions
 
 
 在 IoT 中心支持的位置之一，使用以下命令创建资源组来包含 IoT 中心。本示例将创建一个名为 **MyIoTRG1** 的资源组：
 
 
-		New-AzureRmResourceGroup -Name MyIoTRG1 -Location "China East"
+	New-AzureRmResourceGroup -Name MyIoTRG1 -Location "China East"
 
 ## <a name="submit-an-azure-resource-manager-template-to-create-an-iot-hub"></a>提交用于创建 IoT 中心的 Azure Resource Manager 模板
 使用 JSON 模板在资源组中创建 IoT 中心。 还可以使用 Azure Resource Manager 模板更改现有 IoT 中心。
@@ -132,7 +132,6 @@
 ## <a name="next-steps"></a>后续步骤
 现在，已使用 Azure Resource Manager 模板和 PowerShell 部署了一个 IoT 中心，接下来可以进一步进行探索：
 
-- 阅读了解 [IoT 中心资源提供程序 REST API][lnk-rest-api]的相关功能。
 - 有关 Azure Resource Manager 功能的详细信息，请参阅 [Azure Resource Manager 概述][lnk-azure-rm-overview] 。
 
 若要详细了解如何开发 IoT 中心，请参阅以下文章：
@@ -148,7 +147,6 @@
 [lnk-free-trial]: /pricing/1rmb-trial/
 [lnk-azure-portal]: https://portal.azure.cn/
 [lnk-powershell-install]: /documentation/articles/powershell-install-configure/
-[lnk-rest-api]: https://msdn.microsoft.com/zh-cn/library/mt589014.aspx
 [lnk-azure-rm-overview]: /documentation/articles/resource-group-overview/
 [lnk-powershell-arm]: /documentation/articles/powershell-azure-resource-manager/
 

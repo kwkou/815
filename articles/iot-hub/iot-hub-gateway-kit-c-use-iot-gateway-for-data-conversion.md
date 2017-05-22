@@ -27,7 +27,7 @@
 
 > [AZURE.NOTE]
 > 在开始本教程之前，请确保已按顺序完成以下课程：
-> * [将 Intel NUC 设置为 IoT 网关](/documentation/articles/iot-hub-gateway-kit-c-lesson1-set-up-nuc/)
+> * [将 Intel NUC 设置为 IoT 网关](/documentation/articles/iot-hub-gateway-kit-c-lesson1-set-up-nuc/)</br>
 > * [使用 IoT 网关将事项连接到云 - SensorTag 到 Azure IoT 中心](/documentation/articles/iot-hub-gateway-kit-c-iot-gateway-connect-device-to-cloud/)
 
 IoT 网关的一个目的是在将收集的数据发送到云之前，先处理这些数据。 Azure IoT 网关 SDK 引入了可创建并组合形成数据处理工作流的模块。 模块接收消息，对其执行某些操作，然后将其转手供其他模块处理。
@@ -126,7 +126,3 @@ IoT 网关的一个目的是在将收集的数据发送到云之前，先处理�
 
         ./ble_gateway ble_gateway.json
 
-## <a name="next-steps"></a>后续步骤
-
-已成功使用 IoT 网关将消息从 SensorTag 转换为 .json 格式。
-如果希望了解关于 Azure IoT 网关模块的详细信息，可以在以下位置找到更多模块示例：https://github.com/Azure/azure-iot-gateway-sdk/tree/master/modules。

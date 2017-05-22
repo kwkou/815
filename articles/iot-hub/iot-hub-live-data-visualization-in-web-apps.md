@@ -74,11 +74,11 @@
 1. 打开刚刚预配的 Web 应用。
 1. 单击“应用程序设置”，然后在“应用设置”下面添加以下键/值对：
 
-   | 键                                   | 值                                                        |
-   |---------------------------------------|--------------------------------------------------------------|
-   | Azure.IoT.IoTHub.ConnectionString     | 从 IoT 中心资源管理器获取                               |
-   | Azure.IoT.IoTHub.DeviceId             | 从 IoT 中心资源管理器获取                               |
-   | Azure.IoT.IoTHub.ConsumerGroup        | 添加到 IoT 中心的使用者组的名称  |
+    | 键                                   | 值                                                        |
+    |---------------------------------------|--------------------------------------------------------------|
+    | Azure.IoT.IoTHub.ConnectionString     | 从 IoT 中心资源管理器获取                               |
+    | Azure.IoT.IoTHub.DeviceId             | 从 IoT 中心资源管理器获取                               |
+    | Azure.IoT.IoTHub.ConsumerGroup        | 添加到 IoT 中心的使用者组的名称  |
 
     ![将包含键值对的设置添加到 Azure Web 应用](./media/iot-hub-live-data-visualization-in-web-apps/4_web-app-settings-key-value-azure.png)
 
@@ -102,12 +102,12 @@
 1. 在本地计算机上打开命令提示符或终端窗口。
 1. 从 GitHub 下载 Web 应用程序并将它上载到 Azure，以便在 Web 应用中托管。 为此，请运行以下命令：
 
-       git clone https://github.com/Azure-Samples/web-apps-node-iot-hub-data-visualization.git
-       git remote add webapp <Git clone URL>
-       git push webapp master:master
+        git clone https://github.com/Azure-Samples/web-apps-node-iot-hub-data-visualization.git
+        git remote add webapp <Git clone URL>
+        git push webapp master:master
 
     > [AZURE.NOTE]
-    > “Git 克隆 URL”是 Web 应用的“概述”页中显示的 Git 存储库的 URL。\<\>
+    > “Git 克隆 URL”是 Web 应用的“概述”页中显示的 Git 存储库的 URL。
 
 ## <a name="open-the-web-app-to-see-real-time-temperature-and-humidity-data-from-your-iot-hub"></a>打开该 Web 应用，查看 IoT 中心的实时温度和湿度数据
 
