@@ -137,6 +137,7 @@
 
     az vm availability-set create --resource-group myResourceGroup --location chinanorth \
       --name myAvailabilitySet \
+      --unmanaged \
       --platform-fault-domain-count 3 --platform-update-domain-count 2
 
 使用 [az vm create](https://docs.microsoft.com/zh-cn/cli/azure/vm#create)创建第一个 Linux VM。 以下示例使用 Azure 非托管磁盘创建名为 `myVM1` 的 VM。
@@ -877,6 +878,7 @@ Azure 资源组是逻辑部署实体，包含用于启用资源部署逻辑管�
 
     az vm availability-set create --resource-group myResourceGroup --location chinanorth \
       --name myAvailabilitySet \
+      --unmanaged \
       --platform-fault-domain-count 3 --platform-update-domain-count 2
 
 容错域定义共享通用电源和网络交换机的一组虚拟机。 默认情况下，在可用性集中配置的虚拟机隔离在最多三个容错域中。 思路是其中一个容错域中的硬件问题不会影响运行应用的每个 VM。 将多个 VM 放入一个可用性集时，Azure 会自动将它们分散到容错域。

@@ -46,6 +46,7 @@ Azure 资源组是在其中部署和管理 Azure 资源的逻辑容器。 需要
         --resource-group myResourceGroup \
         --name myAvailabilitySet \
         --platform-fault-domain-count 3 \
+        --unmanaged \
         --platform-update-domain-count 2
 
 ## <a name="step-3---create-load-balancer"></a>步骤 3 - 创建负载均衡器
