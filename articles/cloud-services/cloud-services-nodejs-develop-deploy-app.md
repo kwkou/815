@@ -14,8 +14,8 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="nodejs"
 	ms.topic="hero-article"
-	ms.date="12/22/2016" 
-	wacn.date="01/25/2017" 
+	ms.date="04/25/2017" 
+	wacn.date="05/22/2017" 
 	ms.author="robmcm"/>
 
 # 生成 Node.js 应用程序并将其部署到 Azure 云服务

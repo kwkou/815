@@ -30,10 +30,10 @@
 本演练介绍如何实现使用 .NET EventSource 类发出遥测数据的 Azure 辅助角色。Azure Diagnostics 用于收集遥测数据，并将其存储在一个 Azure 存储帐户中。创建辅助角色时，Visual Studio 将在适用于 .NET 2.4 和更低版本的 Azure SDK 中，自动启用 Diagnostics 1.0 作为解决方案的一部分。以下说明介绍了创建辅助角色、从解决方案禁用 Diagnostics 1.0，以及在辅助角色中部署 Diagnostics 1.2 或 1.3 的过程。
 
 ### 先决条件
-本文假定你具有 Azure 订阅，并将 Visual Studio 2013 与 Azure SDK 结合使用。如果你没有 Azure 订阅，你可以注册[试用版][]。确保 [安装和配置 Azure PowerShell 0.8.7 或更高版本][]。
+本文假定你具有 Azure 订阅，并将 Visual Studio 与 Azure SDK 结合使用。如果你没有 Azure 订阅，你可以注册[试用版][]。确保 [安装和配置 Azure PowerShell 0.8.7 或更高版本][]。
 
 ### 步骤 1：创建辅助角色
-1.	启动 **Visual Studio 2013**。
+1.	启动 **Visual Studio**。
 2.	从面向 .NET Framework 4.5 的**云**模板创建一个新的 **Azure 云服务**项目。将该项目命名为“WadExample”。
 3.	选择“辅助角色”并单击“确定”。随后将创建该项目。
 4.	在“解决方案资源管理器”中，双击 **WorkerRole1** 属性文件。

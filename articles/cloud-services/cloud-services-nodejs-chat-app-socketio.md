@@ -13,8 +13,8 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="nodejs" 
 	ms.topic="article" 
-	ms.date="12/22/2016" 
-	wacn.date="04/24/2017" 
+	ms.date="04/25/2017" 
+	wacn.date="05/22/2017" 
 	ms.author="robmcm"/>
 
 # 在 Azure 云服务中使用 Socket.IO 生成 Node.js 聊天应用程序

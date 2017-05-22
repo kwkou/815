@@ -2,37 +2,46 @@
     pageTitle="了解最新的 Azure 来宾 OS 版本 | Azure"
     description="有关 Azure 云服务来宾 OS 的最新发行新闻以及 SDK 兼容性。"
     services="cloud-services"
-    documentationCenter="na"
-    authors="raiye"
+    documentationcenter="na"
+    author="raiye"
     manager="timlt"
-    editor=""
-    translationtype="Human Translation" />
+    editor="" />
 <tags
+    ms.assetid="6306cafe-1153-44c7-8554-623b03d59a34"
     ms.service="cloud-services"
     ms.devlang="na"
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="tbd"
-    ms.date="3/8/2017"
-    wacn.date="04/27/2017"
+    ms.date="4/11/2017"
+    wacn.date="05/22/2017"
     ms.author="raiye"
-    ms.sourcegitcommit="a114d832e9c5320e9a109c9020fcaa2f2fdd43a9"
-    ms.openlocfilehash="feca2242b9ef95d17edfe9a698f95db125f3fa68"
-    ms.lasthandoff="04/14/2017" />
+    ms.translationtype="Human Translation"
+    ms.sourcegitcommit="8fd60f0e1095add1bff99de28a0b65a8662ce661"
+    ms.openlocfilehash="414c3dba118b72f2eb5852cdcb3bcabf4c581850"
+    ms.lasthandoff="05/12/2017" />
 
 # <a name="azure-guest-os-releases-and-sdk-compatibility-matrix"></a>Azure 来宾 OS 版本和 SDK 兼容性对照表
 提供适用于云服务的最新 Azure 来宾 OS 版本的最新信息。 此信息将帮助你在来宾 OS 停用之前规划升级路径。 如果根据 [Azure 来宾 OS 更新设置][Azure Guest OS Update Settings]中所述将角色配置为使用自动进行来宾 OS 更新，则不一定要阅读本页面。
 
-> [AZURE.IMPORTANT] 本页面适用于在来宾 OS 顶层运行的云服务 Web 角色和辅助角色，而不适用于 IaaS 虚拟机。
+> [AZURE.IMPORTANT]
+> 本页面适用于在来宾 OS 顶层运行的云服务 Web 角色和辅助角色， 而**不适用于** IaaS 虚拟机。 
+> 
+> 
 
 <!-- -->
 
 > [AZURE.TIP]
-> 订阅 [来宾 OS 更新 RSS 源][rss] ，以接收有关所有来宾 OS 更改的最新通知。
+> 订阅[来宾 OS 更新 RSS 源][rss]，以接收有关所有来宾 OS 更改的最新通知。
+> 
+> 
 
 不太确定什么是来宾 OS 或者来宾 OS 的工作原理？ 请阅读[此部分](#how-it-works)。
 
 ## <a name="news-updates"></a>新闻更新
+###### <a name="april-10-2017"></a>**2017 年 4 月 10 日**
+3 月版来宾 OS 已于 2017 年 3 月 14 日开始推出，已于 2017 年 4 月 10 日发行。
+
 ###### <a name="january-10-2017"></a>**2017 年 1 月 10 日**
 1 月来宾 OS 包含仅影响 OS 系列 2 (Windows 2008 Server R2) 的修补程序。 因此，本月仅发布了 OS 系列 2 映像 (WA-GUEST-OS-2.59_201701-01)。 对于所有其他 OS 系列，12 月版 OS (201612-01) 仍为最新版。
 
@@ -59,23 +68,27 @@ Windows Server 2016 将于 2016 年 11 月 1 日作为 OS 系列 5 推出，提�
 
 | 配置字符串 | 发行日期 | 停用日期 | 失效日期 |
 | --- | --- | --- | --- |
+| WA-GUEST-OS-5.5_201703-01 |2017 年 4 月 10 日 |5.7 发行后 |TBD | 
 | WA-GUEST-OS-5.4_201612-01 |2017 年 1 月 10 日 |5.6 发行后 |TBD | 
 | WA-GUEST-OS-5.3_201611-01 |2016 年 12 月 14 日 |5.5 发行后 |TBD |
-| WA-GUEST-OS-5.2_201610-02 |2016 年 11 月 1 日 |5.4 发行后 |TBD |
+|~~WA-GUEST-OS-5.2_201610-02~~ |2016 年 11 月 1 日 |2017 年 4 月 10 日 |TBD |
 
 ## <a name="family-4-releases"></a>系列 4 发行版本
 **Windows Server 2012 R2**
 
 支持 .NET 4.0、4.5、4.5.1、4.5.2
 
->[AZURE.NOTE]
+> [AZURE.NOTE]
 > 标有 * 的日期可随时更改
+> 
+> 
 
 | 配置字符串 | 发行日期 | 停用日期 | 失效日期 |
 | --- | --- | --- | --- |
+| WA-GUEST-OS-4.40_201703-01 |2017 年 4 月 10 日 |4.42 发行后 |TBD |
 | WA-GUEST-OS-4.39_201612-01 |2017 年 1 月 10 日 |4.41 发行后 |TBD |
 | WA-GUEST-OS-4.38_201611-01 |2016 年 12 月 14 日 |4.40 发行后 |TBD |
-| WA-GUEST-OS-4.37_201610-02 |2016 年 11 月 16 日 |4.39 发行后 |TBD |
+|~~WA-GUEST-OS-4.37_201610-02~~ |2016 年 11 月 16 日 |2017 年 4 月 10 日 |TBD |
 |~~WA-GUEST-OS-4.36_201609-01~~ |2016 年 10 月 13 日 |2017 年 1 月 14 日 |TBD |
 |~~WA-GUEST-OS-4.35_201608-01~~ |2016 年 9 月 13 日 |2016 年 12 月 16 日 |TBD |
 |~~WA-GUEST-OS-4.34_201607-01~~ |2016 年 8 月 8 日 |2016 年 11 月 13 日 |TBD |
@@ -92,14 +105,17 @@ Windows Server 2016 将于 2016 年 11 月 1 日作为 OS 系列 5 推出，提�
 
 支持 .NET 4.0、4.5、4.5.1、4.5.2
 
->[AZURE.NOTE]
+> [AZURE.NOTE]
 > 标有 * 的日期可随时更改
+> 
+> 
 
 | 配置字符串 | 发行日期 | 停用日期 | 失效日期 |
 | --- | --- | --- | --- |
+| WA-GUEST-OS-3.47_201703-01 |2017 年 4 月 10 日 |3.49 发行后 |TBD |
 | WA-GUEST-OS-3.46_201612-01 |2017 年 1 月 10 日 |3.48 发行后 |TBD |
 | WA-GUEST-OS-3.45_201611-01 |2016 年 12 月 14 日 |3.47 发行后 |TBD |
-| WA-GUEST-OS-3.44_201610-01 |2016 年 11 月 16 日 |3.46 发行后 |TBD |
+| WA-GUEST-OS-3.44_201610-01 |2016 年 11 月 16 日 |2017 年 5 月 1 日 |TBD |
 | ~~WA-GUEST-OS-3.43_201609-01~~ |2016 年 10 月 13 日 |2017 年 1 月 14 日 |TBD |
 | ~~WA-GUEST-OS-3.42_201608-01~~ |2016 年 9 月 13 日 |2016 年 12 月 16 日 |TBD |
 | ~~WA-GUEST-OS-3.41_201607-01~~ |2016 年 8 月 8 日 |2016 年 11 月 13 日 |TBD |
@@ -116,15 +132,18 @@ Windows Server 2016 将于 2016 年 11 月 1 日作为 OS 系列 5 推出，提�
 
 支持 .NET 3.5、4.0、4.5、4.5.1、4.5.2
 
->[AZURE.NOTE]
+> [AZURE.NOTE]
 > 标有 * 的日期可随时更改
+> 
+> 
 
 | 配置字符串 | 发行日期 | 停用日期 | 失效日期 |
 | --- | --- | --- | --- |
+| WA-GUEST-OS-2.60_201703-01 |2017 年 4 月 10 日 |2.62 发行后 |TBD |
 | WA-GUEST-OS-2.59_201701-01 |2017 年 1 月 10 日 |2.61 发行后 |TBD |
 | WA-GUEST-OS-2.58_201612-01 |2017 年 1 月 10 日 |2.60 发行后 |TBD |
-| WA-GUEST-OS-2.57_201611-01 |2016 年 12 月 14 日 |2.59 发行后 |TBD |
-| WA-GUEST-OS-2.56_201610-01 |2016 年 11 月 16 日 |2017 年 2 月 10 日 |TBD |
+|~~WA-GUEST-OS-2.57_201611-01~~ |2016 年 12 月 14 日 |2017 年 4 月 10 日 |TBD |
+|~~WA-GUEST-OS-2.56_201610-01~~ |2016 年 11 月 16 日 |2017 年 2 月 10 日 |TBD |
 |~~WA-GUEST-OS-2.55_201609-01~~ |2016 年 10 月 13 日 |2017 年 1 月 14 日 |TBD |
 |~~WA-GUEST-OS-2.54_201608-01~~ |2016 年 9 月 13 日 |2016 年 12 月 16 日 |TBD |
 |~~WA-GUEST-OS-2.53_201607-01~~ |2016 年 8 月 8 日 |2016 年 11 月 13 日 |TBD |
@@ -195,6 +214,7 @@ Azure 不断地发布更新。来宾 OS 只不过是此类更新的其中一种�
 
 [Install .NET on a Cloud Service Role]: /documentation/articles/cloud-services-dotnet-install-dotnet/?WT.mc_id=azurebg_email_Trans_963_RevisedNET_Update
 [Azure Guest OS Update Settings]: /documentation/articles/cloud-services-how-to-configure/
+[rss]: http://sxp.microsoft.com/feeds/3.0/msdntn/WindowsAzureOSUpdates
 [ssl3 announcement]: http://azure.microsoft.com/blog/2014/12/09/azure-security-ssl-3-0-update/
 [Microsoft Security Advisory 3009008]: https://technet.microsoft.com/zh-cn/library/security/3009008.aspx
 [ssl3-fixit]: http://go.microsoft.com/?linkid=9863266
@@ -211,6 +231,3 @@ Azure 不断地发布更新。来宾 OS 只不过是此类更新的其中一种�
 [patches]: /documentation/articles/cloud-services-guestos-msrc-releases/
 [retirepolicy]: /documentation/articles/cloud-services-guestos-retirement-policy/
 [fam1retire]: /documentation/articles/cloud-services-guestos-family1-retirement/
- 
-
-<!--Update_Description:update wording-->
