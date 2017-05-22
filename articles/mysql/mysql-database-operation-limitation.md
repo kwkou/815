@@ -32,3 +32,4 @@ MySQL Database on Azure目前有如下几点限制，如果您有任何疑问，
 	* proxies_priv
 
 7.	目前不支持MyISAM存储引擎，我们推荐用户使用InnoDB。除MyISAM外，其他非InnoDB引擎虽然可用，但不排除在某些特殊情况下可能出现问题。
+8.  目前不支持从MP降到MS，即无法将MP1或MP2服务层更改为MS1~MS6服务层。
