@@ -20,7 +20,7 @@
     ms.author="markgal;trinadhk;"
     ms.sourcegitcommit="a114d832e9c5320e9a109c9020fcaa2f2fdd43a9"
     ms.openlocfilehash="c1909521911db88f1b5b95f36aea289f0513c8a7"
-    ms.lasthandoff="04/14/2017" />
+    ms.lasthandoff="05/22/2017" />
 
 # <a name="prepare-your-environment-to-back-up-resource-manager-deployed-virtual-machines"></a>准备环境以备份资源管理器部署的虚拟机
 > [AZURE.SELECTOR]
@@ -91,7 +91,7 @@ Azure VM 代理必须安装在 Azure 虚拟机上，备份扩展才能运行。 
 ## <a name="network-connectivity"></a>网络连接
 为了管理 VM 快照，备份扩展需要连接 Azure 公共 IP 地址。 如果未建立适当的 Internet 连接，虚拟机的 HTTP 请求将会超时，并且备份操作将会失败。 如果你的部署中配置了访问限制（如通过网络安全组 (NSG)），请选择其中一个选项来提供备份流量的明确路径：
 
-- [Whitelist the Azure datacenter IP ranges](http://www.microsoft.com/en-us/download/details.aspx?id=41653)（将 Azure 数据中心 IP 范围加入允许列表）— 请参阅相关文章，获取有关如何将 IP 地址加入允许列表的说明。
+- [Whitelist the Azure datacenter IP ranges](https://www.microsoft.com/en-us/download/details.aspx?id=42064)（将 Azure 数据中心 IP 范围加入允许列表）— 请参阅相关文章，获取有关如何将 IP 地址加入允许列表的说明。
 - 部署 HTTP 代理服务器来路由流量。
 
 确定要使用的选项时，需在可管理性、精度控制和成本之间进行取舍。
@@ -102,7 +102,7 @@ Azure VM 代理必须安装在 Azure 虚拟机上，备份扩展才能运行。 
 | HTTP 代理 |允许在代理中对存储 URL 进行精细控制。<br>对 VM 进行单点 Internet 访问。<br>不受 Azure IP 地址变化的影响。 |通过代理软件运行 VM 带来的额外成本。 |
 
 ### <a name="whitelist-the-azure-datacenter-ip-ranges"></a>将 Azure 数据中心 IP 范围加入允许列表
-若要将 Azure 数据中心 IP 范围加入允许列表，请参阅 [Azure 网站](http://www.microsoft.com/en-us/download/details.aspx?id=41653) ，获取有关 IP 范围的详细信息和说明。
+若要将 Azure 数据中心 IP 范围加入允许列表，请参阅 [Azure 网站](https://www.microsoft.com/en-us/download/details.aspx?id=42064) ，获取有关 IP 范围的详细信息和说明。
 
 ### <a name="using-an-http-proxy-for-vm-backups"></a>使用 HTTP 代理进行 VM 备份
 备份 VM 时，VM 上的备份扩展会使用 HTTPS API 将快照管理命令发送到 Azure 存储。 将通过 HTTP 代理路由备份扩展流量，因为它是为了访问公共 Internet 而配置的唯一组件。

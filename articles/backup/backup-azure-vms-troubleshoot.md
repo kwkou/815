@@ -14,7 +14,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="04/05/2017"
-    wacn.date="05/15/2017"
+    wacn.date="05/22/2017"
     ms.author="trinadhk;markgal;jpallavi;"
     ms.translationtype="Human Translation"
     ms.sourcegitcommit="457fc748a9a2d66d7a2906b988e127b09ee11e18"
@@ -141,7 +141,7 @@ VM 备份依赖于向底层存储发出快照命令。 如果无法访问存储�
 正确完成名称解析后，还需要提供对 Azure IP 的访问权限。 若要取消阻止对 Azure 基础结构的访问，请执行以下步骤之一：
 
 1. 将 Azure 数据中心 IP 范围加入允许列表。
-   - 获取要列入允许列表的 [Azure 数据中心 IP](https://www.microsoft.com/download/details.aspx?id=41653) 列表。
+   - 获取要列入允许列表的 [Azure 数据中心 IP](https://www.microsoft.com/en-us/download/details.aspx?id=42064) 列表。
    - 使用 [New-NetRoute](https://technet.microsoft.com/zh-cn/library/hh826148.aspx) cmdlet 取消阻止 IP。 在 Azure VM 上提升权限的 PowerShell 窗口中运行此 cmdlet（以管理员身份运行）。
    - 向 NSG 添加规则（如果已创建规则），以允许访问这些 IP。
 2. 为 HTTP 流量创建路径
