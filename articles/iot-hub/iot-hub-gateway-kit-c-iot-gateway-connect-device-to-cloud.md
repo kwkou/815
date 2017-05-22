@@ -15,7 +15,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="na"
     ms.date="04/06/2017"
-    wacn.date="05/15/2017"
+    wacn.date="05/22/2017"
     ms.author="xshi"
     ms.translationtype="Human Translation"
     ms.sourcegitcommit="457fc748a9a2d66d7a2906b988e127b09ee11e18"

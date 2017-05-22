@@ -26,7 +26,7 @@
 # <a name="use-iot-gateway-for-sensor-data-transformation-with-azure-iot-gateway-sdk"></a>通过 Azure IoT 网关 SDK，使用 IoT 网关进行传感器数据转换
 
 > [AZURE.NOTE]
-> 在开始本教程之前，请确保已按顺序完成以下课程：
+> 在开始本教程之前，请确保已按顺序完成以下课程：</br>
 > * [将 Intel NUC 设置为 IoT 网关](/documentation/articles/iot-hub-gateway-kit-c-lesson1-set-up-nuc/)</br>
 > * [使用 IoT 网关将事项连接到云 - SensorTag 到 Azure IoT 中心](/documentation/articles/iot-hub-gateway-kit-c-iot-gateway-connect-device-to-cloud/)
 

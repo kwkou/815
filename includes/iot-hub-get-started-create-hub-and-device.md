@@ -2,7 +2,7 @@
 
 1. 在 [Azure 门户预览](https://portal.azure.cn/)中，依次单击“新建” > “物联网” > “IoT 中心”。
 
-    ![在 Azure 门户中创建 IoT 中心](../articles/iot-hub/media/iot-hub-create-hub-and-device/1_create-azure-iot-hub-portal.png)
+    ![在 Azure 门户中创建 IoT 中心](./media/iot-hub-create-hub-and-device/1_create-azure-iot-hub-portal.png)
    
 1. 在“IoT 中心”窗格中，输入 IoT 中心的以下信息：
 
@@ -16,19 +16,19 @@
 
     **固定仪表板**：选中此选项可以方便地从仪表板访问 IoT 中心。
 
-    ![填充用于创建 Azure IoT 中心的字段](../articles/iot-hub/media/iot-hub-create-hub-and-device/2_fill-in-fields-for-azure-iot-hub-portal.png)
+    ![填充用于创建 Azure IoT 中心的字段](./media/iot-hub-create-hub-and-device/2_fill-in-fields-for-azure-iot-hub-portal.png)
 
 1. 单击“创建” 。 创建 IoT 中心可能需要几分钟时间。 可在“通知”窗格中查看进度。
 
-    ![请查看通知，了解 IoT 中心的创建进度](../articles/iot-hub/media/iot-hub-create-hub-and-device/3_notification-azure-iot-hub-creation-progress-portal.png)
+    ![请查看通知，了解 IoT 中心的创建进度](./media/iot-hub-create-hub-and-device/3_notification-azure-iot-hub-creation-progress-portal.png)
 
 1. 创建 IoT 中心后，请在仪表板中单击它。 记下“主机名”，然后单击“共享访问策略”。
 
-    ![获取 IoT 中心的主机名](../articles/iot-hub/media/iot-hub-create-hub-and-device/4_get-azure-iot-hub-hostname-portal.png)
+    ![获取 IoT 中心的主机名](./media/iot-hub-create-hub-and-device/4_get-azure-iot-hub-hostname-portal.png)
 
 1. 在“共享访问策略”窗格中单击“iothubowner”策略，然后复制并记下 IoT 中心的**连接字符串**。 有关详细信息，请参阅[控制对 IoT 中心的访问](/documentation/articles/iot-hub-devguide-security/)。
 
-    ![获取 IoT 中心连接字符串](../articles/iot-hub/media/iot-hub-create-hub-and-device/5_get-azure-iot-hub-connection-string-portal.png)
+    ![获取 IoT 中心连接字符串](./media/iot-hub-create-hub-and-device/5_get-azure-iot-hub-connection-string-portal.png)
 
 ## <a name="register-a-device-in-the-iot-hub-for-the-your-device"></a>在 IoT 中心为设备进行设备注册
 
@@ -44,10 +44,10 @@
 
     **将设备连接到 IoT 中心**：单击“启用”。
 
-    ![在 IoT 中心的设备资源管理器中添加设备](../articles/iot-hub/media/iot-hub-create-hub-and-device/6_add-device-in-azure-iot-hub-device-explorer-portal.png)
+    ![在 IoT 中心的设备资源管理器中添加设备](./media/iot-hub-create-hub-and-device/6_add-device-in-azure-iot-hub-device-explorer-portal.png)
 
 1. 单击“保存” 。
 1. 创建设备后，在“设备资源管理器”窗格中打开设备。
 1. 记下连接字符串的主密钥。
 
-    ![获取设备连接字符串](../articles/iot-hub/media/iot-hub-create-hub-and-device/7_get-device-connection-string-in-device-explorer-portal.png)
+    ![获取设备连接字符串](./media/iot-hub-create-hub-and-device/7_get-device-connection-string-in-device-explorer-portal.png)
