@@ -17,7 +17,7 @@
     ms.date="3/13/2017"
     ms.author="markgal;trinadhk; anuragm"
     ms.custom="H1Hack27Feb2017"
-    wacn.date="05/15/2017"
+    wacn.date="05/22/2017"
     ms.translationtype="Human Translation"
     ms.sourcegitcommit="3ff18e6f95d8bbc27348658bc5fce50c3320cf0a"
     ms.openlocfilehash="70982c3cdecbe8694b4fa9995fb6b80509808b27"
@@ -218,7 +218,7 @@ Azure 备份针对每个受保护实例实施 9999 个恢复点（也称为备�
 ## <a name="how-does-azure-backup-differ-from-azure-site-recovery"></a>Azure 备份与 Azure Site Recovery 有何不同？
 Azure 备份和 Azure Site Recovery 均备份数据，均可还原数据。 但两者的价值主张不同。
 
-Azure 备份保护本地和云端的数据。 Azure Site Recovery 就虚拟机和物理服务器的复制、故障转移和故障回复进行协调。 这两个服务都很重要，因为灾难恢复解决方案需要让数据保持安全且可恢复（备份）， *同时* 在服务中断时使工作负荷保持可用 (Site Recovery)。
+Azure 备份保护本地和云端的数据。 Azure Site Recovery 就虚拟机和物理服务器的复制、故障转移和故障恢复进行协调。 这两个服务都很重要，因为灾难恢复解决方案需要让数据保持安全且可恢复（备份）， *同时* 在服务中断时使工作负荷保持可用 (Site Recovery)。
 
 以下概念可帮助你做出有关备份和灾难恢复的重要决策。
 
