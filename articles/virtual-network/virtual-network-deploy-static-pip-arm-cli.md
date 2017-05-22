@@ -61,7 +61,7 @@ Azure 具有用于创建和处理资源的两个不同的部署模型： [资源
         # Create a public IP address resource with a static IP address using the --allocation-method Static option.
         # If you do not specify this option, the address is allocated dynamically. The address is assigned to the
         # resource from a pool of IP adresses unique to each Azure region. The DnsName must be unique within the
-        # Azure location it's created in. Download and view the file from https://www.microsoft.com/download/details.aspx?id=41653#
+        # Azure location it's created in. Download and view the file from https://www.microsoft.com/download/details.aspx?id=42064#
         # that lists the ranges for each region.
 
         PipName="PIPWEB1"

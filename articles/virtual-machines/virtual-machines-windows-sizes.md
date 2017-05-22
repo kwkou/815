@@ -28,10 +28,10 @@
 本文介绍可用于运行 Windows 应用和工作负荷的 Azure 虚拟机的可用大小和选项。 此外，还提供在计划使用这些资源时要考虑的部署注意事项。  本文也适用于 [Linux 虚拟机](/documentation/articles/virtual-machines-linux-sizes/)。
 
 > [AZURE.IMPORTANT]
->* 有关不同大小的定价信息，请参阅[虚拟机定价](/pricing/details/virtual-machines/#Windows)。 
->* 若要查看 Azure VM 的一般限制，请参阅 [Azure 订阅和服务限制、配额与约束](/documentation/articles/azure-subscription-service-limits/)。
->* 存储成本根据存储帐户中的已使用页数进行单独计算。 有关详细信息，请参阅 [Azure 存储定价](/pricing/details/storage/)。
->* 了解有关 [Azure 计算单元 (ACU)](/documentation/articles/virtual-machines-windows-acu/) 如何帮助你跨 Azure SKU 比较计算性能的详细信息。
+><p>* 有关不同大小的定价信息，请参阅[虚拟机定价](/pricing/details/virtual-machines/#Windows)。 
+><p>* 若要查看 Azure VM 的一般限制，请参阅 [Azure 订阅和服务限制、配额与约束](/documentation/articles/azure-subscription-service-limits/)。
+><p>* 存储成本根据存储帐户中的已使用页数进行单独计算。 有关详细信息，请参阅 [Azure 存储定价](/pricing/details/storage/)。
+><p>* 了解有关 [Azure 计算单元 (ACU)](/documentation/articles/virtual-machines-windows-acu/) 如何帮助你跨 Azure SKU 比较计算性能的详细信息。
 >
 >
 <br>    

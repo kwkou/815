@@ -55,7 +55,7 @@
         --location $Location
 
         # The address is assigned to the resource from a pool of IP adresses unique to each Azure region. 
-        # Download and view the file from https://www.microsoft.com/download/details.aspx?id=41653 that lists
+        # Download and view the file from https://www.microsoft.com/download/details.aspx?id=42064 that lists
         # the ranges for each region.
 
         PipName="PIP-WEB"
