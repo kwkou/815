@@ -29,12 +29,6 @@
 > 
 > 
 
-<!-- -->
-
-> [AZURE.TIP]
-> 订阅[来宾 OS 更新 RSS 源][rss]，以接收有关所有来宾 OS 更改的最新通知。
-> 
-> 
 
 不太确定什么是来宾 OS 或者来宾 OS 的工作原理？ 请阅读[此部分](#how-it-works)。
 
@@ -214,7 +208,6 @@ Azure 不断地发布更新。来宾 OS 只不过是此类更新的其中一种�
 
 [Install .NET on a Cloud Service Role]: /documentation/articles/cloud-services-dotnet-install-dotnet/?WT.mc_id=azurebg_email_Trans_963_RevisedNET_Update
 [Azure Guest OS Update Settings]: /documentation/articles/cloud-services-how-to-configure/
-[rss]: http://sxp.microsoft.com/feeds/3.0/msdntn/WindowsAzureOSUpdates
 [ssl3 announcement]: http://azure.microsoft.com/blog/2014/12/09/azure-security-ssl-3-0-update/
 [Microsoft Security Advisory 3009008]: https://technet.microsoft.com/zh-cn/library/security/3009008.aspx
 [ssl3-fixit]: http://go.microsoft.com/?linkid=9863266

@@ -157,10 +157,6 @@ DLL 或程序集缺失的症状可能为：
 
 确认所有错误均已更正后，可以在不选中“为 .NET 4 角色启用 IntelliTrace”复选框的情况下部署服务。
 
-## 后续步骤
 
-
-
-若要了解如何使用 Azure PaaS 计算机诊断数据对云服务角色问题进行故障排除，请参阅 [Kevin Williamson 博客系列](http://blogs.msdn.com/b/kwill/archive/2013/08/09/windows-azure-paas-compute-diagnostics-data.aspx)。
 
 <!---HONumber=Mooncake_Quality_Review_1202_2016-->

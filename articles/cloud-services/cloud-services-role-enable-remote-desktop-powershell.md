@@ -23,8 +23,8 @@
 
 # <a name="enable-remote-desktop-connection-for-a-role-in-azure-cloud-services-using-powershell"></a>使用 PowerShell 为 Azure 云服务中的角色启用远程桌面连接
 > [AZURE.SELECTOR]
-- [Azure 门户](/documentation/articles/cloud-services-role-enable-remote-desktop-new-portal/)
-- [Azure 经典门户](/documentation/articles/cloud-services-role-enable-remote-desktop/)
+- [Azure 门户预览](/documentation/articles/cloud-services-role-enable-remote-desktop-new-portal/)
+- [Azure 经典管理门户](/documentation/articles/cloud-services-role-enable-remote-desktop/)
 - [PowerShell](/documentation/articles/cloud-services-role-enable-remote-desktop-powershell/)
 - [Visual Studio](/documentation/articles/vs-azure-tools-remote-desktop-roles/)
 
@@ -104,5 +104,5 @@
 
 ## <a name="additional-resources"></a>其他资源
 
-[如何配置云服务](/documentation/articles/cloud-services-how-to-configure/)
-[云服务常见问题 - 远程桌面](/documentation/articles/cloud-services-faq/#remote-desktop)
+ - [如何配置云服务](/documentation/articles/cloud-services-how-to-configure/)
+ - [云服务常见问题 - 远程桌面](/documentation/articles/cloud-services-faq/#remote-desktop)
