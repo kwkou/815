@@ -51,7 +51,7 @@
 **本地配置服务器** | <p>需要一个运行 Windows Server 2012 R2 或更高版本的 VMware VM。将在 Site Recovery 部署过程中设置此服务器。</p><p> 默认情况下，进程服务器和主目标服务器也安装在此 VM 上。进行扩展时，可能需要使用单独的进程服务器。如果是这样，该服务器的要求与配置服务器相同。</p><p> [详细信息](/documentation/articles/site-recovery-components/#replicate-vmware-vmsphysical-servers-to-azure)这些组件。</p>
 **本地 VMware 服务器** | <p>一台或多台 VMware vSphere 服务器，运行装有最新更新的 6.0、5.5 或 5.1。服务器应位于配置服务器（或单独的进程服务器）所在的同一网络。</p><p> 建议使用一台 vCenter 服务器（运行装有最新更新的 6.0 或 5.5）来管理主机。部署版本 6.0 时，只有 5.5 版中提供的功能才受支持。</p>
 **本地 VM** | 想要复制的虚拟机应该运行[受支持的操作系统](/documentation/articles/site-recovery-support-matrix-to-azure/#support-for-replicated-machine-os-versions)，并且符合 [Azure 先决条件](/documentation/articles/site-recovery-support-matrix-to-azure/#failed-over-azure-vm-requirements)。VM 应该运行 VMware 工具。
-**URL** | <p>配置服务器需要以下 URL 的访问权限：</p><p> [AZURE.INCLUDE [site-recovery-URLS](../../includes/site-recovery-URLS.md)]</p><p>如果设置了基于 IP 地址的防火墙规则，请确保这些规则允许与 Azure 通信。</p><p> 允许 [Azure 数据中心 IP 范围](https://www.microsoft.com/download/confirmation.aspx?id=41653)和 HTTPS (443) 端口。</p><p> 允许订阅的 Azure 区域的 IP 地址范围以及美国西部的 IP 地址范围（用于访问控制和标识管理）。</p><p> 允许使用以下 URL 下载 MySQL：http://cdn.mysql.com/archives/mysql-5.5/mysql-5.5.37-win32.msi。</p>
+**URL** | <p>配置服务器需要以下 URL 的访问权限：</p><p> [AZURE.INCLUDE [site-recovery-URLS](../../includes/site-recovery-URLS.md)]</p><p>如果设置了基于 IP 地址的防火墙规则，请确保这些规则允许与 Azure 通信。</p><p> 允许 [Azure 数据中心 IP 范围](https://www.microsoft.com/download/confirmation.aspx?id=42064)和 HTTPS (443) 端口。</p><p> 允许订阅的 Azure 区域的 IP 地址范围以及美国西部的 IP 地址范围（用于访问控制和标识管理）。</p><p> 允许使用以下 URL 下载 MySQL：http://cdn.mysql.com/archives/mysql-5.5/mysql-5.5.37-win32.msi。</p>
 **移动服务** | 已安装在每个复制的 VM 上。
 
 
