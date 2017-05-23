@@ -1,14 +1,14 @@
 <properties
     pageTitle="Azure 服务总线 SQLFilter 语法参考 | Azure"
     description="有关 SqlFilter 语法的详细信息。"
-    services="service-bus-messaging"
+    services="service-bus"
     documentationcenter="na"
     author="sethmanheim"
     manager="timlt"
     editor="" />
 <tags
     ms.assetid=""
-    ms.service="service-bus-messaging"
+    ms.service="service-bus"
     ms.devlang="na"
     ms.topic="article"
     ms.tgt_pltfrm="na"

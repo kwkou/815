@@ -62,7 +62,7 @@
 - [QueueDescription][]
 - [SubscriptionDescription][]
 
-若要深入了解服务总线性能提升，请参阅 
+若要深入了解服务总线性能提升，请参阅：
 
 - [使用服务总线消息传送改进性能的最佳做法](/documentation/articles/service-bus-performance-improvements/)
 - [分区消息实体][]。

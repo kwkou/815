@@ -1,14 +1,14 @@
 <properties
     pageTitle="通过 .NET 使用 Azure 服务总线主题 | Azure"
     description="了解如何在 Azure 中通过 .NET 使用服务总线主题和订阅。 代码示例是针对 .NET 应用程序编写的。"
-    services="service-bus-messaging"
+    services="service-bus"
     documentationcenter=".net"
     author="sethmanheim"
     manager="timlt"
     editor="" />
 <tags
     ms.assetid="31d0bc29-6524-4b1b-9c7f-aa15d5a9d3b4"
-    ms.service="service-bus-messaging"
+    ms.service="service-bus"
     ms.workload="na"
     ms.tgt_pltfrm="na"
     ms.devlang="dotnet"
@@ -304,7 +304,6 @@ Service Bus 提供了相关功能来帮助你轻松地从应用程序错误或�
 现在，你已了解有关服务总线主题和订阅的基础知识，请访问下面的链接以获取详细信息。
 
 -   [队列、主题和订阅][]。
--   [主题筛选器示例][]
 -   [SqlFilter][] 的 API 参考。
 -   构建向服务总线队列发送消息以及从中接收消息的工作应用程序：[服务总线中转消息传送 .NET 教程][]。
 -   服务总线示例：从 [Azure 示例][]下载，或参阅[概述](/documentation/articles/service-bus-samples/)。
@@ -314,7 +313,6 @@ Service Bus 提供了相关功能来帮助你轻松地从应用程序错误或�
   [7]: ./media/service-bus-dotnet-how-to-use-topics-subscriptions/getting-started-multi-tier-13.png
 
   [队列、主题和订阅]: /documentation/articles/service-bus-queues-topics-subscriptions/
-  [主题筛选器示例]: https://github.com/Azure-Samples/azure-servicebus-messaging-samples/tree/master/TopicFilters
   [SqlFilter]: https://docs.microsoft.com/en-us/dotnet/api/microsoft.servicebus.messaging.sqlfilter?redirectedfrom=MSDN#microsoft_servicebus_messaging_sqlfilter
   [SqlFilter.SqlExpression]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.sqlfilter.sqlexpression.aspx
   [服务总线中转消息传送 .NET 教程]: /documentation/articles/service-bus-dotnet-get-started-with-queues/

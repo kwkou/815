@@ -1,14 +1,14 @@
 <properties
     pageTitle="Azure 服务总线身份验证和授权 | Azure"
     description="共享访问签名 (SAS) 身份验证概述。"
-    services="service-bus-messaging"
+    services="service-bus"
     documentationcenter="na"
     author="sethmanheim"
     manager="timlt"
     editor="" />
 <tags
     ms.assetid="18bad0ed-1cee-4a5c-a377-facc4785c8c9"
-    ms.service="service-bus-messaing"
+    ms.service="service-bus"
     ms.devlang="na"
     ms.topic="article"
     ms.tgt_pltfrm="na"
