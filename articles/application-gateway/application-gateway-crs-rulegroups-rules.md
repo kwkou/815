@@ -31,7 +31,7 @@
 
 ## <a name="owasp30"></a> OWASP_3.0
 
-### <a name="crs910"></a>  <p x-ms-format-detection="none">REQUEST-910-IP-REPUTATION</p>
+### <a name="crs910"></a>  <p>REQUEST-910-IP-REPUTATION</p>
 
 |RuleId|说明|
 |---|---|
@@ -52,7 +52,7 @@
 |910017|规则 910017|
 |910018|规则 910018|
 
-### <a name="crs911"></a> <p x-ms-format-detection="none">REQUEST-911-METHOD-ENFORCEMENT</p>
+### <a name="crs911"></a> <p>REQUEST-911-METHOD-ENFORCEMENT</p>
 
 |RuleId|说明|
 |---|---|
@@ -66,7 +66,7 @@
 |911017|规则 911017|
 |911018|规则 911018|
 
-### <a name="crs912"></a> <p x-ms-format-detection="none">REQUEST-912-DOS-PROTECTION</p>
+### <a name="crs912"></a> <p>REQUEST-912-DOS-PROTECTION</p>
 
 |RuleId|说明|
 |---|---|
@@ -87,7 +87,7 @@
 |912017|规则 912017|
 |912018|规则 912018|
 
-### <a name="crs913"></a> <p x-ms-format-detection="none">REQUEST-913-SCANNER-DETECTION</p>
+### <a name="crs913"></a> <p>REQUEST-913-SCANNER-DETECTION</p>
 
 |RuleId|说明|
 |---|---|
@@ -105,7 +105,7 @@
 |913017|规则 913017|
 |913018|规则 913018|
 
-### <a name="crs920"></a> <p x-ms-format-detection="none">REQUEST-920-PROTOCOL-ENFORCEMENT</p>
+### <a name="crs920"></a> <p>REQUEST-920-PROTOCOL-ENFORCEMENT</p>
 
 |RuleId|说明|
 |---|---|
@@ -159,7 +159,7 @@
 |920274|请求标头中的字符无效（不属于极严格集）|
 |920460|规则 920460|
 
-### <a name="crs921"></a> <p x-ms-format-detection="none">REQUEST-921-PROTOCOL-ATTACK</p>
+### <a name="crs921"></a> <p>REQUEST-921-PROTOCOL-ATTACK</p>
 
 |RuleId|说明|
 |---|---|
@@ -182,7 +182,7 @@
 |921017|规则 921017|
 |921018|规则 921018|
 
-### <a name="crs930"></a> <p x-ms-format-detection="none">REQUEST-930-APPLICATION-ATTACK-LFI</p>
+### <a name="crs930"></a> <p>REQUEST-930-APPLICATION-ATTACK-LFI</p>
 
 |RuleId|说明|
 |---|---|
@@ -199,7 +199,7 @@
 |930017|规则 930017|
 |930018|规则 930018|
 
-### <a name="crs931"></a> <p x-ms-format-detection="none">REQUEST-931-APPLICATION-ATTACK-RFI</p>
+### <a name="crs931"></a> <p>REQUEST-931-APPLICATION-ATTACK-RFI</p>
 
 |RuleId|说明|
 |---|---|
@@ -216,7 +216,7 @@
 |931017|规则 931017|
 |931018|规则 931018|
 
-### <a name="crs932"></a> <p x-ms-format-detection="none">REQUEST-932-APPLICATION-ATTACK-RCE</p>
+### <a name="crs932"></a> <p>REQUEST-932-APPLICATION-ATTACK-RCE</p>
 
 |RuleId|说明|
 |---|---|
@@ -235,7 +235,7 @@
 |932017|规则 932017|
 |932018|规则 932018|
 
-### <a name="crs933"></a> <p x-ms-format-detection="none">REQUEST-933-APPLICATION-ATTACK-PHP</p>
+### <a name="crs933"></a> <p>REQUEST-933-APPLICATION-ATTACK-PHP</p>
 
 |RuleId|说明|
 |---|---|
@@ -259,7 +259,7 @@
 |933017|规则 933017|
 |933018|规则 933018|
 
-### <a name="crs941"></a> <p x-ms-format-detection="none">REQUEST-941-APPLICATION-ATTACK-XSS</p>
+### <a name="crs941"></a> <p>REQUEST-941-APPLICATION-ATTACK-XSS</p>
 
 |RuleId|说明|
 |---|---|
@@ -292,7 +292,7 @@
 |941017|规则 941017|
 |941018|规则 941018|
 
-### <a name="crs942"></a> <p x-ms-format-detection="none">REQUEST-942-APPLICATION-ATTACK-SQLI</p>
+### <a name="crs942"></a> <p>REQUEST-942-APPLICATION-ATTACK-SQLI</p>
 
 |RuleId|说明|
 |---|---|
@@ -320,7 +320,7 @@
 |942017|规则 942017|
 |942018|规则 942018|
 
-### <a name="crs943"></a> <p x-ms-format-detection="none">REQUEST-943-APPLICATION-ATTACK-SESSION-FIXATION</p>
+### <a name="crs943"></a> <p>REQUEST-943-APPLICATION-ATTACK-SESSION-FIXATION</p>
 
 |RuleId|说明|
 |---|---|
