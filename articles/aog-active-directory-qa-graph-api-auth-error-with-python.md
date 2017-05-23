@@ -35,12 +35,12 @@
 
 1. 获取 Tenant ID 或者直接用账户的 Domain（二者皆可）:
 
-![login-azurermaccount](./media/aog-active-directory-qa-graph-api-auth-error-with-python/login-azurermaccount.png)
+    ![login-azurermaccount](./media/aog-active-directory-qa-graph-api-auth-error-with-python/login-azurermaccount.png)
 
 2. 构建凭据和 Graph Client 及测试：
 
-![code](./media/aog-active-directory-qa-graph-api-auth-error-with-python/code.png)
+    ![code](./media/aog-active-directory-qa-graph-api-auth-error-with-python/code.png)
 
 3. 测试结果：
 
-![result](./media/aog-active-directory-qa-graph-api-auth-error-with-python/result.png)
+    ![result](./media/aog-active-directory-qa-graph-api-auth-error-with-python/result.png)
