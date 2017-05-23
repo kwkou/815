@@ -6,28 +6,31 @@
     documentationcenter=""
     author="CarlRabeler"
     manager="jhubbard"
-    editor=""
-    translationtype="Human Translation" />
+    editor="" />
 <tags
     ms.assetid=""
     ms.service="sql-database"
-    ms.custom="quick start"
+    ms.custom="quick start create"
     ms.workload="data-management"
     ms.tgt_pltfrm="na"
-    ms.devlang="cli"
+    ms.devlang="azurecli"
     ms.topic="hero-article"
-    ms.date="03/13/2017"
-    wacn.date="04/17/2017"
+    ms.date="04/04/2017"
+    wacn.date="05/22/2017"
     ms.author="carlrab"
-    ms.sourcegitcommit="7cc8d7b9c616d399509cd9dbdd155b0e9a7987a8"
-    ms.openlocfilehash="4a3bc5b6c1351bb52c47b751e5196dc53ec86fb6"
-    ms.lasthandoff="04/07/2017" />
+    ms.translationtype="Human Translation"
+    ms.sourcegitcommit="8fd60f0e1095add1bff99de28a0b65a8662ce661"
+    ms.openlocfilehash="4cdc67c73fff8d85ed7383b35d3f26b2581a7e99"
+    ms.contentlocale="zh-cn"
+    ms.lasthandoff="05/12/2017" />
 
 # <a name="create-a-single-azure-sql-database-using-the-azure-cli"></a>使用 Azure CLI 创建单一 Azure SQL 数据库
 
 Azure CLI 用于从命令行或脚本创建和管理 Azure 资源。 本指南详述了如何使用 Azure CLI 在 [Azure 资源组](/documentation/articles/resource-group-overview/)的 [Azure SQL 数据库逻辑服务器](/documentation/articles/sql-database-features/)中部署 Azure SQL 数据库。
 
-在开始之前，请确保已安装 Azure CLI。 有关详细信息，请参阅 [Azure CLI 安装指南](https://docs.microsoft.com/zh-cn/cli/azure/install-azure-cli)。 
+若要完成本快速入门教程，请确保已安装最新的 [Azure CLI 2.0](https://docs.microsoft.com/zh-cn/cli/azure/install-azure-cli)。 
+
+如果没有 Azure 订阅，可在开始前创建一个[试用](/pricing/1rmb-trial/)帐户。
 
 ## <a name="log-in-to-azure"></a>登录 Azure
 
@@ -51,26 +54,36 @@ Azure CLI 用于从命令行或脚本创建和管理 Azure 资源。 本指南�
 
 ## <a name="configure-a-server-firewall-rule"></a>配置服务器防火墙规则
 
-使用 [az sql server firewall create](https://docs.microsoft.com/zh-cn/cli/azure/sql/server/firewall#create) 命令创建 [Azure SQL 数据库服务器级防火墙规则](/documentation/articles/sql-database-firewall-configure/)。 服务器级防火墙规则允许外部服务器（例如 SQL Server Management Studio 或 SQLCMD 实用程序）通过 SQL 数据库服务防火墙连接到 SQL 数据库。 以下示例为预定义的地址范围创建了防火墙规则，该地址范围在本示例中是整个可能的 IP 地址范围。 将这些预定义的值替换为外部 IP 地址或 IP 地址范围的值。 
+使用 [az sql server firewall create](https://docs.microsoft.com/zh-cn/cli/azure/sql/server/firewall-rule#create) 命令创建 [Azure SQL 数据库服务器级防火墙规则](/documentation/articles/sql-database-firewall-configure/)。 服务器级防火墙规则允许外部服务器（例如 SQL Server Management Studio 或 SQLCMD 实用程序）通过 SQL 数据库服务防火墙连接到 SQL 数据库。 在以下示例中，防火墙仅对其他 Azure 资源开放。 若要启用外部连接，请将 IP 地址更改为适合环境的地址。 若要开放所有 IP 地址，请使用 0.0.0.0 作为起始 IP 地址，使用 255.255.255.255 作为结束地址。  
 
     az sql server firewall-rule create --resource-group myResourceGroup --server $servername \
-        -n AllowYourIp --start-ip-address 0.0.0.0 --end-ip-address 255.255.255.255
+        -n AllowYourIp --start-ip-address 0.0.0.0 --end-ip-address 0.0.0.0
 
-## <a name="create-a-database-in-the-server"></a>在服务器中创建数据库
+> [AZURE.NOTE]
+> 通过端口 1433 进行 SQL 数据库通信。 如果尝试从企业网络内部进行连接，则该网络的防火墙可能不允许经端口 1433 的出站流量。 如果是这样，则无法连接到 Azure SQL 数据库服务器，除非 IT 部门打开了端口 1433。
+>
 
-使用 [az sql db create](https://docs.microsoft.com/zh-cn/cli/azure/sql/db#create) 命令在服务器中创建 [S0 性能级别](/documentation/articles/sql-database-service-tiers/)的数据库。 以下示例创建一个空的名为 `mySampleDatabase` 的数据库。 根据需要替换此预定义的值。
+## <a name="create-a-database-in-the-server-with-sample-data"></a>使用示例数据在服务器中创建数据库
+
+使用 [az sql db create](https://docs.microsoft.com/zh-cn/cli/azure/sql/db#create) 命令在服务器中创建 [S0 性能级别](/documentation/articles/sql-database-service-tiers/)的数据库。 以下示例创建名为 `mySampleDatabase` 的数据库，并将 AdventureWorksLT 示例数据加载到该数据库中。 根据需要替换这些预定义的值（此集合中的其他快速入门基于此快速入门中的值）。
 
     az sql db create --resource-group myResourceGroup --server $servername \
-        --name mySampleDatabase --service-objective S0
+        --name mySampleDatabase --sample-name AdventureWorksLT --service-objective S0
 
 ## <a name="clean-up-resources"></a>清理资源
 
-此集合中的“连接方式”快速入门以及教程集合中的教程以此快速入门为基础。 如果计划继续使用后续的快速入门或相关教程，请勿清除在本快速入门中创建的资源。 如果不打算继续，请使用以下命令删除通过本快速入门创建的所有资源。
+本教程系列中的其他快速入门教程是在本文的基础上制作的。 如果计划继续使用后续的快速入门或相关教程，请勿清除在本快速入门中创建的资源。 如果不打算继续，请使用以下命令删除通过本快速入门创建的所有资源。
 
     az group delete --name myResourceGroup
 
 ## <a name="next-steps"></a>后续步骤
 
 - 若要使用 SQL Server Management Studio 进行连接和查询，请参阅[使用 SSMS 进行连接和查询](/documentation/articles/sql-database-connect-query-ssms/)
-- 若要使用 Visual Studio 进行连接，请参阅[使用 Visual Studio 进行连接和查询](/documentation/articles/sql-database-connect-query/)。
-- 有关 SQL 数据库的技术概述，请参阅[关于 SQL 数据库服务](/documentation/articles/sql-database-technical-overview/)。
+- 若要使用 Visual Studio Code 进行连接和查询，请参阅[使用 Visual Studio Code 进行连接和查询](/documentation/articles/sql-database-connect-query-vscode/)。
+- 若要使用 .NET 进行连接和查询，请参阅[使用 .NET 进行连接和查询](/documentation/articles/sql-database-connect-query-dotnet/)。
+- 若要使用 PHP 进行连接和查询，请参阅[使用 PHP 进行连接和查询](/documentation/articles/sql-database-connect-query-php/)。
+- 若要使用 Node.js 进行连接和查询，请参阅[使用 Node.js 进行连接和查询](/documentation/articles/sql-database-connect-query-nodejs/)。
+- 若要使用 Java 进行连接和查询，请参阅[使用 Java 进行连接和查询](/documentation/articles/sql-database-connect-query-java/)。
+- 若要使用 Python 进行连接和查询，请参阅[使用 Python 进行连接和查询](/documentation/articles/sql-database-connect-query-python/)。
+- 若要使用 Ruby 进行连接和查询，请参阅[使用 Ruby 进行连接和查询](/documentation/articles/sql-database-connect-query-ruby/)。
+<!--Update_Description:update "配置服务器防火墙规则"-->

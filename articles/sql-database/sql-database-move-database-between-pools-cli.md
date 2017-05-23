@@ -6,22 +6,23 @@
     author="janeng"
     manager="jstrauss"
     editor="carlrab"
-    tags="azure-service-management"
-    translationtype="Human Translation" />
+    tags="azure-service-management" />
 <tags
     ms.assetid=""
     ms.service="sql-database"
     ms.custom="sample"
-    ms.devlang="CLI"
+    ms.devlang="azurecli"
     ms.topic="article"
     ms.tgt_pltfrm="sql-database"
     ms.workload="database"
-    ms.date="03/16/2017"
-    wacn.date="04/17/2017"
+    ms.date="04/04/2017"
+    wacn.date="05/22/2017"
     ms.author="janeng"
-    ms.sourcegitcommit="7cc8d7b9c616d399509cd9dbdd155b0e9a7987a8"
-    ms.openlocfilehash="068275ffc040736a8245164c0720fc3eaf0d8f4f"
-    ms.lasthandoff="04/07/2017" />
+    ms.translationtype="Human Translation"
+    ms.sourcegitcommit="8fd60f0e1095add1bff99de28a0b65a8662ce661"
+    ms.openlocfilehash="15b8fd5fc1753828fa596e062b791108a26c8db4"
+    ms.contentlocale="zh-cn"
+    ms.lasthandoff="05/12/2017" />
 
 # <a name="create-elastic-pools-and-move-databases-between-pools-and-out-of-a-pool-using-the-azure-cli"></a>使用 Azure CLI 创建弹性池，并在池之间和池外移动数据库
 
