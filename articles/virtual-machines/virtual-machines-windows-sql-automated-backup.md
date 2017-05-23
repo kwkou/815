@@ -43,9 +43,6 @@
 - SQL Server 2014 Standard
 - SQL Server 2014 Enterprise
 
-> [AZURE.IMPORTANT]
-自动备份适用于 SQL Server 2014。如果使用的是 SQL Server 2016，可以使用自动备份 v2 来备份数据库。有关详细信息，请参阅[适用于 SQL Server 2016 Azure 虚拟机的自动备份 v2](/documentation/articles/virtual-machines-windows-sql-automated-backup-v2/)。
-
 **数据库配置**：
 
 - 目标数据库必须使用完整恢复模式。

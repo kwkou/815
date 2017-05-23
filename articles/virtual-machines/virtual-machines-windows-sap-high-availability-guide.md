@@ -7,8 +7,7 @@
     manager="timlt"
     editor=""
     tags="azure-resource-manager"
-    keywords=""
-    translationtype="Human Translation" />
+    keywords="" />
 <tags
     ms.assetid="5e514964-c907-4324-b659-16dd825f6f87"
     ms.service="virtual-machines-windows"
@@ -17,12 +16,14 @@
     ms.tgt_pltfrm="vm-windows"
     ms.workload="infrastructure-services"
     ms.date="12/07/2016"
-    wacn.date="04/17/2017"
+    wacn.date="05/22/2017"
     ms.author="goraco"
     ms.custom="H1Hack27Feb2017"
-    ms.sourcegitcommit="7cc8d7b9c616d399509cd9dbdd155b0e9a7987a8"
-    ms.openlocfilehash="bebd55b37fcc7b504e02fe526334d1c9c37c32b7"
-    ms.lasthandoff="04/07/2017" />
+    ms.translationtype="Human Translation"
+    ms.sourcegitcommit="8fd60f0e1095add1bff99de28a0b65a8662ce661"
+    ms.openlocfilehash="240dc4e6d8f1fcf8beecb7c839e57887e0ad6524"
+    ms.contentlocale="zh-cn"
+    ms.lasthandoff="05/12/2017" />
 
 # <a name="high-availability-for-sap-netweaver-on-azure-vms"></a>Azure VM 上的 SAP NetWeaver 高可用性
 
@@ -237,62 +238,62 @@
 [planning-guide-storage-microsoft-azure-storage-and-data-disks]: /documentation/articles/virtual-machines-windows-sap-planning-guide/#a72afa26-4bf4-4a25-8cf7-855d6032157f
 
 [sap-ha-guide]: /documentation/articles/virtual-machines-windows-sap-high-availability-guide/
-[sap-ha-guide-1]: /documentation/articles/virtual-machines-windows-sap-high-availability-guide/#217c5479-5595-4cd8-870d-15ab00d4f84c
-[sap-ha-guide-2]: /documentation/articles/virtual-machines-windows-sap-high-availability-guide/#42b8f600-7ba3-4606-b8a5-53c4f026da08
-[sap-ha-guide-3]: /documentation/articles/virtual-machines-windows-sap-high-availability-guide/#42156640c6-01cf-45a9-b225-4baa678b24f1
-[sap-ha-guide-3.1]: /documentation/articles/virtual-machines-windows-sap-high-availability-guide/#f76af273-1993-4d83-b12d-65deeae23686
-[sap-ha-guide-3.2]: /documentation/articles/virtual-machines-windows-sap-high-availability-guide/#3e85fbe0-84b1-4892-87af-d9b65ff91860
-[sap-ha-guide-4]: /documentation/articles/virtual-machines-windows-sap-high-availability-guide/#8ecf3ba0-67c0-4495-9c14-feec1a2255b7
-[sap-ha-guide-4.1]: /documentation/articles/virtual-machines-windows-sap-high-availability-guide/#1a3c5408-b168-46d6-99f5-4219ad1b1ff2
-[sap-ha-guide-5]: /documentation/articles/virtual-machines-windows-sap-high-availability-guide/#fdfee875-6e66-483a-a343-14bbaee33275
-[sap-ha-guide-5.1]: /documentation/articles/virtual-machines-windows-sap-high-availability-guide/#be21cf3e-fb01-402b-9955-54fbecf66592
-[sap-ha-guide-5.2]: /documentation/articles/virtual-machines-windows-sap-high-availability-guide/#ff7a9a06-2bc5-4b20-860a-46cdb44669cd
-[sap-ha-guide-6]: /documentation/articles/virtual-machines-windows-sap-high-availability-guide/#2ddba413-a7f5-4e4e-9a51-87908879c10a
-[sap-ha-guide-6.1]: /documentation/articles/virtual-machines-windows-sap-high-availability-guide/#1a464091-922b-48d7-9d08-7cecf757f341
-[sap-ha-guide-6.2]: /documentation/articles/virtual-machines-windows-sap-high-availability-guide/#44641e18-a94e-431f-95ff-303ab65e0bcb
-[sap-ha-guide-7]: /documentation/articles/virtual-machines-windows-sap-high-availability-guide/#2e3fec50-241e-441b-8708-0b1864f66dfa
-[sap-ha-guide-7.1]: /documentation/articles/virtual-machines-windows-sap-high-availability-guide/#93faa747-907e-440a-b00a-1ae0a89b1c0e
-[sap-ha-guide-7.2]: /documentation/articles/virtual-machines-windows-sap-high-availability-guide/#f559c285-ee68-4eec-add1-f60fe7b978db
-[sap-ha-guide-7.2.1]: /documentation/articles/virtual-machines-windows-sap-high-availability-guide/#b5b1fd0b-1db4-4d49-9162-de07a0132a51
-[sap-ha-guide-7.3]: /documentation/articles/virtual-machines-windows-sap-high-availability-guide/#ddd878a0-9c2f-4b8e-8968-26ce60be1027
-[sap-ha-guide-7.4]: /documentation/articles/virtual-machines-windows-sap-high-availability-guide/#045252ed-0277-4fc8-8f46-c5a29694a816
-[sap-ha-guide-8]: /documentation/articles/virtual-machines-windows-sap-high-availability-guide/#78092dbe-165b-454c-92f5-4972bdbef9bf
-[sap-ha-guide-8.1]: /documentation/articles/virtual-machines-windows-sap-high-availability-guide/#c87a8d3f-b1dc-4d2f-b23c-da4b72977489
-[sap-ha-guide-8.2]: /documentation/articles/virtual-machines-windows-sap-high-availability-guide/#7fe9af0e-3cce-495b-a5ec-dcb4d8e0a310
-[sap-ha-guide-8.3]: /documentation/articles/virtual-machines-windows-sap-high-availability-guide/#47d5300a-a830-41d4-83dd-1a0d1ffdbe6a
-[sap-ha-guide-8.4]: /documentation/articles/virtual-machines-windows-sap-high-availability-guide/#b22d7b3b-4343-40ff-a319-097e13f62f9e
-[sap-ha-guide-8.5]: /documentation/articles/virtual-machines-windows-sap-high-availability-guide/#9fbd43c0-5850-4965-9726-2a921d85d73f
-[sap-ha-guide-8.6]: /documentation/articles/virtual-machines-windows-sap-high-availability-guide/#84c019fe-8c58-4dac-9e54-173efd4b2c30
-[sap-ha-guide-8.7]: /documentation/articles/virtual-machines-windows-sap-high-availability-guide/#7a8f3e9b-0624-4051-9e41-b73fff816a9e
-[sap-ha-guide-8.8]: /documentation/articles/virtual-machines-windows-sap-high-availability-guide/#f19bd997-154d-4583-a46e-7f5a69d0153c
-[sap-ha-guide-8.9]: /documentation/articles/virtual-machines-windows-sap-high-availability-guide/#fe0bd8b5-2b43-45e3-8295-80bee5415716
-[sap-ha-guide-8.10]: /documentation/articles/virtual-machines-windows-sap-high-availability-guide/#e69e9a34-4601-47a3-a41c-d2e11c626c0c
-[sap-ha-guide-8.11]: /documentation/articles/virtual-machines-windows-sap-high-availability-guide/#661035b2-4d0f-4d31-86f8-dc0a50d78158
-[sap-ha-guide-8.12]: /documentation/articles/virtual-machines-windows-sap-high-availability-guide/#0d67f090-7928-43e0-8772-5ccbf8f59aab
-[sap-ha-guide-8.12.1]: /documentation/articles/virtual-machines-windows-sap-high-availability-guide/#5eecb071-c703-4ccc-ba6d-fe9c6ded9d79
-[sap-ha-guide-8.12.2]: /documentation/articles/virtual-machines-windows-sap-high-availability-guide/#e49a4529-50c9-4dcf-bde7-15a0c21d21ca
-[sap-ha-guide-8.12.2.1]: /documentation/articles/virtual-machines-windows-sap-high-availability-guide/#06260b30-d697-4c4d-b1c9-d22c0bd64855
-[sap-ha-guide-8.12.2.2]: /documentation/articles/virtual-machines-windows-sap-high-availability-guide/#4c08c387-78a0-46b1-9d27-b497b08cac3d
-[sap-ha-guide-8.12.3]: /documentation/articles/virtual-machines-windows-sap-high-availability-guide/#5c8e5482-841e-45e1-a89d-a05c0907c868
-[sap-ha-guide-8.12.3.1]: /documentation/articles/virtual-machines-windows-sap-high-availability-guide/#1c2788c3-3648-4e82-9e0d-e058e475e2a3
-[sap-ha-guide-8.12.3.2]: /documentation/articles/virtual-machines-windows-sap-high-availability-guide/#dd41d5a2-8083-415b-9878-839652812102
-[sap-ha-guide-8.12.3.3]: /documentation/articles/virtual-machines-windows-sap-high-availability-guide/#d9c1fc8e-8710-4dff-bec2-1f535db7b006
-[sap-ha-guide-9]: /documentation/articles/virtual-machines-windows-sap-high-availability-guide/#a06f0b49-8a7a-42bf-8b0d-c12026c5746b
-[sap-ha-guide-9.1]: /documentation/articles/virtual-machines-windows-sap-high-availability-guide/#31c6bd4f-51df-4057-9fdf-3fcbc619c170
-[sap-ha-guide-9.1.1]: /documentation/articles/virtual-machines-windows-sap-high-availability-guide/#a97ad604-9094-44fe-a364-f89cb39bf097
-[sap-ha-guide-9.1.2]: /documentation/articles/virtual-machines-windows-sap-high-availability-guide/#eb5af918-b42f-4803-bb50-eff41f84b0b0
-[sap-ha-guide-9.1.3]: /documentation/articles/virtual-machines-windows-sap-high-availability-guide/#e4caaab2-e90f-4f2c-bc84-2cd2e12a9556
-[sap-ha-guide-9.1.4]: /documentation/articles/virtual-machines-windows-sap-high-availability-guide/#10822f4f-32e7-4871-b63a-9b86c76ce761
-[sap-ha-guide-9.1.5]: /documentation/articles/virtual-machines-windows-sap-high-availability-guide/#4498c707-86c0-4cde-9c69-058a7ab8c3ac
-[sap-ha-guide-9.2]: /documentation/articles/virtual-machines-windows-sap-high-availability-guide/#85d78414-b21d-4097-92b6-34d8bcb724b7
-[sap-ha-guide-9.3]: /documentation/articles/virtual-machines-windows-sap-high-availability-guide/#8a276e16-f507-4071-b829-cdc0a4d36748
-[sap-ha-guide-9.4]: /documentation/articles/virtual-machines-windows-sap-high-availability-guide/#094bc895-31d4-4471-91cc-1513b64e406a
-[sap-ha-guide-9.5]: /documentation/articles/virtual-machines-windows-sap-high-availability-guide/#2477e58f-c5a7-4a5d-9ae3-7b91022cafb5
-[sap-ha-guide-9.6]: /documentation/articles/virtual-machines-windows-sap-high-availability-guide/#0ba4a6c1-cc37-4bcf-a8dc-025de4263772
-[sap-ha-guide-10]: /documentation/articles/virtual-machines-windows-sap-high-availability-guide/#18aa2b9d-92d2-4c0e-8ddd-5acaabda99e9
-[sap-ha-guide-10.1]: /documentation/articles/virtual-machines-windows-sap-high-availability-guide/#65fdef0f-9f94-41f9-b314-ea45bbfea445
-[sap-ha-guide-10.2]: /documentation/articles/virtual-machines-windows-sap-high-availability-guide/#5e959fa9-8fcd-49e5-a12c-37f6ba07b916
-[sap-ha-guide-10.3]: /documentation/articles/virtual-machines-windows-sap-high-availability-guide/#755a6b93-0099-4533-9f6d-5c9a613878b5
+[sap-ha-guide-1]:#217c5479-5595-4cd8-870d-15ab00d4f84c
+[sap-ha-guide-2]:#42b8f600-7ba3-4606-b8a5-53c4f026da08
+[sap-ha-guide-3]:#42156640c6-01cf-45a9-b225-4baa678b24f1
+[sap-ha-guide-3.1]:#f76af273-1993-4d83-b12d-65deeae23686
+[sap-ha-guide-3.2]:#3e85fbe0-84b1-4892-87af-d9b65ff91860
+[sap-ha-guide-4]:#8ecf3ba0-67c0-4495-9c14-feec1a2255b7
+[sap-ha-guide-4.1]:#1a3c5408-b168-46d6-99f5-4219ad1b1ff2
+[sap-ha-guide-5]:#fdfee875-6e66-483a-a343-14bbaee33275
+[sap-ha-guide-5.1]:#be21cf3e-fb01-402b-9955-54fbecf66592
+[sap-ha-guide-5.2]:#ff7a9a06-2bc5-4b20-860a-46cdb44669cd
+[sap-ha-guide-6]:#2ddba413-a7f5-4e4e-9a51-87908879c10a
+[sap-ha-guide-6.1]:#1a464091-922b-48d7-9d08-7cecf757f341
+[sap-ha-guide-6.2]:#44641e18-a94e-431f-95ff-303ab65e0bcb
+[sap-ha-guide-7]:#2e3fec50-241e-441b-8708-0b1864f66dfa
+[sap-ha-guide-7.1]:#93faa747-907e-440a-b00a-1ae0a89b1c0e
+[sap-ha-guide-7.2]:#f559c285-ee68-4eec-add1-f60fe7b978db
+[sap-ha-guide-7.2.1]:#b5b1fd0b-1db4-4d49-9162-de07a0132a51
+[sap-ha-guide-7.3]:#ddd878a0-9c2f-4b8e-8968-26ce60be1027
+[sap-ha-guide-7.4]:#045252ed-0277-4fc8-8f46-c5a29694a816
+[sap-ha-guide-8]:#78092dbe-165b-454c-92f5-4972bdbef9bf
+[sap-ha-guide-8.1]:#c87a8d3f-b1dc-4d2f-b23c-da4b72977489
+[sap-ha-guide-8.2]:#7fe9af0e-3cce-495b-a5ec-dcb4d8e0a310
+[sap-ha-guide-8.3]:#47d5300a-a830-41d4-83dd-1a0d1ffdbe6a
+[sap-ha-guide-8.4]:#b22d7b3b-4343-40ff-a319-097e13f62f9e
+[sap-ha-guide-8.5]:#9fbd43c0-5850-4965-9726-2a921d85d73f
+[sap-ha-guide-8.6]:#84c019fe-8c58-4dac-9e54-173efd4b2c30
+[sap-ha-guide-8.7]:#7a8f3e9b-0624-4051-9e41-b73fff816a9e
+[sap-ha-guide-8.8]:#f19bd997-154d-4583-a46e-7f5a69d0153c
+[sap-ha-guide-8.9]:#fe0bd8b5-2b43-45e3-8295-80bee5415716
+[sap-ha-guide-8.10]:#e69e9a34-4601-47a3-a41c-d2e11c626c0c
+[sap-ha-guide-8.11]:#661035b2-4d0f-4d31-86f8-dc0a50d78158
+[sap-ha-guide-8.12]:#0d67f090-7928-43e0-8772-5ccbf8f59aab
+[sap-ha-guide-8.12.1]:#5eecb071-c703-4ccc-ba6d-fe9c6ded9d79
+[sap-ha-guide-8.12.2]:#e49a4529-50c9-4dcf-bde7-15a0c21d21ca
+[sap-ha-guide-8.12.2.1]:#06260b30-d697-4c4d-b1c9-d22c0bd64855
+[sap-ha-guide-8.12.2.2]:#4c08c387-78a0-46b1-9d27-b497b08cac3d
+[sap-ha-guide-8.12.3]:#5c8e5482-841e-45e1-a89d-a05c0907c868
+[sap-ha-guide-8.12.3.1]:#1c2788c3-3648-4e82-9e0d-e058e475e2a3
+[sap-ha-guide-8.12.3.2]:#dd41d5a2-8083-415b-9878-839652812102
+[sap-ha-guide-8.12.3.3]:#d9c1fc8e-8710-4dff-bec2-1f535db7b006
+[sap-ha-guide-9]:#a06f0b49-8a7a-42bf-8b0d-c12026c5746b
+[sap-ha-guide-9.1]:#31c6bd4f-51df-4057-9fdf-3fcbc619c170
+[sap-ha-guide-9.1.1]:#a97ad604-9094-44fe-a364-f89cb39bf097
+[sap-ha-guide-9.1.2]:#eb5af918-b42f-4803-bb50-eff41f84b0b0
+[sap-ha-guide-9.1.3]:#e4caaab2-e90f-4f2c-bc84-2cd2e12a9556
+[sap-ha-guide-9.1.4]:#10822f4f-32e7-4871-b63a-9b86c76ce761
+[sap-ha-guide-9.1.5]:#4498c707-86c0-4cde-9c69-058a7ab8c3ac
+[sap-ha-guide-9.2]:#85d78414-b21d-4097-92b6-34d8bcb724b7
+[sap-ha-guide-9.3]:#8a276e16-f507-4071-b829-cdc0a4d36748
+[sap-ha-guide-9.4]:#094bc895-31d4-4471-91cc-1513b64e406a
+[sap-ha-guide-9.5]:#2477e58f-c5a7-4a5d-9ae3-7b91022cafb5
+[sap-ha-guide-9.6]:#0ba4a6c1-cc37-4bcf-a8dc-025de4263772
+[sap-ha-guide-10]:#18aa2b9d-92d2-4c0e-8ddd-5acaabda99e9
+[sap-ha-guide-10.1]:#65fdef0f-9f94-41f9-b314-ea45bbfea445
+[sap-ha-guide-10.2]:#5e959fa9-8fcd-49e5-a12c-37f6ba07b916
+[sap-ha-guide-10.3]:#755a6b93-0099-4533-9f6d-5c9a613878b5
 
 [sap-ha-multi-sid-guide]: /documentation/articles/virtual-machines-windows-sap-high-availability-multi-sid/ (SAP multi-SID high-availability configuration)
 
@@ -593,7 +594,7 @@ Azure 在 Azure 负载均衡器服务中提供一个内部负载均衡器。 使
 * SAP ASCS/SCS 实例
 * DBMS 服务器
 
-有关在高可用性方案中保护 SAP 组件的详细信息，请参阅 [针对 SAP NetWeaver 的 Azure 虚拟机规划和实施][planning-guide]。
+有关在高可用性方案中保护 SAP 组件的详细信息，请参阅 [针对 SAP NetWeaver 的 Azure 虚拟机规划和实施][planning-guide-11]。
 
 ### <a name="93faa747-907e-440a-b00a-1ae0a89b1c0e"></a> 高可用性 SAP 应用程序服务器
 对于 SAP 应用程序服务器和对话实例，通常不需要使用特定的高可用性解决方案。 可以通过冗余实现高可用性，并在 Azure 虚拟机的不同实例中配置多个对话实例。 至少应该将两个 SAP 应用程序实例安装在 Azure 虚拟机的两个实例中。
