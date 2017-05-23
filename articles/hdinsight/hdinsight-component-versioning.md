@@ -81,9 +81,8 @@ Azure HDInsight 支持多个可随时部署的 Hadoop 群集版本。 每个版�
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | HDI 3.6 |HDP 2.6 |Ubuntu 16 |是 |是 |
 | HDI 3.5 |HDP 2.5 |Ubuntu 16 |是|是 |
-| HDI 3.4 |HDP 2.4 |Ubuntu 14.0.4 LTS |是 |是 |
-| HDI 3.3 |HDP 2.3 |Ubuntu 14.0.4 LTS 或 Windows Server 2012R2 |是 |是 |
-| HDI 3.2 |HDP 2.2 |Ubuntu 12.04 LTS 或 Windows Server 2012R2 |是 |否 |
+| HDI 3.3 |HDP 2.3 |Windows Server 2012R2 |是 |是 |
+| HDI 3.2 |HDP 2.2 |Windows Server 2012R2 |是 |否 |
 | HDI 3.1 |HDP 2.1 |Windows Server 2012R2 |是 |否 |
 | HDI 3.0 |HDP 2.0 |Windows Server 2012R2 |是 |否 |
 | HDI 2.1 |HDP 1.3 |Windows Server 2012R2 |是 |否 |
