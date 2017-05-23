@@ -16,7 +16,7 @@
     ms.workload="na"
     ms.date="01/18/2017"
     ms.author="sethm;shvija"
-    wacn.date="03/20/2017"/>  
+    wacn.date="05/22/2017"/>  
 
 # 使用 Azure Resource Manager 模板为命名空间和队列创建服务总线授权规则
 
@@ -151,7 +151,7 @@
 
 现在，你已使用 Azure Resource Manager 创建并部署了资源，请通过查看以下文章了解如何管理这些资源：
 
-- [使用 PowerShell 管理服务总线](https://docs.microsoft.com/en-us/powershell/resourcemanager/azurerm.servicebus/v0.0.2/azurerm.servicebus/)
+- [使用 PowerShell 管理服务总线](/documentation/articles/service-bus-manage-with-ps/)
 - [使用服务总线资源管理器管理服务总线资源](https://code.msdn.microsoft.com/Service-Bus-Explorer-f2abca5a)
 - [服务总线身份验证和授权](/documentation/articles/service-bus-authentication-and-authorization/)
 

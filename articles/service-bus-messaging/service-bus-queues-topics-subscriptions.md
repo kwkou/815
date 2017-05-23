@@ -1,27 +1,28 @@
 <properties
-    pageTitle="服务总线消息传送队列、主题和订阅概述 | Azure"
+    pageTitle="Azure 服务总线消息传送队列、主题和订阅概述 | Azure"
     description="服务总线消息传送实体概述。"
     services="service-bus"
     documentationCenter="na"
-    authors="sethmanheim"
+    author="sethmanheim"
     manager="timlt"
-    editor=""
-    translationtype="Human Translation" />
+    editor="" />
 <tags
+    ms.assetid="a306ced4-74e9-47c6-990a-d9c47efa31d5"
     ms.service="service-bus"
     ms.devlang="na"
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="na"
-    ms.date="12/20/2016"
-    wacn.date="04/17/2017"
+    ms.date="03/23/2017"
+    wacn.date="05/22/2017"
     ms.author="sethm"
-    ms.sourcegitcommit="7cc8d7b9c616d399509cd9dbdd155b0e9a7987a8"
-    ms.openlocfilehash="fe7c512f76e7866eb9afae5b646541892d210ee5"
-    ms.lasthandoff="04/07/2017" />
+    ms.translationtype="Human Translation"
+    ms.sourcegitcommit="8fd60f0e1095add1bff99de28a0b65a8662ce661"
+    ms.openlocfilehash="eb79ca0f6de9a1861f241c112ba5adb8fb206334"
+    ms.lasthandoff="05/12/2017" />
 
 # <a name="service-bus-queues-topics-and-subscriptions"></a>服务总线队列、主题和订阅
-Azure 服务总线支持一组基于云的、面向消息的中间件技术，包括可靠的消息队列和持久的发布/订阅消息。这些中转消息传送功能可被视为分离式消息传送功能，支持使用服务总线消息传送结构的发布-订阅、临时分离和负载均衡方案。分离式通信具有很多优点；例如，客户端和服务器可以根据需要进行连接并以异步方式执行其操作。
+Azure 服务总线支持一组基于云的、面向消息的中间件技术，包括可靠的消息队列和持久发布/订阅消息。 这些中转消息传送功能可被视为分离式消息传送功能，支持使用服务总线消息传送结构的发布-订阅、临时分离和负载均衡方案。 分离式通信具有很多优点；例如，客户端和服务器可以根据需要进行连接并以异步方式执行其操作。
 
 构成服务总线消息传送功能核心的消息传送实体包括队列、主题/订阅、规则/操作。
 
@@ -32,7 +33,7 @@ Azure 服务总线支持一组基于云的、面向消息的中间件技术，�
 
 使用队列在消息创建方与使用方之间中继可在各组件之间提供固有的松散耦合。由于创建方和使用方互不相识，因此，可升级使用方，而不会对创建方产生任何影响。
 
-创建队列是一个多步骤过程。 可通过 [Microsoft.ServiceBus.NamespaceManager](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.namespacemanager.aspx) 类执行服务总线消息传送实例（队列和主题）的管理操作，该类可通过提供服务总线命名空间的基址和用户凭据进行构建。[NamespaceManager](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.namespacemanager.aspx) 提供了创建、枚举和删除消息传送实体的方法。在使用 SAS 名称和密钥创建 [Microsoft.ServiceBus.TokenProvider](https://docs.microsoft.com/en-us/dotnet/api/microsoft.servicebus.tokenprovider?redirectedfrom=MSDN&view=azureservicebus-4.0.0#microsoft_servicebus_tokenprovider) 对象以及一个服务命名空间管理对象之后，可使用 [Microsoft.ServiceBus.NamespaceManager.CreateQueue](https://docs.microsoft.com/zh-cn/dotnet/api/microsoft.servicebus.namespacemanager?redirectedfrom=MSDN&view=azureservicebus-4.0.0#Microsoft_ServiceBus_NamespaceManager_CreateQueue_Microsoft_ServiceBus_Messaging_QueueDescription_) 方法来创建队列。例如：
+创建队列是一个多步骤过程。 可通过 [Microsoft.ServiceBus.NamespaceManager](https://docs.microsoft.com/dotnet/api/microsoft.servicebus.namespacemanager#microsoft_servicebus_namespacemanager) 类执行服务总线消息传送实例（队列和主题）的管理操作，该类可通过提供服务总线命名空间的基址和用户凭据进行构建。 [NamespaceManager](/dotnet/api/microsoft.servicebus.namespacemanager#microsoft_servicebus_namespacemanager) 提供了创建、枚举和删除消息传送实体的方法。 在使用 SAS 名称和密钥创建 [Microsoft.ServiceBus.TokenProvider](/dotnet/api/microsoft.servicebus.tokenprovider#microsoft_servicebus_tokenprovider) 对象以及一个服务命名空间管理对象之后，可使用 [Microsoft.ServiceBus.NamespaceManager.CreateQueue](/dotnet/api/microsoft.servicebus.namespacemanager#Microsoft_ServiceBus_NamespaceManager_CreateQueue_System_String_) 方法来创建队列。 例如：
 
     // Create management credentials
     TokenProvider credentials = TokenProvider. CreateSharedAccessSignatureTokenProvider(sasKeyName,sasKeyValue);
@@ -74,14 +75,12 @@ Azure 服务总线支持一组基于云的、面向消息的中间件技术，�
 
 请注意，如果应用程序在处理消息之后，但在发出 **Complete** 请求之前发生崩溃，则在应用程序重新启动时会将该消息重新传送给它。 此情况通常称作 *至少处理一次* ，即每条消息将至少被处理一次。 但是，在某些情况下，同一消息可能会被重新传送。 如果某个场景不允许重复处理，则应用程序中需要用于检测重复的其他逻辑，此要求可基于消息的 **MessageId** 属性来实现，该属性在多次传送尝试中保持不变。 这称为 *仅一次* 处理。
 
-有关如何创建和将消息发送至队列以及从队列发送消息的详细信息和操作示例说明，请参阅[服务总线中转消息传送 .NET 教程](/documentation/articles/service-bus-dotnet-get-started-with-queues/)。
-
 ## <a name="topics-and-subscriptions"></a>主题和订阅
 与每条消息都由单个使用方处理的队列相比，主题和订阅通过发布/订阅模式提供“一对多”通信方式。 这对于扩展到大量接收方而言十分有用，每个发布的消息对向该主题注册的每个订阅均可用。 系统会将消息发送到主题并传递到一个或多个相关联的订阅，具体取决于每个订阅上可以设置的筛选规则。 此订阅可以使用其他筛选器来限制其想要接收的消息。 可以采用与发送至队列的相同方式将消息发送至主题，但不可直接从主题接收消息。 而是从订阅接收消息。 主题订阅类似于接收发送至该主题的消息副本的虚拟队列。 从订阅接收消息的方式与从队列接收相同。
 
 通过比较，队列的消息发送功能直接映射到主题，而其消息接收功能映射到订阅。 此外，这意味着订阅支持本部分前面所述的关于队列的相同模式：竞争使用方、临时分离、负载分级和负载均衡。
 
-创建主题类似于创建队列，如上一部分中的示例所示。 创建服务 URI，然后使用 [NamespaceManager](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.namespacemanager.aspx) 类创建命名空间客户端。 然后，你可以使用 [CreateTopic](https://msdn.microsoft.com/zh-cn/library/azure/hh293080.aspx) 方法创建主题。 例如：
+创建主题类似于创建队列，如上一部分中的示例所示。 创建服务 URI，然后使用 [NamespaceManager](https://docs.microsoft.com/dotnet/api/microsoft.servicebus.namespacemanager) 类创建命名空间客户端。 然后，你可以使用 [CreateTopic](https://docs.microsoft.com/dotnet/api/microsoft.servicebus.namespacemanager#Microsoft_ServiceBus_NamespaceManager_CreateTopic_System_String_) 方法创建主题。 例如：
 
     TopicDescription dataCollectionTopic = namespaceClient.CreateTopic("DataCollectionTopic");
 
@@ -137,7 +136,7 @@ Azure 服务总线支持一组基于云的、面向消息的中间件技术，�
 
 使用此订阅筛选器，仅 `StoreName` 属性设置为 `Store1` 的消息将被复制到 `Dashboard` 订阅的虚拟队列。
 
-有关可能的筛选器值的详细信息，请参阅文档 [SqlFilter](https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.sqlfilter.aspx) 和 [SqlRuleAction](https://docs.microsoft.com/zh-cn/dotnet/api/microsoft.servicebus.messaging.sqlruleaction?redirectedfrom=MSDN&view=azureservicebus-4.0.0#microsoft_servicebus_messaging_sqlruleaction) 类。另请参阅[中转消息传送：高级筛选器](http://code.msdn.microsoft.com/Brokered-Messaging-6b0d2749)和[主题筛选器](https://github.com/Azure-Samples/azure-servicebus-messaging-samples/tree/master/TopicFilters)示例。
+有关可能的筛选器值的详细信息，请参阅文档 [SqlFilter](https://docs.microsoft.com/dotnet/api/microsoft.servicebus.messaging.sqlfilter) 和 [SqlRuleAction](https://docs.microsoft.com/dotnet/api/microsoft.servicebus.messaging.sqlruleaction) 类。 另请参阅[中转消息传送：高级筛选器](http://code.msdn.microsoft.com/Brokered-Messaging-6b0d2749)和[主题筛选器](https://github.com/Azure-Samples/azure-servicebus-messaging-samples/tree/master/TopicFilters)示例。
 
 ## <a name="next-steps"></a>后续步骤
 有关使用服务总线消息传送的详细信息和示例，请参阅以下高级主题。

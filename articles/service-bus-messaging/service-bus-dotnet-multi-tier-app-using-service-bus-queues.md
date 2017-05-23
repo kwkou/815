@@ -3,25 +3,24 @@
     description="本 .NET 教程可帮助你在 Azure 中开发使用服务总线队列在各层之间进行通信的多层应用。"
     services="service-bus"
     documentationCenter=".net"
-    authors="sethmanheim"
+    author="sethmanheim"
     manager="timlt"
-    editor=""
-    translationtype="Human Translation" />
+    editor="" />
 <tags
     ms.service="service-bus"
     ms.workload="tbd"
     ms.tgt_pltfrm="na"
     ms.devlang="dotnet"
     ms.topic="get-started-article"
-    ms.date="01/10/2017"
+    ms.date="04/11/2017"
     ms.author="sethm"
-    wacn.date="04/17/2017"
-    ms.sourcegitcommit="7cc8d7b9c616d399509cd9dbdd155b0e9a7987a8"
-    ms.openlocfilehash="aaf12e16d8a83db3209826fd451bc98b05b8f48c"
-    ms.lasthandoff="04/07/2017" />
+    wacn.date="05/22/2017"
+    ms.translationtype="Human Translation"
+    ms.sourcegitcommit="8fd60f0e1095add1bff99de28a0b65a8662ce661"
+    ms.openlocfilehash="6a13641a69689b29315cd45eaf322108de189afe"
+    ms.lasthandoff="05/12/2017" />
 
 # <a name="net-multi-tier-application-using-azure-service-bus-queues"></a>使用 Azure 服务总线队列创建 .NET 多层应用程序
-
 ## <a name="introduction"></a>介绍
 
 使用 Visual Studio 和免费的 Azure SDK for .NET，可以轻松针对 Azure 进行开发。 本教程将指导你完成创建使用在本地环境中运行的多个 Azure 资源的应用程序的步骤。 这些步骤假设你之前未使用过 Azure。
@@ -35,17 +34,16 @@
 
 [AZURE.INCLUDE [create-account-note](../../includes/create-account-note.md)]
 
-在本教程中，你将生成多层应用程序并在 Azure 云服务中运行它。前端是 ASP.NET MVC Web 角色，后端是使用服务总线队列的辅助角色。可创建与前端相同的多层应用程序，作为将部署到 Azure 网站而不是云服务的 Web 项目。有关如何以不同方式处理 Azure 网站前端的说明，请参阅[后续步骤](#next-steps)部分。还可以试用 [.NET 本地/云混合应用程序](/documentation/articles/service-bus-dotnet-hybrid-app-using-service-bus-relay/)教程。
+在本教程中，你将生成多层应用程序并在 Azure 云服务中运行它。 前端是 ASP.NET MVC Web 角色，后端是使用服务总线队列的辅助角色。 可创建与前端相同的多层应用程序，作为将部署到 Azure 网站而不是云服务的 Web 项目。 还可以试用 [.NET 本地/云混合应用程序](/documentation/articles/service-bus-dotnet-hybrid-app-using-service-bus-relay/)教程。
 
 以下屏幕截图显示了已完成的应用程序。
 
 ![][0]
 
 ## <a name="scenario-overview-inter-role-communication"></a>方案概述：角色间通信
+若要提交处理命令，以 Web 角色运行的前端 UI 组件必须与以辅助角色运行的中间层逻辑进行交互。 此示例使用服务总线消息传送在各层之间进行通信。
 
-若要提交处理命令，以 Web 角色运行的前端 UI 组件必须与以辅助角色运行的中间层逻辑进行交互。 此示例使用服务总线中转消息传送在各层之间进行通信。
-
-在 Web 层和中间层之间使用中转消息传送将分离这两个组件。 与直接消息传送（即 TCP 或 HTTP）不同，Web 层不会直接连接到中间层，而是将工作单元作为消息推送到服务总线，服务总线将以可靠方式保留这些工作单元，直到中间层准备好使用和处理它们。
+在 Web 层和中间层之间使用服务总线消息传送将分离这两个组件。 与直接消息传送（即 TCP 或 HTTP）不同，Web 层不会直接连接到中间层，而是将工作单元作为消息推送到服务总线，服务总线将以可靠方式保留这些工作单元，直到中间层准备好使用和处理它们。
 
 服务总线提供了两个实体以支持中转消息传送：队列和主题。 通过队列，发送到队列的每个消息均由一个接收方使用。 主题支持发布/订阅模式，在该模式下，会为注册到主题中的订阅提供每个已发布消息。 每个订阅都会以逻辑方式保留其自己的消息队列。 此外，还可以使用筛选规则配置订阅，这些规则可将传递给订阅队列的消息集限制为符合筛选条件的消息集。 以下示例使用服务总线队列。
 
@@ -68,59 +66,48 @@
 在开始开发 Azure 应用程序之前，需要获取工具并设置开发环境。
 
 1. 从 SDK [下载页](https://azure.microsoft.com/downloads/)安装用于 .NET 的 Azure SDK。
-2. 在“.NET”列中，单击要使用的 [Visual Studio](http://www.visualstudio.com) 版本。 本教程中的步骤使用 Visual Studio 2015。
+2. 在“.NET”列中，单击要使用的 [Visual Studio](http://www.visualstudio.com) 版本。 本教程中的步骤适用于 Visual Studio 2015，但也适用于 Visual Studio 2017。
 3. 当提示你是要运行还是保存安装程序时，单击“运行” 。
 4. 在“Web 平台安装程序”中，单击“安装”，然后继续安装。
 5. 安装完成后，你就有了开始开发应用所需的一切。 SDK 包含了一些工具，可利用这些工具在 Visual Studio 中轻松开发 Azure 应用程序。
 
 ## <a name="create-a-namespace"></a>创建命名空间
-
 下一步是创建服务命名空间并获取共享访问签名 (SAS) 密钥。 命名空间为每个通过服务总线公开的应用程序提供应用程序边界。 创建命名空间后，系统将生成一个 SAS 密钥。 命名空间与 SAS 密钥的组合为服务总线提供了用于验证应用程序访问权限的凭据。
 
 [AZURE.INCLUDE [service-bus-create-namespace-portal](../../includes/service-bus-create-namespace-portal.md)]
 
 ## <a name="create-a-web-role"></a>创建 Web 角色
-
 在本部分中，你将生成应用程序的前端。 首先，你将创建应用程序显示的各种页面。
 之后，你将添加代码，以便将项目提交到服务总线队列并显示有关队列的状态信息。
 
 ### <a name="create-the-project"></a>创建项目
-
-1.  使用管理员特权启动 Microsoft Visual Studio。 若要使用管理员特权启动 Visual Studio，请右键单击“Visual Studio”程序图标，然后单击“以管理员身份运行”。 Azure 计算模拟器（本文后面会讨论）要求使用管理员权限启动 Visual Studio。
-
-    在 Visual Studio 的“文件”菜单中，单击“新建”，然后单击“项目”。
-
-2.  从“Visual C#”下的“已安装模板”中，单击“云”，然后单击“Azure 云服务”。 **MultiTierApp**。 。
-
-    ![][9]
-
-3.  在“.NET Framework 4.5”角色中，双击“ASP.NET Web 角色”。
-
-    ![][10]
-
-4.  将鼠标指针停留在“Azure 云服务解决方案”下的“WebRole1”上，单击铅笔图标，并将 Web 角色重命名为“FrontendWebRole”。 。 （请确保你输入“Frontend”而不是“FrontEnd”，此处为小写“e”。）
-
-    ![][11]
-
-5.  从“新建 ASP.NET 项目”对话框的“选择模板”列表中，单击“MVC”。
-
-    ![][12]
-
+1. 使用管理员特权启动 Visual Studio：右键单击“Visual Studio”程序图标，然后单击“以管理员身份运行”。 Azure 计算模拟器（本文后面会讨论）要求使用管理员权限启动 Visual Studio。
+   
+   在 Visual Studio 的“文件”菜单中，单击“新建”，然后单击“项目”。
+2. 从“Visual C#”下的“已安装模板”中，单击“云”，然后单击“Azure 云服务”。 **MultiTierApp**。 。
+   
+   ![][9]
+3. 在“.NET Framework 4.5”角色中，双击“ASP.NET Web 角色”。
+   
+   ![][10]
+4. 将鼠标指针停留在“Azure 云服务解决方案”下的“WebRole1”上，单击铅笔图标，并将 Web 角色重命名为“FrontendWebRole”。 。 （请确保你输入“Frontend”而不是“FrontEnd”，此处为小写“e”。）
+   
+   ![][11]
+5. 从“新建 ASP.NET 项目”对话框的“选择模板”列表中，单击“MVC”。
+   
+   ![][12]
 6. 仍然在“新建 ASP.NET 项目”对话框中，单击“更改身份验证”按钮。 在“更改身份验证”对话框中，单击“无身份验证”，然后单击“确定”。 在本教程中，你将部署无需用户登录名的应用。
 
     ![][16]
 
 7. 返回到“新建 ASP.NET 项目”对话框，单击“确定”以创建项目。
-
-6.  在“解决方案资源管理器”的“FrontendWebRole”项目中，右键单击“引用”，然后单击“管理 NuGet 包”。
-
-7.  单击“浏览”选项卡，然后搜索 `Microsoft Azure Service Bus`。 单击“安装” 并接受使用条款。
-
-    ![][13]
-
-    请注意，现已引用所需的客户端程序集并已添加部分新代码文件。
-
-9.  在“解决方案资源管理器”中，右键单击“模型”，然后依次单击“添加”和“类”。 在“名称”框中，键入名称“OnlineOrder.cs”。 。
+8. 在“解决方案资源管理器”的“FrontendWebRole”项目中，右键单击“引用”，然后单击“管理 NuGet 包”。
+9. 单击“浏览”选项卡，然后搜索 `Microsoft Azure Service Bus`。 选择 **WindowsAzure.ServiceBus** 包，单击“安装”，并接受使用条款。
+   
+   ![][13]
+   
+   请注意，现已引用所需的客户端程序集并已添加部分新代码文件。
+10. 在“解决方案资源管理器”中，右键单击“模型”，然后依次单击“添加”和“类”。 在“名称”框中，键入名称“OnlineOrder.cs”。 。
 
 ### <a name="write-the-code-for-your-web-role"></a>为你的 Web 角色编写代码
 
@@ -194,7 +181,7 @@
             }
         }
 
-4. 在“生成”菜单中，单击“生成解决方案”以测试工作的准确性。
+4. 在“生成”菜单中，单击“生成解决方案”以测试目前为止工作的准确性。
 5. 现在，为前面创建的 `Submit()` 方法创建视图。 在 `Submit()` 方法（不带任何参数的 `Submit()` 的重载函数）中右键单击，然后选择“添加视图”。
    
     ![][14]
@@ -395,7 +382,7 @@
 
 若要了解有关服务总线的详细信息，请参阅以下资源：
 
-* [Azure 服务总线][sbmsdn]  
+* [Azure 服务总线文档][sbdocs]  
 * [服务总线服务页][sbacom]  
 * [如何使用 Service Bus 队列][sbacomqhowto]  
 
@@ -424,7 +411,7 @@
   [26]: ./media/service-bus-dotnet-multi-tier-app-using-service-bus-queues/SBNewWorkerRole.png
   [28]: ./media/service-bus-dotnet-multi-tier-app-using-service-bus-queues/getting-started-multi-tier-40.png
 
-  [sbmsdn]: http://msdn.microsoft.com/zh-cn/library/azure/ee732537.aspx  
+  [sbdocs]: /documentation/services/service-bus/  
   [sbacom]: /documentation/services/service-bus/  
   [sbacomqhowto]: /documentation/articles/service-bus-dotnet-get-started-with-queues/  
   [mutitierstorage]: https://code.msdn.microsoft.com/Windows-Azure-Multi-Tier-eadceb36

@@ -12,9 +12,9 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="na"
-    ms.date="01/10/2017"
+    ms.date="04/12/2017"
     ms.author="sethm"  
-    wacn.date="02/20/2017" />
+    wacn.date="05/22/2017" />
 
 # 创建使用服务总线主题和订阅的应用程序
 

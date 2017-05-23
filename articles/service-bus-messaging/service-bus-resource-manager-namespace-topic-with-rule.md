@@ -11,7 +11,7 @@
 <tags
 	ms.date="01/18/2017"
 	ms.service = "service-bus"
-	wacn.date="03/20/2017"/>  
+	wacn.date="05/22/2017"/>  
 
 	
 
@@ -150,7 +150,7 @@
 现在，你已使用 Azure Resource Manager 创建并部署了资源，请通过查看以下文章了解如何管理这些资源：
 
 * [使用 Azure 自动化管理 Azure Service Bus](/documentation/articles/service-bus-management-libraries/)
-* [使用 PowerShell 管理服务总线](https://docs.microsoft.com/en-us/powershell/resourcemanager/azurerm.servicebus/v0.0.2/azurerm.servicebus/)
+* [使用 PowerShell 管理服务总线](/documentation/articles/service-bus-manage-with-ps/)
 * [使用服务总线资源管理器管理服务总线资源](https://github.com/paolosalvatori/ServiceBusExplorer/releases)
 
 [Authoring Azure Resource Manager templates]: /documentation/articles/resource-group-authoring-templates/
