@@ -54,7 +54,7 @@
 
 4. 单击“服务器”，为新数据库创建并配置新服务器。 填写“新建服务器”窗体，指定全局唯一的服务器名称，提供服务器管理员登录名，然后指定所选的密码。 
 
-    ![创建数据库 - 服务器](./media//sql-database-design-first-database/create-database-server.png)
+    ![创建数据库 - 服务器](./media/sql-database-design-first-database/create-database-server.png)
 5. 单击“选择”。
 
 6. 单击“定价层”为新数据库指定服务层和性能级别。 对于本教程，请选择 **20 DTU** 和 **250** GB 存储。
@@ -109,24 +109,24 @@ Azure SQL 数据库受防火墙保护。 默认情况下，将拒绝与服务器
 1. 打开 SQL Server Management Studio。
 
 2. 在“连接到服务器”对话框中，输入以下信息：
-   - **服务器类型**：指定数据库引擎
-   - **服务器名称**：输入完全限定的服务器名称，例如 **mynewserver20170313.database.chinacloudapi.cn**
-   - **身份验证**：指定 SQL Server 身份验证
-   - **登录名**：输入服务器管理员帐户
-   - **密码**：输入服务器管理员帐户的密码
+    - **服务器类型**：指定数据库引擎
+    - **服务器名称**：输入完全限定的服务器名称，例如 **mynewserver20170313.database.chinacloudapi.cn**
+    - **身份验证**：指定 SQL Server 身份验证
+    - **登录名**：输入服务器管理员帐户
+    - **密码**：输入服务器管理员帐户的密码
 
 
-   <img src="./media/sql-database-connect-query-ssms/connect.png" alt="connect to server" style="width: 780px;" />
+    <img src="./media/sql-database-connect-query-ssms/connect.png" alt="connect to server" style="width: 780px;" />
 
 3. 单击“连接到服务器”对话框中的“选项”。 在“连接到数据库”部分输入 **mySampleDatabase**，以连接到此数据库。
 
-   ![连接到服务器上的 DB](./media/sql-database-connect-query-ssms/options-connect-to-db.png)  
+    ![连接到服务器上的 DB](./media/sql-database-connect-query-ssms/options-connect-to-db.png)  
 
 4. 单击“连接”。 此时会在 SSMS 中打开“对象资源管理器”窗口。 
 
 5. 在对象资源管理器中展开“数据库”，然后展开 **mySampleDatabase**，查看示例数据库中的对象。
 
-   ![数据库对象](./media/sql-database-connect-query-ssms/connected.png)  
+    ![数据库对象](./media/sql-database-connect-query-ssms/connected.png)  
 
 ## <a name="step-6---create-tables-in-the-database"></a>步骤 6 - 在数据库中创建表 
 
@@ -148,7 +148,7 @@ Azure SQL 数据库受防火墙保护。 默认情况下，将拒绝与服务器
 
 2. 在查询窗口中执行以下查询，在数据库中创建 4 个表： 
 
-       -- Create Person table
+        -- Create Person table
 
         CREATE TABLE Person
         (
@@ -159,7 +159,7 @@ Azure SQL 数据库受防火墙保护。 默认情况下，将拒绝与服务器
           DateOfBirth   DATE NOT NULL
         )
    
-       -- Create Student table
+        -- Create Student table
  
         CREATE TABLE Student
         (
@@ -168,7 +168,7 @@ Azure SQL 数据库受防火墙保护。 默认情况下，将拒绝与服务器
           Email     NVARCHAR(256)
         )
     
-       -- Create Course table
+        -- Create Course table
  
         CREATE TABLE Course
         (
@@ -177,7 +177,7 @@ Azure SQL 数据库受防火墙保护。 默认情况下，将拒绝与服务器
           Teacher   NVARCHAR(256) NOT NULL
         ) 
 
-       -- Create Credit table
+        -- Create Credit table
  
         CREATE TABLE Credit
         (
@@ -191,11 +191,11 @@ Azure SQL 数据库受防火墙保护。 默认情况下，将拒绝与服务器
           )
         )
 
-![创建表](./media/sql-database-design-first-database/create-tables.png)
+    ![创建表](./media/sql-database-design-first-database/create-tables.png)
 
 3. 展开 SQL Server Management Studio 对象资源管理器中的“表”节点，查看所创建的表。
 
-   ![创建的 ssms 表](./media/sql-database-design-first-database/ssms-tables-created.png)
+    ![创建的 ssms 表](./media/sql-database-design-first-database/ssms-tables-created.png)
 
 ## <a name="step-7---load-data-into-the-tables"></a>步骤 7：将数据加载到表
 
@@ -212,10 +212,10 @@ Azure SQL 数据库受防火墙保护。 默认情况下，将拒绝与服务器
 
 4. 执行以下命令，将示例数据插入表，使用环境值替换 **ServerName**、**DatabaseName**、**UserName** 和 **Password** 的值。
 
-       bcp Course in SampleCourseData -S <ServerName>.database.chinacloudapi.cn -d <DatabaseName> -U <Username> -P <password> -q -c -t ","
-       bcp Person in SamplePersonData -S <ServerName>.database.chinacloudapi.cn -d <DatabaseName> -U <Username> -P <password> -q -c -t ","
-       bcp Student in SampleStudentData -S <ServerName>.database.chinacloudapi.cn -d <DatabaseName> -U <Username> -P <password> -q -c -t ","
-       bcp Credit in SampleCreditData -S <ServerName>.database.chinacloudapi.cn -d <DatabaseName> -U <Username> -P <password> -q -c -t ","
+        bcp Course in SampleCourseData -S <ServerName>.database.chinacloudapi.cn -d <DatabaseName> -U <Username> -P <password> -q -c -t ","
+        bcp Person in SamplePersonData -S <ServerName>.database.chinacloudapi.cn -d <DatabaseName> -U <Username> -P <password> -q -c -t ","
+        bcp Student in SampleStudentData -S <ServerName>.database.chinacloudapi.cn -d <DatabaseName> -U <Username> -P <password> -q -c -t ","
+        bcp Credit in SampleCreditData -S <ServerName>.database.chinacloudapi.cn -d <DatabaseName> -U <Username> -P <password> -q -c -t ","
 
 现已将示例数据加载到了之前创建的表中。
 
@@ -225,7 +225,7 @@ Azure SQL 数据库受防火墙保护。 默认情况下，将拒绝与服务器
 
 1. 在 SQL Server Management Studio 查询窗口中，执行以下查询：
 
-       -- Find the students taught by Dominick Pope who have a grade higher than 75%
+        -- Find the students taught by Dominick Pope who have a grade higher than 75%
 
         SELECT  person.FirstName,
             person.LastName,
@@ -240,7 +240,7 @@ Azure SQL 数据库受防火墙保护。 默认情况下，将拒绝与服务器
 
 2. 在 SQL Server Management Studio 查询窗口中，执行以下查询：
 
-       -- Find all the courses in which Noe Coleman has ever enrolled
+        -- Find all the courses in which Noe Coleman has ever enrolled
 
         SELECT  course.Name,
             course.Teacher,
@@ -258,7 +258,7 @@ Azure SQL 数据库受防火墙保护。 默认情况下，将拒绝与服务器
 
 1. 在数据库的“SQL 数据库”页上，单击工具栏上的“还原”。 此时会打开“还原”页。
 
-   ![还原](./media/sql-database-design-first-database/restore.png)
+    ![还原](./media/sql-database-design-first-database/restore.png)
 
 2. 使用必需信息填充“还原”窗体：
     * 数据库名称：提供数据库名称 
@@ -268,7 +268,7 @@ Azure SQL 数据库受防火墙保护。 默认情况下，将拒绝与服务器
     * 弹性数据库池：选择“无”  
     * 定价层：选择“20 DTU”和“250 GB”存储。
 
-   ![还原点](./media/sql-database-design-first-database/restore-point.png)
+    ![还原点](./media/sql-database-design-first-database/restore-point.png)
 
 3. 单击“确定”，将数据库[还原到添加这些表之前的时间点](/documentation/articles/sql-database-recovery-using-backups/#point-in-time-restore)。 将数据库还原到不同的时间点时，会在指定时间点（前提是在[服务层](/documentation/articles/sql-database-service-tiers/)保留时间段内）原始数据库所在的服务器中创建一个备份数据库。
 

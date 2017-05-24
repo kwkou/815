@@ -91,56 +91,56 @@ Visual Studio 2017 Community 是全功能、可扩展的免费 IDE，用于创�
 
 3. 使用 [SqlCommand.ExecuteReader](https://msdn.microsoft.com/zh-cn/library/system.data.sqlclient.sqlcommand.executereader.aspx) 和 [SELECT](https://msdn.microsoft.com/zh-cn/library/ms189499.aspx) Transact-SQL 语句查询 Azure SQL 数据库中的数据。 为服务器添加相应的值
 
-    using System;
-    using System.Data;
-    using System.Data.SqlClient;
-
-    namespace ConsoleApplication1
-    {
-        class Program
+        using System;
+        using System.Data;
+        using System.Data.SqlClient;
+    
+        namespace ConsoleApplication1
         {
-            static void Main(string[] args)
+            class Program
             {
-                try 
-                { 
-                    SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
-                    builder.DataSource = "your_server.database.chinacloudapi.cn"; 
-                    builder.UserID = "your_user";            
-                    builder.Password = "your_password";     
-                    builder.InitialCatalog = "your_database";
-
-                    using (SqlConnection connection = new SqlConnection(builder.ConnectionString))
-                    {
-                        Console.WriteLine("\nQuery data example:");
-                        Console.WriteLine("=========================================\n");
-                    
-                        connection.Open();       
-                        StringBuilder sb = new StringBuilder();
-                        sb.Append("SELECT TOP 20 pc.Name as CategoryName, p.name as ProductName ");
-                        sb.Append("FROM [SalesLT].[ProductCategory] pc ");
-                        sb.Append("JOIN [SalesLT].[Product] p ");
-                        sb.Append("ON pc.productcategoryid = p.productcategoryid;");
-                        String sql = sb.ToString();
-
-                        using (SqlCommand command = new SqlCommand(sql, connection))
-                        {
-                            using (SqlDataReader reader = command.ExecuteReader())
-                            {
-                                while (reader.Read())
-                                {
-                                    Console.WriteLine("{0} {1}", reader.GetString(0), reader.GetString(1));
-                                }
-                            }
-                        }                    
-                    }
-                }
-                catch (SqlException e)
+                static void Main(string[] args)
                 {
-                    Console.WriteLine(e.ToString());
+                    try 
+                    { 
+                        SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
+                        builder.DataSource = "your_server.database.chinacloudapi.cn"; 
+                        builder.UserID = "your_user";            
+                        builder.Password = "your_password";     
+                        builder.InitialCatalog = "your_database";
+    
+                        using (SqlConnection connection = new SqlConnection(builder.ConnectionString))
+                        {
+                            Console.WriteLine("\nQuery data example:");
+                            Console.WriteLine("=========================================\n");
+                        
+                            connection.Open();       
+                            StringBuilder sb = new StringBuilder();
+                            sb.Append("SELECT TOP 20 pc.Name as CategoryName, p.name as ProductName ");
+                            sb.Append("FROM [SalesLT].[ProductCategory] pc ");
+                            sb.Append("JOIN [SalesLT].[Product] p ");
+                            sb.Append("ON pc.productcategoryid = p.productcategoryid;");
+                            String sql = sb.ToString();
+    
+                            using (SqlCommand command = new SqlCommand(sql, connection))
+                            {
+                                using (SqlDataReader reader = command.ExecuteReader())
+                                {
+                                    while (reader.Read())
+                                    {
+                                        Console.WriteLine("{0} {1}", reader.GetString(0), reader.GetString(1));
+                                    }
+                                }
+                            }                    
+                        }
+                    }
+                    catch (SqlException e)
+                    {
+                        Console.WriteLine(e.ToString());
+                    }
                 }
             }
         }
-    }
 
 ## <a name="insert-data"></a>插入数据
 

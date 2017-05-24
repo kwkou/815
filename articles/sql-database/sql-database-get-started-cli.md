@@ -36,7 +36,14 @@ Azure CLI 用于从命令行或脚本创建和管理 Azure 资源。 本指南�
 
 使用 [az login](https://docs.microsoft.com/zh-cn/cli/azure/#login) 命令登录到 Azure 订阅，并按照屏幕上的说明进行操作。
 
-    az login -e azurechinacloud
+    az login
+
+>[AZURE.NOTE]
+>在运行 `az login` 前，请先打开 Azure CLI 2.0 配置文件，路径为 C:\\Users\\<\%USERPROFILE\%\>\\.azure\\config, 确保 cloud name 的值为 AzureChinaCloud
+><p>```
+>[cloud]
+>name = AzureChinaCloud
+>```</p>
 
 ## <a name="create-a-resource-group"></a>创建资源组
 
