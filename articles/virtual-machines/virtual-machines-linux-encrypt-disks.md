@@ -42,7 +42,7 @@
 
     keyvault_name=myUniqueKeyVaultName
     az keyvault create --name $keyvault_name --resource-group myResourceGroup \
-      --location ChinaNorth --enabled-for-disk-encryption True
+      --location ChinaNorth --enabled-for-disk-encryption true
 
 使用 [az keyvault key create](https://docs.microsoft.com/zh-cn/cli/azure/keyvault/key#create) 在 Key Vault 中创建加密密钥。 以下示例创建名为 `myKey` 的密钥：
 
@@ -60,12 +60,11 @@
       --key-permissions all \
       --secret-permissions all
 
-使用 [az vm create](https://docs.microsoft.com/zh-cn/cli/azure/vm#create) 创建 VM 并附加一个 5Gb 数据磁盘。 只有特定应用商店映像才支持磁盘加密。 下面的示例使用 **CentOS 7.2n** 映像创建一个名为 `myVM` 的 VM：
+使用 [az vm create](https://docs.microsoft.com/zh-cn/cli/azure/vm#create) 创建 VM。 只有特定应用商店映像才支持磁盘加密。 下面的示例使用 **Ubuntu 14.04** 映像创建一个名为 `myVM` 的 VM：
 
-    az vm create -g myResourceGroup -n myVM --image OpenLogic:CentOS:7.2n:7.2.20160629 \
+    az vm create -g myResourceGroup -n myVM --image Canonical:UbuntuServer:14.04.3-LTS:latest \
       --admin-username azureuser --ssh-key-value ~/.ssh/id_rsa.pub \
-      --use-unmanaged-disk \
-      --data-disk-sizes-gb 5
+      --use-unmanaged-disk
 
 通过 SSH 连接到你的 VM。 创建分区和文件系统，然后安装数据磁盘。 有关详细信息，请参阅[连接 Linux VM 以安装新磁盘](/documentation/articles/virtual-machines-linux-add-disk/#connect-to-the-linux-vm-to-mount-the-new-disk)。 关闭 SSH 会话。
 
