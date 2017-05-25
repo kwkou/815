@@ -143,7 +143,7 @@ Linux VM 上的虚拟磁盘是使用 [dm-crypt](https://wikipedia.org/wiki/Dm-cr
 
     keyvault_name=myUniqueKeyVaultName
     az keyvault create --name $keyvault_name --resource-group myResourceGroup \
-      --location ChinaNorth --enabled-for-disk-encryption True
+      --location ChinaNorth --enabled-for-disk-encryption true
 
 可以使用软件或硬件安全模型 (HSM) 保护来存储加密密钥。 使用 HSM 时需要高级密钥保管库。 与用于存储受软件保护的密钥的标准密钥保管库不同，创建高级密钥保管库会产生额外的费用。 若要创建高级密钥保管库，请在前一步骤中，将 `--sku Premium` 添加到命令。 由于我们创建的是标准密钥保管库，以下示例使用了受软件保护的密钥。 
 
@@ -167,11 +167,10 @@ Linux VM 上的虚拟磁盘是使用 [dm-crypt](https://wikipedia.org/wiki/Dm-cr
       --secret-permissions all
 
 ## <a name="create-virtual-machine"></a>创建虚拟机
-为了实际加密一些虚拟磁盘，让我们创建一个 VM 并添加一个数据磁盘。 使用 [az vm create](https://docs.microsoft.com/zh-cn/cli/azure/vm#create) 创建要加密的 VM 并附加一个 5Gb 数据磁盘。 只有特定应用商店映像才支持磁盘加密。 下面的示例使用 **CentOS 7.2n** 映像创建一个名为 `myVM` 的 VM：
+为了实际加密一些虚拟磁盘，让我们创建一个 VM 并添加一个数据磁盘。 使用 [az vm create](https://docs.microsoft.com/zh-cn/cli/azure/vm#create) 创建要加密的 VM。 只有特定应用商店映像才支持磁盘加密。 下面的示例使用 **Ubuntu 14.04** 映像创建一个名为 `myVM` 的 VM：
 
-    az vm create -g myResourceGroup -n myVM --image OpenLogic:CentOS:7.2n:7.2.20160629 \
-      --use-unmanaged-disk \
-      --data-disk-sizes-gb 5
+    az vm create -g myResourceGroup -n myVM --image Canonical:UbuntuServer:14.04.3-LTS:latest \
+      --use-unmanaged-disk
 
 使用 VM 的 SSH 创建分区和文件系统，然后安装数据磁盘。 有关详细信息，请参阅[连接 Linux VM 以安装新磁盘](/documentation/articles/virtual-machines-linux-add-disk/#connect-to-the-linux-vm-to-mount-the-new-disk)。 关闭 SSH 会话。
 
