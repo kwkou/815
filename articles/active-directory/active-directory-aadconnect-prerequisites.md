@@ -30,7 +30,7 @@
 
 ### <a name="azure-ad"></a>Azure AD
 - Azure 订阅或 [Azure 试用版订阅](/pricing/1rmb-trial/)。 此订阅只是用来访问 Azure 门户预览，而不是用于 Azure AD Connect。 如果使用 PowerShell 或 Office 365，则无需 Azure 订阅即可使用 Azure AD Connect。 如果有 Office 365 许可证，还可以使用 Office 365 门户。 使用付费的 Office 365 许可证，还可以从 Office 365 门户访问 Azure 门户预览。
-  - 还可以使用 [Azure 门户预览](https://portal.azure.cn)中的 Azure AD 预览版功能。 此门户不需要 Azure 许可证。
+  
 - [添加并验证域](/documentation/articles/active-directory-add-domain/)，该域是计划在 Azure AD 中使用的。 例如，如果计划让用户使用 contoso.com，请确保此域已经过验证，并且不是直接使用 contoso.partner.onmschina.cn 默认域。
 - 默认情况下，一个 Azure AD 租户允许 5 万个对象。 在验证域后，该限制将增加到 30 万个对象。 如果在 Azure AD 中需要更多的对象，则需要开具支持案例来请求增大此限制。 如果需要 50 万个以上的对象，则需要购买 Office 365、Azure AD Basic、Azure AD Premium 或企业移动性和安全性等许可证。
 
@@ -75,7 +75,6 @@
 - Azure AD Connect 服务器需要 Intranet 和 Internet 的 DNS 解析。 DNS 服务器必须能够将名称解析成本地 Active Directory 以及 Azure AD 终结点。
 - 如果 Intranet 有防火墙，且需要开放 Azure AD Connect 服务器与域控制器之间的端口，请参阅 [Azure AD Connect 端口](/documentation/articles/active-directory-aadconnect-ports/)，了解详细信息。
 - 如果代理或防火墙限制了可访问的 URL，必须打开 [Office 365 URL 和 IP 地址范围](https://support.office.com/article/Office-365-URLs-and-IP-address-ranges-8548a211-3fe7-47cb-abb1-355ea5aa88a2) 中所述的 URL。
-  - 如果在德国使用 Microsoft 云或 Azure 政府版云，请参阅 [Azure AD Connect 同步服务实例注意事项](/documentation/articles/active-directory-aadconnect-instances/)以获取 URL。
 - Azure AD Connect 默认情况下使用 TLS 1.0 与 Azure AD 进行通信。 可以遵循 [为 Azure AD connect 启用 TLS 1.2](#enable-tls-12-for-azure-ad-connect)中的步骤将此更改为 TLS 1.2。
 - 如果使用出站代理连接到 Internet，则必须在 **C:\Windows\Microsoft.NET\Framework64\v4.0.30319\Config\machine.config** 文件中添加以下设置，才能将安装向导和 Azure AD Connect 同步连接到 Internet 和 Azure AD。 必须在文件底部输入此文本。 在此代码中，&lt;PROXYADRESS&gt; 代表实际代理 IP 地址或主机名。
 
