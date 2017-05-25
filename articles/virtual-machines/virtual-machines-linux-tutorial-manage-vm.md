@@ -68,14 +68,13 @@ Azure 资源组是在其中部署和管理 Azure 资源的逻辑容器。 必须
 
 使用 [az vm create](https://docs.microsoft.com/zh-cn/cli/azure/vm#create) 命令创建虚拟机。 
 
-创建虚拟机时，可使用多个选项，例如操作系统映像、磁盘大小调整和管理凭据。 在此示例中，创建了一个名为 `myVM` 的运行 Ubuntu 的虚拟机。 使用 `--data-disk-sizes-gb` 参数创建了一个 50 GB 的磁盘并将其附加到了 VM。 `--custom-data` 参数接受 cloud-init 配置，并将其暂存在 VM 上。 最后，如果不存在 SSH 密钥，则会进行创建。
+创建虚拟机时，可使用多个选项，例如操作系统映像、磁盘大小调整和管理凭据。 在此示例中，创建了一个名为 `myVM` 的运行 Ubuntu 的虚拟机。`--custom-data` 参数接受 cloud-init 配置，并将其暂存在 VM 上。 最后，如果不存在 SSH 密钥，则会进行创建。
 
     az vm create \
       --resource-group myResourceGroup \
       --name myVM \
       --image Canonical:UbuntuServer:14.04.3-LTS:latest \
       --generate-ssh-keys \
-      --data-disk-sizes-gb 50 \
       --use-unmanaged-disk \
       --custom-data cloud-init.txt
 
