@@ -190,3 +190,5 @@
 1. 检查 Palo Alto Networks 设备的固件版本。 如果 PAN-OS 版本低于 7.1.4，请升级到 7.1.4。
 2. 连接到 Azure VPN 网关时，请在 Palo Alto Networks 设备上将阶段 2 SA（或快速模式 SA）生存期更改为 28,800 秒（8 小时）。
 3. 如果仍然遇到连接问题，请从 Azure 门户预览提出支持请求。
+
+<!--Update_Description: wording update-->

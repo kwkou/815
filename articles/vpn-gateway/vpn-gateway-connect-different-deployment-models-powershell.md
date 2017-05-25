@@ -271,3 +271,5 @@ GatewaySubnet = 192.168.0.0/26 <br>
 ## <a name="faq"></a>VNet 到 VNet 注意事项
 
 [AZURE.INCLUDE [vpn-gateway-vnet-vnet-faq](../../includes/vpn-gateway-vnet-vnet-faq-include.md)]
+
+<!--Update_Description: wording update-->

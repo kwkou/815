@@ -127,3 +127,5 @@ VPN 网关需要一个特定的子网，称为网关子网。 所有网关子网
 请参阅 [VPN 网关常见问题解答](/documentation/articles/vpn-gateway-vpn-faq/)和[关于 VPN 网关](/documentation/articles/vpn-gateway-about-vpngateways/)文章，获取可帮助进行设计的详细信息。
 
 有关特定网关设置的详细信息，请参阅 [About VPN Gateway Settings](/documentation/articles/vpn-gateway-about-vpn-gateway-settings/)（关于 VPN 网关设置）。
+
+<!--Update_Description: wording update-->

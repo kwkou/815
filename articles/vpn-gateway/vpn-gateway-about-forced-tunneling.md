@@ -152,3 +152,5 @@
 ### <a name="to-remove-a-default-site-from-a-vnet-vpn-gateway"></a>从 VNet VPN 网关中删除默认站点
 
     Remove-AzureVnetGatewayDefaultSite -VNetName <virtualNetworkName>
+
+<!--Update_Description: wording update-->

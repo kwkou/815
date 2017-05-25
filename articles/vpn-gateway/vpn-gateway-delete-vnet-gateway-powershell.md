@@ -254,3 +254,5 @@ Azure 需要花费一段时间来删除所有资源。 可以使用以下 cmdlet
     ResourceGroupName : RG1
     Location          : chinaeast
     ProvisioningState : Succeeded
+
+<!--Update_Description: wording update-->

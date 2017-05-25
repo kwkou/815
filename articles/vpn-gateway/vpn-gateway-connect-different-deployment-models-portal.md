@@ -239,3 +239,5 @@ VPN 类型 = 基于路由 <br>
 ## <a name="faq"></a>VNet 到 VNet 注意事项
 
 [AZURE.INCLUDE [vpn-gateway-vnet-vnet-faq](../../includes/vpn-gateway-vnet-vnet-faq-include.md)]
+
+<!--Update_Description: wording update-->

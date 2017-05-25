@@ -133,3 +133,5 @@
 你可以将虚拟机添加到虚拟网络。 请参阅[如何创建自定义虚拟机](/documentation/articles/virtual-machines-windows-classic-createportal/)。
 
 如果要配置点到站点 VPN 连接，请参阅[配置点到站点 VPN 连接](/documentation/articles/vpn-gateway-point-to-site-create/)。
+
+<!--Update_Description: wording update-->

@@ -183,3 +183,5 @@ VPN 网关基本上是一个多宿主设备，其中一个 NIC 进入客户专�
 
 * 有关 VPN 网关的详细信息，请参阅[关于 VPN 网关](/documentation/articles/vpn-gateway-about-vpngateways/)。
 * 有关 VPN 网关配置设置的详细信息，请参阅[关于 VPN 网关配置设置](/documentation/articles/vpn-gateway-about-vpn-gateway-settings/)。
+
+<!--Update_Description: add some questions-->

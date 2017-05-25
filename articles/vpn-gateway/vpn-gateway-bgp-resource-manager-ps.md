@@ -269,3 +269,5 @@ BGP 是通常在 Internet 上使用的，用于在两个或更多网络之间交
 
 ## <a name="next-steps"></a>后续步骤
 连接完成后，即可将虚拟机添加到虚拟网络。 请参阅[创建虚拟机](/documentation/articles/virtual-machines-windows-hero-tutorial/)以获取相关步骤。
+
+<!--Update_Description: wording update-->

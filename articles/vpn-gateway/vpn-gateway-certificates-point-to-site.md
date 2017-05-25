@@ -136,3 +136,5 @@
 
 * 有关 **Resource Manager** 部署模型步骤，请参阅 [Configure a Point-to-Site connection to a VNet](/documentation/articles/vpn-gateway-howto-point-to-site-resource-manager-portal/)（配置与 VNet 的点到站点连接）。 
 * 有关**经典**部署模型步骤，请参阅 [Configure a Point-to-Site VPN connection to a VNet (classic)](/documentation/articles/vpn-gateway-howto-point-to-site-classic-azure-portal/)（配置与 VNet 的点到站点 VPN 连接（经典））。
+
+<!--Update_Description: wording update-->

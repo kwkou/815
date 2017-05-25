@@ -37,3 +37,5 @@
 
 ## <a name="next-steps"></a>后续步骤
 可验证网关连接。 请参阅[验证网关连接](/documentation/articles/vpn-gateway-verify-connection-resource-manager/)。
+
+<!--Update_Description: wording update-->

@@ -275,3 +275,5 @@ VPN 客户端包中包含用于配置 Windows 内置 VPN 客户端软件的信�
 
 ## <a name="next-steps"></a>后续步骤
 连接完成后，即可将虚拟机添加到虚拟网络。 有关详细信息，请参阅[虚拟机](/documentation/services/virtual-machines/)。 若要详细了解网络和虚拟机，请参阅 [Azure 和 Linux VM 网络概述](/documentation/articles/virtual-machines-linux-azure-vm-network-overview/)。
+
+<!--Update_Description: wording update-->
