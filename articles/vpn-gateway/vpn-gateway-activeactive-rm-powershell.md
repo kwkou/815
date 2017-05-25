@@ -191,14 +191,15 @@
 #### <a name="3-vpn-and-bgp-parameters-for-your-on-premises-vpn-device"></a>3.本地 VPN 设备的 VPN 和 BGP 参数
 下面的示例列出了你将在本地 VPN 设备上的 BGP 配置节中为此练习输入的参数：
 
-    - Site5 ASN：65050
-    - Site5 BGP IP：10.52.255.253
-    - 要公布的前缀：（例如）10.51.0.0/16 和 10.52.0.0/16
-    - Azure VNet ASN：65010
-    - Azure VNet BGP IP 1：10.12.255.4，用于到 40.112.190.5 的隧道
-    - Azure VNet BGP IP 2：10.12.255.5，用于到 138.91.156.129 的隧道
-    - 静态路由：目标 10.12.255.4/32，nexthop 为到 40.112.190.5 的 VPN 隧道接口                        目标 10.12.255.5/32，nexthop 为到 138.91.156.129 的 VPN 隧道接口
-    - eBGP Multihop：确保在必要时已在设备上启用 eBGP 的“multihop”选项
+    - Site5 ASN            : 65050
+    - Site5 BGP IP         : 10.52.255.253
+    - Prefixes to announce : (for example) 10.51.0.0/16 and 10.52.0.0/16
+    - Azure VNet ASN       : 65010
+    - Azure VNet BGP IP 1  : 10.12.255.4 for tunnel to 40.112.190.5
+    - Azure VNet BGP IP 2  : 10.12.255.5 for tunnel to 138.91.156.129
+    - Static routes        : Destination 10.12.255.4/32, nexthop the VPN tunnel interface to 40.112.190.5
+                             Destination 10.12.255.5/32, nexthop the VPN tunnel interface to 138.91.156.129
+    - eBGP Multihop        : Ensure the "multihop" option for eBGP is enabled on your device if needed
 
 连接应在几分钟后建立，BGP 对等会话将在建立 IPsec 连接后启动。 本示例到目前为止只配置了一个本地 VPN 设备，如下图所示：
 

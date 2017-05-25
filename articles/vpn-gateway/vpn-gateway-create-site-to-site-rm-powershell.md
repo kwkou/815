@@ -158,9 +158,9 @@ Resource Manager 部署模型的 Azure VPN 网关目前使用动态分配方法�
 * *-VpnType* 可以是 *RouteBased*（在某些文档中称为动态网关）或 *PolicyBased*（在某些文档中称为静态网关）。 有关 VPN 网关类型的详细信息，请参阅[关于 VPN 网关](/documentation/articles/vpn-gateway-about-vpngateways/)。
 * *-GatewaySku* 可以是 *Basic*、*Standard* 或 *HighPerformance*。
 
-    New-AzureRmVirtualNetworkGateway -Name vnetgw1 -ResourceGroupName testrg `
-    -Location 'China North' -IpConfigurations $gwipconfig -GatewayType Vpn `
-    -VpnType RouteBased -GatewaySku Standard
+       New-AzureRmVirtualNetworkGateway -Name vnetgw1 -ResourceGroupName testrg `
+       -Location 'China North' -IpConfigurations $gwipconfig -GatewayType Vpn `
+       -VpnType RouteBased -GatewaySku Standard
 
 ## <a name="ConfigureVPNDevice"></a>7.配置 VPN 设备
 此时，需要使用虚拟网络网关的公共 IP 地址来配置本地 VPN 设备。 请联系你的设备制造商以获得具体的配置信息。 有关详细信息，请参阅 [VPN 设备](/documentation/articles/vpn-gateway-about-vpn-devices/)。

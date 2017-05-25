@@ -30,7 +30,7 @@
 本文演示如何验证从本地资源到达 Azure 虚拟机的网络吞吐量， 还会提供故障排除指南。
 
 >[AZURE.NOTE]
->本文旨在帮助诊断并解决常见的问题。 如果使用以下信息无法解决问题，请[与支持人员联系](https://portal.azure.cn/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade)。
+>本文旨在帮助诊断并解决常见的问题。 如果使用以下信息无法解决问题，请[与支持人员联系](/support/contact/)。
 >
 >
 
@@ -131,4 +131,4 @@ VPN 网关连接涉及以下组件：
 有关详细信息或帮助，请查看以下链接：
 
 - [优化 Azure 虚拟机网络吞吐量](/documentation/articles/virtual-network-optimize-network-bandwidth/)
-- [Microsoft 支持部门](https://portal.azure.cn/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade)
+- [Azure.cn 支持部门](/support/contact/)

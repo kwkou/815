@@ -173,13 +173,13 @@ BGP 是通常在 Internet 上使用的，用于在两个或更多网络之间交
 
 下面的示例列出了你将在本地 VPN 设备上的 BGP 配置节中为此练习输入的参数：
 
-    - Site5 ASN：65050
-    - Site5 BGP IP：10.52.255.254
-    - 要公布的前缀：（例如）10.51.0.0/16 和 10.52.0.0/16
-    - Azure VNet ASN：65010
-    - Azure VNet BGP IP：10.12.255.30
-    - 静态路由：为 10.12.255.30/32 添加路由，nexthop 为设备上的 VPN 隧道接口
-    - eBGP Multihop：确保在必要时已在设备上启用 eBGP 的“multihop”选项
+    - Site5 ASN            : 65050
+    - Site5 BGP IP         : 10.52.255.254
+    - Prefixes to announce : (for example) 10.51.0.0/16 and 10.52.0.0/16
+    - Azure VNet ASN       : 65010
+    - Azure VNet BGP IP    : 10.12.255.30
+    - Static route         : Add a route for 10.12.255.30/32, with nexthop being the VPN tunnel interface on your device
+    - eBGP Multihop        : Ensure the "multihop" option for eBGP is enabled on your device if needed
 
 连接应在几分钟后建立，BGP 对等会话将在建立 IPsec 连接后启动。
 
