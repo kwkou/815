@@ -1,20 +1,21 @@
 <properties
-	pageTitle="存储资源管理器（预览版）入门 | Azure"
+	pageTitle="存储资源管理器（预览版）入门 | Microsoft Docs"
 	description="使用存储空间资源管理器（预览版）管理 Azure 存储空间资源"
 	services="storage"
-	documentationCenter="na"
+	documentationcenter="na"
 	authors="TomArcher"
 	manager="douge"
 	editor="" />  
  
  <tags
+    ms.assetid="1ed0f096-494d-49c4-ab71-f4164ee19ec8"
 	ms.service="storage"
 	ms.devlang="multiple"
 	ms.topic="get-started-article"
 	ms.tgt_pltfrm="na"
 	ms.workload="na"
 	ms.date="11/18/2016"
-    wacn.date="05/02/2017"
+    wacn.date="05/22/2017"
 	ms.author="tarcher" />
 
 # 存储资源管理器（预览版）入门
@@ -108,6 +109,13 @@ Microsoft Azure 存储资源管理器（预览版）是一款独立的应用，�
 	![“连接到 Azure 存储”选项][23]
 
 1.	在“连接到 Azure 存储”对话框中，指定帐户密钥（Azure 门户中的“密钥 1”值），然后选择“下一步”。
+
+	> [!NOTE]
+	> 在区域 Azure 上，可以从存储帐户输入存储连接字符串。 例如，若要连接到 Azure 中国区存储帐户，请输入类似以下格式的连接字符串：
+	> 
+	>  DefaultEndpointsProtocol=https;AccountName=cawatest03;AccountKey=<storage_account_key>;EndpointSuffix=core.cloudapi.cn; 
+	>  
+	>  可以从 Azure 门户获取连接字符串，所用方式如“获取存储帐户凭据”部分所述。
 
 	![“连接到 Azure 存储”对话框][24]
 
@@ -229,5 +237,12 @@ Azure 订阅管理员可以临时通过 [SAS（共享访问签名）](storage/st
 [22]: ./media/vs-azure-tools-storage-manage-with-storage-explorer/download-storage-emulator.png
 [23]: ./media/vs-azure-tools-storage-manage-with-storage-explorer/connect-to-azure-storage-icon.png
 [24]: ./media/vs-azure-tools-storage-manage-with-storage-explorer/connect-to-azure-storage-next.png
+[25]: ./media/vs-azure-tools-storage-manage-with-storage-explorer/add-certificate-azure-stack.png
+[26]: ./media/vs-azure-tools-storage-manage-with-storage-explorer/export-root-cert-azure-stack.png
+[27]: ./media/vs-azure-tools-storage-manage-with-storage-explorer/import-azure-stack-cert-storage-explorer.png
+[28]: ./media/vs-azure-tools-storage-manage-with-storage-explorer/select-target-azure-stack.png
+[29]: ./media/vs-azure-tools-storage-manage-with-storage-explorer/add-azure-stack-account.png
+[30]: ./media/vs-azure-tools-storage-manage-with-storage-explorer/select-accounts-azure-stack.png
+[31]: ./media/vs-azure-tools-storage-manage-with-storage-explorer/azure-stack-storage-account-list.png
 
 <!---HONumber=Mooncake_0926_2016-->

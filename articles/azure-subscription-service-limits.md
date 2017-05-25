@@ -6,9 +6,7 @@
     author="rothja"
     manager="jeffreyg"
     editor=""
-    tags="billing"
-    translationtype="Human Translation" />
-    
+    tags="billing" />
 <tags
     ms.assetid="60d848f9-ff26-496e-a5ec-ccf92ad7d125"
     ms.service="billing"
@@ -16,12 +14,14 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="03/07/2017"
-    wacn.date="04/27/2017"
+    ms.date="03/20/2017"
+    wacn.date="05/22/2017"
     ms.author="byvinyal"
-    ms.sourcegitcommit="7cc8d7b9c616d399509cd9dbdd155b0e9a7987a8"
-    ms.openlocfilehash="a740e80ef3aa8c20c63f9de5d3690b3c01e5e525"
-    ms.lasthandoff="04/07/2017" />
+    ms.translationtype="Human Translation"
+    ms.sourcegitcommit="8fd60f0e1095add1bff99de28a0b65a8662ce661"
+    ms.openlocfilehash="4acfed2b89dba7563b72f72515f2a21b67ce5f4c"
+    ms.contentlocale="zh-cn"
+    ms.lasthandoff="05/12/2017" />
 
 # <a name="azure-subscription-and-service-limits-quotas-and-constraints"></a>Azure 订阅和服务限制、配额和约束
 本文列出了一些最常见的 Azure 限制，有时也称为配额。 本文当前并不涵盖所有 Azure 服务。 随着时间的推移，此列表将得以展开并更新，以便涵盖更多平台。
@@ -30,12 +30,14 @@
 
 > [AZURE.NOTE]
 > 如果想要提高限制或配额，使其超出**默认限制**，可以[打开免费的联机客户支持请求](https://azure.microsoft.com/zh-cn/blog/2014/06/04/azure-limits-quotas-increase-requests/)。 无法将限制提高到超过下表中显示的 **最大限制** 值。 如果没有 **最大限制** 列，则资源没有可调整的限制。 
+> 
+> 1 元试用订阅不符合增加限制或配额的条件。 如果有 1 元试用订阅，可将其升级到 [即用即付](https://www.azure.cn/pricing/pia-waiting-list/?form-type=identityauth) 订阅。 
+> 
 
+## <a name="limits-and-the-azure-resource-manager"></a>限制和 Azure资源管理器
+现在可以将多个 Azure 资源合并到单个 Azure 资源组中。 在使用资源组时，以前针对全局的限制会通过 Azure资源管理器在区域级别进行管理。 有关 Azure 资源组的详细信息，请参阅 [Azure资源管理器概述](/documentation/articles/resource-group-overview/)。
 
-## <a name="limits-and-the-azure-resource-manager"></a>限制和 Azure 资源管理器
-现在可以将多个 Azure 资源合并到单个 Azure 资源组中。 在使用资源组时，以前针对全局的限制会通过 Azure 资源管理器在区域级别进行管理。 有关 Azure 资源组的详细信息，请参阅 [Azure资源管理器概述](/documentation/articles/resource-group-overview/)。
-
-在下面的限制中，添加了一个新表以反映在使用 Azure 资源管理器时限制中的任何差异。 例如，会存在一个**订阅限制**表和一个**订阅数限制 - Azure资源管理器** 表。 如果某个限制同时适用于这两种方案，它将仅显示在第一个表中。 除非另有说明，否则限制是跨所有区域的全局限制。
+在下面的限制中，添加了一个新表以反映在使用 Azure资源管理器时限制中的任何差异。 例如，会存在一个**订阅限制**表和一个**订阅数限制 - Azure资源管理器** 表。 如果某个限制同时适用于这两种方案，它将仅显示在第一个表中。 除非另有说明，否则限制是跨所有区域的全局限制。
 
 > [AZURE.NOTE]
 > 请务必强调 Azure 资源组中的资源配额是用户的订阅可以访问的每个区域，而不像服务管理配额那样是可以访问的每个订阅。 我们来使用核心配额作为示例。 如果您需要根据对核心的支持请求增加配额，则需要决定您想要在哪个区域中使用多少核心，然后针对您希望的 Azure 资源组核心配额的数量和区域进行特定请求。 
@@ -46,19 +48,23 @@
 
 ## <a name="service-specific-limits"></a>服务特定的限制
 - [Active Directory](#active-directory-limits)
-- [App Service](#app-service-limits)
+- [API 管理](#api-management-limits)
+- [应用服务](#app-service-limits)
 - [应用程序网关](#application-gateway-limits)
 - [自动化](#automation-limits)
-- [Azure Redis Cache](#azure-redis-cache-limits)
+- [Azure Redis 缓存](#azure-redis-cache-limits)
 - [备份](#backup-limits)
 - [批处理](#batch-limits)
+- [CDN](#cdn-limits)
 - [云服务](#cloud-services-limits)
 - [DocumentDB](#documentdb-limits)
 - [事件中心](#event-hubs-limits)
 - [IoT 中心](#iot-hub-limits)
 - [密钥保管库](#key-vault-limits)
 - [媒体服务](#media-services-limits)
+- [Mobile Engagement](#mobile-engagement-limits)
 - [移动服务](#mobile-services-limits)
+- [监视](#monitoring-limits)
 - [多重身份验证](#multi-factor-authentication)
 - [联网](#networking-limits)
 - [通知中心服务](#notification-hub-service-limits)
@@ -68,6 +74,7 @@
 - [站点恢复](#site-recovery-limits)
 - [SQL 数据库](#sql-database-limits)
 - [存储](#storage-limits)
+
 - [流分析](#stream-analytics-limits)
 - [订阅](#subscription-limits)
 - [流量管理器](#traffic-manager-limits)
@@ -79,7 +86,7 @@
 [AZURE.INCLUDE [azure-subscription-limits](../includes/azure-subscription-limits.md)]
 
 #### <a name="subscription-limits---azure-resource-manager"></a>订阅数限制 - Azure资源管理器
-使用 Azure 资源管理器和 Azure 资源组时，以下限制适用。 未使用 Azure 资源管理器更改的限制不会在下面列出。 请参阅上表了解这些限制。
+使用 Azure资源管理器和 Azure 资源组时，以下限制适用。 未使用 Azure资源管理器更改的限制不会在下面列出。 请参阅上表了解这些限制。
 
 有关处理资源管理器请求限制的信息，请参阅[限制资源管理器请求](/documentation/articles/resource-manager-request-limits/)。
 
@@ -93,7 +100,7 @@
 [AZURE.INCLUDE [azure-virtual-machines-limits](../includes/azure-virtual-machines-limits.md)]
 
 #### <a name="virtual-machines-limits---azure-resource-manager"></a>虚拟机限制 - Azure资源管理器
-使用 Azure 资源管理器和 Azure 资源组时，以下限制适用。 未使用 Azure 资源管理器更改的限制不会在下面列出。 请参阅上表了解这些限制。
+使用 Azure资源管理器和 Azure 资源组时，以下限制适用。 未使用 Azure资源管理器更改的限制不会在下面列出。 请参阅上表了解这些限制。
 
 [AZURE.INCLUDE [azure-virtual-machines-limits-azure-resource-manager](../includes/azure-virtual-machines-limits-azure-resource-manager.md)]
 
@@ -112,11 +119,11 @@
 #### <a name="traffic-manager-limits"></a>流量管理器限制
 [AZURE.INCLUDE [traffic-manager-limits](../includes/traffic-manager-limits.md)]
 
-### 存储限制 <a id="storage-limits"></a>
-有关存储帐户限制的详细信息，请参阅 [Azure 存储空间可伸缩性和性能目标](/documentation/articles/storage-scalability-targets/)。
-<!--like # storage accts -->
- 
-#### 存储服务限制
+### <a name="storage-limits"></a>存储限制
+有关存储帐户限制的详细信息，请参阅 [Azure 存储可伸缩性和性能目标](/documentation/articles/storage-scalability-targets/)。
+<!--like # storage accts --> 
+
+#### <a name="storage-service-limits"></a>存储服务限制
 [AZURE.INCLUDE [azure-storage-limits](../includes/azure-storage-limits.md)]
 
 <!-- conceptual info about disk limits -- applies to unmanaged and managed -->
@@ -141,27 +148,34 @@
 ### <a name="cloud-services-limits"></a>云服务限制
 [AZURE.INCLUDE [azure-cloud-services-limits](../includes/azure-cloud-services-limits.md)]
 
-### <a name="app-service-limits"></a>App Service 限制
-以下 App Service 限制包括 Web Apps、Mobile Apps 和 API Apps 的限制。
+### <a name="app-service-limits"></a>应用服务限制
+以下应用服务限制包括 Web 应用、移动应用、API 应用和逻辑应用的限制。
 
 [AZURE.INCLUDE [azure-websites-limits](../includes/azure-websites-limits.md)]
 
 ### <a name="scheduler-limits"></a>计划程序限制
 [AZURE.INCLUDE [scheduler-limits-table](../includes/scheduler-limits-table.md)]
 
-### <a name="batch-limits"></a>Batch 限制
+### <a name="batch-limits"></a>批处理限制
 [AZURE.INCLUDE [azure-batch-limits](../includes/azure-batch-limits.md)]
 
 ### <a name="documentdb-limits"></a>DocumentDB 限制
 DocumentDB 是一个全规模数据库，该数据库对吞吐量和存储进行规模调整以满足应用程序的任何需求。 如果你有任何关于 DocumentDB 提供的规模的问题，请发送电子邮件到 askdocdb@microsoft.com。
 
+### <a name="mobile-engagement-limits"></a>Mobile Engagement 限制
+[AZURE.INCLUDE [azure-mobile-engagement-limits](../includes/azure-mobile-engagement-limits.md)]
 
 ### <a name="media-services-limits"></a>媒体服务限制
 [AZURE.INCLUDE [azure-mediaservices-limits](../includes/azure-mediaservices-limits.md)]
 
+### <a name="cdn-limits"></a>CDN 限制
+[AZURE.INCLUDE [cdn-limits](../includes/cdn-limits.md)]
+
 ### <a name="mobile-services-limits"></a>移动服务限制
 [AZURE.INCLUDE [mobile-services-limits](../includes/mobile-services-limits.md)]
 
+### <a name="monitoring-limits"></a>监视限制
+[AZURE.INCLUDE [monitoring-limits](../includes/monitoring-limits.md)]
 
 ### <a name="notification-hub-service-limits"></a>通知中心服务限制
 [AZURE.INCLUDE [notification-hub-limits](../includes/notification-hub-limits.md)]
@@ -181,6 +195,9 @@ DocumentDB 是一个全规模数据库，该数据库对吞吐量和存储进行
 ### <a name="active-directory-limits"></a>Active Directory 限制
 [AZURE.INCLUDE [AAD-service-limits](../includes/active-directory-service-limits-include.md)]
 
+### <a name="azure-remoteapp-limits"></a>Azure RemoteApp 限制
+[AZURE.INCLUDE [azure-remoteapp-limits](../includes/azure-remoteapp-limits.md)]
+
 ### <a name="backup-limits"></a>备份限制
 [AZURE.INCLUDE [azure-backup-limits](../includes/azure-backup-limits.md)]
 
@@ -188,7 +205,10 @@ DocumentDB 是一个全规模数据库，该数据库对吞吐量和存储进行
 [AZURE.INCLUDE [site-recovery-limits](../includes/site-recovery-limits.md)]
 
 
-### Azure Redis 缓存限制 <a id="azure-redis-cache-limits"></a>
+### <a name="api-management-limits"></a>API 管理限制
+[AZURE.INCLUDE [api-management-service-limits](../includes/api-management-service-limits.md)]
+
+### <a name="azure-redis-cache-limits"></a>Azure Redis 缓存限制
 [AZURE.INCLUDE [redis-cache-service-limits](../includes/redis-cache-service-limits.md)]
 
 ### <a name="key-vault-limits"></a>密钥保管库限制

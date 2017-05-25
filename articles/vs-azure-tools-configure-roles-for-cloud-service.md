@@ -5,9 +5,7 @@
     documentationcenter="na"
     author="TomArcher"
     manager="douge"
-    editor=""
-    translationtype="Human Translation" />
-
+    editor="" />
 <tags
     ms.assetid="d397ef87-64e5-401a-aad5-7f83f1022e16"
     ms.service="multiple"
@@ -15,12 +13,14 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="multiple"
-    ms.date="03/06/2017"
-    wacn.date="04/17/2017"
+    ms.date="03/21/2017"
+    wacn.date="05/22/2017"
     ms.author="tarcher"
-    ms.sourcegitcommit="7cc8d7b9c616d399509cd9dbdd155b0e9a7987a8"
-    ms.openlocfilehash="5c2261aea7844757bfa773bcd304bc4c40f3c458"
-    ms.lasthandoff="04/07/2017" />
+    ms.translationtype="Human Translation"
+    ms.sourcegitcommit="8fd60f0e1095add1bff99de28a0b65a8662ce661"
+    ms.openlocfilehash="71d2d4c4d38e88c62d93a2dc108e2fae769e648c"
+    ms.contentlocale="zh-cn"
+    ms.lasthandoff="05/12/2017" />
 
 # <a name="configure-azure-cloud-service-roles-with-visual-studio"></a>使用 Visual Studio 配置 Azure 云服务角色
 一个 Azure 云服务可以有一个辅助角色或 Web 角色。 对于每个角色，需要定义该角色的设置方式，并配置该角色的运行方式。 
@@ -40,45 +40,45 @@
 ## <a name="configure-an-azure-cloud-service"></a>配置 Azure 云服务
 可从 Visual Studio 中的解决方案资源管理器配置 Azure 云服务，如以下步骤所述：
 
-1. 在 Visual Studio 中打开 Azure 云服务项目
+1. 在 Visual Studio 中创建或打开 Azure 云服务项目。
 
 2. 在“解决方案资源管理器”中右键单击项目，然后从上下文菜单中选择“属性”。
-
-	![解决方案资源管理器中的项目上下文菜单](./media/vs-azure-tools-configure-roles-for-cloud-service/solution-explorer-project-context-menu.png)
+   
+    ![解决方案资源管理器中的项目上下文菜单](./media/vs-azure-tools-configure-roles-for-cloud-service/solution-explorer-project-context-menu.png)
 
 3. 在项目的属性页中，选择“开发”选项卡。 
 
-	![项目属性页 - 开发选项卡](./media/vs-azure-tools-configure-roles-for-cloud-service/project-properties-development-tab.png)
+    ![项目属性页 - 开发选项卡](./media/vs-azure-tools-configure-roles-for-cloud-service/project-properties-development-tab.png)
 
 4. 在“服务配置”列表中，选择要编辑的服务配置名称。 （若要对角色的所有服务配置进行更改，请选择“所有配置”。）
-
-	> [AZURE.IMPORTANT]
-	> 如果要选择特定的服务配置，需禁用一些属性，因为其只能设置为所有配置。 若要编辑这些属性，必须选择“所有配置”。
-	> 
-	> 
-
-	![Azure 云服务的服务配置列表](./media/vs-azure-tools-configure-roles-for-cloud-service/cloud-service-service-configuration-property.png)
+   
+    > [AZURE.IMPORTANT]
+    > 如果要选择特定的服务配置，需禁用一些属性，因为其只能设置为所有配置。 若要编辑这些属性，必须选择“所有配置”。
+    > 
+    > 
+   
+    ![Azure 云服务的服务配置列表](./media/vs-azure-tools-configure-roles-for-cloud-service/cloud-service-service-configuration-property.png)
 
 ## <a name="change-the-number-of-role-instances"></a>更改角色实例的数目
 若要提高云服务的性能，可根据用户或某个特定角色的预期负载的数目，更改正在运行的角色实例的数目。 当云服务在 Azure 中运行时，将为每个角色实例创建单独的虚拟机。 这会影响部署此云服务的计费。 有关计费的详细信息，请参阅 [了解你的 Azure 帐单](/documentation/articles/billing-understand-your-bill/)。
 
-1. 在 Visual Studio 中打开 Azure 云服务项目
+1. 在 Visual Studio 中创建或打开 Azure 云服务项目。
 
 2. 在“解决方案资源管理器”中，展开项目节点。 在“角色”节点下，右键单击要更新的角色，然后从上下文菜单中选择“属性”。
 
-	![解决方案资源管理器中的 Azure 角色上下文菜单](./media/vs-azure-tools-configure-roles-for-cloud-service/solution-explorer-azure-role-context-menu.png)
+    ![解决方案资源管理器中的 Azure 角色上下文菜单](./media/vs-azure-tools-configure-roles-for-cloud-service/solution-explorer-azure-role-context-menu.png)
 
 3. 选择“配置”选项卡。
 
-	![配置选项卡](./media/vs-azure-tools-configure-roles-for-cloud-service/role-configuration-properties-page.png)
+    ![配置选项卡](./media/vs-azure-tools-configure-roles-for-cloud-service/role-configuration-properties-page.png)
 
 4. 在“服务配置”列表中，选择要更新的服务配置。
-
-	![服务配置列表](./media/vs-azure-tools-configure-roles-for-cloud-service/role-configuration-properties-page-select-configuration.png)
+   
+    ![服务配置列表](./media/vs-azure-tools-configure-roles-for-cloud-service/role-configuration-properties-page-select-configuration.png)
 
 5. 在“实例计数”文本框中，键入想要启动此角色的实例数。 将云服务发布到 Azure 时，每个实例将在单独的虚拟机上运行。
 
-	![更新实例计数](./media/vs-azure-tools-configure-roles-for-cloud-service/role-configuration-properties-page-instance-count.png)
+    ![更新实例计数](./media/vs-azure-tools-configure-roles-for-cloud-service/role-configuration-properties-page-instance-count.png)
 
 6. 从 Visual Studio 工具栏中，选择“保存”。
 
@@ -92,23 +92,23 @@
 
 由于每个服务配置使用不同的值，当你将云服务发布到 Azure 时，不必在云服务中使用不同的连接字符串或修改你的代码。 可以在代码中对连接字符串使用同一名称，但值会不同，该值基于在生成云服务或发布云服务时选择的服务配置。
 
-1. 在 Visual Studio 中打开 Azure 云服务项目
+1. 在 Visual Studio 中创建或打开 Azure 云服务项目。
 
 2. 在“解决方案资源管理器”中，展开项目节点。 在“角色”节点下，右键单击要更新的角色，然后从上下文菜单中选择“属性”。
 
-	![解决方案资源管理器中的 Azure 角色上下文菜单](./media/vs-azure-tools-configure-roles-for-cloud-service/solution-explorer-azure-role-context-menu.png)
+    ![解决方案资源管理器中的 Azure 角色上下文菜单](./media/vs-azure-tools-configure-roles-for-cloud-service/solution-explorer-azure-role-context-menu.png)
 
 3. 选择“设置”选项卡。
 
-	![“设置”选项卡](./media/vs-azure-tools-configure-roles-for-cloud-service/project-properties-settings-tab.png)
+    ![“设置”选项卡](./media/vs-azure-tools-configure-roles-for-cloud-service/project-properties-settings-tab.png)
 
 4. 在“服务配置”列表中，选择要更新的服务配置。
 
-	![服务配置](./media/vs-azure-tools-configure-roles-for-cloud-service/project-properties-settings-tab-select-configuration.png)
+    ![服务配置](./media/vs-azure-tools-configure-roles-for-cloud-service/project-properties-settings-tab-select-configuration.png)
 
 5. 若要添加连接字符串，请选择“添加设置”。
 
-	![添加连接字符串](./media/vs-azure-tools-configure-roles-for-cloud-service/project-properties-settings-tab-add-setting.png)
+    ![添加连接字符串](./media/vs-azure-tools-configure-roles-for-cloud-service/project-properties-settings-tab-add-setting.png)
 
 6. 将新设置添加到列表后，使用所需的信息更新列表中的行。
 
@@ -150,7 +150,7 @@
 
 由于每个服务配置使用不同的值，当你将云服务发布到 Azure 时，不必在云服务中使用不同的字符串或修改你的代码。 可以在代码中对字符串使用同一名称，但值会不同，该值基于在生成云服务或发布云服务时选择的服务配置。
 
-1. 在 Visual Studio 中打开 Azure 云服务项目
+1. 在 Visual Studio 中创建或打开 Azure 云服务项目。
 
 1. 在“解决方案资源管理器”中，展开项目节点。 在“角色”节点下，右键单击要更新的角色，然后从上下文菜单中选择“属性”。
 
@@ -181,7 +181,7 @@
 1. 从 Visual Studio 工具栏中，选择“保存”。
 
 ## <a name="programmatically-access-a-custom-settings-value"></a>以编程方式访问自定义设置的值
-
+ 
 以下步骤说明如何使用 C# 以编程方式访问自定义设置。
 
 1. 将以下 using 指令添加到要在其中使用该设置的 C# 文件中：
@@ -197,7 +197,7 @@
 ## <a name="manage-local-storage-for-each-role-instance"></a>管理每个角色实例的本地存储
 可以为角色的每个实例添加本地文件系统存储。 存储了数据的其他角色实例或其他角色无法访问该存储中存储的数据。  
 
-1. 在 Visual Studio 中打开 Azure 云服务项目
+1. 在 Visual Studio 中创建或打开 Azure 云服务项目。
 
 1. 在“解决方案资源管理器”中，展开项目节点。 在“角色”节点下，右键单击要更新的角色，然后从上下文菜单中选择“属性”。
 
@@ -235,24 +235,24 @@
 
 以下代码示例演示如何将文本文件写入本地存储。 将 &lt;LocalStorageName> 占位符替换为适当的值。 
 
-    // Retrieve an object that points to the local storage resource
-    LocalResource localResource = RoleEnvironment.GetLocalResource("<LocalStorageName>");
-
-    //Define the file name and path
-    string[] paths = { localResource.RootPath, "MyLocalStorageTest.txt" };
-    String filePath = Path.Combine(paths);
-
-    using (FileStream writeStream = File.Create(filePath))
-    {
-        Byte[] textToWrite = new UTF8Encoding(true).GetBytes("Testing Web role storage");
-        writeStream.Write(textToWrite, 0, textToWrite.Length);
-    }
+        // Retrieve an object that points to the local storage resource
+        LocalResource localResource = RoleEnvironment.GetLocalResource("<LocalStorageName>");
+    
+        //Define the file name and path
+        string[] paths = { localResource.RootPath, "MyLocalStorageTest.txt" };
+        String filePath = Path.Combine(paths);
+    
+        using (FileStream writeStream = File.Create(filePath))
+        {
+            Byte[] textToWrite = new UTF8Encoding(true).GetBytes("Testing Web role storage");
+            writeStream.Write(textToWrite, 0, textToWrite.Length);
+        }
 
 
 ### <a name="find-a-file-written-to-local-storage"></a>查找已写入本地存储的文件
 
 若要查看上一部分中的代码创建的文件，请执行以下步骤：
-
+    
 1.  在 Windows 通知区域中，右键单击 Azure 图标，然后从上下文菜单中选择“显示计算模拟器 UI”。 
 
     ![显示 Azure 计算模拟器](./media/vs-azure-tools-configure-roles-for-cloud-service/show-compute-emulator.png)
