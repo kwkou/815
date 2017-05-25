@@ -6,8 +6,7 @@
     author="cherylmc"
     manager="timlt"
     editor=""
-    tags="azure-resource-manager"
-    translationtype="Human Translation" />
+    tags="azure-resource-manager" />
 <tags
     ms.assetid=""
     ms.service="vpn-gateway"
@@ -15,21 +14,24 @@
     ms.topic=""
     ms.tgt_pltfrm="na"
     ms.workload="infrastructure-services"
-    ms.date="03/20/2017"
-    wacn.date="04/17/2017"
+    ms.date="04/12/2017"
+    wacn.date="05/22/2017"
     ms.author="cherylmc"
-    ms.sourcegitcommit="e0e6e13098e42358a7eaf3a810930af750e724dd"
-    ms.openlocfilehash="4e0987a023049f44cba798a808b1e99d454ba9e1"
-    ms.lasthandoff="04/06/2017" />
+    ms.translationtype="Human Translation"
+    ms.sourcegitcommit="8fd60f0e1095add1bff99de28a0b65a8662ce661"
+    ms.openlocfilehash="2b0a2d03ede4fa85a5394fe39292927906febc95"
+    ms.contentlocale="zh-cn"
+    ms.lasthandoff="05/12/2017" />
 
 # <a name="delete-a-virtual-network-gateway-using-powershell"></a>使用 PowerShell 删除虚拟网络网关
 > [AZURE.SELECTOR]
+- [Resource Manager - Azure 门户预览](/documentation/articles/vpn-gateway-delete-vnet-gateway-portal/)
 - [Resource Manager - PowerShell](/documentation/articles/vpn-gateway-delete-vnet-gateway-powershell/)
 - [经典 - PowerShell](/documentation/articles/vpn-gateway-delete-vnet-gateway-classic-powershell/)
 
 可以使用多种不同的方法来删除 VPN 网关配置中的虚拟网络网关。
 
-- 如果想要删除所有信息并从头开始配置（例如，在测试环境中），可以删除整个资源组。 删除某个资源组时，会删除该组中的所有资源。 仅当你不想要保留资源组中的任何资源时，我们才建议执行此操作。 使用这种方法时，无法做到有选择性地删除一部分资源。
+- 如果要删除所有信息并从头开始配置（例如，在测试环境中），可以删除资源组。 删除某个资源组时，会删除该组中的所有资源。 仅当不想保留资源组中的任何资源时，才建议使用此方法。 使用这种方法时，无法做到有选择性地删除一部分资源。
 
 - 如果想要保留资源组中的某些资源，则删除虚拟网络网关的过程会略微复杂一些。 在删除虚拟网络网关之前，必须先删除任何依赖于该网关的资源。 遵循的步骤取决于创建的连接类型，以及每个连接的依赖资源。
 
@@ -53,7 +55,7 @@
 
 ## <a name="S2S"></a>删除站点到站点 VPN 网关
 
-若要删除 S2S 配置中的虚拟网络网关，必须先删除与该网关相关的每个资源。 由于存在依赖关系，必须按特定的顺序删除资源。 在以下示例中，必须专门为某些值命名，其他值是输出结果。 为方便演示，我们在示例中使用了以下特定值：
+若要删除 S2S 配置中的虚拟网络网关，必须先删除与该网关相关的每个资源。 由于存在依赖关系，必须按特定的顺序删除资源。 在以下示例中，必须指定某些值，而其他值是输出结果。 为方便演示，我们在示例中使用了以下特定值：
 
 VNet 名称：VNet1<br>
 资源组名称：RG1<br>
@@ -114,7 +116,7 @@ VNet 名称：VNet1<br>
 
 ## <a name="v2v"></a>删除 VNet 到 VNet VPN 网关
 
-若要删除 V2V 配置中的虚拟网络网关，必须先删除与该网关相关的每个资源。 由于存在依赖关系，必须按特定的顺序删除资源。 在以下示例中，必须专门为某些值命名，其他值是输出结果。 为方便演示，我们在示例中使用了以下特定值：
+若要删除 V2V 配置中的虚拟网络网关，必须先删除与该网关相关的每个资源。 由于存在依赖关系，必须按特定的顺序删除资源。 在以下示例中，必须指定某些值，而其他值是输出结果。 为方便演示，我们在示例中使用了以下特定值：
 
 VNet 名称：VNet1<br>
 资源组名称：RG1<br>
@@ -141,7 +143,7 @@ VNet 名称：VNet1<br>
 
 在此示例中，我们将检查来自 RG2 的连接。 请针对可能与虚拟网络网关建立了连接的每个资源组运行此步骤。
 
-    $ConnsR=get-azurermvirtualnetworkgatewayconnection -ResourceGroupName "<NameOfResourceGroup2>" | where-object {$_.VirtualNetworkGateway2.Id -eq $GW.Id}
+     $ConnsR=get-azurermvirtualnetworkgatewayconnection -ResourceGroupName "<NameOfResourceGroup2>" | where-object {$_.VirtualNetworkGateway2.Id -eq $GW.Id}
 
 ### <a name="4-delete-all-connections"></a>4.删除所有连接。
 系统可能会提示你确认是否要删除每个连接。
@@ -180,7 +182,7 @@ VNet 名称：VNet1<br>
 
 ## <a name="deletep2s"></a>删除点到站点 VPN 网关
 
-若要删除 P2S 配置中的虚拟网络网关，必须先删除与该网关相关的每个资源。 由于存在依赖关系，必须按特定的顺序删除资源。 在以下示例中，必须专门为某些值命名，其他值是输出结果。 为方便演示，我们在示例中使用了以下特定值：
+若要删除 P2S 配置中的虚拟网络网关，必须先删除与该网关相关的每个资源。 由于存在依赖关系，必须按特定的顺序删除资源。 在以下示例中，必须指定某些值，而其他值是输出结果。 为方便演示，我们在示例中使用了以下特定值：
 
 VNet 名称：VNet1<br>
 资源组名称：RG1<br>
@@ -223,20 +225,19 @@ VNet 名称：VNet1<br>
 
 ## <a name="delete"></a>通过删除资源组来删除 VPN 网关
 
-如果你不关心是否要保留任何资源，而只是想要从头开始配置，则可以删除整个资源组。 这种方法可以快速删除所有信息。 删除整个资源组时，无法做到有选择性地删除资源。 因此，在运行本示例之前，请确定这是你想要执行的操作。
-
-以下步骤适用于 Resource Manager 部署模型。
+如果不关心是否要保留资源组中的任何资源，而只是要从头开始配置，则可以删除整个资源组。 这种方法可以快速删除所有信息。 以下步骤仅适用于 Resource Manager 部署模型。
 
 ### <a name="1-get-a-list-of-all-the-resource-groups-in-your-subscription"></a>1.获取订阅中所有资源组的列表。
 
     Get-AzureRmResourceGroup
+
 ### <a name="2-locate-the-resource-group-that-you-want-to-delete"></a>2.找到想要删除的资源组。
 找到想要删除的资源组，然后查看该资源组中的资源列表。 在本示例中，资源组的名称为 RG1。 请修改示例以检索所有资源的列表。
 
     Find-AzureRmResource -ResourceGroupNameContains RG1
 
 ### <a name="3-verify-the-resources-in-the-list"></a>3.检查列表中的资源。
-返回列表后，请检查该列表，确认你要删除该资源组中的所有资源以及资源组本身。 
+返回列表后，请检查该列表，确认你要删除该资源组中的所有资源以及资源组本身。 如果要保留资源组中的某些资源，请使用本文之前部分中的步骤删除网关。
 
 ### <a name="4-delete-the-resource-group-and-resources"></a>4.删除资源组和资源。
 若要删除资源组及其包含的所有资源，请修改本示例，然后运行。

@@ -6,8 +6,7 @@
     author="cherylmc"
     manager="timlt"
     editor=""
-    tags="azure-resource-manager"
-    translationtype="Human Translation" />
+    tags="azure-resource-manager" />
 <tags
     ms.assetid="27b99f7c-50dc-4f88-8a6e-d60080819a43"
     ms.service="vpn-gateway"
@@ -15,16 +14,18 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="infrastructure-services"
-    ms.date="03/20/2017"
-    wacn.date="04/17/2017"
+    ms.date="04/10/2017"
+    wacn.date="05/22/2017"
     ms.author="cherylmc"
-    ms.sourcegitcommit="e0e6e13098e42358a7eaf3a810930af750e724dd"
-    ms.openlocfilehash="0b6decd18bebd6cd20e12bbbb94d613f87bdd491"
-    ms.lasthandoff="04/06/2017" />
+    ms.translationtype="Human Translation"
+    ms.sourcegitcommit="8fd60f0e1095add1bff99de28a0b65a8662ce661"
+    ms.openlocfilehash="12d00f840175a2899e661ee665e48958a9a71ab0"
+    ms.contentlocale="zh-cn"
+    ms.lasthandoff="05/12/2017" />
 
 # <a name="create-a-self-signed-root-certificate-for-point-to-site-connections-using-powershell"></a>使用 PowerShell 为点到站点连接创建自签名根证书
 
-点到站点连接使用证书进行身份验证。 配置点到站点连接时，需要将根证书的公钥（.cer 文件）上载到 Azure。 本文将会帮助你创建自签名根证书、导出公钥，以及生成和安装客户端证书。
+点到站点连接使用证书进行身份验证。 配置点到站点连接时，需要将根证书的公钥（.cer 文件）上传到 Azure。 本文将会帮助你创建自签名根证书、导出公钥，以及生成和安装客户端证书。
 
 > [AZURE.NOTE]
 > 以前，为点到站点连接创建自签名根证书和生成客户端证书的建议方法是使用 makecert。 现在，也可以使用 PowerShell 来创建这些证书。 使用 PowerShell 的优势之一是能够创建 SHA-2 证书。 
@@ -45,13 +46,13 @@
 
 ### <a name="cer"></a>获取公钥
 
-点到站点连接要求将公钥 (.cer) 上载到 Azure。 以下步骤帮助你导出自签名根证书的 .cer 文件。
+点到站点连接要求将公钥 (.cer) 上传到 Azure。 以下步骤帮助你导出自签名根证书的 .cer 文件。
 
-1. 若要获取证书 .cer 文件，请打开 **certmgr.msc**。 找到自签名根证书（通常位于“Certificates - Current User\Personal\Certificates”中），然后右键单击。 单击“所有任务”，然后单击“导出”。 此操作将打开“证书导出向导”。
+1. 若要获取证书 .cer 文件，请打开“管理用户证书”。 找到自签名根证书（通常位于“Certificates - Current User\Personal\Certificates”中），然后右键单击。 单击“所有任务”，然后单击“导出”。 此操作将打开“证书导出向导”。
 2. 在向导中，单击“下一步”。 选择“否，不导出私钥”，然后单击“下一步”。
 3. 在“导出文件格式”页上，选择“Base-64 编码的 X.509 (.CER)”，然后单击“下一步”。 
-4. 在“要导出的文件”中，“浏览”到要将证书导出的目标位置。 在“文件名”中，为证书文件命名。 然后单击“下一步” 。
-5. 单击“完成”以导出证书  。 会看到“导出已成功” 。 单击“确定”关闭向导。
+4. 在“要导出的文件”中，“浏览”到要将证书导出的目标位置。 在“文件名”中，为证书文件命名。 然后单击“下一步”。
+5. 单击“完成”导出证书。 会看到“导出成功”。 单击“确定”关闭向导。
 
 ### <a name="to-export-a-self-signed-root-certificate-optional"></a>导出自签名根证书（可选）
 你可能想要导出自签名根证书并将它存储在安全位置。 如果需要，可以稍后在另一台计算机上安装此自签名证书，然后生成更多客户端证书，或导出另一个 .cer 文件。
@@ -89,7 +90,7 @@
 2. 从返回的列表中找到使用者名称，然后将该名称旁边的指纹复制到文本文件中。 以下示例显示了两个证书。 CN 名称是要从中生成子证书的自签名根证书的名称。 在本例中，该根证书为“P2SRootCert”。
 
         Thumbprint                                Subject
-        ----------                                -------
+
         AED812AD883826FF76B4D1D5A77B3C08EFA79F3F  CN=P2SChildCert4
         7181AA8C1B4D34EEDB2F3D3BEC5839F3FE52D655  CN=P2SRootCert
 
@@ -97,7 +98,7 @@
 
         $cert = Get-ChildItem -Path "Cert:\CurrentUser\My\THUMBPRINT"
 
-    例如上，如果使用上一步骤中获取的 P2SRootCert 指纹，该变量将如下所示：
+    例如，使用上一步骤中 P2SRootCert 的指纹，该变量将如下所示：
 
         $cert = Get-ChildItem -Path "Cert:\CurrentUser\My\7181AA8C1B4D34EEDB2F3D3BEC5839F3FE52D655"
 
@@ -113,20 +114,20 @@
 
 生成客户端证书时，该证书会自动安装在用于生成它的计算机上。 如果想要在另一台客户端计算机上安装客户端证书，需要导出生成的客户端证书。                              
 
-1. 若要导出客户端证书，请打开 **certmgr.msc**。 生成的客户端证书默认位于“Certificates - Current User\Personal\Certificates”中。 右键单击要导出的客户端证书，单击“所有任务”，然后单击“导出”。 此操作将打开“证书导出向导”。
+1. 若要导出客户端证书，请打开“管理用户证书”。 生成的客户端证书默认位于“Certificates - Current User\Personal\Certificates”中。 右键单击要导出的客户端证书，单击“所有任务”，然后单击“导出”。 此操作将打开“证书导出向导”。
 2. 在向导中，单击“**下一步**”，选择“**是，导出私钥**”，然后单击“**下一步**”。
-3. 在“导出文件格式”页上，保留选择默认值。 请务必选中“包括证书路径中的所有证书（如果可能）”。 。
-4. 在“安全性”页上，必须保护私钥  。 如果选择使用密码，请务必记下或牢记为此证书设置的密码。 。
-5. 在“要导出的文件”中，“浏览”到要将证书导出的目标位置。 在“文件名”中，为证书文件命名。 然后单击“下一步” 。
+3. 在“导出文件格式”页上，保留选择默认值。 请务必选中“包括证书路径中的所有证书(如果可能)”。 选择此项也会导出成功身份验证所需的根证书信息。 然后单击“下一步”。
+4. 在“**安全性**”页上，必须保护私钥。 如果选择使用密码，请务必记下或牢记为此证书设置的密码。 然后单击“下一步”。
+5. 在“要导出的文件”中，“浏览”到要将证书导出的目标位置。 在“文件名”中，为证书文件命名。 然后单击“下一步”。
 6. 单击“完成”导出证书。    
 
 ## <a name="install"></a>安装已导出的客户端证书
 
 如果想要从另一台客户端计算机（而不是用于生成客户端证书的计算机）创建 P2S 连接，需要安装客户端证书。 安装客户端证书时，需要使用导出客户端证书时创建的密码。
 
-1. 找到 *.pfx* 文件并将其复制到客户端计算机。 在客户端计算机上，双击 *.pfx* 文件以进行安装。 将“**存储位置**”保留为“**当前用户**”，然后单击“**下一步**”。
+1. 找到 *.pfx* 文件并将其复制到客户端计算机。 在客户端计算机上，双击 *.pfx* 文件以进行安装。 将“存储位置”保留为“当前用户”，然后单击“下一步”。
 2. 在“要导入的**文件**”页上，不要进行任何更改。 单击“下一步”。
-3. 在“**私钥保护**”页上，如果使用了密码，请输入证书的密码，或验证安装证书的安全主体是否正确，然后单击“**下一步**”。
+3. 在“私钥保护”页上，输入证书的密码，或验证安全主体是否正确，然后单击“下一步”。
 4. 在“**证书存储**”页上，保留默认位置，然后单击“**下一步**”。
 5. 单击“**完成**”。 在证书安装的“**安全警告**”上，单击“**是**”。 可随时单击“是”，因为证书已生成。 现已成功导入证书。
 
@@ -135,4 +136,3 @@
 
 * 有关 **Resource Manager** 部署模型步骤，请参阅 [Configure a Point-to-Site connection to a VNet](/documentation/articles/vpn-gateway-howto-point-to-site-resource-manager-portal/)（配置与 VNet 的点到站点连接）。 
 * 有关**经典**部署模型步骤，请参阅 [Configure a Point-to-Site VPN connection to a VNet (classic)](/documentation/articles/vpn-gateway-howto-point-to-site-classic-azure-portal/)（配置与 VNet 的点到站点 VPN 连接（经典））。
-<!--Update_Description: wording update-->

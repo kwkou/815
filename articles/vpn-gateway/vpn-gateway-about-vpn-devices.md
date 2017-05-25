@@ -6,8 +6,7 @@
     author="yushwang"
     manager="rossort"
     editor=""
-    tags="azure-resource-manager, azure-service-management"
-    translationtype="Human Translation" />
+    tags="azure-resource-manager, azure-service-management" />
 <tags
     ms.assetid="ba449333-2716-4b7f-9889-ecc521e4d616"
     ms.service="vpn-gateway"
@@ -15,12 +14,14 @@
     ms.topic="get-started-article"
     ms.tgt_pltfrm="na"
     ms.workload="infrastructure-services"
-    ms.date="03/03/2017"
-    wacn.date="04/17/2017"
+    ms.date="04/11/2017"
+    wacn.date="05/22/2017"
     ms.author="yushwang;cherylmc"
-    ms.sourcegitcommit="e0e6e13098e42358a7eaf3a810930af750e724dd"
-    ms.openlocfilehash="f0f30889954cf2fdf6bed49f6d712785c5edcfbe"
-    ms.lasthandoff="04/06/2017" />
+    ms.translationtype="Human Translation"
+    ms.sourcegitcommit="8fd60f0e1095add1bff99de28a0b65a8662ce661"
+    ms.openlocfilehash="6641972c3f84a1ff49cfd32eae80a104b2909012"
+    ms.contentlocale="zh-cn"
+    ms.lasthandoff="05/12/2017" />
 
 # <a name="about-vpn-devices-and-ipsecike-parameters-for-site-to-site-vpn-gateway-connections"></a>关于用于站点到站点 VPN 网关连接的 VPN 设备和 IPsec/IKE 参数
 
@@ -31,20 +32,21 @@
 
 ###<a name="items-to-note-when-viewing-the-tables"></a>查看表时的注意事项：
 
-* Azure VPN 网关的术语已更改。 这两个术语你可能都会碰到。 无功能性更改，只是名称进行了更改。
+* Azure VPN 网关的术语已更改。 没有功能更改。 只有名称更改。
     * 静态路由 = PolicyBased
     * 动态路由 = RouteBased
 * 除非另有说明，否则高性能 VPN 网关和 RouteBased VPN 网关的规范是相同的。 例如，经验证与 RouteBased VPN 网关兼容的 VPN 设备也与 Azure 高性能 VPN 网关兼容。
 
 > [AZURE.NOTE]
-> 配置站点到站点连接时，需要为你的 VPN 设备提供面向公众的 IPv4 IP 地址。                                                                                                                                                                               
+> 配置站点到站点连接时，需要为你的 VPN 设备提供面向公众的 IPv4 IP 地址。
+>                
 
-## <a name="devicetable"></a>已验证的 VPN 设备
+## <a name="devicetable"></a>验证的 VPN 设备和设备配置指南
 我们在与设备供应商合作的过程中验证了一系列标准 VPN 设备。 以下列表中包含的设备系列中的所有设备都应适用于 Azure VPN 网关。 请参阅 [关于 VPN 网关](/documentation/articles/vpn-gateway-about-vpngateways/) 以确定需要为要配置的解决方案创建的网关类型。
 
-若要获取配置 VPN 设备的帮助，请参考各设备系列相对应的链接。 如需 VPN 设备支持，请联系设备制造商。
+若要获取配置 VPN 设备的帮助，请参考各设备系列相对应的链接。 我们会尽力提供各种配置说明链接。 如需 VPN 设备支持，请联系设备制造商。
 
-|**供应商**          |**设备系列**     |**最低操作系统版本** |**PolicyBased** |**RouteBased** |
+|**供应商**          |**设备系列**     |**最低操作系统版本** |**PolicyBased 配置说明** |**RouteBased 配置说明** |
 | ---                | ---                  | ---                   | ---            | ---           |
 | A10 Networks, Inc. |Thunder CFW           |ACOS 4.1.1             |不兼容  |[配置指南](https://www.a10networks.com/resources/deployment-guides/a10-thunder-cfw-ipsec-vpn-interoperability-azure-vpn-gateways)|
 | Allied Telesis     |AR 系列 VPN 路由器 |2.9.2                  |即将支持     |不兼容  |
@@ -56,7 +58,6 @@
 | Cisco |ASR |PolicyBased：IOS 15.1<br>RouteBased：IOS 15.2 |[配置示例](https://github.com/Azure/Azure-vpn-config-samples/tree/master/Cisco/Current/ASR) |[配置示例](https://github.com/Azure/Azure-vpn-config-samples/tree/master/Cisco/Current/ASR) |
 | Cisco |ISR |PolicyBased：IOS 15.0<br>RouteBased*：IOS 15.1 |[配置示例](https://github.com/Azure/Azure-vpn-config-samples/tree/master/Cisco/Current/ISR) |[配置示例*](https://github.com/Azure/Azure-vpn-config-samples/tree/master/Cisco/Current/ISR) |
 | Citrix |NetScaler MPX、SDX、VPX |10.1 及以上 |[配置指南](https://docs.citrix.com/netscaler/11-1/system/cloudbridge-connector-introduction/cloudbridge-connector-azure.html) |不兼容 |
-| Dell SonicWALL |TZ 系列、NSA 系列<br>SuperMassive 系列<br>E 类 NSA 系列 |SonicOS 5.8.x<br>SonicOS 5.9.x<br>SonicOS 6.x |[SonicOS 6.2 配置指南](http://documents.software.dell.com/sonicos/6.2/microsoft-azure-configuration-guide?ParentProduct=646)<br>[SonicOS 5.9 配置指南](http://documents.software.dell.com/sonicos/5.9/microsoft-azure-configuration-guide?ParentProduct=850) |[SonicOS 6.2 配置指南](http://documents.software.dell.com/sonicos/6.2/microsoft-azure-configuration-guide?ParentProduct=646)<br>[SonicOS 5.9 配置指南](http://documents.software.dell.com/sonicos/5.9/microsoft-azure-configuration-guide?ParentProduct=850) |
 | F5 |BIG-IP 系列 |12.0 |[配置指南](https://devcentral.f5.com/articles/connecting-to-windows-azure-with-the-big-ip) |[配置指南](https://devcentral.f5.com/articles/big-ip-to-azure-dynamic-ipsec-tunneling) |
 | Fortinet |FortiGate |FortiOS 5.4.2 |[配置指南](http://cookbook.fortinet.com/ipsec-vpn-microsoft-azure-54) |[配置指南](http://cookbook.fortinet.com/ipsec-vpn-microsoft-azure-54) |
 | Internet Initiative Japan (IIJ) |SEIL 系列 |SEIL/X 4.60<br>SEIL/B1 4.60<br>SEIL/x86 3.20 |[配置指南](http://www.iij.ad.jp/biz/seil/ConfigAzureSEILVPN.pdf) |不兼容 |
@@ -68,17 +69,18 @@
 | 打开系统 AG |任务控制安全网关 |不适用 |[配置指南](https://www.open.ch/_pdf/Azure/AzureVPNSetup_Installation_Guide.pdf) |[配置指南](https://www.open.ch/_pdf/Azure/AzureVPNSetup_Installation_Guide.pdf) |
 | Openswan |Openswan |2.6.32 |（即将支持） |不兼容 |
 | Palo Alto Networks |运行 PAN-OS 的所有设备 |PAN-OS<br>PolicyBased：6.1.5 或更高版本<br>RouteBased：7.1.4 |[配置指南](https://live.paloaltonetworks.com/t5/Configuration-Articles/How-to-Configure-VPN-Tunnel-Between-a-Palo-Alto-Networks/ta-p/59065) |[配置指南](https://live.paloaltonetworks.com/t5/Integration-Articles/Configuring-IKEv2-VPN-for-Microsoft-Azure-Environment/ta-p/60340) |
+| SonicWall |TZ 系列、NSA 系列<br>SuperMassive 系列<br>E 类 NSA 系列 |SonicOS 5.8.x<br>SonicOS 5.9.x<br>SonicOS 6.x |[SonicOS 6.2 配置指南](http://documents.software.dell.com/sonicos/6.2/microsoft-azure-configuration-guide?ParentProduct=646)<br>[SonicOS 5.9 配置指南](http://documents.software.dell.com/sonicos/5.9/microsoft-azure-configuration-guide?ParentProduct=850) |[SonicOS 6.2 配置指南](http://documents.software.dell.com/sonicos/6.2/microsoft-azure-configuration-guide?ParentProduct=646)<br>[SonicOS 5.9 配置指南](http://documents.software.dell.com/sonicos/5.9/microsoft-azure-configuration-guide?ParentProduct=850) |
 | WatchGuard |全部 |Fireware XTM<br> PolicyBased：v11.11.x<br>RouteBased：v11.12.x |[配置指南](http://watchguardsupport.force.com/publicKB?type=KBArticle&SFDCID=kA2F00000000LI7KAM&lang=en_US) |[配置指南](http://watchguardsupport.force.com/publicKB?type=KBArticle&SFDCID=kA22A000000XZogSAG&lang=en_US)|
 
 (*) ISR 7200 系列路由器仅支持 PolicyBased VPN。
 
-## <a name="additionaldevices"  id="devices-not-on-the-compatible-list"></a> 未验证的 VPN 设备
+## <a name="additionaldevices" id="devices-not-on-the-compatible-list"></a> 未验证的 VPN 设备
 即使没有看到设备在“已验证的 VPN 设备”表列出中，该设备也有可能适用于站点到站点连接。 请联系设备制造商了解更多支持和配置说明。
 
 ## <a name="editing"></a>编辑设备配置示例
 在下载提供的 VPN 设备配置示例后，你需要替换一些值来反映你环境的设置。
 
-###<a name="to-edit-a-sample"></a>编辑示例的步骤：
+### <a name="to-edit-a-sample"></a>编辑示例的步骤：
 
 1. 使用记事本打开示例。
 2. 搜索所有 <*text*> 字符串并将其替换为与你的环境相关的值。 请确保包含 < 和 >。 指定名称时，你选择的名称应是唯一的。 如果命令无效，请查看设备制造商文档。
@@ -97,13 +99,13 @@
 | &lt;SP_AzureGatewayIpAddress&gt; |此信息特定于你的虚拟网络，并位于经典管理门户的“网关 IP 地址”中。 |
 | &lt;SP_PresharedKey&gt; |此信息特定于你的虚拟网络，并作为“管理密钥”位于经典管理门户中。 |
 
-## <a name="IPSec"></a>IPsec/IKE 参数
+## <a name="ipsec"></a>IPsec/IKE 参数
 > [AZURE.NOTE]
-> 尽管 Azure VPN 网关支持下表中列出的值，但你目前无法从 Azure VPN 网关中选择或指定算法或参数的特定组合。 你必须从本地 VPN 设备指定任何约束。
+> 尽管 Azure VPN 网关支持下表中列出的值，但你目前无法从 Azure VPN 网关中选择或指定算法或参数的特定组合。 你必须从本地 VPN 设备指定任何约束。 此外，还必须将 **MSS** 固定在 **1350**。
 > 
-> 此外，还必须将 **MSS** 固定在 **1350**。
+>
 
-在下表中：
+在下面的表中：
 
 * SA = 安全关联
 * IKE 阶段 1 也称“主模式”
@@ -178,12 +180,13 @@
 
 > [AZURE.IMPORTANT]
 > 这些是第三方 VPN 设备与 Azure VPN 网关之间的已知兼容性问题。 Azure 团队正积极与供应商合作解决此处列出的问题。 解决问题后，将使用最新的信息更新此页。 请定期查看。
+>
+>
 
-###<a name="feb-16-2017"></a>2017 年 2 月 16 日
+### <a name="feb-16-2017"></a>2017 年 2 月 16 日
 
 **早于 7.1.4 版的 Palo Alto Networks 设备**（针对 Azure 基于路由的 VPN）：如果通过 PAN-OS 版本早于 7.1.4 的 Palo Alto Networks 使用 VPN 设备，并且遇到 Azure 基于路由的 VPN 网关的连接问题，请执行以下步骤：
 
 1. 检查 Palo Alto Networks 设备的固件版本。 如果 PAN-OS 版本低于 7.1.4，请升级到 7.1.4。
 2. 连接到 Azure VPN 网关时，请在 Palo Alto Networks 设备上将阶段 2 SA（或快速模式 SA）生存期更改为 28,800 秒（8 小时）。
 3. 如果仍然遇到连接问题，请从 Azure 门户预览提出支持请求。
-<!--Update_Description: wording update-->
