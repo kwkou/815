@@ -10,7 +10,7 @@
 <tags
    ms.service="open-source-website"  
    ms.date=""
-   wacn.date="06/14/2016"/>
+   wacn.date="05/26/2017"/>
 
 #Azure Linux 虚拟机上的数据库的备份
 
@@ -314,7 +314,7 @@ Percona XtraBackup 是开源的热备份工具—在备份的时候，不会锁�
 	$sudo tar -xf Percona-XtraBackup-2.3.2-r306a2e0-el7-x86_64-bundle.tar
 	$sudo yum install perl-DBD-MySQL.x86_64
 	$sudo yum install rsync
-	$sudo rpm -ivh percona-xtrabackup-2.3.2-1.el7.x86_64.rpm
+	$sudo yum install percona-xtrabackup-2.3.2-1.el7.x86_64.rpm
 	$sudo mysql -uroot -ppassword
 	mysql> CREATE USER 'bkpuser'@'localhost' IDENTIFIED BY 's3cret';
 	mysql> GRANT RELOAD, LOCK TABLES, REPLICATION CLIENT ON *.* TO 'bkpuser'@'localhost';

@@ -10,7 +10,7 @@
 <tags
 	ms.service="open-source-website"
 	ms.date=""
-	wacn.date="06/14/2016"/>
+	wacn.date="05/26/2017"/>
 
 # 在 Azure Linux 虚拟机上安装 MySQL
 
@@ -55,9 +55,11 @@ MySQL 有多个稳定版本以及多种安装方式，这篇文档以 MySQL 5.6�
 
 6. 如果需要更新 root 密码的话，有好几种方式。这里还是用 mysqladmin 命令
 
-		$sudo mysqladmin -uroot -p<password> password
+		$sudo mysqladmin -uroot -p<oldpassword> password
 
 	其中 <password> 是您原先的 root 密码，敲入上述命令后回车，输入新密码即可。
+
+    其他重置密码方法详细请参考：[Root密码重置方法](https://dev.mysql.com/doc/refman/5.7/en/resetting-permissions.html)
 
 7. 停止 MySQL 服务
 

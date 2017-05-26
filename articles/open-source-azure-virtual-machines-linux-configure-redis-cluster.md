@@ -10,7 +10,7 @@
 <tags
    ms.service="open-source-website"  
    ms.date=""
-   wacn.date="06/14/2016"/>
+   wacn.date="05/26/2017"/>
 
 
 # 在 Azure Linux 虚拟机上配置 Redis 集群
@@ -86,7 +86,7 @@ Azure 有提供收费的 Redis 服务，请参考 [Azure Redis tutorial](/docume
         "bar"
         127.0.0.1:6379>
 
-4. 打开6379端口。6379端口是 Redis 的默认端口。请参考[创建终结点](/documentation/articles/virtual-machines-linux-classic-setup-endpoints/)打开端口 
+4. 打开6379端口。6379端口是 Redis 的默认端口。请参考[创建终结点](/documentation/articles/virtual-machines-windows-nsg-quickstart-portal/)打开端口 
 5. 停掉 Redis 的命令
 
         $sudo ./redis-cli shutdown

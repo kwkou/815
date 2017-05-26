@@ -10,7 +10,7 @@
 <tags
    ms.service="open-source-website"  
    ms.date=""
-   wacn.date="06/14/2016"/>
+   wacn.date="05/26/2017"/>
 
 
 # 构建网站集群
@@ -135,7 +135,7 @@ MySQL 是一主一从，提供数据写服务； Redis 也是一主一从，提�
 
 	我们使用 haproxy 来作负载均衡，下面的步骤演示 haproxy 的安装配置过程。 
 
-	3.1 打开此 LB 虚拟机的访问端口80。请参考[创建终结点](/documentation/articles/virtual-machines-linux-classic-setup-endpoints/)。
+	3.1 打开此 LB 虚拟机的访问端口80。请参考[创建终结点](/documentation/articles/virtual-machines-windows-nsg-quickstart-portal/)。
 
 	3.2 下载软件包[http://www.haproxy.org/download/1.6/src/haproxy-1.6.3.tar.gz](http://www.haproxy.org/download/1.6/src/haproxy-1.6.3.tar.gz) 并上传至 LB 虚拟机。然后 SSH 连接到此 LB 虚拟机，去到此软件包所在目录下，执行如下命令： 
 
@@ -187,7 +187,7 @@ MySQL 是一主一从，提供数据写服务； Redis 也是一主一从，提�
 		        server  centosweb2 10.0.0.5:80  weight 5 check inter 2000 rise 2 fall 3
 		        server  centosweb3 10.0.0.6:80  weight 5 check inter 2000 rise 2 fall 3
 
-	>[AZURE.WARNING]注意上面红色标注的部分为3台WEB的IP地址，请根据您的实际情况填写: 如果3台WEB与此LB在同一个虚拟网络的不同子网下，这里可以填写私有IP地址，否则请填写3台WEB的实际公网IP地址。
+	>[AZURE.WARNING]注意上面 server 为3台WEB的IP地址，请根据您的实际情况填写: 如果3台WEB与此LB在同一个虚拟网络的不同子网下，这里可以填写私有IP地址，否则请填写3台WEB的实际公网IP地址。
 
 
  
@@ -198,7 +198,7 @@ MySQL 是一主一从，提供数据写服务； Redis 也是一主一从，提�
 
 	如果是自己搭建，请参考下面步骤。
 
-	4.1在两台 redis 虚拟机上打开6379端口。6379端口是 Redis 的默认端口。请参考链接[创建终结点](/documentation/articles/virtual-machines-linux-classic-setup-endpoints/)打开端口。
+	4.1在两台 redis 虚拟机上打开6379端口。6379端口是 Redis 的默认端口。请参考链接[创建终结点](/documentation/articles/virtual-machines-windows-nsg-quickstart-portal/)打开端口。
 
 	4.2 SSH 连接到 redis master 即 centosredis1 虚拟机上，编辑文件 install_redis.sh, 确保文件内容和下面一致：
 
@@ -319,7 +319,7 @@ MySQL 是一主一从，提供数据写服务； Redis 也是一主一从，提�
 
 	如果是自己搭建，请参考下面步骤。
 
-	5.1. 在两台机器上都打开3306端口。请参考链接[创建终结点](/documentation/articles/virtual-machines-linux-classic-setup-endpoints/)。
+	5.1. 在两台机器上都打开3306端口。请参考链接[创建终结点](/documentation/articles/virtual-machines-windows-nsg-quickstart-portal/)。
 	
 	5.2. SSH 连接到 mysql master 即 centosmysql1 虚拟机，编辑文件 install_mysql.sh, 确保内容和下面一致：　
 
@@ -473,7 +473,7 @@ MySQL 是一主一从，提供数据写服务； Redis 也是一主一从，提�
 
 	我们使用 apache+php。
 
-	6.1 首先打开每台 web 的访问端口80。 请参考[创建终结点](/documentation/articles/virtual-machines-linux-classic-setup-endpoints/)。
+	6.1 首先打开每台 web 的访问端口80。 请参考[创建终结点](/documentation/articles/virtual-machines-windows-nsg-quickstart-portal/)。
 
 	6.2 每台 web 的操作步骤都是一样的，下面以一台 web 为例。SSH 连接到 centosweb1, 编辑文件 install_apache.sh, 确保文件内容和下面一致： 
 		
@@ -579,17 +579,17 @@ MySQL 是一主一从，提供数据写服务； Redis 也是一主一从，提�
 
 	![5](./media/open-source-azure-virtual-machines-create-website-cluster/5.png)
  
-	8.2 直接浏览器里输入[http://centoshaproxy.chinacloudapp.cn](http://centoshaproxy.chinacloudapp.cn) 或者输入 centoshaproxy 的公网 IP ， [http://42.159.246.67](http://42.159.246.67) 如果出现下图，表明负载均衡以及 web server 运行正常。
+	8.2 直接浏览器里输入 http://centoshaproxy.chinaeast.cloudapp.chinacloudapi.cn  或者输入 centoshaproxy 的公网 IP ， http://42.159.194.205  如果出现下图，表明负载均衡以及 web server 运行正常。
  
 	![6](./media/open-source-azure-virtual-machines-create-website-cluster/6.png)
 
-	8.3 浏览器里输入[http://centoshaproxy.chinacloudapp.cn/info.php](http://centoshaproxy.chinacloudapp.cn/info.php) 如果出现下图表明 web server php 工作正常。
+	8.3 浏览器里输入http://centoshaproxy.chinaeast.cloudapp.chinacloudapi.cn/info.php 如果出现下图表明 web server php 工作正常。
 
 	![7](./media/open-source-azure-virtual-machines-create-website-cluster/7.png)
  
-	8.4 浏览器里输入[http://centoshaproxy.chinacloudapp.cn/mysql.php](http://centoshaproxy.chinacloudapp.cn/mysql.php) 如果出现类似下图，表明访问 mysql 数据库正常。 
+	8.4 浏览器里输入http://centoshaproxy.chinaeast.cloudapp.chinacloudapi.cn/mysql.php  如果出现类似下图，表明访问 mysql 数据库正常。 
  
-	![８](./media/open-source-azure-virtual-machines-create-website-cluster/8.png)
+	![8](./media/open-source-azure-virtual-machines-create-website-cluster/8.png)
 
 	8.5 此时如果刷新浏览器，会再次往数据库写入值。至此网站基本配置已经成功。应用程序在开发时，可以实现从 redis 中读取数据，往 mysql 中写入数据；如果 redis 中没有要读取的数据，则从 mysql 中读取，再把此数据写入 redis，下次直接从 redis 中读取即可。
 
@@ -612,7 +612,7 @@ MySQL 是一主一从，提供数据写服务； Redis 也是一主一从，提�
 
 10. 注意事项
 
-	Azure 的虚拟机创建时默认只打开了22端口，所以一定要记得检查是否有把相应的服务端口打开。请参考[创建终结点](/documentation/articles/virtual-machines-linux-classic-setup-endpoints/)。
+	Azure 的虚拟机创建时默认只打开了22端口，所以一定要记得检查是否有把相应的服务端口打开。请参考[创建终结点](/documentation/articles/virtual-machines-windows-nsg-quickstart-portal/)。
 	监控，备份，安全等有相关的专题，可参考具体页面。
 
 

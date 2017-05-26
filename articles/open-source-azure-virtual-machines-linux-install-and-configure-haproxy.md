@@ -10,7 +10,7 @@
 <tags
 	ms.service="open-source-website"
 	ms.date=""
-	wacn.date="06/14/2016"/>
+	wacn.date="05/26/2017"/>
 
 # 在 Azure Linux 虚拟机上安装配置 HAProxy
 
@@ -146,9 +146,25 @@ HAProxy 可以看作是提供高可用，负载均衡，反向代理等功能的
 
 	这个时候访问 [http://HAProxy 的公网地址:80]() 会出错，因为它后端的两台 web server 还没有提供 web 服务。
 
-3. 去到两台 web server 安装好 apache2 并启动。
+3. 去到两台 web server 安装好 apache2 并启动。为方便下一步测试，请在安装好 apache2 之后修改主页内容以区分两台 server。例如在根目录下创建 index.html，示例如下：
 
-4. 这时访问 [http://HAProxy 的公网地址:80]() 就可正常访问了。类似下图：
+        sudo vi /var/www/html/index.html
+   
+    在index.html中添加下列内容
+
+        <DOCTYPE html>
+        <html>
+        <head>
+        <title>Welcome to 10.8.0.4 Server</title>
+        </head>
+        <body>
+        <h1>Welcom to 10.8.0.4 Server.</h1>
+        <p>This is a test.</p>
+        </body>
+        </html>
+
+
+4. 这时访问 http://HAProxy 的公网地址:80 就可正常访问了。类似下图：
 
 	![](./media/open-source-azure-virtual-machines-linux-install-and-configure-haproxy/configure.png)
 

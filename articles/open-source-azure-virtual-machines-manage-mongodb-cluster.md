@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="open-source-mongodb" 
-	wacn.date="06/20/2016"/>
+	wacn.date="05/26/2017"/>
 
 #在 Azure 虚拟机上管理配置 MongoDB 集群
 
@@ -55,7 +55,7 @@ MongoDB 是一个跨平台的面向文档的 NoSQL 数据库，本文档介绍�
 		$sudo vi /etc/yum.repos.d/mongodb-org-3.2.repo
 		[mongodb-org-3.2]
 		name=MongoDB Repository
-		baseurl=https://mirror.chinacloudapp.cn/mongodb/yum/redhat/$releasever/mongodb-org/3.2/x86_64/
+		baseurl=https://mirror.azure.cn/mongodb/yum/redhat/$releasever/mongodb-org/3.2/x86_64/
 		gpgcheck=0
 		enabled=1
 
@@ -227,11 +227,11 @@ MongoDB 复制集是一组 mongod 实例，它们维护着同样的数据集。�
 5.	启动 MongoDB。  
 	在 CentOS 和 SLES 节点执行如下命令    
 		
-		#mongod --dbpath /var/lib/mongo/ --replSet repset --logpath /var/log/mongodb/mongod.log --fork
+		$sudo mongod --dbpath /var/lib/mongo/ --replSet repset --logpath /var/log/mongodb/mongod.log --fork
 
 	在 Ubuntu 节点执行如下命令  
 
-		#mongod --dbpath /var/lib/mongodb/ --replSet repset --logpath /var/log/mongodb/mongod.log --fork
+		$sudo mongod --dbpath /var/lib/mongodb/ --replSet repset --logpath /var/log/mongodb/mongod.log --fork
 
 6.	使用 mongo shell 连接到复制集的一个成员。在一个节点上执行以下命令（请根据实际情况填写IP地址）：  
 	
@@ -291,14 +291,14 @@ MongoDB 复制集是一组 mongod 实例，它们维护着同样的数据集。�
 3.	到原先的主节点，重启 mongod 进程  
 	在 CentOS 和 SLES 节点执行如下命令：  
 
-		#mongod --dbpath /var/lib/mongo/ --replSet repset --logpath /var/log/mongodb/mongod.log --fork 
-		#mongo
+		$sudo mongod --dbpath /var/lib/mongo/ --replSet repset --logpath /var/log/mongodb/mongod.log --fork  
+		$mongo
 	    >rs.status()
  
 	在Ubuntu节点执行如下命令：  
 
-		#mongod --dbpath /var/lib/mongodb --replSet repset --logpath /var/log/mongodb/mongod.log --fork 
-		#mongo
+		$sudo mongod --dbpath /var/lib/mongodb --replSet repset --logpath /var/log/mongodb/mongod.log --fork 
+		$mongo
 		>rs.status()
 
 	您会看到它的状态变成从节点了。重新加入了此复制集。  
@@ -318,7 +318,7 @@ MongoDB 复制集是一组 mongod 实例，它们维护着同样的数据集。�
 ###<a name="add-childnode"></a>添加从节点  
 1.	在想要添加到复制集的节点上执行(如果是 Ubuntu OS, dbpath 则是 /var/lib/mongodb )    
 
-		#mongod --dbpath /var/lib/mongo/ --replSet repset --logpath /var/log/mongodb/mongod.log --fork
+		$sudo mongod --dbpath /var/lib/mongo/ --replSet repset --logpath /var/log/mongodb/mongod.log --fork
   
 2.	在主节点上执行   
 
@@ -410,7 +410,7 @@ Config servers 保存分片集群元数据信息。
 4.	配置复制集(在shard节点配置，即10.2.0.4，10.2.0.5)  
 	每个shard节点启动 mongod 进程  
 
-		#mongod --dbpath /var/lib/mongo/ --replSet repset --logpath /var/log/mongodb/mongod.log --fork
+		$sudo mongod --dbpath /var/lib/mongo/ --replSet repset --logpath /var/log/mongodb/mongod.log --fork
   
 	在其中一个shard节点执行如下命令    
 
@@ -430,16 +430,16 @@ Config servers 保存分片集群元数据信息。
 
 5.	到 Config server (10.2.0.3) 执行如下   
 
-		#mongod --configsvr --dbpath /var/lib/mongo/ --logpath /var/log/mongodb/mongod.log --fork
+		$sudo mongod --configsvr --dbpath /var/lib/mongo/ --logpath /var/log/mongodb/mongod.log --fork
    
 6.	router 节点设置  
 	登录到每个router节点执行    
 
-		#mongos --configdb 10.2.0.3 --logpath /var/log/mongodb/mongod.log --fork
+		$mongos --configdb 10.2.0.3 --logpath /var/log/mongodb/mongod.log --fork
   
 	在一个 router 节点上执行  
 
-		#mongo  
+		$mongo  
  
 	添加复制集主节点到分片集群, 从节点会自动添加进来   
 
