@@ -159,7 +159,6 @@ HAProxy 可以看作是提供高可用，负载均衡，反向代理等功能的
         </head>
         <body>
         <h1>welcome to 10.8.0.4 server</h1>
-        <p>This is a test.</p>
         </body>
         </html>
 
