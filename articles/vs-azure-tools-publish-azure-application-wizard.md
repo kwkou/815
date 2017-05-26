@@ -70,7 +70,7 @@
    
 **为所有角色启用远程桌面** - 如果希望能够远程连接到服务，请选中此选项。 此选项主要用于故障排除。 当选中此复选框后，“远程桌面配置”对话框随即出现。 选择“设置”链接以更改配置。
    
-**为所有 Web 角色启用 Web 部署** - 选中此选项以为服务启用 Web 部署。 必须选择“为所有角色启用远程桌面”选项才能使用此功能。 有关详细信息，请参阅[[使用 Visual Studio 发布 Azure 云服务](https://msdn.microsoft.com/zh-cn/library/azure/ff683672.aspx)](https://msdn.microsoft.com/zh-cn/library/azure/ff683672.aspx)。 
+**为所有 Web 角色启用 Web 部署** - 选中此选项以为服务启用 Web 部署。 必须选择“为所有角色启用远程桌面”选项才能使用此功能。 有关详细信息，请参阅 [使用 Visual Studio 发布 Azure 云服务](https://msdn.microsoft.com/zh-cn/library/azure/ff683672.aspx)。 
 
 ## <a name="settings-page---advanced-settings-tab"></a>“设置”页 -“高级设置”选项卡
 

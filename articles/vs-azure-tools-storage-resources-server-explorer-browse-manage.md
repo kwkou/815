@@ -72,10 +72,10 @@ Blob 节点显示所选存储帐户的容器列表。 Blob 容器包含 Blob 文
   - 上载文件
   - 删除 Blob
     
-    > [AZURE.NOTE]
-    > 从 Blob 容器中删除文件不会删除基础文件，而只是将它从 Blob 容器删除。
-    > 
-    > 
+		> [AZURE.NOTE]
+	    > 从 Blob 容器中删除文件不会删除基础文件，而只是将它从 Blob 容器删除。
+		> 
+    	> 
   - 打开 Blob
   - 将 Blob 保存到本地计算机
 
@@ -93,10 +93,10 @@ Blob 节点显示所选存储帐户的容器列表。 Blob 容器包含 Blob 文
 ### <a name="to-delete-a-container-folder"></a>删除容器文件夹
 - 删除文件夹中的所有文件
   
-  > [AZURE.NOTE]
-  > 由于 Blob 容器中的文件夹是一个虚拟文件夹，因此无法创建空文件夹，也无法删除文件夹并删除其文件内容。 只有删除了文件夹的整个内容才能删除该文件夹。
-  > 
-  > 
+	> [AZURE.NOTE]
+	> 由于 Blob 容器中的文件夹是一个虚拟文件夹，因此无法创建空文件夹，也无法删除文件夹并删除其文件内容。 只有删除了文件夹的整个内容才能删除该文件夹。
+	> 
+	> 
 
 ### <a name="to-filter-blobs-in-a-container"></a>在容器中筛选 Blob
 可以通过指定常用前缀来筛选显示的 Blob。
@@ -266,10 +266,10 @@ Azure 表存储服务可存储大量结构化数据。 该服务是一个 NoSQL 
 ### <a name="to-remove-a-storage-account-from-server-explorer"></a>从服务器资源管理器中删除存储帐户
 - 在服务器资源管理器中，打开帐户名称的快捷菜单，然后选择“删除”。 如果删除某个存储帐户，则也会删除该帐户所有已保存的密钥信息。
   
-  > [AZURE.NOTE]
-  > 从服务器资源管理器中删除存储帐户不会影响到存储帐户或其所包含的任何数据，它只是将引用从服务器资源管理器中删除了。 若要永久删除存储帐户，请使用 [Azure 经典管理门户](https://manage.windowsazure.cn)。
-  > 
-  > 
+	> [AZURE.NOTE]
+	> 从服务器资源管理器中删除存储帐户不会影响到存储帐户或其所包含的任何数据，它只是将引用从服务器资源管理器中删除了。 若要永久删除存储帐户，请使用 [Azure 经典管理门户](https://manage.windowsazure.cn)。
+	> 
+	> 
 
 ## <a name="next-steps"></a>后续步骤
 若要详细了解如何使用 Azure 存储服务，请参阅[访问 Azure 存储服务](https://msdn.microsoft.com/zh-cn/library/azure/ee405490.aspx)。
