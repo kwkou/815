@@ -187,7 +187,7 @@ MySQL 是一主一从，提供数据写服务； Redis 也是一主一从，提�
 		        server  centosweb2 10.0.0.5:80  weight 5 check inter 2000 rise 2 fall 3
 		        server  centosweb3 10.0.0.6:80  weight 5 check inter 2000 rise 2 fall 3
 
-	>[AZURE.WARNING]注意上面 server 为3台WEB的IP地址，请根据您的实际情况填写: 如果3台WEB与此LB在同一个虚拟网络的不同子网下，这里可以填写私有IP地址，否则请填写3台WEB的实际公网IP地址。
+	>[AZURE.WARNING]注意上面 server 为 3 台 WEB 的 IP 地址，请根据您的实际情况填写: 如果 3 台 WEB 与此 LB 在同一个虚拟网络的不同子网下，这里可以填写私有 IP 地址，否则请填写 3 台 WEB 的实际公网 IP 地址。
 
 
  

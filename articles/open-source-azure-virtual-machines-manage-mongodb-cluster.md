@@ -147,11 +147,11 @@ MongoDB 是一个跨平台的面向文档的 NoSQL 数据库，本文档介绍�
 		$sudo zypper addlock mongodb-org-3.2.0 mongodb-org-server-3.2.0 mongodb-org-shell-3.2.0 mongodb-org-mongos-3.2.0 mongodb-org-tools-3.2.0
   
 4.	启动 MongoDB (有许多种启动 MongoDB 的方式, 这里我们用下列命令启动)    
-5.	
+
 		$ sudo mongod --dbpath /var/lib/mongo/ --logpath /var/log/mongodb/mongod.log --fork 
 
 5.	查看 MongoDB 日志，验证是否启动成功  
-6.	
+
 		$sudo cat /var/log/mongodb/mongod.log  
 
 6.	停止 MongoDB 

@@ -342,7 +342,7 @@ Percona XtraBackup 是开源的热备份工具—在备份的时候，不会锁�
 
 3.1 增量备份  
 
-	$innobackupex --defaults-file=/etc/my.cnf --user='bkpuser' --password='s3cret' /tmp/backup --no-timestamp
+	$sudo innobackupex --defaults-file=/etc/my.cnf --user='bkpuser' --password='s3cret' /tmp/backup --no-timestamp
 	$sudo innobackupex --defaults-file=/etc/my.cnf --user='bkpuser' --password='s3cret' --incremental /tmp/inc1 --incremental-basedir=/tmp/backup --no-timestamp
 	$sudo innobackupex --defaults-file=/etc/my.cnf --user='bkpuser' --password='s3cret' --incremental /tmp/inc2 --incremental-basedir=/tmp/inc1 --no-timestamp  
 

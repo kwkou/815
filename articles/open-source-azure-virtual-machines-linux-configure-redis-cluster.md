@@ -61,7 +61,9 @@ Azure 有提供收费的 Redis 服务，请参考 [Azure Redis tutorial](/docume
     SUSE Linux: (以 SLES 12, 64-bit system, Redis 3.0.7 为例)  
     安装 gcc
     
-        $sudo zypper install gcc -y
+        $sudo zypper install gcc
+ 	    $sudo zypper install make
+
 
 2. 安装和启动 Redis. (下面2-5 步骤对于 RHEL, Ubuntu 和 SUSE 来讲都是一样的. 以 CentOS 7.0, 64-bit system, Redis 3.0.7 为例)
 
