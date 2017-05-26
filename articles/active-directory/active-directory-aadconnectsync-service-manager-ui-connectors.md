@@ -89,7 +89,7 @@
 7. 用户名指示用于同步的 AD DS 帐户。
 8. 在密码文本框中输入 AD DS 帐户的新密码。
 
-	![Azure AD Connect 同步加密密钥实用程序](./media/active-directory-aadconnectsync-encryption-key/key6.png)
+	![Azure AD Connect 同步加密密钥实用程序](./media/active-directory-aadconnectsync-encryption-key/key6.PNG)
 
 9. 单击“确定”以保存新密码，并重启 Synchronization Service 以从内存缓存中删除旧密码。
 
