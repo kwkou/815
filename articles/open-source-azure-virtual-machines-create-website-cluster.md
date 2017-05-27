@@ -577,7 +577,8 @@ MySQL 是一主一从，提供数据写服务； Redis 也是一主一从，提�
 
 	8.1 登录 Azure 管理控制台，选择‘虚拟机’-- > 找到 centoshaproxy, 单击它 -- > 选择‘仪表板’， 在右下方即可看到此台机器的 DNS 地址，公网 IP，私有 IP 等信息。如下图。
 
-	![5](./media/open-source-azure-virtual-machines-create-website-cluster/5.png)
+	![9](./media/open-source-azure-virtual-machines-create-website-cluster/9.png)
+    ![10](./media/open-source-azure-virtual-machines-create-website-cluster/10.png)
  
 	8.2 直接浏览器里输入 http://centoshaproxy.chinaeast.cloudapp.chinacloudapi.cn  或者输入 centoshaproxy 的公网 IP ， http://42.159.194.205  如果出现下图，表明负载均衡以及 web server 运行正常。
  
