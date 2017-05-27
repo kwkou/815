@@ -97,7 +97,7 @@ MongoDB 是一个跨平台的面向文档的 NoSQL 数据库，本文档介绍�
 
 2.	创建一个list文件  
 		
-		$echo "deb http://mirror.chinacloudapp.cn/mongodb/apt/ubuntu trusty/mongodb-org/3.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.2.list
+		$echo "deb http://mirror.azure.cn/mongodb/apt/ubuntu trusty/mongodb-org/3.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.2.list
 
 3.	更新  
 	
@@ -136,7 +136,7 @@ MongoDB 是一个跨平台的面向文档的 NoSQL 数据库，本文档介绍�
 
 1.	配置包管理系统    
 
-		$sudo zypper addrepo --no-gpgcheck https://mirror.chinacloudapp.cn/mongodb/zypper/suse/12/mongodb-org/3.2/x86_64/ mongodb
+		$sudo zypper addrepo --no-gpgcheck https://mirror.azure.cn/mongodb/zypper/suse/12/mongodb-org/3.2/x86_64/ mongodb
   
 2.	安装mongoDB 包  
 	
