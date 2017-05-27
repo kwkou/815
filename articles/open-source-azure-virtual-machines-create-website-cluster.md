@@ -556,7 +556,7 @@ MySQL 是一主一从，提供数据写服务； Redis 也是一主一从，提�
 
         sudo bash install_apache.sh mysqlPassword mysqlMasterIP insertValue
 	
-	>[AZURE.IMPORTANT] 注意：其中的 mysqlPassword 指的是您的 mysql master 的 root 密码，请根据您的具体情况设置； mysqlMasterIP 指的是您的 mysql master 的 IP 地址，如果 mysql master 和这台 web 处于同一个虚拟网络的不同子网下，此时可以填写 mysql master 的私有 IP 地址，否则请填写 mysql master 公网 IP 地址； insertValue 指的是您要往 mysql 测试表中写入的值，这个值在访问http://centoshaproxy.chinacloudapp.cn/mysql.php 会显示出来。
+	>[AZURE.IMPORTANT] 注意：其中的 mysqlPassword 指的是您的 mysql master 的 root 密码，请根据您的具体情况设置； mysqlMasterIP 指的是您的 mysql master 的 IP 地址，如果 mysql master 和这台 web 处于同一个虚拟网络的不同子网下，此时可以填写 mysql master 的私有 IP 地址，否则请填写 mysql master 公网 IP 地址； insertValue 指的是您要往 mysql 测试表中写入的值，这个值在访问http://centoshaproxy.chinaeast.cloudapp.chinacloudapi.cn/mysql.php 会显示出来。
 
 	比如我运行
 
@@ -573,7 +573,7 @@ MySQL 是一主一从，提供数据写服务； Redis 也是一主一从，提�
 
 8. 访问网站。
 	
-	到了这步，直接访问 LB 的地址即可访问此网站。 LB 的 DNS 地址是在创建虚拟机时自己设定的，比如虚拟机的 DNS 地址又叫云服务地址，类似XXXXX.chinacloudapp.cn
+	到了这步，直接访问 LB 的地址即可访问此网站。 LB 的 DNS 地址是在创建虚拟机时自己设定的，比如虚拟机的 DNS 地址又叫云服务地址，类似XXXXX.chinaeast.cloudapp.chinacloudapi.cn
 
 	8.1 登录 Azure 管理控制台，选择‘虚拟机’-- > 找到 centoshaproxy, 单击它 -- > 选择‘仪表板’， 在右下方即可看到此台机器的 DNS 地址，公网 IP，私有 IP 等信息。如下图。
 
