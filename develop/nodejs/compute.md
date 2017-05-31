@@ -5,7 +5,7 @@
 <h1 id="menu-nodejs-compute">计算</h1>
 <h2 id="header-0">网站</h2>
 <h3>针对包含客户端标记和脚本、服务器端脚本和数据库的 Web 应用程序</h3>
-<h3>教程：<a href="/documentation/articles/web-sites-nodejs-develop-deploy-mac/">部署网站</a></h3>
+<h3>教程：<a href="/documentation/articles/app-service-web-get-started-nodejs/">部署网站</a></h3>
 <p>了解如何使用 Azure 门户创建新的 Azure 网站，为该网站设置 Git 存储库，然后使用 Git 将 Node.js 应用程序发布到该网站。</p>
 <h3>教程：<a href="https://www.microsoft.com/web/webmatrix/">使用 WebMatrix 部署网站</a></h3>
 <p>WebMatrix 是用于创建 Web 应用程序的轻型 Windows IDE。它包含多个用于创建 Node.js 应用程序的模板，以及 JavaScript 自动完成功能。在本教程中，你将了解如何创建 Node.js 应用程序，然后将该应用程序部署到 Azure 网站。</p>

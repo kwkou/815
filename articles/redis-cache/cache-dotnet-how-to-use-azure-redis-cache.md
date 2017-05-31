@@ -251,6 +251,8 @@ Azure Redis 缓存可以缓存 .NET 对象以及基元数据类型，但在缓�
 [How to: Set a Page's Cacheability Programmatically]: http://msdn.microsoft.com/zh-cn/library/z852zf6b.aspx
 [Configure a cache in Azure Redis Cache]: http://msdn.microsoft.com/zh-cn/library/azure/dn793612.aspx
 
+[StackExchange.Redis configuration model]: https://stackexchange.github.io/StackExchange.Redis/Configuration
+
 [Work with .NET objects in the cache]: /documentation/articles/cache-dotnet-how-to-use-azure-redis-cache/#working-with-caches
 
 [NuGet Package Manager Installation]: http://go.microsoft.com/fwlink/?LinkId=240311

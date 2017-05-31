@@ -47,7 +47,7 @@ Azure 在中国不同的区域保留了数据中心。此基础结构支持多�
 有关 Azure 流量管理器工作原理的详细信息，请参阅：
 
 * [流量管理器概述](/documentation/articles/traffic-manager-overview/)
-* [配置故障转移路由方法](/documentation/articles/traffic-manager-configure-failover-routing-method/)
+* [配置故障转移路由方法](/documentation/articles/traffic-manager-configure-priority-routing-method/)
 
 ## Azure 灾难情况
 

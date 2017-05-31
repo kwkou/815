@@ -88,7 +88,7 @@ Azure HDInsight 支持多个可随时部署的 Hadoop 群集版本。 每个版�
 | HDI 2.1 |HDP 1.3 |Windows Server 2012R2 |是 |否 |
 | HDI 1.6 |HDP 1.1 | |否 |否 |
 
-##<a name="hdi-version-33-nearing-deprecation-date" id="hdi-version-32-and-33-nearing-deprecation-date"></a>HDI 版本 3.3 接近弃用日期
+##<a name="hdi-version-33-nearing-deprecation-date"></a>HDI 版本 3.3 接近弃用日期
 如果有 HDI 3.3 群集，请尽快将群集升级到 HDI 3.5 或 HDI 3.6。 HDI 3.3 Windows 的弃用时间表可能因区域而异。 如果所在区域的计划弃用日期与本通信中确定的日期不同，客户将会收到单独的通信。
 
 ### <a name="the-service-level-agreement-for-hdinsight-cluster-versions"></a>HDInsight 群集版本的服务级别协议

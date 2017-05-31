@@ -23,7 +23,7 @@
 
 [AZURE.INCLUDE [选项卡](../../includes/app-service-web-get-started-nav-tabs.md)]
 
-在本文中，你将了解 Azure Webapps 上运行的[节点应用程序](/documentation/articles/app-service-web-nodejs-get-started/)的最佳做法和故障排除步骤（通过 [iisnode](https://github.com/azure/iisnode)）。
+在本文中，你将了解 Azure Webapps 上运行的[节点应用程序](/documentation/articles/app-service-web-get-started-nodejs/)的最佳做法和故障排除步骤（通过 [iisnode](https://github.com/azure/iisnode)）。
 
 >[AZURE.WARNING] 在生产站点上使用故障排除步骤时，请格外小心。建议在非生产安装（例如过渡槽）上排查应用问题，当问题修复后，请交换过渡槽与生产槽。
 
@@ -279,7 +279,7 @@ NODE.exe 内有名为 NODE\_PENDING\_PIPE\_INSTANCES 的设置。默认情况下
 
 请访问以下链接，了解有关 Azure Web Apps 上的 node.js 应用程序的详细信息。
 
-* [Azure App Service 中的 Node.js Web 应用入门](/documentation/articles/app-service-web-nodejs-get-started/)
+* [Azure App Service 中的 Node.js Web 应用入门](/documentation/articles/app-service-web-get-started-nodejs/)
 * [如何在 Azure App Service 中调试 Node.js Web 应用](/documentation/articles/web-sites-nodejs-debug/)
 * [将 Node.js 模块与 Azure 应用程序一起使用](/documentation/articles/nodejs-use-node-modules-azure-apps/)
 * [Azure App Service Web Apps: Node.js](https://blogs.msdn.microsoft.com/silverlining/2012/06/14/windows-azure-websites-node-js/)

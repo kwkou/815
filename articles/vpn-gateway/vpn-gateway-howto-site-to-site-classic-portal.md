@@ -37,7 +37,7 @@
 - [经典 - 经典管理门户](/documentation/articles/vpn-gateway-site-to-site-create/)
 
 #### <a name="additional-configurations"></a>其他配置
-如果你想要将多个 VNet 连接到一起，但又不想创建连接到本地位置的连接，则请参阅 [配置 VNet 到 VNet 连接](/documentation/articles/virtual-networks-configure-vnet-to-vnet-connection/)。 如果想要向已具有连接的 VNet 添加站点到站点连接，请参阅[使用现有 VPN 网关连接将 S2S 连接添加到 VNet](/documentation/articles/vpn-gateway-multi-site/)。
+如果你想要将多个 VNet 连接到一起，但又不想创建连接到本地位置的连接，则请参阅 [配置 VNet 到 VNet 连接](/documentation/articles/vpn-gateway-howto-vnet-vnet-portal-classic/)。 如果想要向已具有连接的 VNet 添加站点到站点连接，请参阅[使用现有 VPN 网关连接将 S2S 连接添加到 VNet](/documentation/articles/vpn-gateway-multi-site/)。
 
 ## <a name="before-you-begin"></a>开始之前
 

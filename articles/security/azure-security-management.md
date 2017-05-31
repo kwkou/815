@@ -126,7 +126,7 @@ Azure 提供了安全机制来帮助管理员管理 Azure 云服务和虚拟机�
 
 ### 连接
 
-有多种机制可供帮助保护客户端与 Azure 虚拟网络的连接。在这些机制中，[站点到站点 VPN](https://channel9.msdn.com/series/Azure-Site-to-Site-VPN) (S2S) 和[点到站点 VPN](/documentation/articles/vpn-gateway-point-to-site-create/) (P2S) 支持使用行业标准 IPsec (S2S) 或[安全套接字隧道协议](https://technet.microsoft.com/magazine/2007.06.cableguy.aspx) (SSTP) (P2S) 来进行加密和隧道传输。当 Azure 连接到面向公众的 Azure 服务管理（例如 Azure 经典管理门户）时，Azure 需要超文本安全传输协议 (HTTPS)。
+有多种机制可供帮助保护客户端与 Azure 虚拟网络的连接。在这些机制中，[站点到站点 VPN](https://channel9.msdn.com/series/Azure-Site-to-Site-VPN) (S2S) 和[点到站点 VPN](/documentation/articles/vpn-gateway-howto-point-to-site-classic-azure-portal/) (P2S) 支持使用行业标准 IPsec (S2S) 或[安全套接字隧道协议](https://technet.microsoft.com/magazine/2007.06.cableguy.aspx) (SSTP) (P2S) 来进行加密和隧道传输。当 Azure 连接到面向公众的 Azure 服务管理（例如 Azure 经典管理门户）时，Azure 需要超文本安全传输协议 (HTTPS)。
 
 未通过 RD 网关连接到 Azure 的独立强化工作站应使用基于 SSTP 的点到站点 VPN 来与 Azure 虚拟网络建立初始连接，然后从 VPN 隧道与各个虚拟机建立 RDP 连接。
 

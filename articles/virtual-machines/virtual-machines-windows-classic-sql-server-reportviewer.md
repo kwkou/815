@@ -79,7 +79,7 @@ ReportViewer 控件随 Visual Studio Standard Edition 或更高版本提供。�
 ReportViewer 需要使用正确的凭据向报表服务器进行身份验证，并且凭据必须经报表服务器授权才能访问所需的报表。有关身份验证的信息，请参阅白皮书 [Reporting Services 报表查看器控件和基于 Azure 虚拟机的报表服务器](https://msdn.microsoft.com/zh-cn/library/azure/dn753698.aspx)。
 
 ## 发布 ASP.NET Web 应用程序到 Azure
-有关将 ASP.NET Web 应用程序发布到 Azure 的说明，请参阅[如何：从 Visual Studio 将 Web 应用程序迁移和发布到 Azure](/documentation/articles/vs-azure-tools-migrate-publish-web-app-to-cloud-service/) 和 [Web Apps 和 ASP.NET 入门](/documentation/articles/web-sites-dotnet-get-started/)。
+有关将 ASP.NET Web 应用程序发布到 Azure 的说明，请参阅[如何：从 Visual Studio 将 Web 应用程序迁移和发布到 Azure](/documentation/articles/vs-azure-tools-migrate-publish-web-app-to-cloud-service/) 和 [Web Apps 和 ASP.NET 入门](/documentation/articles/app-service-web-get-started-dotnet/)。
 
 > [AZURE.IMPORTANT]
 如果在解决方案资源管理器中的快捷菜单中未显示添加Azure 部署项目或添加 Azure 云服务项目命令，你可能需要将该项目的目标框架更改为 .NET Framework 4。

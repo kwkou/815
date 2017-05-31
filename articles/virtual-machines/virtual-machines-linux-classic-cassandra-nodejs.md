@@ -496,7 +496,7 @@ Azure 在进行预配时需要使用 PEM 或 DER 编码的 X509 公钥。按照�
 </table>
 
 ### 步骤 2：创建本地网络
-Azure 虚拟网络中的本地网络是映射到远程站点（包括私有云或其他 Azure 区域）的代理地址空间。此代理地址空间绑定到远程网关，可将网络路由到正确的联网目的地。请参阅[配置 VNet 到 VNet 连接](/documentation/articles/virtual-networks-configure-vnet-to-vnet-connection/)，了解建立 VNET 到 VNET 连接的说明。
+Azure 虚拟网络中的本地网络是映射到远程站点（包括私有云或其他 Azure 区域）的代理地址空间。此代理地址空间绑定到远程网关，可将网络路由到正确的联网目的地。请参阅[配置 VNet 到 VNet 连接](/documentation/articles/vpn-gateway-howto-vnet-vnet-portal-classic/)，了解建立 VNET 到 VNET 连接的说明。
 
 按照以下详细信息创建两个本地网络：
 

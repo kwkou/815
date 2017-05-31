@@ -33,7 +33,7 @@
 * HDInsight 群集上的 Hadoop。可以使用基于 Linux 或基于 Windows 的群集。
 
     > [AZURE.IMPORTANT]
-    Linux 是在 HDInsight 3.4 版或更高版本上使用的唯一操作系统。有关详细信息，请参阅 [HDInsight 在 Windows 上弃用](/documentation/articles/hdinsight-component-versioning/#hdi-version-32-and-33-nearing-deprecation-date)。
+    Linux 是在 HDInsight 3.4 版或更高版本上使用的唯一操作系统。有关详细信息，请参阅 [HDInsight 在 Windows 上弃用](/documentation/articles/hdinsight-component-versioning/#hdi-version-33-nearing-deprecation-date)。
 
 * [SQuirreL SQL](http://squirrel-sql.sourceforge.net/)。SQuirreL 是 JDBC 客户端应用程序。
 

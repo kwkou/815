@@ -25,6 +25,8 @@
 
 [WebJobs SDK](/documentation/articles/websites-webjobs-resources/) 可简化针对 Web 作业执行的常见任务（例如，图像处理、队列处理、RSS 聚合、文件维护和发送电子邮件）编写代码。WebJobs SDK 的内置功能使用 Azure 存储空间和 Service Bus，用于计划任务和处理错误，以及用于许多其他常见方案。此外，还可以扩展其设计，且拥有[用于扩展的开源存储库](https://github.com/Azure/azure-webjobs-sdk-extensions/wiki/Binding-Extensions-Overview)。
 
+[!INCLUDE [app-service-web-webjobs-corenote](../../includes/app-service-web-webjobs-corenote.md)]
+
 使用 Visual Studio 中集成的工具，可以顺利地创建、部署和管理 Web 作业。你可以从模板创建 Web 作业，还可以发布和管理（运行/停止/监视/调试）这些作业。
 
 Azure 门户预览中的 Web 作业仪表板提供了强大的管理功能，可让你全面控制 Web 作业的执行，包括调用 Web 作业中的各个函数。该仪表板还会显示函数运行时和日志记录输出。
@@ -41,7 +43,7 @@ Azure 门户预览中的 Web 作业仪表板提供了强大的管理功能，可
 * [如何通过 WebJobs SDK 使用 Azure Blob 存储](/documentation/articles/websites-dotnet-webjobs-sdk-storage-blobs-how-to/)
 * [如何通过 WebJobs SDK 使用 Azure 表存储](/documentation/articles/websites-dotnet-webjobs-sdk-storage-tables-how-to/)
 * [如何通过 WebJobs SDK 使用 Azure 服务总线](/documentation/articles/websites-dotnet-webjobs-sdk-service-bus/)
-* [Azure WebJobs SDK 快速参考（PDF 下载）](https://jhaleyfiles2016.blob.core.windows.net/public/Azure%20WebJobs%20SDK%20Cheat%20Sheet%202014.pdf)
+* [Azure WebJobs SDK 快速参考（PDF 下载）](https://go.microsoft.com/fwlink/p/?linkid=845558)
 * [GitHub 中的 Web 作业设置文档](https://github.com/projectkudu/kudu/wiki/Web-jobs)。
 * [Pranav Rastogi 提供的 Azure Web 作业更新 - 1.1 版中的可扩展性](https://channel9.msdn.com/Shows/Cloud+Cover/Episode-183-Azure-WebJobs-Update-with-Pranav-Rastogi)
 

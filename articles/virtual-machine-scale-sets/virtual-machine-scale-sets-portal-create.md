@@ -58,9 +58,9 @@
 可以使用这些 NAT 规则连接到规模集中的每个 VM。 例如，对于 Windows 规模集，如果传入端口 50000 使用的是 NAT 规则，则可以通过 `<load-balancer-ip-address>:50000`上的 RDP 连接到该计算机。 对于 Linux 规模集，则使用命令 `ssh -p 50000 <username>@<load-balancer-ip-address>`进行连接。
 
 ## <a name="next-steps"></a>后续步骤
-有关如何从 CLI 部署规模集的文档，请参阅[本文档](/documentation/articles/virtual-machine-scale-sets-cli-quick-create/)。
+有关如何从 CLI 部署规模集的文档，请参阅[本文档](/documentation/articles/virtual-machine-scale-sets-create/)。
 
-有关如何从 PowerShell 部署规模集的文档，请参阅[本文档](/documentation/articles/virtual-machine-scale-sets-windows-create/)。
+有关如何从 PowerShell 部署规模集的文档，请参阅[本文档](/documentation/articles/virtual-machine-scale-sets-create/)。
 
 有关如何从 Visual Studio 部署规模集的文档，请参阅[本文档](/documentation/articles/virtual-machine-scale-sets-vs-create/)。
 

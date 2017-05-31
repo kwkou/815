@@ -34,7 +34,7 @@
 以下步骤将演示如何在经典管理门户中配置 VPN 网关。 这些步骤适用于使用经典部署模型创建的虚拟网络的网关。 目前，并非所有网关配置设置在 Azure 门户预览中都可用。 当它们可用时，我们会创建一套适用于 Azure 门户预览的新说明。
 
 ### <a name="before-you-begin"></a>开始之前
-在配置网关之前，必须先创建虚拟网络。 有关为跨界连接创建虚拟网络的步骤，请参阅[使用站点到站点 VPN 连接配置虚拟网络](/documentation/articles/vpn-gateway-site-to-site-create/)或[使用点到站点 VPN 连接配置虚拟网络](/documentation/articles/vpn-gateway-point-to-site-create/)。 然后，按照以下步骤来配置 VPN 网关，并收集配置 VPN 设备所需的信息。 
+在配置网关之前，必须先创建虚拟网络。 有关为跨界连接创建虚拟网络的步骤，请参阅[使用站点到站点 VPN 连接配置虚拟网络](/documentation/articles/vpn-gateway-site-to-site-create/)或[使用点到站点 VPN 连接配置虚拟网络](/documentation/articles/vpn-gateway-howto-point-to-site-classic-azure-portal/)。 然后，按照以下步骤来配置 VPN 网关，并收集配置 VPN 设备所需的信息。 
 
 如果已有一个 VPN 网关并想要更改 VPN 路由类型，请参阅 [如何更改网关的 VPN 路由类型](#how-to-change-the-vpn-routing-type-for-your-gateway)。
 
@@ -132,6 +132,6 @@
 ## <a name="next-steps"></a>后续步骤
 你可以将虚拟机添加到虚拟网络。 请参阅[如何创建自定义虚拟机](/documentation/articles/virtual-machines-windows-classic-createportal/)。
 
-如果要配置点到站点 VPN 连接，请参阅[配置点到站点 VPN 连接](/documentation/articles/vpn-gateway-point-to-site-create/)。
+如果要配置点到站点 VPN 连接，请参阅[配置点到站点 VPN 连接](/documentation/articles/vpn-gateway-howto-point-to-site-classic-azure-portal/)。
 
 <!--Update_Description: wording update-->

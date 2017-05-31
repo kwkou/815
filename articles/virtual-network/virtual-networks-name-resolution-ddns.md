@@ -54,9 +54,6 @@ Linux 客户端通常在启动时注册到 DNS 服务器，并假设 DHCP 服务
   			nsupdate $nsupdatecmds
 		fi
 
-		#done
-		exit 0;
-
 还可使用 *nsupdate* 命令来执行安全的动态 DNS 更新。例如，使用 Bind DNS 服务器时，将[生成](http://linux.yyz.us/nsupdate/)公钥-私钥对。已向 DNS 服务器[配置](http://linux.yyz.us/dns/ddns-server.html)密钥的公共部分，所以它可以验证请求中的签名。必须使用 *-k* 选项将密钥对提供给 *nsupdate*，以便对动态 DNS 更新请求进行签名。
 
 如果使用 Windows DNS 服务器，可在 *nsupdate* 中使用 *-g* 参数进行 Kerberos 身份验证（在 *nsupdate* 的 Windows 版本中不可用）。若要执行此操作，请使用 *kinit* 加载凭据（例如从 [keytab 文件](http://www.itadmintools.com/2011/07/creating-kerberos-keytab-files.html)进行加载）。然后 *nsupdate g* 将拾取缓存内的凭据。

@@ -25,7 +25,7 @@ editor="Eric Chen" />
 
 #### Web 应用和 ASP.NET 入门
 
-###[入门教程](/documentation/articles/web-sites-dotnet-get-started/)
+###[入门教程](/documentation/articles/app-service-web-get-started-dotnet/)
 
 <table width="100%" border="0" cellspacing="0" cellpadding="0">
       <tr>
@@ -34,7 +34,7 @@ editor="Eric Chen" />
         <th align="left" scope="col">API 参考</th>
       </tr>
       <tr>
-        <td><a href="/documentation/articles/web-sites-dotnet-get-started/">Azure Web 应用和 ASP.NET 入门</a></td>
+        <td><a href="/documentation/articles/app-service-web-get-started-dotnet/">Azure Web 应用和 ASP.NET 入门</a></td>
 		<td><a href="https://azure.microsoft.com/zh-cn/blog/announcing-the-azure-sdk-2-8-for-net/">Azure	 SDK for .NET 2.8.1</a></td>
         <td>Blob 存储 <a href="/documentation/articles/storage-dotnet-how-to-use-blobs/">.NET</a> | <a href="http://msdn.microsoft.com/zh-cn/library/azure/dd135733.aspx">REST</a></td>
       </tr>

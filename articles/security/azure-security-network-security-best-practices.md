@@ -202,7 +202,7 @@ Azure 网络安全设备可通过网络级别控件提供的功能来提供大�
 - 站点到站点 VPN
 - ExpressRoute
 
-[点到站点 VPN](/documentation/articles/vpn-gateway-point-to-site-create/) 是远程访问 VPN 客户端/服务器连接的另一种说法。点到站点 VPN 可让单个用户通过 Internet 连接到 Azure 虚拟网络。建立点到站点连接之后，用户能够使用 RDP 或 SSH 连接到位于用户通过点到站点 VPN 连接的 Azure 虚拟网络上的所有虚拟机。此处假设用户有权访问这些虚拟机。
+[点到站点 VPN](/documentation/articles/vpn-gateway-howto-point-to-site-classic-azure-portal/) 是远程访问 VPN 客户端/服务器连接的另一种说法。点到站点 VPN 可让单个用户通过 Internet 连接到 Azure 虚拟网络。建立点到站点连接之后，用户能够使用 RDP 或 SSH 连接到位于用户通过点到站点 VPN 连接的 Azure 虚拟网络上的所有虚拟机。此处假设用户有权访问这些虚拟机。
 
 点到站点 VPN 比直接 RDP 或 SSH 连接更安全，因为用户必须事先通过两次身份验证才将连接到虚拟机。第一次，用户需要通过身份验证（并获得授权）才能创建点到站点 VPN 连接；第二次，用户需要通过身份验证（并获得授权）才能建立 RDP 或 SSH 会话。
 

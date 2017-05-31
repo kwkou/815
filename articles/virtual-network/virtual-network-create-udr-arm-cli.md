@@ -102,10 +102,10 @@
 3. 运行 [az network vnet subnet update](https://docs.microsoft.com/cli/azure/network/vnet/subnet#update) 命令，将上面创建的路由表与 **FrontEnd** 子网关联：
 
         az network vnet subnet update \
-        > --resource-group testrg \
-        > --vnet-name testvnet \
-        > --name FrontEnd \
-        > --route-table UDR-FrontEnd
+        --resource-group testrg \
+        --vnet-name testvnet \
+        --name FrontEnd \
+        --route-table UDR-FrontEnd
 
     输出：
 
@@ -184,9 +184,9 @@
 2. 运行以下命令，启用 IP 转发：
 
             az network nic update \
-            > --resource-group testrg \
-            > --name nicfw1 \
-            > --ip-forwarding true
+            --resource-group testrg \
+            --name nicfw1 \
+            --ip-forwarding true
 
     可以查看流式传输到控制台的输出，或者仅针对特定的 **enableIpForwarding** 值进行重新测试：
 
@@ -198,7 +198,7 @@
 
     参数：
     
-    * **--ip-forwarding**。*true* 或 *false*。
+    **--ip-forwarding**: *true* 或 *false*。
 
 <!---HONumber=Mooncake_0327_2017-->
 <!--Update_Description: change from CLI 1.0 to CLI 2.0-->

@@ -600,7 +600,7 @@
 
 <!-- URLs -->
 
-[Build and deploy a Node.js web app in Azure App Service]: /documentation/articles/web-sites-nodejs-develop-deploy-mac/
+[Build and deploy a Node.js web app in Azure App Service]: /documentation/articles/app-service-web-get-started-nodejs/
 [Azure Developer Center]: /develop/nodejs/
 
 [node]: http://nodejs.org
@@ -618,7 +618,7 @@
 
 [Azure Portal Preview]: https://portal.azure.cn
 
-[Create and deploy a Node.js application to an Azure Web Site]: /documentation/articles/web-sites-nodejs-develop-deploy-mac/
+[Create and deploy a Node.js application to an Azure Web Site]: /documentation/articles/app-service-web-get-started-nodejs/
  
 <!-- Image References -->
 

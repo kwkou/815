@@ -36,7 +36,7 @@ Azure 自动化可让你自动针对 Azure 和本地中的资源执行任务。�
 
 | 方法 | 环境 | 文章 |
 | --- | --- | --- |
-| Azure AD 用户帐户 |Azure 资源管理器和 Azure 服务管理 |[Authenticate Runbooks with Azure AD User account（使用 Azure AD 用户帐户进行 Runbook 身份验证）](/documentation/articles/automation-sec-configure-aduser-account/) |
+| Azure AD 用户帐户 |Azure 资源管理器和 Azure 服务管理 |[Authenticate Runbooks with Azure AD User account（使用 Azure AD 用户帐户进行 Runbook 身份验证）](/documentation/articles/automation-create-aduser-account/) |
 | Azure 运行方式帐户 |Azure 资源管理器 |无 |
 | Azure 经典运行方式帐户 |Azure 服务管理 |无 |
 

@@ -127,7 +127,7 @@ Azure 也很适合替代其他情况下成本高昂的灾难恢复 (DR) 站点�
 - 在虚拟网络上部署 VM 并不意味着（或要求）连回本地网络；虚拟网络仅产生这种可能性。必须创建一个虚拟网络，供 Azure 与本地网络之间进行专用通信。需要在本地网络上部署 VPN 终结点。打开的 VPN 从 Azure 通向本地网络。有关详细信息，请参阅 [Virtual Network Overview](/documentation/articles/virtual-networks-overview/)（虚拟网络概述）和 [Configure a Site-to-Site VPN in the Azure Portal](/documentation/articles/vpn-gateway-site-to-site-create/)（在 Azure 门户预览中配置站点到站点 VPN）。
 
 	> [AZURE.NOTE]
-	有一个[创建点到站点 VPN](/documentation/articles/vpn-gateway-point-to-site-create/) 的选项可将单独的基于 Windows 的计算机直接连接到 Azure 虚拟网络。
+	有一个[创建点到站点 VPN](/documentation/articles/vpn-gateway-howto-point-to-site-classic-azure-portal/) 的选项可将单独的基于 Windows 的计算机直接连接到 Azure 虚拟网络。
 	> 
 	> 
 
@@ -335,7 +335,7 @@ SharePoint 部署在 Azure 虚拟机上，并且该应用程序不依赖企业�
 | [DC 部署配置](#BKMK_DeploymentConfig) |<li>是否部署一个没有任何信任关系的独立林？</li> <li>是否部署具有联合的新林？</li> <li>是否部署一个包含 Windows Server Active Directory 林信任或 Kerberos 的新林？</li> <li>是否通过部署副本 DC 扩展企业林？</li> <li>是否通过部署新的子域或域树扩展企业林？</li> |<li>安全性</li> <li>合规性</li> <li>成本</li> <li>复原和容错</li> <li>应用程序兼容性</li> |
 | [Windows Server Active Directory 站点拓扑](#BKMK_ADSiteTopology) |如何配置 Azure 虚拟网络的子网、站点和站点链接以优化流量并将成本降至最低？ |<li>子网和站点定义</li> <li>站点链接属性和更改通知</li> <li>复制压缩</li> |
 | [IP 寻址和 DNS](#BKMK_IPAddressDNS) |如何配置 IP 地址和名称解析？ |<li>使用 Set-AzureStaticVNetIP cmdlet 分配静态 IP 地址</li> <li>安装 Windows Server DNS 服务器，并使用托管 DC 和 DNS 服务器角色的 VM 的名称和 IP 地址配置虚拟网络属性</li> |
-| [地理分散的 DC](#BKMK_DistributedDCs) |如何复制到单独虚拟网络上的 DC？ |如果 Active Directory 站点拓扑需要在对应于不同 Azure 区域的地理位置中设置 DC，则需要相应地创建 Active Directory 站点。[配置虚拟网络到虚拟网络连接](/documentation/articles/virtual-networks-configure-vnet-to-vnet-connection/)可在单独虚拟网络上的域控制器之间进行复制。 |
+| [地理分散的 DC](#BKMK_DistributedDCs) |如何复制到单独虚拟网络上的 DC？ |如果 Active Directory 站点拓扑需要在对应于不同 Azure 区域的地理位置中设置 DC，则需要相应地创建 Active Directory 站点。[配置虚拟网络到虚拟网络连接](/documentation/articles/vpn-gateway-howto-vnet-vnet-portal-classic/)可在单独虚拟网络上的域控制器之间进行复制。 |
 | [只读 DC](#BKMK_RODC) |使用只读还是可写 DC？ |<li>筛选 HBI/PII 属性</li> <li>筛选机密</li> <li>限制出站流量</li> |
 | [全局目录](#BKMK_GC) |是否安装全局目录？ |<li>对于单域林，使所有 DC 成为 GC</li> <li>对于多域林，需要 GC 进行身份验证</li> |
 | [安装方法](#BKMK_InstallMethod) |如何在 Azure 中安装 DC？ |任一方法：<li>使用 Windows PowerShell 或 Dcpromo 安装 AD DS</li> <li>移动本地虚拟 DC 的 VHD</li> |
@@ -402,7 +402,7 @@ VM 在启动时或名称发生更改时自动注册其 DNS 名称。
 - 多站点容错
 - 与分支机构的实际距离较近（延迟更低）
 
-有关配置虚拟网络之间的直接通信的信息，请参阅 [Configure virtual network to virtual network connectivity](/documentation/articles/virtual-networks-configure-vnet-to-vnet-connection/)（配置虚拟网络到虚拟网络连接）。
+有关配置虚拟网络之间的直接通信的信息，请参阅 [Configure virtual network to virtual network connectivity](/documentation/articles/vpn-gateway-howto-vnet-vnet-portal-classic/)（配置虚拟网络到虚拟网络连接）。
 
 ### <a name="BKMK_RODC"></a>只读 DC
 需要选择部署只读还是可写 DC。你可能倾向于部署 RODC，因为你将无法控制其实物，而 RODC 适合部署在其实物安全性有风险的地点，如分支机构。

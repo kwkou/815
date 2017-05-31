@@ -17,7 +17,7 @@
 
 # 本文讲解如何使用 Powershell 来生成点到站点连接所使用的自签名证书。
 
-使用点到站点 ( P2S ) 配置可以创建从单个客户端计算机到虚拟网络的安全连接。关于如何逐步配置 P2S 连接，可以参阅：[配置与 VNet 的点到站点连接](/documentation/articles/vpn-gateway-point-to-site-create/)。
+使用点到站点 ( P2S ) 配置可以创建从单个客户端计算机到虚拟网络的安全连接。关于如何逐步配置 P2S 连接，可以参阅：[配置与 VNet 的点到站点连接](/documentation/articles/vpn-gateway-howto-point-to-site-classic-azure-portal/)。
 
 在 P2S 接连的配置过程中，其中一个步骤是创建用于身份验证的证书。证书用于对点到站点 VPN 的 VPN 客户端进行身份验证。可以使用企业证书解决方案生成的证书，或使用自签名证书。要使用 `Makecert.exe` 创建自签名证书，可以参阅：[为点到站点连接使用自签名证书](/documentation/articles/vpn-gateway-certificates-point-to-site/)。除此之后，还可以用 Powershell 命令 `New-SelfSignedCertificate` 来生成自签名证书。
 
@@ -51,7 +51,7 @@
 
 ###上传证书
 
-将根证书 .cer 文件上载到 Azure 经典管理门户，请参照[配置与 VNet 的点到站点连接](/documentation/articles/vpn-gateway-point-to-site-create/)。
+将根证书 .cer 文件上载到 Azure 经典管理门户，请参照[配置与 VNet 的点到站点连接](/documentation/articles/vpn-gateway-howto-point-to-site-classic-azure-portal/)。
 
 ### 创建客户端证书
 
@@ -75,7 +75,7 @@
 
 ###后续步骤
 
-证书配置完成之后，完成 P2S 连接还需配置 VPN 客户端，可以参阅：[配置与 VNet 的点到站点连接](/documentation/articles/vpn-gateway-point-to-site-create/)。
+证书配置完成之后，完成 P2S 连接还需配置 VPN 客户端，可以参阅：[配置与 VNet 的点到站点连接](/documentation/articles/vpn-gateway-howto-point-to-site-classic-azure-portal/)。
 
 
 

@@ -82,9 +82,9 @@
 
 [添加终结点](/documentation/articles/traffic-manager-endpoints/)
 
-[配置故障转移路由方法](/documentation/articles/traffic-manager-configure-failover-routing-method/)
+[配置故障转移路由方法](/documentation/articles/traffic-manager-configure-priority-routing-method/)
 
-[配置轮循机制路由方法](/documentation/articles/traffic-manager-configure-round-robin-routing-method/)
+[配置轮循机制路由方法](/documentation/articles/traffic-manager-configure-weighted-routing-method/)
 
 [配置性能路由方法](/documentation/articles/traffic-manager-configure-performance-routing-method/)
 

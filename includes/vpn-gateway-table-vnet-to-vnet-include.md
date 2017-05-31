@@ -1,6 +1,6 @@
 | **部署模型/方法** | **Azure 门户预览** | **经典管理门户** | **PowerShell** |
 | --- | --- | --- | --- |
-| **经典** |不支持 |[文章*](/documentation/articles/virtual-networks-configure-vnet-to-vnet-connection/) |支持 |
+| **经典** |不支持 |[文章*](/documentation/articles/vpn-gateway-howto-vnet-vnet-portal-classic/) |支持 |
 | **资源管理器** |[文章+](/documentation/articles/vpn-gateway-howto-vnet-vnet-resource-manager-portal/) |不支持 |[文章](/documentation/articles/vpn-gateway-vnet-vnet-rm-ps/) |
 | **不同部署模型之间的连接** |[文章*](/documentation/articles/vpn-gateway-connect-different-deployment-models-portal/) |支持* |[文章](/documentation/articles/vpn-gateway-connect-different-deployment-models-powershell/) |
 

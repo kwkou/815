@@ -97,7 +97,7 @@ HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET Framework 应用
                 private const string NewClusterPassword = "<Enter HTTP User Password>";
                 private const string NewClusterSshUserName = "sshuser";
 
-                // You can use eitehr password or public key.  See https://www.azure.cn/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows/ or https://www.azure.cn/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix/
+                // You can use eitehr password or public key.  See https://www.azure.cn/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix/ or https://www.azure.cn/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix/
                 private const string NewClusterSshPassword = "<Enter SSH User Password>";
                 private const string NewClusterSshPublicKey = @"---- BEGIN SSH2 PUBLIC KEY ----
                     Comment: ""rsa-key-20150731""

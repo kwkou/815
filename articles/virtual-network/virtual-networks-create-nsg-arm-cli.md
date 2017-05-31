@@ -69,7 +69,7 @@
    输出：
 
         Access    Desc                                                    DestPortRange    Direction      Priority
-        --------  ------------------------------------------------------  ---------------  -----------  ----------
+
         Allow     Allow inbound traffic from all VMs in VNET              *                Inbound           65000
         Allow     Allow inbound traffic from azure load balancer          *                Inbound           65001
         Deny      Deny all inbound traffic                                *                Inbound           65500
@@ -165,10 +165,10 @@
 5. 通过 [az network vnet subnet update](https://docs.microsoft.com/cli/azure/network/vnet/subnet#update) 命令，将 NSG 绑定到**前端**子网。
 
         az network vnet subnet update \
-        > --vnet-name TestVNET \
-        > --name FrontEnd \
-        > --resource-group testrg \
-        > --network-security-group NSG-FrontEnd
+        --vnet-name TestVNET \
+        --name FrontEnd \
+        --resource-group testrg \
+        --network-security-group NSG-FrontEnd
 
     预期输出：
 

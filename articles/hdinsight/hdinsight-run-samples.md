@@ -76,7 +76,7 @@ Web 上有许多介绍 Hadoop 相关技术（例如基于 Java 的 MapReduce 编
         $mrJobDefinition = New-AzureRmHDInsightMapReduceJobDefinition `
                                     -JarFile "wasbs:///example/jars/hadoop-mapreduce-examples.jar" `
                                     -ClassName "wordcount" `
-                                    -Arguments "wasbs:///example/data/gutenberg/davinci.txt", "wasbs:///example/data/WordCountOutput1"
+                                    -Arguments "wasbs:///example/data/gutenberg/davinci.txt", "wasbs:///example/data/WordCountOutput"
 
         # Submit the job and wait for job completion
         $cred = Get-Credential -Message "Enter the HDInsight cluster HTTP user credential:"

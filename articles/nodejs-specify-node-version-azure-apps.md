@@ -87,14 +87,14 @@
     发布应用程序后，在浏览器中打开该网站。您应看到一则指示“Hello from Azure running node version: v0.8.1”的消息。
 
 ## 后续步骤
-了解如何指定应用程序使用的 Node.js 版本后，请学习[如何使用模块]、[生成和部署 Node.js 网站](/documentation/articles/web-sites-nodejs-develop-deploy-mac/)以及[如何使用适用于 Mac 和 Linux 的 Azure 命令行工具]。
+了解如何指定应用程序使用的 Node.js 版本后，请学习[如何使用模块]、[生成和部署 Node.js 网站](/documentation/articles/app-service-web-get-started-nodejs/)以及[如何使用适用于 Mac 和 Linux 的 Azure 命令行工具]。
 
 有关详细信息，请参阅 [Node.js 开发人员中心](/develop/nodejs/)。
 
 [如何使用适用于 Mac 和 Linux 的 Azure 命令行工具]: /documentation/articles/xplat-cli-install/
 [Azure 命令行工具]: /documentation/articles/xplat-cli-install/
 [如何使用模块]: /documentation/articles/nodejs-use-node-modules-azure-apps/
-[build and deploy a Node.js Web Site]: /documentation/articles/web-sites-nodejs-develop-deploy-mac/
+[build and deploy a Node.js Web Site]: /documentation/articles/app-service-web-get-started-nodejs/
 
 <!---HONumber=Mooncake_0206_2017-->
 <!--Update_Description: wording update-->

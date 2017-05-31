@@ -42,7 +42,7 @@
 7. 在为此配置文件选择终结点后，单击右下角的复选标记来保存你的更改。
 
 > [AZURE.NOTE]
-使用“故障转移”流量路由方法在配置文件中添加或删除终结点后，故障转移优先级列表可能不会按所需的顺序列出。可以在“配置”页上调整故障转移优先级列表的顺序。有关详细信息，请参阅[配置故障转移流量路由](/documentation/articles/traffic-manager-configure-failover-routing-method/)。
+使用“故障转移”流量路由方法在配置文件中添加或删除终结点后，故障转移优先级列表可能不会按所需的顺序列出。可以在“配置”页上调整故障转移优先级列表的顺序。有关详细信息，请参阅[配置故障转移流量路由](/documentation/articles/traffic-manager-configure-priority-routing-method/)。
 
 ## 禁用终结点
 
@@ -68,7 +68,7 @@
 ## 后续步骤
 
 * [管理流量管理器配置文件](/documentation/articles/traffic-manager-manage-profiles/)
-* [配置路由方法](/documentation/articles/traffic-manager-configure-routing-method/)
+* [配置路由方法](/documentation/articles/traffic-manager-configure-priority-routing-method/)
 * [流量管理器降级状态疑难解答](/documentation/articles/traffic-manager-troubleshooting-degraded/)
 * [流量管理器性能注意事项](/documentation/articles/traffic-manager-performance-considerations/)
 * [流量管理器上的操作（REST API 参考）](https://msdn.microsoft.com/zh-cn/library/hh758255.aspx)

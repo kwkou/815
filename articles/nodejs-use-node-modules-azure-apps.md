@@ -75,7 +75,7 @@ Azure App Service 不支持部分本机模块，并且在编译具有高度专�
 > 
 
 ## 后续步骤
-了解如何在 Azure 中使用 Node.js 模块后，了解如何[指定 Node.js 版本]、[生成和部署 Node.js Web 应用](/documentation/articles/web-sites-nodejs-develop-deploy-mac/)，以及[如何使用适用于 Mac 和 Linux 的 Azure 命令行接口]。
+了解如何在 Azure 中使用 Node.js 模块后，了解如何[指定 Node.js 版本]、[生成和部署 Node.js Web 应用](/documentation/articles/app-service-web-get-started-nodejs/)，以及[如何使用适用于 Mac 和 Linux 的 Azure 命令行接口]。
 
 有关详细信息，请参阅 [Node.js 开发人员中心](/develop/nodejs/)。
 

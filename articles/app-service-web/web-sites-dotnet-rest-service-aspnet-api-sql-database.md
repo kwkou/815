@@ -41,7 +41,6 @@
 
 
 <a name="bkmk_setupdevenv"></a>
-<!-- the next line produces the "Set up the development environment" section as see at /documentation/articles/web-sites-dotnet-get-started/ -->
 
 [AZURE.INCLUDE [create-account-and-websites-note](../../includes/create-account-and-websites-note.md)]
 

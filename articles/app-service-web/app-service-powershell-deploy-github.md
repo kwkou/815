@@ -48,6 +48,7 @@
     $PropertiesObject = @{
         repoUrl = "$gitrepo";
         branch = "master";
+        isManualIntegration = "true";
     }
     Set-AzureRmResource -PropertyObject $PropertiesObject -ResourceGroupName $webappname `
     -ResourceType Microsoft.Web/sites/sourcecontrols -ResourceName $webappname/web `
