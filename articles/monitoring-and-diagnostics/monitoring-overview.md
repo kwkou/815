@@ -130,5 +130,4 @@ Azure 的产品/服务可用于监视从裸机基础结构到应用程序遥测�
 详细了解以下内容
 
 * [Ignite 2016 的 Azure Monitor 视频](https://myignite.microsoft.com/videos/4977)
-* [Azure 诊断](/documentation/articles/azure-diagnostics/) 如果要尝试诊断云服务、虚拟机或 Service Fabric 应用程序中的问题。
 * [Azure 存储故障诊断](/documentation/articles/storage-e2e-troubleshooting/) 在使用存储 Blob、表或队列的情况下。

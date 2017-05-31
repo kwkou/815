@@ -317,7 +317,6 @@ Azure 诊断代理会在启动后一分钟刷新 .wadcfg 文件中的性能计�
     }
 
 
-## 后续步骤
-[查看有关 Azure 诊断的其他文章](/documentation/articles/azure-diagnostics)
+
 
 <!---HONumber=Mooncake_Quality_Review_1215_2016-->
