@@ -15,13 +15,13 @@
     ms.tgt_pltfrm="na"
     ms.workload="infrastructure-services"
     ms.date="04/12/2017"
-    wacn.date="05/25/2017"
+    wacn.date="05/31/2017"
     ms.author="yushwang"
     ms.translationtype="Human Translation"
-    ms.sourcegitcommit="8fd60f0e1095add1bff99de28a0b65a8662ce661"
-    ms.openlocfilehash="cc3a56c8d06d85ecf513863a77c965e0b7246664"
+    ms.sourcegitcommit="4a18b6116e37e365e2d4c4e2d144d7588310292e"
+    ms.openlocfilehash="4650a0036006b30bbc65a5445c2e9713b1c0f4ae"
     ms.contentlocale="zh-cn"
-    ms.lasthandoff="05/12/2017" />
+    ms.lasthandoff="05/19/2017" />
 
 # <a name="how-to-configure-bgp-on-azure-vpn-gateways-using-powershell"></a>如何使用 PowerShell 在 Azure VPN 网关上配置 BGP
 本文介绍使用 Resource Manager 部署模型和 PowerShell 在跨界站点到站点 (S2S) VPN 连接和 VNet 到 VNet 连接上启用 BGP 的步骤。
@@ -51,7 +51,7 @@ BGP 是通常在 Internet 上使用的，用于在两个或更多网络之间交
 
 ### <a name="before-you-begin"></a>开始之前
 * 确保拥有 Azure 订阅。 如果还没有 Azure 订阅，可以注册一个[试用帐户](/pricing/1rmb-trial)。
-* 你需要安装 Azure Resource Manager PowerShell cmdlet。 有关安装 PowerShell cmdlet 的详细信息，请参阅 [如何安装和配置 Azure PowerShell](https://docs.microsoft.com/zh-cn/powershell/azureps-cmdlets-docs) 。
+* 你需要安装 Azure Resource Manager PowerShell cmdlet。 有关安装 PowerShell cmdlet 的详细信息，请参阅 [如何安装和配置 Azure PowerShell](https://docs.microsoft.com/zh-cn/powershell/azure/overview) 。
 
 ### <a name="step-1---create-and-configure-vnet1"></a>步骤 1 - 创建并配置 VNet1
 #### <a name="1-declare-your-variables"></a>1.声明变量
@@ -105,7 +105,7 @@ BGP 是通常在 Internet 上使用的，用于在两个或更多网络之间交
     $gwipconf1 = New-AzureRmVirtualNetworkGatewayIpConfig -Name $GWIPconfName1 -Subnet $subnet1 -PublicIpAddress $gwpip1
 
 #### <a name="2-create-the-vpn-gateway-with-the-as-number"></a>2.使用 AS 编号创建 VPN 网关
-为 TestVNet1 创建虚拟网络网关。 请注意，BGP 需要基于路由的 VPN 网关，还需要添加参数 -Asn 来为 TestVNet1 设置 ASN（AS 编号）。 创建网关可能需要花费一段时间（30 分钟或更久才能完成）。
+为 TestVNet1 创建虚拟网络网关。 请注意，BGP 需要基于路由的 VPN 网关，还需要添加参数 -Asn 来为 TestVNet1 设置 ASN（AS 编号）。 如果不设置 ASN 参数，将分配 ASN 65515。 创建网关可能需要花费一段时间（30 分钟或更久才能完成）。
 
     New-AzureRmVirtualNetworkGateway -Name $GWName1 -ResourceGroupName $RG1 -Location $Location1 -IpConfigurations $gwipconf1 -GatewayType Vpn -VpnType RouteBased -GatewaySku HighPerformance -Asn $VNet1ASN
 

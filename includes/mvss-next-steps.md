@@ -4,4 +4,6 @@
 
 你可以了解如何修改[最小可行规模集模板](/documentation/articles/virtual-machine-scale-sets-mvss-start/)，以便[将规模集部署到现有的虚拟网络](/documentation/articles/virtual-machine-scale-sets-mvss-existing-vnet/)。
 
+可以了解如何修改[最小可行规模集模板](/documentation/articles/virtual-machine-scale-sets-mvss-start/)，并[使用自定义映像部署规模集](/documentation/articles/virtual-machine-scale-sets-mvss-custom-image/)。
+
 有关规模集的更多常规信息，请参阅[规模集概述页](/documentation/articles/virtual-machine-scale-sets-overview/)。

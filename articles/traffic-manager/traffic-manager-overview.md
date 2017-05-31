@@ -5,8 +5,7 @@
     documentationcenter=""
     author="kumudd"
     manager="timlt"
-    editor=""
-    translationtype="Human Translation" />
+    editor="" />
 <tags
     ms.assetid="75d5ff9a-f4b9-4b05-af32-700e7bdfea5a"
     ms.service="traffic-manager"
@@ -15,11 +14,13 @@
     ms.tgt_pltfrm="na"
     ms.workload="infrastructure-services"
     ms.date="03/16/2017"
-    wacn.date="04/17/2017"
+    wacn.date="05/31/2017"
     ms.author="kumud"
-    ms.sourcegitcommit="e0e6e13098e42358a7eaf3a810930af750e724dd"
-    ms.openlocfilehash="40d75f85a6cf30777f6c28b97fb8cd27d7aa64b2"
-    ms.lasthandoff="04/06/2017" />
+    ms.translationtype="Human Translation"
+    ms.sourcegitcommit="4a18b6116e37e365e2d4c4e2d144d7588310292e"
+    ms.openlocfilehash="820fe65b1f0fe93497bbbdc811d05f9b8550e712"
+    ms.contentlocale="zh-cn"
+    ms.lasthandoff="05/19/2017" />
 
 # <a name="overview-of-traffic-manager"></a>流量管理器概述
 
@@ -105,6 +106,10 @@ Contoso Corp 开发了一个新的合作伙伴门户。 此门户的 URL 是 htt
 
 有关定价信息，请参阅[流量管理器定价](/pricing/details/traffic-manager/)。
 
+## <a name="faq"></a>常见问题
+
+有关流量管理器的常见问题，请参阅[流量管理器常见问题解答](/documentation/articles/traffic-manager-FAQs/)
+
 ## <a name="next-steps"></a>后续步骤
 
 详细了解流量管理器[终结点监视和自动故障转移](/documentation/articles/traffic-manager-monitoring/)。
@@ -115,4 +120,4 @@ Contoso Corp 开发了一个新的合作伙伴门户。 此门户的 URL 是 htt
 [1]: ./media/traffic-manager-how-traffic-manager-works/dns-configuration.png
 [2]: ./media/traffic-manager-how-traffic-manager-works/flow.png
 
-<!--Update_Description: Move "how traffic manager works" out from include-->
+<!--Update_Description: add FAQ-->

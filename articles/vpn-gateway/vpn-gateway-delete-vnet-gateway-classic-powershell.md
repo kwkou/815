@@ -14,14 +14,14 @@
     ms.topic=""
     ms.tgt_pltfrm="na"
     ms.workload="infrastructure-services"
-    ms.date="03/29/2017"
-    wacn.date="05/25/2017"
+    ms.date="05/11/2017"
+    wacn.date="05/31/2017"
     ms.author="cherylmc"
     ms.translationtype="Human Translation"
-    ms.sourcegitcommit="8fd60f0e1095add1bff99de28a0b65a8662ce661"
-    ms.openlocfilehash="b3c8e2acb74f923299c9c355c55884a5f6e46bce"
+    ms.sourcegitcommit="4a18b6116e37e365e2d4c4e2d144d7588310292e"
+    ms.openlocfilehash="4b20eace901d59919b743c35521bd997b4d7afe4"
     ms.contentlocale="zh-cn"
-    ms.lasthandoff="05/12/2017" />
+    ms.lasthandoff="05/19/2017" />
 
 # <a name="delete-a-virtual-network-gateway-using-powershell-classic"></a>使用 PowerShell 删除虚拟网络网关（经典）
 > [AZURE.SELECTOR]
@@ -29,29 +29,17 @@
 - [Resource Manager - PowerShell](/documentation/articles/vpn-gateway-delete-vnet-gateway-powershell/)
 - [经典 - PowerShell](/documentation/articles/vpn-gateway-delete-vnet-gateway-classic-powershell/)
 
-可在经典部署模型中使用 PowerShell 删除 VPN 网关。 删除虚拟网络网关后，修改网络配置文件以删除不再使用的元素。
+本文可帮助在经典部署模型中使用 PowerShell 删除 VPN 网关。 删除虚拟网络网关后，修改网络配置文件以删除不再使用的元素。
 
 ## <a name="step-1-connect-to-azure"></a>步骤 1：连接到 Azure
 
 ### <a name="1-install-the-latest-powershell-cmdlets"></a>1.安装最新的 PowerShell cmdlet。
 
-下载和安装最新版本的 Azure 服务管理 (SM) PowerShell cmdlet。 有关详细信息，请参阅[如何安装和配置 Azure PowerShell](https://docs.microsoft.com/zh-cn/powershell/azureps-cmdlets-docs)。
+下载和安装最新版本的 Azure 服务管理 (SM) PowerShell cmdlet。 有关详细信息，请参阅[如何安装和配置 Azure PowerShell](https://docs.microsoft.com/zh-cn/powershell/azure/overview)。
 
 ### <a name="2-connect-to-your-azure-account"></a>2.连接到你的 Azure 帐户。 
 
 使用提升的权限打开 PowerShell 控制台，然后连接到帐户。 使用下面的示例来帮助连接：
-
-    Login-AzureRmAccount -EnvironmentName AzureChinaCloud
-
-检查该帐户的订阅。
-
-    Get-AzureRmSubscription
-
-如果有多个订阅，请选择要使用的订阅。
-
-    Select-AzureRmSubscription -SubscriptionName "Replace_with_your_subscription_name"
-
-接下来，使用以下 cmdlet 将 Azure 订阅添加到经典部署模型的 PowerShell。
 
     Add-AzureAccount -Environment AzureChinaCloud
 
@@ -61,9 +49,9 @@
 
 本例中，网络配置文件导出到 C:\AzureNet。
 
-     Get-AzureVNetConfig -ExportToFile C:\AzureNet\NetworkConfig.xml
+    Get-AzureVNetConfig -ExportToFile C:\AzureNet\NetworkConfig.xml
 
-使用文本编辑器打开文件，并查看经典 VNet 的名称。 在 Azure 门户预览中创建 VNet 时，Azure 使用的全名在门户中不可见。 例如，在 Azure 门户预览中命名为“ClassicVNet1”的 VNet 可能在网络配置文件中具有更长的名称。 名称可能如下所示：“Group ClassicRG1 ClassicVNet1”。 虚拟网络名称被列为“VirtualNetworkSite name =”。 运行 PowerShell cmdlet 时，请使用网络配置文件中的名称。
+使用文本编辑器打开文件，并查看经典 VNet 的名称。 在 Azure 门户预览中创建 VNet 时，Azure 使用的全名在门户中不可见。 例如，在 Azure 门户预览中命名为“ClassicVNet1”的 VNet 可能在网络配置文件中具有更长的名称。 名称可能如下所示：“Group ClassicRG1 ClassicVNet1”。 虚拟网络名称以“VirtualNetworkSite name =”的形式列出。 运行 PowerShell cmdlet 时，请使用网络配置文件中的名称。
 
 ## <a name="step-3-delete-the-virtual-network-gateway"></a>步骤 3：删除虚拟网络网关
 
@@ -91,7 +79,7 @@
            <Connection type="IPsec" />
          </LocalNetworkSiteRef>
        </ConnectionsToLocalNetwork>
-    </Gateway>
+     </Gateway>
 
 示例：
 
@@ -117,34 +105,34 @@
         </AddressSpace>
         <VPNGatewayAddress>57.179.18.164</VPNGatewayAddress>
       </LocalNetworkSite>
-    </LocalNetworkSites>
+     </LocalNetworkSites>
 
 本例中将仅删除 Site3。
 
     <LocalNetworkSites>
-        <LocalNetworkSite name="Site1">
+      <LocalNetworkSite name="Site1">
         <AddressSpace>
           <AddressPrefix>192.168.0.0/16</AddressPrefix>
         </AddressSpace>
         <VPNGatewayAddress>5.4.3.2</VPNGatewayAddress>
       </LocalNetworkSite>
-    </LocalNetworkSites>
+     </LocalNetworkSites>
 
 ### <a name="client-addresspool"></a>客户地址池
 
 如果 P2S 连接到 VNet，将有一个 **VPNClientAddressPool**。 删除与所删除的虚拟网络网关对应的客户地址池。
 
     <Gateway>
-       <VPNClientAddressPool>
-         <AddressPrefix>10.1.0.0/24</AddressPrefix>
-       </VPNClientAddressPool>
-       <ConnectionsToLocalNetwork />
-    </Gateway>
+        <VPNClientAddressPool>
+          <AddressPrefix>10.1.0.0/24</AddressPrefix>
+        </VPNClientAddressPool>
+      <ConnectionsToLocalNetwork />
+     </Gateway>
 
 示例：
 
-     <Gateway>
-       <ConnectionsToLocalNetwork />
+    <Gateway>
+      <ConnectionsToLocalNetwork />
      </Gateway>
 
 ### <a name="gatewaysubnet"></a>GatewaySubnet
@@ -172,12 +160,12 @@
 
 保存所做的更改，并将网络配置文件上传到 Azure。 确保根据环境需要更改文件路径。
 
-     Set-AzureVNetConfig -ConfigurationPath C:\AzureNet\NetworkConfig.xml
+    Set-AzureVNetConfig -ConfigurationPath C:\AzureNet\NetworkConfig.xml
 
 如果成功，则返回显示类似于下例的内容：
 
-     OperationDescription        OperationId                      OperationStatus                                                
-     --------------------        -----------                      ---------------                                                
-     Set-AzureVNetConfig        e0ee6e66-9167-cfa7-a746-7casb9    Succeeded
+    OperationDescription        OperationId                      OperationStatus                                                
+    --------------------        -----------                      ---------------                                           
+    Set-AzureVNetConfig         e0ee6e66-9167-cfa7-a746-7casb9   Succeeded
      
 <!--Update_Description: wording update-->

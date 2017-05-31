@@ -1,1 +1,4 @@
-Azure 当前使用两种部署模型：Resource Manager 部署模型和经典部署模型。 开始配置前，请验证所使用的说明是否适用于要使用的部署模型。 有关详细信息，请参阅[了解部署模型](/documentation/articles/resource-manager-deployment-model/)。
+> [AZURE.NOTE]
+> Azure 当前使用两种部署模型：Resource Manager 部署模型和经典部署模型。 这两个模型不是完全兼容的。 在开始之前，需要知道所要使用的模型。 有关部署模型的信息，请参阅[了解部署模型](/documentation/articles/resource-manager-deployment-model/)。 如果不熟悉 Azure，建议使用 Resource Manager 部署模型。
+>
+>

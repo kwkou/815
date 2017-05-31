@@ -5,8 +5,7 @@
     documentationcenter="na"
     author="steved0x"
     manager="douge"
-    editor="tysonn"
-    translationtype="Human Translation" />
+    editor="tysonn" />
 <tags
     ms.assetid="d0bf2e1f-6a26-4e62-85ba-d82b35fc5aa6"
     ms.service="cache"
@@ -14,12 +13,14 @@
     ms.topic="article"
     ms.tgt_pltfrm="cache-redis"
     ms.workload="tbd"
-    ms.date="04/11/2017"
+    ms.date="05/11/2017"
     wacn.date="05/31/2017"
     ms.author="sdanie"
-    ms.sourcegitcommit="78da854d58905bc82228bcbff1de0fcfbc12d5ac"
-    ms.openlocfilehash="b3850085b778f502ac5b0dfada958ecf51672c08"
-    ms.lasthandoff="04/22/2017" />
+    ms.translationtype="Human Translation"
+    ms.sourcegitcommit="4a18b6116e37e365e2d4c4e2d144d7588310292e"
+    ms.openlocfilehash="cc4f871ece26b1f8f4a61fb8a9e82dce86a11995"
+    ms.contentlocale="zh-cn"
+    ms.lasthandoff="05/19/2017" />
 
 # <a name="how-to-configure-azure-redis-cache"></a>如何配置 Azure Redis 缓存
 本主题介绍如何查看和更新 Azure Redis 缓存实例的配置，并介绍了 Azure Redis 缓存实例的默认 Redis 服务器配置。
@@ -29,14 +30,14 @@
 > 
 > 
 
-## <a name="configure-redis-cache-settings"></a> 配置 Redis 缓存设置
+## <a name="configure-redis-cache-settings"></a>配置 Redis 缓存设置
 [AZURE.INCLUDE [redis-cache-create](../../includes/redis-cache-browse.md)]
 
 Azure Redis 缓存在“设置”边栏选项卡上提供以下设置。
 
 ![Redis 缓存设置](./media/cache-configure/redis-cache-settings.png)
 
-* [支持和故障排除设置](#support-amp-troubleshooting-settings)
+* [支持和故障排除设置](#support--troubleshooting-settings)
 * [常规设置](#general-settings)
     * [属性](#properties)
     * [访问密钥](#access-keys)
@@ -55,14 +56,14 @@ Azure Redis 缓存在“设置”边栏选项卡上提供以下设置。
 * [网络设置](#network-settings)
 * [资源管理设置](#resource-management-settings)
 
-## <a name="support-amp-troubleshooting-settings"></a> 支持和故障排除设置
+## <a name="support--troubleshooting-settings"></a>支持和故障排除设置
 “支持 + 疑难解答”部分中的设置提供了用于解决缓存问题的选项。
 
 ![支持 + 疑难解答](./media/cache-configure/redis-cache-support-troubleshooting.png)
 
 单击“活动日志”可查看已对缓存执行的操作。 也可以使用筛选来展开此视图，以包含其他资源。 有关使用审核日志的详细信息，请参阅[查看事件和审核日志](/documentation/articles/insights-debugging-with-events/)以及[使用 Resource Manager 执行审核操作](/documentation/articles/resource-group-audit/)。 有关监视 Azure Redis 缓存事件的详细信息，请参阅[操作和警报](/documentation/articles/cache-how-to-monitor/#operations-and-alerts)。
 
-## <a name="general-settings"></a> 常规设置
+## <a name="general-settings"></a>常规设置
 “常规”部分中的设置用于访问和配置缓存的下列设置。
 
 ![常规设置](./media/cache-configure/redis-cache-general-settings.png)
@@ -72,34 +73,34 @@ Azure Redis 缓存在“设置”边栏选项卡上提供以下设置。
 * [高级设置](#advanced-settings)
 * [Redis 缓存顾问](#redis-cache-advisor)
 
-### <a name="properties"></a> 属性
+### <a name="properties"></a>属性
 单击“属性”  查看有关缓存的信息，包括缓存终结点和端口。
 
 ![Redis 缓存属性](./media/cache-configure/redis-cache-properties.png)
 
-### <a name="access-keys"></a> 访问密钥
+### <a name="access-keys"></a>访问密钥
 单击“访问密钥”  查看或重新生成缓存访问密钥。 这些密钥由连接到缓存的客户端使用。
 
 ![Redis 缓存访问密钥](./media/cache-configure/redis-cache-manage-keys.png)
 
-### <a name="advanced-settings"></a> 高级设置
+### <a name="advanced-settings"></a>高级设置
 在“高级设置”  边栏选项卡上可以配置以下设置。
 
 * [访问端口](#access-ports)
 * [Maxmemory-policy 和 maxmemory-reserved](#maxmemory-policy-and-maxmemory-reserved)
 * [密钥空间通知（高级设置）](#keyspace-notifications-advanced-settings)
 
-#### <a name="access-ports"></a> 访问端口
+#### <a name="access-ports"></a>访问端口
 默认情况下，为新缓存禁用非 SSL 访问。 要启用非 SSL 端口，请对“高级设置”边栏选项卡中的“仅允许通过 SSL 访问”单击“否”，然后单击“保存”。
 
 ![Redis 缓存访问端口](./media/cache-configure/redis-cache-access-ports.png)
 
-#### <a name="maxmemory-policy-and-maxmemory-reserved"></a> Maxmemory-policy 和 maxmemory-reserved
+#### <a name="maxmemory-policy-and-maxmemory-reserved"></a>Maxmemory-policy 和 maxmemory-reserved
 “高级设置”边栏选项卡中的“Maxmemory-policy”和“maxmemory-reserved”设置用于为缓存配置内存策略。 “maxmemory-policy”设置将为缓存配置逐出策略，“maxmemory-reserved”将为非缓存进程配置保留的内存。
 
 ![Redis 缓存 Maxmemory 策略](./media/cache-configure/redis-cache-maxmemory-policy.png)
 
-“Maxmemory 策略”允许从以下逐出策略中进行选择：
+**Maxmemory 策略**允许从以下逐出策略中进行选择：
 
 * `volatile-lru` - 这是默认值。
 * `allkeys-lru`
@@ -117,7 +118,7 @@ Azure Redis 缓存在“设置”边栏选项卡上提供以下设置。
 > 
 > 
 
-#### <a name="keyspace-notifications-advanced-settings"></a> 密钥空间通知（高级设置）
+#### <a name="keyspace-notifications-advanced-settings"></a>密钥空间通知（高级设置）
 Redis 密钥空间通知是在“高级设置”边栏选项卡上配置的。 密钥空间通知让客户端能够在发生特定事件时接收通知。
 
 ![Redis 缓存高级设置](./media/cache-configure/redis-cache-advanced-settings.png)
@@ -155,7 +156,7 @@ Redis 密钥空间通知是在“高级设置”边栏选项卡上配置的。 �
 
 若要升级缓存，请单击“立即升级”以更改[定价层](#pricing-tier)并缩放缓存。 有关选择定价层的详细信息，请参阅[应使用哪种 Redis 缓存产品和大小？](/documentation/articles/cache-faq/#what-redis-cache-offering-and-size-should-i-use)
 
-## <a name="scale-settings"></a> 缩放设置
+## <a name="scale-settings"></a>缩放设置
 “缩放”部分中的设置用于访问和配置缓存的下列设置。
 
 ![网络](./media/cache-configure/redis-cache-scale.png)
@@ -163,7 +164,7 @@ Redis 密钥空间通知是在“高级设置”边栏选项卡上配置的。 �
 * [定价层](#pricing-tier)
 * [Redis 群集大小](#cluster-size)
 
-### <a name="pricing-tier"></a> 定价层
+### <a name="pricing-tier"></a>定价层
 单击“定价层”可查看或更改缓存的定价层  。 有关缩放的详细信息，请参阅[如何缩放 Azure Redis 缓存](/documentation/articles/cache-how-to-scale/)。
 
 ![Redis 缓存定价层](./media/cache-configure/pricing-tier.png)
@@ -185,7 +186,7 @@ Redis 密钥空间通知是在“高级设置”边栏选项卡上配置的。 �
 > 
 > 
 
-## <a name="data-management-settings"></a> 数据管理设置
+## <a name="data-management-settings"></a>数据管理设置
 “数据管理”部分中的设置用于访问和配置缓存的下列设置。
 
 ![数据管理](./media/cache-configure/redis-cache-data-management.png)
@@ -193,7 +194,7 @@ Redis 密钥空间通知是在“高级设置”边栏选项卡上配置的。 �
 * [Redis 数据持久性](#redis-data-persistence)
 * [导入/导出](#importexport)
 
-### <a name="redis-data-persistence"></a> Redis 数据持久性
+### <a name="redis-data-persistence"></a>Redis 数据持久性
 单击“Redis 数据持久性”可启用、禁用或配置高级缓存的数据持久性。
 
 ![Redis 数据持久性](./media/cache-configure/redis-cache-persistence-settings.png)
@@ -220,19 +221,19 @@ Redis 密钥空间通知是在“高级设置”边栏选项卡上配置的。 �
 > 
 > 
 
-### <a name="importexport"></a> 导入/导出
+### <a name="importexport"></a>导入/导出
 导入/导出是一种 Azure Redis 缓存数据管理操作，可以将 Redis 缓存数据库 (RDB) 快照从高级缓存导入和导出到 Azure 存储帐户中的页 blob，从而在缓存中导入和导出数据。 导入/导出允许在不同 Azure Redis 缓存实例之间进行迁移，或者在使用缓存之前在缓存中填充数据。
 
 导入可用于从任何云或环境中运行的任何 Redis 服务器引入与 Redis 兼容的 RDB 文件，包括在 Linux、Windows 上运行的 Redis 或任何云提供程序（如 Amazon Web Services 等）。 导入数据是使用预先填充的数据创建缓存的简单方式。 在导入过程中，Azure Redis 缓存从 Azure 存储将 RDB 文件加载到内存中，然后再将密钥插入到缓存中。
 
-使用导出可以将 Azure Redis 缓存中存储的数据导出到与 Redis 兼容的 RDB 文件。 可以使用此功能将一个 Azure Redis 缓存实例中的数据移到另一个 Azure Redis 缓存实例或另一个 Redis 服务器。 在导出过程中，将在托管 Azure Redis 缓存服务器实例的 VM 上创建临时文件，并将该文件上载到指定的存储帐户。 导出操作完成后，无论状态为成功还是失败，都会删除临时文件。
+使用导出可以将 Azure Redis 缓存中存储的数据导出到与 Redis 兼容的 RDB 文件。 可以使用此功能将一个 Azure Redis 缓存实例中的数据移到另一个 Azure Redis 缓存实例或另一个 Redis 服务器。 在导出过程中，将在托管 Azure Redis 缓存服务器实例的 VM 上创建临时文件，并将该文件上传到指定的存储帐户。 导出操作完成后，无论状态为成功还是失败，都会删除临时文件。
 
 > [AZURE.IMPORTANT]
 > 导入/导出仅适用于高级层缓存。 有关详细信息和说明，请参阅[在 Azure Redis 缓存中导入和导出数据](/documentation/articles/cache-how-to-import-export-data/)。
 > 
 > 
 
-## <a name="administration-settings"></a> 管理设置
+## <a name="administration-settings"></a>管理设置
 可以通过“管理”部分的设置针对高级缓存执行以下管理任务。 
 
 ![管理](./media/cache-configure/redis-cache-administration.png)
@@ -245,7 +246,7 @@ Redis 密钥空间通知是在“高级设置”边栏选项卡上配置的。 �
 > 
 > 
 
-### <a name="reboot"></a> 重新启动
+### <a name="reboot"></a>重新启动
 可通过“重新启动”边栏选项卡重新启动缓存的节点。 如果有缓存节点发生故障，此重新启动功能可用于测试应用程序的复原能力。
 
 ![重新启动](./media/cache-configure/redis-cache-reboot.png)
@@ -261,7 +262,7 @@ Redis 密钥空间通知是在“高级设置”边栏选项卡上配置的。 �
 > 
 > 
 
-### <a name="schedule-updates"></a> 计划更新
+### <a name="schedule-updates"></a>计划更新
 可以通过“计划更新”边栏选项卡指定一个维护时段，以便针对缓存进行 Redis 服务器更新。 
 
 > [AZURE.IMPORTANT]
@@ -278,7 +279,7 @@ Redis 密钥空间通知是在“高级设置”边栏选项卡上配置的。 �
 > 
 > 
 
-## <a name="diagnostics-settings"></a> 诊断设置
+## <a name="diagnostics-settings"></a>诊断设置
 “诊断”部分用于配置 Redis 缓存的诊断。
 
 ![诊断](./media/cache-configure/redis-cache-diagnostics.png)
@@ -291,7 +292,7 @@ Redis 密钥空间通知是在“高级设置”边栏选项卡上配置的。 �
 
 有关 Azure Redis 缓存诊断的详细信息，请参阅[如何监视 Azure Redis 缓存](/documentation/articles/cache-how-to-monitor/)。
 
-## <a name="network-settings"></a> 网络设置
+## <a name="network-settings"></a>网络设置
 通过“网络”部分中的设置，可访问和配置缓存的下列设置。
 
 ![网络](./media/cache-configure/redis-cache-network.png)
@@ -312,14 +313,14 @@ Azure 门户预览中的“用户”部分对基于角色的访问控制 (RBAC) 
 
 单击“导出模板”可生成并导出已部署资源的模板，以用于将来部署。 有关使用模板的详细信息，请参阅[使用 Azure Resource Manager 模板部署资源](/documentation/articles/resource-group-template-deploy/)。
 
-## <a name="default-redis-server-configuration"></a> 默认 Redis 服务器配置
+## <a name="default-redis-server-configuration"></a>默认 Redis 服务器配置
 新的 Azure Redis 缓存实例均已配置以下默认 Redis 配置值。
 
 > [AZURE.NOTE]
 > 无法使用 `StackExchange.Redis.IServer.ConfigSet` 方法更改本部分中的设置。 如果使用此部分中的任一命令调用此方法，将引发如下异常：  
-><p> 
+> <p> 
 > `StackExchange.Redis.RedisServerException: ERR unknown command 'CONFIG'`
-><p> 任何可配置的值（例如 **max-memory-policy**）都可以通过 Azure 门户预览或命令行管理工具（例如 Azure CLI 或 PowerShell）进行配置。
+> <p> 任何可配置的值（例如 **max-memory-policy**）都可以通过 Azure 门户预览或命令行管理工具（例如 Azure CLI 或 PowerShell）进行配置。
 
 | 设置 | 默认值 | 说明 |
 | --- | --- | --- |
@@ -373,10 +374,15 @@ Azure 门户预览中的“用户”部分对基于角色的访问控制 (RBAC) 
     * P3 (26 GB - 260 GB) - 最多支持 30,000 个连接
     * P4 (53 GB - 530 GB) - 最多支持 40,000 个连接
 
-## <a name="redis-commands-not-supported-in-azure-redis-cache"></a> Azure Redis 缓存中不支持的 Redis 命令
+> [AZURE.NOTE]
+> 虽然每个缓存大小*最多*允许一定数量的连接，但与 Redis 的每个连接都具有其关联的开销。 此类开销的一个示例是，由于 TLS/SSL 加密而导致的 CPU 和内存使用。 给定缓存大小的最大连接限制假定轻负载缓存。 如果连接开销的负载*和*客户端操作的负载超出了系统容量，那么即使未超出当前缓存大小的连接限制，缓存也可能会遇到容量问题。
+> 
+> 
+
+## <a name="redis-commands-not-supported-in-azure-redis-cache"></a>Azure Redis 缓存中不支持的 Redis 命令
 > [AZURE.IMPORTANT]
 > 因为 Azure Redis 缓存实例的配置和管理由 Microsoft 进行管理，所以禁用了以下命令。 如果尝试调用它们，将收到一条类似于 `"(error) ERR unknown command"` 的错误消息。
-><p> * BGREWRITEAOF
+><p> * BGREWRITEAOF 
 ><p> * BGSAVE
 ><p> * CONFIG
 ><p> * DEBUG
@@ -385,17 +391,18 @@ Azure 门户预览中的“用户”部分对基于角色的访问控制 (RBAC) 
 ><p> * SHUTDOWN
 ><p> * SLAVEOF
 ><p> * CLUSTER - 群集写命令已禁用，但允许使用只读群集命令。
+> 
+> 
 
 有关 Redis 命令的详细信息，请参阅 [http://redis.io/commands](http://redis.io/commands)。
 
-## <a name="redis-console"></a> Redis 控制台
+## <a name="redis-console"></a>Redis 控制台
 可以使用 **Redis 控制台**向 Azure Redis 缓存实例安全地发布命令，此操作适用于标准缓存和高级缓存。
 
 > [AZURE.IMPORTANT]
-> Redis 控制台无法使用 VNET、群集和数据库（数据库 0 除外）。 
-><p> * [VNET](/documentation/articles/cache-how-to-premium-vnet/) - 如果缓存是 VNET 的一部分，则只有 VNET 中的客户端可以访问缓存。 Redis 控制台使用的 redis cli.exe 客户端承载于不属于 VNET 的 VM 上，因此该控制台无法连接到你的缓存。
-><p> * [群集](/documentation/articles/cache-how-to-premium-clustering/) - Redis 控制台使用目前不支持群集的 redis-cli.exe 客户端。 GitHub 上 Redis 存储库的[不稳定](http://redis.io/download)分支中的 redis-cli 实用程序在使用 `-c` 开关启动时，会实现基本支持。 有关详细信息，请参阅 [http://redis.io](http://redis.io) 上 [Redis cluster tutorial](http://redis.io/topics/cluster-tutorial)（Redis 群集教程）中的[Playing with the cluster](http://redis.io/topics/cluster-tutorial#playing-with-the-cluster)（操作群集）。
-><p> * 每次提交命令时，Redis 控制台都会新建一个与数据库 0 的连接。 不能使用 `SELECT` 命令选择其他数据库，因为每当有命令时数据库都将重置为 0。 有关运行 Redis 命令（包括更改为不同的数据库）的信息，请参阅[如何运行 Redis 命令？](/documentation/articles/cache-faq/#how-can-i-run-redis-commands)
+> Redis 控制台无法使用 [VNET](/documentation/articles/cache-how-to-premium-vnet/)。 如果缓存是 VNET 的一部分，则只有 VNET 中的客户端可以访问缓存。 由于 Redis 控制台在 VNET 外部的本地浏览器中运行，因此无法连接到缓存。
+> 
+> 
 
 要访问 Redis 控制台，则从“Redis 缓存”边栏选项卡单击“控制台”。
 
