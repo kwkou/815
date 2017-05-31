@@ -1,6 +1,6 @@
 ## <a name="about-vhds"></a>关于 VHD
 
-Azure 中使用的 VHD 是在 Azure 的标准或高级存储帐户中作为页 Blob 存储的 .vhd 文件。 有关页 blob 的详细信息，请参阅 [了解块 blob 和页 blob](https://docs.microsoft.com/zh-cn/rest/api/storageservices/fileservices/Understanding-Block-Blobs--Append-Blobs--and-Page-Blobs/)。 有关高级存储的详细信息，请参阅[高性能高级存储和 Azure VM](/documentation/articles/storage-premium-storage/)。
+Azure 中使用的 VHD 是在 Azure 的标准或高级存储帐户中作为页 Blob 存储的 .vhd 文件。 有关页 blob 的详细信息，请参阅 [了解块 blob 和页 blob](https://docs.microsoft.com/zh-cn/rest/api/storageservices/Understanding-Block-Blobs--Append-Blobs--and-Page-Blobs/)。 有关高级存储的详细信息，请参阅[高性能高级存储和 Azure VM](/documentation/articles/storage-premium-storage/)。
 
 Azure 支持固定的磁盘 VHD 格式。 固定格式在文件内对逻辑磁盘以线性方式布局，使磁盘偏移量 X 存储在 Blob 偏移量 X 的位置。在 Blob 末尾有一小段脚注，描述了 VHD 的属性。 通常，由于大多数磁盘中都有较大的未使用区域，因此固定格式会浪费空间。 不过，Azure 以稀疏格式存储 .vhd 文件，因此可兼获固定和动态格式磁盘的优点。 有关更多详细信息，请参阅[虚拟硬盘入门](https://technet.microsoft.com/zh-cn/library/dd979539.aspx)。
 

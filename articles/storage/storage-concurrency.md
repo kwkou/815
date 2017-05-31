@@ -3,10 +3,9 @@
     description="如何管理 Blob、队列、表和文件服务的并发"
     services="storage"
     documentationcenter=""
-    author="jasonnewyork"
+    author="jasontang501"
     manager="tadb"
-    editor="tysonn"
-    translationtype="Human Translation" />
+    editor="tysonn" />
 <tags
     ms.assetid="cc6429c4-23ee-46e3-b22d-50dd68bd4680"
     ms.service="storage"
@@ -14,12 +13,14 @@
     ms.tgt_pltfrm="na"
     ms.devlang="dotnet"
     ms.topic="article"
-    ms.date="02/28/2017"
-    wacn.date="04/24/2017"
-    ms.author="jahogg"
-    ms.sourcegitcommit="a114d832e9c5320e9a109c9020fcaa2f2fdd43a9"
-    ms.openlocfilehash="de009265a02fd5d4e0f17cdd06f593986e0b3fcb"
-    ms.lasthandoff="04/14/2017" />
+    ms.date="05/11/2017"
+    wacn.date="05/31/2017"
+    ms.author="jasontang501"
+    ms.translationtype="Human Translation"
+    ms.sourcegitcommit="4a18b6116e37e365e2d4c4e2d144d7588310292e"
+    ms.openlocfilehash="b9544c644de8d845cd34e0a6b92d3b79db33e002"
+    ms.contentlocale="zh-cn"
+    ms.lasthandoff="05/19/2017" />
 
 # <a name="managing-concurrency-in-azure-storage"></a>在 Azure 存储中管理并发
 ## <a name="overview"></a>概述
@@ -129,7 +130,7 @@ Azure 存储服务支持所有三个策略，尽管它具有独特的功能，�
 
 租约允许支持各种同步策略，包括独占写入/共享读取、独占写入/独占读取和共享写入/独占读取。 如果租约存在，则存储服务会强制执行独占写入（放置、设置和删除操作），但是，若要确保读取操作的独占性，开发人员需要确保所有客户端应用程序都使用一个租约 ID，并且一次只有一个客户端具有有效的租约 ID。 不包括租约 ID 的读取操作会导致共享读取。  
 
-以下 C# 代码段显示一个示例，说明如何在 30 秒内对 Blob 获取独占租约，更新 Blob 的内容，然后释放该租约。 当你尝试获取新租约时，如果 Blob 中已经存在有效租约，则 Blob 服务将返回“HTTP (409) 冲突”状态结果。 在发出请求以在存储服务中更新 Blob 时，下面的代码段使用 **AccessCondition** 对象封装租约信息。  可以从此处下载完整示例： [使用 Azure 存储管理并发](http://code.msdn.microsoft.com/Managing-Concurrency-using-56018114)。
+以下 C# 代码段显示一个示例，说明如何在 30 秒内对 Blob 获取独占租约，更新 Blob 的内容，然后释放该租约。 尝试获取新租约时，如果 Blob 中已经存在有效租约，则 Blob 服务将返回“HTTP (409) 冲突”状态结果。 在发出请求以在存储服务中更新 Blob 时，下面的代码段使用 **AccessCondition** 对象封装租约信息。  可以从此处下载完整示例： [使用 Azure 存储管理并发](http://code.msdn.microsoft.com/Managing-Concurrency-using-56018114)。
 
     // Acquire lease for 15 seconds
     string lease = blockBlob.AcquireLease(TimeSpan.FromSeconds(15), null);
@@ -226,7 +227,7 @@ Azure 存储服务支持所有三个策略，尽管它具有独特的功能，�
             throw;
     }  
 
-若要明确禁用并发检查，应该在执行替换操作前，将 **employee** 对象的 **ETag** 属性设置为“*”。  
+若要明确禁用并发检查，应该在执行替换操作前，将 employee 对象的 ETag 属性设置为“*”。  
 
     customer.ETag = "*";  
 
@@ -282,4 +283,3 @@ Azure 存储服务支持所有三个策略，尽管它具有独特的功能，�
 - [Azure 存储简介](/documentation/articles/storage-introduction/)
 - [Blob](/documentation/articles/storage-dotnet-how-to-use-blobs/)、[表](/documentation/articles/storage-dotnet-how-to-use-tables/)、[队列](/documentation/articles/storage-dotnet-how-to-use-queues/)和[文件](/documentation/articles/storage-dotnet-how-to-use-files/)的存储使用入门
 - 存储体系结构 - [Azure 存储：具有高度一致性的高可用云存储服务](http://blogs.msdn.com/b/windowsazurestorage/archive/2011/11/20/windows-azure-storage-a-highly-available-cloud-storage-service-with-strong-consistency.aspx)
-<!--Update_Description: update MSDN links; add anchors for H2 titles-->

@@ -3,7 +3,7 @@
     description="可用于查看 Azure 存储数据或与之交互的工具列表。"
     services="storage"
     documentationcenter=""
-    author="seguler"
+    author="dineshmurthy"
     manager="jahogg"
     editor="tysonn" />
 <tags
@@ -13,12 +13,17 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="01/30/2017"
-    wacn.date="03/20/2017"
-    ms.author="seguler" />
+    ms.date="05/11/2017"
+    wacn.date="05/31/2017"
+    ms.author="dineshmurthy"
+    ms.translationtype="Human Translation"
+    ms.sourcegitcommit="4a18b6116e37e365e2d4c4e2d144d7588310292e"
+    ms.openlocfilehash="08fb732283df0f9985d872b5c80c5f2789c2754a"
+    ms.contentlocale="zh-cn"
+    ms.lasthandoff="05/19/2017" />
 
-# Azure 存储客户端工具
-Azure 存储用户经常要使用 Azure 存储客户端工具查看其数据或者与数据交互。下表列出了可用于实现此目的的多种工具。我们在每个能够枚举和/或访问数据抽象的块中打上“X”。该表还指明了工具是否免费。“试用”表示存在免费试用版，但完整版产品不是免费的。“是/否”表示有一个免费版本，而提供的其他版本需要购买。
+# <a name="azure-storage-client-tools"></a>Azure 存储客户端工具
+Azure 存储用户经常要使用 Azure 存储客户端工具查看其数据或者与数据交互。 下表列出了可用于实现此目的的多种工具。 在每个能够枚举和/或访问数据抽象的块中打上“X”。 该表还指明了工具是否免费。 “试用”表示存在免费试用版，但完整版产品不是免费的。 “是/否”表示有一个免费版本，而提供的其他版本需要购买。
 
 我们只提供了可用的 Azure 存储客户端工具的快照。这些工具的功能可能会不断改进和扩展。如果有任何更正或更新，请发表评论告知我们。同样，如果你认为还应在此处列出其他工具，也请发表评论告知我们 - 我们会很乐意添加它们。
 
@@ -235,6 +240,3 @@ Azure 存储用户经常要使用 Azure 存储客户端工具查看其数据或�
     <td></td>
   </tr>
 </table>
-
-<!---HONumber=Mooncake_0313_2017-->
-<!--Update_Description: add azure portal feature-->
