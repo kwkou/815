@@ -88,7 +88,7 @@ Azure 内部负载均衡器是一种面向 Azure 内部的负载均衡器。只�
 ## <a id="p2s-vpn"></a>P2S VPN / Point-to-Site VPN / 点到站点 VPN
 点到站点连接允许你从任何位置的单台计算机连接到 Azure 虚拟网络中的任何内容。它使用 Windows 内置的 VPN 客户端。在进行点到站点配置时，你需要安装证书和 VPN 客户端配置包，其中包含的设置允许你的计算机连接到虚拟网络中的任何虚拟机或角色实例。当你无法访问 VPN 硬件或面向公网的 IPv4 地址（二者是进行站点到站点 VPN 连接所必需的）时，后者仅有少量客户端需要连接到虚拟网络时，点到站点 VPN 连接是很好的选择。
 
-[使用经典管理门户配置与 VNET 的点到站点 VPN 连接](/documentation/articles/vpn-gateway-point-to-site-create/)
+[使用经典管理门户配置与 VNET 的点到站点 VPN 连接](/documentation/articles/vpn-gateway-howto-point-to-site-classic-azure-portal/)
 
 [使用 PowerShell 配置与虚拟网络的点到站点连接](/documentation/articles/vpn-gateway-howto-point-to-site-rm-ps/)
 

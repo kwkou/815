@@ -27,7 +27,7 @@
 必须为各个群集上的服务启用各种服务的堆转储集合。默认为群集关闭此功能。这些堆转储可能很大，因此在启用收集后，建议监视保存这些转储的 Blob 存储帐户。
 
 > [AZURE.IMPORTANT]
-Linux 是在 HDInsight 3.4 版或更高版本上使用的唯一操作系统。有关详细信息，请参阅 [HDInsight 在 Windows 上弃用](/documentation/articles/hdinsight-component-versioning/#hdi-version-32-and-33-nearing-deprecation-date)。本文中的信息仅适用于基于 Windows 的 HDInsight。有关基于 Linux 的 HDInsight 的信息，请参阅[为基于 Linux 的 HDInsight 上的 Hadoop 服务启用堆转储](/documentation/articles/hdinsight-hadoop-collect-debug-heap-dump-linux/)
+Linux 是在 HDInsight 3.4 版或更高版本上使用的唯一操作系统。有关详细信息，请参阅 [HDInsight 在 Windows 上弃用](/documentation/articles/hdinsight-component-versioning/#hdi-version-33-nearing-deprecation-date)。本文中的信息仅适用于基于 Windows 的 HDInsight。有关基于 Linux 的 HDInsight 的信息，请参阅[为基于 Linux 的 HDInsight 上的 Hadoop 服务启用堆转储](/documentation/articles/hdinsight-hadoop-collect-debug-heap-dump-linux/)
 
 ## 符合启用堆转储的服务
 可以为以下服务启用堆转储：

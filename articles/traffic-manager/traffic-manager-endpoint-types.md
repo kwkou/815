@@ -14,8 +14,8 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="infrastructure-services"
-    ms.date="03/16/2017"
-    wacn.date="04/27/2017"
+    ms.date="03/29/2017"
+    wacn.date="05/31/2017"
     ms.author="sewhee"
 />
 
@@ -53,7 +53,7 @@ PublicIPAddress 资源属于 Azure Resource Manager 资源。经典部署模型�
 - 若要为全国各地的用户降低应用程序延迟，可以将现有的本地应用程序扩展到 Azure 中的其他地理位置。有关详细信息，请参阅 [Traffic Manager 'Performance' traffic routing](/documentation/articles/traffic-manager-routing-methods/#performance-traffic-routing-method)（流量管理器“性能”流量路由）。
 - 使用 Azure 为现有的本地应用程序提供额外容量既可以持续满足高峰需求，也可以通过“云爆发”解决方案满足此类需求。
 
-在某些情况下，可以使用外部终结点来引用 Azure 服务（有关示例，请参阅[常见问题](#faq)）。在本示例中，针对运行状况检查的计费是按照 Azure 终结点费率而非外部终结点费率进行的。但与 Azure 终结点不同，如果停止或删除基础服务，运行状况检查将持续计费，直到在流量管理器中禁用或删除该终结点为止。
+在某些情况下，可以使用外部终结点来引用 Azure 服务（有关示例，请参阅[常见问题](/documentation/articles/traffic-manager-FAQs/#traffic-manager-endpoints)）。在本示例中，针对运行状况检查的计费是按照 Azure 终结点费率而非外部终结点费率进行的。但与 Azure 终结点不同，如果停止或删除基础服务，运行状况检查将持续计费，直到在流量管理器中禁用或删除该终结点为止。
 
 ## 嵌套式终结点
 
@@ -67,7 +67,7 @@ PublicIPAddress 资源属于 Azure Resource Manager 资源。经典部署模型�
 
 2. 当某个终结点收到 HTTP 请求时，将使用请求中的“host”标头来确定应通过哪个 Web 应用来处理请求。主机头包含用于启动请求的 DNS 名称，例如“contosoapp.chinacloudsites.cn”。若要对 Web 应用使用其他 DNS 名称，必须将该 DNS 名称注册为该应用的自定义域名。将 Web 应用终结点添加为 Azure 终结点时，系统会自动为该应用注册流量管理器配置文件 DNS 名称。删除终结点时，将自动删除该注册。
 
-3. 每个流量管理器配置文件最多允许一个 Azure 区域有一个 Web 应用终结点。若要克服这种约束，可为外部终结点配置一个 Web 应用。有关详细信息，请参阅[常见问题](#faq)。
+3. 每个流量管理器配置文件最多允许一个 Azure 区域有一个 Web 应用终结点。若要克服这种约束，可为外部终结点配置一个 Web 应用。有关详细信息，请参阅[常见问题](/documentation/articles/traffic-manager-FAQs/#traffic-manager-endpoints)。
 
 ## 启用和禁用终结点
 

@@ -6,7 +6,7 @@
     author="cherylmc"
     manager="timlt"
     editor=""
-    tags="azure-resource-manager" />
+    tags="azure-service-management" />
 <tags
     ms.assetid=""
     ms.service="vpn-gateway"
@@ -14,48 +14,42 @@
     ms.topic="hero-article"
     ms.tgt_pltfrm="na"
     ms.workload="infrastructure-services"
-    ms.date="04/11/2017"
-    wacn.date="05/25/2017"
+    ms.date="04/24/2017"
+    wacn.date="05/31/2017"
     ms.author="cherylmc"
     ms.translationtype="Human Translation"
-    ms.sourcegitcommit="8fd60f0e1095add1bff99de28a0b65a8662ce661"
-    ms.openlocfilehash="b8374eb092c3e091792813ec1ad0d8bd0f04685e"
+    ms.sourcegitcommit="4a18b6116e37e365e2d4c4e2d144d7588310292e"
+    ms.openlocfilehash="f36944f9c61612aec5232dd3c8f3f2552d1141da"
     ms.contentlocale="zh-cn"
-    ms.lasthandoff="05/12/2017" />
+    ms.lasthandoff="05/19/2017" />
 
 # <a name="create-a-site-to-site-connection-using-the-azure-portal-preview-classic"></a>使用 Azure 门户预览创建站点到站点连接（经典）
 
-站点到站点 (S2S) VPN 网关连接是通过 IPsec/IKE（IKEv1 或 IKEv2）VPN 隧道建立的连接。 这种类型的连接要求 VPN 设备位于本地，并且分配有公共 IP 地址，不在 NAT 的后面。 站点到站点连接可以用于跨界和混合配置。
-
-![站点到站点 VPN 网关跨界连接示意图](./media/vpn-gateway-howto-site-to-site-classic-portal/site-to-site-diagram.png)
-
-本文介绍了如何使用经典部署模型和 Azure 门户预览创建一个虚拟网络和一个连接到本地网络的站点到站点 VPN 网关连接。 也可为 Resource Manager 部署模型创建该配置，只需从以下列表中选择另一选项即可：
+本文介绍如何使用 Azure 门户预览创建站点到站点 VPN 网关连接，以便从本地网络连接到 VNet。 本文中的步骤适用于经典部署模型。 也可使用不同的部署工具或部署模型创建此配置，方法是从以下列表中选择另一选项：
 > [AZURE.SELECTOR]
 - [Resource Manager - Azure 门户预览](/documentation/articles/vpn-gateway-howto-site-to-site-resource-manager-portal/)
 - [Resource Manager - PowerShell](/documentation/articles/vpn-gateway-create-site-to-site-rm-powershell/)
+- [Resource Manager - CLI](/documentation/articles/vpn-gateway-howto-site-to-site-resource-manager-cli/)
 - [经典 - Azure 门户预览](/documentation/articles/vpn-gateway-howto-site-to-site-classic-portal/)
 - [经典 - 经典管理门户](/documentation/articles/vpn-gateway-site-to-site-create/)
 
-#### <a name="additional-configurations"></a>其他配置
-如果你想要将多个 VNet 连接到一起，但又不想创建连接到本地位置的连接，则请参阅 [配置 VNet 到 VNet 连接](/documentation/articles/virtual-networks-configure-vnet-to-vnet-connection/)。 如果想要向已具有连接的 VNet 添加站点到站点连接，请参阅[使用现有 VPN 网关连接将 S2S 连接添加到 VNet](/documentation/articles/vpn-gateway-multi-site/)。
+使用站点到站点 VPN 网关连接，通过 IPsec/IKE（IKEv1 或 IKEv2）VPN 隧道将本地网络连接到 Azure 虚拟网络。 此类型的连接要求位于本地的 VPN 设备分配有一个面向外部的公共 IP 地址。 有关 VPN 网关的详细信息，请参阅[关于 VPN 网关](/documentation/articles/vpn-gateway-about-vpngateways/)。
+
+![站点到站点 VPN 网关跨界连接示意图](./media/vpn-gateway-howto-site-to-site-classic-portal/site-to-site-diagram.png)
 
 ## <a name="before-you-begin"></a>开始之前
 
-[AZURE.INCLUDE [deployment models](../../includes/vpn-gateway-deployment-models-include.md)]
+在开始配置之前，请验证是否符合以下条件：
 
-在开始配置之前，请确认是否已准备好以下各项：
-
-* 一台兼容的 VPN 设备和能够对其进行配置的人员。 请参阅 [关于 VPN 设备](/documentation/articles/vpn-gateway-about-vpn-devices/)。 如果不熟悉 VPN 设备的配置，或者不熟悉本地网络配置中的 IP 地址范围，则需咨询能够为你提供此类详细信息的人员。
+* 验证是否需要使用经典部署模型。 [AZURE.INCLUDE [deployment models](../../includes/vpn-gateway-deployment-models-include.md)] 
+* 一台兼容的 VPN 设备和能够对其进行配置的人员。 有关兼容的 VPN 设备和设备配置的详细信息，请参阅[关于 VPN 设备](/documentation/articles/vpn-gateway-about-vpn-devices/)。
 * 一个用于 VPN 设备的面向外部的公共 IPv4 IP 地址。 此 IP 地址不得位于 NAT 之后。
-* Azure 订阅。 如果还没有 Azure 订阅，可以注册一个[试用帐户](/pricing/1rmb-trial)。
-* 目前需要使用 PowerShell 来指定共享密钥和创建 VPN 网关连接。 安装最新版本的 Azure 服务管理 (SM) PowerShell cmdlet。 有关详细信息，请参阅[如何安装和配置 Azure PowerShell](https://docs.microsoft.com/zh-cn/powershell/azureps-cmdlets-docs)。 使用 PowerShell 进行此配置时，请确保以管理员身份运行。 
-
-> [AZURE.NOTE]
-> 配置站点到站点连接时，需要为你的 VPN 设备提供面向公众的 IPv4 IP 地址。
->
+* 如果熟悉本地网络配置中的 IP 地址范围，则需咨询能够提供此类详细信息的人员。 创建此配置时，必须指定 IP 地址范围前缀，Azure 会将该前缀路由到本地位置。 本地网络的任何子网都不得与要连接到的虚拟网络子网重叠。
+* 目前需要使用 PowerShell 来指定共享密钥和创建 VPN 网关连接。 安装最新版本的 Azure 服务管理 (SM) PowerShell cmdlet。 有关详细信息，请参阅[如何安装和配置 Azure PowerShell](https://docs.microsoft.com/zh-cn/powershell/azure/overview)。 使用 PowerShell 进行此配置时，请确保以管理员身份运行。 
 
 ### <a name="values"></a>此练习的示例配置值
-练习这些步骤时，可以使用示例配置值：
+
+本文中的示例使用以下值。 可使用这些值创建测试环境，或参考这些值以更好地理解本文中的示例。
 
 * **VNet 名称：**TestVNet1
 * **地址空间：** 
@@ -111,6 +105,7 @@
 3. 在“地址空间”边栏选项卡上单击“+添加”，然后输入其他地址空间。
 
 ## <a name="dns"></a>3.指定 DNS 服务器
+
 在 S2S 配置过程中不需进行 DNS 设置，但如果需要名称解析，则 DNS 是必需的。
 
 创建虚拟网络后，可以添加 DNS 服务器的 IP 地址来处理名称解析。 打开虚拟网络的设置，单击 DNS 服务器，然后添加要用于名称解析的 DNS 服务器的 IP 地址。 此设置不创建 DNS 服务器。 在示例设置中，我们使用公用 DNS 服务器。 通常情况下，需使用专用 DNS 服务器。 请务必添加可与资源通信的 DNS 服务器。
@@ -149,11 +144,12 @@
 3. 在“网关配置”边栏选项卡上，单击“子网 - 配置所需的设置”打开“添加子网”边栏选项卡。
 
     ![网关配置 - 网关子网](./media/vpn-gateway-howto-site-to-site-classic-portal/subnetrequired.png "网关配置 - 网关子网")
-4. 在“添加子网”边栏选项卡上，添加网关子网。 添加网关子网时，最好是尽可能使用 CIDR 块 /28 或 /27 创建网关子网。 这样可确保你有足够的 IP 地址来应对未来的额外配置需求。  单击“确定”保存设置。
+4. 在“添加子网”边栏选项卡上，添加网关子网。 指定的网关子网的大小取决于要创建的 VPN 网关配置。 尽管创建的网关子网最小可为 /29，但建议选择 /27 或 /28，创建包含更多地址的更大子网。 使用更大的网关子网可以有足够的 IP 地址来应对未来可能会有的配置。
 
     ![添加网关子网](./media/vpn-gateway-howto-site-to-site-classic-portal/addgwsubnet.png "添加网关子网")
 
 ## <a name="sku"></a>6.指定 SKU 和 VPN 类型
+
 1. 选择网关“大小”。 这是用于创建虚拟网关的网关 SKU。 在门户中，“默认 SKU”为“基本”。 有关网关 SKU 的详细信息，请参阅[关于 VPN 网关设置](/documentation/articles/vpn-gateway-about-vpn-gateway-settings/#gwsku)。
 
     ![选择 SKU 和 VPN 类型](./media/vpn-gateway-howto-site-to-site-classic-portal/sku.png "选择 SKU 和 VPN 类型")
@@ -163,24 +159,18 @@
 
 ## <a name="vpndevice"></a>7.配置 VPN 设备
 
-通过站点到站点连接连接到本地网络需要 VPN 设备。 虽然我们提供的配置步骤不是针对所有 VPN 设备的，但是你可以访问以下链接，获取有用的信息：
+通过站点到站点连接连接到本地网络需要 VPN 设备。 在此步骤中，将配置 VPN 设备。 配置 VPN 设备时，需要以下项：
 
-- 有关兼容 VPN 设备的信息，请参阅 [VPN 设备](/documentation/articles/vpn-gateway-about-vpn-devices/)。 
-- 有关设备配置设置的链接，请参阅[已验证的 VPN 设备](/documentation/articles/vpn-gateway-about-vpn-devices/#devicetable)。 我们会尽力提供这些链接。 如需最新的配置信息，最好是咨询设备制造商。
-- 若要了解如何编辑设备配置示例，请参阅[编辑示例](/documentation/articles/vpn-gateway-about-vpn-devices/#editing)。
-- 对于 IPsec/IKE 参数，请参阅[参数](/documentation/articles/vpn-gateway-about-vpn-devices/#ipsec)。
-- 在配置 VPN 设备之前，对于要使用的 VPN 设备，请查看是否存在任何[已知的设备兼容性问题](/documentation/articles/vpn-gateway-about-vpn-devices/#known)。
+- 共享密钥。 此共享密钥就是在创建站点到站点 VPN 连接时指定的共享密钥。 在示例中，我们使用基本的共享密钥。 建议生成更复杂的可用密钥。
+- 虚拟网关的“公共 IP 地址”。 可以通过 Azure 门户预览、PowerShell 或 CLI 查看公共 IP 地址。
 
-配置 VPN 设备时，需要以下项：
-
-- 虚拟网关的“公共 IP 地址”。 转到虚拟网络的“概览”边栏选项卡即可找到该 IP 地址。
-- 共享密钥。 此共享密钥就是在创建站点到站点 VPN 连接时指定的共享密钥。 在示例中，我们使用很基本的共享密钥。 你应该生成更复杂的可用密钥。
+[AZURE.INCLUDE [vpn-gateway-configure-vpn-device-rm](../../includes/vpn-gateway-configure-vpn-device-rm-include.md)]
 
 ## <a name="CreateConnection"></a>8.创建连接
 此步骤设置共享密钥并创建连接。 设置的密钥必须是在 VPN 设备配置中使用过的同一密钥。
 
 > [AZURE.NOTE]
-> 此步骤目前在 Azure 门户预览中不可用。 必须使用服务管理 (SM) 版本的 Azure PowerShell cmdlet。                                        >
+> 此步骤目前在 Azure 门户预览中不可用。 必须使用服务管理 (SM) 版本的 Azure PowerShell cmdlet。
 >
 
 ### <a name="step-1-connect-to-your-azure-account"></a>步骤 1。 连接到 Azure 帐户
@@ -225,4 +215,4 @@
 ## <a name="next-steps"></a>后续步骤
 连接完成后，即可将虚拟机添加到虚拟网络。 有关详细信息，请参阅[虚拟机](/documentation/services/virtual-machines/)。
 
-<!--Update_Description: wording update-->
+<!--Update_Description: move some content to include file-->

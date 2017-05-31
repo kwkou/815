@@ -10,7 +10,7 @@
 <tags
    ms.service="open-source-website"  
    ms.date=""
-   wacn.date="06/14/2016"/>
+   wacn.date="05/26/2017"/>
 
 
 #在 Azure 中自己搭建 Nginx Web 服务器
@@ -46,15 +46,15 @@ Nginx 是一款轻量级的 Web 服务器/反向代理服务器及电子邮件�
 
 1.2 安装  
 
-	yum install nginx  
+	sudo yum install nginx    
 
 1.3 运行  
 
-	systemctl start nginx  
+	sudo systemctl start nginx    
 
 您也可以运行一下命令来查看 nginx 服务的状态  
 
-	systemctl status nginx
+	sudo systemctl status nginx
  
 ![nginx 服务的状态][2]  
 
@@ -64,8 +64,8 @@ Nginx 是一款轻量级的 Web 服务器/反向代理服务器及电子邮件�
 
 下面这个例子先安装了 wget 工具，这是因为 Azure 发布的 CentOS 7.1 中并没有默认安装 wget。  
 
-	yum install wget
-	wget nginx.org/download/nginx-1.9.5.tar.gz
+	sudo yum install wget
+    sudo wget nginx.org/download/nginx-1.9.5.tar.gz
 	tar –xvzf nginx-1.9.5.tar.gz
 	cd nginx-1.9.5  
 
@@ -73,15 +73,18 @@ Nginx 是一款轻量级的 Web 服务器/反向代理服务器及电子邮件�
 
 下面这个例子先安装了 gcc 编译器，这是因为 Azure 发布的 CentOS 7.1 中并没有默认安装 gcc。另外您也需要安装 pcre，pcre-devel，zlib，zlib-devel 和 openssl，否则您可能遇到再编译过程中遇到错误。比如，如果您不注明 “—without-http_rewrite_module” 您将会遇到 ”error: the HTTP rewrite module requires the PCRE library”。  
 
-	yum install gcc
-	yum install pcre pcre-devel zlib zlib-devel 
-	./configure 
-	make
-	make install
+    sudo yum install gcc
+    sudo yum install pcre pcre-devel zlib zlib-devel 
+    sudo ./configure 
+    sudo make
+    sudo make install
+
 
 2.3 运行  
 
-	/usr/sbin/nginx –c /etc/nginx/nginx.conf  
+    sudo ln -s /usr/local/nginx/sbin/nginx /usr/sbin/nginx
+    sudo /usr/sbin/nginx  
+ 
 
 2.4 查看状态  
 
@@ -109,7 +112,7 @@ Azure 虚拟机默认只开放对应 VIP 地址的有限端口，用于远程连
 
 下面的步骤针对 CentOS。  
 
-	vi /etc/ini.d/nginx  
+    vi /etc/init.d/nginx  
 
 粘贴以下内容，保存。  
 
@@ -121,9 +124,9 @@ Azure 虚拟机默认只开放对应 VIP 地址的有限端口，用于远程连
 	# description:  NGINX is an HTTP(S) server, HTTP(S) reverse \
 	#               proxy and IMAP/POP3 proxy server
 	# processname: nginx
-	# config:      /etc/nginx/nginx.conf
+    # config:      /usr/local/nginx/conf/nginx.conf
 	# config:      /etc/sysconfig/nginx
-	# pidfile:     /var/run/nginx.pid
+    # pidfile:     /var/run/nginx.pid /usr/local/nginx/logs/nginx.pid
 
 	# Source function library.
 	. /etc/rc.d/init.d/functions
@@ -134,21 +137,21 @@ Azure 虚拟机默认只开放对应 VIP 地址的有限端口，用于远程连
 	# Check that networking is up.
 	[ "$NETWORKING" = "no" ] && exit 0
 
-	nginx="/usr/sbin/nginx"
+	nginx="/usr/local/nginx/sbin/nginx"
 	prog=$(basename $nginx)
 
-	NGINX_CONF_FILE="/etc/nginx/nginx.conf"
+	NGINX_CONF_FILE="/usr/local/nginx/conf/nginx.conf"
 
 	[ -f /etc/sysconfig/nginx ] && . /etc/sysconfig/nginx
 
-	lockfile=/var/lock/subsys/nginx
+	lockfile=/usr/local/nginx/logs/nginx.lock
 
 	make_dirs() {
    	# make required directories
 	user=`$nginx -V 2>&1 | grep "configure arguments:" | sed 's/[^*]*--user=\([^ ]*\).*/\1/g' -`
 
    	if [ -z "`grep $user /etc/passwd`" ]; then
-       useradd -M -s /bin/nologin $user
+       useradd -M -s /sbin/nologin $user
    	fi
    	options=`$nginx -V 2>&1 | grep 'configure arguments:'`
    	for opt in $options; do
@@ -246,7 +249,7 @@ Azure 虚拟机默认只开放对应 VIP 地址的有限端口，用于远程连
 
 赋予守护进程运行权限。  
 
-	Chmod +x /etc/init.d/nginx  
+	chmod +x /etc/init.d/nginx  
 
 接下来您就可以启动/停止/查看 Nginx 服务了  
 

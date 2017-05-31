@@ -33,7 +33,7 @@
 
 | 区域 | 优化 |
 | --- | --- |
-| [VM 大小](#vm-size-guidance) |SQL Enterprise 版本为 [DS3](/documentation/articles/virtual-machines-windows-sizes/#ds-series) 或更高。SQL Standard 和 Web 版本为 <br/><br/>[DS2](/documentation/articles/virtual-machines-windows-sizes/#ds-series) 或更高。 |
+| [VM 大小](#vm-size-guidance) |SQL Enterprise 版本为 [DS3](/documentation/articles/virtual-machines-windows-sizes/) 或更高。SQL Standard 和 Web 版本为 <br/><br/>[DS2](/documentation/articles/virtual-machines-windows-sizes/) 或更高。 |
 | [存储](#storage-guidance) |使用[高级存储](/documentation/articles/storage-premium-storage/)。建议只将标准存储用于开发/测试。<br/><br/>使[存储帐户](/documentation/articles/storage-create-storage-account/)和 SQL Server VM 保存在同一个区域中。<br/><br/>禁用存储帐户上的 Azure [异地冗余存储](/documentation/articles/storage-redundancy/)（异地复制）。 |
 | [磁盘](#disks-guidance) |至少使用 2 个 [P30 磁盘](/documentation/articles/storage-premium-storage/#premium-storage-scalability-and-performance-targets)（1 个用于日志文件；1 个用于数据文件和 TempDB）。<br/><br/>避免将操作系统磁盘或临时磁盘用于数据库存储或日志记录。<br/><br/>在托管数据文件和 TempDB 的磁盘上启用读缓存。<br/><br/>请勿在托管日志文件的磁盘上启用缓存。<br/><br/>重要说明：在更改 Azure VM 磁盘的缓存设置时，请停止 SQL Server 服务。<br/><br/>条带化多个 Azure 数据磁盘以获得更高的 IO 吞吐量。<br/><br/>使用文档中记录的分配大小格式化。 |
 | [I/O](#io-guidance) |启用数据库页压缩。<br/><br/>为数据文件启用即时文件初始化。<br/><br/>限制或禁用数据库的自动增长。<br/><br/>禁用数据库的自动收缩。<br/><br/>将所有数据库都移到数据磁盘，包括系统数据库。<br/><br/>将 SQL Server 错误日志和跟踪文件目录移至数据磁盘。<br/><br/>设置默认的备份和数据库文件的位置。<br/><br/>启用锁定的页。<br/><br/>应用 SQL Server 性能修复程序。 |

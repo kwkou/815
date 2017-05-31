@@ -10,7 +10,7 @@
 <tags
 	ms.service="open-source-website"
 	ms.date=""
-	wacn.date="06/14/2016"/>
+	wacn.date="05/26/2017"/>
 
 # 在 Azure Linux 虚拟机上安装 MySQL
 
@@ -55,9 +55,11 @@ MySQL 有多个稳定版本以及多种安装方式，这篇文档以 MySQL 5.6�
 
 6. 如果需要更新 root 密码的话，有好几种方式。这里还是用 mysqladmin 命令
 
-		$sudo mysqladmin -uroot -p<password> password
+		$sudo mysqladmin -uroot -p<oldpassword> password
 
-	其中 <password> 是您原先的 root 密码，敲入上述命令后回车，输入新密码即可。
+	其中 \<oldpassword\> 是您原先的 root 密码，敲入上述命令后回车，输入新密码即可。
+
+    其他重置密码方法详细请参考：[Root密码重置方法](https://dev.mysql.com/doc/refman/5.7/en/resetting-permissions.html)
 
 7. 停止 MySQL 服务
 
@@ -76,7 +78,7 @@ MySQL 有多个稳定版本以及多种安装方式，这篇文档以 MySQL 5.6�
 
 	注意上面 10.0.0.1 是被授权访问此 MySQL Server 的机器地址，123456 是您 root 密码。如果用 % 替代 IP 地址的话表明所有机器都可访问此数据库服务器。
 
-10. 打开 3306 端口。3306 端口是 MySQL 的默认端口。请参考[创建终结点](/documentation/articles/virtual-machines-linux-classic-setup-endpoints/)打开端口
+10. 打开 3306 端口。3306 端口是 MySQL 的默认端口。请参考[创建终结点](/documentation/articles/virtual-machines-windows-nsg-quickstart-portal/)打开端口
 11. 此时可以从 10.0.0.1 机器远程访问您的 MySQL 数据库了。
 
 
@@ -118,7 +120,7 @@ MySQL 有多个稳定版本以及多种安装方式，这篇文档以 MySQL 5.6�
 
 	注意上面 10.0.0.1 是被授权访问此 MySQL Server 的机器地址，123456 是您 root 密码。如果用%替代 IP 地址的话表明所有机器都可访问此数据库服务器。
 
-6. 打开 3306 端口。3306 端口是 MySQL 的默认端口。请参考[创建终结点](/documentation/articles/virtual-machines-linux-classic-setup-endpoints/)打开端口 
+6. 打开 3306 端口。3306 端口是 MySQL 的默认端口。请参考[创建终结点](/documentation/articles/virtual-machines-windows-nsg-quickstart-portal/)打开端口 
 
 7. 此时可以从 10.0.0.1 机器远程访问您的 MySQL 数据库了。
 
@@ -165,7 +167,7 @@ MySQL 有多个稳定版本以及多种安装方式，这篇文档以 MySQL 5.6�
 
 	注意上面 10.0.0.1 是被授权访问此 MySQL Server 的机器地址，123456 是您 root 密码。如果用%替代 IP 地址的话表明所有机器都可访问此数据库服务器。
 
-8. 打开 3306 端口。3306 端口是 MySQL 的默认端口。请参考[创建终结点](/documentation/articles/virtual-machines-linux-classic-setup-endpoints/)打开端口 
+8. 打开 3306 端口。3306 端口是 MySQL 的默认端口。请参考[创建终结点](/documentation/articles/virtual-machines-windows-nsg-quickstart-portal/)打开端口 
 
 9. 此时可以从 10.0.0.1 机器远程访问您的 MySQL 数据库了。
 

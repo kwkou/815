@@ -35,7 +35,7 @@
 我们还提供其他工具和资源，用于在 Visual Studio 中通过 PowerShell 进行 Azure 开发。请参阅 [PowerShell Tools for Visual Studio](http://go.microsoft.com/fwlink/?LinkId=404012)。
 
 ## 生成发布脚本
-可按照[这些说明](/documentation/articles/virtual-machines-windows-classic-web-app-visual-studio?toc=%2fazure%2fvirtual-machines%2fwindows%2fclassic%2ftoc.json/)，在创建新项目时为托管网站的虚拟机生成发布脚本。还可以[为 Azure App Service 中的 Web 应用生成发布脚本](/documentation/articles/web-sites-dotnet-get-started/)。
+可按照[这些说明](/documentation/articles/virtual-machines-windows-classic-web-app-visual-studio?toc=%2fazure%2fvirtual-machines%2fwindows%2fclassic%2ftoc.json/)，在创建新项目时为托管网站的虚拟机生成发布脚本。还可以[为 Azure App Service 中的 Web 应用生成发布脚本](/documentation/articles/app-service-web-get-started-dotnet/)。
 
 ## Visual Studio 生成的脚本
 Visual Studio 会生成名为 **PublishScripts** 的解决方案级文件夹，其中包含两个 Windows PowerShell 文件、一个针对虚拟机或网站的发布脚本，以及一个包含可在脚本中使用的函数的模块。Visual Studio 还将生成 JSON 格式的文件，用于指定你要部署的项目的详细信息。

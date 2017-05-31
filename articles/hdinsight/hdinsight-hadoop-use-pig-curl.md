@@ -36,7 +36,7 @@
 * Azure HDInsight（HDInsight 上的 Hadoop）群集（基于 Linux 或 Windows）
 
     > [AZURE.IMPORTANT]
-    Linux 是在 HDInsight 3.4 版或更高版本上使用的唯一操作系统。有关详细信息，请参阅 [HDInsight 在 Windows 上弃用](/documentation/articles/hdinsight-component-versioning/#hdi-version-32-and-33-nearing-deprecation-date)。
+    Linux 是在 HDInsight 3.4 版或更高版本上使用的唯一操作系统。有关详细信息，请参阅 [HDInsight 在 Windows 上弃用](/documentation/articles/hdinsight-component-versioning/#hdi-version-33-nearing-deprecation-date)。
 
 * [Curl](http://curl.haxx.se/)
 * [jq](http://stedolan.github.io/jq/)
@@ -97,7 +97,7 @@
 
 在作业的状态更改为 **SUCCEEDED** 时，你可以从群集使用的默认存储中检索作业的结果。随查询一起传递的 `statusdir` 参数包含输出文件的位置；在本例中为 **/example/pigcurl**。
 
-HDInsight 的后备存储可以是 Azure 存储，有多种方法可以找到数据，具体取决于所使用的存储。有关如何使用 Azure 存储的详细信息，请参阅 HDInsight on Linux 文档的 [HDFS 和 Blob 存储](/documentation/articles/hdinsight-hadoop-linux-information/##hdfs-blob-storage-and-data-lake-store) 部分。
+HDInsight 的后备存储可以是 Azure 存储，有多种方法可以找到数据，具体取决于所使用的存储。有关如何使用 Azure 存储的详细信息，请参阅 HDInsight on Linux 文档的 [HDFS 和 Blob 存储](/documentation/articles/hdinsight-hadoop-linux-information/#hdfs-and-azure-storage) 部分。
 
 ## <a id="summary"></a>摘要
 

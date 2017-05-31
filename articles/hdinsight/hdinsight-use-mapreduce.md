@@ -182,7 +182,7 @@ HDInsight 可以使用各种方法运行 HiveQL 作业。 使用下表来确定�
 
 * [为 HDInsight 开发 Python 流式处理 MapReduce 程序](/documentation/articles/hdinsight-hadoop-streaming-python/)
 
-* [使用 Apache Hadoop on HDInsight 开发 Scalding MapReduce 作业](/documentation/articles/hdinsight-hadoop-mapreduce-scalding/)
+* [使用 Apache Hadoop on HDInsight 开发 Scalding MapReduce 作业](/documentation/articles/hdinsight-use-mapreduce/)
 
 * [将 Hive 与 HDInsight 配合使用][hdinsight-use-hive]
 

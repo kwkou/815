@@ -23,7 +23,7 @@
 
 # <a name="local-git-deployment-to-azure-app-service"></a>从本地 Git 部署到 Azure App Service
 本教程说明如何将应用从本地计算机上的 Git 存储库部署到 [Azure App Service] 。 应用服务支持结合 [Azure 门户预览]中的“本地 Git”部署选项使用此方法。  
-在根据[此处](/documentation/articles/app-service-web-get-started/)所述使用 [Azure 命令行接口]创建应用服务应用时，将自动执行本文中所述的许多 Git 命令。
+在根据[此处](/documentation/services/app-service/web/)所述使用 [Azure 命令行接口]创建应用服务应用时，将自动执行本文中所述的许多 Git 命令。
 
 ## <a name="prerequisites"></a>先决条件
 若要完成本教程，你需要：

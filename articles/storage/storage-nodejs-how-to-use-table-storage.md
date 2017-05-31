@@ -26,7 +26,7 @@
 
 本主题中的代码示例假定用户已拥有 Node.js 应用程序。有关如何在 Azure 中创建 Node.js 应用程序的信息，请参阅以下任何主题：
 
-- [在 Azure App Service 中创建 Node.js Web 应用](/documentation/articles/web-sites-nodejs-develop-deploy-mac/)
+- [在 Azure App Service 中创建 Node.js Web 应用](/documentation/articles/app-service-web-get-started-nodejs/)
 - [使用 WebMatrix 构建 Node.js Web 应用并将其部署到 Azure](https://www.microsoft.com/web/webmatrix/)
 - [生成 Node.js 应用程序并将其部署到 Azure 云服务](/documentation/articles/cloud-services-nodejs-develop-deploy-app/)（使用 Windows PowerShell）
 
@@ -404,6 +404,6 @@ ACL 是使用一组访问策略实施的，每个策略都有一个关联的 ID�
   [ Website with WebMatrix]: https://www.microsoft.com/web/webmatrix/
   [Node.js Cloud Service with Storage]: /documentation/articles/storage-nodejs-use-table-storage-cloud-service-app/
   [使用 Azure 表服务的 Node.js Web 应用]: /documentation/articles/storage-nodejs-use-table-storage-web-site/
-  [Create and deploy a Node.js application to an Azure website]: /documentation/articles/web-sites-nodejs-develop-deploy-mac/
+  [Create and deploy a Node.js application to an Azure website]: /documentation/articles/app-service-web-get-started-nodejs/
 
 <!---HONumber=Mooncake_0103_2017-->

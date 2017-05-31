@@ -14,32 +14,35 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="infrastructure-services"
-    ms.date="04/04/2017"
-    wacn.date="05/25/2017"
+    ms.date="04/21/2017"
+    wacn.date="05/31/2017"
     ms.author="cherylmc"
     ms.translationtype="Human Translation"
-    ms.sourcegitcommit="8fd60f0e1095add1bff99de28a0b65a8662ce661"
-    ms.openlocfilehash="d7ef45d236a2b21de2ffa0ab448318b994492cbc"
+    ms.sourcegitcommit="4a18b6116e37e365e2d4c4e2d144d7588310292e"
+    ms.openlocfilehash="75fbce30043260909121c5f166562b2d53eaea25"
     ms.contentlocale="zh-cn"
-    ms.lasthandoff="05/12/2017" />
+    ms.lasthandoff="05/19/2017" />
 
 # <a name="connect-virtual-networks-from-different-deployment-models-using-the-portal"></a>使用门户从不同的部署模型连接虚拟网络
+
+本文介绍如何将经典 VNet 连接到 Resource Manager VNet，以使位于单独部署模型中的资源能够相互通信。 本文中的步骤主要使用 Azure 门户预览完成，但也可通过从此列表中选择文章使用 PowerShell 来创建此配置。
 > [AZURE.SELECTOR]
-- [Azure 门户预览](/documentation/articles/vpn-gateway-connect-different-deployment-models-portal/)
+- [门户](/documentation/articles/vpn-gateway-connect-different-deployment-models-portal/)
 - [PowerShell](/documentation/articles/vpn-gateway-connect-different-deployment-models-powershell/)
 
-Azure 当前有两个管理模型：经典模型和 Resource Manager 模型。 如果 Azure 已经使用了一段时间，则您的 Azure VM 和实例角色可能是在经典 VNet 上运行。 而较新的 VM 和角色实例可能是在 Resource Manager 中创建的 VNet 上运行。 本文将帮助你在虚拟网络之间创建基于 IPsec/IKE VPN 隧道的 VPN 网关连接。
+将经典 VNet 连接到 Resource Manager VNet 类似于将 VNet 连接到本地站点位置。 这两种连接类型都使用 VPN 网关来提供使用 IPsec/IKE 的安全隧道。 可以在位于不同订阅、不同区域中的 VNet 之间创建连接。 您还可以连接已连接到本地网络的 VNet，只要它们配置的网关是动态或基于路由的。 有关 VNet 到 VNet 连接的详细信息，请参阅本文末尾的 [VNet 到 VNet 常见问题解答](#faq) 。 
 
-有关 VNet 到 VNet 的详细信息，请参阅本文末尾的 [VNet 到 VNet 注意事项](#faq)。 可能还需要查看 [VNet 对等互连](/documentation/articles/virtual-network-peering-overview/)一文。 VNet 对等互连是在 VNet 之间创建连接的另一种方式，并且对于某些配置具有一些连接优势。
+如果 VNet 位于同一区域中，可能需考虑改为使用 VNet 对等互连进行连接。 VNet 对等互连不使用 VPN 网关。 有关详细信息，请参阅 [VNet 对等互连](/documentation/articles/virtual-network-peering-overview/)。 
 
 ### <a name="prerequisites"></a>先决条件
 
 * 这些步骤假定已创建了两个 VNet。 如果你使用本文进行练习并且还没有 VNet，相关步骤中的链接可以帮助你创建它们。
 * 请确认两个 VNet 的地址范围不相互重叠，也不与网关可能连接到的其他连接的任何范围重叠。
-* 为 Resource Manager 和服务管理（经典）安装最新的 PowerShell cmdlet。 在本文中，我们使用 Azure 门户预览和 PowerShell。 若要创建从经典 VNet 到 Resource Manager VNet 的连接，必须使用 PowerShell。 有关详细信息，请参阅[如何安装和配置 Azure PowerShell](https://docs.microsoft.com/zh-cn/powershell/azureps-cmdlets-docs)。 
+* 为 Resource Manager 和服务管理（经典）安装最新的 PowerShell cmdlet。 在本文中，我们使用 Azure 门户预览和 PowerShell。 若要创建从经典 VNet 到 Resource Manager VNet 的连接，必须使用 PowerShell。 有关详细信息，请参阅[如何安装和配置 Azure PowerShell](https://docs.microsoft.com/zh-cn/powershell/azure/overview)。 
 
 ### <a name="values"></a>示例设置
-可以将示例设置用作参考，也可以使用它们来创建测试配置。
+
+可使用这些值创建测试环境，或参考这些值以更好地理解本文中的示例。
 
 **经典 VNet**
 
@@ -78,6 +81,7 @@ VPN 类型 = 基于路由 <br>
 | RMVNet | (192.168.0.0/16) |中国东部 |ClassicVNetLocal (10.0.0.0/24) |
 
 ## <a name="classicvnet"></a>1.配置经典 VNet 设置
+
 在本部分中，你将为经典 VNet 创建本地网络（本地站点）和虚拟网关。 如果你还没有经典 VNet 并且是运行这些步骤进行练习，则可以参阅[此文章](/documentation/articles/virtual-networks-create-vnet-classic-pportal/)以及上文中的[示例](#values)设置值创建 VNet。 如果已经有带 VPN 网关的 VNet，请验证该网关是否为动态网关。 如果为静态网关，则必须先删除该 VPN 网关，然后再继续操作。
 
 这些屏幕截图仅供参考。 请务必将值替换为自己的值，或者使用[示例](#values)值。
@@ -98,6 +102,7 @@ VPN 类型 = 基于路由 <br>
 8. 单击“确定”，保存值并返回到“新建 VPN 连接”边栏选项卡。
 
 ### <a name="part-2---create-the-virtual-network-gateway"></a>第 2 部分 — 创建虚拟网络网关
+
 1. 在“新建 VPN 连接”边栏选项卡上，选择“立即创建网关”复选框，然后单击“可选网关配置”，打开“网关配置”边栏选项卡。 
 
     ![打开网关配置边栏选项卡](./media/vpn-gateway-connect-different-deployment-models-portal/optionalgatewayconfiguration.png "打开网关配置边栏选项卡")
@@ -108,6 +113,7 @@ VPN 类型 = 基于路由 <br>
 6. 在“新建 VPN 连接”边栏选项卡上，单击“确定”，开始创建 VPN 网关。 创建 VPN 网关可能需要长达 45 分钟的时间才能完成。
 
 ### <a name="ip"></a>第 3 部分 - 复制虚拟网关的公共 IP 地址
+
 创建虚拟网络网关后，可以查看网关 IP 地址。 
 
 1. 导航到经典 VNet，然后单击“概述” 。
@@ -122,6 +128,7 @@ VPN 类型 = 基于路由 <br>
 这些屏幕截图仅供参考。 请务必将值替换为自己的值，或者使用[示例](#values)值。
 
 ### <a name="part-1---create-a-gateway-subnet"></a>第 1 节 - 创建网关子网
+
 创建虚拟网关前，先要创建网关子网。 创建 CIDR 计数为 /28 或更大的网关子网。 （/27、/26 等）
 
 [AZURE.INCLUDE [vpn-gateway-no-nsg-include](../../includes/vpn-gateway-no-nsg-include.md)]
@@ -129,6 +136,7 @@ VPN 类型 = 基于路由 <br>
 [AZURE.INCLUDE [vpn-gateway-add-gwsubnet-rm-portal](../../includes/vpn-gateway-add-gwsubnet-rm-portal-include.md)]
 
 ### <a name="part-2---create-a-virtual-network-gateway"></a>第 2 节 - 创建虚拟网络网关
+
 [AZURE.INCLUDE [vpn-gateway-add-gw-rm-portal](../../includes/vpn-gateway-add-gw-rm-portal-include.md)]
 
 ### <a name="createlng"></a>第 3 部分 - 创建本地网络网关
@@ -187,7 +195,7 @@ VPN 类型 = 基于路由 <br>
 
 使用提升的权限打开 PowerShell 控制台，并登录 Azure 帐户。 以下 cmdlet 将提示您提供 Azure 帐户的登录凭据。 登录后将下载您的帐户设置，以便 Azure PowerShell 使用这些设置。
 
-    Login-AzureRmAccount -EnvironmentName AzureChinaCloud 
+    Login-AzureRmAccount -EnvironmentName AzureChinaCloud
 
 如果您有多个订阅，则获取您的 Azure 订阅的列表。
 
@@ -197,7 +205,7 @@ VPN 类型 = 基于路由 <br>
 
     Select-AzureRmSubscription -SubscriptionName "Name of subscription"
 
-添加要使用经典 PowerShell cmdlet 的 Azure 帐户。 若要执行此操作，请使用以下命令：
+添加 Azure 帐户以使用经典 PowerShell cmdlet (SM)。 若要执行此操作，请使用以下命令：
 
     Add-AzureAccount -Environment AzureChinaCloud
 
@@ -216,7 +224,7 @@ VPN 类型 = 基于路由 <br>
 
 ### <a name="3-create-the-connection"></a>3.创建连接
 
-设置共享密钥并创建从经典 VNet 到 Resource Manager VNet 的连接。
+设置共享密钥并创建从经典 VNet 到 Resource Manager VNet 的连接。 无法使用门户设置共享密钥。 使用经典版本的 PowerShell cmdlet 登录时，请确保运行这些步骤。 为此，请使用 **Add-AzureAccount -Environment AzureChinaCloud**。 否则无法设置“-AzureVNetGatewayKey”。
 
 - 在此示例中，**-VNetName** 是在网络配置文件中找到的经典 VNet 的名称。 
 - **-LocalNetworkSiteName** 是为本地站点指定的名称，与在网络配置文件中找到的一样。
@@ -226,6 +234,7 @@ VPN 类型 = 基于路由 <br>
         -LocalNetworkSiteName "172B9E16_RMVNetLocal" -SharedKey abc123
 
 ##<a name="verify"></a>6.验证连接
+
 可以使用 Azure 门户预览或 PowerShell 来验证连接。 验证时，因为正在创建连接，可能需要等待一两分钟。 连接成功后，连接状态将从“正在连接”变为“已连接”。
 
 ### <a name="to-verify-the-connection-from-your-classic-vnet-to-your-resource-manager-vnet"></a>验证从经典 VNet 到 Resource Manager VNet 的连接
@@ -236,7 +245,7 @@ VPN 类型 = 基于路由 <br>
 
 [AZURE.INCLUDE [vpn-gateway-verify-connection-portal-rm](../../includes/vpn-gateway-verify-connection-portal-rm-include.md)]
 
-## <a name="faq"></a>VNet 到 VNet 注意事项
+## <a name="faq"></a>VNet 到 VNet 常见问题解答
 
 [AZURE.INCLUDE [vpn-gateway-vnet-vnet-faq](../../includes/vpn-gateway-vnet-vnet-faq-include.md)]
 

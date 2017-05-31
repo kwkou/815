@@ -723,7 +723,7 @@ Internet 上对于 ASP.NET 跟踪没有全面且最新的介绍。最佳做法�
 
 Microsoft TechNet 网站包含的[使用失败请求跟踪](http://www.iis.net/learn/troubleshoot/using-failed-request-tracing)部分对于了解如何使用这些日志非常有用。然而，该文档主要着重于在 IIS 中配置失败请求跟踪，并不适用于 Azure Web 应用。
 
-[GetStarted]: /documentation/articles/web-sites-dotnet-get-started/
+[GetStarted]: /documentation/articles/app-service-web-get-started-dotnet/
 [GetStartedWJ]: /documentation/articles/websites-dotnet-webjobs-sdk/
  
 

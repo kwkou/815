@@ -14,13 +14,13 @@ editor="Eric Chen" />
 #创建您的第一个 Node.js 应用程序
 
 通过结合使用 Git 与 Windows、Mac 或 Linux 快速进行部署。并且是免费的。
-[了解更多](/documentation/articles/web-sites-nodejs-develop-deploy-mac/)
+[了解更多](/documentation/articles/app-service-web-get-started-nodejs/)
 
 ##Node.js 教程和文档
 
 ###计算
 
-- [部署 Web 应用](/documentation/articles/web-sites-nodejs-develop-deploy-mac/)
+- [部署 Web 应用](/documentation/articles/app-service-web-get-started-nodejs/)
 - [使用 Socket.IO 生成聊天应用程序](/documentation/articles/web-sites-nodejs-chat-app-socketio/)
 - [使用 CLI 进行部署](/documentation/articles/xplat-cli-install/)
 - [使用 WebMatrix 进行部署](https://www.microsoft.com/web/webmatrix/)

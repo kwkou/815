@@ -21,7 +21,7 @@
 
 # 在第一个 Web 应用中添加功能
 
-在[在 5 分钟内将 Web 应用部署到 Azure](/documentation/articles/app-service-web-get-started/) 教程中，你已将一个示例 Web 应用部署到 [Azure App Service](/documentation/articles/app-service-value-prop-what-is/)。在本文中，你将会快速地在所部署的 Web 应用中添加一些强大功能。只需几分钟，你就能够：
+在[在 5 分钟内将 Web 应用部署到 Azure](/documentation/articles/app-service-web-get-started-dotnet/) 教程中，你已将一个示例 Web 应用部署到 [Azure App Service](/documentation/articles/app-service-value-prop-what-is/)。在本文中，你将会快速地在所部署的 Web 应用中添加一些强大功能。只需几分钟，你就能够：
 
 - 强制实施用户身份验证
 - 自动缩放应用

@@ -13,8 +13,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="vm-linux"
    ms.workload="infrastructure-services"
-   ms.date="01/10/2017"
-   wacn.date="03/01/2017"
+   ms.date="04/10/2017"
+   wacn.date="05/31/2017"
    ms.author="iainfou"/>
 
 [AZURE.INCLUDE [virtual-machines-common-regions-and-availability](../../includes/virtual-machines-common-regions-and-availability.md)]

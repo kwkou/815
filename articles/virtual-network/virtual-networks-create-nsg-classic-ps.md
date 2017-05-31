@@ -43,7 +43,7 @@
 	预期输出：
 
 		Name         Location   Label               
-		----         --------   -----               
+
 		NSG-FrontEnd China North 	Front end subnet NSG
 
 
@@ -66,7 +66,7 @@
 		           
 		           Name                 Priority  Action   Source Address  Source Port   Destination      Destination    Protocol
 		                                                   Prefix          Range         Address Prefix   Port Range             
-		           ----                 --------  ------   --------------- ------------- ---------------- -------------- --------
+
 		           rdp-rule             100       Allow    INTERNET        *             *                3389           TCP     
 		           ALLOW VNET INBOUND   65000     Allow    VIRTUAL_NETWORK *             VIRTUAL_NETWORK  *              *       
 		           ALLOW AZURE LOAD     65001     Allow    AZURE_LOADBALAN *             *                *              *       
@@ -78,7 +78,7 @@
 		           
 		           Name                 Priority  Action   Source Address  Source Port   Destination      Destination    Protocol
 		                                                   Prefix          Range         Address Prefix   Port Range             
-		           ----                 --------  ------   --------------- ------------- ---------------- -------------- --------
+
 		           ALLOW VNET OUTBOUND  65000     Allow    VIRTUAL_NETWORK *             VIRTUAL_NETWORK  *              *       
 		           ALLOW INTERNET       65001     Allow    *               *             INTERNET         *              *       
 		           OUTBOUND                                                                                                      
@@ -104,7 +104,7 @@
 		           
 		           Name                 Priority  Action   Source Address  Source Port   Destination      Destination    Protocol
 		                                                   Prefix          Range         Address Prefix   Port Range             
-		           ----                 --------  ------   --------------- ------------- ---------------- -------------- --------
+
 		           rdp-rule             100       Allow    INTERNET        *             *                3389           TCP     
 		           web-rule             200       Allow    INTERNET        *             *                80             TCP     
 		           ALLOW VNET INBOUND   65000     Allow    VIRTUAL_NETWORK *             VIRTUAL_NETWORK  *              *       
@@ -117,7 +117,7 @@
 		           
 		           Name                 Priority  Action   Source Address  Source Port   Destination      Destination    Protocol
 		                                                   Prefix          Range         Address Prefix   Port Range             
-		           ----                 --------  ------   --------------- ------------- ---------------- -------------- --------
+
 		           ALLOW VNET OUTBOUND  65000     Allow    VIRTUAL_NETWORK *             VIRTUAL_NETWORK  *              *       
 		           ALLOW INTERNET       65001     Allow    *               *             INTERNET         *              *       
 		           OUTBOUND                                                                                                      
@@ -132,7 +132,7 @@
 	预期输出：
 
 		Name        Location   Label              
-		----        --------   -----              
+
 		NSG-BackEnd China North    Back end subnet NSG
 
 
@@ -155,7 +155,7 @@
 		           
 		           Name                 Priority  Action   Source Address  Source Port   Destination      Destination    Protocol
 		                                                   Prefix          Range         Address Prefix   Port Range             
-		           ----                 --------  ------   --------------- ------------- ---------------- -------------- --------
+
 		           fe-rule              100       Allow    192.168.1.0/24  *             *                1433           TCP     
 		           ALLOW VNET INBOUND   65000     Allow    VIRTUAL_NETWORK *             VIRTUAL_NETWORK  *              *       
 		           ALLOW AZURE LOAD     65001     Allow    AZURE_LOADBALAN *             *                *              *       
@@ -167,7 +167,7 @@
 		           
 		           Name                 Priority  Action   Source Address  Source Port   Destination      Destination    Protocol
 		                                                   Prefix          Range         Address Prefix   Port Range             
-		           ----                 --------  ------   --------------- ------------- ---------------- -------------- --------
+
 		           ALLOW VNET OUTBOUND  65000     Allow    VIRTUAL_NETWORK *             VIRTUAL_NETWORK  *              *       
 		           ALLOW INTERNET       65001     Allow    *               *             INTERNET         *              *       
 		           OUTBOUND                                                                                                      
@@ -192,7 +192,7 @@
 		           
 		           Name                 Priority  Action   Source Address  Source Port   Destination      Destination    Protocol
 		                                                   Prefix          Range         Address Prefix   Port Range             
-		           ----                 --------  ------   --------------- ------------- ---------------- -------------- --------
+
 		           fe-rule              100       Allow    192.168.1.0/24  *             *                1433           TCP     
 		           ALLOW VNET INBOUND   65000     Allow    VIRTUAL_NETWORK *             VIRTUAL_NETWORK  *              *       
 		           ALLOW AZURE LOAD     65001     Allow    AZURE_LOADBALAN *             *                *              *       
@@ -204,7 +204,7 @@
 		           
 		           Name                 Priority  Action   Source Address  Source Port   Destination      Destination    Protocol
 		                                                   Prefix          Range         Address Prefix   Port Range             
-		           ----                 --------  ------   --------------- ------------- ---------------- -------------- --------
+
 		           block-internet       200       Deny     *               *             INTERNET         *              *       
 		           ALLOW VNET OUTBOUND  65000     Allow    VIRTUAL_NETWORK *             VIRTUAL_NETWORK  *              *       
 		           ALLOW INTERNET       65001     Allow    *               *             INTERNET         *              *       

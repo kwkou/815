@@ -12,8 +12,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="08/31/2016"
-   wacn.date="12/26/2016"
+   ms.date="02/23/2017"
+   wacn.date="05/31/2017"
    ms.author="sewhee" />
 
 
@@ -53,9 +53,6 @@ Linux 客户端通常在启动时注册到 DNS 服务器，并假设 DHCP 服务
 
   			nsupdate $nsupdatecmds
 		fi
-
-		#done
-		exit 0;
 
 还可使用 *nsupdate* 命令来执行安全的动态 DNS 更新。例如，使用 Bind DNS 服务器时，将[生成](http://linux.yyz.us/nsupdate/)公钥-私钥对。已向 DNS 服务器[配置](http://linux.yyz.us/dns/ddns-server.html)密钥的公共部分，所以它可以验证请求中的签名。必须使用 *-k* 选项将密钥对提供给 *nsupdate*，以便对动态 DNS 更新请求进行签名。
 

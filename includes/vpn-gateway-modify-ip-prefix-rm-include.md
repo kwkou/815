@@ -1,27 +1,21 @@
-### <a name="noconnection"></a>如何添加或删除前缀 - 无网关连接
-### <a name="to-add-additional-prefixes"></a>添加其他前缀
+### <a name="noconnection"></a>修改本地网关 IP 地址前缀 - 无网关连接
 
-若要将其他地址前缀添加到已创建的但尚无网关连接的本地网关，请使用下面的示例。 请确保将值更改为自己的值。
+- 添加其他地址前缀：
 
     $local = Get-AzureRmLocalNetworkGateway -Name MyLocalNetworkGWName -ResourceGroupName MyRGName `
     Set-AzureRmLocalNetworkGateway -LocalNetworkGateway $local `
     -AddressPrefix @('10.0.0.0/24','20.0.0.0/24','30.0.0.0/24')
 
-### <a name="to-remove-an-address-prefix"></a>删除地址前缀
-
-若要从没有 VPN 连接的本地网关中删除地址前缀，请使用以下示例。 省去你不再需要的前缀。 在此示例中，我们不再需要前缀 20.0.0.0/24（来自前面的示例），因此我们将更新本地网关并排除该前缀。
+- 删除地址前缀：<br>
+  省去你不再需要的前缀。 在此示例中，我们不再需要前缀 20.0.0.0/24（来自前面的示例），因此我们将更新本地网关，排除该前缀。
 
     $local = Get-AzureRmLocalNetworkGateway -Name MyLocalNetworkGWName -ResourceGroupName MyRGName `
     Set-AzureRmLocalNetworkGateway -LocalNetworkGateway $local `
     -AddressPrefix @('10.0.0.0/24','30.0.0.0/24')
 
-### <a name="withconnection"></a>如何添加或删除前缀 - 现有网关连接
-如果已创建了网关连接并且想要添加或删除包含在您本地网关中的 IP 地址前缀，将需要按顺序执行以下步骤。 这将导致 VPN 连接中断一段时间。 更新前缀时，需要先删除该连接、修改前缀，然后创建一个新的连接。 在以下示例中，请确保将值更改为自己的值。
+### <a name="withconnection"></a>修改本地网关 IP 地址前缀 - 现有网关连接
 
-> [AZURE.IMPORTANT]
-> 不要删除 VPN 网关。 如果将其删除，则必须返回执行相应的步骤以重新创建它，并使用新设置重新配置本地路由器。
-> 
-> 
+如果有一个网关连接并且想要添加或删除包含在本地网关中的 IP 地址前缀，将需要按顺序执行以下步骤。 这将导致 VPN 连接中断一段时间。 修改 IP 地址前缀时，不需删除 VPN 网关。 只需删除连接。
 
 1. 删除连接。
 
@@ -38,13 +32,13 @@
         Set-AzureRmLocalNetworkGateway -LocalNetworkGateway $local `
         -AddressPrefix @('10.0.0.0/24','20.0.0.0/24','30.0.0.0/24')
 
-3. 创建连接。 在此示例中，我们将配置 IPsec 连接类型。 重新创建连接时，请使用针对配置指定的连接类型。 有关其他连接类型，请参阅 [PowerShell cmdlet](https://msdn.microsoft.com/zh-cn/library/mt603611.aspx) 页面。
+3. 创建连接。 在此示例中，我们配置 IPsec 连接类型。 重新创建连接时，请使用针对配置指定的连接类型。 有关其他连接类型，请参阅 [PowerShell cmdlet](https://msdn.microsoft.com/zh-cn/library/mt603611.aspx) 页面。
 
     设置 VirtualNetworkGateway 的变量。
 
         $gateway1 = Get-AzureRmVirtualNetworkGateway -Name RMGateway    -ResourceGroupName MyRGName
 
-    创建连接。 请注意，此示例使用先前步骤中设置的 $local 变量。
+  创建连接。 此示例使用在步骤 2 中设置的变量 $local。
 
         New-AzureRmVirtualNetworkGatewayConnection -Name MyGWConnectionName `
         -ResourceGroupName MyRGName -Location 'China North' `

@@ -10,8 +10,8 @@
 
 <tags
    ms.service="hdinsight"
-   ms.date="01/17/2017"
-   wacn.date="03/28/2017"/>
+   ms.date="04/14/2017"
+   wacn.date="05/31/2017"/>
 
 # 使用 Apache Storm on HDInsight 确定 Twitter 趋势主题
 

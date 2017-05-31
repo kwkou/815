@@ -200,7 +200,7 @@ RBAC 不限制已登录到 VM 的用户可以执行的操作。这些权限由�
 [visio-download]: http://download.microsoft.com/download/1/5/6/1569703C-0A82-4A9C-8334-F13D0DF2F472/RAs.vsdx
 [vm-disk-limits]: /documentation/articles/azure-subscription-service-limits/#virtual-machine-disk-limits
 [vm-resize]: /documentation/articles/virtual-machines-linux-change-vm-size/
-[vm-size-tables]: /documentation/articles/virtual-machines-windows-sizes/#size-tables
+[vm-size-tables]: /documentation/articles/virtual-machines-windows-sizes/
 [vm-sla]: /support/sla/virtual-machines/
 [readme]: https://github.com/mspnp/reference-architectures/blob/master/guidance-compute-single-vm
 [components]: #Solution-components

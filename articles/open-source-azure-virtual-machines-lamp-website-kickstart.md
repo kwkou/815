@@ -10,7 +10,7 @@
 <tags
 	ms.service="open-source-website"
 	ms.date=""
-	wacn.date="07/12/2016"/>
+	wacn.date="05/26/2017"/>
 
 # 在 Azure Linux 虚拟机上快速搭建单机版 LAMP 网站
 
@@ -166,7 +166,7 @@ PowerShell 脚本运行注意事项：
 
 如果是使用 SHELL 脚本的方式安装 LAMP 的话，请参考如下方式：  
 
-打开虚拟机 80 端口。请参考创建终结点打开端口 
+打开虚拟机 80 端口。请参考[创建终结点](/documentation/articles/virtual-machines-windows-nsg-quickstart-portal/)打开端口 
 
 URL 地址为：  
 

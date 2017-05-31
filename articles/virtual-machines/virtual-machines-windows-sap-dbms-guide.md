@@ -231,7 +231,7 @@
 [virtual-network-deploy-multinic-arm-cli]: /documentation/articles/virtual-network-deploy-multinic-arm-cli/
 [virtual-network-deploy-multinic-arm-ps]: /documentation/articles/virtual-network-deploy-multinic-arm-ps/
 [virtual-network-deploy-multinic-arm-template]: /documentation/articles/virtual-network-deploy-multinic-arm-template/
-[virtual-networks-configure-vnet-to-vnet-connection]: /documentation/articles/vpn-gateway-vnet-vnet-rm-ps/
+[vpn-gateway-howto-vnet-vnet-portal-classic]: /documentation/articles/vpn-gateway-vnet-vnet-rm-ps/
 [virtual-networks-create-vnet-arm-pportal]: /documentation/articles/virtual-networks-create-vnet-arm-pportal/
 [virtual-networks-manage-dns-in-vnet]: /documentation/articles/virtual-networks-name-resolution-for-vms-and-role-instances/
 [virtual-networks-multiple-nics]: /documentation/articles/virtual-networks-multiple-nics/
@@ -725,7 +725,7 @@ SAP 支持的数据库镜像（请参阅 SAP 说明 [965908]）依赖于在 SAP 
 * 可能需要使用 ACL 来保护这些终结点。
 
 
-也可以在不同的 Azure 区域部署 SQL Server AlwaysOn 可用性组。 此功能将使用 Azure VNet 到 Vnet 连接（[更多详细信息][virtual-networks-configure-vnet-to-vnet-connection]）。
+也可以在不同的 Azure 区域部署 SQL Server AlwaysOn 可用性组。 此功能将使用 Azure VNet 到 Vnet 连接（[更多详细信息][vpn-gateway-howto-vnet-vnet-portal-classic]）。
 
 
 #### <a name="summary-on-sql-server-high-availability-in-azure"></a>Azure 中的 SQL Server 高可用性汇总

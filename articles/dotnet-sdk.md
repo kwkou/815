@@ -90,7 +90,7 @@ Azure 模拟器模拟云服务环境，这样您就可以先在本地计算机�
 
 这使你可以使用 Azure 网站：
 
-* [将 Web 项目发布到 Azure 网站](/documentation/articles/web-sites-dotnet-get-started/)。
+* [将 Web 项目发布到 Azure 网站](/documentation/articles/app-service-web-get-started-dotnet/)。
 * [将控制台应用程序项目发布到 Azure WebJobs](/documentation/articles/websites-dotnet-deploy-webjobs/)。
 * 在创建新的 Web 项目或发布 Web 项目时创建 Azure 网站和 SQL 数据库资源。
 

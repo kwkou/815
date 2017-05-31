@@ -14,28 +14,33 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="infrastructure-services"
-    ms.date="04/05/2017"
-    wacn.date="05/25/2017"
+    ms.date="04/26/2017"
+    wacn.date="05/31/2017"
     ms.author="cherylmc"
     ms.translationtype="Human Translation"
-    ms.sourcegitcommit="8fd60f0e1095add1bff99de28a0b65a8662ce661"
-    ms.openlocfilehash="3b9d9843130503ec4349d7cfd9eb450654e7b8f5"
+    ms.sourcegitcommit="4a18b6116e37e365e2d4c4e2d144d7588310292e"
+    ms.openlocfilehash="e5b3f30a2da83fb4b8af6f4f80241fa61f833a2a"
     ms.contentlocale="zh-cn"
-    ms.lasthandoff="05/12/2017" />
+    ms.lasthandoff="05/19/2017" />
 
 # <a name="modify-local-network-gateway-settings-using-powershell"></a>使用 PowerShell 修改本地网络网关设置
-有时本地网络网关 AddressPrefix 或 GatewayIPAddress 的设置会变更。 以下说明有助于修改本地网络网关设置。 也可在 Azure 门户预览中修改这些设置。
+
+有时本地网络网关 AddressPrefix 或 GatewayIPAddress 的设置会变更。 本文演示如何修改本地网络网关设置。 也可在 Azure 门户预览中或使用 Azure CLI 修改这些设置。
 
 ## <a name="before-you-begin"></a>开始之前
-你需要安装最新版本的 Azure Resource Manager PowerShell cmdlet。 有关安装 PowerShell cmdlet 的详细信息，请参阅 [如何安装和配置 Azure PowerShell](https://docs.microsoft.com/zh-cn/powershell/azureps-cmdlets-docs) 。
 
-## <a name="to-modify-ip-address-prefixes"></a>修改 IP 地址前缀
+安装最新版本的 Azure Resource Manager PowerShell cmdlet。 有关安装 PowerShell cmdlet 的详细信息，请参阅 [如何安装和配置 Azure PowerShell](https://docs.microsoft.com/zh-cn/powershell/azureps-cmdlets-docs) 。
+
+## <a name="modify-ip-address-prefixes"></a>修改 IP 地址前缀
+
 [AZURE.INCLUDE [vpn-gateway-modify-ip-prefix-rm](../../includes/vpn-gateway-modify-ip-prefix-rm-include.md)]
 
-## <a name="to-modify-the-gateway-ip-address"></a>修改网关 IP 地址
+## <a name="modify-the-gateway-ip-address"></a>修改网关 IP 地址
+
 [AZURE.INCLUDE [vpn-gateway-modify-lng-gateway-ip-rm](../../includes/vpn-gateway-modify-lng-gateway-ip-rm-include.md)]
 
 ## <a name="next-steps"></a>后续步骤
+
 可验证网关连接。 请参阅[验证网关连接](/documentation/articles/vpn-gateway-verify-connection-resource-manager/)。
 
 <!--Update_Description: wording update-->

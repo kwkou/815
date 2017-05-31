@@ -22,9 +22,6 @@
 
 # 在 Azure 云服务中启用 Azure 诊断
 
-有关 Azure 诊断的背景信息，请参阅 [Azure 诊断概述](/documentation/articles/azure-diagnostics/)。
-
-
 ## 如何在辅助角色中启用诊断
 
 本演练介绍如何实现使用 .NET EventSource 类发出遥测数据的 Azure 辅助角色。Azure Diagnostics 用于收集遥测数据，并将其存储在一个 Azure 存储帐户中。创建辅助角色时，Visual Studio 将在适用于 .NET 2.4 和更低版本的 Azure SDK 中，自动启用 Diagnostics 1.0 作为解决方案的一部分。以下说明介绍了创建辅助角色、从解决方案禁用 Diagnostics 1.0，以及在辅助角色中部署 Diagnostics 1.2 或 1.3 的过程。
@@ -193,14 +190,6 @@
 ## 配置文件架构
 
 诊断配置文件定义启动诊断代理时用于初始化诊断配置设置的值。有关有效值和示例，请参阅[最新架构参考](https://msdn.microsoft.com/zh-cn/library/azure/mt634524.aspx)。
-
-## 故障排除
-
-如果遇到问题，请参阅 [Azure 诊断故障排除](/documentation/articles/azure-diagnostics-troubleshooting/)，以获得有关常见问题的帮助。
-
-## 后续步骤
-若要更改所收集的数据、进行故障排除或者了解有关诊断的常规信息，请参阅[与虚拟机相关的 Azure 诊断文章列表](/documentation/articles/azure-diagnostics/#cloud-services-using-azure-diagnostics)。
-
 
 [EventSource Class]: http://msdn.microsoft.com/zh-cn/library/system.diagnostics.tracing.eventsource(v=vs.110).aspx
 

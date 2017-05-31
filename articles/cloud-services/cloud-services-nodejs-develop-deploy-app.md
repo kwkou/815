@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="nodejs"
 	ms.topic="hero-article"
-	ms.date="04/25/2017" 
+	ms.date="12/22/2016" 
 	wacn.date="05/22/2017" 
 	ms.author="robmcm"/>
 
@@ -177,7 +177,7 @@ Node.js 应用在 **server.js** 文件中定义，该文件位于 Web 角色（�
 <!-- URL List -->
 
 [Azure 网站、云服务和虚拟机的比较]: /documentation/articles/choose-web-site-cloud-service-vm/
-[使用轻型 Web 应用]:/documentation/articles/web-sites-nodejs-develop-deploy-mac/
+[使用轻型 Web 应用]:/documentation/articles/app-service-web-get-started-nodejs/
 [Azure Powershell]: /documentation/articles/powershell-install-configure/
 [将 PowerShell 连接]: /documentation/articles/powershell-install-configure/#Connect
 [nodejs.org]: http://nodejs.org/

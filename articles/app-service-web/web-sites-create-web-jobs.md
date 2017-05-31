@@ -23,6 +23,8 @@
 
 有 3 种方式可在[应用服务](/documentation/articles/app-service-changes-existing-services/) Web 应用的 Web 作业中运行程序或脚本：按需、连续或按计划。使用 Web 作业无需支付额外的费用。
 
+[!INCLUDE [app-service-web-webjobs-corenote](../../includes/app-service-web-webjobs-corenote.md)]
+
 本文说明如何使用 [Azure 门户预览](https://portal.azure.cn)来部署 Web 作业。有关如何使用 Visual Studio 或连续交付过程进行部署的信息，请参阅[如何将 Azure Web 作业部署到 Web 应用](/documentation/articles/websites-dotnet-deploy-webjobs/)。
 
 Azure WebJobs SDK 简化了许多 Web 作业编程任务。有关详细信息，请参阅[什么是 WebJobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk/)。

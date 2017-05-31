@@ -10,7 +10,7 @@
 <tags
    ms.service="open-source-website"  
    ms.date=""
-   wacn.date="06/14/2016"/>
+   wacn.date="05/26/2017"/>
 
 
 # 在 Azure Linux 虚拟机上配置 Redis 集群
@@ -61,7 +61,9 @@ Azure 有提供收费的 Redis 服务，请参考 [Azure Redis tutorial](/docume
     SUSE Linux: (以 SLES 12, 64-bit system, Redis 3.0.7 为例)  
     安装 gcc
     
-        $sudo zypper install gcc -y
+        $sudo zypper install gcc
+ 	    $sudo zypper install make
+
 
 2. 安装和启动 Redis. (下面2-5 步骤对于 RHEL, Ubuntu 和 SUSE 来讲都是一样的. 以 CentOS 7.0, 64-bit system, Redis 3.0.7 为例)
 
@@ -86,7 +88,7 @@ Azure 有提供收费的 Redis 服务，请参考 [Azure Redis tutorial](/docume
         "bar"
         127.0.0.1:6379>
 
-4. 打开6379端口。6379端口是 Redis 的默认端口。请参考[创建终结点](/documentation/articles/virtual-machines-linux-classic-setup-endpoints/)打开端口 
+4. 打开6379端口。6379端口是 Redis 的默认端口。请参考[创建终结点](/documentation/articles/virtual-machines-windows-nsg-quickstart-portal/)打开端口 
 5. 停掉 Redis 的命令
 
         $sudo ./redis-cli shutdown

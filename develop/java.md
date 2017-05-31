@@ -23,7 +23,7 @@ editor="Eric Chen" />
 ##Java 教程和文档
 
 ###计算
-- [创建 Web 应用](/documentation/articles/web-sites-java-get-started/)
+- [创建 Web 应用](/documentation/articles/app-service-web-get-started-java/)
 - [VM 上的 Tomcat](/documentation/articles/virtual-machines-windows-classic-java-run-tomcat-app-server/)
 - [在 VM 上运行任务](/documentation/articles/virtual-machines-windows-classic-java-run-compute-intensive-task/)
 - [使用 Eclipse 进行部署][使用 Eclipse 进行部署]

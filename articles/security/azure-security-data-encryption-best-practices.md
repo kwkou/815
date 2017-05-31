@@ -119,7 +119,7 @@ Azure 磁盘加密使用 [Azure 密钥保管库](/home/features/key-vault/)来�
 
 对于需要从位于本地的多个工作站安全访问 Azure 的组织而言，请使用 [Azure 站点到站点 VPN](/documentation/articles/vpn-gateway-site-to-site-create/)。
 
-对于需要从位于本地的一个工作站安全访问 Azure 的组织而言，请使用[点到站点 VPN](/documentation/articles/vpn-gateway-point-to-site-create/)。
+对于需要从位于本地的一个工作站安全访问 Azure 的组织而言，请使用[点到站点 VPN](/documentation/articles/vpn-gateway-howto-point-to-site-classic-azure-portal/)。
 
 可以通过专用高速 WAN 链接（例如 [ExpressRoute](https://www.azure.cn/home/features/expressroute/)）移动较大的数据集。如果选择使用 ExpressRoute，则还可以使用 [SSL/TLS](https://support.microsoft.com/zh-cn/kb/257591) 或其他协议，在应用程序级别加密数据，以提供额外的保护。
 

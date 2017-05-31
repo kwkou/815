@@ -153,7 +153,7 @@ IP 筛选器可以防止来宾 VM 执行以下操作：
 
 -   **存储防火墙 (FW)**：存储前端的防火墙会对通信进行筛选，只允许在端口 80/443 以及其他必需实用程序端口上进行通信。存储后端的防火墙会将通信限制为只能来自存储前端服务器。
 
--   **虚拟网络网关**：[Azure 虚拟网络网关](/documentation/articles/vpn-gateway-howto-site-to-site-resource-manager-portal/)充当跨界网关，将你在 Azure 虚拟网络中的工作负荷连接到本地站点。它需要通过 [IPsec 站点到站点 VPN 隧道](/documentation/articles/vpn-gateway-create-site-to-site-rm-powershell/)或 [ExpressRoute](/documentation/articles/expressroute-introduction/) 线路连接到本地站点。对于 IPsec/IKE VPN 隧道，这些网关会执行 IKE 握手，并在虚拟网络和本地站点之间建立 IPsec S2S VPN 隧道。虚拟网络网关还会终止[点到站点 VPN](/documentation/articles/vpn-gateway-point-to-site-create/)。
+-   **虚拟网络网关**：[Azure 虚拟网络网关](/documentation/articles/vpn-gateway-howto-site-to-site-resource-manager-portal/)充当跨界网关，将你在 Azure 虚拟网络中的工作负荷连接到本地站点。它需要通过 [IPsec 站点到站点 VPN 隧道](/documentation/articles/vpn-gateway-create-site-to-site-rm-powershell/)或 [ExpressRoute](/documentation/articles/expressroute-introduction/) 线路连接到本地站点。对于 IPsec/IKE VPN 隧道，这些网关会执行 IKE 握手，并在虚拟网络和本地站点之间建立 IPsec S2S VPN 隧道。虚拟网络网关还会终止[点到站点 VPN](/documentation/articles/vpn-gateway-howto-point-to-site-classic-azure-portal/)。
 
 ##安全远程访问
 
@@ -161,7 +161,7 @@ IP 筛选器可以防止来宾 VM 执行以下操作：
 
 内置加密技术使你能够在部署内部和部署之间、Azure 区域之间以及从 Azure 到本地数据中心之间对通信进行加密。管理员通过[远程桌面会话](/documentation/articles/virtual-machines-windows-classic-connect-logon/)、[远程 Windows PowerShell](http://blogs.technet.com/b/heyscriptingguy/archive/2013/09/07/weekend-scripter-remoting-the-cloud-with-windows-azure-and-powershell.aspx) 和 Azure 管理门户对虚拟机进行的访问始终加密。
 
-为了安全地将你的本地数据中心扩展到云，Azure 提供了[站点到站点 VPN](/documentation/articles/vpn-gateway-create-site-to-site-rm-powershell/) 和[点到站点 VPN](/documentation/articles/vpn-gateway-point-to-site-create/) 以及通过 [ExpressRoute](/documentation/articles/expressroute-introduction/) 进行的专用链接（通过 VPN 连接到 Azure 虚拟网络会进行加密）。
+为了安全地将你的本地数据中心扩展到云，Azure 提供了[站点到站点 VPN](/documentation/articles/vpn-gateway-create-site-to-site-rm-powershell/) 和[点到站点 VPN](/documentation/articles/vpn-gateway-howto-point-to-site-classic-azure-portal/) 以及通过 [ExpressRoute](/documentation/articles/expressroute-introduction/) 进行的专用链接（通过 VPN 连接到 Azure 虚拟网络会进行加密）。
 
 ### Azure 如何实现安全的远程访问
 

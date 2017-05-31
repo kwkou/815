@@ -6,8 +6,7 @@
     documentationcenter=""
     author="btardif"
     manager="erikre"
-    editor=""
-    translationtype="Human Translation" />
+    editor="" />
 <tags
     ms.assetid="dea3f41e-cf35-481b-a6bc-33d7fc9d01b1"
     ms.service="app-service"
@@ -16,11 +15,13 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="12/02/2016"
-    wacn.date="05/02/2017"
+    wacn.date="05/31/2017"
     ms.author="byvinyal"
-    ms.sourcegitcommit="78da854d58905bc82228bcbff1de0fcfbc12d5ac"
-    ms.openlocfilehash="157eee600f84b93c0b9b8e1bd1a64a33293909df"
-    ms.lasthandoff="04/22/2017" />
+    ms.translationtype="Human Translation"
+    ms.sourcegitcommit="4a18b6116e37e365e2d4c4e2d144d7588310292e"
+    ms.openlocfilehash="af9e05d9e78edc06c423843b7408279c529f4645"
+    ms.contentlocale="zh-cn"
+    ms.lasthandoff="05/19/2017" />
 
 # <a name="azure-app-service-plans-in-depth-overview"></a>Azure 应用服务计划深入概述
 应用服务计划代表用于托管应用的物理资源的集合。
@@ -34,7 +35,7 @@
 
 [Azure 应用服务](/documentation/articles/app-service-changes-existing-services/)中的 Web 应用、移动应用、API 应用均在应用服务计划中运行。  同一订阅、区域和资源组中的应用可共享应用服务计划。 
 
-分配给**应用服务计划**的所有应用程序共享其定义的资源，这样可以通过单个应用服务计划托管多个应用，从而节省成本。
+分配到**应用服务计划**的所有应用程序将共享该计划定义的资源。 在单个应用服务计划中托管多个应用时，此共享操作可节省成本。
 
 **应用服务计划**可以从**免费**和**共享** SKU 扩展到**基本**、**标准**和 **高级** SKU，让用户随着不断的发展访问更多的资源和功能。 
 
@@ -73,12 +74,12 @@
 
 这样一来，可以为应用分配新的资源集，并更好地控制应用。
 
-## <a name="create-an-app-service-plan"></a> 创建 App Service 计划
+## <a name="create-an-app-service-plan"></a>创建应用服务计划
 
 可以在浏览应用服务计划或创建应用的过程中创建空的应用服务计划。
 
-在 [Azure 门户预览](https://portal.azure.cn)中，单击“新建” > 
-“Web + 移动”，然后选择“Web 应用”或其他应用服务应用类型。
+在 [Azure 门户预览](https://portal.azure.cn)中，单击**“新建”** > 
+**“Web + 移动”**，然后选择**“Web 应用”**或其他应用服务应用类型。
 ![在 Azure 门户预览中创建应用。][createWebApp]
 
 然后即可为新应用选择或创建应用服务计划。

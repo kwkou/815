@@ -16,7 +16,7 @@
 <h1 id="menu-java-compute">计算</h1>
 <h2 id="header-0">网站</h2>
 <h3>使用 Java 创建和自定义 Azure 网站。或者，上载您自己的自定义 Java 网站。</h3>
-<h3>教程：<a href="/documentation/articles/web-sites-java-get-started/">Azure 网站和 Java 入门</a></h3>
+<h3>教程：<a href="/documentation/articles/app-service-web-get-started-java/">Azure 网站和 Java 入门</a></h3>
 <p>使用 Java 在 Azure 上创建网站。你将使用 Azure 应用程序市场来选择 Java 应用程序容器，可以是 Apache Tomcat 或 Jetty。</p>
 <h3>教程：<a href="/documentation/articles/web-sites-java-add-app/">将应用程序添加到 Azure 上您的 Java 网站</a></h3>
 <p>使用 Azure Marketplace 创建你的 Java 网站后，在其中自定义一个网页或应用程序。</p>

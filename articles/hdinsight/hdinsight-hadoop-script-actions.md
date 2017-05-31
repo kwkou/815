@@ -23,7 +23,7 @@
 了解如何为 HDInsight 编写脚本操作脚本。有关如何使用脚本操作脚本的信息，请参阅[使用脚本操作自定义 HDInsight 群集](/documentation/articles/hdinsight-hadoop-customize-cluster/)。有关针对基于 Linux 的 HDInsight 群集编写的相同文章，请参阅[为 HDInsight 开发脚本操作脚本](/documentation/articles/hdinsight-hadoop-script-actions-linux/)。
 
 > [AZURE.IMPORTANT]
-本文档中的步骤仅适用于基于 Windows 的 HDInsight 群集。低于 HDInsight 3.4 的 HDInsight 版本仅在 Windows 上提供。Linux 是在 HDInsight 3.4 版或更高版本上使用的唯一操作系统。有关详细信息，请参阅 [HDInsight 在 Windows 上弃用](/documentation/articles/hdinsight-component-versioning/#hdi-version-32-and-33-nearing-deprecation-date)。有关在基于 Linux 的群集上使用脚本操作的信息，请参阅 [Script action development with HDInsight (Linux)](/documentation/articles/hdinsight-hadoop-script-actions-linux/)（使用 HDInsight 进行脚本操作开发 (Linux)）。
+本文档中的步骤仅适用于基于 Windows 的 HDInsight 群集。低于 HDInsight 3.4 的 HDInsight 版本仅在 Windows 上提供。Linux 是在 HDInsight 3.4 版或更高版本上使用的唯一操作系统。有关详细信息，请参阅 [HDInsight 在 Windows 上弃用](/documentation/articles/hdinsight-component-versioning/#hdi-version-33-nearing-deprecation-date)。有关在基于 Linux 的群集上使用脚本操作的信息，请参阅 [Script action development with HDInsight (Linux)](/documentation/articles/hdinsight-hadoop-script-actions-linux/)（使用 HDInsight 进行脚本操作开发 (Linux)）。
 >
 >
 

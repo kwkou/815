@@ -14,8 +14,8 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="02/22/2017"
-    wacn.date="04/27/2017"
+    ms.date="04/07/2017"
+    wacn.date="05/31/2017"
     ms.author="jgao" />
 
 # 使用 Ambari API 在 HDInsight 中监视 Hadoop 群集
@@ -58,14 +58,14 @@ HDInsight 目前仅支持 Ambari 监视功能。Ambari API 1.0 受 HDInsight 版
 
 **使用 Azure PowerShell**
 
-以下 Azure PowerShell 脚本可*在 HDInsight 3.1 群集*中获取 MapReduce 作业跟踪器信息。 主要区别在于，我们从 YARN 服务（而非 MapReduce）中拉取这些详细信息。
+以下 Azure PowerShell 脚本可*在 HDInsight 3.5 群集*中获取 MapReduce 作业跟踪器信息。 主要区别在于，我们从 YARN 服务（而非 MapReduce）中拉取这些详细信息。
 
     $clusterName = "<HDInsightClusterName>"
     $clusterUsername = "<HDInsightClusterUsername>"
     $clusterPassword = "<HDInsightClusterPassword>"
 
-    $ambariUri = "https://$clusterName.azurehdinsight.cn:443/ambari"
-    $uriJobTracker = "$ambariUri/api/v1/clusters/$clusterName.azurehdinsight.cn/services/yarn/components/resourcemanager"
+    $ambariUri = "https://$clusterName.azurehdinsight.cn:443"
+    $uriJobTracker = "$ambariUri/api/v1/clusters/$clusterName/services/YARN/components/RESOURCEMANAGER"
 
     $passwd = ConvertTo-SecureString $clusterPassword -AsPlainText -Force
     $creds = New-Object System.Management.Automation.PSCredential ($clusterUsername, $passwd)

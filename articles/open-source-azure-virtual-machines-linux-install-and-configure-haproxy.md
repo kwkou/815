@@ -10,7 +10,7 @@
 <tags
 	ms.service="open-source-website"
 	ms.date=""
-	wacn.date="06/14/2016"/>
+	wacn.date="05/26/2017"/>
 
 # 在 Azure Linux 虚拟机上安装配置 HAProxy
 
@@ -63,7 +63,7 @@ HAProxy 可以看作是提供高可用，负载均衡，反向代理等功能的
 
 2. 新建三台 VM，选择 OS， 比如 CentOS 7.0。参考 [Azure Linux VM tutorial](/documentation/articles/virtual-machines-linux-quick-create-portal/). 创建虚拟机。在创建时记得选择上一步创建的虚拟网络。必须在创建虚拟机时指定虚拟网络。创建虚拟机后，不能将它加入虚拟网络。没有创建虚拟网络的话则请在选择区域时保持一致。
 
-3. 三台 VM 打开上面表格中提到的相应端口。参考[创建终结点](/documentation/articles/virtual-machines-linux-classic-setup-endpoints/)
+3. 三台 VM 打开上面表格中提到的相应端口。参考[创建终结点](/documentation/articles/virtual-machines-windows-nsg-quickstart-portal/)
 
 4. 连接到 HAProxy VM. 如果这是您第一次使用 AZURE 的虚拟机，请参考 [Azure Linux VM tutorial](/documentation/articles/virtual-machines-linux-quick-create-portal/) 连接到虚拟机。
 
@@ -146,9 +146,24 @@ HAProxy 可以看作是提供高可用，负载均衡，反向代理等功能的
 
 	这个时候访问 [http://HAProxy 的公网地址:80]() 会出错，因为它后端的两台 web server 还没有提供 web 服务。
 
-3. 去到两台 web server 安装好 apache2 并启动。
+3. 去到两台 web server 安装好 apache2 并启动。为方便下一步测试，请在安装好 apache2 之后修改主页内容以区分两台 server。例如在根目录下创建 index.html，示例如下：
 
-4. 这时访问 [http://HAProxy 的公网地址:80]() 就可正常访问了。类似下图：
+        sudo vi /var/www/html/index.html
+   
+    在index.html中添加下列内容
+
+        <DOCTYPE html>
+        <html>
+        <head>
+        <title>welcome to 10.8.0.4 server</title>
+        </head>
+        <body>
+        <h1>welcome to 10.8.0.4 server</h1>
+        </body>
+        </html>
+
+
+4. 这时访问 http://HAProxy 的公网地址:80 就可正常访问了。类似下图：
 
 	![](./media/open-source-azure-virtual-machines-linux-install-and-configure-haproxy/configure.png)
 
@@ -295,7 +310,7 @@ HAProxy 可以看作是提供高可用，负载均衡，反向代理等功能的
 
 		$sudo /usr/local/haproxy/sbin/haproxy -f /usr/local/haproxy/haproxy.cfg -st `cat /usr/local/haproxy/haproxy.pid`
 
-4. 在HAProxy VM打开443端口。参考[创建终结点](/documentation/articles/virtual-machines-linux-classic-setup-endpoints/)
+4. 在HAProxy VM打开443端口。参考[创建终结点](/documentation/articles/virtual-machines-windows-nsg-quickstart-portal/)
 5. 在浏览器里输入 [https://HAProxy 域名](#), 会出现如下图。
 
 	![](./media/open-source-azure-virtual-machines-linux-install-and-configure-haproxy/ssl2.png)
@@ -344,7 +359,7 @@ HAProxy 可以看作是提供高可用，负载均衡，反向代理等功能的
 
 		$sudo /usr/local/haproxy/sbin/haproxy -f /usr/local/haproxy/haproxy.cfg -st `cat /usr/local/haproxy/haproxy.pid`
 
-3. 在 HAProxy VM 以及后端两台 web server 打开 443 端口。参考[创建终结点](/documentation/articles/virtual-machines-linux-classic-setup-endpoints/)
+3. 在 HAProxy VM 以及后端两台 web server 打开 443 端口。参考[创建终结点](/documentation/articles/virtual-machines-windows-nsg-quickstart-portal/)
 4. 在 web server 配置 SSL。请参考 apache 官网 [https://httpd.apache.org/docs/2.2/ssl/](https://httpd.apache.org/docs/2.2/ssl/)
 
 更多关于 HAProxy 的详细信息请参考[官网](http://www.haproxy.org/)

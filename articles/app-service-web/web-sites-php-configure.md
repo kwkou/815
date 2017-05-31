@@ -25,9 +25,9 @@
 [AZURE.INCLUDE [app-service-web-to-api-and-mobile](../../includes/app-service-web-to-api-and-mobile.md)]
 
 ## <a name="ChangeBuiltInPHP"></a>如何：更改内置 PHP 版本
-默认情况下，安装 PHP 5.4 后，创建应用服务 Web 应用时立即可以使用。查看可用发行版、其默认配置以及已启用扩展的最佳方式是部署调用 [phpinfo()] 函数的脚本。
+默认情况下，安装 PHP 5.5 后，创建应用服务 Web 应用时立即可以使用。查看可用发行版、其默认配置以及已启用扩展的最佳方式是部署调用 [phpinfo()] 函数的脚本。
 
-PHP 5.5 和 PHP 5.6 也可用，但它们在默认情况下不启用。若要更新 PHP 版本，请使用下列方法之一：
+PHP 5.6 和 PHP 7.0 也可用，但它们在默认情况下不启用。若要更新 PHP 版本，请使用下列方法之一：
 
 ### Azure 门户预览
 1. 在 [Azure 门户预览](https://portal.azure.cn)中浏览到 Web 应用，然后单击“设置”按钮。
@@ -47,7 +47,7 @@ PHP 5.5 和 PHP 5.6 也可用，但它们在默认情况下不启用。若要更
         PS C:\> Login-AzureRmAccount -EnvironmentName AzureChinaCloud
 2. 设置 Web 应用的 PHP 版本。
    
-        PS C:\> Set-AzureWebsite -PhpVersion {5.4 | 5.5 | 5.6} -Name {app-name}
+        PS C:\> Set-AzureWebsite -PhpVersion {5.5 | 5.6 | 7.0} -Name {app-name}
 3. 现已设置 PHP 版本。你可以确认这些设置：
    
         PS C:\> Get-AzureWebsite -Name {app-name} | findstr PhpVersion
@@ -60,7 +60,7 @@ PHP 5.5 和 PHP 5.6 也可用，但它们在默认情况下不启用。若要更
         azure login -e AzureChinaCloud
 2. 设置 Web 应用的 PHP 版本。
    
-        azure site set --php-version {5.4 | 5.5 | 5.6} {app-name}
+        azure site set --php-version {5.5 | 5.6 | 7.0} {app-name}
 
 3. 现已设置 PHP 版本。你可以确认这些设置：
    
@@ -110,7 +110,7 @@ PHP 5.5 和 PHP 5.6 也可用，但它们在默认情况下不启用。若要更
 
 ### 通过 ini 设置进行配置
 1. 将 `ext` 目录添加到 `d:\home\site` 目录。
-2. 将 `.dll` 扩展文件置于 `ext` 目录中（例如 `php_mongo.dll` 和 `php_xdebug.dll`）。确保扩展与默认版本的 PHP（撰写本文时为 PHP 5.4）兼容，并且是 VC9 版本且与非线程安全 (nts) 兼容。
+2. 将 `.dll` 扩展文件置于 `ext` 目录中（例如 `php_xdebug.dll`）。确保扩展与默认版本的 PHP 兼容，并且是 VC9 版本且与非线程安全 (nts) 兼容。
 3. 使用密钥 `PHP_INI_SCAN_DIR` 和值 `d:\home\site\ini` 将应用设置添加到 Web 应用
 4. 在 `d:\home\site\ini` 中创建名为 `extensions.ini` 的 `ini` 文件。
 5. 使用将在 php.ini 文件中使用的语法，将配置设置添加到 `extensions.ini` 文件中。例如，如果你想要启用 MongoDB 和 XDebug 扩展，则 `extensions.ini` 文件将包含此文本：
@@ -122,7 +122,7 @@ PHP 5.5 和 PHP 5.6 也可用，但它们在默认情况下不启用。若要更
 
 ### 通过应用设置进行配置
 1. 将 `bin` 目录添加到根目录。
-2. 将 `.dll` 扩展文件放在 `bin` 目录中（例如 `php_mongo.dll`）。确保扩展与默认版本的 PHP（撰写本文时为 PHP 5.4）兼容，并且是 VC9 版本且与非线程安全 (nts) 兼容。
+2. 将 `.dll` 扩展文件放在 `bin` 目录中（例如 `php_xdebug.dll`）。确保扩展与默认版本的 PHP 兼容，并且是 VC9 版本且与非线程安全 (nts) 兼容。
 3. 部署 Web 应用。
 4. 在 Azure 门户预览中浏览到 Web 应用，然后单击“设置”按钮。
    
@@ -159,7 +159,7 @@ PHP 5.5 和 PHP 5.6 也可用，但它们在默认情况下不启用。若要更
 
 
 ## <a name="composer"></a>如何在 Azure 中启用编辑器自动化
-默认情况下，应用服务与 composer.json（如果 PHP 项目中有）不相关。如果使用 [Git 部署](/documentation/articles/app-service-web-php-get-started/)，可以在 `git push` 期间通过启用编辑器扩展启用 composer.json 处理。
+默认情况下，应用服务与 composer.json（如果 PHP 项目中有）不相关。如果使用 [Git 部署](/documentation/articles/app-service-deploy-local-git/)，可以在 `git push` 期间通过启用编辑器扩展启用 composer.json 处理。
 
 > [AZURE.NOTE]
 可以[在这里为应用服务中的一流编辑器支持投票](https://feedback.azure.com/forums/169385-web-apps-formerly-websites/suggestions/6477437-first-class-support-for-composer-and-pip)！

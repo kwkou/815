@@ -121,7 +121,7 @@ Woodgrove 决定将来自 IP 地址范围（172.16.1.0/24、172.16.2.0/24）的 
 
 ![网络属性](./media/site-recovery-network-design/network-design8.png)
 
-一旦触发故障转移，并在恢复网络中以所需的 IP 地址创建虚拟机后，就可使用 [Vnet 到 Vnet 连接](/documentation/articles/virtual-networks-configure-vnet-to-vnet-connection/)建立与此网络的连接。 如果需要，此操作可以编写脚本。  如我们在关于子网故障转移的上一节所讨论的那样，如果故障转移到 Azure，路由也必须适当地修改，以反映 192.168.1.0/24 现在已移到 Azure。
+一旦触发故障转移，并在恢复网络中以所需的 IP 地址创建虚拟机后，就可使用 [Vnet 到 Vnet 连接](/documentation/articles/vpn-gateway-howto-vnet-vnet-portal-classic/)建立与此网络的连接。 如果需要，此操作可以编写脚本。  如我们在关于子网故障转移的上一节所讨论的那样，如果故障转移到 Azure，路由也必须适当地修改，以反映 192.168.1.0/24 现在已移到 Azure。
 
 ![在子网故障转移之后](./media/site-recovery-network-design/network-design9.png)
 

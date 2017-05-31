@@ -26,7 +26,7 @@
 >
 
 > [AZURE.IMPORTANT]
-本文档中的步骤仅适用于基于 Windows 的 HDInsight 群集。低于 HDInsight 3.4 的 HDInsight 版本仅在 Windows 上提供。Linux 是在 HDInsight 3.4 版或更高版本上使用的唯一操作系统。有关详细信息，请参阅 [HDInsight 在 Windows 上弃用](/documentation/articles/hdinsight-component-versioning/#hdi-version-32-and-33-nearing-deprecation-date)。有关在基于 Linux 的 HDInsight 上使用 Phoenix 的信息，请参阅 [Use Apache Phoenix with Linux-based HBase clusters in HDInsight](/documentation/articles/hdinsight-hbase-phoenix-squirrel-linux/)（将 Apache Phoenix 与 HDInsight 中基于 Linux 的 HBase 群集配合使用）。
+本文档中的步骤仅适用于基于 Windows 的 HDInsight 群集。低于 HDInsight 3.4 的 HDInsight 版本仅在 Windows 上提供。Linux 是在 HDInsight 3.4 版或更高版本上使用的唯一操作系统。有关详细信息，请参阅 [HDInsight 在 Windows 上弃用](/documentation/articles/hdinsight-component-versioning/#hdi-version-33-nearing-deprecation-date)。有关在基于 Linux 的 HDInsight 上使用 Phoenix 的信息，请参阅 [Use Apache Phoenix with Linux-based HBase clusters in HDInsight](/documentation/articles/hdinsight-hbase-phoenix-squirrel-linux/)（将 Apache Phoenix 与 HDInsight 中基于 Linux 的 HBase 群集配合使用）。
 >
 
 ## 使用 SQLLine
@@ -93,7 +93,7 @@
 2. [创建证书](#Create-your-certificates)
 3. [配置 VPN 客户端](#Configure-your-VPN-client)
 
-有关详细信息，请参阅[配置与 Azure 虚拟网络的点到站点 VPN 连接](/documentation/articles/vpn-gateway-point-to-site-create/)。
+有关详细信息，请参阅[配置与 Azure 虚拟网络的点到站点 VPN 连接](/documentation/articles/vpn-gateway-howto-point-to-site-classic-azure-portal/)。
 
 #### <a name="Configure-a-virtual-network-and-a-dynamic-routing-gateway"></a> 配置虚拟网络和动态路由网关
 确保已在 Azure 虚拟网络中设置 HBase 群集（请参阅本节的先决条件）。下一步是配置点到站点连接。

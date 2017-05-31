@@ -38,21 +38,14 @@
 
 应具备 Sails.js 的实践知识。 本教程并非旨在帮助你解决运行 Sail.js 相关的一般性问题。
 
-## <a name="cli-versions-to-complete-the-task"></a>用于完成任务的 CLI 版本
-
-可使用以下 CLI 版本之一完成任务：
-
-- [Azure CLI 1.0](/documentation/articles/app-service-web-nodejs-sails-cli-nodejs/) - 适用于经典部署模型和资源管理部署模型的 CLI
-- [Azure CLI 2.0](/documentation/articles/app-service-web-nodejs-sails/) - 适用于资源管理部署模型的下一代 CLI
-
-[AZURE.INCLUDE [azure-cli-2-azurechinacloud-environment-parameter](../../includes/azure-cli-2-azurechinacloud-environment-parameter.md)]
-
 ## <a name="prerequisites"></a>先决条件
 * [Node.js](https://nodejs.org/)
 * [Sails.js](http://sailsjs.org/get-started)
 * [Git](http://www.git-scm.com/downloads)
 * [Azure CLI 2.0 预览版](https://docs.microsoft.com/zh-cn/cli/azure/install-az-cli2)
 * 一个 Azure 帐户。 如果你没有帐户，可以[注册试用版](/pricing/1rmb-trial/?WT.mc_id=A261C142F)。
+
+[AZURE.INCLUDE [azure-cli-2-azurechinacloud-environment-parameter](../../includes/azure-cli-2-azurechinacloud-environment-parameter.md)]
 
 ## <a name="step-1-create-and-configure-a-sailsjs-app-locally"></a>步骤 1：在本地创建和配置 Sails.js 应用
 首先，请执行以下步骤，在部署环境中快速创建默认的 Sails.js 应用：

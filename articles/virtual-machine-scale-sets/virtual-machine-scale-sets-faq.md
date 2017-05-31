@@ -6,8 +6,7 @@
     author="gatneil"
     manager="timlt"
     editor=""
-    tags="azure-resource-manager"
-    translationtype="Human Translation" />
+    tags="azure-resource-manager" />
 <tags
     ms.assetid="76ac7fd7-2e05-4762-88ca-3b499e87906e"
     ms.service="virtual-machine-scale-sets"
@@ -15,13 +14,15 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="4/10/2017"
-    wacn.date="05/02/2017"
+    ms.date="5/09/2017"
+    wacn.date="05/31/2017"
     ms.author="negat"
     ms.custom="na"
-    ms.sourcegitcommit="78da854d58905bc82228bcbff1de0fcfbc12d5ac"
-    ms.openlocfilehash="06dede5f62d88f5667f10e5fec3993380e9e2e9c"
-    ms.lasthandoff="04/22/2017" />
+    ms.translationtype="Human Translation"
+    ms.sourcegitcommit="4a18b6116e37e365e2d4c4e2d144d7588310292e"
+    ms.openlocfilehash="90a8070dfbe391a9f13fbf06d80b5a9aa6041e0b"
+    ms.contentlocale="zh-cn"
+    ms.lasthandoff="05/19/2017" />
 
 # <a name="azure-virtual-machine-scale-sets-faqs"></a>Azure 虚拟机规模集常见问题解答
 
@@ -204,7 +205,7 @@ CRP 组件不会持久保留客户机密。 如果对虚拟机规模集中的所
 
 扩大时不会遇到此问题，因为（单 Fabric 租户模型中的）Azure Service Fabric 中存在机密的缓存副本。
 
-### <a name="why-do-i-have-to-specify-the-exact-location-for-the-certificate-url-httpsname-of-the-vaultvaultazurecn443secretsexact-location-as-indicated-in-service-fabric-cluster-security-scenariosazureservice-fabric-cluster-security"></a>如 [Service Fabric 群集安全方案](/documentation/articles/service-fabric-cluster-security/)中所示，为什么必须指定证书 URL 的准确位置 (https://\<name of the vault\>.vault.azure.cn:443/secrets/\<exact location\>)？
+### <a name="why-do-i-have-to-specify-the-exact-location-for-the-certificate-url-httpsname-of-the-vaultvaultazurecn443secretsexact-location-as-indicated-in-service-fabric-cluster-security-scenariosservice-fabricservice-fabric-cluster-security"></a>如 [Service Fabric 群集安全方案](/documentation/articles/service-fabric-cluster-security/)中所述，为什么必须指定证书 URL (https://\<name of the vault\>.vault.azure.cn:443/secrets/\<exact location\>) 的确切位置？
 
 根据 Azure Key Vault 文档，在未指定版本的情况下，Get Secret REST API 应返回最新版本的机密。
 
@@ -310,7 +311,7 @@ Key Vault 要求指定证书版本的目的是为了使用户清楚地了解哪�
                                     "properties": {
                                         "publisher": "Microsoft.Compute",
                                         "type": "JsonADDomainExtension",
-                                        "typeHandlerVersion": "1.0",
+                                        "typeHandlerVersion": "1.3",
                                         "settings": {
                                             "Name": "[parameters('domainName')]",
                                             "OUPath": "[variables('ouPath')]",
@@ -351,15 +352,49 @@ Key Vault 要求指定证书版本的目的是为了使用户清楚地了解哪�
 
 若要执行在私有存储帐户中托管的自定义脚本，请通过存储帐户密钥和名称来设置受保护的设置。 有关详细信息，请参阅[适用于 Windows 的自定义脚本扩展](/documentation/articles/virtual-machines-windows-extensions-customscript/)。
 
-## <a name="networking"></a>网络
+## <a name="networking"></a>联网
+
+### <a name="is-it-possible-to-assign-a-network-security-group-nsg-to-a-scale-set-so-that-it-will-apply-to-all-the-vm-nics-in-the-set"></a>是否可以将网络安全组 (NSG) 分配给一个规模集，以便应用于规模集中的所有 VM Nic？
+
+是的。 网络安全组可以直接应用于规模集，方法是在网络配置文件的 networkInterfaceConfigurations 部分引用该组。 示例：
+
+    "networkProfile": {
+        "networkInterfaceConfigurations": [
+            {
+                "name": "nic1",
+                "properties": {
+                    "primary": "true",
+                    "ipConfigurations": [
+                        {
+                            "name": "ip1",
+                            "properties": {
+                                "subnet": {
+                                    "id": "[concat('/subscriptions/', subscription().subscriptionId,'/resourceGroups/', resourceGroup().name, '/providers/Microsoft.Network/virtualNetworks/', variables('vnetName'), '/subnets/subnet1')]"
+                                }
+                    "loadBalancerInboundNatPools": [
+                                    {
+                                        "id": "[concat('/subscriptions/', subscription().subscriptionId,'/resourceGroups/', resourceGroup().name, '/providers/Microsoft.Network/loadBalancers/', variables('lbName'), '/inboundNatPools/natPool1')]"
+                                    }
+                                ],
+                                "loadBalancerBackendAddressPools": [
+                                    {
+                                        "id": "[concat('/subscriptions/', subscription().subscriptionId,'/resourceGroups/', resourceGroup().name, '/providers/Microsoft.Network/loadBalancers/', variables('lbName'), '/backendAddressPools/addressPool1')]"
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "networkSecurityGroup": {
+                        "id": "[concat('/subscriptions/', subscription().subscriptionId,'/resourceGroups/', resourceGroup().name, '/providers/Microsoft.Network/networkSecurityGroups/', variables('nsgName'))]"
+                    }
+                }
+            }
+        ]
+    }
 
 ### <a name="how-do-i-do-a-vip-swap-for-virtual-machine-scale-sets-in-the-same-subscription-and-same-region"></a>如何针对同一订阅和同一区域中的虚拟机规模集执行 VIP 交换？
 
 若要针对同一订阅和同一区域中的虚拟机规模集执行 VIP 交换，请参阅[VIP 交换：Azure Resource Manager 中的蓝绿色部署](https://msftstack.wordpress.com/2017/02/24/vip-swap-blue-green-deployment-in-azure-resource-manager/)。
-
-### <a name="what-is-the-resourceguid-property-on-a-nic-used-for"></a>NIC 上的 resourceGuid 属性有什么作用？
-
-网络接口卡 (NIC) 上的 resourceGuid 属性是唯一的 ID.。 在将来的某个时间，较低的层将记录此 ID。 
 
 ### <a name="how-do-i-specify-a-range-of-private-ip-addresses-to-use-for-static-private-ip-address-allocation"></a>如何为静态专用 IP 地址分配指定专用 IP 地址范围？
 
@@ -454,4 +489,4 @@ IP 地址是从指定的子网中选择的。
   - 出于这种方案，你可能创建了自己的缩放引擎，并希望以更快的速度完成端到端缩放。
 - 你的虚拟机规模集未均匀分布在容错域或更新域。 这可能是由于你有选择地删除了 VM，或者因为过度预配后，VM 被删除。 在虚拟机规模集上先运行 `stop deallocate`，然后运行 `start`，可以将 VM 均匀地分布到容错域或更新域。
 
-<!--Update_Description: wording update-->
+<!--Update_Description: add question "is it possible to assign a network security group nsg to a scale set so that it will apply to all the vm nics in the set"-->

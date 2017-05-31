@@ -725,7 +725,7 @@ Resource Manager 虚拟网络具有 Azure Resource Manager API，与经典虚拟
 尽管脚本中有 delete 字样，但实际上不会删除虚拟网络。它只是删除集成。在用户确认这是要执行的操作之后，命令将快速进行处理，并在完成时返回“True”。
 
 <!--Links-->
-[createvpngateway]: /documentation/articles/vpn-gateway-point-to-site-create/
+[createvpngateway]: /documentation/articles/vpn-gateway-howto-point-to-site-classic-azure-portal/
 [azureportal]: http://portal.azure.cn
 
 <!---HONumber=Mooncake_0919_2016-->

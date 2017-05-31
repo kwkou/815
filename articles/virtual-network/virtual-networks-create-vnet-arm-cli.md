@@ -109,7 +109,7 @@ Azure 有两个部署模型：Azure Resource Manager 和经典模型。Azure 建
     这将生成以下输出：
 
         Where      Name      Group
-        ---------  --------  -------
+
         chinaeast  TestVNet  myVNet
 
 4. 创建子网：
@@ -153,7 +153,7 @@ Azure 有两个部署模型：Azure Resource Manager 和经典模型。Azure 建
     预期输出：
    
         Name      Where      Group    Status       SubnetCount
-        --------  ---------  -------  ---------  -------------
+
         TestVNet  chinaeast  myVNet   Succeeded              2
 
 6. 查询子网的属性：
@@ -167,7 +167,7 @@ Azure 有两个部署模型：Azure Resource Manager 和经典模型。Azure 建
     预期输出：
 
         Name      CIDR            Status
-        --------  --------------  ---------
+
         FrontEnd  192.168.1.0/24  Succeeded
         BackEnd   192.168.2.0/24  Succeeded
 

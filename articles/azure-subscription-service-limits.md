@@ -74,7 +74,6 @@
 - [站点恢复](#site-recovery-limits)
 - [SQL 数据库](#sql-database-limits)
 - [存储](#storage-limits)
-
 - [流分析](#stream-analytics-limits)
 - [订阅](#subscription-limits)
 - [流量管理器](#traffic-manager-limits)

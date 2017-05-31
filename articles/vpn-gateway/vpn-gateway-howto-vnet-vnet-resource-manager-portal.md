@@ -14,24 +14,18 @@
     ms.topic="hero-article"
     ms.tgt_pltfrm="na"
     ms.workload="infrastructure-services"
-    ms.date="04/11/2017"
-    wacn.date="05/25/2017"
+    ms.date="04/21/2017"
+    wacn.date="05/31/2017"
     ms.author="cherylmc"
     ms.translationtype="Human Translation"
-    ms.sourcegitcommit="8fd60f0e1095add1bff99de28a0b65a8662ce661"
-    ms.openlocfilehash="a26d32a29105be3312fbc544042ecccd3ff42c31"
+    ms.sourcegitcommit="4a18b6116e37e365e2d4c4e2d144d7588310292e"
+    ms.openlocfilehash="f6d983ed26dd47b686c839eb25d41a678420c74b"
     ms.contentlocale="zh-cn"
-    ms.lasthandoff="05/12/2017" />
+    ms.lasthandoff="05/19/2017" />
 
-# <a name="configure-a-vnet-to-vnet-connection-using-the-azure-portal-preview"></a>使用 Azure 门户预览配置 VNet 到 VNet 连接
+# <a name="configure-a-vnet-to-vnet-vpn-gateway-connection-using-the-azure-portal-preview"></a>使用 Azure 门户预览配置 VNet 到 VNet VPN 网关连接
 
-将一个虚拟网络连接到另一个虚拟网络（VNet 到 VNet）类似于将 VNet 连接到本地站点位置。 这两种连接类型都使用 VPN 网关来提供使用 IPsec/IKE 的安全隧道。 甚至可以将 VNet 到 VNet 通信与多站点连接配置结合使用。 这样，便可以建立将跨界连接与虚拟网络间连接相结合的网络拓扑。
-
-![v2v 示意图](./media/vpn-gateway-howto-vnet-vnet-resource-manager-portal/v2vrmps.png)
-
-本文逐步讲解如何使用 VPN 网关和 Azure 门户预览在 Resource Manager 部署模型中创建 VNet 之间的连接。 使用 Azure 门户预览连接虚拟网络时，VNet 必须属于同一订阅。 如果虚拟网络属于不同订阅，仍然可以使用 [PowerShell](/documentation/articles/vpn-gateway-vnet-vnet-rm-ps/) 步骤连接它们。
-
-[AZURE.INCLUDE [deployment models](../../includes/vpn-gateway-deployment-models-include.md)] 若要使用其他部署模型在不同的部署模型之间创建 VNet 到 VNet 连接，或者要使用其他部署工具来进行该操作，可从下面的项目下拉列表中选择一个选项：
+本文介绍如何在虚拟网络之间创建 VPN 网关连接。 虚拟网络可位于相同或不同的区域，来自相同或不同的订阅。 本文中的步骤适用于 Resource Manager 部署模型和 Azure 门户预览。 也可使用不同的部署工具或部署模型创建此配置，方法是从以下列表中选择另一选项：
 > [AZURE.SELECTOR]
 - [Resource Manager - Azure 门户预览](/documentation/articles/vpn-gateway-howto-vnet-vnet-resource-manager-portal/)
 - [Resource Manager - PowerShell](/documentation/articles/vpn-gateway-vnet-vnet-rm-ps/)
@@ -39,16 +33,16 @@
 - [连接不同的部署模型 - Azure 门户预览](/documentation/articles/vpn-gateway-connect-different-deployment-models-portal/)
 - [连接不同的部署模型 - PowerShell](/documentation/articles/vpn-gateway-connect-different-deployment-models-powershell/)
 
-[AZURE.INCLUDE [vpn-gateway-vnetpeeringlink](../../includes/vpn-gateway-vnetpeeringlink-include.md)]
+![v2v 示意图](./media/vpn-gateway-howto-vnet-vnet-resource-manager-portal/v2vrmps.png)
 
-## <a name="about-vnet-to-vnet-connections"></a>关于 VNet 到 VNet 的连接
-将一个虚拟网络连接到另一个虚拟网络（VNet 到 VNet）类似于将 VNet 连接到本地站点位置。 这两种连接类型都使用 Azure VPN 网关来提供使用 IPsec/IKE 的安全隧道。 连接的 VNet 可位于不同的区域或不同的订阅中。 请注意，如果 VNet 属于不同的订阅，则不能在门户中创建该连接。 可以使用 [PowerShell](/documentation/articles/vpn-gateway-vnet-vnet-rm-ps/)。
+将一个虚拟网络连接到另一个虚拟网络（VNet 到 VNet）类似于将 VNet 连接到本地站点位置。 这两种连接类型都使用 VPN 网关来提供使用 IPsec/IKE 的安全隧道。 如果 VNet 位于同一区域，可能会考虑使用 VNet 对等互连进行连接。 VNet 对等互连不使用 VPN 网关。 有关详细信息，请参阅 [VNet 对等互连](/documentation/articles/virtual-network-peering-overview/)。
 
-你甚至可以将 VNet 到 VNet 通信与多站点配置组合使用。 这样，便可以建立将跨界连接与虚拟网络间连接相结合的网络拓扑，如下图所示：
+可以将 VNet 到 VNet 通信与多站点配置组合使用。 这样，便可以建立将跨界连接与虚拟网络间连接相结合的网络拓扑，如下图所示：
 
 ![关于连接](./media/vpn-gateway-howto-vnet-vnet-resource-manager-portal/aboutconnections.png "关于连接")
 
 ### <a name="why-connect-virtual-networks"></a>为什么要连接虚拟网络？
+
 你可能会出于以下原因而连接虚拟网络：
 
 * **跨区域地域冗余和地域存在**
@@ -59,10 +53,10 @@
 
     * 在同一区域中，由于存在隔离或管理要求，可以设置具有多个虚拟网络的多层应用程序，这些虚拟网络相互连接在一起。
 
-有关 VNet 到 VNet 连接的详细信息，请参阅本文末尾的 [VNet 到 VNet 注意事项](#faq)。
+有关 VNet 到 VNet 连接的详细信息，请参阅本文末尾的 [VNet 到 VNet 常见问题解答](#faq) 。 请注意，如果 VNet 属于不同的订阅，则不能在门户中创建该连接。 可以使用 [PowerShell](/documentation/articles/vpn-gateway-vnet-vnet-rm-ps/)。
 
 ### <a name="values"></a>示例设置
-练习这些步骤时，可以使用示例配置值。 对于示例用途，我们可以对每个 VNet 使用多个地址空间。 但是，VNet 到 VNet 配置不需要多个地址空间。
+使用这些步骤作为练习时，可以使用示例设置值。 对于示例用途，我们可以对每个 VNet 使用多个地址空间。 但是，VNet 到 VNet 配置不需要多个地址空间。
 
 **TestVNet1 的值：**
 
@@ -184,7 +178,7 @@ TestVNet1 和 TestVNet4 的虚拟网络网关都已完成后，便可以创建�
 
 ![概要](./media/vpn-gateway-howto-vnet-vnet-resource-manager-portal/essentials.png "概要")
 
-## <a name="faq"></a>VNet 到 VNet 注意事项
+## <a name="faq"></a>VNet 到 VNet 常见问题解答
 查看常见问题解答详细信息以获取有关 VNet 到 VNet 连接的其他信息。
 
 [AZURE.INCLUDE [vpn-gateway-vnet-vnet-faq](../../includes/vpn-gateway-vnet-vnet-faq-include.md)]

@@ -5,8 +5,7 @@
     documentationcenter=""
     author="kumudd"
     manager="timlt"
-    editor=""
-    translationtype="Human Translation" />
+    editor="" />
 <tags
     ms.assetid="6dca6de1-18f7-4962-bd98-6055771fab22"
     ms.service="traffic-manager"
@@ -15,11 +14,13 @@
     ms.tgt_pltfrm="na"
     ms.workload="infrastructure-services"
     ms.date="03/20/2017"
-    wacn.date="05/02/2017"
+    wacn.date="05/31/2017"
     ms.author="kumud"
-    ms.sourcegitcommit="78da854d58905bc82228bcbff1de0fcfbc12d5ac"
-    ms.openlocfilehash="b3d0882c34e30cf0722a1b4ac056bcd3c2be9ea2"
-    ms.lasthandoff="04/22/2017" />
+    ms.translationtype="Human Translation"
+    ms.sourcegitcommit="4a18b6116e37e365e2d4c4e2d144d7588310292e"
+    ms.openlocfilehash="f4c31384597d30a7c0e8b1bcd6b9c09280c8d4df"
+    ms.contentlocale="zh-cn"
+    ms.lasthandoff="05/19/2017" />
 
 # <a name="configure-the-weighted-traffic-routing-method-in-traffic-manager"></a>在流量管理器中配置加权流量路由方法
 
@@ -34,7 +35,7 @@
 2. 在门户的搜索栏中，搜索“流量管理器配置文件”，然后单击要为其配置路由方法的配置文件名称。
 3. 在“流量管理器配置文件”边栏选项卡中，检查要包含在配置中的云服务和网站是否都存在。
 4. 在“设置”部分，单击“配置”，然后在“配置”边栏选项卡中完成如下操作：
-    1. 对于“**流量路由方法设置**”，验证流量路由方法是否是“**故障转移**”。 如果不是，请在下拉列表中单击“**故障转移**”。
+    1. 对于“流量路由方法设置”，验证流量路由方法是否是“加权”。 如果不是，请在下拉列表中单击“加权”。
     2. 为此配置文件中的所有终结点设置相同的“终结点监视器设置”，如下所示：
         1. 选择相应的“协议”，并指定“端口”号。 
         2. 对于“路径”，请键入正斜杠 */*。 若要监视终结点，必须指定路径和文件名。 正斜杠“/”是有效的相对路径条目，表示文件位于根目录（默认位置）中。
@@ -55,3 +56,5 @@
 
 <!--Image references-->
 [1]: ./media/traffic-manager-weighted-routing-method/traffic-manager-weighted-routing-method.png
+
+<!--Update_Description: wording update-->

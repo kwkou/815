@@ -73,7 +73,7 @@
 
 建立 [Azure 试用帐户](/pricing/1rmb-trial/)，试用下述某个入门教程：
 
-* [教程：创建 Web 应用](/documentation/articles/app-service-web-get-started/)
+* [教程：创建 Web 应用](/documentation/services/app-service/web/)
 * [教程：创建移动应用](/documentation/articles/app-service-mobile-android-get-started/)
 * [教程：创建 API 应用](/documentation/articles/app-service-api-dotnet-get-started/)
 
