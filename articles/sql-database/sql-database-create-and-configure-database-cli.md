@@ -16,7 +16,7 @@
     ms.topic="article"
     ms.tgt_pltfrm="sql-database"
     ms.workload="database"
-    ms.date="03/16/2017"
+    ms.date="04/04/2017"
     wacn.date="05/08/2017"
     ms.author="janeng"
     ms.sourcegitcommit="7cc8d7b9c616d399509cd9dbdd155b0e9a7987a8"
