@@ -192,7 +192,7 @@ RBAC 不限制已登录到 VM 的用户可以执行的操作。这些权限由�
 [vm-disk-limits]: /documentation/articles/azure-subscription-service-limits/#virtual-machine-disk-limits
 [vm-resize]: /documentation/articles/virtual-machines-linux-change-vm-size/
 [vm-sla]: /support/sla/virtual-machines/
-[vm-size-tables]: /documentation/articles/virtual-machines-windows-sizes/#size-tables
+[vm-size-tables]: /documentation/articles/virtual-machines-windows-sizes/
 [0]: ./media/guidance-blueprints/compute-single-vm.png "Azure 中的单一 Windows VM 体系结构"
 [readme]: https://github.com/mspnp/reference-architectures/blob/master/guidance-compute-single-vm
 [blocks]: https://github.com/mspnp/template-building-blocks

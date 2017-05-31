@@ -97,7 +97,7 @@
 
 在作业的状态更改为 **SUCCEEDED** 时，你可以从群集使用的默认存储中检索作业的结果。随查询一起传递的 `statusdir` 参数包含输出文件的位置；在本例中为 **/example/pigcurl**。
 
-HDInsight 的后备存储可以是 Azure 存储，有多种方法可以找到数据，具体取决于所使用的存储。有关如何使用 Azure 存储的详细信息，请参阅 HDInsight on Linux 文档的 [HDFS 和 Blob 存储](/documentation/articles/hdinsight-hadoop-linux-information/#hdfs-blob-storage-and-data-lake-store) 部分。
+HDInsight 的后备存储可以是 Azure 存储，有多种方法可以找到数据，具体取决于所使用的存储。有关如何使用 Azure 存储的详细信息，请参阅 HDInsight on Linux 文档的 [HDFS 和 Blob 存储](/documentation/articles/hdinsight-hadoop-linux-information/#hdfs-and-azure-storage) 部分。
 
 ## <a id="summary"></a>摘要
 
