@@ -17,7 +17,7 @@
 
 # 如何为运行的 ARM Linux 启用 LAD2.3 版本的诊断扩展
 
-Azure Linux Diagnostic (下面简称 LAD) 扩展现在已经发布了 3.0 版本，但在 Azure 中国区，目前可用的最新版本还是 2.3。
+Linux Azure Diagnostic (LAD) 扩展现在已经发布了 3.0 版本，但在 Azure 中国区，目前可用的最新版本还是 2.3。
 
 虽然 Azure 门户提供了简单的操作版本为 Linux 虚拟机启用诊断扩展，但是也有用户咨询如何用 PowerShell 等工具进行设置。
 
