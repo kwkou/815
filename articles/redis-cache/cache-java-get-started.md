@@ -13,8 +13,8 @@
     ms.topic="hero-article"
     ms.tgt_pltfrm="cache-redis"
     ms.workload="tbd"
-    ms.date="02/10/2017"
-    wacn.date="03/03/2017"
+    ms.date="04/13/2017"
+    wacn.date="05/31/2017"
     ms.author="sdanie" />
 
 # 如何将 Azure Redis 缓存与 Java 配合使用

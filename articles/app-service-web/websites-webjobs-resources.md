@@ -13,8 +13,8 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="10/28/2016" 
-	wacn.date="03/28/2017" 
+	ms.date="03/25/2017" 
+	wacn.date="05/31/2017" 
 	ms.author="tdykstra"/>
 
 # Azure Web 作业文档资源
