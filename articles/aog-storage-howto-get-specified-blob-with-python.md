@@ -1,6 +1,6 @@
 <properties
     pageTitle="Python 操作存储获取指定目录 Blob 文件的实现"
-    description="如何使用 Python 操作存储获取指定目录 Blob 文件的实现"
+    description="如何使用 Python 操作存储获取指定目录 Blob 文件"
     service=""
     resource=""
     authors="Chen Rui"
