@@ -65,17 +65,25 @@
 使用库的另一种方法是手动生成框架：
 
 1. 首先，下载或克隆 [azure-storage-ios repo](https://github.com/azure/azure-storage-ios)。
+
 2. 转到“azure-storage-ios” -> “Lib” -> “Azure 存储客户端库”，并在 Xcode 中打开 `AZSClient.xcodeproj`。
+
 3. 在 Xcode 的左上方，将活动方案从“Azure 存储客户端库”更改为“Framework”。
+
 4. 生成项目 (⌘+B)。 这将在桌面上创建 `AZSClient.framework` 文件。
 
 可以通过执行以操作将框架文件导入到应用程序：
 
 1. 在 Xcode 中创建一个新项目或打开现有项目。
+
 2. 将 `AZSClient.framework` 拖放到 Xcode 项目导航器。
+
 3. 选择“需要时复制项”，然后单击“完成”。
+
 4. 单击左侧导航栏中的项目，然后单击项目编辑器顶部的“常规”选项卡  。
+
 5. 在“链接的框架和库”部分下，单击“添加”按钮 (+)。
+
 6. 在已提供的库列表中，搜索 `libxml2.2.tbd` 并将其添加到项目中。
 
 ## <a name="import-the-library"></a>导入该库 
@@ -86,9 +94,13 @@
 如果使用 Swift，则需要创建桥接头并在该位置导入 <AZSClient/AZSClient.h>：
 
 1. 创建标头文件 `Bridging-Header.h`，并添加上述导入语句。
+
 2. 转到“生成设置”选项卡，然后搜索 Objective-C 桥接头。
+
 3. 双击“Objective-C 桥接头”字段并添加标头文件的路径：`ProjectName/Bridging-Header.h`
+
 4. 生成项目 (⌘+B)，确认 Xcode 选取了该桥接头。
+
 5. 开始在任何 Swift 文件中直接使用库，无需导入语句。
 
 [AZURE.INCLUDE [storage-mobile-authentication-guidance](../../includes/storage-mobile-authentication-guidance.md)]

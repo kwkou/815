@@ -32,9 +32,8 @@ Azure 存储模拟器提供了一个模拟 Azure Blob、队列和表服务以进
 存储模拟器目前仅在 Windows 上运行。
 
 > [AZURE.NOTE]
-> 在一个版本的存储模拟器中创建的数据不保证在使用不同版本时可以访问。 如果需要长期保存数据，建议将该数据存储在 Azure 存储帐户中，而不是在存储模拟器中。
-> <p/>
-> 存储模拟器依赖于特定版本的 OData 库。 不支持将存储模拟器使用的 OData DLL 替换为其他版本，这样做可能会导致意外行为。 不过，可以使用存储服务支持的任何版本的 OData 向模拟器发送请求。
+> <p>在一个版本的存储模拟器中创建的数据不保证在使用不同版本时可以访问。 如果需要长期保存数据，建议将该数据存储在 Azure 存储帐户中，而不是在存储模拟器中。
+> <p>存储模拟器依赖于特定版本的 OData 库。 不支持将存储模拟器使用的 OData DLL 替换为其他版本，这样做可能会导致意外行为。 不过，可以使用存储服务支持的任何版本的 OData 向模拟器发送请求。
 >
 
 ## <a name="how-the-storage-emulator-works"></a>存储模拟器的工作原理
@@ -46,6 +45,7 @@ Azure 存储模拟器提供了一个模拟 Azure Blob、队列和表服务以进
 
 ## <a name="start-and-initialize-the-storage-emulator"></a>启动并初始化存储模拟器
 若要启动 Azure 存储模拟器：
+
 1. 选择“开始”按钮或按 Windows 键。
 1. 开始键入 `Azure Storage Emulator`。
 1. 从所示应用程序的列表中选择该模拟器。
@@ -168,11 +168,11 @@ Azure 存储模拟器提供了一个模拟 Azure Blob、队列和表服务以进
 
 | 选项 | 说明 | 命令 | 参数 |
 | --- | --- | --- | --- |
-| **启动** |启动存储模拟器。 |`AzureStorageEmulator.exe start [-inprocess]` |*-inprocess*：在当前进程中启动模拟器而不是创建一个新的进程。 |
-| **停止** |停止存储模拟器。 |`AzureStorageEmulator.exe stop` | |
-| **状态** |打印存储模拟器的状态。 |`AzureStorageEmulator.exe status` | |
-| **清除** |清除命令行上指定的所有服务中的数据。 |`AzureStorageEmulator.exe clear [blob] [table] [queue] [all]                                                    ` |*blob*：清除 Blob 数据。 <br/>*queue*：清除队列数据。 <br/>*table*：清除表数据。 <br/>*all*：清除所有服务中的所有数据。 |
-| **Init** |执行一次性初始化以设置模拟器。 |<code>AzureStorageEmulator.exe init [-server serverName] [-sqlinstance instanceName] [-forcecreate&#124;-skipcreate] [-reserveports&#124;-unreserveports] [-inprocess]</code> |*-server serverName\instanceName*：指定托管 SQL 实例的服务器。 <br/>*-sqlinstance instanceName*：指定要在默认服务器实例中使用的 SQL 实例的名称。 <br/>*-forcecreate*：强制创建 SQL 数据库，即使该数据库已经存在。 <br/>*-skipcreate*：跳过创建 SQL 数据库的步骤。 此命令优先于 -forcecreate。<br/>*-reserveports*：尝试保留与服务关联的 HTTP 端口。<br/>*-unreserveports*：尝试取消保留与服务关联的 HTTP 端口。 此命令优先于 -reserveports。<br/>*-inprocess*：在当前进程而不是生成新的进程中执行初始化。 如果更改端口保留设置，必须使用提升的权限启动当前进程。 |
+| **启动** |启动存储模拟器。 |<p>`AzureStorageEmulator.exe start [-inprocess]`</p> |*-inprocess*：在当前进程中启动模拟器而不是创建一个新的进程。 |
+| **停止** |停止存储模拟器。 |<p>`AzureStorageEmulator.exe stop` </p>| |
+| **状态** |打印存储模拟器的状态。 |<p>`AzureStorageEmulator.exe status`</p> | |
+| **清除** |清除命令行上指定的所有服务中的数据。 |<p>`AzureStorageEmulator.exe clear [blob] [table] [queue] [all]                                                    `</p> |<p>*blob*：清除 Blob 数据。 </p><p>*queue*：清除队列数据。 </p><p>*table*：清除表数据。 </p><p>*all*：清除所有服务中的所有数据。</p> |
+| **Init** |执行一次性初始化以设置模拟器。 |<p><code>AzureStorageEmulator.exe init [-server serverName] [-sqlinstance instanceName] [-forcecreate&#124;-skipcreate] [-reserveports&#124;-unreserveports] [-inprocess]</code> </p>|<p>*-server serverName\instanceName*：指定托管 SQL 实例的服务器。 </p><p>*-sqlinstance instanceName*：指定要在默认服务器实例中使用的 SQL 实例的名称。 </p><p>*-forcecreate*：强制创建 SQL 数据库，即使该数据库已经存在。 </p><p>*-skipcreate*：跳过创建 SQL 数据库的步骤。 此命令优先于 -forcecreate。</p><p>*-reserveports*：尝试保留与服务关联的 HTTP 端口。</p><p>*-unreserveports*：尝试取消保留与服务关联的 HTTP 端口。 此命令优先于 -reserveports。</p><p>*-inprocess*：在当前进程而不是生成新的进程中执行初始化。 如果更改端口保留设置，必须使用提升的权限启动当前进程。</p> |
 
 ## <a name="differences-between-the-storage-emulator-and-azure-storage"></a>存储模拟器与 Azure 存储之间的差异
 因为存储模拟器是在本地的 SQL 实例中运行的模拟环境，所以模拟器与云中的 Azure 存储帐户之间存在功能差异：

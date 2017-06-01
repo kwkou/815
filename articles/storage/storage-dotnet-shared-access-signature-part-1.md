@@ -112,15 +112,15 @@ SAS 令牌是在客户端侧生成的字符串（请参阅 [SAS 示例](#sas-exa
 
 名称|SAS 部分|说明
 ---|---|---
-Blob URI|`https://myaccount.blob.core.chinacloudapi.cn/sascontainer/sasblob.txt` | Blob 的地址。 请注意，强烈建议使用 HTTPS。
-存储服务版本|`sv=2015-04-05`|对于存储服务版本 2012-02-12 和更高版本，此参数指示要使用的版本。
-开始时间|`st=2015-04-29T22%3A18%3A26Z`|以 UTC 时间格式指定。 如果你想要 SAS 立即生效，则省略开始时间。
-到期时间|`se=2015-04-30T02%3A23%3A26Z`|以 UTC 时间格式指定。
-资源|`sr=b`|资源是 Blob。
-权限|`sp=rw`|SAS 授予的权限包括读取 (r) 和写入 (w)。
-IP 范围|`sip=168.1.5.60-168.1.5.70`|将从中接受请求的 IP 地址范围。
-协议|`spr=https`|仅允许使用 HTTPS 的请求。
-签名|`sig=Z%2FRHIX5Xcg0Mq2rqI3OlWTjEg2tYkboXr1P9ZUXDtkk%3D`|用于对 Blob 的访问权限进行身份验证。 该签名是利用 SHA256 算法通过“字符串到签名”和密钥进行计算，然后使用 Base64 编码进行编码的 HMAC。
+Blob URI|<p>`https://myaccount.blob.core.chinacloudapi.cn/sascontainer/sasblob.txt`</p> | Blob 的地址。 请注意，强烈建议使用 HTTPS。
+存储服务版本|<p>`sv=2015-04-05`</p>|对于存储服务版本 2012-02-12 和更高版本，此参数指示要使用的版本。
+开始时间|<p>`st=2015-04-29T22%3A18%3A26Z`</p>|以 UTC 时间格式指定。 如果你想要 SAS 立即生效，则省略开始时间。
+到期时间|<p>`se=2015-04-30T02%3A23%3A26Z`</p>|以 UTC 时间格式指定。
+资源|<p>`sr=b`</p>|资源是 Blob。
+权限|<p>`sp=rw`</p>|SAS 授予的权限包括读取 (r) 和写入 (w)。
+IP 范围|<p>`sip=168.1.5.60-168.1.5.70`</p>|将从中接受请求的 IP 地址范围。
+协议|<p>`spr=https`</p>|仅允许使用 HTTPS 的请求。
+签名|<p>`sig=Z%2FRHIX5Xcg0Mq2rqI3OlWTjEg2tYkboXr1P9ZUXDtkk%3D`</p>|用于对 Blob 的访问权限进行身份验证。 该签名是利用 SHA256 算法通过“字符串到签名”和密钥进行计算，然后使用 Base64 编码进行编码的 HMAC。
 
 ### <a name="account-sas-uri-example"></a>帐户 SAS URI 示例
 
@@ -130,10 +130,10 @@ IP 范围|`sip=168.1.5.60-168.1.5.70`|将从中接受请求的 IP 地址范围�
 
 名称|SAS 部分|说明
 ---|---|---
-资源 URI|`https://myaccount.blob.core.chinacloudapi.cn/?restype=service&comp=properties`|Blob 服务终结点，包含用于获取服务属性（使用 GET 调用时）或设置服务属性（使用 SET 调用时）的参数。
-服务|`ss=bf`|该 SAS 适用于 Blob 和文件服务
-资源类型|`srt=s`|该 SAS 适用于服务级别操作。
-权限|`sp=rw`|这些权限向读取和写入操作授予访问权限。  
+资源 URI|<p>`https://myaccount.blob.core.chinacloudapi.cn/?restype=service&comp=properties`</p>|Blob 服务终结点，包含用于获取服务属性（使用 GET 调用时）或设置服务属性（使用 SET 调用时）的参数。
+服务|<p>`ss=bf`</p>|该 SAS 适用于 Blob 和文件服务
+资源类型|<p>`srt=s`</p>|该 SAS 适用于服务级别操作。
+权限|<p>`sp=rw`</p>|这些权限向读取和写入操作授予访问权限。  
 
 鉴于权限仅限于服务级别，使用此 SAS 的可访问操作包括：获取 Blob 服务属性（读取）和设置 Blob 服务属性（写入）。 但是，使用其他资源 URI，同一个 SAS 令牌还可用于委派对获取 Blob 服务统计信息（读取）的访问权限。
 
