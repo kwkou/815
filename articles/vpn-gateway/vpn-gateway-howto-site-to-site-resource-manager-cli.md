@@ -142,7 +142,7 @@ VPN 网关必须具有公共 IP 地址。 请先请求 IP 地址资源，然后�
 - 共享密钥。 此共享密钥就是在创建站点到站点 VPN 连接时指定的共享密钥。 在示例中，我们使用基本的共享密钥。 建议生成更复杂的可用密钥。
 - 虚拟网关的“公共 IP 地址”。 可以通过 Azure 门户预览、PowerShell 或 CLI 查看公共 IP 地址。 若要查找虚拟网关的公共 IP 地址，请使用 [az network public-ip list](https://docs.microsoft.com/zh-cn/cli/azure/network/public-ip#list) 命令。 为了方便阅读，对输出进行了格式化，以表格式显示一系列公共 IP。
 
-      az network public-ip list --resource-group TestRG1 --output table
+        az network public-ip list --resource-group TestRG1 --output table
 
 [AZURE.INCLUDE [Configure VPN device](../../includes/vpn-gateway-configure-vpn-device-rm-include.md)]
 
@@ -170,7 +170,7 @@ VPN 网关必须具有公共 IP 地址。 请先请求 IP 地址资源，然后�
 
 ## <a name="next-steps"></a>后续步骤
 
-*  连接完成后，即可将虚拟机添加到虚拟网络。 有关详细信息，请参阅[虚拟机](/#pivot=services&panel=Compute)。
+*  连接完成后，即可将虚拟机添加到虚拟网络。 有关详细信息，请参阅[虚拟机](/documentation/services/virtual-machines/)。
 * 有关 BGP 的信息，请参阅 [BGP 概述](/documentation/articles/vpn-gateway-bgp-overview/)和[如何配置 BGP](/documentation/articles/vpn-gateway-bgp-resource-manager-ps/)。
 * 有关强制隧道的信息，请参阅[配置强制隧道](/documentation/articles/vpn-gateway-forced-tunneling-rm/)。
 * 有关网络 Azure CLI 命令的列表，请参阅 [Azure CLI](https://docs.microsoft.com/zh-cn/cli/azure/network)。

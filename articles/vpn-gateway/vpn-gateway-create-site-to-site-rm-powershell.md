@@ -94,27 +94,27 @@
 
 1. 设置变量。
 
-    $subnet1 = New-AzureRmVirtualNetworkSubnetConfig -Name 'GatewaySubnet' -AddressPrefix 10.0.0.0/27
-    $subnet2 = New-AzureRmVirtualNetworkSubnetConfig -Name 'Subnet1' -AddressPrefix '10.0.1.0/28'
+        $subnet1 = New-AzureRmVirtualNetworkSubnetConfig -Name 'GatewaySubnet' -AddressPrefix 10.0.0.0/27
+        $subnet2 = New-AzureRmVirtualNetworkSubnetConfig -Name 'Subnet1' -AddressPrefix '10.0.1.0/28'
 
 2. 创建 VNet。
 
-    New-AzureRmVirtualNetwork -Name testvnet -ResourceGroupName testrg `
-    -Location 'China North' -AddressPrefix 10.0.0.0/16 -Subnet $subnet1, $subnet2
+        New-AzureRmVirtualNetwork -Name testvnet -ResourceGroupName testrg `
+        -Location 'China North' -AddressPrefix 10.0.0.0/16 -Subnet $subnet1, $subnet2
 
 ### <a name="gatewaysubnet"></a>将网关子网添加到已创建的虚拟网络
 
 1. 设置变量。
 
-    $vnet = Get-AzureRmVirtualNetwork -ResourceGroupName testrg -Name testvnet
+        $vnet = Get-AzureRmVirtualNetwork -ResourceGroupName testrg -Name testvnet
 
 2. 创建网关子网。
 
-      Add-AzureRmVirtualNetworkSubnetConfig -Name 'GatewaySubnet' -AddressPrefix 10.0.0.0/27 -VirtualNetwork $vnet
+        Add-AzureRmVirtualNetworkSubnetConfig -Name 'GatewaySubnet' -AddressPrefix 10.0.0.0/27 -VirtualNetwork $vnet
 
 3. 设置配置。
 
-    Set-AzureRmVirtualNetwork -VirtualNetwork $vnet
+        Set-AzureRmVirtualNetwork -VirtualNetwork $vnet
 
 ## 3.<a name="localnet"></a>创建本地网关
 
@@ -127,13 +127,13 @@
 
 - 若要添加具有单个地址前缀的局域网网关：
 
-    New-AzureRmLocalNetworkGateway -Name LocalSite -ResourceGroupName testrg `
-    -Location 'China North' -GatewayIpAddress '23.99.221.164' -AddressPrefix '10.0.0.0/24'
+        New-AzureRmLocalNetworkGateway -Name LocalSite -ResourceGroupName testrg `
+        -Location 'China North' -GatewayIpAddress '23.99.221.164' -AddressPrefix '10.0.0.0/24'
 
 - 若要添加具有多个地址前缀的局域网网关：
 
-    New-AzureRmLocalNetworkGateway -Name LocalSite -ResourceGroupName testrg `
-    -Location 'China North' -GatewayIpAddress '23.99.221.164' -AddressPrefix @('10.0.0.0/24','20.0.0.0/24')
+        New-AzureRmLocalNetworkGateway -Name LocalSite -ResourceGroupName testrg `
+        -Location 'China North' -GatewayIpAddress '23.99.221.164' -AddressPrefix @('10.0.0.0/24','20.0.0.0/24')
 
 - 为本地网关修改 IP 地址前缀：<br>
 有时你的局域网网关前缀会有变化。 修改 IP 地址前缀时采取的步骤取决于是否已创建 VPN 网关连接。 请参阅本文的 [修改本地网关的 IP 地址前缀](#modify) 部分。
@@ -164,9 +164,9 @@ VPN 网关必须具有公共 IP 地址。 请先请求 IP 地址资源，然后�
 * *-VpnType* 可以是 *RouteBased*（在某些文档中称为动态网关）或 *PolicyBased*（在某些文档中称为静态网关）。 有关 VPN 网关类型的详细信息，请参阅[关于 VPN 网关](/documentation/articles/vpn-gateway-about-vpngateways/)。
 * *-GatewaySku* 可以是 Basic、Standard 或 HighPerformance。 某些 SKU 存在配置限制。 有关详细信息，请参阅[网关 SKU](/documentation/articles/vpn-gateway-about-vpngateways/#gateway-skus)。
 
-    New-AzureRmVirtualNetworkGateway -Name vnetgw1 -ResourceGroupName testrg `
-    -Location 'China North' -IpConfigurations $gwipconfig -GatewayType Vpn `
-    -VpnType RouteBased -GatewaySku Standard
+        New-AzureRmVirtualNetworkGateway -Name vnetgw1 -ResourceGroupName testrg `
+        -Location 'China North' -IpConfigurations $gwipconfig -GatewayType Vpn `
+        -VpnType RouteBased -GatewaySku Standard
 
 ## <a name="ConfigureVPNDevice"></a>7.配置 VPN 设备
 
@@ -175,7 +175,7 @@ VPN 网关必须具有公共 IP 地址。 请先请求 IP 地址资源，然后�
 - 共享密钥。 此共享密钥就是在创建站点到站点 VPN 连接时指定的共享密钥。 在示例中，我们使用基本的共享密钥。 建议生成更复杂的可用密钥。
 - 虚拟网关的“公共 IP 地址”。 可以通过 Azure 门户预览、PowerShell 或 CLI 查看公共 IP 地址。 若要使用 PowerShell 查找虚拟网关的公共 IP 地址，请使用以下示例：
 
-      Get-AzureRmPublicIpAddress -Name GW1PublicIP -ResourceGroupName TestRG
+        Get-AzureRmPublicIpAddress -Name GW1PublicIP -ResourceGroupName TestRG
 
 [AZURE.INCLUDE [Configure VPN device](../../includes/vpn-gateway-configure-vpn-device-rm-include.md)]
 
@@ -185,14 +185,14 @@ VPN 网关必须具有公共 IP 地址。 请先请求 IP 地址资源，然后�
 
 1. 设置变量。
 
-    $gateway1 = Get-AzureRmVirtualNetworkGateway -Name vnetgw1 -ResourceGroupName testrg
-    $local = Get-AzureRmLocalNetworkGateway -Name LocalSite -ResourceGroupName testrg
+        $gateway1 = Get-AzureRmVirtualNetworkGateway -Name vnetgw1 -ResourceGroupName testrg
+        $local = Get-AzureRmLocalNetworkGateway -Name LocalSite -ResourceGroupName testrg
 
 2. 创建连接。
 
-    New-AzureRmVirtualNetworkGatewayConnection -Name MyGWConnection -ResourceGroupName testrg `
-    -Location 'China North' -VirtualNetworkGateway1 $gateway1 -LocalNetworkGateway2 $local `
-    -ConnectionType IPsec -RoutingWeight 10 -SharedKey 'abc123'
+        New-AzureRmVirtualNetworkGatewayConnection -Name MyGWConnection -ResourceGroupName testrg `
+        -Location 'China North' -VirtualNetworkGateway1 $gateway1 -LocalNetworkGateway2 $local `
+        -ConnectionType IPsec -RoutingWeight 10 -SharedKey 'abc123'
 
 在一小段时间后，将建立该连接。
 

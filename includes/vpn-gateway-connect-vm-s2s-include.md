@@ -2,20 +2,20 @@
 
 1. 定位专用 IP 地址。 查找 VM 的专用 IP 地址时，可以通过 Azure 门户预览或 PowerShell 查看 VM 的属性。
 
-  - Azure 门户预览 - 在 Azure 门户预览中定位虚拟机。 查看 VM 的属性。 专用 IP 地址已列出。
+    - Azure 门户预览 - 在 Azure 门户预览中定位虚拟机。 查看 VM 的属性。 专用 IP 地址已列出。
 
-  - PowerShell - 通过此示例查看资源组中的 VM 和专用 IP 地址的列表。 在使用此示例之前不需对其进行修改。
+    - PowerShell - 通过此示例查看资源组中的 VM 和专用 IP 地址的列表。 在使用此示例之前不需对其进行修改。
 
-        $vms = get-azurermvm
-        $nics = get-azurermnetworkinterface | where VirtualMachine -NE $null
+            $vms = get-azurermvm
+            $nics = get-azurermnetworkinterface | where VirtualMachine -NE $null
 
-        foreach($nic in $nics)
-        {
-          $vm = $vms | where-object -Property Id -EQ $nic.VirtualMachine.id
-          $prv = $nic.IpConfigurations | select-object -ExpandProperty PrivateIpAddress
-          $alloc = $nic.IpConfigurations | select-object -ExpandProperty PrivateIpAllocationMethod
-          Write-Output "$($vm.Name): $prv,$alloc"
-        }
+            foreach($nic in $nics)
+            {
+              $vm = $vms | where-object -Property Id -EQ $nic.VirtualMachine.id
+              $prv = $nic.IpConfigurations | select-object -ExpandProperty PrivateIpAddress
+              $alloc = $nic.IpConfigurations | select-object -ExpandProperty PrivateIpAllocationMethod
+              Write-Output "$($vm.Name): $prv,$alloc"
+            }
 
 2. 验证是否已使用 VPN 连接连接到 VNet。
 3. 打开**远程桌面连接**，方法是：在任务栏的搜索框中键入“RDP”或“远程桌面连接”，然后选择“远程桌面连接”。 也可在 PowerShell 中使用“mstsc”命令打开远程桌面连接。 
