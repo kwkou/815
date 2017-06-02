@@ -1,12 +1,11 @@
 <properties
-    pageTitle="针对 Azure 存储使用 Python 的客户端加密 | Azure"
-    description="适用于 Python 的 Azure 存储客户端库支持客户端加密，实现 Azure 存储空间应用程序的最高安全性。"
+    pageTitle="使用适用于 Azure 存储的 Python 进行客户端加密 | Azure"
+    description="适用于 Python 的 Azure 存储客户端库支持客户端加密，实现 Azure 存储应用程序的最高安全性。"
     services="storage"
     documentationcenter="python"
-    author="seguler"
+    author="lakasa"
     manager="jahogg"
-    editor="tysonn"
-    translationtype="Human Translation" />
+    editor="tysonn" />
 <tags
     ms.assetid="f9bf7981-9948-4f83-8931-b15679a09b8a"
     ms.service="storage"
@@ -14,18 +13,20 @@
     ms.tgt_pltfrm="na"
     ms.devlang="python"
     ms.topic="article"
-    ms.date="02/28/2017"
-    wacn.date="04/24/2017"
-    ms.author="seguler"
-    ms.sourcegitcommit="a114d832e9c5320e9a109c9020fcaa2f2fdd43a9"
-    ms.openlocfilehash="96d9b36c67a07319291dc47676220d5c19b870e2"
-    ms.lasthandoff="04/14/2017" />
+    ms.date="05/11/2017"
+    wacn.date="05/31/2017"
+    ms.author="lakasa"
+    ms.translationtype="Human Translation"
+    ms.sourcegitcommit="4a18b6116e37e365e2d4c4e2d144d7588310292e"
+    ms.openlocfilehash="4b8ccc8ae3f693891baf82199d1fbcb169d9cd1e"
+    ms.contentlocale="zh-cn"
+    ms.lasthandoff="05/19/2017" />
 
-# <a name="client-side-encryption-with-python-for-azure-storage"></a>使用适用于 Azure 存储空间的 Python 进行客户端加密
+# <a name="client-side-encryption-with-python-for-azure-storage"></a>使用适用于 Azure 存储的 Python 进行客户端加密
 [AZURE.INCLUDE [storage-selector-client-side-encryption-include](../../includes/storage-selector-client-side-encryption-include.md)]
 
 ## <a name="overview"></a>概述
-[用于 Python 的 Azure 存储空间客户端库](https://pypi.python.org/pypi/azure-storage) 支持在上载到 Azure 存储空间之前加密客户端应用程序中的数据，以及在下载到客户端时解密数据。
+[用于 Python 的 Azure 存储客户端库](https://pypi.python.org/pypi/azure-storage) 支持在上载到 Azure 存储之前加密客户端应用程序中的数据，以及在下载到客户端时解密数据。
 
 > [AZURE.NOTE]
 > Azure 存储 Python 库目前以预览版提供。
@@ -232,4 +233,3 @@ KEK 必须实现以下方法才能成功加密数据：
 ## <a name="next-steps"></a>后续步骤
 * 下载 [适用于 Java 的 Azure 存储客户端库 PyPi 包](https://pypi.python.org/pypi/azure-storage)
 * [从 GitHub 下载适用于 Python 的 Azure 存储客户端库源代码](https://github.com/Azure/azure-storage-python)
-<!--Update_Description: wording update; add anchors for H2 titles-->

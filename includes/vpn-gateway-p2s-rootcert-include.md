@@ -4,5 +4,5 @@
 
 * **企业证书：**如果要使用企业级解决方案，可以使用现有的证书链。 获取要使用的根证书的 .cer 文件。
 * **自签名根证书：**如果使用的不是企业证书解决方案，则需要创建自签名根证书。 若要使用点到站点连接，根证书必须包含特定值。 有关说明，请参阅以下文章：
-  * 若要创建自签名根证书，请参阅[为点到站点连接创建自签名根证书](/documentation/articles/vpn-gateway-certificates-point-to-site/#rootcert)。
-  * 若要导出公钥（.cer 文件），请参阅[为点到站点连接创建自签名根证书](/documentation/articles/vpn-gateway-certificates-point-to-site/#cer)。
+    * 若要创建自签名根证书，请参阅[为点到站点连接创建自签名根证书](/documentation/articles/vpn-gateway-certificates-point-to-site/#rootcert)。
+    * 若要导出公钥（.cer 文件），请参阅[为点到站点连接创建自签名根证书](/documentation/articles/vpn-gateway-certificates-point-to-site/#cer)。

@@ -3,10 +3,9 @@
     description="使用存储分析、客户端日志记录等功能及其他第三方工具，确定、诊断和排查与 Azure 存储相关的问题。"
     services="storage"
     documentationcenter=""
-    author="jasonnewyork"
-    manager="tadb"
-    editor="tysonn"
-    translationtype="Human Translation" />
+    author="fhryo-msft"
+    manager="jahogg"
+    editor="tysonn" />
 <tags
     ms.assetid="d1e87d98-c763-4caa-ba20-2cf85f853303"
     ms.service="storage"
@@ -14,12 +13,14 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="03/03/2017"
-    wacn.date="04/24/2017"
-    ms.author="jahogg"
-    ms.sourcegitcommit="a114d832e9c5320e9a109c9020fcaa2f2fdd43a9"
-    ms.openlocfilehash="c3a8d11571dbf6f348dc288f8a322dab299a608d"
-    ms.lasthandoff="04/14/2017" />
+    ms.date="05/11/2017"
+    wacn.date="05/31/2017"
+    ms.author="fhryo-msft"
+    ms.translationtype="Human Translation"
+    ms.sourcegitcommit="4a18b6116e37e365e2d4c4e2d144d7588310292e"
+    ms.openlocfilehash="40af9d7d30e65f36804f62bb53e3cb1383821aab"
+    ms.contentlocale="zh-cn"
+    ms.lasthandoff="05/19/2017" />
 
 # <a name="monitor-diagnose-and-troubleshoot-azure-storage"></a>对 Azure 存储进行监视、诊断和故障排除
 [AZURE.INCLUDE [storage-selector-portal-monitoring-diagnosing-troubleshooting](../../includes/storage-selector-portal-monitoring-diagnosing-troubleshooting.md)]
@@ -58,7 +59,7 @@
   * [度量值显示高 AverageE2ELatency 和低 AverageServerLatency]
   * [度量值显示低 AverageE2ELatency 和低 AverageServerLatency，但客户端遇到高延迟]
   * [度量值显示高 AverageServerLatency]
-  * [队列上的消息传递出现意外的延迟]
+  * [队列上的消息传递出现意外延迟]
   * [度量值显示 PercentThrottlingError 增加]
   * [度量值显示 PercentTimeoutError 增加]
   * [度量值显示 PercentNetworkError 增加]
@@ -73,7 +74,7 @@
   * [你遇到了其他存储服务问题]
   * [对 Windows 和 Linux 的 Azure 文件问题进行故障排除](/documentation/articles/storage-troubleshoot-file-connection-problems/)
 * [附录]
-  * [附录 1：使用 Fiddler 捕获 HTTP 和 HTTPS 通信]
+  * [附录 1：使用 Fiddler 捕获 HTTP 和 HTTPS 流量]
   * [附录 2：使用 Wireshark 捕获网络流量]
   * [附录 3：使用 Microsoft Message Analyzer 捕获网络流量]
   * [附录 4：使用 Excel 查看度量值和日志数据]
@@ -154,7 +155,7 @@
 若要监视存储服务的性能，可以使用每小时和每分钟度量值表中的以下度量值。
 
 * **AverageE2ELatency** 和 **AverageServerLatency** 列中的值显示存储服务或 API 操作类型处理请求所需的平均时间。 **AverageE2ELatency** 是端到端延迟的度量值，除包括处理请求所需的时间外，还包括读取请求和发送响应所需的时间（因此包括请求到达存储服务后的网络延迟）；**AverageServerLatency** 只是处理时间的度量值，因此不包括与客户端通信相关的任何网络延迟。 有关这两个值之间可能存在显著区别的原因的讨论，请参阅本指南后面的“[度量值显示高 AverageE2ELatency 和低 AverageServerLatency]”一节。
-- **TotalIngress** 和 **TotalEgress** 列中的值显示进出存储服务或通过特定 API 操作类型的数据总量（以字节为单位）。
+* **TotalIngress** 和 **TotalEgress** 列中的值显示进出存储服务或通过特定 API 操作类型的数据总量（以字节为单位）。
 * **TotalRequests** 列中的值显示存储服务的 API 操作正在接收的请求总数。 **TotalRequests** 是存储服务收到的请求总数。
 
 通常，对于作为出现需要调查的问题的指示器的任何这些值，你将监视其意外更改。
@@ -309,7 +310,7 @@ Azure SDK 提供了一个存储模拟器，你可以在开发工作站上运行�
 * [度量值显示高 AverageE2ELatency 和低 AverageServerLatency]
 * [度量值显示低 AverageE2ELatency 和低 AverageServerLatency，但客户端遇到高延迟]
 * [度量值显示高 AverageServerLatency]
-* [队列上的消息传递出现意外的延迟]
+* [队列上的消息传递出现意外延迟]
 
 - - -
 你的问题是否与其中一个存储服务的可用性相关？
@@ -698,7 +699,7 @@ e2d06d78-... | 重试策略不允许重试。 操作失败，远程服务器返�
 * 可以使用度量值信息帮助你搜索服务器端日志数据，获取有关发生的任何错误的更多详细信息。 此信息可能会帮助你排查和解决该问题。
 * 如果服务器端日志中的信息不足以成功排查此问题，则可以使用存储客户端库客户端日志调查客户端应用程序和工具（如 Fiddler、Wireshark 和 Microsoft Message Analyzer）的行为以调查你的网络。
 
-有关使用 Fiddler 的详细信息，请参阅“[附录 1：使用 Fiddler 捕获 HTTP 和 HTTPS 通信]”。
+有关使用 Fiddler 的详细信息，请参阅“[附录 1：使用 Fiddler 捕获 HTTP 和 HTTPS 流量]”。
 
 有关 Wireshark 的详细信息，请参阅“[附录 2：使用 Wireshark 捕获网络流量]”。
 
@@ -824,7 +825,7 @@ Microsoft Message Analyzer 中内置的“Web 代理”  跟踪基于 Fiddler；
 [度量值显示高 AverageE2ELatency 和低 AverageServerLatency]: #metrics-show-high-AverageE2ELatency-and-low-AverageServerLatency
 [度量值显示低 AverageE2ELatency 和低 AverageServerLatency，但客户端遇到高延迟]: #metrics-show-low-AverageE2ELatency-and-low-AverageServerLatency
 [度量值显示高 AverageServerLatency]: #metrics-show-high-AverageServerLatency
-[队列上的消息传递出现意外的延迟]: #you-are-experiencing-unexpected-delays-in-message-delivery
+[队列上的消息传递出现意外延迟]: #you-are-experiencing-unexpected-delays-in-message-delivery
 
 [度量值显示 PercentThrottlingError 增加]: #metrics-show-an-increase-in-PercentThrottlingError
 [PercentThrottlingError 暂时增加]: #transient-increase-in-PercentThrottlingError
@@ -851,7 +852,7 @@ Microsoft Message Analyzer 中内置的“Web 代理”  跟踪基于 Fiddler；
 [你遇到了其他存储服务问题]: #you-have-a-different-issue-with-a-storage-service
 
 [附录]: #appendices
-[附录 1：使用 Fiddler 捕获 HTTP 和 HTTPS 通信]: #appendix-1
+[附录 1：使用 Fiddler 捕获 HTTP 和 HTTPS 流量]: #appendix-1
 [附录 2：使用 Wireshark 捕获网络流量]: #appendix-2
 [附录 3：使用 Microsoft Message Analyzer 捕获网络流量]: #appendix-3
 [附录 4：使用 Excel 查看度量值和日志数据]: #appendix-4
@@ -866,4 +867,3 @@ Microsoft Message Analyzer 中内置的“Web 代理”  跟踪基于 Fiddler；
 [8]: ./media/storage-monitoring-diagnosing-troubleshooting/wireshark-screenshot-3.png
 [9]: ./media/storage-monitoring-diagnosing-troubleshooting/mma-screenshot-1.png
 [10]: ./media/storage-monitoring-diagnosing-troubleshooting/mma-screenshot-2.png
-<!--Update_Description: wording update;add anchors for H2 titles-->

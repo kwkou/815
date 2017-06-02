@@ -13,34 +13,40 @@
     ms.tgt_pltfrm="na"
     ms.devlang="dotnet"
     ms.topic="article"
-    ms.date="02/09/2017"
-    wacn.date="03/10/2017"
-    ms.author="milanga;juliako;" />  
+    ms.date="04/17/2017"
+    wacn.date="05/31/2017"
+    ms.author="milanga;juliako;"
+    ms.translationtype="Human Translation"
+    ms.sourcegitcommit="4a18b6116e37e365e2d4c4e2d144d7588310292e"
+    ms.openlocfilehash="e1df1f9e781d9d1bd8eef1606dc847e43c5d6f86"
+    ms.contentlocale="zh-cn"
+    ms.lasthandoff="05/19/2017" />
 
+# <a name="detect-face-and-emotion-with-azure-media-analytics"></a>使用 Azure 媒体分析检测面部和情绪
+## <a name="overview"></a>概述
+借助 **Azure Media Face Detector** 媒体处理器 (MP)，可通过面部表情来统计、跟踪动作，甚至计量受众的参与和反应。 此服务包含两项功能： 
 
-# 使用 Azure 媒体分析检测面部和情绪
-## 概述
-**Azure 媒体面部检测器**媒体处理器 \(MP\) 可让你通过面部表情来统计、跟踪动作，甚至计量受众的参与和反应。此服务包含两项功能：
-
-- **面部检测**
-
-	面部检测能够找出并跟踪视频中的人脸。可以同时跟踪多个面部，随着对象移动持续进行跟踪，并将时间和位置的元数据以 JSON 文件的格式返回。跟踪期间，该服务将在人员于屏幕上四处移动时，尝试为他们的面部赋予相同的 ID，即使他们被挡住或暂时离帧。
-
-	>[AZURE.NOTE]此服务并不执行面部识别。面部离帧或被挡住太久的人员，将在回来时赋予新的 ID。
-
-- **情绪检测**
-	
-	情绪检测是面部检测媒体处理器的可选组件，它根据检测到的面部返回多个情绪属性的分析，包括快乐、悲伤、恐惧、愤怒等等。
+* **面部检测**
+  
+    面部检测能够找出并跟踪视频中的人脸。 可以同时跟踪多个面部，随着对象移动持续进行跟踪，并将时间和位置的元数据以 JSON 文件的格式返回。 跟踪期间，该服务将在人员于屏幕上四处移动时，尝试为他们的面部赋予相同的 ID，即使他们被挡住或暂时离帧。
+  
+    > [AZURE.NOTE]
+    > 此服务并不执行面部识别。 面部离帧或被挡住太久的人员，将在回来时赋予新的 ID。
+    > 
+    > 
+* **情绪检测**
+  
+    情绪检测是面部检测媒体处理器的可选组件，它根据检测到的面部返回多个情绪属性的分析，包括快乐、悲伤、恐惧、愤怒等等。 
 
 **Azure 媒体面部检测器** MP 目前以预览版提供。
 
-本主题提供有关 **Azure Media Face Detector** 的详细信息，并说明如何将其与用于 .NET 的媒体服务 SDK 搭配使用。
+本主题提供有关 Azure Media Face Detector 的详细信息，并演示如何通过适用于 .NET 的媒体服务 SDK 使用它。
 
-## 面部检测器输入文件
-视频文件。目前支持以下格式：MP4、MOV 和 WMV。
+## <a name="face-detector-input-files"></a>面部检测器输入文件
+视频文件。 目前支持以下格式：MP4、MOV 和 WMV。
 
-## 面部检测器输出文件
-面部检测器和跟踪 API 可提供高精确度的面部位置检测和跟踪功能，并在单个视频中检测到最多 64 个人脸。正面的面部可提供最佳效果，而侧面的面部和较小的面部（小于或等于 24x24 像素）可能就无法获得相同的精确度。
+## <a name="face-detector-output-files"></a>面部检测器输出文件
+面部检测器和跟踪 API 可提供高精确度的面部位置检测和跟踪功能，并在单个视频中检测到最多 64 个人脸。 正面的面部可提供最佳效果，而侧面的面部和较小的面部（小于或等于 24x24 像素）可能就无法获得相同的精确度。
 
 已检测到并已跟踪的面部将在坐标（左侧、顶部、宽度和高度）中返回，其中会在以像素为单位的图像中指明面部的位置，以及表示正在跟踪该人员的面部 ID 编号。在正面面部长时间于帧中消失或重叠的情况下，面部 ID 编号很容易重置，导致某些人员被分配多个 ID。
 
@@ -49,48 +55,48 @@
 
 面部检测和跟踪 JSON 包括以下属性：
 
-元素|说明
----|---
-版本|这是指视频 API 的版本。
-时间刻度|视频每秒的“刻度”数。
-Offset|这是时间戳的时间偏移量。在版本 1.0 的视频 API 中，此属性始终为 0。在我们将来支持的方案中，此值可能会更改。
-Framerate|视频的每秒帧数。
-Fragments|元数据划分成称为“片段”的不同段。每个片段包含开始时间、持续时间、间隔数字和事件。
-开始|第一个事件的开始时间（以“刻度”为单位）。
-持续时间|片段的长度（以“刻度”为单位）。
-时间间隔|片段中每个事件条目的间隔（以“刻度”为单位）。
-事件|每个事件包含在该持续时间内检测到并跟踪的面部。它是包含事件数组的数组。外部数组代表一个时间间隔。内部数组包含在该时间点发生的 0 个或多个事件。空括号代表没有检测到面部。
-ID| 正在跟踪的面部的 ID。如果某个面部后来未被检测到，此编号可能会意外更改。给定人员在整个视频中应该拥有相同的 ID，但由于检测算法的限制（例如受到阻挡等情况），我们无法保证这一点。
-X, Y|规范化 0.0 到 1.0 比例中面部边框左上角的 X 和 Y 坐标。<br/>-X 和 Y 坐标总是相对于横向方向，因此如果视频是纵向（或使用 iOS 时上下颠倒），便需要相应地变换坐标。
-Width, Height|规范化 0.0 到 1.0 比例中面部边框的宽度和高度。
-facesDetected|位于 JSON 结果的末尾，汇总在生成视频期间算法所检测到的面部数。由于 ID 可能在面部无法检测时（例如面部离开屏幕、转向别处）意外重置，此数字并不一定与视频中的实际面部数相同。
+| 元素 | 说明 |
+| --- | --- |
+| 版本 |这是指视频 API 的版本。 |
+| 时间刻度 |视频每秒的“刻度”数。 |
+| Offset |这是时间戳的时间偏移量。 在版本 1.0 的视频 API 中，此属性始终为 0。 在我们将来支持的方案中，此值可能会更改。 |
+| Framerate |视频的每秒帧数。 |
+| Fragments |元数据划分成称为“片段”的不同段。 每个片段包含开始时间、持续时间、间隔数字和事件。 |
+| 开始 |第一个事件的开始时间（以“刻度”为单位）。 |
+| 持续时间 |片段的长度（以“刻度”为单位）。 |
+| 时间间隔 |片段中每个事件条目的间隔（以“刻度”为单位）。 |
+| 事件 |每个事件包含在该持续时间内检测到并跟踪的面部。 它是包含事件数组的数组。 外部数组代表一个时间间隔。 内部数组包含在该时间点发生的 0 个或多个事件。 空括号 [] 代表没有检测到人脸。 |
+| ID |正在跟踪的面部的 ID。 如果某个面部后来未被检测到，此编号可能会意外更改。 给定人员在整个视频中应该拥有相同的 ID，但由于检测算法的限制（例如受到阻挡等情况），我们无法保证这一点 |
+| X, Y |规范化 0.0 到 1.0 比例中面部边框左上角的 X 和 Y 坐标。 <br/>-X 和 Y 坐标总是相对于横向方向，因此如果视频是纵向（或使用 iOS 时上下颠倒），便需要相应地变换坐标。 |
+| Width, Height |规范化 0.0 到 1.0 比例中面部边框的宽度和高度。 |
+| facesDetected |位于 JSON 结果的末尾，汇总在生成视频期间算法所检测到的面部数。 由于 ID 可能在面部无法检测时（例如面部离开屏幕、转向别处）意外重置，此数字并不一定与视频中的实际面部数相同。 |
 
-面部检测器使用分片（元数据可以分解为基于时间的区块，你可以只下载需要的部分）和分段（可以在事件数过于庞大的情况下对事件进行分解）技术。一些简单的计算可帮助你转换数据。例如，如果事件从 6300（刻度）开始，其时间刻度为 2997（刻度/秒），帧速率为 29.97（帧/秒），那么：
+面部检测器使用分片（元数据可以分解为基于时间的区块，可以只下载需要的部分）和分段（可以在事件数过于庞大的情况下对事件进行分解）技术。 一些简单的计算可帮助你转换数据。 例如，如果事件从 6300（刻度）开始，其时间刻度为 2997（刻度/秒），帧速率为 29.97（帧/秒），那么：
 
 * 开始时间/时间刻度 = 2.1 秒
 * 秒数 x 帧速率 = 63 帧
 
-## 面部检测输入和输出示例
-### 输入视频
+## <a name="face-detection-input-and-output-example"></a>面部检测输入和输出示例
+### <a name="input-video"></a>输入视频
 [输入视频](http://ampdemo.azureedge.net/azuremediaplayer.html?url=https%3A%2F%2Freferencestream-samplestream.streaming.mediaservices.windows.net%2Fc8834d9f-0b49-4b38-bcaf-ece2746f1972%2FMicrosoft%20Convergence%202015%20%20Keynote%20Highlights.ism%2Fmanifest&amp;autoplay=false)
 
-### 任务配置（预设）
-在使用 **Azure 媒体面部检测器**创建任务时，必须指定配置预设。以下配置预设仅适用于面部检测。
+### <a name="task-configuration-preset"></a>任务配置（预设）
+在使用 **Azure 媒体面部检测器**创建任务时，必须指定配置预设。 以下配置预设仅适用于面部检测。
 
     {
-      "version":"1.0"
+      "version":"1.0",
       "options":{
-          "TrackingMode": "Faster"
+          "TrackingMode": "Fast"
       }
     }
 
-#### 属性说明
+#### <a name="attribute-descriptions"></a>属性说明
 | 属性名称 | 说明 |
 | --- | --- |
-| Mode |<p>速度更快：处理速度更快，但准确性较低（默认设置）。</p><p>质量：跟踪准确性更好，但所需时间更长。</p> |
+| Mode |快速 - 处理速度快，但准确度较低（默认）。|
 
 
-### JSON 输出
+### <a name="json-output"></a>JSON 输出
 下面是 JSON 输出被截断的示例。
 
 	{
@@ -140,11 +146,11 @@ facesDetected|位于 JSON 结果的末尾，汇总在生成视频期间算法所
 
 		. . . 
 
-## 情绪检测输入和输出示例
-### 输入视频
+## <a name="emotion-detection-input-and-output-example"></a>情绪检测输入和输出示例
+### <a name="input-video"></a>输入视频
 [输入视频](http://ampdemo.azureedge.net/azuremediaplayer.html?url=https%3A%2F%2Freferencestream-samplestream.streaming.mediaservices.windows.net%2Fc8834d9f-0b49-4b38-bcaf-ece2746f1972%2FMicrosoft%20Convergence%202015%20%20Keynote%20Highlights.ism%2Fmanifest&amp;autoplay=false)
 
-### 任务配置（预设）
+### <a name="task-configuration-preset"></a>任务配置（预设）
 在使用 **Azure 媒体面部检测器**创建任务时，必须指定配置预设。以下配置预设指定基于情绪检测创建 JSON。
  	
 	{
@@ -157,24 +163,22 @@ facesDetected|位于 JSON 结果的末尾，汇总在生成视频期间算法所
 	}
 
 
-#### 属性说明
+#### <a name="attribute-descriptions"></a>属性说明
 | 属性名称 | 说明 |
 | --- | --- |
-| Mode |<p>人脸：仅人脸检测。</p><p>PerFaceEmotion：针对每个人脸检测独立返回表情。</p><p>AggregateEmotion：针对帧中的所有人脸返回平均表情值。</p> |
+| Mode |<p>Faces：仅人脸检测。</p><p>PerFaceEmotion：独立返回每个人脸检测的情绪。</p><p>AggregateEmotion：返回帧中所有面部的平均情绪值。</p> |
 | AggregateEmotionWindowMs |在已选择 AggregateEmotion 模式时使用。指定用于生成每个聚合结果的视频的长度，以毫秒为单位。 |
 | AggregateEmotionIntervalMs |在已选择 AggregateEmotion 模式时使用。指定生成聚合结果的频率。 |
 
-####聚合默认值
-
+#### <a name="aggregate-defaults"></a>聚合默认值
 下面是聚合窗口和间隔设置的建议值。AggregateEmotionWindowMs 应该超过 AggregateEmotionIntervalMs。
 
 || 默认值 | 最小值 | 最大值 |
 |--- | --- | --- | --- |
-| AggregateEmotionWindowMs |0\.5 |2 |0\.25|
-| AggregateEmotionIntervalMs |0\.5 |1 |0\.25|
+| AggregateEmotionWindowMs |0.5 |2 |0.25|
+| AggregateEmotionIntervalMs |0.5 |1 |0.25|
 
-###JSON 输出
-
+### <a name="json-output"></a>JSON 输出
 聚合情绪的 JSON 输出（已截断）：
  
 	
@@ -330,13 +334,13 @@ facesDetected|位于 JSON 结果的末尾，汇总在生成视频期间算法所
 	             "fear": 0,
 
 
-## 限制
+## <a name="limitations"></a>限制
 * 支持的输入视频格式包括 MP4、MOV 和 WMV。
 * 可检测的面部大小范围为 24x24 到 2048x2048 像素。无法检测此范围以外的面部。
 * 对于每个视频，返回的面部数上限为 64。
 * 某些面部可能因技术难题而无法检测，例如非常大的面部角度（头部姿势），以及较大的阻挡物。正面和接近正面的面部可提供最佳效果。
 
-## 代码示例
+## <a name="sample-code"></a>代码示例
 以下程序演示如何：
 
 1. 创建资产并将媒体文件上传到资产。
@@ -523,13 +527,8 @@ facesDetected|位于 JSON 结果的末尾，汇总在生成视频期间算法所
 		    }
         }
 
-
-
-
-## 相关链接
-[Azure Media Services Analytics Overview（Azure 媒体服务分析概述）](/documentation/articles/media-services-analytics-overview/)
+## <a name="related-links"></a>相关链接
+[Azure 媒体服务分析概述](/documentation/articles/media-services-analytics-overview/)
 
 [Azure Media Analytics demos（Azure 媒体分析演示）](http://azuremedialabs.azurewebsites.net/demos/Analytics.html)
-
-<!---HONumber=Mooncake_0306_2017-->
-<!--Update_Description: update "聚合默认值" table-->
+<!--Update_Description: wording update;add anchors to substitles-->

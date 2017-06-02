@@ -46,7 +46,7 @@ P2S 连接有以下要求：
 
 ## <a name="before-beginning"></a>开始之前
 
-* 确保拥有 Azure 订阅。 如果你还没有 Azure 订阅，可以激活 [MSDN 订户权益](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details)或注册获取[免费帐户](/pricing/1rmb-trial)。
+* 确保拥有 Azure 订阅。 如果你还没有 Azure 订阅，可以注册获取[免费帐户](/pricing/1rmb-trial)。
 * 安装最新版本的 Azure Resource Manager PowerShell cmdlet。 有关安装 PowerShell cmdlet 的详细信息，请参阅[如何安装和配置 Azure PowerShell](https://docs.microsoft.com/zh-cn/powershell/azure/overview)。
 
 ### <a name="example"></a>示例值

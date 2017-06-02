@@ -31,7 +31,9 @@ Azure VM 能以标准存储磁盘或高级存储磁盘为基础进行构建。 �
 
 ## <a name="creating-a-vm-with-a-managed-disk"></a>使用 Azure CLI 2.0 创建具有非托管磁盘的 VM
 
-以下示例要求具有 Azure CLI 2.0，可[在此安装]。
+以下示例要求具有 Azure CLI 2.0，可[在此安装](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli)。
+
+[AZURE.INCLUDE [azure-cli-2-azurechinacloud-environment-parameter](../../includes/azure-cli-2-azurechinacloud-environment-parameter.md)]
 
 首先，创建资源组以管理资源：
 

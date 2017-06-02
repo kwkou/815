@@ -1,31 +1,32 @@
 <properties
-    pageTitle="针对 Azure 存储使用 Java 的客户端加密 | Azure"
-    description="用于 Java 的 Azure 存储客户端库支持客户端加密以及与 Azure 密钥保管库集成，以实现 Azure 存储应用程序的最佳安全性。"
+    pageTitle="使用适用于 Azure 存储的 Java 进行客户端加密 | Azure"
+    description="用于 Java 的 Azure 存储客户端库支持客户端加密以及与 Azure 密钥保管库集成以实现 Azure 存储应用程序的最佳安全性。"
     services="storage"
     documentationcenter="java"
-    author="seguler"
+    author="lakasa"
     manager="jahogg"
-    editor="tysonn"
-    translationtype="Human Translation" />
+    editor="tysonn" />
 <tags
     ms.assetid="3df49907-554c-404a-9b0c-b3e3269ad04f"
     ms.service="storage"
     ms.workload="storage"
     ms.tgt_pltfrm="na"
-    ms.devlang="na"
+    ms.devlang="java"
     ms.topic="article"
-    ms.date="02/28/2017"
-    wacn.date="04/24/2017"
-    ms.author="seguler"
-    ms.sourcegitcommit="a114d832e9c5320e9a109c9020fcaa2f2fdd43a9"
-    ms.openlocfilehash="433730c4823cdfd1939b2921c8f37a7eee358313"
-    ms.lasthandoff="04/14/2017" />
+    ms.date="05/11/2017"
+    wacn.date="05/31/2017"
+    ms.author="lakasa"
+    ms.translationtype="Human Translation"
+    ms.sourcegitcommit="4a18b6116e37e365e2d4c4e2d144d7588310292e"
+    ms.openlocfilehash="713f326f96e77039ea2cb0a96f933f7a9cfb1e68"
+    ms.contentlocale="zh-cn"
+    ms.lasthandoff="05/19/2017" />
 
 # <a name="client-side-encryption-and-azure-key-vault-with-java-for-azure-storage"></a>Azure 存储的使用 Java 的客户端加密和 Azure 密钥保管库
 [AZURE.INCLUDE [storage-selector-client-side-encryption-include](../../includes/storage-selector-client-side-encryption-include.md)]
 
 ## <a name="overview"></a>概述
-[用于 Java 的 Azure 存储客户端库](http://mvnrepository.com/artifact/com.microsoft.azure/azure-storage)支持在上传到 Azure 存储之前加密客户端应用程序中的数据，以及在下载到客户端时解密数据。此库还支持与 [Azure 密钥保管库](/home/features/key-vault/)集成，以便管理存储帐户密钥。
+[用于 Java 的 Azure 存储客户端库](http://mvnrepository.com/artifact/com.microsoft.azure/azure-storage) 支持在上载到 Azure 存储之前加密客户端应用程序中的数据，以及在下载到客户端时解密数据。 此库还支持与 [Azure 密钥保管库](/home/features/key-vault)集成，以便管理存储帐户密钥。
 
 ## <a name="encryption-and-decryption-via-the-envelope-technique"></a>通过信封技术加密和解密
 加密和解密的过程遵循信封技术。  
@@ -44,7 +45,7 @@
 
 1. 客户端库假定用户在本地或 Azure 密钥保管库中管理密钥加密密钥 (KEK)。 用户不需要知道用于加密的特定密钥。 但是，可以设置和使用一个密钥解析程序，将不同的密钥标识符解析为密钥。  
 2. 客户端库下载已加密数据以及存储在服务中的任何加密材料。  
-3. 然后，使用密钥加密密钥 (KEK) 对已包装的内容加密密钥 (CEK) 进行解包（解密）。 这里同样，客户端库无法访问 KEK。 它只是调用自定义提供程序或密钥保管库提供程序的解包算法。  
+3. 然后，使用密钥加密密钥 (KEK) 对已包装的内容加密密钥 (CEK) 进行解包（解密）。 这里同样，客户端库无法访问 KEK。 它只是调用自定义提供程序或 Key Vault 提供程序的解包算法。  
 4. 然后，使用内容加密密钥 (CEK) 解密已加密的用户数据。
 
 ## <a name="encryption-mechanism"></a>加密机制
@@ -184,7 +185,7 @@ Azure 密钥保管库可帮助保护云应用程序和服务使用的加密密�
 	CloudQueueMessage retrMessage = queue.retrieveMessage(30, options, null);
 
 ### <a name="table-service-encryption"></a>表服务加密
-除了创建加密策略和在请求选项上设置它以外，还必须在 **TableRequestOptions** 中指定 **EncryptionResolver**，或在实体的 getter 和 setter 上设置 [Encrypt] 特性。
+除了创建加密策略和在请求选项上设置它以外，还必须在 TableRequestOptions 中指定 EncryptionResolver，或在实体的 getter 和 setter 上设置 [Encrypt] 特性。
 
 ### <a name="using-the-resolver"></a>使用解析程序
 
@@ -242,4 +243,3 @@ Azure 密钥保管库可帮助保护云应用程序和服务使用的加密密�
   * [核心](http://mvnrepository.com/artifact/com.microsoft.azure/azure-keyvault-core) 程序包
   * [客户端](http://mvnrepository.com/artifact/com.microsoft.azure/azure-keyvault) 程序包
 * 访问 [Azure 密钥保管库文档](/documentation/articles/key-vault-whatis/)
-<!--Update_Description: wording update; add anchors to H2 titles-->

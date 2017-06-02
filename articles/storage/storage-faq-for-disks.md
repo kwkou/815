@@ -5,8 +5,7 @@
     documentationcenter=""
     author="robinsh"
     manager="timlt"
-    editor="tysonn"
-    translationtype="Human Translation" />
+    editor="tysonn" />
 <tags
     ms.assetid="e2a20625-6224-4187-8401-abadc8f1de91"
     ms.service="storage"
@@ -14,12 +13,14 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="02/23/2017"
-    wacn.date="04/24/2017"
+    ms.date="03/19/2017"
+    wacn.date="05/31/2017"
     ms.author="robinsh"
-    ms.sourcegitcommit="a114d832e9c5320e9a109c9020fcaa2f2fdd43a9"
-    ms.openlocfilehash="b666c7593a5ad914d6d385527d3106ddb82145b3"
-    ms.lasthandoff="04/14/2017" />
+    ms.translationtype="Human Translation"
+    ms.sourcegitcommit="4a18b6116e37e365e2d4c4e2d144d7588310292e"
+    ms.openlocfilehash="669f7dc2d87b449ece117127dc000f85cbbe7c93"
+    ms.contentlocale="zh-cn"
+    ms.lasthandoff="05/19/2017" />
 
 # <a name="frequently-asked-questions-about-azure-iaas-vm-disks-and-unmanaged-premium-disks"></a>Azure IaaS VM 磁盘和非托管高级磁盘常见问题解答
 

@@ -3,23 +3,24 @@
     description="了解如何在 Azure 中使用队列存储服务。 示例用 C++ 编写。"
     services="storage"
     documentationcenter=".net"
-    author="seguler"
+    author="cbrooksmsft"
     manager="jahogg"
-    editor="tysonn"
-    translationtype="Human Translation" />
+    editor="tysonn" />
 <tags
     ms.assetid="c8a36365-29f6-404d-8fd1-858a7f33b50a"
     ms.service="storage"
     ms.workload="storage"
     ms.tgt_pltfrm="na"
-    ms.devlang="na"
+    ms.devlang="cpp"
     ms.topic="article"
-    ms.date="02/28/2017"
-    wacn.date="04/24/2017"
-    ms.author="seguler"
-    ms.sourcegitcommit="a114d832e9c5320e9a109c9020fcaa2f2fdd43a9"
-    ms.openlocfilehash="c40d807ab64d70559b7dcef68f033aec7604caa2"
-    ms.lasthandoff="04/14/2017" />
+    ms.date="05/11/2017"
+    wacn.date="05/31/2017"
+    ms.author="cbrooksmsft"
+    ms.translationtype="Human Translation"
+    ms.sourcegitcommit="4a18b6116e37e365e2d4c4e2d144d7588310292e"
+    ms.openlocfilehash="0f549aa999ccfde138ab8b5fed6d7fff5159098f"
+    ms.contentlocale="zh-cn"
+    ms.lasthandoff="05/19/2017" />
 
 # <a name="how-to-use-queue-storage-from-c"></a>如何通过 C++ 使用队列存储
 [AZURE.INCLUDE [storage-selector-queue-include](../../includes/storage-selector-queue-include.md)]
@@ -243,4 +244,3 @@ Azure 存储客户端使用存储连接字符串来存储用于访问数据管�
 - [使用 C++ 列出 Azure 存储资源](/documentation/articles/storage-c-plus-plus-enumeration/)
 - [适用于 C++ 的存储空间客户端库参考](http://azure.github.io/azure-storage-cpp)
 - [Azure 存储文档](/documentation/services/storage/)
-<!--Update_Description:wording update; add anchors to H2 titles-->

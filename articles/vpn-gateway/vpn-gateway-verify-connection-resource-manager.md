@@ -62,16 +62,16 @@
 
 1. 使用 [az login](https://docs.microsoft.com/zh-cn/cli/azure/#login) 命令登录到 Azure 订阅，并按照屏幕上的说明进行操作。
 
-      az login
+        az login
 
 2. 如果有多个 Azure 订阅，请列出该帐户的订阅。
 
-      Az account list --all
+        Az account list --all
 
 3. 指定要使用的订阅。
 
-      Az account set --subscription
-      <replace_with_your_subscription_id>
+        Az account set --subscription
+        <replace_with_your_subscription_id>
 
 ### <a name="verify-your-connection"></a>验证连接
 
