@@ -1,13 +1,12 @@
 <properties
-    pageTitle="将适用于 MongoDB 的 MongoChef 与 Azure DocumentDB 配合使用 | Azure"
-    description="了解如何将 MongoChef 与 DocumentDB: API for MongoDB 帐户配合使用"
+    pageTitle="将 MongoChef 用于 DocumentDB | Azure"
+    description="了解如何将 MongoChef 用于 DocumentDB: API for MongoDB 帐户"
     keywords="mongochef"
     services="documentdb"
     author="AndrewHoh"
     manager="jhubbard"
     editor=""
-    documentationcenter=""
-    translationtype="Human Translation" />
+    documentationcenter="" />
 <tags
     ms.assetid="352c5fb9-8772-4c5f-87ac-74885e63ecac"
     ms.service="documentdb"
@@ -15,16 +14,18 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="03/06/2017"
-    wacn.date="05/02/2017"
+    ms.date="04/27/2017"
+    wacn.date="05/31/2017"
     ms.author="anhoh"
-    ms.sourcegitcommit="75890c3ffb1d1757de64a8b8344e9f2569f26273"
-    ms.openlocfilehash="5dc500e2c011f2544975bc9f9d0b7d07d98ff3ad"
-    ms.lasthandoff="04/25/2017" />
+    ms.translationtype="Human Translation"
+    ms.sourcegitcommit="4a18b6116e37e365e2d4c4e2d144d7588310292e"
+    ms.openlocfilehash="7f1d782b376b7904ef7fc773444ff87c5acd8c2d"
+    ms.contentlocale="zh-cn"
+    ms.lasthandoff="05/19/2017" />
 
-# <a name="use-mongochef-with-a-documentdb-api-for-mongodb-account"></a>将 MongoChef 与 DocumentDB: API for MongoDB 帐户配合使用
+# <a name="use-mongochef-with-a-documentdb-api-for-mongodb-account"></a>将 MongoChef 用于 DocumentDB: API for MongoDB 帐户
 
-若要连接到 Azure DocumentDB: API for MongoDB 帐户，必须：
+若要连接到 DocumentDB: API for MongoDB 帐户，必须：
 
 - 下载并安装 [MongoChef](http://3t.io/mongochef)
 - 具有 DocumentDB: API for MongoDB 帐户的[连接字符串](/documentation/articles/documentdb-connect-mongodb-account/)信息
@@ -84,7 +85,6 @@
         "address": { "state": "WA", "county": "King", "city": "seattle" },
         "isRegistered": true
         }
-
 6. 添加另一个文档，但这次使用以下内容。
 
         {
@@ -112,12 +112,11 @@
         "address": { "state": "NY", "county": "Manhattan", "city": "NY" },
         "isRegistered": false
         }
-
 7. 执行示例查询。 例如，搜索姓氏为“Andersen”的家庭，并返回父母和州/省字段。
 
     ![Mongo Chef 查询结果的屏幕截图](./media/documentdb-mongodb-mongochef/QueryDocument1.png)
 
 ## <a name="next-steps"></a>后续步骤
-- 浏览 MongoDB [示例](/documentation/articles/documentdb-mongodb-samples/)的 DocumentDB: API。
+- 浏览 DocumentDB: API for MongoDB [示例](/documentation/articles/documentdb-mongodb-samples/)。
 
 <!---Update_Description: wording update -->

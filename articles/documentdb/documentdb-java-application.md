@@ -1,13 +1,12 @@
 <properties
-    pageTitle="使用 DocumentDB 的 Java 应用程序开发教程 | Azure"
-    description="此 Java Web 应用程序教程演示了如何使用 Azure DocumentDB 服务存储和访问托管在 Azure 网站上的 Java 应用程序中的数据。"
+    pageTitle="使用 DocumentDB 开发 Java 应用程序教程 | Azure"
+    description="本 Java Web 应用程序教程介绍了如何使用 DocumentDB 服务存储和访问 Azure 网站上托管的 Java 应用程序中的数据。"
     keywords="应用程序开发, 数据库教程, Java 应用程序, Java Web 应用程序教程, documentdb, azure, Azure"
     services="documentdb"
     documentationcenter="java"
     author="dennyglee"
     manager="jhubbard"
-    editor="mimig" />  
-
+    editor="mimig" />
 <tags
     ms.assetid="0867a4a2-4bf5-4898-a1f4-44e3868f8725"
     ms.service="documentdb"
@@ -16,44 +15,52 @@
     ms.tgt_pltfrm="NA"
     ms.workload="data-services"
     ms.date="11/16/2016"
-    wacn.date="12/27/2016"
-    ms.author="denlee" />
+    wacn.date="05/31/2017"
+    ms.author="denlee"
+    ms.translationtype="Human Translation"
+    ms.sourcegitcommit="4a18b6116e37e365e2d4c4e2d144d7588310292e"
+    ms.openlocfilehash="e2dd6c8926bb7691a5fb716730f657fb4f0ffe76"
+    ms.contentlocale="zh-cn"
+    ms.lasthandoff="05/19/2017" />
 
-# 使用 DocumentDB 生成一个 Java Web 应用程序
-
+# <a name="build-a-java-web-application-using-azure-documentdb"></a>使用 DocumentDB 生成 Java Web 应用程序
 > [AZURE.SELECTOR]
 - [.NET](/documentation/articles/documentdb-dotnet-application/)
+- [适用于 MongoDB 的 .NET](/documentation/articles/documentdb-mongodb-application/)
 - [Node.js](/documentation/articles/documentdb-nodejs-application/)
 - [Java](/documentation/articles/documentdb-java-application/)
 - [Python](/documentation/articles/documentdb-python-application/)
 
-此 Java Web 应用程序教程演示了如何使用 [Azure DocumentDB](https://portal.azure.cn/#gallery/Microsoft.DocumentDB) 服务存储和访问托管在 Azure 网站上的 Java 应用程序中的数据。本主题介绍以下内容：
+本 Java Web 应用程序教程介绍了如何使用 [DocumentDB](https://portal.azure.cn/#gallery/Microsoft.DocumentDB) 服务存储和访问 Azure 网站上托管的 Java 应用程序中的数据。 本主题介绍以下内容：
 
 - 如何在 Eclipse 中构建基本 JSP 应用程序。
-- 如何借助 [DocumentDB Java SDK](https://github.com/Azure/azure-documentdb-java) 来使用 Azure DocumentDB 服务。
+- 如何借助 [DocumentDB Java SDK](https://github.com/Azure/azure-documentdb-java) 使用 DocumentDB 服务。
 
-此 Java 应用程序教程演示了如何创建一个基于 web 的任务管理应用程序，你可以使用此应用程序创建、检索任务，以及将任务标记为已完成，如下图所示。在 Azure DocumentDB 中，ToDo 列表中的每个任务都存储为 JSON 文档。
+此 Java 应用程序教程演示了如何创建一个基于 web 的任务管理应用程序，你可以使用此应用程序创建、检索任务，以及将任务标记为已完成，如下图所示。 在 DocumentDB 中，ToDo 列表中的每个任务都存储为 JSON 文档。
 
 ![我的 ToDo 列表 Java 应用程序](./media/documentdb-java-application/image1.png)
 
-> [AZURE.TIP] 此应用程序开发教程假定你之前有使用 Java 的经验。如果你不熟悉 Java 或[必备工具](#Prerequisites)，我们建议从 GitHub 下载完整的 [todo](https://github.com/Azure-Samples/documentdb-java-todo-app) 项目，并按照[本文末尾的说明](#GetProject)构建应用程序。构建之后，你可以回顾本文以深入了解项目上下文中的代码。
+> [AZURE.TIP]
+> 此应用程序开发教程假定你之前有使用 Java 的经验。 如果不熟悉 Java 或[必备工具](#Prerequisites)，建议从 GitHub 下载完整的 [todo](https://github.com/Azure-Samples/documentdb-java-todo-app) 项目，并按照[本文末尾的说明](#GetProject)生成该项目。 构建之后，你可以回顾本文以深入了解项目上下文中的代码。  
+> 
+> 
 
 ## <a id="Prerequisites"></a>此 Java Web 应用程序教程的先决条件
 在开始本应用程序开发教程前，你必须具有：
 
-- 有效的 Azure 帐户。如果你没有帐户，可以创建一个试用帐户，只需几分钟即可完成。有关详细信息，请参阅 [Azure 1 元试用](/pricing/1rmb-trial/)。
+- 有效的 Azure 帐户。 如果你没有帐户，可以创建一个试用帐户，只需几分钟即可完成。 有关详细信息，请参阅 [Azure 1 元试用](/pricing/1rmb-trial/)
 
     或
 
-    在本地安装 [Azure DocumentDB 模拟器](/documentation/articles/documentdb-nosql-local-emulator/)。
+    本地安装的 [DocumentDB 模拟器](/documentation/articles/documentdb-nosql-local-emulator/)。
 - [Java 开发工具包 (JDK) 7+](http://www.oracle.com/technetwork/java/javase/downloads/index.html)。
 - [Eclipse IDE for Java EE Developers。](http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/lunasr1)
-- [已启用 Java 运行时环境（例如 Tomcat 或 Jetty）的 Azure 网站。](/documentation/articles/app-service-web-get-started-java/)
+- [已启用 Java 运行时环境（例如 Tomcat 或 Jetty）的 Azure 网站。](/documentation/articles/web-sites-java-get-started/)
 
 如果你是首次安装这些工具，那么你可以参考 coreservlets.com 网站的 [教程：安装 TomCat7 并将其与 Eclipse 一起使用](http://www.coreservlets.com/Apache-Tomcat-Tutorial/tomcat-7-with-eclipse.html) 文章的 Quick Start 部分提供的安装过程演练。
 
 ## <a id="CreateDB"></a>步骤 1：创建 DocumentDB 数据库帐户
-让我们首先创建 DocumentDB 帐户。如果已有帐户或者在此教程中使用 DocumentDB 模拟器，则可以跳到[步骤 2：创建 Java JSP 应用程序](#CreateJSP)。
+首先创建一个 DocumentDB 帐户。 如果已有一个帐户，或者要在本教程中使用 DocumentDB 模拟器，可以跳到[步骤 2：创建 Java JSP 应用程序](#CreateJSP)。
 
 [AZURE.INCLUDE [documentdb-create-dbaccount](../../includes/documentdb-create-dbaccount.md)]
 
@@ -62,22 +69,22 @@
 ## <a id="CreateJSP"></a>步骤 2：创建 Java JSP 应用程序
 若要创建 JSP 应用程序，请执行以下步骤：
 
-1. 首先，我们将从创建 Java 项目开始。启动 Eclipse，然后依次单击“文件”、“新建”和“动态 Web 项目”。如果你未看到“动态 Web 项目”作为可用项目列出，请执行下列操作：依次单击“文件”、“新建”和“项目”，展开“Web”，单击“动态 Web 项目”，然后单击“下一步”。
+1. 首先，创建一个 Java 项目。 启动 Eclipse，然后依次单击“文件”、“新建”和“动态 Web 项目”。 如果未看到“动态 Web 项目”作为可用项目列出，请执行下列操作：依次单击“文件”、“新建”和“项目”，展开“Web”，单击“动态 Web 项目”，然后单击“下一步”。
    
     ![JSP Java 应用程序开发](./media/documentdb-java-application/image10.png)
-2. 在“项目名称”框中输入项目名称，然后在“目标运行时”下拉菜单中随意选择一个值（例如 Apache Tomcat v7.0），然后单击“完成”。选择目标运行可通过 Eclipse 在本地运行你的项目。
-3. 在 Eclipse 的项目资源管理器视图中，展开你的项目。右键单击“WebContent”，单击“新建”，然后单击“JSP 文件”。
-4. 在“新建 JSP 文件”对话框中，将文件命名为 index.jsp。将父文件夹保留为 **WebContent**，如下图所示，然后单击“下一步”。
+2. 在“项目名称”框中输入项目名称，然后在“目标运行时”下拉菜单中随意选择一个值（例如 Apache Tomcat v7.0），然后单击“完成”。 选择目标运行可通过 Eclipse 在本地运行你的项目。
+3. 在 Eclipse 的项目资源管理器视图中，展开项目。 右键单击“WebContent”，单击“新建”，然后单击“JSP 文件”。
+4. 在“新建 JSP 文件”对话框中，将文件命名为“index.jsp”。 将父文件夹保留为“WebContent”，如下图所示，然后单击“下一步”。
    
     ![创建新的 JSP 文件 - Java Web 应用程序教程](./media/documentdb-java-application/image11.png)
 5. 对于本教程，请在“选择 JSP 模板”对话框中选择“新建 JSP 文件(html)”，然后单击“完成”。
-6. 在 Eclipse 中打开 index.jsp 文件后，添加文本以便在现有 <body> 元素中显示 **Hello World!**。更新后的 <body> 内容应类似于以下代码：
+6. 在 Eclipse 中打开 index.jsp 文件后，添加文本以在以下元素中显示“Hello World!”： 现有 <body> 元素中。 更新后的 <body> 内容应类似于以下代码：
    
         <body>
             <% out.println("Hello World!"); %>
         </body>
 7. 保存 index.jsp 文件。
-8. 如果在步骤 2 中设置了目标运行时，则可以单击“项目”，然后单击“运行”，以在本地运行 JSP 应用程序：
+8. 如果在步骤 2 中设置了目标运行时，则可以单击“项目”，然后单击“运行”，在本地运行 JSP 应用程序：
    
     ![Hello World — Java 应用程序教程](./media/documentdb-java-application/image12.png)
 
@@ -88,13 +95,13 @@
 
 1. 在项目资源管理器中右键单击项目，单击“配置”，然后单击“转换为 Maven 项目”。
 2. 在“创建新 POM”窗口中，接受默认值，然后单击“完成”。
-3. 在“项目资源管理器”中，打开 pom.xml 文件。
+3. 在“项目资源管理器” 中，打开 pom.xml 文件。
 4. 在“依赖项”选项卡上，在“依赖项”窗格中单击“添加”。
-5. 在“选择依赖项”窗口中，执行以下操作：
+5. 在“选择依赖项”  窗口中，执行以下操作：
    
-   - 在“组 ID”框中，输入 com.microsoft.azure。
-   - 在“项目 ID”框中输入 azure-documentdb。
-   - 在“版本”框中输入 1.5.1。
+   - 在“组 ID”  框中，输入 com.microsoft.azure。
+   - 在“项目 ID”  框中输入 azure-documentdb。
+   - 在“版本”  框中输入 1.5.1。
      
      ![安装 DocumentDB Java 应用程序 SDK](./media/documentdb-java-application/image13.png)
      
@@ -105,10 +112,10 @@
             <artifactId>azure-documentdb</artifactId>
             <version>1.9.1</version>
         </dependency>
-6. 单击“确定”，Maven 将安装 DocumentDB Java SDK。
+6. 单击“确定”  ，Maven 将安装 DocumentDB Java SDK。
 7. 保存 pom.xml 文件。
 
-## <a id="UseService"></a>步骤 4：在 java 应用程序中使用 DocumentDB 服务
+## <a id="UseService"></a>步骤 4：在 Java 应用程序中使用 DocumentDB 服务
 1. 首先，让我们定义 TodoItem 对象：
    
         @Data
@@ -120,8 +127,8 @@
             private String name;
         }
    
-    在此项目中，我们将使用[项目 Lombok](http://projectlombok.org/) 生成构造函数、getter、setter 和一个生成器。或者，你可以手动编写此代码，或使用 IDE 生成此代码。
-2. 若要调用 DocumentDB 服务，则必须实例化一个新的 **DocumentClient**。一般情况下，最好是重用 **DocumentClient** -而不是为每个后续请求构造新的客户端。我们可以通过在 **DocumentClientFactory** 中包装客户端来重用此客户端。你还需要在此处粘贴[步骤 1](#CreateDB) 中保存到剪贴板中的 URI 和 PRIMARY KEY 值。将 [YOUR\_ENDPOINT\_HERE] 替换为你的 URI，以及将 [YOUR\_KEY\_HERE] 替换为你的 PRIMARY KEY。
+    在此项目中，我们将使用 [项目 Lombok](http://projectlombok.org/) 生成构造函数、getter、setter 和一个生成器。 或者，你可以手动编写此代码，或使用 IDE 生成此代码。
+2. 若要调用 DocumentDB 服务，必须实例化一个新的 DocumentClient。 一般情况下，最好是重用 **DocumentClient** -而不是为每个后续请求构造新的客户端。 我们可以通过在 **DocumentClientFactory**中包装客户端来重用此客户端。 你还需要在此处粘贴 [步骤 1](#CreateDB)中保存到剪贴板中的 URI 和 PRIMARY KEY 值。 将 [YOUR\_ENDPOINT\_HERE] 替换为 URI，将 [YOUR\_KEY\_HERE] 替换为主密钥。
    
         private static final String HOST = "[YOUR_ENDPOINT_HERE]";
         private static final String MASTER_KEY = "[YOUR_KEY_HERE]";
@@ -132,9 +139,9 @@
         public static DocumentClient getDocumentClient() {
             return documentClient;
         }
-3. 现在让我们来创建数据访问对象 (DAO)，将 ToDo 项保存到 DocumentDB 的过程进行抽象。
+3. 接下来创建数据访问对象 (DAO)，将 ToDo 项保存到 DocumentDB 的过程进行抽象。
    
-    要将 ToDo 项保存到集合中，客户端需要知道保存到哪个数据库和集合（通过自链接引用）通常，如果可能的话最好缓存数据库和集合，以避免额外的往返访问数据库。
+    要将 ToDo 项保存到集合中，客户端需要了解可用于保存的数据库和集合（通过自链接引用）。 通常，如果可能的话最好缓存数据库和集合，以避免额外的往返访问数据库。
    
     以下代码演示了存在数据库和集合的情况下如何检索数据库和集合，如果不存在，则创建新的数据库和集合。
    
@@ -249,7 +256,7 @@
    
             return gson.fromJson(todoItemDocument.toString(), TodoItem.class);
         }
-5. 和 DocumentDB 数据库和集合一样，文档也是通过自链接来引用。以下帮助器函数可以让我们通过另一个属性（例如“id”）来检索文档，而不是自链接：
+5. 与 DocumentDB 数据库和集合一样，文档也是通过自链接来引用。 使用以下帮助程序函数可以通过另一个属性（例如“id”）来检索文档，而不是自链接：
    
         private Document getDocumentById(String id) {
             // Retrieve the document using the DocumentClient.
@@ -298,7 +305,7 @@
    
             return todoItems;
         }
-8. 使用 DocumentClient 更新文档的方法有多种。在 Todo 列表应用程序中，我们希望能够切换 TodoItem 是否已完成。这可以通过更新文档中的"完成"属性来实现：
+8. 使用 DocumentClient 更新文档的方法有多种。 在 Todo 列表应用程序中，我们希望能够切换 TodoItem 是否已完成。 这可以通过更新文档中的"完成"属性来实现：
    
         @Override
         public TodoItem updateTodoItem(String id, boolean isComplete) {
@@ -322,7 +329,7 @@
    
             return gson.fromJson(todoItemDocument.toString(), TodoItem.class);
         }
-9. 最后，我们希望能够从我们的列表中删除 TodoItem。若要执行此操作，我们可以使用之前编写的帮助器方法检索自链接，然后告诉客户端将其删除：
+9. 最后，我们希望能够从我们的列表中删除 TodoItem。 若要执行此操作，我们可以使用之前编写的帮助器方法检索自链接，然后告诉客户端将其删除：
    
         @Override
         public boolean deleteTodoItem(String id) {
@@ -450,94 +457,95 @@
                 doGet(request, response);
             }
         }
-3. 我们需要一个 Web 用户界面来向用户显示。让我们重新编写之前创建的 index.jsp：
+3. 我们需要一个 Web 用户界面来向用户显示。 让我们重新编写之前创建的 index.jsp：
+
+            <html>
+            <head>
+              <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+              <meta http-equiv="X-UA-Compatible" content="IE=edge;" />
+              <title>Azure DocumentDB Java Sample</title>
    
-        <html>
-        <head>
-          <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-          <meta http-equiv="X-UA-Compatible" content="IE=edge;" />
-          <title>Azure DocumentDB Java Sample</title>
+              <!-- Bootstrap -->
+              <link href="//ajax.aspnetcdn.com/ajax/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
    
-          <!-- Bootstrap -->
-          <link href="//ajax.aspnetcdn.com/ajax/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
-   
-          <style>
-            /* Add padding to body for fixed nav bar */
-            body {
-              padding-top: 50px;
-            }
-          </style>
-        </head>
-        <body>
-          <!-- Nav Bar -->
-          <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-            <div class="container">
-              <div class="navbar-header">
-                <a class="navbar-brand" href="#">My Tasks</a>
-              </div>
-            </div>
-          </div>
-   
-          <!-- Body -->
-          <div class="container">
-            <h1>My ToDo List</h1>
-   
-            <hr/>
-   
-            <!-- The ToDo List -->
-            <div class = "todoList">
-              <table class="table table-bordered table-striped" id="todoItems">
-                <thead>
-                  <tr>
-                    <th>Name</th>
-                    <th>Category</th>
-                    <th>Complete</th>
-                  </tr>
-                </thead>
-                <tbody>
-                </tbody>
-              </table>
-   
-              <!-- Update Button -->
-              <div class="todoUpdatePanel">
-                <form class="form-horizontal" role="form">
-                  <button type="button" class="btn btn-primary">Update Tasks</button>
-                </form>
-              </div>
-   
-            </div>
-   
-            <hr/>
-   
-            <!-- Item Input Form -->
-            <div class="todoForm">
-              <form class="form-horizontal" role="form">
-                <div class="form-group">
-                  <label for="inputItemName" class="col-sm-2">Task Name</label>
-                  <div class="col-sm-10">
-                    <input type="text" class="form-control" id="inputItemName" placeholder="Enter name">
+              <style>
+                /* Add padding to body for fixed nav bar */
+                body {
+                  padding-top: 50px;
+                }
+              </style>
+            </head>
+            <body>
+              <!-- Nav Bar -->
+              <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+                <div class="container">
+                  <div class="navbar-header">
+                    <a class="navbar-brand" href="#">My Tasks</a>
                   </div>
                 </div>
+              </div>
    
-                <div class="form-group">
-                  <label for="inputItemCategory" class="col-sm-2">Task Category</label>
-                  <div class="col-sm-10">
-                    <input type="text" class="form-control" id="inputItemCategory" placeholder="Enter category">
+              <!-- Body -->
+              <div class="container">
+                <h1>My ToDo List</h1>
+   
+                <hr/>
+   
+                <!-- The ToDo List -->
+                <div class = "todoList">
+                  <table class="table table-bordered table-striped" id="todoItems">
+                    <thead>
+                      <tr>
+                        <th>Name</th>
+                        <th>Category</th>
+                        <th>Complete</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                  </table>
+   
+                  <!-- Update Button -->
+                  <div class="todoUpdatePanel">
+                    <form class="form-horizontal" role="form">
+                      <button type="button" class="btn btn-primary">Update Tasks</button>
+                    </form>
                   </div>
+   
                 </div>
    
-                <button type="button" class="btn btn-primary">Add Task</button>
-              </form>
-            </div>
+                <hr/>
    
-          </div>
+                <!-- Item Input Form -->
+                <div class="todoForm">
+                  <form class="form-horizontal" role="form">
+                    <div class="form-group">
+                      <label for="inputItemName" class="col-sm-2">Task Name</label>
+                      <div class="col-sm-10">
+                        <input type="text" class="form-control" id="inputItemName" placeholder="Enter name">
+                      </div>
+                    </div>
    
-          <!-- Placed at the end of the document so the pages load faster -->
-          <script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.1.min.js"></script>
-          <script src="//ajax.aspnetcdn.com/ajax/bootstrap/3.2.0/bootstrap.min.js"></script>
-          <script src="assets/todo.js"></script>
-        </body>
-        </html>
+                    <div class="form-group">
+                      <label for="inputItemCategory" class="col-sm-2">Task Category</label>
+                      <div class="col-sm-10">
+                        <input type="text" class="form-control" id="inputItemCategory" placeholder="Enter category">
+                      </div>
+                    </div>
+   
+                    <button type="button" class="btn btn-primary">Add Task</button>
+                  </form>
+                </div>
+   
+              </div>
+   
+              <!-- Placed at the end of the document so the pages load faster -->
+              <script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.1.min.js"></script>
+              <script src="//ajax.aspnetcdn.com/ajax/bootstrap/3.2.0/bootstrap.min.js"></script>
+              <script src="assets/todo.js"></script>
+            </body>
+            </html>
+
 4. 最后，编写一些客户端 Javascript 将 Web 用户界面和 servlet 绑定在一起：
    
         var todoApp = {
@@ -710,49 +718,49 @@
         $(document).ready(function() {
           todoApp.install();
         });
-5. 非常好！ 现在剩下的就是测试此应用程序。在本地运行此应用程序，并添加一些 Todo 项，方法是填充项名称和类别，然后单击“添加任务”。
-6. 显示项之后，你可以通过切换复选框，然后单击“更新任务”来更新项是否已完成。
+5. 非常好！ 现在剩下的就是测试此应用程序。 在本地运行此应用程序，并添加一些 Todo 项，方法是填充项名称和类别，然后单击“添加任务” 。
+6. 显示项之后，你可以通过切换复选框，然后单击“更新任务” 来更新项是否已完成。
 
 ## <a id="Deploy"></a>步骤 6：将 Java 应用程序部署到 Azure 网站
-要在 Azure 网站上部署 Java 应用程序，只需将程序导入为 WAR 文件，然后通过源控件（例如 GIT）或 FTP 上载此文件。
+要在 Azure 网站上部署 Java 应用程序，只需将程序导入为 WAR 文件，然后通过源控件（例如 GIT）或 FTP 上传此文件。
 
-1. 若要将应用程序导出为 WAR，请在“项目资源管理器”中右键单击你的项目，然后依次单击“导出”和“WAR 文件”。
-2. 在“WAR 导出”窗口中，执行以下操作：
+1. 若要将应用程序导出为 WAR，请在“项目资源管理器”中右键单击项目，然后依次单击“导出”和“WAR 文件”。
+2. 在“WAR 导出”  窗口中，执行以下操作：
    
    - 在“Web 项目”框中，输入 azure-documentdb-java-sample。
    - 在“目标”框中，选择一个目标以保存 WAR 文件。
-   - 单击“完成”。
-3. 现在你已经具有 WAR 文件，只需将它上载到 Azure 网站的 **webapps** 目录。有关上载此文件的说明，请参阅 [Adding an application to your Java website on Azure](/documentation/articles/web-sites-java-add-app/)（将应用程序添加到 Azure 上的 Java 网站）。
+   - 单击“完成” 。
+3. 现在你已经具有 WAR 文件，只需将它上传到 Azure 网站的 **webapps** 目录。 有关上传此文件的说明，请参阅 [将应用程序添加到 Azure 上的 Java 网站](/documentation/articles/web-sites-java-add-app/)。
    
-    将 WAR 文件上载到 webapps 目录之后，运行时环境将检测到你已经添加了此文件，并将自动加载它。
-4. 若要查看你已完成的产品，请导航到 http://YOUR\_SITE\_NAME.chinacloudsites.cn/azure-documentdb-java-sample/ 然后开始添加你的任务！
+    将 WAR 文件上传到 webapps 目录之后，运行时环境将检测到你已经添加了此文件，并将自动加载它。
+4. 若要查看完成的作品，请导航到 http://YOUR\_SITE\_NAME.chinacloudsites.cn/azure-documentdb-java-sample/，然后开始添加任务！
 
 ## <a id="GetProject"></a>从 GitHub 获取项目
-GitHub 上的 [todo](https://github.com/Azure-Samples/documentdb-java-todo-app) 项目包含本教程中的所有示例。若要将 todo 项目导入 Eclipse，请确保你具有[先决条件](#Prerequisites)部分中所列的软件和资源，然后执行以下操作：
+GitHub 上的 [todo](https://github.com/Azure-Samples/documentdb-java-todo-app) 项目包含本教程中的所有示例。 若要将 todo 项目导入 Eclipse，请确保你具有 [先决条件](#Prerequisites) 部分中所列的软件和资源，然后执行以下操作：
 
-1. 安装[项目 Lombok](http://projectlombok.org/)。Lombok 用于生成项目中的构造函数、getter 和 setter。当你下载 lombok.jar 文件之后，双击此文件进行安装，或者从命令行安装。
+1. 安装 [项目 Lombok](http://projectlombok.org/)。 Lombok 用于生成项目中的构造函数、getter 和 setter。 当你下载 lombok.jar 文件之后，双击此文件进行安装，或者从命令行安装。
 2. 如果 Eclipse 处于打开状态，请将其关闭并重新启动以加载 Lombok。
 3. 在 Eclipse 中，在“文件”菜单上单击“导入”。
 4. 在“导入”窗口中，依次单击“Git”、“来自 Git 的项目”和“下一步”。
 5. 在“选择存储库源”屏幕上，单击“克隆 URI”。
-6. 在“源 Git 存储库”屏幕上，在“URI”框中输入 https://github.com/Azure-Samples/documentdb-java-todo-app.git，然后单击“下一步”。
+6. 在“源 Git 存储库”屏幕上的“URI”框中，输入 https://github.com/Azure-Samples/documentdb-java-todo-app.git，然后单击“下一步”。
 7. 在“分支选择”屏幕上，确保已选择“master”，然后单击“下一步”。
 8. 在“本地目标”屏幕上，单击“浏览”选择要将存储库复制到的文件夹，然后单击“下一步”。
 9. 在“选择要用于导入项目的向导”屏幕上，确保已选择“导入现有项目”，然后单击“下一步”。
-10. 在“导入项目”屏幕上，取消选择“DocumentDB”项目，然后单击“完成”。DocumentDB 项目包含 DocumentDB Java SDK，我们会将其添加为依赖项。
-11. 在“项目资源管理器”中，导航到 azure-documentdb-java-sample\\src\\com.microsoft.azure.documentdb.sample.dao\\DocumentClientFactory.java，并将 HOST 和 MASTER\_KEY 值替换为你的 DocumentDB 帐户的 URI 和 PRIMARY KEY，然后保存该文件。有关更多信息，请参阅[步骤 1. 创建一个 DocumentDB 数据库帐户](#CreateDB)。
+10. 在“导入项目”屏幕上，取消选择“DocumentDB”项目，然后单击“完成”。 DocumentDB 项目包含 DocumentDB Java SDK。该 SDK 会被添加成依赖项。
+11. 在“项目资源管理器”中，导航到 azure-documentdb-java-sample\src\com.microsoft.azure.documentdb.sample.dao\DocumentClientFactory.java，并将 HOST 和 MASTER_KEY 值替换为 DocumentDB 帐户的 URI 和主密钥，然后保存该文件。 有关详细信息，请参阅[步骤 1.创建 DocumentDB 数据库帐户](#CreateDB)。
 12. 在“项目资源管理器”中，右键单击“azure-documentdb-java-sample”，单击“生成路径”，然后单击“配置生成路径”。
-13. 在“Java 生成路径”屏幕上，在右侧窗格中，选择“库”选项卡，然后单击“添加外部 JAR”。导航至 lombok.jar 文件的位置，单击“打开”，然后单击“确定”。
+13. 在“Java 生成路径”屏幕上，在右侧窗格中，选择“库”选项卡，然后单击“添加外部 JAR”。 导航到 lombok.jar 文件的位置，单击“打开”，然后单击“确定”。
 14. 使用步骤 12 再次打开“属性”窗口，然后在左窗格中单击“目标运行时”。
 15. 在“目标运行时”屏幕上，单击“新建”，选择“Apache Tomcat v7.0”，然后单击“确定”。
 16. 使用步骤 12 再次打开“属性”窗口，然后在左窗格中单击“项目方面”。
 17. 在“项目方面”屏幕上，选择“动态 Web 模块”和“Java”，然后单击“确定”。
 18. 在此屏幕下面的“服务器”选项卡上，右键单击“localhost 上的 Tomcat v7.0 服务器”，然后单击“添加和删除”。
-19. 在“添加和删除”窗口中，将 **azure-documentdb-java-sample** 移动到“配置”框，然后单击“完成”。
-20. 在“服务器”选项卡上，右键单击“localhost 上的 Tomcat v7.0 服务器”，然后单击“重新启动”。
-21. 在浏览器中导航到 http://localhost:8080/azure-documentdb-java-sample/，然后开始向你的任务列表中添加项。请注意，如果你更改了默认端口值，请将 8080 更改为你选择的值。
+19. 在“添加和删除”窗口中，将 azure-documentdb-java-sample 移到“配置”框，然后单击“完成”。
+20. 在“服务器”选项卡上，右键单击“localhost 上的 Tomcat v7.0 服务器”，然后单击“重启”。
+21. 在浏览器中，导航到 http://localhost:8080/azure-documentdb-java-sample/ 并开始在任务列表中添加条目。 请注意，如果你更改了默认端口值，请将 8080 更改为你选择的值。
 22. 若要将项目部署到 Azure 网站，请参阅[步骤 6. 将应用程序部署到 Azure 网站](#Deploy)。
 
 [1]: media/documentdb-java-application/keys.png
 
-<!---HONumber=Mooncake_1219_2016-->
+<!-- Update_Description: wording update -->

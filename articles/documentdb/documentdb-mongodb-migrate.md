@@ -1,13 +1,12 @@
 <properties
-    pageTitle="将 mongoimport 和 mongorestore 与 Azure DocumentDB 配合使用 | Azure"
-    description="了解如何使用 mongoimport 和 mongorestore 将数据导入到 DocumentDB：MongoDB 帐户的 API"
+    pageTitle="将 mongoimport 和 mongorestore 与 DocumentDB 的 API for MongoDB 配合使用 | Azure"
+    description="了解如何使用 mongoimport 和 mongorestore 将数据导入到 API for MongoDB 帐户"
     keywords="mongoimport，mongorestore"
     services="documentdb"
     author="AndrewHoh"
     manager="jhubbard"
     editor=""
-    documentationcenter=""
-    translationtype="Human Translation" />
+    documentationcenter="" />
 <tags
     ms.assetid="352c5fb9-8772-4c5f-87ac-74885e63ecac"
     ms.service="documentdb"
@@ -15,24 +14,32 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="03/06/2017"
-    wacn.date="05/02/2017"
+    ms.date="05/10/2017"
+    wacn.date="05/31/2017"
     ms.author="anhoh"
-    ms.sourcegitcommit="75890c3ffb1d1757de64a8b8344e9f2569f26273"
-    ms.openlocfilehash="f8ff2aaa2d126da6a72597afae014d91b58362e3"
-    ms.lasthandoff="04/25/2017" />
+    ms.translationtype="Human Translation"
+    ms.sourcegitcommit="4a18b6116e37e365e2d4c4e2d144d7588310292e"
+    ms.openlocfilehash="0243ea26496b38c3c5074063202a723f081f06fe"
+    ms.contentlocale="zh-cn"
+    ms.lasthandoff="05/19/2017" />
 
-# <a name="migrate-data-to-documentdb-by-using-mongoimport-and-mongorestore"></a>使用 mongoimport 和 mongorestore 将数据迁移到 DocumentDB
-> [AZURE.SELECTOR]
-- [导入到 DocumentDB](/documentation/articles/documentdb-import-data/)
-- [导入到 MongoDB 的 API](/documentation/articles/documentdb-mongodb-migrate/)
+# <a name="azure-documentdb-how-to-import-mongodb-data"></a>DocumentDB：如何导入 MongoDB 数据？ 
 
-若要将数据迁移到 Azure DocumentDB：MongoDB 帐户的 API，必须：
+若要将数据从 MongoDB 迁移到 DocumentDB 帐户以与 MongoDB API 一起使用，必须：
 
 - 从 [MongoDB 下载中心](https://www.mongodb.com/download-center)下载 *mongoimport.exe* 或 *mongorestore.exe*。
-- 获取 [MongoDB 连接字符串的 DocumentDB 支持](/documentation/articles/documentdb-connect-mongodb-account/)。
+- 获取 [API for MongoDB 连接字符串](/documentation/articles/documentdb-connect-mongodb-account/)。
 
-## <a name="before-you-begin"></a>开始之前
+如果要从 MongoDB 导入数据，并且计划将其与 DocumentDB API 一起使用，应使用数据迁移工具导入数据。 有关详细信息，请参阅[数据迁移工具](/documentation/articles/documentdb-import-data/)。
+
+本教程涵盖以下任务：
+
+> [!div class="checklist"]
+> * 检索连接字符串
+> * 使用 mongoimport 导入 MongoDB 数据
+> * 使用 mongorestore 导入 MongoDB 数据
+
+## <a name="prerequisites"></a>先决条件
 
 - 增加吞吐量：数据迁移的持续时间取决于为集合设置的吞吐量。 请确保对于较大的数据迁移增加吞吐量。 完成迁移后，减少吞吐量以节约成本。 有关在 [Azure 门户预览](https://portal.azure.cn)中增加吞吐量的详细信息，请参阅 [DocumentDB 中的性能级别和定价层](/documentation/articles/documentdb-performance-levels/)。
 
@@ -40,7 +47,7 @@
 
 ## <a name="find-your-connection-string-information-host-port-username-and-password"></a>查找连接字符串信息（主机、端口、用户名和密码）
 
-1. 在 [Azure 门户预览](https://portal.azure.cn)的左侧窗格中，单击“NoSQL (DocumentDB)”条目。
+1. 在 [Azure 门户预览](https://portal.azure.cn)的左侧窗格中，单击“DocumentDB”条目。
 2. 在“订阅”窗格中，选择帐户名称。
 3. 在“连接字符串”边栏选项卡中，单击“连接字符串”。  
 右侧窗格中包含成功连接到帐户所需的所有信息。
@@ -61,7 +68,7 @@
 
 ## <a name="import-data-to-api-for-mongodb-with-mongorestore"></a>使用 mongorestore 将数据导入到 MongoDB 的 API
 
-若要将数据还原到 DocumentDB 帐户，请使用以下模板执行导入。 使用特定于帐户的值填写“主机”、“用户名”和“密码”。
+若要将数据还原到 API for MongoDB 帐户，请使用以下模板执行导入。 使用特定于帐户的值填写“主机”、“用户名”和“密码”。
 
 模板：
 
@@ -72,6 +79,16 @@
     mongorestore.exe --host anhoh-host.documents.azure.cn:10250 -u anhoh-host -p tkvaVkp4Nnaoirnouenrgisuner2435qwefBH0z256Na24frio34LNQasfaefarfernoimczciqisAXw== --ssl --sslAllowInvalidCertificates ./dumps/dump-2016-12-07
 
 ## <a name="next-steps"></a>后续步骤
-- 有关详细信息，请浏览 [DocumentDB：MongoDB 示例的 API](/documentation/articles/documentdb-mongodb-samples/)。
+
+在本教程中，已完成以下内容：
+
+> [!div class="checklist"]
+> * 已检索连接字符串
+> * 已使用 mongoimport 导入 MongoDB 数据
+> * 已使用 mongorestore 导入 MongoDB 数据
+
+现在可以继续学习下一教程，了解如何使用 DocumentDB 查询 MongoDB 数据。 
+
+
 
 <!---Update_Description: wording update -->

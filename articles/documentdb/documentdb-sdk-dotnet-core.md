@@ -5,8 +5,7 @@
     documentationcenter=".net"
     author="rnagpal"
     manager="jhubbard"
-    editor="cgronlun"
-    translationtype="Human Translation" />
+    editor="cgronlun" />
 <tags
     ms.assetid="f899b314-26ac-4ddb-86b2-bfdf05c2abf2"
     ms.service="documentdb"
@@ -14,13 +13,15 @@
     ms.tgt_pltfrm="na"
     ms.devlang="dotnet"
     ms.topic="article"
-    ms.date="03/29/2017"
-    wacn.date="05/08/2017"
+    ms.date="05/10/2017"
     ms.author="rnagpal"
     ms.custom="H1Hack27Feb2017"
-    ms.sourcegitcommit="2c4ee90387d280f15b2f2ed656f7d4862ad80901"
-    ms.openlocfilehash="3e1859e80d483223c47f78ef2ebec8e0c9dfeef9"
-    ms.lasthandoff="04/28/2017" />
+    wacn.date="05/31/2017"
+    ms.translationtype="Human Translation"
+    ms.sourcegitcommit="4a18b6116e37e365e2d4c4e2d144d7588310292e"
+    ms.openlocfilehash="f553ebbeef38d16b6d87068602653a7209616b9b"
+    ms.contentlocale="zh-cn"
+    ms.lasthandoff="05/19/2017" />
 
 # <a name="documentdb-net-core-sdk-release-notes-and-resources"></a>DocumentDB .NET Core SDK：发行说明和资源
 > [AZURE.SELECTOR]
@@ -56,36 +57,50 @@ DocumentDB .NET Core SDK 具有与最新版 [DocumentDB.NET SDK](/documentation/
 > [AZURE.NOTE] 
 > DocumentDB .NET Core SDK 与通用 Windows 平台 (UWP) 应用尚不兼容。 如果不支持 UWP 应用的 .NET Core SDK 感兴趣，请向 [askdocdb@microsoft.com](mailto:askdocdb@microsoft.com) 发送电子邮件。
 
-### <a name="a-name121121httpswwwnugetorgpackagesmicrosoftazuredocumentdbcore121"></a><a name="1.2.1"/>[1.2.1](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB.Core/1.2.1)
+### <a name="a-name130130"></a><a name="1.3.0"></a>1.3.0
+
+-    添加了对每分钟请求单位数 (RU/m) 功能的支持。
+-    添加了对称为“ConsistentPrefix”的新一致性级别的支持。
+-    添加了对查询单个分区的指标的支持。
+-    添加了对限制查询的继续标记大小的支持。
+-    添加了对失败请求的更详细跟踪的支持。
+-    在 SDK 中进行了一些性能改进。
+
+### <a name="a-name122122"></a><a name="1.2.2"></a>1.2.2
+
+- 修复了忽略 FeedOptions 中为聚合查询提供的 PartitionKey 值的问题。
+- 修复了在中途跨分区执行 OrderBy 查询期间透明处理分区管理的问题。
+
+### <a name="a-name121121"></a><a name="1.2.1"></a>1.2.1
 
 - 修复了在 ASP.NET 上下文内使用时，在某些异步 API 中导致死锁的问题。
 
-### <a name="a-name120120httpswwwnugetorgpackagesmicrosoftazuredocumentdbcore120"></a><a name="1.2.0"/>[1.2.0](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB.Core/1.2.0)
+### <a name="a-name120120"></a><a name="1.2.0"></a>1.2.0
 
 - 修复程序，用于使 SDK 更具弹性，以便在某些情况下自动故障转移。
 
-### <a name="a-name112112httpswwwnugetorgpackagesmicrosoftazuredocumentdbcore112"></a><a name="1.1.2"/>[1.1.2](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB.Core/1.1.2)
+### <a name="a-name112112"></a><a name="1.1.2"></a>1.1.2
 
 - 修复偶尔导致 WebException 的问题：无法解析远程名称。
 - 通过向 ReadDocumentAsync API 添加新重载，添加了对直接读取类型化文档的支持。
 
-### <a name="a-name111111httpswwwnugetorgpackagesmicrosoftazuredocumentdbcore111"></a><a name="1.1.1"/>[1.1.1](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB.Core/1.1.1)
+### <a name="a-name111111"></a><a name="1.1.1"></a>1.1.1
 
 - 添加了对聚合查询（COUNT、MIN、MAX、SUM 和 AVG）的 LINQ 支持。
 - 修复了由于使用了事件处理程序而导致的 ConnectionPolicy 对象的内存泄漏问题。
 - 修复了使用 ETag 时 UpsertAttachmentAsync 不正常工作的问题。
 - 修复了对字符串字段进行排序时跨分区按查询条件排序不正常工作的问题。
 
-### <a name="a-name110110httpswwwnugetorgpackagesmicrosoftazuredocumentdbcore110"></a><a name="1.1.0"/>[1.1.0](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB.Core/1.1.0)
+### <a name="a-name110110"></a><a name="1.1.0"></a>1.1.0
 
 - 添加了对聚合查询（COUNT、MIN、MAX、SUM、AVG）的支持。 请参阅[聚合支持](/documentation/articles/documentdb-sql-query/#Aggregates/)。
 - 将分区集合上的最小吞吐量从 10,100 RU/s 降低到 2500 RU/s。
 
-### <a name="a-name100100httpswwwnugetorgpackagesmicrosoftazuredocumentdbcore100"></a><a name="1.0.0"/>[1.0.0](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB.Core/1.0.0)
+### <a name="a-name100100"></a><a name="1.0.0"></a>1.0.0
 
 通过 DocumentDB .NET Core SDK，可构建能在 Windows、Mac 和 Linux 上快速运行的跨平台 [ASP.NET Core](https://www.asp.net/core) 和 [.NET Core](https://www.microsoft.com/net/core#windows) 应用。 DocumentDB .NET Core SDK 的最新版本完全兼容 [Xamarin](https://www.xamarin.com)，可用于生成面向 iOS、Android 和 Mono (Linux) 的应用程序。  
 
-### <a name="a-name010-preview010-previewhttpswwwnugetorgpackagesmicrosoftazuredocumentdbcore010-preview"></a><a name="0.1.0-preview"/>[0.1.0-preview](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB.Core/0.1.0-preview)
+### <a name="a-name010-preview010-preview"></a><a name="0.1.0-preview"></a>0.1.0-preview
 
 通过 DocumentDB .NET Core 预览版 SDK，可构建能在 Windows、Mac 和 Linux 上快速运行的跨平台 [ASP.NET Core](https://www.asp.net/core) 和 [.NET Core](https://www.microsoft.com/net/core#windows) 应用。
 
@@ -101,6 +116,8 @@ DocumentDB .NET Core 预览版 SDK 与最新版 [DocumentDB.NET SDK](/documentat
 
 | 版本 | 发布日期 | 停用日期 |
 | --- | --- | --- |
+| [1.3.0](#1.3.0) |2017 年 5 月 10 日 |--- |
+| [1.2.2](#1.2.2) |2017 年 4 月 19 日 |--- |
 | [1.2.1](#1.2.1) |2017 年 3 月 29 日 |--- |
 | [1.2.0](#1.2.0) |2017 年 3 月 25 日 |--- |
 | [1.1.2](#1.1.2) |2017 年 3 月 20 日 |--- |
@@ -110,6 +127,6 @@ DocumentDB .NET Core 预览版 SDK 与最新版 [DocumentDB.NET SDK](/documentat
 | [0.1.0-preview](#0.1.0-preview) |2016 年 11 月 15 日 |2016 年 12 月 31 日 |
 
 ## <a name="see-also"></a>另请参阅
-若要了解有关 DocumentDB 的详细信息，请参阅 [Azure DocumentDB](/home/features/documentdb/) 服务页。
+若要了解有关 DocumentDB 的详细信息，请参阅 [DocumentDB](/home/features/documentdb/) 服务页。
 
 <!---Update_Description: wording update -->

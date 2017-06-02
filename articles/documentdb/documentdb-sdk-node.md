@@ -5,9 +5,7 @@
     documentationcenter="nodejs"
     author="rnagpal"
     manager="jhubbard"
-    editor="cgronlun"
-    translationtype="Human Translation" />
-    
+    editor="cgronlun" />
 <tags
     ms.assetid="9d5621fa-0e11-4619-a28b-a19d872bcf37"
     ms.service="documentdb"
@@ -15,13 +13,15 @@
     ms.tgt_pltfrm="na"
     ms.devlang="nodejs"
     ms.topic="article"
-    ms.date="03/16/2017"
-    wacn.date="04/17/2017"
+    ms.date="05/10/2017"
+    wacn.date="05/31/2017"
     ms.author="rnagpal"
     ms.custom="H1Hack27Feb2017"
-    ms.sourcegitcommit="7cc8d7b9c616d399509cd9dbdd155b0e9a7987a8"
-    ms.openlocfilehash="c1b9f8697c90b6bde6d198e17a5fcca0c492e46a"
-    ms.lasthandoff="04/07/2017" />
+    ms.translationtype="Human Translation"
+    ms.sourcegitcommit="4a18b6116e37e365e2d4c4e2d144d7588310292e"
+    ms.openlocfilehash="fe56a37967f2a59da68dad2b151daf8513120938"
+    ms.contentlocale="zh-cn"
+    ms.lasthandoff="05/19/2017" />
 
 # <a name="documentdb-nodejs-sdk-release-notes-and-resources"></a>DocumentDB Node.js SDK：发行说明和资源
 > [AZURE.SELECTOR]
@@ -34,7 +34,6 @@
 - [REST 资源提供程序](https://docs.microsoft.com/zh-cn/rest/api/documentdbresourceprovider/)
 - [SQL](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx)
 
-## DocumentDB Node.js API 和 SDK
 <table>
 
 <tr><td>**下载 SDK**</td><td><a href="https://www.npmjs.com/package/documentdb">NPM</a></td></tr>
@@ -55,6 +54,12 @@
 </table>
 
 ## <a name="release-notes"></a>发行说明
+
+### <a name="1.12.0"/>1.12.0</a>
+- 添加了对每分钟请求单位数 (RU/m) 功能的支持。
+- 添加了对称为“ConsistentPrefix”的新[一致性级别](/documentation/articles/documentdb-consistency-levels/)的支持。
+- 添加了对 UriFactory 的支持。
+- 修复了 unicode 支持 bug。 （GitHub 问题 #171）
 
 ### <a name="1.11.0"/>1.11.0</a>
 - 添加了对聚合查询（COUNT、MIN、MAX、SUM、AVG）的支持。
@@ -158,6 +163,7 @@ Microsoft 至少会在停用 SDK 的 **12 个月**之前发出通知，以便顺
 
 | 版本 | 发布日期 | 停用日期 |
 | --- | --- | --- |
+| [1.12.0](#1.12.0) |2017 年 5 月 10 日 |--- |
 | [1.11.0](#1.11.0) |2017 年 3 月 16 日 |--- |
 | [1.10.2](#1.10.2) |2017 年 1 月 27 日 |--- |
 | [1.10.1](#1.10.1) |2016 年 12 月 22 日 |--- |
@@ -188,6 +194,6 @@ Microsoft 至少会在停用 SDK 的 **12 个月**之前发出通知，以便顺
 [AZURE.INCLUDE [documentdb-sdk-faq](../../includes/documentdb-sdk-faq.md)]
 
 ## <a name="see-also"></a>另请参阅
-若要了解有关 DocumentDB 的详细信息，请参阅 [Azure DocumentDB](/home/features/documentdb/) 服务页。
+若要了解有关 DocumentDB 的详细信息，请参阅 [DocumentDB](/home/features/documentdb/) 服务页。
 
 <!--Update_Description: wording update-->

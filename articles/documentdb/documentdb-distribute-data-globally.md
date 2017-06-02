@@ -1,12 +1,11 @@
 <properties
-    pageTitle="使用 DocumentDB 全局分发数据 | Azure"
-    description="了解如何通过 Azure DocumentDB（一种完全托管的 NoSQL 数据库服务），使用全局数据库进行全球范围的异地复制、故障转移和数据恢复。"
+    pageTitle="使用 DocumentDB 全局分配数据 | Azure"
+    description="了解如何通过全球分布式多模型数据库服务 DocumentDB，使用全局数据库进行全球范围的异地复制、故障转移和数据恢复。"
     services="documentdb"
     documentationcenter=""
     author="arramac"
     manager="jhubbard"
-    editor=""
-    translationtype="Human Translation" />
+    editor="" />
 <tags
     ms.assetid="ba5ad0cc-aa1f-4f40-aee9-3364af070725"
     ms.service="documentdb"
@@ -15,18 +14,22 @@
     ms.tgt_pltfrm="na"
     ms.workload="na"
     ms.date="03/14/2017"
-    wacn.date="04/17/2017"
+    wacn.date="05/31/2017"
     ms.author="arramac"
-    ms.sourcegitcommit="7cc8d7b9c616d399509cd9dbdd155b0e9a7987a8"
-    ms.openlocfilehash="4be2f81ef60496427701a96dcb0b9e5f508dd415"
-    ms.lasthandoff="04/07/2017" />
+    ms.translationtype="Human Translation"
+    ms.sourcegitcommit="4a18b6116e37e365e2d4c4e2d144d7588310292e"
+    ms.openlocfilehash="ee628332ede0150fc3278426dc7d1e3cf01b6f78"
+    ms.contentlocale="zh-cn"
+    ms.lasthandoff="05/19/2017" />
 
-# <a name="documentdb---a-globally-distributed-database-service-on-azure"></a>DocumentDB - Azure 上的全球分布式数据库服务
-Azure 无所不在 - 跨 30 多个地理区域，遍布全球并且仍在持续扩展中。 遍及全球的 Azure 为开发人员提供一种差异化功能，让他们轻松构建、部署和管理全球分布的应用程序。 DocumentDB 是 Microsoft 分布在全球各地的多租户数据库系统，旨在让开发人员构建全球规模的应用程序。 使用 DocumentDB 可跨数目不限的地理区域弹性缩放吞吐量与存储。 该服务提供 P99 的低延迟、99.99% 的高可用性和可预测的吞吐量保证，以及[多个定义完善的一致性模型](/documentation/articles/documentdb-consistency-levels/) - 均由综合 SLA 提供支持。 凭借其[架构不可知和经写入优化的数据库引擎](http://www.vldb.org/pvldb/vol8/p1668-shukla.pdf)，DocumentDB 默认能够自动索引其引入的所有数据并以不受规模影响的方式服务于 [SQL](/documentation/articles/documentdb-sql-query/)、[MongoDB](/documentation/articles/documentdb-protocol-mongodb/) 和 [JavaScript 语言集成查询](/documentation/articles/documentdb-programming/#javascript-language-integrated-query-api/)。 作为一种云服务，DocumentDB 通过多租户和全局分发获得了全面彻底的精心设计。
+# <a name="how-to-distribute-data-globally-with-azure-documentdb"></a>如何使用 DocumentDB 全局分配数据？
+Azure 无所不在 - 跨 30 多个地理区域，遍布全球并且仍在持续扩展中。 遍及全球的 Azure 为开发人员提供一种差异化功能，让他们轻松构建、部署和管理全球分布的应用程序。 
+
+[DocumentDB](/documentation/articles/documentdb-introduction/) 是 Microsoft 针对任务关键型应用程序提供的全局分布式多模型数据库服务。 DocumentDB 在全球范围内提供[统包全局分发](/documentation/articles/documentdb-distribute-data-globally/)、吞吐量和存储的弹性扩展、99% 的情况下低至个位数的毫秒级延迟、[五个妥善定义的一致性级别](/documentation/articles/documentdb-consistency-levels/)以及得到保证的高可用性，所有这些均由行业领先的 SLA 提供支持。 DocumentDB [自动为数据编制索引](http://www.vldb.org/pvldb/vol8/p1668-shukla.pdf)，无需客户管理架构和索引。 它采用多种模型，支持文档、键-值、图形和列式数据模型。 作为一种基于云的服务，DocumentDB 通过多租户和全局分发获得了全面彻底的精心设计。
 
 **已分区并分布在三个 Azure 区域的单个 DocumentDB 集合**
 
-![已分区并分布在三个区域的 Azure DocumentDB 集合](./media/documentdb-distribute-data-globally/documentdb-global-apps.png)
+![已分区并分布在三个区域的 DocumentDB 集合](./media/documentdb-distribute-data-globally/documentdb-global-apps.png)
 
 正如我们生成 DocumentDB 时所获知的一样，添加全局分发不能事后才进行 - 不能将其“锁定”到“单一站点”数据库系统之上。 全球分布式数据库提供的功能远远超过“单站点”数据库提供的传统地区性灾难恢复（异地灾难恢复）功能。 提供异地灾难恢复功能的单站点数据库是分布在全球各地的数据库的严格子集。 
 
@@ -42,14 +45,14 @@ Azure 通过将新的地理区域上线，不断扩大其地理覆盖范围。 �
 
 **默认情况下，在所有 Azure 区域中都可使用 DocumentDB**
 
-![所有 Azure 区域都已推出 DocumentDB](./media/documentdb-distribute-data-globally/azure-regions.png)
+![在所有 Azure 区域中都可使用 DocumentDB](./media/documentdb-distribute-data-globally/azure-regions.png)
 
 ### <a id="UnlimitedRegionsPerAccount"></a>将数目不限的区域与 DocumentDB 数据库帐户相关联
-在 DocumentDB 中，可将任意数量的 Azure 区域与 DocumentDB 数据库帐户相关联。 除了地域隔离限制（例如在中国和德国）以外，可与 DocumentDB 数据库帐户关联的区域数目没有限制。 下图显示了一个配置跨越了 21 个 Azure 区域的数据库帐户。  
+在 DocumentDB 中，可将任意数量的 Azure 区域与 DocumentDB 数据库帐户相关联。 除了地域隔离限制（例如在中国和德国）以外，可与 DocumentDB 数据库帐户关联的区域数目没有限制。 下图显示了一个配置跨越了 25 个 Azure 区域的数据库帐户。  
 
-**某个租户的跨 21 个 Azure 区域的 DocumentDB 数据库帐户**
+**某个租户的跨 25 个 Azure 区域的 DocumentDB 数据库帐户**
 
-![跨 21 个 Azure 区域的 DocumentDB 数据库帐户](./media/documentdb-distribute-data-globally/documentdb-spanning-regions.png)
+![跨 25 个 Azure 区域的 DocumentDB 数据库帐户](./media/documentdb-distribute-data-globally/documentdb-spanning-regions.png)
 
 ### <a id="PolicyBasedGeoFencing"></a>基于策略的地域隔离
 DocumentDB 在设计上提供基于策略的地域隔离功能。 地域隔离是一个重要组件，确保遵循数据监管与法规遵循限制，防止将特定的地区与帐户相关联。 地域隔离的例子包括但不限于：不能超过主权云（例如中国和德国）或政府税务边界（例如澳洲）界定各区域的全局分布范畴。 策略是使用 Azure 订阅的元数据控制的。
@@ -58,11 +61,11 @@ DocumentDB 在设计上提供基于策略的地域隔离功能。 地域隔离�
 DocumentDB 允许在任何时间点向数据库帐户添加（关联）或删除（取消关联）区域（请参阅[前图](#UnlimitedRegionsPerAccount)）。 通过跨分区并行复制数据，DocumentDB 可确保新的区域上线后 30 分钟内即可在全球任何位置使用 DocumentDB（最多 100 TB）。 
 
 ### <a id="FailoverPriorities"></a>故障转移优先级
-为了在出现多个区域性故障时准确控制区域故障转移的顺序，DocumentDB 允许将优先级关联到与数据库帐户关联的各个区域（参阅下图）。 DocumentDB 确保自动故障转移序列以指定的优先级顺序发生。
+为了在出现多个区域性故障时准确控制区域故障转移的顺序，DocumentDB 允许将优先级关联到与数据库帐户关联的各个区域（参阅下图）。 DocumentDB 确保自动故障转移序列以指定的优先级顺序发生。 有关区域故障转移的详细信息，请参阅 [DocumentDB 中的自动区域故障转移以实现业务连续性](/documentation/articles/documentdb-regional-failovers/)。
 
 **DocumentDB 的租户可对与数据库帐户关联的区域配置故障转移优先级顺序（右窗格）**
 
-![通过 Azure DocumentDB 配置故障转移优先级](./media/documentdb-distribute-data-globally/documentdb-failover-priorities.png)
+![通过 DocumentDB 配置故障转移优先级](./media/documentdb-distribute-data-globally/documentdb-failover-priorities.png)
 
 ### <a id="OfflineRegions"></a>以动态方式使区域“离线”
 DocumentDB 允许让数据库帐户在特定区域离线，之后再让其重新上线。 标记为“离线”的区域不主动参与复制，且不包括在故障转移顺序中。 这样，用户便可以在具有潜在风险的升级推出到应用程序之前，在一个读取区域中冻结上一个已知良好的数据库映像。
@@ -71,12 +74,12 @@ DocumentDB 允许让数据库帐户在特定区域离线，之后再让其重新
 DocumentDB 会公开由 SLA 提供支持的[多个定义完善的一致性级别](/documentation/articles/documentdb-consistency-levels/)。 可根据工作负荷/方案选择特定的一致性模型（从可用的选项列表选择）。 
 
 ### <a id="TunableConsistency"></a>可优化的全局复制数据库一致性
-DocumentDB 允许基于每个请求在运行时以编程方式重写和放宽默认的一致性选择。 
+DocumentDB 允许基于每个请求在运行时以编程方式替代和放宽默认的一致性选择。 
 
 ### <a id="DynamicallyConfigurableReadWriteRegions"></a>可动态配置的读取和写入区域
 DocumentDB 允许将区域配置为“读取”、“写入”或“读/写”区域（与数据库关联）。 
 
-### <a id="ElasticallyScaleThroughput"></a>跨 Azure 区域灵活缩放吞吐量
+### <a id="ElasticallyScaleThroughput"></a><a name="scaling-across-the-planet"></a>跨 Azure 区域灵活缩放吞吐量
 能够以编程方式预配吞吐量，灵活缩放 DocumentDB 集合。 吞吐量将应用到分发集合的所有区域。
 
 ### <a id="GeoLocalReadsAndWrites"></a>异地-本地读取和写入
@@ -94,25 +97,8 @@ DocumentDB 支持在发生一个或多个区域性故障时自动进行故障转
 ### <a id="MultiHomingAPIs"></a>DocumentDB 中的多宿主 API
 DocumentDB 允许使用逻辑（区域不可知）或物理（特定于区域）终结点与数据库交互。 使用逻辑终结点可确保发生故障转移时，应用程序可以透明方式采用多个宿主。 后者（物理终结点）提供对应用程序的细粒度控制，以将读取和写入重定向到特定区域。
 
-### <a id="ReadPreferencesAPIforMongoDB"></a> API for MongoDB 中的可配置读取首选项
-使用 API for MongoDB，你可以为全局分布式数据库指定集合的读取首选项。 为实现低延迟读取和全局高可用性，建议你将集合的读取首选项设置为“就近”。 当读取首选项配置为“就近”时，将从最近的区域进行读取。
-
-    var collection = database.GetCollection<BsonDocument>(collectionName);
-    collection = collection.WithReadPreference(new ReadPreference(ReadPreferenceMode.Nearest));
-
-对于具有主读取/写入区域和用于灾难恢复 (DR) 方案的辅助区域的应用程序，建议你将集合的读取首选项设置为“辅助优先”。 当读取首选项配置为“辅助优先”时，如果主区域不可用，将从辅助区域进行读取。
-
-    var collection = database.GetCollection<BsonDocument>(collectionName);
-    collection = collection.WithReadPreference(new ReadPreference(ReadPreferenceMode.SecondaryPreferred));
-
-最后，如果你愿意，可以手动指定读取区域。 可以在你的读取首选项内设置区域标记。
-
-    var collection = database.GetCollection<BsonDocument>(collectionName);
-    var tag = new Tag("region", "Southeast Asia");
-    collection = collection.WithReadPreference(new ReadPreference(ReadPreferenceMode.Secondary, new[] { new TagSet(new[] { tag }) }));
-
 ### <a id="TransparentSchemaMigration"></a>透明且一致的数据库架构和索引迁移 
-DocumentDB 完全与 [架构无关](http://www.vldb.org/pvldb/vol8/p1668-shukla.pdf)。 其数据库引擎的特殊设计允许其自动且同步地索引所有其引入的数据，而无需要求用户提供任何架构或辅助索引。 这使用户能够快速地循环访问全局分布式应用程序，而无需担心数据库架构和索引迁移或者协调多阶段应用程序的架构更改推出。 DocumentDB 保证用户对索引策略进行的任何显式更改不会导致性能或可用性的降低。  
+DocumentDB 完全与[架构无关](http://www.vldb.org/pvldb/vol8/p1668-shukla.pdf)。 其数据库引擎的特殊设计允许其自动且同步地索引所有其引入的数据，而无需要求用户提供任何架构或辅助索引。 这使用户能够快速地循环访问全局分布式应用程序，而无需担心数据库架构和索引迁移或者协调多阶段应用程序的架构更改推出。 DocumentDB 保证用户对索引策略进行的任何显式更改不会导致性能或可用性的降低。  
 
 ### <a id="ComprehensiveSLAs"></a>综合 SlA（不只是高可用性）
 作为一种全局分布式数据库服务，无论与数据库关联的区域数量是多少，DocumentDB 都可为整个数据库提供针对**数据丢失**、**可用性**、**P99 的延迟**、**吞吐量**和**一致性**的定义完善的 SLA。  
@@ -128,7 +114,7 @@ DocumentDB 确保无需读取操作便可跨多个区域联系副本，提供特
 ### <a id="LatencyAndAvailability"></a>延迟与可用性的关系 
 延迟与可用性类似于同一硬币的两面。 我们讨论的是出现故障时的操作延迟（稳定状态下）和可用性。 从应用程序角度来看，慢速运行的数据库操作与不可用的数据库没有区别。 
 
-为将高延迟与不可用区分开来，DocumentDB 针对各种数据库操作的延迟提供绝对上限。 如果数据库操作完成所用时间超过上限，DocumentDB 将返回超时错误。 DocumentDB 可用性 SLA 确保根据可用性 SLA 计算超时。 
+为将高延迟与不可用区分开来，DocumentDB 针对各种数据库操作的延迟提供绝对上限。 如果数据库操作完成所用时间超过上限，DocumentDB将返回超时错误。 DocumentDB 可用性 SLA 确保根据可用性 SLA 计算超时。 
 
 ### <a id="LatencyAndThroughput"></a>延迟与吞吐量的关系
 DocumentDB 不会让用户在延迟和吞吐量之间做出选择。 它遵循 SLA，两者延迟均为 P99 并提供预配的吞吐量。 
@@ -175,7 +161,7 @@ DocumentDB 的一致性 SLA 可保证 100% 的读取请求满足所请求的一�
         <td>100%</td>
     </tr>
     <tr>
-        <td>最终</td>
+        <td>一致前缀</td>
         <td>一致前缀</td>
         <td>100%</td>
     </tr>
@@ -194,7 +180,7 @@ Prof.Daniel Abadi 提出了更全面的 CAP 变体，名为 [PACELC](http://cs-w
 
 ### <a id="ConsistencyAndThroughput"></a>一致性与吞吐量的关系
 由于特定一致性模型的实现依赖于所选的 [仲裁类型](http://cs.brown.edu/~mph/HerlihyW90/p463-herlihy.pdf)，因此吞吐量也会根据所选一致性而有所不同。 例如，在 DocumentDB 中，强一致读取的吞吐量大约是最终一致读取的一半。 
-
+ 
 **DocumentDB 中特定一致性级别的读取容量关系**
 
 ![一致性与吞吐量之间的关系](./media/documentdb-distribute-data-globally/consistency-and-throughput.png)
@@ -212,10 +198,10 @@ DocumentDB 集合使用两个维度进行分布 - 先在某个区域内，然后
 - 然后，每个资源分区跨多个区域分布。 跨各个区域拥有相同密钥集的资源分区构成分区集（请参阅[前图](#ThroughputGuarantees)）。  通过跨多个区域使用状态机复制，对分区集内的资源分区进行协调。 根据配置的一致性级别，使用不同的拓扑（例如，星形、菊花链、树状等）动态配置分区集内的资源分区。 
 
 凭借高响应分区管理、负载均衡和严格的资源监控，DocumentDB 允许跨多个 Azure 区域在 DocumentDB 集合上灵活缩放吞吐量。 集合上不断变化的吞吐量是 DocumentDB 中的运行时操作，例如，通过其他数据库操作，DocumentDB 可保证请求延迟的绝对上限以更改吞吐量。 例如，下图显示了一个根据需求灵活预配吞吐量（在两个区域之间，范围为 1M-10M 个请求/秒）的客户集合。
-
+ 
 **灵活预配吞吐量的客户集合（1M-10M 个请求/秒）**
 
-![Azure DocumentDB 灵活预配的吞吐量](./media/documentdb-distribute-data-globally/documentdb-elastic-throughput.png)
+![DocumentDB 灵活预配的吞吐量](./media/documentdb-distribute-data-globally/documentdb-elastic-throughput.png)
 
 ### <a id="ThroughputAndConsistency"></a>吞吐量与一致性的关系 
 与 [一致性与吞吐量的关系](#ConsistencyAndThroughput)相同。
@@ -230,19 +216,19 @@ DocumentDB 为每一个数据和控制平面操作提供 99.99% 的运行时间�
 [一致性与可用性的关系](#ConsistencyAndAvailability)、[延迟与可用性的关系](#LatencyAndAvailability)和[吞吐量与可用性的关系](#ThroughputAndAvailability)中介绍了可用性与一致性、延迟和吞吐量的关系。 
 
 ## <a id="GuaranteesAgainstDataLoss"></a>针对“数据丢失”的保证和系统行为
-在 DocumentDB 中，集合的每个分区通过至少跨 10-20 个容错域分布的大量副本实现高度可用。 所有写入先由副本的多数仲裁进行同步和持久地提交，然后才会确认到客户端。 通过协调，在跨多个区域分布的分区中应用异步复制。 DocumentDB 保证租户启动的手动故障转移不会发生数据丢失。 在自动故障转移期间，作为其 SLA 的一部分，DocumentDB 会保证所配置的关于数据丢失窗口的受限停滞间隔的上限。
+在 DocumentDB 中，集合的每个分区通过至少跨 10-20 个容错域分布的大量副本实现高度可用。 所有写入先由副本的多数仲裁进行同步和持久地提交，然后才会确认到客户端。 通过协调，在跨多个区域分布的分区中应用异步复制。 DocumentDB 保证租户启动的手动故障转移不会发生数据丢失。 在自动故障转移期间，作为其 SLA 的一部分，DocumentDB 会保证所配置的关于数据丢失窗口的有限过期间隔的上限。
 
 ## <a id="CustomerFacingSLAMetrics"></a>面向 SLA 指标的客户
 DocumentDB 以透明方式公开吞吐量、延迟、一致性和可用性指标。 这些指标可通过 Azure 门户预览以编程方式进行访问（参阅下图）。 还可以使用 Azure Application Insights 对各种阈值设置警报。
-
+ 
 **一致性、延迟、吞吐量和可用性指标以透明方式向每个租户提供**
 
-![Azure DocumentDB 中客户可见的 SLA 指标](./media/documentdb-distribute-data-globally/documentdb-customer-slas.png)
+![DocumentDB 中客户可见的 SLA 指标](./media/documentdb-distribute-data-globally/documentdb-customer-slas.png)
 
 ## <a id="Next Steps"></a>后续步骤
 - 若要使用 Azure 门户预览实现 DocumentDB 帐户的全局复制，请参阅[如何使用 Azure 门户预览执行 DocumentDB 全局数据库复制](/documentation/articles/documentdb-portal-global-replication/)。
-- 若要了解如何通过 DocumentDB 实现多主体系结构，请参阅[使用 Azure DocumentDB 实现的多主数据库体系结构 ](/documentation/articles/documentdb-multi-region-writers/)。
-- 若要深入了解 DocumentDB 中自动和手动故障转移如何工作，请参阅[Azure DocumentDB 中的区域故障转移](/documentation/articles/documentdb-regional-failovers/)。
+- 若要了解如何通过 DocumentDB 实现多主体系结构，请参阅[使用 DocumentDB 实现的多主数据库体系结构 ](/documentation/articles/documentdb-multi-region-writers/)。
+- 若要深入了解 DocumentDB 中自动和手动故障转移如何工作，请参阅 [DocumentDB 中的区域故障转移](/documentation/articles/documentdb-regional-failovers/)。
 
 ## <a id="References"></a>参考
 1. Eric Brewer。 [Towards Robust Distributed Systems](https://people.eecs.berkeley.edu/~brewer/cs262b-2004/PODC-keynote.pdf)（迈向强大稳定的分布式系统）
