@@ -5,8 +5,7 @@
     author="mimig1"
     manager="jhubbard"
     editor="monicar"
-    documentationcenter=""
-    translationtype="Human Translation" />
+    documentationcenter="" />
 <tags
     ms.assetid="8641225d-e839-4ba6-a6fd-d6314ae3a51c"
     ms.service="documentdb"
@@ -15,14 +14,16 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="03/23/2017"
-    wacn.date="05/08/2017"
     ms.author="mimig"
-    ms.sourcegitcommit="2c4ee90387d280f15b2f2ed656f7d4862ad80901"
-    ms.openlocfilehash="e3fb75afab0fe6b893afc0037ecdb243994a20a3"
-    ms.lasthandoff="04/28/2017" />
+    wacn.date="05/31/2017"
+    ms.translationtype="Human Translation"
+    ms.sourcegitcommit="4a18b6116e37e365e2d4c4e2d144d7588310292e"
+    ms.openlocfilehash="d87da8d37b4839f22b2bf65444c85b9eb00b6109"
+    ms.contentlocale="zh-cn"
+    ms.lasthandoff="05/19/2017" />
 
-# <a name="securing-access-to-documentdb-data"></a>保护对 DocumentDB 数据的访问
-本文概述了如何保护对存储在 [Azure DocumentDB](/home/features/documentdb/)中的数据的访问。
+# <a name="securing-access-to-azure-documentdb-data"></a>保护对 DocumentDB 数据的访问
+本文概述了如何保护对存储在 [DocumentDB](/home/features/documentdb/) 中的数据的访问。
 
 DocumentDB 使用两种类型的密钥来验证用户身份并提供其数据和资源的访问权限。 
 
@@ -56,7 +57,7 @@ DocumentDB 帐户除了有两个主密钥以外，还有两个只读密钥。 �
 以下代码示例演示如何使用 DocumentDB 帐户终结点和主密钥来实例化 DocumentClient 并创建数据库。 
 
     //Read the DocumentDB endpointUrl and authorization keys from config.
-    //These values are available from the Azure portal on the NOSQL (DocumentDB) account blade under "Keys".
+    //These values are available from the Azure portal on the DocumentDB account blade under "Keys".
     //NB > Keep these values in a safe and secure location. Together they provide Administrative access to your DocDB account.
 
     private static readonly string endpointUrl = ConfigurationManager.AppSettings["EndPointUrl"];
@@ -71,7 +72,7 @@ DocumentDB 帐户除了有两个主密钥以外，还有两个只读密钥。 �
             Id = databaseName
         });
 
-## 资源令牌 <a id="resource-tokens"></a>
+## 资源令牌 <a name="resource-tokens"></a>
 
 资源令牌提供对数据库中应用程序资源的访问权限。 资源令牌：
 - 提供对特定集合、分区键、文档、附件、存储过程、触发器和 UDF 的访问权限。
@@ -82,7 +83,7 @@ DocumentDB 帐户除了有两个主密钥以外，还有两个只读密钥。 �
 - 可以安全替代主密钥。 
 - 使客户端能够根据它们的权限读取、写入和删除 DocumentDB 帐户中的资源。
 
-如果想要为不能通过主密钥得到信任的客户端提供对 DocumentDB 帐户中资源的访问权限，你可以使用资源令牌（通过创建 DocumentDB 用户和权限）。  
+如果想要为不能通过主密钥得到信任的客户端提供对 DocumentDB 帐户中资源的访问权限，可以使用资源令牌（通过创建 DocumentDB 用户和权限来使用）。  
 
 DocumentDB 资源令牌提供一种安全的替代方案，使客户端能够根据授予的权限读取、写入和删除 DocumentDB 帐户中的资源，而无需主密钥或只读密钥。
 
@@ -103,7 +104,7 @@ DocumentDB 资源令牌提供一种安全的替代方案，使客户端能够根
 
 有关用于生成或代理资源令牌的中间层服务的示例，请参阅 [ResourceTokenBroker 应用](https://github.com/Azure/azure-documentdb-dotnet/tree/master/samples/xamarin/UserItems/ResourceTokenBroker/ResourceTokenBroker/Controllers)。
 
-## 用户 <a id="users"></a>
+## 用户 <a name="users"></a>
 DocumentDB 用户与 DocumentDB 数据库关联。  每个数据库可以包含零个或多个 DocumentDB 用户。  以下代码示例演示如何创建 DocumentDB 用户资源。
 
     //Create a user.
@@ -119,7 +120,7 @@ DocumentDB 用户与 DocumentDB 数据库关联。  每个数据库可以包含�
 > 
 > 
 
-## 权限 <a id="permissions"></a>
+## 权限 <a name="permissions"></a>
 DocumentDB 权限资源与 DocumentDB 用户关联。  每个用户可能包含零个或多个 DocumentDB 权限。  权限资源提供对用户在尝试访问某个特定应用程序资源时需要的安全令牌的访问权限。
 权限资源提供两种可用的访问级别：
 
@@ -165,7 +166,7 @@ DocumentDB 权限资源与 DocumentDB 用户关联。  每个用户可能包含�
     DocumentClient userClient = new DocumentClient(new Uri(endpointUrl), permList);
 
 ## <a name="next-steps"></a>后续步骤
-- 若要详细了解 DocumentDB 数据库安全性，请参阅 [DocumentDB：NoSQL 数据库安全性](/documentation/articles/documentdb-nosql-database-security/)。
+- 若要详细了解 DocumentDB 数据库安全性，请参阅 [DocumentDB：数据库安全性](/documentation/articles/documentdb-nosql-database-security/)。
 - 若要了解如何管理主密钥和只读密钥，请参阅[如何管理 DocumentDB 帐户](/documentation/articles/documentdb-manage-account/#a-idkeysaview-copy-and-regenerate-access-keys/)。
 - 若要了解如何构造 DocumentDB 授权令牌，请参阅 [DocumentDB 资源的访问控制](https://docs.microsoft.com/zh-cn/rest/api/documentdb/access-control-on-documentdb-resources)。
 

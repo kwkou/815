@@ -1,14 +1,12 @@
 <properties
-    pageTitle="性能提示 — Azure DocumentDB NoSQL | Azure"
-    description="了解用于提高 Azure DocumentDB 数据库性能的客户端配置选项"
+    pageTitle="性能提示 - DocumentDB NoSQL | Azure"
+    description="了解用于提高 DocumentDB 数据库性能的客户端配置选项"
     keywords="如何提高数据库性能"
     services="documentdb"
     author="mimig1"
     manager="jhubbard"
     editor=""
-    documentationcenter=""
-    translationtype="Human Translation" />
-    
+    documentationcenter="" />
 <tags
     ms.assetid="94ff155e-f9bc-488f-8c7a-5e7037091bb9"
     ms.service="documentdb"
@@ -17,14 +15,16 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="02/23/2017"
-    wacn.date="04/17/2017"
+    wacn.date="05/31/2017"
     ms.author="mimig"
-    ms.sourcegitcommit="7cc8d7b9c616d399509cd9dbdd155b0e9a7987a8"
-    ms.openlocfilehash="81f0348e99b236895ebf1d56b5c2e5e33497f99a"
-    ms.lasthandoff="04/07/2017" />
+    ms.translationtype="Human Translation"
+    ms.sourcegitcommit="4a18b6116e37e365e2d4c4e2d144d7588310292e"
+    ms.openlocfilehash="2c05be9524d94a28cb5a29dc12cee50bdc2fbe04"
+    ms.contentlocale="zh-cn"
+    ms.lasthandoff="05/19/2017" />
 
-# <a name="performance-tips-for-documentdb"></a>DocumentDB 性能提示
-Azure DocumentDB 是一个快速、弹性的分布式数据库，可以在提供延迟与吞吐量保证的情况下无缝缩放。 使用 DocumentDB 时，无需对体系结构进行重大更改或编写复杂的代码就能缩放数据库。 扩展和缩减操作就像执行单个 API 调用或 [SDK 方法调用](/documentation/articles/documentdb-set-throughput/#set-throughput-sdk/)一样简单。 但是，由于 DocumentDB 是通过网络调用访问的，因此你可以通过客户端优化来获得最高性能。
+# <a name="performance-tips-for-azure-documentdb"></a>DocumentDB 性能提示
+DocumentDB 是一个快速、弹性的分布式数据库，可以在提供延迟与吞吐量保证的情况下无缝缩放。 使用 DocumentDB 时，无需对体系结构进行重大更改或编写复杂的代码就能缩放数据库。 扩展和缩减操作就像执行单个 API 调用或 [SDK 方法调用](/documentation/articles/documentdb-set-throughput/#set-throughput-sdk/)一样简单。 但是，由于 DocumentDB 是通过网络调用访问的，因此可以通过客户端优化来获得最高性能。
 
 如果有“如何改善数据库性能？”的疑问， 请考虑以下选项：
 
@@ -32,7 +32,7 @@ Azure DocumentDB 是一个快速、弹性的分布式数据库，可以在提供
 
 1. **连接策略：使用直接连接模式** <a id="direct-connection"></a>
 
-    客户端连接到 Azure DocumentDB 的方式对性能有重大影响（尤其对观察到的客户端延迟而言）。 有两个重要配置设置可用于配置客户端连接策略 - 连接*模式*和[连接*协议*](#connection-protocol)。  两种可用模式：
+    客户端连接到 DocumentDB 的方式对性能有重大影响（尤其对观察到的客户端延迟而言）。 有两个重要配置设置可用于配置客户端连接策略 - 连接*模式*和[连接*协议*](#connection-protocol)。  两种可用模式：
 
    1. 网关模式（默认）
    2. 直接模式
@@ -71,6 +71,7 @@ Azure DocumentDB 是一个快速、弹性的分布式数据库，可以在提供
 
         await client.OpenAsync();
 
+
 4. **将客户端并置在同一 Azure 区域以提高性能** <a id="same-region"></a>
 
     如果可能，请将任何调用 DocumentDB 的应用程序放在与 DocumentDB 数据库相同的区域中。 通过大致的比较发现，在同一区域中对 DocumentDB 的调用可在 1-2 毫秒内完成，而美国西岸和美国东岸之间的延迟则大于 50 毫秒。 根据请求采用的路由，各项请求从客户端传递到 Azure 数据中心边界时的此类延迟可能有所不同。 确保调用方应用程序位于与预配的 DocumentDB 终结点相同的 Azure 区域中，有可能会实现最低的延迟。 有关可用区域的列表，请参阅 [Azure Regions](https://azure.microsoft.com/regions/#services)（Azure 区域）。
@@ -79,13 +80,13 @@ Azure DocumentDB 是一个快速、弹性的分布式数据库，可以在提供
 
 5. **增加线程/任务数目** <a id="increase-threads"></a>
 
-    由于对 DocumentDB 的调用是通过网络执行的，因此你可能需要改变请求的并行度，以便最大程度地减少客户端应用程序等待请求的时间。 例如，如果使用 .NET 的 [任务并行库](https://msdn.microsoft.com//library/dd460717.aspx)，请创建大约几百个读取或写入 DocumentDB 的任务。
+    由于对 DocumentDB 的调用是通过网络执行的，因此可能需要改变请求的并行度，以便最大程度地减少客户端应用程序等待请求的时间。 例如，如果使用 .NET 的[任务并行库](https://msdn.microsoft.com//library/dd460717.aspx)，请创建大约几百个读取或写入 DocumentDB 的任务。
 
 ## <a name="sdk-usage"></a>SDK 用法
 1. **安装最新的 SDK**
 
     DocumentDB SDK 正在不断改进，以求提供最佳性能。 请参阅 [DocumentDB SDK](/documentation/articles/documentdb-sdk-dotnet/) 页来了解最新的 SDK 并查看改进项目。
-2. **在应用程序生存期内使用单一实例 DocumentDB 客户端**
+2. 在应用程序生存期内使用单一实例 DocumentDB 客户端
 
     请注意，每个 DocumentClient 实例都是线程安全的，在直接模式下运行时可执行高效的连接管理和地址缓存。 若要通过 DocumentClient 获得高效的连接管理和更好的性能，建议在应用程序生存期内对每个 AppDomain 使用单个 DocumentClient 实例。
 
@@ -127,7 +128,6 @@ Azure DocumentDB 是一个快速、弹性的分布式数据库，可以在提供
     也可以使用可用的 DocumentDB SDK 设置页面大小。  例如：
 
         IQueryable<dynamic> authorResults = client.CreateDocumentQuery(documentCollection.SelfLink, "SELECT p.Author FROM Pages p WHERE p.Title = 'About Seattle'", new FeedOptions { MaxItemCount = 1000 });
-
 10. **增加线程/任务数目**
 
     请参阅“网络”部分中的 [增加线程/任务数目](#increase-threads) 。
@@ -161,7 +161,7 @@ Azure DocumentDB 是一个快速、弹性的分布式数据库，可以在提供
         collection.IndexingPolicy.ExcludedPaths.Add(new ExcludedPath { Path = "/nonIndexedContent/*");
         collection = await client.CreateDocumentCollectionAsync(UriFactory.CreateDatabaseUri("db"), excluded);
 
-    有关详细信息，请参阅 [DocumentDB 索引策略](/documentation/articles/documentdb-indexing-policies/)。
+    有关索引的详细信息，请参阅 [DocumentDB 索引策略](/documentation/articles/documentdb-indexing-policies/)。
 
 ## <a name="throughput"></a>吞吐量
 
@@ -181,10 +181,10 @@ Azure DocumentDB 是一个快速、弹性的分布式数据库，可以在提供
         // Measure the performance (request units) of queries
         IDocumentQuery<dynamic> queryable = client.CreateDocumentQuery(collectionSelfLink, queryString).AsDocumentQuery();
         while (queryable.HasMoreResults)
-        {
-            FeedResponse<dynamic> queryResponse = await queryable.ExecuteNextAsync<dynamic>();
-            Console.WriteLine("Query batch consumed {0} request units", queryResponse.RequestCharge);
-        }
+             {
+                  FeedResponse<dynamic> queryResponse = await queryable.ExecuteNextAsync<dynamic>();
+                  Console.WriteLine("Query batch consumed {0} request units", queryResponse.RequestCharge);
+             }
 
     在此标头中返回的请求费用是预配吞吐量的一小部分（即 2000 RU/秒）。 例如，如果上述查询返回 1000 个 1KB 的文档，则操作成本是 1000。 因此在一秒内，服务器在限制后续请求之前，只接受两个此类请求。 有关详细信息，请参阅[请求单位](/documentation/articles/documentdb-request-units/)和[请求单位计算器](https://www.documentdb.com/capacityplanner)。
 
@@ -206,8 +206,8 @@ Azure DocumentDB 是一个快速、弹性的分布式数据库，可以在提供
     给定操作的请求费用（即请求处理成本）与文档大小直接相关。 大型文档的操作成本高于小型文档的操作成本。
 
 ## <a name="next-steps"></a>后续步骤
-有关用于评估 DocumentDB 以使用少量客户端计算机实现高性能的示例应用程序，请参阅 [使用 Azure DocumentDB 进行性能和规模测试](/documentation/articles/documentdb-performance-testing/)。
+有关用于评估 DocumentDB 以使用少量客户端计算机实现高性能的示例应用程序，请参阅[使用 DocumentDB 进行性能和规模测试](/documentation/articles/documentdb-performance-testing/)。
 
-此外，若要了解如何设计应用程序以实现缩放和高性能的详细信息，请参阅 [Azure DocumentDB 中的分区和缩放](/documentation/articles/documentdb-partition-data/)。
+此外，若要了解如何设计应用程序以实现缩放和高性能的详细信息，请参阅 [DocumentDB 中的分区和缩放](/documentation/articles/documentdb-partition-data/)。
 
 <!---Update_Description: wording update -->

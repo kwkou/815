@@ -7,7 +7,8 @@
     manager="jhubbard"
     editor=""
     documentationcenter=""
-    translationtype="Human Translation" />
+    redirect_url="http://azure.cn/documentation/articles/documentdb-use-cases"
+    ROBOTS="NOINDEX, NOFOLLOW" />
 <tags
     ms.assetid="2dbf83a7-512a-4993-bf1b-ea7d72e095d9"
     ms.service="documentdb"
@@ -15,14 +16,16 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="03/17/2017"
-    wacn.date="05/02/2017"
+    ms.date="05/10/2017"
+    wacn.date="05/31/2017"
     ms.author="mimig"
-    ms.sourcegitcommit="75890c3ffb1d1757de64a8b8344e9f2569f26273"
-    ms.openlocfilehash="74ef0635e514f520efec6ffa661ae82fec2d9db9"
-    ms.lasthandoff="04/25/2017" />
+    ms.translationtype="Human Translation"
+    ms.sourcegitcommit="4a18b6116e37e365e2d4c4e2d144d7588310292e"
+    ms.openlocfilehash="97051ff5024a1010358afcf43800fff575f4fb77"
+    ms.contentlocale="zh-cn"
+    ms.lasthandoff="05/19/2017" />
 
-# <a name="going-social-with-documentdb"></a>使用 DocumentDB 进行社交
+# <a name="going-social-with-azure-documentdb"></a>使用 DocumentDB 进行社交
 生活在大规模互连的社会，这意味着有时候你也会成为 **社交网络**中的一部分。 我们使用社交网络与朋友、同事和家人保持联系，有时还会与有共同兴趣的人分享我们的激情。
 
 作为工程师或开发人员，我们可能想知道这些网络如何存储数据以及如何将这些数据相互联系起来，甚至有可能被要求自行为特定的间隙市场创建或构建新的社交网络。 这时就会产生一个大问题：所有这些数据是如何存储的？
@@ -103,9 +106,9 @@ Azure DocumentDB 可确保所有属性通过其自动索引功能进行索引，
         {"relevance":7, "post":"w34r-qeg6-ref6-8565"}
     ]
 
-我们可以有一个“最新”流（其中帖子按创建日期排序）和一个“最热门”流（其中包括在过去 24 小时内获得了更多赞的帖子），甚至还可以基于逻辑点赞粉丝和兴趣为每个用户实现客户流，且它仍然可以是一个帖子列表。 虽然如何生成这些列表还是一个问题，但读取性能仍然不受阻碍。 一旦我们获得其中一个列表之后，我们就可以使用 [IN 运算符](/documentation/articles/documentdb-sql-query/#WhereClause/) 向 DocumentDB 发布单个查询以一次性获取帖子的所有页面。
+我们可以有一个“最新”流（其中帖子按创建日期排序）和一个“最热门”流（其中包括在过去 24 小时内获得了更多赞的帖子），甚至还可以基于逻辑点赞粉丝和兴趣为每个用户实现客户流，且它仍然可以是一个帖子列表。 虽然如何生成这些列表还是一个问题，但读取性能仍然不受阻碍。 一旦我们获得其中一个列表之后，我们就可以使用 [IN 运算符](/documentation/articles/documentdb-sql-query/#WhereClause/) 向 DocumentDB 发出单个查询以一次性获取帖子的所有页面。
 
-可以使用 [Azure App Service](/home/features/app-service/) 的后台进程 - [Web 作业](/documentation/articles/web-sites-create-web-jobs/) - 来构建源流。 创建一个帖子后，可以通过使用 [Azure 存储空间](/home/features/storage/) [队列](/documentation/articles/storage-dotnet-how-to-use-queues/)和 Web 作业（通过 [Azure Webjobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk/) 触发）触发后台处理，从而根据我们自己的自定义逻辑实现流内的帖子传播。 
+可以使用 [Azure 应用服务](/home/features/app-service/)的后台进程 - [Web 作业](/documentation/articles/web-sites-create-web-jobs/) - 来构建源流。 创建一个帖子后，可以通过使用 [Azure 存储](/home/features/storage/)、[队列](/documentation/articles/storage-dotnet-how-to-use-queues/)和 Web 作业（通过 [Azure Webjobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk/) 触发）触发后台处理，从而根据我们自己的自定义逻辑实现流内的帖子传播。 
 
 通过使用这种相同的技术创建最终一致性环境还可以以延迟方式处理评分和点赞。
 
@@ -212,7 +215,7 @@ Azure 搜索可实现它们称之为 [索引器](https://msdn.microsoft.com/zh-c
 
 由于想要深入了解，你可能会认为自己需要更多数学科学方面的知识才能提取出简单数据库和文件之外的这些模式和信息，其实不然。
 
-[Cortana Intelligence 套件](https://www.microsoft.com/en/server-cloud/cortana-analytics-suite/overview.aspx)的一部分，是一个全面托管的云服务，使你可以在简单的拖放界面中使用算法创建工作流、为 [R](https://zh.wikipedia.org/wiki/R_\(programming_language\)) 中自己的算法进行编码，或使用部分已生成的或现有的 API（如[文本分析](https://gallery.cortanaanalytics.com/MachineLearningAPI/Text-Analytics-2)、[内容审查器](https://www.microsoft.com/moderator)或[建议](https://gallery.cortanaanalytics.com/MachineLearningAPI/Recommendations-2)）。
+[Cortana Intelligence 套件](https://www.microsoft.com/en/server-cloud/cortana-analytics-suite/overview.aspx)的一部分，是一个全面托管的云服务，使你可以在简单的拖放界面中使用算法创建工作流、为 [R](https://zh.wikipedia.org/wiki/R_\(programming_language\)) 中自己的算法进行编码，或使用部分已生成的或现成的 API（如[文本分析](https://gallery.cortanaanalytics.com/MachineLearningAPI/Text-Analytics-2)、[内容审查器](https://www.microsoft.com/moderator)或[建议](https://gallery.cortanaanalytics.com/MachineLearningAPI/Recommendations-2)）。
 
 另一个可用的选项是使用 [Microsoft 认知服务](https://www.microsoft.com/cognitive-services) 分析用户内容：不仅可以更好地理解它们（通过分析使用 [文本分析 API](https://www.microsoft.com/cognitive-services/en-us/text-analytics-api)编写的内容），而且还可以检测不需要或不成熟的内容，然后使用[计算机构想 API](https://www.microsoft.com/cognitive-services/en-us/computer-vision-api)解决相关问题。 认知服务包括大量不需要使用任何一种机器学习知识的现成的可用解决方案。
 
@@ -231,7 +234,7 @@ DocumentDB 根据给定的**分区键**（定义为文档中的一个属性）�
 
 但是你很快会意识到他们在平台的体验并不理想；他们与运营区域相距太远，延迟问题非常严重，你显然不希望他们因此退出平台。 如果有一种简单的方法可以**扩展全球覆盖范围**就好了······确实有！
 
-通过 DocumentDB，只需单击数次即可通过透明方式[全局复制数据](/documentation/articles/documentdb-portal-global-replication/)，并从[客户端代码](/documentation/articles/documentdb-developing-with-multiple-regions/)中自动选择可用区域。 这也意味着可以拥有[多个故障转移区域](/documentation/articles/documentdb-regional-failovers/)。 
+通过 DocumentDB，只需单击数次即可通过透明方式全局复制数据。 这也意味着可以拥有[多个故障转移区域](/documentation/articles/documentdb-regional-failovers/)。 
 
 全局复制数据时，需确保客户端可以利用该数据。 如果要使用 Web 前端或从移动客户端访问 API，则可以部署 [Azure 流量管理器](/home/features/traffic-manager/)并在所有所需区域克隆 Azure 应用服务（方法是通过使用[性能配置](/documentation/articles/web-sites-traffic-manager/)支持扩展的全球覆盖范围）。 客户端访问前端或 API 时，将被路由到最近的应用服务，而该应用服务将连接到本地的 DocumentDB 副本。
 
@@ -242,9 +245,9 @@ DocumentDB 根据给定的**分区键**（定义为文档中的一个属性）�
 
 ![社交网络中各 Azure 服务之间的交互关系图](./media/documentdb-social-media-apps/social-media-apps-azure-solution.png)
 
-事实上，对于此类方案并没有万能方法，而需结合各种卓越的服务共同创建，才能提供绝佳的体验：Azure DocumentDB 的速度和自由性，可用于提供绝佳的社交应用程序；一流搜索解决方案后的智能操作，Azure 搜索；Azure App Service 的灵活性，不仅可以托管与语言无关的应用程序，甚至还可以托管功能强大的后台处理程序；Azure 存储空间和 Azure SQL 数据库的可扩展性，可用于存储大量数据；Azure 机器学习的分析功能，可创建能够为我们的进程提供反馈，并且有助于我们向合适的用户提供合适的内容的知识和智能。
+事实上，对于此类方案并没有万能方法，而需结合各种卓越的服务共同创建，才能提供绝佳的体验：DocumentDB 的速度和自由性，可用于提供绝佳的社交应用程序；一流搜索解决方案后的智能操作，如 Azure 搜索；Azure 应用服务的灵活性，不仅可以托管与语言无关的应用程序，甚至还可以托管功能强大的后台进程；Azure 存储和 Azure SQL 数据库的可扩展性，可用于存储大量数据；Azure 机器学习的分析功能，可创建能够为我们的进程提供反馈，并且有助于我们向合适的用户提供合适的内容的知识和智能。
 
 ## <a name="next-steps"></a>后续步骤
-阅读[为 DocumentDB 中的数据建模](/documentation/articles/documentdb-modeling-data/)一文，了解有关数据建模的详细信息。 如需了解 DocumentDB 其他用例信息，请参阅 [DocumentDB 的常见用例](/documentation/articles/documentdb-use-cases/)。
+若要详细了解 DocumentDB 用例，请参阅[常见 DocumentDB 用例](/documentation/articles/documentdb-use-cases/)。
 
 <!---Update_Description: wording update -->

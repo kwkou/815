@@ -1,13 +1,12 @@
 <properties
     pageTitle="DocumentDB 的 SQL 语法和 SQL 查询 | Azure"
-    description="了解 DocumentDB（一种 NoSQL 数据库）的 SQL 语法、数据库概念和 SQL 查询。 SQL 可在 DocumentDB 中作为 JSON 查询语言使用。"
+    description="了解 DocumentDB 的 SQL 语法、数据库概念和 SQL 查询。 SQL 可在 DocumentDB 中作为 JSON 查询语言使用。"
     keywords="sql 语法, sql 查询, sql 查询, json 查询语言, 数据库概念和 sql 查询, 聚合函数"
     services="documentdb"
     documentationcenter=""
     author="arramac"
     manager="jhubbard"
-    editor="monicar"
-    translationtype="Human Translation" />
+    editor="monicar" />
 <tags
     ms.assetid="a73b4ab3-0786-42fd-b59b-555fce09db6e"
     ms.service="documentdb"
@@ -16,19 +15,21 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="04/08/2017"
-    wacn.date="05/08/2017"
     ms.author="arramac"
-    ms.sourcegitcommit="2c4ee90387d280f15b2f2ed656f7d4862ad80901"
-    ms.openlocfilehash="68fa95920aa332cec15b2578f04b4a612327697b"
-    ms.lasthandoff="04/28/2017" />
+    wacn.date="05/31/2017"
+    ms.translationtype="Human Translation"
+    ms.sourcegitcommit="4a18b6116e37e365e2d4c4e2d144d7588310292e"
+    ms.openlocfilehash="9e9933622dccb697fb6d5b27430305aa3c5c39c5"
+    ms.contentlocale="zh-cn"
+    ms.lasthandoff="05/19/2017" />
 
-# <a name="sql-query-and-sql-syntax-in-documentdb"></a>DocumentDB 中的 SQL 查询和 SQL 语法
-Azure DocumentDB 通过将 SQL（结构化查询语言）用作 JSON 查询语言来支持查询文档。 DocumentDB 是真正无架构的。 凭借其对数据库引擎内 JSON 数据模型的直接承诺，它可以提供 JSON 文档的自动索引，而无需显式架构或创建辅助索引。 
+# <a name="sql-query-and-sql-syntax-in-azure-documentdb"></a>DocumentDB 中的 SQL 查询和 SQL 语法
+DocumentDB 通过将 SQL（结构化查询语言）用作 JSON 查询语言来支持查询文档。 DocumentDB 是真正无架构的。 凭借其对数据库引擎内 JSON 数据模型的直接承诺，它可以提供 JSON 文档的自动索引，而无需显式架构或创建辅助索引。 
 
 设计 DocumentDB 的查询语言时，我们有两个目标：
 
-- 我们希望支持 SQL，而不是发明一种新的 JSON 查询语言。 SQL 是最常见和最常用的查询语言之一。 DocumentDB SQL 提供了一种正式的编程模型，用于对 JSON 文档进行丰富的查询。
-- 由于 JSON 文档数据库能够在数据库引擎中直接执行 JavaScript，我们希望将 JavaScript 的编程模型用作查询语言的基础。 DocumentDB SQL 植根于 JavaScript 的类型系统、表达式计算和函数调用中。 而这反过来为关系投影、跨 JSON 文档的分层导航、自联接、空间查询以及调用完全采用 JavaScript 编写的用户定义的函数 (UDF) 和其他功能提供了自然编程模型。 
+- 我们希望支持 SQL，而不是发明一种新的 JSON 查询语言。 SQL 是最常见和最常用的查询语言之一。 DocumentDB SQL 提供一种正式的编程模型，用于对 JSON 文档进行丰富的查询。
+- 由于 JSON 文档数据库能够在数据库引擎中直接执行 JavaScript，我们希望将 JavaScript 的编程模型用作查询语言的基础。 DocumentDB API SQL 植根于 JavaScript 的类型系统、表达式计算和函数调用中。 而这反过来为关系投影、跨 JSON 文档的分层导航、自联接、空间查询以及调用完全采用 JavaScript 编写的用户定义的函数 (UDF) 和其他功能提供了自然编程模型。 
 
 我们相信这些功能是减少应用程序和数据库之间冲突的关键，并且对于开发人员的工作效率来说是至关重要的。
 
@@ -92,7 +93,7 @@ Azure DocumentDB 通过将 SQL（结构化查询语言）用作 JSON 查询语�
       "isRegistered": false
     }
 
-现在，让我们尝试对此数据执行一些查询来了解 DocumentDB SQL 的一些主要方面。 例如，下面的查询将返回 ID 字段与 `AndersenFamily`匹配的文档。 由于它是 `SELECT *`，因此该查询的输出为完整的 JSON 文档：
+现在，让我们尝试对此数据执行一些查询来了解 DocumentDB API SQL 的一些主要方面。 例如，下面的查询将返回 ID 字段与 `AndersenFamily`匹配的文档。 由于它是 `SELECT *`，因此该查询的输出为完整的 JSON 文档：
 
 **查询**
 
@@ -159,13 +160,13 @@ Azure DocumentDB 通过将 SQL（结构化查询语言）用作 JSON 查询语�
 
 我们希望通过我们目前已看到的示例让你注意到 DocumentDB 查询语言一些值得注意的方面：  
 
-- 由于 DocumentDB SQL 适用于 JSON 值，因此它可以处理三种形式的实体，而不是行和列。 因此，该语言可让你在任意深度引用树的节点，如 `Node1.Node2.Node3…..Nodem`，这类似于引用 `<table>.<column>` 的两个部分引用的关系 SQL。   
+- 由于 DocumentDB API SQL 适用于 JSON 值，因此它可以处理三种形式的实体，而不是行和列。 因此，该语言可让你在任意深度引用树的节点，如 `Node1.Node2.Node3…..Nodem`，这类似于引用 `<table>.<column>` 的两个部分引用的关系 SQL。   
 - 结构化查询语言适用于无架构的数据。 因此，需要动态绑定类型系统。 相同的表达式在不同文档上可能会产生不同的类型。 查询的结果是一个有效的 JSON 值，但不保证它为固定的架构。  
 - DocumentDB 仅支持严格的 JSON 文档。 这意味着类型系统和表达式仅限于处理 JSON 类型。 有关更多详细信息，请参阅 [JSON specification](http://www.json.org/) （JSON 规范）。  
-- DocumentDB 集合是 JSON 文档的一个无构架容器。 集合中，文档内和跨文档的数据实体的关系是按包含关系隐式捕获的，而不是按主键和外键关系。 考虑到稍后将在本文中讨论文档内联接，因此这是一个值得注意的重要方面。
+- DocumentDB 集合是 JSON 文档的一个无架构容器。 集合中，文档内和跨文档的数据实体的关系是按包含关系隐式捕获的，而不是按主键和外键关系。 考虑到稍后将在本文中讨论文档内联接，因此这是一个值得注意的重要方面。
 
 ## <a id="Indexing"></a> DocumentDB 索引
-在我们开始了解 DocumentDB SQL 语法前，值得先探索一下 DocumentDB 中的索引设计。 
+在我们开始了解 DocumentDB API SQL 语法前，值得先探索一下 DocumentDB API API 中的索引设计。 
 
 数据库索引的目的是在提供良好的吞吐量和低延迟的同时，以最小的资源消耗（如 CPU 和输入/输出）提供各种形式的查询。 通常，为查询数据库选择正确的索引需要大量的计划和试验。 此方法对数据不符合严格的架构并且快速发展的无架构数据库来说是一个挑战。 
 
@@ -177,9 +178,9 @@ Azure DocumentDB 通过将 SQL（结构化查询语言）用作 JSON 查询语�
 - 支持多租户：在为跨租户的资源调控给定基于保留的模型的情况下，可以在为每个副本分配的系统资源（CPU、内存和每秒的输入/输出操作）的预算内执行索引更新。 
 - 存储效率：就成本效益而言，在磁盘上存储索引的开销是有限的，并且是可预测的。 这一点非常重要，因为 DocumentDB 允许开发人员在索引开销与查询性能之间做出基于成本的权衡。  
 
-有关演示如何为集合配置索引策略的示例，请参阅 MSDN 上的 [DocumentDB samples](https://github.com/Azure/azure-documentdb-net) （DocumentDB 示例）。 现在，让我们开始详细了解 DocumentDB SQL 语法。
+有关演示如何为集合配置索引策略的示例，请参阅 MSDN 上的 [DocumentDB 示例](https://github.com/Azure/azure-documentdb-net)。 现在，让我们开始详细了解 DocumentDB SQL 语法。
 
-## <a id="Basics"></a>DocumentDB SQL 查询的基础知识
+## <a id="Basics"></a>DocumentDB SQL 查询基础知识
 每个查询按 ANSI-SQL 标准由 SELECT 子句和可选的 FROM 和 WHERE 子句组成。 通常，对于每个查询，已枚举 FROM 子句中的源。 然后将 WHERE 子句中的筛选器应用到源以检索 JSON 文档的子集。 最后，使用 SELECT 子句以投影选择列表中请求的 JSON 值。
 
     SELECT <select_list> 
@@ -273,7 +274,7 @@ WHERE 子句（**`WHERE <filter_condition>`**）可选。 它指定由源提供�
     }]
 
 
-上面的示例演示了一个简单的等式查询。 DocumentDB SQL 还支持各种标量表达式。 最常使用的是二进制和一元表达式。 来自源 JSON 对象的属性引用也是有效的表达式。 
+上面的示例演示了一个简单的等式查询。 DocumentDB API SQL 还支持各种标量表达式。 最常使用的是二进制和一元表达式。 来自源 JSON 对象的属性引用也是有效的表达式。 
 
 当前支持以下二进制运算符，它们可在查询中使用，如下例所示：  
 
@@ -284,7 +285,7 @@ WHERE 子句（**`WHERE <filter_condition>`**）可选。 它指定由源提供�
 </tr>
 <tr>
 <td>位</td>    
-<td>|、&、^、<<, >>、>>>（补零右移）</td>
+<td>|、&、^、<<、>>、>>>（补零右移）</td>
 </tr>
 <tr>
 <td>逻辑</td>
@@ -331,7 +332,7 @@ WHERE 子句（**`WHERE <filter_condition>`**）可选。 它指定由源提供�
 除了二进制和一元运算符以外，还允许使用属性引用。 例如，`SELECT * FROM Families f WHERE f.isRegistered` 返回包含 `isRegistered` 属性的文档，其中的属性值等于 JSON `true` 值。 任何其他值（false、null、Undefined、`<number>`、`<string>`、`<object>`、`<array>` 等等）都会导致源文档被排除在结果之外。 
 
 ### <a name="equality-and-comparison-operators"></a>等式和比较运算符
-下表显示了 DocumentDB SQL 中任意两个 JSON 类型之间等式比较的结果。
+下表显示了 DocumentDB API SQL 中任意两个 JSON 类型之间等式比较的结果。
 
 <table style = "width:300px">
    <tbody>
@@ -526,7 +527,7 @@ Undefined </td>
 
 了更快地执行查询，请记得创建索引策略，该策略对在 BETWEEN 子句中筛选的任何数值属性/路径使用范围索引类型。 
 
-在 DocumentDB 与 ANSI SQL 中使用 BETWEEN 的主要不同之处在于是否可以对混合类型的属性执行快速的范围查询 — 例如，在某些文档中将“grade”设置为数字 (5)，而在其他文档中将其设置为字符串（“grade4”）。 在这些情况下（如在 JavaScript 中），在两种不同类型之间进行比较的结果为“undefined”，将会跳过文档。
+在 DocumentDB API 与 ANSI SQL 中使用 BETWEEN 的主要不同之处在于是否可以对混合类型的属性执行快速的范围查询 — 例如，在某些文档中将“grade”设置为数字 (5)，而在其他文档中将其设置为字符串（“grade4”）。 在这些情况下（如在 JavaScript 中），在两种不同类型之间进行比较的结果为“undefined”，将会跳过文档。
 
 ### <a name="logical-and-or-and-not-operators"></a>逻辑（AND、OR 和 NOT）运算符
 逻辑运算符对布尔值进行运算。 下表显示了这些运算符的逻辑真值表。
@@ -743,7 +744,7 @@ SELECT 子句 (**`SELECT <select_list>`**) 是强制性的，用于指定要从�
 
 
 ### <a name="object-and-array-creation"></a>对象和数组创建
-DocumentDB SQL 的另一个重要功能是数组/对象创建。 请注意，在上一个示例中，我们已创建了一个新的 JSON 对象。 同样，也可以构造数组，如下例所示。
+DocumentDB API SQL 的另一个重要功能是数组/对象创建。 请注意，在上一个示例中，我们已创建了一个新的 JSON 对象。 同样，也可以构造数组，如下例所示。
 
 **查询**
 
@@ -916,7 +917,7 @@ TOP 关键字可用于限制来自查询中的值的数量。 将 TOP 与 ORDER 
         "$1": 1
     }]
 
-下表显示了 DocumentDB 中受支持的聚合函数的列表。 `SUM` 和 `AVG` 基于数字值执行，而 `COUNT`、`MIN`、`MAX` 则可基于数字、字符串、布尔值和 null 值执行。 
+下表显示了 DocumentDB API 中受支持的聚合函数的列表。 `SUM` 和 `AVG` 基于数字值执行，而 `COUNT`、`MIN`、`MAX` 则可基于数字、字符串、布尔值和 null 值执行。 
 
 | 使用情况 | 说明 |
 |-------|-------------|
@@ -982,7 +983,7 @@ TOP 关键字可用于限制来自查询中的值的数量。 将 TOP 与 ORDER 
 ## <a id="Advanced"></a>高级数据库概念和 SQL 查询
 
 ### <a id="Iteration"></a>迭代
-在 DocumentDB SQL 中通过 **IN** 关键字添加了一个新构造，以为遍历 JSON 数组提供支持。 FROM 源为迭代提供支持。 让我们从下面的示例开始：
+在 DocumentDB API SQL 中通过 **IN** 关键字添加了一个新构造，以为遍历 JSON 数组提供支持。 FROM 源为迭代提供支持。 让我们从下面的示例开始：
 
 **查询**
 
@@ -1076,7 +1077,7 @@ TOP 关键字可用于限制来自查询中的值的数量。 将 TOP 与 ORDER 
     ]
 
 ### <a id="Joins"></a>联接
-在关系数据库中，跨表联接的要求是非常重要的。 设计规范化的架构是一项逻辑要求。 与此相反，DocumentDB 处理无架构文档的非规范化数据模型。 这在逻辑上等效于“自联接”。
+在关系数据库中，跨表联接的要求是非常重要的。 设计规范化的架构是一项逻辑要求。 与此相反，DocumentDB API 处理无架构文档的非规范化数据模型。 这在逻辑上等效于“自联接”。
 
 语言支持的语法为 <from_source1> JOIN <from_source2> JOIN ...JOIN <from_sourceN>。 总体而言，此语法返回一组 **N** 元组（带有 **N** 个值的元组）。 每个元组拥有通过对它们相应的集遍历所有集合别名所产生的值。 换言之，这是加入联接的集的完整叉积。
 
@@ -1231,9 +1232,9 @@ DocumentDB 根据存储过程和触发器，为对集合直接执行基于 JavaS
 - 控制流、变量范围和分配的自然建模和将异常处理基元与数据库事务集成。 有关 DocumentDB 对 JavaScript 集成的支持的更多详细信息，请参阅《JavaScript 服务器端可编程性》文档。
 
 ### <a id="UserDefinedFunctions"></a>用户定义的函数 (UDF)
-除了本文中已定义的类型外，DocumentDB SQL 也对用户定义的函数 (UDF) 提供支持。 具体而言，支持标量 UDF，开发人员可在其中传入零个或许多参数并返回单个参数结果。 检查每个参数是否为合法的 JSON 值。  
+除了本文中已定义的类型外，DocumentDB API SQL 也对用户定义的函数 (UDF) 提供支持。 具体而言，支持标量 UDF，开发人员可在其中传入零个或许多参数并返回单个参数结果。 检查每个参数是否为合法的 JSON 值。  
 
-扩展 DocumentDB SQL 语法以支持使用这些用户定义的函数的自定义应用程序逻辑。 可使用 DocumentDB 注册 UDF，然后作为 SQL 查询的一部分引用这些函数。 事实上，UDF 经过精心设计，可由查询调用。 作为此选择的必然结果，UDF 不能访问其他 JavaScript 类型（存储过程和触发器）所拥有的上下文对象。 由于查询以只读方式执行，因此它们可以在主要或次要副本上运行。 因此，UDF 设计为在次要副本上运行，这与其他 JavaScript 类型不同。
+扩展 DocumentDB API SQL 语法以支持使用这些用户定义的函数的自定义应用程序逻辑。 可使用 DocumentDB API 注册 UDF，然后作为 SQL 查询的一部分引用这些函数。 事实上，UDF 经过精心设计，可由查询调用。 作为此选择的必然结果，UDF 不能访问其他 JavaScript 类型（存储过程和触发器）所拥有的上下文对象。 由于查询以只读方式执行，因此它们可以在主要或次要副本上运行。 因此，UDF 设计为在次要副本上运行，这与其他 JavaScript 类型不同。
 
 以下是如何在 DocumentDB 数据库中（特别是在文档集合下）注册 UDF 的示例。
 
@@ -1253,7 +1254,10 @@ DocumentDB 根据存储过程和触发器，为对集合直接执行基于 JavaS
 
 现在，我们可以在投影中的查询中使用此 UDF。 在从查询内调用时，必须用区分大小写的前缀“udf.”限定 UDF 。 
 
->[AZURE.NOTE] 在 2015 年 3 月 17 日之前，DocumentDB 支持无需“udf.”前缀的 UDF 调用，例如 SELECT REGEX\_MATCH()。已弃用此调用模式。
+> [AZURE.NOTE]
+> 在 2015/3/17 之前，DocumentDB 支持无需“udf.”前缀的 UDF 调用， 例如 SELECT REGEX_MATCH()。 已弃用此调用模式。  
+> 
+> 
 
 **查询**
 
@@ -1333,18 +1337,18 @@ DocumentDB 根据存储过程和触发器，为对集合直接执行基于 JavaS
     ]
 
 
-如之前的示例所的，UDF 使用 DocumentDB SQL 集成 JavaScript 语言的功能以通过丰富的可编程接口执行复杂的过程，并在内置 JavaScript 运行时功能的帮助下，执行条件逻辑。
+如前面的示例所示，UDF 使用 DocumentDB API SQL 集成 JavaScript 语言的功能以通过丰富的可编程接口执行复杂的过程，并在内置 JavaScript 运行时功能的帮助下，执行条件逻辑。
 
-DocumentDB SQL 在处理 UDF 当前阶段（WHERE 子句或 SELECT 子句），为源中每个文档的 UDF 提供参数。 将结果无缝地纳入总体执行管道中。 如果由 UDF 参数引用的属性在 JSON 值中不可用，则参数将被视为未定义，因此会完全跳过 UDF 调用。 同样，如果未定义 UDF的结果，则它不会包含在结果中。 
+DocumentDB API SQL 在处理 UDF 当前阶段（WHERE 子句或 SELECT 子句），为源中每个文档的 UDF 提供参数。 将结果无缝地纳入总体执行管道中。 如果由 UDF 参数引用的属性在 JSON 值中不可用，则参数将被视为未定义，因此会完全跳过 UDF 调用。 同样，如果未定义 UDF的结果，则它不会包含在结果中。 
 
 总而言之，UDF 是作为查询的一部分处理复杂业务逻辑重要的工具。
 
 ### <a name="operator-evaluation"></a>运算符评估
 DocumentDB 是一个 JSON 数据库，与 JavaScript 运算符以及其评估语义具有许多相似之处。 就 JSON 支持而言，DocumentDB 尝试保留 JavaScript 语义时，操作评估在某些实例中有所偏移。
 
-在 DocumentDB SQL 中，与在传统 SQL 中不同，实际从数据库中检索出值之前，值类型经常是未知的。 为了高效执行查询，大多数运算符具有严格的类型要求。 
+在 DocumentDB API SQL 中，与在传统 SQL 中不同，实际从数据库中检索出值之前，值类型经常是未知的。 为了高效执行查询，大多数运算符具有严格的类型要求。 
 
-不同于 JavaScript，DocumentDB SQL 不会执行隐式转换。 例如，类似 `SELECT * FROM Person p WHERE p.Age = 21` 的查询与包含值为 21 的 Age 属性的文档相匹配。 任何其他 Age 属性与字符串“21”匹配或包含其他无数可能的变量（“021”、“21.0”、“0021”和“00021”等等）的文档则不匹配。 这与 JavaScript 相反，在 JavaScript 中，字符串会隐式转换为数字（基于运算符 ex: ==）。 此选择对于 DocumentDB SQL 中的高效索引匹配至关重要。 
+不同于 JavaScript，DocumentDB API SQL 不会执行隐式转换。 例如，类似 `SELECT * FROM Person p WHERE p.Age = 21` 的查询与包含值为 21 的 Age 属性的文档相匹配。 任何其他 Age 属性与字符串“21”匹配或包含其他无数可能的变量（“021”、“21.0”、“0021”和“00021”等等）的文档则不匹配。 这与 JavaScript 相反，在 JavaScript 中，字符串会隐式转换为数字（基于运算符 ex: ==）。 此选择对于 DocumentDB API SQL 中的高效索引匹配至关重要。 
 
 ## <a name="parameterized-sql-queries"></a>参数化 SQL 查询
 DocumentDB 支持使用带有常用的 @ 表示法的参数进行查询。 参数化 SQL 为用户输入提供可靠的处理和转义，可防止通过 SQL 注入发生意外的数据泄露。 
@@ -1640,14 +1644,14 @@ DocumentDB 支持以下用于查询地理空间的开放地理空间信息联盟
       "id": "WakefieldFamily"
     }]
 
-有关 DocumentDB 中地理支持的更多详细信息，请参阅[在 Azure DocumentDB 中使用地理数据](/documentation/articles/documentdb-geospatial/)。 这会完成空间函数和 DocumentDB 的 SQL 语法。 现在，让我们来看看 LINQ 查询的工作方式，以及它如何与我们目前为止所看到的语法进行交互。
+有关 DocumentDB 中地理支持的更多详细信息，请参阅[在 DocumentDB 中使用地理数据](/documentation/articles/documentdb-geospatial/)。 这会完成空间函数和 DocumentDB 的 SQL 语法。 现在，让我们来看看 LINQ 查询的工作方式，以及它如何与我们目前为止所看到的语法进行交互。
 
-## <a id="Linq"></a>LINQ 到 DocumentDB SQL
+## <a id="Linq"></a>LINQ 到 DocumentDB API SQL
 LINQ 是一个 .NET 编程模型，它将计算表示为对对象流的查询。 DocumentDB 提供一个客户端库，通过促进 JSON 与 .NET 对象之间的转换，以及从 LINQ 查询的子集到 DocumentDB 查询的映射，来与 LINQ 进行交互。 
 
 下面的图片展示了使用 DocumentDB 支持 LINQ 查询的体系结构。  使用 DocumentDB 客户端，开发人员可以创建直接查询 DocumentDB 查询提供程序的 **IQueryable** 对象，该提供程序随后会将 LINQ 查询转换为 DocumentDB 查询。 随后会将该查询传递到 DocumentDB 服务器以检索一组 JSON 格式的结果。 在客户端上，返回的结果会反序列化为 .NET 对象的流。
 
-![支持使用 DocumentDB 的 LINQ 查询的体系结构 - SQL语法、JSON 查询语言、数据库概念和 SQL 查询][1]
+![支持使用 DocumentDB API 的 LINQ 查询的体系结构 - SQL语法、JSON 查询语言、数据库概念和 SQL 查询][1]
 
 ### <a name="net-and-json-mapping"></a>.NET 和 JSON 映射
 .NET 对象与 JSON 文档之间的映射是自然的 - 每个数据成员字段映射到 JSON 对象，其中字段名称映射到对象的“key”部分，并且"value"部分以递归方式映射到该对象的值部分。 请考虑以下示例。 创建的 Family 对象会映射到 JSON 文档，如下所示。 反之亦然，JSON 文档会映射回 .NET 对象。
@@ -1976,7 +1980,7 @@ DocumentDB 通过 HTTP 提供开放的 RESTful 编程模型。 可以使用 Azur
 
 这些资源的基本交互模型借助采用其标准解释的 HTTP 谓词 GET、PUT、POST 和 DELETE。 POST 谓词用于创建新的资源、执行存储过程或发出 DocumentDB 查询。 查询始终为只读操作，且无任何副作用。
 
-以下示例演示了针对包含我们目前看到的两个示例文档的集合，使用 POST 进行的 DocumentDB 查询。 查询对 JSON 名称属性进行简单的筛选。 请注意，使用 `x-ms-documentdb-isquery` 和 Content-Type: `application/query+json` 标头表示该操作是一个查询。
+以下示例演示了针对包含我们目前看到的两个示例文档的集合，使用 POST 进行的 DocumentDB API API 查询。 查询对 JSON 名称属性进行简单的筛选。 请注意，使用 `x-ms-documentdb-isquery` 和 Content-Type: `application/query+json` 标头表示该操作是一个查询。
 
 **请求**
 
@@ -2235,9 +2239,9 @@ DocumentDB 使用存储过程和触发器，为对集合直接执行基于 JavaS
     }
 
 ## <a id="References"></a>参考
-1. [Azure DocumentDB 简介][introduction]
+1. [DocumentDB 简介][introduction]
 2. [DocumentDB SQL 规范](http://go.microsoft.com/fwlink/p/?LinkID=510612)
-3. [DocumentDB .NET samples](https://github.com/Azure/azure-documentdb-net)
+3. [DocumentDB .NET 示例](https://github.com/Azure/azure-documentdb-net)
 4. [DocumentDB 一致性级别][consistency-levels]
 5. ANSI SQL 2011 [http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=53681](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=53681)
 6. JSON [http://json.org/](http://json.org/)

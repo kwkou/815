@@ -1,14 +1,12 @@
 <properties
     pageTitle="DocumentDB 自动化 - 管理区域 | Azure"
-    description="使用 Azure CLI 1.0 和 Azure资源管理器管理 DocumentDB 数据库帐户中的区域。 DocumentDB 是用于 JSON 数据的云端 NoSQL 数据库。"
+    description="使用 Azure CLI 1.0 和 Azure资源管理器管理 DocumentDB 数据库帐户中的区域。"
     services="documentdb"
     author="dmakwana"
     manager="jhubbard"
     editor=""
     tags="azure-resource-manager"
-    documentationcenter=""
-    translationtype="Human Translation" />
-    
+    documentationcenter="" />
 <tags
     ms.assetid="7f765c17-8549-4108-9475-46394fc3a218"
     ms.service="documentdb"
@@ -17,21 +15,25 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="02/17/2017"
-    wacn.date="04/17/2017"
+    wacn.date="05/31/2017"
     ms.author="dimakwan"
-    ms.sourcegitcommit="7cc8d7b9c616d399509cd9dbdd155b0e9a7987a8"
-    ms.openlocfilehash="ecc59562005ce7ca5c1d1594b48b55a3b5d3fb9b"
-    ms.lasthandoff="04/07/2017" />
+    ms.translationtype="Human Translation"
+    ms.sourcegitcommit="4a18b6116e37e365e2d4c4e2d144d7588310292e"
+    ms.openlocfilehash="85e8db9bf543927175e300e31d73d1bd0f059d25"
+    ms.contentlocale="zh-cn"
+    ms.lasthandoff="05/19/2017" />
 
 # <a name="automate-documentdb-account-region-management-using-azure-cli-10-and-azure-resource-manager-templates"></a>使用 Azure CLI 1.0 和 Azure 资源管理器模板自动管理 DocumentDB 帐户区域
 
-本文说明了如何使用 Azure CLI 1.0 命令和 Azure 资源管理器模板在 Azure DocumentDB 帐户中添加/删除区域。 也可通过 [Azure 门户预览](/documentation/articles/documentdb-portal-global-replication/)实现区域管理。 请注意，以下教程中的命令不可更改各个区域的故障转移优先级。 只可添加或删除读取区域。 不能添加或删除数据库帐户中的写入区域（故障转移优先级为 0）。
+本文说明了如何使用 Azure CLI 1.0 命令和 Azure 资源管理器模板在 Azure DocumentDB 帐户中添加/删除区域。 请注意，以下教程中的命令不可更改各个区域的故障转移优先级。 只可添加或删除读取区域。 不能添加或删除数据库帐户中的写入区域（故障转移优先级为 0）。
 
-DocumentDB 数据库帐户是目前唯一可以使用 [Azure 资源管理器模板和 Azure CLI 1.0](/documentation/articles/documentdb-automation-resource-manager-cli/) 创建或修改的 DocumentDB 资源。
+DocumentDB 数据库帐户是目前唯一可以使用 [Azure 资源管理器模板和 Azure CLI 1.0](/documentation/articles/documentdb-automation-resource-manager-cli/) 创建或修改的 DocumentDB 资源。 
+
+若要使用 CLI 2.0 创建 DocumentDB、表 API、图形 API 或 Mongo DB 帐户，请参阅[使用 Azure CLI 创建 Azure DocumentDB 帐户](/documentation/articles/documentdb-automation-resource-manager-cli/)。
 
 ## <a name="getting-ready"></a>做好准备
 
-必须拥有正确的 Azure CLI 1.0 版本和 Azure 帐户，才能将 Azure CLI 1.0 与 Azure 资源组配合使用。 如果没有 Azure CLI 1.0，[请安装](/documentation/articles/cli-install-nodejs/)。
+必须拥有正确的 Azure CLI 1.0 版本和 Azure 帐户，才能将 Azure CLI 1.0 与 Azure 资源组配合使用。 如果没有 Azure CLI 1.0，[请安装它](/documentation/articles/cli-install-nodejs/)。
 
 ### <a name="update-your-azure-cli-10-version"></a>更新 Azure CLI 1.0 版本
 
@@ -53,13 +55,13 @@ DocumentDB 数据库帐户是目前唯一可以使用 [Azure 资源管理器模�
 这将生成以下输出： 
 
     info:    Executing command login
-    |info:    To sign in, use a web browser to open the page https://aka.ms/deviceloginchina. 
+    |info:    To sign in, use a web browser to open the page https://aka.ms/deviceloginchinachina. 
     Enter the code E1A2B3C4D to authenticate.
 
 > [AZURE.NOTE]
 > 如果你没有 Azure 帐户，则会看到一条错误消息，指出你需要不同类型的帐户。 若要从当前 Azure 帐户创建一个帐户，请参阅[在 Azure Active Directory 中创建工作或学校标识](/documentation/articles/virtual-machines-windows-create-aad-work-id/)。
 
-在浏览器中打开 [https://aka.ms/deviceloginchina](https://aka.ms/deviceloginchina) ，然后输入命令输出中提供的代码。
+在浏览器中打开 [https://aka.ms/deviceloginchinachina](https://aka.ms/deviceloginchinachina)，然后输入命令输出中提供的代码。
 
 ![屏幕截图：显示 Azure CLI 1.0 的设备登录屏幕](./media/documentdb-automation-resource-manager-cli/azure-cli-login-code.png)
 
@@ -96,7 +98,7 @@ DocumentDB 数据库帐户是目前唯一可以使用 [Azure 资源管理器模�
 
 ### <a name="create-or-retrieve-your-resource-group"></a>创建或检索资源组
 
-若要创建 DocumentDB 帐户，首先需要一个资源组。 如果已知道想要使用的资源组名称，请跳到 [步骤 2](#create-documentdb-account-cli)。 
+若要创建 DocumentDB 帐户，首先需要有一个资源组。 如果已知道想要使用的资源组名称，请跳到 [步骤 2](#create-documentdb-account-cli)。 
 
 若要查看列有你当前所有的资源组的列表，请运行下列命令，并记下你想要使用的资源组名称： 
 
@@ -107,7 +109,7 @@ DocumentDB 数据库帐户是目前唯一可以使用 [Azure 资源管理器模�
     azure group create <resourcegroupname> <resourcegrouplocation>
 
  - `<resourcegroupname>` 只能使用字母数字字符、句点、下划线、“-”字符和括号，且不能以句点结尾。 
- - `<resourcegrouplocation>` 必须是已正式推出 DocumentDB 的区域之一。 [“Azure 区域”页](https://azure.microsoft.com/regions/#services)提供了当前的区域列表。
+ - `<resourcegrouplocation>` 必须是已正式推出了 DocumentDB 的区域之一。 [“Azure 区域”页](https://azure.microsoft.com/regions/#services)提供了当前的区域列表。
 
 输入示例：
 
@@ -131,19 +133,20 @@ DocumentDB 数据库帐户是目前唯一可以使用 [Azure 资源管理器模�
 
 ## <a name="understanding-azure-resource-manager-templates-and-resource-groups"></a>了解 Azure 资源管理器模板和资源组
 
-大多数应用程序是通过不同资源类型的组合（例如，一个或多个 DocumentDB 帐户、存储帐户、虚拟网络或内容传送网络）构建而成的。 默认 Azure 服务管理 API 和 Azure 门户预览使用基于服务的方法代表这些项。 这种方法需要你单独部署和管理各个服务（或查找其他具备相同功能的工具），而不是当作单个逻辑部署单元。
+大多数应用程序是通过不同资源类型的组合（例如，一个或多个 DocumentDB 帐户、存储帐户、虚拟网络或内容交付网络）生成的。 默认 Azure 服务管理 API 和 Azure 门户预览使用基于服务的方法代表这些项。 这种方法需要你单独部署和管理各个服务（或查找其他具备相同功能的工具），而不是当作单个逻辑部署单元。
 
 可以利用 Azure 资源管理器模板将这些不同的资源声明为一个逻辑部署单元，然后进行部署和管理。 请不要以命令方式告知 Azure 逐一部署命令，而应该在 JSON 文件中描述整个部署 - 所有资源及关联的设置以及部署参数 - 然后告诉 Azure 将这些资源视为一个组进行部署。
 
 可在 [Azure资源管理器概述](/documentation/articles/resource-group-overview/)中了解有关 Azure 资源组及其功能的详细信息。 若要了解如何创作模板，请参阅[创作 Azure 资源管理器模板](/documentation/articles/resource-group-authoring-templates/)。
 
-## <a id="add-region-documentdb-account"></a>任务：将区域添加到 DocumentDB 帐户
 
-DocumentDB 能够跨不同的 [Azure 区域](https://azure.microsoft.com/regions/#services)[全局分发数据][distribute-globally]。 此部分中的说明介绍如何使用 Azure CLI 1.0 和资源管理器模板向现有 DocumentDB 帐户添加读取区域。 可以在 Azure CLI 1.0 中使用或不使用资源管理器模板完成此任务。
+## <a id="add-region-documentdb-account"></a>任务：向 DocumentDB 帐户添加区域
 
-### <a id="add-region-documentdb-account-cli"></a>使用 Azure CLI 1.0 但不使用资源管理器模板将区域添加到 DocumentDB 帐户
+DocumentDB 能够跨不同的 [Azure 区域](https://azure.microsoft.com/regions/#services)[全局分配数据][distribute-globally]。 此部分中的说明介绍了如何使用 Azure CLI 1.0 和资源管理器模板向现有 DocumentDB 帐户添加读取区域。 可以在 Azure CLI 1.0 中使用或不使用资源管理器模板完成此任务。
 
-在命令提示符处输入下列命令，将区域添加到新的或现有的资源组中的现有 DocumentDB 帐户。 请注意，“位置”数组应反映 DocumentDB 帐户中的当前区域配置，要添加的新区域除外。 以下示例显示的命令可将第二个区域添加到帐户。
+### <a id="add-region-documentdb-account-cli"></a> 使用 Azure CLI 1.0 在不使用资源管理器模板的情况下向 DocumentDB 帐户添加区域
+
+在命令提示符处输入下列命令，向新的或现有资源组中的现有 DocumentDB 帐户添加区域。 请注意，“位置”数组应反映 DocumentDB 帐户中的当前区域配置，要添加的新区域除外。 以下示例显示的命令可将第二个区域添加到帐户。
 
 使故障转移优先级值与现有配置相符。 其中一个区域的 failoverPriority 值必须为 0，表示此区域将保留为 [DocumentDB 帐户的写入区域][scaling-globally]。 故障转移优先级值在各个位置中必须唯一，最高故障转移优先级值必须小于区域总数。 新区域将是“读取”区域，其故障转移优先级值必须大于 0。
 
@@ -154,10 +157,11 @@ DocumentDB 能够跨不同的 [Azure 区域](https://azure.microsoft.com/regions
 
  - `<resourcegroupname>` 只能使用字母数字字符、句点、下划线、“-”字符和括号，且不能以句点结尾。
  - `<resourcegrouplocation>` 是当前资源组的区域。
- - `<ip-range-filter>` 指定 IP 地址集合或者 CIDR 格式的 IP 地址范围，以便将这些地址作为指定数据库帐户所允许的客户端 IP 列表。 IP 地址/范围必须以逗号分隔，且不得包含空格。 
+ - `<ip-range-filter>` 指定 IP 地址集合或者 CIDR 格式的 IP 地址范围，以便将这些地址作为指定数据库帐户所允许的客户端 IP 列表。 IP 地址/范围必须以逗号分隔，且不得包含空格。 有关详细信息，请参阅 [DocumentDB 防火墙支持](/documentation/articles/documentdb-firewall-support/)
  - `<databaseaccountname>` 只能使用小写字母、数字及“-”字符，且长度必须为 3 到 50 个字符。
- - `<databaseaccountlocation>` 必须是已正式推出 DocumentDB 的区域之一。 [Azure 区域页面](https://azure.microsoft.com/regions/#services)提供当前的区域列表。
- - `<newdatabaseaccountlocation>` 是要添加的新区域，必须是已正式推出 DocumentDB 的区域之一。 [“Azure 区域”页](https://azure.microsoft.com/regions/#services)提供了当前的区域列表。
+ - `<databaseaccountlocation>` 必须是已正式推出了 DocumentDB 的区域之一。 [“Azure 区域”页](https://azure.microsoft.com/regions/#services)提供了当前的区域列表。
+ - `<newdatabaseaccountlocation>` 是要添加的新区域，必须是已正式推出了 DocumentDB 的区域之一。 [“Azure 区域”页](https://azure.microsoft.com/regions/#services)提供了当前的区域列表。
+
 
 将“中国东部”区域添加为 DocumentDB 帐户中的读取区域的输入示例： 
 
@@ -181,11 +185,11 @@ DocumentDB 能够跨不同的 [Azure 区域](https://azure.microsoft.com/regions
 
 如果遇到错误，请参阅[故障排除](#troubleshooting)。 
 
-在此命令返回之后，在帐户更改为“联机”状态以准备好可供使用之前，该帐户将会进入“正在创建”状态数分钟的时间。 可以在 [Azure 门户预览](https://portal.azure.cn)中的“DocumentDB 帐户”边栏选项卡上检查帐户的状态。
+在此命令返回之后，在帐户更改为“联机”状态以准备好可供使用之前，该帐户将会进入“正在创建”状态数分钟的时间。 可以在 [Azure 门户预览](https://portal.azure.cn)的“DocumentDB 帐户”边栏选项卡上检查帐户的状态。
 
-### <a id="add-region-documentdb-account-cli-arm"></a>使用 Azure CLI 1.0 且使用资源管理器模板将区域添加到 DocumentDB 帐户
+### <a id="add-region-documentdb-account-cli-arm"></a> 使用 Azure CLI 1.0 在使用资源管理器模板的情况下向 DocumentDB 帐户添加区域
 
-本部分中的说明介绍如何使用 Azure 资源管理器模板和可选参数文件（这两者都是 JSON 文件）将区域添加到现有 DocumentDB 帐户。 使用模板可以准确描述所需的信息，并可重复使用而不会出现任何错误。
+本部分中的说明介绍了如何使用 Azure 资源管理器模板和可选参数文件（这两者都是 JSON 文件）向现有 DocumentDB 帐户添加区域。 使用模板可以准确描述所需的信息，并可重复使用而不会出现任何错误。
 
 使故障转移优先级值与现有配置相符。 其中一个区域的 failoverPriority 值必须为 0，表示此区域将保留为 [DocumentDB 帐户的写入区域][scaling-globally]。 故障转移优先级值在各个位置中必须唯一，最高故障转移优先级值必须小于区域总数。 新区域将是“读取”区域，其故障转移优先级值必须大于 0。
 
@@ -237,7 +241,7 @@ DocumentDB 能够跨不同的 [Azure 区域](https://azure.microsoft.com/regions
         ]
     }
 
-上面的模板文件演示了一个示例，介绍如何将新区域添加到已经有 2 个区域的 DocumentDB 帐户。
+上面的模板文件演示了一个示例，介绍如何向已经有 2 个区域的 DocumentDB 帐户添加新区域。
 
 可以在命令行中输入参数值，也可以创建参数文件来指定值。
 
@@ -262,9 +266,9 @@ DocumentDB 能够跨不同的 [Azure 区域](https://azure.microsoft.com/regions
         }
     }
 
-在 azuredeploy.parameters.json 文件中，将 `"databaseAccountName"` 的值字段更新为要使用的数据库名称，然后保存该文件。 `"databaseAccountName"` 只能使用小写字母、数字及“-”字符，且长度必须为 3 到 50 个字符。 将 `"locationName1"` 和 `"locationName2"` 值字段更新为 DocumentDB 帐户所在的区域。 将 `"newLocationName"` 值字段更新为要添加的区域。
+在 azuredeploy.parameters.json 文件中，将 `"databaseAccountName"` 的值字段更新为要使用的数据库名称，然后保存该文件。 `"databaseAccountName"` 只能使用小写字母、数字及“-”字符，且长度必须为 3 到 50 个字符。 将 `"locationName1"` 和 `"locationName2"` 值字段更新为你的 DocumentDB 帐户所在的区域。 将 `"newLocationName"` 值字段更新为要添加的区域。
 
-若要在资源组中创建 DocumentDB 帐户，请运行下列命令，并提供模板文件的路径、参数文件的路径或参数值、要部署于其中的资源组名称，以及部署名称（-n 可选）。 
+若要在资源组中创建 DocumentDB 帐户，请运行下列命令，并提供模板文件的路径、参数文件的路径或参数值、要在其中进行部署的资源组的名称，以及部署名称（-n 为可选）。 
 
 若要使用参数文件：
 
@@ -299,7 +303,7 @@ DocumentDB 能够跨不同的 [Azure 区域](https://azure.microsoft.com/regions
     + Waiting for deployment to complete
     + 
     + 
-    info:    Resource 'new_res_group' of type 'Microsoft.DocumentDb/databaseAccounts' provisioning status is Running
+    info:    Resource 'new_res_group' of type 'Microsoft.DocumentDB/databaseAccounts' provisioning status is Running
     + 
     info:    Resource 'new_res_group' of type 'Microsoft.DocumentDb/databaseAccounts' provisioning status is Succeeded
     data:    DeploymentName     : azuredeploy
@@ -319,15 +323,15 @@ DocumentDB 能够跨不同的 [Azure 区域](https://azure.microsoft.com/regions
 
 如果遇到错误，请参阅[故障排除](#troubleshooting)。  
 
-在此命令返回之后，在帐户更改为“联机”状态以准备好可供使用之前，该帐户将会进入“正在创建”状态数分钟的时间。 可以在 [Azure 门户预览](https://portal.azure.cn)中的“DocumentDB 帐户”边栏选项卡上检查帐户的状态。
+在此命令返回之后，在帐户更改为“联机”状态以准备好可供使用之前，该帐户将会进入“正在创建”状态数分钟的时间。 可以在 [Azure 门户预览](https://portal.azure.cn)的“DocumentDB 帐户”边栏选项卡上检查帐户的状态。
 
-## <a id="remove-region-documentdb-account"></a>任务：将区域从 DocumentDB 帐户中删除
+## <a id="remove-region-documentdb-account"></a>任务：删除 DocumentDB 帐户中的区域
 
-DocumentDB 能够跨不同的 [Azure 区域](https://azure.microsoft.com/regions/#services)[全局分发数据][distribute-globally]。 本部分中的说明介绍了如何使用 Azure CLI 1.0 和 资源管理器模板删除现有 DocumentDB 帐户中的某个区域。 可以在 Azure CLI 1.0 中使用或不使用资源管理器模板完成此任务。
+DocumentDB 能够跨不同的 [Azure 区域](https://azure.microsoft.com/regions/#services)[全局分配数据][distribute-globally]。 本部分中的说明介绍了如何使用 Azure CLI 1.0 和 资源管理器模板删除现有 DocumentDB 帐户中的某个区域。 可以在 Azure CLI 1.0 中使用或不使用资源管理器模板完成此任务。
 
-### <a id="remove-region-documentdb-account-cli"></a> 使用 Azure CLI 1.0 但不使用资源管理器模板将区域从 DocumentDB 帐户中删除
+### <a id="remove-region-documentdb-account-cli"></a> 使用 Azure CLI 1.0 在不使用资源管理器模板的情况下删除 DocumentDB 帐户中的区域
 
-若要删除现有 DocumentDB 帐户中的某个区域，可以使用 Azure CLI 1.0 执行以下命令。 “位置”数组应只包含删除该区域后帐户中所保留的区域。 **省略的位置将从 DocumentDB 帐户中删除**。 在命令提示符中输入以下命令。
+若要删除现有 DocumentDB 帐户中的某个区域，可以使用 Azure CLI 1.0 执行以下命令。 “位置”数组应只包含会在删除该区域后保留的区域。 **省略的位置将被从 DocumentDB 帐户中删除**。 在命令提示符中输入以下命令。
 
 其中一个区域的 failoverPriority 值必须为 0，表示此区域将保留为 [DocumentDB 帐户的写入区域][scaling-globally]。 故障转移优先级值在各个位置中必须唯一，最高故障转移优先级值必须小于区域总数。 
 
@@ -338,9 +342,9 @@ DocumentDB 能够跨不同的 [Azure 区域](https://azure.microsoft.com/regions
 
  - `<resourcegroupname>` 只能使用字母数字字符、句点、下划线、“-”字符和括号，且不能以句点结尾。
  - `<resourcegrouplocation>` 是当前资源组的区域。
- - `<ip-range-filter>` 指定 IP 地址集合或者 CIDR 格式的 IP 地址范围，以便将这些地址作为指定数据库帐户所允许的客户端 IP 列表。 IP 地址/范围必须以逗号分隔，且不得包含空格。 
+ - `<ip-range-filter>` 指定 IP 地址集合或者 CIDR 格式的 IP 地址范围，以便将这些地址作为指定数据库帐户所允许的客户端 IP 列表。 IP 地址/范围必须以逗号分隔，且不得包含空格。 有关详细信息，请参阅 [DocumentDB 防火墙支持](/documentation/articles/documentdb-firewall-support/)
  - `<databaseaccountname>` 只能使用小写字母、数字及“-”字符，且长度必须为 3 到 50 个字符。
- - `<databaseaccountlocation>` 必须是已正式推出 DocumentDB 的区域之一。 [“Azure 区域”页](https://azure.microsoft.com/regions/#services)提供了当前的区域列表。
+ - `<databaseaccountlocation>` 必须是已正式推出了 DocumentDB 的区域之一。 [“Azure 区域”页](https://azure.microsoft.com/regions/#services)提供了当前的区域列表。
 
 输入示例： 
 
@@ -364,15 +368,15 @@ DocumentDB 能够跨不同的 [Azure 区域](https://azure.microsoft.com/regions
 
 如果遇到错误，请参阅[故障排除](#troubleshooting)。 
 
-此命令返回后，在帐户将处于“正在更新”状态数分钟，然后更改为“联机”状态，准备好可供使用。 可以在 [Azure 门户预览](https://portal.azure.cn)中的“DocumentDB 帐户”边栏选项卡上检查帐户的状态。
+此命令返回后，在帐户将处于“正在更新”状态数分钟，然后更改为“联机”状态，准备好可供使用。 可以在 [Azure 门户预览](https://portal.azure.cn)的“DocumentDB 帐户”边栏选项卡上检查帐户的状态。
 
-### <a id="remove-region-documentdb-account-cli-arm"></a> 搭配使用 Azure CLI 1.0 和 资源管理器模板将区域从 DocumentDB 帐户中删除
+### <a id="remove-region-documentdb-account-cli-arm"></a> 使用 Azure CLI 1.0 在使用资源管理器模板的情况下删除 DocumentDB 帐户中的区域
 
-本部分中的说明介绍如何使用 Azure 资源管理器模板和可选参数文件（这两者都是 JSON 文件）将区域从现有 DocumentDB 帐户中删除。 使用模板可以准确描述所需的信息，并可重复使用而不会出现任何错误。
+本部分中的说明介绍了如何使用 Azure 资源管理器模板和可选参数文件（这两者都是 JSON 文件）从现有 DocumentDB 帐户中删除区域。 使用模板可以准确描述所需的信息，并可重复使用而不会出现任何错误。
 
 其中一个区域的 failoverPriority 值必须为 0，表示此区域将保留为 [DocumentDB 帐户的写入区域][scaling-globally]。 故障转移优先级值在各个位置中必须唯一，最高故障转移优先级值必须小于区域总数。 
 
-创建本地模板文件，该文件类似于下面与当前的 DocumentDB 区域配置匹配的文件。 “位置”数组应只包含会在删除该区域后保留的区域。 **省略的位置将从 DocumentDB 帐户中删除**。 将文件命名为 azuredeploy.json。
+创建本地模板文件，该文件类似于下面与当前的 DocumentDB 区域配置匹配的文件。 “位置”数组应只包含会在删除该区域后保留的区域。 **省略的位置将被从 DocumentDB 帐户中删除**。 将文件命名为 azuredeploy.json。
 
     {
         "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
@@ -423,9 +427,9 @@ DocumentDB 能够跨不同的 [Azure 区域](https://azure.microsoft.com/regions
         }
     }
 
-在 azuredeploy.parameters.json 文件中，将 `"databaseAccountName"` 的值字段更新为要使用的数据库名称，然后保存该文件。 `"databaseAccountName"` 只能使用小写字母、数字及“-”字符，且长度必须为 3 到 50 个字符。 将 `"locationName1"` 值字段更新为希望在删除区域后其中仍然存在 DocumentDB 帐户的区域。
+在 azuredeploy.parameters.json 文件中，将 `"databaseAccountName"` 的值字段更新为要使用的数据库名称，然后保存该文件。 `"databaseAccountName"` 只能使用小写字母、数字及“-”字符，且长度必须为 3 到 50 个字符。 将 `"locationName1"` 值字段更新为在删除该区域后你希望 DocumentDB 帐户要存在于其中的区域。
 
-若要在资源组中创建 DocumentDB 帐户，请运行下列命令，并提供模板文件的路径、参数文件的路径或参数值、要部署于其中的资源组名称，以及部署名称（-n 可选）。 
+若要在资源组中创建 DocumentDB 帐户，请运行下列命令，并提供模板文件的路径、参数文件的路径或参数值、要在其中进行部署的资源组的名称，以及部署名称（-n 为可选）。 
 
 若要使用参数文件：
 
@@ -478,7 +482,7 @@ DocumentDB 能够跨不同的 [Azure 区域](https://azure.microsoft.com/regions
 
 如果遇到错误，请参阅[故障排除](#troubleshooting)。  
 
-此命令返回后，在帐户将处于“正在更新”状态数分钟，然后更改为“联机”状态，准备好可供使用。 可以在 [Azure 门户预览](https://portal.azure.cn)中的“DocumentDB 帐户”边栏选项卡上检查帐户的状态。
+此命令返回后，在帐户将处于“正在更新”状态数分钟，然后更改为“联机”状态，准备好可供使用。 可以在 [Azure 门户预览](https://portal.azure.cn)的“DocumentDB 帐户”边栏选项卡上检查帐户的状态。
 
 ## <a name="troubleshooting"></a>故障排除
 
@@ -503,7 +507,7 @@ DocumentDB 能够跨不同的 [Azure 区域](https://azure.microsoft.com/regions
 
 ## <a name="next-steps"></a>后续步骤
 
-现在你已经有了 DocumentDB 帐户，下一步是创建 DocumentDB 数据库。 你可以使用下面其中一项来创建数据库：
+有了 DocumentDB 帐户之后，接下来的步骤是创建 DocumentDB 数据库。 你可以使用下面其中一项来创建数据库：
 
 - Azure 门户预览，如[使用 Azure 门户预览创建 DocumentDB 集合和数据库](/documentation/articles/documentdb-create-collection/)中所述。
 - C# .NET 示例，位于 GitHub 上 [azure-documentdb-dotnet](https://github.com/Azure/azure-documentdb-net/tree/master/samples/code-samples) 存储库的 [DatabaseManagement](https://github.com/Azure/azure-documentdb-net/tree/master/samples/code-samples/DatabaseManagement) 项目中。
@@ -511,9 +515,9 @@ DocumentDB 能够跨不同的 [Azure 区域](https://azure.microsoft.com/regions
 
 创建数据库后，必须向数据库[添加一个或多个集合](/documentation/articles/documentdb-create-collection/)，然后向集合[添加文档](/documentation/articles/documentdb-view-json-document-explorer/)。 
 
-当集合中有文档后，可以使用门户中的[查询资源管理器](/documentation/articles/documentdb-query-collections-query-explorer/)、[REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn781481.aspx) 或某个 [SDK](https://msdn.microsoft.com/zh-cn/library/azure/dn781482.aspx)针对文档使用 [DocumentDB SQL](/documentation/articles/documentdb-sql-query/) [执行查询](/documentation/articles/documentdb-sql-query/#executing-sql-queries/)。
+当集合中有文档后，可以使用门户中的[查询资源管理器](/documentation/articles/documentdb-query-collections-query-explorer/)、[REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn781481.aspx) 或某个 [SDK](https://msdn.microsoft.com/zh-cn/library/azure/dn781482.aspx) 针对文档使用 [SQL](/documentation/articles/documentdb-sql-query/) 来[执行查询](/documentation/articles/documentdb-sql-query/#ExecutingSqlQueries/)。
 
-若要详细了解 DocumentDB，请浏览以下资源：
+若要了解有关 DocumentDB 的详细信息，请参阅以下资源：
 
 - [DocumentDB 资源模型和概念](/documentation/articles/documentdb-resources/)
 
@@ -521,4 +525,5 @@ DocumentDB 能够跨不同的 [Azure 区域](https://azure.microsoft.com/regions
 <!--Reference style links - using these makes the source content way more readable than using inline links-->
 [distribute-globally]: /documentation/articles/documentdb-distribute-data-globally/
 [scaling-globally]:/documentation/articles/documentdb-distribute-data-globally/#scaling-across-the-planet/
-<!--Update_Description: wording and commands update-->
+
+<!--Update_Description: wording update-->

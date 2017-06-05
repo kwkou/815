@@ -1,14 +1,14 @@
 <properties
-    pageTitle="何时使用 NoSQL 与 SQL | Azure"
-    description="比较使用 NoSQL 非关系解决方案与使用 SQL 解决方案的好处。 了解是 Azure NoSQL 服务之一还是 SQL Server 最适合你的应用场景。"
+    pageTitle="NoSQL 与 SQL 和 DocumentDB | Azure"
+    description="比较使用 NoSQL 非关系解决方案与使用 SQL 解决方案和 DocumentDB 的好处。 了解 DocumentDB 如何提供 NoSQL 和 SQL 的优势。"
     keywords="nosql 与 sql, 何时使用 NoSQL, sql 与 nosql"
     services="documentdb"
     documentationcenter=""
     author="mimig1"
     manager="jhubbard"
     editor=""
-    translationtype="Human Translation" />
-    
+    redirect_url="https://aka.ms/documentdb"
+    ROBOTS="NOINDEX, NOFOLLOW" />
 <tags
     ms.assetid="71ef1798-d709-4ccb-9f5c-57948fb96229"
     ms.service="documentdb"
@@ -18,13 +18,15 @@
     ms.devlang="dotnet"
     ms.topic="article"
     ms.date="03/14/2017"
-    wacn.date="04/17/2017"
+    wacn.date="05/31/2017"
     ms.author="mimig"
-    ms.sourcegitcommit="7cc8d7b9c616d399509cd9dbdd155b0e9a7987a8"
-    ms.openlocfilehash="c41fac00ef0ac7177056795d000cf93ed10d7ef9"
-    ms.lasthandoff="04/07/2017" />
+    ms.translationtype="Human Translation"
+    ms.sourcegitcommit="4a18b6116e37e365e2d4c4e2d144d7588310292e"
+    ms.openlocfilehash="fede6af81f7a6f40bfb0d29194da18c9f6de3262"
+    ms.contentlocale="zh-cn"
+    ms.lasthandoff="05/19/2017" />
 
-# <a name="nosql-vs-sql"></a>NoSQL 与 SQL
+# <a name="nosql-vs-sql-and-azure-documentdb"></a>NoSQL 与 SQL 和 DocumentDB
 SQL Server 和关系数据库 (RDBMS) 成为重要专业数据库已经 20 多年了。 但是，不断增长的快速处理更多容量、速度和各种数据的需求改变了应用程序开发人员对数据存储的本质需求。 为了实现这种需求，能够大规模存储非结构化和异类数据的 NoSQL 数据库得到了普及。 对于大多数开发人员而言，关系数据库是默认或常用的选项，因为表结构易于理解且较为熟悉，但仍存在许多需要探索除关系数据库以外的数据库的因素。
 
 NoSQL 是一种与 SQL 数据库截然不同的数据库。 NoSQL 常用来指代“非 SQL”的数据管理系统，或者指代“不仅限于 SQL”的数据管理方法。 NoSQL 类别中有多种技术，包括文档数据库、键值存储、列系列存储和图形数据库，这些技术在游戏、社交和 IoT 应用中非常流行。
@@ -65,7 +67,7 @@ NoSQL 是一种与 SQL 数据库截然不同的数据库。 NoSQL 常用来指�
 
 然后你可以使用其他 Azure 服务生成此解决方案：
 
-- [Azure 应用服务](/home/features/app-service/) 可用来托管应用程序和后台进程。
+- [Azure 应用服务](/home/features/app-service/)可用来托管应用程序和后台进程。
 - [Azure Blob 存储](/home/features/storage/)可用来存储包括映像的完整的用户配置文件。
 - [Azure SQL 数据库](/home/features/sql-database/)可用来存储大量数据，例如登录信息和使用情况分析数据。
 
@@ -116,7 +118,7 @@ Microsoft 提供了五种 SQL 产品/服务：
 ## <a name="next-steps"></a>后续步骤
 我们邀请你通过试用 SQL 和 NoSQL，了解有关二者的详细信息。 
 
-- 对于所有 Azure 服务，可以注册一个[1元试用](/pricing/1rmb-trial/)的版本。
+- 对于所有 Azure 服务，可以注册一个[试用版](/pricing/1rmb-trial/)。
 
   - [Azure DocumentDB](/home/features/documentdb/)
   - [作为 HDInsight 一部分的 Azure HBase](/home/features/hdinsight/)

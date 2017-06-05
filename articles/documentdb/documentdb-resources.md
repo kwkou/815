@@ -1,14 +1,12 @@
 <properties
-    pageTitle="Azure DocumentDB 资源模型和概念 | Azure"
+    pageTitle="DocumentDB 资源模型和概念 | Azure"
     description="了解 DocumentDB 的数据库、集合、用户自定义函数 (UDF)、文档、管理资源的权限等的分层模型。"
     keywords="分层模型, documentdb, azure, Azure"
     services="documentdb"
     documentationcenter=""
     author="AndrewHoh"
     manager="jhubbard"
-    editor="monicar"
-    translationtype="Human Translation" />
-    
+    editor="monicar" />
 <tags
     ms.assetid="ef9d5c0c-0867-4317-bb1b-98e219799fd5"
     ms.service="documentdb"
@@ -17,14 +15,16 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="03/14/2017"
-    wacn.date="04/17/2017"
+    wacn.date="05/31/2017"
     ms.author="anhoh"
     ms.custom="H1Hack27Feb2017"
-    ms.sourcegitcommit="7cc8d7b9c616d399509cd9dbdd155b0e9a7987a8"
-    ms.openlocfilehash="83c92237dc0cc7aec39095d9f5300de3873531c9"
-    ms.lasthandoff="04/07/2017" />
+    ms.translationtype="Human Translation"
+    ms.sourcegitcommit="4a18b6116e37e365e2d4c4e2d144d7588310292e"
+    ms.openlocfilehash="7a64c61fa492525a0911abb57c6fa3ba004cfd09"
+    ms.contentlocale="zh-cn"
+    ms.lasthandoff="05/19/2017" />
 
-# <a name="documentdb-hierarchical-resource-model-and-core-concepts"></a>DocumentDB 分层资源模型和核心概念
+# <a name="azure-documentdb-hierarchical-resource-model-and-core-concepts"></a>DocumentDB 分层资源模型和核心概念
 DocumentDB 管理的数据库实体被称为**资源**。 每个资源都通过逻辑 URI 进行唯一标识。 你可以使用标准 HTTP 谓词、请求/响应标头和状态代码与资源进行交互。 
 
 通过阅读本文，你将能够回答以下问题：
@@ -36,10 +36,10 @@ DocumentDB 管理的数据库实体被称为**资源**。 每个资源都通过�
 - 如何使用存储过程、触发器和用户自定义函数 (UDF)？
 
 ## <a name="hierarchical-resource-model"></a>分层资源模型
-如下面的关系图所示，DocumentDB 分层 **资源模型** 由数据库帐户下的数组资源构成，每个帐户可通过一个逻辑且稳定的 URI 进行寻址。 本文将一组资源称为一个 **源** 。 
+如下面的关系图所示，DocumentDB 分层**资源模型**由数据库帐户下的数组资源构成，每个帐户可通过一个逻辑且稳定的 URI 进行寻址。 本文将一组资源称为一个 **源** 。 
 
 > [AZURE.NOTE]
-> DocumentDB 提供了高效的 TCP 协议，该协议在其通信模型中也是 RESTful，可通过 [.NET 客户端 SDK](https://msdn.microsoft.com/zh-cn/library/azure/dn781482.aspx)获得。
+> DocumentDB 提供高效的 TCP 协议，该协议在其通信模型中也是 RESTful，可通过 [.NET 客户端 SDK](https://msdn.microsoft.com/zh-cn/library/azure/dn781482.aspx) 获得。
 > 
 > 
 
@@ -57,7 +57,7 @@ DocumentDB 管理的数据库实体被称为**资源**。 每个资源都通过�
 | 集合 |集合是 JSON 文档和相关联的 JavaScript 应用程序逻辑的容器。 集合是一个计费实体，其中[成本](/documentation/articles/documentdb-performance-levels/)由与集合关联的性能级别确定。 集合可以跨一个或多个分区/服务器，并且能伸缩以处理几乎无限制增长的存储或吞吐量。 |
 | 存储过程 |以 JavaScript 编写的应用程序逻辑，使用集合注册且在数据库引擎中以事务方式执行。 |
 | 触发器 |在插入、替换或删除操作之前或之后执行的以 JavaScript 编写的应用程序逻辑。 |
-| UDF |用 JavaScript 编写的应用程序逻辑。 UDF 让你可以建立自定义查询运算符模型，从而扩展核心 DocumentDB 查询语言。 |
+| UDF |用 JavaScript 编写的应用程序逻辑。 使用 UDF 可以建立自定义查询运算符模型，从而扩展核心 DocumentDB API 查询语言。 |
 | 文档 |用户定义的（任意）JSON 内容。 默认情况下，不需要定义任何架构，也不需要为所有添加到集合的文档提供辅助索引。 |
 | 附件 |附件是一个特殊文档，包含引用和与外部 blob/媒体相关联的元数据。 开发人员可以选择由 DocumentDB 来管理 blob 或者使用外部 blob 服务提供程序（OneDrive、Dropbox 等）来存储它。 |
 
@@ -130,9 +130,9 @@ DocumentDB 不强制对 JSON 标准或特殊编码进行任何专有扩展；它
 DocumentDB REST API 支持资源寻址和由 ID 和 _rid 属性提出的请求路由。
 
 ## <a name="database-accounts"></a>数据库帐户
-你可以使用 Azure 订阅创建一个或多个 DocumentDB 数据库帐户。
+可以使用 Azure 订阅预配一个或多个 DocumentDB 数据库帐户。
 
-可以通过 Azure 门户预览（[https://portal.azure.cn/](https://portal.azure.cn/)）[创建和管理 DocumentDB 数据库帐户](/documentation/articles/documentdb-create-account/)。 创建和管理数据库帐户需要具有管理访问权限，并且只能在你的 Azure 订阅下执行。 
+可以通过在 [http://portal.azure.cn/](https://portal.azure.cn/) 的 Azure 门户预览[创建和管理 DocumentDB 数据库帐户](/documentation/articles/documentdb-create-account/)。 创建和管理数据库帐户需要具有管理访问权限，并且只能在你的 Azure 订阅下执行。 
 
 ### <a name="database-account-properties"></a>数据库帐户属性
 作为设置和管理数据库帐户的一部分，你可以配置并读取以下属性：  
@@ -154,10 +154,10 @@ DocumentDB REST API 支持资源寻址和由 ID 和 _rid 属性提出的请求�
     </tbody>
 </table>
 
-请注意，除了从 Azure 门户预览预配、配置和管理数据库帐户，还可以通过使用 [Azure DocumentDB REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn781481.aspx) 和[客户端 SDK](https://msdn.microsoft.com/zh-cn/library/azure/dn781482.aspx)，以编程方式创建和管理 DocumentDB 数据库帐户。  
+请注意，除了从 Azure 门户预览预配、配置和管理数据库帐户，还可以通过使用 [DocumentDB REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn781481.aspx) 和[客户端 SDK](https://msdn.microsoft.com/zh-cn/library/azure/dn781482.aspx)，以编程方式创建和管理 DocumentDB 数据库帐户。  
 
 ## <a name="databases"></a>数据库
-DocumentDB 数据库是一个或多个集合和用户的逻辑容器，如下面的关系图中所示。 你可以使用 DocumentDB 数据库帐户创建任意数量的数据库（取决于产品/服务限制）。  
+DocumentDB 数据库是一个或多个集合和用户的逻辑容器，如下面的关系图中所示。 可以使用 DocumentDB 数据库帐户创建任意数量的数据库（取决于产品/服务限制）。  
 
 ![数据库帐户和集合分层模型][2]  
 **数据库是用户和集合的逻辑容器**
@@ -165,7 +165,7 @@ DocumentDB 数据库是一个或多个集合和用户的逻辑容器，如下面
 数据库可以包含集合中分布的几乎无限的文档存储。
 
 ### <a name="elastic-scale-of-a-documentdb-database"></a>DocumentDB 数据库的弹性缩放
-DocumentDB 数据库默认情况下是弹性的 — SSD 支持的文档存储和预配的吞吐量范围从几个 GB 到几个 PB。 
+DocumentDB 数据库默认情况下是弹性的 - SSD 支持的文档存储和预配的吞吐量范围从几个 GB 到几个 PB。 
 
 与传统的 RDBMS 中的数据库不同，DocumentDB 中的数据库范围不限于单台计算机。 使用 DocumentDB，随着应用程序的缩放需求的不断增长，可以创建更多集合、数据库，或同时创建两者。 实际上，在 Microsoft 内部，各种第一方应用程序已在以使用者规模使用 DocumentDB，其方式是通过创建非常大的 DocumentDB 数据库，每个数据库包含具有 TB 级别的文档存储的数千个集合。 你可以通过添加或删除的集合来满足应用程序的缩放要求，从而扩大或收缩数据库。 
 
@@ -173,13 +173,13 @@ DocumentDB 数据库默认情况下是弹性的 — SSD 支持的文档存储和
 
 DocumentDB 数据库也是用户的容器。 反过来，用户是一组权限的逻辑命名空间，可提供对集合、文档和附件的精细授权和访问权限。  
 
-与 DocumentDB 资源模型中的其他资源一样，可以使用 [Azure DocumentDB REST APIs](https://msdn.microsoft.com/zh-cn/library/azure/dn781481.aspx) 或任一[客户端 SDK](https://msdn.microsoft.com/zh-cn/library/azure/dn781482.aspx) 轻松创建、替换、删除、读取或枚举数据库。 DocumentDB 确保读取或查询数据库资源的元数据操作的高度一致性。 自动删除数据库，确保你不能访问任何集合或它所包含的用户。   
+与 DocumentDB 资源模型中的其他资源一样，可以使用 [DocumentDB REST APIs](https://msdn.microsoft.com/zh-cn/library/azure/dn781481.aspx) 或任一[客户端 SDK](https://msdn.microsoft.com/zh-cn/library/azure/dn781482.aspx) 轻松创建、替换、删除、读取或枚举数据库。 DocumentDB 确保读取或查询数据库资源的元数据操作的高度一致性。 自动删除数据库，确保你不能访问任何集合或它所包含的用户。   
 
 ## <a name="collections"></a>集合
 DocumentDB 集合是 JSON 文档的一个容器。 
 
 ### <a name="elastic-ssd-backed-document-storage"></a>SSD 支持的弹性文档存储
-集合本质上是弹性的 - 当你添加或删除文档时，它会自动扩展或收缩。 集合是逻辑资源，并且可以跨一个或多个物理分区或服务器。 DocumentDB 基于存储大小和你的集合设置的吞吐量确定集合中的分区数。 DocumentDB 中的每个分区都具有固定大小的与之关联的 SSD 支持的存储，并且会复制分区以实现高可用性。 分区完全由 Azure DocumentDB 进行管理，因此，你无需编写复杂的代码或亲自管理分区。 DocumentDB 集合在存储和吞吐量方面 **几乎无限制** 。 
+集合本质上是弹性的 - 当你添加或删除文档时，它会自动扩展或收缩。 集合是逻辑资源，并且可以跨一个或多个物理分区或服务器。 DocumentDB 基于存储大小和你的集合设置的吞吐量确定集合中的分区数。 DocumentDB 中的每个分区都具有与之关联的 SSD 支持的存储且存储大小固定，可以复制分区以实现高可用性。 分区完全由 DocumentDB 进行管理，因此无需编写复杂的代码或亲自管理分区。 DocumentDB 集合在存储和吞吐量方面是**几乎无限制**的。 
 
 ### <a name="automatic-indexing-of-collections"></a>自动编制集合索引
 DocumentDB 是真正无架构的数据库系统。 无需为 JSON 文档假设或要求任何架构。 将文档添加到集合时，DocumentDB 会自动编制索引，以供查询时使用。 自动编制文档索引而无需架构或辅助索引是 DocumentDB 的关键功能，通过写优化、无锁定和日志结构化索引维护技术而实现。 DocumentDB 支持持续大量的极快速写入，同时仍然保障一致的查询。 文档和索引存储都可用于计算每个集合使用的存储。 你可以控制存储和性能权衡，这些权衡与通过配置集合的索引编制策略进行的索引相关联。 
@@ -191,19 +191,19 @@ DocumentDB 是真正无架构的数据库系统。 无需为 JSON 文档假设�
 - 选择是否要在索引中包括特定的路径或文档中的模式或从索引中将其排除。 你可以通过分别设置集合中的 indexingPolicy 上的 includedPaths 和 excludedPaths 来实现这一点。 你还可以配置用于特定路径模式的存储和性能权衡的范围和哈希查询。 
 - 在同步（一致）和异步（延迟）索引更新之间进行选择。 默认情况下，每次在集合中插入、替换或删除文档时同步更新索引。 这个行为让查询能够使用与文档读取相同的一致性级别。 虽然 DocumentDB 针对写入进行了优化，且支持文档持续写入，以及同步索引维护和提供一致的查询服务，但你也可以配置某些集合，使其索引延迟更新。 延迟索引编制可大大提高写入性能，非常适合主要具有大量读取操作的集合的批量引入方案。
 
-可以通过对集合执行 PUT 更改索引策略。 这可以通过[客户端 SDK](https://msdn.microsoft.com/zh-cn/library/azure/dn781482.aspx)、[Azure 门户预览](https://portal.azure.cn) 或 [Azure DocumentDB REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn781481.aspx) 来实现。
+可以通过对集合执行 PUT 更改索引策略。 这可以通过[客户端 SDK](https://msdn.microsoft.com/zh-cn/library/azure/dn781482.aspx)、[Azure 门户预览](https://portal.azure.cn) 或 [Azure DocumentDB API REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn781481.aspx) 来实现。
 
 ### <a name="querying-a-collection"></a>查询集合
-集合中的文档可以具有任意的数据库架构，而你无需提前提供任何架构或辅助索引，就可以查询集合中的文档。 可以使用 [DocumentDB SQL 语法](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx)查询集合，该语法通过基于 JavaScript 的 UDF 提供丰富的分层、关系和空间运算符以及扩展性。 JSON 语法允许将 JSON 文档建模为树，其中标签作为树节点。 DocumentDB 的自动索引编制技术和 DocumentDB SQL 方言都利用了此语法。 DocumentDB 查询语言包含三个主要方面：   
+集合中的文档可以具有任意的数据库架构，而你无需提前提供任何架构或辅助索引，就可以查询集合中的文档。 可以使用 [DocumentDB API SQL 语法](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx)查询集合，该语法通过基于 JavaScript 的 UDF 提供丰富的分层、关系和空间运算符以及扩展性。 JSON 语法允许将 JSON 文档建模为树，其中标签作为树节点。 DocumentDB API 的自动索引编制技术和 DocumentDB API SQL 方言都利用了此语法。 DocumetDB API 查询语言包含三个主要方面：   
 
 1. 一小组查询操作，它自然映射到包括分层查询和投影的树结构。 
 2. 一小部分关系操作，包括组合、筛选、投影、聚合和自联接。 
 3. 基于纯 JavaScript 且结合 (1) 和 (2) 使用的 UDF。  
 
-DocumentDB 查询模型尝试在功能、效率和简单性之间取得平衡。 DocumentDB 数据库引擎在本机上进行编译和执行 SQL 查询语句。 可以使用 [Azure DocumentDB REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn781481.aspx) 或任一[客户端 SDK](https://msdn.microsoft.com/zh-cn/library/azure/dn781482.aspx) 查询集合。 .NET SDK 附带了 LINQ 提供程序。
+DocumentDB 查询模型尝试在功能、效率和简单性之间取得平衡。 DocumentDB 数据库引擎在本机上进行编译和执行 SQL 查询语句。 可以使用 [DocumentDB REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn781481.aspx) 或任一[客户端 SDK](https://msdn.microsoft.com/zh-cn/library/azure/dn781482.aspx) 查询集合。 .NET SDK 附带了 LINQ 提供程序。
 
 > [AZURE.TIP]
-> 可以在 [查询板块](https://www.documentdb.com/sql/demo)中尝试 DocumentDB 并对数据集运行 SQL 查询。
+> 可以在[查询板块](https://www.documentdb.com/sql/demo)中尝试 DocumentDB API 并对数据集运行 SQL 查询。
 > 
 > 
 
@@ -222,7 +222,7 @@ DocumentDB 查询模型尝试在功能、效率和简单性之间取得平衡。
 
 直接在与缓冲池位于相同地址空间内的数据库引擎中执行 JavaScript 的能力可实现针对集合的文档的数据库操作的高性能和事务性执行。 此外，DocumentDB 数据库引擎还致力于针对 JSON 和 JavaScript 消除应用程序和数据库类型系统之间的任何阻抗失配。   
 
-创建集合之后即可使用 [Azure DocumentDB REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn781481.aspx)或任一[客户端 SDK](https://msdn.microsoft.com/zh-cn/library/azure/dn781482.aspx) 向集合注册存储过程、触发器和 UDF。 注册后，你可以引用并执行它们。 请考虑以下完全使用 JavaScript 编写的存储过程，此代码采用两个参数（书名和作者姓名），并创建了一个新文档，对文档进行查询，然后更新文档 — 所有这些操作都是在一个隐式的 ACID 事务内完成。 在执行期间的任何时刻，如果引发 JavaScript 异常，则中止整个事务。
+创建集合之后即可使用 [Azure DocumentDB API REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn781481.aspx) 或任一[客户端 SDK](https://msdn.microsoft.com/zh-cn/library/azure/dn781482.aspx) 向集合注册存储过程、触发器和 UDF。 注册后，你可以引用并执行它们。 请考虑以下完全使用 JavaScript 编写的存储过程，此代码采用两个参数（书名和作者姓名），并创建了一个新文档，对文档进行查询，然后更新文档 — 所有这些操作都是在一个隐式的 ACID 事务内完成。 在执行期间的任何时刻，如果引发 JavaScript 异常，则中止整个事务。
 
     function businessLogic(name, author) {
         var context = getContext();
@@ -255,7 +255,7 @@ DocumentDB 查询模型尝试在功能、效率和简单性之间取得平衡。
             })
     };
 
-客户端可以将以上 JavaScript 逻辑“运送”到用于通过 HTTP POST 进行的事务性执行的数据库。 有关使用 HTTP 方法的详细信息，请参阅 [RESTful interactions with DocumentDB resources](https://msdn.microsoft.com/zh-cn/library/azure/mt622086.aspx)（与 DocumentDB 资源进行 RESTful 交互）。 
+客户端可以将以上 JavaScript 逻辑“运送”到用于通过 HTTP POST 进行的事务性执行的数据库。 有关使用 HTTP 方法的详细信息，请参阅[与 DocumentDB 资源进行 RESTful 交互](https://msdn.microsoft.com/zh-cn/library/azure/mt622086.aspx)。 
 
     client.createStoredProcedureAsync(collection._self, {id: "CRUDProc", body: businessLogic})
        .then(function(createdStoredProcedure) {
@@ -270,14 +270,15 @@ DocumentDB 查询模型尝试在功能、效率和简单性之间取得平衡。
             console.log(error);
         });
 
+
 请注意，由于数据库本身能够识别 JSON 和 JavaScript，因此没有任何类型系统不匹配，也不需要“OR 映射”或代码生成方法。   
 
 存储过程和触发器与集合和集合中的文档通过一个明确定义的对象模型进行交互，该模型可公开当前集合的上下文。  
 
-可以使用 [Azure DocumentDB REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn781481.aspx) 或任一[客户端 SDK](https://msdn.microsoft.com/zh-cn/library/azure/dn781482.aspx) 轻松创建、删除、读取或枚举 DocumentDB 中的集合。 DocumentDB 始终确保为读取或查询集合的元数据提供高度一致性。 自动删除数据库，确保你不能访问任何文档、附件、存储过程、触发器和其中包含的 UDF。   
+可以使用 [DocumentDB API REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn781481.aspx) 或任一[客户端 SDK](https://msdn.microsoft.com/zh-cn/library/azure/dn781482.aspx) 在 DocumentDB API 中轻松创建、删除、读取或枚举集合。 DocumentDB API 始终确保为读取或查询集合的元数据提供高度一致性。 自动删除数据库，确保你不能访问任何文档、附件、存储过程、触发器和其中包含的 UDF。   
 
 ## <a name="stored-procedures-triggers-and-user-defined-functions-udf"></a>存储过程、触发器和用户自定义函数 (UDF)
-如前一节中所述，你可以编写应用程序逻辑以直接在数据库引擎内部的某个事务中运行。 应用程序逻辑可以完全用 JavaScript 编写，并且可以作为存储过程、触发器或 UDF 来建模。 存储过程或触发器内的 JavaScript 代码可以插入、替换、删除、读取或查询集合中的文档。 但是，UDF 中的 JavaScript 却无法插入、替换或删除文档。 UDF 可以枚举查询的结果集的文档，并生成另一个结果集。 对于多租户，DocumentDB 将强制实施严格的基于保留项的资源监管。 每个存储过程、触发器或 UDF 都可以获取固定量的操作系统资源来完成其工作。 此外，存储过程、触发器或 UDF 不能针对外部 JavaScript 库进行链接，并且如果它们超出了分配给它们的资源预算，则将被列入方块列表。 你可以通过使用 REST API 为集合注册存储过程、触发器或 UDF，也可以取消注册。  注册时将预编译存储过程、触发器或 UDF，并将其存储为字节代码，以供以后执行。 下一节说明了如何使用 DocumentDB JavaScript SDK 注册、执行和取消注册存储过程、触发器和 UDF。 JavaScript SDK 相比于 [DocumentDB REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn781481.aspx)是一个更简单的包装器。 
+如前一节中所述，你可以编写应用程序逻辑以直接在数据库引擎内部的某个事务中运行。 应用程序逻辑可以完全用 JavaScript 编写，并且可以作为存储过程、触发器或 UDF 来建模。 存储过程或触发器内的 JavaScript 代码可以插入、替换、删除、读取或查询集合中的文档。 但是，UDF 中的 JavaScript 却无法插入、替换或删除文档。 UDF 可以枚举查询的结果集的文档，并生成另一个结果集。 对于多租户，DocumentDB 将强制实施严格的基于保留项的资源监管。 每个存储过程、触发器或 UDF 都可以获取固定量的操作系统资源来完成其工作。 此外，存储过程、触发器或 UDF 不能针对外部 JavaScript 库进行链接，并且如果它们超出了分配给它们的资源预算，则将被列入方块列表。 你可以通过使用 REST API 为集合注册存储过程、触发器或 UDF，也可以取消注册。  注册时将预编译存储过程、触发器或 UDF，并将其存储为字节代码，以供以后执行。 下一节说明了如何使用 DocumentDB JavaScript SDK 注册、执行和取消注册存储过程、触发器和 UDF。 JavaScript SDK 相比于 [DocumentDB REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn781481.aspx) 是一个更简单的包装器。 
 
 ### <a name="registering-a-stored-procedure"></a>注册存储过程
 注册存储过程将通过 HTTP POST 在集合上创建新的存储过程资源。  
@@ -325,6 +326,7 @@ DocumentDB 查询模型尝试在功能、效率和简单性之间取得平衡。
         }, function(error) {
             console.log("Error");
         });
+
 
 ### <a name="registering-a-pre-trigger"></a>注册预触发器
 注册触发器将通过 HTTP POST 在集合上创建新的触发器资源。 你可以指定触发器是前触发还是后触发，也可以指定与之关联的操作类型（例如创建、替换、删除或全部）。   
@@ -384,7 +386,7 @@ DocumentDB 查询模型尝试在功能、效率和简单性之间取得平衡。
         });
 
 ### <a name="executing-a-udf-as-part-of-the-query"></a>执行作为查询的一部分的 UDF
-可以将 UDF 指定为 SQL 查询的一部分，将其用作一种扩展核心 [DocumentDB 的 SQL 查询语言](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx)的方法。
+可以将 UDF 指定为 SQL 查询的一部分，将其用作一种扩展核心 [DocumentDB API 的 SQL 查询语言](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx)的方法。
 
     var filterQuery = "SELECT udf.mathSqrt(r.Age) AS sqrtAge FROM root r WHERE r.FirstName='John'";
     client.queryDocuments(collection._self, filterQuery).toArrayAsync();
@@ -404,10 +406,10 @@ DocumentDB 查询模型尝试在功能、效率和简单性之间取得平衡。
             console.log("Error");
         });
 
-尽管上面的代码段演示了通过 [DocumentDB JavaScript SDK](https://github.com/Azure/azure-documentdb-js) 注册 (POST)、取消注册 (PUT)、读取/列出 (GET) 和执行 (POST)，但也可以使用 [REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn781481.aspx) 或其他[客户端 SDK](https://msdn.microsoft.com/zh-cn/library/azure/dn781482.aspx)。 
+尽管上面的代码段演示了通过 [DocumentDB API JavaScript SDK](https://github.com/Azure/azure-documentdb-js) 注册 (POST)、取消注册 (PUT)、读取/列出 (GET) 和执行 (POST)，但也可以使用 [REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn781481.aspx) 或其他[客户端 SDK](https://msdn.microsoft.com/zh-cn/library/azure/dn781482.aspx)。 
 
 ## <a name="documents"></a>文档
-你可以插入、替换、删除、读取、枚举和查询集合中的任意 JSON 文档。 DocumentDB 不强制要求任何架构，并且对集合中的文档进行查询也不需要辅助索引的支持。 默认情况下，文档的最大大小为 2 MB。   
+你可以插入、替换、删除、读取、枚举和查询集合中的任意 JSON 文档。 DocumentDB 不强制要求任何架构，并且对集合中的文档进行查询也不需要辅助索引的支持。 文档的最大大小为 2 MB。   
 
 作为一种真正的开放式数据库服务，DocumentDB 不创建任何专用的数据类型（例如日期时间）或用于 JSON 文档的特定编码。 请注意，DocumentDB 不需要任何特殊的 JSON 约定来对各种文档之间的关系进行编码；DocumentDB 的 SQL 语法提供了非常强大的分层和关系查询运算符以查询和投影文档，而无需任何特殊的注释，也不需要使用可分辨属性对文档间的关系进行编码。  
 
@@ -424,7 +426,7 @@ DocumentDB 可通过 DocumentDB 存储二进制 blob/媒体（每个帐户最大
 
 请注意，上面列出的示例使用易于理解的 ID 来表示资源层次结构。 通过唯一的资源 ID 和 REST API 访问资源。 
 
-对于由 DocumentDB 管理的媒体，附件的 _media 属性将通过其 URI 引用媒体。 DocumentDB 将确保在删除所有未完成的引用时对媒体进行垃圾收集。 当你上传新的媒体并填充 _media 以指向新添加的媒体时，DocumentDB 自动生成附件。 如果你选择将媒体存储在由你（例如 OneDrive、Azure 存储空间、DropBox 等）管理的远程 blob 存储区，你仍可以使用附件以引用媒体。 在这种情况下，你将自行创建附件并填充其 _media 属性。   
+对于由 DocumentDB 管理的媒体，附件的 _media 属性将通过其 URI 引用媒体。 DocumentDB 将确保在删除所有未完成的引用时对媒体进行垃圾收集。 当你上传新的媒体并填充 _media 以指向新添加的媒体时，DocumentDB 自动生成附件。 如果选择将媒体存储在由你管理的远程 blob 存储区（例如 OneDrive、Azure 存储、DropBox 等），仍可以使用附件以引用媒体。 在这种情况下，你将自行创建附件并填充其 _media 属性。   
 
 至于所有其他资源，可以创建、替换、删除、读取、枚举附件，也可以轻松地使用 REST API 或任一客户端 SDK 查询附件。 至于文档，附件的读取一致性级别遵守数据库帐户中的一致性策略。 可以根据你的应用程序的数据一致性要求在每个请求中重写此策略。 查询附件时，读取一致性遵循集合上的索引编制模式设置。 对于“一致性”，将遵循帐户的一致性策略。 
  
@@ -432,7 +434,7 @@ DocumentDB 可通过 DocumentDB 存储二进制 blob/媒体（每个帐户最大
 ## <a name="users"></a>用户
 DocumentDB 用户是指对权限进行分组的逻辑命名空间。 DocumentDB 用户可能与标识管理系统或预定义应用程序角色中的用户相对应。 对于 DocumentDB，用户只是表示在数据库下对一组权限进行分组的抽象。   
 
-为了在你的应用程序中实现多租户，可以在对应实际用户或你的应用程序租户的 DocumentDB 中创建用户。 然后，你可以为对应针对多个集合、文档、附件等内容的访问控制的给定用户创建权限。   
+为了在应用程序中实现多租户，可以在对应实际用户或应用程序租户的 DocumentDB 中创建用户。 然后，你可以为对应针对多个集合、文档、附件等内容的访问控制的给定用户创建权限。   
 
 由于应用程序需要随用户增加而进行扩展，因此可以采用多种方法对数据进行分片。 可以按照如下方法对每个用户进行建模：   
 
@@ -441,12 +443,12 @@ DocumentDB 用户是指对权限进行分组的逻辑命名空间。 DocumentDB 
 - 将对应于多个用户的文档转到专用的集合。 
 - 将对应于多个用户的文档转到一组集合。   
 
-无论你选择的特定分片策略是什么，你都可以将实际用户建模为 DocumentDB 数据库中的用户并将细化的权限和每个用户关联起来。  
+无论选择的特定分片策略是什么，都可以将实际用户建模为 DocumentDB 数据库中的用户并将细化的权限和每个用户关联起来。  
 
 ![用户集合][3]  
 **分片策略和为用户建模**
 
-和所有其他资源一样，可以使用 REST API 或任一客户端 SDK 轻松创建、替换、删除、读取或枚举 DocumentDB 中的用户。 DocumentDB 始终保证对读取或查询用户资源的元数据提供高度一致性。 需要指出的是，自动删除用户可确保你不能访问其中所包含的任何权限。 即使 DocumentDB 将权限配额声明为后台中已删除用户的一部分，你也仍然可以使用已删除的权限。  
+和所有其他资源一样，可以使用 REST API 或任一客户端 SDK 轻松创建、替换、删除、读取或枚举 DocumentDB 中的用户。 DocumentDB 始终保证对读取或查询用户资源的元数据提供高度一致性。 需要指出的是，自动删除用户可确保你不能访问其中所包含的任何权限。 即使 DocumentDB 将权限配额声明为后台中已删除用户的一部分，也仍然可以使用已删除的权限。  
 
 ## <a name="permissions"></a>权限
 由于数据库帐户、数据库、用户和权限等资源需要管理权限，因此从访问控制方面而言，它们都被视为 *管理* 资源。 另一方面，集合、文档、附件、存储过程、触发器和 UDF 等资源都只局限在某个给定的数据库内，因此被视为*应用程序资源*。 授权模型定义了两种类型的*访问密钥*：*主密钥*和*资源密钥*以对应这两种类型的资源和访问它们的角色（即管理员和用户）。 主密钥是数据库帐户的一部分，并且提供给设置数据库帐户的开发人员（或管理员）。 此主密钥具有管理员语义，因为它可用于向管理和应用程序资源授予访问权限。 与此相反，资源密钥是允许访问*特定*应用程序资源的精细访问密钥。 因此，它会为特定资源（例如集合、文档、附件、存储过程、触发器或 UDF）捕获数据库的用户和用户权限之间的关系。   
@@ -456,7 +458,7 @@ DocumentDB 用户是指对权限进行分组的逻辑命名空间。 DocumentDB 
 就像所有其他资源一样，可以使用 REST API 或任一客户端 SDK 轻松创建、替换、删除、读取或枚举 DocumentDB 中的权限。 DocumentDB 始终保证对读取或查询权限的元数据提供高度一致性。 
 
 ## <a name="next-steps"></a>后续步骤
-有关通过 HTTP 命令使用资源的详细信息，请参阅 [RESTful interactions with DocumentDB resources](https://msdn.microsoft.com/zh-cn/library/azure/mt622086.aspx)（与 DocumentDB 资源进行 RESTful 交互）。
+有关通过 HTTP 命令使用资源的详细信息，请参阅[与 DocumentDB 资源进行 RESTful 交互](https://msdn.microsoft.com/zh-cn/library/azure/mt622086.aspx)。
 
 [1]: ./media/documentdb-resources/resources1.png
 [2]: ./media/documentdb-resources/resources2.png

@@ -1,14 +1,14 @@
 <properties
-    pageTitle="DocumentDB 自动化 - 资源管理器- Azure CLI 1.0 | Azure"
-    description="使用 Azure 资源管理器模板或 CLI 来部署 DocumentDB 数据库帐户。 DocumentDB 是用于 JSON 数据的云端 NoSQL 数据库。"
+    pageTitle="DocumentDB 自动化 -资源管理器- Azure CLI 1.0 | Azure"
+    description="使用 Azure 资源管理器模板或 CLI 来部署 DocumentDB 数据库帐户。 DocumentDB 是基于云的全局分布式数据库。"
     services="documentdb"
     author="mimig1"
     manager="jhubbard"
     editor=""
     tags="azure-resource-manager"
     documentationcenter=""
-    translationtype="Human Translation" />
-    
+    redirect_url="https://aka.ms/acdbclisamples"
+    ROBOTS="NOINDEX, NOFOLLOW" />
 <tags
     ms.assetid="eae5eec6-0e27-442c-abfc-ef6b7fd3f8d2"
     ms.service="documentdb"
@@ -17,11 +17,13 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="02/27/2017"
-    wacn.date="04/17/2017"
+    wacn.date="05/31/2017"
     ms.author="mimig"
-    ms.sourcegitcommit="7cc8d7b9c616d399509cd9dbdd155b0e9a7987a8"
-    ms.openlocfilehash="b6062a07368dd84525b6e538ee8f94051cc6229c"
-    ms.lasthandoff="04/07/2017" />
+    ms.translationtype="Human Translation"
+    ms.sourcegitcommit="4a18b6116e37e365e2d4c4e2d144d7588310292e"
+    ms.openlocfilehash="50719f7482550062b4bab8d78ebbefcd3c2e7978"
+    ms.contentlocale="zh-cn"
+    ms.lasthandoff="05/19/2017" />
 
 # <a name="automate-documentdb-account-creation-using-azure-cli-10-and-azure-resource-manager-templates"></a>使用 Azure CLI 1.0 和 Azure 资源管理器模板自动创建 DocumentDB 帐户
 > [AZURE.SELECTOR]
@@ -30,9 +32,11 @@
 - [Azure CLI 2.0](/documentation/articles/documentdb-automation-resource-manager-cli/)
 - [Azure PowerShell](/documentation/articles/documentdb-manage-account-with-powershell/)
 
-本文说明如何使用 Azure 资源管理器模板或直接使用 Azure 命令行接口 (CLI) 1.0 来创建 Azure DocumentDB 帐户。 若要使用 Azure 门户预览创建 DocumentDB 帐户，请参阅[使用 Azure 门户预览创建 DocumentDB 数据库帐户](/documentation/articles/documentdb-create-account/)。
+本文说明如何使用 Azure 资源管理器模板或直接使用 Azure 命令行界面 (CLI) 1.0 来创建 DocumentDB 帐户。 若要使用 Azure 门户预览创建 DocumentDB 帐户，请参阅[使用 Azure 门户预览创建 DocumentDB 数据库帐户](/documentation/articles/documentdb-create-account/)。
 
-DocumentDB 数据库帐户是目前唯一可以使用资源管理器模板和 Azure CLI 1.0 创建的 DocumentDB 资源。
+DocumentDB 和 MongoDB API 数据库帐户是目前唯一可以使用资源管理器模板和 Azure CLI 1.0 创建的 DocumentDB 资源。
+
+若要使用 CLI 2.0 创建 DocumentDB、表 API、图形 API 或 Mongo DB 帐户，请参阅[使用 Azure CLI 创建 Azure DocumentDB 帐户](/documentation/articles/documentdb-automation-resource-manager-cli/)。
 
 ## <a name="getting-ready"></a>做好准备
 必须拥有正确的 Azure CLI 版本和 Azure 帐户，才能将 Azure CLI 1.0 与 Azure 资源组配合使用。 如果没有 Azure CLI 1.0，[请安装](/documentation/articles/cli-install-nodejs/)。
@@ -131,17 +135,17 @@ DocumentDB 数据库帐户是目前唯一可以使用资源管理器模板和 Az
 如果遇到错误，请参阅 [故障排除](#troubleshooting)。
 
 ## <a name="understanding-resource-manager-templates-and-resource-groups"></a>了解 Azure 资源管理器模板和资源组
-大多数应用程序是通过不同资源类型的组合（例如，一个或多个 DocumentDB 帐户、存储帐户、虚拟网络或内容传送网络）构建而成的。 默认 Azure 服务管理 API 和 Azure 门户预览使用基于服务的方法代表这些项。 这种方法需要你单独部署和管理各个服务（或查找其他具备相同功能的工具），而不是当作单个逻辑部署单元。
+大多数应用程序是通过不同资源类型的组合（例如，一个或多个 DocumentDB 帐户、存储帐户、虚拟网络或内容交付网络）生成的。 默认 Azure 服务管理 API 和 Azure 门户预览使用基于服务的方法代表这些项。 这种方法需要你单独部署和管理各个服务（或查找其他具备相同功能的工具），而不是当作单个逻辑部署单元。
 
 可以利用 Azure 资源管理器模板将这些不同的资源声明为一个逻辑部署单元，然后进行部署和管理。 请不要以命令方式告知 Azure 逐一部署命令，而应该在 JSON 文件中描述整个部署 - 所有资源及关联的配置以及部署参数 - 然后告诉 Azure 将这些资源视为一个组进行部署。
 
 可在 [Azure资源管理器概述](/documentation/articles/resource-group-overview/)中了解有关 Azure 资源组及其功能的详细信息。 若要了解如何创作模板，请参阅[创作 Azure 资源管理器模板](/documentation/articles/resource-group-authoring-templates/)。
 
 ## <a id="quick-create-documentdb-account"></a>任务：创建单区域 DocumentDB 帐户
-使用本部分中的说明创建单区域 DocumentDB 帐户。 可以在 Azure CLI 1.0 中使用或不使用资源管理器模板完成此任务。
+根据本部分的说明创建单区域 DocumentDB 帐户。 可以在 Azure CLI 1.0 中使用或不使用资源管理器模板完成此任务。
 
-### <a id="create-single-documentdb-account-cli-arm"></a>在 Azure CLI 1.0 中不使用资源管理器模板创建单区域 DocumentDB 帐户
-在命令提示符处输入下列命令，于新的或现有的资源组中创建 DocumentDB 帐户：
+### <a id="create-single-documentdb-account-cli-arm"></a> 在 Azure CLI 1.0 中不使用资源管理器模板创建单区域 DocumentDB 帐户
+在命令提示符处输入下列命令，在新的或现有的资源组中创建 DocumentDB 帐户：
 
 > [AZURE.TIP]
 > 如果在 Azure PowerShell 或 Windows PowerShell 中运行此命令，将收到关于意外的令牌的错误。 请改为在 Windows 命令提示符处运行此命令。
@@ -152,7 +156,7 @@ DocumentDB 数据库帐户是目前唯一可以使用资源管理器模板和 Az
 
 - `<resourcegroupname>` 只能使用字母数字字符、句点、下划线、“-”字符和括号，且不能以句点结尾。
 - `<resourcegrouplocation>` 是当前资源组的区域。
-- `<ip-range-filter>` 指定 IP 地址集合或者 CIDR 格式的 IP 地址范围，以便将这些地址作为指定数据库帐户所允许的客户端 IP 列表。 IP 地址/范围必须以逗号分隔，且不得包含空格。 
+- `<ip-range-filter>` 指定 IP 地址集合或者 CIDR 格式的 IP 地址范围，以便将这些地址作为指定数据库帐户所允许的客户端 IP 列表。 IP 地址/范围必须以逗号分隔，且不得包含空格。 有关详细信息，请参阅 [DocumentDB 防火墙支持](/documentation/articles/documentdb-firewall-support/)
 - `<databaseaccountname>` 只能使用小写字母、数字及“-”字符，且长度必须为 3 到 50 个字符。
 - `<databaseaccountlocation>` 必须是已正式推出 DocumentDB 的区域之一。 [“Azure 区域”页](https://azure.microsoft.com/regions/#services)提供了当前的区域列表。
 
@@ -178,10 +182,10 @@ DocumentDB 数据库帐户是目前唯一可以使用资源管理器模板和 Az
 
 如果遇到错误，请参阅[故障排除](#troubleshooting)。
 
-在此命令返回之后，在帐户更改为“联机”状态以准备好可供使用之前，该帐户将会进入“正在创建”状态数分钟的时间。 可以在 [Azure 门户预览](https://portal.azure.cn)中的“DocumentDB 帐户”边栏选项卡上检查帐户的状态。
+在此命令返回之后，在帐户更改为“联机”状态以准备好可供使用之前，该帐户将会进入“正在创建”状态数分钟的时间。 可以在 [Azure 门户预览](https://portal.azure.cn)的“DocumentDB 帐户”边栏选项卡上检查帐户的状态。
 
-### <a id="create-single-documentdb-account-cli-arm"></a>在 Azure CLI 1.0 中使用资源管理器模板创建单区域 DocumentDB 帐户
-本部分中的说明介绍如何使用 Azure 资源管理器模板和可选参数文件（这两者都是 JSON 文件）来创建 DocumentDB 帐户。 使用模板可以准确描述所需的信息，并可重复使用而不会出现任何错误。
+### <a id="create-single-documentdb-account-cli-arm"></a> 在 Azure CLI 1.0 中使用资源管理器模板创建单区域 DocumentDB 帐户
+本部分中的说明介绍如何使用 Azure 资源管理器模板和可选参数文件（二者都是 JSON 文件）来创建 DocumentDB 帐户。 使用模板可以准确描述所需的信息，并可重复使用而不会出现任何错误。
 
 创建含有下列内容的本地模板文件。 将文件命名为 azuredeploy.json。
 
@@ -237,7 +241,7 @@ DocumentDB 数据库帐户是目前唯一可以使用资源管理器模板和 Az
 
 在 azuredeploy.parameters.json 文件中，将 `"samplearmacct"` 的值字段更新为要使用的数据库名称，然后保存文件。 `"databaseAccountName"` 只能使用小写字母、数字及“-”字符，且长度必须为 3 到 50 个字符。 将 `"locationName1"` 的值字段更新为要在其中创建 DocumentDB 帐户的区域。
 
-若要在资源组中创建 DocumentDB 帐户，请运行下列命令，并提供模板文件的路径、参数文件的路径或参数值、要部署于其中的资源组名称，以及部署名称（-n 可选）。
+若要在资源组中创建 DocumentDB 帐户，请运行下列命令，并提供模板文件的路径、参数文件的路径或参数值、要在其中进行部署的资源组的名称，以及部署名称（-n 为可选）。
 
 若要使用参数文件：
 
@@ -290,9 +294,9 @@ DocumentDB 数据库帐户是目前唯一可以使用资源管理器模板和 Az
 
 如果遇到错误，请参阅[故障排除](#troubleshooting)。  
 
-在此命令返回之后，在帐户更改为“联机”状态以准备好可供使用之前，该帐户将会进入“正在创建”状态数分钟的时间。 可以在 [Azure 门户预览](https://portal.azure.cn)中的“DocumentDB 帐户”边栏选项卡上检查帐户的状态。
+在此命令返回之后，在帐户更改为“联机”状态以准备好可供使用之前，该帐户将会进入“正在创建”状态数分钟的时间。 可以在 [Azure 门户预览](https://portal.azure.cn)的“DocumentDB 帐户”边栏选项卡上检查帐户的状态。
 
-## <a id="quick-create-documentdb-with-mongodb-api-account"></a>任务：创建单区域 DocumentDB：MongoDB 帐户 API
+## <a id="quick-create-documentdb-with-mongodb-api-account"></a>任务：创建单区域 DocumentDB: API for MongoDB 帐户
 使用本部分中的说明为 MongoDB 帐户创建单区域 API。 可以在 Azure CLI 1.0 中使用资源管理器模板完成此任务。
 
 ### <a id="create-single-documentdb-with-mongodb-api-account-cli-arm"></a>在 Azure CLI 1.0 中使用资源管理器模板创建单区域 MongoDB 帐户
@@ -333,7 +337,7 @@ DocumentDB 数据库帐户是目前唯一可以使用资源管理器模板和 Az
         ]
     }
 
-若要指定此帐户支持 MongoDB API，必须将类型设置为 MongoDB。 如果不指定类型属性，则默认为本机 DocumentDB 帐户。
+若要指定此帐户支持 MongoDB API，必须将类型设置为 MongoDB。 如果不指定类型属性，则默认为 DocumentDB 帐户。
 
 由于这是单区域帐户，failoverPriority 必须设置为 0。 failoverPriority 为 0 表示此区域将保留为 [DocumentDB 帐户的写入区域][scaling-globally]。
 可以在命令行中输入值，也可以创建参数文件来指定值。
@@ -355,7 +359,7 @@ DocumentDB 数据库帐户是目前唯一可以使用资源管理器模板和 Az
 
 在 azuredeploy.parameters.json 文件中，将 `"samplearmacct"` 的值字段更新为要使用的数据库名称，然后保存文件。 `"databaseAccountName"` 只能使用小写字母、数字及“-”字符，且长度必须为 3 到 50 个字符。 将 `"locationName1"` 的值字段更新为要在其中创建 DocumentDB 帐户的区域。
 
-若要在资源组中创建 DocumentDB 帐户，请运行下列命令，并提供模板文件的路径、参数文件的路径或参数值、要部署于其中的资源组名称，以及部署名称（-n 可选）。
+若要在资源组中创建 DocumentDB 帐户，请运行下列命令，并提供模板文件的路径、参数文件的路径或参数值、要在其中进行部署的资源组的名称，以及部署名称（-n 为可选）。
 
 若要使用参数文件：
 
@@ -408,13 +412,13 @@ DocumentDB 数据库帐户是目前唯一可以使用资源管理器模板和 Az
 
 如果遇到错误，请参阅[故障排除](#troubleshooting)。  
 
-在此命令返回之后，在帐户更改为“联机”状态以准备好可供使用之前，该帐户将会进入“正在创建”状态数分钟的时间。 可以在 [Azure 门户预览](https://portal.azure.cn)中的“DocumentDB 帐户”边栏选项卡上检查帐户的状态。
+在此命令返回之后，在帐户更改为“联机”状态以准备好可供使用之前，该帐户将会进入“正在创建”状态数分钟的时间。 可以在 [Azure 门户预览](https://portal.azure.cn)的“DocumentDB 帐户”边栏选项卡上检查帐户的状态。
 
 ## <a id="create-multi-documentdb-account"></a>任务：创建多区域 DocumentDB 帐户
-DocumentDB 能够跨不同的 [Azure 区域](https://azure.microsoft.com/regions/#services)[全局分发数据][distribute-globally]。 创建 DocumentDB 帐户时，可以指定要将服务放在哪个区域。 使用本部分中的说明创建多区域 DocumentDB 帐户。 可以在 Azure CLI 1.0 中使用或不使用资源管理器模板完成此任务。
+DocumentDB 能够跨不同的 [Azure 区域](https://azure.microsoft.com/regions/#services)[全局分配数据][distribute-globally]。 创建 DocumentDB 帐户时，可以指定要将服务放在哪个区域。 根据本部分的说明创建多区域 DocumentDB 帐户。 可以在 Azure CLI 1.0 中使用或不使用资源管理器模板完成此任务。
 
 ### <a id="create-multi-documentdb-account-cli"></a> 在 Azure CLI 1.0 中不使用资源管理器模板创建多区域 DocumentDB 帐户
-在命令提示符处输入下列命令，于新的或现有的资源组中创建 DocumentDB 帐户：
+在命令提示符处输入下列命令，在新的或现有的资源组中创建 DocumentDB 帐户：
 
 > [AZURE.TIP]
 > 如果在 Azure PowerShell 或 Windows PowerShell 中运行此命令，将收到关于意外的令牌的错误。 请改为在 Windows 命令提示符处运行此命令。
@@ -425,9 +429,9 @@ DocumentDB 能够跨不同的 [Azure 区域](https://azure.microsoft.com/regions
 
 - `<resourcegroupname>` 只能使用字母数字字符、句点、下划线、“-”字符和括号，且不能以句点结尾。
 - `<resourcegrouplocation>` 是当前资源组的区域。
-- `<ip-range-filter>` 指定 IP 地址集合或者 CIDR 格式的 IP 地址范围，以便将这些地址作为指定数据库帐户所允许的客户端 IP 列表。 IP 地址/范围必须以逗号分隔，且不得包含空格。 
+- `<ip-range-filter>` 指定 IP 地址集合或者 CIDR 格式的 IP 地址范围，以便将这些地址作为指定数据库帐户所允许的客户端 IP 列表。 IP 地址/范围必须以逗号分隔，且不得包含空格。 有关详细信息，请参阅 [DocumentDB 防火墙支持](/documentation/articles/documentdb-firewall-support/)
 - `<databaseaccountname>` 只能使用小写字母、数字及“-”字符，且长度必须为 3 到 50 个字符。
-- `<databaseaccountlocation1>` 和 `<databaseaccountlocation2>` 必须是已正式推出 DocumentDB 的区域。 [Azure 区域页面](https://azure.microsoft.com/regions/#services)提供当前的区域列表。
+- `<databaseaccountlocation1>` 和 `<databaseaccountlocation2>` 必须是已正式推出 DocumentDB 的区域。 [“Azure 区域”页](https://azure.microsoft.com/regions/#services)提供了当前的区域列表。
 
 输入示例：
 
@@ -451,10 +455,10 @@ DocumentDB 能够跨不同的 [Azure 区域](https://azure.microsoft.com/regions
 
 如果遇到错误，请参阅[故障排除](#troubleshooting)。
 
-在此命令返回之后，在帐户更改为“联机”状态以准备好可供使用之前，该帐户将会进入“正在创建”状态数分钟的时间。 可以在 [Azure 门户预览](https://portal.azure.cn)中的“DocumentDB 帐户”边栏选项卡上检查帐户的状态。
+在此命令返回之后，在帐户更改为“联机”状态以准备好可供使用之前，该帐户将会进入“正在创建”状态数分钟的时间。 可以在 [Azure 门户预览](https://portal.azure.cn)的“DocumentDB 帐户”边栏选项卡上检查帐户的状态。
 
 ### <a id="create-multi-documentdb-account-cli-arm"></a> 在 Azure CLI 1.0 中使用资源管理器模板创建多区域 DocumentDB 帐户
-本部分中的说明介绍如何使用 Azure 资源管理器模板和可选参数文件（这两者都是 JSON 文件）来创建 DocumentDB 帐户。 使用模板可以准确描述所需的信息，并可重复使用而不会出现任何错误。
+本部分中的说明介绍如何使用 Azure 资源管理器模板和可选参数文件（二者都是 JSON 文件）来创建 DocumentDB 帐户。 使用模板可以准确描述所需的信息，并可重复使用而不会出现任何错误。
 
 创建含有下列内容的本地模板文件。 将文件命名为 azuredeploy.json。
 
@@ -521,7 +525,7 @@ DocumentDB 能够跨不同的 [Azure 区域](https://azure.microsoft.com/regions
 
 在 azuredeploy.parameters.json 文件中，将 `"samplearmacct"` 的值字段更新为要使用的数据库名称，然后保存文件。 `"databaseAccountName"` 只能使用小写字母、数字及“-”字符，且长度必须为 3 到 50 个字符。 将 `"locationName1"` 和 `"locationName2"` 的值字段更新为要在其中创建 DocumentDB 帐户的区域。
 
-若要在资源组中创建 DocumentDB 帐户，请运行下列命令，并提供模板文件的路径、参数文件的路径或参数值、要部署于其中的资源组名称，以及部署名称（-n 可选）。
+若要在资源组中创建 DocumentDB 帐户，请运行下列命令，并提供模板文件的路径、参数文件的路径或参数值、要在其中进行部署的资源组的名称，以及部署名称（-n 为可选）。
 
 若要使用参数文件：
 
@@ -575,7 +579,7 @@ DocumentDB 能够跨不同的 [Azure 区域](https://azure.microsoft.com/regions
 
 如果遇到错误，请参阅[故障排除](#troubleshooting)。  
 
-在此命令返回之后，在帐户更改为“联机”状态以准备好可供使用之前，该帐户将会进入“正在创建”状态数分钟的时间。 可以在 [Azure 门户预览](https://portal.azure.cn)中的“DocumentDB 帐户”边栏选项卡上检查帐户的状态。
+在此命令返回之后，在帐户更改为“联机”状态以准备好可供使用之前，该帐户将会进入“正在创建”状态数分钟的时间。 可以在 [Azure 门户预览](https://portal.azure.cn)的“DocumentDB 帐户”边栏选项卡上检查帐户的状态。
 
 ## <a name="troubleshooting"></a>故障排除
 如果在创建资源组或数据库帐户时收到错误（例如 `Deployment provisioning state was not successful` ），有几个故障排除选项可供使用。
@@ -600,7 +604,7 @@ DocumentDB 能够跨不同的 [Azure 区域](https://azure.microsoft.com/regions
     ![Azure 门户预览屏幕截图：如何导航到部署错误消息](./media/documentdb-automation-resource-manager-cli/portal-troubleshooting-deploy.png)
 
 ## <a name="next-steps"></a>后续步骤
-现在你已经有了 DocumentDB 帐户，下一步是创建 DocumentDB 数据库。 你可以使用下面其中一项来创建数据库：
+有了 DocumentDB 帐户之后，接下来的步骤是创建 DocumentDB 数据库。 你可以使用下面其中一项来创建数据库：
 
 - Azure 门户预览，如[使用 Azure 门户预览创建 DocumentDB 集合和数据库](/documentation/articles/documentdb-create-collection/)中所述。
 - C# .NET 示例，位于 GitHub 上 [azure-documentdb-dotnet](https://github.com/Azure/azure-documentdb-net/tree/master/samples/code-samples) 存储库的 [DatabaseManagement](https://github.com/Azure/azure-documentdb-net/tree/master/samples/code-samples/DatabaseManagement) 项目中。
@@ -608,13 +612,13 @@ DocumentDB 能够跨不同的 [Azure 区域](https://azure.microsoft.com/regions
 
 创建数据库后，必须向数据库[添加一个或多个集合](/documentation/articles/documentdb-create-collection/)，然后向集合[添加文档](/documentation/articles/documentdb-view-json-document-explorer/)。
 
-当集合中有文档后，可以使用门户中的[查询资源管理器](/documentation/articles/documentdb-query-collections-query-explorer/)、[REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn781481.aspx) 或某个 [SDK](https://msdn.microsoft.com/zh-cn/library/azure/dn781482.aspx)针对文档使用 [DocumentDB SQL](/documentation/articles/documentdb-sql-query/) [执行查询](/documentation/articles/documentdb-sql-query/#ExecutingSqlQueries/)。
-
-若要详细了解 DocumentDB，请浏览以下资源：
+当集合中有文档后，可以使用门户中的[查询资源管理器](/documentation/articles/documentdb-query-collections-query-explorer/)、[REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn781481.aspx) 或某个 [SDK](https://msdn.microsoft.com/zh-cn/library/azure/dn781482.aspx) 针对文档使用 [SQL](/documentation/articles/documentdb-sql-query/) 来[执行查询](/documentation/articles/documentdb-sql-query/#ExecutingSqlQueries/)。
 
 - [DocumentDB 资源模型和概念](/documentation/articles/documentdb-resources/)
+
 
 <!--Reference style links - using these makes the source content way more readable than using inline links-->
 [distribute-globally]: /documentation/articles/documentdb-distribute-data-globally/
 [scaling-globally]:/documentation/articles/documentdb-distribute-data-globally/#scaling-across-the-planet/
 
+<!--Update_Description: wording update-->

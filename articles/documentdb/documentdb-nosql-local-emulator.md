@@ -1,13 +1,12 @@
 <properties
-    pageTitle="通过 DocumentDB 模拟器在本地开发 | Azure"
-    description="利用 Azure DocumentDB 模拟器，可以在本地免费开发和测试应用程序，无需创建 Azure 订阅。"
+    pageTitle="使用 DocumentDB 模拟器进行本地开发 | Azure"
+    description="利用 DocumentDB 模拟器，可以在本地免费开发和测试应用程序，无需创建 Azure 订阅。"
     services="documentdb"
     documentationcenter=""
     keywords="DocumentDB 模拟器"
     author="arramac"
     manager="jhubbard"
-    editor=""
-    translationtype="Human Translation" />
+    editor="" />
 <tags
     ms.assetid="90b379a6-426b-4915-9635-822f1a138656"
     ms.service="documentdb"
@@ -15,20 +14,46 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="na"
-    ms.date="04/06/2017"
-    wacn.date="05/08/2017"
+    ms.date="05/10/2017"
     ms.author="arramac"
-    ms.sourcegitcommit="2c4ee90387d280f15b2f2ed656f7d4862ad80901"
-    ms.openlocfilehash="f4ca2e3378c0348cfbe291923ca0a74be67ddf0d"
-    ms.lasthandoff="04/28/2017" />
+    wacn.date="05/31/2017"
+    ms.translationtype="Human Translation"
+    ms.sourcegitcommit="4a18b6116e37e365e2d4c4e2d144d7588310292e"
+    ms.openlocfilehash="80b1702e78c3ee594231b8d3a3d3d41b0b40b7d2"
+    ms.contentlocale="zh-cn"
+    ms.lasthandoff="05/19/2017" />
 
-# <a name="use-the-azure-documentdb-emulator-for-development-and-testing"></a>将 Azure DocumentDB 模拟器用于开发和测试
+# <a name="use-the-azure-documentdb-emulator-for-local-development-and-testing"></a>将 DocumentDB 模拟器用于本地开发和测试
 
-[**下载模拟器**](https://aka.ms/documentdb-emulator)
+<table>
+<tr>
+  <td><strong>二进制文件</strong></td>
+  <td>[下载 MSI](https://aka.ms/documentdb-emulator)</td>
+</tr>
+<tr>
+  <td><strong>Docker</strong></td>
+  <td>[Docker 中心](https://hub.docker.com/r/microsoft/azure-documentdb-emulator/)</td>
+</tr>
+<tr>
+  <td><strong>Docker 源</strong></td>
+  <td>[GitHub](https://github.com/azure/azure-documentdb-emulator-docker)</td>
+</tr>
+</table>
+  
+为方便进行开发，DocumentDB 模拟器提供了一个模拟 DocumentDB 服务的本地环境。 使用 DocumentDB 模拟器可在本地开发和测试应用程序，无需创建 Azure 订阅且不会产生任何费用。 如果对应用程序在 DocumentDB 模拟器中的工作情况感到满意，则可以切换到在云中使用 DocumentDB 帐户。
 
-为方便进行开发，Azure DocumentDB 模拟器提供了一个模拟 Azure DocumentDB 服务的本地环境。 使用 DocumentDB 模拟器，可以在本地开发并测试应用程序，而无需创建 Azure 订阅且不会产生任何费用。 如果对应用程序在 DocumentDB 模拟器中的工作情况感到满意，则可以切换到在云中使用 Azure DocumentDB 帐户。
+本文涵盖以下任务： 
 
-## <a name="documentdb-emulator-system-requirements"></a>DocumentDB 模拟器系统要求
+> [!div class="checklist"]
+> * 安装模拟器
+> * 在适用于 Windows 的 Docker 上运行模拟器
+> * 对请求进行身份验证
+> * 在模拟器中使用数据资源管理器
+> * 导出 SSL 证书
+> * 从命令行调用模拟器
+> * 收集跟踪文件
+
+## <a name="system-requirements"></a>系统要求
 DocumentDB 模拟器具有以下硬件和软件要求：
 
 - 软件要求
@@ -49,7 +74,7 @@ DocumentDB 模拟器具有以下硬件和软件要求：
 
 安装了[用于 Windows 的 Docker](https://www.docker.com/docker-windows) 之后，可以通过从喜爱的 shell（cmd.exe、PowerShell 等）运行以下命令，从 Docker 中心请求模拟器映像。
 
-    docker pull mominag/documentdb_emulator 
+    docker pull microsoft/azure-documentdb-emulator 
 
 若要启动映像，请运行以下命令。
 
@@ -76,13 +101,13 @@ DocumentDB 模拟器具有以下硬件和软件要求：
     powershell .\importcert.ps1
 
 ## <a name="checking-for-updates"></a>检查更新
-DocumentDB 模拟器包括一个内置 Azure DocumentDB 数据资源管理器，用于浏览存储在 DocumentDB 中的数据、创建新集合，并在新的更新可供下载时通知用户。 
+DocumentDB 模拟器包括一个内置 DocumentDB 数据资源管理器，用于浏览存储在 DocumentDB 中的数据、创建新集合，并在新的更新可供下载时通知用户。 
 
 > [AZURE.NOTE]
-> 在 DocumentDB 模拟器的一个版本中创建的数据不保证在使用不同版本时可以访问。 如果需要长期保存数据，建议将该数据存储在 Azure DocumentDB 帐户中，而不是存储在 DocumentDB 模拟器中。 
+> 在 DocumentDB 模拟器的一个版本中创建的数据不保证在使用不同版本时可以访问。 如果需要长期保存数据，建议将该数据存储在 DocumentDB 帐户中，而不是存储在 DocumentDB 模拟器中。 
 
 ## <a name="how-the-emulator-works"></a>模拟器的工作原理
-DocumentDB 模拟器提供对 DocumentDB 服务的高保真模拟。 它支持和 Azure DocumentDB 相同的功能，包括支持创建和查询 JSON 文档、预配集合和调整集合的规模，以及执行存储过程和触发器。 可以使用 DocumentDB 模拟器开发和测试应用程序，并且只需对 DocumentDB 的连接终结点进行单个配置的更改就可以将它们部署到全球范围内的 Azure。
+DocumentDB 模拟器提供对 DocumentDB 服务的高保真模拟。 它支持和 DocumentDB 相同的功能，包括支持创建和查询 JSON 文档、预配集合和调整集合的规模，以及执行存储过程和触发器。 可以使用 DocumentDB 模拟器开发和测试应用程序，并通过对 DocumentDB 的连接终结点进行单一配置更改将其部署到全局范围的 Azure。
 
 虽然创建了实际 DocumentDB 服务的高保真本地模拟，但是 DocumentDB 模拟器的实现不同于该服务。 例如，DocumentDB 模拟器针对持久性使用标准 OS 组件（如本地文件系统），针对连接性使用 HTTPS 协议堆栈。 这意味着，不可通过 DocumentDB 模拟器使用某些依赖于 Azure 基础结构的功能，如全局复制、读/写的单位数毫秒延迟，以及可调整的一致性级别。
 
@@ -96,11 +121,11 @@ DocumentDB 模拟器提供对 DocumentDB 服务的高保真模拟。 它支持�
 > [AZURE.NOTE]
 > DocumentDB 模拟器支持的主密钥仅用于模拟器。 不能在 DocumentDB 模拟器中使用生产 DocumentDB 帐户和密钥。 
 
-此外，与 Azure DocumentDB 服务一样，DocumentDB 模拟器仅支持采用 SSL 的安全通信。
+此外，与 DocumentDB 服务一样，DocumentDB 模拟器仅支持采用 SSL 的安全通信。
 
 ## <a name="start-and-initialize-the-emulator"></a>启动和初始化模拟器
 
-若要启动 Azure DocumentDB 模拟器，请选择“启动”按钮或按 Windows 键。 开始键入**DocumentDB 模拟器**，然后从应用程序列表中选择该模拟器。 
+若要启动 DocumentDB 模拟器，请选择“启动”按钮或按 Windows 键。 开始键入“DocumentDB 模拟器”，然后从应用程序列表中选择该模拟器。 
 
 ![选择“启动”按钮或按 Windows 键，开始键入“DocumentDB 模拟器”，然后从应用程序列表中选择该模拟器](./media/documentdb-nosql-local-emulator/azure-documentdb-database-local-emulator-start.png)
 
@@ -128,7 +153,7 @@ DocumentDB 模拟器启动时，会自动在浏览器中打开 DocumentDB 数据
 
     mongodb://localhost:C2y6yDjf5/R+ob0N8A7Cgv30VRDJIWEHLM+4QDU5DE2nQ9nDuVTqobD4b8mGGyPMbIZnqyMsEcaGQy67XIw/Jw==@localhost:10250/admin?ssl=true&3t.sslSelfSignedCerts=true
 
-可以使用现有工具如 [DocumentDB Studio](https://github.com/mingaliu/DocumentDBStudio) 连接到 DocumentDB 模拟器。 用户还可以使用 [DocumentDB 数据迁移工具](https://github.com/azure/azure-documentdb-datamigrationtool)在 DocumentDB 模拟器和 Azure DocumentDB 服务之间迁移数据。
+可以使用现有工具如 [DocumentDB Studio](https://github.com/mingaliu/DocumentDBStudio) 连接到 DocumentDB 模拟器。 用户还可以使用 [DocumentDB 数据迁移工具](https://github.com/azure/azure-documentdb-datamigrationtool)在 DocumentDB 模拟器和 DocumentDB 服务之间迁移数据。
 
 默认情况下，使用 DocumentDB 模拟器，可创建多达 25 个单区集合或 1 个已分区集合。 有关如何更改此值的详细信息，请参阅[设置 PartitionCount 值](#set-partitioncount)。
 
@@ -241,18 +266,18 @@ DocumentDB 模拟器启动时，会自动在浏览器中打开 DocumentDB 数据
 </table>
 
 ## <a name="differences-between-the-documentdb-emulator-and-azure-documentdb"></a>DocumentDB 模拟器与 Azure DocumentDB 之间的差异 
-由于 DocumentDB 模拟器提供在本地开发人员工作站上运行的模拟环境，因此模拟器与云中的 Azure DocumentDB 帐户之间的功能存在一些差异：
+由于 DocumentDB 模拟器提供在本地开发人员工作站上运行的模拟环境，因此模拟器与云中的 DocumentDB 帐户之间的功能存在一些差异：
 
 - DocumentDB 模拟器只支持一个固定的帐户和公开的主密钥。  在 DocumentDB 模拟器中无法重新生成密钥。
-- DocumentDB 模拟器不是可扩展的服务，并且不支持大量集合。
+- DocumentDB 模拟器不是可缩放的服务，并且不支持大量集合。
 - DocumentDB 模拟器不模拟不同的 [DocumentDB 一致性级别](/documentation/articles/documentdb-consistency-levels/)。
 - DocumentDB 模拟器不模拟[多区域复制](/documentation/articles/documentdb-distribute-data-globally/)。
-- DocumentDB 模拟器不支持服务配额替代，而 Azure DocumentDB 服务支持（例如文档大小限制、增加的分区集合存储）。
-- 由于 DocumentDB 模拟器副本不一定能反映 Azure DocumentDB 服务的最新更改，因此请使用 [DocumentDB 容量规划器](https://www.documentdb.com/capacityplanner)准确估计应用程序的生产吞吐量 (RU) 需求。
+- DocumentDB 模拟器不支持服务配额替代，而 DocumentDB 服务支持（例如文档大小限制、增加的分区集合存储）。
+- 由于 DocumentDB 模拟器副本不一定能反映 DocumentDB 服务的最新更改，因此请使用 [DocumentDB Capacity Planner](https://www.documentdb.com/capacityplanner) 准确估计应用程序的生产吞吐量 (RU) 需求。
 
-## <a name="set-partitioncount"></a> 更改集合数
+## <a id="set-partitioncount"></a> 更改集合数
 
-默认情况下，使用 DocumentDB 模拟器，可创建多达 25 个单分区集合或 1 个已分区集合。 通过修改 **PartitionCount** 值，可以创建最多 250 个单分区集合或 10 个已分区集合，或两者的任意组合（不得超过 250 个单分区，其中 1 个已分区集合 = 25 个单分区集合）。
+默认情况下，使用 DocumentDB 模拟器可创建多达 25 个单区集合或 1 个已分区集合。 通过修改 **PartitionCount** 值，可以创建最多 250 个单分区集合或 10 个已分区集合，或两者的任意组合（不得超过 250 个单分区，其中 1 个已分区集合 = 25 个单分区集合）。
 
 如果在已超过当前分区计数后尝试创建集合，则模拟器将引发 ServiceUnavailable 异常，并收到以下消息。
 
@@ -267,7 +292,7 @@ DocumentDB 模拟器启动时，会自动在浏览器中打开 DocumentDB 数据
 1. 通过在系统任务栏上右键单击“DocumentDB 模拟器”图标，然后单击“重置数据...”，删除所有本地 DocumentDB 模拟器数据。
 2. 删除文件夹 C:\Users\user_name\AppData\Local\DocumentDBEmulator 中的所有模拟器数据。
 3. 通过在系统任务栏上右键单击“DocumentDB 模拟器”图标，然后单击“退出”，退出所有打开的实例。 退出所有实例可能需要一分钟。
-4. 安装最新版本的 [DocumentDB 模拟器](https://aka.ms/documentdb-emulator)。
+4. 安装最新版的 [DocumentDB 模拟器](https://aka.ms/documentdb-emulator)。
 5. 通过设置一个 <= 250 的值启动具有 PartitionCount 标志的模拟器。 例如：`C:\Program Files\DocumentDB Emulator>DocumentDB.Emulator.exe /PartitionCount=100`。
 
 ## <a name="troubleshooting"></a>故障排除
@@ -293,9 +318,22 @@ DocumentDB 模拟器启动时，会自动在浏览器中打开 DocumentDB 数据
 6. 导航到 `%ProgramFiles%\DocumentDB Emulator`，查找 docdbemulator_000001.etl 文件。
 7. 将 .etl 文件和重现步骤一起发送至 [askdocdb@microsoft.com](mailto:askdocdb@microsoft.com) 进行调试。
 
-
 ## <a name="next-steps"></a>后续步骤
-- 若要了解有关 DocumentDB 的详细信息，请参阅 [Azure DocumentDB 简介](/documentation/articles/documentdb-introduction/)
-- 若要开始使用 DocumentDB 模拟器进行开发，请下载一个[支持的 DocumentDB SDK](/documentation/articles/documentdb-sdk-dotnet/)。
+
+在本教程中已完成以下操作：
+
+> [!div class="checklist"]
+> * 安装本地模拟器
+> * 在适用于 Windows 的 Docker 上运行模拟器
+> * 经过身份验证的请求
+> * 在模拟器中使用数据资源管理器
+> * 导出 SSL 证书
+> * 从命令行调用模拟器
+> * 收集跟踪文件
+
+在本教程中，你已了解如何使用本地模拟器进行免费的本地开发。 现在可以继续学习下一教程，了解如何导出模拟器 SSL 证书。 
+
+> [!div class="nextstepaction"]
+> [导出 DocumentDB 模拟器证书](/documentation/articles/documentdb-nosql-local-emulator-export-ssl-certificates/)
 
 <!--Update_Description: wording update-->
