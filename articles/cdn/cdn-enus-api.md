@@ -28,7 +28,7 @@
 
 ##<a name=""></a>Overview
 
-You can use this interface to manage Azure China CDN endpoints. You can obtain the corresponding results by sending an HTTPS request to the CDN API server and adding the corresponding parameters to the request in accordance with the interface instructions. The Azure CDN will authenticate each access request. Requests must be submitted using the HTTPS protocol, and the request must include the signature information. Please refer to the document signing mechanism for the specific operation process. Character encoding is UTF-8.
+You can use this interface to manage Azure China CDN endpoints. You can obtain the corresponding results by sending an HTTPS request to the CDN API server and adding the corresponding parameters to the request in accordance with the interface instructions. The Azure CDN will authenticate each access request. Requests must be submitted using the HTTPS protocol, and the request must include the signature information. Please refer to the document signature mechanism for the specific operation process. Character encoding is UTF-8.
 
 The API can be used to implement the following operations:
 

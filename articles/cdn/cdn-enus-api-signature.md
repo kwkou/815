@@ -23,7 +23,7 @@
 - [中文](/documentation/articles/cdn-api-signature/)
 - [English](/documentation/articles/cdn-enus-api-signature/)
 
-# <a name="cdn-api"></a>CDN API signing mechanism
+# <a name="cdn-api"></a>CDN API signature mechanism
 
 
 The Azure CDN will authenticate each request. Requests must be submitted using the HTTPS protocol, and the request must include the signature information.

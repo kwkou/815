@@ -65,7 +65,7 @@ You can use the API to view the status and results for asynchronous operations.
 | Request header | Description |
 |:-----------|:-----------|
 | x-azurecdn-request-date | Must be entered. Current UTC request time in yyyy-MM-dd hh:mm:ss format |
-| Authorization | Must be entered. Please refer to [CDN API signing mechanism](/documentation/articles/cdn-enus-api-signature/) for authorization headers. |
+| Authorization | Must be entered. Please refer to [CDN API signature mechanism](/documentation/articles/cdn-enus-api-signature/) for authorization headers. |
 
 ### <a name="-body"></a>Request body
 None
