@@ -4,11 +4,12 @@
     wacn.date="4/7/2016"
     wacn.lang="cn"
     />
+
 > [AZURE.LANGUAGE]
-- [中文](/documentation/articles/cdn-overview/)
+- [中文](/documentation/articles/cdn-security/)
+- [English](/documentation/articles/cdn-enus-security/) 
 
 #Azure CDN安全传输机制
-
 
 内容劫持是指运营商/链路供应者/黑客在路由器上接入旁路设备来侦测经过的HTTP请求，运营商/链路提供者/黑客按照一定的劫持策略识别出目标HTTP请求，并在源站反馈数据之前抢先客户端发送302相应，客户端被迫跳转到其他服务器请求内容，即对URL请求进行劫持。
 

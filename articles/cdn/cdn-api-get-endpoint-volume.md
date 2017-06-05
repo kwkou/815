@@ -5,6 +5,10 @@
     wacn.lang="cn"
     />
 
+> [AZURE.LANGUAGE]
+- [中文](/documentation/articles/cdn-api-get-endpoint-volume/)
+- [English](/documentation/articles/cdn-enus-api-get-endpoint-volume/) 
+
 # 流量-获取节点流量信息
 
 ## 请求

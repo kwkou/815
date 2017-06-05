@@ -5,6 +5,10 @@
     wacn.lang="cn"
     />
 
+> [AZURE.LANGUAGE]
+- [中文](/documentation/articles/cdn-api-enable-endpoint/)
+- [English](/documentation/articles/cdn-enus-api-enable-endpoint/) 
+
 # 节点管理-启用处于禁用状态节点
 
 ## 请求

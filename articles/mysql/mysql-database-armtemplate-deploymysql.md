@@ -4,6 +4,7 @@
 
 > [AZURE.LANGUAGE]
 - [中文](/documentation/articles/mysql-database-armtemplate-deploymysql/)
+- [English](/documentation/articles/mysql-database-enus-armtemplate-deploymysql/) 
 
 #使用Azure资源管理器模板部署MySQL PaaS
 

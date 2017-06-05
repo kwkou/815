@@ -5,6 +5,10 @@
     wacn.lang="cn"
     />
  
+> [AZURE.LANGUAGE]
+- [中文](/documentation/articles/cdn-api/)
+- [English](/documentation/articles/cdn-enus-api/) 
+
 # CDN API概述
 
 ##简述

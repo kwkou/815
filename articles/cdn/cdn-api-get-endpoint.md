@@ -5,6 +5,10 @@
     wacn.lang="cn"
     />
 
+> [AZURE.LANGUAGE]
+- [中文](/documentation/articles/cdn-api-get-endpoint/)
+- [English](/documentation/articles/cdn-enus-api-get-endpoint/) 
+
 # 节点管理-获取节点信息
 
 ## 请求

@@ -4,6 +4,7 @@
 
 > [AZURE.LANGUAGE]
 - [中文](/documentation/articles/mysql-database-enable-secondary/)
+- [English](/documentation/articles/mysql-database-enus-enable-secondary/) 
 
 # 启用可读备用库
 

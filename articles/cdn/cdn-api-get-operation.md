@@ -5,6 +5,10 @@
     wacn.lang="cn"
     />
 
+> [AZURE.LANGUAGE]
+- [中文](/documentation/articles/cdn-api-get-operation/)
+- [English](/documentation/articles/cdn-enus-api-get-operation/) 
+
 # 操作管理-获取操作信息
 
 通过该API可以查看异步操作的状态和结果。

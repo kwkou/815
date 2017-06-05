@@ -5,6 +5,10 @@
     wacn.lang="cn"
     />
 
+> [AZURE.LANGUAGE]
+- [中文](/documentation/articles/cdn-api-delete-endpoint/)
+- [English](/documentation/articles/cdn-enus-api-delete-endpoint/) 
+
 # 节点管理-删除节点
 
 ## 请求

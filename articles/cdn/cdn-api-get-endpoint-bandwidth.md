@@ -6,6 +6,10 @@
     />
 
 
+> [AZURE.LANGUAGE]
+- [中文](/documentation/articles/cdn-api-get-endpoint-bandwidth/)
+- [English](/documentation/articles/cdn-enus-api-get-endpoint-bandwidth/) 
+
 # 流量-获取节点带宽信息
 
 ## 请求

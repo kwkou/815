@@ -5,6 +5,10 @@
     wacn.lang="cn"
     />
 
+> [AZURE.LANGUAGE]
+- [中文](/documentation/articles/cdn-image-processing/)
+- [English](/documentation/articles/cdn-enus-image-processing/) 
+
 # Azure CDN 图片处理
 
 ## 简介

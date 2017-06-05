@@ -1,3 +1,28 @@
+<properties
+    linkid="dev-net-common-tasks-cdn"
+    urlDisplayName="CDN"
+    pageTitle="Azure China CDN API doc-purge"
+    metaKeywords="Azure CDN, Azure CDN, Azure blobs, Azure caching, Azure add-on, Live Streaming, 流媒体加速, CDN加速,CDN服务,主流CDN, 流媒体直播加速, 媒体服务, Azure Media Service, 缓存规则, HLS, CDN技术文档, CDN帮助文档, 视频直播加速, 直播加速"
+    description="Learn How to create Live Streaming acceleration type CDN on Azure Management Portal and default caching rules for Live Streaming CDN"
+    metaCanonical=""
+    services="cdn"
+    documentationCenter=".NET"
+    author="jessie-jyy"
+    solutions=""
+    manager=""
+    editor="" />
+<tags
+    ms.service="cdn"
+    ms.author="v-jijes"
+    ms.topic="article"
+    ms.date="05/04/2017"
+    wacn.date="05/04/2017"
+    wacn.lang="cn" />
+
+> [AZURE.LANGUAGE]
+- [中文](/documentation/articles/cdn-api-query-purge/)
+- [English](/documentation/articles/cdn-enus-api-query-purge/) 
+
 # 缓存刷新-查询缓存刷新进度
 
 ## 请求

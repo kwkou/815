@@ -2,6 +2,10 @@
 
 <tags ms.service="mysql" ms.date="1/10/2017" wacn.date="1/10/2017" wacn.lang="cn" />
 
+> [AZURE.LANGUAGE]
+- [中文](/documentation/articles/mysql-database-readreplicainquiry/)
+- [English](/documentation/articles/mysql-database-enus-readreplicainquiry/) 
+
 #主从复制问题
 
 > [AZURE.SELECTOR]

@@ -5,6 +5,10 @@
     wacn.lang="cn"
     />
 
+> [AZURE.LANGUAGE]
+- [中文](/documentation/articles/cdn-api-get-access-control/)
+- [English](/documentation/articles/cdn-enus-api-get-access-control/) 
+
 # 节点管理-获取访问控制规则
 
 ## 请求

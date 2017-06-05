@@ -5,6 +5,10 @@
     wacn.lang="cn"
     />
 
+> [AZURE.LANGUAGE]
+- [中文](/documentation/articles/cdn-api-get-cache-policy/)
+- [English](/documentation/articles/cdn-enus-api-get-cache-policy/) 
+
 # 节点管理-查询缓存策略
 
 ## 请求

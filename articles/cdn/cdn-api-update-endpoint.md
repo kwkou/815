@@ -5,6 +5,10 @@
     wacn.lang="cn"
     />
 
+> [AZURE.LANGUAGE]
+- [中文](/documentation/articles/cdn-api-update-endpoint/)
+- [English](/documentation/articles/cdn-enus-api-update-endpoint/) 
+
 # 节点管理-更新节点信息
 
 通过该API可以修改源站域名或者Host Header。Host Header表示 CDN 回源时，HTTP 请求头中的 HOST 字段的值。这个值一般是域名形式的字符串，被源站用来识别是否与源站服务器上配置的域名相同。

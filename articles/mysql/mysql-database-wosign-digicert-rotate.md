@@ -3,6 +3,7 @@
 #替换应用的WoSign根证书为DigiCert
 > [AZURE.LANGUAGE]
 - [中文](/documentation/articles/mysql-database-wosign-digicert-rotate/)
+- [English](/documentation/articles/mysql-database-enus-wosign-digicert-rotate/) 
 
 <tags ms.service="mysql" ms.date="3/8/2017" wacn.date="3/8/2017" wacn.lang="cn" />
 

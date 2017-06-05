@@ -5,6 +5,10 @@
     wacn.lang="cn"
     />
 
+> [AZURE.LANGUAGE]
+- [中文](/documentation/articles/cdn-api-add-purge/)
+- [English](/documentation/articles/cdn-enus-api-add-purge/) 
+
 # 缓存刷新-添加缓存刷新
 
 源站内容更新后，希望将更新结果实时反映在CDN服务节点上。由于CDN有默认或用户设置过的缓存规则，需要使用缓存刷新功能清楚节点上的缓存内容，这样之后用户再次访问该文件时获取到的就是更新后的文件了。

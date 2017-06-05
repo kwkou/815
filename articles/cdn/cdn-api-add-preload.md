@@ -5,6 +5,10 @@
     wacn.lang="cn"
     />
 
+> [AZURE.LANGUAGE]
+- [中文](/documentation/articles/cdn-api-add-preload/)
+- [English](/documentation/articles/cdn-enus-api-add-preload/) 
+
 # 预加载-添加内容预取
 
 预加载是指预先将指定URL的内容从源站缓存到CDN节点，这样可以消除用户第一次访问该资源时的等待时间。预加载一般被用在进行大文件分发时的场景，可以有效的提升用户访问体验。

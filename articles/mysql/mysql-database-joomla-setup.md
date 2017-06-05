@@ -3,7 +3,8 @@
 <tags ms.service="mysql" ms.date="09/22/2016" wacn.date="09/22/2016" wacn.lang="cn" />
 
 > [AZURE.LANGUAGE]
-- [中文](/documentation/articles/mysql-database-tech-overview/)
+- [中文](/documentation/articles/mysql-database-joomla-setup/)
+- [English](/documentation/articles/mysql-database-enus-joomla-setup/) 
 
 #使用MySQL Database on Azure部署Joomla!应用
 

@@ -4,6 +4,7 @@
 
 > [AZURE.LANGUAGE]
 - [中文](/documentation/articles/mysql-database-tech-overview/)
+- [English](/documentation/articles/mysql-database-enus-tech-overview/) 
 
 # MySQL Database on Azure服务概述
 

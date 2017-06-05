@@ -6,6 +6,10 @@
     />
 
 
+> [AZURE.LANGUAGE]
+- [中文](/documentation/articles/cdn-api-create-endpoint/)
+- [English](/documentation/articles/cdn-enus-api-create-endpoint/) 
+
 # 节点管理-创建节点
 
 通过该API可以创建CDN节点。

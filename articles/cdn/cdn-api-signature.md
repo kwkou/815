@@ -4,7 +4,11 @@
     wacn.date="5/4/2017"
     wacn.lang="cn"
     />
- 
+
+> [AZURE.LANGUAGE]
+- [中文](/documentation/articles/cdn-api-signature/)
+- [English](/documentation/articles/cdn-enus-api-signature/) 
+
 # CDN API签名机制
 
 Azure CDN服务会对每个访问请求进行身份验证，需要使用HTTPS协议提交请求，并在请求中包含签名信息。

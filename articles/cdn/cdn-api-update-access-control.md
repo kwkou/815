@@ -5,6 +5,10 @@
     wacn.lang="cn"
     />
 
+> [AZURE.LANGUAGE]
+- [中文](/documentation/articles/cdn-api-update-access-control/)
+- [English](/documentation/articles/cdn-enus-api-update-access-control/) 
+
 # 节点管理-配置访问控制规则
 
 通过访问控制管理，用户可以设置配置Referer黑白名单，从而实现防盗链。

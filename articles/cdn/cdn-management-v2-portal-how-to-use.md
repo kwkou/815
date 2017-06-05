@@ -5,6 +5,10 @@
     wacn.lang="cn"
     />
  
+> [AZURE.LANGUAGE]
+- [中文](/documentation/articles/cdn-management-v2-portal-how-to-use/)
+- [English](/documentation/articles/cdn-enus-management-v2-portal-how-to-use/) 
+
 # Azure CDN新版管理门户使用指南
 
 Azure China CDN对管理门户进行设计改版，功能模块归类，并添加了很多新的管理功能。目前从[Azure门户预览](https://portal.azure.cn/)点击“管理”按钮会跳转到老版管理门户，用户可以在概览界面点击“访问新站点”跳转到新版管理门户。

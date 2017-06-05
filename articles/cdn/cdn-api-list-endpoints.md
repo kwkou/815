@@ -6,6 +6,10 @@
     />
 
 
+> [AZURE.LANGUAGE]
+- [中文](/documentation/articles/cdn-api-list-endpoints/)
+- [English](/documentation/articles/cdn-enus-api-list-endpoints/) 
+
 # 节点管理-获取订阅下所有节点信息
 
 ## 请求

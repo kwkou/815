@@ -6,6 +6,10 @@
     />
 
 
+> [AZURE.LANGUAGE]
+- [中文](/documentation/articles/cdn-api-query-preload/)
+- [English](/documentation/articles/cdn-enus-api-query-preload/) 
+
 # 内容预取-查询预取进度
 
 ## 请求

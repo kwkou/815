@@ -5,6 +5,10 @@
     wacn.lang="cn"
     />
 
+> [AZURE.LANGUAGE]
+- [中文](/documentation/articles/cdn-api-update-cache-policy/)
+- [English](/documentation/articles/cdn-enus-api-update-cache-policy/) 
+
 # 节点管理-设置缓存规则
 
 通过该API可以针对目录，文件名和全路径配置缓存规则。

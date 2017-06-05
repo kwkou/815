@@ -5,6 +5,10 @@
     wacn.lang="cn"
     />
 
+> [AZURE.LANGUAGE]
+- [中文](/documentation/articles/cdn-api-get-subscription-volume/)
+- [English](/documentation/articles/cdn-enus-api-get-subscription-volume/) 
+
 # 流量-获取订阅下所有节点流量信息
 
 ## 请求
