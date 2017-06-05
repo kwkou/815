@@ -29,7 +29,7 @@
 
 若要使用此示例，必须：
 
-- [创建](/documentation/articles/documentdb-create-mongodb-account/) DocumentDB 数据库。
+- [创建](/documentation/articles/documentdb-create-account/) DocumentDB 数据库。
 - 检索 MongoDB [连接字符串](/documentation/articles/documentdb-connect-mongodb-account/)信息。
 
 可以参考[在 Azure 中创建连接到虚拟机上运行的 MongoDB 的 Web 应用](/documentation/articles/web-sites-dotnet-store-data-mongodb-vm/)教程（需进行少量修改），快速设置一个连接到 API for MongoDB 帐户的 MongoDB 应用程序（在本地或发布到 Azure Web 应用）。  

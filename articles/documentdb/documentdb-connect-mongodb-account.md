@@ -34,7 +34,7 @@
 ## <a name="prerequisites"></a>先决条件
 
 - 一个 Azure 帐户。 如果没有 Azure 帐户，请立即创建 [Azure 帐户](/pricing/1rmb-trial/)。 
-- 一个 DocumentDB 帐户。 有关说明，请参阅[创建与 MongoDB 应用配合使用的 DocumentDB 帐户](/documentation/articles/documentdb-create-mongodb-account/)。
+- 一个 DocumentDB 帐户。 有关说明，请参阅[创建与 MongoDB 应用配合使用的 DocumentDB 帐户](/documentation/articles/documentdb-create-account/)。
 
 ## <a id="QuickstartConnection"></a>使用快速启动方法获取 MongoDB 连接字符串
 1. 在 Internet 浏览器中，登录 [Azure 门户预览](https://portal.azure.cn)。

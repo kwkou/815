@@ -220,7 +220,7 @@ DocumentDB 允许使用横向缩放提供无限的存储。 我们的服务将�
 不需要，现有客户可以创建和使用现有的标准表资产，不会遇到任何类型的中断。 但是，如果不使用新的表 API（预览），则无法受益于自动索引、其他一致性选项或全局分发。 
 
 ### <a name="how-do-i-add-replication-for-the-data-in-premium-table-api-preview-across-multiple-regions-of-azure"></a>如何为高级表 API（预览）中跨多个 Azure 区域的数据添加复制功能？
-可以使用 DocumentDB 门户中的[全局复制设置](/documentation/articles/documentdb-portal-global-replication/)来添加适合应用程序的区域。 若要开发全局分布式应用程序，还应添加其 PreferredLocation 信息已设置为本地区域的应用程序，以提供较低的读取延迟。 
+可以使用 DocumentDB 门户中的全局复制设置来添加适合应用程序的区域。 若要开发全局分布式应用程序，还应添加其 PreferredLocation 信息已设置为本地区域的应用程序，以提供较低的读取延迟。 
 
 ### <a name="how-do-i-change-the-primary-write-region-for-the-account-in--premium-table-apipreview"></a>如何更改高级表 API（预览）中的帐户的主要写入区域？
 可以使用 DocumentDB 的全局复制门户窗格添加区域，然后故障转移到所需的区域。 有关说明，请参阅[使用多区域 DocumentDB 帐户进行开发](/documentation/articles/documentdb-regional-failovers/)。 

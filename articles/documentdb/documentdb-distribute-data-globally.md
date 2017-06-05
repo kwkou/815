@@ -226,7 +226,6 @@ DocumentDB 以透明方式公开吞吐量、延迟、一致性和可用性指标
 ![DocumentDB 中客户可见的 SLA 指标](./media/documentdb-distribute-data-globally/documentdb-customer-slas.png)
 
 ## <a id="Next Steps"></a>后续步骤
-- 若要使用 Azure 门户预览实现 DocumentDB 帐户的全局复制，请参阅[如何使用 Azure 门户预览执行 DocumentDB 全局数据库复制](/documentation/articles/documentdb-portal-global-replication/)。
 - 若要了解如何通过 DocumentDB 实现多主体系结构，请参阅[使用 DocumentDB 实现的多主数据库体系结构 ](/documentation/articles/documentdb-multi-region-writers/)。
 - 若要深入了解 DocumentDB 中自动和手动故障转移如何工作，请参阅 [DocumentDB 中的区域故障转移](/documentation/articles/documentdb-regional-failovers/)。
 

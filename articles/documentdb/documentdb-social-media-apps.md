@@ -234,7 +234,7 @@ DocumentDB 根据给定的**分区键**（定义为文档中的一个属性）�
 
 但是你很快会意识到他们在平台的体验并不理想；他们与运营区域相距太远，延迟问题非常严重，你显然不希望他们因此退出平台。 如果有一种简单的方法可以**扩展全球覆盖范围**就好了······确实有！
 
-通过 DocumentDB，只需单击数次即可通过透明方式[全局复制数据](/documentation/articles/documentdb-portal-global-replication/)，并从[客户端代码](/documentation/articles/documentdb-developing-with-multiple-regions/)中自动选择可用区域。 这也意味着可以拥有[多个故障转移区域](/documentation/articles/documentdb-regional-failovers/)。 
+通过 DocumentDB，只需单击数次即可通过透明方式全局复制数据。 这也意味着可以拥有[多个故障转移区域](/documentation/articles/documentdb-regional-failovers/)。 
 
 全局复制数据时，需确保客户端可以利用该数据。 如果要使用 Web 前端或从移动客户端访问 API，则可以部署 [Azure 流量管理器](/home/features/traffic-manager/)并在所有所需区域克隆 Azure 应用服务（方法是通过使用[性能配置](/documentation/articles/web-sites-traffic-manager/)支持扩展的全球覆盖范围）。 客户端访问前端或 API 时，将被路由到最近的应用服务，而该应用服务将连接到本地的 DocumentDB 副本。
 

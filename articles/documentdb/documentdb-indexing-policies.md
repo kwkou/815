@@ -117,7 +117,7 @@ DocumentDB 返回在“无”索引模式下对集合进行查询的错误。 �
 
 
 ### <a name="index-paths"></a>索引路径
-DocumentDB 将 JSON 文档和索引建模为树形，从而可以针对树中的路径调整策略。 可以在此 [DocumentDB 索引简介](/documentation/articles/documentdb-indexing/)中找到更多详细信息。 在这些文档中，可以选择必须包括在索引中或从索引中排除的路径。 如果事先已知查询模式，这可以提高写入性能并减少方案所需的索引存储。
+DocumentDB 将 JSON 文档和索引建模为树形，从而可以针对树中的路径调整策略。 在这些文档中，可以选择必须包括在索引中或从索引中排除的路径。 如果事先已知查询模式，这可以提高写入性能并减少方案所需的索引存储。
 
 索引路径以根 (/) 开头，并常以 ?  通配符运算符结尾，表示前缀存在多个可能的值。 例如，对于 SELECT * FROM Families F WHERE F.familyName = "Andersen"，必须在集合的索引策略中包含 /familyName/?  的索引路径。
 

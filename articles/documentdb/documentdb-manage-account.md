@@ -100,9 +100,6 @@
 
 ![如何在 Azure 门户预览中删除 DocumentDB 帐户](./media/documentdb-manage-account/delete-account-confirm.png)
 
-## <a id="next"></a>后续步骤
-了解如何[开始使用 DocumentDB 帐户](/documentation/articles/documentdb-get-started-quickstart/)。
-
 <!--Image references-->
 [1]: ./media/documentdb-manage-account/documentdb_add_region-1.png
 [2]: ./media/documentdb-manage-account/documentdb_add_region-2.png

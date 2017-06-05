@@ -36,7 +36,7 @@
 
 若要使用此示例，必须：
 
-- [创建](/documentation/articles/documentdb-create-mongodb-account/) DocumentDB: API for MongoDB 帐户。
+- [创建](/documentation/articles/documentdb-create-account/) DocumentDB: API for MongoDB 帐户。
 - 检索 MongoDB [连接字符串](/documentation/articles/documentdb-connect-mongodb-account/)信息。
 
 ## <a name="create-the-app"></a>创建应用程序

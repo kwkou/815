@@ -52,7 +52,7 @@
 
 *这就是所有的操作！*
 
-有关详细说明，请参阅[创建帐户](/documentation/articles/documentdb-create-mongodb-account/)和[连接到帐户](/documentation/articles/documentdb-connect-mongodb-account/)。
+有关详细说明，请参阅[创建帐户](/documentation/articles/documentdb-create-account/)和[连接到帐户](/documentation/articles/documentdb-connect-mongodb-account/)。
 
 ## <a name="next-steps"></a>后续步骤
 
