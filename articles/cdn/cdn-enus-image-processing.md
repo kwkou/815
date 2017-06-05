@@ -12,7 +12,7 @@
     manager=""
     editor="" />
 <tags
-    ms.service="cdn"
+    ms.service="cdn_en"
     ms.author="v-jijes"
     ms.topic="article"
     ms.date="5/8/2017"

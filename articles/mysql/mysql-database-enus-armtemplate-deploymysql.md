@@ -12,7 +12,7 @@
     manager=""
     editor="" />
 <tags
-    ms.service="mysql"
+    ms.service="mysql_en"
     ms.author="v-chenyh"
     ms.topic="article"
     ms.date="03/14/2017"
