@@ -15,15 +15,15 @@
     ms.service="cdn_en"
     ms.author="v-jijes"
     ms.topic="article"
-    ms.date="5/4/2017"
-    wacn.date="5/4/2017"
+    ms.date="6/6/2017"
+    wacn.date="6/6/2017"
     wacn.lang="en" />
 
 > [AZURE.LANGUAGE]
 - [中文](/documentation/articles/cdn-api-disable-endpoint/)
 - [English](/documentation/articles/cdn-enus-api-disable-endpoint/)
 
-# <a name="-"></a>Node management – disable enabled node
+# <a name="-"></a>CDN endpoint management – disable enabled CDN endpoint
 
 
 ## <a name=""></a>Request
@@ -34,7 +34,7 @@
     </td>  
   <tr>
     <td>POST</td>
-    <td>https://api-preview.cdn.azure.cn/subscriptions/{subscriptionId}/endpoints/{endpointId}/disable?apiVersion=1.0</td>
+    <td>https://restapi.cdn.azure.cn/subscriptions/{subscriptionId}/endpoints/{endpointId}/disable?apiVersion=1.0</td>
   </tr>
 </table>
 
@@ -50,7 +50,7 @@
   </tr
   <tr>
     <td>endpointId</td>
-    <td>Target node unique identifier</td>
+    <td>Target CDN endpoint unique identifier</td>
   </tr>
 </table>
 

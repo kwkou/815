@@ -15,15 +15,15 @@
     ms.service="cdn_en"
     ms.author="v-jijes"
     ms.topic="article"
-    ms.date="5/4/2017"
-    wacn.date="5/4/2017"
+    ms.date="6/6/2017"
+    wacn.date="6/6/2017"
     wacn.lang="en" />
 
 > [AZURE.LANGUAGE]
 - [中文](/documentation/articles/cdn-api-get-endpoint/)
 - [English](/documentation/articles/cdn-enus-api-get-endpoint/)
 
-# <a name="-"></a>Node Management – Get information on nodes
+# <a name="-"></a>CDN endpoint Management – Get information on CDN endpoints
 
 
 ## <a name=""></a>Request
@@ -34,7 +34,7 @@
     </td>  
   <tr>
     <td>GET</td>
-    <td>https://api-preview.cdn.azure.cn/subscriptions/{subscriptionId}/endpoints/{endpointId}?apiVersion=1.0</td>
+    <td>https://restapi.cdn.azure.cn/subscriptions/{subscriptionId}/endpoints/{endpointId}?apiVersion=1.0</td>
   </tr>
 </table>
 
@@ -50,7 +50,7 @@
   </tr
   <tr>
     <td>endpointId</td>
-    <td>Target node unique identifier</td>
+    <td>Target CDN endpoint unique identifier</td>
   </tr>
 </table>
 
@@ -131,7 +131,7 @@ A response comprises a status code, response headers, and a response body.
 
   <tr>
     <td>EndpointID</td>
-    <td>Node unique identifier</td>
+    <td>CDN endpoint unique identifier</td>
   </tr>
   <tr>
     <td>Enabled</td>
@@ -154,7 +154,7 @@ A response comprises a status code, response headers, and a response body.
   </tr>
   <tr>
     <td>LifetimeStatus</td>
-    <td>Node status.
+    <td>CDN endpoint status.
      <ul>
          <li>Normal: Normal</li>
          <li>Creating: Creating</li>

@@ -15,8 +15,8 @@
     ms.service="cdn_en"
     ms.author="v-jijes"
     ms.topic="article"
-    ms.date="5/4/2017"
-    wacn.date="5/4/2017"
+    ms.date="6/6/2017"
+    wacn.date="6/6/2017"
     wacn.lang="en" />
 
 > [AZURE.LANGUAGE]
@@ -26,7 +26,7 @@
 # <a name="cdn-api"></a>CDN API signing mechanism
 
 
-The Azure CDN will authenticate each access request. Requests must be submitted using the HTTPS protocol, and the request must include the signature information.
+The Azure CDN will authenticate each request. Requests must be submitted using the HTTPS protocol, and the request must include the signature information.
 
 The Azure CDN uses the key value with the signature parameters to generate the signature by means of the HMAC-SHA 256 hashing algorithm, thereby performing authentication. The signature information is sent as an authorization request header in the format “AzureCDN {Key ID}:{token}.”
 

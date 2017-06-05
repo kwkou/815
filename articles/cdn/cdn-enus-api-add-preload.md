@@ -15,8 +15,8 @@
     ms.service="cdn_en"
     ms.author="v-jijes"
     ms.topic="article"
-    ms.date="5/4/2017"
-    wacn.date="5/4/2017"
+    ms.date="6/6/2017"
+    wacn.date="6/6/2017"
     wacn.lang="en" />
 
 > [AZURE.LANGUAGE]
@@ -26,7 +26,7 @@
 # <a name="-"></a>Preload – add content prefetching
 
 
-Preloading means caching the content of a designated URL from the source station to the network nodes, to eliminate the waiting time when a user accesses the resource for the first time. Preloading is generally used in scenarios that involve the delivery of large files, where it can effectively improve the user access experience.
+Preloading means caching the content of a designated URL from the source station to the CDN nodes, to eliminate the loading time when a user accesses the resource for the first time. Preloading is generally used in scenarios that involve the delivery of large files, where it can effectively improve the user access experience.
 
 You can configure content prefetching (preloading) for individual files or multiple files.
 
@@ -38,7 +38,7 @@ You can configure content prefetching (preloading) for individual files or multi
     </td>  
   <tr>
     <td>POST</td>
-    <td>https://api-preview.cdn.azure.cn/subscriptions/{subscriptionId}/endpoints/{endpointId}/preloads?apiVersion=1.0</td>
+    <td>https://restapi.cdn.azure.cn/subscriptions/{subscriptionId}/endpoints/{endpointId}/preloads?apiVersion=1.0</td>
   </tr>
 </table>
 
@@ -54,7 +54,7 @@ You can configure content prefetching (preloading) for individual files or multi
   </tr
   <tr>
     <td>endpointId</td>
-    <td>Target node unique identifier</td>
+    <td>Target CDN endpoint unique identifier</td>
   </tr>
 </table>
 

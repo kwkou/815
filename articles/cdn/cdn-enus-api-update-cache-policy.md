@@ -15,15 +15,15 @@
     ms.service="cdn_en"
     ms.author="v-jijes"
     ms.topic="article"
-    ms.date="5/4/2017"
-    wacn.date="5/4/2017"
+    ms.date="6/6/2017"
+    wacn.date="6/6/2017"
     wacn.lang="en" />
 
 > [AZURE.LANGUAGE]
 - [中文](/documentation/articles/cdn-api-update-cache-policy/)
 - [English](/documentation/articles/cdn-enus-api-update-cache-policy/)
 
-# <a name="-"></a>Node management – set cache rules
+# <a name="-"></a>CDN endpoint management – set cache rules
 
 
 You can use the API to configure cache rules for directories, filenames and full paths.
@@ -44,7 +44,7 @@ You can use the API to configure cache rules for directories, filenames and full
     </td>  
   <tr>
     <td>PUT</td>
-    <td>https://api-preview.cdn.azure.cn/subscriptions/{subscriptionId}/endpoints/{endpointId}/cacherules?apiVersion=1.0</td>
+    <td>https://restapi.cdn.azure.cn/subscriptions/{subscriptionId}/endpoints/{endpointId}/cacherules?apiVersion=1.0</td>
   </tr>
 </table>
 
@@ -60,7 +60,7 @@ You can use the API to configure cache rules for directories, filenames and full
   </tr
   <tr>
     <td>endpointId</td>
-    <td>Target node unique identifier</td>
+    <td>Target CDN endpoint unique identifier</td>
   </tr>
 </table>
 

@@ -15,15 +15,15 @@
     ms.service="cdn_en"
     ms.author="v-jijes"
     ms.topic="article"
-    ms.date="5/4/2017"
-    wacn.date="5/4/2017"
+    ms.date="6/6/2017"
+    wacn.date="6/6/2017"
     wacn.lang="en" />
 
 > [AZURE.LANGUAGE]
 - [中文](/documentation/articles/cdn-api-update-access-control/)
 - [English](/documentation/articles/cdn-enus-api-update-access-control/)
 
-# <a name="-"></a>Node management – configure access control rules
+# <a name="-"></a>CDN endpoint management – configure access control rules
 
 
 You can use access control management to set up and configure referer blacklists and whitelists, and thereby implement an anti-theft chain.
@@ -39,7 +39,7 @@ You can use access control management to set up and configure referer blacklists
     </td>  
   <tr>
     <td>PUT</td>
-    <td>https://api-preview.cdn.azure.cn/subscriptions/{subscriptionId}/endpoints/{endpointId}/accesscontrol?apiVersion=1.0</td>
+    <td>https://restapi.cdn.azure.cn/subscriptions/{subscriptionId}/endpoints/{endpointId}/accesscontrol?apiVersion=1.0</td>
   </tr>
 </table>
 
@@ -55,7 +55,7 @@ You can use access control management to set up and configure referer blacklists
   </tr
   <tr>
     <td>endpointId</td>
-    <td>Target node unique identifier</td>
+    <td>Target CDN endpoint unique identifier</td>
   </tr>
   </table>
 

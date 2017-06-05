@@ -15,8 +15,8 @@
     ms.service="cdn_en"
     ms.author="v-jijes"
     ms.topic="article"
-    ms.date="5/4/2017"
-    wacn.date="5/4/2017"
+    ms.date="6/6/2017"
+    wacn.date="6/6/2017"
     wacn.lang="en" />
 
 > [AZURE.LANGUAGE]
@@ -26,7 +26,7 @@
 # <a name="-"></a>Cache refresh – add cache refresh
 
 
-After the source station content is updated, you would like the update results to be mapped to the CDN service node in real time. As the CDN has either the default cache rules or cache rules set by the user, you must use the cache refresh function to clear the cached content on the node. If you access the file again after this, the file you obtain will be the updated file.
+After the source station content is updated, you would like the update results to be mapped to the CDN edge nodes in real time. As the CDN has either the default cache rules or cache rules set by the user, you must use the cache refresh function to clear the cached content on the node. If you access the file again after this, the file you obtain will be the updated file.
 
 You can force a cache refresh for individual files or batches of files.
 
@@ -38,7 +38,7 @@ You can force a cache refresh for individual files or batches of files.
     </td>  
   <tr>
     <td>POST</td>
-    <td>https://api-preview.cdn.azure.cn/subscriptions/{subscriptionId}/endpoints/{endpointId}/purges?apiVersion=1.0</td>
+    <td>https://restapi.cdn.azure.cn/subscriptions/{subscriptionId}/endpoints/{endpointId}/purges?apiVersion=1.0</td>
   </tr>
 </table>
 
@@ -54,7 +54,7 @@ You can force a cache refresh for individual files or batches of files.
   </tr
   <tr>
     <td>endpointId</td>
-    <td>Target node unique identifier</td>
+    <td>Target CDN endpoint unique identifier</td>
   </tr>
 </table>
 

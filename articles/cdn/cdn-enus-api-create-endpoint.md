@@ -15,22 +15,22 @@
     ms.service="cdn_en"
     ms.author="v-jijes"
     ms.topic="article"
-    ms.date="5/4/2017"
-    wacn.date="5/4/2017"
+    ms.date="6/6/2017"
+    wacn.date="6/6/2017"
     wacn.lang="en" />
 
 > [AZURE.LANGUAGE]
 - [中文](/documentation/articles/cdn-api-create-endpoint/)
 - [English](/documentation/articles/cdn-enus-api-create-endpoint/)
 
-# <a name="-"></a>Node management – create node
+# <a name="-"></a>CDN endpoint management – create CDN endpoint
 
 
-You can create a CDN node using the API.
+You can create a CDN endpoint using the API.
 
 >Note: Configurations created for endpoints will not be immediately available:
 
->The custom domain name and ICP number that you entered must first be reviewed to ensure that they match and are valid. This process can take up to one business day to complete. If the details do not pass the ICP review, you must delete the Content Delivery Network endpoint you created and create a new endpoint by using the correct custom domain name and ICP number. If the details pass the Internet Content Provider (ICP) review, the Content Delivery Network service will be registered within 60 minutes, so that it can be propagated by the network. At the same time, you also need to configure the CNAME mapping details, as indicated by the notifications in the interface, before the cache content can finally be accessed via the custom domain name.
+>The custom domain name and ICP number that you entered must first be reviewed to ensure that they match and are valid. This process can take up to one business day to complete. If the details do not pass the ICP review, you must delete the Content Delivery Network endpoint you created and create a new endpoint by using the correct custom domain name and ICP number. If the details pass the Internet Content Provider (ICP) review, the Content Delivery Network service will be registered within 60 minutes, so that it can be propagated to all CDN nodes. At the same time, you also need to configure the CNAME mapping details, as indicated by the notifications in the interface, before the cache content can finally be accessed via the custom domain name.
 
 ## <a name=""></a>Request
 <table width="100%" border="1" cellspacing="0" cellpadding="0">
@@ -40,7 +40,7 @@ You can create a CDN node using the API.
     </td>  
   <tr>
     <td>POST</td>
-    <td>https://api-preview.cdn.azure.cn/subscriptions/{subscriptionId}/endpoints?apiVersion=1.0</td>
+    <td>https://restapi.cdn.azure.cn/subscriptions/{subscriptionId}/endpoints?apiVersion=1.0</td>
   </tr>
 </table>
 
@@ -65,7 +65,7 @@ You can create a CDN node using the API.
 | content-type | Must be entered. application/json |
 
 ### <a name="-body"></a>Request body
-To create a CDN node, you must specify the following parameters. An example JSON file is provided below:
+To create a CDN endpoint, you must specify the following parameters. An example JSON file is provided below:
 
     {
       "CustomDomain": "www.example.com",
@@ -181,7 +181,7 @@ A response comprises a status code, response headers, and a response body.
 
   <tr>
     <td>EndpointID</td>
-    <td>Node unique identifier</td>
+    <td>CDN endpoint unique identifier</td>
   </tr>
   <tr>
     <td>Enabled</td>
@@ -204,7 +204,7 @@ A response comprises a status code, response headers, and a response body.
   </tr>
   <tr>
     <td>LifetimeStatus</td>
-    <td>Node status. <ul>
+    <td>CDN endpoint status. <ul>
          <li>Normal: Normal</li>
          <li>Creating: Creating</li>
          <li>CreationFailed: Creation failed</li>

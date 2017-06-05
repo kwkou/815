@@ -15,15 +15,15 @@
     ms.service="cdn_en"
     ms.author="v-jijes"
     ms.topic="article"
-    ms.date="5/4/2017"
-    wacn.date="5/4/2017"
+    ms.date="6/6/2017"
+    wacn.date="6/6/2017"
     wacn.lang="en" />
 
 > [AZURE.LANGUAGE]
 - [中文](/documentation/articles/cdn-api-update-endpoint/)
 - [English](/documentation/articles/cdn-enus-api-update-endpoint/)
 
-# <a name="-"></a>Node management – update the node information
+# <a name="-"></a>CDN endpoint management – update the CDN endpoint information
 
 
 You can edit the source station domain name or host header using the API. Value of the host string in the HTTP request header if the host header indicates the return-to-source CDN. This value is generally a character string in the form of a domain name. The source station uses this domain name to identify whether it is the same as the domain name that was configured on the source station.
@@ -36,7 +36,7 @@ You can edit the source station domain name or host header using the API. Value 
     </td>  
   <tr>
     <td>PUT</td>
-    <td>https://api-preview.cdn.azure.cn/subscriptions/{subscriptionId}/endpoints/{endpointId}?apiVersion=1.0</td>
+    <td>https://restapi.cdn.azure.cn/subscriptions/{subscriptionId}/endpoints/{endpointId}?apiVersion=1.0</td>
   </tr>
 </table>
 
@@ -52,7 +52,7 @@ You can edit the source station domain name or host header using the API. Value 
   </tr
   <tr>
     <td>endpointId</td>
-    <td>Target node unique identifier</td>
+    <td>Target CDN endpoint unique identifier</td>
   </tr>
 </table>
 

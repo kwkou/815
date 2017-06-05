@@ -33,7 +33,7 @@
     </td>  
   <tr>
     <td>GET    </td>
-    <td>https://api-preview.cdn.azure.cn/subscriptions/{subscriptionId}/endpoints/{endpointId}/purges/{purgeId}?apiVersion=1.0</td>
+    <td>https://restapi.cdn.azure.cn/subscriptions/{subscriptionId}/endpoints/{endpointId}/purges/{purgeId}?apiVersion=1.0</td>
   </tr>
 </table>
 

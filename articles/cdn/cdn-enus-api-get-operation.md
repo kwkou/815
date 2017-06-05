@@ -15,8 +15,8 @@
     ms.service="cdn_en"
     ms.author="v-jijes"
     ms.topic="article"
-    ms.date="5/4/2017"
-    wacn.date="5/4/2017"
+    ms.date="6/6/2017"
+    wacn.date="6/6/2017"
     wacn.lang="en" />
 
 > [AZURE.LANGUAGE]
@@ -36,7 +36,7 @@ You can use the API to view the status and results for asynchronous operations.
     </td>  
   <tr>
     <td>GET</td>
-    <td>https://api-preview.cdn.azure.cn/subscriptions/{subscriptionId}/endpoints/{endpointId}/operations/{operationId}?apiVersion=1.0</td>
+    <td>https://restapi.cdn.azure.cn/subscriptions/{subscriptionId}/endpoints/{endpointId}/operations/{operationId}?apiVersion=1.0</td>
   </tr>
 </table>
 
@@ -52,7 +52,7 @@ You can use the API to view the status and results for asynchronous operations.
   </tr
   <tr>
     <td>endpointId</td>
-    <td>Target node unique identifier</td>
+    <td>Target CDN endpoint unique identifier</td>
   </tr>
   <tr>
     <td>operationId</td>
@@ -150,7 +150,7 @@ A response comprises a status code, response headers, and a response body.
   </tr>
   <tr>
     <td>EndpointId</td>
-    <td>Node unique identifier</td>
+    <td>CDN endpoint unique identifier</td>
   </tr>
   <tr>
     <td>SubscriptionId</td>
