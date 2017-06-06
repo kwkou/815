@@ -32,10 +32,9 @@ DocumentDB 模拟器提供了一个模拟用于开发的 DocumentDB 服务的本
 
 本教程涵盖以下任务：
 
-> [!div class="checklist"]
-> * 轮换证书
-> * 导出 SSL 证书
-> * 了解如何在 Java、Python 和 Node.js 中使用证书
+* 轮换证书
+* 导出 SSL 证书
+* 了解如何在 Java、Python 和 Node.js 中使用证书
 
 ## <a name="certification-rotation"></a>证书轮转
 
@@ -99,14 +98,12 @@ DocumentDB 模拟器提供了一个模拟用于开发的 DocumentDB 服务的本
 
 本教程已完成以下内容：
 
-> [!div class="checklist"]
-> * 轮换证书
-> * 导出 SSL 证书
-> * 了解如何在 Java、Python 和 Node.js 中使用证书
+* 轮换证书
+* 导出 SSL 证书
+* 了解如何在 Java、Python 和 Node.js 中使用证书
 
 现在可以转到“概念”部分，获取有关 DocumentDB 的详细信息。
 
-> [!div class="nextstepaction"]
-> [全局分发](/documentation/articles/documentdb-distribute-data-globally/)
+* [全局分发](/documentation/articles/documentdb-distribute-data-globally/)
 
 <!---Update_Description: wording update -->

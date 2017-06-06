@@ -33,10 +33,9 @@
 
 本教程涵盖以下任务：
 
-> [!div class="checklist"]
-> * 安装数据迁移工具
-> * 从不同的数据源导入数据
-> * 将 DocumentDB 导出到 JSON
+* 安装数据迁移工具
+* 从不同的数据源导入数据
+* 将 DocumentDB 导出到 JSON
 
 ## <a id="Prerequisites"></a>先决条件
 在按照本文中的说明操作之前，请确保已安装下列项：
@@ -548,9 +547,8 @@ DocumentDB - 顺序记录导入程序具有下列高级附加选项：
 
 在本教程中，已完成以下内容：
 
-> [!div class="checklist"]
-> * 已安装数据迁移工具
-> * 已从不同的数据源导入数据
-> * 已将 DocumentDB 导出到 JSON
+* 已安装数据迁移工具
+* 已从不同的数据源导入数据
+* 已将 DocumentDB 导出到 JSON
 
 <!---Update_Description: wording update -->

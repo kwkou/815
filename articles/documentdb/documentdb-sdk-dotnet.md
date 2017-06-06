@@ -37,17 +37,17 @@
 <table>
 
 
-<tr><td>**SDK 下载**</td><td><a href="https://www.nuget.org/packages/Microsoft.Azure.DocumentDB/">NuGet</a></td></tr>
+<tr><td>SDK 下载</td><td><a href="https://www.nuget.org/packages/Microsoft.Azure.DocumentDB/">NuGet</a></td></tr>
 
-<tr><td>**API 文档**</td><td><a href="https://msdn.microsoft.com/zh-cn/library/azure/dn948556.aspx">.NET API 参考文档</a></td></tr>
+<tr><td>API 文档</td><td><a href="https://msdn.microsoft.com/zh-cn/library/azure/dn948556.aspx">.NET API 参考文档</a></td></tr>
 
-<tr><td>**示例**</td><td><a href="/documentation/articles/documentdb-dotnet-samples/">.NET 代码示例</a></td></tr>
+<tr><td>示例</td><td><a href="/documentation/articles/documentdb-dotnet-samples/">.NET 代码示例</a></td></tr>
 
-<tr><td>**入门**</td><td><a href="/documentation/articles/documentdb-get-started/">DocumentDB .NET SDK 入门</a></td></tr>
+<tr><td>入门</td><td><a href="/documentation/articles/documentdb-get-started/">DocumentDB .NET SDK 入门</a></td></tr>
 
-<tr><td>**Web 应用教程**</td><td><a href="/documentation/articles/documentdb-dotnet-application/">使用 DocumentDB 开发 Web 应用程序</a></td></tr>
+<tr><td>Web 应用教程</td><td><a href="/documentation/articles/documentdb-dotnet-application/">使用 DocumentDB 开发 Web 应用程序</a></td></tr>
 
-<tr><td>**当前受支持的框架**</td><td><a href="https://www.microsoft.com/zh-cn/download/details.aspx?id=30653">Microsoft .NET Framework 4.5</a></td></tr>
+<tr><td>当前受支持的框架</td><td><a href="https://www.microsoft.com/zh-cn/download/details.aspx?id=30653">Microsoft .NET Framework 4.5</a></td></tr>
 </table>
 
 ## <a name="release-notes"></a>发行说明

@@ -37,17 +37,17 @@
 <table>
 
 
-<tr><td>**SDK 下载**</td><td><a href="http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22com.microsoft.azure%22%20AND%20a%3A%22azure-documentdb%22">Maven</a></td></tr>
+<tr><td>SDK 下载</td><td><a href="http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22com.microsoft.azure%22%20AND%20a%3A%22azure-documentdb%22">Maven</a></td></tr>
 
-<tr><td>**API 文档**</td><td><a href="http://azure.github.io/azure-documentdb-java/">Java API 参考文档</a></td></tr>
+<tr><td>API 文档</td><td><a href="http://azure.github.io/azure-documentdb-java/">Java API 参考文档</a></td></tr>
 
-<tr><td>**参与 SDK**</td><td><a href="https://github.com/Azure/azure-documentdb-java/">GitHub</a></td></tr>
+<tr><td>参与 SDK</td><td><a href="https://github.com/Azure/azure-documentdb-java/">GitHub</a></td></tr>
 
-<tr><td>**入门**</td><td><a href="/documentation/articles/documentdb-java-get-started/">Java SDK 入门</a></td></tr>
+<tr><td>入门</td><td><a href="/documentation/articles/documentdb-java-get-started/">Java SDK 入门</a></td></tr>
 
-<tr><td>**Web 应用教程**</td><td><a href="/documentation/articles/documentdb-java-application/">使用 DocumentDB 开发 Web 应用程序</a></td></tr>
+<tr><td>Web 应用教程</td><td><a href="/documentation/articles/documentdb-java-application/">使用 DocumentDB 开发 Web 应用程序</a></td></tr>
 
-<tr><td>**当前受支持的运行时**</td><td><a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html">JDK 7</a></td></tr>
+<tr><td>当前受支持的运行时</td><td><a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html">JDK 7</a></td></tr>
 </table>
 
 ## <a name="release-notes"></a>发行说明

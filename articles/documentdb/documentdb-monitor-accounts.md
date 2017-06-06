@@ -49,9 +49,9 @@
    - 当天的请求总数。
    - 使用的存储量。
    
-   如果表显示“无可用数据”  而你认为数据库中有数据，请参阅 [故障排除](#troubleshooting) 部分。
+	如果表显示“无可用数据”  而你认为数据库中有数据，请参阅 [故障排除](#troubleshooting) 部分。
    
-   ![“监视”可重用功能区的屏幕截图，可显示请求数和存储使用情况](./media/documentdb-monitor-accounts/documentdb-total-requests-and-usage.png)
+	![“监视”可重用功能区的屏幕截图，可显示请求数和存储使用情况](./media/documentdb-monitor-accounts/documentdb-total-requests-and-usage.png)
 3. 单击“请求”或“使用配额”磁贴可打开详细的“指标”边栏选项卡。
 4. “指标”  边栏选项卡显示有关所选指标的详细信息。  边栏选项卡顶部显示了按小时绘制的请求图表，其下的表格中显示了限制请求数和请求总数的聚合值。  指标边栏选项卡还显示警报列表，这些警报已经定义，且根据当前指标边栏选项卡上显示的指标进行了筛选（因此，如果警报数量较多，将只能在此处看到相关的警报）。   
    
@@ -65,17 +65,17 @@
 3. 若要更改显示在该部件中的指标，只需选择或清除可用的性能指标，然后单击边栏选项卡底部的“确定”。  
 4. 若要更改时间范围，请选择一个不同的范围（例如，“自定义”），然后单击边栏选项卡底部的“确定”。  
    
-   ![“编辑图表”边栏选项卡的“时间范围”部件的屏幕截图，显示如何输入自定义时间范围](./media/documentdb-monitor-accounts/madocdb5.png)
+	![“编辑图表”边栏选项卡的“时间范围”部件的屏幕截图，显示如何输入自定义时间范围](./media/documentdb-monitor-accounts/madocdb5.png)
 
 ## <a name="create-side-by-side-charts-in-the-portal"></a>在门户中创建并排图表
 Azure 门户预览使你能够创建并排的指标图表。  
 
 1. 首先，请右键单击要复制的图表，然后选择“自定义”。
    
-   ![请求总数图表的屏幕截图，其中突出显示了“自定义”选项](./media/documentdb-monitor-accounts/madocdb6.png)
+	![请求总数图表的屏幕截图，其中突出显示了“自定义”选项](./media/documentdb-monitor-accounts/madocdb6.png)
 2. 单击菜单上的“克隆”以复制部件，然后单击“完成自定义”。
    
-   ![请求总数图表的屏幕截图，其中突出显示了“克隆”和“完成自定义”选项](./media/documentdb-monitor-accounts/madocdb7.png)  
+	![请求总数图表的屏幕截图，其中突出显示了“克隆”和“完成自定义”选项](./media/documentdb-monitor-accounts/madocdb7.png)  
 
 你现在可能将此部件视为其他任何指标部件，同时自定义显示在部件中的指标和时间范围。  通过执行此操作，可以同时看到两个并排的不同的指标图表。  
     ![请求总数图表和过去一小时新的请求总数的屏幕截图](./media/documentdb-monitor-accounts/madocdb8.png)  

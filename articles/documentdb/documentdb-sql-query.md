@@ -819,7 +819,7 @@ DocumentDB API SQL 的另一个重要功能是数组/对象创建。 请注意�
     ]
 
 
-### <a name="-operator"></a>* 运算符
+### <a name="-operator"></a>运算符
 支持使用特殊运算符 (*) 按原样投影文档。 在使用时，它必须仅为投影的字段。 当类似 `SELECT * FROM Families f` 的查询有效时，`SELECT VALUE * FROM Families f ` 和 `SELECT *, f.id FROM Families f ` 无效。
 
 **查询**

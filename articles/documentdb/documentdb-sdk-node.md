@@ -36,21 +36,21 @@
 
 <table>
 
-<tr><td>**下载 SDK**</td><td><a href="https://www.npmjs.com/package/documentdb">NPM</a></td></tr>
+<tr><td>下载 SDK</td><td><a href="https://www.npmjs.com/package/documentdb">NPM</a></td></tr>
 
-<tr><td>**API 文档**</td><td><a href="http://azure.github.io/azure-documentdb-node/DocumentClient.html">Node.js API 参考文档</a></td></tr>
+<tr><td>API 文档</td><td><a href="http://azure.github.io/azure-documentdb-node/DocumentClient.html">Node.js API 参考文档</a></td></tr>
 
-<tr><td>**SDK 安装说明**</td><td><a href="http://azure.github.io/azure-documentdb-node/">安装说明</a></td></tr>
+<tr><td>SDK 安装说明</td><td><a href="http://azure.github.io/azure-documentdb-node/">安装说明</a></td></tr>
 
-<tr><td>**参与 SDK**</td><td><a href="https://github.com/Azure/azure-documentdb-node/tree/master/source">GitHub</a></td></tr>
+<tr><td>参与 SDK</td><td><a href="https://github.com/Azure/azure-documentdb-node/tree/master/source">GitHub</a></td></tr>
 
-<tr><td>**示例**</td><td><a href="/documentation/articles/documentdb-nodejs-samples/">Node.js 代码示例</a></td></tr>
+<tr><td>示例</td><td><a href="/documentation/articles/documentdb-nodejs-samples/">Node.js 代码示例</a></td></tr>
 
-<tr><td>**入门教程**</td><td><a href="/documentation/articles/documentdb-nodejs-get-started/">Node.js SDK 入门</a></td></tr>
+<tr><td>入门教程</td><td><a href="/documentation/articles/documentdb-nodejs-get-started/">Node.js SDK 入门</a></td></tr>
 
-<tr><td>**Web 应用教程**</td><td><a href="/documentation/articles/documentdb-nodejs-application/">使用 DocumentDB 构建 Node.js Web 应用程序</a></td></tr>
+<tr><td>Web 应用教程</td><td><a href="/documentation/articles/documentdb-nodejs-application/">使用 DocumentDB 构建 Node.js Web 应用程序</a></td></tr>
 
-<tr><td>**当前受支持的平台**</td><td><a href="https://nodejs.org/en/blog/release/v0.10.0/">Node.js v0.10</a><br/><a href="https://nodejs.org/en/blog/release/v0.12.0/">Node.js v0.12</a><br/><a href="https://nodejs.org/en/blog/release/v4.2.0/">Node.js v4.2.0</a></td></tr>
+<tr><td>当前受支持的平台</td><td><a href="https://nodejs.org/en/blog/release/v0.10.0/">Node.js v0.10</a><br/><a href="https://nodejs.org/en/blog/release/v0.12.0/">Node.js v0.12</a><br/><a href="https://nodejs.org/en/blog/release/v4.2.0/">Node.js v4.2.0</a></td></tr>
 </table>
 
 ## <a name="release-notes"></a>发行说明

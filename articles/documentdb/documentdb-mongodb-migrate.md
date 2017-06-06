@@ -34,10 +34,9 @@
 
 本教程涵盖以下任务：
 
-> [!div class="checklist"]
-> * 检索连接字符串
-> * 使用 mongoimport 导入 MongoDB 数据
-> * 使用 mongorestore 导入 MongoDB 数据
+* 检索连接字符串
+* 使用 mongoimport 导入 MongoDB 数据
+* 使用 mongorestore 导入 MongoDB 数据
 
 ## <a name="prerequisites"></a>先决条件
 
@@ -82,10 +81,9 @@
 
 在本教程中，已完成以下内容：
 
-> [!div class="checklist"]
-> * 已检索连接字符串
-> * 已使用 mongoimport 导入 MongoDB 数据
-> * 已使用 mongorestore 导入 MongoDB 数据
+* 已检索连接字符串
+* 已使用 mongoimport 导入 MongoDB 数据
+* 已使用 mongorestore 导入 MongoDB 数据
 
 现在可以继续学习下一教程，了解如何使用 DocumentDB 查询 MongoDB 数据。 
 

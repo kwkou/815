@@ -28,15 +28,15 @@
 <table>
 <tr>
   <td><strong>二进制文件</strong></td>
-  <td>[下载 MSI](https://aka.ms/documentdb-emulator)</td>
+  <td><a href="https://aka.ms/documentdb-emulator">下载 MSI</a></td>
 </tr>
 <tr>
   <td><strong>Docker</strong></td>
-  <td>[Docker 中心](https://hub.docker.com/r/microsoft/azure-documentdb-emulator/)</td>
+  <td><a href="https://hub.docker.com/r/microsoft/azure-documentdb-emulator/">Docker 中心</a></td>
 </tr>
 <tr>
   <td><strong>Docker 源</strong></td>
-  <td>[GitHub](https://github.com/azure/azure-documentdb-emulator-docker)</td>
+  <td><a href="https://github.com/azure/azure-documentdb-emulator-docker">GitHub</a></td>
 </tr>
 </table>
   
@@ -44,14 +44,13 @@
 
 本文涵盖以下任务： 
 
-> [!div class="checklist"]
-> * 安装模拟器
-> * 在适用于 Windows 的 Docker 上运行模拟器
-> * 对请求进行身份验证
-> * 在模拟器中使用数据资源管理器
-> * 导出 SSL 证书
-> * 从命令行调用模拟器
-> * 收集跟踪文件
+* 安装模拟器
+* 在适用于 Windows 的 Docker 上运行模拟器
+* 对请求进行身份验证
+* 在模拟器中使用数据资源管理器
+* 导出 SSL 证书
+* 从命令行调用模拟器
+* 收集跟踪文件
 
 ## <a name="system-requirements"></a>系统要求
 DocumentDB 模拟器具有以下硬件和软件要求：
@@ -322,18 +321,16 @@ DocumentDB 模拟器启动时，会自动在浏览器中打开 DocumentDB 数据
 
 在本教程中已完成以下操作：
 
-> [!div class="checklist"]
-> * 安装本地模拟器
-> * 在适用于 Windows 的 Docker 上运行模拟器
-> * 经过身份验证的请求
-> * 在模拟器中使用数据资源管理器
-> * 导出 SSL 证书
-> * 从命令行调用模拟器
-> * 收集跟踪文件
+* 安装本地模拟器
+* 在适用于 Windows 的 Docker 上运行模拟器
+* 经过身份验证的请求
+* 在模拟器中使用数据资源管理器
+* 导出 SSL 证书
+* 从命令行调用模拟器
+* 收集跟踪文件
 
 在本教程中，你已了解如何使用本地模拟器进行免费的本地开发。 现在可以继续学习下一教程，了解如何导出模拟器 SSL 证书。 
 
-> [!div class="nextstepaction"]
-> [导出 DocumentDB 模拟器证书](/documentation/articles/documentdb-nosql-local-emulator-export-ssl-certificates/)
+* [导出 DocumentDB 模拟器证书](/documentation/articles/documentdb-nosql-local-emulator-export-ssl-certificates/)
 
 <!--Update_Description: wording update-->
