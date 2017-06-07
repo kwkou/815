@@ -13,7 +13,7 @@
 <tags 
     ms.service="multiple" 
     ms.date="" 
-    wacn.date="05/19/2017"/>
+    wacn.date="06/07/2017"/>
 
 
 # 中国区 Azure 应用程序开发说明
@@ -157,7 +157,7 @@ Visual Studio 2015 支持在中国区 Azure 上开发，使用 Visual Studio 201
 
     ![12](./media/developerdifferences/developerdifferences-12.png)
 
-    c. 点击登陆，即可连接中国区 Azure。如遇问题，可在 [Azure Toolkit 相关页](https://github.com/Microsoft/azure-tools-for-java)提出并标记 Mooncake 标签。
+    c. 点击登陆，即可连接中国区 Azure。如遇问题，可在 [Azure Toolkit 相关页](https://github.com/Microsoft/azure-tools-for-java)提出并标记 Azure China 标签。
 ##实用场景示例
 
 ###云浏览器
