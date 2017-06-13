@@ -1,6 +1,6 @@
 <properties
     pageTitle="使用 cURL 和 REST 创建 Azure HDInsight (Hadoop) | Azure"
-    description="了解如何使用 cURL、Azure Resource Manager 模板和 Azure REST API 创建 HDInsight 群集。可以指定群集类型（Hadoop、HBase 或 Storm），或使用脚本来安装自定义组件。"
+    description="了解如何使用 cURL、Azure Resource Manager 模板和 Azure REST API 创建 HDInsight 群集。 可以指定群集类型（Hadoop、HBase 或 Storm），或使用脚本来安装自定义组件。"
     services="hdinsight"
     documentationcenter=""
     author="Blackmist"
@@ -10,56 +10,57 @@
 <tags
     ms.assetid="98be5893-2c6f-4dfa-95ec-d4d8b5b7dcb5"
     ms.service="hdinsight"
+    ms.custom="hdinsightactive"
     ms.devlang="na"
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="big-data"
     ms.date="02/17/2017"
-    wacn.date="03/10/2017"
-    ms.author="larryfr" />  
+    wacn.date="06/05/2017"
+    ms.author="v-dazen"
+    ms.translationtype="Human Translation"
+    ms.sourcegitcommit="08618ee31568db24eba7a7d9a5fc3b079cf34577"
+    ms.openlocfilehash="ea9d5ee3acfb9f3be1667e279b43479ec702d622"
+    ms.contentlocale="zh-cn"
+    ms.lasthandoff="05/26/2017" />
 
+# <a name="create-hdinsight-clusters-using-curl-and-the-azure-rest-api"></a>使用 cURL 和 Azure REST API 创建 HDInsight 群集
 
-# 使用 cURL 和 Azure REST API 创建 HDInsight 群集
-
-[AZURE.INCLUDE [选择器](../../includes/hdinsight-create-linux-cluster-selector.md)]
+[AZURE.INCLUDE [selector](../../includes/hdinsight-create-linux-cluster-selector.md)]
 
 了解如何使用 Azure Resource Manager 模板和 Azure REST API 创建 HDInsight 群集。
 
 使用 Azure REST API，可以对托管在 Azure 平台中的服务执行管理操作，包括创建新资源（例如 HDInsight 群集）。
 
 > [AZURE.IMPORTANT]
-Linux 是在 HDInsight 3.4 版或更高版本上使用的唯一操作系统。有关详细信息，请参阅 [HDInsight 在 Windows 上弃用](/documentation/articles/hdinsight-component-versioning/#hdi-version-33-nearing-deprecation-date)。
+> Linux 是在 HDInsight 3.4 版或更高版本上使用的唯一操作系统。 有关详细信息，请参阅 [HDInsight 在 Windows 上即将弃用](/documentation/articles/hdinsight-component-versioning/#hdi-version-33-nearing-deprecation-date)。
 
-## 先决条件
+## <a name="prerequisites"></a>先决条件
 
 [AZURE.INCLUDE [delete-cluster-warning](../../includes/hdinsight-delete-cluster-warning.md)]
 
-* **一个 Azure 订阅**。请参阅[获取 Azure 试用版](/pricing/1rmb-trial/)。
+[AZURE.INCLUDE [azure-cli-2-azurechinacloud-environment-parameter](../../includes/azure-cli-2-azurechinacloud-environment-parameter.md)]
 
-* **Azure CLI 2.0**（预览版）。Azure CLI 用于创建服务主体，为针对 Azure REST API 的请求生成身份验证令牌时需要使用此主体。有关 Azure CLI 2.0 预览版的详细信息，请参阅 [Azure CLI 2.0 入门](https://docs.microsoft.com/cli/azure/get-started-with-az-cli2)。
+* **一个 Azure 订阅**。 请参阅[获取 Azure 试用版](/pricing/1rmb-trial/)。
 
-    [AZURE.INCLUDE [azure-cli-2-azurechinacloud-environment-parameter](../../includes/azure-cli-2-azurechinacloud-environment-parameter.md)]
+* **Azure CLI 2.0**（预览版）。 Azure CLI 用于创建服务主体，为针对 Azure REST API 的请求生成身份验证令牌时需要使用此主体。 有关 Azure CLI 2.0 预览版的详细信息，请参阅 [Azure CLI 2.0 入门](https://docs.microsoft.com/zh-cn/cli/azure/get-started-with-az-cli2)。
 
-* **cURL**。可通过包管理系统获取此实用工具，也可以从 [http://curl.haxx.se/](http://curl.haxx.se/) 下载此实用工具。
+* **cURL**。 可通过包管理系统获取此实用工具，也可以从 [http://curl.haxx.se/](http://curl.haxx.se/)下载此实用工具。
 
     > [AZURE.NOTE]
-    如果使用 PowerShell 运行本文档中的命令，则必须先删除默认创建的 `curl` 别名。此别名使用 Invoke-WebRequest，而不是 cURL。如果不删除此别名，在使用某些本文中所用的命令时可能会收到错误。
+    > 如果要使用 PowerShell 运行本文档中的命令，必须先删除默认创建的 `curl` 别名。 此别名使用 Invoke-WebRequest，而不是 cURL。 如果不删除此别名，在使用某些本文中所用的命令时可能会收到错误。
     ><p>
     > 若要删除此别名，请从 PowerShell 提示符使用以下命令：
     ><p>
-    > `Remove-item alias:curl`  
+    > `Remove-item alias:curl`
     ><p>
     > 删除别名后，你应该能够使用系统上安装的 cURL 版本。
 
-### 访问控制要求
+## <a name="create-a-template"></a>创建模板
 
-[AZURE.INCLUDE [access-control](../../includes/hdinsight-access-control-requirements.md)]
+Azure Resource Manager 模板是描述**资源组**及其包含的所有资源（例如 HDInsight）的 JSON 文档。此基于模板的方法允许在一个模板中定义 HDInsight 所需的资源。
 
-## 创建模板
-
-Azure Resource Manager 模板是描述**资源组**及其包含的所有资源（例如 HDInsight）的 JSON 文档。 此基于模板的方法允许在一个模板中定义 HDInsight 所需的资源。
-
-下面是来自 [https://github.com/Azure/azure-quickstart-templates/tree/master/101-hdinsight-linux-ssh-password](https://github.com/Azure/azure-quickstart-templates/tree/master/101-hdinsight-linux-ssh-password) 的模板与参数文件的合并，它创建基于 Linux 的群集，并使用密码来保护 SSH 用户帐户。
+下面是来自 [https://github.com/Azure/azure-quickstart-templates/tree/master/101-hdinsight-linux-ssh-password](https://github.com/Azure/azure-quickstart-templates/tree/master/101-hdinsight-linux-ssh-password)的模板与参数文件的合并，它创建基于 Linux 的群集，并使用密码来保护 SSH 用户帐户。
 
     {
         "properties": {
@@ -243,50 +244,52 @@ Azure Resource Manager 模板是描述**资源组**及其包含的所有资源�
         }
     }
 
-本文档中的步骤使用了此示例。将“参数”部分中的示例值替换为群集的值。
+本文档中的步骤使用了此示例。 将“参数”部分中的示例值替换为群集的值。
 
 > [AZURE.IMPORTANT]
-该模板对 HDInsight 群集使用默认数目的辅助角色节点（4 个）。如果计划使用 32 个以上的辅助角色节点，则必须选择至少具有 8 个核心和 14GB ram 的头节点大小。
+> 此模板对 HDInsight 群集使用默认数目（4 个）的辅助角色节点。 如果计划使用 32 个以上的辅助角色节点，则必须选择至少具有 8 个核心和 14GB ram 的头节点大小。
 ><p>
 > 有关节点大小和相关费用的详细信息，请参阅 [HDInsight 定价](/pricing/details/hdinsight/)。
 
-## 登录到 Azure 订阅
+## <a name="log-in-to-your-azure-subscription"></a>登录到 Azure 订阅
 
-请按照 [Azure CLI 2.0 入门](https://docs.microsoft.com/cli/azure/get-started-with-az-cli2)中所述的步骤操作，并使用 `az login` 命令连接到你的订阅。
+请按照 [Azure CLI 2.0 入门](https://docs.microsoft.com/zh-cn/cli/azure/get-started-with-az-cli2)中所述的步骤操作，并使用 `az login` 命令连接到订阅。
 
-## 创建服务主体
+[AZURE.INCLUDE [azure-cli-2-azurechinacloud-environment-parameter](../../includes/azure-cli-2-azurechinacloud-environment-parameter.md)]
+
+## <a name="create-a-service-principal"></a>创建服务主体
 
 > [AZURE.NOTE]
-这些步骤是[使用 Azure CLI 创建服务主体来访问资源](/documentation/articles/resource-group-authenticate-service-principal-cli/#create-service-principal-with-password)文档的*使用密码创建服务主体*部分的缩减版。这些步骤创建用于向 Azure REST API 进行身份验证的服务主体。
+> 这些步骤是[使用 Azure CLI 创建服务主体以访问资源](/documentation/articles/resource-group-authenticate-service-principal-cli/#create-service-principal-with-password)文档的“使用密码创建服务主体”部分的缩减版本。 这些步骤创建用于向 Azure REST API 进行身份验证的服务主体。
 
 1. 从命令行使用以下命令列出 Azure 订阅。
 
-         az account list --query '[].{Subscription_ID:id,Tenant_ID:tenantId,Name:name}'  --output table
+        az account list --query '[].{Subscription_ID:id,Tenant_ID:tenantId,Name:name}'  --output table
 
-    在列表中，选择要使用的订阅并记下 **Subscription\_ID** 和 __Tenant\_ID__ 列。保存这些值。
+    在列表中，选择要使用的订阅并记下 **Subscription_ID** 和 __Tenant_ID__ 列。 保存这些值。
 
 2. 使用以下命令在 Azure Active Directory 中创建应用程序。
 
         az ad app create --display-name "exampleapp" --homepage "https://www.contoso.org" --identifier-uris "https://www.contoso.org/example" --password <Your password> --query 'appId'
 
-    将 `--display-name`、`--homepage` 和 `--identifier-uris` 的值替换为你自己的值。为新的 Active Directory 条目提供密码。
+    将 `--display-name`、`--homepage` 和 `--identifier-uris` 的值替换为自己的值。 为新的 Active Directory 条目提供密码。
 
     > [AZURE.NOTE]
-    `--home-page` 和 `--identifier-uris` 值无需引用 Internet 上托管的实际网页。它们必须是唯一 URI。
+    > `--home-page` 和 `--identifier-uris` 值无需引用 Internet 上托管的实际网页。 它们必须是唯一 URI。
 
-    此命令返回的值是新应用程序的__应用 ID__。保存此值。
+    此命令返回的值是新应用程序的 __应用 ID__ 。 保存此值。
 
-3. 通过以下命令使用**应用 ID** 创建服务主体。
+3. 通过以下命令使用 **应用 ID**创建服务主体。
 
         az ad sp create --id <App ID> --query 'objectId'
 
-     此命令返回的值是__对象 ID__。保存此值。
+    此命令返回的值是 __对象 ID__。 保存此值。
 
-4. 使用**对象 ID** 值向服务主体分配**所有者**角色。使用前面获取的**订阅 ID**。
+4. 使用**对象 ID** 值向服务主体分配**所有者**角色。 使用前面获取的 **订阅 ID** 。
 
         az role assignment create --assignee <Object ID> --role Owner --scope /subscriptions/<Subscription ID>/
 
-## 获取身份验证令牌
+## <a name="get-an-authentication-token"></a>获取身份验证令牌
 
 使用以下命令检索身份验证令牌：
 
@@ -298,11 +301,11 @@ Azure Resource Manager 模板是描述**资源组**及其包含的所有资源�
     --data-urlencode "client_secret=password" \
     --data-urlencode "resource=https://management.chinacloudapi.cn/"
 
-请用之前得到的或者使用的值来替换 **TenantID**、**AppID** 和 **password**。
+将 **TenantID**、**AppID** 和 **password** 替换为前面获取或使用的值。
 
-如果这个请求成功，会得到一个200系列的返回，这个返回的主体包含了一个 JSON 文档。
+如果此请求成功，你将收到 200 系列响应，且响应正文包含一个 JSON 文档。
 
-这个返回的 JSON 文档包含一个名为 **access_token** 的元素，这个 **access_token** 的值是用来授权 REST API 请求的。
+此请求返回的 JSON 文档包含一个名为 **access_token** 的元素。 **access_token** 的值用来对向 REST API 发出的请求进行身份验证。
 
         {
             "token_type":"Bearer",
@@ -312,13 +315,13 @@ Azure Resource Manager 模板是描述**资源组**及其包含的所有资源�
             "resource":"https://management.chinacloudapi.cn/","access_token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Ik1uQ19WWoNBVGZNNXBPWWlKSE1iYTlnb0VLWSIsImtpZCI6Ik1uQ19WWmNBVGZNNXBPWWlKSE1iYTlnb0VLWSJ9.eyJhdWQiOiJodHRwczovL21hbmFnZW1lbnQuYXp1cmUuY29tLyIsImlzcyI6Imh0dHBzOi8vc3RzLndpbmRvd3MubmV0LzcyZjk4OGJmLTg2ZjEtNDFhZi05MWFiLTJkN2NkMDExZGI2Ny8iLCJpYXQiOjE0NjM0MDYwOTQsIm5iZiI6MTQ2MzQwNjA5NCwiZXhwIjoxNDYzNDA5OTk5LCJhcHBpZCI6IjBlYzcyMzM0LTZkMDMtNDhmYi04OWU1LTU2NTJiODBiZDliYiIsImFwcGlkYWNyIjoiMSIsImlkcCI6Imh0dHBzOi8vc3RzLndpbmRvd3MubmV0LzcyZjk4OGJmLTg2ZjEtNDFhZi05MWFiLTJkN2NkMDExZGI0Ny8iLCJvaWQiOiJlNjgxZTZiMi1mZThkLTRkZGUtYjZiMS0xNjAyZDQyNWQzOWYiLCJzdWIiOiJlNjgxZTZiMi1mZThkLTRkZGUtYjZiMS0xNjAyZDQyNWQzOWYiLCJ0aWQiOiI3MmY5ODhiZi04NmYxLTQxYWYtOTFhYi0yZDdjZDAxMWRiNDciLCJ2ZXIiOiIxLjAifQ.nJVERbeDHLGHn7ZsbVGBJyHOu2PYhG5dji6F63gu8XN2Cvol3J1HO1uB4H3nCSt9DTu_jMHqAur_NNyobgNM21GojbEZAvd0I9NY0UDumBEvDZfMKneqp7a_cgAU7IYRcTPneSxbD6wo-8gIgfN9KDql98b0uEzixIVIWra2Q1bUUYETYqyaJNdS4RUmlJKNNpENllAyHQLv7hXnap1IuzP-f5CNIbbj9UgXxLiOtW5JhUAwWLZ3-WMhNRpUO2SIB7W7tQ0AbjXw3aUYr7el066J51z5tC1AK9UC-mD_fO_HUP6ZmPzu5gLA6DxkIIYP3grPnRVoUDltHQvwgONDOw"
         }
 
-## 创建资源组
+## <a name="create-a-resource-group"></a>创建资源组
 
 使用以下命令创建资源组。
 
 * 将 **SubscriptionID** 替换为创建服务主体时收到的订阅 ID。
 * 将 **AccessToken** 替换为在上一步骤中收到的访问令牌。
-* 将 **DataCenterLocation** 替换为要在其中创建资源组和资源的数据中心。例如“China East”。
+* 将 **DataCenterLocation** 替换为要在其中创建资源组和资源的数据中心。 例如“China East”。
 * 将 **ResourceGroupName** 替换为要用于此组的名称：
 
         curl -X "PUT" "https://management.chinacloudapi.cn/subscriptions/SubscriptionID/resourcegroups/ResourceGroupName?api-version=2015-01-01" \
@@ -328,9 +331,9 @@ Azure Resource Manager 模板是描述**资源组**及其包含的所有资源�
         "location": "DataCenterLocation"
         }'
 
-如果此请求成功，将收到 200 系列响应，且响应正文包含一个 JSON 文档，其中包含有关该组的信息。`"provisioningState"` 元素包含值 `"Succeeded"`。
+如果此请求成功，将收到 200 系列响应，且响应正文包含一个 JSON 文档，其中包含有关该组的信息。 `"provisioningState"` 元素包含值 `"Succeeded"`。
 
-## 创建部署
+## <a name="create-a-deployment"></a>创建部署
 
 使用以下命令将模板部署到资源组。
 
@@ -344,17 +347,16 @@ Azure Resource Manager 模板是描述**资源组**及其包含的所有资源�
         -d "{set your body string to the template and parameters}"
 
 > [AZURE.NOTE]
-如果将该模版保存到文件，则可以使用以下命令而不是 `-d "{ template and parameters}"`：
+> 如果将模板保存到了文件中，则可以使用以下命令而不是 `-d "{ template and parameters}"`：
 ><p>
-> `--data-binary "@/path/to/file.json"`  
-
+> `--data-binary "@/path/to/file.json"`
 
 如果此请求成功，将收到 200 系列响应，且响应正文包含一个 JSON 文档，其中包含有关部署操作的信息。
 
 > [AZURE.IMPORTANT]
-部署已提交但目前尚未完成。部署通常需要大约 15 分钟才能完成。
+> 部署已提交但目前尚未完成。 部署通常需要大约 15 分钟才能完成。
 
-## 检查部署状态
+## <a name="check-the-status-of-a-deployment"></a>检查部署状态
 
 若要检查部署状态，请使用以下命令：
 
@@ -365,28 +367,31 @@ Azure Resource Manager 模板是描述**资源组**及其包含的所有资源�
         -H "Authorization: Bearer AccessToken" \
         -H "Content-Type: application/json"
 
-此命令返回包含有关部署操作的信息的 JSON 文档。`"provisioningState"` 元素包含部署的状态。如果其中包含值 `"Succeeded"`，则成功完成部署。
+此命令返回包含有关部署操作的信息的 JSON 文档。 `"provisioningState"` 元素包含部署的状态。 如果其中包含值 `"Succeeded"`，则成功完成部署。
 
-## 后续步骤
+## <a name="troubleshoot"></a>故障排除
+
+如果在创建 HDInsight 群集时遇到问题，请参阅[访问控制要求](/documentation/articles/hdinsight-administer-use-portal-linux/#create-clusters)。
+
+## <a name="next-steps"></a>后续步骤
 
 成功创建 HDInsight 群集后，请参考以下主题来了解如何使用群集。
 
-### Hadoop 群集
+### <a name="hadoop-clusters"></a>Hadoop 群集
 
 * [将 Hive 与 HDInsight 配合使用](/documentation/articles/hdinsight-use-hive/)
 * [将 Pig 与 HDInsight 配合使用](/documentation/articles/hdinsight-use-pig/)
 * [将 MapReduce 与 HDInsight 配合使用](/documentation/articles/hdinsight-use-mapreduce/)
 
-### HBase 群集
+### <a name="hbase-clusters"></a>HBase 群集
 
-* [Get started with HBase on HDInsight（HBase on HDInsight 入门）](/documentation/articles/hdinsight-hbase-tutorial-get-started-linux/)
-* [Develop Java applications for HBase on HDInsight（为 HBase on HDInsight 开发 Java 应用程序）](/documentation/articles/hdinsight-hbase-build-java-maven-linux/)
+* [HBase on HDInsight 入门](/documentation/articles/hdinsight-hbase-tutorial-get-started-linux/)
+* [为 HBase on HDInsight 开发 Java 应用程序](/documentation/articles/hdinsight-hbase-build-java-maven-linux/)
 
-### Storm 群集
+### <a name="storm-clusters"></a>Storm 群集
 
-* [Develop Java topologies for Storm on HDInsight（为 Storm on HDInsight 开发 Java 拓扑）](/documentation/articles/hdinsight-storm-develop-java-topology/)
-* [Use Python components in Storm on HDInsight（在 Storm on HDInsight 中使用 Python 组件）](/documentation/articles/hdinsight-storm-develop-python-topology/)
-* [Deploy and monitor topologies with Storm on HDInsight（使用 Storm on HDInsight 部署和监视拓扑）](/documentation/articles/hdinsight-storm-deploy-monitor-topology-linux/)
+* [为 Storm on HDInsight 开发 Java 拓扑](/documentation/articles/hdinsight-storm-develop-java-topology/)
+* [在 Storm on HDInsight 中使用 Python 组件](/documentation/articles/hdinsight-storm-develop-python-topology/)
+* [使用 Storm on HDInsight 部署和监视拓扑](/documentation/articles/hdinsight-storm-deploy-monitor-topology-linux/)
 
-<!---HONumber=Mooncake_0306_2017-->
-<!--Update_Description: add information about HDInsight Windows is going to be abandoned-->
+<!--Update_Description: add "troubleshoot"-->

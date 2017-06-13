@@ -6,8 +6,7 @@
     author="Blackmist"
     manager="jhubbard"
     editor="cgronlun"
-    tags="azure-portal"
-    translationtype="Human Translation" />
+    tags="azure-portal" />
 <tags
     ms.assetid="0c23a079-981a-4079-b3f7-ad147b4609e5"
     ms.service="hdinsight"
@@ -15,13 +14,15 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="02/07/2017"
-    wacn.date="05/08/2017"
-    ms.author="larryfr"
+    ms.date="05/04/2017"
+    wacn.date="06/05/2017"
+    ms.author="v-dazen"
     ms.custom="H1Hack27Feb2017,hdinsightactive"
-    ms.sourcegitcommit="2c4ee90387d280f15b2f2ed656f7d4862ad80901"
-    ms.openlocfilehash="5def30e8110c70f7b37b3d1d8e297e8a2217f850"
-    ms.lasthandoff="04/28/2017" />
+    ms.translationtype="Human Translation"
+    ms.sourcegitcommit="08618ee31568db24eba7a7d9a5fc3b079cf34577"
+    ms.openlocfilehash="d64234e6c77cd901579b8c8e1eae9cd23d0def1b"
+    ms.contentlocale="zh-cn"
+    ms.lasthandoff="05/26/2017" />
 
 # <a name="analyze-flight-delay-data-by-using-hive-on-linux-based-hdinsight"></a>在基于 Linux 的 HDInsight 上使用 Hive 分析航班延误数据
 
@@ -52,9 +53,9 @@
 
 3. 单击“下载”。
 
-## <a name="upload-the-data"></a>上载数据
+## <a name="upload-the-data"></a>上传数据
 
-1. 使用以下命令将该 zip 文件上载到 HDInsight 群集头节点：
+1. 使用以下命令将该 zip 文件上传到 HDInsight 群集头节点：
 
         scp FILENAME.zip USERNAME@CLUSTERNAME-ssh.azurehdinsight.cn:
 
@@ -63,7 +64,7 @@
     > [AZURE.NOTE]
     > 如果使用密码对 SSH 登录名进行身份验证，系统将提示输入密码。 如果你使用了公钥，则可能需要使用 `-i` 参数并指定匹配私钥的路径。 例如， `scp -i ~/.ssh/id_rsa FILENAME.zip USERNAME@CLUSTERNAME-ssh.azurehdinsight.cn:`。
 
-2. 上载完成后，使用 SSH 连接到群集：
+2. 上传完成后，使用 SSH 连接到群集：
 
     ```ssh USERNAME@CLUSTERNAME-ssh.azurehdinsight.cn```
 
@@ -73,7 +74,7 @@
 
         unzip FILENAME.zip
 
-    此命令可提取大小约为 60 MB 的 .csv 文件。
+    此命令会提取约为 60 MB 的 .csv 文件。
 
 4. 使用以下命令在 HDInsight 存储上创建一个目录，然后将该文件复制到此目录：
 
@@ -148,9 +149,9 @@
             LATE_AIRCRAFT_DELAY AS late_aircraft_delay
         FROM delays_raw;
 
-2. 使用 **Ctrl+X**，然后使用 **Y** 以保存该文件。
+2. 若要保存该文件，请使用 **Ctrl + X**，然后使用 **Y**。
 
-3. 使用以下命令启动 Hive 并运行 **flightdelays.hql** 文件：
+3. 若要启动 Hive 并运行 **flightdelays.hql** 文件，请使用以下命令：
 
         beeline -u 'jdbc:hive2://localhost:10001/;transportMode=http' -n admin -f flightdelays.hql
 
@@ -179,7 +180,7 @@
 
 如果已具备 SQL 数据库，则必须获取服务器名称。 可通过在 [Azure 门户预览](https://portal.azure.cn)中选择“SQL 数据库”，然后筛选要使用的数据库名称，来找到服务器名称。 服务器名称在“SERVER”  列中列出。
 
-如果还没有 SQL 数据库，请使用 [SQL 数据库教程：几分钟内即可创建 SQL 数据库](/documentation/articles/sql-database-get-started/)中的信息创建一个。 需要保存数据库所使用的服务器名称。
+如果还没有 SQL 数据库，请使用 [SQL 数据库教程：几分钟内即可创建 SQL 数据库](/documentation/articles/sql-database-get-started/)中的信息创建一个。 保存数据库所使用的服务器名称。
 
 ## <a name="create-a-sql-database-table"></a>创建 SQL 数据库表
 
@@ -213,14 +214,14 @@
         ([origin_city_name] ASC))
         GO
 
-    输入 `GO` 语句后，将评估前面的语句。 这将创建一个名为 **delays**且具有聚集索引的表。
+    输入 `GO` 语句后，将评估前面的语句。 此查询会创建一个名为 **delays** 且具有聚集索引的表。
 
-    使用以下命令验证是否已创建该表：
+    使用以下查询验证是否已创建该表：
 
         SELECT * FROM information_schema.tables
         GO
 
-    输出与下面类似：
+    输出与以下文本类似：
 
         TABLE_CATALOG   TABLE_SCHEMA    TABLE_NAME      TABLE_TYPE
         databaseName       dbo     delays      BASE TABLE

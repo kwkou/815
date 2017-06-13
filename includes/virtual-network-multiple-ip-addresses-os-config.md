@@ -30,7 +30,7 @@
     ping -S 10.0.0.5 hotmail.com
 
 >[AZURE.NOTE]
->仅当你所使用的上述专用 IP 地址具有与之关联的公共 IP 时，才能 ping 到 Internet。
+>对于辅助 IP 配置，仅当该配置具有与之关联的公共 IP 地址的情况下，才能 ping 到 Internet。 对于主 IP 配置，不需公共 IP 地址也可 ping 到 Internet。
 
 ### <a name="linux-ubuntu"></a>Linux (Ubuntu)
 
@@ -128,7 +128,7 @@
     ping -I 10.0.0.5 hotmail.com
 
 >[AZURE.NOTE]
->仅当你所使用的上述专用 IP 地址具有与之关联的公共 IP 时，才能 ping 到 Internet。
+>对于辅助 IP 配置，仅当该配置具有与之关联的公共 IP 地址的情况下，才能 ping 到 Internet。 对于主 IP 配置，不需公共 IP 地址也可 ping 到 Internet。
 
 对于 Linux VM，在尝试验证源自辅助 NIC 的出站连接时，可能需要添加适当的路由。 可通过多种方式执行此操作。 对于 Linux 分发版，请参阅相应的文档。 下面是实现此目的的一种方法：
 

@@ -6,8 +6,7 @@
     documentationcenter=""
     author="Blackmist"
     manager="jhubbard"
-    editor="cgronlun"
-    translationtype="Human Translation" />
+    editor="cgronlun" />
 <tags
     ms.assetid="d710dcac-35d1-4c27-a8d6-acaf8146b485"
     ms.service="hdinsight"
@@ -16,12 +15,14 @@
     ms.tgt_pltfrm="na"
     ms.workload="big-data"
     ms.date="03/17/2017"
-    wacn.date="05/08/2017"
-    ms.author="larryfr"
+    wacn.date="06/05/2017"
+    ms.author="v-dazen"
     ms.custom="H1Hack27Feb2017,hdinsightactive"
-    ms.sourcegitcommit="2c4ee90387d280f15b2f2ed656f7d4862ad80901"
-    ms.openlocfilehash="8b66388d4b55b505661b6a70de32651061ee9fe7"
-    ms.lasthandoff="04/28/2017" />
+    ms.translationtype="Human Translation"
+    ms.sourcegitcommit="08618ee31568db24eba7a7d9a5fc3b079cf34577"
+    ms.openlocfilehash="38f1c8e4215a6698b91cc08bd82fa445c845d7b6"
+    ms.contentlocale="zh-cn"
+    ms.lasthandoff="05/26/2017" />
 
 # <a name="get-started-with-the-storm-starter-samples-for-big-data-analytics-on-linux-based-hdinsight"></a>用于在基于 Linux 的 HDInsight 上进行大数据分析的 Storm 初学者示例入门
 
@@ -37,10 +38,6 @@ Apache Storm 是一个可扩展的、具有容错能力的分布式实时计算�
 * **一个 Azure 订阅**。 请参阅[获取 Azure 试用版](/pricing/1rmb-trial/)。
 
 * **熟悉 SSH 和 SCP**。 有关信息，请参阅[将 SSH 与 HDInsight 配合使用](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix/)。
-
-### <a name="access-control-requirements"></a>访问控制要求
-
-[AZURE.INCLUDE [access-control](../../includes/hdinsight-access-control-requirements.md)]
 
 ## <a name="create-a-storm-cluster"></a>创建 Storm 群集
 
@@ -109,7 +106,7 @@ Apache Storm 是一个可扩展的、具有容错能力的分布式实时计算�
 
     > [AZURE.NOTE]
     > 将自己的拓扑提交到群集时，必须先复制包含群集的 jar 文件，然后再使用 `storm` 命令。 使用 `scp` 命令来复制该文件。 例如 `scp FILENAME.jar USERNAME@CLUSTERNAME-ssh.azurehdinsight.cn:FILENAME.jar`
-    > <p>
+    ><p>
     > WordCount 示例和其他 Storm 初学者示例已经包含在群集中，其位置为 `/usr/hdp/current/storm-client/contrib/storm-starter/`。
 
 如果有兴趣查看 storm 初学者示例的源，可以在以下网页中找到代码：[https://github.com/apache/storm/tree/1.0.x-branch/examples/storm-starter](https://github.com/apache/storm/tree/1.0.x-branch/examples/storm-starter)。 此链接针对与 HDInsight 3.5 一起提供的 Storm 1.0.x。 对于其他版本的 Storm，可使用页面顶部的“分支”按钮选择不同的 Storm 版本。
@@ -191,6 +188,8 @@ Storm UI 提供一个 Web 界面用于处理正在运行的拓扑，你的 HDIns
 ## <a name="delete-the-cluster"></a>删除群集
 
 [AZURE.INCLUDE [delete-cluster-warning](../../includes/hdinsight-delete-cluster-warning.md)]
+
+如果在创建 HDInsight 群集时遇到问题，请参阅[访问控制要求](/documentation/articles/hdinsight-administer-use-portal-linux/#create-clusters)。
 
 ## <a id="next"></a>后续步骤
 

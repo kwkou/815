@@ -6,8 +6,7 @@
     author="Blackmist"
     manager="jhubbard"
     editor="cgronlun"
-    tags="azure-portal"
-    translationtype="Human Translation" />
+    tags="azure-portal" />
 <tags
     ms.assetid="50b01483-455c-4d87-b754-2229005a8ab9"
     ms.service="hdinsight"
@@ -17,11 +16,13 @@
     ms.tgt_pltfrm="na"
     ms.workload="big-data"
     ms.date="04/04/2017"
-    wacn.date="05/08/2017"
-    ms.author="larryfr"
-    ms.sourcegitcommit="2c4ee90387d280f15b2f2ed656f7d4862ad80901"
-    ms.openlocfilehash="828c5d36c40ff780cab6902052c1ef0e87fa8f51"
-    ms.lasthandoff="04/28/2017" />
+    wacn.date="06/05/2017"
+    ms.author="v-dazen"
+    ms.translationtype="Human Translation"
+    ms.sourcegitcommit="08618ee31568db24eba7a7d9a5fc3b079cf34577"
+    ms.openlocfilehash="5eef846d55eda3a80ea2ea020e5ffed995c3ec89"
+    ms.contentlocale="zh-cn"
+    ms.lasthandoff="05/26/2017" />
 
 # <a name="create-hdinsight-clusters-using-the-azure-cli"></a>使用 Azure CLI 创建 HDInsight 群集
 
@@ -44,10 +45,6 @@
 
     > [AZURE.IMPORTANT]
     > 本文中的步骤不适用于 Azure CLI 2.0。 Azure CLI 2.0 不支持创建 HDInsight 群集。
-
-### <a name="access-control-requirements"></a>访问控制要求
-
-[AZURE.INCLUDE [access-control](../../includes/hdinsight-access-control-requirements.md)]
 
 ## <a name="log-in-to-your-azure-subscription"></a>登录到 Azure 订阅
 
@@ -124,10 +121,14 @@
 
     > [AZURE.IMPORTANT]
     > 此示例创建一个具有两个辅助节点的群集。 如果计划（在创建或扩展群集时）辅助节点在 32 个以上，则必须选择至少具有 8 个核心和 14GB RAM 的头节点大小。 可以使用 `--headNodeSize` 参数设置头节点大小。
-    > <p>
+    ><p>
     > 有关节点大小和相关费用的详细信息，请参阅 [HDInsight 定价](/pricing/details/hdinsight/)。
 
     可能需要几分钟时间才能完成群集创建过程。 通常大约为 15 分钟。
+
+## <a name="troubleshoot"></a>故障排除
+
+如果在创建 HDInsight 群集时遇到问题，请参阅[访问控制要求](/documentation/articles/hdinsight-administer-use-portal-linux/#create-clusters)。
 
 ## <a name="next-steps"></a>后续步骤
 
@@ -150,4 +151,4 @@
 * [在 Storm on HDInsight 中使用 Python 组件](/documentation/articles/hdinsight-storm-develop-python-topology/)
 * [使用 Storm on HDInsight 部署和监视拓扑](/documentation/articles/hdinsight-storm-deploy-monitor-topology-linux/)
 
-<!--Update_Description: wording update-->
+<!--Update_Description: add "troubleshoot"-->

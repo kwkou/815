@@ -1,35 +1,37 @@
 <properties
-    pageTitle="在 HDinsight 上的 Storm 拓扑中使用 Python 组件 | Azure"
-    description="了解如何将 Python 组件与 Apache Storm on Azure HDInsight 配合使用。"
+    pageTitle="使用 Python 组件的 Apache Storm - Azure HDInsight | Azure"
+    description="了解如何创建使用 Python 组件的 Apache Storm 拓扑。"
     services="hdinsight"
     documentationcenter=""
     author="Blackmist"
     manager="jhubbard"
     editor="cgronlun"
-    translationtype="Human Translation" />
+    keywords="apache storm python" />
 <tags
     ms.assetid="edd0ec4f-664d-4266-910c-6ecc94172ad8"
     ms.service="hdinsight"
-    ms.custom="hdinsightactive"
+    ms.custom="hdinsightactive,hdiseo17may2017"
     ms.devlang="python"
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="big-data"
-    ms.date="04/04/2017"
-    wacn.date="05/08/2017"
-    ms.author="larryfr"
-    ms.sourcegitcommit="2c4ee90387d280f15b2f2ed656f7d4862ad80901"
-    ms.openlocfilehash="6c16d6ee3c6b71dbd6daa94275a3729d523f387c"
-    ms.lasthandoff="04/28/2017" />
+    ms.date="05/12/2017"
+    wacn.date="06/05/2017"
+    ms.author="v-dazen"
+    ms.translationtype="Human Translation"
+    ms.sourcegitcommit="08618ee31568db24eba7a7d9a5fc3b079cf34577"
+    ms.openlocfilehash="752bab0a597a5ad14194b560a9a486ec4114fe7f"
+    ms.contentlocale="zh-cn"
+    ms.lasthandoff="05/26/2017" />
 
 # <a name="develop-apache-storm-topologies-using-python-on-hdinsight"></a>在 HDInsight 上使用 Python 开发 Apache Storm 拓扑
 
-了解如何将 Python 组件与 Storm on HDInsight 配合使用。 Apache Storm 支持多种语言，甚至允许将几种语言的组件组合到一个拓扑中。 借助 Flux 框架（通过 Storm 0.10.0 引入），可以轻松地创建使用 Python 组件的解决方案。
+了解如何创建使用 Python 组件的 Apache Storm 拓扑。 Apache Storm 支持多种语言，甚至允许将几种语言的组件组合到一个拓扑中。 借助 Flux 框架（通过 Storm 0.10.0 引入），可以轻松地创建使用 Python 组件的解决方案。
 
 [AZURE.INCLUDE [hdinsight-linux-acn-version.md](../../includes/hdinsight-linux-acn-version.md)]
 
 > [AZURE.IMPORTANT]
-> 本文档中的信息已使用 Storm on HDInsight 3.5 进行测试。 Linux 是 HDInsight 3.4 或更高版本上使用的唯一操作系统。 有关详细信息，请参阅[弃用 HDInsight 版本 3.3 和 3.4](/documentation/articles/hdinsight-component-versioning/#hdi-version-33-nearing-deprecation-date)。
+> 本文档中的信息已使用 Storm on HDInsight 3.5 进行测试。 Linux 是在 HDInsight 3.4 版或更高版本上使用的唯一操作系统。 有关详细信息，请参阅 [HDInsight 弃用日期](/documentation/articles/hdinsight-component-versioning/#hdi-version-33-nearing-deprecation-date)。
 
 此项目的代码位于 [https://github.com/Azure-Samples/hdinsight-python-storm-wordcount](https://github.com/Azure-Samples/hdinsight-python-storm-wordcount)。
 
@@ -45,13 +47,13 @@
 
 ## <a name="storm-multi-language-support"></a>Storm 多语言支持
 
-Storm 设计为与使用任何编程语言编写的组件配合使用。 组件必须了解如何使用 Storm 的 Thrift 定义。 对于 Python，会以 Apache Storm 项目的一部分提供模块，让用户可以轻松与 Storm 进行交互。 可以在 [https://github.com/apache/storm/blob/master/storm-multilang/python/src/main/resources/resources/storm.py](https://github.com/apache/storm/blob/master/storm-multilang/python/src/main/resources/resources/storm.py) 上找到此模块。
+Apache Storm 设计为与使用任何编程语言编写的组件配合使用。 组件必须了解如何使用 Storm 的 Thrift 定义。 对于 Python，会以 Apache Storm 项目的一部分提供模块，让用户可以轻松与 Storm 进行交互。 可以在 [https://github.com/apache/storm/blob/master/storm-multilang/python/src/main/resources/resources/storm.py](https://github.com/apache/storm/blob/master/storm-multilang/python/src/main/resources/resources/storm.py) 上找到此模块。
 
-Apache Storm 是在 Java 虚拟机 (JVM) 上运行的 Java 进程。 使用其他语言编写的组件作为子进程执行。 Storm 使用通过 stdin/stdout 发送的 JSON 消息与这些子进程通信。 有关组件间通信的更多详细信息，请参阅 [Multi-lang Protocol](https://storm.apache.org/documentation/Multilang-protocol.html)（多语言协议）文档。
+Storm 是在 Java 虚拟机 (JVM) 上运行的 Java 进程。 使用其他语言编写的组件作为子进程执行。 Storm 使用通过 stdin/stdout 发送的 JSON 消息与这些子进程通信。 有关组件间通信的更多详细信息，请参阅 [Multi-lang Protocol](https://storm.apache.org/documentation/Multilang-protocol.html)（多语言协议）文档。
 
-## <a name="python-and-the-flux-framework"></a>Python 和 Flux 框架
+## <a name="python-with-the-flux-framework"></a>使用 Flux 框架的 Python
 
-借助 Flux 框架，可独立于组件定义 Storm 拓扑。 此示例中的组件使用 Python 编写，但拓扑使用 YAML 定义。 下面的文本举例说明如何在 YAML 文档中引用 Python 组件：
+借助 Flux 框架，可独立于组件定义 Storm 拓扑。 Flux 框架使用 YAML 定义 Storm 拓扑。 下面的文本举例说明如何在 YAML 文档中引用 Python 组件：
 
     # Spout definitions
     spouts:
@@ -75,7 +77,7 @@ Flux 需要 Python 脚本位于包含拓扑的 jar 文件内的 `/resources` 目
         <filtering>false</filtering>
     </resource>
 
-如前所述，存在实现 Storm 的 Thrift 定义的 `storm.py` 文件。 Flux 框架在生成项目时自动包含此文件，无需额外执行操作。
+如前所述，存在实现 Storm 的 Thrift 定义的 `storm.py` 文件。 Flux 框架在生成项目时自动包含 `storm.py`，无需额外执行操作。
 
 ## <a name="build-the-project"></a>生成项目
 
@@ -104,11 +106,11 @@ Flux 需要 Python 脚本位于包含拓扑的 jar 文件内的 `/resources` 目
     24303 [Thread-17-log-executor[3 3]] INFO  o.a.s.f.w.b.LogInfoBolt - {word=dwarfs, count=143}
     24303 [Thread-25-sentence-spout-executor[4 4]] INFO  o.a.s.s.ShellSpout - ShellLog pid:2436, name:sentence-spout Emiting the cow jumped over the moon
     24303 [Thread-30] INFO  o.a.s.t.ShellBolt - ShellLog pid:2438, name:splitter-bolt Emitting cow
-    ^C24303 [Thread-17-log-executor[3 3]] INFO  o.a.s.f.w.b.LogInfoBolt - {word=four, count=160}
+    24303 [Thread-17-log-executor[3 3]] INFO  o.a.s.f.w.b.LogInfoBolt - {word=four, count=160}
 
-使用 Ctrl+C 停止拓扑。
+若要停止拓扑，请使用 __Ctrl + C__。
 
-## <a name="run-the-topology-on-hdinsight"></a>在 HDInsight 上运行拓扑
+## <a name="run-the-storm-topology-on-hdinsight"></a>在 HDInsight 上运行 Storm 拓扑
 
 1. 使用以下命令将 `WordCount-1.0-SNAPSHOT.jar` 文件复制到 Storm on HDInsight 群集：
 
@@ -130,8 +132,8 @@ Flux 需要 Python 脚本位于包含拓扑的 jar 文件内的 `/resources` 目
 
 > [AZURE.NOTE]
 > 启动后，Storm 拓扑会一直运行，直到被停止。 若要停止拓扑，可使用以下方法之一：
-> * 命令行中的 `storm kill TOPOLOGYNAME` 命令
-> * Storm UI 中的“终止”按钮。
+> <p>* 从命令行运行 `storm kill TOPOLOGYNAME` 命令
+> <p>* Storm UI 中的“终止”按钮。
 
 ## <a name="next-steps"></a>后续步骤
 

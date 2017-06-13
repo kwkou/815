@@ -5,8 +5,7 @@
     documentationcenter="na"
     author="jimdial"
     manager="timlt"
-    editor="tysonn"
-    translationtype="Human Translation" />
+    editor="tysonn" />
 <tags
     ms.assetid="c39076c4-11b7-4b46-a904-817503c4b486"
     ms.service="virtual-network"
@@ -15,12 +14,14 @@
     ms.tgt_pltfrm="na"
     ms.workload="infrastructure-services"
     ms.date="03/15/2016"
-    wacn.date="05/02/2017"
-    ms.author="jdial"
+    wacn.date="06/05/2017"
+    ms.author="v-dazen"
     ms.custom="H1Hack27Feb2017"
-    ms.sourcegitcommit="78da854d58905bc82228bcbff1de0fcfbc12d5ac"
-    ms.openlocfilehash="3be54bf8fff646755e9e0557484da12e8f1cb12b"
-    ms.lasthandoff="04/22/2017" />
+    ms.translationtype="Human Translation"
+    ms.sourcegitcommit="08618ee31568db24eba7a7d9a5fc3b079cf34577"
+    ms.openlocfilehash="e3936454b217a4be3b34c4175e0d7210adbd528d"
+    ms.contentlocale="zh-cn"
+    ms.lasthandoff="05/26/2017" />
 
 # <a name="user-defined-routes-and-ip-forwarding"></a>用户定义的路由和 IP 转发
 
@@ -46,7 +47,7 @@
 ![Azure 中的系统路由](./media/virtual-networks-udr-overview/Figure2.png)
 
 > [AZURE.IMPORTANT]
-> 用户定义的路由只会应用于离开子网的流量。 例如，无法创建路由以指定流量如何从 Internet 流入子网。 此外，流量所转发到的目标设备不能与流量的来源设备位于同一子网中。 必须为设备创建一个单独的子网。 
+> 用户定义的路由适用于从子网中的任意资源（例如附加到 VM 的网络接口）离开子网的流量。 例如，无法通过创建路由来指定流量如何从 Internet 进入子网。 流量所转发到的设备不能与流量来源设备位于同一子网中。 必须为设备创建一个单独的子网。 
 > 
 > 
 
@@ -57,7 +58,7 @@
 | --- | --- | --- | --- |
 | 地址前缀 |将路由应用到的目标 CIDR，例如 10.1.0.0/16。 |必须是表示公共 Internet、Azure 虚拟网络或本地数据中心中的地址的有效 CIDR 范围。 |请确保**地址前缀**中不包含**下一跃点地址**的地址，否则数据包将进入从源到下一跃点的循环，而从不会到达目的地。 |
 | 下一跃点类型 |数据包应发送到的 Azure 跃点的类型。 |必须是以下值之一： <br/> **虚拟网络**。 表示本地虚拟网络。 例如，如果同一虚拟网络中有两个子网 10.1.0.0/16 和 10.2.0.0/16，则路由表中每个子网的路由的下一跃点值将为 *虚拟网络*。 <br/> **虚拟网络网关**。 表示 Azure S2S VPN 网关。 <br/> **Internet**。 表示由 Azure 基础结构提供的默认 Internet 网关。 <br/> **虚拟设备**。 表示已添加到 Azure 虚拟网络的虚拟设备。 <br/> **无**。 表示黑洞。 转发到黑洞的数据包根本就不会进行转发。 |请考虑使用 **虚拟设备** 将流量定向到 VM 或 Azure 负载均衡器的内部 IP 地址。  此类型允许如下所述的 IP 地址规范。 请考虑使用“无”  类型，以停止将数据包流动到给定目标。 |
-| 下一跃点地址 |下一跃点地址包含应将数据包转发到的 IP 地址。 下一跃点值只允许在下一跃点类型为 *虚拟设备*的路由中使用。 |必须是可以在已应用用户定义路由的虚拟网络内部（无需通过**虚拟网络网关**）访问的 IP 地址。 该 IP 地址必须在已应用用户定义路由的同一虚拟网络上或在对等互连虚拟网络上。 |如果 IP 地址表示 VM，请确保在 Azure 中为 VM 启用 [“IP 转发”](#IP-forwarding) 。 如果 IP 地址表示 Azure 负载均衡器的内部 IP 地址，请确保要负载均衡的每个端口均具有匹配的负载均衡规则。|
+| 下一跃点地址 |下一跃点地址包含应将数据包转发到的 IP 地址。 下一跃点值只允许在下一跃点类型为 *虚拟设备*的路由中使用。 |必须是可以在已应用用户定义路由的虚拟网络内部（无需通过**虚拟网络网关**）访问的 IP 地址。 该 IP 地址必须在已应用用户定义路由的同一虚拟网络上或在对等互连虚拟网络上。 |如果 IP 地址表示 VM，请确保在 Azure 中为 VM 启用 [“IP 转发”](#ip-forwarding) 。 如果 IP 地址表示 Azure 负载均衡器的内部 IP 地址，请确保要负载均衡的每个端口均具有匹配的负载均衡规则。|
 
 在 Azure PowerShell 中，某些“NextHopType”值具有不同名称：
 
@@ -65,7 +66,7 @@
 * 虚拟网络网关是 VirtualNetworkGateway
 * 虚拟设备是 VirtualAppliance
 * Internet 是“Internet”
-* 无是“None”
+* 无是“无”
 
 ### <a name="system-routes"></a>系统路由
 对于在虚拟网络中创建的每个子网，都会自动与其中包含以下系统路由规则的路由表关联：
@@ -74,7 +75,7 @@
 * **本地规则**：此规则适用于要发送到本地地址范围的所有流量，并使用 VPN 网关作为下一跃点目标。
 * **Internet 规则**：此规则处理要发送到公共 Internet（地址前缀 0.0.0.0/0）的所有流量，并使用基础结构 Internet 网关作为要发送到 Internet 的所有流量的下一跃点。
 
-### <a name="user-defined-routes"></a> 用户定义的路由
+### <a name="user-defined-routes"></a>用户定义路由
 对于大多数环境，仅需要 Azure 已定义的系统路由。 不过，你可能需要创建路由表，在特定情况下还要添加一个或多个路由，例如：
 
 * 强制通过本地网络以隧道方式连接到 Internet。
@@ -103,7 +104,7 @@
 > 
 > 
 
-## <a name="ip-forwarding" id="IP-forwarding"></a> IP 转发
+## <a name="ip-forwarding"></a>IP 转发
 如上所述，之所以要创建用户定义的路由，其中一个主要原因是为了将流量转发到虚拟设备。 虚拟设备只是一个 VM，该 VM 所运行的应用程序用于通过某种方式（例如防火墙或 NAT 设备）处理网络流量。
 
 此虚拟设备 VM 必须能够接收不以其自身为目标的传入流量。 若要允许 VM 接收发送到其他目标的流量，必须为该 VM 启用 IP 转发。 这是 Azure 设置，不是来宾操作系统中的设置。

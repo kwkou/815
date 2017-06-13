@@ -6,8 +6,7 @@
     author="Blackmist"
     manager="jhubbard"
     editor="cgronlun"
-    tags="azure-portal"
-    translationtype="Human Translation" />
+    tags="azure-portal" />
 <tags
     ms.assetid="d83def76-12ad-4538-bb8e-3ba3542b7211"
     ms.service="hdinsight"
@@ -17,11 +16,13 @@
     ms.devlang="dotnet"
     ms.topic="article"
     ms.date="04/12/2017"
-    wacn.date="05/08/2017"
-    ms.author="larryfr"
-    ms.sourcegitcommit="9b66f16218093b3750001d881c49cd8ebd506b22"
-    ms.openlocfilehash="57a96781c4f0cd78021981500dcb26a1f1bcc847"
-    ms.lasthandoff="04/29/2017" />
+    wacn.date="06/05/2017"
+    ms.author="v-dazen"
+    ms.translationtype="Human Translation"
+    ms.sourcegitcommit="08618ee31568db24eba7a7d9a5fc3b079cf34577"
+    ms.openlocfilehash="677eeb4c228fee7bdd13b10ab02785f12b316229"
+    ms.contentlocale="zh-cn"
+    ms.lasthandoff="05/26/2017" />
 
 # <a name="use-c-user-defined-functions-with-hive-and-pig-streaming-on-hadoop-in-hdinsight"></a>在 HDInsight 中的 Hadoop 上将 C# 用户定义函数与 Hive 和 Pig 流式处理配合使用
 
@@ -57,6 +58,8 @@ Hive 和 Pig 都可以将数据传递到外部应用程序以进行处理。 此
 * __基于 Linux 的 HDInsight__ 群集使用 [Mono (https://mono-project.com)](https://mono-project.com) 运行 .NET 应用程序。 Mono 版本 4.2.1 包含在 HDInsight 版本 3.5 中。
 
     有关 Mono 与 .NET Framework 版本的兼容性的详细信息，请参阅 [Mono 兼容性](http://www.mono-project.com/docs/about-mono/compatibility/)。
+
+    若要使用 Mono 的特定版本，请参阅[安装或更新 Mono](/documentation/articles/hdinsight-hadoop-install-mono/) 文档。
 
 * __基于 Windows 的 HDInsight__ 群集使用 Microsoft .NET CLR 运行 .NET 应用程序。
 
@@ -159,7 +162,7 @@ Hive 和 Pig 都可以将数据传递到外部应用程序以进行处理。 此
 
 3. 保存 **Program.cs**，然后生成项目。
 
-## <a name="upload-to-storage"></a>上载到存储
+## <a name="upload-to-storage"></a>上传到存储
 
 1. 在 Visual Studio 中，打开“服务器资源管理器”。
 
@@ -177,7 +180,7 @@ Hive 和 Pig 都可以将数据传递到外部应用程序以进行处理。 此
 
     * 如果使用的是 __Azure 存储帐户__，请单击“上传”图标，然后浏览到“HiveCSharp”项目的“bin\debug”文件夹。 最后，选择 **HiveCSharp.exe** 文件并单击“确定”。
 
-        ![上载图标](./media/hdinsight-hadoop-hive-pig-udf-dotnet-csharp/upload.png)
+        ![上传图标](./media/hdinsight-hadoop-hive-pig-udf-dotnet-csharp/upload.png)
 
     上传“HiveCSharp.exe”完成后，请为“PigUDF.exe”文件重复该上传过程。
 
@@ -261,4 +264,4 @@ Hive 和 Pig 都可以将数据传递到外部应用程序以进行处理。 此
 * [将 Pig 与 HDInsight 配合使用](/documentation/articles/hdinsight-use-pig/)
 * [将 MapReduce 与 HDInsight 配合使用](/documentation/articles/hdinsight-use-mapreduce/)
 
-<!--Update_Description: wording update-->
+<!--Update_Description: add content about "Mono"-->

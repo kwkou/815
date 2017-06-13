@@ -6,8 +6,7 @@
     author="nitinme"
     manager="jhubbard"
     editor="cgronlun"
-    tags="azure-portal"
-    translationtype="Human Translation" />
+    tags="azure-portal" />
 <tags
     ms.assetid="697278cf-0032-4f7c-b9b2-a84c4347659e"
     ms.service="hdinsight"
@@ -16,12 +15,14 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="big-data"
-    ms.date="02/16/2017"
-    wacn.date="05/08/2017"
-    ms.author="nitinme"
-    ms.sourcegitcommit="2c4ee90387d280f15b2f2ed656f7d4862ad80901"
-    ms.openlocfilehash="827c788dfb8b604334aabf6c327b7d98a1136af0"
-    ms.lasthandoff="04/28/2017" />
+    ms.date="05/10/2017"
+    wacn.date="06/05/2017"
+    ms.author="v-dazen"
+    ms.translationtype="Human Translation"
+    ms.sourcegitcommit="08618ee31568db24eba7a7d9a5fc3b079cf34577"
+    ms.openlocfilehash="f6144a8f5e916b0c2e3866904cc64c5114412331"
+    ms.contentlocale="zh-cn"
+    ms.lasthandoff="05/26/2017" />
 
 # <a name="create-linux-based-clusters-in-hdinsight-using-the-azure-portal-preview"></a>使用 Azure 门户预览在 HDInsight 中创建基于 Linux 的群集
 [AZURE.INCLUDE [selector](../../includes/hdinsight-create-linux-cluster-selector.md)]
@@ -33,9 +34,6 @@ Azure 门户预览是一种基于 Web 的管理工具，用于管理 Azure 云�
 
 * **一个 Azure 订阅**。 请参阅[获取 Azure 试用版](/pricing/1rmb-trial/)。
 * **一个现代 Web 浏览器**。 Azure 门户预览使用 HTML5 和 Javascript，可能无法在旧版 Web 浏览器中正确运行。
-
-### <a name="access-control-requirements"></a>访问控制要求
-[AZURE.INCLUDE [access-control](../../includes/hdinsight-access-control-requirements.md)]
 
 ## <a name="create-clusters"></a>创建群集
 Azure 门户预览会公开大部分的群集属性。 使用 Azure Resource Manager 模板可以隐藏许多详细信息。 有关详细信息，请参阅[在 HDInsight 中使用 Azure Resource Manager 模板创建基于 Linux 的 Hadoop 群集](/documentation/articles/hdinsight-hadoop-create-linux-clusters-arm-templates/)。
@@ -100,7 +98,8 @@ Azure 门户预览会公开大部分的群集属性。 使用 Azure Resource Man
 
     > [AZURE.IMPORTANT]
     > 如果你计划使用 32 个以上的工作节点（在创建群集时或是在创建之后通过扩展群集进行），则必须选择至少具有 8 个核心和 14GB ram 的头节点大小。
-    > <p> 有关节点大小和相关费用的详细信息，请参阅 [HDInsight 定价](/pricing/details/hdinsight/)。
+    ><p>
+    > 有关节点大小和相关费用的详细信息，请参阅 [HDInsight 定价](/pricing/details/hdinsight/)。
 
     单击“下一步”以保存节点定价配置。
 
@@ -142,6 +141,10 @@ Azure 门户预览会公开大部分的群集属性。 使用 Azure Resource Man
 ## <a name="delete-the-cluster"></a>删除群集
 [AZURE.INCLUDE [delete-cluster-warning](../../includes/hdinsight-delete-cluster-warning.md)]
 
+## <a name="troubleshoot"></a>故障排除
+
+如果在创建 HDInsight 群集时遇到问题，请参阅[访问控制要求](/documentation/articles/hdinsight-administer-use-portal-linux/#create-clusters)。
+
 ## <a name="next-steps"></a>后续步骤
 成功创建 HDInsight 群集后，请参考以下主题来了解如何使用群集：
 
@@ -166,4 +169,4 @@ Azure 门户预览会公开大部分的群集属性。 使用 Azure Resource Man
 * [Spark 和机器学习：使用 HDInsight 中的 Spark 预测食品检查结果](/documentation/articles/hdinsight-apache-spark-machine-learning-mllib-ipython/)
 * [Spark 流式处理：使用 HDInsight 中的 Spark 生成实时流式处理应用程序](/documentation/articles/hdinsight-apache-spark-eventhub-streaming/)
 
-<!--Update_Description: wording update-->
+<!--Update_Description: add "troubleshoot"-->

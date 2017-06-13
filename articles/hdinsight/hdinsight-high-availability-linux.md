@@ -1,40 +1,42 @@
 <properties
-    pageTitle="HDInsight (Hadoop) 的高可用性功能 | Azure"
-    description="了解基于 Linux 的 HDInsight 群集如何使用附加的头节点提高可靠性和可用性。 了解这种方式对 Ambari 和 Hive 等 Hadoop 服务造成怎样的影响，以及如何使用 SSH 分别连接到每个头节点。"
+    pageTitle="Hadoop 的高可用性 - Azure HDInsight | Azure"
+    description="了解 HDInsight 群集如何使用附加的头节点提高可靠性和可用性。 了解这种方式对 Ambari 和 Hive 等 Hadoop 服务造成怎样的影响，以及如何使用 SSH 分别连接到每个头节点。"
     services="hdinsight"
     editor="cgronlun"
     manager="jhubbard"
     author="Blackmist"
     documentationcenter=""
     tags="azure-portal"
-    translationtype="Human Translation" />
+    keywords="hadoop 高可用性" />
 <tags
     ms.assetid="99c9f59c-cf6b-4529-99d1-bf060435e8d4"
     ms.service="hdinsight"
-    ms.custom="hdinsightactive"
+    ms.custom="hdinsightactive,hdiseo17may2017"
     ms.workload="big-data"
     ms.tgt_pltfrm="na"
     ms.devlang="multiple"
     ms.topic="article"
     ms.date="04/03/2017"
-    wacn.date="05/08/2017"
-    ms.author="larryfr"
-    ms.sourcegitcommit="2c4ee90387d280f15b2f2ed656f7d4862ad80901"
-    ms.openlocfilehash="935ab3d1b8d70484c4ed3e5c99742566fddf200f"
-    ms.lasthandoff="04/28/2017" />
+    wacn.date="06/05/2017"
+    ms.author="v-dazen"
+    ms.translationtype="Human Translation"
+    ms.sourcegitcommit="08618ee31568db24eba7a7d9a5fc3b079cf34577"
+    ms.openlocfilehash="c1d3e6d57a21c5ace31a2e74b875db63f3156288"
+    ms.contentlocale="zh-cn"
+    ms.lasthandoff="05/26/2017" />
 
 # <a name="availability-and-reliability-of-hadoop-clusters-in-hdinsight"></a>HDInsight 中 Hadoop 群集的可用性和可靠性
 
 HDInsight 群集提供两个头节点，提升 Hadoop 服务和作业运行的可用性与可靠性。
 
-Hadoop 可以通过在群集的多个节点上保留服务和数据的副本实现高可用性和可靠性。 不过，Hadoop 的标准分发功能通常只能有一个头节点。 单个头节点发生任何中断都可能导致群集停止工作。 这不是 HDInsight 的问题。
+Hadoop 通过将服务和数据复制到群集中的多个节点来实现高可用性和可靠性。 不过，Hadoop 的标准分发功能通常只能有一个头节点。 单个头节点发生任何中断都可能导致群集停止工作。 HDInsight 提供了两个头节点来提高 Hadoop 的可用性和可靠性。
 
 [AZURE.INCLUDE [hdinsight-linux-acn-version.md](../../includes/hdinsight-linux-acn-version.md)]
 
 > [AZURE.IMPORTANT]
-> Linux 是 HDInsight 3.4 或更高版本上使用的唯一操作系统。 有关详细信息，请参阅 [HDInsight 在 Windows 上即将弃用](/documentation/articles/hdinsight-component-versioning/#hdi-version-33-nearing-deprecation-date)。
+> Linux 是在 HDInsight 3.4 版或更高版本上使用的唯一操作系统。 有关详细信息，请参阅 [HDInsight 在 Windows 上即将弃用](/documentation/articles/hdinsight-component-versioning/#hdi-version-33-nearing-deprecation-date)。
 
-## <a name="understanding-the-nodes"></a>了解节点
+## <a name="availability-and-reliability-of-nodes"></a>节点的可用性和可靠性
 
 HDInsight 群集中的节点是使用 Azure 虚拟机实现的。 如果一个节点发生故障，该节点将会脱机，同时会创建一个新节点来取代有故障的节点。 当节点脱机时，将使用相同类型的另一个节点，直到新节点联机。
 
@@ -45,7 +47,7 @@ HDInsight 群集中的节点是使用 Azure 虚拟机实现的。 如果一个�
 
 ### <a name="head-nodes"></a>头节点
 
-这两个头节点同时处于活动状态并在 HDInsight 群集中运行。 某些服务，例如 HDFS 或 YARN，在任何给定的时间仅能在其中一个头节点上处于“活动”状态。 HiveServer2 或 Hive MetaStore 等其他服务同时在这两个头节点上处于活动状态。
+为确保 Hadoop 服务的高可用性，HDInsight 提供了两个头节点。 这两个头节点同时处于活动状态并在 HDInsight 群集中运行。 某些服务，例如 HDFS 或 YARN，在任何给定的时间仅能在其中一个头节点上处于“活动”状态。 HiveServer2 或 Hive MetaStore 等其他服务同时在这两个头节点上处于活动状态。
 
 头节点（以及 HDInsight 中的其他节点）的主机名中包含一个数字值。 例如 `hn0-CLUSTERNAME` 或 `hn4-CLUSTERNAME`。
 
@@ -54,11 +56,11 @@ HDInsight 群集中的节点是使用 Azure 虚拟机实现的。 如果一个�
 
 ### <a name="nimbus-nodes"></a>Nimbus 节点
 
-对于 Storm 群集，Nimbus 节点通过在辅助角色节点之间分发和监视处理资源来提供类似于 Hadoop JobTracker 的功能。 HDInsight 为 Storm 群集类型提供 2 个 Nimbus 节点。
+Storm 群集提供了 Nimbus 节点。 Nimbus 节点通过在辅助角色节点之间分发和监视处理资源来提供类似于 Hadoop JobTracker 的功能。 HDInsight 为 Storm 群集提供了两个 Nimbus 节点
 
 ### <a name="zookeeper-nodes"></a>Zookeeper 节点
 
-[ZooKeeper](http://zookeeper.apache.org/) 节点用于头节点上主控服务的前置选择，可确保服务、数据（辅助进程）节点和网关知道主控服务在哪个头节点上保持活动状态。 默认情况下，HDInsight 提供三个 ZooKeeper 节点。
+[ZooKeeper](http://zookeeper.apache.org/) 节点用于对头节点上的主服务进行领导选拨。 它们还用来确保服务、数据（辅助角色）节点和网关知道主服务在哪个头节点上处于活动状态。 默认情况下，HDInsight 提供三个 ZooKeeper 节点。
 
 ### <a name="worker-nodes"></a>辅助角色节点
 
@@ -66,7 +68,7 @@ HDInsight 群集中的节点是使用 Azure 虚拟机实现的。 如果一个�
 
 ### <a name="edge-node"></a>边缘节点
 
-边缘节点不主动参与群集内的数据分析，但开发人员或数据科研人员会将它与 Hadoop 配合使用。 边缘节点与群集中的其他节点一样驻留在同一个 Azure 虚拟网络中，可直接访问其他所有节点。 由于边缘节点不涉及群集数据的分析，因此可以从关键 Hadoop 服务或分析作业中腾出资源，而不造成任何问题。
+边缘节点不主动参与群集内的数据分析。 在使用 Hadoop 时，它由开发人员或数据科学家使用。 边缘节点与群集中的其他节点一样驻留在同一个 Azure 虚拟网络中，可直接访问其他所有节点。 可以在不将资源带离关键的 Hadoop 服务或分析作业的情况下使用边缘节点。
 
 目前，HDInsight 上的 R Server 是默认提供边缘节点的唯一群集类型。 对于 R Server on HDInsight 而言，边缘节点用于在将 R 代码提交到群集进行分布式处理之前，在本地节点上对这些代码进行测试。
 
@@ -136,15 +138,15 @@ Ambari Web UI 在 https://CLUSTERNAME.azurehdinsight.cn 上显示。 将 **CLUST
 
 ### <a name="ambari-rest-api"></a>Ambari REST API
 
-Ambari REST API 可通过 Internet 提供，公共网关可将请求路由到当前托管 REST API 的头节点。
+Ambari REST API 可以通过 Internet 使用。 HDInsight 公共网关处理以当前托管着 REST API 的头节点为目的地的路由请求。
 
 可以通过 Ambari REST API 使用以下命令来检查服务的状态：
 
     curl -u admin:PASSWORD https://CLUSTERNAME.azurehdinsight.cn/api/v1/clusters/CLUSTERNAME/services/SERVICENAME?fields=ServiceInfo/state
 
-* 将 **PASSWORD** 替换为 HTTP 用户 (admin) 的帐户密码
-* 将 **CLUSTERNAME** 替换为群集的名称
-* 将 **SERVICENAME** 替换为要检查其状态的服务的名称
+* 将 **PASSWORD** 替换为 HTTP 用户 (admin) 帐户密码。
+* 将 **CLUSTERNAME** 替换为群集的名称。
+* 将 **SERVICENAME** 替换为要检查其状态的服务的名称。
 
 例如，若要检查名为 **mycluster** 的群集上的、密码为 **password** 的 **HDFS** 服务的状态，可使用以下命令：
 
@@ -193,9 +195,9 @@ Ambari REST API 可通过 Internet 提供，公共网关可将请求路由到当
 
 也可以使用 SSH 文件传输协议或安全文件传输协议 (SFTP) 连接到头节点并直接下载日志。
 
-与使用 SSH 客户端一样，在连接到群集时，必须提供 SSH 用户帐户名和群集的 SSH 地址。 例如，`sftp username@mycluster-ssh.azurehdinsight.cn`。 必须在出现提示时，提供帐户密码或使用 `-i` 参数提供公钥。
+与使用 SSH 客户端一样，在连接到群集时，必须提供 SSH 用户帐户名和群集的 SSH 地址。 例如，`sftp username@mycluster-ssh.azurehdinsight.cn`。 在出现提示时，提供帐户密码或使用 `-i` 参数提供公钥。
 
-建立连接后，会出现 `sftp>` 提示符。 在此提示符下，可以更改目录以及上载和下载文件。 例如：以下命令将目录切换到 **/var/log/hadoop/hdfs** 目录，然后下载该目录中的所有文件。
+建立连接后，会出现 `sftp>` 提示符。 在此提示符下，可以更改目录以及上传和下载文件。 例如：以下命令将目录切换到 **/var/log/hadoop/hdfs** 目录，然后下载该目录中的所有文件。
 
     cd /var/log/hadoop/hdfs
     get *
@@ -208,7 +210,7 @@ Ambari REST API 可通过 Internet 提供，公共网关可将请求路由到当
 ### <a name="ambari"></a>Ambari
 
 > [AZURE.NOTE]
-> 若要通过 Ambari 访问日志文件，必须使用 SSH 隧道。 单个服务的 Web 界面不在 Internet 上公开。 有关如何使用 SSH 隧道的信息，请参阅[使用 SSH 隧道访问 Ambari Web UI、ResourceManager、JobHistory、NameNode、Oozie 和其他 Web UI](/documentation/articles/hdinsight-linux-ambari-ssh-tunnel/)。
+> 若要通过 Ambari 访问日志文件，必须使用 SSH 隧道。 单个服务的 Web 界面不在 Internet 上公开。 有关使用 SSH 隧道的信息，请参阅[使用 SSH 隧道](/documentation/articles/hdinsight-linux-ambari-ssh-tunnel/)文档。
 
 在 Ambari Web UI 中选择要查看其日志的服务（例如 YARN）。 然后，使用“快速链接”选择要查看其日志的头节点。
 
@@ -216,9 +218,9 @@ Ambari REST API 可通过 Internet 提供，公共网关可将请求路由到当
 
 ## <a name="how-to-configure-the-node-size"></a>如何配置节点大小
 
-只能在创建群集期间选择节点大小。 可以在 [HDInsight 定价页](/pricing/details/hdinsight/)中找到 HDInsight 可用的不同 VM 大小（包括核心、内存和本地存储）的列表。
+只能在创建群集期间选择节点大小。 可以在 [HDInsight 定价页](/pricing/details/hdinsight/)上找到 HDInsight 可用的不同 VM 大小的列表。
 
-创建新的群集时，你可以指定节点的大小。 以下信息介绍了如何使用 [Azure 门户预览][preview-portal]、[Azure PowerShell][azure-powershell] 和 [Azure CLI][azure-cli] 指定大小：
+创建群集时，可以指定节点的大小。 以下信息介绍了如何使用 [Azure 门户预览][preview-portal]、[Azure PowerShell][azure-powershell] 和 [Azure CLI][azure-cli] 指定大小：
 
 * **Azure 门户预览**：创建群集时，可以设置群集所用节点的大小：
 
@@ -234,7 +236,7 @@ Ambari REST API 可通过 Internet 提供，公共网关可将请求路由到当
 
 * [Ambari REST 参考](https://github.com/apache/ambari/blob/trunk/ambari-server/docs/api/v1/index.md)
 * [安装和配置 Azure CLI](/documentation/articles/cli-install-nodejs/)
-* [安装和配置 Azure PowerShell](https://docs.microsoft.com/zh-cn/powershell/azureps-cmdlets-docs)
+* [安装和配置 Azure PowerShell](https://docs.microsoft.com/zh-cn/powershell/azure/overview)
 * [使用 Ambari 管理 HDInsight](/documentation/articles/hdinsight-hadoop-manage-ambari/)
 * [配置基于 Linux 的 HDInsight 群集](/documentation/articles/hdinsight-hadoop-provision-linux-clusters/)
 

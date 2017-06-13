@@ -6,8 +6,7 @@
     author="nitinme"
     manager="jhubbard"
     editor="cgronlun"
-    tags="azure-portal"
-    translationtype="Human Translation" />
+    tags="azure-portal" />
 <tags
     ms.service="hdinsight"
     ms.custom="hdinsightactive"
@@ -15,12 +14,14 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="03/28/2017"
-    wacn.date="05/08/2017"
-    ms.author="nitinme"
-    ms.sourcegitcommit="2c4ee90387d280f15b2f2ed656f7d4862ad80901"
-    ms.openlocfilehash="a5415b06a5d30acb7d3caf8c429e81a8824751cf"
-    ms.lasthandoff="04/28/2017" />
+    ms.date="05/04/2017"
+    wacn.date="06/05/2017"
+    ms.author="v-dazen"
+    ms.translationtype="Human Translation"
+    ms.sourcegitcommit="08618ee31568db24eba7a7d9a5fc3b079cf34577"
+    ms.openlocfilehash="bb948ae5f3f25661baebfea026e56a9b56cf817a"
+    ms.contentlocale="zh-cn"
+    ms.lasthandoff="05/26/2017" />
 
 # <a name="use-microsoft-cognitive-toolkit-deep-learning-model-with-azure-hdinsight-spark-cluster"></a>将 Microsoft 认知工具包深入学习模型与 Azure HDInsight Spark 群集配合使用
 
@@ -69,7 +70,7 @@
 
 * 对于 **Bash 脚本 URI**，输入 `https://raw.githubusercontent.com/Azure-Samples/hdinsight-pyspark-cntk-integration/master/cntk-install.sh`。
 
-* 确保仅在头节点上运行脚本。 清除辅助角色节点和 Zookeeper 节点的复选框。
+* 请确保仅在头节点和工作节点上运行脚本并清除其他所有复选框。
 
 * 单击“创建” 。
 
@@ -124,3 +125,5 @@
 [azure-trial]: /pricing/1rmb-trial/
 [azure-management-portal]: https://manage.windowsazure.cn/
 [azure-create-storageaccount]: /documentation/articles/storage-create-storage-account/
+
+<!--Update_Description: wording update-->

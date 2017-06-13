@@ -6,8 +6,7 @@
     author="jimdial"
     manager="timlt"
     editor=""
-    tags="azure-resource-manager"
-    translationtype="Human Translation" />
+    tags="azure-resource-manager" />
 <tags
     ms.assetid="9633de4b-a867-4ddf-be3c-a332edf02e24"
     ms.service="virtual-network"
@@ -16,11 +15,13 @@
     ms.tgt_pltfrm="na"
     ms.workload="infrastructure-services"
     ms.date="03/23/2017"
-    wacn.date="05/02/2017"
-    ms.author="jdial"
-    ms.sourcegitcommit="78da854d58905bc82228bcbff1de0fcfbc12d5ac"
-    ms.openlocfilehash="4aa33f3e633cb40475825d7314d23db666381a10"
-    ms.lasthandoff="04/22/2017" />
+    wacn.date="06/05/2017"
+    ms.author="v-dazen"
+    ms.translationtype="Human Translation"
+    ms.sourcegitcommit="08618ee31568db24eba7a7d9a5fc3b079cf34577"
+    ms.openlocfilehash="afa0a46a4d260c3d595e70c2d98038deb127b20f"
+    ms.contentlocale="zh-cn"
+    ms.lasthandoff="05/26/2017" />
 
 # <a name="azure-virtual-network"></a>Azure 虚拟网络
 
@@ -65,9 +66,9 @@ VNet 之间可相互连接，因此，连接到任意一个 VNet 的资源都可
 
 可组合使用以下任何选项将本地网络连接到 VNet：
 
-- **点到站点虚拟网络 (VPN)：**在连接到网络的单台电脑和 VNet 之间建立连接。 这种连接类型适用于刚开始使用 Azure 的人员或开发人员，因为该连接类型仅需对现有网络作出极少更改或不做任何更改。 此连接使用 SSTP 协议在电脑和 VNet 之间通过 Internet 提供加密通信。 由于流量遍历 Internet，因此点到站点 VPN 的延迟不可预测且经过加密。
+- **点到站点虚拟网络 (VPN)：**在连接到网络的单台电脑和 VNet 之间建立连接。 这种连接类型适用于刚开始使用 Azure 的人员或开发人员，因为该连接类型仅需对现有网络作出极少更改或不做任何更改。 此连接使用 SSTP 协议在电脑和 VNet 之间通过 Internet 提供加密通信。 由于流量遍历 Internet，因此点到站点 VPN 的延迟不可预测。
 - **站点到站点 VPN：**在 VPN 设备和 Azure VPN 网关之间建立连接。 此连接类型可使授权的任何本地资源访问 VNet。 此连接是一个 IPSec/IKE VPN，该 VPN 通过 Internet 在本地设备和 Azure VPN 网关之间提供加密通信。 由于流量遍历 Internet，因此站点到站点连接的延迟不可预测。
-- **Azure ExpressRoute：**通过 ExpressRoute 合作伙伴在网络和 Azure 之间建立连接。 此连接是专用连接。 流量不会遍历 Internet。 由于流量未遍历 Internet 且未加密，因此 ExpressRoute 连接的延迟不可预测。
+- **Azure ExpressRoute：**通过 ExpressRoute 合作伙伴在网络和 Azure 之间建立连接。 此连接是专用连接。 流量不会遍历 Internet。 由于流量未遍历 Internet，因此 ExpressRoute 连接的延迟可预测。
 
 若要了解有关所有以前连接选项的详细信息，请阅读[连接拓扑图](/documentation/articles/vpn-gateway-about-vpngateways/#a-namediagramsaconnection-topology-diagrams)一文。
 
@@ -75,7 +76,7 @@ VNet 之间可相互连接，因此，连接到任意一个 VNet 的资源都可
 可使用以下两个选项中任意一个或同时使用这两个方案筛选子网之间的网络流量：
 
 - **网络安全组 (NSG)：**每个 NSG 可包含多个入站和出站安全规则，通过这些规则可按源和目标 IP 地址、端口和协议筛选流量。 可将 NSG 应用到一个 VM 中的每个 NIC。 也可将 NSG 应用到 NIC 或其他 Azure 资源所连接的子网。 有关 NSG 的详细信息，请参阅[网络安全组](/documentation/articles/virtual-networks-nsg/)一文。
-- **网络虚拟设备 (NVA)：**NVA 是运行软件的 VM，软件可执行网络功能，例如防火墙。 查看 [Azure 应用商店](https://azuremarketplace.microsoft.com/marketplace/apps/category/networking?page=1&subcategories=appliances)中可用 NVA 列表。 NVA 也可用于提供 WAN 优化和其他网络流量功能。 NVA 通常与用户定义路由或 BGP 路由配合使用。 还可使用 NVA 筛选 VNet 之间的流量。
+- **网络虚拟设备 (NVA)：**NVA 是运行软件的 VM，软件可执行网络功能，例如防火墙。 NVA 也可用于提供 WAN 优化和其他网络流量功能。 NVA 通常与用户定义路由或 BGP 路由配合使用。 还可使用 NVA 筛选 VNet 之间的流量。
 
 ## <a name="routing"></a>路由网络流量
 
@@ -88,9 +89,13 @@ VNet 之间可相互连接，因此，连接到任意一个 VNet 的资源都可
 
 虚拟网络、子网、路由表或网络安全组无收费。 出站 Internet 带宽使用、公共 IP 地址、虚拟网络对等互连、VPN 网关和 ExpressRoute 各有其定价结构。 相关详细信息，请查看[虚拟网络](/pricing/details/networking/)、[VPN 网关](/pricing/details/vpn-gateway/)和 [ExpressRoute](/pricing/details/expressroute/) 定价页面。
 
+## <a name="faq"></a>常见问题
+
+若要查看关于虚拟网络的常见问题解答，请参阅[虚拟网络常见问题解答](/documentation/articles/virtual-networks-faq/)一文。
+
 ## <a name="next-steps"></a>后续步骤
 
 - 完成[创建首个虚拟网络](/documentation/articles/virtual-network-get-started-vnet-subnet/)一文中的步骤，创建自己的首个虚拟网络，并将几个 VM 连接到此网络。
 - 完成[配置点到站点连接](/documentation/articles/vpn-gateway-howto-point-to-site-resource-manager-portal/)一文中的步骤，为 VNet 创建一个点到站点连接。
 
-<!--Update_Description: wording update-->
+<!--Update_Description: add "faq"-->

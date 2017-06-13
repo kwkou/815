@@ -6,8 +6,7 @@
     author="mumian"
     manager="jhubbard"
     editor="cgronlun"
-    tags="azure-portal"
-    translationtype="Human Translation" />
+    tags="azure-portal" />
 <tags
     ms.assetid="5a76f897-02e8-4437-8f2b-4fb12225854a"
     ms.service="hdinsight"
@@ -16,17 +15,19 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="01/17/2017"
-    wacn.date="05/08/2017"
-    ms.author="jgao"
-    ms.sourcegitcommit="2c4ee90387d280f15b2f2ed656f7d4862ad80901"
-    ms.openlocfilehash="e4c455c608bbcde859dc44668294ffcfd5b1b289"
-    ms.lasthandoff="04/28/2017" />
+    ms.date="04/27/2017"
+    wacn.date="06/05/2017"
+    ms.author="v-dazen"
+    ms.translationtype="Human Translation"
+    ms.sourcegitcommit="08618ee31568db24eba7a7d9a5fc3b079cf34577"
+    ms.openlocfilehash="c8e0f40892bf4e4c54ef0e5a3d5d611ab4947dfb"
+    ms.contentlocale="zh-cn"
+    ms.lasthandoff="05/26/2017" />
 
 # <a name="manage-hadoop-clusters-in-hdinsight-by-using-the-azure-portal-preview"></a>使用 Azure 门户预览管理 HDInsight 中的 Hadoop 群集
 [AZURE.INCLUDE [selector](../../includes/hdinsight-portal-management-selector.md)]
 
-使用 [Azure 门户预览][azure-portal]可以在 Azure HDInsight 中管理 Hadoop 群集。 使用选项卡选择器还可以了解如何使用其他工具管理 HDInsight 中的 Hadoop 群集。 
+使用 [Azure 门户预览][azure-portal]可以在 Azure HDInsight 中管理 Hadoop 群集。 使用选项卡选择器还可以了解如何使用其他工具管理 HDInsight 中的 Hadoop 群集。
 
 **先决条件**
 
@@ -50,7 +51,27 @@
 ## <a name="create-clusters"></a>创建群集
 [AZURE.INCLUDE [delete-cluster-warning](../../includes/hdinsight-delete-cluster-warning.md)]
 
-HDInsight 使用各种 Hadoop 组件。 有关已获得验证和支持的组件的列表，请参阅 [Azure HDInsight 包含哪个版本的 Hadoop？](/documentation/articles/hdinsight-component-versioning/)。 有关创建群集的一般信息，请参阅[在 HDInsight 中创建 Hadoop 群集](/documentation/articles/hdinsight-hadoop-provision-linux-clusters/)。 
+HDInsight 使用各种 Hadoop 组件。 有关已获得验证和支持的组件的列表，请参阅 [Azure HDInsight 包含哪个版本的 Hadoop？](/documentation/articles/hdinsight-component-versioning/)。 有关创建群集的一般信息，请参阅[在 HDInsight 中创建 Hadoop 群集](/documentation/articles/hdinsight-hadoop-provision-linux-clusters/)。
+
+### <a name="access-control-requirements"></a>访问控制要求
+
+在创建 HDInsight 群集时，必须指定 Azure 订阅。 可以在新的 Azure 资源组或现有的资源组中创建此群集。 可以使用以下步骤验证是否具有创建 HDInsight 群集的权限：
+
+- 使用现有资源组。
+
+    1. 登录 [Azure 门户预览](https://portal.azure.cn)。
+    2. 从左侧菜单中单击“资源组”以列出资源组。
+    3. 单击要用于创建 HDInsight 群集的资源组。
+    4. 单击“访问控制(IAM)”，并确认你（或你所属的组）至少对该资源组具有“参与者”访问权限。
+
+- 创建新的资源组
+
+    1. 登录 [Azure 门户预览](https://portal.azure.cn)。
+    2. 从左侧菜单中单击“订阅”。 它有一个黄色的密钥图标。 将会看到订阅列表。
+    3. 单击用于创建群集的订阅。 
+    4. 单击“我的权限”。  它显示你在订阅中的[角色](/documentation/articles/role-based-access-control-what-is/#built-in-roles)。 至少需要具有“参与者”访问权限才能创建 HDInsight 群集。
+
+如果收到 NoRegisteredProviderFound 或 MissingSubscriptionRegistration 错误，请参阅[排查使用 Azure Resource Manager 时的常见 Azure 部署错误](/documentation/articles/resource-manager-common-deployment-errors/)。
 
 ## <a name="list-and-show-clusters"></a>列出并显示群集
 1. 登录到 [https://portal.azure.cn](https://portal.azure.cn)。
@@ -60,14 +81,14 @@ HDInsight 使用各种 Hadoop 组件。 有关已获得验证和支持的组件�
 
     ![Azure 门户预览中的 HDInsight 群集概要](./media/hdinsight-administer-use-portal-linux/hdinsight-essentials.png)
 
-    **概述菜单**：
+    **概述菜单：**
 
     * **仪表板**：打开群集仪表板，即可用于基于 Linux 群集的 Ambari Web。
     * **安全外壳**：显示使用安全 Shell (SSH) 连接与群集建立连接的说明。
     * **缩放群集**：可更改此群集的辅助角色节点数。
     * **删除**：删除群集。
 
-    **左侧菜单**：
+    **左侧菜单：**
 
     * **活动日志**：显示和查询活动日志。
     * **访问控制 (IAM)**：使用角色分配。  请参阅[使用角色分配管理对 Azure 订阅资源的访问权限](/documentation/articles/role-based-access-control-configure/)。
@@ -122,8 +143,8 @@ HDInsight 使用各种 Hadoop 组件。 有关已获得验证和支持的组件�
 
 > [AZURE.NOTE]
 > 只支持使用 HDInsight 3.1.3 或更高版本的群集。 如果不确定群集的版本，可以查看“属性”页面。  请参阅 [列出并显示群集](#list-and-show-clusters)。
-> 
-> 
+>
+>
 
 更改 HDInsight 支持的每种类型的群集所用数据节点数的影响：
 
@@ -134,7 +155,7 @@ HDInsight 使用各种 Hadoop 组件。 有关已获得验证和支持的组件�
     减少数据节点数目以缩减 Hadoop 群集时，系统会重新启动群集中的某些服务。 这会导致所有正在运行和挂起的作业在缩放操作完成时失败。 但是，可在操作完成后重新提交这些作业。
 * HBase
 
-    可在 HBase 群集运行时顺利添加或删除节点。 完成缩放操作后的几分钟内，区域服务器将自动平衡。 不过，你也可以手动平衡区域服务器，方法是登录到群集的头节点，然后在命令提示符窗口中运行以下命令：
+    可在 HBase 群集运行时顺利添加或删除节点。 完成缩放操作后的几分钟内，区域服务器将自动平衡。 但也可手动平衡区域服务器，方法是登录到群集的头节点，然后在命令提示符窗口中运行以下命令：
 
         >pushd %HBASE_HOME%\bin
         >hbase shell
@@ -153,7 +174,7 @@ HDInsight 使用各种 Hadoop 组件。 有关已获得验证和支持的组件�
 
     HDInsight 群集上提供了 Storm Web UI：
 
-    ![HDInsight Storm 缩放重新平衡](./media/hdinsight-administer-use-portal-linux/hdinsight.portal.scale.cluster.storm.rebalance.png)
+    ![HDInsight Storm 缩放重新平衡](./media/hdinsight-administer-use-portal-linux/hdinsight-portal-scale-cluster-storm-rebalance.png)
 
     以下是有关如何使用 CLI 命令重新平衡 Storm 拓扑的示例：
 
@@ -170,11 +191,11 @@ HDInsight 使用各种 Hadoop 组件。 有关已获得验证和支持的组件�
 3. 单击“缩放群集” 。
 4. 输入 **辅助节点数**。 Azure 订阅中的群集节点数量限制有所不同。 要增加限制，可联系计费支持人员。  成本信息将反映对节点数所做的更改。
 
-    ![HDInsight Hadoop HBase Storm Spark 缩放](./media/hdinsight-administer-use-portal-linux/hdinsight.portal.scale.cluster.png)
+    ![HDInsight Hadoop HBase Storm Spark 缩放](./media/hdinsight-administer-use-portal-linux/hdinsight-portal-scale-cluster.png)
 
 ## <a name="pauseshut-down-clusters"></a>暂停/关闭群集
 
-大多数 Hadoop 作业只是偶尔运行的批处理作业。 大多数 Hadoop 群集都存在长时间不进行处理的情况。 有了 HDInsight，可将数据存储在 Azure 存储空间，以便在不使用群集时可将其安全删除。
+大多数 Hadoop 作业只是偶尔运行的批处理作业。 大多数 Hadoop 群集都存在长时间不进行处理的情况。 有了 HDInsight，可将数据存储在 Azure 存储，以便在不使用群集时可将其安全删除。
 此外，还需要支付 HDInsight 群集费用，即使未使用。 由于群集费用高于存储空间费用数倍，因此在不使用群集时将其删除可以节省费用。
 
 可以通过许多方式对此过程进行程序性处理：
@@ -193,11 +214,11 @@ HDInsight 群集可以有两个用户帐户。 HDInsight 群集用户帐户（�
 
 > [AZURE.NOTE]
 > 如果你更改群集用户 (admin) 的密码，可能会导致针对此群集运行的脚本操作失败。 如果你的任何持久性脚本操作以辅助角色节点为目标，则当你通过调整大小操作在群集中添加节点时，这些操作可能会失败。 有关脚本操作的详细信息，请参阅[使用脚本操作自定义 HDInsight 群集](/documentation/articles/hdinsight-hadoop-customize-cluster-linux/)。
-> 
-> 
+>
+>
 
 1. 使用 HDInsight 群集用户凭据登录到 Ambari Web UI。 默认的用户名为 **admin**。 URL 为 **https://&lt;HDInsight Cluster Name>.azurehdinsight.cn**。
-2. 在顶部菜单中单击“管理”，然后单击“管理 Ambari”。 
+2. 在顶部菜单中单击“管理”，然后单击“管理 Ambari”。
 3. 在左侧菜单中，单击“用户”。
 4. 单击“管理”。
 5. 单击“更改密码”。
@@ -217,7 +238,7 @@ HDInsight 群集可以有两个用户帐户。 HDInsight 群集用户帐户（�
         PASS=$2
 
         usermod --password $(echo $PASS | openssl passwd -1 -stdin) $USER
-2. 将该文件上载到可以使用 HTTP 或 HTTPS 地址从 HDInsight 访问的存储位置。 例如，某个公共文件存储（如 OneDrive 或 Azure Blob 存储）。 将 URI（HTTP 或 HTTPS 地址）保存到该文件中，因为下一步需要用到。
+2. 将该文件上传到可以使用 HTTP 或 HTTPS 地址从 HDInsight 访问的存储位置。 例如，某个公共文件存储（如 OneDrive 或 Azure Blob 存储）。 将 URI（HTTP 或 HTTPS 地址）保存到该文件中，因为下一步需要用到。
 3. 从 Azure 门户预览中，单击“HDInsight 群集” 。
 4. 单击 HDInsight 群集。
 4. 单击“脚本操作”。
@@ -294,11 +315,13 @@ HDInsight 群集边栏选项卡的“使用情况”部分会显示相关信息�
 
 > [AZURE.IMPORTANT]
 > 若要监视 HDInsight 群集提供的服务，必须使用 Ambari Web 或 Ambari REST API。 有关如何使用 Ambari 的详细信息，请参阅[使用 Ambari 管理 HDInsight 群集](/documentation/articles/hdinsight-hadoop-manage-ambari/)
-> 
-> 
+>
+>
 
 ## <a name="connect-to-a-cluster"></a>连接到群集
-请参阅[通过 SSH 将 Hive 与 HDInsight 中的 Hadoop 配合使用](/documentation/articles/hdinsight-hadoop-use-hive-ssh/#ssh)。
+
+* [将 Hive 与 HDInsight 配合使用](/documentation/articles/hdinsight-hadoop-use-hive-ambari-view/)
+* [将 Pig 与 HDInsight 配合使用](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix/)
 
 ## <a name="next-steps"></a>后续步骤
 在本文中，已学习如何使用门户创建 HDInsight 群集和如何打开 Hadoop 命令行工具。 要了解更多信息，请参阅下列文章：
@@ -315,4 +338,4 @@ HDInsight 群集边栏选项卡的“使用情况”部分会显示相关信息�
 [azure-portal]: https://portal.azure.cn
 [image-hadoopcommandline]: ./media/hdinsight-administer-use-portal-linux/hdinsight-hadoop-command-line.png "Hadoop 命令行"
 
-<!--Update_Description: wording update-->
+<!--Update_Description: add "Access Control Requirements"-->
