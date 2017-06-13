@@ -10,24 +10,26 @@
 
 
 <tags
-   ms.service="iot-suite"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="na"
-   ms.date="02/20/2017"
-   ms.author="dobett"
-   wacn.date="05/02/2017"/>  
+    ms.service="iot-suite"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.tgt_pltfrm="na"
+    ms.workload="na"
+    ms.date="05/15/2017"
+    ms.author="v-yiso"
+    wacn.date="06/13/2017"
+    ms.translationtype="Human Translation"
+    ms.sourcegitcommit="4a18b6116e37e365e2d4c4e2d144d7588310292e"
+    ms.openlocfilehash="4f26b0364d47be807978e1622a6ce073872c2f23"
+    ms.lasthandoff="05/19/2017" />
 
-
-
-# 将设备连接到远程监控预配置解决方案 (Node.js)
+# <a name="connect-your-device-to-the-remote-monitoring-preconfigured-solution-nodejs"></a>将设备连接到远程监控预配置解决方案 (Node.js)
 
 [AZURE.INCLUDE [iot-suite-selector-connecting](../../includes/iot-suite-selector-connecting.md)]
 
-## 创建 node.js 示例解决方案
+## <a name="create-a-nodejs-sample-solution"></a>创建 node.js 示例解决方案
 
-请确保已在开发计算机上安装 Node.js 0.11.5 或更高版本。若要检查版本，可在命令行中运行 `node --version`。
+请确保已在开发计算机上安装 Node.js 版本 0.11.5 或更高版本。 若要检查版本，可在命令行中运行 `node --version` 。
 
 1. 在开发计算机上创建名为 **RemoteMonitoring** 的文件夹。在命令行环境中导航到此文件夹。
 
@@ -243,7 +245,7 @@
     	    });
     
 
-1. 保存对 **remote\_monitoring.js** 文件所做的更改。
+1. 保存对 **remote_monitoring.js** 文件的更改。
 
 1. 在命令提示符下运行以下命令，启动示例应用程序：
    
@@ -255,6 +257,3 @@
 
 [lnk-github-repo]: https://github.com/azure/azure-iot-sdk-node
 [lnk-github-prepare]: https://github.com/Azure/azure-iot-sdk-node/blob/master/doc/node-devbox-setup.md
-
-<!---HONumber=Mooncake_0406_2017-->
-<!--Update_Description:update node.js version-->

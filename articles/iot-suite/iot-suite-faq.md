@@ -6,8 +6,7 @@
     documentationcenter=""
     author="dominicbetts"
     manager="timlt"
-    editor=""
-    translationtype="Human Translation" />
+    editor="" />
 <tags
     ms.assetid="cb537749-a8a1-4e53-b3bf-f1b64a38188a"
     ms.service="iot-suite"
@@ -15,20 +14,20 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="na"
-    ms.date="02/15/2017"
-    wacn.date="05/02/2017"
-    ms.author="corywink"
-    ms.sourcegitcommit="78da854d58905bc82228bcbff1de0fcfbc12d5ac"
-    ms.openlocfilehash="57642c199b090384d225101bded7ebff64d3a10c"
-    ms.lasthandoff="04/22/2017" />
+    ms.date="05/15/2017"
+    wacn.date="06/13/2017"
+    ms.author="v-yiso"
+    ms.translationtype="Human Translation"
+    ms.sourcegitcommit="4a18b6116e37e365e2d4c4e2d144d7588310292e"
+    ms.openlocfilehash="a65a3da51532f8102655a85f15630a703d56d769"
+    ms.lasthandoff="05/19/2017" />
 
 # <a name="frequently-asked-questions-for-iot-suite"></a>有关 IoT 套件的常见问题
 
 ### <a name="where-can-i-find-the-source-code-for-the-preconfigured-solutions"></a>在哪里可以找到预配置解决方案的源代码？
 源代码存储在以下 GitHub 存储库中：
-
-- [远程监控预配置解决方案][lnk-remote-monitoring-github]
-- [预测性维护预配置解决方案][lnk-predictive-maintenance-github]
+* [远程监控预配置解决方案][lnk-remote-monitoring-github]
+* [预测性维护预配置解决方案][lnk-predictive-maintenance-github]
 
 ### <a name="how-do-i-update-to-the-latest-version-of-the-remote-monitoring-preconfigured-solution-that-uses-the-iot-hub-device-management-features"></a>如何更新到最新版的远程监控预配置解决方案，以便使用 IoT 中心设备管理功能？
 * 如果从 https://www.azureiotsuite.cn/ 站点部署预配置解决方案，则始终部署的是最新版解决方案的全新实例。
@@ -50,8 +49,9 @@
 ### <a name="how-many-iot-hub-instances-can-i-provision-in-a-subscription"></a>在一个订阅中可以设置多少个 IoT 中心实例？
 每个订阅可以预配 10 个 IoT 中心。可以创建 [Azure 在线申请支持](/support/support-ticket-form/?l=zh-cn)创建工单，提出申请以提高此限制，但默认情况下，如 [Azure subscription limits][link-azuresublimits]（Azure 订阅限制）中所述，对每个订阅只能预配 10 个 IoT 中心。由于每个预配置的解决方案将预配一个新的 IoT 中心，因此，在给定的订阅中，最多只能预配 10 个预配置的解决方案。
 
-### <a name="how-many-documentdb-instances-can-i-provision-in-a-subscription"></a>在订阅中可以设置多少个 DocumentDB 实例？
-50 个。可以创建[Azure 在线申请支持](/support/support-ticket-form/?l=zh-cn)创建工单，提出申请以提高此限制，但在默认情况下，对每个订阅只能预配 50 个 DocumentDB 实例。
+### <a name="how-many-azure-document-db-instances-can-i-provision-in-a-subscription"></a>在订阅中可以预配多少个 Azure DocumentDB 实例？
+
+50 个。 可以创建 [Azure 支持票证][link-azuresupportticket]以提高此限制，但在默认情况下，对每个订阅只能预配 50 个 DocumentDB 实例。 
 
 
 
@@ -72,6 +72,7 @@
 
 [lnk-predictive-overview]: /documentation/articles/iot-suite-predictive-overview/
 [lnk-security-groundup]: /documentation/articles/securing-iot-ground-up/
+[link-azuresupportticket]: https://portal.azure.cn/#blade/Microsoft_Azure_Support/HelpAndSupportBlade 
 [link-azuresublimits]: /documentation/articles/azure-subscription-service-limits/#iot-hub-limits
 [lnk-azure-portal]: https://portal.azure.cn
 [lnk-azureiotsuite]: https://www.azureiotsuite.cn/
@@ -85,6 +86,3 @@
 [lnk-customize]: /documentation/articles/iot-suite-guidance-on-customizing-preconfigured-solutions/
 [lnk-remote-monitoring-github]: https://github.com/Azure/azure-iot-remote-monitoring
 [lnk-predictive-maintenance-github]: https://github.com/Azure/azure-iot-predictive-maintenance
-
-<!---HONumber=Mooncake_0327_2017-->
-<!--Update_Description:update wording and add the section of CSP preconfigured solution-->

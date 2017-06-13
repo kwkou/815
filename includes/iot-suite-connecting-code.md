@@ -2,7 +2,7 @@
 
 IoT 中心序列化程序客户端库使用模型来指定设备与 IoT 中心交换的消息的格式。
 
-1. 在 `#include` 语句之后添加以下变量声明。将占位符值 [Device Id] 和 [Device Key] 替换为在远程监视解决方案仪表板中记下的设备值。使用解决方案仪表板中的 IoT 中心主机名替换 [IoTHub Name]。例如，如果 IoT 中心主机名是 **contoso.azure-devices.cn**，则将 [IoTHub Name] 替换为 **contoso**：
+1. 在 `#include` 语句之后添加以下变量声明。将占位符值 [Device Id] 和 [Device Key] 替换为在远程监控解决方案仪表板中记下的设备值。使用解决方案仪表板中的 IoT 中心主机名替换 [IoTHub Name]。例如，如果 IoT 中心主机名是 **contoso.azure-devices.cn**，则将 [IoTHub Name] 替换为 **contoso**：
    
     
 	    static const char* deviceId = "[Device Id]";

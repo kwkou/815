@@ -1,28 +1,29 @@
 <properties
- pageTitle="保护物联网部署 | Azure"
- description="本文详细说明如何保护你的 IoT 部署"
- services=""
- suite="iot-suite"
- documentationCenter=""
- author="YuriDio"
- manager="timlt"
- editor=""/>
-
-
+    pageTitle="保护物联网部署 | Azure"
+    description="本文详细说明如何保护你的 IoT 部署"
+    services=""
+    suite="iot-suite"
+    documentationCenter=""
+    author="YuriDio"
+    manager="timlt"
+    editor="" />
 <tags
- ms.service="iot-suite"
- ms.devlang="na"
- ms.topic="article"
- ms.tgt_pltfrm="na"
- ms.workload="na"
- ms.date="01/04/2017"
- ms.author="yurid"
- wacn.date="03/31/2017"/>  
+    ms.service="iot-suite"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.tgt_pltfrm="na"
+    ms.workload="na"
+    ms.date="01/04/2017"
+    ms.author="v-yiso"
+    wacn.date="06/13/2017"
+    ms.translationtype="Human Translation"
+    ms.sourcegitcommit="4a18b6116e37e365e2d4c4e2d144d7588310292e"
+    ms.openlocfilehash="20f0ba7b3a2e86fdecf4836dcce2d601d6d7e9e7"
+    ms.contentlocale="zh-cn"
+    ms.lasthandoff="05/19/2017" />
 
-
-
-# 保护你的 IoT 部署
-本文提供保护基于 Azure IoT 的物联网 (IoT) 基础结构的进一步详细信息。它链接到配置和部署每个组件的实现级别详细信息。还提供多种竞争方式间的比较和选择。
+# <a name="secure-your-iot-deployment"></a>保护你的 IoT 部署
+本文提供保护基于 Azure IoT 的物联网 (IoT) 基础结构的进一步详细信息。 它链接到配置和部署每个组件的实现级别详细信息。 还提供多种竞争方式间的比较和选择。
 
 保护 Azure IoT 部署可分为以下三个安全区域：
 
@@ -32,7 +33,7 @@
 
 ![三个安全区域][img-overview]
 
-## 安全的设备预配和身份验证
+## <a name="secure-device-provisioning-and-authentication"></a>安全的设备预配和身份验证
 Azure IoT 套件通过以下两种方式保护 IoT 设备：
 
 * 为每个设备提供唯一标识密钥（安全令牌），设备可使用该密钥与 IoT 中心通信。
@@ -40,8 +41,8 @@ Azure IoT 套件通过以下两种方式保护 IoT 设备：
 
 安全令牌方式通过将对称密钥与每个呼叫关联，为每个设备向 IoT 中心作出的呼叫提供身份验证。基于 X.509 的身份验证允许物理层 IoT 设备的身份验证作为 TLS 连接建立的一部分。基于安全令牌的方式可在没有 X.509 身份验证的情况下使用，但这种模式的安全性较低。这两种方式的选择主要取决于设备验证需要达到的安全程度和设备上安全储存的可用性（以安全存储私钥）。
 
-## IoT 中心安全令牌
-IoT 中心使用安全令牌对设备和服务进行身份验证，以避免在网络上发送密钥。并且安全令牌的有效期和范围有限。Azure IoT SDK 无需任何特殊配置即可自动生成令牌。但在某些情况下，需要用户生成并直接使用安全令牌。包括 MQTT、AMQP 或 HTTP 应用层协议的直接使用，以及令牌服务模式的实现。
+## <a name="iot-hub-security-tokens"></a>IoT 中心安全令牌
+IoT 中心使用安全令牌对设备和服务进行身份验证，以避免在网络上发送密钥。 并且安全令牌的有效期和范围有限。 Azure IoT SDK 无需任何特殊配置即可自动生成令牌。 但在某些情况下，需要用户生成并直接使用安全令牌。 包括 MQTT、AMQP 或 HTTP 应用层协议的直接使用，以及令牌服务模式的实现。
 
 可在以下文章中找到有关安全令牌结构及其用法的详细信息：
 
@@ -58,8 +59,8 @@ IoT 中心使用安全令牌对设备和服务进行身份验证，以避免在�
 
 IoT 中心标识注册表可用于配置每个设备的安全凭据和访问控制。如果 IoT 解决方案已大幅投资于[自定义设备标识注册表和/或身份验证方案][lnk-custom-auth]中具有，则可通过创建令牌服务，将该解决方案集成到具有 IoT 中心的现有基础结构中。
 
-### 基于 X.509 证书的设备身份验证
-使用[基于设备的 X.509 证书][lnk-protocols]及其关联的私钥和公钥允许在物理层进行其他身份验证。私钥安全存储在设备中，无法在设备外发现。X.509 证书包含有关设备的信息（例如设备 ID）以及其他组织详细信息。使用公钥生成证书签名。
+### <a name="x509-certificate-based-device-authentication"></a>基于 X.509 证书的设备身份验证
+使用 [基于设备的 X.509 证书][lnk-protocols] 及其关联的私钥和公钥允许在物理层进行其他身份验证。 私钥安全存储在设备中，无法在设备外发现。 X.509 证书包含有关设备的信息（例如设备 ID）以及其他组织详细信息。 使用公钥生成证书签名。
 
 高级设备预配流：
 
@@ -67,37 +68,37 @@ IoT 中心标识注册表可用于配置每个设备的安全凭据和访问控�
 * 在 IoT 中心创建对应的标识条目 - IoT 中心标识注册表中的设备标识和关联的设备信息。
 * 将 X.509 证书指纹安全存储在 IoT 中心标识注册表中。
 
-### 设备上的根证书
-与 IoT 中心建立安全的 TLS 连接时，IoT 设备使用作为设备 SDK 的一部分的根证书验证 IoT 中心。对于 C 客户端 SDK，该证书位于存储库根下的“\\c\\certs”文件夹中。虽然这些根证书长期有效，但仍可能过期或被撤销。如果无法更新设备上的证书，该设备随后可能无法连接到 IoT 中心（或任何其他云服务）。IoT 设备部署后提供更新根证书的方法可有效减轻此风险。
+### <a name="root-certificate-on-device"></a>设备上的根证书
+与 IoT 中心建立安全的 TLS 连接时，IoT 设备使用作为设备 SDK 的一部分的根证书验证 IoT 中心。 对于 C 客户端 SDK，该证书位于存储库根下的“\\c\\certs”文件夹中。 虽然这些根证书长期有效，但仍可能过期或被撤销。 如果无法更新设备上的证书，该设备随后可能无法连接到 IoT 中心（或任何其他云服务）。 IoT 设备部署后提供更新根证书的方法可有效减轻此风险。
 
-## 保护连接安全
-使用传输层安全性 (TLS) 标准来保护 IoT 设备和 IoT 中心之间的 Internet 连接安全。Azure IoT 支持 [TLS 1.2][lnk-tls12]、TLS 1.1 和 TLS 1.0（按此顺序）。对 TLS 1.0 的支持仅为向后兼容性提供。推荐使用 TLS 1.2，因为它提供最佳的安全性。
+## <a name="securing-the-connection"></a>保护连接安全
+使用传输层安全性 (TLS) 标准来保护 IoT 设备和 IoT 中心之间的 Internet 连接安全。 Azure IoT 支持 [TLS 1.2][lnk-tls12]、TLS 1.1 和 TLS 1.0（按此顺序）。 对 TLS 1.0 的支持仅为向后兼容性提供。 推荐使用 TLS 1.2，因为它提供最佳的安全性。
 
 Azure IoT 套件支持以下密码套件（按此顺序）。
 
 | 密码套件 | Length |
 | --- | --- |
-| TLS\_ECDHE\_RSA\_WITH\_AES\_256\_CBC\_SHA384 (0xc028) ECDH secp384r1 (eq.7680 位 RSA) FS |256 |
-| TLS\_ECDHE\_RSA\_WITH\_AES\_128\_CBC\_SHA256 (0xc027) ECDH secp256r1 (eq.3072 位 RSA) FS |128 |
-| TLS\_ECDHE\_RSA\_WITH\_AES\_256\_CBC\_SHA (0xc014) ECDH secp384r1 (eq.7680 位 RSA) FS |256 |
-| TLS\_ECDHE\_RSA\_WITH\_AES\_128\_CBC\_SHA (0xc013) ECDH secp256r1 (eq.3072 位 RSA) FS |128 |
-| TLS\_RSA\_WITH\_AES\_256\_GCM\_SHA384 (0x9d) |256 |
-| TLS\_RSA\_WITH\_AES\_128\_GCM\_SHA256 (0x9c) |128 |
-| TLS\_RSA\_WITH\_AES\_256\_CBC\_SHA256 (0x3d) |256 |
-| TLS\_RSA\_WITH\_AES\_128\_CBC\_SHA256 (0x3c) |128 |
-| TLS\_RSA\_WITH\_AES\_256\_CBC\_SHA (0x35) |256 |
-| TLS\_RSA\_WITH\_AES\_128\_CBC\_SHA (0x2f) |128 |
-| TLS\_RSA\_WITH\_3DES\_EDE\_CBC\_SHA (0xa) |112 |
+| TLS\_ECDHE\_RSA\_ 与 \_AES\_256\_CBC\_SHA384 (0xc028) ECDH secp384r1（等于 7680 位 RSA）FS |256 |
+| TLS\_ECDHE\_RSA\_ 与 \_AES\_128\_CBC\_SHA256 (0xc027) ECDH secp256r1（等于 3072 位 RSA）FS |128 |
+| TLS\_ECDHE\_RSA\_ 与 \_AES\_256\_CBC\_SHA (0xc014) ECDH secp384r1（等于 7680 位 RSA）FS |256 |
+| TLS\_ECDHE\_RSA\_ 与 \_AES\_128\_CBC\_SHA (0xc013) ECDH secp256r1（等于 3072 位 RSA）FS |128 |
+| TLS\_RSA\_ 与 \_AES\_256\_GCM\_SHA384 (0x9d) |256 |
+| TLS\_RSA\_ 与 \_AES\_128\_GCM\_SHA256 (0x9c) |128 |
+| TLS\_RSA\_ 与 \_AES\_256\_CBC\_SHA256 (0x3d) |256 |
+| TLS\_RSA\_ 与 \_AES\_128\_CBC\_SHA256 (0x3c) |128 |
+| TLS\_RSA\_ 与 \_AES\_256\_CBC\_SHA (0x35) |256 |
+| TLS\_RSA\_ 与 \_AES\_128\_CBC\_SHA (0x2f) |128 |
+| TLS\_RSA\_ 与 \_3DES\_EDE\_CBC\_SHA (0xa) |112 |
 
-## 保护云的安全
-Azure IoT 中心允许为每个安全密钥定义[访问控制策略][lnk-protocols]。它使用以下一组权限向每个 IoT 中心的终结点授予访问权限。权限可根据功能限制对 IoT 中心的访问。
+## <a name="securing-the-cloud"></a>保护云的安全
+Azure IoT 中心允许为每个安全密钥定义 [访问控制策略][lnk-protocols] 。 它使用以下一组权限向每个 IoT 中心的终结点授予访问权限。 权限可根据功能限制对 IoT 中心的访问。
 
 * **RegistryRead**。授予对标识注册表的读取访问权限。有关详细信息，请参阅 [identity registry][lnk-identity-registry]（标识注册表）。
 * **RegistryReadWrite**。授予对标识注册表的读取和写入访问权限。有关详细信息，请参阅 [identity registry][lnk-identity-registry]（标识注册表）。
 * **ServiceConnect**。授予对面向云服务的通信和监视终结点的访问权限。例如，它授权后端云服务接收设备到云的消息、发送云到设备的消息，以及检索对应的传送确认。
 * **DeviceConnect**。授予对面向设备的终结点的访问权限。例如，它授予发送设备到云的消息和接收云到设备的消息的权限。此权限由设备使用。
 
-有两种方法可以使用[安全令牌][lnk-sas-tokens]来获取 IoT 中心的 **DeviceConnect** 权限：使用设备标识密钥，或者使用共享访问密钥。此外，必须注意的是，可从设备访问的所有功能都故意显示在前缀为 `/devices/{deviceId}` 的终结点上。
+有两种方法可以使用[安全令牌][lnk-sas-tokens]来获取 IoT 中心的 DeviceConnect 权限：使用设备标识密钥，或者使用共享访问密钥。 此外，必须注意的是，可从设备访问的所有功能都故意显示在前缀为 `/devices/{deviceId}`的终结点上。
 
 [服务组件使用共享访问策略只能生成安全令牌][lnk-service-tokens]，授予适当权限。
 
@@ -105,15 +106,15 @@ Azure IoT 中心和其他可能是解决方案的一部分的服务允许使用 
 
 Azure IoT 中心引入的数据可供多种服务（例如 Azure 流分析和 Azure Blob 存储）使用。这些服务允许管理访问权限。了解以下有关这些服务和可用选项的详细信息：
 
-* [Azure DocumentDB][lnk-docdb]：适用于半结构化数据的可缩放且已完全编制索引的数据库服务，可管理预配的设备的元数据，例如，属性、配置和安全属性。DocumentDB 提供高性能和高吞吐量处理、架构不可知的数据索引，以及丰富的 SQL 查询接口。
-* [Azure 流分析][lnk-asa]：云中处理的实时流允许快速开发和部署低成本分析解决方案，以便从设备、传感器、基础结构和应用程序实时获取深入了解。来自这种完全托管服务的数据可缩放为任何数量，同时保持高吞吐量、低延迟和复原能力。
-* [Azure App Services][lnk-appservices]：一个云平台，用于构建能够连接到任何地方（在云中或本地）的数据的功能强大的 Web 和移动应用。构建具有吸引力的 iOS、Android 和 Windows 移动应用。与软件即服务 (SaaS) 和企业应用程序相集成，这些应用程序一经使用便可直接连接到数十种基于云的服务和企业应用程序。使用偏好的语言（.NET、Node.js、PHP、Python 或 Java）在 IDE 中编写代码，快速构建 Web 应用和 API。
+* [Azure DocumentDB][lnk-docdb]：适用于半结构化数据的可缩放且已完全编制索引的数据库服务，可管理预配的设备的元数据，例如，属性、配置和安全属性。 DocumentDB 提供高性能和高吞吐量处理、架构不可知的数据索引，以及丰富的 SQL 查询接口。
+* [Azure 流分析][lnk-asa]：通过云中处理的实时流可以快速开发和部署低成本分析解决方案，以便从设备、传感器、基础结构和应用程序实时获取深入了解。 来自这种完全托管服务的数据可缩放为任何数量，同时保持高吞吐量、低延迟和复原能力。
+* [Azure 应用服务][lnk-appservices]：一种云平台，用以构建能够连接到任何地方（在云中或本地）的数据的强大 Web 和移动应用。 构建具有吸引力的 iOS、Android 和 Windows 移动应用。 与软件即服务 (SaaS) 和企业应用程序相集成，这些应用程序一经使用便可直接连接到数十种基于云的服务和企业应用程序。 使用偏好的语言（.NET、Node.js、PHP、Python 或 Java）在 IDE 中编写代码，快速构建 Web 应用和 API。
 * [Azure Blob 存储][lnk-blob]：可靠且符合经济效益的云存储，适用于设备要发送到云的数据。
 
-## 结束语
-本文概述了使用 Azure IoT 来设计和部署 IoT 基础结构的实现级别的详细信息。将每个组件配置为安全状态是保护 IoT 总体基础结构安全的关键。Azure IoT 中可用的设计选择提供了一定程度的灵活性和选择性；但是，每个选择都可能具有安全隐患。推荐通过风险/成本评估对这些选择进行评估。
+## <a name="conclusion"></a>结束语
+本文概述了使用 Azure IoT 来设计和部署 IoT 基础结构的实现级别的详细信息。 将每个组件配置为安全状态是保护 IoT 总体基础结构安全的关键。 Azure IoT 中可用的设计选择提供了一定程度的灵活性和选择性；但是，每个选择都可能具有安全隐患。 推荐通过风险/成本评估对这些选择进行评估。
 
-## 另请参阅
+## <a name="see-also"></a>另请参阅
 你还可以浏览 IoT 套件预配置的解决方案的一些其他特性和功能：
 
 - [预测性维护预配置解决方案概述][lnk-predictive-overview]
@@ -140,6 +141,3 @@ Azure IoT 中心引入的数据可供多种服务（例如 Azure 流分析和 Az
 [lnk-predictive-overview]: /documentation/articles/iot-suite-predictive-overview/
 [lnk-faq]: /documentation/articles/iot-suite-faq/
 [lnk-devguide-security]: /documentation/articles/iot-hub-devguide-security/
-
-<!---HONumber=Mooncake_0327_2017-->
-<!--Update_Description:update meta properties-->

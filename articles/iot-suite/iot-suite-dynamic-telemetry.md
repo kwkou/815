@@ -1,28 +1,29 @@
 <properties
-	pageTitle="使用动态遥测 | Azure"
-	description="遵循本教程来了解如何配合使用动态遥测和远程监控预配置解决方案。"
-	services=""
+    pageTitle="使用动态遥测 | Azure"
+    description="遵循本教程来了解如何配合使用动态遥测和 Azure IoT 套件远程监控预配置解决方案。"
+    services=""
     suite="iot-suite"
-	documentationCenter=""
-	authors="dominicbetts"
-	manager="timlt"
-	editor=""/>  
-
-
+    documentationCenter=""
+    authors="dominicbetts"
+    manager="timlt"
+    editor="" />
 <tags
-     ms.service="iot-suite"
-     ms.devlang="na"
-     ms.topic="article"
-     ms.tgt_pltfrm="na"
-     ms.workload="na"
-     ms.date="02/09/2017"
-     wacn.date="03/03/2017"
-     ms.author="dobett"/>  
+    ms.service="iot-suite"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.tgt_pltfrm="na"
+    ms.workload="na"
+    ms.date="05/15/2017"
+    ms.author="v-yiso"
+    wacn.date="06/13/2017"
+    ms.translationtype="Human Translation"
+    ms.sourcegitcommit="4a18b6116e37e365e2d4c4e2d144d7588310292e"
+    ms.openlocfilehash="e24cde76178cc11198085111d9d783942a54216a"
+    ms.lasthandoff="05/19/2017" />
 
+# <a name="use-dynamic-telemetry-with-the-remote-monitoring-preconfigured-solution"></a>配合使用动态遥测和远程监控预配置解决方案
 
-# 配合使用动态遥测和远程监控预配置解决方案
-## 介绍
-动态遥测可让你将发送到远程监控预配置解决方案的任何遥测数据可视化。部署了预配置解决方案的模拟设备会发送温度和湿度遥测，可在仪表板上直观显示这些数据。如果自定义现有的模拟设备、创建新的模拟设备或者将物理设备连接到预配置解决方案，则可以发送其他遥测值，例如外部温度、RPM 或风速。然后，可以在仪表板上可视化这些附加的遥测数据。
+动态遥测可让你将发送到远程监控预配置解决方案的任何遥测数据可视化。 部署了预配置解决方案的模拟设备会发送温度和湿度遥测，可在仪表板上直观显示这些数据。 如果自定义现有的模拟设备、创建新的模拟设备或者将物理设备连接到预配置解决方案，则可以发送其他遥测值，例如外部温度、RPM 或风速。 然后，可以在仪表板上可视化这些附加的遥测数据。
 
 本教程使用一个简单的 Node.js 模拟设备，你可以轻松对它进行修改，以体验动态遥测。
 
@@ -37,13 +38,11 @@
 
 [AZURE.INCLUDE [iot-suite-send-external-temperature](../../includes/iot-suite-send-external-temperature.md)]
 
-## 添加遥测类型
-
+## <a name="add-a-telemetry-type"></a>添加遥测类型
 下一步是将 Node.js 模拟设备生成的遥测数据替换为一组新值：
 
 1. 在命令提示符或 shell 中键入 **Ctrl+C** 以停止 Node.js 模拟设备。
-
-2. 在 remote\_monitoring.js 文件中，你可以查看现有温度、湿度和外部温度遥测的基本数据值。如下添加 **rpm** 的基本数据值：
+2. 在 remote_monitoring.js 文件中，可以查看现有温度、湿度和外部温度遥测的基本数据值。 如下添加 **rpm** 的基本数据值：
 
 	    // Sensors data
 	    var temperature = 50;
@@ -51,7 +50,7 @@
 	    var externalTemperature = 55;
 	    var rpm = 200;
 
-3. Node.js 模拟设备使用 remote\_monitoring.js 文件中的 **generateRandomIncrement** 函数，向基本数据值添加随机增量。在现有随机化后面添加一行代码，以将 **rpm** 的值随机化，如下所示：
+3. Node.js 模拟设备使用 remote_monitoring.js 文件中的 **generateRandomIncrement** 函数，向基本数据值添加随机增量。 在现有随机化后面添加一行代码，以将 **rpm** 的值随机化，如下所示：
 
 	    temperature += generateRandomIncrement();
 	    externalTemperature += generateRandomIncrement();
@@ -76,12 +75,11 @@
 
     ![将 RPM 添加到仪表板][image3]  
 
+> [AZURE.NOTE]
+> 可能需要在仪表板中的“设备”页上禁用 Node.js 设备然后重新将它启用，才能立即查看更改。
 
-> [AZURE.NOTE] 可能需要在仪表板中的“设备”页上禁用 Node.js 设备然后重新将它启用，才能立即查看更改。
-
-## 自定义仪表板显示内容
-
-**Device-Info** 消息可以包含设备可发送给 IoT 中心的遥测数据的相关元数据。此元数据可指定设备发送的遥测类型。修改 remote\_monitoring.js 文件中的 **deviceMetaData** 值，在 **Commands** 定义后附加 **Telemetry** 定义。以下代码片段显示 **Commands** 定义（务必在 **Commands** 定义后添加 `,`）：
+## <a name="customize-the-dashboard-display"></a>自定义仪表板显示内容
+**Device-Info** 消息可以包含设备可发送给 IoT 中心的遥测数据的相关元数据。 此元数据可指定设备发送的遥测类型。 修改 remote_monitoring.js 文件中的 **deviceMetaData** 值，在 **Commands** 定义后附加 **Telemetry** 定义。 以下代码片段显示 **Commands** 定义（务必在 **Commands** 定义后添加 `,`）：
 
 		'Commands': [{
 		  'Name': 'SetTemperature',
@@ -110,7 +108,8 @@
 		  'Type': 'double'
 		}]
 
-> [AZURE.NOTE] 远程监控解决方案会比较元数据定义和遥测流中的数据并区分大小写。
+> [AZURE.NOTE]
+> 远程监控解决方案会比较元数据定义和遥测流中的数据并区分大小写。
 
 按以上代码片段中所述添加 **Telemetry** 定义不会影响仪表板的行为。但是，元数据也可以包含 **DisplayName** 属性来自定义仪表板中的显示内容。如以下片段中所述更新 **Telemetry** 元数据定义：
 
@@ -136,10 +135,10 @@
 
 ![自定义图表图例][image4]  
 
+> [AZURE.NOTE]
+> 可能需要在仪表板中的“设备”页上禁用 Node.js 设备然后重新将它启用，才能立即查看更改。
 
-> [AZURE.NOTE] 可能需要在仪表板中的“设备”页上禁用 Node.js 设备然后重新将它启用，才能立即查看更改。
-
-## 筛选遥测类型
+## <a name="filter-the-telemetry-types"></a>筛选遥测类型
 
 默认情况下，仪表板上的图表显示遥测流中的每个数据系列。你可以使用 **Device-Info** 元数据来隐藏图表中的特定遥测类型。
 
@@ -169,25 +168,22 @@
 
 此更改仅影响图表的显示效果。仍会存储 **ExternalTemperature** 数据值，并可用于任何后端处理。
 
-> [AZURE.NOTE] 可能需要在仪表板中的“设备”页上禁用 Node.js 设备然后重新将它启用，才能立即查看更改。
+> [AZURE.NOTE]
+> 可能需要在仪表板中的“设备”页上禁用 Node.js 设备然后重新将它启用，才能立即查看更改。
 
-## 处理错误
+## <a name="handle-errors"></a>处理错误
 
 要使某个数据流显示在图表上，其在 **Device-Info** 元数据中的 **Type** 必须与遥测值的数据类型匹配。例如，如果元数据指定湿度数据的 **Type** 必须为 **int**，而在遥测流中找到 **double**，则湿度遥测将不会显示在图表上。但是，**湿度**值仍会存储，并可供任何后端处理使用。
 
-## 后续步骤
+## <a name="next-steps"></a>后续步骤
 
 熟悉了动态遥测的使用方式，现在可深入了解预配置的解决方案如何使用设备信息：[远程监控预配置解决方案中的设备信息元数据][lnk-devinfo]。
 
 [lnk-devinfo]: /documentation/articles/iot-suite-remote-monitoring-device-info/
-[image1]: ./media/iot-suite-dynamic-telemetry/image1.png
-[image2]: ./media/iot-suite-dynamic-telemetry/image2.png
+
 [image3]: ./media/iot-suite-dynamic-telemetry/image3.png
 [image4]: ./media/iot-suite-dynamic-telemetry/image4.png
 [image5]: ./media/iot-suite-dynamic-telemetry/image5.png
 
 [lnk_free_trial]: /pricing/1rmb-trial/
 [lnk-node]: http://nodejs.org
-
-<!---HONumber=Mooncake_1226_2016-->
-<!--Update_Description:update meta properties-->

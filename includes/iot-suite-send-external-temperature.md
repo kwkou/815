@@ -1,11 +1,11 @@
 ## 配置 Node.js 模拟设备
-1. 在远程监视仪表板上单击“+ 添加设备”，然后添加*自定义设备*。记下 IoT 中心主机名、设备 ID 和设备密钥。在本教程稍后准备 remote\_monitoring.js 设备客户端应用程序时，需要使用它们。
+1. 在远程监控仪表板上单击“+ 添加设备”，然后添加*自定义设备*。记下 IoT 中心主机名、设备 ID 和设备密钥。在本教程稍后准备 remote\_monitoring.js 设备客户端应用程序时，需要使用它们。
 2. 请确保已在开发计算机上安装 Node.js 0.12.x 或更高版本。在命令提示符或 shell 中运行 `node --version` 以检查版本。有关使用包管理器在 Linux 上安装 Node.js 的信息，请参阅 [Installing Node.js via package manager][node-linux]（通过包管理器安装 Node.js）。
 3. 安装 Node.js 之后，请将最新版本的 [azure-iot-sdk-node][lnk-github-repo] 存储库复制到开发计算机。始终对最新版的库和示例使用**主**分支。
 4. 在 [azure-iot-sdk-node][lnk-github-repo] 存储库的本地副本中，将以下两个文件从 node/device/samples 文件夹复制到开发计算机上的某个空文件夹：
    
-   - packages.json
-   - remote\_monitoring.js
+    - packages.json
+    - remote\_monitoring.js
 
 
 5. 打开 remote\_monitoring.js 文件并查找以下变量定义：
@@ -40,7 +40,7 @@
 
 ![将外部温度添加到仪表板][image2]
 
-远程监视解决方案将自动检测其他外部温度遥测类型，并将其添加到仪表板上的图表中。
+远程监控解决方案将自动检测其他外部温度遥测类型，并将其添加到仪表板上的图表中。
 
 [node-linux]: https://github.com/nodejs/node-v0.x-archive/wiki/Installing-Node.js-via-package-manager
 [lnk-github-repo]: https://github.com/Azure/azure-iot-sdk-node
