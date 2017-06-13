@@ -1,13 +1,13 @@
-<properties linkid="dev-net-common-tasks-cdn" urlDisplayName="CDN" pageTitle="How to enable Azure CDN HTTPS with customer certificate - Azure feature guide" metaKeywords="Azure CDN, Azure CDN, Azure blobs, Azure caching, Azure add-ons, CDN加速, CDN服务, 主流CDN, Web加速, Web, 网页加速, 静态加速, 缓存规则, 图片加速, CDN技术文档, CDN帮助文档, 门户网站加速" description="Learn How to create Web acceleration type CDN on Azure Management Portal and default caching rules for Web CDN" metaCanonical="" services="" documentationCenter=".NET" title="" authors="" solutions="" manager="" editor="" />
+<properties linkid="dev-net-common-tasks-cdn" urlDisplayName="CDN" pageTitle="Azure CDN HTTPS customer self cert - Azure feature guide" metaKeywords="Azure CDN, Azure CDN, Azure blobs, Azure caching, Azure add-ons, CDN FAQ, CDN常见问题, 回源流量, ICP备案号, CDN默认缓存规则, 回源域名, 订阅, CNAME, 下载加速, Web加速, 网站加速, 流媒体直播加速, VOD加速, 视频点播加速, CDN价格, CDN收费, 技术文档, 帮助文档" description="Find answers to common service consulting or inquiries related to Azure CDN" metaCanonical="" services="" documentationCenter=".NET" title="" authors="" solutions="" manager="" editor="" />
 <tags ms.service="cdn"
-    ms.date="6/13/2017"
-    wacn.date="6/13/20167
+    ms.date="6/13/2016"
+    wacn.date="6/13/2016"
     wacn.lang="cn"
     />
-
 > [AZURE.LANGUAGE]
-- [中文](/documentation/articles/cdn-how-to-create-Web-CDN-endpoint/)
-- [English](/documentation/articles/cdn-enus-how-to-create-Web-CDN-endpoint/) 
+- [中文](/documentation/articles/cdn-faq-service-inquiry/)
+- [English](/documentation/articles/cdn-enus-faq-service-inquiry/) 
+- 
 # Azure CDN HTTPS加速服务-用户自有证书
 
 Azure CDN提供HTTPS安全加速服务，支持用户上传自有证书，也支持Azure CDN代为申请证书的自动化配置，均只开放给付费用户。本文档针对用户自己上传证书自助化配置的情况以及证书说明，Azure CDN代为申请证书的配置操作请参考[Azure CDN HTTPS加速服务-Azure CDN代申请证书](https://www.azure.cn/documentation/articles/cdn-https-how-to/)。二者的区别请参考常见问题。
@@ -17,11 +17,12 @@ Azure CDN提供HTTPS安全加速服务，支持用户上传自有证书，也支
 
 - HTTPS加速只开放给付费用户。
 - 支持泛域名的HTTPS加速。
-- 支持的加速类型为网页加速，下载加速，点播加速和直播加速。
+- 支持的加速类型为标准版CDN加速类型，如网页加速，下载加速，点播加速和直播加速。
      >**注意** 图片处理加速类型暂不支持HTTPS加速。
 - 需要在**新版Azure CDN管理界面**启用HTTPS服务，并上传PEM格式的证书和秘钥。详见后文的“自助式启用HTTPS加速步骤”。
 - 开启HTTPS加速后，默认同时支持HTTP和HTTPS方式的请求。如需强制将HTTP请求跳转成HTTPS请求，请联系世纪互联进行配置。我们后续会在管理界面实现自动化选择。
 - 回源协议默认跟随用户发起的请求协议，即HTTP请求通过HTTP协议回源，HTTPS请求通过HTTPS协议回源。如需指定只有HTTP回源或者只有HTTPS回源，请联系世纪互联尽心配置。我们后续会在管理界面实现自动化选择。
+
 
 ## 证书说明
 
@@ -75,11 +76,18 @@ Azure CDN提供HTTPS安全加速服务，支持用户上传自有证书，也支
 
 ## 价格说明
 
-自有证书的HTTPS加速价格，将于2017年7月1日起，享用标准版服务价格，2017年7月1日前，该服务属于高级服务，使用高级服务价格。具体计费方式请参见[Azure官方网站](https://www.azure.cn/pricing/details/cdn/)。
+自有证书的HTTPS加速，将于2017年7月1日起，使用标准版服务价格，2017年7月1日前，该服务属于高级服务，使用高级服务价格。具体计费方式请参见[Azure官方网站](https://www.azure.cn/pricing/details/cdn/)。
+
 
 ## 自助式启用HTTPS加速步骤
 
-1. 可以为所有符合条件的已有域名开启HTTPS（付费账号，图片加速节点除外）。以新版Azure门户预览为例，点击“Manage”进入老版Azure CDN管理门户。点击“访问新站点”，到新版Azure CDN管理门户。
+可以为所有符合条件的CDN域名开启自有证书的HTTPS加速（付费账号下所有的标准版加速类型的CDN域名，图片加速节点除外）。
+
+>**注意**如果需要在“Azure门户预览”中新建CDN Profile和节点，并且启用自有证书的HTTPS加速，Pricing Tier请选择“S1 Standard”。"P1 Premium"中的HTTPS是指Azure CDN代为申请证书。
+  
+  ![][15]
+
+1. 以新版Azure门户预览为例，点击“Manage”进入老版Azure CDN管理门户。点击“访问新站点”，到新版Azure CDN管理门户。
      >**注意**需要跳转到新版Azure CDN管理门户上传HTTPS自有证书。
     
     **新版Azure门户预览中的CDN profile界面：**
@@ -99,27 +107,33 @@ Azure CDN提供HTTPS安全加速服务，支持用户上传自有证书，也支
     ![][4]
 
 3. **域名绑定证书**：可以在“证书管理”中绑定，也可以在“域名管理”中绑定.
-    >**注意**部署生效时间一般为2-4小时，如果超过24小时部署仍未完成，请联系工作人员。
- - 可以直接在“证书管理”处上传证书时选择要绑定的域名；
+    
+    - 可以直接在“证书管理”处上传证书时选择要绑定的域名；
     ![][9]
- - 也可以上传证书后，在证书管理页面，选择证书，点击“编辑绑定”-> “添加绑定域名”；
+    - 也可以上传证书后，在证书管理页面，选择证书，点击“编辑绑定”-> “添加绑定域名”；
      ![][5]
      ![][6]
- - 也可以点击“域名管理”，选择需要启用HTTPS服务的域名，在右侧界面选择“HTTPS（客户提供证书）”，点击“启用”绑定一张证书，从上传证书下拉列表框中选择已上传的证书，点击确定。如果没有符合的证书，点击“证书管理”，参考步骤3上传证书。
+    - 也可以点击“域名管理”，选择需要启用HTTPS服务的域名，在右侧界面选择“HTTPS（客户提供证书）”，点击“启用”绑定一张证书，从上传证书下拉列表框中选择已上传的证书，点击确定。如果没有符合的证书，点击“证书管理”，参考步骤3上传证书。
     ![][8]
+4. **证书部署**：绑定域名后，系统会提示“证书正在部署中，生效时间一般为2-4小时，如果超过24小时部署仍未完成，请联系工作人员。 ”
 
-4. **域名绑定成功**后，在“域名管理”处，可以看到该域名的“HTTPS状态（客户提供证书）”为活跃。
+    ![][13]
+5. **域名绑定成功**后，系统会提示“证书绑定成功，可以通过HTTPS访问该加速域名”，并看到证书详情。同时该域名的“HTTPS状态（客户提供证书）”变为“活跃”。
 
-    ![][11]
-     点击该域名，可以查看证书信息。
+    
+    - 点击该域名，可以查看证书信息。
     ![][10]
-     “证书管理”处，改证书绑定域名数也会变化。
+    - 域名“HTTPS状态（客户提供证书）”变为“活动”。
+    ![][11]
+    - “证书管理”处，改证书绑定域名数也会变化。
     ![][12]
 
 5. **查看证书详情**：点击证书管理处任一证书，查看证书详情，和所绑定域名信息。
 
     ![][7]
-    
+6. **查看是否生效**：通过HTTPS访问域名，可以看到带小锁的标志，表示HTTPS加速启用成功。
+    ![][14]   
+
 <!--Image references-->
 [1]: ./httpsimage/manage.png
 [2]: ./httpsimage/oldportal.png
@@ -133,3 +147,6 @@ Azure CDN提供HTTPS安全加速服务，支持用户上传自有证书，也支
 [10]: ./httpsimage/success.png
 [11]: ./httpsimage/successdomainstatuspng.png
 [12]: ./httpsimage/cert4.png
+[13]: ./httpsimage/deploying.png
+[14]: ./httpsimage/finalaccess.png
+[15]: ./httpsimage/ibizapricingtier.png
