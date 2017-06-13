@@ -1,7 +1,7 @@
 <properties linkid="dev-net-common-tasks-cdn" urlDisplayName="CDN" pageTitle="How to use CDN - HTTPS" metaKeywords="Azure CDN, Azure CDN, Azure blobs, Azure HTTPS, CDN HTTPS, Azure caching, Azure add-ons, CDN, CDN加速, CDN服务, 主流CDN, 多场景加速, 免费CDN, CDN网站加速, 网站加速, 网页加速, 静态加速, 下载加速, VOD加速, 流媒体直播加速, 云服务,  存储账户,缓存刷新, 回源, 云加速, 加速效果, 节点, 流量, CNAME, 带宽, 网速, 防盗链,https加速, 低成本带宽, 访问加速, CDN缓存, 存储账户, 云服务, 网站, 媒体服务, ICP备案号, ICP编号, ICP, 缓存刷新, 内容预取, 日志下载, CDN帮助文档, CDN技术文档" description="Learn how to create HTTPS CDN acceleration type." metaCanonical="" services="" documentationCenter=".NET" title="" authors="" solutions="" manager="" editor="" />
 <tags ms.service="cdn"
-    ms.date="7/7/2016"
-    wacn.date="7/7/2016"
+    ms.date="6/13/2017"
+    wacn.date="6/13/2017"
     wacn.lang="cn"
     />
 > [AZURE.LANGUAGE]
@@ -9,7 +9,7 @@
 - [English](/documentation/articles/cdn-enus-https-how-to/) 
 # Azure CDN HTTPS 加速服务- Azure CDN代申请证书
 
-Azure CDN提供HTTPS安全加速服务，支持用户上传自有证书，也支持Azure CDN代为申请证书的自动化配置，均只开放给付费用户。本文档针Azure CDN代为申请证书的配置操作，用户自己上传证书自助化配置的情况以及证书说明请参考[Azure CDN HTTPS 加速服务- Azure CDN代申请证书]。二者的区别请参考常见问题。
+Azure CDN提供HTTPS安全加速服务，支持用户上传自有证书，也支持Azure CDN代为申请证书的自动化配置，均只开放给付费用户。本文档针Azure CDN代为申请证书的配置操作，用户自己上传证书自助化配置的情况以及证书说明请参考[Azure CDN HTTPS 加速服务- Azure CDN代申请证书](https://www.azure.cn/documentation/articles/cdn-https-customer-supplied-cert)。二者的区别请参考[常见问题-服务咨询](https://www.azure.cn/documentation/articles/cdn-faq-service-inquiry/)。
 
 ## 开通流程
 目前CDN HTTPS加速服务-Azure CDN代申请证书，仅对Azure付费用户开放。

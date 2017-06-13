@@ -10,7 +10,7 @@
 - 
 # Azure CDN HTTPS加速服务-用户自有证书
 
-Azure CDN提供HTTPS安全加速服务，支持用户上传自有证书，也支持Azure CDN代为申请证书的自动化配置，均只开放给付费用户。本文档针对用户自己上传证书自助化配置的情况以及证书说明，Azure CDN代为申请证书的配置操作请参考[Azure CDN HTTPS加速服务-Azure CDN代申请证书](https://www.azure.cn/documentation/articles/cdn-https-how-to/)。二者的区别请参考常见问题。
+Azure CDN提供HTTPS安全加速服务，支持用户上传自有证书，也支持Azure CDN代为申请证书的自动化配置，均只开放给付费用户。本文档针对用户自己上传证书自助化配置的情况以及证书说明，Azure CDN代为申请证书的配置操作请参考[Azure CDN HTTPS加速服务-Azure CDN代申请证书](https://www.azure.cn/documentation/articles/cdn-https-how-to/)。二者的区别请参考[常见问题-服务咨询](https://www.azure.cn/documentation/articles/cdn-faq-service-inquiry/)。
 
 
 ## 配置说明
