@@ -7,11 +7,12 @@
 > [AZURE.LANGUAGE]
 - [中文](/documentation/articles/cdn-https-how-to/)
 - [English](/documentation/articles/cdn-enus-https-how-to/) 
-# Azure CDN HTTPS 加速服务
+# Azure CDN HTTPS 加速服务- Azure CDN代申请证书
 
+Azure CDN提供HTTPS安全加速服务，支持用户上传自有证书，也支持Azure CDN代为申请证书的自动化配置，均只开放给付费用户。本文档针Azure CDN代为申请证书的配置操作，用户自己上传证书自助化配置的情况以及证书说明请参考[Azure CDN HTTPS 加速服务- Azure CDN代申请证书]。二者的区别请参考常见问题。
 
 ## 开通流程
-目前CDN HTTPS加速服务仅对Azure付费用户开放。
+目前CDN HTTPS加速服务-Azure CDN代申请证书，仅对Azure付费用户开放。
 
 1. **开通申请** 请联系[Azure 技术支持团队](https://www.azure.cn/support/contact/)进行开通申请。需要客户提供需要开通HTTPS加速服务的Azure订阅ID。
 
