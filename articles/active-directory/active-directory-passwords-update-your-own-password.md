@@ -1,26 +1,27 @@
 <properties
     pageTitle="Azure AD：重置密码 | Azure"
-    description="使用自助密码重置重新获取帐户访问权限"
+    description="使用自助密码重置重新获取工作帐户或学校帐户访问权限"
     services="active-directory"
-    keywords="Active Directory 密码管理, 密码管理, Azure AD 自助密码重置, SSPR"
+    keywords=""
     documentationcenter=""
     author="MicrosoftGuyJFlo"
-    manager="femila"
-    translationtype="Human Translation" />
+    manager="femila" />
 <tags
     ms.assetid="7ba69b18-317a-4a62-afa3-924c4ea8fb49"
     ms.service="active-directory"
     ms.workload="identity"
     ms.tgt_pltfrm="na"
     ms.devlang="na"
-    ms.topic="get-started-article"
-    ms.date="04/11/2017"
-    wacn.date="05/08/2017"
+    ms.topic="article"
+    ms.date="04/26/2017"
     ms.author="joflore"
     ms.custom="end-user"
-    ms.sourcegitcommit="2c4ee90387d280f15b2f2ed656f7d4862ad80901"
-    ms.openlocfilehash="4adfdef988cd5cab85905abe9340e0197887f569"
-    ms.lasthandoff="04/28/2017" />
+    ms.translationtype="Human Translation"
+    ms.sourcegitcommit="08618ee31568db24eba7a7d9a5fc3b079cf34577"
+    ms.openlocfilehash="7e4c83ab3ac375267e8f4a87dab3c4635656cb60"
+    ms.contentlocale="zh-cn"
+    ms.lasthandoff="05/26/2017"
+    wacn.date="06/12/2017" />
 
 # <a name="help-i-forgot-my-password"></a>帮助, 我忘记了密码
 
@@ -35,7 +36,7 @@
 
 如果你在这里是要解锁自己的帐户，请执行下面的步骤。 在下面的步骤 6 看到“选择新密码”时，即可解锁或更改密码，然后你的帐户就解锁了。
 
-## <a name="reset-my-password"></a>重置我的密码
+## 重置密码 <a name="how-to-reset-your-password"></a>
 
 若要重新登录帐户，请执行以下步骤。
 
@@ -109,3 +110,4 @@
 [Change]: ./media/active-directory-passwords-update-your-own-password/reset-3-change.png
 [Complete]: ./media/active-directory-passwords-update-your-own-password/reset-4-complete.png
 
+<!---Update_Description: link update -->
