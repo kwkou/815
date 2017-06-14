@@ -4,9 +4,6 @@
     wacn.date="6/14/2016"
     wacn.lang="cn"
     />
-> [AZURE.LANGUAGE]
-- [中文](/documentation/articles/cdn-faq-service-inquiry/)
-- [English](/documentation/articles/cdn-enus-faq-service-inquiry/) 
 
 # Azure CDN HTTPS加速服务-用户自有证书
 
