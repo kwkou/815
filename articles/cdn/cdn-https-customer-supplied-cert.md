@@ -135,18 +135,18 @@ Azure CDN提供HTTPS安全加速服务，支持用户上传自有证书，也支
     ![][14]   
 
 <!--Image references-->
-[1]: ./httpsimage/manage.png
-[2]: ./httpsimage/oldportal.png
-[3]: ./httpsimage/newportaloverview.png
-[4]: ./httpsimage/uploadcert.png
-[5]: ./httpsimage/bindcert1.png
-[6]: ./httpsimage/bindcert1.1.png
-[7]: ./httpsimage/certdetail.png
-[8]: ./httpsimage/bindcert2.png
-[9]: ./httpsimage/bindcert3.png
-[10]: ./httpsimage/success.png
-[11]: ./httpsimage/successdomainstatuspng.png
-[12]: ./httpsimage/cert4.png
-[13]: ./httpsimage/deploying.png
-[14]: ./httpsimage/finalaccess.png
-[15]: ./httpsimage/ibizapricingtier.png
+[1]: ./media/cdn-httpsimage/manage.png
+[2]: ./media/cdn-httpsimage/oldportal.png
+[3]: ./media/cdn-httpsimage/newportaloverview.png
+[4]: ./media/cdn-httpsimage/uploadcert.png
+[5]: ./media/cdn-httpsimage/bindcert1.png
+[6]: ./media/cdn-httpsimage/bindcert1.1.png
+[7]: ./media/cdn-httpsimage/certdetail.png
+[8]: ./media/cdn-httpsimage/bindcert2.png
+[9]: ./media/cdn-httpsimage/bindcert3.png
+[10]: ./media/cdn-httpsimage/success.png
+[11]: ./media/cdn-httpsimage/successdomainstatuspng.png
+[12]: ./media/cdn-httpsimage/cert4.png
+[13]: ./media/cdn-httpsimage/deploying.png
+[14]: ./media/cdn-httpsimage/finalaccess.png
+[15]: ./media/cdn-httpsimage/ibizapricingtier.png
