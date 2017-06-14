@@ -4,10 +4,10 @@
 
 以下限制适用于标记：
 
-* 每个资源或资源组最多可以有 15 个标记。
+* 每个资源或资源组最多可以有 15 个标记键值对。 此限制仅适用于直接应用到资源组或资源的标记。 资源组可以包含多个资源，这些资源每个都有 15 个标记键值对。 
 * 标记名称限制为 512 个字符。
 * 标记值限制为 256 个字符。
 * 应用于资源组的标记不会被该资源组中的资源继承。
 
-<!---HONumber=Mooncake_0227_2017-->
-<!--Update_Description:new article about introducing the resource manager tag -->
+如果有超过 15 个需要与资源关联的值，请将 JSON 字符串用于标记值。 JSON 字符串可以包含多个应用于单个标记键的值。 本文显示了将 JSON 字符串分配给标记键的一个示例。
+<!--Update_Description:add new illustration about introducing the resource manager tag exception when it's lenght exceed 15 characters-->

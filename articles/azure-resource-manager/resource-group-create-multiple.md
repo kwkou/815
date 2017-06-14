@@ -1,6 +1,6 @@
 <properties
     pageTitle="部署多个 Azure 资源实例 | Azure"
-    description="在部署资源时使用 Azure 资源管理器模板中的复制操作和数组执行多次迭代。"
+    description="在部署资源时使用 Azure Resource Manager 模板中的复制操作和数组执行多次迭代。"
     services="azure-resource-manager"
     documentationcenter="na"
     author="tfitzmac"
@@ -13,139 +13,237 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="na"
-    ms.date="02/24/2017"
-    wacn.date="03/31/2017"
-    ms.author="tomfitz" />  
+    ms.date="05/12/2017"
+    wacn.date="06/05/2017"
+    ms.author="v-yeche"
+    ms.translationtype="Human Translation"
+    ms.sourcegitcommit="08618ee31568db24eba7a7d9a5fc3b079cf34577"
+    ms.openlocfilehash="1d3e15aec90696698d71054c8e0805282c1c0504"
+    ms.contentlocale="zh-cn"
+    ms.lasthandoff="05/26/2017" />
 
-# 在 Azure Resource Manager 模板中部署多个资源实例
-本主题演示如何在您的 Azure 资源管理器模板中进行迭代操作，以创建多个资源实例。
+# <a name="deploy-multiple-instances-of-a-resource-or-property-in-azure-resource-manager-templates"></a>在 Azure Resource Manager 模板中部署资源或属性的多个实例
+本主题演示如何在您的 Azure Resource Manager 模板中进行迭代操作，以创建多个资源实例。
 
-## copy、copyIndex 和 length
-在要多次创建的资源中，您可以定义指定迭代次数的 **copy** 对象。copy 将采用以下格式：
+## <a name="resource-iteration"></a>资源迭代
+若要创建某个资源类型的多个实例，请向该资源类型添加 `copy` 元素。 在 copy 元素中，为此循环指定迭代次数和名称。 计数值必须是不超过 800 的正整数。 Resource Manager 将并行创建资源。 因此，创建顺序是不确定的。 若要在序列中创建迭代的资源，请参阅[串行复制](#serial-copy)。 
 
-    "copy": { 
-        "name": "websitescopy", 
-        "count": "[parameters('count')]" 
-    } 
+要多次创建的资源将采用以下格式：
 
-可以使用 **copyIndex()** 函数访问当前的迭代值。以下示例将 copyIndex 与 concat 函数配合使用来构造名称。
-
-    [concat('examplecopy-', copyIndex())]
-
-基于值数组创建多个资源时，可以使用 **length** 函数指定计数。请提供该数组作为 length 函数的参数。
-
-    "copy": {
-        "name": "websitescopy",
-        "count": "[length(parameters('siteNames'))]"
+    {
+        "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+        "contentVersion": "1.0.0.0",
+        "resources": [
+            {
+                "apiVersion": "2016-01-01",
+                "type": "Microsoft.Storage/storageAccounts",
+                "name": "[concat(copyIndex(),'storage', uniqueString(resourceGroup().id))]",
+                "location": "[resourceGroup().location]",
+                "sku": {
+                    "name": "Standard_LRS"
+                },
+                "kind": "Storage",
+                "properties": {},
+                "copy": {
+                    "name": "storagecopy",
+                    "count": 3
+                }
+            }
+        ],
+        "outputs": {}
     }
 
-只能将 copy 对象应用于顶级资源，而不能应用于资源类型的属性或子资源。但是，本主题会介绍如何为属性指定多个项，以及如何创建子资源的多个实例。以下伪代码示例演示了可以在何处应用 copy：
+请注意，每个资源的名称都包括 `copyIndex()` 函数，用于返回循环中的当前迭代。 `copyIndex()` 从零开始。 因此，以下示例：
 
-    "resources": [
-      {
-        "type": "{provider-namespace-and-type}",
-        "name": "parentResource",
-        "copy": {  
-          /* yes, copy can be applied here */
-        },
-        "properties": {
-          "exampleProperty": {
-            /* no, copy cannot be applied here */
-          }
-        },
-        "resources": [
-          {
-            "type": "{provider-type}",
-            "name": "childResource",
-            /* copy can be applied if resource is promoted to top level */ 
-          }
-        ]
-      }
-    ] 
+    "name": "[concat('storage', copyIndex())]",
 
-虽然不能将 **copy** 应用于属性，但该属性仍是所属资源的迭代的一部分。因此，可在属性内使用 **copyIndex()** 指定值。
+将创建以下名称：
 
-多种情况下可能需要针对资源中的属性进行迭代操作。例如，可能需要为虚拟机指定多个数据磁盘。若要了解如何针对属性进行迭代操作，请参阅[当复制不可用时创建多个实例](#create-multiple-instances-when-copy-wont-work)。
+* storage0
+* storage1
+* storage2。
 
-若要使用子资源，请参阅[创建子资源的多个实例](#create-multiple-instances-of-a-child-resource)。
+若要偏移索引值，可以在 copyIndex() 函数中传递一个值。 要执行的迭代次数仍被指定在 copy 元素中，但 copyIndex 的值已按指定的值发生了偏移。 因此，以下示例：
 
-## 使用名称中的索引值
-可以使用复制操作基于递增索引创建具有唯一名称的多个资源实例。例如，您可能想要将唯一编号添加到每个已部署的资源名称末尾。部署具有以下名称的三个网站：
+    "name": "[concat('storage', copyIndex(1))]",
 
-* examplecopy-0
-* examplecopy-1
-* examplecopy-2
+将创建以下名称：
 
-请使用以下模版：
+* storage1
+* storage2
+* storage3
 
-    "parameters": { 
-      "count": { 
-        "type": "int", 
-        "defaultValue": 3 
-      } 
-    }, 
-    "resources": [ 
-      { 
-          "name": "[concat('examplecopy-', copyIndex())]", 
-          "type": "Microsoft.Web/sites", 
-          "location": "China East", 
-          "apiVersion": "2015-08-01",
-          "copy": { 
-             "name": "websitescopy", 
-             "count": "[parameters('count')]" 
-          }, 
-          "properties": {
-              "serverFarmId": "hostingPlanName"
-          }
-      } 
-    ]
-
-## 偏移索引值
-在前面的示例中，索引值范围为 0 到 2。若要偏移索引值，可以将某个值传递到 **copyIndex()** 函数中，如 **copyIndex(1)**。要执行的迭代次数仍被指定在 copy 元素中，但 copyIndex 的值已按指定的值发生了偏移。因此，使用前面的示例中的同一模板，但指定 **copyIndex(1)** 会部署具有以下名称的三个网站：
-
-* examplecopy-1
-* examplecopy-2
-* examplecopy-3
-
-## 对数组使用复制
-处理数组时可以使用复制操作，因为可对数组中的每个元素执行迭代操作。部署具有以下名称的三个网站：
-
-* examplecopy-Contoso
-* examplecopy-Fabrikam
-* examplecopy-Coho
-
-请使用以下模版：
+处理数组时可以使用复制操作，因为可对数组中的每个元素执行迭代操作。 可以对数组使用 `length` 函数来指定迭代计数，并使用 `copyIndex` 来检索数组中的当前索引。 因此，以下示例：
 
     "parameters": { 
       "org": { 
          "type": "array", 
          "defaultValue": [ 
-             "Contoso", 
-             "Fabrikam", 
-             "Coho" 
+             "contoso", 
+             "fabrikam", 
+             "coho" 
           ] 
       }
     }, 
     "resources": [ 
       { 
-          "name": "[concat('examplecopy-', parameters('org')[copyIndex()])]", 
-          "type": "Microsoft.Web/sites", 
-          "location": "China East", 
-          "apiVersion": "2015-08-01",
+          "name": "[concat('storage', parameters('org')[copyIndex()])]", 
           "copy": { 
-             "name": "websitescopy", 
+             "name": "storagecopy", 
              "count": "[length(parameters('org'))]" 
           }, 
-          "properties": {
-              "serverFarmId": "hostingPlanName"
-          } 
+          ...
       } 
     ]
 
-当然，不能将复制计数设置为数组的长度。例如，你可能要创建一个包含多个值的数组，然后传入一个参数值用于指定要部署多少个数组元素。在这种情况下，请按第一个示例中所示设置复制计数。
+将创建以下名称：
 
-## 依赖于循环中的资源
-可以使用 **dependsOn** 元素指定部署一个资源后再部署另一个资源。若要部署的资源依赖于循环中的资源集合，可在 **dependsOn** 元素中提供 copy 循环的名称。以下示例演示了如何在部署虚拟机之前部署三个存储帐户。此处并未显示完整的虚拟机定义。请注意，copy 元素的 **name** 设置为 **storagecopy**，而虚拟机的 **dependsOn** 元素也设置为 **storagecopy**。
+* storagecontoso
+* storagefabrikam
+* storagecoho
+
+## <a name="serial-copy"></a>串行复制
+
+使用 copy 元素创建某种资源类型的多个实例时，默认情况下，Resource Manager 并行部署这些实例。 但是，你可能希望将资源指定为按顺序部署。 例如，在更新生产环境时，可能需要错开更新，使任何一次仅更新一定数量。
+
+Resource Manager 在 copy 元素上提供了相关的属性，使用这些属性可以按顺序部署多个实例。 在 copy 元素中，将 `mode` 设置为 **serial**，将 `batchSize` 设置为一次要部署的实例数。 在串行模式下，Resource Manager 将在循环中创建早前实例的依赖项，以便在前一个批处理完成之前它不会启动一个批处理。
+
+    "copy": {
+        "name": "iterator",
+        "count": "[parameters('numberToDeploy')]",
+        "mode": "serial",
+        "batchSize": 2
+    },
+
+mode 属性也接受 **parallel**（它是默认值）。
+
+若要在不创建实际资源的情况下测试串行复制，请使用以下模板部署空的嵌套模板：
+
+    {
+      "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "numberToDeploy": {
+          "type": "int",
+          "minValue": 2,
+          "defaultValue": 5
+        }
+      },
+      "resources": [
+        {
+          "apiVersion": "2015-01-01",
+          "type": "Microsoft.Resources/deployments",
+          "name": "[concat('loop-', copyIndex())]",
+          "copy": {
+            "name": "iterator",
+            "count": "[parameters('numberToDeploy')]",
+            "mode": "serial",
+            "batchSize": 1
+          },
+          "properties": {
+            "mode": "Incremental",
+            "template": {
+              "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+              "contentVersion": "1.0.0.0",
+              "parameters": {},
+              "variables": {},
+              "resources": [],
+              "outputs": {
+              }
+            }
+          }
+        }
+      ],
+      "outputs": {
+      }
+    }
+
+在部署历史记录中，请注意，嵌套部署将按顺序处理。
+
+![串行部署](./media/resource-group-create-multiple/serial-copy.png)
+
+对于更现实的方案，以下示例将从嵌套模板一次部署 Linux VM 的两个实例：
+
+    {
+        "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+        "contentVersion": "1.0.0.0",
+        "parameters": {
+            "adminUsername": {
+                "type": "string",
+                "metadata": {
+                    "description": "User name for the Virtual Machine."
+                }
+            },
+            "adminPassword": {
+                "type": "securestring",
+                "metadata": {
+                    "description": "Password for the Virtual Machine."
+                }
+            },
+            "dnsLabelPrefix": {
+                "type": "string",
+                "metadata": {
+                    "description": "Unique DNS Name for the Public IP used to access the Virtual Machine."
+                }
+            },
+            "ubuntuOSVersion": {
+                "type": "string",
+                "defaultValue": "16.04.0-LTS",
+                "allowedValues": [
+                    "12.04.5-LTS",
+                    "14.04.5-LTS",
+                    "15.10",
+                    "16.04.0-LTS"
+                ],
+                "metadata": {
+                    "description": "The Ubuntu version for the VM. This will pick a fully patched image of this given Ubuntu version."
+                }
+            }
+        },
+        "variables": {
+            "templatelink": "https://raw.githubusercontent.com/rjmax/Build2017/master/Act1.TemplateEnhancements/Chapter03.LinuxVM.json"
+        },
+        "resources": [
+            {
+                "apiVersion": "2015-01-01",
+                "name": "[concat('nestedDeployment',copyIndex())]",
+                "type": "Microsoft.Resources/deployments",
+                "copy": {
+                    "name": "myCopySet",
+                    "count": 4,
+                    "mode": "serial",
+                    "batchSize": 2
+                },
+                "properties": {
+                    "mode": "Incremental",
+                    "templateLink": {
+                        "uri": "[variables('templatelink')]",
+                        "contentVersion": "1.0.0.0"
+                    },
+                    "parameters": {
+                        "adminUsername": {
+                            "value": "[parameters('adminUsername')]"
+                        },
+                        "adminPassword": {
+                            "value": "[parameters('adminPassword')]"
+                        },
+                        "dnsLabelPrefix": {
+                            "value": "[parameters('dnsLabelPrefix')]"
+                        },
+                        "ubuntuOSVersion": {
+                            "value": "[parameters('ubuntuOSVersion')]"
+                        },
+                        "index":{
+                            "value": "[copyIndex()]"
+                        }
+                    }
+                }
+            }
+        ]
+    }
+
+## <a name="depend-on-resources-in-a-loop"></a>依赖于循环中的资源
+可以使用 `dependsOn` 元素指定一个资源在另一个资源之后部署。 若要部署的资源依赖于循环中的资源集合，请在 dependsOn 元素中提供 copy 循环的名称。 以下示例演示了如何在部署虚拟机之前部署三个存储帐户。 此处并未显示完整的虚拟机定义。 请注意，copy 元素的名称设置为 `storagecopy`，而虚拟机的 dependsOn 元素也设置为 `storagecopy`。
 
     {
         "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
@@ -153,16 +251,18 @@
         "parameters": {},
         "resources": [
             {
-                "apiVersion": "2015-06-15",
+                "apiVersion": "2016-01-01",
                 "type": "Microsoft.Storage/storageAccounts",
-                "name": "[concat('storage', uniqueString(resourceGroup().id), copyIndex())]",
+                "name": "[concat(copyIndex(),'storage', uniqueString(resourceGroup().id))]",
                 "location": "[resourceGroup().location]",
-                "properties": {
-                    "accountType": "Standard_LRS"
+                "sku": {
+                    "name": "Standard_LRS"
                 },
-                "copy": { 
-                    "name": "storagecopy", 
-                    "count": 3 
+                "kind": "Storage",
+                "properties": {},
+                "copy": {
+                    "name": "storagecopy",
+                    "count": 3
                 }
             },
             {
@@ -176,8 +276,8 @@
         "outputs": {}
     }
 
-## <a name="create-multiple-instances-of-a-child-resource"></a> 创建子资源的多个实例
-不能对子资源使用 copy 循环。若要创建子资源的多个实例，而该子资源通常在其他资源中定义为嵌套资源，则必须将该资源创建为顶级资源。可通过 **type** 和 **name** 属性定义与父资源的关系。
+## <a name="create-multiple-instances-of-a-child-resource"></a>创建子资源的多个实例
+不能对子资源使用 copy 循环。 若要创建子资源的多个实例，而该子资源通常在其他资源中定义为嵌套资源，则必须将该资源创建为顶级资源。 可以通过 type 和 name 属性定义与父资源的关系。
 
 例如，假设用户通常会将某个数据集定义为数据工厂中的子资源。
 
@@ -197,9 +297,9 @@
         }
     }]
 
-若要创建数据集的多个实例，请将数据集移出数据工厂。数据集必须与数据工厂位于同一层级，但仍属数据工厂的子资源。可以通过 **type** 和 **name** 属性保留数据集和数据工厂之间的关系。由于类型不再可以从其在模板中的位置推断，因此必须按以下格式提供完全限定的类型：`{resource-provider-namespace}/{parent-resource-type}/{child-resource-type}`。
+若要创建数据集的多个实例，请将数据集移出数据工厂。 数据集必须与数据工厂位于同一层级，但仍属数据工厂的子资源。 可以通过 type 和 name 属性保留数据集和数据工厂之间的关系。 由于类型不再可以从其在模板中的位置推断，因此必须按以下格式提供完全限定的类型： `{resource-provider-namespace}/{parent-resource-type}/{child-resource-type}`。
 
-若要与数据工厂的实例建立父/子关系，提供的数据集的名称应包含父资源名称。使用以下格式：`{parent-resource-name}/{child-resource-name}`。
+若要与数据工厂的实例建立父/子关系，提供的数据集的名称应包含父资源名称。 使用以下格式： `{parent-resource-name}/{child-resource-name}`。  
 
 以下示例演示实现过程：
 
@@ -222,315 +322,8 @@
         ...
     }]
 
-## <a name="create-multiple-instances-when-copy-wont-work"></a> 当复制不可用时创建多个实例
-只能对资源类型，而不能对资源类型中的属性使用 **copy**。需要创建属于资源一部分的某事物的多个实例时，此要求可能会造成问题。一种常见的情况是为一个虚拟机创建多个数据磁盘。无法对数据磁盘使用 **copy**，因为 **dataDisks** 是虚拟机的一个属性，而不是它的资源类型。可以根据需要使用足够多的数据磁盘创建数组，并传递要创建的数据磁盘的实际数量。在虚拟机定义中，使用 **take** 函数从数组中仅获取实际需要的元素数。
+## <a name="next-steps"></a>后续步骤
+* 若要了解有关模板区段的信息，请参阅[创作 Azure Resource Manager 模板](/documentation/articles/resource-group-authoring-templates/)。
+* 若要了解如何部署模板，请参阅 [使用 Azure Resource Manager 模板部署应用程序](/documentation/articles/resource-group-template-deploy/)。
 
-[使用动态选择的数据磁盘创建 VM](https://github.com/Azure/azure-quickstart-templates/tree/master/201-vm-dynamic-data-disks-selection/) 模板中显示了此模式的完整示例。
-
-部署模板的相关节如以下示例所示。已删除模板中的大多数节，以便突出显示动态创建多个数据磁盘时所涉及的节。请注意参数 **numDataDisks**，用于传入要创建的磁盘数目。
-
-    {
-      "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
-      "contentVersion": "1.0.0.0",
-      "parameters": {
-        ...
-        "numDataDisks": {
-          "type": "int",
-          "maxValue": 64,
-          "metadata": {
-            "description": "This parameter allows you to select the number of disks you want"
-          }
-        }
-      },
-      "variables": {
-        "storageAccountName": "[concat(uniquestring(resourceGroup().id), 'dynamicdisk')]",
-        "sizeOfDataDisksInGB": 100,
-        "diskCaching": "ReadWrite",
-        "diskArray": [
-          {
-            "name": "datadisk1",
-            "lun": 0,
-            "vhd": {
-              "uri": "[concat('http://', variables('storageAccountName'),'.blob.core.chinacloudapi.cn/vhds/', 'datadisk1.vhd')]"
-            },
-            "createOption": "Empty",
-            "caching": "[variables('diskCaching')]",
-            "diskSizeGB": "[variables('sizeOfDataDisksInGB')]"
-          },
-          {
-            "name": "datadisk2",
-            "lun": 1,
-            "vhd": {
-              "uri": "[concat('http://', variables('storageAccountName'),'.blob.core.chinacloudapi.cn/vhds/', 'datadisk2.vhd')]"
-            },
-            "createOption": "Empty",
-            "caching": "[variables('diskCaching')]",
-            "diskSizeGB": "[variables('sizeOfDataDisksInGB')]"
-          },
-          {
-            "name": "datadisk3",
-            "lun": 2,
-            "vhd": {
-              "uri": "[concat('http://', variables('storageAccountName'),'.blob.core.chinacloudapi.cn/vhds/', 'datadisk3.vhd')]"
-            },
-            "createOption": "Empty",
-            "caching": "[variables('diskCaching')]",
-            "diskSizeGB": "[variables('sizeOfDataDisksInGB')]"
-          },
-          {
-            "name": "datadisk4",
-            "lun": 3,
-            "vhd": {
-              "uri": "[concat('http://', variables('storageAccountName'),'.blob.core.chinacloudapi.cn/vhds/', 'datadisk4.vhd')]"
-            },
-            "createOption": "Empty",
-            "caching": "[variables('diskCaching')]",
-            "diskSizeGB": "[variables('sizeOfDataDisksInGB')]"
-          },
-          ...
-          {
-            "name": "datadisk63",
-            "lun": 62,
-            "vhd": {
-              "uri": "[concat('http://', variables('storageAccountName'),'.blob.core.chinacloudapi.cn/vhds/', 'datadisk63.vhd')]"
-            },
-            "createOption": "Empty",
-            "caching": "[variables('diskCaching')]",
-            "diskSizeGB": "[variables('sizeOfDataDisksInGB')]"
-          },
-          {
-            "name": "datadisk64",
-            "lun": 63,
-            "vhd": {
-              "uri": "[concat('http://', variables('storageAccountName'),'.blob.core.chinacloudapi.cn/vhds/', 'datadisk64.vhd')]"
-            },
-            "createOption": "Empty",
-            "caching": "[variables('diskCaching')]",
-            "diskSizeGB": "[variables('sizeOfDataDisksInGB')]"
-          }
-        ]
-      },
-      "resources": [
-        ...
-        {
-          "type": "Microsoft.Compute/virtualMachines",
-          "properties": {
-            ...
-            "storageProfile": {
-              ...
-              "dataDisks": "[take(variables('diskArray'),parameters('numDataDisks'))]"
-            },
-            ...
-          }
-          ...
-        }
-      ]
-    }
-
-需要使用属性的可变数目项创建资源的多个实例时，可以联合使用 **take** 函数和 **copy** 元素。例如，假设用户需创建多个虚拟机，但每个虚拟机的数据磁盘数不同。若要为每个数据磁盘提供一个名称来标识关联的虚拟机，可将数据磁盘阵列置于单独的模板中。包括虚拟机名称以及要返回的数据磁盘数等参数。在输出部分，返回指定项的数目。
-
-    {
-      "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
-      "contentVersion": "1.0.0.0",
-      "parameters": {
-        "vmName": {
-          "type": "string"
-        },
-        "storageAccountName": {
-          "type": "string"
-        },
-        "numDataDisks": {
-          "type": "int",
-          "maxValue": 16,
-          "metadata": {
-            "description": "This parameter allows the user to select the number of disks they want"
-          }
-        }
-      },
-      "variables": {
-        "diskArray": [
-          {
-            "name": "[concat(parameters('vmName'), '-datadisk1')]",
-            "vhd": {
-              "uri": "[concat('http://', parameters('storageAccountName'),'.blob.core.chinacloudapi.cn/vhds/', parameters('vmName'), '-datadisk1.vhd')]"
-            },
-            ...
-          },
-          ...
-        ],
-      },
-      "resources": [
-      ],
-      "outputs": {
-        "result": {
-          "type": "array",
-          "value": "[take(variables('diskArray'),parameters('numDataDisks'))]"
-        }
-      }
-    }
-
-在父模板中，包括虚拟机数目参数，以及针对每个虚拟机的数据磁盘数的数组。
-
-    {
-      "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
-      "contentVersion": "1.0.0.0",
-      "parameters": {
-        ...
-        "numberOfInstances": {
-          "type": "int",
-          "defaultValue": 2,
-          "metadata": {
-            "description": "Number of VMs to deploy"
-          }
-        },
-        "numberOfDataDisksPerVM": {
-          "type": "array",
-          "defaultValue": [1,2]
-        }
-      },
-
-在资源部分，部署定义数据磁盘的模板的多个实例。
-
-    {
-      "apiVersion": "2016-09-01",
-      "name": "[concat('nested-', copyIndex())]",
-      "type": "Microsoft.Resources/deployments",
-      "copy": {
-        "name": "deploycopy",
-        "count": "[parameters('numberOfInstances')]"
-      },
-      "properties": {
-        "mode": "incremental",
-        "templateLink": {
-          "uri": "{data-disk-template-uri}",
-          "contentVersion": "1.0.0.0"
-        },
-        "parameters": {
-          "vmName": { "value": "[concat('myvm', copyIndex())]" },
-          "storageAccountName": { "value": "[variables('storageAccountName')]" },
-          "numDataDisks": { "value": "[parameters('numberOfDataDisksPerVM')[copyIndex()]]" }
-        }
-      }
-    },
-
-在资源部分，部署虚拟机的多个实例。对于数据磁盘，可引用嵌套式部署，其中包含数据磁盘的正确数目和正确名称。
-
-    {
-      "type": "Microsoft.Compute/virtualMachines",
-      "name": "[concat('myvm', copyIndex())]",
-      "copy": {
-        "name": "virtualMachineLoop",
-          "count": "[parameters('numberOfInstances')]"
-      },
-      "properties": {
-        "storageProfile": {
-          ...
-          "dataDisks": "[reference(concat('nested-', copyIndex())).outputs.result.value]"
-        },
-        ...
-      },
-      ...
-    }
-
-## 从循环返回值
-虽然创建某个资源类型的多个实例很方便，但从该循环返回值可能很困难。若要保留和返回值，一种方式是对嵌套式模板使用 **copy**，对包含所有待返回值的数组执行往返操作。例如，假设用户需要创建多个存储帐户，并返回每个帐户的主终结点。
-
-首先，创建用于创建存储帐户的嵌套式模板。请注意，它接受的数组参数适用于 Blob URI。可以使用此参数对此前部署中的所有值执行往返操作。模板的输出是一个数组，该数组将新的 Blob URI 连接到旧的 URI。
-
-    {
-      "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
-      "contentVersion": "1.0.0.0",
-      "parameters": {
-        "indexValue": {
-          "type":"int"
-        },
-        "blobURIs": {
-            "type": "array",
-          "defaultValue": []
-        }
-      },
-        "variables": {
-        "storageName": "[concat('storage', uniqueString(resourceGroup().id), parameters('indexValue'))]"
-      },
-        "resources": [
-        {
-            "apiVersion": "2016-01-01",
-          "type": "Microsoft.Storage/storageAccounts",
-          "name": "[variables('storageName')]",
-          "location": "[resourceGroup().location]",
-          "sku": {
-              "name": "Standard_LRS"
-          },
-          "kind": "Storage",
-          "properties": {  
-          }
-        }
-        ],
-        "outputs": {
-          "result": {
-            "type": "array",
-          "value": "[concat(parameters('blobURIs'),split(reference(variables('storageName')).primaryEndpoints.blob, ','))]"
-        }
-      }
-    }
-
-现在可创建父模板，其中包含嵌套式模板的一个静态实例，并可对嵌套式模板的剩余实例执行循环操作。对于循环部署的每个实例，均可传递一个数组，该数组是旧部署的输出。
-
-    {
-      "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
-      "contentVersion": "1.0.0.0",
-      "parameters": {
-        "numberofStorage": { "type": "int", "minValue": 2 }
-      },
-      "resources": [
-        {
-          "apiVersion": "2016-09-01",
-          "name": "nestedTemplate0",
-          "type": "Microsoft.Resources/deployments",
-          "properties": {
-            "mode": "incremental",
-            "templateLink": {
-              "uri": "{storage-template-uri}",
-              "contentVersion": "1.0.0.0"
-            },
-            "parameters": {
-              "indexValue": {"value": 0}
-            }
-          }
-        },
-        {
-          "apiVersion": "2016-09-01",
-          "name": "[concat('nestedTemplate', copyIndex(1))]",
-          "type": "Microsoft.Resources/deployments",
-          "copy": {
-            "name": "storagecopy",
-            "count": "[sub(parameters('numberofStorage'), 1)]"
-          },
-          "properties": {
-            "mode": "incremental",
-            "templateLink": {
-              "uri": "{storage-template-uri}",
-              "contentVersion": "1.0.0.0"
-            },
-            "parameters": {
-              "indexValue": {"value": "[copyIndex(1)]"},
-              "blobURIs": {"value": "[reference(concat('nestedTemplate', copyIndex())).outputs.result.value]"}
-            }
-          }
-        }
-      ],
-      "outputs": {
-        "result": {
-          "type": "object",
-          "value": "[reference(concat('nestedTemplate', sub(parameters('numberofStorage'), 1))).outputs.result]"
-        }
-      }
-    }
-
-## 后续步骤
-* 若要了解有关模板区段的信息，请参阅[创作 Azure 资源管理器模板](/documentation/articles/resource-group-authoring-templates/)。
-* 如需可在模板中使用的所有函数，请参阅 [Azure Resource Manager 模板函数](/documentation/articles/resource-group-template-functions/)。
-* 若要了解如何部署模板，请参阅[使用 Azure 资源管理器模板部署应用程序](/documentation/articles/resource-group-template-deploy/)。
-
-<!---HONumber=Mooncake_0327_2017-->
-<!--Update_Description: update meta properties; wording update -->
+<!-- Update_Description: update meta description; wording update; update the sample code of serial copy and so on. -->

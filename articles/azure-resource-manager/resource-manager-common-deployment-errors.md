@@ -17,7 +17,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="na"
     ms.date="03/15/2017"
-    wacn.date="05/02/2017"
+    wacn.date="06/05/2017"
     ms.author="tomfitz"
     ms.sourcegitcommit="78da854d58905bc82228bcbff1de0fcfbc12d5ac"
     ms.openlocfilehash="5eec526a5f41acdf51a4a65a2002458ef4e48a11"
