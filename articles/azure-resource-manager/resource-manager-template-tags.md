@@ -13,21 +13,25 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="02/03/2017"
+    ms.date="04/20/2017"
     wacn.date="06/05/2017"
-    ms.author="tomfitz" />  
+    ms.author="v-yeche"
+    ms.translationtype="Human Translation"
+    ms.sourcegitcommit="08618ee31568db24eba7a7d9a5fc3b079cf34577"
+    ms.openlocfilehash="7910bbfd588c80abd1bfbcd05047ce45d6e52a60"
+    ms.contentlocale="zh-cn"
+    ms.lasthandoff="05/26/2017" />
 
-
-# 标记 Azure Resource Manager 模板中的资源
+# <a name="tag-resources-in-azure-resource-manager-templates"></a>标记 Azure Resource Manager 模板中的资源
 [AZURE.INCLUDE [resource-manager-tag-introduction](../../includes/resource-manager-tag-introduction.md)]
 
-## 将标记添加到模板
+## <a name="add-tags-to-your-template"></a>将标记添加到模板
 
 [AZURE.INCLUDE [resource-manager-tags-in-templates](../../includes/resource-manager-tags-in-templates.md)]
 
-## 后续步骤
-* 有关管理标记的信息，请参阅[使用标记来组织 Azure 资源](/documentation/articles/resource-group-using-tags/)。
-* 如需了解企业如何使用 Resource Manager 对订阅进行有效管理，请参阅 [Azure 企业机架 - 规范性订阅管理](/documentation/articles/resource-manager-subscription-governance/)。
+## <a name="next-steps"></a>后续步骤
+* 有关管理标记的信息，请参阅[使用标记组织 Azure 资源](/documentation/articles/resource-group-using-tags/)。
+* 如需了解企业如何使用 Resource Manager 对订阅进行有效管理，请参阅 请参阅 [Azure 企业基架 - 出于合规目的监管订阅](/documentation/articles/resource-manager-subscription-governance/)。
 
-<!---HONumber=Mooncake_0227_2017-->
-<!--Update_Description: New article about how to utilize the tag on the azure resource manager template -->
+
+<!--Update_Description: update meta description; wording update; update link reference -->

@@ -5,8 +5,7 @@
     documentationcenter="na"
     author="tfitzmac"
     manager="timlt"
-    editor="tysonn"
-    translationtype="Human Translation" />
+    editor="tysonn" />
 <tags
     ms.assetid="1d8fbd4c-78b0-425b-ba76-f2b7fd260b45"
     ms.service="azure-resource-manager"
@@ -16,10 +15,12 @@
     ms.workload="na"
     ms.date="03/10/2017"
     wacn.date="06/05/2017"
-    ms.author="tomfitz"
-    ms.sourcegitcommit="78da854d58905bc82228bcbff1de0fcfbc12d5ac"
-    ms.openlocfilehash="c34b153bf86541995906f4bd1626ed08e340676a"
-    ms.lasthandoff="04/22/2017" />
+    ms.author="v-yeche"
+    ms.translationtype="Human Translation"
+    ms.sourcegitcommit="08618ee31568db24eba7a7d9a5fc3b079cf34577"
+    ms.openlocfilehash="e9fe146eb5beb84adffbe4b0b01e9f6e07513b5c"
+    ms.contentlocale="zh-cn"
+    ms.lasthandoff="05/26/2017" />
 
 # <a name="deploy-resources-with-resource-manager-templates-and-resource-manager-rest-api"></a>使用 Resource Manager 模板和 Resource Manager REST API 部署资源
 > [AZURE.SELECTOR]
@@ -32,7 +33,7 @@
 
 > [AZURE.TIP]
 > 有关在部署过程中调试错误的帮助，请参阅：
-> 
+> <p>
 > * [查看部署操作](/documentation/articles/resource-manager-deployment-operations/)，了解如何获取有助于排查错误的信息
 > * [排查使用 Azure Resource Manager 将资源部署到 Azure 时的常见错误](/documentation/articles/resource-manager-common-deployment-errors/)，了解如何解决常见的部署错误
 > 
@@ -73,14 +74,13 @@
                 }
             }
 
-
     如果想要记录响应内容或/和请求内容，请在请求中包括 **debugSetting**。
 
         "debugSetting": {
             "detailLevel": "requestContent, responseContent"
         }
    
-    可以将存储帐户设置为使用共享访问签名 (SAS) 令牌。 有关详细信息，请参阅[使用共享访问签名委托访问权限](https://docs.microsoft.com/zh-cn/rest/api/storageservices/fileservices/delegating-access-with-a-shared-access-signature)。
+    可以将存储帐户设置为使用共享访问签名 (SAS) 令牌。 有关详细信息，请参阅[使用共享访问签名委托访问权限](https://docs.microsoft.com/zh-cn/rest/api/storageservices/delegating-access-with-a-shared-access-signature)。
 5. 获取模板部署的状态。 有关详细信息，请参阅 [获取有关模板部署的信息](https://docs.microsoft.com/zh-cn/rest/api/resources/deployments#Deployments_Get)。
 
         GET https://management.chinacloudapi.cn/subscriptions/<YourSubscriptionId>/resourcegroups/<YourResourceGroupName>/providers/Microsoft.Resources/deployments/<YourDeploymentName>?api-version=2015-01-01
@@ -94,9 +94,9 @@
 * 若要了解如何处理异步 REST 操作，请参阅[跟踪异步 Azure 操作](/documentation/articles/resource-manager-async-operations/)。
 * 有关通过 .NET 客户端库部署资源的示例，请参阅[使用 .NET 库和模板部署资源](/documentation/articles/virtual-machines-windows-csharp-template/)。
 * 若要在模板中定义参数，请参阅[创作模板](/documentation/articles/resource-group-authoring-templates/#parameters)。
-<!--* 有关将解决方案部署到不同环境的指南，请参阅 [Development and test environments in Azure](/documentation/articles/solution-dev-test-environments/)（Azure 中的开发和测试环境）。-->
+* 有关将解决方案部署到不同环境的指南，请参阅 [Azure 中的开发和测试环境](/documentation/articles/solution-dev-test-environments/)。
 * 如需了解企业如何使用 Resource Manager 对订阅进行有效管理，请参阅 [Azure 企业基架 - 出于合规目的监管订阅](/documentation/articles/resource-manager-subscription-governance/)。
 * 有关自动部署的四部分系列，请参阅[将应用程序自动部署到 Azure 虚拟机](/documentation/articles/virtual-machines-windows-dotnet-core-1-landing/)。 此系列教程介绍了应用程序体系结构、访问与安全性、可用性与缩放性，以及应用程序部署。
 
 
-<!-- Update_Description: update meta properties; wording update -->
+<!-- Update_Description: update meta properties; wording update, update link reference -->

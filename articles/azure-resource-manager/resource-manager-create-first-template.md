@@ -5,21 +5,22 @@
     documentationcenter=""
     author="tfitzmac"
     manager="timlt"
-    editor="tysonn"
-    translationtype="Human Translation" />
+    editor="tysonn" />
 <tags
     ms.assetid=""
     ms.service="azure-resource-manager"
     ms.workload="multiple"
     ms.tgt_pltfrm="na"
     ms.devlang="na"
-    ms.date="03/21/2017"
+    ms.date="04/18/2017"
     wacn.date="06/05/2017"
     ms.topic="get-started-article"
-    ms.author="tomfitz"
-    ms.sourcegitcommit="78da854d58905bc82228bcbff1de0fcfbc12d5ac"
-    ms.openlocfilehash="8fa431b1fe69cdb6771f499bd20ba5a62c72e9e1"
-    ms.lasthandoff="04/22/2017" />
+    ms.author="v-yeche"
+    ms.translationtype="Human Translation"
+    ms.sourcegitcommit="08618ee31568db24eba7a7d9a5fc3b079cf34577"
+    ms.openlocfilehash="4cd3d07221305eb96bc468cdd0c78171fdb1bd21"
+    ms.contentlocale="zh-cn"
+    ms.lasthandoff="05/26/2017" />
 
 # <a name="create-your-first-azure-resource-manager-template"></a>创建第一个 Azure Resource Manager 模板
 本主题介绍如何通过相关步骤创建第一个 Azure Resource Manager 模板。 Resource Manager 模板为 JSON 文件，用于定义针对解决方案进行部署时所需的资源。 若要了解与部署和管理 Azure 解决方案相关联的概念，请参阅 [Azure Resource Manager 概述](/documentation/articles/resource-group-overview/)。 如果有现成的资源，需要为这些资源获取模板，请参阅[从现有资源导出 Azure Resource Manager 模板](/documentation/articles/resource-manager-export-template/)。
@@ -55,7 +56,7 @@
 3. 将该文件另存为 **azuredeploy.json**。 
 
 ## <a name="add-storage-account"></a>添加存储帐户
-1. 若要定义用于部署的存储帐户，请将该存储帐户添加到模板的 **resources** 节。 <!--若要查找适用于存储帐户的值，请参阅[存储帐户模板参考](/documentation/articles/microsoft/.storage/storageaccounts)。 复制针对存储帐户显示的 JSON。 -->
+1. 若要定义用于部署的存储帐户，请将该存储帐户添加到模板的 **resources** 节。
 
 2. 将该 JSON 粘贴到模板的 **resources** 节中，如以下示例所示： 
 
@@ -101,7 +102,7 @@
 
 现在可以设置存储帐户的值。 
 
-1. 再次查看在其中复制了 JSON 的[存储帐户模板参考](/documentation/articles/microsoft/.storage/storageaccounts)。 有几个表描述了相关属性并提供了可用值。 
+1. 再看一下复制 JSON 的位置。 有几个表描述了相关属性并提供了可用值。
 
 2. 请注意，在 **properties** 元素中，**customDomain**、**encryption** 和 **accessTier** 均被列为“非必需”。 这些值对于你的方案可能很重要，但为了简单起见，本示例需删除它们。
 
@@ -123,40 +124,40 @@
 
 3. 目前，**kind** 元素设置为占位符值 ("string")。 VS Code 提供的许多功能有助于你了解那些在模板中使用的值。 请注意，VS Code 指示该值无效。 若将鼠标悬停在 "string" 上，则会看到 VS Code 为 **kind** 建议的有效值为 `Storage` 或 `BlobStorage`。 
 
-   ![显示 VS Code 建议的值](./media/resource-manager-create-first-template/vs-code-show-values.png)
+    ![显示 VS Code 建议的值](./media/resource-manager-create-first-template/vs-code-show-values.png)
 
-   若要查看可用值，请删除双引号之间的字符，然后选择 **Ctrl+Space**。 从可用选项中选择“Storage”。
-  
-   ![显示 Intellisense](./media/resource-manager-create-first-template/intellisense.png)
+    若要查看可用值，请删除双引号之间的字符，然后选择 **Ctrl+Space**。 从可用选项中选择“Storage”。
 
-   如果使用的不是 VS Code，请参阅存储帐户模板参考页。 请注意，说明列出了相同的有效值。 将元素设置为 **Storage**。
+    ![显示 Intellisense](./media/resource-manager-create-first-template/intellisense.png)
 
-            "kind": "Storage",
+    如果使用的不是 VS Code，请参阅存储帐户模板参考页。 请注意，说明列出了相同的有效值。 将元素设置为 **Storage**。
 
-    模板现在如下所示：
+        "kind": "Storage",
 
+模板现在如下所示：
+
+    {
+      "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {  },
+      "variables": {  },
+      "resources": [
         {
-          "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
-          "contentVersion": "1.0.0.0",
-          "parameters": {  },
-          "variables": {  },
-          "resources": [
-            {
-              "name": "string",
-              "type": "Microsoft.Storage/storageAccounts",
-              "apiVersion": "2016-05-01",
-              "sku": {
-                "name": "string"
-              },
-              "kind": "Storage",
-              "location": "string",
-              "tags": {},
-              "properties": {
-              }
-            }
-          ],
-          "outputs": {  }
+          "name": "string",
+          "type": "Microsoft.Storage/storageAccounts",
+          "apiVersion": "2016-05-01",
+          "sku": {
+            "name": "string"
+          },
+          "kind": "Storage",
+          "location": "string",
+          "tags": {},
+          "properties": {
+          }
         }
+      ],
+      "outputs": {  }
+    }
 
 ## <a name="add-template-function"></a>添加模板函数
 
@@ -164,7 +165,7 @@
 
 若要指定将存储帐户部署到与资源组相同的位置，请将 **location** 属性设置如下：
 
-        "location": "[resourceGroup().location]",
+    "location": "[resourceGroup().location]",
 
 VS Code 会再次帮助你，为你建议可用的函数。 
 
@@ -174,28 +175,28 @@ VS Code 会再次帮助你，为你建议可用的函数。
 
 模板现在如下所示：
 
+    {
+      "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {  },
+      "variables": {  },
+      "resources": [
         {
-          "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
-          "contentVersion": "1.0.0.0",
-          "parameters": {  },
-          "variables": {  },
-          "resources": [
-            {
-              "name": "string",
-              "type": "Microsoft.Storage/storageAccounts",
-              "apiVersion": "2016-05-01",
-              "sku": {
-                "name": "string"
-              },
-              "kind": "Storage",
-              "location": "[resourceGroup().location]",
-              "tags": {},
-              "properties": {
-              }
-            }
-          ],
-          "outputs": {  }
+          "name": "string",
+          "type": "Microsoft.Storage/storageAccounts",
+          "apiVersion": "2016-05-01",
+          "sku": {
+            "name": "string"
+          },
+          "kind": "Storage",
+          "location": "[resourceGroup().location]",
+          "tags": {},
+          "properties": {
+          }
         }
+      ],
+      "outputs": {  }
+    }
 
 ## <a name="add-parameters-and-variables"></a>添加参数和变量
 模板中只剩下两个可以设置的值 - **name** 和 **sku.name**。 对于这些属性，可以添加参数，以便在部署过程中自定义这些值。 
@@ -317,4 +318,4 @@ VS Code 会再次帮助你，为你建议可用的函数。
 * 若要详细了解模板的结构，请参阅 [Authoring Azure Resource Manager templates](/documentation/articles/resource-group-authoring-templates/)（创作 Azure Resource Manager 模板）。
 * 若要查看许多不同类型的解决方案的完整模型，请参阅 [Azure Quickstart Templates](https://azure.microsoft.com/documentation/templates/)（Azure 快速入门模板）。
 
-<!--Update_Description: new articles about how to create first template in Azure resource Manager service.-->
+<!--Update_Description: Update meta description, wording update-->

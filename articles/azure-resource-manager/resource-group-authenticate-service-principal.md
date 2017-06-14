@@ -40,7 +40,7 @@
 
 检查帐户是否有足够权限的最简方法是使用门户。 请参阅[检查所需的权限](/documentation/articles/resource-group-create-service-principal-portal/#required-permissions)。
 
-现在转到[密码](#create-service-principal-with-password)或[证书](#create-service-principal-with-certificate)身份验证部分。
+现在转到[密码](#create-service-principal-with-password)或[证书](#create-service-principal-with-certificate-from-certificate-authority)身份验证部分。
 
 ## <a name="create-service-principal-with-password"></a>使用密码创建服务主体
 以下脚本为应用程序创建标识，然后将该标识分配到指定范围的“参与者”角色：
@@ -203,14 +203,14 @@
 
     Param (
 
-        [Parameter(Mandatory=$true)]
-        [String] $CertSubject,
+     [Parameter(Mandatory=$true)]
+     [String] $CertSubject,
 
-        [Parameter(Mandatory=$true)]
-        [String] $ApplicationId,
+     [Parameter(Mandatory=$true)]
+     [String] $ApplicationId,
 
-        [Parameter(Mandatory=$true)]
-        [String] $TenantId
+     [Parameter(Mandatory=$true)]
+     [String] $TenantId
     )
 
     $Thumbprint = (Get-ChildItem cert:\CurrentUser\My\ | Where-Object {$_.Subject -match $CertSubject }).Thumbprint
@@ -228,17 +228,17 @@
 若要使用证书颁发机构颁发的证书创建服务主体，请使用以下脚本：
 
     Param (
-        [Parameter(Mandatory=$true)]
-        [String] $ApplicationDisplayName,
+     [Parameter(Mandatory=$true)]
+     [String] $ApplicationDisplayName,
 
-        [Parameter(Mandatory=$true)]
-        [String] $SubscriptionId,
+     [Parameter(Mandatory=$true)]
+     [String] $SubscriptionId,
 
-        [Parameter(Mandatory=$true)]
-        [String] $CertPath,
+     [Parameter(Mandatory=$true)]
+     [String] $CertPath,
 
-        [Parameter(Mandatory=$true)]
-        [String] $CertPlainPassword
+     [Parameter(Mandatory=$true)]
+     [String] $CertPlainPassword
     )
 
     Login-AzureRmAccount -EnvironmentName AzureChinaCloud

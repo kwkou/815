@@ -50,7 +50,6 @@
 
     Get-Module -ListAvailable -Name AzureRm.Resources | Select Version
 
-<!-- Append the domain name before powershell subdirectory-->
 本主题已针对版本 3.3.0 更新。 如果使用更旧的版本，体验可能与本主题中所示步骤不完全相同。 有关此版本中 cmdlet 的文档，请参阅 [AzureRM.Resources 模块](https://docs.microsoft.com/zh-cn/powershell/module/azurerm.resources)。
 
 ## <a name="log-in-to-your-azure-account"></a>登录到 Azure 帐户

@@ -5,8 +5,7 @@
     documentationcenter="na"
     author="tfitzmac"
     manager="timlt"
-    editor="tysonn"
-    translationtype="Human Translation" />
+    editor="tysonn" />
 <tags
     ms.assetid="abde0f73-c0fe-4e6d-a1ee-32a6fce52a2d"
     ms.service="azure-resource-manager"
@@ -14,12 +13,14 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="na"
-    ms.date="03/30/2017"
+    ms.date="05/03/2017"
     wacn.date="06/05/2017"
-    ms.author="tomfitz"
-    ms.sourcegitcommit="78da854d58905bc82228bcbff1de0fcfbc12d5ac"
-    ms.openlocfilehash="b5436e7de21f3358006a33f8f0439150f9fe7a43"
-    ms.lasthandoff="04/22/2017" />
+    ms.author="v-yeche"
+    ms.translationtype="Human Translation"
+    ms.sourcegitcommit="08618ee31568db24eba7a7d9a5fc3b079cf34577"
+    ms.openlocfilehash="e8730f39d060aba97bb9e3d6e0346af791449987"
+    ms.contentlocale="zh-cn"
+    ms.lasthandoff="05/26/2017" />
 
 # <a name="resource-policy-overview"></a>资源策略概述
 使用资源策略可在组织中建立资源约定。 通过定义约定，可以控制成本并更轻松地管理资源。 例如，可以指定仅允许某些类型的虚拟机，或要求所有资源都带有特定的标记。 策略由所有子资源继承。 因此，如果将策略应用到资源组，则其适用于该资源组中的所有资源。
@@ -28,9 +29,6 @@
 
 * 策略定义 - 描述何时强制执行策略，以及要采取的操作
 * 策略分配 - 应用策略定义的范围（订阅或资源组）
-
-<!-- Policy not supported on Azure.cn-->
-<!--本主题重点介绍策略定义。有关策略分配的信息，请参阅[分配和管理策略](/documentation/articles/resource-manager-policy-create-assign/)。-->
 
 Azure 提供一些内置的策略定义，可减少需要定义的策略数目。如果内置策略定义适用于你的方案，请在分配到范围时使用该定义。
 
@@ -124,18 +122,18 @@ Azure 提供一些内置的策略定义，可减少需要定义的策略数目�
 策略规则包括 **If** and **Then** 块。 在 **If** 块中，定义强制执行策略时指定的一个或多个条件。 可以对这些条件应用逻辑运算符，以精确定义策略的方案。 在 **Then** 块中，定义满足 **If** 条件时产生的效果。
 
     {
-      "if" : {
-          <condition> | <logical operator>
+      "if": {
+        <condition> | <logical operator>
       },
-      "then" : {
-          "effect" : "deny | audit | append"
+      "then": {
+        "effect": "deny | audit | append"
       }
     }
 
 ### <a name="logical-operators"></a>逻辑运算符
 支持的逻辑运算符为：
 
-* `"not": {condition or operator}`
+* `"not": {condition  or operator}`
 * `"allOf": [{condition or operator},{condition or operator}]`
 * `"anyOf": [{condition or operator},{condition or operator}]`
 
@@ -163,12 +161,15 @@ Azure 提供一些内置的策略定义，可减少需要定义的策略数目�
 
 * `"equals": "value"`
 * `"like": "value"`
+* `"match": "value"`
 * `"contains": "value"`
 * `"in": ["value1","value2"]`
 * `"containsKey": "keyName"`
 * `"exists": "bool"`  
 
 在使用 **like** 条件时，可以在值中提供通配符 (*)。
+
+使用 **match** 条件时，请提供 `#` 来表示数字，提供 `?` 来表示字母，提供任何其他字符来表示该实际字符。 有关示例，请参阅[设置命名约定](#set-naming-convention)。
 
 ### <a name="fields"></a>字段
 使用字段构成条件。 字段显示用于描述资源状态的资源请求负载属性。  
@@ -222,13 +223,12 @@ Azure 提供一些内置的策略定义，可减少需要定义的策略数目�
 
 值可以是字符串或 JSON 格式对象。 
 
-<!-- Policy unable on Azure.cn-->
-<!-- ## <a name="policy-examples"></a>策略示例
+## <a name="policy-examples"></a>策略示例
 
 以下主题包含策略示例：
-* 有关标记策略的示例，请参阅[将资源策略应用于标记](/documentation/articles/resource-manager-policy-tags/)。
-* 有关存储策略的示例，请参阅[将资源策略应用于存储帐户](/documentation/articles/resource-manager-policy-storage/)。
--->
+
+* 有关虚拟机策略的示例，请参阅[将资源策略应用于 Linux VM](/documentation/articles/virtual-machines-linux-policy/) 和[将资源策略应用于 Windows WM](/documentation/articles/virtual-machines-windows-policy/)
+
 ### <a name="allowed-resource-locations"></a>允许的资源位置
 若要指定允许的位置，请参阅[策略定义结构](#policy-definition-structure)部分中的示例。若要分配此策略定义，请使用带有资源 ID `/providers/Microsoft.Authorization/policyDefinitions/e56962a6-4747-49cd-b67b-bf8b01975c4c` 的内置策略。
 
@@ -265,30 +265,30 @@ Azure 提供一些内置的策略定义，可减少需要定义的策略数目�
 以下示例显示只允许对 Microsoft.Resources、Microsoft.Compute、Microsoft.Storage 和 Microsoft.Network 资源类型进行部署的策略。 将拒绝其他所有资源类型：
 
     {
-      "if" : {
-        "not" : {
-          "anyOf" : [
+      "if": {
+        "not": {
+          "anyOf": [
             {
-              "field" : "type",
-              "like" : "Microsoft.Resources/*"
+              "field": "type",
+              "like": "Microsoft.Resources/*"
             },
             {
-              "field" : "type",
-              "like" : "Microsoft.Compute/*"
+              "field": "type",
+              "like": "Microsoft.Compute/*"
             },
             {
-              "field" : "type",
-              "like" : "Microsoft.Storage/*"
+              "field": "type",
+              "like": "Microsoft.Storage/*"
             },
             {
-              "field" : "type",
-              "like" : "Microsoft.Network/*"
+              "field": "type",
+              "like": "Microsoft.Network/*"
             }
           ]
         }
       },
-      "then" : {
-        "effect" : "deny"
+      "then": {
+        "effect": "deny"
       }
     }
 
@@ -296,19 +296,45 @@ Azure 提供一些内置的策略定义，可减少需要定义的策略数目�
 以下示例演示如何使用 **like** 条件支持的通配符。 该条件指明，如果名称符合所述模式 (namePrefix\*nameSuffix)，则拒绝请求：
 
     {
-      "if" : {
-        "not" : {
-          "field" : "name",
-          "like" : "namePrefix*nameSuffix"
+      "if": {
+        "not": {
+          "field": "name",
+          "like": "namePrefix*nameSuffix"
         }
       },
-      "then" : {
-        "effect" : "deny"
+      "then": {
+        "effect": "deny"
+      }
+    }
+
+若要指定资源名称与某个模式匹配，请使用 match 条件。 下面的示例要求名称以 `contoso` 开头并包含六个其他字母：
+
+    {
+      "if": {
+        "not": {
+          "field": "name",
+          "match": "contoso??????"
+        }
+      },
+      "then": {
+        "effect": "deny"
+      }
+    }
+
+若要求日期模式为两个数字、短划线、三个字母、短划线和四个数字，请使用以下代码：
+
+    {
+      "if": {
+        "field": "tags.date",
+        "match": "##-???-####"
+      },
+      "then": {
+        "effect": "deny"
       }
     }
 
 ## <a name="next-steps"></a>后续步骤
-* 如需了解企业如何使用 Resource Manager 对订阅进行有效管理，请参阅 [Azure 企业机架 - 规范性订阅管理](/documentation/articles/resource-manager-subscription-governance/)。
+* 如需了解企业如何使用 Resource Manager 对订阅进行有效管理，请参阅 [Azure 企业基架 - 出于合规目的监管订阅](/documentation/articles/resource-manager-subscription-governance/)。
 * 该策略架构已在 [http://schema.management.azure.com/schemas/2015-10-01-preview/policyDefinition.json](http://schema.management.azure.com/schemas/2015-10-01-preview/policyDefinition.json) 中发布。
 
-<!-- Update_Description:update meta properties -->
+<!-- Update_Description:update meta properties, update the match usage in ARM policy -->

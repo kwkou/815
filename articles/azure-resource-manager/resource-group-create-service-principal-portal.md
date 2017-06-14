@@ -34,9 +34,9 @@
 * 你的职责变化时，无需更改应用的凭据。 
 * 执行无人参与的脚本时，可以使用证书自动执行身份验证。
 
-本主题演示如何通过门户执行这些步骤。重点介绍单租户应用程序，其中应用程序只应在一个组织内运行。通常会将单租户应用程序作为在组织中运行的业务线应用程序使用。
- 
-## <a name="required-permissions"></a> 所需的权限
+本主题演示如何通过门户执行这些步骤。 重点介绍单租户应用程序，其中应用程序只应在一个组织内运行。 通常会将单租户应用程序作为在组织中运行的业务线应用程序使用。
+
+## <a name="required-permissions"></a>所需的权限
 为完成本主题，必须具有足够的权限向 Azure AD 租户注册应用程序，并将应用程序分配到 Azure 订阅中的角色。 请确保你拥有适当的权限来执行这些步骤。
 
 ### <a name="check-azure-active-directory-permissions"></a>检查 Azure Active Directory 权限
@@ -89,12 +89,14 @@
 2. 选择“Azure Active Directory” 。
 
     ![选择 azure active directory](./media/resource-group-create-service-principal-portal/select-active-directory.png)
+
 3. 选择“应用注册” 。   
 
     ![选择应用注册](./media/resource-group-create-service-principal-portal/select-app-registrations.png)
 4. 选择“设置” （应用程序对象和服务主体对象）。
 
     ![添加应用](./media/resource-group-create-service-principal-portal/select-add-app.png)
+
 5. 为应用提供名称和 URL。 选择“Web 应用/API”或“本机”作为要创建的应用程序的类型。 。
 
     ![命名应用程序](./media/resource-group-create-service-principal-portal/create-app.png)
