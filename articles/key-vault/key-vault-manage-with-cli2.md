@@ -1,12 +1,11 @@
 <properties
-    pageTitle="使用 CLI 管理密钥保管库 | Azure"
+    pageTitle="使用 CLI 管理 Azure Key Vault | Azure"
     description="使用本教程通过 CLI 2.0 自动执行 Key Vault 中的常见任务"
     services="key-vault"
     documentationcenter=""
     author="amitbapat"
     manager="mbaldwin"
-    tags="azure-resource-manager"
-    translationtype="Human Translation" />
+    tags="azure-resource-manager" />
 <tags
     ms.assetid=""
     ms.service="key-vault"
@@ -14,12 +13,14 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="01/07/2017"
-    wacn.date="05/08/2017"
+    ms.date="05/08/2017"
     ms.author="ambapat"
-    ms.sourcegitcommit="2c4ee90387d280f15b2f2ed656f7d4862ad80901"
-    ms.openlocfilehash="2bab5b7dffe08796ca9251fbf06ec25f8f093797"
-    ms.lasthandoff="04/28/2017" />
+    wacn.date="06/12/2017"
+    ms.translationtype="Human Translation"
+    ms.sourcegitcommit="08618ee31568db24eba7a7d9a5fc3b079cf34577"
+    ms.openlocfilehash="da2b7706a8df28e651a86732ea927741bb127dc4"
+    ms.contentlocale="zh-cn"
+    ms.lasthandoff="05/26/2017" />
 
 # <a name="manage-key-vault-using-cli-20"></a>使用 CLI 2.0 管理 Key Vault
 在大多数区域中提供了 Azure 密钥保管库。 有关详细信息，请参阅 [密钥保管库定价页](/pricing/details/key-vault/)。
@@ -31,8 +32,8 @@
 
 > [AZURE.NOTE]
 > 本教程未说明如何编写其中一个步骤所包括的 Azure 应用程序，但说明了如何授权应用程序使用密钥保管库中的密钥或机密。
->
-> 本教程使用最新的 Azure CLI 2.0。 有关使用更低版本（基于 node.js）CLI 的说明，请参阅[此对应教程](/documentation/articles/key-vault-manage-with-cli/)。
+><p>
+> 本教程使用最新的 Azure CLI 2.0。
 >
 >
 
@@ -112,11 +113,11 @@
 
     az keyvault key create --vault-name 'ContosoKeyVault' --name 'ContosoFirstKey' --protection software
 
-但是，如果你在保存为本地文件的 .pem 文件（名为 softkey.pem）中有现有密钥要上载到 Azure 密钥保管库，请键入以下命令以从 .PEM 文件（通过密钥保管库服务中的软件保护密钥）中导入该密钥：
+但是，如果你在保存为本地文件的 .pem 文件（名为 softkey.pem）中有现有密钥要上传到 Azure 密钥保管库，请键入以下命令以从 .PEM 文件（通过密钥保管库服务中的软件保护密钥）中导入该密钥：
 
     az keyvault key import --vault-name 'ContosoKeyVault' --name 'ContosoFirstKey' --pem-file './softkey.pem' --pem-password 'PaSSWORD' --protection software
 
-现在，你可以通过使用密钥的 URI，引用已创建或上载到 Azure 密钥保管库的密钥。 使用 **https://ContosoKeyVault.vault.azure.cn/keys/ContosoFirstKey** 可始终获取最新版本，使用 **https://ContosoKeyVault.vault.azure.cn/keys/ContosoFirstKey/cgacf4f763ar42ffb0a1gca546aygd87** 可获取此特定版本。
+现在，你可以通过使用密钥的 URI，引用已创建或上传到 Azure 密钥保管库的密钥。 使用 **https://ContosoKeyVault.vault.azure.cn/keys/ContosoFirstKey** 可始终获取最新版本，使用 **https://ContosoKeyVault.vault.azure.cn/keys/ContosoFirstKey/cgacf4f763ar42ffb0a1gca546aygd87** 可获取此特定版本。
 
 若要将名为 SQLPassword 且其 Azure 密钥保管库的值为 Pa$$w0rd 的机密添加到保管库，请键入以下内容：
 
@@ -143,8 +144,12 @@
 
 要在 Azure Active Directory 中注册应用程序，请执行以下操作：
 
-1. 登录到 Azure 门户预览。
-2. 单击左侧的“Azure Active Directory”，然后选择要在其中注册应用程序的目录。 <br> <br> 注意：必须选择包含用于创建密钥保管库的 Azure 订阅的相同目录。 如果你不知道是哪个目录，请单击“设置”，找到用于创建密钥保管库的订阅，并记下最后一列中显示的目录名称。
+1. 登录到 Azure 经典管理门户。
+2. 单击左侧的“Azure Active Directory”，然后选择要在其中注册应用程序的目录。 <br> <br> 
+
+> [AZURE.NOTE] 
+> 必须选择包含用于创建密钥保管库的 Azure 订阅的相同目录。 如果你不知道是哪个目录，请单击“设置”，找到用于创建密钥保管库的订阅，并记下最后一列中显示的目录名称。
+
 3. 单击“应用程序” 。 如果你的目录中尚未添加任何应用程序，则此页只会显示“添加应用程序”链接  。 单击该链接，或者单击命令栏上的“添加”。
 4. 在“添加应用程序”向导的“要执行什么操作?”页面上，单击“添加我的组织正在开发的应用程序”。
 5. 在“向我们说明你的应用程序”页上，指定应用程序名称，然后选择“Web 应用程序和/或 Web API”（默认值）。 单击“下一步”图标。
@@ -179,23 +184,23 @@
 
 此命令列出以表格形式显示的所有密钥和所选属性：
 
-	az keyvault key list --vault-name 'ContosoKeyVault'
+az keyvault key list --vault-name 'ContosoKeyVault'
 
 此命令显示特定密钥的完整属性列表：
 
-	az keyvault key show --vault-name 'ContosoKeyVault' --name 'ContosoFirstKey'
+az keyvault key show --vault-name 'ContosoKeyVault' --name 'ContosoFirstKey'
 
 此命令列出以表格形式显示的所有机密名称和所选属性：
 
-	az keyvault secret list --vault-name 'ContosoKeyVault'
+az keyvault secret list --vault-name 'ContosoKeyVault'
 
 下面是演示如何删除特定密钥的示例：
 
-	az keyvault key delete --vault-name 'ContosoKeyVault' --name 'ContosoFirstKey'
+az keyvault key delete --vault-name 'ContosoKeyVault' --name 'ContosoFirstKey'
 
 下面是演示如何删除特定机密的示例：
 
-	az keyvault secret delete --vault-name 'ContosoKeyVault' --name 'SQLPassword'
+az keyvault secret delete --vault-name 'ContosoKeyVault' --name 'SQLPassword'
 
 
 ## <a name="next-steps"></a>后续步骤
@@ -203,3 +208,4 @@
 
 有关编程参考，请参阅 [Azure 密钥保管库开发人员指南](/documentation/articles/key-vault-developers-guide/)。
 
+<!--Update_Description: wording update-->
