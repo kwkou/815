@@ -1,12 +1,11 @@
 <properties
     pageTitle="配置 Azure MFA | Microsoft 文档"
-    description="这个有关 Azure 多重身份验证的页面介绍了使用 MFA 可以执行的后续步骤。 其中包括报告、欺诈警报、一次性跳过、自定义语音消息、缓存，受信任的 IP 和应用密码。"
+    description="这个有关 Azure 多重身份验证的页面介绍了使用 MFA 可以执行的后续步骤。  其中包括报告、欺诈警报、一次性跳过、自定义语音消息、缓存，受信任的 IP 和应用密码。"
     services="multi-factor-authentication"
     documentationcenter=""
     author="kgremban"
     manager="femila"
-    editor="yossib"
-    translationtype="Human Translation" />
+    editor="yossib" />
 <tags
     ms.assetid="75af734e-4b12-40de-aba4-b68d91064ae8"
     ms.service="multi-factor-authentication"
@@ -14,15 +13,17 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="02/21/2017"
-    wacn.date="04/24/2017"
+    ms.date="04/21/2017"
     ms.author="kgremban"
-    ms.sourcegitcommit="a114d832e9c5320e9a109c9020fcaa2f2fdd43a9"
-    ms.openlocfilehash="9c89e845bb716e811c51adbb27aae7efb1c40db5"
-    ms.lasthandoff="04/14/2017" />
+    wacn.date="06/12/2017"
+    ms.translationtype="Human Translation"
+    ms.sourcegitcommit="08618ee31568db24eba7a7d9a5fc3b079cf34577"
+    ms.openlocfilehash="c258b00bc7641714a5d80e7a3f524e1b5cc36856"
+    ms.contentlocale="zh-cn"
+    ms.lasthandoff="05/26/2017" />
 
 # <a name="configure-azure-multi-factor-authentication-settings"></a>配置 Azure 多重身份验证设置
-在启动并运行 Azure 多重身份验证后，可以参考本文进行管理。 本文涵盖了各种主题，可帮助你充分利用 Azure 多重身份验证。  并非所有版本的 Azure 多重身份验证都提供了这些功能。
+在启动并运行 Azure 多重身份验证后，可以参考本文进行管理。  本文涵盖了各种主题，可帮助你充分利用 Azure 多重身份验证。  并非所有版本的 Azure 多重身份验证都提供了这些功能。
 
 | 功能 | 说明 | 
 |:--- |:--- |
