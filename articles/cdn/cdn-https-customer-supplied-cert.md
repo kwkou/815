@@ -1,7 +1,7 @@
 <properties linkid="dev-net-common-tasks-cdn" urlDisplayName="CDN" pageTitle="Azure CDN HTTPS customer self cert - Azure feature guide" metaKeywords="Azure CDN, Azure CDN, Azure blobs, Azure caching, Azure add-ons, CDN FAQ, CDN常见问题, 回源流量, ICP备案号, CDN默认缓存规则, 回源域名, 订阅, CNAME, 下载加速, Web加速, 网站加速, 流媒体直播加速, VOD加速, 视频点播加速, CDN价格, CDN收费, 技术文档, 帮助文档" description="Find answers to common service consulting or inquiries related to Azure CDN" metaCanonical="" services="" documentationCenter=".NET" title="" authors="" solutions="" manager="" editor="" />
 <tags ms.service="cdn"
-    ms.date="6/13/2016"
-    wacn.date="6/13/2016"
+    ms.date="6/14/2016"
+    wacn.date="6/14/2016"
     wacn.lang="cn"
     />
 > [AZURE.LANGUAGE]
