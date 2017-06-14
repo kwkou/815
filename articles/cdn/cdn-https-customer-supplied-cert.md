@@ -1,13 +1,10 @@
 <properties linkid="dev-net-common-tasks-cdn" urlDisplayName="CDN" pageTitle="Azure CDN HTTPS customer self cert - Azure feature guide" metaKeywords="Azure CDN, Azure CDN, Azure blobs, Azure caching, Azure add-ons, CDN FAQ, CDN常见问题, 回源流量, ICP备案号, CDN默认缓存规则, 回源域名, 订阅, CNAME, 下载加速, Web加速, 网站加速, 流媒体直播加速, VOD加速, 视频点播加速, CDN价格, CDN收费, 技术文档, 帮助文档" description="Find answers to common service consulting or inquiries related to Azure CDN" metaCanonical="" services="" documentationCenter=".NET" title="" authors="" solutions="" manager="" editor="" />
 <tags ms.service="cdn"
-    ms.date="6/13/2016"
-    wacn.date="6/13/2016"
+    ms.date="6/14/2016"
+    wacn.date="6/14/2016"
     wacn.lang="cn"
     />
-> [AZURE.LANGUAGE]
-- [中文](/documentation/articles/cdn-faq-service-inquiry/)
-- [English](/documentation/articles/cdn-enus-faq-service-inquiry/) 
-- 
+
 # Azure CDN HTTPS加速服务-用户自有证书
 
 Azure CDN提供HTTPS安全加速服务，支持用户上传自有证书，也支持Azure CDN代为申请证书的自动化配置，均只开放给付费用户。本文档针对用户自己上传证书自助化配置的情况以及证书说明，Azure CDN代为申请证书的配置操作请参考[Azure CDN HTTPS加速服务-Azure CDN代申请证书](https://www.azure.cn/documentation/articles/cdn-https-how-to/)。二者的区别请参考[常见问题-服务咨询](https://www.azure.cn/documentation/articles/cdn-faq-service-inquiry/)。
@@ -21,7 +18,7 @@ Azure CDN提供HTTPS安全加速服务，支持用户上传自有证书，也支
      >**注意** 图片处理加速类型暂不支持HTTPS加速。
 - 需要在**新版Azure CDN管理界面**启用HTTPS服务，并上传PEM格式的证书和秘钥。详见后文的“自助式启用HTTPS加速步骤”。
 - 开启HTTPS加速后，默认同时支持HTTP和HTTPS方式的请求。如需强制将HTTP请求跳转成HTTPS请求，请联系世纪互联进行配置。我们后续会在管理界面实现自动化选择。
-- 回源协议默认跟随用户发起的请求协议，即HTTP请求通过HTTP协议回源，HTTPS请求通过HTTPS协议回源。如需指定只有HTTP回源或者只有HTTPS回源，请联系世纪互联尽心配置。我们后续会在管理界面实现自动化选择。
+- 回源协议默认跟随用户发起的请求协议，即HTTP请求通过HTTP协议回源，HTTPS请求通过HTTPS协议回源。如需指定只有HTTP回源或者只有HTTPS回源，请联系世纪互联进行配置。我们后续会在管理界面实现自动化选择。
 
 
 ## 证书说明
@@ -29,9 +26,10 @@ Azure CDN提供HTTPS安全加速服务，支持用户上传自有证书，也支
 - 用户自有证书的HTTPS加速是基于SNI技术实现的，SNI证书可以多个HTTPS 客户共享同一个IP 地址。
     >**注意** SNI证书不支持Windwos XP系统下所有的IE版本，浏览器会提示不受信任。
 
-- 开启HTTPS加速后，需要上传加速域名的证书和私钥，证书和私钥需要匹配，否则会校验出错。
+- 开启HTTPS加速后，需要上传加速域名的证书和私钥，证书和域名、证书和私钥需要匹配，否则会校验出错。
 
 - 支持看证书信息，但不支持证书下载，也不支持秘钥查看，请保管好证书相关信息。
+- 暂不不支持中间证书或证书链，用户只需上传加速域名对应的具体证书。
 
 ### 证书格式说明
 
@@ -43,7 +41,6 @@ Azure CDN提供HTTPS安全加速服务，支持用户上传自有证书，也支
     >
     >openssl.exe pkcs8 -topk8 -inform PEM -outform PEM -in .\keyfile.key -out converted.key -nocrypt
 
-- 暂不不支持中间证书或证书链，用户只需上传加速域名对应的具体证书。
 
 ### 常见证书格式转换
 
@@ -135,18 +132,18 @@ Azure CDN提供HTTPS安全加速服务，支持用户上传自有证书，也支
     ![][14]   
 
 <!--Image references-->
-[1]: ./httpsimage/manage.png
-[2]: ./httpsimage/oldportal.png
-[3]: ./httpsimage/newportaloverview.png
-[4]: ./httpsimage/uploadcert.png
-[5]: ./httpsimage/bindcert1.png
-[6]: ./httpsimage/bindcert1.1.png
-[7]: ./httpsimage/certdetail.png
-[8]: ./httpsimage/bindcert2.png
-[9]: ./httpsimage/bindcert3.png
-[10]: ./httpsimage/success.png
-[11]: ./httpsimage/successdomainstatuspng.png
-[12]: ./httpsimage/cert4.png
-[13]: ./httpsimage/deploying.png
-[14]: ./httpsimage/finalaccess.png
-[15]: ./httpsimage/ibizapricingtier.png
+[1]: ./media/cdn-httpsimage/manage.png
+[2]: ./media/cdn-httpsimage/oldportal.png
+[3]: ./media/cdn-httpsimage/newportaloverview.png
+[4]: ./media/cdn-httpsimage/uploadcert.png
+[5]: ./media/cdn-httpsimage/bindcert1.png
+[6]: ./media/cdn-httpsimage/bindcert1.1.png
+[7]: ./media/cdn-httpsimage/certdetail.png
+[8]: ./media/cdn-httpsimage/bindcert2.png
+[9]: ./media/cdn-httpsimage/bindcert3.png
+[10]: ./media/cdn-httpsimage/success.png
+[11]: ./media/cdn-httpsimage/successdomainstatuspng.png
+[12]: ./media/cdn-httpsimage/cert4.png
+[13]: ./media/cdn-httpsimage/deploying.png
+[14]: ./media/cdn-httpsimage/finalaccess.png
+[15]: ./media/cdn-httpsimage/ibizapricingtier.png
