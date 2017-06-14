@@ -60,7 +60,7 @@
 
 
 ### <a name="can-i-create-a-preconfigured-solution-if-i-have-microsoft-azure-for-dreamspark"></a> 如果有 Azure for DreamSpark，是否可以创建预配置解决方案？
-当前无法使用 [Azure for DreamSpark][lnk-dreamspark] 帐户创建预配置解决方案。但是，可以在几分钟内创建一个[试用帐户][1rmb-trial]，以便创建预配置的解决方案。
+当前无法使用 Azure for DreamSpark 帐户创建预配置解决方案。但是，可以在几分钟内创建一个[试用帐户][1rmb-trial]，以便创建预配置的解决方案。
 
 ### <a name="can-i-create-a-preconfigured-solution-if-i-have-cloud-solution-provider-csp-subscription"></a>如果我有云解决方案提供商 (CSP) 订阅，是否可以创建预配置的解决方案？
 当前无法通过云解决方案提供商 (CSP) 订阅创建预配置的解决方案。 但是，可以在几分钟内创建一个 [Azure 试用帐户][1rmb-trial]，以便创建预配置的解决方案。
@@ -79,7 +79,6 @@
 [lnk-azureiotsuite]: https://www.azureiotsuite.cn/
 [lnk-classic-portal]: https://manage.windowsazure.cn
 [lnk-remote-monitoring-github]: https://github.com/Azure/azure-iot-remote-monitoring
-[lnk-dreamspark]: https://www.dreamspark.com/Product/Product.aspx?productid=99
 [1rmb-trial]: /pricing/1rmb-trial
 [lnk-delete-aad-tennant]: http://blogs.msdn.com/b/ericgolpe/archive/2015/04/30/walkthrough-of-deleting-an-azure-ad-tenant.aspx
 [lnk-cloud-deployment]: https://github.com/Azure/azure-iot-remote-monitoring/blob/master/Docs/cloud-deployment.md
