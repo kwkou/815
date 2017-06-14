@@ -5,8 +5,7 @@
     documentationcenter=".net"
     author="dominicbetts"
     manager="timlt"
-    editor=""
-    translationtype="Human Translation" />
+    editor="" />
 <tags
     ms.assetid="f40604ff-8fd6-4969-9e99-8574fbcf036c"
     ms.service="iot-hub"
@@ -15,11 +14,13 @@
     ms.tgt_pltfrm="na"
     ms.workload="na"
     ms.date="03/16/2017"
-    wacn.date="04/17/2017"
-    ms.author="dobett"
-    ms.sourcegitcommit="7cc8d7b9c616d399509cd9dbdd155b0e9a7987a8"
-    ms.openlocfilehash="bb9010e66772464d88d12f4756e76459769c0cd8"
-    ms.lasthandoff="04/07/2017" />
+    wacn.date="06/05/2017"
+    ms.author="v-yiso"
+    ms.translationtype="Human Translation"
+    ms.sourcegitcommit="08618ee31568db24eba7a7d9a5fc3b079cf34577"
+    ms.openlocfilehash="2325b0d84eb9372437f2b9a53332b040271fecb9"
+    ms.contentlocale="zh-cn"
+    ms.lasthandoff="05/26/2017" />
 
 # <a name="connect-your-simulated-device-to-your-iot-hub-using-net"></a>使用 .NET 将模拟设备连接到 IoT 中心
 [AZURE.INCLUDE [iot-hub-selector-get-started](../../includes/iot-hub-selector-get-started.md)]
@@ -38,7 +39,7 @@
 若要完成本教程，您需要以下各项：
 
 * Visual Studio 2015 或 Visual Studio 2017。
-* 有效的 Azure 帐户。 （如果没有帐户，只需花费几分钟就能创建一个[帐户][lnk-free-trial]。）
+* 有效的 Azure 帐户。 如果没有帐户，可以创建一个[试用帐户][lnk-free-trial]，只需几分钟即可完成。
 
 [AZURE.INCLUDE [iot-hub-get-started-create-hub](../../includes/iot-hub-get-started-create-hub.md)]
 
@@ -93,10 +94,11 @@
 
 
 > [AZURE.NOTE]
-IoT 中心标识注册表仅存储用于实现 IoT 中心安全访问的设备标识。它存储设备 ID 和密钥作为安全凭据，以及启用或禁用标志让你禁用对单个设备的访问。如果应用程序需要存储其他特定于设备的元数据，则应使用特定于应用程序的存储。有关详细信息，请参阅 [IoT 中心开发人员指南][lnk-devguide-identity]。
+> IoT 中心标识注册表仅存储用于实现 IoT 中心安全访问的设备标识。 它存储设备 ID 和密钥作为安全凭据，以及启用或禁用标志让你禁用对单个设备的访问。 如果应用程序需要存储其他特定于设备的元数据，则应使用特定于应用程序的存储。 有关详细信息，请参阅 [IoT 中心开发人员指南][lnk-devguide-identity]。
 > 
 > 
 
+<a id="D2C_csharp"></a>
 ## <a name="receive-device-to-cloud-messages"></a>接收设备到云的消息
 本部分将创建一个 .NET 控制台应用，用于从 IoT 中心读取设备到云的消息。 IoT 中心公开与 [Azure 事件中心][lnk-event-hubs-overview]兼容的终结点，以让用户读取设备到云的消息。 为了简单起见，本教程创建的基本读取器不适用于高吞吐量部署。 若要了解如何大规模处理设备到云的消息，请参阅[处理设备到云的消息][lnk-process-d2c-tutorial]教程。 若要深入了解如何处理来自事件中心的消息，请参阅[事件中心入门][lnk-eventhubs-tutorial]教程。 （本教程适用与 IoT 中心和事件中心相兼容的终结点。）
 
@@ -179,29 +181,33 @@ IoT 中心标识注册表仅存储用于实现 IoT 中心安全访问的设备�
    
         private static async void SendDeviceToCloudMessagesAsync()
         {
-            double avgWindSpeed = 10; // m/s
+            double minTemperature = 20;
+            double minHumidity = 60;
             Random rand = new Random();
    
             while (true)
             {
-                double currentWindSpeed = avgWindSpeed + rand.NextDouble() * 4 - 2;
+                double currentTemperature = minTemperature + rand.NextDouble() * 15;
+                double currentHumidity = minHumidity + rand.NextDouble() * 20;
    
                 var telemetryDataPoint = new
                 {
                     deviceId = "myFirstDevice",
-                    windSpeed = currentWindSpeed
+                    temperature = currentTemperature,
+                    humidity = currentHumidity
                 };
                 var messageString = JsonConvert.SerializeObject(telemetryDataPoint);
                 var message = new Message(Encoding.ASCII.GetBytes(messageString));
+                message.Properties.Add("temperatureAlert", (currentTemperature > 30) ? "true" : "false");
    
                 await deviceClient.SendEventAsync(message);
                 Console.WriteLine("{0} > Sending message: {1}", DateTime.Now, messageString);
    
-                Task.Delay(1000).Wait();
+                await Task.Delay(1000);
             }
         }
    
-    此方法每隔一秒发送一条新的设备到云消息。该消息包含一个具有设备 ID 的 JSON 序列化对象和一个随机生成的编号，用于模拟风速传感器。
+    此方法每隔一秒发送一条新的设备到云消息。 该消息包含一个具有设备 ID 的 JSON 序列化对象和一个随机生成的编号，用于模拟温度传感器和湿度传感器。
 7. 最后，在 **Main** 方法中添加以下行：
    
         Console.WriteLine("Simulated device\n");
@@ -225,10 +231,12 @@ IoT 中心标识注册表仅存储用于实现 IoT 中心安全访问的设备�
 1. 在 Visual Studio 的“解决方案资源管理器”中右键单击解决方案，然后单击“设置启动项目”。 选择“多个启动项目”，然后针对“ReadDeviceToCloudMessages”和“SimulatedDevice”项目选择“启动”作为操作。
 
 	![启动项目属性][41]
+	
 2. 按 **F5** 启动这两个应用，使其运行。 来自 **SimulatedDevice** 应用的控制台输出会显示模拟设备应用发送给 IoT 中心的消息。 来自 **ReadDeviceToCloudMessages** 应用的控制台输出则会显示 IoT 中心接收的消息。
 
 	![来自应用的控制台输出][42]
-3. [Azure 门户][lnk-portal]中的“使用情况”磁贴显示发送到 IoT 中心的消息数：
+	
+3. [Azure 门户预览][lnk-portal]中的“使用情况”磁贴显示发送到 IoT 中心的消息数：
 
 	![Azure 门户的“使用情况”磁贴][43]
 
@@ -238,7 +246,8 @@ IoT 中心标识注册表仅存储用于实现 IoT 中心安全访问的设备�
 若要继续了解 IoT 中心入门知识并浏览其他 IoT 方案，请参阅：
 
 * [连接你的设备][lnk-connect-device]
-* [IoT 网关 SDK 入门][lnk-gateway-SDK]
+* [设备管理入门][lnk-device-management]
+* [IoT Edge 入门][lnk-gateway-SDK]
 
 若要了解如何扩展 IoT 解决方案和如何大规模处理设备到云的消息，请参阅 [Process device-to-cloud messages][lnk-process-d2c-tutorial] （处理设备到云的消息）教程。
 
@@ -267,9 +276,6 @@ IoT 中心标识注册表仅存储用于实现 IoT 中心安全访问的设备�
 [lnk-device-nuget]: https://www.nuget.org/packages/Microsoft.Azure.Devices.Client/
 [lnk-transient-faults]: https://msdn.microsoft.com/zh-cn/library/hh680901(v=pandp.50).aspx
 [lnk-connected-service]: https://visualstudiogallery.msdn.microsoft.com/e254a3a5-d72e-488e-9bd3-8fee8e0cd1d6
-
+[lnk-device-management]: /documentation/articles/iot-hub-node-node-device-management-get-started/
 [lnk-gateway-SDK]: /documentation/articles/iot-hub-linux-gateway-sdk-get-started/
 [lnk-connect-device]: /develop/iot/
-
-
-<!--Update_Description:update wording-->

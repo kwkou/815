@@ -1,6 +1,6 @@
 <properties
     pageTitle="使用 Azure PowerShell 配置文件上传 | Azure"
-    description="如何使用 Azure PowerShell cmdlet 配置 IoT 中心，以便从连接的设备上载文件。 包括有关配置目标 Azure 存储帐户的信息。"
+    description="如何使用 Azure PowerShell cmdlet 配置 IoT 中心，以便从连接的设备上传文件。 包括有关配置目标 Azure 存储帐户的信息。"
     services="iot-hub"
     documentationcenter=""
     author="dominicbetts"
@@ -14,19 +14,19 @@
     ms.tgt_pltfrm="na"
     ms.workload="na"
     ms.date="03/23/2017"
-    wacn.date="05/15/2017"
-    ms.author="dobett"
+    wacn.date="06/05/2017"
+    ms.author="v-yiso"
     ms.translationtype="Human Translation"
-    ms.sourcegitcommit="457fc748a9a2d66d7a2906b988e127b09ee11e18"
-    ms.openlocfilehash="a49f4c420c2a53f71482f9ad37f5627e1e9dac6e"
+    ms.sourcegitcommit="08618ee31568db24eba7a7d9a5fc3b079cf34577"
+    ms.openlocfilehash="11ff6991ce38debbedb040258a8eee52465b40b7"
     ms.contentlocale="zh-cn"
-    ms.lasthandoff="05/05/2017" />
+    ms.lasthandoff="05/26/2017" />
 
-# <a name="configure-iot-hub-file-uploads-using-powershell"></a>使用 PowerShell 配置 IoT 中心文件上载
+# <a name="configure-iot-hub-file-uploads-using-powershell"></a>使用 PowerShell 配置 IoT 中心文件上传
 
 [AZURE.INCLUDE [iot-hub-file-upload-selector](../../includes/iot-hub-file-upload-selector.md)]
 
-若要使用 [IoT 中心的文件上载功能][lnk-upload]，必须先将 Azure 存储帐户与 IoT 中心关联。 可以使用现有存储帐户，也可以创建新的存储帐户。
+若要使用 [IoT 中心的文件上传功能][lnk-upload]，必须先将 Azure 存储帐户与 IoT 中心关联。 可以使用现有存储帐户，也可以创建新的存储帐户。
 
 若要完成本教程，需要以下各项：
 
@@ -56,7 +56,7 @@
 
 以下步骤假设已使用 **Resource Manager** 部署模型而不**经典**部署模型创建了存储帐户。
 
-如 IoT 中心配置文件将上载从设备，需要 Azure 存储帐户相同的订阅中的连接字符串。 还需要存储帐户中 Blob 容器的名称。 使用以下命令检索存储帐户密钥：
+如 IoT 中心配置文件将上传从设备，需要 Azure 存储帐户相同的订阅中的连接字符串。 还需要存储帐户中 Blob 容器的名称。 使用以下命令检索存储帐户密钥：
 
     Get-AzureRmStorageAccountKey `
       -Name {your storage account name} `
@@ -64,7 +64,7 @@
 
 记下 **key1** 存储帐户密钥值。 在后续步骤中需要用到它。
 
-可将现有的 Blob 容器用于文件上载，或新建一个容器：
+可将现有的 Blob 容器用于文件上传，或新建一个容器：
 
 * 若要列出存储帐户中的现有 Blob 容器，请使用以下命令：
 
@@ -85,21 +85,21 @@
 
 ## <a name="configure-your-iot-hub"></a>配置 IoT 中心
 
-现在可以配置 IoT 中心启用[文件上载功能][lnk-upload]使用存储帐户详细信息。
+现在可以配置 IoT 中心启用[文件上传功能][lnk-upload]使用存储帐户详细信息。
 
 配置需要以下值：
 
 **存储容器**：当前 Azure 订阅中要与 IoT 中心关联的 Azure 存储帐户中的 Blob 容器。 检索在上一部分中必要的存储帐户信息。 IoT 中心会自动生成对此 Blob 容器具有写入权限的 SAS URI，以供设备上传文件时使用。
 
-**接收已上载文件的通知**：启用或禁用文件上载通知。
+**接收已上传文件的通知**：启用或禁用文件上传通知。
 
 **SAS TTL**：此设置是 IoT 中心返回给设备的 SAS URI 生存时间。 默认设置为一小时。
 
-**文件通知设置默认 TTL**：文件上载通知到期前的生存时间。 默认设置为一天。
+**文件通知设置默认 TTL**：文件上传通知到期前的生存时间。 默认设置为一天。
 
-**文件通知最大传送数**：IoT 中心将尝试传送文件上载通知的次数。 默认设置为 10。
+**文件通知最大传送数**：IoT 中心将尝试传送文件上传通知的次数。 默认设置为 10。
 
-使用以下 PowerShell cmdlet 在 IoT 中心内配置上载文件设置：
+使用以下 PowerShell cmdlet 在 IoT 中心内配置上传文件设置：
 
     Set-AzureRmIotHub `
         -ResourceGroupName "{your iot hub resource group}" `
@@ -123,7 +123,7 @@
 若要进一步探索 IoT 中心的功能，请参阅：
 
 * [IoT 中心开发人员指南][lnk-devguide]
-* [使用 IoT 网关 SDK 模拟设备][lnk-gateway]
+* [使用 IoT Edge 模拟设备][lnk-gateway]
 * [从根本上保护 IoT 解决方案][lnk-securing]
 
 [lnk-upload]: /documentation/articles/iot-hub-devguide-file-upload/
@@ -135,9 +135,9 @@
 [lnk-devguide]: /documentation/articles/iot-hub-devguide/
 [lnk-gateway]: /documentation/articles/iot-hub-linux-gateway-sdk-simulated-device/
 [lnk-securing]: /documentation/articles/iot-hub-security-ground-up/
-[lnk-powershell-install]: https://docs.microsoft.com/zh-cn/powershell/azureps-cmdlets-docs/
-[lnk-powershell-storage]: https://docs.microsoft.com/zh-cn/powershell/storage/
-[lnk-powershell-iothub]: https://docs.microsoft.com/zh-cn/powershell/resourcemanager/azurerm.iothub/v1.1.0/new-azurermiothub
+[lnk-powershell-install]: /documentation/articles/powershell-install-configure/
+[lnk-powershell-storage]: https://docs.microsoft.com/zh-cn/powershell/module/azurerm.storage/
+[lnk-powershell-iothub]: https://docs.microsoft.com/zh-cn/powershell/module/azurerm.iothub/new-azurermiothub
 [lnk-portal-hub]: /documentation/articles/iot-hub-create-through-portal/
 [lnk-free-trial]: /pricing/1rmb-trial/
 [lnk-portal-storage]: /documentation/articles/storage-create-storage-account/

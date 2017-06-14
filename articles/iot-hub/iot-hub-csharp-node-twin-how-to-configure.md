@@ -5,8 +5,7 @@
     documentationcenter=".net"
     author="fsautomata"
     manager="timlt"
-    editor=""
-    translationtype="Human Translation" />
+    editor="" />
 <tags
     ms.assetid="3c627476-f982-43c9-bd17-e0698c5d236d"
     ms.service="iot-hub"
@@ -15,11 +14,13 @@
     ms.tgt_pltfrm="na"
     ms.workload="na"
     ms.date="03/30/2017"
-    wacn.date="05/08/2017"
-    ms.author="elioda"
-    ms.sourcegitcommit="2c4ee90387d280f15b2f2ed656f7d4862ad80901"
-    ms.openlocfilehash="3e74db5825098cf7821654328a5132b8936e2019"
-    ms.lasthandoff="04/28/2017" />
+    wacn.date="06/05/2017"
+    ms.author="v-yiso"
+    ms.translationtype="Human Translation"
+    ms.sourcegitcommit="08618ee31568db24eba7a7d9a5fc3b079cf34577"
+    ms.openlocfilehash="f5dfda908b19a262ca9202db52ef784110424d49"
+    ms.contentlocale="zh-cn"
+    ms.lasthandoff="05/26/2017" />
 
 # <a name="use-desired-properties-to-configure-devices"></a>使用所需属性配置设备
 [AZURE.INCLUDE [iot-hub-selector-twin-how-to-configure](../../includes/iot-hub-selector-twin-how-to-configure.md)]
@@ -222,11 +223,10 @@
     **Registry** 对象公开从服务与设备孪生进行交互所需的所有方法。 此代码将初始化 **Registry** 对象，然后检索 **myDeviceId** 的设备孪生，并使用新的遥测配置对象更新其所需属性。
     然后，该代码会每隔 10 秒钟查询一次存储在 IoT 中心的设备孪生，并打印所需遥测配置和报告遥测配置。 若要了解如何在所有设备中生成丰富的报告，请参阅 [IoT 中心查询语言][lnk-query]。
    
-    > [AZURE.IMPORTANT]
-    > 为进行说明，此应用程序每 10 秒查询 IoT 中心一次。 使用查询跨多个设备生成面向用户的报表，而不检测更改。 如果解决方案需要设备事件的实时通知，请使用 [设备到云的消息][lnk-d2c]。
-    > 
-    > 
-    
+   > [AZURE.IMPORTANT]
+   > 为进行说明，此应用程序每 10 秒查询 IoT 中心一次。 使用查询跨多个设备生成面向用户的报表，而不检测更改。 如果解决方案需要设备事件的实时通知，请使用[孪生通知][lnk-twin-notifications]。
+   > 
+   > 
 7. 最后，在 **Main** 方法中添加以下行：
    
             registryManager = RegistryManager.CreateFromConnectionString(connectionString);
@@ -250,9 +250,9 @@
 - 通过 [Use direct methods][lnk-methods-tutorial]（使用直接方法）教程学习如何以交互方式控制设备（例如如何从用户控制的应用打开风扇）。
 
 <!-- images -->
-
-[img-servicenuget]: ./media/iot-hub-csharp-node-twin-getstarted/servicesdknuget.png
-[img-createapp]: ./media/iot-hub-csharp-node-twin-getstarted/createnetapp.png
+[img-servicenuget]: ./media/iot-hub-csharp-node-twin-how-to-configure/servicesdknuget.png
+[img-createapp]: ./media/iot-hub-csharp-node-twin-how-to-configure/createnetapp.png
+[img-deviceconfigured]: ./media/iot-hub-csharp-node-twin-how-to-configure/deviceconfigured.png
 
 <!-- links -->
 
@@ -262,20 +262,17 @@
 
 [lnk-devguide-jobs]: /documentation/articles/iot-hub-devguide-jobs/
 [lnk-query]: /documentation/articles/iot-hub-devguide-query-language/
-[lnk-d2c]: /documentation/articles/iot-hub-devguide-messaging/#device-to-cloud-messages
+[lnk-twin-notifications]: /documentation/articles/iot-hub-devguide-device-twins/#back-end-operations
 [lnk-methods]: /documentation/articles/iot-hub-devguide-direct-methods/
 [lnk-dm-overview]: /documentation/articles/iot-hub-device-management-overview/
 [lnk-twin-tutorial]: /documentation/articles/iot-hub-node-node-twin-getstarted/
-[lnk-dev-setup]: https://github.com/Azure/azure-iot-sdks/blob/master/doc/get_started/node-devbox-setup.md
+[lnk-schedule-jobs]: /documentation/articles/iot-hub-node-node-schedule-jobs/
+[lnk-dev-setup]: https://github.com/Azure/azure-iot-sdk-node/blob/master/doc/node-devbox-setup.md
 [lnk-connect-device]: /develop/iot/
 [lnk-device-management]: /documentation/articles/iot-hub-node-node-device-management-get-started/
-[lnk-gateway-SDK]: /documentation/articles/iot-hub-linux-gateway-sdk-get-started/
 [lnk-iothub-getstarted]: /documentation/articles/iot-hub-node-node-getstarted/
 [lnk-methods-tutorial]: /documentation/articles/iot-hub-node-node-direct-methods/
 
 [lnk-guid]: https://en.wikipedia.org/wiki/Globally_unique_identifier
 
 [lnk-how-to-configure-createapp]: /documentation/articles/iot-hub-node-node-twin-how-to-configure/#create-the-simulated-device-app
-
-<!---HONumber=Mooncake_0109_2017-->
-<!--Update_Description:update wording-->

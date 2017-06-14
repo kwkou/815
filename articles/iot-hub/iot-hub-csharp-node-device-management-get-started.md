@@ -5,8 +5,7 @@
     documentationcenter=".net"
     author="juanjperez"
     manager="timlt"
-    editor=""
-    translationtype="Human Translation" />
+    editor="" />
 <tags
     ms.assetid="e044006d-ffd6-469b-bc63-c182ad066e31"
     ms.service="iot-hub"
@@ -15,11 +14,13 @@
     ms.tgt_pltfrm="na"
     ms.workload="na"
     ms.date="11/17/2016"
-    wacn.date="04/17/2017"
-    ms.author="juanpere"
-    ms.sourcegitcommit="7cc8d7b9c616d399509cd9dbdd155b0e9a7987a8"
-    ms.openlocfilehash="402613a5879faeb4f69af6a6025afb2873b8adbc"
-    ms.lasthandoff="04/07/2017" />
+    wacn.date="06/05/2017"
+    ms.author="v-yiso"
+    ms.translationtype="Human Translation"
+    ms.sourcegitcommit="08618ee31568db24eba7a7d9a5fc3b079cf34577"
+    ms.openlocfilehash="e5d88eea2f6c0b83b8654790fab47e06cac53661"
+    ms.contentlocale="zh-cn"
+    ms.lasthandoff="05/26/2017" />
 
 # <a name="get-started-with-device-management-netnode"></a>设备管理入门 (.NET/Node)
 
@@ -54,7 +55,7 @@
 * Visual Studio 2015 或 Visual Studio 2017。
 * Node.js 版本 0.12.x 或更高版本。
 * [准备开发环境][lnk-dev-setup]介绍了如何在 Windows 或 Linux 上安装本教程所用的 Node.js。
-* 有效的 Azure 帐户。（如果没有帐户，只需花费几分钟就能创建一个[帐户][lnk-free-trial]。）
+* 有效的 Azure 帐户。 如果没有帐户，可以创建一个[试用帐户][lnk-free-trial]，只需几分钟即可完成。
 
 [AZURE.INCLUDE [iot-hub-get-started-create-hub](../../includes/iot-hub-get-started-create-hub.md)]
 
@@ -231,7 +232,7 @@ IoT 解决方案可扩展已定义的设备管理模式集，或通过使用设�
 
 若要了解如何扩展 IoT 解决方案并在多个设备上计划方法调用，请参阅 [Schedule and broadcast jobs][lnk-tutorial-jobs] （计划和广播作业）教程。
 
-若要继续完成 IoT 中心的入门内容，请参阅 [IoT 网关 SDK 入门][lnk-gateway-SDK]。
+若要继续完成 IoT 中心入门内容，请参阅 [IoT Edge 入门][lnk-gateway-SDK]。
 
 <!-- images and links -->
 [img-output]: ./media/iot-hub-get-started-with-dm/image6.png
@@ -253,5 +254,3 @@ IoT 解决方案可扩展已定义的设备管理模式集，或通过使用设�
 [lnk-c2dmethod]: /documentation/articles/iot-hub-devguide-direct-methods/
 [lnk-transient-faults]: https://msdn.microsoft.com/zh-cn/library/hh680901(v=pandp.50).aspx
 [lnk-nuget-service-sdk]: https://www.nuget.org/packages/Microsoft.Azure.Devices/
-
-<!--Update_Description:update wording-->

@@ -5,8 +5,7 @@
     documentationcenter=".net"
     author="dominicbetts"
     manager="timlt"
-    editor=""
-    translationtype="Human Translation" />
+    editor="" />
 <tags
     ms.assetid="57ba52ae-19c6-43e4-bc6c-d8a5c2476e95"
     ms.service="iot-hub"
@@ -15,11 +14,13 @@
     ms.tgt_pltfrm="na"
     ms.workload="na"
     ms.date="03/22/2017"
-    wacn.date="05/08/2017"
-    ms.author="dobett"
-    ms.sourcegitcommit="7cc8d7b9c616d399509cd9dbdd155b0e9a7987a8"
-    ms.openlocfilehash="5bca1dededbeec3ebeb5efe744042a0bf7f7a533"
-    ms.lasthandoff="04/07/2017" />
+    wacn.date="06/05/2017"
+    ms.author="v-yiso"
+    ms.translationtype="Human Translation"
+    ms.sourcegitcommit="08618ee31568db24eba7a7d9a5fc3b079cf34577"
+    ms.openlocfilehash="7f45c5f5117d5e0b3fad64e756a899a638dc7e61"
+    ms.contentlocale="zh-cn"
+    ms.lasthandoff="05/26/2017" />
 
 # <a name="reference---iot-hub-endpoints"></a>参考 - IoT 中心终结点
 ## <a name="list-of-built-in-iot-hub-endpoints"></a>内置 IoT 中心终结点列表
@@ -37,19 +38,19 @@ Azure IoT 中心属于多租户服务，向各种执行组件公开功能。 下
   
   * *发送设备到云的消息*。使用此终结点[发送设备到云的消息][lnk-d2c]。
   * *接收云到设备的消息*。 设备使用此终结点接收面向[云到设备的消息][lnk-c2d]。
-  * *启动文件上载*。设备使用此终结点接收来自 IoT 中心的 Azure 存储 SAS URI，以便[上载文件][lnk-upload]。
-  * *检索并更新设备孪生的属性*。设备使用此终结点访问其[设备孪生][lnk-twins]的属性。
-  * *接收直接方法请求*。设备使用此终结点侦听[直接方法][lnk-methods]的请求。
-    
-    这些终结点使用 [MQTT v3.1.1][lnk-mqtt]、HTTP 1.1 和 [AMQP 1.0][lnk-amqp] 协议进行公开。请注意，也可以通过端口 443 上的 [WebSockets][lnk-websockets] 来实现 AMQP。
-    
-    设备孪生的终结点和方法的终结点只能通过 [MQTT v3.1.1][lnk-mqtt] 使用。
-* **服务终结点**。每个 IoT 中心公开解决方案后端可用来与设备通信的一组终结点。这些终结点目前只能通过 [AMQP][lnk-amqp] 协议公开，方法调用终结点除外，后者通过 HTTP 1.1 公开。
-  
-  * *接收设备到云的消息*。此终结点与 [Azure 事件中心][lnk-event-hubs]兼容。后端服务可用它来读取由设备发送的[设备到云消息][lnk-d2c]。除了此内置终结点外，还可以在 IoT 中心创建自定义终结点。
-  * *发送云到设备的消息并接收传递确认*。这些终结点可让解决方案后端发送可靠的[云到设备的消息][lnk-c2d]，以及接收对应的传送或过期确认。
-  * *接收文件通知*。此消息传递终结点允许你在设备成功上传文件时接收通知。
-  * *直接方法调用*。此终结点允许后端服务调用设备上的[直接方法][lnk-methods]。
+  * *启动文件上传*。 设备使用此终结点接收来自 IoT 中心的 Azure 存储 SAS URI，以便[上传文件][lnk-upload]。
+  * *检索并更新设备孪生的属性*。 设备使用此终结点访问其 [设备孪生][lnk-twins]的属性。
+  * *接收直接方法请求*。 设备使用此终结点侦听[直接方法][lnk-methods]的请求。
+
+    这些终结点使用 [MQTT v3.1.1][lnk-mqtt]、HTTP 1.1 和 [AMQP 1.0][lnk-amqp] 协议进行公开。 请注意，也可以通过端口 443 上的 [WebSockets][lnk-websockets] 来实现 AMQP。
+
+    设备孪生的终结点和方法的终结点只能通过 [MQTT v3.1.1][lnk-mqtt]使用。
+* **服务终结点**。 每个 IoT 中心公开解决方案后端可用来与设备通信的一组终结点。 这些终结点目前只能通过 [AMQP][lnk-amqp] 协议公开，方法调用终结点除外，后者通过 HTTP 1.1 公开。
+
+  * *接收设备到云的消息*。 此终结点与 [Azure 事件中心][lnk-event-hubs]兼容。 后端服务可用它来读取由设备发送的 [设备到云消息][lnk-d2c] 。 除了此内置终结点外，还可以在 IoT 中心创建自定义终结点。
+  * *发送云到设备的消息并接收传递确认*。 这些终结点可让解决方案后端发送可靠的 [云到设备的消息][lnk-c2d]，以及接收对应的传送或过期确认。
+  * *接收文件通知*。 此消息传递终结点允许你在设备成功上传文件时接收通知。 
+  * *直接方法调用*。 此终结点允许后端服务调用设备上的[直接方法][lnk-methods]。
   * *接收操作监视事件*。 此终结点可以用于接收操作监视事件，前提是已将 IoT 中心配置为发出这些事件。 如需更多详细信息，请参阅 [IoT 中心操作监视][lnk-operations-mon]。
 
 [Azure IoT SDK][lnk-sdks] 一文介绍了访问这些终结点的各种方法。
@@ -93,7 +94,6 @@ IoT 中心需要这些服务终结点的写入权限，以便使用消息路由�
 [lnk-event-hubs]: /documentation/services/event-hubs/
 
 [lnk-tls]: https://tools.ietf.org/html/rfc5246
-
 
 [lnk-sdks]: /documentation/articles/iot-hub-devguide-sdks/
 [lnk-accesscontrol]: /documentation/articles/iot-hub-devguide-security/#access-control-and-permissions

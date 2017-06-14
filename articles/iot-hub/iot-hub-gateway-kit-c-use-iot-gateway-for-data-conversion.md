@@ -1,6 +1,6 @@
 <properties
-    pageTitle="通过 Azure IoT 网关 SDK 在 IoT 网关上进行数据转换 | Azure"
-    description="通过 Azure IoT 网关 SDK 的一个自定义模块，使用 IoT 网关转换传感器数据的格式。"
+    pageTitle="通过 Azure IoT Edge 在 IoT 网关上进行数据转换 | Azure"
+    description="通过 Azure IoT Edge 的自定义模块，使用 IoT 网关转换传感器数据的格式。"
     services="iot-hub"
     documentationcenter=""
     author="shizn"
@@ -15,22 +15,22 @@
     ms.tgt_pltfrm="na"
     ms.workload="na"
     ms.date="04/07/2017"
-    wacn.date="05/15/2017"
-    ms.author="xshi"
+    wacn.date="06/05/2017"
+    ms.author="v-yiso"
     ms.translationtype="Human Translation"
-    ms.sourcegitcommit="457fc748a9a2d66d7a2906b988e127b09ee11e18"
-    ms.openlocfilehash="09675512a7c3c7695398ac113e37d81f32c842dd"
+    ms.sourcegitcommit="08618ee31568db24eba7a7d9a5fc3b079cf34577"
+    ms.openlocfilehash="2a8e177db676c6ab6f1cc37367ca92d7ef56c1e2"
     ms.contentlocale="zh-cn"
-    ms.lasthandoff="05/05/2017" />
+    ms.lasthandoff="05/26/2017" />
 
-# <a name="use-iot-gateway-for-sensor-data-transformation-with-azure-iot-gateway-sdk"></a>通过 Azure IoT 网关 SDK，使用 IoT 网关进行传感器数据转换
+# <a name="use-iot-gateway-for-sensor-data-transformation-with-azure-iot-edge"></a>通过 Azure IoT Edge，使用 IoT 网关进行传感器数据转换
 
 > [AZURE.NOTE]
-> 在开始本教程之前，请确保已按顺序完成以下课程：</br>
-> * [将 Intel NUC 设置为 IoT 网关](/documentation/articles/iot-hub-gateway-kit-c-lesson1-set-up-nuc/)</br>
-> * [使用 IoT 网关将事项连接到云 - SensorTag 到 Azure IoT 中心](/documentation/articles/iot-hub-gateway-kit-c-iot-gateway-connect-device-to-cloud/)
+> 在开始本教程之前，请确保已按顺序完成以下课程：
+> <p>* [将 Intel NUC 设置为 IoT 网关](/documentation/articles/iot-hub-gateway-kit-c-lesson1-set-up-nuc/)
+> <p>* [使用 IoT 网关将事项连接到云 - SensorTag 到 Azure IoT 中心](/documentation/articles/iot-hub-gateway-kit-c-iot-gateway-connect-device-to-cloud/)
 
-IoT 网关的一个目的是在将收集的数据发送到云之前，先处理这些数据。 Azure IoT 网关 SDK 引入了可创建并组合形成数据处理工作流的模块。 模块接收消息，对其执行某些操作，然后将其转手供其他模块处理。
+IoT 网关的一个目的是在将收集的数据发送到云之前，先处理这些数据。 Azure IoT Edge 引入了可创建并组合形成数据处理工作流的模块。 模块接收消息，对其执行某些操作，然后将其转手供其他模块处理。
 
 ## <a name="what-you-learn"></a>学习内容
 
@@ -40,7 +40,7 @@ IoT 网关的一个目的是在将收集的数据发送到云之前，先处理�
 
 * 创建一个模块，将收到的消息转换为 .json 格式。
 * 编译该模块。
-* 通过 Azure IoT 网关 SDK，将模块添加到 BLE 示例应用程序。
+* 通过 Azure IoT Edge，将模块添加到 BLE 示例应用程序。
 * 运行示例应用程序。
 
 ## <a name="what-you-need"></a>所需条件
@@ -60,7 +60,7 @@ IoT 网关的一个目的是在将收集的数据发送到云之前，先处理�
         cd ~
         git clone https://github.com/Azure-Samples/iot-hub-c-intel-nuc-gateway-customized-module.git
 
-   这是采用 C 编程语言编写的本机 Azure 网关 SDK 模块。 该模块将收到的消息转换为以下格式：
+   这是采用 C 编程语言编写的本机 Azure Edge 模块。 该模块将收到的消息转换为以下格式：
 
         {"deviceId": "Intel NUC Gateway", "messageId": 0, "temperature": 0.0}
 
@@ -126,3 +126,8 @@ IoT 网关的一个目的是在将收集的数据发送到云之前，先处理�
 
         ./ble_gateway ble_gateway.json
 
+## <a name="next-steps"></a>后续步骤
+
+已成功使用 IoT 网关将消息从 SensorTag 转换为 .json 格式。
+
+[AZURE.INCLUDE [iot-hub-get-started-next-steps](../../includes/iot-hub-get-started-next-steps.md)]

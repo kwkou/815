@@ -5,8 +5,7 @@
     documentationcenter=""
     author="dominicbetts"
     manager="timlt"
-    editor=""
-    translationtype="Human Translation" />
+    editor="" />
 <tags
     ms.assetid="c5c9a497-bb03-4301-be2d-00edfb7d308f"
     ms.service="iot-hub"
@@ -15,12 +14,14 @@
     ms.tgt_pltfrm="na"
     ms.workload="na"
     ms.date="03/24/2017"
-    wacn.date="05/08/2017"
-    ms.author="dobett"
+    wacn.date="06/05/2017"
+    ms.author="v-yiso"
     ms.custom="H1Hack27Feb2017"
-    ms.sourcegitcommit="2c4ee90387d280f15b2f2ed656f7d4862ad80901"
-    ms.openlocfilehash="e21de76c8bde13814e4347330c819e9c87b86c90"
-    ms.lasthandoff="04/28/2017" />
+    ms.translationtype="Human Translation"
+    ms.sourcegitcommit="08618ee31568db24eba7a7d9a5fc3b079cf34577"
+    ms.openlocfilehash="d91fed5d91b11c6a4e1489e13af275c2fd1930fd"
+    ms.contentlocale="zh-cn"
+    ms.lasthandoff="05/26/2017" />
 
 # <a name="understand-and-use-azure-iot-sdks"></a>了解和使用 Azure IoT SDK
 
@@ -53,7 +54,7 @@ Microsoft Azure IoT 设备 SDK 包含的代码可帮助构建连接到 Azure IoT
 
 ### <a name="os-platform-and-hardware-compatibility"></a>操作系统平台和硬件兼容性
 
-有关与特定硬件设备的 SDK 兼容性的详细信息，请参阅 [文章][lnk-certified]。
+有关与特定硬件设备的 SDK 兼容性的详细信息，请参阅 [Azure IoT 认证设备目录][lnk-certified]。
 
 ## <a name="azure-iot-service-sdks"></a>Azure IoT 服务 SDK
 
@@ -109,7 +110,7 @@ Azure IoT 服务 SDK 包含的代码可帮助生成直接与 IoT 中心进行交
 [lnk-node-service-sdk]: https://github.com/Azure/azure-iot-sdk-node/tree/master/service
 [lnk-python-device-sdk]: https://github.com/Azure/azure-iot-sdk-python/tree/master/device
 [lnk-python-service-sdk]: https://github.com/Azure/azure-iot-sdk-python/tree/master/service
-[lnk-compatibility]: /documentation/articles/iot-hub-tested-configurations/
+[lnk-certified]: /documentation/articles/iot-hub-tested-configurations/
 [lnk-gateway-sdk]: https://github.com/Azure/azure-iot-gateway-sdk
 
 [lnk-dotnet-ref]: https://docs.microsoft.com/dotnet/api/microsoft.azure.devices
@@ -125,6 +126,3 @@ Azure IoT 服务 SDK 包含的代码可帮助生成直接与 IoT 中心进行交
 [lnk-devguide-quotas]: /documentation/articles/iot-hub-devguide-quotas-throttling/
 [lnk-devguide-query]: /documentation/articles/iot-hub-devguide-query-language/
 [lnk-devguide-mqtt]: /documentation/articles/iot-hub-mqtt-support/
-[lnk-certified]: /documentation/articles/iot-hub-tested-configurations/
-
-<!--Update_Description:update wording and link references-->

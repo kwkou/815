@@ -5,8 +5,7 @@
     documentationcenter=".net"
     author="dominicbetts"
     manager="timlt"
-    editor=""
-    translationtype="Human Translation" />
+    editor="" />
 <tags
     ms.assetid="45631e70-865b-4e06-bb1d-aae1175a52ba"
     ms.service="iot-hub"
@@ -14,12 +13,14 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="na"
-    ms.date="03/24/2017"
-    wacn.date="05/08/2017"
-    ms.author="dobett"
-    ms.sourcegitcommit="a114d832e9c5320e9a109c9020fcaa2f2fdd43a9"
-    ms.openlocfilehash="57d3c3bcbe8a61de0c037638b1ca0fd14d7770cc"
-    ms.lasthandoff="04/14/2017" />
+    ms.date="05/04/2017"
+    wacn.date="06/05/2017"
+    ms.author="v-yiso"
+    ms.translationtype="Human Translation"
+    ms.sourcegitcommit="08618ee31568db24eba7a7d9a5fc3b079cf34577"
+    ms.openlocfilehash="6237045893a7fc7ac5db60fa3c67f71c2d951c2c"
+    ms.contentlocale="zh-cn"
+    ms.lasthandoff="05/26/2017" />
 
 # <a name="control-access-to-iot-hub"></a>控制 IoT 中心的访问权限
 ## <a name="overview"></a>概述
@@ -376,8 +377,8 @@ IoT 中心还允许设备使用 [X.509 证书][lnk-x509]向 IoT 中心进行身�
 | --- | --- |
 | **RegistryRead** |授予对标识注册表的读取访问权限。 有关详细信息，请参阅[标识注册表][lnk-identity-registry]。 <br/>后端云服务将使用此权限。 |
 | **RegistryReadWrite** |授予对标识注册表的读取和写入访问权限。 有关详细信息，请参阅[标识注册表][lnk-identity-registry]。 <br/>后端云服务将使用此权限。 |
-| **ServiceConnect** |授予对面向云服务的通信和监视终结点的访问权限。 <br/>授予接收设备到云消息、发送云到设备消息和检索相应传送确认的权限。 <br/>授予检索文件上载的传送确认的权限。 <br/>授予访问设备孪生以更新标记和所需属性、检索报告属性和运行查询的权限。 <br/>后端云服务将使用此权限。 |
-| **DeviceConnect** |授予对面向设备的终结点的访问权限。 <br/>授予发送设备到云消息和接收云到设备消息的权限。 <br/>授予从设备执行文件上载的权限。 <br/>授予接收设备孪生所需属性通知和更新设备孪生报告属性的权限。 <br/>授予执行文件上载的权限。 <br/>此权限由设备使用。 |
+| **ServiceConnect** |授予对面向云服务的通信和监视终结点的访问权限。 <br/>授予接收设备到云消息、发送云到设备消息和检索相应传送确认的权限。 <br/>授予检索文件上传的传送确认的权限。 <br/>授予访问设备孪生以更新标记和所需属性、检索报告属性和运行查询的权限。 <br/>后端云服务将使用此权限。 |
+| **DeviceConnect** |授予对面向设备的终结点的访问权限。 <br/>授予发送设备到云消息和接收云到设备消息的权限。 <br/>授予从设备执行文件上传的权限。 <br/>授予接收设备孪生所需属性通知和更新设备孪生报告属性的权限。 <br/>授予执行文件上传的权限。 <br/>此权限由设备使用。 |
 
 ## <a name="additional-reference-material"></a>其他参考资料
 IoT 中心开发人员指南中的其他参考主题包括：
@@ -439,6 +440,3 @@ IoT 中心开发人员指南中的其他参考主题包括：
 [lnk-getstarted-tutorial]: /documentation/articles/iot-hub-csharp-csharp-getstarted/
 [lnk-c2d-tutorial]: /documentation/articles/iot-hub-csharp-csharp-c2d/
 [lnk-d2c-tutorial]: /documentation/articles/iot-hub-csharp-csharp-process-d2c/
-
-
-<!--Update_Description:update wording and link references-->

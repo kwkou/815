@@ -15,15 +15,17 @@
     ms.tgt_pltfrm="na"
     ms.workload="na"
     ms.date="03/27/2017"
-    wacn.date="05/15/2017"
-    ms.author="xshi"
+    wacn.date="06/05/2017"
+    ms.author="v-yiso"
     ms.translationtype="Human Translation"
-    ms.sourcegitcommit="457fc748a9a2d66d7a2906b988e127b09ee11e18"
-    ms.openlocfilehash="55fdab13b4412d4c758f13d4c4cfe3d7e0ce0403"
+    ms.sourcegitcommit="08618ee31568db24eba7a7d9a5fc3b079cf34577"
+    ms.openlocfilehash="b3aab877b83a69f45fa9e803952b089c4883e348"
     ms.contentlocale="zh-cn"
-    ms.lasthandoff="05/05/2017" />
+    ms.lasthandoff="05/26/2017" />
 
 # <a name="use-iothub-explorer-to-send-and-receive-messages-between-your-device-and-iot-hub"></a>使用 iothub-explorer 在设备与 IoT 中心之间发送和接收消息
+
+![端到端关系图](./media/iot-hub-get-started-e2e-diagram/2.png)
 
 [AZURE.INCLUDE [iot-hub-get-started-note](../../includes/iot-hub-get-started-note.md)]
 
@@ -38,9 +40,9 @@
 - 使用 iothub-explorer 监视设备到云的消息。
 - 使用 iothub-explorer 发送云到设备的消息。
 
-## <a name="what-you-need"></a>所需条件
+## <a name="what-you-need"></a>需要什么
 
-- 满足已完成的教程[将 ESP8266 连接到 Azure IoT 中心](/documentation/articles/iot-hub-arduino-huzzah-esp8266-get-started/)所述的以下要求：
+- 已完成教程[设置设备](/documentation/articles/iot-hub-raspberry-pi-kit-node-get-started/)，其中涵盖以下要求：
   - 一个有效的 Azure 订阅。
   - 已在订阅中创建一个 Azure IoT 中心。
   - 一个可向 Azure IoT 中心发送消息的客户端应用程序。
@@ -56,7 +58,7 @@
         iothub-explorer monitor-events <device-id> --login <IoTHubConnectionString>
 
    > [AZURE.NOTE]
-   > 从 IoT 中心获取 `<device-id>` 和 `<IoTHubConnectionString>`。 确保已完成以前的教程。
+   > 从 IoT 中心获取 `<device-id>` 和 `<IoTHubConnectionString>`。 确保已完成以前的教程。 或者可以尝试使用 `iothub-explorer monitor-events <device-id> --login "HostName=<my-hub>.azure-devices.net;SharedAccessKeyName=<my-policy>;SharedAccessKey=<my-policy-key>"`（如果有 `HostName`、`SharedAccessKeyName` 和 `SharedAccessKey`）。
 
 ## <a name="send-cloud-to-device-messages"></a>发送“云到设备”消息
 

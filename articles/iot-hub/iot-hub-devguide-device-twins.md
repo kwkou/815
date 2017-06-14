@@ -5,8 +5,7 @@
     documentationcenter=".net"
     author="fsautomata"
     manager="timlt"
-    editor=""
-    translationtype="Human Translation" />
+    editor="" />
 <tags
     ms.assetid="8a3da072-a5bf-46e5-8de4-24cdbb2a03fa"
     ms.service="iot-hub"
@@ -15,36 +14,38 @@
     ms.tgt_pltfrm="na"
     ms.workload="na"
     ms.date="03/09/2017"
-    wacn.date="04/17/2017"
-    ms.author="elioda"
-    ms.sourcegitcommit="7cc8d7b9c616d399509cd9dbdd155b0e9a7987a8"
-    ms.openlocfilehash="feb55746a0f999f2bf36c4e317e2c1ef9a7adba6"
-    ms.lasthandoff="04/07/2017" />
+    wacn.date="06/05/2017"
+    ms.author="v-yiso"
+    ms.translationtype="Human Translation"
+    ms.sourcegitcommit="08618ee31568db24eba7a7d9a5fc3b079cf34577"
+    ms.openlocfilehash="58a77464b40fe29ad7cc4886750e3683480b5a03"
+    ms.contentlocale="zh-cn"
+    ms.lasthandoff="05/26/2017" />
 
 # <a name="understand-and-use-device-twins-in-iot-hub"></a>了解并在 IoT 中心内使用设备孪生
 ## <a name="overview"></a>概述
-“设备克隆”是存储设备状态信息（元数据、配置和条件）的 JSON 文档。 IoT 中心为连接到 IoT 中心的每台设备保留一个设备克隆。 本文将介绍：
+“设备孪生”是存储设备状态信息（元数据、配置和条件）的 JSON 文档。 IoT 中心为连接到 IoT 中心的每台设备保留一个设备孪生。 本文将介绍：
 
 * 设备孪生的结构：*标记*、*所需的属性*和*报告的属性*，以及
 * 设备应用和后端可在设备孪生上执行的操作。
 
 > [AZURE.NOTE]
-> 当前，只能从使用 MQTT 协议连接到 IoT 中心的设备访问设备克隆。 有关如何转换现有设备应用以使用 MQTT 的说明，请参阅 [MQTT 支持][lnk-devguide-mqtt]一文。
+> 当前，只能从使用 MQTT 协议连接到 IoT 中心的设备访问设备孪生。 有关如何转换现有设备应用以使用 MQTT 的说明，请参阅 [MQTT 支持][lnk-devguide-mqtt]一文。
 > 
 > 
 
 ### <a name="when-to-use"></a>使用时机
-使用设备克隆可以：
+使用设备孪生可以：
 
 * 将设备特定的元数据存储在云中。 例如，存储在自动售货机的部署位置。
 * 通过设备应用报告当前状态信息，例如可用功能和条件。 例如，通过移动电话网络或 WiFi 连接到 IoT 中心的设备。
 * 同步设备应用与后端应用之间的长时间运行工作流的状态。 例如，当解决方案后端指定要安装的新固件版本以及设备应用报告更新过程的各个阶段时。
 * 查询设备的元数据、配置或状态。
 
-有关使用报告的属性、设备到云的消息或文件上载的指导，请参阅[设备到云的通信指南][lnk-d2c-guidance]。
+有关使用报告的属性、设备到云的消息或文件上传的指导，请参阅[设备到云的通信指南][lnk-d2c-guidance]。
 有关使用所需的属性、直接方法或云到设备的消息的指导，请参阅[云到设备的通信指南][lnk-c2d-guidance]。
 
-## <a name="device-twins"></a>设备克隆
+## <a name="device-twins"></a>设备孪生
 设备孪生存储具有以下用途的设备相关信息：
 
 * 设备和后端可以使用这些信息来同步设备状态和配置。
@@ -182,7 +183,7 @@
 借助 [Azure IoT 设备 SDK][lnk-sdks]，可通过多种语言和平台轻松使用上述操作。 有关 IoT 中心内用于同步所需属性的基元详细信息，可在[设备重新连接流][lnk-reconnection]中找到。
 
 > [AZURE.NOTE]
-当前，只能从使用 MQTT 协议连接到 IoT 中心的设备访问设备孪生。
+> 当前，只能从使用 MQTT 协议连接到 IoT 中心的设备访问设备孪生。
 > 
 > 
 
@@ -340,5 +341,3 @@ IoT 中心开发人员指南中的其他参考主题包括：
 [lnk-reconnection]: /documentation/articles/iot-hub-devguide-device-twins/#device-reconnection-flow
 
 [img-twin]: ./media/iot-hub-devguide-device-twins/twin.png
-
-<!--Update_Description:update wording-->

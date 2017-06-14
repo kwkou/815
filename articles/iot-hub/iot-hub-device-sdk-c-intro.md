@@ -5,8 +5,7 @@
     documentationcenter=""
     author="olivierbloch"
     manager="timlt"
-    editor=""
-    translationtype="Human Translation" />
+    editor="" />
 <tags
     ms.assetid="e448b061-6bdd-470a-a527-15ec03cca7b9"
     ms.service="iot-hub"
@@ -15,8 +14,9 @@
     ms.tgt_pltfrm="na"
     ms.workload="na"
     ms.date="03/20/2017"
-    wacn.date="05/08/2017"
-    ms.author="obloch"
+    wacn.date="06/05/2017"
+    ms.author="v-yiso"
+    ms.translationtype="Human Translation"
     ms.sourcegitcommit="2c4ee90387d280f15b2f2ed656f7d4862ad80901"
     ms.openlocfilehash="9f887e851afc50ce214699ca44b638e52d8c576f"
     ms.lasthandoff="04/28/2017" />
@@ -27,7 +27,7 @@
 
 适用于 C 语言的 Azure IoT 设备 SDK 以 ANSI C (C99) 编写，以获得最大可移植性。 此功能使得这些库很适合在多个平台和设备上运行，尤其是在以将磁盘和内存占用量降到最低作为优先考虑的情况下。
 
-SDK 已在许多平台上进行了测试（有关详细信息，请参阅[平台和兼容性列表](/documentation/articles/iot-hub-tested-configurations/)）。尽管本文包含的是在 Windows 平台上运行的示例代码演示，但请记住，本文所述的代码在各种支持的平台上都完全相同。
+SDK 已在许多平台上进行了测试（有关详细信息，请参阅[平台和兼容性列表](/documentation/articles/iot-hub-tested-configurations/)）。尽管本文包含的是在 Windows 平台上运行的示例代码演示，但本文所述的代码在各种支持的平台上都完全相同。
 
 本文将介绍适用于 C 语言的 Azure IoT 设备 SDK 的体系结构，将演示如何初始化设备库，将数据发送到 IoT 中心，以及从 IoT 中心接收消息。 本文中的信息应足以让你开始使用 SDK，但同时也提供了有关库的其他信息的链接。
 
@@ -133,7 +133,7 @@ Windows 版本的 **iothub\_client\_sample\_mqtt** 应用程序包含以下 Visu
 ### <a name="initialize-the-library"></a>初始化库
 
 > [AZURE.NOTE]
-> 在开始使用库之前，你可能需要执行一些特定于平台的初始化。例如，如果打算在 Linux 上使用 AMQP，则必须初始化 OpenSSL 库。[GitHub 存储库](https://github.com/Azure/azure-iot-sdk-c)中的示例将在客户端启动时调用实用工具函数 **platform\_init**，并在退出之前调用 **platform\_deinit** 函数。这些函数在“platform.h”标头文件中声明。你应该在[存储库](https://github.com/Azure/azure-iot-sdk-c)中为目标平台检查这些函数定义，以确定是否需要在客户端中包含任何特定于平台的初始化代码。
+> 在开始使用库之前，可能需要执行一些特定于平台的初始化。 例如，如果打算在 Linux 上使用 AMQP，则必须初始化 OpenSSL 库。 [GitHub 存储库](https://github.com/Azure/azure-iot-sdk-c)中的示例将在客户端启动时调用实用工具函数 **platform\_init**，并在退出之前调用 **platform\_deinit** 函数。 这些函数在 platform.h 标头文件中声明。 你应该在[存储库](https://github.com/Azure/azure-iot-sdk-c)中为目标平台检查这些函数定义，以确定是否需要在客户端中包含任何特定于平台的初始化代码。
 > 
 > 
 
@@ -555,6 +555,3 @@ Windows 版本的 **iothub\_client\_sample\_mqtt** 应用程序包含以下 Visu
 [lnk-sdks]: /documentation/articles/iot-hub-devguide-sdks/
 
 [lnk-gateway]: /documentation/articles/iot-hub-linux-gateway-sdk-simulated-device/
-
-
-<!--Update_Description:update wording and code-->

@@ -391,6 +391,3 @@
 
 [lnk-devguide]: /documentation/articles/iot-hub-devguide/
 [lnk-gateway]: /documentation/articles/iot-hub-linux-gateway-sdk-simulated-device/
-
-
-<!--Update_Description:update wording and code-->

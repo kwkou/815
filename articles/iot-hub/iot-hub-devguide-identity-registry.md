@@ -5,8 +5,7 @@
     documentationcenter=".net"
     author="dominicbetts"
     manager="timlt"
-    editor=""
-    translationtype="Human Translation" />
+    editor="" />
 <tags
     ms.assetid="0706eccd-e84c-4ae7-bbd4-2b1a22241147"
     ms.service="iot-hub"
@@ -14,12 +13,15 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="na"
-    ms.date="03/24/2017"
-    wacn.date="05/08/2017"
-    ms.author="dobett"
-    ms.sourcegitcommit="a114d832e9c5320e9a109c9020fcaa2f2fdd43a9"
-    ms.openlocfilehash="a9e1d6bfdcad36302d06ceb5d6b0835346dbbec2"
-    ms.lasthandoff="04/14/2017" />
+    ms.date="05/04/2017"
+    wacn.date="06/05/2017"
+    ms.author="v-yiso"
+    ms.custom="H1Hack27Feb2017"
+    ms.translationtype="Human Translation"
+    ms.sourcegitcommit="08618ee31568db24eba7a7d9a5fc3b079cf34577"
+    ms.openlocfilehash="21132cc63ebbdf66983e00127fe88fcb946aa656"
+    ms.contentlocale="zh-cn"
+    ms.lasthandoff="05/26/2017" />
 
 # <a name="understand-identity-registry-in-your-iot-hub"></a>了解 IoT 中心的标识注册表
 ## <a name="overview"></a>概述
@@ -97,7 +99,50 @@ IoT 中心标识注册表包含名为 **connectionState**的字段。 开发和�
 > [AZURE.NOTE]
 > 如果 IoT 解决方案只根据设备连接状态来决定是否发送云到设备的消息，并且没有把消息广播到大量设备，则可以考虑使用更简单的模式，即使用较短的到期时间。 此模式达到的效果与使用检测信号模式维护设备连接状态注册表达到的效果一样，而且更加有效。 IoT 中心还可以通过请求消息确认来通知哪些设备可以接收消息、哪些设备脱机或不能接收消息。
 > 
-> 
+>
+
+## <a name="device-lifecycle-notifications"></a>设备生命周期通知
+
+创建或删除设备标识时，IoT 中心可通过发送设备生命周期通知来通知 IoT 解决方案。 为此，IoT 解决方案需要创建一个路由，并将“数据源”设置为等于 *DeviceLifecycleEvents*。 默认情况下，不会发送生命周期通知，即无此类路由预先存在。 通知消息包括属性和正文。
+
+- 属性
+
+消息系统属性以 `'$'` 符号作为前缀。
+
+| 名称 | 值 |
+| --- | --- |
+$content-type | application/json |
+$iothub-enqueuedtime |  发送通知的时间 |
+$iothub-message-source | deviceLifecycleEvents |
+$content-encoding | utf-8 |
+opType | “createDeviceIdentity”或“deleteDeviceIdentity” |
+hubName | IoT 中心的名称 |
+deviceId | 设备 ID |
+operationTimestamp | ISO8601 操作时间戳 |
+iothub-message-schema | deviceLifecycleNotification |
+
+- 正文
+
+本部分采用 JSON 格式，表示创建的设备标识的孪生。 例如，
+
+    {
+        "deviceId":"11576-ailn-test-0-67333793211",
+        "etag":"AAAAAAAAAAE=",
+        "properties": {
+            "desired": {
+                "$metadata": {
+                    "$lastUpdated": "2016-02-30T16:24:48.789Z"
+                },
+                "$version": 1
+            },
+            "reported": {
+                "$metadata": {
+                    "$lastUpdated": "2016-02-30T16:24:48.789Z"
+                },
+                "$version": 1
+            }
+        }
+    }
 
 ## <a name="reference-topics"></a>参考主题：
 以下参考主题提供有关标识注册表的详细信息。
@@ -168,6 +213,3 @@ IoT 中心开发人员指南中的其他参考主题包括：
 [lnk-devguide-jobs]: /documentation/articles/iot-hub-devguide-jobs/
 
 [lnk-getstarted-tutorial]: /documentation/articles/iot-hub-csharp-csharp-getstarted/
-
-
-<!--Update_Description:update wording-->

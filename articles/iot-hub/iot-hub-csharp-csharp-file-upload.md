@@ -5,8 +5,7 @@
     documentationcenter=".net"
     author="fsautomata"
     manager="timlt"
-    editor=""
-    translationtype="Human Translation" />
+    editor="" />
 <tags
     ms.assetid="4759d229-f856-4526-abda-414f8b00a56d"
     ms.service="iot-hub"
@@ -15,17 +14,19 @@
     ms.tgt_pltfrm="na"
     ms.workload="na"
     ms.date="03/08/2017"
-    wacn.date="04/17/2017"
-    ms.author="elioda"
-    ms.sourcegitcommit="7cc8d7b9c616d399509cd9dbdd155b0e9a7987a8"
-    ms.openlocfilehash="aa92a07b5e54eed580bb3bc77269ead248c58717"
-    ms.lasthandoff="04/07/2017" />
+    wacn.date="06/05/2017"
+    ms.author="v-yiso"
+    ms.translationtype="Human Translation"
+    ms.sourcegitcommit="08618ee31568db24eba7a7d9a5fc3b079cf34577"
+    ms.openlocfilehash="53e457f9ac6c92b23271e9a973a9d5b9312577e4"
+    ms.contentlocale="zh-cn"
+    ms.lasthandoff="05/26/2017" />
 
-# <a name="upload-files-from-your-simulated-device-to-the-cloud-with-iot-hub"></a>使用 IoT 中心将文件从模拟设备上载到云
+# <a name="upload-files-from-your-simulated-device-to-the-cloud-with-iot-hub"></a>使用 IoT 中心将文件从模拟设备上传到云
 ## <a name="introduction"></a>介绍
-Azure IoT 中心是一项完全托管的服务，可在数百万个设备和一个解决方案后端之间实现安全可靠的双向通信。 （[IoT 中心入门]和[使用 IoT 中心发送云到设备消息]）教程介绍了 IoT 中心提供的基本的设备到云和云到设备消息传递功能。 [处理设备到云的消息]教程介绍了一种在 Azure Blob 存储中可靠存储设备到云消息的方法。 但是，在某些情况下，你无法轻松地将设备发送的数据映射为 IoT 中心接受的相对较小的设备到云消息。 例如，包含图像、视频、以高频率采样的震动数据或者某种形式的预处理数据的大型文件。 通常使用 [Hadoop] 堆栈等工具在云中批处理这些文件。 如果你偏好通过从设备上载文件来发送事件，仍可以使用 IoT 中心的安全性与可靠性功能。
+Azure IoT 中心是一项完全托管的服务，可在数百万个设备和一个解决方案后端之间实现安全可靠的双向通信。 （[IoT 中心入门]和[使用 IoT 中心发送云到设备消息]）教程介绍了 IoT 中心提供的基本的设备到云和云到设备消息传递功能。 [处理设备到云的消息]教程介绍了一种在 Azure Blob 存储中可靠存储设备到云消息的方法。 但是，在某些情况下，你无法轻松地将设备发送的数据映射为 IoT 中心接受的相对较小的设备到云消息。 例如，包含图像、视频、以高频率采样的震动数据或者某种形式的预处理数据的大型文件。 通常使用 [Hadoop] 堆栈等工具在云中批处理这些文件。 如果你偏好通过从设备上传文件来发送事件，仍可以使用 IoT 中心的安全性与可靠性功能。
 
-本教程的内容基于 [使用 IoT 中心发送云到设备消息] （使用 IoT 中心发送云到设备的消息）教程中所述的代码，演示如何使用 IoT 中心的文件上载功能。 其中了说明了如何：
+本教程的内容基于 [使用 IoT 中心发送云到设备消息]（使用 IoT 中心发送云到设备的消息）教程中所述的代码，演示如何使用 IoT 中心的文件上传功能。 其中了说明了如何：
 
 - 安全地为设备提供用于上传文件的 Azure Blob URI。
 - 使用 IoT 中心文件上传通知在应用后端中触发对文件的处理。
@@ -33,7 +34,7 @@ Azure IoT 中心是一项完全托管的服务，可在数百万个设备和一�
 在本教程结束时，会运行 2 个 .NET 控制台应用：
 
 * **SimulatedDevice**， [使用 IoT 中心发送云到设备消息] 教程中创建的应用的修改版本。 此应用使用 IoT 中心提供的 SAS URI 将文件上传到存储。
-* **ReadFileUploadNotification**，它可以接收来自 IoT 中心的文件上载通知。
+* **ReadFileUploadNotification**，它可以接收来自 IoT 中心的文件上传通知。
 
 > [AZURE.NOTE]
 > IoT 中心通过 Azure IoT 设备 SDK 来支持许多设备平台和语言（包括 C、Java 和 Javascript）。 有关如何将设备连接到 Azure IoT 中心的分步说明，请参阅 [Azure IoT 开发人员中心]。
@@ -43,10 +44,10 @@ Azure IoT 中心是一项完全托管的服务，可在数百万个设备和一�
 若要完成本教程，您需要以下各项：
 
 * Visual Studio 2015 或 Visual Studio 2017
-* 有效的 Azure 帐户。 （如果没有帐户，只需花费几分钟就能创建一个[帐户][lnk-free-trial]。）
+* 有效的 Azure 帐户。 如果没有帐户，可以创建一个[试用帐户][lnk-free-trial]，只需几分钟即可完成。
 
 ## <a name="associate-an-azure-storage-account-to-iot-hub"></a>将 Azure 存储帐户关联到 IoT 中心
-由于模拟设备应用将文件上传到 Blob，因此必须拥有与 IoT 中心关联的 [Azure 存储]帐户。 将 Azure 存储帐户与 IoT 中心相关联时，IoT 中心会生成一个 SAS URI。 设备可以使用此 SAS URI 安全地将文件上载到 Blob 容器。 IoT 中心服务和设备 SDK 协调生成 SAS URI 的过程，并使其可供设备用来上载文件。
+由于模拟设备应用将文件上传到 Blob，因此必须拥有与 IoT 中心关联的 [Azure 存储]帐户。 将 Azure 存储帐户与 IoT 中心相关联时，IoT 中心会生成一个 SAS URI。 设备可以使用此 SAS URI 安全地将文件上传到 Blob 容器。 IoT 中心服务和设备 SDK 协调生成 SAS URI 的过程，并使其可供设备用来上传文件。
 
 按照[通过 Azure 门户配置文件上传][lnk-configure-upload]中的说明，将 Azure 存储帐户关联到 IoT 中心。 确保有一个 Blob 容器与你的 IoT 中心关联并且文件通知已启用。 
 
@@ -79,15 +80,17 @@ Azure IoT 中心是一项完全托管的服务，可在数百万个设备和一�
             Console.WriteLine("Time to upload file: {0}ms\n", watch.ElapsedMilliseconds);
         }
 
-    `UploadToBlobAsync` 方法获取要上载的文件的文件名与流源，然后处理上载到存储的任务。 控制台应用会显示上传文件所需的时间。
+    `UploadToBlobAsync` 方法获取要上传的文件的文件名与流源，然后处理上传到存储的任务。 控制台应用会显示上传文件所需的时间。
 5. 在 **Main** 方法中的 `Console.ReadLine()` 行前面添加以下方法：
 
         SendToBlobAsync();
 
 > [AZURE.NOTE]
 > 为简单起见，本教程不实现任何重试策略。 在生产代码中，应按 MSDN 文章 [Transient Fault Handling]（暂时性故障处理）中所述实施重试策略（例如指数性的回退）。
+> 
+> 
 
-## <a name="receive-a-file-upload-notification"></a>接收文件上载通知
+## <a name="receive-a-file-upload-notification"></a>接收文件上传通知
 在本部分中，会编写一个 .NET 控制台应用，用于接收来自 IoT 中心的文件上传通知消息。
 
 1. 在当前的 Visual Studio 解决方案中，通过使用“**控制台应用程序**”项目模板创建 Visual C# Windows 项目。 将项目命名为 **ReadFileUploadNotification**。
@@ -139,12 +142,12 @@ Azure IoT 中心是一项完全托管的服务，可在数百万个设备和一�
 现在，你已准备就绪，可以运行应用程序了。
 
 1. 在 Visual Studio 中，右键单击你的解决方案并选择“**设置启动项目**”。 选择“**多个启动项目**”，然后针对 **ReadFileUploadNotification** 和 **SimulatedDevice** 应用选择“**启动**”操作。
-2. 按 **F5**。这两个应用程序应该都会启动。你将在其中一个控制台应用中看到上载已完成，同时还会看到另一个控制台应用收到的上载通知消息。可使用 [Azure 门户预览]或 Visual Studio 服务器资源管理器检查 Azure 存储帐户中是否存在上传的文件。
-   
-   ![][50]  
+2. 按 **F5**。 这两个应用程序应该都会启动。 你将在其中一个控制台应用中看到上传已完成，同时还会看到另一个控制台应用收到的上传通知消息。 可使用 [Azure 门户]或 Visual Studio 服务器资源管理器检查 Azure 存储帐户中是否存在上传的文件。
+
+   ![][50]
 
 ## <a name="next-steps"></a>后续步骤
-在本教程中，你已学习了如何使用 IoT 中心的文件上载功能来简化从设备进行的文件上载。 可以使用以下文章继续探索 IoT 中心功能和方案：
+在本教程中，你已学习了如何使用 IoT 中心的文件上传功能来简化从设备进行的文件上传。 可以使用以下文章继续探索 IoT 中心功能和方案：
 
 * [以编程方式创建 IoT 中心][lnk-create-hub]
 * [C SDK 简介][lnk-c-sdk]
@@ -152,7 +155,7 @@ Azure IoT 中心是一项完全托管的服务，可在数百万个设备和一�
 
 若要进一步探索 IoT 中心的功能，请参阅：
 
-* [使用 IoT 网关 SDK 模拟设备][lnk-gateway]
+* [使用 IoT Edge 模拟设备][lnk-gateway]
 
 <!-- Images. -->
 
@@ -185,5 +188,3 @@ Azure IoT 中心是一项完全托管的服务，可在数百万个设备和一�
 [lnk-sdks]: /documentation/articles/iot-hub-devguide-sdks/
 
 [lnk-gateway]: /documentation/articles/iot-hub-windows-gateway-sdk-simulated-device/
-
-<!--Update_Description:update wording-->

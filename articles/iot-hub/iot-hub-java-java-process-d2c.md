@@ -5,8 +5,7 @@
     documentationcenter="java"
     author="dominicbetts"
     manager="timlt"
-    editor=""
-    translationtype="Human Translation" />
+    editor="" />
 <tags
     ms.assetid="bd9af5f9-a740-4780-a2a6-8c0e2752cf48"
     ms.service="iot-hub"
@@ -15,10 +14,12 @@
     ms.tgt_pltfrm="na"
     ms.workload="na"
     ms.date="03/07/2017"
-    wacn.date="04/24/2017"
-    ms.author="dobett"
+    wacn.date="06/05/2017"
+    ms.author="v-yiso"
+    ms.translationtype="Human Translation"
     ms.sourcegitcommit="a114d832e9c5320e9a109c9020fcaa2f2fdd43a9"
     ms.openlocfilehash="fd12c0dd792dbf9e3a4cdd23943a8075341f3bda"
+    ms.contentlocale="zh-cn"
     ms.lasthandoff="04/14/2017" />
 
 # <a name="process-iot-hub-device-to-cloud-messages-java"></a>处理 IoT 中心设备到云的消息 (Java)
@@ -63,7 +64,8 @@ Azure IoT 中心是一项完全托管的服务，可在数百万个设备和一�
 
             public void run()  {
                 try {
-                    double avgWindSpeed = 10; // m/s
+                    double minTemperature = 20;
+                    double minHumidity = 60;
                     Random rand = new Random();
 
                     while (true) {
@@ -74,10 +76,12 @@ Azure IoT 中心是一项完全托管的服务，可在数百万个设备和一�
                             msg = new Message(msgStr);
                             msg.setProperty("level", "critical");
                         } else {
-                            double currentWindSpeed = avgWindSpeed + rand.nextDouble() * 4 - 2;
+                            double currentTemperature = minTemperature + rand.nextDouble() * 15;
+                            double currentHumidity = minHumidity + rand.nextDouble() * 20; 
                             TelemetryDataPoint telemetryDataPoint = new TelemetryDataPoint();
                             telemetryDataPoint.deviceId = deviceId;
-                            telemetryDataPoint.windSpeed = currentWindSpeed;
+                            telemetryDataPoint.temperature = currentTemperature;
+                            telemetryDataPoint.humidity = currentHumidity;
 
                             msgStr = telemetryDataPoint.serialize();
                             msg = new Message(msgStr);
@@ -196,7 +200,6 @@ Azure IoT 中心是一项完全托管的服务，可在数百万个设备和一�
 <!-- Links -->
 
 [Azure Blob 存储]: /documentation/articles/storage-dotnet-how-to-use-blobs/
-[Azure 数据工厂]: /documentation/services/data-factory/
 [HDInsight (Hadoop)]: /documentation/services/hdinsight/
 [Service Bus queue]: /documentation/articles/service-bus-java-how-to-use-queues/
 [lnk-sb-queues-java]: /documentation/articles/service-bus-java-how-to-use-queues/
@@ -230,6 +233,3 @@ Azure IoT 中心是一项完全托管的服务，可在数百万个设备和一�
 
 [lnk-dev-setup]: https://github.com/Azure/azure-iot-sdk-java
 [lnk-create-an-iot-hub]: /documentation/articles/iot-hub-java-java-getstarted/#create-an-iot-hub
-
-
-<!--Update_Description:update wording and code-->

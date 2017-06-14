@@ -15,13 +15,13 @@
     ms.tgt_pltfrm="na"
     ms.workload="na"
     ms.date="04/06/2017"
-    wacn.date="05/22/2017"
-    ms.author="xshi"
+    wacn.date="06/05/2017"
+    ms.author="v-yiso"
     ms.translationtype="Human Translation"
-    ms.sourcegitcommit="457fc748a9a2d66d7a2906b988e127b09ee11e18"
-    ms.openlocfilehash="f42570f658e1297c3c6e4cbde3675ec22c761b3a"
+    ms.sourcegitcommit="08618ee31568db24eba7a7d9a5fc3b079cf34577"
+    ms.openlocfilehash="7c1780264c216bb598ee5f3baec7424500b549c0"
     ms.contentlocale="zh-cn"
-    ms.lasthandoff="05/05/2017" />
+    ms.lasthandoff="05/26/2017" />
 
 # <a name="use-iot-gateway-to-connect-things-to-the-cloud---sensortag-to-azure-iot-hub"></a>使用 IoT 网关将设备连接到 Azure IoT 中心的云 - SensorTag
 
@@ -109,7 +109,7 @@
 
 ## <a name="run-a-ble-sample-application-to-send-sensortag-data-to-your-iot-hub"></a>运行 BLE 示例应用程序，将 SensorTag 数据发送到 IoT 中心
 
-Azure IoT 网关 SDK 提供低耗电蓝牙 (BLE) 的示例应用程序。 该示例应用程序收集 BLE 连接的数据，并将该数据发送到 IoT 中心。 若要运行示例应用程序，需要：
+Azure IoT Edge 提供蓝牙低功耗 (BLE) 示例应用程序。 该示例应用程序收集 BLE 连接的数据，并将该数据发送到 IoT 中心。 若要运行示例应用程序，需要：
 
 1. 配置该示例应用程序。
 1. 在 IoT 网关上运行该示例应用程序。
@@ -151,4 +151,4 @@ Azure IoT 网关 SDK 提供低耗电蓝牙 (BLE) 的示例应用程序。 该示
 
 ## <a name="next-steps"></a>后续步骤
 
-[通过 Azure IoT 网关 SDK，使用 IoT 网关进行传感器数据转换](/documentation/articles/iot-hub-gateway-kit-c-use-iot-gateway-for-data-conversion/)
+[通过 Azure IoT Edge，使用 IoT 网关进行传感器数据转换](/documentation/articles/iot-hub-gateway-kit-c-use-iot-gateway-for-data-conversion/)
