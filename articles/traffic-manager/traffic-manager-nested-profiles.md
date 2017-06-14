@@ -111,7 +111,7 @@
 
 ### 如何配置嵌套式配置文件？
 
-可以使用 Azure Resource Manager、经典 Azure REST API、Azure PowerShell cmdlet 和跨平台 Azure CLI 命令配置嵌套式流量管理器配置文件。也支持通过新 Azure 门户预览配置这些配置文件。不支持使用经典管理门户。
+可以使用 Azure Resource Manager、经典 Azure REST API、Azure PowerShell cmdlet 和跨平台 Azure CLI 命令配置嵌套式流量管理器配置文件。也支持通过新 Azure 门户配置这些配置文件。不支持使用经典管理门户。
 
 ### 流量管理器支持多少层嵌套？
 

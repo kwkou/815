@@ -25,11 +25,11 @@
 
 Azure VM 代理和关联的扩展是 Azure 基础结构服务的一部分。VM 扩展是软件组件，可以扩展 VM 功能并简化各种 VM 管理操作。例如，VMAccess 扩展可用于重置管理员的密码，自定义脚本扩展可用于在 VM 上执行脚本。
 
-本文将介绍 Azure PowerShell SDK 中包含的适用于 Azure VM 的 PowerShell Desired State Configuration \(DSC\) 扩展。使用新 cmdlet 可将 PowerShell DSC 配置上载到 PowerShell DSC 扩展启用的 Azure VM 并应用该配置。PowerShell DSC 扩展可调用 PowerShell DSC，在 VM 上启用收到的 DSC 配置。也可以通过 Azure 门户预览使用此功能。
+本文将介绍 Azure PowerShell SDK 中包含的适用于 Azure VM 的 PowerShell Desired State Configuration \(DSC\) 扩展。使用新 cmdlet 可将 PowerShell DSC 配置上载到 PowerShell DSC 扩展启用的 Azure VM 并应用该配置。PowerShell DSC 扩展可调用 PowerShell DSC，在 VM 上启用收到的 DSC 配置。也可以通过 Azure 门户使用此功能。
 
 ## 先决条件
 **本地计算机** 
-需要使用 Azure 门户预览或 Azure PowerShell SDK 才能与 Azure VM 扩展交互。
+需要使用 Azure 门户或 Azure PowerShell SDK 才能与 Azure VM 扩展交互。
 
 **来宾代理** 
 由 DSC 配置进行配置的 Azure VM 必须运行支持 Windows Management Framework \(WMF\) 4.0 或 5.0 的 OS。有关支持的 OS 版本的完整列表，请参阅 [DSC Extension Version History](https://blogs.msdn.microsoft.com/powershell/2014/11/20/release-history-for-the-azure-dsc-extension/)（DSC 扩展版本历史记录）。
@@ -44,7 +44,7 @@ Azure VM 代理和关联的扩展是 Azure 基础结构服务的一部分。VM �
 配置数据 - 包含配置环境数据的 .psd1 文件
 
 ## 体系结构概述
-Azure DSC 扩展使用 Azure VM 代理框架来传送、启用和报告 Azure VM 上运行的 DSC 配置。DSC 扩展需要一个 .zip 文件，其中至少包含一个配置文档，以及通过 Azure PowerShell SDK 或 Azure 门户预览提供的一组参数。
+Azure DSC 扩展使用 Azure VM 代理框架来传送、启用和报告 Azure VM 上运行的 DSC 配置。DSC 扩展需要一个 .zip 文件，其中至少包含一个配置文档，以及通过 Azure PowerShell SDK 或 Azure 门户提供的一组参数。
 
 首次调用该扩展时，它将运行安装过程。此过程将使用以下逻辑安装 Windows Management Framework \(WMF\) 版本：
 
@@ -79,7 +79,7 @@ Azure DSC 扩展使用 Azure VM 代理框架来传送、启用和报告 Azure VM
 * StorageEndpointSuffix 在 Azure Resource Manager 中名为 ArchiveStorageEndpointSuffix
 * 已将 AutoUpdate 开关参数添加到 Azure Resource Manager，使扩展处理程序能够在有最新版本时自动更新。请注意，当发布了新版本的 WMF 时，此参数可能会导致 VM 重新启动。
 
-## Azure 门户预览功能
+## Azure 门户功能
 浏览到 VM。在“设置”-\>“常规”下面，单击“扩展”。 此时将创建一个新窗格。单击“添加”，然后选择“PowerShell DSC”。
 
 门户需要输入。

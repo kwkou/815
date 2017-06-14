@@ -26,13 +26,13 @@
 
 # <a name="design-your-first-azure-sql-database"></a>设计你的第一个 Azure SQL 数据库
 
-在本教程中，你将为大专院校建立一个数据库以跟踪学生成绩和选课情况。 本教程将演示如何使用 [Azure 门户预览](https://portal.azure.cn/)和 [SQL Server Management Studio](https://msdn.microsoft.com/zh-cn/library/ms174173.aspx) (SSMS) 在 Azure SQL 数据库逻辑服务器上创建 Azure SQL 数据库、将表添加到数据库、将数据加载到表，以及查询数据库。 它还将演示如何使用 SQL 数据库[时间点还原](/documentation/articles/sql-database-recovery-using-backups/#point-in-time-restore)功能将数据库还原到以前的时间点。
+在本教程中，你将为大专院校建立一个数据库以跟踪学生成绩和选课情况。 本教程将演示如何使用 [Azure 门户](https://portal.azure.cn/)和 [SQL Server Management Studio](https://msdn.microsoft.com/zh-cn/library/ms174173.aspx) (SSMS) 在 Azure SQL 数据库逻辑服务器上创建 Azure SQL 数据库、将表添加到数据库、将数据加载到表，以及查询数据库。 它还将演示如何使用 SQL 数据库[时间点还原](/documentation/articles/sql-database-recovery-using-backups/#point-in-time-restore)功能将数据库还原到以前的时间点。
 
 若要完成本教程，请确保已安装最新版的 [ SQL Server Management Studio](https://msdn.microsoft.com/zh-cn/library/ms174173.aspx) (SSMS)。 
 
-## <a name="step-1-log-in-to-the-azure-portal-preview"></a>步骤 1：登录到 Azure 门户预览
+## <a name="step-1-log-in-to-the-azure-portal-preview"></a>步骤 1：登录到 Azure 门户
 
-登录到 [Azure 门户预览](https://portal.azure.cn/)。
+登录到 [Azure 门户](https://portal.azure.cn/)。
 
 ## <a name="step-2-create-a-blank-sql-database-in-azure"></a>步骤 2：在 Azure 中创建空的 SQL 数据库
 
@@ -40,7 +40,7 @@
 
 按照以下步骤创建空的 SQL 数据库。 
 
-1. 单击 Azure 门户预览版左上角的“新建”按钮。
+1. 单击 Azure 门户左上角的“新建”按钮。
 
 2. 从“新建”页中选择“数据库”，然后从“数据库”页中选择“SQL 数据库”。 
 
@@ -94,11 +94,11 @@ Azure SQL 数据库受防火墙保护。 默认情况下，将拒绝与服务器
 
 ## <a name="step-4---get-connection-information"></a>步骤 4 - 获取连接信息
 
-请在 Azure 门户预览中获取 Azure SQL 数据库服务器的完全限定服务器名称。 请使用 SQL Server Management Studio 通过完全限定的服务器名称连接到服务器。
+请在 Azure 门户中获取 Azure SQL 数据库服务器的完全限定服务器名称。 请使用 SQL Server Management Studio 通过完全限定的服务器名称连接到服务器。
 
-1. 登录到 [Azure 门户预览](https://portal.azure.cn/)。
+1. 登录到 [Azure 门户](https://portal.azure.cn/)。
 2. 从左侧菜单中选择“SQL 数据库”，然后单击“SQL 数据库”页上的数据库。 
-3. 在数据库的“Azure 门户预览”页的“概要”窗格中，找到并复制“服务器名称”。
+3. 在数据库的“Azure 门户”页的“概要”窗格中，找到并复制“服务器名称”。
 
     ![连接信息](./media/sql-database-connect-query-ssms/connection-information.png) 
 

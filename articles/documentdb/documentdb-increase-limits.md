@@ -30,7 +30,7 @@
 ## <a id="RequestQuotaIncrease"></a> 请求配额调整
 以下步骤演示了如何请求配额调整。
 
-1. 在 [Azure 门户预览](https://portal.azure.cn)中，单击“更多服务”，再单击“帮助和支持”。
+1. 在 [Azure 门户](https://portal.azure.cn)中，单击“更多服务”，再单击“帮助和支持”。
    
     ![启动帮助与支持的屏幕截图](./media/documentdb-increase-limits/helpsupport.png)
 2. 在“帮助和支持”边栏选项卡上，单击“新建支持请求”。

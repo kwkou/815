@@ -181,7 +181,7 @@ Azure PowerShell 目前不提供任何用于定义 Oozie 作业的 cmdlet。可�
     表的名称为 *log4jLogCount*。
 4. 创建用于运行 Oozie 作业的 HDInsight 群集。
    
-    若要检查群集，可以使用 Azure 门户预览或 Azure PowerShell。
+    若要检查群集，可以使用 Azure 门户或 Azure PowerShell。
 5. 将 Oozie 工作流文件和 HiveQL 脚本文件复制到默认文件系统。
    
     这两个文件将存储在公共 Blob 容器中。

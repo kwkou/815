@@ -1,5 +1,5 @@
 <properties
-    pageTitle="使用 Azure 门户预览部署 Azure 资源 | Azure"
+    pageTitle="使用 Azure 门户部署 Azure 资源 | Azure"
     description="使用 Azure 门户和 Azure Resource Manager 来部署资源。"
     services="azure-resource-manager,azure-portal"
     documentationcenter=""

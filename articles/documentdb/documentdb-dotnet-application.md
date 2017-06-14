@@ -88,7 +88,7 @@
 
 8. 如果你选择在云中托管，则会出现至少一个附加屏幕，要求你登录 Azure 帐户并提供新网站的部分值。 提供所有附加值，然后继续操作。 
    
-      我在此处没有选择“数据库服务器”，因为我们并未使用 Azure SQL 数据库服务器，稍后我们会在 Azure 门户预览中创建新的 DocumentDB 帐户。
+      我在此处没有选择“数据库服务器”，因为我们并未使用 Azure SQL 数据库服务器，稍后我们会在 Azure 门户中创建新的 DocumentDB 帐户。
    
     有关选择**应用服务计划**和**资源组**的详细信息，请参阅 [Azure 应用服务计划深入概述](/documentation/articles/azure-web-sites-web-hosting-plans-in-depth-overview/)。
    
@@ -326,7 +326,7 @@
         <add key="authKey" value="enter the PRIMARY KEY, or the SECONDARY KEY, from the Keys blade of the Azure  Portal"/>
         <add key="database" value="ToDoList"/>
         <add key="collection" value="Items"/>
-4. 现在，使用 Azure 门户预览的“密钥”边栏选项卡来更新*终结点*和 *authKey* 的值。 使用“密钥”边栏选项卡中的“URI”作为终结点设置的值，使用“密钥”边栏选项卡中的“主密钥”或“辅助密钥”作为 authKey 设置的值。
+4. 现在，使用 Azure 门户的“密钥”边栏选项卡来更新*终结点*和 *authKey* 的值。 使用“密钥”边栏选项卡中的“URI”作为终结点设置的值，使用“密钥”边栏选项卡中的“主密钥”或“辅助密钥”作为 authKey 设置的值。
 
     我们已经连接了 DocumentDB 存储库，现在让我们添加应用程序逻辑。
 

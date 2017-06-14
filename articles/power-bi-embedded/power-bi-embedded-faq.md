@@ -33,7 +33,7 @@ Power BI Embedded 现已公开发布。 Power BI Embedded 是一项 Azure 服务
 Power BI Embedded 适用于想要为其用户在所有设备上提供令人惊叹的交互式数据可视化效果体验（而无需用户自行生成）的应用程序开发人员。 通过 Power BI Embedded，开发人员可以利用直接查询提供始终保持最新的视图。 开发人员还可以使用 Azure ARM API 和 Power BI API 以编程方式部署、管理和自动化 Power BI。 与所有的 Power BI 服务一样，这种嵌入式服务也可以自动缩放以满足应用程序的使用情况和需求。 Power BI Embedded 服务采取即用即付消费的定价模式。
 
 ## <a name="how-does-power-bi-embedded-relate-to-the-power-bi-service"></a>Power BI Embedded 与 Power BI 服务有什么关系？
-Power BI Embedded 和 Power BI 服务是单独的产品/服务。 Power BI Embedded 采取基于消费的计费模式，通过 Azure 门户预览部署并且旨在使 ISV 能够将数据可视化元素嵌入到应用程序中，供其客户使用。 Power BI 服务通过 O365 门户进行计费和部署，是一个独立通用的 BI 产品/服务，主要供企业内部使用。 若要了解 Power BI 服务的详细信息，请参阅 [www.powerbi.com](https://powerbi.microsoft.com)。
+Power BI Embedded 和 Power BI 服务是单独的产品/服务。 Power BI Embedded 采取基于消费的计费模式，通过 Azure 门户部署并且旨在使 ISV 能够将数据可视化元素嵌入到应用程序中，供其客户使用。 Power BI 服务通过 O365 门户进行计费和部署，是一个独立通用的 BI 产品/服务，主要供企业内部使用。 若要了解 Power BI 服务的详细信息，请参阅 [www.powerbi.com](https://powerbi.microsoft.com)。
 
 ## <a name="how-does-power-bi-embedded-improve-my-app"></a>Power BI Embedded 如何改进我的应用？
 当可以利用优秀的交互式数据可视化功能直接在应用程序中通知用户的决策时，应用程序的功能将更为强大。 Power BI Embedded 可通过丰富的、始终保持最新的交互式数据可视化元素增强应用，以便提高应用的实用性、用户的满意度和忠诚度，并可在任何设备上轻松提供语境分析。
@@ -57,7 +57,7 @@ Power BI Embedded 具有 Azure 标准 SLA。 有关详细信息，请参阅 [服
 会话是指最终用户和 Power BI Embedded 报表之间的一组交互活动。 每次向用户显示 Power BI Embedded 报表时，就会启动一个会话，并向订阅持有者收取使用会话的费用。 会话按统一收费率计费，独立于报表中的视觉对象元素数量或报表内容的刷新频率。 当用户关闭报表时或者会话于一小时后超时时，会话结束。
 
 ## <a name="do-you-offer-any-tools-or-guidance-to-help-me-estimate-how-many-renderssession-i-should-expect-how-will-i-know-how-many-renders-have-been-completed"></a>是否提供了任何工具或指南来帮助用户估计应预估的呈现/会话数？ 如何才能知道已完成了多少呈现？
-Azure 门户预览将提供关于针对订阅已执行的呈现/报表会话数的帐单详细信息。
+Azure 门户将提供关于针对订阅已执行的呈现/报表会话数的帐单详细信息。
 
 ## <a name="do-i-need-a-power-bi-subscription-in-order-to-develop-applications-with-power-bi-embedded-how-do-i-get-started"></a>使用 Power BI Embedded 开发应用程序是否需要 Power BI 订阅？ 如何开始？
 作为应用程序开发人员，创建希望在应用程序中使用的报表和可视化元素无需具有 Power BI 订阅。 但需要 Azure 订阅和免费的 Power BI Desktop 应用程序。
@@ -81,13 +81,13 @@ Power BI Embedded 服务使用“应用令牌”进行身份验证和授权，�
 ## <a name="how-does-the-tenancy-model-work-for-power-bi-embedded"></a>Power BI Embedded 的租户模型如何工作？
 在 Power BI Embedded 模型中，明确要求 Azure AD 租户中必须存在客户。 可以为客户选择是否需要 Azure AD。 这样，应用程序的体系结构和基础结构就可以用来确定 Power BI Embedded 要求的租户模型。
 
-开发人员/员工操作或创建应用程序时将需要具有 AAD 用户帐户才能通过 Azure 门户预览管理 Azure 订阅和工作区集合。 开发人员可以使用编程 API 导入报表、修改连接字符串、获取嵌入式 URL、改用应用令牌进行身份验证，因此无需使用 AAD。 有关如何使用 API 和 Azure 门户预览的详细信息，请参阅 Azure.com 中的 [Power BI Embedded documentation ](/documentation/services/power-bi-embedded/) （Power BI Embedded 文档）页。
+开发人员/员工操作或创建应用程序时将需要具有 AAD 用户帐户才能通过 Azure 门户管理 Azure 订阅和工作区集合。 开发人员可以使用编程 API 导入报表、修改连接字符串、获取嵌入式 URL、改用应用令牌进行身份验证，因此无需使用 AAD。 有关如何使用 API 和 Azure 门户的详细信息，请参阅 Azure.com 中的 [Power BI Embedded documentation ](/documentation/services/power-bi-embedded/) （Power BI Embedded 文档）页。
 
 ## <a name="where-can-i-learn-more"></a>可以从何处了解详细信息？
 可以访问 [Power BI Embedded documentation](http://go.microsoft.com/fwlink/?LinkId=760526)（Power BI Embedded 文档）页。 通过访问 [Power BI 开发人员博客](http://blogs.msdn.com/powerbidev) 或通过访问 dev.powerbi.com 中的 Power BI 开发人员中心，可以了解该服务的最新信息。 也可以在 [Stackoverflow](http://stackoverflow.com/questions/tagged/powerbi)上提问。
 
 ## <a name="how-do-i-get-started"></a>如何开始？
-可以立即开始体验免费版！ 如果拥有 Azure 订阅，现在就可以直接从 Azure 门户预览预配 Power BI Embedded。  也可以创建自己的 [Azure 帐户](/pricing/1rmb-trial/)。 一旦 Power BI Embedded 服务预配完毕，就可以直接轻松使用 Power BI REST API，或使用 [GitHub](https://www.nuget.org/profiles/powerbi)上提供的开发人员 SDK。 关于如何使用开发人员 SDK 提供的示例。
+可以立即开始体验免费版！ 如果拥有 Azure 订阅，现在就可以直接从 Azure 门户预配 Power BI Embedded。  也可以创建自己的 [Azure 帐户](/pricing/1rmb-trial/)。 一旦 Power BI Embedded 服务预配完毕，就可以直接轻松使用 Power BI REST API，或使用 [GitHub](https://www.nuget.org/profiles/powerbi)上提供的开发人员 SDK。 关于如何使用开发人员 SDK 提供的示例。
 
 ## <a name="see-also"></a>另请参阅
 - [什么是 Power BI Embedded](/documentation/articles/power-bi-embedded-what-is-power-bi-embedded/)

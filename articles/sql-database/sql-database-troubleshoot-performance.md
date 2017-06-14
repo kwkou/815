@@ -24,7 +24,7 @@
 
 
 ## 评估和优化数据库性能的步骤
-1.	在 [Azure 门户预览](https://portal.azure.cn)中，单击“SQL 数据库”，选择该数据库，然后使用“监视”图表查找接近其上限的资源。默认将显示 DTU 消耗量。单击“编辑”更改显示的时间范围和值。
+1.	在 [Azure 门户](https://portal.azure.cn)中，单击“SQL 数据库”，选择该数据库，然后使用“监视”图表查找接近其上限的资源。默认将显示 DTU 消耗量。单击“编辑”更改显示的时间范围和值。
 2.	使用 [Query Performance Insight](/documentation/articles/sql-database-query-performance/) 评估使用 DTU 的查询，然后使用 [SQL 数据库顾问](/documentation/articles/sql-database-advisor/)查看针对创建和删除索引、参数化查询以及解决架构问题的建议。
 3.	可以使用动态管理视图 (DMV)、扩展事件 (Xevent) 和 SSMS 中的查询存储实时获取性能参数。有关详细的监视和优化提示，请参阅[性能指南主题](/documentation/articles/sql-database-performance-guidance/)。
 

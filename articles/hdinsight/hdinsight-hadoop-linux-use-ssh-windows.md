@@ -85,21 +85,21 @@ SSH 用户可以使用密码或公钥进行身份验证。密码仅仅是你编�
 6. 单击“保存公钥”以在 **.txt** 文件中保存此密钥。当你以后创建其他基于 Linux 的 HDInsight 群集时，可以重复使用该公钥。
    
     > [AZURE.NOTE]
-    公钥也显示在 PuTTYGen 的顶部。利用 Azure 门户预览创建群集时，可右键单击此字段，复制值，然后将其粘贴到窗体中。
+    公钥也显示在 PuTTYGen 的顶部。利用 Azure 门户创建群集时，可右键单击此字段，复制值，然后将其粘贴到窗体中。
 
 ## <a name="connect-to-a-linux-based-hdinsight-cluster"></a> 创建基于 Linux 的 HDInsight 群集
 
 创建基于 Linux 的 HDInsight 群集时，你必须提供以前创建的公钥。通过基于 Windows 的客户端，你可以使用下面两种方法，创建基于 Linux 的 HDInsight 群集：
 
-* **Azure 门户预览** - 使用基于 Web 的门户创建群集。
+* **Azure 门户** - 使用基于 Web 的门户创建群集。
 
 * **适用于 Mac、Linux 和 Windows 的 Azure CLI** - 使用命令行命令来创建群集。
 
 上述每种方法都将需要公钥。若要完整了解如何创建基于 Linux 的 HDInsight 群集，请参阅[预配基于 Linux 的 HDInsight 群集](/documentation/articles/hdinsight-hadoop-provision-linux-clusters/)。
 
-### Azure 门户预览
+### Azure 门户
 
-使用 [Azure 门户预览][preview-portal]创建基于 Linux 的 HDInsight 群集时，必须输入 **SSH 用户名**，再选择输入**密码**或 **SSH 公钥**。
+使用 [Azure 门户][preview-portal]创建基于 Linux 的 HDInsight 群集时，必须输入 **SSH 用户名**，再选择输入**密码**或 **SSH 公钥**。
 
 如果选择 **SSH 公钥**，可将公钥（参见 PuttyGen 的“要粘贴到 OpenSSH authorized\_keys 文件中的公钥”字段）粘贴到“SSH 公钥”字段中，或选中“选择文件”以打开并选择含有公钥的文件。
 

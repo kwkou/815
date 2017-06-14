@@ -21,7 +21,7 @@
 
 Azure SQL 数据库提供的性能工具通过提供智能优化操作和建议，有助于识别并提高数据库的性能。
 
-1. 浏览到 [Azure 门户预览](http://portal.azure.cn)中的数据库并单击“所有设置”>“性能”>“概述”以打开“性能”页面。
+1. 浏览到 [Azure 门户](http://portal.azure.cn)中的数据库并单击“所有设置”>“性能”>“概述”以打开“性能”页面。
 
 
 2. 单击“建议”，打开 [SQL 数据库顾问](#sql-database-advisor)，然后单击“查询”打开[Query Performance Insight](#query-performance-insight)。

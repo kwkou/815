@@ -27,7 +27,7 @@
 如需大致了解如何导出到 BACPAC 文件，请参阅[导出到 BACPAC](/documentation/articles/sql-database-export/)。
 
 > [AZURE.NOTE]
->也可使用 [Azure 门户预览](/documentation/articles/sql-database-export-portal/)、[SQL Server Management Studio](/documentation/articles/sql-database-export-ssms/) 或 [PowerShell](/documentation/articles/sql-database-export-powershell/) 将 Azure SQL 数据库文件导出到 BACPAC 文件。
+>也可使用 [Azure 门户](/documentation/articles/sql-database-export-portal/)、[SQL Server Management Studio](/documentation/articles/sql-database-export-ssms/) 或 [PowerShell](/documentation/articles/sql-database-export-powershell/) 将 Azure SQL 数据库文件导出到 BACPAC 文件。
 
 ## SQLPackage 实用程序
 
@@ -49,7 +49,7 @@
 ## 后续步骤
 
 * 若要了解如何使用 SQLPackage 导入 BACPAC，请参阅[使用 SqlPackage 将 BACPAC 导入到 Azure SQL 数据库](/documentation/articles/sql-database-import-sqlpackage/)
-* 若要了解如何使用 Azure 门户预览导入 BACPAC，请参阅[使用 Azure 门户预览将 BACPAC 导入到 Azure SQL 数据库](/documentation/articles/sql-database-import-portal/)
+* 若要了解如何使用 Azure 门户导入 BACPAC，请参阅[使用 Azure 门户将 BACPAC 导入到 Azure SQL 数据库](/documentation/articles/sql-database-import-portal/)
 * 若要了解如何使用 PowerShell 导入 BACPAC，请参阅[使用 PowerShell 将 BACPAC 导入到 Azure SQL 数据库](/documentation/articles/sql-database-import-powershell/)
 * 如需 SQL Server 数据库完整迁移过程的介绍（包括性能建议），请参阅[将 SQL Server 数据库迁移到 Azure SQL 数据库](/documentation/articles/sql-database-cloud-migrate/)。
 * 若要了解如何将 BACPAC 导入到 SQL Server 数据库，请参阅[将 BACPCAC 导入 SQL Server 数据库](https://msdn.microsoft.com/zh-cn/library/hh710052.aspx)

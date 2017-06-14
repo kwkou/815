@@ -37,7 +37,7 @@ HDInsight 应用程序是用户可以在基于 Linux 的 HDInsight 群集上安�
 * **用于 HDnsight 的 Streamsets 数据收集器**提供了一个全功能的集成开发环境 (IDE)，它允许用户设计、测试、部署和管理汇合流和批处理数据的全面互通引入管道，并提供各种流中转换 - 所有这些都无需编写自定义代码。 
 * **H2O Artificial Intelligence for HDInsight (Beta)** H2O Sparkling Water 支持以下分布式算法：GLM、Naïve Bayes、分布式随机森林、梯度提升机、深层神经网络、深度学习、K 平均值、PCA、通用化低级别模型、异常检测和自动编码器。
 
-本文提供的说明使用 Azure 门户预览。 也可以从门户导出 Azure Resource Manager 模板或从供应商处获取 Resource Manage 模板的副本，然后使用 Azure PowerShell 和 Azure CLI 部署模板。  请参阅 [使用 Resource Manager 模板在 HDInsight 中创建基于 Linux 的 Hadoop 群集](/documentation/articles/hdinsight-hadoop-create-linux-clusters-arm-templates/)。
+本文提供的说明使用 Azure 门户。 也可以从门户导出 Azure Resource Manager 模板或从供应商处获取 Resource Manage 模板的副本，然后使用 Azure PowerShell 和 Azure CLI 部署模板。  请参阅 [使用 Resource Manager 模板在 HDInsight 中创建基于 Linux 的 Hadoop 群集](/documentation/articles/hdinsight-hadoop-create-linux-clusters-arm-templates/)。
 
 ## <a name="prerequisites"></a>先决条件
 如果想要在现有的 HDInsight 群集上安装 HDInsight 应用程序，必须有一个 HDInsight 群集。 若要创建群集，请参阅 [创建群集](/documentation/articles/hdinsight-hadoop-linux-tutorial-get-started/#create-cluster)。 也可以在创建 HDInsight 群集时安装 HDInsight 应用程序。
@@ -47,7 +47,7 @@ HDInsight 应用程序是用户可以在基于 Linux 的 HDInsight 群集上安�
 
 **安装 HDInsight 应用程序**
 
-1. 登录 [Azure 门户预览](https://portal.azure.cn)。
+1. 登录 [Azure 门户](https://portal.azure.cn)。
 2. 在左侧菜单中单击“HDInsight 群集”  。  如果未看到，请单击“更多服务”，然后单击“HDInsight 群集”。
 3. 单击某个 HDInsight 群集。  如果没有群集，必须先创建一个。  请参阅 [创建群集](/documentation/articles/hdinsight-hadoop-linux-tutorial-get-started/#create-cluster)。
 4. 单击“配置”类别下的“应用程序”。 可以看到已安装应用程序的列表（如果有）。 如果找不到“应用程序”，这意味着没有适用于此版本 HDInsight 群集的应用程序。
@@ -69,7 +69,7 @@ HDInsight 应用程序是用户可以在基于 Linux 的 HDInsight 群集上安�
 
 **安装 HDInsight 应用程序**
 
-1. 登录 [Azure 门户预览](https://portal.azure.cn)。
+1. 登录 [Azure 门户](https://portal.azure.cn)。
 2. 依次单击“新建”、“数据 + 分析”、“HDInsight”。
 3. 输入“群集名称” ：此名称必须全局唯一。
 4. 单击“订阅”  ，选择将用于此群集的 Azure 订阅。
@@ -89,7 +89,7 @@ HDInsight 应用程序是用户可以在基于 Linux 的 HDInsight 群集上安�
 
 **列出 HDInsight 应用程序并显示属性**
 
-1. 登录 [Azure 门户预览](https://portal.azure.cn)。
+1. 登录 [Azure 门户](https://portal.azure.cn)。
 2. 在左侧菜单中单击“HDInsight 群集”  。  如果未看到，请单击“浏览”，然后单击“HDInsight 群集”。
 3. 单击某个 HDInsight 群集。
 4. 在“设置”边栏选项卡中，单击“常规”类别下的“应用程序”。 “已安装的应用”边栏选项卡将列出所有已安装的应用程序。 

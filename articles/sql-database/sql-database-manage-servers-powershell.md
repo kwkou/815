@@ -20,7 +20,7 @@
 
 # 使用 PowerShell 创建和管理 Azure SQL 数据库服务器
 
-可以使用 [Azure 门户预览](https://portal.azure.cn/)、PowerShell、REST API 或 C# 创建和管理 Azure SQL 数据库服务器。本主题说明如何使用 PowerShell。对于 Azure 门户预览，请参阅[使用 Azure 门户预览创建和管理服务器](/documentation/articles/sql-database-manage-servers-portal/)。
+可以使用 [Azure 门户](https://portal.azure.cn/)、PowerShell、REST API 或 C# 创建和管理 Azure SQL 数据库服务器。本主题说明如何使用 PowerShell。对于 Azure 门户，请参阅[使用 Azure 门户创建和管理服务器](/documentation/articles/sql-database-manage-servers-portal/)。
 
 ## 使用 PowerShell 创建 Azure SQL 数据库服务器
 
@@ -49,7 +49,7 @@
 
 ## 后续步骤
 * 有关管理工具的概述，请参阅[管理工具概述](/documentation/articles/sql-database-manage-overview/)
-* 若要了解如何使用 Azure 门户预览执行管理任务，请参阅[使用 Azure 门户预览管理 Azure SQL 数据库](/documentation/articles/sql-database-manage-portal/)
+* 若要了解如何使用 Azure 门户执行管理任务，请参阅[使用 Azure 门户管理 Azure SQL 数据库](/documentation/articles/sql-database-manage-portal/)
 * 若要了解如何使用 PowerShell 执行管理任务，请参阅[使用 PowerShell 管理 Azure SQL 数据库](/documentation/articles/sql-database-manage-powershell/)
 * 若要了解如何使用 SQL Server Management Studio 执行其他任务，请参阅 [SQL Server Management Studio](/documentation/articles/sql-database-manage-azure-ssms/)。
 * 有关 SQL 数据库服务的信息，请参阅[什么是 SQL 数据库](/documentation/articles/sql-database-technical-overview/)。

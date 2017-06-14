@@ -21,7 +21,7 @@
 
 > [AZURE.SELECTOR]
 - [SQL 数据库顾问概述](/documentation/articles/sql-database-advisor/)
-- [Azure 门户预览](/documentation/articles/sql-database-advisor-portal/)
+- [Azure 门户](/documentation/articles/sql-database-advisor-portal/)
 
 Azure SQL 数据库可以学习和适应你的应用程序并提供自定义的建议，使你能够将 SQL 数据库的性能最大化。Azure SQL 数据库顾问提供有关创建和删除索引、参数化查询，以及解决架构问题的建议。该顾问通过分析 SQL 数据库的使用历史记录来评估性能。提供的建议最适合运行数据库的典型工作负荷。
 
@@ -68,7 +68,7 @@ Azure SQL 数据库可以学习和适应你的应用程序并提供自定义的�
 
 监视建议并继续应用它们以优化性能。数据库工作负荷是动态的，并且不断地更改。SQL 数据库顾问将继续监视和提供可能提高数据库性能的建议。
 
- - 有关如何在 Azure 门户预览中使用 SQL 数据库顾问的步骤，请参阅 [Azure 门户预览中的 SQL 数据库顾问](/documentation/articles/sql-database-advisor-portal/)。
+ - 有关如何在 Azure 门户中使用 SQL 数据库顾问的步骤，请参阅 [Azure 门户中的 SQL 数据库顾问](/documentation/articles/sql-database-advisor-portal/)。
  - 若要了解排名靠前的查询的性能影响，请参阅[查询性能见解](/documentation/articles/sql-database-query-performance/)。
 
 ## 其他资源

@@ -244,7 +244,7 @@
    
     <!--* [在 Azure 中运行用于 N 层体系结构的 VM](/documentation/articles/guidance-compute-n-tier-vm/)-->
     * [在 Azure Resource Manager 中设置对 VM 的 WinRM 访问](/documentation/articles/virtual-machines-windows-winrm/)
-    * [使用 Azure 门户预览实现对 VM 的外部访问](/documentation/articles/virtual-machines-windows-nsg-quickstart-portal/)
+    * [使用 Azure 门户实现对 VM 的外部访问](/documentation/articles/virtual-machines-windows-nsg-quickstart-portal/)
     * [使用 PowerShell 对 VM 实现外部访问](/documentation/articles/virtual-machines-windows-nsg-quickstart-powershell/)
     * [使用 Azure CLI 实现对 Linux VM 的外部访问](/documentation/articles/virtual-machines-linux-nsg-quickstart/)
 * 公共 IP 地址的 **domainNameLabel** 属性必须唯一。 **domainNameLabel** 值的长度必须为 3 到 63 个字符，并遵循正则表达式 `^[a-z][a-z0-9-]{1,61}[a-z0-9]$` 指定的规则。 由于 **uniqueString** 函数生成长度为 13 个字符的字符串，因此 **dnsPrefixString** 参数限制为不超过 50 个字符：

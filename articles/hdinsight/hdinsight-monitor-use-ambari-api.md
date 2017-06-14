@@ -155,7 +155,7 @@ HDInsight 目前仅支持 Ambari 监视功能。Ambari API 1.0 受 HDInsight 版
 ## 后续步骤
 现在已经学习了如何使用 Ambari 监视 API 调用。要了解更多信息，请参阅以下文章：
 
-* [使用 Azure 门户预览管理 HDInsight 群集][hdinsight-admin-portal]
+* [使用 Azure 门户管理 HDInsight 群集][hdinsight-admin-portal]
 * [使用 Azure PowerShell 管理 HDInsight 群集][hdinsight-admin-powershell]
 * [使用命令行界面管理 HDInsight 群集][hdinsight-admin-cli]
 * [HDInsight 文档][hdinsight-documentation]

@@ -1,6 +1,6 @@
 <properties
-    pageTitle="Azure 门户预览：创建 SQL 数据库 | Azure"
-    description="了解如何在 Azure 门户预览中创建 SQL 数据库逻辑服务器、服务器级防火墙规则和数据库。 同时了解如何使用 Azure 门户预览查询 Azure SQL 数据库。"
+    pageTitle="Azure 门户：创建 SQL 数据库 | Azure"
+    description="了解如何在 Azure 门户中创建 SQL 数据库逻辑服务器、服务器级防火墙规则和数据库。 同时了解如何使用 Azure 门户查询 Azure SQL 数据库。"
     keywords="SQL 数据库教程：创建 SQL 数据库"
     services="sql-database"
     documentationcenter=""
@@ -24,15 +24,15 @@
     ms.contentlocale="zh-cn"
     ms.lasthandoff="05/12/2017" />
 
-# <a name="create-an-azure-sql-database-in-the-azure-portal-preview"></a>在 Azure 门户预览中创建 Azure SQL 数据库
+# <a name="create-an-azure-sql-database-in-the-azure-portal-preview"></a>在 Azure 门户中创建 Azure SQL 数据库
 
-本快速入门教程逐步讲解如何在 Azure 中创建 SQL 数据库。 Azure SQL 数据库是一种“数据库即服务”产品，可用于在云中运行和缩放高可用性 SQL Server 数据库。 本快速入门教程介绍如何开始使用 Azure 门户预览创建 SQL 数据库。
+本快速入门教程逐步讲解如何在 Azure 中创建 SQL 数据库。 Azure SQL 数据库是一种“数据库即服务”产品，可用于在云中运行和缩放高可用性 SQL Server 数据库。 本快速入门教程介绍如何开始使用 Azure 门户创建 SQL 数据库。
 
 如果没有 Azure 订阅，请在开始前创建一个[试用帐户](/pricing/1rmb-trial/)。
 
-## <a name="log-in-to-the-azure-portal-preview"></a>登录到 Azure 门户预览
+## <a name="log-in-to-the-azure-portal-preview"></a>登录到 Azure 门户
 
-登录到 [Azure 门户预览](https://portal.azure.cn/)。
+登录到 [Azure 门户](https://portal.azure.cn/)。
 
 ## <a name="create-a-sql-database"></a>创建 SQL 数据库
 
@@ -40,7 +40,7 @@
 
 请按以下步骤创建包含 Adventure Works LT 示例数据的 SQL 数据库。 
 
-1. 单击 Azure 门户预览左上角的“新建”按钮。
+1. 单击 Azure 门户左上角的“新建”按钮。
 
 2. 从“新建”页中选择“数据库”，然后从“数据库”页中选择“SQL 数据库”。
 
@@ -145,7 +145,7 @@ SQL 数据库服务在服务器级别创建一个防火墙。除非创建了防�
 
 本教程系列中的其他快速入门教程是在本文的基础上制作的。 如果计划继续使用后续的快速入门，请勿清除在本快速入门中创建的资源。 如果不打算继续，请在 Azure 门户中执行以下步骤，删除通过此快速入门创建的所有资源。
 
-1. 在 Azure 门户预览的左侧菜单中，单击“资源组”，然后单击“myResourceGroup”。 
+1. 在 Azure 门户的左侧菜单中，单击“资源组”，然后单击“myResourceGroup”。 
 2. 在资源组页上单击“删除”，在文本框中键入 **myResourceGroup**，然后单击“删除”。
 
 ## <a name="next-steps"></a>后续步骤

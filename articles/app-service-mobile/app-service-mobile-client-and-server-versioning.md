@@ -41,7 +41,7 @@ POST https://service.chinacloudsites.cn/tables/TodoItem?ZUMO-API-VERSION=2.0.0
 
 ## 选择不进行版本检查
 
-可以将应用设置 **MS\_SkipVersionCheck** 的值设置为 **true**，选择不进行版本检查。在 web.config 中或在 Azure 门户预览的“应用程序设置”部分中可以指定此设置。
+可以将应用设置 **MS\_SkipVersionCheck** 的值设置为 **true**，选择不进行版本检查。在 web.config 中或在 Azure 门户的“应用程序设置”部分中可以指定此设置。
 
 > [AZURE.NOTE] 移动服务和移动应用之间有许多行为发生了变化，尤其是在脱机同步、身份验证和推送通知方面。应该在完成测试之后才选择不要进行版本检查，确保这些行为的更改不会影响应用功能。
 

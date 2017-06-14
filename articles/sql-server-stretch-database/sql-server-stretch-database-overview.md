@@ -28,7 +28,7 @@ Stretch Database 可以透明、安全地将冷数据迁移到 Azure 云。
 Stretch Database 提供以下优势：
 
 ### 经济高效的为冷数据提供可用性
-使用 SQL Server Stretch Database 将冷暖事务数据从 SQL Server 动态延伸到 Azure。与典型的冷数据存储不同，你的数据将始终联机且可供查询。你可以提供更长的数据保留时限，而不会破坏大型表（如客户订单历史记录）的存储库。受益于 Azure 的低成本，你无需扩展价格不菲的本地存储。可以在 Azure 门户预览中选择定价层和配置设置，以掌控费用。根据需要扩展或缩减。有关详细信息，请访问 [SQL Server Stretch Database 定价](/pricing/details/sql-server-stretch-database/)页。
+使用 SQL Server Stretch Database 将冷暖事务数据从 SQL Server 动态延伸到 Azure。与典型的冷数据存储不同，你的数据将始终联机且可供查询。你可以提供更长的数据保留时限，而不会破坏大型表（如客户订单历史记录）的存储库。受益于 Azure 的低成本，你无需扩展价格不菲的本地存储。可以在 Azure 门户中选择定价层和配置设置，以掌控费用。根据需要扩展或缩减。有关详细信息，请访问 [SQL Server Stretch Database 定价](/pricing/details/sql-server-stretch-database/)页。
 
 ### 无需对查询或应用程序进行更改
 无缝访问 SQL Server 数据，无论该数据在本地还是已延伸到云。你可以设置策略来确定数据的存储位置，SQL Server 将在后台处理数据移动。整个表始终会联机且可供查询。此外，Stretch Database 不需要对现有查询或应用程序进行任何更改 - 数据位置对应用程序完全透明。

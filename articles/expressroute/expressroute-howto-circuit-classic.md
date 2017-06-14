@@ -24,7 +24,7 @@
 
 # <a name="create-and-modify-an-expressroute-circuit-using-powershell-classic"></a>使用 PowerShell 创建和修改 ExpressRoute 线路（经典）
 > [AZURE.SELECTOR]
-- [Resource Manager - Azure 门户预览](/documentation/articles/expressroute-howto-circuit-portal-resource-manager/)
+- [Resource Manager - Azure 门户](/documentation/articles/expressroute-howto-circuit-portal-resource-manager/)
 - [Resource Manager - PowerShell](/documentation/articles/expressroute-howto-circuit-arm/)
 - [经典 - PowerShell](/documentation/articles/expressroute-howto-circuit-classic/)
 

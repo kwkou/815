@@ -20,7 +20,7 @@
 
 # 适用于 Windows 的虚拟机扩展和功能
 
-Azure 虚拟机扩展是小型应用程序，可在Azure 虚拟机上提供部署后配置和自动化任务。例如，如果虚拟机要求安装软件、防病毒保护或进行 Docker 配置，便可以使用 VM 扩展来完成这些任务。可以使用 Azure CLI、PowerShell、Azure Resource Manager 模板和 Azure 门户预览运行 Azure VM 扩展。扩展可与新虚拟机部署捆绑在一起，或者针对任何现有系统运行。
+Azure 虚拟机扩展是小型应用程序，可在Azure 虚拟机上提供部署后配置和自动化任务。例如，如果虚拟机要求安装软件、防病毒保护或进行 Docker 配置，便可以使用 VM 扩展来完成这些任务。可以使用 Azure CLI、PowerShell、Azure Resource Manager 模板和 Azure 门户运行 Azure VM 扩展。扩展可与新虚拟机部署捆绑在一起，或者针对任何现有系统运行。
 
 本文档提供虚拟机扩展的概述、使用虚拟机扩展的先决条件，以及有关如何检测、管理和删除虚拟机扩展的指南。由于有许多 VM 扩展可用，每个扩展可能具有唯一的配置，因此本文档提供通用信息。扩展特定的详细信息可在每个特定于单个扩展的文档中找到。
 
@@ -98,11 +98,11 @@ Azure 虚拟机扩展可以在现有虚拟机上运行，当需要在已部署�
 
 `Set-AzureRmVMExtension` 命令可用于启动任何 VM 扩展。有关详细信息，请参阅 [Set-AzureRmVMExtension 参考](https://msdn.microsoft.com/zh-cn/library/mt603745.aspx)。
 
-### Azure 门户预览
+### Azure 门户
 
-可通过 Azure 门户预览将 VM 扩展应用到现有虚拟机。为此，请选择要使用的虚拟机，选择“扩展”，然后单击“添加”。这将提供可用扩展的列表。选择所需的扩展，并按照向导中的步骤进行操作。
+可通过 Azure 门户将 VM 扩展应用到现有虚拟机。为此，请选择要使用的虚拟机，选择“扩展”，然后单击“添加”。这将提供可用扩展的列表。选择所需的扩展，并按照向导中的步骤进行操作。
 
-下图显示 Azure 门户预览中 Microsoft 反恶意软件扩展的安装。
+下图显示 Azure 门户中 Microsoft 反恶意软件扩展的安装。
 
 ![反恶意软件扩展](./media/virtual-machines-windows-extensions-features/anti-virus-extension.png)  
 
@@ -238,7 +238,7 @@ VM 扩展可添加到 Azure Resource Manager 模板，并在部署模板的过�
     AutoUpgradeMinorVersion : False
     ForceUpdateTag          :
 
-此外，还可以在 Azure 门户预览中找到扩展执行状态。若要查看扩展的状态，请选择虚拟机，选择“扩展”，然后选择所需的扩展。
+此外，还可以在 Azure 门户中找到扩展执行状态。若要查看扩展的状态，请选择虚拟机，选择“扩展”，然后选择所需的扩展。
 
 ### 重新运行 VM 扩展
 
@@ -246,7 +246,7 @@ VM 扩展可添加到 Azure Resource Manager 模板，并在部署模板的过�
 
     Remove-AzureRmVMExtension -ResourceGroupName myResourceGroup -VMName myVM -Name myExtensionName
 
-此外，还可以使用 Azure 门户预览来删除扩展。为此，请执行以下操作：
+此外，还可以使用 Azure 门户来删除扩展。为此，请执行以下操作：
 
 1. 选择虚拟机。
 2. 选择“扩展”。

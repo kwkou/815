@@ -30,7 +30,7 @@
 
 安全身份验证要求为应用定义新的 URL 方案。此方案允许在完成身份验证过程后，身份验证系统重定向到应用。在本教程中，我们自始至终使用 URL 方案 _appname_。但是，可以使用任何你所选的 URL 方案。该方案是移动应用的唯一方案。在服务器端启用重定向：
 
-1. 在 [Azure 门户预览]中，选择你的应用服务。
+1. 在 [Azure 门户]中，选择你的应用服务。
 
 2. 单击“身份验证/授权”菜单选项。
 
@@ -76,7 +76,7 @@
 
     若未使用 microsoftaccount 作为标识提供者，请将 *microsoftaccount* 更改为 *windowsazureactivedirectory*。
 
-    将 **urlScheme** 替换为应用的唯一名称。urlScheme 应与在 Azure 门户预览中的“允许的外部重定向 URL”字段中指定的 URL 方案协议相同。身份验证回调使用 urlScheme 在完成身份验证请求之后切换回到你的应用。
+    将 **urlScheme** 替换为应用的唯一名称。urlScheme 应与在 Azure 门户中的“允许的外部重定向 URL”字段中指定的 URL 方案协议相同。身份验证回调使用 urlScheme 在完成身份验证请求之后切换回到你的应用。
 
 2. 使用以下代码替换 *QSTodoListViewController.m* 的 `viewDidLoad` 中的 `[self refresh]`：
 
@@ -156,7 +156,7 @@
 
     若未使用 microsoftaccount 作为标识提供者，请将 *microsoftaccount* 更改为 *windowsazureactivedirectory*。
 
-    将 **urlScheme** 替换为应用的唯一名称。urlScheme 应与在 Azure 门户预览中的“允许的外部重定向 URL”字段中指定的 URL 方案协议相同。身份验证回调使用 urlScheme 在完成身份验证请求之后切换回到你的应用。
+    将 **urlScheme** 替换为应用的唯一名称。urlScheme 应与在 Azure 门户中的“允许的外部重定向 URL”字段中指定的 URL 方案协议相同。身份验证回调使用 urlScheme 在完成身份验证请求之后切换回到你的应用。
 
 2. 删除 *ToDoTableViewController.swift* 中 `viewDidLoad()` 末尾的 `self.refreshControl?.beginRefreshing()` 和 `self.onRefresh(self.refreshControl)` 行。在其位置上添加对 `loginAndGetData()` 的调用：
 
@@ -209,7 +209,7 @@
 
 [1]: https://developers.facebook.com/docs/ios/ios9#whitelist
 [2]: https://developer.apple.com/library/content/documentation/iPhone/Conceptual/iPhoneOSProgrammingGuide/Inter-AppCommunication/Inter-AppCommunication.html
-[Azure 门户预览]: https://portal.azure.cn
+[Azure 门户]: https://portal.azure.cn
 [iOS quick start]: /documentation/articles/app-service-mobile-ios-get-started/
 [iOS 快速入门]: /documentation/articles/app-service-mobile-ios-get-started/
 

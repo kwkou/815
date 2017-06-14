@@ -312,7 +312,7 @@
 
 主模板位于名为“azuredeploy.json”的文件中。 该模板可以通过 PowerShell 或 CLI 提交（与关联的“azuredeploy.parameters.json”文件一起），以便进行部署。我发现，最简单的方式是使用 GitHub 的 README.md 页上的“部署到 Azure”按钮。
 
-若要部署从 GitHub 和 Azure 门户预览生成本示例的模板，请执行以下步骤：
+若要部署从 GitHub 和 Azure 门户生成本示例的模板，请执行以下步骤：
 
 1. 在浏览器中导航到[模板][Template]
 2. 单击“部署到 Azure”按钮（或者可查看该模板图形表示形式的“可视化”按钮）

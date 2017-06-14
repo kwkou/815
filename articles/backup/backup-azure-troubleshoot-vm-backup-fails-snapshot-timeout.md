@@ -95,7 +95,7 @@ VMSnapshot for Linux（备份使用的扩展）的最新版本是 1.0.91.0。
 
 若要卸载扩展，请执行以下操作：
 
-1. 转到 [Azure 门户预览](https://portal.azure.cn/)。
+1. 转到 [Azure 门户](https://portal.azure.cn/)。
 2. 找到存在备份问题的 VM。
 3. 单击“设置”。
 4. 单击“扩展”。

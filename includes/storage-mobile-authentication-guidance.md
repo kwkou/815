@@ -14,7 +14,7 @@
 
 - **DefaultEndpointsProtocol** - 可以选择 HTTP 或 HTTPS。但是，强烈建议使用 HTTPS。
 - **帐户名** - 存储帐户的名称
-- **帐户密钥** - 在 [Azure 门户预览](https://portal.azure.cn)上，导航到你的存储帐户，然后单击“密钥”图标以查看此信息。
+- **帐户密钥** - 在 [Azure 门户](https://portal.azure.cn)上，导航到你的存储帐户，然后单击“密钥”图标以查看此信息。
 - **EndpointSuffix** - 用于区域中具有不同终结点后缀的存储服务，例如 Azure 中国, 需要指定 EndpointSuffix=core.chinacloudapi.cn。
 
 以下是使用共享密钥身份验证的连接字符串示例：
@@ -22,7 +22,7 @@
 `"DefaultEndpointsProtocol=https;AccountName=your_account_name_here;AccountKey=your_account_key_here;EndpointSuffix=core.chinacloudapi.cn"`
 
 ### 共享访问签名 (SAS)
-对于移动应用程序，针对 Azure 存储服务对客户端请求进行身份验证的建议方法是使用共享访问签名 (SAS)。SAS 允许你使用指定的权限集向客户端授予在指定的时间内对资源的访问权限。作为存储帐户所有者，需要为移动客户端生成要使用的 SAS。若要生成 SAS，你可能需要编写单独的服务，该服务生成要分发给客户端的 SAS。出于测试目的，可以使用 [Azure 存储资源管理器](http://storageexplorer.com)或 [Azure 门户预览](https://portal.azure.cn)来生成 SAS。创建 SAS 时，可以指定 SAS 有效的时间间隔，以及 SAS 授予客户端的权限。
+对于移动应用程序，针对 Azure 存储服务对客户端请求进行身份验证的建议方法是使用共享访问签名 (SAS)。SAS 允许你使用指定的权限集向客户端授予在指定的时间内对资源的访问权限。作为存储帐户所有者，需要为移动客户端生成要使用的 SAS。若要生成 SAS，你可能需要编写单独的服务，该服务生成要分发给客户端的 SAS。出于测试目的，可以使用 [Azure 存储资源管理器](http://storageexplorer.com)或 [Azure 门户](https://portal.azure.cn)来生成 SAS。创建 SAS 时，可以指定 SAS 有效的时间间隔，以及 SAS 授予客户端的权限。
 
 以下示例演示如何使用 Azure 存储资源管理器来生成 SAS。
 

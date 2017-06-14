@@ -23,7 +23,7 @@
 ## 后续步骤
 以下文章更详细地介绍了这里讨论的技术，还包括有关如何使用网络安全组的快速入门指南：
 
-- [快速入门 — 使用 Azure 门户预览创建网络安全组和 ACL 规则](/documentation/articles/virtual-machines-windows-nsg-quickstart-portal/)  
+- [快速入门 — 使用 Azure 门户创建网络安全组和 ACL 规则](/documentation/articles/virtual-machines-windows-nsg-quickstart-portal/)  
 - [快速入门 — 使用 Azure PowerShell 创建网络安全组和 ACL 规则](/documentation/articles/virtual-machines-windows-nsg-quickstart-powershell/)  
 - [Azure Resource Manager 概述](/documentation/articles/resource-group-overview/)  
 - [什么是网络安全组 (NSG)？](/documentation/articles/virtual-networks-nsg/)

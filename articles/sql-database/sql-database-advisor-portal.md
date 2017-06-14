@@ -1,6 +1,6 @@
 <properties 
-   pageTitle="使用 Azure 门户预览的 Azure SQL 数据库顾问 | Azure" 
-   description="可以在 Azure 门户预览中使用 Azure SQL 数据库顾问查看和实施为你的现有 SQL 数据库提供的建议，这些建议可以提高当前查询性能。" 
+   pageTitle="使用 Azure 门户的 Azure SQL 数据库顾问 | Azure" 
+   description="可以在 Azure 门户中使用 Azure SQL 数据库顾问查看和实施为你的现有 SQL 数据库提供的建议，这些建议可以提高当前查询性能。" 
    services="sql-database" 
    documentationCenter="" 
    authors="stevestein" 
@@ -18,13 +18,13 @@
    ms.author="sstein"/>
 
 
-# 在 Azure 门户预览中使用 SQL 数据库顾问
+# 在 Azure 门户中使用 SQL 数据库顾问
 
 > [AZURE.SELECTOR]
 - [SQL 数据库顾问概述](/documentation/articles/sql-database-advisor/)
-- [Azure 门户预览](/documentation/articles/sql-database-advisor-portal/)
+- [Azure 门户](/documentation/articles/sql-database-advisor-portal/)
 
-可以在 Azure 门户预览中使用 Azure SQL 数据库顾问查看和实施为你的现有 SQL 数据库提供的建议，这些建议可以提高当前查询性能。
+可以在 Azure 门户中使用 Azure SQL 数据库顾问查看和实施为你的现有 SQL 数据库提供的建议，这些建议可以提高当前查询性能。
 
 ## 查看建议
 
@@ -32,7 +32,7 @@
 
 若要查看和应用建议，需要 Azure 中相应的[基于角色的访问控制](/documentation/articles/role-based-access-control-configure/)权限。查看建议需要“读者”、“SQL DB 参与者”权限，执行任何操作（如创建或删除索引、取消创建索引）需要“所有者”、“SQL DB 参与者”权限。
 
-1. 登录到 [Azure 门户预览](https://portal.azure.cn/)。
+1. 登录到 [Azure 门户](https://portal.azure.cn/)。
 2. 单击“更多服务”>“SQL 数据库”，然后选择数据库。
 5. 单击“性能建议建议”查看适用于所选数据库的可用建议。
 
@@ -40,7 +40,7 @@
 
 ![建议](./media/sql-database-advisor-portal/recommendations.png)  
 
-下面是 Azure 门户预览中“修复架构问题”建议的示例。
+下面是 Azure 门户中“修复架构问题”建议的示例。
 
 ![修复架构问题](./media/sql-database-advisor-portal/sql-database-advisor-schema-issue.png)
 

@@ -1,5 +1,5 @@
 
-1. 访问 [Azure 门户预览]。依次单击“浏览全部”>“移动应用”> 刚创建的后端。在移动应用设置中，依次单击“快速启动”> “Android”。在“配置客户端应用程序”下，单击“下载”。这样可以为预配置为连接到你的后端的应用下载完整的 Android 项目。
+1. 访问 [Azure 门户]。依次单击“浏览全部”>“移动应用”> 刚创建的后端。在移动应用设置中，依次单击“快速启动”> “Android”。在“配置客户端应用程序”下，单击“下载”。这样可以为预配置为连接到你的后端的应用下载完整的 Android 项目。
 
 2. 使用“导入项目（Eclipse ADT、Gradle 等）”打开使用“Android Studio”的项目。请确保使用此导入选项以避免任何 JDK 错误。
 
@@ -8,6 +8,6 @@
    
     ![](./media/app-service-mobile-android-quickstart/mobile-quickstart-startup-android.png)
 
-[Azure 门户预览]: https://portal.azure.cn/
+[Azure 门户]: https://portal.azure.cn/
 
 <!---HONumber=Mooncake_1219_2016-->

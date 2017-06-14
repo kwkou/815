@@ -1,5 +1,5 @@
 > [AZURE.SELECTOR]
-- [Azure 门户预览](/documentation/articles/iot-hub-create-through-portal/)
+- [Azure 门户](/documentation/articles/iot-hub-create-through-portal/)
 - [PowerShell](/documentation/articles/iot-hub-create-using-powershell/)
 - [Azure CLI 2.0 预览版](/documentation/articles/iot-hub-create-using-cli/)
 - [CLI](/documentation/articles/iot-hub-create-using-cli/)

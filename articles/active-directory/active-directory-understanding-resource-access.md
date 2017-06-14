@@ -1,6 +1,6 @@
 <properties
     pageTitle="了解 Azure 中的资源访问权限 | Azure"
-    description="本主题介绍有关使用订阅管理员在整个 Azure 门户预览中控制资源访问权限的概念"
+    description="本主题介绍有关使用订阅管理员在整个 Azure 门户中控制资源访问权限的概念"
     services="active-directory"
     documentationcenter=""
     author="curtand"
@@ -23,7 +23,7 @@
 
 # <a name="understanding-resource-access-in-azure"></a>了解 Azure 中的资源访问权限
 > [AZURE.NOTE]
-> 本主题介绍有关使用订阅管理员在整个 Azure 门户预览中控制资源访问权限的概念。 作为替代方法，Azure 经典管理门户提供[基于角色的访问控制](/documentation/articles/role-based-access-control-configure/)，以便更准确地管理 Azure 资源。
+> 本主题介绍有关使用订阅管理员在整个 Azure 门户中控制资源访问权限的概念。 作为替代方法，Azure 经典管理门户提供[基于角色的访问控制](/documentation/articles/role-based-access-control-configure/)，以便更准确地管理 Azure 资源。
 > 
 > 
 

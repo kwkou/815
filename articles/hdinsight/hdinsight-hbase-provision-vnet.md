@@ -52,7 +52,7 @@
 >
 >
 
-1. 单击下面的图像可在 Azure 门户预览中打开模板。模板位于 [Azure 快速入门模板](https://github.com/Azure/azure-quickstart-templates/tree/master/101-hdinsight-hbase-linux-vnet/)中。
+1. 单击下面的图像可在 Azure 门户中打开模板。模板位于 [Azure 快速入门模板](https://github.com/Azure/azure-quickstart-templates/tree/master/101-hdinsight-hbase-linux-vnet/)中。
 
     <a href="https://portal.azure.cn/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-hdinsight-hbase-linux-vnet%2Fazuredeploy.json" target="_blank"><img src="./media/hdinsight-hbase-provision-vnet/deploy-to-azure.png" alt="Deploy to Azure"></a>
 
@@ -69,7 +69,7 @@
     * **我同意以述条款和条件**：（选择）
 3. 单击“购买”。创建群集大约需要 20 分钟时间。创建群集之后，便可以在门户中单击群集边栏选项卡以打开它。
 
-完成教程之后，可能要删除群集。有了 HDInsight，可将数据存储在 Azure 存储空间，以便在不使用群集时可将其安全删除。此外，还需要支付 HDInsight 群集费用，即使未使用。由于群集费用高于存储空间费用数倍，因此在不使用群集时将其删除可以节省费用。有关删除群集的说明，请参阅[使用 Azure 门户预览在 HDInsight 中管理 Hadoop 群集](/documentation/articles/hdinsight-administer-use-management-portal/#delete-clusters)。
+完成教程之后，可能要删除群集。有了 HDInsight，可将数据存储在 Azure 存储空间，以便在不使用群集时可将其安全删除。此外，还需要支付 HDInsight 群集费用，即使未使用。由于群集费用高于存储空间费用数倍，因此在不使用群集时将其删除可以节省费用。有关删除群集的说明，请参阅[使用 Azure 门户在 HDInsight 中管理 Hadoop 群集](/documentation/articles/hdinsight-administer-use-management-portal/#delete-clusters)。
 
 要开始处理新 HBase 群集，可以按照[开始在 HDInsight 中将 HBase 与 Hadoop 配合使用](/documentation/articles/hdinsight-hbase-tutorial-get-started-linux/)中的步骤操作。
 
@@ -207,7 +207,7 @@
         这将返回 DNS 后缀。例如，**yourclustername.b4.internal.chinacloudapp.cn**。
     * 使用 RDP
 
-        还可以使用远程桌面来连接 HBase 群集（将连接到头节点），并从命令提示符运行 **ipconfig** 来获取 DNS 后缀。有关启用远程桌面协议 (RDP) 并使用 RDP 连接到群集的说明，请参阅[使用 Azure 门户预览在 HDInsight 中管理 Hadoop 群集][hdinsight-admin-portal]。
+        还可以使用远程桌面来连接 HBase 群集（将连接到头节点），并从命令提示符运行 **ipconfig** 来获取 DNS 后缀。有关启用远程桌面协议 (RDP) 并使用 RDP 连接到群集的说明，请参阅[使用 Azure 门户在 HDInsight 中管理 Hadoop 群集][hdinsight-admin-portal]。
 
         ![hdinsight.hbase.dns.surffix][img-dns-surffix]
 

@@ -32,7 +32,7 @@ SFTP 全称是 Secure File Transfer Protocol，是 SSH 内嵌的协议。它借�
 
 ### 在 Azure 中部署 Windows Server 2016 Datacenter
 
-本文的介绍中，我在 Azure 门户预览里使用 Windows Server 2016 Datacenter 来部署承载 FTPS 服务的虚拟机。如果您使用 Windows Server 2008 或者 2012，也可以参考本文来搭建 FTPS 服务。配置过程基本一致。
+本文的介绍中，我在 Azure 门户里使用 Windows Server 2016 Datacenter 来部署承载 FTPS 服务的虚拟机。如果您使用 Windows Server 2008 或者 2012，也可以参考本文来搭建 FTPS 服务。配置过程基本一致。
 
 虚拟机创建的过程中需要注意的是，创建公共 IP 地址时，需要使用静态 IP。这样可以确保虚拟机重启后，IP 不会改变。在后面的步骤里，这个 IP 还需要配置到 FTPS 服务的防火墙中。如果因重启而改变了， 会导致 FTPS 服务无法访问。
 
@@ -119,7 +119,7 @@ Authentication and Authorization Information 步骤中，Authentication 选择 *
 
 ## 配置网络安全组（NSG）
 
-回到 Azure 门户预览页面，找到虚拟机对应的网络安全组，然后为 FTP 服务所需的端口添加对应的入站安全规则。这里需要添加的有两个规则。一是 FTP 控制命令所需的 TCP 21 端口，二是之前在虚拟机中，为 FTP 服务添加的数据通道端口，TCP 55000 至 55004。添加完成后，如下图所示。
+回到 Azure 门户页面，找到虚拟机对应的网络安全组，然后为 FTP 服务所需的端口添加对应的入站安全规则。这里需要添加的有两个规则。一是 FTP 控制命令所需的 TCP 21 端口，二是之前在虚拟机中，为 FTP 服务添加的数据通道端口，TCP 55000 至 55004。添加完成后，如下图所示。
 
 ![inbound-security-rules](./media/aog-virtual-machines-quickly-build-ftps-server/inbound-security-rules.png)
 

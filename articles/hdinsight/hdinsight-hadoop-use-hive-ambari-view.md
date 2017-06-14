@@ -42,7 +42,7 @@
 
 ## <a name="open-the-hive-view"></a>打开 Hive 视图
 
-可从 Azure 门户预览中获取 Ambari 视图；选择 HDInsight 群集，然后从“快速链接”部分选择“Ambari 视图”。
+可从 Azure 门户中获取 Ambari 视图；选择 HDInsight 群集，然后从“快速链接”部分选择“Ambari 视图”。
 
 ![“快速链接”部分](./media/hdinsight-hadoop-use-hive-ambari-view/quicklinks.png)
 

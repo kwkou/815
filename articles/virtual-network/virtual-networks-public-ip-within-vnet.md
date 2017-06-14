@@ -26,7 +26,7 @@
 
 ## 如何添加公共 IP 地址范围？
 
-添加公共 IP 地址范围的方式与添加专用 IP 地址范围相同：使用 *netcfg* 文件，或在 [Azure 门户预览](http://portal.azure.cn)中添加配置。可以在创建 VNet 时添加公共 IP 地址范围，也可以稍后返回添加。以下示例演示了在同一个 VNet 中配置的公共和专用 IP 地址空间。
+添加公共 IP 地址范围的方式与添加专用 IP 地址范围相同：使用 *netcfg* 文件，或在 [Azure 门户](http://portal.azure.cn)中添加配置。可以在创建 VNet 时添加公共 IP 地址范围，也可以稍后返回添加。以下示例演示了在同一个 VNet 中配置的公共和专用 IP 地址空间。
 
 ![门户中的公共 IP 地址](./media/virtual-networks-public-ip-within-vnet/IC775684.png)
 

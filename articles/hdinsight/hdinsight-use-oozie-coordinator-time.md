@@ -93,7 +93,7 @@ Apache Oozie 是一个管理 Hadoop 作业的工作流/协调系统。该系统�
     </table>
 
     > [AZURE.NOTE]
-    默认情况下，可从 Azure 服务（如 Azure HDInsight）连接 Azure SQL 数据库。如果禁用此防火墙设置，则必须从 Azure 门户预览启用。有关创建 SQL 数据库和配置防火墙规则的说明，请参阅[创建和配置 SQL 数据库][sqldatabase-get-started]。
+    默认情况下，可从 Azure 服务（如 Azure HDInsight）连接 Azure SQL 数据库。如果禁用此防火墙设置，则必须从 Azure 门户启用。有关创建 SQL 数据库和配置防火墙规则的说明，请参阅[创建和配置 SQL 数据库][sqldatabase-get-started]。
 
 > [AZURE.NOTE]
 填写表中的值。这将有助于学习本教程。
@@ -650,7 +650,7 @@ HDInsight 群集版本 3.0 仅支持 *wasb://* 语法。较早的 *asv://* 语�
 
 **检查作业错误日志**
 
-要解决工作流的疑难问题，可从群集头节点中的 C:\\apps\\dist\\oozie-3.3.2.1.3.2.0-05\\oozie-win-distro\\logs\\Oozie.log 位置找到 Oozie 日志文件。有关 RDP 的信息，请参阅[使用 Azure 门户预览管理 HDInsight 群集][hdinsight-admin-portal]。
+要解决工作流的疑难问题，可从群集头节点中的 C:\\apps\\dist\\oozie-3.3.2.1.3.2.0-05\\oozie-win-distro\\logs\\Oozie.log 位置找到 Oozie 日志文件。有关 RDP 的信息，请参阅[使用 Azure 门户管理 HDInsight 群集][hdinsight-admin-portal]。
 
 **重新运行教程**
 

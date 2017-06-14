@@ -56,13 +56,13 @@ Azure App Service 保留了应用程序框架（ASP.NET、PHP、Node.js 等等�
 * 部署时间可能很长，因为许多 FTP 工具不提供仅差异复制，而只是复制所有文件。
 
 ### <a name="howtoftp"></a>如何使用 FTP 上载文件
-[Azure 门户预览](https://portal.azure.cn)为用户提供所有需要的信息，以便使用 FTP 或 FTPS 连接到应用的目录。
+[Azure 门户](https://portal.azure.cn)为用户提供所有需要的信息，以便使用 FTP 或 FTPS 连接到应用的目录。
 
 * [使用 FTP 将应用部署到 Azure 应用服务](/documentation/articles/app-service-deploy-ftp/)
 
 将文件复制到 Azure 涉及几个简单步骤：
 
-1. 假设你已建立部署凭据，请转到“设置”>“属性”获取 FTP 连接信息，然后复制“FTP/开发用户”、“FTP 主机名”和“FTPS 主机名”的值。请复制 Azure 门户预览中显示的“FTP/部署用户”值（包括应用名称），以便为 FTP 服务器提供适当的上下文。
+1. 假设你已建立部署凭据，请转到“设置”>“属性”获取 FTP 连接信息，然后复制“FTP/开发用户”、“FTP 主机名”和“FTPS 主机名”的值。请复制 Azure 门户中显示的“FTP/部署用户”值（包括应用名称），以便为 FTP 服务器提供适当的上下文。
    
     ![FTP 连接信息](./media/web-sites-deploy/FTP-Connection-Info.PNG) ![FTP 部署凭据](./media/web-sites-deploy/FTP-UID-PWD.PNG)
 2. 从 FTP 客户端，使用收集到的连接信息连接到你的应用。
@@ -91,7 +91,7 @@ Azure App Service 保留了应用程序框架（ASP.NET、PHP、Node.js 等等�
 
 * [Continous Deployment to Azure App Service](/documentation/articles/app-service-continuous-deployment/)（连续部署到 Azure App Service）。
 
-若要了解如何从 Azure 门户预览未列出的云存储库（如 [GitLab](https://gitlab.com/)）手动配置连续部署，请参阅[使用手动步骤设置连续部署](https://github.com/projectkudu/kudu/wiki/Continuous-deployment#setting-up-continuous-deployment-using-manual-steps)。
+若要了解如何从 Azure 门户未列出的云存储库（如 [GitLab](https://gitlab.com/)）手动配置连续部署，请参阅[使用手动步骤设置连续部署](https://github.com/projectkudu/kudu/wiki/Continuous-deployment#setting-up-continuous-deployment-using-manual-steps)。
 
 ## <a name="localgitdeployment"></a>从本地 Git 部署
 如果你的开发团队使用基于 Git 的本地源代码管理 (SCM) 服务，可将它配置为应用服务的部署源。
@@ -108,7 +108,7 @@ Azure App Service 保留了应用程序框架（ASP.NET、PHP、Node.js 等等�
 * 连续部署没有任何现成的解决方案。
 
 ### <a name="vsts"></a>如何从本地 Git 部署
-在 [Azure 门户预览](https://portal.azure.cn)中，可以配置本地 Git 部署。
+在 [Azure 门户](https://portal.azure.cn)中，可以配置本地 Git 部署。
 
 * [Local Git Deployment to Azure App Service](/documentation/articles/app-service-deploy-local-git/)（从本地 Git 部署到 Azure App Service）。
 * [从任何 git/hg 存储库发布到 Web 应用](http://blog.davidebbo.com/2013/04/publishing-to-azure-web-sites-from-any.html)。

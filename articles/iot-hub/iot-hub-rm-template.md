@@ -185,7 +185,7 @@
 2. 单击“**生成**”，然后单击“**生成解决方案**”。 更正所有错误。
 3. 单击“**调试**”，然后单击“**开始调试**”以运行应用程序。 运行部署可能需要几分钟时间。
 
-4. 若要验证应用程序中是否添加了新 IoT 中心，可以访问[门户预览][lnk-azure-portal]并查看资源列表，或使用 **Get-AzureRmResource** PowerShell cmdlet。
+4. 若要验证应用程序中是否添加了新 IoT 中心，可以访问[门户][lnk-azure-portal]并查看资源列表，或使用 **Get-AzureRmResource** PowerShell cmdlet。
 
 > [AZURE.NOTE]
 > 此示例应用程序添加用于计费的 S1 标准 IoT 中心。 可以通过 [Azure 门户][lnk-azure-portal] 删除该 IoT 中心，或者在完成后使用 **Remove-AzureRmResource** PowerShell cmdlet。

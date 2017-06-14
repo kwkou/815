@@ -122,7 +122,7 @@ Azure 诊断扩展可在基于 Windows 的 Azure 虚拟机上提供监视和诊�
 
 上述配置中的指标定义 xml 节点是一个重要的配置元素，因为它定义如何聚合和存储之前在 *PerformanceCounter* 节点中的 xml 定义的性能计数器。
 
-> [AZURE.IMPORTANT] 这些度量值是促使 Azure 门户预览中生成监视图表和警报的因素。如果你需要在 Azure 门户预览中查看 VM 监视数据，则必须在诊断配置中包括 **Metrics** 节点以及 *resourceID* 和 **MetricAggregation**。
+> [AZURE.IMPORTANT] 这些度量值是促使 Azure 门户中生成监视图表和警报的因素。如果你需要在 Azure 门户中查看 VM 监视数据，则必须在诊断配置中包括 **Metrics** 节点以及 *resourceID* 和 **MetricAggregation**。
 
 以下是指标定义 xml 的示例：
 

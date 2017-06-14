@@ -75,7 +75,7 @@
 
 1. Bob 是 Azure AD 全局管理员。 他将 Stuart 指定为服务的共同管理员。 
 2. 为了提高安全性，Bob 将 Stuart 的帐户配置为始终需要执行 MFA
-3. 登录到 Azure 门户预览时，Stuart 发现需要注册电话号码才能继续登录
+3. 登录到 Azure 门户时，Stuart 发现需要注册电话号码才能继续登录
 4. Stuart 的后续登录受到多重身份验证的保护，现在他需要拨打电话来验证自己的身份。
 
 ### <a name="authenticate-without-passwords-using-certificate-based-authentication"></a>使用基于证书的身份验证，在没有密码的情况下进行身份验证

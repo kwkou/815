@@ -47,7 +47,7 @@
     ![键入服务器名称和登录凭据](./media/sql-database-connect-excel/connect-to-server.png)
    
     > [AZURE.TIP]
-    > 根据你的网络环境，你可能无法连接；如果 SQL 数据库服务器不允许来自客户端 IP 地址的流量，你可能会断开连接。 转到 [Azure 门户预览](https://portal.azure.cn/)，依次单击“SQL Server”、你的服务器、“设置”下面的“防火墙”，然后添加客户端 IP 地址。 有关详细信息，请参阅 [如何配置防火墙设置](/documentation/articles/sql-database-configure-firewall-settings/) 。
+    > 根据你的网络环境，你可能无法连接；如果 SQL 数据库服务器不允许来自客户端 IP 地址的流量，你可能会断开连接。 转到 [Azure 门户](https://portal.azure.cn/)，依次单击“SQL Server”、你的服务器、“设置”下面的“防火墙”，然后添加客户端 IP 地址。 有关详细信息，请参阅 [如何配置防火墙设置](/documentation/articles/sql-database-configure-firewall-settings/) 。
     > 
     > 
 

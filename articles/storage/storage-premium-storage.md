@@ -48,7 +48,7 @@ Azure VM 可附加多个高级存储磁盘，使应用程序可具有每个 VM �
 
 **高级页 Blob**：高级存储支持页 Blob（用于存储 VM 的永久性非托管磁盘）。与标准存储不同，高级存储不支持块 Blob、追加 Blob、文件、表或队列。放在高级存储帐户中的任何对象都是页 Blob，并且对应于其中一种受支持的预配大小。因此，高级存储帐户不适合存储小型 Blob。
 
-**高级存储帐户**：若要开始使用高级存储，请为非托管磁盘创建一个高级存储帐户。如果想要使用 [Azure 门户预览](https://portal.azure.cn)，可以通过将“高级”性能层和“本地冗余存储(LRS)”指定为复制选项，来创建高级存储帐户。还可以通过指定“Premium\_LRS”作为类型来创建高级存储帐户，为此，可以使用：[存储 REST API](https://docs.microsoft.com/rest/api/storageservices/fileservices/Azure-Storage-Services-REST-API-Reference) 版本 2014-02-14 或更高版本；[服务管理 REST API](http://msdn.microsoft.com/zh-cn/library/azure/ee460799.aspx) 版本 2014-10-01 或更高版本（经典部署）；[Azure 存储资源提供程序 REST API 参考](https://docs.microsoft.com/rest/api/storagerp)（Resource Manager 部署）；[Azure PowerShell](/documentation/articles/powershell-install-configure/) 版本 0.8.10 或更高版本。在以下有关[高级存储的可缩放性和性能目标](#premium-storage-scalability-and-performance-targets)的部分中了解高级存储帐户限制。
+**高级存储帐户**：若要开始使用高级存储，请为非托管磁盘创建一个高级存储帐户。如果想要使用 [Azure 门户](https://portal.azure.cn)，可以通过将“高级”性能层和“本地冗余存储(LRS)”指定为复制选项，来创建高级存储帐户。还可以通过指定“Premium\_LRS”作为类型来创建高级存储帐户，为此，可以使用：[存储 REST API](https://docs.microsoft.com/rest/api/storageservices/fileservices/Azure-Storage-Services-REST-API-Reference) 版本 2014-02-14 或更高版本；[服务管理 REST API](http://msdn.microsoft.com/zh-cn/library/azure/ee460799.aspx) 版本 2014-10-01 或更高版本（经典部署）；[Azure 存储资源提供程序 REST API 参考](https://docs.microsoft.com/rest/api/storagerp)（Resource Manager 部署）；[Azure PowerShell](/documentation/articles/powershell-install-configure/) 版本 0.8.10 或更高版本。在以下有关[高级存储的可缩放性和性能目标](#premium-storage-scalability-and-performance-targets)的部分中了解高级存储帐户限制。
 
 **高级本地冗余存储**：高级存储帐户仅支持使用本地冗余存储 (LRS) 作为复制选项；这意味着它在单个区域中保留三个数据副本。有关使用高级存储时的异地复制注意事项，请参阅本文中的[快照与复制 Blob](#snapshots-and-copy-blob) 部分。
 
@@ -71,7 +71,7 @@ Azure 使用存储帐户作为未托管磁盘的容器。如果使用未托管�
 
 **缓存**：支持高级存储的大小系列 VM 都有独特的缓存功能，以此获取超过基础高级存储磁盘性能的高级别吞吐量和延迟时间。可以在高级存储磁盘上将磁盘缓存策略配置为 ReadOnly、ReadWrite 或 None。所有高级数据磁盘的默认磁盘缓存策略都是 ReadOnly，而操作系统磁盘的磁盘缓存策略则是 ReadWrite。请使用正确的配置设置，以达到应用程序的最佳性能。例如，对于读取频繁或只读数据磁盘（如 SQL Server 数据文件），将磁盘缓存策略设置为“ReadOnly”。例如，对于写入频繁或只写数据磁盘（如 SQL Server 日志文件），将磁盘缓存策略设置为“None”。在[使用高级存储针对性能进行设计](/documentation/articles/storage-premium-storage-performance/)中深入了解如何优化高级存储的设计。
 
-**分析**：若要分析使用高级存储磁盘的 VM 性能，可以在 [Azure 门户预览](https://portal.azure.cn)中启用 VM 诊断。有关详细信息，请参阅 [使用 Azure 诊断扩展监视 Azure 虚拟机](https://azure.microsoft.com/blog/2014/09/02/windows-azure-virtual-machine-monitoring-with-wad-extension/)。若要查看磁盘性能，请使用操作系统工具，例如适用于 Windows VM 的 [Windows 性能监视器](https://technet.microsoft.com/zh-cn/library/cc749249.aspx)和适用于 Linux VM 的 [IOSTAT](http://linux.die.net/man/1/iostat)。
+**分析**：若要分析使用高级存储磁盘的 VM 性能，可以在 [Azure 门户](https://portal.azure.cn)中启用 VM 诊断。有关详细信息，请参阅 [使用 Azure 诊断扩展监视 Azure 虚拟机](https://azure.microsoft.com/blog/2014/09/02/windows-azure-virtual-machine-monitoring-with-wad-extension/)。若要查看磁盘性能，请使用操作系统工具，例如适用于 Windows VM 的 [Windows 性能监视器](https://technet.microsoft.com/zh-cn/library/cc749249.aspx)和适用于 Linux VM 的 [IOSTAT](http://linux.die.net/man/1/iostat)。
 
 **VM 缩放限制和性能**：每个支持高级存储的 VM 大小都有 IOPS、带宽和每个 VM 可链接的磁盘数目的缩放限制和性能规范。将高级存储磁盘用于 VM 时，请确保 VM 上有足够的 IOPS 和带宽可用于驱动磁盘流量。例如，STANDARD\_DS1 VM 为高级存储磁盘流量提供 32 MB/秒的专用带宽。P10 高级存储磁盘可以提供 100 MB/秒的带宽。如果将 P10 高级存储磁盘附加到此 VM，它最高只能达到 32 MB/秒，而不能像 P10 磁盘那样最高达到 100 MB/秒。
 

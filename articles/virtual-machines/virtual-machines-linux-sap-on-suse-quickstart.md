@@ -74,7 +74,7 @@ SAP“增强型监视”是在 Azure 上运行 SAP 的必要先决条件。请�
 唯一可通过 UUID 装载的例外情况是为了故障排除而附加 OS 磁盘，如以下部分所述。
 
 ## 对不再可访问的 SUSE VM 进行故障排除
-可能会出现这样的情况：Azure 中的 SUSE VM 在启动过程中挂起（例如，出现与装载磁盘相关的错误）。可以使用 Azure 门户预览中的 Azure 虚拟机 v2 引导诊断功能来验证此问题。有关详细信息，请参阅[引导诊断](https://azure.microsoft.com/blog/boot-diagnostics-for-virtual-machines-v2/)。
+可能会出现这样的情况：Azure 中的 SUSE VM 在启动过程中挂起（例如，出现与装载磁盘相关的错误）。可以使用 Azure 门户中的 Azure 虚拟机 v2 引导诊断功能来验证此问题。有关详细信息，请参阅[引导诊断](https://azure.microsoft.com/blog/boot-diagnostics-for-virtual-machines-v2/)。
 
 解决此问题的方法之一是从受损的 VM 将 OS 磁盘附加到 Azure 上的另一个 SUSE VM。然后进行适当的更改，例如，编辑 /etc/fstab 或删除网络 udev 规则，如下一部分中所述。
 

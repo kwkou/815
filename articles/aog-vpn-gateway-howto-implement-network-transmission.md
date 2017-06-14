@@ -124,7 +124,7 @@
 
 1.	参考下面的文章建立 VNET1 和 On Premises Local Site 之间的站点到站点 VPN 连接。
 
-	[使用 Azure 门户预览创建具有站点到站点连接的 VNet](/documentation/articles/vpn-gateway-howto-site-to-site-resource-manager-portal/) 
+	[使用 Azure 门户创建具有站点到站点连接的 VNet](/documentation/articles/vpn-gateway-howto-site-to-site-resource-manager-portal/) 
 
 2.	点击创建好的 VNET1 并找到 Peering，再次点击添加（Add）按钮。配置所连接的虚拟网络为 VNET2 并且在配置部分选择允许网络透传 allow gateway transit。
 

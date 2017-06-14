@@ -23,10 +23,10 @@
     ms.lasthandoff="05/05/2017" />
 
 # <a name="how-to-reset-local-windows-password-for-azure-vm"></a>如何重置 Azure VM 的本地 Windows 密码
-如果已安装 Azure 来宾代理，可以使用 [Azure 门户预览或 Azure PowerShell](/documentation/articles/virtual-machines-windows-reset-rdp/) 重置 Azure 中 VM 的本地 Windows 密码。 此方法是重置 Azure VM 密码的主要方法。 如果遇到了 Azure 来宾代理无响应的问题，或者上载自定义映像后无法安装，可以手动重置 Windows 密码。 本文详细说明如何通过将源 OS 虚拟磁盘附加到另一个 VM 来重置本地帐户密码。 
+如果已安装 Azure 来宾代理，可以使用 [Azure 门户或 Azure PowerShell](/documentation/articles/virtual-machines-windows-reset-rdp/) 重置 Azure 中 VM 的本地 Windows 密码。 此方法是重置 Azure VM 密码的主要方法。 如果遇到了 Azure 来宾代理无响应的问题，或者上载自定义映像后无法安装，可以手动重置 Windows 密码。 本文详细说明如何通过将源 OS 虚拟磁盘附加到另一个 VM 来重置本地帐户密码。 
 
 > [AZURE.WARNING]
-> 只有在万不得已的情况下才使用此过程。 始终应该先尝试使用 [Azure 门户预览或 Azure PowerShell](/documentation/articles/virtual-machines-windows-reset-rdp/) 重置密码。
+> 只有在万不得已的情况下才使用此过程。 始终应该先尝试使用 [Azure 门户或 Azure PowerShell](/documentation/articles/virtual-machines-windows-reset-rdp/) 重置密码。
 > 
 > 
 
@@ -41,16 +41,16 @@
 * 新 VM 启动时，创建的配置文件将会更新所需用户的密码。
 
 ## <a name="detailed-steps"></a>详细步骤
-在执行以下步骤之前，始终应该尝试使用 [Azure 门户预览或 Azure PowerShell](/documentation/articles/virtual-machines-windows-reset-rdp/) 来重置密码。 在开始之前，请确保备份 VM。 
+在执行以下步骤之前，始终应该尝试使用 [Azure 门户或 Azure PowerShell](/documentation/articles/virtual-machines-windows-reset-rdp/) 来重置密码。 在开始之前，请确保备份 VM。 
 
-1. 在 Azure 门户预览中删除受影响的 VM。 删除 VM 只会删除元数据，以及 Azure 中对该 VM 的引用。 删除 VM 时，将会保留虚拟磁盘：
+1. 在 Azure 门户中删除受影响的 VM。 删除 VM 只会删除元数据，以及 Azure 中对该 VM 的引用。 删除 VM 时，将会保留虚拟磁盘：
 
-    * 在 Azure 门户预览中选择该 VM，然后单击“删除”： 
+    * 在 Azure 门户中选择该 VM，然后单击“删除”： 
 
         ![删除现有 VM](./media/virtual-machines-windows-reset-local-password-without-agent/delete_vm.png)
 2. 将源 VM 的 OS 磁盘附加到故障排除 VM。 故障排除 VM 必须与源 VM 的 OS 磁盘位于同一区域（例如 `China North`）：
 
-    * 在 Azure 门户预览中选择故障排除 VM。 单击“磁盘” | “附加现有磁盘”：
+    * 在 Azure 门户中选择故障排除 VM。 单击“磁盘” | “附加现有磁盘”：
 
         ![附加现有磁盘](./media/virtual-machines-windows-reset-local-password-without-agent/disks_attach_existing.png)
 
@@ -67,7 +67,7 @@
         ![选择源虚拟磁盘](./media/virtual-machines-windows-reset-local-password-without-agent/disks_select_source_vhd.png)
 3. 使用远程桌面连接到故障排除的 VM，确保源 VM 的 OS 磁盘可见：
 
-    * 在 Azure 门户预览中选择故障排除 VM，然后单击“连接”。
+    * 在 Azure 门户中选择故障排除 VM，然后单击“连接”。
     * 打开下载的 RDP 文件。 输入故障排除 VM 的用户名和密码。
     * 在文件资源管理器中，找到附加的数据磁盘。 如果源 VM 的 VHD 是附加到故障排除 VM 的唯一数据磁盘，它应该是 F: 驱动器：
 
@@ -106,15 +106,15 @@
     ![创建 FixAzureVM.cmd](./media/virtual-machines-windows-reset-local-password-without-agent/create_fixazure_cmd.png)
 
     定义新密码时，必须符合针对 VM 配置的密码复杂性要求。
-7. 在 Azure 门户预览中，从故障排除 VM 分离该磁盘：
+7. 在 Azure 门户中，从故障排除 VM 分离该磁盘：
 
-    * 在 Azure 门户预览中选择故障排除 VM，然后单击“磁盘”。
+    * 在 Azure 门户中选择故障排除 VM，然后单击“磁盘”。
     * 选择步骤 2 中附加的数据磁盘，然后单击“分离”： 
 
         ![分离磁盘](./media/virtual-machines-windows-reset-local-password-without-agent/detach_disk.png)
 8. 在创建 VM 之前，请获取源 OS 磁盘的 URI：
 
-    * 在 Azure 门户预览中选择存储帐户，然后单击“Blob”。
+    * 在 Azure 门户中选择存储帐户，然后单击“Blob”。
     * 选择容器。 源容器通常为 *vhds*：
 
         ![选择存储帐户 Blob](./media/virtual-machines-windows-reset-local-password-without-agent/select_storage_details.png)
@@ -124,7 +124,7 @@
         ![复制磁盘 URI](./media/virtual-machines-windows-reset-local-password-without-agent/copy_source_vhd_uri.png)
 9. 从源 VM 的 OS 磁盘创建一个 VM：
 
-    * 使用[此 Azure Resource Manager 模板](https://github.com/Azure/azure-quickstart-templates/tree/master/201-vm-specialized-vhd)从专用的 VHD 创建一个 VM。 单击`Deploy to Azure`按钮打开 Azure 门户预览，其中填充了模板化详细信息。
+    * 使用[此 Azure Resource Manager 模板](https://github.com/Azure/azure-quickstart-templates/tree/master/201-vm-specialized-vhd)从专用的 VHD 创建一个 VM。 单击`Deploy to Azure`按钮打开 Azure 门户，其中填充了模板化详细信息。
     * 如果想要保留 VM 的所有先前设置，请选择“编辑模板”，提供现有的 VNet、子网、网络适配器或公共 IP。
     * 在 `OSDISKVHDURI` 参数文本框中，粘贴在上一步骤中获取的源 VHD 的 URI：
 

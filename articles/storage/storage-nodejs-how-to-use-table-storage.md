@@ -62,7 +62,7 @@
 ## 设置 Azure 存储连接
 Azure 模块将读取环境变量 AZURE\_STORAGE\_ACCOUNT 和 AZURE\_STORAGE\_ACCESS\_KEY 或 AZURE\_STORAGE\_CONNECTION\_STRING 以获取连接到 Azure 存储帐户所需的信息。如果未设置这些环境变量，则必须在调用 **TableService** 时指定帐户信息。
 
-有关在 [Azure 门户预览](https://portal.azure.cn)中为 Azure 网站设置环境变量的示例，请参阅[使用 Azure 表服务的 Node.js Web 应用]。
+有关在 [Azure 门户](https://portal.azure.cn)中为 Azure 网站设置环境变量的示例，请参阅[使用 Azure 表服务的 Node.js Web 应用]。
 
 ## 创建表
 下面的代码创建 **TableService** 对象并使用它来创建一个新表。将以下代码添加到 **server.js** 的顶部附近。

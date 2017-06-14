@@ -43,7 +43,7 @@
 
 ### <a name="log-in-to-azure"></a>登录 Azure
 
-打开 Azure 门户预览。 
+打开 Azure 门户。 
 
 为此，请使用你的 Azure 帐户登录到 [https://portal.azure.cn](https://portal.azure.cn)。
 
@@ -212,7 +212,7 @@
 
 现在可以向应用中添加已配置的 DNS 名称（例如 `contoso.com` 和 `www.contoso.com`）。
 
-在 Azure 门户预览中返回到应用的“自定义域”页（请参阅[第 1 步](#info)）。需要将自定义域的完全限定域名 (FQDN) 添加到列表中。
+在 Azure 门户中返回到应用的“自定义域”页（请参阅[第 1 步](#info)）。需要将自定义域的完全限定域名 (FQDN) 添加到列表中。
 
 ### <a name="add-the-a-hostname-to-your-app"></a>将 A 主机名添加到应用
 

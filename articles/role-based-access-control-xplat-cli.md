@@ -18,7 +18,7 @@
 - [Windows PowerShell](/documentation/articles/role-based-access-control-powershell/)
 - [Azure CLI](/documentation/articles/role-based-access-control-xplat-cli/)
 
-使用 Azure 门户预览中基于角色的访问控制 (RBAC) 和 Azure 资源管理器 API 可以精细地管理对订阅和资源的访问。使用此功能，可以通过在特定范围内为 Active Directory 用户、组或服务主体分配某些角色来向其授予访问权限。
+使用 Azure 门户中基于角色的访问控制 (RBAC) 和 Azure 资源管理器 API 可以精细地管理对订阅和资源的访问。使用此功能，可以通过在特定范围内为 Active Directory 用户、组或服务主体分配某些角色来向其授予访问权限。
 
 在本教程中，你将学习如何使用 Azure CLI 来管理基于角色的访问控制。它将指导你完成创建和检查角色分配的过程。
 

@@ -38,7 +38,7 @@
 
 ## 轮换存储密钥的步骤 
  
- 1. 通过 PowerShell cmdlet 或 [Azure](https://portal.azure.cn/) 门户预览更改存储帐户主密钥。
+ 1. 通过 PowerShell cmdlet 或 [Azure](https://portal.azure.cn/) 门户更改存储帐户主密钥。
  2. 使用适当的参数调用 Sync-AzureRmMediaServiceStorageKeys cmdlet，强制媒体帐户选取存储帐户密钥
  
     以下示例演示了如何将密钥同步到存储帐户。

@@ -17,7 +17,7 @@
 
 ## 问题描述
 
-创建了 Azure 应用服务计划后，在[ Azure 门户预览](https://portal.azure.cn)上点击 “更改应用服务计划”选项，发现找不到新建的应用服务计划。
+创建了 Azure 应用服务计划后，在[ Azure 门户](https://portal.azure.cn)上点击 “更改应用服务计划”选项，发现找不到新建的应用服务计划。
 
 ## 问题分析
 
@@ -25,7 +25,7 @@
 
 ## 解决方法
 
-1.	通过 Azure 门户预览查看 Web 应用使用应用服务计划所在的资源组信息。
+1.	通过 Azure 门户查看 Web 应用使用应用服务计划所在的资源组信息。
 
 	![portal-1](./media/aog-web-apps-qa-portal-change-app-service-plans/portal-1.jpg)
 

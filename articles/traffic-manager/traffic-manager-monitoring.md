@@ -146,7 +146,7 @@ Azure Resource Manager 要求所有资源组指定一个位置，这决定了部
 
 ### 如何确定每个终结点的当前运行状况？
 
-除了整个配置文件以外，每个终结点的当前监视状态也会显示在 Azure 门户预览中。此信息也可通过流量监视器 [REST API](https://msdn.microsoft.com/zh-cn/library/azure/mt163667.aspx)、[PowerShell cmdlet](https://msdn.microsoft.com/zh-cn/library/mt125941.aspx) 和[跨平台 Azure CLI](/documentation/articles/xplat-cli-install/) 获取。
+除了整个配置文件以外，每个终结点的当前监视状态也会显示在 Azure 门户中。此信息也可通过流量监视器 [REST API](https://msdn.microsoft.com/zh-cn/library/azure/mt163667.aspx)、[PowerShell cmdlet](https://msdn.microsoft.com/zh-cn/library/mt125941.aspx) 和[跨平台 Azure CLI](/documentation/articles/xplat-cli-install/) 获取。
 
 Azure 不提供有关过去终结点运行状况的历史信息，也不提供在终结点运行状况发生变化时引发警报的功能。
 

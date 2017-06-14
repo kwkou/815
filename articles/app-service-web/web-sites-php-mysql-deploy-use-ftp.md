@@ -26,7 +26,7 @@
  
 你将学习以下内容：
 
-* 如何使用 Azure 门户预览创建 Web 应用和 MySQL 数据库。由于 Web 应用已默认启用 PHP，因此运行 PHP 代码没有任何特殊要求。
+* 如何使用 Azure 门户创建 Web 应用和 MySQL 数据库。由于 Web 应用已默认启用 PHP，因此运行 PHP 代码没有任何特殊要求。
 * 如何使用 FTP 将应用程序发布到 Azure。
  
 通过按照本教程中的说明进行操作，你将在 PHP 中构建简单的注册 Web 应用。将在 Web 应用中托管应用程序。以下是已完成应用程序的屏幕快照：
@@ -37,8 +37,8 @@
 
 按照以下步骤创建 Web 应用和 MySQL 数据库：
 
-1. 登录到 [Azure 门户预览][management-portal]。
-2. 单击 Azure 门户预览左上角的“+ 新建”图标。
+1. 登录到 [Azure 门户][management-portal]。
+2. 单击 Azure 门户左上角的“+ 新建”图标。
 
 	![创建新的 Azure 网站][new-website]
 
@@ -54,7 +54,7 @@
 
 1. 在“速览”部分中，单击“重置部署凭据”设置菜单项，提供用于将文件发布到应用的用户名和密码。
 
-1. 回到 [Azure 门户预览](https://portal.azure.cn)。若要启用 FTP 发布，必须提供用户名和密码。保存凭据并记下创建的用户名和密码。
+1. 回到 [Azure 门户](https://portal.azure.cn)。若要启用 FTP 发布，必须提供用户名和密码。保存凭据并记下创建的用户名和密码。
 
 	![创建发布凭据][portal-ftp-username-password]
 

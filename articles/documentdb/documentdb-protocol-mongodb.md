@@ -48,7 +48,7 @@
 
 ## <a name="how-to-get-started"></a>如何入门
 
-在 [Azure 门户预览](https://portal.azure.cn)中创建 DocumentDB 帐户，并将 MongoDB 连接字符串中的连接切换到新帐户。 
+在 [Azure 门户](https://portal.azure.cn)中创建 DocumentDB 帐户，并将 MongoDB 连接字符串中的连接切换到新帐户。 
 
 *这就是所有的操作！*
 
@@ -64,7 +64,7 @@
 - 使用 [Node.js](/documentation/articles/documentdb-mongodb-samples/) 生成第一个 MongoDB 的 API 应用。
 - 使用 .[NET](/documentation/articles/documentdb-mongodb-application/) 生成第一个 MongoDB 的 API Web 应用。
 - 使用 [Robomongo](/documentation/articles/documentdb-mongodb-robomongo/) 连接到 MongoDB 的 API 帐户。
-- 了解你的操作将多少 RU 用于 [GetLastRequestStatistics 命令和 Azure 门户预览指标](/documentation/articles/documentdb-request-units/#GetLastRequestStatistics/)。
+- 了解你的操作将多少 RU 用于 [GetLastRequestStatistics 命令和 Azure 门户指标](/documentation/articles/documentdb-request-units/#GetLastRequestStatistics/)。
 - 了解如何[配置全局分布的应用的读取首选项](/documentation/articles/documentdb-distribute-data-globally/#ReadPreferencesAPIforMongoDB/)。
 
 <!---Update_Description: wording update -->

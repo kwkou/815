@@ -207,7 +207,7 @@ Healthy|如果 FragmentDiscardedCount == 0 && ArchiveAcquisitionError == False�
 
 
 - AMS 实时仪表板
-- Azure 门户预览（尚未发行）
+- Azure 门户（尚未发行）
 
 ### 如何管理数据保留期？
 

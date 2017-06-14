@@ -226,7 +226,7 @@ DocumentDB 根据给定的**分区键**（定义为文档中的一个属性）�
 
 值得一提的有趣的一点是，DocumentDB 将以透明方式在所有分区中运行查询（包括[聚合](https://azure.microsoft.com/zh-cn/blog/planet-scale-aggregates-with-azure-documentdb/)），无需在数据增长过程中添加任何逻辑。
 
-一段时间后，最终流量会增加，资源消耗（通过 [RU](/documentation/articles/documentdb-request-units/) 即“请求单位”进行度量）也会增加。 随着用户群的增长，读取和写入操作会更加频繁，用户将开始创建和读取更多内容；**缩放吞吐量**的能力至关重要。 增加 RU 非常容易，可以通过在 Azure 门户预览中单击几次或[通过 API 发出命令](https://docs.microsoft.com/zh-cn/rest/api/documentdb/replace-an-offer)来实现。
+一段时间后，最终流量会增加，资源消耗（通过 [RU](/documentation/articles/documentdb-request-units/) 即“请求单位”进行度量）也会增加。 随着用户群的增长，读取和写入操作会更加频繁，用户将开始创建和读取更多内容；**缩放吞吐量**的能力至关重要。 增加 RU 非常容易，可以通过在 Azure 门户中单击几次或[通过 API 发出命令](https://docs.microsoft.com/zh-cn/rest/api/documentdb/replace-an-offer)来实现。
 
 ![扩展和定义分区键](./media/documentdb-social-media-apps/social-media-apps-scaling.png)
 

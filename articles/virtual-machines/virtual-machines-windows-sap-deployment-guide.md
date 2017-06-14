@@ -315,7 +315,7 @@
 为 SAP 软件部署设置 Azure 虚拟机涉及多个步骤和资源。 在开始之前，请确保已满足在 Azure 中的 Windows 虚拟机上安装 SAP 软件的先决条件。
 
 ### <a name="local-computer"></a>本地计算机
-若要管理 Windows VM 或 Linux VM，可以使用 PowerShell 脚本和 Azure 门户预览。 对于这两种工具，都需要具有运行 Windows 7 或更高 Windows 版本的本地计算机。 如果希望仅管理 Linux VM 并且希望使用 Linux 计算机执行此任务，则可以使用 Azure CLI。
+若要管理 Windows VM 或 Linux VM，可以使用 PowerShell 脚本和 Azure 门户。 对于这两种工具，都需要具有运行 Windows 7 或更高 Windows 版本的本地计算机。 如果希望仅管理 Linux VM 并且希望使用 Linux 计算机执行此任务，则可以使用 Azure CLI。
 
 ### <a name="internet-connection"></a>Internet 连接
 若要下载并运行 SAP 软件部署所需的工具和脚本，必须连接到 Internet。 运行适用于 SAP 的 Azure 增强型监视扩展的 Azure VM 也需要访问 Internet。 如果 Azure VM 是 Azure 虚拟网络或本地域的一部分，请确保根据 [配置代理][deployment-guide-configure-proxy]中所述完成相关的代理设置。
@@ -378,7 +378,7 @@
 * [适用于 Windows 上的 SAP 的 Azure 虚拟机规划和实施][planning-guide]
 * [适用于 Windows 上的 SAP 的 Azure 虚拟机部署（本文）][deployment-guide]
 * [适用于 Windows 上的 SAP 的 Azure 虚拟机 DBMS 部署][dbms-guide]
-* [Azure 门户预览][azure-portal]
+* [Azure 门户][azure-portal]
 
 ## <a name="b3253ee3-d63b-4d74-a49b-185e76c4088e"></a>Azure VM 上 SAP 软件的部署方案
 有多个选项可用于在 Azure 中部署 VM 和关联的磁盘。 了解这些部署选项之间的区别非常重要，因为可能需要根据所选的部署类型采取不同的步骤为部署准备 VM。
@@ -390,10 +390,10 @@
 
 ![使用 Azure 应用商店中的 VM 映像为 SAP 系统部署 VM 的流程图][deployment-guide-figure-100]
 
-#### <a name="create-a-virtual-machine-by-using-the-azure-portal-preview"></a>使用 Azure 门户预览创建虚拟机
-使用 Azure 应用商店中的映像创建新虚拟机的最简单方式是使用 Azure 门户预览。
+#### <a name="create-a-virtual-machine-by-using-the-azure-portal-preview"></a>使用 Azure 门户创建虚拟机
+使用 Azure 应用商店中的映像创建新虚拟机的最简单方式是使用 Azure 门户。
 
-1.  转到 <https://portal.azure.cn/#create>。  或者，在 Azure 门户预览菜单中，选择“+ 新建”。
+1.  转到 <https://portal.azure.cn/#create>。  或者，在 Azure 门户菜单中，选择“+ 新建”。
 2.  选择“计算”，然后选择要部署的操作系统的类型。 例如，Windows Server 2012 R2、SUSE Linux Enterprise Server 12 (SLES 12) 或 Red Hat Enterprise Linux 7.2 (RHEL 7.2)。 默认列表视图并未显示所有受支持的操作系统。 若要查看完整列表，请选择“查看所有”。 有关 SAP 软件部署支持的操作系统的详细信息，请参阅 SAP 说明 [1928533]。
 3.  在下一页上，查看条款和条件。
 4.  在“选择部署模型”框中，选择“Resource Manager”。
@@ -426,7 +426,7 @@
 虚拟机将部署在选定的资源组中。
 
 #### <a name="create-a-virtual-machine-by-using-a-template"></a>使用模板创建虚拟机
-可以使用 [azure-quickstart-templates GitHub 存储库][azure-quickstart-templates-github]中发布的某个 SAP 模板来创建虚拟机。 也可以使用 [Azure 门户预览][virtual-machines-windows-tutorial]、[PowerShell][virtual-machines-ps-create-preconfigure-windows-resource-manager-vms] 或 [Azure CLI][virtual-machines-linux-tutorial] 手动创建虚拟机。
+可以使用 [azure-quickstart-templates GitHub 存储库][azure-quickstart-templates-github]中发布的某个 SAP 模板来创建虚拟机。 也可以使用 [Azure 门户][virtual-machines-windows-tutorial]、[PowerShell][virtual-machines-ps-create-preconfigure-windows-resource-manager-vms] 或 [Azure CLI][virtual-machines-linux-tutorial] 手动创建虚拟机。
 
 * [**两层配置（只有一台虚拟机）模板** (sap-2-tier-marketplace-image)][sap-templates-2-tier-marketplace-image]
 
@@ -435,7 +435,7 @@
 
   若要使用多台虚拟机创建一个三层系统，请使用此模板。
 
-在 Azure 门户预览中，为模板输入以下参数：
+在 Azure 门户中，为模板输入以下参数：
 
 1. **基本信息**：
   * **订阅**：要用来部署模板的订阅。
@@ -513,7 +513,7 @@
 ![使用专用应用商店中的 VM 映像为 SAP 系统部署 VM 的流程图][deployment-guide-figure-300]
 
 #### <a name="create-the-virtual-machine"></a>创建虚拟机
-若要从 Azure 门户预览使用某个专用 OS 映像来创建部署，请使用下列 SAP 模板之一。 这些模板发布在 [azure-quickstart-templates GitHub 存储库][azure-quickstart-templates-github]中。 还可以使用 [PowerShell][virtual-machines-upload-image-windows-resource-manager]手动创建虚拟机。
+若要从 Azure 门户使用某个专用 OS 映像来创建部署，请使用下列 SAP 模板之一。 这些模板发布在 [azure-quickstart-templates GitHub 存储库][azure-quickstart-templates-github]中。 还可以使用 [PowerShell][virtual-machines-upload-image-windows-resource-manager]手动创建虚拟机。
 
 * [**两层配置（只有一台虚拟机）模板** (sap-2-tier-user-image)][sap-templates-2-tier-user-image]
 
@@ -522,7 +522,7 @@
 
   若要使用多台虚拟机或使用你自己的 OS 映像创建一个三层系统，请使用此模板。
 
-在 Azure 门户预览中，为模板输入以下参数：
+在 Azure 门户中，为模板输入以下参数：
 
 1. **基本信息**：
   * **订阅**：要用来部署模板的订阅。
@@ -602,13 +602,13 @@
 假设已在 Azure 中上传并定义了磁盘（请参阅[针对 Linux 上的 SAP 的 Azure 虚拟机规划和实施][planning-guide]），则执行接下来的几部分中描述的任务。
 
 #### <a name="create-a-virtual-machine"></a>创建虚拟机
-若要通过 Azure 门户预览使用专用 OS 磁盘来创建部署，请使用 [azure-quickstart-templates GitHub 存储库][azure-quickstart-templates-github]中发布的 SAP 模板。 还可以使用 PowerShell 手动创建虚拟机。
+若要通过 Azure 门户使用专用 OS 磁盘来创建部署，请使用 [azure-quickstart-templates GitHub 存储库][azure-quickstart-templates-github]中发布的 SAP 模板。 还可以使用 PowerShell 手动创建虚拟机。
 
 * [**两层配置（只有一台虚拟机）模板** (sap-2-tier-user-disk)][sap-templates-2-tier-os-disk]
 
   若要仅使用一台虚拟机创建一个双层系统，请使用此模板。
 
-在 Azure 门户预览中，为模板输入以下参数：
+在 Azure 门户中，为模板输入以下参数：
 
 1. **基本信息**：
   * **订阅**：要用来部署模板的订阅。

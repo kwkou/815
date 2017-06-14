@@ -80,14 +80,14 @@ Azure CDN提供HTTPS安全加速服务，支持用户上传自有证书，也支
 
 可以为所有符合条件的CDN域名开启自有证书的HTTPS加速（付费账号下所有的标准版加速类型的CDN域名，图片加速节点除外）。
 
->**注意**如果需要在“Azure门户预览”中新建CDN Profile和节点，并且启用自有证书的HTTPS加速，Pricing Tier请选择“S1 Standard”。"P1 Premium"中的HTTPS是指Azure CDN代为申请证书。
+>**注意**如果需要在“Azure门户”中新建CDN Profile和节点，并且启用自有证书的HTTPS加速，Pricing Tier请选择“S1 Standard”。"P1 Premium"中的HTTPS是指Azure CDN代为申请证书。
   
   ![][15]
 
-1. 以新版Azure门户预览为例，点击“Manage”进入老版Azure CDN管理门户。点击“访问新站点”，到新版Azure CDN管理门户。
+1. 以新版Azure门户为例，点击“Manage”进入老版Azure CDN管理门户。点击“访问新站点”，到新版Azure CDN管理门户。
      >**注意**需要跳转到新版Azure CDN管理门户上传HTTPS自有证书。
     
-    **新版Azure门户预览中的CDN profile界面：**
+    **新版Azure门户中的CDN profile界面：**
 
     ![][1]
 

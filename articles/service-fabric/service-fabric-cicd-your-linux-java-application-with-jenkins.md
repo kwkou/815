@@ -31,7 +31,7 @@ Jenkins 是常用的持续集成和部署工具。 本文档介绍如何使用 J
 ## <a name="setting-up-jenkins-inside-a-service-fabric-cluster"></a>在 Service Fabric 群集中设置 Jenkins
 
 ### <a name="prerequisites"></a>先决条件
-1. 准备好 Service Fabric Linux 群集。 通过 Azure 门户预览创建的 Service Fabric 群集已安装 Docker。 如果是在本地运行群集，请使用命令 ``docker info`` 查看 Docker 是否已安装。如果未安装，则请使用以下命令相应地进行安装：
+1. 准备好 Service Fabric Linux 群集。 通过 Azure 门户创建的 Service Fabric 群集已安装 Docker。 如果是在本地运行群集，请使用命令 ``docker info`` 查看 Docker 是否已安装。如果未安装，则请使用以下命令相应地进行安装：
 
 
 		  sudo apt-get install wget

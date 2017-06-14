@@ -25,7 +25,7 @@
 
 # <a name="create-an-azure-documentdb-account-using-powershell"></a>使用 PowerShell 创建 DocumentDB 帐户
 
-以下指南介绍了使用 Azure Powershell 自动管理 DocumentDB 数据库帐户的命令。 它还包括用于管理 [多区域数据库帐户][scaling-globally]的帐户密钥和故障转移优先级的命令。 更新数据库帐户可以修改一致性策略以及添加/删除区域。 对于 DocumentDB 帐户的跨平台管理，可使用 [Azure CLI](/documentation/articles/documentdb-automation-resource-manager-cli/)、[资源提供程序 REST API][rp-rest-api] 或 [Azure 门户预览](/documentation/articles/documentdb-create-account/)。
+以下指南介绍了使用 Azure Powershell 自动管理 DocumentDB 数据库帐户的命令。 它还包括用于管理 [多区域数据库帐户][scaling-globally]的帐户密钥和故障转移优先级的命令。 更新数据库帐户可以修改一致性策略以及添加/删除区域。 对于 DocumentDB 帐户的跨平台管理，可使用 [Azure CLI](/documentation/articles/documentdb-automation-resource-manager-cli/)、[资源提供程序 REST API][rp-rest-api] 或 [Azure 门户](/documentation/articles/documentdb-create-account/)。
 
 ## <a name="getting-started"></a>入门
 

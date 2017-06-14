@@ -19,7 +19,7 @@ ms.author="carlrab" />
 
 # 使用 SqlPackage 将 SQL Server 数据库导出到 BACPAC 文件
 
-- [Azure 门户预览](/documentation/articles/sql-database-export/)
+- [Azure 门户](/documentation/articles/sql-database-export/)
 - [SSMS](/documentation/articles/sql-database-cloud-migrate-compatible-export-bacpac-ssms/)
 - [SqlPackage](/documentation/articles/sql-database-cloud-migrate-compatible-export-bacpac-sqlpackage/)
 - [PowerShell](/documentation/articles/sql-database-export-powershell/)
@@ -45,7 +45,7 @@ ms.author="carlrab" />
 - [最新版本的 SQL Server Management Studio](https://msdn.microsoft.com/zh-cn/library/mt238290.aspx)
 - [使用 SSMS 将 BACPAC 导入 Azure SQL 数据库](/documentation/articles/sql-database-cloud-migrate-compatible-import-bacpac-ssms/)
 - [将 BACPAC 导入 Azure SQL 数据库 SqlPackage](/documentation/articles/sql-database-cloud-migrate-compatible-import-bacpac-sqlpackage/)
-- [将 BACPAC 导入 Azure SQL 数据库 Azure 门户预览](/documentation/articles/sql-database-import/)
+- [将 BACPAC 导入 Azure SQL 数据库 Azure 门户](/documentation/articles/sql-database-import/)
 - [将 BACPAC 导入 Azure SQL 数据库 PowerShell](/documentation/articles/sql-database-import-powershell/)
 
 ## 其他资源

@@ -1,6 +1,6 @@
 <properties
-    pageTitle="使用 Azure 门户预览创建 SQL 数据库警报 | Azure"
-    description="使用 Azure 门户预览创建 SQL 数据库警报，该警报可在满足指定的条件时触发通知或自动化操作。"
+    pageTitle="使用 Azure 门户创建 SQL 数据库警报 | Azure"
+    description="使用 Azure 门户创建 SQL 数据库警报，该警报可在满足指定的条件时触发通知或自动化操作。"
     author="CarlRabeler"
     manager="jhubbard"
     editor=""
@@ -19,10 +19,10 @@
     ms.author="carlrab" />  
 
 
-# 使用 Azure 门户预览为 Azure SQL 数据库创建警报
+# 使用 Azure 门户为 Azure SQL 数据库创建警报
 
 ## 概述
-本文将展示如何使用 Azure 门户预览设置 Azure SQL 数据库警报。本文还提供了值和阈值的最佳实践。
+本文将展示如何使用 Azure 门户设置 Azure SQL 数据库警报。本文还提供了值和阈值的最佳实践。
 
 可以根据监视指标或事件接收 Azure 服务的警报。
 
@@ -34,16 +34,16 @@
 * 向服务管理员和共同管理员发送电子邮件通知
 * 向指定的其他电子邮件地址发送电子邮件。
 * 调用 Webhook
-* 开始执行 Azure Runbook（仅在 Azure 门户预览中可行）
+* 开始执行 Azure Runbook（仅在 Azure 门户中可行）
 
 可以使用以下工具配置和获取关于警报的信息：
 
-* [Azure 门户预览](/documentation/articles/insights-alerts-portal/)
+* [Azure 门户](/documentation/articles/insights-alerts-portal/)
 * [PowerShell](/documentation/articles/insights-alerts-powershell/)
 * [命令行界面 (CLI)](/documentation/articles/insights-alerts-command-line-interface/)
 * [Azure 监视器 REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn931945.aspx)
 
-## 使用 Azure 门户预览创建指标的警报规则
+## 使用 Azure 门户创建指标的警报规则
 1. 在[门户](https://portal.azure.cn/)中，找到希望监视的资源并选择该资源。
 2. 在“监视”部分下选择“警报”或“警报规则”。对于不同的资源，文本和图标可能稍有不同。
    

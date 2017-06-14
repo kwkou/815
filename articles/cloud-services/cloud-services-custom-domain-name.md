@@ -21,7 +21,7 @@
 # 为 Azure 云服务配置自定义域名
 
 > [AZURE.SELECTOR]
-- [Azure 门户预览](/documentation/articles/cloud-services-custom-domain-name-portal)
+- [Azure 门户](/documentation/articles/cloud-services-custom-domain-name-portal)
 - [Azure 经典管理门户](/documentation/articles/cloud-services-custom-domain-name)
 
 

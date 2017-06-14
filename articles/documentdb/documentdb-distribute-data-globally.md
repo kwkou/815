@@ -38,7 +38,7 @@ Azure 无所不在 - 跨 30 多个地理区域，遍布全球并且仍在持续�
 本文提供 DocumentDB 全球分布功能的概述。 另外，介绍 DocumentDB 提供全面 SLA 的独特方式。 
 
 ## <a id="EnableGlobalDistribution"></a>启用周全的全球分发
-DocumentDB 提供以下功能让你轻松编写全球规模的应用程序。 可以通过 DocumentDB 的基于资源提供程序的 [REST API](https://docs.microsoft.com/zh-cn/rest/api/documentdbresourceprovider/) 以及 Azure 门户预览来获取这些功能。
+DocumentDB 提供以下功能让你轻松编写全球规模的应用程序。 可以通过 DocumentDB 的基于资源提供程序的 [REST API](https://docs.microsoft.com/zh-cn/rest/api/documentdbresourceprovider/) 以及 Azure 门户来获取这些功能。
 
 ### <a id="RegionalPresence"></a>遍及各个区域 
 Azure 通过将新的地理区域上线，不断扩大其地理覆盖范围。 默认情况下，在所有新的 Azure 区域中都可使用 DocumentDB。 这样，一旦 Azure 开辟了新的业务区域，你就能将某个地理区域与 DocumentDB 数据库帐户相关联。
@@ -219,7 +219,7 @@ DocumentDB 为每一个数据和控制平面操作提供 99.99% 的运行时间�
 在 DocumentDB 中，集合的每个分区通过至少跨 10-20 个容错域分布的大量副本实现高度可用。 所有写入先由副本的多数仲裁进行同步和持久地提交，然后才会确认到客户端。 通过协调，在跨多个区域分布的分区中应用异步复制。 DocumentDB 保证租户启动的手动故障转移不会发生数据丢失。 在自动故障转移期间，作为其 SLA 的一部分，DocumentDB 会保证所配置的关于数据丢失窗口的有限过期间隔的上限。
 
 ## <a id="CustomerFacingSLAMetrics"></a>面向 SLA 指标的客户
-DocumentDB 以透明方式公开吞吐量、延迟、一致性和可用性指标。 这些指标可通过 Azure 门户预览以编程方式进行访问（参阅下图）。 还可以使用 Azure Application Insights 对各种阈值设置警报。
+DocumentDB 以透明方式公开吞吐量、延迟、一致性和可用性指标。 这些指标可通过 Azure 门户以编程方式进行访问（参阅下图）。 还可以使用 Azure Application Insights 对各种阈值设置警报。
  
 **一致性、延迟、吞吐量和可用性指标以透明方式向每个租户提供**
 

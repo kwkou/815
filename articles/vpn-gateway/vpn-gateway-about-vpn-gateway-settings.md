@@ -44,9 +44,9 @@ VPN 网关需要 `-GatewayType` *Vpn*。
 [AZURE.INCLUDE [vpn-gateway-gwsku-include](../../includes/vpn-gateway-gwsku-include.md)]
 
 ### 配置网关 SKU
-####在 Azure 门户预览中指定网关 SKU
+####在 Azure 门户中指定网关 SKU
 
-如果使用 Azure 门户预览创建 Resource Manager 虚拟网络网关，可以使用下拉列表选择网关 SKU。显示的选项对应于所选的网关类型和 VPN 类型。
+如果使用 Azure 门户创建 Resource Manager 虚拟网络网关，可以使用下拉列表选择网关 SKU。显示的选项对应于所选的网关类型和 VPN 类型。
 
 例如，如果选择“VPN”作为网关类型，选择“基于策略”作为 VPN 类型，则只会看到“基本”SKU，因为这是 PolicyBased SKU 唯一可用的 SKU。如果选择“基于路由”，则可以从“基本”、“标准”和“高性能”SKU 中选择。
 

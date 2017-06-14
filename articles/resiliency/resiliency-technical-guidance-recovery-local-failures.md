@@ -45,7 +45,7 @@ Azure 云服务由包含一个或多个 Web 角色或辅助角色的集合组成
 
 ### 弹性
 
-为每个角色运行的初始实例数量由每个角色的配置决定。管理员应根据预期负载，将每个角色初始配置为运行两个或多个实例。但是，角色实例数可以随着使用模式的更改轻松扩展或缩减。可以在 Azure 门户预览中手动执行此操作，或者使用 Windows PowerShell、服务管理 API 或第三方工具来自动完成该过程。有关详细信息，请参阅 [如何自动缩放应用程序](/documentation/articles/cloud-services-how-to-scale/)。
+为每个角色运行的初始实例数量由每个角色的配置决定。管理员应根据预期负载，将每个角色初始配置为运行两个或多个实例。但是，角色实例数可以随着使用模式的更改轻松扩展或缩减。可以在 Azure 门户中手动执行此操作，或者使用 Windows PowerShell、服务管理 API 或第三方工具来自动完成该过程。有关详细信息，请参阅 [如何自动缩放应用程序](/documentation/articles/cloud-services-how-to-scale/)。
 
 ### 分区
 
@@ -150,7 +150,7 @@ Azure SQL 数据库对节点级故障提供内置的复原功能。所有写入�
 
 ![Azure 中的 AlwaysOn 可用性组](./media/resiliency-technical-guidance-recovery-local-failures/high_availability_solutions-1.png)
 
-也可以在 Azure 门户中使用 AlwaysOn 模板在 Azure VM 上自动预配 AlwaysOn 可用性组的端到端部署。有关详细信息，请参阅 [SQL Server AlwaysOn Offering in Azure Portal Preview Gallery](https://blogs.technet.microsoft.com/dataplatforminsider/2014/08/25/sql-server-alwayson-offering-in-microsoft-azure-portal-gallery/)（Azure 门户预览库中的 SQL Server AlwaysOn 产品/服务）。
+也可以在 Azure 门户中使用 AlwaysOn 模板在 Azure VM 上自动预配 AlwaysOn 可用性组的端到端部署。有关详细信息，请参阅 [SQL Server AlwaysOn Offering in Azure Portal Preview Gallery](https://blogs.technet.microsoft.com/dataplatforminsider/2014/08/25/sql-server-alwayson-offering-in-microsoft-azure-portal-gallery/)（Azure 门户库中的 SQL Server AlwaysOn 产品/服务）。
 
 下图演示了在 Azure 虚拟机上使用数据库镜像的情况。该图同样摘自深入主题文章（[Azure 虚拟机中的 SQL Server 高可用性和灾难恢复](/documentation/articles/virtual-machines-windows-sql-high-availability-dr/)）。
 

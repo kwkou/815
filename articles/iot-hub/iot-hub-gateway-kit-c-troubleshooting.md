@@ -162,9 +162,9 @@ Azure 命令行接口 (Azure CLI) 为预览版。
 	iothub-explorer help
 
 
-### Azure 门户预览
+### Azure 门户
 
-完整的 CLI 体验有助于用户创建和管理其所有 Azure 资源。还可能需要借助 [Azure 门户预览](/documentation/articles/azure-portal-overview/)对 Azure 资源进行预配、管理和调试。
+完整的 CLI 体验有助于用户创建和管理其所有 Azure 资源。还可能需要借助 [Azure 门户](/documentation/articles/azure-portal-overview/)对 Azure 资源进行预配、管理和调试。
 
 ## Azure 存储问题
 

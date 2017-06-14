@@ -24,7 +24,7 @@
 
 # <a name="set-throughput-for-azure-documentdb-collections"></a>设置 DocumentDB 集合的吞吐量
 
-可在 Azure 门户预览中或通过使用客户端 SDK 设置 DocumentDB 集合的吞吐量。 
+可在 Azure 门户中或通过使用客户端 SDK 设置 DocumentDB 集合的吞吐量。 
 
 下表列出了适用于集合的吞吐量：
 
@@ -49,17 +49,17 @@
 </table>
 
 > [AZURE.NOTE] 
-> 若要将分区集合的吞吐量值设置为在 2,500 RU/s 和 10,000 RU/s 之间，必须暂时使用 Azure 门户预览。 SDK 中目前尚不提供此功能。
+> 若要将分区集合的吞吐量值设置为在 2,500 RU/s 和 10,000 RU/s 之间，必须暂时使用 Azure 门户。 SDK 中目前尚不提供此功能。
 
-## <a name="to-set-the-throughput-by-using-the-azure-portal"></a>使用 Azure 门户预览设置吞吐量
+## <a name="to-set-the-throughput-by-using-the-azure-portal"></a>使用 Azure 门户设置吞吐量
 
-1. 在新窗口中，打开 [Azure 门户预览](https://portal.azure.cn)。
+1. 在新窗口中，打开 [Azure 门户](https://portal.azure.cn)。
 2. 在左侧栏中单击“DocumentDB”，或者单击底部的“更多服务”，滚动到“数据库”，然后单击“DocumentDB”。
 3. 选择 DocumentDB 帐户。
 4. 在新窗口中，在“集合”下单击“缩放”，如以下屏幕截图中所示。
 5. 在新窗口中，从下拉列表中选择集合，更改**吞吐量**值，然后单击“保存”。
 
-    ![此屏幕截图显示如何通过导航到帐户并单击“缩放”来在 Azure 门户预览中更改集合的吞吐量](./media/documentdb-set-throughput/azure-documentdb-change-throughput-value.png)
+    ![此屏幕截图显示如何通过导航到帐户并单击“缩放”来在 Azure 门户中更改集合的吞吐量](./media/documentdb-set-throughput/azure-documentdb-change-throughput-value.png)
 
 
 

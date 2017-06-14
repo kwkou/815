@@ -1,6 +1,6 @@
 <properties
-    pageTitle="使用 Azure 门户预览管理 HDInsight 中的 Hadoop 群集 | Azure"
-    description="了解如何使用 Azure 门户预览创建和管理 HDInsight 群集。"
+    pageTitle="使用 Azure 门户管理 HDInsight 中的 Hadoop 群集 | Azure"
+    description="了解如何使用 Azure 门户创建和管理 HDInsight 群集。"
     services="hdinsight"
     documentationcenter=""
     author="mumian"
@@ -24,10 +24,10 @@
     ms.contentlocale="zh-cn"
     ms.lasthandoff="05/26/2017" />
 
-# <a name="manage-hadoop-clusters-in-hdinsight-by-using-the-azure-portal-preview"></a>使用 Azure 门户预览管理 HDInsight 中的 Hadoop 群集
+# <a name="manage-hadoop-clusters-in-hdinsight-by-using-the-azure-portal-preview"></a>使用 Azure 门户管理 HDInsight 中的 Hadoop 群集
 [AZURE.INCLUDE [selector](../../includes/hdinsight-portal-management-selector.md)]
 
-使用 [Azure 门户预览][azure-portal]可以在 Azure HDInsight 中管理 Hadoop 群集。 使用选项卡选择器还可以了解如何使用其他工具管理 HDInsight 中的 Hadoop 群集。
+使用 [Azure 门户][azure-portal]可以在 Azure HDInsight 中管理 Hadoop 群集。 使用选项卡选择器还可以了解如何使用其他工具管理 HDInsight 中的 Hadoop 群集。
 
 **先决条件**
 
@@ -44,7 +44,7 @@
         ![新建 HDInsight 群集按钮](./media/hdinsight-administer-use-portal-linux/azure-portal-new-button.png)
     * 在左侧菜单中单击“HDInsight 群集”以列出现有群集 
 
-        ![Azure 门户预览中的 HDInsight 群集按钮](./media/hdinsight-administer-use-portal-linux/azure-portal-hdinsight-button.png)
+        ![Azure 门户中的 HDInsight 群集按钮](./media/hdinsight-administer-use-portal-linux/azure-portal-hdinsight-button.png)
 
         如果没有看到 HDInsight 群集，请单击列表底部的“更多服务”，然后单击“智能 + 分析”部分下的“HDInsight 群集”。
 
@@ -59,14 +59,14 @@ HDInsight 使用各种 Hadoop 组件。 有关已获得验证和支持的组件�
 
 - 使用现有资源组。
 
-    1. 登录 [Azure 门户预览](https://portal.azure.cn)。
+    1. 登录 [Azure 门户](https://portal.azure.cn)。
     2. 从左侧菜单中单击“资源组”以列出资源组。
     3. 单击要用于创建 HDInsight 群集的资源组。
     4. 单击“访问控制(IAM)”，并确认你（或你所属的组）至少对该资源组具有“参与者”访问权限。
 
 - 创建新的资源组
 
-    1. 登录 [Azure 门户预览](https://portal.azure.cn)。
+    1. 登录 [Azure 门户](https://portal.azure.cn)。
     2. 从左侧菜单中单击“订阅”。 它有一个黄色的密钥图标。 将会看到订阅列表。
     3. 单击用于创建群集的订阅。 
     4. 单击“我的权限”。  它显示你在订阅中的[角色](/documentation/articles/role-based-access-control-what-is/#built-in-roles)。 至少需要具有“参与者”访问权限才能创建 HDInsight 群集。
@@ -79,7 +79,7 @@ HDInsight 使用各种 Hadoop 组件。 有关已获得验证和支持的组件�
 3. 单击群集名称。 如果群集列表很长，可以使用页面顶部的筛选器。
 4. 单击列表中的群集可查看概述页：
 
-    ![Azure 门户预览中的 HDInsight 群集概要](./media/hdinsight-administer-use-portal-linux/hdinsight-essentials.png)
+    ![Azure 门户中的 HDInsight 群集概要](./media/hdinsight-administer-use-portal-linux/hdinsight-essentials.png)
 
     **概述菜单：**
 
@@ -239,7 +239,7 @@ HDInsight 群集可以有两个用户帐户。 HDInsight 群集用户帐户（�
 
         usermod --password $(echo $PASS | openssl passwd -1 -stdin) $USER
 2. 将该文件上传到可以使用 HTTP 或 HTTPS 地址从 HDInsight 访问的存储位置。 例如，某个公共文件存储（如 OneDrive 或 Azure Blob 存储）。 将 URI（HTTP 或 HTTPS 地址）保存到该文件中，因为下一步需要用到。
-3. 从 Azure 门户预览中，单击“HDInsight 群集” 。
+3. 从 Azure 门户中，单击“HDInsight 群集” 。
 4. 单击 HDInsight 群集。
 4. 单击“脚本操作”。
 4. 在“脚本操作”边栏选项卡中，选择“提交新项”。 出现“提交脚本操作”边栏选项卡时，请输入以下信息。
@@ -285,7 +285,7 @@ HDInsight 群集提供以下 HTTP Web 服务（所有这些服务都有 REST 样
 每个 HDInsight 群集都有默认存储帐户。 群集的默认存储帐户及其密钥显示在“存储帐户”下 。 请参阅 [列出并显示群集](#list-and-show-clusters)。
 
 ## <a name="run-hive-queries"></a>运行 Hive 查询
-无法直接从 Azure 门户预览运行 Hive 作业，但可以使用 Ambari Web UI 上的 Hive 视图。
+无法直接从 Azure 门户运行 Hive 作业，但可以使用 Ambari Web UI 上的 Hive 视图。
 
 **使用 Ambari Hive 视图运行 Hive 查询**
 
@@ -300,7 +300,7 @@ HDInsight 群集提供以下 HTTP Web 服务（所有这些服务都有 REST 样
 请参阅[使用 Ambari Web UI 管理 HDInsight 群集](/documentation/articles/hdinsight-hadoop-manage-ambari/#monitoring)。
 
 ## <a name="browse-files"></a>浏览文件
-使用 Azure 门户预览可以浏览默认容器的内容。
+使用 Azure 门户可以浏览默认容器的内容。
 
 1. 登录到 [https://portal.azure.cn](https://portal.azure.cn)。
 2. 在左侧菜单中单击“HDInsight 群集”以列出现有群集。

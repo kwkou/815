@@ -131,7 +131,7 @@ HDInsight .NET SDK 提供 .NET 客户端库，可简化从 .NET 中使用 HDInsi
 
 若要重新运行该作业，必须更改作业输出文件夹名称，在此示例中，它是“/example/data/davinciwordcount”。
 
-作业成功完成后，输出将为空白。若要查看 MapReduce 作业的结果，请使用 Azure 门户预览浏览 Blob 存储中的默认存储容器。文件名为“part-r-00000”。
+作业成功完成后，输出将为空白。若要查看 MapReduce 作业的结果，请使用 Azure 门户浏览 Blob 存储中的默认存储容器。文件名为“part-r-00000”。
 
 ## 后续步骤
 在本文中，你已经学习了几种创建 HDInsight 群集的方法。若要了解更多信息，请参阅下列文章：

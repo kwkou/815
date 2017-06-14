@@ -199,7 +199,7 @@
 ### 连接：连接字符串
 
 
-连接到 Azure SQL 数据库所需的连接字符串与连接到 Microsoft SQL Server 所需的字符串稍有不同。可以从 [Azure 门户预览](https://portal.azure.cn/)复制数据库的连接字符串。
+连接到 Azure SQL 数据库所需的连接字符串与连接到 Microsoft SQL Server 所需的字符串稍有不同。可以从 [Azure 门户](https://portal.azure.cn/)复制数据库的连接字符串。
 
 
 [AZURE.INCLUDE [sql-database-include-connection-string-20-portalshots](../../includes/sql-database-include-connection-string-20-portalshots.md)]
@@ -210,7 +210,7 @@
 ### 连接：IP 地址
 
 
-必须将 SQL 数据库服务器配置为接受来自托管客户端程序的计算机 IP 地址的通信。为此，可以通过 [Azure 门户预览](https://portal.azure.cn/)编辑防火墙设置。
+必须将 SQL 数据库服务器配置为接受来自托管客户端程序的计算机 IP 地址的通信。为此，可以通过 [Azure 门户](https://portal.azure.cn/)编辑防火墙设置。
 
 
 如果你忘记了配置 IP 地址，你的程序将失败，并显示简单的错误消息，指出所需的 IP 地址。

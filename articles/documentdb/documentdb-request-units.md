@@ -67,7 +67,7 @@ DocumentDB 通过*保留*资源提供快速且可预测的性能，以满足应�
         myCollection,
         new RequestOptions { OfferThroughput = 3000 });
 
-DocumentDB 运行一个保留模型来预配吞吐量。 也就是说，用户需要根据*保留的*吞吐量付费，不管实际*使用的*吞吐量是多少。 随着应用程序的负载、数据和使用情况模式的更改，可以通过 SDK 或使用 [Azure 门户预览](https://portal.azure.cn)轻松扩展和缩减保留的 RU 数量。
+DocumentDB 运行一个保留模型来预配吞吐量。 也就是说，用户需要根据*保留的*吞吐量付费，不管实际*使用的*吞吐量是多少。 随着应用程序的负载、数据和使用情况模式的更改，可以通过 SDK 或使用 [Azure 门户](https://portal.azure.cn)轻松扩展和缩减保留的 RU 数量。
 
 每个集合/表/图形映射到 DocumentDB 中的 `Offer` 资源，该资源包含有关预配吞吐量的元数据。 可以通过查找容器的相应服务资源，然后使用新的吞吐量值来对它进行更新，来更改分配的吞吐量。 以下代码片段使用 .NET SDK 将集合的吞吐量更改为每秒 5,000 个请求单位：
 
@@ -182,7 +182,7 @@ DocumentDB 运行一个保留模型来预配吞吐量。 也就是说，用户�
 > 
 
 ### <a name="use-the-azure-documentdb-request-charge-response-header"></a>使用 DocumentDB 请求费用响应标头
-每个来自 DocumentDB 服务的响应都包含一个自定义标头 (`x-ms-request-charge`)，该标头包含请求消耗的请求单位数。 此标头也可通过 DocumentDB SDK 访问。 在 .NET SDK 中，RequestCharge 是 ResourceResponse 对象的属性。  对于查询，在 Azure 门户预览中的 DocumentDB 查询资源管理器提供了用于执行的查询的请求费用信息。
+每个来自 DocumentDB 服务的响应都包含一个自定义标头 (`x-ms-request-charge`)，该标头包含请求消耗的请求单位数。 此标头也可通过 DocumentDB SDK 访问。 在 .NET SDK 中，RequestCharge 是 ResourceResponse 对象的属性。  对于查询，在 Azure 门户中的 DocumentDB 查询资源管理器提供了用于执行的查询的请求费用信息。
 
 ![检查查询资源管理器中的 RU 费用][1]
 
@@ -228,7 +228,7 @@ API for MongoDB 支持使用自定义命令 *getLastRequestStatistics* 来检索
 > 
 
 ## <a name="use-api-for-mongodbs-portal-metrics"></a>使用 API for MongoDB 的门户指标
-准确估算 API for MongoDB 数据库请求单位费用的最简单方法是使用 [Azure 门户预览](https://portal.azure.cn)指标。 使用“请求数”和“请求费用”图表，可以估算每个操作消耗的请求单位数，以及每个操作相对于其他操作消耗的请求单位数。
+准确估算 API for MongoDB 数据库请求单位费用的最简单方法是使用 [Azure 门户](https://portal.azure.cn)指标。 使用“请求数”和“请求费用”图表，可以估算每个操作消耗的请求单位数，以及每个操作相对于其他操作消耗的请求单位数。
 
 ![API for MongoDB 门户指标][6]
 

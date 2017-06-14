@@ -25,7 +25,7 @@
 
 # <a name="modify-local-network-gateway-settings-using-the-azure-cli"></a>使用 Azure CLI 修改本地网络网关设置
 
-有时本地网络网关 AddressPrefix 或 GatewayIPAddress 的设置会变更。 本文演示如何修改本地网络网关设置。 也可在 Azure 门户预览或 PowerShell 中修改这些设置。
+有时本地网络网关 AddressPrefix 或 GatewayIPAddress 的设置会变更。 本文演示如何修改本地网络网关设置。 也可在 Azure 门户或 PowerShell 中修改这些设置。
 
 ## <a name="before-you-begin"></a>开始之前
 

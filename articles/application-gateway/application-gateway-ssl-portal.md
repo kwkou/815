@@ -1,5 +1,5 @@
 <properties
-    pageTitle="配置 SSL 卸载 - Azure 应用程序网关 - Azure 门户预览 | Azure"
+    pageTitle="配置 SSL 卸载 - Azure 应用程序网关 - Azure 门户 | Azure"
     description="本页说明了如何使用门户创建支持 SSL 卸载的应用程序网关"
     documentationcenter="na"
     services="application-gateway"
@@ -24,7 +24,7 @@
 
 # <a name="configure-an-application-gateway-for-ssl-offload-by-using-the-portal"></a>使用门户配置可以进行 SSL 卸载的应用程序网关
 > [AZURE.SELECTOR]
-- [Azure 门户预览](/documentation/articles/application-gateway-ssl-portal/)
+- [Azure 门户](/documentation/articles/application-gateway-ssl-portal/)
 - [Azure Resource Manager PowerShell](/documentation/articles/application-gateway-ssl-arm/)
 - [Azure 经典 PowerShell](/documentation/articles/application-gateway-ssl/)
 
@@ -44,7 +44,7 @@ HTTPS 侦听器根据配置来查找流量，并可将流量路由到后端池�
 
 ### <a name="step-1"></a>步骤 1
 
-导航到 Azure 门户预览，然后选择现有的应用程序网关
+导航到 Azure 门户，然后选择现有的应用程序网关
 
 ### <a name="step-2"></a>步骤 2
 

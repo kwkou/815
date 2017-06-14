@@ -77,7 +77,7 @@ HBase 复制使用 ZooKeeper VM 的 IP 地址。必须为目标 HBase ZooKeeper 
 
 **配置静态 IP 地址**
 
-1. 登录 [Azure 门户预览](https://portal.azure.cn)。
+1. 登录 [Azure 门户](https://portal.azure.cn)。
 2. 在左侧菜单中，单击“资源组”。
 3. 单击包含目标 HBase 群集的资源组。这是使用 Resource Manager 模板创建环境时指定的资源组。可以使用筛选器减少列表中的结果。可以看到包含两个虚拟网络的资源列表。
 4. 单击包含目标 HBase 群集的虚拟网络。例如，单击 **xxxx-vnet2**。可以看到名称以“nic-zookeepermode-”开头的三个设备。这三个设备是 ZooKeeper VM。
@@ -115,11 +115,11 @@ HBase 复制使用 ZooKeeper VM 的 IP 地址。必须为目标 HBase ZooKeeper 
 
 ## <a name="enable-replication"></a> 启用复制
 
-以下步骤说明如何从 Azure 门户预览调用脚本操作脚本。若要使用 Azure PowerShell 和 Azure 命令行接口 (CLI) 运行脚本操作，请参阅[使用脚本操作自定义基于 Linux 的 HDInsight 群集](/documentation/articles/hdinsight-hadoop-customize-cluster-linux/)。
+以下步骤说明如何从 Azure 门户调用脚本操作脚本。若要使用 Azure PowerShell 和 Azure 命令行接口 (CLI) 运行脚本操作，请参阅[使用脚本操作自定义基于 Linux 的 HDInsight 群集](/documentation/articles/hdinsight-hadoop-customize-cluster-linux/)。
 
-**从 Azure 门户预览启用 HBase 复制**
+**从 Azure 门户启用 HBase 复制**
 
-1. 登录 [Azure 门户预览](https://portal.azure.cn)。
+1. 登录 [Azure 门户](https://portal.azure.cn)。
 2. 打开源 HBase 群集。
 3. 在群集菜单中，单击“脚本操作”。
 4. 单击边栏选项卡顶部的“提交新项”。

@@ -1,6 +1,6 @@
 <properties
     pageTitle="DocumentDB 门户问题故障排除 | Azure"
-    description="找出并解决 DocumentDB Azure 门户预览中的问题。"
+    description="找出并解决 DocumentDB Azure 门户中的问题。"
     services="documentdb"
     documentationcenter=""
     author="mimig1"
@@ -23,7 +23,7 @@
     ms.lasthandoff="05/19/2017" />
 
 # <a name="azure-documentdb-portal-troubleshooting-tips"></a>DocumentDB 门户故障排除提示
-本文介绍如何解决 Azure 门户预览中的 DocumentDB 问题。 
+本文介绍如何解决 Azure 门户中的 DocumentDB 问题。 
 
 ## <a name="resources-are-missing"></a>缺少资源
 **症状**：门户边栏选项卡中缺少数据库或集合。
@@ -46,7 +46,7 @@
 
 **解决方案**：从帐户中删除支出限制。
 
-1. 在 Azure 门户预览中，单击跳转栏中的“订阅”，再单击与 DocumentDB 数据库关联的订阅，然后在“订阅”边栏选项卡中，单击“管理”。 
+1. 在 Azure 门户中，单击跳转栏中的“订阅”，再单击与 DocumentDB 数据库关联的订阅，然后在“订阅”边栏选项卡中，单击“管理”。 
     ![DocumentDB 提供多个妥善定义的（宽松）一致性模型供你选择](./media/documentdb-portal-troubleshooting/documentdb-change-billing.png)
 2. 在新的浏览器窗口中，将看到已没有剩余的信用额度。 单击“删除支出限制”  按钮可只删除当前计费周期的支出限制或无限期地删除支出限制。 然后完成向导以添加或确认信用卡信息。 
     ![DocumentDB 提供多个妥善定义的（宽松）一致性模型供你选择](./media/documentdb-portal-troubleshooting/documentdb-remove-spending-limit.png)

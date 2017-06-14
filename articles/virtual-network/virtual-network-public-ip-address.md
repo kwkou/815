@@ -36,7 +36,7 @@
 请在完成本文任何部分中的任何步骤之前完成以下任务：
 
 - 查看 [Azure 限制](/documentation/articles/azure-subscription-service-limits/#azure-resource-manager-virtual-networking-limits)一文，了解对公共 IP 地址的限制。
-- 使用 Azure 帐户登录到 Azure 门户预览、Azure 命令行界面 (CLI) 或 Azure PowerShell。 如果还没有 Azure 帐户，请注册一个[试用帐户](/pricing/1rmb-trial)。
+- 使用 Azure 帐户登录到 Azure 门户、Azure 命令行界面 (CLI) 或 Azure PowerShell。 如果还没有 Azure 帐户，请注册一个[试用帐户](/pricing/1rmb-trial)。
 - 如果使用 PowerShell 命令完成本文中的任务，请按[如何安装和配置 Azure PowerShell](https://docs.microsoft.com/zh-cn/powershell/azureps-cmdlets-docs) 一文中的步骤安装和配置 Azure PowerShell。 确保已安装最新版本的 Azure PowerShell cmdlet。 若要获取 PowerShell 命令的帮助和示例，请键入 `get-help <command> -full`。
 - 如果使用 Azure 命令行接口 (CLI) 命令完成本文中的任务，请按[如何安装和配置 Azure CLI](https://docs.microsoft.com/zh-cn/cli/azure/install-azure-cli) 一文中的步骤安装和配置 Azure CLI。 确保已安装最新版本的 Azure CLI。 若要获取 CLI 命令的帮助，请键入 `az <command> --help`。
 
@@ -46,8 +46,8 @@
 
 ## <a name="create"></a>创建公共 IP 地址
 
-1. 使用已分配订阅的“网络参与者”角色权限（最低权限）的帐户登录到 [Azure 门户预览](https://portal.azure.cn)。 请参阅[用于 Azure 基于角色的访问控制的内置角色](/documentation/articles/role-based-access-built-in-roles/#network-contributor)一文，详细了解如何将角色和权限分配给帐户。
-2. 在 Azure 门户预览顶部带“搜索资源”文本的框中，键入*公共 IP 地址*。 在搜索结果中出现 **公共 IP 地址** 时，单击该地址。
+1. 使用已分配订阅的“网络参与者”角色权限（最低权限）的帐户登录到 [Azure 门户](https://portal.azure.cn)。 请参阅[用于 Azure 基于角色的访问控制的内置角色](/documentation/articles/role-based-access-built-in-roles/#network-contributor)一文，详细了解如何将角色和权限分配给帐户。
+2. 在 Azure 门户顶部带“搜索资源”文本的框中，键入*公共 IP 地址*。 在搜索结果中出现 **公共 IP 地址** 时，单击该地址。
 3. 在出现的“公共 IP 地址”边栏选项卡中单击“+ 添加”。
 4. 在出现的“创建公共 IP 地址”边栏选项卡中，为以下设置输入或选择值，然后单击“创建”：
 
@@ -70,8 +70,8 @@
 
 ## <a name="change"></a>更改公共 IP 地址的设置或删除公共 IP 地址
 
-1. 使用已分配订阅的“网络参与者”角色权限（最低权限）的帐户登录到 [Azure 门户预览](https://portal.azure.cn)。 请参阅[用于 Azure 基于角色的访问控制的内置角色](/documentation/articles/role-based-access-built-in-roles/#network-contributor)一文，详细了解如何将角色和权限分配给帐户。
-2. 在 Azure 门户预览顶部带“搜索资源”文本的框中，键入*公共 IP 地址*。 在搜索结果中出现 **公共 IP 地址** 时，单击该地址。
+1. 使用已分配订阅的“网络参与者”角色权限（最低权限）的帐户登录到 [Azure 门户](https://portal.azure.cn)。 请参阅[用于 Azure 基于角色的访问控制的内置角色](/documentation/articles/role-based-access-built-in-roles/#network-contributor)一文，详细了解如何将角色和权限分配给帐户。
+2. 在 Azure 门户顶部带“搜索资源”文本的框中，键入*公共 IP 地址*。 在搜索结果中出现 **公共 IP 地址** 时，单击该地址。
 3. 在显示的“公共 IP 地址”  边栏选项卡中，单击要更改其设置或要删除的公共 IP 地址的名称。
 4. 在显示的公共 IP 地址边栏选项卡中，根据是否要删除或更改公共 IP 地址完成以下相应选项。
     - **删除：**若要删除公共 IP 地址，请在该边栏选项卡的“概述”部分中单击“删除”。 如果该地址当前与 IP 配置关联，则无法删除。 如果地址当前与配置相关联，请单击“取消关联”  ，取消该地址与 IP 配置之间的关联。

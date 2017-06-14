@@ -90,7 +90,7 @@ Azure 存储操作可能返回 HTTP 状态代码大于 299 作为其正常功能
 
 **通过 Azure 经典管理门户**
 
-若要使用门户配置存储帐户的日志记录和度量值，请遵循[监视 Azure 门户预览中的存储帐户](/documentation/articles/storage-monitor-storage-account/)中的说明。
+若要使用门户配置存储帐户的日志记录和度量值，请遵循[监视 Azure 门户中的存储帐户](/documentation/articles/storage-monitor-storage-account/)中的说明。
 
 > [AZURE.NOTE] 无法使用 Azure 经典管理门户设置分钟度量值。但是，对于本教程，我们建议你设置分钟度量值，它还可以调查应用程序的性能问题。可以使用 PowerShell（如下所示）设置分钟度量值，也可以通过编程方式或 Azure 经典管理门户设置。
 >
@@ -360,7 +360,7 @@ Message Analyzer 将查找并选择搜索条件与客户端请求 ID 匹配的�
 
 - [对 Azure 存储进行监视、诊断和故障排除](/documentation/articles/storage-monitoring-diagnosing-troubleshooting/)
 - [存储分析](http://msdn.microsoft.com/zh-cn/library/azure/hh343270.aspx)
-- [监视 Azure 门户预览中的存储帐户](/documentation/articles/storage-monitor-storage-account/)
+- [监视 Azure 门户中的存储帐户](/documentation/articles/storage-monitor-storage-account/)
 - [使用 AzCopy 命令行实用工具传输数据](/documentation/articles/storage-use-azcopy/)
 - [Microsoft Message Analyzer 操作指南](http://technet.microsoft.com/zh-cn/library/jj649776.aspx)
  

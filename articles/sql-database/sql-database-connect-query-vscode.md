@@ -38,11 +38,11 @@
 
 ## <a name="get-connection-information"></a>获取连接信息
 
-请在 Azure 门户预览中获取 Azure SQL 数据库服务器的完全限定服务器名称。 请使用 Visual Studio Code 通过完全限定的服务器名称连接到服务器。
+请在 Azure 门户中获取 Azure SQL 数据库服务器的完全限定服务器名称。 请使用 Visual Studio Code 通过完全限定的服务器名称连接到服务器。
 
-1. 登录到 [Azure 门户预览](https://portal.azure.cn/)。
+1. 登录到 [Azure 门户](https://portal.azure.cn/)。
 2. 从左侧菜单中选择“SQL 数据库”，然后单击“SQL 数据库”页上的数据库。 
-3. 在数据库的“Azure 门户预览”页的“概要”窗格中，找到并复制以后要在此快速入门中使用的“服务器名称”。
+3. 在数据库的“Azure 门户”页的“概要”窗格中，找到并复制以后要在此快速入门中使用的“服务器名称”。
 
     <img src="./media/sql-database-connect-query-ssms/connection-information.png" alt="connection information" style="width: 780px;" />
 

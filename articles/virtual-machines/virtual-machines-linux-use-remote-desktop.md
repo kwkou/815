@@ -28,7 +28,7 @@
 本文需要 Azure 中的现有 Linux VM。 如果需要创建 VM，请使用以下方法之一：
 
 - [Azure CLI 2.0](/documentation/articles/virtual-machines-linux-quick-create-cli/) 或 [Azure CLI 1.0](/documentation/articles/virtual-machines-linux-quick-create-cli-nodejs/)
-- [Azure 门户预览](/documentation/articles/virtual-machines-linux-quick-create-portal/)
+- [Azure 门户](/documentation/articles/virtual-machines-linux-quick-create-portal/)
 
 用户还需登录到[活动 Azure 帐户](/pricing/1rmb-trial/)。
 
@@ -116,7 +116,7 @@ Azure 中的大多数 Linux VM 默认情况下未安装桌面环境。 通常使
 > 指定密码不会将 sshd 配置更新为允许密码登录（如果当前不允许）。 从安全角度看，你可能想要使用基于密钥的身份验证通过 SSH 隧道连接到 VM，然后连接到 xrdp。 如果是这样，请跳过以下创建网络安全组规则的步骤，以允许远程桌面流量。
 
 ## <a name="create-a-network-security-group-rule-for-remote-desktop-traffic"></a>为远程桌面流量创建网络安全组规则
-若要允许远程桌面流量到达 Linux VM，需要创建网络安全组规则以允许端口 3389 上的 TCP 访问 VM。 有关网络安全组规则的详细信息，请参阅[什么是网络安全组？](/documentation/articles/virtual-networks-nsg/) 还可以[使用 Azure 门户预览创建网络安全组规则](/documentation/articles/virtual-machines-windows-nsg-quickstart-portal/)。
+若要允许远程桌面流量到达 Linux VM，需要创建网络安全组规则以允许端口 3389 上的 TCP 访问 VM。 有关网络安全组规则的详细信息，请参阅[什么是网络安全组？](/documentation/articles/virtual-networks-nsg/) 还可以[使用 Azure 门户创建网络安全组规则](/documentation/articles/virtual-machines-windows-nsg-quickstart-portal/)。
 
 以下示例创建名为 `myNetworkSecurityGroupRule` 的网络安全组规则以 `allow` `tcp` 端口 `3389` 上的流量。
 

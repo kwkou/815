@@ -49,7 +49,7 @@ SAS 身份验证使用以下元素：
 * 侦听
 * 管理
 
-在你创建策略后，系统将为它分配*主密钥*和*辅助密钥*。它们是加密形式的强密钥。请勿遗失或泄露这些密钥 - 在 [Azure 门户预览][Azure portal]中总要用到它们。你可以使用其中一个生成的密钥，并且随时可以重新生成密钥。不过，如果你重新生成或更改策略中的主密钥，基于该密钥创建的所有共享访问签名都将失效。
+在你创建策略后，系统将为它分配*主密钥*和*辅助密钥*。它们是加密形式的强密钥。请勿遗失或泄露这些密钥 - 在 [Azure 门户][Azure portal]中总要用到它们。你可以使用其中一个生成的密钥，并且随时可以重新生成密钥。不过，如果你重新生成或更改策略中的主密钥，基于该密钥创建的所有共享访问签名都将失效。
 
 当你创建服务总线命名空间时，系统将自动为整个命名空间创建名为 **RootManageSharedAccessKey** 的策略，此策略具有所有权限。你不会以 **root** 身份登录，因此除非有适合的理由，否则请勿使用此策略。可以在门户上的命名空间“配置”选项卡中创建更多的策略。请务必注意，在服务总线中的单一树级别（命名空间、队列等）中，最多只能附加 12 个策略。
 
@@ -119,7 +119,7 @@ SAS 令牌中的 [KeyName](https://docs.microsoft.com/en-us/dotnet/api/microsoft
 
 ## 访问命名空间上的共享访问授权规则
 
-在服务总线命名空间根路径上的操作需要证书身份验证。你必须上载用于 Azure 订阅的管理证书。若要上传管理证书，请使用 [Azure 门户预览][Azure portal]并按照[此处](/documentation/articles/cloud-services-configure-ssl-certificate-portal/#step-3-upload-a-certificate)的步骤进行操作。有关 Azure 管理证书的详细信息，请参阅 [Azure 证书概述](/documentation/articles/cloud-services-certs-create/#what-are-management-certificates)。
+在服务总线命名空间根路径上的操作需要证书身份验证。你必须上载用于 Azure 订阅的管理证书。若要上传管理证书，请使用 [Azure 门户][Azure portal]并按照[此处](/documentation/articles/cloud-services-configure-ssl-certificate-portal/#step-3-upload-a-certificate)的步骤进行操作。有关 Azure 管理证书的详细信息，请参阅 [Azure 证书概述](/documentation/articles/cloud-services-certs-create/#what-are-management-certificates)。
 
 访问服务总线命名空间上的共享访问授权规则的终结点如下所示：
 

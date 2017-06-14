@@ -23,7 +23,7 @@
 
 > [AZURE.SELECTOR]
 - [概述](/documentation/articles/sql-database-recovery-using-backups/)
-- [还原已删除的 DB：门户预览](/documentation/articles/sql-database-restore-deleted-database-portal/)
+- [还原已删除的 DB：门户](/documentation/articles/sql-database-restore-deleted-database-portal/)
 - [**还原已删除的 DB：PowerShell**](/documentation/articles/sql-database-restore-deleted-database-powershell/)
 
 [AZURE.INCLUDE [启动 PowerShell 会话](../../includes/sql-database-powershell.md)]

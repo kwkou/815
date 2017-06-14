@@ -159,7 +159,7 @@
 
 	New-AzureVM -ServiceName "<short name of the cloud service>" -VMs $vm1
 
-云服务的短名称是在 Azure 经典管理门户的云服务列表中或 Azure 门户预览的资源组列表中显示的名称。
+云服务的短名称是在 Azure 经典管理门户的云服务列表中或 Azure 门户的资源组列表中显示的名称。
 
 选项 2：在现有的云服务和虚拟网络中创建虚拟机。
 

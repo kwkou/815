@@ -1,6 +1,6 @@
 <properties 
    pageTitle="排查路由问题 - 门户 | Azure"
-   description="了解如何使用 Azure 门户预览在 Azure Resource Manager 部署模型中排查路由问题。"
+   description="了解如何使用 Azure 门户在 Azure Resource Manager 部署模型中排查路由问题。"
    services="virtual-network"
    documentationCenter="na"
    authors="AnithaAdusumilli"
@@ -20,10 +20,10 @@
    ms.author="anithaa" />  
 
 
-# 使用 Azure 门户预览排查路由问题
+# 使用 Azure 门户排查路由问题
 
 > [AZURE.SELECTOR]
-- [Azure 门户预览](/documentation/articles/virtual-network-routes-troubleshoot-portal/)
+- [Azure 门户](/documentation/articles/virtual-network-routes-troubleshoot-portal/)
 - [PowerShell](/documentation/articles/virtual-network-routes-troubleshoot-powershell/)
 
 如果与 Azure 虚拟机 (VM) 之间出现网络连接问题，路由可能会影响 VM 的流量流。本文概述路由诊断功能，帮助用户做进一步的故障排除。
@@ -50,7 +50,7 @@
 
 若要查看应用到 VM 的聚合路由，请完成以下步骤：
 
-1. 登录到 Azure 门户预览 (https://portal.azure.cn)。
+1. 登录到 Azure 门户 (https://portal.azure.cn)。
 2. 单击“更多服务”，然后在显示的列表中单击“虚拟机”。
 3. 在显示的列表中选择要进行故障排除的 VM，随后会显示一个包含选项的 VM 边栏选项卡。
 4. 单击“诊断和解决问题”，然后选择一个常见问题。本示例选择了“无法连接到 Windows VM”。
@@ -98,7 +98,7 @@
 
 如果网络流量流受到特定网络接口 (NIC) 的影响，可以直接查看 NIC 上有效路由的完整列表。若要查看应用到 NIC 的聚合路由，请完成以下步骤：
 
-1. 登录到 Azure 门户预览 (https://portal.azure.cn)。
+1. 登录到 Azure 门户 (https://portal.azure.cn)。
 2. 单击“更多服务”，然后单击“网络接口”。
 3. 在列表中搜索 NIC 的名称，或者从显示的列表中选择 NIC。本示例选择了 **VM1-NIC1**。
 4. 在“网络接口”边栏选项卡中选择“有效路由”，如下图所示：
@@ -123,7 +123,7 @@
 
 若要查看路由表的聚合路由，请完成以下步骤：
 
-1. 登录到 Azure 门户预览 (https://portal.azure.cn)。
+1. 登录到 Azure 门户 (https://portal.azure.cn)。
 2. 单击“更多服务”，然后单击“路由表”。
 3. 在列表中搜索想要查看其聚合路由的路由表，并将它选中。本示例选择了 **UDRouteTable**。此时将显示选定路由表的边栏选项卡，如下图所示：
 

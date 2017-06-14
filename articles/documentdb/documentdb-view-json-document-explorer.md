@@ -1,6 +1,6 @@
 <properties
     pageTitle="DocumentDB 门户工具：文档资源管理器 | Azure"
-    description="了解 DocumentDB 文档资源管理器，这是一种 Azure 门户预览工具，用于查看 JSON，以及编辑、创建和上传文档。"
+    description="了解 DocumentDB 文档资源管理器，这是一种 Azure 门户工具，用于查看 JSON，以及编辑、创建和上传文档。"
     keywords="查看 JSON"
     services="documentdb"
     author="kirillg"
@@ -30,8 +30,8 @@
 > [AZURE.NOTE]
 > 具有 MongoDB 协议支持的 DocumentDB 帐户未启用文档资源管理器。 启用此功能后，此页将更新。
 
-## 在 Azure 门户预览中启动文档资源管理器 <a id="launch-document-explorer"></a>
-1. 在 [Azure 门户预览](https://portal.azure.cn)的左侧导航栏中，单击![DocumentDB 图标](./media/documentdb-query-collections-query-explorer/nosql-documentdb-portal-icon.png) **DocumentDB**。 
+## 在 Azure 门户中启动文档资源管理器 <a id="launch-document-explorer"></a>
+1. 在 [Azure 门户](https://portal.azure.cn)的左侧导航栏中，单击![DocumentDB 图标](./media/documentdb-query-collections-query-explorer/nosql-documentdb-portal-icon.png) **DocumentDB**。 
 
     如果 **DocumentDB** 不可见，请单击底部的“更多服务”，然后单击 ![DocumentDB 图标](./media/documentdb-query-collections-query-explorer/nosql-documentdb-portal-icon.png) **DocumentDB**。
 2. 选择帐户名称。 
@@ -149,7 +149,7 @@
 5. 操作完成后，可以选择另外最多 100 个文档进行上传。
 
 ## <a name="work-with-json-documents-outside-the-portal"></a>在门户外使用 JSON 文档
-Azure 门户预览中的文档资源管理器只是在 DocumentDB 中使用文档的一种方法。 也可以通过 [REST API](https://msdn.microsoft.com/zh-cn/library/azure/mt489082.aspx) 或[客户端 SDK](/documentation/articles/documentdb-sdk-dotnet/) 来处理文档。 有关代码示例，请参阅 [.NET SDK 文档示例](/documentation/articles/documentdb-dotnet-samples/#document-examples/)和 [Node.js SDK 文档示例](/documentation/articles/documentdb-nodejs-samples/#document-examples/)。
+Azure 门户中的文档资源管理器只是在 DocumentDB 中使用文档的一种方法。 也可以通过 [REST API](https://msdn.microsoft.com/zh-cn/library/azure/mt489082.aspx) 或[客户端 SDK](/documentation/articles/documentdb-sdk-dotnet/) 来处理文档。 有关代码示例，请参阅 [.NET SDK 文档示例](/documentation/articles/documentdb-dotnet-samples/#document-examples/)和 [Node.js SDK 文档示例](/documentation/articles/documentdb-nodejs-samples/#document-examples/)。
 
 如果需要从其他源（JSON 文件、MongoDB、SQL Server、CSV 文件、Azure 表存储、Amazon DynamoDB 或 HBase）导入或迁移文件，可以使用 DocumentDB 的[数据迁移工具](/documentation/articles/documentdb-import-data/)将数据快速导入到 DocumentDB。
 

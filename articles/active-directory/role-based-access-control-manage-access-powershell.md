@@ -24,7 +24,7 @@
 - [Azure CLI](/documentation/articles/role-based-access-control-manage-access-azure-cli/)
 - [REST API](/documentation/articles/role-based-access-control-manage-access-rest/)
 
-可以使用 Azure 门户预览中基于角色的访问控制 (RBAC) 和 Azure 资源管理 API 精细管理对订阅的访问。使用此功能，可以通过在特定范围内为 Active Directory 用户、组或服务主体分配某些角色来向其授予访问权限。
+可以使用 Azure 门户中基于角色的访问控制 (RBAC) 和 Azure 资源管理 API 精细管理对订阅的访问。使用此功能，可以通过在特定范围内为 Active Directory 用户、组或服务主体分配某些角色来向其授予访问权限。
 
 在使用 PowerShell 管理 RBAC 之前，需具备以下先决条件：
 
@@ -81,7 +81,7 @@
 ### 搜索对象 ID
 若要分配角色，需要标识对象（用户、组或应用程序）和范围。
 
-如果不知道订阅 ID，可以在 Azure 门户预览的“订阅”边栏选项卡中查找。若要了解如何通过查询获取订阅 ID，请参阅 MSDN 上的 [Get-AzureSubscription](https://msdn.microsoft.com/zh-cn/library/dn495302.aspx)。
+如果不知道订阅 ID，可以在 Azure 门户的“订阅”边栏选项卡中查找。若要了解如何通过查询获取订阅 ID，请参阅 MSDN 上的 [Get-AzureSubscription](https://msdn.microsoft.com/zh-cn/library/dn495302.aspx)。
 
 若要获取 Azure AD 组的对象 ID，请使用：
 

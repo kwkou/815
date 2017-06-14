@@ -1,13 +1,13 @@
 <!-- Ibiza portal: tested -->
 
-## 如何在 Azure 门户预览中创建 VNet
+## 如何在 Azure 门户中创建 VNet
 
-若要通过 Azure 门户预览基于上述方案创建 VNet，请执行下面的步骤。
+若要通过 Azure 门户基于上述方案创建 VNet，请执行下面的步骤。
 
 1. 从浏览器导航到 http://portal.azure.cn ，如有必要，请使用 Azure 帐户登录。
 2. 单击“新建”>“网络”>“虚拟网络”，然后单击“选择部署模型”列表中的“Resource Manager”，再单击“创建”（如下图所示）。
 
-	![在 Azure 门户预览中创建 VNet](./media/virtual-networks-create-vnet-arm-pportal-include/vnet-create-arm-pportal-figure1.gif)
+	![在 Azure 门户中创建 VNet](./media/virtual-networks-create-vnet-arm-pportal-include/vnet-create-arm-pportal-figure1.gif)
 
 3. 在“创建虚拟网络”边栏选项卡上，配置 VNet 设置（如下图所示）。
 
@@ -27,7 +27,7 @@
 
 8. 等待创建 VNet，然后在“虚拟网络”边栏选项卡中，单击“所有设置”>“子网”>“添加”（如下所示）。
 
-	![在 Azure 门户预览中添加子网](./media/virtual-networks-create-vnet-arm-pportal-include/vnet-create-arm-pportal-figure5.gif)
+	![在 Azure 门户中添加子网](./media/virtual-networks-create-vnet-arm-pportal-include/vnet-create-arm-pportal-figure5.gif)
 
 9. 指定“后端”子网的子网设置，然后单击“确定”（如下所示）。
 

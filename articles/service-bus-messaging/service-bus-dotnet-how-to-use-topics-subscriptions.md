@@ -52,7 +52,7 @@
 在上述两种情况下，你都可以使用 `CloudConfigurationManager.GetSetting` 方法检索连接字符串，本文稍后部分将对此进行介绍。
 
 ### <a name="configure-your-connection-string"></a>配置连接字符串
-利用该服务配置机制，可以从 [Azure 门户预览][Azure portal]动态更改配置设置，无需重新部署应用程序。 例如，向服务定义 (**.csdef**) 文件中添加 `Setting` 标签，如以下示例所示。
+利用该服务配置机制，可以从 [Azure 门户][Azure portal]动态更改配置设置，无需重新部署应用程序。 例如，向服务定义 (**.csdef**) 文件中添加 `Setting` 标签，如以下示例所示。
 
 
 		<ServiceDefinition name="Azure1">
@@ -94,7 +94,7 @@
 		    </appSettings>
 		</configuration>
 
-使用从 [Azure 门户预览][Azure portal]检索到的 SAS 名称和密钥值，如前所述。
+使用从 [Azure 门户][Azure portal]检索到的 SAS 名称和密钥值，如前所述。
 
 ## <a name="create-a-topic"></a>创建主题
 可以通过 [NamespaceManager](https://docs.microsoft.com/en-us/dotnet/api/microsoft.servicebus.namespacemanager?view=azureservicebus-4.0.0) 类为服务总线主题和订阅执行管理操作。 此类提供了创建、枚举和删除主题的方法。

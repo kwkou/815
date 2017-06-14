@@ -145,7 +145,7 @@ HDInsight 群集提供以下 HTTP Web 服务（所有这些服务都有 REST 样
 > 
 > 
 
-也可以通过门户完成此操作。请参阅[使用 Azure 门户预览管理 HDInsight][hdinsight-admin-portal]。
+也可以通过门户完成此操作。请参阅[使用 Azure 门户管理 HDInsight][hdinsight-admin-portal]。
 
 ## 更新 HTTP 用户凭据
 这与[授予/撤消 HTTP 访问权限](#grant/revoke-access)是同一过程。如果已授予群集 HTTP 访问权限，必须先撤消该访问权限。然后再使用新的 HTTP 用户凭据授予访问权限。
@@ -196,7 +196,7 @@ HDInsight 群集提供以下 HTTP Web 服务（所有这些服务都有 REST 样
 
 ## 另请参阅
 * [HDInsight cmdlet 参考文档][hdinsight-powershell-reference]
-* [使用 Azure 门户预览管理 HDInsight][hdinsight-admin-portal]
+* [使用 Azure 门户管理 HDInsight][hdinsight-admin-portal]
 * [使用命令行借口管理 HDInsight][hdinsight-admin-cli]
 * [创建 HDInsight 群集][hdinsight-provision]
 * [将数据上传到 HDInsight][hdinsight-upload-data]

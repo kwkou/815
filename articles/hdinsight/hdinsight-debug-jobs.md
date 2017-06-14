@@ -118,7 +118,7 @@ Power Query 可以从 [www.microsoft.com/download/details.aspx?id=39379](http://
 
 ## 查看群集运行状况和作业日志
 ### 访问 Hadoop UI
-在 Azure 门户预览中，单击 HDInsight 群集名称打开群集边栏选项卡。在群集边栏选项卡中，单击“仪表板”。
+在 Azure 门户中，单击 HDInsight 群集名称打开群集边栏选项卡。在群集边栏选项卡中，单击“仪表板”。
 
 ![启动群集仪表板](./media/hdinsight-debug-jobs/hdi-debug-launch-dashboard.png)  
 
@@ -128,7 +128,7 @@ Power Query 可以从 [www.microsoft.com/download/details.aspx?id=39379](http://
 ![启动 Hadoop UI](./media/hdinsight-debug-jobs/hdi-debug-launch-dashboard-hadoop-ui.png)
 
 ### 访问 Yarn UI
-在 Azure 门户预览中，单击 HDInsight 群集名称打开群集边栏选项卡。在群集边栏选项卡中，单击“仪表板”。出现提示时，输入群集管理员凭据。在打开的查询控制台中，单击“YARN UI”。
+在 Azure 门户中，单击 HDInsight 群集名称打开群集边栏选项卡。在群集边栏选项卡中，单击“仪表板”。出现提示时，输入群集管理员凭据。在打开的查询控制台中，单击“YARN UI”。
 
 可使用 YARN UI 执行以下操作：
 
@@ -139,12 +139,12 @@ Power Query 可以从 [www.microsoft.com/download/details.aspx?id=39379](http://
 * **监视作业状态**。在左窗格中展开“群集”，然后单击“应用程序”列出群集中的所有作业。要查看特定状态（如“新建”、“已提交”、“正在运行”等）的作业，请单击“应用程序”下的相应链接。可以进一步单击作业名称以查找该作业的详细信息，例如输出、日志等。
 
 ### 访问 HBase UI
-在 Azure 门户预览中，单击 HDInsight HBase 群集名称打开群集边栏选项卡。在群集边栏选项卡中，单击“仪表板”。出现提示时，输入群集管理员凭据。在打开的查询控制台中，单击“HBase UI”。
+在 Azure 门户中，单击 HDInsight HBase 群集名称打开群集边栏选项卡。在群集边栏选项卡中，单击“仪表板”。出现提示时，输入群集管理员凭据。在打开的查询控制台中，单击“HBase UI”。
 
 ## HDInsight 错误代码
 本节中逐项列出的错误消息，旨在帮助 Azure HDInsight 的 Hadoop 用户了解在使用 Azure PowerShell 管理服务时可能会遇到的错误情况，并向他们建议从错误中恢复时可以执行的步骤。
 
-其中某些错误消息也可以在使用 Azure 门户预览管理 HDInsight 群集时在该门户中看到。但是，由于在此上下文中针对可能补救措施的约束，可能会遇到的其他一些错误消息可能不是很精细。将在问题得到明显缓解的上下文中提供其他错误消息。
+其中某些错误消息也可以在使用 Azure 门户管理 HDInsight 群集时在该门户中看到。但是，由于在此上下文中针对可能补救措施的约束，可能会遇到的其他一些错误消息可能不是很精细。将在问题得到明显缓解的上下文中提供其他错误消息。
 
 ### <a id="AtleastOneSqlMetastoreMustBeProvided"></a>AtleastOneSqlMetastoreMustBeProvided
 * **说明**：请至少为一个组件提供 Azure SQL 数据库，以便对配置单元和 Oozie 元存储使用自定义设置。

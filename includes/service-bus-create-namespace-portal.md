@@ -1,6 +1,6 @@
 ## 创建服务命名空间
 
-1. 登录到 [Azure 门户预览][]。
+1. 登录到 [Azure 门户][]。
 
 2. 在门户的左侧导航窗格中，依次单击“新建”，搜索“Service Bus"。
 4. 在“创建命名空间”对话框中，输入命名空间名称。系统会立即检查该名称是否可用。
@@ -42,6 +42,6 @@
 
 <!--Reference style links - using these makes the source content way more readable than using inline links-->
 
-[Azure 门户预览]: https://portal.azure.cn
+[Azure 门户]: https://portal.azure.cn
 
 <!---HONumber=Mooncake_1121_2016-->

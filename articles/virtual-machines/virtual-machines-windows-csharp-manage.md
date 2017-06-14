@@ -64,7 +64,7 @@
         var vmName = "myVM";  
         var subscriptionId = "subsciptionId";
 
-    在 Azure 门户预览的“订阅”边栏选项卡上，可找到订阅标识符。    
+    在 Azure 门户的“订阅”边栏选项卡上，可找到订阅标识符。    
 
 3. 若要获取创建凭据所需的令牌，请将以下方法添加到 Program 类：
 
@@ -82,9 +82,9 @@
 
     替换以下值：
 
-    - 将 *{client-id}* 替换为 Azure Active Directory 应用程序的标识符。 在 AD 应用程序的“属性”边栏选项卡上，可找到此标识符。 若要在 Azure 门户预览中查找 AD 应用程序，请在资源菜单中单击“Azure Active Directory”，然后单击“应用注册”。
+    - 将 *{client-id}* 替换为 Azure Active Directory 应用程序的标识符。 在 AD 应用程序的“属性”边栏选项卡上，可找到此标识符。 若要在 Azure 门户中查找 AD 应用程序，请在资源菜单中单击“Azure Active Directory”，然后单击“应用注册”。
     - 将 *{client-secret}* 替换为 AD 应用程序的访问密钥。 在 AD 应用程序的“属性”边栏选项卡上，可找到此标识符。
-    - 将 *{tenant-id}* 替换为订阅的租户标识符。 在 Azure 门户预览中 Azure Active Directory 的“属性”边栏选项卡上，可找到租户标识符。 它被标记为目录 ID。
+    - 将 *{tenant-id}* 替换为订阅的租户标识符。 在 Azure 门户中 Azure Active Directory 的“属性”边栏选项卡上，可找到租户标识符。 它被标记为目录 ID。
 
 4. 若要调用前面添加的方法，请将以下代码添加到 Program.cs 文件中的 Main 方法：
 

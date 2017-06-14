@@ -1,5 +1,5 @@
 <properties
-    pageTitle="使用 Azure 门户预览在 HDInsight 中管理基于 Windows 的 Hadoop 群集 | Azure"
+    pageTitle="使用 Azure 门户在 HDInsight 中管理基于 Windows 的 Hadoop 群集 | Azure"
     description="了解如何管理 HDInsight 服务。创建 HDInsight 群集，打开交互式 JavaScript 控制台，然后打开 Hadoop 命令控制台。"
     services="hdinsight"
     documentationcenter=""
@@ -19,11 +19,11 @@
     ms.author="jgao" />  
 
 
-# 使用 Azure 门户预览在 HDInsight 中管理基于 Windows 的 Hadoop 群集
+# 使用 Azure 门户在 HDInsight 中管理基于 Windows 的 Hadoop 群集
 
-使用 [Azure 门户预览][azure-portal]，可以在 Azure HDInsight 中创建基于 Windows 的 Hadoop 群集、更改 Hadoop 用户密码，以及启用远程桌面协议 (RDP) 以访问群集上的 Hadoop 命令控制台。
+使用 [Azure 门户][azure-portal]，可以在 Azure HDInsight 中创建基于 Windows 的 Hadoop 群集、更改 Hadoop 用户密码，以及启用远程桌面协议 (RDP) 以访问群集上的 Hadoop 命令控制台。
 
-本文中的信息仅适用于基于 Windows 的 HDInsight 群集。有关管理基于 Linux 的群集的信息，请参阅[使用 Azure 门户预览在 HDInsight 中管理 Hadoop 群集](/documentation/articles/hdinsight-administer-use-portal-linux/)。
+本文中的信息仅适用于基于 Windows 的 HDInsight 群集。有关管理基于 Linux 的群集的信息，请参阅[使用 Azure 门户在 HDInsight 中管理 Hadoop 群集](/documentation/articles/hdinsight-administer-use-portal-linux/)。
 
 > [AZURE.IMPORTANT]
 Linux 是在 HDInsight 3.4 版或更高版本上使用的唯一操作系统。有关详细信息，请参阅 [HDInsight 在 Windows 上弃用](/documentation/articles/hdinsight-component-versioning/#hdi-version-33-nearing-deprecation-date)。
@@ -44,11 +44,11 @@ Linux 是在 HDInsight 3.4 版或更高版本上使用的唯一操作系统。�
         ![新建 HDInsight 群集按钮](./media/hdinsight-administer-use-management-portal/azure-portal-new-button.png)
     * 单击左侧菜单中的“HDInsight 群集”。
 
-        ![Azure 门户预览中的 HDInsight 群集按钮](./media/hdinsight-administer-use-management-portal/azure-portal-hdinsight-button.png)
+        ![Azure 门户中的 HDInsight 群集按钮](./media/hdinsight-administer-use-management-portal/azure-portal-hdinsight-button.png)
 
      如果 **HDInsight** 没有显示在左侧菜单中，请单击“浏览”。
 
-     ![Azure 门户预览中的浏览群集按钮](./media/hdinsight-administer-use-management-portal/azure-portal-browse-button.png)
+     ![Azure 门户中的浏览群集按钮](./media/hdinsight-administer-use-management-portal/azure-portal-browse-button.png)
 
 ## 创建群集
 有关使用门户创建群集的说明，请参阅[创建 HDInsight 群集](/documentation/articles/hdinsight-hadoop-provision-linux-clusters/)。
@@ -76,7 +76,7 @@ HDInsight 使用各种 Hadoop 组件。有关已获得验证和支持的组件�
 
     **菜单和概要**：
 
-    ![Azure 门户预览中的 HDInsight 群集概要](./media/hdinsight-administer-use-management-portal/hdinsight-essentials.png)  
+    ![Azure 门户中的 HDInsight 群集概要](./media/hdinsight-administer-use-management-portal/hdinsight-essentials.png)  
 
 
     * 若要自定义菜单，请右键单击菜单中的任意位置，然后单击“自定义”。
@@ -88,7 +88,7 @@ HDInsight 使用各种 Hadoop 组件。有关已获得验证和支持的组件�
     * **用户 (![用户图标](./media/hdinsight-administer-use-portal-linux/users.png))**：设置 Azure 订阅的其他用户对此群集的门户管理权限。
 
         > [AZURE.IMPORTANT]
-        这*只会*影响在 Azure 门户预览中对此群集的访问和权限，对于连接到 HDInsight 群集或将作业提交到其上的用户并没有作用。
+        这*只会*影响在 Azure 门户中对此群集的访问和权限，对于连接到 HDInsight 群集或将作业提交到其上的用户并没有作用。
         >
         >
     * **标记 (![标记图标](./media/hdinsight-administer-use-portal-linux/tags.png))**：通过标记可设置键/值对，定义云服务的自定义分类。例如，你可以创建名为 **project** 的键，然后对与特定项目关联的所有服务使用一个公用值。
@@ -101,10 +101,10 @@ HDInsight 使用各种 Hadoop 组件。有关已获得验证和支持的组件�
 
         **使用情况**：
 
-        ![Azure 门户预览中的 HDInsight 群集使用情况](./media/hdinsight-administer-use-management-portal/hdinsight-portal-cluster-usage.png)
+        ![Azure 门户中的 HDInsight 群集使用情况](./media/hdinsight-administer-use-management-portal/hdinsight-portal-cluster-usage.png)
 5. 单击“设置”。
 
-    ![Azure 门户预览中的 HDInsight 群集使用情况](./media/hdinsight-administer-use-management-portal/hdinsight.portal.cluster.settings.png)
+    ![Azure 门户中的 HDInsight 群集使用情况](./media/hdinsight-administer-use-management-portal/hdinsight.portal.cluster.settings.png)
 
     * **属性**：查看群集属性。
     * **群集 AAD 标识**：
@@ -234,7 +234,7 @@ HDInsight 群集提供以下 HTTP Web 服务（所有这些服务都有 REST 样
 * Oozie
 * Templeton
 
-默认情况下，将授权这些服务进行访问。可以从 Azure 门户预览撤消/授予访问权限。
+默认情况下，将授权这些服务进行访问。可以从 Azure 门户撤消/授予访问权限。
 
 > [AZURE.NOTE]
 通过授予/撤消访问权限，你将重置群集用户名和密码。

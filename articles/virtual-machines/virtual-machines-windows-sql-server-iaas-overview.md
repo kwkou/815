@@ -23,7 +23,7 @@
 本主题介绍了在 Azure 虚拟机 \(VM\) 上运行 SQL Server 的选项，提供了[门户映像链接](#option-1-create-a-sql-vm-with-per-minute-licensing)，同时概述了[常见任务](#manage-your-sql-vm)。
 
 > [AZURE.NOTE]
-如果用户已熟悉 SQL Server，只是想了解如何部署 SQL Server VM，则请参阅[在 Azure 门户预览中预配 SQL Server 虚拟机](/documentation/articles/virtual-machines-windows-portal-sql-server-provision/)。
+如果用户已熟悉 SQL Server，只是想了解如何部署 SQL Server VM，则请参阅[在 Azure 门户中预配 SQL Server 虚拟机](/documentation/articles/virtual-machines-windows-portal-sql-server-provision/)。
 > 
 > 
 
@@ -39,9 +39,9 @@
 * [选择云 SQL Server 选项：Azure SQL \(PaaS\) 数据库或 Azure VM 上的 SQL Server \(IaaS\)](/documentation/articles/sql-database-paas-vs-sql-server-iaas/) 介绍了 SQL 数据库与运行于 VM 上的 SQL Server 之间的详细比较。
 
 ## 创建新的 SQL VM
-以下部分提供了直接链接，可链接到 Azure 门户预览的 SQL Server 虚拟机库映像。
+以下部分提供了直接链接，可链接到 Azure 门户的 SQL Server 虚拟机库映像。
 
-有关教程中此过程的分步指导，请参阅[在 Azure 门户预览中预配 SQL Server 虚拟机](/documentation/articles/virtual-machines-windows-portal-sql-server-provision/)。另请查看 [Performance best practices for SQL Server VMs](/documentation/articles/virtual-machines-windows-sql-performance/)（SQL Server VM 的性能最佳实践），该文介绍了如何在预配期间选择适当的虚拟机大小和其他可用功能。
+有关教程中此过程的分步指导，请参阅[在 Azure 门户中预配 SQL Server 虚拟机](/documentation/articles/virtual-machines-windows-portal-sql-server-provision/)。另请查看 [Performance best practices for SQL Server VMs](/documentation/articles/virtual-machines-windows-sql-performance/)（SQL Server VM 的性能最佳实践），该文介绍了如何在预配期间选择适当的虚拟机大小和其他可用功能。
 
 ## <a name="option-1-create-a-sql-vm-with-per-minute-licensing"></a> 选项 1：使用每分钟许可创建 SQL VM
 下表提供了虚拟机库中提供的最新 SQL Server 映像的矩阵。单击任何链接，即可开始创建具有指定版本和操作系统的新 SQL VM。
@@ -53,7 +53,7 @@
 | **SQL Server 2012 SP3** |Windows Server 2012 R2 |[Enterprise](https://portal.azure.cn/#create/Microsoft.SQLServer2012SP3EnterpriseWindowsServer2012R2)、[Standard](https://portal.azure.cn/#create/Microsoft.SQLServer2012SP3StandardWindowsServer2012R2)、[Web](https://portal.azure.cn/#create/Microsoft.SQLServer2012SP3WebWindowsServer2012R2)、[Express](https://portal.azure.cn/#create/Microsoft.SQLServer2012SP3ExpressWindowsServer2012R2) |
 | **SQL Server 2008 R2 SP3** |Windows Server 2008 R2 |[Enterprise](https://portal.azure.cn/#create/Microsoft.SQLServer2008R2SP3EnterpriseWindowsServer2008R2)、[Standard](https://portal.azure.cn/#create/Microsoft.SQLServer2008R2SP3StandardWindowsServer2008R2)、[Web](https://portal.azure.cn/#create/Microsoft.SQLServer2008R2SP3WebWindowsServer2008R2) |
 
-除了此列表，也可以使用 SQL Server 版本和操作系统的其他组合。在 Azure 门户预览中通过应用商店搜索查找其他映像。
+除了此列表，也可以使用 SQL Server 版本和操作系统的其他组合。在 Azure 门户中通过应用商店搜索查找其他映像。
 
 ## <a name="manage-your-sql-vm"></a> 管理 SQL VM
 预配 SQL Server VM 之后，有几项可选的管理任务。在许多方面，完全可以像管理本地 SQL Server 实例一样配置和管理 SQL Server。但某些任务是特定于 Azure 的。下列各节重点介绍上述某些领域并提供详细信息链接。

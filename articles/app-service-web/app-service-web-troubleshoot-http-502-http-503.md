@@ -52,7 +52,7 @@
 
 ####	跟踪服务运行状况
 
-每次发生服务中断或性能下降时 Azure 会进行宣传。可以在 [Azure 门户预览](https://portal.azure.cn/)中跟踪服务的运行状况。有关详细信息，请参阅[跟踪服务的运行状况](/documentation/articles/insights-service-health/)。
+每次发生服务中断或性能下降时 Azure 会进行宣传。可以在 [Azure 门户](https://portal.azure.cn/)中跟踪服务的运行状况。有关详细信息，请参阅[跟踪服务的运行状况](/documentation/articles/insights-service-health/)。
 
 ####	监视你的 Web 应用
 
@@ -126,14 +126,14 @@ Kudu 的另一项有用功能是，如果应用程序引发第一次异常，你
 
 ####	使用 AutoHeal
 
-AutoHeal 会根据你选择的设置（例如配置更改、请求、基于内存的限制或执行请求所需的时间），回收应用程序的工作进程。在大多数情况下，回收进程是在出现问题后进行恢复的最快方式。尽管始终可以从 Azure 门户预览直接重新启动 Web 应用，但 AutoHeal 可以自动为你执行此操作。你只需在 Web 应用的根 web.config 中添加一些触发器即可。请注意，即使你的应用程序并非 .Net 应用程序，这些设置的工作方式也仍然相同。
+AutoHeal 会根据你选择的设置（例如配置更改、请求、基于内存的限制或执行请求所需的时间），回收应用程序的工作进程。在大多数情况下，回收进程是在出现问题后进行恢复的最快方式。尽管始终可以从 Azure 门户直接重新启动 Web 应用，但 AutoHeal 可以自动为你执行此操作。你只需在 Web 应用的根 web.config 中添加一些触发器即可。请注意，即使你的应用程序并非 .Net 应用程序，这些设置的工作方式也仍然相同。
 
 有关详细信息，请参阅[自动修复 Azure 网站](https://azure.microsoft.com/blog/auto-healing-windows-azure-web-sites/)。
 
 
 ####	重新启动 Web 应用
 
-这通常是在发生一次性问题后进行恢复的最简单方式。[Azure 门户预览](https://portal.azure.cn/)上的 Web 应用边栏选项卡中提供了用于停止或重新启动应用的选项。
+这通常是在发生一次性问题后进行恢复的最简单方式。[Azure 门户](https://portal.azure.cn/)上的 Web 应用边栏选项卡中提供了用于停止或重新启动应用的选项。
 
  ![重新启动应用以解决 HTTP 错误“502 错误的网关”和“503 服务不可用”](./media/app-service-web-troubleshoot-HTTP-502-503/2-restart.png)
 

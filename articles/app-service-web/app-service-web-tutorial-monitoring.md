@@ -74,7 +74,7 @@
 - “应用”指标提供有关 http 请求数/失败数和平均响应时间的信息。
 - “应用服务计划”指标提供有关资源利用率的信息。
 
-在 Azure 门户预览中，可以使用 **Azure Monitor** 快速直观地检查应用的指标，
+在 Azure 门户中，可以使用 **Azure Monitor** 快速直观地检查应用的指标，
 
 - 转到想要监视的应用的“概述”边栏选项卡即可。
 
@@ -92,7 +92,7 @@
 > [AZURE.TIP]
 > 使用以下链接了解有关 Azure Monitor 的详细信息：
 > <p> - [Azure Monitor 入门](/documentation/articles/monitoring-overview/)
-> <p> - [Azure 门户预览仪表板](/documentation/articles/azure-portal-dashboards/)
+> <p> - [Azure 门户仪表板](/documentation/articles/azure-portal-dashboards/)
 
 ## <a name="alerts"></a> 步骤 3 - 配置警报
 

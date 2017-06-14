@@ -219,5 +219,5 @@ SSH 密钥默认保留在 `~/.ssh` 目录中。  如果你没有 `~/.ssh` 目录
 下一步是使用新 SSH 公钥创建 Azure Linux VM。  使用 SSH 公钥作为登录名创建的 Azure VM 可以比使用默认登录方法（即密码）创建的 VM 享受更好的保护。  使用 SSH 密钥创建的 Azure VM 默认情况下配置为禁用密码，以避免强力猜测尝试。 如果你在创建 SSH 密钥对方面需要更多帮助，或者需要其他的证书（例如用于经典管理门户的证书），请参阅[创建 SSH 密钥对和证书的详细步骤](/documentation/articles/virtual-machines-linux-create-ssh-keys-detailed/)。
 
 * [使用 Azure 模板创建安全 Linux VM](/documentation/articles/virtual-machines-linux-create-ssh-secured-vm-from-template/)
-* [使用 Azure 门户预览创建安全 Linux VM](/documentation/articles/virtual-machines-linux-quick-create-portal/)
+* [使用 Azure 门户创建安全 Linux VM](/documentation/articles/virtual-machines-linux-quick-create-portal/)
 * [使用 Azure CLI 创建安全 Linux VM](/documentation/articles/virtual-machines-linux-quick-create-cli/)

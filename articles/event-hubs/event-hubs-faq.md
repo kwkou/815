@@ -36,7 +36,7 @@ Azure 事件中心标准层提供的功能超出了基本层中提供的功能�
 有关定价的更多详细信息（包括专用事件中心），请参阅[事件中心定价详细信息](/pricing/details/event-hubs/)。
 
 ### <a name="what-are-event-hubs-throughput-units"></a>什么是事件中心吞吐量单元？
-通过 Azure 门户预览版或事件中心 Resource Manager 模板明确选择事件中心吞吐量单位。 吞吐量单位适用于事件中心命名空间中的所有事件中心，每个吞吐量单位为命名空间赋予以下功能：
+通过 Azure 门户或事件中心 Resource Manager 模板明确选择事件中心吞吐量单位。 吞吐量单位适用于事件中心命名空间中的所有事件中心，每个吞吐量单位为命名空间赋予以下功能：
 
 * 高达每秒 1 MB 的入口事件（发送到事件中心的事件），但每秒不超过 1000 个入口事件、管理操作或控制 API 调用。
 * 高达每秒 2 MB 的出口事件（从事件中心耗用的事件）。
@@ -106,7 +106,7 @@ Azure 事件中心标准层提供的功能超出了基本层中提供的功能�
 
 <!--
 ### <a name="diagnostic-logs"></a>诊断日志
-事件中心支持两种类型的[诊断日志](/documentation/articles/event-hubs-diagnostic-logs/)：存档错误日志和操作日志；这两种日志都用 json 表示并可以通过 Azure 门户预览版启用。
+事件中心支持两种类型的[诊断日志](/documentation/articles/event-hubs-diagnostic-logs/)：存档错误日志和操作日志；这两种日志都用 json 表示并可以通过 Azure 门户启用。
 -->
 <!--event-hubs-diagnostic-logs is not supported on ACN -->
 

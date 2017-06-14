@@ -89,7 +89,7 @@
 
 [Azure AD Connect 客户支持](https://manage.windowsazure.cn/?getsupport=true)
 
-- 使用此链接通过 Azure 门户预览获取支持。
+- 使用此链接通过 Azure 门户获取支持。
 
 <!---HONumber=Mooncake_0327_2017-->
 <!---Update_Description: wording update -->

@@ -1,6 +1,6 @@
 <properties
     pageTitle="连接到 Windows Server VM | Azure"
-    description="了解如何使用 Azure 门户预览和 Resource Manager 部署模型连接并登录到 Windows VM。"
+    description="了解如何使用 Azure 门户和 Resource Manager 部署模型连接并登录到 Windows VM。"
     services="virtual-machines-windows"
     documentationcenter=""
     author="cynthn"
@@ -23,17 +23,17 @@
     ms.lasthandoff="04/14/2017" />
 
 # <a name="how-to-connect-and-log-on-to-an-azure-virtual-machine-running-windows"></a>如何连接并登录到运行 Windows 的 Azure 虚拟机
-可以从 Windows 桌面使用 Azure 门户预览中的“连接”按钮来启动远程桌面 (RDP) 会话。 首先连接到虚拟机，然后登录。
+可以从 Windows 桌面使用 Azure 门户中的“连接”按钮来启动远程桌面 (RDP) 会话。 首先连接到虚拟机，然后登录。
 
 如果尝试从 Mac 连接到 Windows VM，则需为 Mac 安装 RDP 客户端，例如 [Microsoft 远程桌面](https://itunes.apple.com/app/microsoft-remote-desktop/id715768417)。
 
 ## <a name="connect-to-the-virtual-machine"></a>连接到虚拟机
-1. 登录到 [Azure 门户预览](https://portal.azure.cn/)（如果未登录）。
+1. 登录到 [Azure 门户](https://portal.azure.cn/)（如果未登录）。
 2. 在“中心”菜单中，单击“虚拟机” 。
 3. 从列表中选择虚拟机。
 4. 在虚拟机边栏选项卡上，单击“连接”。
 
-    ![显示如何连接到 VM 的 Azure 门户预览屏幕截图。](./media/virtual-machines-windows-connect-logon/connect.png)
+    ![显示如何连接到 VM 的 Azure 门户屏幕截图。](./media/virtual-machines-windows-connect-logon/connect.png)
 
     > [AZURE.TIP]
     > 如果门户中的“连接”按钮灰显，并且你未通过 [Express Route](/documentation/articles/expressroute-introduction/) 或[站点到站点 VPN](/documentation/articles/vpn-gateway-howto-site-to-site-resource-manager-portal/) 连接连接到 Azure，则必须先为 VM 创建并分配一个公共 IP 地址才能使用 RDP。 详细了解 [Azure 中的公共 IP 地址](/documentation/articles/virtual-network-ip-addresses-overview-arm/)。

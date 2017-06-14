@@ -19,7 +19,7 @@
 
 
 # Azure Batch CLI 入门
-使用跨平台 Azure 命令行接口 (Azure CLI) 可以在 Linux、Mac 和 Windows 命令 shell 中管理 Batch 帐户和资源，例如池、作业和任务。使用 Azure CLI，可以执行许多与通过 Batch API、Azure 门户预览和 Batch PowerShell cmdlet 执行的相同任务并为其编写脚本。
+使用跨平台 Azure 命令行接口 (Azure CLI) 可以在 Linux、Mac 和 Windows 命令 shell 中管理 Batch 帐户和资源，例如池、作业和任务。使用 Azure CLI，可以执行许多与通过 Batch API、Azure 门户和 Batch PowerShell cmdlet 执行的相同任务并为其编写脚本。
 
 本文基于 Azure CLI 版本 0.10.5。
 

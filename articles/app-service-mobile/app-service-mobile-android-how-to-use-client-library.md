@@ -1171,7 +1171,7 @@ Azure 应用服务身份验证和授权返回的令牌定义了一小时的生�
 [Get started with Azure Mobile Apps]: /documentation/articles/app-service-mobile-android-get-started/
 [ASCII control codes C0 and C1]: http://en.wikipedia.org/wiki/Data_link_escape_character#C1_set
 [Mobile Services SDK for Android]: http://go.microsoft.com/fwlink/p/?LinkID=717033
-[Azure 门户预览]: https://portal.azure.cn
+[Azure 门户]: https://portal.azure.cn
 [Azure 经典管理门户]: https://manage.windowsazure.cn/
 [Get started with authentication]: /documentation/articles/app-service-mobile-android-get-started-users/
 [身份验证入门]: /documentation/articles/app-service-mobile-android-get-started-users/

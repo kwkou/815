@@ -1,6 +1,6 @@
 <properties
-    pageTitle="使用 Azure 门户预览创建虚拟机规模集 | Azure"
-    description="使用 Azure 门户预览部署规模集。"
+    pageTitle="使用 Azure 门户创建虚拟机规模集 | Azure"
+    description="使用 Azure 门户部署规模集。"
     keywords="虚拟机规模集"
     services="virtual-machine-scale-sets"
     documentationcenter=""
@@ -24,13 +24,13 @@
     ms.openlocfilehash="7cc2df26ff33d62b43a1f7eb73bbca93078655f4"
     ms.lasthandoff="04/06/2017" />
 
-# <a name="how-to-create-a-virtual-machine-scale-set-with-the-azure-portal-preview"></a>如何使用 Azure 门户预览创建虚拟机规模集
-本教程介绍如何使用 Azure 门户预览在数分钟内轻松创建虚拟机规模集。 如果没有 Azure 订阅，可在开始前创建一个[试用帐户](/pricing/1rmb-trial/)。
+# <a name="how-to-create-a-virtual-machine-scale-set-with-the-azure-portal-preview"></a>如何使用 Azure 门户创建虚拟机规模集
+本教程介绍如何使用 Azure 门户在数分钟内轻松创建虚拟机规模集。 如果没有 Azure 订阅，可在开始前创建一个[试用帐户](/pricing/1rmb-trial/)。
 
 ## <a name="choose-the-vm-image-from-the-marketplace"></a>从应用商店中选择 VM 映像
 在门户中，可以使用 CentOS、CoreOS、Debian、Open Suse、Red Hat Enterprise Linux、SUSE Linux Enterprise Server、Ubuntu Server 或 Windows Server 映像轻松部署规模集。
 
-首先，在 Web 浏览器中导航到 [Azure 门户预览](https://portal.azure.cn) 。 单击 `New`，搜索 `scale set`，然后选择 `Virtual machine scale set` 条目：
+首先，在 Web 浏览器中导航到 [Azure 门户](https://portal.azure.cn) 。 单击 `New`，搜索 `scale set`，然后选择 `Virtual machine scale set` 条目：
 
 ![ScaleSetPortalOverview](./media/virtual-machine-scale-sets-portal-create/ScaleSetPortalOverview.PNG)
 

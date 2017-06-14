@@ -22,7 +22,7 @@
     ms.lasthandoff="04/14/2017" />
 
 # <a name="redeploy-linux-virtual-machine-to-new-azure-node"></a>将 Linux 虚拟机重新部署到新的 Azure 节点
-如果在排查 SSH 或应用程序对 Azure 中的 Linux 虚拟机 (VM) 的访问问题时遇到困难，重新部署 VM 可能会有帮助。 重新部署 VM 时，将 VM 移到 Azure 基础结构中的新节点，然后重新打开它，同时保留所有配置选项和关联的资源。 本文介绍如何使用 Azure CLI 或 Azure 门户预览重新部署 VM。
+如果在排查 SSH 或应用程序对 Azure 中的 Linux 虚拟机 (VM) 的访问问题时遇到困难，重新部署 VM 可能会有帮助。 重新部署 VM 时，将 VM 移到 Azure 基础结构中的新节点，然后重新打开它，同时保留所有配置选项和关联的资源。 本文介绍如何使用 Azure CLI 或 Azure 门户重新部署 VM。
 
 > [AZURE.NOTE]
 > 重新部署 VM 后，临时磁盘将丢失，与虚拟网络接口关联的动态 IP 地址将更新。 
@@ -31,7 +31,7 @@
 
 - [Azure CLI 2.0](#azure-cli-20)
 - [Azure CLI 1.0](#azure-cli-10)
-- [Azure 门户预览](#using-azure-portal)
+- [Azure 门户](#using-azure-portal)
 
 ## <a name="azure-cli-20"></a> Azure CLI 2.0
 安装最新的 [Azure CLI 2.0](https://docs.microsoft.com/zh-cn/cli/azure/install-az-cli2) 并使用 [az login](https://docs.microsoft.com/zh-cn/cli/azure/#login) 登录到 Azure 帐户。

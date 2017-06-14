@@ -19,7 +19,7 @@ documentationCenter=""/>
 
 # 监视服务指标
 
-所有 Azure 服务都会跟踪使你可以监视你服务的运行状况、性能、可用性和使用情况的关键指标。可以在 Azure 门户预览中查看这些指标，也可以使用 [REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn931930.aspx) 或 [.NET SDK](https://www.nuget.org/packages/Microsoft.Azure.Insights/) 以编程方式访问完整的指标集。
+所有 Azure 服务都会跟踪使你可以监视你服务的运行状况、性能、可用性和使用情况的关键指标。可以在 Azure 门户中查看这些指标，也可以使用 [REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn931930.aspx) 或 [.NET SDK](https://www.nuget.org/packages/Microsoft.Azure.Insights/) 以编程方式访问完整的指标集。
 
 对于某些服务，可能需要打开诊断以便查看任何指标。对于其他服务（如虚拟机），你会获得基本指标集，但需要启用完整高频率指标集。请参阅[启用监视和诊断](/documentation/articles/insights-how-to-use-diagnostics/)以了解详细信息。
 
@@ -27,7 +27,7 @@ documentationCenter=""/>
 
 可以在所选的任何时间段内绘制任何指标的图表。
 
-1. 在 [Azure 门户预览](https://portal.azure.cn/)中，单击“浏览”，然后单击要监视的资源。
+1. 在 [Azure 门户](https://portal.azure.cn/)中，单击“浏览”，然后单击要监视的资源。
 
 2. “监视”部分包含每个 Azure 资源的最重要指标。例如，Web 应用具有“请求和错误”，而虚拟机具有“CPU 百分比”和“磁盘读写”：
 
@@ -56,7 +56,7 @@ documentationCenter=""/>
 
 ## 创建并排图表
 
-借助门户预览中功能强大的自定义，可以添加所需任何数量的图表。
+借助门户中功能强大的自定义，可以添加所需任何数量的图表。
 
 1. 在边栏选项卡顶部的“...”菜单中，单击“添加磁贴”：
 

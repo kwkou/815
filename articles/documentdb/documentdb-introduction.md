@@ -102,7 +102,7 @@ DocumentDB API 允许将应用程序逻辑编写为完全使用 JavaScript 编�
 DocumentDB API 中的 JavaScript 执行是在关系型数据库系统所支持的概念的基础之上建立的，只是现代性的将 Transact-SQL 换成了 JavaScript。 所有 JavaScript 逻辑都在使用快照隔离的环境 ACID 事务内执行。 在其执行过程中，如果 JavaScript 引发异常，则整个事务将被中止。
 
 ## <a name="next-steps"></a>后续步骤
-已有 Azure 帐户？ 那么可以在 [Azure 门户预览](https://portal.azure.cn/)中通过[创建 DocumentDB 数据库帐户](/documentation/articles/documentdb-create-account/)开始使用 DocumentDB。
+已有 Azure 帐户？ 那么可以在 [Azure 门户](https://portal.azure.cn/)中通过[创建 DocumentDB 数据库帐户](/documentation/articles/documentdb-create-account/)开始使用 DocumentDB。
 
 [1]: ./media/documentdb-introduction/json-database-resources1.png
 

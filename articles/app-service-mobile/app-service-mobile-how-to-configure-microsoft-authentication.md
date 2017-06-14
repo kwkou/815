@@ -25,7 +25,7 @@
 
 ## <a name="register-microsoft-account"></a>将应用注册到 Microsoft 帐户
 
-1. 登录到 [Azure 门户预览]并导航到应用程序。复制 **URL**，随后会用于使用 Microsoft 帐户来配置应用。
+1. 登录到 [Azure 门户]并导航到应用程序。复制 **URL**，随后会用于使用 Microsoft 帐户来配置应用。
 
 2. 在 Microsoft 帐户开发人员中心内导航到“[我的应用程序]”页，然后根据需要使用 Microsoft 帐户登录。
 
@@ -47,7 +47,7 @@
 
 ## <a name="secrets"></a>将 Microsoft 帐户信息添加到应用服务应用程序
 
-1. 返回 [Azure 门户预览]，导航到应用程序，然后单击“设置”>“身份验证/授权”。
+1. 返回 [Azure 门户]，导航到应用程序，然后单击“设置”>“身份验证/授权”。
 
 2. 如果“身份验证/授权”功能未启用，请将它切换为“打开”。
 
@@ -76,6 +76,6 @@
 <!-- URLs. -->
 
 [我的应用程序]: http://go.microsoft.com/fwlink/p/?LinkId=262039
-[Azure 门户预览]: https://portal.azure.cn/
+[Azure 门户]: https://portal.azure.cn/
 
 <!---HONumber=Mooncake_0919_2016-->

@@ -42,7 +42,7 @@
 
 本教程中所用的 Resource Manager 模板位于 [GitHub](https://github.com/Azure/azure-quickstart-templates/tree/master/101-hdinsight-linux-ssh-password/)中。 
 
-1. 单击以下映像以登录到 Azure，然后在 Azure 门户预览中打开 Resource Manager 模板。 
+1. 单击以下映像以登录到 Azure，然后在 Azure 门户中打开 Resource Manager 模板。 
 
     <a href="https://portal.azure.cn/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-hdinsight-linux-ssh-password%2Fazuredeploy.json" target="_blank"><img src="./media/hdinsight-hadoop-linux-tutorial-get-started/deploy-to-azure.png" alt="Deploy to Azure"></a>
 2. 输入或选择下列值：
@@ -112,7 +112,7 @@
 
 **删除群集和/或默认存储帐户**
 
-1. 登录 [Azure 门户预览](https://portal.azure.cn)。
+1. 登录 [Azure 门户](https://portal.azure.cn)。
 2. 从门户仪表板中，单击创建群集时使用的资源组名称的磁贴。
 3. 在资源边栏选项卡中单击“删除”，删除包含群集和默认存储帐户的资源组；或者，在“资源”磁贴中单击群集名称，然后在群集边栏选项卡中单击“删除”。 注意，删除资源组会删除存储帐户。 如果想要保留存储帐户，请选择仅删除群集。
 

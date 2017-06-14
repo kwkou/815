@@ -96,7 +96,7 @@
 
 ## <a name="subscription-and-namespace-management"></a> 订阅和命名空间管理
 ### <a name="how-do-i-migrate-a-namespace-to-another-azure-subscription"></a>如何将命名空间迁移到另一个 Azure 订阅？
-可按照[此处](/documentation/articles/resource-group-move-resources/#use-portal)的说明操作，使用 Azure 门户预览将服务总线命名空间迁移到其他订阅。如果想要使用 PowerShell，请按照以下说明操作：
+可按照[此处](/documentation/articles/resource-group-move-resources/#use-portal)的说明操作，使用 Azure 门户将服务总线命名空间迁移到其他订阅。如果想要使用 PowerShell，请按照以下说明操作：
 
 通过运行以下命令序列，可在 Azure 订阅之间移动命名空间。若要执行此操作，命名空间必须已经处于活动状态，而且运行 PowerShell 命令的用户必须同时是源订阅和目标订阅的管理员。
 

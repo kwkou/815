@@ -56,9 +56,9 @@
 
 ##<a name="website-creation-on-portal"></a>在门户中创建 Web 应用
 
-创建应用的第一步是通过 [Azure 门户预览](https://portal.azure.cn)创建 Web 应用。
+创建应用的第一步是通过 [Azure 门户](https://portal.azure.cn)创建 Web 应用。
 
-1. 登录到 Azure 门户预览，然后单击左下角的“新建”按钮。
+1. 登录到 Azure 门户，然后单击左下角的“新建”按钮。
 2. 单击“Web + 移动”。
 3. 单击”Web 应用”。
 5. 配置新的 Django 应用，如为其创建新的应用服务计划和新的资源组。然后单击**创建**。
@@ -148,7 +148,7 @@ Python 虚拟环境。如果在 Web 应用上尚不存在兼容的虚拟环境�
 
 ### 克隆存储库
 
-首先，使用 Azure 门户预览网站上提供的 URL 来克隆存储库。有关详细信息，请参阅[从本地 Git 部署到 Azure 应用服务](/documentation/articles/app-service-deploy-local-git/)。
+首先，使用 Azure 门户网站上提供的 URL 来克隆存储库。有关详细信息，请参阅[从本地 Git 部署到 Azure 应用服务](/documentation/articles/app-service-deploy-local-git/)。
 
 打开包含在存储库根中的解决方案文件 (.sln) 。
 
@@ -160,7 +160,7 @@ Python 虚拟环境。如果在 Web 应用上尚不存在兼容的虚拟环境�
 
 - 请确保环境的名称是 `env`。
 
-- 选择基解释器。请确保使用的 Python 版本与 Web 应用所选的 Python 版本相同（在 runtime.txt 中或 Azure 门户预览中 Web 应用的**应用程序设置**边栏选项卡）。
+- 选择基解释器。请确保使用的 Python 版本与 Web 应用所选的 Python 版本相同（在 runtime.txt 中或 Azure 门户中 Web 应用的**应用程序设置**边栏选项卡）。
 
 - 请确保选中此选项以下载并安装软件包。
 
@@ -225,7 +225,7 @@ Visual Studio 不会显示部署的进度。如果你想要查看输出，请参
 
 ### 克隆存储库
 
-首先，使用在 Azure 门户预览中提供的 URL 来克隆存储库，并将 Azure 存储库添加为远程。有关详细信息，请参阅[从本地 Git 部署到 Azure 应用服务](/documentation/articles/app-service-deploy-local-git/)。
+首先，使用在 Azure 门户中提供的 URL 来克隆存储库，并将 Azure 存储库添加为远程。有关详细信息，请参阅[从本地 Git 部署到 Azure 应用服务](/documentation/articles/app-service-deploy-local-git/)。
 
     git clone <repo-url>
     cd <repo-folder>
@@ -235,7 +235,7 @@ Visual Studio 不会显示部署的进度。如果你想要查看输出，请参
 
 我们将为开发目的创建新的虚拟环境 （不要将其添加到存储库）。Python 中的虚拟环境是可重定位，因此使用该应用程序的每个开发人员将在本地创建自己的环境。
 
-请确保使用的 Python 版本与为 Web 应用所选的 Python 版本相同（在 runtime.txt 中或 Azure 门户预览中 Web 应用的“应用程序设置”边栏选项卡）。
+请确保使用的 Python 版本与为 Web 应用所选的 Python 版本相同（在 runtime.txt 中或 Azure 门户中 Web 应用的“应用程序设置”边栏选项卡）。
 
 对于 Python 2.7：
 
@@ -314,7 +314,7 @@ Visual Studio 不会显示部署的进度。如果你想要查看输出，请参
 
 ### 克隆存储库
 
-首先，使用在 Azure 门户预览中提供的 URL 来克隆存储库，并将 Azure 存储库添加为远程。有关详细信息，请参阅[从本地 Git 部署到 Azure 应用服务](/documentation/articles/app-service-deploy-local-git/)。
+首先，使用在 Azure 门户中提供的 URL 来克隆存储库，并将 Azure 存储库添加为远程。有关详细信息，请参阅[从本地 Git 部署到 Azure 应用服务](/documentation/articles/app-service-deploy-local-git/)。
 
     git clone <repo-url>
     cd <repo-folder>
@@ -324,7 +324,7 @@ Visual Studio 不会显示部署的进度。如果你想要查看输出，请参
 
 我们将为开发目的创建新的虚拟环境 （不要将其添加到存储库）。Python 中的虚拟环境是可重定位，因此使用该应用程序的每个开发人员将在本地创建自己的环境。
 
-请确保使用的 Python 版本与为 Web 应用所选的 Python 版本相同（在 runtime.txt 中或 Azure 门户预览中 Web 应用的“应用程序设置”边栏选项卡）。
+请确保使用的 Python 版本与为 Web 应用所选的 Python 版本相同（在 runtime.txt 中或 Azure 门户中 Web 应用的“应用程序设置”边栏选项卡）。
 
 对于 Python 2.7：
 
@@ -460,7 +460,7 @@ Django 有收集静态文件的概念。这将从原始位置取用所有静态�
 
 在实践中，可能需要做一些更复杂的事来处理调试和发布模式间的切换以及获取主机名。
 
-可以通过 Azure 门户预览“配置”页上的“应用设置”部分设置环境变量。这可用于设置可能不希望其出现在源（连接字符串、密码等）的值，或者希望在 Azure 与本地计算机间进行不同设置的值。在 `settings.py` 中，可以使用 `os.getenv` 查询环境变量。
+可以通过 Azure 门户“配置”页上的“应用设置”部分设置环境变量。这可用于设置可能不希望其出现在源（连接字符串、密码等）的值，或者希望在 Azure 与本地计算机间进行不同设置的值。在 `settings.py` 中，可以使用 `os.getenv` 查询环境变量。
 
 
 ##<a name="using-a-database"></a>使用数据库

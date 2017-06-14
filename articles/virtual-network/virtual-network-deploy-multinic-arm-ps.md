@@ -43,7 +43,7 @@ Azure 具有两种不同的部署模型，用于创建和处理资源：[Resourc
 
 1. 导航到[模板页](https://github.com/Azure/azure-quickstart-templates/tree/master/IaaS-Story/11-MultiNIC)。
 2. 在模板页中“父资源组”的右侧，单击“部署到 Azure”。
-3. 如果需要，更改参数值，然后按照 Azure 门户预览中的步骤部署资源组。
+3. 如果需要，更改参数值，然后按照 Azure 门户中的步骤部署资源组。
 
 > [AZURE.IMPORTANT]
 请确保存储帐户名称是唯一的。Azure 中不能存在重复的存储帐户名称。

@@ -30,7 +30,7 @@ DocumentDB 支持使用核心 MongoDB API 函数来创建、读取、更新和�
 
 性能保留在集合级别应用，使应用程序可以调整系统中数据容器的最低级别性能。因此，集合的价格由集合的预配吞吐量（以每秒的请求单位数来度量）和总占用存储空间（以千兆字节为单位）决定。可以在集合的整个生命周期内调整设置的吞吐量，以适应不断变化的应用程序的处理需求和访问模式。有关详细信息，请参阅 [DocumentDB performance levels](/documentation/articles/documentdb-performance-levels/)（DocumentDB 性能级别）。
 
-默认情况下，具有 MongoDB 协议支持的 DocumentDB 集合是以 1,000 RU/秒的预配吞吐量在标准定价层创建的。可以根据 [Changing performance levels using the Azure Portal](/documentation/articles/documentdb-performance-levels/#changing-performance-levels-using-the-azure-portal/)（使用 Azure 门户预览更改性能级别）中所述调整每个集合的预配吞吐量。
+默认情况下，具有 MongoDB 协议支持的 DocumentDB 集合是以 1,000 RU/秒的预配吞吐量在标准定价层创建的。可以根据 [Changing performance levels using the Azure Portal](/documentation/articles/documentdb-performance-levels/#changing-performance-levels-using-the-azure-portal/)（使用 Azure 门户更改性能级别）中所述调整每个集合的预配吞吐量。
 
 ## CRUD 操作
 
@@ -41,7 +41,7 @@ DocumentDB 支持使用核心 MongoDB API 函数来创建、读取、更新和�
 DocumentDB 支持 MongoDB 查询的完整语法，但有一些例外情况。除了支持 MongoDB 日期时间格式，还支持对 JSON 兼容的 [BSON 类型](https://docs.mongodb.org/manual/reference/bson-types/)集运行查询。对于需要非 JSON 类型特定运算符的查询，DocumentDB 支持 GUID 数据类型。
 
 ## 门户体验
-启用 MongoDB 协议的帐户的 Azure 门户预览体验迎合启用 MongoDB 协议的帐户的需要。我们正在寻求拓展该体验，但需要用户提供有关哪些门户功能最有用的[反馈](mailto:askdocdb@microsoft.com?subject=DocumentDB%20Protocol%20Support%20for%20MongoDB%20Preview%20Portal%20Experience)。
+启用 MongoDB 协议的帐户的 Azure 门户体验迎合启用 MongoDB 协议的帐户的需要。我们正在寻求拓展该体验，但需要用户提供有关哪些门户功能最有用的[反馈](mailto:askdocdb@microsoft.com?subject=DocumentDB%20Protocol%20Support%20for%20MongoDB%20Preview%20Portal%20Experience)。
 
 ## 支持矩阵
 

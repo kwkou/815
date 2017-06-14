@@ -28,7 +28,7 @@
 
 ## Azure 部署模型
 
-Azure 提供两种不同的[部署模型](/documentation/articles/resource-manager-deployment-model/)用于创建和处理资源：Azure Resource Manager 模型和经典模型。Azure 还有两个门户 - 支持经典部署模型的 [Azure 经典管理门户](https://manage.windowsazure.cn/)，以及支持两种部署模型的 [Azure 门户预览](https://portal.azure.cn/)。
+Azure 提供两种不同的[部署模型](/documentation/articles/resource-manager-deployment-model/)用于创建和处理资源：Azure Resource Manager 模型和经典模型。Azure 还有两个门户 - 支持经典部署模型的 [Azure 经典管理门户](https://manage.windowsazure.cn/)，以及支持两种部署模型的 [Azure 门户](https://portal.azure.cn/)。
 
 站点恢复在 Azure China 目前仅支持在经典管理门户中部署。可以在经典管理门户中维护保管库，但不能创建新的保管库。
 
@@ -47,9 +47,9 @@ Azure 提供两种不同的[部署模型](/documentation/articles/resource-manag
 **要求** | **详细信息**
 --- | --- 
 [Azure 存储帐户](/documentation/articles/storage-introduction/) | <p>可以使用 [GRS](/documentation/articles/storage-redundancy/#geo-redundant-storage) 或 LRS 存储。</p><p> 建议使用 GRS，以便在发生区域性故障或无法恢复主要区域时，能够复原数据。[了解详细信息](/documentation/articles/storage-redundancy)</p>
-**Azure 门户预览** | 在 Azure 门户预览中，可以使用 Resource Manager 存储，也可使用经典存储帐户。
+**Azure 门户** | 在 Azure 门户中，可以使用 Resource Manager 存储，也可使用经典存储帐户。
 **高级存储** | <p> 高级存储通常用于 IO 性能一贯较高且延迟一贯较低、托管 IO 密集型工作负荷的虚拟机。</p><p> 如果使用高级存储，还需要一个标准存储帐户来存储复制日志，以便捕获对本地数据所做的更改。</p>
-**存储限制** | <p>经典管理门户仅支持 GRS。</p><p> 在 Azure 门户预览中创建的存储帐户不能跨资源组移动。</p>。
+**存储限制** | <p>经典管理门户仅支持 GRS。</p><p> 在 Azure 门户中创建的存储帐户不能跨资源组移动。</p>。
 
 ## Azure 网络要求
 
@@ -58,7 +58,7 @@ Azure 提供两种不同的[部署模型](/documentation/articles/resource-manag
 **要求** | **详细信息**
 --- | ---
 **网络区域** | 该网络必须位于与保管库相同的区域中。
-**Azure 门户预览** | 在 Azure 门户预览中，可以使用 Resource Manager 网络或经典网络。
+**Azure 门户** | 在 Azure 门户中，可以使用 Resource Manager 网络或经典网络。
 **网络映射** | 如果从 VMM 复制到 Azure，需在 VMM VM 网络和 Azure 网络之间设置[网络映射](/documentation/articles/site-recovery-network-mapping/)，确保 Azure VM 在故障转移后连接到相应的网络。
 
 

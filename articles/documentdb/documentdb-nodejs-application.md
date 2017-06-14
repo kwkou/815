@@ -397,7 +397,7 @@
         config.collectionId = "Items";
    
         module.exports = config;
-3. 在 **config.js** 文件中，使用 [Azure 门户预览](https://portal.azure.cn)中 DocumentDB 帐户的“密钥”边栏选项卡中的值更新 HOST 和 AUTH_KEY 的值。
+3. 在 **config.js** 文件中，使用 [Azure 门户](https://portal.azure.cn)中 DocumentDB 帐户的“密钥”边栏选项卡中的值更新 HOST 和 AUTH_KEY 的值。
 4. 保存并关闭 **config.js** 文件。
 
 ### <a name="modify-appjs"></a>修改 app.js

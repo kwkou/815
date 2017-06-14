@@ -29,7 +29,7 @@
 1. 确保有权访问 Team Services 帐户，或自行[创建帐户](https://www.visualstudio.com/docs/setup-admin/team-services/sign-up-for-visual-studio-team-services)。
 2. 确保有权访问 Team Services 团队项目，或自行[创建项目](https://www.visualstudio.com/docs/setup-admin/create-team-project)。
 
-3. 确保拥有可以向其中部署应用程序的 Service Fabric 群集，或者使用 [Azure 门户预览](/documentation/articles/service-fabric-cluster-creation-via-portal/)、[Azure Resource Manager 模板](/documentation/articles/service-fabric-cluster-creation-via-arm/)或 [Visual Studio](/documentation/articles/service-fabric-cluster-creation-via-visual-studio/) 创建群集。
+3. 确保拥有可以向其中部署应用程序的 Service Fabric 群集，或者使用 [Azure 门户](/documentation/articles/service-fabric-cluster-creation-via-portal/)、[Azure Resource Manager 模板](/documentation/articles/service-fabric-cluster-creation-via-arm/)或 [Visual Studio](/documentation/articles/service-fabric-cluster-creation-via-visual-studio/) 创建群集。
 
 4. 确保已创建 Service Fabric 应用程序 (.sfproj) 项目。必须具有使用 Service Fabric SDK 2.1 或更高版本创建或升级的项目（.sfproj 文件应包含 1.1 或更高的 ProjectVersion 属性值）。
 

@@ -39,8 +39,8 @@
 ## <a name="azure-iot-service-sdks"></a> Azure IoT 服务 SDK
 提供了多种语言的_服务 SDK_，以便于用户创建与 IoT 中心交互的[后端应用](#back-end-app)。IoT 中心教程介绍了如何使用这些服务 SDK。可以在此 GitHub [存储库](https://github.com/Azure/azure-iot-sdks)中找到有关服务 SDK 的源代码和进一步信息。
 
-## <a name="azure-portal"></a> Azure 门户预览
-[Azure 门户预览](https://portal.azure.cn)是一个中心位置，可在其中预配和管理 Azure 资源。该门户使用_边栏选项卡_组织其内容。在某些 IoT 中心教程中，可能会要求使用 [Azure 经典管理门户](https://manage.windowsazure.cn)。
+## <a name="azure-portal"></a> Azure 门户
+[Azure 门户](https://portal.azure.cn)是一个中心位置，可在其中预配和管理 Azure 资源。该门户使用_边栏选项卡_组织其内容。在某些 IoT 中心教程中，可能会要求使用 [Azure 经典管理门户](https://manage.windowsazure.cn)。
 
 ## <a name="azure-powershell"></a>Azure PowerShell
 [Azure PowerShell](/documentation/articles/powershell-install-configure/) 是一个 cmdlet 集合，可用于通过 Windows PowerShell 管理 Azure。 你可以使用 cmdlet 来创建、测试、部署和管理通过 Azure 平台传送的解决方案和服务。
@@ -227,7 +227,7 @@ SASL PLAIN 是一种协议， [AMQP](#advanced-message-queue-protocol) 协议使
 共享访问签名 (SAS) 是基于 SHA–256 安全哈希或 URI 的身份验证机制。SAS 身份验证有两个组件：_共享访问策略_和_共享访问签名_（通常称为令牌）。设备使用 SAS 在 IoT 中心进行身份验证。[后端应用](#back-end-app)也使用 SAS 在 IoT 中心的面向服务的终结点上进行身份验证。通常，在[连接字符串](#connection-string)中包含 SAS 令牌，应用使用此令牌建立与 IoT 中心的连接。
 
 ## <a name="shared-access-policy"></a> 共享访问策略
-共享访问策略定义向具有有效的[主要密钥或次要密钥](#primary-and-secondary-keys)（与该策略相关联）的任何人授予的权限。用户可以在[门户预览](#azure-portal)中管理中心的共享访问策略和密钥。
+共享访问策略定义向具有有效的[主要密钥或次要密钥](#primary-and-secondary-keys)（与该策略相关联）的任何人授予的权限。用户可以在[门户](#azure-portal)中管理中心的共享访问策略和密钥。
 
 ## <a name="simulated-device"></a> 模拟设备
 为方便起见，许多 IoT 中心教程使用模拟设备，以便在本地计算机上运行示例。相反，[物理设备](#physical-device)是真实的设备，如连接到 IoT 中心的 Raspberry Pi。

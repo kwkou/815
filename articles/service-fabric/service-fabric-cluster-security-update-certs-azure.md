@@ -33,7 +33,7 @@
 
 ## <a name="add-a-secondary-cluster-certificate-using-the-portal"></a>使用门户添加辅助群集证书
 
-无法通过 Azure 门户预览添加辅助群集证书。为此必须使用 Azure PowerShell。本文档稍后将概述该过程。
+无法通过 Azure 门户添加辅助群集证书。为此必须使用 Azure PowerShell。本文档稍后将概述该过程。
 
 ## <a name="swap-the-cluster-certificates-using-the-portal"></a>使用门户交换群集证书
 

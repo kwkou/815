@@ -70,7 +70,7 @@
 - [应用程序包](#application-packages)
 
 ## <a name="account"></a>帐户
-批处理帐户是批处理服务中唯一标识的实体。 所有处理都与一个 Batch 帐户相关联。 使用 Batch 服务执行操作时，需要同时用到帐户名及其帐户密钥之一。 可以 [使用 Azure 门户预览创建 Azure Batch 帐户](/documentation/articles/batch-account-create-portal/)。
+批处理帐户是批处理服务中唯一标识的实体。 所有处理都与一个 Batch 帐户相关联。 使用 Batch 服务执行操作时，需要同时用到帐户名及其帐户密钥之一。 可以 [使用 Azure 门户创建 Azure Batch 帐户](/documentation/articles/batch-account-create-portal/)。
 
 ## <a name="compute-node"></a>计算节点
 计算节点是专门用于处理一部分应用程序工作负荷的 Azure 虚拟机 (VM)。 节点大小确定了 CPU 核心数目、内存容量，以及分配给节点的本地文件系统大小。 可以使用 Azure 云服务或虚拟机应用商店映像创建的 Windows 或 Linux 节点池。 有关这些选项的详细信息，请参阅下面的 [池](#pool) 部分。
@@ -328,7 +328,7 @@ Batch 可以处理使用 Azure 存储将应用程序包存储及部署到计算�
 
 - 如果指定的 VNet 具有关联的 NSG，则必须启用入站通信。 就 Linux 池来说，端口 29876、29877 和 22 必须启用。 就 Windows 池来说，端口 3389 必须启用。
 
-- *MicrosoftAzureBatch* 服务主体必须为指定的 VNet 提供[经典虚拟机参与者](/documentation/articles/role-based-access-built-in-roles/#classic-virtual-machine-contributor/)基于角色的访问控制 (RBAC) 角色。 在 Azure 门户预览中：
+- *MicrosoftAzureBatch* 服务主体必须为指定的 VNet 提供[经典虚拟机参与者](/documentation/articles/role-based-access-built-in-roles/#classic-virtual-machine-contributor/)基于角色的访问控制 (RBAC) 角色。 在 Azure 门户中：
 
   - 选择“VNet”，然后单击“访问控制(IAM)” > “角色” > “经典虚拟机参与者” > “添加”
   - 在“搜索”框中输入“MicrosoftAzureBatch”
@@ -390,7 +390,7 @@ Batch 可以处理使用 Azure 存储将应用程序包存储及部署到计算�
 ### <a name="debugging-application-failures"></a>调试应用程序失败
 - `stderr` 和 `stdout`
 
-    在执行过程中，应用程序可以生成诊断输出，这些信息可用于排查问题。 如前一部分[文件和目录](#files-and-directories)中所述，批处理服务会将标准输出和标准错误输出发送到计算节点上的任务目录中的 `stdout.txt` 和 `stderr.txt` 文件。 可以使用 Azure 门户预览或 Batch SDK 之一下载这些文件。 例如，可以使用 Batch .NET 库中的 [ComputeNode.GetNodeFile][net_getfile_node] 和 [CloudTask.GetNodeFile][net_getfile_task] 检索这些文件和其他文件来进行故障排除。
+    在执行过程中，应用程序可以生成诊断输出，这些信息可用于排查问题。 如前一部分[文件和目录](#files-and-directories)中所述，批处理服务会将标准输出和标准错误输出发送到计算节点上的任务目录中的 `stdout.txt` 和 `stderr.txt` 文件。 可以使用 Azure 门户或 Batch SDK 之一下载这些文件。 例如，可以使用 Batch .NET 库中的 [ComputeNode.GetNodeFile][net_getfile_node] 和 [CloudTask.GetNodeFile][net_getfile_task] 检索这些文件和其他文件来进行故障排除。
 - **任务退出代码**
 
     如前所述，如果任务执行的程序返回非零退出代码，则 Batch 服务会将此任务标记为失败。 当任务执行某个进程时，Batch 将使用 *进程的返回代码*填充任务的退出代码属性。 请务必注意，任务的退出代码**不是**由 Batch 服务确定， 而是由进程本身或此进程在其上运行的操作系统确定。
@@ -401,10 +401,10 @@ Batch 可以处理使用 Azure 存储将应用程序包存储及部署到计算�
 间歇性的问题也有可能会导致任务挂起，或者花费很长时间才能完成执行。 可为任务设置最长执行间隔时间。 如果超出最长执行间隔时间，Batch 服务会中断任务应用程序。
 
 ### <a name="connecting-to-compute-nodes"></a>连接到计算节点
-可通过远程登录到计算节点来进一步执行调试和故障排除。 可以使用 Azure 门户预览下载 Windows 节点的远程桌面协议 (RDP) 文件，并获取 Linux 节点的安全外壳 (SSH) 连接信息。 也可以使用 Batch API（例如，使用 [Batch .NET][net_rdpfile] 或 [Batch Python](/documentation/articles/batch-linux-nodes/#connect-to-linux-nodes/)）执行此操作。
+可通过远程登录到计算节点来进一步执行调试和故障排除。 可以使用 Azure 门户下载 Windows 节点的远程桌面协议 (RDP) 文件，并获取 Linux 节点的安全外壳 (SSH) 连接信息。 也可以使用 Batch API（例如，使用 [Batch .NET][net_rdpfile] 或 [Batch Python](/documentation/articles/batch-linux-nodes/#connect-to-linux-nodes/)）执行此操作。
 
 > [AZURE.IMPORTANT]
-> 若要通过 RDP 或 SSH 连接到某个节点，必须先在该节点上创建一个用户。 为此，可以使用 Azure 门户预览通过 Batch REST API [将用户帐户添加到节点][rest_create_user]、在 Batch .NET 中调用 [ComputeNode.CreateComputeNodeUser][net_create_user] 方法，或在 Batch Python 模块中调用 [add_user][py_add_user] 方法。
+> 若要通过 RDP 或 SSH 连接到某个节点，必须先在该节点上创建一个用户。 为此，可以使用 Azure 门户通过 Batch REST API [将用户帐户添加到节点][rest_create_user]、在 Batch .NET 中调用 [ComputeNode.CreateComputeNodeUser][net_create_user] 方法，或在 Batch Python 模块中调用 [add_user][py_add_user] 方法。
 >
 >
 

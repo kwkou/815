@@ -51,15 +51,15 @@ Azure 应用服务本地缓存功能允许通过 Web 角色来查看内容。 �
 ## <a name="enable-local-cache-in-app-service"></a>在应用服务中启用本地缓存
 组合使用保留的应用设置即可配置本地缓存。 可以通过以下方法配置这些应用设置：
 
-* [Azure 门户预览](#Configure-Local-Cache-Portal)
+* [Azure 门户](#Configure-Local-Cache-Portal)
 * [Azure 资源管理器](#Configure-Local-Cache-ARM)
 
-### <a name="configure-local-cache-by-using-the-azure-portal-preview"></a>通过 Azure 门户预览配置本地缓存
+### <a name="configure-local-cache-by-using-the-azure-portal-preview"></a>通过 Azure 门户配置本地缓存
 <a name="Configure-Local-Cache-Portal"></a>
 
 使用以下应用设置即可在每个 Web 应用的基础上启用本地缓存： `WEBSITE_LOCAL_CACHE_OPTION` = `Always`  
 
-![Azure 门户预览应用设置：本地缓存](./media/app-service-local-cache/app-service-local-cache-configure-portal.png)
+![Azure 门户应用设置：本地缓存](./media/app-service-local-cache/app-service-local-cache-configure-portal.png)
 
 ### <a name="configure-local-cache-by-using-azure-resource-manager"></a>使用 Azure Resource Manager 配置本地缓存
 <a name="Configure-Local-Cache-ARM"></a>

@@ -137,7 +137,7 @@ HDInsight 服务是一种托管服务，并需要在预配期间和运行时访�
 > [AZURE.IMPORTANT]
 > 这些地址用于没有列出特定 IP 地址的区域。 若要查找你所在区域的 IP 地址，请使用[受保护的虚拟网络](#secured-virtual-networks)部分中的信息。
 
-以下步骤假设已创建要安装 HDInsight 的虚拟网络和子网。 请参阅[使用 Azure 门户预览创建虚拟网络](/documentation/articles/virtual-networks-create-vnet-arm-pportal/)。
+以下步骤假设已创建要安装 HDInsight 的虚拟网络和子网。 请参阅[使用 Azure 门户创建虚拟网络](/documentation/articles/virtual-networks-create-vnet-arm-pportal/)。
 
 > [AZURE.WARNING]
 > 根据__优先级__按照网络流量测试规则。 在某个规则匹配测试条件后将被应用，并且不会再针对该请求测试更多的规则。 如果存在某个广泛阻止入站流量的规则（如**拒绝所有**规则），则它__必须__位于允许流量的规则之后。

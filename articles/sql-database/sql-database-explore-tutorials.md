@@ -28,7 +28,7 @@
 
 | 教程 | 说明 |
 | --- | --- | 
-| [第一个 Azure SQL 数据库](/documentation/articles/sql-database-get-started/) | 完成此快速入门教程后，将获得一个示例数据库，以及一个在 Azure 资源组中运行并已附加到逻辑服务器的空白数据库。此外，还会获得两个服务器级防火墙规则并将其配置为启用服务器级主体，用于从两个指定的 IP 地址登录到服务器。最后，将会知道如何在 Azure 门户预览中查询数据库，以及如何使用 SQL Server Management Studio 进行连接和查询。 |
+| [第一个 Azure SQL 数据库](/documentation/articles/sql-database-get-started/) | 完成此快速入门教程后，将获得一个示例数据库，以及一个在 Azure 资源组中运行并已附加到逻辑服务器的空白数据库。此外，还会获得两个服务器级防火墙规则并将其配置为启用服务器级主体，用于从两个指定的 IP 地址登录到服务器。最后，将会知道如何在 Azure 门户中查询数据库，以及如何使用 SQL Server Management Studio 进行连接和查询。 |
 | [使用 PowerShell 预配和访问 Azure SQL 数据库](/documentation/articles/sql-database-get-started-powershell/) | 完成此教程后，将会获得一个示例数据库，以及一个在 Azure 资源组中运行并已附加到逻辑服务器的空白数据库。此外，还会配置一项服务器级防火墙规则，目的是让服务器级主体从指定 IP 地址（或 IP 地址范围）登录到服务器。 |
 | [使用 C# 通过适用于 .NET 的 SQL 数据库库创建 SQL 数据库](/documentation/articles/sql-database-get-started-csharp/)| 在本教程中，将使用 C# 创建 SQL 数据库服务器、防火墙规则和 SQL 数据库。还将创建一个 Active Directory (AD) 应用程序和对 C# 应用进行身份验证所需的服务主体。 |
 | | |
@@ -38,7 +38,7 @@
 
 | 教程 | 说明 |
 | --- | --- | 
-| [使用 Azure 门户预览进行备份和还原](/documentation/articles/sql-database-get-started-backup-recovery-portal/) | 此教程介绍如何使用 Azure 门户预览查看备份、还原到某个时间点，以及通过 Azure 恢复服务保管库的备份进行还原
+| [使用 Azure 门户进行备份和还原](/documentation/articles/sql-database-get-started-backup-recovery-portal/) | 此教程介绍如何使用 Azure 门户查看备份、还原到某个时间点，以及通过 Azure 恢复服务保管库的备份进行还原
 | | |
 
 ## 分片的数据库

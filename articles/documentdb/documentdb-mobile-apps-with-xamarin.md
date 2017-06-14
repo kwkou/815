@@ -44,7 +44,7 @@ DocumentDB 为移动应用开发人员提供以下重要功能：
 以下教程介绍如何使用 Xamarin 和 DocumentDB 生成移动应用程序。 可在 [GitHub 上的 Xamarin 和 DocumentDB](https://github.com/Azure/azure-documentdb-dotnet/tree/master/samples/xamarin) 中找到该教程的完整源代码。
 
 ### <a name="get-started"></a>入门
-DocumentDB 入门容易。 转到 Azure 门户预览，然后创建新的 DocumentDB 帐户。 单击“快速入门”选项卡。 下载已连接到 DocumentDB 帐户的 Xamarin Forms 待办事项列表示例。 
+DocumentDB 入门容易。 转到 Azure 门户，然后创建新的 DocumentDB 帐户。 单击“快速入门”选项卡。 下载已连接到 DocumentDB 帐户的 Xamarin Forms 待办事项列表示例。 
 
 ![适用于移动应用的 DocumentDB 快速入门](./media/documentdb-mobile-apps-with-xamarin/documentdb-quickstart.png)
 
@@ -91,7 +91,7 @@ DocumentDB 是托管型数据库即服务。 随着用户群体的扩大，你�
 ![DocumentDB 可按需缩放吞吐量](./media/documentdb-mobile-apps-with-xamarin/documentdb-scale.png)
 
 ### <a name="go-planet-scale"></a>全球规模
-在你的应用受到广泛欢迎后，你可以吸收全球各地的用户。 或许你需要针对一些不可预见的事件做好准备。 转到 Azure 门户预览，然后打开 DocumentDB 帐户。 单击地图即可将数据持续复制到全球任意数目的区域。 此功能可向任意位置的用户提供数据。 还可以添加故障转移策略，针对意外状况做好准备。
+在你的应用受到广泛欢迎后，你可以吸收全球各地的用户。 或许你需要针对一些不可预见的事件做好准备。 转到 Azure 门户，然后打开 DocumentDB 帐户。 单击地图即可将数据持续复制到全球任意数目的区域。 此功能可向任意位置的用户提供数据。 还可以添加故障转移策略，针对意外状况做好准备。
 
 ![DocumentDB 可跨地理区域缩放](./media/documentdb-mobile-apps-with-xamarin/documentdb-replicate-globally.png)
 

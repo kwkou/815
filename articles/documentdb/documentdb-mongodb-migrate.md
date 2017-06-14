@@ -40,13 +40,13 @@
 
 ## <a name="prerequisites"></a>先决条件
 
-- 增加吞吐量：数据迁移的持续时间取决于为集合设置的吞吐量。 请确保对于较大的数据迁移增加吞吐量。 完成迁移后，减少吞吐量以节约成本。 有关在 [Azure 门户预览](https://portal.azure.cn)中增加吞吐量的详细信息，请参阅 [DocumentDB 中的性能级别和定价层](/documentation/articles/documentdb-performance-levels/)。
+- 增加吞吐量：数据迁移的持续时间取决于为集合设置的吞吐量。 请确保对于较大的数据迁移增加吞吐量。 完成迁移后，减少吞吐量以节约成本。 有关在 [Azure 门户](https://portal.azure.cn)中增加吞吐量的详细信息，请参阅 [DocumentDB 中的性能级别和定价层](/documentation/articles/documentdb-performance-levels/)。
 
 - 启用 SSL：DocumentDB 具有严格的安全要求和标准。 请确保在与帐户进行交互时启用 SSL。 本文其余部分的步骤包括如何为 *mongoimport* 和 *mongorestore* 启用 SSL。
 
 ## <a name="find-your-connection-string-information-host-port-username-and-password"></a>查找连接字符串信息（主机、端口、用户名和密码）
 
-1. 在 [Azure 门户预览](https://portal.azure.cn)的左侧窗格中，单击“DocumentDB”条目。
+1. 在 [Azure 门户](https://portal.azure.cn)的左侧窗格中，单击“DocumentDB”条目。
 2. 在“订阅”窗格中，选择帐户名称。
 3. 在“连接字符串”边栏选项卡中，单击“连接字符串”。  
 右侧窗格中包含成功连接到帐户所需的所有信息。

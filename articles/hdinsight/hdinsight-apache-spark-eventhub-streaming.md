@@ -57,7 +57,7 @@
 
 ## <a name="create-an-azure-event-hub"></a>创建 Azure 事件中心
 
-1. 登录到 [Azure 门户预览](https://portal.azure.cn)，然后单击屏幕左上角的“新建”。
+1. 登录到 [Azure 门户](https://portal.azure.cn)，然后单击屏幕左上角的“新建”。
 
 2. 单击“物联网”，然后单击“事件中心”。
 

@@ -156,7 +156,7 @@ Azure 提供两个不同的部署模型用于创建和处理资源：[Resource M
 
 在许多情况下，下一步是将数据库迁移到此新的 SQL Server VM。有关数据库迁移指南，请参阅[将数据库迁移到 Azure VM 上的 SQL Server](/documentation/articles/virtual-machines-windows-migrate-sql/)。
 
-如果还希望使用 Azure 门户预览创建 SQL 虚拟机，请参阅[在 Azure 上预配 SQL Server 虚拟机](/documentation/articles/virtual-machines-windows-portal-sql-server-provision/)。请注意，本教程将引导你在门户中使用推荐的 Resource Manager 模型创建 VM（而非使用此 PowerShell 主题中所用的经典模型）。
+如果还希望使用 Azure 门户创建 SQL 虚拟机，请参阅[在 Azure 上预配 SQL Server 虚拟机](/documentation/articles/virtual-machines-windows-portal-sql-server-provision/)。请注意，本教程将引导你在门户中使用推荐的 Resource Manager 模型创建 VM（而非使用此 PowerShell 主题中所用的经典模型）。
 
 除了上述资源，还建议查看[与在 Azure 虚拟机中运行 SQL Server 相关的其他主题](/documentation/articles/virtual-machines-windows-sql-server-iaas-overview/)。
 

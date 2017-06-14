@@ -690,7 +690,7 @@ Azure Resource Manager 中的三层模板还支持高可用性方案，例如体
 
 为体系结构模板 1 准备基础结构：
 
-- 在 Azure 门户预览中的“参数”边栏选项卡上，从“SYSTEMAVAILABILITY”框中选择“HA”。
+- 在 Azure 门户中的“参数”边栏选项卡上，从“SYSTEMAVAILABILITY”框中选择“HA”。
 
   ![图 11：设置 SAP 高可用性 Azure Resource Manager 参数][sap-ha-guide-figure-3000]
 
@@ -735,7 +735,7 @@ _**图 11：**设置 SAP 高可用性 Azure Resource Manager 参数_
 >
 >
 
-1.  在 Azure 门户预览中的“参数”边栏选项卡上，从“NEWOREXISTINGSUBNET”框中选择“现有”。
+1.  在 Azure 门户中的“参数”边栏选项卡上，从“NEWOREXISTINGSUBNET”框中选择“现有”。
 2.  在“SUBNETID”  框中，添加已准备好的“Azure 网络 SubnetID”的完整字符串，这是打算用于部署 Azure 虚拟机的位置。
 3.  若要获取所有 Azure 网络子网的列表，请运行以下 PowerShell 命令：
 
@@ -753,7 +753,7 @@ _**图 11：**设置 SAP 高可用性 Azure Resource Manager 参数_
 ### <a name="7fe9af0e-3cce-495b-a5ec-dcb4d8e0a310"></a> 部署用于测试和演示的仅限云 SAP 实例
 可以在仅限云的部署模型中部署高可用性 SAP 系统。 这种部署主要用于演示和测试目的。 而不适合用于生产环境用途。
 
-- 在 Azure 门户预览中的“参数”边栏选项卡上，从“NEWOREXISTINGSUBNET”框中选择“新建”。 将“SUBNETID”字段保留空白。
+- 在 Azure 门户中的“参数”边栏选项卡上，从“NEWOREXISTINGSUBNET”框中选择“新建”。 将“SUBNETID”字段保留空白。
 
   SAP Azure Resource Manager 模板自动创建 Azure 虚拟网络和子网。
 
@@ -863,7 +863,7 @@ ASCS/SCS 模板部署两个虚拟机，可以使用这两个虚拟机创建托�
 
 若要设置所需的 DNS IP 地址，请执行以下步骤。
 
-1.  在 Azure 门户预览中的“DNS 服务器”边栏选项卡上，确保虚拟网络的“DNS 服务器”选项设置为“自定义 DNS”。
+1.  在 Azure 门户中的“DNS 服务器”边栏选项卡上，确保虚拟网络的“DNS 服务器”选项设置为“自定义 DNS”。
 2.  然后，根据使用的网络类型选择设置。 有关详细信息，请参阅以下资源：
     * [企业网络连接（跨界）][planning-guide-2.2]：请添加本地 DNS 服务器的 IP 地址。  
     可将本地 DNS 服务器扩展到正在 Azure 中运行的虚拟机。 在该情况下，可添加运行 DNS 服务器的 Azure 虚拟机的 IP 地址。
@@ -902,7 +902,7 @@ ASCS/SCS 模板部署两个虚拟机，可以使用这两个虚拟机创建托�
 ### <a name="84c019fe-8c58-4dac-9e54-173efd4b2c30"></a> 设置 SAP 虚拟机的静态 IP 地址
 部署要在群集中使用的虚拟机之后，需要为所有虚拟机设置静态 IP 地址。 请在 Azure 虚拟网络配置中而不是来宾操作系统中执行此操作。
 
-1.  在 Azure 门户预览中，选择“资源组” > “网卡” > “设置” > “IP 地址”。
+1.  在 Azure 门户中，选择“资源组” > “网卡” > “设置” > “IP 地址”。
 2.  在“IP 地址”边栏选项卡中的“分配”下面，选择“静态”。 在“IP 地址”框中，输入要使用的 IP 地址。
 
     > [AZURE.NOTE]
@@ -941,7 +941,7 @@ SAP Azure Resource Manager 模板可创建用于 SAP ASCS/SCS 实例和 DBMS 实
 
 为 Azure 内部负载均衡器设置静态 IP 地址：
 
-1.  初始部署将内部负载均衡器 IP 地址设置为“动态”。 在 Azure 门户预览的“IP 地址”边栏选项卡中的“分配”下面，选择“静态”。
+1.  初始部署将内部负载均衡器 IP 地址设置为“动态”。 在 Azure 门户的“IP 地址”边栏选项卡中的“分配”下面，选择“静态”。
 2.  请将内部负载均衡器 **pr1-lb-ascs** 的 IP 地址设置为 SAP ASCS/SCS 实例的虚拟主机名的 IP 地址。
 3.  请将内部负载均衡器 **pr1-lb-dbms** 的 IP 地址设置为 DBMS 实例的虚拟主机名的 IP 地址。
 
@@ -1012,7 +1012,7 @@ _**图 15：**Azure 内部负载均衡器的默认 ASCS/SCS 负载均衡规则_
 
 如果想要将其他编号用于 SAP ASCS 或 SCS 实例，则必须从默认值更改其端口的名称和值。
 
-1.  在 Azure 门户预览中，选择“**<*SID*>-lb-ascs 负载均衡器”**>“负载均衡规则”。
+1.  在 Azure 门户中，选择“**<*SID*>-lb-ascs 负载均衡器”**>“负载均衡规则”。
 2.  针对属于 SAP ASCS 或 SCS 实例的所有负载均衡规则，请更改以下值：
 
     * 名称
@@ -1613,7 +1613,7 @@ _**图 62：**在 SIOS DataKeeper 中，将本地卷从群集节点 A 复制到�
             Move-ClusterGroup -Name $SAPClusterGroup
 
 2.  在 Windows 来宾操作系统中重新启动群集节点 A（这会启动将 SAP <*SID*> 群集组从节点 A 故障转移到节点 B 的自动故障转移）。  
-3.  在 Azure 门户预览中重新启动群集节点 A（这会启动将 SAP <*SID*> 群集组从节点 A 故障转移到节点 B 的自动故障转移）。  
+3.  在 Azure 门户中重新启动群集节点 A（这会启动将 SAP <*SID*> 群集组从节点 A 故障转移到节点 B 的自动故障转移）。  
 4.  使用 Azure PowerShell 重新启动群集节点 A（这会启动将 SAP <*SID*> 群集组从节点 A 故障转移到节点 B 的自动故障转移）。
 
     故障转移后，SAP <*SID*> 群集组将在群集节点 B 上运行。例如，在 **pr1-ascs-1** 上运行。

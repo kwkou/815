@@ -4,7 +4,7 @@
 
 若要使用 [EventProcessorHost][]，必须拥有 [Azure 存储帐户][]：
 
-1. 登录到 [Azure 门户预览][]，然后单击屏幕左上角的“新建”。
+1. 登录到 [Azure 门户][]，然后单击屏幕左上角的“新建”。
 
 2. 单击“存储”，然后单击“存储帐户”。
 
@@ -128,6 +128,6 @@
 [Azure 存储帐户]: /documentation/articles/storage-create-storage-account/
 [EventProcessorHost]: http://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.eventprocessorhost(v=azure.95).aspx
 [Azure 经典管理门户]: http://manage.windowsazure.cn
-[Azure 门户预览]: http://portal.azure.cn/
+[Azure 门户]: http://portal.azure.cn/
 
 <!---HONumber=Mooncake_1121_2016-->

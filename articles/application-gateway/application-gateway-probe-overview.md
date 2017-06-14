@@ -79,7 +79,7 @@
 > 例如，自定义探测发送到 \<协议\>://\<主机\>:\<端口\>\<路径\>。 所使用的端口与后端 HTTP 设置中定义的端口相同。
 
 ## <a name="next-steps"></a>后续步骤
-了解应用程序网关的运行状况监视后，可在 Azure 门户预览中配置[自定义运行状况探测](/documentation/articles/application-gateway-create-probe-portal/)，或使用 PowerShell 和 Azure Resource Manager 部署模型配置[自定义运行状况探测](/documentation/articles/application-gateway-create-probe-ps/)。
+了解应用程序网关的运行状况监视后，可在 Azure 门户中配置[自定义运行状况探测](/documentation/articles/application-gateway-create-probe-portal/)，或使用 PowerShell 和 Azure Resource Manager 部署模型配置[自定义运行状况探测](/documentation/articles/application-gateway-create-probe-ps/)。
 
 [1]: ./media/application-gateway-probe-overview/appgatewayprobe.png
 

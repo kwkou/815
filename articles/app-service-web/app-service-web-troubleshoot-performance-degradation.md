@@ -49,7 +49,7 @@
 
 ### <a name="observe"></a> 1.观察和监视应用程序行为
 #### <a name="track-service-health"></a>跟踪服务运行状况
-每次发生服务中断或性能下降时 Azure 会进行宣传。 可以在 [Azure 门户预览](https://portal.azure.cn/)中跟踪服务的运行状况。 有关详细信息，请参阅[跟踪服务的运行状况](/documentation/articles/insights-service-health/)。
+每次发生服务中断或性能下降时 Azure 会进行宣传。 可以在 [Azure 门户](https://portal.azure.cn/)中跟踪服务的运行状况。 有关详细信息，请参阅[跟踪服务的运行状况](/documentation/articles/insights-service-health/)。
 
 #### <a name="monitor-your-web-app"></a>监视你的 Web 应用
 此选项可让你找出应用程序是否存在任何问题。 在 Web 应用的边栏选项卡中，单击“请求和错误”磁贴。 “指标”边栏选项卡将显示所有可以添加的指标。
@@ -150,12 +150,12 @@ Kudu 的另一项有用功能是，如果应用程序引发第一次异常，你
 可以将缩放设置为手动或自动。
 
 #### <a name="use-autoheal"></a>使用 AutoHeal
-AutoHeal 会根据你选择的设置（例如配置更改、请求、基于内存的限制或执行请求所需的时间），回收应用程序的工作进程。 在大多数情况下，回收进程是在出现问题后进行恢复的最快方式。 尽管始终可以从 Azure 门户预览直接重新启动 Web 应用，但 AutoHeal 可以自动为你执行此操作。 你只需在 Web 应用的根 web.config 中添加一些触发器即可。 请注意，即使你的应用程序并非 .Net 应用程序，这些设置的工作方式也仍然相同。
+AutoHeal 会根据你选择的设置（例如配置更改、请求、基于内存的限制或执行请求所需的时间），回收应用程序的工作进程。 在大多数情况下，回收进程是在出现问题后进行恢复的最快方式。 尽管始终可以从 Azure 门户直接重新启动 Web 应用，但 AutoHeal 可以自动为你执行此操作。 你只需在 Web 应用的根 web.config 中添加一些触发器即可。 请注意，即使你的应用程序并非 .Net 应用程序，这些设置的工作方式也仍然相同。
 
 有关详细信息，请参阅 [自动修复 Azure 网站](https://azure.microsoft.com/zh-cn/blog/auto-healing-windows-azure-web-sites/)。
 
 #### <a name="restart-the-web-app"></a>重新启动 Web 应用
-这通常是在发生一次性问题后进行恢复的最简单方式。 [Azure 门户预览](https://portal.azure.cn/)上的 Web 应用边栏选项卡中提供了用于停止或重新启动应用的选项。
+这通常是在发生一次性问题后进行恢复的最简单方式。 [Azure 门户](https://portal.azure.cn/)上的 Web 应用边栏选项卡中提供了用于停止或重新启动应用的选项。
 
  ![重新启动 Web 应用以解决性能问题](./media/app-service-web-troubleshoot-performance-degradation/2-restart.png)
 

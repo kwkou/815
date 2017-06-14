@@ -42,12 +42,12 @@
 * **门户**：单击“虚拟机” > “myVM”>“停止”
 * **Powershell**：`Stop-AzureRmVM -ResourceGroupName myResourceGroup -Name myVM`解除分配资源组 **myResourceGroup** 中名为 **myVM** 的 VM。
 
-Azure 门户预览中该 VM 的“状态”将从“已停止”更改为“已停止(已解除分配)”。
+Azure 门户中该 VM 的“状态”将从“已停止”更改为“已停止(已解除分配)”。
 
 ## <a name="get-the-storage-account-urls"></a>获取存储帐户 URL
 需要源和目标存储帐户的 URL。 URL 类似于： `https://<storageaccount>.blob.core.chinacloudapi.cn/<containerName>/`。 如果已经知道了存储帐户和容器名称，则只需替换括号之间的信息即可创建 URL。 
 
-可以使用 Azure 门户预览或 Azure PowerShell 获取 URL：
+可以使用 Azure 门户或 Azure PowerShell 获取 URL：
 
 * **门户**：单击“更多服务” > “存储帐户” > “Blob”，源 VHD 文件可能在 **vhd** 容器中。 单击容器的“属性”并复制标记为 **URL** 的文本。 你将需要用到源和目标容器的 URL。 
 * **Powershell**：使用 `Get-AzureRmVM -ResourceGroupName "myResourceGroup" -Name "myVM"` 可获取资源组 **myResourceGroup** 中名为 **myVM** 的 VM 的信息。 在结果中，查看 **Vhd Uri** 的 **Storage profile** 部分。 URI 的第一部分是容器的 URL，最后一部分是 VM 的 OS VHD 名称。

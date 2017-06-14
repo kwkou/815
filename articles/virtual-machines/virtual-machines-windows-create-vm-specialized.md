@@ -140,7 +140,7 @@
 
 
 ## <a name="verify-that-the-vm-was-created"></a>验证是否已创建 VM
-应会在 [Azure 门户预览](https://portal.azure.cn)的“浏览” > “虚拟机”下看到新建的 VM，也可以使用以下 PowerShell 命令查看该 VM：
+应会在 [Azure 门户](https://portal.azure.cn)的“浏览” > “虚拟机”下看到新建的 VM，也可以使用以下 PowerShell 命令查看该 VM：
 
     $vmList = Get-AzureRmVM -ResourceGroupName $rgName
     $vmList.Name

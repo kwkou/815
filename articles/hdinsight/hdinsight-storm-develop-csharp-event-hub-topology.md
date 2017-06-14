@@ -192,7 +192,7 @@ Spout 和 Bolt 以名为 **eventhubs-storm-spout-#.#-jar-with-dependencies.jar**
 
 事件中心是此示例的数据源。使用[事件中心入门](/documentation/articles/event-hubs-dotnet-standard-getstarted-send/)文档的“创建事件中心” 部分中的信息。
 
-1. 创建事件中心后，在 Azure 门户预览中查看“事件中心”边栏选项卡，然后选择“共享访问策略”。选择“+ 添加”添加以下策略：
+1. 创建事件中心后，在 Azure 门户中查看“事件中心”边栏选项卡，然后选择“共享访问策略”。选择“+ 添加”添加以下策略：
    
     | 名称 | 权限 |
     | --- | --- |

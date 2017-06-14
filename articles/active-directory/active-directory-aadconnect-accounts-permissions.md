@@ -178,7 +178,7 @@ VSA 适用于同步引擎与 SQL 位于同一台服务器上的场合。 如果�
 
 使用该帐户的服务器名称可以根据用户名的第二个部分来识别。 在上图中，服务器名称为 FABRIKAMCON。 如果部署了暂存服务器，每个服务器都有自身的帐户。 Azure AD 将同步服务帐户数目限制为 10 个。
 
-服务帐户带有永不过期的长复杂密码。 系统为其授予了特殊角色“目录同步帐户”，该角色仅可执行目录同步任务。 只可在 Azure AD Connect 向导中授予该特殊的内置角色，并且 Azure 门户预览会显示此帐户具有“用户”角色。
+服务帐户带有永不过期的长复杂密码。 系统为其授予了特殊角色“目录同步帐户”，该角色仅可执行目录同步任务。 只可在 Azure AD Connect 向导中授予该特殊的内置角色，并且 Azure 门户会显示此帐户具有“用户”角色。
 
 ![AD 帐户角色](./media/active-directory-aadconnect-accounts-permissions/aadsyncserviceaccountrole.png)
 

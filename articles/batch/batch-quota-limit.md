@@ -52,7 +52,7 @@
 <sup>1</sup> 最大的块 Blob 大小的 Azure 存储空间限制
 
 ## <a name="view-batch-quotas"></a>查看 Batch 配额
-可在 [Azure 门户预览][portal]中查看批处理帐户配额。
+可在 [Azure 门户][portal]中查看批处理帐户配额。
 
 1. 在门户中选择“Batch 帐户”，然后选择所需的 Batch 帐户。
 2. 在 Batch 帐户的菜单边栏选项卡中选择“属性”
@@ -61,7 +61,7 @@
     ![Batch 帐户配额][account_quotas]
 
 ## <a name="increase-a-quota"></a>提高配额
-执行以下步骤，使用 [Azure 门户预览][portal]来请求提高配额。
+执行以下步骤，使用 [Azure 门户][portal]来请求提高配额。
 
 1. 在门户仪表板上选择“帮助 + 支持”磁贴，或单击门户右上角的问号 (**?**)。
 2. 选择“新建支持请求” > “基本”。
@@ -94,7 +94,7 @@
 提交支持请求后，Azure 支持人员将与你取得联系。 请注意，完成该请求最多需要 2 个工作日。
 
 ## <a name="related-topics"></a>相关主题
-- [使用 Azure 门户预览创建 Azure Batch 帐户](/documentation/articles/batch-account-create-portal/)
+- [使用 Azure 门户创建 Azure Batch 帐户](/documentation/articles/batch-account-create-portal/)
 - [Azure Batch 功能概述](/documentation/articles/batch-api-basics/)
 - [Azure 订阅和服务限制、配额和约束](/documentation/articles/azure-subscription-service-limits/)
 

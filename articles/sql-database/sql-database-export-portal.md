@@ -1,6 +1,6 @@
 <properties
-    pageTitle="Azure 门户预览：将 Azure SQL 数据库导出到 BACPAC 文件 | Azure"
-    description="使用 Azure 门户预览将 Azure SQL 数据库导出到 BACPAC 文件"
+    pageTitle="Azure 门户：将 Azure SQL 数据库导出到 BACPAC 文件 | Azure"
+    description="使用 Azure 门户将 Azure SQL 数据库导出到 BACPAC 文件"
     services="sql-database"
     documentationcenter=""
     author="CarlRabeler"
@@ -18,9 +18,9 @@
     ms.tgt_pltfrm="NA" />  
 
 
-# 使用 Azure 门户预览将 Azure SQL 数据库导出到 BACPAC 文件
+# 使用 Azure 门户将 Azure SQL 数据库导出到 BACPAC 文件
 
-本文说明了如何使用 [Azure 门户预览](https://portal.azure.cn)将 Azure SQL 数据库导出到 BACPAC 文件（存储在 Azure Blob 存储中）。如需大致了解如何导出到 BACPAC 文件，请参阅[导出到 BACPAC](/documentation/articles/sql-database-export/)。
+本文说明了如何使用 [Azure 门户](https://portal.azure.cn)将 Azure SQL 数据库导出到 BACPAC 文件（存储在 Azure Blob 存储中）。如需大致了解如何导出到 BACPAC 文件，请参阅[导出到 BACPAC](/documentation/articles/sql-database-export/)。
 
 > [AZURE.NOTE]
 也可使用 [SQL Server Management Studio](/documentation/articles/sql-database-export-ssms/)、[PowerShell](/documentation/articles/sql-database-export-powershell/) 或 [SQLPackage](/documentation/articles/sql-database-export-sqlpackage/) 将 Azure SQL 数据库文件导出到 BACPAC 文件。
@@ -36,7 +36,7 @@
 
 ## 导出数据库
 
-1. 转到 [Azure 门户预览](https://portal.azure.cn)。
+1. 转到 [Azure 门户](https://portal.azure.cn)。
 2. 打开要导出的数据库对应的 SQL 数据库边栏选项卡。
 3. 确保在导出过程中没有事务处理。
     

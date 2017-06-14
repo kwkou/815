@@ -264,7 +264,7 @@ ID 令牌将传递给网站和本机客户端，包含有关用户的配置文�
 
 &nbsp;&nbsp;2.**将策略分配到 Web API**。
 
-接下来，将此新策略链接到应用程序。还需要通过某种方式访问应用程序的 **ObjectId**。查找应用的 **ObjectId** 的最佳方式是使用 [Azure 门户预览](https://portal.azure.cn/)。
+接下来，将此新策略链接到应用程序。还需要通过某种方式访问应用程序的 **ObjectId**。查找应用的 **ObjectId** 的最佳方式是使用 [Azure 门户](https://portal.azure.cn/)。
 
 获取 **ObjectId** 后，运行以下命令。
 

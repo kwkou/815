@@ -37,14 +37,14 @@
 
 ## 创建 Power BI 工作区集合并获取访问密钥（预配）
 
-Power BI Embedded 是一项 Azure 服务。只有使用 Azure 门户预览的 ISV 需要支付使用费（根据每小时用户会话计费），查看报表的用户不需要付费，甚至不需要 Azure 订阅。在开始开发应用程序之前，必须使用 Azure 门户预览创建 **Power BI 工作区集合**。
+Power BI Embedded 是一项 Azure 服务。只有使用 Azure 门户的 ISV 需要支付使用费（根据每小时用户会话计费），查看报表的用户不需要付费，甚至不需要 Azure 订阅。在开始开发应用程序之前，必须使用 Azure 门户创建 **Power BI 工作区集合**。
 
 Power BI Embedded 的每个工作区是每位客户（租户）的工作区，可以在每个工作区集合中添加多个工作区。每个工作区集合使用相同的访问密钥。实际上，工作区集合是 Power BI Embedded 的安全边界。
 
 ![](./media/power-bi-embedded-iframe/create-workspace.png)  
 
 
-创建完工作区集合之后，请从 Azure 门户预览复制访问密钥。
+创建完工作区集合之后，请从 Azure 门户复制访问密钥。
 
 ![](./media/power-bi-embedded-iframe/copy-access-key.png)  
 

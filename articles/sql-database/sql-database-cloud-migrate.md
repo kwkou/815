@@ -49,7 +49,7 @@
 
 以下列表包含的建议可帮助你在导入过程中获得最佳性能。
 
-* 若要获得最高的传输性能，请在预算允许范围内选择最高的服务级别和性能层。为了节省资金，可以在迁移完成后缩减规模。请参阅[使用 Azure 门户预览更改单一数据库的服务层和性能级别](/documentation/articles/sql-database-manage-single-databases-portal/#change-the-service-tier-and-performance-level-of-a-single-database)、[使用 PowerShell 更改单一数据库的服务层和性能级别](/documentation/articles/sql-database-manage-single-databases-powershell/#change-the-service-tier-and-performance-level-of-a-single-database)、[使用 Transact-SQL 更改单一数据库的服务层和性能级别](/documentation/articles/sql-database-manage-single-databases-tsql/#change-the-service-tier-and-performance-level-of-a-single-database)
+* 若要获得最高的传输性能，请在预算允许范围内选择最高的服务级别和性能层。为了节省资金，可以在迁移完成后缩减规模。请参阅[使用 Azure 门户更改单一数据库的服务层和性能级别](/documentation/articles/sql-database-manage-single-databases-portal/#change-the-service-tier-and-performance-level-of-a-single-database)、[使用 PowerShell 更改单一数据库的服务层和性能级别](/documentation/articles/sql-database-manage-single-databases-powershell/#change-the-service-tier-and-performance-level-of-a-single-database)、[使用 Transact-SQL 更改单一数据库的服务层和性能级别](/documentation/articles/sql-database-manage-single-databases-tsql/#change-the-service-tier-and-performance-level-of-a-single-database)
 * 尽量缩短 .BACPAC 文件与目标数据中心之间的距离。
 * 在迁移过程中禁用自动统计
 * 将表和索引分区

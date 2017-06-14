@@ -34,9 +34,9 @@
 > [AZURE.SELECTOR]
 - [创建自签名证书 - PowerShell](/documentation/articles/vpn-gateway-certificates-point-to-site/)
 - [创建自签名证书 - Makecert](/documentation/articles/vpn-gateway-certificates-point-to-site-makecert/)
-- [配置点到站点 - Resource Manager - Azure 门户预览](/documentation/articles/vpn-gateway-howto-point-to-site-resource-manager-portal/)
+- [配置点到站点 - Resource Manager - Azure 门户](/documentation/articles/vpn-gateway-howto-point-to-site-resource-manager-portal/)
 - [配置点到站点 - Resource Manager - PowerShell](/documentation/articles/vpn-gateway-howto-point-to-site-rm-ps/)
-- [配置点到站点 - 经典 - Azure 门户预览](/documentation/articles/vpn-gateway-howto-point-to-site-classic-azure-portal/)
+- [配置点到站点 - 经典 - Azure 门户](/documentation/articles/vpn-gateway-howto-point-to-site-classic-azure-portal/)
 
 点到站点连接使用证书进行身份验证。 配置点到站点连接时，需要将根证书的公钥（.cer 文件）上传到 Azure。 此外，必须从根证书生成客户端证书，并将其安装在连接到 VNet 的每台客户端计算机上。 客户端证书允许客户端进行身份验证。
 

@@ -31,7 +31,7 @@ SQL 数据库的最新版本为 V12。 版本 V11 已停用。
 我们保证至少在 99.99% 的时间内客户将能够在其单个或弹性“基本”、“标准”或“高级”版 Azure SQL 数据库与我们的 Internet 网关之间保持连接。 有关详细信息，请参阅 [SLA](/support/legal/sla/)。
 
 ## <a name="how-do-i-reset-the-password-for-the-server-admin"></a>如何重置服务器管理员的密码？
-在 [Azure 门户预览](https://portal.azure.cn)中，单击“SQL Server”，从列表中选择服务器，然后单击“重置密码”。
+在 [Azure 门户](https://portal.azure.cn)中，单击“SQL Server”，从列表中选择服务器，然后单击“重置密码”。
 
 ## <a name="how-do-i-manage-databases-and-logins"></a>如何管理数据库和登录名？
 请参阅[管理数据库和登录名](/documentation/articles/sql-database-manage-logins/)。
@@ -83,7 +83,7 @@ SQL 数据库以可预测的每小时费率收费，同时根据服务层 + 单�
 有几种工具可供使用。 
 
 * 对于本地数据库，请使用 [DTU 选型顾问](http://dtucalculator.azurewebsites.net/) ，它会建议所需的数据库和 DTU，并为弹性池评估多个数据库。
-* 如果单一数据库可因池受益，并且 Azure 的智能引擎发现担保数据库的历史使用模式时，建议使用弹性池。请参阅 [使用 Azure 门户预览监视和管理弹性池](/documentation/articles/sql-database-elastic-pool-manage-portal/)。有关如何自行进行数学计算的详细信息，请参阅[弹性池的价格和性能注意事项](/documentation/articles/sql-database-elastic-pool-guidance/)
+* 如果单一数据库可因池受益，并且 Azure 的智能引擎发现担保数据库的历史使用模式时，建议使用弹性池。请参阅 [使用 Azure 门户监视和管理弹性池](/documentation/articles/sql-database-elastic-pool-manage-portal/)。有关如何自行进行数学计算的详细信息，请参阅[弹性池的价格和性能注意事项](/documentation/articles/sql-database-elastic-pool-guidance/)
 * 若要确定是否需要向上或向下调整单一数据库，请参阅[单一数据库的性能指南](/documentation/articles/sql-database-performance-guidance/)。
 
 ## <a name="how-often-can-i-change-the-service-tier-or-performance-level-of-a-single-database"></a>可以按何种频率更改单一数据库的服务层或性能级别？
@@ -120,8 +120,8 @@ Azure SQL Web 和企业数据库现已停用。 基本、标准、高级和弹�
 我们通过 DMV 显示主数据库与地域辅助数据库之间的实时复制延迟。 有关详细信息，请参阅 [sys.dm_geo_replication_link_status](https://msdn.microsoft.com/zh-cn/library/mt575504.aspx)。
 
 ## <a name="to-move-a-database-to-a-different-server-in-the-same-subscription"></a>将数据库移到同一订阅中的不同服务器
-* 在 [Azure 门户预览](https://portal.azure.cn)中，单击“SQL 数据库”，从列表中选择数据库，然后单击“复制”。 有关详细信息，请参阅[复制 Azure SQL 数据库](/documentation/articles/sql-database-copy/)。
+* 在 [Azure 门户](https://portal.azure.cn)中，单击“SQL 数据库”，从列表中选择数据库，然后单击“复制”。 有关详细信息，请参阅[复制 Azure SQL 数据库](/documentation/articles/sql-database-copy/)。
 
 ## <a name="to-move-a-database-between-subscriptions"></a>在订阅之间移动数据库
-* 在 [Azure 门户预览](https://portal.azure.cn)中，单击“SQL Server”，然后从列表中选择托管数据库的服务器。 单击“**移动**”，然后选择要移动的资源以及要移动到其中的订阅。
+* 在 [Azure 门户](https://portal.azure.cn)中，单击“SQL Server”，然后从列表中选择托管数据库的服务器。 单击“**移动**”，然后选择要移动的资源以及要移动到其中的订阅。
 <!--Update_Decription: add two FAQs about moving database-->

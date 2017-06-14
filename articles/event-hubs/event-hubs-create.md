@@ -1,6 +1,6 @@
 <properties
     pageTitle="创建 Azure 事件中心 | Azure"
-    description="使用 Azure 门户预览创建 Azure 事件中心命名空间和事件中心"
+    description="使用 Azure 门户创建 Azure 事件中心命名空间和事件中心"
     services="event-hubs"
     documentationcenter="na"
     author="jtaubensee"
@@ -18,7 +18,7 @@
     ms.author="jotaub" />  
 
 
-# 使用 Azure 门户预览创建事件中心命名空间和事件中心
+# 使用 Azure 门户创建事件中心命名空间和事件中心
 
 ## 创建事件中心命名空间
 

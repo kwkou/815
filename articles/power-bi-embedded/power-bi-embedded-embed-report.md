@@ -32,7 +32,7 @@
 
 ## <a name="using-the-access-keys-to-use-rest-apis"></a>借助访问密钥使用 REST API
 
-若要调用 REST API，可以传递访问密钥（可从给定工作区集合的 Azure 门户预览中获取）。 有关详细信息，请参阅 [Power BI Embedded 入门](/documentation/articles/power-bi-embedded-get-started/)。
+若要调用 REST API，可以传递访问密钥（可从给定工作区集合的 Azure 门户中获取）。 有关详细信息，请参阅 [Power BI Embedded 入门](/documentation/articles/power-bi-embedded-get-started/)。
 
 ## <a name="get-a-report-id"></a>获取报表 ID
 
@@ -40,7 +40,7 @@
 
 ### <a name="using-the-power-bi-net-sdk"></a>使用 Power BI .NET SDK
 
-使用 .NET SDK 时，需要创建基于从 Azure 门户预览中获取的访问密钥的令牌凭据。 这就需要安装 [Power BI API NuGet 包](https://www.nuget.org/profiles/powerbi)。
+使用 .NET SDK 时，需要创建基于从 Azure 门户中获取的访问密钥的令牌凭据。 这就需要安装 [Power BI API NuGet 包](https://www.nuget.org/profiles/powerbi)。
 
 **安装 NuGet 包**
 

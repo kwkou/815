@@ -1,6 +1,6 @@
 <properties
     pageTitle="在门户中使用 Linux 故障排除 VM | Azure"
-    description="了解如何通过使用 Azure 门户预览将 OS 磁盘连接到恢复 VM 来排查 Linux 虚拟机问题"
+    description="了解如何通过使用 Azure 门户将 OS 磁盘连接到恢复 VM 来排查 Linux 虚拟机问题"
     services="virtual-machines-linux"
     documentationCenter=""
     authors="iainfoulds"
@@ -16,8 +16,8 @@
     wacn.date="01/20/2017"
     ms.author="iainfou" />
 
-# 通过使用 Azure 门户预览将 OS 磁盘附加到恢复 VM 来对 Linux VM 进行故障排除
-如果 Linux 虚拟机 (VM) 遇到启动或磁盘错误，可能需要对虚拟硬盘本身执行故障排除步骤。一个常见示例是 `/etc/fstab` 中存在无效条目，使 VM 无法成功启动。本文详细介绍如何使用 Azure 门户预览将虚拟硬盘连接到另一个 Linux VM 来修复所有错误，然后重新创建原始 VM。
+# 通过使用 Azure 门户将 OS 磁盘附加到恢复 VM 来对 Linux VM 进行故障排除
+如果 Linux 虚拟机 (VM) 遇到启动或磁盘错误，可能需要对虚拟硬盘本身执行故障排除步骤。一个常见示例是 `/etc/fstab` 中存在无效条目，使 VM 无法成功启动。本文详细介绍如何使用 Azure 门户将虚拟硬盘连接到另一个 Linux VM 来修复所有错误，然后重新创建原始 VM。
 
 ## 恢复过程概述
 故障排除过程如下：
@@ -152,7 +152,7 @@
 
 [![从 Github 中的模板部署 VM](http://azuredeploy.net/deploybutton.png)](https://portal.azure.cn/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fazure%2Fazure-quickstart-templates%2Fmaster%2F201-vm-specialized-vhd-existing-vnet%2Fazuredeploy.json)
 
-模板已加载到 Azure 门户预览中进行部署。请输入新 VM 和现有 Azure 资源的名称，然后粘贴现有虚拟硬盘的 URL。
+模板已加载到 Azure 门户中进行部署。请输入新 VM 和现有 Azure 资源的名称，然后粘贴现有虚拟硬盘的 URL。
 
 ## 重新启用启动诊断
 从现有虚拟硬盘创建 VM 时，启动诊断可能不会自动启用。若要检查启动诊断的状态并根据需要打开启动诊断，请在门户中选择你的 VM。在“监视”下面，单击“诊断设置”。确保状态为“打开”，并检查“启动诊断”旁边的复选标记是否为选中状态。如果做了任何更改，请单击“保存”：

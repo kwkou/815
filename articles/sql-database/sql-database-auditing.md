@@ -55,10 +55,10 @@ SQL 数据库审核可让你：
 可以为特定数据库定义审核策略，也可以将审核策略定义为默认服务器策略。 默认的服务器审核策略将应用到服务器上的所有现有数据库和新建的数据库。
 
 ## <a id="subheading-2"></a>为数据库设置审核
-以下部分介绍如何使用 Azure 门户预览配置审核。
+以下部分介绍如何使用 Azure 门户配置审核。
 
 ### <a id="subheading-2-1">Blob 审核</a>
-1. 启动 [Azure 门户预览](https://portal.azure.cn) (https://portal.azure.cn)。
+1. 启动 [Azure 门户](https://portal.azure.cn) (https://portal.azure.cn)。
 2. 导航到你要审核的 SQL 数据库/SQL Server 的设置边栏选项卡。 在“设置”边栏选项卡中，选择“审核和威胁检测”。
 
     <a id="auditing-screenshot"></a>
@@ -88,7 +88,7 @@ SQL 数据库审核可让你：
 > 在设置**表审核**之前，请检查使用的是否为[“下层客户端”](/documentation/articles/sql-database-auditing-and-dynamic-data-masking-downlevel-clients/)。 此外，如果有严格的防火墙设置，请注意，在启用表审核时[会更改数据库的 IP 终结点](/documentation/articles/sql-database-auditing-and-dynamic-data-masking-downlevel-clients/)。
 
 
-1. 启动 [Azure 门户预览](https://portal.azure.cn) (https://portal.azure.cn)。
+1. 启动 [Azure 门户](https://portal.azure.cn) (https://portal.azure.cn)。
 2. 导航到你要审核的 SQL 数据库/SQL Server 的设置边栏选项卡。 在“设置”边栏选项卡中，选择“审核和威胁检测”（[请参阅“Blob 审核”部分中的屏幕截图](#auditing-screenshot)）。
 3. 在数据库审核配置边栏选项卡中，可以选中“从服务器继承审核设置”复选框，指定根据服务器的设置对数据库进行审核。 如果选中此选项，将会看到“查看服务器审核设置”  链接，可以使用该链接在此上下文中查看或修改服务器审核设置。
 
@@ -148,7 +148,7 @@ Blob 审核日志以 Blob 文件集合的形式保存在名为“**sqldbauditlog
 
 可通过多种方法查看 Blob 审核日志：
 
-1. 通过 [Azure 门户预览](https://portal.azure.cn) - 打开相关数据库。 在数据库的“审核和威胁检测”边栏选项卡的顶部，单击“查看审核日志”。
+1. 通过 [Azure 门户](https://portal.azure.cn) - 打开相关数据库。 在数据库的“审核和威胁检测”边栏选项卡的顶部，单击“查看审核日志”。
 
     ![导航窗格][10]
 
@@ -183,7 +183,7 @@ Blob 审核日志以 Blob 文件集合的形式保存在名为“**sqldbauditlog
 
 可通过多种方法查看表审核日志：
 
-1. 通过 [Azure 门户预览](https://portal.azure.cn) - 打开相关数据库。 在数据库的“审核和威胁检测”边栏选项卡的顶部，单击“查看审核日志”。
+1. 通过 [Azure 门户](https://portal.azure.cn) - 打开相关数据库。 在数据库的“审核和威胁检测”边栏选项卡的顶部，单击“查看审核日志”。
 
     ![导航窗格][10]
 

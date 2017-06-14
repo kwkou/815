@@ -24,7 +24,7 @@
 
 # <a name="create-an-application-gateway-by-using-the-azure-resource-manager-template"></a>使用 Azure Resource Manager 模板创建应用程序网关
 > [AZURE.SELECTOR]
-- [Azure 门户预览](/documentation/articles/application-gateway-create-gateway-portal/)
+- [Azure 门户](/documentation/articles/application-gateway-create-gateway-portal/)
 - [Azure Resource Manager PowerShell](/documentation/articles/application-gateway-create-gateway-arm/)
 - [Azure 经典 PowerShell](/documentation/articles/application-gateway-create-gateway/)
 - [Azure Resource Manager 模板](/documentation/articles/application-gateway-create-gateway-arm-template/)
@@ -190,7 +190,7 @@ Azure 应用程序网关是第 7 层负载均衡器。 它在不同服务器之�
 
 ## <a name="deploy-the-azure-resource-manager-template-by-using-click-to-deploy"></a>使用“单击部署”来部署 Azure Resource Manager 模板
 
-“单击部署”是另一种使用 Azure Resource Manager 模板的方式。 这是将模板与 Azure 门户预览配合使用的简便方法。
+“单击部署”是另一种使用 Azure Resource Manager 模板的方式。 这是将模板与 Azure 门户配合使用的简便方法。
 
 ### <a name="step-1"></a>步骤 1
 

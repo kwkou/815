@@ -51,7 +51,7 @@ __要求__：
 
 ## <a name="to-use-the-script"></a>使用脚本
 
-有关如何在 HDInsight 中使用此脚本的信息，请参阅[使用脚本操作自定义基于 Linux 的 HDInsight 群集](/documentation/articles/hdinsight-hadoop-customize-cluster-linux/#apply-a-script-action-to-a-running-cluster)一文。 可以通过 Azure 门户预览、Azure PowerShell 或 Azure CLI 使用此脚本。
+有关如何在 HDInsight 中使用此脚本的信息，请参阅[使用脚本操作自定义基于 Linux 的 HDInsight 群集](/documentation/articles/hdinsight-hadoop-customize-cluster-linux/#apply-a-script-action-to-a-running-cluster)一文。 可以通过 Azure 门户、Azure PowerShell 或 Azure CLI 使用此脚本。
 
 按照脚本操作文档进行操作时，请使用以下 URI：
 

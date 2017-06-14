@@ -426,7 +426,7 @@ IP 地址是从指定的子网中选择的。
 
 ### <a name="how-do-i-create-a-scale-set-in-an-existing-resource-group"></a>如何在现有资源组中创建规模集？
 
-目前还不能通过 Azure 门户预览在现有的资源组中创建规模集，但可以在通过 Azure Resource Manager 模板部署规模集时指定现有的资源组。 使用 Azure PowerShell 或 CLI 创建规模集时，也可指定现有的资源组。
+目前还不能通过 Azure 门户在现有的资源组中创建规模集，但可以在通过 Azure Resource Manager 模板部署规模集时指定现有的资源组。 使用 Azure PowerShell 或 CLI 创建规模集时，也可指定现有的资源组。
 
 ### <a name="can-we-move-a-scale-set-to-another-resource-group"></a>能否将规模集移到其他资源组？
 

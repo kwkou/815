@@ -26,7 +26,7 @@
 
 你将学习以下内容：
 
-* 如何使用 [Azure 门户预览](https://portal.azure.cn/)创建 Azure Web 应用和 SQL 数据库。由于在应用服务 Web 应用中已默认启用 PHP，因此运行 PHP 代码没有任何特殊要求。
+* 如何使用 [Azure 门户](https://portal.azure.cn/)创建 Azure Web 应用和 SQL 数据库。由于在应用服务 Web 应用中已默认启用 PHP，因此运行 PHP 代码没有任何特殊要求。
 * 如何使用 Git 将应用程序发布和重新发布到 Azure。
  
 通过按照本教程中的说明进行操作，你将在 PHP 中构建简单的注册 Web 应用程序。该应用程序将在 Azure 网站中托管。以下是已完成应用程序的屏幕快照：
@@ -39,7 +39,7 @@
 
 按照以下步骤创建 Azure Web 应用和 SQL 数据库：
 
-1. 登录到 [Azure 门户预览](https://portal.azure.cn/)。
+1. 登录到 [Azure 门户](https://portal.azure.cn/)。
 
 2. 单击仪表板左上方的“新建”图标打开 Azure 应用商店，接着单击应用商店旁的“全选”，然后选择“Web + 移动”。
 	
@@ -66,7 +66,7 @@
 
 3. 选择“从源控件设置部署”。在“设置部署”对话框中，选择“本地 Git 存储库”选项，然后单击“确定”。随后将创建在 Azure 中运行的、与应用关联的 Git 存储库。每次将代码提交到 Git 存储库的 *master* 分支时，代码就会发布到实时运行的 API 应用实例。
 
-1. 回到 [Azure 门户预览](https://portal.azure.cn)。单击资源组边栏选项卡中 Web 应用的图标，以打开 Web 应用的边栏选项卡。
+1. 回到 [Azure 门户](https://portal.azure.cn)。单击资源组边栏选项卡中 Web 应用的图标，以打开 Web 应用的边栏选项卡。
 
 	![Web 应用的资源组](./media/web-sites-php-sql-database-deploy-use-git/resource-group-blade.png)
 

@@ -78,7 +78,7 @@ Azure 可提供多种虚拟机大小，但建议使用 DS 和 GS 系列，因为
 公共 IP 地址可以是动态的或静态的。默认是动态的。
 
 * 如果需要不会更改的固定 IP 地址（例如，如果需要在 DNS 中创建 A 记录，或者需要将 IP 地址添加到安全列表），请保留[静态 IP 地址][static-ip]。
-* 你还可以为 IP 地址创建完全限定域名 (FQDN)。然后，可以在 DNS 中注册指向 FQDN 的 [CNAME 记录][cname-record]。有关详细信息，请参阅[在 Azure 门户预览中创建完全限定域名][fqdn]。
+* 你还可以为 IP 地址创建完全限定域名 (FQDN)。然后，可以在 DNS 中注册指向 FQDN 的 [CNAME 记录][cname-record]。有关详细信息，请参阅[在 Azure 门户中创建完全限定域名][fqdn]。
 
 所有 NSG 都包含一组[默认规则][nsg-default-rules]，其中包括阻止所有入站 Internet 流量的规则。无法删除默认规则，但其他规则可以覆盖它们。若要启用 Internet 流量，请创建允许特定端口（例如，将端口 80 用于 HTTP）的入站流量的规则。
 
@@ -118,7 +118,7 @@ VHD 存储在 [Azure 存储空间][azure-storage]中，Azure 存储空间将进�
 
     azure vm deallocate <resource-group> <vm-name>
 
-在 Azure 门户预览中，“停止”按钮将解除分配 VM。但是，如果在已登录时通过 OS 关闭，VM 将停止，但*不*会解除分配，因此仍将向你收费。
+在 Azure 门户中，“停止”按钮将解除分配 VM。但是，如果在已登录时通过 OS 关闭，VM 将停止，但*不*会解除分配，因此仍将向你收费。
 
 **删除 VM。** 如果你删除 VM，则不会删除 VHD。这意味着你可以安全地删除 VM，而不会丢失数据。但是，仍将向你收取存储费用。若要删除 VHD，请从 [Blob 存储][blob-storage]中删除相应文件。
 
@@ -144,7 +144,7 @@ RBAC 不限制已登录到 VM 的用户可以执行的操作。这些权限由�
 [GitHub][github-folder] 中提供了此参考体系结构的部署。它包括 VNet、NSG 和单个 VM。若要部署体系结构，请遵循以下步骤：
 
 1. 右键单击下面的按钮，然后选择“在新选项卡中打开链接”或“在新窗口中打开链接”。[![部署到 Azure](./media/guidance-compute-single-vm-linux/deploybutton.png)](https://portal.azure.cn/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fmspnp%2Freference-architectures%2Fmaster%2Fguidance-compute-single-vm%2Fazuredeploy.json)
-2. 链接在 Azure 门户预览中打开后，必须输入某些设置的值：
+2. 链接在 Azure 门户中打开后，必须输入某些设置的值：
    
     * 参数文件中已定义了“资源组”名称，因此选择“新建”并在文本框中输入 `ra-single-vm-rg`。
     * 从“位置”下拉框中选择区域。
@@ -153,7 +153,7 @@ RBAC 不限制已登录到 VM 的用户可以执行的操作。这些权限由�
     * 查看条款和条件，然后单击“我同意上述条款和条件”复选框。
     * 单击“购买”按钮。
 3. 等待部署完成。
-4. 参数文件包括硬编码管理员用户名和密码，强烈建议你立即更改它们。在 Azure 门户预览中，单击名为 `ra-single-vm0 ` 的 VM。然后，单击“支持 + 疑难解答”部分中的“重置密码”。在“模式”下拉框中选择“重置密码”，然后选择新的“用户名”和“密码”。单击“更新”按钮来持久保存新的用户名和密码。
+4. 参数文件包括硬编码管理员用户名和密码，强烈建议你立即更改它们。在 Azure 门户中，单击名为 `ra-single-vm0 ` 的 VM。然后，单击“支持 + 疑难解答”部分中的“重置密码”。在“模式”下拉框中选择“重置密码”，然后选择新的“用户名”和“密码”。单击“更新”按钮来持久保存新的用户名和密码。
 
 ## 后续步骤
 若要获得更高的可用性，请为负载均衡器部署两个或以上 VM。

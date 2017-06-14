@@ -8,9 +8,9 @@ As of circa 2016-04-11, the following topics might include this include:
 articles/sql-database/sql-database-get-started-tutorial.md
 
 -->
-## 使用订阅连接到 Azure 门户预览
+## 使用订阅连接到 Azure 门户
 
-若要连接到 Azure 门户预览，你必须有一个订阅。
+若要连接到 Azure 门户，你必须有一个订阅。
 
 ### 获取新帐户
 
@@ -20,11 +20,11 @@ articles/sql-database/sql-database-get-started-tutorial.md
 
 ###使用现有的帐户登录
 
-使用[现有的订阅](https://account.windowsazure.cn/Home/Index)，遵循以下步骤连接到 Azure 门户预览。
+使用[现有的订阅](https://account.windowsazure.cn/Home/Index)，遵循以下步骤连接到 Azure 门户。
 
-1. 打开所选的浏览器并连接到 [Azure 门户预览](https://portal.azure.cn/)。
+1. 打开所选的浏览器并连接到 [Azure 门户](https://portal.azure.cn/)。
 
-1. 登录到 [Azure 门户预览](https://portal.azure.cn/)。
+1. 登录到 [Azure 门户](https://portal.azure.cn/)。
 
 1. 登录页出现时，请提供订阅的凭据
 

@@ -1,6 +1,6 @@
 <properties
     pageTitle="将作业和任务输出保存到 Azure 存储 - Azure Batch | Microsoft 文档"
-    description="了解如何使用 Azure 存储作为 Batch 任务和作业输出的持久性存储，在 Azure 门户预览中查看这些保存的输出。"
+    description="了解如何使用 Azure 存储作为 Batch 任务和作业输出的持久性存储，在 Azure 门户中查看这些保存的输出。"
     services="batch"
     documentationcenter=".net"
     author="tamram"
@@ -26,7 +26,7 @@
 
 在 Batch 中运行的任务通常会生成输出，这些输出必须得到存储，以便今后由作业中的其他任务和/或执行作业的客户端应用程序检索。 此输出可能是处理输入数据后创建的文件，也可能是与任务执行关联的日志文件。 本文将介绍一个 .NET 类库，它使用基于约定的技术在 Azure Blob 存储中保存此类任务输出，这样，即使在删除池、作业和计算节点后，你也可以使用这些输出。
 
-使用本文所述的方法，还可以在 [Azure 门户预览][portal]上的“保存的输出文件”和“保存的日志”中查看任务输出。
+使用本文所述的方法，还可以在 [Azure 门户][portal]上的“保存的输出文件”和“保存的日志”中查看任务输出。
 
 ![门户中“保存的输出文件”和“保存的日志”选择器][1]
 
@@ -41,10 +41,10 @@
 - **计算节点生存期**：计算节点通常是瞬态的，尤其是在启用了自动缩放的池中。 在某个节点上运行的任务的输出仅在该节点存在时才可用，并且仅在你为任务设置的文件保留时间范围内才可用。 为了确保保留任务输出，你的任务必须将其输出文件上载到持久性存储，例如 Azure 存储空间。
 - **输出存储**：若要将任务输出数据保存到持久性存储，可以在任务代码中使用 [Azure 存储 SDK](/documentation/articles/storage-dotnet-how-to-use-blobs/)，将任务输出上载到 Blob 存储容器中。 如果你实现了容器和文件命名约定，则客户端应用程序或作业中的其他任务可以根据该约定查找并下载此输出。
 - **输出检索**：你可以直接从池中的计算节点检索任务输出，如果任务保存了其输出，则你可以从 Azure 存储空间检索任务输出。 若要直接从计算节点检索任务输出，需要获取文件名及其在节点上的输出位置。 如果将输出保存到 Azure 存储，则下游任务或客户端应用程序必须获得 Azure 存储中文件的完整路径才能使用 Azure 存储 SDK 来下载输出。
-- **查看输出**：导航到 Azure 门户预览中的某个 Batch 任务并选择“节点上的文件”时，将看到与该任务关联的所有文件，而不仅仅是想要查看的输出文件。 同样，计算节点上的文件仅在该节点存在时才可用，并且仅在你为任务设置的文件保留时间范围内才可用。 若要在门户或某个应用程序（例如 [Azure 存储资源管理器][storage_explorer]）中查看已保存到 Azure 存储的任务输出，必须知道该文件的位置并直接导航到该文件。
+- **查看输出**：导航到 Azure 门户中的某个 Batch 任务并选择“节点上的文件”时，将看到与该任务关联的所有文件，而不仅仅是想要查看的输出文件。 同样，计算节点上的文件仅在该节点存在时才可用，并且仅在你为任务设置的文件保留时间范围内才可用。 若要在门户或某个应用程序（例如 [Azure 存储资源管理器][storage_explorer]）中查看已保存到 Azure 存储的任务输出，必须知道该文件的位置并直接导航到该文件。
 
 ## <a name="help-for-persisted-output"></a>有关保存的输出的帮助
-为了帮助你更轻松地保存作业和任务输出，Batch 团队定义并实现了一组命名约定以及一个 .NET 类库（ [Azure Batch 文件约定][nuget_package] 库），供你在 Batch 应用程序中使用。 此外，Azure 门户预览可识别这些命名约定，因此可以轻松找到使用该库存储的文件。
+为了帮助你更轻松地保存作业和任务输出，Batch 团队定义并实现了一组命名约定以及一个 .NET 类库（ [Azure Batch 文件约定][nuget_package] 库），供你在 Batch 应用程序中使用。 此外，Azure 门户可识别这些命名约定，因此可以轻松找到使用该库存储的文件。
 
 ## <a name="using-the-file-conventions-library"></a>使用文件约定库
 [Azure Batch 文件约定][nuget_package] 是一个 .NET 类库，Batch .NET 应用程序可以使用它来轻松向 Azure 存储空间存储任务输出，以及从中检索任务输出。 该库可在任务代码和客户端代码中使用 -- 在任务代码中用于保存文件，在客户端代码用于列出和检索文件。 任务还可以使用该库来检索上游任务的输出（例如，在[任务依赖性](/documentation/articles/batch-task-dependencies/)方案中）。
@@ -62,7 +62,7 @@
 > 
 
 ## <a name="requirement-linked-storage-account"></a>要求：链接的存储帐户
-若要使用文件约定库将输出存储到持久性存储并在 Azure 门户预览中查看这些输出，必须[将 Azure 存储帐户链接](/documentation/articles/batch-application-packages/#link-a-storage-account/)到 Batch 帐户。 如果尚未这样做，请使用 Azure 门户预览将存储帐户链接到 Batch 帐户：
+若要使用文件约定库将输出存储到持久性存储并在 Azure 门户中查看这些输出，必须[将 Azure 存储帐户链接](/documentation/articles/batch-application-packages/#link-a-storage-account/)到 Batch 帐户。 如果尚未这样做，请使用 Azure 门户将存储帐户链接到 Batch 帐户：
 
 “Batch 帐户”边栏选项卡 >“设置” > “存储帐户” > “存储帐户”（无）> 在订阅中选择一个存储帐户
 
@@ -77,7 +77,7 @@
 > 
 
 ### <a name="create-storage-container"></a>创建存储容器
-在任务开始将输出保存到存储空间之前，必须创建一个 Blob 存储容器，以便任务将其输出上载到其中。 可通过调用 [CloudJob][net_cloudjob].[PrepareOutputStorageAsync][net_prepareoutputasync] 来执行此操作。 此扩展方法使用 [CloudStorageAccount][net_cloudstorageaccount] 对象作为参数，并且会创建一个容器，该容器的命名能使 Azure 门户预览以及本文稍后介绍的检索方法发现其内容。
+在任务开始将输出保存到存储空间之前，必须创建一个 Blob 存储容器，以便任务将其输出上载到其中。 可通过调用 [CloudJob][net_cloudjob].[PrepareOutputStorageAsync][net_prepareoutputasync] 来执行此操作。 此扩展方法使用 [CloudStorageAccount][net_cloudstorageaccount] 对象作为参数，并且会创建一个容器，该容器的命名能使 Azure 门户以及本文稍后介绍的检索方法发现其内容。
 
 通常会将此代码放入客户端应用程序 -- 即创建池、作业和任务的应用程序。
 
@@ -114,7 +114,7 @@
 以后在 Batch 中查询给定任务的已保存输出时，可以使用这些输出类型来指定要列出哪种类型的输出。 换而言之，当你列出某个任务的输出时，可以根据某种输出类型来筛选列表。 例如，“列出任务 *109* 的预览输出。” 本文稍后的[检索输出](#retrieve-output)部分中会详细介绍如何列出和检索输出。
 
 > [AZURE.TIP]
-> 输出类型还会指定特定的文件将显示在 Azure 门户预览中的哪个位置：TaskOutput 分类的文件将显示在“任务输出文件”中，TaskLog 文件将显示在“任务日志”中。
+> 输出类型还会指定特定的文件将显示在 Azure 门户中的哪个位置：TaskOutput 分类的文件将显示在“任务输出文件”中，TaskLog 文件将显示在“任务日志”中。
 > 
 > 
 
@@ -185,8 +185,8 @@
         }
     }
 
-## <a name="task-outputs-and-the-azure-portal"></a>任务输出和 Azure 门户预览
-Azure 门户预览将显示使用 Azure Batch 文件约定自述文件中提到的命名约定保存到链接的 Azure 存储帐户中的任务输出和日志。 你可以使用所选语言自行实现这些约定，也可以在 .NET 应用程序中使用该文件约定库。
+## <a name="task-outputs-and-the-azure-portal"></a>任务输出和 Azure 门户
+Azure 门户将显示使用 Azure Batch 文件约定自述文件中提到的命名约定保存到链接的 Azure 存储帐户中的任务输出和日志。 你可以使用所选语言自行实现这些约定，也可以在 .NET 应用程序中使用该文件约定库。
 
 ### <a name="enable-portal-display"></a>启用门户显示
 若要在门户中显示输出，必须满足以下要求：
@@ -195,9 +195,9 @@ Azure 门户预览将显示使用 Azure Batch 文件约定自述文件中提到�
 2. 保存输出时遵循存储容器和文件的预定义命名约定。 可在文件约定库的自述文件中找到这些约定的定义。 如果你使用 [Azure Batch 文件约定][nuget_package] 库来保存输出，则可以满足此要求。
 
 ### <a name="view-outputs-in-the-portal"></a>在门户中查看输出
-若要在 Azure 门户预览中查看任务输出和日志，请导航到要查看其输出的任务，然后单击“保存的输出文件”或“保存的日志”。 下图显示了 ID 为“007”的任务的“保存的输出文件”：
+若要在 Azure 门户中查看任务输出和日志，请导航到要查看其输出的任务，然后单击“保存的输出文件”或“保存的日志”。 下图显示了 ID 为“007”的任务的“保存的输出文件”：
 
-![Azure 门户预览中的“任务输出”边栏选项卡][2]
+![Azure 门户中的“任务输出”边栏选项卡][2]
 
 ## <a name="code-sample"></a>代码示例
 [PersistOutputs][github_persistoutputs] 示例项目是 GitHub 上的 [Azure Batch 代码示例][github_samples]之一。 此 Visual Studio 解决方案演示如何使用 Azure Batch 文件约定库将任务输出保存到持久性存储。 若要运行该示例，请遵循以下步骤：
@@ -205,7 +205,7 @@ Azure 门户预览将显示使用 Azure Batch 文件约定自述文件中提到�
 1. 在 **Visual Studio 2015 或更新版本**中打开该项目。
 2. 将 Batch 和存储**帐户凭据**添加到 Microsoft.Azure.Batch.Samples.Common 项目中的 **AccountSettings.settings**。
 3. **生成**（但不要运行）该解决方案。 根据提示还原所有 NuGet 包。
-4. 使用 Azure 门户预览上载 **PersistOutputsTask** 的[应用程序包](/documentation/articles/batch-application-packages/)。 在 .zip 包中包含 `PersistOutputsTask.exe` 及其依赖程序集，将应用程序 ID 设置为“PersistOutputsTask”，将应用程序包版本设置为“1.0”。
+4. 使用 Azure 门户上载 **PersistOutputsTask** 的[应用程序包](/documentation/articles/batch-application-packages/)。 在 .zip 包中包含 `PersistOutputsTask.exe` 及其依赖程序集，将应用程序 ID 设置为“PersistOutputsTask”，将应用程序包版本设置为“1.0”。
 5. **启动**（运行）**PersistOutputs** 项目。
 
 ## <a name="next-steps"></a>后续步骤
@@ -238,6 +238,6 @@ Azure 门户预览将显示使用 Azure Batch 文件约定自述文件中提到�
 [storage_explorer]: http://storageexplorer.com/
 
 [1]: ./media/batch-task-output/task-output-01.png "门户中“保存的输出文件”和“保存的日志”选择器"
-[2]: ./media/batch-task-output/task-output-02.png "Azure 门户预览中的“任务输出”边栏选项卡"
+[2]: ./media/batch-task-output/task-output-02.png "Azure 门户中的“任务输出”边栏选项卡"
 
 <!---Update_Description: update meta properties -->

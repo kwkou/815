@@ -45,7 +45,7 @@ Azure 将映像存储在“VM 映像(经典)”下，这是查看所有 Azure �
 捕获 Azure 虚拟机映像之前，建议备份目标虚拟机。 可以使用 Azure 备份来备份 Azure 虚拟机。 有关详细信息，请参阅[备份 Azure 虚拟机](/documentation/articles/backup-azure-vms/)。 认证合作伙伴提供了其他解决方案。 若要了解当前提供的内容，请搜索 Azure 应用商店。
 
 ## <a name="capture-the-virtual-machine"></a>捕获虚拟机
-1. 在 [Azure 门户预览](http://portal.azure.cn)中，**连接**到虚拟机。 有关说明，请参阅[如何登录到运行 Windows Server 的虚拟机][How to sign in to a virtual machine running Windows Server]。
+1. 在 [Azure 门户](http://portal.azure.cn)中，**连接**到虚拟机。 有关说明，请参阅[如何登录到运行 Windows Server 的虚拟机][How to sign in to a virtual machine running Windows Server]。
 2. 以管理员身份打开“命令提示符”窗口。
 3. 将目录更改为 `%windir%\system32\sysprep`，然后运行 sysprep.exe。
 4. 此时会显示 **“系统准备工具”** 对话框。 请执行以下操作：
@@ -56,7 +56,7 @@ Azure 将映像存储在“VM 映像(经典)”下，这是查看所有 Azure �
 
     ![运行 Sysprep](./media/virtual-machines-windows-classic-capture-image/SysprepGeneral.png)
 5. Sysprep 将关闭虚拟机，这会在 Azure 经典管理门户中将虚拟机的状态更改为“已停止”。
-6. 在 Azure 门户预览中，单击“虚拟机(经典)”，然后选择要捕获的虚拟机。 查看“更多服务”时，“VM 映像(经典)”组在“计算”下列出。
+6. 在 Azure 门户中，单击“虚拟机(经典)”，然后选择要捕获的虚拟机。 查看“更多服务”时，“VM 映像(经典)”组在“计算”下列出。
 
 7. 在命令栏中，单击“捕获”。
 

@@ -208,7 +208,7 @@ Azure Redis 缓存没有本地模拟器，但可以在本地计算机上从 [Red
 ### <a name="cache-commands" id="how-can-i-run-redis-commands"></a> 如何运行 Redis 命令？
 可以使用 [Redis 命令](http://redis.io/commands#)中列出的任何命令，但 [Azure Redis 缓存中不支持的 Redis 命令](/documentation/articles/cache-configure/#redis-commands-not-supported-in-azure-redis-cache)所列的命令除外。 可以使用多个选项来运行 Redis 命令。
 
-* 如果采用标准或高级缓存，可以使用 [Redis 控制台](/documentation/articles/cache-configure/#redis-console)运行 Redis 命令。 可以通过 Redis 控制台在 Azure 门户预览中安全地运行 Redis 命令。
+* 如果采用标准或高级缓存，可以使用 [Redis 控制台](/documentation/articles/cache-configure/#redis-console)运行 Redis 命令。 可以通过 Redis 控制台在 Azure 门户中安全地运行 Redis 命令。
 * 还可以使用 Redis 命令行工具。 若要使用这些工具，请执行以下步骤：
 * 下载 [Redis 命令行工具](https://github.com/MSOpenTech/redis/releases/)。
 * 使用 `redis-cli.exe`连接到缓存。 使用 -h 开关传入缓存终结点，使用 -a 传入密钥，如以下示例中所示：
@@ -280,7 +280,7 @@ Redis 服务器本身不支持 SSL，但 Azure Redis 缓存可以。 如果你�
 * 开发您的系统，以便它可以处理 [由于修补和故障转移](https://gist.github.com/JonCole/317fe03805d5802e31cfa37e646e419d#file-azureredis-patchingexplained-md)出现的连接故障。
 
 #### <a name="performance-testing"></a>性能测试
-* 使用 `redis-benchmark.exe` 启动以在编写您自己的性能测试前感受可能的吞吐量。 由于 `redis-benchmark` 不支持 SSL，因此在运行测试之前必须[通过 Azure 门户预览启用非 SSL 端口](/documentation/articles/cache-configure/#access-ports)。 例如，请参阅 [如何制定基准和测试缓存的性能？](#how-can-i-benchmark-and-test-the-performance-of-my-cache)
+* 使用 `redis-benchmark.exe` 启动以在编写您自己的性能测试前感受可能的吞吐量。 由于 `redis-benchmark` 不支持 SSL，因此在运行测试之前必须[通过 Azure 门户启用非 SSL 端口](/documentation/articles/cache-configure/#access-ports)。 例如，请参阅 [如何制定基准和测试缓存的性能？](#how-can-i-benchmark-and-test-the-performance-of-my-cache)
 * 用于测试的客户端 VM 应与 Redis 缓存实例位于同一区域。
 * 建议为客户端使用 Dv2 VM 系列，因为该系列具有更好的硬件，会提供最佳的结果。
 * 确保选择的客户端 VM 至少与正在测试的缓存拥有相同的计算和带宽容量。
@@ -294,7 +294,7 @@ Redis 服务器本身不支持 SSL，但 Azure Redis 缓存可以。 如果你�
 * 这些考量并不意味着不能在 Redis 中存储较大值，只是要注意以下事项。 延迟将会提高。 如果你有一个较大的数据集和一个较小的数据集，则可以使用多个 ConnectionMultiplexer 实例，并根据 [StackExchange.Redis 配置选项有什么作用](#cache-configuration) 部分中所述，为每个实例配置一组不同的超时和重试值。
 
 ### <a name="cache-benchmarking" id="how-can-i-benchmark-and-test-the-performance-of-my-cache"></a> 如何制定基准和测试缓存的性能？
-* [启用缓存诊断](/documentation/articles/cache-how-to-monitor/#enable-cache-diagnostics)，以便可以[监视](/documentation/articles/cache-how-to-monitor/)缓存的运行状况。 可以在 Azure 门户预览中查看指标，也可以使用所选的工具 [下载和查看](https://github.com/rustd/RedisSamples/tree/master/CustomMonitoring) 这些指标。
+* [启用缓存诊断](/documentation/articles/cache-how-to-monitor/#enable-cache-diagnostics)，以便可以[监视](/documentation/articles/cache-how-to-monitor/)缓存的运行状况。 可以在 Azure 门户中查看指标，也可以使用所选的工具 [下载和查看](https://github.com/rustd/RedisSamples/tree/master/CustomMonitoring) 这些指标。
 * 可以使用 redis-benchmark.exe 对 Redis 服务器进行负载测试。
 * 确保负载测试客户端和 Redis 缓存位于同一区域。
 * 使用 redis-cli.exe，并使用 INFO 命令监视缓存。
@@ -364,7 +364,7 @@ CLR 线程池具有两种类型的线程 —“辅助角色”和“I/O 完成�
 有关每个层的不同连接限制的详细信息，请参阅 [Azure Redis 缓存定价](/pricing/details/redis-cache/)。 有关连接和其他默认配置的详细信息，请参阅[默认 Redis 服务器配置](/documentation/articles/cache-configure/#default-redis-server-configuration)。
 
 ### <a name="cache-monitor" id="how-do-i-monitor-the-health-and-performance-of-my-cache"></a> 如何监视缓存的运行状况和性能？
-可以在 [Azure 门户预览](https://portal.azure.cn)中监视 Azure Redis 缓存实例。 可以查看度量值、将度量值图表固定到启动板、自定义监视图表的日期和时间范围、在图表中添加和删除度量值，以及设置符合特定条件时发出的警报。 有关详细信息，请参阅[监视 Azure Redis 缓存](/documentation/articles/cache-how-to-monitor/)。
+可以在 [Azure 门户](https://portal.azure.cn)中监视 Azure Redis 缓存实例。 可以查看度量值、将度量值图表固定到启动板、自定义监视图表的日期和时间范围、在图表中添加和删除度量值，以及设置符合特定条件时发出的警报。 有关详细信息，请参阅[监视 Azure Redis 缓存](/documentation/articles/cache-how-to-monitor/)。
 
 Redis 缓存**资源菜单**中还包含了用于对缓存进行监视和故障排除的几个工具。
 

@@ -31,7 +31,7 @@
 
 ## 重置逻辑服务器的管理员密码
 
-- 在 [Azure 门户预览](https://portal.azure.cn)中，单击“SQL Server”，从列表中选择服务器，然后单击“重置密码”。
+- 在 [Azure 门户](https://portal.azure.cn)中，单击“SQL Server”，从列表中选择服务器，然后单击“重置密码”。
 
 ## 帮助确保只允许经过授权的 IP 地址访问服务器
 - 请参阅[如何：在 SQL 数据库上配置防火墙设置](/documentation/articles/sql-database-configure-firewall-settings/)。

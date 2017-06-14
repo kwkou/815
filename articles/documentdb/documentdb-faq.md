@@ -33,8 +33,8 @@ DocumentDB 是全球复制的多模型数据库服务，可针对无架构数据
 ### <a name="what-happened-to-documentdb"></a>DocumentDB 有哪些变化？
 DocumentDB API 是适用于 DocumentDB 的受支持 API 和数据模型之一。 此外，DocumentDB 支持图形 API（预览）、表 API（预览）和 MongoDB API。 
 
-### <a name="how-do-i-get-to-my-documentdb-account-in-the-azure-portal"></a>如何在 Azure 门户预览中访问 DocumentDB 帐户？
-在 Azure 门户预览的左侧菜单中单击 DocumentDB 图标即可。 如果你以前已创建了一个 DocumentDB 帐户，则现在也有了一个 DocumentDB 帐户，费用不会有任何变化。
+### <a name="how-do-i-get-to-my-documentdb-account-in-the-azure-portal"></a>如何在 Azure 门户中访问 DocumentDB 帐户？
+在 Azure 门户的左侧菜单中单击 DocumentDB 图标即可。 如果你以前已创建了一个 DocumentDB 帐户，则现在也有了一个 DocumentDB 帐户，费用不会有任何变化。
 
 ### <a name="what-are-the-typical-use-cases-for-azure-documentdb"></a>DocumentDB 的典型用例有哪些？
 对于侧重于以下要求的新 Web、移动、游戏和 IoT 应用程序而言，DocumentDB 是一个不错的选择：自动缩放、可预测的性能、毫秒响应时间的快速排序，以及查询无架构数据的能力。 DocumentDB 有助于快速开发，且支持应用程序数据模型的连续迭代。  用于管理用户生成的内容和数据的应用程序就是 [DocumentDB 的常见用例](/documentation/articles/documentdb-use-cases/)。  
@@ -67,10 +67,10 @@ DocumentDB 中的容器可以支持的总吞吐量没有限制，但关键在于
 
 ## <a name="set-up-azure-documentdb"></a>设置 DocumentDB
 ### <a name="how-do-i-sign-up-for-azure-documentdb"></a>如何注册 DocumentDB？
-可以在 Azure 门户预览中注册 DocumentDB。 首先必须注册 Azure 订阅。 注册 Azure 订阅后，可将 DocumentDB API、图形 API（预览）、表 API（预览）或 MongoDB API 帐户添加到 Azure 订阅。
+可以在 Azure 门户中注册 DocumentDB。 首先必须注册 Azure 订阅。 注册 Azure 订阅后，可将 DocumentDB API、图形 API（预览）、表 API（预览）或 MongoDB API 帐户添加到 Azure 订阅。
 
 ### <a name="what-is-a-master-key"></a>什么是主密钥？
-主密钥是用于访问帐户的所有资源的安全令牌。 拥有此密钥的人对数据库帐户中的所有资源具有读取和写入访问权。 分发主密钥时要格外谨慎。 [Azure 门户预览][azure-portal]的“密钥”边栏选项卡中提供主要主密钥和辅助主密钥。**** 有关密钥的详细信息，请参阅[查看、复制和重新生成访问密钥](/documentation/articles/documentdb-manage-account/#keys/)。
+主密钥是用于访问帐户的所有资源的安全令牌。 拥有此密钥的人对数据库帐户中的所有资源具有读取和写入访问权。 分发主密钥时要格外谨慎。 [Azure 门户][azure-portal]的“密钥”边栏选项卡中提供主要主密钥和辅助主密钥。**** 有关密钥的详细信息，请参阅[查看、复制和重新生成访问密钥](/documentation/articles/documentdb-manage-account/#keys/)。
 
 ### <a name="is-there-something-i-should-be-aware-of-when-distributing-data-across-the-world-via-azures-data-centers"></a>通过 Azure 数据中心在全球分配数据时是否需要注意什么？ 
 DocumentDB 已在所有区域推出。 由于它是核心服务，每个新数据中心都部署了 DocumentDB。 上面提供了至今为止的区域列表。 在这些区域中进行设置时，必须记住 DocumentDB 遵从主权和政府云的要求。 这意味着，如果在这些区域创建帐户并想要对外复制这些区域所不允许复制的数据，则同样无法连接到这些位置来通过外部帐户启用复制。 
@@ -83,7 +83,7 @@ DocumentDB 已在所有区域推出。 由于它是核心服务，每个新数�
 ## <a name="database-questions-about-developing-against-documentdb-api"></a>针对 DocumentDB API 进行开发的相关数据库问题
 
 ### <a name="how-to-do-i-start-developing-against-documentdb-api"></a>如何开始针对 DocumentDB API 进行开发？
-[Azure 门户预览][azure-portal]中已提供 Microsoft DocumentDB API。  首先必须注册 Azure 订阅。  注册 Azure 订阅后，可将 DocumentDB API 容器添加到 Azure 订阅。 有关添加 DocumentDB 帐户的说明，请参阅[创建 DocumentDB 数据库帐户](/documentation/articles/documentdb-create-account/)。 如果以前已创建了一个 DocumentDB 帐户，则现在也有了一个 DocumentDB 帐户。  
+[Azure 门户][azure-portal]中已提供 Microsoft DocumentDB API。  首先必须注册 Azure 订阅。  注册 Azure 订阅后，可将 DocumentDB API 容器添加到 Azure 订阅。 有关添加 DocumentDB 帐户的说明，请参阅[创建 DocumentDB 数据库帐户](/documentation/articles/documentdb-create-account/)。 如果以前已创建了一个 DocumentDB 帐户，则现在也有了一个 DocumentDB 帐户。  
 
 [SDK](/documentation/articles/documentdb-sdk-dotnet/) 适用于 .NET、Python、Node.js、JavaScript 和 Java。  开发人员也可以利用 [RESTful HTTP API](https://msdn.microsoft.com/zh-cn/library/azure/dn781481.aspx)，从各种平台使用各种语言与 DocumentDB 资源进行交互。
 
@@ -103,7 +103,7 @@ GitHub 上提供 DocumentDB API [.NET](/documentation/articles/documentdb-dotnet
 集合也是 DocumentDB 的计费实体。 每个集合根据预配的吞吐量和使用的存储空间按小时计费。 有关详细信息，请参阅 [DocumentDB API 定价](/pricing/details/documentdb/)。  
 
 ### <a name="how-do-i-create-a-database"></a>我如何创建数据库？
-可以根据[创建 DocumentDB 集合和数据库](/documentation/articles/documentdb-create-collection/)中所述使用 Azure 门户预览、某个 [DocumentDB SDK](/documentation/articles/documentdb-sdk-dotnet/) 或 [REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn781481.aspx) 来创建数据库。  
+可以根据[创建 DocumentDB 集合和数据库](/documentation/articles/documentdb-create-collection/)中所述使用 Azure 门户、某个 [DocumentDB SDK](/documentation/articles/documentdb-sdk-dotnet/) 或 [REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn781481.aspx) 来创建数据库。  
 
 ### <a name="how-do-i-set-up-users-and-permissions"></a>我如何设置用户和权限？
 可使用某个 [DocumentDB API SDK](/documentation/articles/documentdb-sdk-dotnet/) 或通过 [REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn781481.aspx) 来创建用户和权限。   
@@ -126,7 +126,7 @@ DocumentDB API 通过 JavaScript 存储过程和触发器支持语言集成式�
 可通过三种方式将文件批量插入 DocumentDB：
 
 - 数据迁移工具，如[将数据导入 DocumentDB API](/documentation/articles/documentdb-import-data/) 中所述。
-- Azure 门户预览中的文档资源管理器，如[使用文档资源管理器批量添加文档](/documentation/articles/documentdb-view-json-document-explorer/#bulk-add-documents/)所述。
+- Azure 门户中的文档资源管理器，如[使用文档资源管理器批量添加文档](/documentation/articles/documentdb-view-json-document-explorer/#bulk-add-documents/)所述。
 - 存储过程，如 [DocumentDB API 服务器端编程](/documentation/articles/documentdb-programming/)中所述。
 
 ### <a name="does-documentdb-api-support-resource-link-caching"></a>DocumentDB API 是否支持资源链接缓存？
@@ -140,7 +140,7 @@ DocumentDB API 通过 JavaScript 存储过程和触发器支持语言集成式�
 用于 MongoDB 的 DocumentDB API 是一个兼容层，使应用程序可以使用现有的、社区支持的 Apache MongoDB API 和驱动程序轻松透明地与本机 DocumentDB 数据库引擎通信。 开发人员现在可以使用现有 MongoDB 工具链和技能构建利用 DocumentDB、受益于 DocumentDB 的独特功能（包括自动索引、备份维护、得到资金支持的服务级别协议 (SLA) 等）的应用程序。
 
 ### <a name="how-to-do-i-connect-to-my-api-for-mongodb-database"></a>如何连接到 MongoDB 的 API 数据库？
-连接到用于 MongoDB 的 DocumentDB API 的最快捷方法是使用 [Azure 门户预览](https://portal.azure.cn)。 导航到你的帐户。 在帐户的*左导航*中，单击“快速启动”。 *快速入门*是获取用于连接到数据库的代码片段的最佳方式。 
+连接到用于 MongoDB 的 DocumentDB API 的最快捷方法是使用 [Azure 门户](https://portal.azure.cn)。 导航到你的帐户。 在帐户的*左导航*中，单击“快速启动”。 *快速入门*是获取用于连接到数据库的代码片段的最佳方式。 
 
 DocumentDB 实施严格的安全要求和标准。 DocumentDB 帐户需要通过 *SSL* 进行身份验证和安全通信，因此请确保使用 TLSv1.2。
 
@@ -152,8 +152,8 @@ DocumentDB 实施严格的安全要求和标准。 DocumentDB 帐户需要通过
 
 | 错误               | 代码  | 说明  | 解决方案  |
 |---------------------|-------|--------------|-----------|
-| TooManyRequests     | 16500 | 使用的请求单位总数已超过了集合的预配请求单位率，已达到限制。 | 请考虑从 Azure 门户预览缩放集合的吞吐量或重试。 |
-| ExceededMemoryLimit | 16501 | 作为一种多租户服务，操作已超出客户端的内存配额。 | 通过限制性更强的查询条件缩小操作的作用域，或者通过 [Azure 门户预览](https://portal.azure.cn/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade)联系技术支持。 <br><br>*Ex:  &nbsp;&nbsp;&nbsp;&nbsp;db.getCollection('users').aggregate([<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{$match: {name: "Andy"}}, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{$sort: {age: -1}}<br>&nbsp;&nbsp;&nbsp;&nbsp;])*) |
+| TooManyRequests     | 16500 | 使用的请求单位总数已超过了集合的预配请求单位率，已达到限制。 | 请考虑从 Azure 门户缩放集合的吞吐量或重试。 |
+| ExceededMemoryLimit | 16501 | 作为一种多租户服务，操作已超出客户端的内存配额。 | 通过限制性更强的查询条件缩小操作的作用域，或者通过 [Azure 门户](https://portal.azure.cn/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade)联系技术支持。 <br><br>*Ex:  &nbsp;&nbsp;&nbsp;&nbsp;db.getCollection('users').aggregate([<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{$match: {name: "Andy"}}, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{$sort: {age: -1}}<br>&nbsp;&nbsp;&nbsp;&nbsp;])*) |
 
 ## <a name="database-questions-about-developing-with-azure-documentdb-table-api-preview"></a>使用 DocumentDB：表 API（预览）进行开发的相关数据库问题
 
@@ -170,13 +170,13 @@ DocumentDB：表 API（预览）是 DocumentDB 的一款高级产品，旨在提
 - [堆栈溢出](http://stackoverflow.com/questions/tagged/azure-documentdb)
 
 ### <a name="what-is-the-connection-string-that-i-need-to-use-to-connect-to-the-table-api-preview"></a>连接到表 API（预览）需要使用哪个连接字符串？
-连接字符串为 `DefaultEndpointsProtocol=https;AccountName=<AccountNamefromDocumentDB;AccountKey=<FromKeysPaneofDocumentDB>;TableEndpoint=https://<AccountNameFromDocumentDB>.documents.azure.cn;EndpointSuffix=core.chinacloudapi.cn`。 可从 Azure 门户预览中的“密钥”页获取该连接字符串。 
+连接字符串为 `DefaultEndpointsProtocol=https;AccountName=<AccountNamefromDocumentDB;AccountKey=<FromKeysPaneofDocumentDB>;TableEndpoint=https://<AccountNameFromDocumentDB>.documents.azure.cn;EndpointSuffix=core.chinacloudapi.cn`。 可从 Azure 门户中的“密钥”页获取该连接字符串。 
 
 ### <a name="is-there-any-change-to-existing-customers-that-use-the-existing-standard-table-sdk"></a>使用现有标准表 SDK 的现有客户是否需要做出任何变化？
 无。 使用现有标准表 SDK 的现有客户或新客户不需要做出任何变化。 
 
 ### <a name="how-do-i-view-table-data-that-is-stored-in-azure-documentdb-for-use-with-the-table-api-review"></a>如何查看 DocumentDB 中存储的、在表 API（预览）中使用的表数据？ 
-可以使用 Azure 门户预览浏览数据。 也可以使用下面所述的表 API（预览）代码或工具。 
+可以使用 Azure 门户浏览数据。 也可以使用下面所述的表 API（预览）代码或工具。 
 
 ### <a name="which-tools-will-work-with-table-api-preview"></a>可将哪些工具与表 API（预览）配合使用？ 
 旧版的 Azure 资源管理器 (0.8.9)。

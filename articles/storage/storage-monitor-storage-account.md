@@ -1,6 +1,6 @@
 <properties
     pageTitle="如何监视存储帐户 | Azure"
-    description="了解如何使用 Azure 门户预览在 Azure 中监视存储帐户。"
+    description="了解如何使用 Azure 门户在 Azure 中监视存储帐户。"
     services="storage"
     documentationcenter=""
     author="mmacy"
@@ -17,18 +17,18 @@
     wacn.date="03/28/2017"
     ms.author="marsma" />
 
-# 监视 Azure 门户预览中的存储帐户
+# 监视 Azure 门户中的存储帐户
 
-[Azure 存储分析](/documentation/articles/storage-analytics/)提供所有存储服务的指标，以及 Blob、队列和表的日志。可以使用 [Azure 门户预览](https://portal.azure.cn)来配置要为帐户记录哪些指标和日志，并配置图表来提供指标数据的可视表示形式。
+[Azure 存储分析](/documentation/articles/storage-analytics/)提供所有存储服务的指标，以及 Blob、队列和表的日志。可以使用 [Azure 门户](https://portal.azure.cn)来配置要为帐户记录哪些指标和日志，并配置图表来提供指标数据的可视表示形式。
 
 > [AZURE.NOTE]
-><p>在 Azure 门户预览中检查监视数据会产生相关的费用。有关详细信息，请参阅[存储分析和计费](https://docs.microsoft.com/rest/api/storageservices/fileservices/Storage-Analytics-and-Billing)。<p>Azure 文件存储目前支持存储分析指标，但尚不支持日志记录。
+><p>在 Azure 门户中检查监视数据会产生相关的费用。有关详细信息，请参阅[存储分析和计费](https://docs.microsoft.com/rest/api/storageservices/fileservices/Storage-Analytics-and-Billing)。<p>Azure 文件存储目前支持存储分析指标，但尚不支持日志记录。
 > 有关使用存储分析及其他工具来识别、诊断和排查 Azure 存储相关问题的深入指导，请参阅[监视、诊断和排查 Azure 存储问题](/documentation/articles/storage-monitoring-diagnosing-troubleshooting/)。
 >
 
 ## 为存储帐户配置监视
 
-1. 在 [Azure 门户预览](https://portal.azure.cn)中选择“存储帐户”，然后单击存储帐户名称打开帐户仪表板。
+1. 在 [Azure 门户](https://portal.azure.cn)中选择“存储帐户”，然后单击存储帐户名称打开帐户仪表板。
 1. 在菜单边栏选项卡的“监视”部分选择“诊断”。
 
     ![MonitoringOptions](./media/storage-monitor-storage-account/stg-enable-metrics-00.png)  
@@ -64,11 +64,11 @@ Azure 存储使用[表存储](/documentation/articles/storage-introduction/#tabl
 
 使用以下过程选择要在指标图表中查看哪些存储指标。
 
-1. 首先在 Azure 门户预览中显示存储指标图表。可以在**存储帐户边栏选项卡**以及各个服务（Blob、队列、表和文件）的“指标”边栏选项卡中找到图表。
+1. 首先在 Azure 门户中显示存储指标图表。可以在**存储帐户边栏选项卡**以及各个服务（Blob、队列、表和文件）的“指标”边栏选项卡中找到图表。
 
     本示例使用**存储帐户边栏选项卡**中显示的以下图表：
 
-    ![在 Azure 门户预览中选择图表](./media/storage-monitor-storage-account/stg-customize-chart-00.png)  
+    ![在 Azure 门户中选择图表](./media/storage-monitor-storage-account/stg-customize-chart-00.png)  
 
 
 1. 接下来，单击图表中的任意位置打开“指标”边栏选项卡。选择“编辑图表”打开“编辑图表”边栏选项卡。
@@ -92,7 +92,7 @@ Azure 存储使用[表存储](/documentation/articles/storage-introduction/#tabl
 
 可用指标列表根据在下拉列表中选择的服务，以及要编辑的图表单位类型而异。例如，仅当所要编辑的图表显示百分比单位时，才能选择 *PercentNetworkError* 和 *PercentThrottlingError* 等百分比指标：
 
-![Azure 门户预览中的请求错误百分比图表](./media/storage-monitor-storage-account/stg-customize-chart-04.png)  
+![Azure 门户中的请求错误百分比图表](./media/storage-monitor-storage-account/stg-customize-chart-04.png)  
 
 
 ### 指标解析
@@ -111,23 +111,23 @@ Azure 存储使用[表存储](/documentation/articles/storage-introduction/#tabl
 1. 从下拉列表中选择一个**资源**（Blob、文件、队列或表），然后输入新警报规则的**名称**和**说明**。
 1. 选择要为其添加警报的**指标**，以及警报**条件**和**阈值**。阈值单位类型根据所选的指标而异。例如，“计数”是 *ContainerCount* 的单位类型，而 *PercentNetworkError* 指标的单位是百分比。
 1. 选择“时间段”。在该时间段内达到或超过阈值的指标将触发警报。
-1. （可选）配置“电子邮件”和“Webhook”通知。有关 Webhook 的详细信息，请参阅[针对 Azure 指标警报配置 Webhook](/documentation/articles/insights-webhooks-alerts/)。如果未配置电子邮件或 Webhook 通知，警报只会显示在 Azure 门户预览中。
+1. （可选）配置“电子邮件”和“Webhook”通知。有关 Webhook 的详细信息，请参阅[针对 Azure 指标警报配置 Webhook](/documentation/articles/insights-webhooks-alerts/)。如果未配置电子邮件或 Webhook 通知，警报只会显示在 Azure 门户中。
 
-![Azure 门户预览中的“添加警报规则”边栏选项卡](./media/storage-monitor-storage-account/stg-alert-rules-01.png)  
+![Azure 门户中的“添加警报规则”边栏选项卡](./media/storage-monitor-storage-account/stg-alert-rules-01.png)  
 
 
 ## 将指标图表添加到门户仪表板
 
 可将任何存储帐户的 Azure 存储指标图表添加到门户仪表板。
 
-1. 在 [Azure 门户预览](https://portal.azure.cn)中查看仪表板的同时单击“编辑仪表板”。
+1. 在 [Azure 门户](https://portal.azure.cn)中查看仪表板的同时单击“编辑仪表板”。
 1. 在“磁贴库”中，选择“查找磁贴，依据”>“类型”。
 1. 选择“类型”>“存储帐户”。
 1. 在“资源”中，选择要将其指标添加到仪表板的存储帐户。
 1. 选择“类别”>“监视”。
 1. 将图表磁贴拖放到要显示的指标所在的仪表板中。针对要在仪表板上显示的所有指标重复上述步骤。在下图中，为了方便演示，已突出显示“Blob - 请求总数”图表，但可将所有图表放置在仪表板上。
 
-    ![在 Azure 门户预览中的磁贴库](./media/storage-monitor-storage-account/stg-customize-dashboard-01.png)  
+    ![在 Azure 门户中的磁贴库](./media/storage-monitor-storage-account/stg-customize-dashboard-01.png)  
 
 1. 添加完图表后，请选择仪表板顶部附近的“完成自定义”。
 
@@ -140,15 +140,15 @@ Azure 存储使用[表存储](/documentation/articles/storage-introduction/#tabl
 > [AZURE.NOTE] Azure 文件存储目前支持存储分析指标，但尚不支持日志记录。
 >
 
-1. 在 [Azure 门户预览](https://portal.azure.cn)中选择“存储帐户”，然后单击存储帐户的名称打开存储帐户边栏选项卡。
+1. 在 [Azure 门户](https://portal.azure.cn)中选择“存储帐户”，然后单击存储帐户的名称打开存储帐户边栏选项卡。
 1. 在菜单边栏选项卡的“监视”部分选择“诊断”。
 
-    ![Azure 门户预览中“监视”下面的诊断菜单项。](./media/storage-monitor-storage-account/stg-enable-metrics-00.png)  
+    ![Azure 门户中“监视”下面的诊断菜单项。](./media/storage-monitor-storage-account/stg-enable-metrics-00.png)  
 
     
 1. 确保“状态”设置为“打开”，选择要为其启用日志记录的**服务**。
 
-    ![在 Azure 门户预览中配置日志记录。](./media/storage-monitor-storage-account/stg-enable-logging-01.png)  
+    ![在 Azure 门户中配置日志记录。](./media/storage-monitor-storage-account/stg-enable-logging-01.png)  
 
 1. 单击“保存”。
 

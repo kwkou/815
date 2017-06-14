@@ -56,7 +56,7 @@
 
 ## 下载并运行 Xamarin.iOS 应用
 
-1. 在浏览器窗口中，打开 [Azure 门户预览]。
+1. 在浏览器窗口中，打开 [Azure 门户]。
 
 2. 在移动应用的设置边栏选项卡上，单击“开始使用”>“Xamarin.iOS”。在步骤 3 下，单击“创建新应用”（如果尚未选择它）。接下来，单击“下载”按钮。
 
@@ -101,6 +101,6 @@
 [10]: ./media/app-service-mobile-xamarin-ios-get-started/mobile-quickstart-startup-ios.png
 
 <!-- URLs. -->
-[Azure 门户预览]: https://portal.azure.cn/
+[Azure 门户]: https://portal.azure.cn/
 
 <!---HONumber=Mooncake_1114_2016-->

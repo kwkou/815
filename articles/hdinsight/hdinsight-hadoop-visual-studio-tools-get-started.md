@@ -76,16 +76,16 @@
     > 
     > 
 4. 输入 Azure 订阅凭据，然后单击“登录”。 仅当尚未从此工作站上的 Visual Studio 连接到 Azure 订阅时，才需要此凭据。
-5. 在“服务器资源管理器”中，你将看到现有 HDInsight 群集的列表。 如果没有任何群集，则可以通过使用 Azure 门户预览、Azure PowerShell 或 HDInsight SDK 创建群集。 有关详细信息，请参阅[创建 HDInsight 群集](/documentation/articles/hdinsight-hadoop-provision-linux-clusters/)。
+5. 在“服务器资源管理器”中，你将看到现有 HDInsight 群集的列表。 如果没有任何群集，则可以通过使用 Azure 门户、Azure PowerShell 或 HDInsight SDK 创建群集。 有关详细信息，请参阅[创建 HDInsight 群集](/documentation/articles/hdinsight-hadoop-provision-linux-clusters/)。
 
    ![用于 Visual Studio 的 Data Lake 工具服务器资源管理器群集列表](./media/hdinsight-hadoop-visual-studio-tools-get-started/hdinsight.visual.studio.tools.server.explorer.png "用于 Visual Studio 的 Data Lake 工具服务器资源管理器")
 6. 展开 HDInsight 群集。 此时将显示“Hive 数据库”、默认存储帐户、链接的存储帐户，以及“Hadoop 服务日志”。 可以进一步展开条目。
 
 连接到 Azure 订阅后，可以执行以下操作：
 
-**从 Visual Studio 连接到 Azure 门户预览**
+**从 Visual Studio 连接到 Azure 门户**
 
-* 在“服务器资源管理器”中，展开“Azure” > “HDInsight”，右键单击 HDInsight 群集，然后单击“在 Azure 门户预览中管理群集”。
+* 在“服务器资源管理器”中，展开“Azure” > “HDInsight”，右键单击 HDInsight 群集，然后单击“在 Azure 门户中管理群集”。
 
 **通过 Visual Studio 提出问题并提供反馈**
 

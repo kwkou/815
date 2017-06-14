@@ -113,7 +113,7 @@
     Azure RBAC 中的所有内置角色都允许查看可以进行分配的角色。 范围中能够执行 `Microsoft.Authorization/roleDefinition/read` 操作的用户可以查看能在该范围中进行分配的 RBAC 角色。
 
 ## <a name="see-also"></a>另请参阅
-- [基于角色的访问控制](/documentation/articles/role-based-access-control-configure/)：Azure 门户预览中的 RBAC 入门。
+- [基于角色的访问控制](/documentation/articles/role-based-access-control-configure/)：Azure 门户中的 RBAC 入门。
 - 了解如何通过以下方式管理访问权限：
   - [PowerShell](/documentation/articles/role-based-access-control-manage-access-powershell/)
   - [Azure CLI](/documentation/articles/role-based-access-control-manage-access-azure-cli/)

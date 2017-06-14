@@ -88,7 +88,7 @@
 
 ![还原作业已完成](./media/backup-azure-restore-vms/restore-job-complete.png)
 
-还原虚拟机后，你可能需要重新安装原始 VM 上的扩展，并在 Azure 门户预览中为虚拟机[修改终结点](/documentation/articles/virtual-machines-windows-classic-setup-endpoints/)。
+还原虚拟机后，你可能需要重新安装原始 VM 上的扩展，并在 Azure 门户中为虚拟机[修改终结点](/documentation/articles/virtual-machines-windows-classic-setup-endpoints/)。
 
 ## 还原后的步骤
 如果使用的是基于 cloud-init 的 Linux 分发（例如 Ubuntu），则会出于安全原因在还原后阻止密码。请在还原的 VM 上使用 VMAccess 扩展[重置密码](/documentation/articles/virtual-machines-linux-classic-reset-access/)。建议在这些分发上使用 SSH 密钥来避免在还原后重置密码。

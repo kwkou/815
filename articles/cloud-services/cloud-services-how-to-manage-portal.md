@@ -16,7 +16,7 @@
 # 如何管理云服务
 
 > [AZURE.SELECTOR]
-- [Azure 门户预览](/documentation/articles/cloud-services-how-to-manage-portal/)
+- [Azure 门户](/documentation/articles/cloud-services-how-to-manage-portal/)
 - [Azure 经典管理门户](/documentation/articles/cloud-services-how-to-manage/)
 
 可以在 Azure 门户的“云服务(经典)”区域中管理云服务。本文介绍在管理云服务时可以执行的一些常见操作。其中包括更新、删除、扩展过渡部署并将其升级为生产部署。
@@ -26,7 +26,7 @@
 ## 如何：更新云服务角色或部署
 如果需要更新云服务的应用程序代码，请使用云服务边栏选项卡上的“更新”。可以更新一个角色或所有角色。若要进行更新，可以上载新服务包或服务配置文件。
 
-1. 在 [Azure 门户预览][]中，选择要更新的云服务。此步骤将打开云服务实例边栏选项卡。
+1. 在 [Azure 门户][]中，选择要更新的云服务。此步骤将打开云服务实例边栏选项卡。
 
 2. 在边栏选项卡中，单击“更新”按钮。
 
@@ -54,7 +54,7 @@
 
 可以通过“云服务”页面或仪表板交换部署。
 
-1. 在 [Azure 门户预览][]中，选择要更新的云服务。此步骤将打开云服务实例边栏选项卡。
+1. 在 [Azure 门户][]中，选择要更新的云服务。此步骤将打开云服务实例边栏选项卡。
 2. 在边栏选项卡中，单击“交换”按钮。
 
     ![云服务交换](./media/cloud-services-how-to-manage-portal/swap-button.png)
@@ -87,7 +87,7 @@
 
 ## 如何：将资源链接到云服务
 
-Azure 门户预览不会像当前 Azure 经典管理门户一样将资源链接在一起。而是将其他资源部署到云服务正在使用的同一资源组。
+Azure 门户不会像当前 Azure 经典管理门户一样将资源链接在一起。而是将其他资源部署到云服务正在使用的同一资源组。
 
 ## 如何：删除部署和云服务
 
@@ -97,7 +97,7 @@ Azure 门户预览不会像当前 Azure 经典管理门户一样将资源链接�
 
 可使用以下过程删除部署或云服务。
 
-1. 在 [Azure 门户预览][]中，选择要删除的云服务。此步骤将打开云服务实例边栏选项卡。
+1. 在 [Azure 门户][]中，选择要删除的云服务。此步骤将打开云服务实例边栏选项卡。
 2. 在边栏选项卡中，单击“删除”按钮。
 
     ![云服务交换](./media/cloud-services-how-to-manage-portal/delete-button.png)
@@ -114,7 +114,7 @@ Azure 门户预览不会像当前 Azure 经典管理门户一样将资源链接�
 删除云服务时，如果已配置详细监视，则必须从存储帐户中手动删除数据。有关在何处查找度量值表的信息，请参阅[此文章](/documentation/articles/cloud-services-how-to-monitor/)。
 
 
-[Azure 门户预览]: https://portal.azure.cn
+[Azure 门户]: https://portal.azure.cn
 
 ## 后续步骤
 

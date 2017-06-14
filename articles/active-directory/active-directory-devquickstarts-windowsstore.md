@@ -62,7 +62,7 @@
 	PM> Install-Package Microsoft.IdentityModel.Clients.ActiveDirectory
 
 
--	在 DirectorySearcher 项目中，打开 `MainPage.xaml.cs`。替换 `Config Values` 区域中的值，以反映你在 Azure 门户预览中输入的值。只要使用 ADAL，你的代码就会引用这些值。
+-	在 DirectorySearcher 项目中，打开 `MainPage.xaml.cs`。替换 `Config Values` 区域中的值，以反映你在 Azure 门户中输入的值。只要使用 ADAL，你的代码就会引用这些值。
     -	`tenant` 是 Azure AD 租户的域，例如 contoso.partner.onmschina.cn
     -	`clientId` 是从门户复制的应用程序 clientId。
 -	你现在需要发现 Windows 应用商店应用的回叫 URI。在 `MainPage` 方法中的此行上设置一个断点：

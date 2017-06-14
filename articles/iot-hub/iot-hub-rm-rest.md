@@ -160,7 +160,7 @@
 4. 若要验证应用程序中是否添加了新 IoT 中心，可以访问 [Azure 门户][lnk-azure-portal] 并查看资源列表，或使用 **Get-AzureRmResource** PowerShell cmdlet。
 
 > [AZURE.NOTE]
-> 本示例应用程序将添加用于对你计费的 S1 标准 IoT 中心。 完成操作后，可以通过 [Azure 门户预览][lnk-azure-portal]删除该 IoT 中心，或者在完成后使用 **Remove-AzureRmResource** PowerShell cmdlet 删除。
+> 本示例应用程序将添加用于对你计费的 S1 标准 IoT 中心。 完成操作后，可以通过 [Azure 门户][lnk-azure-portal]删除该 IoT 中心，或者在完成后使用 **Remove-AzureRmResource** PowerShell cmdlet 删除。
 
 ## <a name="next-steps"></a>后续步骤
 现已使用资源提供程序 REST API 部署了 IoT 中心，接下来可更进一步探索：

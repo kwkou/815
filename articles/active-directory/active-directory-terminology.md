@@ -34,7 +34,7 @@ Azure Active Directory Graph | Azure Active Directory 的一项功能，用于�
 Azure Active Directory Connect | Azure Active Directory Connect 向导是用于将本地目录与 Azure Active Directory 进行连接的单一工具，它提供了引导式体验。该向导将部署并配置建立和运行目录集成所需的所有组件，包括同步服务、密码同步或 Active Directory 联合身份验证服务 (AD FS)，以及 Azure AD PowerShell 模块等必备组件。
 Azure Active Directory Connect | 用于将公司本地 Active Directory 服务中的目录对象单向同步到 Azure Active Directory 的应用程序。
 目录集成 | Azure Active Directory 的一项功能，你可以设置该功能以改进与本地目录和云目录中的身份维护相关联的管理体验。目录集成方案包括目录同步，以及通过单一登录进行的目录同步。
-目录同步 | 用于将本地目录对象（用户、组、联系人）同步到云中，以帮助减少管理开销。目录同步在英文版 Azure 门户预览和 Azure 经典管理门户中也简写为 Directory Sync。设置目录同步后，管理员可以将本地 Active Directory 中的目录对象预配到 Azure AD 实例。
+目录同步 | 用于将本地目录对象（用户、组、联系人）同步到云中，以帮助减少管理开销。目录同步在英文版 Azure 门户和 Azure 经典管理门户中也简写为 Directory Sync。设置目录同步后，管理员可以将本地 Active Directory 中的目录对象预配到 Azure AD 实例。
 Microsoft Online Services 登录助手 | 此登录助手是安装在客户端计算机上的一个应用程序，它使用户只需在该计算机上登录一次即可在登录会话期间访问服务任意多次。如果没有此登录助手，最终用户必须在每次尝试访问服务时都提供用户名和密码。不应将此登录助手与单一登录混淆，后者是 Azure Active Directory 的目录集成功能，可以在部署后利用用户的现有本地企业凭据无缝访问 Microsoft 云服务。
 多重身份验证（也称为双因素身份验证或 2FA） | 多重身份验证为用户登录和进行事务处理添加了关键的第二层安全性。当你为 Azure AD 中的用户帐户启用多重身份验证后，该用户在每次需要登录并使用你组织订阅的任何 Microsoft 云服务时，除了标准密码凭据外，还必须使用自己的手机作为附加安全验证方法。
 单一登录 | 用于为用户提供更加无缝的身份验证体验，以便在登录到企业网络的情况下访问 Microsoft 云服务。为了设置单一登录，组织需要在本地部署安全令牌服务。设置单一登录后，用户可以使用其 Active Directory 企业凭据（用户名和密码），访问云中的服务及其现有的本地资源。

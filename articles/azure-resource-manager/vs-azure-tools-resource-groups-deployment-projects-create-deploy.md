@@ -155,7 +155,7 @@ Visual Studio 还提供了 Intellisense 来帮助你了解编辑模板时可以�
    
         ... 
         18:00:58 - Successfully deployed template 'c:\users\user\documents\visual studio 2015\projects\azureresourcegroup1\azureresourcegroup1\templates\websitesqldatabase.json' to resource group 'DemoSiteGroup'.
-7. 在浏览器中，打开 [Azure 门户预览](https://portal.azure.cn/)并登录帐户。若要查看资源组，请选择“资源组”，然后选择部署到的资源组。
+7. 在浏览器中，打开 [Azure 门户](https://portal.azure.cn/)并登录帐户。若要查看资源组，请选择“资源组”，然后选择部署到的资源组。
    
     ![选择组](./media/vs-azure-tools-resource-groups-deployment-projects-create-deploy/select-group.png)
 8. 将显示所有已部署的资源。请注意，存储帐户的名称与添加该资源时指定的名称不完全匹配。存储帐户必须是唯一的。模板会自动将字符的字符串添加到提供的名称，以提供唯一的名称。
@@ -230,7 +230,7 @@ Visual Studio 还提供了 Intellisense 来帮助你了解编辑模板时可以�
 
 
 ## 后续步骤
-* 若要了解如何通过门户管理资源，请参阅[使用 Azure 门户预览管理 Azure 资源](/documentation/articles/resource-group-portal/)。
+* 若要了解如何通过门户管理资源，请参阅[使用 Azure 门户管理 Azure 资源](/documentation/articles/resource-group-portal/)。
 * 若要详细了解模板，请参阅 [Authoring Azure Resource Manager templates](/documentation/articles/resource-group-authoring-templates/)（创作 Azure Resource Manager 模板）。
 
 <!---HONumber=Mooncake_1219_2016-->

@@ -1,6 +1,6 @@
 <properties
     pageTitle="Azure 虚拟机的多个 IP 地址 - 门户 | Azure"
-    description="了解如何使用 Azure 门户预览将多个 IP 地址分配给虚拟机 | Resource Manager。"
+    description="了解如何使用 Azure 门户将多个 IP 地址分配给虚拟机 | Resource Manager。"
     services="virtual-network"
     documentationcenter="na"
     author="anavinahar"
@@ -22,11 +22,11 @@
     ms.openlocfilehash="f0a4868683c28acda995419d92797c9c14820d42"
     ms.lasthandoff="04/22/2017" />
 
-# <a name="assign-multiple-ip-addresses-to-virtual-machines-using-the-azure-portal-preview"></a>使用 Azure 门户预览将多个 IP 地址分配给虚拟机
+# <a name="assign-multiple-ip-addresses-to-virtual-machines-using-the-azure-portal-preview"></a>使用 Azure 门户将多个 IP 地址分配给虚拟机
 
 >[AZURE.INCLUDE [virtual-network-multiple-ip-addresses-intro.md](../../includes/virtual-network-multiple-ip-addresses-intro.md)]
 >
-本文介绍如何使用 Azure 门户预览通过 Azure Resource Manager 部署模型创建虚拟机 (VM)。 无法将多个 IP 地址分配给通过经典部署模型创建的资源。 若要详细了解 Azure 部署模型，请阅读[了解部署模型](/documentation/articles/resource-manager-deployment-model/)一文。
+本文介绍如何使用 Azure 门户通过 Azure Resource Manager 部署模型创建虚拟机 (VM)。 无法将多个 IP 地址分配给通过经典部署模型创建的资源。 若要详细了解 Azure 部署模型，请阅读[了解部署模型](/documentation/articles/resource-manager-deployment-model/)一文。
 
 [AZURE.INCLUDE [virtual-network-multiple-ip-addresses-template-scenario.md](../../includes/virtual-network-multiple-ip-addresses-scenario.md)]
 
@@ -40,7 +40,7 @@
 
 ### <a name="coreadd"></a>核心步骤
 
-1. 根据需要浏览到 Azure 门户预览（网址为 https://portal.azure.cn）并登录。
+1. 根据需要浏览到 Azure 门户（网址为 https://portal.azure.cn）并登录。
 2. 在门户中单击“更多服务”> 在筛选框中键入“虚拟机”，然后单击“虚拟机”。
 3. 在“虚拟机”边栏选项卡中单击要向其添加 IP 地址的 VM。 在显示的虚拟机边栏选项卡中单击“网络接口”，然后选择要向其添加 IP 地址的网络接口。 在下图所示的示例中，已从名为“myVM”的 VM 中选定名为“myNIC”的 NIC：
 
@@ -76,7 +76,7 @@
 
 公共 IP 地址是针对公共 IP 地址资源的一种设置。 如果你的公共 IP 地址资源目前所关联到的 IP 配置不是你想要关联到的 IP 配置，可跳过以下步骤，根据需要完成后面某个部分的步骤。 如果没有可用的公共 IP 地址资源，可通过以下步骤创建一个：
 
-1. 根据需要浏览到 Azure 门户预览（网址为 https://portal.azure.cn）并登录。
+1. 根据需要浏览到 Azure 门户（网址为 https://portal.azure.cn）并登录。
 3. 在门户中，单击“新建” > “网络” > “公共 IP 地址”。
 4. 在显示的“创建公共 IP 地址”边栏选项卡中，输入一个“名称”，选择一个“IP 地址分配”类型、一个“订阅”、一个“资源组”和一个“位置”，然后单击“创建”，如下图所示：
 

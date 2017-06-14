@@ -18,7 +18,7 @@
 # 在 Azure 中为应用程序配置 SSL
 
 > [AZURE.SELECTOR]
-- [Azure 门户预览](/documentation/articles/cloud-services-configure-ssl-certificate-portal)
+- [Azure 门户](/documentation/articles/cloud-services-configure-ssl-certificate-portal)
 - [Azure 经典管理门户](/documentation/articles/cloud-services-configure-ssl-certificate)
 
 安全套接字层 (SSL) 加密是保护通过 Internet 发送的数据的最常用方法。此常见任务讨论了如何为 Web 角色指定 HTTPS 终结点以及如何上传 SSL 证书来保护应用程序。

@@ -319,8 +319,8 @@
         DOCUMENTDB_COLLECTION = 'voting collection'
         DOCUMENTDB_DOCUMENT = 'voting document'
 
-3. 在 [Azure 门户预览](https://portal.azure.cn/)中，单击“浏览”、“DocumentDB 帐户”导航到“密钥”边栏选项卡，双击要使用的帐户名，然后单击“概要”区域中的“密钥”按钮。 在“密钥”边栏选项卡中，复制“URI”值并将其粘贴到 **config.py** 文件中，作为 **DOCUMENTDB\_HOST** 属性的值。 
-4. 返回到 Azure 门户预览，在“密钥”边栏选项卡中，复制“主密钥”或“辅助密钥”的值，并将其粘贴到 **config.py** 文件，作为 **DOCUMENTDB\_KEY** 属性的值。
+3. 在 [Azure 门户](https://portal.azure.cn/)中，单击“浏览”、“DocumentDB 帐户”导航到“密钥”边栏选项卡，双击要使用的帐户名，然后单击“概要”区域中的“密钥”按钮。 在“密钥”边栏选项卡中，复制“URI”值并将其粘贴到 **config.py** 文件中，作为 **DOCUMENTDB\_HOST** 属性的值。 
+4. 返回到 Azure 门户，在“密钥”边栏选项卡中，复制“主密钥”或“辅助密钥”的值，并将其粘贴到 **config.py** 文件，作为 **DOCUMENTDB\_KEY** 属性的值。
 5. 在 **\_\_init\_\_.py** 文件中添加以下行。 
    
         app.config.from_object('config')

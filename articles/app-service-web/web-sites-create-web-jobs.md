@@ -25,7 +25,7 @@
 
 [!INCLUDE [app-service-web-webjobs-corenote](../../includes/app-service-web-webjobs-corenote.md)]
 
-本文说明如何使用 [Azure 门户预览](https://portal.azure.cn)来部署 Web 作业。有关如何使用 Visual Studio 或连续交付过程进行部署的信息，请参阅[如何将 Azure Web 作业部署到 Web 应用](/documentation/articles/websites-dotnet-deploy-webjobs/)。
+本文说明如何使用 [Azure 门户](https://portal.azure.cn)来部署 Web 作业。有关如何使用 Visual Studio 或连续交付过程进行部署的信息，请参阅[如何将 Azure Web 作业部署到 Web 应用](/documentation/articles/websites-dotnet-deploy-webjobs/)。
 
 Azure WebJobs SDK 简化了许多 Web 作业编程任务。有关详细信息，请参阅[什么是 WebJobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk/)。
 
@@ -47,7 +47,7 @@ Azure WebJobs SDK 简化了许多 Web 作业编程任务。有关详细信息，
 
 ## <a name="CreateOnDemand"></a>在门户中创建按需 Web 作业
 
-1. 在 [Azure 门户预览](https://portal.azure.cn)的“Web 应用”边栏选项卡上，单击“所有设置”>“Web 作业”以显示“Web 作业”边栏选项卡。
+1. 在 [Azure 门户](https://portal.azure.cn)的“Web 应用”边栏选项卡上，单击“所有设置”>“Web 作业”以显示“Web 作业”边栏选项卡。
 	
 	![Web 作业边栏选项卡](./media/web-sites-create-web-jobs/wjblade.png)
 	
@@ -107,7 +107,7 @@ CRON 表达式由 6 个字段组成：`{second} {minute} {hour} {day} {month} {d
 
 以下备用技术利用 Azure 计划程序。在这种情况下，Web 作业没有计划的任何直接知识。而是将 Azure 计划程序配置为按计划触发 Web 作业。
 
-Azure 门户预览尚不能创建计划的 Web 作业，但在增添该功能之前，可使用[经典管理门户](http://manage.windowsazure.cn)执行此类操作。
+Azure 门户尚不能创建计划的 Web 作业，但在增添该功能之前，可使用[经典管理门户](http://manage.windowsazure.cn)执行此类操作。
 
 1. 在[经典管理门户](http://manage.windowsazure.cn)中，转到 Web 作业页，并单击“添加”。
 

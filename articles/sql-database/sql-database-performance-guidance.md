@@ -229,13 +229,13 @@ Azure SQL 数据库在每个服务器的 **master** 数据库的 **sys.resource_
 ## <a name="tuning-techniques"></a>优化方法
 本部分介绍可用于优化 Azure SQL 数据库的某些方法，这些方法可使应用程序达到最佳性能并以尽可能低的性能级别运行。 有些方法可与传统的 SQL Server 优化最佳实践搭配使用，但有些方法专用于 Azure SQL 数据库。 在某些情况下，可通过检查数据库使用的资源找到要进一步优化的区域，扩展传统的 SQL Server 方法，使这些方法也可在 Azure SQL 数据库中使用。
 
-### <a name="azure-portal-tools"></a>Azure 门户预览工具
-Azure 门户预览中的以下工具用于分析和修复 SQL 数据库性能问题：
+### <a name="azure-portal-tools"></a>Azure 门户工具
+Azure 门户中的以下工具用于分析和修复 SQL 数据库性能问题：
 
 * [查询性能见解](/documentation/articles/sql-database-query-performance/)
 * [SQL 数据库顾问](/documentation/articles/sql-database-advisor/)
 
-Azure 门户预览有这两种工具及其使用方法的详细说明。若要有效地诊断和纠正问题，建议首先在 Azure 门户预览中尝试这些工具。建议使用手动优化方法来解决索引缺失和查询优化问题，这一点我们随后会用特例进行介绍。
+Azure 门户有这两种工具及其使用方法的详细说明。若要有效地诊断和纠正问题，建议首先在 Azure 门户中尝试这些工具。建议使用手动优化方法来解决索引缺失和查询优化问题，这一点我们随后会用特例进行介绍。
 
 ### <a name="missing-indexes"></a>缺少索引
 OLTP 数据库性能有一个常见问题与物理数据库设计有关。 设计和交付数据库架构时，经常不进行规模（负载或数据卷）测试。 遗憾的是，在规模较小时，查询计划的性能可能尚可接受，但面对生产级数据卷时，性能就会大幅降低。 此问题最常见的原因是缺乏相应的索引，无法满足筛选器的要求或查询中的其他限制。 缺少索引经常导致表扫描，而此时索引搜寻即可满足要求。

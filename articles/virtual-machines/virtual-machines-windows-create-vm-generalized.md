@@ -148,7 +148,7 @@ VHD 使用的 URI 采用以下格式：https://**mystorageaccount**.blob.core.ch
         New-AzureRmVM -ResourceGroupName $rgName -Location $location -VM $vm
 
 ## <a name="verify-that-the-vm-was-created"></a>验证是否已创建 VM
-完成后，应会在 [Azure 门户预览](https://portal.azure.cn)的“浏览” > “虚拟机”下看到新建的 VM，也可以使用以下 PowerShell 命令查看该 VM：
+完成后，应会在 [Azure 门户](https://portal.azure.cn)的“浏览” > “虚拟机”下看到新建的 VM，也可以使用以下 PowerShell 命令查看该 VM：
 
         $vmList = Get-AzureRmVM -ResourceGroupName $rgName
         $vmList.Name

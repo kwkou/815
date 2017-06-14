@@ -21,7 +21,7 @@
 
 # 使用 PowerShell 配置和管理 SQL 数据库审核
 
-以下部分介绍如何使用 PowerShell 配置和管理审核。若要使用 Azure 门户预览配置和管理审核，请参阅[在 Azure 门户预览中配置审核](/documentation/articles/sql-database-auditing-portal/)。若要使用 REST API 配置和管理审核，请参阅[使用 REST API 配置审核](/documentation/articles/sql-database-auditing-rest/)。
+以下部分介绍如何使用 PowerShell 配置和管理审核。若要使用 Azure 门户配置和管理审核，请参阅[在 Azure 门户中配置审核](/documentation/articles/sql-database-auditing-portal/)。若要使用 REST API 配置和管理审核，请参阅[使用 REST API 配置审核](/documentation/articles/sql-database-auditing-rest/)。
 
 有关审核的概述，请参阅 [SQL 数据库审核](/documentation/articles/sql-database-auditing/)。
 
@@ -37,7 +37,7 @@
 
 ## 后续步骤
 
-* 若要使用 Azure 门户预览配置和管理审核，请参阅[在 Azure 门户预览中配置数据库审核](/documentation/articles/sql-database-auditing-portal/)。
+* 若要使用 Azure 门户配置和管理审核，请参阅[在 Azure 门户中配置数据库审核](/documentation/articles/sql-database-auditing-portal/)。
 * 若要使用 PowerShell 配置和管理审核，请参阅[使用 REST API 配置数据库审核](/documentation/articles/sql-database-auditing-rest/)。
 * 有关审核的概述，请参阅[数据库审核](/documentation/articles/sql-database-auditing/)。
 

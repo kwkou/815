@@ -1,6 +1,6 @@
 <properties 
    pageTitle="Azure SQL 数据库的定价层建议" 
-   description="在 Azure 门户预览中更改定价层时，提供的定价层建议将会推荐最适合用于运行现有 Azure SQL 数据库负载的层。定价层描述 SQL 数据库的服务层和性能级别。" 
+   description="在 Azure 门户中更改定价层时，提供的定价层建议将会推荐最适合用于运行现有 Azure SQL 数据库负载的层。定价层描述 SQL 数据库的服务层和性能级别。" 
    services="sql-database" 
    documentationCenter="" 
    authors="stevestein" 
@@ -21,7 +21,7 @@
 
  定价层建议将会推荐最适合用于运行现有 Azure SQL 数据库工作负荷的服务层和性能级别。
 
-> [AZURE.NOTE] 定价层建议仅适用于 Web 和企业数据库及弹性数据库池，并且只会在 [Azure 门户预览](https://portal.azure.cn/)中提供。
+> [AZURE.NOTE] 定价层建议仅适用于 Web 和企业数据库及弹性数据库池，并且只会在 [Azure 门户](https://portal.azure.cn/)中提供。
 
 
 在执行以下任务期间获取定价层建议：
@@ -59,7 +59,7 @@ SQL 数据库服务会通过评估 SQL 数据库的历史资源使用量，来�
 
 可以通过选择现有的 Web 或企业数据库并单击“所有设置”和“定价层(规模 DTU)”来获取定价层建议。（[将 Azure SQL 服务器升级到 V12](/documentation/articles/sql-database-upgrade-server-portal/) 时，也可以获取定价层建议。）
 
-1. 登录到 [Azure 门户预览](https://portal.azure.cn/)。
+1. 登录到 [Azure 门户](https://portal.azure.cn/)。
 2. 单击“浏览”>“SQL 数据库”。
 4. 在“SQL 数据库”边栏选项卡中，单击想要查看其建议的数据库：
 

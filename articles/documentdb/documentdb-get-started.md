@@ -108,13 +108,13 @@
         private const string PrimaryKey = "<your primary key>";
         private DocumentClient client;
 
-接下来，返回到 [Azure 门户预览](https://portal.azure.cn)检索终结点 URL 和主密钥。 终结点 URL 和主密钥是必需的，可让应用程序知道要连接的对象，使 DocumentDB 信任应用程序的连接。
+接下来，返回到 [Azure 门户](https://portal.azure.cn)检索终结点 URL 和主密钥。 终结点 URL 和主密钥是必需的，可让应用程序知道要连接的对象，使 DocumentDB 信任应用程序的连接。
 
-在 Azure 门户预览中，导航到 DocumentDB 帐户，然后单击“密钥”。
+在 Azure 门户中，导航到 DocumentDB 帐户，然后单击“密钥”。
 
 从门户中复制该 URI 并将它粘贴到 program.cs 文件中的 `<your endpoint URL>` 。 然后从门户中复制“主密钥”并将它粘贴到 `<your primary key>`。
 
-![NoSQL 教程用于创建 C# 控制台应用程序的 Azure 门户预览的屏幕截图。 显示了一个 DocumentDB 帐户，在“DocumentDB 帐户”边栏选项卡上突出显示了“ACTIVE”中心、“密钥”按钮，在“密钥”边栏选项卡上突出显示了 URI、主密钥、辅助密钥的值][keys]
+![NoSQL 教程用于创建 C# 控制台应用程序的 Azure 门户的屏幕截图。 显示了一个 DocumentDB 帐户，在“DocumentDB 帐户”边栏选项卡上突出显示了“ACTIVE”中心、“密钥”按钮，在“密钥”边栏选项卡上突出显示了 URI、主密钥、辅助密钥的值][keys]
 
 接下来，我们开始使用应用程序时，请首先创建一个新的 **DocumentClient** 实例。
 

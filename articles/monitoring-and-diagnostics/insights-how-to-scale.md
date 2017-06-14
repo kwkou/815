@@ -19,17 +19,17 @@
 
 # 缩放实例计数
 
-在 [Azure 门户预览](https://portal.azure.cn/)中，你可以手动设置服务的实例计数。这通常称为*扩大*或*缩小*。
+在 [Azure 门户](https://portal.azure.cn/)中，你可以手动设置服务的实例计数。这通常称为*扩大*或*缩小*。
 
 基于实例计数进行缩放之前，应考虑的除了实例计数之外，缩放还会受**定价层**影响。不同定价层可以具有不同数量的核心和内存，因此它们对于相同数量的实例具有更佳性能（即*增加* 或*减少*）。本文专门介绍*缩小* 和*扩大*。
 
 可以在门户中进行缩放，也可以使用 [REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn931953.aspx) 或 [.NET SDK](https://www.nuget.org/packages/Microsoft.Azure.Insights/) 手动或自动调整规模。
 
-> [AZURE.NOTE] 本文介绍了如何在位于 [http://portal.azure.cn](http://portal.azure.cn) 的门户预览中创建手动缩放设置，门户预览尚不支持创建自动缩放，需要创建自动缩放的用户要在 Azure 经典管理门户 ([http://manage.windowsazure.cn](http://manage.windowsazure.cn)) 中进行设置，但 Azure 经典管理门户及其基础后端具有限制。
+> [AZURE.NOTE] 本文介绍了如何在位于 [http://portal.azure.cn](http://portal.azure.cn) 的门户中创建手动缩放设置，门户尚不支持创建自动缩放，需要创建自动缩放的用户要在 Azure 经典管理门户 ([http://manage.windowsazure.cn](http://manage.windowsazure.cn)) 中进行设置，但 Azure 经典管理门户及其基础后端具有限制。
 
 ## 手动缩放
 
-1. 在 [Azure 门户预览](https://portal.azure.cn/)中，单击“浏览”，然后导航到要缩放的资源（如“应用服务计划”）。
+1. 在 [Azure 门户](https://portal.azure.cn/)中，单击“浏览”，然后导航到要缩放的资源（如“应用服务计划”）。
 
 2. 点击 “应用服务计划”中的“扩大（应用服务计划）”磁贴来设置手动缩放实例计数。
 

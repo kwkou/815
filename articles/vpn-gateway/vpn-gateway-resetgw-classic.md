@@ -29,7 +29,7 @@
 
 如果在首次重新启动后未恢复连接，再次发出同一命令以重新启动第二个 VM 实例（新活动网关）。如果连续请求两次重新启动，则重新启动这两个 VM 实例（活动和备用）的时间可能略长一些。这种情况会导致 VPN 连接出现较长的时间间隔，VM 需要最多 2 到 4 分钟才能完成重新启动。
 
-在两次重启之后，如果仍然遇到跨界连接问题，请从 Azure 门户预览提出支持请求。
+在两次重启之后，如果仍然遇到跨界连接问题，请从 Azure 门户提出支持请求。
 
 ## 开始之前
 在重置网关之前，请为每个 IPsec 站点到站点 (S2S) VPN 隧道验证下面列出的重要项目。如果项目中存在任何不匹配，将导致 S2S VPN 隧道断开连接。验证并更正本地网关和 Azure VPN 网关的配置能够避免网关上其他正在工作的连接出现不必要的重新启动和中断。
@@ -40,13 +40,13 @@
 * 在 Azure 和本地 VPN 网关上，预共享的密钥必须相同。
 * 如果应用特定的 IPsec/IKE 配置，如加密、哈希算法和 PFS（完全向前保密），请确保 Azure 和本地 VPN 网关具有相同的配置。
 
-## 使用 Azure 门户预览重置 VPN 网关
+## 使用 Azure 门户重置 VPN 网关
 
-可以使用 Azure 门户预览重置 Resource Manager VPN 网关。如果想要重置经典网关，请参阅 [PowerShell](#resetclassic) 步骤。
+可以使用 Azure 门户重置 Resource Manager VPN 网关。如果想要重置经典网关，请参阅 [PowerShell](#resetclassic) 步骤。
 
 ### Resource Manager 部署模型
 
-1. 打开 Azure 门户预览并导航到想要重置的 Resource Manager 虚拟网络网关。
+1. 打开 Azure 门户并导航到想要重置的 Resource Manager 虚拟网络网关。
 2. 在虚拟网络网关的边栏选项卡上，单击“重置”。
 
 	![“重置 VPN 网关”边栏选项卡](./media/vpn-gateway-howto-reset-gateway/reset-vpn-gateway-portal.png)  

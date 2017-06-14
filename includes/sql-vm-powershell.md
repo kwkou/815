@@ -6,7 +6,7 @@
 
 >[AZURE.NOTE] 由于本主题中的示例使用的是 [Azure Resource Manager 部署模型](/documentation/articles/resource-group-overview/)，因此示例将使用 [Azure Resource Manager cmdlet](http://msdn.microsoft.com/zh-cn/library/azure/mt125356.aspx)。
 
-运行 [**Add-AzureRmAccount**](http://msdn.microsoft.com/zh-cn/library/mt619267.aspx) cmdlet，然后就会出现一个要求你输入凭据的登录屏幕。使用登录 Azure 门户预览时所用的同一凭据。
+运行 [**Add-AzureRmAccount**](http://msdn.microsoft.com/zh-cn/library/mt619267.aspx) cmdlet，然后就会出现一个要求你输入凭据的登录屏幕。使用登录 Azure 门户时所用的同一凭据。
 
 	Add-AzureRmAccount -EnvironmentationName AzureChinaCloud
 

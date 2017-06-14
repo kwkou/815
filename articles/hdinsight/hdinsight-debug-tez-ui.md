@@ -71,7 +71,7 @@ Tez UI 只能从群集头节点的桌面使用，因此必须使用远程桌面�
 > 
 > 
 
-1. 在 [Azure 门户预览](https://portal.azure.cn)中，选择 HDInsight 群集。在 HDInsight 边栏选项卡的顶部，选择“远程桌面”图标。这将显示远程桌面边栏选项卡
+1. 在 [Azure 门户](https://portal.azure.cn)中，选择 HDInsight 群集。在 HDInsight 边栏选项卡的顶部，选择“远程桌面”图标。这将显示远程桌面边栏选项卡
    
     ![“远程桌面”图标](./media/hdinsight-debug-tez-ui/remotedesktopicon.png)  
 

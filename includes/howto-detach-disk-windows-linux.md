@@ -9,7 +9,7 @@
 ## <a name="find-the-disk"></a>找到磁盘
 如果你不知道磁盘名称或要在分离磁盘之前验证磁盘名称，请按照以下步骤进行操作。
 
-1. 登录 [Azure 门户预览](https://portal.azure.cn)。
+1. 登录 [Azure 门户](https://portal.azure.cn)。
 
 2. 单击“虚拟机”，然后选择相应的 VM。
 
@@ -20,7 +20,7 @@
     ![查找数据磁盘](./media/howto-detach-disk-windows-linux/vmwithdisklist.png)
 
 ## <a name="detach-the-disk"></a>分离磁盘
-1. 在 Azure 门户预览中，单击“虚拟机”，然后单击其数据磁盘需要进行分离的虚拟机的名称。
+1. 在 Azure 门户中，单击“虚拟机”，然后单击其数据磁盘需要进行分离的虚拟机的名称。
 
 2. 在虚拟机仪表板左侧边缘上，单击“设置”下的“磁盘”。
 

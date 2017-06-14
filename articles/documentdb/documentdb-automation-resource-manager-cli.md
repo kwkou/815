@@ -26,7 +26,7 @@
 
 # <a name="create-an-azure-documentdb-account-using-the-azure-cli"></a>使用 Azure CLI 创建 DocumentDB 帐户
 
-以下指南介绍了使用 Azure CLI 2.0 中提供的预览版命令自动管理 DocumentDB 数据库帐户的命令。 它还包括用于管理 [多区域数据库帐户][scaling-globally]的帐户密钥和故障转移优先级的命令。 更新数据库帐户可以修改一致性策略以及添加/删除区域。 对于 DocumentDB 数据库帐户的跨平台管理，可使用 [Azure Powershell](/documentation/articles/documentdb-manage-account-with-powershell/)、[资源提供程序 REST API][rp-rest-api] 或 [Azure 门户预览](/documentation/articles/documentdb-create-account/)。
+以下指南介绍了使用 Azure CLI 2.0 中提供的预览版命令自动管理 DocumentDB 数据库帐户的命令。 它还包括用于管理 [多区域数据库帐户][scaling-globally]的帐户密钥和故障转移优先级的命令。 更新数据库帐户可以修改一致性策略以及添加/删除区域。 对于 DocumentDB 数据库帐户的跨平台管理，可使用 [Azure Powershell](/documentation/articles/documentdb-manage-account-with-powershell/)、[资源提供程序 REST API][rp-rest-api] 或 [Azure 门户](/documentation/articles/documentdb-create-account/)。
 
 ## <a name="getting-started"></a>入门
 
@@ -97,7 +97,7 @@
 
 ### <a name="notes"></a>说明 
 - 这些位置必须是已正式推出 DocumentDB 的区域。 [“Azure 区域”页](https://azure.microsoft.com/regions/#services)提供了当前的区域列表。
-- 若要启用门户访问，请在 ip-range-filter 中包含你所在区域的 Azure 门户预览的 IP 地址（按照[配置 IP 访问控制策略](/documentation/articles/documentdb-firewall-support/#configure-ip-policy/)中的指定）。
+- 若要启用门户访问，请在 ip-range-filter 中包含你所在区域的 Azure 门户的 IP 地址（按照[配置 IP 访问控制策略](/documentation/articles/documentdb-firewall-support/#configure-ip-policy/)中的指定）。
 
 ## <a id="update-documentdb-account-cli"></a> 更新 DocumentDB 数据库帐户
 

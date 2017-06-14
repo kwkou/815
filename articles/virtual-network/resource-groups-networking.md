@@ -37,7 +37,7 @@ Azure 资源管理器依靠不同的资源提供程序提供对你的资源的�
     * Node.JS SDK
     * Java SDK
     * Azure CLI
-    * 门户预览
+    * 门户
     * Resource Manager 模板语言
 
 ## 网络资源
@@ -80,7 +80,7 @@ Azure 资源管理器依靠不同的资源提供程序提供对你的资源的�
 可以使用不同界面来管理你的 Azure 网络资源。在本文档中，我们将针对这些界面重点介绍其中两种：REST API 和模板。
 
 ### REST API
-如前所述，可以通过各种界面（包括 REST API、.NET SDK、Node.JS SDK、Java SDK、PowerShell、CLI、Azure 门户预览）和模板管理网络资源。
+如前所述，可以通过各种界面（包括 REST API、.NET SDK、Node.JS SDK、Java SDK、PowerShell、CLI、Azure 门户）和模板管理网络资源。
 
 Rest API 符合 HTTP 1.1 协议规范。下面显示了该 API 的常规 URI 结构：
 
@@ -244,7 +244,7 @@ Rest API 符合 HTTP 1.1 协议规范。下面显示了该 API 的常规 URI 结
 你可以使用 PowerShell、AzureCLI 或通过在 GitHub 中执行单击部署，从模板向 Azure 部署服务。若要在 GitHub 中从模板部署服务，请执行以下步骤：
 
 1. 从 GitHub 打开 template3 文件。例如，打开“包含两个子网的虚拟网络”[](https://github.com/Azure/azure-quickstart-templates/tree/master/101-vnet-two-subnets)，查看模板。（请勿单击“部署到 Azure”，因为该项是针对全球 Azure 的）
-2. 此处单击“部署到 Azure”，然后使用凭据登录到 Azure 门户预览[](https://portal.azure.cn/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-vnet-two-subnets%2Fazuredeploy.json)。
+2. 此处单击“部署到 Azure”，然后使用凭据登录到 Azure 门户[](https://portal.azure.cn/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-vnet-two-subnets%2Fazuredeploy.json)。
 3. 验证模板，然后单击“保存”。
 4. 单击“编辑参数”并为 vnet 和子网选择一个位置，例如“中国北部”。
 5. 根据需要更改 **ADDRESSPREFIX** 和 **SUBNETPREFIX** 参数，然后单击“确定”。

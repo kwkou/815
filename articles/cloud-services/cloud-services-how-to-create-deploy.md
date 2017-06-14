@@ -24,7 +24,7 @@
 # 如何创建和部署云服务
 
 > [AZURE.SELECTOR]
-- [Azure 门户预览](/documentation/articles/cloud-services-how-to-create-deploy-portal/)
+- [Azure 门户](/documentation/articles/cloud-services-how-to-create-deploy-portal/)
 - [Azure 经典管理门户](/documentation/articles/cloud-services-how-to-create-deploy/)
 
 Azure 经典门户提供两种创建和部署云服务的方法：“快速创建”和“自定义创建”。

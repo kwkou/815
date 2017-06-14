@@ -41,7 +41,7 @@
 - **应用程序事件：**从服务代码发出，使用 Visual Studio 模板中提供的 EventSource 帮助程序类写出的事件。有关如何从应用程序写入日志的详细信息，请参阅[在本地计算机开发设置中监视和诊断服务](/documentation/articles/service-fabric-diagnostics-how-to-monitor-and-diagnose-services-locally/)。
 
 ## 部署诊断扩展
-收集日志的第一个步骤是将诊断扩展部署在 Service Fabric 群集中的每个 VM 上。诊断扩展将收集每个 VM 上的日志，并将它们上传到指定的存储帐户。根据使用的是 Azure 门户预览还是 Azure Resource Manager，步骤稍有不同。另外，根据扩展是在创建群集时部署，还是针对现有群集部署，步骤也有所不同。让我们看看每个方案的步骤。
+收集日志的第一个步骤是将诊断扩展部署在 Service Fabric 群集中的每个 VM 上。诊断扩展将收集每个 VM 上的日志，并将它们上传到指定的存储帐户。根据使用的是 Azure 门户还是 Azure Resource Manager，步骤稍有不同。另外，根据扩展是在创建群集时部署，还是针对现有群集部署，步骤也有所不同。让我们看看每个方案的步骤。
 
 ### 在通过门户创建群集的过程中部署诊断扩展
 若要在创建群集的过程中将诊断扩展部署到群集中的 VM，需使用下图所示的“诊断设置”面板。若要启用 Reliable Actors 或 Reliable Services 事件收集，请确保“诊断”设置为“打开”（默认设置）。创建群集后，无法使用门户更改这些设置。

@@ -97,7 +97,7 @@ DocumentDB 是从无到有开发出来的，其设计考虑到了每个数据模
 - 具有最终一致性级别的读取操作的开销（从消耗的 RU 来讲）在所有 DocumentDB 一致性级别中是最低的。
 
 ## <a name="configuring-the-default-consistency-level"></a>配置默认的一致性级别
-1. 在 [Azure 门户预览](https://portal.azure.cn/)的跳转栏中，单击“DocumentDB”。
+1. 在 [Azure 门户](https://portal.azure.cn/)的跳转栏中，单击“DocumentDB”。
 2. 在“DocumentDB”边栏选项卡中，选择要修改的数据库帐户。
 3. 在帐户边栏选项卡中，单击“默认一致性” 。
 4. 在“默认一致性”边栏选项卡中，选择新的一致性级别并单击“保存”。

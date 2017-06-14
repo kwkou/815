@@ -57,11 +57,11 @@
 - **在 GitHub 上查看模板：**如果熟悉模板，可以在[模板](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-vm-multiple-ipconfig/azuredeploy.json)中查看设置。
 - **查看部署后的设置：**如果不熟悉模板，则可使用以下某个部分的步骤来部署模板，在部署后查看设置。
 
-可以使用 Azure 门户预览、PowerShell 或 Azure 命令行接口 (CLI) 部署模板。所有方法都产生相同的结果。若要部署模板，请完成以下某个部分的步骤：
+可以使用 Azure 门户、PowerShell 或 Azure 命令行接口 (CLI) 部署模板。所有方法都产生相同的结果。若要部署模板，请完成以下某个部分的步骤：
 
-## 使用 Azure 门户预览进行部署
+## 使用 Azure 门户进行部署
 
-若要使用 Azure 门户预览部署模板，请完成以下步骤：
+若要使用 Azure 门户部署模板，请完成以下步骤：
 
 1. 根据需要修改模板。模板部署本文的[资源](#resources)部分列出的资源和设置。若要详细了解模板及其创作方法，请阅读[创作 Azure Resource Manager 模板](/documentation/articles/resource-group-authoring-templates/)一文。
 2. 使用以下方法之一部署模板：

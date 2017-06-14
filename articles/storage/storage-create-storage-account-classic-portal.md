@@ -1,6 +1,6 @@
 <properties
     pageTitle="如何在 Azure 经典管理门户中创建、管理或删除存储帐户 | Azure"
-    description="在 Azure 门户预览中创建新的存储帐户、管理帐户访问密钥或删除存储帐户。了解标准和高级存储帐户。"
+    description="在 Azure 门户中创建新的存储帐户、管理帐户访问密钥或删除存储帐户。了解标准和高级存储帐户。"
     services="storage"
     documentationcenter=""
     author="robinsh"

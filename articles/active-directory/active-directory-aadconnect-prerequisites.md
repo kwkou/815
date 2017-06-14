@@ -29,7 +29,7 @@
 在安装 Azure AD Connect 之前，需要准备好以下项目。
 
 ### <a name="azure-ad"></a>Azure AD
-- Azure 订阅或 [Azure 试用版订阅](/pricing/1rmb-trial/)。 此订阅只是用来访问 Azure 门户预览，而不是用于 Azure AD Connect。 如果使用 PowerShell 或 Office 365，则无需 Azure 订阅即可使用 Azure AD Connect。 如果有 Office 365 许可证，还可以使用 Office 365 门户。 使用付费的 Office 365 许可证，还可以从 Office 365 门户访问 Azure 门户预览。
+- Azure 订阅或 [Azure 试用版订阅](/pricing/1rmb-trial/)。 此订阅只是用来访问 Azure 门户，而不是用于 Azure AD Connect。 如果使用 PowerShell 或 Office 365，则无需 Azure 订阅即可使用 Azure AD Connect。 如果有 Office 365 许可证，还可以使用 Office 365 门户。 使用付费的 Office 365 许可证，还可以从 Office 365 门户访问 Azure 门户。
   
 - [添加并验证域](/documentation/articles/active-directory-add-domain/)，该域是计划在 Azure AD 中使用的。 例如，如果计划让用户使用 contoso.com，请确保此域已经过验证，并且不是直接使用 contoso.partner.onmschina.cn 默认域。
 - 默认情况下，一个 Azure AD 租户允许 5 万个对象。 在验证域后，该限制将增加到 30 万个对象。 如果在 Azure AD 中需要更多的对象，则需要开具支持案例来请求增大此限制。 如果需要 50 万个以上的对象，则需要购买 Office 365、Azure AD Basic、Azure AD Premium 或企业移动性和安全性等许可证。

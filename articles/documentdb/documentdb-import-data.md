@@ -272,7 +272,7 @@ DocumentDB 连接字符串的格式为：
 
     AccountEndpoint=<DocumentDB Endpoint>;AccountKey=<DocumentDB Key>;Database=<DocumentDB Database>;
 
-DocumentDB 帐户连接字符串可从 Azure 门户预览的“密钥”边栏选项卡中检索到（如[如何管理 DocumentDB 帐户](/documentation/articles/documentdb-manage-account/)中所述），但是需要将数据库的名称追加到连接字符串后面，格式如下：
+DocumentDB 帐户连接字符串可从 Azure 门户的“密钥”边栏选项卡中检索到（如[如何管理 DocumentDB 帐户](/documentation/articles/documentdb-manage-account/)中所述），但是需要将数据库的名称追加到连接字符串后面，格式如下：
 
     Database=<DocumentDB Database>;
 
@@ -347,7 +347,7 @@ DocumentDB 连接字符串的格式为：
 
     AccountEndpoint=<DocumentDB Endpoint>;AccountKey=<DocumentDB Key>;Database=<DocumentDB Database>;
 
-DocumentDB 帐户连接字符串可从 Azure 门户预览的“密钥”边栏选项卡中检索到（如[如何管理 DocumentDB 帐户](/documentation/articles/documentdb-manage-account/)中所述），但是需要将数据库的名称追加到连接字符串后面，格式如下：
+DocumentDB 帐户连接字符串可从 Azure 门户的“密钥”边栏选项卡中检索到（如[如何管理 DocumentDB 帐户](/documentation/articles/documentdb-manage-account/)中所述），但是需要将数据库的名称追加到连接字符串后面，格式如下：
 
     Database=<DocumentDB Database>;
 
@@ -411,7 +411,7 @@ DocumentDB 连接字符串的格式为：
 
     AccountEndpoint=<DocumentDB Endpoint>;AccountKey=<DocumentDB Key>;Database=<DocumentDB Database>;
 
-DocumentDB 帐户连接字符串可从 Azure 门户预览的“密钥”边栏选项卡中检索到（如[如何管理 DocumentDB 帐户](/documentation/articles/documentdb-manage-account/)中所述），但是需要将数据库的名称追加到连接字符串后面，格式如下：
+DocumentDB 帐户连接字符串可从 Azure 门户的“密钥”边栏选项卡中检索到（如[如何管理 DocumentDB 帐户](/documentation/articles/documentdb-manage-account/)中所述），但是需要将数据库的名称追加到连接字符串后面，格式如下：
 
     Database=<DocumentDB Database>;
 

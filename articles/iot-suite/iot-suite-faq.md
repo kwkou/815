@@ -42,9 +42,9 @@
 ### <a name="my-device-does-not-appear-in-the-list-of-devices-in-the-solution-dashboard-why"></a>我的设备未显示在解决方案仪表板的设备列表中，这是什么原因？
 解决方案仪表板中的设备列表使用查询来返回设备列表。 目前，查询返回的设备数不能超过 10000。 可以尝试让查询的搜索条件更具限制性。
 
-### <a name="whats-the-difference-between-deleting-a-resource-group-in-the-azure-portal-and-clicking-delete-on-a-preconfigured-solution-in-azureiotsuitecom"></a>在 Azure 门户预览中删除资源组与在 azureiotsuite.cn 中对预配置解决方案单击删除之间的区别是什么？
+### <a name="whats-the-difference-between-deleting-a-resource-group-in-the-azure-portal-and-clicking-delete-on-a-preconfigured-solution-in-azureiotsuitecom"></a>在 Azure 门户中删除资源组与在 azureiotsuite.cn 中对预配置解决方案单击删除之间的区别是什么？
 * 如果在 [azureiotsuite.cn][lnk-azureiotsuite] 中删除预配置解决方案，则会删除在创建预配置解决方案时设置的所有资源。如果向资源组添加了其他资源，则也会删除这些资源。
-* 如果删除 [Azure 门户预览][lnk-azure-portal]中的资源组，则只会删除该资源组中的资源。此外还需在 [Azure 经典管理门户][lnk-classic-portal]中删除与预配置的解决方案关联的 Azure Active Directory 应用程序。
+* 如果删除 [Azure 门户][lnk-azure-portal]中的资源组，则只会删除该资源组中的资源。此外还需在 [Azure 经典管理门户][lnk-classic-portal]中删除与预配置的解决方案关联的 Azure Active Directory 应用程序。
 
 ### <a name="how-many-iot-hub-instances-can-i-provision-in-a-subscription"></a>在一个订阅中可以设置多少个 IoT 中心实例？
 每个订阅可以预配 10 个 IoT 中心。可以创建 [Azure 在线申请支持](/support/support-ticket-form/?l=zh-cn)创建工单，提出申请以提高此限制，但默认情况下，如 [Azure subscription limits][link-azuresublimits]（Azure 订阅限制）中所述，对每个订阅只能预配 10 个 IoT 中心。由于每个预配置的解决方案将预配一个新的 IoT 中心，因此，在给定的订阅中，最多只能预配 10 个预配置的解决方案。

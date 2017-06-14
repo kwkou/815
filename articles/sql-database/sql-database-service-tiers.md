@@ -57,7 +57,7 @@
 确定最低服务层后，就可以确定数据库的性能级别（DTU 数）。 通常情况下，一开始可以使用标准 S2 和 S3 性能级别。 对于具有较高 CPU 或 IO 要求的数据库，高级性能级别是合适的起点。 与最高的标准性能级别相比，高级性能级别提供更多 CPU 和至少高 10 倍的 IO。
 
 ## <a name="single-database-service-tiers-and-performance-levels"></a>单一数据库服务层和性能级别
-对于单一数据库，每个服务层内都具有多个性能级别。 可以使用 [Azure 门户预览](/documentation/articles/sql-database-manage-single-databases-portal/)、[PowerShell](/documentation/articles/sql-database-manage-single-databases-powershell/)、[Transact-SQL](/documentation/articles/sql-database-manage-single-databases-tsql/)、C# 和 REST API 灵活选择最适合工作负荷要求的级别。 
+对于单一数据库，每个服务层内都具有多个性能级别。 可以使用 [Azure 门户](/documentation/articles/sql-database-manage-single-databases-portal/)、[PowerShell](/documentation/articles/sql-database-manage-single-databases-powershell/)、[Transact-SQL](/documentation/articles/sql-database-manage-single-databases-tsql/)、C# 和 REST API 灵活选择最适合工作负荷要求的级别。 
 
 尽管有多个托管的数据库，你的数据库仍可确保获得一组资源，并且数据库的预期性能特征不受影响。
 
@@ -69,7 +69,7 @@
 
 ## <a name="scaling-up-or-scaling-down-a-single-database"></a>上下缩放单一数据库
 
-在一开始选取服务层和性能级别以后，即可根据实际经验对单一数据库动态地进行上下缩放。 如果需要向上或向下缩放，可以使用 [Azure 门户预览](/documentation/articles/sql-database-manage-single-databases-portal/)、[PowerShell](/documentation/articles/sql-database-manage-single-databases-powershell/)、[Transact-SQL](/documentation/articles/sql-database-manage-single-databases-tsql/)、C# 和 REST API 轻松更改数据库层。 
+在一开始选取服务层和性能级别以后，即可根据实际经验对单一数据库动态地进行上下缩放。 如果需要向上或向下缩放，可以使用 [Azure 门户](/documentation/articles/sql-database-manage-single-databases-portal/)、[PowerShell](/documentation/articles/sql-database-manage-single-databases-powershell/)、[Transact-SQL](/documentation/articles/sql-database-manage-single-databases-tsql/)、C# 和 REST API 轻松更改数据库层。 
 
 
 更改数据库的服务层和/或性能级别将在新的性能级别创建原始数据库的副本，然后将连接切换到副本。 在此过程中不会丢失任何数据，但在切换到副本的短暂瞬间，将禁用与数据库的连接，因此可能回滚某些处于进行状态的事务。 此时间范围因具体情况而异，但平均低于 4 秒，并且在超过 99%的情况下低于 30 秒。 在禁用连接的瞬间有大量事务正在进行时，此时间范围可能更长。  
@@ -83,7 +83,7 @@
 * 更改完成前不会应用数据库的新属性。
 
 > [AZURE.IMPORTANT]
-> 如需详细步骤，请参阅[在 Azure 门户预览中管理单一数据库](/documentation/articles/sql-database-manage-single-databases-portal/)、[使用 PowerShell 管理单一数据库](/documentation/articles/sql-database-manage-single-databases-powershell/)或[使用 Transact-SQL 管理单一数据库](/documentation/articles/sql-database-manage-single-databases-tsql/)。
+> 如需详细步骤，请参阅[在 Azure 门户中管理单一数据库](/documentation/articles/sql-database-manage-single-databases-portal/)、[使用 PowerShell 管理单一数据库](/documentation/articles/sql-database-manage-single-databases-powershell/)或[使用 Transact-SQL 管理单一数据库](/documentation/articles/sql-database-manage-single-databases-tsql/)。
 >
 
 ## <a name="elastic-pool-service-tiers-and-performance-in-edtus"></a>弹性池服务层和性能 (eDTU)
@@ -103,7 +103,7 @@
 * 更改每个数据库的最小 eDTU 数或每个数据库的最大 eDTU 数通常可在五分钟或更少的时间内完成。
 * 更改池大小 (eDTU) 所需的时间取决于池中所有数据库的总大小。 每 100 GB 的更改平均需要 90 分钟或更短的时间。 例如，如果池中所有数据库的总空间为 200 GB，则更改每个池的池 eDTU 时，预计延迟为 3 小时或更短的时间。
 
-如需详细步骤，请参阅[在 Azure 门户预览中管理弹性池](/documentation/articles/sql-database-elastic-pool-manage-portal/)、[使用 Powershell 管理弹性池](/documentation/articles/sql-database-elastic-pool-manage-powershell/)、[使用 Transact-SQL 管理弹性池](/documentation/articles/sql-database-elastic-pool-manage-tsql/)或[使用 C# 管理弹性池](/documentation/articles/sql-database-elastic-pool-manage-csharp/)。
+如需详细步骤，请参阅[在 Azure 门户中管理弹性池](/documentation/articles/sql-database-elastic-pool-manage-portal/)、[使用 Powershell 管理弹性池](/documentation/articles/sql-database-elastic-pool-manage-powershell/)、[使用 Transact-SQL 管理弹性池](/documentation/articles/sql-database-elastic-pool-manage-tsql/)或[使用 C# 管理弹性池](/documentation/articles/sql-database-elastic-pool-manage-csharp/)。
 
 ## <a name="next-steps"></a>后续步骤
 

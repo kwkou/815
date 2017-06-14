@@ -4,7 +4,7 @@
 
 可以使用门户将 VM 及其关联的资源移到其他订阅。
 
-1. 打开 [Azure 门户预览](https://portal.azure.cn)。
+1. 打开 [Azure 门户](https://portal.azure.cn)。
 2. 单击“浏览”>“虚拟机”，然后从列表中选择要移动的 VM。
 	
 	![“基本功能”部分的屏幕截图，其中你单击铅笔图标以打开“移动资源”边栏选项卡。](./media/virtual-machines-common-move-vm/move-button.png)
@@ -22,7 +22,7 @@
 
 可以使用门户将 VM 及其关联的资源移到其他资源组。
 
-1. 打开 [Azure 门户预览](https://portal.azure.cn)。
+1. 打开 [Azure 门户](https://portal.azure.cn)。
 2. 单击“浏览”>“资源组”，然后选择包含 VM 的资源组。
 3. 从“资源组”边栏选项卡上的菜单中选择“移动”。
 	

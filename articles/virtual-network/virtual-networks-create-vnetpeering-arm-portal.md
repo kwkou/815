@@ -1,6 +1,6 @@
 <properties
     pageTitle="Azure 虚拟网络对等互连 - 门户 | Azure"
-    description="了解如何使用 Azure 门户预览创建虚拟网络对等互连。"
+    description="了解如何使用 Azure 门户创建虚拟网络对等互连。"
     services="virtual-network"
     documentationcenter=""
     author="NarayanAnnamalai"
@@ -19,19 +19,19 @@
     ms.author="narayan;annahar" />  
 
 
-# 使用 Azure 门户预览创建虚拟网络对等互连
+# 使用 Azure 门户创建虚拟网络对等互连
 [AZURE.INCLUDE [virtual-networks-create-vnet-selectors-arm-include](../../includes/virtual-networks-create-vnetpeering-selectors-arm-include.md)]
 
 [AZURE.INCLUDE [virtual-networks-create-vnet-intro](../../includes/virtual-networks-create-vnetpeering-intro-include.md)]
 
 [AZURE.INCLUDE [virtual-networks-create-vnet-scenario-basic-include](../../includes/virtual-networks-create-vnetpeering-scenario-basic-include.md)]
 
-若要使用 Azure 门户预览基于方案创建 VNet 对等互连，请完成以下步骤：
+若要使用 Azure 门户基于方案创建 VNet 对等互连，请完成以下步骤：
 
 1. 从浏览器导航到 http://portal.azure.cn，根据需要使用 Azure 帐户登录。
-2. 若要建立 VNet 对等互连，需要在两个 VNet 之间创建两个链接，每个方向各一个。可先创建 VNet1 到 VNet2 的 VNet 对等互连链接。在 Azure 门户预览中，单击“浏览”> 选择“虚拟网络”
+2. 若要建立 VNet 对等互连，需要在两个 VNet 之间创建两个链接，每个方向各一个。可先创建 VNet1 到 VNet2 的 VNet 对等互连链接。在 Azure 门户中，单击“浏览”> 选择“虚拟网络”
 
-    ![在 Azure 门户预览中创建 VNet 对等互连](./media/virtual-networks-create-vnetpeering-arm-portal/figure01.png)  
+    ![在 Azure 门户中创建 VNet 对等互连](./media/virtual-networks-create-vnetpeering-arm-portal/figure01.png)  
 
 3. 在“虚拟网络”边栏选项卡中，选择“VNET1”，然后依次单击“对等互连”和“添加”，如下图所示：
 
@@ -92,7 +92,7 @@ VNet 对等互连中的每个链接都有上述属性集。在门户中，可以
     ![RBAC](./media/virtual-networks-create-vnetpeering-arm-portal/figure10.png)  
 
 
-5. 以用户 B 的身份登录到 Azure 门户预览，该用户是订阅 B 的特权用户。遵循上述步骤将用户 A 添加到“网络参与者”角色，如下图中所示：
+5. 以用户 B 的身份登录到 Azure 门户，该用户是订阅 B 的特权用户。遵循上述步骤将用户 A 添加到“网络参与者”角色，如下图中所示：
 
     ![RBAC2](./media/virtual-networks-create-vnetpeering-arm-portal/figure11.png)  
 

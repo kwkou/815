@@ -151,7 +151,7 @@
     DefaultPolicy        AzureVM            AzureVM              4/14/2016 5:00:00 PM
 
 > [AZURE.NOTE]
-> PowerShell 中 BackupTime 字段的时区是 UTC。 但是，在 Azure 门户预览中显示备份时间时，时间将根据本地时区调整。
+> PowerShell 中 BackupTime 字段的时区是 UTC。 但是，在 Azure 门户中显示备份时间时，时间将根据本地时区调整。
 >
 >
 

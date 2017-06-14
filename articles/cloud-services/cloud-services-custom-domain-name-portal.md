@@ -15,7 +15,7 @@
 # 为 Azure 云服务配置自定义域名
 
 > [AZURE.SELECTOR]
-- [Azure 门户预览](/documentation/articles/cloud-services-custom-domain-name-portal)
+- [Azure 门户](/documentation/articles/cloud-services-custom-domain-name-portal)
 - [Azure 经典管理门户](/documentation/articles/cloud-services-custom-domain-name)
 
 创建云服务时，Azure 会将其分配给 **chinacloudapp.cn** 的子域。例如，如果云服务名为“contoso”，用户将能够访问类似 http://contoso.chinacloudapp.cn 的 URL 上的应用程序。Azure 还会分配一个虚拟 IP 地址。
@@ -147,7 +147,7 @@ Azure 中的 IP 地址默认为动态 IP 地址。你可能想使用[保留 IP �
 [Expose Your Data on a Custom Domain]: #access-data
 [VIP swaps]: /documentation/articles/cloud-services-how-to-manage-portal/#how-to-swap-deployments-to-promote-a-staged-deployment-to-production
 [Create a CNAME record that associates the subdomain with the storage account]: #create-cname
-[Azure 门户预览]: https://portal.azure.cn
+[Azure 门户]: https://portal.azure.cn
 [vip]: ./media/cloud-services-custom-domain-name-portal/csvip.png
 [csurl]: ./media/cloud-services-custom-domain-name-portal/csurl.png
  

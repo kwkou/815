@@ -99,7 +99,7 @@ Azure 内部负载均衡器是一种面向 Azure 内部的负载均衡器。只�
 
 [使用 Azure 经典管理门户创建具有站点到站点 VPN 连接的虚拟网络](/documentation/articles/vpn-gateway-site-to-site-create/)
 
-[使用 Azure 门户预览和 Azure Resource Manager 创建具有站点到站点 VPN 连接的 VNET](/documentation/articles/vpn-gateway-howto-site-to-site-resource-manager-portal/)
+[使用 Azure 门户和 Azure Resource Manager 创建具有站点到站点 VPN 连接的 VNET](/documentation/articles/vpn-gateway-howto-site-to-site-resource-manager-portal/)
 
 [使用 PowerShell 和 Azure 资源管理器创建具有站点到站点 VPN 连接的虚拟网络](/documentation/articles/vpn-gateway-create-site-to-site-rm-powershell/)
 

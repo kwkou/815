@@ -22,7 +22,7 @@ ms.author="carlrab" />
 > [AZURE.SELECTOR]
 - [SSMS](/documentation/articles/sql-database-cloud-migrate-compatible-import-bacpac-ssms/)
 - [SqlPackage](/documentation/articles/sql-database-cloud-migrate-compatible-import-bacpac-sqlpackage/)
-- [Azure 门户预览](/documentation/articles/sql-database-import/)
+- [Azure 门户](/documentation/articles/sql-database-import/)
 - [PowerShell](/documentation/articles/sql-database-import-powershell/)
 
 本文说明如何使用 [SqlPackage](https://msdn.microsoft.com/zh-cn/library/hh550080.aspx) 命令行实用程序从 [BACPAC](https://msdn.microsoft.com/zh-cn/library/ee210546.aspx#Anchor_4) 文件导入到 SQL 数据库。此实用程序随 [SQL Server Management Studio](https://msdn.microsoft.com/zh-cn/library/mt238290.aspx) 和[用于 Visual Studio 的 SQL Server Data Tools](https://msdn.microsoft.com/zh-cn/library/mt204009.aspx) 的最新版本提供，也可直接从 Microsoft 下载中心下载 [SqlPackage](https://www.microsoft.com/zh-cn/download/details.aspx?id=53876) 的最新版本。

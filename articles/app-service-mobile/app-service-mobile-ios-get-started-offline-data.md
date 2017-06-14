@@ -256,7 +256,7 @@
 
 3. 查看远程 **TodoItem** 表的内容：
 
-    + 对于 Node.js 后端，请转到 [Azure 门户预览](https://portal.azure.cn/)，在移动应用后端中单击“简易表”>“TodoItem”。
+    + 对于 Node.js 后端，请转到 [Azure 门户](https://portal.azure.cn/)，在移动应用后端中单击“简易表”>“TodoItem”。
    	+ 对于 .NET 后端，请使用 SQL 工具（如 SQL Server Management Studio）或 REST 客户端（如 Fiddler 或 Poistman）。
 
 4. 验证新项是否*未*同步到服务器。

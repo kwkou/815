@@ -27,7 +27,7 @@
 
 本教程说明如何为 [Azure 应用服务]应用配置连续部署工作流。 将应用服务与 BitBucket 和 GitHub 集成可以实现一种连续部署工作流，在其中，Azure 可以从发布到其中一种服务的项目中拉取最近的更新。 连续部署选项非常适合用于频繁集成多个分发内容的项目。
 
-若要了解如何通过 Azure 门户预览中未列出的云存储库（如 [GitLab](https://gitlab.com/)）手动配置连续部署，请参阅 [Setting up continuous deployment using manual steps](https://github.com/projectkudu/kudu/wiki/Continuous-deployment#setting-up-continuous-deployment-using-manual-steps)（使用手动步骤设置连续部署）。
+若要了解如何通过 Azure 门户中未列出的云存储库（如 [GitLab](https://gitlab.com/)）手动配置连续部署，请参阅 [Setting up continuous deployment using manual steps](https://github.com/projectkudu/kudu/wiki/Continuous-deployment#setting-up-continuous-deployment-using-manual-steps)（使用手动步骤设置连续部署）。
 
 ## <a name="overview"></a>启用连续部署
 若要启用连续部署，请执行以下操作：
@@ -36,7 +36,7 @@
 
     若要深入了解如何将项目发布到这些服务，请参阅[创建存储库 (GitHub)]。 以下步骤仅适用于 GitHub 存储库。 有关 GitHub 以外的存储库，请参阅 [手动触发部署](https://github.com/projectkudu/kudu/wiki/Manually-triggering-a-deployment) 以设置 Webhook。
 
-2. 访问 [Azure 门户预览]，在你的应用的菜单边栏选项卡中单击“应用部署”>“部署选项”。 单击“选择源”，然后选择“外部存储库”。
+2. 访问 [Azure 门户]，在你的应用的菜单边栏选项卡中单击“应用部署”>“部署选项”。 单击“选择源”，然后选择“外部存储库”。
 2. 输入 GitHub 存储库的 URL 并输入要跟踪的分支。 将“存储库类型”保留为“Git”，并单击“确定”
 
     > [AZURE.NOTE]
@@ -50,7 +50,7 @@
 
 5. 在 GitHub 存储库页面上，单击“设置”，选择“Webhook 与服务”，然后单击“添加 Webhook”
 6. 在“有效负载 URL”中，输入 `https://$<YOUR_WEB_APP>:<SOME_BIG_RANDOM_TOKEN>@<YOUR_WEB_APP>.scm.chinacloudsites.cn/deploy`，按原样保留所有其他项目，然后单击“添加 Webhook”以保存新的 Webhook。
-5. 若要验证是否已成功部署应用，请在 Azure 门户预览的应用边栏选项卡顶部单击“URL”。
+5. 若要验证是否已成功部署应用，请在 Azure 门户的应用边栏选项卡顶部单击“URL”。
 6. 若要验证是否能够在从所选存储库进行连续部署，请将更改推送到该存储库。 推送到存储库完成后，你的应用应该很快更新以反映更改。 可在应用的“部署选项”边栏选项卡中验证是否已拉取更新。
 
 ## <a name="VSsolution"></a>连续部署 Visual Studio 解决方案
@@ -71,7 +71,7 @@
 ## <a name="disableCD"></a>禁用连续部署
 若要禁用连续部署，请执行以下操作：
 
-1. 访问 [Azure 门户预览]，在你的应用的菜单边栏选项卡中单击“应用部署”>“部署选项”。 然后单击“部署选项”边栏选项卡中的“断开连接”。
+1. 访问 [Azure 门户]，在你的应用的菜单边栏选项卡中单击“应用部署”>“部署选项”。 然后单击“部署选项”边栏选项卡中的“断开连接”。
 
     ![](./media/app-service-continuous-deployment/cd_disconnect.png)
 2. 在显示确认消息时点击“是”后，若要从其他源设置发布，可返回到应用边栏选项卡，再单击“应用部署”>“部署选项”。
@@ -85,7 +85,7 @@
 * [Use Azure to automatically generate a CI/CD pipeline to deploy an ASP.NET 4 app](https://www.visualstudio.com/docs/build/get-started/aspnet-4-ci-cd-azure-automatic)（使用 Azure 自动生成部署 ASP.NET 4 应用的 CI/CD 管道）
 
 [Azure 应用服务]: /documentation/articles/app-service-changes-existing-services/
-[Azure 门户预览]: https://portal.azure.cn
+[Azure 门户]: https://portal.azure.cn
 [VSTS Portal]: https://www.visualstudio.com/products/visual-studio-team-services-vs.aspx
 [Installing Git]: http://git-scm.com/book/zh/v2/%E8%B5%B7%E6%AD%A5-%E5%AE%89%E8%A3%85-Git
 [如何使用适用于 Azure 的 PowerShell]: https://docs.microsoft.com/zh-cn/powershell/azureps-cmdlets-docs

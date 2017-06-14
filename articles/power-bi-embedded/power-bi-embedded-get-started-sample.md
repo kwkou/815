@@ -35,7 +35,7 @@
 - [JavaScript 报表嵌入示例](https://microsoft.github.io/PowerBI-JavaScript/demo)
 
 > [AZURE.NOTE] 
-> 需要先在 Azure 订阅中创建至少一个 **工作区集合** 才能配置和运行 Power BI Embedded 入门示例。 若要了解如何在 Azure 门户预览中创建**工作区集合**，请参阅 [Power BI Embedded 入门](/documentation/articles/power-bi-embedded-get-started/)。
+> 需要先在 Azure 订阅中创建至少一个 **工作区集合** 才能配置和运行 Power BI Embedded 入门示例。 若要了解如何在 Azure 门户中创建**工作区集合**，请参阅 [Power BI Embedded 入门](/documentation/articles/power-bi-embedded-get-started/)。
 
 ## <a name="configure-the-sample-app"></a>配置示例应用
 
@@ -57,10 +57,10 @@
 5. 要预配新的**工作区**，请选择选项 5“在现有工作区集合中预配新的工作区”。
 
     ![](./media/powerbi-embedded-get-started-sample/console-option-5.png)
-6. 输入**工作区集合**名称和**访问密钥**。 可以通过 **Azure 门户预览**获取这些信息。 若要详细了解如何获取**访问密钥**，请参阅“Power BI Embedded 入门”中的[查看 Power BI API 访问密钥](/documentation/articles/power-bi-embedded-get-started/#view-power-bi-api-access-keys/)。
+6. 输入**工作区集合**名称和**访问密钥**。 可以通过 **Azure 门户**获取这些信息。 若要详细了解如何获取**访问密钥**，请参阅“Power BI Embedded 入门”中的[查看 Power BI API 访问密钥](/documentation/articles/power-bi-embedded-get-started/#view-power-bi-api-access-keys/)。
 
     ![](./media/powerbi-embedded-get-started-sample/azure-portal.png)
-7. 复制并保存新创建的 **工作区 ID** 以便在本文后面部分使用。 创建**工作区 ID** 之后，可以在 **Azure 门户预览**中找到该数据。
+7. 复制并保存新创建的 **工作区 ID** 以便在本文后面部分使用。 创建**工作区 ID** 之后，可以在 **Azure 门户**中找到该数据。
 
     ![](./media/powerbi-embedded-get-started-sample/workspace-id.png)
 8. 若要将 PBIX 文件导入到**工作区**，请选择选项 **6**, “将 PBIX 文件导入到现有工作区”。 如果没有现有的 PBIX 文件，则可以下载 [Retail Analysis Sample PBIX](http://go.microsoft.com/fwlink/?LinkID=780547)（零售分析示例 PBIX）。

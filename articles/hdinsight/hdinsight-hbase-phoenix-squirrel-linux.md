@@ -37,7 +37,7 @@
 在使用 SQLLine 之前，必须先准备好以下各项：
 
 * **HDInsight 中的 HBase 群集**。 有关预配 HBase 群集的信息，请参阅 [HDInsight 中的 Apache HBase 入门][hdinsight-hbase-get-started]。
-* **通过远程桌面协议连接到 HBase 群集**。 有关说明，请参阅 [使用 Azure 门户预览管理 HDInsight 中的 Hadoop 群集][hdinsight-manage-portal]。
+* **通过远程桌面协议连接到 HBase 群集**。 有关说明，请参阅 [使用 Azure 门户管理 HDInsight 中的 Hadoop 群集][hdinsight-manage-portal]。
 
 在连接到 HBase 群集时，你需要连接到 Zookeeper 之一。 每个 HDInsight 群集有 3 个 Zookeeper。
 

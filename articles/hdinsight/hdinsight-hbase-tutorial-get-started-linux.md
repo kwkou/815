@@ -40,7 +40,7 @@
 ## <a name="create-hbase-cluster"></a>创建 HBase 群集
 以下过程使用 Azure Resource Manager 模板创建 3.5 版基于 Linux 的 HBase 群集和从属默认 Azure 存储帐户。 若要了解该过程与其他群集创建方法中使用的参数，请参阅 [在 HDInsight 中创建基于 Linux 的 Hadoop 群集](/documentation/articles/hdinsight-hadoop-provision-linux-clusters/)。
 
-1. 单击下面的图像可在 Azure 门户预览中打开模板。 模板位于公共 blob 容器中。 
+1. 单击下面的图像可在 Azure 门户中打开模板。 模板位于公共 blob 容器中。 
 
     <a href="https://portal.azure.cn/#create/Microsoft.Template/uri/https%3A%2F%2Fhditutorialdata.blob.core.windows.net%2Farmtemplates%2Fcreate-linux-based-hbase-cluster-in-hdinsight.json" target="_blank"><img src="./media/hdinsight-hbase-tutorial-get-started-linux/deploy-to-azure.png" alt="Deploy to Azure"></a>
 

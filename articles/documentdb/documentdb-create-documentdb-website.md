@@ -60,7 +60,7 @@
 > 
 > 
 
-1. 登录到 [Azure 门户预览](https://portal.azure.cn)，单击“新建”并搜索“模板部署”。
+1. 登录到 [Azure 门户](https://portal.azure.cn)，单击“新建”并搜索“模板部署”。
     ![模板部署 UI 的屏幕截图](./media/documentdb-create-documentdb-website/TemplateDeployment1.png)
 2. 选择模板部署项目，然后单击 “创建”****
     ![模板部署 UI 的屏幕快照](./media/documentdb-create-documentdb-website/TemplateDeployment2.png)
@@ -77,14 +77,14 @@
 5. 选择现有的资源组或提供名称以创建新的资源组，然后选择资源组的位置。
 
     ![模板部署 UI 的屏幕截图](./media/documentdb-create-documentdb-website/TemplateDeployment5.png)
-6. 依次单击“查看法律条款”、“购买”和“创建”以开始部署。   选择“固定到仪表板”，让生成的部署轻松显示在 Azure 门户预览的主页上。
+6. 依次单击“查看法律条款”、“购买”和“创建”以开始部署。   选择“固定到仪表板”，让生成的部署轻松显示在 Azure 门户的主页上。
    ![模板部署 UI 的屏幕截图](./media/documentdb-create-documentdb-website/TemplateDeployment6.png)
 7. 部署完成后，将会打开“资源组”边栏选项卡。
    ![资源组边栏选项卡的屏幕截图](./media/documentdb-create-documentdb-website/TemplateDeployment7.png)  
 8. 若要使用应用程序，只需导航到 Web 应用 URL（上述示例中的 URL 是 http://mydemodocdbwebapp.chinacloudsites.cn）。  你会看到下列 Web 应用程序：
    
 	![示例待办事项应用程序](./media/documentdb-create-documentdb-website/image2.png)
-9. 继续在 Web 应用中创建几个任务，然后返回到 Azure 门户预览中的资源组边栏选项卡。 单击“资源”列表中的“DocumentDB 帐户”资源，然后单击“查询浏览器”。
+9. 继续在 Web 应用中创建几个任务，然后返回到 Azure 门户中的资源组边栏选项卡。 单击“资源”列表中的“DocumentDB 帐户”资源，然后单击“查询浏览器”。
     ![屏幕截图：突出显示 myotherdocumentdbwebapp Web 应用的“摘要”可重用功能区](./media/documentdb-create-documentdb-website/TemplateDeployment8.png)  
 10. 运行默认查询“SELECT * FROM c”，并检查结果。  请注意，查询已检索在上面的步骤 7 中创建的待办事项的 JSON 表示形式。  任意尝试查询；例如，尝试运行 SELECT * FROM c WHERE c.isComplete = true，以返回所有标记为完成的待办事项。
     
@@ -99,7 +99,7 @@
 > 
 > 
 
-1. 在 [Azure 门户预览](https://portal.azure.cn)中，单击“新建”并搜索“模板部署”。
+1. 在 [Azure 门户](https://portal.azure.cn)中，单击“新建”并搜索“模板部署”。
     ![模板部署 UI 的屏幕截图](./media/documentdb-create-documentdb-website/TemplateDeployment1.png)
 2. 选择模板部署项目，然后单击 “创建”****
     ![模板部署 UI 的屏幕快照](./media/documentdb-create-documentdb-website/TemplateDeployment2.png)
@@ -116,7 +116,7 @@
 5. 选择现有的资源组或提供名称以创建新的资源组，然后选择资源组的位置。
 
     ![模板部署 UI 的屏幕截图](./media/documentdb-create-documentdb-website/TemplateDeployment5.png)
-6. 依次单击“查看法律条款”、“购买”和“创建”以开始部署。   选择“固定到仪表板”，让生成的部署轻松显示在 Azure 门户预览的主页上。
+6. 依次单击“查看法律条款”、“购买”和“创建”以开始部署。   选择“固定到仪表板”，让生成的部署轻松显示在 Azure 门户的主页上。
    ![模板部署 UI 的屏幕截图](./media/documentdb-create-documentdb-website/TemplateDeployment6.png)
 7. 部署完成后，将会打开“资源组”边栏选项卡。
    ![资源组边栏选项卡的屏幕截图](./media/documentdb-create-documentdb-website/TemplateDeployment7.png)  
@@ -125,7 +125,7 @@
 9. 注意出现的 DocumentDB 终结点和每个 DocumentDB 主密钥的应用程序设置。
 
     ![应用程序设置的屏幕截图](./media/documentdb-create-documentdb-website/TemplateDeployment10.png)  
-10. 继续随意浏览 Azure 门户预览，或按照其中一个 DocumentDB [示例](/documentation/articles/documentdb-dotnet-samples/)来创建自己的 DocumentDB 应用程序。
+10. 继续随意浏览 Azure 门户，或按照其中一个 DocumentDB [示例](/documentation/articles/documentdb-dotnet-samples/)来创建自己的 DocumentDB 应用程序。
 
 
 ## <a name="next-steps"></a><a name="NextSteps"></a>后续步骤

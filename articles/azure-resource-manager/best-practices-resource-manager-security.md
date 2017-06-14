@@ -327,6 +327,6 @@ NRP 上支持 ExpressRoute 时，你就可以将 Azure 环境配置为使用强�
 * 若要了解如何设置安全主体，以便通过正确的访问权限来使用组织中的资源，请参阅[通过 Azure 资源管理器对服务主体进行身份验证](/documentation/articles/resource-group-authenticate-service-principal/)
 * 如果你需要锁定对资源的访问，则可使用管理锁。请参阅[使用 Azure 资源管理器锁定资源](/documentation/articles/resource-group-lock-resources/)
 * 若要配置路由和 IP 转发，请参阅[在 Resource Manager 中使用模板创建用户定义的路由 (UDR)](/documentation/articles/virtual-network-create-udr-arm-template/)
-* 有关基于角色的访问控制的概述，请参阅 [Azure 门户预览中基于角色的访问控制](/documentation/articles/role-based-access-control-configure/)
+* 有关基于角色的访问控制的概述，请参阅 [Azure 门户中基于角色的访问控制](/documentation/articles/role-based-access-control-configure/)
 
 <!---HONumber=Mooncake_1219_2016-->

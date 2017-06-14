@@ -80,7 +80,7 @@
 5. 用户授予许可后，授权代码将返回到你的应用程序，应用程序可凭此获取访问令牌和刷新令牌。有关此流程的详细信息，请参阅 [Azure AD 的身份验证方案](/documentation/articles/active-directory-authentication-scenarios/)主题中的[从 Web 应用程序到 Web API](/documentation/articles/active-directory-authentication-scenarios/#web-application-to-web-api/) 部分。
 
 ### 将客户端应用程序配置为访问 Web API
-为使 Web/机密客户端应用程序能够参与要求身份验证的授权流程（以及获取访问令牌），必须建立安全凭据。Azure 门户预览支持的默认身份验证方法是客户端 ID + 对称密钥。本部分介绍需要执行哪些配置步骤来提供客户端凭据的机密密钥。
+为使 Web/机密客户端应用程序能够参与要求身份验证的授权流程（以及获取访问令牌），必须建立安全凭据。Azure 门户支持的默认身份验证方法是客户端 ID + 对称密钥。本部分介绍需要执行哪些配置步骤来提供客户端凭据的机密密钥。
 
 在此，在客户端访问资源应用程序公开的 Web API（例如 Azure AD 图形 API）之前，同意框架将确保客户端根据请求的权限获取所需的授权。默认情况下，所有应用程序可以从 Azure Active Directory（图形 API）和 Azure 服务管理 API 中选择权限，并且已选择 Azure AD 的“启用登录并读取用户的配置文件”权限。如果客户端应用程序已在 Office 365 Azure AD 租户中注册，则也可以选择 SharePoint 与 Exchange Online 的 Web API 和权限。可以从所需 Web API 旁边的下拉菜单中的[两种类型的权限](/documentation/articles/active-directory-dev-glossary/#permissions/)中进行选择：
 

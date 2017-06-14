@@ -83,7 +83,7 @@ Azure Redis 缓存非常容易上手。 若要开始使用，需要首先设置�
 
 到 Azure Redis 缓存的连接由 `ConnectionMultiplexer` 类管理。 此类应共享并在客户端应用程序中重复使用，不需要在每次执行操作的基础上创建。 
 
-若要连接到 Azure Redis 缓存并返回连接的 `ConnectionMultiplexer` 的实例，请调用静态 `Connect` 方法并传入缓存终结点和密钥。 使用从 Azure 门户预览生成的密钥作为密码参数。
+若要连接到 Azure Redis 缓存并返回连接的 `ConnectionMultiplexer` 的实例，请调用静态 `Connect` 方法并传入缓存终结点和密钥。 使用从 Azure 门户生成的密钥作为密码参数。
 
     ConnectionMultiplexer connection = ConnectionMultiplexer.Connect("contoso5.redis.cache.chinacloudapi.cn,abortConnect=false,ssl=true,password=...");
 
@@ -190,7 +190,7 @@ Azure Redis 缓存可以缓存 .NET 对象以及基元数据类型，但在缓�
 * 了解 Azure Redis 缓存的 ASP.NET 提供程序。
     * [Azure Redis 会话状态提供程序](/documentation/articles/cache-aspnet-session-state-provider/)
     * [Azure Redis 缓存 ASP.NET 输出缓存提供程序](/documentation/articles/cache-aspnet-output-cache-provider/)
-* [启用缓存诊断](/documentation/articles/cache-how-to-monitor/#enable-cache-diagnostics)，以便可以[监视](/documentation/articles/cache-how-to-monitor/)缓存的运行状况。 可以在 Azure 门户预览中查看指标，也可以使用所选的工具 [下载和查看](https://github.com/rustd/RedisSamples/tree/master/CustomMonitoring) 这些指标。
+* [启用缓存诊断](/documentation/articles/cache-how-to-monitor/#enable-cache-diagnostics)，以便可以[监视](/documentation/articles/cache-how-to-monitor/)缓存的运行状况。 可以在 Azure 门户中查看指标，也可以使用所选的工具 [下载和查看](https://github.com/rustd/RedisSamples/tree/master/CustomMonitoring) 这些指标。
 * 查看 [StackExchange.Redis 缓存客户端文档][StackExchange.Redis cache client documentation]。
     * 可以从许多 Redis 客户端和开发语言访问 azure Redis 缓存。 有关详细信息，请参阅 [http://redis.io/clients][http://redis.io/clients]。
 * Azure Redis 缓存还可与第三方服务和工具搭配使用，如 Redsmin 和 Redis Desktop Manager。

@@ -1,6 +1,6 @@
 <properties
-    pageTitle="Azure 门户预览：SQL 数据库动态数据屏蔽 | Azure"
-    description="如何开始在 Azure 门户预览中使用 SQL 数据库动态数据屏蔽"
+    pageTitle="Azure 门户：SQL 数据库动态数据屏蔽 | Azure"
+    description="如何开始在 Azure 门户中使用 SQL 数据库动态数据屏蔽"
     services="sql-database"
     documentationcenter=""
     author="ronitr"
@@ -19,13 +19,13 @@
     ms.author="ronitr; ronmat" />  
 
 
-# 使用 Azure 门户预览进行 SQL 数据库动态数据屏蔽入门
+# 使用 Azure 门户进行 SQL 数据库动态数据屏蔽入门
 
-本主题介绍如何通过 Azure 门户预览实现[动态数据屏蔽](/documentation/articles/sql-database-dynamic-data-masking-get-started/)。也可使用 [Azure SQL 数据库 cmdlet](https://msdn.microsoft.com/zh-cn/library/azure/mt574084.aspx) 或 [REST API](https://msdn.microsoft.com/zh-cn/library/dn505719.aspx) 实现动态数据屏蔽。
+本主题介绍如何通过 Azure 门户实现[动态数据屏蔽](/documentation/articles/sql-database-dynamic-data-masking-get-started/)。也可使用 [Azure SQL 数据库 cmdlet](https://msdn.microsoft.com/zh-cn/library/azure/mt574084.aspx) 或 [REST API](https://msdn.microsoft.com/zh-cn/library/dn505719.aspx) 实现动态数据屏蔽。
 
 
-## 使用 Azure 门户预览为数据库设置动态数据掩码
-1. 启动 Azure 门户预览 ([https://portal.azure.cn](https://portal.azure.cn))。
+## 使用 Azure 门户为数据库设置动态数据掩码
+1. 启动 Azure 门户 ([https://portal.azure.cn](https://portal.azure.cn))。
 2. 导航到你要掩码的敏感数据所在数据库的设置边栏选项卡。
 3. 单击“动态数据掩码”磁贴，这会启动“动态数据掩码”配置边栏选项卡。
    

@@ -96,7 +96,7 @@ Azure 应用程序网关会通过基本或自定义运行状况探测，自动�
 
 对于其终结点，应用程序网关在配置时可以拥有公共 IP、专用 IP 或同时拥有两者。 应用程序网关在其自己的子网中的虚拟网络内进行配置。 为应用程序网关创建或使用的子网不能包含任何其他类型的资源，子网中唯一允许使用的资源是其他应用程序网关。 若要保护后端资源，可以将后端服务器放在与应用程序网关位于同一虚拟网络中的其他子网内。 后端应用程序不需要这个附加的子网，只要应用程序网关可以连接到 IP 地址，应用程序网关就能够为后端服务器提供 ADC 功能。 
 
-可以使用 REST API、PowerShell cmdlet、Azure CLI 或 [Azure 门户预览](https://portal.azure.cn/)来创建和管理应用程序网关。 有关应用程序网关的其他问题，请查看[应用程序网关常见问题](/documentation/articles/application-gateway-faq/)中所列的常见问题列表。
+可以使用 REST API、PowerShell cmdlet、Azure CLI 或 [Azure 门户](https://portal.azure.cn/)来创建和管理应用程序网关。 有关应用程序网关的其他问题，请查看[应用程序网关常见问题](/documentation/articles/application-gateway-faq/)中所列的常见问题列表。
 
 ## <a name="pricing"></a>定价
 

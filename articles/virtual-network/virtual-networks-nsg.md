@@ -124,7 +124,7 @@ NSG 包含两组规则：入站规则和出站规则。 在每组中，规则的
 
 | 部署工具 | 经典 | 资源管理器 |
 | --- | --- | --- |
-| Azure 门户预览   | 是 | [是](/documentation/articles/virtual-networks-create-nsg-arm-pportal/) |
+| Azure 门户   | 是 | [是](/documentation/articles/virtual-networks-create-nsg-arm-pportal/) |
 | PowerShell     | [是](/documentation/articles/virtual-networks-create-nsg-classic-ps/) | [是](/documentation/articles/virtual-networks-create-nsg-arm-ps/) |
 | Azure CLI **V1**   | [是](/documentation/articles/virtual-networks-create-nsg-classic-cli/) | [是](/documentation/articles/virtual-networks-create-nsg-cli-nodejs/) |
 | Azure CLI **V2**   | 否 | [是](/documentation/articles/virtual-networks-create-nsg-arm-cli/) |

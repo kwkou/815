@@ -45,7 +45,7 @@ Azure 虚拟网络 (VNet) 是你自己的网络在云中的表示形式。它是
 ### 要使用哪些工具创建 VNet？
 可以使用以下工具创建或配置 VNet：
 
-* Azure 门户预览（用于经典 VNet 和 Resource Manager VNet）。
+* Azure 门户（用于经典 VNet 和 Resource Manager VNet）。
 * 网络配置文件（netcfg - 仅用于经典 VNet）。请参阅[使用网络配置文件配置 VNet](/documentation/articles/virtual-networks-using-network-configuration-file/) 一文。
 * PowerShell（用于经典 VNet 和 Resource Manager VNet）。
 * Azure CLI（用于经典 VNet 和 Resource Manager VNet）。
@@ -153,7 +153,7 @@ Azure 提供的 DNS 是由 Azure.cn 提供的多租户 DNS 服务。Azure 在此
 可以，但不建议这样做。如果分配给 Azure VM 中的 NIC 的 IP 地址会发生变化，在 VM 的操作系统中手动更改 NIC 的 IP 地址可能会导致与 VM 断开连接。
 
 ### 如果在操作系统中停止云服务部署槽或关闭 VM，IP 地址会发生什么情况？
-无变化。IP 地址（公共 VIP、公共和专用）将保留分配给该云服务部署槽或 VM。仅当停止（解除分配）或删除 VM，或者删除云服务部署槽时，才会释放动态地址。在 Azure 门户预览中单击 VM 对应的“停止”按钮会将其状态设置为“已停止(已解除分配)”。在这种情况下，VM 将会丢失其 IP 地址。
+无变化。IP 地址（公共 VIP、公共和专用）将保留分配给该云服务部署槽或 VM。仅当停止（解除分配）或删除 VM，或者删除云服务部署槽时，才会释放动态地址。在 Azure 门户中单击 VM 对应的“停止”按钮会将其状态设置为“已停止(已解除分配)”。在这种情况下，VM 将会丢失其 IP 地址。
 
 ### 在无需重新部署的情况下，是否可以将 VM 从一个子网移动到 VNet 中的另一个子网？
 可以。可在[如何将 VM 或角色实例移到其他子网](/documentation/articles/virtual-networks-move-vm-role-to-subnet/)一文中找到详细信息。
@@ -201,7 +201,7 @@ VNet 相互之间以及与 Azure 基础结构中托管的其他服务之间完�
 
 ### 是否有 VNet 的工具支持？
 是的。详细了解以下操作：
-- 使用 Azure 门户预览通过 [Azure Resource Manager](/documentation/articles/virtual-networks-create-vnet-arm-pportal/) 和[经典](/documentation/articles/virtual-networks-create-vnet-classic-pportal/)部署模型部署 VNet。
+- 使用 Azure 门户通过 [Azure Resource Manager](/documentation/articles/virtual-networks-create-vnet-arm-pportal/) 和[经典](/documentation/articles/virtual-networks-create-vnet-classic-pportal/)部署模型部署 VNet。
 - 使用 PowerShell 来管理通过 [Resource Manager](https://docs.microsoft.com/powershell/resourcemanager/azurerm.network/v3.1.0/azurerm.network) 和[经典](https://docs.microsoft.com/powershell/servicemanagement/azure.networking/v3.1.0/azure.networking)部署模型部署的 VNet。
 - 使用 [Azure 命令行接口 (CLI)](/documentation/articles/azure-cli-arm-commands/#azure-network-commands-to-manage-network-resources) 来管理通过这两种部署模型部署的 VNet。
 

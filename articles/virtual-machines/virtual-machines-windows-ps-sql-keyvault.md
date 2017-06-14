@@ -37,12 +37,12 @@ SQL Server 加密功能多种多样，包括[透明数据加密 \(TDE\)](https:/
 为现有 VM 预配或配置 AKV 集成时可以启用该集成。
 
 ### 新的 VM
-如果要使用 Resource Manager 预配新的 SQL Server 虚拟机，Azure 门户预览提供了启用 Azure Key Vault 集成的步骤。Azure 密钥保管库功能仅适用于 SQL Server 的企业版、开发人员版和评估版。
+如果要使用 Resource Manager 预配新的 SQL Server 虚拟机，Azure 门户提供了启用 Azure Key Vault 集成的步骤。Azure 密钥保管库功能仅适用于 SQL Server 的企业版、开发人员版和评估版。
 
 ![SQL Azure 密钥保管库集成](./media/virtual-machines-windows-ps-sql-keyvault/azure-sql-arm-akv.png)  
 
 
-有关预配的详细演练，请参阅 [Provision a SQL Server virtual machine in the Azure Portal Preview](/documentation/articles/virtual-machines-windows-portal-sql-server-provision/)（在 Azure 门户预览中预配 SQL Server 虚拟机）。
+有关预配的详细演练，请参阅 [Provision a SQL Server virtual machine in the Azure Portal Preview](/documentation/articles/virtual-machines-windows-portal-sql-server-provision/)（在 Azure 门户中预配 SQL Server 虚拟机）。
 
 ### 现有 VM
 对于现有的 SQL Server 虚拟机，请选择你的 SQL Server 虚拟机。然后选择“设置”边栏选项卡的“SQL Server 配置”部分。

@@ -112,7 +112,7 @@
 
 事件中心是此示例的数据源。 按照下列步骤创建一个事件中心。
 
-1. 从 [Azure 门户预览](https://portal.azure.cn)选择“+ 新建” -> “物联网” -> “事件中心”。
+1. 从 [Azure 门户](https://portal.azure.cn)选择“+ 新建” -> “物联网” -> “事件中心”。
 2. 在“创建命名空间”边栏选项卡上，执行以下任务： 
 
     1. 输入命名空间的**名称**。
@@ -256,7 +256,7 @@
 
 本文档使用的 Resource Manager 模板位于 **https://hditutorialdata.blob.core.windows.net/armtemplates/create-linux-based-hbase-storm-cluster-in-vnet.json**.的公共 blob 容器上。
 
-1. 单击以下按钮登录到 Azure，然后在 Azure 门户预览中打开 Resource Manager 模板。
+1. 单击以下按钮登录到 Azure，然后在 Azure 门户中打开 Resource Manager 模板。
 
     <a href="https://portal.azure.cn/#create/Microsoft.Template/uri/https%3A%2F%2Fhditutorialdata.blob.core.windows.net%2Farmtemplates%2Fcreate-linux-based-hbase-storm-cluster-in-vnet-3.5.json" target="_blank"><img src="./media/hdinsight-storm-sensor-data-analysis/deploy-to-azure.png" alt="Deploy to Azure"></a>
 

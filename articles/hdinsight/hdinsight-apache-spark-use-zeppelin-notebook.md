@@ -39,10 +39,10 @@
 * HDInsight 上的 Apache Spark 群集。 有关说明，请参阅[在 Azure HDInsight 中创建 Apache Spark 群集](/documentation/articles/hdinsight-apache-spark-jupyter-spark-sql/)。
 
 ## <a name="install-zeppelin-on-a-spark-cluster"></a>在 Spark 群集上安装 Zeppelin
-可以使用脚本操作在 Spark 群集上安装 Zeppelin。 脚本操作使用自定义脚本在群集上安装默认情况下未提供的组件。 可以使用自定义脚本，通过 Azure 门户预览、HDInsight .NET SDK 或 Azure PowerShell 安装 Zeppelin。 可以在创建群集过程中或者在群集已启动并运行之后使用脚本安装 Zeppelin。 以下部分中的链接提供了有关如何执行此操作的说明。
+可以使用脚本操作在 Spark 群集上安装 Zeppelin。 脚本操作使用自定义脚本在群集上安装默认情况下未提供的组件。 可以使用自定义脚本，通过 Azure 门户、HDInsight .NET SDK 或 Azure PowerShell 安装 Zeppelin。 可以在创建群集过程中或者在群集已启动并运行之后使用脚本安装 Zeppelin。 以下部分中的链接提供了有关如何执行此操作的说明。
 
-### <a name="using-the-azure-portal-preview"></a>使用 Azure 门户预览
-有关如何使用 Azure 门户预览运行脚本操作安装 Zeppelin 的说明，请参阅[使用脚本操作自定义 HDInsight 群集](/documentation/articles/hdinsight-hadoop-customize-cluster-linux/#use-a-script-action-during-cluster-creation)。 必须对该文章中的说明做出一些更改。
+### <a name="using-the-azure-portal-preview"></a>使用 Azure 门户
+有关如何使用 Azure 门户运行脚本操作安装 Zeppelin 的说明，请参阅[使用脚本操作自定义 HDInsight 群集](/documentation/articles/hdinsight-hadoop-customize-cluster-linux/#use-a-script-action-during-cluster-creation)。 必须对该文章中的说明做出一些更改。
 
 * 必须使用脚本来安装 Zeppelin。 用于在 HDInsight 中的 Spark 群集上安装 Zeppelin 的自定义脚本可从以下链接获取：
 

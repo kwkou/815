@@ -1,5 +1,5 @@
 <properties
-    pageTitle="创建面向 Internet 的负载均衡器 - Azure 门户预览经典 | Azure"
+    pageTitle="创建面向 Internet 的负载均衡器 - Azure 门户经典 | Azure"
     description="了解如何使用 Azure 经典管理门户在经典部署模型中，创建面向 Internet 的负载均衡器"
     services="load-balancer"
     documentationcenter="na"

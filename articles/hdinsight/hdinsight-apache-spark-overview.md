@@ -40,7 +40,7 @@ HDInsight 上的 Spark 群集提供完全托管的 Spark 服务。 下面列出�
 
 | 功能 | 说明 |
 | --- | --- |
-| 方便创建 Spark 群集 |可以使用 Azure 门户预览、Azure PowerShell 或 HDInsight .NET SDK，在几分钟之内于 HDInsight 上创建新的 Spark 群集。 请参阅 [HDInsight 中的 Spark 群集入门](/documentation/articles/hdinsight-apache-spark-jupyter-spark-sql/) |
+| 方便创建 Spark 群集 |可以使用 Azure 门户、Azure PowerShell 或 HDInsight .NET SDK，在几分钟之内于 HDInsight 上创建新的 Spark 群集。 请参阅 [HDInsight 中的 Spark 群集入门](/documentation/articles/hdinsight-apache-spark-jupyter-spark-sql/) |
 | 易于使用 |HDInsight 中的 Spark 群集包括 Jupyter 和 Zeppelin Notebook。 你可以使用这些笔记本执行交互式数据处理和可视化。|
 | REST API |HDInsight 中的 Spark 群集包含 [Livy](https://github.com/cloudera/hue/tree/master/apps/spark/java#welcome-to-livy-the-rest-spark-server)，它是基于 REST-API 的 Spark 作业服务器，用于远程提交和监视作业。 |
 | 与 Azure 服务集成 |HDInsight 上的 Spark 群集随附了 Azure 事件中心的连接器。客户还可以使用事件中心来生成流式处理应用程序。 |

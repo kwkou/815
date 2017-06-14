@@ -81,10 +81,10 @@
    
     将程序包添加到项目后，我们已准备好开始编写一些代码。   
 
-## <a id="Config"></a>步骤 3：从 Azure 门户预览复制 DocumentDB 数据库的连接详细信息
-打开 [Azure 门户预览](https://portal.azure.cn)，浏览到已创建的 DocumentDB 数据库帐户。 下一步需要 Azure 门户预览中的 URI 和主要密钥，以便使用 C++ 代码片段建立连接。 
+## <a id="Config"></a>步骤 3：从 Azure 门户复制 DocumentDB 数据库的连接详细信息
+打开 [Azure 门户](https://portal.azure.cn)，浏览到已创建的 DocumentDB 数据库帐户。 下一步需要 Azure 门户中的 URI 和主要密钥，以便使用 C++ 代码片段建立连接。 
 
-![Azure 门户预览中的 DocumentDB URI 和密钥](./media/documentdb-cpp-get-started/nosql-tutorial-keys.png)
+![Azure 门户中的 DocumentDB URI 和密钥](./media/documentdb-cpp-get-started/nosql-tutorial-keys.png)
 
 ## <a id="Connect"></a>步骤 4：连接到 DocumentDB 帐户
 1. 将以下标头和命名空间添加到源代码的 `#include "stdafx.h"`后面。
@@ -135,7 +135,7 @@
       wcout << ex.message();
     }
 
-总而言之，此代码将创建可在 Azure 门户预览中使用文档资源管理器查询的 DocumentDB 数据库、集合与文档。 
+总而言之，此代码将创建可在 Azure 门户中使用文档资源管理器查询的 DocumentDB 数据库、集合与文档。 
 
 ![C++ 教程 - 说明帐户、数据库、集合和文档间层次关系的关系图](./media/documentdb-cpp-get-started/documentdbdocs.png)
 

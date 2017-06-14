@@ -1,6 +1,6 @@
 <properties
-    pageTitle="Azure 门户预览：将 Azure SQL 数据库还原到以前的时间点 | Azure"
-    description="使用 Azure 门户预览将 Azure SQL 数据库还原到以前的时间点"
+    pageTitle="Azure 门户：将 Azure SQL 数据库还原到以前的时间点 | Azure"
+    description="使用 Azure 门户将 Azure SQL 数据库还原到以前的时间点"
     documentationcenter=""
     author="stevestein"
     manager="jhubbard"
@@ -17,7 +17,7 @@
     ms.author="carlrab" />  
 
 
-# 使用 Azure 门户预览将 Azure SQL 数据库还原到之前的时间点
+# 使用 Azure 门户将 Azure SQL 数据库还原到之前的时间点
 
 本文介绍如何使用 PowerShell 将数据库从 [SQL 数据库自动备份](/documentation/articles/sql-database-automated-backups/)还原到以前的时间点。也可以[使用 PowerShell](/documentation/articles/sql-database-point-in-time-restore-powershell/) 执行此任务。
 
@@ -27,9 +27,9 @@
 有关教程，请参阅[开始使用备份和还原进行数据保护和恢复](/documentation/articles/sql-database-get-started-backup-recovery-portal/)
 >
 
-选择要在 Azure 门户预览中还原的数据库：
+选择要在 Azure 门户中还原的数据库：
 
-1. 打开 [Azure 门户预览](https://portal.azure.cn)。
+1. 打开 [Azure 门户](https://portal.azure.cn)。
 2. 在屏幕左侧，选择“更多服务”>“SQL 数据库”。
 3. 选择要还原的数据库。
 4. 在数据库页面的顶部，选择“还原”：

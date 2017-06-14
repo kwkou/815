@@ -60,7 +60,7 @@
 
 让我们继续：
 
- 1. 在 Mac 或 Windows 计算机上，在浏览器窗口中打开 [Azure 门户预览]。
+ 1. 在 Mac 或 Windows 计算机上，在浏览器窗口中打开 [Azure 门户]。
  2. 在移动应用的设置边栏选项卡上，单击“开始使用”（在“移动”下）>“Xamarin.Forms”。在步骤 3 下，单击“创建新应用”（如果尚未选择它）。接下来，单击“下载”按钮。
 
     此时会下载包含已连接到移动应用的客户端应用程序的项目。将压缩的项目文件保存到本地计算机，并记下保存位置。
@@ -180,6 +180,6 @@
 <!-- URLs. -->
 [Visual Studio Professional 2013]: https://www.visualstudio.com/downloads/download-visual-studio-vs
 [Mobile app SDK]: http://go.microsoft.com/fwlink/?LinkId=257545
-[Azure 门户预览]: https://portal.azure.cn/
+[Azure 门户]: https://portal.azure.cn/
 
 <!---HONumber=Mooncake_0919_2016-->

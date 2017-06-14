@@ -36,7 +36,7 @@
 开发 Batch 解决方案时，用户在 Azure 中使用以下帐户。
 
 - **Azure 帐户和订阅** - 如果还没有 Azure 订阅，可注册 [Azure 帐户][free_account]。 创建帐户时，系统为用户创建默认订阅。
-- **批处理帐户** - Azure Batch 资源（包括池、计算节点、作业和任务）都与 Azure 批处理帐户关联。 如果应用程序对 Batch 服务发出请求，它将使用 Azure 批处理帐户名称、帐户 URL 和访问密钥对请求进行身份验证。 可以在 Azure 门户预览中 [创建 Batch 帐户](/documentation/articles/batch-account-create-portal/) 。
+- **批处理帐户** - Azure Batch 资源（包括池、计算节点、作业和任务）都与 Azure 批处理帐户关联。 如果应用程序对 Batch 服务发出请求，它将使用 Azure 批处理帐户名称、帐户 URL 和访问密钥对请求进行身份验证。 可以在 Azure 门户中 [创建 Batch 帐户](/documentation/articles/batch-account-create-portal/) 。
 - **存储帐户** - Batch 提供的内置支持允许处理 [Azure 存储][azure_storage]中的文件。 几乎每个 Batch 方案都使用 Azure Blob 存储暂存任务所运行的程序及其处理的数据，以及存储任务生成的输出数据。 若要创建存储帐户，请参阅 [关于 Azure 存储帐户](/documentation/articles/storage-create-storage-account/)。
 
 ## <a name="batch-development-apis"></a>Batch 开发 API
@@ -70,8 +70,8 @@
 ## <a name="batch-tools"></a>Batch 工具
 以下是在生成和调试 Batch 应用程序和服务时可以使用的一些有用工具，虽然在使用 Batch 生成解决方案时并不需要这些工具。
 
-- [Azure 门户预览][portal]：可以在 Azure 门户预览的批处理边栏选项卡中创建、监视和删除批处理池、作业和任务。 用户运行作业时，可以查看这些资源和其他资源的状态信息，甚至从池中的计算节点下载文件（例如，在进行故障排除时下载失败任务的 `stderr.txt` ）。 用户还可以下载可用于登录到计算节点的远程桌面 (RDP) 文件。
-- [Azure 批处理资源管理器][batch_explorer]：批处理资源管理器提供与 Azure 门户预览类似的批处理资源管理功能，但位于独立的 Windows Presentation Foundation (WPF) 客户端应用程序中。 [GitHub][github_samples] 上提供的一个批处理 .NET 示例应用程序，用户可以使用 Visual Studio 2015 或更高版本生成它，然后在开发和调试批处理解决方案时，使用它浏览和管理批处理帐户中的资源。 可以查看作业、池和任务详细信息，从计算节点下载文件，以及使用可通过 Batch Explorer 下载的远程桌面 (RDP) 文件以远程方式连接到节点。
+- [Azure 门户][portal]：可以在 Azure 门户的批处理边栏选项卡中创建、监视和删除批处理池、作业和任务。 用户运行作业时，可以查看这些资源和其他资源的状态信息，甚至从池中的计算节点下载文件（例如，在进行故障排除时下载失败任务的 `stderr.txt` ）。 用户还可以下载可用于登录到计算节点的远程桌面 (RDP) 文件。
+- [Azure 批处理资源管理器][batch_explorer]：批处理资源管理器提供与 Azure 门户类似的批处理资源管理功能，但位于独立的 Windows Presentation Foundation (WPF) 客户端应用程序中。 [GitHub][github_samples] 上提供的一个批处理 .NET 示例应用程序，用户可以使用 Visual Studio 2015 或更高版本生成它，然后在开发和调试批处理解决方案时，使用它浏览和管理批处理帐户中的资源。 可以查看作业、池和任务详细信息，从计算节点下载文件，以及使用可通过 Batch Explorer 下载的远程桌面 (RDP) 文件以远程方式连接到节点。
 - [Azure 存储资源管理器][storage_explorer]：严格地说，虽然存储资源管理器不算是 Azure 批处理工具，但却是开发和调试批处理解决方案时的另一个很有用的工具。
 
 ## <a name="next-steps"></a>后续步骤

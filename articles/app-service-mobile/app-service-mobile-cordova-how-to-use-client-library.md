@@ -92,7 +92,7 @@ Azure 应用服务支持使用各种外部标识提供者（包括 Microsoft 帐
 
 请遵循以下说明将本地设置添加到配置中：
 
-1. 登录到 [Azure 门户预览]
+1. 登录到 [Azure 门户]
 2. 选择“所有资源”或“应用服务”，然后单击移动应用的名称。
 3. 单击“工具”
 4. 单击“观察”菜单中的“资源浏览器”，然后单击“转到”。会打开新窗口或选项卡。
@@ -111,7 +111,7 @@ Azure 应用服务支持使用各种外部标识提供者（包括 Microsoft 帐
 
 此时会保存设置。在保存完设置之前，请不要关闭浏览器窗口。同时将以下环回 URL 添加到应用服务的 CORS 设置：
 
-1. 登录到 [Azure 门户预览]。
+1. 登录到 [Azure 门户]。
 2. 选择“所有资源”或“应用服务”，然后单击移动应用的名称。
 3. “设置”边栏选项卡会自动打开。如果没有打开，请单击“所有设置”。
 4. 在“API”菜单下面单击“CORS”。
@@ -170,7 +170,7 @@ Azure 应用服务支持使用各种外部标识提供者（包括 Microsoft 帐
 
 <!-- URLs. -->
 
-[Azure 门户预览]: https://portal.azure.cn
+[Azure 门户]: https://portal.azure.cn
 [Azure Mobile Apps Quick Start]: /documentation/articles/app-service-mobile-cordova-get-started/
 [Get started with authentication]: /documentation/articles/app-service-mobile-cordova-get-started-users/
 [Add authentication to your app]: /documentation/articles/app-service-mobile-cordova-get-started-users/

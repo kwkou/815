@@ -47,18 +47,18 @@ Azure Active Directory (Azure AD) 是综合性的标识即服务 (IDaaS) 解决�
 
 Azure AD 付费型服务（例如企业移动性 + 安全性）可通过综合性的企业级管理和安全解决方案来弥补其他 Web 服务（例如 Office 365 和 Azure）的不足。
 - - -
-**问：为什么可以登录到 Azure 门户预览，但不能登录到 Azure 经典管理门户？**
+**问：为什么可以登录到 Azure 门户，但不能登录到 Azure 经典管理门户？**
 
-**答：**Azure 门户预览不需要有效的订阅，而经典管理门户则需要有效的订阅。  如果没有订阅，将无法登录到经典管理门户。
+**答：**Azure 门户不需要有效的订阅，而经典管理门户则需要有效的订阅。  如果没有订阅，将无法登录到经典管理门户。
 - - -
 **问：订阅管理员与目录管理员的区别是什么？**
 
-**答：** 默认情况下，当用户注册 Azure 时，系统会为其分配订阅管理员角色。 订阅管理员可以使用 Microsoft 帐户，也可以使用 Azure 订阅与之关联的目录中的工作或学校帐户。  此角色有权在 Azure 门户预览中管理服务。
+**答：** 默认情况下，当用户注册 Azure 时，系统会为其分配订阅管理员角色。 订阅管理员可以使用 Microsoft 帐户，也可以使用 Azure 订阅与之关联的目录中的工作或学校帐户。  此角色有权在 Azure 门户中管理服务。
 
 如果其他人需要使用同一个订阅登录和访问服务，则可将其添加为共同管理员。 此角色具有与服务管理员一样的访问特权，但不能更改订阅与 Azure 目录之间的关联关系。  有关订阅管理员的其他信息，请参阅 [Azure 订阅与 Azure Active Directory 的关联方式](/documentation/articles/active-directory-how-subscriptions-associated-directory/)。
 
 
-Azure AD 提供另一组管理员角色来管理与目录和标识相关的功能。  这些管理员将有权访问 Azure 门户预览或 Azure 经典管理门户中的各种功能。 管理员的角色决定了其所能执行的操作，例如创建或编辑用户、向其他用户分配管理角色、重置用户密码、管理用户许可证，或者管理域。  有关 Azure AD 目录管理员及其角色的其他信息，请参阅[在 Azure Active Directory 中分配管理员角色](/documentation/articles/active-directory-assign-admin-roles/)。
+Azure AD 提供另一组管理员角色来管理与目录和标识相关的功能。  这些管理员将有权访问 Azure 门户或 Azure 经典管理门户中的各种功能。 管理员的角色决定了其所能执行的操作，例如创建或编辑用户、向其他用户分配管理角色、重置用户密码、管理用户许可证，或者管理域。  有关 Azure AD 目录管理员及其角色的其他信息，请参阅[在 Azure Active Directory 中分配管理员角色](/documentation/articles/active-directory-assign-admin-roles/)。
 
 另外，Azure AD 付费型服务（例如企业移动性 + 安全性）可通过综合性的企业级管理和安全解决方案来弥补其他 Web 服务（例如 Office 365 和 Azure）的不足。
 

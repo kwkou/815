@@ -62,9 +62,9 @@ YARN 通过将资源管理与应用程序计划/监视分离，支持多种编�
     yarn logs -applicationId <applicationId> -appOwner <user-who-started-the-application> -containerId <containerId> -nodeAddress <worker-node-address>
 
 ## YARN ResourceManager UI
-YARN ResourceManager UI 在群集头节点上运行，可以通过 Azure 门户预览仪表板进行访问：
+YARN ResourceManager UI 在群集头节点上运行，可以通过 Azure 门户仪表板进行访问：
 
-1. 登录到 [Azure 门户预览](https://portal.azure.cn/)。
+1. 登录到 [Azure 门户](https://portal.azure.cn/)。
 2. 在左侧菜单中，依次单击“浏览”、“HDInsight 群集”，单击要访问其 YARN 应用程序日志的基于 Windows 的群集。
 3. 在顶部菜单中，单击“仪表板”。你将看到在新的浏览器标签页上打开一个称为“HDInsight 查询控制台”的页面。
 4. 在“HDInsight 查询控制台”中，单击“Yarn UI”。

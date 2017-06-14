@@ -69,14 +69,14 @@ HDInsight 群集附带了某些示例数据。 可使用以下两个示例：
     /tutorials/usesqoop/importeddata
 
 ## <a name="create-cluster-and-sql-database"></a>创建群集和 SQL 数据库
-本部分演示如何使用 Azure 门户预览和 Azure Resource Manager 模板创建群集、SQL 数据库和 SQL 数据库架构，以便运行教程。 可以在 [Azure 快速入门模板](https://github.com/Azure/azure-quickstart-templates/tree/master/101-hdinsight-linux-with-sql-database/)中找到模板。 Resource Manager 模板调用 bacpac 包，将表架构部署到 SQL 数据库。 Bacpac 包位于公共 blob 容器 https://hditutorialdata.blob.core.windows.net/usesqoop/SqoopTutorial-2016-2-23-11-2.bacpac 中。 如果想要私有容器用于 bacpac 文件，请使用模板中的以下值：
+本部分演示如何使用 Azure 门户和 Azure Resource Manager 模板创建群集、SQL 数据库和 SQL 数据库架构，以便运行教程。 可以在 [Azure 快速入门模板](https://github.com/Azure/azure-quickstart-templates/tree/master/101-hdinsight-linux-with-sql-database/)中找到模板。 Resource Manager 模板调用 bacpac 包，将表架构部署到 SQL 数据库。 Bacpac 包位于公共 blob 容器 https://hditutorialdata.blob.core.windows.net/usesqoop/SqoopTutorial-2016-2-23-11-2.bacpac 中。 如果想要私有容器用于 bacpac 文件，请使用模板中的以下值：
 
         "storageKeyType": "Primary",
         "storageKey": "<TheAzureStorageAccountKey>",
 
 若要使用 Azure PowerShell 创建群集和 SQL 数据库，请参阅 [附录 A](#appendix-a---a-powershell-sample)。
 
-1. 单击以下图像，在 Azure 门户预览中打开 Resource Manager 模板。         
+1. 单击以下图像，在 Azure 门户中打开 Resource Manager 模板。         
 
     <a href="https://portal.azure.cn/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-hdinsight-linux-with-sql-database%2Fazuredeploy.json" target="_blank"><img src="./media/hdinsight-use-sqoop/deploy-to-azure.png" alt="Deploy to Azure"></a>
 
@@ -118,7 +118,7 @@ HDInsight 群集附带了某些示例数据。 可使用以下两个示例：
 * **Azure SQL 数据库**：必须为 Azure SQL 数据库服务器配置防火墙规则，允许从工作站进行访问。 有关创建 Azure SQL 数据库和配置防火墙的说明，请参阅 [Azure SQL 数据库入门][sqldatabase-get-started]。 
 
     > [AZURE.NOTE]
-    > 默认情况下，可以从 Azure HDInsight 这样的 Azure 服务连接 Azure SQL 数据库。 如果禁用此防火墙设置，则必须从 Azure 门户预览启用。 有关创建 Azure SQL 数据库和配置防火墙规则的说明，请参阅 [创建和配置 SQL 数据库][sqldatabase-create-configue]。
+    > 默认情况下，可以从 Azure HDInsight 这样的 Azure 服务连接 Azure SQL 数据库。 如果禁用此防火墙设置，则必须从 Azure 门户启用。 有关创建 Azure SQL 数据库和配置防火墙规则的说明，请参阅 [创建和配置 SQL 数据库][sqldatabase-create-configue]。
     > 
     > 
 * **SQL Server**：如果 HDInsight 群集与 SQL Server 位于 Azure 中的同一虚拟网络，则可以使用本文中的步骤将数据导入或导出 SQL Server 数据库。
@@ -128,7 +128,7 @@ HDInsight 群集附带了某些示例数据。 可使用以下两个示例：
     > 
     > 
 
-    * 若要创建和配置虚拟网络，请参阅[使用 Azure 门户预览创建虚拟网络](/documentation/articles/virtual-networks-create-vnet-arm-pportal/)。
+    * 若要创建和配置虚拟网络，请参阅[使用 Azure 门户创建虚拟网络](/documentation/articles/virtual-networks-create-vnet-arm-pportal/)。
 
         * 在数据中心使用 SQL Server 时，必须将虚拟网络配置为“站点到站点”或“点到站点”。
 
@@ -197,10 +197,10 @@ PowerShell 示例将执行以下步骤：
          [sessionid] [bigint],
          [sessionpagevieworder][bigint])
 
-    检查数据库和表的最简单方法是使用 Visual Studio。 可以使用 Azure 门户预览检查数据库服务器和数据库。
+    检查数据库和表的最简单方法是使用 Visual Studio。 可以使用 Azure 门户检查数据库服务器和数据库。
 4. 创建 HDInsight 群集。
 
-    若要检查群集，可以使用 Azure 门户预览或 Azure PowerShell。
+    若要检查群集，可以使用 Azure 门户或 Azure PowerShell。
 5. 预处理源数据文件。
 
     在本教程中，要将一个 log4j 日志文件（带分隔符的文件）和一个 Hive 表导出到 Azure SQL 数据库。 带分隔符的文件名为 */example/data/sample.log*。 在本教程前面介绍了几个 log4j 日志的示例。 在日志文件中，有一些空行和一些类似下面这样的行：
@@ -210,7 +210,7 @@ PowerShell 示例将执行以下步骤：
 
     对于使用此数据的其他示例来说，这是没有问题的，但要将数据导入到 Azure SQL 数据库或 SQL Server 中，必须删除这些异常。 如果有空字符串，或者有其元素数量少于 Azure SQL 数据库表中定义的字段数量的行，Sqoop 导出将会失败。 log4jlogs 表有 7 个字符串类型的字段。
 
-    此过程将在群集上创建新文件：tutorials/usesqoop/data/sample.log。 若要检查修改后的数据文件，可以使用 Azure 门户预览、Azure 存储资源管理器工具或 Azure PowerShell。 [HDInsight 入门][hdinsight-get-started] 中有一个关于使用 Azure PowerShell 下载文件并显示文件内容的代码示例。
+    此过程将在群集上创建新文件：tutorials/usesqoop/data/sample.log。 若要检查修改后的数据文件，可以使用 Azure 门户、Azure 存储资源管理器工具或 Azure PowerShell。 [HDInsight 入门][hdinsight-get-started] 中有一个关于使用 Azure PowerShell 下载文件并显示文件内容的代码示例。
 6. 将数据文件导出到 Azure SQL 数据库。
 
     源文件为 tutorials/usesqoop/data/sample.log。 数据导出到的表的名称为 log4jlogs。
@@ -225,7 +225,7 @@ PowerShell 示例将执行以下步骤：
 7. 将 Hive 表导出到 Azure SQL 数据库。
 8. 将 mobiledata 表导入 HDInsight 群集。
 
-    若要检查修改后的数据文件，可以使用 Azure 门户预览、Azure 存储资源管理器工具或 Azure PowerShell。  [HDInsight 入门][hdinsight-get-started] 中有一个关于使用 Azure PowerShell 下载文件并显示文件内容的代码示例。
+    若要检查修改后的数据文件，可以使用 Azure 门户、Azure 存储资源管理器工具或 Azure PowerShell。  [HDInsight 入门][hdinsight-get-started] 中有一个关于使用 Azure PowerShell 下载文件并显示文件内容的代码示例。
 
 ### <a name="the-powershell-sample"></a>PowerShell 示例
     # Prepare an Azure SQL database to be used by the Sqoop tutorial

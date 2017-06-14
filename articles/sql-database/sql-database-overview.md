@@ -51,7 +51,7 @@ Azure SQL 数据库使用的默认数据库排序规则是 **SQL\_LATIN1\_GENERA
 
 可以使用几种方法管理 Azure SQL 数据库逻辑服务器：
 
-- [Azure 门户预览](/documentation/articles/sql-database-manage-portal/)
+- [Azure 门户](/documentation/articles/sql-database-manage-portal/)
 - [PowerShell](/documentation/articles/sql-database-manage-powershell/)
 - [Transact-SQL](/documentation/articles/sql-database-manage-azure-ssms/)
 - [REST](https://docs.microsoft.com/rest/api/sql/)

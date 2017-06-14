@@ -68,10 +68,10 @@
 
 ## 为 Azure SQL Server 预配 Azure Active Directory 管理员
 
-以下两个过程说明如何使用 PowerShell 在 Azure 门户预览中为 Azure SQL Server 预配 Azure Active Directory 管理员。
+以下两个过程说明如何使用 PowerShell 在 Azure 门户中为 Azure SQL Server 预配 Azure Active Directory 管理员。
 
-### Azure 门户预览
-1. 在 [Azure 门户预览](https://portal.azure.cn/)右上角，单击相关连接以下拉包含可能 Active Directory 的列表。选择正确的 Active Directory 作为默认的 Azure AD。此步骤将与 Active Directory 关联的订阅链接到 Azure SQL Server，确保为 Azure AD 和 SQL Server 使用相同的订阅。（Azure SQL Server 托管的可能是 Azure SQL 数据库或 Azure SQL 数据仓库。）
+### Azure 门户
+1. 在 [Azure 门户](https://portal.azure.cn/)右上角，单击相关连接以下拉包含可能 Active Directory 的列表。选择正确的 Active Directory 作为默认的 Azure AD。此步骤将与 Active Directory 关联的订阅链接到 Azure SQL Server，确保为 Azure AD 和 SQL Server 使用相同的订阅。（Azure SQL Server 托管的可能是 Azure SQL 数据库或 Azure SQL 数据仓库。）
    
     ![选择-AD][8]  
 

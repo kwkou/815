@@ -29,7 +29,7 @@ Power BI Embedded 服务使用**密钥**和**应用令牌**进行身份验证和
 
 ## <a name="two-ways-to-authenticate"></a>进行身份验证的两种方式
 
-**密钥** - 对于所有 Power BI Embedded REST API 调用，可以使用密钥。 在 **Azure 门户预览**中，可以通过依次单击“所有设置”和“访问密钥”来找到密钥。 请始终像对待密码一样对待密钥。 这些密钥有权在特定的工作区集合上执行任何 REST API 调用。
+**密钥** - 对于所有 Power BI Embedded REST API 调用，可以使用密钥。 在 **Azure 门户**中，可以通过依次单击“所有设置”和“访问密钥”来找到密钥。 请始终像对待密码一样对待密钥。 这些密钥有权在特定的工作区集合上执行任何 REST API 调用。
 
 若要在 REST 调用中使用密钥，请添加以下授权标头：            
 
@@ -146,7 +146,7 @@ scp: {scopesClaim} scopesClaim 可以是一个字符串或字符串数组，指�
 |保存报表的副本（另存为）。|报表|* Report.Read<br>* Workspace.Report.Copy|
 
 ## <a name="heres-how-the-flow-works"></a>下面是流的工作原理
-1. 将 API 密钥复制到应用程序中。 可以在 **Azure 门户预览**中获取密钥。
+1. 将 API 密钥复制到应用程序中。 可以在 **Azure 门户**中获取密钥。
    
     ![](./media/powerbi-embedded-get-started-sample/azure-portal.png)
 2. 令牌将发布声明，并且有过期时间。

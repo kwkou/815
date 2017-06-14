@@ -20,12 +20,12 @@
 
 
 
-# 使用 Azure 门户预览创建和管理 Azure SQL 数据库服务器级防火墙规则
+# 使用 Azure 门户创建和管理 Azure SQL 数据库服务器级防火墙规则
 
 
 > [AZURE.SELECTOR]
 - [概述](/documentation/articles/sql-database-firewall-configure/)
-- [Azure 门户预览](/documentation/articles/sql-database-configure-firewall-settings/)
+- [Azure 门户](/documentation/articles/sql-database-configure-firewall-settings/)
 - [TSQL](/documentation/articles/sql-database-configure-firewall-settings-tsql/)
 - [PowerShell](/documentation/articles/sql-database-configure-firewall-settings-powershell/)
 - [REST API](/documentation/articles/sql-database-configure-firewall-settings-rest/)
@@ -39,7 +39,7 @@
 
 [AZURE.INCLUDE [创建 SQL 数据库防火墙规则](../../includes/sql-database-create-new-server-firewall-portal.md)]
 
-## 通过 Azure 门户预览管理现有的服务器级别防火墙规则
+## 通过 Azure 门户管理现有的服务器级别防火墙规则
 
 重复以下步骤来管理服务器级别的防火墙规则。
 

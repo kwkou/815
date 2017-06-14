@@ -1,6 +1,6 @@
 <properties
     pageTitle="Azure PowerShell：创建 SQL 数据库 | Azure"
-    description="了解如何在 Azure 门户预览中创建 SQL 数据库逻辑服务器、服务器级防火墙规则和数据库。"
+    description="了解如何在 Azure 门户中创建 SQL 数据库逻辑服务器、服务器级防火墙规则和数据库。"
     keywords="SQL 数据库教程：创建 SQL 数据库"
     services="sql-database"
     documentationcenter=""

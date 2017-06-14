@@ -64,9 +64,9 @@ S1、S2 和 S3 性能级别无法提供 DocumentDB API 集合具备的灵活性�
 
 如果你有 S3 集合，该集合将迁移到吞吐量为 2.5 K RU/s 的单区集合。 吞吐量级别没有可见变化。
 
-对于上面的每种情况，在迁移集合后，可自定义吞吐量级别，或将其缩放以向用户提供低延迟的访问。 若要在迁移集合后更改吞吐量级别，只需在 Azure 门户预览中打开 DocumentDB 帐户，单击“缩放”，选择集合，然后如以下屏幕截图所示调整吞吐量级别：
+对于上面的每种情况，在迁移集合后，可自定义吞吐量级别，或将其缩放以向用户提供低延迟的访问。 若要在迁移集合后更改吞吐量级别，只需在 Azure 门户中打开 DocumentDB 帐户，单击“缩放”，选择集合，然后如以下屏幕截图所示调整吞吐量级别：
 
-![如何在 Azure 门户预览中缩放吞吐量](./media/documentdb-performance-levels/azure-documentdb-portal-scale-throughput.png)
+![如何在 Azure 门户中缩放吞吐量](./media/documentdb-performance-levels/azure-documentdb-portal-scale-throughput.png)
 
 ## 迁移到单区集合后，帐单会发生怎样的变化？ <a name="billing-change"></a>
 
@@ -84,17 +84,17 @@ S1、S2 和 S3 性能级别无法提供 DocumentDB API 集合具备的灵活性�
 
 ## 如何了解集合已迁移？ <a name="when-migrated"></a>
 
-迁移将在 2017 年 7 月 31 日进行。 如果有使用 S1、S2 或 S3 性能级别的集合，DocumentDB 团队将在进行迁移前通过电子邮件与你联系。 2017 年 8 月 1 日完成迁移后，Azure 门户预览将显示你的集合使用标准定价。
+迁移将在 2017 年 7 月 31 日进行。 如果有使用 S1、S2 或 S3 性能级别的集合，DocumentDB 团队将在进行迁移前通过电子邮件与你联系。 2017 年 8 月 1 日完成迁移后，Azure 门户将显示你的集合使用标准定价。
 
 ![如何确认集合已迁移到标准定价层](./media/documentdb-performance-levels/documentdb-portal-standard-pricing-applied.png)
 
 ## 如何自行从 S1、S2、S3 性能级别迁移到单区集合？ <a name="migrate-diy"></a>
 
-可通过 Azure 门户预览或编程方式从 S1、S2 和 S3 性能级别迁移到单区集合。 可在 8 月 1 日之前自行执行此操作，以享用单区集合提供的灵活吞吐量选项；否则，我们将在 2017 年 7 月 31 日代你迁移集合。
+可通过 Azure 门户或编程方式从 S1、S2 和 S3 性能级别迁移到单区集合。 可在 8 月 1 日之前自行执行此操作，以享用单区集合提供的灵活吞吐量选项；否则，我们将在 2017 年 7 月 31 日代你迁移集合。
 
-**使用 Azure 门户预览迁移到单区集合**
+**使用 Azure 门户迁移到单区集合**
 
-1. 在 [**Azure 门户预览**](https://portal.azure.cn)中单击“DocumentDB”，然后选择要修改的 DocumentDB 帐户。 
+1. 在 [**Azure 门户**](https://portal.azure.cn)中单击“DocumentDB”，然后选择要修改的 DocumentDB 帐户。 
  
     如果跳转栏上没有“DocumentDB”，请单击 >，滚动到“数据库”，选择“DocumentDB”，然后选择 DocumentDB 帐户。  
 

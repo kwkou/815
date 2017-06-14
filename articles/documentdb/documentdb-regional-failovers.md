@@ -81,7 +81,7 @@ DocumentDB 支持显式和策略驱动型故障转移，方便用户在发生故
 
 **某个写入区域中断时会发生什么情况？**
 
-对于给定的 DocumentDB 帐户，如果受影响区域是当前的写入区域，则会自动将该区域标记为脱机。 然后会针对每个受影响的 DocumentDB 帐户，将一个备用区域提升为写入区域。 可以通过 Azure 门户预览或以[编程方式](https://docs.microsoft.com/zh-cn/rest/api/documentdbresourceprovider/databaseaccounts#DatabaseAccounts_FailoverPriorityChange)完全控制 DocumentDB 帐户的区域选择顺序。 
+对于给定的 DocumentDB 帐户，如果受影响区域是当前的写入区域，则会自动将该区域标记为脱机。 然后会针对每个受影响的 DocumentDB 帐户，将一个备用区域提升为写入区域。 可以通过 Azure 门户或以[编程方式](https://docs.microsoft.com/zh-cn/rest/api/documentdbresourceprovider/databaseaccounts#DatabaseAccounts_FailoverPriorityChange)完全控制 DocumentDB 帐户的区域选择顺序。 
 
 ![DocumentDB 的故障转移优先级](./media/documentdb-regional-failovers/failover-priorities.png)
 
@@ -93,11 +93,11 @@ DocumentDB 支持显式和策略驱动型故障转移，方便用户在发生故
 
 - 此前的写入区域位于受影响区域的 DocumentDB 帐户在可以读取后仍会保持脱机模式，即使所在区域已经恢复。 
 - 可以查询该区域，通过与当前写入区域中的可用数据进行比较，计算中断期间未复制的写入内容。 可以根据应用程序的需求，执行合并和/或冲突解决方案，将最终的更改集写回到当前的写入区域。 
-- 合并完所做的更改以后，即可通过删除该区域并将其重新添加到 DocumentDB 帐户的方式，让受影响区域回到联机状态。 将区域添加回来以后，即可通过 Azure 门户预览或以 [编程方式](https://docs.microsoft.com/zh-cn/rest/api/documentdbresourceprovider/databaseaccounts#DatabaseAccounts_CreateOrUpdate)执行手动故障转移，将其重新配置为写入区域。
+- 合并完所做的更改以后，即可通过删除该区域并将其重新添加到 DocumentDB 帐户的方式，让受影响区域回到联机状态。 将区域添加回来以后，即可通过 Azure 门户或以 [编程方式](https://docs.microsoft.com/zh-cn/rest/api/documentdbresourceprovider/databaseaccounts#DatabaseAccounts_CreateOrUpdate)执行手动故障转移，将其重新配置为写入区域。
 
 ## <a id="ManualFailovers"></a>手动故障转移
 
-除了自动故障转移，还可以通过动态方式将给定 DocumentDB 帐户当前的写入区域手动更改为现有的读取区域之一。 可以通过 Azure 门户预览或以 [编程方式](https://docs.microsoft.com/zh-cn/rest/api/documentdbresourceprovider/databaseaccounts#DatabaseAccounts_CreateOrUpdate)启动手动故障转移。 
+除了自动故障转移，还可以通过动态方式将给定 DocumentDB 帐户当前的写入区域手动更改为现有的读取区域之一。 可以通过 Azure 门户或以 [编程方式](https://docs.microsoft.com/zh-cn/rest/api/documentdbresourceprovider/databaseaccounts#DatabaseAccounts_CreateOrUpdate)启动手动故障转移。 
 
 手动故障转移可确保**零数据丢失**和**零可用性丢失**，并可针对指定的 DocumentDB 帐户，将写入状态从旧写入区域恰当地转移到新写入区域。 与自动故障转移一样，在手动故障转移过程中，DocumentDB SDK 可以自动处理写入区域更改，确保将调用自动重定向到新的写入区域。 管理故障转移不需在应用程序中更改代码或配置。 
 

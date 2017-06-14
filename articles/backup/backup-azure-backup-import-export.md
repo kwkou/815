@@ -72,7 +72,7 @@ Azure 备份的脱机种子设定过程与 [Azure 导入/导出服务](/document
     - **Azure 存储容器**：Azure 存储帐户中导入此作业数据的目标存储 Blob 的名称。
      
     > [AZURE.NOTE]
-    如果已通过 [Azure 门户预览](https://portal.azure.cn)在 Azure 恢复服务保管库中为备份注册了服务器，并且不是在云解决方案提供商 (CSP) 订阅上，则仍可以通过 Azure 门户预览创建经典类型的存储帐户，然后将它用于脱机备份工作流。
+    如果已通过 [Azure 门户](https://portal.azure.cn)在 Azure 恢复服务保管库中为备份注册了服务器，并且不是在云解决方案提供商 (CSP) 订阅上，则仍可以通过 Azure 门户创建经典类型的存储帐户，然后将它用于脱机备份工作流。
     > 
     > 
      
@@ -101,7 +101,7 @@ Azure 磁盘准备工具可在恢复服务代理（2016 年 8 月更新版和更
    
     - 副本计算机可使用在**启动脱机备份**工作流中提供的相同网络路径，访问脱机种子设定工作流的暂存位置。
     - 已在计算机上启用 BitLocker。
-    - 计算机可以访问 Azure 门户预览。
+    - 计算机可以访问 Azure 门户。
      
     必要时，副本计算机可与源计算机相同。
 2. 在副本计算机上以 Azure 磁盘准备工具目录作为当前目录来打开提升权限的命令提示符，并运行以下命令：
@@ -178,17 +178,17 @@ Azure 磁盘准备工具可在恢复服务代理（2016 年 8 月更新版和更
 | /dstdir:<*DestinationBlobVirtualDirectory*> |Azure 存储帐户中的目标虚拟目录的路径。在指定目标虚拟目录或 Blob 时，请确保使用有效的容器名称。请记住，容器名称必须是小写的。此容器名称应与创建备份策略/保护组期间输入的名称相同。 |
 
 > [AZURE.NOTE]
-将捕获整个工作流的信息的 WAImportExport 文件夹中创建日志文件。在 Azure 门户预览中创建导入作业时，需要此文件。
+将捕获整个工作流的信息的 WAImportExport 文件夹中创建日志文件。在 Azure 门户中创建导入作业时，需要此文件。
 > 
 > 
 
   ![PowerShell 输出](./media/backup-azure-backup-import-export/psoutput.png)  
 
 
-### 在 Azure 门户预览中创建导入作业
+### 在 Azure 门户中创建导入作业
 1. 在 [Azure 经典管理门户](https://manage.windowsazure.cn/)中转到存储帐户，单击“导入/导出”，然后单击任务窗格中的“创建导入作业”。
    
-    ![Azure 门户预览中的导入/导出选项卡](./media/backup-azure-backup-import-export/azureportal.png)  
+    ![Azure 门户中的导入/导出选项卡](./media/backup-azure-backup-import-export/azureportal.png)  
 
 
 2. 在向导的步骤 1 中，指示已准备好了驱动器并且具有可用的驱动器日志文件。

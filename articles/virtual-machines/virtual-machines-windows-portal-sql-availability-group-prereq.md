@@ -38,7 +38,7 @@
 * 需要一个 Azure 帐户。可以[建立一个试用 Azure 帐户](/pricing/1rmb-trial/?WT.mc_id=A261C142F)。
 
 ## 创建资源组
-1. 登录 [Azure 门户预览](http://portal.azure.cn)。
+1. 登录 [Azure 门户](http://portal.azure.cn)。
 2. 在门户中单击“+”创建一个新对象。
 
     ![新建](./media/virtual-machines-windows-portal-sql-availability-group-tutorial/01-portalplus.png)  
@@ -52,7 +52,7 @@
 5. 在“资源组”边栏选项卡中的“资源组名称”下，键入资源组的名称。例如，键入 **sql-ha-rg**。
 6. 若有多个 Azure 订阅，请验证此订阅是否为要在其中创建可用性组的 Azure 订阅。
 7. 选择一个位置。该位置为要在其中创建可用性组的 Azure 区域。本教程中将在一个 Azure 位置构建所有资源。
-8. 确认已选中“固定到仪表板”。此可选设置将在 Azure 门户预览仪表板上放置资源组的快捷方式。
+8. 确认已选中“固定到仪表板”。此可选设置将在 Azure 门户仪表板上放置资源组的快捷方式。
 
     ![资源组](./media/virtual-machines-windows-portal-sql-availability-group-tutorial/01-resourcegroup.png)  
 
@@ -67,7 +67,7 @@ Azure 将创建资源组，并在门户中固定资源组的快捷方式。
 
 若要创建虚拟网络，请执行以下操作：
 
-1. 在 Azure 门户预览上的资源组中，单击“+ 添加”。Azure 随即打开“全部”边栏选项卡。
+1. 在 Azure 门户上的资源组中，单击“+ 添加”。Azure 随即打开“全部”边栏选项卡。
    
     ![新建项](./media/virtual-machines-windows-portal-sql-availability-group-tutorial/02-newiteminrg.png)  
 
@@ -152,7 +152,7 @@ Azure 将返回到门户仪表板，并在创建好新网络时发出通知。
 | **容错域** |3 |3 |
 | **更新域** |5 |3 |
 
-创建可用性集之后，请返回到 Azure 门户预览中的资源组。
+创建可用性集之后，请返回到 Azure 门户中的资源组。
 
 ## 创建域控制器
 现已创建网络、子网、可用性集和面向 Internet 的负载均衡器。接下来可以为域控制器创建虚拟机。
@@ -218,7 +218,7 @@ Azure 将创建虚拟机。
 6. 选择“Active Directory 域服务”和“DNS 服务器”角色。出现提示时，添加这些角色所需的任何其他功能。
    
     > [AZURE.NOTE]
-    Windows 会警告你没有静态 IP 地址。如果你要测试配置，请单击“继续”。对于生产方案，请在 Azure 门户预览中将 IP 地址设置为静态地址，或[使用 PowerShell 设置域控制器计算机的静态 IP 地址](/documentation/articles/virtual-networks-reserved-private-ip/)。
+    Windows 会警告你没有静态 IP 地址。如果你要测试配置，请单击“继续”。对于生产方案，请在 Azure 门户中将 IP 地址设置为静态地址，或[使用 PowerShell 设置域控制器计算机的静态 IP 地址](/documentation/articles/virtual-networks-reserved-private-ip/)。
     > 
     > 
    
@@ -246,9 +246,9 @@ Azure 将创建虚拟机。
 
 为 DNS 使用主域控制器。记下主域控制器的 IP 地址。
 
-获取主域控制器 IP 地址的方法之一是使用 Azure 门户预览。
+获取主域控制器 IP 地址的方法之一是使用 Azure 门户。
 
-1. 在 Azure 门户预览中打开资源组。
+1. 在 Azure 门户中打开资源组。
 
 1. 单击主域控制器。
 
@@ -273,7 +273,7 @@ Azure 将创建虚拟机。
 1. 依次单击“确定”和“关闭”来提交更改。你现在能够将该 VM 加入到 **corp.contoso.com** 中。
 
     >[AZURE.IMPORTANT]
-    如果在更改 DNS 设置后与远程桌面断开了连接，请转到 Azure 门户预览并重新启动虚拟机。
+    如果在更改 DNS 设置后与远程桌面断开了连接，请转到 Azure 门户并重新启动虚拟机。
 
 1. 通过远程桌面连接到辅助域控制器，打开“服务器管理器仪表板”。
 4. 单击仪表板上的“添加角色和功能”链接。
@@ -379,7 +379,7 @@ Azure 将创建虚拟机。
 11. 依次单击“确定”和“关闭”来提交更改。
 
     >[AZURE.IMPORTANT]
-    如果在更改 DNS 设置后与远程桌面断开了连接，请转到 Azure 门户预览并重新启动虚拟机。
+    如果在更改 DNS 设置后与远程桌面断开了连接，请转到 Azure 门户并重新启动虚拟机。
 
 针对所有服务器重复上述步骤。
 

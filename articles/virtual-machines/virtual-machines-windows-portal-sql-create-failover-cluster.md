@@ -82,15 +82,15 @@ S2D 支持两种类型的体系结构 - 聚合与超聚合。本文档中所述�
 
 ## 步骤 1：创建虚拟机
 
-1. 使用订阅登录到 [Azure 门户预览](http://portal.azure.cn)。
+1. 使用订阅登录到 [Azure 门户](http://portal.azure.cn)。
 
 1. [创建 Azure 可用性集](/documentation/articles/virtual-machines-windows-create-availability-set/)。
 
     可用性集可将各个容错域和更新域中的虚拟机分组。可用性集确保应用程序不会受到单一故障点（例如网络交换机或服务器机架电源装置）的影响。
 
-    如果尚未为虚拟机创建资源组，请在创建 Azure 可用性集时执行该操作。若要使用 Azure 门户预览创建可用性集，请执行以下步骤：
+    如果尚未为虚拟机创建资源组，请在创建 Azure 可用性集时执行该操作。若要使用 Azure 门户创建可用性集，请执行以下步骤：
 
-    - 在 Azure 门户预览中，单击“+”打开 Azure 应用商店。搜索“可用性集”。
+    - 在 Azure 门户中，单击“+”打开 Azure 应用商店。搜索“可用性集”。
     - 单击“可用性集”。
     - 单击“创建”。
     - 在“创建可用性集”边栏选项卡中设置以下值：
@@ -104,7 +104,7 @@ S2D 支持两种类型的体系结构 - 聚合与超聚合。本文档中所述�
 
 1. 在可用性集中创建虚拟机。
 
-    在 Azure 可用性集中预配两个 SQL Server 虚拟机。有关说明，请参阅[在 Azure 门户预览中预配 SQL Server 虚拟机](/documentation/articles/virtual-machines-windows-portal-sql-server-provision/)。
+    在 Azure 可用性集中预配两个 SQL Server 虚拟机。有关说明，请参阅[在 Azure 门户中预配 SQL Server 虚拟机](/documentation/articles/virtual-machines-windows-portal-sql-server-provision/)。
 
     将两个虚拟机放在以下位置：
    
@@ -323,11 +323,11 @@ S2D 的磁盘需是空的，不包含分区或其他数据。若要清除磁盘�
 
 [创建并配置 Azure 负载均衡器](/documentation/articles/virtual-machines-windows-portal-sql-availability-group-tutorial/#configure-internal-load-balancer)。
 
-### 在 Azure 门户预览中创建负载均衡器
+### 在 Azure 门户中创建负载均衡器
 
 若要创建负载均衡器，请执行以下操作：
 
-1. 在 Azure 门户预览中，转到虚拟机所在的资源组。
+1. 在 Azure 门户中，转到虚拟机所在的资源组。
 
 1. 单击“+ 添加”。在应用商店中搜索“负载均衡器”。单击“负载均衡器”。
 
@@ -365,7 +365,7 @@ S2D 的磁盘需是空的，不包含分区或其他数据。若要清除磁盘�
 
 1. 在“选择虚拟机”边栏选项卡中，单击“选择虚拟机”。
 
-    Azure 门户预览应如下图所示：
+    Azure 门户应如下图所示：
 
     ![CreateLoadBalancerBackEnd](./media/virtual-machines-windows-portal-sql-create-failover-cluster/33-load-balancer-back-end.png)  
 

@@ -10,9 +10,9 @@ articles/sql-database/sql-database-get-started-tutorial.md
 -->
 ## 创建新的 Azure SQL 数据库
 
-在 Azure 门户预览中使用以下步骤，在新的现有的 Azure SQL 数据库逻辑服务器上创建新的 Azure SQL 数据库。
+在 Azure 门户中使用以下步骤，在新的现有的 Azure SQL 数据库逻辑服务器上创建新的 Azure SQL 数据库。
 
-1. 如果当前未连接，请连接到 [Azure 门户预览](http://portal.azure.cn)。
+1. 如果当前未连接，请连接到 [Azure 门户](http://portal.azure.cn)。
 2. 单击“新建”，键入“SQL 数据库”，然后单击“SQL 数据库(新建数据库)”。
 
      ![新数据库](./media/sql-database-create-new-database-portal/sql-database-create-new-database-portal-1.png)  

@@ -42,9 +42,9 @@
 
 本部分提供适用于任何 API 应用的一般说明。有关待办事项列表 .NET 示例应用程序的特定步骤，请转到[继续学习 .NET API 应用系列教程](#tutorialstart)。
 
-1. 在 [Azure 门户预览](https://portal.azure.cn/)中，导航到要保护的 API 应用的“设置”边栏选项卡，然后找到“功能”部分并单击“身份验证/授权”。
+1. 在 [Azure 门户](https://portal.azure.cn/)中，导航到要保护的 API 应用的“设置”边栏选项卡，然后找到“功能”部分并单击“身份验证/授权”。
 
-	![Azure 门户预览中的“身份验证/授权”](./media/app-service-api-dotnet-user-principal-auth/features.png)
+	![Azure 门户中的“身份验证/授权”](./media/app-service-api-dotnet-user-principal-auth/features.png)
 
 3. 在“身份验证/授权”边栏选项卡中，单击“打开”。
 
@@ -52,7 +52,7 @@
 
 5. 在“身份验证提供程序”下面，选择“Azure Active Directory”。
 
-	![Azure 门户预览中的“身份验证/授权”边栏选项卡](./media/app-service-api-dotnet-user-principal-auth/authblade.png)
+	![Azure 门户中的“身份验证/授权”边栏选项卡](./media/app-service-api-dotnet-user-principal-auth/authblade.png)
 
 6. 配置“Azure Active Directory 设置”边栏选项卡创建新的 Azure AD 应用程序；如果已有想要使用的现有 Azure AD 应用程序，请使用该应用程序。
 
@@ -111,11 +111,11 @@
 
 如果遵循教程指导时遇到问题，请参阅教程末尾的[故障排除](#troubleshooting)部分。
 
-1. 在 [Azure 门户预览](https://portal.azure.cn/)中，导航到为 ToDoListDataAPI（数据层）API 应用创建的 API 应用的“设置”边栏选项卡，然后单击“设置”。
+1. 在 [Azure 门户](https://portal.azure.cn/)中，导航到为 ToDoListDataAPI（数据层）API 应用创建的 API 应用的“设置”边栏选项卡，然后单击“设置”。
 
 2. 在“设置”边栏选项卡中找到“功能”部分，然后单击“身份验证/授权”。
 
-	![Azure 门户预览中的“身份验证/授权”](./media/app-service-api-dotnet-user-principal-auth/features.png)
+	![Azure 门户中的“身份验证/授权”](./media/app-service-api-dotnet-user-principal-auth/features.png)
 
 3. 在“身份验证/授权”边栏选项卡中，单击“打开”。
 
@@ -125,7 +125,7 @@
 
 5. 在“身份验证提供程序”下面，单击“Azure Active Directory”。
 
-	![Azure 门户预览中的“身份验证/授权”边栏选项卡](./media/app-service-api-dotnet-user-principal-auth/authblade.png)
+	![Azure 门户中的“身份验证/授权”边栏选项卡](./media/app-service-api-dotnet-user-principal-auth/authblade.png)
 
 6. 在“Azure Active Directory 设置”边栏选项卡中单击“快速”。
 
@@ -153,7 +153,7 @@
 
 ### 验证 API 应用是否受保护
 
-1. 在浏览器中，转到 API 应用的 URL：在 Azure 门户预览的“API 应用”边栏选项卡中，单击“URL”下面的链接。
+1. 在浏览器中，转到 API 应用的 URL：在 Azure 门户的“API 应用”边栏选项卡中，单击“URL”下面的链接。
 
 	由于不允许未经身份验证的请求进入 API 应用，因此将重定向到登录屏幕。
 
@@ -249,7 +249,7 @@
 
 ### 在中间层 API 应用的运行时环境中配置 Azure AD 设置
 
-1. 转到 [Azure 门户预览](https://portal.azure.cn/)，然后导航到用于托管 TodoListAPI（中间层）项目的 API 应用的“API 应用”边栏选项卡。
+1. 转到 [Azure 门户](https://portal.azure.cn/)，然后导航到用于托管 TodoListAPI（中间层）项目的 API 应用的“API 应用”边栏选项卡。
 
 2. 单击“设置”>“应用程序设置”。
 
@@ -295,7 +295,7 @@
 
 	![待办事项列表页](./media/app-service-api-dotnet-service-principal-auth/mvchome.png)
 
-	如果应用程序未按预期工作，请仔细检查在 Azure 门户预览中输入的所有设置。如果所有设置看起来都没问题，请参阅本教程稍后的[故障排除](#troubleshooting)部分。
+	如果应用程序未按预期工作，请仔细检查在 Azure 门户中输入的所有设置。如果所有设置看起来都没问题，请参阅本教程稍后的[故障排除](#troubleshooting)部分。
 
 ## 防止浏览器访问 API 应用
 
@@ -368,7 +368,7 @@
 
 	c.查找 TodoListAPI 应用程序服务主体的 objectid，并将它保存在稍后可从中复制此值的位置。
 
-7. 在 Azure 门户预览中，导航到部署 ToDoListDataAPI 项目的 API 应用的“API 应用”边栏选项卡。
+7. 在 Azure 门户中，导航到部署 ToDoListDataAPI 项目的 API 应用的“API 应用”边栏选项卡。
 
 9. 单击“设置”>“应用程序设置”。
 

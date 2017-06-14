@@ -1,6 +1,6 @@
 <properties
-    pageTitle="使用 Azure 门户预览打开 VM 的端口 | Azure"
-    description="了解如何使用 Azure 门户预览中的 Resource Manager 部署模型在 Windows VM 上打开端口/创建终结点"
+    pageTitle="使用 Azure 门户打开 VM 的端口 | Azure"
+    description="了解如何使用 Azure 门户中的 Resource Manager 部署模型在 Windows VM 上打开端口/创建终结点"
     services="virtual-machines-windows"
     documentationcenter=""
     author="iainfoulds"
@@ -19,7 +19,7 @@
     ms.author="iainfou" />  
 
 
-# 使用 Azure 门户预览打开 Azure 中 VM 的端口
+# 使用 Azure 门户打开 Azure 中 VM 的端口
 [AZURE.INCLUDE [virtual-machines-common-nsg-quickstart](../../includes/virtual-machines-common-nsg-quickstart.md)]
 
 ## 快速命令

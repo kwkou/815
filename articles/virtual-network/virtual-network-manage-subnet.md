@@ -37,14 +37,14 @@
 
 - 如果不熟悉 Azure 中的 VNet 和子网，建议你在阅读本文之前，先完成[创建你的第一个 Azure 虚拟网络](/documentation/articles/virtual-network-get-started-vnet-subnet/)中的练习。 该练习可帮助你熟悉 VNet 和子网。
 - 查看 [Azure 限制](/documentation/articles/azure-subscription-service-limits/#azure-resource-manager-virtual-networking-limits)一文，了解子网和 VNet 的限制。
-- 使用 Azure 帐户登录到 Azure 门户预览、Azure 命令行界面 (CLI) 或 Azure PowerShell。 如果还没有 Azure 帐户，请注册[试用帐户](/pricing/1rmb-trial)。
+- 使用 Azure 帐户登录到 Azure 门户、Azure 命令行界面 (CLI) 或 Azure PowerShell。 如果还没有 Azure 帐户，请注册[试用帐户](/pricing/1rmb-trial)。
 - 如果使用 Azure PowerShell 命令来完成本文中的任务，首先必须[安装和配置 Azure PowerShell](https://docs.microsoft.com/zh-cn/powershell/azureps-cmdlets-docs)。 确保已安装最新版本的 Azure PowerShell cmdlet。 若要获取 PowerShell 命令的帮助和示例，请键入 `get-help <command> -full`。
 - 如果使用 Azure 命令行界面 (CLI) 命令来完成本文中的任务，首先必须[安装和配置 Azure CLI](https://docs.microsoft.com/zh-cn/cli/azure/install-azure-cli)。 确保已安装最新版本的 Azure CLI。 若要获取 CLI 命令的帮助，请键入 `az <command> --help`。
 
 ## <a name="create-subnet"></a>创建子网
 
 1. 使用已分配订阅的“网络参与者”角色权限（最低权限）的帐户登录到[门户](https://portal.azure.cn)。 请参阅[用于 Azure 基于角色的访问控制的内置角色](/documentation/articles/role-based-access-built-in-roles/#network-contributor)一文，详细了解如何将角色和权限分配给帐户。
-2. 在 Azure 门户预览顶部包含“搜索资源”文本的框中，键入“虚拟网络”。 当“虚拟网络”出现在搜索结果中时，请单击它。
+2. 在 Azure 门户顶部包含“搜索资源”文本的框中，键入“虚拟网络”。 当“虚拟网络”出现在搜索结果中时，请单击它。
 3. 在显示的“虚拟网络”边栏选项卡中，单击要向其添加子网的虚拟网络。
 4. 在针对所选虚拟网络显示的窗格中，单击“子网”。
 5. 单击“+ 子网”。
@@ -86,7 +86,7 @@
 只有在没有资源连接到子网的情况下，才能删除该子网。 如果有资源连接到子网，则必须先删除连接到子网的资源。 资源删除说明因资源而异。 若要了解如何删除连接到子网的资源，请阅读要删除的每个资源类型的文档。
 
 1. 使用已分配订阅的“网络参与者”角色权限（最低权限）的帐户登录到[门户](https://portal.azure.cn)。 请参阅[用于 Azure 基于角色的访问控制的内置角色](/documentation/articles/role-based-access-built-in-roles/#network-contributor)一文，详细了解如何将角色和权限分配给帐户。
-2. 在 Azure 门户预览顶部包含“搜索资源”文本的框中，键入“虚拟网络”。 当“虚拟网络”出现在搜索结果中时，请单击它。
+2. 在 Azure 门户顶部包含“搜索资源”文本的框中，键入“虚拟网络”。 当“虚拟网络”出现在搜索结果中时，请单击它。
 3. 在显示的“虚拟网络”边栏选项卡中，单击要从其删除子网的 VNet。
 4. 在针对所选 VNet 显示的边栏选项卡的“设置”下，单击“子网”。
 5. 在子网边栏选项卡的子网列表中，右键单击要删除的子网，然后依次单击“删除”、“是”删除该子网。

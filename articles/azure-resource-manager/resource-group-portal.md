@@ -1,6 +1,6 @@
 <properties
-    pageTitle="使用 Azure 门户预览管理 Azure 资源 | Azure"
-    description="使用 Azure 门户预览和 Azure Resource Manager 来管理资源。说明如何使用仪表板进行资源监视。"
+    pageTitle="使用 Azure 门户管理 Azure 资源 | Azure"
+    description="使用 Azure 门户和 Azure Resource Manager 来管理资源。说明如何使用仪表板进行资源监视。"
     services="azure-resource-manager,azure-portal"
     documentationcenter=""
     author="tfitzmac"
@@ -25,9 +25,9 @@
 - [门户](/documentation/articles/resource-group-portal/)
 - [REST API](/documentation/articles/resource-manager-rest-api/)
 
-本主题演示如何使用 [Azure 门户预览](https://portal.azure.cn)和 [Azure Resource Manager](/documentation/articles/resource-group-overview/) 管理 Azure 资源。若要了解如何通过门户部署资源，请参阅[使用 Resource Manager 模板和 Azure 门户预览部署资源](/documentation/articles/resource-group-template-deploy-portal/)。
+本主题演示如何使用 [Azure 门户](https://portal.azure.cn)和 [Azure Resource Manager](/documentation/articles/resource-group-overview/) 管理 Azure 资源。若要了解如何通过门户部署资源，请参阅[使用 Resource Manager 模板和 Azure 门户部署资源](/documentation/articles/resource-group-template-deploy-portal/)。
 
-目前，并非每种服务都支持门户或资源管理器。要使用这些服务，需使用[经典管理门户](https://manage.windowsazure.cn)。若要了解每种服务的状态，请参阅 [Azure 门户预览可用性图表](https://azure.microsoft.com/features/azure-portal/availability/)。
+目前，并非每种服务都支持门户或资源管理器。要使用这些服务，需使用[经典管理门户](https://manage.windowsazure.cn)。若要了解每种服务的状态，请参阅 [Azure 门户可用性图表](https://azure.microsoft.com/features/azure-portal/availability/)。
 
 ## <a name="create-resource-group-and-resources"></a> 管理资源组
 
@@ -59,7 +59,7 @@
    
     ![添加列](./media/resource-group-portal/add-columns.png)  
 
-7. 若要了解有关将资源部署到新资源组的信息，请参阅[使用 Resource Manager 模板和 Azure 门户预览部署资源](/documentation/articles/resource-group-template-deploy-portal/)。
+7. 若要了解有关将资源部署到新资源组的信息，请参阅[使用 Resource Manager 模板和 Azure 门户部署资源](/documentation/articles/resource-group-template-deploy-portal/)。
 8. 为了快速访问资源组，可以将边栏选项卡固定到仪表板上。
    
     ![固定资源组](./media/resource-group-portal/pin-group.png)  
@@ -98,7 +98,7 @@
     ![仪表板](./media/resource-group-portal/create-dashboard.png)  
 
    
-     若要了解如何使用仪表板，请参阅[在 Azure 门户预览中创建和共享仪表板](/documentation/articles/azure-portal-dashboards/)。
+     若要了解如何使用仪表板，请参阅[在 Azure 门户中创建和共享仪表板](/documentation/articles/azure-portal-dashboards/)。
 
 ## <a name="manage-resources"></a> 管理资源
 在某个资源的边栏选项卡中，可看到用于管理该资源的选项。门户提供了用于该特定资源类型的管理选项。在资源边栏选项卡的顶部和左侧可看到管理命令。
@@ -149,7 +149,7 @@
 ## 后续步骤
 * 若要查看活动日志，请参阅[使用 Resource Manager 进行审核操作](/documentation/articles/resource-group-audit/)。
 * 若要查看有关部署的详细信息，请参阅[查看部署操作](/documentation/articles/resource-manager-deployment-operations/)。
-* 若要通过门户部署资源，请参阅[使用 Resource Manager 模板和 Azure 门户预览部署资源](/documentation/articles/resource-group-template-deploy-portal/)。
+* 若要通过门户部署资源，请参阅[使用 Resource Manager 模板和 Azure 门户部署资源](/documentation/articles/resource-group-template-deploy-portal/)。
 * 若要管理对资源的访问，请参阅 [Use role assignments to manage access to your Azure subscription resources](/documentation/articles/role-based-access-control-configure/)（使用角色分配来管理对 Azure 订阅资源的访问）。
 * 如需了解企业如何使用 Resource Manager 对订阅进行有效管理，请参阅 [Azure 企业机架 - 规范性订阅管理](/documentation/articles/resource-manager-subscription-governance/)。
 

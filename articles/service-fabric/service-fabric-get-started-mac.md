@@ -94,7 +94,7 @@ Service Fabric 为**适用于 Java IDE 的 Eclipse Neon** 提供了一个插件�
 <!-- Links -->
 * [使用 Yeoman 在 Linux 上创建和部署第一个 Service Fabric Java 应用程序](/documentation/articles/service-fabric-create-your-first-linux-application-with-java/)
 * [使用适用于 Eclipse 的 Service Fabric 插件在 Linux 上创建和部署第一个 Service Fabric Java 应用程序](/documentation/articles/service-fabric-get-started-eclipse/)
-* [在 Azure 门户预览中创建 Service Fabric 群集](/documentation/articles/service-fabric-cluster-creation-via-portal/)
+* [在 Azure 门户中创建 Service Fabric 群集](/documentation/articles/service-fabric-cluster-creation-via-portal/)
 * [使用 Azure Resource Manager 创建 Service Fabric 群集](/documentation/articles/service-fabric-cluster-creation-via-arm/)
 * [了解 Service Fabric 应用程序模型](/documentation/articles/service-fabric-application-model/)
 

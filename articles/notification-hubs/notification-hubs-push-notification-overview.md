@@ -101,7 +101,7 @@ Azure 通知中心提供易用的多平台扩展式推送引擎。 使用单个�
   - *个性化推送*：可以借助设备推送变量，使用自定义的键值对发送设备特定的个性化推送通知。
 - **丰富的遥测**
   
-  - 可在 Azure 门户预览中或者以编程方式使用常规的推送、设备、错误和操作遥测。
+  - 可在 Azure 门户中或者以编程方式使用常规的推送、设备、错误和操作遥测。
   - 每项消息遥测将会跟踪从发出初始请求调用，到服务成功批处理外推操作的每个推送过程。
   - 平台通知系统反馈将会传达来自平台通知系统的所有反馈以帮助调试。
 - **可伸缩性** 
@@ -129,7 +129,7 @@ Azure 通知中心提供易用的多平台扩展式推送引擎。 使用单个�
   - *推送到设备*：SDK 自动使用移动应用安装 ID 作为 GUID 注册到通知中心，省去了开发人员维护多个服务 GUID 的麻烦。
 - **安装模型**：移动应用使用通知中心的最新推送模型来呈现 JSON 安装中所有与设备关联的推送属性，该模型与推送通知密切合作且易于使用。
 - **灵活性**：即使在集成环境中，开发人员也始终可以选择直接使用通知中心。
-- **[Azure 门户预览]中的集成体验**：移动应用以可视化方式呈现推送功能，开发人员可以通过移动应用轻松使用关联的通知中心。
+- **[Azure 门户]中的集成体验**：移动应用以可视化方式呈现推送功能，开发人员可以通过移动应用轻松使用关联的通知中心。
 
 ## <a name="next-steps"></a>后续步骤
 可以通过以下主题了解有关通知中心的更多信息：
@@ -151,6 +151,6 @@ Azure 通知中心提供易用的多平台扩展式推送引擎。 使用单个�
 [Microsoft.ServiceBus.Notifications]: http://msdn.microsoft.com/zh-cn/library/microsoft.servicebus.notifications.aspx
 [应用服务移动应用]: /documentation/articles/app-service-mobile-value-prop/
 [templates]: /documentation/articles/notification-hubs-templates-cross-platform-push-messages/
-[Azure 门户预览]: https://portal.azure.cn
+[Azure 门户]: https://portal.azure.cn
 [tags]: http://msdn.microsoft.com/zh-cn/library/azure/dn530749.aspx
 

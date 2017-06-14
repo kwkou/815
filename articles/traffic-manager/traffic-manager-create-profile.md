@@ -28,7 +28,7 @@
 在本文中，两个以前创建的 Azure Web 应用终结点将关联到这个新创建的流量管理器配置文件。 若要详细了解如何创建 Azure Web 应用终结点，请访问[“Azure Web 应用文档”页](/documentation/services/app-service/web/)。 可以添加任何具有 DNS 名称且可通过公共 Internet 访问的终结点，例如，我们将使用 Azure Web 应用终结点。
 
 ### <a name="create-a-traffic-manager-profile"></a>创建流量管理器配置文件
-1. 在浏览器中，登录 [Azure 门户预览](http://portal.azure.cn)。 如果还没有帐户，可注册 [1 个月期限的试用版](/pricing/1rmb-trial/)。 
+1. 在浏览器中，登录 [Azure 门户](http://portal.azure.cn)。 如果还没有帐户，可注册 [1 个月期限的试用版](/pricing/1rmb-trial/)。 
 2. 在“中心”菜单上，单击“新建” > “网络” > “全部查看”，单击“流量管理器配置文件”，打开“创建流量管理器配置文件”边栏选项卡，然后单击“创建”。
 3. 在“创建流量管理器配置文件”边栏选项卡上，按如下所示完成输入：
     1. 在**名称**中，提供配置文件的名称。 此名称必须在 trafficmanager.cn 区域中唯一，并将生成 DNS 名称 (\<name\>,trafficmanager.cn)，该名称用于访问流量管理器配置文件。

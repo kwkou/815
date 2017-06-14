@@ -25,7 +25,7 @@
 # <a name="create-and-deploy-a-virtual-machine-scale-set"></a>创建和部署虚拟机规模集
 使用虚拟机规模集可以轻松地将相同的虚拟机作为集来进行部署和管理。 规模集为超大规模应用程序提供高度可缩放且可自定义的计算层，并且它们支持 Windows 平台映像、Linux 平台映像、自定义映像和扩展。 有关规模集的详细信息，请参阅[虚拟机规模集](/documentation/articles/virtual-machine-scale-sets-overview/)。
 
-本教程介绍如何**不**使用 Azure 门户预览就创建虚拟机规模集。 有关如何使用 Azure 门户预览的信息，请参阅[如何使用 Azure 门户预览创建虚拟机规模集](/documentation/articles/virtual-machine-scale-sets-portal-create/)。
+本教程介绍如何**不**使用 Azure 门户就创建虚拟机规模集。 有关如何使用 Azure 门户的信息，请参阅[如何使用 Azure 门户创建虚拟机规模集](/documentation/articles/virtual-machine-scale-sets-portal-create/)。
 
 >[AZURE.NOTE]
 >有关 Azure Resource Manager 资源的详细信息，请参阅 [Azure Resource Manager 与经典部署](/documentation/articles/resource-manager-deployment-model/)。
@@ -165,9 +165,9 @@ cmdlet 的运行结果可以按顺序通过管道传送。 以下示例演示如
 
 使用 Visual Studio 可以创建 Azure 资源组项目，并在其中添加虚拟机规模集模板。 可以选择是要从 GitHub 还是 Azure Web 应用程序库导入该模板。 还会为你生成部署 PowerShell 脚本。 有关详细信息，请参阅[如何使用 Visual Studio 创建虚拟机规模集](/documentation/articles/virtual-machine-scale-sets-vs-create/)。
 
-## <a name="create-from-the-azure-portal-preview"></a>在 Azure 门户预览中创建
+## <a name="create-from-the-azure-portal-preview"></a>在 Azure 门户中创建
 
-Azure 门户预览提供了快速创建规模集的简便方式。 有关详细信息，请参阅[如何使用 Azure 门户预览创建虚拟机规模集](/documentation/articles/virtual-machine-scale-sets-portal-create/)。
+Azure 门户提供了快速创建规模集的简便方式。 有关详细信息，请参阅[如何使用 Azure 门户创建虚拟机规模集](/documentation/articles/virtual-machine-scale-sets-portal-create/)。
 
 ## <a name="next-steps"></a>后续步骤
 

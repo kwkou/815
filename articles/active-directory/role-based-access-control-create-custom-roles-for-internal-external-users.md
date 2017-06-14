@@ -24,7 +24,7 @@
 
 ## <a name="intro-on-role-based-access-control"></a>基于角色的访问控制简介
 
-基于角色的访问控制是只能在 Azure 门户预览中使用的功能，可让订阅所有者将具体的角色分配到可在环境中管理特定资源范围的其他用户。
+基于角色的访问控制是只能在 Azure 门户中使用的功能，可让订阅所有者将具体的角色分配到可在环境中管理特定资源范围的其他用户。
 
 对于需要访问你环境中的特定资源，但不一定要访问整个基础结构或任何计费相关范围的大型组织以及与外部协作者、供应商或自由职业者合作的中小型企业而言，RBAC 可以改善安全管理。 RBAC 允许灵活拥有管理员帐户（订阅级别的服务管理员角色）管理的 Azure 订阅，并邀请多个用户在同一个订阅下工作，但不为他们分配任何管理权限。 从管理和计费角度看，RBAC 功能经证实是各种 Azure 使用方案中的省时且能提高管理效率的选项。
 
@@ -33,7 +33,7 @@
 
 - 向所有者用户分配独立的 Azure 订阅（订阅角色）
 - 获取 Azure 订阅的所有者角色
-- 有权访问 [Azure 门户预览](https://portal.azure.cn)
+- 有权访问 [Azure 门户](https://portal.azure.cn)
 - 确保为用户订阅注册以下资源提供程序：**Microsoft.Authorization**。 有关如何注册资源提供程序的详细信息，请参阅 [资源管理器提供程序、区域、API 版本和架构](/documentation/articles/resource-manager-supported-services/)。
 
 > [AZURE.NOTE]
@@ -55,8 +55,8 @@
 ## <a name="grant-access-at-a-subscription-level-for-a-user-outside-of-azure-active-directory"></a>为 Azure Active Directory 外部的用户授予订阅级访问权限
 RBAC 角色只能由订阅的“所有者”授予，因此管理员用户必须使用已预先分配有此角色或已创建 Azure 订阅的用户名登录。
 
-在 Azure 门户预览中以管理员身份登录后，选择“订阅”，然后选择所需的订阅。
-![Azure 门户预览中的订阅边栏选项卡](./media/role-based-access-control-create-custom-roles-for-internal-external-users/0.png)默认情况下，如果管理员用户购买了 Azure 订阅，则该用户将显示为“帐户管理员”，即订阅角色。 
+在 Azure 门户中以管理员身份登录后，选择“订阅”，然后选择所需的订阅。
+![Azure 门户中的订阅边栏选项卡](./media/role-based-access-control-create-custom-roles-for-internal-external-users/0.png)默认情况下，如果管理员用户购买了 Azure 订阅，则该用户将显示为“帐户管理员”，即订阅角色。 
 
 在此示例中，用户“alflanigan@outlook.com”是 AAD 租户“默认租户 Azure”中“1 元试用”订阅的“所有者”。 由于此用户是最初使用 Microsoft 帐户“Outlook”（Microsoft 帐户 = Outlook、Live 等等）创建 Azure 订阅的用户，因此，添加到此租户的其他所有用户的默认域名将是 **“@alflaniganuoutlook.partner.onmschina.cn”**。 根据设计，新域的语法格式是将创建租户的用户的用户名和域名组合在一起，并加上扩展 **.partner.onmschina.cn**。
 此外，在为新租户添加并验证自定义域名后，用户可以在租户中使用该域名登录。 有关如何在 Azure Active Directory 租户中验证自定义域名的详细信息，请参阅[将自定义域名添加到目录](/documentation/articles/active-directory-add-domain/)。
@@ -69,13 +69,13 @@ RBAC 角色只能由订阅的“所有者”授予，因此管理员用户必须
 
 
 
-![Azure 门户预览中的访问控制 IAM 功能](./media/role-based-access-control-create-custom-roles-for-internal-external-users/1.png)
+![Azure 门户中的访问控制 IAM 功能](./media/role-based-access-control-create-custom-roles-for-internal-external-users/1.png)
 
 
 
 
 
-![在 Azure 门户预览的访问控制 IAM 功能中添加新用户](./media/role-based-access-control-create-custom-roles-for-internal-external-users/2.png)
+![在 Azure 门户的访问控制 IAM 功能中添加新用户](./media/role-based-access-control-create-custom-roles-for-internal-external-users/2.png)
 
 下一步是选择要分配的角色，以及要将 RBAC 角色分配到的用户。 在“角色”下拉菜单中，管理员用户只会看到 Azure 中提供的内置 RBAC 角色。 有关每个角色及其可分配范围的详细说明，请参阅[用于 Azure 基于角色的访问控制的内置角色](/documentation/articles/role-based-access-built-in-roles/)。
 
@@ -110,7 +110,7 @@ RBAC 角色只能由订阅的“所有者”授予，因此管理员用户必须
 
 
 
-![Azure Active Directory Azure 门户预览中的用户边栏选项卡](./media/role-based-access-control-create-custom-roles-for-internal-external-users/7.png)
+![Azure Active Directory Azure 门户中的用户边栏选项卡](./media/role-based-access-control-create-custom-roles-for-internal-external-users/7.png)
 
 
 
@@ -120,13 +120,13 @@ RBAC 角色只能由订阅的“所有者”授予，因此管理员用户必须
 
 在这两个门户的“用户”视图中，可根据以下特征识别外部用户：
 
-- Azure 门户预览中的不同图标类型
+- Azure 门户中的不同图标类型
 - 经典管理门户中的不同来源点
 
 但是，在“订阅”范围向外部用户授予“所有者”或“参与者”访问权限并不允许他们访问管理员用户的目录，除非“全局管理员”允许访问。 在用户属性中，可以看到包含“成员”和“来宾”这两个通用参数的“用户类型”。 成员是已在目录中注册的用户，而来宾是来自外部源的、受邀加入目录的用户。
 
 > [AZURE.NOTE]
-> 请确保在门户中输入凭据后，外部用户选择要登录到的正确目录。 同一个用户可以访问多个目录，并且可以选择其中的一个目录：在 Azure 门户预览中单击右上角的用户名，然后从下拉列表中选择相应的目录。
+> 请确保在门户中输入凭据后，外部用户选择要登录到的正确目录。 同一个用户可以访问多个目录，并且可以选择其中的一个目录：在 Azure 门户中单击右上角的用户名，然后从下拉列表中选择相应的目录。
 
 成为目录中的来宾后，外部用户可以管理 Azure 订阅的所有资源，但无法访问该目录。
 
@@ -134,7 +134,7 @@ RBAC 角色只能由订阅的“所有者”授予，因此管理员用户必须
 
 
 
-![Azure Active Directory Azure 门户预览中受限的访问权限](./media/role-based-access-control-create-custom-roles-for-internal-external-users/9.png)
+![Azure Active Directory Azure 门户中受限的访问权限](./media/role-based-access-control-create-custom-roles-for-internal-external-users/9.png)
 
 Azure Active Directory 与 Azure 订阅之间不像其他 Azure 资源（例如：虚拟机、虚拟网络、Web 应用、存储等）与 Azure 订阅之间一样存在子-父关系。 后者都是在 Azure 订阅下创建、管理和计费的，同时，Azure 订阅用于管理对 Azure 目录的访问。 有关详细信息，请参阅 [Azure 订阅与 Azure AD 的关系](/documentation/articles/active-directory-how-subscriptions-associated-directory/)。 
 
@@ -148,7 +148,7 @@ Azure Active Directory 与 Azure 订阅之间不像其他 Azure 资源（例如�
 - 从计费角度无法操作任何更改
 
 > [AZURE.NOTE]
-> RBAC 是只能在 Azure 门户预览中使用的功能，不授予对经典管理门户的访问权限。
+> RBAC 是只能在 Azure 门户中使用的功能，不授予对经典管理门户的访问权限。
 
 ## <a name="assign-a-built-in-rbac-role-to-an-external-user"></a>将内置的 RBAC 角色分配到外部用户
 针对此项测试中的不同方案，外部用户“alflanigan@gmail.com”将添加为“虚拟机参与者”。
@@ -158,19 +158,19 @@ Azure Active Directory 与 Azure 订阅之间不像其他 Azure 资源（例如�
 
 ![虚拟机参与者内置角色](./media/role-based-access-control-create-custom-roles-for-internal-external-users/11.png)
 
-使用此内置角色的此外部用户的正常行为是仅查看和管理虚拟机，以及部署时所需的仅限资源管理器的相邻资源。 根据设计，这些受限角色只提供对在 Azure 门户预览中创建的相应资源的访问权限，不管是否仍可在经典管理门户中部署其他某些资源（例如：虚拟机）。
+使用此内置角色的此外部用户的正常行为是仅查看和管理虚拟机，以及部署时所需的仅限资源管理器的相邻资源。 根据设计，这些受限角色只提供对在 Azure 门户中创建的相应资源的访问权限，不管是否仍可在经典管理门户中部署其他某些资源（例如：虚拟机）。
 
 
 
 
 
-![Azure 门户预览中的虚拟机参与者角色概览](./media/role-based-access-control-create-custom-roles-for-internal-external-users/12.png)
+![Azure 门户中的虚拟机参与者角色概览](./media/role-based-access-control-create-custom-roles-for-internal-external-users/12.png)
 
 ## <a name="grant-access-at-a-subscription-level-for-a-user-in-the-same-directory"></a>为同一目录中的用户授予订阅级访问权限
 无论是从授予 RBAC 角色的管理角度，还是将授予用户对角色的访问权限的角度来看，流程都与添加外部用户相同。 此处的差别在于，受邀用户不会收到任何电子邮件邀请，因为订阅中的所有资源范围只有在登录后才会显示在仪表板中。
 
 ## <a name="assign-rbac-roles-at-the-resource-group-scope"></a>在资源组范围分配 RBAC 角色
-对于外部和内部（属于同一个目录）这两种用户类型，在**资源组**范围分配 RBAC 角色的过程与在订阅级别分配角色的过程相同。 分配有 RBAC 角色的用户只能通过 Azure 门户预览中的“资源组”图标查看其环境中有权访问的资源组。
+对于外部和内部（属于同一个目录）这两种用户类型，在**资源组**范围分配 RBAC 角色的过程与在订阅级别分配角色的过程相同。 分配有 RBAC 角色的用户只能通过 Azure 门户中的“资源组”图标查看其环境中有权访问的资源组。
 
 ## <a name="assign-rbac-roles-at-the-resource-scope"></a>在资源范围分配 RBAC 角色
 在 Azure 中的资源范围分配 RBAC 角色的过程，与在订阅级别或资源组级别分配该角色的过程相同，这两种方案都遵循相同的工作流。 同样，分配有 RBAC 角色的用户只能在“所有资源”选项卡或直接在仪表板中查看他们有权访问的项。
@@ -181,7 +181,7 @@ Azure Active Directory 与 Azure 订阅之间不像其他 Azure 资源（例如�
 
 
 
-![Azure 门户预览中的目录登录](./media/role-based-access-control-create-custom-roles-for-internal-external-users/13.png)
+![Azure 门户中的目录登录](./media/role-based-access-control-create-custom-roles-for-internal-external-users/13.png)
 
 
 ## <a name="create-a-custom-rbac-role-to-open-support-requests-using-powershell"></a>使用 PowerShell 创建自定义 RBAC 角色以提出支持请求
@@ -243,7 +243,7 @@ Azure 中提供的内置 RBAC 角色可确保根据环境中可用的资源授�
 
 
 
-![Azure 门户预览中导入的自定义 RBAC 角色屏幕截图](./media/role-based-access-control-create-custom-roles-for-internal-external-users/18.png)
+![Azure 门户中导入的自定义 RBAC 角色屏幕截图](./media/role-based-access-control-create-custom-roles-for-internal-external-users/18.png)
 
 
 
@@ -299,15 +299,15 @@ Azure 中提供的内置 RBAC 角色可确保根据环境中可用的资源授�
 
 ![CLI 的导入自定义的 RBAC 角色的屏幕截图](./media/role-based-access-control-create-custom-roles-for-internal-external-users/25.png)
 
-现在，新角色可在 Azure 门户预览中使用，分配过程与前面的示例相同。
+现在，新角色可在 Azure 门户中使用，分配过程与前面的示例相同。
 
 
 
 
 
-![使用 CLI 1.0 创建自定义 RBAC 角色的 Azure 门户预览屏幕截图](./media/role-based-access-control-create-custom-roles-for-internal-external-users/26.png)
+![使用 CLI 1.0 创建自定义 RBAC 角色的 Azure 门户屏幕截图](./media/role-based-access-control-create-custom-roles-for-internal-external-users/26.png)
 
-从最新的 Build 2017 开始，Azure Cloud Shell 已推出正式版。 Azure Cloud Shell 是对 IDE 和 Azure 门户预览的补充。 使用此服务可以获取在 Azure 中进行身份验证和托管的基于浏览器的 shell，并且可以使用它来取代计算机上安装的 CLI。
+从最新的 Build 2017 开始，Azure Cloud Shell 已推出正式版。 Azure Cloud Shell 是对 IDE 和 Azure 门户的补充。 使用此服务可以获取在 Azure 中进行身份验证和托管的基于浏览器的 shell，并且可以使用它来取代计算机上安装的 CLI。
 
 
 

@@ -78,11 +78,11 @@ Hudson 通过允许开发人员轻松地集成其代码更改以及自动和频�
 2. 在“管理 Hudson”页，单击“配置系统”。
 3. 在“Azure 存储帐户配置”部分中：
 
-    a.在 Windows 中，单击“开始”，键入“控制面板”，然后依次单击“控制面板”图标、“系统和安全性”、“系统”、“高级系统设置”。 输入你的存储帐户名称，可以从 [Azure 门户预览](https://portal.azure.cn)获取该帐户名称。
+    a.在 Windows 中，单击“开始”，键入“控制面板”，然后依次单击“控制面板”图标、“系统和安全性”、“系统”、“高级系统设置”。 输入你的存储帐户名称，可以从 [Azure 门户](https://portal.azure.cn)获取该帐户名称。
 
-    b.使用“1521”作为公用端口。 输入你的存储帐户密钥，同样可以从 [Azure 门户预览](https://portal.azure.cn)获取该密钥。
+    b.使用“1521”作为公用端口。 输入你的存储帐户密钥，同样可以从 [Azure 门户](https://portal.azure.cn)获取该密钥。
 
-    c.单击“选项”选项卡。 如果要使用公共 Azure 云，请对“BLOB 服务终结点 URL”使用默认值。 如果要使用其他 Azure 云，请使用在 [Azure 门户预览](https://portal.azure.cn)中为存储帐户指定的终结点。
+    c.单击“选项”选项卡。 如果要使用公共 Azure 云，请对“BLOB 服务终结点 URL”使用默认值。 如果要使用其他 Azure 云，请使用在 [Azure 门户](https://portal.azure.cn)中为存储帐户指定的终结点。
 
     d.单击“验证存储凭据”以验证你的存储帐户。 单击“验证存储凭据”以验证存储帐户。
 
@@ -118,7 +118,7 @@ Hudson 通过允许开发人员轻松地集成其代码更改以及自动和频�
 13. 在 Hudson 仪表板中，单击“立即生成”以运行 **MyJob**。 检查控制台输出中的状态。 当生成后操作开始上传生成项目时，Azure 存储的状态消息将包括在控制台输出中。
 14. 成功完成此作业后，你可通过打开公共 Blob 检查生成项目。
 
-    a.在 Windows 中，单击“开始”，键入“控制面板”，然后依次单击“控制面板”图标、“系统和安全性”、“系统”、“高级系统设置”。 登录到 [Azure 门户预览](https://portal.azure.cn)。
+    a.在 Windows 中，单击“开始”，键入“控制面板”，然后依次单击“控制面板”图标、“系统和安全性”、“系统”、“高级系统设置”。 登录到 [Azure 门户](https://portal.azure.cn)。
 
     b.使用“1521”作为公用端口。 单击“存储”。
 
@@ -153,7 +153,7 @@ Hudson 通过允许开发人员轻松地集成其代码更改以及自动和频�
 
     `http://storageaccount.blob.core.chinacloudapi.cn/container_name/blob_name`
 
-    （以上格式适用于公共 Azure 云。如果要使用其他 Azure 云，请使用 [Azure 门户预览](https://portal.azure.cn)中的终结点来确定 URL 终结点。）
+    （以上格式适用于公共 Azure 云。如果要使用其他 Azure 云，请使用 [Azure 门户](https://portal.azure.cn)中的终结点来确定 URL 终结点。）
 
     在以上格式中，`storageaccount` 表示存储帐户的名称，`container_name` 表示容器的名称，而 `blob_name` 表示 Blob 的名称。在容器名称中，可具有多个由正斜杠 ** /** 分隔的路径。本教程的示例容器名称为 **MyJob**，**${BUILD\_ID}/${BUILD\_NUMBER}** 用于通用虚拟路径，因此 Blob 具有以下格式的 URL：
 

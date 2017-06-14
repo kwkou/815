@@ -80,7 +80,7 @@ Microsoft 与合作伙伴紧密合作，以确保及时更新可用映像并针�
 使用 Azure 云的第一步是注册 Azure 帐户。  若要开始，请转到 [Azure 帐户注册](/pricing/1rmb-trial/)页。
 
 ### <a name="install-the-cli"></a>安装 CLI
-使用新的 Azure 帐户，可以立即开始使用 Azure 门户预览（一个基于 Web 的管理面板）。  若要通过命令行管理 Azure 云，请安装 `azure-cli`。  在 Mac 或 Linux 工作站上安装 [Azure CLI 2.0](https://docs.microsoft.com/zh-cn/cli/azure/install-azure-cli)。
+使用新的 Azure 帐户，可以立即开始使用 Azure 门户（一个基于 Web 的管理面板）。  若要通过命令行管理 Azure 云，请安装 `azure-cli`。  在 Mac 或 Linux 工作站上安装 [Azure CLI 2.0](https://docs.microsoft.com/zh-cn/cli/azure/install-azure-cli)。
 
 ### <a name="create-an-ssh-key-pair"></a>创建 SSH 密钥对
 现在已有 Azure 帐户、Azure Web 门户和 Azure CLI。  下一步是创建 SSH 密钥对，使用它可以通过 SSH 连接到 Linux 而无需使用密码。  [在 Linux 和 Mac 上创建 SSH 密钥](/documentation/articles/virtual-machines-linux-mac-create-ssh-keys/)可启用无密码登录和更高的安全性。
@@ -104,13 +104,13 @@ VM 现在正在 Azure 上运行，用户可以登录。  通过 SSH 使用密码
 ## <a name="storage"></a>存储
 * [Azure 存储简介](/documentation/articles/storage-introduction/)
 * [使用 azure-cli 将磁盘添加到 Linux VM](/documentation/articles/virtual-machines-linux-add-disk/)
-* [如何在 Azure 门户预览中将数据磁盘附加到 Linux VM](/documentation/articles/virtual-machines-linux-attach-disk-portal/)
+* [如何在 Azure 门户中将数据磁盘附加到 Linux VM](/documentation/articles/virtual-machines-linux-attach-disk-portal/)
 
 ## <a name="networking"></a>网络
 * [虚拟网络概述](/documentation/articles/virtual-networks-overview/)
 * [Azure 中的 IP 地址](/documentation/articles/virtual-network-ip-addresses-overview-arm/)
 * [在 Azure 中打开 Linux VM 的端口](/documentation/articles/virtual-machines-linux-nsg-quickstart/)
-* [在 Azure 门户预览中创建完全限定的域名](/documentation/articles/virtual-machines-linux-portal-create-fqdn/)
+* [在 Azure 门户中创建完全限定的域名](/documentation/articles/virtual-machines-linux-portal-create-fqdn/)
 
 ## <a name="next-steps"></a>后续步骤
 现在已概要了解 Azure 上的 Linux。  下一步是进一步的研究，并创建一些 VM 组件！

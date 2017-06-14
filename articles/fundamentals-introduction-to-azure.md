@@ -38,7 +38,7 @@ Azure 一直在不断扩大规模，因此很容易出现过载现象。基本�
  *图：Azure 提供可通过 Internet 访问且在 Azure 数据中心运行的应用程序服务。*
 
 ## 管理门户
-Azure 的 Web 界面称为[经典管理门户](http://manage.windowsazure.cn)，允许管理员访问和管理大多数但不是所有 Azure 功能。Azure 通常会在停用旧版本之前发布新 UI 门户测试版。新版本称为 [Azure 门户预览](https://manage.windowsazure.cn)。
+Azure 的 Web 界面称为[经典管理门户](http://manage.windowsazure.cn)，允许管理员访问和管理大多数但不是所有 Azure 功能。Azure 通常会在停用旧版本之前发布新 UI 门户测试版。新版本称为 [Azure 门户](https://manage.windowsazure.cn)。
 
 通常这两个门户将长时间共同处于活动状态。虽然核心服务均会显示在这两个门户中，但这两个门户并非均提供所有功能。新服务可能首先显示在新门户中，而旧的服务和功能可能仅显示在旧门户中。也就是说，如果您在旧门户中找不到某些内容，请在新门户中查找，反之亦然。
 

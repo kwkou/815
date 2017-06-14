@@ -58,7 +58,7 @@
     azure keyvault set-policy --vault-name myKeyVault --resource-group myResourceGroup \
       --enabled-for-disk-encryption true
 
-使用 Azure Active Directory 创建一个终结点，用于处理身份验证以及从密钥保管库交换加密密钥。 `--home-page` 和 `--identifier-uris` 不需要是实际的可路由地址。 为实现高级别的安全性，应使用客户端机密而不是密码。 Azure CLI 目前无法生成客户端机密。 只能在 Azure 门户预览中生成客户端机密。 以下示例创建名为 `myAADApp` 的 Azure Active Directory 终结点，并使用密码 `myPassword`。 指定自己的密码，如下所示：
+使用 Azure Active Directory 创建一个终结点，用于处理身份验证以及从密钥保管库交换加密密钥。 `--home-page` 和 `--identifier-uris` 不需要是实际的可路由地址。 为实现高级别的安全性，应使用客户端机密而不是密码。 Azure CLI 目前无法生成客户端机密。 只能在 Azure 门户中生成客户端机密。 以下示例创建名为 `myAADApp` 的 Azure Active Directory 终结点，并使用密码 `myPassword`。 指定自己的密码，如下所示：
 
     azure ad app create --name myAADApp \
       --home-page http://testencrypt.contoso.com \
@@ -173,7 +173,7 @@ Linux VM 上的虚拟磁盘是使用 [dm-crypt](https://wikipedia.org/wiki/Dm-cr
 ## <a name="create-the-azure-active-directory-application"></a>创建 Azure Active Directory 应用程序
 加密或解密虚拟磁盘时，将使用一个终结点来处理身份验证，以及从密钥保管库交换加密密钥。 此终结点（Azure Active Directory 应用程序）允许 Azure 平台代表 VM 请求相应的加密密钥。 订阅中提供了一个默认的 Azure Active Directory 实例，不过，许多组织使用专用的 Azure Active Directory 目录。
 
-由于我们不需要创建完整的 Azure Active Directory 应用程序，以下示例中的 `--home-page` 和 `--identifier-uris` 参数不需要是实际的可路由地址。 此外，以下示例还指定基于密码的机密，而不是在 Azure 门户预览中生成密钥。 目前，无法从 Azure CLI 生成密钥。 
+由于我们不需要创建完整的 Azure Active Directory 应用程序，以下示例中的 `--home-page` 和 `--identifier-uris` 参数不需要是实际的可路由地址。 此外，以下示例还指定基于密码的机密，而不是在 Azure 门户中生成密钥。 目前，无法从 Azure CLI 生成密钥。 
 
 创建 Azure Active Directory 应用程序。 以下示例创建名为 `myAADApp` 的应用程序并使用密码 `myPassword`。 指定自己的密码，如下所示：
 

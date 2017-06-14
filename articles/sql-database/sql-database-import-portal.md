@@ -19,9 +19,9 @@
     ms.tgt_pltfrm="NA" />  
 
 
-# 使用 Azure 门户预览导入创建 Azure SQL 数据库所需的 BACPAC 文件
+# 使用 Azure 门户导入创建 Azure SQL 数据库所需的 BACPAC 文件
 
-本文说明如何使用 [Azure 门户预览](https://portal.azure.cn)通过 BACPAC 文件创建 Azure SQL 数据库。
+本文说明如何使用 [Azure 门户](https://portal.azure.cn)通过 BACPAC 文件创建 Azure SQL 数据库。
 
 ## 先决条件
 
@@ -38,7 +38,7 @@
 ## 导入数据库
 打开 SQL Server 边栏选项卡：
 
-1. 转到 [Azure 门户预览](https://portal.azure.cn)。
+1. 转到 [Azure 门户](https://portal.azure.cn)。
 2. 单击“SQL Server”。
 3. 单击要将数据库还原到的服务器。
 4. 在 SQL Server 边栏选项卡中，单击“导入数据库”以打开“导入数据库”边栏选项卡：

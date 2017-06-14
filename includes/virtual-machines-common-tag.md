@@ -1,7 +1,7 @@
 ## <a name="tagging-a-virtual-machine-through-templates"></a>通过模板标记虚拟机
 首先，让我们看一下如何通过模板进行标记。 [此模板](https://github.com/Azure/azure-quickstart-templates/tree/master/101-vm-tags)将标记放置在以下资源中：计算（虚拟机）、存储（存储帐户）和网络（公共 IP 地址、虚拟网络和网络接口）。 此模板适用于 Windows VM，但经过改造后也可用于 Linux VM。
 
-单击下面的 **部署至 Azure** 按钮。 这将导航到 [Azure 门户预览](https://portal.azure.cn/)，可在其中部署此模板。
+单击下面的 **部署至 Azure** 按钮。 这将导航到 [Azure 门户](https://portal.azure.cn/)，可在其中部署此模板。
 
 [![使用标记进行简单部署](./media/virtual-machines-common-tag/deploy-to-azure-tags.png)](https://portal.azure.cn/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-vm-tags%2Fazuredeploy.json)
 
@@ -20,7 +20,7 @@
 
 接下来，在  “编辑参数”部分中，可以填写标记的值。
 
-![通过 Azure 门户预览编辑标记](./media/virtual-machines-common-tag/edit-tags-in-azure-portal.png)
+![通过 Azure 门户编辑标记](./media/virtual-machines-common-tag/edit-tags-in-azure-portal.png)
 
 单击  “创建”，使用标记值部署此模板。
 
@@ -29,12 +29,12 @@
 
 选择标记图标，以查看标记：
 
-![Azure 门户预览中的标记图标](./media/virtual-machines-common-tag/azure-portal-tags-icon.png)
+![Azure 门户中的标记图标](./media/virtual-machines-common-tag/azure-portal-tags-icon.png)
 
 通过定义你自己的键/值对，使用门户添加新标记并进行保存。
 
-![通过 Azure 门户预览添加新标记](./media/virtual-machines-common-tag/azure-portal-add-new-tag.png)
+![通过 Azure 门户添加新标记](./media/virtual-machines-common-tag/azure-portal-add-new-tag.png)
 
 新标记现在应在资源的标记列表中显示。
 
-![Azure 门户预览中保存的新标记](./media/virtual-machines-common-tag/azure-portal-saved-new-tag.png)
+![Azure 门户中保存的新标记](./media/virtual-machines-common-tag/azure-portal-saved-new-tag.png)

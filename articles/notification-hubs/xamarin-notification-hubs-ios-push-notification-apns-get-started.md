@@ -186,7 +186,7 @@
 ## 发送推送通知
 
 
-在 [Azure 门户预览]中通过“通知中心”页面上“故障排除”工具集中的“测试发送”功能来发送通知，可以在应用中测试推送通知的接收情况，如以下屏幕中所示。
+在 [Azure 门户]中通过“通知中心”页面上“故障排除”工具集中的“测试发送”功能来发送通知，可以在应用中测试推送通知的接收情况，如以下屏幕中所示。
 
 ![](./media/notification-hubs-ios-get-started/notification-hubs-test-send.png)
 
@@ -324,6 +324,6 @@
 
 [Azure Mobile Services Component]: http://components.xamarin.com/view/azure-mobile-services/
 [Xamarin Studio]: http://xamarin.com/download
-[Azure 门户预览]: https://portal.azure.cn
+[Azure 门户]: https://portal.azure.cn
 
 <!---HONumber=Mooncake_Quality_Review_0104_2017-->

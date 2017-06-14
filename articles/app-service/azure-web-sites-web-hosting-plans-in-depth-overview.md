@@ -78,9 +78,9 @@
 
 可以在浏览应用服务计划或创建应用的过程中创建空的应用服务计划。
 
-在 [Azure 门户预览](https://portal.azure.cn)中，单击**“新建”** > 
+在 [Azure 门户](https://portal.azure.cn)中，单击**“新建”** > 
 **“Web + 移动”**，然后选择**“Web 应用”**或其他应用服务应用类型。
-![在 Azure 门户预览中创建应用。][createWebApp]
+![在 Azure 门户中创建应用。][createWebApp]
 
 然后即可为新应用选择或创建应用服务计划。
 
@@ -89,7 +89,7 @@
 若要创建应用服务计划，可单击“[+] 新建”，键入“应用服务计划”名称，然后选择相应的“位置”。 单击“定价层”，然后为服务选择适当的服务定价层。 选择“全部查看”以查看其他定价选项，例如“免费”和“共享”。 选择定价层后，单击“选择”按钮。
 
 ## <a name="move-an-app-to-a-different-app-service-plan"></a>将应用移到其他应用服务计划
-可在 [Azure 门户预览](https://portal.azure.cn)中将应用移到其他应用服务计划。 只要计划属于同一资源组和同一地理区域，即可在计划之间移动应用。
+可在 [Azure 门户](https://portal.azure.cn)中将应用移到其他应用服务计划。 只要计划属于同一资源组和同一地理区域，即可在计划之间移动应用。
 
 若要将应用移到另一计划，请执行以下操作：
 
@@ -112,7 +112,7 @@
 可以在菜单的“开发工具”部分找到“克隆应用”。
 
 > [AZURE.IMPORTANT]
-> 有关克隆的某些限制，可阅读[使用 Azure 门户预览进行 Azure 应用服务应用克隆](/documentation/articles/app-service-web-app-cloning-portal/)。
+> 有关克隆的某些限制，可阅读[使用 Azure 门户进行 Azure 应用服务应用克隆](/documentation/articles/app-service-web-app-cloning-portal/)。
 
 ## <a name="scale-an-app-service-plan"></a>缩放应用服务计划
 可通过三种方式缩放一个计划：

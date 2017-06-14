@@ -36,9 +36,9 @@
 
 * 需要一个 Azure 帐户。可以[注册 Azure 1 元试用帐户](/pricing/1rmb-trial/?WT.mc_id=A261C142F)。
 
-* 必须能够使用帐户连接到 Azure 门户预览，该帐户是订阅所有者或参与者角色的成员。有关基于角色的访问控制 (RBAC) 的详细信息，请参阅[开始在 Azure 门户预览中进行访问管理](/documentation/articles/role-based-access-control-what-is/)。
+* 必须能够使用帐户连接到 Azure 门户，该帐户是订阅所有者或参与者角色的成员。有关基于角色的访问控制 (RBAC) 的详细信息，请参阅[开始在 Azure 门户中进行访问管理](/documentation/articles/role-based-access-control-what-is/)。
 
-* 你已完成本教程的[开始使用 Azure 门户预览和 SQL Server Management Studio 了解 Azure SQL 数据库服务器、数据库和防火墙规则](/documentation/articles/sql-database-get-started/)部分或与之类似的 [PowerShell 版本](/documentation/articles/sql-database-get-started-powershell/)部分。请完成此必学教程或在完成本教程的 [PowerShell 版本](/documentation/articles/sql-database-get-started-powershell/)部分时执行 PowerShell 脚本（如果尚未进行），然后再继续。
+* 你已完成本教程的[开始使用 Azure 门户和 SQL Server Management Studio 了解 Azure SQL 数据库服务器、数据库和防火墙规则](/documentation/articles/sql-database-get-started/)部分或与之类似的 [PowerShell 版本](/documentation/articles/sql-database-get-started-powershell/)部分。请完成此必学教程或在完成本教程的 [PowerShell 版本](/documentation/articles/sql-database-get-started-powershell/)部分时执行 PowerShell 脚本（如果尚未进行），然后再继续。
 
    > [AZURE.NOTE]
    根据需要完成 SQL Server 身份验证的相关教程 [SQL 数据库教程：SQL 身份验证、登录名和用户帐户、数据库角色、权限、服务器级防火墙规则和数据库级防火墙规则](/documentation/articles/sql-database-control-access-sql-authentication-get-started/) - 但是，该教程讲解的一些概念未在本文中复述。如果在同一台计算机（使用相同的 IP 地址）上完成了这篇相关教程，则无需执行本教程中与服务器和数据库级防火墙相关的过程。正因如此，这些过程在本教程中标记为可选。此外，本教程中的屏幕截图内容假设读者已完成这篇相关教程。
@@ -50,11 +50,11 @@
 本教程帮助读者了解以下学习主题的内容：[SQL 数据库访问和控制](/documentation/articles/sql-database-control-access/)，[登录名、用户和数据库角色](/documentation/articles/sql-database-manage-logins/)、[主体](https://msdn.microsoft.com/zh-cn/library/ms181127.aspx)、[数据库角色](https://msdn.microsoft.com/zh-cn/library/ms189121.aspx)、[SQL 数据库防火墙规则](/documentation/articles/sql-database-firewall-configure/)和 [Azure Active Directory 身份验证](/documentation/articles/sql-database-aad-authentication/)。
 >  
 
-## 使用 Azure 帐户登录到 Azure 门户预览
-使用[现有订阅](https://account.windowsazure.cn/Home/Index)，按照以下步骤连接到 Azure 门户预览。
+## 使用 Azure 帐户登录到 Azure 门户
+使用[现有订阅](https://account.windowsazure.cn/Home/Index)，按照以下步骤连接到 Azure 门户。
 
-1. 打开所选浏览器并连接到 [Azure 门户预览](https://portal.azure.cn/)。
-2. 登录到 [Azure 门户预览](https://portal.azure.cn/)。
+1. 打开所选浏览器并连接到 [Azure 门户](https://portal.azure.cn/)。
+2. 登录到 [Azure 门户](https://portal.azure.cn/)。
 3. 在“登录”页上，提供订阅的凭据。
    
    ![登录](./media/sql-database-get-started/login.png)  
@@ -65,11 +65,11 @@
 
 ## 为 SQL 逻辑服务器预配 Azure Active Directory 管理员
 
-本教程部分介绍如何在 Azure 门户预览中查看有关逻辑服务器安全配置的信息。
+本教程部分介绍如何在 Azure 门户中查看有关逻辑服务器安全配置的信息。
 
 1. 打开逻辑服务器的“SQL Server”边栏选项卡，在“概述”页中查看信息。可以看到，Azure Active Directory 管理员尚未配置。
 
-   ![Azure 门户预览中的服务器管理员帐户](./media/sql-database-control-access-aad-authentication-get-started/sql_admin_portal.png)  
+   ![Azure 门户中的服务器管理员帐户](./media/sql-database-control-access-aad-authentication-get-started/sql_admin_portal.png)  
 
 
 2. 在“概要”窗格中单击“未配置”，打开“Active Directory 管理员”边栏选项卡。

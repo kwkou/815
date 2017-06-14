@@ -37,7 +37,7 @@ Azure CDN 图片处理是作为 Azure CDN 服务的一个增值功能引入的�
 ## 服务创建流程
 
 
-“图片处理”加速类型的 CDN 节点仅限于在 [Azure 门户预览](https://portal.azure.cn/)中创建
+“图片处理”加速类型的 CDN 节点仅限于在 [Azure 门户](https://portal.azure.cn/)中创建
 
 
 ### 1. 创建 CDN Profile
@@ -72,7 +72,7 @@ Azure CDN 图片处理是作为 Azure CDN 服务的一个增值功能引入的�
 
 这里提供两种上传方式：
 
-- [通过 Azure 门户预览](https://portal.azure.cn)
+- [通过 Azure 门户](https://portal.azure.cn)
 
 - [通过 Azure Storage API](/documentation/articles/storage-dotnet-how-to-use-blobs/)
 

@@ -40,7 +40,7 @@ SSE 的工作方式是在数据写入到 Azure 存储时对其加密，可用于
 
 若要了解详细信息，请参阅“常见问题解答”。
 
-若要启用或禁用存储帐户的存储服务加密，请登录 [Azure 门户预览](https://portal.azure.cn)，然后选择存储帐户。在“设置”边栏选项卡中，寻找如屏幕截图所示的“Blob 服务”部分，然后单击“加密”。
+若要启用或禁用存储帐户的存储服务加密，请登录 [Azure 门户](https://portal.azure.cn)，然后选择存储帐户。在“设置”边栏选项卡中，寻找如屏幕截图所示的“Blob 服务”部分，然后单击“加密”。
 
 ![显示加密选项的门户屏幕截图](./media/storage-service-encryption/image1.png)
 <br/>*图 1：为 Blob 服务启用 SSE（步骤 1）*
@@ -63,13 +63,13 @@ SSE 具有以下限制：
 
 * 不支持经典存储帐户的加密。
 * 现有数据 - SSE 只将加密启用加密之后新建的数据。 例如，如果创建新的 Resource Manager 存储帐户但未打开加密，然后将 Blob 或存档 VHD 上传到该存储帐户，然后打开 SSE，则那些 Blob 不会被加密，除非重新写入或复制。
-* 应用商店支持 - 使用 [Azure 门户预览](https://portal.azure.cn)、PowerShell 和 Azure CLI 为应用商店中创建的 VM 启用加密。VHD 基本映像将保持未加密状态；但是，在 VM 启动之后完成的任何写入将会加密。
+* 应用商店支持 - 使用 [Azure 门户](https://portal.azure.cn)、PowerShell 和 Azure CLI 为应用商店中创建的 VM 启用加密。VHD 基本映像将保持未加密状态；但是，在 VM 启动之后完成的任何写入将会加密。
 * 表和队列数据将不会加密。
 
 ## <a name="getting-started"></a>入门
 ### <a name="step-1-create-a-new-storage-accountstorage-create-storage-accountmd"></a>步骤 1：[创建新存储帐户](/documentation/articles/storage-create-storage-account/)。
 ### <a name="step-2-enable-encryption"></a>步骤 2：启用加密。
-可以使用 [Azure 门户预览](https://portal.azure.cn)启用加密。
+可以使用 [Azure 门户](https://portal.azure.cn)启用加密。
 
 > [AZURE.NOTE]
 > 如果想要以编程方式启用或禁用存储帐户上的存储服务加密，可以使用 [Azure 存储资源提供程序 REST API](https://msdn.microsoft.com/zh-cn/library/azure/mt163683.aspx)、[.NET 存储资源提供程序客户端库](https://msdn.microsoft.com/zh-cn/library/azure/mt131037.aspx)、[Azure PowerShell](https://docs.microsoft.com/zh-cn/powershell/azureps-cmdlets-docs) 或 [Azure CLI](/documentation/articles/storage-azure-cli/)。
@@ -101,7 +101,7 @@ Azure 文件存储使用标准 SMB 协议在云中提供文件共享。 可以�
 ### <a name="step-4-query-the-status-of-the-encrypted-data"></a>步骤 4：查询加密数据的状态
 已部署存储客户端库的更高版本，可让你查询对象的状态，从而判断其是否已加密。 此版本目前仅适用于 Blob 存储。 对文件存储的支持在计划之中。 
 
-在此同时，可以调用[“获取帐户属性”](https://msdn.microsoft.com/zh-cn/library/azure/mt163553.aspx)来验证存储帐户是否已启用加密，或者在 Azure 门户预览中查看存储帐户属性。
+在此同时，可以调用[“获取帐户属性”](https://msdn.microsoft.com/zh-cn/library/azure/mt163553.aspx)来验证存储帐户是否已启用加密，或者在 Azure 门户中查看存储帐户属性。
 
 ## <a name="encryption-and-decryption-workflow"></a>加密和解密工作流
 下面是加密/解密工作流的简要描述：

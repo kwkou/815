@@ -31,7 +31,7 @@
 [AZURE.INCLUDE [vpn-gateway-clasic-rm](../../includes/vpn-gateway-classic-rm-include.md)]
 
 ## <a name="configuration-overview"></a>配置概述
-以下步骤将演示如何在经典管理门户中配置 VPN 网关。 这些步骤适用于使用经典部署模型创建的虚拟网络的网关。 目前，并非所有网关配置设置在 Azure 门户预览中都可用。 当它们可用时，我们会创建一套适用于 Azure 门户预览的新说明。
+以下步骤将演示如何在经典管理门户中配置 VPN 网关。 这些步骤适用于使用经典部署模型创建的虚拟网络的网关。 目前，并非所有网关配置设置在 Azure 门户中都可用。 当它们可用时，我们会创建一套适用于 Azure 门户的新说明。
 
 ### <a name="before-you-begin"></a>开始之前
 在配置网关之前，必须先创建虚拟网络。 有关为跨界连接创建虚拟网络的步骤，请参阅[使用站点到站点 VPN 连接配置虚拟网络](/documentation/articles/vpn-gateway-site-to-site-create/)或[使用点到站点 VPN 连接配置虚拟网络](/documentation/articles/vpn-gateway-howto-point-to-site-classic-azure-portal/)。 然后，按照以下步骤来配置 VPN 网关，并收集配置 VPN 设备所需的信息。 

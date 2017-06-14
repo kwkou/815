@@ -1,5 +1,5 @@
 <properties
-    pageTitle="创建和修改 ExpressRoute 线路：Azure 门户预览 | Azure"
+    pageTitle="创建和修改 ExpressRoute 线路：Azure 门户 | Azure"
     description="本文介绍如何创建、预配、验证、更新、删除和取消预配 ExpressRoute 线路。"
     documentationCenter="na"
     services="expressroute"
@@ -38,14 +38,14 @@
 
 
 - 在开始配置之前，请查看[先决条件](/documentation/articles/expressroute-prerequisites/)和[工作流](/documentation/articles/expressroute-workflows/)。
-- 确保有权访问 [Azure 门户预览](https://portal.azure.cn)。
+- 确保有权访问 [Azure 门户](https://portal.azure.cn)。
 - 确保你有权创建新的网络资源。如果你没有适当的权限，请与帐户管理员联系。
 
 ## <a name="create-and-provision-an-expressroute-circuit"></a>创建和预配 ExpressRoute 线路
 
-### <a name="1-sign-in-to-the-azure-portal"></a>1.登录到 Azure 门户预览
+### <a name="1-sign-in-to-the-azure-portal"></a>1.登录到 Azure 门户
 
-从浏览器导航到 [Azure 门户预览](http://portal.azure.cn)并使用 Azure 帐户登录。
+从浏览器导航到 [Azure 门户](http://portal.azure.cn)并使用 Azure 帐户登录。
 
 ### <a name="2-create-a-new-expressroute-circuit"></a>2.创建新的 ExpressRoute 线路
 

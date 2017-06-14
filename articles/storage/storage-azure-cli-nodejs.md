@@ -22,7 +22,7 @@
 
 ## 概述
 
-Azure CLI 提供了一组开源且跨平台的命令，这些命令可以用于 Azure 平台。它提供 [Azure 门户预览](https://portal.azure.cn)所能提供的很多相同功能，此外还有各种数据访问功能。
+Azure CLI 提供了一组开源且跨平台的命令，这些命令可以用于 Azure 平台。它提供 [Azure 门户](https://portal.azure.cn)所能提供的很多相同功能，此外还有各种数据访问功能。
 
 在本指南中，我们将探讨如何使用 [Azure 命令行界面 \(Azure CLI\)](/documentation/articles/xplat-cli-install/)，以便通过 Azure 存储执行各种开发和管理任务。在使用本指南之前，我们建议你下载和安装或者升级到最新版 Azure CLI。
 

@@ -23,7 +23,7 @@
 
 在整个 Web 应用使用期内，您将执行各种管理任务，从初始部署到正常操作、维护与更新。
 
-许多 Web 应用管理任务都可在 Azure 门户预览中执行。
+许多 Web 应用管理任务都可在 Azure 门户中执行。
 
 ## 将 Web 应用部署到生产之前
 ### 选择层级
@@ -33,7 +33,7 @@
 * 您可以在创建 Web 应用之后经常[切换层](/documentation/articles/web-sites-scale/)。
 
 ### 配置
-使用 [Azure 门户预览](https://portal.azure.cn/)设置各种配置选项。有关详细信息，请参阅[在 Azure App Service 中配置 Web 应用](/documentation/articles/web-sites-configure/)。下面是快速核对清单：
+使用 [Azure 门户](https://portal.azure.cn/)设置各种配置选项。有关详细信息，请参阅[在 Azure App Service 中配置 Web 应用](/documentation/articles/web-sites-configure/)。下面是快速核对清单：
 
 * 如有需要，请选择针对 .NET、PHP、Java 或 Python 的**运行时版本**。
 * 如果您的 Web 应用使用 WebSocket 协议，请启用 **WebSocket**。（这包括使用 [ASP.NET SignalR](http://www.asp.net/signalr) 或 [socket.io](/documentation/articles/web-sites-nodejs-chat-app-socketio/) 的应用。）

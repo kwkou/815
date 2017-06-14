@@ -65,7 +65,7 @@
 
  [Azure 计划程序的概念、术语和实体层次结构](/documentation/articles/scheduler-concepts-terms/)
 
- [开始在 Azure 门户预览中使用计划程序](/documentation/articles/scheduler-get-started-portal/)
+ [开始在 Azure 门户中使用计划程序](/documentation/articles/scheduler-get-started-portal/)
 
  [Azure 计划程序中的计划和计费](/documentation/articles/scheduler-plans-billing/)
 

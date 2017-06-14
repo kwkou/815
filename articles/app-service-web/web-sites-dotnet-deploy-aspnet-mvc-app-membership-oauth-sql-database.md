@@ -602,7 +602,7 @@ ASP.NET MVC 基架功能可以自动生成用于执行创建、读取、更新�
 
 4. 右键单击 Web 应用，并选择“停止”。
 
-	也可以从 [Azure 门户预览](https://portal.azure.cn/)中转到 Web 应用的边栏选项卡，然后单击边栏选项卡顶部的“停止”图标。
+	也可以从 [Azure 门户](https://portal.azure.cn/)中转到 Web 应用的边栏选项卡，然后单击边栏选项卡顶部的“停止”图标。
 
 	![停止 Web 应用门户](./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/stopweb.png)  
 

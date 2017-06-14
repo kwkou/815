@@ -74,9 +74,9 @@ Jenkins 通过允许开发人员轻松地集成其代码更改以及自动和频
 1. 在 Jenkins 仪表板中，单击“管理 Jenkins”。
 2. 在“管理 Jenkins”页中，单击“配置系统”。
 3. 在“Azure 存储帐户配置”部分：
-    1. 输入你的存储帐户名称，可以从 [Azure 门户预览](https://portal.azure.cn)获取该帐户名称。
-    2. 输入你的存储帐户密钥，同样可以从 [Azure 门户预览](https://portal.azure.cn)获取该密钥。
-    3. 如果要使用公共 Azure 云，请对“BLOB 服务终结点 URL”使用默认值。如果要使用其他 Azure 云，请使用在 [Azure 门户预览](https://portal.azure.cn)中为存储帐户指定的终结点。
+    1. 输入你的存储帐户名称，可以从 [Azure 门户](https://portal.azure.cn)获取该帐户名称。
+    2. 输入你的存储帐户密钥，同样可以从 [Azure 门户](https://portal.azure.cn)获取该密钥。
+    3. 如果要使用公共 Azure 云，请对“BLOB 服务终结点 URL”使用默认值。如果要使用其他 Azure 云，请使用在 [Azure 门户](https://portal.azure.cn)中为存储帐户指定的终结点。
     4. 单击“验证存储凭据”以验证你的存储帐户。
     5. [可选] 如果有其他存储帐户并且希望其可供 Jenkins CI 使用，请单击“添加更多存储帐户”。
     6. 单击“保存”以保存设置。
@@ -109,7 +109,7 @@ Jenkins 通过允许开发人员轻松地集成其代码更改以及自动和频
 12. 单击“保存”以保存设置。
 13. 在 Jenkins 仪表板中，单击“立即生成”以运行 **MyJob**。 检查控制台输出中的状态。 生成后操作开始上传生成项目时，控制台输出中将包括 Azure 存储的状态消息。
 14. 成功完成此作业后，可通过打开公共 Blob 检查生成项目。
-    1. 登录到 [Azure 门户预览](https://portal.azure.cn)。
+    1. 登录到 [Azure 门户](https://portal.azure.cn)。
     2. 单击“存储”。
     3. 单击你用于 Jenkins 的存储帐户名称。
     4. 单击“容器”。
@@ -140,7 +140,7 @@ Jenkins 通过允许开发人员轻松地集成其代码更改以及自动和频
 
     `http://storageaccount.blob.core.chinacloudapi.cn/container_name/blob_name`
 
-    （以上格式适用于公共 Azure 云。 如果要使用其他 Azure 云，请使用 [Azure 门户预览](https://portal.azure.cn)中的终结点来确定 URL 终结点。）
+    （以上格式适用于公共 Azure 云。 如果要使用其他 Azure 云，请使用 [Azure 门户](https://portal.azure.cn)中的终结点来确定 URL 终结点。）
 
     在以上格式中，`storageaccount` 表示存储帐户的名称，`container_name` 表示容器的名称，而 `blob_name` 表示 Blob 的名称。 在容器名称中，可具有多个由正斜杠 **/** 分隔的路径。 本教程的示例容器名称为 **MyJob**，**${BUILD\_ID}/${BUILD\_NUMBER}** 用于通用虚拟路径，因此 Blob 具有以下格式的 URL：
 

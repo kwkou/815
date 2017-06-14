@@ -71,7 +71,7 @@
 		...
 
 
-- 要使 SPA 后端待办事项列表 API 接受来自浏览器的令牌，后端需要有关应用注册的配置信息。在 TodoSPA 项目中，打开 `web.config`。替换 `<appSettings>` 中的元素值，以反映你在 Azure 门户预览中输入的值。只要使用 ADAL，你的代码就会引用这些值。
+- 要使 SPA 后端待办事项列表 API 接受来自浏览器的令牌，后端需要有关应用注册的配置信息。在 TodoSPA 项目中，打开 `web.config`。替换 `<appSettings>` 中的元素值，以反映你在 Azure 门户中输入的值。只要使用 ADAL，你的代码就会引用这些值。
   - `ida:Tenant` 是 Azure AD 租户的域，例如 contoso.partner.onmschina.cn
   - `ida:Audience` 必须是从门户复制的应用程序的**客户端 ID**。
 

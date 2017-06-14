@@ -89,7 +89,7 @@
 
 请注意，新网关可能需要 20 分钟或更长的时间才能完成。
 
-在本地计算机上的 Azure 门户预览中，使用 CORP\\User1 凭据连接到 DC1。若要配置 CORP 域，以便计算机和用户使用其本地域控制器进行身份验证，请在 DC1 上从管理员级 Windows PowerShell 命令提示符运行这些命令。
+在本地计算机上的 Azure 门户中，使用 CORP\\User1 凭据连接到 DC1。若要配置 CORP 域，以便计算机和用户使用其本地域控制器进行身份验证，请在 DC1 上从管理员级 Windows PowerShell 命令提示符运行这些命令。
 
 	New-ADReplicationSite -Name "TestLab" 
 	New-ADReplicationSite -Name "TestVNET"
@@ -168,7 +168,7 @@
 	$vm=Set-AzureRMVMOSDisk -VM $vm -Name DC2-TestVNET-OSDisk -VhdUri $osDiskUri -CreateOption fromImage
 	New-AzureRMVM -ResourceGroupName $rgName -Location $locName -VM $vm
 
-接下来，从 Azure 门户预览连接到新的 DC2 虚拟机。
+接下来，从 Azure 门户连接到新的 DC2 虚拟机。
 
 接下来，配置 Windows 防火墙规则，以允许进行基本的连接测试所需的流量。在 DC2 上的管理员级 Windows PowerShell 命令提示符下运行这些命令。
 
@@ -199,7 +199,7 @@
 
 由于 TestVNET 虚拟网络有自己的 DNS 服务器 (DC2)，因此必须将 TestVNET 虚拟网络配置为使用此 DNS 服务器。
 
-1.	在 Azure 门户预览的左窗格中，单击虚拟网络图标，然后单击“TestVNET”。
+1.	在 Azure 门户的左窗格中，单击虚拟网络图标，然后单击“TestVNET”。
 2.	在“设置”选项卡中，单击“DNS 服务器”。
 3.	在“主 DNS 服务器”中，键入 **192.168.0.4** 替换 10.0.0.4。
 4.	单击“保存”。

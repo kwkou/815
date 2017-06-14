@@ -23,7 +23,7 @@
 **Azure 活动日志**是一种日志，方便用户了解对订阅中的资源执行的操作。活动日志此前称为“审核日志”或“操作日志”，因为它报告订阅的控制平面事件。使用活动日志，用户可以确定针对订阅中的资源执行的任何写入操作（PUT、POST、DELETE）的“内容、人员和时间”。还可以了解该操作和其他相关属性的状态。活动日志不包括读取 (GET) 操作。
 
 
-可通过 Azure 门户预览、CLI、PowerShell cmdlet 和 Azure Monitor REST API 从活动日志检索事件。
+可通过 Azure 门户、CLI、PowerShell cmdlet 和 Azure Monitor REST API 从活动日志检索事件。
 
 
 > [AZURE.WARNING]
@@ -60,16 +60,16 @@ Azure 活动日志主要适用于 Azure Resource Manager 中发生的活动。�
 
 可通过门户中“活动日志”边栏选项卡的“导出”选项配置这些设置。还可[使用 Azure Monitor REST API](https://msdn.microsoft.com/library/azure/dn931927.aspx)、PowerShell cmdlet 或 CLI 以编程方式配置这些设置。一个订阅只能有一个日志配置文件。
 
-### 通过 Azure 门户预览配置日志配置文件
-可以在 Azure 门户预览中使用“导出”选项将活动日志流式传输到事件中心，或者将其存储在存储帐户中。
+### 通过 Azure 门户配置日志配置文件
+可以在 Azure 门户中使用“导出”选项将活动日志流式传输到事件中心，或者将其存储在存储帐户中。
 
-1. 使用门户预览左侧的菜单导航到“活动日志”边栏选项卡。
+1. 使用门户左侧的菜单导航到“活动日志”边栏选项卡。
 
-    ![在门户预览中导航到“活动日志”](./media/monitoring-overview-activity-logs/activity-logs-portal-navigate.png)  
+    ![在门户中导航到“活动日志”](./media/monitoring-overview-activity-logs/activity-logs-portal-navigate.png)  
 
 2. 单击边栏选项卡顶部的“导出”按钮。
 
-    ![门户预览中的“导出”按钮](./media/monitoring-overview-activity-logs/activity-logs-portal-export.png)  
+    ![门户中的“导出”按钮](./media/monitoring-overview-activity-logs/activity-logs-portal-export.png)  
 
 3. 在显示的边栏选项卡中，可以选择：
    

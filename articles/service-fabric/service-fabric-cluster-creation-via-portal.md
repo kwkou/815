@@ -1,6 +1,6 @@
 <properties
-    pageTitle="在 Azure 门户预览中创建 Service Fabric 群集 | Azure"
-    description="本文介绍如何使用 Azure 门户预览和 Azure 密钥保管库 在 Azure 中设置安全的 Service Fabric 群集。"
+    pageTitle="在 Azure 门户中创建 Service Fabric 群集 | Azure"
+    description="本文介绍如何使用 Azure 门户和 Azure 密钥保管库 在 Azure 中设置安全的 Service Fabric 群集。"
     services="service-fabric"
     documentationcenter=".net"
     author="chackdan"
@@ -21,15 +21,15 @@
     ms.openlocfilehash="a9be0c40e4d9e49cad60d7cc248b42f18120235d"
     ms.lasthandoff="04/14/2017" />
 
-# <a name="create-a-service-fabric-cluster-in-azure-using-the-azure-portal-preview"></a>使用 Azure 门户预览在 Azure 中创建 Service Fabric 群集
+# <a name="create-a-service-fabric-cluster-in-azure-using-the-azure-portal-preview"></a>使用 Azure 门户在 Azure 中创建 Service Fabric 群集
 > [AZURE.SELECTOR]
 - [Azure 资源管理器](/documentation/articles/service-fabric-cluster-creation-via-arm/)
-- [Azure 门户预览](/documentation/articles/service-fabric-cluster-creation-via-portal/)
+- [Azure 门户](/documentation/articles/service-fabric-cluster-creation-via-portal/)
 
-本指南逐步介绍如何使用 Azure 门户预览在 Azure 中设置安全的 Service Fabric 群集， 其中包括以下步骤：
+本指南逐步介绍如何使用 Azure 门户在 Azure 中设置安全的 Service Fabric 群集， 其中包括以下步骤：
 
 * 设置密钥保管库用于管理群集安全密钥。
-* 通过 Azure 门户预览在 Azure 中创建安全群集。
+* 通过 Azure 门户在 Azure 中创建安全群集。
 * 使用证书对管理员进行身份验证。
 
 > [AZURE.NOTE]
@@ -39,7 +39,7 @@
 
 安全的群集是防止未经授权访问管理操作的群集，这些操作包括部署、升级和删除应用程序、服务及其包含的数据。 不安全的群集是任何人都可以随时连接并执行管理操作的群集。 尽管可以创建不安全的群集，但 **强烈建议创建安全的群集**。 不安全的群集 **无法在事后受到保护** - 要保护群集，必须创建新群集。
 
-无论群集是 Linux 群集还是 Windows 群集，创建安全群集的思路都一样。 有关创建安全 Linux 群集的详细信息和帮助器脚本，请参阅[在 Linux 上创建安全群集](/documentation/articles/service-fabric-cluster-creation-via-arm/)。 可以按[在 Azure 门户预览中创建群集](#create-cluster-portal)部分中所述，将所提供的帮助器脚本获取的参数直接输入到门户中。
+无论群集是 Linux 群集还是 Windows 群集，创建安全群集的思路都一样。 有关创建安全 Linux 群集的详细信息和帮助器脚本，请参阅[在 Linux 上创建安全群集](/documentation/articles/service-fabric-cluster-creation-via-arm/)。 可以按[在 Azure 门户中创建群集](#create-cluster-portal)部分中所述，将所提供的帮助器脚本获取的参数直接输入到门户中。
 
 ## <a name="log-in-to-azure"></a>登录到 Azure
 本指南使用 [Azure PowerShell][azure-powershell]。 开始新的 PowerShell 会话时，请登录到 Azure 帐户并选择订阅，然后执行 Azure 命令。
@@ -150,7 +150,7 @@ Service Fabric 使用 X.509 证书保护群集。 Azure 密钥保管库用于管
 * 加密和解密应用程序配置值
 * 在复制期间跨节点加密数据 
 
-通过 Azure 门户预览创建群集时，无法配置应用程序证书。 若要在设置群集时配置应用程序证书，必须 [使用 Azure Resource Manager 创建群集][create-cluster-arm]。 也可以在创建群集后将应用程序证书添加到群集。
+通过 Azure 门户创建群集时，无法配置应用程序证书。 若要在设置群集时配置应用程序证书，必须 [使用 Azure Resource Manager 创建群集][create-cluster-arm]。 也可以在创建群集后将应用程序证书添加到群集。
 
 ### <a name="formatting-certificates-for-azure-resource-provider-use"></a>格式化证书以供 Azure 资源提供程序使用
 可以直接通过密钥保管库添加和使用私钥文件 (.pfx)。 但是，Azure 资源提供程序要求以特殊 JSON 格式存储密钥，在密钥中包含 .pfx 作为 Base-64 编码字符串和私钥密码。 若要满足这些要求，必须将密钥放入 JSON 字符串，然后在密钥保管库中将其存储为 *机密* 。
@@ -196,11 +196,11 @@ Service Fabric 使用 X.509 证书保护群集。 Azure 密钥保管库用于管
 
 </a "create-cluster-portal" ></a>
 
-## <a name="create-cluster-in-the-azure-portal-preview"></a><a name="create-cluster-portal"></a>在 Azure 门户预览中创建群集
+## <a name="create-cluster-in-the-azure-portal-preview"></a><a name="create-cluster-portal"></a>在 Azure 门户中创建群集
 ### <a name="search-for-the-service-fabric-cluster-resource"></a>搜索 Service Fabric 群集资源
-![在 Azure 门户预览中搜索 Service Fabric 群集模板。][SearchforServiceFabricClusterTemplate]
+![在 Azure 门户中搜索 Service Fabric 群集模板。][SearchforServiceFabricClusterTemplate]
 
- 1. 登录到 [Azure 门户预览][azure-portal]。
+ 1. 登录到 [Azure 门户][azure-portal]。
 2. 单击“**新建**”添加新的资源模板。 在“**全部**”下面的“**应用商店**”中搜索 Service Fabric 群集模板。
 3. 从列表中选择“**Service Fabric 群集**”。
 4. 导航到“**Service Fabric 群集**”边栏选项卡，然后单击“**创建**”。
@@ -247,7 +247,7 @@ Service Fabric 使用 X.509 证书保护群集。 Azure 密钥保管库用于管
 > 
 
 #### <a name="3-security"></a>3.“安全”
-![Azure 门户预览上安全配置的屏幕截图。][SecurityConfigs]
+![Azure 门户上安全配置的屏幕截图。][SecurityConfigs]
 
 最后一个步骤是使用前面创建的密钥保管库和证书信息，提供证书信息来保护群集。
 

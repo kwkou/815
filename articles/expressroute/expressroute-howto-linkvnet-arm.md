@@ -24,7 +24,7 @@
 
 # <a name="connect-a-virtual-network-to-an-expressroute-circuit"></a>将虚拟网络连接到 ExpressRoute 线路
 > [AZURE.SELECTOR]
-- [Resource Manager - Azure 门户预览](/documentation/articles/expressroute-howto-linkvnet-portal-resource-manager/)
+- [Resource Manager - Azure 门户](/documentation/articles/expressroute-howto-linkvnet-portal-resource-manager/)
 - [Resource Manager - PowerShell](/documentation/articles/expressroute-howto-linkvnet-arm/)
 - [经典 - PowerShell](/documentation/articles/expressroute-howto-linkvnet-classic/)
 

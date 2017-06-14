@@ -87,8 +87,8 @@ Azure 命令行接口 (Azure CLI) 为预览版。
 	iothub-explorer help
 
 
-### Azure 门户预览
-完整的 CLI 体验有助于用户创建和管理其所有 Azure 资源。还可能需要借助 [Azure 门户预览](/documentation/articles/azure-portal-overview/)对 Azure 资源进行预配、管理和调试。
+### Azure 门户
+完整的 CLI 体验有助于用户创建和管理其所有 Azure 资源。还可能需要借助 [Azure 门户](/documentation/articles/azure-portal-overview/)对 Azure 资源进行预配、管理和调试。
 
 ## Azure 存储问题
 [Microsoft Azure 存储资源管理器（预览版）](http://storageexplorer.com)是 Microsoft 推出的一款独立应用，可用于在 Windows、macOS和 Linux 上处理 [Azure 存储](/documentation/services/storage/)数据。可以使用此工具连接到表并查看其中的数据。可以使用此工具排查 Azure 存储问题。

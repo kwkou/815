@@ -1,7 +1,7 @@
-若要连接到某个 Azure Redis 缓存实例，缓存客户端需要该缓存的主机名、端口和密钥。 在某些客户端中，这些项的名称可能略有不同。 可以在 Azure 门户预览中检索该信息，也可以通过命令行工具（例如 Azure CLI）来检索。
+若要连接到某个 Azure Redis 缓存实例，缓存客户端需要该缓存的主机名、端口和密钥。 在某些客户端中，这些项的名称可能略有不同。 可以在 Azure 门户中检索该信息，也可以通过命令行工具（例如 Azure CLI）来检索。
 
-### <a name="retrieve-host-name-ports-and-access-keys-using-the-azure-portal-preview"></a>使用 Azure 门户预览检索主机名、端口和访问密钥
-若要使用 Azure 门户预览检索主机名、端口和访问密钥，请[浏览](/documentation/articles/cache-configure/#configure-redis-cache-settings)到 [Azure 门户预览](https://portal.azure.cn)中的缓存， 然后在“资源”菜单中单击“访问密钥”和“属性”。 
+### <a name="retrieve-host-name-ports-and-access-keys-using-the-azure-portal-preview"></a>使用 Azure 门户检索主机名、端口和访问密钥
+若要使用 Azure 门户检索主机名、端口和访问密钥，请[浏览](/documentation/articles/cache-configure/#configure-redis-cache-settings)到 [Azure 门户](https://portal.azure.cn)中的缓存， 然后在“资源”菜单中单击“访问密钥”和“属性”。 
 
 ![Redis 缓存设置](./media/redis-cache-access-keys/redis-cache-hostname-ports-keys.png)
 

@@ -1,5 +1,5 @@
 <properties
-    pageTitle="向 VNet 添加多个 VPN 网关站点到站点连接：Azure 门户预览：Resource Manager | Azure"
+    pageTitle="向 VNet 添加多个 VPN 网关站点到站点连接：Azure 门户：Resource Manager | Azure"
     description="将多站点 S2S 连接添加到包含现有连接的 VPN 网关"
     services="vpn-gateway"
     documentationcenter="na"
@@ -28,7 +28,7 @@
 - [Resource Manager - 门户](/documentation/articles/vpn-gateway-howto-multi-site-to-site-resource-manager-portal/)
 - [经典 - PowerShell](/documentation/articles/vpn-gateway-multi-site/)
 
-本文逐步讲解如何使用 Azure 门户预览，将站点到站点 (S2S) 连接添加到包含现有连接的 VPN 网关。 这种类型的连接通常称为“多站点”配置。 可将 S2S 连接添加到已有 S2S 连接、点到站点连接或 VNet 到 VNet 连接的 VNet。 添加连接时，请注意一些限制。 在开始之前，请查看本文的 [开始之前](#before) 部分检查配置。 
+本文逐步讲解如何使用 Azure 门户，将站点到站点 (S2S) 连接添加到包含现有连接的 VPN 网关。 这种类型的连接通常称为“多站点”配置。 可将 S2S 连接添加到已有 S2S 连接、点到站点连接或 VNet 到 VNet 连接的 VNet。 添加连接时，请注意一些限制。 在开始之前，请查看本文的 [开始之前](#before) 部分检查配置。 
 
 本文适用于使用 Resource Manager 部署模型创建的、具有 RouteBased VPN 网关的 VNet。 本文中的步骤不适用于 ExpressRoute/站点到站点共存连接配置。 有关共存连接的信息，请参阅 [ExpressRoute/S2S 共存连接](/documentation/articles/expressroute-howto-coexist-resource-manager/)。
 
@@ -50,7 +50,7 @@
 * VPN 设备有一个面向外部的公共 IP 地址。 此 IP 地址不得位于 NAT 之后。
 
 ## <a name="part1"></a>第 1 部分 - 配置连接
-1. 从浏览器导航到 [Azure 门户预览](http://portal.azure.cn)，必要时使用 Azure 帐户登录。
+1. 从浏览器导航到 [Azure 门户](http://portal.azure.cn)，必要时使用 Azure 帐户登录。
 2. 单击“所有资源”，从资源列表中找到“虚拟网络网关”并单击它。
 3. 在“虚拟网络网关”边栏选项卡中，单击“连接”。
 

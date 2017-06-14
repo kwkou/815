@@ -138,7 +138,7 @@ var keepaliveAgent = new Agent({
 
 ### 节点应用程序耗用太多 CPU。
 
-你可能会在门户上获取 Azure Webapps 针对高 CPU 耗用量提供的建议。你也可以设置监视器以监视某些[度量值](/documentation/articles/web-sites-monitor/)。在 Azure 门户预览仪表板上检查 CPU 使用率时，请检查 CPU 的 MAX 值，你才不会错过峰值。
+你可能会在门户上获取 Azure Webapps 针对高 CPU 耗用量提供的建议。你也可以设置监视器以监视某些[度量值](/documentation/articles/web-sites-monitor/)。在 Azure 门户仪表板上检查 CPU 使用率时，请检查 CPU 的 MAX 值，你才不会错过峰值。
 在你认为应用程序耗用太多 CPU，但你无法解释的情况下，必须分析节点应用程序。
 
 #### 在 Azure Webapps 上使用 V8 探查器分析节点应用程序
@@ -212,7 +212,7 @@ http.createServer(function (req, res) {
 
 ### 节点应用程序耗用太多内存。
 
-你可能会在门户上获取 Azure Webapps 针对高内存耗用量提供的建议。你也可以设置监视器以监视某些[度量值](/documentation/articles/web-sites-monitor/)。在 Azure 门户预览仪表板上检查内存使用率时，请检查内存的 MAX 值，你才不会错过峰值。
+你可能会在门户上获取 Azure Webapps 针对高内存耗用量提供的建议。你也可以设置监视器以监视某些[度量值](/documentation/articles/web-sites-monitor/)。在 Azure 门户仪表板上检查内存使用率时，请检查内存的 MAX 值，你才不会错过峰值。
 
 #### node.js 的泄漏检测和堆区分 
 

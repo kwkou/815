@@ -62,7 +62,7 @@
 7. 为应用程序输入一个友好的名称，例如“TodoListService”，选择“Web 应用程序和/或 Web API”，然后单击“下一步”。
 8. 对于登录 URL，请输入示例的基 URL，默认情况下为 `https://localhost:8080`。
 9. 对于应用程序 ID URI，请输入 `https://<your_tenant_name>/TodoListService`，并将 `<your_tenant_name>` 替换为你的 Azure AD 租户的名称。单击“确定”完成注册。
-10. 仍然在 Azure 门户预览中，单击你的应用程序的“配置”选项卡。
+10. 仍然在 Azure 门户中，单击你的应用程序的“配置”选项卡。
 11. **查找“客户端 ID”值并将它复制到某个位置**，稍后配置应用程序时需要用到它。
 
 ## 步骤 3：注册示例 Android 本机客户端应用程序

@@ -43,7 +43,7 @@ Azure 密钥保管库是保护云应用程序加密密钥和机密（例如证�
 ## 使用 Azure Active Directory 进行身份验证 <a name="authentication-using-azure-active-direcrory"></a>
 在 Azure 订阅中创建密钥保管库时，该密钥保管库会自动关联到该订阅的 Azure Active Directory 租户。所有调用方（用户和应用程序）必须在此租户中注册才能访问此密钥保管库。应用程序或用户必须使用 Azure Active Directory 进行身份验证才能访问密钥保管库。这一点适用于管理平面访问和数据平面访问。在这两种情况下，应用程序可通过两种方式访问密钥保管库：
 
-- **用户+ 应用访问** - 通常适用于代表登录用户访问密钥保管库的应用程序。Azure PowerShell 和 Azure 门户预览就是这种访问类型的例子。可使用两种方法向用户授予访问权限：一种方法是授予用户从任何应用程序访问密钥保管库的权限，另一种方法是仅当用户使用特定应用程序时才向其授予密钥保管库访问权限（称为复合标识）。
+- **用户+ 应用访问** - 通常适用于代表登录用户访问密钥保管库的应用程序。Azure PowerShell 和 Azure 门户就是这种访问类型的例子。可使用两种方法向用户授予访问权限：一种方法是授予用户从任何应用程序访问密钥保管库的权限，另一种方法是仅当用户使用特定应用程序时才向其授予密钥保管库访问权限（称为复合标识）。
 - **仅限应用的访问** - 适用于运行后台程序服务、后台作业等的应用程序。将向应用程序的标识授予密钥保管库访问权限。
 
 这两种类型的应用程序使用任何[受支持的身份验证方法](/documentation/articles/active-directory-authentication-scenarios/)在 Azure Active Directory 中进行身份验证，并获取令牌。使用的身份验证方法取决于应用程序类型。然后，应用程序使用此令牌并将 REST API 请求发送到密钥保管库。在管理平面访问模式中，请求将通过 Azure资源管理器终结点路由。访问数据平面时，应用程序直接与密钥保管库终结点对话。查看有关[整个身份验证流](/documentation/articles/active-directory-protocols-oauth-code/)的详细信息。
@@ -72,7 +72,7 @@ Azure 密钥保管库是可以在 Azure资源管理器部署模型中使用的 A
 管理平面由影响密钥保管库本身的操作构成。例如，你可以创建或删除密钥保管库。可以获取订阅中保管库的列表。可以检索密钥保管库属性（例如 SKU 和标记），设置密钥保管库访问策略来控制有权访问密钥保管库中密钥和机密的用户与应用程序。管理平面访问控制使用 RBAC。请在前一部分的表格中查看可通过管理平面执行的密钥保管库操作的完整列表。
 
 ### 基于角色的访问控制 \(RBAC\)
-每个 Azure 订阅都有一个 Azure Active Directory。可为此目录中的用户、组和应用程序授予访问权限，以便在使用 Azure资源管理器部署模型的 Azure 订阅中管理资源。这种类型的访问控制称为基于角色的访问控制 \(RBAC\)。若要管理此访问权限，可以使用 [Azure 门户预览](https://portal.azure.cn/)、[Azure CLI 工具](/documentation/articles/xplat-cli-install/)、[PowerShell](/documentation/articles/powershell-install-configure/) 或 [Azure资源管理器REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn906885.aspx)。
+每个 Azure 订阅都有一个 Azure Active Directory。可为此目录中的用户、组和应用程序授予访问权限，以便在使用 Azure资源管理器部署模型的 Azure 订阅中管理资源。这种类型的访问控制称为基于角色的访问控制 \(RBAC\)。若要管理此访问权限，可以使用 [Azure 门户](https://portal.azure.cn/)、[Azure CLI 工具](/documentation/articles/xplat-cli-install/)、[PowerShell](/documentation/articles/powershell-install-configure/) 或 [Azure资源管理器REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn906885.aspx)。
 
 使用 Azure资源管理器模型时，可以在资源组中创建密钥保管库，使用 Azure Active Directory 来控制对此密钥保管库的管理平面的访问。例如，可以授予用户或组管理特定资源组中密钥保管库的权限。
 
@@ -89,7 +89,7 @@ Azure 密钥保管库是可以在 Azure资源管理器部署模型中使用的 A
 可通过设置密钥保管库的访问策略来授予数据平面访问权限。用户、组或应用程序必须对密钥保管库的管理平面拥有“参与者”权限 \(RBAC\)，才能设置该密钥保管库的访问策略。可以向用户、组或应用程序授予针对密钥保管库中的密钥或机密执行特定操作的访问权限。每个密钥保管库最多支持 16 个访问策略项。创建一个 Azure Active Directory 安全组并将用户添加到该组，可向多个用户授予对密钥保管库的数据平面访问权限。
 
 ### 密钥保管库访问策略
-密钥保管库访问策略单独授予对密钥、机密和证书的权限。例如，可以向用户授予仅限密钥的访问权限，而不授予对机密的权限。但是，对访问密钥、机密或证书的权限是在保管库级别分配的。换而言之，密钥保管库访问策略不支持对象级权限。可以使用 [Azure 门户预览](https://portal.azure.cn/)、[Azure CLI 工具](/documentation/articles/xplat-cli-install/)、[PowerShell](/documentation/articles/powershell-install-configure/) 或[密钥保管库管理 REST API](https://msdn.microsoft.com/zh-cn/library/azure/mt620024.aspx) 设置密钥保管库的访问策略。
+密钥保管库访问策略单独授予对密钥、机密和证书的权限。例如，可以向用户授予仅限密钥的访问权限，而不授予对机密的权限。但是，对访问密钥、机密或证书的权限是在保管库级别分配的。换而言之，密钥保管库访问策略不支持对象级权限。可以使用 [Azure 门户](https://portal.azure.cn/)、[Azure CLI 工具](/documentation/articles/xplat-cli-install/)、[PowerShell](/documentation/articles/powershell-install-configure/) 或[密钥保管库管理 REST API](https://msdn.microsoft.com/zh-cn/library/azure/mt620024.aspx) 设置密钥保管库的访问策略。
 
 > [AZURE.IMPORTANT]
 请注意，密钥保管库访问策略在保管库级别应用。例如，授予某个用户创建和删除密钥的权限时，该用户可以针对该密钥保管库中的所有密钥执行这些操作。
@@ -147,7 +147,7 @@ Azure 密钥保管库是可以在 Azure资源管理器部署模型中使用的 A
 
 本文的重点是如何保护对密钥保管库的访问，因此，只阐述了与此主题相关的内容，略过了有关部署证书和以编程方式访问密钥和机密的详细信息。其他文章已介绍这些详细信息。[此博客文章](https://blogs.technet.microsoft.com/kv/2016/09/14/updated-deploy-certificates-to-vms-from-customer-managed-key-vault/)介绍了如何将密钥保管库中存储的证书部署到 VM，[此示例代码](https://www.microsoft.com/en-us/download/details.aspx?id=45343)演示了如何使用启动证书在 Azure AD 中进行身份验证，以获取对密钥保管库的访问权限。
 
-可以使用 Azure 门户预览授予大部分访问权限，但若要授予细粒度的权限，可能要使用 Azure PowerShell（或 Azure CLI）才能实现所需的结果。
+可以使用 Azure 门户授予大部分访问权限，但若要授予细粒度的权限，可能要使用 Azure PowerShell（或 Azure CLI）才能实现所需的结果。
 
 以下 PowerShell 代码片段假设：
 

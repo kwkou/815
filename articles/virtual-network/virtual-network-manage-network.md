@@ -38,14 +38,14 @@
 
 - 如果你不熟悉子网，我们建议在阅读本文之前，先完成[创建第一个 Azure 虚拟网络](/documentation/articles/virtual-network-get-started-vnet-subnet/)中的练习。 该练习可帮助你熟悉 VNet。
 - 查看 [Azure 限制](/documentation/articles/azure-subscription-service-limits/#azure-resource-manager-virtual-networking-limits)一文，了解 VNet 的限制。
-- 使用 Azure 帐户登录到 Azure 门户预览、Azure 命令行接口 (CLI) 或 Azure PowerShell。 如果还没有 Azure 帐户，请注册[试用帐户](/pricing/1rmb-trial)。
+- 使用 Azure 帐户登录到 Azure 门户、Azure 命令行接口 (CLI) 或 Azure PowerShell。 如果还没有 Azure 帐户，请注册[试用帐户](/pricing/1rmb-trial)。
 - 如果使用 Azure PowerShell 命令来完成本文中的任务，首先必须[安装和配置 Azure PowerShell](https://docs.microsoft.com/zh-cn/powershell/azureps-cmdlets-docs)。 确保已安装最新版本的 Azure PowerShell cmdlet。 若要获取 PowerShell 命令的帮助和示例，请键入 `get-help <command> -full`。
 - 如果使用 Azure 命令行接口 (CLI) 命令来完成本文中的任务，首先必须[安装和配置 Azure CLI](https://docs.microsoft.com/zh-cn/cli/azure/install-azure-cli)。 确保已安装最新版本的 Azure CLI。 若要获取 CLI 命令的帮助，请键入 `az <command> --help`。
 
 ## <a name="create-vnet"></a>创建虚拟网络
 
 1. 使用已分配订阅的“网络参与者”角色权限（最低权限）的帐户登录到[门户](https://portal.azure.cn)。 请参阅[用于 Azure 基于角色的访问控制的内置角色](/documentation/articles/role-based-access-built-in-roles/#network-contributor)一文，详细了解如何将角色和权限分配给帐户。
-2. 在 Azure 门户预览中单击“新建”。 在显示的“新建”边栏选项卡中，单击“网络”。 在显示的“网络”边栏选项卡中，单击“虚拟网络”。
+2. 在 Azure 门户中单击“新建”。 在显示的“新建”边栏选项卡中，单击“网络”。 在显示的“网络”边栏选项卡中，单击“虚拟网络”。
 3. 在显示的“虚拟网络”边栏选项卡中，保留“选择部署模型”框中选中的“Resource Manager”，然后单击“创建”。
 4. 在显示的“创建虚拟网络”边栏选项卡中，输入或选择以下设置的值，然后单击“创建”：
     - **名称**：该名称在选择创建 VNet 的[资源组](/documentation/articles/azure-glossary-cloud-terminology/#resource-group)中必须唯一。 创建 VNet 后无法更改其名称。 随着时间的推移，可以创建多个 VNet。 有关命名建议，请参阅[命名约定](https://docs.microsoft.com/azure/architecture/best-practices/naming-conventions#naming-rules-and-restrictions)一文，以便管理多个 VNet。
@@ -91,11 +91,11 @@
 
         ![网络接口概述](./media/virtual-network-manage-network/vnet-overview.png)
 
-      可以从此边栏选项卡将 VNet 移到不同的订阅或资源组。 若要了解如何移动 VNet，请参阅[将资源移到不同的资源组或订阅](/documentation/articles/resource-group-move-resources/)一文。 此文列出了先决条件，以及如何使用 Azure 门户预览、PowerShell 和 Azure CLI 移动资源。 连接到 VNet 的所有资源必须连同 VNet 一起移动。 
+      可以从此边栏选项卡将 VNet 移到不同的订阅或资源组。 若要了解如何移动 VNet，请参阅[将资源移到不同的资源组或订阅](/documentation/articles/resource-group-move-resources/)一文。 此文列出了先决条件，以及如何使用 Azure 门户、PowerShell 和 Azure CLI 移动资源。 连接到 VNet 的所有资源必须连同 VNet 一起移动。 
     - **地址空间：**列出分配给 VNet 的地址空间。 若要了解如何添加和删除地址空间，请完成本文[添加/删除地址空间](#address-spaces)部分中所述的步骤。
     - **连接的设备：**显示已连接到 VNet 的所有资源。 在上图所示的示例中，有三个网络接口和一个负载均衡器连接到 VNet。 将列出创建并连接到 VNet 的所有新资源。 如果删除已连接到 VNet 的资源，它不再会显示在列表中。
     - **子网：**VNet 中的子网列表。 若要了解如何添加和删除子网，请参阅[添加、更改或删除子网](/documentation/articles/virtual-network-manage-subnet/)一文的[添加子网](/documentation/articles/virtual-network-manage-subnet/#create-subnet)和[删除子网](/documentation/articles/virtual-network-manage-subnet/#delete-subnet)部分。
-    - **DNS 服务器：**可以指定 Azure 内部 DNS 服务器或自定义 DNS 服务器是否为连接到 VNet 的设备提供名称解析。 使用 Azure 门户预览创建 VNet 时，Azure 的 DNS 服务器默认用于 VNet 中的名称解析。 若要修改 DNS 服务器，请完成本文的[添加、更改和删除 DNS 服务器](#dns-servers)部分中所述的步骤。 
+    - **DNS 服务器：**可以指定 Azure 内部 DNS 服务器或自定义 DNS 服务器是否为连接到 VNet 的设备提供名称解析。 使用 Azure 门户创建 VNet 时，Azure 的 DNS 服务器默认用于 VNet 中的名称解析。 若要修改 DNS 服务器，请完成本文的[添加、更改和删除 DNS 服务器](#dns-servers)部分中所述的步骤。 
     - **对等互连：**如果订阅中存在现有的对等互连，它们将列在此处。 可以查看现有对等互连的设置，或者创建、更改或删除对等互连。 若要了解有关对等互连的详细信息，请参阅[对等互连概述](/documentation/articles/virtual-network-peering-overview/)一文。
     - **属性：**显示有关 VNet 的属性，包括 VNet 的资源 ID 及其所在的订阅。
     - **图示：**该图提供已连接到 VNet 的所有设备的可视表示形式，包括有关设备的关键信息。 可以单击任一设备直接通过此视图对其进行管理。
@@ -118,7 +118,7 @@
     - 168.63.129.16/32（内部 DNS）
 
 1. 使用已分配订阅的“网络参与者”角色权限（最低权限）的帐户登录到[门户](https://portal.azure.cn)。 请参阅[用于 Azure 基于角色的访问控制的内置角色](/documentation/articles/role-based-access-built-in-roles/#network-contributor)一文，详细了解如何将角色和权限分配给帐户。
-2. 在 Azure 门户预览顶部包含“搜索资源”文本的框中，键入“虚拟网络”。 当“虚拟网络”出现在搜索结果中时，请单击它。
+2. 在 Azure 门户顶部包含“搜索资源”文本的框中，键入“虚拟网络”。 当“虚拟网络”出现在搜索结果中时，请单击它。
 3. 在显示的“虚拟网络”边栏选项卡中，单击要在其中添加或删除地址空间的虚拟网络。
 4. 在针对所选 VNet 显示的边栏选项卡的“设置”部分中，单击“地址空间”。
 5. 在显示的包含地址空间的边栏选项卡中完成以下选项之一：
@@ -138,7 +138,7 @@
 连接到 VNet 的所有 VM 将注册到为 VNet 指定的 DNS 服务器，并使用 DNS 服务器进行名称解析。 VM 中的每个网络接口 (NIC) 可以有自己的 DNS 服务器设置。 如果 NIC 有自己的 DNS 服务器设置，它们将替代 VNet 的 DNS 服务器设置。 若要了解有关 NIC DNS 设置的详细信息，请参阅[网络接口任务和设置](/documentation/articles/virtual-network-network-interface/#dns)一文。 若要了解 VM 和云服务角色实例的名称解析的详细信息，请参阅 [VM 和角色实例的名称解析](/documentation/articles/virtual-networks-name-resolution-for-vms-and-role-instances/)一文。
 
 1. 使用已分配订阅的“网络参与者”角色权限（最低权限）的帐户登录到[门户](https://portal.azure.cn)。 请参阅[用于 Azure 基于角色的访问控制的内置角色](/documentation/articles/role-based-access-built-in-roles/#network-contributor)一文，详细了解如何将角色和权限分配给帐户。
-2. 在 Azure 门户预览顶部包含“搜索资源”文本的框中，键入“虚拟网络”。 当“虚拟网络”出现在搜索结果中时，请单击它。 
+2. 在 Azure 门户顶部包含“搜索资源”文本的框中，键入“虚拟网络”。 当“虚拟网络”出现在搜索结果中时，请单击它。 
 3. 在显示的“虚拟网络”边栏选项卡中，单击要更改其 DNS 设置的虚拟网络。
 4. 在针对所选 VNet 显示的边栏选项卡的“设置”部分中，单击“DNS 服务器”。
 5. 在显示的包含 DNS 服务器的边栏选项卡中选择以下选项之一：
@@ -163,7 +163,7 @@
 只有在没有资源连接到 VNet 的情况下，才能删除该 VNet。 如果有资源连接到 VNet 中的任何子网，则必须首先删除已连接到 VNet 中的所有子网的资源。 资源删除说明因资源而异。 若要了解如何删除连接到子网的资源，请参阅要删除的每个资源类型的文档。 若要删除 VNet，请完成以下步骤：
 
 1. 使用已分配订阅的“网络参与者”角色权限（最低权限）的帐户登录到[门户](https://portal.azure.cn)。 请参阅[用于 Azure 基于角色的访问控制的内置角色](/documentation/articles/role-based-access-built-in-roles/#network-contributor)一文，详细了解如何将角色和权限分配给帐户。
-2. 在 Azure 门户预览顶部包含“搜索资源”文本的框中，键入“虚拟网络”。 当“虚拟网络”出现在搜索结果中时，请单击它。
+2. 在 Azure 门户顶部包含“搜索资源”文本的框中，键入“虚拟网络”。 当“虚拟网络”出现在搜索结果中时，请单击它。
 3. 在显示的“虚拟网络”边栏选项卡中，单击要删除的 VNet。
 4. 单击针对所选 VNet 显示的边栏选项卡的“设置”部分中的“连接的设备”，确认没有任何设备连接到 VNet。 如果有连接的设备，则必须先删除它们，然后才能删除 VNet。  如果没有连接的设备，请单击边栏选项卡中的“概述”。
 5. 单击边栏选项卡顶部的“删除”图标。 

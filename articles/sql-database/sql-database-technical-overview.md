@@ -28,7 +28,7 @@ SQL 数据库是云中的关系数据库服务，它基于行业领先的 Micros
 
 本文将介绍 SQL 数据库在性能、缩放性和易管理性方面的核心概念与功能，并提供链接让你进一步了解详细信息。 请参阅这些快速入门，以便尽快入门：
 
- - [在 Azure 门户预览中创建 SQL 数据库](/documentation/articles/sql-database-get-started-portal/)  
+ - [在 Azure 门户中创建 SQL 数据库](/documentation/articles/sql-database-get-started-portal/)  
  - [使用 Azure CLI 创建 SQL 数据库](/documentation/articles/sql-database-get-started-cli/)
  - [使用 PowerShell 创建 SQL 数据库](/documentation/articles/sql-database-get-started-powershell/)
 

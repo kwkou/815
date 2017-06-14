@@ -23,7 +23,7 @@
 
 
 > [AZURE.SELECTOR]
-- [Azure 门户预览](/documentation/articles/sql-database-geo-replication-failover-portal/)
+- [Azure 门户](/documentation/articles/sql-database-geo-replication-failover-portal/)
 - [PowerShell](/documentation/articles/sql-database-geo-replication-failover-powershell/)
 - [Transact-SQL](/documentation/articles/sql-database-geo-replication-failover-transact-sql/)
 

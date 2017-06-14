@@ -22,7 +22,7 @@
 
 # <a name="how-to-configure-auto-scaling-for-a-cloud-service-in-the-classic-portal"></a>如何在经典管理门户中为云服务配置自动缩放
 > [AZURE.SELECTOR]
-- [Azure 门户预览](/documentation/articles/cloud-services-how-to-scale-portal/)
+- [Azure 门户](/documentation/articles/cloud-services-how-to-scale-portal/)
 - [Azure 经典管理门户](/documentation/articles/cloud-services-how-to-scale/)
 
 在 Azure 经典管理门户的“缩放”页上，可以为 Web 角色或辅助角色配置自动缩放设置。 也可以配置手动缩放，不必配置基于规则的自动缩放。

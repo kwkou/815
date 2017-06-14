@@ -101,15 +101,15 @@ BACPAC 文件是扩展名为 BACPAC 的 ZIP 文件，其中包含来自 SQL Serv
 
 执行完成后，生成的 BCPAC 文件将存储在 sqlpackage 可执行文件所在的目录中。 在此示例中为 C:\Program Files (x86)\Microsoft SQL Server\130\DAC\bin。 
 
-## <a name="step-3-log-in-to-the-azure-portal-preview"></a>步骤 3：登录到 Azure 门户预览
+## <a name="step-3-log-in-to-the-azure-portal-preview"></a>步骤 3：登录到 Azure 门户
 
-登录到 [Azure 门户预览](https://portal.azure.cn/)。 从运行 SQLPackage 命令行实用工具的计算机登录有助于步骤 5 中的防火墙规则创建。
+登录到 [Azure 门户](https://portal.azure.cn/)。 从运行 SQLPackage 命令行实用工具的计算机登录有助于步骤 5 中的防火墙规则创建。
 
 ## <a name="step-4-create-a-sql-database-logical-server"></a>步骤 4：创建 SQL 数据库逻辑服务器
 
 [Azure SQL 数据库逻辑服务器](/documentation/articles/sql-database-features/)充当多个数据库的中心管理点。 按照以下步骤创建 SQL 数据库逻辑服务器以包含已迁移的 Adventure Works OLTP SQL Server 数据库。 
 
-1. 单击 Azure 门户预览版左上角的“新建”按钮。
+1. 单击 Azure 门户左上角的“新建”按钮。
 
 2. 在“新建”页面的搜索窗口中键入**服务器**，然后从筛选列表中选择“SQL 数据库(逻辑服务器)”。
 

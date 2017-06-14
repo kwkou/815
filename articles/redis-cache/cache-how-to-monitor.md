@@ -26,7 +26,7 @@ Azure Redis 缓存提供了用于监视缓存实例的几个选项。可以查�
 
 使用 Redis [INFO](http://redis.io/commands/info) 命令收集缓存度量值。有关用于每个缓存度量值的不同 INFO 值的详细信息，请参阅[可用度量值和报告间隔](#available-metrics-and-reporting-intervals)。
 
-若要查看缓存度量值，请[浏览到](/documentation/articles/cache-configure/#configure-redis-cache-settings) [Azure 门户预览](https://portal.azure.cn)中的缓存实例。可在“Redis 指标”边栏选项卡上访问 Azure Redis 缓存实例的度量值。
+若要查看缓存度量值，请[浏览到](/documentation/articles/cache-configure/#configure-redis-cache-settings) [Azure 门户](https://portal.azure.cn)中的缓存实例。可在“Redis 指标”边栏选项卡上访问 Azure Redis 缓存实例的度量值。
 
 ![Redis 指标][redis-cache-redis-metrics-blade]  
 
@@ -42,7 +42,7 @@ Azure Redis 缓存提供了用于监视缓存实例的几个选项。可以查�
 
 >[AZURE.NOTE] 如果希望在 Azure 中国区中启用缓存诊断，则需要使用 Azure PowerShell 或 Azure CLI 设置 `rdb-storage-connection-string`。
 
-Azure Redis 缓存提供如下功能：将诊断数据存储在存储帐户中，以便可以使用希望访问的任何工具以及直接处理数据。为了收集、存储缓存诊断并将其显示在 Azure 门户预览中，必须配置一个存储帐户。同一区域和订阅中的缓存共享相同的诊断存储帐户，当配置更改时，它将应用于订阅中位于该区域的所有缓存。
+Azure Redis 缓存提供如下功能：将诊断数据存储在存储帐户中，以便可以使用希望访问的任何工具以及直接处理数据。为了收集、存储缓存诊断并将其显示在 Azure 门户中，必须配置一个存储帐户。同一区域和订阅中的缓存共享相同的诊断存储帐户，当配置更改时，它将应用于订阅中位于该区域的所有缓存。
 
 若要启用和配置缓存诊断，请导航到缓存实例的“Redis 缓存”边栏选项卡。如果尚未启用诊断，则将显示一条消息，而不会显示诊断图。
 
@@ -65,9 +65,9 @@ Azure Redis 缓存提供如下功能：将诊断数据存储在存储帐户中�
 
 >[AZURE.IMPORTANT] 同一区域和订阅中的缓存共享相同的诊断存储设置，当配置更改（诊断启用/禁用或更改存储帐户）时，它将应用于订阅中位于该区域的所有缓存。
 
-若要查看存储的度量值，请检查名称开头为 `WADMetrics` 的存储帐户中的表。有关访问 Azure 门户预览外部的存储度量值的详细信息，请参阅[访问 Redis 缓存监视数据](https://github.com/rustd/RedisSamples/tree/master/CustomMonitoring)示例。
+若要查看存储的度量值，请检查名称开头为 `WADMetrics` 的存储帐户中的表。有关访问 Azure 门户外部的存储度量值的详细信息，请参阅[访问 Redis 缓存监视数据](https://github.com/rustd/RedisSamples/tree/master/CustomMonitoring)示例。
 
->[AZURE.NOTE] Azure 门户预览中仅显示存储在所选存储帐户中的度量值。如果更改存储帐户，以前配置的存储帐户中的数据仍可供下载，但并不会显示在 Azure 门户预览中。
+>[AZURE.NOTE] Azure 门户中仅显示存储在所选存储帐户中的度量值。如果更改存储帐户，以前配置的存储帐户中的数据仍可供下载，但并不会显示在 Azure 门户中。
 
 ## <a name="available-metrics-and-reporting-intervals"></a>可用度量值和报告间隔
 

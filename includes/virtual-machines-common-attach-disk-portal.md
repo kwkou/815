@@ -2,7 +2,7 @@
 
 ## 查找虚拟机
 
-1. 登录到 [Azure 门户预览](https://portal.azure.cn/)。
+1. 登录到 [Azure 门户](https://portal.azure.cn/)。
 
 2. 在“中心”菜单中，单击“虚拟机”。
 

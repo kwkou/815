@@ -1,6 +1,6 @@
 <properties
-    pageTitle="Azure 门户预览版：管理 SQL 数据库审核 | Azure"
-    description="在 Azure 门户预览版中配置 Azure SQL 数据库审核，以跟踪数据库事件并将其写入 Azure 存储帐户中的审核日志。"
+    pageTitle="Azure 门户：管理 SQL 数据库审核 | Azure"
+    description="在 Azure 门户中配置 Azure SQL 数据库审核，以跟踪数据库事件并将其写入 Azure 存储帐户中的审核日志。"
     services="sql-database"
     documentationcenter=""
     author="ronitr"
@@ -22,15 +22,15 @@
     ms.openlocfilehash="467b1fa436c0937761136f5746ae7ae0fb8cad0c"
     ms.lasthandoff="04/07/2017" />
 
-# <a name="configure-and-manage-sql-database-auditing-in-the-azure-portal-preview"></a>在 Azure 门户预览中配置和管理 SQL 数据库审核
+# <a name="configure-and-manage-sql-database-auditing-in-the-azure-portal-preview"></a>在 Azure 门户中配置和管理 SQL 数据库审核
 
-以下部分介绍如何使用 Azure 门户预览配置和管理审核。 若要使用 PowerShell 配置和管理审核，请参阅[在 PowerShell 中配置审核](/documentation/articles/sql-database-auditing-powershell/)。 
+以下部分介绍如何使用 Azure 门户配置和管理审核。 若要使用 PowerShell 配置和管理审核，请参阅[在 PowerShell 中配置审核](/documentation/articles/sql-database-auditing-powershell/)。 
 
 有关审核的概述，请参阅 [SQL 数据库审核](/documentation/articles/sql-database-auditing/)。
 
 ## <a name="configure-blob-auditing"></a>配置 Blob 审核
 
-1. 启动 [Azure 门户预览](https://portal.azure.cn) (https://portal.azure.cn)。
+1. 启动 [Azure 门户](https://portal.azure.cn) (https://portal.azure.cn)。
 2. 导航到要审核的 SQL 数据库/SQL Server 的“设置”边栏选项卡。 在“设置”边栏选项卡中，选择“审核和威胁检测”。
 
     ![导航窗格](./media/sql-database-auditing-get-started/1_auditing_get_started_settings.png)
@@ -55,7 +55,7 @@
 > 在设置**表审核**之前，请检查使用的是否为[“下层客户端”](/documentation/articles/sql-database-auditing-and-dynamic-data-masking-downlevel-clients/)。 此外，如果有严格的防火墙设置，请注意，在启用表审核时[会更改数据库的 IP 终结点](/documentation/articles/sql-database-auditing-and-dynamic-data-masking-downlevel-clients/)。
 >
 
-1. 启动 [Azure 门户预览](https://portal.azure.cn) (https://portal.azure.cn)。
+1. 启动 [Azure 门户](https://portal.azure.cn) (https://portal.azure.cn)。
 2. 导航到要审核的 SQL 数据库/SQL Server 的“设置”边栏选项卡。 在“设置”边栏选项卡中，选择“审核和威胁检测”（[请参阅“Blob 审核”部分中的屏幕截图](#auditing-screenshot)）。
 3. 在“数据库审核配置”边栏选项卡中，可以选中“从服务器继承设置”复选框，指定根据服务器的设置对数据库进行审核。 如果选中此选项，你会看到“查看服务器审核设置”链接，可以使用该链接在此上下文中查看或修改服务器审核设置。
 
@@ -95,7 +95,7 @@ Blob 审核日志以 blob 文件集合的形式保存在名为“**sqldbauditlog
 
 可通过多种方法查看 Blob 审核日志：
 
-* 通过 [Azure 门户预览](https://portal.azure.cn) - 打开相关数据库。 在数据库的“审核和威胁检测”边栏选项卡顶部，单击“查看审核日志”。
+* 通过 [Azure 门户](https://portal.azure.cn) - 打开相关数据库。 在数据库的“审核和威胁检测”边栏选项卡顶部，单击“查看审核日志”。
 
     ![导航窗格][10]
 
@@ -131,7 +131,7 @@ Blob 审核日志以 blob 文件集合的形式保存在名为“**sqldbauditlog
 
 可通过多种方法查看表审核日志：
 
-* 通过 [Azure 门户预览](https://portal.azure.cn) - 打开相关数据库。 在数据库的“审核和威胁检测”边栏选项卡顶部，单击“查看审核日志”。
+* 通过 [Azure 门户](https://portal.azure.cn) - 打开相关数据库。 在数据库的“审核和威胁检测”边栏选项卡顶部，单击“查看审核日志”。
 
     ![导航窗格][10]
 

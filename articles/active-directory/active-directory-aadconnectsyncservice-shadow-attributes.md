@@ -27,7 +27,7 @@
 ## <a name="introducing-shadow-attributes"></a>影子属性简介
 在 Azure AD 中，某些属性有两种表示形式。 本地值和计算所得的值都会进行存储。 这些额外的属性称为影子属性。 表示此行为的两个最常用属性是 **userPrincipalName** 和 **proxyAddress**。 当这些属性中有表示非已验证域的值时，属性值将发生更改。 但是，Connect 中的同步引擎会读取影子属性中的值，因此从该引擎的角度来看，属性是经过 Azure AD 确认的。
 
-无法使用 Azure 门户预览或 PowerShell 查看影子属性。 但是，了解这些概念有助于排查某些情况下本地属性值不同于云中属性值的问题。
+无法使用 Azure 门户或 PowerShell 查看影子属性。 但是，了解这些概念有助于排查某些情况下本地属性值不同于云中属性值的问题。
 
 为了更好地了解该行为，请看下述来自 Fabrikam 的示例：  
 ![域](./media/active-directory-aadconnectsyncservice-shadow-attributes/domains.png)  

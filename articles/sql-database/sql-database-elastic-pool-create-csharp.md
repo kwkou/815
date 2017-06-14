@@ -21,7 +21,7 @@
 # 使用 C# 创建弹性数据库池
 
 > [AZURE.SELECTOR]
-- [Azure 门户预览](/documentation/articles/sql-database-elastic-pool-create-portal/)
+- [Azure 门户](/documentation/articles/sql-database-elastic-pool-create-portal/)
 - [PowerShell](/documentation/articles/sql-database-elastic-pool-create-powershell/)
 - [C#](/documentation/articles/sql-database-elastic-pool-create-csharp/)
 

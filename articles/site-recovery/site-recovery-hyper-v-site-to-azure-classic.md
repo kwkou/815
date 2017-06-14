@@ -30,7 +30,7 @@
 
 ## Azure 门户中的 Site Recovery
 
-Azure 提供用于创建和处理资源的两个不同的[部署模型](/documentation/articles/resource-manager-deployment-model/) – Azure Resource Manager 模型和经典模型。Azure 还提供两个门户 – Azure 经典管理门户和 Azure 门户预览。
+Azure 提供用于创建和处理资源的两个不同的[部署模型](/documentation/articles/resource-manager-deployment-model/) – Azure Resource Manager 模型和经典模型。Azure 还提供两个门户 – Azure 经典管理门户和 Azure 门户。
 
 本文介绍如何在经典管理门户中部署。经典管理门户可用于维护现有保管库。无法使用经典管理门户创建新的保管库。
 

@@ -61,7 +61,7 @@
 自动备份依赖 SQL Server IaaS 代理扩展。当前的 SQL 虚拟机库映像默认添加此扩展。有关详细信息，请参阅 [SQL Server IaaS 代理扩展](/documentation/articles/virtual-machines-windows-sql-server-agent-extension/)。
 
 ## 设置
-下表描述了可为自动备份配置的选项。实际配置步骤根据你使用的是 Azure 门户预览还是 Azure Windows PowerShell 命令而有所不同。
+下表描述了可为自动备份配置的选项。实际配置步骤根据你使用的是 Azure 门户还是 Azure Windows PowerShell 命令而有所不同。
 
 | 设置 | 范围（默认值） | 说明 |
 | --- | --- | --- |
@@ -75,11 +75,11 @@
 可以在预配期间或针对现有的 SQL Server 2014 VM 使用 Azure 门户来配置自动备份。
 
 ### 新的 VM
-在 Resource Manager 部署模型中创建新的 SQL Server 2014 虚拟机时，可以使用 Azure 门户预览配置自动备份。
+在 Resource Manager 部署模型中创建新的 SQL Server 2014 虚拟机时，可以使用 Azure 门户配置自动备份。
 
-在“SQL Server 设置”边栏选项卡中，选择“自动备份”。下面的 Azure 门户预览屏幕截图显示了“SQL 自动备份”边栏选项卡。
+在“SQL Server 设置”边栏选项卡中，选择“自动备份”。下面的 Azure 门户屏幕截图显示了“SQL 自动备份”边栏选项卡。
 
-![Azure 门户预览中的 SQL 自动备份配置](./media/virtual-machines-windows-sql-automated-backup/azure-sql-arm-autobackup.png)  
+![Azure 门户中的 SQL 自动备份配置](./media/virtual-machines-windows-sql-automated-backup/azure-sql-arm-autobackup.png)  
 
 若要了解上下文，请参阅有关[在 Azure 中预配 SQL Server 虚拟机](/documentation/articles/virtual-machines-windows-portal-sql-server-provision/)的完整主题。
 
@@ -94,7 +94,7 @@
 
 完成后，单击“SQL Server 配置”边栏选项卡底部的“确定”按钮，以保存更改。
 
-当你首次启用自动备份时，Azure 将在后台配置 SQL Server IaaS 代理。在此期间，Azure 门户预览可能不会显示自动备份已配置。请等待几分钟，以便安装和配置代理。之后，Azure 门户预览将显示新的设置。
+当你首次启用自动备份时，Azure 将在后台配置 SQL Server IaaS 代理。在此期间，Azure 门户可能不会显示自动备份已配置。请等待几分钟，以便安装和配置代理。之后，Azure 门户将显示新的设置。
 
 > [AZURE.NOTE]
 你也可以使用模板来配置自动备份。有关详细信息，请参阅 [Azure quickstart template for Automated Backup](https://github.com/Azure/azure-quickstart-templates/tree/master/101-vm-sql-existing-autobackup-update)（用于自动备份的 Azure 快速入门模板）。

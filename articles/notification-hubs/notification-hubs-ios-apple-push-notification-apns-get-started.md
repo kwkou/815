@@ -65,9 +65,9 @@
 <p>由于此项目用于开发，因此请务必选择“沙箱”模式。<b></b>仅当你想要将推送通知发送给从应用商店购买你应用的用户时，才使用“生产”模式。<b></b></p>
 </li>
 </ol>
-&emsp;&emsp;![在 Azure 门户预览中配置 APNS](./media/notification-hubs-ios-get-started/notification-hubs-apple-config.png)
+&emsp;&emsp;![在 Azure 门户中配置 APNS](./media/notification-hubs-ios-get-started/notification-hubs-apple-config.png)
 
-&emsp;&emsp;![在 Azure 门户预览中配置 APNS 证书](./media/notification-hubs-ios-get-started/notification-hubs-apple-config-cert.png)
+&emsp;&emsp;![在 Azure 门户中配置 APNS 证书](./media/notification-hubs-ios-get-started/notification-hubs-apple-config-cert.png)
 
 
 
@@ -166,9 +166,9 @@
 ## 发送测试推送通知
 
 
-可以在 [Azure 门户预览]中通过中心边栏选项卡中的“故障排除”部分（使用“测试发送”选项）发送推送通知，以便测试应用的通知接收功能。
+可以在 [Azure 门户]中通过中心边栏选项卡中的“故障排除”部分（使用“测试发送”选项）发送推送通知，以便测试应用的通知接收功能。
 
-![Azure 门户预览 — 测试发送][30]  
+![Azure 门户 — 测试发送][30]  
 
 
 [AZURE.INCLUDE [notification-hubs-sending-notifications-from-the-portal](../../includes/notification-hubs-sending-notifications-from-the-portal.md)]
@@ -460,7 +460,7 @@
 	![iOS 应用推送通知注册测试][33]  
 
 
-2. 如上所述，可以从 [Azure 门户预览]发送测试推送通知。如果你在应用中添加了发送推送通知的代码，请触摸文本字段以输入通知消息。然后，按键盘上的“发送”按钮或视图中的“发送通知”按钮，以发送通知消息。
+2. 如上所述，可以从 [Azure 门户]发送测试推送通知。如果你在应用中添加了发送推送通知的代码，请触摸文本字段以输入通知消息。然后，按键盘上的“发送”按钮或视图中的“发送通知”按钮，以发送通知消息。
 
 	![iOS 应用推送通知发送测试][34]  
 
@@ -517,6 +517,6 @@
 [使用通知中心发送突发新闻]: /documentation/articles/notification-hubs-ios-xplat-segmented-apns-push-notification/
 
 [本地和推送通知编程指南]: http://developer.apple.com/library/mac/#documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/ApplePushService.html#//apple_ref/doc/uid/TP40008194-CH100-SW1
-[Azure 门户预览]: https://portal.azure.cn
+[Azure 门户]: https://portal.azure.cn
 
 <!---HONumber=Mooncake_1114_2016-->

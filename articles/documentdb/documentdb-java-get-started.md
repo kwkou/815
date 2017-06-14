@@ -79,9 +79,9 @@
     </dependency>
 
 ## <a id="Connect"></a>步骤 3：连接到 DocumentDB 帐户
-接下来，回到 [Azure 门户预览](https://portal.azure.cn) ，检索终结点和主要主密钥。 DocumentDB 终结点和主密钥是必需的，可让应用程序知道要连接的对象，使 DocumentDB 信任应用程序的连接。
+接下来，回到 [Azure 门户](https://portal.azure.cn) ，检索终结点和主要主密钥。 DocumentDB 终结点和主密钥是必需的，可让应用程序知道要连接的对象，使 DocumentDB 信任应用程序的连接。
 
-在 Azure 门户预览中，导航到 DocumentDB 帐户，然后单击“密钥”。 从门户复制 URI，并将其粘贴到 Program.java 文件的 `<your endpoint URI>` 中。 然后从门户复制主密钥，并将其粘贴到 `<your key>`中。
+在 Azure 门户中，导航到 DocumentDB 帐户，然后单击“密钥”。 从门户复制 URI，并将其粘贴到 Program.java 文件的 `<your endpoint URI>` 中。 然后从门户复制主密钥，并将其粘贴到 `<your key>`中。
 
     this.client = new DocumentClient(
         "<your endpoint URI>",
@@ -89,7 +89,7 @@
         , new ConnectionPolicy(),
         ConsistencyLevel.Session);
 
-![NoSQL 教程创建 Java 控制台应用程序时使用的 Azure 门户预览的屏幕截图。 显示了一个 DocumentDB 帐户，在“DocumentDB 帐户”边栏选项卡上突出显示了“ACTIVE”中心、“密钥”按钮，在“密钥”边栏选项卡上突出显示了 URI、主密钥、辅助密钥的值][keys]
+![NoSQL 教程创建 Java 控制台应用程序时使用的 Azure 门户的屏幕截图。 显示了一个 DocumentDB 帐户，在“DocumentDB 帐户”边栏选项卡上突出显示了“ACTIVE”中心、“密钥”按钮，在“密钥”边栏选项卡上突出显示了 URI、主密钥、辅助密钥的值][keys]
 
 ## <a name="step-4-create-a-database"></a>第 4 步：创建数据库
 可以使用 **DocumentClient** 类的 [createDatabase](http://azure.github.io/azure-documentdb-java/com/microsoft/azure/documentdb/DocumentClient.html#createDatabase-com.microsoft.azure.documentdb.Database-com.microsoft.azure.documentdb.RequestOptions-) 方法创建 DocumentDB [数据库](/documentation/articles/documentdb-resources/#databases/)。 数据库是跨集合分区的 JSON 文档存储的逻辑容器。

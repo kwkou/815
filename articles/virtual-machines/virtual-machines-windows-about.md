@@ -35,7 +35,7 @@ Azure 虚拟机让你能够灵活地进行虚拟化，而无需购买和维护�
 
 ## 后续步骤
 
-通过快速地创建一个简单的虚拟机来尝试虚拟机。有关说明，请参阅[在 Azure 门户预览中创建运行 Windows 的虚拟机](/documentation/articles/virtual-machines-windows-hero-tutorial/)。
+通过快速地创建一个简单的虚拟机来尝试虚拟机。有关说明，请参阅[在 Azure 门户中创建运行 Windows 的虚拟机](/documentation/articles/virtual-machines-windows-hero-tutorial/)。
 
 因为这些教程帮助你快速创建虚拟机，它们仅向你介绍一种方式，而不是说明可用于创建虚拟机的各种工具。有关这些工具和说明链接的摘要，请参阅[创建 Windows 虚拟机的不同方式](/documentation/articles/virtual-machines-windows-creation-choices/)。
 

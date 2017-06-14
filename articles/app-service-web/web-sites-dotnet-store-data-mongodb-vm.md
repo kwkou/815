@@ -437,7 +437,7 @@ MongoDB C# 驱动程序现已安装。对 **MongoDB.Bson**、**MongoDB.Driver** 
 ## 摘要
 现在，已将 ASP.NET 应用程序成功部署到 Azure App Service Web 应用。查看 Web 应用：
 
-1. 登录到 Azure 门户预览。
+1. 登录到 Azure 门户。
 2. 单击“Web Apps”。
 3. 在“Web Apps”列表中选择你的 Web 应用。
 

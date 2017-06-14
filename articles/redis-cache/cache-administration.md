@@ -97,7 +97,7 @@
 若要指定维护时段，请勾选合适的日期，然后指定每天的维护时段开始时间，最后再单击“确定”。请注意，维护时段使用 UTC 时间。
 
 > [AZURE.NOTE]
-更新的默认维护时段为五小时。此值不可以在 Azure 门户预览中配置，但可以在 PowerShell 中使用 [New-AzureRmRedisCacheScheduleEntry](https://docs.microsoft.com/powershell/resourcemanager/azurerm.rediscache/v2.5.0/new-azurermrediscachescheduleentry) cmdlet 的 `MaintenanceWindow` 参数进行配置。有关详细信息，请参阅[能否使用 PowerShell、CLI 或其他管理工具管理计划的更新？](#can-i-manage-scheduled-updates-using-powershell-cli-or-other-management-tools)
+更新的默认维护时段为五小时。此值不可以在 Azure 门户中配置，但可以在 PowerShell 中使用 [New-AzureRmRedisCacheScheduleEntry](https://docs.microsoft.com/powershell/resourcemanager/azurerm.rediscache/v2.5.0/new-azurermrediscachescheduleentry) cmdlet 的 `MaintenanceWindow` 参数进行配置。有关详细信息，请参阅[能否使用 PowerShell、CLI 或其他管理工具管理计划的更新？](#can-i-manage-scheduled-updates-using-powershell-cli-or-other-management-tools)
 > 
 > 
 

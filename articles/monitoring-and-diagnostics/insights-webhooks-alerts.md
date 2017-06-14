@@ -27,9 +27,9 @@
 
 Azure 警报会将警报内容以 JSON 格式（架构定义如下）HTTP POST 到创建警报时提供的 webhook URI。此 URI 必须是有效的 HTTP 或 HTTPS 终结点。激活警报时，Azure 会针对每个请求发布一个条目。
 
-## <a name="configuring-webhooks-via-the-portal"></a>通过 Azure 门户预览配置 webhook
+## <a name="configuring-webhooks-via-the-portal"></a>通过 Azure 门户配置 webhook
 
-可在[ Azure 门户预览](https://portal.azure.cn/)的“创建/更新警报”屏幕上添加或更新 webhook URI。
+可在[ Azure 门户](https://portal.azure.cn/)的“创建/更新警报”屏幕上添加或更新 webhook URI。
 
 ![添加警报规则](./media/insights-webhooks-alerts/Alertwebhook.png)  
 

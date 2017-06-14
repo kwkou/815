@@ -1,6 +1,6 @@
 <properties
-    pageTitle="如何在 Azure 门户预览中创建、管理或删除存储帐户 | Azure"
-    description="在 Azure 门户预览中创建新的存储帐户、管理帐户访问密钥或删除存储帐户。了解标准和高级存储帐户。"
+    pageTitle="如何在 Azure 门户中创建、管理或删除存储帐户 | Azure"
+    description="在 Azure 门户中创建新的存储帐户、管理帐户访问密钥或删除存储帐户。了解标准和高级存储帐户。"
     services="storage"
     documentationcenter=""
     author="robinsh"
@@ -51,11 +51,11 @@ Azure 存储帐户提供唯一的命名空间来存储和访问你的 Azure 存�
 
 用于访问存储帐户中某个对象的 URL 是通过将存储帐户中对象的位置附加到终结点而构建的。例如，Blob 地址可能具有以下格式：http://*mystorageaccount*.blob.core.chinacloudapi.cn/*mycontainer*/*myblob*。
 
-此外还可以配置用于存储帐户的自定义域名称。有关经典存储帐户的详细信息，请参阅[为 Blob 存储终结点配置自定义域名](/documentation/articles/storage-custom-domain-name/)。对于 Resource Manager 存储帐户，此功能尚未添加到 [Azure 门户预览](https://portal.azure.cn)，但你可使用 PowerShell 配置它。有关详细信息，请参阅 [Set-AzureRmStorageAccount](https://msdn.microsoft.com/zh-cn/library/mt607146.aspx) cmdlet。
+此外还可以配置用于存储帐户的自定义域名称。有关经典存储帐户的详细信息，请参阅[为 Blob 存储终结点配置自定义域名](/documentation/articles/storage-custom-domain-name/)。对于 Resource Manager 存储帐户，此功能尚未添加到 [Azure 门户](https://portal.azure.cn)，但你可使用 PowerShell 配置它。有关详细信息，请参阅 [Set-AzureRmStorageAccount](https://msdn.microsoft.com/zh-cn/library/mt607146.aspx) cmdlet。
 
 ## <a name="create-a-storage-account"></a> 创建存储帐户
 
-1. 登录到 [Azure 门户预览](https://portal.azure.cn)。
+1. 登录到 [Azure 门户](https://portal.azure.cn)。
 
 2. 在“中心”菜单上，选择“新建”->“存储”->“存储帐户”。
 
@@ -63,7 +63,7 @@ Azure 存储帐户提供唯一的命名空间来存储和访问你的 Azure 存�
 
 	> [AZURE.NOTE] 存储帐户名称必须为 3 到 24 个字符，并且只能包含数字和小写字母。
 	>  
-	> 存储帐户名称在 Azure 中必须是唯一的。Azure 门户预览将指出选择的存储帐户名称是否已被使用。
+	> 存储帐户名称在 Azure 中必须是唯一的。Azure 门户将指出选择的存储帐户名称是否已被使用。
 
 4. 指定要使用的部署模型：“Resource Manager”或“经典”。建议使用“Resource Manager”部署模型。有关详细信息，请参阅[了解 Resource Manager 部署和经典部署](/documentation/articles/resource-manager-deployment-model/)。
 
@@ -89,7 +89,7 @@ Azure 存储帐户提供唯一的命名空间来存储和访问你的 Azure 存�
 
 ### 更改帐户配置
 
-创建存储帐户之后，可以修改其配置，例如更改帐户所用的复制选项，或更改 Blob 存储帐户的访问层。在 [Azure 门户预览](https://portal.azure.cn)中，导航到你的存储帐户，单击“所有设置”，然后单击“配置”以查看和/或更改帐户配置。
+创建存储帐户之后，可以修改其配置，例如更改帐户所用的复制选项，或更改 Blob 存储帐户的访问层。在 [Azure 门户](https://portal.azure.cn)中，导航到你的存储帐户，单击“所有设置”，然后单击“配置”以查看和/或更改帐户配置。
 
 > [AZURE.NOTE] 视你在创建存储帐户时选择的性能层而定，可能无法使用某些复制选项。
 
@@ -104,7 +104,7 @@ Azure 存储帐户提供唯一的命名空间来存储和访问你的 Azure 存�
 
 #### <a name="view-copy-and-regenerate-storage-access-keys"></a><a name="view-and-copy-storage-access-keys"></a> 查看和复制存储访问密钥
 
-在 [Azure 门户预览](https://portal.azure.cn)中，导航到你的存储帐户，单击“所有设置”，然后单击“访问密钥”以查看、复制和重新生成帐户访问密钥。“访问密钥”边栏选项卡还包含使用你的主密钥和辅助密钥预配置的连接字符串，可复制到应用程序中使用。
+在 [Azure 门户](https://portal.azure.cn)中，导航到你的存储帐户，单击“所有设置”，然后单击“访问密钥”以查看、复制和重新生成帐户访问密钥。“访问密钥”边栏选项卡还包含使用你的主密钥和辅助密钥预配置的连接字符串，可复制到应用程序中使用。
 
 ####<a name="regenerate-storage-access-keys"></a> 重新生成存储访问密钥
 
@@ -130,7 +130,7 @@ Azure 存储帐户提供唯一的命名空间来存储和访问你的 Azure 存�
 
 ##<a name="delete-a-storage-account"></a> 删除存储帐户
 
-若要删除不再使用的存储帐户，请在 [Azure 门户预览](https://portal.azure.cn)中导航到该存储帐户，然后单击“删除”。删除存储帐户将删除整个帐户，包括该帐户中的所有数据。
+若要删除不再使用的存储帐户，请在 [Azure 门户](https://portal.azure.cn)中导航到该存储帐户，然后单击“删除”。删除存储帐户将删除整个帐户，包括该帐户中的所有数据。
 
 > [AZURE.WARNING] 无法恢复已删除的存储帐户，也无法检索删除之前该存储帐户包含的任何内容。删除帐户前请务必备份要保存的任何内容。对于帐户中的任务资源也是如此 — 一旦你删除了一个 Blob、表、队列或文件 ，则它将被永久删除。
 

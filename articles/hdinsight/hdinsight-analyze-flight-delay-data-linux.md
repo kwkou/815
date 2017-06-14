@@ -178,7 +178,7 @@
 
 ## <a name="create-a-sql-database"></a>创建 SQL 数据库
 
-如果已具备 SQL 数据库，则必须获取服务器名称。 可通过在 [Azure 门户预览](https://portal.azure.cn)中选择“SQL 数据库”，然后筛选要使用的数据库名称，来找到服务器名称。 服务器名称在“SERVER”  列中列出。
+如果已具备 SQL 数据库，则必须获取服务器名称。 可通过在 [Azure 门户](https://portal.azure.cn)中选择“SQL 数据库”，然后筛选要使用的数据库名称，来找到服务器名称。 服务器名称在“SERVER”  列中列出。
 
 如果还没有 SQL 数据库，请使用 [SQL 数据库教程：几分钟内即可创建 SQL 数据库](/documentation/articles/sql-database-get-started/)中的信息创建一个。 保存数据库所使用的服务器名称。
 

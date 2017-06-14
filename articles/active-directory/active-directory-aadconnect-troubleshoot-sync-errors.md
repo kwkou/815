@@ -23,7 +23,7 @@
 
  本文假设读者熟悉 [ Azure AD 和 Azure AD Connect 的基础设计概念](/documentation/articles/active-directory-aadconnect-design-concepts/)。
 
-在最新版本的 Azure AD Connect（2016 年 8 月版或更高版本）中，[Azure 门户预览](https://aka.ms/aadconnecthealth)会针对用于同步的 Azure AD Connect Health 提供同步错误报告。
+在最新版本的 Azure AD Connect（2016 年 8 月版或更高版本）中，[Azure 门户](https://aka.ms/aadconnecthealth)会针对用于同步的 Azure AD Connect Health 提供同步错误报告。
 
 从 2016 年 9 月 1 日开始，默认将为所有*新的* Azure Active Directory 租户启用 [Azure Active Directory 重复属性复原](/documentation/articles/active-directory-aadconnectsyncservice-duplicate-attribute-resiliency/)功能。在接下来的几个月，将自动为现有租户启用此功能。
 

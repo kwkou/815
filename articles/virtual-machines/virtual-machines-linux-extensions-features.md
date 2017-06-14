@@ -24,7 +24,7 @@
 
 # <a name="virtual-machine-extensions-and-features-for-linux"></a>适用于 Linux 的虚拟机扩展和功能
 
-Azure 虚拟机扩展是小型应用程序，可在Azure 虚拟机上提供部署后配置和自动化任务。 例如，如果虚拟机需要安装软件或进行防病毒保护，可以使用 VM 扩展来完成这些任务。 可以使用 Azure CLI、PowerShell、Azure Resource Manager 模板和 Azure 门户预览运行 Azure VM 扩展。 扩展可与新虚拟机部署捆绑在一起，或者针对任何现有系统运行。
+Azure 虚拟机扩展是小型应用程序，可在Azure 虚拟机上提供部署后配置和自动化任务。 例如，如果虚拟机需要安装软件或进行防病毒保护，可以使用 VM 扩展来完成这些任务。 可以使用 Azure CLI、PowerShell、Azure Resource Manager 模板和 Azure 门户运行 Azure VM 扩展。 扩展可与新虚拟机部署捆绑在一起，或者针对任何现有系统运行。
 
 本文档提供 VM 扩展的概述、使用 Azure VM 扩展的先决条件，以及有关如何检测、管理和删除 VM 扩展的指南。 由于有许多 VM 扩展可用，每个扩展可能具有唯一的配置，因此本文档提供通用信息。 扩展特定的详细信息可在每个特定于单个扩展的文档中找到。
 
@@ -77,11 +77,11 @@ Azure 虚拟机扩展可以在现有虚拟机上运行，当需要在已部署�
     + Installing extension "CustomScript", VM: "mvVM"
     info:    vm extension set command OK
 
-### <a name="azure-portal-preview"></a>Azure 门户预览
+### <a name="azure-portal-preview"></a>Azure 门户
 
-可通过 Azure 门户预览将 VM 扩展应用到现有虚拟机。 为此，请选择虚拟机，选择“扩展”，然后单击“添加”。 从可用扩展的列表中选择所需扩展，并按向导中的说明操作。
+可通过 Azure 门户将 VM 扩展应用到现有虚拟机。 为此，请选择虚拟机，选择“扩展”，然后单击“添加”。 从可用扩展的列表中选择所需扩展，并按向导中的说明操作。
 
-下图演示了如何从 Azure 门户预览安装 Linux 自定义脚本扩展。
+下图演示了如何从 Azure 门户安装 Linux 自定义脚本扩展。
 
 ![安装自定义脚本扩展](./media/virtual-machines-linux-extensions-features/installscriptextensionlinux.png)
 
@@ -201,7 +201,7 @@ VM 扩展可添加到 Azure Resource Manager 模板，并在部署模板的过�
     data:    Microsoft.Azure.Extensions  XXXExtension  1.0      Succeeded
     info:    vm extension get command OK         :
 
-此外，还可以在 Azure 门户预览中找到扩展执行状态。 若要查看扩展的状态，请选择虚拟机，选择“扩展” ，然后选择所需的扩展。
+此外，还可以在 Azure 门户中找到扩展执行状态。 若要查看扩展的状态，请选择虚拟机，选择“扩展” ，然后选择所需的扩展。
 
 ### <a name="rerun-a-vm-extension"></a>重新运行 VM 扩展
 
@@ -209,7 +209,7 @@ VM 扩展可添加到 Azure Resource Manager 模板，并在部署模板的过�
 
     azure vm extension set myResourceGroup myVM --uninstall CustomScript Microsoft.Azure.Extensions 2.0
 
-可以在 Azure 门户预览中执行以下步骤来删除扩展：
+可以在 Azure 门户中执行以下步骤来删除扩展：
 
 1. 选择虚拟机。
 2. 选择“扩展” 。

@@ -92,7 +92,7 @@
 
 
 5. 打开位于项目根目录中的 web.config 文件，然后在 `<appSettings>` 节中输入配置值。
-  - `ida:ClientId`：在“步骤 1：向 Azure AD 注册新的应用”中从 Azure 门户预览复制的 GUID。
+  - `ida:ClientId`：在“步骤 1：向 Azure AD 注册新的应用”中从 Azure 门户复制的 GUID。
   - `ida:Tenant`：Azure AD 租户的名称（例如，contoso.partner.onmschina.cn）。
   - `ida:PostLogoutRedirectUri`：在成功完成注销请求后，告知 Azure AD 要将用户重定向到哪个位置的指示器。
 

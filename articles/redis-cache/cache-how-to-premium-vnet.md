@@ -40,7 +40,7 @@ Azure Redis 缓存具有不同的缓存产品（包括群集、持久性和虚�
 
 [AZURE.INCLUDE [redis-cache-create](../../includes/redis-cache-premium-create.md)]
 
-选择高级定价层后，可以通过选择与缓存相同的订阅和位置中的 VNet，来配置 Redis VNet 集成。 若要使用新 VNet，请先创建 VNet，方法是遵循[使用 Azure 门户预览创建虚拟网络](/documentation/articles/virtual-networks-create-vnet-arm-pportal/)或[使用 Azure 门户预览创建虚拟网络（经典）](/documentation/articles/virtual-networks-create-vnet-classic-portal/)中的步骤，然后返回“新建 Redis 缓存”边栏选项卡来创建和配置高级缓存。
+选择高级定价层后，可以通过选择与缓存相同的订阅和位置中的 VNet，来配置 Redis VNet 集成。 若要使用新 VNet，请先创建 VNet，方法是遵循[使用 Azure 门户创建虚拟网络](/documentation/articles/virtual-networks-create-vnet-arm-pportal/)或[使用 Azure 门户创建虚拟网络（经典）](/documentation/articles/virtual-networks-create-vnet-classic-portal/)中的步骤，然后返回“新建 Redis 缓存”边栏选项卡来创建和配置高级缓存。
 
 若要为新缓存配置 VNet，请单击“新建 Redis 缓存”边栏选项卡上的“虚拟网络”，然后从下拉列表中选择所需的 VNet。
 

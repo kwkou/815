@@ -52,9 +52,9 @@ Azure 模块将读取环境变量 **AZURE\_STORAGE\_ACCOUNT** 和 **AZURE\_STORA
 	Azure.config.storage_access_key = "<your azure storage access key>"
 
 
-从 Azure 门户预览中的经典账户或 Resource Manager 存储帐户中获取这些值：
+从 Azure 门户中的经典账户或 Resource Manager 存储帐户中获取这些值：
 
-1. 登录到 [Azure 门户预览](https://portal.azure.cn)。
+1. 登录到 [Azure 门户](https://portal.azure.cn)。
 2. 导航到要使用的存储帐户。
 3. 在右侧的“设置”边栏选项卡中，单击“访问密钥”。
 4. 在显示的“访问密钥”边栏选项卡中，可看到访问密钥 1 和访问密钥 2。可以使用其中任意一个密钥。

@@ -35,7 +35,7 @@
 > [AZURE.NOTE]
 > 本教程未介绍如何编写其中一个步骤所包括的 Azure 应用程序，但说明了如何授权应用程序使用密钥保管库中的密钥或机密。
 > <p>
-> 目前，无法在 Azure 门户预览中配置 Azure 密钥保管库。 请改用这些跨平台命令行接口说明。 或者，有关 Azure PowerShell 说明，请参阅[此对应教程](/documentation/articles/key-vault-get-started/)。
+> 目前，无法在 Azure 门户中配置 Azure 密钥保管库。 请改用这些跨平台命令行接口说明。 或者，有关 Azure PowerShell 说明，请参阅[此对应教程](/documentation/articles/key-vault-get-started/)。
 > 
 > 
 

@@ -21,7 +21,7 @@
 
 # 使用 PowerShell 从异地冗余备份中还原 Azure SQL 数据库
 
-本文介绍如何通过 PowweShell 使用异地还原将数据库还原到新的服务器中。也可以[使用 Azure 门户预览](/documentation/articles/sql-database-geo-restore-portal/)执行此任务。
+本文介绍如何通过 PowweShell 使用异地还原将数据库还原到新的服务器中。也可以[使用 Azure 门户](/documentation/articles/sql-database-geo-restore-portal/)执行此任务。
 
 ## 使用 PowerShell 从异地冗余备份还原 Azure SQL 数据库
 

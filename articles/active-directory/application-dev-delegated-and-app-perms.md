@@ -25,7 +25,7 @@
 ## <a name="recommended-documents"></a>建议的文档
 
 - 详细了解客户端应用程序如何使用[委派权限和应用程序权限请求](/documentation/articles/active-directory-dev-glossary#permissions/)来访问资源。
-- 如需更深入的了解，请参阅：资源应用程序如何向客户端应用程序公开[作用域](/documentation/articles/active-directory-dev-glossary#scopes/)和[应用程序角色](/documentation/articles/active-directory-dev-glossary#roles/)，这些作用域和角色在 Azure 门户预览中分别表现为委派权限和应用程序权限。 
+- 如需更深入的了解，请参阅：资源应用程序如何向客户端应用程序公开[作用域](/documentation/articles/active-directory-dev-glossary#scopes/)和[应用程序角色](/documentation/articles/active-directory-dev-glossary#roles/)，这些作用域和角色在 Azure 门户中分别表现为委派权限和应用程序权限。 
 
 ## <a name="next-steps"></a>后续步骤
 [AzureAD StackOverflow](http://stackoverflow.com/questions/tagged/azure-active-directory)

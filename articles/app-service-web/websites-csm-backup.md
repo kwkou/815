@@ -26,10 +26,10 @@
 
 [应用服务应用](/home/features/app-service/web-apps/)可以备份为 Azure 存储中的 Blob。备份还可以包含该应用的数据库。如果意外地删除了该应用，或者需要将该应用还原到以前的版本，则可以从任何以前的备份还原。可随时按需备份，也可以计划以合适的时间间隔备份。
 
-本文介绍如何使用 RESTful API 请求备份和还原应用。如果要通过 Azure 门户预览以图形方式创建和管理应用备份，请参阅[在 Azure App Service 中备份 Web 应用](/documentation/articles/web-sites-backup/)
+本文介绍如何使用 RESTful API 请求备份和还原应用。如果要通过 Azure 门户以图形方式创建和管理应用备份，请参阅[在 Azure App Service 中备份 Web 应用](/documentation/articles/web-sites-backup/)
 
 ## <a name="gettingstarted"></a>入门
-若要发送 REST 请求，需要知道应用的“名称”、“资源组”和“订阅 ID”。可通过在 [Azure 门户预览](https://portal.azure.cn)的“应用服务”边栏选项卡中单击应用找到此信息。对于本文中的示例，我们要配置网站 **backuprestoreapiexamples.chinacloudsites.cn**。它将存储在 Default-Web-ChinaEast 资源组中，并在 ID 为 00001111-2222-3333-4444-555566667777 的订阅上运行。
+若要发送 REST 请求，需要知道应用的“名称”、“资源组”和“订阅 ID”。可通过在 [Azure 门户](https://portal.azure.cn)的“应用服务”边栏选项卡中单击应用找到此信息。对于本文中的示例，我们要配置网站 **backuprestoreapiexamples.chinacloudsites.cn**。它将存储在 Default-Web-ChinaEast 资源组中，并在 ID 为 00001111-2222-3333-4444-555566667777 的订阅上运行。
 
 ![示例网站信息][SampleWebsiteInformation]
 

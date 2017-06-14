@@ -132,7 +132,7 @@ DocumentDB REST API 支持资源寻址和由 ID 和 _rid 属性提出的请求�
 ## <a name="database-accounts"></a>数据库帐户
 可以使用 Azure 订阅预配一个或多个 DocumentDB 数据库帐户。
 
-可以通过在 [http://portal.azure.cn/](https://portal.azure.cn/) 的 Azure 门户预览[创建和管理 DocumentDB 数据库帐户](/documentation/articles/documentdb-create-account/)。 创建和管理数据库帐户需要具有管理访问权限，并且只能在你的 Azure 订阅下执行。 
+可以通过在 [http://portal.azure.cn/](https://portal.azure.cn/) 的 Azure 门户[创建和管理 DocumentDB 数据库帐户](/documentation/articles/documentdb-create-account/)。 创建和管理数据库帐户需要具有管理访问权限，并且只能在你的 Azure 订阅下执行。 
 
 ### <a name="database-account-properties"></a>数据库帐户属性
 作为设置和管理数据库帐户的一部分，你可以配置并读取以下属性：  
@@ -154,7 +154,7 @@ DocumentDB REST API 支持资源寻址和由 ID 和 _rid 属性提出的请求�
     </tbody>
 </table>
 
-请注意，除了从 Azure 门户预览预配、配置和管理数据库帐户，还可以通过使用 [DocumentDB REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn781481.aspx) 和[客户端 SDK](https://msdn.microsoft.com/zh-cn/library/azure/dn781482.aspx)，以编程方式创建和管理 DocumentDB 数据库帐户。  
+请注意，除了从 Azure 门户预配、配置和管理数据库帐户，还可以通过使用 [DocumentDB REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn781481.aspx) 和[客户端 SDK](https://msdn.microsoft.com/zh-cn/library/azure/dn781482.aspx)，以编程方式创建和管理 DocumentDB 数据库帐户。  
 
 ## <a name="databases"></a>数据库
 DocumentDB 数据库是一个或多个集合和用户的逻辑容器，如下面的关系图中所示。 可以使用 DocumentDB 数据库帐户创建任意数量的数据库（取决于产品/服务限制）。  
@@ -191,7 +191,7 @@ DocumentDB 是真正无架构的数据库系统。 无需为 JSON 文档假设�
 - 选择是否要在索引中包括特定的路径或文档中的模式或从索引中将其排除。 你可以通过分别设置集合中的 indexingPolicy 上的 includedPaths 和 excludedPaths 来实现这一点。 你还可以配置用于特定路径模式的存储和性能权衡的范围和哈希查询。 
 - 在同步（一致）和异步（延迟）索引更新之间进行选择。 默认情况下，每次在集合中插入、替换或删除文档时同步更新索引。 这个行为让查询能够使用与文档读取相同的一致性级别。 虽然 DocumentDB 针对写入进行了优化，且支持文档持续写入，以及同步索引维护和提供一致的查询服务，但你也可以配置某些集合，使其索引延迟更新。 延迟索引编制可大大提高写入性能，非常适合主要具有大量读取操作的集合的批量引入方案。
 
-可以通过对集合执行 PUT 更改索引策略。 这可以通过[客户端 SDK](https://msdn.microsoft.com/zh-cn/library/azure/dn781482.aspx)、[Azure 门户预览](https://portal.azure.cn) 或 [Azure DocumentDB API REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn781481.aspx) 来实现。
+可以通过对集合执行 PUT 更改索引策略。 这可以通过[客户端 SDK](https://msdn.microsoft.com/zh-cn/library/azure/dn781482.aspx)、[Azure 门户](https://portal.azure.cn) 或 [Azure DocumentDB API REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn781481.aspx) 来实现。
 
 ### <a name="querying-a-collection"></a>查询集合
 集合中的文档可以具有任意的数据库架构，而你无需提前提供任何架构或辅助索引，就可以查询集合中的文档。 可以使用 [DocumentDB API SQL 语法](https://msdn.microsoft.com/zh-cn/library/azure/dn782250.aspx)查询集合，该语法通过基于 JavaScript 的 UDF 提供丰富的分层、关系和空间运算符以及扩展性。 JSON 语法允许将 JSON 文档建模为树，其中标签作为树节点。 DocumentDB API 的自动索引编制技术和 DocumentDB API SQL 方言都利用了此语法。 DocumetDB API 查询语言包含三个主要方面：   

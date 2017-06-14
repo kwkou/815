@@ -171,12 +171,12 @@ Batch 作业通常需要一组通用的数据作为作业任务的输入。 例�
 > 
 > 
 
-### <a name="inspect-job-preparation-and-release-tasks-in-the-azure-portal"></a>在 Azure 门户预览中检查作业准备和释放任务
-在运行示例应用程序时，可以使用 [Azure 门户预览][portal]查看作业及其任务的属性，甚至可以下载作业任务修改的共享文本文件。
+### <a name="inspect-job-preparation-and-release-tasks-in-the-azure-portal"></a>在 Azure 门户中检查作业准备和释放任务
+在运行示例应用程序时，可以使用 [Azure 门户][portal]查看作业及其任务的属性，甚至可以下载作业任务修改的共享文本文件。
 
-以下屏幕截图显示了在运行示例应用程序之后，Azure 门户预览中出现的“准备任务边栏选项卡”。 在任务完成之后（但在删除作业与池之前），导航到 *JobPrepReleaseSampleJob* 属性，然后单击“准备任务”或“释放任务”以查看其属性。
+以下屏幕截图显示了在运行示例应用程序之后，Azure 门户中出现的“准备任务边栏选项卡”。 在任务完成之后（但在删除作业与池之前），导航到 *JobPrepReleaseSampleJob* 属性，然后单击“准备任务”或“释放任务”以查看其属性。
 
-![Azure 门户预览中的作业准备属性][1]
+![Azure 门户中的作业准备属性][1]
 
 ## <a name="next-steps"></a>后续步骤
 ### <a name="application-packages"></a>应用程序包

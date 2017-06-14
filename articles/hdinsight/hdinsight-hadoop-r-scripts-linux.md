@@ -55,7 +55,7 @@ R 脚本可以在 HDInsight 中使用创建用于安装 R 环境的脚本操作�
 ## 使用脚本操作安装 R
 以下脚本操作用于在 HDInsight 群集上安装 R。https://hdiconfigactions.blob.core.windows.net/linuxrconfigactionv01/r-installer-v01.sh
 
-本部分提供有关如何在使用 Azure 门户预览创建新群集时使用脚本的说明。
+本部分提供有关如何在使用 Azure 门户创建新群集时使用脚本的说明。
 
 > [AZURE.NOTE]
 Azure PowerShell、Azure CLI、HDInsight .NET SDK 或 Azure Resource Manager 模板也可用于应用脚本操作。你也可以将脚本操作应用于已在运行的群集。有关详细信息，请参阅 [Customize HDInsight clusters with Script Actions](/documentation/articles/hdinsight-hadoop-customize-cluster-linux/)（使用脚本操作自定义 HDInsight 群集）。

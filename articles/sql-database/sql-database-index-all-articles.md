@@ -57,7 +57,7 @@
 | 6 | [使用 .NET (C#) 连接到 SQL 数据库](/documentation/articles/sql-database-develop-dotnet-simple/) | 使用本快速入门教程中的示例代码可以生成一个包含 C# 代码并由云中强大的 Azure SQL 数据库关系数据库支持的新式应用程序。 |
 | 7 | [使用 Azure 门户创建新的弹性数据库池](/documentation/articles/sql-database-elastic-pool-create-portal/) | 如何将可缩放的弹性数据库池添加到 SQL 数据库配置，以简化多个数据库的管理和资源共享。 |
 | 8 | [浏览 Azure SQL 数据库教程](/documentation/articles/sql-database-explore-tutorials/) | 了解 SQL 数据库的特性和功能 |
-| 9 | [SQL 数据库教程：使用 Azure 门户预览在几分钟内创建一个 SQL 数据库](/documentation/articles/sql-database-get-started/) | 了解如何设置 SQL 数据库逻辑服务器、服务器防火墙规则、SQL 数据库、示例性数据、与客户端工具连接、配置用户和数据库防火墙规则。 |
+| 9 | [SQL 数据库教程：使用 Azure 门户在几分钟内创建一个 SQL 数据库](/documentation/articles/sql-database-get-started/) | 了解如何设置 SQL 数据库逻辑服务器、服务器防火墙规则、SQL 数据库、示例性数据、与客户端工具连接、配置用户和数据库防火墙规则。 |
 | 10 | [Azure SQL 数据库提供安全和保护](/documentation/articles/sql-database-helps-secures-and-protects/) | 了解 SQL 数据库如何帮助提供安全和保护 |
 | 11 | [Azure SQL 数据库会自行学习和进行适应性调整](/documentation/articles/sql-database-learn-and-adapt/) | 了解 SQL 数据库如何进行学习和适应性调整 |
 | 12 | [选择云 SQL Server 选项：Azure SQL (PaaS) 数据库或 Azure VM 上的 SQL Server (IaaS)](/documentation/articles/sql-database-paas-vs-sql-server-iaas/) | 了解哪个云 SQL Server 选项适合应用程序：Azure SQL (PaaS) 数据库或 Azure 虚拟机上的云中 SQL Server。 |
@@ -101,7 +101,7 @@
 | &nbsp; | 标题 | 说明 |
 | --: | :-- | :-- |
 | 31 | [SQL 数据库顾问](/documentation/articles/sql-database-advisor/) | Azure SQL 数据库顾问为现有 SQL 数据库提供建议，这样可以提高当前的查询性能。 |
-| 32 | [SQL 数据库顾问](/documentation/articles/sql-database-advisor-portal/) | 可以在 Azure 门户预览中使用 Azure SQL 数据库顾问查看和实施为现有 SQL 数据库提供的建议，这些建议可以提高当前的查询性能。 |
+| 32 | [SQL 数据库顾问](/documentation/articles/sql-database-advisor-portal/) | 可以在 Azure 门户中使用 Azure SQL 数据库顾问查看和实施为现有 SQL 数据库提供的建议，这些建议可以提高当前的查询性能。 |
 | 33 | [Azure SQL 数据库基准检验概述](/documentation/articles/sql-database-benchmark-overview/) | 本主题介绍在 Azure SQL 数据库的性能测量中使用的 Azure SQL 数据库基准检验。 |
 | 34 | [何时使用弹性数据库池？](/documentation/articles/sql-database-elastic-pool-guidance/) | 弹性数据库池是由一组弹性数据库共享的可用资源集合。本文提供相关的指导来帮助你评估是否适合对一组数据库使用弹性数据库池。 |
 | 35 | [弹性数据库工具入门](/documentation/articles/sql-database-elastic-scale-get-started/) | 大致介绍 Azure SQL 数据库的弹性数据库工具功能，包括易于使用的示例应用。 |
@@ -160,7 +160,7 @@
 | 77 | [C# 数据库开发：为 SQL 数据库创建和配置弹性数据库池](/documentation/articles/sql-database-elastic-pool-create-csharp/) | 使用 C# 数据库开发技术创建 Azure SQL 数据库弹性数据库池，以便可以在多个数据库之间共享资源。 |
 | 78 | [用于识别适用于弹性数据库池的数据库的 PowerShell 脚本](/documentation/articles/sql-database-elastic-pool-database-assessment-powershell/) | 弹性数据库池是由一组弹性数据库共享的可用资源集合。本文档提供 Powershell 脚本来帮助你评估是否适合对一组数据库使用弹性数据库池。 |
 | 79 | [使用 C# 监视和管理弹性数据库池](/documentation/articles/sql-database-elastic-pool-manage-csharp/) | 使用 C# 数据库开发技术来管理 Azure SQL 数据库弹性数据库池。 |
-| 80 | [使用 Azure 门户预览监视和管理弹性数据库池](/documentation/articles/sql-database-elastic-pool-manage-portal/) | 了解如何使用 Azure 门户和 SQL 数据库的内置智能来管理、监视可缩放的弹性数据库池并正确调整其大小，以优化数据库性能和管理成本。 |
+| 80 | [使用 Azure 门户监视和管理弹性数据库池](/documentation/articles/sql-database-elastic-pool-manage-portal/) | 了解如何使用 Azure 门户和 SQL 数据库的内置智能来管理、监视可缩放的弹性数据库池并正确调整其大小，以优化数据库性能和管理成本。 |
 | 81 | [使用 PowerShell 监视和管理弹性数据库池](/documentation/articles/sql-database-elastic-pool-manage-powershell/) | 了解如何使用 PowerShell 管理弹性数据库池。 |
 | 82 | [使用 Transact-SQL 监视和管理弹性数据库池](/documentation/articles/sql-database-elastic-pool-manage-tsql/) | 使用 T-SQL 在弹性池中创建 Azure SQL 数据库。或使用 T-SQL 将数据库移入和移出池。 |
 | 83 | [弹性数据库池计费和定价信息](/documentation/articles/sql-database-elastic-pool-price/) | 特定于弹性数据库池的定价信息。 |
@@ -200,10 +200,10 @@
 | 98 | [使用 SQL 数据库弹性池的应用程序的灾难恢复策略](/documentation/articles/sql-database-disaster-recovery-strategies-for-applications-with-elastic-pool/) | 了解如何通过选择合适的故障转移模式来设计可实现灾难恢复的云解决方案。 |
 | 99 | [使用 RecoveryManager 类解决分片映射问题](/documentation/articles/sql-database-elastic-database-recovery-manager/) | 使用 RecoveryManager 类解决分片映射问题 |
 | 100 | [导入 BACPAC 文件以创建新的 Azure SQL 数据库](/documentation/articles/sql-database-import/) | 通过导入现有的 BACPAC 文件创建新的 Azure SQL 数据库。 |
-| 101 | [使用 Azure 门户预览将 Azure SQL 数据库还原到之前的时间点](/documentation/articles/sql-database-point-in-time-restore-portal/) | 将 Azure SQL 数据库还原到之前的时间点。 |
+| 101 | [使用 Azure 门户将 Azure SQL 数据库还原到之前的时间点](/documentation/articles/sql-database-point-in-time-restore-portal/) | 将 Azure SQL 数据库还原到之前的时间点。 |
 | 102 | [使用 PowerShell 将 Azure SQL 数据库还原到之前的时间点](/documentation/articles/sql-database-point-in-time-restore-powershell/) | 将 Azure SQL 数据库还原到之前的时间点 |
 | 104 | [使用自动数据库备份恢复 Azure SQL 数据库](/documentation/articles/sql-database-recovery-using-backups/) | 了解有关时间点还原的信息，它可使你将 Azure SQL 数据库回滚到之前的时间点（最多 35 天）。 |
-| 105 | [使用 Azure 门户预览还原已删除的 Azure SQL 数据库](/documentation/articles/sql-database-restore-deleted-database-portal/) | 还原已删除的 Azure SQL 数据库（Azure 门户）。 |
+| 105 | [使用 Azure 门户还原已删除的 Azure SQL 数据库](/documentation/articles/sql-database-restore-deleted-database-portal/) | 还原已删除的 Azure SQL 数据库（Azure 门户）。 |
 | 106 | [使用 PowerShell 还原已删除的 Azure SQL 数据库](/documentation/articles/sql-database-restore-deleted-database-powershell/) | 还原已删除的 Azure SQL 数据库 (PowerShell)。 |
 | 107 | [将数据库还原到以前的时间点、还原已删除的数据库，或者在数据中心服务中断的情况下进行恢复](/documentation/articles/sql-database-troubleshoot-backup-and-restore/) | 了解如何在发生错误和服务中断时，使用 Azure SQL 数据库中的备份和副本恢复云数据库。 |
 
@@ -237,7 +237,7 @@
 | --: | :-- | :-- |
 | 125 | [将 SQL Server 数据库迁移到云中的 SQL 数据库](/documentation/articles/sql-database-cloud-migrate/) | 了解如何将本地 SQL Server 数据库迁移到云中的 Azure SQL 数据库。执行数据库迁移之前，使用数据库迁移工具测试兼容性。 |
 | 126 | [复制 Azure SQL 数据库](/documentation/articles/sql-database-copy/) | 创建 Azure SQL 数据库的副本 |
-| 127 | [使用 Azure 门户预览将 Azure SQL 数据库存档到 BACPAC 文件](/documentation/articles/sql-database-export/) | 使用 Azure 门户预览将 Azure SQL 数据库存档到 BACPAC 文件 |
+| 127 | [使用 Azure 门户将 Azure SQL 数据库存档到 BACPAC 文件](/documentation/articles/sql-database-export/) | 使用 Azure 门户将 Azure SQL 数据库存档到 BACPAC 文件 |
 
 
 
@@ -252,10 +252,10 @@
 | 132 | [使用 PowerShell 配置 Azure SQL 数据库服务器级防火墙规则](/documentation/articles/sql-database-configure-firewall-settings-powershell/) | 了解如何为访问 Azure SQL 数据库的 IP 地址配置防火墙。 |
 | 133 | [使用 REST API 配置 Azure SQL 数据库服务器级防火墙规则](/documentation/articles/sql-database-configure-firewall-settings-rest/) | 了解如何为访问 Azure SQL 数据库的 IP 地址配置防火墙。 |
 | 134 | [使用 T-SQL 配置 Azure SQL 数据库服务器级和数据库级防火墙规则](/documentation/articles/sql-database-configure-firewall-settings-tsql/) | 了解如何为访问 Azure SQL 数据库的 IP 地址配置防火墙。 |
-| 135 | [SQL 数据库动态数据掩码入门（Azure 门户预览）](/documentation/articles/sql-database-dynamic-data-masking-get-started/) | 如何开始在 Azure 门户预览中使用 SQL 数据库动态数据掩码 |
+| 135 | [SQL 数据库动态数据掩码入门（Azure 门户）](/documentation/articles/sql-database-dynamic-data-masking-get-started/) | 如何开始在 Azure 门户中使用 SQL 数据库动态数据掩码 |
 | 136 | [SQL 数据库动态数据掩码入门（Azure 经典管理门户）](/documentation/articles/sql-database-dynamic-data-masking-get-started-portal/) | 如何开始在 Azure 经典门户中使用 SQL 数据库动态数据掩码 |
 | 137 | [配置 Azure SQL 数据库防火墙规则 - 概述](/documentation/articles/sql-database-firewall-configure/) | 了解如何配置具有服务器级和数据库级防火墙规则的 SQL 数据库防火墙，以管理访问权限。 |
-| 138 | [SQL 数据库教程：使用 Azure 门户预览创建 SQL 数据库用户帐户以访问和管理数据库](/documentation/articles/sql-database-get-started-security/) | 了解如何创建用户帐户来访问和管理数据库。 |
+| 138 | [SQL 数据库教程：使用 Azure 门户创建 SQL 数据库用户帐户以访问和管理数据库](/documentation/articles/sql-database-get-started-security/) | 了解如何创建用户帐户来访问和管理数据库。 |
 | 139 | [SQL 数据库身份验证和授权：授予访问权限](/documentation/articles/sql-database-manage-logins/) | 了解 SQL 数据库安全管理，特别是如何通过服务器级的主体帐户管理数据库的访问和登录安全。 |
 | 140 | [Azure SQL 数据库安全指南和限制](/documentation/articles/sql-database-security-guidelines/) | 了解与安全相关的 Azure SQL 数据库指南和限制。 |
 | 141 | [SQL 数据库威胁检测入门](/documentation/articles/sql-database-threat-detection-get-started/) | 如何开始在 Azure 门户中使用 SQL 数据库威胁检测 |
@@ -268,8 +268,8 @@
 | &nbsp; | 标题 | 说明 |
 | --: | :-- | :-- |
 | 144 | [SQL 数据库审核入门](/documentation/articles/sql-database-auditing-get-started/) | SQL 数据库审核入门 |
-| 145 | [使用 Azure 门户预览配置 Azure SQL 数据库服务器级防火墙规则](/documentation/articles/sql-database-configure-firewall-settings/) | 了解如何为访问 Azure SQL Server 的 IP 地址配置防火墙。 |
-| 146 | [使用 Azure 门户预览复制 Azure SQL 数据库](/documentation/articles/sql-database-copy-portal/) | 创建 Azure SQL 数据库的副本 |
+| 145 | [使用 Azure 门户配置 Azure SQL 数据库服务器级防火墙规则](/documentation/articles/sql-database-configure-firewall-settings/) | 了解如何为访问 Azure SQL Server 的 IP 地址配置防火墙。 |
+| 146 | [使用 Azure 门户复制 Azure SQL 数据库](/documentation/articles/sql-database-copy-portal/) | 创建 Azure SQL 数据库的副本 |
 | 147 | [使用 Azure 自动化管理 Azure SQL 数据库](/documentation/articles/sql-database-manage-automation/) | 了解如何使用 Azure 自动化服务来管理大规模的 Azure SQL 数据库。 |
 | 148 | [概述：SQL 数据库的管理工具](/documentation/articles/sql-database-manage-overview/) | 比较管理 Azure SQL 数据库的工具和选项 |
 | 149 | [使用动态管理视图监视 Azure SQL 数据库](/documentation/articles/sql-database-monitoring-with-dmvs/) | 了解如何通过使用动态管理视图监视 Azure SQL 数据库来检测并诊断常见性能问题。 |
@@ -291,15 +291,15 @@
 
 | &nbsp; | 标题 | 说明 |
 | --: | :-- | :-- |
-| 154 | [使用 Azure 门户预览为 Azure SQL 数据库启动计划内或计划外故障转移](/documentation/articles/sql-database-geo-replication-failover-portal/) | 使用 Azure 门户预览为 Azure SQL 数据库启动计划内或计划外故障转移 |
+| 154 | [使用 Azure 门户为 Azure SQL 数据库启动计划内或计划外故障转移](/documentation/articles/sql-database-geo-replication-failover-portal/) | 使用 Azure 门户为 Azure SQL 数据库启动计划内或计划外故障转移 |
 | 155 | [使用 PowerShell 为 Azure SQL 数据库启动计划内或计划外故障转移](/documentation/articles/sql-database-geo-replication-failover-powershell/) | 使用 PowerShell 为 Azure SQL 数据库启动计划内或计划外故障转移 |
 | 156 | [使用 Transact-SQL 为 Azure SQL 数据库启动计划内或计划外故障转移](/documentation/articles/sql-database-geo-replication-failover-transact-sql/) | 使用 Transact-SQL 为 Azure SQL 数据库启动计划内或计划外故障转移 |
 | 157 | [概述：SQL 数据库的活动异地复制](/documentation/articles/sql-database-geo-replication-overview/) | 可以使用活动异地复制在任何 Azure 数据中心设置 4 个数据库副本。 |
-| 158 | [使用 Azure 门户预览为 Azure SQL 数据库配置异地复制](/documentation/articles/sql-database-geo-replication-portal/) | 使用 Azure 门户预览为 Azure SQL 数据库配置异地复制 |
+| 158 | [使用 Azure 门户为 Azure SQL 数据库配置异地复制](/documentation/articles/sql-database-geo-replication-portal/) | 使用 Azure 门户为 Azure SQL 数据库配置异地复制 |
 | 159 | [使用 PowerShell 为 Azure SQL 数据库配置异地复制](/documentation/articles/sql-database-geo-replication-powershell/) | 使用 PowerShell 为 Azure SQL 数据库配置活动异地复制 |
 | 160 | [灾难恢复后如何管理 Azure SQL 数据库安全性](/documentation/articles/sql-database-geo-replication-security-config/) | 本主题介绍在数据库还原或故障转移后进行安全管理时的安全注意事项。 |
 | 161 | [使用 Transact-SQL 为 Azure SQL 数据库配置异地复制](/documentation/articles/sql-database-geo-replication-transact-sql/) | 使用 Transact-SQL 为 Azure SQL 数据库配置异地复制 |
-| 162 | [使用 Azure 门户预览从异地冗余备份中异地还原 Azure SQL 数据库](/documentation/articles/sql-database-geo-restore-portal/) | 从异地冗余备份中异地还原 Azure SQL 数据库（Azure 门户预览）。 |
+| 162 | [使用 Azure 门户从异地冗余备份中异地还原 Azure SQL 数据库](/documentation/articles/sql-database-geo-restore-portal/) | 从异地冗余备份中异地还原 Azure SQL 数据库（Azure 门户）。 |
 | 163 | [使用 PowerShell 从异地冗余备份中还原 Azure SQL 数据库](/documentation/articles/sql-database-geo-restore-powershell/) | 从异地冗余备份中将 Azure SQL 数据库还原到新的服务器中 |
 
 
@@ -310,7 +310,7 @@
 | --: | :-- | :-- |
 | 164 | [已改善 Azure SQL 数据库中兼容级别为 130 的查询性能](/documentation/articles/sql-database-compatibility-level-query-performance-130/) | 用于确定哪种兼容级别最适合 Azure SQL 数据库或 Microsoft SQL Server 上的数据库的工具和步骤 |
 | 165 | [使用 SQL 数据库活动异地复制管理云应用程序的滚动升级](/documentation/articles/sql-database-manage-application-rolling-upgrade/) | 了解如何使用 Azure SQL 数据库异地复制来支持云应用程序的在线升级。 |
-| 166 | [使用 Azure 门户预览升级到 Azure SQL 数据库 V12](/documentation/articles/sql-database-upgrade-server-portal/) | 介绍如何使用 Azure 门户预览升级到 Azure SQL 数据库 V12，包括如何升级 Web 和企业数据库，以及如何升级 V11 服务器并将其数据库直接迁移到弹性数据库池。 |
+| 166 | [使用 Azure 门户升级到 Azure SQL 数据库 V12](/documentation/articles/sql-database-upgrade-server-portal/) | 介绍如何使用 Azure 门户升级到 Azure SQL 数据库 V12，包括如何升级 Web 和企业数据库，以及如何升级 V11 服务器并将其数据库直接迁移到弹性数据库池。 |
 | 167 | [使用 PowerShell 升级到 Azure SQL 数据库 V12](/documentation/articles/sql-database-upgrade-server-powershell/) | 介绍如何使用 PowerShell 升级到 Azure SQL 数据库 V12，包括如何升级 Web 和企业数据库，以及如何升级 V11 服务器并将其数据库直接迁移到弹性数据库池。 |
 | 168 | [规划和准备升级到 SQL 数据库 V12](/documentation/articles/sql-database-v12-plan-prepare-upgrade/) | 介绍升级到 Azure SQL 数据库 V12 版本所涉及的准备工作和限制。 |
 | 169 | [SQL 数据库 V12 中的新增功能](/documentation/articles/sql-database-v12-whats-new/) | 介绍云中使用 Azure SQL 数据库的业务系统在升级到版本 V12 后为何能够受益。 |
@@ -327,7 +327,7 @@
 | 173 | [使用 PowerShell cmdlet 创建新的 SQL 数据库并执行常见的数据库设置任务](/documentation/articles/sql-database-get-started-powershell/) | 了解如何使用 PowerShell 创建新的 SQL 数据库。可以通过 PowerShell cmdlet 管理常见的数据库设置任务。 |
 | 174 | [Azure SQL 数据同步入门（预览）](/documentation/articles/sql-database-get-started-sql-data-sync/) | 本教程帮助你开始使用 Azure SQL 数据同步（预览）。 |
 | 175 | [使用 SQL Server Management Studio 管理 Azure SQL 数据库](/documentation/articles/sql-database-manage-azure-ssms/) | 了解如何使用 SQL Server Management Studio 管理 SQL 数据库服务器和数据库。 |
-| 176 | [使用 Azure 门户预览管理 Azure SQL 数据库](/documentation/articles/sql-database-manage-portal/) | 了解如何使用 Azure 门户预览管理云中的关系数据库。 |
+| 176 | [使用 Azure 门户管理 Azure SQL 数据库](/documentation/articles/sql-database-manage-portal/) | 了解如何使用 Azure 门户管理云中的关系数据库。 |
 | 177 | [使用 PowerShell 更改 SQL 数据库的服务层和性能级别（定价层）](/documentation/articles/sql-database-scale-up-powershell/) | “更改 Azure SQL 数据库的服务层和性能级别”介绍如何使用 PowerShell 扩展和缩减 SQL 数据库。使用 PowerShell 更改 Azure SQL 数据库定价层。 |
 | 178 | 在 Azure RemoteApp 中使用 SQL Server Management Studio 连接到 SQL 数据库 | 通过本教程了解如何在连接到 SQL 数据库时使用 Azure RemoteApp 中的 SQL Server Management Studio 进行安全和性能操作 |
 
@@ -350,7 +350,7 @@
 | 182 | [使用 PowerShell 复制 Azure SQL 数据库](/documentation/articles/sql-database-copy-powershell/) | 使用 PowerShell 创建 Azure SQL 数据库的副本 |
 | 183 | [使用 Transact-SQL 复制 Azure SQL 数据库](/documentation/articles/sql-database-copy-transact-sql/) | 使用 Transact-SQL 创建 Azure SQL 数据库的副本 |
 | 184 | [Azure SQL 数据库的一般性限制和指导原则](/documentation/articles/sql-database-general-limitations/) | 本页介绍 Azure SQL 数据库的某些一般性限制，以及互操作性和支持方面的问题。 |
-| 185 | [SQL 数据库定价层建议](/documentation/articles/sql-database-service-tier-advisor/) | 在 Azure 门户预览中更改定价层时，提供的定价层建议会推荐最适合用于运行现有 Azure SQL 数据库工作负荷的层。定价层描述 SQL 数据库的服务层和性能级别。 |
+| 185 | [SQL 数据库定价层建议](/documentation/articles/sql-database-service-tier-advisor/) | 在 Azure 门户中更改定价层时，提供的定价层建议会推荐最适合用于运行现有 Azure SQL 数据库工作负荷的层。定价层描述 SQL 数据库的服务层和性能级别。 |
 
 
 &nbsp;

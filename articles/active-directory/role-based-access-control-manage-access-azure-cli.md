@@ -24,7 +24,7 @@
 - [Azure CLI](/documentation/articles/role-based-access-control-manage-access-azure-cli/)
 - [REST API](/documentation/articles/role-based-access-control-manage-access-rest/)
 
-使用 Azure 门户预览中基于角色的访问控制 (RBAC) 和 Azure资源管理器 API 可以精细地管理对订阅和资源的访问。使用此功能，可以通过在特定范围内为 Active Directory 用户、组或服务主体分配某些角色来向其授予访问权限。
+使用 Azure 门户中基于角色的访问控制 (RBAC) 和 Azure资源管理器 API 可以精细地管理对订阅和资源的访问。使用此功能，可以通过在特定范围内为 Active Directory 用户、组或服务主体分配某些角色来向其授予访问权限。
 
 在使用 Azure 命令行界面 (CLI) 管理 RBAC 之前，必须具备以下先决条件：
 

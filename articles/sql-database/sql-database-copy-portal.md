@@ -1,5 +1,5 @@
 <properties
-    pageTitle="使用 Azure 门户预览复制 Azure SQL 数据库 | Azure"
+    pageTitle="使用 Azure 门户复制 Azure SQL 数据库 | Azure"
     description="创建 Azure SQL 数据库的副本"
     services="sql-database"
     documentationcenter=""
@@ -19,9 +19,9 @@
     ms.tgt_pltfrm="NA" />  
 
 
-# 使用 Azure 门户预览复制 Azure SQL 数据库
+# 使用 Azure 门户复制 Azure SQL 数据库
 
-以下步骤说明如何使用 [Azure 门户预览](https://portal.azure.cn)将 SQL 数据库复制到同一服务器或其他服务器。
+以下步骤说明如何使用 [Azure 门户](https://portal.azure.cn)将 SQL 数据库复制到同一服务器或其他服务器。
 
 > [AZURE.NOTE]
 >也可使用 [PowerShell](/documentation/articles/sql-database-copy-powershell/) 或 [Transact-SQL](/documentation/articles/sql-database-copy-transact-sql/) 复制 SQL 数据库。
@@ -35,7 +35,7 @@
 ## 复制 SQL 数据库
 打开要复制的数据库对应的 SQL 数据库页：
 
-1.	转到 [Azure 门户预览](https://portal.azure.cn)。
+1.	转到 [Azure 门户](https://portal.azure.cn)。
 2.	单击“更多服务”>“SQL 数据库”，然后单击所需的数据库。
 3.	在 SQL 数据库页上，单击“复制”：
 
@@ -71,7 +71,7 @@
 
 ## 后续步骤
 * 若要了解如何在将数据库复制到其他逻辑服务器时管理用户和登录名，请参阅[灾难恢复后如何管理 Azure SQL 数据库安全性](/documentation/articles/sql-database-geo-replication-security-config/)。
-* 若要使用 Azure 门户预览将数据库导出到 BACPAC 文件，请参阅[使用 Azure 门户预览将数据库导出到 BACPAC 文件](/documentation/articles/sql-database-export-portal/)。
+* 若要使用 Azure 门户将数据库导出到 BACPAC 文件，请参阅[使用 Azure 门户将数据库导出到 BACPAC 文件](/documentation/articles/sql-database-export-portal/)。
 * [业务连续性概述](/documentation/articles/sql-database-business-continuity/)
 * [SQL 数据库文档](/documentation/services/sql-databases/)
 

@@ -82,9 +82,9 @@
 ## <a id="Config"></a>步骤 3：设置应用的配置
 在喜爱的文本编辑器中打开 ```config.js``` 。
 
-然后，复制并粘贴以下代码片段，并将属性 ```config.endpoint``` 和 ```config.primaryKey``` 设置为 DocumentDB 终结点 URI 和主密钥。 这两项配置都可以在 [Azure 门户预览](https://portal.azure.cn)中找到。
+然后，复制并粘贴以下代码片段，并将属性 ```config.endpoint``` 和 ```config.primaryKey``` 设置为 DocumentDB 终结点 URI 和主密钥。 这两项配置都可以在 [Azure 门户](https://portal.azure.cn)中找到。
 
-![Node.js 教程 - Azure 门户预览的屏幕截图，显示了一个 DocumentDB 帐户，在“DocumentDB 帐户”边栏选项卡上突出显示了“ACTIVE”中心、“密钥”按钮，在“密钥”边栏选项卡上突出显示了 URI、主密钥、辅助密钥的值 - Node 数据库][keys]
+![Node.js 教程 - Azure 门户的屏幕截图，显示了一个 DocumentDB 帐户，在“DocumentDB 帐户”边栏选项卡上突出显示了“ACTIVE”中心、“密钥”按钮，在“密钥”边栏选项卡上突出显示了 URI、主密钥、辅助密钥的值 - Node 数据库][keys]
 
     // ADD THIS PART TO YOUR CODE
     var config = {}

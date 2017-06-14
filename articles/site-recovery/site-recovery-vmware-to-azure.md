@@ -21,7 +21,7 @@
 
 # 使用 Azure Site Recovery 将 VMware 虚拟机复制到 Azure
 > [AZURE.SELECTOR]
-- [Azure 门户预览](/documentation/articles/site-recovery-vmware-to-azure/)
+- [Azure 门户](/documentation/articles/site-recovery-vmware-to-azure/)
 - [Azure 经典管理门户](/documentation/articles/site-recovery-vmware-to-azure-classic/)
 
 本文介绍如何在 Azure 门户中使用 [Azure Site Recovery](/documentation/articles/site-recovery-overview/) 服务将本地 VMware 虚拟机复制到 Azure。

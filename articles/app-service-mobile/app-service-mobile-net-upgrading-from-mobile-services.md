@@ -61,11 +61,11 @@
 4. （可选）删除已迁移的原始实例
 
 ##<a name="mobile-app-version"></a>创建第二个应用程序实例
-升级的第一个步骤是创建用于托管新版应用程序的移动应用资源。如果已迁移现有移动服务，则需要在同一个托管计划中创建此版本。打开 [Azure 门户预览]，导航到已迁移的应用程序。记下运行该应用程序的应用服务计划。
+升级的第一个步骤是创建用于托管新版应用程序的移动应用资源。如果已迁移现有移动服务，则需要在同一个托管计划中创建此版本。打开 [Azure 门户]，导航到已迁移的应用程序。记下运行该应用程序的应用服务计划。
 
 接下来，根据 [.NET 后端创建说明](/documentation/articles/app-service-mobile-dotnet-backend-how-to-use-server-sdk/#create-app)创建第二个应用程序实例。当系统提示选择应用服务计划或“托管计划”时，请选择已迁移的应用程序的计划。
 
-可能需要使用与移动服务中相同的数据库和通知中心。可以复制这些值，方法是打开 [Azure 门户预览]，导航到原始应用程序，然后单击“设置”>“应用程序设置”。在“连接字符串”下，复制 `MS_NotificationHubConnectionString` 和 `MS_TableConnectionString`。导航到新的升级站点并粘贴这些值，覆盖任何现有值。针对应用所需的任何其他应用程序设置重复此过程。如果未使用迁移的服务，可以从 [Azure 经典管理门户]上“移动服务”部分中的“配置”选项卡读取连接字符串和应用设置。
+可能需要使用与移动服务中相同的数据库和通知中心。可以复制这些值，方法是打开 [Azure 门户]，导航到原始应用程序，然后单击“设置”>“应用程序设置”。在“连接字符串”下，复制 `MS_NotificationHubConnectionString` 和 `MS_TableConnectionString`。导航到新的升级站点并粘贴这些值，覆盖任何现有值。针对应用所需的任何其他应用程序设置重复此过程。如果未使用迁移的服务，可以从 [Azure 经典管理门户]上“移动服务”部分中的“配置”选项卡读取连接字符串和应用设置。
 
 为应用程序制作 ASP.NET 项目的副本，然后将其发布到新站点。通过使用新 URL 更新的客户端应用程序副本验证一切是否正常工作。
 
@@ -262,7 +262,7 @@
 
 <!-- URLs. -->
 
-[Azure 门户预览]: https://portal.azure.cn/
+[Azure 门户]: https://portal.azure.cn/
 [Azure 经典管理门户]: https://manage.windowsazure.cn/
 [What are Mobile Apps?]: /documentation/articles/app-service-mobile-value-prop/
 [I already use web sites and mobile services - how does App Service help me?]: /documentation/articles/app-service-mobile-value-prop-migration-from-mobile-services/

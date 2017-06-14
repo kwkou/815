@@ -19,7 +19,7 @@
 
 # 使用 PowerShell 将 Azure SQL 数据库还原到之前的时间点
 
-本文介绍如何使用 PowerShell 将数据库从 [SQL 数据库自动备份](/documentation/articles/sql-database-automated-backups/)还原到以前的时间点。也可以[使用 Azure 门户预览](/documentation/articles/sql-database-point-in-time-restore-portal/)执行此任务。
+本文介绍如何使用 PowerShell 将数据库从 [SQL 数据库自动备份](/documentation/articles/sql-database-automated-backups/)还原到以前的时间点。也可以[使用 Azure 门户](/documentation/articles/sql-database-point-in-time-restore-portal/)执行此任务。
 
 
 ## 使用 PowerShell 还原到上一时间点

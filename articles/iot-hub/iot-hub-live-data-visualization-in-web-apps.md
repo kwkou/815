@@ -51,7 +51,7 @@
 
 ## <a name="create-an-azure-web-app"></a>创建 Azure Web 应用
 
-1. 在 [Azure 门户预览](https://portal.azure.cn/)中，单击“新建” > “Web + 移动” > “Web 应用”。
+1. 在 [Azure 门户](https://portal.azure.cn/)中，单击“新建” > “Web + 移动” > “Web 应用”。
 1. 输入唯一的作业名称，验证订阅，指定资源组和位置，选择“固定到仪表板”，然后单击“创建”。
 
     建议选择资源组所在的同一位置。 这有助于加快处理速度，降低数据传输费用。

@@ -27,9 +27,9 @@
 
 本文介绍如何在 Resource Manager 部署模型中使用 PowerShell 通过点到站点连接来创建 VNet。 也可使用不同的部署工具或部署模型创建此配置，方法是从以下列表中选择另一选项：
 > [AZURE.SELECTOR]
-- [Resource Manager - Azure 门户预览](/documentation/articles/vpn-gateway-howto-point-to-site-resource-manager-portal/)
+- [Resource Manager - Azure 门户](/documentation/articles/vpn-gateway-howto-point-to-site-resource-manager-portal/)
 - [Resource Manager - PowerShell](/documentation/articles/vpn-gateway-howto-point-to-site-rm-ps/)
-- [经典 - Azure 门户预览](/documentation/articles/vpn-gateway-howto-point-to-site-classic-azure-portal/)
+- [经典 - Azure 门户](/documentation/articles/vpn-gateway-howto-point-to-site-classic-azure-portal/)
 
 使用点到站点 (P2S) 配置可以创建从单个客户端计算机到虚拟网络的安全连接。 P2S 是基于 SSTP（安全套接字隧道协议）的 VPN 连接。 如果要从远程位置（例如，从家里或会议室）连接到 VNet，或者只有少数几台客户端计算机需要连接到虚拟网络，点到站点连接将非常有用。 P2S 连接不需要 VPN 设备或面向公众的 IP 地址。 可从客户端计算机建立 VPN 连接。
 
@@ -180,7 +180,7 @@ Azure 使用证书对点到站点 VPN 的 VPN 客户端进行身份验证。 请
 
 只要版本与客户端的体系结构匹配，就可以在每台客户端计算机上使用相同的 VPN 客户端配置包。 有关支持的客户端操作系统列表，请参阅本文末尾的[点到站点连接常见问题解答](#faq)。
 
-1. 创建网关后，可生成和下载客户端配置包。 此示例下载 64 位客户端包。 如果要下载 32 位客户端，请将“Amd64”替换为“x86”。 还可以使用 Azure 门户预览下载 VPN 客户端。
+1. 创建网关后，可生成和下载客户端配置包。 此示例下载 64 位客户端包。 如果要下载 32 位客户端，请将“Amd64”替换为“x86”。 还可以使用 Azure 门户下载 VPN 客户端。
 
         Get-AzureRmVpnClientPackage -ResourceGroupName $RG `
         -VirtualNetworkGatewayName $GWName -ProcessorArchitecture Amd64

@@ -116,7 +116,7 @@
 
 7.	脚本完成后，请返回浏览到前端的地址 (http://ToDoApp *&lt;unique_string>* master.chinacloudsites.cn/)，以查看在生产环境中运行的应用程序。
  
-5.	登录到 [Azure 门户预览](https://portal.azure.cn/)并查看创建的内容。
+5.	登录到 [Azure 门户](https://portal.azure.cn/)并查看创建的内容。
 
 	应该可以在相同的资源组中看到两个 Web 应用，其中一个的名称具有 `Api` 后缀。当你查看资源组视图时，还会看到 SQL 数据库和服务器、App Service 计划以及 Web 应用的过渡槽。浏览不同的资源，并将它们与 *&lt;repository\_root>* \\ARMTemplates\\ProdAndStage.json 进行比较，以查看它们在模板中的配置方式。
 

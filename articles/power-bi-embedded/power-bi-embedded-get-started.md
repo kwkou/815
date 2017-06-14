@@ -34,12 +34,12 @@
 
 **工作区集合** 是顶层的 Azure 资源，是要嵌入到应用程序中的内容的容器。 可采用两种方式创建 **工作区集合** ：
 
-- 使用 Azure 门户预览手动创建
+- 使用 Azure 门户手动创建
 - 使用 Azure资源管理器(ARM) API 以编程方式创建
 
-接下来将完成使用 Azure 门户预览构建 **工作区集合** 的步骤。
+接下来将完成使用 Azure 门户构建 **工作区集合** 的步骤。
 
-1. 打开并登录到 **Azure 门户预览**： [http://portal.azure.cn](http://portal.azure.cn)。
+1. 打开并登录到 **Azure 门户**： [http://portal.azure.cn](http://portal.azure.cn)。
 2. 在顶部面板上单击“+ 新建”  。
    
 	![](./media/power-bi-embedded-get-started/create-workspace-1.png)

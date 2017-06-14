@@ -72,7 +72,7 @@ NuGet 包会下载并添加所需的程序集引用，并将以下节添加到 w
 
 注释部分提供了属性及每个属性的示例设置的一个示例。
 
-使用来自 Azure 门户预览中的缓存边栏选项卡的值配置属性，并根据需要配置其他值。 有关访问缓存属性的说明，请参阅[配置 Redis 缓存设置](/documentation/articles/cache-configure/#configure-redis-cache-settings)。
+使用来自 Azure 门户中的缓存边栏选项卡的值配置属性，并根据需要配置其他值。 有关访问缓存属性的说明，请参阅[配置 Redis 缓存设置](/documentation/articles/cache-configure/#configure-redis-cache-settings)。
 
 * **host** - 指定缓存终结点。
 * **port** - 使用非 SSL 端口或 SSL 端口，具体取决于 SSL 设置。

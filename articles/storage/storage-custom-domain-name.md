@@ -1,6 +1,6 @@
 <properties
     pageTitle="为 Azure Blob 存储终结点配置自定义域名 | Azure"
-    description="使用 Azure 门户预览将自己的规范名称 (CNAME) 映射到 Azure 存储帐户中的 Blob 存储终结点。"
+    description="使用 Azure 门户将自己的规范名称 (CNAME) 映射到 Azure 存储帐户中的 Blob 存储终结点。"
     services="storage"
     documentationcenter=""
     author="mmacy"
@@ -51,7 +51,7 @@
 
 第二种方法同样使用 CNAME 记录，但是先采用经 Azure 识别的特殊子域，以避免停机时间：**asverify**。
 
-将自定义域映射到 Blob 终结点的过程会导致在 [Azure 门户预览](https://portal.azure.cn)中注册域时出现短暂的停机时间。 如果自定义域目前所支持的应用程序的服务级别协议 (SLA) 要求不能有故障时间，则可以使用 Azure asverify 子域作为中间注册步骤。 此中间步骤可确保用户能够在 DNS 映射进行时访问你的域。
+将自定义域映射到 Blob 终结点的过程会导致在 [Azure 门户](https://portal.azure.cn)中注册域时出现短暂的停机时间。 如果自定义域目前所支持的应用程序的服务级别协议 (SLA) 要求不能有故障时间，则可以使用 Azure asverify 子域作为中间注册步骤。 此中间步骤可确保用户能够在 DNS 映射进行时访问你的域。
 
 [使用 *asverify* 子域注册自定义域](#register-a-custom-domain-using-the-asverify-subdomain)中介绍了中间方法。
 
@@ -64,12 +64,12 @@
 
 通常情况下，可以在域注册机构的网站上管理域的 DNS 设置。 每个注册机构指定 CNAME 记录的方法类似但略有不同，但概念是相同的。 某些基本域注册程序包不提供 DNS 配置，因此可能需要首先升级域注册程序包，然后才能创建 CNAME 记录。
 
-1. 在 [Azure 门户预览](https://portal.azure.cn)中导航到存储帐户。
+1. 在 [Azure 门户](https://portal.azure.cn)中导航到存储帐户。
 1. 在菜单边栏选项卡上的“BLOB 服务”下，选择“自定义域”以打开“自定义域”边栏选项卡。
 1. 登录到域注册机构的网站，然后转到用于管理 DNS 的页面。 可能会在“**域名**”、“**DNS**”或“**名称服务器管理**”等部分中找到此页。
 1. 找到用于管理 CNAME 的部分。 你可能需要转至高级设置页面，并找到“**CNAME**”、“**别名**”或“**子域**”字样。
-1. 创建一个新的 CNAME 记录，并且提供子域别名，例如 **www** 或 **photos**。 然后以 **mystorageaccount.blob.core.chinacloudapi.cn** 格式（其中，*mystorageaccount* 是存储帐户的名称）提供主机名，这是 Blob 服务终结点。 要使用的主机名将显示在 [Azure 门户预览](https://portal.azure.cn)中“自定义域”边栏选项卡的第 1 项中。
-1. 在 [Azure 门户预览](https://portal.azure.cn)的“自定义域”边栏选项卡上的文本框中，输入自定义域的名称，包括子域。 例如，如果域是 **contoso.com**，子域别名是 **www**，请输入 **www.contoso.com**。 如果子域是 **photos**，请输入 **photos.contoso.com**。 必须输入子域。
+1. 创建一个新的 CNAME 记录，并且提供子域别名，例如 **www** 或 **photos**。 然后以 **mystorageaccount.blob.core.chinacloudapi.cn** 格式（其中，*mystorageaccount* 是存储帐户的名称）提供主机名，这是 Blob 服务终结点。 要使用的主机名将显示在 [Azure 门户](https://portal.azure.cn)中“自定义域”边栏选项卡的第 1 项中。
+1. 在 [Azure 门户](https://portal.azure.cn)的“自定义域”边栏选项卡上的文本框中，输入自定义域的名称，包括子域。 例如，如果域是 **contoso.com**，子域别名是 **www**，请输入 **www.contoso.com**。 如果子域是 **photos**，请输入 **photos.contoso.com**。 必须输入子域。
 1. 在“自定义域”边栏选项卡上选择“保存”注册自定义域。 如果注册成功，你将看到一条消息，提示存储帐户已成功更新。
 
 新的 CNAME 记录通过 DNS 传播后，只要用户具有适当的权限，他们就可以通过使用你的自定义域查看 Blob 数据。
@@ -79,12 +79,12 @@
 
 **asverify** 子域是 Azure 能够识别的一个特殊子域。 将 `asverify` 追加到你自己的子域，这样可以使 Azure 能够识别自定义域且不需要修改该域的 DNS 记录。 修改该域的 DNS 记录后，它将映射到 Blob 终结点，并且没有停机时间。
 
-1. 在 [Azure 门户预览](https://portal.azure.cn)中导航到存储帐户。
+1. 在 [Azure 门户](https://portal.azure.cn)中导航到存储帐户。
 1. 在菜单边栏选项卡上的“BLOB 服务”下，选择“自定义域”以打开“自定义域”边栏选项卡。
 1. 登录到 DNS 提供程序的网站，然后转到用于管理 DNS 的页面。 可能会在“**域名**”、“**DNS**”或“**名称服务器管理**”等部分中找到此页。
 1. 找到用于管理 CNAME 的部分。 你可能需要转至高级设置页面，并找到“**CNAME**”、“**别名**”或“**子域**”字样。
-1. 创建一个新的 CNAME 记录，并且提供包括 *asverify* 子域的子域别名。 例如，**asverify.www** 或 **asverify.photos**。 然后提供主机名，这是你的 Blob 服务终结点，格式为 **asverify.mystorageaccount.blob.core.chinacloudapi.cn**（其中 **mystorageaccount** 是存储帐户的名称）。 要使用的主机名将显示在 [Azure 门户预览](https://portal.azure.cn)中“自定义域”边栏选项卡的第 2 项中。
-1. 在 [Azure 门户预览](https://portal.azure.cn)的“自定义域”边栏选项卡上的文本框中，输入自定义域的名称，包括子域。 请不要包含 asverify 例如，如果域是 **contoso.com**，子域别名是 **www**，请输入 **www.contoso.com**。 如果子域是 **photos**，请输入 **photos.contoso.com**。 必须输入子域。
+1. 创建一个新的 CNAME 记录，并且提供包括 *asverify* 子域的子域别名。 例如，**asverify.www** 或 **asverify.photos**。 然后提供主机名，这是你的 Blob 服务终结点，格式为 **asverify.mystorageaccount.blob.core.chinacloudapi.cn**（其中 **mystorageaccount** 是存储帐户的名称）。 要使用的主机名将显示在 [Azure 门户](https://portal.azure.cn)中“自定义域”边栏选项卡的第 2 项中。
+1. 在 [Azure 门户](https://portal.azure.cn)的“自定义域”边栏选项卡上的文本框中，输入自定义域的名称，包括子域。 请不要包含 asverify 例如，如果域是 **contoso.com**，子域别名是 **www**，请输入 **www.contoso.com**。 如果子域是 **photos**，请输入 **photos.contoso.com**。 必须输入子域。
 1. 选择“使用间接 CNAME 验证”复选框。
 1. 在“自定义域”边栏选项卡上选择“保存”注册自定义域。 如果注册成功，你将看到一条消息，提示存储帐户已成功更新。 此时，你的自定义域已由 Azure 进行了验证，但传输到你的域的流量尚未路由到你的存储帐户。
 1. 返回到 DNS 提供程序的网站，创建将子域映射到 Blob 服务终结点的另一条 CNAME 记录。 例如，将子域指定为 **www** 或 **photos**（不含 *asverify*），将主机名指定为 **mystorageaccount.blob.core.chinacloudapi.cn**（其中，**mystorageaccount** 是存储帐户名称）。 完成此步骤后，也就完成了你的自定义域的注册。
@@ -142,7 +142,7 @@
               -AccountName "mystorageaccount" `
               -CustomDomainName ""
 
-### <a name="azure-portal-preview"></a>Azure 门户预览
+### <a name="azure-portal-preview"></a>Azure 门户
 
-目前无法使用 Azure 门户预览删除自定义域注册。 这是已知问题。 目前我们暂时无法提供解决方案日期，但问题解决后我们会更新本文。 在此之前，请使用 Azure CLI 2.0 或 Azure PowerShell 删除自定义域设置。
+目前无法使用 Azure 门户删除自定义域注册。 这是已知问题。 目前我们暂时无法提供解决方案日期，但问题解决后我们会更新本文。 在此之前，请使用 Azure CLI 2.0 或 Azure PowerShell 删除自定义域设置。
 <!--Update_Description:update classic portal operations to Ibiza portal;add azure cli 2.0 commands-->

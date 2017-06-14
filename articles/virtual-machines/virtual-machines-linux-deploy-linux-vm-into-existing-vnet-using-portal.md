@@ -70,7 +70,7 @@ Linux VM 需要从 Internet 访问，因此将创建允许通过网络将入站�
 
 ## 将 VM 部署到 VNet 和 NSG 中
 
-使用 Azure 门户预览，将 Linux VM 部署到现有的 Azure 资源组、VNet、子网和 VNic 中。
+使用 Azure 门户，将 Linux VM 部署到现有的 Azure 资源组、VNet、子网和 VNic 中。
 
 ![createVM](./media/virtual-machines-linux-deploy-linux-vm-into-existing-vnet-using-portal/createVM.png)  
 

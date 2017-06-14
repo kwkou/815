@@ -55,7 +55,7 @@
 
 ## <a name="sitemanagement"></a>Web 应用配置和管理
 
-通过 Visual Studio，用户可以访问 [Azure 门户预览](/documentation/articles/app-service-web-app-azure-portal/)中提供的 Web 应用管理功能和配置设置的子集。本节介绍使用**服务器资源管理器**可以实现的功能。若要了解最新的 Azure 集成功能，请同时试用**云资源管理器**。可以从“视图”菜单打开这两个窗口。
+通过 Visual Studio，用户可以访问 [Azure 门户](/documentation/articles/app-service-web-app-azure-portal/)中提供的 Web 应用管理功能和配置设置的子集。本节介绍使用**服务器资源管理器**可以实现的功能。若要了解最新的 Azure 集成功能，请同时试用**云资源管理器**。可以从“视图”菜单打开这两个窗口。
 
 1. 如果还未在 Visual Studio 中登录到 Azure，请单击“服务器资源管理器”中的“连接至 Azure”按钮。
 
@@ -78,7 +78,7 @@
    
 	有关该窗口中“应用程序设置”和“连接字符串”框的信息，请参阅 [Azure Web 应用：应用程序字符串和连接字符串的工作原理](http://blogs.msdn.com/b/windowsazure/archive/2013/07/17/windows-azure-web-sites-how-application-strings-and-connection-strings-work.aspx)。
 
-	如果要执行的 Web 应用管理任务无法在此窗口进行，请单击“在管理门户中打开”，以便在浏览器窗口中打开 Azure 门户预览。
+	如果要执行的 Web 应用管理任务无法在此窗口进行，请单击“在管理门户中打开”，以便在浏览器窗口中打开 Azure 门户。
 
 ## <a name="remoteview"></a>在服务器资源管理器中访问 Web 应用文件
 

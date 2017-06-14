@@ -1,5 +1,5 @@
 <properties 
- pageTitle="Azure 门户预览中的 Azure 计划程序入门 | Azure"
+ pageTitle="Azure 门户中的 Azure 计划程序入门 | Azure"
  description="Azure 门户中的 Azure 计划程序入门"
  services="scheduler" 
  documentationCenter=".NET" 
@@ -16,13 +16,13 @@
  wacn.date="01/03/2017"
  ms.author="deli"/>
 
-# Azure 门户预览中的 Azure 计划程序入门
+# Azure 门户中的 Azure 计划程序入门
 
 在 Azure 计划程序中创建计划的作业很简单。在本教程中，你将了解如何创建作业。还将学习计划程序的监视和管理功能。
 
 ## 创建作业
 
-1.  登录到 [Azure 门户预览](https://portal.azure.cn/)。
+1.  登录到 [Azure 门户](https://portal.azure.cn/)。
 
 2.  单击“+新建”> 在搜索框中键入“计划程序”> 在结果中选择“计划程序”> 单击“创建”。
 

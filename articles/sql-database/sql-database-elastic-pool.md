@@ -27,7 +27,7 @@
 
 SQL 数据库弹性池是一种简单且经济高效的解决方案，用于管理和缩放具有不断变化且不可预测的使用需求的多个数据库。 同一弹性池中的所有数据库位于单个 Azure SQL 数据库服务器上，并以固定价格共享固定数量的资源。
 
-可以使用 [Azure 门户预览](/documentation/articles/sql-database-elastic-pool-manage-portal/)、[PowerShell](/documentation/articles/sql-database-elastic-pool-manage-powershell/)、[Transact-SQL](/documentation/articles/sql-database-elastic-pool-manage-tsql/)、[C#](/documentation/articles/sql-database-elastic-pool-manage-csharp/) 和 REST API 创建和管理弹性池。 弹性池资源是按 [eDTU](/documentation/articles/sql-database-what-is-a-dtu/) 度量的。
+可以使用 [Azure 门户](/documentation/articles/sql-database-elastic-pool-manage-portal/)、[PowerShell](/documentation/articles/sql-database-elastic-pool-manage-powershell/)、[Transact-SQL](/documentation/articles/sql-database-elastic-pool-manage-tsql/)、[C#](/documentation/articles/sql-database-elastic-pool-manage-csharp/) 和 REST API 创建和管理弹性池。 弹性池资源是按 [eDTU](/documentation/articles/sql-database-what-is-a-dtu/) 度量的。
 
 
 > [AZURE.NOTE]
@@ -99,11 +99,11 @@ SQL 数据库弹性池是一种简单且经济高效的解决方案，用于管�
 当数据库因其所在的区域发生事故而不可用时，异地还原会提供默认的恢复选项。 请参阅[还原 Azure SQL 数据库或故障转移到辅助数据库](/documentation/articles/sql-database-disaster-recovery/)
 
 ### <a name="active-geo-replication"></a>活动异地复制
-对于具有异地还原无法提供的更强烈的恢复要求的应用程序，可使用 [Azure 门户预览](/documentation/articles/sql-database-geo-replication-portal/)、[PowerShell](/documentation/articles/sql-database-geo-replication-powershell/) 或 [Transact-SQL](/documentation/articles/sql-database-geo-replication-transact-sql/) 配置活动异地复制。
+对于具有异地还原无法提供的更强烈的恢复要求的应用程序，可使用 [Azure 门户](/documentation/articles/sql-database-geo-replication-portal/)、[PowerShell](/documentation/articles/sql-database-geo-replication-powershell/) 或 [Transact-SQL](/documentation/articles/sql-database-geo-replication-transact-sql/) 配置活动异地复制。
 
 ## <a name="next-steps"></a>后续步骤
 
-* 可以使用 [Azure 门户预览](/documentation/articles/sql-database-elastic-pool-manage-portal/)、[PowerShell](/documentation/articles/sql-database-elastic-pool-manage-powershell/)、[Transact-SQL](/documentation/articles/sql-database-elastic-pool-manage-tsql/)、[C#](/documentation/articles/sql-database-elastic-pool-manage-csharp/) 和 REST API 创建和管理弹性池。
+* 可以使用 [Azure 门户](/documentation/articles/sql-database-elastic-pool-manage-portal/)、[PowerShell](/documentation/articles/sql-database-elastic-pool-manage-powershell/)、[Transact-SQL](/documentation/articles/sql-database-elastic-pool-manage-tsql/)、[C#](/documentation/articles/sql-database-elastic-pool-manage-csharp/) 和 REST API 创建和管理弹性池。
 * 有关何时使用弹性池的指导，请参阅[弹性池指导](/documentation/articles/sql-database-elastic-pool-guidance/)。
 * 有关视频，请参阅[有关 Azure SQL 数据库弹性功能的 Microsoft 虚拟大学视频课程](https://mva.microsoft.com/en-US/training-courses/elastic-database-capabilities-with-azure-sql-db-16554)
 

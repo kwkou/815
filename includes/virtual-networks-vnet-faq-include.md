@@ -40,7 +40,7 @@ VNet 可以与各种不同的 Azure 服务共同使用，例如云服务 (PaaS)�
 
 可以使用以下工具创建或配置虚拟网络：
 
-- Azure 门户预览（用于经典 VNet 和 Resource Manager VNet）。
+- Azure 门户（用于经典 VNet 和 Resource Manager VNet）。
 
 - 网络配置文件（netcfg - 仅用于经典 VNet）。请参阅[使用网络配置文件配置虚拟网络](/documentation/articles/virtual-networks-using-network-configuration-file/)。
 

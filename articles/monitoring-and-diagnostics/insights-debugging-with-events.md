@@ -19,18 +19,18 @@
 
 # 查看事件和活动日志
 
-对 Azure 资源执行的所有操作都会由 Azure Resource Manager 进行完全审核（从创建和删除到授予或撤消访问权限）。可以在 Azure 门户预览中浏览这些日志，也可以使用 [REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn931927.aspx) 或 [.NET SDK](https://www.nuget.org/packages/Microsoft.Azure.Insights/) 以编程方式访问完整的事件集。
+对 Azure 资源执行的所有操作都会由 Azure Resource Manager 进行完全审核（从创建和删除到授予或撤消访问权限）。可以在 Azure 门户中浏览这些日志，也可以使用 [REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn931927.aspx) 或 [.NET SDK](https://www.nuget.org/packages/Microsoft.Azure.Insights/) 以编程方式访问完整的事件集。
 
 ## 浏览影响 Azure 订阅的事件
 
-1. 登录到 [Azure 门户预览](https://portal.azure.cn/)。
+1. 登录到 [Azure 门户](https://portal.azure.cn/)。
 2. 单击“浏览”，然后选择“审核日志”。  
 
     ![浏览中心](./media/insights-debugging-with-events/Insights_Browse.png)
 3. 此时会打开一个边栏选项卡，其中显示过去 7 天影响任何订阅的所有事件。顶部是一个按级别显示数据的图表，下部是日志的完整列表：
     ![所有事件](./media/insights-debugging-with-events/Insights_AllEvents.png)
 
-    >[AZURE.NOTE] 在 Azure 门户预览中只能查看给定订阅的 500 个最新事件。
+    >[AZURE.NOTE] 在 Azure 门户中只能查看给定订阅的 500 个最新事件。
 
 4. 可以单击任何日志条目来查看组成它的事件。例如，向资源组部署某种内容时，可能会创建或修改许多不同的资源。对于每个条目，可以查看：
     * 事件的“级别”— 例如，可能只是要跟踪的某种内容（“信息”），或是当出现了需要了解的错误内容时（“错误”）。

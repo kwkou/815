@@ -27,7 +27,7 @@
 使用门户或 PowerShell 在 Azure 中创建 VM 时，系统会自动创建一个 Resource Manager 模板。 可以使用此模板快速复制部署。 该模板包含有关资源组中所有资源的信息。 对于虚拟机而言，这意味着该模板包含为在该资源组中支持该 VM 而创建的所有资源，包括网络资源。
 
 ## <a name="download-the-template-using-the-portal"></a>使用门户下载模板
-1. 登录到 [Azure 门户预览](https://portal.azure.cn/)。
+1. 登录到 [Azure 门户](https://portal.azure.cn/)。
 2. 在中心菜单中，选择“虚拟机”。
 3. 从列表中选择虚拟机。
 4. 选择“自动化脚本”。

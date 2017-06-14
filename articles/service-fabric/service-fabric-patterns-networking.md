@@ -32,9 +32,9 @@
 
 Service Fabric 在标准的虚拟机规模集中运行。 可在虚拟机规模集中使用的任何功能同样可在 Service Fabric 群集中使用。 虚拟机规模集与 Service Fabric 的 Azure Resource Manager 模板的网络部分是相同的。 部署到现有虚拟网络后，可以轻松地整合其他网络功能，例如 Azure ExpressRoute、Azure VPN 网关、网络安全组和虚拟网络对等互连。
 
-与其他网络功能相比，Service Fabric 的独特之处体现在一个方面。 [Azure 门户预览](https://portal.azure.cn)在内部使用 Service Fabric 资源提供程序连接到群集，以获取有关节点和应用程序的信息。 Service Fabric 资源提供程序需要对管理终结点上的 HTTP 网关端口（默认为 19080）具有可公开访问的入站访问权限。 [Service Fabric Explorer](/documentation/articles/service-fabric-visualizing-your-cluster/) 使用该管理终结点来管理群集。 Service Fabric 资源提供程序还使用此端口来查询有关群集的信息，以便在 Azure 门户预览中显示。 
+与其他网络功能相比，Service Fabric 的独特之处体现在一个方面。 [Azure 门户](https://portal.azure.cn)在内部使用 Service Fabric 资源提供程序连接到群集，以获取有关节点和应用程序的信息。 Service Fabric 资源提供程序需要对管理终结点上的 HTTP 网关端口（默认为 19080）具有可公开访问的入站访问权限。 [Service Fabric Explorer](/documentation/articles/service-fabric-visualizing-your-cluster/) 使用该管理终结点来管理群集。 Service Fabric 资源提供程序还使用此端口来查询有关群集的信息，以便在 Azure 门户中显示。 
 
-如果无法通过 Service Fabric 资源提供程序访问端口 19080，门户中会显示一条类似于“找不到节点”的消息，并且节点和应用程序列表显示为空。 如果想要在 Azure 门户预览中查看群集，负载均衡器必须公开一个公共 IP 地址，并且网络安全组必须允许端口 19080 上的传入流量。 如果设置不满足这些要求，Azure 门户预览不会显示群集的状态。
+如果无法通过 Service Fabric 资源提供程序访问端口 19080，门户中会显示一条类似于“找不到节点”的消息，并且节点和应用程序列表显示为空。 如果想要在 Azure 门户中查看群集，负载均衡器必须公开一个公共 IP 地址，并且网络安全组必须允许端口 19080 上的传入流量。 如果设置不满足这些要求，Azure 门户不会显示群集的状态。
 
 ## <a name="templates"></a>模板
 
@@ -45,11 +45,11 @@ Service Fabric 在标准的虚拟机规模集中运行。 可在虚拟机规模�
 
 ### <a name="existing-virtual-network"></a>现有虚拟网络
 
-在以下示例中，我们从 **ExistingRG** 资源组中名为 ExistingRG-vnet 的现有虚拟网络着手。 子网命名为 default。 这些默认资源是在使用 Azure 门户预览创建标准虚拟机 (VM) 时创建的。 可以只创建虚拟网络和子网而不创建 VM，但是，将群集添加到现有虚拟网络的主要目的是提供与其他 VM 之间的网络连接。 创建 VM 可以很好地示范现有虚拟网络的典型用法。 如果 Service Fabric 群集仅使用不带公共 IP 地址的内部负载均衡器，则可以将 VM 及其公共 IP 用作安全的*转接盒*。
+在以下示例中，我们从 **ExistingRG** 资源组中名为 ExistingRG-vnet 的现有虚拟网络着手。 子网命名为 default。 这些默认资源是在使用 Azure 门户创建标准虚拟机 (VM) 时创建的。 可以只创建虚拟网络和子网而不创建 VM，但是，将群集添加到现有虚拟网络的主要目的是提供与其他 VM 之间的网络连接。 创建 VM 可以很好地示范现有虚拟网络的典型用法。 如果 Service Fabric 群集仅使用不带公共 IP 地址的内部负载均衡器，则可以将 VM 及其公共 IP 用作安全的*转接盒*。
 
 ### <a name="static-public-ip-address"></a>静态公共 IP 地址
 
-静态公共 IP 地址通常是一个专用资源，与其所分配的 VM 分开管理。 它在专用网络资源组中（而不是在 Service Fabric 群集资源组本身中）预配。 使用 Azure 门户预览或 PowerShell 在同一个 ExistingRG 资源组中创建名为 staticIP1 的静态公共 IP 地址：
+静态公共 IP 地址通常是一个专用资源，与其所分配的 VM 分开管理。 它在专用网络资源组中（而不是在 Service Fabric 群集资源组本身中）预配。 使用 Azure 门户或 PowerShell 在同一个 ExistingRG 资源组中创建名为 staticIP1 的静态公共 IP 地址：
 
     PS C:\Users\user> New-AzureRmPublicIpAddress -Name staticIP1 -ResourceGroupName ExistingRG -Location "China East" -AllocationMethod Static -DomainNameLabel sfnetworking
 
@@ -255,7 +255,7 @@ Service Fabric 在标准的虚拟机规模集中运行。 可在虚拟机规模�
 <a id="internallb"></a>
 ## <a name="internal-only-load-balancer"></a>仅限内部的负载均衡器
 
-本方案用仅限内部的负载均衡器替代默认 Service Fabric 模板中的外部负载均衡器。 有关 Azure 门户预览和 Service Fabric 资源提供程序的含义，请参阅前面的部分。
+本方案用仅限内部的负载均衡器替代默认 Service Fabric 模板中的外部负载均衡器。 有关 Azure 门户和 Service Fabric 资源提供程序的含义，请参阅前面的部分。
 
 1. 删除 `dnsName` 参数。 （不需要此参数。）
 

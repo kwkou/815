@@ -47,12 +47,12 @@ SQL 数据库使用[自动数据库备份](/documentation/articles/sql-database-
   没有任何内置功能用于执行批量还原。 [Azure SQL 数据库：完全恢复服务器](https://gallery.technet.microsoft.com/Azure-SQL-Database-Full-82941666) 脚本是完成此任务的一种方法示例。
 
 > [AZURE.IMPORTANT]
-> 若要使用自动备份进行恢复，用户必须是订阅中的 SQL Server 参与者角色的成员或是订阅所有者。 可以使用 Azure 门户预览、PowerShell 或 REST API 进行恢复。 但不能使用 Transact-SQL。 
+> 若要使用自动备份进行恢复，用户必须是订阅中的 SQL Server 参与者角色的成员或是订阅所有者。 可以使用 Azure 门户、PowerShell 或 REST API 进行恢复。 但不能使用 Transact-SQL。 
 > 
 
 ## <a name="point-in-time-restore"></a>时间点还原
 
-通过使用 Azure 门户预览、PowerShell 或 [REST API](https://msdn.microsoft.com/zh-cn/library/azure/mt163685.aspx)，可将现有数据库还原到早期的时间点，作为同一逻辑服务器上的新数据库。 
+通过使用 Azure 门户、PowerShell 或 [REST API](https://msdn.microsoft.com/zh-cn/library/azure/mt163685.aspx)，可将现有数据库还原到早期的时间点，作为同一逻辑服务器上的新数据库。 
 
 > [AZURE.IMPORTANT]
 > 还原期间无法覆盖现有数据库。
@@ -65,22 +65,22 @@ SQL 数据库使用[自动数据库备份](/documentation/articles/sql-database-
 * ***数据库替换***：如果还原的数据库旨在替换原始数据库，那么应验证性能级别和/或服务层是否合适，如有必要，还应调整该数据库的规模。 你可以使用 T-SQL 中的 ALTER DATABASE 命令来重命名原始数据库，然后为还原的数据库指定原有的名称。 
 * ***数据恢复：***如果打算从还原的数据库检索数据以从用户或应用程序错误中恢复，则需要编写和执行要从还原的数据库将数据提取到原始数据库时所必需的数据恢复脚本。 尽管还原操作可能需要很长时间才能完成，但整个还原过程中，都可在数据库列表中看到还原数据库。 如果在还原期间删除数据库，将取消还原操作，则不会针对未完成还原的数据库向你收费。 
 
-### <a name="azure-portal-preview"></a>Azure 门户预览
+### <a name="azure-portal-preview"></a>Azure 门户
 
-若要使用 Azure 门户预览还原到某个时间点，请打开数据库页，并在工具栏上单击“还原”。
+若要使用 Azure 门户还原到某个时间点，请打开数据库页，并在工具栏上单击“还原”。
 
 ![时间点还原](./media/sql-database-recovery-using-backups/point-in-time-recovery.png)
 
 ## <a name="deleted-database-restore"></a>已删除的数据库还原
-通过使用 Azure 门户预览、[PowerShell](/documentation/articles/sql-database-restore-database-powershell/) 或 [REST (createMode=Restore)](https://msdn.microsoft.com/zh-cn/library/azure/mt163685.aspx)，可将已删除的数据库还原到同一逻辑服务器上已删除的数据库的删除时间。 
+通过使用 Azure 门户、[PowerShell](/documentation/articles/sql-database-restore-database-powershell/) 或 [REST (createMode=Restore)](https://msdn.microsoft.com/zh-cn/library/azure/mt163685.aspx)，可将已删除的数据库还原到同一逻辑服务器上已删除的数据库的删除时间。 
 
 > [AZURE.IMPORTANT]
 > 如果删除 Azure SQL 数据库服务器实例，其所有数据库也会一并删除，并且无法恢复。 目前不支持还原已删除的服务器。
 > 
 
-### <a name="azure-portal-preview"></a>Azure 门户预览
+### <a name="azure-portal-preview"></a>Azure 门户
 
-若要使用 Azure 门户预览在[保留期](/documentation/articles/sql-database-service-tiers/)期间恢复已删除的数据库，请打开服务器的页面，然后在“操作”区中，单击“已删除的数据库”。
+若要使用 Azure 门户在[保留期](/documentation/articles/sql-database-service-tiers/)期间恢复已删除的数据库，请打开服务器的页面，然后在“操作”区中，单击“已删除的数据库”。
 
 ![deleted-database-restore-1](./media/sql-database-recovery-using-backups/deleted-database-restore-1.png)
 
@@ -100,12 +100,12 @@ SQL 数据库使用[自动数据库备份](/documentation/articles/sql-database-
 > 从备份中还原是 SQL 数据库中提供的最基本的灾难恢复解决方案，具有最长的 RPO 和估计恢复时间 (ERT)。 对于最大为 2GB 的基本数据库，异地还原提供了 ERT 为 12 小时的合理灾难恢复解决方案。 对于较大的标准或高级数据库，如果需要在较短时间内恢复，或要减少数据丢失的可能性，应考虑使用活动异地复制。 活动异地复制可提供低得多的 RPO 和 ERT，因为它只需要你启动故障转移，以故障转移到连续复制的辅助数据库。 有关详细信息，请参阅[活动异地复制](/documentation/articles/sql-database-geo-replication-overview/)。
 > 
 
-### <a name="azure-portal-preview"></a>Azure 门户预览
+### <a name="azure-portal-preview"></a>Azure 门户
 
-若要使用 Azure 门户预览在[保留期](/documentation/articles/sql-database-service-tiers/)期间对数据库进行异地还原，请打开 SQL 数据库页，然后单击“添加”。 在“选择源”文本框中，选择“备份”。 在所选的区域和服务器上指定要从中执行恢复的备份。 
+若要使用 Azure 门户在[保留期](/documentation/articles/sql-database-service-tiers/)期间对数据库进行异地还原，请打开 SQL 数据库页，然后单击“添加”。 在“选择源”文本框中，选择“备份”。 在所选的区域和服务器上指定要从中执行恢复的备份。 
 
 ## <a name="programmatically-performing-recovery-using-automated-backups"></a>使用自动备份以编程方式执行恢复
-如前所述，除了使用 Azure 门户预览外，还可以使用 Azure PowerShell 或 REST API 以编程方式执行数据库恢复。 下表描述了可用的命令集。
+如前所述，除了使用 Azure 门户外，还可以使用 Azure PowerShell 或 REST API 以编程方式执行数据库恢复。 下表描述了可用的命令集。
 
 ### <a name="powershell"></a>PowerShell
 | Cmdlet | 说明 |

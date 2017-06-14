@@ -1,6 +1,6 @@
 <properties
-    pageTitle="在 Azure 门户预览中创建批处理帐户 | Azure"
-    description="了解如何在 Azure 门户预览中创建 Azure Batch 帐户，以便在云中运行大规模并行工作负荷"
+    pageTitle="在 Azure 门户中创建批处理帐户 | Azure"
+    description="了解如何在 Azure 门户中创建 Azure Batch 帐户，以便在云中运行大规模并行工作负荷"
     services="batch"
     documentationcenter=""
     author="tamram"
@@ -23,17 +23,17 @@
     ms.contentlocale="zh-cn"
     ms.lasthandoff="05/15/2017" />
 
-# <a name="create-a-batch-account-with-the-azure-portal"></a>使用 Azure 门户预览创建 Batch 帐户
+# <a name="create-a-batch-account-with-the-azure-portal"></a>使用 Azure 门户创建 Batch 帐户
 > [AZURE.SELECTOR]
-- [Azure 门户预览](/documentation/articles/batch-account-create-portal/)
+- [Azure 门户](/documentation/articles/batch-account-create-portal/)
 - [Batch Management .NET](/documentation/articles/batch-management-dotnet/)
 
-了解如何在 [Azure 门户预览][azure_portal]中创建 Azure 批处理帐户，以及如何选择适合计算方案的帐户属性。 了解在何处查找重要的帐户属性，例如访问密钥和帐户 URL。 
+了解如何在 [Azure 门户][azure_portal]中创建 Azure 批处理帐户，以及如何选择适合计算方案的帐户属性。 了解在何处查找重要的帐户属性，例如访问密钥和帐户 URL。 
 
 有关批处理帐户和方案的背景，请参阅[功能概述](/documentation/articles/batch-api-basics/)。
 
 ## <a name="create-a-batch-account"></a>创建批处理帐户
-1. 登录到 [Azure 门户预览][azure_portal]。
+1. 登录到 [Azure 门户][azure_portal]。
 2. 单击“新建” > “计算” > “批处理服务”。
    
     ![应用商店中的批处理][marketplace_portal]
@@ -60,7 +60,7 @@
 ## <a name="view-batch-account-properties"></a>查看 Batch 帐户属性
 创建帐户后，即可打开 **Batch 帐户边栏选项卡** 来访问其设置和属性。 可以使用 Batch 帐户边栏选项卡的左侧菜单访问所有帐户设置和属性。
 
-![Azure 门户预览中的 Batch 帐户边栏选项卡][account_blade]
+![Azure 门户中的 Batch 帐户边栏选项卡][account_blade]
 
 - **批处理帐户 URL**：通过[批处理 API](/documentation/articles/batch-apis-tools/#batch-development-apis/) 开发应用程序时，需要帐户 URL 才能访问批处理资源。 Batch 帐户 URL 采用以下格式：
   
@@ -72,7 +72,7 @@
 
     若要查看或重新生成批处理帐户的访问密钥，请在“批处理帐户”边栏选项卡左侧菜单的“搜索”框中输入 `keys`，然后选择“密钥”。 
   
-    ![Azure 门户预览中的 Batch 帐户密钥][account_keys]
+    ![Azure 门户中的 Batch 帐户密钥][account_keys]
 
 [AZURE.INCLUDE [batch-pricing-include](../../includes/batch-pricing-include.md)]
 
@@ -99,14 +99,14 @@
 ## <a name="batch-service-quotas-and-limits"></a>Batch 服务配额和限制
 请知悉，与 Azure 订阅和其他 Azure 服务一样，Batch 帐户也适用特定 [配额和限制](/documentation/articles/batch-quota-limit/) 。 Batch 帐户的当前配额在门户上的帐户“属性” 中显示。
 
-![Azure 门户预览中的 Batch 帐户配额][quotas]
+![Azure 门户中的 Batch 帐户配额][quotas]
 
 
 
-此外，其中许多配额只需在 Azure 门户预览中提交免费产品支持请求即可增加。 有关请求增加配额的详细信息，请参阅 [Azure Batch 服务的配额和限制](/documentation/articles/batch-quota-limit/) 。
+此外，其中许多配额只需在 Azure 门户中提交免费产品支持请求即可增加。 有关请求增加配额的详细信息，请参阅 [Azure Batch 服务的配额和限制](/documentation/articles/batch-quota-limit/) 。
 
 ## <a name="other-batch-account-management-options"></a>其他 Batch 帐户管理选项
-除了使用 Azure 门户预览以外，还可以使用以下工具创建和管理 Batch 帐户：
+除了使用 Azure 门户以外，还可以使用以下工具创建和管理 Batch 帐户：
 
 - [Batch PowerShell cmdlet](/documentation/articles/batch-powershell-cmdlets-get-started/)
 - [Azure CLI](/documentation/articles/batch-cli-get-started/)

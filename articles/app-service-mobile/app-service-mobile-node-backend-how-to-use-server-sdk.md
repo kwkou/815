@@ -136,9 +136,9 @@ Visual Studio 2015 需要使用一个扩展在 IDE 中开发 Node.js 应用程�
 
 10. 在本地运行应用程序（API 将在 http://localhost:3000 上提供），或发布到 Azure。
 
-### <a name="create-node-backend-portal"></a>如何使用 Azure 门户预览创建 Node.js 后端
+### <a name="create-node-backend-portal"></a>如何使用 Azure 门户创建 Node.js 后端
 
-可在 [Azure 门户预览]中直接创建移动应用后端。可遵循以下步骤或者根据[创建移动应用](/documentation/articles/app-service-mobile-ios-get-started/)教程，同时创建新的客户端和服务器。本教程包含以下说明的简化版本，最适合用于概念认证项目。
+可在 [Azure 门户]中直接创建移动应用后端。可遵循以下步骤或者根据[创建移动应用](/documentation/articles/app-service-mobile-ios-get-started/)教程，同时创建新的客户端和服务器。本教程包含以下说明的简化版本，最适合用于概念认证项目。
 
 [AZURE.INCLUDE [app-service-mobile-dotnet-backend-create-new-service-classic](../../includes/app-service-mobile-dotnet-backend-create-new-service-classic.md)]
 
@@ -146,7 +146,7 @@ Visual Studio 2015 需要使用一个扩展在 IDE 中开发 Node.js 应用程�
 
 ### <a name="download-quickstart"></a>如何：使用 Git 下载 Node.js 后端快速入门代码项目
 
-使用门户预览的“快速启动”边栏选项卡创建 Node.js 移动应用后端时，系统将创建 Node.js 项目并将其部署到站点。可以在门户预览中添加表和 API，以及编辑 Node.js 后端的代码文件。还可以使用多种部署工具下载后端项目，以便添加或修改表和 API，然后重新发布项目。有关详细信息，请参阅 [Azure App Service Deployment Guide]（Azure 应用服务部署指南）。以下过程使用 Git 存储库下载快速入门项目代码。
+使用门户的“快速启动”边栏选项卡创建 Node.js 移动应用后端时，系统将创建 Node.js 项目并将其部署到站点。可以在门户中添加表和 API，以及编辑 Node.js 后端的代码文件。还可以使用多种部署工具下载后端项目，以便添加或修改表和 API，然后重新发布项目。有关详细信息，请参阅 [Azure App Service Deployment Guide]（Azure 应用服务部署指南）。以下过程使用 Git 存储库下载快速入门项目代码。
 
 1. 安装 Git（如果尚未安装）。安装 Git 所需的步骤因操作系统的不同而异。有关操作系统特定的分发和安装指南，请参阅[安装 Git](http://git-scm.com/book/en/Getting-Started-Installing-Git)。
 
@@ -234,7 +234,7 @@ azure-mobile-apps Node.js Server SDK 提供将存储在 Azure SQL 数据库中�
 
     module.exports = table;
 
-表默认使用动态架构。若要全局关闭动态架构，可在 Azure 门户预览中将应用设置 **MS\_DynamicSchema** 设置为 false。
+表默认使用动态架构。若要全局关闭动态架构，可在 Azure 门户中将应用设置 **MS\_DynamicSchema** 设置为 false。
 
 可以在 [GitHub 上的待办事项示例]中找到完整示例。
 
@@ -321,7 +321,7 @@ Node.js 应用程序将读取 **SQLCONNSTR\_MS\_TableConnectionString** 环境�
 
 ### <a name="howto-config-localdev"></a>如何配置项目以进行本地开发
 
-Azure 移动应用从本地文件系统读取名为 _azureMobile.js_ 的 JavaScript 文件。不要使用此文件在生产环境中配置 Azure 移动应用 SDK，请改用 [Azure 门户预览]中的“应用设置”。 _azureMobile.js_ 文件应导出配置对象。最常见的设置如下：
+Azure 移动应用从本地文件系统读取名为 _azureMobile.js_ 的 JavaScript 文件。不要使用此文件在生产环境中配置 Azure 移动应用 SDK，请改用 [Azure 门户]中的“应用设置”。 _azureMobile.js_ 文件应导出配置对象。最常见的设置如下：
 
 - 数据库设置
 - 诊断日志记录设置
@@ -345,11 +345,11 @@ Azure 移动应用从本地文件系统读取名为 _azureMobile.js_ 的 JavaScr
         }
     };
 
-建议将 _azureMobile.js_ 添加到 _.gitignore_ 文件（或其他源代码管理 ignore 文件），防止将密码存储在云中。请始终在 [Azure 门户预览]中的“应用设置”内配置生产设置。
+建议将 _azureMobile.js_ 添加到 _.gitignore_ 文件（或其他源代码管理 ignore 文件），防止将密码存储在云中。请始终在 [Azure 门户]中的“应用设置”内配置生产设置。
 
 ### <a name="howto-appsettings"></a>如何配置移动应用的应用设置
 
-_azureMobile.js_ 文件中的大多数设置在 [Azure 门户预览]中都有等效的应用设置。请使用以下列表在“应用设置”中配置应用：
+_azureMobile.js_ 文件中的大多数设置在 [Azure 门户]中都有等效的应用设置。请使用以下列表在“应用设置”中配置应用：
 
 | 应用设置 | _azureMobile.js_ 设置 | 说明 | 有效值 |
 | :-------------------------- | :------------------------ | :---------------------------------------- | :------------------------------------------ |
@@ -363,7 +363,7 @@ _azureMobile.js_ 文件中的大多数设置在 [Azure 门户预览]中都有等
 
 若要指定某项应用设置，请执行以下操作：
 
-1. 登录到 [Azure 门户预览]。
+1. 登录到 [Azure 门户]。
 2. 选择“所有资源”或“应用服务”，然后单击移动应用的名称。
 3. 默认打开“设置”边栏选项卡。如果没有打开，请单击“设置”。
 4. 在“常规”菜单中单击“应用程序设置”。
@@ -380,7 +380,7 @@ _azureMobile.js_ 文件中的大多数设置在 [Azure 门户预览]中都有等
 
 无论使用哪种 Azure 应用服务应用程序类型，将 SQL 数据库用作数据存储的过程都是相同的。如果尚未这样做，请根据以下步骤创建移动应用后端。
 
-1. 登录到 [Azure 门户预览]。
+1. 登录到 [Azure 门户]。
 
 2. 在窗口左上方，单击“+新建”按钮 >“Web + 移动”>“移动应用”，然后为移动应用后端名称。
 
@@ -388,7 +388,7 @@ _azureMobile.js_ 文件中的大多数设置在 [Azure 门户预览]中都有等
 
 4. 系统将选择默认应用服务计划。如果想要更改应用服务计划，请单击“应用服务计划”>“+ 新建”。为新应用服务计划命名并选择适当的位置。单击“定价层”并选择适当的服务定价层。选择“全部查看”以查看其他定价选项，例如“免费”和“共享”。选择定价层后，单击“选择”按钮。返回“应用服务计划”边栏选项卡，然后单击“确定”。
 
-5. 单击“创建”。预配移动应用后端可能需要几分钟时间。预配移动应用后端后，门户预览将打开移动应用后端的“设置”边栏选项卡。
+5. 单击“创建”。预配移动应用后端可能需要几分钟时间。预配移动应用后端后，门户将打开移动应用后端的“设置”边栏选项卡。
 
     创建移动应用后端后，可以选择将现有的 SQL 数据库连接到移动应用后端，或创建新的 SQL 数据库。在本部分中，将创建 SQL 数据库。
     
@@ -416,7 +416,7 @@ _azureMobile.js_ 文件中的大多数设置在 [Azure 门户预览]中都有等
 
 ### <a name="howto-tables-auth"></a>如何要求在访问表时进行身份验证
 
-如果想要对表终结点使用应用服务身份验证，必须先在 [Azure 门户预览]中配置应用服务身份验证。有关在 Azure 应用服务中配置身份验证的详细信息，请参阅要使用的标识提供者所提供的配置指南：
+如果想要对表终结点使用应用服务身份验证，必须先在 [Azure 门户]中配置应用服务身份验证。有关在 Azure 应用服务中配置身份验证的详细信息，请参阅要使用的标识提供者所提供的配置指南：
 
 - [How to configure Azure Active Directory Authentication（如何配置 Azure Active Directory 身份验证）]
 - [How to configure Microsoft Authentication（如何配置 Microsoft 身份验证）]
@@ -705,7 +705,7 @@ Swagger 终结点将位于 http://_yoursite_.chinacloudsites.cn/swagger。可以
 
 除了通过 /tables 终结点的数据访问 API 以外，Azure 移动应用还可提供自定义 API 覆盖范围。自定义 API 以类似于表定义的方法定义，可访问所有相同的功能，包括身份验证。
 
-如果想要将应用服务身份验证与自定义 API 配合使用，必须先在 [Azure 门户预览]中配置应用服务身份验证。有关在 Azure 应用服务中配置身份验证的详细信息，请参阅要使用的标识提供者所提供的配置指南：
+如果想要将应用服务身份验证与自定义 API 配合使用，必须先在 [Azure 门户]中配置应用服务身份验证。有关在 Azure 应用服务中配置身份验证的详细信息，请参阅要使用的标识提供者所提供的配置指南：
 
 - [How to configure Azure Active Directory Authentication（如何配置 Azure Active Directory 身份验证）]
 - [How to configure Microsoft Authentication（如何配置 Microsoft 身份验证）]
@@ -843,11 +843,11 @@ Azure 应用服务提供多种适用于 Node.js 应用程序的调试和故障�
 - [Enable Diagnostic Logging in Azure App Service（在 Azure 应用服务中启用诊断记录）]
 - [Troubleshoot an Azure App Service in Visual Studio（在 Visual Studio 中对 Azure 应用服务进行故障排除）]
 
-Node.js 应用程序可访问各种诊断日志工具。在内部，Azure 移动应用 Node.js SDK 使用 [Winston] 进行诊断日志记录。启用调试模式，或者在 [Azure 门户预览]中将 **MS\_DebugMode** 应用设置指定为 true，即可自动启用日志记录。生成的日志显示在 [Azure 门户预览]上的“诊断日志”中。
+Node.js 应用程序可访问各种诊断日志工具。在内部，Azure 移动应用 Node.js SDK 使用 [Winston] 进行诊断日志记录。启用调试模式，或者在 [Azure 门户]中将 **MS\_DebugMode** 应用设置指定为 true，即可自动启用日志记录。生成的日志显示在 [Azure 门户]上的“诊断日志”中。
 
-### <a name="in-portal-editing"></a><a name="work-easy-tables"></a>如何在 Azure 门户预览中使用简易表
+### <a name="in-portal-editing"></a><a name="work-easy-tables"></a>如何在 Azure 门户中使用简易表
 
-使用门户预览中的简易表可以直接在门户预览中创建和使用表。甚至可以使用应用服务编辑器来编辑表操作。
+使用门户中的简易表可以直接在门户中创建和使用表。甚至可以使用应用服务编辑器来编辑表操作。
 
 在后端站点设置中单击“简易表”时，可添加、修改或删除表。还可以查看表中的数据。
 
@@ -862,19 +862,19 @@ Node.js 应用程序可访问各种诊断日志工具。在内部，Azure 移动
 + **删除行** - 删除单个数据行。
 + **查看流式处理日志** - 连接到站点的流式处理日志服务。
 
-###<a name="work-easy-apis"></a>如何在 Azure 门户预览中使用简易 API
+###<a name="work-easy-apis"></a>如何在 Azure 门户中使用简易 API
 
-使用门户预览中的简易 API 可以直接在门户预览中创建和使用自定义 API。可使用应用服务编辑器编辑 API 脚本。
+使用门户中的简易 API 可以直接在门户中创建和使用自定义 API。可使用应用服务编辑器编辑 API 脚本。
 
 在后端站点设置中单击“简易 API”时，可添加、修改或删除自定义 API 终结点。
 
 ![使用简易 API](./media/app-service-mobile-node-backend-how-to-use-server-sdk/mobile-apps-easy-apis.png)
 
-在门户预览中，可以更改给定 HTTP 操作的访问权限限、在应用服务编辑器中编辑 API 脚本文件，或查看流式处理日志。
+在门户中，可以更改给定 HTTP 操作的访问权限限、在应用服务编辑器中编辑 API 脚本文件，或查看流式处理日志。
 
 ###<a name="online-editor"></a>如何在应用服务编辑器中编辑代码
 
-Azure 门户预览允许在应用服务编辑器中编辑 Node.js 后端脚本文件，而无需将项目下载到本地计算机。若要在在线编辑器中编辑脚本文件，请执行以下操作：
+Azure 门户允许在应用服务编辑器中编辑 Node.js 后端脚本文件，而无需将项目下载到本地计算机。若要在在线编辑器中编辑脚本文件，请执行以下操作：
 
 1. 在移动应用后端边栏选项卡中，单击“所有设置”>“简易表”或“简易 API”，单击表或 API，然后单击“编辑脚本”。脚本文件将在应用服务编辑器中打开。
 
@@ -916,7 +916,7 @@ Azure 门户预览允许在应用服务编辑器中编辑 Node.js 后端脚本�
 [Express]: http://expressjs.com/
 [Swagger]: http://swagger.io/
 
-[Azure 门户预览]: https://portal.azure.cn/
+[Azure 门户]: https://portal.azure.cn/
 [OData]: http://www.odata.org
 [Promise]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise
 [GitHub 上的 basicapp 示例]: https://github.com/azure/azure-mobile-apps-node/tree/master/samples/basic-app

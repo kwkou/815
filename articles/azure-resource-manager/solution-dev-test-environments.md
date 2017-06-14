@@ -42,7 +42,7 @@
 * 应用程序应符合哪些服务级别要求，例如可用性、安全性和缩放性。
 
 ## 下载现有模板
-Azure 资源管理器模板定义应用程序使用的所有 Azure 资源。可以直接在 Azure 门户预览中部署多个现有的模板，或者使用应用程序代码在源代码管理系统中下载、修改和保存这些模板。完成以下步骤以下载现有的模板。
+Azure 资源管理器模板定义应用程序使用的所有 Azure 资源。可以直接在 Azure 门户中部署多个现有的模板，或者使用应用程序代码在源代码管理系统中下载、修改和保存这些模板。完成以下步骤以下载现有的模板。
 
 1. 可以在 [Azure 快速入门模板](https://github.com/Azure/azure-quickstart-templates/) GitHub 存储库中浏览现有模板。在列表中，你将看到“[201-web-app-sql-database](https://github.com/Azure/azure-quickstart-templates/tree/master/201-web-app-sql-database)”文件夹。由于许多自定义应用程序包含 Web 应用程序和 SQL 数据库，此模板可作为本文其余部分的示例，帮助你了解如何使用模板。本文未提供有关创建和配置此模板的完整内容，但是，如果你打算使用它在组织中创建实际环境，请阅读[预配包含 SQL 数据库的 Web 应用](/documentation/articles/app-service-web-arm-with-sql-database-provision/)一文以全面了解该模板。注意：本文专为 2015 年 12 月版的 [201-web-app-sql-database](https://github.com/Azure/azure-quickstart-templates/tree/3f24f7b7e1e377538d1d548eaa6eab2851a21810/201-web-app-sql-database) 模板撰写。以下指向模板和参数文件的链接适用于该版本的模板。
 2. 单击 201-web-app-sql-database 文件夹中的 [azuredeploy.json](https://github.com/Azure/azure-quickstart-templates/tree/3f24f7b7e1e377538d1d548eaa6eab2851a21810/201-web-app-sql-database/azuredeploy.json) 文件查看其内容。这是 Azure 资源管理器模板文件。
@@ -135,7 +135,7 @@ Azure 资源管理器模板定义应用程序使用的所有 Azure 资源。可�
 | **requestedServiceObjectiveName** |S0 |S1 |
 
 ## 创建环境
-所有 Azure 资源必须在 [Azure 资源组](/documentation/articles/resource-group-overview/)中创建。资源组可让你将 Azure 资源分组，以便可以统一管理这些资源。[权限](/documentation/articles/role-based-access-built-in-roles/)可以分配给资源组，使组织中的特定人员可以创建、修改、删除或查看这些组及其包含的资源。可以在 [Azure 门户预览](https://portal.azure.cn)中查看资源组中资源的警报和计费信息。资源组在 Azure 区域中创建。在本文中，所有资源都在中国北部区域创建。开始创建实际环境时，请选择最符合要求的区域。
+所有 Azure 资源必须在 [Azure 资源组](/documentation/articles/resource-group-overview/)中创建。资源组可让你将 Azure 资源分组，以便可以统一管理这些资源。[权限](/documentation/articles/role-based-access-built-in-roles/)可以分配给资源组，使组织中的特定人员可以创建、修改、删除或查看这些组及其包含的资源。可以在 [Azure 门户](https://portal.azure.cn)中查看资源组中资源的警报和计费信息。资源组在 Azure 区域中创建。在本文中，所有资源都在中国北部区域创建。开始创建实际环境时，请选择最符合要求的区域。
 
 使用以下方法之一为每个环境创建资源组。所有方法都可实现相同的结果。
 
@@ -187,8 +187,8 @@ Azure 资源管理器模板定义应用程序使用的所有 Azure 资源。可�
 
     New-AzureRmResourceGroup -Name TestApp1-Pre-Production -Location "China North"
 
-### Azure 门户预览
-1. 使用 [Azure AD](/documentation/articles/active-directory-how-subscriptions-associated-directory/)（也称为工作或学校）帐户登录 [Azure 门户预览](https://portal.azure.cn)。单击“新建”-->“管理”-->“资源组”，在“资源组名称”框中输入“TestApp1-Development”，选择订阅，然后在“资源组位置”框中选择“中国北部”，如下图所示。
+### Azure 门户
+1. 使用 [Azure AD](/documentation/articles/active-directory-how-subscriptions-associated-directory/)（也称为工作或学校）帐户登录 [Azure 门户](https://portal.azure.cn)。单击“新建”-->“管理”-->“资源组”，在“资源组名称”框中输入“TestApp1-Development”，选择订阅，然后在“资源组位置”框中选择“中国北部”，如下图所示。
     ![门户](./media/solution-dev-test-environments/rgcreate.png)
 2. 单击“创建”按钮以创建资源组。
 3. 单击“浏览”并在列表中向下滚动到“资源组”，然后单击“资源组”，如下所示。
@@ -298,13 +298,13 @@ Azure 资源管理器模板定义应用程序使用的所有 Azure 资源。可�
 ## 维护环境
 在整个开发过程中，不同环境中的 Azure 资源配置可能会出现有意或无意的不一致性更改。这可能会在应用程序开发周期中造成不必要的故障排除和问题解决。
 
-1. 打开 [Azure 门户预览](https://portal.azure.cn)，更改环境。
+1. 打开 [Azure 门户](https://portal.azure.cn)，更改环境。
 2. 使用完成上述步骤时所用的同一帐户登录。
 3. 如下图所示，单击“浏览”-->“资源组”（可能需要向下滚动才能看到资源组）。
     ![门户](./media/solution-dev-test-environments/rgbrowse.png)
 4. 单击上图中所示的资源组之后，你将看到“资源组”边栏选项卡，以及在上一步骤中创建的三个资源组，如下图所示。单击 TestApp1-Development 资源组之后，你将看到一个边栏选项卡，其中列出了模板在上一步骤完成的 TestApp1-Development 资源组部署中所创建的资源。单击“TestApp1-Development 资源组”边栏选项卡中的“TestApp1DevApp”，删除 TestApp1DevApp Web 应用资源，然后单击“TestApp1DevApp Web 应用”边栏选项卡中的“删除”。
     ![门户](./media/solution-dev-test-environments/portal2.png)
-5. 当门户提示是否确定要删除该资源时，请单击“是”。如果关闭“TestApp1-Development 资源组”边栏选项卡并将它重新打开，显示的内容不会出现刚刚删除的 Web 应用。资源组的内容现在与其应有内容不同。你可以从多个资源组删除多个资源来进一步试验，甚至可以更改某些资源的配置设置。如果不使用 Azure 门户预览从资源组删除资源，则可使用 PowerShell [Remove-AzureResource](https://msdn.microsoft.com/zh-cn/library/azure/dn757676.aspx) 命令或者从 CLI 使用“azure resource delete”命令来完成相同的任务。
+5. 当门户提示是否确定要删除该资源时，请单击“是”。如果关闭“TestApp1-Development 资源组”边栏选项卡并将它重新打开，显示的内容不会出现刚刚删除的 Web 应用。资源组的内容现在与其应有内容不同。你可以从多个资源组删除多个资源来进一步试验，甚至可以更改某些资源的配置设置。如果不使用 Azure 门户从资源组删除资源，则可使用 PowerShell [Remove-AzureResource](https://msdn.microsoft.com/zh-cn/library/azure/dn757676.aspx) 命令或者从 CLI 使用“azure resource delete”命令来完成相同的任务。
 6. 若要让所有应该位于资源组中的所有资源和配置恢复到其应有状态，请使用[将资源部署到环境](#deploy-resources-to-environments)部分中的相同命令，将环境重新部署到资源组，但需要将“Deployment1”替换为“Deployment2”。
 7. 如步骤 4 中图示的 TestApp1-Development 边栏选项卡中的“摘要”部分，你将看到在上一步骤中删除的 Web 应用以及其他删除的资源再次出现。如果你更改了任何资源的配置，则还可以验证这些配置是否已设置回到参数文件中的值。使用 Azure 资源管理器模板部署环境的优点之一是可以随时轻松地将环境重新部署回到已知状态。
 8. 如果你单击下图中“上次部署”下面的文本，将会看到边栏选项卡显示资源组的部署历史记录。由于你已将名称“Deployment1”用于第一个部署，并已将“Deployment2”用于第二个部署，因此会有两个条目。单击某个部署时会显示一个边栏选项卡，其中显示每个部署的结果。
@@ -341,8 +341,8 @@ Azure 资源管理器模板定义应用程序使用的所有 Azure 资源。可�
     Remove-AzureRmResourceGroup -Name TestApp1-Test
     Remove-AzureRmResourceGroup -Name TestApp1-Pre-Production
 
-### Azure 门户预览
-1. 在 Azure 门户预览中浏览到“资源组”，如同上一步骤所述。
+### Azure 门户
+1. 在 Azure 门户中浏览到“资源组”，如同上一步骤所述。
 2. 选择“TestApp1-Development 资源组”，然后单击“TestApp1-Development 资源组”边栏选项卡中的“删除”。随即显示新的边栏选项卡。输入资源组名称，然后单击“删除”按钮。
     ![门户](./media/solution-dev-test-environments/rgdelete.png)
 3. 使用删除 TestApp1-Development 资源组的相同方式删除 TestApp1-Test 和 TestApp1-Pre-Production 资源组。
@@ -359,7 +359,7 @@ Azure 资源管理器模板定义应用程序使用的所有 Azure 资源。可�
 ## 后续步骤
 * 通过将 Azure AD 组或用户分配到能够对 Azure 资源执行部分操作的特定角色，向每个环境中的不同资源[委派管理控制](/documentation/articles/role-based-access-control-configure/)。
 * 向每个环境的资源组和/或单个资源[分配标记](/documentation/articles/resource-group-using-tags/)。你可以将“Environment”标记添加到资源组，并将其值设置为与环境名称相对应。当您需要组织资源以进行计费或管理时，标记会特别有用。
-* 在 [Azure 门户预览](https://portal.azure.cn)中监视资源组中资源的警报和计费。
+* 在 [Azure 门户](https://portal.azure.cn)中监视资源组中资源的警报和计费。
 
 <!---HONumber=Mooncake_0206_2017-->
 <!-- Update_Description: wording update; meta data -->

@@ -33,12 +33,12 @@
 
 * 如果应用具有多个槽，则无法更改模式。
 * 缩放不适用于非生产槽。
-* 非生产槽不支持链接的资源管理。在 [Azure 门户预览](/documentation/articles/app-service-web-app-azure-portal/)中，可通过暂时将非生产槽移到其他应用服务计划模式，避免对生产槽造成这种潜在影响。请注意，非生产槽必须先再次与生产槽共享相同的模式，才能交换这两个槽。
+* 非生产槽不支持链接的资源管理。在 [Azure 门户](/documentation/articles/app-service-web-app-azure-portal/)中，可通过暂时将非生产槽移到其他应用服务计划模式，避免对生产槽造成这种潜在影响。请注意，非生产槽必须先再次与生产槽共享相同的模式，才能交换这两个槽。
 
 ## <a name="Add"></a>添加部署槽
 必须在“标准”或“高级”模式下运行应用，才能启用多个部署槽。
 
-1. 在 [Azure 门户预览](https://portal.azure.cn/)中，打开应用的[资源边栏选项卡](/documentation/articles/resource-group-portal/#manage-resources)。
+1. 在 [Azure 门户](https://portal.azure.cn/)中，打开应用的[资源边栏选项卡](/documentation/articles/resource-group-portal/#manage-resources)。
 2. 选择“部署槽”选项，然后单击“添加槽”。
    
     ![添加新部署槽][QGAddNewDeploymentSlot]  

@@ -40,7 +40,7 @@
 备份保管库是存储所有按时间创建的备份和恢复点的实体。 备份保管库还包含将应用到要备份的虚拟机的备份策略。
 
 1. 登录 [Azure 经典管理门户](http://manage.windowsazure.cn/)。
-2. 在 Azure 门户预览的左下角单击“新建”
+2. 在 Azure 门户的左下角单击“新建”
 
     ![单击“新建”菜单](./media/backup-azure-vms-first-look/new-button.png)  
 

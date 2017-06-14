@@ -66,14 +66,14 @@ Azure 通知中心提供用于向移动设备发送推送通知的易于使用�
 
     var notificationHubService = azure.createNotificationHubService('hubname','connectionstring');
 
-可通过执行以下步骤从 [Azure 门户预览]获取连接 **connectionstring** 值：
+可通过执行以下步骤从 [Azure 门户]获取连接 **connectionstring** 值：
 
 1. 在左侧导航窗格中，单击“浏览”。
 2. 选择“通知中心”，然后找到要用于示例的中心。如果在创建新通知中心时需要获得帮助，可参阅 [Windows 应用商店入门教程](/documentation/articles/notification-hubs-windows-store-dotnet-get-started-wns-push-notification/)。
 3. 选择“设置”。
 4. 单击“访问策略”。你会看到共享连接字符串和完全访问连接字符串。
 
-![Azure 门户预览 — 通知中心](./media/notification-hubs-nodejs-how-to-use-notification-hubs/notification-hubs-portal.png)  
+![Azure 门户 — 通知中心](./media/notification-hubs-nodejs-how-to-use-notification-hubs/notification-hubs-portal.png)  
 
 
 > [AZURE.NOTE] 还可使用 [Azure PowerShell](/documentation/articles/powershell-install-configure/) 提供的 **Get-AzureSbNamespace** cmdlet，或者在 [Azure 命令行接口 (Azure CLI)](/documentation/articles/xplat-cli-install/) 中使用 **azure sb namespace show** 命令检索连接字符串。
@@ -203,6 +203,6 @@ Azure 通知中心提供用于向移动设备发送推送通知的易于使用�
 [Node.js Cloud Service]: /documentation/articles/cloud-services-nodejs-develop-deploy-app/
 [Previous Management Portal]: ./media/notification-hubs-nodejs-how-to-use-notification-hubs/previous-portal.png
 
-[Azure 门户预览]: https://portal.azure.cn
+[Azure 门户]: https://portal.azure.cn
 
 <!---HONumber=Mooncake_1205_2016-->

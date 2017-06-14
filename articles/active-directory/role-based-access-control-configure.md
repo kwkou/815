@@ -1,6 +1,6 @@
 <properties
-    pageTitle="Azure 门户预览中基于角色的访问控制 | Azure"
-    description="在 Azure 门户预览中使用基于角色的访问控制开始进行访问权限管理。 角色分配用于将权限分配给你的资源。"
+    pageTitle="Azure 门户中基于角色的访问控制 | Azure"
+    description="在 Azure 门户中使用基于角色的访问控制开始进行访问权限管理。 角色分配用于将权限分配给你的资源。"
     services="active-directory"
     documentationcenter=""
     author="kgremban"
@@ -23,12 +23,12 @@
 
 # <a name="use-role-based-access-control-to-manage-access-to-your-azure-subscription-resources"></a>使用基于角色的访问控制管理 Azure 订阅资源的访问权限
 
-Azure 基于角色的访问控制 (RBAC) 可用于对 Azure 进行细致的访问管理。 使用 RBAC，你可以仅授予用户执行其作业所需的访问次数。 本文可帮助你在 Azure 门户预览中启动并运行 RBAC。 如果想要解有关 RBAC 如何帮助你管理访问权限的详细信息，请参阅 [什么是基于角色的访问控制](/documentation/articles/role-based-access-control-what-is/)。
+Azure 基于角色的访问控制 (RBAC) 可用于对 Azure 进行细致的访问管理。 使用 RBAC，你可以仅授予用户执行其作业所需的访问次数。 本文可帮助你在 Azure 门户中启动并运行 RBAC。 如果想要解有关 RBAC 如何帮助你管理访问权限的详细信息，请参阅 [什么是基于角色的访问控制](/documentation/articles/role-based-access-control-what-is/)。
 
 在每个订阅中，你最多可以授予 2000 个角色分配。 
 
 ## <a name="view-access"></a>查看访问权限
-你可以在 [Azure 门户预览](https://portal.azure.cn)中的主边栏选项卡上查看谁有权访问资源、资源组或订阅。 例如，我们想要查看谁有权访问其中一个资源组：
+你可以在 [Azure 门户](https://portal.azure.cn)中的主边栏选项卡上查看谁有权访问资源、资源组或订阅。 例如，我们想要查看谁有权访问其中一个资源组：
 
 1. 在左侧的导航栏中选择“资源组”  。  
     ![资源组 - 图标](./media/role-based-access-control-configure/resourcegroups_icon.png)
@@ -66,7 +66,7 @@ Azure 基于角色的访问控制 (RBAC) 可用于对 Azure 进行细致的访�
 ![用户边栏选项卡 - 继承的访问权限禁用删除按钮屏幕截图](./media/role-based-access-control-configure/remove-access2.png)
 
 ## <a name="other-tools-to-manage-access"></a>管理访问权限的其他工具
-可以使用 Azure 门户预览以外的工具中的 Azure RBAC 命令分配角色和管理访问权限。  依照该链接以了解有关先决条件和 Azure RBAC 命令入门的详细信息。
+可以使用 Azure 门户以外的工具中的 Azure RBAC 命令分配角色和管理访问权限。  依照该链接以了解有关先决条件和 Azure RBAC 命令入门的详细信息。
 
 - [Azure PowerShell](/documentation/articles/role-based-access-control-manage-access-powershell/)
 - [Azure 命令行界面](/documentation/articles/role-based-access-control-manage-access-azure-cli/)

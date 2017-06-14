@@ -23,18 +23,18 @@
     ms.lasthandoff="05/19/2017" />
 
 # <a name="monitor-azure-documentdb-requests-usage-and-storage"></a>监视 DocumentDB 请求、使用情况和存储
-可以在 [Azure 门户预览](https://portal.azure.cn/)中监视 DocumentDB 帐户。 对于每个 DocumentDB 帐户，性能指标（如请求和服务器错误）和使用情况指标（如存储消耗）都可用。
+可以在 [Azure 门户](https://portal.azure.cn/)中监视 DocumentDB 帐户。 对于每个 DocumentDB 帐户，性能指标（如请求和服务器错误）和使用情况指标（如存储消耗）都可用。
 
 可在“帐户”边栏选项卡、新的“指标”边栏选项卡或 Azure Monitor.查看指标。
 
 ## <a name="view-performance-metrics-on-the-metrics-blade"></a>在“指标”边栏选项卡上查看性能指标
-1. 在 [Azure 门户预览](https://portal.azure.cn/)中，单击“更多服务”，滚动到“数据库”，单击“DocumentDB”，然后单击要查看其性能指标的 DocumentDB 帐户的名称。
+1. 在 [Azure 门户](https://portal.azure.cn/)中，单击“更多服务”，滚动到“数据库”，单击“DocumentDB”，然后单击要查看其性能指标的 DocumentDB 帐户的名称。
 2. 在资源菜单的“监视”下，单击“指标”。
 
 此时将打开“指标”边栏选项卡，可以选择要查看的集合。 可以查看“可用性”、“请求”、“吞吐量”和“存储”指标，并将其与 DocumentDB SLA 进行比较。
 
 ## <a name="view-performance-metrics-by-using-azure-monitoring"></a>使用 Azure Monitor 查看性能指标
-1. 在 [Azure 门户预览](https://portal.azure.cn/)中，单击跳转栏上的“监视器”。
+1. 在 [Azure 门户](https://portal.azure.cn/)中，单击跳转栏上的“监视器”。
 2. 在资源菜单中，单击“指标”。
 3. 在“监视器 - 指标”窗口的“资源组”下拉菜单中，选择与想要监视的 DocumentDB 帐户关联的资源组。 
 4. 在“资源”  下拉菜单中，选择要监视的数据库帐户。
@@ -43,7 +43,7 @@
     指标在“绘图”  窗口中显示。 
 
 ## <a name="view-performance-metrics-on-the-account-blade"></a>在帐户边栏选项卡上查看性能指标
-1. 在 [Azure 门户预览](https://portal.azure.cn/)中，单击“更多服务”，滚动到“数据库”，单击“DocumentDB”，然后单击要查看其性能指标的 DocumentDB 帐户的名称。
+1. 在 [Azure 门户](https://portal.azure.cn/)中，单击“更多服务”，滚动到“数据库”，单击“DocumentDB”，然后单击要查看其性能指标的 DocumentDB 帐户的名称。
 2. 默认情况下，“监视”可重用功能区  显示以下磁贴：
    
    - 当天的请求总数。
@@ -68,7 +68,7 @@
 	![“编辑图表”边栏选项卡的“时间范围”部件的屏幕截图，显示如何输入自定义时间范围](./media/documentdb-monitor-accounts/madocdb5.png)
 
 ## <a name="create-side-by-side-charts-in-the-portal"></a>在门户中创建并排图表
-Azure 门户预览使你能够创建并排的指标图表。  
+Azure 门户使你能够创建并排的指标图表。  
 
 1. 首先，请右键单击要复制的图表，然后选择“自定义”。
    
@@ -81,7 +81,7 @@ Azure 门户预览使你能够创建并排的指标图表。
     ![请求总数图表和过去一小时新的请求总数的屏幕截图](./media/documentdb-monitor-accounts/madocdb8.png)  
 
 ## <a name="set-up-alerts-in-the-portal"></a>在门户中设置警报
-1. 在 [Azure 门户预览](https://portal.azure.cn/)中，依次单击“更多服务”、“DocumentDB”、要为其设置性能指标警报的 DocumentDB 帐户的名称。
+1. 在 [Azure 门户](https://portal.azure.cn/)中，依次单击“更多服务”、“DocumentDB”、要为其设置性能指标警报的 DocumentDB 帐户的名称。
 2. 在资源菜单中，单击“警报规则”以打开“警报规则”边栏选项卡。  
    ![所选的警报规则部件的屏幕截图](./media/documentdb-monitor-accounts/madocdb10.5.png)
 3. 在“警报规则”边栏选项卡中，单击“添加警报”。  

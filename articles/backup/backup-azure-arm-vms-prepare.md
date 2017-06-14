@@ -27,7 +27,7 @@
 - [资源管理器模型](/documentation/articles/backup-azure-arm-vms-prepare/)
 - [经典模型](/documentation/articles/backup-azure-vms-prepare/)
 
-本文提供有关准备环境以备份资源管理器部署的虚拟机 (VM) 的步骤。 过程中显示的步骤将使用 Azure 门户预览。  
+本文提供有关准备环境以备份资源管理器部署的虚拟机 (VM) 的步骤。 过程中显示的步骤将使用 Azure 门户。  
 
 Azure 备份服务提供两种类型的保管库（备份保管库和恢复服务保管库）来保护 VM。 备份保管库保护使用经典部署模型部署的 VM。 恢复服务保管库保护 **经典部署和资源管理器部署的 VM**。 必须使用恢复服务保管库来保护资源管理器部署的 VM。
 
@@ -69,7 +69,7 @@ Azure 备份服务提供两种类型的保管库（备份保管库和恢复服�
 ## <a name="create-a-recovery-services-vault-for-a-vm"></a>为 VM 创建恢复服务保管库
 恢复服务保管库是用于存储在不同时间创建的备份和恢复点的实体。 恢复服务保管库还包含与受保护虚拟机关联的备份策略。
 
-Azure 门户预览版目前不支持 Azure 中国区的恢复服务。 若要创建恢复服务保管库，请执行[此处](/documentation/articles/backup-azure-vms-automation/#create-a-recovery-services-vault/)的 PowerShell 步骤
+Azure 门户目前不支持 Azure 中国区的恢复服务。 若要创建恢复服务保管库，请执行[此处](/documentation/articles/backup-azure-vms-automation/#create-a-recovery-services-vault/)的 PowerShell 步骤
 
 ## <a name="install-the-vm-agent-on-the-virtual-machine"></a>在虚拟机中安装 VM 代理
 Azure VM 代理必须安装在 Azure 虚拟机上，备份扩展才能运行。 如果 VM 创建自 Azure 资源库，则 VM 代理已存在于虚拟机上。 此处提供的信息适用于 *不是* 使用从 Azure 映像库创建的 VM 的情况（例如，从本地数据中心迁移的 VM）。 在这种情况下，需要安装 VM 代理才能保护虚拟机。 

@@ -44,13 +44,13 @@ DocumentDB 使用两种类型的密钥来验证用户身份并提供其数据和
 
 DocumentDB 帐户除了有两个主密钥以外，还有两个只读密钥。 这些只读密钥只允许针对帐户执行读取操作。 只读密钥不提供对资源的读取权限。
 
-可以使用 Azure 门户预览检索和重新生成主要、辅助、只读和读写主密钥。 有关说明，请参阅[查看、复制和重新生成访问密钥](/documentation/articles/documentdb-manage-account/#a-idkeysaview-copy-and-regenerate-access-keys/)。
+可以使用 Azure 门户检索和重新生成主要、辅助、只读和读写主密钥。 有关说明，请参阅[查看、复制和重新生成访问密钥](/documentation/articles/documentdb-manage-account/#a-idkeysaview-copy-and-regenerate-access-keys/)。
 
-![Azure 门户预览中的访问控制 (IAM) - 演示 NoSQL 数据库安全性](./media/documentdb-secure-access-to-data/nosql-database-security-master-key-portal.png)
+![Azure 门户中的访问控制 (IAM) - 演示 NoSQL 数据库安全性](./media/documentdb-secure-access-to-data/nosql-database-security-master-key-portal.png)
 
-轮换主密钥的过程相当简单。 导航到 Azure 门户预览并检索你的辅助密钥，在应用程序中将主要密钥替换为该辅助密钥，然后在 Azure 门户预览中轮换主要密钥即可。
+轮换主密钥的过程相当简单。 导航到 Azure 门户并检索你的辅助密钥，在应用程序中将主要密钥替换为该辅助密钥，然后在 Azure 门户中轮换主要密钥即可。
 
-![Azure 门户预览中的主密钥轮换 - 演示 NoSQL 数据库安全性](./media/documentdb-secure-access-to-data/nosql-database-security-master-key-rotate-workflow.png)
+![Azure 门户中的主密钥轮换 - 演示 NoSQL 数据库安全性](./media/documentdb-secure-access-to-data/nosql-database-security-master-key-rotate-workflow.png)
 
 ### <a name="code-sample-to-use-a-master-key"></a>有关使用主密钥的代码示例
 

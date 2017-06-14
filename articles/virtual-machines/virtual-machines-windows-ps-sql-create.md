@@ -37,7 +37,7 @@
     * 若要检索你的版本，请键入 **Get-Module Azure -ListAvailable**。
 
 ## <a name="configure-your-subscription"></a> 配置订阅
-打开 Windows PowerShell，并通过运行以下 cmdlet 访问 Azure 帐户。随后将出现一个用于输入凭据的登录屏幕。使用登录 Azure 门户预览时所用的相同电子邮件和密码。
+打开 Windows PowerShell，并通过运行以下 cmdlet 访问 Azure 帐户。随后将出现一个用于输入凭据的登录屏幕。使用登录 Azure 门户时所用的相同电子邮件和密码。
 
     Add-AzureRmAccount -EnvironmentName AzureChinaCloud
 
@@ -229,7 +229,7 @@
 
 虚拟机已创建。请注意，由于为虚拟机磁盘指定的存储帐户是高级存储帐户，因此创建了一个标准存储帐户，以用于启动诊断。
 
-现在，用户可以在 Azure 门户预览中查看此虚拟机，以了解[其公共 IP 地址及完全限定的域名](/documentation/articles/virtual-machines-windows-portal-sql-server-provision/)。
+现在，用户可以在 Azure 门户中查看此虚拟机，以了解[其公共 IP 地址及完全限定的域名](/documentation/articles/virtual-machines-windows-portal-sql-server-provision/)。
 
 ## 示例脚本
 以下脚本包含本教程的完整 PowerShell 脚本。该脚本假设用户已将 Azure 订阅设置为配合使用 **Add-AzureRmAccount -EnvironmentName AzureChinaCloud** 和 **Select-AzureRmSubscription** 命令。

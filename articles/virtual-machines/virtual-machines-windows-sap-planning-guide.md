@@ -509,7 +509,7 @@ Azure 平台减少了采购前沿技术和基础结构的需要。 它可以按�
 Microsoft 允许将虚拟机部署到所谓的“Azure 区域”。 Azure 区域可以是位置很近的一个或多个数据中心。 针对全球大多数地缘政治区域，Microsoft 至少有两个 Azure 区域。 例如 在亚洲，有一个“中国北部”和一个“中国东部”Azure 区域。 一个地缘政治区域中的两个 Azure 区域之间相隔足够的距离，以确保自然或技术灾难不会同时影响同一地缘政治区域中的两个 Azure 区域。 由于 Microsoft 在全球不同的地缘政治区域中稳定扩建新的 Azure 区域，因此这些区域的数目稳定增长，截至 2015 年 12 月已达 20 个 Azure 区域，并且已声明了更多的区域。 客户可以将 SAP 系统部署到所有区域，包括中国的两个 Azure 区域。 有关 Azure 区域的最新信息，请参阅以下网站：<https://azure.microsoft.com/regions/>
 
 ### <a name="8d8ad4b8-6093-4b91-ac36-ea56d80dbf77"></a>Azure 虚拟机的概念
-Azure 提供基础结构即服务 (IaaS) 解决方案用于托管与本地虚拟化解决方案具有类似功能的虚拟机。 可以在 Azure 门户预览、PowerShell 或 CLI 中创建虚拟机，这些工具还提供了部署和管理功能。
+Azure 提供基础结构即服务 (IaaS) 解决方案用于托管与本地虚拟化解决方案具有类似功能的虚拟机。 可以在 Azure 门户、PowerShell 或 CLI 中创建虚拟机，这些工具还提供了部署和管理功能。
 
 Azure Resource Manager 可让你使用声明性模板预配应用程序。 在单个模板中，可以部署多个服务及其依赖项。 可在应用程序生命周期的每个阶段中使用相同模板重复部署应用程序。
 
@@ -772,17 +772,17 @@ ExpressRoute 强制隧道由通过 ExpressRoute BGP 对等互连会话广告默�
 * 为了提供足够的 IOPS 而需要在 DBMS VM 中配置的 VHD 数量
 
 ## <a name="managing-azure-assets"></a>管理 Azure 资产
-### <a name="azure-portal-preview"></a>Azure 门户预览
-Azure 门户预览是用于管理 Azure VM 部署的三个界面之一。 基本的管理任务（例如，从映像部署 VM）可以通过该 Azure 门户预览来完成。 此外，Azure 门户预览也能很好地处理创建存储帐户、虚拟网络和其他 Azure 组件这样的任务。 但是，若要执行将 VHD 从本地上载到 Azure 或者复制 Azure 中的 VHD 等功能，则需要使用第三方工具，或者通过 PowerShell 或 CLI 进行管理。
+### <a name="azure-portal-preview"></a>Azure 门户
+Azure 门户是用于管理 Azure VM 部署的三个界面之一。 基本的管理任务（例如，从映像部署 VM）可以通过该 Azure 门户来完成。 此外，Azure 门户也能很好地处理创建存储帐户、虚拟网络和其他 Azure 组件这样的任务。 但是，若要执行将 VHD 从本地上载到 Azure 或者复制 Azure 中的 VHD 等功能，则需要使用第三方工具，或者通过 PowerShell 或 CLI 进行管理。
 
-![Azure 门户预览 - 虚拟机概览][planning-guide-figure-800]
+![Azure 门户 - 虚拟机概览][planning-guide-figure-800]
 
 
-可以从 Azure 门户预览内部完成虚拟机实例的管理和配置任务。
+可以从 Azure 门户内部完成虚拟机实例的管理和配置任务。
 
 除了重新启动和关闭虚拟机以外，你还可以为虚拟机实例附加、分离和创建数据磁盘，捕获实例以进行映像准备，更改终结点配置，以及配置虚拟机实例的大小。
 
-Azure 门户预览提供了基本的功能用于部署和配置 VM 以及其他许多 Azure 服务。 但是，Azure 门户预览并未包括所有可用的功能。 在 Azure 门户预览中，无法执行如下所述的任务：
+Azure 门户提供了基本的功能用于部署和配置 VM 以及其他许多 Azure 服务。 但是，Azure 门户并未包括所有可用的功能。 在 Azure 门户中，无法执行如下所述的任务：
 
 * 将 VHD 上载到 Azure
 * 复制 VM
@@ -795,7 +795,7 @@ Windows PowerShell 是一个功能强大的可扩展框架，在 Azure 中部署
 
 此外，还可以在 [部署指南的此章][deployment-guide-4.1]中找到有关如何安装、更新和配置 Azure PowerShell cmdlet 的详细步骤。
 
-根据到目前为止的客户体验，PowerShell (PS) 绝对是用于部署 VM 以及在 VM 部署中创建自定义步骤的更强大工具。 在 Azure 中运行 SAP 实例的所有先驱客户都在使用 PS cmdlet 作为补充性的手段来执行他们在 Azure 门户预览中所能执行的管理任务，甚至专门使用 PS cmdlet 来管理 Azure 中的部署。 由于 Azure 专用的 cmdlet 与 2000 多个 Windows 相关 cmdlet 采用相同的命名约定，因此，Windows 管理员可以轻而易举地使用这些 cmdlet。
+根据到目前为止的客户体验，PowerShell (PS) 绝对是用于部署 VM 以及在 VM 部署中创建自定义步骤的更强大工具。 在 Azure 中运行 SAP 实例的所有先驱客户都在使用 PS cmdlet 作为补充性的手段来执行他们在 Azure 门户中所能执行的管理任务，甚至专门使用 PS cmdlet 来管理 Azure 中的部署。 由于 Azure 专用的 cmdlet 与 2000 多个 Windows 相关 cmdlet 采用相同的命名约定，因此，Windows 管理员可以轻而易举地使用这些 cmdlet。
 
 请参阅此处的示例：<http://blogs.technet.com/b/keithmayer/archive/2015/07/07/18-steps-for-end-to-end-iaas-provisioning-in-the-cloud-with-azure-resource-manager-arm-powershell-and-desired-state-configuration-dsc.aspx>
 
@@ -807,7 +807,7 @@ Windows PowerShell 是一个功能强大的可扩展框架，在 Azure 中部署
 
 ### <a name="management-via-azure-cli-commands"></a>通过 Azure CLI 命令进行管理
 对于使用 Linux 并想要管理 Azure 资源的客户而言，可能不适合使用 Powershell。 Microsoft 提供了 Azure CLI 作为替代方案。
-Azure CLI 提供了一组开源且跨平台的命令，这些命令可以用于 Azure 平台。 Azure CLI 提供许多与 Azure 门户预览相同的功能。
+Azure CLI 提供了一组开源且跨平台的命令，这些命令可以用于 Azure 平台。 Azure CLI 提供许多与 Azure 门户相同的功能。
 
 有关安装、配置和如何使用 CLI 命令完成 Azure 任务的信息，请参阅
 
@@ -926,7 +926,7 @@ Azure 提供了多种用于部署 VM 和关联的磁盘的方法。 因此，请
 
 - - -
 ### <a name="transferring-vms-and-vhds-between-on-premises-to-azure"></a>在本地与 Azure 之间传输 VM 和 VHD
-由于无法通过 Azure 门户预览上传 VM 映像和磁盘，因此需要使用 Azure PowerShell cmdlet 或 CLI。 另一种可行的方法是使用“AzCopy”工具。 该工具可在本地与 Azure 之间（双向）复制 VHD。 它还可以在 Azure 区域之间复制 VHD。 有关如何下载和使用 AzCopy，请参阅 [此文档][storage-use-azcopy] 。
+由于无法通过 Azure 门户上传 VM 映像和磁盘，因此需要使用 Azure PowerShell cmdlet 或 CLI。 另一种可行的方法是使用“AzCopy”工具。 该工具可在本地与 Azure 之间（双向）复制 VHD。 它还可以在 Azure 区域之间复制 VHD。 有关如何下载和使用 AzCopy，请参阅 [此文档][storage-use-azcopy] 。
 
 第三种替代做法是使用面向 GUI 的各种第三方工具。 但是，请确保这些工具支持 Azure 页 Blob。 在本文档中，需要使用页 Blob 存储（以下网页中介绍了差异：<https://msdn.microsoft.com/zh-cn/library/azure/ee691964.aspx>）。 另外，Azure 提供的工具能够非常高效地压缩需要上载的 VM 和 VHD。 这种优势非常重要，因为这种压缩效率可以减少上传时间（具体的上传时间根据从本地设施和目标 Azure 部署区域与 Internet 网络之间的上传链路的情况而有一定的差异）。 我们可以合理地推测出这样一个结论：将位于欧洲的某个 VM 或 VHD 上载到位于美国的 Azure 数据中心所需的时间，比将同一个 VM/VHD 上载到位于欧洲的 Azure 数据中心所需的时间要长。
 
@@ -992,7 +992,7 @@ Azure 基础结构即服务不仅能够上传 VHD 和 SAP 系统， 而且还可
 下载期间，VHD 不能为活动状态。 在下载已装载到 VM 的 VHD 时，甚至还要关闭 VM。 如果你只想要下载数据库内容，然后使用此内容在本地安装新系统，并且如果在下载和设置新系统期间，Azure 中的系统仍可以正常运行，那么，你可以通过执行将压缩的数据库备份到 VHD，并只下载该 VHD 而不是同时下载 OS 基本 VM，来避免停机时间过长。
 
 #### <a name="powershell"></a>Powershell
-停止 SAP 系统并关闭 VM 后，你可以在本地目标上使用 PowerShell cmdlet Save-AzureRmVhd 将 VHD 磁盘下载回到本地。 若要执行此操作，需要使用可在 Azure 门户预览的“存储”部分中找到的 VHD URL（需要导航到存储帐户以及创建 VHD 时所在的存储容器），并且需要知道 VHD 应该复制到的位置。
+停止 SAP 系统并关闭 VM 后，你可以在本地目标上使用 PowerShell cmdlet Save-AzureRmVhd 将 VHD 磁盘下载回到本地。 若要执行此操作，需要使用可在 Azure 门户的“存储”部分中找到的 VHD URL（需要导航到存储帐户以及创建 VHD 时所在的存储容器），并且需要知道 VHD 应该复制到的位置。
 
 然后，只需定义参数 SourceUri 作为要下载的 VHD 的 URL，定义 LocalFilePath 作为 VHD 的物理位置（包括其名称），即可利用该命令来实现此目的。 该命令如下所示：
 
@@ -1001,7 +1001,7 @@ Azure 基础结构即服务不仅能够上传 VHD 和 SAP 系统， 而且还可
 有关 Save-AzureRmVhd cmdlet 的更多详细信息，请查看 <https://msdn.microsoft.com/zh-cn/library/mt622705.aspx>。
 
 #### <a name="cli"></a>CLI
-停止 SAP 系统并关闭 VM 后，你可以在本地目标上使用 Azure CLI 命令 azure storage blob download 将 VHD 磁盘下载回到本地。 若要执行此操作，需要使用可在 Azure 门户预览的“存储”部分中找到的 VHD 名称和容器（需要导航到存储帐户以及创建 VHD 时所在的存储容器），并且需要知道 VHD 应该复制到的位置。
+停止 SAP 系统并关闭 VM 后，你可以在本地目标上使用 Azure CLI 命令 azure storage blob download 将 VHD 磁盘下载回到本地。 若要执行此操作，需要使用可在 Azure 门户的“存储”部分中找到的 VHD 名称和容器（需要导航到存储帐户以及创建 VHD 时所在的存储容器），并且需要知道 VHD 应该复制到的位置。
 
 然后，只需定义要下载的 VHD 的参数 blob 和 container，并将目标定义为 VHD 的物理目标位置（包括其名称），即可利用该命令来实现此目的。 该命令如下所示：
 
@@ -1056,7 +1056,7 @@ SAP 系统，甚至是支持 SAP 应用程序层的专用 DBMS 服务器，都�
     # this scenario is currently not possible with Azure CLI. A workaround is to manually copy the vhd to the destination.
 
 #### <a name="9789b076-2011-4afa-b2fe-b07a8aba58a1"></a>在 Azure 存储帐户之间复制磁盘
-无法在 Azure 门户预览中执行此任务。 可以使用 Azure PowerShell cmdlet、Azure CLI 或第三方存储浏览器。 PowerShell cmdlet 或 CLI 命令可以创建和管理 Blob，包括跨 Azure 订阅中的存储帐户和区域异步复制 Blob。
+无法在 Azure 门户中执行此任务。 可以使用 Azure PowerShell cmdlet、Azure CLI 或第三方存储浏览器。 PowerShell cmdlet 或 CLI 命令可以创建和管理 Blob，包括跨 Azure 订阅中的存储帐户和区域异步复制 Blob。
 
 ##### <a name="powershell"></a>Powershell
 也可以在订阅之间复制 VHD。 有关详细信息，请阅读 [此文][storage-powershell-guide-full-copy-vhd]。
@@ -1151,7 +1151,7 @@ PS cmdlet 逻辑的基本流程如下所示：
 有关更多建议和详细信息（尤其是针对 DBMS VM），请参阅 [DBMS Deployment Guide][dbms-guide]
 
 #### <a name="disk-handling"></a>磁盘处理
-在大多数方案中，你需要创建更多的磁盘，以便将 SAP 数据库部署到 VM 中。 我们已在本文档的 [SAP 部署的 VM/VHD 结构][planning-guide-5.5.1] 一章中讨论了有关 VHD 数量的注意事项。 部署基础 VM 后，可以在 Azure 门户预览中附加和分离磁盘。 当该 VM 已启动并运行或者处于停止状态时，便可以附加/分离磁盘。 在附加磁盘时，可以使用 Azure 门户预览附加空磁盘，或者当前尚未附加到其他 VM 的现有磁盘。
+在大多数方案中，你需要创建更多的磁盘，以便将 SAP 数据库部署到 VM 中。 我们已在本文档的 [SAP 部署的 VM/VHD 结构][planning-guide-5.5.1] 一章中讨论了有关 VHD 数量的注意事项。 部署基础 VM 后，可以在 Azure 门户中附加和分离磁盘。 当该 VM 已启动并运行或者处于停止状态时，便可以附加/分离磁盘。 在附加磁盘时，可以使用 Azure 门户附加空磁盘，或者当前尚未附加到其他 VM 的现有磁盘。
 
 **注意**：在任意给定时间，VHD 只能附加到一个 VM。
 
@@ -1164,7 +1164,7 @@ PS cmdlet 逻辑的基本流程如下所示：
 - - -
 > ![Windows][Logo_Windows] Windows
 >
-> [如何在 Azure 门户预览中附加数据磁盘][virtual-machines-windows-attach-disk-portal]
+> [如何在 Azure 门户中附加数据磁盘][virtual-machines-windows-attach-disk-portal]
 >
 > 如果附加了磁盘，则需要登录到 VM 以打开 Windows 磁盘管理器。 如果未按照 [为附加的磁盘设置自动装载][planning-guide-5.5.3]一章中的建议启用自动装载，则需要重新联机并初始化新附加的卷。
 >
@@ -1592,7 +1592,7 @@ SAP GUI 不会立即连接到运行中的任何 SAP 实例（端口 32xx），�
 #### <a name="solution-design"></a>解决方案设计
 为启用 SAP 监视而开发的解决方案构建在 Azure VM 代理和扩展框架的体系结构之上。 Azure VM 代理和扩展框架的思路是允许在 VM 中安装 Azure VM 扩展库中提供的软件应用程序。 这种概念所依据的原则思想是允许（例如，在使用适用于 SAP 的 Azure 监视扩展时）将特殊的功能部署到 VM 中，并在部署时配置此类软件。
 
-从 2014 年 2 月开始，在 Azure 门户预览中创建 VM 时，用于处理 VM 中特定 Azure VM 扩展的“Azure VM 代理”将按默认注入到 Windows VM 中。 对于 SUSE 或 Red Hat Linux，VM 代理已是 Azure 应用商店映像的一部分。 如果用户将 Linux VM 从本地上载到 Azure，则必须手动安装 VM 代理。
+从 2014 年 2 月开始，在 Azure 门户中创建 VM 时，用于处理 VM 中特定 Azure VM 扩展的“Azure VM 代理”将按默认注入到 Windows VM 中。 对于 SUSE 或 Red Hat Linux，VM 代理已是 Azure 应用商店映像的一部分。 如果用户将 Linux VM 从本地上载到 Azure，则必须手动安装 VM 代理。
 
 适用于 SAP 的 Azure 监视解决方案的基本构建块如下所示：
 
@@ -1810,8 +1810,8 @@ SAP 提供了相应的功能，用于在启动 VM 中的 OS 后立即启动 SAP 
 ### <a name="offline-backup-of-sap-systems"></a>脱机备份 SAP 系统
 根据所选的 SAP 配置（第 2 层或第 3 层），可能需要执行备份。 备份包括 VM 自身的内容以及数据库。 应该使用数据库方法执行 DBMS 相关的备份。 可以在 [DBMS Guide][dbms-guide]（DBMS 指南）中找到针对不同数据库的详细说明。 另外，SAP 数据可以通过本部分所述的脱机方式（也包括数据库内容）或者下一部分所述的联机方式来备份。
 
-简单而言，执行脱机备份要求通过 Azure 门户预览关闭 VM，然后将基础 VM 磁盘以及所有附加的 VHD 复制到 VM。 这样就能保存 VM 及其关联磁盘的时间点映像。 建议将“备份”复制到一个不同的 Azure 存储帐户。 因此，可以应用本文档的 [在 Azure 存储帐户之间复制磁盘][planning-guide-5.4.2] 一章中所述的过程。
-除了使用 Azure 门户预览关机之外，也可以按如下所述通过 Powershell 或 CLI 来执行此操作：</virtual-machines/virtual-machines-deploy-rmtemplates-powershell/>
+简单而言，执行脱机备份要求通过 Azure 门户关闭 VM，然后将基础 VM 磁盘以及所有附加的 VHD 复制到 VM。 这样就能保存 VM 及其关联磁盘的时间点映像。 建议将“备份”复制到一个不同的 Azure 存储帐户。 因此，可以应用本文档的 [在 Azure 存储帐户之间复制磁盘][planning-guide-5.4.2] 一章中所述的过程。
+除了使用 Azure 门户关机之外，也可以按如下所述通过 Powershell 或 CLI 来执行此操作：</virtual-machines/virtual-machines-deploy-rmtemplates-powershell/>
 
 还原该状态将要删除基础 VM 以及基础 VM 的原始磁盘和装载的 VHD，将保存的 VHD 复制回到原始存储帐户，然后重新部署系统。
 以下文章说明了如何使用 Powershell 编写此过程的脚本：<http://www.westerndevs.com/azure-snapshots/>

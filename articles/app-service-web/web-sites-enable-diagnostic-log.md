@@ -22,7 +22,7 @@
 ## 概述
 Azure 提供内置诊断功能，可帮助调试[应用服务 Web 应用](/documentation/articles/app-service-changes-existing-services/)。在本文中，你将了解如何启用诊断日志记录并将检测添加到应用程序，以及如何访问由 Azure 记录的信息。
 
-本文通过 [Azure 门户预览](https://portal.azure.cn)、Azure PowerShell 和 Azure 命令行接口 (Azure CLI) 使用诊断日志。有关通过 Visual Studio 使用诊断日志的信息，请参阅[在 Visual Studio 中对 Azure 进行故障排除](/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/)。
+本文通过 [Azure 门户](https://portal.azure.cn)、Azure PowerShell 和 Azure 命令行接口 (Azure CLI) 使用诊断日志。有关通过 Visual Studio 使用诊断日志的信息，请参阅[在 Visual Studio 中对 Azure 进行故障排除](/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/)。
 
 [AZURE.INCLUDE [app-service-web-to-api-and-mobile](../../includes/app-service-web-to-api-and-mobile.md)]
 
@@ -48,7 +48,7 @@ Azure 提供内置诊断功能，可帮助调试[应用服务 Web 应用](/docum
 将内容发布到某个 Web 应用时，应用服务 Web 应用还记录部署信息。此操作自动执行，不会对部署日志记录进行配置设置。部署日志记录允许你确定部署失败的原因。例如，如果使用自定义部署脚本，可能会使用部署日志记录确定该脚本失败的原因。
 
 ## <a name="enablediag"></a>如何启用诊断
-若要在 [Azure 门户预览](https://portal.azure.cn)中启用诊断，请转到 Web 应用边栏选项卡，然后单击“设置”>“诊断日志”。
+若要在 [Azure 门户](https://portal.azure.cn)中启用诊断，请转到 Web 应用边栏选项卡，然后单击“设置”>“诊断日志”。
 
 <!-- todo:cleanup dogfood addresses in screenshot -->
 
@@ -269,7 +269,7 @@ Azure Web 应用生成的日志不支持 **s-computername**、**s-ip** 或 **cs-
 
 ## 更改内容
 * 有关从网站更改为应用服务的指南，请参阅 [Azure App Service 及其对现有 Azure 服务的影响](/documentation/articles/app-service-changes-existing-services/)
-* 有关从旧门户更改为新门户的指导，请参阅：[有关在 Azure 门户预览中导航的参考](/documentation/articles/app-service-web-app-azure-portal/)
+* 有关从旧门户更改为新门户的指导，请参阅：[有关在 Azure 门户中导航的参考](/documentation/articles/app-service-web-app-azure-portal/)
  
 
 <!---HONumber=Mooncake_1128_2016-->

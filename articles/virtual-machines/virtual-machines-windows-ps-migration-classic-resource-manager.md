@@ -41,7 +41,7 @@
 下面是建议你在将 IaaS 资源从经典部署模型迁移到 Resource Manager 部署模型时遵循的一些最佳实践：
 
 * 通读[受支持的和不受支持的功能和配置](/documentation/articles/virtual-machines-windows-migration-classic-resource-manager/)。 如果虚拟机使用不受支持的配置或功能，建议你等到我们宣布支持该配置/功能时再进行迁移。 也可根据需要删除该功能或移出该配置，以利迁移进行。
-* 如果你通过自动化脚本来部署目前的基础结构和应用程序，则可尝试使用这些脚本进行迁移，以便创建类似的测试性设置。 也可以使用 Azure 门户预览设置示例环境。
+* 如果你通过自动化脚本来部署目前的基础结构和应用程序，则可尝试使用这些脚本进行迁移，以便创建类似的测试性设置。 也可以使用 Azure 门户设置示例环境。
 
 > [AZURE.IMPORTANT]
 > 目前不支持通过应用程序网关从经典部署模型迁移到 Resource Manager 部署模型。 若要迁移带应用程序网关的经典虚拟网络，请先删除该网关，然后运行准备操作来移动网络。 完成迁移后，在 Azure Resource Manager 中重新连接该网关。 
@@ -58,7 +58,7 @@
 <br>
 
 ## <a name="step-3-ensure-that-you-are-co-administrator-for-the-subscription-in-azure-classic-management-portal"></a>步骤 3：确保你是 Azure 经典管理门户中订阅的共同管理员
-若要执行此迁移，必须在 [Azure 经典管理门户](https://manage.windowsazure.cn/)中将你添加为订阅的共同管理员。 即使你已被添加为 [Azure 门户预览](https://portal.azure.cn)中的所有者，这仍是必需的操作。 尝试在 Azure 经典管理门户中添加订阅的共同管理员，确定你是否是订阅的共同管理员。 如果不能添加协同管理员，请联系订阅的服务管理员或协同管理员，以将自己添加为协同管理员。   
+若要执行此迁移，必须在 [Azure 经典管理门户](https://manage.windowsazure.cn/)中将你添加为订阅的共同管理员。 即使你已被添加为 [Azure 门户](https://portal.azure.cn)中的所有者，这仍是必需的操作。 尝试在 Azure 经典管理门户中添加订阅的共同管理员，确定你是否是订阅的共同管理员。 如果不能添加协同管理员，请联系订阅的服务管理员或协同管理员，以将自己添加为协同管理员。   
 
 ## <a name="step-4-set-your-subscription-and-sign-up-for-migration"></a>步骤 4：设置订阅并针对迁移进行注册
 首先，请启动 PowerShell 提示符。 对于迁移，需要针对经典部署模型和 Resource Manager 部署模型设置环境。
@@ -173,7 +173,7 @@
         $vm = Get-AzureVM -ServiceName $serviceName -Name $vmName
         $vm.VM.MigrationState
 
-使用 PowerShell 或 Azure 门户预览，检查准备就绪的资源的配置。 如果尚未做好迁移准备，因此想要回到旧的状态，请使用以下命令：
+使用 PowerShell 或 Azure 门户，检查准备就绪的资源的配置。 如果尚未做好迁移准备，因此想要回到旧的状态，请使用以下命令：
 
         Move-AzureService -Abort -ServiceName $serviceName -DeploymentName $deploymentName
 
@@ -201,7 +201,7 @@
 
         Move-AzureVirtualNetwork -Prepare -VirtualNetworkName $vnetName
 
-使用 Azure PowerShell 或 Azure 门户预览，检查准备就绪的虚拟机的配置。 如果尚未做好迁移准备，因此想要回到旧的状态，请使用以下命令：
+使用 Azure PowerShell 或 Azure 门户，检查准备就绪的虚拟机的配置。 如果尚未做好迁移准备，因此想要回到旧的状态，请使用以下命令：
 
         Move-AzureVirtualNetwork -Abort -VirtualNetworkName $vnetName
 
@@ -257,7 +257,7 @@
         $storageAccountName = "myStorageAccount"
         Move-AzureStorageAccount -Prepare -StorageAccountName $storageAccountName
 
-使用 Azure PowerShell 或 Azure 门户预览，检查准备就绪的存储帐户的配置。 如果尚未做好迁移准备，因此想要回到旧的状态，请使用以下命令：
+使用 Azure PowerShell 或 Azure 门户，检查准备就绪的存储帐户的配置。 如果尚未做好迁移准备，因此想要回到旧的状态，请使用以下命令：
 
         Move-AzureStorageAccount -Abort -StorageAccountName $storageAccountName
 

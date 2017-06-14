@@ -25,7 +25,7 @@
 ## 查找服务器名称
 连接到 SQL 数据仓库时，第一步是了解如何查找服务器名称。例如，以下示例中的服务器名称是 sample.database.chinacloudapi.cn。若要查找完全限定的服务器名称，请执行以下操作：
 
-1. 转到 [Azure 门户预览][Azure portal]。
+1. 转到 [Azure 门户][Azure portal]。
 2. 单击“SQL 数据库”
 3. 单击要连接到的数据库。
 4. 找到完整的服务器名称。

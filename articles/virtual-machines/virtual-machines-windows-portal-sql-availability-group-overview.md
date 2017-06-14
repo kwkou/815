@@ -38,7 +38,7 @@ Azure 虚拟机中可用性组的主要区别是，Azure 虚拟机需要[负载�
 
 [在 Azure VM 中手动配置 Always On 可用性组 - Resource Manager](/documentation/articles/virtual-machines-windows-portal-sql-alwayson-availability-groups-manual/)
 
-## 在 Azure 门户预览中手动创建可用性组
+## 在 Azure 门户中手动创建可用性组
 
 还可以自行创建虚拟机，不需模板。首先完成先决条件，然后创建可用性组。请参阅以下主题：
 

@@ -1,6 +1,6 @@
 <properties
     pageTitle="使用点到站点将计算机连接到 Azure 虚拟网络：门户 | Azure"
-    description="使用 Resource Manager 和 Azure 门户预览创建点到站点 VPN 网关连接，安全连接到 Azure 虚拟网络。"
+    description="使用 Resource Manager 和 Azure 门户创建点到站点 VPN 网关连接，安全连接到 Azure 虚拟网络。"
     services="vpn-gateway"
     documentationcenter="na"
     author="cherylmc"
@@ -23,13 +23,13 @@
     ms.contentlocale="zh-cn"
     ms.lasthandoff="05/19/2017" />
 
-# <a name="configure-a-point-to-site-connection-to-a-vnet-using-the-azure-portal-preview"></a>使用 Azure 门户预览配置与 VNet 的点到站点连接
+# <a name="configure-a-point-to-site-connection-to-a-vnet-using-the-azure-portal-preview"></a>使用 Azure 门户配置与 VNet 的点到站点连接
 
-本文介绍如何在 Resource Manager 部署模型中使用 Azure 门户预览通过点到站点连接来创建 VNet。 也可使用不同的部署工具或部署模型创建此配置，方法是从以下列表中选择另一选项：
+本文介绍如何在 Resource Manager 部署模型中使用 Azure 门户通过点到站点连接来创建 VNet。 也可使用不同的部署工具或部署模型创建此配置，方法是从以下列表中选择另一选项：
 > [AZURE.SELECTOR]
-- [Resource Manager - Azure 门户预览](/documentation/articles/vpn-gateway-howto-point-to-site-resource-manager-portal/)
+- [Resource Manager - Azure 门户](/documentation/articles/vpn-gateway-howto-point-to-site-resource-manager-portal/)
 - [Resource Manager - PowerShell](/documentation/articles/vpn-gateway-howto-point-to-site-rm-ps/)
-- [经典 - Azure 门户预览](/documentation/articles/vpn-gateway-howto-point-to-site-classic-azure-portal/)
+- [经典 - Azure 门户](/documentation/articles/vpn-gateway-howto-point-to-site-classic-azure-portal/)
 
 使用点到站点 (P2S) 配置可以创建从单个客户端计算机到虚拟网络的安全连接。 P2S 是基于 SSTP（安全套接字隧道协议）的 VPN 连接。 如果要从远程位置（例如，从家里或会议室）连接到 VNet，或者只有少数几台客户端计算机需要连接到虚拟网络，点到站点连接将非常有用。 P2S 连接不需要 VPN 设备或面向公众的 IP 地址。 可从客户端计算机建立 VPN 连接。
 

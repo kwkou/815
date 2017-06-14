@@ -22,7 +22,7 @@
 
 # <a name="using-azure-powershell-with-azure-storage"></a>对 Azure 存储 使用 Azure PowerShell
 ## <a name="overview"></a>概述
-Azure PowerShell 是一个模块，提供用于通过 Windows PowerShell 管理 Azure 的 cmdlet。 它是一种基于任务的命令行 shell 和脚本语言，专门用于系统管理。 使用 PowerShell，可以轻松控制和自动化 Azure 服务与应用程序的管理。 例如，可以使用这些 cmdlet 执行在 [Azure 门户预览版](https://portal.azure.cn)中可以执行的相同任务。
+Azure PowerShell 是一个模块，提供用于通过 Windows PowerShell 管理 Azure 的 cmdlet。 它是一种基于任务的命令行 shell 和脚本语言，专门用于系统管理。 使用 PowerShell，可以轻松控制和自动化 Azure 服务与应用程序的管理。 例如，可以使用这些 cmdlet 执行在 [Azure 门户](https://portal.azure.cn)中可以执行的相同任务。
 
 在本指南中，将探讨如何使用 [Azure 存储 Cmdlet](https://msdn.microsoft.com/zh-cn/library/azure/mt269418.aspx)，以通过 Azure 存储执行各种开发和管理任务。
 
@@ -106,7 +106,7 @@ Azure PowerShell 是一个模块，提供用于通过 Windows PowerShell 管理 
 	            Add-AzureAccount -Environment AzureChinaCloud
 	               Get-AzureSubscription | Format-Table SubscriptionName, IsDefault, IsCurrent, CurrentStorageAccountName
 
-        b.使用“1521”作为公用端口。 若要在 [Azure 门户预览](https://portal.azure.cn)中找到并复制订阅名称，请在左侧“中心”菜单中单击“订阅”。 复制在运行本指南中的脚本时要使用的订阅名称。
+        b.使用“1521”作为公用端口。 若要在 [Azure 门户](https://portal.azure.cn)中找到并复制订阅名称，请在左侧“中心”菜单中单击“订阅”。 复制在运行本指南中的脚本时要使用的订阅名称。
 
          ![Azure portal preview](./media/storage-powershell-guide-full/Subscription_Previewportal.png)
 
@@ -611,7 +611,7 @@ Azure 文件存储使用标准 SMB 协议为应用程序提供共享存储。 Az
 有关 Azure 文件存储的详细信息，请参阅[在 Windows 上开始使用 Azure 文件存储](/documentation/articles/storage-dotnet-how-to-use-files/)和[文件服务 REST API](http://msdn.microsoft.com/zh-cn/library/azure/dn167006.aspx)。
 
 ## <a name="how-to-set-and-query-storage-analytics"></a>如何设置和查询存储分析
-可使用 [Azure 存储分析](/documentation/articles/storage-analytics/)从 Azure 存储帐户收集度量值，并记录与发送到存储帐户的请求有关的数据。可以使用存储度量值监视存储帐户的运行状况，并使用存储日志记录诊断和解决与存储帐户有关的问题。可以使用 Azure 门户预览或 Windows PowerShell 配置监视，也可以使用存储客户端库以编程方式配置监视。存储日志记录在服务器端执行，可用于在存储帐户中记录成功和失败请求的相关详细信息。使用这些日志，可以查看针对表、队列和 Blob 的读取、写入和删除操作的详细信息，以及请求失败的原因。
+可使用 [Azure 存储分析](/documentation/articles/storage-analytics/)从 Azure 存储帐户收集度量值，并记录与发送到存储帐户的请求有关的数据。可以使用存储度量值监视存储帐户的运行状况，并使用存储日志记录诊断和解决与存储帐户有关的问题。可以使用 Azure 门户或 Windows PowerShell 配置监视，也可以使用存储客户端库以编程方式配置监视。存储日志记录在服务器端执行，可用于在存储帐户中记录成功和失败请求的相关详细信息。使用这些日志，可以查看针对表、队列和 Blob 的读取、写入和删除操作的详细信息，以及请求失败的原因。
 
 若要了解如何使用 PowerShell 启用和查看存储度量值数据，请参阅[如何使用 PowerShell 启用存储度量值](http://msdn.microsoft.com/zh-cn/library/azure/dn782843.aspx#HowtoenableStorageMetricsusingPowerShell)。
 

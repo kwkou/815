@@ -33,7 +33,7 @@
 
 -   使用寄送详细信息更新导入作业。
 
- 有关导入/导出服务的概述以及演示如何使用 [Azure 门户预览](https://portal.azure.cn/)创建和管理导入和导出作业的教程，请参阅 [使用 Azure 导入/导出服务将数据传输到 Blob 存储](/documentation/articles/storage-import-export-service/)。
+ 有关导入/导出服务的概述以及演示如何使用 [Azure 门户](https://portal.azure.cn/)创建和管理导入和导出作业的教程，请参阅 [使用 Azure 导入/导出服务将数据传输到 Blob 存储](/documentation/articles/storage-import-export-service/)。
 
 ## 使用 Azure 导入/导出工具准备驱动器
 
@@ -65,7 +65,7 @@
 
  遵循以下步骤获取寄送位置：
 
--   指定存储帐户位置的名称。可在 Azure 门户预览中存储帐户的“仪表板”上的“位置”字段下找到该值，或者使用服务管理 API 操作[获取存储帐户属性](https://docs.microsoft.com/zh-CN/rest/api/storagerp/storageaccounts#StorageAccounts_GetProperties)来查询该值。
+-   指定存储帐户位置的名称。可在 Azure 门户中存储帐户的“仪表板”上的“位置”字段下找到该值，或者使用服务管理 API 操作[获取存储帐户属性](https://docs.microsoft.com/zh-CN/rest/api/storagerp/storageaccounts#StorageAccounts_GetProperties)来查询该值。
 
 -   通过调用“`Get Location`”操作来检索可用于处理此存储帐户的位置。
 

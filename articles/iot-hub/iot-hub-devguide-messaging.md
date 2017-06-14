@@ -98,7 +98,7 @@ IoT 中心还支持用户管理内置设备到云接收终结点上的使用者�
 
 默认情况下，不显式匹配消息路由规则的所有消息都将写入到内置终结点。如果禁用此回退路由，将删除不显式匹配任何消息路由规则的消息。
 
-可以通过 [IoT 中心资源提供程序 REST API][lnk-resource-provider-apis] 以编程方式修改保留期时间，或使用 [Azure 门户预览][lnk-management-portal]进行修改。
+可以通过 [IoT 中心资源提供程序 REST API][lnk-resource-provider-apis] 以编程方式修改保留期时间，或使用 [Azure 门户][lnk-management-portal]进行修改。
 
 ### <a name="anti-spoofing-properties"></a> 反欺骗属性
 为了避免设备到云的消息中出现设备欺骗，IoT 中心使用以下属性在所有消息上加上戳记：

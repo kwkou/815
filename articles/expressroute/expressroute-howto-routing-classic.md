@@ -24,7 +24,7 @@
 
 # <a name="create-and-modify-peering-for-an-expressroute-circuit-classic"></a>创建和修改 ExpressRoute 线路的对等互连（经典）
 > [AZURE.SELECTOR]
-- [资源管理器 - Azure 门户预览](/documentation/articles/expressroute-howto-routing-portal-resource-manager/)
+- [资源管理器 - Azure 门户](/documentation/articles/expressroute-howto-routing-portal-resource-manager/)
 - [Resource Manager - PowerShell](/documentation/articles/expressroute-howto-routing-arm/)
 - [经典 - PowerShell](/documentation/articles/expressroute-howto-routing-classic/)
 

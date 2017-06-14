@@ -55,7 +55,7 @@
  
 ## 阶段 2：配置 SQL Server 计算机 (SQL1)
 
-从 Azure 门户预览启动 DC2 计算机（如果需要）。
+从 Azure 门户启动 DC2 计算机（如果需要）。
 
 接下来，在本地计算机上 Azure PowerShell 命令提示符下使用这些命令创建适用于 SQL1 的虚拟机。在运行这些命令之前，请填写变量值并删除 < 和 > 字符。
 
@@ -81,7 +81,7 @@
 	$vm=Set-AzureRMVMOSDisk -VM $vm -Name "OSDisk" -VhdUri $osDiskUri -CreateOption fromImage
 	New-AzureRMVM -ResourceGroupName $rgName -Location $locName -VM $vm
 
-在 Azure 门户预览中使用 SQL1 的本地管理员帐户连接到 SQL1。
+在 Azure 门户中使用 SQL1 的本地管理员帐户连接到 SQL1。
 
 接下来，配置 Windows 防火墙规则，允许基本的连接测试和 SQL Server 流量。在 SQL1 上管理员级 Windows PowerShell 命令提示符下运行这些命令。
 
@@ -117,7 +117,7 @@
 
 当系统提示为 **Add-Computer** 命令提供域帐户凭据时，请使用 CORP\\User1 帐户。
 
-重新启动后，在 Azure 门户预览中*使用 SQL1 的本地管理员帐户*连接到 SQL1。
+重新启动后，在 Azure 门户中*使用 SQL1 的本地管理员帐户*连接到 SQL1。
 
 接下来对 SQL Server 2014 进行配置，以便将 F: 驱动器用于新的数据库和用户帐户权限。
 
@@ -164,7 +164,7 @@
 	$vm=Set-AzureRMVMOSDisk -VM $vm -Name LOB1-TestVNET-OSDisk -VhdUri $osDiskUri -CreateOption fromImage
 	New-AzureRMVM -ResourceGroupName $rgName -Location $locName -VM $vm
 
-接下来，在 Azure 门户预览中使用 SQL1 的本地管理员帐户的凭据连接到 LOB1。
+接下来，在 Azure 门户中使用 SQL1 的本地管理员帐户的凭据连接到 LOB1。
 
 接下来，配置 Windows 防火墙规则，以允许进行基本的连接测试所需的流量。从 LOB1 上的管理员级 Windows PowerShell 命令提示符下运行这些命令。
 
@@ -180,7 +180,7 @@
 
 当系统提示为 **Add-Computer** 命令提供域帐户凭据时，请使用 CORP\\User1 帐户。
 
-重新启动后，在 Azure 门户预览中使用 CORP\\User1 帐户和密码连接到 LOB1。
+重新启动后，在 Azure 门户中使用 CORP\\User1 帐户和密码连接到 LOB1。
 
 接下来，为 IIS 配置 LOB1 并测试从 CLIENT1 进行的访问。
 
@@ -195,7 +195,7 @@
 9.	在“选择角色服务”页上，选择或清除测试 LOB 应用程序所需的服务的复选框，然后单击“下一步”。
 10.	在“确认安装选择”页上，单击“安装”。
 11.	等待直到组件安装完成，然后单击“关闭”。
-12.	在 Azure 门户预览中，使用 CORP\\User1 帐户凭据连接到 CLIENT1 计算机，然后启动 Internet Explorer。
+12.	在 Azure 门户中，使用 CORP\\User1 帐户凭据连接到 CLIENT1 计算机，然后启动 Internet Explorer。
 13.	在地址栏中，键入 **http://lob1/**，然后按 Enter。你会看到默认的 IIS 8 网页。
 
 这是你当前的配置。
@@ -206,6 +206,6 @@
 
 ## 后续步骤
 
-- 使用 [Azure 门户预览](/documentation/articles/virtual-machines-windows-hero-tutorial/)添加新虚拟机。
+- 使用 [Azure 门户](/documentation/articles/virtual-machines-windows-hero-tutorial/)添加新虚拟机。
 
 <!---HONumber=Mooncake_Quality_Review_1202_2016-->

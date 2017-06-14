@@ -63,7 +63,7 @@
     > [AZURE.NOTE]
     > 本文档假定你已创建存储帐户、blob 容器，并已将文件上传到该容器。
     > <p>
-    > 如果尚未创建存储帐户，可以通过 [Azure 门户预览](https://portal.azure.cn)创建该帐户。 然后可以使用实用工具（如 [Azure 存储资源管理器](http://storageexplorer.com/) ）在帐户中创建容器并将文件上载到该容器。
+    > 如果尚未创建存储帐户，可以通过 [Azure 门户](https://portal.azure.cn)创建该帐户。 然后可以使用实用工具（如 [Azure 存储资源管理器](http://storageexplorer.com/) ）在帐户中创建容器并将文件上载到该容器。
 
 ## <a name="create-a-cluster-using-the-script"></a>使用脚本创建群集。
 

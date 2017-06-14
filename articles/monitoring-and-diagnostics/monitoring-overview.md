@@ -75,7 +75,7 @@
 
 可视化方法包括：
 
-* 使用 Azure 门户预览
+* 使用 Azure 门户
 * 将数据路由到 Microsoft PowerBI
 * 将数据路由到第三方可视化工具，可以使用实时传送视频流，也可以让工具从 Azure 存储中的存档读取。
 
@@ -115,7 +115,7 @@
 ## <a name="methods-of-use"></a>使用方法
 一般情况下，可以使用下述方法之一操作数据的跟踪、路由和检索。 并非所有方法都适用于所有操作或数据类型。
 
-* [Azure 门户预览](https://portal.azure.cn)
+* [Azure 门户](https://portal.azure.cn)
 * [PowerShell](/documentation/articles/insights-powershell-samples/)  
 * [跨平台的命令行接口 (CLI)](/documentation/articles/insights-cli-samples/)
 * [REST API](https://msdn.microsoft.com/zh-cn/library/dn931943.aspx)

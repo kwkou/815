@@ -50,8 +50,8 @@
 
 建议首先查看涉及以下主题的教程、指南：
 
-- [在 Azure 门户预览中配置仅限云的虚拟网络](/documentation/articles/virtual-networks-create-vnet-classic-portal/)
-- [在 Azure 门户预览中配置站点到站点 VPN](/documentation/articles/vpn-gateway-site-to-site-create/)
+- [在 Azure 门户中配置仅限云的虚拟网络](/documentation/articles/virtual-networks-create-vnet-classic-portal/)
+- [在 Azure 门户中配置站点到站点 VPN](/documentation/articles/vpn-gateway-site-to-site-create/)
 - [在 Azure 虚拟网络中安装新的 Active Directory 林](/documentation/articles/active-directory-new-forest-virtual-machine/)
 - [在 Azure 上安装副本 Active Directory 域控制器 ](/documentation/articles/active-directory-install-replica-active-directory-domain-controller/)
 - [Azure IT Pro IaaS：(01) 虚拟机基础知识](https://channel9.msdn.com/Series/Windows-Azure-IT-Pro-IaaS/01)
@@ -62,7 +62,7 @@
 ### 可能需要向 Azure 虚拟机提供与本地企业网络的连接。
 将 Azure 虚拟机连回本地企业网络需要 Azure 虚拟网络，其中包括可无缝连接 Azure 虚拟机和本地虚拟机的站点到站点或站点到点虚拟专用网络 (VPN) 组件。此 VPN 组件还可使本地域成员计算机可访问在 Azure 虚拟机上独占托管其域控制器的 Windows Server Active Directory 域。但是，如果 VPN 失败，则依赖于 Windows Server Active Directory 的身份验证和其他操作也将失败，注意到这一点很重要。虽然用户也许能够使用现有缓存的凭据进行登录，但其票证尚未发出或已过时的所有对等或客户端对服务器身份验证尝试都将失败。
 
-请参阅[虚拟网络](/documentation/services/networking/)，观看演示视频并获得分步教程的列表，包括在 Azure 门户预览中[配置站点到站点 VPN](/documentation/articles/vpn-gateway-site-to-site-create/)。
+请参阅[虚拟网络](/documentation/services/networking/)，观看演示视频并获得分步教程的列表，包括在 Azure 门户中[配置站点到站点 VPN](/documentation/articles/vpn-gateway-site-to-site-create/)。
 
 > [AZURE.NOTE]
 也可以在未与本地网络连接的 Azure 虚拟网络上部署 Windows Server Active Directory。但是，本主题中的准则假设使用 Azure 虚拟网络，因为它提供对 Windows Server 至关重要的 IP 寻址功能。
@@ -124,7 +124,7 @@ Azure 也很适合替代其他情况下成本高昂的灾难恢复 (DR) 站点�
 ## 在 Azure 虚拟机上部署的 Windows Server Active Directory 域控制器与本地部署的域控制器之间的比较
 - 对于任何包括多个 VM 的 Windows Server Active Directory 部署方案，必须使用 Azure 虚拟网络以确保 IP 地址一致。请注意，本指南假设 DC 在 Azure 虚拟网络上运行。
 - 就本地 DC 来说，建议使用静态 IP 地址。静态 IP 地址只能使用 Azure PowerShell 配置。有关详细信息，请参阅 [Static internal IP address for VMs](http://azure.microsoft.com/blog/static-internal-ip-address-for-virtual-machines/)（VM 的静态内部 IP 地址）。如果你使用监视系统或其他解决方案来检查来宾操作系统中的静态 IP 地址配置，则可以为 VM 的网络适配器属性分配同一静态 IP 地址。但请注意，如果 VM 正在进行服务修复或已在经典管理门户中关闭并且其地址已解除分配，则该网络适配器将被放弃。在这种情况下，需要重置来宾中的静态 IP 地址。
-- 在虚拟网络上部署 VM 并不意味着（或要求）连回本地网络；虚拟网络仅产生这种可能性。必须创建一个虚拟网络，供 Azure 与本地网络之间进行专用通信。需要在本地网络上部署 VPN 终结点。打开的 VPN 从 Azure 通向本地网络。有关详细信息，请参阅 [Virtual Network Overview](/documentation/articles/virtual-networks-overview/)（虚拟网络概述）和 [Configure a Site-to-Site VPN in the Azure Portal](/documentation/articles/vpn-gateway-site-to-site-create/)（在 Azure 门户预览中配置站点到站点 VPN）。
+- 在虚拟网络上部署 VM 并不意味着（或要求）连回本地网络；虚拟网络仅产生这种可能性。必须创建一个虚拟网络，供 Azure 与本地网络之间进行专用通信。需要在本地网络上部署 VPN 终结点。打开的 VPN 从 Azure 通向本地网络。有关详细信息，请参阅 [Virtual Network Overview](/documentation/articles/virtual-networks-overview/)（虚拟网络概述）和 [Configure a Site-to-Site VPN in the Azure Portal](/documentation/articles/vpn-gateway-site-to-site-create/)（在 Azure 门户中配置站点到站点 VPN）。
 
 	> [AZURE.NOTE]
 	有一个[创建点到站点 VPN](/documentation/articles/vpn-gateway-howto-point-to-site-classic-azure-portal/) 的选项可将单独的基于 Windows 的计算机直接连接到 Azure 虚拟网络。

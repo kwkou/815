@@ -29,7 +29,7 @@
 > [AZURE.NOTE]
 若要使用 Azure CLI 2.0 创建 VM，请参阅[使用 Azure CLI 创建 VM](/documentation/articles/virtual-machines-linux-quick-create-cli/)。
 
-也可以使用 [Azure 门户预览](/documentation/articles/virtual-machines-linux-quick-create-portal/)快速部署 Linux VM。
+也可以使用 [Azure 门户](/documentation/articles/virtual-machines-linux-quick-create-portal/)快速部署 Linux VM。
 
 本文需要 [SSH 公钥和私钥文件](/documentation/articles/virtual-machines-linux-mac-create-ssh-keys/)。
 

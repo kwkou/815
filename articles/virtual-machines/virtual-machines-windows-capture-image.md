@@ -44,7 +44,7 @@
 
         Stop-AzureRmVM -ResourceGroupName <resourceGroup> -Name <vmName>
 
-    Azure 门户预览中该 VM 的“状态”将从“已停止”更改为“已停止(已解除分配)”。
+    Azure 门户中该 VM 的“状态”将从“已停止”更改为“已停止(已解除分配)”。
 2. 将虚拟机的状态设置为“通用化”。
 
         Set-AzureRmVm -ResourceGroupName <resourceGroup> -Name <vmName> -Generalized

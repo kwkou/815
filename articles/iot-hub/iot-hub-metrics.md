@@ -24,7 +24,7 @@
 # <a name="understand-iot-hub-metrics"></a>了解 IoT 中心指标
 IoT 中心度量值提供更棒的数据，清晰显示 Azure 订阅中的 Azure IoT 资源状态。 通过 IoT 中心度量值，可评估 IoT 中心服务及其所连接的设备的总体运行状况。 面向用户的统计信息非常重要，因为它们可以帮助了解 IoT 中心的情况，并可以帮助在不联系 Azure 支持人员的情况下解决根本问题。
 
-默认启用度量值。可在 Azure 门户预览中查看 IoT 中心度量值。
+默认启用度量值。可在 Azure 门户中查看 IoT 中心度量值。
 
 ## <a name="how-to-view-iot-hub-metrics"></a>如何查看 IoT 中心度量值
 1. 创建 IoT 中心。有关如何创建 IoT 中心的说明，请参阅[入门][lnk-get-started]指南。

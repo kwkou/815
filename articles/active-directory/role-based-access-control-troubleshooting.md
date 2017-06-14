@@ -20,7 +20,7 @@
 
 # 基于角色的访问控制故障排除
 
-本文回答有关使用角色授予的特定访问权限的常见问题，以便你了解在 Azure 门户预览中使用角色时可以预期什么，并可以排查访问权限问题。以下三种角色涵盖所有资源类型：
+本文回答有关使用角色授予的特定访问权限的常见问题，以便你了解在 Azure 门户中使用角色时可以预期什么，并可以排查访问权限问题。以下三种角色涵盖所有资源类型：
 
 - 所有者
 - 参与者
@@ -50,7 +50,7 @@
 
 ![Web 应用程序资源组](./media/role-based-access-control-troubleshooting/website-resource-model.png)
 
-因此，如果你只授予某人对 Web 应用的访问权限，则 Azure 门户预览中的网站边栏选项卡上的很多功能将被禁用。
+因此，如果你只授予某人对 Web 应用的访问权限，则 Azure 门户中的网站边栏选项卡上的很多功能将被禁用。
 
 这些项需要对与网站对应的 **App Service 计划**具有**写**访问权限：
 
@@ -87,7 +87,7 @@
 如果你不能访问以上任何磁贴，则需要让管理员为你提供对资源组的“参与者”访问权限。
 
 ## 另请参阅
-- [基于角色的访问控制](/documentation/articles/role-based-access-control-configure/)：Azure 门户预览中的 RBAC 入门。
+- [基于角色的访问控制](/documentation/articles/role-based-access-control-configure/)：Azure 门户中的 RBAC 入门。
 - [内置角色](/documentation/articles/role-based-access-built-in-roles/)：获取有关 RBAC 中的标准角色的详细信息。
 - [Azure RBAC 中的自定义角色](/documentation/articles/role-based-access-control-custom-roles/)：了解如何创建自定义角色，以满足访问需要。
 - [创建访问权限更改历史记录报告](/documentation/articles/role-based-access-control-access-change-history-report/)：记录 RBAC 中的角色分配更改。

@@ -10,7 +10,7 @@
 > * Azure 远程桌面扩展
 > * Azure 日志收集器
 >
-> 部署更新的角色以后，即可通过 Azure 门户预览或 PowerShell 重新启用扩展。
+> 部署更新的角色以后，即可通过 Azure 门户或 PowerShell 重新启用扩展。
 >
 
 <!---HONumber=Mooncake_0320_2017-->

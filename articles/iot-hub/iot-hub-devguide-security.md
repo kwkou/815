@@ -40,7 +40,7 @@
 ## <a name="access-control-and-permissions"></a> 访问控制和权限
 可以通过以下方式授予[权限](#iot-hub-permissions)：
 
-* **IoT 中心级别的共享访问策略**。共享访问策略可以授予任意[权限](#iot-hub-permissions)组合。可以在 [Azure 门户预览][lnk-management-portal]中定义策略，或使用 [IoT 中心资源提供程序 REST API][lnk-resource-provider-apis] 以编程方式定义策略。新建的 IoT 中心有以下默认策略：
+* **IoT 中心级别的共享访问策略**。共享访问策略可以授予任意[权限](#iot-hub-permissions)组合。可以在 [Azure 门户][lnk-management-portal]中定义策略，或使用 [IoT 中心资源提供程序 REST API][lnk-resource-provider-apis] 以编程方式定义策略。新建的 IoT 中心有以下默认策略：
   
   * **iothubowner**：包含所有权限的策略。
   * **service**：包含 **ServiceConnect** 权限的策略。
@@ -350,7 +350,7 @@ IoT 中心还允许设备使用 [X.509 证书][lnk-x509]向 IoT 中心进行身�
 
 下面是令牌服务模式的主要步骤：
 
-1. 为 IoT 中心创建包含 **DeviceConnect** 权限的 IoT 中心共享访问策略。可以在 [Azure 门户预览][lnk-management-portal]中或以编程方式创建此策略。令牌服务使用此策略为它创建的令牌签名。
+1. 为 IoT 中心创建包含 **DeviceConnect** 权限的 IoT 中心共享访问策略。可以在 [Azure 门户][lnk-management-portal]中或以编程方式创建此策略。令牌服务使用此策略为它创建的令牌签名。
 2. 当设备需要访问 IoT 中心时，将向令牌服务请求已签名的令牌。设备可使用自定义标识注册表/身份验证方案进行身份验证，确定令牌服务用于创建令牌的设备标识。
 3. 令牌服务返回令牌。使用 `/devices/{deviceId}` 作为 `resourceURI`、使用 `deviceId` 作为所要进行身份验证的设备创建令牌。令牌服务使用共享访问策略来构造令牌。
 4. 设备直接通过 IoT 中心使用令牌。

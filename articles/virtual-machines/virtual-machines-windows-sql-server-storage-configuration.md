@@ -35,7 +35,7 @@
 ## 新的 VM
 以下部分介绍了如何为新的 SQL Server 虚拟机配置存储。
 
-### Azure 门户预览
+### Azure 门户
 使用 SQL Server 库映像预配 Azure VM 时，可以选择自动为新的 VM 配置存储。可以指定存储大小、性能限制和工作负荷类型。以下屏幕截图显示了在预配 SQL VM 期间使用的“存储配置”边栏选项卡。
 
 ![预配期间的 SQL Server VM 存储配置](./media/virtual-machines-windows-sql-storage-configuration/sql-vm-storage-configuration-provisioning.png)
@@ -48,7 +48,7 @@
 * 将存储池与虚拟机上的新驱动器相关联。
 * 根据指定的工作负荷类型（“数据仓库”、“事务处理”或“常规”）优化新驱动器。
 
-有关 Azure 如何配置存储设置的详细信息，请参阅[存储配置部分](#storage-configuration)。有关如何在 Azure 门户预览中创建 SQL Server VM 的完整演练，请参阅[预配教程](/documentation/articles/virtual-machines-windows-portal-sql-server-provision/)。
+有关 Azure 如何配置存储设置的详细信息，请参阅[存储配置部分](#storage-configuration)。有关如何在 Azure 门户中创建 SQL Server VM 的完整演练，请参阅[预配教程](/documentation/articles/virtual-machines-windows-portal-sql-server-provision/)。
 
 ### Resource Manager 模板
 如果使用以下 Resource Manager 模板，则会默认附加两个不带存储池配置的高级数据磁盘。但是，可以自定义这些模板，更改附加到虚拟机的高级数据磁盘的数目。
@@ -58,7 +58,7 @@
 * [使用 AKV 集成创建 VM](https://github.com/Azure/azure-quickstart-templates/tree/master/201-vm-sql-full-keyvault)
 
 ## 现有 VM
-对于现有 SQL Server VM，可在 Azure 门户预览中修改某些存储设置。选择 VM，转到“设置”区域，然后选择“SQL Server 配置”。“SQL Server 配置”边栏选项卡显示了 VM 当前的存储用量。此图显示了 VM 上存在的所有驱动器。每个驱动器的存储空间都分四个部分显示：
+对于现有 SQL Server VM，可在 Azure 门户中修改某些存储设置。选择 VM，转到“设置”区域，然后选择“SQL Server 配置”。“SQL Server 配置”边栏选项卡显示了 VM 当前的存储用量。此图显示了 VM 上存在的所有驱动器。每个驱动器的存储空间都分四个部分显示：
 
 * SQL 数据
 * SQL 日志
@@ -100,7 +100,7 @@ Azure 将根据规范创建新驱动器。在此方案中，Azure 将执行以�
 
 
 ## <a name="storage-configuration"></a> 存储配置
-本部分提供相关参考，让你了解在 Azure 门户预览中预配或配置 SQL VM 期间，Azure 自动执行哪些存储配置更改。
+本部分提供相关参考，让你了解在 Azure 门户中预配或配置 SQL VM 期间，Azure 自动执行哪些存储配置更改。
 
 * 如果为 VM 选择的存储小于 2 TB，Azure 不会创建存储池。
 * 如果为 VM 选择了至少 2 TB 的存储，则 Azure 将配置存储池。本主题的下一部分提供了存储池配置详细信息。

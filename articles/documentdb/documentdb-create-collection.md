@@ -22,8 +22,8 @@
     ms.contentlocale="zh-cn"
     ms.lasthandoff="05/19/2017" />
 
-# <a name="how-to-create-an-azure-documentdb-collection-and-database-using-the-azure-portal"></a>如何使用 Azure 门户预览创建 DocumentDB 集合和数据库
-若要使用 DocumentDB，必须拥有 [DocumentDB 帐户](/documentation/articles/documentdb-create-account/)、数据库、集合和文档。 本主题说明如何在 Azure 门户预览中创建 DocumentDB 集合。
+# <a name="how-to-create-an-azure-documentdb-collection-and-database-using-the-azure-portal"></a>如何使用 Azure 门户创建 DocumentDB 集合和数据库
+若要使用 DocumentDB，必须拥有 [DocumentDB 帐户](/documentation/articles/documentdb-create-account/)、数据库、集合和文档。 本主题说明如何在 Azure 门户中创建 DocumentDB 集合。
 
 不确定集合是什么？ 请参阅[什么是 DocumentDB 集合？](#what-is-a-documentdb-collection)。
 
@@ -31,7 +31,7 @@
 
 ## <a name="create-a-colletion-using-add-collection-button"></a>使用“添加集合”按钮创建集合
 
-1. 在 [Azure 门户预览](https://portal.azure.cn/)的跳转栏中，单击“DocumentDB”，然后在“DocumentDB”边栏选项卡中，选择要添加集合的帐户。 如果没有任何列出的帐户，则需[创建一个 DocumentDB 帐户](/documentation/articles/documentdb-create-account/)。
+1. 在 [Azure 门户](https://portal.azure.cn/)的跳转栏中，单击“DocumentDB”，然后在“DocumentDB”边栏选项卡中，选择要添加集合的帐户。 如果没有任何列出的帐户，则需[创建一个 DocumentDB 帐户](/documentation/articles/documentdb-create-account/)。
 
 	![屏幕截图：突出显示跳转栏中的“DocumentDB 帐户”、“DocumentDB 帐户”边栏选项卡中的帐户以及“DocumentDB 帐户”边栏选项卡上的“数据库”可重用功能区中的数据库](./media/documentdb-create-collection/docdb-database-creation-1-2.png)
 
@@ -41,7 +41,7 @@
     ![屏幕截图：突出显示跳转栏中的“DocumentDB 帐户”、“DocumentDB 帐户”边栏选项卡中的帐户以及“DocumentDB 帐户”边栏选项卡上的“数据库”可重用功能区中的数据库](./media/documentdb-create-collection/docdb-database-creation-3.png)
 3. 在“添加集合”边栏选项卡的“集合 ID”框中，输入新集合的 ID。 `/ \ # ?` 或尾随空格。 对名称进行验证后，ID 框中会出现一个绿色的复选标记。
 
-    ![屏幕截图：突出显示“数据库”边栏选项卡上的“添加集合”按钮、“添加集合”边栏选项卡上的设置以及“确定”按钮 - 用于 DocumentDB 的 Azure 门户预览 - 用于 NoSQL JSON 数据库的云端数据库创建程序](./media/documentdb-create-collection/docdb-collection-creation-5-8.png)
+    ![屏幕截图：突出显示“数据库”边栏选项卡上的“添加集合”按钮、“添加集合”边栏选项卡上的设置以及“确定”按钮 - 用于 DocumentDB 的 Azure 门户 - 用于 NoSQL JSON 数据库的云端数据库创建程序](./media/documentdb-create-collection/docdb-collection-creation-5-8.png)
 4. 为了处理已分区集合，“存储容量”默认设置为“无限”。
 
     如果需要[单分区集合](/documentation/articles/documentdb-partition-data/#single-partition-and-partitioned-collections/)，且吞吐量级别为 400-10,000 请求单位/秒（RU/秒），则将存储容量设置为“10 GB”。 一个 RU 相当于读取 1KB 文档的吞吐量。 有关请求单位的详细信息，请参阅[请求单位](/documentation/articles/documentdb-request-units/)。
@@ -55,7 +55,7 @@
 8. 单击屏幕底部的“确定”，以创建新的集合。
 9. 新集合现在会出现在“概览”边栏选项卡上的“集合”可重用功能区中。
 
-    ![屏幕截图：“数据库”边栏选项卡中的新集合 - 用于 DocumentDB 的 Azure 门户预览 - 用于 NoSQL JSON 数据库的云端数据库创建程序](./media/documentdb-create-collection/docdb-collection-creation-9.png)
+    ![屏幕截图：“数据库”边栏选项卡中的新集合 - 用于 DocumentDB 的 Azure 门户 - 用于 NoSQL JSON 数据库的云端数据库创建程序](./media/documentdb-create-collection/docdb-collection-creation-9.png)
 10. **可选：**若要在门户中修改集合的吞吐量，请在“资源”菜单上单击“缩放”。
 
     ![资源菜单的屏幕截图，其中已选择“缩放”](./media/documentdb-create-collection/docdb-collection-creation-scale.png)
@@ -83,7 +83,7 @@ DocumentDB 通过分区方式自动将集合分配到一个或多个物理服务
 - 有关 REST API 示例，请参阅 [Create a Collection](https://msdn.microsoft.com/zh-cn/library/azure/mt489078.aspx)（创建集合）。
 
 ## <a name="troubleshooting"></a>故障排除
-如果 Azure 门户预览中的“添加集合”被禁用，则表明你的帐户当前已被禁用，这种情况通常会在当月的所有权益信用额度都用完时发生。    
+如果 Azure 门户中的“添加集合”被禁用，则表明你的帐户当前已被禁用，这种情况通常会在当月的所有权益信用额度都用完时发生。    
 
 ## <a name="next-steps"></a>后续步骤
 现在，你已有了集合，下一步是将文档添加或导入到集合中。 向集合添加文档时，你有以下几种选择：

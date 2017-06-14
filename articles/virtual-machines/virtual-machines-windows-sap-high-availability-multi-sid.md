@@ -605,9 +605,9 @@
     Write-Host "Succesfully added new IP '$ILBIP' to the internal load balancer '$ILBName'!" -ForegroundColor Green
 
 
-运行脚本后，结果将在 Azure 门户预览中显示，如下面的屏幕截图所示：
+运行脚本后，结果将在 Azure 门户中显示，如下面的屏幕截图所示：
 
-![Azure 门户预览中的新前端 IP 池][sap-ha-guide-figure-6005]
+![Azure 门户中的新前端 IP 池][sap-ha-guide-figure-6005]
 
 ### <a name="add-disks-to-cluster-machines-and-configure-the-sios-cluster-share-disk"></a>将磁盘添加到群集计算机并配置 SIOS 群集共享磁盘
 

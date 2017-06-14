@@ -34,7 +34,7 @@
 请在完成本文任何部分中的任何步骤之前完成以下任务：
 
 - 查看 [Azure 限制](/documentation/articles/azure-subscription-service-limits/#azure-resource-manager-virtual-networking-limits)一文，了解对公共和专用 IP 地址的限制。
-- 使用 Azure 帐户登录到 Azure 门户预览、Azure 命令行界面 (CLI) 或 Azure PowerShell。 如果还没有 Azure 帐户，请注册一个[试用帐户](/pricing/1rmb-trial)。
+- 使用 Azure 帐户登录到 Azure 门户、Azure 命令行界面 (CLI) 或 Azure PowerShell。 如果还没有 Azure 帐户，请注册一个[试用帐户](/pricing/1rmb-trial)。
 - 如果使用 PowerShell 命令完成本文中的任务，请按[如何安装和配置 Azure PowerShell](https://docs.microsoft.com/zh-cn/powershell/azureps-cmdlets-docs) 一文中的步骤安装和配置 Azure PowerShell。 确保已安装最新版本的 Azure PowerShell cmdlet。 若要获取 PowerShell 命令的帮助和示例，请键入 `get-help <command> -full`。
 - 如果使用 Azure 命令行接口 (CLI) 命令完成本文中的任务，请按[如何安装和配置 Azure CLI](https://docs.microsoft.com/zh-cn/cli/azure/install-azure-cli) 一文中的步骤安装和配置 Azure CLI。 确保已安装最新版本的 Azure CLI。 若要获取 CLI 命令的帮助，请键入 `az <command> --help`。
 
@@ -59,8 +59,8 @@ IP 地址分配给 IP 配置。 始终为 NIC 分配一个**主** IP 配置，�
 
 可将任意数量的 IP 地址添加到 NIC，只要不超过 [Azure 限制](/documentation/articles/azure-subscription-service-limits/#azure-resource-manager-virtual-networking-limits)一文中所列的限制即可。
 
-1. 使用已分配订阅的“网络参与者”角色权限（最低权限）的帐户登录到 [Azure 门户预览](https://portal.azure.cn)。 请参阅[用于 Azure 基于角色的访问控制的内置角色](/documentation/articles/role-based-access-built-in-roles/#network-contributor)一文，详细了解如何将角色和权限分配给帐户。
-2. 在 Azure 门户预览顶部包含“搜索资源”文本的框中，键入“网络接口”。 在搜索结果中出现“网络接口”  时，单击该接口。
+1. 使用已分配订阅的“网络参与者”角色权限（最低权限）的帐户登录到 [Azure 门户](https://portal.azure.cn)。 请参阅[用于 Azure 基于角色的访问控制的内置角色](/documentation/articles/role-based-access-built-in-roles/#network-contributor)一文，详细了解如何将角色和权限分配给帐户。
+2. 在 Azure 门户顶部包含“搜索资源”文本的框中，键入“网络接口”。 在搜索结果中出现“网络接口”  时，单击该接口。
 3. 在显示的“网络接口”边栏选项卡中，单击要为其添加 IP 地址的 NIC。
 4. 在所选 NIC 的边栏选项卡的“设置”部分，单击“IP 配置”。
 5. 在打开的 IP 配置边栏选项卡中单击“+ 添加”。
@@ -85,8 +85,8 @@ IP 地址分配给 IP 配置。 始终为 NIC 分配一个**主** IP 配置，�
 
 可能需要更改 IP 地址的分配方法、更改静态 IP 地址，或者更改分配到 NIC 的公共 IP 地址。 如果要更改与 VM 中的辅助 NIC关联的辅助 IP 配置的专用 IP 地址（有关详细信息，请参阅[主 NIC 和辅助 NIC](/documentation/articles/virtual-network-network-interface-vm/#about)），请将该 VM 置于“已停止”（“已解除分配”）状态，然后再完成以下步骤： 
 
-1. 使用已分配订阅的“网络参与者”角色权限（最低权限）的帐户登录到 [Azure 门户预览](https://portal.azure.cn)。 请参阅[用于 Azure 基于角色的访问控制的内置角色](/documentation/articles/role-based-access-built-in-roles/#network-contributor)一文，详细了解如何将角色和权限分配给帐户。
-2. 在 Azure 门户预览顶部包含“搜索资源”文本的框中，键入“网络接口”。 在搜索结果中出现“网络接口”  时，单击该接口。
+1. 使用已分配订阅的“网络参与者”角色权限（最低权限）的帐户登录到 [Azure 门户](https://portal.azure.cn)。 请参阅[用于 Azure 基于角色的访问控制的内置角色](/documentation/articles/role-based-access-built-in-roles/#network-contributor)一文，详细了解如何将角色和权限分配给帐户。
+2. 在 Azure 门户顶部包含“搜索资源”文本的框中，键入“网络接口”。 在搜索结果中出现“网络接口”  时，单击该接口。
 3. 在显示的“网络接口”边栏选项卡中，单击想要查看或更改其 IP 地址设置的 NIC。
 4. 在所选 NIC 的边栏选项卡的“设置”部分，单击“IP 配置”。
 5. 在打开的 IP 配置边栏选项卡上显示的列表中，单击要修改的 IP 配置。
@@ -106,8 +106,8 @@ IP 地址分配给 IP 配置。 始终为 NIC 分配一个**主** IP 配置，�
 
 可以从 NIC 中删除专用和公共 IP 地址，但 NIC 必须始终有一个分配的专用 IP 地址。
 
-1. 使用已分配订阅的“网络参与者”角色权限（最低权限）的帐户登录到 [Azure 门户预览](https://portal.azure.cn)。 请参阅[用于 Azure 基于角色的访问控制的内置角色](/documentation/articles/role-based-access-built-in-roles/#network-contributor)一文，详细了解如何将角色和权限分配给帐户。
-2. 在 Azure 门户预览顶部包含“搜索资源”文本的框中，键入“网络接口”。 在搜索结果中出现“网络接口”  时，单击该接口。
+1. 使用已分配订阅的“网络参与者”角色权限（最低权限）的帐户登录到 [Azure 门户](https://portal.azure.cn)。 请参阅[用于 Azure 基于角色的访问控制的内置角色](/documentation/articles/role-based-access-built-in-roles/#network-contributor)一文，详细了解如何将角色和权限分配给帐户。
+2. 在 Azure 门户顶部包含“搜索资源”文本的框中，键入“网络接口”。 在搜索结果中出现“网络接口”  时，单击该接口。
 3. 在显示的“网络接口”边栏选项卡中，单击要从其删除 IP 地址的 NIC。
 4. 在所选 NIC 的边栏选项卡的“设置”部分，单击“IP 配置”。
 5. 右键单击要删除的辅助 IP 配置（不能删除主配置），单击“删除”，然后单击“是”确认删除。 如果该配置关联了公共 IP 地址资源，则该资源将从 IP 配置中分离，但不会被删除。

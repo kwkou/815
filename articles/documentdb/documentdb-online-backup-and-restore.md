@@ -61,6 +61,6 @@ DocumentDB 旨在实现数据[全局分布](/documentation/articles/documentdb-d
 
 若要在多个数据中心复制数据库，请参阅[使用 DocumentDB 全局分配数据](/documentation/articles/documentdb-distribute-data-globally/)。 
 
-若要联系 Azure 支持，请 [从 Azure 门户预览开具票证](https://portal.azure.cn/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade)。
+若要联系 Azure 支持，请 [从 Azure 门户开具票证](https://portal.azure.cn/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade)。
 
 <!---Update_Description: wording update -->

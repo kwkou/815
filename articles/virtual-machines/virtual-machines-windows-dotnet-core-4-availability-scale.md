@@ -53,7 +53,7 @@
         "id": "[resourceId('Microsoft.Compute/availabilitySets', variables('availabilitySetName'))]"
       }
 
-Azure 门户预览中显示的可用性集。下面说明了每个虚拟机及其配置的详细信息。
+Azure 门户中显示的可用性集。下面说明了每个虚拟机及其配置的详细信息。
 
 ![可用性集](./media/virtual-machines-windows-dotnet-core/ase-win.png)  
 
@@ -91,7 +91,7 @@ Azure 门户预览中显示的可用性集。下面说明了每个虚拟机及�
       }
     ]
 
-在 Azure 门户预览中，网络负载均衡器概述显示了与公共 IP 地址的关联。
+在 Azure 门户中，网络负载均衡器概述显示了与公共 IP 地址的关联。
 
 ![网络负载均衡器](./media/virtual-machines-windows-dotnet-core/nlb-win.png)  
 
@@ -145,7 +145,7 @@ Azure 门户预览中显示的可用性集。下面说明了每个虚拟机及�
       }
     ]
 
-Azure 门户预览中显示的负载均衡器探测。
+Azure 门户中显示的负载均衡器探测。
 
 ![网络负载均衡器探测](./media/virtual-machines-windows-dotnet-core/lbprobe-win.png)  
 
@@ -183,7 +183,7 @@ Azure 门户预览中显示的负载均衡器探测。
       }
     }
 
-Azure 门户预览中显示的一个示例入站 NAT 规则。在部署中为每个虚拟机创建一个 RDP NAT 规则。
+Azure 门户中显示的一个示例入站 NAT 规则。在部署中为每个虚拟机创建一个 RDP NAT 规则。
 
 ![入站 NAT 规则](./media/virtual-machines-windows-dotnet-core/natrule-win.png)  
 

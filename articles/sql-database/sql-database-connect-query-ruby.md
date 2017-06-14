@@ -56,9 +56,9 @@
 
 ## <a name="get-connection-information"></a>获取连接信息
 
-在 Azure 门户预览中获取连接字符串。 请使用连接字符串连接到 Azure SQL 数据库。
+在 Azure 门户中获取连接字符串。 请使用连接字符串连接到 Azure SQL 数据库。
 
-1. 登录到 [Azure 门户预览](https://portal.azure.cn/)。
+1. 登录到 [Azure 门户](https://portal.azure.cn/)。
 2. 从左侧菜单中选择“SQL 数据库”，然后单击“SQL 数据库”页上的数据库。 
 3. 在数据库的“概要”窗格中，查看完全限定的服务器名称。
 

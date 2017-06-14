@@ -147,9 +147,9 @@ Azure 存储帐户容量最多为 4.75 TB，而单个 Blob（从 HDInsight 角�
 
     帐户名称是 Azure 存储帐户的名称，容器名称是作为群集存储的根的 Blob 容器。
 
-也可使用 Azure 门户预览按照以下步骤查找存储信息：
+也可使用 Azure 门户按照以下步骤查找存储信息：
 
-1. 在 [Azure 门户预览](https://portal.azure.cn/)中，选择 HDInsight 群集。
+1. 在 [Azure 门户](https://portal.azure.cn/)中，选择 HDInsight 群集。
 
 2. 在“属性”部分中，选择“存储帐户”。 将显示群集的存储信息。
 
@@ -205,7 +205,7 @@ Azure 存储帐户容量最多为 4.75 TB，而单个 Blob（从 HDInsight 角�
 
 有关缩放 HDInsight 群集的特定信息，请参阅：
 
-* [使用 Azure 门户预览管理 HDInsight 中的 Hadoop 群集](/documentation/articles/hdinsight-administer-use-portal-linux/#scale-clusters)
+* [使用 Azure 门户管理 HDInsight 中的 Hadoop 群集](/documentation/articles/hdinsight-administer-use-portal-linux/#scale-clusters)
 * [使用 Azure PowerShell 管理 HDInsight 中的 Hadoop 群集](/documentation/articles/hdinsight-administer-use-command-line/#scale-clusters)
 
 ## <a name="how-do-i-install-hue-or-other-hadoop-component"></a>如何安装 Hue（或其他 Hadoop 组件）？

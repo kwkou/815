@@ -34,7 +34,7 @@
 > 
 
 ## <a name="scalingstandard" id="scalingsharedorbasic"></a>增加定价层
-1. 在浏览器中，打开 [Azure 门户预览][portal]。
+1. 在浏览器中，打开 [Azure 门户][portal]。
 2. 在应用的边栏选项卡中，单击“所有设置”，然后单击“增加”。
    
     ![导航到增加 Azure 应用。][ChooseWHP]

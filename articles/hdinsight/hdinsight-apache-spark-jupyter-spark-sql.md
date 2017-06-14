@@ -39,7 +39,7 @@
 
 在本部分，你将使用 [Azure Resource Manager 模板](https://github.com/Azure/azure-quickstart-templates/tree/master/101-hdinsight-spark-linux/)创建 HDInsight Spark 群集。 有关其他群集创建方法，请参阅[创建 HDInsight 群集](/documentation/articles/hdinsight-hadoop-provision-linux-clusters/)。
 
-1. 单击下面的图像可在 Azure 门户预览中打开模板。         
+1. 单击下面的图像可在 Azure 门户中打开模板。         
 
     <a href="https://portal.azure.cn/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-hdinsight-spark-linux%2Fazuredeploy.json" target="_blank"><img src="./media/hdinsight-apache-spark-jupyter-spark-sql/deploy-to-azure.png" alt="Deploy to Azure"></a>
 
@@ -81,7 +81,7 @@
 
 ### <a name="create-jupyter-notebook-with-pyspark-kernel"></a>使用 PySpark 内核创建 Jupyter 笔记本
 
-1. 打开 [Azure 门户预览](https://portal.azure.cn/)。
+1. 打开 [Azure 门户](https://portal.azure.cn/)。
 
 2. 如果选择将群集固定到仪表板，请单击仪表板中的“群集”磁贴，启动“群集”边栏选项卡。
 

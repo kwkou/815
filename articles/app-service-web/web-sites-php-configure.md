@@ -29,8 +29,8 @@
 
 PHP 5.6 和 PHP 7.0 也可用，但它们在默认情况下不启用。若要更新 PHP 版本，请使用下列方法之一：
 
-### Azure 门户预览
-1. 在 [Azure 门户预览](https://portal.azure.cn)中浏览到 Web 应用，然后单击“设置”按钮。
+### Azure 门户
+1. 在 [Azure 门户](https://portal.azure.cn)中浏览到 Web 应用，然后单击“设置”按钮。
    
     ![Web 应用设置][settings-button]  
 
@@ -124,7 +124,7 @@ PHP 5.6 和 PHP 7.0 也可用，但它们在默认情况下不启用。若要更
 1. 将 `bin` 目录添加到根目录。
 2. 将 `.dll` 扩展文件放在 `bin` 目录中（例如 `php_xdebug.dll`）。确保扩展与默认版本的 PHP 兼容，并且是 VC9 版本且与非线程安全 (nts) 兼容。
 3. 部署 Web 应用。
-4. 在 Azure 门户预览中浏览到 Web 应用，然后单击“设置”按钮。
+4. 在 Azure 门户中浏览到 Web 应用，然后单击“设置”按钮。
    
     ![Web 应用设置][settings-button]  
 
@@ -146,7 +146,7 @@ PHP 5.6 和 PHP 7.0 也可用，但它们在默认情况下不启用。若要更
 3. （可选）将扩展添加到 PHP 运行时并在 `php.ini` 文件中启用这些扩展。
 4. 将 `bin` 目录添加到根目录，并将包含 PHP 运行时的目录置于该目录中（例如 `bin\php`）。
 5. 部署 Web 应用。
-6. 在 Azure 门户预览中浏览到 Web 应用，然后单击“设置”按钮。
+6. 在 Azure 门户中浏览到 Web 应用，然后单击“设置”按钮。
    
     ![Web 应用设置][settings-button]  
 
@@ -166,9 +166,9 @@ PHP 5.6 和 PHP 7.0 也可用，但它们在默认情况下不启用。若要更
 > 
 > 
 
-1. 在 [Azure 门户预览](https://portal.azure.cn)的 PHP Web 应用的边栏选项卡中，单击“工具”>“扩展”。
+1. 在 [Azure 门户](https://portal.azure.cn)的 PHP Web 应用的边栏选项卡中，单击“工具”>“扩展”。
    
-    ![Azure 门户预览设置边栏选项卡，用于在 Azure 中启用编辑器自动化](./media/web-sites-php-configure/composer-extension-settings.png)  
+    ![Azure 门户设置边栏选项卡，用于在 Azure 中启用编辑器自动化](./media/web-sites-php-configure/composer-extension-settings.png)  
 
 2. 单击“添加”，然后单击“编辑器”。
    

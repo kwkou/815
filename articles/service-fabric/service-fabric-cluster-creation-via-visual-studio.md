@@ -129,7 +129,7 @@ Visual Studio Service Fabric Resource Manager 模板将创建一个受证书保�
 > 
 > 
 
-如果出现任何错误，请转到 [Azure 门户预览](https://portal.azure.cn/)并打开已部署到的资源组。 单击“**所有设置**”，然后单击“设置”边栏选项卡上的“**部署**”。 失败的资源组部署会在那里留下详细的诊断信息。
+如果出现任何错误，请转到 [Azure 门户](https://portal.azure.cn/)并打开已部署到的资源组。 单击“**所有设置**”，然后单击“设置”边栏选项卡上的“**部署**”。 失败的资源组部署会在那里留下详细的诊断信息。
 
 > [AZURE.NOTE]
 > Service Fabric 群集需要一定数量的节点处于开机状态，以维护可用性和保留状态（称为“维护仲裁”）。 因此，除非首先执行[状态的完整备份](/documentation/articles/service-fabric-reliable-services-backup-restore/)，否则关闭群集中的所有计算机是很不安全的。
@@ -137,7 +137,7 @@ Visual Studio Service Fabric Resource Manager 模板将创建一个受证书保�
 > 
 
 ## <a name="next-steps"></a>后续步骤
-* [了解如何使用 Azure 门户预览设置 Service Fabric 群集](/documentation/articles/service-fabric-cluster-creation-via-portal/)
+* [了解如何使用 Azure 门户设置 Service Fabric 群集](/documentation/articles/service-fabric-cluster-creation-via-portal/)
 * [了解如何使用 Visual Studio 管理和部署 Service Fabric 应用程序](/documentation/articles/service-fabric-manage-application-in-visual-studio/)
 
 <!--Image references-->

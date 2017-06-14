@@ -33,7 +33,7 @@
     ssh-keygen -t rsa -b 2048 
 
 ## <a name="use-the-ssh-key-pair"></a>使用 SSH 密钥对
-放置在 Azure 中 Linux VM 上的公钥默认存储在 `~/.ssh/id_rsa.pub` 中，除非你在创建该公钥时更改了位置。 如果使用 [Azure CLI 2.0](https://docs.microsoft.com/zh-cn/cli/azure) 创建 VM，请在将 [az vm create](https://docs.microsoft.com/zh-cn/cli/azure/vm#create) 与 `--ssh-key-path` 选项结合使用时指定该公钥的位置。 如果复制和粘贴要在 Azure 门户预览或 Resource Manager 模板中使用的公钥文件的内容，请确保不复制额外的空格。 例如，如果使用 OS X，则可将公钥文件（默认为 **~/.ssh/id_rsa.pub**）通过管道传送到 **pbcopy**，以便复制内容（也可通过其他 Linux 程序（例如 `xclip`）执行此类操作）。 
+放置在 Azure 中 Linux VM 上的公钥默认存储在 `~/.ssh/id_rsa.pub` 中，除非你在创建该公钥时更改了位置。 如果使用 [Azure CLI 2.0](https://docs.microsoft.com/zh-cn/cli/azure) 创建 VM，请在将 [az vm create](https://docs.microsoft.com/zh-cn/cli/azure/vm#create) 与 `--ssh-key-path` 选项结合使用时指定该公钥的位置。 如果复制和粘贴要在 Azure 门户或 Resource Manager 模板中使用的公钥文件的内容，请确保不复制额外的空格。 例如，如果使用 OS X，则可将公钥文件（默认为 **~/.ssh/id_rsa.pub**）通过管道传送到 **pbcopy**，以便复制内容（也可通过其他 Linux 程序（例如 `xclip`）执行此类操作）。 
 
 如果不熟悉 SSH 公钥，则可通过运行 `cat` 来查看公钥（如下所示），注意需将 `~/.ssh/id_rsa.pub` 替换为你自己的公钥文件位置：
 
@@ -49,9 +49,9 @@
 
 使用 SSH 密钥创建的 VM 默认配置为禁用密码，使得强力猜测尝试代价相当高昂，因此也更为困难。 本主题介绍如何创建一个简单的、可以快速使用的 SSH 密钥对。 如果你在创建 SSH 密钥对方面需要更多帮助，或者需要其他的证书（例如用于经典管理门户的证书），请参阅[创建 SSH 密钥对和证书的详细步骤](/documentation/articles/virtual-machines-linux-create-ssh-keys-detailed/)。
 
-可以通过 Azure 门户预览、CLI 和模板创建使用 SSH 密钥对的 VM：
+可以通过 Azure 门户、CLI 和模板创建使用 SSH 密钥对的 VM：
 
-* [使用 Azure 门户预览创建安全 Linux VM](/documentation/articles/virtual-machines-linux-quick-create-portal/)
+* [使用 Azure 门户创建安全 Linux VM](/documentation/articles/virtual-machines-linux-quick-create-portal/)
 * [使用 Azure CLI 2.0 创建安全的 Linux VM](/documentation/articles/virtual-machines-linux-quick-create-cli/)
 * [使用 Azure 模板创建安全 Linux VM](/documentation/articles/virtual-machines-linux-create-ssh-secured-vm-from-template/)
 <!--Update_Description: wording update-->

@@ -39,7 +39,7 @@
 ## <a name="about-this-tutorial"></a>关于本教程
 此入门教程演示使用 Azure 文件存储的基础知识。 在本教程中，我们将：
 
-* 使用 Azure 门户预览或 PowerShell 创建新的 Azure 文件共享、添加目录、将本地文件上载到该共享，以及列出该目录中的文件。
+* 使用 Azure 门户或 PowerShell 创建新的 Azure 文件共享、添加目录、将本地文件上载到该共享，以及列出该目录中的文件。
 * 装载文件共享，就像装载任何 SMB 共享一样。
 * 使用用于.NET 的 Azure 存储空间客户端库从本地应用程序访问文件共享。 创建一个控制台应用程序并通过文件共享执行以下操作：
   * 将共享中一个文件的内容写入控制台窗口。
@@ -51,8 +51,8 @@
 
 现在所有存储帐户均支持文件存储，因此你可以使用现有存储帐户，也可以创建新的存储帐户。请参阅[如何创建存储帐户](/documentation/articles/storage-create-storage-account/#create-a-storage-account)，了解有关创建新存储帐户的信息。
 
-## <a name="use-the-azure-portal-preview-to-manage-a-file-share"></a>使用 Azure 门户预览管理文件共享
-[Azure 门户预览](https://portal.azure.cn)提供了方便客户管理文件共享的用户界面。在门户中，你可以：
+## <a name="use-the-azure-portal-preview-to-manage-a-file-share"></a>使用 Azure 门户管理文件共享
+[Azure 门户](https://portal.azure.cn)提供了方便客户管理文件共享的用户界面。在门户中，你可以：
 
 * 创建文件共享
 * 将文件上载到文件共享以及从文件共享下载文件。
@@ -61,7 +61,7 @@
 * 获取用于从 Windows 客户端装载文件共享的 `net use` 命令
 
 ### <a name="create-file-share"></a>创建文件共享
-1. 登录 Azure 门户预览。
+1. 登录 Azure 门户。
 
 2. 在导航菜单中，单击“存储帐户”或“存储帐户(经典)”。
 
@@ -127,7 +127,7 @@
 通过单击“开始”并键入 **Windows PowerShell** 打开 Azure PowerShell 窗口。 PowerShell 窗口将为你加载 Azure PowerShell 模块。
 
 ### <a name="create-a-context-for-your-storage-account-and-key"></a>为存储帐户和密钥创建上下文
-现在，将创建存储帐户上下文。该上下文封装了存储帐户名称和帐户密钥。有关从[Azure 门户预览](https://portal.azure.cn)复制帐户密钥的说明，请参阅[查看和复制存储访问密钥](/documentation/articles/storage-create-storage-account/#view-and-copy-storage-access-keys)。
+现在，将创建存储帐户上下文。该上下文封装了存储帐户名称和帐户密钥。有关从[Azure 门户](https://portal.azure.cn)复制帐户密钥的说明，请参阅[查看和复制存储访问密钥](/documentation/articles/storage-create-storage-account/#view-and-copy-storage-access-keys)。
 
 请将下面示例中的 `storage-account-name` 和 `storage-account-key` 替换为你的存储帐户名称和密钥。
 
@@ -195,8 +195,8 @@ Get-AzureStorageFile 将返回任何传入的目录对象的文件和目录列�
 ### <a name="mount-the-file-share-from-an-azure-virtual-machine-running-windows"></a>从运行 Windows 的 Azure 虚拟机装载文件共享
 为了演示如何装载 Azure 文件共享，现在我们将创建一个运行 Windows 的 Azure 虚拟机，并远程登录到它内部以装载共享。
 
-1. 首先，按照[在 Azure 门户预览中创建 Windows 虚拟机](/documentation/articles/virtual-machines-windows-hero-tutorial/)中的说明创建新的 Azure 虚拟机。
-2. 接下来，按照[使用 Azure 门户预览登录到 Windows 虚拟机](/documentation/articles/virtual-machines-windows-connect-logon/)中的说明远程登录到虚拟机。
+1. 首先，按照[在 Azure 门户中创建 Windows 虚拟机](/documentation/articles/virtual-machines-windows-hero-tutorial/)中的说明创建新的 Azure 虚拟机。
+2. 接下来，按照[使用 Azure 门户登录到 Windows 虚拟机](/documentation/articles/virtual-machines-windows-connect-logon/)中的说明远程登录到虚拟机。
 3. 在该虚拟机上打开 PowerShell 窗口。
 
 ### <a name="persist-your-storage-account-credentials-for-the-virtual-machine"></a>保存虚拟机的存储帐户凭据
@@ -526,7 +526,7 @@ Get-AzureStorageFile 将返回任何传入的目录对象的文件和目录列�
 ## <a name="troubleshooting-file-storage-using-metrics"></a>使用指标对文件存储进行故障排除
 Azure 存储空间分析现在支持用于文件存储的指标。 使用指标数据，可以跟踪请求和诊断问题。
 
-可以从 [Azure 门户预览](https://portal.azure.cn)为文件存储启用指标。你还可以通过 REST API 或存储客户端库中的类似物之一调用“设置文件服务属性”操作，以编程方式启用指标。
+可以从 [Azure 门户](https://portal.azure.cn)为文件存储启用指标。你还可以通过 REST API 或存储客户端库中的类似物之一调用“设置文件服务属性”操作，以编程方式启用指标。
 
 下面的代码示例演示如何使用适用于 .NET 的存储客户端库启用文件存储的指标。
 
@@ -639,7 +639,7 @@ Azure 存储空间分析现在支持用于文件存储的指标。 使用指标�
 
 18. **如何针对 Azure 文件启用服务器端加密？**
 
-    针对 Azure 文件的[服务器端加密](/documentation/articles/storage-service-encryption/)目前提供预览版。 在预览期间，只能在使用 [Azure 门户预览](https://portal.azure.cn)新建的 Azure Resource Manager 存储帐户上启用此功能。 启用该功能没有额外收费。 针对 Azure 文件存储启用存储服务加密以后，系统会自动加密数据。
+    针对 Azure 文件的[服务器端加密](/documentation/articles/storage-service-encryption/)目前提供预览版。 在预览期间，只能在使用 [Azure 门户](https://portal.azure.cn)新建的 Azure Resource Manager 存储帐户上启用此功能。 启用该功能没有额外收费。 针对 Azure 文件存储启用存储服务加密以后，系统会自动加密数据。
     
     我们计划未来允许用户通过 [Azure PowerShell](https://docs.microsoft.com/zh-cn/powershell/resourcemanager/azurerm.storage/v2.7.0/azurerm.storage)、[Azure CLI](/documentation/articles/storage-azure-cli/) 和 [Azure 存储资源提供程序 REST API](https://docs.microsoft.com/zh-cn/rest/api/storagerp/storageaccounts) 为文件存储启用加密。 
     若要详细了解如何在 Azure 存储中进行静态加密，请参阅[存储服务加密](/documentation/articles/storage-service-encryption/)。

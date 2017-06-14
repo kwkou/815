@@ -26,7 +26,7 @@
 
 
 
-本入门教程介绍如何使用 Azure 门户预览完成以下任务：
+本入门教程介绍如何使用 Azure 门户完成以下任务：
 
 - 查看数据库的现有备份
 - 将数据库还原到以前的时间点
@@ -40,17 +40,17 @@
 
 * 需要一个 Azure 帐户。可以[注册 Azure 1 元试用帐户](/pricing/1rmb-trial/?WT.mc_id=A261C142F)。
 
-* 必须能够使用帐户连接到 Azure 门户预览，该帐户是订阅所有者或参与者角色的成员。有关基于角色的访问控制 (RBAC) 的详细信息，请参阅[开始在 Azure 门户预览中进行访问管理](/documentation/articles/role-based-access-control-what-is/)。
+* 必须能够使用帐户连接到 Azure 门户，该帐户是订阅所有者或参与者角色的成员。有关基于角色的访问控制 (RBAC) 的详细信息，请参阅[开始在 Azure 门户中进行访问管理](/documentation/articles/role-based-access-control-what-is/)。
 
-* 你已完成本教程的[开始使用 Azure 门户预览和 SQL Server Management Studio 了解 Azure SQL 数据库服务器、数据库和防火墙规则](/documentation/articles/sql-database-get-started/)部分或与之类似的 [PowerShell 版本](/documentation/articles/sql-database-get-started-powershell/)部分。请完成此必学教程或在完成本教程的 [PowerShell 版本](/documentation/articles/sql-database-get-started-powershell/)部分时执行 PowerShell 脚本（如果尚未进行），然后再继续。
+* 你已完成本教程的[开始使用 Azure 门户和 SQL Server Management Studio 了解 Azure SQL 数据库服务器、数据库和防火墙规则](/documentation/articles/sql-database-get-started/)部分或与之类似的 [PowerShell 版本](/documentation/articles/sql-database-get-started-powershell/)部分。请完成此必学教程或在完成本教程的 [PowerShell 版本](/documentation/articles/sql-database-get-started-powershell/)部分时执行 PowerShell 脚本（如果尚未进行），然后再继续。
 
 
 
 ## 使用现有帐户登录
-使用[现有订阅](https://account.windowsazure.cn/Home/Index)，按照以下步骤连接到 Azure 门户预览。
+使用[现有订阅](https://account.windowsazure.cn/Home/Index)，按照以下步骤连接到 Azure 门户。
 
-1. 打开所选浏览器并连接到 [Azure 门户预览](https://portal.azure.cn/)。
-2. 登录到 [Azure 门户预览](https://portal.azure.cn/)。
+1. 打开所选浏览器并连接到 [Azure 门户](https://portal.azure.cn/)。
+2. 登录到 [Azure 门户](https://portal.azure.cn/)。
 3. 在“登录”页上，提供订阅的凭据。
    
    ![登录](./media/sql-database-get-started/login.png)  

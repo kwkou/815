@@ -84,7 +84,7 @@ Azure 提供使用日志记录和指标来监视资源的功能。 应用程序�
 
 可在 Azure 中使用不同类型的日志来对应用程序网关进行管理和故障排除。 可通过门户访问其中某些日志，且可从 Azure Blob 存储提取并在 Excel 和 PowerBI 等各种工具中查看所有日志。 可从以下列表了解有关不同类型日志的详细信息：
 
-* **活动日志：**可以使用 [Azure 活动日志](/documentation/articles/insights-debugging-with-events/)（以前称为操作日志和审核日志）查看提交到 Azure 订阅的所有操作及其状态。 默认收集活动日志条目，并可在 Azure 门户预览中查看。
+* **活动日志：**可以使用 [Azure 活动日志](/documentation/articles/insights-debugging-with-events/)（以前称为操作日志和审核日志）查看提交到 Azure 订阅的所有操作及其状态。 默认收集活动日志条目，并可在 Azure 门户中查看。
 * **访问日志：** 可以使用此日志来查看应用程序网关访问模式并分析重要信息，包括调用方的 IP、请求的 URL、响应延迟、返回问代码、输入和输出字节数。 每隔 300 秒会收集一次访问日志。 此日志包含每个应用程序网关实例的一条记录。 应用程序网关实例可以由“instanceId”属性标识。
 * **防火墙日志：** 可以使用此日志来查看通过应用程序网关的检测或阻止模式（通过 Web 应用程序防火墙配置）记录的请求。
 
@@ -100,13 +100,13 @@ Azure 提供使用日志记录和指标来监视资源的功能。 应用程序�
 
 每个 Resource Manager 资源都会自动启用活动日志记录。 必须启用访问日志记录才能开始收集通过这些日志提供的数据。 若要启用日志记录，请参阅以下步骤：
 
-1. 记下存储帐户的资源 ID，其中存储日志数据。 此值的形式如下：/subscriptions/\<subscriptionId\>/resourceGroups/\<resource group name\>/providers/Microsoft.Storage/storageAccounts/\<存储帐户名称\>。 订阅中的所有存储帐户均可使用。 可以使用门户预览来查找此信息。
+1. 记下存储帐户的资源 ID，其中存储日志数据。 此值的形式如下：/subscriptions/\<subscriptionId\>/resourceGroups/\<resource group name\>/providers/Microsoft.Storage/storageAccounts/\<存储帐户名称\>。 订阅中的所有存储帐户均可使用。 可以使用门户来查找此信息。
 
-    ![门户预览 - 应用程序网关诊断](./media/application-gateway-diagnostics/diagnostics1.png)
+    ![门户 - 应用程序网关诊断](./media/application-gateway-diagnostics/diagnostics1.png)
 
-2. 记下应用程序网关的资源 ID（会为其启用日志记录）。 此值的形式如下：/subscriptions/\<subscriptionId\>/resourceGroups/\<resource group name\>/providers/Microsoft.Network/applicationGateways/\<应用程序网关名称\>。 可以使用门户预览来查找此信息。
+2. 记下应用程序网关的资源 ID（会为其启用日志记录）。 此值的形式如下：/subscriptions/\<subscriptionId\>/resourceGroups/\<resource group name\>/providers/Microsoft.Network/applicationGateways/\<应用程序网关名称\>。 可以使用门户来查找此信息。
 
-    ![门户预览 - 应用程序网关诊断](./media/application-gateway-diagnostics/diagnostics2.png)
+    ![门户 - 应用程序网关诊断](./media/application-gateway-diagnostics/diagnostics2.png)
 
 3. 使用以下 PowerShell cmdlet 启用诊断日志记录：
 
@@ -179,7 +179,7 @@ Azure 默认生成此日志（以前称为“操作日志”）。  日志在 Az
 
 可使用以下任意方法查看和分析活动日志数据：
 
-* **Azure 工具：**通过 Azure PowerShell、Azure 命令行接口 (CLI)、Azure REST API 或 Azure 门户预览检索活动日志中的信息。  [使用 Resource Manager 的活动操作](/documentation/articles/resource-group-audit/)一文中详细介绍了每种方法的分步说明。
+* **Azure 工具：**通过 Azure PowerShell、Azure 命令行接口 (CLI)、Azure REST API 或 Azure 门户检索活动日志中的信息。  [使用 Resource Manager 的活动操作](/documentation/articles/resource-group-audit/)一文中详细介绍了每种方法的分步说明。
 * **Power BI：** 如果尚无 [Power BI](https://powerbi.microsoft.com/pricing) 帐户，可免费试用。 使用 [适用于 Power BI 的 Azure 活动日志内容包](https://powerbi.microsoft.com/documentation/powerbi-content-pack-azure-audit-logs/) ，可借助预配置的仪表板（直接使用或进行自定义）分析数据。
 
 ## <a name="view-and-analyze-the-access-performance-and-firewall-log"></a>查看并分析访问和防火墙日志

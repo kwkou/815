@@ -1,6 +1,6 @@
 <properties
     pageTitle="使用多租户支持将 VMware VM 复制到 Azure（CSP 计划）| Azure"
-    description="介绍如何使用 Azure 门户预览在多租户环境中部署 Azure Site Recovery，以便通过 CSP 计划协调从本地 VMware 虚拟机到 Azure 的复制、故障转移和恢复"
+    description="介绍如何使用 Azure 门户在多租户环境中部署 Azure Site Recovery，以便通过 CSP 计划协调从本地 VMware 虚拟机到 Azure 的复制、故障转移和恢复"
     services="site-recovery"
     documentationcenter=""
     author="mayanknayar"
@@ -88,7 +88,7 @@ vCenter 帐户访问过程如下所示：
 | 数据存储和数据存储群集 | Azure_Site_Recovery | 同上 |
 | 网络 | Azure_Site_Recovery |  |
 | 管理服务器 | Azure_Site_Recovery | 这包括对所有组件（CS、PS 和 MT）的访问权限（如果某个组件位于 CS 计算机外部）。 |
-| 租户 VM | Azure_Site_Recovery | 确保特定租户的任何新租户 VM 也会获得此访问权限，否则无法通过 Azure 门户预览发现这些 VM。 |
+| 租户 VM | Azure_Site_Recovery | 确保特定租户的任何新租户 VM 也会获得此访问权限，否则无法通过 Azure 门户发现这些 VM。 |
 
 vCenter 帐户访问现已完成。 这样可满足完成故障回复操作的最低权限要求。 请注意，这些访问权限也可与现有策略结合使用。 只需修改现有权限集，包括上面详述的第 2 点中的角色权限即可。
 
@@ -148,30 +148,30 @@ VM 先决条件与 Azure Site Recovery [文档](/documentation/articles/site-rec
 
     ![customer-summary](./media/site-recovery-multi-tenant-support-vmware-using-csp/customer-summary-page.png)
 
-6.    创建客户以后，将会显示一个确认页，其中包含该订阅的默认帐户和密码等详细信息。 保存信息，以后可根据需要通过 Azure 门户预览登录名更改密码。 可以将此信息原样与租户共享，也可根据需要创建和共享单独的帐户。
+6.    创建客户以后，将会显示一个确认页，其中包含该订阅的默认帐户和密码等详细信息。 保存信息，以后可根据需要通过 Azure 门户登录名更改密码。 可以将此信息原样与租户共享，也可根据需要创建和共享单独的帐户。
 
 ### <a name="step-2-access-tenant-account"></a>步骤 2：访问租户帐户
 
 1.    可以根据步骤 1 中的说明，通过仪表板从“客户”页访问租户的订阅。 导航到该处，单击刚创建的租户帐户的名称。
-2.    此时会打开租户帐户的“订阅”部分，然后即可在该处监视帐户的现有订阅，并根据需要添加更多订阅。 若要管理租户的 DR 操作，请选择页面右侧的“所有资源(Azure 门户预览)”选项。
+2.    此时会打开租户帐户的“订阅”部分，然后即可在该处监视帐户的现有订阅，并根据需要添加更多订阅。 若要管理租户的 DR 操作，请选择页面右侧的“所有资源(Azure 门户)”选项。
 
     ![all-resources](./media/site-recovery-multi-tenant-support-vmware-using-csp/all-resources-select.png)
 
-3.    单击“所有资源”按钮，系统就会授予用户访问租户的 Azure 订阅的权限，而用户则可通过查看显示在 Azure 门户预览右上角的 AAD 来验证这一点。
+3.    单击“所有资源”按钮，系统就会授予用户访问租户的 Azure 订阅的权限，而用户则可通过查看显示在 Azure 门户右上角的 AAD 来验证这一点。
 
     ![aad-admin](./media/site-recovery-multi-tenant-support-vmware-using-csp/aad-admin-display.png)
 
-用户现在可以通过 Azure 门户预览执行针对租户的所有 Site Recovery 操作，以及管理 DR 操作。 每次通过 CSP 访问租户订阅以实现托管 DR 时，都必须遵循上述详细过程。
+用户现在可以通过 Azure 门户执行针对租户的所有 Site Recovery 操作，以及管理 DR 操作。 每次通过 CSP 访问租户订阅以实现托管 DR 时，都必须遵循上述详细过程。
 
 ### <a name="step-3-deploy-resources-to-tenant-subscription"></a>步骤 3：将资源部署到租户订阅
-1.    在 Azure 门户预览中，按照常规过程创建资源组并部署恢复服务保管库。 下载保管库注册密钥。
+1.    在 Azure 门户中，按照常规过程创建资源组并部署恢复服务保管库。 下载保管库注册密钥。
 2.    使用保管库注册密钥为租户注册 CS。
 3.    输入两个访问帐户（vCenter 访问帐户和 VM 访问帐户）的凭据。
 
     ![config-accounts](./media/site-recovery-multi-tenant-support-vmware-using-csp/config-server-account-display.png)
 
 ### <a name="step-4-register-site-recovery-infrastructure-to-recovery-services-vault"></a>步骤 4：将站点恢复基础结构注册到恢复服务保管库
-1.    打开 Azure 门户预览，在此前创建的保管库上，将 vCenter 服务器注册到在上一步注册的 CS。 将 vCenter 访问帐户用于此目的。
+1.    打开 Azure 门户，在此前创建的保管库上，将 vCenter 服务器注册到在上一步注册的 CS。 将 vCenter 访问帐户用于此目的。
 2.    按照常规过程完成 Site Recovery 的“准备基础结构”过程。
 3.    VM 现在可以进行复制了。 确保在“复制”选项的 VM 选择边栏选项卡上，只有租户的 VM 可见。
 
@@ -188,7 +188,7 @@ VM 先决条件与 Azure Site Recovery [文档](/documentation/articles/site-rec
     ![user-licenses](./media/site-recovery-multi-tenant-support-vmware-using-csp/users-and-licences.png)
 
     你现在可以创建新的用户，只需输入相关详细信息并选择权限，或者通过 CSV 文件上载用户列表即可。
-2.    创建用户之后，请返回到 Azure 门户预览，然后在“订阅”边栏选项卡下选择相关订阅。
+2.    创建用户之后，请返回到 Azure 门户，然后在“订阅”边栏选项卡下选择相关订阅。
 3.    在打开的新边栏选项卡上选择“访问控制(IAM)”，然后单击“+添加”添加具有相关访问级别的用户。 通过 CSP 门户创建的用户将自动显示在单击一种访问级别后打开的边栏选项卡上。
 
     ![user-subscription](./media/site-recovery-multi-tenant-support-vmware-using-csp/add-user-subscription.png)

@@ -23,14 +23,14 @@
     ms.contentlocale="zh-cn"
     ms.lasthandoff="05/19/2017" />
 
-# <a name="create-a-site-to-site-connection-in-the-azure-portal-preview"></a>在 Azure 门户预览中创建站点到站点连接
+# <a name="create-a-site-to-site-connection-in-the-azure-portal-preview"></a>在 Azure 门户中创建站点到站点连接
 
-本文介绍如何使用 Azure 门户预览创建站点到站点 VPN 网关连接，以便从本地网络连接到 VNet。 本文中的步骤适用于 Resource Manager 部署模型。 也可使用不同的部署工具或部署模型创建此配置，方法是从以下列表中选择另一选项：
+本文介绍如何使用 Azure 门户创建站点到站点 VPN 网关连接，以便从本地网络连接到 VNet。 本文中的步骤适用于 Resource Manager 部署模型。 也可使用不同的部署工具或部署模型创建此配置，方法是从以下列表中选择另一选项：
 > [AZURE.SELECTOR]
-- [Resource Manager - Azure 门户预览](/documentation/articles/vpn-gateway-howto-site-to-site-resource-manager-portal/)
+- [Resource Manager - Azure 门户](/documentation/articles/vpn-gateway-howto-site-to-site-resource-manager-portal/)
 - [Resource Manager - PowerShell](/documentation/articles/vpn-gateway-create-site-to-site-rm-powershell/)
 - [Resource Manager - CLI](/documentation/articles/vpn-gateway-howto-site-to-site-resource-manager-cli/)
-- [经典 - Azure 门户预览](/documentation/articles/vpn-gateway-howto-site-to-site-classic-portal/)
+- [经典 - Azure 门户](/documentation/articles/vpn-gateway-howto-site-to-site-classic-portal/)
 - [经典 - 经典管理门户](/documentation/articles/vpn-gateway-site-to-site-create/)
 
 使用站点到站点 VPN 网关连接，通过 IPsec/IKE（IKEv1 或 IKEv2）VPN 隧道将本地网络连接到 Azure 虚拟网络。 此类型的连接要求位于本地的 VPN 设备分配有一个面向外部的公共 IP 地址。 有关 VPN 网关的详细信息，请参阅[关于 VPN 网关](/documentation/articles/vpn-gateway-about-vpngateways/)。
@@ -100,7 +100,7 @@
 通过站点到站点连接连接到本地网络需要 VPN 设备。 在此步骤中，将配置 VPN 设备。 配置 VPN 设备时，需要以下项：
 
 - 共享密钥。 此共享密钥就是在创建站点到站点 VPN 连接时指定的共享密钥。 在示例中，我们使用基本的共享密钥。 建议生成更复杂的可用密钥。
-- 虚拟网关的“公共 IP 地址”。 可以通过 Azure 门户预览、PowerShell 或 CLI 查看公共 IP 地址。 若要使用 Azure 门户预览查找 VPN 网关的公共 IP 地址，请导航到“虚拟网关”，然后单击网关的名称。
+- 虚拟网关的“公共 IP 地址”。 可以通过 Azure 门户、PowerShell 或 CLI 查看公共 IP 地址。 若要使用 Azure 门户查找 VPN 网关的公共 IP 地址，请导航到“虚拟网关”，然后单击网关的名称。
 
 [AZURE.INCLUDE [vpn-gateway-configure-vpn-device-rm](../../includes/vpn-gateway-configure-vpn-device-rm-include.md)]
 

@@ -24,7 +24,7 @@
 
 ##Step1： 通过 Azure 订阅人脸识别 API
 
-1. 登录 [Azure 门户预览](https://portal.azure.cn/)。
+1. 登录 [Azure 门户](https://portal.azure.cn/)。
 
 	![01](./media/azure-cognitive-services-face-api-wechat-app/01.png)
 	

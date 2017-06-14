@@ -1,6 +1,6 @@
 <properties
     pageTitle="DocumentDB 门户工具：查询浏览器 | Azure"
-    description="了解 DocumentDB 查询浏览器，它是 Azure 门户预览中的一个 SQL 查询编辑器，用于编写 SQL 查询并针对 DocumentDB 集合运行这些查询。"
+    description="了解 DocumentDB 查询浏览器，它是 Azure 门户中的一个 SQL 查询编辑器，用于编写 SQL 查询并针对 DocumentDB 集合运行这些查询。"
     keywords="编写 SQL 查询, SQL 查询编辑器"
     services="documentdb"
     author="kirillg"
@@ -23,15 +23,15 @@
     ms.contentlocale="zh-cn"
     ms.lasthandoff="05/19/2017" />
 
-# <a name="write-edit-and-run-sql-queries-for-azure-documentdb-using-query-explorer-in-the-azure-portal"></a>在 Azure 门户预览中使用查询浏览器对 DocumentDB 编写、编辑和运行 SQL 查询
-本文概述了 [DocumentDB](/home/features/documentdb/) 查询浏览器，该查询浏览器是一个 Azure 门户预览工具，可用于针对 [DocumentDB 集合](/documentation/articles/documentdb-create-collection/)编写、编辑和运行 SQL 查询。
+# <a name="write-edit-and-run-sql-queries-for-azure-documentdb-using-query-explorer-in-the-azure-portal"></a>在 Azure 门户中使用查询浏览器对 DocumentDB 编写、编辑和运行 SQL 查询
+本文概述了 [DocumentDB](/home/features/documentdb/) 查询浏览器，该查询浏览器是一个 Azure 门户工具，可用于针对 [DocumentDB 集合](/documentation/articles/documentdb-create-collection/)编写、编辑和运行 SQL 查询。
 
-1. 在 [Azure 门户预览](https://portal.azure.cn)的左侧导航栏中，单击![DocumentDB 图标](./media/documentdb-query-collections-query-explorer/nosql-documentdb-portal-icon.png) **DocumentDB**。 
+1. 在 [Azure 门户](https://portal.azure.cn)的左侧导航栏中，单击![DocumentDB 图标](./media/documentdb-query-collections-query-explorer/nosql-documentdb-portal-icon.png) **DocumentDB**。 
 
     如果 **DocumentDB** 不可见，请单击底部的“更多服务”，然后单击 ![DocumentDB 图标](./media/documentdb-query-collections-query-explorer/nosql-documentdb-portal-icon.png) **DocumentDB**。
 2. 在资源菜单中，单击“查询资源管理器” 。 
    
-    ![Azure 门户预览的屏幕截图，其中突出显示了查询资源管理器](./media/documentdb-query-collections-query-explorer/queryexplorercommand.png)
+    ![Azure 门户的屏幕截图，其中突出显示了查询资源管理器](./media/documentdb-query-collections-query-explorer/queryexplorercommand.png)
 3. 在“查询浏览器”边栏选项卡中，从下拉列表中选择要查询的**数据库**和**集合**，然后键入要运行的查询。 
    
     “数据库”和“集合”下拉列表会根据启动查询浏览器的上下文进行预填充。 
@@ -70,7 +70,7 @@
 ![查询资源管理器查询错误的屏幕截图](./media/documentdb-query-collections-query-explorer/queryerror.png)
 
 ## <a name="run-documentdb-api-sql-queries-outside-the-portal"></a>运行门户外部的 DocumentDB API SQL 查询
-Azure 门户预览中的查询浏览器只是一种对 DocumentDB 运行 SQL 查询的方式。 还可以使用 [REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn781481.aspx) 或[客户端 SDK](/documentation/articles/documentdb-sdk-dotnet/) 运行 SQL 查询。 有关使用这些其他方法的详细信息，请参阅[执行 SQL 查询](/documentation/articles/documentdb-sql-query/#ExecutingSqlQueries/)
+Azure 门户中的查询浏览器只是一种对 DocumentDB 运行 SQL 查询的方式。 还可以使用 [REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn781481.aspx) 或[客户端 SDK](/documentation/articles/documentdb-sdk-dotnet/) 运行 SQL 查询。 有关使用这些其他方法的详细信息，请参阅[执行 SQL 查询](/documentation/articles/documentdb-sql-query/#ExecutingSqlQueries/)
 
 ## <a name="next-steps"></a>后续步骤
 若要详细了解查询浏览器中支持的 DocumentDB API SQL 语法，请参阅 [SQL 查询和 SQL 语法](/documentation/articles/documentdb-sql-query/)一文或打印 [SQL 查询速查表](/documentation/articles/documentdb-sql-query-cheat-sheet/)。

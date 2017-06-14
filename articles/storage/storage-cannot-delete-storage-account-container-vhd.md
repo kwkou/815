@@ -22,7 +22,7 @@
 # 对在经典部署中删除 Azure 存储帐户、容器或 VHD 进行故障排除
 [AZURE.INCLUDE [storage-selector-cannot-delete-storage-account-container-vhd](../../includes/storage-selector-cannot-delete-storage-account-container-vhd.md)]
 
-当用户尝试在 [Azure 门户预览](https://portal.azure.cn/)或 [Azure 经典管理门户](https://manage.windowsazure.cn/)中删除 Azure 存储帐户、容器或 VHD 时，可能会收到错误。这些问题可能由以下情况造成：
+当用户尝试在 [Azure 门户](https://portal.azure.cn/)或 [Azure 经典管理门户](https://manage.windowsazure.cn/)中删除 Azure 存储帐户、容器或 VHD 时，可能会收到错误。这些问题可能由以下情况造成：
 
 * 当用户删除 VM 时，磁盘和 VHD 未自动删除。这可能是存储帐户删除失败的原因。我们不会删除磁盘，以便你可以使用该磁盘装入另一个 VM。
 * 磁盘或者与磁盘关联的 Blob 上仍有租约。
@@ -33,7 +33,7 @@
 以下部分列出了试图删除 Azure 存储帐户、容器或 VHD 时可能收到的常见错误。
 
 ### 应用场景 1：无法删除存储帐户
-导航到 [Azure 门户预览](https://portal.azure.cn/)中的经典存储帐户并选择“删除”时，可能会看到阻止删除存储帐户的对象列表：
+导航到 [Azure 门户](https://portal.azure.cn/)中的经典存储帐户并选择“删除”时，可能会看到阻止删除存储帐户的对象列表：
 
   ![图像：删除存储帐户时出错](./media/storage-cannot-delete-storage-account-container-vhd/newerror.png)  
 
@@ -118,13 +118,13 @@
 >
 
 ## 有关已停止（已解除分配）的状态
-在经典部署模型中创建且已保留的虚拟机将在 [Azure 门户预览](https://portal.azure.cn/)或 [Azure 经典管理门户](https://manage.windowsazure.cn/)中具有“已停止（已解除分配）”的状态。
+在经典部署模型中创建且已保留的虚拟机将在 [Azure 门户](https://portal.azure.cn/)或 [Azure 经典管理门户](https://manage.windowsazure.cn/)中具有“已停止（已解除分配）”的状态。
 
 **Azure 经典管理门户**：
 
 ![Azure 门户中的 VM 的“已停止(已解除分配)”状态。](./media/storage-cannot-delete-storage-account-container-vhd/moreinfo2.png)
 
-**Azure 门户预览**：
+**Azure 门户**：
 
 ![Azure 经典门户中的 VM 的“已停止(已解除分配)”状态。](./media/storage-cannot-delete-storage-account-container-vhd/moreinfo1.png)
 

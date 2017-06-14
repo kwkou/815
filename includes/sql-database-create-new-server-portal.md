@@ -10,9 +10,9 @@ articles/sql-database/sql-database-get-started-tutorial.md
 -->
 ##<a name="create-an-azure-sql-database-logical-server"></a> 创建 Aure SQL 数据库逻辑服务器
 
-在 Azure 门户预览中使用以下步骤创建 Azure SQL 数据库逻辑服务器。
+在 Azure 门户中使用以下步骤创建 Azure SQL 数据库逻辑服务器。
 
-1. 如果当前未连接，请连接到 [Azure 门户预览](http://portal.azure.cn)。
+1. 如果当前未连接，请连接到 [Azure 门户](http://portal.azure.cn)。
 2. 依次单击“新建”和“数据 + 存储”，找到“SQL 数据库”。
 
       ![SQL 数据库 1](./media/sql-database-create-new-server-portal/sql-database-create-new-server-portal-1.png)  

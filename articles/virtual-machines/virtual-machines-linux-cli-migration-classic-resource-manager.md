@@ -40,7 +40,7 @@
 下面是建议你在将 IaaS 资源从经典部署模型迁移到 Resource Manager 部署模型时遵循的一些最佳实践：
 
 * 请参阅[不受支持的配置或功能的列表](/documentation/articles/virtual-machines-windows-migration-classic-resource-manager/)。 如果虚拟机使用不受支持的配置或功能，建议你等到我们宣布支持该功能/配置时再进行迁移。 或者，可以删除该功能或移出该配置，以利迁移进行（如果这样做符合要求）。
-* 如果你通过自动化脚本来部署目前的基础结构和应用程序，则可尝试使用这些脚本进行迁移，以便创建类似的测试性设置。 也可以使用 Azure 门户预览设置示例环境。
+* 如果你通过自动化脚本来部署目前的基础结构和应用程序，则可尝试使用这些脚本进行迁移，以便创建类似的测试性设置。 也可以使用 Azure 门户设置示例环境。
 
 > [AZURE.IMPORTANT]
 > 目前不支持通过应用程序网关从经典部署模型迁移到 Resource Manager 部署模型。 若要迁移带应用程序网关的经典虚拟网络，请先删除该网关，然后运行准备操作来移动网络。 完成迁移后，在 Azure Resource Manager 中重新连接该网关。 
@@ -119,7 +119,7 @@
 
     azure vm show <vmName> -vv
 
-使用 CLI 或 Azure 门户预览查看准备好的资源的配置。 如果你尚未做好迁移准备，因此想要回到旧的状态，请使用以下命令。
+使用 CLI 或 Azure 门户查看准备好的资源的配置。 如果你尚未做好迁移准备，因此想要回到旧的状态，请使用以下命令。
 
     azure service deployment abort-migration <serviceName> <deploymentName>
 
@@ -148,7 +148,7 @@
 
     azure network vnet prepare-migration <virtualNetworkName>
 
-使用 CLI 或 Azure 门户预览查看准备好的虚拟机的配置。 如果你尚未做好迁移准备，因此想要回到旧的状态，请使用以下命令。
+使用 CLI 或 Azure 门户查看准备好的虚拟机的配置。 如果你尚未做好迁移准备，因此想要回到旧的状态，请使用以下命令。
 
     azure network vnet abort-migration <virtualNetworkName>
 
@@ -163,7 +163,7 @@
 
     azure storage account prepare-migration <storageAccountName>
 
-使用 CLI 或 Azure 门户预览查看准备好的存储帐户的配置。 如果你尚未做好迁移准备，因此想要回到旧的状态，请使用以下命令。
+使用 CLI 或 Azure 门户查看准备好的存储帐户的配置。 如果你尚未做好迁移准备，因此想要回到旧的状态，请使用以下命令。
 
     azure storage account abort-migration <storageAccountName>
 

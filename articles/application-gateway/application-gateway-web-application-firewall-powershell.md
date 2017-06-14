@@ -21,7 +21,7 @@
 
 # 在新的或现有的应用程序网关上配置 Web 应用程序防火墙
 > [AZURE.SELECTOR]
-- [Azure 门户预览](/documentation/articles/application-gateway-web-application-firewall-portal/)
+- [Azure 门户](/documentation/articles/application-gateway-web-application-firewall-portal/)
 - [Azure Resource Manager PowerShell](/documentation/articles/application-gateway-web-application-firewall-powershell/)
 
 Azure 应用程序网关中的 Web 应用程序防火墙 (WAF) 可保护 Web 应用程序，使其免受常见 Web 攻击的威胁，例如 SQL 注入、跨站点脚本攻击和会话劫持。

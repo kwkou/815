@@ -86,7 +86,7 @@ Azure IoT 中心是一项完全托管的服务，有助于在数百万台设备�
    > 
 
 ## <a name="send-a-cloud-to-device-message"></a>发送云到设备的消息
-在本部分中，会创建 Java 控制台应用，用于向模拟设备应用发送“云到设备”消息。 需要使用 [Get started with IoT Hub]教程中添加的设备的设备 ID。 还需要中心的 IoT 中心连接字符串（位于 [Azure 门户预览]）。
+在本部分中，会创建 Java 控制台应用，用于向模拟设备应用发送“云到设备”消息。 需要使用 [Get started with IoT Hub]教程中添加的设备的设备 ID。 还需要中心的 IoT 中心连接字符串（位于 [Azure 门户]）。
 
 1. 在命令提示符处使用以下命令，创建名为 **send-c2d-messages** 的 Maven 项目。 请注意，此命令是一条很长的命令：
 
@@ -192,7 +192,7 @@ Azure IoT 中心是一项完全托管的服务，有助于在数百万台设备�
 [lnk-free-trial]: /pricing/1rmb-trial/
 [lnk-dev-setup]: https://github.com/Azure/azure-iot-sdk-java
 [Transient Fault Handling]: https://msdn.microsoft.com/zh-cn/library/hh680901(v=pandp.50).aspx
-[Azure 门户预览]: https://portal.azure.cn
+[Azure 门户]: https://portal.azure.cn
 [Azure IoT 套件]: /documentation/services/iot-suite/
 [lnk-maven-service-search]: http://search.maven.org/#search%7Cga%7C1%7Ca%3A%22iot-service-client%22%20g%3A%22com.microsoft.azure.sdk.iot%22
 

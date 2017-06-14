@@ -25,7 +25,7 @@
 # <a name="manage-the-resources-associated-with-your-azure-accounts-in-visual-studio-cloud-explorer"></a>在 Visual Studio Cloud Explorer 中管理与 Azure 帐户关联的资源
 通过 Cloud Explorer，可在 Visual Studio 中查看 Azure 资源和资源组、检查其属性，以及执行重要的开发人员诊断操作。 
 
-与 [Azure 门户预览](https://portal.azure.cn)一样，Cloud Explorer 基于 Azure资源管理器堆栈。 因此，Cloud Explorer 可以识别 Azure 资源组等资源，以及逻辑应用和 API 应用等 Azure 服务，并支持[基于角色的访问控制](/documentation/articles/role-based-access-control-configure/) (RBAC)。 
+与 [Azure 门户](https://portal.azure.cn)一样，Cloud Explorer 基于 Azure资源管理器堆栈。 因此，Cloud Explorer 可以识别 Azure 资源组等资源，以及逻辑应用和 API 应用等 Azure 服务，并支持[基于角色的访问控制](/documentation/articles/role-based-access-control-configure/) (RBAC)。 
 
 ## <a name="prerequisites"></a>先决条件
 - 已选择 **Azure 工作负荷**的 [Visual Studio 2017](https://www.visualstudio.com/zh-cn/downloads/)，或者包含[用于 .NET 2.9 的 Azure SDK](https://www.microsoft.com/en-us/download/details.aspx?id=51657) 的 Visual Studio 早期版本。
@@ -76,7 +76,7 @@
 
 1. 从上下文菜单中，选择所需视图： 
 
-    - “资源类型”视图 - [Azure 门户预览](https://portal.azure.cn)中使用的常用视图，按类型来显示 Azure 资源，例如 Web 应用、存储帐户和虚拟机。 
+    - “资源类型”视图 - [Azure 门户](https://portal.azure.cn)中使用的常用视图，按类型来显示 Azure 资源，例如 Web 应用、存储帐户和虚拟机。 
     - “资源组”视图 - 按关联的 Azure 资源组将 Azure 资源分类。 资源组是通常由特定应用程序使用的 Azure 资源组合。 若要了解有关 Azure 资源组的详细信息，请参阅 [Azure资源管理器概述](/documentation/articles/resource-group-overview/)。
 
     下图比较了两个资源视图：
@@ -94,7 +94,7 @@
 
 ![](./media/vs-azure-tools-resources-managing-with-cloud-explorer/actions-and-properties.png)
 
-每个资源都有“在门户中打开”操作。 选择此操作时，Cloud Explorer 会在 [Azure 门户预览](https://portal.azure.cn)中显示所选的资源。 “在门户中打开”功能适用于导航到深度嵌套的资源。
+每个资源都有“在门户中打开”操作。 选择此操作时，Cloud Explorer 会在 [Azure 门户](https://portal.azure.cn)中显示所选的资源。 “在门户中打开”功能适用于导航到深度嵌套的资源。
 
 根据 Azure 资源，还可能会显示其他操作和属性值。 例如，除了“在门户中打开”以外，Web 应用和逻辑应用还提供了“在浏览器中打开”和“附加调试器”操作。 当选择存储帐户 Blob、队列或表时，会显示用于打开编辑器的操作。 Azure 应用具有“URL”和“状态”属性，而存储资源具有键和连接字符串属性。
 

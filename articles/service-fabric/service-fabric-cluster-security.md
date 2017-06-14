@@ -40,7 +40,7 @@ Service Fabric 群集是你拥有的资源。 必须保护群集，防止未经�
 ### <a name="node-to-node-certificate-security"></a>节点到节点的证书安全性
 当你创建群集时，Service Fabric 将使用指定为节点类型配置一部分的 X.509 服务器证书。 本文末尾概述了这些证书是什么，以及如何获取或创建这些证书。
 
-证书安全性在通过 Azure 门户预览、Azure Resource Manager 模板或独立的 JSON 模板创建群集时配置。可以指定一个主要证书和一个可选的辅助证书（用于证书滚动更新）。指定的主要证书和辅助证书应该不同于为[客户端到节点安全性](#client-to-node-security)指定的管理员客户端证书和只读客户端证书。
+证书安全性在通过 Azure 门户、Azure Resource Manager 模板或独立的 JSON 模板创建群集时配置。可以指定一个主要证书和一个可选的辅助证书（用于证书滚动更新）。指定的主要证书和辅助证书应该不同于为[客户端到节点安全性](#client-to-node-security)指定的管理员客户端证书和只读客户端证书。
 
 对于 Azure，请参阅[使用 Azure Resource Manager 模板设置群集](/documentation/articles/service-fabric-cluster-creation-via-arm/)，了解如何在群集中配置证书安全性。
 
@@ -57,7 +57,7 @@ Service Fabric 群集是你拥有的资源。 必须保护群集，防止未经�
 在 Azure 上运行的群集或在 Windows 上运行的独立群集可以使用[证书安全性](https://msdn.microsoft.com/zh-cn/library/ff649801.aspx)或 [Windows 安全性](https://msdn.microsoft.com/zh-cn/library/ff649396.aspx)。
 
 ### <a name="client-to-node-certificate-security"></a>客户端到节点的证书安全性
- 客户端到节点的证书安全性通过指定管理员客户端证书和/或用户客户端证书在使用 Azure 门户预览、Resource Manager 模板或独立的 JSON 模板创建群集时配置。指定的管理员客户端证书和用户客户端证书应该不同于为[节点到节点安全性](#node-to-node-security)指定的主要证书和辅助证书。
+ 客户端到节点的证书安全性通过指定管理员客户端证书和/或用户客户端证书在使用 Azure 门户、Resource Manager 模板或独立的 JSON 模板创建群集时配置。指定的管理员客户端证书和用户客户端证书应该不同于为[节点到节点安全性](#node-to-node-security)指定的主要证书和辅助证书。
 
 客户端如果使用管理员证书连接到群集，则拥有对管理功能的完全访问权限。  客户端如果使用只读用户客户端证书连接到群集，则只拥有对管理功能的只读访问权限。 换而言之，这些证书用于本文稍后所述的基于角色的访问控制 (RBAC)。
 
@@ -114,7 +114,7 @@ X.509 数字证书通常用于验证客户端与服务器，以及对消息进�
 
 
 1.  [使用 Resource Manager 模板在 Azure 中创建群集](/documentation/articles/service-fabric-cluster-creation-via-arm/)
-2.  [Azure 门户预览](/documentation/articles/service-fabric-cluster-creation-via-portal/)。
+2.  [Azure 门户](/documentation/articles/service-fabric-cluster-creation-via-portal/)。
 
 <!--Image references-->
 [Node-to-Node]: ./media/service-fabric-cluster-security/node-to-node.png

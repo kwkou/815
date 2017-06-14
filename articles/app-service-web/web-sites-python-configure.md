@@ -36,11 +36,11 @@
 - [使用 Flask 创建 Web 应用](/documentation/articles/web-sites-python-create-deploy-flask-app/)
 
 
-##<a name="website-creation-on-portal"></a>在 Azure 门户预览中创建 Web 应用
+##<a name="website-creation-on-portal"></a>在 Azure 门户中创建 Web 应用
 
-本教程假设已有 Azure 订阅和 Azure 门户预览访问权限。
+本教程假设已有 Azure 订阅和 Azure 门户访问权限。
 
-如果没有现成的 Web 应用，则可从 [Azure 门户预览](https://portal.azure.cn)中创建一个。单击左上角的“新建”按钮，然后单击“Web + 移动”>“Web 应用”。
+如果没有现成的 Web 应用，则可从 [Azure 门户](https://portal.azure.cn)中创建一个。单击左上角的“新建”按钮，然后单击“Web + 移动”>“Web 应用”。
 
 ##<a name="git-publishing"></a>Git 发布
 

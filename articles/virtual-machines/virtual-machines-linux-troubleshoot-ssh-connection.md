@@ -24,7 +24,7 @@
     ms.lasthandoff="04/14/2017" />
 
 # <a name="troubleshoot-ssh-connections-to-an-azure-linux-vm-that-fails-errors-out-or-is-refused"></a>针对通过 SSH 连接到 Azure Linux VM 时发生的失败、错误或被拒绝问题进行故障排除
-尝试连接到 Linux 虚拟机 (VM) 时，有多种原因可能会导致安全外壳 (SSH) 错误、SSH 连接失败或被拒绝。 本文将帮助用户找出原因并更正问题。 可以使用 Azure 门户预览、Azure CLI 或适用于 Linux 的 VM 访问扩展来排查和解决连接问题。
+尝试连接到 Linux 虚拟机 (VM) 时，有多种原因可能会导致安全外壳 (SSH) 错误、SSH 连接失败或被拒绝。 本文将帮助用户找出原因并更正问题。 可以使用 Azure 门户、Azure CLI 或适用于 Linux 的 VM 访问扩展来排查和解决连接问题。
 
 [AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-both-include.md)]
 
@@ -46,18 +46,18 @@
 ## <a name="available-methods-to-troubleshoot-ssh-connection-issues"></a>排查 SSH 连接问题的可用方法
 可以使用以下方法之一重置凭据或 SSH 配置：
 
-* [Azure 门户预览](#use-the-azure-portal) - 如果需要快速重置 SSH 配置或 SSH 密钥，并且没有安装 Azure 工具，则很适合使用此方法。
+* [Azure 门户](#use-the-azure-portal) - 如果需要快速重置 SSH 配置或 SSH 密钥，并且没有安装 Azure 工具，则很适合使用此方法。
 * [Azure CLI 2.0](#use-the-azure-cli-20) - 如果已打开命令行，则可以快速重置 SSH 配置或凭据。 还可以使用 [Azure CLI 1.0](#use-the-azure-cli-10)
 * [Azure VMAccessForLinux 扩展](#use-the-vmaccess-extension) - 创建和重复使用 json 定义文件来重置 SSH 配置或用户凭据。
 
 在执行每个故障排除步骤之后，请尝试再次连接到 VM。 如果仍然无法连接，请尝试下一步。
 
-## <a name="using-the-azure-portal" id="use-the-azure-portal"></a> 使用 Azure 门户预览
-在 Azure 门户预览中，可以快速重置 SSH 配置或用户凭据，无需在本地计算机上安装任何工具。
+## <a name="using-the-azure-portal" id="use-the-azure-portal"></a> 使用 Azure 门户
+在 Azure 门户中，可以快速重置 SSH 配置或用户凭据，无需在本地计算机上安装任何工具。
 
-请在 Azure 门户预览中选择你的 VM。 向下滚动到“支持 + 故障排除”部分并选择“重置密码”，如以下示例中所示：
+请在 Azure 门户中选择你的 VM。 向下滚动到“支持 + 故障排除”部分并选择“重置密码”，如以下示例中所示：
 
-![在 Azure 门户预览中重置 SSH 配置或凭据](./media/virtual-machines-linux-troubleshoot-ssh-connection/reset-credentials-using-portal.png)
+![在 Azure 门户中重置 SSH 配置或凭据](./media/virtual-machines-linux-troubleshoot-ssh-connection/reset-credentials-using-portal.png)
 
 ### <a name="reset-the-ssh-configuration"></a>重置 SSH 配置
 第一步是从“模式”下拉菜单中选择“`Reset SSH configuration only`”（如上面的屏幕截图中所示），然后单击“重置”按钮。 完成此操作后，再次尝试访问你的 VM。
@@ -149,10 +149,10 @@ SSHD 配置本身可能有误或服务遇到错误。 你可以重置 SSHD 以�
 ## <a name="restart-a-vm"></a>重新启动 VM
 如果已重置 SSH 配置和用户凭据，或者在执行此操作期间遇到错误，可以尝试重新启动 VM 来解决基本的计算问题。
 
-### <a name="azure-portal-preview"></a>Azure 门户预览
-若要使用 Azure 门户预览重新启动 VM，请选择 VM，然后单击“重新启动”按钮，如以下示例所示： 
+### <a name="azure-portal-preview"></a>Azure 门户
+若要使用 Azure 门户重新启动 VM，请选择 VM，然后单击“重新启动”按钮，如以下示例所示： 
 
-![在 Azure 门户预览中重新启动 VM](./media/virtual-machines-linux-troubleshoot-ssh-connection/restart-vm-using-portal.png)
+![在 Azure 门户中重新启动 VM](./media/virtual-machines-linux-troubleshoot-ssh-connection/restart-vm-using-portal.png)
 
 ### <a name="azure-cli-10"></a>Azure CLI 1.0
 以下示例重新启动 `myResourceGroup` 资源组中名为 `myVM` 的 VM。 请如下所示使用自己的值：
@@ -172,10 +172,10 @@ SSHD 配置本身可能有误或服务遇到错误。 你可以重置 SSHD 以�
 > 
 > 
 
-### <a name="azure-portal-preview"></a>Azure 门户预览
-若要使用 Azure 门户预览重新部署 VM，请选择 VM，然后向下滚动到“支持 + 故障排除”部分。 Click the **Redeploy** button as in the following example:
+### <a name="azure-portal-preview"></a>Azure 门户
+若要使用 Azure 门户重新部署 VM，请选择 VM，然后向下滚动到“支持 + 故障排除”部分。 Click the **Redeploy** button as in the following example:
 
-![在 Azure 门户预览中重新部署 VM](./media/virtual-machines-linux-troubleshoot-ssh-connection/redeploy-vm-using-portal.png)
+![在 Azure 门户中重新部署 VM](./media/virtual-machines-linux-troubleshoot-ssh-connection/redeploy-vm-using-portal.png)
 
 ### <a name="azure-cli-10"></a>Azure CLI 1.0
 以下示例重新部署 `myResourceGroup` 资源组中名为 `myVM` 的 VM。 请如下所示使用自己的值：
@@ -190,8 +190,8 @@ SSHD 配置本身可能有误或服务遇到错误。 你可以重置 SSHD 以�
 ## <a name="vms-created-by-using-the-classic-deployment-model"></a>使用经典部署模型创建的 VM
 若要解决使用经典部署模型创建的 VM 中最常见的 SSH 连接失败问题，请尝试以下步骤。 执行每个步骤后，请尝试重新连接到 VM。
 
-* 从 [Azure 门户预览](https://portal.azure.cn)重置远程访问。 在 Azure 门户预览中选择你的 VM，然后单击“重置远程...”按钮。
-* 重启 VM。 在 [Azure 门户预览](https://portal.azure.cn)中选择 VM，然后单击“重新启动”按钮。
+* 从 [Azure 门户](https://portal.azure.cn)重置远程访问。 在 Azure 门户中选择你的 VM，然后单击“重置远程...”按钮。
+* 重启 VM。 在 [Azure 门户](https://portal.azure.cn)中选择 VM，然后单击“重新启动”按钮。
 
     - 或 -
 

@@ -23,12 +23,12 @@
     ms.contentlocale="zh-cn"
     ms.lasthandoff="05/12/2017" />
 
-# <a name="provision-a-sql-server-virtual-machine-in-the-azure-portal-preview"></a>在 Azure 门户预览中预配 SQL Server 虚拟机
+# <a name="provision-a-sql-server-virtual-machine-in-the-azure-portal-preview"></a>在 Azure 门户中预配 SQL Server 虚拟机
 > [AZURE.SELECTOR]
 - [门户](/documentation/articles/virtual-machines-windows-portal-sql-server-provision/)
 - [PowerShell](/documentation/articles/virtual-machines-windows-ps-sql-create/)
 
-本端到端教程说明如何使用 Azure 门户预览来预配运行 SQL Server 的虚拟机。
+本端到端教程说明如何使用 Azure 门户来预配运行 SQL Server 的虚拟机。
 
 Azure 虚拟机 (VM) 库包括几种内含 Microsoft SQL Server 的映像。 只需单击几下鼠标，就可从库中选择一个 SQL VM 映像，并将其预配到你的 Azure 环境中。
 
@@ -40,13 +40,13 @@ Azure 虚拟机 (VM) 库包括几种内含 Microsoft SQL Server 的映像。 只
 * [远程连接到 SQL Server](#connect-to-sql-server-remotely)
 
 ## <a name="select-a-sql-vm-image-from-the-gallery"></a>从库中选择 SQL VM 映像
-1. 使用帐户登录到 [Azure 门户预览](https://portal.azure.cn) 。
+1. 使用帐户登录到 [Azure 门户](https://portal.azure.cn) 。
 
     > [AZURE.NOTE]
     > 如果没有 Azure 帐户，请访问 [Azure 试用版](/pricing/1rmb-trial/)。
     > 
     > 
-2. 在 Azure 门户预览中单击“新建” 。 该门户将打开“新建”  边栏选项卡。 SQL Server VM 资源位于应用商店的“计算”组中。
+2. 在 Azure 门户中单击“新建” 。 该门户将打开“新建”  边栏选项卡。 SQL Server VM 资源位于应用商店的“计算”组中。
 3. 在“新建”边栏选项卡中，单击“计算”，然后单击“全部查看”。
 4. 在“筛选器”文本框中，键入 SQL Server，然后按 ENTER 键。
 
@@ -252,7 +252,7 @@ Azure 虚拟机 (VM) 库包括几种内含 Microsoft SQL Server 的映像。 只
 ## <a name="5-review-the-summary"></a>5.查看摘要
 在“摘要”边栏选项卡上查看摘要，然后单击“确定”以创建为此 VM 指定的 SQL Server、资源组和资源。
 
-可以从 Azure 门户预览监视部署情况。 屏幕顶部的“通知”  按钮显示部署的基本状态。
+可以从 Azure 门户监视部署情况。 屏幕顶部的“通知”  按钮显示部署的基本状态。
 
 > [AZURE.NOTE]
 > 为了让你了解部署时间，我已使用默认设置将一个 SQL VM 部署到中国东部区域。 此测试部署总共花费了 26 分钟才完成。 但是根据你所在的区域和选择的设置，你花费的部署时间会更长或更短。

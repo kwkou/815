@@ -1,6 +1,6 @@
 <properties
-    pageTitle="创建内部负载均衡器 - Azure 门户预览 | Azure"
-    description="了解如何使用 Azure 门户预览在 Resource Manager 中创建内部负载均衡器"
+    pageTitle="创建内部负载均衡器 - Azure 门户 | Azure"
+    description="了解如何使用 Azure 门户在 Resource Manager 中创建内部负载均衡器"
     services="load-balancer"
     documentationcenter="na"
     author="kumudd"

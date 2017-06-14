@@ -528,7 +528,7 @@ Azure 平台需要访问 Key Vault 中的加密密钥或机密，才能使这些
 #### <a name="get-the-encryption-status-of-an-encrypted-windows-vm-by-using-azure-resource-manager"></a>使用 Azure Resource Manager 获取已加密 Windows VM 的加密状态
 可通过以下步骤从 Azure Resource Manager 获取 IaaS VM 的加密状态：
 
-1. 登录 [Azure 门户预览](https://portal.azure.cn/)，然后在左窗格中单击“虚拟机”，查看订阅中虚拟机的摘要视图。 可以通过从“订阅”下拉列表中选择订阅名称来筛选虚拟机视图。
+1. 登录 [Azure 门户](https://portal.azure.cn/)，然后在左窗格中单击“虚拟机”，查看订阅中虚拟机的摘要视图。 可以通过从“订阅”下拉列表中选择订阅名称来筛选虚拟机视图。
 
 2. 在“虚拟机”页的顶部，单击“列”。
 

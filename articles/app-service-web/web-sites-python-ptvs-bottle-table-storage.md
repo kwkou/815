@@ -64,7 +64,7 @@
 ## 创建 Azure 存储帐户
 要使用存储操作，需要一个 Azure 存储帐户。可通过以下步骤创建存储帐户。
 
-1.  登录 [Azure 门户预览](https://portal.azure.cn/)。
+1.  登录 [Azure 门户](https://portal.azure.cn/)。
 2. 单击门户左下角的“新建”图标，然后单击“数据 + 存储”>“存储帐户”。单击“创建”按钮，然后为存储帐户指定一个唯一名称，并为其新建一个[资源组](/documentation/articles/resource-group-overview/)。
    
       ![快速创建](./media/web-sites-python-ptvs-bottle-table-storage/PollsCommonAzureStorageCreate.png)  
@@ -144,7 +144,7 @@
 ## 配置 Web 应用实例
 在此部分中，我们将配置 Web 应用实例的环境变量。
 
-1.  在 [Azure 门户预览]中，单击“浏览”>“应用服务”和 Web 应用名称，打开 Web 应用的边栏选项卡。
+1.  在 [Azure 门户]中，单击“浏览”>“应用服务”和 Web 应用名称，打开 Web 应用的边栏选项卡。
 2. 在 Web 应用的边栏选项卡中，依次单击“所有设置”和“应用程序设置”。
 3. 向下滚动到“应用设置”部分并设置 **REPOSITORY\_NAME**、**STORAGE\_NAME** 和 **STORAGE\_KEY** 的值（如上面**配置项目**部分中所述）。
    
@@ -180,7 +180,7 @@
 
 <!--External Link references-->
 
-[Azure 门户预览]: https://portal.azure.cn
+[Azure 门户]: https://portal.azure.cn
 [用于 .NET 的 Azure SDK]: /downloads/
 [Python Tools for Visual Studio]: http://aka.ms/ptvs
 [Python Tools 2.2 for Visual Studio]: http://go.microsoft.com/fwlink/?LinkId=624025

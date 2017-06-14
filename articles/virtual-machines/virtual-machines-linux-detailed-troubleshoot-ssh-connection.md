@@ -33,7 +33,7 @@
 
 首先，在门户中检查 VM 的状态。
 
-在 [Azure 门户预览](https://portal.azure.cn)中：
+在 [Azure 门户](https://portal.azure.cn)中：
 
 1. 对于使用 Resource Manager 模型创建的 VM，请选择“虚拟机”> VM 名称。
    
@@ -118,7 +118,7 @@
 
 如果可以与同一虚拟网络中的某个 VM 建立 SSH 连接，请检查以下方面：
 
-* **目标 VM 上 SSH 流量的终结点配置。** 终结点的专用 TCP 端口应该与 VM 上的 SSH 服务正在侦听的 TCP 端口匹配。（默认端口为 22）。对于使用 Resource Manager 部署模型创建的 VM，请在 Azure 门户预览中选择“虚拟机”> VM 名称 >“设置”>“终结点”来验证 SSH TCP 端口号。
+* **目标 VM 上 SSH 流量的终结点配置。** 终结点的专用 TCP 端口应该与 VM 上的 SSH 服务正在侦听的 TCP 端口匹配。（默认端口为 22）。对于使用 Resource Manager 部署模型创建的 VM，请在 Azure 门户中选择“虚拟机”> VM 名称 >“设置”>“终结点”来验证 SSH TCP 端口号。
 * **目标虚拟机上的 SSH 流量终结点的 ACL。** ACL 允许你指定基于源 IP 地址允许或拒绝的从 Internet 传入的流量。错误配置的 ACL 可能会阻止 SSH 流量传入终结点。检查你的 ACL 以确保允许从你的代理服务器或其他边缘服务器的公共 IP 地址传入的流量。有关详细信息，请参阅[关于网络访问控制列表 (ACL)](/documentation/articles/virtual-networks-acl/)。
 
 若要将终结点从问题原因中排除，请删除当前终结点，创建另一个终结点，然后指定 SSH 名称（公共和专用端口号为 TCP 端口 22）。有关详细信息，请参阅[在 Azure 中的虚拟机上设置终结点](/documentation/articles/virtual-machines-windows-classic-setup-endpoints/)。

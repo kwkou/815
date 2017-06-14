@@ -27,12 +27,12 @@
 
 # <a name="automate-documentdb-account-creation-using-azure-cli-10-and-azure-resource-manager-templates"></a>使用 Azure CLI 1.0 和 Azure 资源管理器模板自动创建 DocumentDB 帐户
 > [AZURE.SELECTOR]
-- [Azure 门户预览](/documentation/articles/documentdb-create-account/)
+- [Azure 门户](/documentation/articles/documentdb-create-account/)
 - [Azure CLI 1.0](/documentation/articles/documentdb-automation-resource-manager-cli-nodejs/)
 - [Azure CLI 2.0](/documentation/articles/documentdb-automation-resource-manager-cli/)
 - [Azure PowerShell](/documentation/articles/documentdb-manage-account-with-powershell/)
 
-本文说明如何使用 Azure 资源管理器模板或直接使用 Azure 命令行界面 (CLI) 1.0 来创建 DocumentDB 帐户。 若要使用 Azure 门户预览创建 DocumentDB 帐户，请参阅[使用 Azure 门户预览创建 DocumentDB 数据库帐户](/documentation/articles/documentdb-create-account/)。
+本文说明如何使用 Azure 资源管理器模板或直接使用 Azure 命令行界面 (CLI) 1.0 来创建 DocumentDB 帐户。 若要使用 Azure 门户创建 DocumentDB 帐户，请参阅[使用 Azure 门户创建 DocumentDB 数据库帐户](/documentation/articles/documentdb-create-account/)。
 
 DocumentDB 和 MongoDB API 数据库帐户是目前唯一可以使用资源管理器模板和 Azure CLI 1.0 创建的 DocumentDB 资源。
 
@@ -135,7 +135,7 @@ DocumentDB 和 MongoDB API 数据库帐户是目前唯一可以使用资源管�
 如果遇到错误，请参阅 [故障排除](#troubleshooting)。
 
 ## <a name="understanding-resource-manager-templates-and-resource-groups"></a>了解 Azure 资源管理器模板和资源组
-大多数应用程序是通过不同资源类型的组合（例如，一个或多个 DocumentDB 帐户、存储帐户、虚拟网络或内容交付网络）生成的。 默认 Azure 服务管理 API 和 Azure 门户预览使用基于服务的方法代表这些项。 这种方法需要你单独部署和管理各个服务（或查找其他具备相同功能的工具），而不是当作单个逻辑部署单元。
+大多数应用程序是通过不同资源类型的组合（例如，一个或多个 DocumentDB 帐户、存储帐户、虚拟网络或内容交付网络）生成的。 默认 Azure 服务管理 API 和 Azure 门户使用基于服务的方法代表这些项。 这种方法需要你单独部署和管理各个服务（或查找其他具备相同功能的工具），而不是当作单个逻辑部署单元。
 
 可以利用 Azure 资源管理器模板将这些不同的资源声明为一个逻辑部署单元，然后进行部署和管理。 请不要以命令方式告知 Azure 逐一部署命令，而应该在 JSON 文件中描述整个部署 - 所有资源及关联的配置以及部署参数 - 然后告诉 Azure 将这些资源视为一个组进行部署。
 
@@ -182,7 +182,7 @@ DocumentDB 和 MongoDB API 数据库帐户是目前唯一可以使用资源管�
 
 如果遇到错误，请参阅[故障排除](#troubleshooting)。
 
-在此命令返回之后，在帐户更改为“联机”状态以准备好可供使用之前，该帐户将会进入“正在创建”状态数分钟的时间。 可以在 [Azure 门户预览](https://portal.azure.cn)的“DocumentDB 帐户”边栏选项卡上检查帐户的状态。
+在此命令返回之后，在帐户更改为“联机”状态以准备好可供使用之前，该帐户将会进入“正在创建”状态数分钟的时间。 可以在 [Azure 门户](https://portal.azure.cn)的“DocumentDB 帐户”边栏选项卡上检查帐户的状态。
 
 ### <a id="create-single-documentdb-account-cli-arm"></a> 在 Azure CLI 1.0 中使用资源管理器模板创建单区域 DocumentDB 帐户
 本部分中的说明介绍如何使用 Azure 资源管理器模板和可选参数文件（二者都是 JSON 文件）来创建 DocumentDB 帐户。 使用模板可以准确描述所需的信息，并可重复使用而不会出现任何错误。
@@ -294,7 +294,7 @@ DocumentDB 和 MongoDB API 数据库帐户是目前唯一可以使用资源管�
 
 如果遇到错误，请参阅[故障排除](#troubleshooting)。  
 
-在此命令返回之后，在帐户更改为“联机”状态以准备好可供使用之前，该帐户将会进入“正在创建”状态数分钟的时间。 可以在 [Azure 门户预览](https://portal.azure.cn)的“DocumentDB 帐户”边栏选项卡上检查帐户的状态。
+在此命令返回之后，在帐户更改为“联机”状态以准备好可供使用之前，该帐户将会进入“正在创建”状态数分钟的时间。 可以在 [Azure 门户](https://portal.azure.cn)的“DocumentDB 帐户”边栏选项卡上检查帐户的状态。
 
 ## <a id="quick-create-documentdb-with-mongodb-api-account"></a>任务：创建单区域 DocumentDB: API for MongoDB 帐户
 使用本部分中的说明为 MongoDB 帐户创建单区域 API。 可以在 Azure CLI 1.0 中使用资源管理器模板完成此任务。
@@ -412,7 +412,7 @@ DocumentDB 和 MongoDB API 数据库帐户是目前唯一可以使用资源管�
 
 如果遇到错误，请参阅[故障排除](#troubleshooting)。  
 
-在此命令返回之后，在帐户更改为“联机”状态以准备好可供使用之前，该帐户将会进入“正在创建”状态数分钟的时间。 可以在 [Azure 门户预览](https://portal.azure.cn)的“DocumentDB 帐户”边栏选项卡上检查帐户的状态。
+在此命令返回之后，在帐户更改为“联机”状态以准备好可供使用之前，该帐户将会进入“正在创建”状态数分钟的时间。 可以在 [Azure 门户](https://portal.azure.cn)的“DocumentDB 帐户”边栏选项卡上检查帐户的状态。
 
 ## <a id="create-multi-documentdb-account"></a>任务：创建多区域 DocumentDB 帐户
 DocumentDB 能够跨不同的 [Azure 区域](https://azure.microsoft.com/regions/#services)[全局分配数据][distribute-globally]。 创建 DocumentDB 帐户时，可以指定要将服务放在哪个区域。 根据本部分的说明创建多区域 DocumentDB 帐户。 可以在 Azure CLI 1.0 中使用或不使用资源管理器模板完成此任务。
@@ -455,7 +455,7 @@ DocumentDB 能够跨不同的 [Azure 区域](https://azure.microsoft.com/regions
 
 如果遇到错误，请参阅[故障排除](#troubleshooting)。
 
-在此命令返回之后，在帐户更改为“联机”状态以准备好可供使用之前，该帐户将会进入“正在创建”状态数分钟的时间。 可以在 [Azure 门户预览](https://portal.azure.cn)的“DocumentDB 帐户”边栏选项卡上检查帐户的状态。
+在此命令返回之后，在帐户更改为“联机”状态以准备好可供使用之前，该帐户将会进入“正在创建”状态数分钟的时间。 可以在 [Azure 门户](https://portal.azure.cn)的“DocumentDB 帐户”边栏选项卡上检查帐户的状态。
 
 ### <a id="create-multi-documentdb-account-cli-arm"></a> 在 Azure CLI 1.0 中使用资源管理器模板创建多区域 DocumentDB 帐户
 本部分中的说明介绍如何使用 Azure 资源管理器模板和可选参数文件（二者都是 JSON 文件）来创建 DocumentDB 帐户。 使用模板可以准确描述所需的信息，并可重复使用而不会出现任何错误。
@@ -579,7 +579,7 @@ DocumentDB 能够跨不同的 [Azure 区域](https://azure.microsoft.com/regions
 
 如果遇到错误，请参阅[故障排除](#troubleshooting)。  
 
-在此命令返回之后，在帐户更改为“联机”状态以准备好可供使用之前，该帐户将会进入“正在创建”状态数分钟的时间。 可以在 [Azure 门户预览](https://portal.azure.cn)的“DocumentDB 帐户”边栏选项卡上检查帐户的状态。
+在此命令返回之后，在帐户更改为“联机”状态以准备好可供使用之前，该帐户将会进入“正在创建”状态数分钟的时间。 可以在 [Azure 门户](https://portal.azure.cn)的“DocumentDB 帐户”边栏选项卡上检查帐户的状态。
 
 ## <a name="troubleshooting"></a>故障排除
 如果在创建资源组或数据库帐户时收到错误（例如 `Deployment provisioning state was not successful` ），有几个故障排除选项可供使用。
@@ -599,14 +599,14 @@ DocumentDB 能够跨不同的 [Azure 区域](https://azure.microsoft.com/regions
         azure group log show new_res_group --last-deployment
 
     有关其他信息，则请参阅 [Azure 中的资源组部署故障排除](/documentation/articles/resource-manager-common-deployment-errors/)。
-- Azure 门户预览中也会提供错误信息，如以下屏幕截图所示。 若要导航到错误信息：单击跳转栏中的“资源组”，选择发生错误的资源组，接着在“资源组”边栏选项卡的“概要”区域中单击“上次部署”的日期，然后在“部署历史记录”边栏选项卡中选择失败的部署，之后在“部署”边栏选项卡中单击带有红色感叹号的“操作详细信息”。 失败部署的状态消息显示在“操作详细信息”边栏选项卡中。
+- Azure 门户中也会提供错误信息，如以下屏幕截图所示。 若要导航到错误信息：单击跳转栏中的“资源组”，选择发生错误的资源组，接着在“资源组”边栏选项卡的“概要”区域中单击“上次部署”的日期，然后在“部署历史记录”边栏选项卡中选择失败的部署，之后在“部署”边栏选项卡中单击带有红色感叹号的“操作详细信息”。 失败部署的状态消息显示在“操作详细信息”边栏选项卡中。
 
-    ![Azure 门户预览屏幕截图：如何导航到部署错误消息](./media/documentdb-automation-resource-manager-cli/portal-troubleshooting-deploy.png)
+    ![Azure 门户屏幕截图：如何导航到部署错误消息](./media/documentdb-automation-resource-manager-cli/portal-troubleshooting-deploy.png)
 
 ## <a name="next-steps"></a>后续步骤
 有了 DocumentDB 帐户之后，接下来的步骤是创建 DocumentDB 数据库。 你可以使用下面其中一项来创建数据库：
 
-- Azure 门户预览，如[使用 Azure 门户预览创建 DocumentDB 集合和数据库](/documentation/articles/documentdb-create-collection/)中所述。
+- Azure 门户，如[使用 Azure 门户创建 DocumentDB 集合和数据库](/documentation/articles/documentdb-create-collection/)中所述。
 - C# .NET 示例，位于 GitHub 上 [azure-documentdb-dotnet](https://github.com/Azure/azure-documentdb-net/tree/master/samples/code-samples) 存储库的 [DatabaseManagement](https://github.com/Azure/azure-documentdb-net/tree/master/samples/code-samples/DatabaseManagement) 项目中。
 - [DocumentDB SDK](https://msdn.microsoft.com/zh-cn/library/azure/dn781482.aspx)。 DocumentDB 有 .NET、Java、Python、Node.js 和 JavaScript API SDK。
 

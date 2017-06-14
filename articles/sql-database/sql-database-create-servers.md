@@ -1,6 +1,6 @@
 <properties
     pageTitle="创建 Azure SQL 数据库服务器 | Azure"
-    description="有关如何使用 Azure 门户预览和 PowerShell 创建 Azure SQL 数据库服务器的快速参考。"
+    description="有关如何使用 Azure 门户和 PowerShell 创建 Azure SQL 数据库服务器的快速参考。"
     services="sql-database"
     documentationcenter=""
     author="CarlRabeler"
@@ -20,11 +20,11 @@
 
 # 创建 Azure SQL 数据库服务器
 
-可以使用 [Azure 门户预览](https://portal.azure.cn/)、PowerShell、REST API 或 C# 创建 Azure SQL 数据库服务器。
+可以使用 [Azure 门户](https://portal.azure.cn/)、PowerShell、REST API 或 C# 创建 Azure SQL 数据库服务器。
 
-## 使用 Azure 门户预览创建 Azure SQL 数据库服务器
+## 使用 Azure 门户创建 Azure SQL 数据库服务器
 
-1. 在 [Azure 门户预览](https://portal.azure.cn/)中打开“SQL Server”边栏选项卡。
+1. 在 [Azure 门户](https://portal.azure.cn/)中打开“SQL Server”边栏选项卡。
 
     ![SQL Server](./media/sql-database-get-started/new-sql-server.png)  
 
@@ -35,7 +35,7 @@
 
 
 > [AZURE.TIP]
-有关使用 Azure 门户预览和 SQL Server Management Studio 的入门教程，请参阅 [Get started with Azure SQL Database servers, databases and firewall rules by using the Azure portal and SQL Server Management Studio](/documentation/articles/sql-database-get-started/)（开始使用 Azure 门户预览和 SQL Server Management Studio 了解 Azure SQL 数据库服务器、数据库和防火墙规则）。
+有关使用 Azure 门户和 SQL Server Management Studio 的入门教程，请参阅 [Get started with Azure SQL Database servers, databases and firewall rules by using the Azure portal and SQL Server Management Studio](/documentation/articles/sql-database-get-started/)（开始使用 Azure 门户和 SQL Server Management Studio 了解 Azure SQL 数据库服务器、数据库和防火墙规则）。
 >
 
 ## 使用 PowerShell 创建 Azure SQL 数据库服务器
@@ -65,7 +65,7 @@
 
 ## 其他资源
 * 有关管理工具的概述，请参阅[管理工具概述](/documentation/articles/sql-database-manage-overview/)
-* 若要了解如何使用 Azure 门户预览执行管理任务，请参阅[使用 Azure 门户预览管理 Azure SQL 数据库](/documentation/articles/sql-database-manage-portal/)
+* 若要了解如何使用 Azure 门户执行管理任务，请参阅[使用 Azure 门户管理 Azure SQL 数据库](/documentation/articles/sql-database-manage-portal/)
 * 若要了解如何使用 PowerShell 执行管理任务，请参阅[使用 PowerShell 管理 Azure SQL 数据库](/documentation/articles/sql-database-manage-powershell/)
 * 若要了解如何使用 SQL Server Management Studio 执行其他任务，请参阅 [SQL Server Management Studio](/documentation/articles/sql-database-manage-azure-ssms/)。
 * 有关 SQL 数据库服务的信息，请参阅[什么是 SQL 数据库](/documentation/articles/sql-database-technical-overview/)。

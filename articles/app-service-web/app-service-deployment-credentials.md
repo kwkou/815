@@ -36,7 +36,7 @@
 
 用户级凭据是 Azure 用户创建的。 用户级部署凭据可从 [Azure 经典管理门户](https://manage.windowsazure.cn)设置或重置，每个应用服务应用在该门户的“仪表板”>“速览”下都有一个编辑入口点。 无论入口点如何，对这些用户级凭据所作的编辑都会应用于整个 Azure 帐户。 FTP 和 Git 部署频繁使用这些凭据。
 
-设置部署凭据后，可以在 [Azure 门户预览](https://portal.azure.cn)的应用的“概览”中找到 *Git*部署用户名，
+设置部署凭据后，可以在 [Azure 门户](https://portal.azure.cn)的应用的“概览”中找到 *Git*部署用户名，
 
 ![](./media/app-service-deployment-credentials/deployment_credentials_overview.png)
 
@@ -54,7 +54,7 @@
 
 若要获取应用级凭据，请执行以下操作：
 
-1. 在 [Azure 门户预览](https://portal.azure.cn)中，单击“应用服务”> **&lt;any_app>** > “概览”。
+1. 在 [Azure 门户](https://portal.azure.cn)中，单击“应用服务”> **&lt;any_app>** > “概览”。
 
 2. 单击“...更多” > “获取发布配置文件”，然后就会开始下载 .PublishSettings 文件。
 
@@ -69,7 +69,7 @@
 
 若要重置应用级凭据，请执行以下操作：
 
-1. 在 [Azure 门户预览](https://portal.azure.cn)中，单击“应用服务”> **&lt;any_app>** > “概览”。
+1. 在 [Azure 门户](https://portal.azure.cn)中，单击“应用服务”> **&lt;any_app>** > “概览”。
 
 2. 单击“...更多” > “重置发布配置文件”。 单击“是”确认重置。
 

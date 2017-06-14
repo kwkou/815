@@ -94,12 +94,12 @@
 
 3. 使用 SQL 工具（如 *SQL Server Management Studio* ）或 REST 客户端（如 *Fiddler* 或 *Postman* ）查看 Azure *TodoItem* 表的内容。验证新项是否_未_同步到服务器
 
-   	+ 对于 Node.js 后端，请转到 [Azure 门户预览](https://portal.azure.cn/)，在移动应用后端中单击“简易表”>“TodoItem”，查看 `TodoItem` 表的内容。
+   	+ 对于 Node.js 后端，请转到 [Azure 门户](https://portal.azure.cn/)，在移动应用后端中单击“简易表”>“TodoItem”，查看 `TodoItem` 表的内容。
    	+ 对于 .NET 后端，请使用 SQL 工具（如 *SQL Server Management Studio* ）或 REST 客户端（如 *Fiddler* 或 *Poistman* ）查看表内容。
 
 4. 在设备或模拟器中打开 WiFi。接下来，按“刷新”按钮。
 
-5. 在 Azure 门户预览中再次查看 TodoItem 数据。新的和更改的 TodoItem 现在应会出现。
+5. 在 Azure 门户中再次查看 TodoItem 数据。新的和更改的 TodoItem 现在应会出现。
 
 ## 其他资源
 

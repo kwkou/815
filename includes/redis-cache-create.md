@@ -1,4 +1,4 @@
-若要创建缓存，请先登录到 [Azure 门户预览](https://portal.azure.cn)，然后单击“新建” > “数据库” > “Redis 缓存”。
+若要创建缓存，请先登录到 [Azure 门户](https://portal.azure.cn)，然后单击“新建” > “数据库” > “Redis 缓存”。
 
 > [AZURE.NOTE]
 > 如果没有 Azure 帐户，只需花费几分钟就能[建立一个 Azure 帐户](/pricing/1rmb-trial/?WT.mc_id=redis_cache_hero)。
@@ -8,7 +8,7 @@
 ![新建缓存](./media/redis-cache-create/redis-cache-new-cache-menu.png)
 
 > [AZURE.NOTE]
-> 除了在 Azure 门户预览中创建缓存以外，也可以使用 Resource Manager 模板、PowerShell 或 Azure CLI 来创建。
+> 除了在 Azure 门户中创建缓存以外，也可以使用 Resource Manager 模板、PowerShell 或 Azure CLI 来创建。
 ><p>
 ><p> *    若要使用 Resource Manager 模板创建缓存，请参阅[使用模板创建 Redis 缓存](/documentation/articles/cache-redis-cache-arm-provision/)。
 ><p> *    若要使用 Azure PowerShell 创建缓存，请参阅[使用 Azure PowerShell 管理 Azure Redis 缓存](/documentation/articles/cache-howto-manage-redis-cache-powershell/)。

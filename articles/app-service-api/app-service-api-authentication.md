@@ -64,7 +64,7 @@ Azure 应用服务提供内置的身份验证与授权服务，可实现 [OAuth 
 
 	此选项将身份验证和授权任务全部交由应用程序代码来处理。
 
-在 [Azure 门户预览](https://portal.azure.cn/)上的“身份验证/授权”边栏选项卡中选择所需的选项。
+在 [Azure 门户](https://portal.azure.cn/)上的“身份验证/授权”边栏选项卡中选择所需的选项。
 
 ![](./media/app-service-api-authentication/authblade.png)
 

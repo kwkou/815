@@ -35,7 +35,7 @@
 
 安全身份验证要求为应用定义新的 URL 方案。 此方案允许在完成身份验证过程后，身份验证系统重定向到应用。 在本教程中，我们自始至终使用 URL 方案 _appname_ 。 但是，可以使用任何你所选的 URL 方案。 对于你的移动应用程序而言，它应是唯一的。 在服务器端启用重定向：
 
-1. 在 [Azure 门户预览]中，选择应用服务。
+1. 在 [Azure 门户]中，选择应用服务。
 
 2. 单击“身份验证/授权”菜单选项。
 
@@ -84,6 +84,6 @@
 <!-- URLs. -->
 [Get started with Mobile Apps]: /documentation/articles/app-service-mobile-android-get-started/
 [移动应用入门]: /documentation/articles/app-service-mobile-android-get-started/
-[Azure 门户预览]: https://portal.azure.cn
+[Azure 门户]: https://portal.azure.cn
 
 <!---HONumber=Mooncake_0116_2017-->

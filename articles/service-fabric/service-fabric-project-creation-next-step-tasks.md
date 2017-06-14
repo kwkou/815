@@ -61,7 +61,7 @@ Service Fabric“来宾”是指不使用平台编程模型生成的服务。 �
 
 ## <a name="next-steps"></a>后续步骤
 ### <a name="create-an-azure-cluster"></a>创建 Azure 群集
-Service Fabric SDK 提供一个用于开发和测试的本地群集。若要在 Azure 中创建群集，请参阅[从 Azure 门户预览设置 Service Fabric 群集][create-cluster-in-portal]。
+Service Fabric SDK 提供一个用于开发和测试的本地群集。若要在 Azure 中创建群集，请参阅[从 Azure 门户设置 Service Fabric 群集][create-cluster-in-portal]。
 
 ### <a name="publish-your-application-to-azure"></a>将应用程序发布到 Azure
 可以直接从 Visual Studio 将应用程序发布到 Azure 群集。 若要了解具体方法，请参阅 [将应用程序发布到 Azure][publish-app-to-azure]。

@@ -71,7 +71,7 @@
 **将空边缘节点添加到现有群集**
 
 1. 创建一个 HDInsight 群集（如果没有）。  请参阅 [Hadoop 教程：开始使用 HDInsight 中基于 Linux 的 Hadoop](/documentation/articles/hdinsight-hadoop-linux-tutorial-get-started/)。
-2. 单击以下图像登录到 Azure，然后在 Azure 门户预览中打开 Azure Resource Manager 模板。 
+2. 单击以下图像登录到 Azure，然后在 Azure 门户中打开 Azure Resource Manager 模板。 
 
     <a href="https://portal.azure.cn/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fhdinsight%2FIaas-Applications%2Fmaster%2FEmptyNode%2Fazuredeploy.json" target="_blank"><img src="./media/hdinsight-apps-use-edge-node/deploy-to-azure.png" alt="Deploy to Azure"></a>
 3. 配置以下属性：
@@ -90,7 +90,7 @@
 **将空边缘节点添加到现有群集**
 
 1. 创建一个 HDInsight 群集（如果没有）。  请参阅 [Hadoop 教程：开始使用 HDInsight 中基于 Linux 的 Hadoop](/documentation/articles/hdinsight-hadoop-linux-tutorial-get-started/)。
-2. 单击以下图像登录到 Azure，然后在 Azure 门户预览中打开 Azure Resource Manager 模板。 
+2. 单击以下图像登录到 Azure，然后在 Azure 门户中打开 Azure Resource Manager 模板。 
 
     <a href="https://portal.azure.cn/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-hdinsight-linux-with-edge-node%2Fazuredeploy.json" target="_blank"><img src="./media/hdinsight-apps-use-edge-node/deploy-to-azure.png" alt="Deploy to Azure"></a>
 
@@ -115,11 +115,11 @@
 ## <a name="access-an-edge-node"></a>访问边缘节点
 边缘节点 ssh 终结点为 &lt;边缘节点名称>.&lt;群集名称>-ssh.azurehdinsight.cn:22。  例如，new-edgenode.myedgenode0914-ssh.azurehdinsight.cn:22。
 
-在 Azure 门户预览中，边缘节点显示为应用程序。  门户中提供了使用 SSH 访问边缘节点时所需的信息。
+在 Azure 门户中，边缘节点显示为应用程序。  门户中提供了使用 SSH 访问边缘节点时所需的信息。
 
 **验证边缘节点 SSH 终结点**
 
-1. 登录到 [Azure 门户预览](https://portal.azure.cn)。
+1. 登录到 [Azure 门户](https://portal.azure.cn)。
 2. 打开包含边缘节点的 HDInsight 群集。
 3. 在群集边栏选项卡中单击“应用程序”。 此时将显示该边缘节点。  默认名称为 **new-edgenode**。
 4. 单击该边缘节点。 此时将显示 SSH 终结点。
@@ -136,11 +136,11 @@
         show tables;
 
 ## <a name="delete-an-edge-node"></a>删除边缘节点
-可以在 Azure 门户预览中删除边缘节点。
+可以在 Azure 门户中删除边缘节点。
 
 **访问边缘节点**
 
-1. 登录到 [Azure 门户预览](https://portal.azure.cn)。
+1. 登录到 [Azure 门户](https://portal.azure.cn)。
 2. 打开包含边缘节点的 HDInsight 群集。
 3. 在群集边栏选项卡中单击“应用程序”。 此时将显示边缘节点的列表。  
 4. 右键单击要删除的边缘节点，然后单击“删除”。

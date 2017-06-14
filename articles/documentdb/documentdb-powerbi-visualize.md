@@ -44,7 +44,7 @@
   - 演示帐户使用本教程中显示的火山数据填充。 此演示帐户未由任何 SLA 绑定且只用于演示目的。  我们保留对此演示帐户进行修改的权利，包括但不限于在任何时间无需提前通知或理由而终止帐户、更改密钥、限制访问、更改和删除数据。
     - URL：https://analytics.documents.azure.cn
     - 只读密钥：MSr6kt7Gn0YRQbjd6RbTnTt7VHc5ohaAFu7osF0HdyQmfR+YhwCH2D2jcczVIR1LNK3nMPNBD31losN7lQ/fkw==
-  - 或者，若要创建你自己的帐户，请参阅 [使用 Azure 门户预览创建 DocumentDB 数据库帐户](/documentation/articles/documentdb-create-account/)。 然后，要获取类似于本教程中使用的示例火山数据（但不包含 GeoJSON 块），请参阅 [NOAA 站点](https://www.ngdc.noaa.gov/nndc/struts/form?t=102557&s=5&d=5)，然后使用 [DocumentDB 数据迁移工具](/documentation/articles/documentdb-import-data/)导入数据。
+  - 或者，若要创建你自己的帐户，请参阅 [使用 Azure 门户创建 DocumentDB 数据库帐户](/documentation/articles/documentdb-create-account/)。 然后，要获取类似于本教程中使用的示例火山数据（但不包含 GeoJSON 块），请参阅 [NOAA 站点](https://www.ngdc.noaa.gov/nndc/struts/form?t=102557&s=5&d=5)，然后使用 [DocumentDB 数据迁移工具](/documentation/articles/documentdb-import-data/)导入数据。
 
 若要在 PowerBI.com 中共享你的报表，必须在 PowerBI.com 中拥有帐户。  若要了解更多有关 Power BI 免费版和 Power BI Pro 的信息，请访问 [https://powerbi.microsoft.com/pricing](https://powerbi.microsoft.com/pricing)。
 
@@ -85,14 +85,14 @@
 5. 单击“Azure”，选择“DocumentDB (Beta)”，然后单击“连接”。  此时应显示“DocumentDB 连接”窗口。
    
     ![Power BI Desktop 获取数据 - Power BI 连接器](./media/documentdb-powerbi-visualize/power_bi_connector_pbigetdata.png)
-6. 如下所示指定你想要从其中检索数据的 DocumentDB 帐户终结点 URL，然后单击“确定”。 可以在 Azure 门户预览的“密钥”边栏选项卡中的 URI 框检索 URL，或者可以使用演示帐户信息，其中 URL 为 `https://analytics.documents.azure.cn`。**[](/documentation/articles/documentdb-manage-account/#keys)** 
+6. 如下所示指定你想要从其中检索数据的 DocumentDB 帐户终结点 URL，然后单击“确定”。 可以在 Azure 门户的“密钥”边栏选项卡中的 URI 框检索 URL，或者可以使用演示帐户信息，其中 URL 为 `https://analytics.documents.azure.cn`。**[](/documentation/articles/documentdb-manage-account/#keys)** 
    
     数据库名称、集合名称和 SQL 语句都可留空，因为这些字段是可选的。  我们将使用导航器选择数据库和集合以指定数据来源。
    
     ![针对 DocumentDB Power BI 连接器的 Power BI 教程 - 桌面连接窗口](./media/documentdb-powerbi-visualize/power_bi_connector_pbiconnectwindow.png)
-7. 如果你是首次连接到此终结点，则将提示你输入帐户密钥。  可以在 Azure 门户预览的“只读密钥”边栏选项卡中的“主密钥”框检索密钥，或者可以使用演示帐户信息，其中密钥为 `MSr6kt7Gn0YRQbjd6RbTnTt7VHc5ohaAFu7osF0HdyQmfR+YhwCH2D2jcczVIR1LNK3nMPNBD31losN7lQ/fkw==`。**[](/documentation/articles/documentdb-manage-account/#keys)** 输入帐户密钥并单击“连接”。
+7. 如果你是首次连接到此终结点，则将提示你输入帐户密钥。  可以在 Azure 门户的“只读密钥”边栏选项卡中的“主密钥”框检索密钥，或者可以使用演示帐户信息，其中密钥为 `MSr6kt7Gn0YRQbjd6RbTnTt7VHc5ohaAFu7osF0HdyQmfR+YhwCH2D2jcczVIR1LNK3nMPNBD31losN7lQ/fkw==`。**[](/documentation/articles/documentdb-manage-account/#keys)** 输入帐户密钥并单击“连接”。
    
-    我们建议你在生成报表时使用只读密钥。  这将防止主密钥不必要地暴露于潜在的安全风险中。 只读密钥从 Azure 门户预览的“密钥”[](/documentation/articles/documentdb-manage-account/#keys)边栏选项卡中可用，或者你可以使用上文提供的演示帐户信息。
+    我们建议你在生成报表时使用只读密钥。  这将防止主密钥不必要地暴露于潜在的安全风险中。 只读密钥从 Azure 门户的“密钥”[](/documentation/articles/documentdb-manage-account/#keys)边栏选项卡中可用，或者你可以使用上文提供的演示帐户信息。
    
     ![针对 DocumentDB Power BI 连接器的 Power BI 教程 - 帐户密钥](./media/documentdb-powerbi-visualize/power_bi_connector_pbidocumentdbkey.png)
 8. 帐户成功连接后，将出现“导航器”。  “导航器”将在帐户下显示数据库的列表。

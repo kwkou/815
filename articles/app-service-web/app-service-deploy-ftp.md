@@ -31,13 +31,13 @@
 
 ## 步骤 2：获取 FTP 连接信息
 
-1. 在 [Azure 门户预览](https://portal.azure.cn)中，打开应用的[资源边栏选项卡](/documentation/articles/resource-group-portal/#manage-resources)。
+1. 在 [Azure 门户](https://portal.azure.cn)中，打开应用的[资源边栏选项卡](/documentation/articles/resource-group-portal/#manage-resources)。
 2. 选择左侧菜单中的“概述”，然后记下 **FTP/部署用户**、**FTP 主机名**和 **FTPS 主机名**的值。
 
     ![FTP 连接信息](./media/web-sites-deploy/FTP-Connection-Info.PNG)  
 
     > [AZURE.NOTE]
-    必须输入 Azure 门户预览中显示的“FTP/部署用户”值（包括应用名称），以便为 FTP 服务器提供适当的上下文。在左侧菜单中选择“属性”时，可以找到相同信息。
+    必须输入 Azure 门户中显示的“FTP/部署用户”值（包括应用名称），以便为 FTP 服务器提供适当的上下文。在左侧菜单中选择“属性”时，可以找到相同信息。
     ><p>
     > 此外，永远不会显示部署密码。如果忘记了部署密码，请返回到[步骤 1](#step1)，重置部署密码。
     >

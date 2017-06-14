@@ -66,7 +66,7 @@
     <add key="SecretUri" value="secreturi" />
 
 
-如果不打算将应用程序作为 Azure Web 应用程序托管，则应在 web.config 中添加实际客户端 ID、客户端机密和机密 URI 值。否则，请保留这些虚构值，因为我们将在 Azure 门户预览中添加实际值以提高安全级别。
+如果不打算将应用程序作为 Azure Web 应用程序托管，则应在 web.config 中添加实际客户端 ID、客户端机密和机密 URI 值。否则，请保留这些虚构值，因为我们将在 Azure 门户中添加实际值以提高安全级别。
 
 ## <a id="gettoken"></a>添加获取访问令牌的方法
 若要使用密钥保管库 API，则需要一个访问令牌。密钥保管库客户端将处理对密钥保管库 API 的调用，但需要为该 API 提供一个用于获取访问令牌的函数。
@@ -117,10 +117,10 @@
 
 
 
-## <a id="portalsettings"></a>在 Azure 门户预览中添加应用程序设置（可选）
-如果你有一个 Azure Web 应用程序，则现在可以在 Azure 门户预览中添加 AppSettings 的实际值。如果这样做，实际值不会出现在 web.config 中，而是通过门户受到保护，你在门户中拥有不同的访问控制功能。这些值将取代为你在 web.config 中输入的值。请确保名称相同。
+## <a id="portalsettings"></a>在 Azure 门户中添加应用程序设置（可选）
+如果你有一个 Azure Web 应用程序，则现在可以在 Azure 门户中添加 AppSettings 的实际值。如果这样做，实际值不会出现在 web.config 中，而是通过门户受到保护，你在门户中拥有不同的访问控制功能。这些值将取代为你在 web.config 中输入的值。请确保名称相同。
 
-![Azure 门户预览中显示的应用程序设置][1]  
+![Azure 门户中显示的应用程序设置][1]  
 
 
 ## 使用证书（而不是客户端密码）进行身份验证
@@ -140,7 +140,7 @@
 
 有关创建测试证书的详细信息，请参阅[如何：创建自己的测试证书](https://msdn.microsoft.com/zh-cn/library/ff699202.aspx)
 
-**将证书与 Azure AD 应用程序相关联** 既然你拥有一个证书，你需要将其与 Azure AD 应用程序相关联。目前，Azure 门户预览不支持此工作流；可以通过 PowerShell 完成此操作。使用 Azure AD 应用程序运行以下命令，以便关联证书：
+**将证书与 Azure AD 应用程序相关联** 既然你拥有一个证书，你需要将其与 Azure AD 应用程序相关联。目前，Azure 门户不支持此工作流；可以通过 PowerShell 完成此操作。使用 Azure AD 应用程序运行以下命令，以便关联证书：
 
     $x509 = New-Object System.Security.Cryptography.X509Certificates.X509Certificate2
     $x509.Import("C:\data\KVWebApp.cer")
@@ -219,9 +219,9 @@
     var kv = new KeyVaultClient(new KeyVaultClient.AuthenticationCallback(Utils.GetAccessToken));
 
 
-**通过 Azure 门户预览将证书添加到 Web 应用** 将证书添加到 Web 应用是一个简单的分为两步的过程。首先，转到 Azure 门户预览并导航到你的 Web 应用。在你的 Web 应用的“设置”边栏选项卡中，单击“自定义域和 SSL”对应的条目。在打开的边栏选项卡中，你将能够上载上面创建的证书 KVWebApp.pfx，请确保记住 pfx 的密码。
+**通过 Azure 门户将证书添加到 Web 应用** 将证书添加到 Web 应用是一个简单的分为两步的过程。首先，转到 Azure 门户并导航到你的 Web 应用。在你的 Web 应用的“设置”边栏选项卡中，单击“自定义域和 SSL”对应的条目。在打开的边栏选项卡中，你将能够上载上面创建的证书 KVWebApp.pfx，请确保记住 pfx 的密码。
 
-![将证书添加到 Azure 门户预览中的 Web 应用][2]
+![将证书添加到 Azure 门户中的 Web 应用][2]
 
 你需要执行的最后一项操作是将应用程序设置添加到 Web 应用中，该设置名为 WEBSITE\_LOAD\_CERTIFICATES，值为 \*。这将确保加载所有证书。如果你只想加载已上载的证书，则可以输入这些证书的指纹的逗号分隔列表。
 

@@ -25,7 +25,7 @@
 
 # <a name="create-change-or-delete-network-interfaces"></a>创建、更改或删除网络接口
 
-了解如何创建、删除网络接口 (NIC) 及更改其设置。 Azure 虚拟机 (VM) 通过 NIC 与 Internet、Azure 及本地资源通信。 使用 Azure 门户预览创建 VM 时，门户将使用默认设置创建一个 NIC。 可以改为选择使用自定义设置创建 NIC，并在创建 VM 时向其添加一个或多个 NIC。 还可以更改现有 NIC 的默认 NIC 设置。 本文介绍如何使用自定义设置创建 NIC、更改现有的 NIC 设置（例如网络筛选器分配（网络安全组）、子网分配、DNS 服务器设置和 IP 转发），以及删除 NIC。 
+了解如何创建、删除网络接口 (NIC) 及更改其设置。 Azure 虚拟机 (VM) 通过 NIC 与 Internet、Azure 及本地资源通信。 使用 Azure 门户创建 VM 时，门户将使用默认设置创建一个 NIC。 可以改为选择使用自定义设置创建 NIC，并在创建 VM 时向其添加一个或多个 NIC。 还可以更改现有 NIC 的默认 NIC 设置。 本文介绍如何使用自定义设置创建 NIC、更改现有的 NIC 设置（例如网络筛选器分配（网络安全组）、子网分配、DNS 服务器设置和 IP 转发），以及删除 NIC。 
 
 如果需要为 NIC 添加、更改或删除 IP 地址，请参阅[添加、更改或删除 IP 地址](/documentation/articles/virtual-network-network-interface-addresses/)一文。 如果需要在 VM 中添加或删除 NIC，请参阅[添加或删除 NIC](/documentation/articles/virtual-network-network-interface-vm/) 一文。 
 
@@ -34,17 +34,17 @@
 在完成本文的任何部分中的任何步骤之前完成以下任务：
 
 - 查看 [Azure 限制](/documentation/articles/azure-subscription-service-limits/#azure-resource-manager-virtual-networking-limits)一文，了解 NIC 的限制。
-- 使用 Azure 帐户登录到 Azure 门户预览、Azure 命令行接口 (CLI) 或 Azure PowerShell。 如果还没有 Azure 帐户，请注册[试用帐户](/pricing/1rmb-trial)。
+- 使用 Azure 帐户登录到 Azure 门户、Azure 命令行接口 (CLI) 或 Azure PowerShell。 如果还没有 Azure 帐户，请注册[试用帐户](/pricing/1rmb-trial)。
 - 如果使用 PowerShell 命令完成本文中的任务，请按[如何安装和配置 Azure PowerShell](https://docs.microsoft.com/zh-cn/powershell/azureps-cmdlets-docs) 一文中的步骤安装和配置 Azure PowerShell。 确保已安装最新版本的 Azure PowerShell cmdlet。 若要获取 PowerShell 命令的帮助和示例，请键入 `get-help <command> -full`。
 - 如果使用 Azure 命令行接口 (CLI) 命令完成本文中的任务，请按[如何安装和配置 Azure CLI](https://docs.microsoft.com/zh-cn/cli/azure/install-azure-cli) 一文中的步骤安装和配置 Azure CLI。 确保已安装最新版本的 Azure CLI。 若要获取 CLI 命令的帮助，请键入 `az <command> --help`。
 
 [AZURE.INCLUDE [azure-cli-2-azurechinacloud-environment-parameter](../../includes/azure-cli-2-azurechinacloud-environment-parameter.md)]
 
 ## <a name="create-nic"></a>创建 NIC
-使用 Azure 门户预览创建 VM 时，门户将使用默认设置创建一个 NIC。 如果想要指定所有 NIC 设置，可以使用自定义设置创建 NIC 并在创建 VM 时将该 NIC 附加到 VM。 还可以创建 NIC 并将其添加到现有的 VM。 若要了解如何创建包含现有 NIC 的 VM，或者要在现有 VM 中添加或删除 NIC，请参阅[添加或删除 NIC](/documentation/articles/virtual-network-network-interface-vm/) 一文。 创建 NIC 之前，创建 NIC 时所在的同一位置和订阅中必须存在现有的虚拟网络 (VNet)。 若要了解如何创建 VNet，请参阅[创建 VNet](/documentation/articles/virtual-networks-create-vnet-arm-pportal/) 一文。
+使用 Azure 门户创建 VM 时，门户将使用默认设置创建一个 NIC。 如果想要指定所有 NIC 设置，可以使用自定义设置创建 NIC 并在创建 VM 时将该 NIC 附加到 VM。 还可以创建 NIC 并将其添加到现有的 VM。 若要了解如何创建包含现有 NIC 的 VM，或者要在现有 VM 中添加或删除 NIC，请参阅[添加或删除 NIC](/documentation/articles/virtual-network-network-interface-vm/) 一文。 创建 NIC 之前，创建 NIC 时所在的同一位置和订阅中必须存在现有的虚拟网络 (VNet)。 若要了解如何创建 VNet，请参阅[创建 VNet](/documentation/articles/virtual-networks-create-vnet-arm-pportal/) 一文。
 
-1. 使用已分配订阅的“网络参与者”角色权限（最低权限）的帐户登录到 [Azure 门户预览](https://portal.azure.cn)。 请参阅[用于 Azure 基于角色的访问控制的内置角色](/documentation/articles/role-based-access-built-in-roles/#network-contributor)一文，详细了解如何将角色和权限分配给帐户。
-2. 在 Azure 门户预览顶部包含“搜索资源”文本的框中，键入“网络接口”。 在搜索结果中出现“网络接口”  时，单击该接口。
+1. 使用已分配订阅的“网络参与者”角色权限（最低权限）的帐户登录到 [Azure 门户](https://portal.azure.cn)。 请参阅[用于 Azure 基于角色的访问控制的内置角色](/documentation/articles/role-based-access-built-in-roles/#network-contributor)一文，详细了解如何将角色和权限分配给帐户。
+2. 在 Azure 门户顶部包含“搜索资源”文本的框中，键入“网络接口”。 在搜索结果中出现“网络接口”  时，单击该接口。
 3. 在出现的“网络接口”边栏选项卡中，单击“+ 添加”。
 4. 在出现的“创建网络接口”边栏选项卡中，输入或选择以下设置的值，然后单击“创建”：
 
@@ -75,11 +75,11 @@
 
 可以查看和更改的 NIC 的大多数设置。
 
-1. 使用已分配订阅的“网络参与者”角色权限（最低权限）的帐户登录到 [Azure 门户预览](https://portal.azure.cn)。 请参阅[用于 Azure 基于角色的访问控制的内置角色](/documentation/articles/role-based-access-built-in-roles/#network-contributor)一文，详细了解如何将角色和权限分配给帐户。
-2. 在 Azure 门户预览顶部包含“搜索资源”文本的框中，键入“网络接口”。 在搜索结果中出现“网络接口”  时，单击该接口。
+1. 使用已分配订阅的“网络参与者”角色权限（最低权限）的帐户登录到 [Azure 门户](https://portal.azure.cn)。 请参阅[用于 Azure 基于角色的访问控制的内置角色](/documentation/articles/role-based-access-built-in-roles/#network-contributor)一文，详细了解如何将角色和权限分配给帐户。
+2. 在 Azure 门户顶部包含“搜索资源”文本的框中，键入“网络接口”。 在搜索结果中出现“网络接口”  时，单击该接口。
 3. 在显示的“网络接口”  边栏选项卡中，单击要查看或更改其设置的 NIC。
 4. 针对所选 NIC 显示的边栏选项卡中将列出以下设置：
-    - **概述：**提供有关 NIC 的信息，例如，分配给该 NIC 的 IP 地址、该 NIC 连接到的 VNet/子网，以及该 NIC 附加到的 VM（如果已附加到 VM）。 下图显示名为 **mywebserver256** 的 NIC 的概述设置：网络接口概述。可以单击“资源组”或“订阅名称”旁边的“(更改)”，将 NIC 移到不同的资源组或订阅。  ![](./media/virtual-network-network-interface/nic-overview.png) 如果移动 NIC，必须同时移动与该 NIC 相关的所有资源。 例如，如果 NIC 已附加到 VM，则还必须移动该 VM 及其相关的其他资源。 若要移动 NIC，请参阅[将资源移到新的资源组或订阅](/documentation/articles/resource-group-move-resources/#use-portal)一文。 此文列出了先决条件，以及如何使用 Azure 门户预览、PowerShell 和 Azure CLI 移动资源。
+    - **概述：**提供有关 NIC 的信息，例如，分配给该 NIC 的 IP 地址、该 NIC 连接到的 VNet/子网，以及该 NIC 附加到的 VM（如果已附加到 VM）。 下图显示名为 **mywebserver256** 的 NIC 的概述设置：网络接口概述。可以单击“资源组”或“订阅名称”旁边的“(更改)”，将 NIC 移到不同的资源组或订阅。  ![](./media/virtual-network-network-interface/nic-overview.png) 如果移动 NIC，必须同时移动与该 NIC 相关的所有资源。 例如，如果 NIC 已附加到 VM，则还必须移动该 VM 及其相关的其他资源。 若要移动 NIC，请参阅[将资源移到新的资源组或订阅](/documentation/articles/resource-group-move-resources/#use-portal)一文。 此文列出了先决条件，以及如何使用 Azure 门户、PowerShell 和 Azure CLI 移动资源。
     - **IP 配置：**公共和专用 IP 地址将分配到 NIC 的一个或多个 IP 配置。 若要详细了解 NIC 支持的 IP 配置数上限，请参阅 [Azure 限制](/documentation/articles/azure-subscription-service-limits/#azure-resource-manager-virtual-networking-limits)一文。 每个 IP 配置有一个分配的专用 IP 地址，可与一个公共 IP 地址关联。 若要添加、更改或删除 NIC 中的 IP 配置，请完成[添加、更改或删除 IP 地址](/documentation/articles/virtual-network-network-interface-addresses/)一文的[向 NIC 添加辅助 IP 配置](/documentation/articles/virtual-network-network-interface-addresses/#create-ip-config)、[更改 IP 配置](/documentation/articles/virtual-network-network-interface-addresses/#change-ip-config)或[删除 IP 配置](/documentation/articles/virtual-network-network-interface-addresses/#delete-ip-config)部分中的步骤。 此部分还配置了 IP 转发和子网分配。 若要详细了解这些设置，请参阅本文的[启用/禁用 IP 转发](#ip-forwarding)和[更改子网分配](#subnet)部分。
     - **DNS 服务器：**可以指定 Azure DHCP 服务器向 NIC 分配哪个 DNS 服务器。 NIC 可从 NIC 连接到的 VNet 继承设置，或使用自定义设置来替代它连接到的 VNet 的设置。 若要修改显示的内容，请完成本文[更改 DNS 服务器](#dns)部分中的步骤。
     - **网络安全组(NSG)：**显示与 NIC 关联的 NSG（如果有）。 NSG 包含用于筛选 NIC 网络流量的入站和出站规则 如果 NIC 有关联的 NSG，将显示关联的 NSG 的名称。
@@ -99,8 +99,8 @@
 
 DNS 服务器由 Azure DHCP 服务器分配到 VM 操作系统中的 NIC。 分配的 DNS 服务器设置就是 NIC 的 DNS 服务器设置。 若要详细了解 NIC 的名称解析设置，请参阅 [VM 的名称解析](/documentation/articles/virtual-networks-name-resolution-for-vms-and-role-instances/)一文。 NIC 可以从 VNet 继承设置，或使用自身唯一的设置替代 VNet 的设置。
 
-1. 使用已分配订阅的“网络参与者”角色权限（最低权限）的帐户登录到 [Azure 门户预览](https://portal.azure.cn)。 请参阅[用于 Azure 基于角色的访问控制的内置角色](/documentation/articles/role-based-access-built-in-roles/#network-contributor)一文，详细了解如何将角色和权限分配给帐户。
-2. 在 Azure 门户预览顶部包含“搜索资源”文本的框中，键入“网络接口”。 在搜索结果中出现“网络接口”  时，单击该接口。
+1. 使用已分配订阅的“网络参与者”角色权限（最低权限）的帐户登录到 [Azure 门户](https://portal.azure.cn)。 请参阅[用于 Azure 基于角色的访问控制的内置角色](/documentation/articles/role-based-access-built-in-roles/#network-contributor)一文，详细了解如何将角色和权限分配给帐户。
+2. 在 Azure 门户顶部包含“搜索资源”文本的框中，键入“网络接口”。 在搜索结果中出现“网络接口”  时，单击该接口。
 3. 在显示的“网络接口”  边栏选项卡中，单击要查看或更改其设置的 NIC。
 4. 在所选 NIC 的边栏选项卡中，单击“设置”下面的“DNS 服务器”。
 5. 单击以下选项之一：
@@ -123,8 +123,8 @@ DNS 服务器由 Azure DHCP 服务器分配到 VM 操作系统中的 NIC。 分�
 
 对于接收 VM 需转发的流量的 VM，必须向其附加的每个 NIC 启用该设置。 无论 VM 上附加了一个或多个 NIC，其均可转发流量。 IP 转发是一项 Azure 设置，但 VM 还必须运行可转发流量的应用程序，如防火墙、WAN 优化和负载均衡应用程序。 运行网络应用程序的 VM 通常称为网络虚拟设备 (NVA)。 可在 Azure 应用商店中查看可直接部署的 NVA 列表。 IP 转发通常用于用户定义的路由。 若要详细了解用户定义的路由，请阅读[用户定义的路由](/documentation/articles/virtual-networks-udr-overview/)一文。
 
-1. 使用已分配订阅的“网络参与者”角色权限（最低权限）的帐户登录到 [Azure 门户预览](https://portal.azure.cn)。 请参阅[用于 Azure 基于角色的访问控制的内置角色](/documentation/articles/role-based-access-built-in-roles/#network-contributor)一文，详细了解如何将角色和权限分配给帐户。
-2. 在 Azure 门户预览顶部包含“搜索资源”文本的框中，键入“网络接口”。 在搜索结果中出现“网络接口”  时，单击该接口。
+1. 使用已分配订阅的“网络参与者”角色权限（最低权限）的帐户登录到 [Azure 门户](https://portal.azure.cn)。 请参阅[用于 Azure 基于角色的访问控制的内置角色](/documentation/articles/role-based-access-built-in-roles/#network-contributor)一文，详细了解如何将角色和权限分配给帐户。
+2. 在 Azure 门户顶部包含“搜索资源”文本的框中，键入“网络接口”。 在搜索结果中出现“网络接口”  时，单击该接口。
 3. 在出现的“网络接口”边栏选项卡中，单击要为其启用或禁用 IP 转发的 NIC。
 4. 在所选 NIC 的边栏选项卡的“设置”部分中，单击“IP 配置”。
 5. 单击“已启用”或“禁用”（默认设置）来更改设置。
@@ -141,8 +141,8 @@ DNS 服务器由 Azure DHCP 服务器分配到 VM 操作系统中的 NIC。 分�
 
 可更改 NIC 连接的子网，但不能更改 VNet。
 
-1. 使用已分配订阅的“网络参与者”角色权限（最低权限）的帐户登录到 [Azure 门户预览](https://portal.azure.cn)。 请参阅[用于 Azure 基于角色的访问控制的内置角色](/documentation/articles/role-based-access-built-in-roles/#network-contributor)一文，详细了解如何将角色和权限分配给帐户。
-2. 在 Azure 门户预览顶部包含“搜索资源”文本的框中，键入“网络接口”。 在搜索结果中出现“网络接口”  时，单击该接口。
+1. 使用已分配订阅的“网络参与者”角色权限（最低权限）的帐户登录到 [Azure 门户](https://portal.azure.cn)。 请参阅[用于 Azure 基于角色的访问控制的内置角色](/documentation/articles/role-based-access-built-in-roles/#network-contributor)一文，详细了解如何将角色和权限分配给帐户。
+2. 在 Azure 门户顶部包含“搜索资源”文本的框中，键入“网络接口”。 在搜索结果中出现“网络接口”  时，单击该接口。
 3. 在显示的“网络接口”  边栏选项卡中，单击要查看或更改其设置的 NIC。
 4. 在所选 NIC 的边栏选项卡中的“设置”下面，单击“IP 配置”。 如果所列任何 IP 配置的任何专用 IP 地址旁边出现“(静态)”，则必须完成以下步骤，将 IP 地址分配方法更改为动态。 必须使用动态分配方法分配所有专用 IP 地址，以更改 NIC 的子网分配。 如果使用动态方法分配地址，请转到步骤 5。 如果使用静态分配方法分配了任何地址，请完成以下步骤，将分配方法更改为动态：
     - 在 IP 配置列表中，单击想要更改其 IP 地址分配方法的 IP 配置。
@@ -162,8 +162,8 @@ DNS 服务器由 Azure DHCP 服务器分配到 VM 操作系统中的 NIC。 分�
 
 只要 NIC 未附加到 VM，即可将其删除。 如果它已附加到 VM，则必须先将 VM 置于停止（解除分配）状态，再从 VM 分离 NIC，然后才能删除 NIC。 若要从 VM 中分离 NIC，请完成[添加或删除网络接口](/documentation/articles/virtual-network-network-interface-vm/)一文的[从虚拟机中分离 NIC](/documentation/articles/virtual-network-network-interface-vm/#vm-remove-nic) 部分中的步骤。 删除 VM 会分离其上附加的所有 NIC，但不会删除 NIC。
 
-1. 使用已分配订阅的“网络参与者”角色权限（最低权限）的帐户登录到 [Azure 门户预览](https://portal.azure.cn)。 请参阅[用于 Azure 基于角色的访问控制的内置角色](/documentation/articles/role-based-access-built-in-roles/#network-contributor)一文，详细了解如何将角色和权限分配给帐户。
-2. 在 Azure 门户预览顶部包含“搜索资源”文本的框中，键入“网络接口”。 在搜索结果中出现“网络接口”  时，单击该接口。
+1. 使用已分配订阅的“网络参与者”角色权限（最低权限）的帐户登录到 [Azure 门户](https://portal.azure.cn)。 请参阅[用于 Azure 基于角色的访问控制的内置角色](/documentation/articles/role-based-access-built-in-roles/#network-contributor)一文，详细了解如何将角色和权限分配给帐户。
+2. 在 Azure 门户顶部包含“搜索资源”文本的框中，键入“网络接口”。 在搜索结果中出现“网络接口”  时，单击该接口。
 3. 右键单击要删除的 NIC，然后单击“删除” 。
 4. 单击“是”  ，确认删除该 NIC。
 

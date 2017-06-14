@@ -72,7 +72,7 @@
 
 1. 	请阅读[使用 Azure 应用服务进行敏捷软件开发](/documentation/articles/app-service-agile-software-development/)以了解如何部署 [ToDoApp](https://github.com/azure-appservice-samples/ToDoApp) 应用服务示例。
 
-6.	登录到 Azure 门户预览。注意，Web 应用已连接到“外部项目”下的 GitHub 存储库。
+6.	登录到 Azure 门户。注意，Web 应用已连接到“外部项目”下的 GitHub 存储库。
 
 	![](./media/app-service-deploy-complex-application-predictably/gettemplate-3-portalresourcegroup.png)  
 
@@ -263,7 +263,7 @@ Web 应用取决于两个不同的资源。这意味着只有在创建 App Servi
 	
 16.	单击“部署”。如果选择了“保存密码”，密码将**以纯文本格式**保存在参数文件中。否则，你将需要在部署过程中输入数据库密码。
 
-就这么简单！ 现在只需转到 [Azure 门户预览](https://portal.azure.cn/)，便可看到添加到 JSON 部署的应用程序中的新警报和自动缩放设置。
+就这么简单！ 现在只需转到 [Azure 门户](https://portal.azure.cn/)，便可看到添加到 JSON 部署的应用程序中的新警报和自动缩放设置。
 
 这部分中的步骤主要完成了以下内容：
 

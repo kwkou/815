@@ -1,6 +1,6 @@
 <properties
-    pageTitle="Azure 门户预览：配置威胁检测 - SQL 数据库 | Azure"
-    description="使用 Azure 门户预览配置和管理威胁检测"
+    pageTitle="Azure 门户：配置威胁检测 - SQL 数据库 | Azure"
+    description="使用 Azure 门户配置和管理威胁检测"
     services="sql-database"
     documentationcenter=""
     author="ronitr"
@@ -18,12 +18,12 @@
     ms.author="ronmat; ronitr" />  
 
 
-# 在 Azure 门户预览中配置和管理 Azure SQL 数据库威胁检测
+# 在 Azure 门户中配置和管理 Azure SQL 数据库威胁检测
 
 本主题介绍如何设置威胁检测和浏览异常的数据库活动。如需 Azure SQL 数据库威胁检测的概述，请参阅[威胁检测概述](/documentation/articles/sql-database-threat-detection/)。
 
 ## 为数据库设置威胁检测
-1. 启动 Azure 门户预览 ([https://portal.azure.cn](https://portal.azure.cn))。
+1. 启动 Azure 门户 ([https://portal.azure.cn](https://portal.azure.cn))。
 2. 导航到要监视的 SQL 数据库的配置边栏选项卡。在“设置”边栏选项卡中，选择“审核和威胁检测”。
    
     ![导航窗格][1]  
@@ -43,7 +43,7 @@
 1. 检测到异常数据库活动时，你将收到电子邮件通知。<br/> 电子邮件将提供可疑安全事件的相关信息，包括异常活动的性质、数据库名称、服务器名称和事件时间。此外，还会提供可能原因和建议操作的相关信息，以帮助你调查和缓解数据库的潜在威胁。<br/>
    
     ![导航窗格][4]
-2. 在电子邮件中，单击“Azure SQL 审核日志”链接以启动 Azure 门户预览，并显示发生可疑事件前后的相关审核记录。
+2. 在电子邮件中，单击“Azure SQL 审核日志”链接以启动 Azure 门户，并显示发生可疑事件前后的相关审核记录。
    
     ![导航窗格][5]
 3. 单击审核记录可以查看有关可疑数据库活动的详细信息，例如 SQL 语句、失败原因和客户端的 IP。

@@ -23,7 +23,7 @@
 
 # <a name="create-metric-alerts-in-azure-monitor-for-azure-services---cross-platform-cli"></a>在 Azure Monitor 中为 Azure 服务创建指标警报 - 跨平台 CLI
 > [AZURE.SELECTOR]
-- [门户预览](/documentation/articles/insights-alerts-portal/)
+- [门户](/documentation/articles/insights-alerts-portal/)
 - [PowerShell](/documentation/articles/insights-alerts-powershell/)
 - [CLI](/documentation/articles/insights-alerts-command-line-interface/)
 
@@ -45,11 +45,11 @@
 - 向服务管理员和共同管理员发送电子邮件通知
 - 向指定的其他电子邮件地址发送电子邮件。
 - 调用 Webhook
-- 开始执行 Azure Runbook（目前仅在 Azure 门户预览中可行）
+- 开始执行 Azure Runbook（目前仅在 Azure 门户中可行）
 
 可以使用以下工具配置和获取关于指标警报的信息：
 
-- [Azure 门户预览](/documentation/articles/insights-alerts-portal/)
+- [Azure 门户](/documentation/articles/insights-alerts-portal/)
 - [PowerShell](/documentation/articles/insights-alerts-powershell/)
 - [命令行接口 (CLI)](/documentation/articles/insights-alerts-command-line-interface/) 
 - [Azure 监视器 REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn931945.aspx)
@@ -75,7 +75,7 @@
 	- 要为其设置警报的资源的**资源 ID**
 	- 可用于该资源的**指标定义**
 	
-    获取资源 ID 的一种方法是使用 Azure 门户预览。 假设已创建该资源，在门户预览中选中它。 然后在下一个边栏选项卡中，选择“设置”分区下的“属性”。 *资源 ID* 是下一个边栏选项卡中的字段。 
+    获取资源 ID 的一种方法是使用 Azure 门户。 假设已创建该资源，在门户中选中它。 然后在下一个边栏选项卡中，选择“设置”分区下的“属性”。 *资源 ID* 是下一个边栏选项卡中的字段。 
     下面是 Web 应用的一个示例资源 ID：
   
 

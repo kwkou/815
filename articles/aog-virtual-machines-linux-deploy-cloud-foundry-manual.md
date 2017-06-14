@@ -385,7 +385,7 @@ CF 公网 IP 是最后一步中部署 CF 环境中需要使用的。需要给 CF
 
 ![](./media/aog-virtual-machines-linux-deploy-cloud-foundry-manual/deploy-cf2.png) 
 
-如此，CF 搭建完成。你可以在 Azure 门户预览上看到该资源组中会新增几台虚拟机等资源。使用 CF 需要安装 Cloud Foundry CLI。使用 wget 下载（该命令可能会失败，请再次运行）。
+如此，CF 搭建完成。你可以在 Azure 门户上看到该资源组中会新增几台虚拟机等资源。使用 CF 需要安装 Cloud Foundry CLI。使用 wget 下载（该命令可能会失败，请再次运行）。
 
 	wget -O cf.deb http://go-cli.s3-website-us-east-1.amazonaws.com/releases/v6.14.1/cf-cli-installer_6.14.1_x86-64.deb
 

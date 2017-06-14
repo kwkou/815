@@ -163,7 +163,7 @@
 
 ## 后续步骤
 * 如果你要使用 Azure PowerShell cmdlet 或 Azure Resource Manager 模板来重置密码或 SSH 密钥、修复 SSH 配置和检查磁盘一致性，请参阅 [GitHub 上的 VMAccess 扩展文档](https://github.com/Azure/azure-linux-extensions/tree/master/VMAccess)。
-* 你也可以使用 [Azure 门户预览](https://portal.azure.cn)来重置通过经典部署模型部署的 Linux VM 的密码或 SSH 密钥。目前你无法使用门户来针对通过资源管理器部署模型部署的 Linux VM 执行上述操作。
+* 你也可以使用 [Azure 门户](https://portal.azure.cn)来重置通过经典部署模型部署的 Linux VM 的密码或 SSH 密钥。目前你无法使用门户来针对通过资源管理器部署模型部署的 Linux VM 执行上述操作。
 * 有关使用适用于 Azure 虚拟机的 VM 扩展的详细信息，请参阅[关于虚拟机扩展和功能](/documentation/articles/virtual-machines-linux-extensions-features/)。
 
 <!---HONumber=Mooncake_1212_2016-->

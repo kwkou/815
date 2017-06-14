@@ -19,13 +19,13 @@
 
 # 在 Azure 应用服务中配置 Web 应用 #
 
-本主题介绍如何使用 [Azure 门户预览]配置 Web 应用。
+本主题介绍如何使用 [Azure 门户]配置 Web 应用。
 
 [AZURE.INCLUDE [app-service-web-to-api-and-mobile](../../includes/app-service-web-to-api-and-mobile.md)]
 
 ## 应用程序设置
 
-1. 在 [Azure 门户预览]中，打开 Web 应用边栏选项卡。
+1. 在 [Azure 门户]中，打开 Web 应用边栏选项卡。
 2. 单击**“所有设置”**。
 3. 单击“应用程序设置”。
 
@@ -128,7 +128,7 @@ Web 应用可能会使用根据 URL 路由的模块，而不是提供静态内�
 
 1. 在“速览”部分中，单击“重置部署凭据”设置菜单项，提供用于将文件发布到应用的用户名和密码。
 
-1. 回到 [Azure 门户预览](https://portal.azure.cn)。完整的 FTP 用户名是“app\\username”，其中 *app* 是 Web 应用的名称。用户名列在 Web 应用边栏选项卡的“Essentials”下。
+1. 回到 [Azure 门户](https://portal.azure.cn)。完整的 FTP 用户名是“app\\username”，其中 *app* 是 Web 应用的名称。用户名列在 Web 应用边栏选项卡的“Essentials”下。
 
     ![FTP 部署凭据][configure02]
 
@@ -167,7 +167,7 @@ Web 应用可能会使用根据 URL 路由的模块，而不是提供静态内�
 <!-- URL List -->
 
 [ASP.NET SignalR]: http://www.asp.net/signalr
-[Azure 门户预览]: https://portal.azure.cn/
+[Azure 门户]: https://portal.azure.cn/
 [在 Azure 应用服务中配置自定义域名]: /documentation/articles/web-sites-custom-domain-name/
 [为 Azure 应用服务中的 Web 应用部署到过渡环境]: /documentation/articles/web-sites-staged-publishing/
 [Enable HTTPS for an app in Azure App Service（为 Azure 应用服务中的应用启用 HTTPS）]: /documentation/articles/web-sites-configure-ssl-certificate/

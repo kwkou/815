@@ -1,4 +1,4 @@
-1. 登录 [Azure 门户预览](https://portal.azure.cn)。
+1. 登录 [Azure 门户](https://portal.azure.cn)。
 
 2. 首先在左上角单击“新建”>“计算”>“Windows Server 2016 Datacenter”。
 

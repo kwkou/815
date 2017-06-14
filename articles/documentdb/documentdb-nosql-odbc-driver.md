@@ -60,8 +60,8 @@ DocumentDB 是一种无架构数据库，它允许应用程序即时迭代其数
     ![“DocumentDB ODBC 驱动程序 DSN 设置”窗口](./media/documentdb-nosql-odbc-driver/documentdb-nosql-odbc-driver-dsn-setup.png)
     - **数据源名称**：ODBC DSN 的友好名称。 此名称对于 DocumentDB 帐户是唯一的，因此，如果有多个帐户，请适当地为数据源命名。
     - **说明**：数据源的简短说明。
-    - **主机**：你的 DocumentDB 帐户的 URI。 可通过 Azure 门户预览中的“DocumentDB 密钥”边栏选项卡检索此信息，如以下屏幕截图所示。 
-    - **访问密钥**：从 Azure 门户预览中的“DocumentDB 密钥”边栏选项卡获取的主要或辅助读写/只读密钥，如以下屏幕截图所示。 如果 DSN 用于只读数据的处理和报告，我们建议使用只读密钥。
+    - **主机**：你的 DocumentDB 帐户的 URI。 可通过 Azure 门户中的“DocumentDB 密钥”边栏选项卡检索此信息，如以下屏幕截图所示。 
+    - **访问密钥**：从 Azure 门户中的“DocumentDB 密钥”边栏选项卡获取的主要或辅助读写/只读密钥，如以下屏幕截图所示。 如果 DSN 用于只读数据的处理和报告，我们建议使用只读密钥。
     ![“DocumentDB 密钥”边栏选项卡](./media/documentdb-nosql-odbc-driver/documentdb-nosql-odbc-driver-keys.png)
     - **加密以下对象的访问密钥**：根据此计算机的用户选择最合适的选项。 
 4. 单击“测试”按钮，确保可以连接到 DocumentDB 帐户。 
@@ -144,7 +144,7 @@ DocumentDB 是一种无架构数据库，它允许应用程序即时迭代其数
 
 ## <a name="troubleshooting"></a>故障排除
 
-如果遇到以下错误，请确保执行[步骤 2](#connect) 时在 Azure 门户预览中复制的“主机”和“访问密钥”值正确，然后重试。 在 Azure 门户预览中使用“主机”和“访问密钥”值右侧的复制按钮可以正确无误地复制这些值。
+如果遇到以下错误，请确保执行[步骤 2](#connect) 时在 Azure 门户中复制的“主机”和“访问密钥”值正确，然后重试。 在 Azure 门户中使用“主机”和“访问密钥”值右侧的复制按钮可以正确无误地复制这些值。
 
     [HY000]: [Microsoft][DocumentDB] (401) HTTP 401 Authentication Error: {"code":"Unauthorized","message":"The input authorization token can't serve the request. Please check that the expected payload is built as per the protocol, and check the key being used. Server used the following payload to sign: 'get\ndbs\n\nfri, 20 jan 2017 03:43:55 gmt\n\n'\r\nActivityId: 9acb3c0d-cb31-4b78-ac0a-413c8d33e373"}`
 

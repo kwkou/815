@@ -31,7 +31,7 @@
 
 ## <a name="working-with-images"></a>使用映像
 
-可以通过 Azure PowerShell 模块和 Azure 门户预览管理可供 Azure 订阅使用的映像。 Azure PowerShell 模块提供更多命令选项，以便可以明确确定要查看或执行的操作。 Azure 门户预览为许多日常管理任务提供了 GUI。
+可以通过 Azure PowerShell 模块和 Azure 门户管理可供 Azure 订阅使用的映像。 Azure PowerShell 模块提供更多命令选项，以便可以明确确定要查看或执行的操作。 Azure 门户为许多日常管理任务提供了 GUI。
 
 下面是一些使用 Azure PowerShell 模块的示例。
 
@@ -48,6 +48,6 @@
 * **删除映像**：`Remove-AzureVMImage -ImageName "MyOldVmImage"`
 
 ## <a name="next-steps"></a>后续步骤
-还可以[使用 Azure 门户预览创建 Windows 计算机](/documentation/articles/virtual-machines-windows-classic-tutorial/)。
+还可以[使用 Azure 门户创建 Windows 计算机](/documentation/articles/virtual-machines-windows-classic-tutorial/)。
 
 <!--Update_Description: wording update-->

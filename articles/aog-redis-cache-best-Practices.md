@@ -27,7 +27,7 @@
 
 ##性能测试
 
-1.	在开发我们自己的性能测试工具之前，我们可以使用 redis-benchmark.exe 工具来了解一下可能的吞吐量。需要注意的是 redis-benchmark 不支持 SSL, 所以我们需要在开始测试之前在 [Azure 门户预览中启动 Non-SSL port](/documentation/articles/cache-configure/#access-ports)。
+1.	在开发我们自己的性能测试工具之前，我们可以使用 redis-benchmark.exe 工具来了解一下可能的吞吐量。需要注意的是 redis-benchmark 不支持 SSL, 所以我们需要在开始测试之前在 [Azure 门户中启动 Non-SSL port](/documentation/articles/cache-configure/#access-ports)。
 2.	用来测试的客户端虚拟机必须要和 Redis 缓存实例在相同的区域中。
 3.	我们建议使用 Dv2 系列虚拟机作为你的客户端，因为这个系列的虚拟机拥有更好的配置，这样我们能获得最佳的测试结果。
 4.	确认您选择的用来测试客户端虚拟机在计算能力和带宽性能方面要优于你要测试的 Redis 缓存。

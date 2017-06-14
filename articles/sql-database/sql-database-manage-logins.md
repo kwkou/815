@@ -34,7 +34,7 @@
 
 
 ## 非受限管理帐户
-有两个充当管理员的管理帐户（**服务器管理员**和 **Active Directory 管理员**）。若要在 SQL 服务器中识别这些管理员帐户，请打开 Azure 门户预览并导航到 SQL 服务器的属性。
+有两个充当管理员的管理帐户（**服务器管理员**和 **Active Directory 管理员**）。若要在 SQL 服务器中识别这些管理员帐户，请打开 Azure 门户并导航到 SQL 服务器的属性。
 
 ![SQL Server 管理员](./media/sql-database-manage-logins/sql-admins.png)  
 
@@ -55,7 +55,7 @@
 
 
 ### 配置防火墙
-为单个 IP 地址或地址范围配置服务器级防火墙后，**SQL 服务器管理员**和 **Azure Active Directory 管理员**可以连接到 master 数据库以及所有用户数据库。初始服务器级防火墙可通过 [Azure 门户预览](/documentation/articles/sql-database-configure-firewall-settings/)、[PowerShell](/documentation/articles/sql-database-configure-firewall-settings-powershell/) 或 [REST API](/documentation/articles/sql-database-configure-firewall-settings-rest/) 进行配置。建立连接以后，还可以使用 [Transact-SQL](/documentation/articles/sql-database-configure-firewall-settings-tsql/) 配置其他服务器级防火墙规则。
+为单个 IP 地址或地址范围配置服务器级防火墙后，**SQL 服务器管理员**和 **Azure Active Directory 管理员**可以连接到 master 数据库以及所有用户数据库。初始服务器级防火墙可通过 [Azure 门户](/documentation/articles/sql-database-configure-firewall-settings/)、[PowerShell](/documentation/articles/sql-database-configure-firewall-settings-powershell/) 或 [REST API](/documentation/articles/sql-database-configure-firewall-settings-rest/) 进行配置。建立连接以后，还可以使用 [Transact-SQL](/documentation/articles/sql-database-configure-firewall-settings-tsql/) 配置其他服务器级防火墙规则。
 
 ### 管理员访问路径
 适当地配置服务器级防火墙后，**SQL 服务器管理员**和 **Azure Active Directory 管理员**可以使用 SQL Server Management Studio 或 SQL Server Data Tools 等客户端工具进行连接。仅最新工具提供所有的特性和功能。下图显示了这两个管理员帐户的典型配置。

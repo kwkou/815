@@ -30,7 +30,7 @@
 请注意，表和表变量行以及索引都将计入最大用户数据大小。此外，ALTER TABLE 需要足够的空间来创建新版的完整表及其索引。
 
 ## 监视和警报
-可以在 Azure [门户预览](/documentation/articles/sql-database-service-tiers/#single-database-service-tiers-and-performance-levels)中，通过[性能层的存储限制](https://portal.azure.cn)百分比来监视内存中存储用量：
+可以在 Azure [门户](/documentation/articles/sql-database-service-tiers/#single-database-service-tiers-and-performance-levels)中，通过[性能层的存储限制](https://portal.azure.cn)百分比来监视内存中存储用量：
 
 - 在“数据库”边栏选项卡上，找出“资源使用率”框并单击“编辑”。
 - 然后选择指标 `In-Memory OLTP Storage percentage`。

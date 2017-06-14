@@ -22,7 +22,7 @@
 
 
 > [AZURE.SELECTOR]
-- [Azure 门户预览](/documentation/articles/sql-database-scale-up/)
+- [Azure 门户](/documentation/articles/sql-database-scale-up/)
 - [PowerShell](/documentation/articles/sql-database-scale-up-powershell/)
 
 
@@ -54,7 +54,7 @@
 
 打开要增加或减少的数据库的 SQL 数据库边栏选项卡：
 
-1.	在 [Azure 门户预览](https://portal.azure.cn)中，依次单击“更多服务”>“SQL 数据库”。
+1.	在 [Azure 门户](https://portal.azure.cn)中，依次单击“更多服务”>“SQL 数据库”。
 2.	单击要更改的数据库。
 3.	在“SQL 数据库”边栏选项卡中单击“定价层(缩放 DTU)”：
 

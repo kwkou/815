@@ -167,7 +167,7 @@ Azure IoT 中心是一项完全托管的服务，可在数百万个设备和一�
 <!-- Links -->
 
 
-[Azure 门户预览]: https://portal.azure.cn/
+[Azure 门户]: https://portal.azure.cn/
 
 
 [Hadoop]: /documentation/services/hdinsight/

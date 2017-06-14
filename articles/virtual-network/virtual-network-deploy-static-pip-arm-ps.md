@@ -22,7 +22,7 @@
 
 # 使用 PowerShell 创建具有静态公共 IP 的 VM
 > [AZURE.SELECTOR]
-- [Azure 门户预览](/documentation/articles/virtual-network-deploy-static-pip-arm-portal/)
+- [Azure 门户](/documentation/articles/virtual-network-deploy-static-pip-arm-portal/)
 - [PowerShell](/documentation/articles/virtual-network-deploy-static-pip-arm-ps/)
 - [Azure CLI](/documentation/articles/virtual-network-deploy-static-pip-arm-cli/)
 - [模板](/documentation/articles/virtual-network-deploy-static-pip-arm-template/)

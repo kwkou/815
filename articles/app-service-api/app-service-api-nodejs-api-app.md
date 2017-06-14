@@ -161,9 +161,9 @@
     ![Swagger UI](./media/app-service-api-nodejs-api-app/swagger-ui.png)
 
 ## <a id="createapiapp"></a>创建新的 API 应用
-本部分介绍如何使用 Azure 门户预览在 Azure 中创建新的 API 应用。此 API 应用代表 Azure 提供的、用于运行代码的计算资源。后续部分会将代码部署到新 API 应用。
+本部分介绍如何使用 Azure 门户在 Azure 中创建新的 API 应用。此 API 应用代表 Azure 提供的、用于运行代码的计算资源。后续部分会将代码部署到新 API 应用。
 
-1. 浏览到 [Azure 门户预览](https://portal.azure.cn/)。
+1. 浏览到 [Azure 门户](https://portal.azure.cn/)。
 2. 单击“新建”>“Web + 移动”>“API 应用”。
    
     ![门户中的新 API 应用](./media/app-service-api-nodejs-api-app/new-api-app-portal.png)
@@ -197,7 +197,7 @@
 
 1. 登录到 [Azure 经典管理门户](https://manage.windowsazure.cn/)，找到你的应用，然后单击“速览”下的“仪表板”>“重置部署凭据”，为应用设置部署凭据。
 1. 单击“从源代码管理设置部署”，选择“本地 Git 存储库”，然后单击“确定”以设置 Git 存储库。
-1. 返回到 [Azure 门户预览](https://portal.azure.cn)。复制 Git 存储库 URL。为此，请导航到新 API 应用的边栏选项卡并查看边栏选项卡的“概要”部分。请注意“概要”部分中的“Git 克隆 URL”。将鼠标悬停在此 URL 上时，右侧会显示一个图标用于将此 URL 复制到剪贴板。单击此图标复制该 URL。
+1. 返回到 [Azure 门户](https://portal.azure.cn)。复制 Git 存储库 URL。为此，请导航到新 API 应用的边栏选项卡并查看边栏选项卡的“概要”部分。请注意“概要”部分中的“Git 克隆 URL”。将鼠标悬停在此 URL 上时，右侧会显示一个图标用于将此 URL 复制到剪贴板。单击此图标复制该 URL。
    
     ![从门户获取 Git URL](./media/app-service-api-nodejs-api-app/get-the-git-url-from-the-portal.png)
    
@@ -232,7 +232,7 @@
         git commit -m "initial revision"
    
     ![Git 提交输出](./media/app-service-api-nodejs-api-app/git-commit-output.png)
-6. 运行以下命令将代码推送到 Azure。当系统提示输入密码时，请输入前面在 Azure 门户预览中创建的密码。
+6. 运行以下命令将代码推送到 Azure。当系统提示输入密码时，请输入前面在 Azure 门户中创建的密码。
    
         git push azure master
    

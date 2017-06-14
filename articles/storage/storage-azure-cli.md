@@ -24,7 +24,7 @@
 
 # <a name="using-the-azure-cli-20-with-azure-storage"></a>将 Azure CLI 2.0 用于 Azure 存储
 
-开源跨平台 Azure CLI 2.0 提供一组可在 Azure 平台上运行的命令。 它提供 [Azure 门户预览](https://portal.azure.cn)所提供的很多相同功能，包括各种数据访问功能。
+开源跨平台 Azure CLI 2.0 提供一组可在 Azure 平台上运行的命令。 它提供 [Azure 门户](https://portal.azure.cn)所提供的很多相同功能，包括各种数据访问功能。
 
 本指南介绍如何使用 [Azure CLI 2.0](https://docs.microsoft.com/zh-cn/cli/azure/get-started-with-az-cli2) 执行多个使用 Azure 存储帐户中的资源的任务。 在使用本指南之前，我们建议下载并安装或者升级到 CLI 2.0 的最新版。
 

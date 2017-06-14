@@ -25,7 +25,7 @@
 Azure 基于角色的访问控制 (RBAC) 可用于对 Azure 进行细致的访问管理。 使用 RBAC，你可以在团队中对职责进行分配，仅向用户授予执行作业所需的访问权限。
 
 > [AZURE.IMPORTANT]
-> Azure 备份提供的角色仅限于可在 Azure 门户预览或恢复服务保管库 PowerShell cmdlet 中执行的操作。 这些角色对在 Azure 备份代理客户端 UI、System Center Data Protection Manager UI 或 Azure 备份服务器 UI 中执行的操作不具有控制权。
+> Azure 备份提供的角色仅限于可在 Azure 门户或恢复服务保管库 PowerShell cmdlet 中执行的操作。 这些角色对在 Azure 备份代理客户端 UI、System Center Data Protection Manager UI 或 Azure 备份服务器 UI 中执行的操作不具有控制权。
 
 Azure 备份提供 3 个用于控制备份管理操作的内置角色。 详细了解 [Azure RBAC 内置角色](/documentation/articles/role-based-access-built-in-roles/)
 
@@ -55,7 +55,7 @@ Azure 备份提供 3 个用于控制备份管理操作的内置角色。 详细�
 | 删除已注册的本地 Windows Server/客户端/SCDPM 或 Azure 备份服务器 | 备份参与者 |
 
 ## <a name="next-steps"></a>后续步骤
-- [基于角色的访问控制](/documentation/articles/role-based-access-control-configure/)：Azure 门户预览版中的 RBAC 入门。
+- [基于角色的访问控制](/documentation/articles/role-based-access-control-configure/)：Azure 门户中的 RBAC 入门。
 - 了解如何通过以下方式管理访问权限：
   - [PowerShell](/documentation/articles/role-based-access-control-manage-access-powershell/)
   - [Azure CLI](/documentation/articles/role-based-access-control-manage-access-azure-cli/)

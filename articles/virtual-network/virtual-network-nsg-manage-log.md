@@ -42,7 +42,7 @@
 
 对于*每个* 需要为其收集数据的 NSG，必须启用诊断日志记录。如果还没有 NSG，请根据[创建网络安全组](/documentation/articles/virtual-networks-create-nsg-arm-pportal/)一文中的步骤创建一个。可以使用以下任意方法启用 NSG 诊断日志记录：
 
-### Azure 门户预览
+### Azure 门户
 
 若要使用门户来启用日志记录，请登录到[门户](https://portal.azure.cn)。单击“更多服务”，然后键入“网络安全组”。选择要为其启用日志记录的 NSG。选择 **NetworkSecurityGroupEvent**、**NetworkSecurityGroupRuleCounter**，或者两类日志都选择。
 

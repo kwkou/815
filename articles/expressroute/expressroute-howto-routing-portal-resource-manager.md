@@ -24,13 +24,13 @@
 
 # <a name="create-and-modify-peering-for-an-expressroute-circuit"></a>创建和修改 ExpressRoute 线路的对等互连
 > [AZURE.SELECTOR]
-- [资源管理器 - Azure 门户预览](/documentation/articles/expressroute-howto-routing-portal-resource-manager/)
+- [资源管理器 - Azure 门户](/documentation/articles/expressroute-howto-routing-portal-resource-manager/)
 - [Resource Manager - PowerShell](/documentation/articles/expressroute-howto-routing-arm/)
 - [经典 - PowerShell](/documentation/articles/expressroute-howto-routing-classic/)
 
 
 
-本文将指导你执行相关步骤，以便使用 Azure 门户预览和 Resource Manager 部署模型创建和管理 ExpressRoute 线路的路由配置。
+本文将指导你执行相关步骤，以便使用 Azure 门户和 Resource Manager 部署模型创建和管理 ExpressRoute 线路的路由配置。
 
 **关于 Azure 部署模型**
 

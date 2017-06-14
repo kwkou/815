@@ -26,7 +26,7 @@
 
 部署资源时，你还需要知道哪些区域支持这些资源，以及哪些 API 版本可用于资源。[支持的区域](#supported-regions)部分说明了如何找出哪些区域支持相应的订阅和资源。[支持的 API 版本](#supported-api-versions)部分说明了如何判断可以使用哪些 API 版本。
 
-若要查看 Azure 门户预览和经典管理门户支持哪些服务，请参阅 [Azure 门户可用性图表](/support/service-dashboard/)。 若要查看哪些服务支持移动资源，请参阅[将资源移到新资源组或订阅](/documentation/articles/resource-group-move-resources/)。
+若要查看 Azure 门户和经典管理门户支持哪些服务，请参阅 [Azure 门户可用性图表](/support/service-dashboard/)。 若要查看哪些服务支持移动资源，请参阅[将资源移到新资源组或订阅](/documentation/articles/resource-group-move-resources/)。
 
 下表列出哪些 Microsoft 服务可通过资源管理器支持部署和管理，哪些则不可以。 此外，还有许多第三方资源提供程序支持 Resource Manager。 了解如何在 [资源提供程序和类型](#resource-providers-and-types) 部分查看所有资源提供程序。
 

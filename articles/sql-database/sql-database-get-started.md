@@ -1,6 +1,6 @@
 <properties
     pageTitle="快速入门：第一个 Azure SQL 数据库 | Azure"
-    description="了解如何在 Azure 门户预览中创建 SQL 数据库逻辑服务器、服务器级防火墙规则和数据库，以及如何对 Azure SQL 数据库使用 SQL Server Management Studio。"
+    description="了解如何在 Azure 门户中创建 SQL 数据库逻辑服务器、服务器级防火墙规则和数据库，以及如何对 Azure SQL 数据库使用 SQL Server Management Studio。"
     keywords="SQL 数据库教程：创建 SQL 数据库"
     services="sql-database"
     documentationcenter=""
@@ -20,13 +20,13 @@
     ms.author="carlrab" />  
 
 
-# 使用 Azure 门户预览与 SSMS 创建、连接和查询第一个 Azure SQL 数据库
+# 使用 Azure 门户与 SSMS 创建、连接和查询第一个 Azure SQL 数据库
 
-本教程介绍如何使用 Azure 门户预览与 SQL Server Management Studio 创建、连接和查询 Azure SQL 数据库。完成本教程后，你将：
+本教程介绍如何使用 Azure 门户与 SQL Server Management Studio 创建、连接和查询 Azure SQL 数据库。完成本教程后，你将：
 
 * 创建一个包含逻辑服务器、服务器级防火墙规则和两个数据库的资源组。
-* 知道如何使用 Azure 门户预览与 SQL Server Management Studio 查看服务器和数据库属性。
-* 知道如何使用 Azure 门户预览与 SQL Server Management Studio 查询数据库。
+* 知道如何使用 Azure 门户与 SQL Server Management Studio 查看服务器和数据库属性。
+* 知道如何使用 Azure 门户与 SQL Server Management Studio 查询数据库。
 
 **用时估计**：完成本教程大约需要 30 分钟（假设满足先决条件）。
 
@@ -42,23 +42,23 @@
 
 * **一个 Azure 帐户**。可以[注册 Azure 1 元试用帐户](/pricing/1rmb-trial/)。
 
-* **Azure create 权限**。必须能够使用帐户连接到 Azure 门户预览，该帐户是订阅所有者或参与者角色的成员。有关基于角色的访问控制 (RBAC) 的详细信息，请参阅[开始在 Azure 门户预览中进行访问管理](/documentation/articles/role-based-access-control-what-is/)。
+* **Azure create 权限**。必须能够使用帐户连接到 Azure 门户，该帐户是订阅所有者或参与者角色的成员。有关基于角色的访问控制 (RBAC) 的详细信息，请参阅[开始在 Azure 门户中进行访问管理](/documentation/articles/role-based-access-control-what-is/)。
 
 * **SQL Server Management Studio**。可以通过[下载 SQL Server Management Studio](https://msdn.microsoft.com/zh-cn/library/mt238290.aspx) 下载并安装最新版本的 SQL Server Management Studio (SSMS)。连接到 Azure SQL 数据库时，请始终使用最新版本的 SSMS，因为其中会不断地发布新功能。
 
-### 登录到 Azure 门户预览
+### 登录到 Azure 门户
 
-本过程中的步骤说明如何使用 [Azure 帐户](https://account.windowsazure.cn/Home/Index)连接到 Azure 门户预览。
+本过程中的步骤说明如何使用 [Azure 帐户](https://account.windowsazure.cn/Home/Index)连接到 Azure 门户。
 
-1. 打开所选浏览器并连接到 [Azure 门户预览](https://portal.azure.cn/)。
-2. 登录到 [Azure 门户预览](https://portal.azure.cn/)。
+1. 打开所选浏览器并连接到 [Azure 门户](https://portal.azure.cn/)。
+2. 登录到 [Azure 门户](https://portal.azure.cn/)。
 3. 在“登录”页上，提供订阅的凭据。
    
    ![登录](./media/sql-database-get-started/login.png)  
 
 ##<a name="create-logical-server-bk"></a> 新建 SQL 逻辑服务器
 
-本过程中的步骤说明如何在所选区域中的 Azure 门户预览上创建逻辑服务器。逻辑服务器是可在其中创建 SQL 数据库的对象，也是可在其中创建防火墙规则，使用户能够通过 Azure SQL 数据库防火墙进行连接的对象。
+本过程中的步骤说明如何在所选区域中的 Azure 门户上创建逻辑服务器。逻辑服务器是可在其中创建 SQL 数据库的对象，也是可在其中创建防火墙规则，使用户能够通过 Azure SQL 数据库防火墙进行连接的对象。
 
 1. 单击“新建”，键入 **sql server**，然后单击 **ENTER**。
 
@@ -127,7 +127,7 @@
 
 ## 创建服务器级防火墙规则
 
-本过程中的步骤说明如何在 Azure 门户预览中创建服务器级防火墙规则。默认情况下，Azure SQL 数据库防火墙会阻止从外部连接到逻辑服务器及其数据库。若要连接到服务器，需要为执行下一过程时要从中连接的计算机的 IP 地址创建防火墙规则。有关详细信息，请参阅 [Azure SQL 数据库防火墙规则概述](/documentation/articles/sql-database-firewall-configure/)。
+本过程中的步骤说明如何在 Azure 门户中创建服务器级防火墙规则。默认情况下，Azure SQL 数据库防火墙会阻止从外部连接到逻辑服务器及其数据库。若要连接到服务器，需要为执行下一过程时要从中连接的计算机的 IP 地址创建防火墙规则。有关详细信息，请参阅 [Azure SQL 数据库防火墙规则概述](/documentation/articles/sql-database-firewall-configure/)。
 
 1. 在“SQL 服务器”边栏选项卡，单击“防火墙”打开服务器的“防火墙”边栏选项卡。请注意，显示的 IP 地址是客户端计算机的地址。
 
@@ -188,9 +188,9 @@
 
 ## 创建包含示例数据的数据库
 
-本过程中的步骤说明如何在 Azure 门户预览中使用与前面创建的逻辑服务器关联的示例数据创建数据库。
+本过程中的步骤说明如何在 Azure 门户中使用与前面创建的逻辑服务器关联的示例数据创建数据库。
 
-1. 在 Azure 门户预览的默认边栏选项卡中，单击“SQL 数据库”。
+1. 在 Azure 门户的默认边栏选项卡中，单击“SQL 数据库”。
 
     ![SQL 数据库](./media/sql-database-get-started/new-sql-database.png)  
 
@@ -220,14 +220,14 @@
     ![创建按钮](./media/sql-database-get-started/create.png)  
 
 
-8. 创建数据库后，请在 Azure 门户预览中查看其属性。可以通过后续教程了解此边栏选项卡上的可用选项。
+8. 创建数据库后，请在 Azure 门户中查看其属性。可以通过后续教程了解此边栏选项卡上的可用选项。
 
     ![新建示例 db 边栏选项卡](./media/sql-database-get-started/new-sample-db-blade.png)  
 
 
-## 在 Azure 门户预览中查询数据库
+## 在 Azure 门户中查询数据库
 
-本过程中的步骤说明如何在 Azure 门户预览中直接查询数据库。
+本过程中的步骤说明如何在 Azure 门户中直接查询数据库。
 
 1. 在“SQL 数据库”边栏选项卡中，单击工具栏上的“工具”。
 
@@ -317,11 +317,11 @@
 
 与 Azure SQL 数据库连接失败时，会出现错误消息。连接问题可能是 SQL Azure 数据库重新配置、防火墙设置、连接超时或不正确的登录信息造成的。有关连接故障排除工具，请参阅 [排查 Azure SQL 数据库连接问题](https://support.microsoft.com/help/10085/troubleshooting-connectivity-issues-with-microsoft-azure-sql-database)。
 
-## 在 Azure 门户预览中删除单一数据库
+## 在 Azure 门户中删除单一数据库
 
-本过程中的步骤说明如何使用 Azure 门户预览删除单一数据库。
+本过程中的步骤说明如何使用 Azure 门户删除单一数据库。
 
-1. 在 Azure 门户预览中的 SQL 数据库边栏选项卡上，单击想要删除的数据库。
+1. 在 Azure 门户中的 SQL 数据库边栏选项卡上，单击想要删除的数据库。
 2.  单击与该 SQL 数据库对应的“删除”。
 
     ![delete-database](./media/sql-database-get-started/delete-database.png)  
@@ -332,7 +332,7 @@
 
 
 > [AZURE.TIP]
-在数据库的保留期内，可将数据库从服务启动的自动备份还原（前提是未删除服务器本身）。“基本”版数据库可以在七天内还原。使用其他所有版本时，在 35 天内可以还原。如果删除了服务器本身，则无法恢复该服务器或在其中删除的任何数据库。有关数据库备份的详细信息，请参阅[了解 SQL 数据库备份](/documentation/articles/sql-database-automated-backups/)；有关从备份还原数据库的信息，请参阅[数据库恢复](/documentation/articles/sql-database-recovery-using-backups/)。有关还原已删除的数据库的操作指南文章，请参阅[还原已删除的 Azure SQL 数据库 - Azure 门户预览](/documentation/articles/sql-database-restore-deleted-database-portal/)。
+在数据库的保留期内，可将数据库从服务启动的自动备份还原（前提是未删除服务器本身）。“基本”版数据库可以在七天内还原。使用其他所有版本时，在 35 天内可以还原。如果删除了服务器本身，则无法恢复该服务器或在其中删除的任何数据库。有关数据库备份的详细信息，请参阅[了解 SQL 数据库备份](/documentation/articles/sql-database-automated-backups/)；有关从备份还原数据库的信息，请参阅[数据库恢复](/documentation/articles/sql-database-recovery-using-backups/)。有关还原已删除的数据库的操作指南文章，请参阅[还原已删除的 Azure SQL 数据库 - Azure 门户](/documentation/articles/sql-database-restore-deleted-database-portal/)。
 >
 
 

@@ -23,7 +23,7 @@
 
 # <a name="reserved-ip-addresses-classic"></a>保留 IP 地址（经典）
 > [AZURE.SELECTOR]
-- [Azure 门户预览](/documentation/articles/virtual-network-deploy-static-pip-arm-portal/)
+- [Azure 门户](/documentation/articles/virtual-network-deploy-static-pip-arm-portal/)
 - [PowerShell](/documentation/articles/virtual-network-deploy-static-pip-arm-ps/)
 - [Azure CLI](/documentation/articles/virtual-network-deploy-static-pip-arm-cli/)
 - [模板](/documentation/articles/virtual-network-deploy-static-pip-arm-template/)
@@ -51,7 +51,7 @@ Azure 中的 IP 地址分为两类：动态 IP 地址和保留 IP 地址。 由 
 3. 保留 IP 是否收费？ <br>
    有时。 有关定价详细信息，请参阅[保留 IP 地址定价详细信息](/pricing/details/reserved-ip-addresses/)。
 4. 如何保留某个 IP 地址？ <br>
-   可以使用 PowerShell、[Azure 管理 REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn722420.aspx) 或 [Azure 门户预览](https://portal.azure.cn)在 Azure 区域中保留 IP 地址。 保留 IP 地址将关联到订阅。
+   可以使用 PowerShell、[Azure 管理 REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn722420.aspx) 或 [Azure 门户](https://portal.azure.cn)在 Azure 区域中保留 IP 地址。 保留 IP 地址将关联到订阅。
 5. 我是否可将保留 IP 用于基于地缘组的 VNet？ <br>
    否。 仅区域 VNet 支持保留 IP。 与地缘组关联的 VNet 不支持保留 IP。 有关如何将 VNet 与区域或地缘组关联的详细信息，请参阅[关于区域 VNet 和地缘组](/documentation/articles/virtual-networks-migrate-to-regional-vnet/)一文。
 
@@ -83,7 +83,7 @@ Azure 中的 IP 地址分为两类：动态 IP 地址和保留 IP 地址。 由 
     OperationStatus      : Succeeded
 
 >[AZURE.NOTE]
->使用 PowerShell 创建保留 IP 地址时，不能指定要在其中创建保留 IP 的资源组。 Azure 将其自动放置于名为默认网络的资源组中。 如果使用 [Azure 门户预览](http://portal.azure.cn)创建保留 IP，可指定所选的任何资源组。 但是，如果在默认网络以外的资源组中创建保留 IP，每当使用 `Get-AzureReservedIP` 和 `Remove-AzureReservedIP` 等命令引用保留 IP 时，必须引用名称“Group resource-group-name reserved-ip-name”。  例如，如果在名为 myResourceGroup 的资源组中创建名为 myReservedIP 的保留 IP，必须将保留 IP 的名称引用为“Group myResourceGroup myReservedIP”。   
+>使用 PowerShell 创建保留 IP 地址时，不能指定要在其中创建保留 IP 的资源组。 Azure 将其自动放置于名为默认网络的资源组中。 如果使用 [Azure 门户](http://portal.azure.cn)创建保留 IP，可指定所选的任何资源组。 但是，如果在默认网络以外的资源组中创建保留 IP，每当使用 `Get-AzureReservedIP` 和 `Remove-AzureReservedIP` 等命令引用保留 IP 时，必须引用名称“Group resource-group-name reserved-ip-name”。  例如，如果在名为 myResourceGroup 的资源组中创建名为 myReservedIP 的保留 IP，必须将保留 IP 的名称引用为“Group myResourceGroup myReservedIP”。   
 
 某个 IP 成为保留 IP 后，它就会始终与你的订阅相关联，直至将它删除。 若要删除保留 IP，请运行以下 PowerShell 命令：
 

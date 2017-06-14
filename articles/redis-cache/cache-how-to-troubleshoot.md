@@ -89,7 +89,7 @@
 
 #### 度量
 
-通过 Azure 门户预览或关联的性能计数器监视系统范围的 CPU 使用率。请注意，不要监视 *进程* CPU，因为即使单个进程的 CPU 使用率低，系统的总体 CPU 使用率也可能高。注意与超时相对应的 CPU 使用率峰值。由于 CPU 使用率高，你可能还会在 `TimeoutException` 错误消息中看到 `in: XXX` 值高，如[流量激增](#burst-of-traffic)部分所述。
+通过 Azure 门户或关联的性能计数器监视系统范围的 CPU 使用率。请注意，不要监视 *进程* CPU，因为即使单个进程的 CPU 使用率低，系统的总体 CPU 使用率也可能高。注意与超时相对应的 CPU 使用率峰值。由于 CPU 使用率高，你可能还会在 `TimeoutException` 错误消息中看到 `in: XXX` 值高，如[流量激增](#burst-of-traffic)部分所述。
 
 >[AZURE.NOTE] StackExchange.Redis 1.1.603 及更高版本在 `TimeoutException` 错误消息中包括了 `local-cpu` 指标。确保使用最新版本的 [StackExchange.Redis NuGet 包](https://www.nuget.org/packages/StackExchange.Redis/)。我们会不断对代码中的 Bug 进行修正，以便更好地应对超时情况。因此，请务必使用最新的版本。
 
@@ -172,7 +172,7 @@
 
 #### 度量
 
-Redis 公开了两个指标，你可以通过这两个指标来确定此问题。第一个是 `used_memory`，另一个是 `used_memory_rss`。可以在 Azure 门户预览中或者通过 [Redis INFO](http://redis.io/commands/info) 命令获取[这些指标](/documentation/articles/cache-how-to-monitor/#available-metrics-and-reporting-intervals)。
+Redis 公开了两个指标，你可以通过这两个指标来确定此问题。第一个是 `used_memory`，另一个是 `used_memory_rss`。可以在 Azure 门户中或者通过 [Redis INFO](http://redis.io/commands/info) 命令获取[这些指标](/documentation/articles/cache-how-to-monitor/#available-metrics-and-reporting-intervals)。
 
 #### 解决方法
 
@@ -192,7 +192,7 @@ CPU 使用率高可能意味着，客户端可能无法及时处理 Redis 发出
 
 #### 度量
 
-通过 Azure 门户预览或关联的性能计数器监视系统范围的 CPU 使用率。请注意，不要监视 *进程* CPU，因为即使单个进程的 CPU 使用率低，系统的总体 CPU 使用率也可能高。注意与超时相对应的 CPU 使用率峰值。
+通过 Azure 门户或关联的性能计数器监视系统范围的 CPU 使用率。请注意，不要监视 *进程* CPU，因为即使单个进程的 CPU 使用率低，系统的总体 CPU 使用率也可能高。注意与超时相对应的 CPU 使用率峰值。
 
 #### 解决方法
 

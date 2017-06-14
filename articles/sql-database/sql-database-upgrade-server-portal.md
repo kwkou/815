@@ -1,6 +1,6 @@
 <properties
-	pageTitle="使用 Azure 门户预览升级到 Azure SQL 数据库 V12 | Azure"
-	description="介绍如何使用 Azure 门户预览升级到 Azure SQL 数据库 V12，包括如何升级 Web 和企业数据库，以及如何升级 V11 服务器并将其数据库直接迁移到弹性数据库池。"
+	pageTitle="使用 Azure 门户升级到 Azure SQL 数据库 V12 | Azure"
+	description="介绍如何使用 Azure 门户升级到 Azure SQL 数据库 V12，包括如何升级 Web 和企业数据库，以及如何升级 V11 服务器并将其数据库直接迁移到弹性数据库池。"
 	services="sql-database"
 	documentationCenter=""
 	authors="stevestein"
@@ -18,11 +18,11 @@
 	ms.author="sstein"/>
 
 
-# 使用 Azure 门户预览升级到 Azure SQL 数据库 V12
+# 使用 Azure 门户升级到 Azure SQL 数据库 V12
 
 
 > [AZURE.SELECTOR]
-- [Azure 门户预览](/documentation/articles/sql-database-upgrade-server-portal/)
+- [Azure 门户](/documentation/articles/sql-database-upgrade-server-portal/)
 - [PowerShell](/documentation/articles/sql-database-upgrade-server-powershell/)
 
 
@@ -55,7 +55,7 @@ SQL 数据库 V12 具有[旧版所欠缺的许多优点](/documentation/articles
 
 ## 开始升级
 
-1. 在 [Azure 门户预览](https://portal.azure.cn/)中，通过依次选择“浏览”>“SQL Server”，然后选择要升级的 v2.0 服务器，浏览到要升级的服务器。
+1. 在 [Azure 门户](https://portal.azure.cn/)中，通过依次选择“浏览”>“SQL Server”，然后选择要升级的 v2.0 服务器，浏览到要升级的服务器。
 2. 选择“最新 SQL 数据库更新”，然后选择“升级此服务器”。
 
       ![升级服务器][1]
@@ -102,7 +102,7 @@ SQL 数据库 V12 具有[旧版所欠缺的许多优点](/documentation/articles
 
 ## 将数据库移到弹性数据库池中
 
-在 [Azure 门户预览](https://portal.azure.cn)中浏览到 V12 服务器并单击“添加池”。
+在 [Azure 门户](https://portal.azure.cn)中浏览到 V12 服务器并单击“添加池”。
 
 -或-
 
@@ -118,7 +118,7 @@ SQL 数据库 V12 具有[旧版所欠缺的许多优点](/documentation/articles
 
 升级后，主动监视数据库，确保应用程序以所需性能运行，然后根据需要优化设置。
 
-除监视单个数据库外，还可以监视弹性数据库池。使用[Azure 门户预览](/documentation/articles/sql-database-elastic-pool-manage-portal/)或通过 [PowerShell](/documentation/articles/sql-database-elastic-pool-manage-powershell/) 监视、管理弹性数据库池并设置其大小。
+除监视单个数据库外，还可以监视弹性数据库池。使用[Azure 门户](/documentation/articles/sql-database-elastic-pool-manage-portal/)或通过 [PowerShell](/documentation/articles/sql-database-elastic-pool-manage-powershell/) 监视、管理弹性数据库池并设置其大小。
 
 
 **资源消耗数据：**对于基本、标准和高级数据库，可通过用户数据库中的 [sys.dm_ db_ resource\_stats](http://msdn.microsoft.com/zh-cn/library/azure/dn800981.aspx) DMV 使用资源消耗数据。此 DMV 针对前一小时的操作，以 15 秒的粒度级提供接近实时的资源消耗信息。每个间隔的 DTU 消耗百分比将计算为 CPU、IO 和日志维度的最大消耗百分比。下面是一个用于计算过去一小时平均 DTU 消耗百分比的查询：
@@ -141,7 +141,7 @@ SQL 数据库 V12 具有[旧版所欠缺的许多优点](/documentation/articles
 
 
 
-**警报：**在 Azure 门户预览中设置“警报”可在升级后的数据库 DTU 消耗量接近特定的高位时接收通知。你可以针对 DTU、CPU、IO 和日志等各种性能指标，在 Azure 门户预览中设置数据库警报。浏览到你的数据库，然后在“设置”边栏选项卡中选择“警报规则”。
+**警报：**在 Azure 门户中设置“警报”可在升级后的数据库 DTU 消耗量接近特定的高位时接收通知。你可以针对 DTU、CPU、IO 和日志等各种性能指标，在 Azure 门户中设置数据库警报。浏览到你的数据库，然后在“设置”边栏选项卡中选择“警报规则”。
 
 例如，你可以针对“DTU 百分比”设置电子邮件警报，以便在过去 5 分钟平均 DTU 百分比值超过 75% 时发出警报。请参阅[接收警报通知](/documentation/articles/insights-receive-alert-notifications/)，以了解有关如何配置警报通知的详细信息。
 

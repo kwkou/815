@@ -1,6 +1,6 @@
 <!-- not suitable for mooncake-->
 
-##Azure 经典管理门户和 Azure 门户预览
+##Azure 经典管理门户和 Azure 门户
 
 > [AZURE.IMPORTANT] 本文档中的步骤使用 Azure 经典管理门户。Microsoft 不建议在创建新的服务时使用经典管理门户。
 

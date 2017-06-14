@@ -79,7 +79,7 @@ Power BI 允许以可视方式将数据显示为报表。本文档提供了如�
 
 ## 配置示例
 
-1. 在 [Azure 门户预览](https://portal.azure.cn)中选择 SQL 数据库。在 SQL 数据库边栏选项卡的“基本信息”部分，选择“显示数据库连接字符串”。从显示的列表中复制“ADO.NET (SQL 身份验证)”信息。
+1. 在 [Azure 门户](https://portal.azure.cn)中选择 SQL 数据库。在 SQL 数据库边栏选项卡的“基本信息”部分，选择“显示数据库连接字符串”。从显示的列表中复制“ADO.NET (SQL 身份验证)”信息。
 
 2. 在 Visual Studio 中打开该示例。在“解决方案资源管理器”中打开“App.config”文件，然后找到以下条目：
    
@@ -127,7 +127,7 @@ Power BI 允许以可视方式将数据显示为报表。本文档提供了如�
 
 3. 选择“Azure SQL 数据库”，然后选择“连接”。
 
-4. 输入信息以连接到 Azure SQL 数据库。可以通过访问 [Azure 门户预览](https://portal.azure.cn)并选择 SQL 数据库查找此信息。
+4. 输入信息以连接到 Azure SQL 数据库。可以通过访问 [Azure 门户](https://portal.azure.cn)并选择 SQL 数据库查找此信息。
    
     > [AZURE.NOTE]
     还可以通过在连接对话框中使用“启用高级选项”，以设置刷新间隔和自定义筛选器。

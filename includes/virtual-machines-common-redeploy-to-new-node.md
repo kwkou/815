@@ -1,4 +1,4 @@
-## <a name="using-azure-portal"></a> 使用 Azure 门户预览
+## <a name="using-azure-portal"></a> 使用 Azure 门户
 1. 选择想要重新部署的 VM，然后单击“设置”边栏选项卡中的“重新部署”按钮。 向下滚动，查看包含“重新部署”按钮的“支持和故障排除”  部分，如以下示例所示：
 
     ![Azure VM 边栏选项卡](./media/virtual-machines-common-redeploy-to-new-node/vmoverview.png)

@@ -24,13 +24,13 @@
 
 # <a name="connect-a-virtual-network-to-an-expressroute-circuit"></a>将虚拟网络连接到 ExpressRoute 线路
 > [AZURE.SELECTOR]
-- [Resource Manager - Azure 门户预览](/documentation/articles/expressroute-howto-linkvnet-portal-resource-manager/)
+- [Resource Manager - Azure 门户](/documentation/articles/expressroute-howto-linkvnet-portal-resource-manager/)
 - [Resource Manager - PowerShell](/documentation/articles/expressroute-howto-linkvnet-arm/)
 - [经典 - PowerShell](/documentation/articles/expressroute-howto-linkvnet-classic/)
 
 
 
-本文通过使用 Resource Manager 部署模型和 Azure 门户预览，帮助将虚拟网络 (VNets) 链接到 Azure ExpressRoute 线路。虚拟网络可以在同一个订阅中，也可以属于另一个订阅。
+本文通过使用 Resource Manager 部署模型和 Azure 门户，帮助将虚拟网络 (VNets) 链接到 Azure ExpressRoute 线路。虚拟网络可以在同一个订阅中，也可以属于另一个订阅。
 
 ## <a name="before-you-begin"></a>开始之前
 

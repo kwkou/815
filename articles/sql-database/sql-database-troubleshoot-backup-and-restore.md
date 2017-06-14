@@ -23,13 +23,13 @@
 SQL 数据库保留了你数据库的副本，因此你可以在发生服务中断和用户错误的情况下进行恢复。可用的选项取决于数据库服务层和你选择的选项。有关详细信息和设计注意事项，请参阅[业务连续性概述](/documentation/articles/sql-database-business-continuity/)。
 
 ## 将数据库还原到以前的时间点
-1.	在 [Azure 门户预览](https://portal.azure.cn)中，单击“SQL 数据库”。
+1.	在 [Azure 门户](https://portal.azure.cn)中，单击“SQL 数据库”。
 2.	从列表中选择你的数据库，然后单击“还原”。
 3.	键入数据库的新名称、选择要从中还原的日期和时间，然后单击“创建”。
 4.	根据需要调整应用以引用新的数据库。请参阅[将数据库恢复到某个时间点](/documentation/articles/sql-database-recovery-using-backups/#point-in-time-restore)。
 
 ## 还原意外删除的数据库
-1.	在 [Azure 门户预览](https://portal.azure.cn)中，单击“SQL Server”。
+1.	在 [Azure 门户](https://portal.azure.cn)中，单击“SQL Server”。
 2.	从列表中选择托管该数据库的服务器。
 3.	在“服务器”边栏选项卡上，向下滚动并单击“已删除的数据库”。
 4.	选择要还原的数据库，然后单击“创建”。
@@ -42,6 +42,6 @@ Azure 还在不同的区域提供每个数据库的备份（异地冗余的备�
 
 **使用异地还原恢复数据库：**
 
-- 在 [Azure 门户预览](https://portal.azure.cn)中，依次单击“新建”、“数据和存储”、“SQL 数据库”，然后选择“备份”作为数据库源。有关详细信息，请参阅[在中断后恢复 Azure SQL 数据库](/documentation/articles/sql-database-disaster-recovery/)。
+- 在 [Azure 门户](https://portal.azure.cn)中，依次单击“新建”、“数据和存储”、“SQL 数据库”，然后选择“备份”作为数据库源。有关详细信息，请参阅[在中断后恢复 Azure SQL 数据库](/documentation/articles/sql-database-disaster-recovery/)。
 
 <!---HONumber=Mooncake_1010_2016-->

@@ -45,7 +45,7 @@ AMQP 1.0 支持在服务总线 SDK 2.1 版或更高版本中提供。为确保�
 
 	Endpoint=sb://[namespace].servicebus.chinacloudapi.cn/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=[SAS key];TransportType=Amqp
 
-其中 `[namespace]` 和 `SharedAccessKey` 从 [Azure 门户预览][]获取。有关详细信息，请参阅[服务总线队列入门][]。
+其中 `[namespace]` 和 `SharedAccessKey` 从 [Azure 门户][]获取。有关详细信息，请参阅[服务总线队列入门][]。
 
 使用 AMQP 时，在连接字符串后面追加 `;TransportType=Amqp`。此表示法将指示客户端库使用 AMQP 1.0 连接到服务总线。
 
@@ -129,7 +129,7 @@ AMQP 1.0 支持在服务总线 SDK 2.1 版或更高版本中提供。为确保�
   [Microsoft.ServiceBus.Messaging.MessagingFactory.CreateMessageSender(System.String,System.String)]: https://msdn.microsoft.com/zh-cn/library/azure/jj657703.aspx
   [OperationTimeout]: https://msdn.microsoft.com/zh-cn/library/azure/microsoft.servicebus.messaging.messagingfactorysettings.operationtimeout.aspx
 [NuGet]: http://nuget.org/packages/WindowsAzure.ServiceBus/
-[Azure 门户预览]: https://portal.azure.cn
+[Azure 门户]: https://portal.azure.cn
 [服务总线 AMQP 概述]: /documentation/articles/service-bus-amqp-overview/
 [针对服务总线分区队列和主题的 AMQP 1.0 支持]: /documentation/articles/service-bus-amqp-protocol-guide/
 [适用于 Windows Server 的服务总线中的 AMQP]: https://msdn.microsoft.com/zh-cn/library/dn574799.aspx

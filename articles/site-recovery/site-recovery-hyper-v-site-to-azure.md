@@ -26,7 +26,7 @@
 
 
 
-本文介绍如何在 Azure 门户预览中使用 [Azure Site Recovery](/documentation/articles/site-recovery-overview/) 将本地 Hyper-V 虚拟机复制到 Azure。
+本文介绍如何在 Azure 门户中使用 [Azure Site Recovery](/documentation/articles/site-recovery-overview/) 将本地 Hyper-V 虚拟机复制到 Azure。
 
 可以将 Hyper-V VM 复制到 Azure 存储，将 VM 故障转移到 Azure（如果主站点不可用）。可以访问 Azure 中的工作负荷，并在本地恢复正常运行时故障回复到本地。也可根据本文的说明将 VM 迁移到 Azure。在迁移方案中，你需要复制并故障转移 VM，但不需要再次对其执行故障回复操作。
 

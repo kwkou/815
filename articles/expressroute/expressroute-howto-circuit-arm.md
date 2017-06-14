@@ -24,7 +24,7 @@
 
 # <a name="create-and-modify-an-expressroute-circuit-using-powershell"></a>使用 PowerShell 创建和修改 ExpressRoute 线路
 > [AZURE.SELECTOR]
-- [Resource Manager - Azure 门户预览](/documentation/articles/expressroute-howto-circuit-portal-resource-manager/)
+- [Resource Manager - Azure 门户](/documentation/articles/expressroute-howto-circuit-portal-resource-manager/)
 - [Resource Manager - PowerShell](/documentation/articles/expressroute-howto-circuit-arm/)
 
 本文介绍如何使用 PowerShell cmdlet 和 Azure Resource Manager 部署模型创建 Azure ExpressRoute 线路。 本文还介绍如何查看线路状态，以及如何更新、删除和取消预配线路。

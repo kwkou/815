@@ -1,6 +1,6 @@
 <properties
-    pageTitle="在 Azure 门户预览中使用 Windows 故障排除 VM | Azure"
-    description="了解如何通过使用 Azure 门户预览将 OS 磁盘连接到恢复 VM 来排查 Azure 中的 Windows 虚拟机问题"
+    pageTitle="在 Azure 门户中使用 Windows 故障排除 VM | Azure"
+    description="了解如何通过使用 Azure 门户将 OS 磁盘连接到恢复 VM 来排查 Azure 中的 Windows 虚拟机问题"
     services="virtual-machines-windows"
     documentationCenter=""
     authors="iainfoulds"
@@ -17,8 +17,8 @@
     ms.author="iainfou" />  
 
 
-# 通过使用 Azure 门户预览将 OS 磁盘附加到恢复 VM 来对 Windows VM 进行故障排除
-如果 Windows 虚拟机 (VM) 在 Azure 中遇到启动或磁盘错误，可能需要对虚拟硬盘本身执行故障排除步骤。一个常见示例是应用程序更新失败，使 VM 无法成功启动。本文详细介绍如何使用 Azure 门户预览将虚拟硬盘连接到另一个 Windows VM 来修复所有错误，然后重新创建原始 VM。
+# 通过使用 Azure 门户将 OS 磁盘附加到恢复 VM 来对 Windows VM 进行故障排除
+如果 Windows 虚拟机 (VM) 在 Azure 中遇到启动或磁盘错误，可能需要对虚拟硬盘本身执行故障排除步骤。一个常见示例是应用程序更新失败，使 VM 无法成功启动。本文详细介绍如何使用 Azure 门户将虚拟硬盘连接到另一个 Windows VM 来修复所有错误，然后重新创建原始 VM。
 
 ## 恢复过程概述
 故障排除过程如下：
@@ -137,7 +137,7 @@
     ![在服务器管理器中将数据磁盘设置为脱机](./media/virtual-machines-windows-troubleshoot-recovery-disks/server-manager-set-disk-offline.png)  
 
 
-3. 现在从 VM 中分离虚拟硬盘。请在 Azure 门户预览中选择 VM，然后单击“磁盘”。选择现有的虚拟硬盘，然后单击“分离”：
+3. 现在从 VM 中分离虚拟硬盘。请在 Azure 门户中选择 VM，然后单击“磁盘”。选择现有的虚拟硬盘，然后单击“分离”：
 
     ![分离现有虚拟硬盘](./media/virtual-machines-windows-troubleshoot-recovery-disks/detach-disk.png)  
 
@@ -149,7 +149,7 @@
 
 [![从 Github 中的模板部署 VM](./media/virtual-machines-windows-troubleshoot-recovery-disks/deploy-template-from-github.png)](https://portal.azure.cn/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fazure%2Fazure-quickstart-templates%2Fmaster%2F201-vm-specialized-vhd-existing-vnet%2Fazuredeploy.json)
 
-模板已加载到 Azure 门户预览中进行部署。请输入新 VM 和现有 Azure 资源的名称，然后粘贴现有虚拟硬盘的 URL。若要开始部署，请单击“购买”：
+模板已加载到 Azure 门户中进行部署。请输入新 VM 和现有 Azure 资源的名称，然后粘贴现有虚拟硬盘的 URL。若要开始部署，请单击“购买”：
 
 ![从模板部署 VM](./media/virtual-machines-windows-troubleshoot-recovery-disks/deploy-from-image.png)  
 

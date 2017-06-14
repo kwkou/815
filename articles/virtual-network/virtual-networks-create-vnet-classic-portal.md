@@ -26,7 +26,7 @@
 
 [AZURE.INCLUDE [azure-arm-classic-important-include](../../includes/azure-arm-classic-important-include.md)]
 
-本文介绍如何在 Azure 经典管理门户中通过经典部署模型使用 netcfg 文件创建虚拟网络。也可以在 Azure 门户预览中，[在不使用 netcfg 文件的情况下通过经典部署模型创建虚拟网络](/documentation/articles/virtual-networks-create-vnet-classic-pportal/)，或者[通过 Azure Resource Manager 部署模型创建虚拟网络](/documentation/articles/virtual-networks-create-vnet-arm-pportal/)。
+本文介绍如何在 Azure 经典管理门户中通过经典部署模型使用 netcfg 文件创建虚拟网络。也可以在 Azure 门户中，[在不使用 netcfg 文件的情况下通过经典部署模型创建虚拟网络](/documentation/articles/virtual-networks-create-vnet-classic-pportal/)，或者[通过 Azure Resource Manager 部署模型创建虚拟网络](/documentation/articles/virtual-networks-create-vnet-arm-pportal/)。
 
 [AZURE.INCLUDE [virtual-networks-create-vnet-scenario-include](../../includes/virtual-networks-create-vnet-scenario-include.md)]
 

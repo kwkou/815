@@ -1,5 +1,5 @@
 <properties
-    pageTitle="在 Azure 门户预览中启用存储指标 | Azure"
+    pageTitle="在 Azure 门户中启用存储指标 | Azure"
     description="如何为 Blob、队列、表和文件服务启用存储度量值"
     services="storage"
     documentationcenter=""

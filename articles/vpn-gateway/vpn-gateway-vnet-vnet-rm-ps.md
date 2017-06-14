@@ -27,10 +27,10 @@
 
 本文介绍如何在虚拟网络之间创建 VPN 网关连接。 虚拟网络可位于相同或不同的区域，来自相同或不同的订阅。 本文中的步骤适用于 Resource Manager 部署模型并使用 PowerShell。 也可使用不同的部署工具或部署模型创建此配置，方法是从以下列表中选择另一选项：
 > [AZURE.SELECTOR]
-- [Resource Manager - Azure 门户预览](/documentation/articles/vpn-gateway-howto-vnet-vnet-resource-manager-portal/)
+- [Resource Manager - Azure 门户](/documentation/articles/vpn-gateway-howto-vnet-vnet-resource-manager-portal/)
 - [Resource Manager - PowerShell](/documentation/articles/vpn-gateway-vnet-vnet-rm-ps/)
-- [经典 - Azure 门户预览](/documentation/articles/vpn-gateway-howto-vnet-vnet-portal-classic/)
-- [连接不同的部署模型 - Azure 门户预览](/documentation/articles/vpn-gateway-connect-different-deployment-models-portal/)
+- [经典 - Azure 门户](/documentation/articles/vpn-gateway-howto-vnet-vnet-portal-classic/)
+- [连接不同的部署模型 - Azure 门户](/documentation/articles/vpn-gateway-connect-different-deployment-models-portal/)
 - [连接不同的部署模型 - PowerShell](/documentation/articles/vpn-gateway-connect-different-deployment-models-powershell/)
 
 ![v2v 示意图](./media/vpn-gateway-vnet-vnet-rm-ps/v2vrmps.png)

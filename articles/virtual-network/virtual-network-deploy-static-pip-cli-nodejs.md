@@ -22,7 +22,7 @@
 
 # 使用 Azure CLI 1.0 创建具有静态公共 IP 地址的 VM
 > [AZURE.SELECTOR]
-- [Azure 门户预览](/documentation/articles/virtual-network-deploy-static-pip-arm-portal/)
+- [Azure 门户](/documentation/articles/virtual-network-deploy-static-pip-arm-portal/)
 - [PowerShell](/documentation/articles/virtual-network-deploy-static-pip-arm-ps/)
 - [Azure CLI 2.0](/documentation/articles/virtual-network-deploy-static-pip-arm-cli/)
 - [Azure CLI 1.0](/documentation/articles/virtual-network-deploy-static-pip-cli-nodejs/)

@@ -40,7 +40,7 @@
 为完成本主题，必须具有足够的权限向 Azure AD 租户注册应用程序，并将应用程序分配到 Azure 订阅中的角色。 请确保你拥有适当的权限来执行这些步骤。
 
 ### <a name="check-azure-active-directory-permissions"></a>检查 Azure Active Directory 权限
-1. 通过 [Azure 门户预览](https://portal.azure.cn)登录 Azure 帐户。
+1. 通过 [Azure 门户](https://portal.azure.cn)登录 Azure 帐户。
 2. 选择“Azure Active Directory” 。
 
     ![选择 azure active directory](./media/resource-group-create-service-principal-portal/select-active-directory.png)
@@ -85,7 +85,7 @@
     ![显示权限](./media/resource-group-create-service-principal-portal/view-assigned-roles.png)
 
 ## <a name="create-an-azure-active-directory-application"></a>创建 Azure Active Directory 应用程序
-1. 通过 [Azure 门户预览](https://portal.azure.cn)登录 Azure 帐户。
+1. 通过 [Azure 门户](https://portal.azure.cn)登录 Azure 帐户。
 2. 选择“Azure Active Directory” 。
 
     ![选择 azure active directory](./media/resource-group-create-service-principal-portal/select-active-directory.png)

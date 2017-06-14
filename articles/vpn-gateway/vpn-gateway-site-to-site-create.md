@@ -27,10 +27,10 @@
 
 本文介绍如何使用经典管理门户创建站点到站点 VPN 网关连接，以便从本地网络连接到 VNet。 本文中的步骤适用于经典部署模型。 也可使用不同的部署工具或部署模型创建此配置，方法是从以下列表中选择另一选项：
 > [AZURE.SELECTOR]
-- [Resource Manager - Azure 门户预览](/documentation/articles/vpn-gateway-howto-site-to-site-resource-manager-portal/)
+- [Resource Manager - Azure 门户](/documentation/articles/vpn-gateway-howto-site-to-site-resource-manager-portal/)
 - [Resource Manager - PowerShell](/documentation/articles/vpn-gateway-create-site-to-site-rm-powershell/)
 - [Resource Manager - CLI](/documentation/articles/vpn-gateway-howto-site-to-site-resource-manager-cli/)
-- [经典 - Azure 门户预览](/documentation/articles/vpn-gateway-howto-site-to-site-classic-portal/)
+- [经典 - Azure 门户](/documentation/articles/vpn-gateway-howto-site-to-site-classic-portal/)
 - [经典 - 经典管理门户](/documentation/articles/vpn-gateway-site-to-site-create/)
 
 ![站点到站点 VPN 网关跨界连接示意图](./media/vpn-gateway-site-to-site-create/site-to-site-connection-diagram.png)

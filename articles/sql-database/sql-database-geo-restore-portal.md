@@ -1,6 +1,6 @@
 <properties
     pageTitle="Azure 门户：从异地冗余备份还原 SQL 数据库 | Azure"
-    description="使用 Azure 门户预览从异地冗余备份中将 Azure SQL 数据库还原到新的服务器中"
+    description="使用 Azure 门户从异地冗余备份中将 Azure SQL 数据库还原到新的服务器中"
     services="sql-database"
     documentationcenter=""
     author="stevestein"
@@ -19,15 +19,15 @@
 
 
 
-# 使用 Azure 门户预览从异地冗余备份中还原 Azure SQL 数据库
+# 使用 Azure 门户从异地冗余备份中还原 Azure SQL 数据库
 
-本文演示了如何使用 Azure 门户预览通过异地还原将数据库还原到新服务器中。也可以[使用 PowerShell](/documentation/articles/sql-database-geo-restore-powershell/) 执行此任务。
+本文演示了如何使用 Azure 门户通过异地还原将数据库还原到新服务器中。也可以[使用 PowerShell](/documentation/articles/sql-database-geo-restore-powershell/) 执行此任务。
 
-## 使用 Azure 门户预览从异地冗余备份中还原 Azure SQL 数据库
+## 使用 Azure 门户从异地冗余备份中还原 Azure SQL 数据库
 
-若要在 Azure 门户预览中异地还原数据库，请执行以下步骤：
+若要在 Azure 门户中异地还原数据库，请执行以下步骤：
 
-1. 转到 [Azure 门户预览](https://portal.azure.cn)。
+1. 转到 [Azure 门户](https://portal.azure.cn)。
 2. 在屏幕左侧选择“+新建”>“数据库”>“SQL 数据库”：
    
    ![还原 Azure SQL 数据库](./media/sql-database-geo-restore-portal/new-sql-database.png)  

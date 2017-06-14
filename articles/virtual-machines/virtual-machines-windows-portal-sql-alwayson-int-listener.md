@@ -30,10 +30,10 @@
 * [在 Azure VM \(手动\) 中配置 AlwaysOn 可用性组](/documentation/articles/virtual-machines-windows-portal-sql-alwayson-availability-groups-manual/)
 * [使用 Azure Resource Manager 和 PowerShell 配置 VNet 到 VNet 连接](/documentation/articles/vpn-gateway-vnet-vnet-rm-ps/)
 
-执行本文档中的每个步骤可以在 Azure 门户预览中创建和配置负载均衡器。完成这些步骤后，需配置群集，将负载均衡器中的 IP 地址用于可用性组侦听器。
+执行本文档中的每个步骤可以在 Azure 门户中创建和配置负载均衡器。完成这些步骤后，需配置群集，将负载均衡器中的 IP 地址用于可用性组侦听器。
 
-## 在 Azure 门户预览中创建并配置负载均衡器
-在任务的这一部分，需在 Azure 门户预览中执行以下步骤：
+## 在 Azure 门户中创建并配置负载均衡器
+在任务的这一部分，需在 Azure 门户中执行以下步骤：
 
 1. 创建负载均衡器并配置 IP 地址
 2. 配置后端池
@@ -46,7 +46,7 @@
 > 
 
 ### 1\.创建负载均衡器并配置 IP 地址
-第一步是创建负载均衡器。在 Azure 门户预览中，打开包含 SQL Server 虚拟机的资源组。在资源组中，单击“添加”。
+第一步是创建负载均衡器。在 Azure 门户中，打开包含 SQL Server 虚拟机的资源组。在资源组中，单击“添加”。
 
 1. 搜索“负载均衡器”。从搜索结果中选择由 **Microsoft** 发布的**负载均衡器**。
 1. 在“负载均衡器”边栏选项卡上，单击“创建”。

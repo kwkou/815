@@ -237,7 +237,7 @@ SDK 中附带的 **iothub\_client\_sample\_http** 应用程序演示了较低级
 		HostName=IOTHUBNAME.IOTHUBSUFFIX;DeviceId=DEVICEID;SharedAccessKey=SHAREDACCESSKEY
 
 
-此字符串包含四个信息片段：IoT 中心名称、IoT 中心后缀、设备 ID 和共享访问密钥。当在 Azure 门户预览中创建 IoT 中心实例时，可以获取 IoT 中心的完全限定域名 (FQDN) - 它提供了 IoT 中心名称（FQDN 的第一个部分）和 IoT 中心后缀（FQDN 的其余部分）。使用 IoT 中心注册设备时，可以获取设备 ID 和共享访问密钥（如[前一篇文章](/documentation/articles/iot-hub-device-sdk-c-intro/)中所述）。
+此字符串包含四个信息片段：IoT 中心名称、IoT 中心后缀、设备 ID 和共享访问密钥。当在 Azure 门户中创建 IoT 中心实例时，可以获取 IoT 中心的完全限定域名 (FQDN) - 它提供了 IoT 中心名称（FQDN 的第一个部分）和 IoT 中心后缀（FQDN 的其余部分）。使用 IoT 中心注册设备时，可以获取设备 ID 和共享访问密钥（如[前一篇文章](/documentation/articles/iot-hub-device-sdk-c-intro/)中所述）。
 
 **IoTHubClient\_CreateFromConnectionString** 提供了初始化库的方式。 如果需要，可以使用其中的每个参数而不是设备连接字符串来创建新的 **IOTHUB\_CLIENT\_HANDLE**。 使用以下代码即可实现此目的：
 

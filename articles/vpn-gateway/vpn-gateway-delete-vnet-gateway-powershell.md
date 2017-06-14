@@ -25,7 +25,7 @@
 
 # <a name="delete-a-virtual-network-gateway-using-powershell"></a>使用 PowerShell 删除虚拟网络网关
 > [AZURE.SELECTOR]
-- [Resource Manager - Azure 门户预览](/documentation/articles/vpn-gateway-delete-vnet-gateway-portal/)
+- [Resource Manager - Azure 门户](/documentation/articles/vpn-gateway-delete-vnet-gateway-portal/)
 - [Resource Manager - PowerShell](/documentation/articles/vpn-gateway-delete-vnet-gateway-powershell/)
 - [经典 - PowerShell](/documentation/articles/vpn-gateway-delete-vnet-gateway-classic-powershell/)
 

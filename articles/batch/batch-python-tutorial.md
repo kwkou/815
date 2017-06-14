@@ -139,7 +139,7 @@ Batch Python 教程代码示例由两个 Python 脚本和若干数据文件组�
     storage_account_name = "";
     storage_account_key  = "";
 
-可以在 [Azure 门户预览][azure_portal]中每项服务的帐户边栏选项卡中找到批处理和存储帐户凭据：
+可以在 [Azure 门户][azure_portal]中每项服务的帐户边栏选项卡中找到批处理和存储帐户凭据：
 
 ![门户中的批处理凭据][9]
 ![门户中的存储凭据][10]<br/>
@@ -579,7 +579,7 @@ BatchServiceClient 的 [JobOperations][py_job] 和 [PoolOperations][py_pool] 都
 >
 
 ## <a name="run-the-sample-script"></a>运行示例脚本
-从教程[代码示例][github_article_samples]运行 *python_tutorial_client.py* 脚本时，控制台输出如下所示。 出现 `Monitoring all tasks for 'Completed' state, timeout in 0:20:00...` 后将会暂停，此时会创建、启动池的计算节点，然后执行池启动任务中的命令。 在执行期间和之后，可以使用 [Azure 门户预览][azure_portal] 监视池、计算节点、作业和任务。 使用 [Azure 门户预览][azure_portal]或 [Azure 存储资源管理器][storage_explorer]可以查看应用程序创建的存储资源（容器和 Blob）。
+从教程[代码示例][github_article_samples]运行 *python_tutorial_client.py* 脚本时，控制台输出如下所示。 出现 `Monitoring all tasks for 'Completed' state, timeout in 0:20:00...` 后将会暂停，此时会创建、启动池的计算节点，然后执行池启动任务中的命令。 在执行期间和之后，可以使用 [Azure 门户][azure_portal] 监视池、计算节点、作业和任务。 使用 [Azure 门户][azure_portal]或 [Azure 存储资源管理器][storage_explorer]可以查看应用程序创建的存储资源（容器和 Blob）。
 
 > [AZURE.TIP]
 > 从 `azure-batch-samples/Python/Batch/article_samples` 目录内部运行 *python_tutorial_client.py* 脚本。 该脚本使用相对路径导入 `common.helpers` 模块，因此，如果不从此目录内部运行该脚本，可能会看到 `ImportError: No module named 'common'`。

@@ -21,7 +21,7 @@
 
 # 删除 Resource Manager 部署中的 Azure 存储帐户、容器或 VHD 时对错误进行故障排除
 
-尝试在 [Azure 门户预览](https://portal.azure.cn)中删除 Azure 存储帐户、容器或虚拟硬盘 (VHD) 时，可能会收到错误。本文提供故障排除指导，帮助解决 Azure Resource Manager 部署中的问题。
+尝试在 [Azure 门户](https://portal.azure.cn)中删除 Azure 存储帐户、容器或虚拟硬盘 (VHD) 时，可能会收到错误。本文提供故障排除指导，帮助解决 Azure Resource Manager 部署中的问题。
 
 
 ## 症状
@@ -56,7 +56,7 @@
 ### 步骤 1：识别有问题的 VHD 和关联的 VM
 
 
-1. 登录到 [Azure 门户预览](https://portal.azure.cn)。
+1. 登录到 [Azure 门户](https://portal.azure.cn)。
 2. 在“中心”菜单上，选择“所有资源”。转到想要删除的存储帐户，然后选择“Blob”>“VHD”。
 
     ![门户的屏幕截图，突出显示了存储帐户和“vhd”容器](./media/storage-resource-manager-cannot-delete-storage-account-container-vhd/opencontainer.png)  
@@ -73,7 +73,7 @@
 
 删除正在使用 VHD 的 VM（适用于 OS 磁盘）：
 
-1. 登录到 [Azure 门户预览](https://portal.azure.cn)。
+1. 登录到 [Azure 门户](https://portal.azure.cn)。
 2. 在“中心”菜单上，选择“虚拟机”。
 3. 选择在 VHD 上保存租约的 VM。
 4. 确保没有任何组件正在使用该虚拟机，并确认你不再需要该虚拟机。
@@ -82,7 +82,7 @@
 
 从正在使用 VHD 的 VM 分离它（适用于数据磁盘）：
 
-1. 登录到 [Azure 门户预览](https://portal.azure.cn)。
+1. 登录到 [Azure 门户](https://portal.azure.cn)。
 2. 在“中心”菜单上，选择“虚拟机”。
 3. 选择在 VHD 上保存租约的 VM。
 4. 选择“VM 详细信息”边栏选项卡中的“磁盘”。

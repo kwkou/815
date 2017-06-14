@@ -19,7 +19,7 @@
 
 ## **问题描述**
 
-在[Azure 门户预览](https://portal.azure.cn/)创建 ARM 虚拟机时，我们直接可以选择虚拟机的磁盘类型，但是在 [Azure Management Libraries for Java](https://github.com/Azure/azure-sdk-for-java) 的 API 中我们无法找到直接设置磁盘类型的 API.默认创建的磁盘类型是 HDD，如何通过 API 设置磁盘类型？
+在[Azure 门户](https://portal.azure.cn/)创建 ARM 虚拟机时，我们直接可以选择虚拟机的磁盘类型，但是在 [Azure Management Libraries for Java](https://github.com/Azure/azure-sdk-for-java) 的 API 中我们无法找到直接设置磁盘类型的 API.默认创建的磁盘类型是 HDD，如何通过 API 设置磁盘类型？
 
 ![disk-type](./media/aog-virtual-machines-qa-arm-set-disk-type-with-java/disk-type.png)
 

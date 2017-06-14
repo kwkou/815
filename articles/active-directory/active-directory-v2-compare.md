@@ -69,7 +69,7 @@ v2.0 终结点只能在下列新位置中注册：[apps.dev.microsoft.com](https
 	...
 
 
-其中 **resource** 参数指示客户端应用请求授权的资源。Azure AD 根据 Azure 门户预览中的静态设置计算应用程序所需的权限，并据以发出令牌。现在，相同的 OAuth 2.0 授权请求如下所示：
+其中 **resource** 参数指示客户端应用请求授权的资源。Azure AD 根据 Azure 门户中的静态设置计算应用程序所需的权限，并据以发出令牌。现在，相同的 OAuth 2.0 授权请求如下所示：
 
 
 	GET https://login.microsoftonline.com/common/oauth2/v2.0/authorize?
@@ -81,11 +81,11 @@ v2.0 终结点只能在下列新位置中注册：[apps.dev.microsoft.com](https
 其中 **scope** 参数指示应用请求授权的资源和权限。所需的资源仍是请求中最新的 - 它只包含在 scope 参数的每个值中。以此方式使用 scope 参数可让 v2.0 终结点更符合 OAuth 2.0 规范，并且更贴近常见的行业实践。它还可以让应用执行下一节中所述的[增量许可](#incremental-and-dynamic-consent)。
 
 ## 增量同意和动态同意  <a name="incremental-and-dynamic-consent"></a>
-在正式版 Azure AD 服务中注册的应用程序必须于应用程序创建时在 Azure 门户预览中指定其所需的 OAuth 2.0 权限：
+在正式版 Azure AD 服务中注册的应用程序必须于应用程序创建时在 Azure 门户中指定其所需的 OAuth 2.0 权限：
 
 ![权限注册 UI](./media/active-directory-v2-flows/app_reg_permissions.PNG)
 
-应用所需的权限是**以静态方式**配置的。尽管这可让应用程序的设置存在于 Azure 门户预览中并使代码好用又简单，但开发人员面临一些问题：
+应用所需的权限是**以静态方式**配置的。尽管这可让应用程序的设置存在于 Azure 门户中并使代码好用又简单，但开发人员面临一些问题：
 
 - 应用程序必须在应用程序创建时知道可能需要的所有权限。随着时间添加权限是一个繁琐的过程。
 - 应用程序必须事先知道可能访问的所有资源。很难创建能够访问任意数目的资源的应用程序。

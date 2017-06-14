@@ -27,7 +27,7 @@
 
 本文讨论如何将 [BACPAC](https://msdn.microsoft.com/zh-cn/library/ee210546.aspx#Anchor_4) 文件导入到新的 Azure SQL 数据库。 本文讨论如何使用以下方法：
 
-- [Azure 门户预览](https://portal.azure.cn)
+- [Azure 门户](https://portal.azure.cn)
 - [SqlPackage](https://msdn.microsoft.com/zh-cn/library/hh550080.aspx) 命令行实用工具
 - [New-AzureRmSqlDatabaseImport](https://docs.microsoft.com/zh-cn/powershell/module/azurerm.sql/new-azurermsqldatabaseimport?view=azurermps-3.7.0) cmdlet
 
@@ -42,11 +42,11 @@
 > 若要将 BACPAC 导入到新的数据库，首先必须创建一个 Azure SQL 数据库逻辑服务器。 有关演示如何使用 SQLPackage 将 SQL Server 数据库迁移到 Azure SQL 数据库的教程，请参阅[迁移 SQL Server 数据库](/documentation/articles/sql-database-migrate-your-sql-server-database/)
 >
 
-## <a name="azure-portal-preview"></a>Azure 门户预览
+## <a name="azure-portal-preview"></a>Azure 门户
 
-本文介绍如何使用 [Azure 门户预览](https://portal.azure.cn)根据存于 Azure blob 存储中的 BACPAC 文件创建 Azure SQL 数据库。 使用 Azure 门户预览进行的导入操作仅支持从 Azure Blob 存储导入 BACPAC 文件。
+本文介绍如何使用 [Azure 门户](https://portal.azure.cn)根据存于 Azure blob 存储中的 BACPAC 文件创建 Azure SQL 数据库。 使用 Azure 门户进行的导入操作仅支持从 Azure Blob 存储导入 BACPAC 文件。
 
-若要使用 Azure 门户预览导入数据库，请打开数据库页，并在工具栏上单击“导入”。 指定 *.bacpac 文件名，为 bacpac 提供 Azure 存储帐户和容器，并提供用于连接到源数据库的凭据。  
+若要使用 Azure 门户导入数据库，请打开数据库页，并在工具栏上单击“导入”。 指定 *.bacpac 文件名，为 bacpac 提供 Azure 存储帐户和容器，并提供用于连接到源数据库的凭据。  
 
    ![数据库导入](./media/sql-database-import/import.png)
 

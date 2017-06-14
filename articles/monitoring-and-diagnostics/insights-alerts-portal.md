@@ -21,14 +21,14 @@
     ms.openlocfilehash="fceb0beb8d35648c8787189c7c321a6cfaa757f3"
     ms.lasthandoff="04/22/2017" />
 
-# <a name="create-metric-alerts-in-azure-monitor-for-azure-services---azure-portal"></a>在 Azure Monitor 中为 Azure 服务创建指标警报 - Azure 门户预览
+# <a name="create-metric-alerts-in-azure-monitor-for-azure-services---azure-portal"></a>在 Azure Monitor 中为 Azure 服务创建指标警报 - Azure 门户
 > [AZURE.SELECTOR]
-- [门户预览](/documentation/articles/insights-alerts-portal/)
+- [门户](/documentation/articles/insights-alerts-portal/)
 - [PowerShell](/documentation/articles/insights-alerts-powershell/)
 - [CLI](/documentation/articles/insights-alerts-command-line-interface/)
 
 ## <a name="overview"></a>概述
-本文将展示如何使用 Azure 门户预览设置 Azure 指标警报。
+本文将展示如何使用 Azure 门户设置 Azure 指标警报。
 
 可以根据监视指标或事件接收 Azure 服务的警报。
 
@@ -40,18 +40,18 @@
 - 向服务管理员和共同管理员发送电子邮件通知
 - 向指定的其他电子邮件地址发送电子邮件。
 - 调用 Webhook
-- 开始执行 Azure Runbook（仅在 Azure 门户预览中可行）
+- 开始执行 Azure Runbook（仅在 Azure 门户中可行）
 
 可以使用以下工具配置和获取关于指标警报的信息：
 
-- [Azure 门户预览](/documentation/articles/insights-alerts-portal/)
+- [Azure 门户](/documentation/articles/insights-alerts-portal/)
 - [PowerShell](/documentation/articles/insights-alerts-powershell/)
 - [命令行接口 (CLI)](/documentation/articles/insights-alerts-command-line-interface/) 
 - [Azure 监视器 REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn931945.aspx)
 
-## <a name="create-an-alert-rule-on-a-metric-with-the-azure-portal"></a>使用 Azure 门户预览创建指标的警报规则
+## <a name="create-an-alert-rule-on-a-metric-with-the-azure-portal"></a>使用 Azure 门户创建指标的警报规则
 
-1. 在[门户预览](https://portal.azure.cn/)中，找到想要监视的资源并选中它。
+1. 在[门户](https://portal.azure.cn/)中，找到想要监视的资源并选中它。
 
 2. 在“监视”部分下，选择“警报”或“警报规则”。 对于不同的资源，文本和图标可能会略有不同。  
 

@@ -96,7 +96,7 @@ Socket.IO 使用 WebSocket 在 node.js 服务器和客户端之间提供实时�
 	如果系统提示，请输入 Web 应用的名称。
 
 	>[AZURE.NOTE]
-	“azure site set -w”命令仅适用于 Azure 命令行接口 0.7.4 版或更高版本。也可以使用 [Azure 门户预览](https://portal.azure.cn)启用 WebSocket 支持。<p>若要使用 Azure 门户预览启用 WebSocket，请在“Web 应用”边栏选项卡中单击该 Web 应用，然后单击“所有设置”>“应用程序设置”。在“Web 套接字”下，单击“打开”。然后，单击“保存”。
+	“azure site set -w”命令仅适用于 Azure 命令行接口 0.7.4 版或更高版本。也可以使用 [Azure 门户](https://portal.azure.cn)启用 WebSocket 支持。<p>若要使用 Azure 门户启用 WebSocket，请在“Web 应用”边栏选项卡中单击该 Web 应用，然后单击“所有设置”>“应用程序设置”。在“Web 套接字”下，单击“打开”。然后，单击“保存”。
 
 1. 要查看 Azure 上的 Web 应用，请使用以下命令启动 Web 浏览器，并导航到托管的 Web 应用：
 

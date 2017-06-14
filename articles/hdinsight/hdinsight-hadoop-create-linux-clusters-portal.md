@@ -1,6 +1,6 @@
 <properties
     pageTitle="使用 Web 浏览器创建 Azure HDInsight (Hadoop) | Azure"
-    description="了解如何使用 Web 浏览器和 Azure 门户预览在 Linux 上创建适用于 HDInsight 的 Hadoop、HBase、Storm 或 Spark 群集。"
+    description="了解如何使用 Web 浏览器和 Azure 门户在 Linux 上创建适用于 HDInsight 的 Hadoop、HBase、Storm 或 Spark 群集。"
     services="hdinsight"
     documentationcenter=""
     author="nitinme"
@@ -24,28 +24,28 @@
     ms.contentlocale="zh-cn"
     ms.lasthandoff="05/26/2017" />
 
-# <a name="create-linux-based-clusters-in-hdinsight-using-the-azure-portal-preview"></a>使用 Azure 门户预览在 HDInsight 中创建基于 Linux 的群集
+# <a name="create-linux-based-clusters-in-hdinsight-using-the-azure-portal-preview"></a>使用 Azure 门户在 HDInsight 中创建基于 Linux 的群集
 [AZURE.INCLUDE [selector](../../includes/hdinsight-create-linux-cluster-selector.md)]
 
-Azure 门户预览是一种基于 Web 的管理工具，用于管理 Azure 云中托管的服务和资源。 在本文中，你将了解如何使用门户创建基于 Linux 的 HDInsight 群集。
+Azure 门户是一种基于 Web 的管理工具，用于管理 Azure 云中托管的服务和资源。 在本文中，你将了解如何使用门户创建基于 Linux 的 HDInsight 群集。
 
 ## <a name="prerequisites"></a>先决条件
 [AZURE.INCLUDE [delete-cluster-warning](../../includes/hdinsight-delete-cluster-warning.md)]
 
 * **一个 Azure 订阅**。 请参阅[获取 Azure 试用版](/pricing/1rmb-trial/)。
-* **一个现代 Web 浏览器**。 Azure 门户预览使用 HTML5 和 Javascript，可能无法在旧版 Web 浏览器中正确运行。
+* **一个现代 Web 浏览器**。 Azure 门户使用 HTML5 和 Javascript，可能无法在旧版 Web 浏览器中正确运行。
 
 ## <a name="create-clusters"></a>创建群集
-Azure 门户预览会公开大部分的群集属性。 使用 Azure Resource Manager 模板可以隐藏许多详细信息。 有关详细信息，请参阅[在 HDInsight 中使用 Azure Resource Manager 模板创建基于 Linux 的 Hadoop 群集](/documentation/articles/hdinsight-hadoop-create-linux-clusters-arm-templates/)。
+Azure 门户会公开大部分的群集属性。 使用 Azure Resource Manager 模板可以隐藏许多详细信息。 有关详细信息，请参阅[在 HDInsight 中使用 Azure Resource Manager 模板创建基于 Linux 的 Hadoop 群集](/documentation/articles/hdinsight-hadoop-create-linux-clusters-arm-templates/)。
 
-1. 登录 [Azure 门户预览](https://portal.azure.cn)。
+1. 登录 [Azure 门户](https://portal.azure.cn)。
 2. 依次单击“+”、“智能 + 分析”、“HDInsight”。
 
-    ![在 Azure 门户预览中创建新群集](./media/hdinsight-hadoop-create-linux-cluster-portal/HDI.CreateCluster.1.png "在 Azure 门户预览中创建新群集")
+    ![在 Azure 门户中创建新群集](./media/hdinsight-hadoop-create-linux-cluster-portal/HDI.CreateCluster.1.png "在 Azure 门户中创建新群集")
 
 3. 在“HDInsight”边栏选项卡中，单击“自定义(大小、设置、应用)”，单击“基本信息”，然后输入以下信息。
 
-    ![在 Azure 门户预览中创建新群集](./media/hdinsight-hadoop-create-linux-cluster-portal/HDI.CreateCluster.basics.png "在 Azure 门户预览中创建新群集")
+    ![在 Azure 门户中创建新群集](./media/hdinsight-hadoop-create-linux-cluster-portal/HDI.CreateCluster.basics.png "在 Azure 门户中创建新群集")
 
     * 输入 **群集名称**：此名称必须全局唯一。
 
@@ -78,7 +78,7 @@ Azure 门户预览会公开大部分的群集属性。 使用 Azure Resource Man
 
 4. 在“存储”边栏选项卡上，指定是否要将 Azure 存储 (WASB) 作为默认存储。 有关详细信息，请参阅下面的表格。
 
-    ![在 Azure 门户预览中创建新群集](./media/hdinsight-hadoop-create-linux-cluster-portal/HDI.CreateCluster.storage.png "在 Azure 门户预览中创建新群集")
+    ![在 Azure 门户中创建新群集](./media/hdinsight-hadoop-create-linux-cluster-portal/HDI.CreateCluster.storage.png "在 Azure 门户中创建新群集")
 
     | 存储                                      | 说明 |
     |----------------------------------------------|-------------|

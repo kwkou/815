@@ -19,16 +19,16 @@
     ms.topic="article"
     ms.tgt_pltfrm="NA" />
 
-# 使用 Azure 门户预览监视和管理弹性数据库池
+# 使用 Azure 门户监视和管理弹性数据库池
 
 > [AZURE.SELECTOR]
-- [Azure 门户预览](/documentation/articles/sql-database-elastic-pool-manage-portal/)
+- [Azure 门户](/documentation/articles/sql-database-elastic-pool-manage-portal/)
 - [PowerShell](/documentation/articles/sql-database-elastic-pool-manage-powershell/)
 - [C#](/documentation/articles/sql-database-elastic-pool-manage-csharp/)
 - [T-SQL](/documentation/articles/sql-database-elastic-pool-manage-tsql/)
 
 
-可以使用 Azure 门户预览监视和管理弹性池和池中的数据库。在该门户中，可以监视弹性池和该池中的数据库的利用率。还可以对弹性池进行一组更改，然后同时提交所有更改。这些更改包括添加或删除数据库、更改弹性池设置或更改数据库设置。
+可以使用 Azure 门户监视和管理弹性池和池中的数据库。在该门户中，可以监视弹性池和该池中的数据库的利用率。还可以对弹性池进行一组更改，然后同时提交所有更改。这些更改包括添加或删除数据库、更改弹性池设置或更改数据库设置。
 
 下图显示一个示例弹性池。视图包括：
 

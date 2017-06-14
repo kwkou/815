@@ -24,7 +24,7 @@
 
 
 > [AZURE.SELECTOR]
-- [Azure 门户预览](/documentation/articles/sql-database-scale-up/)
+- [Azure 门户](/documentation/articles/sql-database-scale-up/)
 - [**PowerShell**](/documentation/articles/sql-database-scale-up-powershell/)
 
 

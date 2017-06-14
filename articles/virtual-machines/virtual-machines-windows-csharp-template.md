@@ -76,9 +76,9 @@
 
     替换以下值：
 
-    - 将 *{client-id}* 替换为 Azure Active Directory 应用程序的标识符。 在 AD 应用程序的“属性”边栏选项卡上，可找到此标识符。 若要在 Azure 门户预览中查找 AD 应用程序，请在资源菜单中单击“Azure Active Directory”，然后单击“应用注册”。
+    - 将 *{client-id}* 替换为 Azure Active Directory 应用程序的标识符。 在 AD 应用程序的“属性”边栏选项卡上，可找到此标识符。 若要在 Azure 门户中查找 AD 应用程序，请在资源菜单中单击“Azure Active Directory”，然后单击“应用注册”。
     - 将 *{client-secret}* 替换为 AD 应用程序的访问密钥。 在 AD 应用程序的“属性”边栏选项卡上，可找到此标识符。
-    - 将 *{tenant-id}* 替换为订阅的租户标识符。 在 Azure 门户预览中 Azure Active Directory 的“属性”边栏选项卡上，可找到租户标识符。 它被标记为目录 ID。
+    - 将 *{tenant-id}* 替换为订阅的租户标识符。 在 Azure 门户中 Azure Active Directory 的“属性”边栏选项卡上，可找到租户标识符。 它被标记为目录 ID。
 
 3. 若要调用刚刚添加的方法，请将以下代码添加到 Main 方法：
 
@@ -101,7 +101,7 @@
     替换以下值：
 
     - 将 *myResourceGroup* 替换为要创建的资源组的名称。
-    - 将 *subscriptionId* 替换为订阅标识符。 在 Azure 门户预览的“订阅”边栏选项卡上，可找到订阅标识符。
+    - 将 *subscriptionId* 替换为订阅标识符。 在 Azure 门户的“订阅”边栏选项卡上，可找到订阅标识符。
     - 将 *deploymentName* 替换为部署的名称。
     - 将 *location* 替换为想要在其中创建资源的 Azure 区域。
 
@@ -234,9 +234,9 @@
 
 2. 显示“已成功”状态后按 **Enter**。 
 
-    还可以在 Azure 门户预览中资源组的“概览”边栏选项卡上的“部署”下面看到“1 个成功”。
+    还可以在 Azure 门户中资源组的“概览”边栏选项卡上的“部署”下面看到“1 个成功”。
 
-3. 在按 **Enter** 开始删除资源之前，可能需要在 Azure 门户预览中花几分钟时间来验证资源的创建。 单击部署状态以查看有关部署的信息。
+3. 在按 **Enter** 开始删除资源之前，可能需要在 Azure 门户中花几分钟时间来验证资源的创建。 单击部署状态以查看有关部署的信息。
 
 ## <a name="next-steps"></a>后续步骤
 * 如果部署出现问题，后续措施是参阅[排查使用 Azure Resource Manager 时的常见 Azure 部署错误](/documentation/articles/resource-manager-common-deployment-errors/)。

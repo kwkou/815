@@ -36,10 +36,10 @@
 <!--Image reference-->
 ![][image2]
 
-使用查看器报告在使用 Azure 门户预览、Azure PowerShell 或 Azure CLI 的多实例配置中配置的虚拟机。 例如，可以使用 Azure 门户预览将“可用性集”添加到“虚拟机(经典)”浏览器对话框。 用于报告同一可用性集的虚拟机是多实例配置的一部分。 在以下示例中，多实例配置包含虚拟机 SQLContoso01 和 SQLContoso02。
+使用查看器报告在使用 Azure 门户、Azure PowerShell 或 Azure CLI 的多实例配置中配置的虚拟机。 例如，可以使用 Azure 门户将“可用性集”添加到“虚拟机(经典)”浏览器对话框。 用于报告同一可用性集的虚拟机是多实例配置的一部分。 在以下示例中，多实例配置包含虚拟机 SQLContoso01 和 SQLContoso02。
 
 <!--Image reference-->
-  ![Azure 门户预览中的“虚拟机(经典)”视图][image4]
+  ![Azure 门户中的“虚拟机(经典)”视图][image4]
 
 ## <a name="single-instance-configuration-updates"></a>单实例配置更新
 完成多实例配置更新后，Azure 将执行单实例配置更新。 这些更新也会导致不在可用性集中运行的虚拟机重新启动。

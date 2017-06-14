@@ -104,7 +104,7 @@ Blob 可用于结构化和非结构化数据。 Blob 容器将数据存储为键
 
 默认的 Blob 容器存储群集特定的信息，如作业历史记录和日志。 请不要多个 HDInsight 群集之间共享默认的 Blob 容器。 这可能会损坏作业历史记录。 建议对每个群集使用不同的容器，并将共享数据放入在所有相关群集的部署中指定的链接存储帐户，而不是放入默认存储帐户。 有关配置链接存储帐户的详细信息，请参阅 [创建 HDInsight 群集][hdinsight-creation]。 但是，在删除原始的 HDInsight 群集后，你可以重用默认存储容器。 对于 HBase 群集，实际上可以通过使用已删除的 HBase 群集使用的默认 Blob 容器创建新的 HBase 群集来保留 HBase 表架构和数据。
 
-#### <a name="using-the-azure-portal-preview"></a>使用 Azure 门户预览
+#### <a name="using-the-azure-portal-preview"></a>使用 Azure 门户
 从门户创建 HDInsight 群集时，可通过以下选项提供存储帐户详细信息。 还可以指定是否要将附加存储帐户与该群集相关联，如果需要，请选择 Azure 存储 Blob 作为附加存储。
 
 ![HDInsight Hadoop - 创建数据源](./media/hdinsight-hadoop-use-blob-storage/hdinsight.provision.data.source.png)

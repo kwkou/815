@@ -226,7 +226,7 @@
     require_once(ABSPATH. 'wp-settings.php');
 
 #### 设置过渡环境
-1. 如果已经拥有在 Azure 订阅上运行的 WordPress Web 应用，请登录 [Azure 门户预览](http://portal.azure.cn)，然后转到该 WordPress Web 应用。如果没有 WordPress web 应用，可创建一个。单击“设置”>“部署槽”>“添加”，创建名为 *过渡* 的部署槽。部署槽是与前面创建的主 Web 应用共享相同资源的另一个 Web 应用程序。
+1. 如果已经拥有在 Azure 订阅上运行的 WordPress Web 应用，请登录 [Azure 门户](http://portal.azure.cn)，然后转到该 WordPress Web 应用。如果没有 WordPress web 应用，可创建一个。单击“设置”>“部署槽”>“添加”，创建名为 *过渡* 的部署槽。部署槽是与前面创建的主 Web 应用共享相同资源的另一个 Web 应用程序。
 
     ![创建过渡部署槽位](./media/app-service-web-staged-publishing-realworld-scenarios/1setupstage.png)  
 
@@ -276,7 +276,7 @@
 
 
     > [AZURE.NOTE]
-    如果方案需要仅推送文件（而不推送数据库更新），那么在执行**交换**操作前，在 Azure 门户预览的“Web 应用设置”边栏选项卡中，选中所有数据库相关的 *应用设置* 和 *连接字符串设置* 的“槽设置”。在此情况下，执行**交换**操作时，不应在预览更改中显示 DB\_NAME、DB\_HOST、DB\_PASSWORD、DB\_USER 和默认连接字符串设置。在此情况下，完成**交换**操作后，WordPress Web 应用只具有更新文件。
+    如果方案需要仅推送文件（而不推送数据库更新），那么在执行**交换**操作前，在 Azure 门户的“Web 应用设置”边栏选项卡中，选中所有数据库相关的 *应用设置* 和 *连接字符串设置* 的“槽设置”。在此情况下，执行**交换**操作时，不应在预览更改中显示 DB\_NAME、DB\_HOST、DB\_PASSWORD、DB\_USER 和默认连接字符串设置。在此情况下，完成**交换**操作后，WordPress Web 应用只具有更新文件。
     >
     >
 

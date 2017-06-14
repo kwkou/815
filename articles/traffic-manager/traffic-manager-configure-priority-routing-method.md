@@ -29,7 +29,7 @@
 
 ## <a name="to-configure-the-priority-traffic-routing-method"></a>配置优先级流量路由方法
 
-1. 在浏览器中，登录 [Azure 门户预览](http://portal.azure.cn)。 如果还没有帐户，可注册 [1 个月期限的试用版](/pricing/1rmb-trial/)。 
+1. 在浏览器中，登录 [Azure 门户](http://portal.azure.cn)。 如果还没有帐户，可注册 [1 个月期限的试用版](/pricing/1rmb-trial/)。 
 2. 在门户的搜索栏中，搜索“流量管理器配置文件”，然后单击要为其配置路由方法的配置文件名称。
 3. 在“流量管理器配置文件”边栏选项卡中，检查要包含在配置中的云服务和网站是否都存在。
 4. 在“设置”部分，单击“配置”，然后在“配置”边栏选项卡中完成如下操作：

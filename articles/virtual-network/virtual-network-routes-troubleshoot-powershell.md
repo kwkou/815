@@ -23,7 +23,7 @@
 # 使用 Azure PowerShell 排查路由问题
 
 > [AZURE.SELECTOR]
-- [Azure 门户预览](/documentation/articles/virtual-network-routes-troubleshoot-portal/)
+- [Azure 门户](/documentation/articles/virtual-network-routes-troubleshoot-portal/)
 - [PowerShell](/documentation/articles/virtual-network-routes-troubleshoot-powershell/)
 
 如果与 Azure 虚拟机 (VM) 之间出现网络连接问题，路由可能会影响 VM 的流量流。本文概述路由诊断功能，帮助用户做进一步的故障排除。
