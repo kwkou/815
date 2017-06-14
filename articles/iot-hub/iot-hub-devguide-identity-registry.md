@@ -111,15 +111,15 @@ IoT 中心标识注册表包含名为 **connectionState**的字段。 开发和�
 
 | 名称 | 值 |
 | --- | --- |
-$content-type | application/json |
-$iothub-enqueuedtime |  发送通知的时间 |
-$iothub-message-source | deviceLifecycleEvents |
-$content-encoding | utf-8 |
-opType | “createDeviceIdentity”或“deleteDeviceIdentity” |
-hubName | IoT 中心的名称 |
-deviceId | 设备 ID |
-operationTimestamp | ISO8601 操作时间戳 |
-iothub-message-schema | deviceLifecycleNotification |
+|$content-type | application/json |
+|$iothub-enqueuedtime |  发送通知的时间 |
+|$iothub-message-source | deviceLifecycleEvents |
+|$content-encoding | utf-8 |
+|opType | “createDeviceIdentity”或“deleteDeviceIdentity” |
+|hubName | IoT 中心的名称 |
+|deviceId | 设备 ID |
+|operationTimestamp | ISO8601 操作时间戳 |
+|iothub-message-schema | deviceLifecycleNotification |
 
 - 正文
 

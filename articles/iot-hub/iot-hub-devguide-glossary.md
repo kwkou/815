@@ -14,7 +14,7 @@
     ms.tgt_pltfrm="na"
     ms.workload="na"
     ms.date="01/31/2017"
-    wacn.date="03/10/2017"
+    wacn.date="06/05/2017"
     ms.author="v-yiso" />
 
 # <a name="glossary-of-iot-hub-terms"></a>IoT 中心术语表
@@ -171,7 +171,7 @@ IoT 中心是一项完全托管的 Azure 服务，可在数百万个设备和一
 [IoT 中心查询语言](/documentation/articles/iot-hub-devguide-query-language/)是一种类似于 SQL 的语言，用于查询[作业](#job)和设备孪生。
 
 ## <a name="iot-hub-resource-provider-rest-api"></a>IoT 中心资源提供程序 REST API
-可以使用 [IoT 中心资源提供程序 REST API](https://docs.microsoft.com/zh-cn/rest/api/iothub/resourceprovider/iot-hub-resource-provider-rest) 管理 [Azure 订阅](#subscription)中的 IoT 中心，以便执行一些操作，例如创建、更新和删除中心。
+可以使用 IoT 中心资源提供程序 REST API 管理 [Azure 订阅](#subscription)中的 IoT 中心，以便执行一些操作，例如创建、更新和删除中心。
 
 ## <a name="iot-suite"></a>IoT 套件
 Azure IoT 套件将多个 Azure 服务和预配置解决方案打包在一起。 有了这些预配置解决方案，用户就可以快速启动常见 IoT 方案的端到端实现。 有关详细信息，请参阅 [什么是 Azure IoT 套件？](/documentation/articles/iot-suite-overview/)
@@ -216,7 +216,7 @@ Azure IoT 套件将多个 Azure 服务和预配置解决方案打包在一起。
 [Azure Resource Manager](#azure-resource-manager) 使用资源组将相关的资源组合在一起。 通过使用资源组，可以对组中的所有资源同时执行操作。
 
 ## <a name="retry-policy"></a>重试策略
-连接到云服务时使用重试策略来处理[暂时性错误](https://msdn.microsoft.com/zh-cn/library/hh680901(v=pandp.50).aspx)。
+连接到云服务时使用重试策略来处理[暂时性错误]()。
 ## <a name="routing-rules"></a>路由规则
 需要在 IoT 中心配置[路由规则](/documentation/articles/iot-hub-devguide-messaging/#routing-rules)，将设备到云消息路由到[内置终结点](#built-in-endpoints)或[自定义终结点](#custom-endpoints)，以供解决方案后端处理。
 
@@ -252,3 +252,6 @@ Azure 订阅是发生计费的地方。用户创建的每个 Azure 资源或使�
 
 ## <a name="x509-client-certificate"></a>X.509 客户端证书
 设备可以使用 X.509 证书在 [IoT 中心](#iot-hub)进行身份验证。 使用 X.509 证书是使用 [SAS 令牌](#shared-access-signature)的替代方案。
+
+
+[暂时性错误]: https://msdn.microsoft.com/zh-cn/library/hh680901(v=pandp.50).aspx

@@ -41,7 +41,7 @@
 
 + Node.js 版本 0.10.x 或更高版本。
 
-+ 有效的 Azure 帐户。 （如果你没有帐户，只需花费几分钟就能创建一个 [试用帐户][lnk-free-trial]。）
++ 有效的 Azure 帐户。 （如果你没有帐户，只需花费几分钟就能创建一个[试用帐户][lnk-free-trial]。）
 
 如果已按照 [设备孪生入门][lnk-twin-tutorial] 教程执行了操作，则现在已有一个 IoT 中心和一个名为 **myDeviceId** 的设备标识。 在这种情况下，可以跳到 [创建模拟设备应用][lnk-how-to-configure-createapp] 部分。
 
@@ -171,6 +171,7 @@
 1. 在 Visual Studio 中，使用“ **控制台应用程序** ”项目模板将 Visual C# Windows 经典桌面项目添加到当前解决方案。 **SetDesiredConfigurationAndQuery**。
 
     ![新的 Visual C# Windows 经典桌面项目][img-createapp]
+    
 2. 在“解决方案资源管理器”中，右键单击“**SetDesiredConfigurationAndQuery**”项目，然后单击“**管理 NuGet 包**”。
 1. 在“NuGet 包管理器”窗口中，选择“浏览”，搜索 **microsoft.azure.devices**，选择“安装”以安装 **Microsoft.Azure.Devices** 包，然后接受使用条款。 该过程将下载、安装 [Azure IoT 服务 SDK][lnk-nuget-service-sdk] Nuget 包及其依赖项并添加对它的引用。
 
@@ -223,10 +224,11 @@
     **Registry** 对象公开从服务与设备孪生进行交互所需的所有方法。 此代码将初始化 **Registry** 对象，然后检索 **myDeviceId** 的设备孪生，并使用新的遥测配置对象更新其所需属性。
     然后，该代码会每隔 10 秒钟查询一次存储在 IoT 中心的设备孪生，并打印所需遥测配置和报告遥测配置。 若要了解如何在所有设备中生成丰富的报告，请参阅 [IoT 中心查询语言][lnk-query]。
    
-   > [AZURE.IMPORTANT]
-   > 为进行说明，此应用程序每 10 秒查询 IoT 中心一次。 使用查询跨多个设备生成面向用户的报表，而不检测更改。 如果解决方案需要设备事件的实时通知，请使用[孪生通知][lnk-twin-notifications]。
-   > 
-   > 
+    > [AZURE.IMPORTANT]
+    > 为进行说明，此应用程序每 10 秒查询 IoT 中心一次。 使用查询跨多个设备生成面向用户的报表，而不检测更改。 如果解决方案需要设备事件的实时通知，请使用[孪生通知][lnk-twin-notifications]。
+    > 
+    > 
+    
 7. 最后，在 **Main** 方法中添加以下行：
    
             registryManager = RegistryManager.CreateFromConnectionString(connectionString);

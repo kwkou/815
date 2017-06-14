@@ -14,10 +14,10 @@
     ms.tgt_pltfrm="na"
     ms.workload="na"
     ms.date="02/08/2017"
-    wacn.date="03/10/2017"
+    wacn.date="06/05/2017"
     ms.author="v-yiso" />
 
----
+
 # <a name="use-azure-iot-edge-to-send-device-to-cloud-messages-with-a-simulated-device-linux"></a>使用 Azure IoT Edge，通过模拟设备发送设备到云的消息 (Linux)
 [AZURE.INCLUDE [iot-hub-gateway-sdk-simulated-selector](../../includes/iot-hub-gateway-sdk-simulated-selector.md)]
 

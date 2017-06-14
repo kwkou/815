@@ -71,7 +71,7 @@
    | Azure.IoT.IoTHub.DeviceId             | 从 iothub-explorer 获取                                |
    | Azure.IoT.IoTHub.ConsumerGroup        | 添加到 IoT 中心的使用者组的名称  |
 
-    ![将包含键值对的设置添加到 Azure Web 应用](./media/iot-hub-live-data-visualization-in-web-apps/4_web-app-settings-key-value-azure.png)
+   ![将包含键值对的设置添加到 Azure Web 应用](./media/iot-hub-live-data-visualization-in-web-apps/4_web-app-settings-key-value-azure.png)
 
 ## <a name="upload-a-web-application-to-be-hosted-by-the-web-app"></a>上传要在 Web 应用中托管的 Web 应用程序
 

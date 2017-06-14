@@ -134,4 +134,4 @@ Azure IoT Edge 包中包含 SDK 及其依赖项的预编译二进制文件。 �
 祝贺你！ 你已将 Intel NUC 设置为网关。现可进入下一课，了解如何设置主机、创建 Azure IoT 中心以及注册 Azure IoT 中心逻辑设备。
 
 ## <a name="next-steps"></a>后续步骤
-[准备好主计算机和 Azure IoT 中心](/documentation/articles/iot-hub-gateway-kit-c-sim-lesson2-get-the-tools-win32/)
+[准备好主计算机和 Azure IoT 中心](/documentation/articles/iot-hub-gateway-kit-c-sim-lesson2-get-the-tools-win32/)。

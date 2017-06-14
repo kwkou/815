@@ -236,13 +236,10 @@ BLE 模块通过 BlueZ 堆栈与蓝牙硬件通信。 需要 BlueZ 5.37 版才�
 
 使用以下命令将 IoT Edge 及其所有子模块克隆到主目录：
 
-`cd ~`
-
-`git clone --recursive https://github.com/Azure/iot-edge.git`
-
-`cd iot-edge`
-
-`git submodule update --init --recursive`
+    cd ~
+    git clone --recursive https://github.com/Azure/iot-edge.git
+    cd iot-edge
+    git submodule update --init --recursive
 
 Raspberry Pi 3 上有 IoT Edge 存储库的完整副本时，可以从包含该 SDK 的文件夹使用以下命令生成它：
 

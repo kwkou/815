@@ -37,7 +37,7 @@
 
 ## <a name="azure-iot-device-sdks"></a>Azure IoT 设备 SDK
 
-Microsoft Azure IoT 设备 SDK 包含的代码可帮助构建连接到 Azure IoT 中心服务并由这些服务管理的设备和应用程序。
+Azure IoT 设备 SDK 包含的代码可帮助构建连接到 Azure IoT 中心服务并由这些服务管理的设备和应用程序。
 
 以下 Azure IoT 设备 SDK 可以从 GitHub 进行下载：
 

@@ -75,7 +75,7 @@
 * 垫条或螺钉（随附在工具包内），其中包括两颗螺钉（用于将模块固定到扩展板上）以及四组螺钉和塑料垫片。
 
 > [AZURE.NOTE] 
-上述项可选，因为代码示例支持模拟的传感器数据。
+> 上述项可选，因为代码示例支持模拟的传感器数据。
 
 [AZURE.INCLUDE [iot-hub-get-started-create-hub-and-device](../../includes/iot-hub-get-started-create-hub-and-device.md)]
 
@@ -89,34 +89,34 @@
 
 2. 将手指放在 `What will you make?` 文字上方，按压模板，直至感觉模块已就位。
 
-   ![组装开发板 2](./media/iot-hub-intel-edison-kit-c-get-started/1_assemble_board2.jpg)
+    ![组装开发板 2](./media/iot-hub-intel-edison-kit-c-get-started/1_assemble_board2.jpg)
 
 3. 用两颗六角螺母（随附在工具包内）将模块固定到扩展板上。
 
-   ![组装开发板 3](./media/iot-hub-intel-edison-kit-c-get-started/2_assemble_board3.jpg)
+    ![组装开发板 3](./media/iot-hub-intel-edison-kit-c-get-started/2_assemble_board3.jpg)
 
 4. 将一颗螺钉插入扩展板上的一个角孔（共四个）。 在螺钉上放置白色塑料垫片，转动并拧紧。
 
-   ![组装开发板 4](./media/iot-hub-intel-edison-kit-c-get-started/3_assemble_board4.jpg)
+    ![组装开发板 4](./media/iot-hub-intel-edison-kit-c-get-started/3_assemble_board4.jpg)
 
 5. 重复上述步骤安装其他三个角垫。
 
-   ![组装开发板 5](./media/iot-hub-intel-edison-kit-c-get-started/4_assemble_board5.jpg)
+    ![组装开发板 5](./media/iot-hub-intel-edison-kit-c-get-started/4_assemble_board5.jpg)
 
 现在，开发板就已组装完毕。
 
-   ![组装开发板](./media/iot-hub-intel-edison-kit-c-get-started/5_assembled_board.jpg)
+![组装开发板](./media/iot-hub-intel-edison-kit-c-get-started/5_assembled_board.jpg)
 
 ### <a name="connect-the-grove-base-shield-and-the-temperature-sensor"></a>连接 Grove Base Shield 和温度传感器
 
 1. 将 Grove Base Shield 放在板上。 确保所有引脚都紧紧插入板中。
    
-   ![Grove Base Shield](./media/iot-hub-intel-edison-kit-c-get-started/6_grove_base_sheild.jpg)
+    ![Grove Base Shield](./media/iot-hub-intel-edison-kit-c-get-started/6_grove_base_sheild.jpg)
 
 2. 通过 Grove 电缆将 Grove 温度传感器连接到 Grove Base Shield **A0** 端口。
 
-   ![连接到温度传感器](./media/iot-hub-intel-edison-kit-c-get-started/7_temperature_sensor.jpg)
-   ![Edison 和传感器连接](./media/iot-hub-intel-edison-kit-c-get-started/16_edion_sensor.png)
+    ![连接到温度传感器](./media/iot-hub-intel-edison-kit-c-get-started/7_temperature_sensor.jpg)
+    ![Edison 和传感器连接](./media/iot-hub-intel-edison-kit-c-get-started/16_edion_sensor.png)
 
 传感器现准备就绪。
 
@@ -124,28 +124,28 @@
 
 1. 插入电源。
 
-   ![插入电源](./media/iot-hub-intel-edison-kit-c-get-started/8_plug_power.jpg)
+    ![插入电源](./media/iot-hub-intel-edison-kit-c-get-started/8_plug_power.jpg)
 
 2. 此时，绿色 LED（Arduino* 扩展板上标记为 DS1）应点亮并持续这一状态。
 
 3. 稍等片刻，等待开发板完成启动。
 
-   > [AZURE.NOTE]
-   > 如果没有 DC 电源，仍可通过 USB 端口为开发板供电。 有关详细信息，请参阅 `Connect Edison to your computer` 部分。 采用这种方式为开发板供电可能会导致开发板出现异常，尤其是在使用 Wi-Fi 或驱动电机时。
+    > [AZURE.NOTE]
+    > 如果没有 DC 电源，仍可通过 USB 端口为开发板供电。 有关详细信息，请参阅 `Connect Edison to your computer` 部分。 采用这种方式为开发板供电可能会导致开发板出现异常，尤其是在使用 Wi-Fi 或驱动电机时。
 
 ### <a name="connect-edison-to-your-computer"></a>将 Edison 连接到计算机
 
 1. 向下扳动微动开关，使之朝向两个 micro USB 端口，将 Edison 设置为设备模式。 有关设备模式与主机模式的区别，请参阅 [此处](https://software.intel.com/en-us/node/628233#usb-device-mode-vs-usb-host-mode)。
 
-   ![向下扳动微动开关](./media/iot-hub-intel-edison-kit-c-get-started/9_toggle_down_microswitch.jpg)
+    ![向下扳动微动开关](./media/iot-hub-intel-edison-kit-c-get-started/9_toggle_down_microswitch.jpg)
 
 2. 将 micro USB 线缆插入顶部的 micro USB 端口。
 
-   ![顶部的 micro USB 端口](./media/iot-hub-intel-edison-kit-c-get-started/10_top_usbport.jpg)
+    ![顶部的 micro USB 端口](./media/iot-hub-intel-edison-kit-c-get-started/10_top_usbport.jpg)
 
 3. 将 USB 线缆的另一端插入计算机。
 
-   ![计算机 USB](./media/iot-hub-intel-edison-kit-c-get-started/11_computer_usb.jpg)
+    ![计算机 USB](./media/iot-hub-intel-edison-kit-c-get-started/11_computer_usb.jpg)
 
 4. 如果计算机安装了新驱动器，则可确定开发板已完全初始化（就像将一张 SD 卡插入计算机）。
 
@@ -184,31 +184,32 @@
 ### <a name="prepare-the-azure-iot-device-sdk"></a>准备 Azure IoT 设备 SDK
 
 1. 使用主计算机的以下任一 SSH 客户端连接到 Intel Edison。 IP 地址来自配置工具，密码与该工具中设置的相同。
-    - [PuTTY](http://www.putty.org/) for Windows。
-    - Ubuntu 或 macOS 上的内置 SSH 客户端。
+
+     - [PuTTY](http://www.putty.org/) for Windows。
+     - Ubuntu 或 macOS 上的内置 SSH 客户端。
 
 2. 将示例客户端应用克隆到设备中。 
 
-       git clone https://github.com/Azure-Samples/iot-hub-c-intel-edison-client-app.git
+        git clone https://github.com/Azure-Samples/iot-hub-c-intel-edison-client-app.git
 
 3. 然后导航到存储库文件夹，运行以下命令生成 Azure IoT SDK
 
-       cd iot-hub-c-intel-edison-client-app
-       sed -i -e 's/\r$//' buildSDK.sh
-       chmod 755 buildSDK.sh
-       ./buildSDK.sh
+        cd iot-hub-c-intel-edison-client-app
+        sed -i -e 's/\r$//' buildSDK.sh
+        chmod 755 buildSDK.sh
+        ./buildSDK.sh
 
 ### <a name="configure-the-sample-application"></a>配置示例应用程序
 
 1. 通过运行以下命令，打开配置文件：
 
-       nano config.h
+        nano config.h
 
-   ![配置文件](./media/iot-hub-intel-edison-kit-c-get-started/13_configure_file.png)
+    ![配置文件](./media/iot-hub-intel-edison-kit-c-get-started/13_configure_file.png)
 
-   此文件中有两个可配置的宏。 第一个是 `INTERVAL`，它确定发送到云的两条消息之间的时间间隔。 第二个是 `SIMULATED_DATA`，它是一个布尔值，指示是否使用模拟的传感器数据。
+    此文件中有两个可配置的宏。 第一个是 `INTERVAL`，它确定发送到云的两条消息之间的时间间隔。 第二个是 `SIMULATED_DATA`，它是一个布尔值，指示是否使用模拟的传感器数据。
 
-   如果**没有传感器**，请将 `SIMULATED_DATA` 值设置为 `1`，使示例应用程序创建和使用模拟的传感器数据。
+    如果**没有传感器**，请将 `SIMULATED_DATA` 值设置为 `1`，使示例应用程序创建和使用模拟的传感器数据。
 
 2. 通过按“Ctrl-O”>“Enter”>“Ctrl-X”保存并退出。
 
@@ -216,16 +217,16 @@
 
 1. 通过运行以下命令，生成示例应用程序：
 
-       cmake . && make
+        cmake . && make
 
-   ![生成输出](./media/iot-hub-intel-edison-kit-c-get-started/14_build_output.png)
+    ![生成输出](./media/iot-hub-intel-edison-kit-c-get-started/14_build_output.png)
 
 1. 通过运行以下命令，生成示例应用程序：
 
-       sudo ./app '<your Azure IoT hub device connection string>'
+        sudo ./app '<your Azure IoT hub device connection string>'
 
-   > [AZURE.NOTE] 
-   确保将设备连接字符串复制并粘贴到单引号中。
+    > [AZURE.NOTE] 
+    确保将设备连接字符串复制并粘贴到单引号中。
 
 应看到以下输出，其中显示传感器数据以及发至 IoT 中心的消息。
 

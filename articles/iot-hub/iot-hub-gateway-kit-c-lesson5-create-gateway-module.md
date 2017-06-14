@@ -59,36 +59,36 @@
 
 1. 通过运行以下命令初始化配置文件：
 
-       cd iot-hub-c-intel-nuc-gateway-getting-started
-       cd Lesson5
-       npm install
-       gulp init
+        cd iot-hub-c-intel-nuc-gateway-getting-started
+        cd Lesson5
+        npm install
+        gulp init
 
 1. 使用 Intel NUC 的 MAC 地址更新网关配置文件。 如果已完成了[配置并运行 BLE 示例应用程序][config_ble]的课程，请跳过此步骤。
 
    1. 通过运行以下命令，打开网关配置文件：
 
-          # For Windows command prompt
-          code %USERPROFILE%\.iot-hub-getting-started\config-gateway.json
+            # For Windows command prompt
+            code %USERPROFILE%\.iot-hub-getting-started\config-gateway.json
 
-          # For MacOS or Ubuntu
-          code ~/.iot-hub-getting-started/config-gateway.json
+            # For MacOS or Ubuntu
+            code ~/.iot-hub-getting-started/config-gateway.json
 
    1. 在[将 Intel NUC 设置为 IoT 网关][setup_nuc]时更新网关的 MAC 地址，然后保存该文件。
 
 1. 通过运行以下命令编译示例源代码：
 
-       gulp compile
+        gulp compile
 
-   该命令将示例源代码传输到 Intel NUC 并运行 `build.sh` 以对其进行编译。
+    该命令将示例源代码传输到 Intel NUC 并运行 `build.sh` 以对其进行编译。
 
 1. 通过运行以下命令在 Intel NUC 上运行 `hello_world` 应用：
 
-       gulp run
+        gulp run
 
-   该命令运行在 `config.json` 中指定的 `../Tools/run-hello-world.js` 以在 Intel NUC 上启动示例应用。
+    该命令运行在 `config.json` 中指定的 `../Tools/run-hello-world.js` 以在 Intel NUC 上启动示例应用。
 
-   ![run_sample](./media/iot-hub-gateway-kit-lessons/lesson5/run_sample.png)
+    ![run_sample](./media/iot-hub-gateway-kit-lessons/lesson5/run_sample.png)
 
 ## <a name="create-a-new-module-and-compile-it-on-intel-nuc"></a>创建一个新模块并在 Intel NUC 上编译该模块
 
@@ -114,73 +114,75 @@
 
 1. 通过运行以下命令打开模板文件夹：
 
-       code module/my_module
+        code module/my_module
 
-   ![code_module](./media/iot-hub-gateway-kit-lessons/lesson5/code_module.png)
+    ![code_module](./media/iot-hub-gateway-kit-lessons/lesson5/code_module.png)
 
-   - `src/my_module.c` 充当模板，可以用来方便地创建模块。 模板声明了接口。 你需要做的所有工作就是向 `MyModule_Receive` 函数中添加逻辑。
-   - `build.sh` 是生成脚本，用来在 Intel NUC 上编辑模块。
+    - `src/my_module.c` 充当模板，可以用来方便地创建模块。 模板声明了接口。 你需要做的所有工作就是向 `MyModule_Receive` 函数中添加逻辑。
+    - `build.sh` 是生成脚本，用来在 Intel NUC 上编辑模块。
+
+
 1. 打开 `src/my_module.c` 文件并在其中包括两个头文件：
 
-       #include <stdio.h>
-       #include "azure_c_shared_utility/xlogging.h"
+        #include <stdio.h>
+        #include "azure_c_shared_utility/xlogging.h"
 
 1. 向 `MyModule_Receive` 函数添加以下代码：
 
-       if (message == NULL)
-       {
-          LogError("invalid arg message");
-       }
-       else
-       {
-          // get the message content
-          const CONSTBUFFER * content = Message_GetContent(message);
-          // get the local time and format it
-          time_t temp = time(NULL);
-          if (temp == (time_t)-1)
-          {
-              LogError("time function failed");
-          }
-          else
-          {
-              struct tm* t = localtime(&temp);
-              if (t == NULL)
+           if (message == NULL)
+           {
+              LogError("invalid arg message");
+           }
+           else
+           {
+              // get the message content
+              const CONSTBUFFER * content = Message_GetContent(message);
+              // get the local time and format it
+              time_t temp = time(NULL);
+              if (temp == (time_t)-1)
               {
-                  LogError("localtime failed");
+                  LogError("time function failed");
               }
               else
               {
-                  char timetemp[80] = { 0 };
-                  if (strftime(timetemp, sizeof(timetemp) / sizeof(timetemp[0]), "%c", t) == 0)
+                  struct tm* t = localtime(&temp);
+                  if (t == NULL)
                   {
-                      LogError("unable to strftime");
+                      LogError("localtime failed");
                   }
                   else
                   {
-                      printf("[%s] %.*s\r\n", timetemp, (int)content->size, content->buffer);
+                      char timetemp[80] = { 0 };
+                      if (strftime(timetemp, sizeof(timetemp) / sizeof(timetemp[0]), "%c", t) == 0)
+                      {
+                          LogError("unable to strftime");
+                      }
+                      else
+                      {
+                          printf("[%s] %.*s\r\n", timetemp, (int)content->size, content->buffer);
+                      }
                   }
               }
-          }
-       }
+           }
 
 1. 更新 `config.json` 文件以指定主机计算机上的 `workspace` 文件夹和在 Intel NUC 上的部署路径。 在编译期间，`workspace` 文件夹中的文件将被传输到该部署路径。
 
    1. 通过运行以下命令打开 `config.json` 文件：
 
-          code config.json
+            code config.json
 
    1. 使用以下配置更新 `config.json`：
 
-          "workspace": "./module/my_module",
-          "deploy_path": "module/my_module"
+            "workspace": "./module/my_module",
+            "deploy_path": "module/my_module"
 
       ![config_json](./media/iot-hub-gateway-kit-lessons/lesson5/config_json.png)
 
 1. 通过运行以下命令编译该模块：
 
-       gulp compile
+        gulp compile
 
-   该命令将源代码传输到 Intel NUC 并运行 `build.sh` 来编译该模块。
+    该命令将源代码传输到 Intel NUC 并运行 `build.sh` 来编译该模块。
 
 ## <a name="add-the-module-to-the-helloworld-sample-app-and-run-the-app-on-intel-nuc"></a>将模块添加到 hello_world 示例应用，然后在 Intel NUC 上运行该应用
 
@@ -188,40 +190,41 @@
 
 1. 通过运行以下命令列出 Intel NUC 上所有可用的模块二进制文件（.so 文件）：
 
-       gulp modules --list
+        gulp modules --list
 
-   编译的 `my_module` 的二进制文件路径应当列出如下：
+    编译的 `my_module` 的二进制文件路径应当列出如下：
 
-       /root/gateway_sample/module/my_module/build/libmy_module.so
+        /root/gateway_sample/module/my_module/build/libmy_module.so
 
-   如果在 `config-gateway.json` 中更改了默认登录用户名，则二进制文件路径将以 `home/<your username>` 而非 `root` 开头。
+    如果在 `config-gateway.json` 中更改了默认登录用户名，则二进制文件路径将以 `home/<your username>` 而非 `root` 开头。
 
 1. 将 `my_module` 添加到 `hello_world` 示例应用：
 
-   1. 通过运行以下命令打开 `hello_world.json` 文件：
+    1. 通过运行以下命令打开 `hello_world.json` 文件：
 
-          code sample/hello_world/src/hello_world.json
+            code sample/hello_world/src/hello_world.json
 
-   1. 将以下代码添加到 `modules` 部分：
+    1. 将以下代码添加到 `modules` 部分：
 
-          {
-           "name": "my_module",
-           "loader": {
-           "name": "native",
-           "entrypoint": {
-           "module.path": "/root/gateway_sample/module/my_module/build/libmy_module.so"
-             }
-            },
-           "args": null
-          }
+               {
+                "name": "my_module",
+                "loader": {
+                "name": "native",
+                "entrypoint": {
+                "module.path": "/root/gateway_sample/module/my_module/build/libmy_module.so"
+                  }
+                 },
+                "args": null
+               }
 
       `module.path` 的值应当为 `/root/gateway_sample/module/my_module/build/libmy_module.so`。 该代码声明 `my_module` 将与 `module.path` 中指定的网关以及模块二进制文件的位置相关联。
-   1. 将以下代码添加到 `links` 部分：
+      
+    1. 将以下代码添加到 `links` 部分：
 
-          {
-            "source": "hello_world",
-            "sink": "my_module"
-          }
+              {
+                "source": "hello_world",
+                "sink": "my_module"
+              }
 
       该代码指定消息将从 `hello_world` 模块传输到 `my_module`。
 
@@ -229,11 +232,11 @@
 
 1. 通过运行以下命令运行 `hello_world` 示例应用：
 
-       gulp run --config sample/hello_world/src/hello_world.json
+        gulp run --config sample/hello_world/src/hello_world.json
 
-   `--config` 参数强制 `run-hello-world.js` 脚本使用 `hello_world.json` 文件运行。
+    `--config` 参数强制 `run-hello-world.js` 脚本使用 `hello_world.json` 文件运行。
 
-   ![hello_world_new](./media/iot-hub-gateway-kit-lessons/lesson5/hello_world_new.png)
+    ![hello_world_new](./media/iot-hub-gateway-kit-lessons/lesson5/hello_world_new.png)
 
 祝贺。 现在，你可以看到此新模块的行为了，它只是输出带时间戳的“hello world”消息，这不同于原始“hello_world”模块的结果。
 
