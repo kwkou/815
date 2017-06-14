@@ -201,7 +201,7 @@ Azure IoT 套件[预配置解决方案][lnk-preconfigured-solutions]结合了多
 
 选择“列编辑器”可自定义设备列表中显示的信息。 可以添加和删除用于显示报告的属性和标记值的列。 此外，可将列重新排序和重命名：
 
-    ![设备列表中的列编辑器图标][img-columneditor]  
+![设备列表中的列编辑器图标][img-columneditor]  
 
 ### <a name="customize-the-device-icon"></a>自定义设备图标
 

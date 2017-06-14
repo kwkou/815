@@ -26,7 +26,7 @@
 
 [AZURE.INCLUDE [iot-suite-raspberry-pi-kit-selector](../../includes/iot-suite-raspberry-pi-kit-selector.md)]
 
-本教程演示如何使用适用于 Raspberry Pi 3 的 Microsoft Azure IoT 初学者工具包完成以下任务：
+本教程演示如何使用适用于 Raspberry Pi 3 的 Azure IoT 初学者工具包完成以下任务：
 
 * 开发可与云通信的温度和湿度读取器。
 * 启用并执行远程固件更新以更新 Raspberry Pi 上的客户端应用程序。

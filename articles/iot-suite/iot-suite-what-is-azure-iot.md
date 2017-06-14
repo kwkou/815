@@ -53,4 +53,4 @@ Azure IoT 套件是企业级解决方案，让用户能够通过一组可扩展�
 [Azure Event Hubs]: /home/features/event-hubs/
 [Azure Stream Analytics]: /home/features/stream-analytics/
 [Azure storage]: /home/features/storage/
-[lnk-predictive-maintenance]: /documentation/articles/iot-suite-predictive-overview/
+[lnk-predictive-maintenance]: /documentation/articles/iot-suite-predictive-overview/ 
